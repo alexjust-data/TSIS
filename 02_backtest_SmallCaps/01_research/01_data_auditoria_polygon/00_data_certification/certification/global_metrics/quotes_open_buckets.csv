@@ -1,0 +1,5 @@
+taxonomy,files,tickers,dates,hard_fail_files,soft_fail_files,crossed_ratio_median_pct,crossed_ratio_p90_pct,pct,block,scope,final_status
+high_hard_crossed_10_to_20,101549,2572,5300,101549,0,13.043478260869565,17.647058823529413,1.0661007895627548,quotes,ticker_date_file,bad
+medium_file_threshold_edge_hard_many_crosses,85963,3871,5320,85963,0,2.0202020202020203,4.156711520480403,0.9024729162589793,quotes,ticker_date_file,bad
+large_file_threshold_edge_hard_many_crosses,50288,2828,4819,50288,0,1.5225045640344486,3.638551856395101,0.5279429290838099,quotes,ticker_date_file,review
+persistent_soft_crossed_mid_large_scale,47076,2615,4544,0,47076,0.4353414773425088,0.6821229527032022,0.4942221072532102,quotes,ticker_date_file,review

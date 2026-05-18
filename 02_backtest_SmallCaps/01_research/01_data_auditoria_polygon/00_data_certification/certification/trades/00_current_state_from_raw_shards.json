@@ -1,0 +1,37 @@
+{
+  "raw_shards_found": 56,
+  "files_processed_from_raw_shards": 5600000,
+  "files_total_manifest": 9429112,
+  "processed_pct_vs_manifest": 59.39053433663743,
+  "acceptance_counts_current_raw_shards": {
+    "review": 2825748,
+    "reference_scale_mismatch": 1454416,
+    "review_microstructure": 1301974,
+    "bad_data": 9356,
+    "review_no_1m_reference": 4456,
+    "review_1m_reference_alignment": 3970,
+    "good": 80
+  },
+  "progress_snapshot": {
+    "updated_at_utc": "2026-04-20T07:47:37.025538+00:00",
+    "phase": "recompute_running",
+    "workers": 6,
+    "batch_size": 50000,
+    "index_shard_size": 100000,
+    "sample_per_stratum": 20,
+    "max_batches": null,
+    "limit_shards": null,
+    "force_rebuild_index": false,
+    "files_total": 9429112,
+    "index_shards_written": 95,
+    "sample_files": 380,
+    "resumed": true,
+    "total_index_shards": 95,
+    "done_index_shards": 51,
+    "pending_shards": 44,
+    "skipped_existing_shards": 8,
+    "completed_now_shards": 43,
+    "files_done_now": 4300000,
+    "manifest_written": true
+  }
+}

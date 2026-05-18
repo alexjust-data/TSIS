@@ -1,0 +1,5 @@
+block,scope,status,count,pct
+daily,ticker,complete_daily_present,4171,86.463516
+daily,ticker,likely_valid_gap_only,374,7.752902
+daily,ticker,ambiguous_review,222,4.60199
+daily,ticker,unexpected_problematic,57,1.181592

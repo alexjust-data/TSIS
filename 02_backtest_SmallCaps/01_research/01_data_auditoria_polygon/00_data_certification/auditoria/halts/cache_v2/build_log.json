@@ -1,0 +1,27 @@
+{
+  "started_at_epoch": 1777376011.0050263,
+  "finished_at_epoch": 1777376973.089964,
+  "duration_sec": 962.085,
+  "warnings": [
+    "multisource_row_mismatch:source_sum=134154 multisource_rows=133116"
+  ],
+  "row_counts": {
+    "source_quality_summary": 3,
+    "field_completeness_summary": 36,
+    "canonical_event_summary": 132257,
+    "duplicate_analysis": 132259,
+    "cross_source_overlap_summary": 74738,
+    "multisource_builder_reconciliation": 5,
+    "nasdaq_final_residual_rows": 11,
+    "ticker_halt_coverage_summary": 4824,
+    "ticker_year_halt_presence": 33185,
+    "event_taxonomy_summary": 5,
+    "halt_event_windows": 521572,
+    "halts_lt1b_event_index": 53909,
+    "halts_intraday_overlay_index": 25301,
+    "halts_quotes_trades_visual_cases": 25301,
+    "halts_quotes_link_candidates": 521572,
+    "halts_trades_link_candidates": 521572,
+    "event_window_alignment_summary": 114
+  }
+}

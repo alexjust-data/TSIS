@@ -1,0 +1,8 @@
+block,scope,status,count,pct
+trades,file,review,2825748,50.459786
+trades,file,reference_scale_mismatch,1454416,25.971714
+trades,file,review_microstructure,1301974,23.249536
+trades,file,bad_data,9356,0.167071
+trades,file,review_no_1m_reference,4456,0.079571
+trades,file,review_1m_reference_alignment,3970,0.070893
+trades,file,good,80,0.001429

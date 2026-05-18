@@ -1,0 +1,4 @@
+status,count,tickers,block,scope,pct
+ipo_near_market_anomaly,676,668,additional,ipo_event,52.771272
+ipo_market_clean,449,443,additional,ipo_event,35.050742
+ipo_near_halt_market_event,156,156,additional,ipo_event,12.177986

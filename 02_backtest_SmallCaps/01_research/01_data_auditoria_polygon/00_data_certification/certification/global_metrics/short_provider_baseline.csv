@@ -1,0 +1,3 @@
+block,dataset,polygon_present_rows,finra_present_rows,raw_only_polygon_rows,meaningful_only_polygon_rows,zero_row_only_polygon_rows
+short,short_interest,4824,4687,137,7,130
+short,short_volume,4824,4623,201,19,182

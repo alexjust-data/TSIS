@@ -1,0 +1,1 @@
+$ErrorActionPreference = "Stop"`r`n$script = "C:\TSIS_Data\02_backtest_SmallCaps\data_auditoria_polygon\00_data_certification\auditoria\trades\cell_code\57_build_trades_file_acceptance_artifacts.py"`r`npython $script --batch-size 50000 --sample-per-stratum 20

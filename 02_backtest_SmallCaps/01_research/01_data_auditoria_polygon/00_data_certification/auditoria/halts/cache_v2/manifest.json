@@ -1,0 +1,51 @@
+{
+  "build_name": "halts_audit_artifacts",
+  "build_version": "0.1.0",
+  "inputs": {
+    "halts_root": "D:\\Halts",
+    "processed_root": "D:\\Halts\\processed",
+    "raw_root": "D:\\Halts\\raw",
+    "universe_path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\runs\\backtest\\market_cap_last_observed_cutoff\\20260320_market_cap_last_observed_cutoff\\market_cap_cutoff_lt_1b_active_inactive.parquet"
+  },
+  "artifacts": {
+    "source_quality_summary": "source_quality_summary.parquet",
+    "field_completeness_summary": "field_completeness_summary.parquet",
+    "canonical_event_summary": "canonical_event_summary.parquet",
+    "duplicate_analysis": "duplicate_analysis.parquet",
+    "cross_source_overlap_summary": "cross_source_overlap_summary.parquet",
+    "ticker_halt_coverage_summary": "ticker_halt_coverage_summary.parquet",
+    "ticker_year_halt_presence": "ticker_year_halt_presence.parquet",
+    "event_taxonomy_summary": "event_taxonomy_summary.parquet",
+    "halt_event_windows": "halt_event_windows.parquet",
+    "halts_lt1b_event_index": "halts_lt1b_event_index.parquet",
+    "halts_intraday_overlay_index": "halts_intraday_overlay_index.parquet",
+    "halts_quotes_trades_visual_cases": "halts_quotes_trades_visual_cases.parquet",
+    "case_index_halts": "case_index_halts.parquet",
+    "halts_quotes_link_candidates": "halts_quotes_link_candidates.parquet",
+    "halts_trades_link_candidates": "halts_trades_link_candidates.parquet",
+    "event_window_alignment_summary": "event_window_alignment_summary.parquet"
+  },
+  "row_counts": {
+    "source_quality_summary": 3,
+    "field_completeness_summary": 36,
+    "canonical_event_summary": 132257,
+    "duplicate_analysis": 132259,
+    "cross_source_overlap_summary": 74738,
+    "multisource_builder_reconciliation": 5,
+    "nasdaq_final_residual_rows": 11,
+    "ticker_halt_coverage_summary": 4824,
+    "ticker_year_halt_presence": 33185,
+    "event_taxonomy_summary": 5,
+    "halt_event_windows": 521572,
+    "halts_lt1b_event_index": 53909,
+    "halts_intraday_overlay_index": 25301,
+    "halts_quotes_trades_visual_cases": 25301,
+    "halts_quotes_link_candidates": 521572,
+    "halts_trades_link_candidates": 521572,
+    "event_window_alignment_summary": 114
+  },
+  "input_rows": 134154,
+  "warnings": [
+    "multisource_row_mismatch:source_sum=134154 multisource_rows=133116"
+  ]
+}

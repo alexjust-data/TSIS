@@ -1,0 +1,50 @@
+# Data directories (do not commit)
+fundamentals/
+ohlcv_intraday_1m/
+quotes_*/
+trades_ticks_*/
+additional/
+reference/
+regime_indicators/
+short_data/
+images/
+zz_img_*/
+**/run/
+**/runs/
+**/runtime/
+*_files_inventory.csv
+*_files_inventory_summary.json
+00_CTO/disenys/design_references/
+
+# Env files
+.env
+.env.local
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+venv/
+.venv/
+.venv*/
+.venv_ws/
+.pytest_cache/
+
+# Node
+node_modules/
+.next/
+out/
+build/
+dist/
+coverage/
+
+# Claude Code temp files
+tmpclaude-*
+
+# VS Code
+.vscode/
+
+# Local browser / scraping artifacts
+.browser_profile*/

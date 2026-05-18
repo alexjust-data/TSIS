@@ -1,0 +1,5 @@
+block,scope,status,count,pct
+trades,file,good,80,0.001429
+trades,file,recoverable_with_flag,3737456,66.740286
+trades,file,review_not_rehabilitated,1853108,33.091214
+trades,file,bad,9356,0.167071

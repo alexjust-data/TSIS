@@ -1,0 +1,6 @@
+block,scope,status,count,pct
+halts,visual_case,confirmed_halt_microstructure_coherent,18591,73.479309
+halts,visual_case,halt_with_trades_signal_only,3914,15.469744
+halts,visual_case,halt_with_quotes_signal_only,1896,7.493775
+halts,visual_case,halt_present_but_market_clean,516,2.039445
+halts,visual_case,market_signal_without_clear_halt_window,384,1.517727

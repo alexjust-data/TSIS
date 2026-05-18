@@ -1,0 +1,4 @@
+status,count,tickers,mean_short_ratio,p95_short_ratio,block,scope,pct
+short_flow_market_clean,2603,1245,95.66247791010372,100.0,short,short_volume_context,4.654864
+short_flow_near_halt,88,82,95.83227272727272,100.0,short,short_volume_context,0.157368
+short_flow_near_market_anomaly,53229,3877,95.56584004959701,100.0,short,short_volume_context,95.187768

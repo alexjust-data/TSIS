@@ -1,0 +1,5 @@
+block,scope,status,count,pct
+quotes,ticker_date_file,good_core_explicit,7716014,81.005708
+quotes,ticker_date_file,review_open_explicit,97364,1.022165
+quotes,ticker_date_file,bad_open_explicit,187512,1.968574
+quotes,ticker_date_file,other_taxonomies_closed_elsewhere,1524382,16.003553

@@ -1,0 +1,6 @@
+dataset,status,tickers,count,overlap_rows,block,scope,pct_within_dataset
+dividends,reference_exact_overlap,1253,1253,45968,additional,dividends,99.602544
+dividends,reference_present_no_exact_overlap,5,5,0,additional,dividends,0.397456
+splits,reference_exact_overlap,1858,1858,3293,additional,splits,99.040512
+splits,reference_present_no_exact_overlap,18,18,0,additional,splits,0.959488
+ticker_events,reference_present_no_exact_overlap,2703,2703,0,additional,ticker_events,100.0

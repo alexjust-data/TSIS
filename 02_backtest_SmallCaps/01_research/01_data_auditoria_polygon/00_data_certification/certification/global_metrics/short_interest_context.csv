@@ -1,0 +1,3 @@
+status,count,tickers,mean_days_to_cover,median_days_from_halt,block,scope,pct
+days_to_cover_spike_near_halt,1790,969,40.84969273743017,8.0,short,short_interest_context,89.81435
+high_short_interest_context,203,104,2.5981773399014774,7.0,short,short_interest_context,10.18565

@@ -1,0 +1,50 @@
+{
+  "build_name": "lt1b_coverage_artifacts",
+  "build_version": "0.1.0",
+  "built_at_utc": "2026-04-12T14:57:37.222680+00:00",
+  "output_root": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\cache_lt1b_coverage",
+  "universe_source": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\runs\\backtest\\market_cap_last_observed_cutoff\\20260320_market_cap_last_observed_cutoff\\market_cap_cutoff_lt_1b_active_inactive.parquet",
+  "inputs": {
+    "lt1b_universe_parquet": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\runs\\backtest\\market_cap_last_observed_cutoff\\20260320_market_cap_last_observed_cutoff\\market_cap_cutoff_lt_1b_active_inactive.parquet",
+    "daily_inventory_by_ticker": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\runs\\backtest\\daily_v2_inventory\\daily_inventory_full\\daily_inventory_by_ticker.parquet",
+    "ohlcv_1m_inventory_by_ticker": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged\\ohlcv_1m_inventory_by_ticker.parquet",
+    "quotes_inventory_by_ticker": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\runs\\backtest\\quotes_v2_inventory\\quotes_inventory_2005_2026\\quotes_inventory_by_ticker.parquet",
+    "trades_inventory_by_ticker": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\runs\\backtest\\trades_v2_inventory\\trades_inventory_2005_2026\\trades_inventory_by_ticker.parquet",
+    "quotes_current": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\runs\\backtest\\quotes_v2_materialized\\quotes_current_cd_merged\\quotes_current.parquet",
+    "trades_current": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\runs\\backtest\\trades_v2_materialized\\trades_current_cd_merged\\trades_current.parquet",
+    "halts_master_multisource": "D:\\Halts\\processed\\halts_master_multisource.parquet",
+    "financial_income_root": "D:\\financial\\income_statements",
+    "financial_balance_root": "D:\\financial\\balance_sheets",
+    "financial_cash_flow_root": "D:\\financial\\cash_flow_statements",
+    "financial_ratios_root": "D:\\financial\\ratios"
+  },
+  "artifacts": {
+    "exec_summary": "exec_summary.parquet",
+    "dataset_coverage_summary": "dataset_coverage_summary.parquet",
+    "dataset_overlap_summary": "dataset_overlap_summary.parquet",
+    "ticker_coverage_summary": "ticker_coverage_summary.parquet",
+    "ticker_month_coverage": "ticker_month_coverage.parquet",
+    "event_month_overlay": "event_month_overlay.parquet",
+    "case_index_coverage": "case_index_coverage.parquet"
+  },
+  "row_counts": {
+    "lt1b_tickers": 4824,
+    "ticker_month_rows": 357375,
+    "ticker_coverage_rows": 4824,
+    "event_overlay_rows": 357375,
+    "case_index_rows": 4824
+  },
+  "build_params": {
+    "month_grain": true,
+    "quotes_batch_size": 100000,
+    "trades_batch_size": 100000,
+    "include_financial_overlays": true,
+    "include_halts_overlay": true,
+    "max_dense_batches": null,
+    "max_financial_files": null,
+    "daily_month_logic": "approx_from_inventory_year_range",
+    "ohlcv_1m_month_logic": "approx_from_inventory_range",
+    "quotes_month_logic": "exact_from_current_chunked",
+    "trades_month_logic": "exact_from_current_chunked"
+  }
+}

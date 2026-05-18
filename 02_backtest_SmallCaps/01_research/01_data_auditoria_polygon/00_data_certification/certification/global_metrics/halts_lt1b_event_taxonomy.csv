@@ -1,0 +1,4 @@
+block,scope,status,count,pct
+halts,lt1b_event,good_full_intraday_event,53720,99.649409
+halts,lt1b_event,good_date_level_event,186,0.345026
+halts,lt1b_event,regulatory_context_only,3,0.005565

@@ -1,0 +1,18 @@
+# Working Links
+
+- [global_metrics folder](</C:/TSIS_Data/02_backtest_SmallCaps/data_auditoria_polygon/00_data_certification/certification/global_metrics>)
+- [global builder](</C:/TSIS_Data/02_backtest_SmallCaps/data_auditoria_polygon/00_data_certification/certification/03_build_global_metrics_artifacts.py>)
+- [global tables](</C:/TSIS_Data/02_backtest_SmallCaps/data_auditoria_polygon/00_data_certification/certification/global_metrics/00_global_metrics_tables.md>)
+- [traceable tables](</C:/TSIS_Data/02_backtest_SmallCaps/data_auditoria_polygon/00_data_certification/certification/global_metrics/01_global_metrics_tables_traceable.md>)
+- [major quality mix](</C:/TSIS_Data/02_backtest_SmallCaps/data_auditoria_polygon/00_data_certification/certification/global_metrics/img/01_major_quality_mix.png>)
+- [context blocks](</C:/TSIS_Data/02_backtest_SmallCaps/data_auditoria_polygon/00_data_certification/certification/global_metrics/img/02_context_blocks.png>)
+- [daily closeout notebook](</C:/TSIS_Data/02_backtest_SmallCaps/data_auditoria_polygon/00_data_certification/auditoria/daily/04_daily_closeout.ipynb>)
+- [1m closeout notebook](</C:/TSIS_Data/02_backtest_SmallCaps/data_auditoria_polygon/00_data_certification/auditoria/ohlcv_1m/04_ohlcv_1m_closeout.ipynb>)
+- [quotes closeout notebook](</C:/TSIS_Data/02_backtest_SmallCaps/data_auditoria_polygon/00_data_certification/auditoria/quotes/v2/04_quotes_full_C_D_closeout.ipynb>)
+- [quotes synthesis](</C:/TSIS_Data/02_backtest_SmallCaps/data_auditoria_polygon/00_data_certification/certification/quotes/12_quotes_open_buckets_synthesis.md>)
+- [trades file acceptance notebook](</C:/TSIS_Data/02_backtest_SmallCaps/data_auditoria_polygon/00_data_certification/auditoria/trades/v2/05_trades_file_acceptance_notebook.md>)
+- [trades closeout](</C:/TSIS_Data/02_backtest_SmallCaps/data_auditoria_polygon/00_data_certification/certification/trades/20_trades_closeout.md>)
+- [halts closeout](</C:/TSIS_Data/02_backtest_SmallCaps/data_auditoria_polygon/00_data_certification/certification/halts/03_halts_closeout.md>)
+- [reference closeout](</C:/TSIS_Data/02_backtest_SmallCaps/data_auditoria_polygon/00_data_certification/certification/reference/02_reference_closeout.md>)
+- [short closeout](</C:/TSIS_Data/02_backtest_SmallCaps/data_auditoria_polygon/00_data_certification/certification/short/02_short_closeout.md>)
+- [additional closeout](</C:/TSIS_Data/02_backtest_SmallCaps/data_auditoria_polygon/00_data_certification/certification/additional/02_additional_closeout.md>)

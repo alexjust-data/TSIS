@@ -1,0 +1,6 @@
+status,count,source_rows,tickers,block,scope,pct
+good_full_intraday_event,129638,131524,16232,halts,canonical_event,98.019765
+good_date_level_event,1272,1273,1180,halts,canonical_event,0.961764
+review_partial_identity,1096,1096,0,halts,canonical_event,0.82869
+regulatory_context_only,250,250,250,halts,canonical_event,0.189026
+bad_unusable_event,1,11,0,halts,canonical_event,0.000756

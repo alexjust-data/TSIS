@@ -1,0 +1,1 @@
+¿Cuáles son las reglas o parámetros iniciales que utilizas para considerar que una Microcap estaba "In-Play" o "activa" en un día concreto (por ejemplo: Volumen > 1,000,000, Gap > 10%, Relative Volume > 5, etc.)?

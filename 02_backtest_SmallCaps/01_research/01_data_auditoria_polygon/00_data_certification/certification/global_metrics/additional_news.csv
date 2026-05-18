@@ -1,0 +1,6 @@
+status,count,tickers,mean_tickers_per_news,block,scope,pct
+review_multi_ticker_ambiguous_news,169154,3627,16.26471144637431,additional,news_event,58.91035
+news_near_market_anomaly,98400,3103,1.0,additional,news_event,34.269236
+news_context_only,18296,2798,28.048589855706165,additional,news_event,6.371849
+news_near_halt_market_event,1268,707,1.0,additional,news_event,0.4416
+news_near_short_flow_only,20,15,6.2,additional,news_event,0.006965

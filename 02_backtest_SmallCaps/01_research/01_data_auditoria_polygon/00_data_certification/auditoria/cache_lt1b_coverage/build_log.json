@@ -1,0 +1,20 @@
+{
+  "started_at_utc": "2026-04-12T14:53:16.361147+00:00",
+  "finished_at_utc": "2026-04-12T14:57:37.223132+00:00",
+  "duration_sec": 260.862,
+  "steps": [
+    "load_universe",
+    "build_pti_month_grid",
+    "load_daily",
+    "load_ohlcv_1m",
+    "scan_quotes_current",
+    "scan_trades_current",
+    "scan_halts",
+    "scan_financials",
+    "write_artifacts"
+  ],
+  "warnings": [
+    "daily monthly coverage is approximated from yearly inventory range",
+    "ohlcv_1m monthly coverage is approximated from inventory ranges"
+  ]
+}

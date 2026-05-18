@@ -1,0 +1,13 @@
+dataset,dataset_family,effective_non_empty_pct,files_non_empty,files_present,rows_total,block
+balance_sheets,financials_core,99.772,4813.0,4824.0,136672,additional
+cash_flow_statements,financials_core,99.71,4810.0,4824.0,242223,additional
+dividends,corporate_actions_additional,26.078,1258.0,4824.0,49684,additional
+income_statements,financials_core,99.772,4813.0,4824.0,242897,additional
+ipos,ipos,26.016,1255.0,4824.0,4850,additional
+news,news,80.203,3869.0,4824.0,288093,additional
+ratios,financials_ratios,46.269,2232.0,4824.0,4824,additional
+splits,corporate_actions_additional,38.889,1876.0,4824.0,6283,additional
+ticker_events,corporate_actions_additional,56.032,2703.0,4824.0,5158,additional
+inflation,economic,100.0,,,950,additional
+inflation_expectations,economic,100.0,,,531,additional
+treasury_yields,economic,100.0,,,16047,additional

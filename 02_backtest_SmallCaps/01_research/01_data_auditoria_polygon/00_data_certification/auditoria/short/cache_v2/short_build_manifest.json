@@ -1,0 +1,13 @@
+{
+  "polygon_short_interest_files": 4824,
+  "polygon_short_volume_files": 4824,
+  "finra_short_interest_files": 4687,
+  "finra_short_volume_files": 4623,
+  "only_polygon_short_interest": 137,
+  "only_polygon_short_volume": 201,
+  "only_finra_short_interest": 0,
+  "only_finra_short_volume": 0,
+  "identity_links_rows": 338,
+  "short_volume_causal_rows": 55920,
+  "short_interest_context_rows": 1993
+}
