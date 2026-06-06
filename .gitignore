@@ -20,6 +20,8 @@
 *_files_inventory.csv
 *_files_inventory_summary.json
 00_CTO/disenys/design_references/
+00_CTO/02_Strategies/
+00_CTO/00_notas_RL.md
 
 # Heavy market-data / generated dataset payloads
 # Keep contracts, readouts, manifests and code in Git. Do not commit raw or
