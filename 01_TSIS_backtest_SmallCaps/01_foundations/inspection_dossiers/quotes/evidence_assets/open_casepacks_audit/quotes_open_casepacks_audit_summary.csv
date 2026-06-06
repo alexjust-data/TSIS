@@ -1,0 +1,3 @@
+scope,expected_rows,manifest_rows,expected_rows_contract,doc_total_cases,menu_entries,missing_from_manifest,extra_in_manifest,menu_mismatch_vs_manifest,manifest_rows_all_assets_present,manifest_rows_with_missing_assets,status,missing_from_manifest_keys,extra_in_manifest_keys,missing_asset_case_keys
+review,64,64,64,64,64,0,0,0,64,0,PASS,,,
+bad,15,15,15,15,15,0,0,0,15,0,PASS,,,

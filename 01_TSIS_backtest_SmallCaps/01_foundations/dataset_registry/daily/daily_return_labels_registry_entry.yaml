@@ -1,0 +1,52 @@
+dataset_identity:
+  name: daily_return_labels_v0_1
+  domain: daily_labels
+  logical_version: v0_1
+  contract_type: derived_label_layer
+
+status:
+  promotion_state: pilot_materialization
+  active: false
+  owner: 01_TSIS_backtest_SmallCaps
+
+registry_classification:
+  dataset_family: model_target_layer
+  primary_unit: ticker_day_label
+  evidence_state: contract_defined_initial_generator
+
+artifacts:
+  consumer_contract: 01_foundations/module_contracts/daily_return_labels_consumer_contract_v0_1.md
+  operational_landing: 01_foundations/module_contracts/daily_return_labels_operational_landing_v0_1.md
+  generator_script: scripts/materialize_daily_return_labels.py
+
+physical_layout:
+  canonical_root: E:/TSIS/data/daily_return_labels
+  layout_pattern: ticker=<TICKER>/year=<YYYY>/day_aggs_<TICKER>_<YYYY>_labels.parquet
+  source_root: E:/TSIS/data/ohlcv_daily_adjusted
+
+source_semantics:
+  required_price_view: daily_adjusted_v0_1
+  required_close_col: c_adjusted
+  forbidden_close_col: c
+
+initial_labels:
+  - ret_1d
+  - ret_3d
+  - ret_5d
+
+allowed_consumers:
+  pilot_targets:
+    - ml_primary
+    - ml_flagged
+    - research_only
+  planned_targets:
+    - backtest_core
+    - backtest_extended
+  restricted:
+    - execution_simulator
+    - rl_allowed
+    - live_downstream_candidate
+
+notes:
+  - first real downstream consumer of daily_adjusted
+  - this layer is a slow economic target layer, not an intraday execution signal

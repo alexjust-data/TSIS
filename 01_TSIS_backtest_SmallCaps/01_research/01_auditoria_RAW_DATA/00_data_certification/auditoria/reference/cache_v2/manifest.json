@@ -1,0 +1,597 @@
+{
+  "reference_root": "D:\\reference",
+  "cache_root": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2",
+  "lt1b_universe_path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\runs\\backtest\\market_cap_last_observed_cutoff\\20260320_market_cap_last_observed_cutoff\\market_cap_cutoff_lt_1b_active_inactive.parquet",
+  "market_universe_path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\data\\reference\\universe_pti\\tickers_2005_2026_upper.parquet",
+  "built_at_utc": "2026-04-29T12:33:20.838720+00:00",
+  "duration_sec": 992.434,
+  "artifacts": [
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_endpoint_inventory.parquet",
+      "rows": 7,
+      "columns": [
+        "dataset",
+        "base_path",
+        "exists",
+        "parquet_file_count",
+        "dir_count",
+        "file_count_all",
+        "sample_file"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_download_audit_summary.parquet",
+      "rows": 7,
+      "columns": [
+        "dataset",
+        "audit_rows",
+        "ok_rows",
+        "error_rows",
+        "resume_skip_rows",
+        "distinct_tickers",
+        "http_404_rows",
+        "nonzero_rows_saved",
+        "ok_pct",
+        "error_pct",
+        "http_404_pct"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_download_error_summary.parquet",
+      "rows": 1,
+      "columns": [
+        "dataset",
+        "http_status",
+        "error_count"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_schema_summary.parquet",
+      "rows": 17,
+      "columns": [
+        "dataset",
+        "path",
+        "num_rows",
+        "num_cols",
+        "columns",
+        "schema_error"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_overview_404_case_index.parquet",
+      "rows": 200,
+      "columns": [
+        "ticker",
+        "request_date",
+        "msg",
+        "out_file",
+        "ends_w",
+        "ends_ws",
+        "ends_u",
+        "ends_r",
+        "contains_dot",
+        "contains_slash",
+        "contains_eq",
+        "in_lt1b_universe",
+        "in_market_universe",
+        "overview_404_bucket"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_overview_404_summary.parquet",
+      "rows": 3,
+      "columns": [
+        "overview_404_bucket",
+        "rows",
+        "distinct_tickers",
+        "lt1b_rows",
+        "market_rows"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_identity_snapshot.parquet",
+      "rows": 12468,
+      "columns": [
+        "ticker",
+        "name",
+        "market",
+        "locale",
+        "primary_exchange",
+        "type",
+        "active",
+        "currency_name",
+        "cik",
+        "composite_figi",
+        "share_class_figi",
+        "market_cap",
+        "phone_number",
+        "description",
+        "sic_code",
+        "sic_description",
+        "ticker_root",
+        "homepage_url",
+        "total_employees",
+        "list_date",
+        "share_class_shares_outstanding",
+        "weighted_shares_outstanding",
+        "round_lot",
+        "address.address1",
+        "address.city",
+        "address.state",
+        "address.postal_code",
+        "request_date",
+        "_dataset",
+        "_ingested_utc",
+        "address.address2",
+        "branding.logo_url",
+        "branding.icon_url",
+        "ticker_suffix",
+        "in_lt1b_universe",
+        "missing_identity_core",
+        "transient_symbol_flag",
+        "suffix_variant_flag",
+        "instrument_family",
+        "identity_bucket",
+        "in_market_universe"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_identity_quality_summary.parquet",
+      "rows": 3,
+      "columns": [
+        "identity_bucket",
+        "rows",
+        "distinct_tickers",
+        "lt1b_rows",
+        "with_market_cap",
+        "active_true",
+        "row_pct"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_identity_case_index.parquet",
+      "rows": 12468,
+      "columns": [
+        "ticker",
+        "request_date",
+        "name",
+        "type",
+        "primary_exchange",
+        "active",
+        "market_cap",
+        "ticker_root",
+        "list_date",
+        "identity_bucket",
+        "transient_symbol_flag",
+        "suffix_variant_flag",
+        "in_lt1b_universe"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_listing_snapshots.parquet",
+      "rows": 12977501,
+      "columns": [
+        "ticker",
+        "name",
+        "market",
+        "locale",
+        "primary_exchange",
+        "type",
+        "active",
+        "currency_name",
+        "cik",
+        "composite_figi",
+        "share_class_figi",
+        "last_updated_utc",
+        "snapshot_date",
+        "_exchange_filter",
+        "_dataset",
+        "_ingested_utc",
+        "in_lt1b_universe"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_listing_snapshot_summary.parquet",
+      "rows": 13124,
+      "columns": [
+        "ticker",
+        "snapshot_rows",
+        "first_snapshot",
+        "last_snapshot",
+        "exchange_nunique",
+        "type_nunique",
+        "active_true_rows",
+        "in_lt1b_universe",
+        "presence_bucket"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_ticker_presence_timeline.parquet",
+      "rows": 12977501,
+      "columns": [
+        "ticker",
+        "snapshot_date",
+        "active",
+        "type",
+        "primary_exchange",
+        "in_lt1b_universe"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_snapshot_presence_gaps.parquet",
+      "rows": 13124,
+      "columns": [
+        "ticker",
+        "snapshot_rows",
+        "first_snapshot",
+        "last_snapshot",
+        "exchange_nunique",
+        "type_nunique",
+        "active_true_rows",
+        "in_lt1b_universe",
+        "presence_bucket",
+        "span_days",
+        "sparse_density"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_remap_candidates.parquet",
+      "rows": 175,
+      "columns": [
+        "ticker",
+        "ticker_base",
+        "request_date",
+        "identity_bucket",
+        "type",
+        "primary_exchange",
+        "base_snapshot_rows",
+        "base_presence_bucket",
+        "remap_candidate_flag"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_transient_symbol_review.parquet",
+      "rows": 182,
+      "columns": [
+        "ticker",
+        "request_date",
+        "type",
+        "primary_exchange",
+        "name",
+        "identity_bucket",
+        "in_lt1b_universe"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_instrument_type_summary.parquet",
+      "rows": 2,
+      "columns": [
+        "type",
+        "identity_rows",
+        "identity_tickers",
+        "listing_rows",
+        "listing_tickers"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_exchange_summary.parquet",
+      "rows": 6,
+      "columns": [
+        "primary_exchange",
+        "identity_rows",
+        "identity_tickers",
+        "listing_rows",
+        "listing_tickers"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_events_exploded.parquet",
+      "rows": 13215,
+      "columns": [
+        "ticker",
+        "event_idx",
+        "event_type",
+        "event_date",
+        "event_status",
+        "ticker_change_to",
+        "event_payload",
+        "in_lt1b_universe"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_event_type_summary.parquet",
+      "rows": 2,
+      "columns": [
+        "event_status",
+        "event_type",
+        "rows",
+        "distinct_tickers"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_split_case_index.parquet",
+      "rows": 14909,
+      "columns": [
+        "execution_date",
+        "id",
+        "split_from",
+        "split_to",
+        "ticker",
+        "_dataset",
+        "_ingested_utc",
+        "in_lt1b_universe",
+        "split_ratio",
+        "split_bucket"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_splits_summary.parquet",
+      "rows": 2,
+      "columns": [
+        "split_bucket",
+        "rows",
+        "distinct_tickers",
+        "lt1b_rows"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_dividend_case_index.parquet",
+      "rows": 273799,
+      "columns": [
+        "ticker",
+        "_dataset",
+        "_ingested_utc",
+        "cash_amount",
+        "currency",
+        "dividend_type",
+        "ex_dividend_date",
+        "frequency",
+        "id",
+        "pay_date",
+        "record_date",
+        "declaration_date",
+        "in_lt1b_universe",
+        "has_payload_cols",
+        "non_null_payload_fields",
+        "dividend_bucket"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_dividends_summary.parquet",
+      "rows": 2,
+      "columns": [
+        "dividend_bucket",
+        "rows",
+        "distinct_tickers",
+        "lt1b_rows",
+        "payload_rows"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_overview_market_identity_links.parquet",
+      "rows": 750,
+      "columns": [
+        "ticker",
+        "request_date",
+        "msg",
+        "out_file",
+        "ends_w",
+        "ends_ws",
+        "ends_u",
+        "ends_r",
+        "contains_dot",
+        "contains_slash",
+        "contains_eq",
+        "in_lt1b_universe",
+        "in_market_universe",
+        "overview_404_bucket",
+        "identity_link_type",
+        "date",
+        "severity",
+        "sample_stratum",
+        "acceptance_label",
+        "scale_bucket_vw",
+        "scale_bucket_high",
+        "scale_bucket_low",
+        "ticker_base",
+        "identity_bucket",
+        "type",
+        "primary_exchange",
+        "base_snapshot_rows",
+        "base_presence_bucket",
+        "remap_candidate_flag",
+        "name",
+        "active",
+        "market_cap",
+        "ticker_root",
+        "list_date",
+        "transient_symbol_flag",
+        "suffix_variant_flag",
+        "has_trades_example_link",
+        "identity_market_bucket"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_split_market_link_candidates.parquet",
+      "rows": 22,
+      "columns": [
+        "execution_date",
+        "id",
+        "split_from",
+        "split_to",
+        "ticker",
+        "_dataset",
+        "_ingested_utc",
+        "in_lt1b_universe",
+        "split_ratio",
+        "split_bucket",
+        "file",
+        "date",
+        "severity",
+        "batch_id",
+        "warns_list",
+        "m.trade_vwap",
+        "m.vw",
+        "m.possible_price_scale_factor_vs_daily",
+        "m.possible_price_scale_factor_vs_1m",
+        "m.trade_volume_vs_daily_ratio",
+        "m.trade_volume_vs_1m_ratio",
+        "m.duplicate_excess_ratio_pct",
+        "daily_low",
+        "daily_high",
+        "trade_min",
+        "trade_max",
+        "daily_span",
+        "break_below_abs",
+        "break_above_abs",
+        "break_below_pct_span",
+        "break_above_pct_span",
+        "break_side",
+        "break_abs_max",
+        "break_pct_span_max",
+        "confirmed_by_1m",
+        "has_scale_warn",
+        "has_dup_warn",
+        "dup_heavy",
+        "taxonomy",
+        "issues_list",
+        "has_1m_break_warn",
+        "dup_excess_ratio_pct_num",
+        "off_session_trade_pct_num",
+        "final_bucket",
+        "trade_date",
+        "days_from_split",
+        "abs_days_from_split",
+        "split_timing_bucket",
+        "reference_market_bucket"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_split_daily_link_candidates.parquet",
+      "rows": 22,
+      "columns": [
+        "ticker",
+        "execution_date",
+        "split_from",
+        "split_to",
+        "split_ratio",
+        "reference_market_bucket",
+        "daily_window_status",
+        "daily_prev_date",
+        "daily_prev_close",
+        "daily_split_date",
+        "daily_split_open",
+        "daily_split_close",
+        "daily_split_vw",
+        "daily_next_date",
+        "daily_next_close",
+        "daily_best_ratio_vs_prev_close",
+        "daily_best_ratio_diff_vs_split_ratio",
+        "daily_split_alignment_bucket"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_split_1m_link_candidates.parquet",
+      "rows": 22,
+      "columns": [
+        "ticker",
+        "execution_date",
+        "split_from",
+        "split_to",
+        "split_ratio",
+        "reference_market_bucket",
+        "m1_window_status",
+        "m1_prev_ts_utc",
+        "m1_prev_close",
+        "m1_first_ts_utc",
+        "m1_first_open",
+        "m1_first_close",
+        "m1_last_ts_utc",
+        "m1_last_close",
+        "m1_best_ratio_vs_prev_close",
+        "m1_best_ratio_diff_vs_split_ratio",
+        "m1_split_alignment_bucket"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_event_halt_link_candidates.parquet",
+      "rows": 948,
+      "columns": [
+        "ticker",
+        "event_idx",
+        "event_type",
+        "event_date",
+        "event_status",
+        "ticker_change_to",
+        "event_payload",
+        "in_lt1b_universe",
+        "event_id_canonical",
+        "halt_date",
+        "halt_start_et",
+        "resume_trade_et",
+        "event_taxonomy",
+        "halt_in_lt1b_universe",
+        "days_event_to_halt",
+        "abs_days_event_to_halt",
+        "event_halt_timing_bucket",
+        "reference_halt_bucket"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_event_quotes_link_candidates.parquet",
+      "rows": 2595,
+      "columns": [
+        "ticker",
+        "event_idx",
+        "event_type",
+        "event_date",
+        "event_status",
+        "ticker_change_to",
+        "event_payload",
+        "in_lt1b_universe",
+        "date",
+        "severity",
+        "m.crossed_ratio_pct",
+        "m.crossed_rows",
+        "m.timestamp_out_of_partition_day",
+        "warns_list",
+        "issues_list",
+        "quotes_anomaly_flag",
+        "days_event_to_quote",
+        "abs_days_event_to_quote",
+        "event_quotes_timing_bucket",
+        "reference_quotes_bucket"
+      ]
+    },
+    {
+      "path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\reference\\cache_v2\\reference_causal_alignment_summary.parquet",
+      "rows": 14,
+      "columns": [
+        "causal_domain",
+        "bucket",
+        "rows"
+      ]
+    }
+  ],
+  "progress_snapshot": {
+    "status": "completed",
+    "input": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\data\\reference\\universe_pti\\tickers_2005_2026_upper.parquet",
+    "outdir": "D:\\reference",
+    "datasets": [
+      "overview",
+      "events",
+      "splits",
+      "dividends",
+      "ticker_types",
+      "exchanges",
+      "all_tickers"
+    ],
+    "done_tickers": 12468,
+    "total_tickers": 12468,
+    "progress_pct": 100.0,
+    "errors": 200,
+    "updated_at_utc": "2026-03-11T17:27:33.546905+00:00",
+    "audit_csv": "D:\\reference\\_run\\download_reference_universe_polygon.audit.csv",
+    "errors_csv": "D:\\reference\\_run\\download_reference_universe_polygon.errors.csv"
+  }
+}

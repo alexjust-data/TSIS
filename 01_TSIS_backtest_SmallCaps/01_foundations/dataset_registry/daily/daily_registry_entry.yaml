@@ -1,0 +1,66 @@
+dataset_identity:
+  name: daily_core_v0_1
+  domain: daily
+  logical_version: v0_1
+  contract_type: dataset_contract
+
+status:
+  promotion_state: institutional
+  active: true
+  owner: 01_TSIS_backtest_SmallCaps
+
+registry_classification:
+  dataset_family: market_data_foundation
+  primary_unit: ticker_day_bar
+  evidence_state: audited_and_certified
+
+artifacts:
+  dataset_contract: 01_foundations/contract_registry/dataset_contracts/daily_dataset_contract_v0_1.md
+  consumption_policy: 01_foundations/data_consumption_policies/daily_consumption_policy.md
+  schema_contract: 01_foundations/canonical_schemas/daily/daily_schema_contract.md
+  validators: 01_foundations/validators/daily/daily_validators.md
+
+allowed_consumers:
+  permitted:
+    - backtest_core
+    - backtest_extended
+    - ml_primary
+    - ml_flagged
+    - research_only
+    - forensic_only
+  restricted:
+    - execution_simulator
+    - rl_allowed
+    - live_downstream_candidate
+
+quality_policy:
+  states:
+    - good
+    - recoverable_with_flag
+    - bad
+  hard_exclusion_bucket: hard_invalid_parse_or_price
+
+coverage_policy:
+  states:
+    - recoverable_without_penalty
+    - recoverable_with_flag
+    - review_not_rehabilitated
+
+coverage_snapshot:
+  audited_universe: lt1b
+  ticker_year_files: 44423
+  hard_bad_excluded: 102
+  incomplete_daily_tickers: 653
+  recoverable_without_penalty: 374
+  recoverable_with_flag: 222
+  open_coverage_frontier: 57
+
+evidence_references:
+  - 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/daily/04_daily_closeout.md
+  - 01_research/01_auditoria_RAW_DATA/00_data_certification/certification/daily/02_daily_quality_policy.md
+  - 01_research/01_auditoria_RAW_DATA/00_data_certification/certification/daily/03_daily_closeout.md
+
+notes:
+  - daily es el primer dataset institucional formalizado del modulo 01
+  - no implica autorizacion automatica para RL ni simulacion de ejecucion
+  - la lectura correcta preserva la evidencia historica y encapsula sus conclusiones

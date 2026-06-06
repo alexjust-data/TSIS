@@ -1,0 +1,1 @@
+**cómo está estructurado el sistema**

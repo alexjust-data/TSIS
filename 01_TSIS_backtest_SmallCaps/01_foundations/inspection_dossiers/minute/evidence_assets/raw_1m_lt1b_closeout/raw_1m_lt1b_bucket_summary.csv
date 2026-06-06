@@ -1,0 +1,12 @@
+category,key,count,pct_of_lt1b_current
+operational_decision,RESCUE_SCHEMA_ONLY,19713,5.8904559851789875
+operational_decision,RESCUE_SCHEMA_PLUS_VW,314947,94.10954401482101
+final_policy_bucket_lt1b,bad,212763,63.57586804518019
+final_policy_bucket_lt1b,good,46652,13.94011832905038
+final_policy_bucket_lt1b,review,75245,22.48401362576944
+vw_taxonomy_lt1b,vw_mild_low_ratio,26939,8.049662343871391
+vw_taxonomy_lt1b,vw_moderate_ratio,23933,7.151437279627085
+vw_taxonomy_lt1b,vw_severe_large_mass_diffuse,90159,26.940476901930317
+vw_taxonomy_lt1b,vw_severe_large_mass_persistent,122604,36.63539114324987
+vw_taxonomy_lt1b,vw_severe_small_mass,39277,11.736389171099027
+vw_taxonomy_lt1b,vw_severe_tiny_base,12035,3.596187175043328

@@ -1,0 +1,3 @@
+date,o,h,l,c,vw,v,n,vw_outside_range_abs,vw_outside_range_pct_of_span,invalid_price_flag,hard_invalid_flag
+2022-02-02,807.5,845.0,800.0,841.25,1127.526,1760.988,2544,282.52600000000007,627.8355555555556,False,False
+2022-06-23,750.0,795.0,742.5,742.5,739.375,207.312,269,3.125,5.9523809523809526,False,False

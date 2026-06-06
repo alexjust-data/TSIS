@@ -1,0 +1,29 @@
+{
+  "built_at_utc": "2026-05-01T18:02:53.201558+00:00",
+  "additional_root": "C:\\TSIS_Data\\data\\additional",
+  "universe_parquet": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\runs\\backtest\\market_cap_last_observed_cutoff\\20260320_market_cap_last_observed_cutoff\\market_cap_cutoff_lt_1b_active_inactive.parquet",
+  "prior_audit_root": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\runs\\backtest\\additional_audit\\20260405_additional_lt1b_coverage",
+  "out_root": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\notebooks\\00_data_certification\\auditoria\\additional\\cache_v2",
+  "universe_tickers": 4824,
+  "artifacts": [
+    "additional_corp_actions_reference_overlap.parquet",
+    "additional_corp_actions_reference_overlap_summary.parquet",
+    "additional_corporate_actions_summary.parquet",
+    "additional_dataset_inventory.parquet",
+    "additional_effective_coverage_summary.parquet",
+    "additional_family_summary.parquet",
+    "additional_financials_summary.parquet",
+    "additional_ipo_event_index.parquet",
+    "additional_ipo_link_summary.parquet",
+    "additional_ipo_market_link_candidates.parquet",
+    "additional_ipos_summary.parquet",
+    "additional_macro_calendar_summary.parquet",
+    "additional_news_event_index.parquet",
+    "additional_news_link_summary.parquet",
+    "additional_news_market_link_candidates.parquet",
+    "additional_news_multi_ticker_summary.parquet",
+    "additional_news_summary.parquet",
+    "additional_news_ticker_density.parquet",
+    "additional_schema_samples.parquet"
+  ]
+}

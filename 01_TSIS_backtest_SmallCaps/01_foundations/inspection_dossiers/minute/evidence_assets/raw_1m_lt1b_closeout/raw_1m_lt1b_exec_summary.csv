@@ -1,0 +1,8 @@
+metric,value
+lt1b_tickers_reference,4824
+lt1b_current_1m_rows,334660
+lt1b_current_1m_unique_tickers,4822
+lt1b_current_1m_unique_task_keys,334660
+lt1b_current_1m_unique_good_tickers,1526
+lt1b_current_1m_unique_review_tickers,3792
+lt1b_current_1m_unique_bad_tickers,4224

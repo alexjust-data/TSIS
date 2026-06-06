@@ -1,0 +1,91 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---- Virtual envs ----
+.venv/
+venv/
+ENV/
+env/
+
+# ---- VSCode ----
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+
+# ---- Env secrets ----
+.env
+.env.*
+!.env.example
+
+# ---- Data & artifacts (never commit) ----
+data/
+run/
+runs/
+runtime/
+cache/
+tmp/
+temp/
+*.duckdb
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.arrow
+*.pkl
+*.pickle
+*.joblib
+*.npy
+*.npz
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+*.zst
+*.gz
+*.bz2
+*.xz
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+
+# Institutional evidence/manifests under foundations are intentionally versioned.
+!01_foundations/**/*.csv
+!00_cto/**/*.csv
+
+# ---- Local runtime / vendored env ----
+backtest/Lib/
+backtest/Scripts/
+backtest/Include/
+backtest/share/jupyter/
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# If you want to avoid committing notebook outputs:
+# (recommended: use nbstripout instead; see below)
+# notebooks/**.ipynb
+
+# ---- OS ----
+.DS_Store
+Thumbs.db

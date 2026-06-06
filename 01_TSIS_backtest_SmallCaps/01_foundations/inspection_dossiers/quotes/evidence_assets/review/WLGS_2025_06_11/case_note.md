@@ -1,0 +1,5 @@
+- `decision`: `review`
+- `taxonomy`: `persistent_soft_crossed_mid_large_scale`
+- `positive_cross_bucket`: `positive_cross_severe_ge25bps`
+- `lectura`: El caso no es `good`, pero tampoco cae en exclusion dura. Debe leerse como libro con problema real que exige flag y contexto.
+- `contexto`: Existe ademas una imagen historica de certificacion con narrativa contextual asociada.

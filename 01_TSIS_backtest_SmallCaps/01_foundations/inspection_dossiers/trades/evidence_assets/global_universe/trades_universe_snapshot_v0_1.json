@@ -1,0 +1,784 @@
+{
+  "policy_counts": {
+    "review": 4851211,
+    "reference_scale_mismatch": 2418062,
+    "review_microstructure": 2130781,
+    "bad_data": 15869,
+    "review_no_1m_reference": 8091,
+    "review_1m_reference_alignment": 4992,
+    "good": 106
+  },
+  "year_label_counts": {
+    "2005": {
+      "review": 154522,
+      "reference_scale_mismatch": 88057,
+      "review_microstructure": 283,
+      "bad_data": 560,
+      "review_no_1m_reference": 0,
+      "review_1m_reference_alignment": 67,
+      "good": 0
+    },
+    "2006": {
+      "review": 170480,
+      "reference_scale_mismatch": 83262,
+      "review_microstructure": 122,
+      "bad_data": 673,
+      "review_no_1m_reference": 0,
+      "review_1m_reference_alignment": 65,
+      "good": 0
+    },
+    "2007": {
+      "review": 186526,
+      "reference_scale_mismatch": 82631,
+      "review_microstructure": 550,
+      "bad_data": 542,
+      "review_no_1m_reference": 0,
+      "review_1m_reference_alignment": 73,
+      "good": 0
+    },
+    "2008": {
+      "review": 194203,
+      "reference_scale_mismatch": 87457,
+      "review_microstructure": 640,
+      "bad_data": 764,
+      "review_no_1m_reference": 3,
+      "review_1m_reference_alignment": 70,
+      "good": 0
+    },
+    "2009": {
+      "review": 195175,
+      "reference_scale_mismatch": 86888,
+      "review_microstructure": 529,
+      "bad_data": 741,
+      "review_no_1m_reference": 10,
+      "review_1m_reference_alignment": 18,
+      "good": 0
+    },
+    "2010": {
+      "review": 205263,
+      "reference_scale_mismatch": 87324,
+      "review_microstructure": 997,
+      "bad_data": 766,
+      "review_no_1m_reference": 50,
+      "review_1m_reference_alignment": 57,
+      "good": 1
+    },
+    "2011": {
+      "review": 217613,
+      "reference_scale_mismatch": 87099,
+      "review_microstructure": 751,
+      "bad_data": 728,
+      "review_no_1m_reference": 25,
+      "review_1m_reference_alignment": 78,
+      "good": 1
+    },
+    "2012": {
+      "review": 224480,
+      "reference_scale_mismatch": 85970,
+      "review_microstructure": 775,
+      "bad_data": 747,
+      "review_no_1m_reference": 26,
+      "review_1m_reference_alignment": 65,
+      "good": 5
+    },
+    "2013": {
+      "review": 239301,
+      "reference_scale_mismatch": 90465,
+      "review_microstructure": 3551,
+      "bad_data": 793,
+      "review_no_1m_reference": 103,
+      "review_1m_reference_alignment": 85,
+      "good": 1
+    },
+    "2014": {
+      "review": 238839,
+      "reference_scale_mismatch": 103726,
+      "review_microstructure": 28481,
+      "bad_data": 868,
+      "review_no_1m_reference": 103,
+      "review_1m_reference_alignment": 179,
+      "good": 0
+    },
+    "2015": {
+      "review": 263035,
+      "reference_scale_mismatch": 114157,
+      "review_microstructure": 26702,
+      "bad_data": 781,
+      "review_no_1m_reference": 237,
+      "review_1m_reference_alignment": 151,
+      "good": 1
+    },
+    "2016": {
+      "review": 268398,
+      "reference_scale_mismatch": 116754,
+      "review_microstructure": 38379,
+      "bad_data": 880,
+      "review_no_1m_reference": 269,
+      "review_1m_reference_alignment": 241,
+      "good": 3
+    },
+    "2017": {
+      "review": 268514,
+      "reference_scale_mismatch": 116742,
+      "review_microstructure": 56110,
+      "bad_data": 933,
+      "review_no_1m_reference": 350,
+      "review_1m_reference_alignment": 533,
+      "good": 2
+    },
+    "2018": {
+      "review": 276836,
+      "reference_scale_mismatch": 126520,
+      "review_microstructure": 73249,
+      "bad_data": 1164,
+      "review_no_1m_reference": 446,
+      "review_1m_reference_alignment": 502,
+      "good": 12
+    },
+    "2019": {
+      "review": 247649,
+      "reference_scale_mismatch": 133624,
+      "review_microstructure": 123446,
+      "bad_data": 1246,
+      "review_no_1m_reference": 684,
+      "review_1m_reference_alignment": 388,
+      "good": 18
+    },
+    "2020": {
+      "review": 235674,
+      "reference_scale_mismatch": 136490,
+      "review_microstructure": 158796,
+      "bad_data": 685,
+      "review_no_1m_reference": 421,
+      "review_1m_reference_alignment": 328,
+      "good": 12
+    },
+    "2021": {
+      "review": 242489,
+      "reference_scale_mismatch": 160218,
+      "review_microstructure": 253377,
+      "bad_data": 624,
+      "review_no_1m_reference": 671,
+      "review_1m_reference_alignment": 375,
+      "good": 1
+    },
+    "2022": {
+      "review": 279908,
+      "reference_scale_mismatch": 204365,
+      "review_microstructure": 292623,
+      "bad_data": 787,
+      "review_no_1m_reference": 1064,
+      "review_1m_reference_alignment": 324,
+      "good": 11
+    },
+    "2023": {
+      "review": 245283,
+      "reference_scale_mismatch": 185853,
+      "review_microstructure": 299393,
+      "bad_data": 532,
+      "review_no_1m_reference": 933,
+      "review_1m_reference_alignment": 313,
+      "good": 14
+    },
+    "2024": {
+      "review": 218805,
+      "reference_scale_mismatch": 144152,
+      "review_microstructure": 343062,
+      "bad_data": 398,
+      "review_no_1m_reference": 962,
+      "review_1m_reference_alignment": 490,
+      "good": 8
+    },
+    "2025": {
+      "review": 234503,
+      "reference_scale_mismatch": 89025,
+      "review_microstructure": 360161,
+      "bad_data": 592,
+      "review_no_1m_reference": 1491,
+      "review_1m_reference_alignment": 519,
+      "good": 16
+    },
+    "2026": {
+      "review": 43715,
+      "reference_scale_mismatch": 7283,
+      "review_microstructure": 68804,
+      "bad_data": 65,
+      "review_no_1m_reference": 243,
+      "review_1m_reference_alignment": 71,
+      "good": 0
+    }
+  },
+  "scale_bucket_by_label": {
+    "review": {
+      ">1x_other": 99,
+      "nan": 145645,
+      "near_0.6667x": 76,
+      "near_0.8x": 175,
+      "near_0.9091x": 984,
+      "near_1.1111x": 2470,
+      "near_1.25x": 733,
+      "near_1.5x": 288,
+      "near_1x": 6848,
+      "~0.9091x": 852,
+      "~1.1111x": 2284,
+      "~1.25x": 561,
+      "~1.5x": 144,
+      "~1x": 4689724,
+      "<1x_other": 63,
+      "near_2x": 57,
+      "~2x": 22,
+      "~0.8x": 98,
+      "near_3x": 6,
+      "near_0.3333x": 8,
+      "~0.25x": 2,
+      "near_0.5x": 15,
+      "near_6x": 1,
+      "near_10x": 3,
+      "~0.6667x": 25,
+      "~10x": 4,
+      "~4x": 2,
+      "~0.1x": 2,
+      "~0.5x": 7,
+      "near_5x": 2,
+      "near_0.2x": 1,
+      "~0.3333x": 3,
+      "near_0.1x": 1,
+      "near_20x": 1,
+      "~15x": 1,
+      "~100x": 2,
+      "~3x": 1,
+      "~0.2x": 1
+    },
+    "reference_scale_mismatch": {
+      ">1x_other": 812171,
+      "near_0.6667x": 6121,
+      "near_0.9091x": 15737,
+      "near_1.1111x": 492,
+      "near_10000x": 4083,
+      "near_1000x": 3284,
+      "near_100x": 2901,
+      "near_10x": 15487,
+      "near_12x": 19062,
+      "near_150x": 10475,
+      "near_15x": 27053,
+      "near_1x": 4915,
+      "near_20x": 14180,
+      "near_2x": 1168,
+      "near_5x": 1316,
+      "near_6x": 6718,
+      "~0.6667x": 35960,
+      "~0.9091x": 20687,
+      "~1.1111x": 463,
+      "~1.25x": 4080,
+      "~10000x": 2384,
+      "~100x": 36519,
+      "~10x": 349995,
+      "~12x": 61331,
+      "~150x": 11319,
+      "~15x": 136173,
+      "~1x": 140406,
+      "~20x": 196902,
+      "~5x": 70769,
+      "~6x": 39841,
+      "near_1.25x": 135,
+      "near_1.5x": 86,
+      "near_300x": 662,
+      "~1000x": 17276,
+      "near_0.5x": 1433,
+      "near_30000x": 3891,
+      "near_4x": 1414,
+      "~0.5x": 94151,
+      "~2x": 21364,
+      "~300x": 18342,
+      "~4x": 76543,
+      "<1x_other": 21101,
+      "~30000x": 1299,
+      "near_0.25x": 1710,
+      "near_0.8x": 20790,
+      "near_3x": 94,
+      "~0.25x": 14598,
+      "~0.3333x": 11656,
+      "~0.8x": 11777,
+      "~1.5x": 6508,
+      "~3x": 31713,
+      "near_5000x": 97,
+      "~5000x": 7088,
+      "~0.2x": 1590,
+      "near_0.3333x": 739,
+      "near_0.1x": 6,
+      "near_0.2x": 6,
+      "~0.1x": 1
+    },
+    "review_microstructure": {
+      "nan": 2650,
+      "near_0.6667x": 15,
+      "near_0.9091x": 335,
+      "near_1.1111x": 737,
+      "near_1.25x": 256,
+      "near_1.5x": 120,
+      "near_1x": 2225,
+      "near_2x": 22,
+      "~0.5x": 3,
+      "~0.8x": 39,
+      "~0.9091x": 311,
+      "~1.1111x": 728,
+      "~1.25x": 193,
+      "~1x": 2122910,
+      "~2x": 13,
+      ">1x_other": 65,
+      "near_0.8x": 62,
+      "~0.6667x": 14,
+      "near_0.1x": 1,
+      "~1.5x": 52,
+      "near_0.5x": 4,
+      "~3x": 1,
+      "<1x_other": 11,
+      "near_1000x": 1,
+      "near_0.3333x": 2,
+      "~0.2x": 2,
+      "~0.1x": 1,
+      "~0.3333x": 1,
+      "~10x": 1,
+      "near_15x": 1,
+      "near_4x": 1,
+      "near_5x": 1,
+      "near_6x": 1,
+      "near_10x": 1,
+      "near_100x": 1
+    },
+    "bad_data": {
+      ">1x_other": 12,
+      "~1x": 11407,
+      "near_0.8x": 5,
+      "near_0.9091x": 27,
+      "near_0.2x": 2,
+      "<1x_other": 31,
+      "nan": 4247,
+      "near_1x": 56,
+      "~0.9091x": 22,
+      "near_0.25x": 1,
+      "near_1.1111x": 15,
+      "~1.1111x": 17,
+      "near_1.25x": 6,
+      "~0.25x": 1,
+      "~0.8x": 2,
+      "~1.25x": 4,
+      "near_0.3333x": 3,
+      "near_1.5x": 1,
+      "near_0.6667x": 4,
+      "near_0.5x": 3,
+      "near_5x": 1,
+      "~1.5x": 1,
+      "~0.3333x": 1
+    },
+    "review_no_1m_reference": {
+      "~1x": 8088,
+      "nan": 3
+    },
+    "review_1m_reference_alignment": {
+      "~1x": 4992
+    },
+    "good": {
+      "~1x": 105,
+      "near_1x": 1
+    }
+  },
+  "outside_daily_bins": {
+    "review": {
+      "0": 3503678,
+      "(0,1]": 947327,
+      "(1,5]": 276540,
+      "(5,20]": 123540,
+      "(20,100)": 126,
+      "100": 0
+    },
+    "reference_scale_mismatch": {
+      "0": 521,
+      "(0,1]": 10209,
+      "(1,5]": 19403,
+      "(5,20]": 24116,
+      "(20,100)": 91231,
+      "100": 2272582
+    },
+    "review_microstructure": {
+      "0": 368846,
+      "(0,1]": 847820,
+      "(1,5]": 420965,
+      "(5,20]": 282574,
+      "(20,100)": 210400,
+      "100": 176
+    },
+    "bad_data": {
+      "0": 759,
+      "(0,1]": 501,
+      "(1,5]": 790,
+      "(5,20]": 3021,
+      "(20,100)": 5091,
+      "100": 5707
+    },
+    "review_no_1m_reference": {
+      "0": 0,
+      "(0,1]": 0,
+      "(1,5]": 0,
+      "(5,20]": 0,
+      "(20,100)": 2098,
+      "100": 5993
+    },
+    "review_1m_reference_alignment": {
+      "0": 1818,
+      "(0,1]": 1433,
+      "(1,5]": 1512,
+      "(5,20]": 215,
+      "(20,100)": 14,
+      "100": 0
+    },
+    "good": {
+      "0": 100,
+      "(0,1]": 6,
+      "(1,5]": 0,
+      "(5,20]": 0,
+      "(20,100)": 0,
+      "100": 0
+    }
+  },
+  "outside_1m_bins": {
+    "review": {
+      "0": 1380069,
+      "(0,1]": 354138,
+      "(1,5]": 775152,
+      "(5,20]": 1249800,
+      "(20,100)": 2094,
+      "100": 0
+    },
+    "reference_scale_mismatch": {
+      "0": 28310,
+      "(0,1]": 3555,
+      "(1,5]": 2767,
+      "(5,20]": 9480,
+      "(20,100)": 86482,
+      "100": 1827528
+    },
+    "review_microstructure": {
+      "0": 125014,
+      "(0,1]": 548,
+      "(1,5]": 17725,
+      "(5,20]": 729600,
+      "(20,100)": 861688,
+      "100": 994
+    },
+    "bad_data": {
+      "0": 1625,
+      "(0,1]": 17,
+      "(1,5]": 639,
+      "(5,20]": 1619,
+      "(20,100)": 3690,
+      "100": 4910
+    },
+    "review_no_1m_reference": {
+      "0": 0,
+      "(0,1]": 0,
+      "(1,5]": 0,
+      "(5,20]": 0,
+      "(20,100)": 0,
+      "100": 0
+    },
+    "review_1m_reference_alignment": {
+      "0": 0,
+      "(0,1]": 0,
+      "(1,5]": 0,
+      "(5,20]": 6,
+      "(20,100)": 3468,
+      "100": 1518
+    },
+    "good": {
+      "0": 97,
+      "(0,1]": 9,
+      "(1,5]": 0,
+      "(5,20]": 0,
+      "(20,100)": 0,
+      "100": 0
+    }
+  },
+  "duplicate_bins": {
+    "review": {
+      "0": 2035071,
+      "(0,1]": 550395,
+      "(1,5]": 870077,
+      "(5,10]": 538598,
+      ">10": 857070
+    },
+    "reference_scale_mismatch": {
+      "0": 999884,
+      "(0,1]": 368295,
+      "(1,5]": 426520,
+      "(5,10]": 214731,
+      ">10": 408632
+    },
+    "review_microstructure": {
+      "0": 973459,
+      "(0,1]": 698840,
+      "(1,5]": 438683,
+      "(5,10]": 14342,
+      ">10": 5457
+    },
+    "bad_data": {
+      "0": 8868,
+      "(0,1]": 1178,
+      "(1,5]": 1908,
+      "(5,10]": 1780,
+      ">10": 2135
+    },
+    "review_no_1m_reference": {
+      "0": 7978,
+      "(0,1]": 19,
+      "(1,5]": 55,
+      "(5,10]": 17,
+      ">10": 22
+    },
+    "review_1m_reference_alignment": {
+      "0": 2533,
+      "(0,1]": 1007,
+      "(1,5]": 963,
+      "(5,10]": 326,
+      ">10": 163
+    },
+    "good": {
+      "0": 106,
+      "(0,1]": 0,
+      "(1,5]": 0,
+      "(5,10]": 0,
+      ">10": 0
+    }
+  },
+  "odd_lot_bins": {
+    "review": {
+      "0": 1624753,
+      "(0,5]": 222397,
+      "(5,25]": 840491,
+      "(25,50]": 1422591,
+      ">50": 740979
+    },
+    "reference_scale_mismatch": {
+      "0": 688333,
+      "(0,5]": 97633,
+      "(5,25]": 499054,
+      "(25,50]": 632034,
+      ">50": 501008
+    },
+    "review_microstructure": {
+      "0": 0,
+      "(0,5]": 0,
+      "(5,25]": 14502,
+      "(25,50]": 105151,
+      ">50": 2011128
+    },
+    "bad_data": {
+      "0": 5453,
+      "(0,5]": 1075,
+      "(5,25]": 2469,
+      "(25,50]": 3636,
+      ">50": 3236
+    },
+    "review_no_1m_reference": {
+      "0": 9,
+      "(0,5]": 0,
+      "(5,25]": 0,
+      "(25,50]": 149,
+      ">50": 7933
+    },
+    "review_1m_reference_alignment": {
+      "0": 519,
+      "(0,5]": 119,
+      "(5,25]": 1100,
+      "(25,50]": 2559,
+      ">50": 695
+    },
+    "good": {
+      "0": 0,
+      "(0,5]": 1,
+      "(5,25]": 4,
+      "(25,50]": 2,
+      ">50": 99
+    }
+  },
+  "has_1m_reference": {
+    "review": {
+      "with_1m": 4708882,
+      "without_1m": 142329
+    },
+    "reference_scale_mismatch": {
+      "with_1m": 2413502,
+      "without_1m": 4560
+    },
+    "review_microstructure": {
+      "with_1m": 2128361,
+      "without_1m": 2420
+    },
+    "bad_data": {
+      "with_1m": 15833,
+      "without_1m": 36
+    },
+    "review_no_1m_reference": {
+      "with_1m": 0,
+      "without_1m": 8091
+    },
+    "review_1m_reference_alignment": {
+      "with_1m": 4992,
+      "without_1m": 0
+    },
+    "good": {
+      "with_1m": 106,
+      "without_1m": 0
+    }
+  },
+  "signature_counts": {
+    "review": {
+      "trade_price_outside_daily_range": 293000,
+      "negative_or_zero_size_rows": 98679,
+      "duplicate_excess_ratio_gt_hard_cap": 538266,
+      "duplicate_exact_trade_rows_present": 1631431,
+      "trade_price_outside_1m_range": 1225325,
+      "off_session_trades_present": 1580549,
+      "rows_lt_10": 413174
+    },
+    "reference_scale_mismatch": {
+      "trade_price_outside_daily_range": 2064265,
+      "negative_or_zero_size_rows": 45131,
+      "duplicate_excess_ratio_gt_hard_cap": 269614,
+      "duplicate_exact_trade_rows_present": 991681,
+      "trade_price_outside_1m_range": 2050814,
+      "off_session_trades_present": 800326,
+      "rows_lt_10": 114359
+    },
+    "review_microstructure": {
+      "trade_price_outside_daily_range": 576774,
+      "negative_or_zero_size_rows": 19999,
+      "duplicate_excess_ratio_gt_hard_cap": 16954,
+      "duplicate_exact_trade_rows_present": 1456022,
+      "trade_price_outside_1m_range": 1685448,
+      "off_session_trades_present": 730390,
+      "rows_lt_10": 89277
+    },
+    "bad_data": {
+      "trade_price_outside_daily_range": 9606,
+      "negative_or_zero_size_rows": 695,
+      "duplicate_excess_ratio_gt_hard_cap": 1329,
+      "duplicate_exact_trade_rows_present": 3734,
+      "trade_price_outside_1m_range": 14743,
+      "off_session_trades_present": 4789,
+      "rows_lt_10": 2168
+    },
+    "review_no_1m_reference": {
+      "trade_price_outside_daily_range": 3525,
+      "negative_or_zero_size_rows": 79,
+      "duplicate_excess_ratio_gt_hard_cap": 527,
+      "duplicate_exact_trade_rows_present": 370,
+      "trade_price_outside_1m_range": 0,
+      "off_session_trades_present": 1458,
+      "rows_lt_10": 5482
+    },
+    "review_1m_reference_alignment": {
+      "trade_price_outside_daily_range": 583,
+      "negative_or_zero_size_rows": 34,
+      "duplicate_excess_ratio_gt_hard_cap": 89,
+      "duplicate_exact_trade_rows_present": 2433,
+      "trade_price_outside_1m_range": 3478,
+      "off_session_trades_present": 1837,
+      "rows_lt_10": 91
+    },
+    "good": {
+      "trade_price_outside_daily_range": 0,
+      "negative_or_zero_size_rows": 0,
+      "duplicate_excess_ratio_gt_hard_cap": 1,
+      "duplicate_exact_trade_rows_present": 10,
+      "trade_price_outside_1m_range": 14,
+      "off_session_trades_present": 18,
+      "rows_lt_10": 70
+    }
+  },
+  "bad_data_subfamilies": {
+    "colapso_escala_rango": 8547,
+    "integridad_estructural": 456,
+    "mixto_estructural_rango": 1522,
+    "conflicto_ralo_o_sparse": 5344,
+    "conflicto_rango_local": 0
+  },
+  "review_microstructure_textures": {
+    "odd_lot_dominante": 2116279,
+    "duplicacion_textura": 1903,
+    "conflicto_fino_1m": 988,
+    "sparse_o_ralo": 11611,
+    "mixto_microestructura": 0
+  },
+  "reference_scale_mismatch_buckets": {
+    ">1x_other": 812171,
+    "~10x": 349995,
+    "near_15x": 27053,
+    "~20x": 196902,
+    "~1x": 140406,
+    "~0.6667x": 35960,
+    "~1.25x": 4080,
+    "~5x": 70769,
+    "~100x": 36519,
+    "~12x": 61331,
+    "~15x": 136173,
+    "near_10x": 15487,
+    "near_10000x": 4083,
+    "near_100x": 2901,
+    "~150x": 11319,
+    "near_20x": 14180,
+    "near_12x": 19062,
+    "near_5x": 1316,
+    "near_1x": 4915,
+    "near_6x": 6718,
+    "~1.1111x": 463,
+    "~10000x": 2384,
+    "near_1000x": 3284,
+    "near_1.1111x": 492,
+    "near_0.9091x": 15737,
+    "~0.9091x": 20687,
+    "near_0.6667x": 6121,
+    "~6x": 39841,
+    "near_150x": 10475,
+    "near_2x": 1168,
+    "~1000x": 17276,
+    "near_1.25x": 135,
+    "near_300x": 662,
+    "near_1.5x": 86,
+    "~4x": 76543,
+    "~2x": 21364,
+    "~0.5x": 94151,
+    "near_30000x": 3891,
+    "near_4x": 1414,
+    "~300x": 18342,
+    "near_0.5x": 1433,
+    "~30000x": 1299,
+    "<1x_other": 21101,
+    "~1.5x": 6508,
+    "near_0.25x": 1710,
+    "~3x": 31713,
+    "near_3x": 94,
+    "~0.3333x": 11656,
+    "~0.25x": 14598,
+    "near_0.8x": 20790,
+    "~0.8x": 11777,
+    "~5000x": 7088,
+    "near_5000x": 97,
+    "~0.2x": 1590,
+    "near_0.3333x": 739,
+    "near_0.1x": 6,
+    "near_0.2x": 6,
+    "~0.1x": 1
+  },
+  "review_rehab_categories": {
+    "strict_recoverable": 3327955,
+    "extended_only": 177335,
+    "near_1x_but_not_recoverable": 1191282,
+    "not_near_1x": 154639
+  },
+  "review_rehabilitation": {
+    "review_total": 4851211,
+    "strict": 3327955,
+    "extended": 3505290
+  }
+}

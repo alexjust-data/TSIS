@@ -1,0 +1,2 @@
+date,o,h,l,c,vw,v,n,vw_outside_range_abs,vw_outside_range_pct_of_span,invalid_price_flag,hard_invalid_flag
+2016-02-23,180000000000.0,180000000000.0,160000000000.0,165000000000.0,141906000000.0,7e-06,5030,18094000000.0,90.47,False,False

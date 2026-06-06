@@ -1,0 +1,24 @@
+dataset_id: intraday_regime_features_v0_1
+dataset_type: derived_intraday_feature_layer
+active: false
+promotion_state: planned_contract_only
+grain:
+  primary: ticker-day
+  future_optional: ticker-minute
+storage_root: E:/TSIS/data/intraday_regime_features
+upstream_sources:
+  - D:/ohlcv_1m
+  - E:/TSIS/data/ohlcv_1m_split_normalized
+semantics:
+  purpose: intraday_regime_context
+  uses_raw_for_intraday_local_state: true
+  uses_split_normalized_for_cross_session_state: true
+  includes_microstructure_fine_features: false
+contracts:
+  consumer_contract: 01_foundations/module_contracts/intraday_regime_features_consumer_contract_v0_1.md
+  variable_taxonomy: 01_foundations/module_contracts/intraday_regime_features_variable_taxonomy_v0_1.md
+  operational_landing: 01_foundations/module_contracts/intraday_regime_features_operational_landing_v0_1.md
+notes:
+  - first intended real consumer of 1m_split_normalized
+  - not a final execution model
+  - not a microstructure simulator

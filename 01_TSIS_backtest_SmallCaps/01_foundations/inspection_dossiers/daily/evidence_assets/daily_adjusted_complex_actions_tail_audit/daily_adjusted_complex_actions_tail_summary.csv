@@ -1,0 +1,17 @@
+metric,value
+candidate_tickers_complex_tail,2736
+candidate_tickers_with_daily_coverage,2736
+ticker_change_rows_total,3037
+ticker_change_rows_within_daily_window,2142
+ticker_change_rows_outside_daily_window,895
+ticker_change_tickers_within_daily_window,2072
+non_cd_dividend_rows_total,361
+non_cd_dividend_rows_within_daily_window,331
+non_cd_dividend_rows_outside_daily_window,30
+non_cd_dividend_tickers_within_daily_window,184
+ticker_event_rows_total,3037
+ticker_event_ticker_change_rows,3037
+dividend_rows_total,46118
+dividend_cd_rows,45757
+dividend_non_cd_rows,361
+split_rows_total,3335

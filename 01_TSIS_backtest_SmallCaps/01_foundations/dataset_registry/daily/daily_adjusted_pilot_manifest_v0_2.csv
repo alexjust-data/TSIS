@@ -1,0 +1,11 @@
+ticker,pilot_role,daily_present,split_rows,dividend_rows,expected_semantic_signal,notes
+SGC,reverse_split_plus_dividends,True,1,70,"split factor and dividend factor both active","validated mixed case with active split and active dividend chain in daily range"
+ABEO,reverse_split_only,True,1,0,"split factor active, dividend factor neutral","validated pure reverse split case"
+SELF,dividends_only,True,0,59,"split factor neutral, dividend factor active","validated dividend-only case"
+BBW,dividends_only,True,0,11,"split factor neutral, dividend factor active","validated long-range dividend-only case"
+ABIO,multi_reverse_split_plus_special_dividend,True,5,1,"multiple split events and one non-trivial dividend event","validated hard mixed case with very strong split activity"
+CASS,mixed_split_plus_dividends,True,8,89,"split factor and dividend factor both active","replacement for weak mixed candidate; both chains activate in daily range"
+CVLY,mixed_split_plus_dividends,True,15,86,"split factor and dividend factor both active","replacement for weak mixed candidate; both chains activate in daily range"
+AAME,dividends_only_controlled,True,0,16,"split factor neutral, dividend factor active","validated regular dividend profile"
+ABTX,dividends_only_controlled,True,0,11,"split factor neutral, dividend factor active","validated regular dividend profile"
+A,no_events_control,True,0,0,"both factors remain neutral","validated control case with no spurious adjustment"

@@ -1,0 +1,5 @@
+date,o,h,l,c,vw,v,n,vw_outside_range_abs,vw_outside_range_pct_of_span,invalid_price_flag,hard_invalid_flag
+2024-02-07,0.0,0.0,0.0,0.0,0.0001,109.0,2,0.0001,,True,True
+2024-03-05,0.0,0.001,0.0,0.0,0.0006,2265.0,2,0.0,0.0,True,True
+2024-04-01,0.0002,0.0002,0.0,0.0,0.0001,575.0,2,0.0,0.0,True,True
+2024-04-02,0.0,0.0,0.0,0.0,,100.0,1,,,True,True

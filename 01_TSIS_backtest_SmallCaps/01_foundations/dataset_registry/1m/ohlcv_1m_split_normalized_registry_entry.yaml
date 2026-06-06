@@ -1,0 +1,28 @@
+dataset_id: ohlcv_1m_split_normalized_v0_1
+dataset_type: derived_intraday_minute_bars
+active: false
+promotion_state: planned_contract_only
+canonical_price_view: 1m_split_normalized
+storage_root: E:/TSIS/data/ohlcv_1m_split_normalized
+upstream_sources:
+  - D:/ohlcv_1m
+  - C:/TSIS_Data/data/additional/corporate_actions/splits
+grain:
+  primary: ticker-month
+  logical: ticker-minute
+semantics:
+  preserves_intraday_raw_observation: true
+  applies_split_normalization: true
+  applies_dividend_adjustment: false
+  intended_for_cross_session_comparability: true
+  intended_for_local_execution_truth: false
+schema_contract:
+  path: 01_foundations/contract_registry/dataset_contracts/ohlcv_1m_split_normalized_dataset_contract_v0_1.md
+operational_landing:
+  path: 01_foundations/module_contracts/ohlcv_1m_split_normalized_operational_landing_v0_1.md
+materialization_plan:
+  path: 01_foundations/module_contracts/ohlcv_1m_split_normalized_incremental_materialization_plan_v0_1.md
+notes:
+  - next intraday price-view promotion after daily_adjusted
+  - do not treat as substitute for 1m raw
+  - materialize incrementally and under consumer demand

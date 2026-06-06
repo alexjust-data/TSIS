@@ -1,0 +1,5 @@
+- `decision`: `good`
+- `taxonomy`: `utc_rollover_large_day_clean`
+- `positive_cross_bucket`: `positive_cross_moderate_5to25bps`
+- `lectura`: El caso pertenece a la franja buena de `quotes` porque el libro se mantiene limpio o el residuo observado permanece en una franja leve compatible con consumo principal del bloque.
+- `contexto`: No existe imagen historica de certificacion asociada para este caso concreto.

@@ -1,0 +1,85 @@
+dataset_identity:
+  name: daily_adjusted_v0_1
+  domain: daily
+  logical_version: v0_1
+  contract_type: derived_price_view
+
+status:
+  promotion_state: full_universe_promoted
+  active: true
+  owner: 01_TSIS_backtest_SmallCaps
+
+registry_classification:
+  dataset_family: market_data_derived_view
+  primary_unit: ticker_day_bar
+  evidence_state: full_universe_audited_and_consumed
+
+artifacts:
+  dataset_contract: 01_foundations/contract_registry/dataset_contracts/daily_adjusted_dataset_contract_v0_1.md
+  schema_contract: 01_foundations/canonical_schemas/daily/daily_adjusted_schema_contract.md
+  operational_landing: 01_foundations/module_contracts/daily_adjusted_operational_landing_v0_1.md
+  materializer_script: scripts/materialize_daily_adjusted.py
+
+physical_layout:
+  canonical_root: E:/TSIS/data/ohlcv_daily_adjusted
+  layout_pattern: ticker=<TICKER>/year=<YYYY>/day_aggs_<TICKER>_<YYYY>_adjusted.parquet
+  source_root: D:/ohlcv_daily
+
+corporate_action_sources:
+  splits_root: C:/TSIS_Data/data/additional/corporate_actions/splits
+  dividends_root: C:/TSIS_Data/data/additional/corporate_actions/dividends
+
+allowed_consumers:
+  permitted:
+    - ml_primary
+    - ml_flagged
+    - research_only
+    - backtest_core
+    - backtest_extended
+    - forensic_only
+  restricted:
+    - execution_simulator
+    - rl_allowed
+    - live_downstream_candidate
+
+price_view_semantics:
+  upstream_raw_view: daily_raw
+  split_view: split_normalized
+  canonical_view: adjusted
+  diagnostic_view: adjusted_proxy
+
+promotion_gate:
+  satisfied:
+    - first_real_consumer_connected
+    - multi_ticker_smoke_test_with_real_corporate_actions
+    - stable_manifest_and_provenance_policy
+    - full_universe_physical_materialization
+    - full_universe_aggregate_audit
+
+coverage_snapshot:
+  audited_against: D:/ohlcv_daily
+  canonical_root: E:/TSIS/data/ohlcv_daily_adjusted
+  raw_tickers_with_files: 12230
+  adjusted_tickers_with_files: 12230
+  raw_year_files: 125438
+  adjusted_year_files: 125438
+  missing_outputs: 0
+  extra_adjusted_outputs: 0
+  read_error_files: 0
+  files_missing_required_columns: 0
+  nonpositive_factor_rows: 0
+  bad_price_view_rows: 0
+
+evidence_references:
+  - 01_foundations/inspection_dossiers/daily/daily_adjusted_full_universe_audit_v0_1.md
+  - 01_foundations/inspection_dossiers/daily/evidence_assets/daily_adjusted_full_universe_audit/daily_adjusted_full_universe_summary.csv
+  - 01_foundations/module_contracts/daily_adjusted_full_universe_promotion_plan_v0_1.md
+  - 01_foundations/module_contracts/daily_adjusted_pilot_results_v0_2.md
+  - 01_foundations/module_contracts/daily_return_labels_consumer_contract_v0_1.md
+
+notes:
+  - first official operational landing for the institutional adjusted daily view
+  - full-universe materialization completed and audited against the observed daily raw ticker-year files
+  - promoted as an active operational derived price view on 2026-06-05
+  - this layer is for slow economic truth, not for the core intraday execution view
+  - intraday models crossing split boundaries will still require a later `1m_split_normalized` discipline

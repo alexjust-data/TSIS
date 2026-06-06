@@ -1,20 +1,64 @@
 # Data directories (do not commit)
-fundamentals/
-ohlcv_intraday_1m/
-quotes_*/
-trades_ticks_*/
-additional/
-reference/
-regime_indicators/
-short_data/
-images/
-zz_img_*/
+/data/
+/**/data/
+/fundamentals/
+/ohlcv_intraday_1m/
+/quotes_*/
+/trades_ticks_*/
+/additional/
+/reference/
+/regime_indicators/
+/short_data/
+/images/
+/zz_img_*/
 **/run/
 **/runs/
 **/runtime/
+**/cache/
+**/tmp/
+**/temp/
 *_files_inventory.csv
 *_files_inventory_summary.json
 00_CTO/disenys/design_references/
+
+# Heavy market-data / generated dataset payloads
+# Keep contracts, readouts, manifests and code in Git. Do not commit raw or
+# materialized market-data payloads.
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.arrow
+*.duckdb
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+*.pkl
+*.pickle
+*.joblib
+*.npy
+*.npz
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+*.zst
+*.gz
+*.bz2
+*.xz
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+
+# Small institutional evidence/manifests are allowed explicitly.
+!01_TSIS_backtest_SmallCaps/01_foundations/**/*.csv
+!01_TSIS_backtest_SmallCaps/00_cto/**/*.csv
 
 # Env files
 .env

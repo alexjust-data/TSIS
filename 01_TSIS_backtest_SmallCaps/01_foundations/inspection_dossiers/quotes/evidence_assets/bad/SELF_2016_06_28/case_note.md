@@ -1,0 +1,5 @@
+- `decision`: `bad`
+- `taxonomy`: `high_hard_crossed_10_to_20`
+- `positive_cross_bucket`: `positive_cross_severe_ge25bps`
+- `lectura`: El caso cae en `bad` porque el crossed positivo y su severidad economica siguen siendo demasiado agresivos para uso core.
+- `contexto`: Existe ademas una imagen historica de certificacion con narrativa contextual asociada.

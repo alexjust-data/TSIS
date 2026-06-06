@@ -1,0 +1,5 @@
+- `decision`: `bad`
+- `taxonomy`: `medium_file_threshold_edge_hard_many_crosses`
+- `positive_cross_bucket`: `positive_cross_severe_ge25bps`
+- `lectura`: El caso cae en `bad` porque el crossed positivo y su severidad economica siguen siendo demasiado agresivos para uso core.
+- `contexto`: No existe imagen historica de certificacion asociada para este caso concreto.

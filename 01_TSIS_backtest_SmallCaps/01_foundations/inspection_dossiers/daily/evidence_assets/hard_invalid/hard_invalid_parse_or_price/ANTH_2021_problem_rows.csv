@@ -1,0 +1,2 @@
+date,o,h,l,c,vw,v,n,vw_outside_range_abs,vw_outside_range_pct_of_span,invalid_price_flag,hard_invalid_flag
+2021-12-31,0.0,0.0011,0.0,0.0,0.0005,83845.0,20,0.0,0.0,True,True

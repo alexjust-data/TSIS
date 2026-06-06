@@ -1,0 +1,4 @@
+category,key,rows
+ticker_event_type,ticker_change,3037
+ticker_event_within_daily_window,ticker_change,2142
+non_cd_dividend_type,SC,361
