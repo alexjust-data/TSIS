@@ -1,0 +1,85 @@
+dataset_identity:
+  name: additional_v0_1
+  domain: auxiliary_context
+  logical_version: v0_1
+  contract_type: composite_auxiliary_block
+
+status:
+  promotion_state: accepted_auxiliary_with_subblock_restrictions
+  active: true
+  owner: 01_TSIS_backtest_SmallCaps
+
+registry_classification:
+  dataset_family: polygon_additional_context
+  primary_unit: mixed
+  evidence_state: audited_and_institutionalized_from_historical_additional_closeout
+
+artifacts:
+  dataset_contract: 01_foundations/contract_registry/dataset_contracts/additional_dataset_contract_v0_1.md
+  consumption_policy: 01_foundations/data_consumption_policies/additional_consumption_policy.md
+  evidence_dossier: 01_foundations/inspection_dossiers/additional/additional_institutional_closeout_v0_1.md
+  schema_contracts:
+    - 01_foundations/canonical_schemas/additional/additional_financials_schema_contract.md
+    - 01_foundations/canonical_schemas/additional/additional_corporate_actions_schema_contract.md
+    - 01_foundations/canonical_schemas/additional/additional_economic_schema_contract.md
+    - 01_foundations/canonical_schemas/additional/additional_ipos_schema_contract.md
+    - 01_foundations/canonical_schemas/additional/additional_news_schema_contract.md
+
+physical_layout:
+  canonical_root: E:/TSIS/data/additional
+  source_system: Polygon
+  universe_scope: lt1b_operating_universe
+  universe_tickers: 4824
+  subroots:
+    financials: E:/TSIS/data/additional/financials
+    corporate_actions: E:/TSIS/data/additional/corporate_actions
+    economic: E:/TSIS/data/additional/economic
+    ipos: E:/TSIS/data/additional/ipos
+    news: E:/TSIS/data/additional/news
+
+download_evidence:
+  ticker_based_summary: runs/backtest/additional_downloads/20260405_full_refresh_ticker_based/download_summary.json
+  macro_summary: runs/backtest/additional_downloads/20260405_full_refresh_macro/download_summary.json
+  ticker_based_tasks: 43416
+  ticker_based_ok_tasks: 43416
+  ticker_based_errors: 0
+  macro_tasks: 3
+  macro_ok_tasks: 3
+  macro_errors: 0
+
+coverage_snapshot:
+  audited_against: lt1b_operating_universe
+  universe_tickers: 4824
+  financials_core_status: good
+  ratios_status: review
+  news_status: good_review
+  ipos_status: good_review
+  corporate_actions_status: review_secondary_to_reference
+  economic_status: good_macro_review_ticker_causality
+
+allowed_consumers:
+  permitted:
+    - research_only
+    - backtest_extended
+    - ml_flagged
+    - forensic_only
+  restricted:
+    - backtest_core
+    - ml_primary
+    - execution_simulator
+    - rl_allowed
+    - live_downstream_candidate
+
+evidence_references:
+  - 01_foundations/inspection_dossiers/additional/additional_institutional_closeout_v0_1.md
+  - runs/backtest/additional_audit/20260405_additional_lt1b_coverage/additional_lt1b_coverage_audit_summary.json
+  - runs/backtest/additional_audit/20260405_additional_lt1b_coverage/additional_ticker_datasets_summary.parquet
+  - runs/backtest/additional_audit/20260405_additional_lt1b_coverage/additional_macro_datasets_summary.parquet
+  - 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/additional/04_additional_closeout.md
+
+notes:
+  - additional is preserved for active auxiliary use, not treated as obsolete
+  - it must not be consumed as one uniform dataset
+  - corporate_actions is secondary to reference
+  - financials is scoped to the lt1b additional refresh and must not silently replace the broader financial root
+  - news and ipos are contextual/causal overlays with explicit review boundaries

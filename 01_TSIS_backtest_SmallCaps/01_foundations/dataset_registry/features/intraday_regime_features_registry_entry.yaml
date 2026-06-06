@@ -1,7 +1,8 @@
 dataset_id: intraday_regime_features_v0_1
 dataset_type: derived_intraday_feature_layer
-active: false
-promotion_state: planned_contract_only
+active: true
+promotion_state: pilot_semantic_validation_consumer
+institutional_level: "Nivel 3 - Pilotada"
 grain:
   primary: ticker-day
   future_optional: ticker-minute
@@ -15,10 +16,35 @@ semantics:
   uses_split_normalized_for_cross_session_state: true
   includes_microstructure_fine_features: false
 contracts:
+  dataset_contract: 01_foundations/contract_registry/dataset_contracts/intraday_regime_features_dataset_contract_v0_1.md
+  physical_schema_contract: 01_foundations/canonical_schemas/features/intraday_regime_features_schema_contract.md
+  consumption_policy: 01_foundations/data_consumption_policies/intraday_regime_features_consumption_policy.md
   consumer_contract: 01_foundations/module_contracts/intraday_regime_features_consumer_contract_v0_1.md
   variable_taxonomy: 01_foundations/module_contracts/intraday_regime_features_variable_taxonomy_v0_1.md
   operational_landing: 01_foundations/module_contracts/intraday_regime_features_operational_landing_v0_1.md
+  initial_materialization_results: 01_foundations/module_contracts/intraday_regime_features_initial_materialization_results_v0_1.md
+  semantic_pilot_results: 01_foundations/module_contracts/intraday_regime_features_semantic_pilot_results_v0_1.md
+  semantic_pilot_readout: 01_foundations/inspection_dossiers/intraday_regime_features/intraday_regime_features_semantic_pilot_readout_v0_1.md
+  lt1b_promotion_plan: 01_foundations/module_contracts/intraday_regime_features_lt1b_promotion_plan_v0_1.md
+coverage_snapshot:
+  physical_root: E:/TSIS/data/intraday_regime_features
+  observed_tickers:
+    - BNGO
+    - BXRX
+    - CEI
+    - COSM
+    - EFSH
+    - LIVE
+    - PD
+    - SAVA
+  observed_output_parquets: 8
+  observed_ticker_day_rows: 243
+  summary_file: E:/TSIS/data/intraday_regime_features/_intraday_regime_features_materialization_summary.csv
 notes:
   - first intended real consumer of 1m_split_normalized
+  - semantic pilot validates prevention of false split-driven gaps/shocks in cross-session features
+  - not full-universe <1B>
+  - future <1B> promotion must use a separate root and explicit leakage policy
+  - current role is architectural validation and future feature/state template, not a blocking dependency for base backtesting
   - not a final execution model
   - not a microstructure simulator

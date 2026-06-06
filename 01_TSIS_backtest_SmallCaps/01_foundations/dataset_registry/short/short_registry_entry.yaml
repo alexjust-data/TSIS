@@ -1,0 +1,73 @@
+dataset_identity:
+  name: short_v0_1
+  domain: short_side_context
+  logical_version: v0_1
+  contract_type: auxiliary_event_context_dataset
+
+status:
+  promotion_state: accepted_with_certification_restrictions
+  active: true
+  owner: 01_TSIS_backtest_SmallCaps
+
+registry_classification:
+  dataset_family: short_data
+  primary_unit: mixed_ticker_date_and_ticker_settlement_date
+  evidence_state: downloaded_audited_certified_mixed_with_finra_review_baseline
+
+artifacts:
+  dataset_contract: 01_foundations/contract_registry/dataset_contracts/short_dataset_contract_v0_1.md
+  consumption_policy: 01_foundations/data_consumption_policies/short_consumption_policy.md
+  evidence_dossier: 01_foundations/inspection_dossiers/short/short_institutional_closeout_v0_1.md
+  schema_contracts:
+    - 01_foundations/canonical_schemas/short/short_interest_schema_contract.md
+    - 01_foundations/canonical_schemas/short/short_volume_schema_contract.md
+
+physical_layout:
+  canonical_root: E:/TSIS/data/short
+  short_interest_root: E:/TSIS/data/short/short_interest
+  short_volume_root: E:/TSIS/data/short/short_volume
+  review_root: E:/TSIS/data/short_review/finra_short
+
+download_evidence:
+  summary: runs/backtest/short_downloads/lt1b_short_refresh/download_summary.json
+  universe_tickers: 4824
+  submitted_tasks: 9648
+  ok_tasks: 9648
+  errors: 0
+  short_interest_rows: 520048
+  short_volume_rows: 1430506
+
+certification_snapshot:
+  summary: runs/backtest/short_data_certification/lt1b_short_reference_certification_v2/short_data_certification_summary.json
+  certified_ok: 1130
+  certified_ok_with_limited_window: 738
+  review_ticker_reuse: 761
+  review_reference_conflict: 2195
+
+finra_review_snapshot:
+  short_interest_rows: 505745
+  short_interest_tickers: 4687
+  short_interest_date_min: 2017-12-29
+  short_interest_date_max: 2026-04-15
+  short_volume_rows: 4689038
+  short_volume_tickers: 4623
+  short_volume_date_min: 2018-08-01
+  short_volume_date_max: 2026-04-29
+
+allowed_consumers:
+  permitted:
+    - research_only
+    - backtest_extended
+    - ml_flagged
+    - forensic_only
+  restricted:
+    - backtest_core
+    - ml_primary
+    - execution_simulator
+    - rl_allowed
+    - live_downstream_candidate
+
+notes:
+  - short_review is provenance and official/free FINRA baseline, not a primary price view
+  - local short has complete files for the lt1b universe but mixed certification status
+  - no contract currently certifies 2005-2026 full-history short completeness

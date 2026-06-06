@@ -141,7 +141,7 @@ La auditoria full-universe actualizada fija:
 - `scripts/materialize_1m_split_normalized.py`
 - `01_foundations/module_contracts/ohlcv_1m_split_normalized_semantic_pilot_v0_1.md`
 - `01_foundations/module_contracts/ohlcv_1m_split_normalized_pilot_manifest_v0_2.md`
-- `01_foundations/dataset_registry/1m/ohlcv_1m_split_normalized_pilot_manifest_v0_2.csv`
+- `01_foundations/dataset_registry/ohlcv_1m/ohlcv_1m_split_normalized_pilot_manifest_v0_2.csv`
 - `E:\TSIS\data\ohlcv_1m_split_normalized`
 - `01_foundations/module_contracts/ohlcv_1m_split_normalized_pilot_results_v0_1.md`
 - `01_foundations/inspection_dossiers/1m_split_normalized/ohlcv_1m_split_normalized_pilot_readout_v0_1.md`

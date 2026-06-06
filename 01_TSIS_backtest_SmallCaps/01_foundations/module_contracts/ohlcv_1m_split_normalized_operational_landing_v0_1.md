@@ -72,7 +72,7 @@ El piloto ya fue materializado en la ruta operativa propuesta:
 
 Base usada:
 
-- `01_foundations/dataset_registry/1m/ohlcv_1m_split_normalized_pilot_manifest_v0_2.csv`
+- `01_foundations/dataset_registry/ohlcv_1m/ohlcv_1m_split_normalized_pilot_manifest_v0_2.csv`
 
 Resultados:
 

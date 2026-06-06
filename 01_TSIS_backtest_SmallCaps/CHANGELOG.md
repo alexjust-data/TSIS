@@ -159,7 +159,7 @@ are now preserved as deferred backlog in the correct place, without polluting th
 - `01_foundations/module_contracts/daily_contracts_index.md`
 - `01_foundations/module_contracts/quotes_contracts_index.md`
 - `01_foundations/module_contracts/trades_contracts_index.md`
-- `01_foundations/module_contracts/1m_contracts_index.md`
+- `01_foundations/module_contracts/ohlcv_1m_contracts_index.md`
 - `01_foundations/module_contracts/transversal_contracts_index.md`
 
 ### Notes
@@ -1154,7 +1154,7 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
   - `01_foundations/contract_registry/dataset_contracts/ohlcv_1m_split_normalized_dataset_contract_v0_1.md`
   - `01_foundations/module_contracts/ohlcv_1m_split_normalized_operational_landing_v0_1.md`
   - `01_foundations/module_contracts/ohlcv_1m_split_normalized_incremental_materialization_plan_v0_1.md`
-  - `01_foundations/dataset_registry/1m/ohlcv_1m_split_normalized_registry_entry.yaml`
+  - `01_foundations/dataset_registry/ohlcv_1m/ohlcv_1m_split_normalized_registry_entry.yaml`
 - queda fijado que:
   - esta capa corrige escala mecanica por split entre sesiones;
   - no sustituye a `1m raw`;
@@ -1169,7 +1169,7 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
 - la deuda pendiente ya no es semantica sino promocion operativa disciplinada.
 - se anadieron tambien:
   - `01_foundations/module_contracts/ohlcv_1m_split_normalized_semantic_pilot_v0_1.md`
-  - `01_foundations/dataset_registry/1m/ohlcv_1m_split_normalized_pilot_manifest_v0_1.md`
+  - `01_foundations/dataset_registry/ohlcv_1m/ohlcv_1m_split_normalized_pilot_manifest_v0_1.md`
 - queda fijado que el siguiente paso de `1m_split_normalized` no es full-universe inmediato, sino:
   - piloto semantico con `forward split`, `reverse split` y controles;
   - seleccionado por cobertura real en `D:\ohlcv_1m`;
@@ -1187,7 +1187,7 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
   - `2` `control`
 - artefactos creados:
   - `01_foundations/module_contracts/ohlcv_1m_split_normalized_pilot_manifest_v0_2.md`
-  - `01_foundations/dataset_registry/1m/ohlcv_1m_split_normalized_pilot_manifest_v0_2.csv`
+  - `01_foundations/dataset_registry/ohlcv_1m/ohlcv_1m_split_normalized_pilot_manifest_v0_2.csv`
 - casos seleccionados:
   - `BXRX 2022-12`
   - `COSM 2022-12`
@@ -1253,7 +1253,7 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
   - `01_foundations/module_contracts/daily_contracts_index.md`
   - `01_foundations/module_contracts/quotes_contracts_index.md`
   - `01_foundations/module_contracts/trades_contracts_index.md`
-  - `01_foundations/module_contracts/1m_contracts_index.md`
+  - `01_foundations/module_contracts/ohlcv_1m_contracts_index.md`
   - `01_foundations/module_contracts/transversal_contracts_index.md`
 - se crearon, todavia vacias, las carpetas destino de una futura migracion fisica:
   - `module_contracts/daily/`
@@ -1541,3 +1541,175 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
   - `daily_adjusted` pasa de `Nivel 5 - Consumida` a `Nivel 6 - Promovida`;
   - queda activa como vista derivada diaria full-universe para verdad economica lenta;
   - no habilita automaticamente ejecucion, RL ni uso live.
+
+### 2026-06-06 | additional | institucionalizacion del bloque auxiliar `<1B>`
+
+- se migra a `01_foundations` la lectura institucional del bloque `additional`, preservando la evidencia historica de `01_research`;
+- se crean contratos canonicos para:
+  - `01_foundations/canonical_schemas/additional/additional_financials_schema_contract.md`
+  - `01_foundations/canonical_schemas/additional/additional_corporate_actions_schema_contract.md`
+  - `01_foundations/canonical_schemas/additional/additional_economic_schema_contract.md`
+  - `01_foundations/canonical_schemas/additional/additional_ipos_schema_contract.md`
+  - `01_foundations/canonical_schemas/additional/additional_news_schema_contract.md`
+- se crea el dossier:
+  - `01_foundations/inspection_dossiers/additional/additional_institutional_closeout_v0_1.md`
+- se crea la policy:
+  - `01_foundations/data_consumption_policies/additional_consumption_policy.md`
+- se registra el contrato:
+  - `01_foundations/contract_registry/dataset_contracts/additional_dataset_contract_v0_1.md`
+  - `01_foundations/dataset_registry/additional/additional_registry_entry.yaml`
+- estado institucional fijado:
+  - `additional` no queda obsoleto;
+  - queda aceptado como bloque auxiliar compuesto para el universo `<1B>`;
+  - `financials_core` y `economic` quedan como partes fuertes;
+  - `news` e `ipos` quedan como overlays causales/contextuales con frontera `review`;
+  - `corporate_actions_additional` queda secundario frente a `reference`;
+  - `ratios` queda en `review` por cobertura efectiva baja.
+
+### 2026-06-06 | short | institucionalizacion de `short` y `short_review`
+
+- se institucionaliza la familia `short` como dataset auxiliar de contexto short-side, no como capa core limpia universal;
+- se crean:
+  - `01_foundations/canonical_schemas/short/short_interest_schema_contract.md`
+  - `01_foundations/canonical_schemas/short/short_volume_schema_contract.md`
+  - `01_foundations/inspection_dossiers/short/short_institutional_closeout_v0_1.md`
+  - `01_foundations/data_consumption_policies/short_consumption_policy.md`
+  - `01_foundations/contract_registry/dataset_contracts/short_dataset_contract_v0_1.md`
+  - `01_foundations/dataset_registry/short/short_registry_entry.yaml`
+- se fija que `E:\TSIS\data\short` es la raiz operativa actual:
+  - `short_interest`: 4824 files presentes, 520048 filas;
+  - `short_volume`: 4824 files presentes, 1430506 filas.
+- se fija que `E:\TSIS\data\short_review\finra_short` es baseline official/free FINRA y provenance:
+  - `short_interest`: 505745 filas, 4687 tickers, `2017-12-29 -> 2026-04-15`;
+  - `short_volume`: 4689038 filas, 4623 tickers, `2018-08-01 -> 2026-04-29`.
+- se preserva la decision de certificacion v2:
+  - `CERTIFIED_OK = 1130`;
+  - `CERTIFIED_OK_WITH_LIMITED_WINDOW = 738`;
+  - `REVIEW_TICKER_REUSE = 761`;
+  - `REVIEW_REFERENCE_CONFLICT = 2195`.
+- estado institucional fijado:
+  - `short` es util y debe preservarse;
+  - `short_review` no es obsoleto, es evidencia/provenance y baseline FINRA;
+  - no existe promocion full-history `2005-2026` limpia con fuentes official/free;
+  - cualquier consumo debe preservar estado de certificacion, ventana valida y scope de fuente.
+
+### 2026-06-06 | 1m | schema fisico y registry de `ohlcv_1m_split_normalized`
+
+- se completa la documentacion fisica de la capa piloto `ohlcv_1m_split_normalized`:
+  - `01_foundations/canonical_schemas/ohlcv_1m/ohlcv_1m_split_normalized_schema_contract.md`
+- se actualiza:
+  - `01_foundations/dataset_registry/ohlcv_1m/ohlcv_1m_split_normalized_registry_entry.yaml`
+- estado institucional fijado:
+  - la capa ya no queda como `planned_contract_only`;
+  - queda como `pilot_materialized_semantically_validated`;
+  - la raiz operativa es `E:\TSIS\data\ohlcv_1m_split_normalized`;
+  - existen `10` parquets piloto y un summary fisico;
+  - no es materializacion full-universe ni sustituto de `1m raw`;
+  - su uso correcto es comparabilidad intradia entre sesiones cuando hay frontera de split.
+### 2026-06-06 | features | `intraday_regime_features` institucionalizada como consumidor piloto validado
+
+- se completa la documentacion institucional minima de `intraday_regime_features_v0_1`:
+  - `01_foundations/canonical_schemas/features/intraday_regime_features_schema_contract.md`
+  - `01_foundations/data_consumption_policies/intraday_regime_features_consumption_policy.md`
+  - `01_foundations/contract_registry/dataset_contracts/intraday_regime_features_dataset_contract_v0_1.md`
+- se actualiza:
+  - `01_foundations/dataset_registry/features/intraday_regime_features_registry_entry.yaml`
+- estado institucional fijado:
+  - pasa de `planned_contract_only` a `pilot_semantic_validation_consumer`;
+  - queda como `Nivel 3 - Pilotada`;
+  - la raiz operativa es `E:\TSIS\data\intraday_regime_features`;
+  - existen `8` parquets piloto y `243` filas `ticker-day` observadas;
+  - no es full-universe `<1B>` ni feature layer productiva global;
+  - su rol actual es demostrar que las features cross-session deben usar `1m_split_normalized` para no aprender falsos gaps/shocks de splits.
+- se anade el plan de promocion disciplinada a `<1B>`:
+  - `01_foundations/module_contracts/intraday_regime_features_lt1b_promotion_plan_v0_1.md`
+- queda fijado que la futura ruta `<1B>` debe ser separada del piloto y no sobrescribir:
+  - `E:\TSIS\data\intraday_regime_features`
+- se explicita la lectura de fase:
+  - hoy es validacion arquitectonica y consumidor piloto de normalizacion;
+  - no es feature productiva ni dependencia bloqueante del backtest base;
+  - las preguntas de regimen que permite formular pertenecen a una fase posterior de `features/states`.
+### 2026-06-06 | daily | `daily_return_labels` documentado como target layer piloto
+
+- se completa la documentacion institucional minima de `daily_return_labels_v0_1`:
+  - `01_foundations/canonical_schemas/daily/daily_return_labels_schema_contract.md`
+  - `01_foundations/data_consumption_policies/daily_return_labels_consumption_policy.md`
+  - `01_foundations/contract_registry/dataset_contracts/daily_return_labels_dataset_contract_v0_1.md`
+  - `01_foundations/module_contracts/daily_return_labels_lt1b_promotion_plan_v0_1.md`
+- se actualiza:
+  - `01_foundations/dataset_registry/daily/daily_return_labels_registry_entry.yaml`
+- estado institucional fijado:
+  - la capa sigue como `pilot_materialization` / `pilot_target_layer`;
+  - la raiz operativa piloto es `E:\TSIS\data\daily_return_labels`;
+  - existen `177` parquets, `10` tickers y `41487` rows observados en summary;
+  - no es full-universe `<1B>`;
+  - `ret_1d`, `ret_3d`, `ret_5d` son targets/outcomes, no features;
+  - la futura promocion `<1B>` debe ir a raiz separada y cerrar coverage + anti-leakage.
+### 2026-06-06 | universes | universo operativo `<1B>` institucionalizado como capa transversal
+
+- se institucionaliza el corte operativo `<1B>` fuera de `reference`, en familia propia `universes`:
+  - `01_foundations/canonical_schemas/universes/lt1b_universe_schema_contract.md`
+  - `01_foundations/data_consumption_policies/lt1b_universe_consumption_policy.md`
+  - `01_foundations/contract_registry/dataset_contracts/lt1b_universe_dataset_contract_v0_1.md`
+  - `01_foundations/dataset_registry/universes/lt1b_universe_registry_entry.yaml`
+- artefacto canónico:
+  - `runs/backtest/market_cap_last_observed_cutoff/20260320_market_cap_last_observed_cutoff/market_cap_cutoff_lt_1b_active_inactive.parquet`
+- cifras fijadas:
+  - `lt1b_tickers = 4824`
+  - `active_lt_1b_last_classifiable = 2476`
+  - `inactive_died_lt_1b = 2348`
+  - `panel_end_date = 2026-03-09`
+- regla institucional:
+  - toda afirmación `<1B>` debe filtrar por `ticker` y por intersección con ventana PTI (`first_seen_date`, `last_observed_date`);
+  - este corte no es `E:\TSIS\data\reference`;
+  - tampoco sustituye un futuro `population_target_pti` diario fully point-in-time.
+
+### 2026-06-06 | ohlcv_1m | `ohlcv_1m_raw` institucionalizado como foundation layer
+
+- se cierra la deuda de homogeneidad documental de `ohlcv_1m_raw`, separandolo explicitamente de `ohlcv_1m_split_normalized`:
+  - `01_foundations/contract_registry/dataset_contracts/ohlcv_1m_raw_dataset_contract_v0_1.md`
+  - `01_foundations/dataset_registry/ohlcv_1m/ohlcv_1m_raw_registry_entry.yaml`
+  - `01_foundations/data_consumption_policies/ohlcv_1m_raw_consumption_policy.md`
+  - `01_foundations/validators/ohlcv_1m/ohlcv_1m_raw_validators.md`
+- se actualiza:
+  - `01_foundations/module_contracts/ohlcv_1m_contracts_index.md`
+- evidencia institucional enlazada:
+  - `01_foundations/inspection_dossiers/minute/raw_1m_lt1b_closeout_recalculation_v0_1.md`
+  - `01_foundations/inspection_dossiers/minute/raw_1m_schema_only_lt1b_inspection_readout_v0_1.md`
+  - `01_foundations/module_contracts/ohlcv_1m_historical_closeout_lt1b_reconciliation_v0_1.md`
+- cifras `<1B>` fijadas para el raw closeout:
+  - `lt1b_tickers_reference = 4824`
+  - `lt1b_current_1m_unique_tickers = 4822`
+  - `lt1b_current_1m_unique_task_keys = 334660`
+  - `good = 46652` (`13.940118%`)
+  - `review = 75245` (`22.484014%`)
+  - `bad = 212763` (`63.575868%`)
+- estado institucional fijado:
+  - `ohlcv_1m_raw` queda como raw foundation layer entendido y documentado;
+  - no queda promovido como capa productiva global limpia;
+  - `bad` queda restringido a uso forense;
+  - `review` queda restringido a exploratorio/diagnostico declarado;
+  - trabajo split-sensitive y features cross-session deben usar `ohlcv_1m_split_normalized`.
+
+### 2026-06-06 | short_review | FINRA baseline/provenance institucionalizado como capa propia
+
+- se separa `short_review` de `short` como capa documental propia, manteniendo su rol de baseline official/free FINRA y provenance:
+  - `01_foundations/canonical_schemas/short_review/finra_short_interest_schema_contract.md`
+  - `01_foundations/canonical_schemas/short_review/finra_short_volume_schema_contract.md`
+  - `01_foundations/canonical_schemas/short_review/finra_short_provenance_schema_contract.md`
+  - `01_foundations/contract_registry/dataset_contracts/short_review_dataset_contract_v0_1.md`
+  - `01_foundations/data_consumption_policies/short_review_consumption_policy.md`
+  - `01_foundations/dataset_registry/short_review/short_review_registry_entry.yaml`
+- se enlaza desde:
+  - `01_foundations/contract_registry/dataset_contracts/short_dataset_contract_v0_1.md`
+  - `01_foundations/data_consumption_policies/short_consumption_policy.md`
+- raiz operativa fijada:
+  - `E:\TSIS\data\short_review\finra_short`
+- artefactos FINRA fijados:
+  - `short_interest_all_biweekly_finra.parquet`: `505745` filas, `4687` tickers, `2017-12-29 -> 2026-04-15`
+  - `short_volume_all_daily_finra.parquet`: `4689038` filas, `4623` tickers, `2018-08-01 -> 2026-04-29`
+- estado institucional fijado:
+  - `short_review` no sustituye silenciosamente a `short`;
+  - no prueba completitud official/free `2005-2026`;
+  - debe usarse para source validation, coverage comparison, forensic review y features declaradas con scope/ventana;
+  - manifests y logs quedan como provenance, no como features de modelo.

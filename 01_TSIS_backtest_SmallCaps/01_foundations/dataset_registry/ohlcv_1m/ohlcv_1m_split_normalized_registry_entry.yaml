@@ -1,7 +1,7 @@
 dataset_id: ohlcv_1m_split_normalized_v0_1
 dataset_type: derived_intraday_minute_bars
-active: false
-promotion_state: planned_contract_only
+active: true
+promotion_state: pilot_materialized_semantically_validated
 canonical_price_view: 1m_split_normalized
 storage_root: E:/TSIS/data/ohlcv_1m_split_normalized
 upstream_sources:
@@ -17,7 +17,8 @@ semantics:
   intended_for_cross_session_comparability: true
   intended_for_local_execution_truth: false
 schema_contract:
-  path: 01_foundations/contract_registry/dataset_contracts/ohlcv_1m_split_normalized_dataset_contract_v0_1.md
+  dataset_contract: 01_foundations/contract_registry/dataset_contracts/ohlcv_1m_split_normalized_dataset_contract_v0_1.md
+  physical_schema_contract: 01_foundations/canonical_schemas/ohlcv_1m/ohlcv_1m_split_normalized_schema_contract.md
 operational_landing:
   path: 01_foundations/module_contracts/ohlcv_1m_split_normalized_operational_landing_v0_1.md
 materialization_plan:
@@ -25,4 +26,6 @@ materialization_plan:
 notes:
   - next intraday price-view promotion after daily_adjusted
   - do not treat as substitute for 1m raw
-  - materialize incrementally and under consumer demand
+  - pilot materialized in E:/TSIS/data/ohlcv_1m_split_normalized
+  - semantic pilot validated in module contract results
+  - not full-universe materialized or promoted

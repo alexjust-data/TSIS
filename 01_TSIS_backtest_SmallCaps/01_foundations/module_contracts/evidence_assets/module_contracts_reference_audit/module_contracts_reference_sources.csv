@@ -18,7 +18,7 @@ LOCAL_RULES.md,.md,6,6
 01_foundations/dataset_registry/features/intraday_regime_features_registry_entry.yaml,.yaml,3,3
 01_foundations/module_contracts/external_price_comparison_caveats.md,.md,3,2
 01_foundations/contract_registry/dataset_contracts/trades_label_taxonomy_and_cut_policy.md,.md,2,2
-01_foundations/dataset_registry/1m/ohlcv_1m_split_normalized_registry_entry.yaml,.yaml,2,2
+01_foundations/dataset_registry/ohlcv_1m/ohlcv_1m_split_normalized_registry_entry.yaml,.yaml,2,2
 01_foundations/dataset_registry/daily/daily_return_labels_registry_entry.yaml,.yaml,2,2
 01_foundations/inspection_dossiers/daily/daily_inspection_readout_v0_1.md,.md,2,2
 01_foundations/module_contracts/pipeline_price_view_policy_explained.md,.md,2,2

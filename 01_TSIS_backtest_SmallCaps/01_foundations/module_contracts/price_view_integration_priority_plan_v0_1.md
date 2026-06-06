@@ -225,11 +225,11 @@ Artefactos iniciales de esta fase:
 - `01_foundations/contract_registry/dataset_contracts/ohlcv_1m_split_normalized_dataset_contract_v0_1.md`
 - `01_foundations/module_contracts/ohlcv_1m_split_normalized_operational_landing_v0_1.md`
 - `01_foundations/module_contracts/ohlcv_1m_split_normalized_incremental_materialization_plan_v0_1.md`
-- `01_foundations/dataset_registry/1m/ohlcv_1m_split_normalized_registry_entry.yaml`
+- `01_foundations/dataset_registry/ohlcv_1m/ohlcv_1m_split_normalized_registry_entry.yaml`
 - `01_foundations/module_contracts/ohlcv_1m_split_normalized_semantic_pilot_v0_1.md`
-- `01_foundations/dataset_registry/1m/ohlcv_1m_split_normalized_pilot_manifest_v0_1.md`
+- `01_foundations/dataset_registry/ohlcv_1m/ohlcv_1m_split_normalized_pilot_manifest_v0_1.md`
 - `01_foundations/module_contracts/ohlcv_1m_split_normalized_pilot_manifest_v0_2.md`
-- `01_foundations/dataset_registry/1m/ohlcv_1m_split_normalized_pilot_manifest_v0_2.csv`
+- `01_foundations/dataset_registry/ohlcv_1m/ohlcv_1m_split_normalized_pilot_manifest_v0_2.csv`
 
 Eso evita un error comun:
 

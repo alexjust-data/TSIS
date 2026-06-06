@@ -1,0 +1,80 @@
+dataset_identity:
+  name: short_review_finra_v0_1
+  domain: short_side_context
+  logical_version: v0_1
+  contract_type: official_free_baseline_provenance
+
+status:
+  promotion_state: accepted_as_finra_baseline_and_provenance
+  active: true
+  owner: 01_TSIS_backtest_SmallCaps
+
+registry_classification:
+  dataset_family: short_review
+  primary_unit: mixed_ticker_settlement_date_and_ticker_date
+  evidence_state: official_free_finra_rebuilt_and_documented
+
+artifacts:
+  dataset_contract: 01_foundations/contract_registry/dataset_contracts/short_review_dataset_contract_v0_1.md
+  consumption_policy: 01_foundations/data_consumption_policies/short_review_consumption_policy.md
+  evidence_dossier: 01_foundations/inspection_dossiers/short/short_institutional_closeout_v0_1.md
+  schema_contracts:
+    - 01_foundations/canonical_schemas/short_review/finra_short_interest_schema_contract.md
+    - 01_foundations/canonical_schemas/short_review/finra_short_volume_schema_contract.md
+    - 01_foundations/canonical_schemas/short_review/finra_short_provenance_schema_contract.md
+
+physical_layout:
+  canonical_root: E:/TSIS/data/short_review/finra_short
+  artifacts_root: E:/TSIS/data/short_review/finra_short/artifacts
+  normalized_short_interest_root: E:/TSIS/data/short_review/finra_short/normalized/short_interest
+  normalized_short_volume_root: E:/TSIS/data/short_review/finra_short/normalized/short_volume
+  logs_root: E:/TSIS/data/short_review/finra_short/logs
+
+coverage_snapshot:
+  short_interest:
+    rows: 505745
+    tickers: 4687
+    date_min: 2017-12-29
+    date_max: 2026-04-15
+    aggregate_file: E:/TSIS/data/short_review/finra_short/artifacts/short_interest_all_biweekly_finra.parquet
+  short_volume:
+    rows: 4689038
+    tickers: 4623
+    date_min: 2018-08-01
+    date_max: 2026-04-29
+    aggregate_file: E:/TSIS/data/short_review/finra_short/artifacts/short_volume_all_daily_finra.parquet
+
+comparison_to_local_short:
+  short_volume:
+    local_polygon_files: 4824
+    finra_files: 4623
+    intersection: 4623
+    only_local_polygon: 201
+    only_finra: 0
+  short_interest:
+    local_polygon_files: 4824
+    finra_files: 4687
+    intersection: 4687
+    only_local_polygon: 137
+    only_finra: 0
+
+allowed_consumers:
+  permitted:
+    - source_validation
+    - coverage_comparison
+    - forensic_review
+    - research_only
+    - backtest_extended
+    - ml_flagged
+  restricted:
+    - backtest_core
+    - ml_primary
+    - execution_simulator
+    - rl_allowed
+    - live_downstream_candidate
+
+notes:
+  - short_review is FINRA official/free baseline and provenance.
+  - It does not replace E:/TSIS/data/short silently.
+  - It does not certify full 2005-2026 official/free short completeness.
+  - Derived features must preserve source scope and valid date windows.

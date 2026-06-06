@@ -8,6 +8,7 @@ status:
   promotion_state: pilot_materialization
   active: false
   owner: 01_TSIS_backtest_SmallCaps
+  institutional_level: "pilot_target_layer"
 
 registry_classification:
   dataset_family: model_target_layer
@@ -15,6 +16,10 @@ registry_classification:
   evidence_state: contract_defined_initial_generator
 
 artifacts:
+  dataset_contract: 01_foundations/contract_registry/dataset_contracts/daily_return_labels_dataset_contract_v0_1.md
+  physical_schema_contract: 01_foundations/canonical_schemas/daily/daily_return_labels_schema_contract.md
+  consumption_policy: 01_foundations/data_consumption_policies/daily_return_labels_consumption_policy.md
+  lt1b_promotion_plan: 01_foundations/module_contracts/daily_return_labels_lt1b_promotion_plan_v0_1.md
   consumer_contract: 01_foundations/module_contracts/daily_return_labels_consumer_contract_v0_1.md
   operational_landing: 01_foundations/module_contracts/daily_return_labels_operational_landing_v0_1.md
   generator_script: scripts/materialize_daily_return_labels.py
@@ -34,15 +39,35 @@ initial_labels:
   - ret_3d
   - ret_5d
 
+coverage_snapshot:
+  observed_tickers:
+    - A
+    - AAME
+    - ABEO
+    - ABIO
+    - ABTX
+    - BBW
+    - CASS
+    - CVLY
+    - SELF
+    - SGC
+  observed_parquets: 177
+  observed_year_min: 2005
+  observed_year_max: 2026
+  observed_rows_from_summary: 41487
+  summary_file: E:/TSIS/data/daily_return_labels/_labels_materialization_summary.csv
+
 allowed_consumers:
   pilot_targets:
-    - ml_primary
-    - ml_flagged
+    - ml_target_pilot
+    - label_quality_research
     - research_only
   planned_targets:
-    - backtest_core
-    - backtest_extended
+    - ml_target_candidate_after_lt1b_promotion
+    - backtest_evaluation_candidate_after_lt1b_promotion
   restricted:
+    - input_feature
+    - backtest_core_without_lt1b_promotion
     - execution_simulator
     - rl_allowed
     - live_downstream_candidate
@@ -50,3 +75,6 @@ allowed_consumers:
 notes:
   - first real downstream consumer of daily_adjusted
   - this layer is a slow economic target layer, not an intraday execution signal
+  - pilot covers 10 tickers only; it is not full-universe <1B>
+  - ret_1d, ret_3d, ret_5d are targets/outcomes, never input features
+  - future <1B> promotion must use a separate root and explicit anti-leakage policy

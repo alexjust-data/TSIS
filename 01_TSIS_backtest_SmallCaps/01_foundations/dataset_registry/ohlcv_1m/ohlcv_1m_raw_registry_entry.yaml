@@ -1,0 +1,67 @@
+dataset_id: ohlcv_1m_raw_v0_1
+dataset_family: ohlcv_1m
+dataset_layer: raw_market_bars
+status: institutional_raw_closeout_reconciled_lt1b
+active: true
+
+canonical_schema: 01_foundations/canonical_schemas/ohlcv_1m/ohlcv_1m_schema_contract.md
+dataset_contract: 01_foundations/contract_registry/dataset_contracts/ohlcv_1m_raw_dataset_contract_v0_1.md
+consumption_policy: 01_foundations/data_consumption_policies/ohlcv_1m_raw_consumption_policy.md
+validators: 01_foundations/validators/ohlcv_1m/ohlcv_1m_raw_validators.md
+
+physical_layout:
+  primary_raw_root: D:/ohlcv_1m
+  partitioning_observed:
+    - ticker
+    - year
+    - month
+  representative_file: D:/ohlcv_1m/ticker=HSLV/year=2026/month=03/minute_aggs_HSLV_2026_03.parquet
+
+scope:
+  universe_reference: lt1b_universe_v0_1
+  universe_registry: 01_foundations/dataset_registry/universes/lt1b_universe_registry_entry.yaml
+  temporal_semantics: ticker-minute raw observed bars
+  split_adjusted: false
+  production_feature_layer: false
+
+coverage_snapshot:
+  source: 01_foundations/inspection_dossiers/minute/raw_1m_lt1b_closeout_recalculation_v0_1.md
+  lt1b_tickers_reference: 4824
+  lt1b_current_1m_unique_tickers: 4822
+  lt1b_current_1m_unique_task_keys: 334660
+  lt1b_current_1m_rows: 334660
+  operational_buckets:
+    RESCUE_SCHEMA_ONLY:
+      task_keys: 19713
+      pct: 5.890456
+    RESCUE_SCHEMA_PLUS_VW:
+      task_keys: 314947
+      pct: 94.109544
+  refined_quality_state:
+    good:
+      task_keys: 46652
+      pct: 13.940118
+    review:
+      task_keys: 75245
+      pct: 22.484014
+    bad:
+      task_keys: 212763
+      pct: 63.575868
+
+quality_policy:
+  good: controlled_raw_intraday_research
+  review: flagged_exploratory_or_diagnostic_only
+  bad: forensic_only
+  vw_field: severity_taxonomy_required
+  split_sensitive_consumption: use_ohlcv_1m_split_normalized_v0_1
+
+evidence_references:
+  - 01_foundations/inspection_dossiers/minute/raw_1m_lt1b_closeout_recalculation_v0_1.md
+  - 01_foundations/inspection_dossiers/minute/raw_1m_schema_only_lt1b_inspection_readout_v0_1.md
+  - 01_foundations/module_contracts/ohlcv_1m_historical_closeout_lt1b_reconciliation_v0_1.md
+  - 01_foundations/contract_registry/dataset_contracts/ohlcv_1m_split_normalized_dataset_contract_v0_1.md
+
+notes:
+  - Raw 1m is institutionally closed as an understood raw layer, not certified as globally clean.
+  - The raw layer must not be confused with split-normalized 1m.
+  - Any <1B> claim requires ticker membership plus PTI-window intersection.
