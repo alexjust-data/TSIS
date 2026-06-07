@@ -1,0 +1,9 @@
+metric,value
+rows,334660
+tickers,4822
+year_min,2005
+year_max,2026
+core_good_rows,331511
+core_review_rows,3149
+core_bad_rows,0
+core_good_vw_bad_rows,212693

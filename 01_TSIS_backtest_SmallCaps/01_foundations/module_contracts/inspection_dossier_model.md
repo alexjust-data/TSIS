@@ -92,12 +92,50 @@ La politica transversal que gobierna esto vive en:
 Cada dataset o bloque institucional deberia poder tener, cuando aplique:
 
 - `inspection_readout`
+- `population_visual_overview` o mapa visual poblacional equivalente
 - `good_justification`
 - `flagged_case_evidence_packs`
 - `bad_case_evidence_packs`
 - `coverage_case_evidence_packs`
 - `evidence_assets`
 - `build_inspection_pack` notebook o script
+
+## 4.1. Orden Obligatorio: De Lo General A Lo Particular
+
+Cuando un dossier vaya dirigido a inspeccion humana final, la evidencia no debe empezar directamente por casos individuales salvo que el universo sea trivial o ya exista un mapa poblacional enlazado de forma inmediata.
+
+La secuencia correcta es:
+
+```text
+mapa poblacional visual
+-> distribuciones y masas por estado/familia
+-> lectura de coverage/universo esperado
+-> familias de evidencia
+-> casos individuales
+-> decision de consumo
+```
+
+El mapa poblacional visual debe mostrar, cuando aplique:
+
+- distribucion de estados finales;
+- distribucion de familias de issue o warning;
+- matriz entre ejes relevantes de calidad;
+- coverage, gaps o disponibilidad;
+- masa por ticker, fecha, mes o unidad temporal pertinente;
+- y cualquier discrepancia entre buckets heredados y metricas recalculadas que cambie la lectura.
+
+Regla:
+
+- una muestra de casos no sustituye un mapa poblacional;
+- un mapa poblacional no sustituye la explicacion visual de casos;
+- ambos deben coexistir cuando el bloque tenga suficiente masa o complejidad.
+
+Ejemplos:
+
+- `trades` debe abrir con lectura poblacional antes de familias file-level;
+- `daily` debe separar quality y coverage antes de ejemplos concretos;
+- `quotes` debe separar politica global, review/bad y auditoria de casepacks antes de absolutizar un evento;
+- `ohlcv_1m` debe mostrar primero core/vw, coverage, familias y schema-only antes de bajar a ticker-month.
 
 ## 5. inspection_readout
 

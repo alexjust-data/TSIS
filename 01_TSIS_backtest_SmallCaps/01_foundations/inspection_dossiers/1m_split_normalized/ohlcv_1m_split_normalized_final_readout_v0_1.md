@@ -160,7 +160,47 @@ Esto es la prueba fuerte de que `1m_split_normalized` no es decoracion semantica
 
 Es una vista que corrige un error downstream real.
 
-## 10. Veredicto final
+## 10. Paso fuerte de auditoria: eventos split full-universe
+
+Despues del piloto y del consumidor minimo se ejecuto una auditoria exhaustiva de eventos split con interseccion real contra `1m`.
+
+La unidad auditada fue:
+
+- `ticker + execution_date de split`
+
+no:
+
+- ticker-month materializado de la vista fisica;
+- ni muestra visual seleccionada.
+
+Resultado agregado:
+
+- `split_files_seen = 4824`
+- `non_empty_split_files_with_1m_ticker = 1876`
+- `total_event_cases = 3335`
+- `PASS = 2280` (`68.37%`)
+- `FAIL = 0` (`0.00%`)
+- `NO_PRE_COVERAGE = 164` (`4.92%`)
+- `NO_POST_COVERAGE = 151` (`4.53%`)
+- `NO_1M_COVERAGE = 740` (`22.19%`)
+
+Lectura correcta:
+
+- todos los casos con cobertura bilateral suficiente pasan;
+- no hay ningun fallo semantico observado;
+- los casos no PASS son limites de cobertura empirica, no evidencia de transformacion incorrecta.
+
+El paquete visual moderno que hace inspeccionable esta auditoria esta en:
+
+- [ohlcv_1m_split_normalized_visual_inspector_pack_v0_1.md](</C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/1m_split_normalized/event_case_evidence_packs/ohlcv_1m_split_normalized_visual_inspector_pack_v0_1.md>)
+
+Contiene:
+
+- `6` mapas poblacionales;
+- `28` visuales de caso;
+- y lectura independiente `Que muestra / Responde / No responde / Consecuencia` para cada imagen.
+
+## 11. Veredicto final
 
 ### Que ya puede afirmarse
 
@@ -170,21 +210,23 @@ Con la evidencia actual ya puede afirmarse, de forma institucionalmente defendib
 - la implementacion observada en el piloto la respeta;
 - los controles no la contradicen;
 - la inspeccion visual la hace auditable;
-- y un consumidor minimo real confirma que la capa evita falsos gaps y falsos shocks cross-session.
+- un consumidor minimo real confirma que la capa evita falsos gaps y falsos shocks cross-session;
+- y la auditoria full-universe de eventos split auditables no encontro ningun `FAIL`.
 
 ### Que no debe afirmarse todavia
 
 No debe afirmarse aun que:
 
-- la capa esta promovida full-universe;
-- la validacion agregada masiva ya esta cerrada;
-- o que la auditoria completa de todo `1m` ya haya terminado para cualquier consumidor futuro.
+- la capa fisica esta materializada full-universe para todos los ticker-month;
+- `1m_split_normalized` sustituye `1m raw`;
+- la capa es `1m_adjusted` economica completa;
+- o que la auditoria completa de todo `1m` ya haya terminado para cualquier consumidor futuro no relacionado con splits.
 
-## 11. Estado de madurez
+## 12. Estado de madurez
 
 Lectura correcta tras este cierre:
 
-- `ohlcv_1m_split_normalized` -> `Nivel 5 - Consumida`
+- `ohlcv_1m_split_normalized` -> `Nivel 5 - Consumida / Auditada full-universe para eventos split auditables`
 
 No:
 
@@ -192,19 +234,26 @@ No:
 
 porque aun faltan:
 
-- expansion mas alla del piloto;
-- validacion agregada amplia;
-- y promocion operacional estable.
+- materializacion fisica full-universe de todos los ticker-month si se decide hacerla;
+- integracion operacional estable en todos los consumidores que crucen sesiones;
+- y declaracion explicita de promocion operacional.
 
-## 12. Consecuencia para inspector
+## 13. Consecuencia para inspector
 
 La conclusion prudente y fuerte a la vez es esta:
 
-- no podemos prometer certeza absoluta metafisica;
-- si podemos demostrar que, en el perimetro inspeccionado, la capa no esta construida sobre naipes en el aire.
+- no podemos prometer que todo `1m` queda auditado para cualquier problema;
+- si podemos demostrar que la deuda concreta de semantica split queda cerrada para todos los eventos empiricamente auditables.
 
 La evidencia hoy ya alcanza para sostener que los casos de split del piloto estan:
 
 - semanticamente bien resueltos;
 - visualmente auditados;
 - y downstream-validos en un consumidor minimo real.
+
+Y ademas alcanza para sostener que:
+
+- el piloto no era un artefacto de muestra;
+- los eventos split auditables del universo pasan con `FAIL = 0`;
+- los no auditables quedan clasificados por cobertura;
+- y el inspector dispone de un paquete visual general-a-particular para revisar tanto poblacion como casos.

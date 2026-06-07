@@ -226,6 +226,237 @@ The key institutional conclusion is now explicit:
 
 The new notebook gives the inspector a live selector over the full audited universe instead of a fixed sample of PNGs.
 
+## v0.4.38 - modern core/vw inspector package for `ohlcv_1m_raw`
+
+### Added
+
+- `scripts/inspection/minute/build_minute_modern_inspection_notebooks.py`
+- `01_foundations/inspection_dossiers/minute/minute_00_universe_quality_overview_v0_1.ipynb`
+- `01_foundations/inspection_dossiers/minute/minute_01_core_quality_model_v0_1.ipynb`
+- `01_foundations/inspection_dossiers/minute/minute_02_core_quality_population_readout_v0_1.ipynb`
+- `01_foundations/inspection_dossiers/minute/minute_03_casepack_builder_v0_1.ipynb`
+- `01_foundations/inspection_dossiers/minute/minute_04_ticker_month_inspector_v0_1.ipynb`
+- `01_foundations/inspection_dossiers/minute/minute_05_final_readout_v0_1.ipynb`
+- `01_foundations/inspection_dossiers/minute/evidence_assets/core_quality/minute_core_quality_manifest_v0_1.parquet`
+- `01_foundations/inspection_dossiers/minute/evidence_assets/core_quality/minute_core_quality_family_counts_v0_1.csv`
+- `01_foundations/inspection_dossiers/minute/evidence_assets/core_quality/minute_core_quality_summary_v0_1.csv`
+
+### Changed
+
+- `01_foundations/inspection_dossiers/minute/README.md`
+- `01_foundations/inspection_dossiers/README.md`
+
+### Notes
+
+This upgrades the `minute` dossier from a raw closeout plus schema-only readout into a modern inspector package that separates:
+
+- core OHLCV quality;
+- `vw_*` quality;
+- combined state;
+- and allowed consumption.
+
+The executed manifest covers:
+
+- `334660` ticker-month rows;
+- `4822` tickers;
+- years `2005` to `2026`.
+
+Current core result:
+
+- `core_good = 331511`
+- `core_review = 3149`
+- `core_bad = 0`
+
+Current `vw` result:
+
+- `vw_good = 46652`
+- `vw_review = 75245`
+- `vw_bad = 212763`
+
+Current consumption result:
+
+- `controlled_ohlcv_research = 118818`
+- `ohlcv_without_vw_only = 212693`
+- `flagged_research_or_sensitivity = 3149`
+
+The institutional conclusion is deliberately not "1m raw is productively clean".
+
+The correct conclusion is:
+
+- most raw `1m <1B>` rows are now defensible for controlled OHLCV research when `vw` is excluded;
+- a large majority remains unsuitable for `vw`-dependent consumers;
+- the small `core_review` tail requires sensitivity or forensic review;
+- and any production backtest/ML use still needs an explicit downstream contract and flags.
+
+The notebooks `minute_03` and `minute_04` are intentionally interactive widget notebooks. They are not pre-executed with large widget state because their role is case selection and inspector navigation, not static bulk output.
+
+## v0.4.39 - fixed visual casepacks for `ohlcv_1m_raw` core/vw inspection
+
+### Added
+
+- `scripts/inspection/minute/export_minute_core_quality_casepacks.py`
+- `scripts/inspection/minute/build_minute_core_quality_visual_readout.py`
+- `scripts/inspection/minute/build_minute_launcher_notebooks.py`
+- `01_foundations/inspection_dossiers/minute/core_quality_case_evidence_packs/minute_core_quality_visual_cases_v0_1.md`
+- `01_foundations/inspection_dossiers/minute/core_quality_case_evidence_packs/minute_core_quality_visual_case_manifest_v0_1.csv`
+- `01_foundations/inspection_dossiers/minute/core_quality_case_evidence_packs/images/`
+- `01_foundations/inspection_dossiers/minute/core_quality_case_evidence_packs/contact_sheets/`
+
+### Changed
+
+- `01_foundations/inspection_dossiers/minute/README.md`
+- `01_foundations/inspection_dossiers/README.md`
+- `01_foundations/inspection_dossiers/minute/minute_00_universe_quality_overview_v0_1.ipynb`
+- `01_foundations/inspection_dossiers/minute/minute_01_core_quality_model_v0_1.ipynb`
+- `01_foundations/inspection_dossiers/minute/minute_02_core_quality_population_readout_v0_1.ipynb`
+- `01_foundations/inspection_dossiers/minute/minute_03_casepack_builder_v0_1.ipynb`
+- `01_foundations/inspection_dossiers/minute/minute_04_ticker_month_inspector_v0_1.ipynb`
+- `01_foundations/inspection_dossiers/minute/minute_05_final_readout_v0_1.ipynb`
+
+### Notes
+
+This corrects an incomplete landing in v0.4.38.
+
+The `minute` dossier now has fixed inspector-facing visual evidence, not only notebooks, widgets and manifests.
+
+The new visual readout contains:
+
+- `60` individual PNG images;
+- `6` visual sections;
+- `10` cases per section;
+- and one independent `Que muestra / Responde / No responde / Consecuencia` reading for every image.
+
+The sections are:
+
+- `core_good_vw_not_flagged`
+- `core_good_vw_mild_or_moderate`
+- `core_good_vw_bad_persistent`
+- `core_good_vw_bad_diffuse`
+- `core_review_large_gap`
+- `core_review_sparse`
+
+During visual inspection, the important new finding was that `vw_not_flagged` is not visually uniform:
+
+- some cases are materially clean;
+- but several `MULN` months show recalculated visual `vw` residue even though the inherited bucket is `vw_not_flagged`.
+
+This does not invalidate the core OHLCV conclusion by itself.
+
+It does require future consumers and inspectors to distinguish:
+
+- inherited closeout family;
+- recalculated visual `vw` residue;
+- core OHLCV usability;
+- and `vw` consumption eligibility.
+
+The notebook/widget layer remains useful for drilldown, but the inspector package now has static, reviewable, embedded image evidence comparable in intent to `daily`, `quotes` and `trades`.
+
+The six modern `minute_*.ipynb` notebooks were regenerated as launcher/reader notebooks:
+
+- no heavy core/vw classification functions remain in notebook cells;
+- no plotting materialization logic remains in notebook cells;
+- fixed image export lives in `export_minute_core_quality_casepacks.py`;
+- fixed markdown readout generation lives in `build_minute_core_quality_visual_readout.py`.
+
+## v0.4.40 - general-to-specific visual dossier rule formalized
+
+### Changed
+
+- `01_foundations/module_contracts/inspection_dossier_model.md`
+- `01_foundations/inspection_dossiers/README.md`
+
+### Notes
+
+This formalizes a missing rule that was already implicit in strong dossiers such as `trades`, `quotes` and `daily`.
+
+Inspector-facing dossiers must move from general to specific:
+
+- population visual overview;
+- distributions and mass by state/family;
+- coverage or expected-universe readout;
+- evidence families;
+- individual cases;
+- consumption decision.
+
+The new rule explicitly states that:
+
+- a sample of cases does not replace a population map;
+- a population map does not replace individual visual case analysis;
+- visual population summaries should not remain trapped only inside notebooks when they are required for human inspection;
+- stable PNGs should be exported and embedded in markdown for final inspector-facing dossiers.
+
+This rule is now binding for future upgrades of `minute`, `1m_split_normalized` and any other inspection dossier with enough mass or complexity to require both aggregate and case-level evidence.
+
+## v0.4.41 - population visual overview applied to `ohlcv_1m_raw` minute dossier
+
+### Added
+
+- `scripts/inspection/minute/export_minute_population_visuals.py`
+- `01_foundations/inspection_dossiers/minute/core_quality_case_evidence_packs/population_visual_overview/`
+- `01_foundations/inspection_dossiers/minute/core_quality_case_evidence_packs/population_visual_overview/minute_population_visual_manifest_v0_1.csv`
+
+### Changed
+
+- `scripts/inspection/minute/build_minute_core_quality_visual_readout.py`
+- `01_foundations/inspection_dossiers/minute/core_quality_case_evidence_packs/minute_core_quality_visual_cases_v0_1.md`
+- `01_foundations/inspection_dossiers/minute/README.md`
+- `01_foundations/inspection_dossiers/README.md`
+
+### Notes
+
+This applies the v0.4.40 general-to-specific dossier rule to `minute`.
+
+The inspector-facing readout now starts with `7` population visuals before the `60` ticker-month case images:
+
+- core/vw state overview;
+- core/vw matrix;
+- issue family distributions;
+- coverage and temporal footprint;
+- schema-only anatomy;
+- `vw_not_flagged` visual recalculation delta;
+- allowed consumption by year.
+
+The complete fixed visual package now contains `67` embedded images, and every image has an independent `Que muestra / Responde / No responde / Consecuencia` reading.
+
+The important institutional clarification is that `ohlcv_1m_raw <1B>` is not globally rejected as OHLCV: the core axis is mostly usable for controlled OHLCV research, while `vw` remains the dominant unresolved debt. The dossier now makes that visible at population level before asking the inspector to read individual cases.
+
+## v0.4.42 - general-to-specific visual inspector pack for `ohlcv_1m_split_normalized`
+
+### Added
+
+- `scripts/inspection/minute/export_1m_split_normalized_inspector_pack.py`
+- `01_foundations/inspection_dossiers/1m_split_normalized/README.md`
+- `01_foundations/inspection_dossiers/1m_split_normalized/population_visual_overview/`
+- `01_foundations/inspection_dossiers/1m_split_normalized/population_visual_overview/ohlcv_1m_split_normalized_population_visual_manifest_v0_1.csv`
+- `01_foundations/inspection_dossiers/1m_split_normalized/event_case_evidence_packs/`
+- `01_foundations/inspection_dossiers/1m_split_normalized/event_case_evidence_packs/ohlcv_1m_split_normalized_visual_inspector_pack_v0_1.md`
+- `01_foundations/inspection_dossiers/1m_split_normalized/event_case_evidence_packs/ohlcv_1m_split_normalized_visual_case_manifest_v0_1.csv`
+
+### Changed
+
+- `01_foundations/inspection_dossiers/1m_split_normalized/ohlcv_1m_split_normalized_final_readout_v0_1.md`
+- `01_foundations/inspection_dossiers/README.md`
+
+### Notes
+
+This applies the same general-to-specific inspection policy to `ohlcv_1m_split_normalized`.
+
+The new visual inspector pack contains:
+
+- `6` population visuals;
+- `28` event-case visuals;
+- `34` embedded images in total;
+- and one independent `Que muestra / Responde / No responde / Consecuencia` reading for every image.
+
+The institutional clarification is:
+
+- the full-universe audit is closed for split events that are empirically auditable in `1m`;
+- `FAIL = 0` across `2280` fully auditable PASS cases;
+- `NO_PRE_COVERAGE`, `NO_POST_COVERAGE` and `NO_1M_COVERAGE` are coverage limits, not semantic failures;
+- this must not be confused with physical full-universe materialization of every ticker-month in `E:/TSIS/data/ohlcv_1m_split_normalized`.
+
+The final readout was updated because its older wording still said broad aggregate validation was not closed. That is now too weak after the full-universe split-event audit; the remaining limitation is physical promotion/materialization scope, not semantic split-event validation.
+
 ## v0.4.15 - repaso transversal final de `01_foundations`
 
 ### Added

@@ -16,6 +16,7 @@
 - [Bad case evidence packs](#bad-case-evidence-packs)
 - [Coverage case evidence packs](#coverage-case-evidence-packs)
 - [Evidence assets](#evidence-assets)
+- [Orden Visual Obligatorio](#orden-visual-obligatorio)
 - [Regla obligatoria por evidencia](#regla-obligatoria-por-evidencia)
 - [Lectura visual real](#lectura-visual-real)
 - [Masa poblacional vs casos forenses](#masa-poblacional-vs-casos-forenses)
@@ -35,6 +36,7 @@
   - [`daily`](#daily-1)
   - [`quotes`](#quotes-1)
   - [`trades`](#trades-1)
+  - [`minute` / `ohlcv_1m` raw](#minute--ohlcv_1m-raw-1)
 - [Criterios de cierre](#criterios-de-cierre)
 - [Madurez relativa de dossiers](#madurez-relativa-de-dossiers)
   - [Estado por bloque a 2026-06-07](#estado-por-bloque-a-2026-06-07)
@@ -160,6 +162,7 @@ Cuando aplique, un dataset o bloque deberia converger hacia una estructura simil
 ```text
 01_foundations/inspection_dossiers/<dataset>/
   <dataset>_inspection_readout_v0_1.md
+  population_visual_overview/
   good_justification/
   flagged_case_evidence_packs/
   bad_case_evidence_packs/
@@ -171,6 +174,7 @@ Cuando aplique, un dataset o bloque deberia converger hacia una estructura simil
 La estructura exacta puede variar si el dataset lo exige, pero la logica debe quedar clara:
 
 - readout principal;
+- mapa visual poblacional cuando el bloque tenga masa o complejidad suficiente;
 - evidencia de casos buenos;
 - evidencia de casos condicionados o en revision;
 - evidencia de casos malos;
@@ -319,6 +323,46 @@ Los assets deben ser:
 - y consumidos por algun readout, case pack, notebook o contrato.
 
 Un asset sin consumidor claro es ruido operacional, salvo que este explicitamente archivado como evidencia historica.
+
+## Orden Visual Obligatorio
+
+Los dossiers de inspeccion humana deben progresar de lo general a lo particular.
+
+La secuencia correcta es:
+
+```text
+mapa poblacional visual
+-> distribuciones y masas por estado/familia
+-> coverage/universo esperado
+-> familias de evidencia
+-> casos individuales
+-> decision de consumo
+```
+
+Regla:
+
+- no empezar por ticker, file o caso individual si todavia no existe una vision general del universo;
+- no sustituir estadisticas generales por una muestra visual bonita;
+- no sustituir casos individuales por graficos agregados;
+- no dejar visuales generales encerrados solo en notebooks si son necesarios para el inspector;
+- exportar PNGs estables e incrustarlos en markdown cuando el dossier vaya a lectura humana final.
+
+Cada visual general debe seguir tambien:
+
+```text
+Que muestra
+Responde
+No responde
+Consecuencia
+```
+
+Ejemplos concretos:
+
+- `trades` necesita mapa poblacional antes de familias file-level;
+- `daily` necesita quality y coverage antes de ejemplos;
+- `quotes` necesita politica global y auditoria de casepacks antes de eventos;
+- `minute` necesita core/vw, coverage, schema-only y familias antes de ticker-month;
+- una capa derivada como `1m_split_normalized` necesita mapa de universo/auditoria/coverage antes de ejemplos de splits.
 
 ## Regla obligatoria por evidencia
 
@@ -490,6 +534,22 @@ Referencias locales:
 
 - `minute/raw_1m_lt1b_closeout_recalculation_v0_1.md`
 - `minute/raw_1m_schema_only_lt1b_inspection_readout_v0_1.md`
+- `minute/minute_00_universe_quality_overview_v0_1.ipynb`
+- `minute/minute_01_core_quality_model_v0_1.ipynb`
+- `minute/minute_02_core_quality_population_readout_v0_1.ipynb`
+- `minute/minute_03_casepack_builder_v0_1.ipynb`
+- `minute/minute_04_ticker_month_inspector_v0_1.ipynb`
+- `minute/minute_05_final_readout_v0_1.ipynb`
+- `minute/core_quality_case_evidence_packs/minute_core_quality_visual_cases_v0_1.md`
+
+La lectura moderna separa:
+
+- calidad core OHLCV;
+- calidad `vw_*`;
+- estado combinado;
+- y consumo permitido.
+
+Esta separacion es obligatoria porque una gran parte del universo puede ser defendible para investigacion controlada de OHLCV sin `vw`, mientras `vw` sigue siendo una deuda dominante.
 
 ### 1m split normalized
 
@@ -498,17 +558,20 @@ Referencias locales:
 Debe distinguir:
 
 - piloto;
-- auditoria full-universe;
+- auditoria full-universe de eventos split auditables;
 - validacion semantica;
 - controles negativos;
 - consumo real;
-- y promocion.
+- promocion;
+- y materializacion fisica full-universe, que no es lo mismo que auditoria full-universe de eventos.
 
 Referencias locales:
 
+- `1m_split_normalized/README.md`
 - `1m_split_normalized/ohlcv_1m_split_normalized_pilot_readout_v0_1.md`
 - `1m_split_normalized/ohlcv_1m_split_normalized_full_universe_audit_readout_v0_1.md`
 - `1m_split_normalized/ohlcv_1m_split_normalized_final_readout_v0_1.md`
+- `1m_split_normalized/event_case_evidence_packs/ohlcv_1m_split_normalized_visual_inspector_pack_v0_1.md`
 
 ### Intraday regime features
 
@@ -559,13 +622,14 @@ Antes de crear o actualizar un dossier:
 
 Fecha de referencia: 2026-06-07.
 
-Esta seccion indica que markdowns debe abrir un inspector humano para comprender en profundidad los tres bloques con mayor evidencia visual incrustada:
+Esta seccion indica que markdowns y notebooks debe abrir un inspector humano para comprender en profundidad los bloques con mayor evidencia institucional activa:
 
 - `daily`
 - `quotes`
 - `trades`
+- `minute` / `ohlcv_1m` raw
 
-No sustituye contratos, policies, validators ni registry entries. Es una guia de lectura para inspeccion humana profunda: primero contexto y veredicto, despues evidencia visual por familia.
+No sustituye contratos, policies, validators ni registry entries. Es una guia de lectura para inspeccion humana profunda: primero contexto y veredicto, despues evidencia visual, poblacional o interactiva por familia.
 
 ### Orden general obligatorio
 
@@ -724,6 +788,73 @@ Lectura correcta final:
 - `outside_daily` u `outside_1m` son senales, no sentencia final aislada;
 - toda conclusion debe declarar arbitro, price view, familia causal, alcance y estado de consumo.
 
+### `minute` / `ohlcv_1m` raw
+
+Objetivo de inspeccion:
+
+- entender el estado raw de `ohlcv_1m` en alcance `<1B>`;
+- distinguir raw `ohlcv_1m` de `ohlcv_1m_split_normalized`;
+- separar calidad core OHLCV de calidad `vw_*`;
+- entender por que `vw` es deuda dominante sin convertir automaticamente todo el bloque en inutil;
+- y navegar desde estadistica global hasta ticker-mes concreto mediante widgets.
+
+Orden de lectura:
+
+1. `minute/README.md`
+
+   Entrada local obligatoria del bloque. Explica rol, autoridad documental, frontera conceptual, closeout raw `<1B>`, modelo moderno core/vw, assets activos y reglas para futuros agentes.
+
+2. `minute/raw_1m_lt1b_closeout_recalculation_v0_1.md`
+
+   Closeout cuantitativo raw `<1B>`. Debe abrirse para entender el recalculo institucional del universo, la interseccion temporal PTI, los buckets heredados y el estado refinado inicial `good / review / bad` dominado por deuda `vw`.
+
+3. `minute/raw_1m_schema_only_lt1b_inspection_readout_v0_1.md`
+
+   Readout especifico del bloque `RESCUE_SCHEMA_ONLY`. Debe abrirse para entender por que schema-only no significa limpio productivo, sino una familia estructural homogenea de lectura/schema/encoding.
+
+4. `minute/raw_1m_schema_only_lt1b_inspection_notebook_v0_1.ipynb`
+
+   Notebook historico ejecutado del bloque schema-only. Deben revisarse celdas y outputs porque muestra las tablas, selectores y evidencia que sostienen el readout.
+
+5. `minute/minute_00_universe_quality_overview_v0_1.ipynb`
+
+   Notebook moderno ejecutado de vision global. Debe abrirse para entender universo, cobertura, distribuciones temporales, estados heredados y familias antes de bajar a casos.
+
+6. `minute/minute_01_core_quality_model_v0_1.ipynb`
+
+   Notebook moderno ejecutado que materializa el manifest core/vw. Es obligatorio para entender como se construyen `core_quality_state`, `vw_quality_state`, `combined_quality_state` y `allowed_consumption`.
+
+7. `minute/minute_02_core_quality_population_readout_v0_1.ipynb`
+
+   Notebook moderno ejecutado de lectura poblacional. Debe abrirse para ver la matriz core/vw, familias, conteos y consumo permitido.
+
+8. `minute/core_quality_case_evidence_packs/minute_core_quality_visual_cases_v0_1.md`
+
+   Dossier visual fijo de `67` imagenes: `7` mapas poblacionales y `60` casos, `10` por seccion. Debe abrirse primero por su `Mapa Poblacional Visual` para entender core/vw, matriz de estados, familias, coverage, schema-only, delta `vw_not_flagged` y consumo permitido por ano. Despues debe leerse caso a caso para `core_good_vw_not_flagged`, `core_good_vw_mild_or_moderate`, `core_good_vw_bad_persistent`, `core_good_vw_bad_diffuse`, `core_review_large_gap` y `core_review_sparse`. Cada imagen tiene lectura independiente con `Que muestra / Responde / No responde / Consecuencia`.
+
+9. `minute/minute_03_casepack_builder_v0_1.ipynb`
+
+   Notebook interactivo con widgets. Debe usarse cuando el inspector quiera abrir o ampliar un caso ticker-mes fuera de las `60` imagenes fijas de caso ya exportadas.
+
+10. `minute/minute_04_ticker_month_inspector_v0_1.ipynb`
+
+   Notebook interactivo con widgets. Debe abrirse para navegar ticker, mes, estado core, estado `vw`, familia core y familia `vw` sin depender de una muestra fija.
+
+11. `minute/minute_05_final_readout_v0_1.ipynb`
+
+    Notebook moderno ejecutado de cierre. Debe abrirse para confirmar la lectura final: raw `1m <1B>` es mucho mas defendible para OHLCV sin `vw`, pero no queda promovido a capa productiva limpia sin flags.
+
+Lectura correcta final:
+
+- `minute` no es `1m_split_normalized`;
+- `minute` no demuestra backtest intradia productivo limpio;
+- el raw `1m <1B>` queda institucionalmente entendido mediante dos lecturas complementarias: closeout heredado/recalculado y manifest moderno core/vw;
+- existe un dossier visual fijo de `67` imagenes: `7` poblacionales y `60` casos con lectura individual;
+- el resultado moderno es `core_good = 331511`, `core_review = 3149`, `core_bad = 0`;
+- la deuda `vw` sigue siendo dominante con `vw_bad = 212763`;
+- el consumo correcto separa `controlled_ohlcv_research`, `ohlcv_without_vw_only` y `flagged_research_or_sensitivity`;
+- cualquier inspector debe declarar si su pregunta usa `vw` o no.
+
 ## Criterios de cierre
 
 Un dossier esta razonablemente cerrado cuando:
@@ -859,6 +990,20 @@ Evidencia principal:
 - `minute/raw_1m_lt1b_closeout_recalculation_v0_1.md`
 - `minute/raw_1m_schema_only_lt1b_inspection_readout_v0_1.md`
 - `minute/raw_1m_schema_only_lt1b_inspection_notebook_v0_1.ipynb`
+- `minute/minute_00_universe_quality_overview_v0_1.ipynb`
+- `minute/minute_01_core_quality_model_v0_1.ipynb`
+- `minute/minute_02_core_quality_population_readout_v0_1.ipynb`
+- `minute/minute_03_casepack_builder_v0_1.ipynb`
+- `minute/minute_04_ticker_month_inspector_v0_1.ipynb`
+- `minute/minute_05_final_readout_v0_1.ipynb`
+- `minute/core_quality_case_evidence_packs/minute_core_quality_visual_cases_v0_1.md`
+- `minute/core_quality_case_evidence_packs/minute_core_quality_visual_case_manifest_v0_1.csv`
+- `minute/core_quality_case_evidence_packs/population_visual_overview/`
+- `minute/core_quality_case_evidence_packs/population_visual_overview/minute_population_visual_manifest_v0_1.csv`
+- `minute/core_quality_case_evidence_packs/images/`
+- `minute/evidence_assets/core_quality/minute_core_quality_manifest_v0_1.parquet`
+- `minute/evidence_assets/core_quality/minute_core_quality_family_counts_v0_1.csv`
+- `minute/evidence_assets/core_quality/minute_core_quality_summary_v0_1.csv`
 
 Lectura correcta:
 
@@ -867,10 +1012,23 @@ Lectura correcta:
 - el alcance `<1B>` debe mantenerse visible.
 - los porcentajes actuales validos para raw `1m <1B>` salen del recalculo local, no de los porcentajes historicos `full-scope`.
 - estado refinado `<1B>` actual: `good = 46652`, `review = 75245`, `bad = 212763`.
+- la lectura moderna separa core OHLCV de `vw`: `core_good = 331511`, `core_review = 3149`, `core_bad = 0`.
+- la deuda `vw` sigue siendo dominante: `vw_bad = 212763`.
+- consumo moderno permitido: `controlled_ohlcv_research = 118818`, `ohlcv_without_vw_only = 212693`, `flagged_research_or_sensitivity = 3149`.
+- el dossier visual ya empieza con mapa poblacional antes de casos: core/vw state overview, matriz core/vw, familias, coverage/footprint, schema-only, delta `vw_not_flagged` y consumo por ano.
 
-Madurez relativa: buena para cierre raw acotado, menos rica visual y forensemente que `quotes`, `trades` o `daily`.
+Madurez relativa: alta como auditoria raw core/vw separada, con manifest moderno, notebooks globales ejecutados, notebooks interactivos con widgets y dossier visual fijo de `67` imagenes (`7` poblacionales + `60` casos). Sigue por debajo de `trades` en volumen total de familias forenses, pero ya no debe describirse como pendiente de casepacks visuales fijos ni como pendiente de mapa poblacional general.
 
 Riesgo principal: promover schema-only a calidad economica completa, mezclar raw 1m con split-normalized, o presentar raw 1m como capa productiva limpia.
+
+Regla de mantenimiento especifica:
+
+- si se exportan nuevos casepacks visuales;
+- si cambia la clasificacion core/vw;
+- si se reejecuta el manifest;
+- o si se decide promocionar/restringir consumo;
+
+entonces debe actualizarse esta seccion junto con `minute/README.md` y `CHANGELOG.md`.
 
 #### `1m_split_normalized`
 
@@ -878,9 +1036,13 @@ Estado: capa derivada avanzada, con piloto, auditoria full-universe y readout fi
 
 Evidencia principal:
 
+- `1m_split_normalized/README.md`
 - `1m_split_normalized/ohlcv_1m_split_normalized_pilot_readout_v0_1.md`
 - `1m_split_normalized/ohlcv_1m_split_normalized_full_universe_audit_readout_v0_1.md`
 - `1m_split_normalized/ohlcv_1m_split_normalized_final_readout_v0_1.md`
+- `1m_split_normalized/event_case_evidence_packs/ohlcv_1m_split_normalized_visual_inspector_pack_v0_1.md`
+- `1m_split_normalized/event_case_evidence_packs/ohlcv_1m_split_normalized_visual_case_manifest_v0_1.csv`
+- `1m_split_normalized/population_visual_overview/`
 - `1m_split_normalized/ohlcv_1m_split_normalized_inspection_notebook_v0_1.ipynb`
 - `1m_split_normalized/ohlcv_1m_split_normalized_full_universe_audit_notebook_v0_1.ipynb`
 
@@ -888,12 +1050,14 @@ Lectura correcta:
 
 - no es raw `ohlcv_1m`;
 - no debe leerse solo por el piloto inicial;
-- debe evaluarse como capa derivada: definida, implementada, pilotada, auditada, consumida y promovida;
+- debe evaluarse como capa derivada: definida, implementada, pilotada, consumida y auditada full-universe para eventos split auditables;
+- no debe confundirse auditoria full-universe de eventos split con materializacion fisica full-universe de todos los ticker-month;
+- el paquete visual moderno contiene `6` mapas poblacionales y `28` visuales de caso con `Que muestra / Responde / No responde / Consecuencia`;
 - debe leerse contra `layer_validation_standard_v0_1.md`.
 
-Madurez relativa: alta como capa derivada documentada.
+Madurez relativa: alta como capa derivada documentada y auditada para su deuda concreta de splits. Ya cumple el estandar inspector general-a-particular para esta pregunta: poblacion, familias de coverage, casos PASS, casos coverage-limited y decision de consumo. No debe describirse como pendiente de mapa visual poblacional.
 
-Riesgo principal: decir "piloto" ignorando el audit full-universe posterior, o usar el final readout sin declarar consumidor real.
+Riesgo principal: decir "piloto" ignorando el audit full-universe posterior; o decir "full-universe" sin aclarar que se refiere a eventos split auditables, no a materializacion fisica de toda la vista.
 
 #### `intraday_regime_features`
 
