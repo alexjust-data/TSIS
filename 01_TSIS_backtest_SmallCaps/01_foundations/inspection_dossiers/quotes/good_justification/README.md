@@ -1,5 +1,10 @@
 # Quotes Good Justification
 
+## Menu
+
+- [Quotes Good Justification](#quotes-good-justification)
+
+
 Esta carpeta debe contener la justificacion positiva de la franja `good` de `quotes`.
 
 No pretende volcar todo el universo bueno.

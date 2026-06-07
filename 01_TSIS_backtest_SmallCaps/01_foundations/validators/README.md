@@ -1,8 +1,29 @@
 # Validators
 
-`validators/` contiene los contratos de validacion institucional de los datasets y capas de `01_foundations`.
+## Menu
 
-Un validador, en esta carpeta, no significa necesariamente "script ejecutable". Significa contrato reproducible de validacion: que debe comprobarse, con que unidad de analisis, que salidas minimas deben emitirse, que separa `good`, `review`, `bad` o estados recuperables, y que evidencia hace falta antes de permitir consumo, promocion o cierre documental.
+- [Rol dentro de 01_foundations](#rol-dentro-de-01foundations)
+- [Que debe responder un validador](#que-debe-responder-un-validador)
+- [Que no es esta carpeta](#que-no-es-esta-carpeta)
+- [Autoridades que gobiernan validators](#autoridades-que-gobiernan-validators)
+- [Estructura actual](#estructura-actual)
+- [Capas de validacion](#capas-de-validacion)
+- [Estados y significado](#estados-y-significado)
+- [Salidas minimas](#salidas-minimas)
+- [Daily](#daily)
+- [Quotes](#quotes)
+- [Trades](#trades)
+- [Ohlcv 1m raw](#ohlcv-1m-raw)
+- [Validacion de capas derivadas](#validacion-de-capas-derivadas)
+- [Relacion con inspection_dossiers](#relacion-con-inspectiondossiers)
+- [Relacion con data_consumption_policies](#relacion-con-dataconsumptionpolicies)
+- [Cuando crear un nuevo validador](#cuando-crear-un-nuevo-validador)
+- [Plantilla recomendada](#plantilla-recomendada)
+- [Checklist antes de modificar un validador](#checklist-antes-de-modificar-un-validador)
+- [Errores que esta carpeta debe evitar](#errores-que-esta-carpeta-debe-evitar)
+- [Regla de changelog](#regla-de-changelog)
+- [Regla final](#regla-final)
+
 
 ## Rol dentro de 01_foundations
 

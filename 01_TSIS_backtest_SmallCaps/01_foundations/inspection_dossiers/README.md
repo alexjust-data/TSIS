@@ -1,5 +1,57 @@
 # Inspection Dossiers
 
+## Menu
+
+- [Rol de esta carpeta](#rol-de-esta-carpeta)
+- [Que es un inspection dossier](#que-es-un-inspection-dossier)
+- [Que no es esta carpeta](#que-no-es-esta-carpeta)
+- [Tipos de artefactos](#tipos-de-artefactos)
+  - [Notebooks](#notebooks)
+  - [Scripts o builders](#scripts-o-builders)
+  - [Markdown institucional](#markdown-institucional)
+- [Estructura esperada por dataset](#estructura-esperada-por-dataset)
+- [Readout principal](#readout-principal)
+- [Good justification](#good-justification)
+- [Flagged case evidence packs](#flagged-case-evidence-packs)
+- [Bad case evidence packs](#bad-case-evidence-packs)
+- [Coverage case evidence packs](#coverage-case-evidence-packs)
+- [Evidence assets](#evidence-assets)
+- [Regla obligatoria por evidencia](#regla-obligatoria-por-evidencia)
+- [Lectura visual real](#lectura-visual-real)
+- [Masa poblacional vs casos forenses](#masa-poblacional-vs-casos-forenses)
+- [Rehabilitacion](#rehabilitacion)
+- [Capas derivadas y promocion](#capas-derivadas-y-promocion)
+- [Diferencias por bloque actual](#diferencias-por-bloque-actual)
+  - [Daily](#daily)
+  - [Quotes](#quotes)
+  - [Trades](#trades)
+  - [Minute / ohlcv_1m raw](#minute--ohlcv1m-raw)
+  - [1m split normalized](#1m-split-normalized)
+  - [Intraday regime features](#intraday-regime-features)
+  - [Additional, short y otros bloques](#additional-short-y-otros-bloques)
+- [Flujo recomendado de trabajo](#flujo-recomendado-de-trabajo)
+- [Paquete Inspector Profundo](#paquete-inspector-profundo) Para humanos
+  - [Orden general obligatorio](#orden-general-obligatorio)
+  - [`daily`](#daily-1)
+  - [`quotes`](#quotes-1)
+  - [`trades`](#trades-1)
+- [Criterios de cierre](#criterios-de-cierre)
+- [Madurez relativa de dossiers](#madurez-relativa-de-dossiers)
+  - [Estado por bloque a 2026-06-07](#estado-por-bloque-a-2026-06-07)
+    - [`daily`](#daily-2)
+    - [`quotes`](#quotes-2)
+    - [`trades`](#trades-2)
+    - [`minute` / `ohlcv_1m` raw](#minute--ohlcv1m-raw-1)
+    - [`1m_split_normalized`](#1msplitnormalized)
+    - [`intraday_regime_features`](#intradayregimefeatures)
+    - [`additional`](#additional)
+    - [`short`](#short)
+  - [Regla de mantenimiento](#regla-de-mantenimiento)
+- [Regla de higiene](#regla-de-higiene)
+- [Relacion con `01_research`](#relacion-con-01research)
+- [Regla final](#regla-final)
+
+
 ## Rol de esta carpeta
 
 `inspection_dossiers/` contiene la capa de lectura humana e inspeccion institucional de los datasets y bloques auditados del modulo 01.
@@ -503,6 +555,175 @@ Antes de crear o actualizar un dossier:
 11. Eliminar o archivar outputs transitorios no consumidos.
 12. Registrar el cambio si tiene impacto institucional.
 
+## Paquete Inspector Profundo
+
+Fecha de referencia: 2026-06-07.
+
+Esta seccion indica que markdowns debe abrir un inspector humano para comprender en profundidad los tres bloques con mayor evidencia visual incrustada:
+
+- `daily`
+- `quotes`
+- `trades`
+
+No sustituye contratos, policies, validators ni registry entries. Es una guia de lectura para inspeccion humana profunda: primero contexto y veredicto, despues evidencia visual por familia.
+
+### Orden general obligatorio
+
+Antes de entrar en un bloque concreto, abrir:
+
+- `01_foundations/inspection_dossiers/README.md`
+
+Motivo:
+
+- fija el modelo comun de inspection dossiers;
+- explica madurez relativa;
+- separa readouts, casepacks, assets y contratos;
+- y evita comparar bloques por numero bruto de imagenes.
+
+### `daily`
+
+Objetivo de inspeccion:
+
+- entender calidad de barra diaria;
+- entender coverage;
+- distinguir `ohlcv_daily` de `ohlcv_daily_adjusted`;
+- y no colapsar `daily` en un binario `good / bad`.
+
+Orden de lectura:
+
+1. `daily/README.md`
+
+   Entrada local del bloque. Explica la diferencia entre `daily_core_v0_1` y `daily_adjusted_v0_1`, la separacion `quality axis` / `coverage axis`, el estado full-universe promovido de `daily_adjusted` y el rol de cada subcarpeta.
+
+2. `daily/daily_inspection_readout_v0_1.md`
+
+   Readout institucional principal. Resume veredicto, estados, consumidores, quality axis, coverage axis y cierre operativo de `daily`.
+
+3. `daily/bad_case_evidence_packs/daily_hard_invalid_cases_v0_1.md`
+
+   Dossier visual de la cola dura `bad`. Contiene los casos `hard_invalid_parse_or_price` con imagen incrustada. Debe abrirse para entender donde termina la defendibilidad de una barra diaria como mercado.
+
+4. `daily/flagged_case_evidence_packs/daily_non_good_quality_cases_v0_1.md`
+
+   Dossier visual de los casos `non_good_quality` / `recoverable_with_flag`. Debe abrirse para entender por que ciertas barras no son `good`, pero tampoco son exclusion dura.
+
+5. `daily/good_justification/daily_good_cases_v0_1.md`
+
+   Dossier visual de justificacion positiva. Debe abrirse para entender que significa `good` en `daily`: no perfeccion literal, sino barra diaria suficientemente defendible para consumo principal bajo policy.
+
+6. `daily/coverage_case_evidence_packs/daily_coverage_cases_v0_1.md`
+
+   Dossier visual de coverage. Debe abrirse para entender por que un gap no es automaticamente fallo duro, y como se separan `LIKELY_VALID_GAP_ONLY`, `AMBIGUOUS_REVIEW` y `REALLY_PROBLEMATIC_UNEXPECTED`.
+
+Lectura correcta final:
+
+- `daily` es un bloque institucionalmente avanzado y ampliamente utilizable;
+- su verdad principal vive en OHLC, fechas, parse, volume y coverage;
+- `vw` es diagnostico/flag, no autoridad unica de salud global;
+- `daily_adjusted` esta full-universe auditado y promovido;
+- no debe mezclarse raw, adjusted y adjusted proxy sin declarar price view.
+
+### `quotes`
+
+Objetivo de inspeccion:
+
+- entender calidad local del libro observado;
+- separar `good`, `review` y `bad`;
+- entender crossed/locked behavior;
+- y no confundir explicacion causal externa con rehabilitacion automatica del libro.
+
+Orden de lectura:
+
+1. `quotes/README.md`
+
+   Entrada local del bloque. Explica alcance, fuentes historicas, autoridad documental, estructura, modelo de imagenes y reglas para futuros agentes.
+
+2. `quotes/quotes_inspection_readout_v0_1.md`
+
+   Readout institucional principal. Resume taxonomia, politica de consumo, evidencia poblacional y veredicto global de `quotes`.
+
+3. `quotes/flagged_case_evidence_packs/quotes_review_cases_v0_1.md`
+
+   Dossier visual principal de `review`. Es el documento visual mas grande del bloque. Debe abrirse para entender casos donde el libro ya no es limpio, pero tampoco queda necesariamente excluido como `bad`.
+
+4. `quotes/bad_case_evidence_packs/quotes_bad_cases_v0_1.md`
+
+   Dossier visual de `bad`. Debe abrirse para entender los casos donde el libro local queda fuera del consumo core por contradiccion economica, crossed severo, degeneracion estructural u otra causa no rehabilitada.
+
+5. `quotes/good_justification/quotes_good_cases_v0_1.md`
+
+   Dossier visual de `good`. Debe abrirse para entender como se ve un libro sano o aceptable bajo policy, incluyendo micro-ruido tolerado.
+
+6. `quotes/quotes_open_casepacks_audit_v0_1.md`
+
+   Auditoria de trazabilidad de casepacks. Debe abrirse para comprobar que la frontera final `review` y `bad` no se construyo ad hoc, sino con correspondencia entre pools, manifests, markdowns y assets fisicos.
+
+Lectura correcta final:
+
+- `quotes` esta muy cerrado operacionalmente como dossier de calidad local del libro;
+- un evento externo puede explicar un episodio, pero no rehabilita automaticamente el libro como limpio;
+- `review` no debe consumirse como ejecucion limpia;
+- `bad` no desacredita al proveedor completo, pero excluye esa unidad/familia del consumo core.
+
+### `trades`
+
+Objetivo de inspeccion:
+
+- entender el tape raw de trades;
+- separar poblacion, muestra metodologica, full closeout `57f`, familias semanticas y consumo;
+- evitar que desacuerdo contra `daily` o `1m` se lea automaticamente como corrupcion del tape;
+- y revisar visualmente familias amplias, no solo dos o tres casos historicos.
+
+Orden de lectura:
+
+1. `trades/README.md`
+
+   Entrada local del bloque. Explica autoridad documental, fuentes historicas, estructura, universe readout, rehabilitacion, familias semanticas, price views y reglas para futuros agentes.
+
+2. `trades/trades_inspection_readout_v0_1.md`
+
+   Readout institucional principal. Explica las verdades simultaneas del bloque: poblacion estresada, muestra metodologica, closeout final, familias semanticas y estados de consumo.
+
+3. `trades/trades_global_universe_readout_v0_1.md`
+
+   Readout visual poblacional. Debe abrirse para entender distribucion global de labels, severidades, cobertura `1m`, odd-lots, duplicates, outside daily/1m y rehabilitacion.
+
+4. `trades/family_case_evidence_packs/good/good_cases_v0_1.md`
+
+   Casepack amplio de `good`. Debe abrirse para entender que `good` mide cola pristine, no masa util total.
+
+5. `trades/family_case_evidence_packs/bad_data/bad_data_cases_v0_1.md`
+
+   Casepack amplio de `bad_data`. Debe abrirse para entender la cola dura real y sus subfamilias, incluyendo casos donde el panel de precio no basta y hace falta evidencia estructural.
+
+6. `trades/family_case_evidence_packs/reference_scale_mismatch/reference_scale_mismatch_cases_v0_1.md`
+
+   Casepack amplio de scale mismatch. Debe abrirse para entender casos donde el conflicto principal es comparabilidad/escala frente a arbitros, no corrupcion directa del tape.
+
+7. `trades/family_case_evidence_packs/review_microstructure/review_microstructure_cases_v0_1.md`
+
+   Casepack amplio de microestructura. Debe abrirse para entender odd-lots, textura de prints y conflictos microestructurales que exigen flag o lectura contextual.
+
+8. `trades/family_case_evidence_packs/review_no_1m_reference/review_no_1m_reference_cases_v0_1.md`
+
+   Casepack amplio de ausencia de arbitro `1m`. Debe abrirse para entender por que la falta de referencia fina no equivale automaticamente a bad tape.
+
+9. `trades/family_case_evidence_packs/review_1m_reference_alignment/review_1m_reference_alignment_cases_v0_1.md`
+
+   Casepack amplio de alineacion con referencia `1m`. Debe abrirse para entender la familia donde el conflicto se evalua contra arbitro intradia fino.
+
+10. `trades/family_case_evidence_packs/review/review_cases_v0_1.md`
+
+    Casepack amplio de `review` generico. Debe abrirse para entender la frontera de casos no limpios, no rehabilitados automaticamente y no necesariamente `bad`.
+
+Lectura correcta final:
+
+- `trades` es el dossier mas completo como sistema forense institucional;
+- `good` diminuto no significa que todo lo demas sea basura;
+- `reference_scale_mismatch`, `review_microstructure`, `review_no_1m_reference`, `review_1m_reference_alignment`, `review` y `bad_data` no deben colapsarse en una sola nocion de calidad;
+- `outside_daily` u `outside_1m` son senales, no sentencia final aislada;
+- toda conclusion debe declarar arbitro, price view, familia causal, alcance y estado de consumo.
+
 ## Criterios de cierre
 
 Un dossier esta razonablemente cerrado cuando:
@@ -515,6 +736,229 @@ Un dossier esta razonablemente cerrado cuando:
 - el estado de consumo esta claro;
 - los contratos relacionados estan enlazados;
 - y no contradice schemas, policies, validators ni registry.
+
+## Madurez relativa de dossiers
+
+Fecha de referencia: 2026-06-07.
+
+Esta seccion es una foto operacional de la madurez de `inspection_dossiers/`.
+
+Debe actualizarse cada vez que avance cualquier dossier de esta carpeta. Esta obligacion es adicional a la entrada correspondiente en `CHANGELOG.md`: el changelog registra el cambio historico, pero esta seccion mantiene el mapa vivo de estado, madurez y riesgo por bloque.
+
+La madurez relativa no debe medirse por numero bruto de archivos, imagenes o markdowns. Debe medirse contra el modelo institucional definido en:
+
+- `01_foundations/module_contracts/inspection_dossier_model.md`
+
+Criterios de lectura:
+
+- readout principal o closeout claro;
+- builder, notebook o mecanismo reproducible;
+- `good_justification` cuando aplique;
+- `flagged_case_evidence_packs` o equivalente cuando haya uso condicionado;
+- `bad_case_evidence_packs` cuando haya exclusion;
+- `coverage_case_evidence_packs` cuando el problema sea coverage, continuidad o universo esperado;
+- `evidence_assets` trazables;
+- manifests, snapshots, tablas o parquets reproducibles;
+- imagenes incrustadas y explicadas;
+- aplicacion de `Que muestra / Responde / No responde / Consecuencia`;
+- separacion entre masa poblacional, muestra metodologica, casos forenses y decision final;
+- enlace a schema, dataset contract, consumption policy, validators y registry entry;
+- y declaracion de consumidores permitidos, restringidos y no permitidos.
+
+### Estado por bloque a 2026-06-07
+
+#### `daily`
+
+Estado: institucionalmente avanzado y operacionalmente central.
+
+Evidencia principal:
+
+- `daily/README.md`
+- `daily/build_daily_inspection_pack.md`
+- `daily/daily_inspection_readout_v0_1.md`
+- `daily/daily_adjusted_full_universe_audit_v0_1.md`
+- `daily/daily_adjusted_complex_corporate_actions_tail_audit_v0_1.md`
+- `daily/coverage_case_evidence_packs/`
+
+Lectura correcta:
+
+- separa calidad del bar y coverage;
+- distingue `ohlcv_daily` de `ohlcv_daily_adjusted`;
+- `daily_adjusted` tiene auditoria full-universe especifica;
+- gaps, recovery y coverage son parte del dictamen.
+
+Madurez relativa: muy alta para consumo institucional del bloque daily.
+
+Riesgo principal: resumir daily como `good / bad` sin coverage, o mezclar price views sin declararlas.
+
+#### `quotes`
+
+Estado: muy cerrado operacionalmente como dossier de calidad local del libro.
+
+Evidencia principal:
+
+- `quotes/build_quotes_inspection_pack.md`
+- `quotes/quotes_inspection_readout_v0_1.md`
+- `quotes/quotes_open_casepacks_audit_v0_1.md`
+- `quotes/good_justification/`
+- `quotes/flagged_case_evidence_packs/`
+- `quotes/bad_case_evidence_packs/`
+- `quotes/coverage_case_evidence_packs/`
+- `quotes/evidence_assets/`
+
+Lectura correcta:
+
+- evalua calidad local del libro observado;
+- separa crossed/locked behavior, severidad economica, `ask = 0`, `ask > 0`, persistencia, timestamp drift, rollover UTC e integerization;
+- el contexto externo puede explicar un episodio, pero no rehabilita automaticamente el libro como limpio;
+- `good / review / bad` es una politica operativa clara.
+
+Madurez relativa: muy alta como dossier operativo, con casepacks visuales amplios y auditoria de casepacks abiertos.
+
+Riesgo principal: confundir explicacion causal externa con rehabilitacion, o consumir `review` como libro limpio.
+
+#### `trades`
+
+Estado: el dossier mas completo como sistema de inspeccion forense.
+
+Evidencia principal:
+
+- `trades/build_trades_inspection_pack.md`
+- `trades/trades_inspection_readout_v0_1.md`
+- `trades/trades_global_universe_readout_v0_1.md`
+- `trades/trades_sampling_strategy_v0_1.md`
+- `trades/trades_inspection_notebook_v0_1.ipynb`
+- `trades/trades_universe_inspection_notebook_v0_1.ipynb`
+- `trades/population_evidence_packs/`
+- `trades/file_acceptance_evidence_packs/`
+- `trades/good_justification/`
+- `trades/flagged_case_evidence_packs/`
+- `trades/bad_case_evidence_packs/`
+- `trades/family_case_evidence_packs/`
+- `trades/evidence_assets/`
+
+Lectura correcta:
+
+- no puede leerse como cierre binario simple;
+- separa snapshot poblacional, muestra metodologica, closeout full `57f`, estados finales, familias semanticas y consumo operativo;
+- desacuerdo contra `daily` o `1m` no prueba por si solo corrupcion del tape;
+- `outside_daily`, `outside_1m`, duplicados, odd-lots, off-session activity o scale mismatch son senales, no sentencia final aislada;
+- la utilidad no se mide por la cola `good` extrema.
+
+Madurez relativa: mas completo que `quotes` como sistema forense institucional, aunque con mas caveats.
+
+Riesgo principal: colapsar `reference_scale_mismatch`, `review_microstructure`, `review_no_1m_reference`, `review_1m_reference_alignment`, `review` y `bad_data` en una sola nocion de calidad.
+
+#### `minute` / `ohlcv_1m` raw
+
+Estado: cierre institucional acotado para `ohlcv_1m` raw en alcance `<1B>`.
+
+Evidencia principal:
+
+- `minute/README.md`
+- `minute/raw_1m_lt1b_closeout_recalculation_v0_1.md`
+- `minute/raw_1m_schema_only_lt1b_inspection_readout_v0_1.md`
+- `minute/raw_1m_schema_only_lt1b_inspection_notebook_v0_1.ipynb`
+
+Lectura correcta:
+
+- documenta raw `ohlcv_1m`, no `ohlcv_1m_split_normalized`;
+- schema-only no equivale a validacion semantica completa;
+- el alcance `<1B>` debe mantenerse visible.
+- los porcentajes actuales validos para raw `1m <1B>` salen del recalculo local, no de los porcentajes historicos `full-scope`.
+- estado refinado `<1B>` actual: `good = 46652`, `review = 75245`, `bad = 212763`.
+
+Madurez relativa: buena para cierre raw acotado, menos rica visual y forensemente que `quotes`, `trades` o `daily`.
+
+Riesgo principal: promover schema-only a calidad economica completa, mezclar raw 1m con split-normalized, o presentar raw 1m como capa productiva limpia.
+
+#### `1m_split_normalized`
+
+Estado: capa derivada avanzada, con piloto, auditoria full-universe y readout final.
+
+Evidencia principal:
+
+- `1m_split_normalized/ohlcv_1m_split_normalized_pilot_readout_v0_1.md`
+- `1m_split_normalized/ohlcv_1m_split_normalized_full_universe_audit_readout_v0_1.md`
+- `1m_split_normalized/ohlcv_1m_split_normalized_final_readout_v0_1.md`
+- `1m_split_normalized/ohlcv_1m_split_normalized_inspection_notebook_v0_1.ipynb`
+- `1m_split_normalized/ohlcv_1m_split_normalized_full_universe_audit_notebook_v0_1.ipynb`
+
+Lectura correcta:
+
+- no es raw `ohlcv_1m`;
+- no debe leerse solo por el piloto inicial;
+- debe evaluarse como capa derivada: definida, implementada, pilotada, auditada, consumida y promovida;
+- debe leerse contra `layer_validation_standard_v0_1.md`.
+
+Madurez relativa: alta como capa derivada documentada.
+
+Riesgo principal: decir "piloto" ignorando el audit full-universe posterior, o usar el final readout sin declarar consumidor real.
+
+#### `intraday_regime_features`
+
+Estado: piloto semantico de features/contexto.
+
+Evidencia principal:
+
+- `intraday_regime_features/intraday_regime_features_semantic_pilot_readout_v0_1.md`
+
+Lectura correcta:
+
+- no normaliza precios;
+- no sustituye `daily_adjusted` ni `1m_split_normalized`;
+- genera contexto de regimen intradiario a partir de price views ya gobernadas;
+- responde preguntas de extension contra sesiones previas, gap, volatilidad reciente, distancia a rangos previos y ruptura de contexto.
+
+Madurez relativa: baja/media frente a `daily`, `quotes`, `trades` y `1m_split_normalized`; valiosa como capa semantica, no como promocion productiva amplia por si sola.
+
+Riesgo principal: consumirla como feature productiva sin declarar alcance, price view y madurez.
+
+#### `additional`
+
+Estado: closeout institucional compacto.
+
+Evidencia principal:
+
+- `additional/additional_institutional_closeout_v0_1.md`
+
+Lectura correcta:
+
+- agrupa datasets auxiliares, no tape;
+- su consumo depende de lag, provenance, cobertura, fuente y semantica temporal;
+- presencia fisica no implica consumo permitido.
+
+Madurez relativa: compacta por naturaleza; suficiente como closeout de inventario/politica si no exige casepacks visuales.
+
+Riesgo principal: usar `additional` como cajon generico sin schema/policy por subdataset.
+
+#### `short`
+
+Estado: closeout institucional compacto.
+
+Evidencia principal:
+
+- `short/short_institutional_closeout_v0_1.md`
+
+Lectura correcta:
+
+- short data es evidencia auxiliar de presion/crowding, no tape ejecutable;
+- no debe interpretarse como volumen consolidado completo ni como senal causal same-day sin lag explicito;
+- su consumo debe respetar fuente, fecha efectiva, revision y cobertura.
+
+Madurez relativa: compacta y acotada; apropiada si el objetivo es declarar semantica y restricciones de consumo.
+
+Riesgo principal: consumir short interest o short volume como si fuera microestructura intradia.
+
+### Regla de mantenimiento
+
+Cada avance material en cualquier dossier debe actualizar tres capas:
+
+1. El documento local del bloque afectado.
+2. Esta seccion de madurez relativa en `inspection_dossiers/README.md`.
+3. `CHANGELOG.md`, cuando el avance tenga impacto institucional, contractual, de consumo o de estructura documental.
+
+Si no se actualiza esta seccion, el mapa de madurez queda obsoleto aunque el changelog registre el cambio.
 
 ## Regla de higiene
 

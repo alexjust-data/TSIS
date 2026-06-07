@@ -1,5 +1,10 @@
 # Quotes Coverage Case Evidence Packs
 
+## Menu
+
+- [Quotes Coverage Case Evidence Packs](#quotes-coverage-case-evidence-packs)
+
+
 Esta carpeta queda reservada para casos de coverage o expected/present/healthy/usable cuando el cierre de `quotes` lo exija.
 
 En el estado actual del bloque, no es el eje principal de la inspeccion.

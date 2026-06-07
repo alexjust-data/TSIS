@@ -1713,3 +1713,48 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
   - no prueba completitud official/free `2005-2026`;
   - debe usarse para source validation, coverage comparison, forensic review y features declaradas con scope/ventana;
   - manifests y logs quedan como provenance, no como features de modelo.
+
+### 2026-06-07 | inspection_dossiers | README local de `daily` institucionalizado
+
+- se crea el README operativo del dossier `daily`:
+  - `01_foundations/inspection_dossiers/daily/README.md`
+- se actualiza el README raiz de `inspection_dossiers` para enlazarlo dentro de la madurez relativa:
+  - `01_foundations/inspection_dossiers/README.md`
+- el README local fija de forma navegable:
+  - diferencia entre `daily_core_v0_1` y `daily_adjusted_v0_1`;
+  - separacion obligatoria entre `quality axis` y `coverage axis`;
+  - estado full-universe promovido de `daily_adjusted`;
+  - rol de `good_justification`, `flagged_case_evidence_packs`, `bad_case_evidence_packs`, `coverage_case_evidence_packs` y `evidence_assets`;
+  - consumidores permitidos, restringidos y no habilitados automaticamente;
+  - reglas para futuros agentes y mantenimiento documental.
+
+### 2026-06-07 | inspection_dossiers | README local de `minute` institucionalizado
+
+- se crea el README operativo del dossier `minute`:
+  - `01_foundations/inspection_dossiers/minute/README.md`
+- se actualiza el README raiz de `inspection_dossiers` para enlazarlo dentro de la madurez relativa:
+  - `01_foundations/inspection_dossiers/README.md`
+- el README local fija de forma navegable:
+  - que `minute` documenta `ohlcv_1m_raw_v0_1`, no `ohlcv_1m_split_normalized`;
+  - que el estado vigente es `institutional_raw_closeout_reconciled_lt1b`;
+  - que los porcentajes raw `1m <1B>` validos salen del recalculo local, no del closeout historico `full-scope`;
+  - que el estado refinado `<1B>` actual es `good = 46652`, `review = 75245`, `bad = 212763`;
+  - que `RESCUE_SCHEMA_ONLY` no equivale a production-good;
+  - que raw 1m no debe consumirse como capa productiva limpia ni para trabajo split-sensitive.
+
+### 2026-06-07 | inspection_dossiers | paquete inspector profundo documentado
+
+- se anade en el README raiz de `inspection_dossiers` una seccion explicita para inspectores humanos:
+  - `01_foundations/inspection_dossiers/README.md`
+- la nueva seccion fija que markdowns deben abrirse para comprender en profundidad:
+  - `daily`
+  - `quotes`
+  - `trades`
+- el paquete distingue:
+  - entrada local del bloque;
+  - readout institucional;
+  - casepacks visuales `good`, `review/flagged`, `bad`;
+  - coverage en `daily`;
+  - auditoria de casepacks en `quotes`;
+  - family casepacks amplios en `trades`.
+- objetivo: que un inspector no tenga que inferir desde notebooks o assets sueltos que documentos visuales debe revisar.

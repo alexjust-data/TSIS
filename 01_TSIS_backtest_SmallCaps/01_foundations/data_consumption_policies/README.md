@@ -1,5 +1,50 @@
 # Data Consumption Policies
 
+## Menu
+
+- [Rol de esta carpeta](#rol-de-esta-carpeta)
+- [Autoridades relacionadas](#autoridades-relacionadas)
+- [Que es una consumption policy](#que-es-una-consumption-policy)
+- [Que no es esta carpeta](#que-no-es-esta-carpeta)
+- [Vocabulario de consumidores](#vocabulario-de-consumidores)
+  - [`backtest_core`](#backtestcore)
+  - [`backtest_extended`](#backtestextended)
+  - [`event_engine`](#eventengine)
+  - [`execution_simulator`](#executionsimulator)
+  - [`ml_primary`](#mlprimary)
+  - [`ml_flagged`](#mlflagged)
+  - [`rl_allowed`](#rlallowed)
+  - [`causal_only`](#causalonly)
+  - [`research_only`](#researchonly)
+  - [`forensic_only`](#forensiconly)
+  - [`live_downstream_candidate`](#livedownstreamcandidate)
+- [Clases no transitivas](#clases-no-transitivas)
+- [Estados de calidad y consumo](#estados-de-calidad-y-consumo)
+- [Coverage no es calidad](#coverage-no-es-calidad)
+- [Price views por consumidor](#price-views-por-consumidor)
+- [Flags y condiciones downstream](#flags-y-condiciones-downstream)
+- [Labels, features y leakage](#labels-features-y-leakage)
+- [Estructura actual](#estructura-actual)
+- [Lectura por policy actual](#lectura-por-policy-actual)
+  - [`daily_consumption_policy.md`](#dailyconsumptionpolicymd)
+  - [`quotes_consumption_policy.md`](#quotesconsumptionpolicymd)
+  - [`trades_consumption_policy.md`](#tradesconsumptionpolicymd)
+  - [`ohlcv_1m_raw_consumption_policy.md`](#ohlcv1mrawconsumptionpolicymd)
+  - [`daily_return_labels_consumption_policy.md`](#dailyreturnlabelsconsumptionpolicymd)
+  - [`intraday_regime_features_consumption_policy.md`](#intradayregimefeaturesconsumptionpolicymd)
+  - [`lt1b_universe_consumption_policy.md`](#lt1buniverseconsumptionpolicymd)
+  - [`additional_consumption_policy.md`](#additionalconsumptionpolicymd)
+  - [`short_consumption_policy.md`](#shortconsumptionpolicymd)
+  - [`short_review_consumption_policy.md`](#shortreviewconsumptionpolicymd)
+- [Campos recomendados para una policy](#campos-recomendados-para-una-policy)
+- [Criterios para crear una policy nueva](#criterios-para-crear-una-policy-nueva)
+- [Checklist antes de permitir consumo](#checklist-antes-de-permitir-consumo)
+- [Checklist de modificacion](#checklist-de-modificacion)
+- [Errores que debe evitar esta carpeta](#errores-que-debe-evitar-esta-carpeta)
+- [Relacion con `CHANGELOG.md`](#relacion-con-changelogmd)
+- [Regla final](#regla-final)
+
+
 ## Rol de esta carpeta
 
 `data_consumption_policies/` contiene las reglas operativas que traducen contratos de dataset a uso real por consumidores.

@@ -1,5 +1,47 @@
 # Dataset Contracts
 
+## Menu
+
+- [Rol de esta carpeta](#rol-de-esta-carpeta)
+- [Autoridades relacionadas](#autoridades-relacionadas)
+- [Que es un dataset contract](#que-es-un-dataset-contract)
+- [Que es una taxonomy / cut policy](#que-es-una-taxonomy--cut-policy)
+- [Que no es esta carpeta](#que-no-es-esta-carpeta)
+- [Tipos de contratos actuales](#tipos-de-contratos-actuales)
+  - [Dataset raw o core](#dataset-raw-o-core)
+  - [Derived price views](#derived-price-views)
+  - [Labels](#labels)
+  - [Features / states](#features--states)
+  - [Universes](#universes)
+  - [Auxiliary / contextual datasets](#auxiliary--contextual-datasets)
+- [Estructura actual](#estructura-actual)
+- [Lectura por documento actual](#lectura-por-documento-actual)
+  - [`daily_dataset_contract_v0_1.md`](#dailydatasetcontractv01md)
+  - [`daily_label_taxonomy_and_cut_policy.md`](#dailylabeltaxonomyandcutpolicymd)
+  - [`daily_adjusted_dataset_contract_v0_1.md`](#dailyadjusteddatasetcontractv01md)
+  - [`daily_return_labels_dataset_contract_v0_1.md`](#dailyreturnlabelsdatasetcontractv01md)
+  - [`quotes_dataset_contract_v0_1.md`](#quotesdatasetcontractv01md)
+  - [`quotes_label_taxonomy_and_cut_policy.md`](#quoteslabeltaxonomyandcutpolicymd)
+  - [`trades_dataset_contract_v0_1.md`](#tradesdatasetcontractv01md)
+  - [`trades_label_taxonomy_and_cut_policy.md`](#tradeslabeltaxonomyandcutpolicymd)
+  - [`ohlcv_1m_raw_dataset_contract_v0_1.md`](#ohlcv1mrawdatasetcontractv01md)
+  - [`ohlcv_1m_split_normalized_dataset_contract_v0_1.md`](#ohlcv1msplitnormalizeddatasetcontractv01md)
+  - [`intraday_regime_features_dataset_contract_v0_1.md`](#intradayregimefeaturesdatasetcontractv01md)
+  - [`lt1b_universe_dataset_contract_v0_1.md`](#lt1buniversedatasetcontractv01md)
+  - [`additional_dataset_contract_v0_1.md`](#additionaldatasetcontractv01md)
+  - [`short_dataset_contract_v0_1.md`](#shortdatasetcontractv01md)
+  - [`short_review_dataset_contract_v0_1.md`](#shortreviewdatasetcontractv01md)
+- [Campos recomendados para dataset contracts](#campos-recomendados-para-dataset-contracts)
+- [Campos recomendados para taxonomy/cut policies](#campos-recomendados-para-taxonomycut-policies)
+- [Homogeneidad y compatibilidad](#homogeneidad-y-compatibilidad)
+- [Criterios para crear un contrato nuevo](#criterios-para-crear-un-contrato-nuevo)
+- [Checklist antes de declarar un contrato institucional](#checklist-antes-de-declarar-un-contrato-institucional)
+- [Checklist de modificacion](#checklist-de-modificacion)
+- [Errores que debe evitar esta carpeta](#errores-que-debe-evitar-esta-carpeta)
+- [Relacion con `CHANGELOG.md`](#relacion-con-changelogmd)
+- [Regla final](#regla-final)
+
+
 ## Rol de esta carpeta
 
 `contract_registry/dataset_contracts/` contiene los contratos formales de datasets, capas derivadas, universos, labels, features y politicas de taxonomia/corte del modulo 01.

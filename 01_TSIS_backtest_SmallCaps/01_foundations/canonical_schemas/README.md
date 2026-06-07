@@ -1,5 +1,37 @@
 # Canonical Schemas
 
+## Menu
+
+- [Rol de esta carpeta](#rol-de-esta-carpeta)
+- [Autoridades relacionadas](#autoridades-relacionadas)
+- [Que es un schema canonico](#que-es-un-schema-canonico)
+- [Que no es esta carpeta](#que-no-es-esta-carpeta)
+- [Schema conformity vs quality](#schema-conformity-vs-quality)
+- [Tipos de schemas actuales](#tipos-de-schemas-actuales)
+  - [Market data raw/core](#market-data-rawcore)
+  - [Derived price views](#derived-price-views)
+  - [Labels](#labels)
+  - [Features / states](#features--states)
+  - [Universes](#universes)
+  - [Reference](#reference)
+  - [Additional](#additional)
+  - [Financial](#financial)
+  - [Halts](#halts)
+  - [Regime indicators](#regime-indicators)
+  - [Short y short_review](#short-y-shortreview)
+- [Estructura actual](#estructura-actual)
+- [Campos recomendados para un schema contract](#campos-recomendados-para-un-schema-contract)
+- [Alias fisicos y nombres canonicos](#alias-fisicos-y-nombres-canonicos)
+- [Sentinels y formas fisicas multiples](#sentinels-y-formas-fisicas-multiples)
+- [Operational artifacts](#operational-artifacts)
+- [Reglas de cambio](#reglas-de-cambio)
+- [Checklist antes de crear un schema nuevo](#checklist-antes-de-crear-un-schema-nuevo)
+- [Checklist de modificacion](#checklist-de-modificacion)
+- [Errores que debe evitar esta carpeta](#errores-que-debe-evitar-esta-carpeta)
+- [Relacion con `CHANGELOG.md`](#relacion-con-changelogmd)
+- [Regla final](#regla-final)
+
+
 ## Rol de esta carpeta
 
 `canonical_schemas/` contiene los contratos de schema canonico del modulo 01.

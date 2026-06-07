@@ -1,5 +1,37 @@
 # Dataset Registry
 
+## Menu
+
+- [Rol de esta carpeta](#rol-de-esta-carpeta)
+- [Autoridades relacionadas](#autoridades-relacionadas)
+- [Que es una registry entry](#que-es-una-registry-entry)
+- [Que no es esta carpeta](#que-no-es-esta-carpeta)
+- [Relacion con promocion](#relacion-con-promocion)
+- [Relacion con almacenamiento fisico](#relacion-con-almacenamiento-fisico)
+- [Relacion con `expected`, `present`, `healthy` y `usable`](#relacion-con-expected-present-healthy-y-usable)
+- [Registry entries vs manifests](#registry-entries-vs-manifests)
+  - [Registry entries](#registry-entries)
+  - [Manifests](#manifests)
+- [Estructura actual](#estructura-actual)
+  - [`additional/`](#additional)
+  - [`daily/`](#daily)
+  - [`features/`](#features)
+  - [`ohlcv_1m/`](#ohlcv1m)
+  - [`quotes/`](#quotes)
+  - [`short/`](#short)
+  - [`short_review/`](#shortreview)
+  - [`trades/`](#trades)
+  - [`universes/`](#universes)
+- [Campos recomendados](#campos-recomendados)
+- [Homogeneidad y compatibilidad](#homogeneidad-y-compatibilidad)
+- [Criterios para crear una nueva registry entry](#criterios-para-crear-una-nueva-registry-entry)
+- [Checklist antes de declarar una entry activa](#checklist-antes-de-declarar-una-entry-activa)
+- [Checklist de modificacion](#checklist-de-modificacion)
+- [Errores que debe evitar esta carpeta](#errores-que-debe-evitar-esta-carpeta)
+- [Relacion con `CHANGELOG.md`](#relacion-con-changelogmd)
+- [Regla final](#regla-final)
+
+
 ## Rol de esta carpeta
 
 `dataset_registry/` es el registro operativo de datasets, vistas y capas promovidas o materializadas dentro del modulo 01.
