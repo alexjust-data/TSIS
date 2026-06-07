@@ -323,7 +323,7 @@ Debe versionarse:
 
 No debe versionarse:
 
-- `images_Flash_Research/`;
+- `_images/`;
 - imagenes pesadas;
 - videos;
 - data;

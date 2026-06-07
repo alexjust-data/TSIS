@@ -24,6 +24,9 @@
 00_CTO/00_notas_RL.md
 /00_CTO/images_Flash_Research/
 /01_TSIS_backtest_SmallCaps/01_foundations/00_CTO/
+/01_TSIS_backtest_SmallCaps/00_cto/trading_playbooks/
+/01_TSIS_backtest_SmallCaps/00_cto/architecture_blueprints/project_layers.md
+/01_TSIS_backtest_SmallCaps/00_cto/architecture_blueprints/pipeline_app.md
 
 # Heavy market-data / generated dataset payloads
 # Keep contracts, readouts, manifests and code in Git. Do not commit raw or
