@@ -1,5 +1,28 @@
 # Contrato Local de Agentes - Modulo 01
 
+## 0. Regla inicial obligatoria de comunicacion `English`
+
+Si un mensaje del humano empieza por `English`, `ENGLISH` o `english`, con o sin dos puntos inmediatamente despues, el agente debe traducir primero al ingles exclusivamente el texto del humano posterior a ese marcador.
+
+La primera linea de la respuesta debe ser:
+
+```text
+English: <traduccion al ingles del contenido posterior a ENGLISH>
+```
+
+Esta traduccion debe aparecer antes de cualquier analisis, respuesta tecnica, pregunta de aclaracion, accion, uso de herramientas o pensamiento visible.
+
+Despues de esa primera linea, el agente debe continuar respondiendo normalmente al contenido del mensaje en el idioma normal de la conversacion.
+
+Importante: `English` / `ENGLISH` / `english` NO significa que la respuesta del agente deba estar en ingles. Solo obliga a traducir primero la frase del humano.
+
+Si el humano escribe literalmente `English answer`, el agente debe responder en ingles. La respuesta en ingles debe ser la traduccion fiel de la respuesta que habria dado en espanol, manteniendo el mismo contenido, alcance y nivel de detalle.
+
+Esta regla local replica la autoridad transversal definida en:
+
+- `C:\TSIS_Data\PROJECT_RULES.md`
+- `C:\TSIS_Data\AGENTS.md`
+
 ## 1. Rol
 
 Este documento es el contrato operativo local para agentes que trabajen dentro de:

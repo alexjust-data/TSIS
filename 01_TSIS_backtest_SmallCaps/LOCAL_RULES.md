@@ -1,5 +1,25 @@
 # Reglas Locales - Modulo 01
 
+## 0. Regla inicial obligatoria de comunicacion `English`
+
+Cuando el humano escriba un mensaje que empiece por `English`, `ENGLISH` o `english`, con o sin dos puntos inmediatamente despues, el agente debe traducir primero al ingles exclusivamente el texto del humano posterior a ese marcador.
+
+La primera linea de la respuesta debe ser:
+
+```text
+English: <traduccion al ingles del contenido posterior a ENGLISH>
+```
+
+Esta linea debe aparecer antes de cualquier otra respuesta, explicacion, analisis, accion, herramienta, pregunta o pensamiento visible.
+
+Despues de esa traduccion inicial, el agente puede responder normalmente al contenido del mensaje en el idioma normal de la conversacion.
+
+Importante: `English` / `ENGLISH` / `english` NO significa que la respuesta del agente deba estar en ingles. Solo obliga a traducir primero la frase del humano.
+
+Si el humano escribe literalmente `English answer`, el agente debe responder en ingles. La respuesta en ingles debe ser la traduccion fiel de la respuesta que habria dado en espanol, manteniendo el mismo contenido, alcance y nivel de detalle.
+
+Esta regla es obligatoria dentro de `01_TSIS_backtest_SmallCaps` y hereda de la gobernanza raiz de TSIS.
+
 ## 1. Alcance
 
 Estas reglas gobiernan el trabajo dentro de:

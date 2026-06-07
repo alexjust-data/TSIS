@@ -1,5 +1,27 @@
 ﻿# TSIS Project Rules
 
+## 0. Regla inicial obligatoria de comunicacion `English`
+
+Si un mensaje del humano empieza por `English`, `ENGLISH` o `english`, con o sin dos puntos inmediatamente despues, antes de pensar, explicar, usar herramientas o responder al contenido, el agente debe traducir al ingles exclusivamente el texto del humano posterior a ese marcador.
+
+La primera linea de la respuesta debe ser:
+
+```text
+English: <traduccion al ingles del contenido posterior a ENGLISH>
+```
+
+Esta linea debe aparecer antes de cualquier pensamiento visible, explicacion, analisis, accion, herramienta, respuesta tecnica o pregunta de aclaracion.
+
+Despues de esa primera linea, el agente puede continuar respondiendo normalmente al contenido del mensaje en el idioma normal de la conversacion.
+
+Importante: `English` / `ENGLISH` / `english` NO significa que la respuesta del agente deba estar en ingles. Solo obliga a traducir primero la frase del humano.
+
+Si el humano escribe literalmente `English answer`, el agente debe responder en ingles. La respuesta en ingles debe ser la traduccion fiel de la respuesta que habria dado en espanol, manteniendo el mismo contenido, alcance y nivel de detalle.
+
+Esta regla es permanente, transversal y obligatoria para cualquier agente futuro que opere dentro de TSIS.
+
+---
+
 ## 1. Rol de este documento
 
 `PROJECT_RULES.md` es el reglamento transversal de conducta técnica e institucional de TSIS.

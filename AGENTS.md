@@ -9,6 +9,26 @@ TSIS is an institutional-grade, agent-first quantitative research system focused
 - live trading infrastructure;
 - offline reinforcement learning preparation.
 
+## 0. Regla inicial obligatoria de comunicacion `English`
+
+Si un mensaje del humano empieza por `English`, `ENGLISH` o `english`, con o sin dos puntos inmediatamente despues, el agente MUST traducir primero al ingles exclusivamente el texto del humano posterior a ese marcador.
+
+La primera linea de la respuesta MUST ser:
+
+```text
+English: <traduccion al ingles del contenido posterior a ENGLISH>
+```
+
+Esa linea debe aparecer antes de cualquier respuesta, analisis, herramienta, pregunta de aclaracion, explicacion, accion o pensamiento visible.
+
+Despues de escribir la traduccion, el agente debe continuar respondiendo normalmente al contenido del mensaje en el idioma normal de la conversacion.
+
+Importante: `English` / `ENGLISH` / `english` NO significa que la respuesta del agente deba estar en ingles. Solo obliga a traducir primero la frase del humano.
+
+Si el humano escribe literalmente `English answer`, el agente MUST responder en ingles. La respuesta en ingles debe ser la traduccion fiel de la respuesta que habria dado en espanol, manteniendo el mismo contenido, alcance y nivel de detalle.
+
+Esta regla aplica siempre, en cualquier modulo de TSIS y para cualquier agente futuro.
+
 # TSIS AGENTS Contract
 
 ## 1. Rol de este documento
