@@ -63,6 +63,17 @@
 *.mkv
 *.webm
 
+# Heavy duplicate/reference-library exports.
+# Sersan PDFs are duplicate exports of the reviewed Markdown corpus and must
+# not enter Git history; the Markdown sources and distilled artifacts are the
+# institutional material.
+/00_CTO/99_REFERENCE_LIBRARY/**/*.pdf
+/00_CTO/99_REFERENCE_LIBRARY/**/*.PDF
+/00_CTO/99_REFERENCE_LIBRARY/**/*.ppt
+/00_CTO/99_REFERENCE_LIBRARY/**/*.pptx
+/00_CTO/99_REFERENCE_LIBRARY/**/*.PPT
+/00_CTO/99_REFERENCE_LIBRARY/**/*.PPTX
+
 # Small institutional evidence/manifests are allowed explicitly.
 !01_TSIS_backtest_SmallCaps/01_foundations/**/*.csv
 !01_TSIS_backtest_SmallCaps/00_cto/**/*.csv
