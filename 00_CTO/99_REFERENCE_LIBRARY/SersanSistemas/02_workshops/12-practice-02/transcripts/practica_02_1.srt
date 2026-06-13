@@ -1,0 +1,4031 @@
+1
+00:00:02,540 --> 00:00:07,740
+la emisión está comenzando todos los asistentes están en modo de sólo
+
+2
+00:00:07,740 --> 00:00:39,710
+escucha ahora sí estaba hablando sólo venga buenas tardes aquí los saludas
+
+3
+00:00:39,710 --> 00:00:44,789
+sergi sánchez por segunda vez si me dicen que se me oye me véis confirmando
+
+4
+00:00:44,789 --> 00:00:51,219
+los alumnos a ver qué tal si me oís bien si alguien no me oye escribir por
+
+5
+00:00:51,219 --> 00:00:54,500
+favor ahí en el chat si todo el mundo oye porque claro si alguien no me oye
+
+6
+00:00:54,500 --> 00:00:59,159
+no puede contestar que no me oye porque no me está oyendo entonces hay que
+
+7
+00:00:59,159 --> 00:01:02,359
+preguntarlo por escrito hay que preguntarlo por escrito esto es esto es
+
+8
+00:01:02,359 --> 00:01:08,719
+de parbulitos de de directo de parbulitos en directo todo el mundo que
+
+9
+00:01:08,719 --> 00:01:12,260
+me contesta a mí oye porque claro estoy hablando
+
+10
+00:01:13,019 --> 00:01:49,280
+pues vamos a empezar la clase de hoy esto no es pero es un segundín bueno
+
+11
+00:01:49,280 --> 00:01:54,640
+recuerdo un poquito la estructura de las clases principio vamos a ir haciendo
+
+12
+00:01:54,640 --> 00:02:00,810
+lo que lo que tengo preparado que siempre dejó un margen de improvisación que
+
+13
+00:02:00,810 --> 00:02:06,209
+depende básicamente un poco del feedback me va llegando y en la parte final de la
+
+14
+00:02:06,209 --> 00:02:10,210
+clase responderemos las preguntas normalmente lo haremos así si en alguna
+
+15
+00:02:10,210 --> 00:02:15,289
+ocasión pues considero que hay demasiadas preguntas pues otra tanda de
+
+16
+00:02:15,289 --> 00:02:20,979
+preguntas iremos un poco viendo sobre la marcha recordar que el curso no
+
+17
+00:02:20,979 --> 00:02:24,020
+acabará hasta que a mí me parezca y eso será de aquí mucho tiempo quiere decir
+
+18
+00:02:24,020 --> 00:02:27,900
+que tranquilos habrá clases que haremos más material habrá clases que haremos
+
+19
+00:02:27,900 --> 00:02:32,419
+menos dependiendo ahora clases que haremos sólo sistemas hará clases que
+
+20
+00:02:32,419 --> 00:02:38,939
+charlaremos más acuerdo es decir vamos un poco al ritmo que requiera el grupo
+
+21
+00:02:38,939 --> 00:02:44,780
+que es bastante bastante amplio ya comenté en la última a recordar las
+
+22
+00:02:44,780 --> 00:02:50,460
+preguntas podéis poner podéis escribir está siempre alberto como mínimo ahí
+
+23
+00:02:50,460 --> 00:02:55,740
+también está pilar incluso victor albergo hay varias personas pendientes
+
+24
+00:02:55,740 --> 00:03:00,740
+de de atender un poquito todas las preguntas que escribáis y alberto
+
+25
+00:03:00,740 --> 00:03:04,979
+principio aquellas cosas más inmediatas ya os iré respondiendo si no pues tomará
+
+26
+00:03:04,979 --> 00:03:10,699
+nota para bien en la ronda de preguntas de la parte final que la haremos tras el
+
+27
+00:03:10,699 --> 00:03:15,900
+descanso y sí que trataremos de hacer un pequeño parón de 5 como mucho con
+
+28
+00:03:15,900 --> 00:03:23,580
+muchos 10 minutos pero idealmente 5 y y entonces ahí pos pos vuelta de esta de
+
+29
+00:03:23,580 --> 00:03:28,060
+este pequeño descanso abordaremos las preguntas ya hay varias pendientes del
+
+30
+00:03:28,060 --> 00:03:33,740
+día anterior algunas que se han puesto en discord aquellos que todavía no
+
+31
+00:03:33,740 --> 00:03:39,159
+estéis en el disco los recuerdos recordar que hay un discord que bueno que
+
+32
+00:03:39,240 --> 00:03:43,479
+para cualquiera pero que hay un grupo reservado de alumnos donde ahí podéis
+
+33
+00:03:43,479 --> 00:03:50,909
+poner preguntas y un canal que se llama pregunta aquí y ahí podéis preguntar
+
+34
+00:03:50,909 --> 00:03:55,110
+alguna que a lo mejor no es propiamente del curso pues ya os respondemos pero
+
+35
+00:03:55,110 --> 00:04:00,419
+normalmente la responderemos en directos porque al final entendemos que pueden
+
+36
+00:04:00,419 --> 00:04:07,229
+aportar valor al resto de alumnos entonces un poco el criterio también hay
+
+37
+00:04:07,229 --> 00:04:11,710
+algunas pendientes por email y siempre intentaremos responderlo responderás en
+
+38
+00:04:11,710 --> 00:04:16,269
+la clase ya comenté el otro día que habían muchas referentes al tema de los
+
+39
+00:04:16,269 --> 00:04:21,509
+de la construcción de los datos como es algo que me interesa bastante pues voy a
+
+40
+00:04:21,509 --> 00:04:25,389
+empezar hoy hablando otra vez insistiendo en esto por lo que me gustaría
+
+41
+00:04:25,389 --> 00:04:32,230
+quedar bastante claro y cómo se construyen los gráficos entendemos qué
+
+42
+00:04:32,230 --> 00:04:37,220
+diferencias hay en futuro un índice una acción normalmente los problemas de
+
+43
+00:04:37,220 --> 00:04:42,740
+construcción de gráficos siempre siempre se refieren a los futuros porque
+
+44
+00:04:42,740 --> 00:04:47,420
+está claro que aún un índice pues no tiene nada que construir ya está
+
+45
+00:04:47,420 --> 00:04:53,459
+construido no es más que una fórmula operable pero en una fórmula matemática
+
+46
+00:04:53,459 --> 00:04:58,180
+que recoge pues el comportamiento de una determinada cesta normalmente de
+
+47
+00:04:58,180 --> 00:05:04,259
+acciones que puede ser de otra cosa y en sí no es operable un índice de acuerdo
+
+48
+00:05:04,819 --> 00:05:10,339
+aquellos que tengas menos experiencia es lo que tenéis el primer aspecto que
+
+49
+00:05:10,339 --> 00:05:13,939
+tenéis que tener claro que hay un índice nasdaq pero eso no es operable
+
+50
+00:05:13,939 --> 00:05:17,779
+recuerdo nosotros necesitamos una un activo que sea operable por ejemplo para
+
+51
+00:05:17,779 --> 00:05:25,560
+operar el nasdaq pues habría en dos opciones de manera directa que sería el
+
+52
+00:05:25,560 --> 00:05:30,759
+futuro ahora vamos a hablar bastante de ello y el etf que es el q q q acuerdo
+
+53
+00:05:30,759 --> 00:05:38,699
+es una acción y que las acciones en la parte de teoría ya hablamos un poquito
+
+54
+00:05:38,699 --> 00:05:45,319
+de ello pero quizá no tanto profundidad como lo voy a hacer ahora pero en
+
+55
+00:05:45,319 --> 00:05:50,319
+acciones al final el único componente que podría ajustarse o no es
+
+56
+00:05:50,319 --> 00:05:54,439
+es el dividendo y ahí es verdad que no hay tanto consenso sobre si hacerlo o no
+
+57
+00:05:54,439 --> 00:05:58,519
+y de hecho por ejemplo tres station no ofrece la posibilidad de ajustar
+
+58
+00:05:58,519 --> 00:06:04,079
+acciones decir el dividendo que se pagan por los etf es como cualquier
+
+59
+00:06:04,079 --> 00:06:08,480
+acción se va descontando del precio y eso no se ajusta y que a menos futuro sí
+
+60
+00:06:08,480 --> 00:06:13,079
+que ofrece la posibilidad de ajustarlo cambio y otros vendedores de datos que
+
+61
+00:06:13,079 --> 00:06:16,800
+sí que ofrecen la posibilidad de ajustar una cosa pero no os liais ahora nos
+
+62
+00:06:16,800 --> 00:06:22,240
+lees ahora con eso vale vamos un poco al tema de los de los futuros de acuerdo
+
+63
+00:06:22,240 --> 00:06:31,850
+de los futuros bien primero entender por qué ajustamos los futuros de acuerdo y
+
+64
+00:06:31,850 --> 00:06:35,930
+esto voy a volver a incidir un poco pero con datos recientes y podiendo
+
+65
+00:06:35,930 --> 00:06:39,410
+interactuar un poquito por ahí recordar que podéis escribir insisto en las
+
+66
+00:06:39,410 --> 00:06:43,689
+preguntas alberto está ahí atento
+
+67
+00:06:43,689 --> 00:06:49,569
+en los futuros se genera la necesidad de acuerdo la necesidad de que te unir
+
+68
+00:06:49,569 --> 00:06:55,810
+distintos vencimientos porque porque los futuros vencen expiran vale por
+
+69
+00:06:55,810 --> 00:07:01,860
+utilizar una palabra más propia en el caso de acciones de futuros sobre nasda
+
+70
+00:07:02,540 --> 00:07:10,129
+no johns sp 500 o tax cualquier índice
+
+71
+00:07:10,250 --> 00:07:16,050
+suelen tener cuatro vencimientos al año pero no único porque el ca 40 por
+
+72
+00:07:16,050 --> 00:07:21,769
+ejemplo francés vence cada mes de acuerdo es decir hay los hay que vencen
+
+73
+00:07:21,769 --> 00:07:25,610
+trimestralmente que es lo más usual sobre todo en el caso de acciones pero
+
+74
+00:07:25,610 --> 00:07:29,689
+los hay también que vencen mensualmente la del ca pero también saliendo de
+
+75
+00:07:29,689 --> 00:07:33,250
+acciones en el tema de como el que es el petróleo por ejemplo vence cada mes
+
+76
+00:07:33,250 --> 00:07:41,050
+esto lo bueno es una regulación del propio mercado que cuando nació nació
+
+77
+00:07:41,050 --> 00:07:46,389
+así normalmente por criterios de seguramente de producción o de
+
+78
+00:07:46,389 --> 00:07:50,269
+necesidad de variación de precios del que fuera pero pero en su momento pues
+
+79
+00:07:50,269 --> 00:07:55,709
+partió con x vencimientos pero ya digo lo más usual o los más
+
+80
+00:07:55,709 --> 00:08:01,269
+conocidos porque son los de acciones sp 500 como os digo nasdaq caos jones
+
+81
+00:08:01,269 --> 00:08:06,750
+los americanos vencen cuatro veces al año de acuerdo que es decir
+
+82
+00:08:06,750 --> 00:08:14,589
+trimestralmente quiere decir que cada tres meses el contrato expira y por lo
+
+83
+00:08:14,589 --> 00:08:21,720
+tanto ahí estamos en la obligación de cambiar si yo estoy operando
+
+84
+00:08:21,800 --> 00:08:26,240
+es lo que los importa ahora mismo y yo al final me voy a encontrar cuando
+
+85
+00:08:26,240 --> 00:08:32,559
+llegue ese periodo que tengo que cerrar mi posición en el contrato antiguo y
+
+86
+00:08:32,559 --> 00:08:35,759
+abrirle en el nuevo ahora mismo por ejemplo para que para que hablemos de un
+
+87
+00:08:35,759 --> 00:08:43,240
+caso práctico estamos operando el caso el contrato de marzo porque ya venció
+
+88
+00:08:43,240 --> 00:08:47,960
+diciembre en el caso de índices americanos
+
+89
+00:08:47,960 --> 00:08:54,080
+vencen tercer viernes tercer viernes del trimestre o sea terceros viernes de
+
+90
+00:08:54,080 --> 00:08:59,360
+mes del último mes del trimestre es decir tercer viernes de marzo de acuerdo
+
+91
+00:08:59,360 --> 00:09:07,919
+acabará expirará el contrato de acuerdo es decir en este caso en concreto será
+
+92
+00:09:07,919 --> 00:09:17,679
+el 15 de marzo de acuerdo 15 de marzo expirarán los futuros que ahora
+
+93
+00:09:17,679 --> 00:09:23,399
+tienen la letra h esto de las letras como delta luego os lo pongo luego os
+
+94
+00:09:23,399 --> 00:09:27,440
+lo pongo vale para no sabíamos ahora de cuáles son todas las letras h es marzo
+
+95
+00:09:27,440 --> 00:09:31,559
+vale esto nuevamente es así
+
+96
+00:09:32,559 --> 00:09:40,440
+h es marzo igual que m es junio junio esos dos pasos son las más usuales como
+
+97
+00:09:40,440 --> 00:09:45,559
+el primer paso es ingresar en septiembre si usted le hace un clic aquí z y va a llevar
+
+98
+00:09:45,559 --> 00:09:51,440
+esos son los cuatro principales muchos futuros coinciden con esos cuatro aunque
+
+99
+00:09:51,440 --> 00:09:57,720
+hay los cargaran discos me las tengo que mirar
+
+100
+00:09:57,720 --> 00:10:01,799
+así que me las sé porque son las típicas preguntas me las tengo que mirar
+
+101
+00:10:01,799 --> 00:10:08,080
+entonces bien ahora estamos contestando operando en una pestaña del navegador
+
+102
+00:10:08,639 --> 00:10:13,720
+h 24 estas estas las letras ahora mismo es lo de menos estos nomenclatura de cada
+
+103
+00:10:13,720 --> 00:10:19,960
+es bastante estándar pero puede ser que cada plataforma tenga sus matices sus
+
+104
+00:10:19,960 --> 00:10:25,919
+maneras de referirse al de acuerdo lo que importa es el vencimiento de marzo es
+
+105
+00:10:25,919 --> 00:10:31,000
+el que ahora es lo que llevamos el front el que el mercado está operando como
+
+106
+00:10:31,000 --> 00:10:35,320
+principal como se sabe esto bueno porque es el que tiene más volumen y por
+
+107
+00:10:35,320 --> 00:10:39,899
+experiencia ya lo sabes ahora mismo no lo sabes nunca pero cuando empiezas a
+
+108
+00:10:39,899 --> 00:10:44,840
+operar pues ya lo sabes este tipo de cosas que parecen cuando empiezas a
+
+109
+00:10:44,840 --> 00:10:49,559
+recorrer complicadas son siempre igual de acuerdo no cambia siempre la misma
+
+110
+00:10:49,559 --> 00:10:53,639
+rutina tercer viernes de mes que acaba siempre es la letra h y siempre es la letra u
+
+111
+00:10:53,639 --> 00:11:01,720
+m que no tiene más que tenerlo apuntado sabérselo y ya está aquí con el
+
+112
+00:11:01,720 --> 00:11:08,799
+tiempo ya es podemos decir uso para el costumbre y lo mismo los símbolos de la
+
+113
+00:11:08,799 --> 00:11:13,120
+plataforma o lo mismo que los gráficos veis yo tengo aquí abajo que es la
+
+114
+00:11:13,120 --> 00:11:16,720
+manera en que tres sesiones de información que le llamamos rolos y lo
+
+115
+00:11:16,720 --> 00:11:22,039
+tengo creado para eso para ver los rolos que hago comparo el vencimiento
+
+116
+00:11:22,039 --> 00:11:29,080
+podemos decir que va a expirar con el futuro ahora queda mucho ahora estamos
+
+117
+00:11:29,080 --> 00:11:32,480
+en marzo y por eso que la derecha ahora lo voy a hacer grande para que lo veáis
+
+118
+00:11:32,480 --> 00:11:37,600
+mejor si es un dispositivo pequeño pues veis un gráfico por ejemplo que estos
+
+119
+00:11:37,600 --> 00:11:41,759
+son velas de un minuto en el nasdaq es que apenas tiene apenas tiene datos
+
+120
+00:11:41,759 --> 00:11:46,679
+porque porque esto es junio de acuerdo sí que va haciendo algún contrato pero
+
+121
+00:11:46,679 --> 00:11:53,440
+uno sabe apenas apenas nadie opera esto hoy en día puede haber algún motivo para
+
+122
+00:11:53,440 --> 00:11:58,000
+operarlo si puede haber algunas estrategias tipo calendar pero son más
+
+123
+00:11:58,000 --> 00:12:03,519
+de commodities que de web tardar unos 5 minutos puede y de hecho como es no
+
+124
+00:12:03,519 --> 00:12:07,840
+aparece un contrato mueve el acuerdo algún trato que mueve hoy por ejemplo
+
+125
+00:12:07,840 --> 00:12:14,559
+vería así lo que llevamos en sesión el contrato de junio ha movido a
+
+126
+00:12:14,559 --> 00:12:19,879
+200 bienvenidos al curso de latín de trading este va a ser el módulo número uno
+
+127
+00:12:19,879 --> 00:12:27,080
+poquita cosa poquita cosa en cambio el ok luego del disclaimer actual es como el
+
+128
+00:12:27,159 --> 00:12:36,840
+marzo pues lleva 327 mil por 100 y no dependas el tray se hace en importante
+
+129
+00:12:36,840 --> 00:12:41,879
+la medida que vaya avanzando que tener una vida equilibrada es decir y igualando
+
+130
+00:12:41,879 --> 00:12:47,799
+vale pero fijaros en un detalle importante a abrirme un poco no me
+
+131
+00:12:47,799 --> 00:12:53,679
+abierto el lapicito sólo lo que quiero que vea es cómo se comporta las cosas en
+
+132
+00:12:53,679 --> 00:13:00,440
+la pantalla pero ya lo tengo aquí ya lo tengo aquí preparado a ver color por
+
+133
+00:13:00,440 --> 00:13:08,639
+ejemplo amarillo amarillo y vamos a ir con un puntito mediano este es el módulo
+
+134
+00:13:08,639 --> 00:13:13,519
+tres del curso aquí está compañía en los que los precios vale ya lo digo yo
+
+135
+00:13:13,519 --> 00:13:17,440
+por si no se ve muy grande acuerdo marzo ahora mismo se refiere a 15 mil
+
+136
+00:13:17,440 --> 00:13:31,759
+17 mil 577 78 más o menos y el siguiente está a 17 mil 800 más de 200 puntos por
+
+137
+00:13:31,759 --> 00:13:40,879
+encima el índice el índice recordar el índice que replican todos es decir esto
+
+138
+00:13:40,879 --> 00:13:45,440
+es el futuro al final sigue a un subyacente cuál es el subyacente
+
+139
+00:13:46,320 --> 00:13:58,360
+y aparte es el nasdaq 100 a 17 mil 469 también es decir por debajo esto es normal es usual
+
+140
+00:13:58,360 --> 00:14:08,470
+y lo que no es estable podemos decir es cuanto por encima el futuro normalmente va a estar por
+
+141
+00:14:08,470 --> 00:14:15,990
+encima va a estar por encima del contado indican que sobre todo un contra más alejado esté de la
+
+142
+00:14:15,990 --> 00:14:22,149
+fecha de vencimiento porque bueno porque el tiempo vale dinero que hablamos del valor temporal del
+
+143
+00:14:22,149 --> 00:14:27,549
+dinero aquel que no lo haya visto es el tema 0 del curso que no corresponde a término agonómico
+
+144
+00:14:27,549 --> 00:14:36,190
+pero pues para para aquellos que no tuvieran idea pues decidimos hacer ese tema y algunos nos habéis
+
+145
+00:14:36,190 --> 00:14:41,470
+preguntado por qué hicimos eso y a lo mejor no hemos hablado de órdenes bueno hemos hablado de
+
+146
+00:14:41,470 --> 00:14:46,669
+órdenes de hecho hemos hablado pero es verdad que siempre puedes hablar más de todo y nunca sabes
+
+147
+00:14:46,669 --> 00:14:52,070
+dónde cortar de acuerdo y bueno pues sí podríamos haber mejor hablado alguna cosa más he dejado un
+
+148
+00:14:52,070 --> 00:14:56,429
+manual por ahí de análisis técnico para aquel que quiera saber cosas de análisis técnico que no
+
+149
+00:14:56,429 --> 00:15:02,429
+que yo que sé que es una tendencia de cosas de tipo pero bueno sí que podríamos haber hablado
+
+150
+00:15:02,429 --> 00:15:10,649
+alguna cosa más de órdenes para no iniciados no pero bueno volviendo al tema del dinero el
+
+151
+00:15:10,649 --> 00:15:17,889
+motivo 1 es ese el tiempo vale dinero y eso viene reflejado sobre todo por el tipo de interés que
+
+152
+00:15:17,889 --> 00:15:25,769
+sabéis que es variable que hay momentos de tipos más alto y de tipos más bajo ahora mismo pues
+
+153
+00:15:25,769 --> 00:15:30,649
+estamos en si no recuerdo mal hablo de memoria en el cuatro y medio cuatro y medio alberto eeuu
+
+154
+00:15:31,289 --> 00:15:38,519
+estamos a cuatro y medio no tipos en eeuu vale pues ahora estamos a cuatro y medio entonces
+
+155
+00:15:38,519 --> 00:15:45,480
+pues claro hace tres años era muy inferior y por lo tanto la diferencia era menor porque el tiene
+
+156
+00:15:45,480 --> 00:15:50,159
+el tiempo valía menos dinero de acuerdo el tiempo valía menos dinero ahora el tiempo vale más dinero
+
+157
+00:15:50,159 --> 00:15:55,759
+porque los tipos de interés no vamos a entrar ahora porque ni demás no no sobre todo este de
+
+158
+00:15:55,759 --> 00:16:00,840
+este curso pero el tiempo ahora vale más dinero que hace tres años entonces por lo tanto los
+
+159
+00:16:00,840 --> 00:16:07,639
+futuros recogen ese impacto hay otros valores otras cosas que influyen si por supuesto los
+
+160
+00:16:07,639 --> 00:16:14,720
+dividendos que pagan las acciones vale y básicamente es eso de acuerdo básicamente es eso el tiempo y
+
+161
+00:16:14,720 --> 00:16:20,559
+los dividendos que pagan las acciones básicamente es eso el coste y el coste de financiación que
+
+162
+00:16:21,440 --> 00:16:28,389
+el tiempo entonces eso es el motivo por el que futuro suele estar por encima el cuánto está por
+
+163
+00:16:28,389 --> 00:16:36,870
+encima ya os digo es algo que es variable y como veis el índice está a 17 400 y pico marzo está a
+
+164
+00:16:36,870 --> 00:16:46,240
+17 600 y junio está a 17 800 si vamos más atrás pues seguramente estará más esto normalmente es
+
+165
+00:16:46,240 --> 00:16:53,379
+así no entramos ahora en si esto a veces invierte no da igual esto es lo normal de acuerdo esto es
+
+166
+00:16:53,379 --> 00:17:00,419
+lo normal lo habitual porque por este componente temporal que os decía vale por ese componente
+
+167
+00:17:00,419 --> 00:17:07,059
+temporal que os decía vale entonces claro como yo tengo un vencimiento si yo quiero hacer análisis
+
+168
+00:17:07,059 --> 00:17:13,859
+quiero hacer sistemas quiero hacer backtest yo tengo que esto que veis ahora es solo el contrato
+
+169
+00:17:13,859 --> 00:17:18,740
+de marzo y como veis pues tiene unos días que tiene volumen que lo veis abajo pero a partir de
+
+170
+00:17:18,740 --> 00:17:24,259
+que empezó a ser el front para atrás como veis apenas tiene volumen y ya llega a un punto que
+
+171
+00:17:24,259 --> 00:17:30,259
+incluso solo tiene tics a mí esto no me sirve para trabajar entonces de aquí viene la necesidad de
+
+172
+00:17:30,259 --> 00:17:37,339
+unir de acuerdo distintos contratos y construir un gráfico continuo vale de esto viene de que los
+
+173
+00:17:37,339 --> 00:17:44,319
+futuros expiran imaginaos el que expira cada mes pues pues todavía peor vale entonces cuál es el
+
+174
+00:17:44,319 --> 00:17:52,920
+criterio para unir bueno hay varios pero en general el consenso bien utiliza un criterio bastante
+
+175
+00:17:52,920 --> 00:17:57,200
+coherente y sencillo que es o bien el que tiene más volumen o bien el que tiene más open interest
+
+176
+00:17:57,200 --> 00:18:04,440
+esto esto es así decir a mí a mí que me interesa operar bueno aquel que el mercado concibe la front
+
+177
+00:18:05,039 --> 00:18:11,279
+y cuál es el front pues el principal pues a aquel que está haciendo más volumen de acuerdo ahora no
+
+178
+00:18:11,279 --> 00:18:18,960
+hay duda vale como a medida que nos acercamos a la expiración nuevamente por uso de costumbre en
+
+179
+00:18:18,960 --> 00:18:28,680
+10 5 6 7 días hay siempre ahora por ejemplo el que normalmente es 5 6 días estoy a plaza de la
+
+180
+00:18:28,680 --> 00:18:35,039
+fecha de expiración es decir ese tercer viernes me metí en tres no aquí tengo un indicador que
+
+181
+00:18:35,039 --> 00:18:42,319
+compara para ganar otro y me va a medir ahora aquí lo ponen muy bien voy a intentar hacerlo
+
+182
+00:18:42,319 --> 00:18:49,839
+hacerlo grande pero está en los 224 bueno es lo que marca este indicador donde empieza esto
+
+183
+00:18:49,839 --> 00:18:56,119
+simplemente resta uno contra otro a hacerse presente y es que resta uno contra otro y además de alguna
+
+184
+00:18:56,519 --> 00:19:03,079
+cuando está acá pero cuando yo es que sólo va en tiempo real y no respeto mi riesgo recuerde que
+
+185
+00:19:03,079 --> 00:19:09,640
+mi riesgo es 380 aquí se empieza a descontrolar mis aires y aquí yo combino esto fíjense que
+
+186
+00:19:09,640 --> 00:19:16,279
+es esto al final tiene una parte con una línea recta que es esto no estoy persiguiendo lo pues
+
+187
+00:19:16,279 --> 00:19:24,680
+pero algo interesante en la diferencia entre el vídeo dando el solo 20 real en el 52 y por lo
+
+188
+00:19:24,680 --> 00:19:30,160
+tanto por eso no me que es este punto de acá y no me estaba marcando está debido a ser hasta que
+
+189
+00:19:30,160 --> 00:19:34,920
+no lo he abierto y está debido de ser fíjense que es algo bastante parecido con el de arriba
+
+190
+00:19:34,920 --> 00:19:39,759
+es la combinación de algo exactamente lo mismo porque se mide la diferencia esta entrada por
+
+191
+00:19:39,759 --> 00:19:44,519
+sí sola ahora que está bien y esta entrada por sí sola estaba bien siempre y cuando respetar
+
+192
+00:19:44,519 --> 00:19:53,440
+lo que está mal es no salir acá y agregar acá porque me sale de la posición entonces
+
+193
+00:19:53,440 --> 00:20:00,039
+como unimos estos contratos de acuerdo aquí es donde vendría la problemática y donde he visto
+
+194
+00:20:00,039 --> 00:20:07,450
+que hay bastante bastante confusión esto lo hablamos en la clase bueno en la parte de
+
+195
+00:20:08,450 --> 00:20:17,180
+pero estaba explicado en el vídeo de aspectos previos si no recuerdo mal no si lo hablamos
+
+196
+00:20:17,180 --> 00:20:22,619
+en aspectos pero es en el punto 5 del desarrollo de nuestro sistema vale sería 511 512 no me
+
+197
+00:20:22,619 --> 00:20:27,700
+acuerdo detalle que no tengo aquí los vídeos delante pero sí que era el 5 aspectos previos
+
+198
+00:20:27,700 --> 00:20:34,839
+que hablaba tecnología y ahí hablaba también de esto de los futuros de teniendo los gráficos
+
+199
+00:20:34,839 --> 00:20:41,400
+continuos porque rolamos bien buenos días esto será un tutorial para das trader ok esta es la
+
+200
+00:20:41,400 --> 00:20:47,920
+plataforma recién descargada entonces les quiero mostrar un poco lo que debe configurar o lo que
+
+201
+00:20:47,920 --> 00:20:57,640
+lea no enseñe forward voy a enseñar los forward que los he construido con tic data que tenemos
+
+202
+00:20:57,640 --> 00:21:04,230
+nosotros la posibilidad de hacerlo entonces he construido un par de gráficos continuos nosotros
+
+203
+00:21:04,230 --> 00:21:10,230
+tenemos datos comprados que esto me ha preguntado alguien ya les había contestado si hacía falta no
+
+204
+00:21:10,230 --> 00:21:18,990
+de verdad hoy en día no hace falta no es algo imprescindible no nos no no va a haber una gran
+
+205
+00:21:18,990 --> 00:21:23,670
+diferencia hoy en día recuerdo porque ya llevamos muchos años de buena calidad de datos en la mayoría
+
+206
+00:21:23,670 --> 00:21:28,009
+de eventos el problema es que cuando yo empecé ahora sí pues seguimos haciendo porque al final
+
+207
+00:21:28,009 --> 00:21:33,650
+pues quieres hacer las cosas con doble che podemos decir no aquí tengo algunos muy actualizados
+
+208
+00:21:33,650 --> 00:21:38,490
+otros que los tengo antiguos porque al no usarlos nos actualizó pero esto con este
+
+209
+00:21:38,490 --> 00:21:44,450
+programa nosotros editamos tenemos la posibilidad de construir el gráfico continuo de distintos
+
+210
+00:21:44,450 --> 00:21:53,109
+criterios con distintas ordenaciones pero ya digo es igual esto entonces aquí por un lado tengo yo
+
+211
+00:21:53,109 --> 00:22:06,539
+he aplicado un sistema cualquiera creo que son unas bandas de de bollinger un poco igual que ya
+
+212
+00:22:06,539 --> 00:22:12,079
+simplemente pues enseñaros para que veáis un poco la diferencia si es simplemente compra
+
+213
+00:22:12,079 --> 00:22:17,000
+con bollinger van y cierra pero por arriba es decir poco haber ratio para aquellos que sepáis
+
+214
+00:22:17,000 --> 00:22:28,599
+de que hablo es un poco a ver de izquierda a derecha no sé esto como lo veis de grande pero
+
+215
+00:22:28,599 --> 00:22:36,880
+bueno voy a intentar explicarlo lo mejor posible para aquellos que lo veáis en pequeño espero
+
+216
+00:22:37,240 --> 00:22:45,970
+vale entonces aquí de izquierda a derecha yo tengo los dos gráficos de la izquierda es decir
+
+217
+00:22:45,970 --> 00:22:57,420
+estos este y este vale son gráficos forward vale son gráficos forward el de arriba es un
+
+218
+00:22:57,420 --> 00:23:02,700
+forward por diferencia ahora ahora explico ahora explico y el de abajo es un forward por rati
+
+219
+00:23:02,700 --> 00:23:12,140
+que es forward o que es backward que son los dos criterios los he he construido porque con
+
+220
+00:23:12,140 --> 00:23:19,349
+un ejemplo se va a ver muy se va a ver muy bien no forward quiere decir que yo parto yo cuando
+
+221
+00:23:19,349 --> 00:23:24,430
+construyo un gráfico como habéis visto tengo que unir de cientos vencimientos parto de algún punto
+
+222
+00:23:24,430 --> 00:23:31,529
+lo normal lo normal es partir del inicio del contrato pero no tiene por qué podría iniciar
+
+223
+00:23:31,529 --> 00:23:40,640
+en el inicio del año pasado pero lo normal es hacerlo en el inicio del contrato para eso
+
+224
+00:23:40,640 --> 00:23:46,599
+ya partimos que necesito toda la base de datos entonces si tengo toda la base de datos en este
+
+225
+00:23:46,599 --> 00:23:55,650
+caso el nasdaq es de 1 de julio del 99 vale yo la tengo voy a abrir ahora este vale para que lo
+
+226
+00:23:55,650 --> 00:24:01,369
+para que lo veamos me parece que en algún momento voy a tener que reiniciar 3 stationes porque no
+
+227
+00:24:01,369 --> 00:24:05,569
+lo he hecho aquí al empezar y francamente me he equivocado porque se me va a saturar cien por
+
+228
+00:24:05,569 --> 00:24:13,839
+cien empiezo aquí en el en el 1 de julio vale y ahí empieza empieza si yo hago forward de acuerdo
+
+229
+00:24:13,839 --> 00:24:22,740
+en el inicio de acuerdo que es ese 1 de junio que os digo el precio empieza en su valor real es decir
+
+230
+00:24:22,740 --> 00:24:36,130
+el que tuvo ese día de acuerdo que tuvo ese día veis aquí open 2000 abrió 2329 con 50
+
+231
+00:24:38,359 --> 00:24:46,230
+x movimiento vale empieza ahí y lo que hago es los ajustes que haya que hacer que ahora
+
+232
+00:24:46,230 --> 00:24:54,069
+los explico que ahora los explico vale los hago hacia adelante es decir os sumo el resto pero en
+
+233
+00:24:54,740 --> 00:25:01,019
+el siguiente contrato no en el anterior de acuerdo es decir el único que refleja el valor real que
+
+234
+00:25:01,019 --> 00:25:11,849
+tuvo en ese día es este el del inicio pues vamos a suponer que fue estamos hablando del 99 que
+
+235
+00:25:11,849 --> 00:25:17,049
+era julio por lo tanto estaría operando septiembre pues que era septiembre del 99 el contrato de
+
+236
+00:25:17,049 --> 00:25:24,500
+septiembre del 99 pues ese contrato en este gráfico refleja su valor real a partir de ahí todos los
+
+237
+00:25:24,500 --> 00:25:38,009
+siguientes están ajustados vale están ajustados antes que lo tenía preparado lo tenía pensado
+
+238
+00:25:38,009 --> 00:25:45,049
+pero ahora al empezar no lo he hecho porque os quería enseñar primero que os va a ayudar a entenderlo
+
+239
+00:25:45,049 --> 00:25:51,089
+mejor vale bien bien lo que he dicho es correcto pero me vuelvo ahora al de medio para explicaros
+
+240
+00:25:51,490 --> 00:25:57,970
+para explicaros la cosa que os va a ayudar a aquellos que todavía no me estáis siguiendo vale el no
+
+241
+00:25:57,970 --> 00:26:03,250
+ajustado vale este de aquí abajo ahora os voy a enseñar es el no ajustado es decir este simplemente
+
+242
+00:26:03,250 --> 00:26:11,809
+une todos los contratos pero sin hacer ningún ajuste vale este por tanto refleja todos los
+
+243
+00:26:11,809 --> 00:26:17,410
+precios de los contratos reales porque no hay ningún ajuste qué problema tiene que esta
+
+244
+00:26:17,410 --> 00:26:23,130
+diferencia que habéis visto que ahora veíamos por ejemplo en el caso este real actual no era
+
+245
+00:26:23,130 --> 00:26:29,089
+de 240 puntos o si ahora mismo en este momento cuando llegue el vencimiento veremos cuál es
+
+246
+00:26:29,089 --> 00:26:35,650
+pero bueno igual pongamos que son 200 puntos pues en el momento de unir esos dos contratos pues se
+
+247
+00:26:35,650 --> 00:26:42,289
+aparecen con 200 contratos con 200 puntos de diferencia vale este todos los precios que
+
+248
+00:26:42,289 --> 00:26:49,049
+tienes son reales pero habrá algunos algunos gaps sobre todo cuando hay pues como ahora la actualidad
+
+249
+00:26:49,049 --> 00:26:59,630
+vamos a verlo ahora la actualidad y como hay pues unos tipos altos pues hay momentos cierto de un
+
+250
+00:26:59,630 --> 00:27:06,390
+gap fuerte no sé si era este el vencimiento el último vencimiento ha sido el de diciembre que
+
+251
+00:27:06,390 --> 00:27:19,230
+fue el día 15 1 2 3 15 de diciembre vale 15 de diciembre aquí pensó aquí bueno no no se ve
+
+252
+00:27:19,230 --> 00:27:23,430
+mucho acá porque igual ya vino a abrir ya vino arriba y a veces no se ve el gap porque
+
+253
+00:27:23,430 --> 00:27:30,109
+depende cómo venga el mercado pero ya os digo que hay gap de acuerdo hay gap porque bueno hay gap
+
+254
+00:27:30,109 --> 00:27:36,069
+simplemente lo que hay es una unión entre contratos y bueno la unión perdón perdón la unión se hace
+
+255
+00:27:36,069 --> 00:27:43,029
+cinco días antes es este gap es este gap porque la unión es cinco días cinco días antes a ver
+
+256
+00:27:43,029 --> 00:27:51,089
+que alberto me levanta la mano tienes razón si tengo que sólo tengo para que se vea los sistemas
+
+257
+00:27:51,089 --> 00:28:01,089
+pero aquí no me interesa que se vea los sistemas entonces vamos a poner las velas ahí perdón
+
+258
+00:28:01,089 --> 00:28:08,690
+esto lo vale entonces todo lo que se veía como como es cinco días antes el vencimiento último
+
+259
+00:28:08,690 --> 00:28:19,920
+que aquí es un ejemplo no importa sólo para que podáis seguirlo bien pues sería 15 1 2 3 4
+
+260
+00:28:19,920 --> 00:28:31,049
+efectivamente este es el este gap es el vencimiento es el enlace de acuerdo entre diciembre que se
+
+261
+00:28:31,049 --> 00:28:35,809
+acaba y empieza marzo de acuerdo porque acaba diciembre empieza marzo que es el que está ahora
+
+262
+00:28:36,609 --> 00:28:44,170
+entonces eso es si no ajustas pasa eso los precios son los correctos a todos los gráficos que enlazas
+
+263
+00:28:44,170 --> 00:28:55,720
+los ves al precio que cotizaron en su momento pero se genera una distorsión fruta fruto de este enlace
+
+264
+00:28:55,720 --> 00:29:03,549
+distinto tú dices bueno vale pero si los precios son correctos porque hay gente que lo pregunta
+
+265
+00:29:03,549 --> 00:29:10,220
+además como criterio y hasta entiendo como casi todo es debatible si los precios son los
+
+266
+00:29:10,220 --> 00:29:17,380
+correctos y porque realmente lo ajustamos lo ajustamos porque esa diferencia de esos 200
+
+267
+00:29:17,380 --> 00:29:23,460
+puntos no es fruto de la oferta de la demanda no es real que el mercado habrá un 200 puntos por
+
+268
+00:29:23,460 --> 00:29:32,529
+encima de acuerdo el mercado habría plano probablemente las acciones que al final hacen
+
+269
+00:29:32,529 --> 00:29:38,369
+subir al índice no estaban subiendo por tanto tú ahí no ganabas 200 puntos vale si venías largo
+
+270
+00:29:38,369 --> 00:29:47,319
+en ese gráfico continuo si tú venías largo ese día no deberías ganar nada en cambio si no ajustas
+
+271
+00:29:47,319 --> 00:29:56,960
+en ese gap de pronto ganas 200 200 puntos no es real no estás ganando 200 puntos entonces tú ahí
+
+272
+00:29:56,960 --> 00:30:03,319
+lo que tienes que hacer es cerrar en uno y abrir en el otro y seguir la posición y el precio subirá
+
+273
+00:30:03,319 --> 00:30:11,960
+o bajará esto si ahora lo vemos voy a hacer lo que me ha comentado alberto en todos porque es
+
+274
+00:30:11,960 --> 00:30:36,359
+verdad que así no se ve un cariño a ver que esto antes como mucho pero poder dedicar menos de una
+
+275
+00:30:36,359 --> 00:30:57,750
+hora porque quería enseñaros una plantear al menos una estrategia hoy ahora mira voy a ponerme
+
+276
+00:30:57,750 --> 00:31:14,960
+una cosa que me permite verlos el mismo día en distintos días y acercar fijaros me voy a acercar
+
+277
+00:31:14,960 --> 00:31:30,839
+en todos bueno me da igual es igual estos que están ajustados he oído un pito que pasa a
+
+278
+00:31:30,839 --> 00:31:51,230
+parece que es el discord pero lo cierro perdón porque no se cierra bien entonces lo que decía
+
+279
+00:31:51,230 --> 00:31:55,950
+aquí ahora yo marco este día y ese mismo día me lo está marcando todos los gráficos fijaros en
+
+280
+00:31:55,950 --> 00:32:04,559
+el de arriba es como no no no hay ese gap de verdad lo voy a marcar también arriba para que lo
+
+281
+00:32:04,559 --> 00:32:30,339
+lo podáis seguir los círculos ahora con el que se queda gráfico pero aquí veis no que es el
+
+282
+00:32:30,339 --> 00:32:41,980
+mismo no hay no hay no hay no hay gap de acuerdo porque el de arriba es el índice el de arriba este
+
+283
+00:32:41,980 --> 00:32:51,500
+es el índice de acuerdo este de aquí es el índice este es el índice y este es no ajustado el de
+
+284
+00:32:51,500 --> 00:32:58,640
+arriba el índice el de abajo no ajustado entonces veis el índice realmente no se ve ese gap entonces
+
+285
+00:32:58,640 --> 00:33:04,880
+las acciones no subieron entonces si yo no ajusto y vengo largo ese día tengo 200 puntos y si vengo
+
+286
+00:33:04,880 --> 00:33:13,349
+corto pues pierdo 200 puntos no es verdad de ahí parte de la necesidad de ajustar tratar de
+
+287
+00:33:13,349 --> 00:33:20,509
+reflejar lo más cercano a la realidad que no es fácil siempre ahora vais a ver que pueden haber
+
+288
+00:33:20,509 --> 00:33:43,339
+diferencias entonces la necesidad de solucionar este que ya os digo hay distintas soluciones y
+
+289
+00:33:43,339 --> 00:33:50,460
+adaptas la que pues en principio es mejor pero hay varias vale vale ahora vuelvo a donde estaba
+
+290
+00:33:50,460 --> 00:33:55,690
+antes queda claro el índice arriba abajo el no ajustado aquí os decía que los dos de la
+
+291
+00:33:55,690 --> 00:34:10,250
+izquierda tienen ajuste por forward y por eso os decía que en ese caso el único contrato que
+
+292
+00:34:10,250 --> 00:34:15,610
+refleja el precio que tuvo la realidad es el primero porque el ajuste se hace hacia adelante
+
+293
+00:34:15,610 --> 00:34:23,780
+de acuerdo se empieza se empieza en cero y se va cero quiero decir cero en el tiempo no en el
+
+294
+00:34:23,780 --> 00:34:31,739
+primer contrato y a partir de ahí para adelante ese diferencia que haya se va se va añadiendo o
+
+295
+00:34:31,739 --> 00:34:42,510
+restando y por eso veis que no se lo veis pero os lo digo yo si no el precio del contrato forward
+
+296
+00:34:42,510 --> 00:34:51,250
+ajustado por diferencia que es el de arriba a la izquierda vale marca 15 mil 900 puntos esto
+
+297
+00:34:51,250 --> 00:34:57,690
+está todo a cierre de viernes para no no liar digamos para no meter hoy ajuste de bienes y
+
+298
+00:34:57,690 --> 00:35:03,969
+el de abajo que es por guard ajustado por ratio está a 12 mil 300 es decir el de arriba 15 mil
+
+299
+00:35:03,969 --> 00:35:16,329
+900 el de abajo 12 300 cuando el índice está a 17 400 vale es decir el forward tiene ese
+
+300
+00:35:16,329 --> 00:35:24,880
+problema por eso no solemos usarlo para operar ahora ahora os diré cuando se usa porque porque
+
+301
+00:35:24,880 --> 00:35:31,079
+como que no nos gusta o sea es como un poco intuitivo aparte que en tiempo real plantearía
+
+302
+00:35:31,079 --> 00:35:35,480
+un problema de ajuste sabía que a todos los precios en tiempo real estará ajustándolos
+
+303
+00:35:35,480 --> 00:35:41,679
+vale habría que estar ajustando en tiempo real en cambio en el en el backward que es el que solemos
+
+304
+00:35:41,679 --> 00:35:49,849
+usar pasa justo lo contrario que el único contrato que refleja el precio bien es el actual y por eso
+
+305
+00:35:49,849 --> 00:36:00,369
+vais a ver que bueno hay una pequeña diferencia hay una pequeña diferencia pero es no no no lo
+
+306
+00:36:00,369 --> 00:36:05,570
+tengáis en cuenta porque es porque como el índice acaba a la hora en punto todos se acaban ahora en
+
+307
+00:36:05,570 --> 00:36:13,690
+punto y al no haber liquidación pues veo que el último tic que refleja el de el de tic data con
+
+308
+00:36:13,690 --> 00:36:21,900
+el de tres eso pues hay un hay 050 diferente pero bueno ya digo ahora mismo es es que demos no
+
+309
+00:36:21,900 --> 00:36:30,550
+quedemos nos que es anecdótico porque porque aquí hay unos que son de tic data y hay dos futuros que
+
+310
+00:36:30,550 --> 00:36:35,349
+son con los precios de tres seis porque usa un poco los todos pues para ahora hablaros de ello
+
+311
+00:36:35,349 --> 00:36:43,960
+para poder hablaros bien sigo los en la izquierda os decía que eran los for war los de la derecha
+
+312
+00:36:43,960 --> 00:36:51,239
+pues lógicamente son los backward vale y eso sí que reflejan el precio al que está ahora el futuro
+
+313
+00:36:51,239 --> 00:36:56,690
+es decir antes os enseñaba que el precio aunque se está en tiempo real y por eso hay una leve
+
+314
+00:36:56,690 --> 00:37:04,610
+diferencia este que veis aquí que está a 15 590 vale bueno pues es este acuerdo este es el mismo
+
+315
+00:37:04,610 --> 00:37:10,610
+precio lo que pasa que como os digo es esta viernes es esta viernes y por eso pues no es el
+
+316
+00:37:10,610 --> 00:37:15,530
+mismo vale porque se nos está moviendo si ahora lo activará tiempo real pues se vería se vería
+
+317
+00:37:15,530 --> 00:37:24,809
+y está pero este precio de aquí es tiempo real para se me entienda es todos estos son futuros este
+
+318
+00:37:24,809 --> 00:37:30,530
+este es el contado este es el índice vale pero tendría esa diferencia que os he explicado pero
+
+319
+00:37:30,530 --> 00:37:39,329
+los dos de la los dos de la derecha y el de abajo de medio estos son futuros que están ajustados
+
+320
+00:37:39,329 --> 00:37:46,400
+mediante backward y por lo tanto el precio actual es el correcto vale es el correcto los anteriores
+
+321
+00:37:46,400 --> 00:37:50,880
+pueden estar ajustados si hay diferencia entre los contratos que ya habéis visto que suele haberla
+
+322
+00:37:50,880 --> 00:37:56,920
+y ahora con los tipos de interés que tenemos pues es bastante alta cuando hay pocos intereses pues
+
+323
+00:37:56,920 --> 00:38:02,159
+a veces es muy pequeña la diferencia a veces es muy muy muy pequeña sobre todo en futuros
+
+324
+00:38:02,159 --> 00:38:09,019
+de vencimiento mensual puede ser nada muy pequeño pero ahora con tipos altos suele ser mayor entonces
+
+325
+00:38:11,309 --> 00:38:18,230
+los backwards reflejan el precio actual y por eso un poco son los que usamos repito actualmente 17
+
+326
+00:38:18,230 --> 00:38:27,989
+500 en cambio los forward están 15 900 y 12 300 dependiendo si ajustas diferencia o ratio ahora
+
+327
+00:38:27,989 --> 00:38:34,829
+entro en eso ahora entro en que es diferencia o ratio eso también he visto que que ha explicado
+
+328
+00:38:34,829 --> 00:38:43,400
+al explicarlo casi ha provocado más más confusión que otra cosa vale porque porque hay dos maneras
+
+329
+00:38:43,400 --> 00:38:50,559
+de ajustar hay dos maneras en cuanto a la manera en que ajustamos como he dicho forward y backward
+
+330
+00:38:50,559 --> 00:38:58,639
+y luego hay dos maneras en cuanto a qué hacemos con esa diferencia esos 200 puntos que os he
+
+331
+00:38:58,639 --> 00:39:04,000
+enseñado aquí que ahora más o menos viene uno vamos a suponer que ahora arrolláramos pues lo
+
+332
+00:39:05,000 --> 00:39:16,110
+224 puntos a suponer que fuera ahora 224 puntos que se hace con esos 224 puntos bueno al final
+
+333
+00:39:16,110 --> 00:39:21,969
+si yo tengo que mantener el actual en el caso backward de acuerdo en el caso backward si yo
+
+334
+00:39:21,969 --> 00:39:31,599
+tengo que mantener el actual como real si tengo que mantener el actual como real y el que viene
+
+335
+00:39:31,599 --> 00:39:41,360
+por encima el futuro el siguiente viene por encima la única manera de hacer eso es subir a
+
+336
+00:39:41,360 --> 00:39:48,469
+los anteriores de acuerdo en el caso backwards lo que yo hago es aumentar lo siguiente pero esto lo
+
+337
+00:39:48,469 --> 00:39:58,090
+hacen los programas automáticamente pero qué hace para evitar este gab que veis aquí este gab lo
+
+338
+00:39:58,090 --> 00:40:08,420
+que hace es sumarle 220 puntos a toda la base de datos y eso lo hace en cada momento que hay
+
+339
+00:40:08,420 --> 00:40:14,860
+un vencimiento en ese momento claro eso provoca que los precios históricos sean muy distintos
+
+340
+00:40:14,860 --> 00:40:27,059
+es decir veíais aquí en el en el no ajustado veíais en el no ajustado el precio inicial que
+
+341
+00:40:27,059 --> 00:40:40,179
+era 2300 por ahí no 2329 50 ese era el inicio 2329 50 claro imaginaros ahora en el ajustado
+
+342
+00:40:40,179 --> 00:40:57,559
+backward ese precio cuál es ese precio es 3300 es otro precio 3300 en el ajustado por ratio y en
+
+343
+00:40:57,559 --> 00:41:08,400
+el ajustado por diferencia es 3900 es otro precio es otro precio porque pues porque ha ido sumando
+
+344
+00:41:08,400 --> 00:41:13,599
+restando normalmente sumando normalmente sumando pero puede ser sumando restando
+
+345
+00:41:15,880 --> 00:41:22,199
+a toda la base la base de datos esto esto se entiende claro esto distorsionó los precios
+
+346
+00:41:22,760 --> 00:41:32,800
+pero mantiene la relación el problema cuál es que sólo mantiene la relación este día de acuerdo
+
+347
+00:41:32,800 --> 00:41:41,860
+es decir el día el día que el día que hay el rolo el día que se unen cuando hablo de rolo hablo
+
+348
+00:41:41,860 --> 00:41:46,920
+de unión vale otra cosa es la operativa en el mercado no nos lees ahora estamos hablando de
+
+349
+00:41:46,920 --> 00:41:52,840
+construcción de gráficos son operativos el día que yo uno ese día mantengo la relación es decir
+
+350
+00:41:52,840 --> 00:41:59,010
+yo anulo esa diferencia por lo tanto ese día sí que he mantenido la relación bien el problema es
+
+351
+00:41:59,010 --> 00:42:03,170
+que claro como sólo una vez cada tres meses pues las relaciones se pueden ir alterando durante todo
+
+352
+00:42:03,170 --> 00:42:09,920
+el mes y esa diferencia no es estable durante todo el mes y pues bueno sí que es verdad que los
+
+353
+00:42:09,920 --> 00:42:17,599
+gráficos lógicamente se parecen pero no son iguales no son iguales decir todos estos gráficos dan
+
+354
+00:42:17,599 --> 00:42:23,480
+resultados ligeramente distintos de un sistema aplicado y ahora lo mostraremos dan resultados
+
+355
+00:42:23,480 --> 00:42:31,400
+ligeramente distintos pero son ligeramente distintos son ligeramente visitos son no deben
+
+356
+00:42:31,400 --> 00:42:40,170
+ser radicalmente visitos pero esta es el motivo por el que se provocan ajustes y por la que hay
+
+357
+00:42:40,170 --> 00:42:49,210
+distintas maneras que pasa con el caso forward vale que como habéis visto ahora mismo no tiene
+
+358
+00:42:49,210 --> 00:42:55,010
+precios reales no tiene precios reales es decir ahora mismo el forward el nasa ajustado forward
+
+359
+00:42:55,010 --> 00:43:05,670
+hasta el viernes marca 15 900 si lo ajustamos por diferencia y marca 12 300 si lo hemos ajustado
+
+360
+00:43:05,670 --> 00:43:11,550
+por rato es decir mucho menos por mucho menos porque porque como el ajuste es hacia adelante
+
+361
+00:43:11,550 --> 00:43:18,469
+aquí pasa lo contrario si cuando llega el contrato nuevo el contrato nuevo viene por encima se entiende
+
+362
+00:43:18,469 --> 00:43:27,219
+no viene por encima esto esto lo hemos visto no viene por encima lo vemos aquí vale viene por
+
+363
+00:43:27,219 --> 00:43:38,360
+encima este está por encima de este es el futuro entonces yo tengo que unir esto con esto y quiero
+
+364
+00:43:38,360 --> 00:43:49,670
+mantener la relación que tengo que hacer subir subir al anterior por eso y por eso
+
+365
+00:43:52,019 --> 00:43:56,900
+perdón tengo que subir al anterior pero estoy hablando del forward si lo hago hacia adelante
+
+366
+00:43:56,900 --> 00:44:05,429
+que tengo que hacer bajar el siguiente o bajo el anterior que es cuando lo hago backward o perdón
+
+367
+00:44:06,309 --> 00:44:11,800
+o subo el anterior cuando lo hago backward o bajo el siguiente cuando lo hago forward
+
+368
+00:44:11,800 --> 00:44:19,429
+para compensar esos 200 puntos porque al final simplemente el backward o forward esto entiendo
+
+369
+00:44:19,429 --> 00:44:25,269
+para aquel que no se ha familiarizado es un poco lioso simplemente indica cuál es el que se queda
+
+370
+00:44:25,269 --> 00:44:32,309
+con el precio correcto entendido si yo justo backward el que se queda corriente el que se
+
+371
+00:44:32,309 --> 00:44:40,719
+queda correcto es este si yo justo forward el que se queda correcto es este pensando suponer
+
+372
+00:44:40,719 --> 00:44:50,159
+que hoy hay vencimiento y esos 220 puntos los tengo que compensar o bien se los resto a uno
+
+373
+00:44:50,159 --> 00:45:02,599
+bien se los sumo a otros no hay más y por eso por eso ahora aquí veis que el forward en el precio
+
+374
+00:45:02,599 --> 00:45:15,110
+actual vale mucho menos en el precio forward vale menos y en cambio en el ajuste backward el
+
+375
+00:45:15,110 --> 00:45:22,599
+primero vale más el actual vale lo que tiene que el precio actual porque es el real vale esto se
+
+376
+00:45:22,599 --> 00:45:33,909
+va siguiendo alberto que vale pues si hay alguna de esto si esto quizá que sí que lo vamos
+
+377
+00:45:33,909 --> 00:45:39,760
+resolviendo porque lo quiero cerrar este tema me gustaría cerrarlo así que vamos tratando de
+
+378
+00:45:39,760 --> 00:45:54,320
+resolverlo si ves que aporta si no lo respondes tú vale ahora lo vemos eso ahora lo vemos
+
+379
+00:45:54,320 --> 00:45:58,679
+joaquín si os voy a ir leyendo os voy a ir leyendo porque esto me gustaría cerrarlo sabes no ir
+
+380
+00:45:58,679 --> 00:46:04,880
+recurrientemente a esto porque si no no avanzaremos vale no avanzaremos y luego ya pues si hay dudas
+
+381
+00:46:04,880 --> 00:46:10,199
+podemos responderlo fuera de clase en el problema en ese que tranquilo que te respondemos pero sí
+
+382
+00:46:10,199 --> 00:46:15,599
+que a nivel de clase me gustaría cerrar esto de acuerdo no volver más porque si no nos vamos a
+
+383
+00:46:15,599 --> 00:46:21,519
+quedar aquí en continuamente que ya entiendo que hay gente que provoque dudas pero la si si
+
+384
+00:46:21,519 --> 00:46:26,079
+pos si pos clase alguien no lo entiende yo me comprometo a explicárselo si hace falta en una
+
+385
+00:46:26,079 --> 00:46:36,090
+clase privada pero pero por eso voy a mirar un poco las las las preguntas vale antonio comenta
+
+386
+00:46:36,090 --> 00:46:48,210
+antonio comenta voy a ir leyendo en marc estamos viéndolo o sea lo que lo que pides no sé si es
+
+387
+00:46:48,210 --> 00:46:52,650
+que lo has pedido antes pero podemos ver un ejemplo práctico de cómo ajustar lo estamos viendo lo
+
+388
+00:46:52,650 --> 00:46:57,449
+estamos viendo cómo ajustar es decir tú no tienes que ajustar es decir esto al final tienes que
+
+389
+00:46:57,449 --> 00:47:03,849
+conseguir un software que te ajuste un proveedor de datos que ya te ajuste pero pero yo creo que
+
+390
+00:47:03,849 --> 00:47:10,440
+esto es básico saberlo porque cuando te encuentras con un futuro tienes que saber cuál te encuentras
+
+391
+00:47:10,440 --> 00:47:16,150
+y por qué y qué problemas tiene uno y otro y si puedes elegir que en el caso de tres son puedes
+
+392
+00:47:16,150 --> 00:47:25,590
+pues que tengas criterio para elegir tres se son ya da uno por defecto para mí no es el mejor pero
+
+393
+00:47:25,590 --> 00:47:32,550
+da uno y si lo usas tampoco tampoco va a ser el fin del mundo es decir me explico pero bueno
+
+394
+00:47:32,550 --> 00:47:38,789
+estamos aprendiendo te digo agonímico entonces mucho te digo agonímico se desarrolla en futuros
+
+395
+00:47:38,789 --> 00:47:47,440
+también acciones pero mucho mucho en futuros casi que más y por lo tanto pues creo que eso
+
+396
+00:47:47,440 --> 00:47:54,039
+es importante saberlo es importante saberlo pero tú entre ese hecho por ejemplo tienes un gráfico
+
+397
+00:47:54,039 --> 00:48:03,119
+continuo uno que es la roba en ecu por ejemplo se abre uno pero estos estos que os he abierto
+
+398
+00:48:03,119 --> 00:48:10,579
+yo son personalizados ahora os enseñaré eso a seguir porque puede que algunas preguntas vayan
+
+399
+00:48:10,579 --> 00:48:18,769
+cayendo un poco en la en las respuestas vale entonces de momento hemos visto lo que es un
+
+400
+00:48:18,769 --> 00:48:24,369
+me interesa que entendáis no preguntéis más allá de acuerdo es decir centrarnos en lo que
+
+401
+00:48:24,369 --> 00:48:32,349
+estoy explicando vale es decir forward backward de acuerdo las diferencias de precios no vayáis más
+
+402
+00:48:32,349 --> 00:48:36,429
+allá porque ahora voy a ir yo y a lo mejor ya os respondo vale es decir que quede claro que es un
+
+403
+00:48:36,429 --> 00:48:41,949
+backward que queda claro que es un que es forward porque se ajuste que quede claro esta diferencia
+
+404
+00:48:41,949 --> 00:48:52,739
+entre entre precios vale bien entonces esto como os digo en el caso y otras plataformas suelen
+
+405
+00:48:52,739 --> 00:49:12,489
+dar un continuo aquí tengo uno de tres session que concretamente es el arroba en ecu igual 105
+
+406
+00:49:12,489 --> 00:49:26,119
+xn vale pero esto si yo en vez de abrir esto hubiera abierto el en ecu la tecla puedo perfectamente
+
+407
+00:49:26,119 --> 00:49:36,480
+hacer y va a tener sólo leves diferencias con este bueno le va a tener si podemos decir leves
+
+408
+00:49:36,480 --> 00:49:44,639
+porque porque el en ecu tres eso para mí bueno digamos que suele rolar uno o dos días tarde pero
+
+409
+00:49:44,639 --> 00:49:52,750
+bueno tampoco es crítico y lo sigue haciendo por diferencia lo sigue haciendo por diferencia que
+
+410
+00:49:52,750 --> 00:49:58,710
+en mi opinión a medida que van pasando los años pues se vuelve peor es un poco mejor hacerlo por
+
+411
+00:49:58,710 --> 00:50:03,719
+ratio aún no os he explicado en detalle estaba en ello cuando me he puesto con las preguntas ahora
+
+412
+00:50:03,719 --> 00:50:12,099
+ahora me lo he pasado las diferencias entre ajuste por diferencia y ajuste por ratio es
+
+413
+00:50:12,099 --> 00:50:19,539
+simplemente es simplemente el concepto de o bien sumar y restar o multiplicar dividir es tan sencillo
+
+414
+00:50:19,539 --> 00:50:26,739
+como eso o el mismo que la escala lineal o escala logarítmica vale escala lineal al final refleja
+
+415
+00:50:26,739 --> 00:50:31,539
+el cambio en puntos y el cambio la semi logarítmica refleja el cambio en porcentaje pues es un poco
+
+416
+00:50:31,539 --> 00:50:40,480
+lo mismo vale en diferencia es exactamente en diferencia es decir o bien sumo o bien resto a
+
+417
+00:50:40,480 --> 00:50:47,880
+todos los datos los 220 puntos que decía que había de diferencia vamos a suponer que el día en que
+
+418
+00:50:47,880 --> 00:50:55,880
+tiene que hacer el programa el rolo el empalme perdón el enlace hay 220 puntos pues se lo suma
+
+419
+00:50:55,880 --> 00:51:04,510
+y punto a todo o se lo resta y hasta eso es por diferencia y cuando es por ratio bueno pues ratio
+
+420
+00:51:04,510 --> 00:51:10,989
+lo que hace es dividir los dos precios es como si fuera un porcentaje entiende eso no es decir si
+
+421
+00:51:11,030 --> 00:51:20,960
+tiene ahora más o menos es igual el precio exacto 178 30 y tiene 17 600 pues divido uno
+
+422
+00:51:20,960 --> 00:51:32,599
+por otro y el ratio es 1 0 1 3 1 0 1 3 0 6 8 por ese ratio multiplícola como estás soy sergi
+
+423
+00:51:32,599 --> 00:51:40,170
+sánchez de ser sánchez se entiende simplemente eso es un ajuste meramente matemático es el efecto
+
+424
+00:51:40,170 --> 00:51:46,880
+de o bien sumar restar o bien multiplicar dividir porque es mejor multiplicar dividir bueno por lo
+
+425
+00:51:46,880 --> 00:51:51,440
+que hemos hablado muchas veces en el curso de los porcentajes de la escala de la diferencia
+
+426
+00:51:51,440 --> 00:51:57,639
+de precios entre el nasdaq y etcétera no que no es lo mismo a 2000 como habéis visto al inicio del
+
+427
+00:51:57,639 --> 00:52:05,639
+contrato que hay 17 mil y cada 100 puntos si yo le quito 100 puntos de ahora 200 puntos de ahora
+
+428
+00:52:05,639 --> 00:52:13,489
+le quito 200 al contrato de inicio también porque lo que hago es restar toda la base de datos entonces
+
+429
+00:52:14,369 --> 00:52:19,210
+bienvenidos todos más correcto gracias por su paciencia es más correcto pequeñas dificultades
+
+430
+00:52:19,210 --> 00:52:26,570
+aquí tratando de empezar en aquellos contratos que van a negativo vale por ese efecto eso evita
+
+431
+00:52:26,570 --> 00:52:31,250
+que vayan a negativo o sea todo tiene sus excepciones pero en términos generales es
+
+432
+00:52:31,250 --> 00:52:37,739
+mejor porque por lo que os digo porque ese porcentaje y el porcentaje mantiene mejor
+
+433
+00:52:37,739 --> 00:52:45,010
+la relación porque esos 200 puntos se los suma todo el histórico pasado como habéis visto que
+
+434
+00:52:45,010 --> 00:52:49,929
+era 3000 y pico pero ahora el siguiente se los va a volver a sumar y el 3300 inicios la 3500
+
+435
+00:52:49,929 --> 00:52:57,849
+o sea si ahora ahora esto va a quedar grabado así que es fácil es fácil verlo aquí hemos visto no
+
+436
+00:52:57,849 --> 00:53:02,289
+todavía está cargando porque esto claro esto muchos años y además en el gráfico intradiliario
+
+437
+00:53:02,289 --> 00:53:12,579
+si yo ahora quien el en la plataforma de que está ajustado para la apertura de su cuento por
+
+438
+00:53:12,579 --> 00:53:19,539
+ratio vale este de aquí abajo estaba ajustado para por ratio entonces al principio cuando tenía
+
+439
+00:53:19,539 --> 00:53:29,539
+tenía 3311 el de arriba estaba ajustado para guard por diferencia vale y tenía un precio inicial de
+
+440
+00:53:29,539 --> 00:53:37,619
+3900 bueno fijaros ese en apertura del día 1 de julio del 99 vale esto queda grabado 1 de julio
+
+441
+00:53:37,619 --> 00:53:49,570
+del 99 es 3948 con 25 vale esa es la apertura de ese día en ajuste por diferencia en el contrato
+
+442
+00:53:49,570 --> 00:54:02,650
+en eq igual 105 xc vale arroba en eq igual 105 xc en este contrato 1 de julio 99 apertura 3948
+
+443
+00:54:03,650 --> 00:54:13,380
+cuando venza marzo veréis como ese precio sube y será seguramente 4100 si llega a 200 puntos
+
+444
+00:54:13,380 --> 00:54:20,300
+el contrato la diferencia entre ambos vale sino pues lo que sea cambiará siempre cambia entonces
+
+445
+00:54:20,300 --> 00:54:25,380
+claro yo le voy metiendo 200 puntos a todo el histórico pero 200 puntos ahora bien pero 200
+
+446
+00:54:25,380 --> 00:54:32,800
+puntos cuando está 3000 entonces claro es mejor hacer por 103 por 103 que es lo que os decía que
+
+447
+00:54:32,800 --> 00:54:42,949
+el ratio se entiende no es como más ortodoxo más más ortodoxo vale bien entonces esto que
+
+448
+00:54:42,949 --> 00:54:49,389
+efecto provoca bueno yo al final tengo aquí un ejemplo tengo aquí un sistema metido cualquiera
+
+449
+00:54:49,389 --> 00:54:55,349
+que es igual que es un churro es bowling era saco no importa se ha puesto este porque no sé
+
+450
+00:54:55,349 --> 00:55:01,989
+por qué se era lo tenía metido y está vale no no los enseñaron para tecar a medida de pantalla
+
+451
+00:55:02,550 --> 00:55:10,289
+voy a aprovechar el descanso para cerrar el 3d station porque se me va a tomar viento
+
+452
+00:55:10,289 --> 00:55:20,590
+en esta se me está yendo a tomar viento tanto cuando le cargas uno de los este año este año
+
+453
+00:55:20,590 --> 00:55:25,030
+que muchos habláis de las plataformas yo decía que es que no es tan importante nosotros usamos
+
+454
+00:55:25,030 --> 00:55:31,869
+este son multichars visual char metatrader y habíamos usado hace muchos años web lab y
+
+455
+00:55:31,869 --> 00:55:39,320
+este año como se me den las cosas a lo mejor hasta metemos otra vez web lab en la en la
+
+456
+00:55:39,320 --> 00:55:44,360
+dinámica de trabajo porque era un software que iba que iba muy bien y puede ser que
+
+457
+00:55:44,360 --> 00:55:49,679
+metamos web lab en la dinámica de trabajo así que al final como os dije siempre estás con
+
+458
+00:55:49,679 --> 00:55:54,920
+nuevas plataformas nuevos lenguajes y esa venceros a que volveremos a hacer otra vez bueno a lo que
+
+459
+00:55:54,920 --> 00:56:10,550
+iba estaba aquí con este con este sistema tratando de enseñarlos lo que digo que no importa esto no
+
+460
+00:56:10,550 --> 00:56:20,039
+importa me da igual me da igual vale lo que quiero que veáis es que todo cargado igual con
+
+461
+00:56:20,039 --> 00:56:26,360
+exactamente los mismos inputs el mismo coste todo igual misma gestión monetaria aquí por ejemplo
+
+462
+00:56:26,360 --> 00:56:31,159
+tiene un resultado de menos 67 millones porque es que lo cargado desde el principio era positivo
+
+463
+00:56:31,159 --> 00:56:35,400
+he cargado los últimos 10 años pero he querido meterle más años y ahí he visto que y por no
+
+464
+00:56:35,400 --> 00:56:44,039
+volverlo a cargar todo pues es igual el importe es lo de es lo de menos es verdad que el profit
+
+465
+00:56:44,039 --> 00:56:49,400
+factor no cambia tanto tampoco es se parece parece bastante es decir los cambios no son
+
+466
+00:56:49,400 --> 00:56:55,119
+súper dramáticos pero veis arriba era menos 67 abajo es menos 57 si vemos este aquí a la derecha
+
+467
+00:56:55,119 --> 00:57:16,210
+va a ser parecido este va a ser parecido menos 42 y aquí menos 58 vale en todo caso están estos
+
+468
+00:57:16,210 --> 00:57:22,610
+de la derecha son profit factor de 0 90 los de la izquierda y no 0 90 y no 0 90 el no ajustado
+
+469
+00:57:22,610 --> 00:57:29,260
+siempre es el que es peor 0 88 vale bueno no es que siempre sea el peor es el peor en cuanto a
+
+470
+00:57:29,260 --> 00:57:39,329
+realista vale no ajustar sólo es recomendable en aquel caso que operéis un sistema muy muy
+
+471
+00:57:39,329 --> 00:57:47,489
+intradiliario y que al final podáis asumir cerrar posiciones totalmente cuando por código se acaba
+
+472
+00:57:47,489 --> 00:57:53,130
+el contrato y empezaron el nuevo entonces puede tener sentido y puede ser hasta preferible porque
+
+473
+00:57:53,130 --> 00:57:58,980
+entonces sí que evitas totalmente las distorsiones vale evita solamente las distorsiones tener en
+
+474
+00:57:58,980 --> 00:58:04,860
+cuenta que es lo que os digo los lo bueno de los los de las vencimientos y todo esto es que son
+
+475
+00:58:04,860 --> 00:58:12,780
+totalmente estables es decir son conocidos previamente es decir no no es ninguna incertidumbre
+
+476
+00:58:12,780 --> 00:58:18,019
+no es algo que no pueda programar yo puedo fácilmente en un código programar que el tercer
+
+477
+00:58:18,019 --> 00:58:24,659
+viernes de cierre de trimestre a x hora de los sistemas y reposiciones si quiero decir esto esto
+
+478
+00:58:24,659 --> 00:58:32,900
+es perfectamente viable vale claro en sistemas que sean medianamente suces y que siguen posiciones
+
+479
+00:58:32,900 --> 00:58:38,539
+a lo largo del día esto no es posible y como vamos a ver vamos a empezar sobre todo en este
+
+480
+00:58:38,539 --> 00:58:46,300
+tipo de sistemas pues por eso creía oportuno dejar acabar de acordar todo esto sobre los
+
+481
+00:58:46,300 --> 00:58:52,980
+decimientos o sea sobre los contratos y demás vale que ahora sí que voy a repasar las preguntas a
+
+482
+00:58:52,980 --> 00:59:01,840
+ver si queda algo que complementar vale lo que está en banderita es lo que tengo que mirar
+
+483
+00:59:01,840 --> 00:59:32,130
+lo que tengo banderitas por aquí tiene una persona pero topless abajo me miro si responder
+
+484
+00:59:32,130 --> 00:59:58,639
+a corto y de al pie no entiendo jose dolén lo que me dices vale entiendo que se ajusta
+
+485
+00:59:58,639 --> 01:00:10,000
+eligiendo el gráfico correcto no entiendo a ver si me puedes aclarar los datos del re por
+
+486
+01:00:10,000 --> 01:00:15,039
+antonio de verdad no importa no importa no importa es que nada no no importa nada
+
+487
+01:00:15,039 --> 01:00:27,260
+jordy te aclaro esto de las letras si vale tienes razón esto esto lo era lo que me faltaba pero
+
+488
+01:00:27,260 --> 01:00:35,039
+faltaba y se me olvidaba así que gracias por tu aportación bien esto os he cargado que por cierto
+
+489
+01:00:35,039 --> 01:00:42,340
+he acabado el arroba en eq el arroba en eq el arroba es el arroba o sea todos los futuros
+
+490
+01:00:42,699 --> 01:00:47,460
+continuos entre esos y en muchas plataformas se identifican por una ropa pero si no pues hay
+
+491
+01:00:47,460 --> 01:00:52,900
+que ver cómo se identifican en ese software ese proveedor lo que fuera vale el gráfico
+
+492
+01:00:52,900 --> 01:00:59,489
+continuo se arroba en eq entonces ese gráfico ya está hecho ya lo tiene tres de esos y lo
+
+493
+01:00:59,489 --> 01:01:07,210
+puedes usar lo puedes usar para hacer back test está mal usarlo no está mal usarlo vale no
+
+494
+01:01:07,210 --> 01:01:15,489
+está mal usarlo es el mejor bueno no mi opinión no por lo que os he dicho vale pero no está mal
+
+495
+01:01:15,489 --> 01:01:21,289
+no está mal usarlo si tú haces trabajas en él pues no es ningún drama no no no creo que llegues
+
+496
+01:01:21,289 --> 01:01:29,760
+a conclusiones erróneas por eso pero os explico os explico que son esas letras porque me lo
+
+497
+01:01:29,760 --> 01:01:35,780
+preguntabas ahí en tres sesiones existe la posibilidad de ajustar mediante
+
+498
+01:01:37,449 --> 01:01:42,730
+como tú como tú quieras igual que yo lo puedo hacer en tic data es un provee una
+
+499
+01:01:42,730 --> 01:01:47,650
+empresa que se dedica a eso y me da un software para hacerlo tres sesión tiene alguna capacidad
+
+500
+01:01:47,650 --> 01:01:53,610
+de ajustar cuando tú vas a meter símbolo en símbolo cap hay uno que se llama custom
+
+501
+01:01:54,329 --> 01:02:01,530
+ahí es donde tú haces el futuro personalizable nuevamente insisto mucho cuando hablaba de tres
+
+502
+01:02:01,530 --> 01:02:07,929
+sesión voy a hacerlo muy breve porque no va de tres sesiones esto os recomiendo siempre usar la
+
+503
+01:02:07,929 --> 01:02:13,570
+ayuda de tres sesiones porque es bastante potente en general la ayuda está bastante bien aquel que
+
+504
+01:02:13,570 --> 01:02:19,809
+no toque que no sepa ni papa de inglés pues lo selecciona lo lleva un traductor y se va con eso
+
+505
+01:02:19,809 --> 01:02:28,329
+pero pero la ayuda está en general en general bastante bien sigo entonces yo aquí en esa forma
+
+506
+01:02:28,329 --> 01:02:34,530
+pongo el símbolo en este caso en el q vale la del símbolo root que es la ruta puedo sino buscarla
+
+507
+01:02:34,530 --> 01:02:43,590
+en eq y ya me salen veis los vencimientos que tiene ese contrato solo me salen marcables marzo
+
+508
+01:02:43,590 --> 01:02:51,190
+septiembre junio y diciembre por cierto aquí es un sitio mira ahora os voy a poner el cl momentito
+
+509
+01:02:51,190 --> 01:02:58,190
+solo para que veáis que me los marca a todos aquí es un sitio donde si no os acordáis de las letras
+
+510
+01:02:58,190 --> 01:03:04,429
+bueno nos podéis encontrar en internet con mucha facilidad pero si no os acordáis aquí están aquí
+
+511
+01:03:04,429 --> 01:03:15,429
+están enero f febrero g marzo h es trimestral el más común abril j mayoca junio m nuevamente
+
+512
+01:03:15,429 --> 01:03:28,039
+trimestral julio n agosto q septiembre u trimestral octubre v noviembre x y diciembre zeta que es
+
+513
+01:03:28,239 --> 01:03:37,559
+el trimestral son los cuatro más usuales h m u zeta pero el petróleo por ejemplo los tiene todos
+
+514
+01:03:37,559 --> 01:03:45,639
+los tiene todos porque es el de cada mes entonces cada uno tiene el suyo esto como ya os expliqué
+
+515
+01:03:45,639 --> 01:03:52,360
+hay que saberlo al principio puede ser un lío pero esto es previo ya lo sabes y hasta ya lo sabes que
+
+516
+01:03:52,360 --> 01:03:57,000
+el petróleo de cada mes tú creas tu contrato el que quieras ya no lo vas a hacer más está hecho
+
+517
+01:03:57,639 --> 01:04:03,320
+parte de ahí ya es una rutina es una rutina entonces es un requisito podemos decir de
+
+518
+01:04:03,320 --> 01:04:08,650
+configuración por eso lo metí en aspectos previos porque es un tema de podemos decir el de setup
+
+519
+01:04:08,650 --> 01:04:13,650
+que tiene que ver con la tecnología con todo esto y a una vez ya sabido y tal pues ya para
+
+520
+01:04:13,650 --> 01:04:21,530
+antes no bien volvemos a la necu aquí me salen los cuatro marzo junio septiembre diciembre además
+
+521
+01:04:21,530 --> 01:04:29,610
+me salen algunas opciones para elegir cómo hago ese ajuste normal cuál eliges como contrato
+
+522
+01:04:29,610 --> 01:04:36,769
+ajustar normalmente el más cercano y si rola por actividad es decir cuando haya un día consecutivo
+
+523
+01:04:36,769 --> 01:04:48,880
+de mayor open interest o mayor volumen o por tiempo por actividad es lo correcto pero pero si
+
+524
+01:04:48,880 --> 01:04:55,840
+lo hiciera bien que tic data lo hace bien vale es eso no lo hace bien porque porque la regla esto
+
+525
+01:04:55,840 --> 01:05:01,000
+quiero que lo que lo entendáis no es que no lo haga no no es que lo haga no es que no lo haga
+
+526
+01:05:01,000 --> 01:05:10,039
+bien es que yo cuando sé si yo voy monitorizando el volumen contra el volumen de un contrato y del
+
+527
+01:05:10,039 --> 01:05:18,309
+siguiente de acuerdo en el momento en que yo detecte que el siguiente en este caso la situación
+
+528
+01:05:18,309 --> 01:05:23,869
+que real estamos operando con marzo el siguiente va a ser junio está lejos pero a medida que se
+
+529
+01:05:23,869 --> 01:05:29,190
+acerque el tercer viernes de marzo va a ir haciendo más volumen y va a llegar un día para llegar un
+
+530
+01:05:29,190 --> 01:05:35,809
+día antes del vencimiento antes del vencimiento que el contrato de junio va a empezar a hacer más
+
+531
+01:05:35,809 --> 01:05:46,940
+volumen que el de marzo eso va a pasar pocos días antes en ese momento cuando detecta que un día
+
+532
+01:05:46,940 --> 01:05:54,539
+tiene más volumen cambia vale pero eso que provoca que como ha detectado que hay un día más quiere
+
+533
+01:05:54,539 --> 01:06:01,860
+decir que lo hace un día tarde entendéis el motivo porque hasta que no pasa un día en que
+
+534
+01:06:01,860 --> 01:06:06,659
+hace más volumen no se da cuenta que hecho más volumen de esa manera en el continuo metes un día
+
+535
+01:06:06,659 --> 01:06:19,610
+con poco volumen esto es la práctica en la teoría lo enseñe aquí voy a intentar enseñarlo a ver si
+
+536
+01:06:19,610 --> 01:06:28,219
+me carga más o menos rápido me carga más o menos rápido es esta justa este de aquí
+
+537
+01:06:29,780 --> 01:06:34,900
+está y es de aquí vamos a hacerlo aquí lo vais a ver rápido en el de la izquierda de la
+
+538
+01:06:34,900 --> 01:06:39,099
+derecha vale porque el de la derecha está ajustado el de la izquierda está ajustado
+
+539
+01:06:39,099 --> 01:07:02,079
+pero por el de tres es está usado por el de tres vamos a volver a ponernos cerca esto era por
+
+540
+01:07:02,079 --> 01:07:13,340
+aquí era por aquí hay poca diferencia realidad porque en ese día en ese día todavía en este
+
+541
+01:07:13,340 --> 01:07:19,300
+contrato por ejemplo en algunos en que es más crítico en nq realmente en realidad
+
+542
+01:07:19,300 --> 01:07:23,860
+rolar en cinco o en seis días antes hasta en siete es bastante parecido porque son
+
+543
+01:07:23,860 --> 01:07:30,329
+contratos que hacen mucho volumen los de acciones tienen un rolo que dura casi toda la semana es
+
+544
+01:07:30,329 --> 01:07:34,929
+decir hay dos tres días de margen se me entienda hay un día que es óptimo porque es el día que
+
+545
+01:07:34,929 --> 01:07:41,050
+hay más volumen que es 5 5 días antes por eso habéis visto 105 ahora vuelvo a la ventanita
+
+546
+01:07:41,050 --> 01:07:47,329
+entonces aquí en el día en que hay el ajuste que se veía muy bien en el que en el que no
+
+547
+01:07:47,329 --> 01:07:58,530
+había volumen a ver déjamelo encontrar era aquí era uno de estos dos uno de estos dos a ver aquí
+
+548
+01:07:58,530 --> 01:08:02,980
+aquí yo tengo un volumen ellos lo voy a decir los voy a tener que creer porque no lo vais a ver
+
+549
+01:08:02,980 --> 01:08:25,409
+317 y 361 el día 11 317 el día 11 317 el día 12 371 no es antes este todavía están en el
+
+550
+01:08:25,409 --> 01:08:48,079
+mismo que sí que ha rolado antes ha rolado en este 21 15 8 1 2 3 4 5 6 7 por aquí 239 por aquí va a
+
+551
+01:08:48,079 --> 01:09:04,369
+ser 473 510 a 23 510 control aquí está no son 3 510 todavía están en el mismo 540 561
+
+552
+01:09:04,369 --> 01:09:30,109
+2 40 561 no es que es aquí es aquí lo veo ahora el día me cago en la leche no lo veo el día
+
+553
+01:09:30,109 --> 01:10:01,640
+ya os lo mostré otro día porque no lo veo voy a volver al continuo se me lo cargue rápido
+
+554
+01:10:02,119 --> 01:10:13,979
+esto lo tengo ya saturado normalmente cargaría bastante rápido cargaría bastante rápido pero
+
+555
+01:10:13,979 --> 01:10:19,739
+os lo que decía antes el servidor de tiempo real se satura cuando le verás mucho una cruz que
+
+556
+01:10:19,739 --> 01:10:32,199
+tenemos contra ese son hacia demasiado tiempo no es un audio no lo que pasa es que lo hablo
+
+557
+01:10:32,199 --> 01:10:49,779
+porque porque estoy o no no tengo audio como que no tengo audio no se me oye a vale vale si si si
+
+558
+01:10:49,779 --> 01:11:07,829
+si se me oye en la plataforma me dice que sí nada nada es el es el aquí esta marca 11 aquí está
+
+559
+01:11:07,829 --> 01:11:15,880
+aquí está el día entonces hay un día se me colaba por algún micro hay un diálogo que os
+
+560
+01:11:15,880 --> 01:11:23,039
+digo que refleja menos volumen de acuerdo este día el día del enlace refleja menos volumen el que
+
+561
+01:11:23,039 --> 01:11:30,560
+hace el que une tres station entonces esto no es tremendamente grave como os decía pero es más
+
+562
+01:11:30,560 --> 01:11:38,170
+óptimo usar el custo que nosotros lo hemos ido mirando hay momentos que era 5 en momentos que
+
+563
+01:11:38,170 --> 01:11:44,090
+era 6 y ahora mismo es 5 y si en algún momento 6 pues lo volveremos a cambiar simplemente es comparar
+
+564
+01:11:44,090 --> 01:11:51,090
+el día en que hay más volumen esto como os digo por uso y costumbre el mercado al final el mercado
+
+565
+01:11:51,090 --> 01:11:57,659
+siempre opera por uso y costumbre igual que por ejemplo en el dax el dax es el mismo día el dax
+
+566
+01:11:57,659 --> 01:12:06,060
+veces vence perdón el tercer viernes de mes igual pero que es a las 12 del mediodía entonces
+
+567
+01:12:06,060 --> 01:12:10,979
+es ese mismo día el rolo o sea al cierre del día anterior se cambia el contrato en cambio en
+
+568
+01:12:10,979 --> 01:12:18,020
+wall street siempre ha habido esta costumbre de venir haciéndolo desde 7 6 5 en estos en estos
+
+569
+01:12:18,020 --> 01:12:23,060
+días que es más o menos una semana antes vale una semana y entonces ahí en esos días tú puedes
+
+570
+01:12:23,819 --> 01:12:32,140
+entonces la unión si tú usas en que usas el valor por defecto lo peor del nq en sí el nq o
+
+571
+01:12:32,140 --> 01:12:37,819
+cualquier otro no es tampoco el día que como os digo aquí no es súper crítico sino el hecho
+
+572
+01:12:37,819 --> 01:12:45,500
+que usa valor absoluto vale ellos usan valor absoluto y por lo tanto a medida que ha ido
+
+573
+01:12:45,500 --> 01:12:51,619
+pasando el tiempo que han cambiado tanto los precios pues se nota se va notando se va notando
+
+574
+01:12:52,340 --> 01:12:59,000
+qué problema plantea ajustar por ratio o por qué ellos a lo mejor no lo hacen porque es verdad que
+
+575
+01:12:59,000 --> 01:13:08,880
+el decimal es otro tema que tenés que saber tú cómo el ajuste es por ratio es decir yo divido
+
+576
+01:13:08,880 --> 01:13:15,800
+o multiplico por 103 por ejemplo hemos visto que decir que los los precios anteriores al contrato
+
+577
+01:13:15,800 --> 01:13:27,300
+actual pues van a tener valores tipo 2450,14,92,68 es decir no va a respetar el valor del tic y por
+
+578
+01:13:27,300 --> 01:13:31,659
+eso hay gente que eso no le gusta nada y dice que eso plantea problemas que no es nada problemático
+
+579
+01:13:31,659 --> 01:13:36,899
+porque puedes usar el redondeo de hecho tres eso mismo ya lo hace ya redondea al tic siguiente es
+
+580
+01:13:36,899 --> 01:13:44,000
+decir no plantea problemas pero es buena práctica redondear por código y está y se redondea al tic
+
+581
+01:13:44,000 --> 01:13:53,439
+y punto no tiene mayor mayor e inconveniente vale pero no os volváis loco con esto si usáis el
+
+582
+01:13:53,439 --> 01:14:00,520
+que viene en tres eso por efecto está bien está bien no es ningún drama lo que pasa que quería
+
+583
+01:14:00,520 --> 01:14:11,680
+que quedara claro lo entendierais y vierais porque veis gráficos que pone 105 xn o 105 xc o 106 vale
+
+584
+01:14:11,680 --> 01:14:17,119
+lo que quiere decir es estas opciones de configuración que os he enseñado aquí en el lookup
+
+585
+01:14:19,119 --> 01:14:26,010
+si queréis os explico cada una pero es que de verdad no creo que valga que valga mucho la
+
+586
+01:14:26,010 --> 01:14:31,970
+pena sino porque es todo esto vale es decir el 5 es obvio es este 5 de cuántos días antes de la
+
+587
+01:14:31,970 --> 01:14:44,600
+expiración xc es cuando es valor absoluto y xr es cuando es por ratio y xn es sin ajuste vale es
+
+588
+01:14:44,600 --> 01:14:50,199
+decir es estas distintas opciones es lo que marcan esas letras y este número es lo que marca del
+
+589
+01:14:50,199 --> 01:14:59,890
+6 7 7 7 si le hubiera puesto activity entonces cambia es un día consecutivo de mayor volumen es
+
+590
+01:14:59,890 --> 01:15:09,289
+11 v o r puedes ver ese y si veis no han ajustado que mucha gente que prefieren ajustado pero eso
+
+591
+01:15:09,289 --> 01:15:14,720
+que os digo mi opinión rompes totalmente la relación bueno si lo controlas por código está
+
+592
+01:15:14,720 --> 01:15:20,439
+bien pero rompes la relación incluso de los de los indicadores y de todos tienes que tener en
+
+593
+01:15:20,439 --> 01:15:25,399
+cuenta eso porque es lo que lo que veíais aquí en el en el que tenían ajustado antes no en ese
+
+594
+01:15:25,399 --> 01:15:32,000
+gap esos 200 puntos de gap que habían ahí de pronto realmente si tú no controlas eso tienes 200
+
+595
+01:15:32,000 --> 01:15:37,159
+puntos ahí que aunque tú hayas cerrado y operado imagínate que tienes ahí una media móvil o
+
+596
+01:15:37,159 --> 01:15:47,520
+cualquier otra otro cálculo este esa media queda alterada ese valor o ese indicador es esto castigo
+
+597
+01:15:47,520 --> 01:15:54,359
+se ma que sé lo que tú quieras ese atr todo cualquier dato que se calcule con precios del
+
+598
+01:15:54,359 --> 01:16:01,279
+gráfico al final está alterado si utiliza datos de días anteriores que cualquiera lo hace nada más
+
+599
+01:16:01,279 --> 01:16:07,239
+que utilice un día anterior ese día tiene 200 puntos falsos de gap no tiene un precio mucho
+
+600
+01:16:07,239 --> 01:16:13,039
+mayor que no es real si no ajustas entiendes ese es el problema que plantea entonces lo correcto
+
+601
+01:16:13,039 --> 01:16:18,560
+es ajustar pero se pueden ajustar ya digo que en casos intradía donde se puede controlar y donde
+
+602
+01:16:19,119 --> 01:16:24,279
+imaginaros un open range breakout que haremos en el curso vale pues ahí podemos hacerlo en
+
+603
+01:16:24,279 --> 01:16:31,359
+ajustado porque porque yo voy a trabajar con datos del mismo día en la sesión y me da igual entonces
+
+604
+01:16:31,359 --> 01:16:38,420
+que los datos más prefiero prefiero analizar así tener los precios bien históricos pero entonces
+
+605
+01:16:38,420 --> 01:16:44,300
+no tengo que utilizar datos del día anterior entiende si utilizo datos del día anterior si
+
+606
+01:16:44,300 --> 01:16:53,619
+no ajusto estoy metiendo un posible error ahí posible error el problema principal no es tanto
+
+607
+01:16:53,619 --> 01:16:59,060
+que el backtess sea más es que le metes un sesgo al optimizador es decir si yo aquí yo aquí luego
+
+608
+01:16:59,060 --> 01:17:07,779
+voy a optimizar algo y aquí tengo 200 puntos de gap arriba voy a hacer que la optimiza el optimizador
+
+609
+01:17:07,779 --> 01:17:15,180
+va a hacer todo lo posible para no ponerse corto ahí se voy a meter o sea es verdad que aquí es
+
+610
+01:17:15,180 --> 01:17:20,619
+un vencimiento trimestral pero imaginaos el caso mensual no le voy a meter un sesgo a que evite
+
+611
+01:17:20,619 --> 01:17:26,539
+se evite a ir corto por toda costa porque si le meto 200 puntos de gap va a evitar entonces le voy
+
+612
+01:17:26,539 --> 01:17:34,409
+a meter un sesgo al optimizador un condicionante que encima no es real no es real entonces por
+
+613
+01:17:34,409 --> 01:17:48,619
+eso es mejor ajustar vale me queda algo alberto vale miro yo entonces vale están más o menos
+
+614
+01:17:48,619 --> 01:17:55,920
+caros si alguien tiene algo que escriba ahora sobre este tema porque lo iré cerrando donde indica
+
+615
+01:17:55,920 --> 01:18:05,439
+cómo han sido ajustados los datos no por defecto bueno o sea en el caso de tres por efecto ya te
+
+616
+01:18:05,439 --> 01:18:11,760
+digo en la roba en eq ajusta por diferencia esto pues se le ayuda cada plataforma o cada proveedor
+
+617
+01:18:11,760 --> 01:18:16,800
+de datos tendrá su documentación esto no tiene no hay un sitio de ir a mirar de acuerdo porque
+
+618
+01:18:17,399 --> 01:18:25,039
+esto al final es un tema de datos entonces el proveedor de datos el que tú cuando coges un
+
+619
+01:18:25,039 --> 01:18:30,840
+proveedor de datos pues tienes que mirarlo pues igual que tienes que mirar yo que sé si te compras
+
+620
+01:18:30,840 --> 01:18:37,319
+un coche y te importa pues yo que sé la especificación del motor del coche pues tienes que mirar por
+
+621
+01:18:37,319 --> 01:18:44,060
+ejemplo es que mirar si le pones gasolina o le pones diésel o le pones pues eléctrico si le
+
+622
+01:18:44,060 --> 01:18:48,140
+pones gasolina y va con dice ya por no sé le pones diésel pues te cargas el motor entonces
+
+623
+01:18:48,140 --> 01:18:55,460
+la final son especificaciones y está tienes que ir a buscarlas al proveedor al proveedor de los
+
+624
+01:18:55,460 --> 01:19:00,899
+datos pero nuevamente es un tema de configuración que una vez ya he sabido pues ya está ya he sabido
+
+625
+01:19:00,899 --> 01:19:06,970
+ya sabes los condicionantes que tienes y no os volváis locos digo lo que quería es que lo
+
+626
+01:19:07,529 --> 01:19:18,350
+lo entendierais vale en cuanto a los etf es es decir esto es en caso del futuro que es el
+
+627
+01:19:18,350 --> 01:19:27,380
+caso más evidente en casos de tf es también podéis encontrar también podéis encontrar que
+
+628
+01:19:27,380 --> 01:19:32,020
+algún proveedor ajuste también podéis encontrar que algún proveedor ajuste pero
+
+629
+01:19:32,020 --> 01:19:53,119
+a ver un momento me encuentro esto rápido voy a buscarlo aquí os muestro os muestro un poco
+
+630
+01:19:53,119 --> 01:20:30,739
+pero breve esto es breve ya cerramos esto voy voy voy voy voy voy voy voy contestada donde indica
+
+631
+01:20:30,739 --> 01:20:47,100
+cómo han sido bueno repite alberto si si eso eso estaba ahora con eso donde indica preguntaba
+
+632
+01:20:47,100 --> 01:20:51,979
+el donde indica cómo se han ajustado los datos no no esto ya lo comentaba tiene que
+
+633
+01:20:51,979 --> 01:20:58,289
+buscarlo en el proveedor ya está esto ya está esto ya está ya está respondido ahora tendrá una
+
+634
+01:20:58,289 --> 01:21:17,239
+de miguel hay larguita bueno en el caso de los de los etf u acciones vale ahí ya no hay tanta
+
+635
+01:21:17,239 --> 01:21:22,840
+problemática porque no hay este efecto porque el origen de estos repito es que hay vencimientos
+
+636
+01:21:22,840 --> 01:21:29,909
+las acciones no tienen vencimiento por lo tanto no hay este problema en las acciones que puede haber
+
+637
+01:21:29,909 --> 01:21:38,189
+puede haber el pago de los dividendos que ahí hay más menos consenso y pago de los dividendos o
+
+638
+01:21:38,189 --> 01:21:45,449
+de los cupones vale de los cupones también los split o ajustes o contra split este tipo vale
+
+639
+01:21:45,449 --> 01:21:54,960
+pero os enseño el tdt porque ese es el caso más paradigmático realmente tres eso no lo ajusta vale
+
+640
+01:21:54,960 --> 01:22:01,340
+y eso hace que realmente tenga un valor muy inferior al que debería al que debería perdón
+
+641
+01:22:01,340 --> 01:22:07,300
+para reflejar el valor de una inversión en el tnt eso que debería reflejar un índice entonces
+
+642
+01:22:09,020 --> 01:22:15,020
+esto ahí hay un etero debate esto es más correcto aquí ya es más debatible y no perdemos más el
+
+643
+01:22:15,020 --> 01:22:22,819
+tiempo porque hay bastante opinión sobre que no hay que hacerlo yo creo que sería mejor hacerlo
+
+644
+01:22:22,819 --> 01:22:29,420
+creo que sería mejor hacerlo pero es verdad que no es dramático no hacerlo no es dramático no
+
+645
+01:22:29,420 --> 01:22:35,140
+hacer porque aquí no hay no es el mismo efecto es una es un valor monetario que sale te pagan el
+
+646
+01:22:35,140 --> 01:22:40,270
+dividendo y tú lo cobras entonces la acción sigue cotizando bueno pero también se descuenta
+
+647
+01:22:40,270 --> 01:22:44,189
+hay proveedores que permiten ajustarlo hay proveedores que permiten ajustar ese pago de
+
+648
+01:22:44,189 --> 01:22:50,270
+ese pago de dividendos también os lo digo por si lo veis si lo veis alguien nos quiere preguntar
+
+649
+01:22:50,270 --> 01:22:56,430
+pues que nos pregunta pero como nosotros en este caso no lo vamos a tratar específicamente no
+
+650
+01:22:56,909 --> 01:23:07,319
+dedico más tiempo encargas tú de lo de miguel alberto que vale entonces si no hay más de este
+
+651
+01:23:07,319 --> 01:23:15,310
+tema doy por doy por cerrado el tema el tema este vale vamos a hacer un breve de ser pero antes
+
+652
+01:23:15,310 --> 01:23:25,689
+antes del descanso planteo un poco planteo un poco la primera estrategia que vamos a trabajar hoy
+
+653
+01:23:25,689 --> 01:23:31,010
+no la vamos a trabajar entera vamos a plantearla vamos a explicarla vamos a desarrollar el inicio
+
+654
+01:23:31,010 --> 01:23:38,010
+porque la quiero plantear la quiero plantear un poco como hemos planteado la teoría de acuerdo
+
+655
+01:23:38,010 --> 01:23:43,810
+es decir los perfiles de entradas salidas filtros vale porque luego además también hay alguna
+
+656
+01:23:43,810 --> 01:23:49,439
+pregunta relacionado con esto y también hablaré un poco de esto también usando ese sistema y
+
+657
+01:23:49,439 --> 01:23:55,119
+usando algún otro para responder alguna alguna pregunta que nos han hecho lo aprovecharé que
+
+658
+01:23:55,119 --> 01:24:02,539
+es un poco la idea vale entonces simplemente lo voy a plantear cómo hemos empezado porque había
+
+659
+01:24:02,539 --> 01:24:08,420
+hay otro de los eternos delante y eso sí que vamos a hacer varias clases varias clases y por
+
+660
+01:24:08,420 --> 01:24:16,000
+varios métodos vale la búsqueda de ideas de acuerdo es un tema que creo que siempre preocupa
+
+661
+01:24:16,000 --> 01:24:23,020
+y ocupa y de hecho ahí es seguramente el motivo por el que triunfan tanto estos programitas de
+
+662
+01:24:23,020 --> 01:24:31,300
+buscador de esta tesis cuanta alfa todos estos programas que sirven para para empezar la casa
+
+663
+01:24:31,300 --> 01:24:36,460
+por el tejado mejor de empezar a casa por el tejado vale cuando realmente hay muchas ideas
+
+664
+01:24:36,460 --> 01:24:42,739
+disponibles y no hace falta no hace falta hay muchas maneras de contarlas vale y iremos iremos
+
+665
+01:24:42,739 --> 01:24:52,260
+viendo muchas y a la teoría habéis visto algunas vamos a empezar por la por alguna que ya ha salido
+
+666
+01:24:52,260 --> 01:24:56,859
+en el curso y que hemos hablado mucho de ellos de que ya os dije que haríamos y que no va a ser
+
+667
+01:24:56,859 --> 01:25:01,539
+el único de más no va a ser el único sistema que vamos que vamos a usar este lo vamos a usar
+
+668
+01:25:01,539 --> 01:25:07,779
+para hacerlo crecer de hecho en esta versión prelimina vale este sistema sigue una vela de entrada
+
+669
+01:25:07,779 --> 01:25:15,579
+tipo doncha de acuerdo tipo doncha una entrada tipo doncha no es más que una ruptura de canal
+
+670
+01:25:15,579 --> 01:25:21,340
+vale de doncha he hablado mucho empecé hablando incluso en la historia en la historia del
+
+671
+01:25:21,500 --> 01:25:27,899
+límico recordáis y hablamos de los canales de doncha por los canales ya os dije siguen totalmente
+
+672
+01:25:27,899 --> 01:25:36,420
+en vigor y hablar mucho de ellos y ya veis que es el primer sistema que os presento que es un canal
+
+673
+01:25:36,420 --> 01:25:42,180
+de doncha bueno esa rayita en este caso lo he hecho con cierres ya veremos de otra manera porque
+
+674
+01:25:42,180 --> 01:25:48,180
+se puede hacer con cierres se puede hacer por máximos vale voy a poner el grado está el gráfico
+
+675
+01:25:48,180 --> 01:25:53,819
+en velas lo voy a poner otra vez como bien me ha dicho alberto antes que se vea porque así
+
+676
+01:25:53,819 --> 01:26:04,430
+no se ve un carajo vale entonces ahí vale y lo voy a pasar a línea para que veáis que efectivamente
+
+677
+01:26:04,430 --> 01:26:13,779
+lo que valoramos son cierres por encima de el carácter vale son en el momento en que el precio
+
+678
+01:26:13,779 --> 01:26:20,659
+cierra por encima del máximo en este caso de 10 cierres esto es apel en velas diarias
+
+679
+01:26:20,659 --> 01:26:25,460
+eso se apel en velas diarias ya veremos ahora cómo lo valoró pero esto es una idea tan sencilla como
+
+680
+01:26:25,460 --> 01:26:34,630
+esta y de dónde viene esta cosa os la he explicado en el curso vale esta viene pero es que es mega
+
+681
+01:26:34,630 --> 01:26:40,789
+otra conocida canal de canal de doncha no se lo habéis podido ver en 300 libros revistas decir
+
+682
+01:26:40,789 --> 01:26:47,750
+sale en todos los sitios es decir no tiene no tiene mucho a la fuente es que es hasta no sé
+
+683
+01:26:47,750 --> 01:26:52,789
+cuál es la fuente porque es que hay tanta o sea es algo tan común un canal de doncha que no sé
+
+684
+01:26:52,789 --> 01:26:58,789
+cuál es la fuente de verdad si ahora vosotros buscáis canal de doncha mira voy a probarlo canal
+
+685
+01:26:58,789 --> 01:27:08,770
+de doncha en internet nos sale un montón que es un canal de doncha y nos sale un artículo mío muy
+
+686
+01:27:09,770 --> 01:27:16,279
+a mí era este arranque cual es mío no no es de miguel arias bueno es que hay un montón
+
+687
+01:27:16,279 --> 01:27:25,060
+mira me quedo con este se quedó con ese bueno si hay hay apretadas un indicador técnico el
+
+688
+01:27:25,060 --> 01:27:29,460
+límite trazado líneas de precio el líneas superior línea inferior por defecto 22 acordéis que os lo
+
+689
+01:27:29,460 --> 01:27:38,260
+dije 20 días pero bueno pues bueno pues le podemos 20 le ponemos 20 igual me lo voy a poner 20
+
+690
+01:27:38,899 --> 01:27:47,180
+y así vamos por defecto de entrada vale el canal de 20 aquí también le voy a poner 20 al canal
+
+691
+01:27:47,180 --> 01:27:57,680
+de cierres que es el indicador que he hecho para pintarlo y vamos con 20 días 20 días tiene además
+
+692
+01:27:57,680 --> 01:28:06,619
+una salida por tiempo y tiene de momento un stop y te pe sí meten no sé cuánto le he puesto no
+
+693
+01:28:06,619 --> 01:28:10,539
+no he hecho nada en ocho ningún proceso de utilización nada es cero la verdad le había puesto 10
+
+694
+01:28:14,680 --> 01:28:25,390
+10 le he puesto que le he puesto un 10 por ciento un 10 por ciento es que voy en diario si un 10
+
+695
+01:28:25,390 --> 01:28:35,270
+por ciento de esto 10 por ciento de y salida en 10 barras vale y si le pongo muchas más barras
+
+696
+01:28:35,270 --> 01:28:41,029
+vamos a ver si actúa tp simétrico tal me voy a poner 100 barras simplemente para que no actúe lo
+
+697
+01:28:41,029 --> 01:28:45,779
+podía haber configurado no creo que no lo he hecho para que si siempre salga bueno no pues mira aquí
+
+698
+01:28:45,779 --> 01:28:52,380
+no sale ni por esto ni por tp sale por por las barras por las barras y les tope 500
+
+699
+01:28:55,239 --> 01:29:03,680
+ahora no sabes esto por código lo podríamos haber hecho mejor pero ahí se sale y es así que sigue
+
+700
+01:29:03,680 --> 01:29:13,760
+comprado entonces ahora he obligado a que salga por stop y tp de un 10 por ciento este metado se
+
+701
+01:29:13,760 --> 01:29:21,359
+han hecho ningún proceso de utilización ni nada estoy en una fase completamente inicial de la idea
+
+702
+01:29:21,359 --> 01:29:25,520
+tengo ya alguna cosa metida en el código para luego explicaros la porque ya la he hecho pero
+
+703
+01:29:25,520 --> 01:29:34,579
+están comentadas y no igual ahora mismo no no importa esto ya os lo como os dije cuando los
+
+704
+01:29:34,579 --> 01:29:42,699
+códigos vayan evolucionando los daré el sudo código hoy lo vamos a prácticamente plantear
+
+705
+01:29:42,699 --> 01:29:53,119
+prácticamente y hablar un poco de él entenderlo y demás y lo iremos validando aprovecho aprovecho
+
+706
+01:29:53,119 --> 01:30:05,350
+una viene ligado con una pregunta que ha habido en el discord que iba relacionado con esto con la
+
+707
+01:30:05,350 --> 01:30:11,710
+validación de entradas se descartaban ideas no se descartaban que era bastante bastante interesante
+
+708
+01:30:11,710 --> 01:30:14,949
+interesante había alguien ahí que decía que se apuntaba se lo recuerdo mal
+
+709
+01:30:17,989 --> 01:30:26,130
+hablaba un poco que tenía un setup hablaba porque tenía un setup tendencial y que le daba un
+
+710
+01:30:26,130 --> 01:30:30,350
+porcentaje de aciertos muy bajos y eso lo descartaba el sistema el problema es que
+
+711
+01:30:31,569 --> 01:30:40,619
+decía que él si eso implicaba que tenía poca ventaja estadística recordar recordar una cosa
+
+712
+01:30:40,619 --> 01:30:48,500
+vale un porcentaje de acierto en sí por si no dice nada no dice nada cuando dije que esto
+
+713
+01:30:48,500 --> 01:30:55,619
+que es verdad que lo dije en la teoría y quizá pues quizá no no quedó suficientemente claro que
+
+714
+01:30:55,619 --> 01:31:03,380
+puede ser una manera de validar una estrategia de entrada es partiendo de un siguiente condicionante
+
+715
+01:31:03,380 --> 01:31:09,340
+partiendo de que yo igualo es decir acordaros de que la esperanza matemática por daros que
+
+716
+01:31:09,340 --> 01:31:13,619
+la esperanza matemática pero no es más que acordaros lo voy a enseñar del powerpoint
+
+717
+01:31:13,619 --> 01:31:42,270
+donde está esto esto es muy importante ahora no lo estoy encontrando esto aquí esperanza
+
+718
+01:31:42,270 --> 01:31:58,069
+esperanza siguiente siguiente siguiente aquí aquí donde te estás ahora no aquí perfecto vale esto
+
+719
+01:31:58,069 --> 01:32:07,380
+era la diapositiva de esperanza vale esta era la esperanza ruina acordaros daros que la esperanza
+
+720
+01:32:07,380 --> 01:32:14,420
+más sencilla por así acuerdo que es al final no es más que el porcentaje de aciertos por el payoff
+
+721
+01:32:14,420 --> 01:32:24,140
+menos el porcentaje de pérdidas vale si yo tengo un win voy a intentar una osadía
+
+722
+01:32:26,699 --> 01:32:34,460
+nos haría cuidado que aquellos que me conocen saben mis capacidades de dibujo pero vamos a ver
+
+723
+01:32:34,460 --> 01:33:00,350
+cuidado a ver 0 50 pero 50 vale si yo voy a si yo tengo stop y tp voy a un payoff de 1 menos
+
+724
+01:33:01,069 --> 01:33:13,220
+pero 50 esto que da venga no me hace falta coger la calculadora para saber que esto da
+
+725
+01:33:13,220 --> 01:33:24,699
+0,0 vale esto da 0 vale 0 vale es decir un sistema con porcentaje de acierto 50% y mismo
+
+726
+01:33:24,699 --> 01:33:33,970
+ganancia de media por tre ganador que lo que pierde por el perdedor de acero vale por tanto
+
+727
+01:33:34,529 --> 01:33:46,439
+haciendo esa similación borro haciendo esa misma analogía puedo deducir que si yo igualo
+
+728
+01:33:46,439 --> 01:34:07,720
+si yo igualo el tp si yo hago que el tp sea igual al stop loss esto estaremos de acuerdo
+
+729
+01:34:07,720 --> 01:34:15,100
+bueno estoy empeorando por momentos estaremos de acuerdo que esto da más o menos un payoff de 1
+
+730
+01:34:15,100 --> 01:34:20,630
+que no va a ser exacto porque habrá veces que salde por el sistema por lo que sea pero esto
+
+731
+01:34:20,630 --> 01:34:35,859
+va a dar un payoff de 1 vale ergo si eso es así si tengo más de un 50% de aciertos el sistema
+
+732
+01:34:35,859 --> 01:34:45,140
+tiene esperanza positiva si yo tengo más de un 50% se entiende tengo un payoff una esperanza
+
+733
+01:34:45,140 --> 01:34:54,069
+positiva y de ahí es donde parte esa idea se entiende de decir que una manera sencilla a
+
+734
+01:34:54,069 --> 01:35:02,180
+veces de evaluar un setup de entrada directo es decir bueno si yo igualo stop y tp acierta
+
+735
+01:35:02,180 --> 01:35:10,659
+más de la mitad entonces volviendo a la pregunta que me hacíais que había más de una en esta línea
+
+736
+01:35:10,659 --> 01:35:19,060
+pero una que hacía alejandro en disco vale decía decía que estaba poniendo en práctica voy a
+
+737
+01:35:19,060 --> 01:35:24,899
+resumir aunque sea el disco la podéis leer aquellos aquellos que tenéis acceso al disco
+
+738
+01:35:24,899 --> 01:35:32,020
+que sus todos los alumnos pues el disco vale decía justamente eso que yo había comentado lo
+
+739
+01:35:32,020 --> 01:35:40,300
+del win rate del 50% vale que no ha realizado la prueba pero que él lo había puesto la condición
+
+740
+01:35:40,300 --> 01:35:45,020
+de entrada como salida igual vale esto no es lo mismo que yo he dicho porque esto te puede
+
+741
+01:35:45,020 --> 01:35:51,119
+llevar a un por taje de aciertos más bajo y por lo tanto un payoff muy alto esto es correcto él
+
+742
+01:35:51,119 --> 01:35:54,920
+decía de hecho que le pasaba decía que le daba una esperanza muy buena perfecto pues está bien
+
+743
+01:35:54,920 --> 01:36:00,000
+pero eso no eso no es lo que lo que decía me acuerdo lo que decía es que si tú tenías el
+
+744
+01:36:00,000 --> 01:36:09,880
+tú igualabas payoff o sea mantenías payoff 1 vale que es mismo riesgo que ganancia uno a uno esto hay
+
+745
+01:36:09,880 --> 01:36:15,520
+traders por ejemplo que lo hacen muchos seres excepcionales que van uno a uno es una manera
+
+746
+01:36:15,520 --> 01:36:20,859
+muy intuitiva por lo que os digo porque digo bueno yo voy uno a uno porque sé que si acierto
+
+747
+01:36:20,859 --> 01:36:28,539
+más del 50 ya está si yo sé que tengo una ventaja que soy capaz de hacer entradas de más
+
+748
+01:36:28,539 --> 01:36:34,800
+de un 50 por ciento de acierto voy uno a uno es decir a riesgo lo mismo que ganan un 1% de
+
+749
+01:36:34,800 --> 01:36:45,979
+esto 1% de tp se entiende esa es una manera fácil de evaluar la entrada pero volviendo a
+
+750
+01:36:45,979 --> 01:36:51,739
+la pregunta alejandro no es exactamente lo mismo él me decía tiene un win rate del 30% para largo
+
+751
+01:36:51,739 --> 01:36:58,329
+y un 30 para el corto pero él había hecho salida por la contra del sistema con eso no igual a
+
+752
+01:36:58,329 --> 01:37:07,060
+riesgo y beneficio de acuerdo esa condición no está cumpliendo esto vale no está manteniendo
+
+753
+01:37:07,060 --> 01:37:19,779
+un payoff no está manteniendo un payoff de 1 no está manteniendo un payoff pues mucho más
+
+754
+01:37:19,779 --> 01:37:30,550
+alto mucho más alto mejor de 2 a 1 entonces claro un rate bajo lógico una cosa va con la otra si
+
+755
+01:37:30,550 --> 01:37:36,989
+el payoff es más alto el win rate baja el win rate es muy alto el payoff es casi siempre inseparable
+
+756
+01:37:36,989 --> 01:37:41,789
+ya os lo dije sistemas tendenciales tienen un porcentaje de aciertos bajo pero todavía tienen
+
+757
+01:37:41,789 --> 01:37:47,890
+un payoff bastante alto y viceversa sistemas antitenenciales tienen un win por un percentage
+
+758
+01:37:47,890 --> 01:37:55,300
+de aciertos bastante elevado y entonces tienen un win un payoff bastante bajo las dos cosas van
+
+759
+01:37:55,300 --> 01:37:59,460
+combinadas y lógicamente la entrada y la salida por eso ya os lo hablé que en teoría que no
+
+760
+01:37:59,460 --> 01:38:05,060
+siempre lo vamos a hacer así es decir ya os lo comenté pero yo quise explicaros es decir por eso
+
+761
+01:38:05,060 --> 01:38:11,260
+a las prácticas para luego ver cómo lo aplicamos todo porque la teoría yo os quise explicar lo que
+
+762
+01:38:11,260 --> 01:38:18,010
+hacemos y también os expliqué más cosas de las que hacemos es así es decir porque queríamos darle
+
+763
+01:38:18,010 --> 01:38:28,500
+una base de como es el fundamento de conocimiento profundo de todo lo que creemos que es importante
+
+764
+01:38:28,500 --> 01:38:35,460
+y incluso ya digo hay cosas como no sé ahora me viene a caso el bra no donde yo no comulgo mucho
+
+765
+01:38:35,460 --> 01:38:40,359
+pero yo os expliqué también y la intentaremos enseñar un curso es decir al final hay que
+
+766
+01:38:40,359 --> 01:38:49,909
+hay que explicarlo todo entonces espero que con esto quede claro que alejandro quede respondido
+
+767
+01:38:49,909 --> 01:38:58,619
+entonces la pregunta el que hacía al final es descartarías de una al sistema porque el setup
+
+768
+01:38:58,619 --> 01:39:03,060
+de entraba no tiene ventaja estadística no es que no es verdad que no tiene ventaja estadística
+
+769
+01:39:03,060 --> 01:39:06,579
+alejandro no es verdad que no tiene ventaja estadística o sea el planteamiento que has hecho
+
+770
+01:39:06,579 --> 01:39:14,750
+sin correcto es decirle ya es normal que un sistema puede tener un rate de 30% o tiene eso
+
+771
+01:39:14,750 --> 01:39:21,960
+en sí no es nada malo pero verás que tiene un pay off muy alto entonces ahí está si quieres
+
+772
+01:39:21,960 --> 01:39:29,909
+evaluar la entrada sola tienes que tener pay off de uno ese es el truco vale para evaluar y no
+
+773
+01:39:29,909 --> 01:39:35,069
+cumple y no hacer todo un proceso sino de una manera rápida la evaluación preliminar que esto
+
+774
+01:39:35,069 --> 01:39:39,750
+luego luego luego cuando entre más profundidad las preguntas sólo aprovecha un poco porque me
+
+775
+01:39:39,750 --> 01:39:46,829
+venía al pelo con el sistema que es lo que voy a tratar de ir haciendo aprovechar lógicamente
+
+776
+01:39:46,829 --> 01:39:56,569
+lo que explicamos para para ir aprovechando para añadir material de acuerdo este es un
+
+777
+01:39:56,569 --> 01:40:01,689
+poco la idea entonces aprovechando que ese sistema ya lo voy a aprovechar pues de entrada lo he
+
+778
+01:40:01,689 --> 01:40:08,170
+creado con 1 1 lo he creado con 1 1 y ahora le he sacado la salida por tiempo y lo he dejado con
+
+779
+01:40:08,170 --> 01:40:14,279
+1 1 lo he dejado con 1 1 y sólo va largo y luego ya lo veremos para hacer corto también ya lo veremos
+
+780
+01:40:14,279 --> 01:40:27,899
+0 1 0 1 en apple y esto que me da una evaluación preliminar podemos decir esto que me da esto me
+
+781
+01:40:27,899 --> 01:40:38,380
+da esto va lentísimo esto me da que no sé cómo le puse de setup mil dólares de momento no tiene
+
+782
+01:40:38,380 --> 01:40:44,569
+costes porque esto en acciones plantea un problema luego tiene un porcentaje de aciertos del 61 por
+
+783
+01:40:44,569 --> 01:40:51,039
+ciento y en un porcentaje de 61 por ciento veis este es un ejemplo de lo que os decía yo le he
+
+784
+01:40:51,039 --> 01:40:56,119
+igualado el riesgo y tp actúa los dos parece que sí que actúan los dos porque si no actuar no
+
+785
+01:40:56,119 --> 01:41:00,720
+tendría sentido debería bajarlo lo vamos a hacer hay que ver que los dos actúen bastante porque
+
+786
+01:41:00,720 --> 01:41:06,170
+si no me estoy engañando es un poco alto vamos a bajarlo ahora vamos a bajarlo pero sí que se ve
+
+787
+01:41:06,170 --> 01:41:11,090
+bueno actúa porque no puede salir de otra manera de hecho perdón si acabo de dejar que le he
+
+788
+01:41:11,090 --> 01:41:15,649
+quitado el le he quitado el factor temporal es decir todo el rato sale por o por tp por esto
+
+789
+01:41:15,649 --> 01:41:21,090
+o sea todo el rato sale por tp por esto claro va solo largo o sea este es muy fácil esta ventaja
+
+790
+01:41:21,090 --> 01:41:26,970
+es decir no hombre si tienes razón es fácil porque esto es solo largo pero bueno lo usado para
+
+791
+01:41:26,970 --> 01:41:31,930
+explicaros y no quiere decir sea el hecho de que sea una ventaja ir largo no es algo malo
+
+792
+01:41:31,930 --> 01:41:36,890
+o sea en bolsa no es algo malo es algo que podemos aprovechar a nuestro favor no se trata de decir
+
+793
+01:41:36,890 --> 01:41:46,600
+nosotros trataremos de aprovechar eso en nuestro favor de hecho y ya los lo ya os lo enseñé en el
+
+794
+01:41:50,050 --> 01:41:57,600
+en la teoría pero lógicamente una de las cosas que también quiero enseñaros hoy y a partir de
+
+795
+01:41:57,600 --> 01:42:03,520
+ahora en esta parte que vamos a entrar en estos sistemas que vamos a hacer varios nos dije en la
+
+796
+01:42:04,479 --> 01:42:14,109
+muchos tipos pero os dije que vamos a empezar por el perfil más tranquilo vale y que es el
+
+797
+01:42:14,109 --> 01:42:21,409
+que perfil que le llamamos no perfil aquel de operador que tiene otro trabajo y que solo puede
+
+798
+01:42:21,409 --> 01:42:27,289
+operar por las tardes y que no quiere dedicar muchas horas al día de acuerdo pero es que ese
+
+799
+01:42:27,289 --> 01:42:37,260
+perfil que perfil que es el que yo recomiendo empezar si tienes poca experiencia también debes
+
+800
+01:42:37,260 --> 01:42:42,100
+tener sistemas operando aquí si tienes experiencia y nosotros tenemos de acuerdo o sea nosotros
+
+801
+01:42:42,100 --> 01:42:48,100
+tenemos o sea que te quiero decir que este perfil no quiere decir que si tienes mucha experiencia
+
+802
+01:42:48,100 --> 01:42:53,619
+todo lo vas a operar interdiario porque al final si queremos un porfolio queremos diversificar las
+
+803
+01:42:53,619 --> 01:43:00,260
+maneras por estrategias necesitas hay que tener estrategias este tipo todos los perfiles entonces
+
+804
+01:43:00,260 --> 01:43:06,739
+empezamos por este porque este sí que es verdad que es para todo el mundo y es en el que recomendamos
+
+805
+01:43:06,739 --> 01:43:12,859
+empezar y el que recomendamos abordar algo límico antes en este tipo de estrategias porque
+
+806
+01:43:12,859 --> 01:43:19,579
+son estrategias más universales más fáciles de validar etcétera etcétera y lo iremos viendo pero
+
+807
+01:43:19,979 --> 01:43:27,460
+sirven para todo el mundo también los perfiles más activos está bien que tengáis estrategias que
+
+808
+01:43:27,460 --> 01:43:33,229
+van en un minuto si son rentables y las habéis validado pero la mejor diversificación que
+
+809
+01:43:33,229 --> 01:43:39,310
+podéis hacer es meter alguna diaria porque sabéis que seguramente conseguís
+
+810
+01:43:39,310 --> 01:43:46,270
+descorrelación entonces aquí lógicamente tenemos un activo que ha subido un poco
+
+811
+01:43:47,149 --> 01:43:54,069
+subido un poquito desde 0 30 hasta 190 y por lo tanto por un sistema largo pues tiene bastante
+
+812
+01:43:54,069 --> 01:43:59,470
+ventaja tiene bastante ventaja de hemos cargado de bastante atrás para que tuviera sus problemas
+
+813
+01:43:59,470 --> 01:44:06,710
+y demás pero lógicamente pues tiene tiene tiene bastante terreno terreno a favor y hay que
+
+814
+01:44:06,710 --> 01:44:13,109
+venga ese ratio tal importante por lo tanto donde está donde nos podemos
+
+815
+01:44:15,109 --> 01:44:21,060
+referenciar bueno en este caso en este tipo de acciones nuestro ve perdón en ese tipo de
+
+816
+01:44:21,060 --> 01:44:28,460
+sistemas nuestro mínimo benchmark es el vayanjol hemos acuerdo no es decir si yo no soy capaz de
+
+817
+01:44:28,460 --> 01:44:39,180
+batir al vayanjol pues se apaga apague vámonos entonces ahí es donde metemos
+
+818
+01:44:40,819 --> 01:44:53,180
+un momento que nos estoy montando aquí abajo cuánto capital había puesto aquí sí sí por encima
+
+819
+01:44:53,180 --> 01:44:59,689
+sí enseñar a enseñar el código un momentito ahora ahora lo enseño mejor pero pero bueno no
+
+820
+01:44:59,689 --> 01:45:05,300
+me quiero perder mucho código porque al final no por todas las ideas más que el código pero sí
+
+821
+01:45:05,300 --> 01:45:10,859
+ahora lo voy a explicar con el código con el código y el lunes que viene que trabajaremos
+
+822
+01:45:10,859 --> 01:45:15,220
+esta estrategia en profundidad si no yo os la quiero plantear como quería empezar con el otro
+
+823
+01:45:15,220 --> 01:45:19,220
+y sabía que no me daría tiempo a acabarla pues no quiero quiero plantearla y ahora responder
+
+824
+01:45:19,220 --> 01:45:24,899
+preguntas y el lunes que viene la trabajaremos de acuerdo ya dejaré algo más preparado por si
+
+825
+01:45:24,899 --> 01:45:30,819
+lo acabo que no creo porque hay mucho que trabajar porque no es esta esa esos su evolución sus filtros
+
+826
+01:45:30,819 --> 01:45:35,939
+su derivada es decir vamos a vamos a componer la estrategia esta vamos a tratar de hacer una
+
+827
+01:45:35,939 --> 01:45:42,180
+estrategia con ella con sus posibles alternativas y la vamos a evaluar de las maneras que podamos
+
+828
+01:45:42,180 --> 01:45:47,220
+evaluarla una estrategia de este tipo que lo veremos lo veremos ya os comenté que lógicamente
+
+829
+01:45:47,220 --> 01:45:54,300
+hay hay diferencia y que no es no siempre vamos a poder aplicar un wall forward completo a todas
+
+830
+01:45:54,300 --> 01:46:00,100
+estrategias no siempre vamos a poder utilizar toda esta metodología lógicamente a medida que se
+
+831
+01:46:00,100 --> 01:46:05,819
+nos que la frecuencia operativa es menor pues se va complicando pero lo vamos a lo vamos a probar
+
+832
+01:46:05,819 --> 01:46:13,020
+vamos a probar y vamos a ver qué qué conclusiones sacamos no quiero anticiparme que me cuesta frenarme
+
+833
+01:46:13,020 --> 01:46:19,100
+pero bueno esta es la esa es la curva del sistema en sí que lo había diseñado con mil dólares
+
+834
+01:46:19,979 --> 01:46:26,779
+empezando a ver lo voy a poner aquí en dólares estoy haciendo un back test de
+
+835
+01:46:26,779 --> 01:46:37,359
+vaya con él aquí abajo ahora os lo enseño os lo enseño voy a poner mil dólares
+
+836
+01:46:38,960 --> 01:46:49,020
+y esto empecé el 29 en el 99 hasta el 29 bueno está hasta hoy bueno pues nada
+
+837
+01:46:49,619 --> 01:47:01,800
+voy a poner hasta ayer hasta ayer perfecto y como le malas mentenía
+
+838
+01:47:03,640 --> 01:47:28,300
+y por cien por cien pues vamos con él aquí vamos a ver eso si lo hecho bien esta es la curva
+
+839
+01:47:28,300 --> 01:47:34,539
+lo hecho en el spy en apple podría haberlo hecho en apple también que se habrá estado mejor
+
+840
+01:47:35,500 --> 01:47:42,810
+a nivel de ejemplo ya nos ya nos sirve aquí de hecho en apple habrá sido todo más crítico
+
+841
+01:47:42,810 --> 01:47:54,289
+el que tenemos que va cerca del 50 por ciento y bueno pues tenemos ahí unos unos datos entonces
+
+842
+01:47:54,289 --> 01:47:59,729
+esto es lo que usaremos un poco de comparativa lo mínimo por supuesto lo mínimo que hay que
+
+843
+01:47:59,890 --> 01:48:08,090
+que hay que hacer es batir a esto o pasarte mínimo entonces usaremos de comparativa benchmark
+
+844
+01:48:10,090 --> 01:48:15,529
+y luego también el mismo activo por el mismo activo en el activo ya lo haremos como os digo
+
+845
+01:48:15,529 --> 01:48:22,640
+el próximo el próximo día pero bueno aquí ya vemos que con ese sistema hemos sacado cuatro mil
+
+846
+01:48:22,640 --> 01:48:30,300
+dólares hemos yendo también a cien por ciento creo que aquí tampoco tengo exposición pero
+
+847
+01:48:31,020 --> 01:48:36,420
+lo voy a meter ahora es bueno es que tengo que hacerla tengo que hacer la porcito pero
+
+848
+01:48:36,420 --> 01:48:44,550
+vamos a hacer una pausita vamos a hacer una pausita de cinco minutos tenga todo el mundo
+
+849
+01:48:44,550 --> 01:48:54,109
+entre ellos yo tiempo a ir un poquito un momentito a lavado si lo requiere y vuelvo en teoría mira
+
+850
+01:48:54,109 --> 01:49:01,949
+sabes que voy a hacer voy a dejar de compartir la pantalla sale eso sale la carotulita ahí y para
+
+851
+01:49:01,949 --> 01:49:05,989
+el día siguiente tenía un reloj pero como cambie de pc no tengo el reloj para el día siguiente a
+
+852
+01:49:05,989 --> 01:49:10,189
+ver si lo consigo pues había un reloj aquí en la pantalla que tendría que poner para no lo pongo
+
+853
+01:49:10,189 --> 01:49:22,600
+vuelvo ya digo ocho y dos ocho y tres espero aquí no sé si para la grabación no no la paro la paro
+
+854
+01:49:22,600 --> 01:49:38,060
+pero no me pone pausa me pone parar si la paro luego me arranca o que no sé no no la cuenta
+
+855
+01:49:38,180 --> 01:49:48,539
+no tengo pausa la grabación vale la puedo pausar venga la pausa la pausa venga pues
+
+856
+01:49:48,539 --> 01:49:55,670
+estamos de vuelta a este de este mini escarzo vale bien estaba aquí preparando
+
+857
+01:49:57,029 --> 01:50:05,029
+estaba preparando el de apple a ver si estaba mirando por eso que había puesto el capital
+
+858
+01:50:05,750 --> 01:50:19,430
+y ha puesto un inicio de mil no aquí también y ya están ahora fecha me interesa la fecha y
+
+859
+01:50:19,430 --> 01:50:26,590
+ahora he visto alguna pregunta ahí respecto a vallanjol ahora ahora os contesto os contesto
+
+860
+01:50:26,590 --> 01:50:49,420
+21 de enero del 99 para eso da igual porque no no va no va a trabajar pasar otro por encima
+
+861
+01:50:50,140 --> 01:51:07,170
+a ver el vallanjol mínimo cuando se ha hecho el se ha dicho sobre todo para sistemas de
+
+862
+01:51:07,170 --> 01:51:12,010
+medio de medio largo plazo que van en ese tiro lo mínimo lo mínimo lógicamente es
+
+863
+01:51:12,010 --> 01:51:18,939
+batido vallanjol en qué índice bueno en el sb puede estar bien pero si no en su acción
+
+864
+01:51:18,939 --> 01:51:27,369
+vale si no en su acción aquí le he puesto gestión monetaria equivocado 100% equivocado 100% porque
+
+865
+01:51:27,369 --> 01:51:48,279
+le he metido 2900 acciones le he metido 2900 acciones y cuando se empieza el primer trade
+
+866
+01:51:48,279 --> 01:52:21,939
+no es eso ya perfecto ya es eso bueno lo normal es en el índice aunque lógicamente te tienes que
+
+867
+01:52:21,939 --> 01:52:28,289
+comparar también con el activo en que vas en este caso vamos con una acción y lo que ahora mismo
+
+868
+01:52:28,289 --> 01:52:33,850
+no nos importan tanto los datos estamos viendo protocolos esto es una locura estamos dando una
+
+869
+01:52:33,850 --> 01:52:39,489
+acción que estaba 0 32 690 es completamente absurdo lo que ha ganado no tiene ningún tipo
+
+870
+01:52:39,489 --> 01:52:47,850
+ningún tipo de sentido pero pero es igual quedémonos con la idea de que evidentemente
+
+871
+01:52:47,850 --> 01:52:52,289
+lo haremos con el ratio de retorno riesgo porque habrá muchas veces en este tipo de sistemas lo vais
+
+872
+01:52:52,289 --> 01:53:03,300
+a ver en que no me refiero a este en otros en que el mensual o sea el vallanjol nos ganará más ganará
+
+873
+01:53:03,300 --> 01:53:12,590
+más que nosotros por un sistema pero a qué riesgo es decir este es el tema siempre que nos
+
+874
+01:53:12,590 --> 01:53:18,189
+nos interesa y que tenemos que ver tenemos que ver a ver a qué a qué riesgo lo hacemos para ello
+
+875
+01:53:18,909 --> 01:53:27,789
+acciones a 0 34 y las cierro el último día vale porque es como funciona este código de vallanjol y
+
+876
+01:53:27,789 --> 01:53:33,899
+claro pues me da un retorno pues un poquito alto un poquito pero pero ya está es simplemente
+
+877
+01:53:33,899 --> 01:53:45,819
+simplemente un ejemplo claro esto es a costa de tener un drawdown del 87% 83% de rodón no está mal
+
+878
+01:53:46,460 --> 01:53:53,699
+y a ver la exposición está bien esto ya lo iremos a bajando más si bueno está un poquito
+
+879
+01:53:53,699 --> 01:54:04,180
+pasado de siempre lo sabes entonces es esta sería una de las comparaciones que duda cabe con el
+
+880
+01:54:04,180 --> 01:54:10,979
+índice con el activo en que operas con la que operas pasa que aquí ya digo la dimensiónamiento
+
+881
+01:54:10,979 --> 01:54:17,779
+el dimensiónamiento es tremendamente tramposo porque aquí es verdad que empezamos con 2000
+
+882
+01:54:17,899 --> 01:54:31,359
+y no cojo no acumulo tantos ya veremos qué cambios le vamos haciendo a este sistema y
+
+883
+01:54:31,359 --> 01:54:39,520
+cómo cómo lo validamos etcétera simplemente quería plantearos lo y ahora os enseño el
+
+884
+01:54:39,520 --> 01:54:47,720
+código vale ahora os enseño el código cuál es la idea de este este sencillísimo sistema
+
+885
+01:54:47,720 --> 01:54:53,319
+vamos a ver hasta qué punto pues aprovechamos lo aprovechamos creo que sí que lo aprovecharemos
+
+886
+01:54:53,319 --> 01:55:01,279
+pero vamos a tener que trabajarlo está en esta configuración inicial es tremendamente básico y
+
+887
+01:55:01,279 --> 01:55:07,479
+tendrá que crecer un poco vale ahora mismo cómo funciona vale para aquellos que tendáis un poquito
+
+888
+01:55:07,479 --> 01:55:14,600
+los que no simplemente quedar con la explicación no es lo el código en sí no es más que una
+
+889
+01:55:14,600 --> 01:55:23,439
+explicación de la idea que ya os he dado que es aquí le he quitado el filtro de volatilidad
+
+890
+01:55:23,439 --> 01:55:33,210
+simplemente le he configurado que compre si el cierre es mayor o igual que el mayor cierre
+
+891
+01:55:33,210 --> 01:55:38,770
+estaba entendido lo hemos puesto en lo hemos puesto en el mayor cierre que el máximo cierre
+
+892
+01:55:38,770 --> 01:55:47,210
+de los últimos 20 días es esto y cierra por encima o igual al mismo precio que el máximo cierre de
+
+893
+01:55:47,210 --> 01:55:56,829
+los últimos 20 días compra y le hemos puesto que cierre de momento sólo para ver la evaluación del
+
+894
+01:55:56,829 --> 01:56:11,550
+set up rápida simétricamente simétricamente con un tp y esto creo que era del 10 del 10 por ciento
+
+895
+01:56:12,189 --> 01:56:21,289
+había contemplado que ya os lo comenté con muchas veces esto suele ir bien salidas temporales es
+
+896
+01:56:21,289 --> 01:56:32,340
+una salida que recomiendo bastante porque no tiene sentido estar indefinidamente en el mercado
+
+897
+01:56:32,340 --> 01:56:39,100
+esperando al acuerdo de estar en el mercado es por el riesgo hay que salir si no se cumple
+
+898
+01:56:39,100 --> 01:56:44,890
+nuestro objetivo en 10 verlas yo salvo que se cumple pues bien que no de esta manera
+
+899
+01:56:44,890 --> 01:56:49,909
+fijaros que casi siempre sale por tiempo bueno seguramente el esto bien te prestan un poquito
+
+900
+01:56:49,909 --> 01:56:59,859
+elevados es prácticamente así no actúa nunca aquí ahora mismo hemos hecho ningún análisis
+
+901
+01:56:59,859 --> 01:57:04,739
+no hemos hecho nada en todo esto y la verdad no lo he hecho ya no he mirado nada todavía
+
+902
+01:57:04,939 --> 01:57:09,060
+vale no he mirado nada no lo he estudiado simplemente lo he metido en lo creado
+
+903
+01:57:11,079 --> 01:57:17,979
+sé que un dungeon es una estrategia que puede que puede funcionar en muchos activos y esto
+
+904
+01:57:17,979 --> 01:57:25,239
+sin más y lo he metido y es pues ahí lo iremos viendo pero lo he metido en apple no lo podía
+
+905
+01:57:25,239 --> 01:57:34,079
+haber metido en otra acción lo he metido tengo por aquí una cosa vamos a ver esto
+
+906
+01:57:37,470 --> 01:57:42,869
+vamos a así que estamos viendo que el esto bien te ve ahí no actúan vamos a ponerle
+
+907
+01:57:42,869 --> 01:57:48,750
+que no tiene ni por qué ser simétricos lo normal es ser un activo tendencial es que le
+
+908
+01:57:48,750 --> 01:57:54,590
+dejáramos a la mejor este y el esto le dejáramos 2 a 1 esto era sólo por probar si te acertaba
+
+909
+01:57:54,590 --> 01:58:00,590
+más de un 50 por ciento en aquel ejemplo que los enseñaba vale ahora le hemos dejado el tp y el
+
+910
+01:58:00,590 --> 01:58:07,310
+esto que esto luego ya veremos que lo configuraremos así una posterior versión le haremos un
+
+911
+01:58:07,310 --> 01:58:16,470
+multiplicador del tp en base al esto 1 2 pero bueno en esta fase inicial pues bueno tenemos
+
+912
+01:58:16,470 --> 01:58:23,470
+un sistema muy básico que simplemente en tantas rupturas de encierres por encima del cierre de
+
+913
+01:58:23,909 --> 01:58:30,699
+hace 10 velas y bueno de 20 perdón y por lo tanto pues ya veis cómo se va se va incorporando
+
+914
+01:58:30,699 --> 01:58:38,859
+con algunos también estrepitosos fallos y tiene ahí sus sus entradas tenemos a menudas estrategias
+
+915
+01:58:38,859 --> 01:58:43,859
+que tienen reentradas tras salidas rápidas veremos varias cosas este es sólo un primer
+
+916
+01:58:43,859 --> 01:58:49,699
+planteamiento muy básico de algo de un mecanismo que ya habíamos visto en el curso que seguro que
+
+917
+01:58:50,100 --> 01:58:56,619
+habéis oído hablar si no habéis oído hablar pues ya os he enseñado antes este breve y podéis
+
+918
+01:58:56,619 --> 01:59:04,420
+buscar mil referencias sobre un canal de de ocho de acuerdo es una entrada lógicamente tendencial
+
+919
+01:59:04,420 --> 01:59:10,420
+de ruptura vale puede hacerse tendencial pura es decir como lo estamos planteando no no aquí pura
+
+920
+01:59:10,420 --> 01:59:16,100
+pero a tratar de dejar de correr o puede ser incluso a tp es muy cercanos para coger poco
+
+921
+01:59:16,100 --> 01:59:21,819
+movimientos explosivos y rápidos ya veremos que podemos meterle filtros de volatilidad
+
+922
+01:59:23,819 --> 01:59:31,140
+sigo ligando este planteamiento de este sistema que trabajaremos el próximo día en profundidad con
+
+923
+01:59:31,140 --> 01:59:41,579
+alguna de las preguntas a ver espérate a ver que ratios me ha dejado ahora es ahora al hacer este
+
+924
+01:59:41,579 --> 01:59:50,500
+dos a uno como hemos modificado mucho el porcentaje de aciertos pues acordáis que antes teníamos un
+
+925
+01:59:50,500 --> 01:59:59,579
+60 ahora ya tenemos un 51 pero claro ahora ya ganamos más de lo que perdemos tenemos una media
+
+926
+01:59:59,579 --> 02:00:26,550
+de lo que ganamos aquí lo tengo tenemos una vera que ni del hostia perdón adiós ha pasado hostia no
+
+927
+02:00:26,550 --> 02:00:32,630
+no perdón perdón yo si he apretado un botón pensaba que se me había colgado el ordenador
+
+928
+02:00:32,630 --> 02:00:45,659
+aquí estoy aquí tenemos una veras winning el 61 y una veras losing del 49 55 queda una media
+
+929
+02:00:45,659 --> 02:00:52,460
+es decir ya tenemos un 124 tenemos un 124 a ver a poner el tiempo que viene muy bien esto
+
+930
+02:00:52,460 --> 02:01:05,060
+tenemos un 124 que lo veis lo que era antes uno ahora es 124 entonces ya hemos bajado un
+
+931
+02:01:05,060 --> 02:01:13,579
+poquito por un acierto el sistema si está muy justito tirando el sistema si está tirando a
+
+932
+02:01:13,579 --> 02:01:18,960
+virria cuidado simplemente hemos hecho un planteamiento inicial hemos hecho un planteamiento
+
+933
+02:01:19,560 --> 02:01:29,819
+si está tirando a virria y esto está colgado no te creo vamos aguanta el sistema si está tirando
+
+934
+02:01:29,819 --> 02:01:37,380
+a ver la caída es decir vamos a ver cómo lo evolucionamos a partir de aquí simplemente
+
+935
+02:01:37,380 --> 02:01:47,300
+hemos hecho un primer planteamiento acuerdo vale ahora sí que voy ya con las con las preguntas
+
+936
+02:01:47,300 --> 02:01:55,140
+he respondido en parte una en parte una aunque había alguna más relacionada con éste que
+
+937
+02:01:55,140 --> 02:01:59,460
+profundizaban ello sí que tenía otro cruce de medias aquí igual vale porque porque ese era un
+
+938
+02:01:59,460 --> 02:02:08,399
+caso un para acabar de complementar esto que os he enseñado tenía aquí el típico cruce de medias
+
+939
+02:02:08,399 --> 02:02:14,640
+que usamos en el curso y os enseñé el cruce dorado pero lo puesto en 60 minutos vale para
+
+940
+02:02:14,640 --> 02:02:22,199
+que operara más simplemente aquí probablemente no es rentable y le he metido simplemente un
+
+941
+02:02:22,199 --> 02:02:29,640
+estopio tp simétrico vale el porcentaje es media compra y compra en cruces la media de 50 200
+
+942
+02:02:29,640 --> 02:02:34,359
+acordaros los señores crucedoros simplemente no importa es simplemente para enseñarles lo que
+
+943
+02:02:34,359 --> 02:02:41,119
+os decía de la evaluación te sentamos entrada o este truco de que tienen que acertar más del 50
+
+944
+02:02:41,119 --> 02:02:47,800
+por ciento y en este caso le he puesto un esto y te pide dos y dos y medio vale porque lo he
+
+945
+02:02:47,800 --> 02:02:53,479
+puesto un poco más alto ahora los subiré antes pero claro actúa muy poco actúa muy poco y es lo
+
+946
+02:02:53,479 --> 02:02:58,640
+que decía necesitamos que actúe y aquí que hemos que hemos conseguido hemos conseguido que el sistema
+
+947
+02:02:58,640 --> 02:03:07,920
+sea una virria en sí de acuerdo pero bueno no es también es virre no es una virre enorme tenemos
+
+948
+02:03:07,920 --> 02:03:14,720
+ya 53 por ciento de acierto en una porque porque os he querido poner esto porque una
+
+949
+02:03:14,720 --> 02:03:20,760
+sistema con cruce de medias de entrada es tendencia por antonomasia de acuerdo es lo
+
+950
+02:03:20,760 --> 02:03:25,560
+más tendencial que hay decir y a esto si lo dejo correr y no le pongo tp y este tiene por
+
+951
+02:03:25,560 --> 02:03:34,420
+ventaja de aciertos bajísimo por lo bajísimo pero al meterle tp y stop simétrico fijaros que lo
+
+952
+02:03:34,420 --> 02:03:40,340
+he subido del 50 casi lo dejaba antitenencial porque porque las salidas de acuerdo es lo que
+
+953
+02:03:40,340 --> 02:03:44,579
+marcan mucho sigo un poco con la con el con este comentario de alejandro que luego había alguien
+
+954
+02:03:44,579 --> 02:03:53,979
+más también que en el disco insistía en ello que quería que profundizará sobre sobre esto vale al
+
+955
+02:03:53,979 --> 02:04:00,899
+final las salidas lo que le marca mucho le marca mucho porque yo lógicamente no es al 100 por
+
+956
+02:04:00,899 --> 02:04:05,739
+100 uno vale no es al 100 por ciento no dejaros que es más de uno y todo cosa que aún va más a
+
+957
+02:04:05,739 --> 02:04:12,100
+favor del sistema es 107 el ratio porque porque al final aunque yo le ponga tp y esto hay algunos
+
+958
+02:04:12,100 --> 02:04:18,020
+tres que salen por la propia cruce de la media y no todos el 100% de los tres van a salir por
+
+959
+02:04:18,020 --> 02:04:28,260
+por esa condición entonces aún así fijaros que yo he conseguido un average with loss de 107 creo
+
+960
+02:04:28,260 --> 02:04:33,939
+que no hay comisiones pero aquí da igual y he conseguido un portaje de acierdos por encima
+
+961
+02:04:33,939 --> 02:04:39,779
+de 53 es decir tengo una esperanza positiva ahora mismo vale con una simple cruce de medias y un
+
+962
+02:04:39,779 --> 02:04:46,069
+estope igualado lado largo otra vez el activo es hombre es que el activo y allá pero por eso funciona
+
+963
+02:04:46,069 --> 02:04:52,869
+ya lo sé pero es que que hayan que hayan condiciones como que un activo tenga mucha tendencia se ha
+
+964
+02:04:52,869 --> 02:04:58,029
+lanzado la baja no quiere decir que yo no pueda aprovecharla de acuerdo hemos que aprovecharla
+
+965
+02:04:58,029 --> 02:05:04,949
+mejor no os quedéis por favor con los resultados que estamos viendo que no importan para nada
+
+966
+02:05:04,949 --> 02:05:10,470
+ahora mismo son una birria de acuerdo es decir simplemente estoy respondiendo al requisito de
+
+967
+02:05:10,470 --> 02:05:15,189
+evaluar el requisito de si el win rate del 50 por ciento era condición necesaria para valor
+
+968
+02:05:15,189 --> 02:05:22,000
+una entrada no es que sea condición necesaria sino que es verdad que es un truco rápido muchas
+
+969
+02:05:22,000 --> 02:05:28,399
+veces en algunos setups mirar este en setups incluso entre a diarios igualar casi que os
+
+970
+02:05:28,399 --> 02:05:35,119
+diría donde va mejor es en entre a diarios decir si en un setup rápido yo puedo evaluar si si ese
+
+971
+02:05:35,119 --> 02:05:40,479
+tiene sentido yo igual los top y tp y tiene que aceptar más de la mitad de las veces el cuerpo
+
+972
+02:05:40,479 --> 02:05:47,489
+tiene que aceptar más porque si no realmente no hay ventaja también había una pregunta ligada
+
+973
+02:05:47,489 --> 02:05:54,859
+con esto que decía bueno entonces si es menos de 50 no vale el sistema no no lo diría al 100
+
+974
+02:05:54,859 --> 02:06:00,020
+por ciento pero es verdad que empiezas con un handicap vale es verdad pero puedes o sea las
+
+975
+02:06:00,020 --> 02:06:06,479
+salidas podrían recuperar esa desventaja así que podría ser o sea las salidas son muy importantes
+
+976
+02:06:06,479 --> 02:06:10,439
+realmente es importante todo pero siempre hay autores que defienden que la entrada es que la
+
+977
+02:06:10,439 --> 02:06:16,520
+salida para mí no hay duda que es la salida lo más lo que condiciona claramente carácter del
+
+978
+02:06:16,520 --> 02:06:20,920
+sistema y eso que os digo ahora esto luego lo que me todo salió aquí entrando así modificó
+
+979
+02:06:20,920 --> 02:06:25,680
+las salidas de cambio totalmente el sistema no cambio totalmente modificando la salida es decir
+
+980
+02:06:25,680 --> 02:06:32,439
+pero evidentemente también así por la entrada y una manera fácil repito de evaluar esto es esta
+
+981
+02:06:32,439 --> 02:06:41,479
+cosa sobre todo sobre todo especialmente útil en entrar especialmente útil en entraría y ya
+
+982
+02:06:42,039 --> 02:06:48,800
+lo veremos a medida que avancemos en la complicación del curso iremos viendo todos
+
+983
+02:06:48,800 --> 02:06:54,720
+los procesos desde la manera más fácil luego las iremos complicando más complicado es lo que os
+
+984
+02:06:54,720 --> 02:07:05,920
+decía y ahora que pongo 05 no 05 no 05 es 50 por ciento pero 5 60 minutos es esto 5 por ciento es
+
+985
+02:07:05,920 --> 02:07:18,680
+esto le he puesto un 5 por ciento y ya deja correr un poquito más y estamos en 49 se nos
+
+986
+02:07:18,680 --> 02:07:25,670
+ha caído ya del 50 nos ha caído pero a cambio fijaros que ha hecho el win-loss 1 60 y está el
+
+987
+02:07:25,670 --> 02:07:34,350
+tema dice si tú ves un 49 invalida hombre pero no ves que tienen 1 60 no está siendo no está
+
+988
+02:07:34,350 --> 02:07:42,850
+saliendo simétrico no está ganando lo mismo que lo que pierde gana 3 80 pero es 26 porque porque
+
+989
+02:07:42,850 --> 02:07:49,989
+el stop salta menos entonces al final no está actuando lo suficiente para para para que eso
+
+990
+02:07:49,989 --> 02:07:55,270
+tenga sentido tienes que igualar el retorno el riesgo y esto lo va a decir el ratio win-loss
+
+991
+02:07:55,270 --> 02:08:02,699
+de acuerdo te lo va a decir el ratio win-loss creo que ha quedado claro este punto no vale entonces
+
+992
+02:08:02,699 --> 02:08:15,659
+había alguna pregunta más he comentado no sí creo que sí a ver aquí habían algunas preguntas
+
+993
+02:08:15,659 --> 02:08:23,260
+en discord vale hablaban sobre ahora voy repasando un poco y voy leyéndolos como son públicas
+
+994
+02:08:25,060 --> 02:08:30,119
+lo que era aureli preguntaba sobre el vídeo de evaluación preliminar y hemos hablado un poco
+
+995
+02:08:30,119 --> 02:08:36,239
+de ello porque ya trato de aprovecharlo y hemos hablado un poco de ello decía que que métrica
+
+996
+02:08:36,239 --> 02:08:42,029
+usamos para decidir si pasa la evaluación o no en una evaluación preliminar básicamente se trata
+
+997
+02:08:42,029 --> 02:08:48,270
+que la idea tenga ventaja es esto que estamos viendo ahora un poco aureli vale el que la idea
+
+998
+02:08:48,270 --> 02:08:54,680
+tenga una cierta ventaja sin haber forzado mucho las cosas fíjate yo ahora te he puesto esto sencillo
+
+999
+02:08:54,680 --> 02:09:03,479
+tonchar media tal y a partir de ahí podemos ver si trabajamos idealmente en varios activos idealmente
+
+1000
+02:09:03,680 --> 02:09:08,600
+sobre todo en este tipo de sistemas tiene que ser en varios activos en este tipo de sistemas
+
+1001
+02:09:08,600 --> 02:09:13,439
+tiene que ser en varios activos y ahora aquí esto lo tenía antes en apple lo he hecho que lo iba
+
+1002
+02:09:13,439 --> 02:09:23,970
+a hacer de hecho y no lo no lo he hecho le ponemos poner por ejemplo google y tenemos que ver que tal
+
+1003
+02:09:23,970 --> 02:09:33,159
+funciona lo ideal sería que en diversos activos nos mantuviera un poquito tipo repito que estamos
+
+1004
+02:09:33,159 --> 02:09:39,720
+ahora bueno no sé si ahora estoy no ahora no espérate voy a volver al setup anterior voy a
+
+1005
+02:09:39,720 --> 02:09:49,760
+volver al setup anterior voy a volver a anular la salida por tiempo vale un poquito está está no
+
+1006
+02:09:49,760 --> 02:09:56,520
+lo he iniciado antes no lo he iniciado antes en la pausa y evidentemente me he equivocado porque
+
+1007
+02:09:56,520 --> 02:10:01,159
+está sufriendo ya lo que nos ha escrito lo voy a igualar esto ahora cuando era 05 vamos a poner
+
+1008
+02:10:01,159 --> 02:10:07,640
+05 con don chan a 20 menos que a 20 le doy un poco más de margen

@@ -1,0 +1,31 @@
+//TradeStation Labs
+//Strategy courtesy of Joe Krutsinger
+//April, 2016
+//TSLabs@TradeStation.com
+
+{ A pattern of a Short Term Reversal against the minor trend
+ with a breakout in the direction of the major trend,
+ all coupled with a walk away.}
+ 
+Input: BuyBO(6), SellBO(27), Walk(50), Trend(10), PositionBasis(false), Amount(1330);
+ 
+If Close <= Close[2] and Close > Average(Close, Trend)[1] then
+	Buy ("JKtt LE") next bar at Open of next bar + (Range * 0.10 * BuyBO) Stop;
+
+If MarketPosition = 1 and BarsSinceEntry >= Walk then
+	Sell ("w LX") next bar at Market;
+
+If Close > Close[2] and Close < Average(Close, Trend)[1] then
+	Sell Short ("JKtt SE") next bar at Open of next bar - (Range * 0.10 * SellBO) Stop;
+
+If MarketPosition = -1 and BarsSinceEntry >= Walk then
+	Buy to Cover ("w SX") next bar at Market;
+
+If PositionBasis then
+	SetStopPosition
+else
+	SetStopShare;
+
+SetStopLoss(Amount);
+
+//Copyright (c) 2016 TradeStation Technologies, Inc. All rights reserved.

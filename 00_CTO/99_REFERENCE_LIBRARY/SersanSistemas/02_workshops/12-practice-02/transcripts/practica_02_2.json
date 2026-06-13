@@ -1,0 +1,1581 @@
+{
+  "language": "es",
+  "duration": 2565.312,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 16.46,
+      "text": "0.5 no 0.5 no 0.5 es 50% 0.5 en 60 minutos es esto 5% es esto le he puesto un 5% y ya deja correr"
+    },
+    {
+      "start": 16.46,
+      "end": 27.43,
+      "text": "un poquito más y estamos en 49 se nos ha caído y al 50 nos ha caído pero a cambio fijaros que ha"
+    },
+    {
+      "start": 27.43,
+      "end": 36.14,
+      "text": "hecho los 60 ahí está el tema si tú ves con 49 invalida hombre pero no ves que tienen unos"
+    },
+    {
+      "start": 36.14,
+      "end": 44.99,
+      "text": "60 no está siendo saliendo simétrico no está ganando lo mismo que lo que pierde gana 3 80"
+    },
+    {
+      "start": 44.99,
+      "end": 53.65,
+      "text": "pero es 26 porque porque esto salta menos al final no está actuando lo suficiente para para"
+    },
+    {
+      "start": 53.65,
+      "end": 59.25,
+      "text": "para que eso tenga sentido tienes que igualar el retorno el riesgo y esto lo va a decir el"
+    },
+    {
+      "start": 59.25,
+      "end": 66.8,
+      "text": "ratio 2 de acuerdo te lo va a decir el ratio 2 creo que ha quedado claro este punto no vale"
+    },
+    {
+      "start": 66.8,
+      "end": 79.4,
+      "text": "entonces había alguna pregunta más pero me he comentado no sí creo que sí a ver aquí"
+    },
+    {
+      "start": 79.4,
+      "end": 86.92,
+      "text": "habían algunas preguntas en discord vale hablaban sobre ahora voy repasando un poco y voy leyéndolos"
+    },
+    {
+      "start": 86.92,
+      "end": 94.22,
+      "text": "como son públicas a lo que era aureli preguntaba sobre el vídeo de evaluación preliminar y hemos"
+    },
+    {
+      "start": 94.22,
+      "end": 98.98,
+      "text": "hablado un poco de ello porque ya trato de aprovecharlo y hemos hablado un poco de ello"
+    },
+    {
+      "start": 98.98,
+      "end": 104.38,
+      "text": "decía que que métrica usamos para decidir si pasa la evaluación o no en una evaluación preliminar"
+    },
+    {
+      "start": 104.38,
+      "end": 111.33,
+      "text": "básicamente se trata que la idea tenga ventaja es esto que estamos viendo ahora un poco aureli"
+    },
+    {
+      "start": 111.33,
+      "end": 117.98,
+      "text": "vale el que la idea tenga una cierta ventaja sin haber forzado mucho las cosas fíjate yo"
+    },
+    {
+      "start": 117.98,
+      "end": 126.3,
+      "text": "te he puesto esto sencillo media tal y a partir de ahí podemos ver si trabajamos idealmente en"
+    },
+    {
+      "start": 126.3,
+      "end": 131.18,
+      "text": "varios activos idealmente varios activos sobre todo en este tipo de sistemas tiene que ser en"
+    },
+    {
+      "start": 131.18,
+      "end": 136.66,
+      "text": "varios activos en este tipo de sistemas tiene que ser en varios activos y ahora aquí esto lo tenía"
+    },
+    {
+      "start": 136.66,
+      "end": 141.89,
+      "text": "antes en apple lo he hecho que lo iba a hacer de hecho y no lo he hecho vale le ponemos poner por"
+    },
+    {
+      "start": 141.89,
+      "end": 155.86,
+      "text": "ejemplo google y tenemos que ver qué tal funciona lo ideal sería que en diversos activos nos mantuviera"
+    },
+    {
+      "start": 155.86,
+      "end": 161.94,
+      "text": "un poquito tipo repito que estamos ahora bueno no sé si ahora estoy no ahora no ahora no espérate voy"
+    },
+    {
+      "start": 161.94,
+      "end": 167.62,
+      "text": "a volver al set up anterior voy a volver al set up anterior voy a volver a anular la salida por tiempo"
+    },
+    {
+      "start": 168.62,
+      "end": 179.74,
+      "text": "está está no lo he iniciado antes no lo he iniciado antes en la pausa y evidentemente me he equivocado"
+    },
+    {
+      "start": 179.74,
+      "end": 185.54,
+      "text": "porque está sufriendo ya lo que no se ha escrito lo voy a igualar esto ahora cuando era 05 vamos"
+    },
+    {
+      "start": 185.54,
+      "end": 192.86,
+      "text": "a poner 0 0 5 vale con don chan a 20 menos que a 20 le doy un poco más de margen ya porque si no"
+    },
+    {
+      "start": 192.86,
+      "end": 197.78,
+      "text": "pero 10 pero yo creo que va a actuar ambos si si además cerca a todo por fuerza porque no"
+    },
+    {
+      "start": 197.86,
+      "end": 203.1,
+      "text": "puede ser de otra manera en este caso no puede ser de otra manera aquí una de las cosas que haremos"
+    },
+    {
+      "start": 203.1,
+      "end": 208.94,
+      "text": "es darle margen a las entradas de decir no permitirle esto es una cosa de momento la he comentado"
+    },
+    {
+      "start": 208.94,
+      "end": 213.34,
+      "text": "en el código porque no quería ensuciar el código lo he comentado vale entonces ahora que yo por"
+    },
+    {
+      "start": 213.34,
+      "end": 220.08,
+      "text": "ejemplo tengo google esto por ejemplo maestro lo podría mirar en varios en una cesta de acciones"
+    },
+    {
+      "start": 220.08,
+      "end": 237.49,
+      "text": "no sé si me va a dar tiempo a hacerlo más o menos rápido a ver vamos a intentarlo como"
+    },
+    {
+      "start": 237.49,
+      "end": 252.42,
+      "text": "se llama esto actuar acciones venga vamos a poner este para acciones acciones a de estrategia"
+    },
+    {
+      "start": 253.54,
+      "end": 266.91,
+      "text": "problemas que esto está tan saturado que va a sufrir esto se nos se nos se nos va"
+    },
+    {
+      "start": 266.91,
+      "end": 322.09,
+      "text": "se llama así se llama curso se llama curso fuera un problema muy grande es que las acciones"
+    },
+    {
+      "start": 322.09,
+      "end": 327.29,
+      "text": "le vamos a meter menos años a serlo solucionado que no me va a afectar me va a frenar mucho"
+    },
+    {
+      "start": 327.29,
+      "end": 331.75,
+      "text": "vamos con esto more management 100% nominal"
+    },
+    {
+      "start": 336.52,
+      "end": 340.88,
+      "text": "limite de acciones símbolis venga que te metemos el nasdaq"
+    },
+    {
+      "start": 344.01,
+      "end": 351.86,
+      "text": "vamos a ver el nasdaq 100 vamos con todo las acciones y"
+    },
+    {
+      "start": 351.86,
+      "end": 366.8,
+      "text": "empezamos con hoy está avisando no no no diremos que no avisa no"
+    },
+    {
+      "start": 366.8,
+      "end": 376.22,
+      "text": "diremos que no avisa en el nuevo porfolio por folio apolo no por folio sistema de"
+    },
+    {
+      "start": 376.22,
+      "end": 386.14,
+      "text": "estructura n7 n100 vamos con el porfolio settings me da igual a de strategy group"
+    },
+    {
+      "start": 386.62,
+      "end": 399.29,
+      "text": "estima futura actes por folio en un número esto vamos con 10.000 dólares hasta ayer"
+    },
+    {
+      "start": 399.29,
+      "end": 408.47,
+      "text": "y le vamos a meter 10 años a pero claro mali management 10 no mali management 0 1"
+    },
+    {
+      "start": 408.47,
+      "end": 423.44,
+      "text": "porque vamos con 100 acciones venga ahí vamos lo dejamos ahí trabajando vale sí sí no no es"
+    },
+    {
+      "start": 423.44,
+      "end": 428.64,
+      "text": "que ya pensaba hacer esto es lo que decía aquí ahora lo voy a mirar directamente en"
+    },
+    {
+      "start": 428.64,
+      "end": 433.76,
+      "text": "muchas acciones a la vez vale quería hacerlo quería hacerlo así no sé ni cómo lo dejó"
+    },
+    {
+      "start": 436.26,
+      "end": 442.93,
+      "text": "pero 505 vale y salir en 10 barras de puesto bueno bueno es igual para evaluar la entrada"
+    },
+    {
+      "start": 442.93,
+      "end": 455.07,
+      "text": "no me sirve debería verlo pero ahora lo hago otra vez que va que va rápido aquí lo tenemos"
+    },
+    {
+      "start": 456.03,
+      "end": 464.72,
+      "text": "aquí podemos ver todas las cestitas de acciones aquí todo el índice vemos algunas cosas rojas"
+    },
+    {
+      "start": 464.72,
+      "end": 476.17,
+      "text": "tenemos bastante verde en general verde y podemos ver el gráfico de todas y nos rompe la curva"
+    },
+    {
+      "start": 476.17,
+      "end": 493.36,
+      "text": "tremendamente dramática un gigantesco y esto es por acción ahí lo vemos vale bueno hay bastantes"
+    },
+    {
+      "start": 493.36,
+      "end": 501.1,
+      "text": "perdedoras algunas ganadoras hay un poco de todo lo pasa que la idea que llevaba no era esta sino"
+    },
+    {
+      "start": 501.1,
+      "end": 506.44,
+      "text": "ésta que lo voy a hacer ahora y hacer lo mismo que habíamos hecho antes es decir meterle aquí"
+    },
+    {
+      "start": 506.44,
+      "end": 517.38,
+      "text": "20 esto creo que no 0 10 0 10 aquí meterle pues 500 para que no actuará y aquí pues lo voy a"
+    },
+    {
+      "start": 517.38,
+      "end": 547.33,
+      "text": "dejar preguntas tengo algunas de aquí o sigo de las que tenía pendientes a ver todo cuando digo"
+    },
+    {
+      "start": 547.33,
+      "end": 551.97,
+      "text": "que es una vez de ahora es que de verdad no nos paremos en esta hora que ya llegaremos ya llegaremos"
+    },
+    {
+      "start": 551.97,
+      "end": 557.77,
+      "text": "llegaremos es decir una vez ya porque porque la curva era bastante lamentable tenía por el factor"
+    },
+    {
+      "start": 557.77,
+      "end": 567.82,
+      "text": "bastante bajo para acciones en diarias era no insisto ya lo comentaste no estoy haciendo hoy"
+    },
+    {
+      "start": 567.82,
+      "end": 574.7,
+      "text": "un sistema de uso operable antes hemos explicado los datos y ahora estaba simplemente introduciendo"
+    },
+    {
+      "start": 574.7,
+      "end": 580.18,
+      "text": "el primer paso de un sistema acordaros los que espero que muchos es la primera parte de la teoría"
+    },
+    {
+      "start": 580.18,
+      "end": 587.45,
+      "text": "la mayoría habéis hecho la primera parte de la teoría hablamos de perfiles y luego el desarrollo"
+    },
+    {
+      "start": 587.45,
+      "end": 592.69,
+      "text": "hablamos de setups de entrada filtros etcétera simplemente he planteado un setup de entrada es"
+    },
+    {
+      "start": 592.69,
+      "end": 598.33,
+      "text": "lo que hecho de acuerdo simplemente eso he planteado un setup de entrada que es un dolce y"
+    },
+    {
+      "start": 598.33,
+      "end": 603.57,
+      "text": "aparte de ahí le he puesto un stop y un tp simétrico porque tengo que cerrar la operación"
+    },
+    {
+      "start": 603.57,
+      "end": 607.97,
+      "text": "acordaros que para evaluar entradas hay que hacer algo yo le he puesto un tp simétrico y le he puesto"
+    },
+    {
+      "start": 607.97,
+      "end": 613.13,
+      "text": "una salida temporal pero la he anulado poniéndole 500 bajas de acuerdo entonces la he anulado para"
+    },
+    {
+      "start": 613.13,
+      "end": 618.37,
+      "text": "que para que me saliera obligatoriamente por esto ptp y ahora que he hecho hecho eso mismo que habéis"
+    },
+    {
+      "start": 618.37,
+      "end": 624.81,
+      "text": "hecho en tres session pero lo he aplicado a todo el nasdaq cien porque bueno pues porque así puedo"
+    },
+    {
+      "start": 624.81,
+      "end": 635.63,
+      "text": "ver muchas acciones así puedo ver muchas acciones vale entonces aquí veis cada barrita esto es una"
+    },
+    {
+      "start": 635.63,
+      "end": 641.75,
+      "text": "acción veis que hay muchas ganadoras y hay muchas peleadoras entonces al final en el sumario veo que"
+    },
+    {
+      "start": 641.75,
+      "end": 651.06,
+      "text": "gana 208 mil veo que tiene un profit factor de 1.04 que es bajísimo fijaros que tiene un average"
+    },
+    {
+      "start": 651.06,
+      "end": 666.31,
+      "text": "win de solo 0.74 y tiene un momentito que no veo ahora lo que busco aquí por ventaja de acierto"
+    },
+    {
+      "start": 666.31,
+      "end": 675.43,
+      "text": "es el 58% esto es lo que quería quería ver es justito porque tiene un win loss bastante bajo"
+    },
+    {
+      "start": 675.43,
+      "end": 682.34,
+      "text": "pero que no protege de acierto superior al 50% que es lo que ahora mirábamos de manera rápida"
+    },
+    {
+      "start": 682.34,
+      "end": 690.02,
+      "text": "aquí simplemente simplemente evaluaba eso nada más pensar que esto no está ni bien dimensionado"
+    },
+    {
+      "start": 690.02,
+      "end": 697.34,
+      "text": "vale no está ni bien y mencionado y aquí lo expuesto veis 600% realmente está totalmente"
+    },
+    {
+      "start": 697.34,
+      "end": 708.46,
+      "text": "solo expuesto porque tenía que haberle puesto no 0.10 y no 0.01 pero bueno voy a hacerlo por"
+    },
+    {
+      "start": 708.46,
+      "end": 720.36,
+      "text": "por tercera vez por tercera vez para conseguir la información que quiero 20 es por ciento es"
+    },
+    {
+      "start": 720.36,
+      "end": 728.06,
+      "text": "por ciento 500 repito que trato sólo de evaluar la entrada aquí le he puesto 0.10 tiene que haberle"
+    },
+    {
+      "start": 728.06,
+      "end": 746.85,
+      "text": "puesto 0.001 no eso es 10% 0.001 tengo que ponerle simplemente quiero ver si me da más de un 50%"
+    },
+    {
+      "start": 746.85,
+      "end": 751.73,
+      "text": "mirado en todas las acciones en las acciones en los últimos 10 años simple o sea estoy haciendo"
+    },
+    {
+      "start": 751.73,
+      "end": 758.27,
+      "text": "una evaluación preliminar si más una evaluación preliminar acordaros en las fases sencillita de"
+    },
+    {
+      "start": 758.27,
+      "end": 762.71,
+      "text": "simplemente la entrada a tonchan en todas las acciones del nasa que si veo que ahí tiene algún"
+    },
+    {
+      "start": 762.71,
+      "end": 774.0,
+      "text": "sentido seguir este camino nada más y que me fijo básicamente que engane dinero vale ahora que"
+    },
+    {
+      "start": 774.0,
+      "end": 780.35,
+      "text": "gané dinero y que como he puesto simétricos esto pítepe que tengan más de un 50% de acierto"
+    },
+    {
+      "start": 780.35,
+      "end": 788.38,
+      "text": "bueno quizá ahora me he bajado quizá ahora me he pasado en la exposición no era 0.1 pero gana"
+    },
+    {
+      "start": 788.38,
+      "end": 800.6,
+      "text": "10 dólares ahora me he pasado un 0 de verdad estoy estoy hoy me pasa a ver déjame ver lo que"
+    },
+    {
+      "start": 800.6,
+      "end": 815.67,
+      "text": "he hecho a ver lo que he hecho le he puesto 0.10 20 y vale 0.001 pero antes cuanto había puesto antes"
+    },
+    {
+      "start": 815.87,
+      "end": 827.6,
+      "text": "0.10 era un 0 solo era un 0 era 0.006 venga a la 14a va la vencida la 14a va la vencida volvemos"
+    },
+    {
+      "start": 827.6,
+      "end": 839.4,
+      "text": "con el tranchón de 20 0 10 0 10 y 500 barros decir voy a compro en ruptura de canal de 20"
+    },
+    {
+      "start": 839.4,
+      "end": 857.56,
+      "text": "stop simétrico 10 0 10 y aquí 0.01 verdad alberto 1% 1% 1% en cada acción que de un poquito por"
+    },
+    {
+      "start": 857.56,
+      "end": 872.64,
+      "text": "debajo del 100% esto es simplemente evaluación preliminar nada más vale es decir al final los"
+    },
+    {
+      "start": 872.64,
+      "end": 879.52,
+      "text": "ratios que miramos en aquí de evaluación preliminar no son simplemente es esto es que"
+    },
+    {
+      "start": 879.52,
+      "end": 887.46,
+      "text": "tenga un porcentaje de aciertos ahora superiores 50 y que tenga ganancias positivas poco más en"
+    },
+    {
+      "start": 887.46,
+      "end": 896.03,
+      "text": "este punto poco más en este punto poco más bueno esto ya empieza ahora a tener más sentido ya"
+    },
+    {
+      "start": 896.03,
+      "end": 900.55,
+      "text": "empieza a tener más sentido vale ya lo hemos dimensionado correctamente empieza a tener un"
+    },
+    {
+      "start": 900.55,
+      "end": 910.33,
+      "text": "poco más de sentido al final dimensionar las cosas bien como visteis en la práctica de"
+    },
+    {
+      "start": 911.05,
+      "end": 917.73,
+      "text": "esto es muy curioso es ahora estoy 60 50 por ciento expuesto todavía está poco expuesto pero"
+    },
+    {
+      "start": 917.73,
+      "end": 921.93,
+      "text": "bueno pero ya ya lo hemos expuesto un poco más ya lo hemos expuesto un poco más pero es que"
+    },
+    {
+      "start": 921.93,
+      "end": 929.41,
+      "text": "estará un compuesto 5 anualizado poco pero tenemos una veras muy casi del 1 y un porcentaje de"
+    },
+    {
+      "start": 929.41,
+      "end": 938.82,
+      "text": "aciertos del 59 casi estoy al uno es decir parece que hay ventaja en la entrada parece que hay"
+    },
+    {
+      "start": 938.82,
+      "end": 943.18,
+      "text": "ventaja en la entrada en una evaluación preliminar lo que vamos a decir es eso no vamos a decir nada"
+    },
+    {
+      "start": 943.18,
+      "end": 949.18,
+      "text": "más es decir que parece que hay ventaja nada más ya ya veremos si a partir de ahí hacemos algo lo"
+    },
+    {
+      "start": 949.18,
+      "end": 954.34,
+      "text": "mejor después lo trabajamos nosotros una porquería pero ahora mismo vemos que el sistema ganado de"
+    },
+    {
+      "start": 954.34,
+      "end": 961.62,
+      "text": "dinero anualizan 5 por ciento expuesto 60 50 por ciento es decir prácticamente un 10 por ciento"
+    },
+    {
+      "start": 961.62,
+      "end": 970.18,
+      "text": "anualizado al 100 por ciento exposición tiene un average win loss de 0 97 decir casi 1 y da un"
+    },
+    {
+      "start": 970.18,
+      "end": 976.94,
+      "text": "profitable de 59 por ciento es decir acierta 6 de cada 10 operaciones en todas en todas las"
+    },
+    {
+      "start": 976.94,
+      "end": 984.74,
+      "text": "acciones es decir estos son 3500 trades vale en todas las acciones el nasa 100 en muchas"
+    },
+    {
+      "start": 984.74,
+      "end": 991.35,
+      "text": "pierde pero muchas gana muchas pierde y en muchas gana y entonces eso es lo que yo ahora mismo quiero"
+    },
+    {
+      "start": 992.19,
+      "end": 996.71,
+      "text": "simplemente le he puesto un stop simétrico no he optimizado nada le he puesto un don chan de 20"
+    },
+    {
+      "start": 996.71,
+      "end": 1003.09,
+      "text": "barras por defecto no he tocado nada y no he dejado ni salir por tiempo porque le he obligado"
+    },
+    {
+      "start": 1003.09,
+      "end": 1009.3,
+      "text": "a salir por esto ptp bienvenidos que veo que puede haber cierta ventaja en un don chan en"
+    },
+    {
+      "start": 1009.3,
+      "end": 1016.98,
+      "text": "diario en acciones americanas porque lo he probado en 100 acciones vale eso es un poco una evaluación"
+    },
+    {
+      "start": 1016.98,
+      "end": 1021.22,
+      "text": "preliminar típica vale entonces enlazo con las preguntas sé que esto es lo que me preguntaba"
+    },
+    {
+      "start": 1021.22,
+      "end": 1027.3,
+      "text": "también ligado con lo que había preguntado también aureli y había preguntado también ante"
+    },
+    {
+      "start": 1027.3,
+      "end": 1035.86,
+      "text": "ante igualmente alejandro también que todo esto va todo en conexión vale y sigo sigo con las con"
+    },
+    {
+      "start": 1035.86,
+      "end": 1041.54,
+      "text": "las preguntas se preguntaba los datos de forex esto ya te contestó alberto pero bueno como"
+    },
+    {
+      "start": 1041.54,
+      "end": 1045.7,
+      "text": "antes comentaba los datos de forex cada broker el mercado tiene los suyos eso es así eso te"
+    },
+    {
+      "start": 1045.7,
+      "end": 1055.62,
+      "text": "dice es como los dvds no no tienen que ser iguales luego comentaba sobre el vídeo 577 que"
+    },
+    {
+      "start": 1055.62,
+      "end": 1061.22,
+      "text": "también liga un poquito con esto que hemos visto hoy comentaba que se yo comentaba en la teoría"
+    },
+    {
+      "start": 1061.22,
+      "end": 1065.94,
+      "text": "que para sistemas con poco ningún parámetro el proceso finalizaría en el forwar testing"
+    },
+    {
+      "start": 1065.94,
+      "end": 1070.14,
+      "text": "a bajar de pocos parámetros el paseo de la evaluación preliminar al forwar testing se"
+    },
+    {
+      "start": 1070.14,
+      "end": 1075.18,
+      "text": "hace el paso de la optimización clásica ni la wall forwar es correcta esta afirmación bueno"
+    },
+    {
+      "start": 1075.18,
+      "end": 1081.82,
+      "text": "esto lo vamos a ir viendo mucho un poco ya has visto por donde van los tiros hoy yo lo que puedo"
+    },
+    {
+      "start": 1081.82,
+      "end": 1089.14,
+      "text": "hacer es probar el sistema en muchas acciones por ejemplo si no puedo sacarlo en una sola acción"
+    },
+    {
+      "start": 1089.14,
+      "end": 1094.91,
+      "text": "al mejor lo puedo probar en muchas puede ser un camino puede ser un camino pero vamos a intentar"
+    },
+    {
+      "start": 1094.91,
+      "end": 1100.46,
+      "text": "hacerlo porque cuando hablamos de wall forwar hablamos que habían dos había el cláster vale"
+    },
+    {
+      "start": 1101.1,
+      "end": 1107.82,
+      "text": "y dentro del cláster estaba el anchole y no en anchole de acuerdo yo puedo usar anchole y"
+    },
+    {
+      "start": 1107.82,
+      "end": 1119.55,
+      "text": "entonces ahí gano muestra entonces hay distintas maneras distintas maneras también como no habíamos"
+    },
+    {
+      "start": 1119.55,
+      "end": 1125.15,
+      "text": "todo esto ya lo comenté un poco pero comentaré los detractores es decir no me gusta es un debate"
+    },
+    {
+      "start": 1125.15,
+      "end": 1131.15,
+      "text": "que me resulta interesante y me gusta abordarlo no creéis que hay gente que"
+    },
+    {
+      "start": 1132.19,
+      "end": 1139.83,
+      "text": "más gente que a mí me merece todo mi respeto y admiración es decir no no es no es algo no es algo"
+    },
+    {
+      "start": 1139.83,
+      "end": 1145.31,
+      "text": "que sea la biblia de acuerdo es decir todo lo que tiene que ver con la manipulación de datos"
+    },
+    {
+      "start": 1145.31,
+      "end": 1151.79,
+      "text": "siempre hay siempre hay debate siempre hay debate no se ponen de acuerdo con los datos"
+    },
+    {
+      "start": 1151.79,
+      "end": 1157.79,
+      "text": "cobit imaginaros que con los mismos datos hay gente que defiende que las vacunas funcionan"
+    },
+    {
+      "start": 1157.79,
+      "end": 1166.39,
+      "text": "si es difícil analizar datos con los mismos datos con los mismos datos o sea porque intervienen"
+    },
+    {
+      "start": 1166.39,
+      "end": 1174.87,
+      "text": "sesgos la manipulación y ahí hay como ya he dicho muchas veces es fácil hacerse trampas al"
+    },
+    {
+      "start": 1174.87,
+      "end": 1181.24,
+      "text": "solitario con la manipulación de datos es muy fácil es muy fácil entonces por eso digo que y"
+    },
+    {
+      "start": 1182.08,
+      "end": 1188.44,
+      "text": "luego también hay un factor de gusto cuidado pero pero bueno eso ya en este tema debería ser menos"
+    },
+    {
+      "start": 1188.44,
+      "end": 1200.91,
+      "text": "importante sigo y él en la onda en este dice si es correcto esto que no se puede hacer well"
+    },
+    {
+      "start": 1200.91,
+      "end": 1210.63,
+      "text": "forward or forward testing sería válido efectuar la metodología de fiction el antiguo el forro para"
+    },
+    {
+      "start": 1210.63,
+      "end": 1216.99,
+      "text": "estos casos se mostrará un ejemplo de la metodología de la metodología braque bueno podemos verlo"
+    },
+    {
+      "start": 1216.99,
+      "end": 1224.82,
+      "text": "podemos ver alguna algún ejemplo con él con el braque es que el braque en mi opinión tiene tiene"
+    },
+    {
+      "start": 1224.82,
+      "end": 1234.19,
+      "text": "mucho de como te lo diría yo como tiene mucho estética o sea es que no me sale la palabra ahora"
+    },
+    {
+      "start": 1234.19,
+      "end": 1239.97,
+      "text": "es que braque si tú lo piensas al final aureli que entiendo que se me pregunta es que has leído"
+    },
+    {
+      "start": 1239.97,
+      "end": 1247.54,
+      "text": "sobre sobre él no aparte de lo que lo que explique yo de hecho el libro de fiction es recomendable"
+    },
+    {
+      "start": 1247.54,
+      "end": 1255.04,
+      "text": "al final simplemente lo que hace es una optimización completa de acuerdo una tradición completa"
+    },
+    {
+      "start": 1255.04,
+      "end": 1259.36,
+      "text": "acordaros cuando hemos hecho nosotros tema de perfil que hicimos incluso hablamos de 50 a 50"
+    },
+    {
+      "start": 1259.36,
+      "end": 1265.8,
+      "text": "hablamos cortar por delante cortar por detrás es algo bastante parecido a esto si lo piensas es"
+    },
+    {
+      "start": 1265.8,
+      "end": 1270.28,
+      "text": "algo bastante parecido no es exactamente igual porque nosotros lo que hacemos es un trozo en"
+    },
+    {
+      "start": 1270.28,
+      "end": 1275.5,
+      "text": "sample y dejamos uno fuera y luego lo hacemos por otro lado es lo que haces toda la optimización"
+    },
+    {
+      "start": 1275.5,
+      "end": 1285.0,
+      "text": "excluye una parte post optimización y optimiza y no pero olvídate del orden de las cosas de acuerdo"
+    },
+    {
+      "start": 1285.0,
+      "end": 1295.36,
+      "text": "esa segunda optimización que hace él es nuestra primera in sample voy a intentar cuidado voy a"
+    },
+    {
+      "start": 1295.36,
+      "end": 1305.62,
+      "text": "intentar coger el lápiz espera aquí si yo despejo ahora todo se me queda todo azul creo no claro se"
+    },
+    {
+      "start": 1305.62,
+      "end": 1319.43,
+      "text": "me queda todo azul y a igual yo puedo pintar no a ver esto sería ver pintar o no quito el tiempo"
+    },
+    {
+      "start": 1319.43,
+      "end": 1331.08,
+      "text": "aquí el tiempo y pinto tremendo lo que acabo de descubrir tengo una pizarra aquí de lujo vale"
+    },
+    {
+      "start": 1331.08,
+      "end": 1347.7,
+      "text": "entonces vamos a intentar optimización esto es en la optimización clásica enseñamos vamos a suponer"
+    },
+    {
+      "start": 1349.26,
+      "end": 1360.3,
+      "text": "que esto es 75 por ciento y que esto es 25 por ciento esto es con ratón en tener bastante"
+    },
+    {
+      "start": 1360.3,
+      "end": 1368.18,
+      "text": "verito a medias a ver venga mi hija escriben mucho mejor que esto bueno no mi hija ahora claro ya"
+    },
+    {
+      "start": 1368.18,
+      "end": 1374.94,
+      "text": "me dijo con tres años ya escribió mejor que esto a ver esto sería la normal vale rayita"
+    },
+    {
+      "start": 1375.38,
+      "end": 1392.9,
+      "text": "muy bien vale que hace braque te dice haces esta optimización que le llama pilt vale te dice quita"
+    },
+    {
+      "start": 1392.9,
+      "end": 1409.86,
+      "text": "una parte y le llamo revil y compara esto con esto vale lo que yo te estoy diciendo es que el"
+    },
+    {
+      "start": 1409.86,
+      "end": 1427.62,
+      "text": "revil es esto el revil es esto no no es min sam pero es revil pero se me entiende y él me"
+    },
+    {
+      "start": 1427.62,
+      "end": 1436.11,
+      "text": "dice que compara todo esto con todo esto porque porque así dice es verdad eso tiene mayor"
+    },
+    {
+      "start": 1436.11,
+      "end": 1441.91,
+      "text": "significación vale esto dice que tiene muy poca significación y ya dice que lo del software es"
+    },
+    {
+      "start": 1441.91,
+      "end": 1447.15,
+      "text": "ciencia ficción porque dice que todos los trocitos de cortar así no hay ningún sentido porque cortar"
+    },
+    {
+      "start": 1447.15,
+      "end": 1454.45,
+      "text": "así sí sí sí es verdad al final también luego hay otros autores que defienden prado lo defienden"
+    },
+    {
+      "start": 1454.45,
+      "end": 1459.86,
+      "text": "que veáis es que metes mucho sesgo ahí yo creo que con él con el cláster no es cierto que haya"
+    },
+    {
+      "start": 1459.86,
+      "end": 1466.34,
+      "text": "que haya sesgo pienso de verdad pero es verdad que hay otras metodologías que también son"
+    },
+    {
+      "start": 1466.34,
+      "end": 1472.96,
+      "text": "interesantes son muy interesantes pero mutación de periodos modificación del periodo de barras y"
+    },
+    {
+      "start": 1472.96,
+      "end": 1480.29,
+      "text": "es que hay mil maneras de validar lo que ocurre es que yo creo firmemente que está valida que hay"
+    },
+    {
+      "start": 1480.29,
+      "end": 1485.45,
+      "text": "otras que validan seguro por lo que sí entonces al final el revil que te quiero decir os saldrá"
+    },
+    {
+      "start": 1485.45,
+      "end": 1494.04,
+      "text": "que al final por todo ahora vale tiene bastante de no sé al final en todos sus ejemplos que pone es"
+    },
+    {
+      "start": 1494.04,
+      "end": 1500.0,
+      "text": "una muestra gigantesca él al final construye una muestra enorme con un montón de operaciones y"
+    },
+    {
+      "start": 1500.0,
+      "end": 1504.32,
+      "text": "comparando esto con esto te dice pues ya estás es que es verdad o sea es que yo si hago esta"
+    },
+    {
+      "start": 1504.32,
+      "end": 1511.16,
+      "text": "optimización vamos a suponer tengo un único parámetro y esto tiene 5.000 operaciones"
+    },
+    {
+      "start": 1513.16,
+      "end": 1521.98,
+      "text": "un único parámetro distrio acordaros las cosas que dijimos distribución de trade uniforme bla bla"
+    },
+    {
+      "start": 1521.98,
+      "end": 1531.59,
+      "text": "bla es que no hace falta que hagas nada aquí para operar me explico si tú conseyes una distribución"
+    },
+    {
+      "start": 1531.67,
+      "end": 1541.55,
+      "text": "uniforme es 5.000 operaciones me explico es que no te hace falta ni autosap o sea al final es todo es"
+    },
+    {
+      "start": 1541.55,
+      "end": 1549.04,
+      "text": "todo una una un sitio común y una coherencia es decir al final si tú consigues suficiente"
+    },
+    {
+      "start": 1549.04,
+      "end": 1556.59,
+      "text": "significación estadística además con simplicidad con idea robusta y con todo aquello insisto que"
+    },
+    {
+      "start": 1556.59,
+      "end": 1567.76,
+      "text": "os comenté ahora lo estoy buscando en aquella diapositiva donde resumo donde estás resumo"
+    },
+    {
+      "start": 1569.48,
+      "end": 1589.36,
+      "text": "que es una estrategia robusta donde estás es que es esta es esta tampoco no es antes de aquí es"
+    },
+    {
+      "start": 1589.36,
+      "end": 1599.02,
+      "text": "antes de aquí es que tengo diapositivas para un carro esta es no tampoco es esta ya no queda"
+    },
+    {
+      "start": 1599.02,
+      "end": 1610.16,
+      "text": "muchas que se parezcan a esta debe ser esta esta si es vale espera que quito el dibujito vale si"
+    },
+    {
+      "start": 1610.16,
+      "end": 1620.0,
+      "text": "yo tengo una distribución uniforme de operaciones si yo tengo una distribución uniforme de los"
+    },
+    {
+      "start": 1620.0,
+      "end": 1632.38,
+      "text": "trates y de su beneficio tengo un mapa estable vale con ya se entiende no encima encima a eso ya"
+    },
+    {
+      "start": 1632.38,
+      "end": 1641.37,
+      "text": "para acabarle siempre con 5.000 trates ni esta hace falta y número significativo de tres como te decía"
+    },
+    {
+      "start": 1641.37,
+      "end": 1650.84,
+      "text": "y muestra representativa y una curva estable es que esto es robusto esto es muy probablemente"
+    },
+    {
+      "start": 1650.84,
+      "end": 1659.39,
+      "text": "robusto esto es muy probablemente robusto con brak sin brak y hasta single folder probablemente"
+    },
+    {
+      "start": 1659.39,
+      "end": 1669.34,
+      "text": "ahora el tema es dónde está esa barrera y que al final siempre mayor seguridad es mejor o sea"
+    },
+    {
+      "start": 1669.34,
+      "end": 1676.3,
+      "text": "dónde está esta barrera este número este número que ya dices oyes que me da igual todo es claro"
+    },
+    {
+      "start": 1676.3,
+      "end": 1684.08,
+      "text": "ahí es donde entra mucho brak entonces si yo meto yo te digo meto sistemas de este tipo y luego"
+    },
+    {
+      "start": 1684.08,
+      "end": 1694.08,
+      "text": "te digo te digo el vamos a hacer un sisma inverso y le ponemos nombre esto nos reíamos nosotros aquí"
+    },
+    {
+      "start": 1694.08,
+      "end": 1699.02,
+      "text": "porque todos los grandes otros que hacen cursos ponen nombre nos reíamos le tenemos que poner"
+    },
+    {
+      "start": 1699.02,
+      "end": 1708.78,
+      "text": "un nombre sabes porque es que es esto sacas un libro y le tienes que poner un nombre a tu historia"
+    },
+    {
+      "start": 1708.78,
+      "end": 1715.63,
+      "text": "y al final todas son más o menos la misma con su toque pero pues se pone el nombre porque es así"
+    },
+    {
+      "start": 1715.63,
+      "end": 1722.46,
+      "text": "es verdad está bien no a nivel de bar que entonces tú le pones un nombre y sacas un libro y lo vendes"
+    },
+    {
+      "start": 1722.46,
+      "end": 1729.37,
+      "text": "y hasta ahí te haces milenario todo así bueno pues nosotros no le hemos puesto nombre no somos"
+    },
+    {
+      "start": 1729.37,
+      "end": 1735.38,
+      "text": "bolos en marketing como ya hemos dicho muchas veces no le hemos puesto nombre a nada vale entonces"
+    },
+    {
+      "start": 1736.74,
+      "end": 1742.78,
+      "text": "esto era un poco lo de que lo que te explicó sobre sobre brak entonces sí que se puede hacer y al"
+    },
+    {
+      "start": 1742.78,
+      "end": 1749.2,
+      "text": "final si tú haces brak y tienes una muestra muy tal tienes esto que te he enseñado ahora"
+    },
+    {
+      "start": 1749.2,
+      "end": 1755.66,
+      "text": "probablemente te saldrá bien te funcionará y sin brak también y sin brak también te"
+    },
+    {
+      "start": 1755.66,
+      "end": 1768.45,
+      "text": "funcionará entonces ya está vale qué más me preguntabas también me preguntabas también"
+    },
+    {
+      "start": 1768.45,
+      "end": 1780.62,
+      "text": "vale ya estaba esto para hablar del porfolio si hablabas de que había comentado del"
+    },
+    {
+      "start": 1780.62,
+      "end": 1786.58,
+      "text": "tratamiento holístico del porfolio es decir como un como un conjunto si tendría sentido un"
+    },
+    {
+      "start": 1786.58,
+      "end": 1791.46,
+      "text": "planteamiento de destino tp loco para el porfolio cerrando todas las posiciones en el caso de llegar"
+    },
+    {
+      "start": 1791.46,
+      "end": 1797.06,
+      "text": "a stp global independientemente de cada una de las unidades que forman sistemas tuvieran positivas"
+    },
+    {
+      "start": 1797.06,
+      "end": 1802.9,
+      "text": "o negativas en el instante en que el global llegara al objetivo de ser esto cierto como se puede"
+    },
+    {
+      "start": 1802.9,
+      "end": 1809.58,
+      "text": "evaluar esta es muy buena pregunta aureli y si tiene sentido nosotros hoy en día no lo hacemos"
+    },
+    {
+      "start": 1809.58,
+      "end": 1815.54,
+      "text": "pero tiene totalmente el sentido esto tiene sentido si si si esto es correcto y hay muchos"
+    },
+    {
+      "start": 1815.54,
+      "end": 1823.54,
+      "text": "autores que lo hacen de acuerdo es decir stop o stop y tp de porfolio si si si totalmente esto"
+    },
+    {
+      "start": 1823.54,
+      "end": 1829.38,
+      "text": "tiene tiene sentido como lo evaluas bueno pues con un software que lo valúan no tiene más maestro lo"
+    },
+    {
+      "start": 1829.38,
+      "end": 1839.62,
+      "text": "puede hacer msa ahora mismo creo que también cual analiza lo hace creo simplemente con una regla"
+    },
+    {
+      "start": 1839.62,
+      "end": 1846.99,
+      "text": "de código con una regla del código que lo haga si no tiene no tiene mayor historia en"
+    },
+    {
+      "start": 1846.99,
+      "end": 1853.29,
+      "text": "ese lenguaje puede porque hay alguna librería de maestro además que maestro se hace y por folio"
+    },
+    {
+      "start": 1853.29,
+      "end": 1859.65,
+      "text": "trader te esto que es seguro que también los software de porfolio suelen permitirlo ya código"
+    },
+    {
+      "start": 1859.65,
+      "end": 1866.37,
+      "text": "vía interface pero sí sí sí tiene sentido y tiene sentido y se puede evaluar por si"
+    },
+    {
+      "start": 1866.37,
+      "end": 1877.78,
+      "text": "cualquier otra cosa vale luego carlos apuntaba sobre los regímenes de mercado irá saliendo irá"
+    },
+    {
+      "start": 1877.78,
+      "end": 1882.58,
+      "text": "saliendo si tenemos algún paper que recomienden para estudiar los distintos regímenes por ahora"
+    },
+    {
+      "start": 1882.58,
+      "end": 1888.46,
+      "text": "mismo sí que hay seguro que tengo alguno que aseguro que tengo alguno apúntate está alberto"
+    },
+    {
+      "start": 1888.46,
+      "end": 1894.54,
+      "text": "de buscar papers de regimenes de mercado porque estoy prácticamente seguro de tener alguno en"
+    },
+    {
+      "start": 1894.54,
+      "end": 1905.81,
+      "text": "la documentación vale entonces hay bastante tema vale yo te digo una cosa una cosa nosotros"
+    },
+    {
+      "start": 1905.81,
+      "end": 1912.49,
+      "text": "hemos estado mucho tiempo sin filtrar regímenes de mercado ahora lo estamos empezando a hacer"
+    },
+    {
+      "start": 1913.52,
+      "end": 1919.16,
+      "text": "pero no porque no supiéramos lo lo hubiéramos evaluado antes porque lo que digo siempre lo"
+    },
+    {
+      "start": 1919.16,
+      "end": 1924.32,
+      "text": "bueno pero siempre lo que no sé ahora mismo carlos si habías hecho la teoría ya no cuánto etcétera"
+    },
+    {
+      "start": 1924.32,
+      "end": 1936.96,
+      "text": "al final este tipo de implementaciones del sistema de regímenes se meten vía filtro siempre vía"
+    },
+    {
+      "start": 1936.96,
+      "end": 1943.8,
+      "text": "filtro si tú tienes imagínate ese sistema sencillo que hemos visto antes vale y yo veo que pues no va"
+    },
+    {
+      "start": 1943.8,
+      "end": 1950.08,
+      "text": "bien como casi ninguno en volatilidad y yo meto un filtro de volatilidad la mayoría de filtros"
+    },
+    {
+      "start": 1950.12,
+      "end": 1953.88,
+      "text": "de este tipo van por volatilidad está saturadísimo el equipo ya una cosa de"
+    },
+    {
+      "start": 1953.88,
+      "end": 1964.33,
+      "text": "los van por por vía vía volatilidad pero pueden haber otros entonces pues el tenencial entonces"
+    },
+    {
+      "start": 1964.33,
+      "end": 1969.97,
+      "text": "al final no deja de ser un filtro no deja de ser una regla más no deja de ser una posible sobre"
+    },
+    {
+      "start": 1969.97,
+      "end": 1977.5,
+      "text": "utilización más entonces ahí es donde siempre tienes la duda de que tú en mediante ese filtro"
+    },
+    {
+      "start": 1977.5,
+      "end": 1984.88,
+      "text": "vas a eliminar trades imagínate que yo tengo 800 trades y mi filtro me quita 300 trades y me quedo"
+    },
+    {
+      "start": 1984.88,
+      "end": 1995.85,
+      "text": "con 500 trades he mejorado el sistema pero he perdido significación estadística ahí está"
+    },
+    {
+      "start": 1997.29,
+      "end": 2002.94,
+      "text": "mejora lo suficiente bueno es ese es el debate habrá veces que sí habrá veces que no"
+    },
+    {
+      "start": 2003.54,
+      "end": 2010.5,
+      "text": "a veces que sí habrá veces que y yo es verdad que tengo bastante tendencia a eso incluso alguna vez"
+    },
+    {
+      "start": 2010.5,
+      "end": 2018.93,
+      "text": "te diría demasiado en determinados momentos creo que hasta lo he llevado demasiado lejos creo y"
+    },
+    {
+      "start": 2018.93,
+      "end": 2024.41,
+      "text": "puedo haberme equivocado en haberlo hecho en ese aspecto en concreto es decir de ser demasiado"
+    },
+    {
+      "start": 2024.41,
+      "end": 2032.8,
+      "text": "persistente en en no querer filtrar demasiado porque al final filtrar es una de las maneras"
+    },
+    {
+      "start": 2032.8,
+      "end": 2039.53,
+      "text": "más fáciles sobre utilizar carlos porque tú estás justamente eliminando lo malo tienes o sea"
+    },
+    {
+      "start": 2039.53,
+      "end": 2044.25,
+      "text": "tú tienes un setup como esto es sencillo que yo te he enseñado ahora y luego digo mira o sea le"
+    },
+    {
+      "start": 2044.25,
+      "end": 2050.81,
+      "text": "quito por la volatilidad le quito unas cuantas operaciones venga ahora por la tendencia tienes"
+    },
+    {
+      "start": 2050.81,
+      "end": 2055.65,
+      "text": "la tentación de empezar a filtrar a filtrar filtrar y te queda un back test pero guapo guapo"
+    },
+    {
+      "start": 2055.65,
+      "end": 2063.63,
+      "text": "guapo pero una cosa impecable ahora luego resulta que el sistema es real pues va mucho"
+    },
+    {
+      "start": 2063.63,
+      "end": 2068.43,
+      "text": "peor que se esperaba para los dos sistemas suelen ir bastante línea con lo esperado y en"
+    },
+    {
+      "start": 2068.43,
+      "end": 2074.39,
+      "text": "desviaciones bastante cuando hay desviaciones que las ha habido es público hemos explicado todo lo"
+    },
+    {
+      "start": 2074.39,
+      "end": 2078.75,
+      "text": "que nos ha pasado aunque a pesar después de todos los problemas que hemos tenido hemos batido"
+    },
+    {
+      "start": 2078.75,
+      "end": 2085.71,
+      "text": "nuestro mensaje en sí o no pero pero bueno aún así han habido errores y ha habido cosas hay cosas"
+    },
+    {
+      "start": 2085.71,
+      "end": 2092.98,
+      "text": "que me juzgan pero lo que lo que digo de los filtros entonces al final no sé siempre siempre"
+    },
+    {
+      "start": 2092.98,
+      "end": 2098.14,
+      "text": "ese debate siempre esa duda y siempre te quedas con filtros y filtros no los filtros se pueden"
+    },
+    {
+      "start": 2098.14,
+      "end": 2104.14,
+      "text": "usar no no no que criminalizarlos de entrada pero pero prudencia prudencia ante ellos porque al"
+    },
+    {
+      "start": 2104.14,
+      "end": 2112.18,
+      "text": "final filtrar filtrar mucho es un camino directo al overfit es un camino directo al overfit hay"
+    },
+    {
+      "start": 2112.18,
+      "end": 2116.74,
+      "text": "que filtrar con mucha prudencia en caso de dudas no filtras eso te lo digo en caso de dudas no filtres"
+    },
+    {
+      "start": 2117.18,
+      "end": 2128.72,
+      "text": "vale alejandro yo creo que ya ha quedado claro todo el tema de alejandro y luego hablaba"
+    },
+    {
+      "start": 2128.72,
+      "end": 2137.3,
+      "text": "senen garcía sobre el multidata bueno el multidata haremos también multidata"
+    },
+    {
+      "start": 2137.3,
+      "end": 2144.1,
+      "text": "comentaba él le comentaba que había hecho un backtest en multidata que ha intentado crear una"
+    },
+    {
+      "start": 2144.1,
+      "end": 2149.14,
+      "text": "estrategia con con acciones donde ha añadido filtro que el sp 500 estuviera por encima de"
+    },
+    {
+      "start": 2149.14,
+      "end": 2153.7,
+      "text": "una media vale necesita dos datas y tenía problemas con el tema de los datos bueno esto"
+    },
+    {
+      "start": 2153.7,
+      "end": 2159.26,
+      "text": "creo que ya tenemos contestado directamente allí bueno decías que no entendías mucho esto hombre"
+    },
+    {
+      "start": 2159.26,
+      "end": 2165.62,
+      "text": "tiene su lógica porque al final si las bases de datos no se alinean igual cuesta de tomar pero"
+    },
+    {
+      "start": 2165.62,
+      "end": 2173.46,
+      "text": "bueno al principio ya te lo hemos solucionado haremos estrategias de los datos este que usas"
+    },
+    {
+      "start": 2173.46,
+      "end": 2177.62,
+      "text": "tú es una estrategia bastante común de filtro es decir usar una acción de filtrar que en ese"
+    },
+    {
+      "start": 2177.9,
+      "end": 2184.94,
+      "text": "otro bueno aplica lo que he dicho ahora aplica totalmente lo que lo que he dicho ahora totalmente"
+    },
+    {
+      "start": 2184.94,
+      "end": 2191.02,
+      "text": "lo que he dicho ahora filtrar puede ser pero prudencia con ello porque puede ser que te salga"
+    },
+    {
+      "start": 2191.02,
+      "end": 2210.11,
+      "text": "que le salga mal me queda alguna pregunta por ahí el aberto jose dolet dices vale dice que sobre los"
+    },
+    {
+      "start": 2210.11,
+      "end": 2214.67,
+      "text": "filtros en un vídeo comentaba que cuando añades un filtro tiene que filtrar bastantes para que"
+    },
+    {
+      "start": 2214.67,
+      "end": 2221.44,
+      "text": "no sobreteneces puede ser bueno la más que filtrar tiene que las dos cosas y al final cualquier"
+    },
+    {
+      "start": 2221.44,
+      "end": 2228.04,
+      "text": "regla que tú evaluas jose tiene que tener implicación fíjate fíjate aquí a ver si esto"
+    },
+    {
+      "start": 2228.04,
+      "end": 2236.04,
+      "text": "me va ahora cuando yo te decía en el sistema se tendencia ni carga ya es que ni carga que"
+    },
+    {
+      "start": 2236.04,
+      "end": 2244.14,
+      "text": "te decía he bajado el stop y el tp para que actuara más porque porque si yo implemento"
+    },
+    {
+      "start": 2244.14,
+      "end": 2253.02,
+      "text": "una regla que casi no actúa no la estoy evaluando estoy engañando me explico decimos 30 30 por"
+    },
+    {
+      "start": 2253.02,
+      "end": 2260.42,
+      "text": "por por grado de libertad si dijimos un poco de 30 50 pero claro que actúe si yo pongo un tp que"
+    },
+    {
+      "start": 2260.42,
+      "end": 2268.18,
+      "text": "pasa dos veces evaluado no está que puede puedes usarlo o no pero no está evaluado estadísticamente"
+    },
+    {
+      "start": 2268.74,
+      "end": 2277.26,
+      "text": "los dos tenemos alguna en no y ese algunas estrategias de salida que tiene una corrección"
+    },
+    {
+      "start": 2277.26,
+      "end": 2281.82,
+      "text": "muy baja pero pero bueno yo la quiero yo la puedo poner por ejemplo hablaba antes de creo que la"
+    },
+    {
+      "start": 2281.82,
+      "end": 2288.14,
+      "text": "orel y no recuerdo de un tp o un stop en el porfolio a lo mejor no actúa nunca pero es igual yo quiero"
+    },
+    {
+      "start": 2288.14,
+      "end": 2293.62,
+      "text": "por ejemplo que nunca en un mes pueda perder más de tanto pues pues punto pues yo lo pongo ya está"
+    },
+    {
+      "start": 2293.62,
+      "end": 2299.42,
+      "text": "si pierde lo cierro o es que no sabrán ya bueno pero yo no puedo no puedo o no quiero perder más"
+    },
+    {
+      "start": 2299.42,
+      "end": 2307.67,
+      "text": "de un 5 por ciento si llego a esa perdida cierro el mes por ejemplo después de haber relas que no"
+    },
+    {
+      "start": 2307.67,
+      "end": 2314.79,
+      "text": "que sean por gestión por requisitos de riesgo del regulador o requisitos de riesgo tuyos por lo que"
+    },
+    {
+      "start": 2314.79,
+      "end": 2321.61,
+      "text": "sea te despasan por encima de acuerdo de la evaluación no pero pero en términos generales"
+    },
+    {
+      "start": 2321.61,
+      "end": 2325.41,
+      "text": "hablamos de reglas del sistema no de gestión monetaria que eso va a parte"
+    },
+    {
+      "start": 2327.37,
+      "end": 2332.56,
+      "text": "filtro como esto que comentas si que debe estar evaluado por un mínimo de operaciones que las"
+    },
+    {
+      "start": 2332.56,
+      "end": 2339.52,
+      "text": "respalden y luego lo que te decía que se queden en el sistema también respalden es decir las dos"
+    },
+    {
+      "start": 2339.52,
+      "end": 2345.2,
+      "text": "cosas el filtro tiene que estar respaldado y el sistema antes del filtro y post filtro se tiene"
+    },
+    {
+      "start": 2345.2,
+      "end": 2353.02,
+      "text": "que quedar respaldado por una suficiente muestra que me dé significación estadística así que sí"
+    },
+    {
+      "start": 2353.02,
+      "end": 2365.86,
+      "text": "si las cosas es sí vale buen color para cegarnos antonio pues nada te pondré fosforito próximo"
+    },
+    {
+      "start": 2365.86,
+      "end": 2372.31,
+      "text": "día te pongo fosforito y en vez de fondo azul fondo negro aún va a ser más más pero vale"
+    },
+    {
+      "start": 2373.31,
+      "end": 2381.44,
+      "text": "a ver me marco aquí bueno al principio por lo que yo veo aquí marcado está todo respondido no"
+    },
+    {
+      "start": 2381.44,
+      "end": 2397.49,
+      "text": "vale pues decirme si alguna cosita más recordar vuelve a recordar el disco da dos cosas que"
+    },
+    {
+      "start": 2397.49,
+      "end": 2403.09,
+      "text": "recuerdo vale dos cosas que recuerdo una la clase ya no va a ir con el link que visteis vale la"
+    },
+    {
+      "start": 2403.09,
+      "end": 2408.13,
+      "text": "vamos a subir ya si no hay problemas hoy mismo a la plataforma de learning ya está todo preparado"
+    },
+    {
+      "start": 2409.09,
+      "end": 2417.1,
+      "text": "la primera ya está ahí ya está ahí y la segunda va a estar la hora cuando acabemos de la clase se"
+    },
+    {
+      "start": 2417.1,
+      "end": 2429.28,
+      "text": "procesa y se sube el segundo a partir de en el mismo sitio que está la teoría así ya no"
+    },
+    {
+      "start": 2429.28,
+      "end": 2432.68,
+      "text": "tienen dos sitios además hay mucha gente que todavía no acabó la teoría pues está"
+    },
+    {
+      "start": 2433.0,
+      "end": 2440.9,
+      "text": "la teoría y debajo las prácticas vale ese por un lado y luego recuerdo sigo recordando el"
+    },
+    {
+      "start": 2440.9,
+      "end": 2445.7,
+      "text": "disco por lo que podéis ahí preguntar está bien a gente que a veces participa se pregunta"
+    },
+    {
+      "start": 2445.7,
+      "end": 2451.5,
+      "text": "entre ellas se ayuda y parece me parece perfecto para eso está un poquito y podéis entrar"
+    },
+    {
+      "start": 2451.5,
+      "end": 2460.77,
+      "text": "entre vosotros y por mi parte nada más si cualquier otra pregunta repito la puedes poner el disco"
+    },
+    {
+      "start": 2460.77,
+      "end": 2466.77,
+      "text": "lo de las preguntas en la plataforma de learning ya creo que me lo deshabilitaron porque es que iba"
+    },
+    {
+      "start": 2466.77,
+      "end": 2474.91,
+      "text": "fatal entonces dijo pues quítalo entonces digo preguntas al disco y hasta la semana que viene"
+    },
+    {
+      "start": 2474.91,
+      "end": 2483.66,
+      "text": "seguiremos con él partiendo este sistema ya tengo alguno otro más preparado que está por aquí pero"
+    },
+    {
+      "start": 2483.66,
+      "end": 2492.38,
+      "text": "bueno seguiremos con seguiremos con éste y iremos creciendo encima de él hablando todo esto que"
+    },
+    {
+      "start": 2492.38,
+      "end": 2496.3,
+      "text": "hemos hablado ahora y que hemos visto un poquito preliminar pues lo que vimos en el curso iremos"
+    },
+    {
+      "start": 2496.3,
+      "end": 2501.66,
+      "text": "haciendo los siguientes pasos con esta sistema de don chan a ver si conseguimos alguna cosita con él"
+    },
+    {
+      "start": 2501.66,
+      "end": 2508.58,
+      "text": "a ver si conseguimos alguna cosita con él que yo confío que sí pero ya veremos porque es una idea"
+    },
+    {
+      "start": 2508.58,
+      "end": 2512.46,
+      "text": "que hasta he operado es decir que entiendo que tiene que salir pero que de verdad que lo hemos"
+    },
+    {
+      "start": 2512.46,
+      "end": 2518.99,
+      "text": "empezado a hacer o sea que no tiene le hemos empezado hecha de cero en el código de acuerdo"
+    },
+    {
+      "start": 2518.99,
+      "end": 2525.07,
+      "text": "así que nada más amigos a ver si conseguimos llegar a polo no bueno oye quién sabe quién sabe"
+    },
+    {
+      "start": 2525.07,
+      "end": 2532.02,
+      "text": "quién sabe yo ya lo comenté antonio la clase se pasada y créeme que es 100% verdad en el curso"
+    },
+    {
+      "start": 2532.02,
+      "end": 2539.64,
+      "text": "vamos a hacer cosas que vamos a aprovechar nosotros 100% porque son muchas horas como para dejarlas"
+    },
+    {
+      "start": 2539.64,
+      "end": 2546.56,
+      "text": "perder al final voy a voy a aprovecharlas lógicamente no todas porque serán cosas ya"
+    },
+    {
+      "start": 2546.56,
+      "end": 2550.88,
+      "text": "media que avancemos pero nosotros vamos a hacer cosas en el curso 100% que luego yo aprovecharé"
+    },
+    {
+      "start": 2550.88,
+      "end": 2558.63,
+      "text": "así que si las podemos aprovechar nosotros también vosotros eso está clarísimo de acuerdo pues nada"
+    },
+    {
+      "start": 2558.63,
+      "end": 2564.19,
+      "text": "más hasta aquí la segunda clase os veo el lunes que viene chao"
+    }
+  ]
+}

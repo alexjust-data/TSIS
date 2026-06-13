@@ -1,0 +1,1 @@
+C:\InicioServidor\mailsend.exe -smtp 127.0.0.1 -f xxx@google.com -t xxx@google.com -sub "ORDER REJECTED - SERVIDOR TRADING" -M "Se ha reachazado una orden revisar la automatizacion"

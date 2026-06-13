@@ -1,0 +1,5655 @@
+1
+00:00:09,619 --> 00:00:18,309
+Bueno pues buenas tardes, buenas tardes a todos, soy Sergi Sánchez de Celsan Sistemas.
+
+2
+00:00:18,309 --> 00:00:24,789
+Empezamos el séptimo webinar de TrayStation en directo desde bolsa.com, bueno estamos
+
+3
+00:00:24,789 --> 00:00:30,910
+aquí en MSL, en las oficinas MSL en Madrid, pero lo estamos retransmitiendo también para
+
+4
+00:00:30,910 --> 00:00:40,090
+todos los internautas de bolsa.com, vale, bueno, a ver, vamos a, a ver un momentito
+
+5
+00:00:40,090 --> 00:00:54,350
+que me oigo doble, vale, gracias, venga, voy a compartir la pantalla, bueno, voy bastante
+
+6
+00:00:54,350 --> 00:01:03,179
+por directo porque tenemos bastantes cosas a comentar hoy, se ve bien, sí, se ve bastante
+
+7
+00:01:03,179 --> 00:01:08,859
+bien, verdad, aquí en internet confío que también, voy a ver un momentito, supongo
+
+8
+00:01:08,859 --> 00:01:15,489
+que también, vale, bueno, a ver, antes un breve repaso a un poquito, lo muy breve,
+
+9
+00:01:16,090 --> 00:01:23,090
+porque va completamente ligado a lo que vamos a hacer ahora en el 7, pero brevemente lo
+
+10
+00:01:23,090 --> 00:01:27,810
+que comentamos en el 6 que era la iniciación de los sistemas para aquellos que no asistierais,
+
+11
+00:01:27,810 --> 00:01:33,319
+el disclaimer que es importantísimo, ya os lo habéis leído todos, ya lo sabéis de memoria,
+
+12
+00:01:33,319 --> 00:01:37,930
+bueno ya sabéis también lo que es TrayStation y los que no lo sabéis pues os recomiendo
+
+13
+00:01:37,930 --> 00:01:42,329
+que entréis en nuestra web, celsanstistemas.com y encontraréis mucha información al respecto
+
+14
+00:01:42,329 --> 00:01:46,609
+o sino también en la web de TrayStation, por supuesto, aunque más bien en inglés,
+
+15
+00:01:46,609 --> 00:01:53,609
+TrayStation es una plataforma, software y en este caso que vamos a tratar hoy para
+
+16
+00:01:53,609 --> 00:01:59,049
+backtesting y operativa con sistemas, vale, lo bueno es que te permite, te permite testearlo,
+
+17
+00:01:59,049 --> 00:02:05,209
+te permite crearlo y te permite también operarlo, vale, es en ese sentido una solución global
+
+18
+00:02:05,209 --> 00:02:10,909
+porque pues también es broker, de acuerdo, por lo tanto eso en mi opinión es una ventaja
+
+19
+00:02:10,949 --> 00:02:15,469
+bastante notable, una plataforma muy premiada, me lo paso porque ya sé que lo habéis visto
+
+20
+00:02:15,469 --> 00:02:25,000
+en anteriores webinars, vale, bueno, voy a ir a las cosas un poquito que me interesan
+
+21
+00:02:26,840 --> 00:02:31,240
+con relación a webinar 7, no vamos a repasarlo todo el 6, ya sabéis que están todos disponibles
+
+22
+00:02:31,240 --> 00:02:38,240
+tanto en bolsa.com como en nuestra web, en las secciones celsanstistemas, media y formación
+
+23
+00:02:38,280 --> 00:02:42,680
+si no recuerdo mal, allí están todos los vídeos publicados, tanto este como el 6 y
+
+24
+00:02:42,719 --> 00:02:48,319
+los anteriores webinars los podéis consultar allí, vale, el tema de los datos históricos
+
+25
+00:02:48,319 --> 00:02:53,680
+y el backtesting, vamos a continuar a partir un poco de aquí, vamos a ver lo que es una
+
+26
+00:02:53,680 --> 00:03:00,719
+optimización de ciertas maneras de optimizar, vamos a ver una solución para trabajar con
+
+27
+00:03:01,680 --> 00:03:07,800
+nuestras carteras de sistemas, vale, pero es importantísimo comentar antes el tema
+
+28
+00:03:07,800 --> 00:03:12,960
+del backtesting básico, de acuerdo, dijimos que una muy buena manera de comenzar era con
+
+29
+00:03:13,000 --> 00:03:19,930
+los elementos precreados, voy a ir cambiando un poquito la plataforma, siempre cuando pueda
+
+30
+00:03:19,930 --> 00:03:26,979
+hacerlo, claro, así va a ser mejor, de los elementos precreados, aquellos que no tengáis
+
+31
+00:03:26,979 --> 00:03:33,919
+nociones de programación y que no sepáis nada de easy language, que es el lenguaje
+
+32
+00:03:33,919 --> 00:03:37,840
+de programación de 3D Station, que es como su propio nombre indica, pues es un lenguaje
+
+33
+00:03:37,840 --> 00:03:44,039
+bastante sencillo, que lógicamente requiere una formación, en 3D Station podéis insertar
+
+34
+00:03:44,159 --> 00:03:51,199
+distintas estrategias, podés insert strategy, tienes ya un montón de elementos precreados,
+
+35
+00:03:54,000 --> 00:03:58,800
+de acuerdo, que vienen ya preinstalados en la plataforma, y que además todos son totalmente
+
+36
+00:03:58,800 --> 00:04:02,520
+editables y consultables, eso es muy importante, vale, solo como no hemos fijaros que lo que
+
+37
+00:04:02,520 --> 00:04:09,520
+acaba en LX es long exit, vale, lo que acaba en SX es short exit y lo que acaba en LE es
+
+38
+00:04:09,520 --> 00:04:16,800
+long entry y lo que acaba en SE es short entry, vale, entonces esa es un poco la pauta,
+
+39
+00:04:19,560 --> 00:04:23,560
+que también lo veis en las columnas, vale, el que hace buy, hace sell, hace short, vale,
+
+40
+00:04:23,560 --> 00:04:28,920
+cover, sell en 3D Station es cerrar largos, vale, no es abrir cortos, abrir cortos es
+
+41
+00:04:28,920 --> 00:04:33,360
+short, vale, y cover es cerrar cortos, de acuerdo, entonces aquí veis en las pestañitas
+
+42
+00:04:33,360 --> 00:04:37,759
+lo que marca cada elemento que hace, y esto que es muy sencillito, pues está muy bien,
+
+43
+00:04:38,360 --> 00:04:42,160
+es una manera de empezar, veis bollinger bands, entradas largas, bollinger bands, entradas
+
+44
+00:04:42,160 --> 00:04:46,560
+cortas, pues con eso montas un sistema para empezar, no quiero decir que con eso ya es
+
+45
+00:04:46,560 --> 00:04:50,240
+C, pero bueno, es una manera de empezar, porque luego también tenemos las salidas, tenemos
+
+46
+00:04:50,240 --> 00:04:57,370
+un montón de salidas precreadas, bueno, encontraré alguna que me acorde ahora, bueno, es igual
+
+47
+00:04:58,810 --> 00:05:04,529
+aquí salidas por parabólico, salidas por porcentaje, stop porcentaje, por un stop trailing,
+
+48
+00:05:04,529 --> 00:05:11,600
+un poco corto, por un profit target, por cierre en beneficio, bueno, hay realmente
+
+49
+00:05:13,199 --> 00:05:20,199
+muchas, por supuesto pues podéis importar varios y tal, aquí por expansiones de volatilidad,
+
+50
+00:05:20,920 --> 00:05:24,519
+hay realmente un montón y más normales, por un stop monetario por ejemplo también
+
+51
+00:05:24,519 --> 00:05:29,160
+está, vale, y como decía, lo muy bueno que es, es que tú simplemente das aquí, tienes
+
+52
+00:05:29,160 --> 00:05:32,639
+dos colas, una le das a definición, eso sí, va a ser en inglés, pero aquí los que lo
+
+53
+00:05:32,639 --> 00:05:36,639
+dominéis pues perfecto y aquellos que no pues usáis Google Translator, que quieras
+
+54
+00:05:36,639 --> 00:05:41,870
+o no, poco pues orienta, aquí ya tenéis una pequeña explicación de todos los indicadores
+
+55
+00:05:41,870 --> 00:05:47,870
+que tiene, eso es realmente muy útil porque te ayuda a situarte exactamente lo que hace,
+
+56
+00:05:47,870 --> 00:05:53,870
+¿no?, lo que hace, la verdad que es bastante completa, y luego el Easy Language, ¿de acuerdo?,
+
+57
+00:05:53,870 --> 00:06:00,589
+veis el código, y esto realmente es la mejor manera de aprender, de iniciarse, de iniciarse
+
+58
+00:06:00,589 --> 00:06:07,069
+un poquito en Easy Language, bueno, porque entendiendo cómo ellos han solucionado esta
+
+59
+00:06:07,069 --> 00:06:13,189
+estrategia, que en este caso es un People Reversal de entrada, vale, pues bueno, pues
+
+60
+00:06:13,189 --> 00:06:20,509
+tú puedes aprender, porque ahora aquí mismo lo mismo, en este singlón pulsas F1 y automáticamente
+
+61
+00:06:20,949 --> 00:06:26,230
+te va a abrir la ayuda y te va a explicar qué es esa función, ¿de acuerdo?, entonces
+
+62
+00:06:26,230 --> 00:06:30,790
+pues bueno, es una manera de ir poquito a poco aprendiendo, ¿de acuerdo?, y familiarizarse,
+
+63
+00:06:30,790 --> 00:06:35,750
+vale, esto voy rápido porque esto está tratado en el webinar 6, ¿eh?, porque ya soy consciente
+
+64
+00:06:35,750 --> 00:06:41,470
+que estoy yendo rápido, que sencillamente es un pequeño recordatorio de lo que tratamos
+
+65
+00:06:41,470 --> 00:06:48,689
+en el anterior, aquí fijaros que tengo justamente insertados entradas de Bollinger largas,
+
+66
+00:06:48,689 --> 00:06:54,290
+entradas de Bollinger cortas y un Stop Loss de 700 dólares, pues bueno, ese sistema hace
+
+67
+00:06:54,290 --> 00:06:57,769
+eso de entrada largo y corto y si pierden a un momento 700 dólares, como es aquí,
+
+68
+00:06:57,769 --> 00:07:04,720
+pues cierra, a ver que las líneas están, voy a ponerlas para que se vean bien en ambos
+
+69
+00:07:04,720 --> 00:07:16,910
+casos, no es esta, es justo la que no coges, siempre es esa, no es esa, voy a ver cuál
+
+70
+00:07:27,870 --> 00:07:35,310
+me falta, ah, que si no se confunde con las bandas de Bollinger, ya se lo voy a saber
+
+71
+00:07:35,310 --> 00:07:42,040
+más claro, vale, esto que está, no está optimizado ni nada ese sistema, eh, seguramente,
+
+72
+00:07:42,519 --> 00:07:47,550
+digo yo que será perdedor esto porque, bueno, mucho sería que ganara dinero, la verdad,
+
+73
+00:07:47,550 --> 00:07:52,550
+pero bueno, pues mira, gana dinero todo, es que hasta de oídas soy bueno, hay que ver,
+
+74
+00:07:52,550 --> 00:07:56,550
+elijo un sistema hacia ojo y lo elijo, por supuesto es broma porque esto ya os gratizo
+
+75
+00:07:56,550 --> 00:08:03,550
+que no ganará dinero, aunque tiene, es probable que no tenga comisiones, exacto, no tiene
+
+76
+00:08:03,550 --> 00:08:08,550
+comisiones, vale, no tiene comisiones, con lo cual seguro, casi seguro que con las comisiones
+
+77
+00:08:09,029 --> 00:08:14,230
+ya sería perdedor porque tiene un profit factor de 106 solo, vale, pero bueno, es un
+
+78
+00:08:14,230 --> 00:08:20,310
+sencillo ejemplo con los parámetros por defecto del Bollinger Bands en 15 minutos en el futuro
+
+79
+00:08:20,310 --> 00:08:26,149
+del DAX y con un stop loss de 700 dólares. Aplicaros que estos señales de stop que tiene
+
+80
+00:08:26,149 --> 00:08:30,779
+3x6 normalmente son intra barras, claro, o sea que eso es bastante útil porque hay muchas
+
+81
+00:08:30,779 --> 00:08:38,100
+plataformas que normalmente ponen el stop en la barra de entrada suele ser bastante problemático,
+
+82
+00:08:38,700 --> 00:08:45,700
+se puede hacer, pero normalmente con una programación standard por decirlo no entra porque el sistema
+
+83
+00:08:45,700 --> 00:08:51,240
+lee que el sistema está largo cuando acaba la barra actual, hay una sentencia típica
+
+84
+00:08:51,240 --> 00:08:56,899
+que es Get Mark Sentry por ejemplo o Market Position, es igual, ¿cómo está el sistema?
+
+85
+00:08:56,899 --> 00:09:02,259
+Claro, la lee que está en este caso largo cuando acaba, en cambio de decisiones es capaz
+
+86
+00:09:02,259 --> 00:09:06,779
+de leerlo durante la barra de entrada, por lo tanto si pierde 700 dólares en este caso
+
+87
+00:09:06,899 --> 00:09:14,639
+la barra de entrada sale, ¿cómo ha pasado aquí? Dos veces, ¿veis? Vale, entonces en
+
+88
+00:09:17,710 --> 00:09:22,909
+este webinar de hoy nos vamos a sentar en lo que es la optimización, quería sencillamente
+
+89
+00:09:22,909 --> 00:09:28,929
+comentaros lo de los herramientas de backtesting, esta era una, también os hablé del inside
+
+90
+00:09:28,929 --> 00:09:35,929
+bar backtesting, no voy a mostraros pero sencillamente no voy ahora a poneros el ejemplo que os puse
+
+91
+00:09:36,169 --> 00:09:41,769
+porque lleva un poquito de tiempo, pero sencillamente recordar que es un tema bastante importante
+
+92
+00:09:41,769 --> 00:09:48,769
+que no todas las plataformas contemplan, cuando una barra tiene lugar, lo explico brevemente
+
+93
+00:09:48,769 --> 00:09:52,649
+porque es importante, una barra tiene lugar en tiempo real como esta que se está construyendo
+
+94
+00:09:52,649 --> 00:09:59,649
+ahora mismo 15 minutos, esta barra si aquí hubiera un sistema aplicado como lo hay de
+
+95
+00:09:59,649 --> 00:10:05,159
+hecho, pues el sistema sabe rápidamente qué precio, si salta un stop o no salta un stop
+
+96
+00:10:05,240 --> 00:10:12,240
+porque el curso del tiempo, digamos que tiene claro cómo se construye la barra, en cambio
+
+97
+00:10:13,039 --> 00:10:17,159
+el sistema ya, esta barra por ejemplo que veis aquí no tiene ni idea cómo se ha construido,
+
+98
+00:10:17,159 --> 00:10:21,000
+es backtesting esto ya, esta barra no sabes cómo se ha construido, sabes que ha abierto
+
+99
+00:10:21,000 --> 00:10:25,600
+aquí, sabes que ha cerrado aquí y que ha hecho un mínimo aquí y un máximo aquí,
+
+100
+00:10:25,600 --> 00:10:32,820
+en este caso muy probablemente puedes pensar que ha sido casi el mínimo, se ha ido máximo
+
+101
+00:10:33,220 --> 00:10:39,379
+y ha vuelto, esta probablemente haya sido así, pero no siempre ocurre lo que parece
+
+102
+00:10:39,379 --> 00:10:46,379
+y no siempre es fácil averiguar lo que ha ocurrido, para solucionar esto todas las plataformas
+
+103
+00:10:46,460 --> 00:10:51,659
+digamos que tienen un algoritmo que calcula, que estiman cómo se ha construido la barra,
+
+104
+00:10:51,659 --> 00:10:56,539
+pero no lo saben con certeza todas, algunas de ellas sí, Interestation es una de ellas
+
+105
+00:10:56,700 --> 00:11:03,700
+con esta función que se llama look inside bar backtesting que la encontráis aquí,
+
+106
+00:11:03,700 --> 00:11:08,539
+esta función si se activa, bueno ahora mismo en este sistema no sé si tendrá efecto,
+
+107
+00:11:08,539 --> 00:11:13,570
+pero bueno vamos a verificarlo obviamente si tiene efecto, sería fantástico que lo
+
+108
+00:11:13,570 --> 00:11:23,820
+tuviera, esto lo activamos con un minuto, esto qué hace, esto comprueba con un histórico
+
+109
+00:11:23,820 --> 00:11:30,820
+paralelo, en este sistema no actúa, con un histórico paralelo comprueba cómo se ha
+
+110
+00:11:31,139 --> 00:11:36,500
+construido esa barra de 15 minutos en un minuto, por lo tanto sabe qué precio se ha tocado
+
+111
+00:11:36,500 --> 00:11:41,340
+antes y sobre todo en sistemas que tienen estrategia de entrada y estrategia de salida
+
+112
+00:11:41,340 --> 00:11:47,500
+por profit y salida por pérdidas, normalmente suele actuar y suele dar resultados bastante
+
+113
+00:11:47,500 --> 00:11:52,980
+dispares y alguna vez muy dispares, entonces no en todos los sistemas actúa, pero es una
+
+114
+00:11:52,980 --> 00:11:57,990
+herramienta de backtesting que aporta muchísima fiabilidad y que nos permite tener prácticamente
+
+115
+00:11:57,990 --> 00:12:04,629
+la certeza que testamos la realidad de lo que esperamos y hay otras plataformas que
+
+116
+00:12:04,629 --> 00:12:11,769
+no lo hacen eso y no puedes testearlo, yo utilizo un minuto normalmente, puedes hacerlo
+
+117
+00:12:11,769 --> 00:12:17,190
+en ticks, puedes hacerlo incluso en ticks, lo que pasa que en ticks el problema que tienes
+
+118
+00:12:17,190 --> 00:12:22,169
+es que solo tienes seis meses de histórico, entonces claro solo vas a poder comprobar
+
+119
+00:12:22,169 --> 00:12:27,450
+seis meses, en minuto como tienes todo pues ya pones un minuto, pero puedes poner hasta
+
+120
+00:12:27,450 --> 00:12:34,450
+20 segundos, si quieres o sea 20 segundos, el que le digas lo va a usar, pero normalmente
+
+121
+00:12:34,970 --> 00:12:40,929
+con un minuto incluso a veces en más, en 5 o en 15, evidentemente esto hace más lenta
+
+122
+00:12:40,929 --> 00:12:47,929
+la optimización, entonces a veces si ves que es poco sensible le pones 30 minutos
+
+123
+00:12:48,929 --> 00:12:54,509
+y luego le pones uno a ver cómo actúa, vas viendo cómo trabaja, pero en la mayoría
+
+124
+00:12:54,509 --> 00:13:01,190
+de sistemas tiene algún efecto, en algunos es muy notable, en algunos es muy poco y algunos
+
+125
+00:13:01,190 --> 00:13:09,730
+nada, aquí porque solo hay un stop, el sistema solo puede salir por esa señal, le da igual
+
+126
+00:13:10,049 --> 00:13:15,370
+saber cuando lo ha tocado porque cuando lo toca sale, realmente el debate está cuando
+
+127
+00:13:15,370 --> 00:13:22,370
+puede tocar varias órdenes, cuando esta variable actúa es cuando hay varias órdenes de salida
+
+128
+00:13:23,289 --> 00:13:30,090
+en el mercado, sean de profit o de win, cuando hay varias órdenes de salida no siempre sabes
+
+129
+00:13:30,090 --> 00:13:38,210
+exactamente cuál de ellas ha saltado primero o de entrada o un stop and reverse por ejemplo,
+
+130
+00:13:38,649 --> 00:13:45,649
+pero en el webinar 6 vimos un ejemplo que era bastante exagerado que aplicaba mucho,
+
+131
+00:13:46,649 --> 00:13:51,929
+que realmente se está, bueno aquellos que están siguiendo el mercado el DAX se está
+
+132
+00:13:51,929 --> 00:13:59,440
+dando la vuelta al alza, aprovechamos, mercado en directo. Y luego nada, también Transition
+
+133
+00:14:01,799 --> 00:14:06,919
+tiene algunas funciones fitness que hasta se han extendido a otras plataformas, la verdad
+
+134
+00:14:06,919 --> 00:14:11,039
+que no tienen nada, pero el Transition Index por ejemplo es un fitness que usa Transition
+
+135
+00:14:11,039 --> 00:14:16,519
+porque ya usan otras, también tiene a nivel de estadísticos el RINA porque como RINA
+
+136
+00:14:16,519 --> 00:14:21,799
+tiene una colaboración con Transition solo usa Transition, el RINA Index que sale en
+
+137
+00:14:21,799 --> 00:14:27,980
+el Performance Report, bueno, pero esto son cosas que al final también tampoco son super
+
+138
+00:14:27,980 --> 00:14:32,659
+destacadas, la más destacable en backtesting la vamos a ver hoy que es hablando de backtesting
+
+139
+00:14:32,659 --> 00:14:39,659
+de un sistema concreto es el World Forward Optimizer que vamos a pasar a verlo. Bien,
+
+140
+00:14:40,340 --> 00:14:47,580
+como os decía hoy vamos a hablar mucho de optimización, al final la optimización aquellos
+
+141
+00:14:47,580 --> 00:14:50,659
+que estéis familiarizados con el sistema pues ya sabéis lo que es, pero aquellos que
+
+142
+00:14:50,659 --> 00:14:56,899
+no lo estéis pues sencillamente es un proceso de búsqueda de valores óptimos que cumplen
+
+143
+00:14:56,899 --> 00:15:03,139
+una determinada condición, una determinada objetivo, un target, y se utiliza para, como
+
+144
+00:15:03,139 --> 00:15:08,940
+pongo aquí, ahora veremos que es un debate bastante interesante, yo ya os digo que soy
+
+145
+00:15:09,100 --> 00:15:12,820
+completamente partidario de la optimización pero bueno hay gente que no lo es, es un debate
+
+146
+00:15:12,820 --> 00:15:18,580
+interesante y hay razones en ambos sentidos, esto como la derecha y la izquierda, los de
+
+147
+00:15:18,580 --> 00:15:21,580
+la derecha dan argumentos para la derecha, los de la izquierda dan argumentos para la
+
+148
+00:15:21,580 --> 00:15:28,340
+derecha, bueno, quien tiene razón pues depende, depende de cada momento supongo, entonces
+
+149
+00:15:28,340 --> 00:15:32,460
+realmente la optimización en términos general en estadísticas se utiliza para un montón
+
+150
+00:15:32,460 --> 00:15:39,980
+de cosas, entonces es un proceso para mi que sé que hay que utilizarlo, es verdad
+
+151
+00:15:39,980 --> 00:15:45,980
+que tiene pues como casi todas las herramientas muy potentes tienen peligros porque un Fórmula
+
+152
+00:15:45,980 --> 00:15:52,419
+1 es una máquina realmente muy potente y seguramente las manos menos de las mías sería
+
+153
+00:15:52,419 --> 00:15:58,860
+un peligro bastante importante, pero Alonso no lo lleva mal, lo maneja bien, entonces
+
+154
+00:15:58,940 --> 00:16:03,779
+al final todas las herramientas muy potentes en sí conllevan riesgos, porque justamente
+
+155
+00:16:03,779 --> 00:16:10,779
+su potencia en su potencia deriva su riesgo, pero el hecho de que tenga riesgos no implica
+
+156
+00:16:11,259 --> 00:16:16,179
+que no debamos usarlo, en mi opinión supongo como los futuros, los futuros son muy peligrosos,
+
+157
+00:16:16,179 --> 00:16:22,019
+no los futuros no son peligrosos, lo que son peligrosos es el que usa mal los futuros,
+
+158
+00:16:22,019 --> 00:16:26,259
+pero el futuro en sí, uno puede operar un futuro sin apalancamiento exactamente igual
+
+159
+00:16:26,259 --> 00:16:33,320
+que un ETF y mucho más barato, realmente no tiene peligro en sí el concepto, lo que
+
+160
+00:16:35,840 --> 00:16:40,919
+pasa es que el futuro permite un apalancamiento como otros activos que si no se usa bien pues
+
+161
+00:16:40,919 --> 00:16:47,919
+es peligroso, sería una analogía de este tipo, entonces en mi opinión sí que hay
+
+162
+00:16:47,919 --> 00:16:54,919
+que usarla pero hay que utilizarla con buen criterio, me he insultado porque es el mismo
+
+163
+00:16:54,919 --> 00:17:01,919
+tema que tengo yo, digo se me ha olvidado, entonces como os decía hay que usarlo con
+
+164
+00:17:05,390 --> 00:17:08,990
+buen criterio y hoy en día tenemos herramientas como vais a ver el World Forward Optimizer
+
+165
+00:17:08,990 --> 00:17:14,390
+que nos ayuda muchísimo a medir la robustez del sistema que es al final lo que buscamos,
+
+166
+00:17:14,390 --> 00:17:19,509
+al final cuando hacemos un sistema lo que buscamos es que gane dinero, eso es más bien
+
+167
+00:17:19,509 --> 00:17:26,509
+obvio, el problema es que todavía no podemos conocer el futuro y al final lo backtesteamos
+
+168
+00:17:27,470 --> 00:17:33,829
+en datos pasados, es la herramienta que tenemos para comprobar o para validar si una idea
+
+169
+00:17:33,829 --> 00:17:40,829
+creemos que es buena, pero realmente los resultados pasados no garantizan los futuros, frase típica
+
+170
+00:17:41,309 --> 00:17:48,309
+del sector financiero, eso es cierto, pero si realmente trabajamos bien esta optimización
+
+171
+00:17:49,150 --> 00:17:55,349
+y utilizamos herramientas como la que vais a ver ahora posteriormente, pues podemos entre
+
+172
+00:17:55,349 --> 00:18:02,349
+comillas fabricar datos futuros, podemos fabricar datos futuros o live, ya lo vamos a ver entre
+
+173
+00:18:03,789 --> 00:18:10,789
+comillas, esta es la típica frase que la sacan fuera de contexto y estas muerta, pero eso
+
+174
+00:18:10,789 --> 00:18:16,390
+es en las comillas. Bueno aquí brevemente no quiero extenderme
+
+175
+00:18:16,950 --> 00:18:22,980
+mucho en conceptos teóricos, que luego esto queda grabado y podéis leerlo con calma,
+
+176
+00:18:22,980 --> 00:18:31,460
+aunque no sé si se le da muy bien en el ordenador, pero bueno, bien, fantástico, bueno, seguro
+
+177
+00:18:36,650 --> 00:18:41,369
+que habéis oído hablar de concepto de sobre-optimizar y concepto de robustez que se puede definir
+
+178
+00:18:41,369 --> 00:18:48,369
+de muchas maneras, yo os la he definido de una manera más bien pragmática, porque hablamos
+
+179
+00:18:48,490 --> 00:18:53,609
+muchas veces de robustez, a veces con ligereza, porque realmente la robustez lo que podemos
+
+180
+00:18:53,609 --> 00:18:58,730
+hacer es fomentarla, intentar buscarla, pero realmente hasta que no opere en real no lo
+
+181
+00:18:58,730 --> 00:19:04,049
+sabemos si es robusto, la robustez de verdad es que el sistema opera y va como esperábamos
+
+182
+00:19:04,049 --> 00:19:10,769
+en el backtesting, entonces a priori decimos, hombre, es un sistema que va más activos
+
+183
+00:19:10,769 --> 00:19:16,509
+es más robusto, bueno, a priori sí, un sistema que pasa el World Forward Optimizer con buenas
+
+184
+00:19:16,509 --> 00:19:21,869
+pruebas es robusto, bien, a priori sí, pero hasta que no opere realmente no vamos a saber
+
+185
+00:19:21,869 --> 00:19:29,319
+si realmente es realmente robusto, porque al final estamos en un entorno de incertidumbre.
+
+186
+00:19:30,599 --> 00:19:36,720
+El tema de la muestra, cuando optimizamos esto, antes previamente aquí había un debate
+
+187
+00:19:36,720 --> 00:19:40,759
+interesante antes de empezar sobre los grados de libertad, sobre la optimización, sobre
+
+188
+00:19:40,759 --> 00:19:47,400
+la muestra y demás, al final la muestra debe ser o debería de ser en términos generales,
+
+189
+00:19:47,400 --> 00:19:52,559
+porque hay excepciones, vamos a ver que con World Forward Optimizer vamos a intentar mantener
+
+190
+00:19:52,559 --> 00:19:57,599
+estos dos criterios, pero siendo un poco más laxos veréis por qué, al final tiene que
+
+191
+00:19:57,599 --> 00:20:04,599
+ser representativa del universo, es decir, contra más tipos de mercado tengamos en un
+
+192
+00:20:05,559 --> 00:20:11,559
+backtesting mejor, de acuerdo, si yo cojo un mercado que es, estoy optimizando un sistema
+
+193
+00:20:11,559 --> 00:20:17,920
+en el futuro del DAX, quiero que haya mercados bajistas, alcistas, volátiles, poco volátiles,
+
+194
+00:20:17,920 --> 00:20:23,359
+laterales, contra más tipos de mercado haya más fácil o más probable es que el mercado,
+
+195
+00:20:23,359 --> 00:20:28,160
+el sistema se haya adaptado bien a todos los mercados, pero luego aparte de eso tiene que
+
+196
+00:20:28,160 --> 00:20:33,849
+ser estadísticamente significativa, porque de nada me sirve si ese estudio es representativo
+
+197
+00:20:33,849 --> 00:20:40,849
+al final tiene 5 traits, porque por muy representativo que sea del universo objeto de estudio realmente
+
+198
+00:20:42,730 --> 00:20:47,009
+no es estadísticamente significativo, entonces hay que buscar un poquito los dos, ya que os
+
+199
+00:20:47,009 --> 00:20:51,329
+ponía más grados de libertad, más significaciones necesitamos, esto pues utilizamos la TV Studen
+
+200
+00:20:51,329 --> 00:20:55,450
+normalmente para medirlo, aunque la verdad la TV Studen me parece muy poco agresiva,
+
+201
+00:20:55,450 --> 00:21:00,690
+quiero decir que se pasa con mucha facilidad, o sea realmente no pasarla, si no la pasas
+
+202
+00:21:00,690 --> 00:21:07,410
+realmente es que tienes muy muy pocos traits y realmente el beneficio por traits es muy
+
+203
+00:21:07,410 --> 00:21:14,440
+bajo, realmente se suele pasar, pero hay que pasarla, y luego el otro método importantísimo
+
+204
+00:21:15,000 --> 00:21:22,000
+de que medimos robustez y que buscamos que un sistema, o valorar si un sistema funciona
+
+205
+00:21:24,400 --> 00:21:30,240
+en live es lo que llamamos la prueba externa, que es donde vamos a entrar ahora en el Google
+
+206
+00:21:30,240 --> 00:21:36,039
+Forward Optimizer que vais a ver en breve, el World Forward clásico ahora muy breve
+
+207
+00:21:36,039 --> 00:21:41,759
+os lo voy a enseñar lo que es en TV Station, eso sí que la mayoría de plataformas de sistemas
+
+208
+00:21:41,759 --> 00:21:48,759
+lo tiene, al final tampoco todas, hay algunas que hay que hacerlo manualmente, sabéis que
+
+209
+00:21:49,279 --> 00:21:52,480
+siempre son muy gracios, hay gente que luego me lo dice, pero por qué no lo dice, porque
+
+210
+00:21:52,480 --> 00:21:57,480
+no me gusta nunca hablar de, además yo plataformas trabajo muchas, pero voy a hablar de una en
+
+211
+00:21:57,480 --> 00:22:02,319
+este caso, por ejemplo en caso de VisualChar, no tiene World Forward ni clásico, o sea
+
+212
+00:22:02,319 --> 00:22:05,920
+tú tienes que hacer tu backtest en un periodo y luego tu probarlo en otro periodo por tu
+
+213
+00:22:05,920 --> 00:22:10,079
+cuenta, pero hay muchas plataformas que este proceso lo hacen implementado, o sea que ya
+
+214
+00:22:10,079 --> 00:22:15,799
+te dejan decir qué parte pones dentro y qué parte pones fuera del histórico y ya te sacan
+
+215
+00:22:15,799 --> 00:22:21,200
+las estadísticas, digamos que es más rápido, pero esto no es para nada exclusivo de TV
+
+216
+00:22:21,200 --> 00:22:28,589
+Station, no tiene muchas plataformas, el World Forward clásico, y luego está el Self-Adaptative,
+
+217
+00:22:29,509 --> 00:22:34,109
+que nada, no voy a hacer nada más sobre ello, que esto ya es un avanzado, son sistemas que
+
+218
+00:22:34,109 --> 00:22:39,299
+en el código ya se autoajustan al mercado y que el World Forward va muy bien para eso,
+
+219
+00:22:39,299 --> 00:22:45,579
+luego lo vamos a ver. ¿Qué es el World Forward convencional? Pues bueno, por ejemplo este
+
+220
+00:22:45,579 --> 00:22:49,660
+sistema que tenemos aquí, vamos a hacer muy breve que veáis una optimización clásica
+
+221
+00:22:49,819 --> 00:22:54,500
+para aquellos que no estáis familiarizados con TV Station, en el menú para elegir las
+
+222
+00:22:54,500 --> 00:22:59,619
+funciones fitness, en el menú VIEW tenéis el Chart Analysis Preferences y hay una pestaña
+
+223
+00:22:59,619 --> 00:23:04,619
+que es Strategy, aquí es un poco donde se controlan las opciones generales de optimización
+
+224
+00:23:04,619 --> 00:23:11,619
+y donde se elige la función fitness, la función objetivo que vamos a optimizar, bueno hay
+
+225
+00:23:13,940 --> 00:23:19,410
+varias, a mí personalmente digo porque siempre es una pregunta que me hacen, ya lo digo,
+
+226
+00:23:19,450 --> 00:23:24,009
+a mí me gusta mucho el Expectancy Score, me gusta mucho el TV Station Index y me gusta
+
+227
+00:23:24,009 --> 00:23:30,049
+mucho el Perfect Profit Correlation y sin desmenecer nada a Profit Factor, que mi compañero
+
+228
+00:23:30,049 --> 00:23:36,690
+Roberto le gusta mucho por ejemplo, al final la mayoría, como ya he dicho muchas veces,
+
+229
+00:23:36,690 --> 00:23:43,450
+no todos pero la mayoría tienen una elevada correlación entre ellos, es decir, normalmente
+
+230
+00:23:43,450 --> 00:23:48,730
+un buen sistema suele salir bien en todo, o sea, debería de salir siempre que sean
+
+231
+00:23:48,730 --> 00:23:55,009
+de rentabilidad riesgo, claro si uno coge máximo consecutivo de perdidos a lo mejor
+
+232
+00:23:55,009 --> 00:23:59,210
+uno sale, pero es decir, siempre que utiliza algún ratio de rentabilidad riesgo, cualquiera
+
+233
+00:23:59,210 --> 00:24:05,609
+de ellos, normalmente van a salir parecidos las zonas, de acuerdo, parecidos, no tendremos
+
+234
+00:24:05,609 --> 00:24:10,049
+que ser igual, pero aquí se elige, se elige cómo se ordenan, en principio esto es lo
+
+235
+00:24:10,049 --> 00:24:16,450
+que os quiero explicar de esta ventana, luego vamos a Format, o hacéis doble clic encima
+
+236
+00:24:16,450 --> 00:24:25,650
+de una orden, de una flechita, o si no habéis el menú Format, Format Strategies o botón
+
+237
+00:24:25,650 --> 00:24:30,930
+derecho, que es la manera un poco más sencilla, sale todo, encima del gráfico sale Format
+
+238
+00:24:30,930 --> 00:24:36,960
+Strategies, aquí salen los sistemas que están insertados, en la pestaña Properties for All
+
+239
+00:24:36,960 --> 00:24:40,599
+están estas opciones que habéis visto de si usamos el Look Inside Verbal Testing o no,
+
+240
+00:24:40,599 --> 00:24:45,279
+lo vamos a desconectar, porque ya hemos visto que no actuaba y para esta prueba no da igual,
+
+241
+00:24:45,279 --> 00:24:53,000
+Comisiones, vamos a poner 3, bueno 3 no, porque 2 ya es mucho porque en Trail Station
+
+242
+00:24:53,000 --> 00:25:01,150
+el futuro del DAX a veces cuesta 1.20, no 30€, cuesta 1.20 dólares más 0.50, no,
+
+243
+00:25:01,150 --> 00:25:09,720
+sí, más o menos, ponemos 2 euros, sale por un poco menos, por euro y pico, vale, Slip
+
+244
+00:25:09,720 --> 00:25:30,680
+Bajé para el DAX, Roberto, 12, 15, 20, 15 euros, por contrato, euros, es, es, el punto
+
+245
+00:25:30,680 --> 00:25:36,400
+del DAX son 25, pues bueno, medio punto es medio punto, es un poco más de medio punto,
+
+246
+00:25:36,400 --> 00:25:41,359
+yo creo que es menos, pero bueno, es igual, no pasa nada, esto es una mera, una mera prueba,
+
+247
+00:25:42,359 --> 00:25:45,680
+aquí en el Backtesting normalmente lo vais a tocar, pero que sepáis, aquellos que no
+
+248
+00:25:45,680 --> 00:25:52,730
+estéis familiarizados, pues bueno, si usáis órdenes limitadas hay que elegir cómo simula
+
+249
+00:25:52,730 --> 00:25:55,650
+el hecho de las órdenes limitadas, porque ya sabéis que con una orden limitada no podemos
+
+250
+00:25:55,650 --> 00:26:00,049
+estar seguros que se ha ejecutado, porque te puedes quedar en la cola cuando se toca
+
+251
+00:26:00,049 --> 00:26:06,130
+el precio, entonces bueno, aquí te dice que qué asumciones quieres hacer con una orden
+
+252
+00:26:06,130 --> 00:26:11,569
+limitada, que ejecute cuando lo toca, que ejecute cuando excede el límite y luego incluso
+
+253
+00:26:11,569 --> 00:26:17,009
+combinaciones de que la marca ejecutada cuando se ejecuta al menos un número determinado
+
+254
+00:26:17,009 --> 00:26:22,410
+de acciones en ese precio, eso es bastante interesante, esto normalmente hay que dejarlo
+
+255
+00:26:22,410 --> 00:26:27,529
+por defecto, si queremos penalizar extra las órdenes con un slippage adicional a las órdenes
+
+256
+00:26:27,529 --> 00:26:32,130
+a mercado, además del que hemos fijado aquí, si queremos que las órdenes a mercado tengan
+
+257
+00:26:32,130 --> 00:26:37,490
+un slippage adicional y estas opciones de automatización que lo explicaré al final previamente, para
+
+258
+00:26:37,490 --> 00:26:42,329
+conectarlo a tiempo real al mercado, pero a lo mismo no nos importa, también hay aquí
+
+259
+00:26:42,329 --> 00:26:49,329
+si no están en el código, si no está en el código las órdenes de gestión de contratos,
+
+260
+00:26:49,329 --> 00:26:54,210
+pero el código puedes por supuesto modificarlo, puedes poner euros por trade o número de contratos
+
+261
+00:26:54,210 --> 00:27:02,559
+fijos y ya está, entonces aquí para optimizar desde el menú format en inputs, vamos a optimizar
+
+262
+00:27:02,559 --> 00:27:13,200
+simplemente, no nos complicamos, con un incremento, optimizar, no, es que el sistema está aplicado
+
+263
+00:27:19,579 --> 00:27:28,210
+en un time frame concreto, no se puede optimizar con código avanzado, bueno preguntan perdonad
+
+264
+00:27:31,130 --> 00:27:36,250
+porque aquí no lo es claro, las preguntas en internet, preguntan si pueden optimizar
+
+265
+00:27:36,250 --> 00:27:39,250
+varios time frames, estamos comentando que al principio el gráfico está insertado sobre
+
+266
+00:27:39,250 --> 00:27:43,170
+un time frame y tú optimizas ese y luego Roberto que está aquí también de
+
+267
+00:27:43,170 --> 00:27:50,049
+Desensant Systems, pues comenta que con código avanzado se puede hacer de, se puede hacer
+
+268
+00:27:50,049 --> 00:27:55,210
+programente, con código avanzado prácticamente no voy a decir todo porque no, porque todo
+
+269
+00:27:55,210 --> 00:27:59,809
+no se puede, pero realmente se puede casi todo lo que es objetivizable, porque además
+
+270
+00:27:59,809 --> 00:28:04,690
+hoy en día ICLenguage cada vez es más abierto y tiene más objetos externos, se puede llamar
+
+271
+00:28:04,690 --> 00:28:10,569
+bases de datos externas, de Excel, realmente se pueden trabajar de manera muy flexible,
+
+272
+00:28:10,569 --> 00:28:16,849
+todo no, insisto, pero por código se puede hacer casi todo, pasa que ya hay cosas pues
+
+273
+00:28:16,849 --> 00:28:20,730
+un poquito más complicadas, que yo mismo por ejemplo sería capaz, para eso está Roberto
+
+274
+00:28:20,730 --> 00:28:27,730
+que sí que es capaz de todo y más. Entonces por ejemplo aquí optimizamos la banda
+
+275
+00:28:27,769 --> 00:28:31,369
+de Bollinger y es 32, vamos a dejar la desviación porque es una probabilidad que queremos hacer
+
+276
+00:28:31,369 --> 00:28:39,069
+las dos, optimizamos la misma, la otra para el otro lado y el stop lo dejamos o no, vamos
+
+277
+00:28:39,069 --> 00:28:48,180
+a optimizar un poco el stop también, vamos a poner desde 500 a 1500, 250, 2000, vale.
+
+278
+00:28:54,519 --> 00:28:59,960
+Esto aquí fijaros que os salen las opciones, esta línea de abajo no debe salir, eso es
+
+279
+00:28:59,960 --> 00:29:05,240
+un fallo de mi portátil de hace tiempo, en ningún ordenador me pasa, pero aquí no sé,
+
+280
+00:29:05,319 --> 00:29:08,559
+como que no encajan las ventanas, no sé por qué, me pasaron varios problemas, no solo
+
+281
+00:29:08,559 --> 00:29:15,019
+con 3D, entonces alguna historia interna del portátil, pero aquí esto se debe ver mejor
+
+282
+00:29:15,019 --> 00:29:19,259
+que aquí, optimización siempre tenéis dos tipos, ya la standard y la world forward,
+
+283
+00:29:19,259 --> 00:29:23,859
+luego la veremos porque la world forward es la que nos lleva al world forward ultimizer,
+
+284
+00:29:23,859 --> 00:29:30,519
+la optimización standard que puede ser exhaustiva o genética, si le dais a advanced settings
+
+285
+00:29:30,519 --> 00:29:35,759
+fijaros que aquí es donde marcáis el periodo que dejáis fuera de muestra, este es el world
+
+286
+00:29:35,759 --> 00:29:40,559
+forward clásico que os decía antes en el powerpoint, aquí le ponemos el outsample
+
+287
+00:29:40,559 --> 00:29:46,240
+window, es decir que parte del histórico quieres que no optimice, por defecto pone 30
+
+288
+00:29:46,240 --> 00:29:51,599
+pero podés cambiarlo y podés incluso poner una parte inicial y una parte final como quieras,
+
+289
+00:29:51,599 --> 00:29:57,200
+normalmente se deja 30, 20, 10% de visual, depende de la cantidad de muestra, y luego
+
+290
+00:29:57,200 --> 00:30:02,759
+las opciones del optimizador automático que al principio le das a su jest y te las va
+
+291
+00:30:02,759 --> 00:30:11,329
+a tocar, se puede tocar las pruebas de stress pero no toca, bueno esto depende, esto depende
+
+292
+00:30:12,769 --> 00:30:20,730
+mucho, no hay una regla absoluta, realmente depende del tipo de sistema, si es un sistema
+
+293
+00:30:20,730 --> 00:30:23,569
+que va en gráfico diario, es un sistema que va en intradía, es un sistema que tiene
+
+294
+00:30:23,569 --> 00:30:28,170
+pocos straights, muchos straights, en todas formas déjame que luego cuando hablemos del
+
+295
+00:30:28,170 --> 00:30:32,849
+world forward ultimizer vamos a entrar un poco más en este concepto de periodos que
+
+296
+00:30:32,849 --> 00:30:37,400
+es muy muy interesante, pero luego quizá vamos a entrar mejor, aquí ya no me deja
+
+297
+00:30:37,400 --> 00:30:43,960
+hacer lo genético porque realmente hay muy pocas combinaciones, no me deja elegir, bueno
+
+298
+00:30:43,960 --> 00:30:50,170
+no se me deja no, no me deja cambiarlo, no, me va a decir que lo haga exhaustivo porque
+
+299
+00:30:50,170 --> 00:30:56,480
+hay muy pocas, esto ahora lo va a hacer, no sé si va rápido, no sé cuánto histórico
+
+300
+00:30:56,480 --> 00:31:02,849
+he cargado, aquí ni me he fijado, no, hay demasiado histórico, bueno lo vamos a dejar
+
+301
+00:31:02,849 --> 00:31:13,309
+ahí, le he dejado el 30% fuera de muestra, bueno entonces esto aquí va haciendo su proceso
+
+302
+00:31:14,990 --> 00:31:21,230
+y ahora veréis que nos va a sacar una estadística con los datos in sample, los datos auto sample
+
+303
+00:31:21,230 --> 00:31:26,789
+no optimizados y conjuntos, esto sería el world forward clásico que me estaba refiriendo
+
+304
+00:31:26,789 --> 00:31:32,269
+aquí, el world forward clásico, que consiste en optimizar un histórico y dejar libre
+
+305
+00:31:32,269 --> 00:31:36,829
+otro, hay plataformas que no lo permiten hacer ya directamente y tú optimizas una
+
+306
+00:31:36,829 --> 00:31:41,029
+parte y lo pruebas en otra, pero evidentemente es mucho más rápido así, porque además
+
+307
+00:31:41,029 --> 00:31:46,029
+nos permite unir los datos ya en una estadística y además es realmente mucho más sencillo,
+
+308
+00:31:46,029 --> 00:32:07,880
+no sé cuánto histórico he cargado aquí, normalmente va remontando, cuando a veces
+
+309
+00:32:08,079 --> 00:32:15,299
+pone una hora y al final son 30 minutos, bueno seguimos en todo el caso avanzando un poco
+
+310
+00:32:18,339 --> 00:32:25,690
+la teoría y ahora cuando nos acabe pues volvemos aquí, entonces en que supone que es el world
+
+311
+00:32:30,700 --> 00:32:37,700
+forward avanzado, lo vais a ver mejor en una imagen, esto es una aplicación que forma
+
+312
+00:32:38,700 --> 00:32:44,700
+parte de the station, pero es una aplicación por sí sola, se llama world forward optimizer,
+
+313
+00:32:44,700 --> 00:32:50,460
+esta aplicación te permite, como pongo aquí un poco, pues empieza realmente cuando el
+
+314
+00:32:50,460 --> 00:32:55,299
+resto de métodos de backtesting acaban, como os decía antes es bastante parecido a probar
+
+315
+00:32:55,299 --> 00:33:00,099
+con datos futuros, porque aquí en este world forward clásico que acabamos de hacer hemos
+
+316
+00:33:00,099 --> 00:33:05,059
+visto una optimización, con un periodo in sample y otro periodo auto sample que ahora
+
+317
+00:33:05,059 --> 00:33:11,539
+cuando acabe veremos, el world forward optimizer lo que hace es en un único proceso hacer
+
+318
+00:33:11,539 --> 00:33:18,539
+centenares de muestras distintas, lo vais a ver en un ejemplo práctico, lo voy a enseñar
+
+319
+00:33:19,619 --> 00:33:25,579
+para que lo veáis, hace centenares, de tal manera que yo puedo combinar, aquí que hemos
+
+320
+00:33:25,579 --> 00:33:32,579
+hecho en este ejemplo, hemos optimizado el 70% histórico y hemos dejado el 30% fuera,
+
+321
+00:33:32,579 --> 00:33:39,700
+en este ejemplo que se está ahora optimizando, pero yo puedo hacer también 80-20 o 90-10
+
+322
+00:33:39,700 --> 00:33:46,700
+o 60-40, puedo variar la ventana, puedo variar la ventana y puedo variar el número de runes,
+
+323
+00:33:47,539 --> 00:33:53,980
+el número de cortes, aquí fijaros cada rune para que lo entendáis en este gráfico, es
+
+324
+00:33:53,980 --> 00:33:56,980
+una simplificación por meses, no tiene por qué ser natural por meses, las fuentes pueden
+
+325
+00:33:56,980 --> 00:34:01,859
+cambiar pero sencillamente para que, aquí al final el periodo de optimización es de
+
+326
+00:34:02,180 --> 00:34:09,309
+5 meses, 4 se optimizan y 1 no, es 20%, optimizo el 80% y el 20% lo dejo fuera, igual aquí,
+
+327
+00:34:14,869 --> 00:34:21,869
+pero fijaros que esto es un rune, esto es otro rune, esto es otro, 3, 4, 5, 6, 7 y 8,
+
+328
+00:34:21,869 --> 00:34:28,179
+en total ha hecho 8 runes, y lo mismo, yo puedo variar esta ventana que en este caso
+
+329
+00:34:28,179 --> 00:34:33,670
+en esta pantalla es 80-20, pero también puedo variar el número de runes, o sea porque
+
+330
+00:34:33,670 --> 00:34:41,090
+hago 8 y no hago 5 o no hago 15, porque esto moviendo donde, el hecho, fijaros aquí que
+
+331
+00:34:43,730 --> 00:34:49,219
+este periodo que inicia, inicia en el mes 1 y este inicia en el mes 2 y este inicia
+
+332
+00:34:49,219 --> 00:34:54,380
+en el mes 3, se inicia en el mes 4, esto es así ya digo porque es una ejemplificación
+
+333
+00:34:54,380 --> 00:34:58,980
+pero no tiene por qué ser así, este podría empezar en el mes 3 y este en el mes 5 y
+
+334
+00:34:58,980 --> 00:35:04,059
+este en el mes 7 y por lo tanto en medio de 8 pues hacer 4 o al revés, podría empezar
+
+335
+00:35:04,059 --> 00:35:11,059
+justo aquí, en el mes y medio y en el 2 mes y medio y en vez de 8 hacer 12, 12 runes.
+
+336
+00:35:14,139 --> 00:35:19,539
+Estas dos, voy a ir un poco adelante y atrás ahora para intentar explicaros lo mejor que
+
+337
+00:35:19,539 --> 00:35:26,860
+pueda, estas dos variables, es decir el porcentaje que yo dejo fuera de mostra, normalmente elegimos
+
+338
+00:35:27,659 --> 00:35:34,659
+entre el 5 y el 30% como veis aquí y el número de runes que hacemos, son las dos variables
+
+339
+00:35:34,900 --> 00:35:42,380
+claves para hacer un World Forward Ultimizer, que insisto vais a ver en un ejemplo práctico.
+
+340
+00:35:43,059 --> 00:35:50,059
+Aquí variamos estas dos variables, en este ejemplo práctico de 5 a 30% fuera de muestra
+
+341
+00:35:51,659 --> 00:35:58,659
+con incrementos de 5% y con de 4 a 12 runes de 1 en 1, es decir 4, 5, 6, hacemos un montón
+
+342
+00:35:59,940 --> 00:36:06,940
+de runes distintos, de tal manera veis aquí tenéis, que luego lo veréis cuando acabe
+
+343
+00:36:07,699 --> 00:36:12,820
+este que está haciendo ahora, aquí tenéis una copia de uno de ellos, es este, en la
+
+344
+00:36:12,820 --> 00:36:19,539
+columna primera tenéis fuera de muestra de 5 a 30% y en la fila de la cabecera veis
+
+345
+00:36:19,539 --> 00:36:26,630
+que van los runes del 4 al 11, que hay equipos de 12 pero es al 11, son distintos runes,
+
+346
+00:36:27,889 --> 00:36:35,210
+o sea un rune es esto, es cada fila, un rune es cada fila, ahora lo vas a ver, lo hace
+
+347
+00:36:41,619 --> 00:36:47,579
+todo en un proceso el solo, si si si, un proceso muy intensivo y además hace unas pruebas
+
+348
+00:36:47,579 --> 00:36:53,940
+a cada set que ahora lo vais a ver, realmente lo destacable no es solo el hecho de probarlo
+
+349
+00:36:53,940 --> 00:36:58,019
+sino que luego te da datos sobre ello, luego te da datos de cada una de ellas, de cada
+
+350
+00:36:58,139 --> 00:37:04,949
+una de ellas, entonces aquí obtenemos cada combinación, este cluster, esta casilla que
+
+351
+00:37:04,949 --> 00:37:12,050
+es 5% fuera de muestra y 4 runs, y esta de aquí es 20% fuera de muestra y 7 runs, cada
+
+352
+00:37:16,559 --> 00:37:23,559
+una de ellas pues así, y todas ellas, de todas ellas vas a poder ver todos los datos,
+
+353
+00:37:24,559 --> 00:37:33,130
+por lo tanto, recapitulando, recapitulando, como os decía en la definición inicial es
+
+354
+00:37:33,130 --> 00:37:40,130
+un proceso que hace sucesivas optimizaciones, aplicando, o sea, hace sucesivas optimizaciones,
+
+355
+00:37:41,210 --> 00:37:47,469
+sucesivos runs con una ventana elegida concreta, los mejores parámetros que obtienen ese
+
+356
+00:37:47,469 --> 00:37:55,389
+set los aplica un periodo fuera de muestra y en ese caso igual que hace la optimización
+
+357
+00:37:55,429 --> 00:38:00,829
+clásica wall forward, lo que pasa que lo hace en muchos sets conjunto y que nos da
+
+358
+00:38:00,829 --> 00:38:07,829
+los datos agrupados luego, luego podemos ver todos estos datos de manera agrupada, ahora
+
+359
+00:38:09,429 --> 00:38:13,550
+lo vais a ver que es realmente fantástico, por eso decía antes no de las comillas de
+
+360
+00:38:13,550 --> 00:38:18,309
+qué lo vuelvo a poner, es como probar el sistema de datos futuros porque realmente
+
+361
+00:38:18,309 --> 00:38:23,510
+es así, realmente tú puedes construir con este método un histórico fuera de muestra
+
+362
+00:38:23,630 --> 00:38:30,860
+muy largo, de mucho tiempo atrás, o sea, que hubiera pasado si en el pasado yo hubiera
+
+363
+00:38:31,019 --> 00:38:35,900
+hecho wall forward y hubiera aplicado, que hubiera pasado si, esa es un poco la clave,
+
+364
+00:38:35,900 --> 00:38:41,289
+por eso entre comillas insisto hablamos de fabricar datos futuros, estas son una de las
+
+365
+00:38:41,289 --> 00:38:46,449
+preguntas típicas que responde wall forward optimizer que además equivale a decir si
+
+366
+00:38:46,449 --> 00:38:52,530
+es robusto mi sistema, lo resumimos así, pero un sistema robusto pues sería esto, un
+
+367
+00:38:52,530 --> 00:38:55,409
+sistema que gane dinero después de optimizar gane dinero, no, eso es lo que queremos,
+
+368
+00:38:55,409 --> 00:39:01,469
+pues este aplicación intenta responder a eso, bueno no intenta, responde a eso, o sea responde
+
+369
+00:39:01,469 --> 00:39:06,309
+objetivamente a eso, otra cosa insisto, esto lo comento siempre, no quiere decir que un
+
+370
+00:39:06,309 --> 00:39:12,179
+sistema que pase el wall forward optimizer va a ganar dinero en el mercado seguro, eso
+
+371
+00:39:12,179 --> 00:39:16,300
+es imposible porque el mercado cambia y si el mercado puede automáticamente hacer un
+
+372
+00:39:16,300 --> 00:39:20,619
+cambio que no ha estado contemplado nunca en el histórico el sistema dejará de ganar
+
+373
+00:39:20,619 --> 00:39:30,300
+dinero. Desde luego con esta aplicación podemos objetivar la robustez, yo puedo decir objetivamente
+
+374
+00:39:30,300 --> 00:39:34,380
+que ese sistema es robusto en este momento, ahora, lo que no puedo decir es si el futuro
+
+375
+00:39:34,380 --> 00:39:40,820
+del mercado que hará, pero si puedo llegar a esta conclusión que hasta ahora pues no
+
+376
+00:39:40,820 --> 00:39:46,699
+será muy difícil llegar, realmente utilizabamos con excel, hacíamos wall forward, pero incluso
+
+377
+00:39:46,699 --> 00:39:51,659
+las pruebas que hemos hecho todos en excel mezclando histórico tal no llegan a este
+
+378
+00:39:51,659 --> 00:39:57,579
+nivel nunca, ahora lo vais a ver porque los datos que obtenemos son tremendos, y una cosa
+
+379
+00:39:57,579 --> 00:40:05,579
+que es realmente que nosotros en Cersan Sistemas que ya sabéis que además de estar explicándolos
+
+380
+00:40:05,579 --> 00:40:12,579
+y intentando formar a todo el país, bueno a los interesados en 3 session pues intentamos
+
+381
+00:40:12,579 --> 00:40:17,099
+hacerlo no, pero además somos desarrolladores de sistemas y nosotros intentamos aplicar
+
+382
+00:40:17,099 --> 00:40:21,300
+esta última casilla que veis aquí, de que cada cuanto tiempo debemos reoptimizar nuestro
+
+383
+00:40:21,300 --> 00:40:31,039
+sistema y wall forward automation también responde a eso, no en todos los casos, porque
+
+384
+00:40:31,039 --> 00:40:34,199
+depende de la muestra si es significativa o no, aquello que os decía antes necesitamos
+
+385
+00:40:34,199 --> 00:40:40,000
+que la muestra sea significativa, pero si la muestra es significativa normalmente vamos
+
+386
+00:40:40,000 --> 00:40:45,719
+a poder también programar la reoptimización del sistema, nosotros ahora mismo tenemos
+
+387
+00:40:45,719 --> 00:40:52,159
+un sistema operando, o sea este set que os voy a dar, ahora os voy a enseñar un wall
+
+388
+00:40:52,159 --> 00:40:56,840
+forward en el programa original, de verdad este es el set, perdón este es el wall forward
+
+389
+00:40:56,840 --> 00:40:59,960
+que ha elegido los parámetros de nemesis de un sistema que está en el mercado operando
+
+390
+00:40:59,960 --> 00:41:06,510
+en tiempo real ahora mismo, o sea que es 100% real, estos son algunos de los gráficos que
+
+391
+00:41:07,269 --> 00:41:14,269
+vamos a ver ahora mismo, pero no me extendo aquí porque un poco lo pongo como por seguridad
+
+392
+00:41:14,269 --> 00:41:18,030
+por si no me fuera la conexión o algo, pues no tengo y puedo hablar de ello, pero estas
+
+393
+00:41:18,030 --> 00:41:25,190
+mismas tablas las vais a ver ahora en situ, antes recapitulemos un momentito que nos va
+
+394
+00:41:26,550 --> 00:41:32,909
+a ayudar a comprender un poquito todo esto, aquellos que estén familiarizados con sistemas
+
+395
+00:41:32,989 --> 00:41:39,510
+puede resultar más o menos entendible, pero realmente si no pues es un concepto que puede
+
+396
+00:41:39,510 --> 00:41:46,230
+resultar un tanto complejo, la optimización que habíamos puesto con el wall forward clásico
+
+397
+00:41:46,230 --> 00:41:50,510
+ya ha acabado, cuando acaba aparece el gráfico, no nos la abre, tenemos que ir a la opción
+
+398
+00:41:50,510 --> 00:41:56,190
+view, strategy, optimización report o darle al myusov por acceso directo al teclado,
+
+399
+00:41:56,190 --> 00:42:03,190
+por ejemplo aquí y os va a abrir el histórico, el informe de la optimización, fijaros que
+
+400
+00:42:05,670 --> 00:42:12,670
+arriba hay tres tipos de datos, all data, in sample data y out of sample data, es decir
+
+401
+00:42:14,119 --> 00:42:19,559
+aquello que os decía que habíamos elegido aquella ventana del 30% ya tenéis los datos
+
+402
+00:42:19,559 --> 00:42:24,119
+separados, esto normalmente los portamos, debemos aguardar y los sacamos cada uno de
+
+403
+00:42:24,119 --> 00:42:31,119
+ellos y lo portamos en excel, digamos que puedes trabajar mejor con los datos. Un dato
+
+404
+00:42:32,719 --> 00:42:39,880
+muy destacable que da TrayStation ya aquí en este informe, que insisto esto es el wall
+
+405
+00:42:39,880 --> 00:42:44,199
+forward clásico, esta optimización es normal y corriente solo que ya nos permite ver este
+
+406
+00:42:44,199 --> 00:42:50,679
+wall forward, tiene una última columna que se llama el robotness index, que no es más
+
+407
+00:42:50,679 --> 00:42:57,280
+que si el sistema está ganando lo mismo anualmente en la parte fuera de muestra que
+
+408
+00:42:57,280 --> 00:43:04,309
+la parte optimizada, en este caso fijaros que el mejor ordenado por expectancy score
+
+409
+00:43:06,389 --> 00:43:12,070
+porque es el que hemos elegido, que está marcado en gris, en el conjunto de datos fijaros
+
+410
+00:43:12,070 --> 00:43:18,590
+que fuera de muestra lo ha hecho un 55% peor, no ha ido bien, en cambio aquí tenemos el
+
+411
+00:43:18,590 --> 00:43:23,230
+tercero que lo ha hecho mejor, realmente lo ha hecho un 288 mejor, se ha ido muy bien
+
+412
+00:43:23,230 --> 00:43:30,230
+fuera de muestra, esto realmente es una muestra que tiene 403, para una intradía me gustaría
+
+413
+00:43:31,030 --> 00:43:38,030
+que tuviera más pero no está mal, no es una mala muestra, entonces si ahora por ejemplo
+
+414
+00:43:38,989 --> 00:43:45,349
+aplicamos este conjunto, no vamos a complicarnos mucho la vida, esto es solo para que veáis
+
+415
+00:43:45,550 --> 00:43:48,670
+como funciona, aquí si haces doble clic estos parámetros ahora mismo me los ha aplicado
+
+416
+00:43:48,670 --> 00:43:56,760
+al sistema, me los ha cambiado, este que es set zone, pues son en vez del 20 por defectos
+
+417
+00:43:56,760 --> 00:44:02,039
+30, el periodo 30 que se ha ido a la banda alta y si que el stop más o menos lo mantiene
+
+418
+00:44:02,039 --> 00:44:07,960
+siendo 50, 1000 en esa zona más bien baja, pero fijaros que el periodo lo quiere aumentar
+
+419
+00:44:07,960 --> 00:44:13,360
+un poco, quiere ir un poco más lento, porque le hemos puesto comisiones entonces a la que
+
+420
+00:44:13,360 --> 00:44:20,360
+el operar empieza a costar dinero normalmente quiere operar menos, eso suele pasar, entonces
+
+421
+00:44:23,039 --> 00:44:28,550
+esta es una optimización normal, esto aquí podemos exportarlo a excel, podemos exportarlo
+
+422
+00:44:28,550 --> 00:44:33,829
+a excel y trabajarlo y mezclarlo, nosotros a modo de ejemplo, que veáis un poquito el
+
+423
+00:44:33,829 --> 00:44:40,900
+proceso sencillamente, nosotros hacemos optimizaciones de muchos tipos, esto por favor no divulgáis
+
+424
+00:44:40,900 --> 00:44:50,780
+nada, que tendría que mataros luego, a ver si lo encuentro, no está aquí, no está
+
+425
+00:44:52,780 --> 00:45:02,619
+aquí, aquí, estos son world forward, pero es igual efectos del dato es lo mismo, esto
+
+426
+00:45:02,699 --> 00:45:06,860
+por ejemplo, aquí tienes la tabla insample, la tabla autosample, la tabla load data, aquí
+
+427
+00:45:06,860 --> 00:45:11,380
+hacemos luego unos distintos vistores y los trabajamos, pero al final apuntamos un poquito
+
+428
+00:45:12,019 --> 00:45:22,369
+los datos de la optimización, etcétera, no lo he oído, perdón, ¿me puedo repetir?
+
+429
+00:45:22,369 --> 00:45:28,460
+Sí sí, puedes hacerlo antes o después, puedes dejarlos, ahora lo he comentado, esto es un
+
+430
+00:45:28,460 --> 00:45:40,840
+excel a título de muestra, nosotros lo exportamos y aquí trabajas, aquí el property for alls
+
+431
+00:45:41,079 --> 00:45:50,099
+en el, ya lo diré, aquí por ejemplo, vamos a poner por probarlo solo, aquí en el advanced
+
+432
+00:45:50,900 --> 00:45:57,900
+settings, aquí escrut first, aquí excluye histórico por delante o por detrás, si quiere
+
+433
+00:45:59,420 --> 00:46:08,230
+puede poner 30% por delante y cero por detrás, en el world forward optimizer no, yo lo he
+
+434
+00:46:08,230 --> 00:46:12,869
+hecho lo primer día para ver que hacía y sé que lo hace pero no tiene sentido, realmente
+
+435
+00:46:12,869 --> 00:46:17,230
+no tiene sentido, realmente para el world forward optimizer lo que nos interesa es saber si
+
+436
+00:46:17,230 --> 00:46:23,019
+ha ido ganando dinero en el futuro, no en el pasado, no tendría, lo vamos a ver y creo
+
+437
+00:46:23,019 --> 00:46:29,179
+que queda claro, entonces si queremos hacer un world forward optimizer que tenemos que
+
+438
+00:46:29,179 --> 00:46:32,739
+hacer, porque esta es la optimización que hemos visto clásica, que también es interesante
+
+439
+00:46:32,739 --> 00:46:38,219
+y útil, es la que tiene la mayoría de plataformas, que insisto puede ser genética o exhaustiva,
+
+440
+00:46:38,219 --> 00:46:42,300
+en caso de three station, pero luego para hacer un world forward optimizer tenemos que venir
+
+441
+00:46:42,300 --> 00:46:47,659
+aquí y elegir world forward, a esto hay que ponerle un nombre, que será luego el nombre
+
+442
+00:46:47,659 --> 00:46:53,659
+que tendrá, es esto, este es de don chan porque es un canal de don chan que mi amigo
+
+443
+00:46:53,659 --> 00:47:00,659
+Roberto le gusta mucho y luego aquí, al final lo que se elige es un poco lo mismo, la ventana,
+
+444
+00:47:05,260 --> 00:47:08,460
+aquí realmente no importa porque luego la van a cambiar, pero bueno, podéis elegir
+
+445
+00:47:08,460 --> 00:47:12,780
+la ventana que dais, realmente no importa, el algoritmo y tal, pero lo mismo, puede ser
+
+446
+00:47:12,780 --> 00:47:17,699
+genética o exhaustiva, igual, o sea, tú puedes hacer un world forward optimizer genético
+
+447
+00:47:17,699 --> 00:47:24,590
+o exhaustivo, lo único que hay que marcarlo aquí, ponerle un nombre porque luego una
+
+448
+00:47:24,590 --> 00:47:28,869
+vez acabe la optimización aquí, lleve su tiempo, habrá que ir aquí y hacer otro proceso,
+
+449
+00:47:28,869 --> 00:47:34,630
+o sea, es un proceso en dos fases actualmente, de hecho están trabajando en versiones donde
+
+450
+00:47:34,630 --> 00:47:41,630
+esto está un poco más unificado, porque esto, esta app world forward optimizer lo compró
+
+451
+00:47:41,710 --> 00:47:46,710
+hace años a Grail, si buscas esto también encontrarás su formación, es una aplicación,
+
+452
+00:47:46,710 --> 00:47:50,829
+ya lo he dicho muchas veces, pero es que no me canso de decirlo, para mi es única, es
+
+453
+00:47:50,829 --> 00:47:56,869
+fantástica, entonces la compro y realmente la he ido integrando en 3D Station, pero bueno,
+
+454
+00:47:56,869 --> 00:48:01,389
+como que en cada versión que saca la integra un poco más, es decir, hay alguna cosita,
+
+455
+00:48:01,389 --> 00:48:06,670
+entonces aún realmente hay cosas que se ve, que se nota, que es una aplicación que se
+
+456
+00:48:06,670 --> 00:48:10,750
+externa y que ellos la están integrando, y esto es uno de ellos, porque realmente esto
+
+457
+00:48:11,150 --> 00:48:15,550
+la lógica sería que ya desde aquí pudieras ya hacer las dos cosas, pero realmente haces
+
+458
+00:48:15,550 --> 00:48:20,949
+un proceso aquí y luego vienes aquí y lo abres y haces otro, ahora mismo está así,
+
+459
+00:48:20,949 --> 00:48:27,190
+en la 9.5 que está en beta, en principio creo que hay alguna mejora en ese sentido,
+
+460
+00:48:27,190 --> 00:48:31,789
+no estoy seguro si cambia totalmente, pero hay alguna mejora en ese sentido, bueno, entonces
+
+461
+00:48:31,789 --> 00:48:38,789
+una vez se hace, a ver que voy a quitar aquí la optimización para que no me salga a optimizar,
+
+462
+00:48:38,789 --> 00:48:43,349
+entonces esto se acaba la optimización, sale también nuestro informe igual, o sea cuando
+
+463
+00:48:43,349 --> 00:48:46,389
+hacemos el World Forward Optimizer también sacamos el informe este y lo podemos llevar
+
+464
+00:48:46,389 --> 00:48:52,059
+a Excel, de hecho ese que os he abierto era uno de World Forward, pero desde aquí vamos
+
+465
+00:48:52,059 --> 00:48:56,820
+a cargar el histórico y le vamos a hacer un proceso de World Forward ¿Vale? ¿Cómo se
+
+466
+00:48:56,820 --> 00:49:01,940
+hace un proceso de World Forward Optimizer? Esto que veis es la aplicación en cuestión,
+
+467
+00:49:01,940 --> 00:49:07,380
+que se abre desde dentro de 3D Station, es una de ellas, de todas estas que hay aquí,
+
+468
+00:49:07,380 --> 00:49:12,900
+entonces es esta World Forward Optimizer ¿Vale? Esto se abre, esa clic y aparece ese
+
+469
+00:49:12,900 --> 00:49:19,250
+programa ¿Vale? Aparece ese programa, bueno voy a abrirlo así de momento, aparece así,
+
+470
+00:49:19,250 --> 00:49:26,500
+abres un set que hemos optimizado que está aquí ¿Vale? Y aquí ahora eliges unas determinadas
+
+471
+00:49:27,219 --> 00:49:35,150
+opciones que os voy a explicar como se hace ¿Vale? Primero el criterio, bueno antes no
+
+472
+00:49:36,150 --> 00:49:42,909
+os he explicado las pruebas, os lo voy a explicar brevemente porque eso creo que es muy importante,
+
+473
+00:49:42,909 --> 00:49:51,860
+no solo el hecho de que, no solo el hecho de estos sets que habéis visto, todo este
+
+474
+00:49:52,099 --> 00:49:58,130
+cluster está mezclado entre autosample y run, sino esto que veis aquí, pass y fail,
+
+475
+00:49:58,130 --> 00:50:05,130
+que es ¿Vale? Esto verde tan chulo que es ¿Vale? Realmente al final el WFE lo que hace
+
+476
+00:50:06,090 --> 00:50:12,210
+en realidad es una prueba de estrés muy fuerte ¿Vale? Y nos va a dar al final un resultado
+
+477
+00:50:12,210 --> 00:50:17,789
+de pass o fail de cada uno de los clusters pero también en global ¿Vale? Él nos va
+
+478
+00:50:17,789 --> 00:50:25,139
+a decir si cree que el sistema pasa esta prueba ¿Vale? Y en que consiste pasar esta prueba
+
+479
+00:50:26,579 --> 00:50:31,179
+¿Vale? ¿En que consiste pasar esta prueba? Pues pasar esta prueba son estos 5 sets ¿Vale?
+
+480
+00:50:31,179 --> 00:50:38,179
+Estos 5 pruebas ¿Vale? Primero de ellos, que son configurables ¿Vale? Me vuelvo al
+
+481
+00:50:40,380 --> 00:50:46,739
+WF porque os lo voy a enseñar aquí ¿Vale? Son configurables, él tiene estos por defecto
+
+482
+00:50:46,739 --> 00:50:51,260
+pero son estas 5 que veis aquí, criterio 1, criterio 2, criterio 3, criterio 4, criterio
+
+483
+00:50:51,260 --> 00:50:58,380
+5 ¿Vale? El criterio 5 es que el sistema gane dinero ¿Vale? Parece bastante, con datos fuera
+
+484
+00:50:58,420 --> 00:51:05,059
+de muestra ¿Eh? ¿De acuerdo? O sea todas estas pruebas son a los datos o a la comparación
+
+485
+00:51:05,059 --> 00:51:11,099
+entre los datos fuera de muestra y optimizados, es decir los datos out of sample y in sample
+
+486
+00:51:11,099 --> 00:51:16,260
+¿Vale? Entonces que el sistema en total fuera de muestra gane dinero, incluso yo puedo cambiarlo,
+
+487
+00:51:16,260 --> 00:51:21,739
+puedo hacerlo más exigente si quiero ¿Vale? Que el WF Efficiency sea mayor que el 50%,
+
+488
+00:51:21,739 --> 00:51:28,099
+el WF Efficiency es lo que os decía antes, es el beneficio, lo que gana el sistema anualizado
+
+489
+00:51:28,099 --> 00:51:35,099
+¿Vale? Que sea al menos el 50% fuera de muestra que lo que gana dentro de muestra, es decir
+
+490
+00:51:35,739 --> 00:51:40,619
+si el sistema gana un millón en ese set que al menos gane 500.000 fuera de muestra, con
+
+491
+00:51:40,619 --> 00:51:46,619
+eso pasaría, de nuevo se puede endurecer la prueba, si quieres ponerlo 80, 90 o 100 ¿Vale?
+
+492
+00:51:46,619 --> 00:51:52,460
+100, cuando un sistema tiene un WF Efficiency, bueno no un sistema, un determinado cluster
+
+493
+00:51:52,460 --> 00:51:57,980
+tiene un 100% quiere decir que gana exactamente lo mismo fuera de muestra que optimizado
+
+494
+00:51:57,980 --> 00:52:04,039
+que eso es lo ideal ¿No? Eso sería lo ideal que hiciera exactamente lo mismo, no es fácil
+
+495
+00:52:04,039 --> 00:52:09,739
+pero es lo ideal ¿Vale? Pero normalmente la industria considera que el hecho que gane
+
+496
+00:52:09,739 --> 00:52:16,650
+un 50 se considera apto, se considera razonable porque puede haber un mercado distinto ¿Vale?
+
+497
+00:52:16,650 --> 00:52:22,250
+Además aquí la, si tenemos más de 100, hombre entendido, pero si es muy reiterado
+
+498
+00:52:22,250 --> 00:52:28,510
+y se aleja mucho es sospechoso, es sospechoso, habría que mirarlo, no quiero decir que no,
+
+499
+00:52:28,510 --> 00:52:35,510
+puede ser porque puedes tener, a ver caso típico, tu pruebas un sistema muy tendencial
+
+500
+00:52:35,510 --> 00:52:41,070
+el periodo en sample es poco tendencial y justo cuando el periodo fuera de muestra tiene
+
+501
+00:52:41,070 --> 00:52:46,789
+una tendencia inhumana, por lo mejor una muestra pega un, ¿Vale? Pero que pasa aquí, que
+
+502
+00:52:46,789 --> 00:52:52,840
+aquí no hablamos de un solo set, ahora lo ves, hablamos de muchos runs, entonces realmente
+
+503
+00:52:52,840 --> 00:52:58,320
+es una prueba que por eso en si, porque hay gente que dice, hombre el 50 me parece un
+
+504
+00:52:58,360 --> 00:53:03,360
+poco laxo, bueno pero es que no es a 1, o sea realmente lo vas a ver en un conjunto,
+
+505
+00:53:03,360 --> 00:53:08,760
+o sea no es en un único run como el ejemplo que habéis visto ahora anteriormente en una
+
+506
+00:53:08,760 --> 00:53:14,760
+columna, ese es un run, en el estadístico que os he enseñado en 3stations, la tabla,
+
+507
+00:53:14,760 --> 00:53:19,760
+había la columna de la derecha, que ahí en uno ponía 200, otro menos 50, eso era
+
+508
+00:53:19,760 --> 00:53:26,760
+el world floor of efficiency, de 1, 70 a 30, este es de por ejemplo los 5 runs que hayan,
+
+509
+00:53:27,679 --> 00:53:34,739
+los 5 fuera de muestra, es decir es una media de todos, por lo tanto y cada uno de ellos
+
+510
+00:53:35,619 --> 00:53:43,300
+corresponde a un periodo distinto, por lo tanto es una prueba que se aplica mucho a
+
+511
+00:53:43,300 --> 00:53:48,260
+lo largo del tiempo, por lo tanto tiene mucha validez estadística, ¿de acuerdo? Consistencia
+
+512
+00:53:48,260 --> 00:53:55,420
+de los beneficios, es decir, que ninguno, no es en la distribución de los beneficios,
+
+513
+00:53:59,059 --> 00:54:06,309
+quiero decir ahora, exacto, que ninguno de ellos, bueno se puede poner que todos ganen
+
+514
+00:54:06,309 --> 00:54:13,309
+o que al menos el 50% de ellos tengan beneficios, es decir, si tú tienes 10 runs, con cuántos
+
+515
+00:54:16,590 --> 00:54:20,829
+crees que tienen que haber ganado o cuántos perdidos, si yo le pongo 50 quiere decir que
+
+516
+00:54:20,829 --> 00:54:25,829
+al menos el 5 runs tiene que haber ganado, si le pongo 80 pues creen que al menos en
+
+517
+00:54:25,829 --> 00:54:32,929
+8 tiene que haber ganado, ¿vale? Fuera de muestra, insisto, lo vais a ver ahora en
+
+518
+00:54:33,050 --> 00:54:37,489
+plática y luego la distribución, ese también es importante, aunque ojo que este a veces
+
+519
+00:54:37,489 --> 00:54:44,489
+los tendenciales le cuesta de pasar, aunque Nemesis lo ha pasado, pero le cuesta, lo ha
+
+520
+00:54:45,369 --> 00:54:51,050
+pasado por muy poco, por este variable, ¿vale? Porque que ninguno de los runs contribuya
+
+521
+00:54:51,050 --> 00:54:57,170
+más de, en este caso, el 50% del beneficio total, es decir, que no haya 2, 3 que no ganan
+
+522
+00:54:57,170 --> 00:55:01,409
+nada y en uno de golpe gane todo, eso tampoco, lo que nos gusta es que el sistema realmente
+
+523
+00:55:01,409 --> 00:55:06,489
+demuestre que ha ganado dinero en distintos periodos, no solo en uno de ellos, ¿no? Y
+
+524
+00:55:06,489 --> 00:55:13,010
+para acabar el último variable es que el drawdown sea, en este caso, que ninguno de
+
+525
+00:55:13,010 --> 00:55:24,530
+los sets tenga más de un 40% de drawdown, ¿vale? Sobre capital inicial, bueno, ahora
+
+526
+00:55:24,530 --> 00:55:27,570
+vamos a verlo en práctico porque aquí os he querido enseñar aquí y la verdad es que
+
+527
+00:55:27,570 --> 00:55:33,170
+creo que aquí queda muy engorroso. Ahora os lo voy a enseñar en el ejemplo práctico,
+
+528
+00:55:33,170 --> 00:55:37,730
+¿vale? Aquí abajo veis un poco la idea y es esto, ¿ves? Él te dice de cada uno de
+
+529
+00:55:37,730 --> 00:55:41,849
+ellos si lo pasa o no, de cada uno de ellos, te dice el global, el global es que los tiene
+
+530
+00:55:41,849 --> 00:55:47,039
+que pasar todos, o sea, nada más que no pase uno, lo marca felt, o sea, tiene que pasar
+
+531
+00:55:47,039 --> 00:55:52,679
+las 5, sí, sí, por eso digo, que dices, el hecho de que sea 50% me parece largo, no,
+
+532
+00:55:52,679 --> 00:56:01,980
+no, no, los tiene que pasar todos, ¿vale? Los tiene que pasar todos, los tiene que pasar
+
+533
+00:56:02,340 --> 00:56:09,699
+todos, ¿vale? Entonces, volviendo al World Forward, aquí realmente lo que os quería
+
+534
+00:56:10,539 --> 00:56:16,380
+enseñar es, bueno, defines el capital inicial, defines cuál es la función fitness que eliges
+
+535
+00:56:16,380 --> 00:56:20,739
+para hacer esta mezcla. Realmente en este caso podéis incluso utilizar el profit, ¿verdad?
+
+536
+00:56:20,739 --> 00:56:25,260
+Entonces, ya viene, o sea, esto ya se basa en la muestra que ha obtenido en la optimización
+
+537
+00:56:25,260 --> 00:56:29,900
+hecha antes de The Station, es decir, si tú ya hayas elegido un determinado criterio
+
+538
+00:56:29,900 --> 00:56:34,699
+por algoritmo genético, es ese ya, o sea, tú no vienes ya de la totalidad del histórico
+
+539
+00:56:34,699 --> 00:56:40,179
+sino vienes de la serie de trades que ha obtenido de una optimización, por lo tanto, aquella
+
+540
+00:56:40,179 --> 00:56:45,500
+muestra ya está sesgada por el fitness que hayáis elegido en The Station, ¿me explico?
+
+541
+00:56:45,500 --> 00:56:49,219
+Que hayáis elegido al hacer aquí, o sea, aquí hayáis una optimización por un criterio
+
+542
+00:56:49,219 --> 00:56:53,139
+concreto, ¿no? Por ejemplo, expectancy score, por lo tanto la muestra ya viene un poco sesgada
+
+543
+00:56:53,139 --> 00:56:57,860
+por ese criterio, ¿vale? Por lo tanto nosotros solemos utilizar una mezcla de los tres que
+
+544
+00:56:57,860 --> 00:57:02,659
+nos gustan, pero bueno, de verdad que no es, en el World Forward Optimization no está
+
+545
+00:57:02,659 --> 00:57:10,039
+relevante, se puede hacer por el profit, ¿vale? Y una vez hacemos el set up, el start el cluster
+
+546
+00:57:10,119 --> 00:57:18,079
+análisis y al final llegáis, una vez acaba el proceso, que dura lo suyo, recomiendo hacerlo
+
+547
+00:57:18,199 --> 00:57:27,820
+por la noche, llegáis a un resultado, ¿vale? Llegáis a un resultado, son horas dependiendo
+
+548
+00:57:27,820 --> 00:57:34,269
+de, bueno, es depende mucho de los trades, claro, si es un sistema diario que tiene pues
+
+549
+00:57:34,269 --> 00:57:38,070
+depende, puede estar horas, puede estar horas, pero a lo mejor un diario no lo puede hacer
+
+550
+00:57:38,070 --> 00:57:42,269
+en una hora, en dos, para que a lo mejor un interés pues se tarda cinco horas, tres,
+
+551
+00:57:42,269 --> 00:57:48,789
+depende, realmente depende, depende de la muestra que tú hayas puesto, ¿no? Comparativamente
+
+552
+00:57:48,789 --> 00:57:53,030
+es bastante rápido, creo yo, este proceso, comparativamente es más lenta la optimización
+
+553
+00:57:53,030 --> 00:57:56,630
+clásica en 3D Session que el World Forward, la optimización lenta en 3D Session es un
+
+554
+00:57:56,630 --> 00:58:01,349
+tanto lenta actualmente, aunque está, ahora mismo ya digo, la 9.5 está en beta y por
+
+555
+00:58:01,349 --> 00:58:05,510
+fin van a utilizar el multicore, entonces se va a acelerar mucho, que está ya en beta
+
+556
+00:58:05,510 --> 00:58:15,780
+2, con lo cual, pues no sé cuánto, no sé cuántos meses tardará, ¿cómo? Sí, si eres
+
+557
+00:58:15,780 --> 00:58:26,210
+cliente, tú eres cliente de 3D Session, pero tienes cuenta, tú tienes cuenta, pero si
+
+558
+00:58:26,210 --> 00:58:33,239
+tienes cuenta lo que puedes hacer es irte, bueno, luego te lo cuento, te puedes solicitar
+
+559
+00:58:34,159 --> 00:58:41,320
+e inscribirte al beta tester, sí, entonces te avisa y te la instala si quieres, ¿vale?
+
+560
+00:58:42,420 --> 00:58:46,659
+Ten en cuenta que en el que la instales solo va con uno, yo aquí por ejemplo, justamente
+
+561
+00:58:46,659 --> 00:58:50,460
+para mí, puedes tener instaladas las dos, pero solo puedes tener activa una de ellas,
+
+562
+00:58:50,460 --> 00:58:55,519
+o puedes pasar de una a otra, yo ayer pasé de la 9.5 a la 9.1 aquí, para evitar que
+
+563
+00:58:55,639 --> 00:59:01,639
+no se me colgara cualquier historia, porque es una beta y falla, pero ahora mismo yo si
+
+564
+00:59:01,639 --> 00:59:05,679
+hablo de la 9.5 me va a decir que no, que tengo que activarla, tarda un rato, o sea
+
+565
+00:59:05,679 --> 00:59:10,679
+que no puedes simultanear las dos en el mismo ordenador trabajando abiertas, sí, sí, sí,
+
+566
+00:59:10,679 --> 00:59:14,800
+en el ordenador, pero abiertas no puedes tener abiertas la 9.1, si tienes una abierta no
+
+567
+00:59:14,800 --> 00:59:21,530
+puedes tener abiertas la otra, bueno, entonces tú llegas aquí y al final te presenta este
+
+568
+00:59:21,530 --> 00:59:28,719
+ejemplo histórico, en este caso, esto es un sistema intradiliario que vais a ver, para
+
+569
+00:59:28,719 --> 00:59:35,510
+que sepamos, para hacer lo más real posible el ejemplo, es este sistema que está operando
+
+570
+00:59:35,510 --> 00:59:42,670
+en canteras, que lleva unos días bastante buenos, la verdad, la verdad que le toca,
+
+571
+00:59:42,670 --> 00:59:48,909
+este ya pensé que tenía que perder, porque lleva 6, está casi en su récord, 1, 2, 3,
+
+572
+00:59:48,909 --> 00:59:56,099
+4, 5, 6, 7 seguidos, es casi récord, 7 seguidos acertados para un tendencial puro, es récord,
+
+573
+00:59:56,099 --> 01:00:04,099
+2, 3, 4, 5, 6, 7 seguidos, es rarísimo, tiene que palmar, no puede ser, pero ves,
+
+574
+01:00:04,099 --> 01:00:09,699
+este ya pensabas que iba a palmar y gana, por eso hay que seguir el sistema siempre,
+
+575
+01:00:09,699 --> 01:00:17,440
+y a lo mejor te pensas que ya no puede ser y también gana, no, no, es hombre, creo que
+
+576
+01:00:17,440 --> 01:00:21,599
+son sustos, pero es igual, no estamos aquí por eso, no me despises que tú te vas siempre
+
+577
+01:00:21,599 --> 01:00:27,079
+de una cosa a la otra, es un sistema tendencial puro y los temas tendenciales puros, pues
+
+578
+01:00:27,079 --> 01:00:31,440
+tienen, además, tiene aquí dragodrones, intradis fuertes, como este aquí, el susto
+
+579
+01:00:31,440 --> 01:00:40,019
+debe ser este, no lo veo ahora, aquí, esta vela, realmente tiene un sistema tendencial
+
+580
+01:00:40,019 --> 01:00:45,019
+puro que intenta dejar correr los beneficios y cortar las pérdidas, pero bueno, pues a
+
+581
+01:00:45,019 --> 01:00:52,440
+veces les pillan trades muy negativos, pero bueno, este es un sistema que todavía no
+
+582
+01:00:52,440 --> 01:00:57,199
+está disponible en alquiler, esperamos que no esté pronto, lo tenemos en carteras de
+
+583
+01:00:57,199 --> 01:01:01,360
+clientes operando, pero no en alquiler en los bloqueos españoles, pero es más por
+
+584
+01:01:01,360 --> 01:01:08,159
+un tema de tiempo que por otra cosa, esperamos que pronto esté, este chat, uno de ellos,
+
+585
+01:01:08,159 --> 01:01:13,730
+porque hay varios, uno de los que hemos hecho es este, este está hecho, pone la fecha por
+
+586
+01:01:13,730 --> 01:01:20,570
+aquí, no, no me acuerdo, pues esto ya lleva meses hecho, eh, no va a poner en ningún
+
+587
+01:01:20,570 --> 01:01:29,760
+sitio la fecha aquí, ah bueno, muy hábil, vale, esto acabó en octubre, 4 de octubre
+
+588
+01:01:29,760 --> 01:01:36,199
+del 2013, se hizo este set, desde ahí está una parte auditado y otra ya completamente
+
+589
+01:01:36,199 --> 01:01:40,360
+operando en live, o sea, todo esto que habéis visto, esto es todo live, esto está operando
+
+590
+01:01:40,360 --> 01:01:44,360
+no en esta cuenta que está, esta es demo, pero está exactamente igual operando live
+
+591
+01:01:44,920 --> 01:01:51,000
+en el oro, bueno, entonces aquí que tenemos, que al final nos da el resultado, en este
+
+592
+01:01:51,000 --> 01:01:56,480
+caso elegimos un fuera de muestra entre 10 y 30, que suelo elegir ese yo, y los runes
+
+593
+01:01:56,480 --> 01:02:02,559
+ya depende, depende, ¿de qué depende? Depende de los threads que tengamos, y aquí entramos
+
+594
+01:02:02,559 --> 01:02:06,480
+otra vez en aquella frase que os he dicho antes de que la muestra tiene que ser estadísticamente
+
+595
+01:02:06,480 --> 01:02:14,119
+significativa, ¿de acuerdo? Lo ideal es que cada rune sea estadísticamente significativo,
+
+596
+01:02:15,119 --> 01:02:21,309
+¿de acuerdo? Pero aquí sí que somos un poco más laxos que con una sola optimización,
+
+597
+01:02:21,309 --> 01:02:24,869
+¿por qué? Pues justamente por eso, porque cuando hacemos una sola optimización tenemos
+
+598
+01:02:24,869 --> 01:02:32,800
+una y aquí tenemos muchas de cada uno de ellos, aquí por poner este tenemos 20% con
+
+599
+01:02:33,119 --> 01:02:39,239
+15, tienes 15 runes distintos, cada uno de ellos se ha optimizado y se ha aplicado en
+
+600
+01:02:39,239 --> 01:02:45,530
+otro, pero no solo en este, tienes las pruebas de un montón, de un montón más de runes
+
+601
+01:02:45,610 --> 01:02:50,610
+distintas, ¿qué quiere decir? Que realmente tienes mucha información sobre la robustez,
+
+602
+01:02:50,610 --> 01:02:57,989
+o mejor dicho, por no utilizar conceptos confusos, sobre la adaptabilidad del sistema, ¿de acuerdo?
+
+603
+01:02:58,789 --> 01:03:03,469
+Porque realmente este rune con este no tiene que ver, o sea, este realmente hemos elegido
+
+604
+01:03:03,469 --> 01:03:10,469
+un período in-sample y out-sample 90%, 10% y le hemos hecho 5 cortes, 5 runs, en cambio
+
+605
+01:03:11,469 --> 01:03:18,710
+este de aquí, y tiene pass también, lo hemos hecho con un período de 30%, es decir, 70
+
+606
+01:03:18,710 --> 01:03:27,440
+in-sample, 30% out-sample y lo hemos hecho 25 runs, solo, y ha pasado, es decir, en estos
+
+607
+01:03:28,760 --> 01:03:35,199
+25 tiene más del 50% for all efficiency el consistency de todo lo que habéis visto,
+
+608
+01:03:35,199 --> 01:03:43,219
+¿vale? Esto es lo que se ve aquí en el test, que los ha pasado todos, es decir, gana dinero
+
+609
+01:03:43,340 --> 01:03:50,340
+de media gana más de un 50, más del 50% de los runs de los 25, es decir, al menos 13
+
+610
+01:03:50,460 --> 01:03:56,099
+ganan dinero de los 25, fuera de muestra todo, claro, contra más runs más difícil porque
+
+611
+01:03:56,099 --> 01:04:01,460
+lógicamente es más complicado, ninguno de ellos contribuye más del 50 y este tiene
+
+612
+01:04:01,460 --> 01:04:05,300
+especial mérito porque cuesta, cuesta porque es un tendencial y veréis que hay alguno
+
+613
+01:04:05,300 --> 01:04:13,610
+que está a punto, mira, a veces aquí tiene 45, 34, porque es normal en un tendencial,
+
+614
+01:04:13,610 --> 01:04:17,530
+es normal, los tendenciales tienen sistemas con colas muy largas, sistemas de aquello
+
+615
+01:04:17,530 --> 01:04:22,969
+de que realmente, aquello de la ley del paleto, hasta a veces haces más, realmente el beneficio
+
+616
+01:04:22,969 --> 01:04:29,070
+total de los sistemas tendenciales viene de muy pocos trades, porque cuando cogen tendencia
+
+617
+01:04:29,070 --> 01:04:34,070
+ganan muchísimo y luego se pasan mucho tiempo que ahora sí, un poquito, ahora no, a lo
+
+618
+01:04:34,070 --> 01:04:39,449
+tal, a lo mejor van ganando pero poquito, o perdiendo también, ¿no? Sí, por eso digo
+
+619
+01:04:39,449 --> 01:04:46,440
+que en esta, yo os confieso, os confieso que hice esta prueba, os confieso que en MSS
+
+620
+01:04:46,440 --> 01:04:52,579
+hice el workforce optimizer convencido que no lo pasaba, ¿vale? Convencido de que no
+
+621
+01:04:52,579 --> 01:04:57,579
+lo pasaba, ¿por qué? Porque es un sistema que acierta ya digo 35% de los trades, o sea
+
+622
+01:04:57,579 --> 01:05:04,539
+es un tendencial puro, vale, un tendencial puro y es muy difícil de que, yo pensaba
+
+623
+01:05:04,539 --> 01:05:09,780
+que no pasaría la distribución, vale, o sea que habría algún set, de hecho hay alguno
+
+624
+01:05:09,780 --> 01:05:15,139
+que lo tiene, este yo creo que es por eso que no debe pasar, ¿ves? Por la distribución,
+
+625
+01:05:15,139 --> 01:05:39,039
+porque el run 2 contribuye más de 50%, disculpe, el porcentaje, bueno, aquí utilizamos de
+
+626
+01:05:39,039 --> 01:05:48,119
+10 a 30, no, no, pero cuál utilizo quiere decir luego para operar, no, ahora llegaremos,
+
+627
+01:05:48,119 --> 01:05:53,489
+ahora llegaremos, de momento no hemos hablado nada de operar, esta prueba es una prueba
+
+628
+01:05:53,489 --> 01:06:00,519
+de estrés, lo que buscamos aquí es que aquí donde pone matrix average ponga pas,
+
+629
+01:06:03,320 --> 01:06:09,519
+si pone pas estamos contentos, quiere decir que el sistema es un sistema objetivamente
+
+630
+01:06:09,519 --> 01:06:15,480
+robusto, ¿por qué? Porque hemos conseguido que se adapte a muchas condiciones de cambio
+
+631
+01:06:15,480 --> 01:06:20,880
+de mercado porque, insisto, este set de aquí, estos 5 run no tiene nada que ver, o sea este
+
+632
+01:06:20,880 --> 01:06:26,159
+primero es de 2011, 2011 tal, o sea, no tiene nada que ver este con este, claro, porque
+
+633
+01:06:26,159 --> 01:06:30,719
+al haber 25 imagínate la diferencia, o sea, realmente es muy distinto los períodos de
+
+634
+01:06:30,719 --> 01:06:37,429
+uno y otro, y en todos ellos ha conseguido demostrar que se adapta, o sea que optimizando
+
+635
+01:06:37,429 --> 01:06:43,630
+un periodo y aplicando mejor parámetro consigue ganar dinero, consigue todo lo que hemos dicho,
+
+636
+01:06:43,630 --> 01:06:47,989
+las 5 pruebas, ¿no? Y no tiene un drama mayor de un 40, etcétera, etcétera, o sea todo
+
+637
+01:06:48,030 --> 01:06:55,030
+eso, ¿no? Entonces lo que primero busco es eso, que es robusto, luego ya tú me preguntas
+
+638
+01:06:55,030 --> 01:06:59,269
+¿qué parámetros elegirías? Bueno, luego la fijación de parámetros, lo voy a comentar
+
+639
+01:06:59,269 --> 01:07:04,909
+brevemente porque no tenemos tiempo de profundizar, esto la idea es un poco hablar de 3-station,
+
+640
+01:07:04,909 --> 01:07:09,030
+o sea, es un... para enseñaros la herramienta y que luego vosotros podáis profundizar
+
+641
+01:07:09,030 --> 01:07:16,030
+en ella, ¿no? Tenemos pensado en el tiempo hacer ya cosas más de sistemas, más aplicado
+
+642
+01:07:16,030 --> 01:07:19,389
+a la... a cómo elegirías todos los parámetros de un sistema, bueno, pues podemos hacer
+
+643
+01:07:19,389 --> 01:07:23,750
+un seminario de eso, ¿no? Pero aquí es más que entendáis la herramienta y que la podáis
+
+644
+01:07:23,750 --> 01:07:31,690
+utilizar, ¿vale? Luego, por folio maestro, es otra aplicación, sí, la respuesta es
+
+645
+01:07:31,690 --> 01:07:36,820
+sí, pero no aquí, no en esta. Vale, entonces aquí llegamos a la conclusión que lo pasa,
+
+646
+01:07:36,820 --> 01:07:41,539
+¿vale? Aquí brevemente ya digo, os comento lo que hay, fijaros que tenéis los datos de
+
+647
+01:07:41,539 --> 01:07:46,739
+todo, de todos los in-sample que hay, de todos, el periodo de optimización, qué parámetros
+
+648
+01:07:46,739 --> 01:07:52,659
+he elegido, como veis, pues profit, drawdown, blablá, trades, profit factor, de cada uno
+
+649
+01:07:52,659 --> 01:07:56,460
+de ellos y también de los de fuera de muestra, de todos, todos, de cada uno de ellos tenéis
+
+650
+01:07:56,460 --> 01:08:02,900
+los estadísticos principales, abajo tenéis la media, ¿vale? El mayor, el menor, ¿vale?
+
+651
+01:08:02,900 --> 01:08:07,019
+Y aquí fijaros que en un in-sample ya te da, por ejemplo, un deratio que también es
+
+652
+01:08:07,019 --> 01:08:13,139
+importante, el post optimisation risk, que es 1,5 veces el drawdown medio que ha obtenido,
+
+653
+01:08:13,139 --> 01:08:19,579
+aquí el drawdown está aquí, ¿vale? Tiene 12, pues te da 18, ¿qué quiere decir ver
+
+654
+01:08:19,579 --> 01:08:23,739
+si alguno de ellos ha pasado ese 18? Fijaros que ninguno tiene más de 18, eso te aprueba
+
+655
+01:08:23,739 --> 01:08:29,159
+más que nos da confianza, ninguno de los hechos ha tenido más de 18 medio drawdown,
+
+656
+01:08:29,159 --> 01:08:34,439
+es decir, que las previsiones, las previsiones, pues van bien, van bien, porque eso todo esto
+
+657
+01:08:34,439 --> 01:08:39,039
+es fuera de muestra o al final es como si fuera live, estamos de acuerdo, eso es como
+
+658
+01:08:39,039 --> 01:08:45,399
+si aquí ese día hubiéramos activado el sistema live, con esos parámetros, ¿no? El beneficio
+
+659
+01:08:45,399 --> 01:08:51,460
+anualizado, esta es la variable que compara, ves, para obtener el world forward, ves, 100%,
+
+660
+01:08:51,460 --> 01:09:01,130
+100, 32, 32, se ha ganado lo mismo, el sistema ha ganado en este conjunto que es 15% autosample,
+
+661
+01:09:01,810 --> 01:09:11,029
+10 runs, en este conjunto tienes 100% world forward de efficiency, y tenemos aquí distintos
+
+662
+01:09:11,029 --> 01:09:18,699
+ratios de student, desviación estándar, bueno, hay distintos ratos, ¿vale? Y como no, este
+
+663
+01:09:18,699 --> 01:09:26,890
+a mi me encanta, y tenéis la curva de todo el sistema, de todos esos sets, tenéis el
+
+664
+01:09:26,890 --> 01:09:31,090
+primero que es in sample, por supuesto, porque claro, el primero tiene que ser in sample,
+
+665
+01:09:31,090 --> 01:09:37,340
+pero a partir de aquí todo es la curva hecha con los distintos enganches de cada periodo
+
+666
+01:09:37,340 --> 01:09:47,619
+fuera de muestra, y también todos los straights fuera de muestra, y podéis sacar el performance
+
+667
+01:09:47,619 --> 01:09:50,619
+report, por defectos todo, pero si queréis solo elegir fuera de muestra, pues lo elegís,
+
+668
+01:09:50,619 --> 01:10:12,729
+desde 2009-612 lo sacas, no exactamente, me preguntan si se puede, ahora vamos a ver algo
+
+669
+01:10:12,729 --> 01:10:16,130
+parecido a eso, algo parecido a eso, me preguntan si se puede ver que día de la semana ha ido
+
+670
+01:10:16,130 --> 01:10:24,170
+mejor el sistema, y bueno, no exactamente en esta prueba, repito que debemos centrarnos
+
+671
+01:10:24,170 --> 01:10:32,529
+en que esta prueba es una prueba de estrés, ¿de acuerdo? Lo que buscamos es verificar
+
+672
+01:10:32,529 --> 01:10:39,840
+o tener la mayor probabilidad posible de que el sistema que hemos hecho y que hemos estudiado
+
+673
+01:10:39,840 --> 01:10:45,239
+para ganar dinero en el futuro, ¿vale? Eso es lo que más probablemente buscamos, acabo
+
+674
+01:10:45,239 --> 01:10:50,760
+de pronto caer, si, de pronto he tenido un lapsus, digo, he activado el micro en el hangout,
+
+675
+01:10:50,760 --> 01:11:01,600
+digo, si me doy cuenta que no, bueno, estaba activo, bueno, y esta es la equity preview,
+
+676
+01:11:01,600 --> 01:11:05,399
+esto es un poco, no es lo que usted me preguntaba, pero aquí sí que puedes ver un conjunto
+
+677
+01:11:05,399 --> 01:11:10,079
+de parámetros concretos, ¿qué curva tendría? Un conjunto de parámetros, ¿vale? Y aquí
+
+678
+01:11:10,079 --> 01:11:16,119
+en la distribución puedes ver también análisis de distribución, es que no quiero profundizar
+
+679
+01:11:16,119 --> 01:11:21,199
+mucho porque si no no voy a llegar a otra cosa, esto como buen sistema tendencial, pues
+
+680
+01:11:21,199 --> 01:11:28,680
+como os decía, sistema de colas muy largas, ¿vale? Típico sistema tendencial donde tiene,
+
+681
+01:11:28,680 --> 01:11:34,800
+bueno, luego además puedes hacer pruebas de Monte Carlo, pruebas de Monte Carlo, incluso
+
+682
+01:11:34,800 --> 01:11:37,560
+la optimización de raíz se puede hacer de Monte Carlo, pero yo personalmente no os lo
+
+683
+01:11:37,560 --> 01:11:41,380
+recomiendo, ya aquellos que me conocéis, ya sé que Monte Carlo, todo el mundo de los
+
+684
+01:11:41,380 --> 01:11:46,119
+sistemas hablan de Monte Carlo, Monte Carlo es una herramienta interesante, pero a mí
+
+685
+01:11:46,119 --> 01:11:50,319
+una herramienta que siempre me da el mismo resultado, pues no me hace falta hacerla porque
+
+686
+01:11:50,319 --> 01:11:56,119
+ya lo sé que me va a dar, entonces a mí Monte Carlo como yo los backtests que hago
+
+687
+01:11:56,119 --> 01:11:59,439
+ya son significativos, o sea tienen muchos traits normalmente, o sea realmente es una
+
+688
+01:11:59,439 --> 01:12:04,359
+muestra estadísticamente significativa, normalmente Monte Carlo empeora un 20, un 30, un 50% de
+
+689
+01:12:04,359 --> 01:12:10,640
+los resultados, entonces pues bueno, ya más o menos por ahí se mueve, ¿no? Pero bueno,
+
+690
+01:12:10,640 --> 01:12:15,600
+sí que va a haber a veces sacar este tipo de, o sea Monte Carlo para aplicar, digo Monte
+
+691
+01:12:15,600 --> 01:12:19,039
+Carlo convencional que la mayoría de gente lo usa un poco para fijar el capital inicial,
+
+692
+01:12:19,039 --> 01:12:23,640
+para ver el draudón que puedes esperar, para un poco esos criterios, ¿no? Donde sí que
+
+693
+01:12:23,720 --> 01:12:29,039
+para mí es útil, por ejemplo, para percibir escenarios, ¿no? Para ver en qué porcentaje
+
+694
+01:12:29,039 --> 01:12:32,680
+hay de que el sistema esté ganando dinero en un año, cosas así, no sé qué me parece,
+
+695
+01:12:32,680 --> 01:12:38,329
+por ejemplo, puede ser interesante, ¿vale? Bueno, hasta aquí brevemente la explicación
+
+696
+01:12:38,329 --> 01:12:44,250
+del World Forward Optimizer, ¿vale? Antes os he comentado que también puede servir
+
+697
+01:12:44,250 --> 01:12:50,960
+para fijar parámetros, ¿vale? Me lo preguntaba usted antes a nivel de parámetros, ¿vale?
+
+698
+01:12:50,960 --> 01:12:56,960
+Entonces, una ventaja extra que no todo el mundo utiliza, que nosotros donde podemos
+
+699
+01:12:56,960 --> 01:13:02,859
+utilizar utilizamos y de hecho en nemesis lo estamos utilizando, ¿vale? Este es el clúster
+
+700
+01:13:02,859 --> 01:13:08,680
+además donde fijamos parámetros, os lo voy a demostrar, creo que el mejor, bueno, aquí,
+
+701
+01:13:08,680 --> 01:13:12,319
+perdón, muy breve, aquí antes me preguntaba usted si se pueden ver todos los datos, es
+
+702
+01:13:12,319 --> 01:13:17,380
+aquí, ves, aquí tú tienes el resumen, pero aquí puedes ver el anualizado, de cada de
+
+703
+01:13:17,380 --> 01:13:21,699
+los sets, el World Forward Efficiency de cada uno, ves, todos, fíjate que hay muchos
+
+704
+01:13:21,699 --> 01:13:30,699
+con 100 o con 80, 90, muchos, no es uno, claro, si veis solo uno, pero realmente hay una armonía,
+
+705
+01:13:30,699 --> 01:13:36,819
+hay una armonía en todos los sets, realmente se ve una distribución ordenada, ¿no? Hay
+
+706
+01:13:36,819 --> 01:13:41,659
+una zona mejor que otra, pero bueno, pero aquí está el 56, que el 56 con 25 runs,
+
+707
+01:13:41,659 --> 01:13:45,659
+o sea, sigue optimizando cada dos por tres, sin parar, optimizo, pero optimizo, pero esto
+
+708
+01:13:45,659 --> 01:13:52,850
+es, si haces los periodos de optimización, fíjate que deben ser nada, son 200 días,
+
+709
+01:13:52,850 --> 01:13:59,850
+200 días optimiza, 90 opera, 200 días optimiza, 90 opera, y con eso ha pasado, es que no me
+
+710
+01:13:59,850 --> 01:14:07,489
+lo creo ni yo. O sea, con eso ha pasado, haciendo 200 días optimizo, 90 operó, 200 días optimizo,
+
+711
+01:14:07,489 --> 01:14:18,729
+90 operó, ¿vale? Bueno, el que tú fijes, o sea, tú la muestra, el histórico, tú
+
+712
+01:14:18,810 --> 01:14:23,409
+lo has marcado aquí en Travestation, o sea, la optimización que hablas aquí, tú en
+
+713
+01:14:23,409 --> 01:14:30,699
+el histórico que quieras, y luego tú eliges el número de días, pero no por días, sino
+
+714
+01:14:31,420 --> 01:14:36,460
+por este porcentaje que hemos dicho, ¿no? Tú eliges entre el 5 y el 30%, perdón, entre
+
+715
+01:14:36,460 --> 01:14:41,779
+el 10 y el 30% fuera de muestra, y con esa variable eliges qué tamaño tiene en el sample
+
+716
+01:14:41,779 --> 01:14:45,939
+y otro sample de la muestra que tú habías elegido inicialmente en Travestation, o sea,
+
+717
+01:14:46,140 --> 01:14:58,729
+vamos a iniciar el existo aquí. No, sí, a priori sí, a priori sí, o sea, a priori,
+
+718
+01:14:58,729 --> 01:15:03,729
+es lo que decíamos antes, ¿no? A priori, tú me dices, hombre, que es más tiempo,
+
+719
+01:15:03,729 --> 01:15:08,369
+lo que pasa es que un sistema, eso es un sistema que va en 30 minutos, eh, un sistema que va
+
+720
+01:15:08,369 --> 01:15:12,850
+en velas de 30 minutos, ¿vale? Entonces depende, tú tienes, aquí hay varias teorías y las
+
+721
+01:15:12,850 --> 01:15:18,449
+dos son varias, depende, lo que te decía, si tú consigues con una optimización no
+
+722
+01:15:18,449 --> 01:15:23,840
+excesivamente extensa, bueno, cuando no hablo no excesivamente extensa, esta empieza en
+
+723
+01:15:23,840 --> 01:15:31,000
+2007, ¿vale? Va de 2007 a 2013, bueno, un poco, son años en un 30 minutos, eh, ¿vale?
+
+724
+01:15:31,680 --> 01:15:35,520
+Estamos hablando de un sistema que va en 30 minutos, ¿vale? Pero el fenómeno salió
+
+725
+01:15:35,520 --> 01:15:41,550
+a cero desde 2000, bueno, adelante, pruébalo, no, o sea, no hay ningún problema, pasa que
+
+726
+01:15:41,550 --> 01:15:47,930
+estamos hablando de un 30 minutos, si tú realmente desde ese período consigues adaptar
+
+727
+01:15:47,930 --> 01:15:52,970
+una ventana, una manera de optimizar y de reoptimizar que al final da resultados como
+
+728
+01:15:52,970 --> 01:15:58,340
+estamos viendo, tú puedes llegar a la conclusión que por qué no seguir usando ese método,
+
+729
+01:15:58,340 --> 01:16:03,699
+¿no? O sea, si yo, vamos a suponer, si yo aquí he visto que optimiza, en este caso,
+
+730
+01:16:03,699 --> 01:16:09,060
+891 días y opera 154, que esto varía porque va por barras, ¿cómo ves, vale? O sea, donde
+
+731
+01:16:09,060 --> 01:16:12,939
+lo cuadra es en barras y a veces los días pues puede variar por fiestas, por historias,
+
+732
+01:16:13,340 --> 01:16:19,739
+pero fíjate que más o menos son 891 días, o 29500 barras, optimiza y opera, optimiza
+
+733
+01:16:19,739 --> 01:16:26,739
+y opera, ¿vale? Si tú llegas a la conclusión que esa manera de reoptimizar es buena, funciona,
+
+734
+01:16:26,739 --> 01:16:33,739
+tienes ratios que te gustan, ¿por qué no seguir optimizando así? Y es donde entra
+
+735
+01:16:33,739 --> 01:16:37,579
+esta método que os decía de fijación de parámetros, ¿de acuerdo? Walford automation
+
+736
+01:16:37,579 --> 01:16:51,390
+se puede utilizar para fijar los parámetros para operar, no aplicaría, no, esto es real,
+
+737
+01:16:51,630 --> 01:16:59,689
+pero aplicaría en qué, en qué, no me entiendo. Esta optimización empieza en 2007, ¿vale?
+
+738
+01:17:00,090 --> 01:17:05,569
+Pero si esto lo he hecho yo, o sea, esto lo he hecho yo, lo he hecho mi empresa, o sea,
+
+739
+01:17:05,569 --> 01:17:12,170
+esto lo hemos hecho los otros. No, no es que, no, es depende, es depende, al final lo que
+
+740
+01:17:12,170 --> 01:17:18,960
+yo quiero, insisto, es una muestra significativa, una muestra y un sabistica significativa,
+
+741
+01:17:18,960 --> 01:17:24,239
+en el oro, irse más atrás, en mi opinión, hacemos una reflexión ahora, puede tener
+
+742
+01:17:24,239 --> 01:17:29,640
+un problema, ¿vale? Porque hemos intentado no irnos, o sea, yo me he ido lo menos atrás
+
+743
+01:17:29,640 --> 01:17:36,640
+posible en el oro, ¿vale? Lo menos atrás posible, ¿para qué? Para tener muestras significativas.
+
+744
+01:17:36,920 --> 01:17:40,600
+Fíjate que aquí, no hemos hablado, tienes los stretch in sample, los stretch out of
+
+745
+01:17:40,600 --> 01:17:45,510
+sample, fíjate que los stretch out of sample aquí de media tienen un 98. En esta prueba
+
+746
+01:17:45,510 --> 01:17:51,270
+se considera que con 30 son aptos, a mí me parece un poco justo, pero se puede utilizar
+
+747
+01:17:51,510 --> 01:17:56,430
+porque no es uno, son muchos de 30, ¿vale? Volvemos un poco a la idea de que si tú tuvieras
+
+748
+01:17:56,430 --> 01:18:03,430
+solo uno de 30, sí que es poco, pero si tienes 10 de 30, claro, que uno realmente esté sobre
+
+749
+01:18:04,310 --> 01:18:09,869
+optimizado, pero que los 10 lo estén, pues es más difícil, y además de otro set igual,
+
+750
+01:18:09,869 --> 01:18:13,909
+¿no? Porque hay muchos clusters y realmente si tú ves fail, que ahora te voy a enseñar
+
+751
+01:18:13,909 --> 01:18:20,810
+uno luego con todo fail, claro, si ves solo dos paths, no, vale, o sea, insisto, lo primero
+
+752
+01:18:20,810 --> 01:18:27,920
+es que aquí ponga paths, si no pone paths, ni parámetros ni leches en vinagre, o sea,
+
+753
+01:18:27,920 --> 01:18:33,720
+no vale, no vale este método, entonces no, pero si vemos que hay un paths general, podemos
+
+754
+01:18:33,720 --> 01:18:36,359
+pensar también en esta situación, porque hemos visto que el sistema se ha adaptado
+
+755
+01:18:36,359 --> 01:18:43,779
+muy bien, ¿vale? Entonces, entonces yo aquí, ¿por qué en el oro hago eso? Pues en el oro
+
+756
+01:18:44,180 --> 01:18:49,890
+hago eso, nos va a quedar mal esto por otro día, lo veo, nos va a quedar mal esto por
+
+757
+01:18:49,890 --> 01:18:53,770
+otro día, ¿por qué hago eso? Pues lo vas a ver enseguida, ¿por qué hago eso? Porque
+
+758
+01:18:53,770 --> 01:18:58,010
+Nemesis ahora mismo, un sistema que estamos muy atentos y de momento estamos muy contentos,
+
+759
+01:18:58,010 --> 01:19:01,649
+porque Nemesis está, en mi opinión, como desarrollador de sistemas, en una situación
+
+760
+01:19:01,649 --> 01:19:08,899
+de riesgo, ¿vale? Al final, cuando uno ya lleva años, pues ya intentas ver por dónde
+
+761
+01:19:10,979 --> 01:19:16,380
+pueden ir un poco el movimiento de las variables de los parámetros, ¿vale? De hecho, aquellos
+
+762
+01:19:16,380 --> 01:19:20,380
+que me hayan oído otras veces, digo que yo optimizo mucho, pero no solo para elegir
+
+763
+01:19:20,380 --> 01:19:25,420
+parámetros, optimizo mucho para ver cómo se mueve el optimizador, ¿de acuerdo? O sea,
+
+764
+01:19:25,420 --> 01:19:29,420
+cómo se va moviendo con los nuevos datos las zonas de los parámetros, porque eso te
+
+765
+01:19:29,420 --> 01:19:35,930
+va dando un poco de información de hacia dónde va el sistema, ¿no? Bueno, eso sí
+
+766
+01:19:35,930 --> 01:19:42,930
+que depende. Nosotros mensualmente intentamos hacerle una pequeña revisión, pero no siempre
+
+767
+01:19:43,010 --> 01:19:50,010
+implica una optimización masiva con el protocolo de evaluación heavy, ¿vale? Pero sí que
+
+768
+01:19:50,010 --> 01:19:57,000
+nuevamente miramos. Siempre que una variable de riesgo nos hace récord en live, ya vemos
+
+769
+01:19:57,000 --> 01:20:04,840
+que... o sea, cualquiera. Traits consecutivos en negativos, drawdown, media perdedora, cinco...
+
+770
+01:20:07,630 --> 01:20:13,300
+No, no, no, no. Ahora hablo de la operativa en live. No, no, no, no. Ahora no estoy hablando
+
+771
+01:20:13,300 --> 01:20:17,619
+de what for optimizer. Ahora digo, ¿estamos operando? En general veo que el sistema se
+
+772
+01:20:17,619 --> 01:20:24,619
+me desvía de lo previsto, in sample, no. Pues valor, ¿no? Al final, en esta cada una
+
+773
+01:20:27,100 --> 01:20:32,100
+de ellas, pues estos ratios tienes una media, todos ellos se mueven en un parámetro parecido.
+
+774
+01:20:32,100 --> 01:20:39,829
+No, lo reviso. Lo reviso y vemos. A veces hay que reoptimizar, a veces... Bueno, a veces
+
+775
+01:20:45,020 --> 01:20:52,020
+depende. A veces se para, a veces no. En principio no se para, pero bueno, tampoco te digo que
+
+776
+01:20:52,539 --> 01:20:57,539
+no se para. Es decir, depende. Pero en principio no, ¿vale? Entonces, ese sistema va sobre
+
+777
+01:20:57,539 --> 01:21:01,340
+el oro en 30 minutos. Esto es el oro semanal, pero te lo muestro para que me enseñes. El
+
+778
+01:21:01,340 --> 01:21:06,659
+oro ha cambiado, claramente, de tendencia a largo plazo. Entonces, si yo cojo mucho
+
+779
+01:21:06,659 --> 01:21:13,760
+histórico antiguo, voy a coger un periodo de alcista, alcista, alcista, alcista, alcista.
+
+780
+01:21:13,960 --> 01:21:18,319
+Corro el riesgo de ajustarme en exceso a ese mercado alcista que poco tiene que ver con
+
+781
+01:21:18,319 --> 01:21:25,449
+el actual, ¿vale? Entonces, me he ido para atrás, pero intentando no ir, intentando,
+
+782
+01:21:25,890 --> 01:21:30,449
+ya digo, lo menos posible para mantener la muestra estabísticamente significativa.
+
+783
+01:21:30,449 --> 01:21:35,369
+Para tener bastante histórico real. Y de hecho, ya hemos hecho un set en este mercado,
+
+784
+01:21:35,369 --> 01:21:39,289
+ya ha ganado dinero. Que quiero por eso decir que está en peligro, porque puede ser, fijaros
+
+785
+01:21:39,329 --> 01:21:45,359
+ahora aquí, como veis, fijaros que estos parámetros, los últimos sets, fue este el
+
+786
+01:21:45,359 --> 01:21:51,359
+que elegimos, espérate, lo tengo apuntado, sube, porque ya sé que voy a abrir y tengo
+
+787
+01:21:51,359 --> 01:21:55,640
+que empezar a matar a todo el mundo y no es plan. A ver, me parece que sí que fue este,
+
+788
+01:21:55,640 --> 01:22:00,840
+pero fíjate que este último set realmente ha hecho un cambio bastante notable en los
+
+789
+01:22:00,840 --> 01:22:08,100
+parámetros anteriores. ¿Lo vemos? Y el siguiente se ha parecido al anterior. ¿Veis que habéis
+
+790
+01:22:08,100 --> 01:22:14,100
+empezado 41-13, 41-12, 37, aquí un variable cambia y además, justamente, me parece que
+
+791
+01:22:14,100 --> 01:22:20,460
+no le va bien. ¿Ves? O sea, ahí cambia de zona y realmente falla, o sea, realmente la
+
+792
+01:22:20,460 --> 01:22:25,420
+zona seguía siendo la misma. Bueno, puede pasar, eso es la vida real. Pero aquí fíjate
+
+793
+01:22:25,420 --> 01:22:30,420
+que pega un cambio, se va a 35-11 y el tercero, fíjate que en ningún caso lo ha dado, ese
+
+794
+01:22:30,420 --> 01:22:37,020
+11 no había salido nunca, había salido este 10 y había perdido, ¿vale? Aquí sale 35-11,
+
+795
+01:22:37,260 --> 01:22:44,000
+11, 11, cambia bastante, es decir, que se nota que el sistema está como cambiando y gana,
+
+796
+01:22:44,000 --> 01:22:51,350
+gana 16 en la media. Y el siguiente que es el life y esto que estáis viendo, esto 35-94010
+
+797
+01:22:52,829 --> 01:23:02,739
+es esto, este sistema está operando con esos parámetros. ¿Lo veis? 35-94010, este sistema
+
+798
+01:23:03,659 --> 01:23:08,899
+está operando con esos parámetros. Ya veis que mal no está yendo. O sea, es esto que
+
+799
+01:23:08,979 --> 01:23:12,699
+habéis visto con todos los traits acertados consecutivos, que es una aberración histórica,
+
+800
+01:23:12,699 --> 01:23:20,140
+yo creo que puede estar en el récord, te lo digo en serio. Sí, sí, no, no, no, en 7,
+
+801
+01:23:20,140 --> 01:23:26,489
+ahora mismo no quisiera, a ver, ¿cuánto está cargado? No quisiera decir una cosa por otra,
+
+802
+01:23:26,489 --> 01:23:31,350
+pero si no hay récord está ahí, o sea, seguro, seguro, o sea, no es, no es, porque aquí no
+
+803
+01:23:31,350 --> 01:23:35,310
+vienen los winnings, ¿no? Ah, bueno, pero en el performance sí, en el performance sí,
+
+804
+01:23:35,510 --> 01:23:44,539
+8, falta uno para igualar su récord histórico en life, operando en life, quiere decir que
+
+805
+01:23:44,539 --> 01:23:51,539
+sigue mostrando que el life va como tiene que ir, bueno, como esperamos que vaya, ¿no?
+
+806
+01:23:54,010 --> 01:24:01,100
+Este es solo en oro, este sí, pero está previsto trabajarlo en más, pero de momento solo lo
+
+807
+01:24:01,260 --> 01:24:05,500
+tenemos preparado para, o sea, solo está acabado y operando y tal, pues claro, lleva su tiempo
+
+808
+01:24:05,500 --> 01:24:11,489
+y tal, pero de momento solo está operando en oro, en 30 minutos, en el GC, este código
+
+809
+01:24:11,489 --> 01:24:19,130
+que ves, entonces, bueno, lo que íbamos, que no sé qué era, sí, cualquier sistema
+
+810
+01:24:23,520 --> 01:24:31,060
+tendencial, Roberto, estamos donde estamos, a ver, en principio es un sistema muy tendencial,
+
+811
+01:24:32,420 --> 01:24:37,020
+pero bueno, eso ahora mismo ya digo no nos interesa mucho, fíjate que los lives también
+
+812
+01:24:37,060 --> 01:24:41,060
+son muy parecidos a los anteriores y además se ha vuelto a cambiar a 4 y dices, oye, hay
+
+813
+01:24:41,060 --> 01:24:48,159
+que ver, ¿no? Y este va, este lo ha optimizado hasta octubre y desde ese momento está en
+
+814
+01:24:48,369 --> 01:24:53,170
+life, claro, no sabemos lo que ha hecho porque va en life, hay que ver cuando acabe el periodo,
+
+815
+01:24:53,170 --> 01:25:00,869
+cuando acabe el periodo lo diríamos, y cuando acaba el periodo, pues aquí, en OS más 1,
+
+816
+01:25:02,310 --> 01:25:07,430
+o sea, te da en la optimización que le toca, este sistema le toca optimizar el 11 de marzo
+
+817
+01:25:07,430 --> 01:25:16,439
+2014, o sea, el 11 de marzo le toca un nuevo run, habrá que calcularlo, si todo sigue
+
+818
+01:25:16,439 --> 01:25:21,859
+igual y seguimos yendo igual, pues le tocaría en agosto, 16 de agosto, un nuevo run, pero
+
+819
+01:25:21,859 --> 01:25:25,699
+bueno, lo podemos ir haciendo y cambiar de ventana, si consideramos, pero de momento
+
+820
+01:25:25,699 --> 01:25:31,220
+ya tú sales a operar con un programa de optimización, está hecho así, o sea, está la ficha,
+
+821
+01:25:31,220 --> 01:25:38,460
+eso me parece que sí que lo puedo enseñar, a ver, sí, exacto, que está, esa es la ficha
+
+822
+01:25:38,539 --> 01:25:44,939
+que tenemos de nemesis, además también hemos hecho incluso, o sea, he hecho esta pero también
+
+823
+01:25:44,939 --> 01:25:50,159
+hemos hecho lo normal, tenemos los dos datos comparados, a un sitio está apuntado a la
+
+824
+01:25:50,159 --> 01:25:57,659
+optimización, no lo veo aquí, está en el calendario en todo caso, aquí nos ha apuntado,
+
+825
+01:25:57,659 --> 01:26:07,920
+bueno, pues aquí nos ha apuntado, está en el calendario, entonces, este sistema hemos
+
+826
+01:26:07,920 --> 01:26:12,489
+fijado los parámetros así, ¿por qué? Porque nos da mucha confianza, un SEMA tendencia
+
+827
+01:26:12,489 --> 01:26:18,739
+ya ha pasado la prueba así, porque realmente ha demostrado mucha consistencia, porque el
+
+828
+01:26:18,739 --> 01:26:25,739
+world format es muy alto, por decentes razones, y sobre todo, sí, solo sí, tenemos suficientes
+
+829
+01:26:27,060 --> 01:26:34,060
+trades fuera de muestra en cada uno de ellos, más de 50, en una serie de runs de 10 runs,
+
+830
+01:26:34,340 --> 01:26:40,000
+con más de 50 estaría cómodo, fíjate que la media es 98, 98 trades cada set fuera de
+
+831
+01:26:40,039 --> 01:26:45,039
+muestra, y además, repito, sé que me había acerpesado pero es que es muy importante,
+
+832
+01:26:45,039 --> 01:26:50,600
+o sea, esta muestra en sí es la que elige parámetros, pero realmente a mí la información
+
+833
+01:26:50,600 --> 01:26:56,600
+me la dan todos, o sea, lo que le da fuerza a ella misma es que la ha pasado en todos,
+
+834
+01:26:56,600 --> 01:27:03,550
+vale, es decir, al final yo elijo con una de ellas, o sea, yo me quedo con una, pero
+
+835
+01:27:03,550 --> 01:27:10,579
+claro, es que la de al lado tampoco estaba mal, es decir, las otras cediscos es que se
+
+836
+01:27:10,579 --> 01:27:18,539
+ha salido, sí, las dos cediscos quiere decir que ha pasado, cada cedisco es que ha pasado
+
+837
+01:27:20,939 --> 01:27:25,939
+alguno de ellos con nota especial, es decir, world forward más de 100, o sea, pass es
+
+838
+01:27:25,939 --> 01:27:31,170
+50, pero si da más de 100 le marca este disco, y en el consistency of profits es más del
+
+839
+01:27:31,170 --> 01:27:38,199
+80, si le pones estrella es que se ha salido, pero si uno da fail lo marca failed, o sea,
+
+840
+01:27:39,300 --> 01:27:44,300
+si aquí hubiera salido failed marca failed, o sea, los tiene que pasar todos igual, o
+
+841
+01:27:44,300 --> 01:27:54,680
+sea, tírales algo, a ver, fíjate que tiene muchas estrellitas también, o sea, además
+
+842
+01:27:54,680 --> 01:28:02,859
+tiene bastantes estrellitas, entonces, no, la zona verde él elige el centro, en este
+
+843
+01:28:03,579 --> 01:28:07,180
+caso sí, pero yo no siempre me quedo con la zona verde, no siempre me quedo con la zona
+
+844
+01:28:07,180 --> 01:28:13,300
+verde, yo luego analizo un poco cada uno de los, cada uno de los, de los parámetros,
+
+845
+01:28:13,300 --> 01:28:22,289
+no solo el paso, no, Javerto, por favor, a ver si encuentro como el patio colegio empezando
+
+846
+01:28:23,529 --> 01:28:30,850
+a remartir aquí, avisos, a ver, entonces, yo reviso cada uno de ellos, de acuerdo, cada
+
+847
+01:28:32,010 --> 01:28:35,409
+uno de ellos, y entonces elijo, porque fíjate que cada uno de ellos te marca una zona,
+
+848
+01:28:35,409 --> 01:28:42,409
+él calcula el punto donde tiene, está más rodeado, o sea, no calcula el que es el mejor,
+
+849
+01:28:42,649 --> 01:28:48,939
+sino calcula el que está mejor rodeado, ¿me explico? ¿Por qué? Porque piensa en el error,
+
+850
+01:28:48,939 --> 01:28:53,659
+¿no? Porque piensa si se desvía, que se desvía a un sitio bueno, ¿no? Vale, entonces sí
+
+851
+01:28:53,659 --> 01:29:00,100
+que normalmente es una guía, pero no, en este caso que los pasa todos, pues bueno, hubiéramos
+
+852
+01:29:00,100 --> 01:29:03,060
+podido elegido, pero en este hemos elegido este porque realmente es el que me gusta
+
+853
+01:29:03,060 --> 01:29:07,500
+más, está más equilibrado en todas, fíjate, no es solo uno, en el beneficio anualizado
+
+854
+01:29:07,500 --> 01:29:11,819
+es el que más gana, bueno, no, gana más este, pero yo en caso que no haya mucha diferencia
+
+855
+01:29:11,819 --> 01:29:18,529
+siempre intento irme a más runs, por lo mismo que más trades, ¿no? Vale, siempre
+
+856
+01:29:18,529 --> 01:29:25,250
+en caso de duda me voy a más runs, ¿vale? Claro, dices, hombre, pero el hecho que a
+
+857
+01:29:25,250 --> 01:29:29,970
+medida de más runs vaya perdiendo eficacia no es mala señal, no, no, porque en el fondo
+
+858
+01:29:29,970 --> 01:29:33,810
+te está diciendo, claro, pensá que cuando más runs estás optimizando períodos muy
+
+859
+01:29:33,810 --> 01:29:39,810
+cortos, o sea, claro, realmente estás, o sea, es más fácil sobreoptimizar, ¿vale?
+
+860
+01:29:41,149 --> 01:29:44,750
+O sea, es más fácil sobreoptimizar en un histórico de 11.000 barras que en uno de
+
+861
+01:29:44,750 --> 01:29:49,390
+20.000, pues claro, en este de 25.000, jate, que son 300 días, o este ya al extremo, ¿no?
+
+862
+01:29:49,390 --> 01:29:55,390
+Es este que hemos dicho solo optimizado 100 días, optimizado 100 días, claro, es más
+
+863
+01:29:55,390 --> 01:29:59,229
+fácil ahí reoptimizar, o sea, es más fácil que realmente no hayas captado la señal,
+
+864
+01:29:59,229 --> 01:30:04,670
+¿no? Pero bueno, también nos sirve bien este, fijaros, esto lo miramos, por ejemplo,
+
+865
+01:30:04,670 --> 01:30:10,229
+ves, para ver este que tiene muchas optimizaciones, ver los últimos que también, fijaros, que
+
+866
+01:30:10,229 --> 01:30:14,090
+ya ha hecho el cambio, ves, que decía el cambio de parámetros, como han ido, ¿vale?
+
+867
+01:30:14,090 --> 01:30:19,729
+Los últimos como han ido y este ha perdido, pero no mucho, no podemos considerar que sea
+
+868
+01:30:19,729 --> 01:30:26,090
+una gran aberración, en el histórico ha perdido bastante más y el anterior gano mucho,
+
+869
+01:30:26,090 --> 01:30:35,380
+¿vale? Y esto ya es desde 2013, septiembre de 2013, ¿vale? Esto ya es desde septiembre
+
+870
+01:30:35,380 --> 01:30:41,039
+de 2013, si vamos aquí, es desde aquí, o sea, ya es clarísimamente en el mercado
+
+871
+01:30:41,039 --> 01:30:47,460
+este, o sea, este mercado podemos decir que está ya metido desde 2011, ¿vale, Loro?
+
+872
+01:30:47,460 --> 01:30:53,229
+O sea, que ya hay, incluso en estos, jate, ya tienes muchos, ¿vale? Pero sobre todo
+
+873
+01:30:53,229 --> 01:30:58,270
+los últimos, en este caso, cuando hay menos sets, ¿vale? Porque este tiene muchos, pues
+
+874
+01:30:58,270 --> 01:31:04,310
+son los últimos, ¿vale? Los últimos ya son fuera de muestra, han sido en el periodo bajista
+
+875
+01:31:04,310 --> 01:31:09,710
+y aquí tiene más 16, más 26, más 16, menos 3, más, realmente desde aquí ya está en
+
+876
+01:31:09,710 --> 01:31:13,670
+el periodo bajista, este quizá es el primero que pierde, este puede ser que sea el primero
+
+877
+01:31:13,670 --> 01:31:17,989
+que pierde, que no capta la señal, puede ser el cambio de mercado, creo que iba por
+
+878
+01:31:17,989 --> 01:31:26,840
+ahí, sí, exactamente, este coge ya un poco de mercado bajista, es el primero, ves, acaba
+
+879
+01:31:26,840 --> 01:31:33,850
+en enero de 2012 y viene desde 2009, este acaba por aquí de optimizar, optimiza de
+
+880
+01:31:33,850 --> 01:31:41,399
+por aquí a aquí y falla, pero ya al siguiente ya no, es que ya le ha cogido la, ya le ha
+
+881
+01:31:41,399 --> 01:31:46,319
+captado otra vez la señal, ¿vale? Así que el método funciona, es que la reoptimización
+
+882
+01:31:46,319 --> 01:31:53,319
+consigue captar la señal del mercado, ¿no?, consigue captar de momento, ¿algún día puede
+
+883
+01:31:53,319 --> 01:31:56,880
+cambiar? Eso sí, o sea, yo siempre digo, los sistemas no son algo estáticos, no son,
+
+884
+01:31:56,880 --> 01:32:00,520
+no hay que pensar que uno, mucha gente me dice, ah, pon un sistema, te lo pones en la
+
+885
+01:32:00,520 --> 01:32:07,520
+playa y a vivir, no, no, no, no, no es eso, no es eso, o sea, además hay que trabajar,
+
+886
+01:32:07,520 --> 01:32:11,600
+hay que seguirlo, o sea, no, no es eso, no es eso, o sea, sería también deseable, pero
+
+887
+01:32:11,600 --> 01:32:15,520
+no es eso, los sistemas hay que estar encima, no se más pueden dejar de funcionar, hay
+
+888
+01:32:15,520 --> 01:32:19,439
+que revisarlos, hay que trabajar en ellos, no es, no es coger un sistema de encontrar
+
+889
+01:32:19,439 --> 01:32:23,079
+que funcione a este, el nemesis y hasta, hola, ya hemos encontrado la gallina de los huevos
+
+890
+01:32:23,079 --> 01:32:28,159
+de oros, punto, lo pongo a todo el dinero, me vendo la casa, lo pongo todo en este sistema
+
+891
+01:32:28,159 --> 01:32:32,239
+porque va a ser la bomba, dos años, deja de funcionar, arruinado, no, hay que estar
+
+892
+01:32:32,239 --> 01:32:36,680
+diversificado, hay que tener varios sistemas, es igual, aunque este ahora mismo es el que
+
+893
+01:32:36,680 --> 01:32:41,399
+nos parece mejor, tenemos más operando en la cartera, ¿por qué? porque a lo mejor
+
+894
+01:32:41,399 --> 01:32:46,000
+es el que parece mejor, de hecho, ahora ni que sea brevemente os enseñaré el maestro
+
+895
+01:32:46,000 --> 01:32:51,560
+y veréis que ese sistema en esa cartera con otro habrá ido muy bien, pero en otras periodos,
+
+896
+01:32:51,560 --> 01:32:56,260
+¿no? Vale, a ver, sobre World Forward, os enseño
+
+897
+01:32:56,859 --> 01:33:00,420
+por ejemplo que no, aquí es que no los tengo todos porque es el portátil, es el que uso
+
+898
+01:33:00,420 --> 01:33:07,539
+más así en casa, digamos que en el despacho está el que hace más estas cosas, pero alguno
+
+899
+01:33:07,539 --> 01:33:17,359
+más, este es, ah, pero es bruto, esto no vale, este, a ver, ¿esto qué era? Ah, no, me equivocaba,
+
+900
+01:33:17,359 --> 01:33:36,210
+no hablaba de los cruceros, no, este puede ser, ¿veis? Este es un ejemplo de prueba
+
+901
+01:33:36,289 --> 01:33:46,250
+fallada, tiene también verdes, pero tiene muchos fails, hay que trabajar más, necesita
+
+902
+01:33:46,250 --> 01:33:53,640
+mejorarlo, no, este es un sistema que está operando, o sea, este sistema no ha fijado
+
+903
+01:33:53,640 --> 01:33:58,960
+los parámetros así, este sistema, no, en el SCP, este sistema, concretamente, de una
+
+904
+01:33:58,960 --> 01:34:03,920
+de las versiones que tenemos, lo puedo decir objetivamente porque he conseguido los datos,
+
+905
+01:34:04,079 --> 01:34:10,079
+los sistemas habilitados que están en Train Motion, que son 500, es el mejor sistema del
+
+906
+01:34:10,079 --> 01:34:16,289
+SCP que más beneficio por garantías ganó el año pasado, 49%, este, una versión de
+
+907
+01:34:16,289 --> 01:34:26,399
+este, bueno, este, o sea, a ver, esto al final viene, claro, a ver, esto viene al final de
+
+908
+01:34:26,399 --> 01:34:32,340
+una optimización que tú eliges, puede ser, no recuerdo este cuál era, es decir, puede
+
+909
+01:34:32,420 --> 01:34:39,600
+ser que este no, bueno, no es este, no es este, además, no es este porque este no tiene
+
+910
+01:34:39,600 --> 01:34:44,600
+el stop entry aún, esta es una versión antigua, pero de todas maneras es una versión, el
+
+911
+01:34:44,600 --> 01:34:47,600
+sistema ha quedado muy bien, pero aquí tú al final has elegido un periodo determinado,
+
+912
+01:34:47,600 --> 01:34:51,880
+o sea, tú marcas unas cosas, o sea, el hecho de que te ve la prueba negativa no necesariamente
+
+913
+01:34:51,880 --> 01:34:54,880
+quiere decir que no es el sistema, a lo mejor tú no has elegido bien el fitness, no has
+
+914
+01:34:54,880 --> 01:34:57,880
+elegido bien la muestra, bueno, hay que trabajar más, a lo mejor necesitas una muestra mayor,
+
+915
+01:34:58,239 --> 01:35:05,239
+una muestra más pequeña, depende, vale, depende, este sistema lo pasó claramente,
+
+916
+01:35:05,239 --> 01:35:11,529
+o sea, Artemisa, Artemisa, ¿cuál ha abierto ahora? No, pero otra vez, es que no los tengo
+
+917
+01:35:11,529 --> 01:35:19,460
+todos aquí, aquí hay muy pocos, aquí hay muy pocos, no, mira, hay uno de Apolo, este
+
+918
+01:35:20,460 --> 01:35:29,439
+no es el que ha abierto, no, pero es la misma familia, ah, no, no, este es el B, no, no,
+
+919
+01:35:29,439 --> 01:35:35,199
+esta es una prueba que hicimos, que quedó descartada, esta es una prueba que hicimos,
+
+920
+01:35:35,199 --> 01:35:40,199
+esta es una prueba que hicimos de fijar el stop como en el IBS entraría y no, en el
+
+921
+01:35:40,199 --> 01:35:46,270
+SP no iba, en el SP no iban a haber peor resultados y no lo aplicamos, está operando
+
+922
+01:35:46,270 --> 01:35:53,779
+la 03, está operando la 03 no a 03B, vale, entonces, bueno, pero es igual, un ejemplo
+
+923
+01:35:53,779 --> 01:35:59,939
+a título de que puede pasarla o puede no pasarla la prueba, vale, al final es una herramienta
+
+924
+01:35:59,939 --> 01:36:05,060
+más de estrés que además te permite fijar los, fijar los parámetros en aquellos casos
+
+925
+01:36:05,060 --> 01:36:16,029
+que te permitan, vale, seguimos, seguimos, bueno, ¿alguna pregunta sobre, sobre el World
+
+926
+01:36:16,029 --> 01:36:25,170
+Forward Optimizer? Cualquier, no, no, o sea, el programa lo que hace es desear datos, es
+
+927
+01:36:25,170 --> 01:36:31,170
+un sistema, en forex también, puedes poner sistemas en forex, yo tenemos uno trabajando,
+
+928
+01:36:31,170 --> 01:36:35,010
+el único tema aquí que tenéis que vigilar es lo que os digo, o sea, esto os he hecho
+
+929
+01:36:35,010 --> 01:36:38,689
+una resumen importante, la ayuda de World Forward Optimizer también es muy potente,
+
+930
+01:36:38,689 --> 01:36:44,890
+también está en inglés, pero es muy potente, realmente hay temas a vigilar, lo que decía
+
+931
+01:36:44,890 --> 01:36:50,369
+el número de 3, o sea, tienen que haber una cierta consistencia, lo que pasa que es verdad
+
+932
+01:36:50,369 --> 01:36:55,050
+que normalmente si no haces bien el proceso no te lo va a pasar porque es muy difícil
+
+933
+01:36:55,050 --> 01:36:59,409
+que casualmente pase tantos sets distintos, vale, al final, al final la ventaja de esta
+
+934
+01:36:59,409 --> 01:37:05,460
+prueba es que lo hacen muchas distintas, entonces puede que luego uno lo pase de chiripa,
+
+935
+01:37:05,460 --> 01:37:10,779
+pero que pase muchos de chiripa no es fácil, entonces normalmente si no haces el proceso
+
+936
+01:37:10,779 --> 01:37:14,979
+bien te va del fail, pero lo que te quiero decir es eso, que no siempre que te da fail
+
+937
+01:37:14,979 --> 01:37:21,460
+quiere decir que no valga el sistema, no llegamos directamente a esa conclusión, que no la
+
+938
+01:37:21,460 --> 01:37:26,649
+ha pasado la prueba, pero bueno, hay que trabajar más, porque el sistema para operar no es
+
+939
+01:37:26,649 --> 01:37:32,890
+solo el código, yo sabéis hoy, de hecho, creo que es mi especialidad el backtest, porque
+
+940
+01:37:32,890 --> 01:37:35,529
+el Roberto se ha especializado más en la programación, yo de siempre incluso cuando
+
+941
+01:37:35,529 --> 01:37:39,210
+gestiono la Seca Build Club, aquellos que me conozcas, me habéis visto que yo siempre
+
+942
+01:37:39,210 --> 01:37:42,649
+lo he dicho, a mi la programación no es una de mis especialidades, mi especialidad siempre
+
+943
+01:37:42,649 --> 01:37:48,770
+ha sido el backtest, al final un sistema para operar es todo, es el código y su backtest,
+
+944
+01:37:48,770 --> 01:37:54,239
+entonces, o sea, sus parámetros para operar, entonces puede ser que el proceso que hayas
+
+945
+01:37:54,239 --> 01:37:59,680
+hecho de optimización, la muestra que has elegido, los rangos que has elegido, el tipo
+
+946
+01:37:59,680 --> 01:38:04,039
+de algoritmo, alguna cosa de la optimización no haya sido el adecuado y necesitas cambiar
+
+947
+01:38:04,039 --> 01:38:09,649
+algo para que pase esa prueba, pero claro, la tiene que pasar cumpliendo con número
+
+948
+01:38:09,649 --> 01:38:15,090
+de tres, cumpliendo todo, hay veces que no la pasa, como decía Roberto, que no vale
+
+949
+01:38:15,090 --> 01:38:34,119
+el sistema. Pues es una buena pregunta, no, creo que no, no, no, no, para nada, lo que
+
+950
+01:38:36,640 --> 01:38:44,079
+tú tienes que, en 3 Session tienes que tener el tiempo real para operar, nada más, ningún
+
+951
+01:38:44,079 --> 01:38:53,170
+problema, los datos los cargas igual, los cargas con delay, los datos los cargas, el
+
+952
+01:38:53,170 --> 01:39:01,770
+histórico lo tienes, o sea, para hacer backtest, sí, sí, sí, en Texas, pero tendrás el anterior
+
+953
+01:39:02,010 --> 01:39:07,050
+ayer, hoy, claro, no, no, igual, a ver, me preguntan por cómo se puede tener esta herramienta
+
+954
+01:39:07,050 --> 01:39:13,229
+en 3 Session, sí, sí, o sea, tú para tener la plataforma de 3 Session tienes que cumplir
+
+955
+01:39:13,229 --> 01:39:20,550
+los requisitos que te exige para operar, para que no te cobre por ella, si no, 10 futuros
+
+956
+01:39:20,550 --> 01:39:24,989
+al mes, por ejemplo, vale, si tú operas 10 futuros al mes, toda la plataforma es gratis,
+
+957
+01:39:24,989 --> 01:39:29,989
+punto, y luego para operar tienes que tener tiempo real, pero si tú, para hacer backtest
+
+958
+01:39:29,989 --> 01:39:36,310
+no, para hacer backtest no tienes que tener tiempo real, o sea, tú puedes hacer un backtest,
+
+959
+01:39:36,310 --> 01:39:42,149
+tú puedes tener un backtest de futuro BLSP y no tener el mercado BLSP pagado, lo que
+
+960
+01:39:42,149 --> 01:40:10,109
+no podrás superar luego, el tiempo real, ahora, nada más, ahora al final te enseño
+
+961
+01:40:10,430 --> 01:40:16,390
+los temas, nada más, lo que hemos comentado, bueno, aquí cuatro cositas, os lo dejo muy
+
+962
+01:40:16,390 --> 01:40:24,380
+breve y os lo leéis, a ver algo que... todas cosas, en tu ordenador, 3 Session en tu ordenador,
+
+963
+01:40:24,500 --> 01:40:35,949
+pero nosotros lo ponemos en un servidor, aunque puede ser, ahí hay alguna cosa, se está trabajando
+
+964
+01:40:40,390 --> 01:40:48,600
+en algo de eso, puede ser que con el tiempo pueda, pero no, no es algo inminente, ¿quién?
+
+965
+01:40:48,600 --> 01:40:55,239
+ah, no, no, en nuestro caso no, lo tienes tú en tu ordenador o en tu servidor, en sociedad
+
+966
+01:40:55,239 --> 01:41:00,239
+de que tenemos carteras operando en un servidor que hemos encontrado en Canadá que va muy
+
+967
+01:41:00,239 --> 01:41:06,279
+bien un ratito y está ahí operando, ya conectamos con el móvil, con el tablet, con el portátil,
+
+968
+01:41:06,279 --> 01:41:14,720
+con el fijo, con la nevera, con el lavaje, casi ya conectas con todo, tiene scripts,
+
+969
+01:41:15,640 --> 01:41:24,390
+reinicia, sola, está todo lo más automatizado posible, todo, todo, tiene alertas, eso ya
+
+970
+01:41:24,390 --> 01:41:35,899
+lo tiene 3 Session, aparte tenemos scripts propios para controlar, es un host normal,
+
+971
+01:41:36,420 --> 01:41:40,340
+hay empresas de este tipo, pero nosotros como tenemos un programador muy buen profesional
+
+972
+01:41:40,340 --> 01:41:47,979
+no nos hace falta, sí, sí, pero claro, nosotros pagamos, me parece que pagamos 10 o 15 dólares
+
+973
+01:41:51,539 --> 01:41:58,319
+por eso y si tú cuantas das, verás que pagas pues 50, 100 dólares por empresas especializadas
+
+974
+01:41:58,319 --> 01:42:03,399
+en eso, que bueno, está muy bien, es un servicio de esto, pues nosotros pues lo damos, porque
+
+975
+01:42:03,399 --> 01:42:10,119
+ya pues Roberto lo sabe hacer, él se encarga de eso, pero eso ahora va solo, eso solo se
+
+976
+01:42:10,119 --> 01:42:16,659
+entra si hay un problema, que no hay problemas y además 3 Session de verdad, una vez, 3
+
+977
+01:42:16,659 --> 01:42:20,859
+Session solo en algún problema se ha tenido con el net, pero en ordenadores que tú instalas
+
+978
+01:42:20,859 --> 01:42:25,979
+3 Session de cero para operar, es increíblemente estable, o sea es un software increíblemente
+
+979
+01:42:25,979 --> 01:42:44,800
+estable, no se cuelga nunca el tiempo de un cliente solo, si el suyo opera solo, bueno
+
+980
+01:42:44,880 --> 01:42:49,560
+eso es una cuenta, nosotros al final somos un supervisor técnico, eso es una cuenta
+
+981
+01:42:49,560 --> 01:42:57,090
+que entra a Live, o sea tú cuando entras ahí, luego si puedo dentro de un momento,
+
+982
+01:42:57,090 --> 01:43:01,050
+no, no, no, no, estamos además en directo, no sé si al entrar enseñar algún dato privado
+
+983
+01:43:01,050 --> 01:43:09,720
+y estamos transmitiéndonos en directo, entonces tampoco es plan que la policía, si podemos
+
+984
+01:43:09,720 --> 01:43:18,079
+evitar que venga la policía a buscarlos, pues casi mejor, si puede ser a todos los
+
+985
+01:43:18,079 --> 01:43:25,079
+señores policías que nos escuchan, tranquilos, tranquilos que no pasa nada, está todo correcto,
+
+986
+01:43:25,079 --> 01:43:33,520
+David por favor, esto luego lo cortas, gracias, bueno, vamos rápido por favor, lo que os
+
+987
+01:43:33,520 --> 01:43:40,359
+decía aquí, bueno, esto ya, ah, esto es que creo que es muy interesante, existen, nosotros
+
+988
+01:43:40,359 --> 01:43:48,810
+todavía no lo hemos hecho, pero existen, existen, me consta que hay algún desarrollador
+
+989
+01:43:48,810 --> 01:43:54,010
+americano bastante conocido que lo está haciendo, aquellos que hayáis oído hablar
+
+990
+01:43:54,010 --> 01:43:59,010
+de los Self-Adaptative, son sistemas que hay varias maneras, hay algunos que entrarían,
+
+991
+01:43:59,010 --> 01:44:02,970
+hay muchas maneras, pero la idea es el sistema que automáticamente cambie de parámetros,
+
+992
+01:44:02,970 --> 01:44:08,289
+pues oí un webinar bastante, bastante que me gustó mucho la idea, era un sistema que
+
+993
+01:44:08,289 --> 01:44:14,920
+acá entraría, creo que iban velas de un minuto en el SP y usaban, habían hecho un
+
+994
+01:44:14,920 --> 01:44:21,020
+World Forward y salían, imagínate, estos diez combinaciones de parámetros, cogían
+
+995
+01:44:21,020 --> 01:44:25,880
+estas diez combinaciones de parámetros que solo iban haciendo periódicamente, que habían
+
+996
+01:44:25,880 --> 01:44:31,119
+ido bien en un periodo X, que fuera, porque hablamos un minuto, y luego ellos probaban
+
+997
+01:44:31,119 --> 01:44:36,199
+desde el premarket hasta media hora de iniciar el mercado que parámetros se habían ido
+
+998
+01:44:36,199 --> 01:44:43,479
+mejor en ese rato y aplicaban el resto de jornada esos parámetros, automáticamente
+
+999
+01:44:43,479 --> 01:44:50,000
+en el código, sí, sí, por código, un Self-Adaptative, o sea, él lo elegía y a media jornada tenía
+
+1000
+01:44:50,000 --> 01:44:55,899
+una revisión del tema, a media jornada si había habido un de estos pues podía haber,
+
+1001
+01:44:55,899 --> 01:45:02,130
+pero usaba el, sí, pero usando, no, pero la clave, la clave tiene, a mí eso a priori
+
+1002
+01:45:02,130 --> 01:45:06,729
+si me lo explicas o me gusta, pero así me gusta por una, o sea, ¿dónde me gusta?
+
+1003
+01:45:06,729 --> 01:45:11,770
+porque te lo está haciendo en datos que han pasado en World Forward, o sea, todos esos
+
+1004
+01:45:11,770 --> 01:45:19,760
+sets han ido bien en un momento, me explico o no, entonces él ya te está hablando primero
+
+1005
+01:45:19,760 --> 01:45:24,880
+de un sistema que ha pasado, que ha pasado que es robusto, que ha demostrado que se
+
+1006
+01:45:24,880 --> 01:45:33,880
+ha adaptado en distintos periodos y él elige esos para, o sea, él ha estudiado que viendo
+
+1007
+01:45:33,880 --> 01:45:40,829
+qué tiempo que hemos dicho, más o menos, si un set va bien en ese periodo, pues digamos
+
+1008
+01:45:40,829 --> 01:45:44,029
+tiene capacidad predictiva sobre el resto de jornada, lo ha probado con el World Forward
+
+1009
+01:45:44,029 --> 01:45:49,670
+Optimizer, lo ha salido y por lo tanto tiene datos objetivos para verificarlo, porque esta
+
+1010
+01:45:49,670 --> 01:45:54,149
+prueba es lo que te digo, te permite eso, entonces utiliza esos sets y en tiempo real
+
+1011
+01:45:54,149 --> 01:45:58,460
+va haciendo eso, va probándolo por código implementado y lo va revisando, o sea, cada
+
+1012
+01:45:58,460 --> 01:46:04,060
+continuamente, lo dijo pero no me acuerdo cada cuánto, dijo que continuamente iba reaciendo
+
+1013
+01:46:04,060 --> 01:46:09,300
+el World Forward Optimizer, no sé, cada semana, se llama muy de corto plazo, o sea, cada semana
+
+1014
+01:46:09,300 --> 01:46:13,939
+iba haciendo esto y va aplicando, probando y recuerdo que dijo sets que entraban y salían,
+
+1015
+01:46:13,939 --> 01:46:18,819
+¿no? Habían sets que entraban y salían cada semana de la parrilla de sets, que aquí
+
+1016
+01:46:18,819 --> 01:46:25,050
+digo 10, pero que a lo mejor eran 25, eran más de 10, eran muchos, no me acuerdo, no
+
+1017
+01:46:25,050 --> 01:46:30,750
+quisiera engañarnos, pero eran muchos, eran muchos, a lo mejor eran 25 sets o 20 o los
+
+1018
+01:46:30,750 --> 01:46:36,189
+que fuera, ¿no? Bueno, es una aproximación interesante, es una aproximación interesante,
+
+1019
+01:46:36,189 --> 01:46:43,729
+no me dejo caer ahí porque ahí está, ¿vale? Porfolio, porfolio, ¿vale? Super breve total,
+
+1020
+01:46:43,729 --> 01:46:49,090
+¿vale? Luego intentaremos algún día hablar más de porfolio y porfolio maestro, ¿vale?
+
+1021
+01:46:49,090 --> 01:46:54,010
+Esto que hemos hablado es de World Forward Optimizer, ¿vale? Antes me han preguntado
+
+1022
+01:46:54,010 --> 01:46:59,130
+si se puede mezclar sistemas, sí, no solo se puede, sino que se debe, se debe mezclar
+
+1023
+01:46:59,130 --> 01:47:02,729
+los sistemas, ¿vale? TreSystem tenía otra herramienta de backtest, también en mi opinión
+
+1024
+01:47:02,729 --> 01:47:10,880
+fantástica que se llama porfolio maestro, porfolio maestro es un simulador de carteras
+
+1025
+01:47:10,880 --> 01:47:15,279
+que ahora mismo se abre desde fuera de la plataforma, pero en la 9.5 ya lo han integrado
+
+1026
+01:47:15,279 --> 01:47:18,560
+como una aplicación dentro, es lo mismo que decíamos antes, poco a poco pues va entrando,
+
+1027
+01:47:18,560 --> 01:47:23,149
+¿no? Pero ahora mismo se abre fuera, o sea, hay que hacer login en TreSystem igual, ¿eh?
+
+1028
+01:47:23,149 --> 01:47:27,789
+O sea, no es que se abra, si no tienes usuario no puedes, pero el icono, digamos, está en
+
+1029
+01:47:27,789 --> 01:47:33,189
+el escritorio, hay que abrirlo como una aplicación por separado, ¿vale? Entonces, al final como
+
+1030
+01:47:33,189 --> 01:47:38,750
+os decía, pues tener un porfolio de sistemas es muy recomendable aunque uno tenga un sistema
+
+1031
+01:47:38,750 --> 01:47:43,710
+muy bueno, ¿vale? Porque el sistema muy bueno mañana puede dejar de serlo y eso lamentablemente
+
+1032
+01:47:43,710 --> 01:47:52,189
+no podemos saberlo, podemos intentar minimizar el riesgo, podemos hacer World Forward y está
+
+1033
+01:47:52,189 --> 01:47:56,510
+muy seguros de que es muy sólido, pero el mercado puede cambiar radicalmente, puede
+
+1034
+01:47:56,510 --> 01:48:01,069
+pasar algo que realmente está totalmente imprevisto, algo que nunca había pasado en
+
+1035
+01:48:01,069 --> 01:48:05,350
+el histórico, lo que sea, y se va a dejar de funcionar. Entonces, pues es aquello de
+
+1036
+01:48:05,350 --> 01:48:10,630
+no poner todos los gobos en el mismo cesto, ¿no? Y es una realidad, ¿no? Entonces aquí
+
+1037
+01:48:10,630 --> 01:48:15,390
+pues una de las típicas ventajas, ¿no? Sobre todo mejora el riesgo porque los profit, si
+
+1038
+01:48:15,390 --> 01:48:21,390
+tú sumas un sistema que gana mil y otro que gana mil, ganan dos mil, ¿vale? Bien. Pero
+
+1039
+01:48:21,390 --> 01:48:25,229
+si el primero tiene un drawdown de 500 y el segundo tiene un drawdown de 500, el drawdown
+
+1040
+01:48:25,229 --> 01:48:31,279
+seguramente no va a ser mil. Puede ser incluso que sea 500, eso sería ya el sumo de la perfección
+
+1041
+01:48:31,279 --> 01:48:38,319
+de la descorrelación, pero probablemente pues será 700, será, por decir algo, lo que
+
+1042
+01:48:38,319 --> 01:48:41,760
+sea, ¿no? Es decir, será un drawdown que no será la suma de los dos, por lo tanto
+
+1043
+01:48:41,760 --> 01:48:46,989
+ya es obvio que el ratio de la rentabilidad se suma y el del riesgo no, ¿vale? Por lo
+
+1044
+01:48:46,989 --> 01:48:51,229
+tanto la mejora de la rentabilidad de riesgo es bastante clara, sobre todo de la parte
+
+1045
+01:48:51,229 --> 01:48:57,899
+del riesgo, ¿vale? Y en esa misma línea pues actualizas mucho la equity, ¿no? A veces
+
+1046
+01:48:57,899 --> 01:49:02,720
+incluso puedes perder rendimiento porque pues perder rendimiento quiere decir que si tú
+
+1047
+01:49:02,720 --> 01:49:06,399
+pones solo todo en el sistema del oro que está yendo como un tiro, no, mejor, en teoría
+
+1048
+01:49:06,399 --> 01:49:11,140
+ganaría más, pero también cuando venga el drawdown seguramente perderé más y poniendo
+
+1049
+01:49:11,140 --> 01:49:14,979
+más sistemas puedo suavizar la curva, que también es recomendable, pero sobre todo
+
+1050
+01:49:14,979 --> 01:49:25,899
+para el corazón, ¿vale? Y luego pues aquello de que digo yo, que siempre hay que pensar,
+
+1051
+01:49:25,899 --> 01:49:29,619
+que siempre me habéis ido a hablar, siempre hay que pensar en el riesgo, siempre, cuando
+
+1052
+01:49:29,619 --> 01:49:35,579
+uno opera en el mercado y tendemos la costumbre de pensar demasiado en la rentabilidad. La
+
+1053
+01:49:35,579 --> 01:49:39,979
+rentabilidad está bien, es lo que buscamos, pero tiene que llegar de la mano de controlar
+
+1054
+01:49:39,979 --> 01:49:46,539
+primero el riesgo, ¿vale? Porque si operamos un sistema, si nosotros sacamos ahora este
+
+1055
+01:49:46,539 --> 01:49:50,659
+sistema y creemos mucho en el nemesis, ¿no? Pues a lo mejor venimos aquí seis meses y
+
+1056
+01:49:51,659 --> 01:49:58,800
+nos equivocamos, nos equivocamos con este sistema y no vale. Puede pasar, esto puede
+
+1057
+01:49:58,800 --> 01:50:03,479
+pasar y esto tenemos que tener claro que puede pasar. Por más pruebas que hayamos hecho,
+
+1058
+01:50:03,479 --> 01:50:09,000
+por más robusto que sea, por más lucecitas verdes del PAS, por más, todo lo que queráis
+
+1059
+01:50:09,000 --> 01:50:13,720
+puede pasar. ¿Es más difícil? De acuerdo, es más difícil. Si está todo rojo es más
+
+1060
+01:50:13,720 --> 01:50:20,640
+fácil, vale, estamos de acuerdo, pero puede pasar. Entonces como eso puede pasar hay que
+
+1061
+01:50:20,640 --> 01:50:28,279
+diversificarse, hay que diversificarse. Y aquí he puesto un ejemplo de esto. Esto
+
+1062
+01:50:28,279 --> 01:50:32,760
+es de hace bastantes años, aquello, no sé si conocéis mi trayectoria o no, bueno, aquellos
+
+1063
+01:50:32,760 --> 01:50:38,680
+que no lo sepan, yo presidí un club del 2005 al 2007 que es esto. Estos son datos reales
+
+1064
+01:50:38,680 --> 01:50:43,680
+porque esas curvas son tan poco lineales, porque son de operativa real, las curvas operativas
+
+1065
+01:50:43,680 --> 01:50:50,520
+reales no siempre son tan rectas, ¿no? Esto, no sé si se ve muy bien, si piensa esta leñita
+
+1066
+01:50:50,520 --> 01:50:59,869
+de abajo, esto es un sistema que no ganó, no ganó nunca. Bueno, pues aún así el club
+
+1067
+01:50:59,869 --> 01:51:06,270
+ganó un 85% al final, la cartera, ¿no? Y dices, hombre, ¿y hubiera ganado más sin
+
+1068
+01:51:06,270 --> 01:51:12,590
+ese? Hombre, en valor absoluto sí, pero lo curioso del tema es, y esto aquí no los tengo,
+
+1069
+01:51:12,590 --> 01:51:18,750
+pero los ratios comparativos con los sectoriales se demostraba, o sea realmente ese sistema
+
+1070
+01:51:18,750 --> 01:51:23,880
+se revisó hasta la saciedad, o sea, actualmente ya estaba en el taller, pero siempre aportaba
+
+1071
+01:51:23,880 --> 01:51:28,180
+valor, al final era un sistema que aportaba valor, ¿por qué? Porque estaba muy descorrelacionado
+
+1072
+01:51:28,180 --> 01:51:33,680
+con los otros y realmente iba bien cuando los otros iban bastante mal, entonces llegaba
+
+1073
+01:51:33,680 --> 01:51:37,840
+aportar valor a la cartera, llegaba aportar valor a la cartera, entonces fue un sistema
+
+1074
+01:51:37,840 --> 01:51:42,319
+que siempre se mantuvo porque tenía sentido, a pesar de que no lo parezca en valor absoluto
+
+1075
+01:51:42,319 --> 01:51:49,960
+tenía sentido. ¿Por qué tiene sentido? Porque el mejorar la, porque reducías el
+
+1076
+01:51:49,960 --> 01:51:58,399
+drawdown, reducías el riesgo, mejorar el drawdown tiene varias ventajas, esta es la resumen
+
+1077
+01:51:58,399 --> 01:52:09,260
+de esa que habéis visto, es esta. Tiene varias ventajas, la obvia es que, bueno, pues esto
+
+1078
+01:52:09,260 --> 01:52:15,220
+de que no tienes, que tienes el riesgo más diluido, que no tienes todos los huevos en
+
+1079
+01:52:15,220 --> 01:52:19,220
+el mismo cesto, esta es la obvia, pero hay una segunda más indirecta que es a través
+
+1080
+01:52:19,220 --> 01:52:23,939
+del money management, ¿vale? Reducir el riesgo de cualquier estrategia global, de cualquier
+
+1081
+01:52:23,939 --> 01:52:29,500
+portfolio en general, luego hay que verlo, nos permite ser un poco más agresivos con
+
+1082
+01:52:29,500 --> 01:52:34,539
+la gestión monetaria, ¿vale? O dicho de otra manera, nos permite destinar más parte de
+
+1083
+01:52:34,539 --> 01:52:43,159
+capital a operar y, por lo tanto, desde ese punto de vista, en un caso ideal, puede darse
+
+1084
+01:52:43,159 --> 01:52:48,880
+el caso que un sistema que esté perdiendo dinero, reduzca el drawdown tanto de la cartera,
+
+1085
+01:52:48,880 --> 01:52:55,000
+que la cartera gane más con ese sistema porque puede destinar más capital a operar, no se
+
+1086
+01:52:55,000 --> 01:53:04,640
+me ha explicado. Pues bien, porque yo casi no me he entendido, os lo agradezco. Entonces,
+
+1087
+01:53:12,359 --> 01:53:20,710
+MSA es una muy buena aplicación que también tengo, pero no, no, ni se acerca. No, pero
+
+1088
+01:53:20,710 --> 01:53:28,670
+MSA es muy buena, es muy barata, además, la tenemos, pero porfolio maestro es otra
+
+1089
+01:53:28,670 --> 01:53:33,670
+cosa, porfolio maestro es un monstruo, o sea, ahora vamos a intentar en 5 minutos verlo.
+
+1090
+01:53:33,670 --> 01:53:39,140
+Esto es una imagen de porfolio maestro, a ver, muy breve en porfolio maestro, ¿vale?
+
+1091
+01:53:39,140 --> 01:53:45,859
+Porfolio maestro tú puedes mezclar, primero, tú puedes mezclar distintos sistemas, o sea,
+
+1092
+01:53:45,859 --> 01:53:50,500
+tú mezcas distintos grupos de estrategia y cada grupo de estrategia puede ser una combinación
+
+1093
+01:53:50,500 --> 01:53:57,300
+de una cesta de activos con un sistema con varios, ¿vale? En este caso es solo, por
+
+1094
+01:53:57,300 --> 01:54:04,680
+ejemplo, este, este es este que habéis visto, ¿vale? Némesis, ¿vale? Este es Némesis,
+
+1095
+01:54:04,680 --> 01:54:11,199
+con que símbolo? Con el oro, está ahí. Hay otros, pero tú puedes tener una cesta con
+
+1096
+01:54:11,199 --> 01:54:17,460
+este que va en 4 pares del forex, este mismo va en los 4 pares, por lo tanto tú puedes
+
+1097
+01:54:17,460 --> 01:54:22,760
+mezclar en una cartera infinitas combinaciones de sistemas que pueden estar en distintos
+
+1098
+01:54:22,760 --> 01:54:29,760
+activos, en distintas cestas, son mismas cestas, en distintos time frames, es decir, entre
+
+1099
+01:54:29,760 --> 01:54:33,699
+días, con diarios, con semanales, con lo que te dé la gana, ¿vale? Y por supuesto
+
+1100
+01:54:33,699 --> 01:54:41,600
+en distintos activos, ¿vale? En distintas divisas también. ¿El sistema? Ah, sí, sí,
+
+1101
+01:54:41,600 --> 01:54:46,800
+sí, no claro, ahí la cuenta. No, bueno, esta, esta cartera tiene el riesgo forzado,
+
+1102
+01:54:46,800 --> 01:54:54,039
+pero esta cartera ha salido a operar con 70.000 dólares. La verdad, para mi gusto yo la hubiera
+
+1103
+01:54:54,039 --> 01:55:03,899
+perfilido con 100, esta misma, ¿eh? No, tiene ratios de riesgo asumibles, un poco, un poco,
+
+1104
+01:55:04,380 --> 01:55:10,899
+de verdad, son asumibles, ahora, ahora, no me corres tanto, ahora te lo enseño. A ver,
+
+1105
+01:55:10,899 --> 01:55:16,380
+entonces, bueno, esto al final tiene un backtest, pero ¿qué tiene de particular como muy bien
+
+1106
+01:55:16,380 --> 01:55:20,739
+comentaba aquí Roberto? A ver, cualquier sistema tú, aquí os he dicho el resumen,
+
+1107
+01:55:20,739 --> 01:55:26,050
+tú fijas los parámetros, ¿vale? Fijas el intervalado de ese sistema, los parámetros
+
+1108
+01:55:26,050 --> 01:55:29,770
+que tenga ese sistema, pero tú puedes hacer varias cosas más. Una, aplicar un money management
+
+1109
+01:55:29,770 --> 01:55:33,529
+para cada sistema, que ya puede estar definido en el código como es el caso, aquí hay unas
+
+1110
+01:55:33,529 --> 01:55:38,289
+variables de money management, pero el portfolio tiene implementados varios, de tal manera
+
+1111
+01:55:38,289 --> 01:55:44,239
+que puedes probar de uno a otro rápidamente. Bueno, aquí están todos, o sea, fíjate que
+
+1112
+01:55:44,239 --> 01:55:51,399
+hay fixed fractional, fixed risk, fixed normal, los típicos, pero sobre margen, sobre ATR,
+
+1113
+01:55:51,399 --> 01:55:55,079
+sobre market value, sobre precio, bueno, hay un montón, no vas a profundizar en eso porque
+
+1114
+01:55:55,079 --> 01:56:00,319
+solo con eso te has hecho un webinar de dos horas, solo hablando del money, sí, sí,
+
+1115
+01:56:00,319 --> 01:56:05,279
+quiero decir que imagina que vamos a intentar hacer un vistacito al portfolio de esto para
+
+1116
+01:56:05,279 --> 01:56:10,720
+que veáis la capacidad, luego ya detaremos más adelante a hablar de él, que veáis
+
+1117
+01:56:10,720 --> 01:56:15,359
+su potencia, sencillamente, ¿vale? Luego tú de cada sistema puedes declarar el money
+
+1118
+01:56:15,359 --> 01:56:19,680
+management a cada sistema, ¿vale? Otra variable que nosotros, por ejemplo, todavía no hemos
+
+1119
+01:56:19,680 --> 01:56:23,039
+usado pero que también es bastante interesante es que si tú, imagina que aplicas un sistema
+
+1120
+01:56:23,039 --> 01:56:28,000
+sobre una cartera de 500 acciones, puedes hacerlo, con esa que le haces te le pones acciones
+
+1121
+01:56:28,000 --> 01:56:33,600
+todas. Entonces, el portfolio de esto tiene un sistema de ranking que no deja de ser
+
+1122
+01:56:33,800 --> 01:56:41,699
+otro sistema, un subsistema de selección de valores dentro de una gran cesta, ¿vale?
+
+1123
+01:56:41,699 --> 01:56:48,699
+De ranking, es decir, tú le dices yo quiero que opere solo en los 10 o en el percentil,
+
+1124
+01:56:49,939 --> 01:56:56,939
+en el primer percentil, en el 10% mejores o peores que tiene un determinado dato, RSI
+
+1125
+01:56:56,939 --> 01:57:03,939
+alto, RSI bajo, media de periodos en tal y importado por Excel.
+
+1126
+01:57:04,500 --> 01:57:09,500
+O sea, un criterio que te importe si crees, ¿vale? O sea, criterios de ordenación.
+
+1127
+01:57:09,500 --> 01:57:13,739
+Nosotros, por ejemplo, no hemos usado todavía esto, pero son criterios de ordenación de
+
+1128
+01:57:13,739 --> 01:57:20,420
+valores dentro de la cesta. O sea, tú tienes una cesta, una symbol list y tú quieres que
+
+1129
+01:57:20,420 --> 01:57:24,939
+él utilice, que no quieres le pones no y todos los utiliza todos. Si yo quiero filtraría
+
+1130
+01:57:24,939 --> 01:57:28,819
+otro que quiere decir que no necesariamente, en este caso sí porque solo hay uno, utilizaría
+
+1131
+01:57:28,819 --> 01:57:34,220
+todos los símbolos de la cesta, sino que utilizaría los que cumplieran esos criterios.
+
+1132
+01:57:34,220 --> 01:57:40,220
+Es un sistema de selección, correcto. Sí, es un subsistema de selección de parámetros,
+
+1133
+01:57:40,220 --> 01:57:50,670
+sí, sí. Es un sistema de subselección de símbolos. Sí, sí, sí. No, no, no lo aplica.
+
+1134
+01:57:50,670 --> 01:57:54,670
+Sí, sí, sí, lo puedes, sí, sí, por supuesto, sí, sí, sí. ¿Vale? Entonces, esto no es
+
+1135
+01:57:54,670 --> 01:57:59,829
+sistema, pero luego a cada uno de ellos lo puedes hacer. Luego, además, ahí donde tiene
+
+1136
+01:57:59,829 --> 01:58:06,829
+herramientas muy poderias, esto está muy puesto por los CTAs, ¿vale? Tiene un montón de criterios
+
+1137
+01:58:06,829 --> 01:58:12,229
+de constrictions, ¿vale? Constraints, perdón, restricciones operativas. O sea, tú puedes
+
+1138
+01:58:12,229 --> 01:58:19,289
+fijar, esto yo lo llamo money management a nivel de portfolio, ¿vale? ¿Cómo? Para
+
+1139
+01:58:19,289 --> 01:58:25,250
+money management, sí, para cualquiera que tenga alguna restricción impuesta por la
+
+1140
+01:58:25,250 --> 01:58:30,529
+equity, ¿no? O sea, tú tienes el money management del sistema, pero luego puedes, además, ponerle
+
+1141
+01:58:30,529 --> 01:58:36,170
+reglas, restricciones al portfolio en general. Es decir, el portfolio no puede tener como
+
+1142
+01:58:36,210 --> 01:58:43,210
+mucho 10 posiciones abiertas, 5, 2, bueno. El portfolio como mucho puede ir largo tanto,
+
+1143
+01:58:43,569 --> 01:58:49,500
+se puede apalancar tanto, se puede tal, bueno, distintas, tú las fijas. Porfolio stops,
+
+1144
+01:58:49,500 --> 01:58:52,140
+esto por ejemplo, el otro día, no digo el nombre, había un CTA que me confesó que
+
+1145
+01:58:52,140 --> 01:58:58,260
+lo hacía. Y es discrecional, ¿eh? O sea, que no lo hace por maestro, pero usa exactamente
+
+1146
+01:58:58,260 --> 01:59:04,579
+la misma regla, la que hemos hablado antes. La misma regla, si el portfolio le pierde
+
+1147
+01:59:04,659 --> 01:59:12,939
+más de un 2%, para una semana. No, creo que un mes, no sé si es 100% en el periodo,
+
+1148
+01:59:16,399 --> 01:59:24,930
+pero aquí tú lo puedes elegir, tú puedes poner, no, el portfolio, entero, entero. Esto
+
+1149
+01:59:27,310 --> 01:59:32,310
+de nuevo es aplicable o no, es una opción. Es una opción que tú dices, porfolio stop
+
+1150
+01:59:32,350 --> 01:59:42,390
+2, pues si el portfolio pierde un 2, un 3, un 5, un 10. No, en estas reglas, bueno, una
+
+1151
+01:59:42,390 --> 01:59:48,960
+perdida es un drawdown, ¿no? Es eso, un drawdown. Si llegas a un determinado drawdown, paras,
+
+1152
+01:59:48,960 --> 01:59:58,640
+es eso, pero en porcentaje. Paras qué? Un mes, una semana, un día, lo que tú le digas,
+
+1153
+02:00:01,720 --> 02:00:06,239
+pasa a ese periodo, en la simulación de acá te arrancas. Tú puedes simular eso, a ver
+
+1154
+02:00:06,319 --> 02:00:11,319
+qué pasaría. Puedes elegir la divisa del portfolio, porque pueden haber distintos,
+
+1155
+02:00:11,319 --> 02:00:15,359
+en el global pueden haber cientos de divisas, pero al final dices, bueno, la cuenta en qué
+
+1156
+02:00:15,359 --> 02:00:22,359
+va a estar, originalmente. En dólares, en euros, en peso mexicano, no sé, no sé, no,
+
+1157
+02:00:25,039 --> 02:00:31,680
+creo que no está, todavía. Bueno, dale tiempo. Bueno, entonces, aquí llegas al backtest,
+
+1158
+02:00:31,680 --> 02:00:35,399
+tú preparas todo esto, que hemos ido muy rápido, y llegas a la opción del backtest,
+
+1159
+02:00:35,399 --> 02:00:41,760
+porque también, por supuesto, hay opciones. Por supuesto, comisiones y demás, y cualquier,
+
+1160
+02:00:41,760 --> 02:00:45,970
+o sea, hay una simulación estándar que, sencillamente, con los parámetros que yo
+
+1161
+02:00:45,970 --> 02:00:49,460
+le he fijado, pero luego lo puedo optimizar. Puedo utilizar alguna variable, la que yo
+
+1162
+02:00:49,460 --> 02:00:56,119
+quiera, ¿vale? Cualquiera que esté aquí del sistema, o cualquiera constrain, o cualquiera
+
+1163
+02:00:56,119 --> 02:01:01,399
+esto, o sea, cualquier variable que hemos definido previamente, incluso las de restricción,
+
+1164
+02:01:01,399 --> 02:01:05,279
+la restricción del portfolio, o la de la pérdida del drawdown del portfolio, si quiero también
+
+1165
+02:01:05,279 --> 02:01:10,640
+la puedo optimizar. ¿Qué pruebe? Pues en vez de un 2, probate un 2 y un 4. A ver, ¿dónde
+
+1166
+02:01:10,640 --> 02:01:15,920
+sería mejor parar el portfolio? Bueno, tal vez una manera de ver el portfolio, si a veces
+
+1167
+02:01:15,920 --> 02:01:20,720
+sale a cuenta, es una manera de ver si nos sirve, sale a cuenta aplicar reglas de equity
+
+1168
+02:01:20,720 --> 02:01:24,399
+o no, ¿no? Si antes que aplique reglas de equity, pues mirar si te sale a cuenta o no
+
+1169
+02:01:24,399 --> 02:01:29,960
+en ese portfolio, aplicarlo, sencillamente. Aquí al final lo optimizas, le das, no entro,
+
+1170
+02:01:29,960 --> 02:01:34,319
+ya digo, puedes optimizar, puedes hacer también golf course aquí, pero el clásico, el golf
+
+1171
+02:01:34,479 --> 02:01:39,710
+course, es decir, dejar una parte fuera, ¿no? Pero es igual, no entramos porque, ¿vale?
+
+1172
+02:01:39,710 --> 02:01:44,550
+Y tú al final llegas, que esto al final es muy potente, pero realmente el objetivo es
+
+1173
+02:01:44,550 --> 02:01:50,590
+este, el objetivo es llegar a esto, ¿vale? El objetivo es al final obtener un informe,
+
+1174
+02:01:50,590 --> 02:02:06,680
+obtener un informe de una cartera, déjame mirar lo que he hecho, adiós. No, hombre,
+
+1175
+02:02:07,000 --> 02:02:19,210
+ahora no. No se cuelga, no, hombre, no se cuelga lo que pasa que realmente ahora no
+
+1176
+02:02:20,369 --> 02:02:25,930
+está, o sea, está el hangout abierto, retransmitido online en directo, está haciendo muchas
+
+1177
+02:02:25,930 --> 02:02:32,279
+cosas el pobre, es decir, está haciendo muchas cosas. O sea, claro, cuando estás operando,
+
+1178
+02:02:32,279 --> 02:02:35,279
+eso sí que lo recomienda, mejor tener un ordenador que está quietito, que tenga menos
+
+1179
+02:02:35,279 --> 02:02:43,369
+software instalado, es decir, claro, contra más cosas tenga más problemas, los ordenadores,
+
+1180
+02:02:43,770 --> 02:02:47,329
+pero es como no, cuando lo compras nuevo va como un tiro, cuando llevas un año trabajando
+
+1181
+02:02:47,329 --> 02:02:50,689
+ya todos los ordenadores empiezan a ganar, pues lo mismo, pues es igual, lo mejor es
+
+1182
+02:02:50,689 --> 02:02:55,689
+si tú vas a operar con ese quietito ahí, lo formateas, le pones decisiones, no haces
+
+1183
+02:02:55,689 --> 02:03:02,789
+nada más, y eso va de lujo al principio, de todas maneras no se ha colgado, hemos tenido
+
+1184
+02:03:03,710 --> 02:03:08,630
+suerte. A ver, aquí tienes un sumario, tú has simulado esta cartera, esta cartera es
+
+1185
+02:03:08,630 --> 02:03:12,149
+esta cartera que hemos dicho, que entre ella está el oro, son 10 años, pues ha ganado
+
+1186
+02:03:12,149 --> 02:03:15,989
+450.000, aquí hay un resumen, por ejemplo, me preguntabas ¿qué drawdown ha tenido esta
+
+1187
+02:03:15,989 --> 02:03:23,880
+cartera? 28.000 dólares, esa cartera ha tenido un drawdown de 28.000 dólares, que es un
+
+1188
+02:03:24,479 --> 02:03:30,760
+13% o un 40% sobre el capital inicial, son 70.000 dólares, se lo habrá tenido en principio,
+
+1189
+02:03:30,760 --> 02:03:36,079
+pero en el momento que lo ha tenido, no, un drawdown de 40, en el momento que lo ha tenido
+
+1190
+02:03:36,079 --> 02:03:41,520
+sobre el capital inicial, pero bueno, pues como no tiene monedas, te lo compro, puedes
+
+1191
+02:03:41,520 --> 02:03:48,520
+estimarlo, puedes estimarlo que desgo. Estos datos son, no son todos fuera de monstruo,
+
+1192
+02:03:49,039 --> 02:03:52,680
+pero casi todos, ¿por qué? Porque primero, el sistema del oro está aplicado con unos
+
+1193
+02:03:52,680 --> 02:03:59,359
+parámetros concretos, con los que le tocan ahora, con estos que habéis visto que hemos
+
+1194
+02:03:59,359 --> 02:04:05,890
+elegido para el futuro, pero claro, en todo el histórico anterior, es una manera de penalizarlo
+
+1195
+02:04:05,890 --> 02:04:11,640
+porque realmente no son los que hubiera elegido, con lo cual el oro es todo fuera de monstruo,
+
+1196
+02:04:11,640 --> 02:04:16,260
+porque esos parámetros son los que ha elegido ahora para operar, bueno, el único optimizado
+
+1197
+02:04:16,260 --> 02:04:20,579
+es el que ha optimizado el último set, todo el resto de los 10 años, además son 10,
+
+1198
+02:04:20,579 --> 02:04:26,699
+fíjate que en el oro hemos visto 2007, el oro que es el que más gana es todo fuera
+
+1199
+02:04:26,699 --> 02:04:30,699
+de monstruo, fíjate porque aquí insisto, te vienes en 2010 y tienes todo el oro fuera
+
+1200
+02:04:30,699 --> 02:04:36,369
+de monstruo y el oro es este, bueno, sí que tiene un periodo aquí que pierde, pero bueno,
+
+1201
+02:04:36,369 --> 02:04:45,119
+recupera rápido, fíjate 2005, es este que ves ahora marcado, te quedas ahí quieto,
+
+1202
+02:04:45,119 --> 02:04:50,119
+eso, eso es el oro, ves que incluso, hemos dicho que lo hemos empezado a optimizar en
+
+1203
+02:04:50,119 --> 02:04:58,310
+2007, ¿no? Es aquí, ¿eh? Está en positivo, está en positivo, pero ojo, lo hemos empezado
+
+1204
+02:04:58,310 --> 02:05:01,069
+a optimizar, pero los parámetros que ha elegido ahí no eran esos, recordaros que
+
+1205
+02:05:01,069 --> 02:05:05,489
+han cambiado claramente, esos parámetros se han elegido por aquí, con lo cual es todo
+
+1206
+02:05:05,489 --> 02:05:12,010
+fuera de monstruo el oro, todo fuera de monstruo, Artemisa BLSP es casi la mitad, Apollo es
+
+1207
+02:05:12,010 --> 02:05:16,710
+todo porque es lo mismo, también tiene fijados los parámetros de esta manera, o sea, realmente
+
+1208
+02:05:16,710 --> 02:05:23,710
+hay muchos sistemas, son todo fuera de monstruo, y quiero decir que es un drawdown bastante
+
+1209
+02:05:24,029 --> 02:05:31,640
+realista, barra pesimista, quiero decir, no está optimizado para nada, es un drawdown,
+
+1210
+02:05:33,159 --> 02:05:36,439
+bueno, luego aquí puedes ver lo que han hecho por supuesto todos los sistemas, ha puesto
+
+1211
+02:05:36,439 --> 02:05:40,399
+tener un montón de información de la cartera en global, del portfolio y de todo cada uno
+
+1212
+02:05:40,399 --> 02:05:46,750
+de ellos, ¿no? La lista de los trades de todos, bueno, un montón, ¿no? Y distintos ratios,
+
+1213
+02:05:46,750 --> 02:05:55,760
+bueno, ya digo que hay toda la curva a la cuenta, beneficios periódicos por años, por
+
+1214
+02:05:56,680 --> 02:06:07,970
+ejemplo. No, en este no, en esta versión ya con los tres sets no, no pierdo ninguno,
+
+1215
+02:06:07,970 --> 02:06:11,930
+y luego aquí a nivel de gráficos, pues muy importante, ¿no? Tenés datos aquí, se
+
+1216
+02:06:11,930 --> 02:06:17,050
+ve un poco porque me ha, al conectarme he perdido mucha pantalla, realmente me falta
+
+1217
+02:06:17,050 --> 02:06:24,689
+un montón, tendría que ser más anchos. ¿Él? Sí, sí, ahora lo enseño, pero aquí
+
+1218
+02:06:25,329 --> 02:06:31,369
+veis la equity realizada, pues bueno, una equity bastante estable, insisto y repito
+
+1219
+02:06:31,529 --> 02:06:38,819
+con mucho fuera de muestra, mucho, mucho fuera de muestra, ¿vale? Es una buena equity, aquí
+
+1220
+02:06:38,819 --> 02:06:43,420
+tenemos un drawdown, lógicamente inicio porque no tiene muy management, lo cual lo tiene,
+
+1221
+02:06:43,420 --> 02:06:49,640
+a medida que aumenta capital, el nivel porcentual, claro, ya es irrelevante. No, ahora aquí
+
+1222
+02:06:49,640 --> 02:06:56,520
+no hay, hay, hay, hay, hay, nosotros en futuros por defecto utilizamos el market, pero bueno,
+
+1223
+02:06:56,520 --> 02:07:00,119
+porque venimos a la gestión y nos obliga el apalancamiento un poco, porque es una manera
+
+1224
+02:07:00,119 --> 02:07:05,119
+de controlar el apalancamiento, es el mixed fractional sobre market value, es decir, un
+
+1225
+02:07:05,119 --> 02:07:12,119
+porcentaje, una fracción como market fractional, pero no sobre el riesgo, sino sobre el nominado
+
+1226
+02:07:12,279 --> 02:07:17,529
+del futuro, que es el valor de mercado del futuro, entonces es una manera de controlar
+
+1227
+02:07:17,529 --> 02:07:24,699
+el apalancamiento, porque si no es difícil en futuros, pues si utilizas gatos de riesgo
+
+1228
+02:07:24,699 --> 02:07:29,880
+se te dispara el apalancamiento y no puedes. Bueno, aquí tienes luego puedes ver la curva
+
+1229
+02:07:29,920 --> 02:07:38,130
+de todos, como veíamos, no se ven, no, ganan todos, este es euro dólar, sí, este es un
+
+1230
+02:07:41,550 --> 02:07:51,939
+poco más, bueno, pero es que se opera muy poco, opera muy poco, opera, opera, opera, bueno,
+
+1231
+02:07:52,939 --> 02:07:57,699
+pues tienes un montón de charts, si tuvieras muchos grupos de estrategia, pues podía ver
+
+1232
+02:07:57,699 --> 02:08:05,520
+ahora cada grupo de estrategia separado, aquí en el gráfico, está costando esto ya, vale,
+
+1233
+02:08:06,319 --> 02:08:12,119
+bueno, luego puedes ver, por ejemplo, esto que decía Roberto, es uno que miramos mucho,
+
+1234
+02:08:12,119 --> 02:08:17,659
+por ejemplo, es rolling a 12 meses, que hubiera ganado a 12 meses en cada punto, este es su
+
+1235
+02:08:17,659 --> 02:08:21,659
+primer momento a 12 meses que ganó muy poco, de hecho aquí en la tabla lo tienes, pero
+
+1236
+02:08:21,659 --> 02:08:29,579
+ahí lo ves, peor periodo a 12 meses ganó todos los dólares, no, eso quiere decir
+
+1237
+02:08:29,579 --> 02:08:36,579
+que entrando en cualquier momento, ese mes entrando a 12 meses antes cuando hubieras ganado,
+
+1238
+02:08:37,760 --> 02:08:51,319
+en cualquier momento, 12 meses después, ¿qué ganarías? Vale, o 24, bueno, no, en 12 meses
+
+1239
+02:08:53,000 --> 02:08:59,149
+ha ganado, ha ganado, bueno, ha habido que casi no, pero bueno, tiene el oro que es mucha
+
+1240
+02:08:59,149 --> 02:09:03,470
+tendencia y además pesa mucho el oro, así entre el money management ahí tiene un peso
+
+1241
+02:09:03,470 --> 02:09:08,079
+importante, luego tenemos ya una prueba aquí con money management, he intentado hacerla
+
+1242
+02:09:08,079 --> 02:09:13,079
+antes para que lo vierais, pero bueno, igual han quedado cosas raras, pero bueno, lo pongo
+
+1243
+02:09:13,079 --> 02:09:17,319
+aquí, aquí varían los contratos, porque el Nasdaq como es el más pequeño, realmente
+
+1244
+02:09:17,319 --> 02:09:23,409
+le ha subido contratos, porque esta, el money management como os decía, por market fractional,
+
+1245
+02:09:23,409 --> 02:09:27,409
+por valor de mercado, como el Nasdaq es el que menos valor de mercado tiene, le ha puesto
+
+1246
+02:09:27,409 --> 02:09:32,750
+más contratos, pero bueno, también teniendo en cuenta la equity, teniendo en cuenta por
+
+1247
+02:09:32,750 --> 02:09:41,000
+supuesto la equity, pasa algo aquí, ah no, ya está, ya está, bueno, aquí hay la z
+
+1248
+02:09:41,000 --> 02:09:48,800
+cuenta location, pues puedes ver, pues aquí es el Nasdaq cuando no cambia el otro, realmente
+
+1249
+02:09:48,800 --> 02:09:58,220
+tiene mucha información y los gráficos son todos configurables, exportables, este es
+
+1250
+02:09:58,220 --> 02:10:06,289
+el con el money management y el que más ha tirado del carro es el Nasdaq, el market value
+
+1251
+02:10:06,289 --> 02:10:11,289
+además tiene la ventaja esta de que permite para comparar, nosotros cuando hacemos backtips
+
+1252
+02:10:11,289 --> 02:10:15,600
+de carteras inicial siempre lo usamos, no es este caso, ¿por qué? porque es una manera
+
+1253
+02:10:15,600 --> 02:10:19,159
+de comparar los futuros, porque si no, ¿cómo comparas el futuro del Nasdaq con el futuro
+
+1254
+02:10:19,159 --> 02:10:25,539
+del oro? Claro, el market value es una manera de compararlo, o sea, ¿cómo eliges qué
+
+1255
+02:10:25,539 --> 02:10:30,220
+contratos tiene uno y otro? Ese es uno el nominal, porque realmente el que tiene mayor
+
+1256
+02:10:30,220 --> 02:10:37,220
+valor pues tiene más riesgo también, lógicamente, entonces si no, claro, realmente el Nasdaq
+
+1257
+02:10:37,340 --> 02:10:42,220
+es insignificante a lo del oro, entonces aquí por eso el Nasdaq como ha ido bien, pues ha
+
+1258
+02:10:42,220 --> 02:10:46,420
+empezado, pero déjate que no se empiece así, empezó porque ha ido más, porque como ha
+
+1259
+02:10:46,500 --> 02:10:51,369
+ido ganando pues ha subido, el Nasdaq no estaba el primero, pero ha cogido una buena racha
+
+1260
+02:10:51,369 --> 02:10:54,649
+y como ha ido subiendo la cuenta pues ha ido aumentando el contrato, así que ese es lo
+
+1261
+02:10:54,649 --> 02:11:05,840
+que tiene el money management para eso está, ¿no? No, perfecto, lo aplica, lo lee el código
+
+1262
+02:11:05,840 --> 02:11:12,750
+igual, es el lenguaje lo lee y lo aplica, sí, sí, no hay problema, o sea, tú le pones
+
+1263
+02:11:12,750 --> 02:11:16,989
+no que no aplique ninguno, no, este hecho es así, o sea, este no está aplicado con
+
+1264
+02:11:16,989 --> 02:11:23,029
+el de portfolio maestro, está aplicado en código, sí, sí, cada uno, cada sistema lo aplica
+
+1265
+02:11:23,029 --> 02:11:37,869
+él, tú lo puedes, no, no, creo, la verdad que no creo haberlo probado, no, pero tú
+
+1266
+02:11:42,920 --> 02:11:49,560
+le pones no, lo bueno que tienes es que si tú lo aplicas por él aquí en la columna
+
+1267
+02:11:49,560 --> 02:11:57,000
+te sale, te sale el rato, incluso puedes ver en la tabla de trades te sale la fórmula,
+
+1268
+02:11:57,279 --> 02:12:00,880
+buenísimo, si tú lo aplicas de portfolio maestro tiene una columna última que te sale
+
+1269
+02:12:00,880 --> 02:12:07,310
+el cálculo que ha hecho el money management con la fórmula, no, si viene en el código
+
+1270
+02:12:07,310 --> 02:12:12,859
+no porque es el código, es un easy language, punto, si lo aplica él te viene aquí y te
+
+1271
+02:12:12,859 --> 02:12:22,869
+dice el cálculo que ha hecho, entonces 3x3x4x5, ¿el ratio que él tiene? Sí, sí, es configurable,
+
+1272
+02:12:22,869 --> 02:12:29,630
+o sea, el ratio que él tiene, tú le puedes evitar parámetros luego, todos, sí, todos
+
+1273
+02:12:30,069 --> 02:12:36,289
+y optimizar, si quieres, o sea, cualquier variable es optimizable luego, si quieres,
+
+1274
+02:12:36,289 --> 02:12:47,869
+todas, o sea, tú vas aquí al, sí, es una buena manera, no, pero bueno, pero tú puedes
+
+1275
+02:12:49,069 --> 02:12:52,710
+ser que tengas un ratio que a lo mejor pues es distinto y no lo tiene él, pues lo creas,
+
+1276
+02:12:52,710 --> 02:13:04,659
+lo pones en el código y ya está, o sea, no, pero sí, sí, se puede que cualquier variable
+
+1277
+02:13:04,659 --> 02:13:17,000
+del sistema es optimizable, cualquier variable del sistema es optimizable, a ver, aquí,
+
+1278
+02:13:17,640 --> 02:13:22,560
+estos son las opciones de money management, aquí tienes también parámetros, las de,
+
+1279
+02:13:22,560 --> 02:13:25,880
+las suyas, tú aquí cualquiera de ellas la cambias y cualquiera de estas ahora si yo
+
+1280
+02:13:25,880 --> 02:13:32,010
+la pongo y me voy al portfolio, le voy a backtest, verás que me saldrá, ahora aquí le he elegido
+
+1281
+02:13:32,010 --> 02:13:36,460
+a una, ¿ves? le he elegido a una, voy aquí a money management, ¿ves? me sale la pestaña,
+
+1282
+02:13:36,460 --> 02:13:40,340
+al hacer el backtest portfolio tengo una pestaña que es money management para optimizar esto
+
+1283
+02:13:40,340 --> 02:13:51,659
+si quiero, sí, sí, sí, sí, si quieres sí, pero si estuvieran en el sistema también
+
+1284
+02:13:52,500 --> 02:13:58,619
+podrías porque sería un input de aquí, me explico, aquí son los inputs, esto, money
+
+1285
+02:13:58,619 --> 02:14:02,539
+management vale uno, estos son variables de money management, minimum size, maximum size,
+
+1286
+02:14:02,539 --> 02:14:06,380
+esto yo si quiero optimizado optimizo, o sea, realmente optimizado puedes hacer de las dos
+
+1287
+02:14:06,380 --> 02:14:12,579
+maneras, pero es verdad que a mí también me gusta que lo enseñe maestro, pero bueno,
+
+1288
+02:14:13,060 --> 02:14:16,939
+a lo mejor si tú tienes un rato que lo quieres hacer distinto pues no puedes, pero maestro
+
+1289
+02:14:16,939 --> 02:14:21,939
+tiene que luego te enseña el dato, vale, bueno y tiene algunas cosas más, luego si
+
+1290
+02:14:21,939 --> 02:14:27,979
+haces la optimización salen aquí, aquí puedes ver el trace log, aquí si has hecho, todas
+
+1291
+02:14:27,979 --> 02:14:33,090
+las opciones que has hecho de money management de esto estarían aquí, o sea todas las reglas
+
+1292
+02:14:33,090 --> 02:14:37,319
+que tú has, money management cancelación, o sea trades que no se han podido hacer por
+
+1293
+02:14:37,319 --> 02:14:42,079
+money management, trades que no se han podido hacer por constricción o por ranking, estarían
+
+1294
+02:14:42,079 --> 02:14:48,750
+aquí, podrías ver que trades no se han hecho por las restricciones, o además puedes
+
+1295
+02:14:48,750 --> 02:15:06,609
+hacer correlación, un desmelene, si la correlación entre símbolos ha quedado razonable si, sabes
+
+1296
+02:15:06,609 --> 02:15:24,670
+algo de jesús, a ver vamos a ir abriéndonos y caer porque, dígame perdone, ratio, que
+
+1297
+02:15:24,670 --> 02:15:37,590
+es ratio, ratio de visual, pero que es ratio, pero que es ratio, hay muchos ratios, ratio
+
+1298
+02:15:38,590 --> 02:15:46,000
+visual char, pero eso decía ratio visual char, ratio visual char recovery, Usted trabaja
+
+1299
+02:15:46,359 --> 02:15:55,640
+con visual char, recomiendo que vea el webinar 6, lo vio el webinar 6, vale, bueno esto ves
+
+1300
+02:15:55,640 --> 02:16:03,770
+la matriz de correlaciones, perfecto, se lo agradezco, bueno matriz de correlaciones de
+
+1301
+02:16:03,770 --> 02:16:08,489
+los activos, además puedes hacer algún formular análisis también, aquí ahora bueno, realmente
+
+1302
+02:16:08,489 --> 02:16:12,529
+hay muchos tests una vez hecho al portfolio hacer como veis y no podemos profundizar más
+
+1303
+02:16:12,529 --> 02:16:19,529
+porque es un poco largo, pero es una herramienta realmente muy potente también para mezclar
+
+1304
+02:16:20,529 --> 02:16:25,369
+y para ver que podemos sobre todo esperar de un conjunto de sistemas, un conjunto de
+
+1305
+02:16:25,369 --> 02:16:32,920
+sistemas y cómo pueden mover porque a veces parece una cosa y luego no es tal, es realmente
+
+1306
+02:16:33,000 --> 02:16:41,790
+una herramienta bastante buena. El ratio, bueno, TrayStation tiene TrayStation index,
+
+1307
+02:16:42,270 --> 02:16:48,229
+que es lo que es ratio visual char, pero en el numerador además multiplica los winning
+
+1308
+02:16:48,229 --> 02:16:54,680
+trades, los trades ganadores, es una manera de, es lo mismo rentabilidad riesgo pero al
+
+1309
+02:16:54,680 --> 02:17:01,750
+multiplicarlo por los winning trades digamos que fomentas la tasa de acierto un poco, fomentas,
+
+1310
+02:17:02,229 --> 02:17:06,229
+o sea es rentabilidad riesgo fomentando un poco la tasa de acierto, pero muy parecido,
+
+1311
+02:17:06,229 --> 02:17:11,229
+es lo que le decía, tienen una gran correlación entre ellos, yo lo decía tanto por eso, lo
+
+1312
+02:17:11,229 --> 02:17:17,750
+decía por el inside bar backtesting que Visual no lo tiene, ese es un gran problema, en el
+
+1313
+02:17:17,750 --> 02:17:24,809
+backtesting o sea realmente las barras las simulan y eso, sobre todo hay sistemas que
+
+1314
+02:17:24,809 --> 02:17:32,719
+es crítico, pero es que es otra cosa, es otra cosa, o sea no, luego por ejemplo TrayStation
+
+1315
+02:17:32,760 --> 02:17:39,040
+ajusta el futuro, ajusta el futuro, Visual no ajusta el futuro, la persona que viene
+
+1316
+02:17:39,040 --> 02:17:42,319
+que yo, yo pegué muchos años con Visual, estuve años y años pidiéndoles y llegué
+
+1317
+02:17:42,319 --> 02:17:46,879
+con ellos hasta hablar un histórico del CAC, trabajarlo con ellos porque lo iban a hacer,
+
+1318
+02:17:46,879 --> 02:17:50,360
+no sé qué pasó que al final no lo hicieron, pero tuvieron previsto hace un montón de
+
+1319
+02:17:50,360 --> 02:17:56,040
+años hacerlo, porque ellos lo hacen con acciones, muy bien hecho, o sea ajusta las acciones,
+
+1320
+02:17:56,040 --> 02:18:03,239
+muy bien hecho, sí sí, yo tampoco, bueno pues vamos a intentar a ver si en skype podemos
+
+1321
+02:18:06,280 --> 02:18:14,200
+hacer algo con nuestros amigos, alguna pregunta de maestro de, sí dígame, dígame, cuentas
+
+1322
+02:18:18,579 --> 02:18:24,579
+gestionadas, no, cuentas gestionadas como tal no, porque en ese país no se puede gestionar,
+
+1323
+02:18:24,579 --> 02:18:29,299
+eso es la realidad, otra cosa, no se puede gestionar legalmente, solo se puede gestionar
+
+1324
+02:18:29,299 --> 02:18:33,500
+por una institución de inversión colectiva, nosotros lo que hacemos es desarrollamos carteras
+
+1325
+02:18:33,500 --> 02:18:39,260
+para clientes, por eso como desarrolladores de software lo podemos hacer y les ayudamos
+
+1326
+02:18:39,260 --> 02:18:42,860
+a instalarlo y a colocarlo en un servidor si lo quieren o se la damos a usted para que
+
+1327
+02:18:42,860 --> 02:18:47,420
+usted la opere en su ordenador, si quiere eso ya es decisión, pero la mayoría de gente
+
+1328
+02:18:47,420 --> 02:18:51,940
+pues suele elegir operarlo en la nube, nosotros digamos tenemos una supervisión técnica
+
+1329
+02:18:51,940 --> 02:18:58,940
+de ello, como desarrolladores de software, pero no tocamos, no tomamos decisiones, o
+
+1330
+02:18:59,299 --> 02:19:05,479
+sea, gestionar como tal no gestionamos, si, automático ponemos los sistemas y usted
+
+1331
+02:19:05,479 --> 02:19:12,479
+los supervisa y yo los puedo supervisar técnicamente, pero, o sea, es su cuenta, nosotros somos
+
+1332
+02:19:14,809 --> 02:19:22,870
+un supervisor técnico, no, no se debe, es que no se puede hacer, otra cosa es que la
+
+1333
+02:19:22,870 --> 02:19:30,120
+vida, las fuertes MAM son ilegales en España, si, otra cosa es, yo digo, yo no he dicho
+
+1334
+02:19:31,120 --> 02:19:36,120
+en ningún momento que nadie lo haga, porque mucha gente se salta en los semáforos de
+
+1335
+02:19:36,120 --> 02:19:43,120
+rojo, quiero decir, y es ilegal hacerlo, quiero decir, al final, yo no digo que no se haga,
+
+1336
+02:19:44,239 --> 02:19:51,809
+yo digo que la ley española no permite hacerlo, la ley española no permite hacerlo, la ley
+
+1337
+02:19:53,049 --> 02:19:57,159
+española no solo permite gestionar instituciones de inversión colectiva, lo que pasa es que
+
+1338
+02:19:57,159 --> 02:20:00,440
+los desarrolladores de sistemas tenemos la suerte porque, igual que está TraditMotion,
+
+1339
+02:20:00,440 --> 02:20:07,440
+hay supermercados, todos venden sistemas, eso es totalmente legal, porque en los sistemas
+
+1340
+02:20:07,799 --> 02:20:12,040
+como no tocamos el dinero, realmente, o sea, realmente es un programa que da la orden,
+
+1341
+02:20:12,040 --> 02:20:17,680
+pues somos desarrolladores de software, pero ni tocamos el dinero, ni podemos cobrar por
+
+1342
+02:20:17,680 --> 02:20:23,799
+resultados, que las MAM lo hacen, porque si cobramos por resultados entonces ya sí que
+
+1343
+02:20:23,799 --> 02:20:30,530
+estamos gestionando, eso si yo digo lo que dice la ley española, luego ya cada uno hace
+
+1344
+02:20:30,530 --> 02:20:35,729
+y deshace, pero nosotros lo que hacemos como desarrolladores que somos, desarrollamos sistemas,
+
+1345
+02:20:35,729 --> 02:20:42,129
+nos ponemos a disposición del cliente en algún broker español, normalmente si lo
+
+1346
+02:20:42,129 --> 02:20:45,569
+hacemos en la nube lo hacemos a través de TraditMotion, porque es la plataforma que
+
+1347
+02:20:45,569 --> 02:20:49,930
+nos da más, porque es donde los testeamos, o sea, yo tengo un sistema en el futuro de
+
+1348
+02:20:49,930 --> 02:20:55,170
+TraditMotion o Testion, no me importan los datos, yo el backtesting lo hago siempre
+
+1349
+02:20:55,170 --> 02:21:01,110
+en Testion, porque como backtesting para mí es el mejor, o sea, todas las plataformas
+
+1350
+02:21:01,110 --> 02:21:04,989
+tienen puntos fuertes y no puntos débiles, porque también, por ejemplo, el tema del
+
+1351
+02:21:04,989 --> 02:21:09,110
+64 bits, que es un tema que están ahora mejorando, que no lo tienen todavía, la verdad es que
+
+1352
+02:21:09,110 --> 02:21:16,159
+sí lo tienen, para mí es un punto débil, pero aún así el backtesting para mí es
+
+1353
+02:21:16,959 --> 02:21:28,239
+insuperable. Bueno, como MetaTD está muy de moda en Forex, se usa mucho, los históricos
+
+1354
+02:21:29,479 --> 02:21:35,420
+son muy malos, según me han dicho, yo la tengo aquí instalada, la he usado muy poco,
+
+1355
+02:21:35,420 --> 02:21:39,379
+a mí me han dicho, justamente hoy he estado hablando con un buen amigo que opera con ella
+
+1356
+02:21:39,379 --> 02:21:44,260
+y dice que él los importa porque son un desastre, me ha dicho que él los importa, porque dice
+
+1357
+02:21:44,260 --> 02:21:48,340
+que un backtest ahí no se puede hacer, y que él tiene dudas del backtest también,
+
+1358
+02:21:48,340 --> 02:21:52,340
+no sé, hablábamos entre los dos y le he preguntado si él tenía garantía de decir
+
+1359
+02:21:52,340 --> 02:21:55,579
+que el backtest era bueno, me ha dicho que no lo sabía, la verdad que no lo sé, no
+
+1360
+02:21:55,579 --> 02:22:01,100
+sé, porque yo he visto auténticas, y sí que hay, prefiero no dar nombres, pero realmente
+
+1361
+02:22:01,100 --> 02:22:06,290
+el backtest, claro, es que al final te lo crees, la verdad, yo en Testion me lo creo,
+
+1362
+02:22:06,290 --> 02:22:11,870
+me lo creo, el backtest en Testion, y no el de todas me lo creo, quiero decir que al
+
+1363
+02:22:11,870 --> 02:22:15,870
+final el backtest él lo hace y tú saca un numerito ahí y tú te lo tienes que creer,
+
+1364
+02:22:16,350 --> 02:22:23,590
+quiero decir que al final no deja de ser una estadística, el de MetaTrader, no sé, yo
+
+1365
+02:22:23,590 --> 02:22:29,059
+sé que MetaTrader sale en sistemas muy buenos, yo he visto estadísticas de MetaTrader muy
+
+1366
+02:22:29,059 --> 02:22:38,559
+buenas, sí, supongo que están optimizadas, supongo, pero yo he visto muchas estadísticas
+
+1367
+02:22:38,559 --> 02:22:45,909
+de MetaTrader demasiado buenas, ahora, no sé, no digo que sea, seguramente es el desarrollador
+
+1368
+02:22:46,389 --> 02:22:53,389
+que lo acuerdan demasiado o lo que sea, pero es una plataforma que se tiende a haber estadísticas
+
+1369
+02:22:54,110 --> 02:23:09,139
+muy buenas, seguramente, seguramente, seguramente, sí, sí, sí, sí, es todo probable, no,
+
+1370
+02:23:19,159 --> 02:23:29,149
+no, pero yo donde, no, pero eso puede hacerlo también, no, no, pero eso puedes hacerlo
+
+1371
+02:23:29,149 --> 02:23:37,590
+igual, puedes ponerlos o no, claro, igual, no, no, no, no, yo no digo nada, realmente
+
+1372
+02:23:38,229 --> 02:23:43,840
+la tengo y la he trabajado poco, yo sé gente que lo ha dado a operar y esto que le he
+
+1373
+02:23:43,840 --> 02:23:47,639
+dicho me lo han comentado, pero no lo sé, de verdad, no puedo hablar, yo no he llegado
+
+1374
+02:23:47,639 --> 02:24:07,360
+a operar con MetaTrader, no tengo conocimiento para operar y realmente es como se ve, bueno,
+
+1375
+02:24:07,360 --> 02:24:14,139
+es verdad que MetaTrader hay muchos brokers, precios me preguntabas, ¿qué me preguntabas
+
+1376
+02:24:14,139 --> 02:24:44,469
+de precios antes? No, no, en forex es gratis todo, solo pagas el spread, en forex sí,
+
+1377
+02:24:46,440 --> 02:24:59,229
+pero solo para forex, spread, sí, que es bastante competitiva, un dólar 20 el futuro,
+
+1378
+02:25:02,870 --> 02:25:09,870
+en forex es todo gratis y tienes las mismas herramientas, lo único que es solo para forex,
+
+1379
+02:25:09,870 --> 02:25:14,229
+no vas a poder abrir el futuro de SP, si quieres abrir el futuro de SP tendrás que abrirte
+
+1380
+02:25:14,229 --> 02:25:19,729
+la cuenta de futuro y entonces sí que cumplir los requisitos, pero la plataforma es la misma
+
+1381
+02:25:19,729 --> 02:25:24,209
+en forex y no pagas nada, tienes que abrir la cuenta y poner 2000 dólares para abrir
+
+1382
+02:25:24,209 --> 02:25:30,430
+la cuenta, pero luego no pagas nada, solo que te cobras el spread que va en el, ellos
+
+1383
+02:25:30,430 --> 02:25:38,159
+dicen un 8, yo le he visto un 6, un 6, un 8, está, y los históricos de, a ver, Transition,
+
+1384
+02:25:39,920 --> 02:25:45,090
+bueno, es que solo hablamos en el 6, no sé si usted estuvo en el 6, le recomiendo que
+
+1385
+02:25:45,170 --> 02:25:51,170
+vea el 6 entonces, ah, lo he visto ya, ya hablamos un poco de los datos, realmente Transition
+
+1386
+02:25:51,170 --> 02:25:56,329
+destaca mucho con los datos, las bases de datos están bastante cuidadas, están bastante
+
+1387
+02:25:56,329 --> 02:26:06,920
+cuidadas, sí, yo tengo datos de tic data y los comparo porque tengo datos de tic data,
+
+1388
+02:26:07,159 --> 02:26:14,989
+es que Interactive Blockets en datos no acaba de ser, es que los construye, sí, los filtra,
+
+1389
+02:26:15,389 --> 02:26:31,440
+sí, sí, no, bueno, pues es, en tu utilitas forex contra el 6 yo también no, mira ahora
+
+1390
+02:26:31,440 --> 02:26:36,440
+está un 8 porque tenemos aquí un indicador que nos marca el spread, un 7, ahí lo tienes,
+
+1391
+02:26:36,440 --> 02:26:46,159
+un 7, un 8, un 8, ahora está un 8, un 7, un 6, ¿ves? Menos mala que me ha dado razón,
+
+1392
+02:26:46,159 --> 02:26:50,159
+digo, yo le he visto un 6, es que yo se la voy poniendo un 8, yo le he visto un 6, ahora
+
+1393
+02:26:50,159 --> 02:26:52,520
+está en el horario americano, esto es un indicador que ves que depende de la hora de
+
+1394
+02:26:52,520 --> 02:27:04,100
+cambiar de color y bueno, vamos a ver, lo tenemos, ¿te gusta? Perfecto, para gustos
+
+1395
+02:27:04,260 --> 02:27:17,530
+colores, sí, correcto, y eso diría que es bastante general, todos los que tienen tics
+
+1396
+02:27:17,530 --> 02:27:41,040
+yo creo que sí, yo tengo un histórico hecho con dig data, claro, sí, de acuerdo, pero
+
+1397
+02:27:41,239 --> 02:28:08,159
+qué pasa, ¿por qué no va esto ahora? Cambia la cuenta que no me acuerdo, ahora, no me
+
+1398
+02:28:08,559 --> 02:28:21,459
+ha dicho nada Jesús, pero es que no me ha dicho nada. Bueno, perdonad porque estamos
+
+1399
+02:28:21,459 --> 02:28:28,459
+aquí hablando y yo me acabo de acordar que sigo conectado en directo, ¿ves lo que pasa?
+
+1400
+02:28:29,459 --> 02:28:33,899
+Tenéis que venir, esto va para los entrenadores, tenéis que venir porque lo mejor es la charla,
+
+1401
+02:28:33,899 --> 02:28:37,739
+bueno, y las cervezas, están aquí ahora con unas cervezas, unas copas aquí, sacaron
+
+1402
+02:28:37,739 --> 02:28:45,190
+unos canapés, están sacando aquí un festival, un festival de, no digo más, es como la película
+
+1403
+02:28:46,389 --> 02:28:50,860
+más o menos, ahora ha empezado aquí a circular, yo no la he visto todavía pero me han explicado,
+
+1404
+02:28:50,860 --> 02:28:57,739
+ahora empiezan a entrar las chicas por aquí y no sé cuántas cosas más, en fin, perdonadme
+
+1405
+02:28:57,739 --> 02:29:00,899
+las mujeres que nos estáis escuchando, ya sabéis que los hombres somos primitivos.
+
+1406
+02:29:00,899 --> 02:29:07,899
+Bueno, pues nada, me despido ya de todos vosotros y vosotras, espero, si había alguna ya yo
+
+1407
+02:29:07,899 --> 02:29:14,680
+creo que ya se ha ido con este comentario que he hecho, y nada, pues vamos a intentar
+
+1408
+02:29:14,680 --> 02:29:18,600
+conectar con nuestros amigos de la Trading Week, no sé si lo vamos a conseguir o no,
+
+1409
+02:29:18,600 --> 02:29:25,600
+pero vamos a intentarlo, espero que os haya gustado el webinar y ya sabéis que en cellsandsystemas.com
+
+1410
+02:29:25,600 --> 02:29:34,600
+y en TrayStation.com y en Bolsap.com podéis encontrar información variada y sobre TrayStation,
+
+1411
+02:29:34,600 --> 02:29:38,440
+sobre Cellsandsistemas, si tenéis alguna duda también sobre sistemas o lo que sea,
+
+1412
+02:29:39,000 --> 02:29:45,760
+y el próximo webinar que sería ya el octavo, pues no sé cuándo va a ser, pues supongo
+
+1413
+02:29:45,760 --> 02:29:51,760
+que en un mes o así lo daremos, ¿de acuerdo? En fin, buen fin de semana a todas y a todos
+
+1414
+02:29:51,760 --> 02:29:53,239
+y hasta pronto, chao.

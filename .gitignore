@@ -24,6 +24,7 @@
 00_CTO/00_notas_RL.md
 /00_CTO/images_Flash_Research/
 /01_TSIS_backtest_SmallCaps/01_foundations/00_CTO/
+/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/
 /01_TSIS_backtest_SmallCaps/00_cto/trading_playbooks/
 /01_TSIS_backtest_SmallCaps/00_cto/architecture_blueprints/project_layers.md
 /01_TSIS_backtest_SmallCaps/00_cto/architecture_blueprints/pipeline_app.md
@@ -64,15 +65,17 @@
 *.webm
 
 # Heavy duplicate/reference-library exports.
-# Sersan PDFs are duplicate exports of the reviewed Markdown corpus and must
-# not enter Git history; the Markdown sources and distilled artifacts are the
-# institutional material.
+# Sersan PDFs/videos/archives are duplicate exports or raw reference media.
+# The Markdown sources, images under size limits, contracts and distilled
+# artifacts are the institutional material kept in Git.
 /00_CTO/99_REFERENCE_LIBRARY/**/*.pdf
 /00_CTO/99_REFERENCE_LIBRARY/**/*.PDF
 /00_CTO/99_REFERENCE_LIBRARY/**/*.ppt
 /00_CTO/99_REFERENCE_LIBRARY/**/*.pptx
 /00_CTO/99_REFERENCE_LIBRARY/**/*.PPT
 /00_CTO/99_REFERENCE_LIBRARY/**/*.PPTX
+/00_CTO/99_REFERENCE_LIBRARY/**/*.gif
+/00_CTO/99_REFERENCE_LIBRARY/**/*.GIF
 
 # Small institutional evidence/manifests are allowed explicitly.
 !01_TSIS_backtest_SmallCaps/01_foundations/**/*.csv

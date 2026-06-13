@@ -1,0 +1,181 @@
+// JKtt Multi-Mode Strategy: Short-Term Trend Reversal with Breakout and Volatility Stops
+// Author: Joe Krutsinger, TradeStation Labs (Apr-2016)
+// Enhanced by Sersan Sistemas (Jul-2025):
+//   • Integrated MSA Position Sizing (PSCalc32)
+//   • ATR-based global or percent stop and entry-specific stops
+//   • Export functionality to Market System Analyzer (MSA)
+//
+//	Adaptado a mini SP 500
+
+// References:
+//PSCalc32: MSA User Guide: Position Sizing Methods (PSMeth):
+
+//GESTIÓN MONETARIA DE MSA SOLO PARA USUARIOS AVANZADOS:
+
+//   1: fixed size            -> Número fijo de contratos/acciones, sin variación por equity.
+//   2: fixed $ per share/contract -> Valor monetario fijo por unidad; equity/Param1.
+//   3: fixed fractional/fixed risk -> Riesgo fijo como % de equity; Ralph Vince, "Portfolio Management Formulas".
+//   4: fixed ratio            -> Fixed Ratio, incremento de unidades con profits según delta; Ryan Jones, "The Trading Game".
+//   5: generalized ratio       -> Generalized Ratio, extensión de Fixed Ratio con exponente m (MSA exclusivo).
+//   6: classic f              -> Classic f, fixed risk usando mayor pérdida histórica, versión educativa.
+//   7: profit risk method     -> Profit Risk; combina % de profit y % de equity inicial.
+//   8: margin target          -> Margin Target; asigna % de equity a margen por contrato.
+//   9: leverage target        -> Leverage Target; fija el apalancamiento (posición/equity).
+//  10: percent equity         -> Percent Equity; valor de la posición = Param1% del equity.
+//  11: max drawdown method    -> Max Drawdown; basa tamaño en % de peor caída histórica; Larry Williams.
+//  12: max possible           -> Max Possible; tamaño máximo según margen disponible.
+//  13: constant value         -> Constant Value; posición con valor fijo en $.
+//  14: percent volatility     -> Percent Volatility; ATR como % de equity; Van Tharp, "Trade Your Way to Financial Freedom".
+
+
+{====================================================================================================
+  Descripción de la Estrategia:
+
+  1) Objetivo General:
+     Reversión a corto plazo contra tendencia secundaria con entrada por breakout
+y gestión de posición con stops basados en volatilidad o porcentaje, más sizing
+MSA para determinar contratos.
+
+  2) Flujo Operativo:
+     a) Identificar reversión (Close vs Close[LB]) y tendencia principal (MA[1]).
+     b) Colocar orden Stop de entrada en Open ± rango*EPct*BuyBO/SellBO.
+     c) Calcular tamaño de posición con PSCalc32 (MSA).
+     d) Aplicar Stop Loss global (ATR o porcentaje).
+     e) Salida por walk-away tras Walk barras.
+
+  3) Inputs CRÍTICOS:
+     LB, Trend, EPct, BuyBO, SellBO, Walk, ATRPer, ATRMult, PSCalc32 params
+====================================================================================================}
+
+Inputs:
+  // Parámetros de señales
+  LB(2),               // Lookback: barras para Close[LB]
+  EPct(0.10),          // % de Range para stop de entrada
+  BuyBO(6),            // Factor breakout largos
+  SellBO(27),          // Factor breakout cortos
+  Walk(50),            // Walk-away (barras)
+  Trend(10),           // Periodo MA
+  PositionBasis(false),// true=SetStopPosition, false=SetStopShare
+
+  // Stop Loss global
+  ATRPer(23),          // Periodo ATR
+  ATRMult(5.5),        // Multiplicador ATR
+  StopPorc(true),     	// false=ATR, true=Porcentual
+  PriceStopPct(1.00),  // %precio si StopPorc=true
+
+  // PSCalc32 (MSA) Position Sizing (para más detalles ver la función PSCalc32)
+  PSMeth(3),           // Elegir Método de sizing (1-14) VER ARRIBA LA DESCRIPCIÓN DE CADA UNO
+  PSParam1(2.0),       // Param1 para el MM
+  PSParam2(0),         // Param2 para el MM
+  BackTest(true),      // true=backtest, false=day trading
+  StEqty(100000),       // Equity inicial para PSCalc32
+  CurEqty(100000),      // Equity actual (si BackTest=false)
+  MxLoss(5581),        // Mayor pérdida histórica (por trade)
+  MaxDD(5581),         // Mayor drawdown histórico (por trade)
+  Stocks(false),       // true=acción, false=futuro
+  UseUnits(false),     // true=trading en unidades
+  UnitSize(1),         // tamaño de unidad (shares/contratos)
+  UseMinN(true),       // true=aplica MinN
+  MinN(1),             // mínimo contracts/shares
+  MaxN(1),         		 // máximo contracts/shares (SI PONES 1 AQUÍ, EL MM NO ACTÚA)
+  InitMarg(25000),      // margen inicial por contrato (futuros)
+  MargPer(100);        // % margen para acciones
+  
+
+Vars:
+  ATRVal(0),           // ATR calculado de StopLoss
+  AmountSL(0),         // Stop Loss global ($)
+  PriceStopDist(0),    // Distancia stop porcentual (puntos)
+  Lotes(0),            // Tamaño de posición final (contratos)
+  Stop_Long(0),        // Stop distancia entrada largo
+  Stop_Short(0);       // Stop distancia entrada corto
+
+// ----------------------------
+// 1) Cálculo Stop Loss global (ATR o % precio)
+// ----------------------------
+ATRVal = AvgTrueRange(ATRPer);                              // ATR
+
+If StopPorc = false Then
+  AmountSL = ATRVal * ATRMult * BigPointValue                // Stop$_ATR
+Else
+Begin
+  PriceStopDist = Close * PriceStopPct;                     // Stop_%puntos
+  AmountSL = PriceStopDist * BigPointValue / 100;                 // Stop$_pct
+End;
+
+SetStopLoss(AmountSL);                                       // Aplica stop global
+
+// ----------------------------
+// 2) MSA Position Sizing via PSCalc32
+// ----------------------------
+// Calcula Lotes usando PSCalc32 (parametrizable en MSA)
+// 2) MSA Position Sizing via PSCalc32
+// ----------------------------
+// Specify trade risk (TrRisk) in currency units per contract (AmountSL)
+// ----------------------------
+// 2) MSA Position Sizing via PSCalc32
+// ----------------------------
+// PSCalc32 parameters: (ver función para más info)
+// PSMeth, Param1, Param2,
+// BackTest, StEqty, CurEqty,
+// TrRisk, MxLoss, MaxDD,
+// Stocks, UseUnits, UnitSize,
+// UseMinN, MinN, MaxN,
+// InitMarg, MargPer, NATR (ATRPer)
+
+Lotes = PSCalc32(
+  PSMeth, PSParam1, PSParam2,    // Método y parámetros de sizing
+  BackTest, StEqty, CurEqty,     // BackTest mode y equity context
+  AmountSL,                       // TrRisk: riesgo $ por contrato
+  MxLoss, MaxDD,                  // Histórico: max loss y drawdown
+  Stocks,                         // True=futuro, False=acción
+  UseUnits, UnitSize,             // Unidades y tamaño de unidad
+  UseMinN, MinN, MaxN,            // Mínimos/Máximos y regla MinN
+  InitMarg, MargPer,              // Requerimientos de margen
+  ATRPer                          // periodo ATR usado internamente
+);
+
+// ----------------------------
+// 3) Lógica del sistema: Entradas y salidas
+// ----------------------------
+If PositionBasis then
+	SetStopPosition
+else 
+	SetStopShare;
+
+// Entrada Larga
+If Close <= Close[LB] and Close > Average(Close,Trend)[1] then
+Begin
+  Stop_Long = Range * EPct * BuyBO;
+  If Stop_Long > 0 then
+    Buy("JKtt LE") Lotes contracts                         
+      next bar at Open of next bar + Stop_Long Stop;
+End;
+
+// Walk-away Largo
+If MarketPosition = 1 and BarsSinceEntry >= Walk then
+  Sell("w LX") next bar at Market;
+
+// Entrada Corta
+If Close > Close[LB] and Close < Average(Close,Trend)[1] then
+Begin
+  Stop_Short = Range * EPct * SellBO;
+  If Stop_Short > 0 then
+    Sell Short("JKtt SE") Lotes contracts                
+      next bar at Open of next bar - Stop_Short Stop;
+End;
+
+// Walk-away Corta
+If MarketPosition = -1 and BarsSinceEntry >= Walk then
+  Buy to Cover("w SX") next bar at Market;
+
+// ----------------------------
+// 4) Export trades a MSA con WriteTrades32
+// ----------------------------
+If GetAppInfo(aiOptimizing) = 0 Then //exporto a txt para importar los trades a MSA si no estamos optimizando
+Begin
+  Value99 = WriteTrades32
+  (AmountSL, 0, 0, ATRPer, 1, "C:\\tradedata.txt");
+End;
+
+// FIN DEL CÓDIGO

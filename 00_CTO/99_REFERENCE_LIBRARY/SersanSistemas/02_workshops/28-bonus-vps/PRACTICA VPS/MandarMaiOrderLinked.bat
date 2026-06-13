@@ -1,0 +1,1 @@
+C:\InicioServidor\mailsend.exe -smtp 127.0.0.1 -f xxx@google.com -t xxx@google.com -sub "EXISTING ORDER LINKED - SERVIDOR TRADING" -M "Se ha enlazado una orden existente con la Estrategia"

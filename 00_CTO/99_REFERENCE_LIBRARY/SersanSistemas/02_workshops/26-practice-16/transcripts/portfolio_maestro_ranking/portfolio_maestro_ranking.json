@@ -1,0 +1,3811 @@
+{
+  "language": "es",
+  "duration": 2478.47475,
+  "segments": [
+    {
+      "start": 0.21,
+      "end": 4.05,
+      "text": "Buenas noches, a todos. Bienvenidos a la clase Master de Tradestation."
+    },
+    {
+      "start": 4.05,
+      "end": 7.17,
+      "text": "Hoy es nuestra serie de elementos de estrategia,"
+    },
+    {
+      "start": 7.17,
+      "end": 10.37,
+      "text": "donde highlight ciertas herramientas en la plataforma de Tradestation"
+    },
+    {
+      "start": 10.37,
+      "end": 13.09,
+      "text": "que te permiten backtestar estrategias,"
+    },
+    {
+      "start": 13.09,
+      "end": 14.85,
+      "text": "automatizar la ejecución,"
+    },
+    {
+      "start": 14.85,
+      "end": 18.21,
+      "text": "y algunas de las herramientas de estrategia más avanzadas,"
+    },
+    {
+      "start": 18.21,
+      "end": 20.05,
+      "text": "como el Portfolio Maestro."
+    },
+    {
+      "start": 20.05,
+      "end": 23.01,
+      "text": "El Portfolio Maestro es el highlight de la presentación de hoy,"
+    },
+    {
+      "start": 23.01,
+      "end": 25.17,
+      "text": "y lo vamos a hablar en un momento."
+    },
+    {
+      "start": 25.17,
+      "end": 26.37,
+      "text": "Antes de hacerlo,"
+    },
+    {
+      "start": 26.37,
+      "end": 29.17,
+      "text": "vamos a hacer algunas introducciones y disclosiones."
+    },
+    {
+      "start": 29.33,
+      "end": 30.53,
+      "text": "Mi nombre es Jesús Nava."
+    },
+    {
+      "start": 30.53,
+      "end": 32.53,
+      "text": "Soy el director de la entrenamiento de clientes"
+    },
+    {
+      "start": 32.53,
+      "end": 34.69,
+      "text": "y educación para Tradestation."
+    },
+    {
+      "start": 34.69,
+      "end": 38.13,
+      "text": "Cada simple idea que hablo en esta presentación"
+    },
+    {
+      "start": 38.13,
+      "end": 40.29,
+      "text": "es para propósitos educativos,"
+    },
+    {
+      "start": 40.29,
+      "end": 42.61,
+      "text": "y no es una recomendación de Tradestation."
+    },
+    {
+      "start": 43.17,
+      "end": 46.29,
+      "text": "Además, que la tradición activa no es suelta para todos,"
+    },
+    {
+      "start": 46.29,
+      "end": 50.61,
+      "text": "y que la performance histórica no garantiza resultados futuros."
+    },
+    {
+      "start": 51.17,
+      "end": 54.21,
+      "text": "Muchas gracias a todos por tomar tiempo a través de vuestros schedules"
+    },
+    {
+      "start": 54.21,
+      "end": 57.25,
+      "text": "y por estar aquí y por unirme a esta presentación."
+    },
+    {
+      "start": 57.33,
+      "end": 63.41,
+      "text": "No tengo un download de PDF o PowerPoint hoy."
+    },
+    {
+      "start": 64.53,
+      "end": 67.57,
+      "text": "Pensé que solo concentráramos en la herramienta,"
+    },
+    {
+      "start": 67.57,
+      "end": 69.25,
+      "text": "ir ahí directamente,"
+    },
+    {
+      "start": 69.25,
+      "end": 71.25,
+      "text": "y destacar algunas de sus funcionalidades."
+    },
+    {
+      "start": 71.25,
+      "end": 73.73,
+      "text": "Así que déjame ir adelante y hacer eso."
+    },
+    {
+      "start": 73.73,
+      "end": 77.25,
+      "text": "Voy a cambiar a mi plataforma de Tradestation"
+    },
+    {
+      "start": 77.25,
+      "end": 80.93,
+      "text": "y hablar un poco sobre el Portfolio Maestro"
+    },
+    {
+      "start": 81.57,
+      "end": 84.37,
+      "text": "desde una base conceptual."
+    },
+    {
+      "start": 84.45,
+      "end": 87.33,
+      "text": "La razón por la que la Tradestation"
+    },
+    {
+      "start": 87.33,
+      "end": 91.33,
+      "text": "se invirtió en una pieza de software como el Portfolio Maestro"
+    },
+    {
+      "start": 91.89,
+      "end": 95.01,
+      "text": "es para permitir que testes estrategias de tradición"
+    },
+    {
+      "start": 95.01,
+      "end": 97.49,
+      "text": "en un Portfolio de símbolos."
+    },
+    {
+      "start": 97.49,
+      "end": 98.61,
+      "text": "Por lo tanto, el nombre."
+    },
+    {
+      "start": 99.41,
+      "end": 103.25,
+      "text": "La idea aquí no solo fue retestar en símbolos individuos,"
+    },
+    {
+      "start": 103.25,
+      "end": 106.85,
+      "text": "como una análisis de trato que te permite hacer."
+    },
+    {
+      "start": 106.85,
+      "end": 109.33,
+      "text": "Aquí tengo un contrato futuro,"
+    },
+    {
+      "start": 109.33,
+      "end": 111.89,
+      "text": "un símbolo continuo en ES."
+    },
+    {
+      "start": 111.89,
+      "end": 115.49,
+      "text": "Puedo aplicar una estrategia para agregar ES"
+    },
+    {
+      "start": 115.49,
+      "end": 118.53,
+      "text": "y mirar el reporte de la estrategia de la performance."
+    },
+    {
+      "start": 118.53,
+      "end": 120.37,
+      "text": "Pero entonces la pregunta es,"
+    },
+    {
+      "start": 120.37,
+      "end": 122.53,
+      "text": "¿cómo performará la estrategia"
+    },
+    {
+      "start": 122.53,
+      "end": 124.93,
+      "text": "si la aplico a un producto diferente,"
+    },
+    {
+      "start": 124.93,
+      "end": 127.09,
+      "text": "a diferentes futuras, a un producto diferente?"
+    },
+    {
+      "start": 127.89,
+      "end": 132.37,
+      "text": "Ese tipo de cosa es lo que el Portfolio Maestro te permite hacer."
+    },
+    {
+      "start": 132.37,
+      "end": 135.17,
+      "text": "Porque no solo te permite tomar una estrategia"
+    },
+    {
+      "start": 135.17,
+      "end": 139.81,
+      "text": "y aplicarla para coger un grupo de símbolos,"
+    },
+    {
+      "start": 139.81,
+      "end": 142.29,
+      "text": "pero también te permite ver un reporte de la performance"
+    },
+    {
+      "start": 143.09,
+      "end": 144.93,
+      "text": "en todos los símbolos tradidos"
+    },
+    {
+      "start": 144.93,
+      "end": 149.01,
+      "text": "como si hubieras tradido la estrategia en todos esos símbolos"
+    },
+    {
+      "start": 149.01,
+      "end": 152.53,
+      "text": "y darte un reporte overall sobre cómo lo hicieron."
+    },
+    {
+      "start": 152.53,
+      "end": 155.81,
+      "text": "Y te permite hacer un comparado muy rápido"
+    },
+    {
+      "start": 155.81,
+      "end": 159.41,
+      "text": "y contrasto entre los símbolos que han sido tradidos."
+    },
+    {
+      "start": 160.21,
+      "end": 163.41,
+      "text": "Así que esto es lo que muchos tradidores de estrategia hacen."
+    },
+    {
+      "start": 163.41,
+      "end": 165.25,
+      "text": "No solo desarrollan una estrategia,"
+    },
+    {
+      "start": 165.25,
+      "end": 170.05,
+      "text": "pero también aplican a un grupo de símbolos"
+    },
+    {
+      "start": 170.05,
+      "end": 172.85,
+      "text": "para asegurar que la estrategia se mantenga consistente"
+    },
+    {
+      "start": 172.85,
+      "end": 177.65,
+      "text": "y que provee una performance similar a la de un portfolio."
+    },
+    {
+      "start": 177.65,
+      "end": 182.61,
+      "text": "Así que vamos a empezar y vamos a App y abrimos el Portfolio Maestro."
+    },
+    {
+      "start": 183.38,
+      "end": 186.42,
+      "text": "Vamos a ir adelante y establecemos nuestro Portfolio Maestro"
+    },
+    {
+      "start": 186.42,
+      "end": 188.34,
+      "text": "para hacer un backtest."
+    },
+    {
+      "start": 188.34,
+      "end": 191.22,
+      "text": "Una de las primeras cosas que voy a mostrarles hoy es el ranking"
+    },
+    {
+      "start": 191.22,
+      "end": 194.1,
+      "text": "y cómo rankar símbolos en un portfolio."
+    },
+    {
+      "start": 194.18,
+      "end": 197.3,
+      "text": "Ranking a veces se convierte en importante"
+    },
+    {
+      "start": 198.42,
+      "end": 204.24,
+      "text": "considerando que no todos tienen capital ilimitado para traducir."
+    },
+    {
+      "start": 204.24,
+      "end": 206.0,
+      "text": "Así que tienes que hacer una decisión sobre"
+    },
+    {
+      "start": 206.0,
+      "end": 211.84,
+      "text": "cuáles símbolos van a ser los candidatos de la tradición en tu portfolio."
+    },
+    {
+      "start": 211.84,
+      "end": 216.32,
+      "text": "Por ejemplo, si aplicas esta estrategia sobre una lista de símbolos,"
+    },
+    {
+      "start": 216.32,
+      "end": 220.88,
+      "text": "digamos, 10 símbolos o 30 símbolos, o lo que sea el número de símbolos,"
+    },
+    {
+      "start": 220.88,
+      "end": 223.52,
+      "text": "y solo tienes una cantidad ilimitada de capital,"
+    },
+    {
+      "start": 223.52,
+      "end": 226.24,
+      "text": "como $5,000 o $10,000."
+    },
+    {
+      "start": 226.24,
+      "end": 230.0,
+      "text": "Así que solo puedes invertir en tantos símbolos."
+    },
+    {
+      "start": 230.72,
+      "end": 234.24,
+      "text": "Entonces, de los 10 o 30 símbolos que tienes en tu portfolio,"
+    },
+    {
+      "start": 234.24,
+      "end": 237.28,
+      "text": "tienes un mecanismo para decir"
+    },
+    {
+      "start": 237.28,
+      "end": 241.52,
+      "text": "cuáles símbolos son los que merecen tu inversión"
+    },
+    {
+      "start": 241.52,
+      "end": 243.28,
+      "text": "basado en un ranking particular."
+    },
+    {
+      "start": 243.28,
+      "end": 246.8,
+      "text": "Así que vas a rancar el símbolo basado en un métrico particular"
+    },
+    {
+      "start": 246.8,
+      "end": 249.84,
+      "text": "y luego aplicar la estrategia a los que tienen"
+    },
+    {
+      "start": 250.0,
+      "end": 254.51,
+      "text": "la mejor performance basada en ese métrico."
+    },
+    {
+      "start": 254.51,
+      "end": 256.67,
+      "text": "Así que eso es exactamente lo que vamos a hacer hoy."
+    },
+    {
+      "start": 256.67,
+      "end": 260.59,
+      "text": "Así que voy a diseñar, no tengo un grupo de estrategia ahora."
+    },
+    {
+      "start": 260.59,
+      "end": 264.19,
+      "text": "Voy a hacer algo muy simple para que puedas ver cómo"
+    },
+    {
+      "start": 264.19,
+      "end": 267.55,
+      "text": "estas estrategias de ranking realmente afectan"
+    },
+    {
+      "start": 267.55,
+      "end": 269.79,
+      "text": "la forma en que la estrategia está traducida."
+    },
+    {
+      "start": 269.79,
+      "end": 271.47,
+      "text": "Voy a crear un grupo de estrategia."
+    },
+    {
+      "start": 271.47,
+      "end": 273.23,
+      "text": "Así que déjame ir y clicar en nuevo aquí."
+    },
+    {
+      "start": 275.52,
+      "end": 277.28,
+      "text": "Bien, vamos a llamar a este ranking."
+    },
+    {
+      "start": 279.02,
+      "end": 284.27,
+      "text": "Bien, voy a usar ranking y money management en un lugar."
+    },
+    {
+      "start": 289.36,
+      "end": 293.28,
+      "text": "Bien, estoy usando ranking y money management en un lugar"
+    },
+    {
+      "start": 293.28,
+      "end": 296.88,
+      "text": "porque esos son los dos tabs que ves aquí en el very top"
+    },
+    {
+      "start": 296.88,
+      "end": 299.28,
+      "text": "cuando estás creando tu grupo de estrategia."
+    },
+    {
+      "start": 299.28,
+      "end": 301.68,
+      "text": "Así que quiero solo conectar los dos"
+    },
+    {
+      "start": 301.68,
+      "end": 304.0,
+      "text": "porque sé que estoy creando un ejemplo para ambos."
+    },
+    {
+      "start": 304.56,
+      "end": 306.88,
+      "text": "Y voy a usar equities para este ejemplo."
+    },
+    {
+      "start": 306.88,
+      "end": 309.89,
+      "text": "Bien, voy a agregar una estrategia."
+    },
+    {
+      "start": 311.09,
+      "end": 312.69,
+      "text": "Voy a usar algo custom."
+    },
+    {
+      "start": 315.98,
+      "end": 319.82,
+      "text": "Custom significa que existe en tu lista de estrategias"
+    },
+    {
+      "start": 319.82,
+      "end": 321.5,
+      "text": "con el nombre custom."
+    },
+    {
+      "start": 321.5,
+      "end": 323.66,
+      "text": "No es algo que no tengas."
+    },
+    {
+      "start": 323.66,
+      "end": 325.42,
+      "text": "Así que vayas a tu lista de estrategias"
+    },
+    {
+      "start": 325.42,
+      "end": 329.26,
+      "text": "y vas a encontrar una estrategia llamada custom strategy long entry."
+    },
+    {
+      "start": 329.26,
+      "end": 331.18,
+      "text": "Y voy a usar una estrategia custom"
+    },
+    {
+      "start": 331.18,
+      "end": 334.14,
+      "text": "porque quiero una simple regla que todos podamos entender"
+    },
+    {
+      "start": 334.7,
+      "end": 338.46,
+      "text": "y ver cómo el ranking y money management"
+    },
+    {
+      "start": 338.46,
+      "end": 340.46,
+      "text": "afectan los símbolos que están traducidos."
+    },
+    {
+      "start": 340.46,
+      "end": 342.22,
+      "text": "Voy a seleccionarlo y clicar OK."
+    },
+    {
+      "start": 343.25,
+      "end": 344.61,
+      "text": "Está ahí en la parte de arriba,"
+    },
+    {
+      "start": 345.17,
+      "end": 348.61,
+      "text": "o al menos aquí en la parte de arriba de mi Portfolio Maestro."
+    },
+    {
+      "start": 348.61,
+      "end": 352.45,
+      "text": "Puedo ver los impuestos que son default en esta estrategia particular."
+    },
+    {
+      "start": 352.45,
+      "end": 357.17,
+      "text": "No estoy seguro de si puedes leer ese texto negro en el amarillo,"
+    },
+    {
+      "start": 357.17,
+      "end": 361.65,
+      "text": "pero dice LE Condición equals C greater than O."
+    },
+    {
+      "start": 361.65,
+      "end": 365.33,
+      "text": "C greater than O es Closed greater than Open."
+    },
+    {
+      "start": 365.33,
+      "end": 369.17,
+      "text": "Así que esta estrategia o esta estrategia custom es una simple regla."
+    },
+    {
+      "start": 369.25,
+      "end": 372.29,
+      "text": "Si el Open es menos que el precio de la cerradura,"
+    },
+    {
+      "start": 373.09,
+      "end": 375.17,
+      "text": "entonces generará una entrada larga."
+    },
+    {
+      "start": 375.17,
+      "end": 376.85,
+      "text": "Esa idea es muy simple,"
+    },
+    {
+      "start": 376.85,
+      "end": 379.25,
+      "text": "pero voy a cambiar eso a algo diferente."
+    },
+    {
+      "start": 379.25,
+      "end": 385.78,
+      "text": "Así que déjame ir a mi estrategia group settings,"
+    },
+    {
+      "start": 385.78,
+      "end": 386.82,
+      "text": "aquí en la parte de arriba."
+    },
+    {
+      "start": 388.69,
+      "end": 390.61,
+      "text": "Clicco en impuestos de estrategia"
+    },
+    {
+      "start": 390.61,
+      "end": 393.01,
+      "text": "y voy a cambiar los impuestos de esa estrategia"
+    },
+    {
+      "start": 393.01,
+      "end": 395.89,
+      "text": "a Closed greater than Zero."
+    },
+    {
+      "start": 395.89,
+      "end": 398.93,
+      "text": "Así que simplemente simplificamos la regla"
+    },
+    {
+      "start": 398.93,
+      "end": 404.93,
+      "text": "y no estamos realmente mirando o comparando los precios de la actual cerradura."
+    },
+    {
+      "start": 404.93,
+      "end": 408.85,
+      "text": "Estoy buscando cualquier precio que sea mayor que cero."
+    },
+    {
+      "start": 408.85,
+      "end": 413.33,
+      "text": "Así que si algún negocio trae a un precio mayor que cero,"
+    },
+    {
+      "start": 413.33,
+      "end": 416.13,
+      "text": "entonces esa es la condición que va a trigger la entrada larga."
+    },
+    {
+      "start": 417.09,
+      "end": 422.21,
+      "text": "Técnicamente cada símbolo en el que la estrategia se aplica va a traer,"
+    },
+    {
+      "start": 422.21,
+      "end": 426.53,
+      "text": "porque van a traer a un precio que sea mayor que cero."
+    },
+    {
+      "start": 426.53,
+      "end": 427.73,
+      "text": "Así que esa va a ser mi estrategia."
+    },
+    {
+      "start": 428.29,
+      "end": 429.09,
+      "text": "Nada extraño."
+    },
+    {
+      "start": 429.09,
+      "end": 431.57,
+      "text": "Recuerda que hoy estamos solo concentrando"
+    },
+    {
+      "start": 431.57,
+      "end": 433.81,
+      "text": "en la parte de arriba de la estrategia"
+    },
+    {
+      "start": 433.81,
+      "end": 439.57,
+      "text": "y vamos a ver su aplicación mejor si simplificamos la entrada."
+    },
+    {
+      "start": 439.57,
+      "end": 442.45,
+      "text": "Así que déjame ir a agregar símbolos a mi estrategia group."
+    },
+    {
+      "start": 442.45,
+      "end": 443.81,
+      "text": "Así que voy a ir a la lista de símbolos,"
+    },
+    {
+      "start": 444.78,
+      "end": 447.94,
+      "text": "agregar símbolos y vamos a ver."
+    },
+    {
+      "start": 447.94,
+      "end": 452.5,
+      "text": "Voy a ir aquí a la lista de símbolos de Tradestation Customs"
+    },
+    {
+      "start": 453.71,
+      "end": 456.51,
+      "text": "y tengo una lista de símbolos aquí"
+    },
+    {
+      "start": 456.51,
+      "end": 459.07,
+      "text": "que está hecha de 10 símbolos."
+    },
+    {
+      "start": 459.07,
+      "end": 460.59,
+      "text": "Los vemos aquí en la lista,"
+    },
+    {
+      "start": 460.59,
+      "end": 463.79,
+      "text": "empezando con Disney y hasta American Express."
+    },
+    {
+      "start": 463.79,
+      "end": 465.71,
+      "text": "Esto es algo que he creado anterior."
+    },
+    {
+      "start": 465.71,
+      "end": 469.07,
+      "text": "Puedes crear listas de símbolos customes en tu sitio también."
+    },
+    {
+      "start": 469.07,
+      "end": 470.91,
+      "text": "De nuevo, esto es solo para demostrar"
+    },
+    {
+      "start": 470.91,
+      "end": 474.91,
+      "text": "cómo estos 10 símbolos van a ser afectados"
+    },
+    {
+      "start": 474.91,
+      "end": 482.03,
+      "text": "por la estrategia de rango y manejo de dinero que voy a aplicar."
+    },
+    {
+      "start": 482.03,
+      "end": 485.52,
+      "text": "Voy a clicar OK y los símbolos se van a agregar aquí"
+    },
+    {
+      "start": 485.52,
+      "end": 487.68,
+      "text": "a mi estrategia group."
+    },
+    {
+      "start": 487.68,
+      "end": 488.72,
+      "text": "Puedo verlos ahí."
+    },
+    {
+      "start": 489.52,
+      "end": 491.6,
+      "text": "Y a este punto, luego,"
+    },
+    {
+      "start": 491.6,
+      "end": 495.04,
+      "text": "voy a la tab de rango y especifico"
+    },
+    {
+      "start": 495.04,
+      "end": 498.56,
+      "text": "cómo es que quiero arreglar los símbolos y traerlos."
+    },
+    {
+      "start": 498.56,
+      "end": 500.56,
+      "text": "Pero para que veamos la diferencia,"
+    },
+    {
+      "start": 500.56,
+      "end": 503.68,
+      "text": "déjame ir adelante y correr el backtest de los portfolios"
+    },
+    {
+      "start": 503.68,
+      "end": 505.92,
+      "text": "sin ninguna estrategia de rango"
+    },
+    {
+      "start": 505.92,
+      "end": 509.44,
+      "text": "para que luego podamos ver las posiciones de nuevo"
+    },
+    {
+      "start": 509.44,
+      "end": 511.2,
+      "text": "y ver lo que cambió."
+    },
+    {
+      "start": 511.2,
+      "end": 515.12,
+      "text": "Voy a venir aquí a Manage Portfolios"
+    },
+    {
+      "start": 515.12,
+      "end": 517.68,
+      "text": "y voy a crear un nuevo portfólio"
+    },
+    {
+      "start": 517.68,
+      "end": 522.54,
+      "text": "que se llamará Ranking and Money Management."
+    },
+    {
+      "start": 527.65,
+      "end": 529.01,
+      "text": "Y dentro de este portfólio,"
+    },
+    {
+      "start": 529.01,
+      "end": 531.89,
+      "text": "vamos a agregar la estrategia group que he creado"
+    },
+    {
+      "start": 531.89,
+      "end": 534.69,
+      "text": "que tiene el mismo nombre, Ranking and Money Management."
+    },
+    {
+      "start": 535.41,
+      "end": 537.89,
+      "text": "Y, por supuesto, puedes ver los elementos de esa grupo"
+    },
+    {
+      "start": 537.89,
+      "end": 541.25,
+      "text": "que tiene la estrategia custom que hemos modificado"
+    },
+    {
+      "start": 541.25,
+      "end": 544.13,
+      "text": "y el símbolo 10 símbolos que hemos añadido."
+    },
+    {
+      "start": 544.69,
+      "end": 549.23,
+      "text": "De este punto, voy a ir aquí a Backtest Portfolio."
+    },
+    {
+      "start": 549.23,
+      "end": 549.87,
+      "text": "Antes de que lo haga,"
+    },
+    {
+      "start": 549.87,
+      "end": 551.95,
+      "text": "vamos a ir a ver algunos posiciones de portfólio."
+    },
+    {
+      "start": 553.42,
+      "end": 555.1,
+      "text": "No tengo que cambiar aquí,"
+    },
+    {
+      "start": 555.1,
+      "end": 556.78,
+      "text": "no tengo que cambiar nada aquí en general."
+    },
+    {
+      "start": 558.08,
+      "end": 561.6,
+      "text": "Tenemos una tab para constrangos y una para Portfolio Stops,"
+    },
+    {
+      "start": 561.6,
+      "end": 563.2,
+      "text": "que vamos a llegar a en un momento."
+    },
+    {
+      "start": 563.2,
+      "end": 565.28,
+      "text": "Entonces, nada que cambiar aquí todavía."
+    },
+    {
+      "start": 565.28,
+      "end": 569.44,
+      "text": "Voy a cancelar esto y luego hacer el backtest."
+    },
+    {
+      "start": 570.08,
+      "end": 572.16,
+      "text": "Esto trae a este diálogo,"
+    },
+    {
+      "start": 572.16,
+      "end": 574.88,
+      "text": "permitiendo cambiar lo que es la capital inicial,"
+    },
+    {
+      "start": 576.32,
+      "end": 580.32,
+      "text": "lo que va a usar el diálogo para el backtest."
+    },
+    {
+      "start": 580.32,
+      "end": 581.12,
+      "text": "En este ejemplo,"
+    },
+    {
+      "start": 581.12,
+      "end": 583.28,
+      "text": "estoy backtesting dos años de datos"
+    },
+    {
+      "start": 583.28,
+      "end": 586.16,
+      "text": "para cada uno de esos 10 símbolos que tengo en mi lista de símbolos."
+    },
+    {
+      "start": 586.88,
+      "end": 588.8,
+      "text": "El tipo de backtest es estándar."
+    },
+    {
+      "start": 588.8,
+      "end": 590.24,
+      "text": "Voy a mantener todo símbolo"
+    },
+    {
+      "start": 590.24,
+      "end": 592.08,
+      "text": "y voy a hacer clic en Perform Backtest."
+    },
+    {
+      "start": 597.01,
+      "end": 597.65,
+      "text": "Ahí vamos."
+    },
+    {
+      "start": 597.65,
+      "end": 600.29,
+      "text": "Se terminó de hacer el backtest de esos 10 símbolos."
+    },
+    {
+      "start": 600.29,
+      "end": 602.13,
+      "text": "Voy a hacer clic en View Report ahora."
+    },
+    {
+      "start": 604.64,
+      "end": 606.64,
+      "text": "Y para resumir, para aquellos que están con nosotros,"
+    },
+    {
+      "start": 607.6,
+      "end": 608.24,
+      "text": "por ahora,"
+    },
+    {
+      "start": 609.31,
+      "end": 610.99,
+      "text": "Portfolio Maestro es una herramienta"
+    },
+    {
+      "start": 610.99,
+      "end": 613.39,
+      "text": "que es parte del software de TradeStation"
+    },
+    {
+      "start": 613.39,
+      "end": 616.99,
+      "text": "y te permite backtest el Portfolio de símbolos."
+    },
+    {
+      "start": 616.99,
+      "end": 618.59,
+      "text": "Entonces puedes seleccionar una estrategia."
+    },
+    {
+      "start": 619.23,
+      "end": 622.83,
+      "text": "Puede ser una de las que vienen construidas en TradeStation"
+    },
+    {
+      "start": 622.83,
+      "end": 624.75,
+      "text": "o una que crees tú mismo"
+    },
+    {
+      "start": 624.75,
+      "end": 627.55,
+      "text": "y aplica a un Portfolio de símbolos"
+    },
+    {
+      "start": 627.55,
+      "end": 631.87,
+      "text": "para ver cómo se performan en todo el Portfolio."
+    },
+    {
+      "start": 631.87,
+      "end": 635.07,
+      "text": "Así que aquí tengo el reporte de la performance para este backtest."
+    },
+    {
+      "start": 635.87,
+      "end": 637.95,
+      "text": "Puedes ver que es una estrategia perdida."
+    },
+    {
+      "start": 639.47,
+      "end": 641.39,
+      "text": "Los 17,000 dólares de perdida."
+    },
+    {
+      "start": 642.43,
+      "end": 644.11,
+      "text": "Entonces queremos saber qué fue traducido."
+    },
+    {
+      "start": 644.11,
+      "end": 645.47,
+      "text": "Vamos aquí a la lista de trade"
+    },
+    {
+      "start": 646.42,
+      "end": 648.82,
+      "text": "y veamos algunas de las informaciones aquí."
+    },
+    {
+      "start": 648.82,
+      "end": 650.02,
+      "text": "Déjame ver si puedo..."
+    },
+    {
+      "start": 653.97,
+      "end": 655.41,
+      "text": "Tengo que hacer clic en cada una."
+    },
+    {
+      "start": 655.41,
+      "end": 656.29,
+      "text": "Bien, está bien."
+    },
+    {
+      "start": 656.93,
+      "end": 659.41,
+      "text": "Entonces puedes ver que esta es la información"
+    },
+    {
+      "start": 659.41,
+      "end": 663.81,
+      "text": "que quería ver en este particular backtest."
+    },
+    {
+      "start": 663.81,
+      "end": 664.31,
+      "text": "Bien."
+    },
+    {
+      "start": 664.87,
+      "end": 667.03,
+      "text": "Así que sabemos que la estrategia"
+    },
+    {
+      "start": 667.03,
+      "end": 670.31,
+      "text": "va de dos años desde hoy."
+    },
+    {
+      "start": 670.31,
+      "end": 672.71,
+      "text": "Entonces el primer día que ves aquí,"
+    },
+    {
+      "start": 672.71,
+      "end": 675.35,
+      "text": "el 22 de diciembre de 2021,"
+    },
+    {
+      "start": 675.91,
+      "end": 678.79,
+      "text": "es el primer día que la estrategia"
+    },
+    {
+      "start": 678.79,
+      "end": 682.63,
+      "text": "puede poner en una transacción."
+    },
+    {
+      "start": 682.63,
+      "end": 685.03,
+      "text": "Recuerda que hay algo en una estrategia backtest"
+    },
+    {
+      "start": 685.03,
+      "end": 687.11,
+      "text": "y si has hecho estrategia backtest,"
+    },
+    {
+      "start": 687.11,
+      "end": 689.43,
+      "text": "sabes que hay algo como el back de tu mano,"
+    },
+    {
+      "start": 689.43,
+      "end": 692.55,
+      "text": "que hay algo llamado MaxBarsBackSetting."
+    },
+    {
+      "start": 693.51,
+      "end": 697.19,
+      "text": "MaxBarsBack es solo un grupo de barras,"
+    },
+    {
+      "start": 697.19,
+      "end": 699.99,
+      "text": "estoy hablando de barras históricas de precio,"
+    },
+    {
+      "start": 699.99,
+      "end": 701.83,
+      "text": "que están setas o reservadas"
+    },
+    {
+      "start": 701.83,
+      "end": 703.99,
+      "text": "para las calculaciones de la estrategia."
+    },
+    {
+      "start": 703.99,
+      "end": 706.71,
+      "text": "La estrategia usa un default de 50."
+    },
+    {
+      "start": 706.71,
+      "end": 708.55,
+      "text": "Entonces los primeros 50 barras"
+    },
+    {
+      "start": 708.55,
+      "end": 711.19,
+      "text": "en este histórico backtest"
+    },
+    {
+      "start": 711.19,
+      "end": 713.19,
+      "text": "están reservados para las calculaciones."
+    },
+    {
+      "start": 713.99,
+      "end": 718.79,
+      "text": "Eso explica por qué el día no es octubre 10."
+    },
+    {
+      "start": 718.79,
+      "end": 720.15,
+      "text": "Hoy es octubre 10, ¿verdad?"
+    },
+    {
+      "start": 721.11,
+      "end": 724.55,
+      "text": "Eso explica por qué el día no es octubre 10 de 2021,"
+    },
+    {
+      "start": 724.55,
+      "end": 727.59,
+      "text": "es el 22 de diciembre de 2021,"
+    },
+    {
+      "start": 727.59,
+      "end": 729.59,
+      "text": "porque los primeros 50 barras"
+    },
+    {
+      "start": 729.59,
+      "end": 732.79,
+      "text": "están reservados para las calculaciones de la estrategia."
+    },
+    {
+      "start": 732.79,
+      "end": 733.83,
+      "text": "Pero en adición a eso,"
+    },
+    {
+      "start": 733.83,
+      "end": 735.75,
+      "text": "puedes ver que el segundo rango"
+    },
+    {
+      "start": 735.75,
+      "end": 738.79,
+      "text": "tiene un día de 10 de 9 de 2023."
+    },
+    {
+      "start": 738.79,
+      "end": 740.39,
+      "text": "Entonces el backtest histórico"
+    },
+    {
+      "start": 740.39,
+      "end": 742.15,
+      "text": "que estamos realizando aquí"
+    },
+    {
+      "start": 742.15,
+      "end": 745.52,
+      "text": "usa barras cerradas,"
+    },
+    {
+      "start": 745.52,
+      "end": 748.56,
+      "text": "que significa que la actividad de trading de hoy,"
+    },
+    {
+      "start": 748.56,
+      "end": 751.12,
+      "text": "que todavía está siendo construida como una barra diaria,"
+    },
+    {
+      "start": 751.12,
+      "end": 754.64,
+      "text": "no está incluida en esta actividad de backtest."
+    },
+    {
+      "start": 754.64,
+      "end": 757.84,
+      "text": "Entonces es claro que no sólo vemos"
+    },
+    {
+      "start": 757.84,
+      "end": 759.12,
+      "text": "cuándo la venta fue ingresada,"
+    },
+    {
+      "start": 759.12,
+      "end": 762.88,
+      "text": "sino que también vemos lo que la parada de esa venta es"
+    },
+    {
+      "start": 762.88,
+      "end": 765.36,
+      "text": "como la cerradura de ayer."
+    },
+    {
+      "start": 765.36,
+      "end": 767.6,
+      "text": "Y te dice que estás abierta"
+    },
+    {
+      "start": 767.6,
+      "end": 769.36,
+      "text": "en esta particular posición de Disney."
+    },
+    {
+      "start": 770.0,
+      "end": 771.44,
+      "text": "Y esto es la ganancia y la pérdida"
+    },
+    {
+      "start": 771.44,
+      "end": 773.36,
+      "text": "que estás haciendo en esa posición."
+    },
+    {
+      "start": 773.36,
+      "end": 777.44,
+      "text": "Entonces, desde la ingresada en 22 de diciembre de 2021,"
+    },
+    {
+      "start": 778.72,
+      "end": 782.24,
+      "text": "estamos abajo de $6,500."
+    },
+    {
+      "start": 782.24,
+      "end": 783.44,
+      "text": "Pero es interesante aquí"
+    },
+    {
+      "start": 783.44,
+      "end": 786.32,
+      "text": "que todas las ventas que fueron ingresadas,"
+    },
+    {
+      "start": 786.32,
+      "end": 788.88,
+      "text": "empezando aquí con el rango número uno, Disney,"
+    },
+    {
+      "start": 790.04,
+      "end": 792.82,
+      "text": "Home Depot, Johnson & Johnson,"
+    },
+    {
+      "start": 793.78,
+      "end": 800.52,
+      "text": "Walmart, Intel, Microsoft, Apple, Cisco y American Express,"
+    },
+    {
+      "start": 800.52,
+      "end": 802.92,
+      "text": "todas fueron ingresadas en el mismo día,"
+    },
+    {
+      "start": 802.92,
+      "end": 805.0,
+      "text": "22 de diciembre de 2021."
+    },
+    {
+      "start": 805.88,
+      "end": 807.4,
+      "text": "Y la razón por eso es porque,"
+    },
+    {
+      "start": 807.4,
+      "end": 810.36,
+      "text": "si ustedes recuerdan la regla de mi estrategia,"
+    },
+    {
+      "start": 810.36,
+      "end": 813.8,
+      "text": "dije que si algún símbolo está ingresando más que cero,"
+    },
+    {
+      "start": 814.36,
+      "end": 814.84,
+      "text": "traiganlo."
+    },
+    {
+      "start": 815.48,
+      "end": 817.32,
+      "text": "Y son todas las ventas que están aquí"
+    },
+    {
+      "start": 817.32,
+      "end": 821.0,
+      "text": "porque la estrategia solo tomará una venta"
+    },
+    {
+      "start": 821.0,
+      "end": 822.76,
+      "text": "en una dirección al mismo tiempo,"
+    },
+    {
+      "start": 823.32,
+      "end": 825.64,
+      "text": "lo que significa que una vez que traiga largo,"
+    },
+    {
+      "start": 825.64,
+      "end": 827.64,
+      "text": "una vez que estableces una posición larga,"
+    },
+    {
+      "start": 828.2,
+      "end": 829.88,
+      "text": "no hará nada diferente"
+    },
+    {
+      "start": 829.88,
+      "end": 831.24,
+      "text": "hasta que haya una salida"
+    },
+    {
+      "start": 831.8,
+      "end": 833.8,
+      "text": "o la estrategia haga algo más."
+    },
+    {
+      "start": 834.6,
+      "end": 835.08,
+      "text": "En este caso,"
+    },
+    {
+      "start": 835.08,
+      "end": 837.56,
+      "text": "solo tenemos un único símbolo,"
+    },
+    {
+      "start": 837.56,
+      "end": 840.6,
+      "text": "que es la clave más grande que cero,"
+    },
+    {
+      "start": 840.6,
+      "end": 842.36,
+      "text": "y no tenemos ninguna salida."
+    },
+    {
+      "start": 842.36,
+      "end": 845.64,
+      "text": "Así que eso es todo lo que la estrategia fue capaz de hacer."
+    },
+    {
+      "start": 845.64,
+      "end": 847.56,
+      "text": "Fue capaz de establecer posiciones"
+    },
+    {
+      "start": 847.56,
+      "end": 850.92,
+      "text": "para estos 10 símbolos"
+    },
+    {
+      "start": 850.92,
+      "end": 853.4,
+      "text": "en el 22 de diciembre de 2021."
+    },
+    {
+      "start": 854.44,
+      "end": 857.88,
+      "text": "Pero puedes ver que trae los símbolos,"
+    },
+    {
+      "start": 860.79,
+      "end": 862.31,
+      "text": "no tiene tiempo aquí."
+    },
+    {
+      "start": 862.39,
+      "end": 863.91,
+      "text": "Así que podemos,"
+    },
+    {
+      "start": 864.87,
+      "end": 866.87,
+      "text": "podemos teóricamente decir que"
+    },
+    {
+      "start": 867.67,
+      "end": 870.87,
+      "text": "los tomó en la orden que están disponibles"
+    },
+    {
+      "start": 870.87,
+      "end": 872.47,
+      "text": "en la lista de símbolos."
+    },
+    {
+      "start": 872.47,
+      "end": 874.07,
+      "text": "Así que si voy a volver a,"
+    },
+    {
+      "start": 875.19,
+      "end": 875.67,
+      "text": "a ver,"
+    },
+    {
+      "start": 875.67,
+      "end": 877.35,
+      "text": "voy a volver a mi portfólio"
+    },
+    {
+      "start": 879.56,
+      "end": 881.56,
+      "text": "y si abro mi lista de símbolos,"
+    },
+    {
+      "start": 882.2,
+      "end": 884.44,
+      "text": "va en esta orden que los símbolos son"
+    },
+    {
+      "start": 884.44,
+      "end": 886.92,
+      "text": "Disney, HD, Johnson & Johnson."
+    },
+    {
+      "start": 887.64,
+      "end": 888.92,
+      "text": "Voy a volver al reporte."
+    },
+    {
+      "start": 893.33,
+      "end": 896.13,
+      "text": "Así que puedes ver que Disney, HD, Johnson & Johnson."
+    },
+    {
+      "start": 896.13,
+      "end": 898.21,
+      "text": "Así que esa es la orden que pide,"
+    },
+    {
+      "start": 898.21,
+      "end": 900.45,
+      "text": "la forma en la que los símbolos están listados"
+    },
+    {
+      "start": 900.45,
+      "end": 904.29,
+      "text": "en tu lista de símbolos customes."
+    },
+    {
+      "start": 904.29,
+      "end": 906.13,
+      "text": "Esto es una lista de símbolos customes."
+    },
+    {
+      "start": 906.13,
+      "end": 907.97,
+      "text": "Así que cualquier orden que veas los símbolos,"
+    },
+    {
+      "start": 907.97,
+      "end": 909.73,
+      "text": "esa es la forma en la que la estrategia"
+    },
+    {
+      "start": 909.73,
+      "end": 912.05,
+      "text": "se va a acercar a ellos y traerlos."
+    },
+    {
+      "start": 912.05,
+      "end": 914.05,
+      "text": "Así que vamos a hablar de el rango y modificar,"
+    },
+    {
+      "start": 914.05,
+      "end": 914.29,
+      "text": "¿sabes?"
+    },
+    {
+      "start": 914.29,
+      "end": 916.13,
+      "text": "Cuáles símbolos van a ser traídos primero."
+    },
+    {
+      "start": 916.13,
+      "end": 919.17,
+      "text": "Voy a venir aquí a mi portfólio."
+    },
+    {
+      "start": 921.09,
+      "end": 921.73,
+      "text": "Bien."
+    },
+    {
+      "start": 921.73,
+      "end": 925.36,
+      "text": "Y no lo hacemos a este nivel."
+    },
+    {
+      "start": 925.36,
+      "end": 927.28,
+      "text": "No lo hacemos a nivel de portfólio,"
+    },
+    {
+      "start": 927.28,
+      "end": 930.16,
+      "text": "el rango está hecho a nivel de estrategia de grupo."
+    },
+    {
+      "start": 930.16,
+      "end": 931.76,
+      "text": "Voy a ir al grupo de estrategia,"
+    },
+    {
+      "start": 932.56,
+      "end": 936.0,
+      "text": "selecciono mi rango y el manejo de dinero aquí abajo."
+    },
+    {
+      "start": 936.56,
+      "end": 939.68,
+      "text": "Voy a ir al tablo de rango y pedir a la estrategia"
+    },
+    {
+      "start": 939.68,
+      "end": 942.24,
+      "text": "para marcar mis símbolos basados en..."
+    },
+    {
+      "start": 943.08,
+      "end": 943.56,
+      "text": "A ver."
+    },
+    {
+      "start": 945.97,
+      "end": 948.69,
+      "text": "Muchos de estos son basados en indicadores técnicos."
+    },
+    {
+      "start": 948.69,
+      "end": 952.37,
+      "text": "Así que vamos a marcarlos por el cambio de porcentaje."
+    },
+    {
+      "start": 952.37,
+      "end": 953.81,
+      "text": "Si selecciono el cambio de porcentaje,"
+    },
+    {
+      "start": 954.45,
+      "end": 957.65,
+      "text": "esta ventana abre y me permite especificar,"
+    },
+    {
+      "start": 957.73,
+      "end": 962.21,
+      "text": "¿cuál es el cambio de porcentaje en mi libro de rango?"
+    },
+    {
+      "start": 962.21,
+      "end": 965.17,
+      "text": "Primero, voy a hacer el método de filtro."
+    },
+    {
+      "start": 965.17,
+      "end": 967.81,
+      "text": "Voy a seleccionar los símbolos de rango superior."
+    },
+    {
+      "start": 968.85,
+      "end": 969.89,
+      "text": "Límite de filtro."
+    },
+    {
+      "start": 969.89,
+      "end": 971.57,
+      "text": "Este es el número de símbolos que"
+    },
+    {
+      "start": 973.09,
+      "end": 977.75,
+      "text": "quieres que el rango regrese."
+    },
+    {
+      "start": 977.75,
+      "end": 979.91,
+      "text": "Así que en este caso voy a ponerlo a 1."
+    },
+    {
+      "start": 981.16,
+      "end": 985.72,
+      "text": "Intervol de rango y intervalo de calculación son interesantes"
+    },
+    {
+      "start": 985.8,
+      "end": 989.72,
+      "text": "porque el intervalo de calculación es como el timeframe"
+    },
+    {
+      "start": 989.72,
+      "end": 994.36,
+      "text": "del gráfico que está utilizado para la calculación de cambio de porcentaje."
+    },
+    {
+      "start": 994.36,
+      "end": 999.56,
+      "text": "Mientras el intervalo de rango es cómo a veces el rango va a suceder."
+    },
+    {
+      "start": 999.56,
+      "end": 1002.12,
+      "text": "Puedo poner el rango a la semana"
+    },
+    {
+      "start": 1002.12,
+      "end": 1004.92,
+      "text": "para que cada semana tengamos un nuevo rango."
+    },
+    {
+      "start": 1004.92,
+      "end": 1006.36,
+      "text": "Así que esto es lo que estoy intentando decir."
+    },
+    {
+      "start": 1007.56,
+      "end": 1008.92,
+      "text": "Calcula el cambio de porcentaje."
+    },
+    {
+      "start": 1010.16,
+      "end": 1013.28,
+      "text": "Mira por el símbolo superior basado en mi límite de filtro"
+    },
+    {
+      "start": 1013.92,
+      "end": 1016.32,
+      "text": "y rango los símbolos en una base diaria."
+    },
+    {
+      "start": 1017.28,
+      "end": 1021.68,
+      "text": "Y el rango es basado en el cambio de porcentaje basado en el timeframe diario."
+    },
+    {
+      "start": 1021.68,
+      "end": 1023.2,
+      "text": "Veando hacia atrás 30 días."
+    },
+    {
+      "start": 1023.2,
+      "end": 1026.08,
+      "text": "Esto es donde el verano es especificado."
+    },
+    {
+      "start": 1026.08,
+      "end": 1028.56,
+      "text": "Así que voy a calcular un 30 día de negociación,"
+    },
+    {
+      "start": 1029.12,
+      "end": 1030.64,
+      "text": "cambio de porcentaje,"
+    },
+    {
+      "start": 1030.64,
+      "end": 1033.44,
+      "text": "rango los símbolos basado en ese cambio de porcentaje,"
+    },
+    {
+      "start": 1033.44,
+      "end": 1035.92,
+      "text": "y luego negociar el símbolo superior."
+    },
+    {
+      "start": 1036.96,
+      "end": 1040.8,
+      "text": "Vamos a decir que hay otro filtro o otro input aquí que dice"
+    },
+    {
+      "start": 1041.44,
+      "end": 1045.76,
+      "text": "que el mínimo precio requerido para una negociación debe ser tomado."
+    },
+    {
+      "start": 1045.76,
+      "end": 1047.2,
+      "text": "Tengo 1.5."
+    },
+    {
+      "start": 1047.2,
+      "end": 1052.96,
+      "text": "Así que significa que cualquier símbolo que esté negociando debajo de $1.50 no va a ser negociado."
+    },
+    {
+      "start": 1052.96,
+      "end": 1055.52,
+      "text": "Puedes setar ese tipo de filtros si quieres."
+    },
+    {
+      "start": 1055.52,
+      "end": 1057.76,
+      "text": "Si tienes una lista más grande de símbolos,"
+    },
+    {
+      "start": 1057.76,
+      "end": 1060.72,
+      "text": "estoy seguro de que los 10 símbolos que he seleccionado"
+    },
+    {
+      "start": 1060.72,
+      "end": 1063.84,
+      "text": "están todos negociando por encima de $1.50."
+    },
+    {
+      "start": 1063.84,
+      "end": 1067.52,
+      "text": "Así que el rango de alto a bajo es defaultado a verdad."
+    },
+    {
+      "start": 1067.52,
+      "end": 1068.96,
+      "text": "Esa es la forma en la que lo quería."
+    },
+    {
+      "start": 1069.04,
+      "end": 1072.4,
+      "text": "Y el límite de rango si quieres setar algunos límites"
+    },
+    {
+      "start": 1073.2,
+      "end": 1076.16,
+      "text": "basado en cómo estás encargando los símbolos."
+    },
+    {
+      "start": 1076.16,
+      "end": 1077.84,
+      "text": "Eso es algo que puedes hacer también."
+    },
+    {
+      "start": 1077.84,
+      "end": 1080.8,
+      "text": "Así que voy a dejar los otros sitios como están."
+    },
+    {
+      "start": 1080.8,
+      "end": 1082.16,
+      "text": "Y voy a..."
+    },
+    {
+      "start": 1082.16,
+      "end": 1085.04,
+      "text": "Una vez que lo vuelvo, noté algo muy interesante."
+    },
+    {
+      "start": 1085.04,
+      "end": 1089.28,
+      "text": "Una vez que lo vuelvo, si voy aquí a mi portfólio"
+    },
+    {
+      "start": 1090.56,
+      "end": 1094.16,
+      "text": "y voy a mi portfólio de rango y de dinero,"
+    },
+    {
+      "start": 1095.04,
+      "end": 1098.72,
+      "text": "mi estrategia de rango, el que acabo de destacar en rojo,"
+    },
+    {
+      "start": 1099.2,
+      "end": 1100.32,
+      "text": "ha sido añadido."
+    },
+    {
+      "start": 1100.32,
+      "end": 1102.4,
+      "text": "Así que una vez que haces esa edición o ese cambio"
+    },
+    {
+      "start": 1102.4,
+      "end": 1104.88,
+      "text": "a nivel de grupo de estrategia,"
+    },
+    {
+      "start": 1104.88,
+      "end": 1107.12,
+      "text": "entonces verás esa estrategia aplicada aquí"
+    },
+    {
+      "start": 1107.12,
+      "end": 1109.6,
+      "text": "en mi portfólio, mi estero."
+    },
+    {
+      "start": 1110.66,
+      "end": 1111.22,
+      "text": "Bien."
+    },
+    {
+      "start": 1111.22,
+      "end": 1113.7,
+      "text": "Puedo abrirlo y ver algunos de los impuestos"
+    },
+    {
+      "start": 1113.7,
+      "end": 1115.54,
+      "text": "para esa estrategia de rango."
+    },
+    {
+      "start": 1115.54,
+      "end": 1118.5,
+      "text": "Y voy a ir aquí y retestar el portfólio."
+    },
+    {
+      "start": 1119.52,
+      "end": 1120.16,
+      "text": "Los mismos sitios."
+    },
+    {
+      "start": 1120.16,
+      "end": 1121.6,
+      "text": "No estoy cambiando nada."
+    },
+    {
+      "start": 1121.6,
+      "end": 1125.59,
+      "text": "Solo quiero ver cómo el retesto cambia"
+    },
+    {
+      "start": 1126.15,
+      "end": 1129.03,
+      "text": "y algunos de los valores que son diferentes."
+    },
+    {
+      "start": 1130.82,
+      "end": 1132.02,
+      "text": "Así que vamos al reporte."
+    },
+    {
+      "start": 1132.66,
+      "end": 1134.1,
+      "text": "Primero, en el sumario,"
+    },
+    {
+      "start": 1134.1,
+      "end": 1137.86,
+      "text": "puedes ver que tuvimos un cambio en la profitability"
+    },
+    {
+      "start": 1137.86,
+      "end": 1139.22,
+      "text": "de esta estrategia."
+    },
+    {
+      "start": 1139.22,
+      "end": 1140.98,
+      "text": "Todavía es una estrategia que se está perdiendo,"
+    },
+    {
+      "start": 1140.98,
+      "end": 1143.54,
+      "text": "pero se está perdiendo menos que lo que estaba haciendo antes."
+    },
+    {
+      "start": 1144.18,
+      "end": 1147.06,
+      "text": "Lo que estoy más interesado en es la lista de intercambios."
+    },
+    {
+      "start": 1149.19,
+      "end": 1149.75,
+      "text": "Bien."
+    },
+    {
+      "start": 1149.75,
+      "end": 1151.51,
+      "text": "Entonces, empezando aquí en el very top,"
+    },
+    {
+      "start": 1152.15,
+      "end": 1152.71,
+      "text": "tenemos..."
+    },
+    {
+      "start": 1154.96,
+      "end": 1156.4,
+      "text": "Voy a abrir esto un poco más."
+    },
+    {
+      "start": 1158.79,
+      "end": 1159.11,
+      "text": "Bien."
+    },
+    {
+      "start": 1159.11,
+      "end": 1160.63,
+      "text": "Entonces, empezando aquí en el very top,"
+    },
+    {
+      "start": 1161.35,
+      "end": 1162.79,
+      "text": "ahora puedes ver que Disney"
+    },
+    {
+      "start": 1163.43,
+      "end": 1165.51,
+      "text": "no es el primer símbolo que se ha traducido."
+    },
+    {
+      "start": 1165.51,
+      "end": 1167.03,
+      "text": "Eso es muy claro ahora."
+    },
+    {
+      "start": 1167.03,
+      "end": 1168.71,
+      "text": "El primer símbolo que se ha traducido es Apple"
+    },
+    {
+      "start": 1169.43,
+      "end": 1172.87,
+      "text": "basado en este rango de cambio de porcentaje."
+    },
+    {
+      "start": 1172.87,
+      "end": 1175.51,
+      "text": "Y ese es el símbolo que se ha traducido en diciembre 22."
+    },
+    {
+      "start": 1176.31,
+      "end": 1181.94,
+      "text": "Mi segunda ventaja no sucedió hasta el 4 de enero."
+    },
+    {
+      "start": 1183.09,
+      "end": 1185.81,
+      "text": "Recuerda que cuando hicimos el reporte de la performance al principio,"
+    },
+    {
+      "start": 1186.45,
+      "end": 1190.29,
+      "text": "cada ventaja se ha traducido en diciembre 22"
+    },
+    {
+      "start": 1190.29,
+      "end": 1195.57,
+      "text": "porque estábamos buscando un símbolo de traducción muy simple,"
+    },
+    {
+      "start": 1195.57,
+      "end": 1197.81,
+      "text": "que es más cerca del cero."
+    },
+    {
+      "start": 1197.81,
+      "end": 1201.25,
+      "text": "Entonces, cada símbolo se ha traducido en diciembre 22."
+    },
+    {
+      "start": 1201.89,
+      "end": 1203.57,
+      "text": "Ahora, las cosas han cambiado"
+    },
+    {
+      "start": 1203.57,
+      "end": 1205.57,
+      "text": "porque nos contaron la estrategia de backtest."
+    },
+    {
+      "start": 1206.21,
+      "end": 1206.69,
+      "text": "Espera."
+    },
+    {
+      "start": 1207.64,
+      "end": 1211.16,
+      "text": "Toma los 10 símbolos, calcula el cambio de porcentaje,"
+    },
+    {
+      "start": 1212.04,
+      "end": 1216.12,
+      "text": "ranga los símbolos basados en este cálculo de cambio de porcentaje"
+    },
+    {
+      "start": 1216.12,
+      "end": 1218.52,
+      "text": "y solo trate el símbolo del top."
+    },
+    {
+      "start": 1218.52,
+      "end": 1220.92,
+      "text": "Y esa es la razón por la que, en diciembre 22,"
+    },
+    {
+      "start": 1220.92,
+      "end": 1222.2,
+      "text": "estamos solo tratando Apple."
+    },
+    {
+      "start": 1222.84,
+      "end": 1226.68,
+      "text": "Fernando está preguntando si puede isolar cada símbolo en la lista de traducción"
+    },
+    {
+      "start": 1226.68,
+      "end": 1229.8,
+      "text": "para que pueda comparar P&L para cada uno."
+    },
+    {
+      "start": 1229.8,
+      "end": 1231.32,
+      "text": "Sí, por supuesto que puede."
+    },
+    {
+      "start": 1231.32,
+      "end": 1234.28,
+      "text": "Este es un reporte combinado, si vas al sumario."
+    },
+    {
+      "start": 1234.28,
+      "end": 1237.72,
+      "text": "Entonces, toda la performance de todos los 10 símbolos"
+    },
+    {
+      "start": 1238.36,
+      "end": 1241.0,
+      "text": "me ha dado una pérdida de $4,000."
+    },
+    {
+      "start": 1241.0,
+      "end": 1243.4,
+      "text": "Pero si voy al análisis de la traducción"
+    },
+    {
+      "start": 1244.66,
+      "end": 1247.38,
+      "text": "y voy aquí a este pequeño botón en la derecha de la derecha de la pantalla"
+    },
+    {
+      "start": 1247.38,
+      "end": 1248.18,
+      "text": "para ver si escondes,"
+    },
+    {
+      "start": 1249.17,
+      "end": 1250.77,
+      "text": "puedo seleccionar todos los símbolos"
+    },
+    {
+      "start": 1251.83,
+      "end": 1256.63,
+      "text": "y luego ver cómo cada símbolo contribuyó a esa pérdida."
+    },
+    {
+      "start": 1256.63,
+      "end": 1259.19,
+      "text": "Como puedes ver, de todas estas columnas,"
+    },
+    {
+      "start": 1259.19,
+      "end": 1263.35,
+      "text": "solo hay tres símbolos que me han dado resultados positivos."
+    },
+    {
+      "start": 1263.35,
+      "end": 1266.23,
+      "text": "Apple, Walmart y Microsoft."
+    },
+    {
+      "start": 1266.23,
+      "end": 1269.03,
+      "text": "Todos los otros símbolos me han dado resultados negativos,"
+    },
+    {
+      "start": 1269.03,
+      "end": 1270.39,
+      "text": "pero todas combinadas,"
+    },
+    {
+      "start": 1270.39,
+      "end": 1272.23,
+      "text": "puedo verlo en esta columna aquí,"
+    },
+    {
+      "start": 1272.23,
+      "end": 1273.91,
+      "text": "que es el total de porcentaje."
+    },
+    {
+      "start": 1275.03,
+      "end": 1276.71,
+      "text": "Entonces, el rango es una cosa."
+    },
+    {
+      "start": 1276.79,
+      "end": 1279.99,
+      "text": "Deja que veas las otras estrategias de rango que están ahí."
+    },
+    {
+      "start": 1279.99,
+      "end": 1282.87,
+      "text": "Voy a volver aquí a mi grupo de estrategias."
+    },
+    {
+      "start": 1283.67,
+      "end": 1287.75,
+      "text": "Algunos de los otros rango disponibles aquí son los valores RSI."
+    },
+    {
+      "start": 1288.31,
+      "end": 1291.19,
+      "text": "Puedes rango por Williams R."
+    },
+    {
+      "start": 1292.63,
+      "end": 1293.75,
+      "text": "Perfección de retorno."
+    },
+    {
+      "start": 1294.31,
+      "end": 1295.51,
+      "text": "Eso es interesante, ¿verdad?"
+    },
+    {
+      "start": 1295.51,
+      "end": 1300.71,
+      "text": "Se ve en el retorno de cada símbolo y los rango a base de eso."
+    },
+    {
+      "start": 1300.71,
+      "end": 1303.11,
+      "text": "Pero juega con la funcionalidad"
+    },
+    {
+      "start": 1303.11,
+      "end": 1306.15,
+      "text": "y vea cómo afecta la lista de símbolos."
+    },
+    {
+      "start": 1306.15,
+      "end": 1308.07,
+      "text": "En el lado de la gestión de dinero,"
+    },
+    {
+      "start": 1309.56,
+      "end": 1313.14,
+      "text": "déjame ir aquí y agregar algo como..."
+    },
+    {
+      "start": 1318.16,
+      "end": 1319.92,
+      "text": "Esto es más de una tamaña de negocio."
+    },
+    {
+      "start": 1320.88,
+      "end": 1324.16,
+      "text": "Por default, está utilizando una cantidad fijada."
+    },
+    {
+      "start": 1324.72,
+      "end": 1330.88,
+      "text": "Entonces, incluso si no hago una estrategia de gestión de dinero,"
+    },
+    {
+      "start": 1331.44,
+      "end": 1333.84,
+      "text": "si voy de vuelta a mi reporte,"
+    },
+    {
+      "start": 1334.64,
+      "end": 1336.96,
+      "text": "probablemente notas que cada símbolo,"
+    },
+    {
+      "start": 1337.6,
+      "end": 1339.12,
+      "text": "déjame ir aquí a mi lista de negocios,"
+    },
+    {
+      "start": 1340.0,
+      "end": 1341.92,
+      "text": "si miras la columna de la cantidad,"
+    },
+    {
+      "start": 1341.92,
+      "end": 1345.04,
+      "text": "cada símbolo está traicionando 100 símbolos."
+    },
+    {
+      "start": 1346.2,
+      "end": 1348.44,
+      "text": "Si traes 100 símbolos de Apple,"
+    },
+    {
+      "start": 1349.86,
+      "end": 1352.02,
+      "text": "traicionando a $173,"
+    },
+    {
+      "start": 1352.58,
+      "end": 1355.38,
+      "text": "eso es un inversión de $17,000."
+    },
+    {
+      "start": 1356.1,
+      "end": 1359.06,
+      "text": "Mientras, si traes 100 símbolos de Cisco,"
+    },
+    {
+      "start": 1359.06,
+      "end": 1361.06,
+      "text": "traicionando a $62,"
+    },
+    {
+      "start": 1361.06,
+      "end": 1364.9,
+      "text": "eso es solo un inversión de $6,000."
+    },
+    {
+      "start": 1364.9,
+      "end": 1368.18,
+      "text": "Entonces estamos hablando de ampliar la cantidad de inversión"
+    },
+    {
+      "start": 1368.18,
+      "end": 1369.7,
+      "text": "si estuvieras a traicionar a Apple."
+    },
+    {
+      "start": 1369.7,
+      "end": 1373.62,
+      "text": "Entonces, el riesgo involucrado en traer una seguridad"
+    },
+    {
+      "start": 1373.62,
+      "end": 1375.7,
+      "text": "va a ser diferente de la otra"
+    },
+    {
+      "start": 1375.7,
+      "end": 1378.98,
+      "text": "si tu cantidad siempre es una cantidad fijada."
+    },
+    {
+      "start": 1379.7,
+      "end": 1383.62,
+      "text": "Entonces, usando una estrategia de gestión de dinero"
+    },
+    {
+      "start": 1383.62,
+      "end": 1386.1,
+      "text": "que cambia tu cantidad"
+    },
+    {
+      "start": 1386.1,
+      "end": 1389.94,
+      "text": "basada en cualquier métrica que usas,"
+    },
+    {
+      "start": 1389.94,
+      "end": 1391.46,
+      "text": "puedes igualizar tus posiciones"
+    },
+    {
+      "start": 1391.46,
+      "end": 1393.86,
+      "text": "para que puedas tener un riesgo balanceado"
+    },
+    {
+      "start": 1393.86,
+      "end": 1395.94,
+      "text": "por todas tus posiciones."
+    },
+    {
+      "start": 1395.94,
+      "end": 1397.7,
+      "text": "Puedo elegir algo como, por ejemplo,"
+    },
+    {
+      "start": 1398.42,
+      "end": 1402.21,
+      "text": "una cantidad fijada por precio"
+    },
+    {
+      "start": 1403.09,
+      "end": 1405.33,
+      "text": "por cantidad."
+    },
+    {
+      "start": 1406.5,
+      "end": 1410.02,
+      "text": "Y si hago una cantidad fijada por precio,"
+    },
+    {
+      "start": 1411.38,
+      "end": 1412.18,
+      "text": "entonces puedo decir"
+    },
+    {
+      "start": 1413.88,
+      "end": 1415.88,
+      "text": "el valor de la dólar que quiero invertir"
+    },
+    {
+      "start": 1415.88,
+      "end": 1418.2,
+      "text": "en cada una de esas posiciones."
+    },
+    {
+      "start": 1419.08,
+      "end": 1421.8,
+      "text": "La cantidad máxima, 5000 símbolos,"
+    },
+    {
+      "start": 1421.8,
+      "end": 1424.52,
+      "text": "y alrededor de la más cerca de uno símbolo."
+    },
+    {
+      "start": 1424.52,
+      "end": 1426.52,
+      "text": "Si utilizo este métrico,"
+    },
+    {
+      "start": 1426.52,
+      "end": 1428.36,
+      "text": "que es la cantidad fijada por precio,"
+    },
+    {
+      "start": 1429.0,
+      "end": 1431.24,
+      "text": "me voy a volver a mi portfólio"
+    },
+    {
+      "start": 1431.8,
+      "end": 1436.36,
+      "text": "y ahora, en adición a mi rango de cambio de porcentaje,"
+    },
+    {
+      "start": 1436.36,
+      "end": 1439.0,
+      "text": "que es mi estrategia de rango,"
+    },
+    {
+      "start": 1439.0,
+      "end": 1441.16,
+      "text": "también tengo mi manejo de dinero"
+    },
+    {
+      "start": 1441.8,
+      "end": 1443.0,
+      "text": "fijado por precio."
+    },
+    {
+      "start": 1443.64,
+      "end": 1445.32,
+      "text": "Ahora, déjame hacer el test de vuelta ahora"
+    },
+    {
+      "start": 1446.9,
+      "end": 1449.7,
+      "text": "y ver cómo afecta la cantidad"
+    },
+    {
+      "start": 1449.7,
+      "end": 1452.18,
+      "text": "de cada una de las posiciones que están allí."
+    },
+    {
+      "start": 1455.51,
+      "end": 1456.55,
+      "text": "Voy a ver el reporte"
+    },
+    {
+      "start": 1457.35,
+      "end": 1458.95,
+      "text": "y en mi lista de intercambios,"
+    },
+    {
+      "start": 1458.95,
+      "end": 1461.64,
+      "text": "puedes ver los intercambios."
+    },
+    {
+      "start": 1461.64,
+      "end": 1465.0,
+      "text": "Puedes ver que sólo intercambió 57 puertas de Apple"
+    },
+    {
+      "start": 1466.1,
+      "end": 1469.14,
+      "text": "en comparación con 158 puertas"
+    },
+    {
+      "start": 1469.14,
+      "end": 1470.9,
+      "text": "que intercambiaron por Cisco,"
+    },
+    {
+      "start": 1470.9,
+      "end": 1472.18,
+      "text": "porque ahora está tomando un vistazo"
+    },
+    {
+      "start": 1472.18,
+      "end": 1474.18,
+      "text": "al precio de la seguridad"
+    },
+    {
+      "start": 1474.18,
+      "end": 1475.78,
+      "text": "y calculando, ¿sabes?"
+    },
+    {
+      "start": 1475.78,
+      "end": 1479.3,
+      "text": "¿Cuánto tendría que invertir $10,000"
+    },
+    {
+      "start": 1479.3,
+      "end": 1481.54,
+      "text": "en cada una de estas simbolas?"
+    },
+    {
+      "start": 1481.54,
+      "end": 1483.7,
+      "text": "Entonces es muy interesante cómo puedes manejar"
+    },
+    {
+      "start": 1483.7,
+      "end": 1486.42,
+      "text": "tu tamaño de intercambio de esta manera también."
+    },
+    {
+      "start": 1487.06,
+      "end": 1488.98,
+      "text": "Voy a ir a mis estrategias."
+    },
+    {
+      "start": 1488.98,
+      "end": 1491.14,
+      "text": "Vamos a ver y esto es el manejo de dinero."
+    },
+    {
+      "start": 1491.22,
+      "end": 1493.22,
+      "text": "Vamos a hacer FIXED FRACTIONAL"
+    },
+    {
+      "start": 1493.94,
+      "end": 1495.54,
+      "text": "con ATR RISK."
+    },
+    {
+      "start": 1495.54,
+      "end": 1496.98,
+      "text": "Ahora, esto utiliza ATR,"
+    },
+    {
+      "start": 1496.98,
+      "end": 1499.14,
+      "text": "que es un concepto muy interesante, ¿sabes?"
+    },
+    {
+      "start": 1499.86,
+      "end": 1501.3,
+      "text": "El modo en el que lo hicimos antes,"
+    },
+    {
+      "start": 1501.3,
+      "end": 1504.66,
+      "text": "lo hicimos por el precio de la seguridad."
+    },
+    {
+      "start": 1504.66,
+      "end": 1506.98,
+      "text": "Entonces, lo que sea el precio de la seguridad es"
+    },
+    {
+      "start": 1507.54,
+      "end": 1509.22,
+      "text": "que hemos especificado una cantidad de dinero"
+    },
+    {
+      "start": 1509.22,
+      "end": 1510.74,
+      "text": "que queríamos invertir"
+    },
+    {
+      "start": 1510.74,
+      "end": 1512.42,
+      "text": "y automáticamente calculó"
+    },
+    {
+      "start": 1512.42,
+      "end": 1513.94,
+      "text": "el número de puertas que trajeron."
+    },
+    {
+      "start": 1514.5,
+      "end": 1516.58,
+      "text": "Aquí está mirando a ATR"
+    },
+    {
+      "start": 1517.14,
+      "end": 1520.26,
+      "text": "y ATR es visto como riesgo."
+    },
+    {
+      "start": 1520.26,
+      "end": 1523.78,
+      "text": "Entonces, lo más alto el valor de ATR"
+    },
+    {
+      "start": 1523.78,
+      "end": 1526.26,
+      "text": "significa que la seguridad está moviendo más,"
+    },
+    {
+      "start": 1526.26,
+      "end": 1528.02,
+      "text": "es un poco más volátil."
+    },
+    {
+      "start": 1528.02,
+      "end": 1530.1,
+      "text": "Entonces, va a usar eso y va a"
+    },
+    {
+      "start": 1530.1,
+      "end": 1532.82,
+      "text": "reducir el número de puertas traídas"
+    },
+    {
+      "start": 1532.82,
+      "end": 1534.18,
+      "text": "por esa posición."
+    },
+    {
+      "start": 1534.18,
+      "end": 1534.74,
+      "text": "Por supuesto,"
+    },
+    {
+      "start": 1535.65,
+      "end": 1537.73,
+      "text": "vas a tener una oportunidad aquí para decir,"
+    },
+    {
+      "start": 1538.37,
+      "end": 1540.61,
+      "text": "OK, ¿qué es el riesgo de porcentaje?"
+    },
+    {
+      "start": 1540.61,
+      "end": 1543.57,
+      "text": "Esto es 5% de la equidad."
+    },
+    {
+      "start": 1544.48,
+      "end": 1546.72,
+      "text": "Entonces, sabemos que el punto de comienzo"
+    },
+    {
+      "start": 1546.72,
+      "end": 1551.44,
+      "text": "en cualquier estrategia es 100,000 dólares."
+    },
+    {
+      "start": 1551.44,
+      "end": 1552.32,
+      "text": "Puedes cambiar eso."
+    },
+    {
+      "start": 1553.04,
+      "end": 1556.32,
+      "text": "Eso es solo el punto de comienzo de cualquier estrategia."
+    },
+    {
+      "start": 1556.32,
+      "end": 1560.0,
+      "text": "Entonces, cuando hablamos de 5% de riesgo de la equidad,"
+    },
+    {
+      "start": 1560.0,
+      "end": 1562.4,
+      "text": "estamos hablando de ese punto de comienzo inicial."
+    },
+    {
+      "start": 1563.04,
+      "end": 1566.72,
+      "text": "Cualquier ganancias que haces después de eso"
+    },
+    {
+      "start": 1566.72,
+      "end": 1568.72,
+      "text": "van a ser añadidas a tu equidad"
+    },
+    {
+      "start": 1568.72,
+      "end": 1571.28,
+      "text": "y luego tu riesgo va a ser calculado"
+    },
+    {
+      "start": 1571.28,
+      "end": 1573.12,
+      "text": "mejor a base de eso."
+    },
+    {
+      "start": 1573.12,
+      "end": 1576.71,
+      "text": "Y encuentras esa posición"
+    },
+    {
+      "start": 1576.71,
+      "end": 1578.15,
+      "text": "cuando realizas el backtest."
+    },
+    {
+      "start": 1578.15,
+      "end": 1579.99,
+      "text": "Te lo mostraré en un momento."
+    },
+    {
+      "start": 1579.99,
+      "end": 1583.43,
+      "text": "Pero aquí tenemos el 5% de riesgo de la equidad."
+    },
+    {
+      "start": 1583.43,
+      "end": 1586.47,
+      "text": "Tenemos el multiplicador de ATR."
+    },
+    {
+      "start": 1586.47,
+      "end": 1587.51,
+      "text": "Vamos a setar esto a 10."
+    },
+    {
+      "start": 1589.48,
+      "end": 1591.4,
+      "text": "Multiplica porque usa el factor."
+    },
+    {
+      "start": 1591.4,
+      "end": 1594.76,
+      "text": "Primero calcula lo que es el valor de ATR."
+    },
+    {
+      "start": 1594.76,
+      "end": 1596.6,
+      "text": "Vamos a decir que, para Apple,"
+    },
+    {
+      "start": 1596.6,
+      "end": 1599.72,
+      "text": "el ATR es $2.50."
+    },
+    {
+      "start": 1599.72,
+      "end": 1601.48,
+      "text": "Si yo seto el multiplicador a 10,"
+    },
+    {
+      "start": 1601.48,
+      "end": 1605.56,
+      "text": "va a multiplicar esos $2.50 por 10,"
+    },
+    {
+      "start": 1606.12,
+      "end": 1609.8,
+      "text": "diciéndome un número numeric de 25."
+    },
+    {
+      "start": 1609.8,
+      "end": 1612.68,
+      "text": "Y va a usar ese número para afectar"
+    },
+    {
+      "start": 1613.7,
+      "end": 1616.98,
+      "text": "el ratio de riesgos que estoy tratando para Apple."
+    },
+    {
+      "start": 1616.98,
+      "end": 1618.98,
+      "text": "Vamos a hacer algunas modificaciones aquí"
+    },
+    {
+      "start": 1618.98,
+      "end": 1620.82,
+      "text": "y puedes ver ese efecto."
+    },
+    {
+      "start": 1622.02,
+      "end": 1623.62,
+      "text": "El ATR es 10."
+    },
+    {
+      "start": 1624.18,
+      "end": 1626.02,
+      "text": "Y, de nuevo, tienes una forma de especificar"
+    },
+    {
+      "start": 1626.02,
+      "end": 1627.94,
+      "text": "el máximo número de riesgos"
+    },
+    {
+      "start": 1627.94,
+      "end": 1630.26,
+      "text": "y cómo rondarlo hacia abajo o hacia arriba."
+    },
+    {
+      "start": 1631.14,
+      "end": 1632.74,
+      "text": "Vamos a hacer el backtest."
+    },
+    {
+      "start": 1632.74,
+      "end": 1635.14,
+      "text": "Vamos aquí a mi portfólio."
+    },
+    {
+      "start": 1636.0,
+      "end": 1638.24,
+      "text": "De nuevo, estoy mirando lo que he añadido aquí"
+    },
+    {
+      "start": 1639.99,
+      "end": 1641.03,
+      "text": "a mi backtest."
+    },
+    {
+      "start": 1641.03,
+      "end": 1644.31,
+      "text": "Y puedes ver que la estrategia de manejo de dinero"
+    },
+    {
+      "start": 1644.31,
+      "end": 1648.47,
+      "text": "ha sido cambiada a una fracción fixada con el riesgo de ATR."
+    },
+    {
+      "start": 1649.11,
+      "end": 1651.91,
+      "text": "Y aquí dice que compras 10 veces el ATR"
+    },
+    {
+      "start": 1652.63,
+      "end": 1654.23,
+      "text": "por 10 barras de mirada,"
+    },
+    {
+      "start": 1654.23,
+      "end": 1657.51,
+      "text": "pero no más de 5,000 compras."
+    },
+    {
+      "start": 1657.51,
+      "end": 1659.99,
+      "text": "Riesgo de no más de 5% de la equidad."
+    },
+    {
+      "start": 1659.99,
+      "end": 1662.47,
+      "text": "Así que esto te da un poco más de información"
+    },
+    {
+      "start": 1662.47,
+      "end": 1664.23,
+      "text": "sobre lo que va a hacer."
+    },
+    {
+      "start": 1664.79,
+      "end": 1665.91,
+      "text": "Hago el backtest."
+    },
+    {
+      "start": 1667.08,
+      "end": 1670.36,
+      "text": "Por cierto, aquí es donde cambias el capital inicial."
+    },
+    {
+      "start": 1670.36,
+      "end": 1670.92,
+      "text": "Mira."
+    },
+    {
+      "start": 1671.56,
+      "end": 1672.36,
+      "text": "$100,000."
+    },
+    {
+      "start": 1673.88,
+      "end": 1676.52,
+      "text": "Si no suena a lo que es el balance de tu cuenta,"
+    },
+    {
+      "start": 1677.24,
+      "end": 1679.16,
+      "text": "entonces tendrás que modificarlo aquí."
+    },
+    {
+      "start": 1679.88,
+      "end": 1683.24,
+      "text": "Así que la calculación de la cantidad de intercambios"
+    },
+    {
+      "start": 1683.24,
+      "end": 1687.4,
+      "text": "se haga correctamente o basada en lo que es realista en tu lado."
+    },
+    {
+      "start": 1687.4,
+      "end": 1690.2,
+      "text": "$100,000 es mi punto de comienzo."
+    },
+    {
+      "start": 1690.2,
+      "end": 1692.04,
+      "text": "Voy a hacer el backtest."
+    },
+    {
+      "start": 1696.13,
+      "end": 1697.17,
+      "text": "Voy a ver el reporte."
+    },
+    {
+      "start": 1701.57,
+      "end": 1704.05,
+      "text": "Y puedes ver los tamaños que están intercambiados."
+    },
+    {
+      "start": 1704.69,
+      "end": 1710.53,
+      "text": "Se intercambiaron 91 compras de Apple y 537 compras de Cisco."
+    },
+    {
+      "start": 1710.53,
+      "end": 1713.41,
+      "text": "Recuerda que esto es tomar un vistazo a ATR"
+    },
+    {
+      "start": 1713.41,
+      "end": 1714.61,
+      "text": "y hacer esa decisión."
+    },
+    {
+      "start": 1715.41,
+      "end": 1717.65,
+      "text": "Si recuerdas, cuando estábamos haciendo"
+    },
+    {
+      "start": 1720.55,
+      "end": 1723.11,
+      "text": "una cantidad directa de inversión,"
+    },
+    {
+      "start": 1723.83,
+      "end": 1728.15,
+      "text": "vimos que las compras de Apple y de Cisco"
+    },
+    {
+      "start": 1728.15,
+      "end": 1729.75,
+      "text": "no estaban tan lejos."
+    },
+    {
+      "start": 1729.75,
+      "end": 1734.23,
+      "text": "Creo que intercambiaron unos 50 compras de Apple"
+    },
+    {
+      "start": 1734.23,
+      "end": 1737.27,
+      "text": "y unos 150 compras de Cisco."
+    },
+    {
+      "start": 1737.27,
+      "end": 1741.43,
+      "text": "Así que es tal vez triple la cantidad,"
+    },
+    {
+      "start": 1741.43,
+      "end": 1742.55,
+      "text": "doble o triple la cantidad."
+    },
+    {
+      "start": 1742.55,
+      "end": 1744.23,
+      "text": "Pero mira la diferencia ahora."
+    },
+    {
+      "start": 1745.03,
+      "end": 1750.71,
+      "text": "Solo intercambiaron 91 compras de Apple y 537 compras de Cisco."
+    },
+    {
+      "start": 1751.43,
+      "end": 1753.67,
+      "text": "Ahora estamos hablando de cinco veces la cantidad"
+    },
+    {
+      "start": 1754.31,
+      "end": 1757.51,
+      "text": "de compras de Cisco cuando se comparan con Apple."
+    },
+    {
+      "start": 1757.51,
+      "end": 1758.79,
+      "text": "La razón por eso es porque"
+    },
+    {
+      "start": 1759.51,
+      "end": 1764.87,
+      "text": "quizás Apple tiene un valor más alto de ATR que Cisco."
+    },
+    {
+      "start": 1764.87,
+      "end": 1768.47,
+      "text": "Los movimientos de Cisco no van a compararse con Apple"
+    },
+    {
+      "start": 1768.47,
+      "end": 1773.99,
+      "text": "y ese tipo de calculación toma en cuenta ese riesgo."
+    },
+    {
+      "start": 1773.99,
+      "end": 1777.27,
+      "text": "El riesgo, el más movimiento la seguridad tiene,"
+    },
+    {
+      "start": 1777.35,
+      "end": 1779.83,
+      "text": "el riesgo es considerado,"
+    },
+    {
+      "start": 1779.83,
+      "end": 1780.87,
+      "text": "y el menos compras,"
+    },
+    {
+      "start": 1780.87,
+      "end": 1784.47,
+      "text": "la estrategia va a invertir en ese tratado particular."
+    },
+    {
+      "start": 1784.47,
+      "end": 1786.07,
+      "text": "Es un concepto interesante, ¿verdad?"
+    },
+    {
+      "start": 1786.07,
+      "end": 1788.79,
+      "text": "Vamos a volver a mi portfólio,"
+    },
+    {
+      "start": 1789.91,
+      "end": 1792.15,
+      "text": "vamos a mi grupo de estrategia una vez más."
+    },
+    {
+      "start": 1792.15,
+      "end": 1794.55,
+      "text": "Usé el multiplicador de 10."
+    },
+    {
+      "start": 1796.95,
+      "end": 1799.59,
+      "text": "Si elegí un multiplicador diferente,"
+    },
+    {
+      "start": 1799.59,
+      "end": 1801.83,
+      "text": "o incluso si reducí el riesgo aquí,"
+    },
+    {
+      "start": 1801.83,
+      "end": 1804.39,
+      "text": "digamos que haga un riesgo de 1%"
+    },
+    {
+      "start": 1805.11,
+      "end": 1808.15,
+      "text": "y voy a usar un multiplicador de 5."
+    },
+    {
+      "start": 1810.34,
+      "end": 1812.82,
+      "text": "Entonces voy aquí a mi portfólio."
+    },
+    {
+      "start": 1813.67,
+      "end": 1815.99,
+      "text": "Puedes ver que refleja, ¿dónde está?"
+    },
+    {
+      "start": 1815.99,
+      "end": 1817.75,
+      "text": "Voy a abrir la gestión de dinero."
+    },
+    {
+      "start": 1817.75,
+      "end": 1819.83,
+      "text": "Puedo ver que los cambios se reflejan."
+    },
+    {
+      "start": 1819.83,
+      "end": 1823.03,
+      "text": "Y todo lo que necesito es volver al portfólio una vez más."
+    },
+    {
+      "start": 1827.52,
+      "end": 1835.27,
+      "text": "Ahí vamos, voy al reporte y puedes ver la cantidad de compras aquí."
+    },
+    {
+      "start": 1837.41,
+      "end": 1840.85,
+      "text": "Ahora puedes ver que es un poco más alto ahora."
+    },
+    {
+      "start": 1840.85,
+      "end": 1842.93,
+      "text": "Ahora estamos hablando de siete veces,"
+    },
+    {
+      "start": 1842.93,
+      "end": 1845.09,
+      "text": "o seis o siete veces la cantidad."
+    },
+    {
+      "start": 1845.09,
+      "end": 1847.33,
+      "text": "Pero, de nuevo, es todo basado en ATR"
+    },
+    {
+      "start": 1847.33,
+      "end": 1850.85,
+      "text": "y en lo que la calculación de ATR y el multiplicador que estás especificando."
+    },
+    {
+      "start": 1851.89,
+      "end": 1854.61,
+      "text": "Hasta ahora hemos hablado de dos cosas que puedes hacer a tu"
+    },
+    {
+      "start": 1855.41,
+      "end": 1860.21,
+      "text": "test de vuelta o tu test de vuelta de tu portfólio para cambiar cosas."
+    },
+    {
+      "start": 1860.21,
+      "end": 1861.81,
+      "text": "Hablamos de la rango,"
+    },
+    {
+      "start": 1861.81,
+      "end": 1865.97,
+      "text": "la forma de cambiar los símbolos y decidir cuáles son los tratados primero."
+    },
+    {
+      "start": 1865.97,
+      "end": 1867.49,
+      "text": "Y también el manejo de dinero,"
+    },
+    {
+      "start": 1867.57,
+      "end": 1870.69,
+      "text": "lo que significa que estás afectando el tamaño de los tratados"
+    },
+    {
+      "start": 1870.69,
+      "end": 1872.21,
+      "text": "y algunas de esas otras componentes."
+    },
+    {
+      "start": 1872.21,
+      "end": 1877.73,
+      "text": "Vamos a hablar de las constracciones y parámetros de nivel de portfólio."
+    },
+    {
+      "start": 1877.73,
+      "end": 1880.13,
+      "text": "Pero vamos a ir y a ver una pregunta aquí."
+    },
+    {
+      "start": 1880.77,
+      "end": 1886.37,
+      "text": "Fernandez está preguntando si puede hacer una optimización para el mismo listo de símbolos"
+    },
+    {
+      "start": 1886.37,
+      "end": 1889.49,
+      "text": "y también mostrar los resultados de PNL por símbolo para cada iteración."
+    },
+    {
+      "start": 1890.05,
+      "end": 1891.81,
+      "text": "Definitivamente, sí, puede."
+    },
+    {
+      "start": 1892.69,
+      "end": 1895.17,
+      "text": "Cuando haces, déjame mostrarles muy rápido,"
+    },
+    {
+      "start": 1895.17,
+      "end": 1901.64,
+      "text": "cuando haces el test de vuelta y vienes aquí para el tipo de test de vuelta,"
+    },
+    {
+      "start": 1901.64,
+      "end": 1907.72,
+      "text": "puedes ponerlo en un tipo de test de vuelta optimizado que te permite hacer una optimización"
+    },
+    {
+      "start": 1908.28,
+      "end": 1913.88,
+      "text": "en todos los símbolos listados y ver la performance individual de cada uno de los símbolos."
+    },
+    {
+      "start": 1913.88,
+      "end": 1915.0,
+      "text": "Voy a cancelar esto."
+    },
+    {
+      "start": 1916.36,
+      "end": 1922.92,
+      "text": "Todos los constracciones y parámetros de nivel de portfólio van a estar aquí en el lado de la portfólio."
+    },
+    {
+      "start": 1923.88,
+      "end": 1929.48,
+      "text": "El ranking y el manejo del dinero están en el grupo de estrategia."
+    },
+    {
+      "start": 1929.48,
+      "end": 1934.92,
+      "text": "Tienes esos dos tabs, pero todos los constracciones y parámetros de nivel de portfólio"
+    },
+    {
+      "start": 1934.92,
+      "end": 1937.88,
+      "text": "van a estar aquí en el portfólio de manejo."
+    },
+    {
+      "start": 1937.88,
+      "end": 1945.33,
+      "text": "Entonces, aquí, voy a ir a settings de portfólio y tienes constracciones y parámetros de portfólio."
+    },
+    {
+      "start": 1945.33,
+      "end": 1948.45,
+      "text": "Vamos a suponer que queremos hacer un parámetro de portfólio."
+    },
+    {
+      "start": 1948.45,
+      "end": 1951.25,
+      "text": "Voy a elegir el parámetro de portfólio."
+    },
+    {
+      "start": 1952.58,
+      "end": 1953.62,
+      "text": "Esto es un true."
+    },
+    {
+      "start": 1954.74,
+      "end": 1959.7,
+      "text": "El periodo aquí, tienes que poner un, dos, o tres por día."
+    },
+    {
+      "start": 1961.38,
+      "end": 1966.42,
+      "text": "Eso es solo la cantidad que estás perdiendo por un periodo particular,"
+    },
+    {
+      "start": 1966.42,
+      "end": 1969.3,
+      "text": "o un mes, una semana, o un mes."
+    },
+    {
+      "start": 1969.3,
+      "end": 1972.26,
+      "text": "Vamos a ver qué hace esto."
+    },
+    {
+      "start": 1972.26,
+      "end": 1976.18,
+      "text": "Entonces, 2 significa que un 2% del portfólio se cae."
+    },
+    {
+      "start": 1976.18,
+      "end": 1982.74,
+      "text": "Entonces, si el portfólio se cae 2%, cerramos todas las posiciones hasta la siguiente semana."
+    },
+    {
+      "start": 1982.74,
+      "end": 1985.46,
+      "text": "Entonces, eso es donde el periodo cae."
+    },
+    {
+      "start": 1985.46,
+      "end": 1987.86,
+      "text": "Entonces, cerramos todo hasta la siguiente semana."
+    },
+    {
+      "start": 1987.86,
+      "end": 1993.3,
+      "text": "Si queremos cerrar todo hasta el próximo mes, entonces cambiamos este número a 1."
+    },
+    {
+      "start": 1993.3,
+      "end": 1995.46,
+      "text": "Vamos a ver si eso cae."
+    },
+    {
+      "start": 1995.46,
+      "end": 1996.74,
+      "text": "Vamos a ir y poner el parámetro."
+    },
+    {
+      "start": 1998.63,
+      "end": 1999.27,
+      "text": "Bien."
+    },
+    {
+      "start": 1999.27,
+      "end": 2000.31,
+      "text": "Y voy a clicar OK."
+    },
+    {
+      "start": 2003.04,
+      "end": 2005.28,
+      "text": "Y está listo aquí en el fondo."
+    },
+    {
+      "start": 2005.84,
+      "end": 2007.12,
+      "text": "Portfólio, parámetro."
+    },
+    {
+      "start": 2007.12,
+      "end": 2014.05,
+      "text": "Me voy a retestar el portfólio y ver si hay alguna vez que el portfólio se cae."
+    },
+    {
+      "start": 2016.9,
+      "end": 2018.42,
+      "text": "Voy a ver el report."
+    },
+    {
+      "start": 2018.42,
+      "end": 2024.39,
+      "text": "Bien."
+    },
+    {
+      "start": 2024.39,
+      "end": 2034.6,
+      "text": "Y voy a abrir mi nombre de señal porque puedes claramente ver que en diciembre 22"
+    },
+    {
+      "start": 2035.32,
+      "end": 2038.04,
+      "text": "tuvimos nuestra primera venta por Apple."
+    },
+    {
+      "start": 2039.09,
+      "end": 2042.85,
+      "text": "Aún tengo mi estrategia de rango en lugar, si lo notas, y el manejo de dinero."
+    },
+    {
+      "start": 2042.85,
+      "end": 2044.61,
+      "text": "Estoy usando todos ellos."
+    },
+    {
+      "start": 2044.61,
+      "end": 2063.91,
+      "text": "Pero puedes ver que en diciembre 22 a mayo 19 de 2022 es donde el portfólio se cae."
+    },
+    {
+      "start": 2064.66,
+      "end": 2066.5,
+      "text": "Pero no solo para ese símbolo."
+    },
+    {
+      "start": 2067.14,
+      "end": 2070.82,
+      "text": "Si tomas un vistazo a todos los símbolos, todos los símbolos, por supuesto,"
+    },
+    {
+      "start": 2070.9,
+      "end": 2077.38,
+      "text": "son traídos a diferentes dates porque tenemos nuestro rango y el manejo de dinero en lugar."
+    },
+    {
+      "start": 2077.38,
+      "end": 2079.14,
+      "text": "Pero haz un vistazo a las salidas."
+    },
+    {
+      "start": 2079.14,
+      "end": 2083.94,
+      "text": "Todas las salidas se han hecho en diciembre 19, diciembre 19, diciembre 19."
+    },
+    {
+      "start": 2083.94,
+      "end": 2092.82,
+      "text": "Porque en diciembre 19 de 2022 fue el día en el que calculó tu parámetro y se realizó"
+    },
+    {
+      "start": 2092.82,
+      "end": 2100.26,
+      "text": "que tu entero portfólio de símbolos, en este caso 10 símbolos, había perdido 2% de tu equidad,"
+    },
+    {
+      "start": 2100.26,
+      "end": 2102.66,
+      "text": "al que punto todas las posiciones se cerraron."
+    },
+    {
+      "start": 2104.58,
+      "end": 2109.72,
+      "text": "Entonces no es hasta, veamos, aquí."
+    },
+    {
+      "start": 2109.72,
+      "end": 2120.88,
+      "text": "No es hasta el 12 de julio que he podido poner un trato de huevos nuevamente para, es eso correcto?"
+    },
+    {
+      "start": 2121.6,
+      "end": 2125.68,
+      "text": "Así que 519, 519, 519, 519, 519."
+    },
+    {
+      "start": 2126.4,
+      "end": 2131.0,
+      "text": "Así que el siguiente trato, aquí lo es."
+    },
+    {
+      "start": 2131.56,
+      "end": 2135.64,
+      "text": "Así que estaba intentando encontrar, sabes, donde el siguiente trato sucedió."
+    },
+    {
+      "start": 2135.64,
+      "end": 2139.16,
+      "text": "Pero parece que al very beginning of the strategy back test,"
+    },
+    {
+      "start": 2139.72,
+      "end": 2146.74,
+      "text": "it traded all these symbols that you see above my yellow highlight."
+    },
+    {
+      "start": 2148.23,
+      "end": 2155.83,
+      "text": "On May 19th it closed every single one and on May 24th it started trading again."
+    },
+    {
+      "start": 2155.91,
+      "end": 2164.07,
+      "text": "I'm sure that this 524 2022 is a Monday because remember that we told the stop"
+    },
+    {
+      "start": 2164.07,
+      "end": 2168.47,
+      "text": "to close all positions and then wait until next week to trade again."
+    },
+    {
+      "start": 2168.47,
+      "end": 2170.55,
+      "text": "And it seems that's exactly what it did."
+    },
+    {
+      "start": 2170.55,
+      "end": 2178.39,
+      "text": "It lost the 2% on May 19th, closed all the positions and then it resumed trading on 524,"
+    },
+    {
+      "start": 2178.39,
+      "end": 2180.31,
+      "text": "which I find very interesting."
+    },
+    {
+      "start": 2180.31,
+      "end": 2184.55,
+      "text": "And you know, for anybody that's trading a portfolio, these are the type of things"
+    },
+    {
+      "start": 2184.55,
+      "end": 2186.39,
+      "text": "that you want to put into place."
+    },
+    {
+      "start": 2186.39,
+      "end": 2191.11,
+      "text": "You know, a lot of times, yeah, you're back testing a single security."
+    },
+    {
+      "start": 2191.11,
+      "end": 2193.27,
+      "text": "You're looking at the performance report."
+    },
+    {
+      "start": 2193.27,
+      "end": 2198.71,
+      "text": "But if you're trading multiple securities simultaneously,"
+    },
+    {
+      "start": 2198.71,
+      "end": 2201.11,
+      "text": "as a trader you see them all as a whole."
+    },
+    {
+      "start": 2201.11,
+      "end": 2203.11,
+      "text": "So you're looking at the whole portfolio."
+    },
+    {
+      "start": 2203.11,
+      "end": 2206.63,
+      "text": "And sometimes if you've lost a certain amount of your capital,"
+    },
+    {
+      "start": 2206.63,
+      "end": 2210.95,
+      "text": "then you're going to stop your trading and, you know, resume at a later time."
+    },
+    {
+      "start": 2212.05,
+      "end": 2215.25,
+      "text": "In addition to the stops, let me go back here to my portfolio."
+    },
+    {
+      "start": 2216.96,
+      "end": 2221.54,
+      "text": "So in addition to the stops, we also have the constraints, you know,"
+    },
+    {
+      "start": 2221.54,
+      "end": 2226.9,
+      "text": "and this is some other limitations you can put into your back test."
+    },
+    {
+      "start": 2226.9,
+      "end": 2229.06,
+      "text": "Like let me show you an example."
+    },
+    {
+      "start": 2230.36,
+      "end": 2232.76,
+      "text": "Maximum number of open positions right here."
+    },
+    {
+      "start": 2232.76,
+      "end": 2236.12,
+      "text": "So you notice that when I looked at the back test just a moment ago,"
+    },
+    {
+      "start": 2236.68,
+      "end": 2239.4,
+      "text": "I had six positions open."
+    },
+    {
+      "start": 2239.4,
+      "end": 2241.56,
+      "text": "If I want to put a limit to that and say,"
+    },
+    {
+      "start": 2241.56,
+      "end": 2245.56,
+      "text": "I only want to have, you know, three positions at any given moment."
+    },
+    {
+      "start": 2245.56,
+      "end": 2246.92,
+      "text": "So this is my limit."
+    },
+    {
+      "start": 2246.92,
+      "end": 2249.08,
+      "text": "Maximum number of open positions."
+    },
+    {
+      "start": 2249.08,
+      "end": 2252.26,
+      "text": "If I click OK to this, did I add it?"
+    },
+    {
+      "start": 2253.24,
+      "end": 2254.28,
+      "text": "No, it seems like it didn't."
+    },
+    {
+      "start": 2254.28,
+      "end": 2257.72,
+      "text": "Let me go back in there just to make sure that I added constraints."
+    },
+    {
+      "start": 2259.03,
+      "end": 2260.47,
+      "text": "Yeah, I didn't add it."
+    },
+    {
+      "start": 2260.47,
+      "end": 2265.59,
+      "text": "So maximum number of open positions."
+    },
+    {
+      "start": 2265.59,
+      "end": 2269.96,
+      "text": "I'm going to set this to three, not 310, three,"
+    },
+    {
+      "start": 2270.52,
+      "end": 2272.6,
+      "text": "and apply constraint right here."
+    },
+    {
+      "start": 2272.6,
+      "end": 2278.12,
+      "text": "So for the stops and the constraints, you have to apply it and then click on OK."
+    },
+    {
+      "start": 2282.64,
+      "end": 2285.2,
+      "text": "Stop and I can see my portfolio constraint."
+    },
+    {
+      "start": 2285.76,
+      "end": 2288.72,
+      "text": "Let me go ahead and back test the portfolio one more time."
+    },
+    {
+      "start": 2299.65,
+      "end": 2307.28,
+      "text": "OK, and I'm going to view the report and looking at the trade list right here,"
+    },
+    {
+      "start": 2307.28,
+      "end": 2309.36,
+      "text": "which we were looking at earlier."
+    },
+    {
+      "start": 2310.16,
+      "end": 2313.92,
+      "text": "This is where I have all my signals and constraints"
+    },
+    {
+      "start": 2313.92,
+      "end": 2316.08,
+      "text": "and everything that I add to my strategy."
+    },
+    {
+      "start": 2316.08,
+      "end": 2326.63,
+      "text": "You can see that on 520, it closed those top three positions."
+    },
+    {
+      "start": 2326.63,
+      "end": 2330.85,
+      "text": "But if you notice, December 22nd was the first trade,"
+    },
+    {
+      "start": 2331.49,
+      "end": 2334.21,
+      "text": "January 4th was the second trade,"
+    },
+    {
+      "start": 2334.77,
+      "end": 2337.57,
+      "text": "and January 19th was the third trade."
+    },
+    {
+      "start": 2338.29,
+      "end": 2340.45,
+      "text": "It stopped trading right after that."
+    },
+    {
+      "start": 2340.45,
+      "end": 2345.49,
+      "text": "It wasn't until it closed on May 20th, all those three trades,"
+    },
+    {
+      "start": 2346.05,
+      "end": 2349.89,
+      "text": "that it actually went to trade the next symbol."
+    },
+    {
+      "start": 2350.45,
+      "end": 2353.33,
+      "text": "Johnson & Johnson on May 24th."
+    },
+    {
+      "start": 2353.33,
+      "end": 2356.69,
+      "text": "So it's only keeping open three positions at a time."
+    },
+    {
+      "start": 2356.69,
+      "end": 2361.17,
+      "text": "So that's the type of constraints that you can also put in a portfolio back test."
+    },
+    {
+      "start": 2361.81,
+      "end": 2364.13,
+      "text": "So let's recap, OK?"
+    },
+    {
+      "start": 2366.21,
+      "end": 2372.6,
+      "text": "Ranking allows you to rank the symbols based on a particular metric."
+    },
+    {
+      "start": 2372.6,
+      "end": 2375.96,
+      "text": "You decide which symbol is going to be traded first."
+    },
+    {
+      "start": 2376.88,
+      "end": 2379.68,
+      "text": "Remember that we said that if you have a list of symbols,"
+    },
+    {
+      "start": 2379.68,
+      "end": 2381.92,
+      "text": "the symbols are going to be traded in that order"
+    },
+    {
+      "start": 2382.96,
+      "end": 2387.04,
+      "text": "in which they appear on the list, which is arbitrary."
+    },
+    {
+      "start": 2387.04,
+      "end": 2389.12,
+      "text": "Sometimes it's alphabetical."
+    },
+    {
+      "start": 2389.12,
+      "end": 2392.08,
+      "text": "So if you want to put a little bit of calculation"
+    },
+    {
+      "start": 2392.88,
+      "end": 2397.6,
+      "text": "on which symbols are traded first, then you have that ranking mechanism."
+    },
+    {
+      "start": 2397.6,
+      "end": 2402.48,
+      "text": "You also have the money management strategy,"
+    },
+    {
+      "start": 2402.48,
+      "end": 2405.84,
+      "text": "which allows you to modify the trade size."
+    },
+    {
+      "start": 2406.4,
+      "end": 2409.2,
+      "text": "How much investment am I putting on?"
+    },
+    {
+      "start": 2409.84,
+      "end": 2411.76,
+      "text": "What risk am I taking?"
+    },
+    {
+      "start": 2411.76,
+      "end": 2415.28,
+      "text": "And you have different money management strategies there as well."
+    },
+    {
+      "start": 2415.92,
+      "end": 2420.96,
+      "text": "And then for my portfolio level type of strategy,"
+    },
+    {
+      "start": 2420.96,
+      "end": 2422.24,
+      "text": "you have the constraint,"
+    },
+    {
+      "start": 2422.96,
+      "end": 2425.84,
+      "text": "which limits the number of positions that you are trading,"
+    },
+    {
+      "start": 2425.84,
+      "end": 2426.88,
+      "text": "like in this example,"
+    },
+    {
+      "start": 2428.24,
+      "end": 2431.04,
+      "text": "and many other constraints that you can look at."
+    },
+    {
+      "start": 2431.04,
+      "end": 2433.92,
+      "text": "And also, you know, the portfolio stops."
+    },
+    {
+      "start": 2433.92,
+      "end": 2440.4,
+      "text": "So you can set up a stop that tracks all your positions performance."
+    },
+    {
+      "start": 2440.4,
+      "end": 2443.76,
+      "text": "And if there's a drop that meets a certain percentage,"
+    },
+    {
+      "start": 2443.76,
+      "end": 2445.84,
+      "text": "it'll close all your open positions."
+    },
+    {
+      "start": 2446.48,
+      "end": 2449.52,
+      "text": "In addition to that stop or overall stop,"
+    },
+    {
+      "start": 2449.52,
+      "end": 2452.08,
+      "text": "you also have access to a profit target"
+    },
+    {
+      "start": 2452.72,
+      "end": 2456.72,
+      "text": "and a trailing stop if you want to use that as well."
+    },
+    {
+      "start": 2458.08,
+      "end": 2460.56,
+      "text": "This is it. This is my presentation."
+    },
+    {
+      "start": 2460.56,
+      "end": 2463.36,
+      "text": "All right. So, guys, thank you so much for joining me today."
+    },
+    {
+      "start": 2463.36,
+      "end": 2466.96,
+      "text": "Thank you for your support of the Trade Station Masterclass."
+    },
+    {
+      "start": 2466.96,
+      "end": 2468.64,
+      "text": "Have a wonderful afternoon."
+    },
+    {
+      "start": 2468.64,
+      "end": 2471.28,
+      "text": "And I hope to see you in a future class."
+    },
+    {
+      "start": 2471.28,
+      "end": 2473.68,
+      "text": "Great having you today. Goodbye, everyone."
+    }
+  ]
+}

@@ -1,0 +1,5459 @@
+1
+00:00:00,000 --> 00:00:16,339
+los asistentes están en modo de solo escucha. ¿Qué tal? Muy buenas tardes a todos, a ver un
+
+2
+00:00:16,339 --> 00:00:23,019
+momentito porque lo que está pasando es que no soy presentador, no soy presentador y por eso
+
+3
+00:00:23,019 --> 00:00:32,579
+pues no podía compartir la pantalla, pero ya me he nombrado presentador a mí mismo y ahí estamos.
+
+4
+00:00:32,579 --> 00:00:42,429
+Muy buenas tardes a todos, aquí estamos en una clase más del curso de trading algoritmico,
+
+5
+00:00:42,429 --> 00:01:01,630
+a ver que tengo todavía que abrir algún programa. 0.5, no 0.5 no, 0.5 es 50% pero sí me da más de un
+
+6
+00:01:01,630 --> 00:01:11,269
+50% mirado. Hoy vamos a continuar desarrollando el sistema de ruptura en acciones, la parte
+
+7
+00:01:11,269 --> 00:01:30,170
+0.5. Pero de momento vamos a sentarnos en la parte tendencial y
+
+8
+00:01:32,049 --> 00:01:39,719
+mandaremos un cierto trabajo optativo por supuesto para para casa, pero antes que nada, antes que
+
+9
+00:01:39,719 --> 00:01:49,459
+nada había alguna pregunta en el discor, antes que nada, bueno lo había comentado ya Alberto ahí,
+
+10
+00:01:49,459 --> 00:01:57,640
+que teníamos alguna pregunta sin responder, fijaros que hay un canal donde podemos ver si
+
+11
+00:01:58,239 --> 00:02:12,360
+trabajamos, para que lo tomemos en consideración, no quiere decir que a lo mejor no estemos en
+
+12
+00:02:12,360 --> 00:02:16,520
+otro sitio, puede ser que lo hagamos, pero ahí sí que seguro que contestamos, es decir, el sitio
+
+13
+00:02:16,520 --> 00:02:24,240
+digamos más claro para hacer preguntas relacionadas con el curso, van ahí. Si alguien quiere preguntar
+
+14
+00:02:24,240 --> 00:02:28,560
+en otros sitios puede hacerlo, pero ya pues depende, te puede ser que te responda alguien,
+
+15
+00:02:28,560 --> 00:02:34,599
+que no, etcétera. Había habido creo un par de preguntas sobre la plataforma que ya había
+
+16
+00:02:34,599 --> 00:02:40,439
+contestado a Alberto, nosotros usarla como tal a nivel de trading la hemos usado, yo sí que la he
+
+17
+00:02:40,439 --> 00:02:45,949
+visto hace muchísimos años, muchísimos años, por lo cual la versión que hay ahora pues no sé
+
+18
+00:02:45,949 --> 00:02:54,219
+cómo será, antiguamente era para hacer opciones sobre futuros, no sé si será actualmente igual,
+
+19
+00:02:54,219 --> 00:02:58,500
+al 100%, porque te digo, estoy hablando de una información de hace muchísimo tiempo,
+
+20
+00:02:58,500 --> 00:03:02,740
+de todas maneras nadie mejor que la propia TrainStation te va a informar de ello, quiero
+
+21
+00:03:02,740 --> 00:03:08,620
+decir que al final en caso de que tengas dudas, en la web hay un apartado que lo explica, o sea,
+
+22
+00:03:08,620 --> 00:03:15,219
+lo que sí que es, que entiendo que eso será igual, no tiene nada que ver con la plataforma
+
+23
+00:03:15,219 --> 00:03:21,659
+de TrainStation a nivel desktop, la versión 10 y la 9.5, en normal y con entera una cosa
+
+24
+00:03:21,659 --> 00:03:29,439
+completamente aparta, así era antes y yo me imagino que seguirá igual, entonces ya digo,
+
+25
+00:03:29,439 --> 00:03:34,159
+nada que ver, nada que ver y estaba centrada, de hecho no era ni algorímica en su momento,
+
+26
+00:03:34,159 --> 00:03:38,960
+no sé si ha cambiado, estoy ahora mismo mientras te hablo mirándolo en la web a ver si veo alguna
+
+27
+00:03:38,960 --> 00:03:45,740
+cosa distinta, me da la sensación que no, me da la sensación que es un poco parecida y no tiene más,
+
+28
+00:03:45,740 --> 00:03:50,460
+pero ya te digo, no podemos ayudar mucho más que esto, si no, pues ya digo, hay un chat,
+
+29
+00:03:51,479 --> 00:03:56,280
+tenéis cuenta, enviar un email al client center, deciros esta plataforma para que sirva y tal,
+
+30
+00:03:56,280 --> 00:04:01,919
+pero antiguamente era para hacer opciones sobre futuros y era solo para eso, solo para hacer
+
+31
+00:04:01,919 --> 00:04:10,800
+opciones sobre futuros. Y bueno, poco más, sí, Alejandro también había hecho un comentario en
+
+32
+00:04:10,800 --> 00:04:21,279
+la parte de pregunta aquí con dos partes, en una nos felicitaba y agradecía el contenido, Alejandro
+
+33
+00:04:21,279 --> 00:04:27,000
+la verdad que es una persona bastante... del perfil alumno avanzado podemos decir, ya sabéis que
+
+34
+00:04:27,000 --> 00:04:33,800
+hay distintos perfiles en el curso y que tratamos de aportar valor a todos, aunque lógicamente el
+
+35
+00:04:33,800 --> 00:04:39,860
+que ya sabe muchas cosas, pues puedes aportar mucho en pocas cosas, porque hay veces que,
+
+36
+00:04:39,860 --> 00:04:43,579
+como digo, el diablo está en los detalles, hay cosas que pueden ser detalles, que pueden ser muy
+
+37
+00:04:43,579 --> 00:04:47,500
+importantes, pero en lo que es cantidad de información, lógicamente, pues siempre lo aprovecha
+
+38
+00:04:47,500 --> 00:04:54,310
+más el que empieza de cero, eso es obvio, pero bueno, luego comentaba el tema de porfolio que
+
+39
+00:04:54,310 --> 00:05:00,430
+echaba en falta alguna parte avanzada. Bueno, ya te comenté, Alejandro, tomamos nota y bueno,
+
+40
+00:05:00,430 --> 00:05:05,310
+pues a medida que avancemos hacia la parte porfolio, que lógicamente todavía falta,
+
+41
+00:05:05,310 --> 00:05:13,189
+porque quiero antes hacer bastantes estrategias más y pues ya veremos, a ver si podemos resolver un
+
+42
+00:05:13,189 --> 00:05:20,629
+poquito esa inquietud que tienes. Hoy, de hecho, vamos a trabajar este sistema en 100 acciones en
+
+43
+00:05:20,629 --> 00:05:27,589
+el Nasdaq, pero no con la finalidad de hacer un porfolio sobre ella, sino con la finalidad
+
+44
+00:05:27,589 --> 00:05:34,829
+de validar la idea, de ver si el sistema funciona, etcétera, etcétera, ¿vale? Pero un poco otro
+
+45
+00:05:34,829 --> 00:05:41,750
+camino que ya os comenté, que son sistemas que tienen poca frecuencia operativa, pues una de las
+
+46
+00:05:41,750 --> 00:05:48,949
+maneras de validarlo es juntando activos, y este es lo que vamos a hacer un poco con
+
+47
+00:05:48,949 --> 00:05:54,670
+este sistema. ¿Podría hacerse por otro camino? Bueno, podría hacerse, pero a nosotros en este
+
+48
+00:05:54,670 --> 00:06:01,829
+tipo de sistemas nos gusta mucho este método, es decir, meter todo el Nasdaq 100 o en una cesta
+
+49
+00:06:01,829 --> 00:06:08,870
+de ETFs o en todo el SP500, en un montón de acciones que, lógicamente, pues se comportan
+
+50
+00:06:09,589 --> 00:06:19,899
+de su manera, pues tratar de validar la idea, la idea ahí, ¿no? Esto por un lado, ¿vale? Entonces ya
+
+51
+00:06:19,899 --> 00:06:25,699
+está, creo que los demás que teníais comentarios del Discord, de acuerdo, aquellos que todavía
+
+52
+00:06:25,699 --> 00:06:32,660
+no hayáis entrado, que tenemos un Discord de alumnos que podéis apuntaros, por ahí ya os dejarán
+
+53
+00:06:33,500 --> 00:06:41,680
+la dirección, y si no nos la pedís, y bueno, pues ya está. Luego, otro tema que quería hablar, que lo dije,
+
+54
+00:06:41,680 --> 00:06:51,319
+que lo comentaría, lo comento ahora, es colgué la entrevista de Iván, la verdad que ahora no veo
+
+55
+00:06:51,319 --> 00:07:03,319
+dónde la colgué, porque ahora la encuentro. ¿Dónde la colgué? Bienvenido, quizá, sí, la colgué en bienvenido,
+
+56
+00:07:04,199 --> 00:07:15,060
+bueno, Iván es, aquellos que no lo conozcáis, él es el gestor de Emerging Funds, es una gestora
+
+57
+00:07:15,060 --> 00:07:23,379
+que tiene oficina en distintos sitios, en Nueva York, en Dubái, es, la verdad que es todo con la suerte
+
+58
+00:07:23,379 --> 00:07:30,180
+de que sea amigo personal, además de colega de profesión, y es un tener excelente, como ha
+
+59
+00:07:30,180 --> 00:07:37,860
+demostrado en su, en el concurso, que es el mismo que ganó la Rey Williams, año pasado que lo ha ganado, ¿no?
+
+60
+00:07:37,860 --> 00:07:44,500
+Abrí el debate ahí un poquito, aquellos que hayáis visto la ponencia, los que no hayáis visto,
+
+61
+00:07:44,500 --> 00:07:51,720
+yo os recomiendo verla, Robotrader, cada año participamos hace bastantes años, no me acuerdo
+
+62
+00:07:51,720 --> 00:07:56,160
+que ya tengo la ponencia, pero bueno, ya os avisaré, creo que era en abril, creo que era en abril,
+
+63
+00:07:57,160 --> 00:08:03,120
+y bueno, pues ahí cuando la haga ya os lo comunicaré, y lo había dicho,
+
+64
+00:08:03,120 --> 00:08:08,800
+tengo que ponerle el título, así que tengo que ponerle el título, a ver si se lo paso un día de estos,
+
+65
+00:08:08,800 --> 00:08:12,040
+bueno, entonces la verdad que la ponencia estuvo interesante, y lo más interesante
+
+66
+00:08:12,040 --> 00:08:17,319
+estuvieron las preguntas, ahí os puse como debate, ¿no?, de que habían un par de cositas en que no
+
+67
+00:08:17,319 --> 00:08:22,199
+estamos de acuerdo, que esto por supuesto yo lo, bueno, mira, en cierto, en marzo tengo una reunión
+
+68
+00:08:22,199 --> 00:08:29,639
+con Iván, y seguro que lo volveremos a comentar, pero lo que quería es que vierais, como ya os he
+
+69
+00:08:29,639 --> 00:08:35,759
+dicho insistentemente, la teoría que nosotros os explicamos cómo hacemos nosotros las cosas,
+
+70
+00:08:35,759 --> 00:08:39,679
+y os hemos explicado algunas que también no hacemos, ¿de acuerdo?, porque hay que explicar,
+
+71
+00:08:39,679 --> 00:08:47,000
+hay que explicarlo todo y explicar lo que nosotros pensamos, pero hay distintos caminos para llegar
+
+72
+00:08:47,000 --> 00:08:51,720
+a Roma, y además en lo esencial, en lo esencial os aseguro que estamos 100% de acuerdo, porque es
+
+73
+00:08:52,679 --> 00:08:59,480
+lo esencial, es lo esencial, ¿de acuerdo?, y de ahí no hay variación, el hecho, como por ejemplo,
+
+74
+00:08:59,480 --> 00:09:04,460
+cuando os expliqué, si os acordáis, el BRAC, y os dije que el BRAC, en mi opinión, a mí,
+
+75
+00:09:04,460 --> 00:09:09,340
+no tiene mucho sentido, pero no tiene mucho sentido, lo que quiero decir es el nombre,
+
+76
+00:09:09,340 --> 00:09:15,659
+¿de acuerdo?, es decir, al final un BRAC, el BRAC es, es decir, una optimización convencional es
+
+77
+00:09:15,659 --> 00:09:21,419
+muy parecida al BRAC, ¿vale?, y si tú haces una optimización convencional y le sacas 4.000 trades,
+
+78
+00:09:21,820 --> 00:09:26,700
+y no tiene muchos grados de libertad, de verdad, seguramente no hace falta World Forward,
+
+79
+00:09:26,700 --> 00:09:35,179
+¿vale?, pero hazlo, ¿de acuerdo?, no está de más, no está de más, al final la mayoría de traders
+
+80
+00:09:35,179 --> 00:09:42,179
+utilizamos varios métodos de evaluación, y realmente si están bien hechos, hay varios que son útiles,
+
+81
+00:09:42,179 --> 00:09:47,740
+y es verdad que para algún tipo de sistema puede venir mejor, puede venir otro, pero la idea está
+
+82
+00:09:47,740 --> 00:09:52,700
+clara, y acordaros cuando os dije, significación estadística, representatividad de la muestra,
+
+83
+00:09:52,700 --> 00:10:01,450
+esto es los cimientos de la metodología clásica, y también es lo que hace Iván, ¿de acuerdo?,
+
+84
+00:10:01,450 --> 00:10:06,610
+es lo que hace Iván, es lo mismo, ¿vale?, él, por ejemplo, no le gusta World Forward, a Kevin le
+
+85
+00:10:06,610 --> 00:10:10,129
+gusta, a Andrea Humbert, por ejemplo, tampoco le gusta World Forward, es decir, hay distintos,
+
+86
+00:10:10,129 --> 00:10:17,809
+hay distintos, como os digo, opiniones, y demás, a mí el Cluster World Forward me gusta mucho,
+
+87
+00:10:18,370 --> 00:10:25,570
+ya trataremos de hacer en este sistema, como tal, no lo vamos a hacer, porque ahora a medida que
+
+88
+00:10:25,570 --> 00:10:31,250
+avance la clase lo veréis, los problemas que te vas encontrando, pero en otros sistemas sí que lo haremos,
+
+89
+00:10:31,250 --> 00:10:39,169
+haremos un World Forward al uso, pero en este no lo vamos a hacer como tal, y podemos acabar validando
+
+90
+00:10:39,169 --> 00:10:44,690
+la idea, igual, ¿de acuerdo?, es decir, ahí está un poquito el tema, ¿vale?,
+
+91
+00:10:45,490 --> 00:10:52,700
+y bien, pues vamos un poquito a ir avanzando en la clase de hoy,
+
+92
+00:10:55,250 --> 00:11:06,659
+tengo tantas cositas por aquí abiertas, esto lo vamos a cerrar, dejamos este gráfico, vamos a abrir,
+
+93
+00:11:06,659 --> 00:11:15,389
+bueno, tengo ya aquí todo preparado, así que mira, voy a ir abriendo, voy a dejar ya el 3.6 abierto,
+
+94
+00:11:16,029 --> 00:11:27,259
+porque luego, si tengo tiempo, haremos una cosita en directo, haremos una cosita en directo en
+
+95
+00:11:27,259 --> 00:11:33,019
+porfolio maestro, principalmente aquí hemos usado un poco porfolio maestro y un mucho porfolio trader
+
+96
+00:11:33,019 --> 00:11:40,870
+para este sistema, pero bueno, como ya os dije varias veces y voy a insistir en ello,
+
+97
+00:11:40,870 --> 00:11:49,710
+pues todos tienen sus cosas, todos tienen sus cosas y bueno, por eso a veces usas una cosita
+
+98
+00:11:49,710 --> 00:11:57,019
+de aquí y a veces otra cosita de allá, a ver, aquí casi que voy a abrir el workspace directo,
+
+99
+00:11:57,019 --> 00:12:03,879
+porque si no me va a saturar mucho el equipo, sí, sí, sí, voy a abrir el workspace directo,
+
+100
+00:12:03,879 --> 00:12:16,799
+aquí está, es que esto, cuando estás en directo aquí también el tema de recursos,
+
+101
+00:12:16,799 --> 00:12:31,610
+hay que vigilarlo porque se colapsa todo rápido, vamos con ello, esto lo abro luego y aquí está,
+
+102
+00:12:31,610 --> 00:12:39,289
+cualquier duda como siempre recordar que ahí está Alberto, Pilar y también seguramente Víctor y
+
+103
+00:12:39,289 --> 00:12:55,870
+bueno, estamos ahí todo el mundo atento a vuestras preguntas, bueno, ya estáis viendo un poquito el
+
+104
+00:12:56,190 --> 00:13:09,500
+sistema en cuestión, me los voy a enseñar en porfolio trader por un lado, aquí está,
+
+105
+00:13:09,500 --> 00:13:19,509
+aquí lo estoy viendo yo y os voy a explicar un poquito el planteamiento de hoy,
+
+106
+00:13:19,509 --> 00:13:36,570
+PowerLenguages, antes que nada, si, nos habíais comentado lo del, la verdad que tenía pensado
+
+107
+00:13:36,570 --> 00:13:43,809
+daroslo hoy, me comprometo a lo largo de la semana, antes la siguiente clase, daroslo,
+
+108
+00:13:43,809 --> 00:13:53,899
+daroslo, pero todavía no, realmente las clases llevan bastante trabajo de preparación y no me,
+
+109
+00:13:53,899 --> 00:13:59,490
+era lo siguiente que me faltaba y no llegaba tiempo de hacerlo, vale, pero para la siguiente,
+
+110
+00:13:59,490 --> 00:14:08,429
+antes de la siguiente clase os hacemos el código, el código y demás, la idea básica porque aquí
+
+111
+00:14:08,429 --> 00:14:13,940
+este código realmente es muy largo pero de momento estamos usando tres cositas, ¿de acuerdo?,
+
+112
+00:14:13,940 --> 00:14:20,299
+estamos usando tres cositas, solo la parte tendencial es simplemente el canal y simplemente
+
+113
+00:14:20,299 --> 00:14:26,940
+el terelink, es lo que hoy vamos a trabajar, vale, bien, recordar el sistema que es simplemente un
+
+114
+00:14:26,940 --> 00:14:33,860
+canal de Donchan, el pseudocódigo de hecho en palabras, ya os lo pasaré escrito bien como Dios
+
+115
+00:14:34,460 --> 00:14:44,740
+pero en palabras no es más que tenemos una banda arriba de los n cierres anteriores, por efecto,
+
+116
+00:14:44,740 --> 00:14:51,340
+acordaros que Donchan hablaba de 20 porque era más o menos un mes, más o menos cuatro semanas,
+
+117
+00:14:51,340 --> 00:14:57,539
+más o menos la regla de cuatro semanas y entonces en este caso como eran acciones pues nosotros
+
+118
+00:14:57,539 --> 00:15:02,740
+decidimos hacerlo con los cierres, se podría perfectamente haber hecho con el máximo, hoy
+
+119
+00:15:02,740 --> 00:15:09,659
+no lo he probado, no lo he cambiado, el otro día ya lo jugamos un poco con ello pero lo vamos
+
+120
+00:15:09,659 --> 00:15:16,820
+a dejar en el cierre pero podría ser que fuera mejor el máximo, ya digo que no he trabajado a
+
+121
+00:15:16,820 --> 00:15:23,340
+fondo ese concepto, lo he dejado en el cierre porque a nosotros en acciones el cierre en gráfico
+
+122
+00:15:23,340 --> 00:15:29,019
+diario normalmente el cierre le damos bastante importancia y por lo tanto pues ya nos parece bien
+
+123
+00:15:29,019 --> 00:15:35,379
+trabajar con el canal de cierres, el canal de cierres también está la parte baja porque el
+
+124
+00:15:35,379 --> 00:15:39,700
+sistema permite hacer cortos aunque no lo he trabajado, eso de hecho es lo que os voy a dejar
+
+125
+00:15:39,700 --> 00:15:47,539
+para el que quiera trabajarlo para casa y ver a ver qué puede hacer y como os decía planteamos
+
+126
+00:15:47,539 --> 00:15:55,299
+en el código distintas salidas pero hoy vamos a trabajar solo el training, solo vamos a trabajar
+
+127
+00:15:55,779 --> 00:16:01,620
+también tenemos en el código planteado salir por la media central que aquí no está pintada pero
+
+128
+00:16:01,620 --> 00:16:12,870
+pero aquí sí, podemos salir también por la media central está planteado está también
+
+129
+00:16:12,870 --> 00:16:19,519
+planteado salir en n barras está también planteado salir en un stop porcentual también
+
+130
+00:16:19,519 --> 00:16:28,399
+en un tp porcentual por arriba es decir objetivo y stop y está planteado un training pero como ya
+
+131
+00:16:28,399 --> 00:16:34,519
+comentamos y vamos a evaluar un tendencial puro y para eso necesitamos dejar con los beneficios
+
+132
+00:16:34,519 --> 00:16:42,289
+si ponemos tp no vamos a cumplir ese requisito y por lo tanto decidimos solo entrar hoy es lo que
+
+133
+00:16:42,289 --> 00:16:49,850
+vamos a mirar entrar por cierre por encima del canal y salir solo por training esta es la única
+
+134
+00:16:49,850 --> 00:17:00,149
+salida además hablamos muy de pasada porque ya comenté que os lo enseñaría un filtro que hoy
+
+135
+00:17:00,149 --> 00:17:10,650
+vamos a probar también de que es esta parte de aquí a ver un segundo que voy a poner el foco vale
+
+136
+00:17:11,210 --> 00:17:20,930
+esta parte de aquí no esta parte de aquí no es esta parte de aquí de acuerdo este filtro atr que
+
+137
+00:17:20,930 --> 00:17:30,089
+simplemente es si el true range de la vela actual es menor que el true range medio mensual por un
+
+138
+00:17:30,089 --> 00:17:35,380
+multiplicador que vamos a estudiar pero que acabaremos dejando en uno vale porque era la
+
+139
+00:17:35,380 --> 00:17:40,900
+idea pero como ya os comenté a veces podemos hacer optimizaciones instrumentales para ver para
+
+140
+00:17:40,900 --> 00:17:47,670
+coger información de la variable y este es un claro ejemplo de bien empecemos por el principio
+
+141
+00:17:48,950 --> 00:18:03,980
+el principio cual es el principio el principio es evaluar el canal evaluar el canal ya lo hicimos
+
+142
+00:18:03,980 --> 00:18:13,000
+por un lado con con igualando el stop de los acordes y tp creo que pusimos 05 pusimos uno
+
+143
+00:18:13,000 --> 00:18:18,559
+a nivel de evaluación preliminar y hicimos un pequeño estudio rápido para ver si
+
+144
+00:18:18,559 --> 00:18:25,400
+conseguimos seguir adelante por la señal de entrada así que vimos que parecía tener cierta
+
+145
+00:18:25,400 --> 00:18:33,630
+ventaja y hoy hemos continuado avanzando en esa idea pero ya con la versión trailing esta es la
+
+146
+00:18:33,630 --> 00:18:42,779
+primera estudio que hemos hecho vamos a presentar 44 estudios vale tenemos aquí la fichita en excel
+
+147
+00:18:43,099 --> 00:18:51,059
+enseñaré trabajo en sí el portfolio trader pero antes empezamos por la ficha vale vamos a
+
+148
+00:18:51,059 --> 00:18:59,819
+optimizar o estudiar o a testear el sistema de ruptura de acciones en todo el nasdaq cien de
+
+149
+00:18:59,819 --> 00:19:05,380
+acuerdo en las cien acciones que hoy cotizan en las acciones cuidado aquí que esto no quiere decir
+
+150
+00:19:05,380 --> 00:19:12,960
+que estemos haciendo una buena simulación ha pasado de cartera porque no hemos salido en
+
+151
+00:19:12,960 --> 00:19:17,680
+cuenta las deslistadas y la puntuación que hay pero nosotros estamos validando el sistema
+
+152
+00:19:17,680 --> 00:19:23,640
+no estamos montando una operativa en la sección vemos estamos evaluando el sistema podíamos
+
+153
+00:19:23,640 --> 00:19:29,119
+hacerlo en apple podíamos hacerlo en microsoft podíamos hacerlo en google pero eso tendría
+
+154
+00:19:29,680 --> 00:19:36,799
+y nos dejaría sin prácticamente margen de maniobra para poder analizar los parámetros
+
+155
+00:19:36,799 --> 00:19:42,960
+porque habría una significación estadística que para nosotros no sería suficiente y una manera
+
+156
+00:19:42,960 --> 00:19:50,099
+de hacer esto es evaluar todas las acciones a la vez de tal manera que el sistema tenga que tener
+
+157
+00:19:50,099 --> 00:19:57,900
+un comportamiento bueno en la mayoría de ellas porque seguro que no ganan todas al final pues
+
+158
+00:19:57,900 --> 00:20:04,180
+puede de esta manera consigues mayor número de operaciones y estaremos de acuerdo que son que
+
+159
+00:20:04,180 --> 00:20:11,259
+es un activo homogéneo entre sí comparable y que tiene si bastante correlación entre sí aunque
+
+160
+00:20:11,259 --> 00:20:18,140
+ya veréis que curiosamente al final cuando os muestre un perfomance report completo de una
+
+161
+00:20:19,180 --> 00:20:23,500
+de una buena de la combinación por ejemplo que de que acabaríamos eligiendo para operar
+
+162
+00:20:23,500 --> 00:20:30,220
+y veréis que realmente muchas acciones de las acciones entre sí no tienen tanta correlación
+
+163
+00:20:30,220 --> 00:20:37,019
+con el operando el sistema de resultados mensuales no tienen tanta pero eso lo veremos al final bien
+
+164
+00:20:37,019 --> 00:20:44,019
+aquí tenemos un poco todos los inputs que hay puestos en el en el sistema nosotros aquí sólo
+
+165
+00:20:44,019 --> 00:20:55,210
+vamos a trabajar estos que os voy a marcar en rojo vamos a trabajar el periodo del canal que
+
+166
+00:20:55,210 --> 00:21:02,660
+esa es la que vamos a hacer en esta primera luego trabajaremos traen y y probaremos el filtro
+
+167
+00:21:02,660 --> 00:21:10,250
+de acuerdo pero es el filtro a ver si tiene algún sentido o no nada más de momento nada nada más
+
+168
+00:21:11,210 --> 00:21:18,289
+se podría ir hecho se debería también evaluar la parte corta nosotros hoy no lo hemos hecho pero
+
+169
+00:21:19,289 --> 00:21:25,130
+recomiendo que lo hagáis el que tenga la capacidad de hacerlo que no pues que lo trabaja un poquito
+
+170
+00:21:25,130 --> 00:21:31,480
+conceptualmente y para la semana que viene empezaremos algo más pero le haremos un pequeño
+
+171
+00:21:31,480 --> 00:21:38,519
+vistazo también a esta parte al lado corto de este sistema a ver si tiene cierto sentido operarlo
+
+172
+00:21:38,519 --> 00:21:44,519
+o no de acuerdo o qué cambios podríamos hacer para operarlo en el lado corto porque la idea en
+
+173
+00:21:44,519 --> 00:21:48,599
+sí se bueno canal de doldrán yo puedo ponerlo arriba puedo ponerlo abajo de hecho ya está abajo
+
+174
+00:21:48,599 --> 00:21:56,059
+también pero es operable igual abajo que arriba por igual yo os digo que no igual no lo es porque
+
+175
+00:21:56,059 --> 00:22:02,400
+lógicamente el mercado de acciones tiene un sesgo alcista muy considerable y si se puede operar el
+
+176
+00:22:02,400 --> 00:22:06,759
+lado corto pero hay que hacerlo de una determinada forma y tendencialmente no es una de ellas
+
+177
+00:22:07,079 --> 00:22:12,599
+tendencialmente no es una de ellas una de las cosas que aquí no lo hemos hecho posteriormente
+
+178
+00:22:12,599 --> 00:22:17,920
+cuando hagamos práctica de búsqueda de señales de evaluación de activos también lo miraremos ya
+
+179
+00:22:17,920 --> 00:22:24,240
+la teoría recordar que hablamos no lógicamente si tú te planteas un setup de entrada decís bueno
+
+180
+00:22:24,240 --> 00:22:29,680
+si yo tengo un sistema tendencial pues lo voy a operar en aquellos activos que potencialmente
+
+181
+00:22:29,680 --> 00:22:36,740
+tengan más tendencia las acciones de ser activo esencial no lo no es así en realidad pero no lo
+
+182
+00:22:36,740 --> 00:22:40,700
+es sobre todo a nivel índice cuando vas a nivel de acción lo es bastante lo es bastante a nivel
+
+183
+00:22:40,700 --> 00:22:47,859
+índice también es tendencial en el largo plazo pero pero contra más te vas a bajando a frame el
+
+184
+00:22:47,859 --> 00:22:54,619
+mercado de equity menos tendenciales y más antitencial se vuelve entonces muchos sistemas
+
+185
+00:22:54,619 --> 00:23:01,579
+que operan acciones operan operan índices sobre todo índices brusátiles operan más bien antitencial
+
+186
+00:23:01,579 --> 00:23:08,180
+o versiones tipo antitenciales no no el concepto tendencial puro que es más dado de materias
+
+187
+00:23:08,180 --> 00:23:14,180
+primeras visas baterías primas de divisas y de acciones como digo en contado porque sí que
+
+188
+00:23:14,180 --> 00:23:23,509
+podemos coger tendencias bastante buenas vamos un poco al concepto que es este y este es el
+
+189
+00:23:23,509 --> 00:23:28,990
+concepto entonces cómo lo hemos evaluado esto bueno lo hemos evaluado a través de por folio
+
+190
+00:23:29,829 --> 00:23:42,660
+trader vale que es este este programa que forma parte de multichars ya digo programas y pues
+
+191
+00:23:42,660 --> 00:23:49,299
+es el que hemos usado pero es usar cualquiera al final lo que hemos hecho aquí es yo os explico
+
+192
+00:23:49,299 --> 00:23:54,769
+lo que hemos hecho y lo podéis aquellos que tengan es la posibilidad de hacerlo aplicar a
+
+193
+00:23:54,769 --> 00:24:01,250
+cualquier programa de acuerdo hemos hecho como aquí en el excel alguien se ha fijado hemos usado un
+
+194
+00:24:01,250 --> 00:24:09,289
+periodo in sample que va desde inicio del 2007 hasta final del 2018 y desde ahí es decir desde
+
+195
+00:24:09,289 --> 00:24:16,170
+principios de 2019 hasta el pasado viernes hemos usado auto sample vale se podría haber dejado
+
+196
+00:24:16,170 --> 00:24:20,210
+un tercer periodo ya os he comentado de muchos autores que lo hacen de acuerdo que dejan un
+
+197
+00:24:20,210 --> 00:24:26,250
+tercer periodo le llaman de validación perfecto nosotros ese periodo como los procesos suelen
+
+198
+00:24:26,250 --> 00:24:31,970
+durar tiempo suelen ir desde imaginaros ahora que esto estuvieramos empezando a estudiarlo y
+
+199
+00:24:31,970 --> 00:24:37,450
+siguiéramos pues desde ahora hasta hasta que siga el sistema de estudio que de hecho ya lleva
+
+200
+00:24:37,450 --> 00:24:42,369
+varias semanas no pues ya varias semanas observando y siguiendo fuera fuera de mostra
+
+201
+00:24:42,369 --> 00:24:51,009
+en lo que sería una especie de paper trade en esa fase ya estaría listo solemos hacerlo así pero
+
+202
+00:24:51,809 --> 00:24:57,819
+es correcto también es correcto también dejar un tercer periodo no es una práctica que esté que
+
+203
+00:24:57,819 --> 00:25:03,059
+esté para nada incorrecta hemos adoptado cinco dólares por tel que es por ejemplo lo que cobra
+
+204
+00:25:03,059 --> 00:25:08,400
+hoy en día tres station aunque tiene varios planes pero es un plan común para todo el mundo
+
+205
+00:25:08,400 --> 00:25:15,559
+si haces más volumen todavía puede ser más barato y un tic un tic de slipage vale hemos asumido un
+
+206
+00:25:15,559 --> 00:25:26,900
+tic de slipage hemos optimizado bueno realmente como hemos hecho exhaustiva hemos puesto net
+
+207
+00:25:26,900 --> 00:25:33,859
+profit pero en realidad cuando haces exhaustiva no importa porque recoges todos los datos a ver
+
+208
+00:25:33,859 --> 00:25:40,460
+a qué lo que es por folio trader lo que os decía de las plataformas por folio trader en cuanto a
+
+209
+00:25:41,140 --> 00:25:49,599
+bactés tiene algunas limitaciones por ejemplo la información que facilita es más del pobre
+
+210
+00:25:51,730 --> 00:25:58,750
+a nivel de utilización el world forward es infame de acuerdo es infame a nivel de configuración y
+
+211
+00:25:58,750 --> 00:26:03,750
+demás sobre todo en subversión por folio subversión sistema es bastante mejor ya lo veremos en otro
+
+212
+00:26:03,750 --> 00:26:11,230
+momento pero a versión por folio es bastante infame y en cambio tiene una gran utilidad que
+
+213
+00:26:11,230 --> 00:26:15,309
+es que puede ir a mercado es decir puedes acabar de montarlo puede incluso hacer forward testing
+
+214
+00:26:15,309 --> 00:26:22,410
+dejarlo en simulación más para sistemas central diarios quizá no que esté y puede ir a mercado
+
+215
+00:26:22,410 --> 00:26:27,450
+puedes configurar el por folio imaginaros que esto final fuéramos a operar las 10 acciones podría
+
+216
+00:26:27,450 --> 00:26:33,089
+meter por códigos reglas de prioridad vale si caso de que no las quisiera operar todas porque a veces
+
+217
+00:26:33,089 --> 00:26:40,009
+eso se puede hacer yo lo optimizo en 100 pero luego voy a operar las 10 x las 10 que entre en
+
+218
+00:26:40,009 --> 00:26:44,329
+primero las 10 que cumplan determinada condición extra de por folio yo puedo montar una regla de
+
+219
+00:26:44,329 --> 00:26:51,529
+por folio no es objeto ahora este tipo de cosas ya hablaremos más cuando usemos por folios como tal
+
+220
+00:26:51,529 --> 00:26:58,130
+no pero los comento ya que enseño el programa pues para que lo eso entonces aquí lo que hemos puesto
+
+221
+00:26:58,130 --> 00:27:09,529
+es un 2% a cada acción con una cuenta de 100 mil dólares hemos metido 2% de máximo a cada
+
+222
+00:27:09,529 --> 00:27:17,220
+a cada acción por lo tanto permitiendo apalancar en el caso de que de que sea el caso y nada más
+
+223
+00:27:17,220 --> 00:27:23,019
+luego ya las reglas del sistema propiamente que ya que ya conocéis en el sentido de cierre por encima
+
+224
+00:27:23,019 --> 00:27:28,700
+de la banda y un trailing esto en esta primera optimización claro cuando tú evaluas recordar
+
+225
+00:27:28,700 --> 00:27:37,160
+la teoría una entrada hay que hacer una asumción para la salida bueno yo le puse 20% de 20% de
+
+226
+00:27:37,279 --> 00:27:46,980
+trailing podemos haber puesto 10% da igual le puse 10% de los decía que es pobre porque
+
+227
+00:27:46,980 --> 00:27:52,539
+esos son los datos que facilita a nivel de por folio bueno le puedes meter un costo fitness es
+
+228
+00:27:52,539 --> 00:28:03,140
+verdad que aquí tenemos tenemos que hacer uno uno propio para ese que tiene implementado
+
+229
+00:28:03,140 --> 00:28:09,859
+multichar tiene un sharp esto que veis justo en fitness value realmente es sharp
+
+230
+00:28:09,859 --> 00:28:17,960
+sharp vale pero de hecho por eso teníamos sortino pero ya no lo hemos hecho porque se
+
+231
+00:28:17,960 --> 00:28:23,039
+lo tiene por defecto se lo tiene lo tiene por defecto entonces habíamos usado este de acuerdo
+
+232
+00:28:23,039 --> 00:28:27,279
+para hacer el sortino y ahí es donde nos hemos dado cuenta que no era de por folio de acuerdo era
+
+233
+00:28:27,279 --> 00:28:36,470
+de sistema y por lo tanto los datos que dan no son correctos sí que sí que permiten para
+
+234
+00:28:36,470 --> 00:28:42,390
+este ejercicio es un dato que es útil vale es útil porque creo que la lectura que da
+
+235
+00:28:42,390 --> 00:28:51,109
+probablemente es extrapolable y saldría bastante análoga en el caso en el caso que fuera de por
+
+236
+00:28:51,109 --> 00:28:58,509
+folio pero realmente cuando tú pones unas reglas cuando tú evaluas un por folio ahí como
+
+237
+00:28:58,509 --> 00:29:05,789
+como se explicó esto con algunas reglas de prioridad o sea realmente el el motor del
+
+238
+00:29:05,789 --> 00:29:14,809
+porfil realmente lo que va evaluando cada barra de acuerdo cada barra y cada pasa todos los sistemas
+
+239
+00:29:14,809 --> 00:29:19,250
+por todas las barras y luego aplica las reglas de ejección monetaria del por folio entonces
+
+240
+00:29:20,250 --> 00:29:28,150
+el ratio de sharp el ratio de sortino lo que tú quieras hacer no lo puedes calcular sistema
+
+241
+00:29:28,150 --> 00:29:33,630
+sistema porque no se suman y hasta acuerdo al final al final hay que calcularlo a nivel de
+
+242
+00:29:33,630 --> 00:29:43,750
+por folio y entonces no se ha implementado entonces hay que hacerlo que no lo habíamos
+
+243
+00:29:43,750 --> 00:29:49,670
+visto pensamos que era así francamente lo digo y entonces hay que volver a rehacer este ratio
+
+244
+00:29:49,670 --> 00:29:56,430
+de sharp pero insisto que al objeto esto no nos serviría y para concluir que sharp tiene el
+
+245
+00:29:56,430 --> 00:30:02,269
+porfolio es decir no sabemos ese dato hoy en día pero sí que a nivel de comparación de sets de
+
+246
+00:30:02,269 --> 00:30:10,410
+comparación de si el canal de 8 o de 10 o de 14 va mejor es sí que tiene sí que consideramos que
+
+247
+00:30:10,410 --> 00:30:14,490
+tiene relevancia de acuerdo que es el objeto os lo explico así en franqueza porque veis que
+
+248
+00:30:14,490 --> 00:30:19,930
+tiene este dato negativo esto qué sentido tiene pero tiene este sentido que os digo este no es
+
+249
+00:30:19,930 --> 00:30:26,210
+el ratio de sharp real del porfolio sino la suma de los sistemas y de manera individual haciendo
+
+250
+00:30:26,210 --> 00:30:33,569
+la media y por lo tanto pues está completamente desvirtuada totalmente desvirtuada porque esto
+
+251
+00:30:33,569 --> 00:30:37,809
+habría que hacerlo con los rendimientos del porfolio de acuerdo aprovechando la diversificación que
+
+252
+00:30:37,809 --> 00:30:44,329
+da cada cada una de las acciones entre entre sí a pesar de ser el mismo sistema ya lo veis que
+
+253
+00:30:44,329 --> 00:30:51,009
+sí que la que tiene cierta descorregación por supuesto es absolutamente mejorable pero pero que
+
+254
+00:30:51,009 --> 00:31:00,170
+ya tiene una cierta cierta es con esto son los datos que hemos obtenido simplemente optimizando
+
+255
+00:31:00,170 --> 00:31:05,210
+el canal de acuerdo de in sample aquí tenemos
+
+256
+00:31:05,210 --> 00:31:25,920
+vale vale si si no estaba aquí consultando porque tengo el gráfico lo voy a abrir donde
+
+257
+00:31:25,920 --> 00:32:03,319
+tengo esto voy a enseñarnos cada vez el gráfico vale esta no es o si es esta no es y está si
+
+258
+00:32:04,200 --> 00:32:14,200
+está aquí está aquí está aquí vale es esta bueno poco a poco porque digo voy a ir enseñando
+
+259
+00:32:14,200 --> 00:32:20,200
+cada tengo aquí un montón de cosas para abrir entonces tengo que ir paso paso paso bien esta
+
+260
+00:32:20,200 --> 00:32:24,440
+es la misma optimización que veis aquí en el extra recogida pero sólo el in sample de acuerdo
+
+261
+00:32:24,440 --> 00:32:29,200
+aquí lógicamente sólo tenemos una variable y por lo tanto no podemos hacer un gráfico en 3d pero
+
+262
+00:32:29,200 --> 00:32:36,680
+si en 2d no es más que a la izquierda tenemos net profit o sharp vale este sharp falso le voy
+
+263
+00:32:36,680 --> 00:32:41,680
+a llamar para para que me trenais pero bueno que insisto a nivel de comparación de ser creemos
+
+264
+00:32:41,680 --> 00:32:49,519
+que sí que tiene relevancia vale aunque su valor no tenga sentido y el net el net profit recuerdo
+
+265
+00:32:49,519 --> 00:32:57,000
+el net profit vale aquí en realidad ya te digo no hay no hay una función fitness como tal porque
+
+266
+00:32:57,000 --> 00:33:02,819
+están todas o sea hay sólo 25 posibilidades están las 25 de acuerdo cuando yo necesito una
+
+267
+00:33:02,819 --> 00:33:07,859
+función fitness cuando tengo que elegir entre 1000 y me tengo que quedar con 200 entonces
+
+268
+00:33:07,859 --> 00:33:13,380
+tengo que decir bueno esas 200 por qué criterio me las quedo bien si yo me las voy a quedar todas
+
+269
+00:33:13,380 --> 00:33:19,569
+da igual igual la función fitness porque yo ahora sí quisiera estos datos les puedo hacer cualquier
+
+270
+00:33:19,569 --> 00:33:26,039
+cálculo en excel ahora quisiera aquí calcular algo pero de cada de cada una de ellas las
+
+271
+00:33:26,039 --> 00:33:31,599
+optimizaciones yo podría recoger sus datos y calcular lo que quisiera es decir al final no no
+
+272
+00:33:31,599 --> 00:33:37,799
+no tengo que elegir por lo tanto la función fitness como tal no es necesaria esto cuando
+
+273
+00:33:37,799 --> 00:33:46,750
+hay pocas variables pocos inputs pues es interesante de acuerdo aquí de momento hemos dicho que podemos
+
+274
+00:33:46,750 --> 00:33:52,670
+tener tres inputs en total que pueden variar pero de momento estamos trabajando sólo uno para ver
+
+275
+00:33:52,670 --> 00:34:00,430
+sólo la entrada sin verse afectada por la por las salidas y dejándola la salida estática dejando
+
+276
+00:34:00,430 --> 00:34:08,030
+el filtro de volatilidad desactivado el 0 y la salida por trailing fijo en el 0 20 para que no
+
+277
+00:34:08,030 --> 00:34:15,349
+varíe y por lo tanto ver el canal por sí es lo que hace vale tenemos por un lado como veis el
+
+278
+00:34:15,349 --> 00:34:26,079
+dato sample en el dato en sample aquí ya estamos viendo que en el gráfico pues bueno se aprecia
+
+279
+00:34:26,079 --> 00:34:31,920
+claramente no claramente que en el retorno la verdad que es el verde hay bastante estabilidad
+
+280
+00:34:31,920 --> 00:34:39,769
+vale y en share podemos decir que hay estas dos tres zonas pero donde se aprecia mayor estabilidad
+
+281
+00:34:39,769 --> 00:34:50,960
+aquí en el sample podemos ver que es esta zona entre aquí que podemos decir que es 8 no 8 hasta
+
+282
+00:34:50,960 --> 00:34:57,889
+aquí 14 de acuerdo y por aquí para toda esta zona aparentemente de acuerdo aunque aquí tenemos
+
+283
+00:34:57,889 --> 00:35:05,929
+un share muy alto como veis el 5 bastante bastante bueno vale vamos a ver el mismo en auto sample
+
+284
+00:35:07,019 --> 00:35:12,820
+siempre es el que nos da o con más información aquí también hubiera sido interesante que en esa
+
+285
+00:35:12,820 --> 00:35:18,820
+práctica no la no la hemos hecho pero si al final fuéramos a operar haríamos esta misma
+
+286
+00:35:18,820 --> 00:35:23,659
+optimización invertida para los que os lo explicamos nos gusta mucho está este ejercicio
+
+287
+00:35:23,659 --> 00:35:34,079
+es decir hemos hecho en sample de 2007 a 2018 y a un sample de 2019 a 2024 así simplificando mucho
+
+288
+00:35:34,079 --> 00:35:51,139
+pues bueno esto total eran unos 17 años 17 años vale pues hacemos 13 no a ver 17 y más o menos
+
+289
+00:35:51,139 --> 00:36:03,570
+4 entre 4 y 5 no entre 4 y 5 vale entre 4 y 5 pues haber hecho de 2007 8 9 10 11 a 11 12 de acuerdo
+
+290
+00:36:03,570 --> 00:36:10,929
+dejarlo esa parte auto sample y hasta ahora en sample al revés auto sample al final y auto
+
+291
+00:36:10,929 --> 00:36:16,090
+sample al principio de acuerdo este también puede ser un ejercicio aquellos que podáis hacerlo y
+
+292
+00:36:16,090 --> 00:36:21,440
+luego comparar el auto sample que os sale de esa manera que os sale de la otra y coger esa
+
+293
+00:36:21,440 --> 00:36:25,800
+esa información porque cuando salen iguales eso sí que es una prueba fantástica de lo que usted
+
+294
+00:36:25,800 --> 00:36:32,079
+porque en un sistema tendencial como éste es verdad que hay 100 acciones todos estos datos al
+
+295
+00:36:32,079 --> 00:36:41,739
+final hay mucho sesgo de muestra la práctica hablamos mucho mucho de ello si yo tengo un
+
+296
+00:36:41,739 --> 00:36:50,280
+activo como esta aunque es verdad que este caso ya está en este caso creo que aplica bien aplica
+
+297
+00:36:50,280 --> 00:36:55,480
+bien porque tienen en el periodo el sample que empieza en 2007 nada más empezar pues tienen la
+
+298
+00:36:55,480 --> 00:37:03,400
+crisis de la crisis del 2008 2009 aquellos pues que ya estuvieras en el mercado recordaréis
+
+299
+00:37:03,400 --> 00:37:09,760
+que hemos empezado aquí hemos empezado aquí más o menos más o menos para ser exactos aquí en esta
+
+300
+00:37:09,760 --> 00:37:14,159
+línea que os pongo ahora vale entonces sí que empieza un tiro lateral al cista pero luego viene
+
+301
+00:37:14,159 --> 00:37:19,599
+un desplome vale final hay dos mercados bajistas podemos decir de cierta importancia todo este
+
+302
+00:37:20,199 --> 00:37:26,440
+este primero cae en sample y el otro cae auto sample y un poco así está elegido pero aún así
+
+303
+00:37:26,440 --> 00:37:32,760
+repito que es que es interesante esta esta mezcla porque ese ese mercado sí que es común puede
+
+304
+00:37:32,760 --> 00:37:37,280
+haber acciones que tengan otros porque no lógicamente las 100 no tienen la beta que
+
+305
+00:37:37,280 --> 00:37:41,760
+tienen microsoft o que tiene apple o netflix que son acciones que tienen bastante beta con el
+
+306
+00:37:41,760 --> 00:37:47,840
+mercado pero pero claro la mayoría la tienen la mayoría la tienen y por lo tanto ahí sí que
+
+307
+00:37:48,480 --> 00:37:55,639
+en esas crisis sistémicas de 2008 2009 y el tema del covid 2020 ahí sé que cayeron todas de
+
+308
+00:37:55,639 --> 00:38:02,559
+acuerdo o para todas se me entiende prácticamente todas huy me avisa esto voy a quitar mi cámara
+
+309
+00:38:02,559 --> 00:38:09,869
+porque me está avisando que que está justito de calidad para grabar así que le le quito la cámara
+
+310
+00:38:09,869 --> 00:38:17,539
+la cámara que tampoco pasa nada sino si no me veis porque me está me estaba avisando el mismo
+
+311
+00:38:17,539 --> 00:38:40,920
+programa que la conexión está perdiendo velocidad si puedo cerrar algo más un momentito que dicen
+
+312
+00:38:40,920 --> 00:38:50,929
+que me viene al móvil pues no sé ver puede ser que como está en la mesa lo voy a lo voy a poner
+
+313
+00:38:50,929 --> 00:38:56,769
+si puede ser puede ser porque mi hija me envía un mensaje veo así que igual igual ha sido eso yo
+
+314
+00:38:56,769 --> 00:39:01,849
+como tengo los auriculares pues no me he enterado a ver lo pongo no molestar y todo caso lo dejo
+
+315
+00:39:01,849 --> 00:39:14,659
+un poquito más más alejado a ver si así vamos vamos mejor también a veces no me den cuenta yo
+
+316
+00:39:14,659 --> 00:39:19,340
+con las manos porque es verdad que es micro estos son muy sensibles y cualquier ruidito que haces
+
+317
+00:39:19,340 --> 00:39:26,980
+aquí cerca se cola se me disculpe se me disculpe bueno pero sigo todo lo que os digo de acuerdo
+
+318
+00:39:26,980 --> 00:39:34,190
+lo voy comentando porque son cosas de la teoría y son importantes recordarlas no pero aún así
+
+319
+00:39:34,190 --> 00:39:40,809
+digo nosotros nos gusta mucho hacer esta doble este doble juego por delante y por detrás del
+
+320
+00:39:40,809 --> 00:39:47,090
+auto sample es lo que os decía este es el de el covid que cae que cae más aquí aunque fue bastante
+
+321
+00:39:47,090 --> 00:39:58,469
+peor el de 2008 pero ahí ahí está un poquito el tema vale vuelvo a donde estaba bien en auto
+
+322
+00:39:58,469 --> 00:40:05,030
+sample vamos a abrir ahora este gráfico que tengo es ese gráfico que habéis visto es el
+
+323
+00:40:05,030 --> 00:40:15,739
+mapa lo que pasa que es el mapa cuando sólo hay una a ver cuando sólo hay una variable donde
+
+324
+00:40:15,739 --> 00:40:21,000
+entonces no se puede hacer 3d sino que estos de acuerdo es net profit contra la misma contra la
+
+325
+00:40:21,000 --> 00:40:28,670
+misma variable más fácil todavía obtidos a dos sample a que no t2 no es t2 no es perdón
+
+326
+00:40:28,670 --> 00:40:54,699
+t1 t1 a ver t1 auto sample aquí está ahora sí es claro que comprobar que sea esa es perfecto
+
+327
+00:40:54,699 --> 00:41:05,300
+aquí tenemos la t2 por la variable ya que tenemos el gráfico de acuerdo a los que aquí va
+
+328
+00:41:05,300 --> 00:41:10,420
+prácticamente a medida que aumenta a medida que aumenta degradando es verdad que el auto sample
+
+329
+00:41:10,420 --> 00:41:16,780
+aquí plantea cierto problema que tampoco lo es tanto al lado del sample pues menos operaciones
+
+330
+00:41:16,780 --> 00:41:24,260
+normal por lo normal pero ya vamos viendo que la parte baja del canal aunque en este caso por
+
+331
+00:41:24,260 --> 00:41:31,420
+ejemplo el auto sample con valor 1 es bastante bien no es de hecho el que gana y a medida que
+
+332
+00:41:31,420 --> 00:41:38,699
+va aumentando el canal va perdiendo va perdiendo rendimiento teniendo insisto el trailing fijo
+
+333
+00:41:40,530 --> 00:41:48,510
+veamos ahora bueno aquí vemos que en esta zona aquí donde vemos el pico claro sobre todo el
+
+334
+00:41:48,510 --> 00:41:57,750
+sharp es aquí no en 6 acuerdo ahí en 6 vemos una cierta cierto pico que es verdad que hay
+
+335
+00:41:57,750 --> 00:42:03,909
+un salto importante al 7 5 6 por ahí podía estar podía estar bien también hay cierta estabilidad
+
+336
+00:42:03,909 --> 00:42:10,119
+aquí vamos a acabar de ver el all data uniendo los dos vale porque al final
+
+337
+00:42:10,119 --> 00:42:21,050
+ahí se incorpora un poco todo y donde además tenemos una muestra pues que ronda las de 2000
+
+338
+00:42:21,050 --> 00:42:34,090
+operaciones las 2000 operaciones fijaros que ahí pues bueno estamos en esa zona de 6 y 10 a ver que
+
+339
+00:42:34,090 --> 00:43:00,400
+os abro el opt y uno all data aquí lo tenemos aquí tenemos el auto y bien aquí veis un poquito
+
+340
+00:43:00,400 --> 00:43:07,949
+el gráfico y lo que os decía no en esta parte la verdad que es bastante estable de acuerdo del
+
+341
+00:43:07,949 --> 00:43:16,880
+doctor en sí es bastante estable fijaros que la zona podemos decir que luego lo veréis optimizado
+
+342
+00:43:16,880 --> 00:43:22,159
+todo todo junto ya lo veremos pero es bastante estable canal de noche es bastante es bastante
+
+343
+00:43:22,159 --> 00:43:30,880
+estable y en esta zona entre 5 es visto 10 pues está ahí bastante estabilizado aquí para irnos
+
+344
+00:43:32,119 --> 00:43:42,639
+para irnos para elegir uno de momento de cara a evaluar la salida pues he cogido el 6 podríamos
+
+345
+00:43:42,639 --> 00:43:50,440
+haber elegido otro de acuerdo es decir no tiene no tiene tampoco una brutal importancia en este
+
+346
+00:43:50,440 --> 00:43:57,679
+este momento de acuerdo pero el 6 me ha parecido un buen equilibrio y es el que he decidido bloquear
+
+347
+00:43:57,679 --> 00:44:03,920
+para evaluar la salida de acuerdo luego ya veremos un performance report de todo de todo esto puesto
+
+348
+00:44:03,920 --> 00:44:14,989
+en conjunto vale el 6 fijaros que al final tienen 2430 40% de aciertos típico típico
+
+349
+00:44:14,989 --> 00:44:22,590
+tendencial vale luego ya veremos más datos porque aquí simplemente pues nos sirve a nivel de
+
+350
+00:44:22,590 --> 00:44:33,219
+compararse de acuerdo no nos sirve de mucho más bien y donde como hemos evaluado el cómo hemos
+
+351
+00:44:33,260 --> 00:44:41,579
+evaluado el trailing como os digo bloqueando el 6 ahora os muestro el excel de esta segunda
+
+352
+00:44:41,579 --> 00:44:49,989
+optimización vale que es este simplemente aquí pues lo que os digo es la misma
+
+353
+00:44:52,079 --> 00:44:59,809
+cantidad de datos las mismas cien acciones bloqueamos el canal en 6 y dejamos oscilar
+
+354
+00:44:59,809 --> 00:45:10,690
+también 25 25 incrementos entre 0 0 6 y 0 30 el trailing bueno hemos puesto 25 en uno 25
+
+355
+00:45:10,690 --> 00:45:19,090
+para que tuvieran la misma capacidad de variación aquí tenemos los datos in sample aquí sí que se
+
+356
+00:45:19,090 --> 00:45:26,710
+aprecia claramente que los datos bajos deteriora muchísimo es decir el trailing realmente
+
+357
+00:45:26,829 --> 00:45:31,269
+deteriora mucho a la medida que lo acercas mucho claro estamos hablando de un sistema
+
+358
+00:45:31,269 --> 00:45:37,750
+tendencial opera muchísimo 7000 6300 se lo lleva todo en comisiones y sale demasiado rápido
+
+359
+00:45:37,750 --> 00:45:43,070
+realmente no tiene no tiene sentido habría que verlo evaluado desde bastante más arriba como
+
+360
+00:45:43,070 --> 00:45:51,110
+mínimo mínimo 0 10 y eso pues ya digo más no 0 15 hasta más de 0 30 quizá para verlo porque
+
+361
+00:45:51,110 --> 00:45:55,469
+al final lógicamente estamos en diario lo que quiere es que corran los los beneficios pero
+
+362
+00:45:55,469 --> 00:46:01,150
+nosotros también nos interesa protegernos y protegernos de las caídas de acuerdo que
+
+363
+00:46:01,150 --> 00:46:08,070
+es el problema al final lógicamente si evaluamos solo net profit va a querer mantenerse dentro por
+
+364
+00:46:08,070 --> 00:46:12,550
+eso hay que evaluar alguna cosa más aquí tenemos este ratio de charco que no nos de una buena
+
+365
+00:46:12,550 --> 00:46:30,760
+lectura nos sirve para este cometido que os digo y vamos a ver el opti 1 in sample es este es este
+
+366
+00:46:30,760 --> 00:46:47,110
+no tío no no pero optí 2 optí 2 y 2 aquí está optí 2 in sample aquí veis en este en este
+
+367
+00:46:47,110 --> 00:46:53,590
+perfil es bastante distinto a la anterior porque en el anterior el doncha era bastante bastante
+
+368
+00:46:53,590 --> 00:46:59,829
+armónico no el cierto a la rango pues por favor cierto rendimiento aquí pues claramente no es así
+
+369
+00:46:59,829 --> 00:47:04,710
+tiene los valores bajos pues prácticamente no tiene sentido hasta que no llega a la zona de
+
+370
+00:47:04,710 --> 00:47:11,190
+0 20 0 20 algo nos estabiliza en un cierto rendimiento lo cual pues como os digo tendría
+
+371
+00:47:11,190 --> 00:47:18,829
+habría tenido sentido dejarlo ir un poquito un poquito más un poquito más pero bueno lo hemos
+
+372
+00:47:18,829 --> 00:47:26,750
+dejado ahí está hasta el 0 30 que ya creo que es suficiente bueno ahí habéis 0 20 está bien
+
+373
+00:47:27,230 --> 00:47:32,550
+es el que habíamos puesto antes por la que habíamos visto la evaluación preliminar la
+
+374
+00:47:32,550 --> 00:47:41,400
+zona de 0 20 pues puede estar bien la verdad que 0 20 de momento no apunta a ir a ir mal si
+
+375
+00:47:41,400 --> 00:47:52,800
+miramos el auto sample y nos fijamos fijaros que ya por este charco falso 0 18 27 26 esa zona y si
+
+376
+00:47:52,800 --> 00:48:01,039
+nos fijamos en net profit pues clava el máximo 0 20 0 21 26 18 es decir más o menos la misma la
+
+377
+00:48:01,039 --> 00:48:41,960
+misma zona vamos a ver este este gráfico este es el 2 si este es este es que si lo
+
+378
+00:48:41,960 --> 00:48:48,869
+legramos lo vemos aquí el gráfico pues lo que veis no claramente los las partes bajas pues
+
+379
+00:48:49,510 --> 00:48:56,139
+este especie de charco sí que es bastante volátil pero ya veis que no es estable es el clásico
+
+380
+00:48:56,139 --> 00:49:00,619
+ejemplo donde se ve que no es estable que varía mucho que puede tener un valor bueno pero lo
+
+381
+00:49:00,619 --> 00:49:06,099
+siguiente no etcétera y habéis que en la parte final sí que estabiliza y estabiliza en valores
+
+382
+00:49:06,099 --> 00:49:15,059
+en valores altos claramente entre 0 20 0 25 todos son valores buenos todos son valores buenos y
+
+383
+00:49:15,059 --> 00:49:22,320
+donde además recogemos una cantidad importante de 3 estamos hablando todavía en este dato fuera
+
+384
+00:49:22,320 --> 00:49:31,639
+de muestra autosample de 900 800 trades de ese orden y si ya recogemos los dos unidos
+
+385
+00:49:31,639 --> 00:49:43,559
+pues nuevamente tenemos que se va muy arriba en 0 27 el que más tirando hacia arriba 27 26 25
+
+386
+00:49:43,840 --> 00:49:55,289
+bastante bastante alto pero aquí a ver que os la abro la dos old data vamos a ver este gráfico
+
+387
+00:49:55,289 --> 00:50:07,619
+el gráfico ahora me parece que no tengo el dos soldada alberto no lo he guardado aquí pero
+
+388
+00:50:17,019 --> 00:50:21,980
+lógicamente este interesante que es el que tienen más trade si por lo tanto es el que
+
+389
+00:50:21,980 --> 00:50:28,380
+está pues más más estabilizado pero aquí se aprecia actualmente esta tendencia que ya veía
+
+390
+00:50:28,380 --> 00:50:35,820
+bien veis en el chapel bueno pues a partir de 0 20 podríamos haber elegido uno uno más alto
+
+391
+00:50:35,820 --> 00:50:44,219
+pero al final hemos preferido bloquear el 0 20 aunque repito podríamos haber cogido otro
+
+392
+00:50:45,480 --> 00:50:55,360
+hemos haber cogido otro pero hemos preferido bloquear el 0 el 0 20 porque si os fijáis aunque
+
+393
+00:50:55,360 --> 00:51:08,000
+los que dan mayor datos 26 25 también el 0 20 fijaros que tiene el doble de operaciones
+
+394
+00:51:08,000 --> 00:51:18,159
+de acuerdo tiene siguen manteniendo mantienen bastante buen equilibrio de acuerdo se está
+
+395
+00:51:18,159 --> 00:51:23,719
+bien acompañado se nota que hay bajada que vuelve a subir es decir bastante estabilizado y
+
+396
+00:51:23,719 --> 00:51:32,159
+tiene muchos trades nosotros en este tipo de situaciones solemos tirar siempre a más operaciones
+
+397
+00:51:32,880 --> 00:51:38,400
+solemos tirar más a más operaciones porque nos tira mucho la significación estadística
+
+398
+00:51:38,400 --> 00:51:47,619
+de acuerdo entonces aquí aunque estemos hablando viendo mejores resultados con 1500 con 1300 la
+
+399
+00:51:47,619 --> 00:51:55,300
+zona de 0 25 por ejemplo de acuerdo porque tampoco lo grabaríamos demasiado esto a 0 26 27 0 20 0
+
+400
+00:51:55,300 --> 00:52:01,860
+25 podríamos también haber elegido perfectamente este está está bien tiene un mejor resultado
+
+401
+00:52:03,739 --> 00:52:15,059
+pero tiene como veis 903 menos 903 menos entonces siempre que estamos ante esa dicotomía siempre
+
+402
+00:52:15,059 --> 00:52:21,699
+cogemos más trade siempre cogemos más trade aunque suponga un poquito menos rendimiento porque
+
+403
+00:52:21,699 --> 00:52:28,860
+porque más trade significa mayor significación estadística y también significa mayor respuesta
+
+404
+00:52:28,860 --> 00:52:37,619
+ante cambios y de hecho aunque gana mucho menos fijaros el drawdown que es bastante bastante
+
+405
+00:52:37,619 --> 00:52:45,219
+menos aquí podríamos hacer pero ya digo no si tiene sentido si tiene sentido hacerlo porque
+
+406
+00:52:45,219 --> 00:52:51,860
+realmente como hay gestión monetaria hay unos por ciento y las salidas son porcentuales realmente
+
+407
+00:52:51,860 --> 00:52:57,739
+el capital está bastante cualizado aunque no sea en porcentaje de acuerdo pero aún así no nos
+
+408
+00:52:57,739 --> 00:53:14,570
+convence del todo que no sea de acuerdo pero no nos convence del todo pero bueno ya digo que no
+
+409
+00:53:14,570 --> 00:53:23,179
+no está mal tampoco hacerlo está mal esto es lo que mucha gente llama un recovery factor pero que
+
+410
+00:53:23,179 --> 00:53:28,500
+es net profit partido por por drawdown la verdad con los datos que tenemos aquí pues es de las
+
+411
+00:53:28,500 --> 00:53:37,380
+pocas cosas que podemos hacer de acuerdo y pues podrías podrías hacerlo y como veis 0 20 es el
+
+412
+00:53:37,380 --> 00:53:43,579
+que mejor que cualquier sin haberlo hecho pues ya ya veis ya veíamos que esa zona es la que la
+
+413
+00:53:43,579 --> 00:53:48,900
+que equilibra porque porque tiene muchas operaciones y tener muchas operaciones normalmente mejora la
+
+414
+00:53:48,900 --> 00:53:56,460
+respuesta ante ante hablando de un tendencial hablando de un tendencial mejora mejora la respuesta
+
+415
+00:53:56,460 --> 00:54:04,519
+ante caídas y demás claro hay que estimar bien los costes de acuerdo que se más bien los costes
+
+416
+00:54:04,519 --> 00:54:14,519
+porque dices tú estimas que prefieres operar mil trens más pero eso solo te va a servir si has
+
+417
+00:54:14,519 --> 00:54:20,760
+estimado bien los costes y si realmente tienes un tipo de deslizamiento podrías hacer ahí también
+
+418
+00:54:20,760 --> 00:54:26,760
+una prueba de sensibilidad deberías de mirar bien esto y probarla también en dos tics es decir bueno
+
+419
+00:54:26,760 --> 00:54:33,599
+pues mira no lo tengo claro voy a volver a hacer la optimización con dos tics en vez de un tic a ver
+
+420
+00:54:33,599 --> 00:54:41,320
+qué tal a ver cómo lo veo de acuerdo y si ves que no lo ves claro pues podrías entonces decantarte
+
+421
+00:54:41,320 --> 00:54:49,400
+más al 0 25 pero nosotros aquí nos quedaríamos con el con el 0 20 porque 2400 operaciones con
+
+422
+00:54:49,400 --> 00:54:59,159
+dos inputs solo además optimizados de manera separada está realmente realmente bien que es esto
+
+423
+00:54:59,159 --> 00:55:05,119
+luego no quiere decir que lo operamos en las 100 acciones de esto ahora perfectamente podríamos
+
+424
+00:55:05,119 --> 00:55:14,050
+luego pues operar las 10 acciones de mayor capitalización por ejemplo por elegir un
+
+425
+00:55:14,050 --> 00:55:21,289
+criterio no debería de operar las 10 también podría hacerlo pero que no es obligatorio no
+
+426
+00:55:21,289 --> 00:55:26,289
+quiero decir que esto lo estamos haciendo para validar la estrategia para tener una
+
+427
+00:55:26,289 --> 00:55:32,170
+mayor significación estadística pero no es obligatorio que luego en nuestro plan operativo
+
+428
+00:55:32,170 --> 00:55:44,659
+o usemos todas las acciones pues aquí hemos bloqueado 0 20 de acuerdo hemos bloqueado 0 20
+
+429
+00:55:44,659 --> 00:55:59,230
+espérate que vamos a meter este este dato en todas las tablas de acuerdo con es más que el net
+
+430
+00:55:59,230 --> 00:56:28,590
+profit partido por el máximo 0 18 0 15 y aquí en el otro sample menos de profit partido por
+
+431
+00:56:28,590 --> 00:56:34,840
+máximo del lado lo multiplicamos por menos 1 para que no dé un número negativo y estamos
+
+432
+00:56:35,400 --> 00:56:45,239
+0 12 0 15 varía varía un poquito 0 20 está a mitad de a mitad de tabla en el caso auto sample vale
+
+433
+00:56:47,809 --> 00:56:56,960
+bien este lo voy a guardar pero voy a hacerlo también en la excel de sample perdón en el excel que
+
+434
+00:56:56,960 --> 00:57:06,469
+lo hemos hecho solo de old data que no lo había hecho ahí lo voy a hacer ahora un momentito porque
+
+435
+00:57:06,469 --> 00:57:16,329
+es interesante también verlo y con los pocos datos que nos da en este caso luego pasaremos
+
+436
+00:57:16,329 --> 00:57:23,480
+a maestro y veremos más más información no más el problema que tiene es que es casi posible pero
+
+437
+00:57:23,480 --> 00:57:50,809
+es imposible pero es muy difícil optimizar con él porque da muy muy pocos muy pocos vamos siguiendo
+
+438
+00:57:50,809 --> 00:58:24,039
+por ahí la clase del toque de 86 aquí recovery profit partido por máximo bueno ahí veis 5 13 12 12
+
+439
+00:58:24,039 --> 00:58:30,760
+6 o con lo que más vale que es al final los habíamos quedado también pues con esos 2.406 que
+
+440
+00:58:30,760 --> 00:58:37,599
+es la misma final porque en la primera llevamos elegido 0 20 pero es verdad es casualidad no
+
+441
+00:58:38,000 --> 00:58:44,840
+habíamos quedado con 0 20 por defecto vale y vamos con la tercera la tercera hemos
+
+442
+00:58:44,840 --> 00:58:54,309
+ido a probar un filtro que es totalmente opcional y no es obligatorio pero hemos querido ver hemos
+
+443
+00:58:54,309 --> 00:59:01,869
+querido ver porque queríamos introduciros un filtro volatilidad aquí para un tendencial y
+
+444
+00:59:01,869 --> 00:59:09,650
+así pues ya explicároslo pero como digo no es obligatorio pero lo hemos probado vale bueno
+
+445
+00:59:09,650 --> 00:59:14,849
+para ver un poco como oscilaba que este sí que teníamos muy claro que no le íbamos a dejar este
+
+446
+00:59:14,849 --> 00:59:22,559
+nivel de granularidad pero queríamos ver un poco queríamos analizar cómo se movía se movía el
+
+447
+00:59:22,559 --> 00:59:28,679
+tema de acuerdo y hemos dejado el 6 fijo hemos fijado el 20 y hemos dejado el filtro aterre que
+
+448
+00:59:28,679 --> 00:59:33,599
+es el multiplicador recuerdo que le damos a la tierra ahora nos voy a enseñar en el gráfico
+
+449
+00:59:33,599 --> 00:59:39,800
+ha quedado claro también hemos dejado oscilar 25 vale esto esto cómo funciona vale esto cómo
+
+450
+00:59:39,800 --> 00:59:51,820
+funciona el código es simplemente el true range de la vela actual a ver si lo puedo enseñar
+
+451
+00:59:51,820 --> 01:00:06,280
+aquí en el gráfico aquí abajo fijaros tengo tengo dos aterres pintados y no sé cómo se ve
+
+452
+01:00:06,840 --> 01:00:22,539
+porque lo voy a poner un poco más grueso voy a poner un poco más grueso para que se vea mejor
+
+453
+01:00:22,539 --> 01:00:33,559
+ahora se verá mejor supongo hay dos hay dos aterres metidos en el mismo gráfico es lo mismo de
+
+454
+01:00:33,559 --> 01:00:39,119
+acuerdo porque el true range es el a ver a su vez de una barra de acuerdo entonces yo he metido el
+
+455
+01:00:39,119 --> 01:00:45,199
+a ver a su vez de uno en amarillo y a la ver a su vez hasta porque está de 14 perdón está mal
+
+456
+01:00:45,960 --> 01:00:53,880
+porque es el que se mete por efecto no lo había había cambiado es el de 22 porque 22
+
+457
+01:00:53,880 --> 01:01:02,440
+bueno porque es un mes más o menos sin más no hemos no lo hemos optimizado se podía haber
+
+458
+01:01:02,440 --> 01:01:07,400
+hecho una una un pequeño mapa pero a ver la pena con este tipo de cosas la verdad porque al final
+
+459
+01:01:07,400 --> 01:01:13,820
+lo que queremos es ver si la volatilidad va a variar nos hace un filtro volatilidad lo que
+
+460
+01:01:13,820 --> 01:01:18,900
+hace es comparar la volatilidad actual con la volatilidad de x periodo hay varias maneras de
+
+461
+01:01:18,900 --> 01:01:23,619
+hacerlo eso que te crea te crea desde el estándar hay algún estudio con el bix que espero en el
+
+462
+01:01:23,619 --> 01:01:29,780
+curso poderlos mostrar alguno acuerdo con la curva del bix método poco avanzado y creo que
+
+463
+01:01:29,780 --> 01:01:38,769
+no tocaba en este momento el curso y ese es un método sencillo que al final tiene bastantes
+
+464
+01:01:38,769 --> 01:01:45,449
+aporta aporta valor aporta aporta más valor de los sistemas de ruptura y a tendenciales que
+
+465
+01:01:45,449 --> 01:01:50,210
+no tendecía el puro pero bueno lo hemos querido meter para explicaros lo y ya está y se puede
+
+466
+01:01:50,210 --> 01:01:58,090
+usar simplemente comparar lo que os digo la volatilidad actual la volatilidad de hoy de
+
+467
+01:01:58,090 --> 01:02:05,289
+la vela actual que esto es esto ahora mismo está hoy recibiendo datos efectivamente está ahí subiendo
+
+468
+01:02:05,289 --> 01:02:16,480
+estos serios por ejemplo esto es apple y pues tiene la volatilidad de hoy es la barra
+
+469
+01:02:16,480 --> 01:02:24,400
+amarilla con la volatilidad media del último mes como veis es bastante más alta de decir
+
+470
+01:02:24,400 --> 01:02:30,519
+está haciendo todos estos últimos días como veis está teniendo una volatilidad baja de acuerdo
+
+471
+01:02:30,519 --> 01:02:38,719
+para su volatilidad media del mes y esto es lo que evaluamos simplemente de acuerdo ese filtro
+
+472
+01:02:38,719 --> 01:02:51,429
+consiste en el código que no es perdón consiste simplemente que si esa volatilidad por un
+
+473
+01:02:51,429 --> 01:02:55,469
+multiplicador que vamos a suponer que es uno vamos a suponer que el multiplicador es uno
+
+474
+01:02:55,469 --> 01:03:07,320
+con lo cual no es importante decir que es la volatilidad si esa volatilidad de hoy es
+
+475
+01:03:07,320 --> 01:03:14,840
+menor que la volatilidad de todo el mes si eso se cumple es decir si la volatilidad de hoy es
+
+476
+01:03:14,840 --> 01:03:25,500
+menor entonces puedo operar si la volatilidad es mayor no esto es el filtro podemos decir natural
+
+477
+01:03:26,059 --> 01:03:32,489
+para ir largo en tendencia porque normalmente sabemos que el mercado sube con poca volatilidad
+
+478
+01:03:32,489 --> 01:03:38,889
+y baja con más volatilidad entonces cuando la volatilidad está alta normalmente por eso está
+
+479
+01:03:38,889 --> 01:03:45,889
+el filtro así lógicamente habrá veces que no pero normalmente el mercado está nervioso el mercado
+
+480
+01:03:45,889 --> 01:03:51,769
+está tenso y así no se sube acuerdo el mercado tiende a subir tranquilo es verdad que cuando hay
+
+481
+01:03:51,769 --> 01:03:56,329
+una vuelta del mercado bajista pues ahí puede esto puede hacerte este filtro que a
+
+482
+01:03:56,329 --> 01:04:01,369
+mejor tardes un poco en volver al mercado hasta que no se tranquilice pero bueno pues perfecto
+
+483
+01:04:01,369 --> 01:04:06,570
+no al final al final lo que hace es tratar de eliminar operaciones cuando hay volatilidad
+
+484
+01:04:06,570 --> 01:04:12,210
+elevada es decir cuando la volatilidad de hoy es más alta que la medida podría incluso probarse
+
+485
+01:04:12,210 --> 01:04:21,260
+con más que en vez de la del mes fuera del trimestre es decir estaría bien es decir estaría
+
+486
+01:04:21,260 --> 01:04:27,980
+bien porque a lo mejor es que no yo yo sabes que como voy de largo plazo prefiero evaluar contra
+
+487
+01:04:27,980 --> 01:04:33,900
+la volatilidad de más de más periodos lo podemos lo podemos mirar hemos hecho con la con un mes
+
+488
+01:04:33,900 --> 01:04:38,260
+pero pero hubiera tenido perfectamente sentido hacerlo con con más con lo que os digo porque
+
+489
+01:04:38,260 --> 01:04:45,219
+al final pues yo que sé vais a ver que se vuelve mucho más tranquilo no le pongo pues
+
+490
+01:04:45,940 --> 01:04:54,889
+60 días por decir algo 60 días es que pues se vuelve más más estable de acuerdo se
+
+491
+01:04:54,889 --> 01:05:00,610
+vuelve más más estable seguimos teniendo una volatilidad baja pero se vuelve un poquito más
+
+492
+01:05:02,690 --> 01:05:09,960
+bueno más como decirlo más rígida no pero al final tiene más periodos recogidos entonces
+
+493
+01:05:09,960 --> 01:05:15,480
+tendría tendría las dos cosas sentidos y habría pues que evaluar un poquito muchas acciones como
+
+494
+01:05:15,480 --> 01:05:22,039
+como ya hemos dicho para ver a ver cómo como como hemos hecho con un con un mes y eso que
+
+495
+01:05:22,039 --> 01:05:29,719
+hemos hecho en la opti número 3 lo que hemos hecho en la opti número 3 que la tenía por aquí
+
+496
+01:05:29,719 --> 01:05:40,489
+preparada ver simplemente bloqueado el 6 bloqueado el 0 20 acuerdo y he dejado de 0 a 240 por dejar
+
+497
+01:05:40,489 --> 01:05:45,489
+25 pero ya os digo que no en este caso no le vamos a hacer queríamos simplemente analizarlo
+
+498
+01:05:47,719 --> 01:05:53,000
+ver un poco el mapa y aquí lo tenemos vale en esa primera vamos a hacer ya lo de recovery
+
+499
+01:05:53,000 --> 01:06:08,880
+que con los pocos datos que tenemos aquí pues no podemos hacer muchas más cosas ahora que
+
+500
+01:06:08,880 --> 01:06:19,389
+tenemos hasta algún dato negativo todo el cabono porque era negativo el profil no sí bueno y ese
+
+501
+01:06:19,389 --> 01:06:27,099
+73 a bueno bueno claro fijaros no mira es el clásico ejemplo de poca significación estadística
+
+502
+01:06:27,099 --> 01:06:33,690
+este con con un 0 2 multiplica pero tampoco que realmente no opera de acuerdo no opera nunca
+
+503
+01:06:33,690 --> 01:06:44,170
+entonces bueno no lógicamente no tiene no tiene sentido con cero con cero para que para que lo
+
+504
+01:06:44,170 --> 01:06:52,309
+tengáis en cuenta equivale no usarlo es que cero este valor que os marco equivale a no usar filtro
+
+505
+01:06:53,030 --> 01:07:01,989
+es la versión sin filtro y me queda un recovery de 254 aquí coloca muy bien hay alguno que
+
+506
+01:07:01,989 --> 01:07:08,130
+coloca ligeramente mejor ligeramente si no incluso bastante mejor vale pero
+
+507
+01:07:10,639 --> 01:07:20,989
+también el no usarlo queda bastante bastante equilibrado vamos a ver el mapa vamos a ver el
+
+508
+01:07:20,989 --> 01:07:33,199
+mapa en sample ahí lo vemos 0 es el que queda vez aquí el 0 1 pues queda esta bestial bajada
+
+509
+01:07:33,199 --> 01:07:40,159
+y a partir de ahí pues a partir de uno veis estabiliza mucho por por sharp y sí que aquí
+
+510
+01:07:40,159 --> 01:07:46,840
+entre la zona de 0 9 1 1 1 es donde tienes es decir en 1 de acuerdo ahí está claro que nos
+
+511
+01:07:46,840 --> 01:07:52,559
+queríamos con uno que es lo que os decía este realmente nunca lograríamos así lo
+
+512
+01:07:52,559 --> 01:07:59,159
+podemos usar en 0 en 1 en 2 si me apuras un 1 y medio vale 1 se suele hacer así el
+
+513
+01:07:59,159 --> 01:08:05,599
+aterre un aterre y medio 2 aterres 3 aterres de acuerdo no vamos a ir a 1,3 aterres con
+
+514
+01:08:05,599 --> 01:08:13,239
+lo que os decía de el sentido común y la lógica en cuanto a los incrementos de acuerdo no vamos
+
+515
+01:08:13,239 --> 01:08:20,520
+a poner 0,33 aterres vale porque eso es una sobre optimización de manual de acuerdo manual
+
+516
+01:08:20,520 --> 01:08:31,520
+a ver que me han levantado la mano alberto vale bien me comentan el recovery bueno el recovery
+
+517
+01:08:31,520 --> 01:08:36,399
+recovery simplemente el nombre no importa porque no en todas las plataformas se llama recovery
+
+518
+01:08:36,399 --> 01:08:43,619
+acuerdo es net profit partido por drawdown vale y esto como el drawdown está negativo se multiplica
+
+519
+01:08:43,619 --> 01:08:51,500
+por por menos 1 se cambia de signo para que no tenga un valor negativo pero es net profit partido
+
+520
+01:08:51,500 --> 01:08:56,899
+por drawdown vale net profit es lo que han ganado los cien el sistema aplicado a las
+
+521
+01:08:56,899 --> 01:09:01,859
+cien acciones y el drawdown es el que ha tenido el porfolio esto sí que es del porfolio está
+
+522
+01:09:01,859 --> 01:09:10,260
+bien de acuerdo está bien calculado por lo tanto al final es un buen estimador de retorno riesgo
+
+523
+01:09:10,260 --> 01:09:18,180
+entre esta está el tsi que es justamente este ratio multiplicado por los winners que es el
+
+524
+01:09:18,180 --> 01:09:26,939
+número el porcentaje de ganadoras de trades acertados vale es otro ratio que se llama
+
+525
+01:09:26,939 --> 01:09:32,460
+tristation index que es de este estilo vale cuando hablamos de las funciones fitness pues
+
+526
+01:09:32,460 --> 01:09:38,939
+hablamos muchísimo de esto de retorno de drawdown y hablamos de retorno riesgo de muchos y os dije
+
+527
+01:09:38,939 --> 01:09:47,579
+que todos tienen mucha correlación y que a nosotros nos gusta mucho el sortino vale trabajé
+
+528
+01:09:47,579 --> 01:09:54,140
+muchos rutinos os acordáis y también nos gusta bastante loop y vale los iremos viendo durante
+
+529
+01:09:54,140 --> 01:10:01,579
+el curso de acuerdo los iremos viendo no os preocupéis aquí me interesa ir introduciendo
+
+530
+01:10:01,579 --> 01:10:10,779
+las cosas poco a poco y en este sistema tendencial que acordaros hablamos que es para un perfil de
+
+531
+01:10:10,779 --> 01:10:18,260
+medio largo plazo que no necesita una implicación una dedicación continua que no quiere estar todo
+
+532
+01:10:18,260 --> 01:10:22,659
+el día pendiente del mercado pues bueno buscamos de entrada una estrategia de este estilo y
+
+533
+01:10:22,659 --> 01:10:28,380
+decidimos usarlo por doncha porque había salido mucho en el curso haremos muchas más cosas y
+
+534
+01:10:28,380 --> 01:10:36,819
+veremos distintos ratios pero al final es un ratio de retorno de acuerdo que al final casi siempre
+
+535
+01:10:36,819 --> 01:10:44,529
+son los que son más interesantes de acuerdo ratios de retorno riesgo porque al final retorno
+
+536
+01:10:44,529 --> 01:10:50,409
+es lo que nos interesa ganar pero el riesgo nos interesa mucho controlarlo porque cuando uno no
+
+537
+01:10:50,409 --> 01:10:54,729
+controla riesgos se va a tomar bien toda la farola entonces no queremos irnos a tomar bien todo el
+
+538
+01:10:54,729 --> 01:11:02,289
+mercado y sobre todo cuando uno empieza debe fijarse más que nada en el riesgo porque el
+
+539
+01:11:02,289 --> 01:11:07,090
+riesgo es lo que nos saca de la partida es lo que nos envía para casa y no podemos permitir
+
+540
+01:11:08,689 --> 01:11:15,319
+que nos envíen para casa de acuerdo eso es lo que no podemos permitir bajo ningún concepto y por
+
+541
+01:11:15,319 --> 01:11:24,880
+eso es vital vital vital controlar el riesgo vale vamos al auto sample estamos evaluando el filtro
+
+542
+01:11:24,880 --> 01:11:32,890
+estamos evaluando el filtro por si solo habiendo bloqueado el canal habiendo bloqueado el canal
+
+543
+01:11:32,890 --> 01:11:42,279
+en seis que francamente podría haber estado en otro y en 0 en 0 20 el tréil que también
+
+544
+01:11:42,279 --> 01:11:46,520
+habían varios pero sé sí que pues por ahí parecía equilibrar bastante bastante bien
+
+545
+01:12:18,840 --> 01:12:27,939
+que haces el directo que dicen no a ver a bueno aquí hay combinaciones como habéis visto antes
+
+546
+01:12:27,939 --> 01:12:44,329
+0 1 0 2 pues el auto sample en este caso dan 0 y fijaros tiene divisor por 0 porque es que
+
+547
+01:12:44,329 --> 01:12:52,800
+no llega ni a operar el auto sample no no hace no hace trade pero aparte de eso es que en auto
+
+548
+01:12:52,800 --> 01:13:00,680
+sample justo el valor 1 es el que queda mejor colocado en el retorno en retorno vamos a ver
+
+549
+01:13:00,680 --> 01:13:32,609
+el mapa el mapa y t2 no pero no t3 auto sample aquí lo tenemos que lo tenemos carlos en la parte
+
+550
+01:13:32,609 --> 01:13:44,239
+baja pues que no vale la pena ni comentarlo y a partir de ahí 0 9 1 1 1 2 5 toda esta zona
+
+551
+01:13:44,239 --> 01:13:49,279
+que ahí ha cuidado el caso 7 veces para que empieza a degradar en la zona de 1 la verdad que
+
+552
+01:13:49,279 --> 01:13:56,079
+está bastante 1 1 2 está bastante bastante cómodo bastante cómodo ahí también aquí en el recovery
+
+553
+01:13:56,079 --> 01:14:01,479
+pues se aprecia poco eso es el recovery al final se aprecia un poco eso el 0 coloca bien en 0
+
+554
+01:14:01,479 --> 01:14:06,920
+coloca coloca bien vamos a ver en el old data que es donde al final siempre hay más trades por lo
+
+555
+01:14:06,920 --> 01:14:12,239
+tanto más significación estadística y que al final recoge la parte optimizada y la parte no
+
+556
+01:14:12,720 --> 01:14:23,479
+optimizada está bien analizar el old data no penséis que la teoría que lo hicimos al final
+
+557
+01:14:23,479 --> 01:14:30,479
+está bien comparar el sample comparar el sample es muy importante perfil de optimización acordaros
+
+558
+01:14:30,479 --> 01:14:38,890
+y bastante interesante esto de el auto sample por delante el auto sample por detrás moverlo de
+
+559
+01:14:38,890 --> 01:14:43,850
+acuerdo mover la muestra que es parecido a lo que hace el braque pero nosotros no le hemos puesto
+
+560
+01:14:43,850 --> 01:14:55,180
+nombre pero pero es parecido a lo que hace el braque y pero al final la elección puede
+
+561
+01:14:55,180 --> 01:15:00,979
+perfectamente hacerse con el old data de acuerdo pero siempre que haya significación y que sea
+
+562
+01:15:00,979 --> 01:15:05,979
+concordante con lo que hemos visto en el auto sample y el sample final eso es la unión de los
+
+563
+01:15:05,979 --> 01:15:14,000
+dos el hecho hace que la caudman y es lo comparto una cosa es la variación de la cosa y es la
+
+564
+01:15:14,039 --> 01:15:18,880
+selección de parámetros le decía yo para elegir los parámetros cojo la optimización hasta ayer
+
+565
+01:15:18,880 --> 01:15:25,329
+solo decía caudman hasta ayer porque porque me interesa me interesan los todos los datos
+
+566
+01:15:25,329 --> 01:15:31,090
+disponibles yo ya he evaluado el sistema considero que es robusto considero que la franja de
+
+567
+01:15:31,090 --> 01:15:39,090
+optimización imaginaros aquí la zona de entre 6 y 12 por ahí o vale y el trailing pues lo voy a
+
+568
+01:15:39,090 --> 01:15:43,850
+dejar ya fijo en 0 20 voy a ver el canal bueno pues a lo mejor optimizo sólo el canal con 0 20
+
+569
+01:15:43,850 --> 01:15:50,130
+filtro el filtro en 1 y el trailing en 0 20 y le voy a optimizar solo el canal le meto todo el
+
+570
+01:15:50,130 --> 01:15:55,810
+histórico que tengo y le meto hasta el último día y con eso el hijo puedo perfectamente hacer eso
+
+571
+01:15:55,810 --> 01:16:01,609
+sería un comportamiento correcto con la idea ya validada con la idea ya validada y considerada
+
+572
+01:16:01,609 --> 01:16:07,890
+robusta y en la zona que yo voy a voy a operar y ahí la elección la haría mirando varios casos
+
+573
+01:16:07,890 --> 01:16:17,329
+miraría sortino de acuerdo del sample de distintos ratios miraría aquí recovery pero podría hacerlo
+
+574
+01:16:17,329 --> 01:16:23,319
+con el old data y optimizado hasta el último día perfectamente aquí veis lógicamente los primeros
+
+575
+01:16:23,319 --> 01:16:29,699
+saben con un recovery muy alto porque no operan pero luego pues ya nos vamos a ir unos 4 0 4 0
+
+576
+01:16:29,699 --> 01:16:35,779
+acuerdo aquí el 1 cae un poquito más nos sale en recovery también puntual de hecho el recovery sale
+
+577
+01:16:35,779 --> 01:16:44,470
+bastante mejor el 0 bastante mejor el 0 que el que el 1 de acuerdo con lo cual aquí operarlo o no
+
+578
+01:16:44,470 --> 01:16:59,529
+está dudoso está dudoso está dudoso vale ser uno es aquí vamos a ver el mapa y por qué sabroso
+
+579
+01:16:59,529 --> 01:17:06,369
+bueno es algo que es normal porque eso que os digo en los tendenciales puros es no son los filtros
+
+580
+01:17:06,449 --> 01:17:13,250
+no son tan eficaces donde son muy eficaces en los temas de breakout en los temas de breakout que
+
+581
+01:17:13,250 --> 01:17:20,449
+este lo haremos breakout no hoy lo podemos plantear pero no lo hemos analizado que hemos hablado de
+
+582
+01:17:20,449 --> 01:17:26,649
+él pero como breakout es probable que aporte más es probable que aporte que aporte más aquí es
+
+583
+01:17:26,649 --> 01:17:34,170
+discutible aquí es discutible pero lo queríamos explicar y ver cómo lo hubiéramos analizado que
+
+584
+01:17:34,170 --> 01:17:40,409
+es un poco al final de acuerdo no no metido a saco todo optimizado y a ver qué nos sale no
+
+585
+01:17:40,409 --> 01:17:45,609
+claro lo veremos eso también ahora veremos todo optimizado a ver qué nos ha salido a ver y 3
+
+586
+01:17:45,609 --> 01:17:54,520
+all data aquí tengo el mapa aquí está vale lógicamente los valores bajos pero ahí veis a
+
+587
+01:17:54,520 --> 01:17:59,680
+partir de 1 pues queda bastante estabilizado lógicamente el 0 el 0 también está ahí pues
+
+588
+01:17:59,680 --> 01:18:08,600
+bastante alto vale pero aquí eso 0 o 1 de acuerdo no hay no hay más es el es el juego que yo que yo
+
+589
+01:18:08,600 --> 01:18:19,159
+haría un poco el 0 o 1 por recovery aunque es un tanto precipitado no no es tan este no es tan
+
+590
+01:18:19,159 --> 01:18:26,210
+concluyente esto pero no cobrir tampoco es la planación de versa quiero decir que no ahora no
+
+591
+01:18:26,210 --> 01:18:31,489
+no si recovery no da no no es así hay otros factores pero se dieron poco los dos candidatos
+
+592
+01:18:31,489 --> 01:18:58,140
+de acuerdo aquí tenemos 2.400 y tenemos 2.200 en esto aquí lógicamente me podías decir no no
+
+593
+01:18:58,140 --> 01:19:14,319
+estaba viendo es que hemos tenido a ver déjame mirarlo aquí no abiertas tantas que las voy a
+
+594
+01:19:14,319 --> 01:19:40,039
+saber no ya no sé cuál es cuál es cuál a ver opti 3 opti 3 la data está aquí está el 1 si
+
+595
+01:19:40,039 --> 01:19:59,529
+si 1477 y el 0 aquí en 14 vale en 14 yo aquí francamente con esta información no lo veo muy
+
+596
+01:19:59,529 --> 01:20:11,130
+claro que habría que realizarlo un poco mejor pero sí que perdemos 206 en un filtro es para
+
+597
+01:20:11,130 --> 01:20:18,770
+perder 3 y cuidado con el nada si es lo que pasa que fijaros que ganamos un poquito de un poquito
+
+598
+01:20:18,770 --> 01:20:29,340
+de profit pero perdemos la blanca entonces a costa de ese ese profit no no sabes ganar
+
+599
+01:20:29,500 --> 01:20:36,479
+realmente no acaba de conseguir reducir el riesgo que es quizá donde más debe actuar
+
+600
+01:20:36,479 --> 01:20:43,840
+filtro de acuerdo saqué un filtro al final que estoy buscando yo estoy buscando pues evitar
+
+601
+01:20:43,840 --> 01:20:50,840
+trades negativos es verdad que mejora el porcentaje de acierto que es lo lógico pero no hay mejor el
+
+602
+01:20:50,840 --> 01:20:57,239
+drawdown esto habría que profundizar un poco más podemos hacer esto vamos a intentar mirarlo
+
+603
+01:20:57,239 --> 01:21:03,600
+esta hora te había pensado cuando hagamos la pausita de cinco minutos tratar de montarlo
+
+604
+01:21:03,600 --> 01:21:20,779
+ayer y lo podemos lo podemos mirar pero yo con esta información en el filtro la verdad no lo
+
+605
+01:21:20,779 --> 01:21:32,250
+veo bien le he hecho toda junta porque porque quería mostraros el mapa 3d de acuerdo queríamos
+
+606
+01:21:32,329 --> 01:21:40,010
+el mapa 3d y entonces hemos hecho esta opti junta que es la opti junta pues el canal de
+
+607
+01:21:40,010 --> 01:21:49,010
+1 a 25 el trailing de 6 a 30 que de 6 hemos visto que no pero por hacer la misma y el filtro 0 o
+
+608
+01:21:49,010 --> 01:22:00,010
+1 0 o 1 simplemente es decir no o sí pero con uno también quizá mejor en vez de 22 a mejor va
+
+609
+01:22:00,010 --> 01:22:05,979
+mejor poniéndole más más un periodo mayor la verdad que no lo hemos mirado pero podríamos
+
+610
+01:22:05,979 --> 01:22:11,460
+podemos directamente mirarlo nos llevaría mucho rato y puede ser porque a lo mejor simplemente
+
+611
+01:22:11,460 --> 01:22:18,220
+la volatilidad de un mes pues es una comparación demasiado cercana pudiera ser pero pero vaya así
+
+612
+01:22:18,220 --> 01:22:24,300
+excursito sí que da una cierta mejora pero no en ratios de no en el recovery da una cierta mejora
+
+613
+01:22:24,300 --> 01:22:33,979
+rendimiento pero no a mí no me no me convence porque un filtro es sobre todo sobre todo para
+
+614
+01:22:33,979 --> 01:22:41,430
+mejorar el perfil de riesgo pero bueno hemos hecho esa optimización aquí ya tenemos 1250 combinaciones
+
+615
+01:22:41,430 --> 01:22:48,390
+con las sin acciones ya es un poquito más intensiva pero realmente por los grados de libertad que hay
+
+616
+01:22:48,390 --> 01:22:57,149
+se podría hacer podría hacer pero bueno yo he preferido enseñaros la si para que la vierais
+
+617
+01:22:57,149 --> 01:23:09,140
+paso a paso vale bien tenemos aquí el sample vamos a poner aquí también el recovery vale con
+
+618
+01:23:09,140 --> 01:23:30,229
+profit dividido por máximo lauda operamos por recovery aquí fijaros que nos da en el
+
+619
+01:23:30,229 --> 01:23:40,390
+sample nos da el mejor el filtro activado 25 y 0 12 0 12 de decir bastante distinto lo que hemos
+
+620
+01:23:40,390 --> 01:23:51,199
+elegido en muy distinto vamos a ver el mapa de esto vamos a ver el mapa de esto 84 in sample
+
+621
+01:23:51,199 --> 01:24:00,850
+aquí podemos ver el mapa en 2d mirando a una variable o podemos mirar el mapa en 3d para
+
+622
+01:24:00,850 --> 01:24:05,850
+mirar el mapa 3d también tenemos que hacer alguna asupción porque tenemos tres variables
+
+623
+01:24:05,850 --> 01:24:12,630
+que bloquear una que es fácil porque como tenemos el 0 1 pues le vamos le podemos poner el 0 vale
+
+624
+01:24:12,630 --> 01:24:21,510
+o le podemos poner el uno 0 y le podemos poner vamos a hacer lo grande para que así veáis el
+
+625
+01:24:21,510 --> 01:24:27,270
+gráfico lo mejor posible lógicamente lo que os decía veis el trailing aquí no tiene mucho sentido
+
+626
+01:24:27,270 --> 01:24:36,699
+de verdad pues ha sido cortarla hecho podemos hasta hacerlo esto aquí no me dejas a pensar
+
+627
+01:24:36,699 --> 01:25:04,590
+que se podía bueno creo que sí que se puede dejar aquí lo que puedo es pintar las dos del 0
+
+628
+01:25:04,590 --> 01:25:12,899
+y el uno veis ahí podéis veis que la verdad que no creo que se vea muy bien este con el 0 y el
+
+629
+01:25:12,899 --> 01:25:27,859
+1 lo puedo poner que marcar una u otra es el 0 es quiere decir que con el valor 1 aquí en esta
+
+630
+01:25:27,859 --> 01:25:35,689
+parte de valores más bajos pues parece ir mejor pero va bastante en línea en cambio en el 1 pasa
+
+631
+01:25:35,689 --> 01:25:42,039
+lo contrario los valores bajos va mejor lo voy a poner bloqueado porque así queda un poco para
+
+632
+01:25:42,039 --> 01:25:51,449
+ver lo que en directo creo que va a ser más más confuso así que voy a activar esto la barca de
+
+633
+01:25:51,449 --> 01:26:07,420
+agua para que la quita a veces ayuda un poco a ver si así nos molesta lo de abajo no hay
+
+634
+01:26:07,420 --> 01:26:19,430
+vemos un poquito esto sería bloqueando el 1 lo que os decía el canal vez canal es muy estable es
+
+635
+01:26:19,430 --> 01:26:25,109
+el canal no acordaros lo que lo hicimos en excel es que os decía vez así se ve parecido
+
+636
+01:26:26,159 --> 01:26:29,960
+esto es lo que vemos en excel que ya os lo comenté multichats lo hace porque no tenemos
+
+637
+01:26:29,960 --> 01:26:36,960
+en excel también lo podemos hacer en excel pero multichats lo incorpora es bastante interesante
+
+638
+01:26:36,960 --> 01:26:44,699
+aquí en las partes bajas del canal como degrada muchísimo pero a partir de 5 o 6 veis ahí en un
+
+639
+01:26:44,699 --> 01:26:50,659
+poquito estamos en el in sample ahora o iremos pero es bastante estable bastante estable y la
+
+640
+01:26:50,659 --> 01:26:55,100
+zona del filtro sí que lo hemos quedado un poco bajo parece que es más alto pero lo que les decíamos
+
+641
+01:26:55,100 --> 01:27:03,229
+de los trades pero hay que verlo hay que verlo 0 20 está ahí al borde de gradar está al borde
+
+642
+01:27:03,229 --> 01:27:13,359
+de gradar está un poquito justito pero 20 es un poquito justito ese es con el con el filtro
+
+643
+01:27:13,359 --> 01:27:18,640
+activado y con el filtro desactivado fijaros y con el filtro desactivado parece que alarga un poco
+
+644
+01:27:18,640 --> 01:27:34,960
+más pero es que parece que parece que la llenura llega un poquito más allá no así es desactivado
+
+645
+01:27:34,960 --> 01:27:45,250
+es muy parecido pero ya vemos que todo pues toda esta zona 0 20 0 25 en el caso del filtro y
+
+646
+01:27:45,250 --> 01:27:54,720
+don chian pues ya digo desde 6 7 8 10 20 es decir es muy estable es muy estable tiene pocas pocas
+
+647
+01:27:54,720 --> 01:28:03,729
+diferencias de acuerdo esto al final que está indicando lo que muestra es estabilidad está
+
+648
+01:28:03,729 --> 01:28:07,649
+simplemente es estabilidad lo que es lo que queremos esto es lo que llamamos un mapa de
+
+649
+01:28:07,649 --> 01:28:14,840
+optimización que hay muchos nombres en la literatura dependiendo de nombres pues más guays como todos
+
+650
+01:28:14,840 --> 01:28:21,079
+pero esto es el mapa de optimización de toda la vida que hemos hecho que nos vas a ver más sensibilidad
+
+651
+01:28:21,079 --> 01:28:27,600
+de variables a mí que me interesa pues variables que su vez sus vecinos estén bien decir esto es
+
+652
+01:28:27,600 --> 01:28:35,880
+bien esto es bien para el lado del canal para el lado del teletrello parece que degrada más pero
+
+653
+01:28:35,880 --> 01:28:43,699
+tiene un punto falso porque como lo hemos graduado tanto la mente nos esga un poco por eso viene bien
+
+654
+01:28:43,699 --> 01:28:49,619
+el watermark este para evitar no ver un poco eso no nos esga pero realmente también es bastante
+
+655
+01:28:49,619 --> 01:28:56,020
+grande la zona también es bastante grande tenemos una zona aquí realmente grande que sí que quizás
+
+656
+01:28:56,020 --> 01:29:00,659
+más 25 habría que estudiarlo mejor esto yo me he quedado en el 0 20 por lo que os he dicho
+
+657
+01:29:00,659 --> 01:29:08,859
+los trains porque considero tener suficiente margen todavía para caerme mucho pero es verdad que 0 25
+
+658
+01:29:08,859 --> 01:29:16,060
+se ve más cómodo a nivel de estabilidad se ve más más cómodo y que incluso el 6 lo mismo en 6 quizá se
+
+659
+01:29:16,060 --> 01:29:24,699
+ve un poco más cómodo la zona de 15 de 12 12 0 25 quizá parece más estable parece más estable
+
+660
+01:29:24,699 --> 01:29:32,420
+en este gráfico de ese orden pero bueno que estamos en el in sample vamos ahora al auto sample a
+
+661
+01:29:32,420 --> 01:29:38,960
+ver qué conclusiones sacamos aquí lo que hemos dicho aquí parece en el mapa a mí lo que veo un
+
+662
+01:29:38,960 --> 01:29:51,500
+poquito más estable es esta zona aquí más o menos es 0 12 es este 12 por ahí 16 pero 12 0 11 claro
+
+663
+01:29:51,500 --> 01:29:57,590
+es que hay mucho trailing ahí todos están ahí es en la zona de recovery alto no cero 12 no
+
+664
+01:29:57,590 --> 01:30:01,069
+perdón cero 20 pico perdón perdón me equivocaba me equivocaba esto es demasiado bajos lo de más
+
+665
+01:30:01,069 --> 01:30:06,760
+abajo equivocado equivocado veis dame ya mejor recovery pero en el mapa no se ve tan estable
+
+666
+01:30:06,760 --> 01:30:15,850
+es esto esto es muy buen ejemplo para que veáis que a veces lo cerrado no que a veces no es el que
+
+667
+01:30:15,850 --> 01:30:24,199
+el que es aquí bueno ahí estaba el filtro activado es activado pero aquí alterna activado y no
+
+668
+01:30:24,199 --> 01:30:33,520
+activado que parece más activado vamos a ponerlo en activado y está esa y espera que me gusta más
+
+669
+01:30:33,520 --> 01:30:49,859
+que se vea el gris también la volumen al gris es aquí esta zona no con el 1 con el uno que se mueve
+
+670
+01:30:49,859 --> 01:30:55,979
+un poquito es claro es que el que es es detalles ya digo estar ahí todas el 0 es lo que os decía
+
+671
+01:30:55,979 --> 01:31:05,470
+parece más estable parece más estable 0 pero dentro de la zona cómoda vez es más más abrupto cambio
+
+672
+01:31:05,470 --> 01:31:10,510
+el uno perdón 0 poquito más estable es un poquito más estable se mueve pero es un poquito más
+
+673
+01:31:10,510 --> 01:31:17,090
+estable entonces en el 0 sí que iríamos por esa zona más o menos más o menos pero en cambio fijaros
+
+674
+01:31:17,090 --> 01:31:23,659
+que ahí nos están saliendo que los mejores da muy bajo da un recovery recovery de equilibró entre
+
+675
+01:31:23,659 --> 01:31:27,779
+retorno y riesgo da muy bajo que estamos mirando en el profit podíamos mirar también recovery
+
+676
+01:31:27,779 --> 01:31:32,060
+por el recovery no porque no lo no le metió en el modelo podría mirar de la hora por ejemplo
+
+677
+01:31:32,100 --> 01:31:33,539
+vale podría mirar a bravado
+
+678
+01:31:35,920 --> 01:31:43,760
+ese es el bravado que fijaros que cambia completamente el el profit lo da en la
+
+679
+01:31:43,760 --> 01:31:53,079
+parte alta el bravado lo da bajo en el 0 a 0 8 por eso viene bien el recovery no lo lo
+
+680
+01:31:53,079 --> 01:31:57,159
+podía haber metido como fitness pero no lo he hecho entonces ahora no lo puedo lo podía hacer
+
+681
+01:31:57,159 --> 01:32:04,920
+pero no lo tendría que hacer lo podía ver con un archivo para que prepararlo y no lo tengo listo
+
+682
+01:32:05,119 --> 01:32:11,000
+lo que sí que podemos meter aquí es el el sharp el sharp este falso que tenemos pero bueno pero ya
+
+683
+01:32:11,000 --> 01:32:18,760
+digo que es es es falso pero pero sirve un poco veis como al final lo que os digo en esas zonas
+
+684
+01:32:18,760 --> 01:32:23,479
+sigue tirando más para el profit y aquí se ha igualado más ya no es tan dramático la caída
+
+685
+01:32:23,479 --> 01:32:29,680
+porque porque el riesgo en la parte baja también lo conciberá bajo cuando lo consideraba pero
+
+686
+01:32:29,680 --> 01:32:35,359
+estaría bien bien verlo en el recovery que un poco lo vemos aquí pero pero eso que os digo
+
+687
+01:32:35,359 --> 01:32:40,960
+el recovery cambia un poco pero por net profit ahí el mapa en el profit está bien está bien está bien
+
+688
+01:32:40,960 --> 01:32:46,239
+también teniendo cuenta donde saldrá el recovery estaría estaría muy bien pero fijaros cómo
+
+689
+01:32:46,239 --> 01:32:53,850
+estabiliza en este este sharp la zona ya se vuelve absolutamente plana plana plana tanto con 0 como
+
+690
+01:32:54,569 --> 01:33:04,569
+se nota planísima realmente es enorme no aquí hay un poco de cráter pero pero si es ahí de la zona
+
+691
+01:33:04,569 --> 01:33:10,010
+0 25 es donde empieza la zona plana lo que pasa que está ahí también lo de los tres bueno este
+
+692
+01:33:10,010 --> 01:33:17,170
+es el sample sample vamos ahora a ver el auto sample es muy muy interesante poco para que veáis
+
+693
+01:33:17,170 --> 01:33:24,649
+cómo tenemos que analizar los los sistemas de este tipo que al final tienen pocas operaciones lo que
+
+694
+01:33:24,649 --> 01:33:33,279
+hacemos juntar acciones y a través de ellas que esto quiere decir que no va a ir óptimamente
+
+695
+01:33:33,279 --> 01:33:38,479
+en ninguna pero va a tener un buen equilibrio entre todas por tanto es más robusto mucho más
+
+696
+01:33:38,479 --> 01:33:45,310
+robusto adaptarse a todas que adaptarse a una aparentemente mejor adaptarse a una sí claro si
+
+697
+01:33:45,310 --> 01:33:52,949
+tienes la certeza que el ajuste va a ser en el futuro sí pero se explica mucho en la teoría al
+
+698
+01:33:52,949 --> 01:33:57,350
+final no tenemos certeza sobre el futuro tenemos que tratar de poner las probabilidades a nuestro
+
+699
+01:33:57,350 --> 01:34:04,550
+favor y eso pues lo hacemos sobre todo pues priorizando la robustez y como con este ejemplo
+
+700
+01:34:04,550 --> 01:34:11,229
+que estoy poniendo bien aquí en el auto sample bajamos número de trades y aquí fijaros que el
+
+701
+01:34:11,229 --> 01:34:20,470
+mayor recovery lo lo da a cero el canal en uno y 0 11 por decir súper rápido operando un montón
+
+702
+01:34:20,670 --> 01:34:27,029
+pero fijaros que pues bajando bastante el rendimiento pero también el dragón y cuidado
+
+703
+01:34:27,029 --> 01:34:39,439
+también el dragón interesante no aquí en la mayoría todos porque como ni fijaros que están
+
+704
+01:34:39,439 --> 01:34:47,600
+en el 1 en el 2 en el canal el canal súper súper bajo hasta que no llegas aquí 11 5 20 no empiezan
+
+705
+01:34:47,600 --> 01:34:56,399
+a aparecer algunos otros pero realmente lo dan los sex que son muy muy rápidos aquí insisto que
+
+706
+01:34:56,399 --> 01:35:03,800
+convendía hacer un más sensibilidad al slip y tener claro que uno puede ser dependiendo de
+
+707
+01:35:03,800 --> 01:35:11,470
+qué acción puede ser un poco justo un poco justo de hecho los futuros muchas veces metemos uno y
+
+708
+01:35:11,470 --> 01:35:20,060
+medio aunque es depender porque aquí vamos compramos en realidad compramos en la apertura
+
+709
+01:35:20,060 --> 01:35:26,300
+la apertura tiene mucha mucha volatilidad entonces no no necesariamente el slip de apertura tiene
+
+710
+01:35:26,300 --> 01:35:34,800
+que ser contrario porque como vamos en ruptura pero de datos de cierre a veces entra mejor decir
+
+711
+01:35:34,800 --> 01:35:40,960
+no no no es un sex como claro pero hay que contar que que que de media el normal es que sea negativo
+
+712
+01:35:41,359 --> 01:35:50,909
+pero habrá muchos que serán positivo en este tipo de entrada bien vamos a ver el mapa vamos a ver
+
+713
+01:35:50,909 --> 01:35:56,310
+el mapa en este en este caso es aquí lo que os digo ya las optimizaciones como que no son
+
+714
+01:35:56,310 --> 01:36:02,989
+tan claras porque porque hay demasiadas variables de acuerdo y por eso lo que lo que os he enseñado
+
+715
+01:36:02,989 --> 01:36:09,609
+de esto paso a paso no siempre es mejor de esta manera no hacerlo de manera independiente que
+
+716
+01:36:09,649 --> 01:36:14,729
+también se puede hacer y podemos también sacar conclusiones con una opinación global no existe
+
+717
+01:36:14,729 --> 01:36:23,010
+mal pero es mejor práctica hacerlo una a una de acuerdo a hacer conceptos independientes primero
+
+718
+01:36:23,010 --> 01:36:40,289
+el canal para la entrada luego para la salida bien el mapa del auto sample lo tengo aquí estamos
+
+719
+01:36:47,239 --> 01:36:56,550
+creo que estoy en el perfecto bien estamos caros que hay los vértices los vértices del
+
+720
+01:36:56,550 --> 01:37:04,750
+trailing no ya se vuelven más ásperos los vértices más ásperos estamos con el filtro activado
+
+721
+01:37:04,750 --> 01:37:09,579
+pero el filtro es activado es parecido cambia un poco pero es parecido en el
+
+722
+01:37:09,579 --> 01:37:13,939
+plazo que cae a medida que se va para hacer el canal aquí es un poco al revés lo que hemos
+
+723
+01:37:13,939 --> 01:37:20,500
+visto antes que el canal corto rápido bueno también porque está afectado por la última
+
+724
+01:37:20,500 --> 01:37:29,699
+parte de mercado los últimos años y pues bueno nos ha interesado ahí ser más rápido aquí si
+
+725
+01:37:29,699 --> 01:37:39,109
+metemos drawdown vamos a ver el gráfico por drawdown como cambia no se vuelve absolutamente
+
+726
+01:37:39,189 --> 01:37:46,609
+extraño donde quiere el canal aquí todo lo contrario es el canal muy elevado muy elevado
+
+727
+01:37:46,609 --> 01:37:53,930
+y con un trailing muy rápido de acuerdo muy rápido eso es lo que quiere pero no tener
+
+728
+01:37:53,930 --> 01:38:01,210
+lógicamente a nosotros nos interesa el equilibrio porque es solo por si solo pues no aporta no
+
+729
+01:38:01,210 --> 01:38:09,770
+vamos a ver este sharp falso que tenemos mucha estabilidad muy extraño también mucha mucha
+
+730
+01:38:09,770 --> 01:38:19,520
+estabilidad aquí pero más riesgo como veis en el canal corto curioso es que línea recta
+
+731
+01:38:19,520 --> 01:38:25,640
+tira aquí con el trailing fijo no porque te saca muy rápido seguramente sale vuelve a entrar sale
+
+732
+01:38:25,640 --> 01:38:29,960
+vuelve a entrar sale vuelve a entrar y hace muchísimas operaciones pero bueno de esa
+
+733
+01:38:29,960 --> 01:38:39,699
+manera pues ha conseguido evitarse la seguramente las correcciones vamos a ver el old data ya tienen
+
+734
+01:38:39,699 --> 01:39:08,159
+poco la información de ambos bueno pues recoger y pues tenemos ahí una bajita sola en el 1 se
+
+735
+01:39:08,159 --> 01:39:15,680
+va rápidamente ya la zona de 20 el canal alternando entre 0 y 1 no tiene muchos es guay y el trailing
+
+736
+01:39:15,680 --> 01:39:23,000
+más bien bajito claro ser más bien bajito que un poquito más de rapidez poquito más de rapidez y
+
+737
+01:39:23,000 --> 01:39:45,380
+con muchísimos trades muchísimos muchísimos trades vamos a ver el mapa aquí estamos ahora con
+
+738
+01:39:45,380 --> 01:39:55,760
+uno de filtro que pues vemos inicial subida por net profit como pues lógicamente bueno lógicamente
+
+739
+01:39:55,760 --> 01:40:05,199
+degrada mucho al principio en ese ese trailing tan rápido y aquí lo quiere más bien alto 0 20
+
+740
+01:40:05,199 --> 01:40:13,560
+todavía está justo ahí parece que 0 25 es mejor profit de acuerdo se ve como se estabiliza y él
+
+741
+01:40:13,560 --> 01:40:20,199
+aquí sí que aparece el canal ya más bajito es el canal aparece ahí más bajito está más bien en
+
+742
+01:40:20,199 --> 01:40:28,020
+4 4 5 y 6 un pico pero baja rápido y cuidado bajar rápido y bajar rápido y mirar qué peligro
+
+743
+01:40:28,020 --> 01:40:38,100
+tiene la derecha el cercano ahí aquí parece mejor esta zona está muy sensible no muy sensible
+
+744
+01:40:38,100 --> 01:40:47,470
+muy muy sensible no y además con ese trailing ahí al 0 30 acordaros ya operando poco operando
+
+745
+01:40:47,470 --> 01:40:58,229
+poco si lo vemos en trago down ser al revés esto ya os lo digo es totalmente inverso es
+
+746
+01:40:58,229 --> 01:41:09,500
+totalmente inverso llanura planísima y con con el con el trailing muy muy muy bajo haciendo un
+
+747
+01:41:09,500 --> 01:41:15,529
+montón de operaciones pero con muy poco retorno como habéis visto antes tanto en 0 como en 1
+
+748
+01:41:15,529 --> 01:41:28,109
+acuerdo tanto en 0 como entonces pues no equilibra aquí el único dato que tenemos un poco para ver
+
+749
+01:41:28,109 --> 01:41:34,979
+mixto es el sharp falso este que tenemos es el único que podemos usar un poco de retorno
+
+750
+01:41:34,979 --> 01:41:40,340
+riesgo de lo que nos permite a nivel de porfolio es un sistema individual tienen más margen y
+
+751
+01:41:40,340 --> 01:41:46,739
+fijaros que aquí pues sí ya vemos que el don chan da igual casi que casi da igual que don chan cojamos
+
+752
+01:41:46,739 --> 01:41:54,020
+y que el trailing lo queremos elevado es verdad que aquí sí que el 0 20 parece tener margen tener
+
+753
+01:41:54,020 --> 01:42:02,319
+tranquilidad está por aquí pero más establecer o 25 de acuerdo así que viendo estos datos sí
+
+754
+01:42:02,319 --> 01:42:09,840
+que quizá parece mejor el 0 25 que 0 20 queremos elegir ahora lo iremos lo iremos viendo
+
+755
+01:42:11,960 --> 01:42:22,630
+vale bien esto cuanto a las optis que ya tenía preparados voy a hacer ahora 5 minutitos 5
+
+756
+01:42:22,630 --> 01:42:32,949
+minutitos de descanso y vamos luego a montar en maestro alguna de estas combinaciones generalizarlos
+
+757
+01:42:32,949 --> 01:42:42,029
+ahí un poquito un poquito con más con más información vale vamos a coger algunos candidatos
+
+758
+01:42:42,029 --> 01:42:50,550
+los vamos a y los vamos a mirar ahí en maestro de acuerdo así que de momento voy a poner un
+
+759
+01:42:50,550 --> 01:43:05,579
+momentito la pausa voy a poner el reloj 5 minutitos así esto así y pues ahí lo pone 8 8 y 1 así
+
+760
+01:43:05,579 --> 01:43:44,520
+aparecemos otra vez por aquí ahora ya sé por aquí y ya activado y activó la grabación para que no para
+
+761
+01:43:44,520 --> 01:43:54,920
+que no se nos olvide haber aprovechado para leer un poquito algunos temas a ver respondiendo por
+
+762
+01:43:54,920 --> 01:44:01,239
+abajo ahora juan me pregunta que no le queda claro cómo elegir los gráficos 3d para lo iremos viendo
+
+763
+01:44:01,239 --> 01:44:09,170
+cuando iremos viendo el final un gráfico 3d es una representación de parámetros lo hemos visto en la
+
+764
+01:44:09,170 --> 01:44:14,550
+teoría excel aquí ya lo habéis visto con multichars ya os lo dije que teníamos viendo todo de distintas
+
+765
+01:44:14,550 --> 01:44:22,579
+fuentes porque lo que importa son los conceptos no no pensé no queráis aprenderlo todo en un
+
+766
+01:44:22,579 --> 01:44:30,310
+sistema porque vamos a ver muchos al final es la la idea es una zona estable es la estabilidad
+
+767
+01:44:30,310 --> 01:44:38,609
+si más no tiene no tiene más que otro otro criterio aquí en mi opinión el procedimiento más correcto
+
+768
+01:44:38,609 --> 01:44:48,020
+era es decir la opti 1 luego la opti 2 y la opti 3 que finalmente decidimos no aplicar el filtro
+
+769
+01:44:48,020 --> 01:44:54,180
+os he querido hacer esta última 4 para que la veréis toda junta recuerdo pero es mejor práctica
+
+770
+01:44:54,180 --> 01:45:04,000
+hacerlo de la de la de la otra manera es mejor práctica hacerla que más pero bueno espera que
+
+771
+01:45:04,000 --> 01:45:15,039
+lo pongo abro otra vez el mapa por ejemplo por ejemplo hemos visto antes el opti 1 data aquí
+
+772
+01:45:15,039 --> 01:45:27,250
+vale hemos visto esta en 2d el opti 1 all data vale bueno o tampoco estaría mal hacerla hacerla
+
+773
+01:45:27,250 --> 01:45:33,850
+después posteriormente como esta que hemos hecho pero por mantener el ritmo a mejor hacer hacer no
+
+774
+01:45:33,890 --> 01:45:41,770
+estaría mal hacer la la 4 pero ya un poquito más cerrada de acuerdo es decir no no dejando si
+
+775
+01:45:41,770 --> 01:45:46,689
+hemos visto que los valores tan bajos de traily pues no nos convencen pues ya los podíamos
+
+776
+01:45:46,689 --> 01:45:53,130
+oscupir ya de cara a hacer una elección pues elegir pero pero haríamos más cosas como las
+
+777
+01:45:53,130 --> 01:46:01,850
+que vamos a hacer ahora en maestro pero definitiva definitiva no es más que un equilibrio recuerdo
+
+778
+01:46:01,850 --> 01:46:12,020
+un equilibrio entre el rendimiento el riesgo por por distintos por distintas métricas pues
+
+779
+01:46:12,020 --> 01:46:19,300
+el reto no puede ser en drama puede ser echar puede ser el sortino vale que como digo lo iremos
+
+780
+01:46:19,300 --> 01:46:26,760
+viendo a lo largo del curso y eso lo puedes hacer tú aquí lo puedes hacer a través de
+
+781
+01:46:27,760 --> 01:46:35,539
+el recovery excel de acuerdo como lo vimos en el curso varias veces de acuerdo haciendo
+
+782
+01:46:35,539 --> 01:46:42,289
+una tabla dinámica si os acordáis vale yo estoy aquí puedo hacer una tabla dinámica y de hecho
+
+783
+01:46:42,289 --> 01:46:51,270
+además tengo normalmente me lo hace automático que ya la excel es bastante listo a ver aquí
+
+784
+01:46:51,270 --> 01:46:59,869
+tabla dinámica recomendada con gráfico ahora está había una que me decía gráfico y tabla
+
+785
+01:47:00,869 --> 01:47:10,409
+a uno ya me la selecciona hecho recovery y aquí le puedo elegir
+
+786
+01:47:11,770 --> 01:47:24,279
+la verdad voy a poner recovery las dos variables y recovery vale no este lo pongo aquí recordar
+
+787
+01:47:24,279 --> 01:47:31,489
+que lo hicimos en la teoría lo hicimos en la teoría pasa que aquí pues bueno es lo que
+
+788
+01:47:31,489 --> 01:47:41,079
+digo al final tengo este cual es la 41 final sólo tengo estas dos variables una contra la otra
+
+789
+01:47:41,399 --> 01:47:52,439
+si metiera también el filtro entonces ya la cosa pues sería distinto pero hay varias maneras
+
+790
+01:47:52,439 --> 01:48:27,800
+de hacerlo pero en definitiva me he quedado así un momentito por defecto aquí de superficie y
+
+791
+01:48:27,800 --> 01:48:39,689
+hasta esto pero voy a vamos a poner un diseño que nos guste más y hemos hecho el mapa en un
+
+792
+01:48:39,689 --> 01:48:54,890
+momentito en excel aquí es igual lo voy a quitar esto y bueno pues aquí en el excel pues también
+
+793
+01:48:54,890 --> 01:49:01,409
+ahora yo puedo jugar un poco con ella y la puedo ir pues moviendo puedo ir aquí a la opción 3d
+
+794
+01:49:01,409 --> 01:49:19,680
+puedo pues hacer alguna cosita con ello esto repito que lo vimos lo vimos en la teoría bueno
+
+795
+01:49:19,680 --> 01:49:25,319
+poder un poquito lógicamente tengo poquito menos de margen de maniobra que multicharts que ya está
+
+796
+01:49:25,319 --> 01:49:30,159
+más pensado para eso pero pero es un poco la misma la misma idea es un poco la misma idea que
+
+797
+01:49:30,159 --> 01:49:39,329
+lo estamos viendo por recovery final esto esto es un poco la idea que la zona si os fijáis por
+
+798
+01:49:39,329 --> 01:49:47,760
+recovery es pues muy muy estable pero habría que ahora vamos a ver un poquito en multicharts
+
+799
+01:49:47,760 --> 01:49:57,789
+viendo esto que tenemos aquí alguna alguna combinación antes dejarme que lo deje así puesto
+
+800
+01:50:00,399 --> 01:50:11,140
+a ver luego comentaba también aquí antonio antonio que que las dudas decía que si las
+
+801
+01:50:11,140 --> 01:50:16,539
+contesta alberto no las contesto yo si no es exactamente así antonio es exactamente así alberto
+
+802
+01:50:16,539 --> 01:50:25,729
+contesta las preguntas que tienen que ver que son de rápido responder y que tienen que ver pues
+
+803
+01:50:25,729 --> 01:50:30,289
+con el seguimiento de la clase bueno para que nos esperemos al final pero ya os explique si
+
+804
+01:50:30,289 --> 01:50:36,529
+has estado viendo las prácticas directo o posiblemente grabadas que la idea siempre es
+
+805
+01:50:36,529 --> 01:50:43,489
+dejar una parte al final de la clase también al inicio trato de contestar las que tenéis en el
+
+806
+01:50:43,489 --> 01:50:54,609
+discord y vamos respondiendo un poco todas las preguntas y al final alberto digamos que las
+
+807
+01:50:54,609 --> 01:51:02,930
+preguntas que aportan valor a los alumnos que es lo que tú sugieres las las dejamos un poco para
+
+808
+01:51:02,930 --> 01:51:08,489
+el final cuando cuando las hay también además las podéis poner en discord y también si enviáis
+
+809
+01:51:08,489 --> 01:51:17,090
+y las trataremos de atender lo que comentas abre el micro era algo que valorábamos pero
+
+810
+01:51:17,090 --> 01:51:23,640
+que sinceramente creo que al final va a ser creo que puede ser contraproducente pero no por no
+
+811
+01:51:23,640 --> 01:51:28,279
+por eso porque sois muchos entiendes porque sois muchos pero de todas maneras no descarto al final
+
+812
+01:51:28,279 --> 01:51:37,970
+puedes ir escribiendo en el chat y nosotros sí consideramos que tu duda aporta como muchas yo
+
+813
+01:51:37,970 --> 01:51:45,130
+ya las digo que insisto que eso en principio creo que la estructura mejor era y así es como
+
+814
+01:51:45,130 --> 01:51:49,810
+vamos a intentar mantenerlo que mejor algún día pues se me olvide algo distinto pero la idea lo
+
+815
+01:51:49,810 --> 01:51:56,590
+expliqué el primer día pasa la clase verás como lo explique así que la última media hora la dejaría
+
+816
+01:51:56,590 --> 01:52:03,670
+para eso es decir vosotros podéis ir preguntando y aquellas que sean de contenido que creo que
+
+817
+01:52:03,670 --> 01:52:09,229
+pueden aportar valor para todos al final las respondemos las que alberto tiene que
+
+818
+01:52:09,229 --> 01:52:12,710
+responder porque si tú me preguntas oye es que no he entendido que ha dicho no sé qué o qué
+
+819
+01:52:12,710 --> 01:52:19,350
+el gráfico que colores no sé cuánto o algo que afecta o es que no se ve bien o no se oye lo sé
+
+820
+01:52:19,350 --> 01:52:24,630
+cualquier cosa que afecte al funcionamiento de la clase en ese momento pues pues él ya trata de
+
+821
+01:52:24,630 --> 01:52:32,229
+resolverlo incluso me lo dice a mí o solo responde él pero las preguntas que pueden ser de cierto
+
+822
+01:52:32,229 --> 01:52:38,310
+contenido mi idea es plantearlas así pero si creo como este caso ahora afectan a la continuidad
+
+823
+01:52:38,310 --> 01:52:45,550
+de la clase pues prefiero resolverlas in situ pero si hay muchas pues prefiero dejarlo para el final
+
+824
+01:52:45,550 --> 01:52:53,869
+porque si no no avanzamos sin más más de acuerdo no es no es base de todas maneras si en algún
+
+825
+01:52:53,869 --> 01:52:58,510
+momento consideramos que es bueno abrir pues a lo mejor hacemos una clase y se mira está vamos
+
+826
+01:52:58,510 --> 01:53:05,109
+a dedicarla a eso vale si se acumula todo con el plan y ya ya habíamos contemplado si vamos
+
+827
+01:53:05,109 --> 01:53:10,949
+viendo que se acumulan muchas preguntas que hay algún grupo que nos va siguiendo pues bueno en
+
+828
+01:53:10,949 --> 01:53:18,260
+un momento dado decir oye clases solo de preguntas de clases solo de preguntas y lo haremos y si yo
+
+829
+01:53:18,260 --> 01:53:24,420
+un día tengo si 23 preguntas en el disco pues lo haré en este momento hay pocas preguntas en el
+
+830
+01:53:24,420 --> 01:53:29,579
+disco para Antonio hay para Antonio Antonio si cuando me llenes el disco de preguntas
+
+831
+01:53:29,579 --> 01:53:40,680
+tengo la clase dedicada pero pero es eso al final hay que hay que hay que ir avanzando y tratar de
+
+832
+01:53:40,680 --> 01:53:47,359
+que todos podáis preguntar ya te digo que no descartamos si realmente creéis que es necesario
+
+833
+01:53:47,359 --> 01:53:51,680
+abrir el micro lo hemos pero yo creo que es más productivo y práctico ir avanzando
+
+834
+01:53:52,199 --> 01:53:59,000
+pero insisto que si es necesario lo haremos si es necesario lo haremos así vale
+
+835
+01:54:01,800 --> 01:54:10,010
+bueno antes me comentaba lo de los mapas que lo ha comentado un poco para Antonio pero el
+
+836
+01:54:11,170 --> 01:54:21,630
+quedaros con la idea Antonio si Antonio me preguntaba qué datos elegir de los mapas que
+
+837
+01:54:21,630 --> 01:54:26,350
+lo había preguntado también Juan Antonio un poco al final que no le quedaba claro cómo elegir en
+
+838
+01:54:26,350 --> 01:54:34,470
+los gráficos 3d es lo que os decía ahora no no no nos quedemos ahora con elegir exacto aparte
+
+839
+01:54:34,470 --> 01:54:42,079
+que ahora voy a ir a multicharles vamos a coger más más información más información en el mapa en
+
+840
+01:54:42,079 --> 01:54:48,399
+el mapa hay veces que nos servirá muy bien para elegir y hay veces que nos servirá poco para
+
+841
+01:54:48,399 --> 01:54:54,520
+elegir pues la zona pero por dónde van los tiros y luego yo como ya os he dicho puedo acabar elegir
+
+842
+01:54:54,520 --> 01:55:03,729
+en el excel excel o multicharles en otra herramienta me puede servir un poco para ver la zona elegir
+
+843
+01:55:03,729 --> 01:55:11,010
+el valor exacto a veces no me resultará evidente hay veces que sí veces que sí el mapa es una
+
+844
+01:55:11,010 --> 01:55:18,609
+excelente herramienta de sensibilidad de parámetros decir para ver por dónde van los tiros por dónde
+
+845
+01:55:18,609 --> 01:55:27,960
+van los tiros pero no es sota sota caballo y rey sota caballo rey la elección final por daros
+
+846
+01:55:27,960 --> 01:55:38,000
+cuando vimos cuando vimos las clases en la teoría que teníamos una excel que hacíamos trabajando
+
+847
+01:55:38,000 --> 01:55:46,020
+en sample el sample el old data por un equilibrio de datos y demás esto al final nosotros nosotros
+
+848
+01:55:46,020 --> 01:55:52,739
+esto final ahora y ahí voy ahora y lo acabaríamos de afinar en maestro porque porque a mí la
+
+849
+01:55:52,739 --> 01:55:58,819
+información que me da multicharles es fantástico porque va muy rápido optimizando es fantástico
+
+850
+01:55:58,819 --> 01:56:06,430
+porque tiene los mapas pero los datos que me da del portfolio son son pocos entonces como eso
+
+851
+01:56:06,430 --> 01:56:13,989
+maestro me da más pues por eso acabó más es lo que os decía antes y ahí voy ahí voy ahora pero
+
+852
+01:56:13,989 --> 01:56:19,750
+como no me dejáis avanzar pues que no pasa nada que no pasa nada que es broma me podéis preguntar lo
+
+853
+01:56:19,750 --> 01:56:25,149
+lo que queráis que para eso estamos ya os dije que no que no acabaremos hasta que no acabemos
+
+854
+01:56:25,149 --> 01:56:33,710
+el temario que yo quiero hacer así que no hay problema vale venga vamos ahora a abrir maestro
+
+855
+01:56:33,710 --> 01:56:43,130
+y lo que no sabe de la de antes y toco una pregunta para luego de no hay ninguna para luego apuntada
+
+856
+01:56:43,130 --> 01:56:47,170
+ya no veo nada rojo o sea en principio está todo el día de preguntas no hay preguntas para luego
+
+857
+01:56:47,170 --> 01:56:56,239
+bueno repásate ahí las preguntas si ves alguna de esto me la marcas en rojo para que luego ya la
+
+858
+01:56:56,239 --> 01:57:05,720
+procese así vale no hay nada para entonces más o menos vamos a lo digo para si me guardo tiempo
+
+859
+01:57:05,720 --> 01:57:13,279
+para luego no estamos al día de preguntas es si si preguntáis más ahora luego luego al final los
+
+860
+01:57:13,279 --> 01:57:22,289
+últimos 20 minutos dependerás que haya pues os dejo más rato o menos entonces tenemos aquí el
+
+861
+01:57:22,289 --> 01:57:45,350
+sistema de ruptura que para levantar la mano para ahora ahora y escribirán aquí tengo el
+
+862
+01:57:46,350 --> 01:58:51,840
+vamos a ver o configurado todo igual ya vamos a hacer de momento un 602 con 100 mil vamos a
+
+863
+01:58:51,840 --> 01:59:04,699
+hacer hasta el viernes pero se lo habéis pasado 20 años vamos a hacer un par o tres de portfolios
+
+864
+01:59:04,699 --> 01:59:30,880
+rápidamente con esta información que teníamos a ver dónde tengo el excel pero esto no por
+
+865
+01:59:30,880 --> 01:59:38,050
+un lado tengo este y por otro lado tengo el excel que ahora no sé lo he cerrado el excel
+
+866
+01:59:39,090 --> 02:00:03,930
+este es por aquí por recovery era en el filtro vamos a hacer una cosa vamos a desactivarlo
+
+867
+02:00:03,930 --> 02:00:14,810
+de momento vamos a ir sin filtro que es verdad que por recovery y lo vamos a hacer primero uno con
+
+868
+02:00:14,810 --> 02:00:44,789
+el primero que teníamos que era 6 0 20 0 0 0 0 0 20 está todo bloqueado vale vamos a ir con
+
+869
+02:00:46,470 --> 02:01:09,409
+2% a cada acción y eso no sí nos va a tardar un poco nos va a tardar un poquito ese problema
+
+870
+02:01:09,409 --> 02:01:16,119
+que tiene maestro es que esto la verdad que es un problema realmente potente pero que
+
+871
+02:01:16,119 --> 02:01:22,920
+teóricamente se ha quedado muy atrás y a nivel de procesamiento de información es súper lento es
+
+872
+02:01:22,920 --> 02:01:29,739
+súper lento otro día también trataremos de enseñarnos algo con con cual analyzer que es
+
+873
+02:01:29,739 --> 02:02:27,659
+un poquito más rápido 100 vamos a ver que lo tengo configurado todo igual ya vamos a hacer de
+
+874
+02:02:27,659 --> 02:02:56,970
+momento un 6 0 2 con 100 mil vamos a hacer hasta el viernes pero se lo habéis pasado 20 años
+
+875
+02:02:56,970 --> 02:03:09,890
+vamos a hacer un par o tres de portfolios rápidamente con esta información que teníamos
+
+876
+02:03:09,890 --> 02:03:32,100
+aquí a ver dónde tengo el excel pero esto no por un lado tengo este y por otro lado tengo el excel
+
+877
+02:03:32,100 --> 02:03:57,020
+que no sé lo he cerrado el excel este es por aquí por recovery
+
+878
+02:03:58,899 --> 02:04:04,770
+en el filtro vamos a hacer una cosa vamos a desactivarlo de momento vamos a ir sin filtro
+
+879
+02:04:04,770 --> 02:04:15,210
+que es verdad que por recovery y lo vamos a hacer primero uno con el primero que teníamos que era 6
+
+880
+02:04:15,210 --> 02:04:55,239
+0 20 0 0 0 0 0 20 está todo bloqueado vale vamos a ir con 2% a cada acción que son así nos va a
+
+881
+02:04:55,239 --> 02:05:10,850
+tardar un poco nos va a tardar un poquito ese problema que tiene maestro es que esto la verdad
+
+882
+02:05:10,850 --> 02:05:17,399
+que es un problema realmente potente pero que teóricamente se ha quedado muy atrás y a nivel
+
+883
+02:05:17,399 --> 02:05:25,829
+de procesamiento de información es súper lento es súper lento otro día también trataremos de
+
+884
+02:05:25,829 --> 02:05:44,859
+enseñarnos algo con con cual analyzer que es un poquito más rápido bien lo bueno que tenemos
+
+885
+02:05:44,859 --> 02:05:54,390
+aquí es podemos mirar mucho más por ejemplo la exposición que hemos ido teniendo 150 en algún
+
+886
+02:05:54,390 --> 02:06:52,510
+momento pero algo tengo en el mone management mal voy a usar el de voy a usar el de el de maestro
+
+887
+02:06:53,069 --> 02:07:05,539
+voy a usar el de maestro voy a usar el de maestro por fix x fractional a market value que para
+
+888
+02:07:05,539 --> 02:07:53,229
+acciones no muy bien el dito que no se explicó el 0 0 20 que lo dejo ahora no lo toco vamos a
+
+889
+02:07:53,229 --> 02:08:04,920
+probar la cartera 6 0 20 0 que es la que habíamos elegido inicialmente para ir avanzando en las
+
+890
+02:08:05,079 --> 02:08:16,460
+validaciones pero que la verdad que no tengo claro que se la mejor ahora lo veremos combinado con los
+
+891
+02:08:16,460 --> 02:08:56,220
+mapas ahora está mucho más después ahora ha ido creciendo un poco bueno hemos ido a 1 y medio hasta
+
+892
+02:08:56,220 --> 02:09:21,729
+dos veces de exposición 2 mil 943 3 147 aquí una de las cosas interesantes que podemos ver es esto
+
+893
+02:09:22,010 --> 02:09:35,640
+es esto que realmente hay muchas acciones que al final es 6 20 de acuerdo nos quedamos con
+
+894
+02:09:35,640 --> 02:09:44,779
+este vamos a comparar 2 3 2 3 por folios distintos con este setup un momento vamos a hacerlos
+
+895
+02:09:44,779 --> 02:11:11,520
+primero y luego los comparamos pero no vamos a ver vamos a ver qué tal no convergen pues que
+
+896
+02:11:11,520 --> 02:11:37,220
+es que locura si te ve el 3 a ver está en 18 0 13 a ver el mapa aquí que teníamos antes
+
+897
+02:11:37,220 --> 02:12:22,880
+vamos a volver a verlo ahora me dice que no me abre el archivo no te creo a ver si vemos lo
+
+898
+02:12:22,880 --> 02:13:09,670
+mismo aquí que allí 8 0 13 si lo que pasa que la que el recovery siempre se ve muy afectado por
+
+899
+02:13:10,229 --> 02:13:30,279
+el final te tira muy abajo te tira muy abajo es esta ya ya ya aquí si miras por este este
+
+900
+02:13:30,279 --> 02:13:34,960
+char que tenemos por eso quería mirar a varias aquí no ahora hemos mirado 6 20 que ya la tenemos
+
+901
+02:13:34,960 --> 02:13:43,970
+guardada vale que si la miramos tanto aquí tanto aquí como como en el excel no dan mal
+
+902
+02:13:43,970 --> 02:14:16,010
+sería por aquí vamos a usar el foco el lápiz 6 20 sería más o menos por aquí ya no sé
+
+903
+02:14:16,010 --> 02:14:51,729
+estoy buscando la manera que lo vea mejor aquí más o menos aquí 6 20 es más o menos vale más o menos
+
+904
+02:14:52,050 --> 02:15:13,930
+esta tenemos pero si miramos el excel puramente por datos por recovery realmente le gusta mucho
+
+905
+02:15:13,930 --> 02:15:20,840
+más aquí pero ahí vemos que tanto por estar como por retorno de grado muy rápido quien gana y el
+
+906
+02:15:20,840 --> 02:15:26,680
+drama pasa que el drama en la teoría lo hablamos bastante todos los ratios que tienen el drawdown
+
+907
+02:15:26,680 --> 02:15:36,079
+el denominador al final el que dirige el ratio es el drama porque como hace de divisor vale
+
+908
+02:15:36,239 --> 02:15:47,539
+tira muchísimo de la tira muchísimo del ratio para él vale y acaba viéndose muy afectado el
+
+909
+02:15:47,539 --> 02:15:55,220
+tsi lo trata de corregir añadiendo los winners al numerador vale que eso hace que los sistemas
+
+910
+02:15:55,220 --> 02:16:04,189
+que aciertan más que aciertan más pues suban un poco en el ratio es verdad que aquí vamos
+
+911
+02:16:04,189 --> 02:16:09,909
+para el próximo día me gustaría ver en este en esta cartera que nos da sortino para para todo
+
+912
+02:16:09,909 --> 02:16:20,159
+el rato porque ahí ahí es donde realmente tenemos un buen equilibrio vale un buen equilibrio vamos
+
+913
+02:16:20,159 --> 02:16:28,880
+a ver si sí para para el próximo día casi con total seguridad que lo que lo tendremos porque
+
+914
+02:16:28,880 --> 02:16:34,809
+hemos visto el problema que tiene el que tienen ellos preinstalado y lo vamos a corregir y trataremos
+
+915
+02:16:34,809 --> 02:16:51,469
+de traerlo pero con esa información realmente en este mapa para eso decía que no siempre vas
+
+916
+02:16:51,469 --> 02:16:58,649
+a poder elegir es complicado elegir porque realmente es casi da igual no bueno casi da
+
+917
+02:16:58,649 --> 02:17:04,500
+igual me refiero en toda esta zona en toda esta planicia vale si luego y ahí ya te fijas el
+
+918
+02:17:04,500 --> 02:17:13,450
+retorno es donde ya te vas para arriba no se te empieza pero lo tengo activado pero pocas
+
+919
+02:17:13,450 --> 02:17:20,069
+diferencias se te empieza a ir más para arriba es donde decíamos que interesaba más el ratio
+
+920
+02:17:20,069 --> 02:17:30,860
+un poco más abajo no perdón el el trailing el porcentaje de trailing más más a 0 25 porque
+
+921
+02:17:30,860 --> 02:17:35,700
+en el 0 20 incluso estaba estaba justo pero bueno el 0 20 al final acaba ha sido un poco un equilibrio
+
+922
+02:17:35,700 --> 02:17:43,670
+entre lo que quieren los ratios de de drawdown lo que quieren los ratios de de retorno riesgo
+
+923
+02:17:43,670 --> 02:17:52,500
+porque al tener el drawdown el denominador tira mucho de él y el profit el profit quiere un muy
+
+924
+02:17:52,500 --> 02:18:05,239
+elevado si ordenamos sólo por profit vale fijaros un poco más grande todo el rato 0 28 0 27 0 30
+
+925
+02:18:05,239 --> 02:18:17,340
+he bloqueado que no haya filtro vale que no haya si en cambio ordeno por drawdown lo contrario 0 7
+
+926
+02:18:17,340 --> 02:18:25,520
+0 8 0 7 0 6 de acuerdo lo más bajo si ordenamos recovery busca el término medio vale pero el
+
+927
+02:18:25,520 --> 02:18:31,180
+drawdown tira mucho de por eso al final este shark aunque es un poco como os he dicho antes
+
+928
+02:18:31,180 --> 02:18:40,340
+falso por por el por demás y ahí cambia es verdad que también da los saltos por retorno pero hay poca
+
+929
+02:18:40,340 --> 02:18:48,260
+diferencia de esos valores están todo el rato alrededor del 0 todos estos es lo mismo
+
+930
+02:18:48,819 --> 02:18:58,229
+es prácticamente lo mismo todo esto hay muy muy poca variación de acuerdo de mi poca variación en
+
+931
+02:18:58,229 --> 02:19:07,600
+el dato de 6 p6 y 10 pero también bastante elevado el tréil bastante elevado el tréil y pero ya
+
+932
+02:19:07,600 --> 02:19:13,280
+digo con muy poca con muy poca variación pues al final nos hemos quedado con un compromiso pero
+
+933
+02:19:13,280 --> 02:19:21,159
+vamos a ver vamos a hacer rápidamente porque es un buen ejercicio hemos hemos hecho este del 6 20
+
+934
+02:19:21,159 --> 02:19:32,020
+y ahora vamos a ver todos estos incluso voy a voy a quitar el este límite vamos a ver por
+
+935
+02:19:32,020 --> 02:19:43,239
+ejemplo el que mejor retorno da vale que es que no tengo ordenado al revés pero es el canal primero
+
+936
+02:19:43,239 --> 02:19:55,479
+vale sería 6 0 27 1 vale lo voy a poner que es bastante parecido al que voy a dejar la gestión
+
+937
+02:19:55,479 --> 02:20:05,620
+monetaria igual para no tocar nada vamos a hacer 6 0 27 1 me lo punto ahí para tener claro luego
+
+938
+02:20:05,620 --> 02:20:15,799
+cuál es cuál es cuál 6 por de hecho el filtro podría poner si voy a poner así porque así me aclaro
+
+939
+02:20:15,799 --> 02:20:36,620
+más y sería mejor 6 1 0 27 venga 6 1 0 27 0 27 dejamos toda la gestión monetaria como hemos
+
+940
+02:20:36,620 --> 02:20:45,280
+hecho el otro para poderlos comparar espero que vuelva a cruz ahí va vale es seguramente se hace
+
+941
+02:20:45,280 --> 02:20:51,479
+vamos a ver el que menor dada obtiene que es muy es muy raro ya os lo digo pero vamos a verlo
+
+942
+02:20:51,479 --> 02:21:12,729
+vale sería por canal en ese caso 25 ahora viene el filtro y luego el tréil 0 0 7 vale el que mejor
+
+943
+02:21:13,250 --> 02:22:08,899
+tiene que es 4 0 24 4 1 0 24 luego los comparamos hoy ahora voy ahora voy ahora voy fran de
+
+944
+02:22:08,899 --> 02:22:42,139
+contexto a ver este el de net ya lo he hecho no 25 1 0 0 7 25 1 0 0 7 de la segunda fran
+
+945
+02:22:42,139 --> 02:23:22,040
+que me los acabo de apuntar este recobrimos que damos con uno de la este pero 0 12 aunque
+
+946
+02:23:22,040 --> 02:23:27,750
+en estar de luego haremos una pasión de dios estaré hecha una es que de hecho lo intentamos
+
+947
+02:23:27,750 --> 02:23:34,430
+hacer pero maestro entre los problemas que tiene lo que os decía es de optimizando aparte de la
+
+948
+02:23:34,430 --> 02:23:40,440
+velocidad es que como tarda tanto tiene un problema con gélito que ha tenido mil protestas y mil
+
+949
+02:23:40,440 --> 02:23:50,129
+demandas que es que exige que esté eslogado mientras hace todo el test y como es extremadamente
+
+950
+02:23:50,129 --> 02:23:55,520
+lento y lo tú lo dejas un fin de semana los fines de semana muchas veces hacen mantenimiento y al
+
+951
+02:23:55,520 --> 02:24:02,280
+final muchas veces se tras cuelga entonces es un problema bastante serio porque al final hay
+
+952
+02:24:02,280 --> 02:24:07,639
+veces que para conseguir acabar una optimización más allá que pueda durar dos días que ya es
+
+953
+02:24:07,639 --> 02:24:15,319
+un problema lo difícil es que en dos días no se cuelgue y el tiempo real se cuelgue lo que sea y
+
+954
+02:24:15,319 --> 02:24:23,790
+entonces lo pierde es bastante es increíble como tecnológicamente los problemas que tiene a este
+
+955
+02:24:23,790 --> 02:24:29,489
+nivel porque hace muchos tiempos mucho tiempo que tiene evoluciones pendientes y el programa
+
+956
+02:24:29,489 --> 02:24:35,069
+en sí no es que sea malo pero se ha quedado completamente desfasado es actualizado y como
+
+957
+02:24:35,069 --> 02:24:38,829
+no lo revisan en ese sentido pues claro la tecnología va avanzando los procesadores
+
+958
+02:24:38,829 --> 02:24:43,520
+van avanzando y él no alta y está ahí un poquito limitado espérate que ya no sé cuál he hecho
+
+959
+02:24:43,520 --> 02:24:59,639
+cuál no he hecho a ver 25 107 hecho no vale este lo he hecho 6 27 0 1 luego lo revisaré que estén
+
+960
+02:24:59,639 --> 02:25:28,489
+que estén bien pero ahora voy a hacer el siguiente 4 1 0 24 4 pero 24 aquí lo normal lo que pasa es
+
+961
+02:25:28,489 --> 02:25:39,930
+lo que os digo esta optimización de 3 de porfolio trader tiene tiene ese problema da pocos datos
+
+962
+02:25:39,930 --> 02:25:43,809
+entonces los tienes que construir tú el problema es lo que os digo que al ver este problema con
+
+963
+02:25:43,809 --> 02:25:48,889
+char no hemos podido utilizar el sortino que usamos para las estrategias sueltas entonces hay
+
+964
+02:25:48,889 --> 02:25:54,180
+que hacerlo para por folio porque pensamos que valía pero hemos visto que no entonces hay que
+
+965
+02:25:54,180 --> 02:26:00,020
+hacer el sortino para por folio y a veces lo que hemos hecho es hacer varias es decir hacer una
+
+966
+02:26:00,180 --> 02:26:07,280
+lo bueno es que modificar es muy rápido y como el coste fitness al costo fitness es una fórmula
+
+967
+02:26:07,280 --> 02:26:14,270
+que tú puedes programar al final le puedes meter varios pasadas recoges varios uno pues le ponen
+
+968
+02:26:14,270 --> 02:26:21,190
+sortino sharp y el que quieras los pasas todos al excel y entonces ahí es donde ya tienes tú para
+
+969
+02:26:21,190 --> 02:26:27,430
+hacer distintos cálculos o ratios que puedas calcular directamente en el ex de momento sólo
+
+970
+02:26:27,430 --> 02:26:32,670
+puedo calcular el recovery utilizar este sharp que insisto que no es el valor correcto pero sí
+
+971
+02:26:32,670 --> 02:26:39,600
+que es extrapolable a para hacerla para hacer la selección para este era el 4 ya sólo me queda
+
+972
+02:26:39,600 --> 02:26:56,500
+uno más raro y ahora podremos comparar datos entre ellos vale 1 0 0 se lee bien el maestro
+
+973
+02:26:56,659 --> 02:27:09,430
+la pantalla ahora ahora ahora no me siguen por cierre pero esto es instrumental y no
+
+974
+02:27:09,430 --> 02:27:14,510
+no merece mucho la pena pararse mucho en explicaros todo esto es al final simplemente estoy haciendo
+
+975
+02:27:14,510 --> 02:27:21,409
+todo el porfolio con unos ex concretos trataré de dejarlo mañana a ver si me acaba porque
+
+976
+02:27:21,409 --> 02:27:26,649
+ese fin de semana he intentado dos veces que maestro me hiciera toda la optimización completa
+
+977
+02:27:26,649 --> 02:27:31,729
+pero esta optimización que hemos hecho multicharts también se puede hacer pero en multicharts he
+
+978
+02:27:31,729 --> 02:27:41,319
+tardado unos en hacer la larga de esto tardado unos 15 minutos y maestro se ha colgado después
+
+979
+02:27:41,319 --> 02:27:48,989
+de llevar cada una de ellas como 20 pico horas y no había acabado esta es la relación y era
+
+980
+02:27:48,989 --> 02:27:56,610
+lo mismo en verdad era lo mismo mismo código todo igual y esa esa es un poco la comparación
+
+981
+02:27:56,610 --> 02:28:02,920
+no entonces que ya os lo había comentado alguna vez es un drama de maestro pues es la
+
+982
+02:28:02,920 --> 02:28:08,879
+sola que es que ya digo es súper potente luego a nivel de informes es brutal ahora
+
+983
+02:28:08,879 --> 02:28:13,799
+ahora veréis todos los datos que nos saca está fantástico y los hemos revisado bueno
+
+984
+02:28:13,799 --> 02:28:22,920
+hay uno por ejemplo que no está bien ya lo pasamos pero pero esto sí que sí que están bien y bueno
+
+985
+02:28:22,920 --> 02:28:41,149
+pues es la lástima comentaba fran comentaba fran que la selección del filtro volatilidad
+
+986
+02:28:41,149 --> 02:28:49,420
+lo hecho entre 0 y 1 pero que 1 4 tenía mejor que decir estaba una zona robusta de estar sería
+
+987
+02:28:49,420 --> 02:29:03,350
+mejor pues sí pero ahí a mí me parece podríamos podríamos trabajarlo un poco un poco
+
+988
+02:29:03,350 --> 02:29:11,209
+más pero me parece sobre optimizarlo me parece demasiado los filtros a mí de norma me cuesta
+
+989
+02:29:11,209 --> 02:29:16,569
+meter filtros y a este tendencial para la ganancia que he visto ya ya comentado creo que no se lo
+
+990
+02:29:16,569 --> 02:29:24,760
+metería no se lo metería pero encima si lo metes tiene que ser o no optimizado o muy poco
+
+991
+02:29:24,760 --> 02:29:30,600
+sabes es decir esa el filtro es la manera de sobre utilizar más porque es cuando tú ya tienes
+
+992
+02:29:30,600 --> 02:29:36,520
+tu sistema vamos a suponer 6 0 20 es vale venga y ahora le meto un filtro que me va a eliminar
+
+993
+02:29:36,520 --> 02:29:45,360
+los malos o sea eso he dicho así no te suena a una cosa fácil de sobre optimizar porque al
+
+994
+02:29:45,360 --> 02:29:51,399
+final le vas a quitar los cientos tres cientos o cientos igual sabes que está muy bien no quitar
+
+995
+02:29:51,399 --> 02:29:59,590
+la parte mala pero pero el problema es que estás aumentando el riesgo de que de que de que sea una
+
+996
+02:29:59,590 --> 02:30:04,670
+sobre optimización aunque en el mapa parece robusto aunque en el mapa parece robusto que
+
+997
+02:30:04,670 --> 02:30:12,709
+entiendo lo que dices y tienes sentido no te digo que no pero le daría más vueltas porque le daría
+
+998
+02:30:12,709 --> 02:30:20,229
+más vueltas y ya digo granular lo tanto explico es como el filtro no 0 20 ya te digo yo lo sé
+
+999
+02:30:20,229 --> 02:30:27,069
+optimizado los todos en 0 25 porque porque vierais el mapa bien granulado pero realmente
+
+1000
+02:30:27,510 --> 02:30:35,750
+tampoco me gusta es decir en un sistema en diario con mil y pico trades de verdad prefiero ir de 0 0 5
+
+1001
+02:30:35,750 --> 02:30:43,750
+en 0 0 5 sabes es decir ir a buscar tanto el detalle explico 0 21 0 22 0 23
+
+1002
+02:30:46,389 --> 02:30:51,229
+explicó es decir al final recuerda que lo que estás viendo es lo que ha ido mejor en el pasado
+
+1003
+02:30:51,229 --> 02:31:00,850
+entonces ya te digo al final elegir siempre el mejor el que y esa ya te digo el tema del
+
+1004
+02:31:00,850 --> 02:31:09,780
+incremento es una cosa que es quizá la que más tiene su canal una media esto es muy evidente porque
+
+1005
+02:31:09,780 --> 02:31:16,700
+va de uno en uno vale que sí que no hay mucha historia pero cuando tienes fitos cosas así que
+
+1006
+02:31:16,700 --> 02:31:25,139
+tú puedes hacer 0,1 0,2 pero si por puestos ya podríamos hacer 0 0 1 0 0 2 0 0 3 y por qué
+
+1007
+02:31:25,139 --> 02:31:38,299
+no 0,0 0 0 1 0,0 0 0 2 sabes me entiendes hay que hay que cortarlo sí sí ya sé ya sé que tenía
+
+1008
+02:31:38,299 --> 02:31:45,850
+muchos ya sé que tenía muchos muchos años pero sí sí ya sé que tenía muchos pero el filtro
+
+1009
+02:31:45,850 --> 02:31:52,010
+otro no tenía tantos o sea de cambiar el filtro cada 300 o sea has cambiado 300 o sea eso el
+
+1010
+02:31:52,010 --> 02:31:59,450
+sistema tiene los 400 con el filtro en 0 o el filtro en 1 y de 0 a 1 cambia 300 y de 1 a 4
+
+1011
+02:31:59,450 --> 02:32:05,409
+igual cambiaba 200 ahora lo miramos lo miramos lo miramos porque este sí este es el que tengo
+
+1012
+02:32:05,409 --> 02:32:12,819
+con todos no sí es el que tengo con todos aquí de tener uno a bueno no en ese no lo he hecho es
+
+1013
+02:32:12,819 --> 02:32:29,360
+en el 3 en la opti 3 aquí no aquí te he dado todo el rato sólo sólo el filtro es que fíjate
+
+1014
+02:32:29,360 --> 02:32:36,079
+aquí llevaba la extrema operaciones aquí tenías en 1 o 4 lo que tú dices que te ha gustado es este
+
+1015
+02:32:36,079 --> 02:32:46,760
+como en verde vale este a ti te ha gustado porque bueno te ha dado un recovery bastante más elevado
+
+1016
+02:32:47,360 --> 02:32:57,200
+mejorado ha mejorado sobre todo porque tienes ahí 1 430 este sí que te ha bajado pero de éste a
+
+1017
+02:32:57,200 --> 02:33:06,590
+éste que tienes 103 de diferencia entre ellos o sea poner ese filtro o no ponerlo son 103 de
+
+1018
+02:33:06,590 --> 02:33:19,170
+diferencia y gana un poquito más y baja el verdadero dices o sea está muy bien bueno sí claro si de
+
+1019
+02:33:19,170 --> 02:33:26,049
+aquí cinco años eso se mantiene es verdad ahora eso es seguro que se mantendrá no la realidad es
+
+1020
+02:33:26,049 --> 02:33:31,010
+que eso no es seguro no es seguro que el cero pues decir bueno ya pero el cero le he quitado
+
+1021
+02:33:31,010 --> 02:33:35,850
+un grado de libertad no estamos de acuerdo al final no no he añadido variabilidad a la que yo
+
+1022
+02:33:35,850 --> 02:33:41,409
+meto esto estoy metiendo una tr o sea se metió en una condición más al sistema porque esta
+
+1023
+02:33:41,569 --> 02:33:50,489
+no trabaja soy ignorando el atr yo aquí le estoy ya asumiendo que cuando el atr de un día con el
+
+1024
+02:33:50,489 --> 02:33:56,520
+atr de un mes por multiplicado por una 4 sea mayor no pere y de esa manera le he quitado
+
+1025
+02:33:56,520 --> 02:34:05,430
+siempre que es un 3 por acción de media 3 por acción entonces no no no es una certeza fran es
+
+1026
+02:34:05,430 --> 02:34:11,190
+que esto va así o sea no no no es una certeza o sea no es no es que yo te diga esto seguro que
+
+1027
+02:34:11,190 --> 02:34:17,629
+luego no irá no no para nada no te lo puedo decir no sería serio decirte eso no lo sé seguro pero
+
+1028
+02:34:17,629 --> 02:34:23,760
+estoy añadiendo un grado de certidumbre más para el beneficio que me da no me renta me explico es
+
+1029
+02:34:23,760 --> 02:34:31,879
+decir para el beneficio que me dan no me renta a mí no me parece suficiente para yo para añadir
+
+1030
+02:34:31,879 --> 02:34:40,440
+grados de libertad para añadir posibilidades al sistema de oscilar de que siempre que añades
+
+1031
+02:34:40,639 --> 02:34:46,639
+como mínimo ya ves una y a veces son varias porque es la condición o sea es el valor de
+
+1032
+02:34:46,639 --> 02:34:57,709
+la tierra y que la tierra de hoy sea menor que la tierra mensual esos más o menos son dos para
+
+1033
+02:34:57,709 --> 02:35:04,190
+añadir de dos necesito necesito que me convenza mucho pero de todas maneras lo estudiaría más
+
+1034
+02:35:04,190 --> 02:35:09,909
+decir miraría esto miraría esto en el gráfico muchas acciones y la otra cosa que ahora no hemos
+
+1035
+02:35:09,909 --> 02:35:15,680
+hecho esas que ahora lo vamos a hacer el maestro un poco y un poco pero también lo miraría gráfico
+
+1036
+02:35:15,680 --> 02:35:22,399
+nosotros miramos mucho pero miramos mucho ahora esto lo miraría el gráfico en distintas acciones
+
+1037
+02:35:22,399 --> 02:35:28,559
+miraría el gráfico ya lo haremos ya lo haremos aunque no lo hagamos hoy lo haré porque a esto
+
+1038
+02:35:28,559 --> 02:35:35,440
+tengo que volver para necesito ver un sortino ahí para ser más cómodo tienes entonces necesito verlo
+
+1039
+02:35:35,440 --> 02:35:49,360
+lo veré pero el filtro no es no es no es ni concluyente ni granulandolo en 1.4 si el filtro
+
+1040
+02:35:49,360 --> 02:35:53,799
+es jose donett sigo sigo las preguntas porque ya estamos en hora de preguntas y hay que ir
+
+1041
+02:35:53,799 --> 02:36:01,000
+contestando comenta en esta línea jose que si el filtro quitar a 503 sería más válida entiendo
+
+1042
+02:36:01,000 --> 02:36:09,760
+si sería más válido si si sería más válido sería más válido en este en el caso de los filtros
+
+1043
+02:36:09,760 --> 02:36:17,690
+es un poco es un poco al revés y por eso es como lo diría no es que sea contra el tuitivo es contra
+
+1044
+02:36:17,690 --> 02:36:23,170
+el tuitivo para lo que he explicado me está diciendo siempre contra más tres mejor vale
+
+1045
+02:36:23,170 --> 02:36:29,409
+pero ahora me dices que si el filtro quita más es mejor y que quedamos bueno las dos cosas son
+
+1046
+02:36:29,409 --> 02:36:35,729
+verdad las dos cosas son verdad quiere decir que para que el filtro me quite tengo que tener
+
+1047
+02:36:35,729 --> 02:36:44,530
+muchos antes si no ya no me vales es decir si tengo mil ya no filtró me entiendes ya no filtró
+
+1048
+02:36:44,530 --> 02:36:51,840
+ya no ya no estoy suficientemente cómodo para que eso baje más me explicó entonces pero
+
+1049
+02:36:51,840 --> 02:36:58,549
+evidentemente el filtro valida el filtro valida quitando el filtro valida actuando las reglas
+
+1050
+02:36:58,549 --> 02:37:08,280
+para evaluarlas tiene que tienen que implicar cambios si no si no implica cambios no está
+
+1051
+02:37:08,280 --> 02:37:15,600
+validada y la significación pasa por ahí vale porque cada regla tenga un número de tres donde
+
+1052
+02:37:15,600 --> 02:37:21,920
+actúen y en distintos momentos distintas condiciones de mercado etcétera significación y
+
+1053
+02:37:21,920 --> 02:37:27,120
+representatividad significación y representatividad significación la verdad las estadísticas
+
+1054
+02:37:27,479 --> 02:37:36,190
+representatividad la de actuar en distintos mercados vale por eso que ahora lo hemos metido 20 a esto
+
+1055
+02:37:36,190 --> 02:37:44,250
+para ver esta curva en 20 bien aquí tenemos un resumen vale de entrada aquí ratios que no valen
+
+1056
+02:37:44,250 --> 02:37:49,569
+para nada el esto que veis aquí si lo veis es el total retorno partido por máxima darolón aquí no
+
+1057
+02:37:49,569 --> 02:37:59,350
+vale para nada aquí no vale para nada porque bueno vale bueno habiendo hecho que su manera
+
+1058
+02:37:59,350 --> 02:38:06,590
+vale un poco pero para regular regular porque al final es lo que os decía antes es decir el
+
+1059
+02:38:06,590 --> 02:38:12,469
+drawdown no lo puedo meter en porcentaje que es verdad que aquí como yo he regulado en 100
+
+1060
+02:38:12,469 --> 02:38:17,590
+acciones y vengo con gestión monetaria que es muy importante muy importante porque porque es muy
+
+1061
+02:38:17,590 --> 02:38:24,879
+importante porque si venís aquí a ver la lista de trades pues yo al final he ido exponiendo si tú
+
+1062
+02:38:24,879 --> 02:38:34,190
+multiplicas por ejemplo de igual esta acción hemos comprado 60 por 33.14 al final he comprado
+
+1063
+02:38:34,190 --> 02:38:41,309
+1988 dólares que es más o menos el 2% que habíamos hablado al inicio 2000 dólares vale entonces
+
+1064
+02:38:41,309 --> 02:38:49,350
+si yo siempre he ido exponiendo esa misma cantidad pues es mejor sería mejor el porcentaje sí pero
+
+1065
+02:38:49,350 --> 02:38:54,829
+como yo siempre voy exponiendo bueno un 2% de la cuenta ya estoy haciendo porcentaje porque ahora
+
+1066
+02:38:54,829 --> 02:39:02,750
+tengo 100.000 2% pero cuando tenga 200.000 pues será el doble pues ya voy exponiendo siempre una
+
+1067
+02:39:02,750 --> 02:39:10,149
+cantidad que depende del porcentaje gracias a ese 2% 2% entonces las cantidades están más o menos
+
+1068
+02:39:10,149 --> 02:39:14,629
+ecualizadas pero como lo mismo que se ha hecho en el excel os he dicho no está mal recovery sirve
+
+1069
+02:39:14,629 --> 02:39:23,559
+pero sería mejor aún en porcentaje sería mejor vale pero aquí como ya tenemos esa tenemos el
+
+1070
+02:39:23,639 --> 02:39:30,959
+recalculado tenemos algunos datos más que nos sirve tenemos el tráiler real aquí muy elevado
+
+1071
+02:39:30,959 --> 02:39:40,239
+porque porque hemos metido la exposición a casi el 200 hemos metido un poco un poco elevado a la
+
+1072
+02:39:40,239 --> 02:39:49,950
+exposición pero aquí sí que tenemos el triple r a 0 34 aquí tenemos a 0 92 carros como cambia
+
+1073
+02:39:50,770 --> 02:40:07,239
+0 0 0 6 y 1 0 6 aquí el que los cambios son bestiales el uno es saber cuál era este 6 1 0 27
+
+1074
+02:40:07,239 --> 02:40:16,219
+ese era el primero bueno el que era por net profit era por net profit al final equilibra
+
+1075
+02:40:16,219 --> 02:40:30,930
+bastante curiosa ver a los cero de la onda de 60 la otra tenía un 70 70 y pico como está muy
+
+1076
+02:40:30,930 --> 02:40:37,600
+expuesto sí sí sí está muy expuesto está muy expuesto fíjate estamos componiendo 25 29 por ciento
+
+1077
+02:40:37,600 --> 02:40:48,399
+y aquí que he hecho 0 88 que hay un fallo y aquí me he equivocado que he pasado con este 25 1 0 27
+
+1078
+02:40:48,399 --> 02:41:14,319
+0 0 7 y porque ahora tampoco tengo que haber hecho algo mal no ves que no vale nada te va
+
+1079
+02:41:14,319 --> 02:41:47,870
+a haber configurado algo mal los clothes falls trailing 0 0 7 no bueno esperate esperate esperate
+
+1080
+02:41:47,870 --> 02:41:56,989
+esperate que este era el día de la hora no está bien es que se no no hace nada vez era
+
+1081
+02:41:56,989 --> 02:42:07,840
+un poco solo se tiene muy poco straights diría muy poco straights no era de aquí era de aquí
+
+1082
+02:42:07,840 --> 02:42:30,969
+sí sí claro grabo muy poco no se ha ganado muy poco el de era el de máximo el de máximo
+
+1083
+02:42:31,010 --> 02:42:44,219
+era el de máximo era el de máximo era bueno aquí por mirarlo rápido en el sumario fijaros
+
+1084
+02:42:44,219 --> 02:42:53,930
+simplemente profit factor aquí tenemos 39 aquí tenemos 59 73 147 porque tanto por profit factor
+
+1085
+02:42:53,930 --> 02:43:07,040
+como por r incluso que por sharp aunque más parecido es el 6 0 el 6 1 0 27 actuando el filtro
+
+1086
+02:43:07,319 --> 02:43:16,000
+que se quedaba más más profit que hemos estado impuestos aquí todos 6 6 1 0 27 correcto y este
+
+1087
+02:43:16,000 --> 02:43:29,739
+era el de antes 6 0 6 0 0 20 ser 1 43 tan notablemente notablemente alejado notablemente
+
+1088
+02:43:29,739 --> 02:43:37,559
+alejado bueno vamos a ver vamos a ver el siguiente día si podemos sacar el sortino vía por folio
+
+1089
+02:43:37,559 --> 02:43:46,440
+porque no está no está sacado no está no está sacado y sacar el sharp bien vía via cartera aquí
+
+1090
+02:43:46,440 --> 02:43:51,159
+ya os sale ya ya tenemos positivo y es otra cosa porque se está calculado bien se ha calculado bien
+
+1091
+02:43:51,159 --> 02:44:02,729
+y tiene mejor mejor ya veis que sé que hay algún dato negativo pero este quedaba cancelar aquí lo
+
+1092
+02:44:02,729 --> 02:44:09,459
+que pasa que realmente la exposición es un poco elevada teníamos que haberla regulado más hemos
+
+1093
+02:44:09,459 --> 02:44:15,020
+llegado a exponernos al al al 200 pero dos veces nos ha apalancado hasta dos veces
+
+1094
+02:44:15,020 --> 02:44:23,079
+claro tenemos niveles de trowdown muy jeves a nivel de por folio tenemos trowdowns de aquí del 60
+
+1095
+02:44:23,079 --> 02:44:35,319
+aquí del 60 aquí del 30 para ver si aquí tiene menos trowdown aquí del 60 y será el 79 bastante
+
+1096
+02:44:35,319 --> 02:44:55,260
+bastante elevado bueno este tipo de que recordar que no está no estamos evaluando el por folio
+
+1097
+02:44:55,260 --> 02:45:02,379
+para operarlo así es lo que os comentaba estamos evaluando la idea por evaluando la idea y luego
+
+1098
+02:45:02,379 --> 02:45:09,739
+ya decidiríamos cómo lo operábamos aquí tenemos muchas acciones en negativo lógicamente luego
+
+1099
+02:45:09,739 --> 02:45:17,770
+una vez el sistema está validado yo luego lo operaré a lo mejor no necesariamente las 10 mejores
+
+1100
+02:45:17,770 --> 02:45:24,159
+pero así que serán de las mejores de acuerdo es decir al final yo valido la idea en las 100
+
+1101
+02:45:24,159 --> 02:45:29,360
+acciones porque eso me da mayor robustez digamos que la idea la pongo más a prueba en acciones
+
+1102
+02:45:29,360 --> 02:45:39,010
+incluso no han ganado vale y esto lo que os decía o sea esto también incluso aquí incluso en
+
+1103
+02:45:39,010 --> 02:45:49,799
+el por folio trader que no es tan no me dará tanta información pero este mismo mirar para que veáis
+
+1104
+02:45:49,799 --> 02:45:57,010
+la comparación que es interesante de ver pero pongo aquí este que nos ha dado aquí mejor podríamos
+
+1105
+02:45:57,010 --> 02:46:10,969
+decir que era 6 1 0 27 lo podemos ver aquí 6 1 0 27 para nosotros a 0 esto va a 0 esto va a 0 27
+
+1106
+02:46:10,969 --> 02:46:30,120
+y ahora se le hacemos backtest y aquí ya veréis que cambia mucho la cosa aquí también tenemos
+
+1107
+02:46:30,120 --> 02:46:38,629
+un montón de datos esto cambia mucho hasta hasta más que allí es que lo hemos puesto bien 6 0
+
+1108
+02:46:38,750 --> 02:46:47,629
+filtro 1 por nosotros con el 1 a 0 27 0 0 0 a bueno a 100 por ciento está expuesto que no puede ir
+
+1109
+02:46:47,629 --> 02:46:57,719
+así no puede ir así está muy expuesto a tener un drawdown 46 y tengo el money management a mente
+
+1110
+02:46:57,719 --> 02:47:03,559
+por folio 2 por ciento está bien está bien está el 2 por ciento es aquí ya hemos controlado mejor
+
+1111
+02:47:03,559 --> 02:47:09,520
+porque le hemos expuesto hemos controlado la exposición claro también tiene un factor de
+
+1112
+02:47:09,520 --> 02:47:19,920
+146 y ganar 52 mil poco claro todo lo uno depende del otro no uno depende del otro pero aquí por
+
+1113
+02:47:19,920 --> 02:47:26,190
+ejemplo mirar lo que os quería enseñar antes la correlación de los retornos mensuales de acuerdo
+
+1114
+02:47:26,190 --> 02:47:31,790
+de todas las 100 acciones fijaros que hay datos en negativo porque hay acciones que pierden que
+
+1115
+02:47:32,670 --> 02:47:39,670
+pero que siendo todo en el nasdaq 100 claro es que apel con microsoft tiene 0 66 apel con google
+
+1116
+02:47:39,670 --> 02:47:50,110
+0 48 con amazon 0 55 con envidia 0 32 con facebook 0 29 que son acciones directoras de acuerdo están
+
+1117
+02:47:50,110 --> 02:47:56,430
+ordenadas están ordenadas por capitalización vale que es decir que todas las que veis primeras son
+
+1118
+02:47:56,989 --> 02:48:03,190
+acciones super top para elegir y fijaros su nivel de correlación bajar aquí no sé si se llega a
+
+1119
+02:48:03,190 --> 02:48:12,840
+ver bien esperados que os voy a poner el foco lo que sea mejor con el foco es ahí fijaros ahí veis
+
+1120
+02:48:12,840 --> 02:48:23,040
+microsoft mirar la columna para abajo es 0 66 0 67 0 53 0 69 0 56 0 55 0 40 con tesla pero 48
+
+1121
+02:48:23,040 --> 02:48:33,479
+0 36 0 39 0 68 51 es decir es el mismo sistema en el mismo frame vale sus correlaciones mensuales
+
+1122
+02:48:33,479 --> 02:48:42,399
+son relativamente moderadas pero no son 0 809 está bien tiene una diversificación moderada que es
+
+1123
+02:48:42,399 --> 02:48:51,879
+muy mejora lógicamente muy mejor vale entonces aquí fijaros que ya con una exposición más
+
+1124
+02:48:51,879 --> 02:48:59,000
+controlada tenemos datos de retorno poquito más estables es una curva bastante justa bastante
+
+1125
+02:48:59,000 --> 02:49:06,479
+muy muy justo bastante virgen pero es un sistema muy justo pero con este nivel de profit factor
+
+1126
+02:49:06,479 --> 02:49:13,549
+ese nivel de retorno acepta algo de apalancamiento y tiene algo de mejora por por delante lógicamente
+
+1127
+02:49:13,549 --> 02:49:19,229
+tiene mucha mejora por aquí además hemos cargado pocos años espérate que vamos a ver cómo tarda
+
+1128
+02:49:19,229 --> 02:49:32,250
+poco está con la serie vamos a meter desde el 2007 al bienes pasado 2% mira vamos a meter un 3
+
+1129
+02:49:32,250 --> 02:50:06,649
+nos vas a poner un poquito más y veis ya tenemos un sharp calculado bien a 29 45 es decir el sharp
+
+1130
+02:50:06,729 --> 02:50:15,719
+al uno es un sharp bajito es un sistema justo pero bueno poco a poco lo podemos hacer crecer
+
+1131
+02:50:15,719 --> 02:50:21,799
+a uno el sistema de hecho este set simplemente es el de mayor retorno no es el que mejor equilibra
+
+1132
+02:50:21,799 --> 02:50:34,409
+aquí ahora podíamos mirar mirar varios pero y hemos mejorado un poquito ha sufrido bastante
+
+1133
+02:50:34,409 --> 02:50:45,959
+aquí porque es verdad que con este nivel de de ratio del trailing pues le cuesta le cuesta salirse
+
+1134
+02:50:45,959 --> 02:50:55,020
+esto ya os digo habían sets este set tiraba más para el retorno pero teníamos alguno que tiraba
+
+1135
+02:50:55,020 --> 02:51:00,219
+un poco más al equilibrio no aquí podíamos encontrar alguno que mejorara esto a cambio de
+
+1136
+02:51:00,219 --> 02:51:08,840
+mejor un retorno un poco peor es un poco la que hay que fijaros hemos ganado un poco de histórico
+
+1137
+02:51:09,399 --> 02:51:20,399
+como tenemos ratios negativos en varios varias acciones a los ves en facebook perdemos dinero
+
+1138
+02:51:20,399 --> 02:51:27,829
+en google en una de las google también porque al final tienen muy pocas acciones con este nivel
+
+1139
+02:51:27,829 --> 02:51:34,309
+de exposición con este canal y con este ratio realmente opera muy poco cada una de las acciones
+
+1140
+02:51:34,309 --> 02:51:42,770
+de acuerdo pero muy poco por eso al final nos vemos obligados a meter pues un análisis global que al
+
+1141
+02:51:42,770 --> 02:51:50,889
+final nos pueda meter más acciones para que al final nos pueda meter 1.100 trades desde el 2007
+
+1142
+02:51:50,889 --> 02:52:05,600
+desde 2007 nos mete 1.100 trades todavía no dejamos un set elegido porque me gustaría me gustaría
+
+1143
+02:52:05,600 --> 02:52:12,799
+poder ver una optimización en el sarte para el sortino de porfolio que aquí sí que lo veo pero
+
+1144
+02:52:12,799 --> 02:52:18,600
+no lo veo optimizando porque es una cosa bastante extraña por parte de multicharts ahí en los
+
+1145
+02:52:18,600 --> 02:52:26,969
+foros de multicharts están con varios mensajes al respecto es decir que tienes sharp metido
+
+1146
+02:52:26,969 --> 02:52:31,649
+como función tienes sortino metido como fines y que a mí no lo tienes como fines ya por defecto
+
+1147
+02:52:31,649 --> 02:52:37,129
+de optimización es un poco extraño es porque si ya lo tienes metido dentro del programa o sea lo
+
+1148
+02:52:37,129 --> 02:52:42,610
+das ese ratio lo das lo puedes perfectamente usar como ratio de iana porque es un dato que
+
+1149
+02:52:42,610 --> 02:52:49,079
+estás calculando si tú me lo estás calculando y aquí pero curiosamente lo da para el performance
+
+1150
+02:52:49,079 --> 02:52:54,920
+pero no lo da como ratio de iana lo tienes que meter tú por código y el que tienes metido por
+
+1151
+02:52:54,920 --> 02:52:59,959
+sistema nos sirve por lo que os decía tienes que hacer específico de porfolio de acuerdo entonces
+
+1152
+02:52:59,959 --> 02:53:08,799
+tienes ese problema pues es un tanto curioso pero pero así es vale bien para el próximo día vamos
+
+1153
+02:53:08,799 --> 02:53:17,489
+a tomar una decisión una decisión respecto a este sistema tal como está es decir en una configuración
+
+1154
+02:53:17,489 --> 02:53:31,309
+de full tendencia vale de full tendencia a aquel que quiera y que lo tenga los recursos que tengan
+
+1155
+02:53:31,309 --> 02:53:36,709
+software los conocimientos para hacerlo pues si lo quiere también hacer alguna propuesta que es
+
+1156
+02:53:36,709 --> 02:53:42,760
+súper bienvenida como deberes para casa que quiero ir mandando algunos vale la regla de entrada
+
+1157
+02:53:42,760 --> 02:53:51,430
+simplemente es esta no tiene más es decir es cierre por encima del canal que es por cierres
+
+1158
+02:53:51,430 --> 02:53:58,309
+vale por el número de velas y en la apertura de la siguiente vela compra vale sí que para evitar
+
+1159
+02:53:58,309 --> 02:54:02,590
+que comprar acciones negativas hemos hecho porque muchos años puede pasar cierre mayor que cero
+
+1160
+02:54:02,590 --> 02:54:09,510
+eso es con el t1 es el filtro pero si vale cero es true si el filtro vale cero no actúa que no
+
+1161
+02:54:09,510 --> 02:54:15,860
+esté comprado y que haya par filtro estará una regulación que pasa pero que no actúa que al
+
+1162
+02:54:15,860 --> 02:54:20,920
+menos tenga una vela cerrada para que no compren la cierre y la misma vela vuelva a entrar que al
+
+1163
+02:54:20,920 --> 02:54:28,170
+menos haya pasado una vela desde que ha cerrado y esto que el total trecha igual hacer esto para
+
+1164
+02:54:28,170 --> 02:54:35,129
+que abra al principio vale porque si no no compraría al requerir al requerir que sea distinto de largo
+
+1165
+02:54:35,129 --> 02:54:42,909
+no compraría entonces es una conexión que se suele poner para que empiece a operar y ya pero ya
+
+1166
+02:54:42,909 --> 02:54:49,860
+estamos a la regla de entrada es esta no tiene no tiene más luego lo otro es la gestión monetaria y
+
+1167
+02:54:49,860 --> 02:54:57,159
+la regla de salida por trailing esto me comprometo en lo que queda de semana es decir hoy pues antes
+
+1168
+02:54:57,159 --> 02:55:04,440
+del viernes de acuerdo en ya subiros el código el código así como está vale eso subiré en texto
+
+1169
+02:55:04,440 --> 02:55:18,959
+y os subiré un pdf con una con un con el seudo código con el seudo código con el seudo código
+
+1170
+02:55:18,959 --> 02:55:28,399
+y escrito escrito para que ya la podáis tener y jugar en todas estas condiciones el trailing
+
+1171
+02:55:28,959 --> 02:55:37,959
+que actúa es este de aquí si el present el que es mayor que cero vale lo inicializa la variable
+
+1172
+02:55:37,959 --> 02:55:44,719
+y hasta si está largo es el valor máximo entre el máximo menos el máximo por el trailing o el
+
+1173
+02:55:44,719 --> 02:55:49,760
+teléfon que ya tiene calculado porque sólo puede subir un trailing acordar esta es la condición que
+
+1174
+02:55:49,760 --> 02:55:58,440
+lo controla decir máximo menos el máximo por el porcentaje y ese es el precio y hasta ese es el
+
+1175
+02:55:58,440 --> 02:56:05,559
+precio que simplemente con esta condición te aseguras que no puede bajar no es por atr se
+
+1176
+02:56:05,559 --> 02:56:11,000
+podía hacer por atr pero los querido hacer este caso sólo para hacerlo así por antagé super simple
+
+1177
+02:56:11,000 --> 02:56:18,600
+más simple no puede ser super super simple vale y visto aquí por ejemplo en el gráfico de alguno
+
+1178
+02:56:18,600 --> 02:56:31,010
+de ellos para acabar viendo alguno el informe el informe si es el informe bueno lo vemos aquí
+
+1179
+02:56:31,010 --> 02:56:38,500
+en un momento en cualquiera me creo son mismo venga que valoros tenemos postos aquí bueno ese
+
+1180
+02:56:38,500 --> 02:56:46,100
+es el 6 0 20 es el 6 0 20 que estábamos viendo viendo antes creo que ahora estamos viendo 6 con
+
+1181
+02:56:46,100 --> 02:56:56,559
+el filtro en 1 y 0 27 todavía menos pero no menos ya veis claro es un sistema que deja correr deja
+
+1182
+02:56:56,559 --> 02:57:03,680
+correr se ha comprado deja correr el sistema de muy largo plazo por eso la única manera de
+
+1183
+02:57:03,680 --> 02:57:10,659
+evaluarlo es metiéndolo en varias acciones de acuerdo y que cuando el mercado va a entrar
+
+1184
+02:57:10,659 --> 02:57:17,559
+lateral pues sufre sufre mucho porque hay que fijaros acaba entrando otra vez el canal no está
+
+1185
+02:57:17,559 --> 02:57:28,120
+bien ajustado y vuelve a entrar el canal no está no está bien no está bien porque no están 6 están
+
+1186
+02:57:28,120 --> 02:57:37,329
+20 6 es muy rápido entrar muy rápido esta es la diferencia habéis visto que había varios
+
+1187
+02:57:37,329 --> 02:57:43,709
+varias zonas esta esta es la versión súper rápida de entrar habían otras versiones hay
+
+1188
+02:57:43,709 --> 02:57:49,909
+que acabar de hay que acabar de elegir aquel que quiera proponer con el código del sistema
+
+1189
+02:57:49,909 --> 02:57:55,909
+que le daremos y demás alguna que nos lo envíe nos lo puede enviar lo voy a poner el disco lo
+
+1190
+02:57:55,909 --> 02:58:02,629
+puede enviar al email y yo me comprometo a responderle otra cosa que queda pendiente
+
+1191
+02:58:03,190 --> 02:58:10,479
+para el día siguiente vamos a hacer esto acabar de tomar una decisión acabar de tomar una decisión
+
+1192
+02:58:10,479 --> 02:58:26,940
+con nuestro sortino de porfolio decisión de parámetros de esta versión como está que hacemos
+
+1193
+02:58:26,940 --> 02:58:33,729
+con los cortos esto es lo que os quería poner para casa unido con esto aquel que quiera en
+
+1194
+02:58:33,729 --> 02:58:41,879
+este set up en este código que haría con el lado corto si alguien quiere proponer o quiere
+
+1195
+02:58:42,280 --> 02:58:46,440
+trabajarlo o simplemente puede proponerlo bien trabajándolo o bien
+
+1196
+02:58:48,680 --> 02:58:54,930
+o bien filosóficamente podemos hacer las dos cosas me valen las dos cosas aquel que
+
+1197
+02:58:54,930 --> 02:58:59,010
+quiera trabajarlo porque puede hacerlo ya que lo haga el que no quiera trabajarlo porque no es
+
+1198
+02:58:59,010 --> 02:59:06,209
+capaz simplemente que le que lo que lo conceptualice y que diga pues mira yo creo que en los cortos
+
+1199
+02:59:06,209 --> 02:59:13,180
+en esta versión haría esto esto esto y porque en acciones en este mismo set up en acciones que
+
+1200
+02:59:13,180 --> 02:59:21,639
+hacemos con los cortos y luego ya lo que vendría es lo mejor tiene que ver con esto vale es que
+
+1201
+02:59:23,059 --> 02:59:29,979
+que otras variaciones hacemos este comentamos que el don chan es un mecanismo de entrar en
+
+1202
+02:59:29,979 --> 02:59:38,860
+tendencia pero es un mecanismo muy útil para hacer break out entonces esto ahora con lo que
+
+1203
+02:59:38,860 --> 02:59:48,239
+tiene ya en el código se puede hacer break out se puede hacer un break out como como
+
+1204
+02:59:48,239 --> 02:59:55,120
+haríamos sobre que tratamos de desarrollar este serían un poco las cosas pendientes respecto a
+
+1205
+02:59:55,120 --> 03:00:04,719
+esta estrategia que deberíamos de liquidarlo ya para entrar en otra en otra cosa no le metamos
+
+1206
+03:00:04,719 --> 03:00:09,520
+más conceptos ya sé que le podríamos meter una tr le podemos meter mil cosas ya lo haremos de
+
+1207
+03:00:09,520 --> 03:00:14,239
+acuerdo el sistema este lo vamos a dejar así con un don chan sencillito entre en la versión
+
+1208
+03:00:14,239 --> 03:00:23,309
+tendencial que es muy mejorable lo vamos a dejar así y cortos y haremos un break out con esta con
+
+1209
+03:00:23,309 --> 03:00:30,750
+este código también vale y a partir de ahí seguiremos en otras en otras cosas vale a ver
+
+1210
+03:00:30,750 --> 03:00:45,700
+si me queda alguna pregunta como si puedes subir el código un poco antes sería lo suyo para trabajar
+
+1211
+03:00:45,700 --> 03:00:55,329
+con él sí sí sí a ver si mañana me he puesto te he dicho antes el viernes para para dar límite
+
+1212
+03:00:55,329 --> 03:01:02,649
+pero pero antonio el segundo código yo te lo voy a pasar pero ya lo tienes ya lo tienes quiero
+
+1213
+03:01:02,649 --> 03:01:09,129
+decir que el segundo código es explicado lo he explicado todas las clases que yo te lo voy a
+
+1214
+03:01:09,129 --> 03:01:15,209
+pasar e insisto que te lo voy a pasar pero si ahora luego que yo te vuelvo a subir la clase
+
+1215
+03:01:15,209 --> 03:01:22,290
+me oyes lo escribes aparte que lo he enseñado lo he enseñado es decir es que la la es que el
+
+1216
+03:01:22,290 --> 03:01:32,500
+setup de entrada es este de verdad o sea todo lo demás todo todo lo demás es accesorio esto es
+
+1217
+03:01:32,500 --> 03:01:43,000
+esto es el setup de entrada es el setup de entrada si cierra por encima del canal de n cierres hemos
+
+1218
+03:01:43,000 --> 03:01:50,020
+visto 6 hemos visto 20 etcétera compra en la apertura de la siguiente vela esto es lo que
+
+1219
+03:01:50,020 --> 03:01:55,959
+lo pasaré y el trailing es lo único que tiene un poco más de desarrollo a nivel de programación
+
+1220
+03:01:55,959 --> 03:02:05,040
+pero el concepto es súper básico o sea es el mayor el máximo que haya hecho el precio desde que
+
+1221
+03:02:05,040 --> 03:02:10,760
+abres el más en ese caso sí que es el máximo de ese máximo siempre le va restando un porcentaje
+
+1222
+03:02:10,760 --> 03:02:17,040
+ese es el stop trailing cada vela cambia con cada vela que cambia si hace un máximo porque si no
+
+1223
+03:02:17,040 --> 03:02:21,719
+hace un máximo no actualiza de acuerdo es decir sólo el máximo del máximo le restas un porcentaje
+
+1224
+03:02:22,440 --> 03:02:31,520
+y eso era lo que era un 027 un 020 de acuerdo es hora que es un 20% entonces es un poco la idea
+
+1225
+03:02:31,520 --> 03:02:41,879
+pero insisto que me comprometo a si mañana no llego voy a hacer lo máximo para que el miércoles
+
+1226
+03:02:41,879 --> 03:02:52,120
+lo podáis tener lo podáis lo podáis tener el miércoles vale y qué más qué más qué más o sea
+
+1227
+03:02:52,120 --> 03:02:57,639
+se puede preguntar si se puede aplicar trailing esto y esto para la vez aseguró una pérdida esto
+
+1228
+03:02:57,639 --> 03:03:10,040
+fija sí sí sí es es posible y tiene sentido pero en este caso y el sentido a ver depende
+
+1229
+03:03:10,040 --> 03:03:14,399
+del tipo que vos es realmente digo eh depende del tipo que vos o sea en el trailing que hemos
+
+1230
+03:03:14,399 --> 03:03:22,340
+puesto nosotros en el trailing que hemos puesto nosotros mucho mucho sentido no tiene vale porque
+
+1231
+03:03:22,340 --> 03:03:28,540
+ya hemos puesto porque hay muchos el concepto clásico de trailing hay muchas veces que se activa
+
+1232
+03:03:28,540 --> 03:03:35,959
+a partir de cierta cantidad pues en esos casos mucha gente sí que usa un esto un esto de seguridad
+
+1233
+03:03:35,959 --> 03:03:40,959
+podemos decir acordaros cuando hablamos un poco del esto de seguridad no y que entra ya nada más
+
+1234
+03:03:40,959 --> 03:03:47,879
+abrir pues un poco por si se lía no es que me saque no pues no tener que no me saca pero en
+
+1235
+03:03:47,879 --> 03:03:53,829
+nuestro caso el telín se activa desde la entrada en el momento del cálculo se calcula del cierre
+
+1236
+03:03:53,829 --> 03:04:00,510
+anterior y en el momento que el precio que acaba la barra en que ha entrado ya entra en juego el
+
+1237
+03:04:00,510 --> 03:04:05,479
+valor máximo que haya o el cierre anterior o el máximo que haya hecho ese día el máximo que haya
+
+1238
+03:04:05,479 --> 03:04:10,239
+hecho ese día actúa de trailing y entonces ya tienes trailing claro que es un 20 por ciento por
+
+1239
+03:04:10,239 --> 03:04:17,840
+eso has visto algunos aquí como este o bueno incluso otros peores que se va se va para abajo y a tomar
+
+1240
+03:04:17,840 --> 03:04:24,829
+viento a tomar viento el problema de los tendenciales puros es este que si tú quieres un tendencial
+
+1241
+03:04:24,829 --> 03:04:30,969
+puro y quieres tres como esta locura de que te pilla toda la subida no esto pues claro solo
+
+1242
+03:04:30,969 --> 03:04:38,170
+ahí dejándolo dejándole tragándote estas cosas también ese problema porque si yo le pongo una
+
+1243
+03:04:38,170 --> 03:04:43,770
+salida por tiempo que va muy bien y evitará mucho esto que evitará también que pille la
+
+1244
+03:04:44,649 --> 03:04:49,370
+por eso decía que un tendencial es bastante desagradecido es muy desagració te decía el puro
+
+1245
+03:04:49,370 --> 03:04:54,770
+luego están los breakout que también son tipo de tendencial que ya se manejan mejor y que este
+
+1246
+03:04:54,770 --> 03:04:59,129
+lo haremos también mercado vale entonces conceptualmente si se puede pero en esta
+
+1247
+03:04:59,129 --> 03:05:04,409
+configuración tal como está no tiene demasiado sentido porque ya actúa siempre este lo que pasa
+
+1248
+03:05:04,409 --> 03:05:09,760
+que le da mucho margen le da mucho margen pero este desde el primer momento que entra ya va
+
+1249
+03:05:09,760 --> 03:05:14,920
+calculando aquí le calcula un 27 pero no ha saltado ahora para que veas este aquí le
+
+1250
+03:05:14,920 --> 03:05:28,450
+pongo 10 por ciento y seguramente salta salta ahí salta aquí salta aquí es un poco la idea no es
+
+1251
+03:05:28,450 --> 03:05:34,020
+claro yo lo tengo siempre siempre calcula este este que hemos hecho nosotros imagínate que le
+
+1252
+03:05:34,020 --> 03:05:41,420
+pongo 005 no va a parar de salirse todo el rato es ya cambiado completamente el sistema es otro
+
+1253
+03:05:41,420 --> 03:05:47,000
+sistema no para entrar a salir a salir a salir a salir a salir que cuesta mucho porque el precio
+
+1254
+03:05:47,000 --> 03:05:52,840
+va haciendo sus oscilaciones y alguna vez oye y ahora un trocho grande pero la mayoría de veces
+
+1255
+03:05:52,840 --> 03:05:57,079
+no porque se va a salir todo el rato y ahí está el equilibrio de los tendenciales este es el
+
+1256
+03:05:57,079 --> 03:06:03,319
+problema en los sensores que para pillar largos recorridos y no caer en esto hay que dejarlo
+
+1257
+03:06:03,319 --> 03:06:08,879
+sufrir claro que hay maneras de utilizarlo más para evitar las otras pero un tendencial puro es
+
+1258
+03:06:08,879 --> 03:06:13,760
+uno de los casos de trelling aunque ya os lo comenté en la teoría es verdad que trelling
+
+1259
+03:06:13,760 --> 03:06:19,579
+acopla bastante acopla bastante pero el porcentaje acopla menos entonces acopla bastante quiere decir
+
+1260
+03:06:19,579 --> 03:06:29,069
+que lo lo vas a lo metes ahí pero 25 y luego empezarás a ver que a veces ha degradado ha
+
+1261
+03:06:29,069 --> 03:06:43,879
+degradado a ver un segundo que te leo es que a veces que va directo a pérdidas se hacen más
+
+1262
+03:06:44,520 --> 03:06:53,459
+es que el trelling hay veces que se va directo a pérdidas igual por el cierre o algo y hace más
+
+1263
+03:06:53,459 --> 03:07:05,719
+de lo configurado a que te pierde más de lo que tienes esperado que es decir depende cómo lo
+
+1264
+03:07:05,719 --> 03:07:09,600
+tengas votado si lo pones desde el principio si lo pones en principio que se siempre puesto en
+
+1265
+03:07:09,600 --> 03:07:16,600
+mercado al final claro te puede pillar un gapos aquí en este caso vas a tendencia y te vas a
+
+1266
+03:07:16,600 --> 03:07:23,159
+tragar claro los resultados el otro día lo hablaba en el directo del jueves había no sé qué acción
+
+1267
+03:07:23,159 --> 03:07:28,280
+había caído 15 pues te lo tragas claro esto hay en acciones tienes ese problema aquí muy
+
+1268
+03:07:28,280 --> 03:07:34,399
+diversificado y porque te lo tragas en tendencia tenés el problema pero ya veremos otro tipo de
+
+1269
+03:07:34,399 --> 03:07:39,920
+estrategias cuidado es decir al final ahora estamos viendo esta pero pero que tiene su lado
+
+1270
+03:07:39,920 --> 03:07:44,719
+bueno y su lado malo al final y por eso la idea es tener varias tener una así tener otra que te
+
+1271
+03:07:44,719 --> 03:07:49,760
+lo compensa y ésta te queda enganchada pero a lo mejor tienes otra que había iba corto en petróleo
+
+1272
+03:07:49,760 --> 03:07:59,340
+y no sé qué hay que ir diversificando los tendenciales ya digo que son de hecho cuando
+
+1273
+03:07:59,340 --> 03:08:04,139
+uno no tiene mucha experiencia son sistemas bastante poco llevaderos vale lo hablamos
+
+1274
+03:08:04,139 --> 03:08:09,739
+en la teoría normalmente es más tendencial hay más llevadero un sistema antitenencial porque
+
+1275
+03:08:09,739 --> 03:08:15,540
+porque el antitencial no deja no tiene colas largas en cambio los tendenciales o sea con
+
+1276
+03:08:15,540 --> 03:08:21,620
+dentro lateral no para de fallar no para de fallar no para de fallar y te devuelve mucho el mercado
+
+1277
+03:08:25,760 --> 03:08:40,870
+por no sé jose bien bien no sé exactamente esto que dices un 2 y que te hago un 4 no sé no sé
+
+1278
+03:08:40,870 --> 03:08:44,670
+por qué que no tengas un problema de cálculo sino lo que te digo los gaps claro los gaps y
+
+1279
+03:08:44,670 --> 03:08:51,079
+sí pero vaya el gap está afectado igual de un stop que de está afectado igual o sea no tiene
+
+1280
+03:08:51,200 --> 03:08:59,549
+más si está bien calculado no tiene no tiene más tendrás alguno 100% tendrás alguno 100% que
+
+1281
+03:08:59,549 --> 03:09:05,260
+te va a hacer más o sea es que eso es así no tiene mayor mayoría tendrás muchos hechos que
+
+1282
+03:09:05,260 --> 03:09:12,100
+te hará que te hará más pero pero vaya tanto en uno como en otro tanto en esto como si no bueno
+
+1283
+03:09:12,100 --> 03:09:19,260
+explica pasar a nosotros un email y tal y explicando lo mejor y lo miramos lo miramos a ver por qué
+
+1284
+03:09:19,260 --> 03:09:29,280
+porque te pasa eso tendencia al puro no es usual por nuestro blog fijado mejor trailing la verdad
+
+1285
+03:09:29,280 --> 03:09:38,180
+que era es que se pende en que que vayas depende en que vayas un esto en un tendencial en un
+
+1286
+03:09:38,180 --> 03:09:43,780
+tendencial puro el trailing y generando somos súper amigos de los que los digo estamos ahora
+
+1287
+03:09:43,780 --> 03:09:49,340
+empezando las prácticas como el que dice vale es la primera estrategia que hemos hecho vale pero
+
+1288
+03:09:49,500 --> 03:09:57,180
+si algún tipo de sistema va bien el trailing es en el tendencial en el tendencial puro si alguno
+
+1289
+03:09:57,180 --> 03:10:03,819
+vale va bien este tu aquí puede nosotros operando en live pero no usamos vamos a esto pero no es
+
+1290
+03:10:03,819 --> 03:10:11,030
+tendencial puro no es tendencial puro en un tendencial puro ya digo el trailing es el caso
+
+1291
+03:10:11,030 --> 03:10:18,389
+que más que más sentido tiene sobre todo en acciones sobre todo en acciones buscando el largo
+
+1292
+03:10:18,389 --> 03:10:22,190
+recorrido que es un poco la idea este sistema que lo puedes configurar así pero no es la idea ya
+
+1293
+03:10:22,190 --> 03:10:28,010
+ese sistema y por eso lo hemos metido en las acciones es que corra vale es un sistema para
+
+1294
+03:10:28,010 --> 03:10:34,360
+correr esta es su idea su sentido y claro es un o sea es un sistema que cuando netflix sube un
+
+1295
+03:10:34,360 --> 03:10:41,319
+200 por ciento lo pilla me entiendes ahora eso tiene un precio me entiendes eso tiene un precio
+
+1296
+03:10:41,319 --> 03:10:48,350
+cuando meta está en lateral un montón de tiempo pues te lo tragas ahora en cambio está en el
+
+1297
+03:10:48,750 --> 03:10:56,139
+que alucinas pero claro tu imagínate ya en sus está básico que no no no no voy ahora a 6020
+
+1298
+03:10:56,139 --> 03:11:04,120
+vale que solo hablamos y le quito el filtro vale esto ya es configuración básica original sin
+
+1299
+03:11:04,120 --> 03:11:16,280
+hacer nada el largo que lleva en meta está comprado ahora mismo en 119 20 están 470
+
+1300
+03:11:17,959 --> 03:11:27,860
+400 por ciento claro eso sólo lo pillas así sólo pillas así claro a costa de eso aquí se te ha
+
+1301
+03:11:27,860 --> 03:11:33,780
+tragado tres hostias que te han dejado la cuenta bonita pero hay que estar dimensionado para ello
+
+1302
+03:11:33,780 --> 03:11:38,659
+y cuando está estado en lateral pues está cosido también claro bueno en estas etapas ha aguantado
+
+1303
+03:11:38,659 --> 03:11:46,850
+muy bien porque claro tiene mucho margen pero hay acciones o yo que sé cuando netflix mira
+
+1304
+03:11:46,850 --> 03:11:56,909
+netflix es tremendo porque netflix tuvo ahora sí pero a tener una época hace tiempo y ahí a la
+
+1305
+03:11:56,909 --> 03:12:17,030
+tragadita perdona venga comprado en 95 98 y te sacan 300 bueno tiene lo bueno y tiene lo
+
+1306
+03:12:17,030 --> 03:12:22,069
+malo pero cuando se pasa una época mala pues te hace polvo pero es aquí el tiempo que está que
+
+1307
+03:12:22,069 --> 03:12:31,010
+no hace nada si no si no si no al final coge tendencia en el tendencial ya digo es el caso
+
+1308
+03:12:31,010 --> 03:12:38,399
+que te va a pensar con esto puro tiene que tener otra salida que me lo decía la verdad de antonio
+
+1309
+03:12:38,399 --> 03:12:45,159
+si yo aquí este sistema tiene puesto un esto pero como salgo tengo que necesito otras sí o sí porque
+
+1310
+03:12:45,159 --> 03:12:54,989
+si no vuelve yo te desactivo el trailing ahora y te pongo el mismo en stop el mismo 0 20 no sale
+
+1311
+03:12:55,030 --> 03:13:03,079
+nunca entiendes porque no cae 0 20 el precio de entrada nunca ya tiene que caer 0 20 de aquí
+
+1312
+03:13:03,079 --> 03:13:10,040
+explicó es decir al final no es igual 0 10 necesita otra salida cambio el trailing no
+
+1313
+03:13:10,040 --> 03:13:16,170
+el trailing garantiza que no necesita nada más entonces si yo no quiero muchos grados de libertad
+
+1314
+03:13:16,170 --> 03:13:21,809
+y demás quiero simple trailing me soluciona que sólo puedo usar esa salida yo aquí sólo tengo un
+
+1315
+03:13:22,370 --> 03:13:31,100
+y una salida nada más las las pérdidas se pregunta antonio si se podían compensar con el lado
+
+1316
+03:13:31,100 --> 03:13:37,100
+corto bastante bien bueno si se puede claro esa es la idea pero es muy difícil hacer cortos en
+
+1317
+03:13:37,100 --> 03:13:43,799
+acciones antonio es muy difícil es posible pero es muy difícil con un tendencial es muy complicado
+
+1318
+03:13:43,799 --> 03:13:50,409
+es muy complicado porque vuelve mucho es decir mira esto es un ejemplo muy bueno de hecho mira
+
+1319
+03:13:50,770 --> 03:13:56,709
+es que lo podemos hacer rápidamente ya para ir acabando podemos hacer mira el mismo lo vamos
+
+1320
+03:13:56,709 --> 03:14:01,909
+a poner corto ahora mismo vale el don chan porque esto no nos vale te pongo el don chan
+
+1321
+03:14:01,909 --> 03:14:29,629
+lo que lo cambiaron pero te lo pongo igual 20 0 20 vale 20 0 20 20 0 20 hay perdón pero cortos
+
+1322
+03:14:29,629 --> 03:14:51,770
+true 0 20 no activa el corto no lo activa estoy atontado y si se activa lo que pasa
+
+1323
+03:14:51,770 --> 03:15:06,000
+igual no ha saltado pero si parece lo que salte alguna vez 20 20 20 no claro ya sé que pasa ya
+
+1324
+03:15:06,000 --> 03:15:12,959
+sé que pasa ya sé que pasa que con él sin el filtro lo tengo mal configurado es fallo míos
+
+1325
+03:15:15,129 --> 03:15:23,600
+porque como la volatilidad es inverso lo activo la volatilidad y así
+
+1326
+03:15:23,959 --> 03:15:32,590
+es un problema de que no es que sea un problema en sí pero que no bueno si es un problema porque
+
+1327
+03:15:32,590 --> 03:15:46,590
+no le he previsto activar el corto sin activar el filtro así pierde casi seguro en el lado corto
+
+1328
+03:15:46,590 --> 03:16:01,709
+digo es que pierdes que se arruina entonces claro pues lo bajamos pero entonces no era bien el
+
+1329
+03:16:01,709 --> 03:16:06,069
+largo tienes que hacer que hay que buscarle un set up para el corto es decir el mismo set up en
+
+1330
+03:16:06,069 --> 03:16:12,690
+acciones el largo y corto es muy complicado hay poca algún tipo de sistema pero no no un
+
+1331
+03:16:12,690 --> 03:16:19,479
+tendencial en un tendencial no lo vas a conseguir en este tipo no lo vas a conseguir entonces aquí
+
+1332
+03:16:19,479 --> 03:16:24,120
+y hay que ir a otra cosa aquí la otra casa aquí en un corto pues no es lo que os decía ya no os
+
+1333
+03:16:24,120 --> 03:16:28,719
+digo porque si no ya pero no corto hay que ir a otra cosa este mismo sistema hemos puesto salida
+
+1334
+03:16:28,719 --> 03:16:35,159
+por tiempo esto tp aquí la otra cosa en un corto en acciones se puede para que la otra cosa hay que
+
+1335
+03:16:35,159 --> 03:16:42,360
+salir rápido de acuerdo hay que salir entonces en este set up es muy complicado porque las
+
+1336
+03:16:42,360 --> 03:16:48,600
+tendencias son muy abruptas es decir te entran entran muy bien así este caen y mira te has
+
+1337
+03:16:48,600 --> 03:16:52,799
+rebotado y te has sacado antes encima ya te mete aquí y aquí aún mira no salvas pero es
+
+1338
+03:16:52,799 --> 03:17:02,319
+súper complicado es súper complicado es súper complicado vuelve muchísimo el precio vuelve
+
+1339
+03:17:04,309 --> 03:17:12,889
+y le cuesta muchísimo rebota muy violentamente luego vuelve a caer y la vez aquí cae ya está fuera
+
+1340
+03:17:12,889 --> 03:17:22,059
+final largo otra vez corto estás corto ahí estás es muy es muy duro que el mercado vuelve mucho
+
+1341
+03:17:22,059 --> 03:17:29,959
+muy escarpado es mucho más escarpado cayendo que subiendo el mercado se resiste mucho caer
+
+1342
+03:17:29,959 --> 03:17:36,979
+para que me entiendas existe mucho que hay algún momento que no pero en norma acabas
+
+1343
+03:17:36,979 --> 03:17:42,079
+perdiendo mucha pasta en cortos pero nosotros el nasa que lo operamos el lado corto pero
+
+1344
+03:17:42,079 --> 03:17:53,819
+este año hemos perdido el largo plazo pero el año pasado hemos perdido con apolo vale ya la última
+
+1345
+03:17:55,139 --> 03:18:01,319
+pregunta antonio comenta no que si a mejor bajar el frame más tendencia vaquista más
+
+1346
+03:18:02,280 --> 03:18:06,600
+bueno puedes bajar el frame o puedes operar otro tipo de sistema antonio otro tipo de
+
+1347
+03:18:06,600 --> 03:18:11,840
+sistema si no no hace falta buscar tendencia es decir puedes buscar tendencia en el lado largo
+
+1348
+03:18:11,840 --> 03:18:18,180
+y ir anti tendencia en corto y también puedes buscar una nota y freme no digo que no pero es
+
+1349
+03:18:18,180 --> 03:18:26,940
+que el mercado es fractal es decir el lado corto tendrás ganarás unas cosas pero perderás otras
+
+1350
+03:18:26,940 --> 03:18:36,079
+es decir no no necesariamente es más sencillo es más difícil es más difícil pero sí sí que
+
+1351
+03:18:36,079 --> 03:18:41,040
+hay algunas cosas que te pueden ir bien ese nivel sobre todo te puede ir bien en el control del
+
+1352
+03:18:41,040 --> 03:18:49,879
+riesgo el perder menos cuando falle no te puede ir mejor ahí pero también te va a sacar sabes
+
+1353
+03:18:49,879 --> 03:18:55,079
+o sea también así que no más tendencia el puro es complicado es complicado ahí hay que
+
+1354
+03:18:55,079 --> 03:19:06,250
+buscar más bien break out anti tendencial por la tiri y breakout rotura para salir buscar salir
+
+1355
+03:19:06,250 --> 03:19:13,639
+por tiempo o por tp tener un objetivo el total o al menos la mitad hay que jugar un poco con eso
+
+1356
+03:19:13,639 --> 03:19:20,719
+vale bien ya os he dicho un poco la agenda del día que viene y para los que queráis trabajar
+
+1357
+03:19:20,719 --> 03:19:31,239
+pues lo podéis poner bien en el discord y nos lo envíais por email vale lo que digo máximo
+
+1358
+03:19:31,239 --> 03:19:36,120
+bienes pero intentaré por todos los medios que el miércoles ya esté subido el pseudocódigo y la
+
+1359
+03:19:36,120 --> 03:19:41,000
+explicación que la idea que tenemos es hacerlo en un pdf donde nos aportamos la ficha un poco
+
+1360
+03:19:41,000 --> 03:19:45,639
+una explicación de cada sistema vale y tener así poderla la podéis tener como como documentación
+
+1361
+03:19:45,639 --> 03:19:57,510
+del curso de acuerdo pues nada más amigos os veo el viernes os veo os veo el viernes gracias en
+
+1362
+03:19:57,510 --> 03:20:05,350
+las otras palabras hay el viernes que digo el viernes pues bien lunes bueno jueves el que quiera
+
+1363
+03:20:05,350 --> 03:20:12,190
+ya sabe que estoy en directo para todos los para quien quiera los clientes para para todo el que
+
+1364
+03:20:12,190 --> 03:20:18,389
+quiera interactuar con con nosotros públicamente pues ahí estamos y si no la clase el lunes que
+
+1365
+03:20:18,389 --> 03:20:25,649
+viene de acuerdo en un par de horitas está el vídeo subido hasta pronto familia os veo chao

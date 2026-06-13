@@ -274,33 +274,6 @@ y empieza a trabajar:
 alineado con la dirección estratégica
 ```
 
----
-
-# Mi recomendación REAL
-
-Dentro de:
-
-```text
-00_CTO/
-```
-
-yo tendría:
-
-```text
-00_CTO/
-│
-├── roadmap/
-├── governance/
-├── architecture_decisions/
-├── research_principles/
-├── agent_standards/
-├── technical_debt/
-├── milestones/
-└── vision/
-```
-
----
-
 # esta carpeta acabará siendo IMPORTANTÍSIMA
 
 Porque ahí vivirán:

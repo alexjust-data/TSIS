@@ -1,0 +1,3577 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>practica_04_revised</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../../wide.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<h1 id="consultas">Consultas</h1>
+<h2 id="menú-de-navegación">Menú de navegación</h2>
+<ul>
+<li><a href="#consultas">Consultas</a></li>
+<li><a
+href="#entrevista-de-iván-sherman-y-debate-metodológico">Entrevista de
+Iván Sherman y debate metodológico</a></li>
+<li><a
+href="#continuación-canal-de-donchian-13-practice-03"><em>Continuación</em>:
+Canal de Donchian (13-practice-03)</a></li>
+<li><a href="#filtro-de-volatilidad">Filtro de volatilidad</a>
+<ul>
+<li><a href="#proceso--evaluando-la-idea">PROCESO : Evaluando la
+idea</a>
+<ul>
+<li><a href="#optimización-1">Optimización 1</a></li>
+<li><a href="#optimización-2">Optimización 2</a></li>
+<li><a href="#optimización-3">Optimización 3</a></li>
+<li><a href="#optimización-4">Optimización 4</a>
+<ul>
+<li><a href="#resultados-in-sample">Resultados In Sample</a></li>
+<li><a href="#análisis-del-out-of-sample">Análisis del Out of
+Sample</a></li>
+<li><a
+href="#análisis-all-data-la-información-de-ambos-periodos">Análisis
+<code>All Data</code>: la información de ambos periodos</a></li>
+<li><a href="#conclusiones-de-las-optimizaciones">Conclusiones de las
+optimizaciones</a></li>
+</ul></li>
+<li><a href="#análisis-de-backtests-en-maestro">Análisis de Backtests en
+Maestro</a></li>
+<li><a href="#backtest-6-0-02">Backtest 6-0-0.2</a></li>
+<li><a
+href="#backtest-6-1-027---portfolio-con-mejor-retorno-net-profit">Backtest
+6-1-0.27 - Portfolio con mejor retorno <code>Net Profit</code></a></li>
+<li><a href="#backtest-6-1-027---portfolio-con-menor-drawdown">Backtest
+6-1-0.27 - Portfolio con menor <code>drawdown</code></a></li>
+<li><a
+href="#backtest-4-1-024---portfolio-con-mejor-sharpe-ratio">Backtest
+4-1-0.24 - Portfolio con mejor <code>Sharpe ratio</code></a></li>
+<li><a
+href="#backtest-1-0-012---portfolio-canal-1-el-caso-extremo">Backtest
+1-0-0.12 - Portfolio canal 1 el caso extremo</a></li>
+<li><a
+href="#evaluando-la-idea-y-luego-ya-decidiríamos-cómo-lo-operábamos">evaluando
+la idea, y luego ya decidiríamos cómo lo operábamos</a></li>
+</ul></li>
+<li><a href="#próxima-sesión---configuración-de-full-tendencia">próxima
+sesión - configuración de <em>full tendencia</em></a>
+<ul>
+<li><a href="#tradestation-msft---backtest-6-020">TradeStation MSFT -
+Backtest <code>6-0.20</code></a></li>
+<li><a href="#qué-hacemos-con-los-cortos">¿Qué hacemos con los
+cortos?</a></li>
+</ul></li>
+<li><a href="#cuestiones">Cuestiones</a></li>
+</ul></li>
+</ul>
+<p>Alejandro comentaba el tema de <em>portfolio</em> que echaba en falta
+alguna parte avanzada. Bueno, ya te comenté, Alejandro, tomamos nota y
+bueno, pues a medida que avancemos hacia la parte <em>portfolio</em>,
+que lógicamente todavía falta, porque quiero antes hacer bastantes
+estrategias más y pues ya veremos, a ver si podemos resolver un poquito
+esa inquietud que tienes. Hoy, de hecho, vamos a trabajar este sistema
+en 100 acciones en el Nasdaq, pero no con la finalidad de hacer un
+<em>portfolio</em> sobre ella, sino con la finalidad de validar la idea,
+de ver si el sistema funciona, etcétera, etcétera, ¿vale? Pero un poco
+otro camino que ya os comenté, que son <strong>sistemas que tienen poca
+frecuencia operativa, pues una de las maneras de validarlo es juntando
+activos</strong>, y esto es lo que vamos a hacer un poco con este
+sistema. ¿Podría hacerse por otro camino? Bueno, podría hacerse, pero a
+nosotros en este tipo de sistemas nos gusta mucho este método, es decir,
+meter todo el Nasdaq 100 o en una cesta de ETFs o en todo el SP500, en
+un montón de acciones que, lógicamente, pues se comportan de su manera,
+pues tratar de validar la idea ahí.</p>
+<div style="border-left: 4px solid #2196f3; background: #e3f2fd; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<strong>📊 Validación por agregación de activos</strong><br><br> Cuando
+un sistema tiene baja frecuencia operativa en un solo activo, una
+técnica de validación consiste en aplicarlo a una cesta amplia de
+activos similares (por ejemplo, las 100 acciones del Nasdaq). Si la
+lógica es robusta, debería funcionar de forma consistente en la mayoría
+de ellos, aumentando así la significación estadística de los resultados.
+</div>
+<p><br></p>
+<p><br></p>
+<h1 id="entrevista-de-iván-sherman-y-debate-metodológico">Entrevista de
+Iván Sherman y debate metodológico</h1>
+<p>Iván, que es gestor de Emerging Funds, es una gestora que tiene
+oficina en distintos sitios, en Nueva York, en Dubái, es, la verdad que
+es todo con la suerte de que sea amigo personal, además de colega de
+profesión, y es un <em>trader</em> excelente, como ha demostrado en su,
+en el concurso, que es el mismo que ganó Larry Williams (probablemente
+referencia al World Cup Trading Championship), año pasado que lo ha
+ganado, ¿no?</p>
+<p>Abrí el debate ahí un poquito, pero lo que quería es que vierais,
+como ya os he dicho insistentemente, la teoría que nosotros os
+explicamos, cómo hacemos nosotros las cosas, y os hemos explicado
+algunas que también no hacemos, ¿de acuerdo?, porque hay que explicar,
+hay que explicarlo todo y explicar lo que nosotros pensamos. Pero hay
+distintos caminos para llegar a Roma, y además en lo esencial, en lo
+esencial os aseguro que estamos 100% de acuerdo, porque es lo esencial,
+es lo esencial, ¿de acuerdo?, y de ahí no hay variación.</p>
+<p>El hecho, como por ejemplo, cuando os expliqué, si os acordáis, el
+BRaC, y os dije que el BRaC, en mi opinión, a mí, no tiene mucho
+sentido, pero no tiene mucho sentido, lo que quiero decir es el nombre,
+¿de acuerdo?, es decir, al final un BRaC, el BRaC es, es decir, una
+optimización convencional es muy parecida al BRaC, ¿vale?, y si tú haces
+una optimización convencional y le sacas 4.000 <em>trades</em>, y no
+tiene muchos grados de libertad, de verdad, seguramente no hace falta
+<em>Walk Forward</em>, ¿vale?, pero hazlo, ¿de acuerdo?, no está de más,
+no está de más.</p>
+<blockquote>
+<p><strong>Backtest – Re-optimization – and – Combination
+(BRaC)</strong> El BRaC es una metodología alternativa al Walk-Forward
+Analysis (WFA). Su objetivo es el mismo: evaluar la robustez de un
+sistema sin sobreajustarlo. Pero lo hace con un enfoque algo diferente:
+reoptimiza varias veces el sistema y combina los resultados en lugar de
+“caminar” bloque a bloque por el histórico.</p>
+</blockquote>
+<blockquote>
+<p><strong>Walk-Forward Analysis (WFA)</strong> Es un método de
+validación y optimización de estrategias de trading. Sirve para
+comprobar si una estrategia que ha sido optimizada en el pasado sigue
+funcionando en datos nuevos, sin caer en <em>overfitting</em> (ajuste
+excesivo al histórico).</p>
+</blockquote>
+<p>Al final la mayoría de <em>traders</em> utilizamos varios métodos de
+evaluación, y realmente si están bien hechos, hay varios que son útiles,
+y es verdad que para algún tipo de sistema puede venir mejor, puede
+venir otro, pero la idea está clara, y acordaros cuando os dije,
+<strong>significación estadística</strong>, <strong>representatividad de
+la muestra</strong>, esto es los cimientos de la metodología clásica, y
+también es lo que hace Iván.</p>
+<p>Él, por ejemplo, no le gusta <em>Walk Forward</em>, a Kevin Davey
+(probablemente referencia al autor de “Building Winning Algorithmic
+Trading Systems”) le gusta, a Andrea Unger (campeón mundial de trading
+en múltiples ocasiones) por ejemplo, tampoco le gusta <em>Walk
+Forward</em>, es decir, hay distintas, hay distintas, como os digo,
+opiniones, y demás. A mí el <em>Cluster Walk Forward</em> me gusta
+mucho, ya trataremos de hacer en este sistema, como tal, no lo vamos a
+hacer, porque ahora a medida que avance la clase lo veréis, los
+problemas que te vas encontrando, pero en otros sistemas sí que lo
+haremos, haremos un <em>Walk Forward</em> al uso, pero en este no lo
+vamos a hacer como tal, y podemos acabar validando la idea, igual, ¿de
+acuerdo?, es decir, ahí está un poquito el tema.</p>
+<div style="border-left: 4px solid #ff9800; background: #fff3e0; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<strong>⚖️ Debate metodológico: WFA vs BRaC</strong><br><br> No existe
+consenso absoluto entre profesionales sobre el mejor método de
+validación. Traders reconocidos como Kevin Davey defienden el <em>Walk
+Forward</em>, mientras que otros como Andrea Unger prefieren enfoques
+alternativos. Lo fundamental es la coherencia metodológica:
+<em>significación estadística</em> y <em>representatividad de la
+muestra</em> son los pilares irrenunciables, independientemente del
+método elegido.
+</div>
+<p><br> <br></p>
+<h1
+id="continuación-canal-de-donchian-13-practice-03"><em>Continuación</em>:
+<a href="../../13-practice-03/transcripts/practica_03_revised.md">Canal
+de Donchian (13-practice-03)</a></h1>
+<p>El pseudocódigo de hecho en palabras no es más que tenemos una banda
+arriba de los n cierres anteriores, por defecto, acordaros que Donchian
+hablaba de 20 porque era más o menos un mes, más o menos cuatro semanas,
+más o menos la regla de cuatro semanas. Y entonces en este caso como
+eran acciones pues nosotros decidimos hacerlo con los cierres, se podría
+perfectamente haber hecho con el máximo, hoy no lo he probado, no lo he
+cambiado, el otro día ya lo jugamos un poco con ello pero lo vamos a
+dejar en el cierre pero podría ser que fuera mejor el máximo, ya digo
+que no he trabajado a fondo ese concepto, lo he dejado en el cierre
+porque a nosotros en acciones el cierre en gráfico diario normalmente el
+cierre le damos bastante importancia y por lo tanto pues ya nos parece
+bien trabajar con el <em>canal de cierres</em>. El canal de cierres
+también está la parte baja porque el sistema permite hacer cortos aunque
+no lo he trabajado, eso de hecho es lo que os voy a dejar para el que
+quiera trabajarlo para casa y ver a ver qué puede hacer.</p>
+<div style="border-left: 4px solid #2196f3; background: #e3f2fd; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<strong>📦 Canal de Donchian</strong><br><br> Desarrollado por Richard
+Donchian, considerado el padre del <em>trend following</em>. El canal
+original usa 20 periodos (aproximadamente un mes bursátil) y se
+construye con el máximo más alto y el mínimo más bajo del periodo. La
+“regla de las cuatro semanas” es una de las estrategias tendenciales más
+antiguas y documentadas.
+</div>
+<p>Planteamos en el código distintas salidas pero hoy vamos a trabajar
+solo el <strong>trailing</strong>, también tenemos en el código
+planteado: - salir por la <code>media central</code>, está planteado -
+también salir en <code>n barras</code> - salir en un
+<code>stop porcentual</code> - salir en un <code>tp porcentual</code> -
+y está planteado un <code>trailing</code></p>
+<p>Pero como ya comentamos y vamos a evaluar un tendencial puro y para
+eso necesitamos dejar correr los beneficios, si ponemos <em>tp</em> no
+vamos a cumplir ese requisito y por lo tanto decidimos solo entrar, hoy
+es lo que vamos a mirar, entrar por cierre por encima del canal y salir
+solo por <em>trailing</em>. Esta es la única salida. Además hablamos muy
+de pasada porque ya comenté que os lo enseñaría un filtro que hoy vamos
+a probar, este filtro <em>ATR</em> que simplemente es si el <em>true
+range</em> de la vela actual es menor que el <em>true range</em> medio
+mensual por un multiplicador:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtro de volatilidad</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">If</span> Filtro_ATR <span class="op">&gt;</span> 0 then</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Condition1</span> = TrueRange <span class="op">&lt;</span> AvgTrueRange<span class="er">(</span><span class="ex">22</span><span class="kw">)</span><span class="ex">[1]</span> <span class="pp">*</span> Filtro_ATR</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Condition1</span> = true<span class="kw">;</span></span></code></pre></div>
+<p>Este multiplicador lo vamos a estudiar pero que al final acabaremos
+dejando en 1, porque era la idea pero como ya os comenté a veces podemos
+hacer optimizaciones instrumentales para coger información de la
+variable y este es un claro ejemplo.</p>
+<h2 id="proceso-evaluando-la-idea">PROCESO : Evaluando la idea</h2>
+<p>Empecemos por el principio ¿cuál es el principio? El principio es
+evaluar el canal, evaluar el canal ya lo hicimos por un lado igualando
+el <em>stop</em>, si os acordáis, igualando el <em>tp</em> creo que
+pusimos 0.5, pusimos uno a nivel de evaluación preliminar y hicimos un
+pequeño estudio rápido para ver si conseguimos seguir adelante por la
+señal de entrada, así que vimos que parecía tener cierta ventaja y hoy
+hemos continuado avanzando en esa idea pero ya con la versión
+<em>trailing</em>. Este es el primer estudio que hemos hecho, vamos a
+presentar 4 estudios.</p>
+<p>Tenemos aquí la fichita en Excel, enseñaré el trabajo en sí de
+<em>Portfolio Trader</em> pero antes empezamos por la ficha. <a
+href="../../15-practice-05/OPTI4.xlsx"><strong>Excel con la
+ficha</strong></a></p>
+<p>Vamos a optimizar o estudiar o a backtestear el sistema de ruptura de
+acciones en todo el Nasdaq 100, en las cien acciones que hoy cotizan en
+las acciones. Cuidado aquí que esto no quiere decir que estemos haciendo
+una buena simulación de cartera porque no hemos tenido en cuenta las
+deslistadas y la mutuación que hay, pero nosotros estamos validando el
+sistema, no estamos montando una operativa en el NASDAQ 100, estamos
+evaluando el sistema, podíamos hacerlo en Apple, podíamos hacerlo en
+Microsoft, podíamos hacerlo en Google, pero eso tendría pocos
+<em>trades</em> y nos dejaría sin prácticamente margen de maniobra para
+poder analizar los parámetros porque habría una significación
+estadística que para nosotros no sería suficiente. Y una manera de hacer
+esto es evaluar todas las acciones a la vez de tal manera que el sistema
+tenga que tener un comportamiento bueno en la mayoría de ellas, porque
+seguro que no ganan todas, al final pues puede de esta manera conseguir
+mayor número de operaciones y estaremos de acuerdo que son, que es un
+activo homogéneo entre sí, comparable y que tiene bastante correlación
+entre sí, aunque ya veréis que curiosamente al final cuando os muestre
+un <em>performance report</em> completo de una de la combinación, por
+ejemplo, que acabaríamos eligiendo para operar, y veréis que realmente
+muchas acciones de las acciones entre sí no tienen tanta correlación
+operando el sistema, los resultados mensuales no tienen tanta, pero eso
+lo veremos al final.</p>
+<div style="border-left: 4px solid #4caf50; background: #e8f5e9; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<strong>⚠️ Sesgo de supervivencia</strong><br><br> Al testear solo las
+100 acciones que <em>hoy</em> cotizan en el Nasdaq 100, se ignoran las
+que fueron deslistadas o quebraron (<em>survivorship bias</em>). Esto
+puede inflar artificialmente los resultados. Para una simulación de
+cartera real habría que incluir el histórico completo con entradas y
+salidas del índice. Aquí el objetivo es validar la <em>lógica</em> del
+sistema, no simular una operativa real de portfolio.
+</div>
+<p>Bien, aquí tenemos un poco todos los <em>inputs</em> que hay puestos
+en el sistema, nosotros aquí solo vamos a trabajar estos que os voy a
+marcar en <strong>rosa</strong>:</p>
+<figure>
+<img src="../img/190.png" width="700">
+<figcaption>
+Figura 190. Ficha
+</figcaption>
+</figure>
+<p>Vamos a trabajar: - <code>Per_Canal</code> - el periodo del canal,
+que esa es la que vamos a hacer en esta primera - <code>Prc_trail</code>
+- <em>trailing</em>, y probaremos - <code>Filtro_ATR</code> - el filtro,
+a ver si tiene algún sentido o no</p>
+<p>Nada más por el momento, nada más.</p>
+<p>Se podría —y de hecho <em>debería</em>— evaluar también la parte
+<code>corta</code> del sistema. Nosotros hoy no lo hemos hecho, pero
+recomiendo que lo hagáis: quien tenga la capacidad técnica, que lo
+pruebe; y quien no, que lo trabaje al menos de forma conceptual. La
+próxima semana comenzaremos algo nuevo, pero haremos también un pequeño
+repaso a esta parte: el <em>lado corto</em> del sistema, para ver si
+realmente tiene sentido operarlo o qué ajustes podrían hacerse para
+hacerlo viable.</p>
+<p>En esencia, la idea sigue siendo la misma: el <em>canal de
+Donchian</em> puede colocarse tanto arriba como abajo. De hecho, ya está
+implementado también en la parte inferior, ¿sería operable de igual
+manera?.</p>
+<figure>
+<img src="../img/191.png" width="900">
+<figcaption>
+Figura 191. Ficha
+</figcaption>
+</figure>
+<p>En la práctica <strong>no se comporta igual</strong>, porque el
+mercado de acciones tiene un sesgo alcista muy marcado. Es posible
+operar el lado corto, sí, pero hay que hacerlo de una forma muy
+concreta, y <code>tendencialmente</code> no suele ser una de ellas.</p>
+<p>Una de las cosas que no hemos hecho aquí —pero que veremos más
+adelante, cuando trabajemos la práctica de búsqueda de señales y
+evaluación de activos— está relacionada con la teoría que ya comentamos:
+si te planteas un <em>setup</em> tendencial, lo lógico es aplicarlo
+sobre activos que, por naturaleza, sean más tendenciales.</p>
+<p>¿Son las acciones ese tipo de activo esencialmente tendencial? No
+exactamente. A nivel de índice, no lo son tanto; sin embargo, <strong>a
+nivel de acción individual sí lo son bastante más</strong>. A nivel de
+índice, las acciones muestran tendencia en el largo plazo, pero cuanto
+más bajas de <em>timeframe</em>, más el mercado de <em>equities</em>
+menos tendencial es y más se vuelve <code>antitendencial</code>. Por
+eso, muchos sistemas que operan sobre acciones —especialmente los que
+trabajan índices bursátiles— acaban comportándose más bien como
+<strong>sistemas antitendenciales</strong>, o versiones adaptadas a ese
+enfoque, y no como sistemas <code>tendenciales puros</code>, que son más
+propios de materias primas, divisas o acciones en contado, donde sí
+pueden capturarse tendencias amplias y sostenidas.</p>
+<p><strong>Concepto</strong></p>
+<p>Vamos un poco al concepto, que es este, y este es el concepto.
+Entonces, ¿cómo hemos evaluado esto? Bueno, lo hemos evaluado a través
+de <em>Portfolio Trader</em>, que es este programa que forma parte de
+<em>MultiCharts</em>.</p>
+<figure>
+<img src="../img/192.png" width="900">
+<figcaption>
+Figura 192
+</figcaption>
+</figure>
+<figure>
+<img src="../img/002.png" width="900">
+<figcaption>
+Figura 002 Protfolio Trader forma parte de Multicharts
+</figcaption>
+</figure>
+<p>Como decía, es el programa que hemos usado, aunque podría emplearse
+cualquier otro. Al final, lo que hemos hecho aquí —y ahora os explico—
+puede aplicarse en cualquier plataforma, quienes tengáis la posibilidad
+de hacerlo.</p>
+<h3 id="optimización-1">Optimización 1</h3>
+<p>Hemos trabajado, como se ve en el Excel, con un periodo <em>in
+sample</em> que va desde el inicio de 2007 hasta finales de 2018, y a
+partir de ahí, es decir, desde principios de 2019 hasta el pasado
+viernes, hemos usado el periodo <em>out of sample</em>.</p>
+<figure>
+<img src="../img/193.png" width="700">
+<figcaption>
+Figura 193
+</figcaption>
+</figure>
+<p>Podría haberse añadido un tercer periodo, y ya os he comentado que
+muchos autores lo hacen, llamándolo periodo de validación. Perfecto.
+Nosotros no lo hemos hecho porque nuestros procesos suelen durar
+bastante tiempo: imaginad que empezáramos a estudiarlo ahora y
+siguiéramos durante semanas o meses; esa observación continua fuera de
+muestra equivaldría a una especie de <em>paper trade</em>. En esa fase,
+ya estaría validado. Solemos hacerlo así, pero también es correcto dejar
+un tercer periodo; no es una práctica incorrecta en absoluto.</p>
+<ul>
+<li><p>Hemos adoptado cinco dólares por <code>$5 trade</code> (que es
+aproximadamente lo que cobra hoy en día <em>TradeStation</em>. Aunque
+tiene distintos planes, este es un plan común para la mayoría. Si haces
+más volumen, incluso puede resultar más barato).</p></li>
+<li><p>Y hemos asumido un <code>1 tick</code> de
+<code>slippage</code>.</p></li>
+<li><p>Hemos optimizado. Bueno, realmente lo hemos hecho de forma
+<em>exhaustiva</em>: hemos puesto <em>net profit</em>, pero en realidad,
+cuando haces una <code>optimización exhaustiva</code>, eso no importa
+porque se recogen todos los datos.</p>
+<p>En realidad lo que es <em>Portfolio Trader</em>, como os decía
+respecto a las plataformas, tiene algunas limitaciones a nivel de
+<em>backtesting</em>: por ejemplo, la información que ofrece es algo más
+pobre en términos de análisis. Su <em>Walk Forward</em> es bastante
+deficiente en configuración, especialmente en su versión
+<em>portfolio</em>. La versión para sistemas individuales es bastante
+mejor; ya lo veremos más adelante.</p>
+<p>En cambio, tiene una gran ventaja: puede conectarse al mercado. Es
+decir, puedes completar el montaje del sistema, hacer <em>forward
+testing</em>, dejarlo en simulación —más adecuado para sistemas
+intradía, quizá— e incluso operar en tiempo real.</p>
+<p>Además, <em>Portfolio Trader</em> permite configurar reglas de
+prioridad por código dentro del propio portafolio. Por ejemplo, si
+finalmente fuéramos a operar las 100 acciones, podríamos establecer
+criterios para decidir cuáles ejecutar: las 10 que entren primero, las
+10 que cumplan una determinada condición extra del portafolio, etc. Este
+tipo de configuración no es el objetivo ahora, pero lo comento ya que
+estamos viendo el programa. Más adelante, cuando trabajemos con
+portafolios de forma específica, entraremos en detalle sobre todo
+esto.</p></li>
+</ul>
+<p>Entonces: - Hemos puesto un 2% a cada acción con una cuenta de 100
+mil dólares, hemos metido 2% de máximo a cada acción, por lo tanto
+permitiendo apalancar en el caso de que sea el caso y nada más - Luego
+ya las reglas del sistema propiamente que ya conocéis en el sentido de
+cierre por encima de la banda y un <em>trailing stop</em></p>
+<figure>
+<img src="../img/194.png" width="900">
+<figcaption>
+Figura 194
+</figcaption>
+</figure>
+<p>En esta primera optimización, claro, cuando tú evalúas, recordar la
+teoría, una entrada hay que hacer una asunción para la salida, bueno yo
+le puse <code>20% de *trailing*</code>, podíamos haber puesto 10%, da
+igual, le puse 10%.</p>
+<figure>
+<img src="../img/195.png" width="600">
+<figcaption>
+Figura 195
+</figcaption>
+</figure>
+<p>Os decía que es pobre porque esos son los datos que facilita a nivel
+de <em>portfolio</em>:</p>
+<p><img src="../img/003.png" /></p>
+<p>Bueno, se le puede incorporar un <strong>CustomFitnessValue</strong>.
+Es cierto que aquí necesitamos crear uno propio, ya que el que viene
+implementado por defecto en <em>MultiCharts</em> utiliza un <em>Sharpe
+ratio</em>. Eso que veis justo en <em>Fitness Value</em> realmente es el
+<em>Sharpe ratio</em>, ¿de acuerdo? En su momento habíamos pensado en
+usar el <em>Sortino ratio</em>, pero finalmente no lo hicimos porque
+este ya está incluido por defecto. Así que utilizamos ese valor para el
+<em>Sortino</em>, y ahí fue cuando nos dimos cuenta de que no era un
+cálculo a nivel de <em>portfolio</em>, sino de <em>sistema
+individual</em>. Por lo tanto, los datos que devuelve no son
+correctos.</p>
+<figure>
+<img src="../img/196.png" width="900">
+<figcaption>
+Figura 196
+</figcaption>
+</figure>
+<div style="border-left: 4px solid #ff9800; background: #fff3e0; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<strong>⚠️ Limitación de Portfolio Trader</strong><br><br> El <em>Sharpe
+ratio</em> y <em>Sortino ratio</em> que muestra <em>Portfolio
+Trader</em> se calculan sistema a sistema, no sobre el rendimiento
+consolidado del portfolio. Esto es incorrecto porque ignora el efecto de
+la diversificación. Para obtener el ratio real habría que programar un
+<em>CustomFitnessValue</em> que calcule sobre los rendimientos
+agregados. Aun así, sirve como referencia comparativa entre sets de
+parámetros.
+</div>
+<p>Aun así, para este ejercicio sigue siendo un dato útil. Creo que la
+lectura que ofrece probablemente es extrapolable y resultaría bastante
+similar en caso de aplicarse correctamente al <em>portfolio</em>, pero
+técnicamente no lo es. Cuando trabajas con un portafolio, hay que tener
+en cuenta que existen reglas de prioridad: el motor de <em>Portfolio
+Trader</em> evalúa barra a barra, pasando todos los sistemas por cada
+una de ellas, y luego aplica las reglas de gestión monetaria definidas a
+nivel global.</p>
+<p>Por eso, el <em>Sharpe ratio</em>, el <em>Sortino ratio</em> o
+cualquier otra métrica de rendimiento no pueden calcularse sistema a
+sistema. No se suman. Deben calcularse sobre el rendimiento consolidado
+del <em>portfolio</em>. Y eso, actualmente, no está implementado en la
+plataforma, así que habría que programarlo manualmente. No lo habíamos
+notado antes; pensábamos sinceramente que ya lo hacía. Pero no, y por
+tanto hay que volver a construir este cálculo del <em>Sharpe ratio</em>
+desde cero.</p>
+<p>De todos modos, para el objetivo actual, nos sirve. No nos da el
+<em>Sharpe ratio</em> real del <em>portfolio</em>, es decir, hoy no
+conocemos ese valor exacto, pero sí es válido como referencia
+comparativa entre <em>sets</em> de parámetros —por ejemplo, para
+determinar si el canal de 8, 10 o 14 funciona mejor—. En ese contexto,
+sí consideramos que tiene relevancia.</p>
+<p>Lo explico así con total franqueza para que se entienda el motivo de
+este valor negativo que aparece en la columna de <code>sharpe</code>.
+Tiene sentido porque no es el <em>Sharpe ratio</em> real del portafolio,
+sino la media de los ratios de los sistemas individuales, lo que
+distorsiona completamente el resultado. El cálculo correcto debería
+hacerse sobre los rendimientos agregados del <em>portfolio</em>,
+aprovechando la diversificación que aportan las distintas acciones entre
+sí. Aun siendo el mismo sistema, ya se aprecia que existe cierta
+descorrelación entre los componentes del conjunto. Por supuesto, es algo
+que puede mejorarse, pero aun así muestra una ligera descorrelación
+interna.</p>
+<p><strong>Resultados obtenidos</strong></p>
+<p>Bien, los datos de la imagen <em>003.png</em> son los resultados
+obtenidos al optimizar únicamente el canal de Donchian en el periodo
+<em>in sample</em>. Esta es la misma optimización mostrada en el Excel,
+pero recogida solo para el <em>in sample</em>.</p>
+<p><img src="../img/004.png" /></p>
+<p>Aquí lógicamente solo tenemos una variable y, por tanto, no podemos
+generar un gráfico en 3D, pero sí en 2D. En el eje izquierdo tenemos el
+<code>Net Profit</code> con la linea verde o el
+<code>Sharpe ratio</code> con la linea lila —este <em>Sharpe ratio</em>
+falso, como lo llamaré para que se entienda—, que, aunque su valor
+absoluto carezca de sentido, creemos que a nivel comparativo entre
+<em>sets</em> sí tiene relevancia. Y también está el <em>Net
+Profit</em>.</p>
+<p><img src="../img/005.png" /></p>
+<p>En realidad, aquí no existe una <em>función fitness</em> como tal,
+porque se incluyen todas las combinaciones posibles: solo hay 25, y por
+lo tanto se muestran las 25.</p>
+<p>La <em>función fitness</em> es necesaria únicamente cuando hay que
+elegir entre muchas alternativas —por ejemplo, si tengo 1.000
+combinaciones y quiero quedarme con 200, necesito un criterio para
+decidir cuáles conservar—. Pero si voy a conservarlas todas, entonces la
+función <em>fitness</em> es irrelevante.</p>
+<p>En este caso, si quisiera analizar los datos en Excel, podría
+calcular cualquier métrica adicional directamente a partir de los
+resultados de cada optimización. Por tanto, no es necesario definir una
+función <em>fitness</em> específica. Esto suele ocurrir cuando el número
+de variables o <em>inputs</em> es pequeño, lo cual facilita el análisis.
+Aquí, de momento, hemos definido tres <em>inputs</em> posibles, aunque
+solo estamos trabajando con uno para centrarnos en evaluar la
+<em>entrada</em>, sin que los resultados se vean afectados por las
+<em>salidas</em>.</p>
+<p>En otras palabras, dejamos la salida estática, con el filtro de
+volatilidad desactivado (<code>0</code>) y la salida por <em>trailing
+stop</em> fija en <code>0.20</code>, de modo que no varíe. Así podemos
+observar de forma aislada el comportamiento del canal Donchian por sí
+solo.</p>
+<p>Tenemos por un lado como veis el dato <em>in sample</em>:</p>
+<p><img src="../img/007.png" /></p>
+<p>En el dato <em>in sample</em> aquí:</p>
+<p><img src="../img/004.png" /></p>
+<div style="border-left: 4px solid #9c27b0; background: #f3e5f5; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<p><strong>🔄 Heurística de Selección: La “Meseta de
+Robustez”</strong></p>
+<p>La delimitación de la zona (parámetros 6-15) no es un cálculo
+determinista, sino una <strong>validación visual de
+estabilidad</strong>. El objetivo es identificar regiones donde el
+sistema mantenga un rendimiento consistente frente a pequeñas
+variaciones del parámetro, minimizando el riesgo de <em>curve
+fitting</em> o sobreajuste.</p>
+<p><strong>Criterios Técnicos de Selección:</strong></p>
+<ul>
+<li><strong>Estabilidad del Net Profit (Línea Verde):</strong> Se busca
+una zona donde el beneficio sea alto y “plano” (~$475K-$565K), indicando
+que el sistema no es hipersensible al periodo exacto del canal.</li>
+<li><strong>Convergencia de Métricas:</strong> Se marca el área donde
+los picos de eficiencia (Sharpe/Lila) coinciden con la meseta de
+beneficios (Verde), validando el “centro de masas” de la
+estrategia.</li>
+<li><strong>Análisis de Sensibilidad:</strong> Científicamente, una zona
+estable es más robusta que un pico aislado; si el parámetro 9 es el
+máximo pero el 8 y 10 caen bruscamente, el resultado es probablemente
+ruido estadístico, no una ventaja real.</li>
+</ul>
+Métodos más rigurosos:<br />
+* Tests estadísticos de sensibilidad paramétrica * Análisis de varianza
+entre valores adyacentes * Validación cruzada sistemática * Métricas de
+estabilidad cuantificadas (no solo visuales)
+</div>
+<p>Ya estamos viendo que en el gráfico se aprecia claramente que en el
+retorno, que es el <strong>verde</strong>, hay bastante estabilidad, y
+marcamos esa zona aparentemente bastante buena con bastante estabilidad
+del <em>in sample</em>, y en el <em>Sharpe</em> la <strong>lila</strong>
+podemos decir que hay estas dos o tres zonas con picos muy altos y un
+pico cae dentro de la zona marcada del retorno.</p>
+<p><img src="../img/006.png" /></p>
+<p>Vamos a ver el mismo en <strong><em>out of sample</em></strong>,
+siempre es el que nos da más información… Aquí también hubiera sido
+interesante que en esa práctica, no la hemos hecho, pero si al final
+fuéramos a operar haríamos esta misma optimización invertida. Lo
+explicamos, que nos gusta mucho este ejercicio, es decir, hemos hecho
+<em>in sample</em> de 2007 a 2018 y <em>out of sample</em> de 2019 a
+2024, así simplificando mucho, pues bueno esto total eran unos 17 años,
+17 años, vale, pues hacemos más o menos entre 4 y 5, pues haber hecho de
+2007 a 2011/12, dejarlo esa parte <em>out of sample</em> y hasta ahora
+<em>in sample</em>, al revés, <em>out of sample</em> al final y <em>out
+of sample</em> al principio, y luego comparar el <em>out of sample</em>
+que os sale de esa manera que os sale de la otra y coger esa
+información, porque cuando salen iguales eso sí que es una prueba
+fantástica de robustez.</p>
+<div style="border-left: 4px solid #9c27b0; background: #f3e5f5; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<p><strong>🔄 Validación cruzada temporal</strong><br><br> Para saber si
+un sistema es realmente sólido (<strong>robusto</strong>), no basta con
+probarlo en una sola dirección. El autor propone un ejercicio de
+validación cruzada:</p>
+<ol type="1">
+<li>Lo normal (Lo que se hizo):
+<ul>
+<li><strong>In-Sample (Entrenamiento):</strong> Usas los datos de 2007 a
+2018 para encontrar los mejores parámetros.</li>
+<li><strong>Out-of-Sample (Prueba real):</strong> Evalúas esos
+parámetros con los datos de 2019 a 2024 (datos que el sistema “no
+conoce”).</li>
+</ul></li>
+<li>El ejercicio invertido (Lo que propone):
+<ul>
+<li><strong>Invertir los papeles:</strong> Ahora usa los datos más
+recientes (2012 a 2024) como tu base de entrenamiento
+(<em>In-Sample</em>).</li>
+<li><strong>Probar en el pasado:</strong> Evalúa esos resultados usando
+los datos antiguos (2007 a 2011) como si fueran el futuro
+(<em>Out-of-Sample</em>).</li>
+</ul></li>
+</ol>
+<p><strong>¿Por qué hacer esto?</strong> Si al optimizar hacia adelante
+(al futuro) y hacia atrás (al pasado) obtienes resultados similares y
+los parámetros ganadores son los mismos, has encontrado una
+<strong>prueba fantástica de robustez</strong>. Esto demuestra que el
+sistema funciona bajo diferentes condiciones de mercado, sin importar el
+orden cronológico de los datos.</p>
+</div>
+<p>Porque en un sistema tendencial como este es verdad que hay 100
+acciones, todos estos datos al final hay mucho sesgo de muestra, la
+práctica hablamos mucho mucho de ello, si yo tengo un activo como
+este:</p>
+<p><img src="../img/010.png" /></p>
+<p>Aunque es verdad que en este caso creo que aplica bien, aplica bien,
+porque tienen en el periodo el <em>in sample</em> que empieza en 2007
+nada más empezar pues tienen la crisis, la crisis del 2008-2009,
+aquellos pues que ya estuvierais en el mercado recordaréis. Es
+interesante esta mezcla porque ese mercado sí que es común, puede haber
+acciones que tengan otros porque lógicamente las 100 no tienen la
+<em>beta</em> que tienen Microsoft o que tiene Apple o Netflix que son
+acciones que tienen bastante <em>beta</em> con el mercado, pero claro la
+mayoría la tienen, la mayoría la tienen, y por lo tanto ahí sí que en
+esas crisis sistémicas de 2008-2009 y el tema del Covid 2020, ahí sí que
+cayeron todas, ¿de acuerdo? O para todas, se me entiende, prácticamente
+todas. A nosotros nos gusta mucho hacer esta doble, este doble juego por
+delante y por detrás del <em>out of sample</em>.</p>
+<p><strong>Opti 1</strong></p>
+<p>Tenemos el gráfico, prácticamente a medida que la <strong>línea
+verde</strong> aumenta va degradando.<br />
+Es verdad que el <em>out of sample</em> aquí plantea cierto problema que
+tampoco lo es tanto al lado del <em>in sample</em> porque menos
+operaciones por lo normal… pero ya vamos viendo que la parte baja del
+canal, aunque en este caso por ejemplo el <em>out of sample</em> con
+<strong>valor <code>1</code></strong> (última columna primera instancia)
+lo hizo bastante bien, de hecho el que más dinero gana, y a medida que
+va aumentando el canal va perdiendo, va perdiendo rendimiento, teniendo
+insisto el <em>trailing</em> fijo:</p>
+<p><img src="../img/012.png" /></p>
+<p>Aquí vemos el pico claro, sobre todo el <em>Sharpe ratio</em>, es
+aquí en 6 vemos un pico, que es verdad que hay un salto importante al 7,
+5, 6, por ahí podía estar, podía estar bien.</p>
+<p><img src="../img/197.png" /></p>
+<p>El parámetro <strong>Per_Canal</strong> (abreviatura de “Periodo del
+Canal”) se refiere a la configuración numérica del <strong>Canal de
+Donchian</strong> utilizado en el sistema de trading.</p>
+<div style="border-left: 4px solid #4caf50; background: #e8f5e9; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<p><strong>⚙️ Definición Técnica: Per_Canal</strong></p>
+Es el número de velas (períodos) que el sistema mira hacia atrás para
+calcular los máximos y mínimos que forman el canal. Actúa como el
+<strong>activador de la señal de entrada</strong>: cuando el precio
+rompe el máximo de esos “X” períodos anteriores, el sistema ejecuta una
+compra.
+</div>
+<p><strong>Funcionamiento en la optimización:</strong></p>
+<ul>
+<li><strong>Variable de estudio:</strong> En los gráficos, el eje
+horizontal (eje X) muestra los diferentes valores probados para
+<code>Per_Canal</code>, que van del <strong>1 al 25</strong>.</li>
+<li><strong>Sensibilidad:</strong> Al cambiar este número, cambia la
+sensibilidad del sistema. Un <code>Per_Canal</code> corto (ej. 5)
+reacciona rápido a los movimientos del precio, mientras que uno largo
+(ej. 20) es más lento pero filtra más ruido.</li>
+<li><strong>Selección de la “Meseta”:</strong> El objetivo de marcar la
+zona entre 6 y 15 es encontrar un periodo de canal que no sea ni
+demasiado nervioso ni demasiado lento, y que haya demostrado ser
+rentable de forma estable en el pasado.</li>
+</ul>
+<p>En resumen, es la “ventana de tiempo” que el algoritmo usa para
+decidir si un movimiento del precio es lo suficientemente importante
+como para entrar al mercado.</p>
+<p>Vamos a acabar de ver el <code>all data</code>:</p>
+<p>Uniendo los dos porque al final ahí se incorpora un poco todo y donde
+además tenemos una muestra pues que ronda las
+<code>2000 operaciones</code>, fijaros que ahí pues bueno estamos en esa
+zona de 6 y 10:</p>
+<p><img src="../img/198.png" /><br />
+<img src="../img/016.png" /><br />
+<img src="../img/017.png" /></p>
+<p>Es bastante estable, el Donchian en sí es bastante estable, fijaros
+que la zona podemos decir que… luego lo veréis optimizado todo junto, ya
+lo veremos… pero es bastante estable, el canal Donchian es bastante
+estable y en esta zona entre 5 y 10 pues está ahí bastante estabilizado.
+Aquí para irnos, para elegir uno de momento de cara a evaluar la salida,
+pues he cogido el 6, podríamos haber elegido otro, ¿de acuerdo?, es
+decir no tiene tampoco una brutal importancia en este momento, ¿de
+acuerdo?, pero el 6 me ha parecido un buen equilibrio y es el que he
+decidido bloquear para evaluar la salida. Luego ya veremos un
+<em>performance report</em> de todo esto puesto en conjunto.</p>
+<div style="border-left: 4px solid #9c27b0; background: #f3e5f5; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<p><strong>🎯 El “Punto de Bloqueo” vs. El “Punto Óptimo”</strong></p>
+El instructor no está eligiendo el parámetro final para operar, sino un
+<strong>valor de referencia estable</strong> para poder avanzar al
+siguiente paso: evaluar las salidas (stops y filtros). Para esto,
+prefiere un canal más reactivo (corto) que esté dentro de la zona
+ganadora.
+</div>
+<p>El 6 fijaros que al final tiene <code>2462 trades</code>,
+<code>40% de aciertos</code>, típico, típico tendencial, ¿vale? Luego ya
+veremos más datos porque aquí simplemente pues nos sirve a nivel de
+compararse, ¿de acuerdo?, no nos sirve de mucho más.</p>
+<p><img src="../img/018.png" /></p>
+<h3 id="optimización-2">Optimización 2</h3>
+<p><strong>¿Cómo hemos evaluado el <em>trailing</em>?</strong></p>
+<p>Como os digo bloqueando el 6… ahora os muestro el Excel de esta
+segunda optimización:</p>
+<p>Simplemente aquí pues lo que os digo es la misma cantidad de datos,
+las mismas cien acciones, bloqueamos el canal en 6 y dejamos oscilar
+también 25 incrementos <code>Prc_Trail - rango entre 0.06 y 0.30</code>
+el <em>trailing</em>, hemos puesto 25 en uno y 25 en el otro, para que
+tuvieran la misma capacidad de variación.</p>
+<figure>
+<img src="../img/199.png" width="900">
+<figcaption>
+Figura 199
+</figcaption>
+</figure>
+<p>Aquí tenemos los datos <em>in sample</em>:</p>
+<p><img src="../img/020.png" /></p>
+<p>Aquí sí que se aprecia claramente que los datos bajos deterioran
+muchísimo, es decir el <em>trailing</em> realmente deteriora mucho a
+medida que lo acercas mucho, claro estamos hablando de un sistema
+tendencial, opera muchísimo, 7000, 6300 <em>trades</em>, se lo lleva
+todo en comisiones y sale demasiado rápido, realmente no tiene sentido,
+habría que verlo evaluado desde bastante más arriba, como mínimo 0.10 y
+0.15 y hasta más de 0.30 quizá para verlo (hablando de la columna
+<strong>K</strong> refiriéndonos de la columna <strong>B</strong>
+<em>net profit</em>).</p>
+<p>Porque al final lógicamente estamos en diario, lo que quiere es que
+corran los beneficios, pero nosotros también nos interesa protegernos,
+protegernos de las caídas, ¿de acuerdo?, que es el problema, al final
+lógicamente si evaluamos solo <em>net profit</em> va a querer mantenerse
+dentro, por eso hay que evaluar alguna cosa más y aquí tenemos este
+ratio de <em>Sharpe ratio</em> que aunque no nos dé una buena lectura
+nos sirve para este cometido que os digo.</p>
+<p><img src="../img/021.png" /></p>
+<p>Y vamos a ver el <strong>opti 2</strong> , <em>in sample</em>:</p>
+<p><img src="../img/023.png" /></p>
+<p>Este perfil es bastante distinto al anterior porque en el anterior el
+Donchian era bastante armónico porque todo el rango mostraba cierto
+rendimiento y aquí pues claramente no es así, tiene los valores bajos
+pues prácticamente sin sentido hasta que no llega a la zona de 0.20,
+0.20 y algo, nos estabiliza en un cierto rendimiento, lo cual pues como
+os digo habría tenido sentido dejarlo ir un poquito más, un poquito más,
+pero bueno lo hemos dejado ahí, está hasta el 0.30 que ya creo que es
+suficiente, bueno ahí habéis 0.20, está bien, es el que habíamos puesto
+antes por la que habíamos visto la evaluación preliminar, la zona de
+0.20 pues puede estar bien, la verdad que 0.20 de momento no apunta a ir
+mal.</p>
+<p>Si miramos el <em>out of sample</em> y nos fijamos, fijaros que ya
+por este “<em>Sharpe ratio</em> falso” (columna <strong>K</strong>),
+instancias 0.18, 0.27, 0.26, esa zona,</p>
+<p><img src="../img/200.png" /></p>
+<p>y si nos fijamos en <em>net profit</em> ordenado pues clava el máximo
+0.20, 0.21, 0.26, 0.18, es decir más o menos la misma zona. Vamos a ver
+este gráfico:</p>
+<p><img src="../img/201.png" /></p>
+<p>Vemos aquí el gráfico pues lo que veis, claramente las partes bajas,
+pues este especie de <em>Sharpe ratio</em> sí que es bastante volátil,
+pero ya veis que no es estable, es el clásico ejemplo donde se ve que no
+es estable, que varía mucho, que puede tener un valor bueno pero lo
+siguiente no, etcétera, y habéis que en la parte final sí que estabiliza
+y estabiliza en valores altos, veis claramente entre 0.20 y 0.25 todos
+son valores buenos, todos son valores buenos</p>
+<p><img src="../img/203.png" /></p>
+<p>y donde además recogemos una cantidad importante de <em>trades</em>,
+estamos hablando todavía en este dato fuera de muestra <em>out of
+sample</em> de 900, 800 <em>trades</em> de ese orden (instancia
+0.2).</p>
+<p><img src="../img/204.png" /></p>
+<p>Y si ya recogemos los dos unidos:</p>
+<p>Pues nuevamente tenemos que se va muy arriba en 0.27 (columna K
+instancias de <em>profits</em>), el que más tirando hacia arriba 0.27,
+0.26, 0.25, bastante bastante alto,</p>
+<p><img src="../img/2004.png" /></p>
+<p>pero aquí a ver que os la abro este gráfico:</p>
+<p><img src="../img/2005.png" /></p>
+<p>Es el que tiene más <em>trades</em> y por lo tanto es el que está
+pues más estabilizado, pero aquí se aprecia claramente esta tendencia
+que ya veía bien, veis en el <em>in sample</em>, bueno pues a partir de
+0.20 podríamos haber elegido uno más alto pero al final hemos preferido
+bloquear el 0.20, aunque repito podríamos haber cogido otro,</p>
+<p><img src="../img/030.png" /></p>
+<p>si os fijáis aunque los que dan mayor datos 0.26, 0.25, también el
+0.20 fijaros que tiene el doble de operaciones. Siguen manteniendo,
+mantienen bastante buen equilibrio, ¿de acuerdo?, se está bien
+acompañado (fíjate en el gráfico) se nota que hay bajada que vuelve a
+subir, es decir bastante estabilizado y tiene muchos
+<em>trades</em>.</p>
+<p><img src="../img/205.png" /></p>
+<p>Nosotros en este tipo de situaciones solemos tirar siempre a más
+operaciones, solemos tirar más a más operaciones porque nos tira mucho
+la significación estadística, entonces aquí aunque estemos viendo
+mejores resultados en <em>profit</em> con 1500 <em>trades</em>, con 1300
+<em>trades</em>, la zona de 0.25 por ejemplo, porque tampoco lo
+granularíamos demasiado esto a 0.26, 0.27, 0.20, 0.25, podríamos también
+haber elegido perfectamente estos que están bien, tiene un mejor
+resultado pero tiene como veis 900 <em>trades</em>, entonces siempre que
+estamos ante esa dicotomía siempre cogemos más <em>trades</em>, siempre
+cogemos más <em>trades</em> aunque suponga un poquito menos rendimiento,
+porque más <em>trades</em> significa mayor significación estadística y
+también significa mayor respuesta ante cambios en el mercado. Aunque
+gana mucho menos nuestra elección de 0.20, fijaros el <em>drawdown</em>
+que es bastante menos.</p>
+<div style="border-left: 4px solid #4caf50; background: #e8f5e9; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<strong>📊 Criterio de selección: más trades vs más
+profit</strong><br><br> Ante la dicotomía entre parámetros que dan más
+<em>profit</em> con menos operaciones vs parámetros con menos
+<em>profit</em> pero más operaciones, la recomendación es priorizar el
+número de <em>trades</em>. Razones: mayor significación estadística,
+mejor respuesta ante cambios de mercado, y normalmente menor
+<em>drawdown</em> relativo.
+</div>
+<p>Si tiene sentido hacerlo porque realmente como hay gestión monetaria
+hay un 2 por ciento y las salidas son porcentuales, realmente el capital
+está bastante ecualizado aunque no sea en porcentaje, ¿de acuerdo?, pero
+aún así no nos convence del todo que no sea en porcentaje, ¿de acuerdo?,
+pero no nos convence del todo… pero bueno ya digo que no está mal
+tampoco hacerlo, y por eso añado esta columna <em>recovery
+factor</em></p>
+<p>La columna añadida <strong>L</strong> es lo que mucha gente llama un
+<em>recovery factor</em> que es <em>net profit</em> partido por
+<em>drawdown</em>:</p>
+<p><em>All data</em> <img src="../img/033.png" /></p>
+<p>La verdad con los datos que tenemos aquí pues es de las pocas cosas
+que podemos hacer, ¿de acuerdo?, y pues podrías hacerlo y como veis 0.20
+es el que mejor ecualiza sin haberlo hecho, pues ya veis, ya veíamos que
+esa zona es la que equilibra, porque tiene muchas operaciones y tener
+muchas operaciones normalmente mejora la respuesta ante, hablando de un
+tendencial, hablando de un tendencial, mejora la respuesta ante caídas y
+demás.</p>
+<p>Claro, hay que estimar bien los costes, ¿de acuerdo?, hay que estimar
+bien los costes porque dices tú, estimas que <strong><em>prefieres
+operar mil </em>trades* más</strong>* pero eso solo te va a servir si
+has estimado bien los costes y si realmente tienes un <em>tick</em> de
+deslizamiento, podrías hacer ahí también una prueba de sensibilidad,
+deberías de mirar bien esto y probarla también en dos <em>ticks</em>:
+“es decir bueno pues mira no lo tengo claro voy a volver a hacer la
+optimización con dos <em>ticks</em> en vez de un <em>tick</em> a ver qué
+tal, a ver cómo lo veo”, ¿de acuerdo?, y si ves que no lo ves claro pues
+podrías entonces decantarte más al 0.25.</p>
+<p>Pero nosotros aquí nos quedaríamos con el 0.20 porque 2400
+operaciones con dos <em>inputs</em> solo, además optimizados de manera
+separada, está realmente bien.</p>
+<p>Que es esto, luego no quiere decir que lo operemos en las 100
+acciones, de esto ahora perfectamente podríamos luego pues operar las 10
+acciones de mayor capitalización por ejemplo, por elegir un criterio, no
+debería de operar las 100, también podría hacerlo, pero que no es
+obligatorio, no quiero decir que esto lo estamos haciendo para validar
+la estrategia, para tener una mayor significación estadística, pero no
+es obligatorio que luego en nuestro plan operativo usemos todas las
+acciones.</p>
+<p>Pues aquí hemos bloqueado 0.20:</p>
+<p><em>in sample</em> <img src="../img/036.png" /></p>
+<p>0.20 está a mitad de tabla en el caso <em>out of sample</em>:</p>
+<p><em>Out of sample</em>: <img src="../img/034.png" /></p>
+<h3 id="optimización-3">Optimización 3</h3>
+<p><strong>Filtro de volatilidad <code>ATR</code></strong></p>
+<p>Vamos con la tercera. La tercera hemos ido a probar un filtro que es
+totalmente opcional y no es obligatorio, pero hemos querido ver, hemos
+querido ver porque queríamos introduciros un filtro de volatilidad aquí
+para un tendencial y así pues ya explicároslo, pero como digo no es
+obligatorio, pero lo hemos probado. Bueno, para ver un poco cómo
+oscilaba, que este sí que teníamos muy claro que no le íbamos a dejar
+este nivel de granularidad, pero queríamos ver un poco, queríamos
+analizar cómo se movía el tema, de acuerdo, y hemos dejado el 6 fijo,
+hemos fijado el 20 y hemos dejado el filtro ATR que es el
+multiplicador.</p>
+<figure>
+<img src="../img/037.png" width="600">
+<figcaption>
+Figura 037
+</figcaption>
+</figure>
+<p>Ahora os voy a enseñar en el gráfico. Ha quedado claro. También hemos
+dejado oscilar 25, vale. Esto, esto ¿cómo funciona?, vale, esto ¿cómo
+funciona?</p>
+<p>En el gráfico, aquí abajo, fijaros, tengo dos ATRs pintados: es el de
+22. ¿Por qué 22? Bueno, porque es un mes más o menos, sin más, no lo
+hemos optimizado.</p>
+<p>Al final lo que queremos es ver si la volatilidad va a variar, nos
+hace un filtro. Volatilidad lo que hace es comparar la volatilidad
+actual con la volatilidad de x periodo. Hay varias maneras de hacerlo:
+eso que te crea la <code>desviación estándar</code>, hay algún estudio
+con el <code>VIX</code> que espero en el curso poder mostrar alguno, de
+acuerdo, con la curva del VIX, método poco avanzado y creo que no tocaba
+en este momento del curso, y este es un método sencillo que al final
+tiene bastantes… aporta, aporta valor. Aporta más valor en los sistemas
+de ruptura y tendenciales que no en tendencia pura, pero bueno, lo hemos
+querido meter para explicároslo y ya está, y se puede usar.</p>
+<p><img src="../img/207.png" /></p>
+<p>Simplemente comparar, lo que os digo, la volatilidad actual —la
+volatilidad de hoy, de la vela actual, es Apple— y pues la volatilidad
+de hoy es la barra amarilla, con la volatilidad media del último
+mes.</p>
+<p><img src="../img/208.png" /></p>
+<p>Como veis es bastante más alta, es decir, está haciendo todos estos
+últimos días, como veis, está teniendo una volatilidad baja, de acuerdo,
+para su volatilidad media del mes. Y esto es lo que evaluamos
+simplemente, de acuerdo.</p>
+<p><strong>code</strong> : <a
+href="../../13-practice-03/code/CURSO_SISTEMA_RUPTURA_ACCIONES.ELD">../../13-practice-03/code/CURSO_SISTEMA_RUPTURA_ACCIONES.ELD</a></p>
+<p>Ese filtro consiste en el código simplemente en que, si esa
+volatilidad por un multiplicador —que vamos a suponer que es uno, vamos
+a suponer que el multiplicador es uno, con lo cual no es importante
+decir que es la volatilidad— si esa volatilidad de hoy es menor que la
+volatilidad de todo el mes, si eso se cumple, es decir, si la
+volatilidad de hoy es menor, entonces puedo operar. Si la volatilidad es
+mayor, no.</p>
+<pre><code>// Filtro de volatilidad
+If Filtro_ATR &gt; 0 then
+    Condition1 = TrueRange &lt; AvgTrueRange(22)[1] * Filtro_ATR
+else
+    Condition1 = true;</code></pre>
+<div style="border-left: 4px solid #ff9800; background: #fff3e0; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<strong>📉 Lógica del filtro de volatilidad</strong><br><br> El filtro
+compara el <em>True Range</em> de la vela actual con el <em>ATR</em>
+medio de 22 periodos (aproximadamente un mes). Si la volatilidad actual
+es <strong>menor</strong> que la media × multiplicador → permite operar.
+Si es <strong>mayor</strong> → bloquea. Esto se basa en que el mercado
+tiende a subir con baja volatilidad y caer con alta volatilidad.
+<br><br> Esto es el filtro podemos decir natural para ir largo en
+tendencia, porque normalmente sabemos que el mercado sube con poca
+volatilidad y baja con más volatilidad. Entonces, cuando la volatilidad
+está alta, normalmente —por eso está el filtro así— lógicamente habrá
+veces que no, pero normalmente el mercado está nervioso, el mercado está
+tenso y así no se sube, de acuerdo. El mercado tiende a subir tranquilo.
+<br><br> Es verdad que cuando hay una vuelta del mercado bajista, pues
+ahí esto puede hacerte… este filtro que a lo mejor tardes un poco en
+volver al mercado hasta que no se tranquilice, pero bueno, pues
+perfecto. Al final lo que hace es tratar de eliminar operaciones cuando
+hay volatilidad elevada, es decir, cuando la volatilidad de hoy es más
+alta que la media.
+</div>
+<p>Podría incluso probarse con más, que en vez de la del mes
+<strong><em>que fuera la del trimestre</em></strong>. Es decir, estaría
+bien, es decir, estaría bien porque a lo mejor “es que no, yo sabes que
+como voy de largo plazo prefiero evaluar contra la volatilidad de más
+periodos”. Lo podemos mirar. Hemos hecho con un mes, pero hubiera tenido
+perfectamente sentido hacerlo con más. Con lo que os digo, porque al
+final, pues yo que sé, vais a ver que se vuelve mucho más tranquilo. No
+le pongo pues 60 días, por decir algo. 60 días</p>
+<p><img src="../img/209.png" /></p>
+<p>es que, pues, se vuelve más estable, de acuerdo, se vuelve más
+estable. Seguimos teniendo una volatilidad baja pero se vuelve un
+poquito más… bueno, más cómo decirlo… más rígida. , pero al final tiene
+más periodos recogidos, entonces tendría las dos cosas sentido y habría
+que evaluar un poquito muchas acciones. Nosotros lo hemos hecho con un
+mes, en la <strong>Optimización 3</strong> rango <code>25</code> He
+dejado el <em>Filtro_ATR</em> de 0 a 2.40 por dejar 25, pero ya os digo
+que no en este caso no le vamos a hacer; queríamos simplemente
+analizarlo, ver un poco el mapa.</p>
+<figure>
+<img src="../img/037.png" width="600">
+<figcaption>
+Figura 037
+</figcaption>
+</figure>
+<p><img src="../img/040.png" /></p>
+<p>Y ese 73.94 (<strong>L</strong>) fijaros es el clásico ejemplo de
+poca significación estadística. Este, con un 0.2 multiplicador, pero
+tampoco… que realmente no opera nunca. Entonces bueno, no, lógicamente
+no tiene sentido. En la columna ATR con cero, con cero para que lo
+tengáis en cuenta, equivale a no usarlo. Es decir, <code>cero</code>,
+este valor que os marco equivale a no usar filtro. Es la versión sin
+filtro y da un <em>recovery</em> de 2.54. Aquí coloca muy bien. Hay
+alguno que coloca ligeramente mejor —ligeramente, sí, no, incluso
+bastante mejor— pero también el no usarlo queda bastante equilibrado.
+Vamos a ver el mapa, vamos a ver el mapa en <em>in sample</em>.</p>
+<p><img src="../img/041.png" /></p>
+<p>Aquí el 0.1, pues, queda esta bestial bajada y a partir de ahí, pues
+a partir de 1, estabiliza mucho por <em>Sharpe ratio</em> y sí que aquí,
+entre la zona de 0.9, 1, 1.1, es donde tienes… es decir, en
+<code>1</code>, de acuerdo. Ahí está claro que nos quedaríamos con 1,
+que es lo que os decía. Este realmente nunca lo dejaríamos así. Lo
+podemos usar en 0, en 1, en 2, si me apuras un 1 y medio, vale. 1 se
+suele hacer así: el ATR, un ATR y medio, 2 ATRs, 3 ATRs, de acuerdo. No
+vamos a ir a 1.3 ATRs, os decía del sentido común y la lógica en cuanto
+a los incrementos, de acuerdo. No vamos a poner 0.33 ATRs, vale, porque
+eso es una sobreoptimización de manual, de acuerdo, manual.</p>
+<p>Aquí tienes la fórmula integrada de forma precisa para tu
+notebook:</p>
+<div style="border-left: 4px solid #4caf50; background: #e8f5e9; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<p><strong>📊 Recovery Factor</strong></p>
+<p>El <em>recovery</em> —recovery simplemente el nombre, no importa
+porque no en todas las plataformas se llama recovery— es <em>net
+profit</em> partido por <em>drawdown</em>. Como el <em>drawdown</em>
+está negativo, se multiplica por menos 1, se cambia de signo para que no
+tenga un valor negativo. Es un buen estimador de retorno-riesgo a nivel
+de portfolio.</p>
+</div>
+<p><span class="math display">\[Recovery Factor = \frac{Net Profit}{|Max
+Intraday Drawdown|}\]</span></p>
+<p>En <em>TradeStation</em> está el <code>TSI</code>, que es justamente
+este ratio multiplicado por los <em>winners</em>, que es el número, el
+porcentaje de ganadoras de <em>trades</em> acertados, vale. Es otro
+ratio que se llama <em>TradeStation Index</em>, que es de este estilo.
+Vale. Cuando hablamos de las funciones <em>fitness</em>, pues hablamos
+muchísimo de esto: de retorno y <em>drawdown</em>, y hablamos de
+retorno-riesgo. De muchos, y os dije que todos tienen mucha correlación
+y que a nosotros nos gusta mucho el <em>Sortino</em>, vale. Trabajé
+muchos <em>Sortinos</em>, ¿os acordáis? Y también nos gusta bastante
+<em>Loopy</em>, vale. Los iremos viendo durante el curso, de acuerdo,
+los iremos viendo, no os preocupéis.</p>
+<p>Aquí me interesa ir introduciendo las cosas poco a poco, y en este
+sistema tendencial —que acordaros hablamos que es para un perfil de
+medio-largo plazo, que no necesita una implicación, una dedicación
+continua, que no quiere estar todo el día pendiente del mercado— pues
+bueno, buscamos de entrada una estrategia de este estilo y decidimos
+usarlo por Donchian porque había salido mucho en el curso. Haremos
+muchas más cosas y veremos distintos ratios, pero al final es un ratio
+de retorno-riesgo, de acuerdo. Que al final casi siempre son los que son
+más interesantes, de acuerdo. Ratios de retorno-riesgo. Porque al final
+retorno es lo que nos interesa ganar, pero el riesgo nos interesa mucho
+controlarlo, porque cuando uno no controla riesgos se va a tomar viento
+a la farola. Entonces no queremos irnos a tomar viento del mercado, y
+sobre todo cuando uno empieza debe fijarse más que nada en el riesgo,
+porque
+<code>el riesgo es lo que nos saca de la partida, es lo que nos envía para casa y no podemos permitir que nos envíen para casa</code>,
+de acuerdo. Eso es lo que no podemos permitir bajo ningún concepto, y
+por eso es vital, vital, vital controlar el riesgo.</p>
+<p>Ale, vamos al <em>out of sample</em>, estamos evaluando el filtro,
+estamos evaluando el filtro por sí solo habiendo bloqueado el canal,
+habiendo bloqueado el canal en seis, que francamente podría haber estado
+en otro, y en 0.20 el <em>trailing</em>, que también había varios pero
+sí que pues por ahí parecía equilibrar bastante bien.</p>
+<p>Aquí hay combinaciones como habéis visto antes 0.1, 0.2, pues el
+<em>out of sample</em> en este caso dan 0 y fijaros tiene divisor por 0
+porque es que no llega ni a operar, el <em>out of sample</em> no hace
+<em>trades</em>, pero aparte de eso es que en <em>out of sample</em>
+justo el valor 1 es el que queda mejor colocado en el retorno, en
+retorno-riesgo.</p>
+<p><img src="../img/042.png" /></p>
+<p>Vamos a ver el mapa opti 3:</p>
+<p>La parte baja pues no vale la pena ni comentarlo y a partir de ahí
+0.9, 1, 1.1, 1.2, 1.5, toda esta zona, que ahí cuidado el caso 1.7 veces
+para que empieza a degradar, en la zona de 1 la verdad que está
+bastante, 1, 1.2 está bastante cómodo, bastante cómodo. Ahí también aquí
+en el <em>recovery</em> pues se aprecia poco, eso es el
+<em>recovery</em>, al final se aprecia un poco eso, el 0 coloca bien, en
+0 coloca bien.</p>
+<p><img src="../img/043.png" /></p>
+<p>Vamos a ver en el <em>all data</em> que es donde al final siempre hay
+más <em>trades</em>, por lo tanto más significación estadística, y que
+al final recoge la parte optimizada y la parte no optimizada. Está bien
+analizar el <em>all data</em>, no penséis que la teoría que lo hicimos,
+al final está bien comparar el <em>in sample</em>, comparar el <em>out
+of sample</em> es muy importante, perfil de optimización acordaros, y
+bastante interesante esto del <em>out of sample</em> por delante, el
+<em>out of sample</em> por detrás, moverlo de acuerdo, mover la muestra,
+que es parecido a lo que hace el BRaC, pero nosotros no le hemos puesto
+nombre, pero es parecido a lo que hace el BRaC. Pero al final la
+elección puede perfectamente hacerse con el <em>all data</em>, de
+acuerdo, pero siempre que haya significación y que sea concordante con
+lo que hemos visto en el <em>out of sample</em> y el <em>in sample</em>,
+al final eso es la unión de los dos.</p>
+<p>De hecho Kaufman, y es lo comparto, una cosa es la variación de la
+cosa y es la selección de parámetros, él decía “yo para elegir los
+parámetros cojo la optimización hasta ayer”, solo decía Kaufman
+(probablemente referencia a Perry Kaufman, autor de “Trading Systems and
+Methods”), hasta ayer, ¿por qué?, porque me interesa, me interesan todos
+los datos disponibles, yo ya he evaluado el sistema, considero que es
+robusto, considero que la franja de optimización, imaginaos aquí la zona
+de entre 6 y 12 por ahí, vale, y el <em>trailing</em> pues lo voy a
+dejar ya fijo en 0.20, voy a ver el canal, bueno pues a lo mejor
+optimizo solo el canal con 0.20, filtro el filtro en 1 y el
+<em>trailing</em> en 0.20, y le voy a optimizar solo el canal, le meto
+todo el histórico que tengo y le meto hasta el último día, y con eso
+elijo… puedo perfectamente hacer eso. Sería un comportamiento correcto
+con la idea ya validada, con la idea ya validada y considerada robusta,
+y en la zona que yo voy a operar, y ahí la elección la haría mirando
+varios casos, miraría <em>Sortino</em>, de acuerdo, <em>in sample</em>,
+<em>out of sample</em> de distintos ratios, miraría aquí
+<em>recovery</em>, pero podría hacerlo con el <em>all data</em> y
+optimizado hasta el último día, perfectamente.</p>
+<p><img src="../img/211.png" /></p>
+<p>Aquí veis lógicamente los primeros con un <em>recovery</em> muy alto
+porque no operan, pero luego pues ya nos vamos a ir 1.4, 0.4, 0… aquí el
+1 cae un poquito más, nos sale en <em>recovery</em> también puntual, de
+hecho el <em>recovery</em> sale bastante mejor el 0, bastante mejor el 0
+que el 1. Con lo cual aquí operarlo o no está dudoso, está dudoso, está
+dudoso, ¿por qué dudoso? Bueno, es algo que es normal, porque eso que os
+digo,</p>
+<blockquote>
+<p>en los tendenciales puros los filtros no son tan eficaces, donde son
+muy eficaces es en los sistemas de <em>breakout</em></p>
+</blockquote>
+<p>que este lo haremos <em>breakout</em> no hoy, lo podemos plantear
+pero no lo hemos analizado, que hemos hablado de él, pero como
+<em>breakout</em> es probable que aporte más, es probable que aporte,
+que aporte más, aquí es discutible, aquí es discutible, pero lo
+queríamos explicar y ver cómo lo hubiéramos analizado, que es un poco al
+final, de acuerdo, no metido a saco todo optimizado y a ver qué nos
+sale, no claro, lo veremos eso también, ahora veremos todo optimizado a
+ver qué nos ha salido.</p>
+<p>Vamos a ver el mapa y lógicamente los valores bajos, pero ahí veis a
+partir de 1 pues queda bastante estabilizado, lógicamente el 0 también
+está ahí pues bastante alto, vale, pero aquí eso, 0 o 1, de acuerdo, no
+hay más, es el juego que yo haría, un poco el 0 o 1. Por
+<em>recovery</em> aunque es un tanto precipitado, no es tan concluyente
+esto, <em>recovery</em> tampoco es la panacea, quiero decir que si
+<em>recovery</em> no da, pues ya no… no, no es así, hay otros factores,
+pero sí digo poco, los dos candidatos, de acuerdo, aquí tenemos 2.400 y
+tenemos 2.200.</p>
+<p><img src="../img/212.png" /></p>
+<p>Yo aquí francamente con esta información no lo veo muy claro, que
+habría que realizarlo un poco mejor, pero sí que perdemos 206
+<em>trades</em>… en un filtro es para perder <em>trades</em>… cuidado…
+sí es lo que pasa, que fijaros que ganamos un poquito de <em>profit</em>
+pero perdemos <em>drawdown</em>… entonces a costa de ese <em>profit</em>
+no sales ganando, realmente no acaba de conseguir reducir el riesgo que
+es quizá donde más debe actuar el filtro, ¿de acuerdo? Saqué un filtro,
+al final, ¿qué estoy buscando yo? Estoy buscando pues evitar
+<em>trades</em> negativos, es verdad que mejora el porcentaje de acierto
+que es lo lógico, pero no mejora el <em>drawdown</em>, esto habría que
+profundizar un poco más. Podemos hacer <em>Maestro</em>, vamos a
+intentar mirarlo, <em>Maestro</em> había pensado cuando hagamos la
+pausita de cinco minutos tratar de montarlo y lo podemos mirar. Pero yo
+con esta información en el filtro la verdad no lo veo</p>
+<div style="border-left: 4px solid #e91e63; background: #fce4ec; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<strong>⚠️ Evaluación de filtros: criterio clave</strong><br><br> Un
+filtro debe principalmente <strong>mejorar el perfil de riesgo</strong>
+(reducir <em>drawdown</em>), no solo el <em>profit</em>. Si un filtro
+mejora ligeramente el rendimiento pero empeora o no mejora el
+<em>drawdown</em>, su utilidad es cuestionable. Los filtros de
+volatilidad son más eficaces en sistemas de <em>breakout</em> que en
+tendenciales puros.
+</div>
+<h3 id="optimización-4">Optimización 4</h3>
+<p>Le he hecho toda junta porque queríamos mostraros el mapa 3D. Hemos
+hecho esta optimización junta. ¿Qué es la optimización junta? Pues:</p>
+<ul>
+<li>El canal de 1 a 25</li>
+<li>El <code>Prc_Trail</code> (<em>trailing</em>) de 6 a 30 — de 6 hemos
+visto que no, pero por hacer la misma</li>
+<li>Y el filtro <code>Filtro_ATR</code> 0 o 1, simplemente, es decir, no
+o sí pero con uno</li>
+</ul>
+<p>También quizá mejor, en vez de 22, va mejor poniéndole más, un
+periodo mayor. La verdad que no lo hemos mirado, pero podríamos; podemos
+directamente mirarlo, nos llevaría mucho rato. Y puede ser porque a lo
+mejor simplemente la volatilidad de un mes pues es una comparación
+demasiado cercana, pudiera ser. Pero vaya, así justito sí que da una
+cierta mejora, pero no en el <em>recovery</em>: da una cierta mejora en
+rendimiento pero el <em>drawdown</em> empeora, así que no me convence
+porque <strong>un filtro es, sobre todo, para mejorar el perfil de
+riesgo</strong>.</p>
+<figure>
+<img src="../img/213.png" width="800">
+<figcaption>
+Figura 213. Configuración de la optimización conjunta de 3 variables.
+</figcaption>
+</figure>
+<p>Pero bueno, hemos hecho esa optimización. Aquí ya tenemos 1.250
+combinaciones con las 100 acciones, ya es un poquito más intensiva. Pero
+realmente, por los grados de libertad que hay, se podría hacer. Pero
+bueno, yo he preferido enseñároslo así para que lo vierais paso a
+paso.</p>
+<div style="border-left: 4px solid #3498db; background: #ebf5fb; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<strong>📊 Grados de libertad en optimización</strong><br><br> Los
+<em>grados de libertad</em> se refieren a la relación entre el número de
+parámetros optimizados y el número de operaciones (<em>trades</em>)
+disponibles. A mayor número de combinaciones probadas respecto al número
+de <em>trades</em>, mayor riesgo de <em>overfitting</em>. Con 1.250
+combinaciones y miles de operaciones agregadas de 100 acciones, la
+proporción sigue siendo razonable.
+</div>
+<h4 id="resultados-in-sample"><strong>Resultados In Sample</strong></h4>
+<p>Bien, tenemos aquí el <em>in sample</em>. Fijaros que nos da en el
+<em>in sample</em> el mejor: el filtro activado, 25 (<strong>L</strong>)
+y 0.12 (<strong>M</strong>), es decir, bastante distinto a lo que hemos
+elegido, muy distinto.</p>
+<figure>
+<img src="../img/049.png" width="800">
+<figcaption>
+Figura 049. Resultados de la optimización conjunta en periodo in sample.
+</figcaption>
+</figure>
+<p>Vamos a ver el mapa de esto <em>in sample</em>. Aquí podemos ver el
+mapa en 2D mirando a una variable:</p>
+<figure>
+<img src="../img/050.png" width="800">
+<figcaption>
+Figura 050. Mapa de optimización 2D.
+</figcaption>
+</figure>
+<p>O podemos mirar el mapa en 3D. Esto sería bloqueando el 1:</p>
+<figure>
+<img src="../img/214.png" width="800">
+<figcaption>
+Figura 214. Mapa de optimización 3D con filtro ATR bloqueado en 1.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/215.png" width="800">
+<figcaption>
+Figura 215. Vista alternativa del mapa 3D.
+</figcaption>
+</figure>
+<p><strong>Análisis de estabilidad del canal</strong></p>
+<p>Lo que os decía: el canal, veis, el canal es muy estable.</p>
+<figure>
+<img src="../img/052.png" width="800">
+<figcaption>
+Figura 052. Perfil de estabilidad del canal Donchian.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/053.png" width="800">
+<figcaption>
+Figura 053. Detalle de la zona estable del canal.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/054.png" width="800">
+<figcaption>
+Figura 054. Visualización del gradiente de rendimiento por canal.
+</figcaption>
+</figure>
+<p>Acordaros lo que hicimos en Excel. Esto es lo que vemos en Excel, que
+ya os lo comenté. <em>MultiCharts</em> lo hace porque no tenemos en
+Excel — también lo podemos hacer en Excel, pero <em>MultiCharts</em> lo
+incorpora, es bastante interesante.</p>
+<p>Aquí en las partes bajas del canal, cómo degrada muchísimo; pero a
+partir de 5 o 6 ya es bastante estable, bastante estable.</p>
+<figure>
+<img src="../img/055.png" width="800">
+<figcaption>
+Figura 055. Degradación en canales cortos vs estabilidad en canales 5-6
+en adelante.
+</figcaption>
+</figure>
+<p><strong>Zona del filtro ATR y trailing 0.20</strong></p>
+<p>Y la zona del filtro ATR 1 en (0.20) sí que hemos quedado un poco
+bajo. Parece que es más alto, pero lo que les decíamos de los
+<em>trades</em>. Pero hay que verlo, hay que verlo: 0.20 está ahí al
+borde de degradar, está al borde de degradar, está un poquito justito.
+Pero 0.20 es un poquito justito. Ese es con el filtro activado:</p>
+<figure>
+<img src="../img/056.png" width="800">
+<figcaption>
+Figura 056. Mapa con filtro ATR activado (=1) y trailing 0.20.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/057.png" width="800">
+<figcaption>
+Figura 057. Detalle de la zona crítica en trailing 0.20.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/058.png" width="800">
+<figcaption>
+Figura 058. Perspectiva adicional del mapa con filtro activado.
+</figcaption>
+</figure>
+<p><strong>Análisis con filtro desactivado</strong></p>
+<p>A partir de ahora con el <strong><code>filtro 0</code> -
+desactivado</strong>:</p>
+<figure>
+<img src="../img/059.png" width="800">
+<figcaption>
+Figura 059. Mapa de optimización con filtro ATR desactivado (=0).
+</figcaption>
+</figure>
+<p>Fijaros: con el filtro desactivado parece que alarga un poco más esta
+zona de 0.20, parece que la llanura llega un poquito más allá.</p>
+<figure>
+<img src="../img/060.png" width="800">
+<figcaption>
+Figura 060. Extensión de la zona estable con filtro desactivado.
+</figcaption>
+</figure>
+<p>El perfil es muy parecido:</p>
+<figure>
+<img src="../img/061.png" width="800">
+<figcaption>
+Figura 061. Comparación de perfiles con filtro activado vs desactivado.
+</figcaption>
+</figure>
+<p>Pero ya vemos que toda esta zona 0.20, 0.25, en el caso del filtro y
+Donchian, pues ya digo desde 6, 7, 8, 10, 20, es decir, es muy estable,
+es muy estable, tiene pocas diferencias.</p>
+<figure>
+<img src="../img/062.png" width="800">
+<figcaption>
+Figura 062. Zona de estabilidad canal 6-20 con trailing 0.20-0.25.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/063.png" width="800">
+<figcaption>
+Figura 063. Vista detallada de la meseta de estabilidad.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/064.png" width="800">
+<figcaption>
+Figura 064. Confirmación visual de la zona estable.
+</figcaption>
+</figure>
+<p><strong>El concepto de mapa de optimización</strong></p>
+<p>Al final, ¿qué está indicando? Lo que muestra es
+<em>estabilidad</em>, simplemente es estabilidad, lo que es lo que
+queremos. Esto es lo que llamamos un <strong>mapa de
+optimización</strong>, que hay muchos nombres en la literatura
+dependiendo de nombres más <em>guays</em> como todos, pero esto es el
+mapa de optimización de toda la vida que hemos hecho, que nos va a
+mostrar la sensibilidad de variables. A mí, ¿qué me interesa? Pues
+variables que sus vecinos estén bien, decir: esto es bien, esto es
+bien.</p>
+<div style="border-left: 4px solid #4caf50; background: #e8f5e9; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<strong>📏 Principio del “buen vecino”</strong><br><br> En un mapa de
+optimización, un parámetro robusto debe tener <em>buenos vecinos</em>:
+los valores adyacentes también deben funcionar bien. Un pico aislado
+(máximo rodeado de valores pobres) es señal de <em>overfitting</em> y
+probablemente no se mantendrá fuera de muestra.
+</div>
+<p><strong>Análisis del trailing (Prc_Trail)</strong></p>
+<p>Para el lado del canal, para el lado del <em>trailing</em>
+<code>Prc_Trail</code>, parece que degrada más:</p>
+<figure>
+<img src="../img/065.png" width="800">
+<figcaption>
+Figura 065. Perfil de degradación del trailing stop.
+</figcaption>
+</figure>
+<p>Pero tiene un punto falso porque, como lo hemos granulado tanto, la
+mente nos sesga un poco. Por eso viene bien el <em>watermark</em>
+este:</p>
+<figure>
+<img src="../img/066.png" width="800">
+<figcaption>
+Figura 066. Mapa con watermark para evitar sesgo visual.
+</figcaption>
+</figure>
+<p>Para evitar no ver un poco eso, no nos sesga. Pero realmente también
+es bastante grande la zona, también es bastante grande. Tenemos una zona
+aquí en el lomo de la parte verde realmente grande. Que sí que quizás
+más 0.25 habría que estudiarlo mejor. Esto yo me he quedado en el 0.20
+por lo que os he dicho, los <em>trades</em>, porque considero tener
+suficiente margen todavía para caerme mucho. Pero es verdad que 0.25 se
+ve más cómodo a nivel de estabilidad, se ve más cómodo, y que incluso el
+6 lo mismo.</p>
+<figure>
+<img src="../img/067.png" width="800">
+<figcaption>
+Figura 067. Zona de confort: canal 6, trailing 0.25.
+</figcaption>
+</figure>
+<p>En 6 quizá se ve un poco más cómodo. La zona de 15, de 12, 12, 0.25
+quizá parece más estable, parece más estable en este gráfico, de ese
+orden. Pero bueno, que estamos en el <em>in sample</em>.</p>
+<p><strong>Transición al Out of Sample</strong></p>
+<p>Vamos ahora al <em>out of sample</em> a ver qué conclusiones sacamos
+aquí:</p>
+<figure>
+<img src="../img/069.png" width="800">
+<figcaption>
+Figura 069. Resultados de la optimización en periodo out of sample.
+</figcaption>
+</figure>
+<p>Lo que hemos dicho. Aquí parece en el mapa, a mí lo que veo un
+poquito más estable es esta zona, aquí más o menos es
+<strong>12</strong>, es este <strong>12</strong> por ahí, 16, pero 0.12,
+0.11 — claro, es que hay mucho <em>trailing</em> ahí, todos están ahí,
+es en la zona de <em>recovery</em> alto. <strong>¡No 0.12 no! Perdón,
+0.20 pico, perdón, perdón, me equivocaba.</strong> Esto es demasiado
+bajo:</p>
+<figure>
+<img src="../img/065.png" width="800">
+<figcaption>
+Figura 065. Referencia: trailing demasiado bajo.
+</figcaption>
+</figure>
+<p>Fijaros que ahí nos están saliendo que los mejores da muy bajo. 0.12
+da un <em>recovery</em> — <em>recovery</em> de equilibrio entre retorno
+y riesgo — da muy bajo. Que estamos mirando en el <code>profit</code>,
+podíamos mirar también <em>recovery</em>. Por el <em>recovery</em> no
+porque no lo metí en el modelo. Podría mirar <em>drawdown</em> por
+ejemplo, podría mirar el <em>drawdown</em>:</p>
+<figure>
+<img src="../img/070.png" width="800">
+<figcaption>
+Figura 070. Mapa por drawdown.
+</figcaption>
+</figure>
+<p><strong>Análisis por drawdown</strong></p>
+<p>Ese es el <code>drawdown</code>. Fijaros que cambia completamente: el
+<code>profit</code> lo da en la parte alta, el <em>drawdown</em> lo da
+bajo, en el 0 a 0.8.</p>
+<figure>
+<img src="../img/071.png" width="800">
+<figcaption>
+Figura 071. Zona óptima por drawdown: trailing 0-0.8.
+</figcaption>
+</figure>
+<p>Por eso viene bien el <em>recovery</em>. No lo podía haber metido
+como <em>fitness</em> pero no lo he hecho, entonces ahora no lo puedo.
+Lo podía hacer pero lo tendría que hacer, lo podía ver con un archivo,
+para prepararlo y no lo tengo listo.</p>
+<p><strong>Análisis por Sharpe ratio</strong></p>
+<p>Lo que sí que podemos meter aquí es el <em>Sharpe ratio</em>, el
+<strong>Sharpe ratio este falso</strong> que tenemos. Pero bueno, ya
+digo que es falso pero sirve un poco:</p>
+<figure>
+<img src="../img/072.png" width="800">
+<figcaption>
+Figura 072. Mapa por Sharpe ratio (calculado sistema a sistema).
+</figcaption>
+</figure>
+<p>Veis como al final lo que os digo: en esas zonas sigue tirando más
+para el <em>profit</em> y aquí se ha igualado más, ya no es tan
+dramático la caída, porque el riesgo en la parte baja también lo
+considera bajo cuando lo consideraba. Pero estaría bien verlo en el
+<em>recovery</em>, que un poco lo vemos aquí, pero eso que os digo, el
+<em>recovery</em> cambia un poco. Pero por <em>net profit</em> ahí el
+mapa en el <em>profit</em> está bien, está bien, está bien también
+teniendo en cuenta dónde saldrá el <em>drawdown</em>. Pero
+<em>recovery</em> estaría muy bien.</p>
+<p>Pero fijaros cómo estabiliza en este <em>Sharpe ratio</em>:</p>
+<figure>
+<img src="../img/073.png" width="800">
+<figcaption>
+Figura 073. Zona absolutamente plana en Sharpe ratio.
+</figcaption>
+</figure>
+<p>La zona ya se vuelve absolutamente plana, plana, plana, tanto con 0
+como con 1 ATR.</p>
+<p>Se nota planísima, realmente es enorme. Aquí hay un poco de cráter
+pero si es ahí de la zona 0.25 es donde empieza la zona plana, lo que
+pasa que está ahí también lo de los <em>trades</em>.</p>
+<figure>
+<img src="../img/074.png" width="800">
+<figcaption>
+Figura 074. Inicio de la zona plana en trailing 0.25.
+</figcaption>
+</figure>
+<p>Bueno, este es el <em>in sample</em>.</p>
+<h4 id="análisis-del-out-of-sample"><strong>Análisis del Out of
+Sample</strong></h4>
+<figure>
+<img src="../img/075.png" width="800">
+<figcaption>
+Figura 075. Datos del periodo out of sample.
+</figcaption>
+</figure>
+<p>Es muy, muy interesante, un poco para que veáis cómo tenemos que
+analizar los sistemas de este tipo, que al final tienen pocas
+operaciones. Lo que hacemos es juntar acciones y, a través de ellas —
+que esto quiere decir que no va a ir óptimamente en ninguna, pero va a
+tener un buen equilibrio entre todas — por tanto es más robusto. Mucho
+más robusto adaptarse a todas que adaptarse a una aparentemente mejor.
+Adaptarse a una, sí claro, si tienes la certeza de que el ajuste va a
+ser igual en el futuro, sí. Pero esto se explica mucho en la teoría: al
+final no tenemos certeza sobre el futuro, tenemos que tratar de poner
+las probabilidades a nuestro favor, y eso pues lo hacemos sobre todo
+priorizando la robustez, como con este ejemplo que estoy poniendo.</p>
+<div style="border-left: 4px solid #f39c12; background: #fff8e5; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<strong>⚠️ Filosofía de robustez sobre optimización</strong><br><br> La
+clave no es encontrar el parámetro que <em>mejor</em> funciona en el
+histórico, sino el que funciona <em>razonablemente bien</em> en
+múltiples condiciones. Un sistema que no va óptimamente en ninguna
+acción pero tiene buen equilibrio entre todas es más robusto que uno
+optimizado para una sola.
+</div>
+<p>Bien, aquí en el <em>out of sample</em> bajamos número de
+<em>trades</em>. Y aquí fijaros que el mayor <em>recovery</em> lo da a
+cero, el canal en uno y 0.11 por decir súper rápido, operando un montón.
+Pero fijaros que, pues, bajando bastante el rendimiento pero también el
+<em>drawdown</em>… y cuidado, también el <em>drawdown</em>. Interesante,
+¿no?</p>
+<p>Aquí en la mayoría, todos, porque como ni fijaros que están en el 1,
+en el 2, en el canal… el canal súper bajo, hasta que no llegas aquí 11,
+5, 20, no empiezan a aparecer algunos otros. Pero realmente lo dan los
+<em>sets</em> que son muy, muy rápidos.</p>
+<p><strong>Consideraciones sobre slippage</strong></p>
+<p>Aquí, insisto, que convendría hacer más sensibilidad al <em>slip</em>
+y tener claro que uno puede ser — dependiendo de qué acción — un poco
+justo, un poco justo. De hecho, en los futuros muchas veces metemos uno
+y medio aunque es… depende, porque aquí vamos, compramos en realidad en
+la apertura. La apertura tiene mucha, mucha volatilidad, entonces no
+necesariamente el <em>slip</em> de apertura tiene que ser contrario,
+porque como vamos en ruptura pero de datos de cierre, a veces entra
+mejor. Es decir, no es un <em>slip</em> como claro, pero hay que contar
+que de media lo normal es que sea negativo, pero habrá muchos que serán
+positivos en este tipo de entrada.</p>
+<p>Es aquí lo que os digo: ya las optimizaciones como que no son tan
+claras porque hay demasiadas variables. Y por eso lo que os he enseñado
+de esto paso a paso. No siempre es mejor de esta manera, no hacerlo de
+manera independiente, que también se puede hacer y podemos también sacar
+conclusiones con una optimización global, no está mal. Pero es mejor
+práctica hacerlo una a una, hacer conceptos independientes: primero el
+canal para la entrada, luego para la salida.</p>
+<p><strong>Mapas Out of Sample</strong></p>
+<p>Bien, vamos a ver el mapa <em>out of sample</em> — estamos en
+<code>Net Profit</code>:</p>
+<figure>
+<img src="../img/076.png" width="800">
+<figcaption>
+Figura 076. Mapa 3D out of sample por Net Profit.
+</figcaption>
+</figure>
+<p>Fijaros que los vértices, los vértices del <code>trailing</code>
+(Prc_Trail) ya se vuelven más ásperos, los vértices más ásperos. Estamos
+con el filtro activado pero el filtro activado es parecido:</p>
+<figure>
+<img src="../img/077.png" width="800">
+<figcaption>
+Figura 077. Comparación con filtro activado en out of sample.
+</figcaption>
+</figure>
+<p>Cambia un poco pero es parecido. El <code>netProfit</code> cae a
+medida que se va para hacer el canal:</p>
+<figure>
+<img src="../img/078.png" width="800">
+<figcaption>
+Figura 078. Degradación del Net Profit con canales largos en out of
+sample.
+</figcaption>
+</figure>
+<p>Aquí es un poco al revés lo que hemos visto antes: que el canal corto
+rápido — bueno, también porque está afectado por la última parte de
+mercado, los últimos años — y pues bueno, nos ha interesado ahí ser más
+rápido.</p>
+<p><strong>Análisis por drawdown en Out of Sample</strong></p>
+<p>Aquí si metemos <em>drawdown</em>, vamos a ver el gráfico por
+<code>drawdown</code>:</p>
+<figure>
+<img src="../img/079.png" width="800">
+<figcaption>
+Figura 079. Mapa out of sample por drawdown.
+</figcaption>
+</figure>
+<p>Cómo cambia. Se vuelve absolutamente extraño. Donde quiere el canal,
+aquí todo lo contrario: es el canal muy elevado, muy elevado, y con un
+<code>trailing</code> muy rápido, ¿de acuerdo?, muy rápido. Eso es lo
+que quiere para no tener <em>drawdown</em>.</p>
+<figure>
+<img src="../img/080.png" width="800">
+<figcaption>
+Figura 080. Zona óptima por drawdown: canal alto + trailing rápido.
+</figcaption>
+</figure>
+<p>Lógicamente, a nosotros nos interesa el equilibrio porque solo el
+<em>drawdown</em> por sí solo pues no aporta.</p>
+<p><strong>Sharpe ratio en Out of Sample</strong></p>
+<p>Vamos a ver este <em>Sharpe ratio</em> falso que tenemos:</p>
+<figure>
+<img src="../img/081.png" width="800">
+<figcaption>
+Figura 081. Mapa out of sample por Sharpe ratio.
+</figcaption>
+</figure>
+<p>Mucha estabilidad, muy extraño también, mucha, mucha estabilidad aquí
+pero más riesgo como veis en el canal corto.</p>
+<figure>
+<img src="../img/082.png" width="800">
+<figcaption>
+Figura 082. Detalle de estabilidad con mayor riesgo en canales cortos.
+</figcaption>
+</figure>
+<p>Curioso es que línea recta tira aquí con el <em>trailing</em> fijo,
+porque te saca muy rápido: seguramente sale, vuelve a entrar, sale,
+vuelve a entrar, sale, vuelve a entrar, y hace muchísimas operaciones.
+Pero bueno, de esa manera pues ha conseguido evitarse seguramente las
+correcciones.</p>
+<h4
+id="análisis-all-data-la-información-de-ambos-periodos"><strong>Análisis
+<code>All Data</code>: la información de ambos periodos</strong></h4>
+<p>Pues tenemos en <code>Per_canal</code> una sola en el 1 y se va
+rápidamente ya la zona de 20 del canal, alternando entre 0 y 1, no tiene
+mucho sesgo ahí. El <em>trailing</em> más bien bajito, claro, ser más
+bien bajito, que un poquito más de rapidez, y con muchísimos
+<em>trades</em>. Vamos a ver el mapa:</p>
+<figure>
+<img src="../img/083.png" width="800">
+<figcaption>
+Figura 083. Resultados all data ordenados por rendimiento.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/084.png" width="800">
+<figcaption>
+Figura 084. Mapa 3D all data con filtro ATR=1.
+</figcaption>
+</figure>
+<p>Aquí estamos ahora con <code>1 de filtro</code>. Pues vemos inicial
+subida por <code>net profit</code>, como pues lógicamente degrada mucho
+al principio en ese <em>trailing</em> tan rápido. 0.20 todavía está
+justo ahí; parece que 0.25 es mejor <em>profit</em>, se ve cómo se
+estabiliza:</p>
+<figure>
+<img src="../img/085.png" width="800">
+<figcaption>
+Figura 085. Estabilización del profit en trailing 0.25.
+</figcaption>
+</figure>
+<p>Y aquí sí que aparece el canal ya más bajito:</p>
+<figure>
+<img src="../img/086.png" width="800">
+<figcaption>
+Figura 086. Perfil del canal en all data.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/087.png" width="800">
+<figcaption>
+Figura 087. Vista alternativa del perfil del canal.
+</figcaption>
+</figure>
+<p>Es el canal, aparece ahí más bajito, está más bien en 4, 5 y 6, un
+pico pero baja rápido. Y cuidado: bajar rápido y mirar qué peligro tiene
+a la derecha el cercano. Parece mejor esta zona de 8, 10, porque la zona
+de 4 está muy sensible, muy sensible, y además con ese
+<em>trailing</em>:</p>
+<figure>
+<img src="../img/088.png" width="800">
+<figcaption>
+Figura 088. Zona sensible en canal 4-6 con trailing elevado.
+</figcaption>
+</figure>
+<p>Ahí al 0.30, acordaros, ya operando poco.</p>
+<p><strong>Análisis por drawdown</strong></p>
+<p>Si lo vemos en <code>drawdown</code>, es al revés:</p>
+<figure>
+<img src="../img/089.png" width="800">
+<figcaption>
+Figura 089. Mapa all data por drawdown: totalmente inverso al profit.
+</figcaption>
+</figure>
+<p>Es totalmente inverso. Llanura planísima y con el <em>trailing</em>
+muy, muy bajo haciendo un montón de operaciones, pero con muy poco
+retorno como habéis visto antes, tanto en 0 como en 1 de filtro.
+Entonces pues no equilibra.</p>
+<p><strong>Análisis por Sharpe ratio</strong></p>
+<p>Aquí el único dato que tenemos un poco para ver mixto es el
+<em>Sharpe ratio</em> falso:</p>
+<figure>
+<img src="../img/090.png" width="800">
+<figcaption>
+Figura 090. Mapa all data por Sharpe ratio.
+</figcaption>
+</figure>
+<p>Este que tenemos es el único que podemos usar un poco de
+retorno-riesgo de lo que nos permite a nivel de <em>portfolio</em>. A
+nivel de sistema individual tienen más margen. Y fijaros que aquí pues
+sí ya vemos que el Donchian da igual casi, que casi da igual qué
+Donchian cojamos, y que el <em>trailing</em> lo queremos elevado:</p>
+<figure>
+<img src="../img/091.png" width="800">
+<figcaption>
+Figura 091. Estabilidad del canal y preferencia por trailing elevado.
+</figcaption>
+</figure>
+<p>Es verdad que aquí sí que el 0.20 parece tener margen, tener
+tranquilidad, está por aquí. Pero más estable 0.25. Así que viendo estos
+datos sí que quizá parece mejor el 0.25 que 0.20:</p>
+<figure>
+<img src="../img/092.png" width="800">
+<figcaption>
+Figura 092. Comparativa trailing 0.20 vs 0.25.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/093.png" width="800">
+<figcaption>
+Figura 093. Detalle de la zona estable en trailing 0.25.
+</figcaption>
+</figure>
+<h4 id="conclusiones-de-las-optimizaciones"><strong>Conclusiones de las
+optimizaciones</strong></h4>
+<p>Todo esto es en cuanto a las optimizaciones que ya tenía
+preparadas.</p>
+<p>Al final, un gráfico 3D es una representación de parámetros. Lo hemos
+visto en la teoría, en Excel, aquí ya lo habéis visto con
+<em>MultiCharts</em>. Ya os lo dije que teníamos viendo todo de
+distintas fuentes porque lo que importa son los conceptos. No penséis,
+no queráis aprenderlo todo en un sistema porque vamos a ver muchos. Al
+final la idea es una zona estable, es la <em>estabilidad</em>, sin más,
+no tiene más que otro criterio.</p>
+<p>Aquí, en mi opinión, el procedimiento más correcto era, es decir, 1.
+priemro la optimización 1, 2. luego la opti 2 3. y la opti 3, que
+finalmente decidimos no aplicar el filtro. 4. Os he querido hacer esta
+última 4 para que la vierais toda junta, pero es mejor práctica hacerlo
+de la otra manera, es mejor práctica hacerla.</p>
+<div style="border-left: 4px solid #4caf50; background: #e8f5e9; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<strong>📏 Mejor práctica en optimización</strong><br><br> Es preferible
+optimizar los parámetros <em>uno a uno</em> (primero el canal para la
+entrada, luego el trailing para la salida) que hacer una optimización
+conjunta de todas las variables. El enfoque secuencial permite entender
+mejor la sensibilidad de cada parámetro de forma aislada y reduce el
+riesgo de <em>overfitting</em>.
+</div>
+<p>No nos quedemos ahora con elegir el gráfico 3D exacto, aparte que
+ahora voy a ir a <em>MultiCharts</em>, vamos a coger más información. En
+el mapa hay veces que nos servirá muy bien para elegir y hay veces que
+nos servirá poco para elegir la zona, pero sí para ver por dónde van los
+tiros. Y luego yo, como ya os he dicho, puedo acabar eligiendo en el
+Excel — Excel o <em>MultiCharts</em> — en otra herramienta. Me puede
+servir un poco para ver la zona; elegir el valor exacto a veces no me
+resultará evidente, hay veces que sí.</p>
+<p>El mapa es una excelente herramienta de sensibilidad de parámetros,
+para ver por dónde van los tiros, pero no es sota, caballo y rey. La
+elección final, acordaros cuando vimos las clases en la teoría que
+teníamos un Excel que hacíamos trabajando en <em>in sample</em>, el
+<em>out of sample</em>, el <em>all data</em>, por un equilibrio de datos
+y demás.</p>
+<p>Esto <strong><em>al final nosotros lo acabaríamos de afinar en
+</em>Maestro</strong>**. ¿Por qué? Porque a mí la información que me da
+<em>MultiCharts</em> es fantástico porque va muy rápido optimizando, es
+fantástico porque tiene los mapas, pero los datos que me da del
+<em>portfolio</em> son pocos. Entonces, como eso <em>Maestro</em> me da
+más, pues por eso acabo en <em>Maestro</em>.</p>
+<h3 id="análisis-de-backtests-en-maestro">Análisis de Backtests en
+Maestro</h3>
+<p>Vamos a hacer un par o tres de <em>portfolios</em> rápidamente con
+esta información que teníamos. A ver dónde tengo el Excel. Por un lado
+tengo este y por otro lado tengo el Excel.</p>
+<p>Hemos hecho 4 fichas de optis:</p>
+<figure>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; text-align: center">
+<div>
+<img src="../img/217.png" width="400">
+<p>
+<strong>Opti 1</strong>
+</p>
+</div>
+<div>
+<img src="../img/218.png" width="400">
+<p>
+<strong>Opti 2</strong>
+</p>
+</div>
+<div>
+<img src="../img/216.png" width="400">
+<p>
+<strong>Opti 3</strong>
+</p>
+</div>
+<div>
+<img src="../img/213.png" width="400">
+<p>
+<strong>Opti 4</strong>
+</p>
+</div>
+</div>
+<figcaption>
+Figura XXX. Fichas de configuración técnica para las 4 fases de
+optimización del sistema Donchian.
+</figcaption>
+</figure>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 14%" />
+<col style="width: 15%" />
+<col style="width: 14%" />
+<col style="width: 19%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr>
+<th>Optimización</th>
+<th>Per_Canal</th>
+<th>Filtro_ATR</th>
+<th>Prc_Trail</th>
+<th>Combinaciones</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opti 1</td>
+<td>1-25</td>
+<td>0 (fijo)</td>
+<td>0.20 (fijo)</td>
+<td>25</td>
+<td>Evalúa solo el canal. Salida y filtro bloqueados para aislar el
+efecto del periodo del canal.</td>
+</tr>
+<tr>
+<td>Opti 2</td>
+<td>6 (fijo)</td>
+<td>0 (fijo)</td>
+<td>0.06-0.30</td>
+<td>25</td>
+<td>Evalúa solo el trailing. Canal bloqueado en 6 (elegido en Opti 1)
+para aislar el efecto de la salida.</td>
+</tr>
+<tr>
+<td>Opti 3</td>
+<td>6 (fijo)</td>
+<td>0.0-2.4</td>
+<td>0.20 (fijo)</td>
+<td>25</td>
+<td>Evalúa solo el filtro ATR. Canal y trailing bloqueados para aislar
+el efecto del filtro de volatilidad.</td>
+</tr>
+<tr>
+<td>Opti 4</td>
+<td>1-25</td>
+<td>0-1</td>
+<td>0.06-0.30</td>
+<td>1,250</td>
+<td>Optimización conjunta de las 3 variables para generar mapas 3D y
+visualizar interacciones entre parámetros.</td>
+</tr>
+</tbody>
+</table>
+<div style="border-left: 4px solid #4caf50; background: #e8f5e9; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<strong>📏 Metodología de optimización secuencial</strong><br><br> El
+procedimiento recomendado es optimizar <em>una variable a la vez</em>
+(Opti 1 → Opti 2 → Opti 3), bloqueando las demás en valores fijos. Esto
+permite entender la sensibilidad de cada parámetro de forma aislada y
+reduce el riesgo de <em>overfitting</em>. La Opti 4 (conjunta) se usa
+principalmente para visualizar mapas 3D y confirmar zonas de
+estabilidad, pero no es la mejor práctica para selección de parámetros.
+</div>
+<p><strong>Miremos que hay cargado en Maestro</strong></p>
+<figure>
+<img src="../img/097.png" width="800">
+<figcaption>
+Figura 097. Parámetros del canal Donchian.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/098.png" width="800">
+<figcaption>
+Figura 098. Configuración del trailing stop.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/099.png" width="800">
+<figcaption>
+Figura 099. Configuración del filtro ATR.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/100.png" width="800">
+<figcaption>
+Figura 100. Gestión monetaria.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/101.png" width="800">
+<figcaption>
+Figura 101. Configuración de comisiones y slippage.
+</figcaption>
+</figure>
+<h3 id="backtest-6-0-0.2"><strong>Backtest 6-0-0.2</strong></h3>
+<p>La transición desde la <strong>exploración visual (mapas 3D)</strong>
+hasta la <strong>ejecución técnica final</strong>. Se utiliza los mapas
+de optimización no para buscar “el punto más alto”, sino para encontrar
+la “pista de aterrizaje” más segura. Este backtest es la
+<strong>validación real</strong> de lo que se ha observado en la Opti 1
+y Opti 4. El instructor ha decidido “bloquear” estos valores basándose
+en el <strong>Principio del buen vecino</strong>.</p>
+<div style="border-left: 4px solid #4caf50; background: #e8f5e9; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<p><strong>📏 Principio del “buen vecino”</strong></p>
+En un mapa de optimización, un parámetro robusto debe tener <em>buenos
+vecinos</em>: los valores adyacentes también deben funcionar bien. Un
+pico aislado es señal de <em>overfitting</em>; el área entre el canal 6
+y 15 con trailing 0.20-0.25 muestra una meseta plana y estable.
+</div>
+<p><strong>Configuración bloqueada en Maestro:</strong></p>
+<ul>
+<li><strong><code>Per_Canal 6</code> Entrada:</strong>: Elegido por ser
+el inicio de la zona estable. Aunque canales más cortos (4-5) degradan
+rápido, el 6 ofrece un equilibrio entre rapidez y seguridad.</li>
+<li><strong><code>Prc_Trail 0.20</code> Salida:</strong>: El instructor
+nota que 0.25 podría ser “más cómodo” visualmente en el mapa 3D, pero
+mantiene el 0.20 para evaluar el sistema con un margen de seguridad
+razonable antes de que la rentabilidad degrade.</li>
+<li><strong><code>Filtro_ATR 0</code> Filtro ATR:</strong>: Se desactiva
+porque, al comparar los mapas con filtro 1 (activado) vs 0
+(desactivado), la llanura de beneficios es más extensa y robusta sin el
+filtro.</li>
+<li><strong><code>MMVar_Start 2</code> Money Management:</strong> por
+operación. Esto, sumado al <strong>trailing del 20%</strong>, define un
+sistema que “deja correr los beneficios” (filosofía tendencial) pero
+corta las pérdidas de forma dinámica según el retroceso del precio desde
+máximos.</li>
+</ul>
+<p>Es un sistema puramente tendencial que deja correr los beneficios
+hasta que el precio retrocede un 20% desde su máximo. Para evaluar este
+backtest de 20 años, utilizaremos el factor de recuperación:</p>
+<figure>
+<img src="../img/102.png" width="800">
+<figcaption>
+Figura 102. Backtest 20 años.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/103.png" width="800">
+<figcaption>
+Figura 103.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/104.png" width="800">
+<figcaption>
+Figura 104.
+</figcaption>
+</figure>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr>
+<th>Categoría</th>
+<th>Input</th>
+<th>Valor</th>
+<th>Función</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entrada</strong></td>
+<td><code>Per_Canal</code></td>
+<td>6</td>
+<td>Periodo del canal Donchian. Calcula el máximo de los últimos 6
+cierres.</td>
+</tr>
+<tr>
+<td><strong>Entrada</strong></td>
+<td><code>Price_Up</code></td>
+<td>Close</td>
+<td>Campo de precio para calcular el canal superior (cierre, no
+máximo).</td>
+</tr>
+<tr>
+<td><strong>Entrada</strong></td>
+<td><code>Price_Dw</code></td>
+<td>Close</td>
+<td>Campo de precio para calcular el canal inferior (para cortos).</td>
+</tr>
+<tr>
+<td><strong>Entrada</strong></td>
+<td><code>Bar_Filtro</code></td>
+<td>1</td>
+<td>Barras mínimas de espera entre salida y nueva entrada. Evita
+reentradas inmediatas.</td>
+</tr>
+<tr>
+<td><strong>Entrada</strong></td>
+<td><code>OperoCortos</code></td>
+<td>false</td>
+<td>Desactivado: el sistema solo opera en largo.</td>
+</tr>
+<tr>
+<td><strong>Entrada</strong></td>
+<td><code>Filtro_ATR</code></td>
+<td>0.00</td>
+<td>Desactivado (=0). Si fuera &gt;0, solo entraría cuando TrueRange
+&lt; ATR×Filtro_ATR.</td>
+</tr>
+<tr>
+<td><strong>Salida</strong></td>
+<td><code>Salgo_Media</code></td>
+<td>false</td>
+<td>Desactivada la salida por cruce de media central.</td>
+</tr>
+<tr>
+<td><strong>Salida</strong></td>
+<td><code>Prc_Stop</code></td>
+<td>0.00</td>
+<td>Sin stop loss fijo (desactivado).</td>
+</tr>
+<tr>
+<td><strong>Salida</strong></td>
+<td><code>Prc_Profit</code></td>
+<td>0.00</td>
+<td>Sin take profit fijo (desactivado).</td>
+</tr>
+<tr>
+<td><strong>Salida</strong></td>
+<td><code>Prc_Trail</code></td>
+<td>0.20</td>
+<td><strong>Trailing stop al 20%</strong> desde el máximo alcanzado.
+Única salida activa.</td>
+</tr>
+<tr>
+<td><strong>Salida</strong></td>
+<td><code>Bar_Exit</code></td>
+<td>0</td>
+<td>Sin salida por tiempo (desactivada).</td>
+</tr>
+<tr>
+<td><strong>Money Mgmt</strong></td>
+<td><code>Start_Equity</code></td>
+<td>100000</td>
+<td>Capital inicial: $100,000</td>
+</tr>
+<tr>
+<td><strong>Money Mgmt</strong></td>
+<td><code>MMVar_Start</code></td>
+<td>2</td>
+<td>Invierte el 2% del capital inicial por acción</td>
+</tr>
+<tr>
+<td><strong>Money Mgmt</strong></td>
+<td><code>MMVar_Profits</code></td>
+<td>2</td>
+<td>Reinvierte el 2% de los beneficios acumulados</td>
+</tr>
+<tr>
+<td><strong>Money Mgmt</strong></td>
+<td><code>Min_Size</code></td>
+<td>1</td>
+<td>Mínimo 1 acción por operación</td>
+</tr>
+<tr>
+<td><strong>Money Mgmt</strong></td>
+<td><code>Max_Size</code></td>
+<td>100000</td>
+<td>Máximo 100,000 acciones (sin límite práctico)</td>
+</tr>
+<tr>
+<td><strong>Money Mgmt</strong></td>
+<td><code>RoundTo</code></td>
+<td>1</td>
+<td>Redondea a 1 acción (sin lotes)</td>
+</tr>
+</tbody>
+</table>
+<p>Y eso sí, nos va a tardar un poco, nos va a tardar un poquito. Ese
+problema que tiene <em>Maestro</em> es que esto la verdad que es un
+problema. Realmente potente pero que técnicamente se ha quedado muy
+atrás y a nivel de procesamiento de información es súper lento. Otro día
+también trataremos de enseñaros algo con <em>Quant Analyzer</em> que es
+un poquito más rápido.</p>
+<figure>
+<img src="../img/105.png" width="800">
+<figcaption>
+Figura 105. Resultados preliminares.
+</figcaption>
+</figure>
+<p><strong>Análisis de exposición</strong></p>
+<p>Bien, lo bueno que tenemos aquí es que podemos mirar mucho más. Por
+ejemplo, la exposición que hemos ido teniendo:<br />
+150 en algún momento, pero algo tengo en el <em>money management</em>
+mal.</p>
+<figure>
+<img src="../img/106.png" width="800">
+<figcaption>
+Figura 106. Exposición del portfolio a lo largo del tiempo.
+</figcaption>
+</figure>
+<p>Aquí tienes el análisis organizado dentro de un bloque visual para tu
+notebook:</p>
+<div style="border-left: 4px solid #e74c3c; background: #fdf2f2; padding: 15px; margin: 20px 0; border-radius: 8px;">
+<h3 style="color: #c0392b; margin-top: 0;">
+📉 El Problema: Exposición Degradada (Figura 106)
+</h3>
+<p>
+Al observar la <strong>Figura 106</strong>, el instructor detecta que
+“algo está mal” en el <em>Money Management</em>.
+</p>
+<ul style="margin-bottom: 0;">
+<li>
+<strong>Anomalía visual:</strong> En lugar de que la exposición crezca o
+se mantenga estable a medida que el sistema gana dinero, la gráfica
+muestra una tendencia descendente muy marcada a partir de 2008.
+</li>
+<li>
+<strong>Baja utilización del capital:</strong> Hacia el final del
+periodo (2020-2023), la exposición cae por debajo del 40%, lo que
+significa que el sistema está operando con una fracción mínima de su
+capital disponible.
+</li>
+<li>
+<strong>Causa técnica:</strong> Esto suele ocurrir cuando el tamaño de
+la posición es fijo (siempre invierte la misma cantidad de dinero
+inicial) mientras que la cuenta crece, o cuando hay un error en la
+fórmula de reinversión de beneficios en el software. El sistema se
+vuelve “demasiado pequeño” para el tamaño de la cuenta.
+</li>
+</ul>
+</div>
+<p>Voy a usar el de <em>Maestro</em> que por <em>fixed fractional</em>
+que para acciones va muy bien:</p>
+<figure>
+<img src="../img/219.png" width="800">
+<figcaption>
+Figura 219. Configuración fixed fractional en Maestro.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/112.png" width="800">
+<figcaption>
+Figura 112. Resumen de configuración.
+</figcaption>
+</figure>
+<p>Todo lo demás lo he dejado igual, es la cartera 6, 0.20, 0, que es la
+que habíamos elegido inicialmente para ir avanzando en las validaciones,
+pero que la verdad que no tengo claro que sea la mejor. Ahora lo veremos
+combinado con los mapas.</p>
+<p>Ahora está mucho más expuesto, ahora ha ido creciendo un poco, y
+bueno hemos ido a 1 y medio hasta dos veces de exposición:</p>
+<figure>
+<img src="../img/113.png" width="800">
+<figcaption>
+Figura 113. Evolución de la exposición con nueva configuración.
+</figcaption>
+</figure>
+<div style="border-left: 4px solid #388f34ff; background: #f0fdf1ff; padding: 15px; margin: 20px 0; border-radius: 8px;">
+<h3 style="color: #10540dff; margin-top: 0;">
+✅ La Solución: Exposición Correcta y Creciente (Figura 113)
+</h3>
+<p>
+Tras corregir la configuración en <strong>Maestro</strong> utilizando el
+modelo de <em>Fixed Fractional</em>, los resultados reflejan el
+comportamiento esperado de un sistema tendencial robusto.
+</p>
+<ul style="margin-bottom: 0;">
+<li>
+<strong>Ajuste Técnico:</strong> Se configuró un <strong>MMVar_Start de
+2</strong>, lo que obliga al sistema a invertir siempre el 2% del
+capital disponible por cada acción.
+</li>
+<li>
+<strong>Crecimiento Orgánico:</strong> A diferencia de la degradación
+anterior, la exposición ahora tiene una pendiente alcista, lo que
+demuestra que el sistema reinvierte los beneficios de forma efectiva.
+</li>
+<li>
+<strong>Uso Eficiente del Margen:</strong> El sistema alcanza niveles de
+exposición de entre <strong>1.5 y 2 veces</strong> el capital (150% -
+200%), aprovechando la diversificación para maximizar el retorno sin
+comprometer la cuenta.
+</li>
+<li>
+<strong>Impacto en Resultados:</strong> Este cambio permitió que el
+<em>Total Return</em> saltara de los ~$688k iniciales a una cifra
+superior a los <strong>$8.5 millones</strong> en el mismo periodo.
+</li>
+</ul>
+</div>
+<figure>
+<img src="../img/114.png" width="800">
+<figcaption>
+Figura 114. Detalle de exposición máxima.
+</figcaption>
+</figure>
+<p><strong>Correlaciones entre acciones</strong></p>
+<p>Aquí una de las cosas interesantes que podemos ver es la seleccion de
+todas las acciones en conjunto:</p>
+<figure>
+<img src="../img/115.png" width="800">
+<figcaption>
+Figura 115. Matriz de correlaciones entre acciones del portfolio.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/116.png" width="800">
+<figcaption>
+Figura 116. Detalle de correlaciones.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/221.png" width="800">
+<figcaption>
+Figura 221
+</figcaption>
+</figure>
+<figure>
+<img src="../img/222.png" width="800">
+<figcaption>
+Figura 222
+</figcaption>
+</figure>
+<p>Aquí si miras por este <em>chart</em> que tenemos, si la miramos 6,
+20, sería más o menos por aquí:</p>
+<figure>
+<img src="../img/118.png" width="800">
+<figcaption>
+Figura 118. Ubicación del set 6-0.20 en el mapa de optimización.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/119.png" width="800">
+<figcaption>
+Figura 119. Detalle de la zona seleccionada.
+</figcaption>
+</figure>
+<p><img src="../img/223.png" /> <img src="../img/224.png" /></p>
+<p>Es más o menos, más o menos esta tenemos. Pero si miramos el Excel
+puramente por datos, por <em>recovery</em>, realmente le gusta mucho más
+aquí. Pero ahí vemos que tanto por <code>Sharpe ratio</code> como por
+<code>retorno</code> degrada muy rápido. ¿Quién gana ahí? Y el
+<code>drawdown</code>. Lo que pasa que el <em>drawdown</em>, en la
+teoría lo hablamos bastante: todos los ratios que tienen el
+<em>drawdown</em> en el denominador, al final el que dirige el ratio es
+el <em>drawdown</em>, porque como hace de divisor, tira muchísimo del
+ratio para él, y acaba viéndose muy afectado. El <strong>TSI</strong> lo
+trata de corregir añadiendo los <em>winners</em> al numerador, que eso
+hace que los sistemas que aciertan más, pues suban un poco en el
+ratio.</p>
+<div style="border-left: 4px solid #9c27b0; background: #f3e5f5; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<strong>📊 TSI (TradeStation Index)</strong><br><br> El TSI es un ratio
+propietario de <em>TradeStation</em> que combina el <em>recovery
+factor</em> (net profit / drawdown) con el porcentaje de operaciones
+ganadoras. Al añadir los <em>winners</em> al numerador, intenta corregir
+el sesgo que tiene el <em>drawdown</em> como denominador, favoreciendo
+sistemas con mayor tasa de acierto.
+</div>
+<p>Para el próximo día me gustaría ver en esta cartera qué nos da
+<em><code>Sortino</code></em> para todo el rato, porque ahí es verdad
+que es donde realmente tenemos un buen equilibrio. Vamos a ver si para
+el próximo día, casi con total seguridad que lo tendremos, porque hemos
+visto el problema que tiene el que tienen ellos preinstalado y lo vamos
+a corregir y trataremos de traerlo.</p>
+<p>Pero con esa información realmente en este mapa, para eso decía que
+no siempre vas a poder elegir, es complicado elegir porque realmente
+casi da igual — bueno, casi da igual me refiero en toda esta zona
+planicie:</p>
+<figure>
+<img src="../img/120.png" width="800">
+<figcaption>
+Figura 120. Per_Canal vs CustomFitnessValue: zona de indiferencia.
+</figcaption>
+</figure>
+<p><strong>Cambio chart al de net profit</strong></p>
+<p>Si luego ya te fijas, el retorno
+<strong><code>net_profit</code></strong> es donde ya te vas para
+arriba.</p>
+<p>Decíamos que interesaba más el <em>trailing</em>, el porcentaje de
+<em>trailing</em> más a 0.25, porque en el 0.20 incluso estaba justo.
+Pero bueno, el 0.20 al final acaba, ha sido un poco un equilibrio entre
+lo que quieren los ratios de <em>drawdown</em>, lo que quieren los
+ratios de retorno-riesgo — porque al tener el <em>drawdown</em> en el
+denominador tira mucho de él — y el <em>profit</em>. El <em>profit</em>
+quiere uno muy elevado.</p>
+<figure>
+<img src="../img/121.png" width="800">
+<figcaption>
+Figura 121. Preferencia del profit por trailing elevado.
+</figcaption>
+</figure>
+<p><strong>Ordenación por diferentes métricas</strong></p>
+<figure>
+<img src="../img/226_giff.gif" width="800">
+<figcaption>
+Figura 226. Señalando los mejores por factor
+</figcaption>
+</figure>
+<p><strong><code>net_profit</code></strong></p>
+<p>Si ordenamos solo por <em>profit</em>, fijaros:</p>
+<figure>
+<img src="../img/122.png" width="800">
+<figcaption>
+Figura 122. Ordenación por Net Profit: trailing 0.27-0.30 dominante.
+</figcaption>
+</figure>
+<p>Un poco más grande. Todo el rato 0.28, 0.27, 0.30. He bloqueado que
+no haya filtro.</p>
+<p><strong><code>drawdown</code></strong></p>
+<p>Si en cambio ordeno por <em>drawdown</em>, lo contrario: 0.7, 0.8,
+0.7, 0.6, lo más bajo:</p>
+<figure>
+<img src="../img/123.png" width="800">
+<figcaption>
+Figura 123. Ordenación por Drawdown: trailing muy bajo dominante.
+</figcaption>
+</figure>
+<p><strong><code>recovery</code></strong></p>
+<p>Si ordenamos por <em>recovery</em>, busca el término medio pero el
+<em>drawdown</em> tira mucho:</p>
+<figure>
+<img src="../img/124.png" width="800">
+<figcaption>
+Figura 124. Ordenación por Recovery: sesgo hacia drawdown bajo.
+</figcaption>
+</figure>
+<p><strong><code>Sharpe ratio</code></strong></p>
+<p>Por eso al final este <em>Sharpe ratio</em> (J), aunque es un poco
+como os he dicho antes falso, ahí cambia. Es verdad que también da los
+saltos por retorno, pero hay poca diferencia. Esos valores están todo el
+rato alrededor del 0:</p>
+<figure>
+<img src="../img/125.png" width="800">
+<figcaption>
+Figura 125. Sharpe ratio: muy poca variación entre sets.
+</figcaption>
+</figure>
+<p>Todos estos es lo mismo, es prácticamente lo mismo. Todo esto hay
+muy, muy poca variación, en el dato de 6 y 10 pero también bastante
+elevado el <em>trail</em>. Pero ya digo, con muy poca variación, pues al
+final nos hemos quedado con un compromiso.</p>
+<p><strong>Comparación de portfolios con diferentes configuraciones
+:</strong></p>
+<p>Vamos a ver, vamos a hacer rápidamente porque es un buen ejercicio.
+Hemos hecho este del 6, 20 y ahora vamos a ver todos estos.</p>
+<h3
+id="backtest-6-1-0.27---portfolio-con-mejor-retorno-net-profit"><strong>Backtest
+6-1-0.27</strong> - Portfolio con mejor retorno
+<code>Net Profit</code></h3>
+<p>Vamos a ver por ejemplo el que mejor retorno da, es el canal primero
+y ordeno por <code>net_profit</code>:</p>
+<figure>
+<img src="../img/225.png" width="800">
+<figcaption>
+Figura 225. Optimizacion 4
+</figcaption>
+</figure>
+<figure>
+<img src="../img/126.png" width="800">
+<figcaption>
+Figura 126. Set con mejor retorno: canal 6, trailing 0.27, filtro 1.
+</figcaption>
+</figure>
+<p>Sería <code>6, 0.27, 1</code>. Lo voy a poner, que es bastante
+parecido al que voy a dejar.<br />
+La gestión monetaria igual para no tocar nada:</p>
+<figure>
+<img src="../img/127.png" width="800">
+<figcaption>
+Figura 127. Configuración del portfolio 6-0.27-1.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/129.png" width="800">
+<figcaption>
+Figura 129. Parámetros detallados.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/128.png" width="800">
+<figcaption>
+Figura 128. Ejecución del backtest.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/130.png" width="800">
+<figcaption>
+Figura 130. Resultados del portfolio 6-0.27-1.
+</figcaption>
+</figure>
+<p>Dejamos toda la gestión monetaria como hemos hecho el otro para
+poderlos comparar.</p>
+<h3
+id="backtest-6-1-0.27---portfolio-con-menor-drawdown"><strong>Backtest
+6-1-0.27</strong> - Portfolio con menor <code>drawdown</code></h3>
+<p>El que menor <em>drawdown</em> obtiene (sort Excel por
+<em>drawdown</em>) que es muy raro ya os lo digo. Sería por
+<code>canal 25</code>, ahora viene el <code>filtro 1</code> y luego el
+<code>trailing 0.07</code>:</p>
+<figure>
+<img src="../img/131.png" width="800">
+<figcaption>
+Figura 131. Set con menor drawdown: canal 25, filtro 1, trailing 0.07.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/133.png" width="800">
+<figcaption>
+Figura 133. Configuración del portfolio 25-1-0.07.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/134.png" width="800">
+<figcaption>
+Figura 134. Parámetros detallados.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/135.png" width="800">
+<figcaption>
+Figura 135. Resultados del portfolio 25-1-0.07.
+</figcaption>
+</figure>
+<h3
+id="backtest-4-1-0.24---portfolio-con-mejor-sharpe-ratio"><strong>Backtest
+4-1-0.24</strong> - Portfolio con mejor <code>Sharpe ratio</code></h3>
+<p>El que mejor <em>Sharpe ratio</em> tiene, que es <code>4</code>,
+<code>1</code>, <code>0.24</code>:</p>
+<figure>
+<img src="../img/132.png" width="800">
+<figcaption>
+Figura 132. Set con mejor Sharpe ratio: canal 4, filtro 1, trailing
+0.24.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/137.png" width="800">
+<figcaption>
+Figura 137. Configuración del portfolio 4-1-0.24.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/138.png" width="800">
+<figcaption>
+Figura 138. Parámetros detallados.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/139.png" width="800">
+<figcaption>
+Figura 139. Resultados del portfolio 4-1-0.24.
+</figcaption>
+</figure>
+<h3
+id="backtest-1-0-0.12---portfolio-canal-1-el-caso-extremo"><strong>Backtest
+1-0-0.12</strong> - Portfolio canal 1 el caso extremo</h3>
+<p>Ahora toca el de 1 que era el raro:</p>
+<figure>
+<img src="../img/140.png" width="800">
+<figcaption>
+Figura 140. Configuración del portfolio con canal 1.
+</figcaption>
+</figure>
+<figure>
+<img src="../img/141.png" width="800">
+<figcaption>
+Figura 141. Resultados del portfolio con canal 1.
+</figcaption>
+</figure>
+<p>Luego los comparamos:</p>
+<figure>
+<img src="../img/136.png" width="800">
+<figcaption>
+Figura 136. Vista comparativa de los portfolios.
+</figcaption>
+</figure>
+<p><strong>Limitaciones de Portfolio Trader y soluciones</strong></p>
+<p>Esta optimización de <em>Portfolio Trader</em> tiene ese problema: da
+pocos datos, entonces los tienes que construir tú. El problema es lo que
+os digo, que al ver este problema con <em>Sharpe ratio</em> no hemos
+podido utilizar el <em>Sortino</em> que usamos para las estrategias
+sueltas, entonces hay que hacerlo para <em>portfolio</em>, porque
+pensamos que valía pero hemos visto que no. Entonces hay que hacer el
+<em>Sortino</em> para <em>portfolio</em>.</p>
+<p>Y a veces lo que hemos hecho es hacer varias pasadas. Lo bueno es que
+modificar es muy rápido, y como el <em>custom fitness</em> es una
+fórmula que tú puedes programar, al final le puedes meter varios.
+Pasadas, recoges varios: uno pues le pones <em>Sortino</em>, <em>Sharpe
+ratio</em>, y el que quieras. Los pasas todos al Excel, y entonces ahí
+es donde ya tienes tú para hacer distintos cálculos o ratios que puedas
+calcular directamente en el Excel.</p>
+<p>De momento solo puedo calcular el <em>recovery</em>, utilizar este
+<em>Sharpe ratio</em> que insisto que no es el valor correcto pero sí
+que es extrapolable para hacer la selección.</p>
+<p><strong>Comparación de rendimiento: Maestro vs
+MultiCharts</strong></p>
+<p>Todo esto es al final simplemente: estoy haciendo todo el
+<em>portfolio</em> con unos <em>sets</em> concretos.</p>
+<p>Trataré de dejarlo mañana a ver si me acaba, porque ese fin de semana
+he intentado dos veces que <em>Maestro</em> me hiciera toda la
+optimización completa. Pero esta optimización que hemos hecho en
+<em>MultiCharts</em> también se puede hacer. Pero en
+<em>MultiCharts</em> he tardado unos, en hacer la larga de esto tardado
+unos 15 minutos, y <em>Maestro</em> se ha colgado después de llevar cada
+una de ellas como 20 pico horas y no había acabado. Esta es la relación,
+y era lo mismo, en verdad era lo mismo: mismo código, todo igual. Y esa
+es un poco la comparación, ¿no?</p>
+<div style="border-left: 4px solid #e74c3c; background: #fdedec; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<strong>⚠️ Comparativa de rendimiento: Maestro vs
+MultiCharts</strong><br><br>
+<table style="width:100%; font-size: 14px; border-collapse: collapse;">
+<tr style="background: #f5b7b1;">
+<th style="padding: 8px; border: 1px solid #e6b0aa;">
+Plataforma
+</th>
+<th style="padding: 8px; border: 1px solid #e6b0aa;">
+Tiempo optimización completa
+</th>
+<th style="padding: 8px; border: 1px solid #e6b0aa;">
+Informes
+</th>
+</tr>
+<tr>
+<td style="padding: 8px; border: 1px solid #e6b0aa;">
+<strong>MultiCharts</strong>
+</td>
+<td style="padding: 8px; border: 1px solid #e6b0aa;">
+~15 minutos
+</td>
+<td style="padding: 8px; border: 1px solid #e6b0aa;">
+Básicos a nivel portfolio
+</td>
+</tr>
+<tr>
+<td style="padding: 8px; border: 1px solid #e6b0aa;">
+<strong>Maestro</strong>
+</td>
+<td style="padding: 8px; border: 1px solid #e6b0aa;">
++20 horas (sin completar)
+</td>
+<td style="padding: 8px; border: 1px solid #e6b0aa;">
+Muy completos
+</td>
+</tr>
+</table>
+</div>
+<p>Entonces, que ya os lo había comentado alguna vez, es un drama de
+<em>Maestro</em>. Pues es, la verdad que es que ya digo, es súper
+potente. Luego a nivel de informes es brutal, ahora veréis todos los
+datos que nos saca, está fantástico. Y los hemos revisado — bueno hay
+uno por ejemplo que no está bien, ya lo pasamos — pero estos sí que
+están bien. Y bueno, pues es la lástima.</p>
+<p><strong><em>Comentaba Frank que :</em></strong></p>
+<p><strong><em>la selección del filtro ATR volatilidad lo he hecho entre
+0 y 1, pero que 1 y 4 tenía mejor, que decir, que estaba una zona
+robusta de estar, sería mejor</em></strong>.</p>
+<p>Pues sí, pero ahí a mí me parece, podríamos trabajarlo un poco más,
+pero me parece sobreoptimizarlo, me parece demasiado. Los filtros a mí
+de norma me cuesta meter filtros, y a este tendencial para la ganancia
+que he visto, ya ya comentado, creo que no se lo metería, no se lo
+metería. Pero encima si lo metes tiene que ser o no optimizado o muy
+poco, ¿sabes? Es decir, esa, el filtro es la manera de sobreutilizar
+más, porque es cuando tú ya tienes tu sistema, vamos a suponer 6, 0.20,
+vale, venga, y ahora le meto un filtro que me va a eliminar los malos,
+hostias, eso dicho así ¿no te suena a una cosa fácil de sobreoptimizar?
+Porque al final le vas a quitar los cientos, tres cientos o cientos, es
+igual, ¿sabes?, que está muy bien, no quitar la parte mala, pero el
+problema es que estás aumentando el riesgo de que sea una
+sobreoptimización. Aunque en el mapa parece robusto, aunque en el mapa
+parece robusto, que entiendo lo que dices y tienes sentido, no te digo
+que no, pero le daría más vueltas, ¿por qué le daría más vueltas?</p>
+<div style="border-left: 4px solid #f44336; background: #ffebee; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<strong>⚠️ Riesgo de sobreoptimización con filtros</strong><br><br> Los
+filtros son especialmente propensos a la sobreoptimización porque su
+función es “eliminar los malos trades”. Esto suena bien, pero en la
+práctica añades grados de libertad al sistema sin garantía de que el
+patrón se repita en el futuro. Regla práctica: si añades un filtro, que
+sea con valores redondos (0, 1, 2 ATRs) y nunca granulado (1.3, 1.4
+ATRs).
+</div>
+<p>Y ya digo, granularlo tanto explico, es como el filtro, no 0.20, ya
+te digo yo lo he optimizado los todos en 0.25, porque vierais el mapa
+bien granulado, pero realmente tampoco me gusta, es decir, en un sistema
+en diario con mil y pico <em>trades</em> de verdad prefiero ir de 0.5 en
+0.5, ¿sabes?, es decir, ir a buscar tanto el detalle, explico, 0.21,
+0.22, 0.23, ¿me explico? Es decir, al final recuerda que lo que estás
+viendo es lo que ha ido mejor en el pasado, entonces ya te digo, al
+final elegir siempre el mejor,,, UHMMM ya te digo,,, el tema del
+incremento es una cosa que es quizá la que más… Tú cuando tienes un
+canal, una media, esto es muy evidente porque va de uno en uno, vale,
+aquí sí que no hay mucha historia, pero cuando tienes filtros y cosas
+así que tú puedes hacer 0.1, 0.2, pero si por puestos ya podríamos hacer
+0.01, 0.02, 0.03, y ¿por qué no 0.0001, 0.0002?, ¿sabes?, ¿me entiendes?
+Hay que cortarlo. Ya sé que tenía muchos trades, pero el filtro a otro
+no tenía tantos, o sea de cambiar el filtro has cambiado 300, o sea eso,
+el sistema tiene los 2400 con el filtro en 0 o el filtro en 1, y de 0 a
+1 cambia 300, y de 1 a 4 igual cambiaba 200, ahora lo miramos.</p>
+<p>El que tú dices es el de la línea verde, que te ha gustado es este
+como en verde, vale, este a ti te ha gustado porque bueno te ha dado un
+<code>recovery</code> bastante más elevado, mejorado, ha mejorado sobre
+todo el porque tienes ahí 1.430, este sí que te ha bajado el
+<em>drawdown</em>:</p>
+<p><img src="../img/143.png" /></p>
+<p>Pero de este (liena naranja, el que hemos elegido <code>6</code>) a
+este (línea verde el que le gusta <code>4</code>) tienes 100
+<em>trades</em> de diferencia entre ellos, o sea poner ese filtro o no
+ponerlo son 100 <em>trades</em> de diferencia, y gana un poquito más y
+baja el <em>drawdown</em>, y dices “está muy bien”, bueno sí claro, si
+de aquí cinco años eso se mantiene, es verdad. Ahora, ¿eso es seguro que
+se mantendrá? No, la realidad es que eso no es seguro. “Bueno, ¿tampoco
+no es seguro el cero?” Pues decir… bueno ya, pero el cero <strong><em>le
+he quitado un grado de libertad</em></strong>. Al final, no he añadido
+variabilidad a la que yo meto <code>Filtro_ATR = 0</code>, estoy
+metiendo una, o sea estoy metiendo una condición más al sistema, porque
+este <code>Filtro_ATR = 0</code> no trabaja, estoy ignorando el ATR. Yo
+aquí le estoy ya asumiendo que cuando el ATR de un día con el ATR de un
+mes por multiplicado por un 4 sea mayor no opere, y de esa manera le he
+quitado 100 <em>trades</em>, que es un <em>trade</em> por acción de
+media, <em>trade</em> por acción.</p>
+<p>Entonces… no, no es una certeza, es que esto va así, o sea no es una
+certeza, o sea no es que yo te diga esto seguro que luego no irá, no,
+para nada, no te lo puedo decir, no sería serio decirte eso, no lo sé.
+Seguro, pero estoy añadiendo un grado de incertidumbre más, para el
+beneficio que me da no me renta… ¿me explico? Es decir, para el
+beneficio que me dan, no me renta, a mí no me parece suficiente para
+añadir grados de libertad, para añadir posibilidades al sistema de
+oscilar. Siempre que añades <em>inputs</em>, como mínimo añades una, y a
+veces son varias, porque es la condición, o sea es el valor del ATR y
+que ATR de hoy sea menor que el ATR mensual, eso no es un grado de
+libertad, son como mínimo dos. Para añadir dos, necesito que me convenza
+mucho.</p>
+<p>Pero de todas maneras lo estudiaría más, decir, miraría esto, miraría
+esto en el gráfico muchas acciones, y la otra cosa que ahora no hemos
+hecho es esa… que ahora lo vamos a hacer en <em>Maestro</em>, lo miraría
+un poco y un poco, pero también lo miraría en el gráfico. Nosotros
+miramos mucho, pero miramos mucho, ahora esto lo miraría en el gráfico
+en distintas acciones, miraría el gráfico, ya lo haremos, ya lo haremos,
+aunque no lo hagamos hoy lo haré, porque a esto tengo que volver, para
+necesito ver un <code>Sortino</code> ahí para estar más cómodo,
+¿entiendes? Entonces necesito verlo, lo veré, pero el filtro no es
+concluyente, ni granulándolo al 1.4. Si el filtro…</p>
+<p><strong><em>¿Si el filtro quitara 500 </em>trades* sería más válido,
+entiendo?</strong>*</p>
+<p>Sí, sería más válido, sí, sería más válido, sería más válido. En el
+caso de los filtros es un poco al revés, y por eso es como lo diría, no
+es que sea contraintuitivo, es contraintuitivo para lo que he explicado.
+Me estás diciendo siempre cuantos más <em>trades</em> mejor, vale, pero
+ahora me dices que si el filtro quita más es mejor, ¿y en qué quedamos?
+Bueno, las dos cosas son verdad, las dos cosas son verdad. Quiere decir
+que para que el filtro me quite, tengo que tener muchos antes, si no, ya
+no me vale. Es decir, si tengo mil, ya no filtro, ¿me entiendes?, ya no
+filtro, ya no estoy suficientemente cómodo para que eso baje más, ¿me
+explico?</p>
+<p>Entonces pero evidentemente el filtro valida, el filtro valida
+quitando, el filtro valida actuando. Las reglas para evaluarlas tienen
+que implicar cambios, si no implica cambios no está validada, y la
+significación pasa por ahí, vale, porque cada regla tenga un número de
+<em>trades</em> donde actúen y en distintos momentos, distintas
+condiciones de mercado, etcétera. Significación y representatividad,
+significación y representatividad, significación la dan las
+estadísticas, representatividad la da actuar en distintos mercados,
+vale. Por eso que ahora lo hemos metido 20 años a esto, para ver esta
+curva en 20.</p>
+<div style="border-left: 4px solid #2196f3; background: #e3f2fd; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<p><strong>📦 Canal de Donchian</strong><br><br></p>
+<p>Entender la <strong><em>sobreoptimización</em></strong> (o
+<em>overfitting</em>) en el trading algorítmico es, en esencia,
+distinguir entre la <strong>señal</strong> (el patrón real del mercado)
+y el <strong>ruido</strong> (movimientos aleatorios del pasado que no se
+repetirán). El instructor plantea un debate clásico: ¿Vale la pena
+añadir un filtro para ganar un poco más de rentabilidad a costa de
+añadir complejidad?</p>
+<p><strong>1. El Problema de los Grados de Libertad ()</strong><br />
+Cada vez que añades un parámetro (un filtro ATR, un valor de trailing,
+etc.), estás consumiendo <strong>Grados de Libertad</strong>. En
+estadística, esto reduce la potencia de tus pruebas.</p>
+<ul>
+<li><strong>La trampa del filtro:</strong> El instructor advierte que el
+filtro es la herramienta de sobreoptimización por excelencia porque su
+función es “eliminar los malos trades”. Si un filtro solo quita 100
+trades de 2,400 (un 4%), el cambio es estadísticamente poco
+significativo y probablemente se deba al azar del histórico.</li>
+<li><strong>Significación vs. Representatividad:</strong> Para que una
+regla sea válida, debe actuar. Si un filtro quita 500 trades en diversos
+escenarios de mercado durante 20 años, tiene <em>significación
+estadística</em> y *representatividad**.</li>
+</ul>
+<p><strong>2. Granularidad y el “Efecto de Búsqueda”</strong><br />
+El instructor critica el uso de incrementos muy pequeños (0.1, 0.2 o
+incluso 0.0001).</p>
+<ul>
+<li><strong>Valores Redondos:</strong> Se recomienda usar valores
+“robustos” (0, 1, 2 ATRs) en lugar de buscar el “pico” exacto (ej. 1.4
+ATRs).</li>
+<li><strong>La Meseta de Robustez:</strong> Si el sistema solo funciona
+bien en 1.4 pero falla en 1.3 y 1.5, has encontrado un “pico de ruido”.
+Un sistema robusto debe funcionar bien en toda la vecindad del
+parámetro.</li>
+</ul>
+<p><strong>3. Referencias Científicas sobre
+Sobreoptimización</strong><br />
+Si deseas profundizar con rigor académico, estos son los pilares de la
+literatura financiera actual:</p>
+<ul>
+<li><p><strong>A. El Sesgo de Selección (Data Snooping Bias)</strong>
+Propuesto por <em>Halbert White (2000)</em> en su obra <em>“A Reality
+Check for Data Snooping”</em>. <strong>Concepto:</strong> Si pruebas
+suficientes variaciones de un filtro, por pura probabilidad estadística,
+una de ellas parecerá “ganadora” en el pasado, aunque no tenga valor
+predictivo. Es lo que el instructor llama “ir a buscar tanto el
+detalle”.</p></li>
+<li><p><strong>B. La “Falsa Transmisión” en Finanzas</strong>
+<em>Bailey, Borwein, López de Prado y Zhu (2014)</em> publicaron
+<em>“The Probability of Backtest Overfitting”</em>. <strong>Referencia
+científica:</strong> Demuestran matemáticamente que cuanto más corto es
+el histórico y más combinaciones pruebas, mayor es la probabilidad de
+que tu <em>Sharpe Ratio</em> sea un espejismo. Coincide con la
+insistencia del instructor de mirar <strong>20 años de datos</strong>
+para buscar representatividad.</p></li>
+<li><p><strong>C. El Criterio de Información de Akaike (AIC)</strong> Es
+un método científico para seleccionar modelos <strong>Regla:</strong> El
+AIC penaliza la adición de parámetros. Si añades un filtro que mejora el
+beneficio pero aumenta la complejidad del modelo (añade grados de
+libertad), el AIC te dirá si esa mejora es “real” o si solo estás
+ajustando el modelo al ruido pasado.</p></li>
+</ul>
+</div>
+<p><strong>Backtest 1-0-0.12</strong></p>
+<p>Bien, aquí tenemos un resumen:</p>
+<p><img src="../img/144.png" /></p>
+<p>Vale, de entrada aquí <em>ratios que no valen para nada</em>, el esto
+que veis aquí si lo veis es el <strong>total retorno partido por máximo
+drawdown</strong>, aquí no vale para nada, aquí no vale para nada,
+porque bueno vale, bueno habiendo hecho gestión monetaria vale un poco,
+porque al final es lo que os decía antes, es decir, el <em>drawdown</em>
+no lo puedo meter en porcentaje, que es verdad que aquí como yo he
+regulado en 100 acciones y vengo con gestión monetaria, que es muy
+importante, muy importante, ¿por qué es muy importante? Porque si venís
+aquí a ver la lista de <em>trades</em>:</p>
+<p><img src="../img/146.png" /></p>
+<p>Pues yo al final he ido exponiendo. Si tú multiplicas, por ejemplo,
+da igual, esta acción, hemos comprado 60 por 33.14, al final he comprado
+1988 dólares, que es más o menos el 2% que habíamos hablado al inicio,
+2000 dólares, vale.</p>
+<p><img src="../img/226.png" /></p>
+<p>Entonces si yo siempre he ido exponiendo esa misma cantidad, pues es
+mejor, sería mejor el porcentaje, sí, pero como yo siempre voy
+exponiendo, bueno, un 2% de la cuenta, ya estoy haciendo porcentaje,
+porque ahora tengo 100.000, 2%, pero cuando tenga 200.000 pues será el
+doble, pues ya voy exponiendo siempre una cantidad que depende del
+porcentaje, gracias a ese 2%, entonces las cantidades están más o menos
+ecualizadas. Pero como lo mismo que se ha hecho en el Excel os he dicho,
+no está mal, <em>recovery</em> sirve, pero sería mejor aún en
+porcentaje, sería mejor.</p>
+<p>Vale, pero aquí como ya tenemos esa, tenemos <code>shad</code>, el
+<code>RR</code> calculado, tenemos algunos datos más que nos sirve,
+tenemos el <code>drawdown</code> real <code>(79.19%)</code> Aquí muy
+elevado, ¿por qué?, porque hemos metido la exposición a casi el 200,
+hemos metido un poco elevado la exposición, pero aquí sí que tenemos el
+<em>triple R</em> <code>Return Retracement Ratio</code> a
+<code>0.34</code>.</p>
+<p><img src="../img/231.png" /></p>
+<p><strong>Backtest 4-1-0.24</strong></p>
+<p><code>Return Retracement Ratio</code> a <code>0.92</code>, fijaos
+cómo cambia:</p>
+<p><img src="../img/230.png" /></p>
+<p><code>Compounded anual return</code></p>
+<p><strong>Backtest 25-1-0.07</strong></p>
+<p><code>Return Retracement Ratio</code> a <code>0.006</code>:</p>
+<p><img src="../img/229.png" /></p>
+<p><code>Compounded anual return 0.08%</code> -&gt; ahora analizamos</p>
+<p><img src="../img/233.png" /></p>
+<p><strong>Backtest 6-1-0.27</strong></p>
+<p><code>Return Retracement Ratio</code> a <code>1.02</code>. Los
+cambios son bestiales.</p>
+<p><img src="../img/228.png" /></p>
+<p><code>Compounded anual return 29%</code></p>
+<p><img src="../img/232.png" /></p>
+<p><strong>Backtest 6-0-0.20</strong></p>
+<p><code>Return Retracement Ratio</code> a <code>1.02</code></p>
+<p><img src="../img/227.png" /></p>
+<p><code>Compounded anual return 25%</code></p>
+<p><img src="../img/234.png" /></p>
+<p><strong>¿Error detectado?</strong></p>
+<p>¿Cómo es posible un <code>Total Return</code> ($18.953) tan bajo con
+el <code>25</code> <code>1</code> <code>0.07</code>? no está bien porque
+operamuy poco….</p>
+<p><img src="../img/152.png" /></p>
+<p><strong>Por mirar un poco en el sumario</strong></p>
+<p>En el sumario, fijaros, simplemente <em>profit factor</em>, aquí
+tenemos 1.39:</p>
+<p><strong>Backtest 1-0 -0.12</strong>
+<code>Profit factor 1.39</code></p>
+<p><img src="../img/153.png" /></p>
+<p><strong>Backtest 4-1-0.24</strong>
+<code>Profit factor 1.59</code></p>
+<p><img src="../img/154.png" /></p>
+<p><strong>Backtest 25-1-0.07</strong>
+<code>Profit factor 0.02</code></p>
+<p><img src="../img/155.png" /></p>
+<p><strong>Backtest 6-1-0.27</strong>
+<code>Profit factor 1.73</code></p>
+<p><img src="../img/156.png" /></p>
+<p><strong>Backtest 6-0.20</strong> <code>Profit factor 1.47</code></p>
+<p><img src="../img/157.png" /></p>
+<p>Tanto por profict factor, como por R, incluso por Sharpe, el más
+parecido es el <code>6-01-0.27</code>, es el que daba más profit.</p>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 20%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr>
+<th>Backtest</th>
+<th>Profit Factor</th>
+<th>Sharpe Ratio</th>
+<th>Avg Win / Avg Loss (R)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1-0-0.12</strong></td>
+<td><strong>1.39</strong></td>
+<td>0.0463</td>
+<td>2.06</td>
+</tr>
+<tr>
+<td><strong>4-1-0.24</strong></td>
+<td><strong>1.59</strong></td>
+<td>0.0577</td>
+<td>2.07</td>
+</tr>
+<tr>
+<td><strong>25-1-0.07</strong></td>
+<td><strong>1.02</strong></td>
+<td>–0.0002</td>
+<td>1.79</td>
+</tr>
+<tr>
+<td><strong>6-1-0.27</strong></td>
+<td><strong>1.73</strong></td>
+<td>0.0598</td>
+<td>2.04</td>
+</tr>
+<tr>
+<td><strong>6-0-0.20</strong></td>
+<td><strong>1.47</strong></td>
+<td>0.0539</td>
+<td>2.03</td>
+</tr>
+</tbody>
+</table>
+<div style="border-left: 4px solid #4caf50; background: #e8f5e9; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<p><strong>✅ ¿Por qué la configuración 6-1-0.27 ofrece beneficios
+altos?</strong><br><br></p>
+<p>La estructura de esta combinación encaja de manera natural con el
+comportamiento de un sistema Donchian aplicado a acciones en gráfico
+diario.<br></p>
+<strong>1. Canal de 6 barras → rupturas tempranas y frecuentes</strong>
+<ul>
+<li>
+Detecta rupturas recientes
+</li>
+<li>
+Permite entrar muy pronto en los movimientos
+</li>
+<li>
+Captura microtendencias antes de que se agoten
+</li>
+<li>
+Genera un número elevado de operaciones
+</li>
+</ul>
+<p><strong>2. ATR = 1 → filtro suave que no elimina las buenas
+entradas</strong><br> Con un canal corto, ATR=1 actúa como un <em>filtro
+de calidad</em>. Con un canal largo, ATR=1 se convierte en un <em>filtro
+que destruye señales</em>.<br></p>
+<strong>3. Trailing del 27% → permite dejar correr la tendencia
+completa</strong><br> En los sistemas tendenciales, una minoría de
+operaciones genera la mayoría del beneficio. Un trailing amplio hace
+posible que esas operaciones “grandes” aparezcan, de ahí el incremento
+del Profit Factor y del retorno compuesto.
+</div>
+<div style="border-left: 4px solid #f39c12; background: #fff8e5; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<p><strong>⚠️ ¿Cómo es posible un Total Return ($18.953) tan bajo con el
+25-1-0.07?</strong><br><br></p>
+<p>La clave está en cómo interactúan los tres parámetros: <code>25 – 1 –
+0.07</code></p>
+<ul>
+<li>
+<em>Período del canal</em> = 25 barras
+</li>
+<li>
+<em>Filtro de volatilidad ATR</em> = 1
+</li>
+<li>
+<em>Trailing stop</em> = 7% (0.07)
+</li>
+</ul>
+<p>La combinación es por naturaleza muy poco adecuada para un sistema
+Donchian tendencial aplicado a acciones. Donchian funciona bien cuando
+detecta rupturas <em>tempranas</em>, no rupturas tardías. Con
+veinticinco días de canal, el sistema entra cuando el movimiento ya está
+maduro o directamente agotado.<br><br></p>
+<strong>1. Un canal de 25 barras es demasiado lento en acciones</strong>
+<ul>
+<li>
+Se generan muy pocas señales
+</li>
+<li>
+La entrada llega muy tarde en la tendencia
+</li>
+<li>
+Gran parte del impulso ya se ha consumido cuando el sistema activa la
+operación
+</li>
+</ul>
+<p><strong>2. El filtro ATR = 1 elimina muchas entradas
+buenas</strong><br> Este filtro exige que la volatilidad de hoy sea
+menor o igual que la volatilidad media del último mes. En muchas
+acciones del Nasdaq, los días de ruptura auténtica suelen ir acompañados
+de un repunte de volatilidad. Como consecuencia, el filtro impide entrar
+justo en las rupturas más potentes.<br></p>
+<p><strong>3. Un trailing del 7% es demasiado ajustado para un sistema
+diario</strong><br> Un trailing tan estrecho salta con facilidad ante
+cualquier retroceso normal del precio. Los retrocesos del 3% al 6% son
+habituales en acciones; con un trailing del 7%, la salida se produce
+antes de que la tendencia logre desarrollarse.<br></p>
+<p><strong>4. La interacción entre los tres elementos es especialmente
+problemática</strong></p>
+<table>
+<tr>
+<td>
+<em>Canal 25</em>
+</td>
+<td>
+Entrada tardía
+</td>
+</tr>
+<tr>
+<td>
+<em>ATR = 1</em>
+</td>
+<td>
+Filtra las rupturas fuertes (las mejores)
+</td>
+</tr>
+<tr>
+<td>
+<em>Trailing 7%</em>
+</td>
+<td>
+Sale demasiado pronto
+</td>
+</tr>
+</table>
+Con tantas restricciones simultáneas, el sistema reduce drásticamente el
+número de operaciones, pierde diversidad dentro del portfolio, limita la
+exposición útil y reduce la probabilidad de capturar movimientos de gran
+tamaño.
+</div>
+<p>Vamos a ver el siguiente día si podemos sacar el <em>Sortino</em> vía
+<em>portfolio</em>, porque no está sacado.</p>
+<p><strong>Backtest 6-0.20</strong> <code>Profit factor 1.47</code></p>
+<p>Aquí <code>6-0.20</code> ya el <em>Sharpe ratio</em> ya lo tenemos
+positivo, y aquí lo que pasa que realmente la exposición es un poco
+elevada, teníamos que haberla regulado más. Hemos llegado a exponernos
+al 200%, dos veces nos ha apalancado hasta dos veces,</p>
+<p><img src="../img/158.png" /></p>
+<p>claro tenemos niveles de <em>drawdown</em> muy severos a nivel de
+<em>portfolio</em>, tenemos <em>drawdowns</em> bastante elevados:</p>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 15%" />
+<col style="width: 28%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr>
+<th>Backtest</th>
+<th>Profit Factor</th>
+<th>Sharpe Ratio</th>
+<th>Avg Win / Avg Loss (R)</th>
+<th>Max Drawdown (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1-0-0.12</strong></td>
+<td>1.39</td>
+<td>0.0463</td>
+<td>2.06</td>
+<td><strong>–79.10%</strong></td>
+</tr>
+<tr>
+<td><strong>4-1-0.24</strong></td>
+<td>1.59</td>
+<td>0.0577</td>
+<td>2.07</td>
+<td><strong>–61.39%</strong></td>
+</tr>
+<tr>
+<td><strong>25-1-0.07</strong></td>
+<td>1.02</td>
+<td>–0.0002</td>
+<td>1.79</td>
+<td><strong>–29.83%</strong></td>
+</tr>
+<tr>
+<td><strong>6-1-0.27</strong></td>
+<td>1.73</td>
+<td>0.0598</td>
+<td>2.04</td>
+<td><strong>–60.14%</strong></td>
+</tr>
+<tr>
+<td><strong>6-0-0.20</strong></td>
+<td>1.47</td>
+<td>0.0539</td>
+<td>2.03</td>
+<td><strong>–63.58%</strong></td>
+</tr>
+</tbody>
+</table>
+<h3
+id="evaluando-la-idea-y-luego-ya-decidiríamos-cómo-lo-operábamos">evaluando
+la idea, y luego ya decidiríamos cómo lo operábamos</h3>
+<p><strong>Recordar que no estamos evaluando el <em>portfolio</em> para
+operarlo así, estamos evaluando la idea, evaluando la idea, y luego ya
+decidiríamos cómo lo operábamos.</strong></p>
+<p>Aquí tenemos muchas acciones en negativo lógicamente. Luego una vez
+el sistema está validado yo luego lo operaré a lo mejor no
+necesariamente las 10 mejores, pero así que serán de las mejores, de
+acuerdo. Es decir, al final yo valido la idea en las 100 acciones porque
+eso me da mayor robustez, digamos que la idea la pongo más a prueba en
+acciones, incluso no han ganado:</p>
+<p><img src="../img/159.png" /></p>
+<p><strong>Backtest 6-1-0.27 <code>Profit factor 1.73</code> en
+<em>Portfolio Trader</em></strong></p>
+<p>Incluso aquí, incluso en el <em>Portfolio Trader</em>, que no es tan,
+no me dará tanta información, pero este mismo mirar para que veáis la
+comparación que es interesante de ver, pero pongo aquí:</p>
+<p><img src="../img/160.png" /></p>
+<p>Y ahora si le hacemos <em>backtest</em>, y aquí ya veréis que cambia
+mucho la cosa, aquí también tengo el <em>money management</em> a nivel
+<em>portfolio</em>, 2 por ciento, está bien:</p>
+<p>Aquí ya hemos controlado mejor porque hemos controlado la exposición,
+claro también tiene un factor de 1.46 y ganar 52 mil poco, claro, todo
+lo uno depende del otro, uno depende del otro. Pero aquí por ejemplo,
+mirar lo que os quería enseñar antes, la correlación de los retornos
+mensuales, de acuerdo, de todas las 100 acciones.</p>
+<p><img src="../img/161.png" /></p>
+<p>Fijaros que hay datos en negativo porque hay acciones que pierden,
+que pero que siendo todo en el Nasdaq 100, claro es que Apple con
+Microsoft tiene 0.66, Apple con Google 0.48, con Amazon 0.55, con Nvidia
+0.32, con Facebook 0.29, que son acciones directoras, de acuerdo, están
+ordenadas, están ordenadas por capitalización, vale, que es decir que
+todas las que veis primeras son acciones súper top para elegir. Y
+fijaros su nivel de correlación, bajar aquí no sé si se llega a ver
+bien, esperaros que os voy a poner el foco, lo que sea mejor con el foco
+es ahí. Fijaros, ahí veis Microsoft, mirar la columna para abajo, es
+0.66, 0.67, 0.53, 0.69, 0.56, 0.55, 0.40 con Tesla pero 0.48, 0.36,
+0.39, 0.68, 0.51. Es decir, es el mismo sistema en el mismo
+<em>timeframe</em>, vale, sus correlaciones mensuales son relativamente
+moderadas, pero no son 0.8, 0.9, está bien, tiene una diversificación
+moderada que es muy, mejora lógicamente.</p>
+<p><img src="../img/162.png" /></p>
+<div style="border-left: 4px solid #2196f3; background: #e3f2fd; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<strong>📊 Correlación intra-portfolio</strong><br><br> Incluso
+aplicando el mismo sistema al mismo universo de acciones (Nasdaq 100),
+las correlaciones mensuales entre activos oscilan entre 0.29 y 0.69.
+Esto indica una diversificación <em>moderada pero real</em>: no son
+correlaciones de 0.8-0.9 que anularían el beneficio de diversificar.
+Esta descorrelación parcial es una de las razones por las que validar en
+múltiples activos aporta robustez.
+</div>
+<p>Entonces aquí fijaros que ya con una exposición más controlada
+tenemos datos de retorno poquito más estables:</p>
+<p><img src="../img/235.png" /></p>
+<p>Es una curva muy muy justo, bastante virgen, pero es un sistema muy
+justo, pero con este nivel de <code>profit factor</code>, ese nivel de
+retorno, acepta algo de <code>apalancamiento</code> y tiene algo de
+mejora por delante.</p>
+<p><img src="../img/236.png" /></p>
+<p>Además le hemos cargado poco <code>size</code>.</p>
+<p><img src="../img/161.png" /></p>
+<p>Vamos a meter desde el 2007 al 2%, mira vamos a meter un 3% de
+<em>Max capital risk</em> y nos va a poner un poquito más: <img
+src="../img/237.png" /></p>
+<p>Y veis, ya tenemos un <em>Sharpe ratio</em> calculado bien a 0.29,
+<em>Sortino</em> 0.45, es decir el <em>Sharpe ratio annualized</em> al
+uno es un <em>Sharpe ratio</em> bajito, es un sistema justo, pero bueno
+poco a poco lo podemos hacer crecer el sistema. <strong>De hecho este
+set es el de mayor retorno, no es el que mejor equilibra</strong>.</p>
+<p><img src="../img/238.png" /></p>
+<p>de hecho, este <em>set</em> simplemente es el de mayor retorno, no es
+el que mejor equilibra.</p>
+<p><img src="../img/165.png" /></p>
+<p>Aquí ahora podíamos mirar varios, pero y hemos mejorado un
+poquito:</p>
+<p><img src="../img/166.png" /></p>
+<p>Ha sufrido bastante aquí porque es verdad que con este nivel de ratio
+del <em>trailing</em> pues le cuesta salirse. Esto ya os digo, había
+<em>sets</em>, este <em>set</em> tiraba más para el retorno, pero
+teníamos alguno que tiraba un poco más al equilibrio.</p>
+<p>Aquí podíamos encontrar alguno que mejorara esta caída del 2022 a
+cambio de un retorno un poco peor, es un poco la que hay. Que fijaros,
+hemos ganado un poco de histórico como tenemos ratios negativos en
+varias acciones:</p>
+<p><img src="../img/167.png" /></p>
+<p>A los ves, en Facebook perdemos dinero, en Google, en una de las
+Google también:</p>
+<p><img src="../img/168.png" /></p>
+<p>Porque al final tienen muy pocas acciones con este nivel de
+exposición, con este <code>canal</code> y con este <code>ratio</code>,
+realmente opera muy poco cada una de las acciones, de acuerdo, pero muy
+poco. Por eso al final nos vemos obligados a meter pues un análisis
+global que al final nos pueda meter más acciones, para que al final nos
+pueda meter 1.100 <em>trades</em> desde el 2007, desde 2007 nos mete
+1.100 <em>trades</em>:</p>
+<p><img src="../img/239.png" /></p>
+<p>Aquí tienes el <code>&lt;div&gt;</code> con la conclusión final sobre
+la necesidad de aumentar la muestra de operaciones y la estrategia
+técnica para lograrlo, basándome en el análisis de robustez del
+instructor:</p>
+<div style="border-left: 4px solid #2196f3; background: #e3f2fd; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<h3 style="color: #1976d2; margin-top: 0;">
+<strong>🚀 Conclusión: Robustez mediante el Volumen de Trades</strong>
+</h3>
+<p>
+La validación de un sistema tendencial “justo” depende de la
+<strong>significación estadística</strong>. Un sistema que opera poco de
+forma individual corre el riesgo de ser víctima del azar o de rachas
+negativas en activos específicos (como se ve en Facebook o Google).
+</p>
+<p>
+<strong>¿Por qué necesitamos más trades?</strong>
+</p>
+<ul>
+<li>
+Para diluir el impacto de las acciones en negativo y aprovechar la
+<strong>descorrelación moderada</strong> (0.29 - 0.69) detectada en el
+Nasdaq 100.
+</li>
+<li>
+Para transformar un sistema de parámetros “justos” en una curva de
+beneficios estable y profesional.
+</li>
+</ul>
+<p>
+<strong>¿Cómo conseguirlo?</strong>
+</p>
+<ul>
+<li>
+<strong>Análisis Global (Universo Ampliado):</strong> No operar solo las
+10 mejores, sino validar e integrar el máximo de acciones posibles (en
+este caso, las 100 del Nasdaq) para elevar la muestra a <strong>+1.135
+trades</strong>.
+</li>
+<li>
+<strong>Gestión de Exposición:</strong> Incrementar el <em>Max Capital
+Risk</em> (ej. subir del 2% al 3%) y permitir cierto grado de
+apalancamiento para que el sistema “ponga a trabajar” el capital en más
+oportunidades simultáneas.
+</li>
+<li>
+<strong>Validación de la Idea, no del Portfolio:</strong> Priorizar la
+robustez de la lógica (Canal 6 / Trailing 0.27) sobre el resultado
+individual de cada activo.
+</li>
+</ul>
+</div>
+<p>Todavía no dejamos un <em>set</em> elegido porque me gustaría poder
+ver una optimización en el <em>chart</em> para el
+<code>*Sortino* de portfolio</code>, que aquí sí que lo veo pero no lo
+veo optimizando, porque es una cosa bastante extraña por parte de
+<em>MultiCharts</em>. Ahí en los foros de <em>MultiCharts</em> están con
+varios mensajes al respecto, es decir, que tienes <em>Sharpe ratio</em>
+metido como función, tienes <em>Sortino</em> metido como
+<em>fitness</em>, y que a mí no lo tienes como <em>fitness</em> ya por
+defecto de optimización, es un poco extraño. Es porque si ya lo tienes
+metido dentro del programa, o sea lo das, ese ratio lo das, lo puedes
+perfectamente usar como ratio de diana, porque es un dato que estás
+calculando. Si tú me lo estás calculando y aquí, pero curiosamente lo da
+para el <em>performance</em> pero no lo da como ratio de diana, lo
+tienes que meter tú por código, y el que tienes metido por sistema nos
+sirve por lo que os decía, tienes que hacer específico de
+<em>portfolio</em>, de acuerdo. Entonces tienes ese problema, pues es un
+tanto curioso, pero así es.</p>
+<h2 id="próxima-sesión---configuración-de-full-tendencia">próxima sesión
+- configuración de <em>full tendencia</em></h2>
+<p>Para la próxima sesión vamos a tomar una decisión respecto a este
+sistema tal como está, es decir, en una configuración de <em>full
+tendencia</em>. Quien quiera —y quien tenga los recursos, el software y
+los conocimientos necesarios— también puede hacer alguna propuesta
+adicional. Es <em>súper bienvenida</em> como ejercicio para casa, porque
+quiero empezar a mandar algunos.</p>
+<p>La regla de entrada es simplemente esta
+<code>if Close &gt; Highest(Price_Up, Per_Canal)[1] then</code>, no
+tiene más:</p>
+<pre><code>// TÍPICO SISTEMA DE RUPTURA: el cierre supera el máximo del CIERRE DE 20 barras
+if Close &gt; 0 and Condition1 and MP &lt;&gt; 1 and (BarsSinceExit(1) &gt;= Bar_Filtro or TotalTrades = 0) then
+Begin
+    if Close &gt; Highest(Price_Up, Per_Canal)[1] then
+        Buy Contratos contracts Next Bar at Market;
+End;</code></pre>
+<p>Es decir: <em>cierre por encima del canal</em>, que está calculado
+por cierres y por el número de velas. En la apertura de la siguiente
+vela compra. Para evitar compras en acciones con cierres negativos,
+hemos añadido este <code>Close &gt; 0</code>, porque en muchos años
+puede pasar. Ese <code>Close &gt; 0</code> funciona como filtro: si vale
+1, actúa como filtro; si el filtro vale 0, es <em>true</em> y no
+actúa.</p>
+<p>También comprobamos que no esté comprado (<code>MP &lt;&gt; 1</code>)
+y que se cumpla el <code>Bar_Filtro</code>, que es simplemente una
+regulación para evitar reentradas inmediatas: que al menos haya pasado
+una vela desde la última salida para que no compre en la misma vela en
+la que cerró.</p>
+<p>La condición <code>TotalTrades = 0</code> está puesta para permitir
+la primera operación del sistema, porque si no, al requerir que
+<code>MP &lt;&gt; 1</code>, no compraría nunca en la primera barra. Es
+una conexión típica que se suele incluir para que el sistema pueda
+arrancar correctamente. Pero, en esencia, la regla de entrada es esta y
+no tiene más.</p>
+<p>El <em>trailing stop</em> que actúa es este de aquí:</p>
+<pre><code>// Trailing Stop
+If Prc_Trail &gt; 0 Then
+Begin
+    If MP &lt;&gt; 1 Then
+        Trailing_Long = 0;
+
+    If MP &lt;&gt; -1 Then
+        Trailing_Shrt = 99999;
+    
+    Begin
+        if MP = 1 then
+        begin // Para posiciones largas
+            Trailing_Long = maxList(Trailing_Long, High - (High * Prc_Trail));
+            Sell (&quot;Trai_Lng&quot;) next bar at Trailing_Long stop;
+        end;
+
+        if MP = -1 then
+        begin // Para posiciones cortas
+            Trailing_Shrt = minList(Trailing_Shrt, Low + (Low * Prc_Trail));
+            BuytoCover (&quot;Trai_Shrt&quot;) next bar at Trailing_Shrt stop;
+        end;
+    End;
+End;</code></pre>
+<p>Si el <code>Prc_Trail</code> es mayor que cero, se inicializa la
+variable y ya está. Cuando el sistema está largo, el <em>trailing</em>
+se actualiza como el valor máximo entre:</p>
+<ul>
+<li>el <em>trailing</em> que ya tenía calculado (que solo puede subir),
+y</li>
+<li>el máximo de la vela (<code>High</code>) menos ese máximo
+multiplicado por el porcentaje del <em>trailing</em>.</li>
+</ul>
+<p>Ese cálculo define el precio del <em>stop</em> dinámico. Con esta
+condición te aseguras de que el <em>trailing</em> <strong>solo pueda
+subir</strong>; nunca baja. No está basado en ATR —aunque podría hacerse
+así—, pero en este caso hemos querido hacerlo mediante porcentaje porque
+es mucho más sencillo. Más simple no puede ser: es un <em>trailing stop
+por porcentaje</em> totalmente directo y funcional.</p>
+<h3 id="tradestation-msft---backtest-6-0.20">TradeStation MSFT -
+Backtest <code>6-0.20</code></h3>
+<p>Vale, y visto aquí por ejemplo en el gráfico de alguno de ellos para
+acabar viendo alguno, lo vemos aquí en un momento en cualquiera, ahora
+estamos viendo 6 con el filtro en 1 y 0.27 (todavía opera menos):</p>
+<p><img src="../img/171.png" /></p>
+<p><img src="../img/240.png" /></p>
+<p>Ya veis, claro, es un sistema que deja correr:</p>
+<p><img src="../img/172.png" /></p>
+<p>Deja correr, se ha comprado, deja correr, es un sistema de muy largo
+plazo, por eso la única manera de evaluarlo es metiéndolo en varias
+acciones, de acuerdo, y que cuando el mercado va a entrar lateral pues
+sufre, sufre mucho.</p>
+<p>Porque aquí fijaros, acaba entrando otra vez, el canal no está bien
+ajustado y vuelve a entrar:</p>
+<p><img src="../img/173.png" /></p>
+<p>El canal no está bien, no está bien, porque no está en 6, está en
+<code>Per_Canal 20</code>:</p>
+<p><img src="../img/174.png" /></p>
+<p>lo cambio</p>
+<p><img src="../img/176.png" /></p>
+<p>6 es muy rápido, entrar muy rápido, esta es la diferencia, habéis
+visto que había varios, varias zonas, esta es la versión súper rápida de
+entrar, habían otras versiones, hay que acabar de elegir.</p>
+<p><img src="../img/175.png" /></p>
+<p>Aquel que quiera proponer, con el código del sistema que le daremos y
+demás, alguna que nos lo envíe, nos lo puede enviar, lo voy a poner el
+disco, lo puede enviar al email, y yo me comprometo a responderle.</p>
+<p>Otra cosa que queda pendiente para el día siguiente, vamos a hacer
+esto, acabar de tomar una decisión, acabar de tomar una decisión con
+nuestro <em>Sortino</em> de <em>portfolio</em>, decisión de parámetros,
+de esta versión como está.</p>
+<h3 id="qué-hacemos-con-los-cortos">¿Qué hacemos con los cortos?</h3>
+<p>Esto es lo que os quería poner para casa, unido con esto, aquel que
+quiera en este <em>setup</em>, en este código, ¿qué haría con el lado
+corto? Si alguien quiere proponer o quiere trabajarlo, o simplemente
+puede proponerlo bien trabajándolo, o bien filosóficamente, podemos
+hacer las dos cosas, me valen las dos cosas. Aquel que quiera trabajarlo
+porque puede hacerlo, ya que lo haga. El que no quiera trabajarlo porque
+no es capaz, simplemente que lo conceptualice y que diga “pues mira, yo
+creo que en los cortos en esta versión haría esto, esto, esto y por
+qué”. En acciones, en este mismo <em>setup</em>, en acciones, ¿qué
+hacemos con los cortos?</p>
+<p>Y luego ya lo que vendría es lo mejor, tiene que ver con esto, vale,
+es que ¿qué otras variaciones hacemos? Este comentamos que el Donchian
+es un mecanismo de entrar en tendencia, pero es un mecanismo muy útil
+para hacer <em>breakout</em>, entonces esto ahora con lo que tiene ya en
+el código se puede hacer <em>breakout</em>, se puede hacer un
+<em>breakout</em>, ¿cómo haríamos?, sobre qué, tratamos de
+desarrollar.</p>
+<p>Este serían un poco las cosas pendientes respecto a esta estrategia,
+que deberíamos de liquidarlo ya para entrar en otra cosa.</p>
+<p>No le metamos más conceptos, ya sé que le podríamos meter un ATR, le
+podemos meter mil cosas, ya lo haremos, de acuerdo. El sistema este lo
+vamos a dejar así, con un Donchian sencillito, entre en la versión
+tendencial, que es muy mejorable, lo vamos a dejar así, y cortos, y
+haremos un <em>breakout</em> con este código también, vale, y a partir
+de ahí seguiremos en otras cosas.</p>
+<h2 id="cuestiones">Cuestiones</h2>
+<p><strong>¿Se puede aplicar trailing stop y stop loss a la vez
+asegurando una pérdida fija?</strong></p>
+<p>Sí, sí, sí, es posible y tiene sentido, pero en este caso, y el
+sentido, a ver, depende del tipo que vas, es realmente, digo, depende
+del tipo que vas, o sea, en el <em>trailing</em> que hemos puesto
+nosotros, en el <em>trailing</em> que hemos puesto nosotros, mucho mucho
+sentido no tiene, vale, porque ya hemos puesto, porque hay muchos, el
+concepto clásico de <em>trailing</em> hay muchas veces que se activa a
+partir de cierta cantidad, pues en esos casos mucha gente sí que usa un
+<em>stop</em>, un <em>stop</em> de seguridad podemos decir. Acordaros
+cuando hablamos un poco del <em>stop</em> de seguridad, ¿no?, y que
+entra ya nada más abrir, pues un poco por si se lía, ¿no?, es que me
+saque, no, pues no tener que, no me saca.</p>
+<p>Pero en nuestro caso el <em>trailing</em> se activa desde la entrada,
+en el momento del cálculo se calcula del cierre anterior, y en el
+momento que el precio que acaba la barra en que ha entrado, ya entra en
+juego el valor máximo que haya, o el cierre anterior o el máximo que
+haya hecho ese día, el máximo que haya hecho ese día actúa de
+<em>trailing</em>, y entonces ya tienes <em>trailing</em>. Claro, que es
+un 20 por ciento, por eso has visto algunos aquí como este, o bueno
+incluso otros peores, que se va, se va para abajo y a tomar viento, a
+tomar viento.</p>
+<p>El problema de los tendenciales puros es este, que si tú quieres un
+tendencial puro y quieres tres, como esta locura de que te pilla toda la
+subida no, esto, pues claro, solo ahí dejándolo, dejándole, tragándote
+estas cosas:</p>
+<p><img src="../img/177.png" /></p>
+<p>También ese problema, porque si yo le pongo una salida por tiempo,
+que va muy bien y evitará mucho esto, que evitará también que pille el
+recorrido. Por eso decía que un tendencial es bastante desagradecido, es
+muy desagradecido, te decía, el puro. Luego están los <em>breakout</em>,
+que también son tipo de tendencial, que ya se manejan mejor, y que este
+lo haremos también en mercado, vale. Entonces conceptualmente sí se
+puede, pero en esta configuración tal como está no tiene demasiado
+sentido porque ya actúa siempre.</p>
+<p>Este lo que pasa que le da mucho margen, le da mucho margen, pero
+este desde el primer momento que entra ya va calculando, aquí le calcula
+un 27%:</p>
+<p><img src="../img/181.png" /></p>
+<p>Pero no ha saltado. Ahora, para que veas, este aquí le pongo 10 por
+ciento y seguramente salta:</p>
+<p><img src="../img/178.png" /> <img src="../img/179.png" /> <img
+src="../img/180.png" /></p>
+<p>Salta ahí, salta aquí, salta aquí, es un poco la idea, ¿no? Es claro,
+yo lo tengo siempre, siempre calcula, este que hemos hecho nosotros.
+Imagínate que le pongo 0.05, no va a parar de salirse todo el rato:</p>
+<p><img src="../img/182.png" /> <img src="../img/183.png" /> <img
+src="../img/184.png" /></p>
+<p>Ves, ya cambiado completamente el sistema, es otro sistema, no para,
+entrar, a salir, a salir, a salir, a salir, a salir, que cuesta mucho
+porque el precio va haciendo sus oscilaciones, y alguna vez, oye, y
+ahora un trocho grande, pero la mayoría de veces no, porque se va a
+salir todo el rato, y ahí está el equilibrio de los tendenciales. Este
+es el problema en los tendenciales, que para pillar largos recorridos y
+no caer en esto hay que dejarlo sufrir. Claro que hay maneras de
+utilizarlo más para evitar las otras, pero un tendencial puro es uno de
+los casos de <em>trailing</em>, aunque ya os lo comenté en la teoría, es
+verdad que <em>trailing</em> acopla bastante, acopla bastante, pero en
+porcentaje acopla menos. Entonces acopla bastante quiere decir que lo
+vas a, lo metes ahí, pero 25 y luego empezarás a ver que a veces ha
+degradado, ha degradado.</p>
+<div style="border-left: 4px solid #ff9800; background: #fff3e0; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<strong>⚠️ Acoplamiento del trailing stop</strong><br><br> El
+<em>trailing stop</em> tiende a “acoplarse” a los datos históricos, es
+decir, a ajustarse demasiado bien al pasado durante la optimización. Un
+<em>trailing</em> en porcentaje acopla menos que uno basado en ATR, pero
+aun así hay que vigilar que no esté sobreoptimizado. Síntoma típico:
+funciona muy bien en <em>in sample</em> pero degrada en <em>out of
+sample</em>.
+</div>
+<p><strong>Es que el trailing hay veces que se va directo a pérdidas
+igual por el cierre o algo y hace más de lo configurado</strong></p>
+<p>¿Que te pierde más de lo que tienes esperado?, ¿qué decir? Depende
+cómo lo tengas votado. Si lo pones desde el principio, si lo pones en
+principio que esté siempre puesto en mercado, al final claro te puede
+pillar un <em>gap</em>. Aquí en este caso vas a tendencia y te vas a
+tragar, claro, los resultados. El otro día lo hablaba en el directo del
+jueves, había no sé qué acción había caído 15, pues te lo tragas, claro,
+esto hay en acciones, tienes ese problema. Aquí muy diversificado, y
+porque te lo tragas en tendencia, tienes el problema.</p>
+<p>Pero ya veremos otro tipo de estrategias, cuidado, es decir, al final
+ahora estamos viendo esta pero que tiene su lado bueno y su lado malo,
+al final. Y por eso la idea es tener varias, tener una así, tener otra
+que te lo compensa, y esta te queda enganchada pero a lo mejor tienes
+otra que había iba corto en petróleo y no sé qué, hay que ir
+diversificando.</p>
+<p>Los tendenciales ya digo que son, de hecho cuando uno no tiene mucha
+experiencia, son sistemas bastante poco llevaderos, vale, lo hablamos en
+la teoría. Normalmente es más tendencial, hay más llevadero un sistema
+antitendencial, ¿por qué?, porque el antitendencial no deja, no tiene
+colas largas. En cambio los tendenciales, o sea, con dentro lateral no
+para de fallar, no para de fallar, no para de fallar, y te devuelve
+mucho el mercado.</p>
+<p><strong>¿Tendencial puro no es usual poner un SL fijado mejor
+trailing?</strong></p>
+<p>Depende en qué vayas, depende en qué vayas. Un <em>stop</em> en un
+tendencial, en un tendencial puro, el <em>trailing</em> y generando
+somos súper amigos de los, que los digo, estamos ahora empezando las
+prácticas como el que dice, vale, es la primera estrategia que hemos
+hecho, vale. Pero <strong>si algún tipo de sistema va bien el
+<em>trailing</em> es en el tendencial</strong>, en el tendencial puro si
+alguno, vale, va bien este.</p>
+<p>Nosotros operando en <em>live</em> ahora no usamos <em>trailing</em>.
+Vamos a SL. Pero no es tendencial puro, no es tendencial puro. En un
+tendencial puro ya digo el <em>trailing</em> es el caso que más sentido
+tiene, sobre todo en acciones, sobre todo en acciones, buscando el largo
+recorrido, que es un poco la idea.</p>
+<p>Este sistema que lo puedes configurar así pero no es la idea, ya ese
+sistema, y por eso lo hemos metido en las 100 acciones, es que corra,
+vale, es un sistema para correr. Esta es su idea, su sentido, y claro es
+un, o sea es un sistema que cuando Netflix sube un 200 por ciento lo
+pilla, ¿me entiendes? Ahora eso tiene un precio, ¿me entiendes?, eso
+tiene un precio. Cuando Meta está en lateral un montón de tiempo pues te
+lo tragas, ahora en cambio está en tendencia que alucinas.</p>
+<p>Pero claro, tú imagínate ya en su <em>setup</em> básico, que no, no
+voy ahora a 6, 0.20, vale, que solo hablamos, y le quito el filtro,
+vale, esto ya es configuración básica original sin hacer nada, el largo
+que lleva en Meta:</p>
+<p><img src="../img/185.png" /></p>
+<p>Está comprado ahora mismo en 119.20, están 470, lleva 400 por ciento.
+Claro eso solo lo pillas así, solo pillas así, claro, a costa de eso
+aquí se te ha tragado tres hostias que te han dejado la cuenta bonita.
+Pero hay que estar dimensionado para ello, y cuando ha estado en lateral
+pues está cosido también, claro.</p>
+<p>Bueno, en estas etapas ha aguantado muy bien porque claro tiene mucho
+margen, pero hay acciones o yo qué sé, cuando Netflix, mira Netflix es
+tremendo, porque Netflix tuvo, ahora sí, pero tuvo una época hace tiempo
+y ahí a la tragadita, perdona, venga, comprado en 95, 98 y te sacan
+300:</p>
+<p><img src="../img/186.png" /></p>
+<p>Bueno, tiene lo bueno y tiene lo malo, pero cuando se pasa una época
+mala pues te hace polvo. Pero es aquí el tiempo que está que no hace
+nada, si no, si no, si no, al final coge tendencia en el tendencial.</p>
+<p>Con SL puro tiene que tener otra salida. Si yo aquí este sistema
+tiene puesto un <em>stop</em>, pero ¿cómo salgo? Tengo que necesitar
+otras sí o sí, porque si no vuelve. Yo te desactivo el <em>trailing</em>
+ahora y te pongo el mismo en <em>stop</em>, el mismo 0.20:</p>
+<p><img src="../img/188.png" /></p>
+<p>No sale nunca:</p>
+<p><img src="../img/189.png" /></p>
+<p>Porque no cae 0.20 el precio de entrada nunca, ya tiene que caer 0.20
+del punto de entrada. Al final no es igual, 0.10, necesita otra salida.
+Cambio el <em>trailing</em> no, el <em>trailing</em> garantiza que no
+necesita nada más. Entonces si yo no quiero muchos grados de libertad y
+demás, quiero <strong>simple</strong>, <em>trailing</em> me soluciona,
+que solo puedo usar esa salida. Yo aquí solo tengo un Donchian y una
+salida, nada más.</p>
+<div style="border-left: 4px solid #4caf50; background: #e8f5e9; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<strong>✅ Ventaja del trailing en tendenciales puros</strong><br><br>
+El <em>trailing stop</em> es autosuficiente como única salida: garantiza
+que eventualmente saldrás de la posición sin necesitar otras reglas
+adicionales. Un <em>stop loss</em> fijo, en cambio, solo te protege de
+pérdidas pero no te saca de operaciones ganadoras que se dan la vuelta.
+Por eso en tendenciales puros el <em>trailing</em> es la opción más
+simple y robusta.
+</div>
+<p><strong>¿Pérdidas se podían compensar con el lado corto bastante
+bien?</strong></p>
+<p>Cuando hablamos de si las pérdidas del lado largo se podrían
+compensar operando también el lado corto, la respuesta es que sí, en
+teoría es posible. Pero en la práctica es muy difícil operar cortos en
+acciones con un sistema tendencial como este. Es factible, pero muy
+complicado.</p>
+<p>La estructura del mercado lo explica. Las acciones suelen mostrar
+caídas muy bruscas y recuperaciones igual de rápidas. Es decir, el
+precio baja fuerte, pero rebota enseguida. Esto hace que un tendencial
+corto tenga enormes dificultades para mantenerse en la operación: entra
+bien, el precio cae, pero el rebote lo expulsa casi de inmediato.</p>
+<p>Para ilustrarlo, probamos exactamente el mismo Donchian pero aplicado
+al corto. En cuanto lo activamos correctamente (con el filtro bien
+configurado), se ve claro: pierde de forma sistemática. No porque el
+código esté mal, sino porque las acciones no desarrollan tendencias
+bajistas limpias con frecuencia suficiente. El precio retrocede
+constantemente hacia la media y rompe cualquier estructura tendencial
+bajista antes de que pueda generar beneficio.</p>
+<p>En un gráfico se ve muy claro: el sistema entra en una ruptura
+bajista, el precio cae unos días, pero enseguida rebota con fuerza y te
+saca. Luego vuelve a caer, pero ya estás fuera; el sistema vuelve a
+entrar tarde, y vuelve a producirse otro rebote que lo vuelve a
+expulsar. Este comportamiento es habitual en acciones y explica por qué
+el lado corto, usando un Donchian tendencial, prácticamente no
+funciona.</p>
+<p>Por esta misma razón, no basta con invertir el <em>setup</em> del
+lado largo. Para operar cortos en acciones suele hacer falta <em>otro
+tipo de lógica</em>, normalmente más rápida en las salidas y en muchos
+casos con componentes que se acercan más a <em>mean reversion</em> que a
+tendencia pura. Con un tendencial diario clásico, el lado corto acaba
+siendo estructuralmente inferior.</p>
+<p>Incluso en nuestra operativa con el Nasdaq lo hemos visto: el lado
+corto se puede operar, pero es más volátil y más ingrato, y en varios
+años (como el pasado) sistemas sólidos como <em>Apolo</em> han acabado
+perdiendo en cortos a pesar de funcionar bien en largos.</p>
+<div style="border-left: 4px solid #e91e63; background: #fce4ec; padding: 10px 15px; margin: 10px 0; border-radius: 8px;">
+<strong>📉 Asimetría estructural largos vs cortos en
+acciones</strong><br><br> Las acciones tienen un sesgo alcista
+estructural: suben de forma gradual pero caen de forma brusca con
+rebotes rápidos. Esto hace que los sistemas tendenciales funcionen bien
+en largos (capturan subidas prolongadas) pero mal en cortos (los rebotes
+los expulsan antes de capturar la caída). Para operar cortos en acciones
+se necesitan estrategias diferentes, normalmente más cercanas a
+<em>breakout</em> rápido o <em>mean reversion</em>.
+</div>
+<p><strong>¿A mejor bajar el frame más tendencia bajista
+más?</strong></p>
+<p>Sobre si <strong>bajar el <em>timeframe</em></strong> podría ofrecer
+más tendencia bajista: bueno, puedes hacerlo, sí, pero también puedes
+optar por operar <em>otro tipo de sistema</em>, Antonio. No hace falta
+limitarse a buscar tendencia. Perfectamente puedes buscar tendencia en
+el lado largo y trabajar <em>anti-tendencia</em> en el lado corto. Ambas
+cosas son válidas.</p>
+<p>Bajar el <em>timeframe</em> también es posible; no digo que no. Pero
+hay que entender que el mercado es <em>fractal</em>: en el lado corto,
+si bajas el <em>timeframe</em>, ganarás algunas cosas pero perderás
+otras. No es necesariamente más sencillo; de hecho, suele ser más
+difícil. Aunque es cierto que en marcos temporales más cortos puede
+ayudarte en el <em>control del riesgo</em>, sobre todo reduciendo
+pérdidas cuando la operación falla. En ese sentido, sí puede funcionar
+mejor. Pero también te expulsará antes de las operaciones, así que no
+todo es ventaja.</p>
+<p>Por eso <em>tendencia pura en cortos es complicado</em>. Muy
+complicado. En el lado corto hay que buscar otro enfoque, más basado en
+<em>breakout anti-tendencial</em>, en rupturas rápidas para salir
+pronto. Trabajar salidas por tiempo, por <em>take profit</em>, marcar un
+objetivo total o parcial, jugar con esas opciones. Ese es el camino más
+práctico.</p>
+</body>
+</html>

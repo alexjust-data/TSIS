@@ -1,0 +1,3029 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>practica_16_revised</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1
+id="práctica-16---portfolio-money-management-y-diversificación">Práctica
+16 - Portfolio, Money Management y Diversificación</h1>
+<h2 id="índice">Índice</h2>
+<ul>
+<li><a href="#consultas">Consultas</a></li>
+<li><a href="#papers-y-material-de-portfolio">Papers y material de
+portfolio</a></li>
+<li><a href="#maestro">Maestro</a>
+<ul>
+<li><a href="#ejemplo-de-portfolio-con-dos-familias">Ejemplo de
+portfolio con dos familias</a></li>
+</ul></li>
+<li><a href="#recomendación-de-activos">Recomendación de activos</a>
+<ul>
+<li><a href="#ejemplo-de-portfolio-real">Ejemplo de portfolio
+real</a></li>
+</ul></li>
+<li><a href="#portfolio-trader">Portfolio Trader</a>
+<ul>
+<li><a href="#peso-inicial-de-sistemas">Peso inicial de
+sistemas</a></li>
+<li><a href="#rebalancear-o-no-rebalancear">Rebalancear o no
+rebalancear</a></li>
+</ul></li>
+</ul>
+<h2 id="consultas">Consultas</h2>
+<p><strong>Material subido</strong></p>
+<p>Pues subí el <em>buscador de entradas salidas</em> que lo teníamos
+pendiente, con 23 entradas y no sé si dan 35 salidas.</p>
+<ul>
+<li>BUSCADOR_de_ENTRADAS_Y_SALIDAS.zip</li>
+</ul>
+<p>Que recuerda, sólo no deja de ser un ejemplo. Por ejemplo, yo qué sé,
+indicador sólo hay el RSI, pero podéis poner otros. De figuras de velas
+pues está el martillo, pero podéis poner otras. Entonces al final no
+deja de ser una plantilla donde podéis hacer ahí 70, pero para que veáis
+un poco en la manera y el esquema, no, el esquema de que podéis poder
+trabajarlo y podéis desglosarlo, buscar sólo de indicadores o lo de tal,
+vale.</p>
+<p>Decir, un poquito para trabajar y buscar y buscar ideas cuando uno no
+tiene. Que a veces no hace falta, es no hace falta y puedes sentarte en
+algunas, vale.</p>
+<p>Luego, también he subido aquí un pack de Forex para responder a una
+pregunta que había. Ahora en pregunta, que lo vemos allí.</p>
+<ul>
+<li><a
+href="../../29_practica-material-extra/Forex%20Pack%20TradeStation/Forex%20Pack/">29_practica-material-extra
+: pack de Forex</a></li>
+</ul>
+<p>Y he subido dos artículos bastante interesantes sobre
+<em>filtros</em> principalmente para las estrategias <em>breakout</em>.
+Como de esto hemos hablado bastante os pasamos y hablamos de las
+bastantes figuras de filtro, y quería ya esta imagen ponerla hace
+tiempo, que es un poco una imagen típica de cómo se filtra por
+volatilidad entradas, vale.</p>
+<p>Artículos Filtros estrategias Breakouts * <a
+href="../../26-practice-16/docs/The%20Outside%20Bar.pdf">OutSide
+Bars</a> * <a
+href="../../26-practice-16/docs/The%20Power%20of%20Volatility%20Contraction%20Patterns.pdf">Volatility
+Contractions</a></p>
+<p>Todo siempre es discutible, todo hay que probarlo. Y al final el
+vector más, más, más importante de todos… Luego subiré un PDF de Kaufman
+que me gusta muchísimo, que ya lo tengo preparado hace tiempo. Lo quería
+subir el último día.</p>
+<p><strong>El vector principal: tipo de mercado</strong></p>
+<p>El vector principal para que un sistema funciona es el tipo de
+mercado. Entonces si te empeñas en un activo muy tendencial meterle
+<em>mean reversion</em>, pues va a ser complicado. Y viceversa. De ser
+un activo típicamente <em>mean reversion</em>, te empeñas en tendencia,
+pues complicado, vale.</p>
+<div
+style="border-left: 4px solid #27ae60; background: #ecf9f1; padding: 10px 15px; margin: 10px 0;">
+<p><strong>📊 El vector principal siempre es las características del
+activo</strong><br> El vector principal para que un sistema funciona es
+el tipo de mercado. Entonces si te empeñas en un activo muy tendencial
+meterle <em>mean reversion</em>, pues va a ser complicado. Y viceversa.
+De ser un activo típicamente <em>mean reversion</em>, te empeñas en
+tendencia, pues complicado, vale.</p>
+</div>
+<p>Entonces el vector principal siempre es las características del
+activo, vale. Y por eso también, por ejemplo, este buscador de entradas
+salidas se puede usar un poco para eso. Para ver qué tipo, qué tipo de
+entradas van mejor. Coger 2-3 típicas tendenciales, 2-3 típica <em>mean
+reversion</em>, y ver. Esa es una pequeña optimización rápida, y ver
+qué, cómo se respira el activo en ellas.</p>
+<p>Pues es una manera también de ver qué tipo, cómo va. Es decir, las de
+<em>breakout</em> va muy bien para ver si el activo tiene tendencia. Es
+decir, si tú compras o vendes al máximo de ayer y cierras al final de
+día, esa es una manera, ya lo comenté creo que en la teoría y la
+práctica. Simplemente compra en stop en el máximo de ayer y venta en
+corto en el mínimo de ayer y cierre a fin de día, de acuerdo.</p>
+<p>Eso una normalmente es un buen indicador de la tendencialidad de un
+activo. Pero ya digo, muchas de las entradas que ya hay os pueden servir
+para eso, pueden servir para eso de manera sencilla, de manera sencilla,
+sin complicarnos y buscar coeficientes de cursos y cosas más complejas,
+vale. Que al final se van a llevar al mismo sitio.</p>
+<p>Entonces eso es, es útil para ver las capacidades de un activo. Bien,
+entonces lo que digo, aquí en los filtros viene así. Entonces es verdad
+que tú dices, hombre, sobre todo para la expansión o tendencialidad, a
+veces cuando empieza la tendencia puede haber una expansión y seguir la
+expansión y eso es verdad. O sea, no quiere decir ningún filtro actúa
+bien el 100% de las veces. Entonces al final si tú digamos que lo que
+aumentas es tu probabilidad de éxito. Reduces muchos <em>trades</em>,
+reduces buenos y reduces malos. Lo que tienes que hacer es reducir más
+malos.</p>
+<p>Pero evidentemente no hay filtro perfecto. No te va a clavar siempre
+la situación. Y de hecho, hay veces que, como yo os he dicho yo muchas
+veces, que veo artículos de donde se filtra que yo no filtraría.
+Prefiero que el sistema rinda peor y opere más, que filtrarlo en exceso.
+Pero no deja de ser añadir la complejidad y dificultar la robustez.</p>
+<p>Entonces tiene que hacer falta y tiene que haber una mejora
+significativa. Y seguir manteniendo un número de <em>trades</em>, porque
+si no a lo mejor no vale la pena filtrarlo. Vale la pena diversificarlo
+con otros sistemas. Como ahora vamos a ver maneras donde un sistema que
+no es tampoco especialmente bueno y aporta. Es decir, al final esto,
+esto pasa, vale.</p>
+<p><strong>Preguntas del Discord</strong></p>
+<p>Bien, en cuanto a preguntas, muy rápido. Aquí se me ha añadido más,
+ha habido más, ha habido más, que siempre apura esa última hora me
+preguntas. Albert, ya durante horario de clase, durante horario de clase
+me suelta es otra pregunta. Bien, no, no, que está bien, sabe saber.</p>
+<p>Pero entonces no me dejáis leer. La manera, voy abajo arriba porque
+ya llegaré a todas, tranquilos, vale.</p>
+<p><strong>Sobre matriz Excel para portfolios</strong></p>
+<p><strong><em>Buenas tardes, tenía unas preguntas sobre el temario
+restante y el curso:</em></strong></p>
+<p><strong><em>1.La matriz en excel para elegir sistemas des
+correlacionados para diversificar y tener un portfolio lo más óptimo
+posible se verá en lo que queda de clases? ya que entiendo que es algo
+muy relevante para la toma de decisiones y elaborar un
+portfolio.</em></strong><br />
+<strong><em>2.Aparte del sistema COT ( ¿el cual se vera en la última
+clase?) se verán por encima o se darán ideas de otros sistemas menos
+convencionales como multidata, rotacionales,
+fundamentales,etc?</em></strong><br />
+<strong><em>3.Finalmente se desecha la idea de tener un vídeo sobre como
+montar un servidor?</em></strong><br />
+<strong><em>4.Se cubrirá el vix external, su uso como filtro y régimen
+de mercado?</em></strong><br />
+<strong><em>5.Una vez termine la clase de junio, hay algún período para
+poder preguntar dudas futuras o al finalizar dicha clase finaliza el
+soporte(discord-correo)?</em></strong></p>
+<p>No sé a qué te refieres porque esto nosotros lo hacemos. Cada vez, es
+decir, al final un Excel no sé si es que en alguna clase te dije que te
+lo daré. No, no recuerdo la verdad, no recuerdo.</p>
+<p><strong>Tema rotacionales</strong></p>
+<p>A nivel de <em>rotacional</em> como tal, como tal, no hemos dado
+ninguno. Es verdad. No, no tenía pensado incluir nada específicamente
+rotacional. Es un tema muy, muy concreto. Es un tema muy, muy concreto y
+que podemos dar cuatro pautas, pero es que, es que ya digo, es un tema
+muy específico. Es un tipo de sistemas muy específico como los temas
+estacionales. Y al final no deja de ser aplicar un poco lo mismo pero de
+otra manera. Todo se basa un poco en lo mismo.</p>
+<p>No lo de montar un vídeo como servidor sí que lo habíamos desechado
+con Manuel. Pero simplemente, simplemente por un tema, por un tema de
+coste beneficio. Es decir, realmente dedicar horas del curso a eso,
+¿aporta más que dedicarlas a otra cosa?</p>
+<p>La verdad que hemos tenido dudas porque encontrarás manuales de eso y
+no sé, no sé la verdad, ¿sabes? No, no, no tenemos la sensación que sea
+algo que aporte mucho. No, ya sé que aporta. Se me entiendo, se aporta,
+aporta todo. Pero, pero al final hay que elegir en qué gastar el
+tiempo.</p>
+<p><strong>Tema de VIX como filtro</strong></p>
+<p>Tema de VIX sí que es verdad que lo comenté, lo del VIX. Recuerdo. Y
+sí que había algún, tenemos algún sistema por ahí de VIX como, como
+filtro. Es un tema bastante avanzado, la verdad, es un tema bastante,
+bastante avanzado.</p>
+<p>Y también lo habíamos decidido no darla por, por, por, por
+complejidad y por lo que, por lo mismo que te digo ahora, por tiempo, de
+acuerdo.</p>
+<p><strong>Soporte post-curso</strong></p>
+<p>¿Se podrá preguntar? Sí, sí, se puede preguntar. Se puede preguntar,
+de acuerdo. Se puede preguntar al Discord.</p>
+<p>Al final el soporte va a seguir. El soporte, el soporte va a seguir.
+Pero claro, centrado en el curso. Es decir, al final lo que tampoco
+tiene, este creo que es obvio, no es centrado en lo que hemos dado. En
+dudas y demás cosas que salgan de ahí un poco. Pues bueno, ya digo es
+por ejemplo, son el mismo, pero pues podemos tratar de poner cosas más
+bien concretas, más bien concretas, podemos abordarlo.</p>
+<p><strong><em>Buenas tardes, paso una duda sobre una estrategia que
+estoy evaluando:</em></strong> <strong><em>En alguna clase creo recordar
+que se comentó que no era buena idea hacer backtest con ordenes limit,
+si no me equivoco el motivo era que en real es posible que no se diesen
+igual las ordenes, podríais explicarlo por favor? Si programo esta
+estrategia con la salida en orden limit me gana bastante más y la curva
+es mas estable que en salida a market, pero me ha venido a la cabeza el
+comentario y por eso la duda, podría influir mucho en la rentabilidad de
+la estrategia o no es tan relevante?</em></strong></p>
+<div style="display: flex; gap: 10px;">
+<p><img src="../img/001.png" style="width: 45%;">
+<img src="../img/002.png" style="width: 45%;"></p>
+</div>
+<p>Raúl, Raúl comentaba que se había pasado de una estrategia. Mira,
+esto de la estrategia <em>limit</em>. Al final, a ver, a ver que puedo
+abrir.</p>
+<p>Y ahora rápido, porque no tenía abierto TradeStation para darle
+rendimiento, pero podemos abrir algún, algún workspace por aquí los
+rápidos. A ver, clases para abro el buscador un momento y hasta abro el
+buscador un momento por el buscador un momento y listos.</p>
+<p>Las dos curvas que enseñas, Raúl, están interesantes. El final, el
+limitado. No, no toque. Aclarar un par de cosas. También luego en Rick
+que es comprensible, siempre quedan, quedan dudas.</p>
+<p>Que se comentó que no era buena idea hacer <em>backtest</em>. No es
+que sea buena idea, a lo mejor algunas veces, claro, cuando no habla
+tantas horas por algunas cosas se equivoca, es en el matiz. O no, no es
+que haya dicho cosas incorrectas, pero sí que a veces tengo la sensación
+que al mejor en un matiz pues me he podido equivocar.</p>
+<p><strong>Look Inside Bar Testing</strong></p>
+<p>Al final, cuando tú haces <em>backtest</em> el límite, por el tema
+del, de lo que expliqué del <em>backtest</em>, que eso está en la
+teoría. De por ejemplo el por qué usar el <em>Look Inside Bar
+Testing</em>.</p>
+<p>Y acordaros, lo repaso muy brevemente, muy brevemente porque al final
+el motivo es un poco el mismo, de acuerdo.</p>
+<p>Al final, de cualquier vela, vale, de cualquier vela, tú ahora aquí
+tienes esta vela que es en tiempo real, vale. Si eso está cargando
+datos, que no lo sé. Cargando datos. Se ha movido el precio. Aumento.
+Sí, sí, sí, sí, está tiempo real, vale.</p>
+<p>Esta vela en tiempo real, si yo tuviera aquí órdenes, pues ejecutaría
+por motivos obvios. De cualquier vela anterior a la de tiempo real es
+igual si es en un minuto o en diario, de acuerdo.</p>
+<p>La vela de tiempo real, la vela derecha del todo, de acuerdo, esa es
+la vela de tiempo real, vale. Y esa por lo tanto tiene sus propias
+reglas para ejecutar órdenes, que es bastante obvio. La que toca, antes
+no, porque este tiempo real, ahí no hay problema.</p>
+<p>El problema es para las históricas, de acuerdo. La anterior a esa, es
+decir, ya la anterior, vale, esta vela de aquí, de acuerdo, ya es una
+vela histórica, vale.</p>
+<figure>
+<img src="../img/003.png" width="600">
+<figcaption>
+Figura 003
+</figcaption>
+</figure>
+<p>Y por lo tanto, a ver que voy a oscurecer, porque siempre pasa lo
+mismo. Venga. Esta vela ya se calcula por historia. Y de esa vela, en
+principio, tenemos el <em>high</em>, el <em>low</em>, el <em>open</em> y
+el <em>close</em>. Sólo esos cuatro datos, de acuerdo.</p>
+<p>Y las reglas por la que va a ejecutar el sistema, si la orden se
+ejecuta, si hay dos y hay stops y hay <em>take profit</em> de orden para
+entrar o no, pues lógicamente depende del recorrido de la vela.</p>
+<p>Muchas veces como en ésta, el recorrido parece obvio. Aún así, a
+veces el obvio no es obvio. Pero fíjate la anterior, que ya no es tan
+obvio, de acuerdo. Esta, ¿qué fue primero? ¿Para arriba, luego para
+abajo y volvió? O primero para abajo, luego para arriba.</p>
+<figure>
+<img src="../img/004.png" width="600">
+<figcaption>
+Figura 004
+</figcaption>
+</figure>
+<p>Claro, si tú vinieras comprado, o si tú tuvieras que abrir, imagínate
+primero el largo, primero va para arriba, te pone largo, luego para
+abajo, a lo mejor te salta el <em>stop</em>. En cambio, si va primero
+para abajo y luego va para arriba y se queda largo, perfecto, porque al
+día siguiente ha subido.</p>
+<p>Cambia completamente la película. Entonces, sólo sabe por reglas de
+<em>backtest</em>, vale.</p>
+<p><strong>Órdenes límite y la cola del mercado</strong></p>
+<p>Bien. Pues las órdenes límite aún va a un paso más de eso, vale. Va
+un paso más de eso. Porque, porque yo al final cuando opero… es esto, el
+mercado es esto, el mercado es esto que ves, <em>bid</em>, <em>ask</em>,
+y demanda.</p>
+<p>Y si me pongo aquí yo me pongo ahí limitado el simulado, me pongo
+ahí. Yo soy ahora comprando un contrato ahí, vale.</p>
+<figure>
+<img src="../img/005.png" width="600">
+<figcaption>
+Figura 005
+</figcaption>
+</figure>
+<p>Si el precio llega, a ver si hay 129 órdenes, 130 contratos, bueno,
+no sé si lo veis, 135 va cambiando, esos tiempos real. Eso es en el
+simulado, y no va a simular la cola.</p>
+<p>Pero en tiempo real llegaría y yo me he puesto cuando había 130. Que
+dice que a lo mejor soy el 131, vale. Entonces si se ejecutan sólo 50,
+mi, mi orden no se va a ejecutar porque yo estoy a partir del 130,
+¿entiendes?</p>
+<p>Entonces éste es el problema en las limitadas: garantizar que se ha
+ejecutado, vale. Entonces, ¿cómo lo garantizas? Pues cuando toca el
+<em>tick</em> siguiente. Es decir, si yo me he puesto comprando a 5221,
+si toca 5220 con 75, es 100% seguro que se ha ejecutado el 21.</p>
+<p>Mientras no se ejecute, no toque el <em>tick</em> siguiente, yo puedo
+tener alguna duda de que se haya ejecutado, ¿entiendes? Que ése es el
+problema del <em>backtest</em>. Estar seguro.</p>
+<p><strong>Configuración conservadora en backtest</strong></p>
+<p>Hay gente, depende del sistema lo puedes ignorar más, depende del
+activo pues es más sensible. Que es lo que garantiza eso para cancelamos
+la orden, lo garantiza poner un <em>backtest</em>, activar esta opción
+en <em>Backtesting fill inter</em> orden o en <em>trade price exit, exit
+limit price</em>.</p>
+<figure>
+<img src="../img/006.png" width="600">
+<figcaption>
+Figura 006
+</figcaption>
+</figure>
+<p>Es decir, sólo ejecutar, sólo marcarla ejecutada cuando se excede el
+precio. Esa es la manera más conservadora.</p>
+<p>Hay gente que no lo hace y marca esta. Es menos conservadora, porque
+habrá veces que ejecutar, habrá veces que no. Y puede cambiar mucho,
+depende el tipo de sistemas.</p>
+<figure>
+<img src="../img/007.png" width="600">
+<figcaption>
+Figura 007
+</figcaption>
+</figure>
+<p>un sistema <em>mean reversion</em> que no tiene colas largas, no
+tiene su, su beneficio, su mejor operación no difiere demasiado de la,
+de la media. Al final, ejecutar uno no es determinante.</p>
+<p>Pero <strong><em>en un tendencial, ejecutar o no es muy
+determinante</em></strong> porque normalmente el 20, el 80% del
+beneficio viene sólo del 20% de los <em>trades</em>, ¿entiendes?
+Entonces puede cambiar mucho las cosas ejecutar un <em>trade</em> o
+no.</p>
+<p>Entonces al final depende un poco de eso. Ese es el criterio
+conservador. Yo te recomiendo usar éste siempre que siempre es mejor
+criterio de prudencia. Aquí para más detalles <em>Help</em> y te da
+detalles, vale.</p>
+<p>En todas las plataformas está esto. Eso está en todas las
+plataformas, vale. No tiene más, más historia, vale.</p>
+<p>Entonces esto es el tema. Si activas esto, no hay ningún problema. No
+es el límite. Activa esta opción. <em>MultiCharts</em> también está y en
+todas las plataformas, vale. Y de esa manera sabrás al 100% que tu
+precio se hubiera ejecutado.</p>
+<p>Verás que cuando actives eso, alguna orden que habías puesto el
+límite no la ejecutará. Porque ahora va a ser, la idea que has clavado
+el mínimo para ponerte largo, el máximo a ponerte corto. Y cuando pasa
+eso, no sabemos seguro si has ejecutado, porque si habían 100 contratos
+en ante tuyo cuando te pusiste, tú?, no lo sabes, vale.</p>
+<p><strong>Sobre Fixed Ratio</strong></p>
+<p><strong><em>Viendo un video de la teoría dices que la formula del
+Fixet Risk que aparece no la usemos, por lo poco intuitiva que era, aun
+así, he intentado plantearla, pero no acabo de estar convencido de
+hacerlo nada bien, tal vez me he complicado la vida pero al final he
+planteado la formula tal cual cuentas en la teoria ¿podrías corregirme o
+plantear un código para el FIXET Risk?</em></strong>
+<code>Contratos = (((2 * Contratos_Inicial – 1 )^2 + 8 * (Netprofit / Delta))^ 0.5 + 1)/2;</code></p>
+<p>Bueno, te estás refiriendo a <em>Fixed Ratio</em>, es el intuitivo.
+Nuevamente, ya me expliqué mal, pero no es que no creo haber dicho que
+no la usaréis. No creo haber dicho que no la usaréis. Pero sí que dije
+que es más intuitiva la otra.</p>
+<p>Al final tienes que analizarlo y estudiarlo, de acuerdo. Aquí no sé
+si adquiriste MSA o no. Está bastante bien explicado y también tienes
+hasta la fórmula. Tienes la fórmula de <em>Fixed Ratio</em>, vale, que
+es lo que tú buscabas, vale, que es lo que tú buscabas, vale.</p>
+<figure>
+<img src="../img/008.png" width="600">
+<figcaption>
+Figura 008
+</figcaption>
+</figure>
+<p>En <em>Fixed Ratio</em>, al final es la <em>delta</em>. Es verdad que
+programáticamente es poco más compleja, pero realmente es muy intuitiva
+a nivel de, de operar. Es decir, si tienes la <em>delta</em>, cuando yo
+digo que es poco intuitiva es decir, porque no, no, no, no va
+relacionado como al riesgo.</p>
+<p>Es como decir, bueno, ¿qué delta uso? Es verdad que se recomienda la
+mitad. Si podéis usarla es cuestión de estudiarla.</p>
+<p>A mí me gusta, ya expliqué la clase pasada cuál usamos para decir, no
+voy a darle más, más vueltas.</p>
+<p>Pero aquí tienes la fórmula. Es ésta. No tiene, no tiene más, de
+acuerdo. No tiene más. Donde N0, donde N0 es la <em>equity</em>,
+vale.</p>
+<p><strong>Fórmula generalizada de Fixed Ratio</strong></p>
+<p>luego tienes otra que viene relacionada porque aquí están todas
+generalizadas. Es decir, adaptadas. Adaptas, por ejemplo, generalizada
+quiere decir que la puedes, que es que es <em>Fixed Ratio</em> porque la
+puedes adaptar a distintos. Puedes regular el exponente y puedes regular
+con cuántos contratos empiezas, vale. Simplemente.</p>
+<p>Pero la fórmula es tan sencilla y tan difícil como ésta si la usas en
+su forma generalizada. Aquí tienes también en la N, que si usas 0.5 es
+el coeficiente de <em>Fixed Ratio</em> más visto, vale. Es el
+coeficiente <em>Fixed Ratio</em>, vale.</p>
+<p>Y luego tienes la, la P, que es el beneficio de los trades cerrados.
+Sólo tienes que poner la <em>profit</em>, la P.</p>
+<p>La fórmula, así que se pone el <em>start</em> y <em>position
+size</em> y tal. Pero, pero no, no es como <em>Fixed Risk</em> que por
+eso digo que es más intuitiva en ese sentido. Pero sin más, o sea, poder
+por poder podéis usarla, de acuerdo. No tiene mayor.</p>
+<p>Entonces tú aquí en la fórmula habías puesto.
+<code>Contratos = (((2 * Contratos_Inicial – 1 )^2 + 8 * (Netprofit / Delta))^ 0.5 + 1)/2;</code></p>
+<p>Bueno, partido por 2, que lo mismo que por 0.5. Pues sí que estaría
+bien, entiendo.</p>
+<p>No, 2 por N0. Sí que es que sólo lo que más hay que poner en 0, un
+poco para, para usar la generalizada, que es lo que te digo, no. Que al
+final no puedes,</p>
+<p>Está, yo puesto a esto te superaría la generalizada, vale. Te lo voy
+a pregar y voy a pegar el inglés pero no voy a usar los traductores. La
+explicación debe ser, que como digo está muy bien y por lo tanto pues es
+poco sentido que yo ahora pegue algo más, vale. Ahí lo tienes en el
+Discord, vale.</p>
+<figure>
+<img src="../img/009.png" width="600">
+<figcaption>
+Figura 009
+</figcaption>
+</figure>
+<p>Esa es la forma generalizada. Con el M 0.5 es <em>Fixed Ratio</em>
+directamente, de acuerdo. Es decir, es la única, la única diferencia que
+puedes aplicar, vale.</p>
+<p>Tú lo has puesto dividido en vez de multiplicado. Está perfecto,
+vale. Pero en programa, en programación ya os lo comenté, es un poco
+mejor multiplicar que dividir. Pues cuando puedes evitar dividir lo
+evitas. Cuando no, pues no pasa nada, no pasa nada. Simplemente es un
+poco más eficiente, simplemente es un poco más eficiente.</p>
+<p><strong><em>Buenas noches, paso un par de dudas:</em></strong><br />
+<strong><em>1.-Respecto al MM que utilizamos en varios códigos para
+evaluar estrategias, el hecho que el value1 sea =0.01 cuando el absvalue
+es &lt;0 me genera dudas. He hecho el cáculo con algunos valores y lo
+que hace es multiplicar el valor de la Equity+profits por 100. Seguro
+que se ha comentado pero no recuerdo donde. Podrías explicar el motivo
+por el que se hace eso por favor?</em></strong></p>
+<figure>
+<img src="../img/010.png" width="600">
+<figcaption>
+Figura 010
+</figcaption>
+</figure>
+<p>1 - Hola Raúl, es para no dividir por 0 al calcular los contratos, le
+pones un valor pequeño pero no 0. Cuidado con los valores negativos de
+los precios a la hora de aplicar MoneyManagement (de ahí el AbsValue()).
+Los futuros ajustados pueden resultar en valores negativos por los
+ajustes del contrato continuo, además de haberse dado precios negativos
+como el petróleo en el año 2020.</p>
+<p><em>ok, muchas gracias Alberto. Entonces entiendo que entraríamos a
+mercado con el Max-Size, porque en el calculo me da un número de
+contratos desorbitado. Si por ejemplo tengo una cuenta de 100000 y un
+beneficio de 25000, pongamos que con el 100% en ambos, y esa suma la
+divido por 0,01 , me daría 12500000 contratos. Al pasarlo por el
+MinList(Contratos, Max_Size); entraríamos con el Max_Size que hayamos
+estipulado en el input. Es así?</em></p>
+<p>exacto</p>
+<p>Porque dividir por cero es un error frecuente programación. No se
+puede dividir por cero. Y siempre que hay el riesgo de dividir por cero
+pues se hace un <em>if</em> antes, no, que si es mayor que cero tanto,
+si es igual que cero pues se le da cero, cero uno, se le da un valor.
+Tienes para evitar división por cero, pues esto siempre se hace, se hace
+así.</p>
+<p><strong><em>2.-En las preguntas de la teoría hubo una relacionada con
+algún método para trabajar las estrategias de TS en Darwinex y se
+respondió que no había método sencillo, que vosotros traducíais a MQL, y
+se hablaría en las prácticas. Podrías ayudarnos con eso?
+Gracias!</em></strong></p>
+<p>Y bueno, no es propiamente esto objeto del curso. No es propiamente.
+No es que haya un método, es decir, al final simplemente, que si tú
+quieres ir en algo de cero, pues hoy en día si tienes que empezar de
+cero, , quizás sería mejor ya empezar en MQL5 si tienes que empezar, de
+acuerdo.</p>
+<p>Pero, pero no hay, no hay un, no hay un buen método de conexión vía
+TradeStation porque no puedes o sea, no, no hay una traducción directa
+de <em>EasyLanguage</em> a MQL5. No existe, de acuerdo.</p>
+<p>Simplemente tienes que, si tú quieres usar <em>TradeStation</em>
+porque quieres va <em>backtestear</em>, que también puedes usar Meta de
+5 con algún <em>add-on</em> lo que sea, o puedes usar cualquier otra.
+Como siempre hemos dicho, al final no te queda más que traducir el
+código.</p>
+<p>Cuando al final puedas operar vía <em>MultiCharts</em>, que al
+principio es posible, probable que pase dentro del ecosistema
+<em>darwinex</em> me refiero, entonces sí que ya será más sencillo.
+Entonces ya no tengas problema porque lo harás con <em>MultiCharts</em>,
+lo podrás hacer con <em>MultiCharts</em>.</p>
+<p>Pero no hay un conector directo, de acuerdo.</p>
+<p><strong>Sobre uso de GPT para traducir código</strong></p>
+<p>sí que es verdad que vía Meta de 5 puede ser vía Python, o sea, tu
+Meta de 5 sí que le puedes conectar otras cosas. Puedes ir con Python y
+no sé si con alguna más y puedes conectarla creo que también interactivo
+que es, no, Meta Trader. Pero lo que no vas a poder es llevar
+easylenguaje.</p>
+<p>Al final el broker te tiene que pasar por MetaTrader 5. Tienes que
+acabar Meta de 5. Y ahí pues ya tienes que verlo con el broker. Y mucha
+gente acaba yendo vía Python, por ejemplo, vale. O simplemente
+traduciendo el lenguaje MQL5, traduciendo el sistema MQL5.</p>
+<p>Ahí ya pues puedes usar herramientas. Bueno, hay mucha gente que está
+usando GPT para esas cosas ahora. Hay que vigilar. Decir, hay que tener
+conocimiento por los de GPT. Ayuda, pues una ayuda para preguntarle
+cosas. Pero tampoco pensemos que te lo va a dar todo. Porque si no te
+traduce, me estoy sin lenguaje, tal, seguramente te va a responder
+porque te responde todo fenómeno. Si no lo sabes se lo inventa. Y se
+queda más ancho que espada. Si no lo sabes se lo inventa. Entonces pues
+hay que tener nociones. Pero así que tú le, se lo pones, y te lo va a
+traducir, te lo va a traducir.</p>
+<p>Pero, pero si lo sabes dirigir, seguramente puedes llegar a una
+respuesta más o menos satisfactoria. Pero como digo, hay que tener
+conocimiento, de acuerdo. No, no sin tener ni idea yo no lo aconsejo,
+vale.</p>
+<p>***Hago un par de comentarios/peticiones:</p>
+<p><strong><em>Creo que sería interesante ver alguna estrategia en
+relación al mercado de divisas. Todas las estrategias que hemos visto
+las hemos probado en futuros o en acciones, y se adaptan a algún
+comportamiento o característica de estos dos tipos de
+activos.</em></strong></p>
+<p><strong><em>Si no vemos propiamente una estrategia con forex, sería
+interesante que nos dieras algunas pautas sobre qué tipo de estrategias
+pueden funcionar en divisas, así como las ventajas, inconvenientes,
+diferencias de comportamiento de las divisas con respecto a los futuros
+y a las acciones.</em></strong></p>
+<p><strong><em>Me han salidos errores en dos códigos cuando he intentado
+verificarlos para trabajarlos en Tradestation:</em></strong><br />
+* CursoORB-02</p>
+<p><strong><em>Al verificar el código de la estrategia CursoORB-02, da
+error ya que falta un corchete al inicio. En este caso lo he podido
+solucionar fácilmente ya que sólo es necesario añadir un corchete al
+inicio.</em></strong></p>
+<figure>
+<img src="../img/011.png" width="600">
+<figcaption>
+Figura 011
+</figcaption>
+</figure>
+<p>Bueno, leo antes, él leo dice que hemos visto futuros, acciones y
+tal, pero que no hemos visto estrategias de <em>Forex</em>, que sería
+interesante queremos algunas pautas, así como las ventajas y
+convenientes diferencias de comportamiento de divisas con respecto a los
+futuros y las acciones.</p>
+<p>Bueno, tengo un artículo por ahí que no he encontrado para esta vez,
+me lo voy a apuntar también de referencia para la clase. Esto lo daré,
+he dado muchas, he dado muchas, pero, pero lo haremos de pasado
+referencias, características.</p>
+<p>Es verdad que el <em>Forex</em> en sí es como muy variable. Siempre
+pensar que al final a medida que va subiendo el <em>timeframe</em>, un
+día comenté esto y creo que alguien me lo dijo, normalmente la
+tendencialidad gana. Se entiende. Es decir, hay más tendencia en diario
+que en intraría, y más en semanal o en mensual, no.</p>
+<p>Y eso también pasa en el <em>Forex</em>, de acuerdo. Pero es verdad
+que el <em>Forex</em> un mercado bastante de rangos. Pero ya digo,
+prefiero acabártelo de concretar.</p>
+<p><strong>Características de Forex</strong></p>
+<p>De todas maneras, al final, Albert, no hay una, o sea, como decía
+antes, y que hay características de tipos de activo que van más en un
+tipo de activo u otro.</p>
+<p>Pero al final, la mejor manera y lo que tenéis que ir viendo y
+probando es aprender a hacerlos vosotros. Que es lo que siempre desde el
+primer día, incluso en el marketing, que hemos dicho en el curso:
+nosotros pretendemos que seáis traders logarítmicos, no que salgáis con
+sistemas hechos.</p>
+<p>dije, seguramente saldréis con ideas buenas, pero no es el objetivo,
+de acuerdo. Lo dije hasta las entrevistas con Víctor. no, no, el
+objetivo no es darte 10 sistemas. El objetivo es darte herramientas para
+que tú sepas moverte, vale.</p>
+<p>Y espero estar consiguiendo. Pero lógicamente tienes que seguir a
+partir de ahí.</p>
+<div
+style="border-left: 4px solid #27ae60; background: #ecf9f1; padding: 10px 15px; margin: 10px 0;">
+<p><strong>📊 pautas, ventajas y convenientes diferencias de
+comportamiento de divisas, futuros y acciones</strong><br><br> La mejor
+manera para saber pautas y ventajas, y lo que tenéis que ir viendo y
+probando es aprender a hacerlos vosotros. Por ejemplo, el código de
+entradas y salidas es una herramienta bastante potente para esto. Que
+duda cabe que todo el manual que dimos de <em>Strategy Concepts</em>,
+que además os di un Excel donde hice un análisis de cómo habían ido
+todos fuera de muestra, que lo hice yo uno a uno, pues también es
+material muy útil, porque hay muchas ideas muy potentes y todas vienen
+con sugerencias. Es decir, que venían un poco también pensadas como
+ideas para hablar. No como para que cojas el sistema y lo operes.
+Siempre están así esas ideas. Y muchas, muchas eran aprovechadas, porque
+hasta había algunas intradiaras que estaban dando <em>profit
+factors</em> fuera de muestra de 0.90 y pico. Que eso fuera de muestra,
+teniendo en cuenta que es sólo la idea, es muy probable que sea
+aprovechable. <br><br> Es decir, ahí hay un montón de ideas, un montón
+de materiales. Hay que ir trabajándolo porque trabajando además es una
+gran manera de aprender esto.</p>
+</div>
+<p>Por ejemplo, el código éste de entradas y salidas es una herramienta
+bastante potente para esto. Que duda cabe que todo el manual que dimos
+de, de, ya lo diré, de <em>Strategy Concepts</em>, que además os di un
+Excel donde hice un análisis de cómo habían ido todos fuera de muestra,
+vale.</p>
+<p>Todos fuera de muestra. Que lo hice yo uno a uno. Pues también es
+material muy útil, porque hay muchas ideas muy potentes y todas vienen
+con sugerencias. Es decir, que venían un poco también pensadas como
+ideas para hablar. No como para que cojas el sistema y lo operes, de
+acuerdo. Siempre están así esas ideas.</p>
+<p>Y muchas, muchas eran aprovechadas, porque hasta había algunas
+intradiaras que estaban dando <em>profit factors</em> fuera de muestra
+de 0.90 y pico. Que eso fuera de muestra, teniendo en cuenta que es sólo
+la idea, es muy probable que sea aprovechable.</p>
+<p>Es decir, ahí hay un montón de ideas, un montón de materiales. Hay
+que, hay que trabajándolo porque trabajando. Y además una gran manera de
+aprender esto, esto he dicho esto.</p>
+<p>Pero ya digo, es verdad que sobre todo <strong><em>si vamos más a
+intradiario pues cuesta más tener tendencia</em></strong>. Los rangos de
+las divisas son más estrechos, los rangos de las divisas son más
+estrechos. También eso permite menos riesgo, permite apalancar más. Y
+todo tiene su parte buena y su parte mala.</p>
+<p><strong>Spread en Forex</strong></p>
+<p>Pero al final no es tan distinto, vale. No es tan distinto. Al final
+es uno activo. Hay oferta y demanda.</p>
+<p>Y lo que sí que tienes, lo mismo que los CFDs pues, que ahí tienes
+<em>bid</em> y el <em>ask</em>, de acuerdo. Y ahí es donde se plantea un
+poco el problema.</p>
+<p>Que es verdad que <em>MultiCharts</em> permite gestionar eso. Permite
+gestionar eso. TradeStation no. Pero <em>MultiCharts</em> sí lo permite.
+Por un <em>MultiCharts</em> sí permite en una pestaña que puedes elegir
+<em>backtest</em> clásico, <em>backtest</em> avanzado, y le puedes decir
+el <em>bid</em> y el <em>ask</em>.</p>
+<p>Y entonces puedes hacer un <em>backtest</em> más realista en Forex.
+Que TradeStation, por ejemplo, vale.</p>
+<p>Pero dicho esto, dicho esto, se ha añadido este material, vale. Ese
+material es un material muy antiguo, vale.</p>
+<ul>
+<li><a
+href="../../29_practica-material-extra/Forex%20Pack%20TradeStation/Forex%20Pack/">29_practica-material-extra
+: pack de Forex</a></li>
+</ul>
+<p>El <em>Forex pack</em> a mí en algunos soneros me ha dado problemas
+de memoria. Si os da al final borrar la tabla es que porque tiene un
+montón de datos que se calculan, que algunos pues son para hacer bonito
+y hasta quedaros un poco con el, con el, con el gráfico de arriba y de
+la derecha, que lo voy a tratar de abrir, lo voy a tratar de abrir el
+que ya tengo yo por aquí.</p>
+<p>porque es bastante interesante. Además ahí veis una pauta realmente
+curiosa, que para eso lo publicaron. Bueno, curiosa, interesante, que es
+lo que hemos hablado, lo que enseñaba antes, la volatilidad. Y viendo
+ese gráfico pues, esto me suena, no me suena a mí haber visto. A ver, a
+ver, me suena a mí algo. Me suena aquí una pauta de volatilidad clara, y
+por pues se puede eso aprovechar, se puede mejor aprovechar.</p>
+<figure>
+<img src="../img/012.png" width="600">
+<figcaption>
+Figura 012
+</figcaption>
+</figure>
+<p>entonces esto si no os revienta pues lo dejáis, pero porque eso carga
+un montón, hace un montón de solicitudes.</p>
+<figure>
+<img src="../img/013.png" width="600">
+<figcaption>
+Figura 013
+</figcaption>
+</figure>
+<p>Esto que creo que ya lo puse ahí. Le tienes que poner el
+<em>change</em>, porque si no nos lo va a calcular bien, vale. Le ponéis
+el <em>change</em>.</p>
+<figure>
+<img src="../img/014.png" width="600">
+<figcaption>
+Figura 014
+</figcaption>
+</figure>
+<figure>
+<img src="../img/015.png" width="600">
+<figcaption>
+Figura 015
+</figcaption>
+</figure>
+<figure>
+<img src="../img/016.png" width="600">
+<figcaption>
+Figura 016
+</figcaption>
+</figure>
+<p>Ahora ya está bien donde pone USA, donde pone tal. Y eso está muy
+bien que el <em>Forex</em> y el libro que está ahí dentro tiene parte
+interesante donde explica esto. Al final, mercado de 24 horas, es
+referencia Londres, referencia New York, tal. Y etcétera, otros. Cada,
+cada, esto tiene su referencia.</p>
+<p>Entonces el te pinta, te pinta el color.<br />
+Me parece que ya se ha bugeado. Y, y hasta te pinta en color las
+diferentes patas de volatilidad.</p>
+<p>Ya veréis que la volatilidad pues casi cada día un comportamiento muy
+cíclico. Hay unas horas donde es alta, donde es baja. Ergo, a lo mejor
+yo puedo en el <em>Forex</em> mismo, en esas pautas que veas el
+comportamiento tan típico con esta sencilla imagen, pues ya puedo ver
+qué tipo de estrategias en cada hora van mejor, de acuerdo.</p>
+<figure>
+<img src="../img/017.png" width="600">
+<figcaption>
+Figura 017
+</figcaption>
+</figure>
+<p>Esto es, esto es, esto es. Decir, normalmente cuando ya hay
+expansiones va a ser mejor <strong>mean reversion</strong>. Esto cuidado
+porque es sólo para abrir. Ya digo, parece contraintuitivo. Después una
+expansión… mean reversion?. Sí, porque el mercado, recordados que ya os
+pasé un artículo de Kraven el que lo explicaba, y lo explicado yo la
+teoría. Expansión es contracción, expansión, contracción.</p>
+<p>Por lo tanto, cuando hay una expansión, anticipa contracción. Ya
+está. O sea, hubiera sido cuando hay una expansión, lo que hubiera
+estado bien era estar estaría a favor de ella. Pero se ya ha pasado, ya,
+ya está,, y , con la actual contracción pasa lo mismo.</p>
+<p>Cuando, por ejemplo, decía antes este filtro que os decía, que usa el
+<em>range</em>, en ese documento que os he subido, usa el
+<em>range</em>, que busca contracción, es para buscar
+<em>breakouts</em>. Porque, porque es eso. Después de que hay dos o tres
+días de contracción, que el rango va estrechándose, es un buen momento
+para buscar expansiones o <em>breakouts</em>, de acuerdo.</p>
+<p>Porque cuando el mercado se congestiona, la rotura suele ser buena,
+¿se entiende no? Entonces es un poco lo que hay detrás de estas, estas
+ideas.</p>
+<p><strong><em>Tengo tres dudas sobre Money Management (MM), asumiendo
+que todo se validará con backtest + WFO:</em></strong></p>
+<p><em><strong>1. </strong>Piramidando (añadiendo a ganadora):<strong>
+Si abro una segunda operación a favor manteniendo la primera, ¿qué MM
+aplico a esa segunda? ¿Misma F (duplicando riesgo)? ¿Pongo breakeven en
+la primera? ¿Divido la F entre el número de operaciones previstas? ¿Otra
+opción?</strong></em></p>
+<p><em><strong>2. </strong>Añadiendo a perdedora (controlado, no
+martingala):<strong> Si abro una segunda operación con la primera en
+contra, ¿qué MM aplico? ¿Misma F (más crítico al estar en negativo)?
+¿Promedio los TP para tratarlas como bloque único? ¿Divido la F?
+¿Descarto este enfoque? ¿Otra opción?</strong></em></p>
+<p><em><strong>3. </strong>MM en fases de evaluación:<strong> Para
+backtest y WFO previos (antes de aplicar el MM definitivo), ¿qué
+recomendáis: lotaje fijo, Fixed Fractional estándar, FF con volatilidad
+y límites, Fixed Ratio, Percent Volatility, u otra?</strong></em></p>
+<p>En términos generales, o sea, hay algun caso de ahí, algunos un poco
+extraños, un poco, esta es que lo decir de como rebuscados, vale.</p>
+<p>Y en todo, en todo el tiempo hemos partido que la sencilla es, es
+importante. Entonces este, esta idea, tú cuando tengas dudas, piensa
+siempre está por lo que, piensa siempre es que, si si lo complicas
+demasiado, probablemente no funcionará.</p>
+<p>Entonces, al final, cuando tú tienes a piramidar, al final lo que
+estás haciendo en el fondo, cuando tú haces <em>portfolio</em>,
+piramidas. Tú tienes si tú tienes varias estrategias, imagínate en el
+S&amp;P, ahora veremos <em>portfolio</em>, y habrán un par. Yo meto un
+S&amp;P, luego abre el otro sistema un S&amp;P. En el fondo y
+piramidado. Porque abierto tres S&amp;P largo a favor, tenía uno y habrá
+otro pues tengo dos.</p>
+<p>Entonces que, que es fácil en estos términos pues pensar como una
+operación nueva, ¿entiendes? Pensar como una operación nueva.</p>
+<p><strong>Consistencia en money management</strong></p>
+<p>Entonces si tú tienes tu <em>money management</em>, ¿porque lo vas a
+cambiar? ¿Porque lo vas a cambiar? Es decir, al final el hecho de decir
+y aplico el mismo, aplico el doble. Pues no sé, es que eso estará
+dimensionado correctamente, estará analizado y dependerá de eso.
+Dependerá de cómo tú dimensionas tu <em>portfolio</em>, que ya dimos
+tips el otro día, y vamos otra vez. Voy a dar, si no, daremos el último
+día también.</p>
+<p>Y por supuesto que si me quedara algo daría otra clase, nadie se
+piense que voy a decir algo por si no ha habido tiempo. No, no, lo que
+he dicho, lo que he dicho estos dos tres días de que iba a dar eso, sí
+que por supuesto va a pasar. Por eso tranquilos.</p>
+<p>Pero entonces al final dices, volvería a aplicar la misma F, mantiene
+las posiciones ampliando, duplicando el riesgo. Así que eso ya estaría
+previsto antes.</p>
+<p>Bueno, si tú tienes una, una, yo qué sé, un 0.5 de <em>money
+management</em>, porque, porque ya, por el riesgo que llevas y demás,
+por, por, por el que ahora vamos a hablar de ello, pues está, está
+dimensionado así.</p>
+<p><strong>Ejemplo de TPS de Connors</strong></p>
+<p>Lo mismo que, por ejemplo, si os acordáis cuando vimos el TPS de
+Connors, pues ya está previsto que hace cuatro entradas siempre. Así es
+decir, está dimensionado. Tú lógicamente, si haces un análisis de eso,
+pues tu cuenta tiene que estar dimensionada para que eso pase. Tu riesgo
+medido para que eso pase.</p>
+<p>Entonces ya está estimado. Así que habrá veces que pondrá sólo dos y
+podrás menos. Y claro, por eso, por ejemplo, TPS de Connors al final es
+se expone muy poco y es difícil exponerlo mucho, porque claro que hay
+que dejar que puedas correr cuatro, pero la mayoría de veces no lo hace,
+¿entiendes?</p>
+<p>Entonces sí, es el problema también de piramidar.</p>
+<p><strong>Mejor diversificar que piramidar</strong></p>
+<p>Yo casi te recomendaría que de entrada no lo hagas, vale. Que cada
+entrada no lo hagas. Es decir, que porque por temas de diversificación,
+siempre es mejor tener la. Única motivo para hacerlo es decir, yo no
+tengo, tengo que empezar a operar y no tengo más estrategias. Eso puedes
+plantearlo así porque te gusta como idea. No es que sea mala, pero
+siempre va a ser mejor añadir otro sistema Para ese lote que vas a
+piramidar, otra estrategia distinta, otra estrategia distinta, siempre
+va a ser mejor.</p>
+<p>Pero insisto, al final lo tratas como una operación nueva, y tiene
+que estar analizado antes. Por lo tanto, no metería F’s distintas. No,
+no, no, no complicaría. No le daría tantas vueltas, de acuerdo. Usaría
+mi <em>money management</em> en el que sea y punto, de acuerdo. En el
+que se ponéis.</p>
+<p><strong>Estrategias de salida distintas</strong></p>
+<p>Lo que sí que puede tener distintas estrategias de salida, distinta
+estrategias de uno <em>take profit</em>, otro no. Eso sí. Eso es
+recomendable. Eso sí que puede tener, tener sentido. Y sí que puede
+estar definido el sistema. Es decir, yo primero meto un 50%, luego un
+25, luego 25. Eso puede estar definido así.</p>
+<p>No quita la otra. Pero la manera de medirlo, de estimar el riesgo y
+demás tiene que estar preestablecido ya de entrada en ese supuesto.
+Decir, que hago una vez….???, no, no cabe. Porque eso ya lo sabes antes
+de abrir. Antes de abrir la primera ya sabes cómo abrirás la tercera y
+la cuarta y la segunda. No cabe esa duda.</p>
+<p><strong>Añadir a perdedoras en índices</strong></p>
+<p>Y luego hablas también del tema de que añade perdedora sin ser una
+<em>martingala</em> De hecho, te hablaba ahora de TPS de Connors, que
+hace eso, lo mismo lo explica. Lo dice, cuidado, eso sólo vale para ETF,
+para índices, de acuerdo. Por ejemplo, imagínate que haces eso con
+Google o con Meta, y te mete un 12% la baja de <em>gap</em> el día de
+resultados. Igual te hace un 30%.</p>
+<p>Entonces al final claro, por eso ese tipo de cosas que tienen mucho
+riesgo, solo en índices. Porque, porque un índice está más
+diversificado, se ha protegido, está prohibido que caiga más un 7%, lo
+paran. Hay una serie de controles, no. Y es más difícil, más difícil,
+vale.</p>
+<p>Entonces tú planteas distintas opciones, vale. Es que todas pueden
+valer o no. Pero hay que aplicar, si aplicaría es la misma y trataría
+los trades independientes. Es decir, no, eso de <strong><em>“bajaría el
+<em>take profit</em> de la primera al segundo intentando
+promediar”</em></strong>. Ya digo, piénsalo como operaciones
+independientes. Cada <em>trade</em> que abres empieza. Tienes uno
+abierto y abres otro, gestionalo, gestionalo de esa manera.</p>
+<p><strong>Money management en evaluación previa</strong></p>
+<p>Luego hablabas también de que de usar <em>money management</em> en
+evaluación previa y demás.</p>
+<p>Sí, lo comentamos. Sobre todo, sobre todo, sobre todo, donde esto es
+importante, sobre todo es en el …</p>
+<p>Pero no está mal en distinto. Lo que único que hay que vigilar ahí,
+usar <em>money management</em> simplemente es para qué: para trabajar en
+porcentaje, de acuerdo. Para trabajar en porcentaje y adaptarnos un
+poquito al uso de la cuenta.</p>
+<p>Pero no siendo agresivo, siendo muy moderado. Que si tenemos un
+backtest de muchos años nos va a hacer la curva muy geométrica y es poco
+útil.</p>
+<p><strong>Sobre Fixed Risk y Fixed Ratio</strong></p>
+<p>Luego decías, entiendo que vosotros utilizas <em>Fixed
+Fractional</em> con tres <em>risk</em> por volatilidad, limitando un
+porcentaje máximo por baja volatilidad, el porcentaje mínimo. Si lo
+vimos en las primeras fases.</p>
+<p><em>“¿Cuál de estos sistemas de <em>money management</em> crees que
+son mejores para aplicar?”</em></p>
+<p>Bueno, al final, en general, a nosotros nos gusta ése. Lo cual no
+quiere decir que no, que no cambiemos en el futuro. Porque este, este
+<em>money management</em> lo estamos usando hace unos pocos años. Antes
+habíamos usado <em>Fixed Risk</em> midiendo el riesgo como la peor
+perdedora, la media. Hemos hecho varias, varias pruebas, ¿entiendes?</p>
+<p>No hay, no hay tampoco una respuesta única.</p>
+<p>Hay mucha gente que, aunque da peor el rendimiento, le gusta mucho
+volatilidad, la volatilidad de Avanzar se pone <em>Percent
+Volatility</em>, que MSA lo tiene. Aunque te va a dar peores ratios,
+pero le gusta porque conceptualmente es parecido al nuestro.</p>
+<p>Ahora verías que el nuestro en el fondo es una, es un, es un, porque
+al final las matemáticas tienen eso, no. El nuestro al final no deja de
+ser un, que nosotros, al provenir de la gestión colectiva, yo he
+gestionado SICAPS y demás, y allí estás estás obligado a no pasarte del
+100%, pues proviene un poco de ahí.</p>
+<p><strong>Nuestro método de position sizing</strong></p>
+<p>al final no deja de ser un nominal máximo, pero que se ajusta, ese
+límite, ese límite que le ponemos de cuando la volatilidad es baja, al
+final actúa del límite de nominal, ¿entiendes?</p>
+<p>Porque yo ahí, al ponerle una variable fija y multiplicarlo, como te
+enseñé, si te fijas, eso acaba siendo nominal. Acaba siendo nominal por
+un multiplicador. Decir, nominal puede ser el 100%, 200, 300, el que
+sea.</p>
+<p>Te enseñaré uno, creo que era 2.7. Pero baja cuando la volatilidad
+sube. Todo es baja. Entonces al final acaba siendo un nominal que reduce
+cuando la volatilidad sube.</p>
+<blockquote>
+<p>Es decir, eso es muy útil hacerlo, es muy útil hacerlo, todo es
+porque no usarlo, ¿entiendes?</p>
+</blockquote>
+<p>Pero <em>Fixed Risk</em> y <em>Fixed Fractional</em> también está
+bien. <em>Fixed Ratio</em> al final lo importante es usar
+anti-martingales, de acuerdo. y sentirte tú cómodo, y explorarlo, y
+trabajarlo, vale.</p>
+<p>Pero, pero incluso ya digo, nominal, nominal no está mal tampoco.
+Problema de nominal es que es contra el tuitivo sólo porque a medida que
+los precios caen te hace meter más. En bolsa, no acaba, no acaba siendo
+malo, pero es el único pero que puede, que puede tener, vale.</p>
+<h2 id="papers-y-material-de-portfolio">Papers y material de
+portfolio</h2>
+<p><strong>Material adicional para portfolio</strong></p>
+<p>En cuanto a <em>portfolio</em>, quería subiros dos papers que no,
+subiros dos papers, tres documentos.</p>
+<p>Por un lado, esto, que es un de un libro que no recuerdo, que tengo
+hace muchos años impreso, lo escaneado para daros, lo que era un gestor
+de <em>commodities</em> que sugería <em>portfolio</em>. Es muy antiguo,
+en realidad es muy antiguo.</p>
+<ul>
+<li><a href="../docs/Portfolio%20Commodities.pdf">Portfolio
+Commodities</a></li>
+</ul>
+<p>Eso también en la relación, en la relación que en las referencias,
+características, tipos de activos y activos top. Me los estoy apuntando.
+En la última clase os los diré.</p>
+<p><strong>Activos tendenciales en commodities</strong></p>
+<p>Hay algunos activos en materias primas de activos que van muy bien y
+que va casi todo. Por ejemplo, por ejemplo, la gasolina. Un futuro que
+le ponéis un churro y saca, y saca algo. Estoy exagerando, pero me
+entendéis. Son activos que por lo que sea pues, pues bueno, en
+tendencia, en general, en general en <em>commodities</em> encontraréis
+muchos.</p>
+<p>Si vais explorando las <em>commodities</em>, encontraréis muchas
+<em>commodities</em> que van bien, también que van bien en tendencia,
+vale. Y por lo tanto ahí, a nivel de futuros, explorar lo. Pasa que es
+verdad que en <em>commodities</em> ya la cosa se dispara de tema de
+garantías.</p>
+<figure>
+<img src="../img/018.png" width="600">
+<figcaption>
+Figura 018
+</figcaption>
+</figure>
+<p>Por eso aquí había este <em>portfolio</em>, que habrá si esto es una
+pasta, pero con digamos una pequeña referencia sobre en caso que yo
+pueda hacer <em>portfolios</em> muy grandes, distintos, distintos
+<em>portfolios</em>. Lo tenía por ahí, he pensado en subirlo, sin más.
+Tampoco le deis mucha, mucha historia, vale.</p>
+<p><strong>Paper de Kaufman sobre portfolio</strong></p>
+<ul>
+<li><a href="../docs/THE%20PORTFOLIO%20RISK%20DILEMMA.pdf">The Portfolio
+risk dilema</a></li>
+</ul>
+<p>Otro que me gusta, que ya lo tenía hace, hace días marcado, lo he
+recortado, es un <em>paper</em> de Kaufman. Sabéis que me gusta mucho,
+que habla del tema del <em>portfolio</em>. Ahora vamos a hablar un poco
+de todo esto. Vamos a hablar un poco de todo esto porque hay distintas
+cosas.</p>
+<p>Vamos a explicar un poco ya cosas más de detalles de práctica que son
+la teoría. Lo dije, gente me dijo en el <em>portfolio</em>
+<em>TradeStation</em> qué acordó. Porque ya pensé es una mezcla de
+práctica de teoría. Pero pensé que era mejor tratarlo más en la teoría.
+Lo vamos a tratar hoy.</p>
+<p>Y si no diera tiempo, que creo que sí, lo trataríamos el siguiente
+día, vale.</p>
+<p>Pero aquí habla un poco de <em>The Portfolio risk dilema</em>. Es
+decir, <code>dejar lo correr</code> o <code>rebalancear</code>.</p>
+<blockquote>
+<p><em>Rebalancear</em> es modificar los pesos.</p>
+</blockquote>
+<p>Cuando yo monto un <em>portfolio</em>, lo monto en un momento
+concreto en el tiempo, vale. Pero eso hay que modificarlo?. Y ¿si lo
+modificó en base a qué criterio lo modificó?</p>
+<p>Digamos que habla sobre, sobre todo esto. Y hace un par de ejemplos y
+es interesante su lectura. Entonces yo os lo voy a pasar como material
+que me parece interesante del curso.</p>
+<p><strong>Documentación de Portfolio Maestro</strong></p>
+<ul>
+<li><a href="../docs/50%20YEARS%20ON%20WHAT%20HAVE%20I%20LEARNED.pdf">50
+Years on what have I learned</a></li>
+</ul>
+<p>Y otro que lo podía subir el último día, pero que lo quiero subir
+hoy. Así tenéis tiempo de trabajar a leerlo. Si hay dudas demás.</p>
+<p>Uno que ya lo leí hace bastante tiempo, es del año, es el año pasado
+si no recuerdo mal. Y bueno, digamos que daba unos consejos que, de
+hecho, algunos, bueno, nos compartan. Es que no los comparta, es que
+todo depende del lector. A todo depende de para qué público lo
+dirijas.</p>
+<p>Pero, pero no es que sea nada de lo que dices mentira. Todo está
+perfecto. Todo está, todo. Esto me acuerdo por sí que nosotros, por
+ejemplo, el punto uno no lo hacemos.</p>
+<p>El dice, no, el uno no, el 2. Y se opera acciones sólo en el lado
+largo. Por cierto, con muy poco éxito en los últimos tiempos. Ahí está
+dicho.</p>
+<figure>
+<img src="../img/019.png" width="600">
+<figcaption>
+Figura 019
+</figcaption>
+</figure>
+<p>Pero es verdad que es más difícil. Y de hecho lo comenté en el curso,
+no os compliqueis esa vida de entrada.</p>
+<p>Yo lo hago porque tengo que buscar alfa. Si yo lo operara para mi
+cuenta solo, a lo mejor no lo haría. A lo mejor buscaría el alfa por
+otro lado. Pero, pero yo al final tengo dos productos: uno que es
+<em>portfolio</em> alfa y otro <em>portfolios</em> Smart beta. Y, y por
+lo tanto claro, alfa tiene que tratar de aportar alfa. A mayor alfa
+posible es ir en corto de índices. Pero es difícil, es difícil.</p>
+<p>Pues aquí da algunos consejos muy útiles. Me gusta mucho en general,
+este, este <em>paper</em> me gusta mucho. Es un, término en general, y
+me gusta mucho.</p>
+<p>No los vamos a leer todos aquí porque tampoco hace falta. Ya los
+leeréis. Y si alguien quiere comentar algo, alguna duda, o incluso
+montar podéis montar un debate entre vosotros si queréis en el Bar, o
+hacer preguntas en preguntas en el Discord pensando en el último
+día.</p>
+<p>Pero es realmente una serie de consejos muy, muy interesantes, muy
+interesantes.</p>
+<p><strong>Equal weighting</strong></p>
+<p>También habla del <em>equal weighting</em>, por ejemplo. Ya lo había
+dicho de esto. Pero lo vamos a ver a dos. Preferimos ir a igual, igual
+<em>weighting</em> para mezclar las estrategias. Creemos que es un
+camino bastante útil.</p>
+<p>Y bueno, pues ya está. Ya lo, ya lo, ya lo leeréis, de acuerdo. Ya lo
+leeréis.</p>
+<blockquote>
+<p>Por cierto, una de las cosas que dice es que los sistemas
+correlacionan mucho. Es decir, que lo que depende más del resultado es
+el tipo de activo. Lo que decía antes.</p>
+</blockquote>
+<p><strong>Manual útil Maestro</strong></p>
+<ul>
+<li><a
+href="../docs/PM%20Part%201.%20And%20Introduction%20to%20Portfolio%20Back-Testing.pdf">1</a></li>
+<li><a
+href="../docs/PM%20Part%202.%20Ranking%20and%20Money%20Management.pdf">2</a></li>
+<li><a
+href="../docs/PM%20Part%203.%20Constraints%20and%20Portfolio%20Stops.pdf">3</a></li>
+<li><a href="../docs/PM%20Part%204.%20Optimization.pdf">4</a></li>
+</ul>
+<p>Entonces bueno, tengo, tengo un manual que es muy antiguo, pero como
+<em>Maestro</em> es súper antiguo. Hace, hace más tiempo. Publicó 2016,
+por ahí, incluso antes, no, 2013. Pero en 2013 publicó unos
+<em>papers</em> que explicaba, sigue totalmente en vigor porque es que
+no ha cambiado nada.</p>
+<p>Bueno, yo diría que nada, pero ha cambiado alguna pequeña cosa. Pero,
+pero debe ser insignificante, insignificante.</p>
+<p>Es decir, está totalmente en vigor. Por lo tanto estos documentos,
+que son de <em>Maestro</em>, porque creo que alguien me los había
+pedido, os los, os los subo también aquí como un material de
+<em>portfolio</em> más. Para aquel que quiera tener pues una cierta
+documentación de <em>portfolio</em> más.</p>
+<h2 id="maestro">Maestro</h2>
+<h3 id="ejemplo-de-portfolio-con-dos-familias">Ejemplo de portfolio con
+dos familias</h3>
+<p>Antes quiero esto, creo que ya lo puse, ya lo puse como material en
+el poder por ahora vamos a hablar un poquito de ello porque es un
+ejemplo muy bueno.</p>
+<p>La lástima que quería haber podido enseñaros en las tripas de los
+<em>portfolios</em>, pero no he conseguido localizar esa información,
+porque sólo di en una ponencia de Robotrailer y no he conseguido darlo a
+encontrarlo. Misterios de la tecnología.</p>
+<p>Pero sí quería igualmente hablaros de ellos igualmente para que
+entendáis bien el efecto del <em>portfolio</em>. Que os he comentado
+muchas veces que no hace falta que, no hace falta muchas veces tener un
+gran <em>portfolio</em>. Muchas veces estos tres estrategias pueden ser
+eficientes.</p>
+<p>Porque eso mucha gente cuando empieza siempre le cuenta como una
+barrera: es muy complicado tener muchos sistemas.</p>
+<p>Nosotros hoy en día, por distintos motivos que la mayoría seguramente
+conocéis, operamos dos familias de sistemas, que cada una de ellas
+tienen cuatro largos y cuatro cortos. Es decir 8 versiones.</p>
+<p>Y que analizamos con ese Excel correlaciones, porque lógicamente hay
+que afinar mucho en la diversificación.</p>
+<p>Sabemos es público y reconocido por nosotros que tiene camino de
+mejora el <em>portfolio</em> a nivel de diversificación. Ahora vamos a
+tratar de abordarlo por tratar de mejorar.</p>
+<p>Aunque sabemos que la gran mejora vendá cuando podamos usar futuros.
+Porque hay más, más herramientas,</p>
+<p>Pero aún así vamos a tratar de mejorar ahora en el ecosistema actual
+y queremos poder, poder conseguirlo.</p>
+<p><strong>Efecto de la diversificación</strong></p>
+<p>Pero, pero como os digo para ver este, para ver que se puede
+diversificar con uno.</p>
+<p>Entonces al final el tema, cuando yo tengo un solo sistema y por eso
+decimos muchas veces que es una mejora el riesgo.</p>
+<figure>
+<img src="../img/020.png" width="600">
+<figcaption>
+Figura 020
+</figcaption>
+</figure>
+<p>Pero yo tengo aquí uno que ha ido muy bien, que tiene un
+<em>Sharpe</em> de <code>0.38</code>, es éste de arriba. Y es el
+siguiente que tiene <code>0.14</code> más, atentados en el
+<code>Sharpe</code>, porque es el que tenemos aquí, vale. Que tenemos la
+diferencia de beneficio. Los dos tienen una curva que no es que esté
+mal. Todos esos eran datos de operativas real.</p>
+<figure>
+<img src="../img/021.png" width="600">
+<figcaption>
+Figura 021
+</figcaption>
+</figure>
+<p>Todo y 38 el dimensionamiento era trades reales, pero dimensionados
+en nominal para este ejercicio.</p>
+<p>Y veis la gran diferencia de uno y otro. Entonces, hombre, si yo cojo
+el primero, perfecto. El problema si cojo el segundo, ahí está el
+problema.</p>
+<p><strong>El portfolio consigue mejor Sharpe</strong></p>
+<p>Pero fijaros cómo cambia la mezcla de esos dos sistemas, de acuerdo.
+Donde cómo se amplifican, y realmente acaban ganando mucho más.</p>
+<p>La cartera con 2, que es la misma cartera, es la misma cartera. Pero
+al final en un <em>portfolio</em> donde se retroalimentan y donde hay
+diversificación entre ellos, diversifican.</p>
+<figure>
+<img src="../img/023.png" width="600">
+<figcaption>
+Figura 023
+</figcaption>
+</figure>
+Al final juntos, como veis, consiguen un <em>Sharpe</em> de 0.45, muy
+superior al primero. Y ganan mucho más que la suma de los dos.
+<figure>
+<img src="../img/022.png" width="600">
+<figcaption>
+Figura 022
+</figcaption>
+</figure>
+<figure>
+<img src="../img/024.png" width="600">
+<figcaption>
+Figura 024
+</figcaption>
+</figure>
+<p>Eso es por el efecto diversificación, de acuerdo. Porque mejora. Por
+lo que mejora.</p>
+<p>Y esto puede chocar, pero es así. Estos son datos, son datos reales.
+Está, está, está calculado. Se ha calculado.</p>
+<p><strong>Datos reales del ejemplo</strong></p>
+<p>Si alguien por curiosidad para que si alguien tiene es perspicaz,
+verá que la suma de operaciones de 318, 304, da 622, 622, porque son los
+dos. Es exactamente No hay, no hay trampa ni cartón.</p>
+<p>Y fijaros cómo cambia el <em>Sharpe</em> y cómo cambia.</p>
+<p>Y los dos empiezan con el mismo expectativa, con el mismo capital. Lo
+que pasa que al final cuando tú es un <em>portfolio</em>, los dos
+sistemas se van retroalimentando. Y esa es la gracia, esa es la gracia.
+Por eso se permite esa mejora.</p>
+<p><strong>La mejora principal es meter dos sistemas</strong></p>
+<p>Fijaros que realmente, a partir de los dos, mejoramos súper poco. La
+gran mejora es meter dos.</p>
+<figure>
+<img src="../img/026.png" width="600">
+<figcaption>
+Figura 026
+</figcaption>
+</figure>
+<p>Y ésta es la reflexión que os quería llevar. Porque se ve la
+tendencia. No quiere decir que haya que operar dos.</p>
+<p>Esto porque podríamos haber encontrado un mix mejor. Yo he usado los
+mismos. Esto simplemente al final pasa porque hay dos tipos de sistema.
+Si el tercero, si el tercero fuera muy distinto, mejoraría mucho más. No
+pasa porque no lo es más, de acuerdo?.</p>
+<p>Decir, si yo el tercero, yo ahora metiera aquí una Artemisa, de
+acuerdo, pues iría mejor. Porque hay que un Nemesis , Apolo y metido una
+Artemisa, pues seguramente mejoraría 0.60, por 0.50 y pico.</p>
+<p>Pero fijaros que al final aún así sí que consigo mejorar, pero ya de
+manera más residual, de manera más residual.</p>
+<figure>
+<img src="../img/025.png" width="600">
+<figcaption>
+Figura 025
+</figcaption>
+</figure>
+<p><strong>La mejora principal es en riesgo</strong></p>
+<p>La gran mejora, la gran mejora en rentabilidad / riesgo. Porque en
+rentabilidad, fijaros que no hay nada mejor que 2. Los 2, vale.</p>
+<p>Porque al final lo que os he dicho siempre, la diversificar mejora el
+riesgo y puede mejorar los datos de retorno riesgo como aquí el
+<em>Sharpe</em>. Pero no normalmente no va a mejorar el
+<code>retorno</code>. El que más gana es el de, el de 2, el de 2.</p>
+<p>Y eso si lo veis aquí en gráficos, esto ya lo vimos en la teoría,
+pero son los mismos sistemas. Lo único que el dimensionamiento pues
+provoca esa es efecto de, provoca ese efecto, provoca ese efecto.</p>
+<figure>
+<img src="../img/027.png" width="600">
+<figcaption>
+Figura 027
+</figcaption>
+</figure>
+<p>Pero como os digo, sólo metiendo 2, realmente conseguimos ya un
+efecto muy, muy positivo.</p>
+<p><strong>No necesitas 20 sistemas</strong></p>
+<p>Por lo tanto, esto simplemente que sirva como reflexión. Que no
+pensar que necesitáis una cartera con 20 sistemas. No es así, vale. No
+es así.</p>
+<p>Podéis trabajar con carteras de dos o tres sistemas y diversificarlos
+bien. Si hay que trabajar bien ese concepto de * diversificación, *
+gestión monetaria. * analizar el riesgo * que sean robustos, *
+sencillos.</p>
+<p>Pero con dos buenas estrategias podéis diversificarlos bien.
+Lógicamente en lo que hemos visto que sería pues un tendencial y un
+<em>mean reversion</em>, vale. Simplificando, un tendencial y un
+<em>mean reversion</em>.</p>
+<p><strong>Recomendación de activos</strong></p>
+<p>Y preferiblemente en activos distintos. Por ejemplo, 1. un <em>mean
+reversion</em> en bolsa, en el S&amp;P, en el <em>Dax</em>, en vale. 2.
+Y un tendencial en una materia prima: petróleo, oro, gasolina, carne de
+vacuno, zumo de naranja, soja, vale. lo que os dé más rabia.</p>
+<p>Y si luego metes tres o cuatro y puedes ir diversificando, pues uno
+en diario, otra lo entraría, perfecto.</p>
+<p>Pero para empezar, con un <em>mean reversion</em> y un tendencial en
+activos descorrelacionados, si puede ser uno más en diario y otro más en
+entraría tal. Vais a conseguir una cartera suficientemente eficaz.</p>
+<p>Eso es lo que hemos hecho nosotros en Darwinex, en principio, por,
+sobre todo, sobre todo, como sabéis, por problemas de liquidez y
+demás.</p>
+<p>Pero ya digo que ahora vamos a tratar de abordar, a ver dónde metemos
+Artemis, para, para mejorar. Porque con ese mix ya estaríamos todavía
+mejor.</p>
+<p>Pero es verdad que nos gustaría mucho meter a Nemesis en petróleo,
+por ejemplo. Pero no … problemas de liquidez.</p>
+<p>Pero, pero de esa manera podéis conseguir un <em>portfolio</em>
+satisfactorio y más equilibrado de lo que creéis. Más equilibrado de lo
+que creéis, vale. Eso es. Y por donde que lo tengáis en cuenta.</p>
+<h3 id="ejemplo-de-portfolio-real">Ejemplo de portfolio real</h3>
+<p>Bien. Aquí hemos hecho hoy un par de pruebas con ese
+<em>portfolio</em>. Son los sistemas que operan Sio en los últimos 10
+años.</p>
+<figure>
+<img src="../img/029.png" width="600">
+<figcaption>
+Figura 029
+</figcaption>
+</figure>
+<p>Toda operativa son sets que han operado todos en no el 100% de los
+que se han operado por sus que han operado todos.</p>
+<p>Esto como veis tenemos un <code>Profit Factor</code> bastante
+pobre</p>
+<figure>
+<img src="../img/030.png" width="600">
+<figcaption>
+Figura 030
+</figcaption>
+</figure>
+<p>El hemos tocado un poco el <em>money management</em> y realmente
+porque tiene años en la primera parte un poco flojos, en años poco
+flojos. 2014 es donde está ahí la parte, la parte final.</p>
+<figure>
+<img src="../img/031.png" width="600">
+<figcaption>
+Figura 031
+</figcaption>
+</figure>
+<p>Pero simplemente quería que vierais curvas. Las curvas operativas
+reales se parecen más a esto que a las que salen de
+<em>backtest</em>.</p>
+<figure>
+<img src="../img/032.png" width="600">
+<figcaption>
+Figura 032
+</figcaption>
+</figure>
+<p><strong>Portfolio con sistemas perdedores</strong></p>
+<p>Pero también quería que vierais un poco a lo que os digo. Que un
+<em>portfolio</em> evidentemente no es lo ideal. Y aquí pues tenemos
+estrategias que están algunas de ellas, algunas de ellas se van a ser
+bueno. Pero va a ser revisado ahora todo el <em>portfolio</em>.</p>
+<p>Pero, pero hay alguna que estaba justita, justita, ya os lo he
+comentado en los directos. Está justita, esto ahí va.</p>
+<p>Y ahí tenéis por ejemplo un ejemplo, vale. Esto es un
+<em>portfolio</em> con aquí 14 estrategias. Y habéis que hay varias que
+están perdiendo. Y algunas de ellas prácticamente casi ni han estado,
+han estado ganando. Seguramente son cortos. Lo que os digo. Las cortas
+de bolsa ha ido bastante mal. Tenemos que darles una vuelta importante a
+ellas. Hemos que darles una buena importante demasiado tiempo, demasiado
+tiempo sufriendo, vale.</p>
+<figure>
+<img src="../img/033.png" width="600">
+<figcaption>
+Figura 033
+</figcaption>
+</figure>
+<p><strong>El portfolio sigue siendo positivo</strong></p>
+<p>Y aún así, aún así, a pesar de habiéndote estando con obtener ahora
+estrategias que en el pasado no han ido bien. Esto lógicamente no quiere
+decir que es todo lo que hemos operado, son los sets. Son los sets que
+de hecho no son ni los que están ahora 100% operando, los que
+seguramente elegimos aquí para entendernos, vale.</p>
+<figure>
+<img src="../img/034.png" width="600">
+<figcaption>
+Figura 034
+</figcaption>
+</figure>
+<p>Que dijimos aquí o un poco antes. Puede ser un ejemplo de un
+<em>portfolio</em> que he mirado antiguo y que lo he actualizado. Pero
+esto no lo hemos operado todo así.</p>
+<p>Pero, pero simplemente os lo enseño para que veáis esta reflexión.
+Aquí hay varias estrategias perdedoras. Y camisa curva es positiva. Esa
+curva ha ganado dinero.</p>
+<figure>
+<img src="../img/032.png" width="600">
+<figcaption>
+Figura 032
+</figcaption>
+</figure>
+<p>Que no ha ganado mucho dinero?. Bueno, no ha ganado mucho dinero, es
+verdad. Dinero teniendo varias estrategias que lo han perdido. Lo han
+perdido, no es que han ganado poco. Han perdido dinero.</p>
+<p>Y esto es lo que hablaba en algunos medios broma, medio en serio, la
+teoría, cuando decía el santo creado es el <em>portfolio</em>, vale.</p>
+<p>Este esto es, de acuerdo. Esto es. Este efecto, de acuerdo. Este
+efecto sólo lo vas a conseguir con un <em>portfolio</em>, porque tú
+nunca vas a saber si qué estrategia vas a elegir.</p>
+<p>Lógicamente vas a intentar elegirla muy buena. Pero y aquí en este
+ejemplo que hemos puesto antes, lógicamente hemos puesto un ejemplo por
+lo que mente es que habían ido bien.</p>
+<p>Pero podría haber sido una perdedora. Como has visto, como has visto
+ahora en el otro <em>portfolio</em>.</p>
+<p>En cambio con la mezcla has conseguido que el <em>portfolio</em> gane
+dinero a pesar de esas estrategias.</p>
+<p>Claro, si hubieras cogido la buena, perfecto. Pero si coges la mala?,
+¿entiendes? Ahí está siempre el problema, vale.</p>
+<p><strong>Dimensionamiento y exposición</strong></p>
+<p>Bien. En cuanto al dimensionamiento, aquí <em>Maestro</em> es un
+programa que es un desastre muchas cosas. Pero tiene alguna que nos
+gusta mucho, que nos gusta mucho.</p>
+<p>Que veis el <em>drawdown</em>, que está bastante, bastante bien
+ecualizado. Bastante bien ecualizado en los entornos del 25%.</p>
+<figure>
+<img src="../img/035.png" width="600">
+<figcaption>
+Figura 035
+</figcaption>
+</figure>
+<p>Y una cosa que nos gusta mucho de esto es ver este gráfico. Pero si
+no tienes que calcular en Excel y demás.</p>
+<p>Y esto es la exposición, de lo que os decía antes. Tenemos una
+exposición en el lado largo máxima de 2.7 aproximada, y abajo de 2.1</p>
+<figure>
+<img src="../img/036.png" width="600">
+<figcaption>
+Figura 036
+</figcaption>
+</figure>
+<p>Esto está usando nuestro algoritmo, el que os enseñé el otro día.</p>
+<p><strong>Efecto del límite de volatilidad</strong></p>
+<p>Y veis el efecto que provoca. Porque tiene siempre ese efecto arriba,
+techo?. Es por el límite inferior, de acuerdo. Es el límite inferior lo
+que provoca eso.</p>
+<p>Porque yo, en el momento en que, en el momento en que la volatilidad
+baja demasiado, no le dejo que exponga más. Ahí le pongo un tope, que no
+sé si recordáis que era, hablo de memoria, del orden del 1.75, por
+ejemplo, en Apolo Nasdaq, vale.</p>
+<p>Pues si llega a eso, automáticamente implica un multiplicador por el
+nominal. Porque es una constante, una constante, se va a variar en base
+al precio el nominal, pero no va a variar por volatilidad.</p>
+<p>Por lo tanto acaba siendo un multiplicador del precio. Es decir, el
+nominal.</p>
+<p>En ese gráfico se ve muy claro. Si yo voy a nominal, lo que veríais
+es todo el rato una línea recta. Aquí como no es nominal puro, que es
+que es nominal pues ajustado.</p>
+<p>En cambio, si yo ahora lo que pasa que vamos a hacer una cosa porque
+lo veáis.</p>
+<p><strong>Prueba sin límite de volatilidad</strong></p>
+<p>esto ahora, no lo voy a poner muchos años porque podemos morir en el
+intento, podemos bloquear.</p>
+<p>Simplemente para, para que veáis el gráfico voy a poner dos años.
+Pero lo que voy a hacer es bloquear lo que, o sea, quitar el límite,
+quitar el límite de, el tope éste. Quitar el tope, se lo voy a poner
+0.</p>
+<figure>
+<img src="../img/037.png" width="600">
+<figcaption>
+Figura 037
+</figcaption>
+</figure>
+<p>Ahora qué pasa, ahora estaría trabajando. Está trabajando. Y ya pues
+podemos ir a dar una vuelta así. Bueno, simplemente para que veáis ese
+tema. Luego, cuando acabe esto, vale, también os enseñaré.</p>
+<p>Para que ya lo habéis visto de una manera sencilla, una manera
+sencilla de, para los enseñar dos trucos.</p>
+<p><strong>Funciones avanzadas de portfolio</strong></p>
+<p>Para, para más avanzados y para menos. Por un lado para los más
+avanzados, tanto <em>Portfolio Maestro</em> como <em>Portfolio
+Trader</em>, vale. Hay algunas librerías y algunas de
+<em>rebalanceo</em>.</p>
+<p>Porque <em>Maestro</em> tiene opciones de rebalancear. Que si alguien
+las quiere, que me las pida. Porque no sé si están por defecto, la
+verdad que tengo dudas.</p>
+<p>Pero hay unas, hay una serie de palabras reservadas de funciones que
+creo que no vienen instaladas. Creo que estaban en los foros que
+permiten controlar el <em>portfolio</em>.</p>
+<div
+style="border: 2px solid #ccc; padding: 15px; margin: 10px 0; border-radius: 8px;">
+<h3>
+Portfolio_Maestro_Constrain_Short_Position
+</h3>
+<p>
+<strong>Propósito:</strong> Limitar la exposición en posiciones cortas.
+</p>
+<p>
+<strong>Lógica:</strong> Calcula el equity actual en cortos (posiciones
+abiertas + nueva orden). Si este valor supera un porcentaje máximo del
+equity total del portfolio, bloquea la orden (devuelve True). Si está
+dentro del límite, permite operar (devuelve False).
+</p>
+<p>
+<strong>Uso:</strong> Control de riesgo direccional para no
+sobreexponerse en cortos.
+</p>
+</div>
+<figure>
+<img src="../img/039.png" width="600">
+<figcaption>
+Figura 039
+</figcaption>
+</figure>
+<p>Por ejemplo, calcular el <em>money management</em>, coger la cuenta
+del <em>portfolio</em>, de acuerdo. Pasa que eso hay que hacerlo con
+objetos. Es una estrategia que lo hace, que usa esta función, esto la
+función:</p>
+<div
+style="border: 2px solid #ccc; padding: 15px; margin: 10px 0; border-radius: 8px;">
+<h3>
+Portfolio_Maestro_Profit_Risk
+</h3>
+<p>
+<strong>Propósito:</strong> Implementar gestión de riesgo diferenciada
+entre capital inicial y beneficios.
+</p>
+<p>
+<strong>Lógica:</strong> Suma tres componentes de riesgo independientes:
+</p>
+<ul>
+<li>
+<strong>PctOfInitialEquity:</strong> % que arriesgas del capital inicial
+</li>
+<li>
+<strong>PctOfProfits:</strong> % que arriesgas de los beneficios
+acumulados del portfolio
+</li>
+<li>
+<strong>PctOfProfitsSistema:</strong> % que arriesgas de los beneficios
+del sistema individual
+</li>
+</ul>
+<p>
+<strong>Uso:</strong> Permite ser más agresivo con beneficios (ej: 1%
+del capital + 5% de profits), protegiendo el capital base mientras
+aprovechas las ganancias.
+</p>
+</div>
+<figure>
+<img src="../img/038.png" width="600">
+<figcaption>
+Figura 038
+</figcaption>
+</figure>
+<p>Y eso, por ejemplo, es una estrategia que lo usa. Hay que meter el
+objeto y tal.</p>
+<div
+style="border: 2px solid #ccc; padding: 15px; margin: 10px 0; border-radius: 8px;">
+<h3>
+Portfolio Maestro Rebalancer
+</h3>
+<p>
+<strong>Propósito:</strong> Rebalancear automáticamente un portfolio
+según ranking de activos.
+</p>
+<p>
+<strong>Lógica:</strong> Define un RankCutoff (ej: 3 = mantener los 3
+mejores). Si un activo cae por debajo del cutoff y tiene posición,
+vende. Si está dentro del cutoff y no tiene posición, compra.
+</p>
+<p>
+<strong>Uso:</strong> Rotación sistemática de activos basada en un
+criterio de ranking (momentum, valor, etc.).
+</p>
+</div>
+<figure>
+<img src="../img/040.png" width="600">
+<figcaption>
+Figura 040
+</figcaption>
+</figure>
+<p>Pues eso es un poco avanzado. No, no quiero complicaros, complicaros
+la vida. Porque la única diferencia de esto es que yo puedo referirme a
+datos del <em>portfolio</em> en vez de sólo del sistema.</p>
+<p>Que yo, cuando hago un sistema, me estoy refiriendo a los datos del
+sistema. Yo quiero referirme a datos del <em>portfolio</em>, pues lo
+tengo que hacer de esta manera. Tengo que usar este tipo de funciones.
+Como <em>Portfolio Maestro Profit Risk</em>, como <em>Portfolio Maestro
+Fixed Fractional</em>, pues esto nosotros pues lo tenemos algunas
+versiones de los sistemas que usan estas palabras y pasan el riesgo a
+través de este cálculo.</p>
+<div
+style="border: 2px solid #ccc; padding: 15px; margin: 10px 0; border-radius: 8px;">
+<h3>
+Portfolio_Maestro_Fixed_Fractional
+</h3>
+<p>
+<strong>Propósito:</strong> Calcular tamaño de posición con Fixed
+Fractional básico.
+</p>
+<p>
+<strong>Lógica:</strong> Toma un porcentaje del equity del portfolio y
+lo divide entre el precio de entrada para obtener la cantidad de
+contratos/acciones.
+</p>
+<p>
+<strong>Fórmula:</strong> Cantidad = (Equity × %Asignado) /
+PrecioEntrada
+</p>
+<p>
+<strong>Nota:</strong> Es FF sobre equity, NO sobre riesgo (no considera
+distancia al stop).
+</p>
+</div>
+<figure>
+<img src="../img/041.png" width="600">
+<figcaption>
+Figura 041
+</figcaption>
+</figure>
+<p>Simplemente para usar la <em>equity</em> del <em>portfolio</em>. Es
+la única diferencia que pasamos el riesgo de cada sistema, pero usamos
+la <em>equity</em> del <em>portfolio</em>.</p>
+<p>Y hasta aquí te lo, te lo explica.</p>
+<p>Y éstos son palabras reservadas. También <em>Portfolio
+MultiCharts</em> tiene, de hecho hasta tiene más. Y es un poco lo mismo.
+Simplemente para referirte a datos del <em>portfolio</em> en conjunto.
+El sistema en sí tiene datos del mismo. Si quiero usar datos del
+<em>portfolio</em>, pues tengo que usarlo como digo con este tipo de
+palabras, de palabras reservadas, vale.</p>
+<p>Esta es la manera podemos decir más avanzadas.</p>
+<p>También hay para referirse a esto de <em>allocate and
+rebalancer</em>.</p>
+<div
+style="border: 2px solid #ccc; padding: 15px; margin: 10px 0; border-radius: 8px;">
+<h3>
+🔄 Portfolio Maestro Allocate and Rebalancer (Configuración)
+</h3>
+<p>
+<strong>Propósito:</strong> Rebalancear portfolio + asignar tamaño de
+posición automáticamente.
+</p>
+<p>
+<strong>Inputs clave:</strong>
+</p>
+<ul>
+<li>
+<strong>RankCutoff(3):</strong> Número de posiciones a mantener (los 3
+mejores del ranking)
+</li>
+<li>
+<strong>AllocationPct(50):</strong> % del equity del portfolio asignado
+a este grupo de estrategias
+</li>
+</ul>
+<p>
+<strong>Requisito:</strong> Crear en Portfolio Maestro varios strategy
+groups con diferentes listas de símbolos, aplicar un ranking a cada uno,
+y configurar el filtro para incluir al menos RankCutoff símbolos.
+</p>
+</div>
+<div
+style="border: 1px solid #ccc; padding: 15px; margin: 10px 0; border-radius: 8px;">
+<h3>
+⚙️ Portfolio Maestro Allocate and Rebalancer (Ejecución)
+</h3>
+<p>
+<strong>Lógica de decisión:</strong>
+</p>
+<ul>
+<li>
+<strong>Si ranking &gt; RankCutoff:</strong> El activo ya no está entre
+los mejores → Si tiene posición abierta, vende.
+</li>
+<li>
+<strong>Si ranking ≤ RankCutoff:</strong> El activo está entre los top →
+Calcula tamaño (Equity × AllocationPct / Precio) y compra si no tiene
+posición.
+</li>
+</ul>
+<p>
+<strong>Resultado:</strong> Rotación automática: entra en los mejores
+rankeados, sale de los que caen del top, con sizing proporcional al
+equity del portfolio.
+</p>
+</div>
+<figure>
+<img src="../img/042.png" width="600">
+<figcaption>
+Figura 042
+</figcaption>
+</figure>
+<figure>
+<img src="../img/043.png" width="600">
+<figcaption>
+Figura 043
+</figcaption>
+</figure>
+<p>Por qué?, porque <em>Maestro</em>, que es muy breve. Ahora, en 5-10
+minutos, aunque di los <em>PDFs</em>, os lo voy a enseñar. Porque eso sí
+que a nivel de acciones, por ejemplo, sistemas de rotacionales que
+alguien preguntaba, puede tener su utilidad, vale. Pero sobre todo ya
+digo, para nada optimizar y demás. Porque <em>maestro</em> más todo eso
+es inviable.</p>
+<p><strong>Seguimos con el backtest</strong></p>
+<p>He acabado de hacer sólo el <em>backtest</em>, vale. Y ahora he hecho
+este mismo <em>backtest</em>, vale. Le he quitado el límite. Le he
+quitado el límite. Y no sé si ha ido mejor o peor.</p>
+<figure>
+<img src="../img/044.png" width="600">
+<figcaption>
+Figura 044
+</figcaption>
+</figure>
+<p>Ha ido peor. No ha ganado bastante, pero bastante peor. Bastante
+peor, vale. Ah, bueno, no, pero son menos años. No, no, no, es que ha
+ido peor. Es que son menos años, o menos años, que después son muchos
+menos años.</p>
+<figure>
+<img src="../img/045.png" width="600">
+<figcaption>
+Figura 045
+</figcaption>
+</figure>
+<p><strong>Efecto de quitar el límite</strong></p>
+<p>Era, era sólo para que verais esto. Veis, ahora ya no hay límite. Ahí
+está. Ahora es, ahora el límite es distinto.</p>
+<figure>
+<img src="../img/046.png" width="600">
+<figcaption>
+Figura 046
+</figcaption>
+</figure>
+<p>Porque, porque yo ahora no le he hecho un tope. Ahora está se llega a
+palancar 4-5 vez. Aquí se ha palancado siete veces.</p>
+<p>Porque?, porque no había volatilidad. Esto, esto ahora alguien lo
+preguntaba, es <em>Percent Volatility</em>, de acuerdo. Es <em>Percent
+Volatility</em>. Y con el cálculo propio de volatilidad usando el ATR
+normalizado, vale. Con lo que quieras. Pero al final es por volatilidad.
+Es decir, cuando hay poca volatilidad, meto mucho. Cuando hay más
+volatilidad, meto menos. Es la diferencia.</p>
+<p>Este es el efecto que provoca poner un límite en la parte baja.</p>
+<figure>
+<img src="../img/047.png" width="600">
+<figcaption>
+Figura 047
+</figcaption>
+</figure>
+<p>Esto así se ve muy bien, vale. Que al <strong><em>cuando actúa el
+límite, estoy yendo a un multiplicador el nominal</em></strong>. No es
+que vaya al 100% nominal. Voy a 2.7.</p>
+<p>Voy aún, aún a una exposición bastante estable con relación al
+nominal del activo. Sea acciones, sea futuros, lo que sea.</p>
+<p>Cuando hay volatilidad, entonces baja. Y puede llegar a niveles muy
+bajos como es aquí. Que cuando es esto pues el COVID, 2020. ese pico ahí
+debajo es el COVID, donde la exposición baja pues mucho.</p>
+<figure>
+<img src="../img/048.png" width="600">
+<figcaption>
+Figura 048
+</figcaption>
+</figure>
+<p>Aquí no hay como baja, porque ahí está el COVID también. También
+bajan en el otro. Decir en el otro también ha bajado. La diferencia no
+es que no baje el otro, sino que el otro sube más. El otro ahí también
+en el COVID. Si yo aquí busco el COVID, este cargo a menos, no he
+cargado el COVID. Bueno, que le he puesto menos antes para que fuera más
+rápido. No le he puesto el COVID.</p>
+<p>Pero bueno, ya veis que aquí hay más volatilidad. Aquí en esa parte,
+más volatilidad. Y aquí en esa parte, menos volatilidad. Mercado
+más.</p>
+<p><strong>Pregunta sobre elegir sistemas para portfolio</strong></p>
+<p><strong><em>Comenta Juan, que si de cada </em>portfolio* si por
+ejemplo tenemos 20 sistemas estudiados con óptimizaciones, métricas
+etcétera, que son viables, pero sólo queremos o podemos elegir 10.
+Entiendo que por un tema de capital. ¿Que menos correlación en la teoría
+se mostró la matriz de Excel de correlaciones? se Comentó que se vería
+realmente la parte.</strong>*</p>
+<p>Bueno, no era consciente que dijera, dijera esto. Pero ahora te lo
+enseño, ahora te lo enseño.Es que esto, esto al final simplemente es
+una… Tú ahí lo que, lo que yo haría en este caso es un poco por donde
+iba este documento que os he enseñado antes.</p>
+<p><strong>Criterios para elegir sistemas</strong></p>
+<p>Muy sencillo. Es decir, ahí que deberías de hacer. Por un lado,
+deberías de elegir, por un lado, vale. Si tienes 20, no metamos
+porquería el <em>portfolio</em>. Luego habrá cosas que serán porquería,
+porque, porque nos habíamos equivocado, vale. Puede pasar. Pero digo de
+entrada, no metamos <em>portfolio</em>. Normalmente tú vas a tener
+sistemas que los ves mejor. Es decir, que son tus grandes sistemas.</p>
+<p>Evidentemente ésos van. Entonces si tú de verdad tienes 20 que los 20
+son top, entonces empezamos a hablar. Pero si no, elige los, los que de
+verdad concibidas que son más top.</p>
+<p><strong>Sistemas robustos</strong></p>
+<p>Y cuando digo más top, no quiero decir que ganen más. Sean más
+robustos. Por ejemplo, ¿qué es un sistema robusto? Antes en ese
+documento que se ha pasado, Kaufman, también lo ponía. Que es un sistema
+robusto?: un sistema que las pruebas de sensibilidad, que los mapas, que
+tiene muchas zonas de trabajo. Eso es un muy buen sistema. Y que da
+confianza.</p>
+<div
+style="border: 2px solid #ccc; padding: 15px; margin: 10px 0; border-radius: 8px;">
+<p>
+<p><strong>Que es un sistema robusto?</strong></p>
+un sistema que las pruebas de sensibilidad, en los mapas, tiene muchas
+zonas de trabajo.<br />
+Eso es un muy buen sistema. Y que da confianza.
+</div>
+<p>Si tú tienes 20 así, perfecto. Entonces ahora, ahora te contesto.
+Pero no creo que tengas 20 así. Entonces si no tienes 20 así, elige los
+que son así. Elige los que son así. Los que son de ese tipo. Los que son
+súper robustos, sencillos, vale. No necesariamente los que ganan
+más.</p>
+<p>Eso es lo tentador. Oye, si es el que gana más y además robusto,
+entonces perfecto. Pero me entiendes. * siempre más seguridad que el
+rendimiento. * Calidad más que calidad en el sentido de robustez.</p>
+<p><strong>Matriz de correlaciones</strong></p>
+<p>Bien. Entonces si tienes 20 de este tipo, vale. Entonces ahí el
+criterio siempre es correlación, correlación. Y ahí es donde entra la
+matriz, donde entra la matriz. Yo estoy prácticamente seguro que la
+teoría lo hice un poco lo de desglosar la matriz. Pero de todas maneras,
+entiendo que es un tema interesante.</p>
+<p>La mayoría de programas para la mayoría de programas, en este caso
+tanto <em>Maestro</em> como como un <em>Portfolio Trader</em>, que ahora
+vamos a ir a él, ahora vamos a ir a él, te lo va a enseñar. Cuando
+cualquier problema que gestione <em>portfolios</em>, evidentemente una
+de las informaciones que te da es correlaciones de los miembros, porque
+es que es de cajón, vale.</p>
+<p>En el caso de <em>Maestro</em>, lo tienes en <code>análisis</code>.
+Tienes aquí correlación análisis. Tú le eliges el <em>portfolio</em>,
+éste último que hemos mirado, por ejemplo. Le dices por
+<code>Symbol</code> o por <code>Strategy Group</code>. En este caso esto
+es un detalle. Bueno, en este caso va a ser lo mismo porque sólo hay dos
+<em>Strategy Groups</em> que son de símbolos distintos. En este caso no
+importa. Y lo puedes hacer bien diario y mensual. Aquí cuando ya le
+coges algo, ya lo calcula. Así que ahora lo está calculando diario. Si
+lo quiero cambiar a mensual, pues lo calculo. Y lo calcula. Y aquí
+tienes todas las métricas de las correlaciones.</p>
+<figure>
+<img src="../img/049.png" width="600">
+<figcaption>
+Figura 049
+</figcaption>
+</figure>
+<p><strong>Análisis de correlaciones</strong></p>
+<p>Lógicamente hay algunos, como ya os comenté, que son muy parecidos.
+Pero eso siempre es siempre mejor si son robustos, que tener el mismo
+set.</p>
+<p>Y los hay que son muy distintos. Largos, cortos, vale. Entre oros,
+entre ellos mismos, son largos y cortos. Pero también entre, entre
+Apolos y oros, como veis, pues están entre 0.12, 0 menos algo. Es un
+poco buenas correlaciones. Cerca de 0, pero menos de 0.5, ya estamos
+diversificando. Obviamente 0.8, 0.9, diversificar muy poco, muy poco,
+casi nada.</p>
+<p>Pero entonces tú ahí elegirías ésos. Elegirías los que mejor
+correlación te dé.</p>
+<p><strong>Criterio de selección por categoría</strong></p>
+<p>Y eso partiendo de lo que te decía en la entrada. Si tú tienes
+distintos sistemas, distintos activos, tienes que tener ahí una
+selección previa. Que era un poco por donde iba este documento que ellos
+por aquí de <em>portfolio</em>.</p>
+<p><a href="../docs/Portfolio%20Commodities.pdf">doc : Portfolio
+Commodities</a></p>
+<p>un ejemplo aplicable a todo. Es decir, yo tengo unos grupos. Hay
+autores, por ejemplo, creo que era un que reconoce que creo que tiene 4
+o 5 tipos. Y está correcto. O sea, tú tienes <em>equity</em> bolsa.
+Tienes tipos de interés, vale. Y luego dentro de materias primas,
+hablando de futuros, dentro de materias primas pues tienes distintos
+tipos. Aquí las que entran: divisas, energías, tienes granos, tienes
+plan de <em>soft</em>, financieras. Tienes distintas. Entonces ahí tú
+puedes ir eligiendo metales, no, que no acabe energía.</p>
+<figure>
+<img src="../img/018.png" width="600">
+<figcaption>
+Figura 018
+</figcaption>
+</figure>
+<p><strong>Diversificación por categoría</strong></p>
+<p>Al final vas un poco por categorías. Si todas las estrategias las
+tienes de <em>equity</em>, pues ya va regular la cosa, ¿entiendes? Es
+mejor elegir de categoría distinta que repetir la misma categoría.
+Entonces si puedes poner una de <em>equity</em>, otra de interés de
+tipos intereses, otra de metales, otra de energía, y otra de granos, es
+perfecto, ¿entiendes? Ése sería un criterio.</p>
+<p>Eso normalmente ya en esta matriz te va a salir así. Pero si por lo
+que fuera no te saliera, en caso de duda lo decides así. En caso de duda
+lo decides así. Es decir, los vas metiendo por distinta categoría,
+vale.</p>
+<p><strong>Más importante estrategia que activo</strong></p>
+<p>Y cuando digo categoría, cuidado, ahora te ha hablado de activos
+porque es el documento que te había enviado. Pero <strong><em>es mucho
+más importante</em></strong> por estrategia que por activo. El primer
+criterio es estrategia y luego activo.</p>
+<p>Es decir, si tú tienes buenas estrategias, o sea de este tipo que te
+he dicho yo (súper estable, súper robustos) y tienes un tendencial en el
+Nasdaq y otro anti-tendencial en el S&amp;P, y cumplen estos dos
+criterios (súper estable, súper robustos), es mejor que opere esos dos
+siendo los dos <em>equity</em> de la misma categoría, que operar un oro
+y un Nasdaq siendo que en el oro malo o que no funcione tan bien,
+¿entiendes? Es más importante estrategia.</p>
+<p>Pero lo ideal, lógicamente, es las dos cosas. Es decir, en Nasdaq,
+S&amp;P estrategia antitendencia, en oro estrategia tendencia. Ir
+combinándolo, en uno diario, el otro intradiario. Ir combinado. Eso es
+lo ideal, lo ideal.</p>
+<div
+style="background: linear-gradient(135deg, #242438ff 0%, #0e172eff 100%); border-left: 5px solid #e94560; padding: 20px; margin: 15px 0; border-radius: 8px; color: #eee; font-family: Arial, sans-serif;">
+<h3 style="color: #e94560; margin-top: 0;">
+🎯 REGLA DE ORO: DIVERSIFICACIÓN EN PORTFOLIO
+</h3>
+<table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+<tr>
+<td style="background: rgba(233, 69, 96, 0.2); padding: 12px; border-radius: 5px; text-align: center;">
+<span style="font-size: 1.5em;">1️⃣</span><br>
+<strong style="color: #e94560;">ESTRATEGIA</strong><br> <span
+style="font-size: 0.9em;">Prioridad máxima</span>
+</td>
+<td style="padding: 0 10px; text-align: center; font-size: 1.5em;">
+→
+</td>
+<td style="background: rgba(233, 69, 96, 0.1); padding: 12px; border-radius: 5px; text-align: center;">
+<span style="font-size: 1.5em;">2️⃣</span><br>
+<strong style="color: #e94560;">ACTIVO</strong><br> <span
+style="font-size: 0.9em;">Prioridad secundaria</span>
+</td>
+</tr>
+</table>
+<div
+style="background: rgba(233, 69, 96, 0.15); padding: 15px; border-radius: 5px; margin: 15px 0;">
+<p style="margin: 0; font-size: 1.05em;">
+<strong>✓ Mejor:</strong> Dos estrategias robustas en mismo sector
+(tendencial Nasdaq + anti-tendencial S&amp;P)<br> <strong>✗
+Peor:</strong> Una estrategia robusta + una mediocre en sectores
+distintos (buen Nasdaq + mal Oro)
+</p>
+</div>
+<p style="color: #e94560; font-weight: bold; margin-bottom: 5px;">
+🏆 ESCENARIO IDEAL (combinar todo):
+</p>
+<p style="margin: 0; padding-left: 10px; border-left: 2px solid #e94560;">
+Estrategias robustas diferentes + Activos de distintas categorías +
+Temporalidades variadas<br> <span
+style="font-size: 0.9em; color: #aaa;">Ej: Tendencial en Oro (diario) +
+Anti-tendencial en S&amp;P (intradiario) + Reversión en Granos…</span>
+</p>
+</div>
+<p><strong>Sesgos en el análisis</strong></p>
+<p>Como no, normalmente esto que al final es el sentido común, que como
+he dicho todo el curso, es en la vida es importante, eso es. Y lo
+comentaba el otro día. Hacía una charla con, con un colega y le decía
+eso. Es verdad.</p>
+<p>O sea, si hablando de broma de ya no te cuento de fútbol o sea de o
+de política, o sea al final tú piensa la cantidad de cosas que tenemos
+todos la misma información. Y de esa misma información se generan
+opiniones radicalmente distintas. Que no digo opiniones, perdón,
+conclusiones radicalmente distintas. Es porque hay muchos sesgos, vale.
+Entonces los datos para el final saber decidir y tratar de no tener
+sesgos. Por eso en el curso hablé una parte de sesgos, es muy importante
+en un análisis de datos. Es muy importante.</p>
+<p>Esto pasa mucho, por ejemplo, en un tema súper científico que lo puse
+este ejemplo como tema del COVID. Es ciencia pura. Es, es pura ciencia
+la epidemiología, es pura ciencia. Y virus pero ciencia pura. Y la
+epidemiología es pura ciencia. Toda probabilidad es estadística
+absoluta. por ciento lo estudié bastante a nivel y a nivel de
+aficionado. Y hay gente que con esos mismos datos dice que, que no
+funciona no, que si funciona. O gente que ahora ha descubierto que los
+medicamentos tienen efectos secundarios. No sabían que la gente hay
+gente que se ha muerto por tomar una aspirina. Gente que no lo sabe.
+Pero yo ya os lo digo. Todos los medicamentos del mundo tienen efectos
+secundarios.</p>
+<p>A finales y sesgos, falta de información, etcétera, ¿entiendes? Y
+esto pasa en todos los análisis de datos. Pues imagínate, imagínate con
+sistemas. Imagínate con sistemas. Pasa igual.</p>
+<p><strong>Ser frío en el análisis</strong></p>
+<p>Entonces al final los datos te van a dar información, pero también a
+veces los sesgos te cariñas, sistema éste es mío, éste tal, éste me
+gusta más, éste me dio muy bien. Entonces hay que tratar de ser lo más
+frío, lo más estéril posible. Por eso también os doy pautas podemos
+decir que no son puramente de datos.</p>
+<blockquote>
+<p>Como os digo, primero por el sistema y muy importante la estrategia
+distinta… ese el vector más importante, sin duda alguna. De verdad. O
+sea, es el más importante.</p>
+</blockquote>
+<p>También <em>Timeframe</em> distinto, <em>activo</em> distinto,
+etcétera, vale. Y por supuesto, matriz de correlaciones. Y aquí pues
+tienes que cruzarlas. Esto tú te lo puedes llevar a Excel. Puedes ver
+qué tiene cada uno con todos los demás. Puedes hacer promedios. Puedes
+trabajar lo estadísticamente. No hay más. No hay mucho secreto en ese
+sentido. O sea, no hay nada en ningún cálculo especial que puedas hacer.
+Es una tabla de correlaciones. Cada uno contra todos. Y ahí sale. No hay
+más.</p>
+<p><strong>Correlaciones diarias vs mensuales</strong></p>
+<p><strong><em>cuál es el valor de correlación. Con se verás que es muy
+correlacionado?</em></strong></p>
+<p>Sí, esto es mensual. Esto, Aureli, que has visto, lo puedes poner en
+términos mensuales, de términos diarios. Bueno, míralo en los dos. Lo
+normal, lo normal es que haya datos muy similares. Lo normal es que haya
+datos muy similares.</p>
+<p>Hay autores que defienden que mejor diario. Acordaros que hizo una
+práctica con Excel que muy trabajada con datos que la verdad recomiendo
+verlas varias veces. Es densa de narices, aquella que hice horas con el
+Excel. Que si tal <code>diario</code>, tal <code>ulseer</code>. Trabajé
+mucho ahí en los datos. Y viste. Entonces bueno, pueden cambiar,
+diarios, mensuales. Hay cosas el diario siempre tiene mucho más detalle.
+Más de diario, evidentemente. Pero ya no tiene mucho más, mucho más
+detalle. El mensual a veces pierde cosas. Pero, pero normalmente es
+suficiente. Normalmente. Lo que hablamos siempre de un equilibrio entre
+productividad. COntra más detalle, más cuesta más, más cantidad de
+información.</p>
+<p>Entonces siempre hay que tener un equilibrio. Está bien mirarlo por
+tal, pero normalmente no vas a obtener lecturas muy distintas, sobre
+todo en correlaciones diarias o demás, muy interesante.</p>
+<p>Luego el efecto mensual, hay gente que también lo mide en
+<em>drawdowns</em> o ratos de pérdidas mensuales. Es correcto. Lo normal
+y lo fácil es mirar rendimientos, rendimientos como este caso, vale.
+Pero otra manera que hay bastante sencilla y visual, si no quieres sacar
+datos o el programa te los saca, ya lo hemos comentado. Al final lo que
+a mí me interesa más la descorrelación es por las pérdidas más que por
+las ganancias. Entonces desde ese punto de vista, sí que puede venir
+bien a mejor mirar pérdidas diarias. Los días malos que no coincidan. Y
+ahí sí que te puede venir bien la correlación en diaria, te puede dar
+más ese detalle.</p>
+<p>Y luego incluso pues ver, ya te digo, los días malos, donde son.
+Puedes ver cuáles son los peores días de ese sistema, cuándo fueron. En
+uno, en otro. Que no sean en el mismo año, el mismo mes. Eso sí que es
+un detalle que puede venir bien. El caso, sobre todo de duda, no de
+elegir uno u otro. Porque al final a mí me interesa por eso, vale.</p>
+<p><strong>Análisis de sistemas individuales</strong></p>
+<p>Yo aquí ahora, por ejemplo, en éste, aquí no lo puedo ver. Lo puedo
+ver probablemente luego en cada el informe de cada sistema. Puedo ver
+cuándo tiene el drawdown. Pero yo aquí sí que me enseña en
+<em>Maestro</em>, por ejemplo, el detalle de cada uno de ellos, como
+habéis visto antes. Entonces pero no puedo ver el trabajo de cada uno de
+ellos de aquí. Podría haberlo. Hay una opción para sacar la curva de
+cada sistema, es que se puede cuando haces el informe.</p>
+<p>Entonces a mí, a mí lo que me interesa es ver eso a la hora de
+elegir, que es lo ideal, pues que vayan distintos. Pero, pero
+lógicamente ganando. Es el problema que también en esta época. Aquí,
+aquí puedes decir, esto seguro que no, que no sirven.</p>
+<figure>
+<img src="../img/050.png" width="600">
+<figcaption>
+Figura 050
+</figcaption>
+</figure>
+<p>Bueno, seguro?, seguro?, habría que verlo, hay que verlo. Porque al
+final bueno, en su tipo de mercado, su tipo de mercado no es ese, han
+aportado en algunos momentos?. Si os fijáis aquí, no digo que eso sea
+correcto para que me entendáis.</p>
+<p>Fijaros, por ejemplo, aquí, vale. Todo el de los, los, los buenos,
+no, los directores claramente parece que van a la baja, en cambio los de
+abajo están al alza…</p>
+<figure>
+<img src="../img/052.png" width="600">
+<figcaption>
+Figura 052
+</figcaption>
+</figure>
+<p>Entonces aquí de hecho hay un momento hasta que se acercan, porque
+diversificaban, realmente éstos han estado cumpliendo su labor. Es que
+sería mejor que lo hicieron ganando. Pero me entendéis?. Es el efecto la
+diversificación es ése. Claro, es lo ideal es que todos ganen. Pero hay
+veces que depende el tipo de mercado pero nos pierden. Y no
+necesariamente quiere decir que eso es malo. Que mirarlo, hay que
+analizarlo, que trabajarlo, y tratar de que ganen.</p>
+<p>Pero dices que no puedes, de hecho, que hay alguno que nos acaba de.
+Ver, a ver si esto me lo marca. Y a éste que ha sido aquí un desastre a
+los. Ahora, ¿dónde está? Lo veis. Se ve un poco. Espera. cambio
+paleta</p>
+<figure>
+<img src="../img/053.png" width="600">
+<figcaption>
+Figura 053
+</figcaption>
+</figure>
+<p>Entonces fijaros que ése rojo granate, ha sido el peor en más antes
+momentos. Y ahora pues ha remontado muchísimo. No está entre los
+mejores. Pero de este grupo peor, ha llegado casi a ser de los
+mejores.</p>
+<p>Y el rojo puro, fijaros qué estable por ejemplo. Lo veis, no. La
+diferencia. Ahí se ven, se ven cosas.</p>
+<figure>
+<img src="../img/054.png" width="600">
+<figcaption>
+Figura 054
+</figcaption>
+</figure>
+<p>Luego hay algunos pues que como este gris que bueno, en ningún
+momento parece que ha dado la talla. Pero o este mismo.</p>
+<p>Aquí, fíjate que está el peor es el verde. Aquí en la zona de 22,
+donde tengo el raton, fijaros que está ahí arriba él todo. Ahora está
+entre los mejores.</p>
+<figure>
+<img src="../img/055.png" width="600">
+<figcaption>
+Figura 055
+</figcaption>
+</figure>
+<p><strong>Efecto de la diversificación con dos familias</strong></p>
+<p>Esto es lo que se busca, al final, no es. Al final sólo con las dos
+familias para que veáis que con dos familias hemos conseguido una
+investigación satisfactoria, que es mejorable. Sí, es totalmente, es
+totalmente. De hecho, estamos en ello ahora.</p>
+<blockquote>
+<p>Y ésos son dos familias de sistemas que operan oro y Nasdaq. Un
+tendencial y un anti-tendencial. Sólo eso, con distintos sets, distintas
+zonas de trabajo.</p>
+<p>Entonces está con dos. Y idealmente os diría yo que con tres, con
+tres se puede conseguir muy buen trabajo. De verdad, con tres se puede
+conseguir muy buen trabajo.</p>
+</blockquote>
+<p><strong>Pregunta sobre comparar sistemas</strong></p>
+<p><strong><em>No sé si habría alguna herramienta, por ejemplo,
+</em>Maestro<em>, para comparar los sistemas y ver cuál funciona mejor
+con otro.</em></strong></p>
+<p>Todo esto que estamos viendo es para comparar sistemas, de cierto.
+Aquí hay más pestañas, vale. El tema es que él es muy lento de
+procesamiento. Pero yo aquí puedo poner, por ejemplo, los dos activos
+que ha habido.</p>
+<figure>
+<img src="../img/056.png" width="600">
+<figcaption>
+Figura 056
+</figcaption>
+</figure>
+<p>Puedo ver distintas, distintas cosas para analizar drawdowns.
+Distintas pruebas.</p>
+<figure>
+<img src="../img/057.png" width="600">
+<figcaption>
+Figura 057
+</figcaption>
+</figure>
+<p>Los de la hora. Hay bastante información. Hay cosas interesantes en
+los gráficos también. A nivel de información está bastante bien. El
+problema es que es muy lento. Pero la información que genera los
+informes está muy bien.</p>
+<p><strong>Ranking en Maestro</strong></p>
+<p>Lo que os decía antes, vale. Para acabar brevemente en
+<em>Maestro</em>, me voy a <em>Portfolio 3</em>, vale.</p>
+<figure>
+<img src="../img/058.png" width="600">
+<figcaption>
+Figura 058
+</figcaption>
+</figure>
+<p>Os decía antes que habían varias maneras en el <em>money
+management</em> menos. He dicho algunas avanzadas y demás. También en
+<em>Maestro</em>, <em>Maestro</em> tiene incorporado un módulo de
+<em>money management</em> y <em>ranking</em>.</p>
+<p>Cuando tienes el <em>Strategy Group</em>, yo cada <em>Strategy
+Group</em> le puedo asignar. Por ejemplo, teníamos éste de ruptura de
+acciones, vale. Le asignó un sistema. Le asignó pues unos, unas
+acciones. Y le puedo asignar una gestión monetaria, vale. Esto creo que
+está explicado. Se ha explicado. Básicamente está <em>Fixed
+Fractional</em> y <em>Fixed Amount per Price</em>, que viene a ser como
+una especie de delta.</p>
+<figure>
+<img src="../img/059.png" width="600">
+<figcaption>
+Figura 059
+</figcaption>
+</figure>
+<p>Entonces yo puedo aquí ya probar alguna cosa. Puedo ponerle una
+cantidad fija y demás, vale.</p>
+<p><strong>Ranking para rotacionales</strong></p>
+<p>Y luego esto del ranking, que es muy interesante. Para esto en línea
+con lo que hablaba antes no recuerdo quién de los rotacionales.</p>
+<figure>
+<img src="../img/060.png" width="600">
+<figcaption>
+Figura 060
+</figcaption>
+</figure>
+<p>Yo aquí puedo elegir un ranqueo. Por ejemplo, por
+<em>performance</em>, por <em>percent change</em>, lo que sube el
+activo. Aquí se configura.</p>
+<figure>
+<img src="../img/061.png" width="600">
+<figcaption>
+Figura 061
+</figcaption>
+</figure>
+<p>Esto, ya digo, puedes usar la ayuda o aquellos PDFs que os he dado os
+pueden ayudar, vale. Yo puedo decirle que coja un N número de activos
+sobre la lista. Imaginas que aquí tengo la lista del Nasdaq 100.</p>
+<figure>
+<img src="../img/062.png" width="600">
+<figcaption>
+Figura 062
+</figcaption>
+</figure>
+<p>Pues yo puedo ranquear.</p>
+<figure>
+<img src="../img/061.png" width="600">
+<figcaption>
+Figura 061
+</figcaption>
+</figure>
+<p>Esto es lo que, lo que hablábamos antes. Puede decir cada mes, o cada
+día de cada mes, por y por varios criterios.</p>
+<figure>
+<img src="../img/063.png" width="600">
+<figcaption>
+Figura 063
+</figcaption>
+</figure>
+<p>Se puede importar por un Excel que lo importas. Se puede hacer por
+varios criterios. Para los criterios, ya digo, no perdemos el tiempo
+porque es muy concreto. Quien lo quiera pues que lo explore. Al final
+simplemente que os explico lo que hace es ranquear.</p>
+<p>Te permite elegir un número. Es otro sistema aparte del sistema que
+se encarga de elegir cuántas acciones normalmente, porque se hace más
+con acciones sobre una lista. Y le puedo poner todo el S&amp;P 500, pero
+<strong><em>solo elige las 20 que cumplen ese determinado
+criterio</em></strong>. Y cambiarlo cada mes. Es lo que es un
+rotacional.</p>
+<p>Esto <em>Maestro</em> lo permite. Lo permite hacer. Y también tiene
+por código, como os decía antes, tiene alguno por código. Aquí esto lo
+usa el dato de <em>ranking</em> y tal, y lo puede elegir por código.</p>
+<div
+style="border: 3px solid #ccc; padding: 15px; margin: 10px 0; border-radius: 8px;">
+<h3>
+⚙️ Portfolio Maestro Allocate and Rebalancer (Ejecución)
+</h3>
+<p>
+<strong>Lógica de decisión:</strong>
+</p>
+<ul>
+<li>
+<strong>Si ranking &gt; RankCutoff:</strong> El activo ya no está entre
+los mejores → Si tiene posición abierta, vende.
+</li>
+<li>
+<strong>Si ranking ≤ RankCutoff:</strong> El activo está entre los top →
+Calcula tamaño (Equity × AllocationPct / Precio) y compra si no tiene
+posición.
+</li>
+</ul>
+<p>
+<strong>Resultado:</strong> Rotación automática: entra en los mejores
+rankeados, sale de los que caen del top, con sizing proporcional al
+equity del portfolio.
+</p>
+</div>
+<figure>
+<img src="../img/043.png" width="600">
+<figcaption>
+Figura 043
+</figcaption>
+</figure>
+<p>Entonces un poco avanzado. Pero simplemente como antes lo había
+comentado alguien, lo tiene. El <em>ranking</em> y tiene <em>money
+management</em>.</p>
+<p>Están ahí los PDFs. Luego también pues puedes recogir la ayuda de
+<em>Maestro</em> que también está más o menos. Aquí ver un poquito las,
+las distintas opciones. Esto está aquí en estrategygroup</p>
+<figure>
+<img src="../img/064.png" width="600">
+<figcaption>
+Figura 064
+</figcaption>
+</figure>
+<p>Pues es, por ejemplo, <em>money management</em>, aquí te las explica.
+Y también te es lo de el <em>ranking</em>. Ahora cuando lo vea, aquí
+está. Realmente, los PDFs aquí te explica un poco cómo funciona el
+<em>ranking</em>. Los cientos que hay. Como algunos de ejemplo, no están
+todos explicados, la mayoría así, vale.</p>
+<h1 id="construcción-y-gestión-de-portfolios">Construcción y gestión de
+portfolios</h1>
+<p>Ahí en ese documento que se ha pasado antes de Kaufman, fijaros que
+aborda el detalle de rebalancear o no rebalancear. Que no es exactamente
+esto que hablamos ahora, me refiero al nivel de los pesos de los
+<em>portfolios</em>. Ahí habéis visto en <em>Maestro</em>, por ejemplo,
+una lista, una cartera. Pero yo ahí no he rebalanceado. Si lo quiero
+rebalancear y quiero probar eso, lo debería haber hecho por código. No
+lo he hecho.</p>
+<h2 id="asignación-de-pesos-iniciales">Asignación de pesos
+iniciales</h2>
+<h3 id="peso-inicial-de-sistemas">Peso inicial de sistemas</h3>
+<p>En <em>Portfolio Trader</em> estoy un poco en la misma situación. Una
+cosa es montar un <em>portfolio</em> y ver a ver qué exposición le
+pongo, como puedo ver ahí por el <em>money management</em>. Pero yo
+tengo que tomar nuevamente una decisión que, aunque nadie creo que
+específicamente lo ha preguntado pero lo comento igual… es qué pesos doy
+de inicio, de acuerdo.</p>
+<blockquote>
+<p>Eso es una pregunta que frecuentemente se encuentra un trader. Y como
+siempre, como siempre hay varias posibles respuestas. Esa es una. Y
+luego rebalancear o no rebalancear, de acuerdo.</p>
+</blockquote>
+<h3 id="equal-weighted-por-volatilidad">Equal weighted por
+volatilidad</h3>
+<p>Al final recordar, ya os lo dije en la teoría y en algunos momentos
+de la práctica, lo más comentado también al ver el documento este que os
+decía de Kaufman, hablaba del <em>equal weighted</em>.</p>
+<p>Al final nominal, por ejemplo, no deja de ser un <em>equal
+weighted</em>. Cuando hablamos de <em>equal weighted</em> es, la clave
+es por qué criterio se <strong><em>ecualiza</em></strong>. Es decir,
+<em>equal weighted</em> es el mismo peso a cada uno. Pero el mismo peso
+¿de qué? ¿De nominal? ¿Mismo peso es el mismo <em>stop</em>? ¿El mismo
+peso es el mismo dinero en bruto? ¿El mismo peso es el mismo riesgo por
+volatilidad?</p>
+<p>Bueno, todo esto son respuestas posibles de la pregunta, de acuerdo.
+Respuestas posibles. Yo os puedo decir lo que a nosotros nos gusta más,
+de acuerdo. Que es como, que es lo mismo que hemos visto en el <em>money
+management</em>, <strong><em>por volatilidad</em></strong>, de acuerdo.
+Es decir, <em>equal weighted</em> por volatilidad, vale.</p>
+<p>Que si no recuerdo mal es lo que apuntaba también en este PDF.</p>
+<ul>
+<li><a href="../docs/THE%20PORTFOLIO%20RISK%20DILEMMA.pdf">THE PORTFOLIO
+RISK DILEMMA</a></li>
+</ul>
+<h2 id="criterios-para-asignar-capital-inicial">Criterios para asignar
+capital inicial</h2>
+<h3 id="múltiplo-del-drawdown">Múltiplo del drawdown</h3>
+<p>Bueno, no sé si así que no era. Que ese es el eso se ha recortado ya
+la parte es aquí.</p>
+<p>Bueno, fijaros que hablaba de, hablaba del <em>portfolio</em>.
+Fijaros aquí, por ejemplo, que os dirá poco lo que decía el
+<em>portfolio</em>.</p>
+<p>Y por ejemplo, un divisas, Nasdaq, no es repartido. No es repartido
+que revisa el <em>portfolio</em>. Es si, si él, él usaba volatilidad. Él
+usaba volatilidad para repartir.</p>
+<p>Es decir, al final reparte el mismo peso pero por volatilidad. Es
+decir, al final, ¿cómo haces eso? Pues como lo hacemos nosotros,
+metiéndolo el <em>risk</em>, o sea, el componente <em>risk</em>. Al
+final, por eso decimos que el <em>money management</em> y el
+<em>portfolio</em> van totalmente conectados. Y acordaros que yo os
+decía, maneras de controlar el riesgo: otra exposición y otra
+diversificación.</p>
+<ul>
+<li>Exposición → <em>money management</em></li>
+<li>Diversificación → <em>portfolio</em></li>
+</ul>
+<p>Pero van conectados. Porque yo al final decido con el <em>money
+management</em> la exposición de cada sistema. Pero luego también lo
+tengo que decir a vía de <em>portfolio</em>.</p>
+<p>Por eso os decía el <em>portfolio</em> al final es lo mismo como
+sistema. Y al final de un sistema analizo las métricas, analizo la
+gestión monetaria. Pues lo mismo pasa en el <em>portfolio</em>. Y al
+final lo tengo que llevar a una plataforma, sea MSA, sea
+<em>Maestro</em>, sea <em>Portfolio Trader</em>, que las tres las habéis
+visto. Y ahí analizar en conjunto los datos que obtengo.</p>
+<p><strong>Criterio de capital inicial, múltiplo del
+drawdown</strong></p>
+<p>Pero es verdad que tengo que tomar alguna decisión que es la de
+inicio que os decía. En caso de duda, podéis recurrir al clásico pero no
+por ello menos útil: múltiplo del <em>drawdown</em>, de acuerdo. Este es
+un criterio bastante conocido y cómodo, y es útil y práctico y es
+eficiente para decidir el capital a asignar a un sistema.</p>
+<p>Si yo tengo un sistema que tiene un <em>drawdown</em> de 10.000
+euros, pues yo sé que una manera típica que se puede repartir el capital
+inicial es dos veces el <em>drawdown</em> más las garantías. Aquí
+cuidado. Más que deciros dos veces, os digo N veces. N veces. Porque
+depende mucho de qué <em>drawdown</em> hablemos. Si hablamos de un
+<em>drawdown</em> de operativa real, hablamos de un <em>drawdown</em>
+del sistema optimizado, hablamos del <em>drawdown</em> de Montecarlo.
+Claro, entonces depende. Un <em>drawdown</em> de Montecarlo, pues
+probablemente no hace falta ya darle mucho más margen. Si no proviene de
+unos datos sobreoptimizados.</p>
+<p>Pero ahí todo, todo ya dependerá de nuestra calidad de procesos, de
+nuestro rigor en el análisis, de la robustez. En todo esto que si yo
+presento datos muy sobreoptimizados, me estoy haciendo trampas al
+solitario. Y al final pues el <em>drawdown</em> va a ser mentira. A lo
+mejor lo multiplico por dos y hasta es poco. Entonces ahí ya depende un
+poco, por eso decimos N veces el <em>drawdown</em>. Puede ser una, ser
+dos. Entonces es un criterio que es útil, clásico, pero que es muy, muy
+funcional para iniciar el <em>portfolio</em>, para iniciar el
+<em>portfolio</em>. Es decir, yo asigno capital de esa manera.</p>
+<h3 id="asignación-por-volatilidad">Asignación por volatilidad</h3>
+<p>Otra manera, no mala, es simplemente por volatilidad. Es decir, el
+que hemos hecho nosotros en <em>Maestro</em>: simplemente yo asigno un
+porcentaje repartido por familia de sistema. Y luego entre familias los
+reparto a partes iguales. Lo puedo repartir a partes iguales. Pero cada
+uno ya ecualiza, esa parte igual es por unidad de riesgo. El cálculo por
+el que saca los lotes depende de la volatilidad. Pero como todos
+utilizan el mismo, todos utilizan el mismo ratio volatilidad con límites
+mínimos y máximos, pues de esa manera yo ya ecualizo bien el
+<em>portfolio</em>.</p>
+<p>Esta es una respuesta que os puedo dar a cómo empezar.</p>
+<h2 id="métricas-de-portfolio">Métricas de portfolio</h2>
+<p>Luego a nivel de análisis de métricas, bueno, aquí un poco aplica lo
+mismo que el sistema. Recordaros que os hablé en el <em>portfolio</em>,
+os hablé de la teoría de carteras. Os hablé de la teoría que es también
+conocida como media-varianza, la teoría clásica de carteras, de donde
+proviene <em>Sharpe</em>. Eso es la teoría media-varianza. Y hablamos
+también de la teoría posmoderna, que era tema de <em>Sortino</em>, el
+<em>upside ratio</em>, que también hice un vídeo ahí bastante extenso.
+Toda esa parte, partes densas que recomiendo verlas varias veces.</p>
+<p>Y ahí pues hablamos también del VaR, del C-VaR. El tema del VaR,
+C-VaR es tremendamente útil. A mí me gusta mucho. Pero más que no hay
+muchas plataformas que lo extraigan directamente. O sea, que ya te lo
+den. Entonces al final ya entramos en complejidad de cálculo. Yo os lo
+enseñé en Excel porque nosotros cuando lo calculamos, lo que hablamos
+que realmente no nos lo dan, no nos lo dan ni <em>Maestro</em>. Al final
+los que uséis Python, pues perfectamente calculártelo, vale. Y yo os lo
+recomiendo. Recomiendo calcularos el C-VaR. Aquellos que, como os digo,
+trabajéis vía Python, os recomiendo trabajar el C-VaR y trabajar con
+esas estimaciones.</p>
+<h3 id="sortino-como-alternativa">Sortino como alternativa</h3>
+<p><em>Portfolio</em> lo que os digo igual, pero medir el análisis, el
+<em>fitness</em>, la función objetivo que yo puedo analizar, puedo usar
+C-VaR. Si no, podemos seguir con <em>Sortino</em> o incluso con
+<em>Sharpe</em>. No es ninguna aberración.</p>
+<p>A mí, sobre todo a nivel de <em>portfolio</em>, a mí me gusta más
+<em>Sortino</em>. Ya lo dije. No es ninguna aberración. Más que tiene
+sus defectos y que es verdad que los retornos no están normalmente
+distribuidos. Ya lo sabemos y demás.</p>
+<p>Pero al final, para hacer una comparación de volatilidad, no es
+absurdo. Porque es verdad que sabemos que muchas veces la volatilidad al
+alza acaba devolviendo, de acuerdo. Pero es verdad que eso viene mucho
+de los activos clásicos. Porque en una cartera diversificada no tiene
+por qué, vale. Pero de ahí, de ahí <em>plora la criatura</em> que
+decimos en catalán, de ese concepto de que lo que sube mucho luego
+también baja, ¿no?</p>
+<p>Por eso al final considera la volatilidad buena y mala toda. En
+cambio <em>Sortino</em> considera la volatilidad mala solo la parte
+baja. Solo la parte baja. Pero el <em>Sortino</em> lo vais a obtener
+fácilmente. Y es un muy buen ratio. Es un muy buen ratio. También el
+<em>Ulcer Index</em> también. Y el <em>Performance Index</em> es el que
+usa él, vale.</p>
+<h2 id="rebalanceo-de-portfolios">Rebalanceo de portfolios</h2>
+<p>Entonces a nivel de <em>fitness</em>, podéis trabajar perfectamente
+con estos. Luego el tercer elemento que es importante en el tema de
+<em>portfolio</em>, es lo que decía aquí de Kaufman, si es rebalancear o
+no rebalancear.</p>
+<ul>
+<li><a href="../docs/50%20YEARS%20ON%20WHAT%20HAVE%20I%20LEARNED.pdf">50
+YEARS ON WHAT HAVE I LEARNED</a></li>
+</ul>
+<p>Lo normal es rebalancear. Eso es evidente. Por el mismo motivo que
+hablamos que los activos, no es lo mismo un NASDAQ a 5000 que a 15000.
+Al final los <em>portfolios</em> son dinámicos, se mueven. Y igual que
+revisas los sistemas, pues revisas el <em>portfolio</em>, eso es
+rebalancear. ¿Cuándo se rebalancea? Tampoco hay una respuesta única, de
+acuerdo. Yo esto creo ya lo contesté un día creo en el Discord. Nosotros
+solemos hacerlo una vez al año, si no se hace antes porque se revisa el
+<em>portfolio</em>.</p>
+<p>Entonces ahora, por ejemplo, vamos a hacer una revisión completa del
+<em>portfolio</em>, que llevará pues el tiempo que lleve. Y pues
+lógicamente se rebalancea. Entonces porque al final, si lo que haces no
+tienes que rebalancear, es evidente. Pero aún así, si no se da el caso,
+yo recomiendo hacerlo por calendario.</p>
+<p><strong>Rebalanceo por calendario</strong></p>
+<p>Aquí también entran factores. Nuevamente, como os digo muchas veces,
+en nuestro caso, que no tiene por qué ser el vuestro de entrada, pero
+ojalá lo sea de un tiempo, o incluso puede que de alguien ya lo sea,
+algo de cero, lo que sea. Claro, no es lo mismo bajar tu cuenta que
+trabajar cuentas gestionadas o para otras personas. Que entran muchos
+factores distintos. Y a veces pues tienes que hacer una mezcla entre lo
+que quieres y lo que puedes. No como es nuestro <em>portfolio</em>.</p>
+<p>Entonces aquí puede pasar, por ejemplo, por términos de regulador,
+que yo esté obligado a tener un nivel de VaR. En este caso no lo llevan
+ellos. Pero si yo, no lo llevan ellos, yo estaría obligado. Nosotros en
+el fondo que teníamos con que gestionaba yo, de Esfera, que la verdad
+que iba bastante bien, tuvimos problemas de lanzamiento porque muchos
+eran problemas técnicos. Pero la verdad que llevamos ya un año muy bueno
+cuando paramos. Y fue lástima. Pero bueno, así fue, el mercado quebró y
+se lo quedó Andbank. Y Andbank no quiso seguir el proyecto y hubo que
+cerrarlo. Pero la verdad que estaba ya muy bien. Con diversificación muy
+buena. Teníamos, operamos, yo qué sé, Bund, S&amp;P, Nasdaq, petróleo,
+oro. Y teníamos ya preparados más cosas realmente.</p>
+<p><strong>Control de VaR</strong></p>
+<p>Pero ahí sí que teníamos un objetivo de VaR que había que controlar.
+Pues ahí pues tienes que controlarlo. Y pues hay que, mediante tu Excel
+y demás, pues vas viendo cuál es tu objetivo de VaR. Y cuando te desvías
+una tolerancia, pues tienes que ajustar. Puedes tener criterios pues
+bien por el regulador porque te los impone, bien porque tu cliente te
+los impone, bien porque lo que sea, distintos criterios exigidos por un
+condicionante, un condicionante.</p>
+<p>Entonces si no, también en este caso, que estás obligado a controlar
+la volatilidad cada x tiempo, cada mes, cada vez. Si no, calendario
+suele ir bien, ¿entendéis? Decir, lo que decimos siempre, tiene un
+equilibrio entre práctica, recursos, tiempo que dedico. Los recursos no
+son infinitos. Y por lo tanto hay que dedicarlos a las cosas que son más
+productivas.</p>
+<p>Normalmente tener una revisión del <em>portfolio</em> por calendario
+va a dar un resultado que quieres. Hacerlo cada trimestre, que quieres
+hacerlo cada mes, normalmente va a ser demasiado. Que tengas estrategias
+muy sensibles muy intradía pues todas igual, pues sí. Pero normalmente
+no te va a hacer falta cada mes revisar el <em>portfolio</em>. Aunque se
+haya desviado un poco, que al final tienes que tener una tolerancia.</p>
+<p>Imagínate que tú decidieras mantener un nivel de volatilidad en el
+<em>portfolio</em> máximo de un 10%, que nunca la volatilidad, la
+desviación estándar, vale, simplemente el <em>portfolio</em> supera el
+10%. Te pongas ese criterio. ¿Dónde revisarías? Al menos al 12 por
+ciento. Tienes un momento al 12% luego que vuelve a bajar. Tienes unas
+tolerancias, de acuerdo. Unas tolerancias.</p>
+<p><strong>Nominal y exposición</strong></p>
+<p>Entonces ahí hay distintos valores que tú puedes elegir. Lo que te
+decía, por ejemplo, también en la gestión. Tú vas por nominal, pues
+sabes que no te puedes pasar el 100 por ciento. Es sagrado y no puedes
+pasar ni un día. Entonces cada día tienes que medir que no te pases el
+100% de exposición. Entonces depende. Pero por condiciones normales, un
+ratio de calendario, un criterio calendario está bien. Y no hace falta
+ni tan solo estar tan pendiente por vosotros. Decir, si está bien
+diversificado y bien dimensionado, es normal. Como habéis visto ahí en
+el gráfico, que él solo ya se autoajusta. No hay desviaciones. El mismo,
+el de volatilidad. Si tienes un método de gestión monetaria que controla
+volatilidad, el mismo ya se autoajusta. Tienes esta comodidad que
+prácticamente no se te va a desviar.</p>
+<p>Lo puedes revisar a nivel de calendario. Pero casi es más por la
+revisión de los sistemas que por el propio <em>portfolio</em>. Porque
+los pesos, si el propio <em>money management</em> ya se autoajusta. Como
+habéis visto en el <em>Maestro</em>, quedaba era muy estable arriba la
+exposición. Pues ya está. Ya lo hace de manera automática.</p>
+<p>No hace falta mucho, mucho más. Pero si no, ya os digo, yo recomiendo
+que de verdad una vez al año, no os volváis locos. Porque vais a ganar
+poco por estar ahí. Porque encima hay muchas dudas sobre el rendimiento
+exacto del <em>portfolio</em> mejor.</p>
+<h2 id="la-frontera-eficiente-y-sus-limitaciones">La frontera eficiente
+y sus limitaciones</h2>
+<p>O sea, es muy claro en el <em>backtest</em> cuál va a ser mejor. Pero
+de elegir un peso u otro, hay mucha confusión. La frontera eficiente,
+muchos autores, entre ellos yo mismo, dicen que no acaba de funcionar.
+Que es el método clásico de media-varianza. Aquellos que hayáis
+estudiado teoría de carteras, es la frontera eficiente. ¿Qué es una
+frontera eficiente? Es decir, elegir aquel <em>portfolio</em> que da una
+mejor rentabilidad para misma unidad de riesgo. Es el concepto lógico
+que suena de puta madre, que es súper académico. La universidad te verán
+esto, le dices que lo haga, él te lo hará muy bien en un papel. El
+problema es que luego lo mirarás un año después y no habrá pasado lo que
+preveía que pasaría. Ese es el problema.</p>
+<p>Entonces al final es muy difícil que cuando participan varios
+elementos de la cartera, o sea, ya no sobreoptimizar un sistema por sí
+mismo. Pero en este caso cuando tú metes varias estrategias entre sí,
+ver que los retornos se distribuyen de la misma manera que es lo que
+estás previendo, no es nada fácil. Es nada fácil. Y por lo tanto es
+complicado elegir mix.</p>
+<p><strong>Recomendación: equal weighted por volatilidad</strong></p>
+<p>Por eso al final lo mejor es elegir estrategias, como os digo, que
+sean buenas, robustas. No meter por meter. Mejor meter tres buenos que
+seis regulares, ¿me entiendes? Y <em>equal weighted</em> por
+volatilidad. Ajustar volatilidades que no se os vaya la volatilidad de
+madre.</p>
+<p>Y ya está. Y si el propio <em>money management</em> ya controla la
+volatilidad, ya el <em>portfolio</em> va a estar ajustado bien. Una
+señal de aviso por alguna desviación. Y si no, una vez al año revisamos,
+revisamos. Que esté todo igual que lo normal es que sí, vale.</p>
+<p>Que luego lo vas a optimizar, vas a tener un programa de
+<em>portfolio</em>, sin lo va a utilizar. Te va a decir sí, mira, mejor
+este un peso de 0.7 y este 0.2 y este 0.4 y hubieran ganado un 30% más.
+Vale. Muy bien. Bueno. Probarlo. Si al final no tiene, no tiene, no
+tiene tampoco ningún problema hacerlo.</p>
+<p>Pero lo normal es que sea similar.</p>
+<p><strong>Límites mínimos y máximos</strong></p>
+<p>Siempre primar diversificación en cualquier caso. Lo que sí que os
+digo, en caso de que entréis en ese proceso de optimización de
+<em>portfolios</em> que hay programas que lo hacen, sobre todo, sobre
+todo, sobre todo mi consejo es que diseñéis todo siempre limitando
+mínimos y máximos.</p>
+<p>Es decir, no permitáis que por el algoritmo, la función
+<em>fitness</em> que sea que le pongáis, ponga 0 a uno y mucho a otro.
+Tiene que pasar por delante la diversificación, y la diversificación
+pasa porque todo opere. Pero el único criterio para no operar es porque
+algún sistema, que nosotros no lo hacemos, ya diseñamos pensando que
+pueda operar siempre. Pero hay autores que lo hacen. Es decir, que
+puedan parar un sistema. Es decir, por exceso de volatilidad lo para. Si
+está estudiado así, es correcto. No es malo. Si tú ya lo estudias el
+sistema así, yo cuando la volatilidad es tanto se me separa, se ha
+analizado, se ha diseñado así, perfecto. Nosotros preferimos que opere
+siempre. Aunque a lo mejor en ese momento pues opere el mínimo posible,
+un lote.</p>
+<p>En el caso de si por tamaño de tu cuenta, un lote es demasiado, pues
+a lo mejor es mejor pararlo.</p>
+<h2 id="portfolio-trader">Portfolio Trader</h2>
+<p>Tenemos algunos <em>portfolios</em> de ejemplo. Tenemos un algo que
+francamente entra casi en el terreno de lo paranormal.</p>
+<figure>
+<img src="../img/066.png" width="600">
+<figcaption>
+Figura 066
+</figcaption>
+</figure>
+<p>Ahora encima me pierde 10.000. Sólo Alberto. Vamos mejorando, vamos
+mejorando. Porque pero bueno, que viene muy bien a efectos de lo que
+queremos enseñaros. Porque aquí ha bajado la exposición. Ahora, ahora
+tengo la exposición un poco recortada.</p>
+<p><strong>Ventajas de MultiCharts</strong></p>
+<figure>
+<img src="../img/067.png" width="600">
+<figcaption>
+Figura 067
+</figcaption>
+</figure>
+<p><em>MultiCharts</em> tiene cosas muy buenas a nivel de
+<em>portfolio</em>. Es mucho más eficiente.</p>
+<p>Permite además enseñar un <em>portfolio</em>, luego operarlo. Está
+muy bien, de acuerdo. Permite hacer <em>backtest</em> incluso optimizar,
+hacer <em>forward testing</em>. También en teoría <em>Maestro</em>. Pero
+la práctica no por lento. Y como os digo, permite automatizar la
+operativa. Ya optimizar y luego ponerlo automatizar, directamente la
+ejecución, que es configurar lo demás. Pero lo puedes configurar para
+operar</p>
+<p>por lo demás A mí esto parece bastante rudimental y bastante pobre.
+Hay una página de ayuda y los que lo uséis que explica un poco todo
+esto. Lo explica regular, pero bueno, ahí está.</p>
+<p><strong>Palabras reservadas de portfolio en MultiCharts</strong></p>
+<p>Y también lo que os decía antes, para aquellos que tengáis más, poco
+más de desperté de conocimiento programación y demás, pues saber que
+también hay palabras reservadas de <em>portfolio</em>. Lo que os decía
+también para lo, para las propiedades, para las propiedades, margen,
+cintas opciones. Y también para el estado de simposición, de
+acuerdo.</p>
+<figure>
+<img src="../img/068.png" width="600">
+<figcaption>
+Figura 068
+</figcaption>
+</figure>
+<p>Pues. Y como no, pues el <em>Open Position Profit</em> de
+<em>Portfolio</em>, el <em>Net Profit</em> del <em>Portfolio</em>, que
+es quizá lo más, lo más interesante, lo más interesante. Para aquellos
+que lo quieran, esto está, está, está explicado. Ya que lo quiera usar
+pues que lo sepa.</p>
+<p><strong>Configuración del portfolio de ejemplo</strong></p>
+<p>Nosotros en este <em>portfolio</em> no lo hemos usado. Va todo con
+las definiciones generales del programa que están aquí. Esto no sé por
+qué, porque a mí todo lo pero paso. Y ya está. Que no, tenéis un poco,
+poco explicado.</p>
+<p>Simplemente, simplemente un par de aclaraciones. aquí tú le puedes
+fijar unos límites de cuánto capital del <em>portfolio</em>, cuánto le
+dedicas a cada posición.</p>
+<figure>
+<img src="../img/069.png" width="600">
+<figcaption>
+Figura 069
+</figcaption>
+</figure>
+<p>Pero eso al final actúa de límite. No quiere decir que uses eso. Al
+final tú el <em>money management</em> lo vienes fijado por el sistema.
+También lo puedes cargar aquí como una señal. Nosotros lo tenemos ya
+puesto en el sistema. Por lo tanto, es el que cuenta. Esto actúa de
+límite, ¿entiendes? Decir, si, si el <em>money management</em> del
+sistema pasara ese límite, no entraría. Pero lo normal es que ya tuvo
+con el que tienes implementado en el sistema ya lo tengas calculado. A
+cada, cada uno una parte. Y está, ¿entiendes? Es un poco la idea.</p>
+<p><strong>Sistemas del portfolio</strong></p>
+<figure>
+<img src="../img/070.png" width="600">
+<figcaption>
+Figura 070
+</figcaption>
+</figure>
+<p>Aquí hemos puesto algunos de los temas que hemos visto. Sin más, no
+nos hemos vuelto muy locos. Hay <em>Bollinger Bands</em> en este caso,
+en el mismo version de <em>Bollinger Bands</em> que eran si se más. La
+mayoría no todos son muy justos. Hay un RSI short y un RSI long, que
+esto es del RSI de <em>breakout</em> con salidas. Pero bueno, viene,
+viene de la, es parecido a las salidas. En las salidas hay un RSI. El
+tendencial que hicimos intradía. El ORB intradía que eran todos bastante
+justitos. El <em>Tomorrow</em>, que no quise un poco mejor.</p>
+<p>Es decir, hay unos cuantos de los que hemos, de los que hemos visto,
+de acuerdo.</p>
+<figure>
+<img src="../img/071.png" width="600">
+<figcaption>
+Figura 071
+</figcaption>
+</figure>
+<p>Y está hecho expresamente, de acuerdo. Está hecho expresamente para
+que veáis que incluso con una mezcla de sistemas bastante pobres, se
+puede conseguir una curva estable.</p>
+<figure>
+<img src="../img/072.png" width="600">
+<figcaption>
+Figura 072
+</figcaption>
+</figure>
+<p><strong>Demostración del efecto diversificación</strong></p>
+<p>Esto, como ya os comenté cuando los íbamos haciendo, os dije que lo
+veríais. Que es así, por lo veríais. Que es así. Porque es que es así.
+Si realmente son sistemas distintos que descorrelacionan activos,
+prácticamente es imposible que no lo sea. Es imposible que no, que no lo
+sea.</p>
+<p>Aquí además pasa una curiosidad porque Alberto del DAX le gana. Y no
+hemos conseguido entender por qué Aquí pierde. Incluso tenemos un
+sistema que pierde dinero, también como habéis, habéis visto antes.</p>
+<figure>
+<img src="../img/073.png" width="600">
+<figcaption>
+Figura 073
+</figcaption>
+</figure>
+<p>Del DAX, Alberto le gana. No, no hemos conseguido está guardado igual
+no entiendo. Es un fenómeno como os digo que está alcanzando casi lo
+paranormal. Porque no entendemos esto de igual mismo proveedor de datos.
+No los hemos bajado el caché de datos. No se ve el problema con los
+datos. No sé si nos está escapando algo es evidente. Pero es que está
+guardado en su ordenador, y yo abierto aquí. Pero bueno.</p>
+<p>Aquí lo que os decía antes de los programas. Todos tienen sus buenas
+y malas.</p>
+<figure>
+<img src="../img/074.png" width="600">
+<figcaption>
+Figura 074
+</figcaption>
+</figure>
+<p><strong>Portfolio Trader vs Maestro</strong></p>
+<p><em>Portfolio Trader</em> en global es mucho mejor que
+<em>Maestro</em>. Simplemente por, por su eficiencia. Pero es, y porque
+puede operar. Pero es verdad que a eso tiene gráficos muy chulos. Pero
+ya digo, este es tema de poder operar es muy potente. Aquí, fijaros que
+obtenemos ratios por cada sistema. Eso está, está realmente bien.</p>
+<p>Y te da también lo que decíamos antes, vale.</p>
+<p><strong>Correlaciones en Portfolio Trader</strong></p>
+<p>Pero ahí está. No es que no tiene sentido, no tiene sentido, no tiene
+sentido.</p>
+<figure>
+<img src="../img/075.png" width="600">
+<figcaption>
+Figura 075
+</figcaption>
+</figure>
+<p>Que tenéis ver las correlaciones en base a todos. Fijaros que sólo el
+Nasdaq con el S&amp;P. En este caso lo hace por símbolos. Ahí, por
+ejemplo, en <em>MultiCharts</em> te deja verlo por <em>Strategy
+Group</em>, que está muy bien. Que al final puedes hacerlo por
+estrategia. Aquí te lo dice por activos, porque al final es verdad que
+tiene 1, 2, 3, 4, 5, 6 que en realidad son sistemas. Que fijaros que el
+Nasdaq que se ha repetido, porque el sistema, el sistema, realidad el
+<em>portfolio</em> donde lo tengo es aquí debajo.</p>
+<p>Es 1, 2. El primero es en el S&amp;P 60, segundo DAX diario, oro 60
+en Nasdaq diario, Nasdaq diario.</p>
+<figure>
+<img src="../img/076.png" width="600">
+<figcaption>
+Figura 076
+</figcaption>
+</figure>
+<p>Esos son los dos Nasdaq. Se está ordenando. Esto es
+<em>Tomorrow</em>, esto es ORB entraría, esto es tendencia al oro
+entraría. Esto es RSI long, esto es RSI short. Que son los dos en el
+Nasdaq.</p>
+<p><strong>Correlaciones entre estrategias</strong></p>
+<p>Fijaros que, fijaros que el Nasdaq RSI long tiene 0.5 con
+<em>Tomorrow</em>, que los dos van largos. Eso que os decía. Siendo
+activos con mucha correlación, pero los dos tendenciales tienen 0.5, que
+es bastante, que es bastante. Pero oye, siendo los dos largos y los dos
+de activos con mucha correlación, tampoco está mal del todo.</p>
+<p>Pero fijaros del resto, donde todos están en cero prácticamente. Es
+decir, estamos explicando muy bien. Porque son muy distintos, muy
+distintos. Porque tenemos un S&amp;P diario con las dos Daenas de
+diario. Pero luego tenemos un S&amp;P en 60 que va más bien en
+tendencia. Porque <em>Tomorrow</em> es más bien casi tendencia.</p>
+<p>En cambio, el otro S&amp;P es muy <em>mean reversion</em> con lo
+cuanto es que tenemos los dos S&amp;Ps SD con tenemos 0.06. Siendo el
+mismo activo. lo hemos montado un poco para que veáis este tipo de
+cosas.</p>
+<p>Cada uno lo hemos montado pensando en que veáis una cosa.</p>
+<p>Es aquí veis el mismo activo y tienen 0.06. Porque tienen sistemas
+muy distintos, y te hay <em>frame</em> distinto incluso. El DAX,
+fijaros, con el, con Nasdaq y con S&amp;P casi tiene cero. Con todos. Y
+oro pues prácticamente con todos, con todos cero. Prácticamente con
+todos tiene cero. Y DAX, da y da casi también siendo bolsa también.
+Porque, porque el DAX estamos hablando de uno ORB 10 minutos. No tiene
+que ver con por mucho que sea S&amp;P y Nasdaq, activos que tienen mucha
+correlación entre sí. Tienen cero.</p>
+<p>Porque?, porque la mejor diversificación es por sistema. si el
+sistema es parecido, como pasa en Nasdaq, S&amp;P, pues da 0.5 que aún
+así es, no, no es mala. Y no pasa nada que haya uno sí. Pero lógicamente
+pues mejor que no.</p>
+<p><strong>Diversificación por sistema</strong></p>
+<p>Está realmente bien. Aquí podéis ver un poco la diversificación.</p>
+<figure>
+<img src="../img/077.png" width="600">
+<figcaption>
+Figura 077
+</figcaption>
+</figure>
+<p>Esto está también con nuestro ratio de gestión monetaria. Y al final
+aquí, por ejemplo, está falta ese gráfico, gráfico de exposición. En la
+exposición me acuerdo se veis aquí en el <em>Tech Analysis</em>. Pues
+ves que va a 1, 2 lotes, 3, va moviéndose por eso, porque va variando
+por base a la volatilidad.</p>
+<figure>
+<img src="../img/078.png" width="600">
+<figcaption>
+Figura 078
+</figcaption>
+</figure>
+<p>Al final es veríais lo mismo que el <em>Maestro</em>, porque es el
+mismo. Va capando. Pasa que aquí como hay menos capital, realmente al
+final cuando va creciendo acaba operando uno. Porque el valor del
+nominal se hace muy alto. de todas maneras, seguramente lo puedo
+mitigar. Bueno, le puedo añadir.</p>
+<p><strong>Prueba con Portfolio Net Profit</strong></p>
+<p>Si le pongo aquí <code>Initial Protfolio Capital</code> que vaya al
+límite que uso del algoritmo. Puedo poner un 0 más. Lo que pasa que he
+quedado como en el sistema está capado. No va a ir, no va a hacer nada.
+No va a hacer nada. Porque manda el sistema. Y el sistema tiene un
+multiplicador.</p>
+<p>Si yo aquí en vez de usar el <em>equity</em> del sistema, como
+hacemos también el <em>Maestro</em>, vale. Yo hubiera usado en cada
+sistema, ¿entendéis? En vez de usar el <em>Net Profit</em>,
+<em>Portfolio Net Profit</em>, ¿entendéis? Hubiera usado <em>Portfolio
+Net Profit</em>.</p>
+<p>Entonces sí que ahora al mover el capital, esto movería. Ves, no se
+ha movido que da igual. Porque aunque yo le aumento el
+<em>portfolio</em> y le aumentó estos límites, yo tengo un cálculo en el
+sistema que se acordáis para que lo veáis en cualquiera.</p>
+<p>Este aquí al final pues acaba usando lo que ya sabéis.</p>
+<figure>
+<img src="../img/079.png" width="600">
+<figcaption>
+Figura 079
+</figcaption>
+</figure>
+<p>Es que MSA con ese ajuste normalizada, tal, tal, tal. Pero al final
+que tiene un <em>Net Profit</em>. Y no puede ser un <em>profit</em> que
+depende del valor que tiene el propio sistema, de acuerdo. Por lo tanto
+tiene un capital y asignado, ¿entendéis?</p>
+<p><strong>Diferencia con Portfolio Net Profit</strong></p>
+<p>Que pero realmente si yo no, si yo ahí en vez de usar <em>Net
+Profit</em>, hubiera usado el <em>profit</em> del
+<em>portfolio</em>,</p>
+<figure>
+<img src="../img/080.png" width="600">
+<figcaption>
+Figura 080
+</figcaption>
+</figure>
+<p>yo ahora al mover este importe <code>Initial Protfolio Capital</code>
+, hubiera movido todos los sistemas, ¿entendéis? Ahí. Entonces por eso
+puede venir bien, puede venir bien adentrarse un poco en esto. Que no es
+muy complicado tampoco. Son cuatro o cinco palabras. Simplemente es eso.
+Yo le pongo aquí en el codigo <em>Portfolio el Profit</em>. Y punto. Y
+esto, en principio, cambia.</p>
+<p><strong>Conclusiones del ejemplo</strong></p>
+<p>Bien. La otra cosa quería, en todo caso, insisto igual al final.
+Quería enseñaros era, era esto, de acuerdo. La mezcla de distintas
+estrategias.</p>
+<p>Hemos dicho cómo partir del capital inicial. Y que vierais aquí
+simplemente pues que consigues curvas, puedes conseguir curvas estables
+simplemente diversificando por estrategias bastante cómodas.</p>
+<figure>
+<img src="../img/081.png" width="600">
+<figcaption>
+Figura 081
+</figcaption>
+</figure>
+<p>Aquí el sistema para quien lo ha visto gana poco. Ahora aquí esta vez
+tiene un 5 por ciento. Pero tiene un 845 de retort sobre el máximo de lo
+que está bastante bien.</p>
+<figure>
+<img src="../img/082.png" width="600">
+<figcaption>
+Figura 082
+</figcaption>
+</figure>
+<p>Al final el <em>drawdown</em> máximo que tiene y caros que es un 8.
+Aquí en el inicio está mal dimensionado en realidad.</p>
+<figure>
+<img src="../img/083.png" width="600">
+<figcaption>
+Figura 083
+</figcaption>
+</figure>
+<p>Porque tiene el problema del apalancamiento asimétrico. Por eso
+deberíamos haberle puesto mucho más capital. Por eso cuando los vamos a
+hacer eso, porque ése es el problema. Cuando lo hagáis, a menos lo
+recomiendo hacer. Aunque penséis que no es realista, si queréis ver un
+poco cómo se mueve realmente el comportamiento de cada estrategia.
+Dimensionar a más de lo que operaréis. Luego ya lo probaréis también con
+el que operaréis.</p>
+<p>Pero esto, esto que veis aquí, todo el rato operando un contrato
+genera muchos problemas.</p>
+<figure>
+<img src="../img/078.png" width="600">
+<figcaption>
+Figura 078
+</figcaption>
+</figure>
+<p>Porque al final cuando salta de 1 a 2, dobla el riesgo. Si este
+<em>trade</em> lo falla, está expuesto el doble que el anterior.
+Entonces ese problema del apalancamiento que llamamos asimétrico, que
+luego subir y bajar no es igual. Entonces cuando hay muy pocos
+contratos, un poco cuenta, tienes ese problema en futuros.</p>
+<p><strong>Recomendación: empezar con mínimo 2</strong></p>
+<p>Así que sí que es verdad que es mejor si puedes, problema, pero es
+que no hay más remedio. sí que es verdad que es útil que al menos
+empiece como mínimo con 2. Porque ya de 2 a 3 el salto es menor que de 1
+a 2 Entonces al menos. Pero es que no puede ser hoy, es no puede ser,
+pues no puede ser. Bueno. Hablamos de lo ideal y como lo que puedes y lo
+que quieres y todo eso, no.</p>
+<p>Pero por eso os digo que aquí no se aprecia es el, el
+<em>drawdown</em> abajo. Porque el capital ha ido subiendo. Las cuentas,
+el S&amp;P, todo ha ido subiendo.</p>
+<p>Acordaros que también se tiene en cuenta el nominal. Y por lo tanto
+no se puede exponer más. No le da tiempo a saltar a más contratos. Por
+eso parece que esté muy poco expuesto que tenga menos nada. Si eso
+estuviera igual todo en 10, 12, 15 contratos, seguramente del lado abajo
+sería más estable, ¿se entiende verdad?</p>
+<figure>
+<img src="../img/081.png" width="600">
+<figcaption>
+Figura 081
+</figcaption>
+</figure>
+<p><strong>Reducir exposición por drawdown</strong></p>
+<p>Ya para acabar también quiero, no quería dejar de mencionar porque
+aunque no me lo habéis preguntado también es un tema que a veces sale y
+que es interesante. Que hay autores que hablan de ello, que es el tema
+de reducir o no en base al <em>drawdown</em>, reducir la exposición.</p>
+<p>Es decir, tú, tú evidentemente, nosotros, fijaros aquí que hemos
+hablado antes de reducir la exposición no cuando hay volatilidad, vale.
+Porque hago es estimado de los. Y yo también tengo una mala racha en el
+sistema. Puede parecer que sea lógico también reducir la exposición
+cuando tengo pérdidas, independientemente de la volatilidad. Es decir, o
+sea, incorporar ese cálculo. Incorporar ese cálculo. Y no había
+sistemas, no había <em>portfolios</em>. Decir, imaginaos que yo aquí, en
+este gráfico,</p>
+<p>espara que le voy a quitar, le voy a quitar un cero para que me, me
+haga mucho <em>drawdown</em>.</p>
+<p><strong>Control de drawdown por portfolio</strong></p>
+<p>Entonces imaginaos que yo tengo un <em>drawdown</em> muy elevado. Yo
+tengo un criterio que a la que me acerco, porque sé, este es el
+<em>drawdown</em>. Es el <em>drawdown</em> de De syo,</p>
+<figure>
+<img src="../img/084.png" width="600">
+<figcaption>
+Figura 084
+</figcaption>
+</figure>
+<p>recuerdo, real de operativas reales. Estos del <em>drawdown</em> de
+operativas real. Que ahora hemos estado cerca del 10. Entonces fijaros
+que aquí, desde el punto de vista conceptual, yo veo por un lado que
+tengo aquí un <em>drawdown</em> siempre de esta zona.</p>
+<figure>
+<img src="../img/085.png" width="600">
+<figcaption>
+Figura 085
+</figcaption>
+</figure>
+<p>Entonces esto, imaginaos que yo tengo que fijaros aquí en la zona 10,
+12, no parece que es la zona de lado máximo. A veces era un poco más,
+poco menos. Podría ser un poco más. Pero se ve, no. Hay varias zonas. Y
+es verdad que se aprecia que luego tiene otra zona. No puede estar aquí.
+Es que también está aquí.</p>
+<figure>
+<img src="../img/086.png" width="600">
+<figcaption>
+Figura 086
+</figcaption>
+</figure>
+<p>Cuando llega pues se visita. Y ahí tiene, tiene cierta vez no es ahí
+era. Y otro la zona pues más intermedio, no. Más intermedio.</p>
+<p><strong>Reducir exposición cuando supera cierto drawdown</strong></p>
+<p>Que sobre todo que cuando se sale de ahí, de acuerdo. Cuando se sale
+de ahí. Me voy a poner otro color. Lo voy a hacer con esto, vale. Cuando
+se sale de ahí, veis, aquí pues se puede pensar que la mayoría de veces
+acaba yendo a la zona de abajo. No siempre, pero entienden a la
+idea.</p>
+<figure>
+<img src="../img/087.png" width="600">
+<figcaption>
+Figura 087
+</figcaption>
+</figure>
+<p>Y entonces hay autores que defienden, nosotros esto hoy en día no lo
+hacemos. Pero tiene sentido hacerlo. Te explico, como os he dicho de
+todo el curso, explico cosas que hacemos, cosas pues que no hacemos.
+Pero que a lo mejor podríamos hacerlas un día. O no, ¿entiendes? Decir
+no, no, no. Las cosas pueden cambiar.</p>
+<p>reducir la exposición simplemente porque el <em>portfolio</em> el
+<em>drawdown</em>, por, por, por, por tener una variable que controla el
+<em>drawdown</em> del <em>portfolio</em>, vale. Y ahí por decir pues un
+30% la exposición, o un 20, o lo que, lo que sea, vale. Esto tiene
+sentido. Recuerdo hay autores que lo hacen. A mí me genera dudas, me
+genera dudas. Pero como os digo, lo explico. Me genera dudas porque el
+problema siempre que hago este tipo de ajustes es ¿cuándo vuelvo y cómo?
+¿Cuándo vuelvo y cómo?</p>
+<p>Entonces si al final tú vas por volatilidad demás y crees que el
+sistema está bien, pues ya todo debe devolver a la normalidad, de
+acuerdo. Por sí solo. Pero sí que es verdad que esto te puede
+prevenir.</p>
+<p>Mirar, aquí estabas cargado el <em>drama</em>. Y tenemos mucho más
+fuertes. Pues a lo mejor te puede prevenir de la duda es un poco más
+catastróficos. Que queda un poco sea medio roto. Porque, porque
+seguramente ha entrado, se ha sobre expuesto aquí demás.</p>
+<figure>
+<img src="../img/088.png" width="600">
+<figcaption>
+Figura 088
+</figcaption>
+</figure>
+<p>Pero sí que a lo mejor pues puede tener sentido. Puede tener sentido.
+Que sea partir en este gráfico de locos. Pues yo qué sé, si es 65 el
+máximo, pues en 40 no, en 40 reduzco. Tendréis un poco la idea. O es
+igual. Aquí en 50. En 30 mil, 30 mil, 30 mil. Para que se entienda un
+poco la idea, no. A lo mejor tiene sentido. Puede tener sentido. El tema
+es que tienes que fijar si haces esto. Esto sería por
+<em>portfolio</em>, de acuerdo. Y tendrás que reducir todos los
+sistemas. Y automáticamente fijar una reanudación, que debería de tener
+un margen de tolerancia nuevamente, de acuerdo.</p>
+<p>Esto puede tener sentido hacerlo. Yo lo explico porque es algo que
+hay autores que hacen. Y que nosotros, como digo, ahora no lo hacemos.
+Pero podríamos hacerlo. No es nada, no es nada que sea una tontería. Y
+es verdad que tiene que, es criterio de prudencia. <strong><em>Al final
+es criterio de prudencia</em></strong>.</p>
+</div>
+</body>
+</html>

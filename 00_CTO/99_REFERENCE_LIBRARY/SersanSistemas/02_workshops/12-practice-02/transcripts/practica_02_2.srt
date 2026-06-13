@@ -1,0 +1,1259 @@
+1
+00:00:00,000 --> 00:00:16,460
+0.5 no 0.5 no 0.5 es 50% 0.5 en 60 minutos es esto 5% es esto le he puesto un 5% y ya deja correr
+
+2
+00:00:16,460 --> 00:00:27,429
+un poquito más y estamos en 49 se nos ha caído y al 50 nos ha caído pero a cambio fijaros que ha
+
+3
+00:00:27,429 --> 00:00:36,140
+hecho los 60 ahí está el tema si tú ves con 49 invalida hombre pero no ves que tienen unos
+
+4
+00:00:36,140 --> 00:00:44,990
+60 no está siendo saliendo simétrico no está ganando lo mismo que lo que pierde gana 3 80
+
+5
+00:00:44,990 --> 00:00:53,649
+pero es 26 porque porque esto salta menos al final no está actuando lo suficiente para para
+
+6
+00:00:53,649 --> 00:00:59,250
+para que eso tenga sentido tienes que igualar el retorno el riesgo y esto lo va a decir el
+
+7
+00:00:59,250 --> 00:01:06,799
+ratio 2 de acuerdo te lo va a decir el ratio 2 creo que ha quedado claro este punto no vale
+
+8
+00:01:06,799 --> 00:01:19,400
+entonces había alguna pregunta más pero me he comentado no sí creo que sí a ver aquí
+
+9
+00:01:19,400 --> 00:01:26,920
+habían algunas preguntas en discord vale hablaban sobre ahora voy repasando un poco y voy leyéndolos
+
+10
+00:01:26,920 --> 00:01:34,219
+como son públicas a lo que era aureli preguntaba sobre el vídeo de evaluación preliminar y hemos
+
+11
+00:01:34,219 --> 00:01:38,980
+hablado un poco de ello porque ya trato de aprovecharlo y hemos hablado un poco de ello
+
+12
+00:01:38,980 --> 00:01:44,379
+decía que que métrica usamos para decidir si pasa la evaluación o no en una evaluación preliminar
+
+13
+00:01:44,379 --> 00:01:51,329
+básicamente se trata que la idea tenga ventaja es esto que estamos viendo ahora un poco aureli
+
+14
+00:01:51,329 --> 00:01:57,980
+vale el que la idea tenga una cierta ventaja sin haber forzado mucho las cosas fíjate yo
+
+15
+00:01:57,980 --> 00:02:06,299
+te he puesto esto sencillo media tal y a partir de ahí podemos ver si trabajamos idealmente en
+
+16
+00:02:06,299 --> 00:02:11,180
+varios activos idealmente varios activos sobre todo en este tipo de sistemas tiene que ser en
+
+17
+00:02:11,180 --> 00:02:16,659
+varios activos en este tipo de sistemas tiene que ser en varios activos y ahora aquí esto lo tenía
+
+18
+00:02:16,659 --> 00:02:21,889
+antes en apple lo he hecho que lo iba a hacer de hecho y no lo he hecho vale le ponemos poner por
+
+19
+00:02:21,889 --> 00:02:35,860
+ejemplo google y tenemos que ver qué tal funciona lo ideal sería que en diversos activos nos mantuviera
+
+20
+00:02:35,860 --> 00:02:41,939
+un poquito tipo repito que estamos ahora bueno no sé si ahora estoy no ahora no ahora no espérate voy
+
+21
+00:02:41,939 --> 00:02:47,620
+a volver al set up anterior voy a volver al set up anterior voy a volver a anular la salida por tiempo
+
+22
+00:02:48,620 --> 00:02:59,740
+está está no lo he iniciado antes no lo he iniciado antes en la pausa y evidentemente me he equivocado
+
+23
+00:02:59,740 --> 00:03:05,539
+porque está sufriendo ya lo que no se ha escrito lo voy a igualar esto ahora cuando era 05 vamos
+
+24
+00:03:05,539 --> 00:03:12,860
+a poner 0 0 5 vale con don chan a 20 menos que a 20 le doy un poco más de margen ya porque si no
+
+25
+00:03:12,860 --> 00:03:17,780
+pero 10 pero yo creo que va a actuar ambos si si además cerca a todo por fuerza porque no
+
+26
+00:03:17,860 --> 00:03:23,099
+puede ser de otra manera en este caso no puede ser de otra manera aquí una de las cosas que haremos
+
+27
+00:03:23,099 --> 00:03:28,939
+es darle margen a las entradas de decir no permitirle esto es una cosa de momento la he comentado
+
+28
+00:03:28,939 --> 00:03:33,340
+en el código porque no quería ensuciar el código lo he comentado vale entonces ahora que yo por
+
+29
+00:03:33,340 --> 00:03:40,080
+ejemplo tengo google esto por ejemplo maestro lo podría mirar en varios en una cesta de acciones
+
+30
+00:03:40,080 --> 00:03:57,490
+no sé si me va a dar tiempo a hacerlo más o menos rápido a ver vamos a intentarlo como
+
+31
+00:03:57,490 --> 00:04:12,419
+se llama esto actuar acciones venga vamos a poner este para acciones acciones a de estrategia
+
+32
+00:04:13,539 --> 00:04:26,910
+problemas que esto está tan saturado que va a sufrir esto se nos se nos se nos va
+
+33
+00:04:26,910 --> 00:05:22,089
+se llama así se llama curso se llama curso fuera un problema muy grande es que las acciones
+
+34
+00:05:22,089 --> 00:05:27,290
+le vamos a meter menos años a serlo solucionado que no me va a afectar me va a frenar mucho
+
+35
+00:05:27,290 --> 00:05:31,750
+vamos con esto more management 100% nominal
+
+36
+00:05:36,519 --> 00:05:40,879
+limite de acciones símbolis venga que te metemos el nasdaq
+
+37
+00:05:44,009 --> 00:05:51,860
+vamos a ver el nasdaq 100 vamos con todo las acciones y
+
+38
+00:05:51,860 --> 00:06:06,800
+empezamos con hoy está avisando no no no diremos que no avisa no
+
+39
+00:06:06,800 --> 00:06:16,220
+diremos que no avisa en el nuevo porfolio por folio apolo no por folio sistema de
+
+40
+00:06:16,220 --> 00:06:26,139
+estructura n7 n100 vamos con el porfolio settings me da igual a de strategy group
+
+41
+00:06:26,620 --> 00:06:39,290
+estima futura actes por folio en un número esto vamos con 10.000 dólares hasta ayer
+
+42
+00:06:39,290 --> 00:06:48,470
+y le vamos a meter 10 años a pero claro mali management 10 no mali management 0 1
+
+43
+00:06:48,470 --> 00:07:03,439
+porque vamos con 100 acciones venga ahí vamos lo dejamos ahí trabajando vale sí sí no no es
+
+44
+00:07:03,439 --> 00:07:08,639
+que ya pensaba hacer esto es lo que decía aquí ahora lo voy a mirar directamente en
+
+45
+00:07:08,639 --> 00:07:13,759
+muchas acciones a la vez vale quería hacerlo quería hacerlo así no sé ni cómo lo dejó
+
+46
+00:07:16,259 --> 00:07:22,930
+pero 505 vale y salir en 10 barras de puesto bueno bueno es igual para evaluar la entrada
+
+47
+00:07:22,930 --> 00:07:35,069
+no me sirve debería verlo pero ahora lo hago otra vez que va que va rápido aquí lo tenemos
+
+48
+00:07:36,029 --> 00:07:44,720
+aquí podemos ver todas las cestitas de acciones aquí todo el índice vemos algunas cosas rojas
+
+49
+00:07:44,720 --> 00:07:56,170
+tenemos bastante verde en general verde y podemos ver el gráfico de todas y nos rompe la curva
+
+50
+00:07:56,170 --> 00:08:13,360
+tremendamente dramática un gigantesco y esto es por acción ahí lo vemos vale bueno hay bastantes
+
+51
+00:08:13,360 --> 00:08:21,100
+perdedoras algunas ganadoras hay un poco de todo lo pasa que la idea que llevaba no era esta sino
+
+52
+00:08:21,100 --> 00:08:26,439
+ésta que lo voy a hacer ahora y hacer lo mismo que habíamos hecho antes es decir meterle aquí
+
+53
+00:08:26,439 --> 00:08:37,379
+20 esto creo que no 0 10 0 10 aquí meterle pues 500 para que no actuará y aquí pues lo voy a
+
+54
+00:08:37,379 --> 00:09:07,330
+dejar preguntas tengo algunas de aquí o sigo de las que tenía pendientes a ver todo cuando digo
+
+55
+00:09:07,330 --> 00:09:11,970
+que es una vez de ahora es que de verdad no nos paremos en esta hora que ya llegaremos ya llegaremos
+
+56
+00:09:11,970 --> 00:09:17,769
+llegaremos es decir una vez ya porque porque la curva era bastante lamentable tenía por el factor
+
+57
+00:09:17,769 --> 00:09:27,820
+bastante bajo para acciones en diarias era no insisto ya lo comentaste no estoy haciendo hoy
+
+58
+00:09:27,820 --> 00:09:34,700
+un sistema de uso operable antes hemos explicado los datos y ahora estaba simplemente introduciendo
+
+59
+00:09:34,700 --> 00:09:40,179
+el primer paso de un sistema acordaros los que espero que muchos es la primera parte de la teoría
+
+60
+00:09:40,179 --> 00:09:47,450
+la mayoría habéis hecho la primera parte de la teoría hablamos de perfiles y luego el desarrollo
+
+61
+00:09:47,450 --> 00:09:52,690
+hablamos de setups de entrada filtros etcétera simplemente he planteado un setup de entrada es
+
+62
+00:09:52,690 --> 00:09:58,330
+lo que hecho de acuerdo simplemente eso he planteado un setup de entrada que es un dolce y
+
+63
+00:09:58,330 --> 00:10:03,570
+aparte de ahí le he puesto un stop y un tp simétrico porque tengo que cerrar la operación
+
+64
+00:10:03,570 --> 00:10:07,970
+acordaros que para evaluar entradas hay que hacer algo yo le he puesto un tp simétrico y le he puesto
+
+65
+00:10:07,970 --> 00:10:13,129
+una salida temporal pero la he anulado poniéndole 500 bajas de acuerdo entonces la he anulado para
+
+66
+00:10:13,129 --> 00:10:18,370
+que para que me saliera obligatoriamente por esto ptp y ahora que he hecho hecho eso mismo que habéis
+
+67
+00:10:18,370 --> 00:10:24,809
+hecho en tres session pero lo he aplicado a todo el nasdaq cien porque bueno pues porque así puedo
+
+68
+00:10:24,809 --> 00:10:35,629
+ver muchas acciones así puedo ver muchas acciones vale entonces aquí veis cada barrita esto es una
+
+69
+00:10:35,629 --> 00:10:41,750
+acción veis que hay muchas ganadoras y hay muchas peleadoras entonces al final en el sumario veo que
+
+70
+00:10:41,750 --> 00:10:51,059
+gana 208 mil veo que tiene un profit factor de 1.04 que es bajísimo fijaros que tiene un average
+
+71
+00:10:51,059 --> 00:11:06,309
+win de solo 0.74 y tiene un momentito que no veo ahora lo que busco aquí por ventaja de acierto
+
+72
+00:11:06,309 --> 00:11:15,429
+es el 58% esto es lo que quería quería ver es justito porque tiene un win loss bastante bajo
+
+73
+00:11:15,429 --> 00:11:22,340
+pero que no protege de acierto superior al 50% que es lo que ahora mirábamos de manera rápida
+
+74
+00:11:22,340 --> 00:11:30,019
+aquí simplemente simplemente evaluaba eso nada más pensar que esto no está ni bien dimensionado
+
+75
+00:11:30,019 --> 00:11:37,340
+vale no está ni bien y mencionado y aquí lo expuesto veis 600% realmente está totalmente
+
+76
+00:11:37,340 --> 00:11:48,460
+solo expuesto porque tenía que haberle puesto no 0.10 y no 0.01 pero bueno voy a hacerlo por
+
+77
+00:11:48,460 --> 00:12:00,360
+por tercera vez por tercera vez para conseguir la información que quiero 20 es por ciento es
+
+78
+00:12:00,360 --> 00:12:08,059
+por ciento 500 repito que trato sólo de evaluar la entrada aquí le he puesto 0.10 tiene que haberle
+
+79
+00:12:08,059 --> 00:12:26,850
+puesto 0.001 no eso es 10% 0.001 tengo que ponerle simplemente quiero ver si me da más de un 50%
+
+80
+00:12:26,850 --> 00:12:31,730
+mirado en todas las acciones en las acciones en los últimos 10 años simple o sea estoy haciendo
+
+81
+00:12:31,730 --> 00:12:38,269
+una evaluación preliminar si más una evaluación preliminar acordaros en las fases sencillita de
+
+82
+00:12:38,269 --> 00:12:42,710
+simplemente la entrada a tonchan en todas las acciones del nasa que si veo que ahí tiene algún
+
+83
+00:12:42,710 --> 00:12:54,000
+sentido seguir este camino nada más y que me fijo básicamente que engane dinero vale ahora que
+
+84
+00:12:54,000 --> 00:13:00,350
+gané dinero y que como he puesto simétricos esto pítepe que tengan más de un 50% de acierto
+
+85
+00:13:00,350 --> 00:13:08,379
+bueno quizá ahora me he bajado quizá ahora me he pasado en la exposición no era 0.1 pero gana
+
+86
+00:13:08,379 --> 00:13:20,600
+10 dólares ahora me he pasado un 0 de verdad estoy estoy hoy me pasa a ver déjame ver lo que
+
+87
+00:13:20,600 --> 00:13:35,669
+he hecho a ver lo que he hecho le he puesto 0.10 20 y vale 0.001 pero antes cuanto había puesto antes
+
+88
+00:13:35,870 --> 00:13:47,600
+0.10 era un 0 solo era un 0 era 0.006 venga a la 14a va la vencida la 14a va la vencida volvemos
+
+89
+00:13:47,600 --> 00:13:59,399
+con el tranchón de 20 0 10 0 10 y 500 barros decir voy a compro en ruptura de canal de 20
+
+90
+00:13:59,399 --> 00:14:17,559
+stop simétrico 10 0 10 y aquí 0.01 verdad alberto 1% 1% 1% en cada acción que de un poquito por
+
+91
+00:14:17,559 --> 00:14:32,639
+debajo del 100% esto es simplemente evaluación preliminar nada más vale es decir al final los
+
+92
+00:14:32,639 --> 00:14:39,519
+ratios que miramos en aquí de evaluación preliminar no son simplemente es esto es que
+
+93
+00:14:39,519 --> 00:14:47,460
+tenga un porcentaje de aciertos ahora superiores 50 y que tenga ganancias positivas poco más en
+
+94
+00:14:47,460 --> 00:14:56,029
+este punto poco más en este punto poco más bueno esto ya empieza ahora a tener más sentido ya
+
+95
+00:14:56,029 --> 00:15:00,549
+empieza a tener más sentido vale ya lo hemos dimensionado correctamente empieza a tener un
+
+96
+00:15:00,549 --> 00:15:10,330
+poco más de sentido al final dimensionar las cosas bien como visteis en la práctica de
+
+97
+00:15:11,049 --> 00:15:17,730
+esto es muy curioso es ahora estoy 60 50 por ciento expuesto todavía está poco expuesto pero
+
+98
+00:15:17,730 --> 00:15:21,929
+bueno pero ya ya lo hemos expuesto un poco más ya lo hemos expuesto un poco más pero es que
+
+99
+00:15:21,929 --> 00:15:29,409
+estará un compuesto 5 anualizado poco pero tenemos una veras muy casi del 1 y un porcentaje de
+
+100
+00:15:29,409 --> 00:15:38,820
+aciertos del 59 casi estoy al uno es decir parece que hay ventaja en la entrada parece que hay
+
+101
+00:15:38,820 --> 00:15:43,179
+ventaja en la entrada en una evaluación preliminar lo que vamos a decir es eso no vamos a decir nada
+
+102
+00:15:43,179 --> 00:15:49,179
+más es decir que parece que hay ventaja nada más ya ya veremos si a partir de ahí hacemos algo lo
+
+103
+00:15:49,179 --> 00:15:54,340
+mejor después lo trabajamos nosotros una porquería pero ahora mismo vemos que el sistema ganado de
+
+104
+00:15:54,340 --> 00:16:01,620
+dinero anualizan 5 por ciento expuesto 60 50 por ciento es decir prácticamente un 10 por ciento
+
+105
+00:16:01,620 --> 00:16:10,179
+anualizado al 100 por ciento exposición tiene un average win loss de 0 97 decir casi 1 y da un
+
+106
+00:16:10,179 --> 00:16:16,940
+profitable de 59 por ciento es decir acierta 6 de cada 10 operaciones en todas en todas las
+
+107
+00:16:16,940 --> 00:16:24,740
+acciones es decir estos son 3500 trades vale en todas las acciones el nasa 100 en muchas
+
+108
+00:16:24,740 --> 00:16:31,350
+pierde pero muchas gana muchas pierde y en muchas gana y entonces eso es lo que yo ahora mismo quiero
+
+109
+00:16:32,190 --> 00:16:36,710
+simplemente le he puesto un stop simétrico no he optimizado nada le he puesto un don chan de 20
+
+110
+00:16:36,710 --> 00:16:43,090
+barras por defecto no he tocado nada y no he dejado ni salir por tiempo porque le he obligado
+
+111
+00:16:43,090 --> 00:16:49,299
+a salir por esto ptp bienvenidos que veo que puede haber cierta ventaja en un don chan en
+
+112
+00:16:49,299 --> 00:16:56,980
+diario en acciones americanas porque lo he probado en 100 acciones vale eso es un poco una evaluación
+
+113
+00:16:56,980 --> 00:17:01,220
+preliminar típica vale entonces enlazo con las preguntas sé que esto es lo que me preguntaba
+
+114
+00:17:01,220 --> 00:17:07,299
+también ligado con lo que había preguntado también aureli y había preguntado también ante
+
+115
+00:17:07,299 --> 00:17:15,859
+ante igualmente alejandro también que todo esto va todo en conexión vale y sigo sigo con las con
+
+116
+00:17:15,859 --> 00:17:21,539
+las preguntas se preguntaba los datos de forex esto ya te contestó alberto pero bueno como
+
+117
+00:17:21,539 --> 00:17:25,700
+antes comentaba los datos de forex cada broker el mercado tiene los suyos eso es así eso te
+
+118
+00:17:25,700 --> 00:17:35,619
+dice es como los dvds no no tienen que ser iguales luego comentaba sobre el vídeo 577 que
+
+119
+00:17:35,619 --> 00:17:41,220
+también liga un poquito con esto que hemos visto hoy comentaba que se yo comentaba en la teoría
+
+120
+00:17:41,220 --> 00:17:45,940
+que para sistemas con poco ningún parámetro el proceso finalizaría en el forwar testing
+
+121
+00:17:45,940 --> 00:17:50,140
+a bajar de pocos parámetros el paseo de la evaluación preliminar al forwar testing se
+
+122
+00:17:50,140 --> 00:17:55,180
+hace el paso de la optimización clásica ni la wall forwar es correcta esta afirmación bueno
+
+123
+00:17:55,180 --> 00:18:01,819
+esto lo vamos a ir viendo mucho un poco ya has visto por donde van los tiros hoy yo lo que puedo
+
+124
+00:18:01,819 --> 00:18:09,140
+hacer es probar el sistema en muchas acciones por ejemplo si no puedo sacarlo en una sola acción
+
+125
+00:18:09,140 --> 00:18:14,910
+al mejor lo puedo probar en muchas puede ser un camino puede ser un camino pero vamos a intentar
+
+126
+00:18:14,910 --> 00:18:20,460
+hacerlo porque cuando hablamos de wall forwar hablamos que habían dos había el cláster vale
+
+127
+00:18:21,099 --> 00:18:27,819
+y dentro del cláster estaba el anchole y no en anchole de acuerdo yo puedo usar anchole y
+
+128
+00:18:27,819 --> 00:18:39,549
+entonces ahí gano muestra entonces hay distintas maneras distintas maneras también como no habíamos
+
+129
+00:18:39,549 --> 00:18:45,150
+todo esto ya lo comenté un poco pero comentaré los detractores es decir no me gusta es un debate
+
+130
+00:18:45,150 --> 00:18:51,150
+que me resulta interesante y me gusta abordarlo no creéis que hay gente que
+
+131
+00:18:52,190 --> 00:18:59,829
+más gente que a mí me merece todo mi respeto y admiración es decir no no es no es algo no es algo
+
+132
+00:18:59,829 --> 00:19:05,309
+que sea la biblia de acuerdo es decir todo lo que tiene que ver con la manipulación de datos
+
+133
+00:19:05,309 --> 00:19:11,789
+siempre hay siempre hay debate siempre hay debate no se ponen de acuerdo con los datos
+
+134
+00:19:11,789 --> 00:19:17,789
+cobit imaginaros que con los mismos datos hay gente que defiende que las vacunas funcionan
+
+135
+00:19:17,789 --> 00:19:26,390
+si es difícil analizar datos con los mismos datos con los mismos datos o sea porque intervienen
+
+136
+00:19:26,390 --> 00:19:34,869
+sesgos la manipulación y ahí hay como ya he dicho muchas veces es fácil hacerse trampas al
+
+137
+00:19:34,869 --> 00:19:41,240
+solitario con la manipulación de datos es muy fácil es muy fácil entonces por eso digo que y
+
+138
+00:19:42,079 --> 00:19:48,440
+luego también hay un factor de gusto cuidado pero pero bueno eso ya en este tema debería ser menos
+
+139
+00:19:48,440 --> 00:20:00,910
+importante sigo y él en la onda en este dice si es correcto esto que no se puede hacer well
+
+140
+00:20:00,910 --> 00:20:10,630
+forward or forward testing sería válido efectuar la metodología de fiction el antiguo el forro para
+
+141
+00:20:10,630 --> 00:20:16,990
+estos casos se mostrará un ejemplo de la metodología de la metodología braque bueno podemos verlo
+
+142
+00:20:16,990 --> 00:20:24,819
+podemos ver alguna algún ejemplo con él con el braque es que el braque en mi opinión tiene tiene
+
+143
+00:20:24,819 --> 00:20:34,190
+mucho de como te lo diría yo como tiene mucho estética o sea es que no me sale la palabra ahora
+
+144
+00:20:34,190 --> 00:20:39,970
+es que braque si tú lo piensas al final aureli que entiendo que se me pregunta es que has leído
+
+145
+00:20:39,970 --> 00:20:47,539
+sobre sobre él no aparte de lo que lo que explique yo de hecho el libro de fiction es recomendable
+
+146
+00:20:47,539 --> 00:20:55,039
+al final simplemente lo que hace es una optimización completa de acuerdo una tradición completa
+
+147
+00:20:55,039 --> 00:20:59,359
+acordaros cuando hemos hecho nosotros tema de perfil que hicimos incluso hablamos de 50 a 50
+
+148
+00:20:59,359 --> 00:21:05,799
+hablamos cortar por delante cortar por detrás es algo bastante parecido a esto si lo piensas es
+
+149
+00:21:05,799 --> 00:21:10,279
+algo bastante parecido no es exactamente igual porque nosotros lo que hacemos es un trozo en
+
+150
+00:21:10,279 --> 00:21:15,500
+sample y dejamos uno fuera y luego lo hacemos por otro lado es lo que haces toda la optimización
+
+151
+00:21:15,500 --> 00:21:25,000
+excluye una parte post optimización y optimiza y no pero olvídate del orden de las cosas de acuerdo
+
+152
+00:21:25,000 --> 00:21:35,359
+esa segunda optimización que hace él es nuestra primera in sample voy a intentar cuidado voy a
+
+153
+00:21:35,359 --> 00:21:45,619
+intentar coger el lápiz espera aquí si yo despejo ahora todo se me queda todo azul creo no claro se
+
+154
+00:21:45,619 --> 00:21:59,430
+me queda todo azul y a igual yo puedo pintar no a ver esto sería ver pintar o no quito el tiempo
+
+155
+00:21:59,430 --> 00:22:11,079
+aquí el tiempo y pinto tremendo lo que acabo de descubrir tengo una pizarra aquí de lujo vale
+
+156
+00:22:11,079 --> 00:22:27,700
+entonces vamos a intentar optimización esto es en la optimización clásica enseñamos vamos a suponer
+
+157
+00:22:29,259 --> 00:22:40,299
+que esto es 75 por ciento y que esto es 25 por ciento esto es con ratón en tener bastante
+
+158
+00:22:40,299 --> 00:22:48,180
+verito a medias a ver venga mi hija escriben mucho mejor que esto bueno no mi hija ahora claro ya
+
+159
+00:22:48,180 --> 00:22:54,940
+me dijo con tres años ya escribió mejor que esto a ver esto sería la normal vale rayita
+
+160
+00:22:55,380 --> 00:23:12,900
+muy bien vale que hace braque te dice haces esta optimización que le llama pilt vale te dice quita
+
+161
+00:23:12,900 --> 00:23:29,859
+una parte y le llamo revil y compara esto con esto vale lo que yo te estoy diciendo es que el
+
+162
+00:23:29,859 --> 00:23:47,619
+revil es esto el revil es esto no no es min sam pero es revil pero se me entiende y él me
+
+163
+00:23:47,619 --> 00:23:56,109
+dice que compara todo esto con todo esto porque porque así dice es verdad eso tiene mayor
+
+164
+00:23:56,109 --> 00:24:01,910
+significación vale esto dice que tiene muy poca significación y ya dice que lo del software es
+
+165
+00:24:01,910 --> 00:24:07,150
+ciencia ficción porque dice que todos los trocitos de cortar así no hay ningún sentido porque cortar
+
+166
+00:24:07,150 --> 00:24:14,450
+así sí sí sí es verdad al final también luego hay otros autores que defienden prado lo defienden
+
+167
+00:24:14,450 --> 00:24:19,859
+que veáis es que metes mucho sesgo ahí yo creo que con él con el cláster no es cierto que haya
+
+168
+00:24:19,859 --> 00:24:26,339
+que haya sesgo pienso de verdad pero es verdad que hay otras metodologías que también son
+
+169
+00:24:26,339 --> 00:24:32,960
+interesantes son muy interesantes pero mutación de periodos modificación del periodo de barras y
+
+170
+00:24:32,960 --> 00:24:40,289
+es que hay mil maneras de validar lo que ocurre es que yo creo firmemente que está valida que hay
+
+171
+00:24:40,289 --> 00:24:45,450
+otras que validan seguro por lo que sí entonces al final el revil que te quiero decir os saldrá
+
+172
+00:24:45,450 --> 00:24:54,039
+que al final por todo ahora vale tiene bastante de no sé al final en todos sus ejemplos que pone es
+
+173
+00:24:54,039 --> 00:25:00,000
+una muestra gigantesca él al final construye una muestra enorme con un montón de operaciones y
+
+174
+00:25:00,000 --> 00:25:04,319
+comparando esto con esto te dice pues ya estás es que es verdad o sea es que yo si hago esta
+
+175
+00:25:04,319 --> 00:25:11,160
+optimización vamos a suponer tengo un único parámetro y esto tiene 5.000 operaciones
+
+176
+00:25:13,160 --> 00:25:21,980
+un único parámetro distrio acordaros las cosas que dijimos distribución de trade uniforme bla bla
+
+177
+00:25:21,980 --> 00:25:31,589
+bla es que no hace falta que hagas nada aquí para operar me explico si tú conseyes una distribución
+
+178
+00:25:31,670 --> 00:25:41,549
+uniforme es 5.000 operaciones me explico es que no te hace falta ni autosap o sea al final es todo es
+
+179
+00:25:41,549 --> 00:25:49,039
+todo una una un sitio común y una coherencia es decir al final si tú consigues suficiente
+
+180
+00:25:49,039 --> 00:25:56,589
+significación estadística además con simplicidad con idea robusta y con todo aquello insisto que
+
+181
+00:25:56,589 --> 00:26:07,759
+os comenté ahora lo estoy buscando en aquella diapositiva donde resumo donde estás resumo
+
+182
+00:26:09,480 --> 00:26:29,359
+que es una estrategia robusta donde estás es que es esta es esta tampoco no es antes de aquí es
+
+183
+00:26:29,359 --> 00:26:39,019
+antes de aquí es que tengo diapositivas para un carro esta es no tampoco es esta ya no queda
+
+184
+00:26:39,019 --> 00:26:50,160
+muchas que se parezcan a esta debe ser esta esta si es vale espera que quito el dibujito vale si
+
+185
+00:26:50,160 --> 00:27:00,000
+yo tengo una distribución uniforme de operaciones si yo tengo una distribución uniforme de los
+
+186
+00:27:00,000 --> 00:27:12,380
+trates y de su beneficio tengo un mapa estable vale con ya se entiende no encima encima a eso ya
+
+187
+00:27:12,380 --> 00:27:21,369
+para acabarle siempre con 5.000 trates ni esta hace falta y número significativo de tres como te decía
+
+188
+00:27:21,369 --> 00:27:30,839
+y muestra representativa y una curva estable es que esto es robusto esto es muy probablemente
+
+189
+00:27:30,839 --> 00:27:39,390
+robusto esto es muy probablemente robusto con brak sin brak y hasta single folder probablemente
+
+190
+00:27:39,390 --> 00:27:49,339
+ahora el tema es dónde está esa barrera y que al final siempre mayor seguridad es mejor o sea
+
+191
+00:27:49,339 --> 00:27:56,299
+dónde está esta barrera este número este número que ya dices oyes que me da igual todo es claro
+
+192
+00:27:56,299 --> 00:28:04,079
+ahí es donde entra mucho brak entonces si yo meto yo te digo meto sistemas de este tipo y luego
+
+193
+00:28:04,079 --> 00:28:14,079
+te digo te digo el vamos a hacer un sisma inverso y le ponemos nombre esto nos reíamos nosotros aquí
+
+194
+00:28:14,079 --> 00:28:19,019
+porque todos los grandes otros que hacen cursos ponen nombre nos reíamos le tenemos que poner
+
+195
+00:28:19,019 --> 00:28:28,779
+un nombre sabes porque es que es esto sacas un libro y le tienes que poner un nombre a tu historia
+
+196
+00:28:28,779 --> 00:28:35,630
+y al final todas son más o menos la misma con su toque pero pues se pone el nombre porque es así
+
+197
+00:28:35,630 --> 00:28:42,460
+es verdad está bien no a nivel de bar que entonces tú le pones un nombre y sacas un libro y lo vendes
+
+198
+00:28:42,460 --> 00:28:49,369
+y hasta ahí te haces milenario todo así bueno pues nosotros no le hemos puesto nombre no somos
+
+199
+00:28:49,369 --> 00:28:55,380
+bolos en marketing como ya hemos dicho muchas veces no le hemos puesto nombre a nada vale entonces
+
+200
+00:28:56,740 --> 00:29:02,779
+esto era un poco lo de que lo que te explicó sobre sobre brak entonces sí que se puede hacer y al
+
+201
+00:29:02,779 --> 00:29:09,200
+final si tú haces brak y tienes una muestra muy tal tienes esto que te he enseñado ahora
+
+202
+00:29:09,200 --> 00:29:15,660
+probablemente te saldrá bien te funcionará y sin brak también y sin brak también te
+
+203
+00:29:15,660 --> 00:29:28,450
+funcionará entonces ya está vale qué más me preguntabas también me preguntabas también
+
+204
+00:29:28,450 --> 00:29:40,619
+vale ya estaba esto para hablar del porfolio si hablabas de que había comentado del
+
+205
+00:29:40,619 --> 00:29:46,579
+tratamiento holístico del porfolio es decir como un como un conjunto si tendría sentido un
+
+206
+00:29:46,579 --> 00:29:51,460
+planteamiento de destino tp loco para el porfolio cerrando todas las posiciones en el caso de llegar
+
+207
+00:29:51,460 --> 00:29:57,059
+a stp global independientemente de cada una de las unidades que forman sistemas tuvieran positivas
+
+208
+00:29:57,059 --> 00:30:02,900
+o negativas en el instante en que el global llegara al objetivo de ser esto cierto como se puede
+
+209
+00:30:02,900 --> 00:30:09,579
+evaluar esta es muy buena pregunta aureli y si tiene sentido nosotros hoy en día no lo hacemos
+
+210
+00:30:09,579 --> 00:30:15,539
+pero tiene totalmente el sentido esto tiene sentido si si si esto es correcto y hay muchos
+
+211
+00:30:15,539 --> 00:30:23,539
+autores que lo hacen de acuerdo es decir stop o stop y tp de porfolio si si si totalmente esto
+
+212
+00:30:23,539 --> 00:30:29,380
+tiene tiene sentido como lo evaluas bueno pues con un software que lo valúan no tiene más maestro lo
+
+213
+00:30:29,380 --> 00:30:39,619
+puede hacer msa ahora mismo creo que también cual analiza lo hace creo simplemente con una regla
+
+214
+00:30:39,619 --> 00:30:46,990
+de código con una regla del código que lo haga si no tiene no tiene mayor historia en
+
+215
+00:30:46,990 --> 00:30:53,289
+ese lenguaje puede porque hay alguna librería de maestro además que maestro se hace y por folio
+
+216
+00:30:53,289 --> 00:30:59,650
+trader te esto que es seguro que también los software de porfolio suelen permitirlo ya código
+
+217
+00:30:59,650 --> 00:31:06,369
+vía interface pero sí sí sí tiene sentido y tiene sentido y se puede evaluar por si
+
+218
+00:31:06,369 --> 00:31:17,779
+cualquier otra cosa vale luego carlos apuntaba sobre los regímenes de mercado irá saliendo irá
+
+219
+00:31:17,779 --> 00:31:22,579
+saliendo si tenemos algún paper que recomienden para estudiar los distintos regímenes por ahora
+
+220
+00:31:22,579 --> 00:31:28,460
+mismo sí que hay seguro que tengo alguno que aseguro que tengo alguno apúntate está alberto
+
+221
+00:31:28,460 --> 00:31:34,539
+de buscar papers de regimenes de mercado porque estoy prácticamente seguro de tener alguno en
+
+222
+00:31:34,539 --> 00:31:45,809
+la documentación vale entonces hay bastante tema vale yo te digo una cosa una cosa nosotros
+
+223
+00:31:45,809 --> 00:31:52,490
+hemos estado mucho tiempo sin filtrar regímenes de mercado ahora lo estamos empezando a hacer
+
+224
+00:31:53,519 --> 00:31:59,160
+pero no porque no supiéramos lo lo hubiéramos evaluado antes porque lo que digo siempre lo
+
+225
+00:31:59,160 --> 00:32:04,319
+bueno pero siempre lo que no sé ahora mismo carlos si habías hecho la teoría ya no cuánto etcétera
+
+226
+00:32:04,319 --> 00:32:16,960
+al final este tipo de implementaciones del sistema de regímenes se meten vía filtro siempre vía
+
+227
+00:32:16,960 --> 00:32:23,799
+filtro si tú tienes imagínate ese sistema sencillo que hemos visto antes vale y yo veo que pues no va
+
+228
+00:32:23,799 --> 00:32:30,079
+bien como casi ninguno en volatilidad y yo meto un filtro de volatilidad la mayoría de filtros
+
+229
+00:32:30,119 --> 00:32:33,880
+de este tipo van por volatilidad está saturadísimo el equipo ya una cosa de
+
+230
+00:32:33,880 --> 00:32:44,329
+los van por por vía vía volatilidad pero pueden haber otros entonces pues el tenencial entonces
+
+231
+00:32:44,329 --> 00:32:49,970
+al final no deja de ser un filtro no deja de ser una regla más no deja de ser una posible sobre
+
+232
+00:32:49,970 --> 00:32:57,500
+utilización más entonces ahí es donde siempre tienes la duda de que tú en mediante ese filtro
+
+233
+00:32:57,500 --> 00:33:04,880
+vas a eliminar trades imagínate que yo tengo 800 trades y mi filtro me quita 300 trades y me quedo
+
+234
+00:33:04,880 --> 00:33:15,849
+con 500 trades he mejorado el sistema pero he perdido significación estadística ahí está
+
+235
+00:33:17,289 --> 00:33:22,940
+mejora lo suficiente bueno es ese es el debate habrá veces que sí habrá veces que no
+
+236
+00:33:23,539 --> 00:33:30,500
+a veces que sí habrá veces que y yo es verdad que tengo bastante tendencia a eso incluso alguna vez
+
+237
+00:33:30,500 --> 00:33:38,930
+te diría demasiado en determinados momentos creo que hasta lo he llevado demasiado lejos creo y
+
+238
+00:33:38,930 --> 00:33:44,410
+puedo haberme equivocado en haberlo hecho en ese aspecto en concreto es decir de ser demasiado
+
+239
+00:33:44,410 --> 00:33:52,799
+persistente en en no querer filtrar demasiado porque al final filtrar es una de las maneras
+
+240
+00:33:52,799 --> 00:33:59,529
+más fáciles sobre utilizar carlos porque tú estás justamente eliminando lo malo tienes o sea
+
+241
+00:33:59,529 --> 00:34:04,250
+tú tienes un setup como esto es sencillo que yo te he enseñado ahora y luego digo mira o sea le
+
+242
+00:34:04,250 --> 00:34:10,809
+quito por la volatilidad le quito unas cuantas operaciones venga ahora por la tendencia tienes
+
+243
+00:34:10,809 --> 00:34:15,650
+la tentación de empezar a filtrar a filtrar filtrar y te queda un back test pero guapo guapo
+
+244
+00:34:15,650 --> 00:34:23,630
+guapo pero una cosa impecable ahora luego resulta que el sistema es real pues va mucho
+
+245
+00:34:23,630 --> 00:34:28,429
+peor que se esperaba para los dos sistemas suelen ir bastante línea con lo esperado y en
+
+246
+00:34:28,429 --> 00:34:34,389
+desviaciones bastante cuando hay desviaciones que las ha habido es público hemos explicado todo lo
+
+247
+00:34:34,389 --> 00:34:38,750
+que nos ha pasado aunque a pesar después de todos los problemas que hemos tenido hemos batido
+
+248
+00:34:38,750 --> 00:34:45,710
+nuestro mensaje en sí o no pero pero bueno aún así han habido errores y ha habido cosas hay cosas
+
+249
+00:34:45,710 --> 00:34:52,980
+que me juzgan pero lo que lo que digo de los filtros entonces al final no sé siempre siempre
+
+250
+00:34:52,980 --> 00:34:58,139
+ese debate siempre esa duda y siempre te quedas con filtros y filtros no los filtros se pueden
+
+251
+00:34:58,139 --> 00:35:04,139
+usar no no no que criminalizarlos de entrada pero pero prudencia prudencia ante ellos porque al
+
+252
+00:35:04,139 --> 00:35:12,179
+final filtrar filtrar mucho es un camino directo al overfit es un camino directo al overfit hay
+
+253
+00:35:12,179 --> 00:35:16,739
+que filtrar con mucha prudencia en caso de dudas no filtras eso te lo digo en caso de dudas no filtres
+
+254
+00:35:17,179 --> 00:35:28,719
+vale alejandro yo creo que ya ha quedado claro todo el tema de alejandro y luego hablaba
+
+255
+00:35:28,719 --> 00:35:37,300
+senen garcía sobre el multidata bueno el multidata haremos también multidata
+
+256
+00:35:37,300 --> 00:35:44,099
+comentaba él le comentaba que había hecho un backtest en multidata que ha intentado crear una
+
+257
+00:35:44,099 --> 00:35:49,139
+estrategia con con acciones donde ha añadido filtro que el sp 500 estuviera por encima de
+
+258
+00:35:49,139 --> 00:35:53,699
+una media vale necesita dos datas y tenía problemas con el tema de los datos bueno esto
+
+259
+00:35:53,699 --> 00:35:59,260
+creo que ya tenemos contestado directamente allí bueno decías que no entendías mucho esto hombre
+
+260
+00:35:59,260 --> 00:36:05,619
+tiene su lógica porque al final si las bases de datos no se alinean igual cuesta de tomar pero
+
+261
+00:36:05,619 --> 00:36:13,460
+bueno al principio ya te lo hemos solucionado haremos estrategias de los datos este que usas
+
+262
+00:36:13,460 --> 00:36:17,619
+tú es una estrategia bastante común de filtro es decir usar una acción de filtrar que en ese
+
+263
+00:36:17,900 --> 00:36:24,940
+otro bueno aplica lo que he dicho ahora aplica totalmente lo que lo que he dicho ahora totalmente
+
+264
+00:36:24,940 --> 00:36:31,019
+lo que he dicho ahora filtrar puede ser pero prudencia con ello porque puede ser que te salga
+
+265
+00:36:31,019 --> 00:36:50,110
+que le salga mal me queda alguna pregunta por ahí el aberto jose dolet dices vale dice que sobre los
+
+266
+00:36:50,110 --> 00:36:54,670
+filtros en un vídeo comentaba que cuando añades un filtro tiene que filtrar bastantes para que
+
+267
+00:36:54,670 --> 00:37:01,440
+no sobreteneces puede ser bueno la más que filtrar tiene que las dos cosas y al final cualquier
+
+268
+00:37:01,440 --> 00:37:08,039
+regla que tú evaluas jose tiene que tener implicación fíjate fíjate aquí a ver si esto
+
+269
+00:37:08,039 --> 00:37:16,039
+me va ahora cuando yo te decía en el sistema se tendencia ni carga ya es que ni carga que
+
+270
+00:37:16,039 --> 00:37:24,139
+te decía he bajado el stop y el tp para que actuara más porque porque si yo implemento
+
+271
+00:37:24,139 --> 00:37:33,019
+una regla que casi no actúa no la estoy evaluando estoy engañando me explico decimos 30 30 por
+
+272
+00:37:33,019 --> 00:37:40,420
+por por grado de libertad si dijimos un poco de 30 50 pero claro que actúe si yo pongo un tp que
+
+273
+00:37:40,420 --> 00:37:48,179
+pasa dos veces evaluado no está que puede puedes usarlo o no pero no está evaluado estadísticamente
+
+274
+00:37:48,739 --> 00:37:57,260
+los dos tenemos alguna en no y ese algunas estrategias de salida que tiene una corrección
+
+275
+00:37:57,260 --> 00:38:01,820
+muy baja pero pero bueno yo la quiero yo la puedo poner por ejemplo hablaba antes de creo que la
+
+276
+00:38:01,820 --> 00:38:08,139
+orel y no recuerdo de un tp o un stop en el porfolio a lo mejor no actúa nunca pero es igual yo quiero
+
+277
+00:38:08,139 --> 00:38:13,619
+por ejemplo que nunca en un mes pueda perder más de tanto pues pues punto pues yo lo pongo ya está
+
+278
+00:38:13,619 --> 00:38:19,420
+si pierde lo cierro o es que no sabrán ya bueno pero yo no puedo no puedo o no quiero perder más
+
+279
+00:38:19,420 --> 00:38:27,670
+de un 5 por ciento si llego a esa perdida cierro el mes por ejemplo después de haber relas que no
+
+280
+00:38:27,670 --> 00:38:34,789
+que sean por gestión por requisitos de riesgo del regulador o requisitos de riesgo tuyos por lo que
+
+281
+00:38:34,789 --> 00:38:41,610
+sea te despasan por encima de acuerdo de la evaluación no pero pero en términos generales
+
+282
+00:38:41,610 --> 00:38:45,409
+hablamos de reglas del sistema no de gestión monetaria que eso va a parte
+
+283
+00:38:47,369 --> 00:38:52,559
+filtro como esto que comentas si que debe estar evaluado por un mínimo de operaciones que las
+
+284
+00:38:52,559 --> 00:38:59,519
+respalden y luego lo que te decía que se queden en el sistema también respalden es decir las dos
+
+285
+00:38:59,519 --> 00:39:05,199
+cosas el filtro tiene que estar respaldado y el sistema antes del filtro y post filtro se tiene
+
+286
+00:39:05,199 --> 00:39:13,019
+que quedar respaldado por una suficiente muestra que me dé significación estadística así que sí
+
+287
+00:39:13,019 --> 00:39:25,860
+si las cosas es sí vale buen color para cegarnos antonio pues nada te pondré fosforito próximo
+
+288
+00:39:25,860 --> 00:39:32,309
+día te pongo fosforito y en vez de fondo azul fondo negro aún va a ser más más pero vale
+
+289
+00:39:33,309 --> 00:39:41,440
+a ver me marco aquí bueno al principio por lo que yo veo aquí marcado está todo respondido no
+
+290
+00:39:41,440 --> 00:39:57,489
+vale pues decirme si alguna cosita más recordar vuelve a recordar el disco da dos cosas que
+
+291
+00:39:57,489 --> 00:40:03,090
+recuerdo vale dos cosas que recuerdo una la clase ya no va a ir con el link que visteis vale la
+
+292
+00:40:03,090 --> 00:40:08,130
+vamos a subir ya si no hay problemas hoy mismo a la plataforma de learning ya está todo preparado
+
+293
+00:40:09,090 --> 00:40:17,099
+la primera ya está ahí ya está ahí y la segunda va a estar la hora cuando acabemos de la clase se
+
+294
+00:40:17,099 --> 00:40:29,280
+procesa y se sube el segundo a partir de en el mismo sitio que está la teoría así ya no
+
+295
+00:40:29,280 --> 00:40:32,679
+tienen dos sitios además hay mucha gente que todavía no acabó la teoría pues está
+
+296
+00:40:33,000 --> 00:40:40,900
+la teoría y debajo las prácticas vale ese por un lado y luego recuerdo sigo recordando el
+
+297
+00:40:40,900 --> 00:40:45,699
+disco por lo que podéis ahí preguntar está bien a gente que a veces participa se pregunta
+
+298
+00:40:45,699 --> 00:40:51,500
+entre ellas se ayuda y parece me parece perfecto para eso está un poquito y podéis entrar
+
+299
+00:40:51,500 --> 00:41:00,769
+entre vosotros y por mi parte nada más si cualquier otra pregunta repito la puedes poner el disco
+
+300
+00:41:00,769 --> 00:41:06,769
+lo de las preguntas en la plataforma de learning ya creo que me lo deshabilitaron porque es que iba
+
+301
+00:41:06,769 --> 00:41:14,909
+fatal entonces dijo pues quítalo entonces digo preguntas al disco y hasta la semana que viene
+
+302
+00:41:14,909 --> 00:41:23,659
+seguiremos con él partiendo este sistema ya tengo alguno otro más preparado que está por aquí pero
+
+303
+00:41:23,659 --> 00:41:32,380
+bueno seguiremos con seguiremos con éste y iremos creciendo encima de él hablando todo esto que
+
+304
+00:41:32,380 --> 00:41:36,300
+hemos hablado ahora y que hemos visto un poquito preliminar pues lo que vimos en el curso iremos
+
+305
+00:41:36,300 --> 00:41:41,659
+haciendo los siguientes pasos con esta sistema de don chan a ver si conseguimos alguna cosita con él
+
+306
+00:41:41,659 --> 00:41:48,579
+a ver si conseguimos alguna cosita con él que yo confío que sí pero ya veremos porque es una idea
+
+307
+00:41:48,579 --> 00:41:52,460
+que hasta he operado es decir que entiendo que tiene que salir pero que de verdad que lo hemos
+
+308
+00:41:52,460 --> 00:41:58,989
+empezado a hacer o sea que no tiene le hemos empezado hecha de cero en el código de acuerdo
+
+309
+00:41:58,989 --> 00:42:05,070
+así que nada más amigos a ver si conseguimos llegar a polo no bueno oye quién sabe quién sabe
+
+310
+00:42:05,070 --> 00:42:12,019
+quién sabe yo ya lo comenté antonio la clase se pasada y créeme que es 100% verdad en el curso
+
+311
+00:42:12,019 --> 00:42:19,639
+vamos a hacer cosas que vamos a aprovechar nosotros 100% porque son muchas horas como para dejarlas
+
+312
+00:42:19,639 --> 00:42:26,559
+perder al final voy a voy a aprovecharlas lógicamente no todas porque serán cosas ya
+
+313
+00:42:26,559 --> 00:42:30,880
+media que avancemos pero nosotros vamos a hacer cosas en el curso 100% que luego yo aprovecharé
+
+314
+00:42:30,880 --> 00:42:38,630
+así que si las podemos aprovechar nosotros también vosotros eso está clarísimo de acuerdo pues nada
+
+315
+00:42:38,630 --> 00:42:44,190
+más hasta aquí la segunda clase os veo el lunes que viene chao

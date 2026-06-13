@@ -1,0 +1,4515 @@
+1
+00:00:00,720 --> 00:00:04,580
+Buenas tardes, todos. Bienvenidos a la clasa master de TradeStation.
+
+2
+00:00:04,580 --> 00:00:10,740
+Mi nombre es Jesús Nava, Soy el Director de la Client Trending e Educación para los securidades de TradeStation.
+
+3
+00:00:10,740 --> 00:00:14,960
+Para mí siempre es un placer unirme a todos y hablar un poco sobre TradeStation.
+
+4
+00:00:14,960 --> 00:00:18,859
+Hoy vamos a hacer una serie de TradeSt rotations en las que destacamos
+
+5
+00:00:18,859 --> 00:00:23,199
+ciertas características de desarrollo estratégico de la plataforma TradeStation.
+
+6
+00:00:23,199 --> 00:00:28,660
+Hoy vamos a hablar sobre la magia de Portfolio y vamos a entrar en eso en un momento
+
+7
+00:00:28,660 --> 00:00:31,460
+y las razones por las que queréis usarlo.
+
+8
+00:00:31,460 --> 00:00:33,619
+Antes de comenzar, aquí están las discusiones usuales.
+
+9
+00:00:33,619 --> 00:00:35,820
+Recuerden que cada símbolo y idea
+
+10
+00:00:35,820 --> 00:00:37,460
+que hablamos en esta presentación
+
+11
+00:00:37,460 --> 00:00:40,060
+es para propósitos educativos.
+
+12
+00:00:40,060 --> 00:00:42,579
+Estas no son recomendaciones de TradeStation.
+
+13
+00:00:42,579 --> 00:00:45,619
+Además, que el trading activo no es apto para todos
+
+14
+00:00:45,619 --> 00:00:50,939
+y que la performance histórica no garantiza resultados futuros.
+
+15
+00:00:50,939 --> 00:00:53,179
+Para más información sobre estas discusiones,
+
+16
+00:00:53,179 --> 00:00:56,780
+visiten www.tradestation.com
+
+17
+00:00:56,780 --> 00:01:00,060
+o en forward slash important dash information.
+
+18
+00:01:00,060 --> 00:01:01,899
+También tenemos algunas discusiones adicionales
+
+19
+00:01:01,899 --> 00:01:03,659
+en el fondo de la pantalla.
+
+20
+00:01:03,659 --> 00:01:07,500
+Y Manolo también ha compartido un enlace en el chat
+
+21
+00:01:07,500 --> 00:01:09,900
+para quien quiera un poco más de detalle.
+
+22
+00:01:09,900 --> 00:01:13,900
+Bien, vamos a ir a la plataforma de TradeStation
+
+23
+00:01:13,900 --> 00:01:16,579
+y hablar de este tool interesante
+
+24
+00:01:16,579 --> 00:01:19,739
+que está disponible como aplicación
+
+25
+00:01:19,739 --> 00:01:21,459
+dentro de la plataforma de TradeStation.
+
+26
+00:01:21,540 --> 00:01:25,379
+Antes de ir a Portfolio Maestro
+
+27
+00:01:25,379 --> 00:01:27,620
+y por qué queréis usarlo,
+
+28
+00:01:27,620 --> 00:01:29,900
+vamos a establecer nuestra análisis de cartas
+
+29
+00:01:29,900 --> 00:01:32,739
+con una estrategia, solo una idea,
+
+30
+00:01:32,739 --> 00:01:35,540
+para que podamos empezar usando esa idea
+
+31
+00:01:35,540 --> 00:01:40,859
+y transferir esa estrategia a Portfolio Maestro.
+
+32
+00:01:40,859 --> 00:01:47,579
+Así que creo que si has estado en una de mis clases de maestro,
+
+33
+00:01:47,620 --> 00:01:51,420
+ya sabes que encuentro la estrategia de desarrollo
+
+34
+00:01:51,420 --> 00:01:53,980
+y estrategia de trade un tema fascinante
+
+35
+00:01:53,980 --> 00:01:56,700
+y estoy seguro de que ustedes van a disfrutar de esto también.
+
+36
+00:01:56,700 --> 00:01:59,299
+Voy a ir aquí a estudios y agregar una de las estrategias
+
+37
+00:01:59,299 --> 00:02:04,060
+construidas que son parte de la plataforma de TradeStation.
+
+38
+00:02:04,060 --> 00:02:06,620
+Estudios y estrategias.
+
+39
+00:02:06,620 --> 00:02:11,770
+Voy a empezar con MACD.
+
+40
+00:02:11,770 --> 00:02:13,770
+Creo que es una estrategia que he usado
+
+41
+00:02:13,770 --> 00:02:17,169
+en muchos de mis ejemplos anteriores.
+
+42
+00:02:17,169 --> 00:02:34,669
+Voy a
+
+43
+00:02:34,669 --> 00:02:38,490
+entrar en el mercado cuando el MACD genera una entrada larga,
+
+44
+00:02:38,490 --> 00:02:43,169
+pero voy a combinar eso con un truco ATR.
+
+45
+00:02:43,169 --> 00:02:46,849
+A pesar de lo volatil que ha sido el mercado
+
+46
+00:02:46,849 --> 00:02:49,009
+o de lo grande que están obteniendo las barras,
+
+47
+00:02:49,009 --> 00:02:53,439
+cada símbolo tendrá un truco adaptable
+
+48
+00:02:53,439 --> 00:02:55,400
+a base de su volatilidad.
+
+49
+00:02:55,400 --> 00:03:00,439
+A veces usamos el ATR como medida de movimiento de precio,
+
+50
+00:03:00,439 --> 00:03:04,240
+así que hace sentido introducir
+
+51
+00:03:04,240 --> 00:03:06,840
+algunas de esas calculaciones en nuestra estrategia
+
+52
+00:03:06,840 --> 00:03:09,120
+porque entonces estamos haciendo la estrategia
+
+53
+00:03:09,159 --> 00:03:11,879
+que sea más sensible a lo que el mercado está haciendo
+
+54
+00:03:11,879 --> 00:03:14,039
+en un momento particular.
+
+55
+00:03:14,039 --> 00:03:16,800
+Y en este ejemplo particular,
+
+56
+00:03:16,800 --> 00:03:20,000
+hace más sentido porque quiero que la estrategia
+
+57
+00:03:20,000 --> 00:03:23,719
+también sea aplicada a múltiples símbolos.
+
+58
+00:03:23,719 --> 00:03:28,930
+Entonces, en vez de especificar un truco ATR
+
+59
+00:03:28,930 --> 00:03:30,409
+de una cantidad específica,
+
+60
+00:03:30,409 --> 00:03:34,650
+digamos que yo lo sete a $500 como ejemplo,
+
+61
+00:03:34,650 --> 00:03:37,289
+en vez de tener esa cantidad específica,
+
+62
+00:03:37,330 --> 00:03:41,009
+que podría traducir de manera diferente
+
+63
+00:03:41,009 --> 00:03:42,689
+dependiendo del símbolo que estás usando.
+
+64
+00:03:42,689 --> 00:03:46,250
+Si estás usando un truco de valor alto como Tesla,
+
+65
+00:03:46,250 --> 00:03:49,289
+que es el símbolo que tenemos aquí en el fondo,
+
+66
+00:03:49,289 --> 00:03:52,370
+cada parada es de $246.
+
+67
+00:03:52,370 --> 00:03:57,090
+Así que un truco ATR de $500,
+
+68
+00:03:57,090 --> 00:04:01,409
+o sea, considerando el valor de la parada,
+
+69
+00:04:01,409 --> 00:04:06,409
+eso es diferente de aplicar un truco ATR de $500
+
+70
+00:04:07,610 --> 00:04:09,169
+en una parada como Verizon,
+
+71
+00:04:09,169 --> 00:04:12,490
+que está empezando, creo, en el rango de $30.
+
+72
+00:04:12,490 --> 00:04:14,210
+Así que la razón...
+
+73
+00:04:15,969 --> 00:04:17,250
+Usando el truco ATR,
+
+74
+00:04:17,250 --> 00:04:20,209
+tenemos una forma de estandardizar el truco de Airster-Helling
+
+75
+00:04:20,209 --> 00:04:23,610
+basado en cómo la seguridad se mueve.
+
+76
+00:04:23,610 --> 00:04:26,529
+Así que déjame ir adelante y dejar que se resuelva
+
+77
+00:04:26,529 --> 00:04:28,529
+la entrada de MACD.
+
+78
+00:04:28,529 --> 00:04:32,740
+Voy a escoger hacia el very top.
+
+79
+00:04:32,740 --> 00:04:34,420
+Déjame encontrar los trucos ATR, aquí están.
+
+80
+00:04:34,420 --> 00:04:38,189
+Bien, y voy a agarrar el botón de control
+
+81
+00:04:38,189 --> 00:04:42,790
+y clicar en el truco ATR LX,
+
+82
+00:04:42,790 --> 00:04:44,870
+LX para la entrada larga.
+
+83
+00:04:44,870 --> 00:04:47,269
+Así que, al agarrar el botón de control,
+
+84
+00:04:47,269 --> 00:04:49,829
+puedes seleccionar múltiples estrategias,
+
+85
+00:04:49,829 --> 00:04:51,069
+lo que hice aquí,
+
+86
+00:04:51,069 --> 00:04:56,069
+seleccioné la entrada larga de MACD con el truco ATR LX.
+
+87
+00:04:56,670 --> 00:04:59,899
+Voy a poner esas estrategias en el truco.
+
+88
+00:04:59,899 --> 00:05:03,779
+La estrategia encontrará cada área o cada instancia
+
+89
+00:05:03,779 --> 00:05:08,060
+donde la estrategia generaría una entrada y una salida.
+
+90
+00:05:08,060 --> 00:05:13,060
+Puedes ver que en un mercado de tendencia,
+
+91
+00:05:13,100 --> 00:05:16,220
+estas entradas de MACD parecen muy bonitas.
+
+92
+00:05:16,220 --> 00:05:19,620
+Y el hecho de que el mercado esté uptrendido
+
+93
+00:05:19,620 --> 00:05:22,060
+significa que el truco no va a ser atrapado
+
+94
+00:05:22,060 --> 00:05:26,779
+hasta que se encuentre con ese movimiento hacia abajo.
+
+95
+00:05:26,779 --> 00:05:28,860
+En este caso, lo encontré aquí.
+
+96
+00:05:28,860 --> 00:05:32,579
+Así que esta es una estrategia de forma de caja.
+
+97
+00:05:32,579 --> 00:05:34,540
+Voy a ir aquí a la tabla de datos
+
+98
+00:05:34,540 --> 00:05:38,399
+y clicar en el reporte de la estrategia.
+
+99
+00:05:38,399 --> 00:05:41,360
+Vamos a la sumergencia de la performance.
+
+100
+00:05:41,360 --> 00:05:42,800
+Vamos a abrir esto un poco.
+
+101
+00:05:44,170 --> 00:05:46,329
+Podemos ver los resultados de la estrategia.
+
+102
+00:05:46,329 --> 00:05:49,089
+Esta es una estrategia que va de 5 años.
+
+103
+00:05:49,089 --> 00:05:50,209
+¿Cómo se sabe eso?
+
+104
+00:05:50,209 --> 00:05:52,810
+Bueno, sé la cantidad de datos defaultes
+
+105
+00:05:52,810 --> 00:05:54,089
+que tengo en mi análisis de gráficos,
+
+106
+00:05:54,089 --> 00:05:56,569
+pero también veo aquí en el topo,
+
+107
+00:05:56,569 --> 00:05:59,329
+en la tabla de los reportes de la estrategia de performance
+
+108
+00:05:59,329 --> 00:06:00,769
+y puedes ver que dice,
+
+109
+00:06:00,769 --> 00:06:05,769
+septiembre 26 de 2018 a septiembre 26 de 2023.
+
+110
+00:06:05,889 --> 00:06:07,730
+Así que un total de 5 años.
+
+111
+00:06:07,769 --> 00:06:10,329
+No tuvimos mucha actividad de intercambio en esos 5 años.
+
+112
+00:06:10,329 --> 00:06:13,930
+Puedes ver que el total número de intercambios es solo de 35.
+
+113
+00:06:13,930 --> 00:06:20,470
+Así que tal vez los intercambios sean de pequeño tamaño
+
+114
+00:06:22,970 --> 00:06:25,850
+para que yo haga algunas asumciones
+
+115
+00:06:25,850 --> 00:06:28,129
+sobre la estrategia en sí misma.
+
+116
+00:06:28,129 --> 00:06:29,889
+Quiero que mi estrategia reporte
+
+117
+00:06:29,889 --> 00:06:32,810
+tener una cantidad significativa de intercambios
+
+118
+00:06:32,810 --> 00:06:35,889
+para que te dé un poco más de confianza
+
+119
+00:06:35,889 --> 00:06:37,970
+sobre lo que la estrategia está haciendo.
+
+120
+00:06:37,970 --> 00:06:40,129
+Pero puedes ver cómo esta estrategia particular
+
+121
+00:06:40,129 --> 00:06:42,009
+es profitable para Tesla.
+
+122
+00:06:42,930 --> 00:06:45,089
+¿Fue profitable para Tesla?
+
+123
+00:06:45,089 --> 00:06:46,970
+Deja que lo aclaremos.
+
+124
+00:06:46,970 --> 00:06:48,930
+Y lo dijimos al principio.
+
+125
+00:06:48,930 --> 00:06:49,930
+El hecho de que estamos buscando
+
+126
+00:06:49,930 --> 00:06:51,850
+una estrategia de reporte de performance
+
+127
+00:06:51,850 --> 00:06:55,170
+y vemos que la estrategia ha realizado de una manera cierta,
+
+128
+00:06:55,170 --> 00:06:57,970
+no significa que va a hacer esa misma
+
+129
+00:06:57,970 --> 00:06:59,930
+o experiencia, ese mismo comportamiento,
+
+130
+00:06:59,930 --> 00:07:02,410
+avanzando y eso es algo que nosotros,
+
+131
+00:07:02,410 --> 00:07:04,810
+como estrategias, debemos de ser conscientes de.
+
+132
+00:07:04,810 --> 00:07:06,410
+Así que es muy imposible
+
+133
+00:07:06,410 --> 00:07:09,290
+esperar que las estrategias sean las mismas.
+
+134
+00:07:09,290 --> 00:07:12,529
+Sin embargo, en un contexto histórico,
+
+135
+00:07:12,529 --> 00:07:15,529
+esta estrategia generó algunos ganancias.
+
+136
+00:07:15,529 --> 00:07:20,089
+$16,000 de ganancias netas en un periodo de cinco años,
+
+137
+00:07:20,089 --> 00:07:20,930
+no es malo.
+
+138
+00:07:20,930 --> 00:07:24,430
+Si cambié el símbolo, aquí en la parte de atrás,
+
+139
+00:07:24,430 --> 00:07:26,029
+la estrategia recalculará.
+
+140
+00:07:26,029 --> 00:07:30,639
+Así que digamos que me switché el símbolo a Microsoft.
+
+141
+00:07:30,639 --> 00:07:32,279
+Recalcula la estrategia.
+
+142
+00:07:32,279 --> 00:07:35,439
+Noten que, de nuevo, el total número de intercambios
+
+143
+00:07:35,519 --> 00:07:37,279
+es de 33 intercambios.
+
+144
+00:07:37,279 --> 00:07:39,319
+Esta es una estrategia que, por Microsoft,
+
+145
+00:07:39,319 --> 00:07:42,839
+generó unos $9,000 de ganancias netas.
+
+146
+00:07:42,839 --> 00:07:45,480
+El factor de ganancias es de 1.54.
+
+147
+00:07:45,480 --> 00:07:47,480
+Usualmente veo el factor de ganancias
+
+148
+00:07:47,480 --> 00:07:49,360
+más que hago el total de ganancias netas,
+
+149
+00:07:49,360 --> 00:07:51,839
+incluso si quieres una estrategia
+
+150
+00:07:51,839 --> 00:07:54,199
+que sea profitable para empezar.
+
+151
+00:07:54,199 --> 00:07:55,759
+Pero al mismo tiempo, quieres saber
+
+152
+00:07:55,759 --> 00:07:58,920
+cuál es el ratio de ganancias con los ganancias.
+
+153
+00:08:00,160 --> 00:08:02,199
+No es todo sobre el total de ganancias netas
+
+154
+00:08:02,199 --> 00:08:06,870
+porque a veces, si el factor de ganancias es demasiado bajo,
+
+155
+00:08:06,870 --> 00:08:09,029
+es muy imposible para la estrategia
+
+156
+00:08:09,029 --> 00:08:12,550
+mantener esa ganancia.
+
+157
+00:08:12,550 --> 00:08:14,990
+El factor de ganancias de 1.5 significa
+
+158
+00:08:14,990 --> 00:08:17,430
+que por cada dólar que has perdido,
+
+159
+00:08:17,430 --> 00:08:18,910
+has ganado $1.50.
+
+160
+00:08:18,910 --> 00:08:23,629
+Así que tenemos ese tipo, ese ratio
+
+161
+00:08:23,629 --> 00:08:28,220
+cuando comparas ganancias con ganancias.
+
+162
+00:08:28,220 --> 00:08:29,540
+Así que el mayor el ratio significa
+
+163
+00:08:29,540 --> 00:08:32,019
+que el ratio de ganancias con los ganancias
+
+164
+00:08:32,019 --> 00:08:36,779
+es favorables a tu rendimiento, ¿cierto?
+
+165
+00:08:36,779 --> 00:08:40,299
+Vamos a ver algunas áreas de la reporta de la estrategia
+
+166
+00:08:40,299 --> 00:08:41,500
+de ganancias.
+
+167
+00:08:41,500 --> 00:08:45,779
+Porque quería mencionar que cuando haces
+
+168
+00:08:45,779 --> 00:08:48,620
+un test de vuelta de estrategia, como lo hice,
+
+169
+00:08:48,620 --> 00:08:51,620
+esto funciona muy bien para solo un símbolo.
+
+170
+00:08:51,620 --> 00:08:53,940
+Notas que empecé con Tesla,
+
+171
+00:08:53,940 --> 00:08:57,019
+miré la reporta de ganancias de estrategia,
+
+172
+00:08:57,019 --> 00:08:59,659
+luego mudé el símbolo a Microsoft
+
+173
+00:08:59,659 --> 00:09:02,379
+y parece que es favorable para eso también.
+
+174
+00:09:02,379 --> 00:09:06,200
+Si lo mudé a Apple,
+
+175
+00:09:06,200 --> 00:09:07,879
+podemos ver que es favorable.
+
+176
+00:09:07,879 --> 00:09:11,440
+Veamos el factor de ganancias de Apple, 3.75.
+
+177
+00:09:11,440 --> 00:09:16,639
+Y, por supuesto, es kind of expected
+
+178
+00:09:16,639 --> 00:09:18,720
+en un mercado uptrendido
+
+179
+00:09:18,720 --> 00:09:21,399
+para tener estos grandes intercambios.
+
+180
+00:09:21,399 --> 00:09:24,559
+La entrada de MACD entra en el mercado
+
+181
+00:09:24,559 --> 00:09:28,120
+y no sale hasta que tengamos un precio bajista
+
+182
+00:09:28,120 --> 00:09:30,360
+que sea suficiente significativo
+
+183
+00:09:30,360 --> 00:09:34,679
+para que se encuentre con la entrada de ganancias ATR.
+
+184
+00:09:34,679 --> 00:09:37,679
+Por default, esta entrada de ganancias utiliza tres ATR.
+
+185
+00:09:37,679 --> 00:09:40,159
+Entonces, lo que sea el valor de la entrada de ganancias ATR,
+
+186
+00:09:40,159 --> 00:09:41,720
+se multiplica por tres
+
+187
+00:09:41,720 --> 00:09:44,080
+y se establece como la entrada de ganancias.
+
+188
+00:09:44,080 --> 00:09:47,120
+Entonces, notas que aunque en este uptrendido
+
+189
+00:09:47,120 --> 00:09:50,080
+tuvimos algunas áreas en las que el precio se corregió
+
+190
+00:09:50,080 --> 00:09:53,240
+por unos días, no se corregió suficiente
+
+191
+00:09:53,240 --> 00:09:55,039
+para que nosotros lleguemos a esa entrada de ganancias.
+
+192
+00:09:55,039 --> 00:09:57,559
+No fue hasta aquí que el precio
+
+193
+00:09:57,559 --> 00:09:59,360
+realmente se corregió
+
+194
+00:09:59,360 --> 00:10:01,559
+y que nuestra entrada de ganancias se acercó aquí.
+
+195
+00:10:01,559 --> 00:10:03,279
+Y fue un buen tiempo
+
+196
+00:10:03,279 --> 00:10:05,159
+porque puedes ver que después de eso
+
+197
+00:10:05,159 --> 00:10:07,399
+el mercado continuó a bajar.
+
+198
+00:10:07,399 --> 00:10:10,279
+Así que muchas veces vas a encontrar intercambios como este.
+
+199
+00:10:10,279 --> 00:10:11,840
+Se ven muy bien.
+
+200
+00:10:11,840 --> 00:10:16,000
+Pero, de nuevo, esto es un backtest histórico.
+
+201
+00:10:16,000 --> 00:10:17,840
+Quiero decir, nadie puede sentarse allí
+
+202
+00:10:17,840 --> 00:10:19,480
+mirando los datos históricos
+
+203
+00:10:19,480 --> 00:10:23,840
+y pinpointar dónde sería la entrada óptima y la salida, ¿verdad?
+
+204
+00:10:23,840 --> 00:10:25,559
+Entonces, vamos a volver aquí
+
+205
+00:10:26,440 --> 00:10:27,320
+a mi reporte de performance.
+
+206
+00:10:27,320 --> 00:10:29,039
+Hice un símbolo.
+
+207
+00:10:29,039 --> 00:10:30,399
+Creo que fue Disney.
+
+208
+00:10:30,399 --> 00:10:31,240
+Sí.
+
+209
+00:10:31,240 --> 00:10:32,919
+Por ejemplo, si cambias a Disney,
+
+210
+00:10:32,919 --> 00:10:36,159
+puedes ver que no es un buen reporte aquí.
+
+211
+00:10:36,159 --> 00:10:37,679
+Tenemos una estrategia de perdida aquí.
+
+212
+00:10:37,679 --> 00:10:41,000
+El factor de ganancias es de 89 centavos.
+
+213
+00:10:41,000 --> 00:10:43,200
+Así que siempre vas a estar en el negativo.
+
+214
+00:10:43,200 --> 00:10:45,000
+En este caso particular,
+
+215
+00:10:45,000 --> 00:10:46,720
+por cada dólar que perdimos,
+
+216
+00:10:46,720 --> 00:10:48,360
+solo hicimos 89 centavos.
+
+217
+00:10:48,360 --> 00:10:50,080
+Así que no es un buen ratio.
+
+218
+00:10:50,080 --> 00:10:52,559
+Aunque si sigues a cambiar el símbolo,
+
+219
+00:10:52,559 --> 00:10:54,799
+puedes encontrar que muchos símbolos
+
+220
+00:10:54,799 --> 00:10:58,879
+tienen una performance profitable.
+
+221
+00:10:58,879 --> 00:11:01,759
+Idealmente, cuando estás desarrollando una estrategia,
+
+222
+00:11:01,759 --> 00:11:04,840
+quieres un método que te permita hacer
+
+223
+00:11:04,840 --> 00:11:07,200
+el backtest de un portfólio.
+
+224
+00:11:07,200 --> 00:11:09,000
+Así que tienes una estrategia en mente.
+
+225
+00:11:09,000 --> 00:11:10,559
+En este caso, muy simple.
+
+226
+00:11:10,559 --> 00:11:12,879
+Las reglas que seleccionamos aquí son muy simples.
+
+227
+00:11:12,879 --> 00:11:14,399
+Magdi, entrada óptima,
+
+228
+00:11:14,399 --> 00:11:17,000
+y luego tenemos un atr traicionamiento.
+
+229
+00:11:17,000 --> 00:11:18,480
+Pero lo que quieres hacer es que quieras aplicar
+
+230
+00:11:18,480 --> 00:11:21,679
+esa misma estrategia a un portfólio de símbolos
+
+231
+00:11:21,679 --> 00:11:25,120
+para que puedas agarrar la robustidad
+
+232
+00:11:25,120 --> 00:11:28,720
+de la estrategia en diferentes mercados.
+
+233
+00:11:28,720 --> 00:11:31,120
+¿Qué es el punto de encontrar una buena estrategia
+
+234
+00:11:31,120 --> 00:11:34,559
+si solo funciona en un símbolo particular?
+
+235
+00:11:34,559 --> 00:11:37,919
+En fin, esa estrategia va a fallar.
+
+236
+00:11:37,919 --> 00:11:40,480
+Tenemos una estrategia profitable en Tesla,
+
+237
+00:11:40,480 --> 00:11:42,120
+cambiamos el símbolo a Disney,
+
+238
+00:11:42,120 --> 00:11:43,879
+y entonces es una estrategia de perdida.
+
+239
+00:11:44,840 --> 00:11:47,679
+Así que no lo consideraría como una estrategia robusta.
+
+240
+00:11:47,679 --> 00:11:50,759
+Así que si puedes aplicar esa estrategia
+
+241
+00:11:50,759 --> 00:11:52,840
+a un portfólio de símbolos
+
+242
+00:11:52,840 --> 00:11:56,639
+y luego obtener un reporte basado en ese portfólio,
+
+243
+00:11:56,639 --> 00:11:58,320
+entonces puedes agarrar tu estrategia y decir,
+
+244
+00:11:58,320 --> 00:12:03,080
+bueno, parece que es profitable en general.
+
+245
+00:12:03,080 --> 00:12:06,960
+Así que si traigo 20 o 30 símbolos
+
+246
+00:12:06,960 --> 00:12:09,240
+y los traigo con esta estrategia,
+
+247
+00:12:09,240 --> 00:12:11,960
+parece que, basado en los números históricos,
+
+248
+00:12:11,960 --> 00:12:14,440
+voy a quedarse afloat en el lado positivo.
+
+249
+00:12:14,440 --> 00:12:16,919
+Pero eso es solo posible si tienes un instrumento
+
+250
+00:12:16,919 --> 00:12:19,840
+que te permite retestar una estrategia
+
+251
+00:12:19,840 --> 00:12:21,600
+contra un portfólio de símbolos.
+
+252
+00:12:21,600 --> 00:12:25,950
+Y eso es donde el portfólio maestro viene a placer.
+
+253
+00:12:28,669 --> 00:12:30,029
+Es divertido, estoy solo riendo
+
+254
+00:12:30,029 --> 00:12:34,350
+porque tenía un colegio que ríe
+
+255
+00:12:34,350 --> 00:12:37,990
+con la forma en la que pronuncio maestro
+
+256
+00:12:37,990 --> 00:12:41,230
+porque tiene esa pronunciación española,
+
+257
+00:12:41,230 --> 00:12:42,389
+es una palabra española.
+
+258
+00:12:42,389 --> 00:12:46,070
+Así que, o maestro o maestro,
+
+259
+00:12:46,070 --> 00:12:47,110
+lo que quieras pronunciarlo,
+
+260
+00:12:47,110 --> 00:12:49,309
+ese es el método que vamos a hablar hoy.
+
+261
+00:12:49,350 --> 00:12:52,629
+Así que vamos a cerrar el reporte de estrategia y performance.
+
+262
+00:12:52,629 --> 00:12:54,750
+Voy a venir aquí a mis aplicaciones
+
+263
+00:12:54,750 --> 00:12:57,470
+y la aplicación que estoy hablando de
+
+264
+00:12:57,470 --> 00:13:00,600
+está aquí, el portfólio maestro.
+
+265
+00:13:00,600 --> 00:13:03,960
+Vamos a abrirlo.
+
+266
+00:13:03,960 --> 00:13:06,519
+Todo el mundo debería tenerlo como parte de las aplicaciones
+
+267
+00:13:06,519 --> 00:13:08,360
+que son parte de TradeStation.
+
+268
+00:13:08,360 --> 00:13:12,200
+Así que déjame ir adelante y maximizar esto.
+
+269
+00:13:12,200 --> 00:13:14,600
+Bien, vas a encontrar
+
+270
+00:13:14,600 --> 00:13:18,559
+que hay muchos botones y herramientas aquí.
+
+271
+00:13:18,559 --> 00:13:21,480
+Voy a caminar a través de un backtest de portfólio
+
+272
+00:13:21,480 --> 00:13:23,639
+y voy a mostrarles cómo comenzar.
+
+273
+00:13:23,639 --> 00:13:25,440
+No tengo ningún documento de download,
+
+274
+00:13:25,440 --> 00:13:27,480
+así que no estamos usando nada customizado.
+
+275
+00:13:27,480 --> 00:13:30,240
+Esto es todo lo que está construido en TradeStation.
+
+276
+00:13:30,240 --> 00:13:32,120
+Y puedes jugar con la funcionalidad
+
+277
+00:13:32,120 --> 00:13:33,519
+y usarlo tú mismo,
+
+278
+00:13:33,519 --> 00:13:36,840
+lo que es lo que quiero encargar a todos a hacer.
+
+279
+00:13:36,840 --> 00:13:38,759
+Justo después de la clase,
+
+280
+00:13:38,759 --> 00:13:40,840
+set up different portfolios
+
+281
+00:13:40,840 --> 00:13:43,200
+y test them and see all the different functionality
+
+282
+00:13:43,200 --> 00:13:44,679
+that we have there.
+
+283
+00:13:44,679 --> 00:13:47,559
+By the way, another thing that I wanted to mention,
+
+284
+00:13:47,559 --> 00:13:49,320
+and I'll do this right now.
+
+285
+00:13:50,539 --> 00:13:54,620
+Let me bring this page over here.
+
+286
+00:13:54,620 --> 00:13:58,259
+All right, this is...
+
+287
+00:13:58,259 --> 00:13:59,379
+Let me just...
+
+288
+00:13:59,379 --> 00:14:01,090
+Oh, hold on.
+
+289
+00:14:01,090 --> 00:14:01,929
+This is...
+
+290
+00:14:01,929 --> 00:14:03,529
+Let me just remove this bar at the top.
+
+291
+00:14:03,529 --> 00:14:04,850
+This is our events page.
+
+292
+00:14:04,850 --> 00:14:08,529
+I know that Manolo usually shares the link here in the chat.
+
+293
+00:14:08,529 --> 00:14:10,330
+Manolo, if you can do that right now.
+
+294
+00:14:10,330 --> 00:14:13,169
+But if you go to the learn section of TradeStation,
+
+295
+00:14:13,169 --> 00:14:15,090
+the events section,
+
+296
+00:14:15,090 --> 00:14:18,690
+you're gonna find that on October 10th,
+
+297
+00:14:18,690 --> 00:14:21,450
+we have a follow-up to this class.
+
+298
+00:14:21,450 --> 00:14:24,490
+This class, which is available for you to register,
+
+299
+00:14:24,490 --> 00:14:26,809
+is titled rank, filter,
+
+300
+00:14:26,809 --> 00:14:29,090
+and manage your positions
+
+301
+00:14:29,090 --> 00:14:32,049
+when backtesting on Portfolio Maestro.
+
+302
+00:14:32,049 --> 00:14:33,129
+It's a follow-up class
+
+303
+00:14:33,129 --> 00:14:36,370
+because I go into more advanced features
+
+304
+00:14:36,370 --> 00:14:37,929
+of Portfolio Maestro.
+
+305
+00:14:37,929 --> 00:14:40,049
+So today is more like an introductory class.
+
+306
+00:14:40,049 --> 00:14:41,769
+I'm gonna show you how to get it started,
+
+307
+00:14:41,769 --> 00:14:43,809
+how to create the strategy groups,
+
+308
+00:14:43,809 --> 00:14:45,610
+how to create the portfolio.
+
+309
+00:14:45,610 --> 00:14:47,570
+And then October 10th,
+
+310
+00:14:47,570 --> 00:14:50,210
+I'll go over the ranking, the filtering,
+
+311
+00:14:50,210 --> 00:14:52,210
+and how to manage your positions
+
+312
+00:14:52,210 --> 00:14:54,970
+when running the backtesting on Portfolio.
+
+313
+00:14:54,970 --> 00:14:56,929
+So make sure that if you like this class
+
+314
+00:14:56,929 --> 00:14:58,090
+and you're interested,
+
+315
+00:14:58,090 --> 00:15:00,210
+you register for the October 10th class,
+
+316
+00:15:00,210 --> 00:15:04,090
+which is just part two of this presentation, okay?
+
+317
+00:15:04,090 --> 00:15:06,159
+Perfect.
+
+318
+00:15:06,159 --> 00:15:09,190
+So here's Portfolio Maestro.
+
+319
+00:15:09,190 --> 00:15:12,509
+I'm not gonna look at anything that is a sample portfolio
+
+320
+00:15:12,509 --> 00:15:13,909
+or a sample strategy group.
+
+321
+00:15:13,909 --> 00:15:17,190
+I'm gonna go right into thinking about the idea
+
+322
+00:15:17,190 --> 00:15:21,370
+that we started off with during this presentation,
+
+323
+00:15:21,370 --> 00:15:23,889
+which is the MACD long-end tree
+
+324
+00:15:23,889 --> 00:15:27,570
+combined with an ATR trailing stop.
+
+325
+00:15:27,570 --> 00:15:30,850
+And I wanna see how that strategy works
+
+326
+00:15:30,850 --> 00:15:32,090
+on a portfolio of samples.
+
+327
+00:15:32,090 --> 00:15:33,769
+So the first thing that you need to do,
+
+328
+00:15:33,769 --> 00:15:35,649
+you have two buttons here on the left-hand side.
+
+329
+00:15:35,649 --> 00:15:37,850
+You have one that says manage portfolio
+
+330
+00:15:37,850 --> 00:15:39,129
+and manage strategy groups.
+
+331
+00:15:39,129 --> 00:15:39,970
+The first thing you need to do
+
+332
+00:15:39,970 --> 00:15:42,450
+is create the strategy group,
+
+333
+00:15:42,450 --> 00:15:44,250
+and then we're gonna create the portfolio,
+
+334
+00:15:44,250 --> 00:15:46,730
+which is pretty much adding everything together,
+
+335
+00:15:46,730 --> 00:15:49,970
+like the symbols and the strategy all in a portfolio.
+
+336
+00:15:49,970 --> 00:15:51,169
+But let's start with the strategy group.
+
+337
+00:15:51,169 --> 00:15:53,210
+I'm gonna come over here to this section
+
+338
+00:15:53,210 --> 00:15:54,889
+for strategy groups.
+
+339
+00:15:54,889 --> 00:15:55,929
+You can see at the bottom
+
+340
+00:15:55,929 --> 00:15:58,850
+that we have sample strategy group one
+
+341
+00:15:58,850 --> 00:16:00,769
+and sample strategy group two.
+
+342
+00:16:00,769 --> 00:16:04,049
+As I said just a moment ago, we're just gonna ignore those.
+
+343
+00:16:04,049 --> 00:16:06,330
+And once I click on that button, manage strategy groups,
+
+344
+00:16:06,330 --> 00:16:07,210
+I'm just gonna click on new
+
+345
+00:16:07,210 --> 00:16:09,210
+right here on the top left corner.
+
+346
+00:16:09,210 --> 00:16:11,210
+This allows me to create a new strategy group.
+
+347
+00:16:11,210 --> 00:16:14,289
+I'm gonna call this strategy group MACD
+
+348
+00:16:14,289 --> 00:16:20,029
+and ATR trail, all right?
+
+349
+00:16:20,029 --> 00:16:22,389
+This example, I'm gonna work it on equities,
+
+350
+00:16:22,389 --> 00:16:25,309
+but notice that you can switch the asset class to futures
+
+351
+00:16:25,309 --> 00:16:27,029
+if you wanna do that.
+
+352
+00:16:27,029 --> 00:16:29,580
+I'm just gonna click okay.
+
+353
+00:16:29,580 --> 00:16:31,899
+And you can see that at the bottom,
+
+354
+00:16:31,899 --> 00:16:36,419
+it created that strategy group, MACD and ATR trail.
+
+355
+00:16:36,419 --> 00:16:39,299
+So the next step here is to add the strategy.
+
+356
+00:16:39,299 --> 00:16:40,340
+You can see that that's a button
+
+357
+00:16:40,340 --> 00:16:42,019
+we get right here at the very top.
+
+358
+00:16:42,019 --> 00:16:43,019
+So I'm gonna click here,
+
+359
+00:16:43,019 --> 00:16:44,779
+and this is gonna load all the strategies
+
+360
+00:16:44,779 --> 00:16:47,980
+that are built in to the TradeStation platform.
+
+361
+00:16:47,980 --> 00:16:49,299
+Not only the ones that are built in,
+
+362
+00:16:49,299 --> 00:16:52,100
+but also any custom strategy that you may have.
+
+363
+00:16:52,100 --> 00:16:57,279
+So if you have ownership of the strategy,
+
+364
+00:16:57,279 --> 00:17:00,320
+if you developed your own personal strategy
+
+365
+00:17:00,320 --> 00:17:01,919
+and wrote it in easy language,
+
+366
+00:17:03,399 --> 00:17:06,480
+I would be very interested in knowing
+
+367
+00:17:06,480 --> 00:17:09,319
+how that strategy works on a portfolio of symbols.
+
+368
+00:17:09,319 --> 00:17:11,720
+I'm sure that you bring it over here
+
+369
+00:17:11,720 --> 00:17:15,200
+and test it against a group of symbols.
+
+370
+00:17:15,200 --> 00:17:18,240
+So again, the same way that I did on the platform,
+
+371
+00:17:18,240 --> 00:17:20,640
+I'm gonna come here in portfolio maestro,
+
+372
+00:17:20,640 --> 00:17:24,920
+I'm going to find the MACD, long entry,
+
+373
+00:17:24,920 --> 00:17:27,079
+I'm going to highlight it,
+
+374
+00:17:27,079 --> 00:17:28,599
+but then I'm just gonna scroll up
+
+375
+00:17:28,599 --> 00:17:31,640
+and find the ATR trail LX.
+
+376
+00:17:31,640 --> 00:17:33,480
+Let me hold down the control key,
+
+377
+00:17:33,480 --> 00:17:38,049
+make sure that I have ATR trail LX highlighted,
+
+378
+00:17:38,049 --> 00:17:42,579
+and I have, did I highlight the MACD?
+
+379
+00:17:42,579 --> 00:17:43,940
+Okay, it's checked.
+
+380
+00:17:43,940 --> 00:17:47,539
+So it doesn't work as on the TradeStation platform,
+
+381
+00:17:47,539 --> 00:17:49,299
+we don't have check boxes.
+
+382
+00:17:49,299 --> 00:17:51,420
+So the MACD LE is checked,
+
+383
+00:17:51,420 --> 00:17:55,579
+and we just check the ATR trail and we just click okay.
+
+384
+00:17:55,579 --> 00:17:58,180
+So you can see that it adds the two strategies right here
+
+385
+00:17:58,180 --> 00:18:00,019
+on this top panel,
+
+386
+00:18:00,019 --> 00:18:02,099
+and I'm able to expand the details
+
+387
+00:18:02,099 --> 00:18:03,420
+of each one of these strategies.
+
+388
+00:18:03,420 --> 00:18:06,819
+I can open up the ATR trail LX,
+
+389
+00:18:06,819 --> 00:18:09,859
+and I can open up the MACD LE.
+
+390
+00:18:09,859 --> 00:18:14,220
+If you wanted to modify these inputs,
+
+391
+00:18:16,259 --> 00:18:19,160
+you would have to do it, let's see,
+
+392
+00:18:19,160 --> 00:18:21,160
+and I modified here.
+
+393
+00:18:21,160 --> 00:18:24,000
+That's one of the things that I wanted to,
+
+394
+00:18:24,000 --> 00:18:26,480
+you go in into strategy group.
+
+395
+00:18:26,480 --> 00:18:27,599
+Okay, there we go.
+
+396
+00:18:27,599 --> 00:18:31,000
+So for this example,
+
+397
+00:18:31,000 --> 00:18:33,880
+I'm gonna use the parameters that are here.
+
+398
+00:18:33,880 --> 00:18:37,119
+So the ATR is looking at 10 periods.
+
+399
+00:18:37,960 --> 00:18:41,519
+The ATR factor is three.
+
+400
+00:18:41,519 --> 00:18:46,400
+So it's using three ATRs for the trailing stop amount.
+
+401
+00:18:46,400 --> 00:18:47,240
+For the MACD,
+
+402
+00:18:47,240 --> 00:18:51,759
+we have the usual MACD values at 12, 26, and nine.
+
+403
+00:18:51,759 --> 00:18:55,160
+But if you wanted to adjust any of these parameters,
+
+404
+00:18:55,160 --> 00:18:58,400
+maybe you want to adjust the factor for the ATRs
+
+405
+00:18:58,400 --> 00:19:01,680
+or the number of bars that are used in the ATR calculator,
+
+406
+00:19:01,680 --> 00:19:02,920
+whatever it is,
+
+407
+00:19:02,920 --> 00:19:06,119
+you have to go into strategy group settings.
+
+408
+00:19:06,119 --> 00:19:08,720
+We'll go into some of these settings in just a moment,
+
+409
+00:19:08,720 --> 00:19:10,680
+but you go to the strategy inputs right here,
+
+410
+00:19:10,680 --> 00:19:13,359
+and this allows you to change those inputs
+
+411
+00:19:13,359 --> 00:19:14,480
+for any of the strategies
+
+412
+00:19:14,480 --> 00:19:17,970
+that you select right here on the top, okay?
+
+413
+00:19:17,970 --> 00:19:21,740
+Again, I'm just gonna use default parameters.
+
+414
+00:19:21,740 --> 00:19:22,579
+Merlin's asking,
+
+415
+00:19:22,579 --> 00:19:24,299
+how do you get the TS portfolio maestro
+
+416
+00:19:24,299 --> 00:19:26,259
+from the trade station?
+
+417
+00:19:26,259 --> 00:19:28,819
+You should have it available, Merlin.
+
+418
+00:19:28,819 --> 00:19:30,529
+If you go to the,
+
+419
+00:19:30,529 --> 00:19:32,529
+let me go back here to my trade station,
+
+420
+00:19:32,529 --> 00:19:34,730
+and let me know if anybody doesn't see it either,
+
+421
+00:19:34,730 --> 00:19:36,410
+but if you go to the apps,
+
+422
+00:19:36,410 --> 00:19:40,400
+you have portfolio maestro added here.
+
+423
+00:19:40,400 --> 00:19:41,720
+If you don't,
+
+424
+00:19:41,720 --> 00:19:43,960
+I believe there's a way for you to add it directly
+
+425
+00:19:43,960 --> 00:19:45,039
+on the client center,
+
+426
+00:19:45,039 --> 00:19:47,240
+on the trade station client center.
+
+427
+00:19:47,240 --> 00:19:49,160
+But if you don't have it,
+
+428
+00:19:49,160 --> 00:19:50,680
+I mean, you still go here and check,
+
+429
+00:19:50,680 --> 00:19:52,480
+and if you don't have it,
+
+430
+00:19:52,480 --> 00:19:55,119
+call client services and ask them
+
+431
+00:19:55,119 --> 00:19:58,240
+if they can enable it for you.
+
+432
+00:19:58,240 --> 00:20:00,119
+Okay, so Merlin found it.
+
+433
+00:20:00,119 --> 00:20:03,200
+Eduardo says he doesn't have it.
+
+434
+00:20:03,200 --> 00:20:06,200
+Don't you have to pay extra for portfolio maestro?
+
+435
+00:20:06,200 --> 00:20:10,279
+Jeff, depending on the pricing plan that you're on,
+
+436
+00:20:10,279 --> 00:20:13,160
+I think there are some tools that you pay extra for.
+
+437
+00:20:13,160 --> 00:20:16,240
+I'm not sure if anybody that has it here,
+
+438
+00:20:17,200 --> 00:20:18,279
+if you're paying for it,
+
+439
+00:20:18,279 --> 00:20:20,880
+if it's included in your plan,
+
+440
+00:20:20,880 --> 00:20:22,640
+but those are questions
+
+441
+00:20:22,640 --> 00:20:25,920
+that our client services department can answer
+
+442
+00:20:25,920 --> 00:20:26,759
+and let you know
+
+443
+00:20:26,759 --> 00:20:28,680
+if it's gonna cost you something or not.
+
+444
+00:20:28,680 --> 00:20:30,920
+But if you don't find portfolio maestro
+
+445
+00:20:30,920 --> 00:20:33,279
+right here in the apps section,
+
+446
+00:20:33,279 --> 00:20:35,039
+client services can add that for you,
+
+447
+00:20:35,039 --> 00:20:38,240
+or you can go to the trade station client center
+
+448
+00:20:38,240 --> 00:20:42,680
+and find trade station additional services.
+
+449
+00:20:42,680 --> 00:20:46,799
+And I believe portfolio maestro should be listed there.
+
+450
+00:20:46,799 --> 00:20:51,890
+All right, so let's go ahead and check my settings here.
+
+451
+00:20:52,049 --> 00:20:54,490
+So we already talked about changing inputs,
+
+452
+00:20:54,490 --> 00:20:55,769
+which I'm not gonna do.
+
+453
+00:20:55,769 --> 00:20:58,529
+I'm gonna just use it the way that it is.
+
+454
+00:20:58,529 --> 00:21:01,769
+Right here, the buttons allow me to add more strategies,
+
+455
+00:21:01,769 --> 00:21:04,130
+remove any of the strategies that I've added.
+
+456
+00:21:04,130 --> 00:21:06,049
+We're going into the settings of the strategy.
+
+457
+00:21:06,049 --> 00:21:08,529
+Let's go and take a look at some other settings,
+
+458
+00:21:08,529 --> 00:21:10,450
+because here in general,
+
+459
+00:21:10,450 --> 00:21:14,170
+you can specify commissions
+
+460
+00:21:14,170 --> 00:21:17,049
+if you're paying any commissions on stocks.
+
+461
+00:21:17,049 --> 00:21:20,650
+You can also do some back testing resolution
+
+462
+00:21:20,650 --> 00:21:22,049
+if you want to.
+
+463
+00:21:22,049 --> 00:21:25,089
+This is not a class where we talk about resolution.
+
+464
+00:21:25,089 --> 00:21:27,490
+I have a whole class talking about
+
+465
+00:21:27,490 --> 00:21:30,809
+look inside bar back testing and back testing resolution,
+
+466
+00:21:30,809 --> 00:21:34,410
+which goes into details on why you would want to use it.
+
+467
+00:21:34,410 --> 00:21:37,049
+But for now, we're just gonna leave it the way it is.
+
+468
+00:21:37,049 --> 00:21:40,000
+We're not gonna turn that feature on.
+
+469
+00:21:40,000 --> 00:21:41,279
+And position limits,
+
+470
+00:21:41,279 --> 00:21:44,680
+this allows you to enter multiple times
+
+471
+00:21:44,680 --> 00:21:47,960
+in the same direction as the currently held position.
+
+472
+00:21:47,960 --> 00:21:51,950
+So in simple words,
+
+473
+00:21:51,950 --> 00:21:53,829
+if the MACD generates an entry,
+
+474
+00:21:53,829 --> 00:21:58,069
+it's gonna buy and take you long on that security.
+
+475
+00:21:58,069 --> 00:22:02,029
+But if it meets the criteria again a few days later,
+
+476
+00:22:02,029 --> 00:22:05,069
+it's gonna buy again and increase your position size.
+
+477
+00:22:05,069 --> 00:22:07,589
+So that's what position limits allows you to do.
+
+478
+00:22:07,589 --> 00:22:09,630
+It's a pyramiding strategy
+
+479
+00:22:09,630 --> 00:22:13,670
+where your position size continuously increases
+
+480
+00:22:13,670 --> 00:22:16,829
+as the market conditions are in your favor,
+
+481
+00:22:16,829 --> 00:22:18,950
+or at least going in the direction of the strategy.
+
+482
+00:22:18,950 --> 00:22:21,990
+So every time that the strategy generates a signal
+
+483
+00:22:21,990 --> 00:22:24,069
+is going to increase your position size.
+
+484
+00:22:24,069 --> 00:22:27,220
+If you don't turn this on,
+
+485
+00:22:27,220 --> 00:22:29,140
+the strategy will only take one trade
+
+486
+00:22:29,140 --> 00:22:30,779
+in one direction at a time.
+
+487
+00:22:30,779 --> 00:22:34,710
+So if it enters long based on the MACD,
+
+488
+00:22:34,710 --> 00:22:36,190
+it will not do anything else
+
+489
+00:22:36,190 --> 00:22:39,150
+until it exits that long position.
+
+490
+00:22:39,150 --> 00:22:41,750
+It will not enter until it exits.
+
+491
+00:22:41,750 --> 00:22:44,950
+So that's what position limits does.
+
+492
+00:22:44,950 --> 00:22:49,950
+But notice that the same strategy settings
+
+493
+00:22:49,950 --> 00:22:52,269
+that you find on the platform
+
+494
+00:22:52,269 --> 00:22:55,589
+when you back test strategies are found here.
+
+495
+00:22:55,589 --> 00:22:58,549
+I'm not sure how familiar you are with strategy,
+
+496
+00:22:58,549 --> 00:23:01,109
+back testing, but a lot of that functionality
+
+497
+00:23:01,109 --> 00:23:03,950
+that you find when you're testing a strategy
+
+498
+00:23:03,950 --> 00:23:06,190
+on an individual stock
+
+499
+00:23:06,190 --> 00:23:08,269
+are also available here in Portfolio Maestro,
+
+500
+00:23:08,269 --> 00:23:10,269
+which makes the tool very robust
+
+501
+00:23:10,269 --> 00:23:12,710
+because then you can account for other factors
+
+502
+00:23:12,710 --> 00:23:14,710
+like commissions, slippage,
+
+503
+00:23:14,710 --> 00:23:17,349
+anything that may affect the strategy performance.
+
+504
+00:23:17,349 --> 00:23:19,069
+In the quantity box, of course,
+
+505
+00:23:19,069 --> 00:23:22,910
+you can change the fixed amount.
+
+506
+00:23:22,910 --> 00:23:24,710
+I'm just gonna leave it.
+
+507
+00:23:24,710 --> 00:23:28,109
+This is a fixed amount.
+
+508
+00:23:28,109 --> 00:23:31,759
+What I'm gonna do is since I'm gonna...
+
+509
+00:23:31,759 --> 00:23:34,079
+The idea here is that I'm going to apply the strategy
+
+510
+00:23:34,079 --> 00:23:36,759
+to a basket of symbols
+
+511
+00:23:36,759 --> 00:23:41,319
+and every symbol will have a different price, of course.
+
+512
+00:23:41,319 --> 00:23:43,440
+So if I trade 100 shares,
+
+513
+00:23:43,440 --> 00:23:45,960
+the risk on any single position
+
+514
+00:23:45,960 --> 00:23:49,160
+is going to be different when compared to another
+
+515
+00:23:49,160 --> 00:23:51,160
+because of the price of the shares.
+
+516
+00:23:51,160 --> 00:23:54,680
+So if I set my amount per trade
+
+517
+00:23:54,680 --> 00:23:57,599
+on a fixed dollar amount and I say,
+
+518
+00:23:57,680 --> 00:24:07,230
+let me trade $10,000 per position.
+
+519
+00:24:08,420 --> 00:24:10,220
+So if you're trading, for example,
+
+520
+00:24:10,220 --> 00:24:14,339
+a stock like Tesla that is trading at $250,
+
+521
+00:24:14,339 --> 00:24:18,130
+that would only give you how many shares?
+
+522
+00:24:18,130 --> 00:24:22,970
+That would only give you about 10, like 40 shares?
+
+523
+00:24:22,970 --> 00:24:25,009
+Is my math correct?
+
+524
+00:24:25,009 --> 00:24:28,490
+So we can do amounts per trade.
+
+525
+00:24:28,490 --> 00:24:31,690
+So invest $10,000 per position.
+
+526
+00:24:31,690 --> 00:24:33,769
+I'm gonna round down to the nearest,
+
+527
+00:24:33,769 --> 00:24:40,849
+let's go here, 10 shares and minimum number
+
+528
+00:24:40,849 --> 00:24:42,089
+to make sure that you adjust those
+
+529
+00:24:42,089 --> 00:24:44,890
+because if you're trading Tesla, for example,
+
+530
+00:24:44,890 --> 00:24:47,849
+and you're only investing $10,000,
+
+531
+00:24:47,849 --> 00:24:50,410
+if you've minimum, if it's 100 shares,
+
+532
+00:24:50,410 --> 00:24:51,809
+it won't put on that trade
+
+533
+00:24:51,809 --> 00:24:56,809
+because 100 shares of Tesla is going to cost you $25,000
+
+534
+00:24:58,009 --> 00:25:00,650
+and you're saying only invest 10,000.
+
+535
+00:25:00,650 --> 00:25:04,650
+So if you wanna trade $10,000 worth of Tesla,
+
+536
+00:25:04,650 --> 00:25:08,250
+make sure that your minimum trade size here reflects that
+
+537
+00:25:08,250 --> 00:25:10,849
+so that it's able to place that trade.
+
+538
+00:25:10,849 --> 00:25:13,170
+All right, I wanna click okay.
+
+539
+00:25:14,950 --> 00:25:16,990
+By the way, on the back testing,
+
+540
+00:25:16,990 --> 00:25:19,269
+we have some other check boxes here
+
+541
+00:25:19,269 --> 00:25:22,589
+that are brought over from the strategy engine
+
+542
+00:25:22,589 --> 00:25:24,430
+on the trade station platform.
+
+543
+00:25:24,430 --> 00:25:28,190
+I also do a class on the back testing settings,
+
+544
+00:25:28,190 --> 00:25:32,509
+not the place here for that explanation,
+
+545
+00:25:32,509 --> 00:25:35,789
+but if you have to configure the strategy,
+
+546
+00:25:35,789 --> 00:25:37,230
+then please take a look
+
+547
+00:25:37,230 --> 00:25:40,829
+at my other strategy trading presentations.
+
+548
+00:25:40,829 --> 00:25:43,240
+And that's it, I'm gonna click okay.
+
+549
+00:25:43,240 --> 00:25:46,200
+All right, so that's, I have the strategy.
+
+550
+00:25:46,200 --> 00:25:48,980
+I have the trade size already set up.
+
+551
+00:25:48,980 --> 00:25:52,529
+So now I'm gonna go here to the symbol list tab
+
+552
+00:25:52,529 --> 00:25:54,710
+because now I have to select the symbols
+
+553
+00:25:54,710 --> 00:25:57,849
+that I want to apply this strategy on.
+
+554
+00:25:57,849 --> 00:26:00,950
+So I'm gonna click on plus, add symbol.
+
+555
+00:26:00,950 --> 00:26:03,069
+Notice that we get access to the trade station
+
+556
+00:26:03,069 --> 00:26:06,230
+prepackaged list of symbols and any symbol list
+
+557
+00:26:06,230 --> 00:26:08,549
+that you've created yourself.
+
+558
+00:26:08,549 --> 00:26:11,549
+So if I go here to trade station symbol lists,
+
+559
+00:26:11,549 --> 00:26:13,829
+this is where, I'm sorry,
+
+560
+00:26:13,829 --> 00:26:15,710
+not the trade station symbol lists,
+
+561
+00:26:15,710 --> 00:26:18,150
+the trade station custom symbol list.
+
+562
+00:26:18,150 --> 00:26:20,390
+This is where the custom symbol lists
+
+563
+00:26:20,390 --> 00:26:22,869
+that you create would be listed.
+
+564
+00:26:25,109 --> 00:26:27,509
+I have a few here that I've created myself,
+
+565
+00:26:27,509 --> 00:26:30,549
+depending on the presentation that I have,
+
+566
+00:26:30,549 --> 00:26:34,329
+but you can go to the other categories here
+
+567
+00:26:34,329 --> 00:26:36,069
+if you want to scan.
+
+568
+00:26:36,069 --> 00:26:37,430
+I mean, if you wanna apply the strategy
+
+569
+00:26:37,430 --> 00:26:38,990
+on a particular sector,
+
+570
+00:26:38,990 --> 00:26:41,190
+or if you wanna do an index component,
+
+571
+00:26:41,190 --> 00:26:45,569
+notice that let's do the NASDAQ.
+
+572
+00:26:45,569 --> 00:26:49,049
+Let's not choose something as big as the 100
+
+573
+00:26:49,049 --> 00:26:52,970
+because that would mean that there's a potential
+
+574
+00:26:52,970 --> 00:26:58,259
+for you to have a position on each one of these 100 symbols.
+
+575
+00:26:59,220 --> 00:27:04,140
+If we specify the trade size to be $10,000 worth
+
+576
+00:27:04,140 --> 00:27:08,819
+and you multiply 10,000 by 100 symbols,
+
+577
+00:27:08,819 --> 00:27:12,460
+we are talking about how much?
+
+578
+00:27:12,460 --> 00:27:14,619
+We're talking about a million dollars
+
+579
+00:27:14,619 --> 00:27:16,339
+that you need in your account
+
+580
+00:27:16,339 --> 00:27:20,059
+in order to maintain a $10,000 position
+
+581
+00:27:20,059 --> 00:27:21,019
+in each one of these symbols.
+
+582
+00:27:21,019 --> 00:27:22,059
+Does that make sense?
+
+583
+00:27:22,059 --> 00:27:25,619
+So always think in terms of what is my account
+
+584
+00:27:26,460 --> 00:27:28,299
+capable of trading?
+
+585
+00:27:28,299 --> 00:27:30,019
+Look at your funds and make sure
+
+586
+00:27:30,019 --> 00:27:31,980
+that you're setting up your back test
+
+587
+00:27:31,980 --> 00:27:35,539
+in a way that you would be able to trade it.
+
+588
+00:27:35,539 --> 00:27:37,880
+So let me not choose the 100.
+
+589
+00:27:37,880 --> 00:27:40,660
+Let me go into the Dow Jones instead
+
+590
+00:27:40,660 --> 00:27:43,420
+and select the Dow Jones Industrial.
+
+591
+00:27:43,420 --> 00:27:46,519
+Let's see how it works in those 30.
+
+592
+00:27:46,519 --> 00:27:49,019
+It says 31 symbols in parentheses
+
+593
+00:27:49,019 --> 00:27:52,940
+because it also includes the symbol for the index itself,
+
+594
+00:27:52,940 --> 00:27:54,980
+dollar sign INDU.
+
+595
+00:27:54,980 --> 00:27:57,779
+Dollar sign INDU cannot be traded.
+
+596
+00:27:57,779 --> 00:28:00,380
+So I'm gonna look for a way to remove
+
+597
+00:28:00,380 --> 00:28:02,619
+that symbol from my test.
+
+598
+00:28:06,099 --> 00:28:09,440
+So John is asking how can you limit
+
+599
+00:28:09,440 --> 00:28:11,940
+the total amount traded to 100K?
+
+600
+00:28:11,940 --> 00:28:14,400
+That's a good question, John.
+
+601
+00:28:14,400 --> 00:28:17,259
+And when you're using strategies on trade station,
+
+602
+00:28:17,259 --> 00:28:21,819
+it's interesting because the strategy will assume
+
+603
+00:28:21,819 --> 00:28:26,019
+that you have enough money in your account to trade.
+
+604
+00:28:26,019 --> 00:28:29,220
+Now, when you do a portfolio back test,
+
+605
+00:28:29,220 --> 00:28:31,380
+there are some settings that you can tweak
+
+606
+00:28:31,380 --> 00:28:34,099
+in order to stop the strategy from trading
+
+607
+00:28:34,099 --> 00:28:37,920
+after a certain, whatever, number of positions
+
+608
+00:28:37,920 --> 00:28:41,460
+or after a capital has been invested.
+
+609
+00:28:41,460 --> 00:28:45,420
+So there are some ways that you can limit the portfolio.
+
+610
+00:28:45,420 --> 00:28:48,819
+However, on the initial stages of back testing,
+
+611
+00:28:49,099 --> 00:28:53,740
+there's no maximum amount that you can trade.
+
+612
+00:28:53,740 --> 00:28:55,740
+The strategy will assume that you can trade everything.
+
+613
+00:28:55,740 --> 00:28:57,900
+So if you say, like for example, I just did,
+
+614
+00:28:57,900 --> 00:29:01,539
+I told the strategy, I want you to trade $10,000
+
+615
+00:29:01,539 --> 00:29:03,460
+worth of every symbol.
+
+616
+00:29:03,460 --> 00:29:05,940
+And it'll assume that I have enough money in my account
+
+617
+00:29:05,940 --> 00:29:09,079
+to trade $10,000 worth of each symbol.
+
+618
+00:29:09,079 --> 00:29:11,940
+So if I supply 100 symbols, of course,
+
+619
+00:29:11,940 --> 00:29:14,799
+I'll need a million dollars in my account.
+
+620
+00:29:14,799 --> 00:29:15,819
+So those are the types of things
+
+621
+00:29:15,819 --> 00:29:17,960
+that you have to think about
+
+622
+00:29:17,960 --> 00:29:20,400
+when you're setting up the strategy
+
+623
+00:29:20,400 --> 00:29:23,480
+so that it's realistic to what your account is
+
+624
+00:29:23,480 --> 00:29:25,319
+and the funds that you have.
+
+625
+00:29:25,319 --> 00:29:28,079
+Of course, as I said just a moment ago,
+
+626
+00:29:28,079 --> 00:29:29,839
+there are some other constraints
+
+627
+00:29:29,839 --> 00:29:31,839
+and some other settings that you can turn on,
+
+628
+00:29:31,839 --> 00:29:34,039
+which is the topic that I'm going to cover
+
+629
+00:29:34,039 --> 00:29:36,519
+in the class of October 10th.
+
+630
+00:29:36,519 --> 00:29:39,480
+So here I'm going to select the 31 symbols,
+
+631
+00:29:39,480 --> 00:29:42,359
+even though there's one here that cannot be traded.
+
+632
+00:29:42,359 --> 00:29:45,839
+And let's see if I click OK here,
+
+633
+00:29:45,839 --> 00:29:50,619
+it adds the symbol list right here at the very top.
+
+634
+00:29:50,619 --> 00:29:53,829
+I'm able to expand it.
+
+635
+00:29:53,829 --> 00:29:56,509
+It gives me a description of each one of the symbols
+
+636
+00:29:56,509 --> 00:29:58,269
+that are added here to this group.
+
+637
+00:29:58,269 --> 00:30:00,029
+You can see the corporations.
+
+638
+00:30:00,029 --> 00:30:06,240
+I believe that I can, let's see,
+
+639
+00:30:06,240 --> 00:30:07,940
+if I select this one,
+
+640
+00:30:10,849 --> 00:30:16,039
+so this just gives me the properties for the symbol,
+
+641
+00:30:16,039 --> 00:30:18,000
+not what I wanted to do.
+
+642
+00:30:18,000 --> 00:30:21,190
+What I want to do, let's see, remove symbol,
+
+643
+00:30:21,190 --> 00:30:22,029
+confirm the list.
+
+644
+00:30:22,029 --> 00:30:24,390
+Are you sure you want to remove the selected symbol list?
+
+645
+00:30:24,390 --> 00:30:26,150
+I don't want to remove the symbol list.
+
+646
+00:30:26,150 --> 00:30:27,950
+I just want to remove a symbol.
+
+647
+00:30:27,950 --> 00:30:30,250
+Maybe it's not done here.
+
+648
+00:30:31,630 --> 00:30:33,440
+Interval settings.
+
+649
+00:30:33,440 --> 00:30:35,119
+All right, this is something else.
+
+650
+00:30:35,119 --> 00:30:36,640
+We'll look at the settings
+
+651
+00:30:36,640 --> 00:30:38,880
+and see how we can manage the symbol list.
+
+652
+00:30:38,880 --> 00:30:40,440
+I think I can do it later,
+
+653
+00:30:40,440 --> 00:30:42,720
+but the initial report is going to assume
+
+654
+00:30:42,720 --> 00:30:47,720
+that I'm able to trade the Dow Jones index when I can't.
+
+655
+00:30:47,859 --> 00:30:50,039
+Okay, let's go and take a look at the settings here.
+
+656
+00:30:50,039 --> 00:30:53,400
+You probably saw that I have interval settings.
+
+657
+00:30:53,400 --> 00:30:56,400
+So this is a, I'm going to do a daily back test.
+
+658
+00:30:56,400 --> 00:30:59,599
+So all the symbols are going to be loading daily bars
+
+659
+00:30:59,599 --> 00:31:02,079
+and the strategy is going to look at those daily bars.
+
+660
+00:31:02,079 --> 00:31:03,910
+I'm just going to click okay.
+
+661
+00:31:03,910 --> 00:31:09,529
+And at this point, these are all equities.
+
+662
+00:31:09,529 --> 00:31:11,970
+I'm not going to use additional data series.
+
+663
+00:31:13,210 --> 00:31:14,890
+Money management and ranking
+
+664
+00:31:14,890 --> 00:31:17,490
+are the features that I talked to you about.
+
+665
+00:31:17,490 --> 00:31:21,650
+I'm going to go into detail on those features
+
+666
+00:31:21,650 --> 00:31:24,130
+on the October 10th presentation.
+
+667
+00:31:24,130 --> 00:31:27,369
+But I just created what's called a strategy group,
+
+668
+00:31:27,369 --> 00:31:31,210
+which is a combination of strategies with symbols.
+
+669
+00:31:31,210 --> 00:31:33,650
+Now I'm going to build a portfolio
+
+670
+00:31:33,650 --> 00:31:36,529
+and I'm going to have additional settings that I can tweak.
+
+671
+00:31:36,529 --> 00:31:41,329
+So let's go over here to my manage portfolio button.
+
+672
+00:31:41,329 --> 00:31:43,329
+Notice that we're switching the button here.
+
+673
+00:31:43,329 --> 00:31:48,789
+And in here, I'm going to add, not add,
+
+674
+00:31:48,789 --> 00:31:51,150
+because what you see here,
+
+675
+00:31:51,150 --> 00:31:55,349
+this is a portfolio called sample portfolio two.
+
+676
+00:31:55,349 --> 00:31:58,910
+So it automatically loads a portfolio from the bottom
+
+677
+00:31:58,910 --> 00:32:00,470
+and I don't want to modify it.
+
+678
+00:32:00,470 --> 00:32:02,549
+So I'm just going to click over here at the very top
+
+679
+00:32:02,549 --> 00:32:03,950
+where it says new.
+
+680
+00:32:03,950 --> 00:32:07,670
+Again, we did it once when we created the strategy group.
+
+681
+00:32:07,670 --> 00:32:09,470
+Now we're doing it a second time
+
+682
+00:32:09,470 --> 00:32:11,509
+to create what's called the portfolio.
+
+683
+00:32:11,509 --> 00:32:17,759
+And this portfolio is going to be the MACD ATR trail.
+
+684
+00:32:17,880 --> 00:32:21,509
+And I'm just going to say DAO 30.
+
+685
+00:32:21,509 --> 00:32:23,470
+So I know that it's a back test.
+
+686
+00:32:23,470 --> 00:32:25,910
+The portfolio is a back test on the DAO 30.
+
+687
+00:32:25,910 --> 00:32:28,440
+I'm going to click OK.
+
+688
+00:32:28,440 --> 00:32:30,839
+Notice that it blanks out the top panel
+
+689
+00:32:30,839 --> 00:32:33,160
+because at this point it just creates
+
+690
+00:32:33,160 --> 00:32:35,960
+like a shell of the portfolio.
+
+691
+00:32:35,960 --> 00:32:38,440
+I need to bring in the strategy group
+
+692
+00:32:38,440 --> 00:32:40,440
+that I created just a moment ago.
+
+693
+00:32:40,440 --> 00:32:42,279
+So I'm going to click on this plus button
+
+694
+00:32:42,319 --> 00:32:45,220
+to add strategy group.
+
+695
+00:32:45,220 --> 00:32:46,900
+And you can see the list of strategy groups.
+
+696
+00:32:46,900 --> 00:32:51,579
+The one that I created was named MACD and ATR trail.
+
+697
+00:32:51,579 --> 00:32:53,220
+I'm going to click OK.
+
+698
+00:32:53,220 --> 00:32:55,059
+And here we see the two strategies
+
+699
+00:32:55,059 --> 00:32:57,579
+that we have in the strategy group
+
+700
+00:32:57,579 --> 00:32:58,940
+and we have the symbol here.
+
+701
+00:32:58,940 --> 00:33:02,470
+So we can expand and see all the symbols.
+
+702
+00:33:02,470 --> 00:33:04,630
+We can expand the strategies as well
+
+703
+00:33:04,630 --> 00:33:08,750
+and see the parameters of each one of those strategies.
+
+704
+00:33:08,750 --> 00:33:11,640
+You can remove the strategy group.
+
+705
+00:33:11,640 --> 00:33:14,279
+And at this point you have two buttons.
+
+706
+00:33:14,279 --> 00:33:16,240
+You have portfolio settings.
+
+707
+00:33:16,240 --> 00:33:18,799
+And over here on the right you have back test portfolio.
+
+708
+00:33:18,799 --> 00:33:20,759
+Let's go into portfolio settings
+
+709
+00:33:20,759 --> 00:33:23,119
+to see some of the things we can do.
+
+710
+00:33:23,119 --> 00:33:27,880
+Constraints and portfolio stops
+
+711
+00:33:27,880 --> 00:33:30,480
+are also two of the things we're going to talk about
+
+712
+00:33:30,480 --> 00:33:33,039
+on October 10th.
+
+713
+00:33:33,039 --> 00:33:38,039
+These are settings that you can apply to a portfolio level
+
+714
+00:33:39,039 --> 00:33:42,240
+and not on an individual strategy.
+
+715
+00:33:42,240 --> 00:33:45,160
+Now the MACD, LE and the ATR trail
+
+716
+00:33:45,160 --> 00:33:46,880
+that we selected earlier
+
+717
+00:33:46,880 --> 00:33:49,759
+is going to run on individual symbols.
+
+718
+00:33:49,759 --> 00:33:53,720
+But these other settings, constraints and portfolio stops
+
+719
+00:33:53,720 --> 00:33:56,200
+are set at the portfolio level,
+
+720
+00:33:56,200 --> 00:33:59,960
+not looking at individual symbols.
+
+721
+00:33:59,960 --> 00:34:03,160
+But here in the general tab, this is all fine.
+
+722
+00:34:03,160 --> 00:34:05,710
+I'm going to click OK.
+
+723
+00:34:05,710 --> 00:34:09,949
+All right, I'm going to go into...
+
+724
+00:34:09,949 --> 00:34:13,349
+I have a delete button here.
+
+725
+00:34:13,349 --> 00:34:14,190
+No?
+
+726
+00:34:14,190 --> 00:34:17,389
+So let's go into the back test portfolio dialog.
+
+727
+00:34:17,389 --> 00:34:20,309
+I'm just clicking on this back test portfolio.
+
+728
+00:34:21,989 --> 00:34:25,469
+I see information about what this is going to do.
+
+729
+00:34:25,469 --> 00:34:28,349
+So let me give this report a name.
+
+730
+00:34:28,349 --> 00:34:34,469
+MACD ATR trail on the Dow 30.
+
+731
+00:34:35,960 --> 00:34:38,360
+The initial capital that you see here,
+
+732
+00:34:38,360 --> 00:34:42,480
+you may think that it's what John was asking about.
+
+733
+00:34:42,480 --> 00:34:46,639
+John was asking, how do I limit my strategy or my portfolio
+
+734
+00:34:46,639 --> 00:34:49,599
+so that it doesn't trade more than $100,000?
+
+735
+00:34:49,599 --> 00:34:52,800
+You may think that this is that, but it's not.
+
+736
+00:34:52,800 --> 00:34:55,719
+The initial capital that you see right here,
+
+737
+00:34:55,719 --> 00:34:57,679
+it's only to calculate
+
+738
+00:34:57,679 --> 00:35:00,480
+what is called the return on initial capital.
+
+739
+00:35:00,480 --> 00:35:04,039
+So if my strategy is able to make $10,000
+
+740
+00:35:04,039 --> 00:35:06,679
+on a $100,000 capital,
+
+741
+00:35:06,679 --> 00:35:09,800
+it's just going to be a 10% return on initial capital.
+
+742
+00:35:09,800 --> 00:35:12,000
+So it's only used in the calculation
+
+743
+00:35:12,000 --> 00:35:13,800
+of return on initial capital.
+
+744
+00:35:13,800 --> 00:35:16,920
+So if you want to make this 100,000,
+
+745
+00:35:16,920 --> 00:35:19,599
+what you really have in your account, you can,
+
+746
+00:35:19,599 --> 00:35:23,000
+so that you can get those return on initial capital
+
+747
+00:35:23,000 --> 00:35:25,760
+calculations to be a little bit more accurate.
+
+748
+00:35:25,760 --> 00:35:28,960
+But remember that if you see return on initial capital
+
+749
+00:35:28,960 --> 00:35:32,000
+on the strategy performance report or any reporting
+
+750
+00:35:32,000 --> 00:35:35,880
+is based on this starting point, $100,000.
+
+751
+00:35:35,880 --> 00:35:38,000
+This is going two years back.
+
+752
+00:35:38,000 --> 00:35:41,599
+On the symbols that we looked at
+
+753
+00:35:41,599 --> 00:35:44,639
+on the TradeStation platform, we were going back five years.
+
+754
+00:35:44,639 --> 00:35:48,159
+So it's okay for us to go back five years.
+
+755
+00:35:48,159 --> 00:35:51,320
+Always be mindful of the number of symbols
+
+756
+00:35:51,320 --> 00:35:53,199
+you have in your portfolio.
+
+757
+00:35:53,199 --> 00:35:56,199
+I only have 30 symbols or 31 to be exact.
+
+758
+00:35:56,199 --> 00:35:58,800
+I'm going to try to remove that index symbol,
+
+759
+00:35:58,800 --> 00:35:59,880
+but I have 30 symbols.
+
+760
+00:35:59,880 --> 00:36:02,960
+It's not such a big deal to load five years
+
+761
+00:36:02,960 --> 00:36:05,800
+of historical data on each one of these symbols.
+
+762
+00:36:05,800 --> 00:36:09,079
+I'm only loading daily bars.
+
+763
+00:36:09,079 --> 00:36:12,280
+If I were loading five years of one minute,
+
+764
+00:36:12,280 --> 00:36:15,760
+maybe it's a different story.
+
+765
+00:36:15,760 --> 00:36:19,239
+But I'm not saying that you couldn't because you can.
+
+766
+00:36:19,239 --> 00:36:22,679
+I mean, we have intraday data here in Portfolio Maestro
+
+767
+00:36:22,679 --> 00:36:25,000
+and you can do intraday back testing.
+
+768
+00:36:25,000 --> 00:36:28,360
+But for the example we're working on, this is okay.
+
+769
+00:36:28,360 --> 00:36:31,159
+Five years of daily data on 30 symbols
+
+770
+00:36:31,159 --> 00:36:35,440
+is not going to be very taxing on the report here.
+
+771
+00:36:35,519 --> 00:36:38,840
+You also have access to other advanced settings
+
+772
+00:36:38,840 --> 00:36:41,679
+that you find on the TradeStation platform.
+
+773
+00:36:41,679 --> 00:36:45,960
+One of my prior strategy trading classes
+
+774
+00:36:45,960 --> 00:36:48,760
+that we did together was on optimization.
+
+775
+00:36:48,760 --> 00:36:51,000
+And we talked about the different methods
+
+776
+00:36:51,000 --> 00:36:53,079
+of optimization and so forth.
+
+777
+00:36:53,079 --> 00:36:55,639
+But that's, of course, a different class, you know?
+
+778
+00:36:56,639 --> 00:36:57,920
+And it's interesting that I always refer
+
+779
+00:36:57,920 --> 00:37:00,440
+to different classes just that it's impossible
+
+780
+00:37:00,440 --> 00:37:03,119
+to be able to fit everything in just one session.
+
+781
+00:37:03,119 --> 00:37:05,519
+And I'm just referring to these other classes
+
+782
+00:37:05,519 --> 00:37:09,079
+because I want you to be aware that we've done presentations
+
+783
+00:37:09,079 --> 00:37:13,320
+on a lot of these features and there's a lot
+
+784
+00:37:13,320 --> 00:37:15,880
+of educational content that you can reference
+
+785
+00:37:15,880 --> 00:37:19,159
+if you need some additional help, okay?
+
+786
+00:37:19,159 --> 00:37:20,760
+So we have the name here.
+
+787
+00:37:20,760 --> 00:37:23,760
+We have five years of historical data, okay?
+
+788
+00:37:23,760 --> 00:37:25,159
+This is all good.
+
+789
+00:37:25,159 --> 00:37:28,800
+I'm gonna leave my backtest type to standard strategy inputs.
+
+790
+00:37:28,800 --> 00:37:30,440
+I'm not changing anything here.
+
+791
+00:37:30,440 --> 00:37:32,480
+I'm just leaving everything the way it is.
+
+792
+00:37:32,480 --> 00:37:33,400
+And the symbols.
+
+793
+00:37:33,400 --> 00:37:38,909
+Oh, this is where I can exclude the dollar sign INDU
+
+794
+00:37:38,909 --> 00:37:43,000
+which I'm just gonna check the box here for exclude.
+
+795
+00:37:43,000 --> 00:37:49,440
+And there is another column here that says create.
+
+796
+00:37:49,440 --> 00:37:52,519
+Create is, I think it's create chart is what it says.
+
+797
+00:37:52,519 --> 00:37:53,800
+Yeah, create chart.
+
+798
+00:37:53,800 --> 00:37:58,360
+What it allows you to do, and this is interesting,
+
+799
+00:37:58,360 --> 00:38:01,559
+and we'll do it later, but I think it allows you
+
+800
+00:38:01,559 --> 00:38:05,400
+to see where the entries and exits are on a chart
+
+801
+00:38:06,440 --> 00:38:09,159
+because I mean, Portfolio Maestro doesn't have charting
+
+802
+00:38:09,159 --> 00:38:11,440
+like the Trade Station platform does.
+
+803
+00:38:11,440 --> 00:38:14,360
+And if you wanted to see a chart of the historical backtest,
+
+804
+00:38:14,360 --> 00:38:17,440
+then you have to make sure that these check boxes are checked.
+
+805
+00:38:18,360 --> 00:38:19,199
+Let's go ahead and do it.
+
+806
+00:38:19,199 --> 00:38:20,159
+I mean, it doesn't matter.
+
+807
+00:38:20,159 --> 00:38:21,800
+I'm just gonna click on this button that says
+
+808
+00:38:21,800 --> 00:38:25,119
+create all charts, okay?
+
+809
+00:38:25,119 --> 00:38:26,760
+So everything is checked.
+
+810
+00:38:26,760 --> 00:38:28,960
+I still have that check box on excluding
+
+811
+00:38:28,960 --> 00:38:32,630
+the dollar sign INDU, and I'm ready.
+
+812
+00:38:32,630 --> 00:38:36,309
+So all I need to do is click on perform backtest.
+
+813
+00:38:36,309 --> 00:38:39,590
+I just click it, and you can see that this initializes
+
+814
+00:38:39,590 --> 00:38:42,030
+and it's downloading historical data,
+
+815
+00:38:42,030 --> 00:38:44,269
+and you're gonna see that it doesn't take very long
+
+816
+00:38:44,269 --> 00:38:53,739
+for us to get the results.
+
+817
+00:38:53,739 --> 00:38:56,019
+Okay, the analysis is completed.
+
+818
+00:38:56,019 --> 00:39:02,159
+I'm gonna click on the button that says view report now.
+
+819
+00:39:02,159 --> 00:39:04,480
+One thing that I want you guys to notice is that
+
+820
+00:39:04,480 --> 00:39:06,280
+over here on the left-hand side,
+
+821
+00:39:07,159 --> 00:39:11,360
+I was moved from the portfolio section.
+
+822
+00:39:11,360 --> 00:39:13,400
+I was moved to the reporting section.
+
+823
+00:39:13,400 --> 00:39:15,239
+There's a reports tab here.
+
+824
+00:39:15,239 --> 00:39:17,880
+And we have, of course, the performance report.
+
+825
+00:39:17,880 --> 00:39:20,039
+We have an optimization report.
+
+826
+00:39:23,260 --> 00:39:25,940
+Interesting, my camera just died on me.
+
+827
+00:39:25,940 --> 00:39:28,940
+Okay, so we have optimization report
+
+828
+00:39:28,940 --> 00:39:30,380
+if you were running an optimization
+
+829
+00:39:30,380 --> 00:39:32,940
+within Portfolio Maestro, which you can.
+
+830
+00:39:34,059 --> 00:39:36,619
+And then we have some other reports here.
+
+831
+00:39:36,619 --> 00:39:39,980
+But what I wanna show you is these numbers.
+
+832
+00:39:39,980 --> 00:39:43,780
+This is an overall performance
+
+833
+00:39:43,780 --> 00:39:46,699
+on the 30 symbols combined.
+
+834
+00:39:46,699 --> 00:39:49,619
+Let's point out a few items here.
+
+835
+00:39:49,619 --> 00:39:53,219
+The total return is 86,506.
+
+836
+00:39:53,219 --> 00:39:57,219
+This is a total return when trading all 30 symbols.
+
+837
+00:39:57,219 --> 00:40:00,579
+You can see that gross profit,
+
+838
+00:40:00,579 --> 00:40:04,860
+it almost reached $300,000.
+
+839
+00:40:04,860 --> 00:40:08,590
+The loss was about $200,000.
+
+840
+00:40:08,590 --> 00:40:13,360
+So the profit factor right here is 1.42.
+
+841
+00:40:13,360 --> 00:40:16,519
+Okay, so for every dollar we made $1.42,
+
+842
+00:40:16,519 --> 00:40:18,559
+which a little low in my opinion,
+
+843
+00:40:18,559 --> 00:40:20,119
+but it's interesting that we're still
+
+844
+00:40:20,119 --> 00:40:23,869
+on a positive side of the strategy.
+
+845
+00:40:23,869 --> 00:40:25,590
+Notice the number of trades.
+
+846
+00:40:25,590 --> 00:40:27,429
+In a period of five years,
+
+847
+00:40:27,429 --> 00:40:30,070
+if you were trading all 30 symbols,
+
+848
+00:40:30,070 --> 00:40:32,869
+you would have traded 1,007 times
+
+849
+00:40:32,869 --> 00:40:35,789
+in that five-year time span.
+
+850
+00:40:35,789 --> 00:40:38,920
+We have a 43% profitability,
+
+851
+00:40:38,920 --> 00:40:43,920
+making 439 winning trades, 568 losing trades.
+
+852
+00:40:44,320 --> 00:40:46,480
+And remember, this is all numbers
+
+853
+00:40:46,480 --> 00:40:49,800
+on the overall performance of the portfolio.
+
+854
+00:40:49,800 --> 00:40:52,840
+Now, if you wanted to see the individual performance
+
+855
+00:40:52,840 --> 00:40:57,360
+and break down this total return per symbol,
+
+856
+00:40:57,360 --> 00:41:00,880
+you can go into the Trade Analysis tab.
+
+857
+00:41:00,880 --> 00:41:04,400
+Trade Analysis tab gives you similar numbers,
+
+858
+00:41:04,400 --> 00:41:07,159
+but here you have the ability to view hide.
+
+859
+00:41:07,159 --> 00:41:09,320
+Right here at the bottom right corner,
+
+860
+00:41:09,320 --> 00:41:10,679
+there's a view hide button.
+
+861
+00:41:10,679 --> 00:41:12,159
+I'm gonna click it.
+
+862
+00:41:12,159 --> 00:41:14,800
+And it just gives you a list of all the symbols
+
+863
+00:41:14,800 --> 00:41:16,599
+that make up this report.
+
+864
+00:41:16,599 --> 00:41:19,519
+I can click on this top checkbox next to symbol,
+
+865
+00:41:19,519 --> 00:41:21,760
+so that all the checkbox are highlighted,
+
+866
+00:41:21,760 --> 00:41:23,519
+and then I just click okay.
+
+867
+00:41:23,519 --> 00:41:26,800
+And this, of course, gives me a column
+
+868
+00:41:26,800 --> 00:41:28,880
+for each one of the symbols
+
+869
+00:41:28,880 --> 00:41:31,880
+that are part of the historical backtest.
+
+870
+00:41:31,880 --> 00:41:35,019
+And I believe these are,
+
+871
+00:41:35,019 --> 00:41:38,940
+I'm sure these are sorted in the way that they were traded.
+
+872
+00:41:38,940 --> 00:41:40,699
+That's why you have Johnson & Johnson
+
+873
+00:41:40,699 --> 00:41:42,260
+right here at the very beginning.
+
+874
+00:41:42,260 --> 00:41:43,380
+I don't think there's any,
+
+875
+00:41:43,380 --> 00:41:46,059
+I don't think it's sorted in any way
+
+876
+00:41:46,059 --> 00:41:49,460
+other than what was the first symbol that was traded.
+
+877
+00:41:49,460 --> 00:41:50,900
+Now, let's go here to the trade list
+
+878
+00:41:50,900 --> 00:41:52,420
+to confirm that theory.
+
+879
+00:41:52,420 --> 00:41:55,820
+I'm gonna go to the trade list and go over here.
+
+880
+00:41:55,820 --> 00:41:58,500
+This is back in 2018.
+
+881
+00:41:58,500 --> 00:42:02,139
+The first trade was done December 12th.
+
+882
+00:42:02,139 --> 00:42:03,420
+So 2018.
+
+883
+00:42:03,420 --> 00:42:04,860
+And you can see the symbol right here
+
+884
+00:42:04,860 --> 00:42:06,500
+is Johnson & Johnson.
+
+885
+00:42:06,500 --> 00:42:09,260
+So the order in which the columns are aligned
+
+886
+00:42:09,260 --> 00:42:12,500
+is the order in which the trades were generated.
+
+887
+00:42:12,500 --> 00:42:18,300
+And even though we go back five years,
+
+888
+00:42:18,579 --> 00:42:22,820
+so the chart should have loaded from September,
+
+889
+00:42:22,820 --> 00:42:25,380
+not December, the first trade is in December.
+
+890
+00:42:25,380 --> 00:42:29,250
+I'm not sure if you guys have done enough historical backtest
+
+891
+00:42:29,250 --> 00:42:34,090
+to have an understanding of why it started in December.
+
+892
+00:42:34,969 --> 00:42:36,409
+But maybe you know,
+
+893
+00:42:36,409 --> 00:42:40,210
+maybe you've heard of this term max bars back setting.
+
+894
+00:42:40,210 --> 00:42:42,289
+The strategy reserves an amount of data
+
+895
+00:42:42,289 --> 00:42:46,090
+at the beginning of the historical backtest for calculation.
+
+896
+00:42:46,090 --> 00:42:48,809
+And by default, that number's 50 bars.
+
+897
+00:42:48,809 --> 00:42:49,969
+And that's the reason why
+
+898
+00:42:49,969 --> 00:42:52,650
+we don't have earlier trades than December,
+
+899
+00:42:52,650 --> 00:42:55,730
+because that's when the strategy was able to generate trades.
+
+900
+00:42:55,730 --> 00:42:57,889
+But you can see the sequence of trades,
+
+901
+00:42:57,889 --> 00:43:00,730
+and you can see that it started with Johnson & Johnson,
+
+902
+00:43:00,730 --> 00:43:03,679
+and how many shares did it trade?
+
+903
+00:43:03,679 --> 00:43:07,159
+The price was 147 at that time,
+
+904
+00:43:09,320 --> 00:43:10,840
+right here, the quantity, 60 shares.
+
+905
+00:43:10,840 --> 00:43:12,639
+It was able to trade 60 shares.
+
+906
+00:43:12,639 --> 00:43:16,860
+Remember that in the trade size dialogue that we adjusted,
+
+907
+00:43:18,539 --> 00:43:22,860
+we specified that we wanted a $10,000 investment
+
+908
+00:43:22,860 --> 00:43:24,820
+on each one of these stocks,
+
+909
+00:43:24,820 --> 00:43:28,179
+and we wanted to round it down to 10 shares.
+
+910
+00:43:28,179 --> 00:43:31,219
+So you're not gonna see trades here that are lower than 10,
+
+911
+00:43:31,219 --> 00:43:33,340
+because we set that as a minimum.
+
+912
+00:43:37,309 --> 00:43:40,230
+And you don't see any odd number of shares.
+
+913
+00:43:40,230 --> 00:43:45,230
+So it's always rounded down to the nearest 10, 10 shares.
+
+914
+00:43:45,590 --> 00:43:47,829
+So you're not gonna see 61 or 62,
+
+915
+00:43:47,829 --> 00:43:49,829
+it's gonna round it down to 60.
+
+916
+00:43:49,829 --> 00:43:50,989
+So that's our first trade,
+
+917
+00:43:50,989 --> 00:43:55,469
+60 shares of Johnson & Johnson, not a profitable trade.
+
+918
+00:43:55,469 --> 00:43:58,829
+You can see that it lost $381 right here,
+
+919
+00:43:58,829 --> 00:44:01,510
+but you can see the history of all the trades
+
+920
+00:44:01,510 --> 00:44:02,949
+that were generated.
+
+921
+00:44:02,949 --> 00:44:04,269
+Pretty cool, huh?
+
+922
+00:44:04,269 --> 00:44:06,949
+Let's go here, and you have a lot of other tabs
+
+923
+00:44:06,949 --> 00:44:09,550
+that you can analyze in terms of performance.
+
+924
+00:44:09,550 --> 00:44:15,780
+You have returns on equity, equity table,
+
+925
+00:44:15,780 --> 00:44:18,019
+you have all the symbols visible here,
+
+926
+00:44:19,170 --> 00:44:21,329
+periodical returns,
+
+927
+00:44:21,329 --> 00:44:23,530
+the graphs, this is our equity curve line,
+
+928
+00:44:23,530 --> 00:44:26,070
+that's interesting,
+
+929
+00:44:26,070 --> 00:44:27,829
+and the settings for the strategy.
+
+930
+00:44:27,829 --> 00:44:29,949
+So the same performance metrics that you find
+
+931
+00:44:29,949 --> 00:44:32,780
+in the TradeStation platform
+
+932
+00:44:32,780 --> 00:44:34,460
+when you're developing a strategy
+
+933
+00:44:34,460 --> 00:44:35,940
+and you're looking at the strategy,
+
+934
+00:44:35,940 --> 00:44:36,780
+performance report,
+
+935
+00:44:36,780 --> 00:44:38,579
+you're gonna find all those same metrics
+
+936
+00:44:38,579 --> 00:44:41,579
+right here in Portfolio Maestro.
+
+937
+00:44:41,579 --> 00:44:43,219
+Another thing that I wanted to show you,
+
+938
+00:44:43,219 --> 00:44:45,539
+remember that checkbox that we checked
+
+939
+00:44:45,539 --> 00:44:47,139
+for us to be able to see a chart?
+
+940
+00:44:47,139 --> 00:44:51,960
+Let me go here to,
+
+941
+00:44:51,960 --> 00:44:55,239
+let me just see where I find that.
+
+942
+00:45:00,769 --> 00:45:01,610
+Okay, here we go.
+
+943
+00:45:01,610 --> 00:45:02,449
+At the very top,
+
+944
+00:45:02,449 --> 00:45:03,809
+you see where it says view trade charts?
+
+945
+00:45:03,809 --> 00:45:06,369
+I'm gonna click there,
+
+946
+00:45:06,369 --> 00:45:10,900
+and let me just see.
+
+947
+00:45:10,900 --> 00:45:14,440
+This gives me a window
+
+948
+00:45:14,440 --> 00:45:19,079
+with the strategy that I tested,
+
+949
+00:45:19,079 --> 00:45:21,920
+and here you can select the chart you want to see.
+
+950
+00:45:21,920 --> 00:45:23,960
+So if I wanna see a chart of Apple,
+
+951
+00:45:23,960 --> 00:45:27,079
+I just click on this little button for view chart,
+
+952
+00:45:27,079 --> 00:45:29,559
+and it opens up a chart for Apple.
+
+953
+00:45:29,559 --> 00:45:32,860
+Let me go ahead and exit out of this.
+
+954
+00:45:32,860 --> 00:45:34,219
+Oh, it actually closes it.
+
+955
+00:45:34,219 --> 00:45:35,539
+So let me go back in there.
+
+956
+00:45:35,539 --> 00:45:36,780
+View trade charts.
+
+957
+00:45:39,360 --> 00:45:40,559
+Let's go and open this up.
+
+958
+00:45:40,559 --> 00:45:42,079
+I'm gonna select Apple.
+
+959
+00:45:42,079 --> 00:45:44,019
+Let's view the chart.
+
+960
+00:45:44,019 --> 00:45:47,760
+How do I, let me move it out of the way.
+
+961
+00:45:47,760 --> 00:45:54,059
+All right, and in here in the chart,
+
+962
+00:45:54,059 --> 00:45:59,800
+I'm able to see the entries and exits of Apple.
+
+963
+00:45:59,920 --> 00:46:04,079
+This kinda, and it's not like trade station charting.
+
+964
+00:46:04,079 --> 00:46:07,360
+Let's get that straight.
+
+965
+00:46:07,360 --> 00:46:09,360
+But here, I'm able to see
+
+966
+00:46:09,360 --> 00:46:11,400
+what the strategy entered and exited.
+
+967
+00:46:11,400 --> 00:46:14,039
+You have the zoom out and the zoom in buttons here
+
+968
+00:46:14,039 --> 00:46:18,699
+if you wanted to get a little bit more detail, you know?
+
+969
+00:46:18,699 --> 00:46:21,019
+And of course, the time scale right here at the bottom.
+
+970
+00:46:21,019 --> 00:46:23,500
+Let me go ahead and exit out of this chart.
+
+971
+00:46:23,500 --> 00:46:26,980
+You want to, no, let's close this.
+
+972
+00:46:26,980 --> 00:46:28,260
+Okay, there we go, and close it.
+
+973
+00:46:28,260 --> 00:46:29,980
+So that's where you get the charting
+
+974
+00:46:29,980 --> 00:46:31,420
+if you wanted to see a chart.
+
+975
+00:46:32,340 --> 00:46:34,699
+I would rather go to the trade station platform
+
+976
+00:46:34,699 --> 00:46:37,940
+because I'm more familiar with the functionality there,
+
+977
+00:46:37,940 --> 00:46:39,739
+but this is the report.
+
+978
+00:46:39,739 --> 00:46:41,460
+So hopefully you got the steps.
+
+979
+00:46:41,460 --> 00:46:43,300
+You know, I just wanted to give you the introduction
+
+980
+00:46:43,300 --> 00:46:46,619
+on how to get Portfolio Maestro started.
+
+981
+00:46:46,619 --> 00:46:48,820
+First, you have to create the strategy group
+
+982
+00:46:48,820 --> 00:46:50,099
+with the symbols.
+
+983
+00:46:50,099 --> 00:46:52,500
+Then you have to create the portfolio.
+
+984
+00:46:52,500 --> 00:46:54,179
+You go into the settings of the portfolio
+
+985
+00:46:54,179 --> 00:46:55,619
+and you start the back test.
+
+986
+00:46:55,619 --> 00:46:58,820
+And then it just sends you here into the summary.
+
+987
+00:46:58,820 --> 00:47:01,059
+You can see that some symbols, of course,
+
+988
+00:47:01,059 --> 00:47:03,780
+have a negative return like Verizon
+
+989
+00:47:03,780 --> 00:47:06,619
+provided or generated a negative return.
+
+990
+00:47:06,619 --> 00:47:11,860
+Same for MMM, MMM.
+
+991
+00:47:11,860 --> 00:47:14,760
+You know, most of the symbols are positive,
+
+992
+00:47:14,760 --> 00:47:16,460
+which is interesting, you know?
+
+993
+00:47:19,000 --> 00:47:21,480
+Another thing that I wanted to show you is that
+
+994
+00:47:21,480 --> 00:47:23,960
+when you come over here to the trade log,
+
+995
+00:47:23,960 --> 00:47:25,480
+because one of the things that
+
+996
+00:47:25,480 --> 00:47:27,639
+Portfolio Maestro doesn't do is
+
+997
+00:47:27,639 --> 00:47:29,559
+it doesn't allow you to automate this.
+
+998
+00:47:29,559 --> 00:47:31,880
+Yes, it would be great for us to have the ability
+
+999
+00:47:31,880 --> 00:47:33,920
+to turn on a switch and say,
+
+1000
+00:47:33,920 --> 00:47:38,360
+okay, do your thing, run the strategy on 30 symbols,
+
+1001
+00:47:38,360 --> 00:47:42,360
+trade it based on my limitations,
+
+1002
+00:47:42,360 --> 00:47:45,239
+whether the limitations are trade size,
+
+1003
+00:47:45,239 --> 00:47:47,639
+constraints, portfolio stops,
+
+1004
+00:47:47,639 --> 00:47:49,440
+whatever it is that I want to set,
+
+1005
+00:47:49,440 --> 00:47:52,400
+turn it on and let the Portfolio Maestro tool
+
+1006
+00:47:52,400 --> 00:47:54,760
+automate my strategy, but it doesn't do that.
+
+1007
+00:47:54,760 --> 00:47:58,679
+But what it does do is give you a trace,
+
+1008
+00:47:58,679 --> 00:48:02,079
+not the trace log, orders report right here, orders report.
+
+1009
+00:48:02,079 --> 00:48:05,320
+So it does tell you what you need to do on a daily basis.
+
+1010
+00:48:05,320 --> 00:48:09,139
+For example, here it tells you that you needed to,
+
+1011
+00:48:10,679 --> 00:48:12,639
+UNH is United Healthcare, right?
+
+1012
+00:48:12,639 --> 00:48:17,639
+So you needed to sell the 20 shares at $482.
+
+1013
+00:48:18,599 --> 00:48:23,599
+This is the ATR LX was met yesterday.
+
+1014
+00:48:24,480 --> 00:48:26,840
+You can see the action date is yesterday.
+
+1015
+00:48:26,840 --> 00:48:31,039
+It doesn't use today's data because today hasn't closed yet.
+
+1016
+00:48:31,039 --> 00:48:34,360
+And the historical back test here is loading,
+
+1017
+00:48:34,360 --> 00:48:36,280
+of course, closed bars.
+
+1018
+00:48:36,280 --> 00:48:38,639
+So you can see all the signals that were generated
+
+1019
+00:48:38,639 --> 00:48:40,559
+as of yesterday.
+
+1020
+00:48:40,559 --> 00:48:43,559
+Well, yesterday was Monday at 4 p.m.
+
+1021
+00:48:43,559 --> 00:48:45,840
+And you have all your selling transactions.
+
+1022
+00:48:45,840 --> 00:48:47,159
+These are all selling transactions.
+
+1023
+00:48:47,159 --> 00:48:50,440
+We don't have any new trades going in.
+
+1024
+00:48:50,440 --> 00:48:53,349
+These are open orders.
+
+1025
+00:48:53,349 --> 00:48:57,030
+Positions, okay, you have your open orders.
+
+1026
+00:48:57,030 --> 00:48:59,789
+It gives you the specific price that you need to sell at
+
+1027
+00:48:59,789 --> 00:49:02,210
+based on the trailing stock.
+
+1028
+00:49:02,210 --> 00:49:03,730
+This is what it is.
+
+1029
+00:49:03,730 --> 00:49:05,289
+These are your trailing stock values
+
+1030
+00:49:05,289 --> 00:49:08,889
+based on the calculated ATR.
+
+1031
+00:49:08,889 --> 00:49:11,519
+These are your open positions.
+
+1032
+00:49:11,519 --> 00:49:15,539
+You can see that United Healthcare is right there.
+
+1033
+00:49:15,539 --> 00:49:18,619
+You entered, this is the opening price.
+
+1034
+00:49:18,619 --> 00:49:21,409
+You entered at $445.
+
+1035
+00:49:21,409 --> 00:49:27,500
+And you need a selling transaction at $482 or lower.
+
+1036
+00:49:29,130 --> 00:49:29,969
+What's the price?
+
+1037
+00:49:29,969 --> 00:49:33,050
+We need to find out what the price of United Healthcare
+
+1038
+00:49:33,050 --> 00:49:37,570
+is at the moment.
+
+1039
+00:49:37,570 --> 00:49:38,409
+Oh, $488.
+
+1040
+00:49:38,409 --> 00:49:39,969
+That's where the price is, $488.
+
+1041
+00:49:39,969 --> 00:49:42,730
+So you can see that you're setting your trailing stock
+
+1042
+00:49:42,730 --> 00:49:45,849
+already for this position you currently have.
+
+1043
+00:49:45,849 --> 00:49:48,519
+So based on the strategy,
+
+1044
+00:49:48,519 --> 00:49:51,119
+these are the positions that you currently have
+
+1045
+00:49:51,119 --> 00:49:52,880
+on your account.
+
+1046
+00:49:52,880 --> 00:49:55,920
+And these are the filled orders for today
+
+1047
+00:49:55,920 --> 00:49:56,920
+and the canceled orders.
+
+1048
+00:49:56,920 --> 00:50:00,079
+It does give you details on what you need to do
+
+1049
+00:50:00,079 --> 00:50:03,599
+to the strategy to be in sync with your report,
+
+1050
+00:50:03,599 --> 00:50:04,760
+which is pretty cool.
+
+1051
+00:50:04,760 --> 00:50:06,880
+Of course, you'd have to run it every single day
+
+1052
+00:50:06,880 --> 00:50:08,880
+at the very end of the day
+
+1053
+00:50:08,880 --> 00:50:12,159
+so you can get updated orders and updated positions.
+
+1054
+00:50:12,159 --> 00:50:13,880
+Remember that the strategy,
+
+1055
+00:50:13,880 --> 00:50:16,519
+the strategy is something that is calculated
+
+1056
+00:50:16,519 --> 00:50:18,599
+on the close of every bar.
+
+1057
+00:50:18,599 --> 00:50:22,360
+And if we're doing a strategy back test on daily bars,
+
+1058
+00:50:22,360 --> 00:50:24,440
+then the strategy gets generated
+
+1059
+00:50:24,440 --> 00:50:26,789
+at the close of every single day.
+
+1060
+00:50:26,789 --> 00:50:29,150
+And that's the reason why it says 4 p.m.
+
+1061
+00:50:29,150 --> 00:50:30,750
+And that's the reason why we're saying
+
+1062
+00:50:30,750 --> 00:50:32,030
+you need to run it every single day
+
+1063
+00:50:32,030 --> 00:50:34,349
+to get new orders, new reports.
+
+1064
+00:50:34,349 --> 00:50:38,030
+It doesn't run automatically is what we're trying to say,
+
+1065
+00:50:38,030 --> 00:50:41,349
+but it does give you which positions you should have open,
+
+1066
+00:50:41,349 --> 00:50:43,510
+which orders you should be submitting.
+
+1067
+00:50:43,510 --> 00:50:47,429
+And what orders to cancel and which orders to fill.
+
+1068
+00:50:47,429 --> 00:50:49,829
+So pretty, pretty cool.
+
+1069
+00:50:49,829 --> 00:50:54,559
+Let's see, how can you...
+
+1070
+00:50:54,559 --> 00:50:57,719
+Okay, so from Malton, from Malton, yes.
+
+1071
+00:50:57,719 --> 00:50:59,760
+Or Malone, I'm sorry.
+
+1072
+00:50:59,760 --> 00:51:00,960
+I need to put my glasses on.
+
+1073
+00:51:00,960 --> 00:51:03,719
+Is there a way to see individual total return
+
+1074
+00:51:03,719 --> 00:51:05,320
+to check which performance?
+
+1075
+00:51:05,320 --> 00:51:06,679
+Yes, exactly.
+
+1076
+00:51:06,679 --> 00:51:10,619
+We do that here on the performance report.
+
+1077
+00:51:10,619 --> 00:51:12,659
+Trade analysis is what we did here
+
+1078
+00:51:12,659 --> 00:51:14,940
+as we displayed every single column.
+
+1079
+00:51:15,019 --> 00:51:17,099
+We have this button here at the bottom right,
+
+1080
+00:51:17,099 --> 00:51:22,139
+which allows you to hide or enable.
+
+1081
+00:51:22,139 --> 00:51:24,659
+I'm just clicking on the checkbox here to add them,
+
+1082
+00:51:24,659 --> 00:51:27,099
+and I see the individual return.
+
+1083
+00:51:27,099 --> 00:51:29,219
+Jeff said, did you say that you cannot turn on
+
+1084
+00:51:29,219 --> 00:51:31,260
+the strategy to run automatically?
+
+1085
+00:51:31,260 --> 00:51:35,579
+Yes, I did say that, and I'm just reiterating that
+
+1086
+00:51:35,579 --> 00:51:38,099
+you cannot turn this on for automation,
+
+1087
+00:51:38,099 --> 00:51:39,940
+although it does give you a lot of details
+
+1088
+00:51:39,940 --> 00:51:41,699
+as to what needs to be open,
+
+1089
+00:51:41,699 --> 00:51:43,219
+what needs to be in active order,
+
+1090
+00:51:43,219 --> 00:51:46,179
+and what needs to be done to your strategy.
+
+1091
+00:51:51,139 --> 00:51:52,739
+Can you run the strategy automatically
+
+1092
+00:51:52,739 --> 00:51:56,300
+in the TradeStation platform outside of Portfolio Maestro?
+
+1093
+00:51:56,300 --> 00:51:57,539
+Of course you can.
+
+1094
+00:51:57,539 --> 00:52:00,460
+In fact, I have 30 symbols in here,
+
+1095
+00:52:00,460 --> 00:52:05,460
+so yes, I could theoretically have 30 charts open
+
+1096
+00:52:05,900 --> 00:52:09,340
+on the platform, have the same strategy applied
+
+1097
+00:52:09,340 --> 00:52:11,260
+to each one of the charts,
+
+1098
+00:52:11,260 --> 00:52:14,179
+and have them turned on automatically.
+
+1099
+00:52:14,179 --> 00:52:17,300
+The only problem of doing it that way
+
+1100
+00:52:17,300 --> 00:52:21,260
+is that every chart will be independent,
+
+1101
+00:52:21,260 --> 00:52:24,019
+so it will not be run as a portfolio.
+
+1102
+00:52:24,019 --> 00:52:28,940
+Portfolio Maestro has this other layer of constraints
+
+1103
+00:52:28,940 --> 00:52:33,940
+and stop level, I mean, portfolio level stops,
+
+1104
+00:52:34,179 --> 00:52:36,980
+and some ranking and some filtering
+
+1105
+00:52:36,980 --> 00:52:38,940
+that is done at the portfolio level.
+
+1106
+00:52:38,940 --> 00:52:43,940
+So it does allow you to do some decision-making
+
+1107
+00:52:44,300 --> 00:52:47,099
+as to what positions to put on.
+
+1108
+00:52:47,099 --> 00:52:49,139
+If you go to the TradeStation platform
+
+1109
+00:52:49,139 --> 00:52:52,219
+and you open up 30 individual charts
+
+1110
+00:52:52,219 --> 00:52:55,659
+and automate 30 individual strategies,
+
+1111
+00:52:55,659 --> 00:52:57,860
+then they're all going to be independent,
+
+1112
+00:52:57,860 --> 00:52:59,539
+and there's not gonna be anything
+
+1113
+00:52:59,539 --> 00:53:01,820
+cross-checking the symbols to see
+
+1114
+00:53:01,820 --> 00:53:04,820
+which ones should be traded and which ones shouldn't.
+
+1115
+00:53:04,820 --> 00:53:07,219
+So we're gonna get to more of that
+
+1116
+00:53:07,219 --> 00:53:08,900
+in our next session, October 10th,
+
+1117
+00:53:08,900 --> 00:53:11,099
+so make sure that you register for that session
+
+1118
+00:53:11,099 --> 00:53:13,019
+if you'd like to learn a little bit more
+
+1119
+00:53:13,019 --> 00:53:14,340
+about Portfolio Maestro.
+
+1120
+00:53:14,340 --> 00:53:15,619
+But this is my class.
+
+1121
+00:53:15,619 --> 00:53:17,420
+I hope that you guys enjoyed it.
+
+1122
+00:53:17,420 --> 00:53:20,219
+If you have any questions, please feel free to reach out
+
+1123
+00:53:20,219 --> 00:53:23,739
+to us at educationattradestation.com,
+
+1124
+00:53:23,739 --> 00:53:27,940
+and we're there for you for any concerns,
+
+1125
+00:53:27,940 --> 00:53:31,179
+and I want to wish everyone a wonderful afternoon.
+
+1126
+00:53:31,179 --> 00:53:33,219
+I hope to see you in a future class.
+
+1127
+00:53:33,219 --> 00:53:34,059
+Goodbye, everyone.
+
+1128
+00:53:34,059 --> 00:53:35,059
+Great having you today.
+
+1129
+00:53:35,059 --> 00:53:35,900
+Bye-bye.
