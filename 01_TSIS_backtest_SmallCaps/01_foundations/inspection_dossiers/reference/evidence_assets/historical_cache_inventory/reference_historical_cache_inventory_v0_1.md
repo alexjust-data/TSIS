@@ -1,0 +1,42 @@
+# Reference Historical Cache Inventory v0.1
+
+Este inventario no copia caches historicos a `01_foundations`.
+Solo registra que existe, donde vive y como debe consumirse como provenance read-only.
+
+- Historical audit root: `01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference`
+- Historical cache root: `01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2`
+- Artifacts inventariados: `31`
+
+| artifact_name | relative_path | bytes | suffix | sha256 | rows | columns | consumption |
+|---|---|---|---|---|---|---|---|
+| manifest.json | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/manifest.json | 18070 | .json | b251b950dc8baaf7694c083ecb397c22042ad9e55ef182b994b4884d73a01ef4 |  |  | provenance_read_only |
+| reference_causal_alignment_summary.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_causal_alignment_summary.parquet | 2764 | .parquet |  | 14 | 3 | provenance_read_only |
+| reference_dividend_case_index.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_dividend_case_index.parquet | 19513304 | .parquet |  | 273799 | 16 | provenance_read_only |
+| reference_dividends_summary.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_dividends_summary.parquet | 3641 | .parquet |  | 2 | 5 | provenance_read_only |
+| reference_download_audit_summary.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_download_audit_summary.parquet | 7258 | .parquet |  | 7 | 11 | provenance_read_only |
+| reference_download_error_summary.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_download_error_summary.parquet | 2297 | .parquet |  | 1 | 3 | provenance_read_only |
+| reference_endpoint_inventory.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_endpoint_inventory.parquet | 5137 | .parquet |  | 7 | 7 | provenance_read_only |
+| reference_event_halt_link_candidates.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_event_halt_link_candidates.parquet | 88141 | .parquet |  | 948 | 18 | provenance_read_only |
+| reference_event_quotes_link_candidates.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_event_quotes_link_candidates.parquet | 149765 | .parquet |  | 2595 | 20 | provenance_read_only |
+| reference_event_type_summary.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_event_type_summary.parquet | 2971 | .parquet |  | 2 | 4 | provenance_read_only |
+| reference_events_exploded.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_events_exploded.parquet | 272607 | .parquet |  | 13215 | 8 | provenance_read_only |
+| reference_exchange_summary.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_exchange_summary.parquet | 3772 | .parquet |  | 6 | 5 | provenance_read_only |
+| reference_identity_case_index.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_identity_case_index.parquet | 578517 | .parquet |  | 12468 | 13 | provenance_read_only |
+| reference_identity_quality_summary.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_identity_quality_summary.parquet | 4873 | .parquet |  | 3 | 7 | provenance_read_only |
+| reference_identity_snapshot.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_identity_snapshot.parquet | 3795286 | .parquet |  | 12468 | 41 | provenance_read_only |
+| reference_instrument_type_summary.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_instrument_type_summary.parquet | 3537 | .parquet |  | 2 | 5 | provenance_read_only |
+| reference_listing_snapshot_summary.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_listing_snapshot_summary.parquet | 218187 | .parquet |  | 13124 | 9 | provenance_read_only |
+| reference_listing_snapshots.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_listing_snapshots.parquet | 137019151 | .parquet |  | 12977501 | 17 | provenance_read_only |
+| reference_overview_404_case_index.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_overview_404_case_index.parquet | 14786 | .parquet |  | 200 | 14 | provenance_read_only |
+| reference_overview_404_summary.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_overview_404_summary.parquet | 3687 | .parquet |  | 3 | 5 | provenance_read_only |
+| reference_overview_market_identity_links.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_overview_market_identity_links.parquet | 40654 | .parquet |  | 750 | 38 | provenance_read_only |
+| reference_remap_candidates.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_remap_candidates.parquet | 10021 | .parquet |  | 175 | 9 | provenance_read_only |
+| reference_schema_summary.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_schema_summary.parquet | 5549 | .parquet |  | 17 | 6 | provenance_read_only |
+| reference_snapshot_presence_gaps.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_snapshot_presence_gaps.parquet | 324435 | .parquet |  | 13124 | 11 | provenance_read_only |
+| reference_split_1m_link_candidates.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_split_1m_link_candidates.parquet | 13387 | .parquet |  | 22 | 17 | provenance_read_only |
+| reference_split_case_index.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_split_case_index.parquet | 697059 | .parquet |  | 14909 | 10 | provenance_read_only |
+| reference_split_daily_link_candidates.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_split_daily_link_candidates.parquet | 14249 | .parquet |  | 22 | 18 | provenance_read_only |
+| reference_split_market_link_candidates.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_split_market_link_candidates.parquet | 37158 | .parquet |  | 22 | 49 | provenance_read_only |
+| reference_splits_summary.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_splits_summary.parquet | 3009 | .parquet |  | 2 | 4 | provenance_read_only |
+| reference_ticker_presence_timeline.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_ticker_presence_timeline.parquet | 8988204 | .parquet |  | 12977501 | 6 | provenance_read_only |
+| reference_transient_symbol_review.parquet | 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/cache_v2/reference_transient_symbol_review.parquet | 11677 | .parquet |  | 182 | 7 | provenance_read_only |

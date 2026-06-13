@@ -34,6 +34,7 @@
   - [`intraday_regime_features_consumption_policy.md`](#intradayregimefeaturesconsumptionpolicymd)
   - [`lt1b_universe_consumption_policy.md`](#lt1buniverseconsumptionpolicymd)
   - [`reference_consumption_policy.md`](#referenceconsumptionpolicymd)
+  - [`halts_consumption_policy.md`](#haltsconsumptionpolicymd)
   - [`additional_consumption_policy.md`](#additionalconsumptionpolicymd)
   - [`short_consumption_policy.md`](#shortconsumptionpolicymd)
   - [`short_review_consumption_policy.md`](#shortreviewconsumptionpolicymd)
@@ -348,10 +349,12 @@ data_consumption_policies/
   additional_consumption_policy.md
   daily_consumption_policy.md
   daily_return_labels_consumption_policy.md
+  halts_consumption_policy.md
   intraday_regime_features_consumption_policy.md
   lt1b_universe_consumption_policy.md
   ohlcv_1m_raw_consumption_policy.md
   quotes_consumption_policy.md
+  reference_consumption_policy.md
   short_consumption_policy.md
   short_review_consumption_policy.md
   trades_consumption_policy.md
@@ -518,6 +521,25 @@ Distingue:
 Regla clave:
 
 - `reference` puede alimentar price views, universe builder y event overlays, pero no es precio, tape, feature productiva ni continuidad economica completa por defecto.
+
+### `halts_consumption_policy.md`
+
+Gobierna `halts_v0_1`.
+
+Distingue:
+
+- evento oficial intradia;
+- evento date-level;
+- contexto SEC/regulatorio;
+- review de identidad;
+- overlay visual contra `quotes` y `trades`;
+- coverage `<1B>`;
+- masks/contexto condicionados;
+- y bloqueo de consumidores sensibles.
+
+Regla clave:
+
+- `halts` puede alimentar event engine, audit overlays y forensic review, pero no es precio, tape, alpha, execution truth ni prueba de mercado limpio por ausencia de evento.
 
 ### `short_consumption_policy.md`
 

@@ -1,5 +1,17 @@
 # Reference Institutional Closeout v0.1
 
+Estado actualizado 2026-06-13:
+
+Este closeout v0.1 queda como antecedente institucional compacto.
+
+La paridad inspectora moderna para el alcance `foundation_promotion` queda cerrada en:
+
+- `reference_inspection_readout_v0_2.md`
+- `build_reference_inspection_pack.md`
+- `reference_casepacks_traceability_audit_v0_1.md`
+- `integration_notes.md`
+- `evidence_assets/run_manifest.json`
+
 ## 1. Rol
 
 Este dossier traduce la auditoria historica de `reference` a una lectura institucional moderna dentro de `01_foundations`.
@@ -289,11 +301,11 @@ Bloqueado sin contrato:
 - este closeout compacto;
 - evidencia historica preservada.
 
-Ese criterio no debe confundirse con paridad inspector-forense frente a `daily`, `quotes`, `trades`, `minute` o `1m_split_normalized`.
+Ese criterio ya no debe confundirse con el estado vigente del dossier.
 
-Para alcanzar esa paridad moderna falta:
+La promocion moderna posterior anadio:
 
-- README local completo;
+- README local actualizado;
 - builder/script reproducible;
 - evidence assets activos bajo `01_foundations`;
 - mapa poblacional visual;
@@ -301,9 +313,9 @@ Para alcanzar esa paridad moderna falta:
 - casepacks por familia;
 - readout v0.2 con evidencia general-a-particular;
 - auditoria de trazabilidad de casepacks;
-- y absorcion explicita de `certification/reference`.
+- absorcion explicita de `certification/reference`.
 
-La auditoria de gap vive en:
+La auditoria de gap que motivo ese upgrade vive en:
 
 - `reference_modernization_gap_audit_2026-06-12.md`
 ## 10. Regla final

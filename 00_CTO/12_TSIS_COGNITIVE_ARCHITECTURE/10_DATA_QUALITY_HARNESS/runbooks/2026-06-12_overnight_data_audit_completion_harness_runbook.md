@@ -1,15 +1,15 @@
 # Overnight Data Audit Completion Harness Runbook
 
-Fecha: 2026-06-12
-Estado: runbook operativo v0.2
-Objetivo: preparar un agente nocturno unico para cerrar datasets pendientes con calidad comparable a los bloques maduros.
+Fecha: 2026-06-13
+Estado: runbook operativo v0.3
+Objetivo: preparar un agente autonomo unico para cerrar una carpeta/dataset por run con calidad comparable a los bloques maduros, preservando auditoria historica.
 
 ## 1. Objetivo de la noche
 
-Convertir la auditoria pendiente de data en paquetes institucionales modernos.
+Convertir la auditoria pendiente de data en paquetes institucionales modernos sin destruir ni reescribir la auditoria historica ya hecha.
 
 La prioridad no es escribir "mucho".
-La prioridad es que cada dataset pendiente quede en uno de estos estados honestos:
+La prioridad es que cada carpeta/dataset trabajada quede en uno de estos estados honestos:
 
 - `modern_dossier_complete`;
 - `modern_dossier_partial`;
@@ -28,6 +28,24 @@ Foto fisica observada el 2026-06-12:
 | `E:/TSIS/data/financial` | 49878 | 49882 | 49872 | 8 | cerrar paquete foundation completo |
 | `E:/TSIS/data/regime_indicators` | 36 | 69 | 67 | 0 | cerrar como contexto/regime, no alpha |
 
+Correccion 2026-06-13:
+
+Antes de cerrar esos roots fisicos, el agente debe leer y preservar la auditoria historica ya existente para:
+
+- `additional`;
+- `halts`;
+- `reference`;
+- `short`.
+
+Esa auditoria vive bajo:
+
+```text
+01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/
+01_research/01_auditoria_RAW_DATA/00_data_certification/certification/
+```
+
+Para esos datasets el trabajo no empieza por reauditar. Empieza por reconciliar lo historico contra `01_foundations`.
+
 Fuera de alcance:
 
 - `E:/TSIS/data/images_Flash_Research`
@@ -36,18 +54,31 @@ No inventariar, mover, OCRizar, validar ni institucionalizar `images_Flash_Resea
 
 ## 3. Orden recomendado
 
+Orden de carpetas para runs sucesivos:
+
 1. `reference`
-2. `Halts`
-3. `financial`
-4. `regime_indicators`
-5. integracion final
+2. `halts`
+3. `additional`
+4. `short`
+5. `financial`
+6. `regime_indicators`
+7. integracion final
 
 Razon:
 
 - `reference` gobierna eventos, ticker changes, splits, dividends e identidad.
-- `Halts` depende parcialmente de `reference/events`.
-- `financial` requiere una decision estricta de temporal availability y leakage antes de cualquier ML/backtest.
+- `halts` depende parcialmente de `reference/events` y ya tiene auditoria historica profunda cerrada.
+- `additional` y `short` ya tienen auditoria historica cerrada y foundation minima, pero necesitan promocion moderna controlada.
+- `financial` requiere una decision estricta de temporal availability y leakage antes de cualquier ML/backtest; antes hay que confirmar que no queda cubierto por `additional/financials_core`.
 - `regime_indicators` debe cerrarse como contexto/regimen, no como alpha ni generador de edge.
+
+Regla de ejecucion:
+
+```text
+Un run trabaja una sola carpeta/dataset y se detiene.
+```
+
+No ejecutar toda la cadena sin revision humana entre carpetas.
 
 ## 4. Modelo de ejecucion
 
@@ -65,10 +96,14 @@ Motivo:
 El agente unico debe:
 
 1. ponerse al dia;
-2. leer benchmarks maduros;
-3. ejecutar datasets secuencialmente;
-4. integrar al final;
-5. entregar reporte final.
+2. leer `historical_audit_preservation_and_promotion_contract.md`;
+3. leer benchmarks maduros;
+4. seleccionar una sola carpeta/dataset;
+5. leer auditoria y certificacion historica si existen;
+6. comparar contra `01_foundations`;
+7. crear `integration_notes.md` o promotion gap;
+8. completar solo esa carpeta/dataset;
+9. detenerse para revision humana.
 
 ## 5. Rutas prohibidas
 
@@ -190,25 +225,24 @@ No debe fingir cierre.
 
 ## 10. Criterios de aceptacion final
 
-La noche es exitosa si al dia siguiente existe:
+El run es exitoso si al terminar la carpeta existe:
 
-- estado por dataset;
-- docs y assets por dataset;
-- integration notes por dataset;
+- estado del dataset trabajado;
+- docs y assets del dataset trabajado;
+- integration notes del dataset trabajado;
 - notebooks inspectores cuando sean necesarios;
 - visuales/casepacks o gap audit visual honesto;
-- final integration report;
-- changelog actualizado;
+- changelog recomendado o actualizado si procede;
 - lista de gaps reales;
-- y ningun dataset queda sobrepromovido.
+- y el dataset no queda sobrepromovido.
 
 Ideal:
 
-- `reference`, `Halts`, `financial`, `regime_indicators` quedan como `modern_dossier_complete` o `modern_dossier_partial`;
+- el dataset trabajado queda como `modern_dossier_complete`, `modern_dossier_partial` o `modernization_gap_documented` con evidencia suficiente;
 
 Aceptable:
 
-- algun dataset queda `blocked_needs_human_decision`, pero con razon exacta y evidencia.
+- el dataset trabajado queda `blocked_needs_human_decision`, pero con razon exacta y evidencia.
 
 Fallo:
 
@@ -244,20 +278,20 @@ desde:
 
 ## 12. Primer run recomendado
 
-Para esta noche, si hay capacidad limitada:
+Primer run recomendado:
 
-1. Completar o bloquear con gap exacto `reference`.
-2. Completar o bloquear con gap exacto `Halts`.
-3. Completar o bloquear con gap exacto `financial`.
-4. Integrar lo que haya quedado suficientemente validado.
-
-Dejar `regime_indicators` para el segundo bloque si se acaba la noche.
+1. Trabajar solo `reference`.
+2. Leer auditoria historica y certificacion de `reference`.
+3. Comparar contra la foundation minima ya promovida.
+4. Crear o actualizar `reference/integration_notes.md` con promotion gap.
+5. Completar solo los artefactos que faltan para `reference`.
+6. Parar para revision humana.
 
 Razon:
 
-- `reference` y `Halts` forman la frontera causal/eventos;
-- `financial` tiene mucha masa fisica y puede afectar universe/features;
-- `regime_indicators` depende mas de consumidor futuro y leakage policy.
+- `reference` forma la frontera de identidad, eventos, ticker changes, splits y dividends;
+- ya tiene auditoria historica profunda y foundation minima, por lo que permite probar el proceso de promocion sin reauditar desde cero;
+- si este run respeta la preservacion historica, despues se puede aplicar a `halts`.
 
 ## 13. Cierre
 
@@ -269,5 +303,6 @@ El agente debe obedecer:
 - `01_TSIS_backtest_SmallCaps/AGENTS.md`;
 - `LOCAL_RULES.md`;
 - `inspection_dossier_model.md`;
+- `historical_audit_preservation_and_promotion_contract.md`;
 - `data_audit_completion_artifact_contract.md`;
 - y el prompt unico del run.

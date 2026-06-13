@@ -4,6 +4,8 @@ Uso: copiar el prompt `SINGLE_AGENT_DATA_AUDIT_COMPLETION` completo en una sesio
 
 Este prompt reemplaza el enfoque multi-agente para el siguiente run. La ejecucion inmediata debe ser un solo agente secuencial.
 
+Correccion 2026-06-13: este prompt trabaja una sola carpeta/dataset por ejecucion y obliga a preservar la auditoria historica antes de crear artefactos nuevos.
+
 ## SINGLE_AGENT_DATA_AUDIT_COMPLETION
 
 ```text
@@ -19,14 +21,22 @@ No paralelices escrituras de indices.
 No inventes un supervisor multi-agente todavia.
 
 OBJETIVO GENERAL:
-Cerrar los datasets pendientes de la auditoria de data con calidad comparable a `daily`, `quotes`, `trades`, `minute` y `1m_split_normalized`.
+Cerrar un dataset pendiente de la auditoria de data con calidad comparable a `daily`, `quotes`, `trades`, `minute` y `1m_split_normalized`, preservando primero la auditoria historica ya existente.
 
-DATASETS TARGET, EN ESTE ORDEN:
+DATASET TARGET DE ESTE RUN:
 1. reference
-2. Halts
-3. financial
-4. regime_indicators
-5. integracion final
+
+NO continues automaticamente con Halts, additional, short, financial ni regime_indicators.
+Cuando termines `reference`, valida, reporta y para para revision humana.
+
+ORDEN FUTURO DESPUES DE REVISION HUMANA:
+1. reference
+2. halts
+3. additional
+4. short
+5. financial
+6. regime_indicators
+7. integracion final
 
 FUERA DE ALCANCE:
 E:\TSIS\data\images_Flash_Research
@@ -43,6 +53,16 @@ RUTAS PROHIBIDAS, READ-ONLY:
 
 No modifiques, no muevas, no renombres, no limpies, no normalices y no reorganices nada dentro de esas rutas.
 Solo pueden leerse como evidencia/provenance.
+
+AUDITORIA HISTORICA PROTEGIDA:
+Antes de crear nada para el dataset target, lee y reconcilia lo que exista en:
+- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\additional
+- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\halts
+- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\reference
+- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\short
+- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\certification
+
+Para `reference`, esto es obligatorio. No reaudites desde cero. Promociona y completa lo que falta en `01_foundations`.
 
 DONDE SI PUEDE VIVIR TRABAJO NUEVO:
 - C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations
@@ -86,8 +106,9 @@ LECTURA OBLIGATORIA CTO/HARNESS:
 6. C:\TSIS_Data\00_CTO\12_TSIS_COGNITIVE_ARCHITECTURE\00_SHARED_HARNESS_KERNEL\shared_run_manifest_contract.md
 7. C:\TSIS_Data\00_CTO\12_TSIS_COGNITIVE_ARCHITECTURE\00_SHARED_HARNESS_KERNEL\shared_validation_principles.md
 8. C:\TSIS_Data\00_CTO\12_TSIS_COGNITIVE_ARCHITECTURE\10_DATA_QUALITY_HARNESS\README.md
-9. C:\TSIS_Data\00_CTO\12_TSIS_COGNITIVE_ARCHITECTURE\10_DATA_QUALITY_HARNESS\data_audit_completion_artifact_contract.md
-10. C:\TSIS_Data\00_CTO\12_TSIS_COGNITIVE_ARCHITECTURE\10_DATA_QUALITY_HARNESS\runbooks\2026-06-12_overnight_data_audit_completion_harness_runbook.md
+9. C:\TSIS_Data\00_CTO\12_TSIS_COGNITIVE_ARCHITECTURE\10_DATA_QUALITY_HARNESS\historical_audit_preservation_and_promotion_contract.md
+10. C:\TSIS_Data\00_CTO\12_TSIS_COGNITIVE_ARCHITECTURE\10_DATA_QUALITY_HARNESS\data_audit_completion_artifact_contract.md
+11. C:\TSIS_Data\00_CTO\12_TSIS_COGNITIVE_ARCHITECTURE\10_DATA_QUALITY_HARNESS\runbooks\2026-06-12_overnight_data_audit_completion_harness_runbook.md
 
 BENCHMARKS MADUROS QUE DEBES ENTENDER ANTES DE CREAR NADA:
 
@@ -185,7 +206,7 @@ Ademas debes leer la imagen de verdad:
 - no reemplazar caso forense por conteos agregados.
 
 TRABAJO POR DATASET:
-Para cada dataset target:
+Para el dataset target de este run:
 1. Audita root fisico en modo read-only.
 2. Lee auditoria historica y certification preservadas si existen.
 3. Inventaria foundation existente.
@@ -198,6 +219,7 @@ Para cada dataset target:
 10. Crea o actualiza README local, readout, build guide, contract, schema, registry, policy y validators.
 11. Crea integration_notes.md.
 12. No sobrepromuevas estado.
+13. Para. No continues con el siguiente dataset sin revision humana.
 
 OUTPUT MINIMO POR DATASET:
 - canonical_schemas/<dataset>/...
@@ -226,7 +248,9 @@ PROHIBIDO:
 Usar `done`, `clean`, `ok` o `closed` como estado final sin contrato, consumidor y evidencia.
 
 INTEGRACION FINAL:
-Solo al final, actualiza los indices compartidos que realmente procedan:
+No hagas integracion final multi-dataset en este run.
+
+Solo actualiza indices compartidos si son estrictamente necesarios para el dataset target y si no contradicen el gate de revision humana:
 - inspection_dossiers/README.md
 - contract_registry/dataset_contracts/README.md
 - dataset_registry/README.md
@@ -237,8 +261,7 @@ Solo al final, actualiza los indices compartidos que realmente procedan:
 Actualiza tambien:
 - C:\TSIS_Data\01_TSIS_backtest_SmallCaps\CHANGELOG.md
 
-Crea:
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\inspection_dossiers\data_audit_completion_final_report_2026-06-13.md
+No crees `data_audit_completion_final_report_2026-06-13.md` salvo que el humano pida explicitamente integracion final.
 
 VALIDACIONES FINALES:
 - YAML parsea.

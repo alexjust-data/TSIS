@@ -7,6 +7,147 @@ Este changelog registra cambios institucionales y semanticamente relevantes para
 No duplica el historial de Git.
 Existe para preservar memoria arquitectonica y metodologica del modulo.
 
+## v0.4.46 - halts modern inspection dossier completion
+
+### Added
+
+- `scripts/inspection/halts/build_halts_inspection_pack.py`
+- `01_foundations/contract_registry/dataset_contracts/halts_dataset_contract_v0_1.md`
+- `01_foundations/dataset_registry/halts/halts_registry_entry.yaml`
+- `01_foundations/data_consumption_policies/halts_consumption_policy.md`
+- `01_foundations/validators/halts/halts_validators.md`
+- `01_foundations/inspection_dossiers/halts/README.md`
+- `01_foundations/inspection_dossiers/halts/build_halts_inspection_pack.md`
+- `01_foundations/inspection_dossiers/halts/halts_inspection_readout_v0_1.md`
+- `01_foundations/inspection_dossiers/halts/halts_casepacks_traceability_audit_v0_1.md`
+- `01_foundations/inspection_dossiers/halts/integration_notes.md`
+- `01_foundations/inspection_dossiers/halts/evidence_assets/`
+- `01_foundations/inspection_dossiers/halts/good_justification/`
+- `01_foundations/inspection_dossiers/halts/flagged_case_evidence_packs/`
+- `01_foundations/inspection_dossiers/halts/bad_case_evidence_packs/`
+- `01_foundations/inspection_dossiers/halts/causal_case_evidence_packs/`
+- `01_foundations/inspection_dossiers/halts/coverage_case_evidence_packs/`
+
+### Changed
+
+- `01_foundations/inspection_dossiers/README.md`
+- `01_foundations/contract_registry/dataset_contracts/README.md`
+- `01_foundations/dataset_registry/README.md`
+- `01_foundations/data_consumption_policies/README.md`
+- `01_foundations/validators/README.md`
+
+### Notes
+
+This promotes `halts` from historical audit/certification into the modern foundation layer without copying historical heavy parquets into `01_foundations`.
+
+The new builder reads only protected provenance:
+
+- `E:/TSIS/data/Halts`
+- `D:/Halts`
+- `01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/halts`
+- `01_research/01_auditoria_RAW_DATA/00_data_certification/certification/halts`
+
+and emits lightweight assets under `01_foundations`:
+
+- historical cache inventory: `19` rows;
+- certification inventory: `10` rows;
+- physical root audit: `6` rows;
+- population summary: `16` rows;
+- population visual overview: `5` PNGs;
+- casepacks: `5`;
+- run manifest: `evidence_assets/run_manifest.json`.
+
+### Impact
+
+`halts` now has:
+
+- a reproducible builder/toolchain;
+- active evidence assets;
+- population visuals;
+- manifests;
+- casepacks;
+- a traceability audit;
+- dataset contract;
+- registry entry;
+- consumption policy;
+- validators;
+- and a readout v0.1 with `Que muestra / Responde / No responde / Consecuencia`.
+
+Correct state:
+
+```text
+halts = historical_deep_audit_closed + modern_dossier_complete_for_foundation_promotion
+```
+
+This does not enable new sensitive consumers. `halts` remains prohibited as alpha, live, RL, execution truth or ML/backtest feature without later temporal, leakage and consumer-specific contracts.
+
+## v0.4.45 - reference modern inspection dossier completion
+
+### Added
+
+- `scripts/inspection/reference/build_reference_inspection_pack.py`
+- `01_foundations/inspection_dossiers/reference/build_reference_inspection_pack.md`
+- `01_foundations/inspection_dossiers/reference/reference_inspection_readout_v0_2.md`
+- `01_foundations/inspection_dossiers/reference/reference_casepacks_traceability_audit_v0_1.md`
+- `01_foundations/inspection_dossiers/reference/integration_notes.md`
+- `01_foundations/inspection_dossiers/reference/evidence_assets/`
+- `01_foundations/inspection_dossiers/reference/good_justification/`
+- `01_foundations/inspection_dossiers/reference/flagged_case_evidence_packs/`
+- `01_foundations/inspection_dossiers/reference/bad_case_evidence_packs/`
+- `01_foundations/inspection_dossiers/reference/causal_case_evidence_packs/`
+- `01_foundations/inspection_dossiers/reference/coverage_case_evidence_packs/`
+
+### Changed
+
+- `01_foundations/inspection_dossiers/reference/README.md`
+- `01_foundations/inspection_dossiers/reference/reference_institutional_closeout_v0_1.md`
+- `01_foundations/inspection_dossiers/reference/reference_modernization_gap_audit_2026-06-12.md`
+- `01_foundations/inspection_dossiers/reference/reference_upgrade_agent_prompt_2026-06-12.md`
+- `01_foundations/inspection_dossiers/README.md`
+- `01_foundations/contract_registry/dataset_contracts/reference_dataset_contract_v0_1.md`
+- `01_foundations/dataset_registry/reference/reference_registry_entry.yaml`
+- `01_foundations/validators/reference/reference_validators.md`
+
+### Notes
+
+This closes the modernization gap identified in v0.4.44 for the current foundation-layer scope of `reference`.
+
+The new builder reads only protected provenance:
+
+- `E:/TSIS/data/reference`
+- `01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference`
+- `01_research/01_auditoria_RAW_DATA/00_data_certification/certification/reference`
+
+and emits lightweight assets under `01_foundations`:
+
+- historical cache inventory: `31` artifacts;
+- certification/global metrics inventory: `7` artifacts;
+- physical root audit: `8` subfamilies;
+- population summary: `26` buckets;
+- population visual overview: `5` PNGs;
+- casepacks: `5`;
+- run manifest: `evidence_assets/run_manifest.json`.
+
+### Impact
+
+`reference` now has:
+
+- a reproducible builder/toolchain;
+- active evidence assets;
+- population visuals;
+- manifests;
+- casepacks;
+- a traceability audit;
+- and a readout v0.2 with `Que muestra / Responde / No responde / Consecuencia`.
+
+Correct state:
+
+```text
+reference = historical_deep_audit_closed + modern_dossier_complete_for_foundation_promotion
+```
+
+This does not enable new sensitive consumers. `reference` remains prohibited as alpha, live, RL, final universe membership or continuity remap service without later contracts.
+
 ## v0.4.44 - reference modernization gap audit
 
 ### Added

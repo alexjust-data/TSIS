@@ -1,0 +1,9 @@
+# Halts Case Manifest v0.1
+
+| casepack | relative_path | status | reading |
+|---|---|---|---|
+| halts_good_coherent_visual_cases_v0_1.md | 01_foundations/inspection_dossiers/halts/good_justification/halts_good_coherent_visual_cases_v0_1.md | good | Muestra casos donde el evento oficial queda alineado con quotes y trades. |
+| halts_review_visual_cases_v0_1.md | 01_foundations/inspection_dossiers/halts/flagged_case_evidence_packs/halts_review_visual_cases_v0_1.md | review | Muestra asimetrias libro/tape, mercado limpio o falta de enlace visual; no son bad por defecto. |
+| halts_bad_residual_cases_v0_1.md | 01_foundations/inspection_dossiers/halts/bad_case_evidence_packs/halts_bad_residual_cases_v0_1.md | bad_residual_marginal | Muestra el residuo estructural duro: un evento canonico y 11 raws Nasdaq vacios. |
+| halts_causal_overlay_cases_v0_1.md | 01_foundations/inspection_dossiers/halts/causal_case_evidence_packs/halts_causal_overlay_cases_v0_1.md | causal | Muestra que halts funciona como verdad del evento y capa causal contra quotes/trades. |
+| halts_universe_coverage_cases_v0_1.md | 01_foundations/inspection_dossiers/halts/coverage_case_evidence_packs/halts_universe_coverage_cases_v0_1.md | coverage | Muestra coverage y concentracion: ausencia de evento no equivale a missing data. |

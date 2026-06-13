@@ -1,0 +1,5 @@
+metric,value,reading
+universe_tickers,4824,tickers in lt1b coverage summary
+tickers_with_halt_data,3912,tickers with at least one matched halt event
+tickers_without_halt_data,912,"absence means no matched event, not missing coverage"
+halt_events_total_for_universe,53909,total events attached to universe tickers

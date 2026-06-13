@@ -22,7 +22,7 @@ Su funcion principal es evitar que backtest, ML, price views, event overlays y a
 - `domain`: `reference`
 - `contract_type`: `foundation_reference_dataset`
 - `logical_version`: `v0_1`
-- `promotion_state`: `institutionalized_from_historical_closeout`
+- `promotion_state`: `modern_dossier_complete_for_foundation_promotion`
 - `active`: `true`
 
 ## 3. Raiz fisica canonica
@@ -217,6 +217,15 @@ Gap audit moderno:
 
 - `01_foundations/inspection_dossiers/reference/reference_modernization_gap_audit_2026-06-12.md`
 
+Dossier moderno activo:
+
+- `01_foundations/inspection_dossiers/reference/reference_inspection_readout_v0_2.md`
+- `01_foundations/inspection_dossiers/reference/build_reference_inspection_pack.md`
+- `01_foundations/inspection_dossiers/reference/reference_casepacks_traceability_audit_v0_1.md`
+- `01_foundations/inspection_dossiers/reference/evidence_assets/run_manifest.json`
+- `01_foundations/inspection_dossiers/reference/evidence_assets/population_visual_overview/`
+- `01_foundations/inspection_dossiers/reference/evidence_assets/case_manifest/reference_case_manifest_v0_1.md`
+
 Lectura cerrada por la auditoria:
 
 - `overview`, `all_tickers`, `events`, `splits` y `dividends` ya fueron auditados a nivel de contenido real;
@@ -326,7 +335,7 @@ Debe versionarse o registrarse en changelog cuando cambie:
 
 ## 15. Veredicto operacional
 
-`reference_v0_1` queda institucionalizado como foundation layer activa.
+`reference_v0_1` queda institucionalizado como foundation layer activa con dossier inspector moderno.
 
 Su valor principal no es solo metadata estatica:
 
@@ -334,3 +343,5 @@ Su valor principal no es solo metadata estatica:
 - habilita price views;
 - explica parte de la fragilidad observada en `quotes`, `trades` y `halts`;
 - y fija barreras contra errores de continuidad, instrumento y corporate actions.
+
+Esta promocion no habilita consumidores nuevos fuera de `reference_consumption_policy.md`.

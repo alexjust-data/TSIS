@@ -55,6 +55,32 @@ run summaries, trace logs y, si procede, release log propio.
 - Crear vocabulario canonico de estados para Data Quality Harness.
 - Crear contrato de artefactos live para Data Quality Harness.
 
+## 2026-06-13 - Data Quality Harness historical preservation contract
+
+### Added
+
+- `12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/historical_audit_preservation_and_promotion_contract.md`
+
+### Changed
+
+- Updated `10_DATA_QUALITY_HARNESS/README.md` to make historical audit preservation a mandatory v0.3 operating correction.
+- Updated `data_audit_completion_artifact_contract.md` with a historical preflight requirement before any dataset can be promoted to modern dossier status.
+- Updated the overnight runbook and prompt pack so future agents work one folder/dataset at a time and stop for human review.
+
+### Notes
+
+The Harness now distinguishes between:
+
+- historical audit already completed under `01_research/01_auditoria_RAW_DATA/00_data_certification`;
+- institutional promotion under `01_foundations`;
+- and genuinely missing modern evidence.
+
+This is now explicit for `additional`, `halts`, `reference` and `short`.
+
+### Impact
+
+Future data-audit agents must not reaudit those datasets from scratch. They must first read the historical contracts, notebooks, builders, caches, closeouts and certification files, compare them against `01_foundations`, work one folder/dataset at a time, and stop for human review before continuing.
+
 ## 2026-06-12 - Data Quality Harness single-agent correction v0.2
 
 ### Changed

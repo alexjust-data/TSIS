@@ -1,0 +1,9 @@
+# Reference Case Manifest v0.1
+
+| casepack | relative_path | status | reading |
+|---|---|---|---|
+| reference_good_identity_and_payload_cases_v0_1.md | 01_foundations/inspection_dossiers/reference/good_justification/reference_good_identity_and_payload_cases_v0_1.md | good | Muestra que la capa principal de identidad, splits y dividends tiene payload real y consumible con flags. |
+| reference_review_identity_and_quotes_cases_v0_1.md | 01_foundations/inspection_dossiers/reference/flagged_case_evidence_packs/reference_review_identity_and_quotes_cases_v0_1.md | review | Muestra los residuos que deben conservar review: simbolos transitorios y ticker_change cerca de quotes anomalies. |
+| reference_bad_unresolved_identity_cases_v0_1.md | 01_foundations/inspection_dossiers/reference/bad_case_evidence_packs/reference_bad_unresolved_identity_cases_v0_1.md | bad | Muestra el residuo duro de identidad. Es pequeno pero no consumible como identidad resuelta. |
+| reference_causal_overlay_cases_v0_1.md | 01_foundations/inspection_dossiers/reference/causal_case_evidence_packs/reference_causal_overlay_cases_v0_1.md | causal | Muestra los tres frentes causales principales: splits->trades quirurgico, events->halts fuerte, events->quotes detector/review. |
+| reference_presence_coverage_cases_v0_1.md | 01_foundations/inspection_dossiers/reference/coverage_case_evidence_packs/reference_presence_coverage_cases_v0_1.md | coverage | Muestra que all_tickers soporta presencia temporal, pero no sustituye un universe builder final. |

@@ -15,6 +15,7 @@
 - [Trades](#trades)
 - [Ohlcv 1m raw](#ohlcv-1m-raw)
 - [Reference](#reference)
+- [Halts](#halts)
 - [Validacion de capas derivadas](#validacion-de-capas-derivadas)
 - [Relacion con inspection_dossiers](#relacion-con-inspectiondossiers)
 - [Relacion con data_consumption_policies](#relacion-con-dataconsumptionpolicies)
@@ -99,6 +100,8 @@ validators/
     quotes_validators.md
   reference/
     reference_validators.md
+  halts/
+    halts_validators.md
   trades/
     trades_validators.md
 ```
@@ -243,6 +246,23 @@ Debe validar por subfamilia:
 - evidencia cruzada contra market data cuando se declare causalidad.
 
 La regla critica es que `reference` no tiene un pass unico que autorice todos los consumidores. Se valida por subfamilia y por uso.
+
+## Halts
+
+`halts/halts_validators.md` gobierna `halts_v0_1`.
+
+Debe validar por fuente, evento, temporalidad y uso:
+
+- presencia de root y processed master;
+- source allowlist Nasdaq/NYSE/SEC;
+- schema y parseabilidad;
+- identidad de evento y horas ET;
+- reconciliacion multisource;
+- event taxonomy;
+- coverage `<1B>`;
+- overlay visual contra `quotes` y `trades` cuando se declare causalidad.
+
+La regla critica es que `halts` no tiene un pass unico que autorice todos los consumidores. SEC/context/date-level, review visual buckets y eventos intradia completos deben mantenerse separados.
 
 ## Validacion de capas derivadas
 

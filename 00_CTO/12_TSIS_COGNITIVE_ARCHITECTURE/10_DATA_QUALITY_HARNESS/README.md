@@ -1,7 +1,7 @@
 # Data Quality Harness
 
-Estado: design-to-runtime bridge v0.2
-Fecha: 2026-06-12
+Estado: design-to-runtime bridge v0.3
+Fecha: 2026-06-13
 Ambito: auditoria historica de data y futura vigilancia live de TSIS.
 
 ## Rol
@@ -30,19 +30,35 @@ El modelo multi-agente queda como arquitectura futura, no como ejecucion nocturn
 
 La razon es practica: aun no existe un orquestador runtime que coordine locks, integracion, revision cruzada y promocion de estado. Hasta que exista, un solo agente autonomo debe ejecutar el ciclo completo de forma secuencial y dejar trazabilidad.
 
+## Correccion operativa v0.3
+
+Antes de completar datasets pendientes, el Harness debe preservar y promocionar la auditoria historica ya hecha.
+
+La auditoria historica bajo:
+
+```text
+01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/
+```
+
+contiene trabajo profundo para `additional`, `halts`, `reference` y `short`: contratos, notebooks, builders, caches, closeouts, causal overlays y certificaciones.
+
+Por tanto, un agente no debe reauditar esas carpetas desde cero. Primero debe leer la auditoria historica, compararla contra `01_foundations`, declarar que esta ya promovido, que falta, y trabajar una sola carpeta/dataset antes de parar para revision humana.
+
 ## Documentos activos
 
 Leer en este orden:
 
 1. `data_audit_harness_agentic_operating_map.md`
    - Snapshot auditor de `01_foundations` y mapa general para convertir la auditoria historica en Harness.
-2. `data_audit_completion_artifact_contract.md`
+2. `historical_audit_preservation_and_promotion_contract.md`
+   - Contrato de preservacion: obliga a leer y reconciliar la auditoria historica de `additional`, `halts`, `reference` y `short` antes de crear artefactos modernos.
+3. `data_audit_completion_artifact_contract.md`
    - Contrato comun de outputs para cerrar datasets pendientes con calidad comparable a `daily`, `quotes`, `trades` y `1m`.
-3. `runbooks/2026-06-12_overnight_data_audit_completion_harness_runbook.md`
+4. `runbooks/2026-06-12_overnight_data_audit_completion_harness_runbook.md`
    - Runbook single-agent para cerrar datasets pendientes.
-4. `runbooks/2026-06-12_data_audit_agent_prompt_pack.md`
+5. `runbooks/2026-06-12_data_audit_agent_prompt_pack.md`
    - Prompt unico recomendado para el agente Codex autonomo.
-5. `future_live_data_quality_contract.md`
+6. `future_live_data_quality_contract.md`
    - Seed futuro para live data quality. No es todavia runtime operativo.
 
 ## Datasets maduros usados como benchmark
@@ -137,12 +153,14 @@ Reglas:
 
 ## Datasets pendientes de cierre moderno
 
-Foto operacional a 2026-06-12:
+Foto operacional a 2026-06-13:
 
 | Dataset/root | Estado actual | Decision Harness |
 | --- | --- | --- |
-| `reference` | foundation minima promovida, gap inspector documentado | upgrade moderno obligatorio antes de tratarlo como paridad con mature dossiers |
-| `E:/TSIS/data/Halts` | data fisica y auditoria historica parcial/localizada | cerrar como dossier moderno despues de reference |
+| `reference` | auditoria historica profunda cerrada; foundation minima promovida; gap inspector documentado | no reauditar; completar promocion moderna desde la auditoria historica y parar |
+| `halts` / `E:/TSIS/data/Halts` | auditoria historica profunda cerrada y certificada; promocion foundation incompleta | no re-descargar ni reconstruir; promover contract/registry/policy/validators/dossier desde evidencia historica |
+| `additional` | auditoria historica profunda cerrada; foundation minima existe | no tratar como dataset plano; promocionar subbloques y gaps modernos solo donde aporten decision |
+| `short` | auditoria historica profunda cerrada; foundation minima existe; FINRA baseline preservado | no tratar Polygon short como baseline; promocionar policy/evidence moderna condicionada |
 | `E:/TSIS/data/financial` | schemas existen, sin paquete foundation completo | cerrar contrato, registry, policy, validator y dossier |
 | `E:/TSIS/data/regime_indicators` | schemas existen, sin paquete foundation completo | cerrar como capa de contexto/indicadores, no como alpha |
 
@@ -181,15 +199,20 @@ El siguiente run debe ejecutarse con un unico agente autonomo.
 Orden:
 
 1. Leer contratos raiz, locales y CTO/Harness.
-2. Leer el contrato de dossier inspector.
-3. Leer los benchmarks maduros, incluyendo notebooks y visual packs declarados.
-4. Cerrar `reference` o dejarlo bloqueado con gap exacto.
-5. Cerrar `Halts`.
-6. Cerrar `financial`.
-7. Cerrar `regime_indicators`.
-8. Integrar indices y changelog al final.
+2. Leer `historical_audit_preservation_and_promotion_contract.md`.
+3. Leer el contrato de dossier inspector.
+4. Leer los benchmarks maduros, incluyendo notebooks y visual packs declarados.
+5. Seleccionar una sola carpeta/dataset.
+6. Leer auditoria historica y certificacion si existen.
+7. Comparar contra `01_foundations`.
+8. Crear `integration_notes.md` o promotion gap antes de tocar indices globales.
+9. Completar solo esa carpeta/dataset.
+10. Validar.
+11. Parar para revision humana.
 
 Si el tiempo no alcanza, el agente debe preservar trazabilidad y no sobrepromover estado.
+
+No se debe ejecutar una cadena completa `reference -> Halts -> financial -> regime_indicators` sin revision humana entre carpetas mientras el Harness este en esta fase.
 
 ## Regla final
 

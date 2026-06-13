@@ -1,0 +1,6 @@
+scope,rows_pre_concat,rows_post_builder_dedup,dedup_delta
+nasdaq,119630,118594,1036
+nyse,13178,13178,0
+sec,1346,1346,0
+all_sources_concat,134154,133118,1036
+persisted_multisource_parquet,133116,133116,0

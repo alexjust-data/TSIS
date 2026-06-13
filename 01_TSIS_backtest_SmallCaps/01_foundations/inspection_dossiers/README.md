@@ -30,6 +30,7 @@
   - [1m split normalized](#1m-split-normalized)
   - [Intraday regime features](#intraday-regime-features)
   - [Reference](#reference)
+  - [Halts](#halts)
 - [Additional, short y otros bloques](#additional-short-y-otros-bloques)
 - [Flujo recomendado de trabajo](#flujo-recomendado-de-trabajo)
 - [Paquete Inspector Profundo](#paquete-inspector-profundo) Para humanos
@@ -47,6 +48,8 @@
     - [`minute` / `ohlcv_1m` raw](#minute--ohlcv1m-raw-1)
     - [`1m_split_normalized`](#1msplitnormalized)
     - [`intraday_regime_features`](#intradayregimefeatures)
+    - [`reference`](#reference-1)
+    - [`halts`](#halts-1)
     - [`additional`](#additional)
     - [`short`](#short)
   - [Regla de mantenimiento](#regla-de-mantenimiento)
@@ -612,6 +615,30 @@ Debe distinguir:
 
 No debe tratarse como precio, tape, universe final ni feature productiva por defecto.
 
+### Halts
+
+`halts` documenta eventos oficiales de halt/suspension y contexto regulatorio.
+
+Referencias locales:
+
+- `halts/README.md`
+- `halts/build_halts_inspection_pack.md`
+- `halts/halts_inspection_readout_v0_1.md`
+- `halts/halts_casepacks_traceability_audit_v0_1.md`
+- `halts/integration_notes.md`
+
+Debe distinguir:
+
+- evento oficial intradia;
+- evento date-level;
+- contexto SEC/regulatorio;
+- review parcial de identidad;
+- overlay visual contra `quotes` y `trades`;
+- coverage frente al universo `<1B>`;
+- y consumidores restringidos.
+
+No debe tratarse como precio, tape, alpha, execution truth ni prueba de mercado limpio por ausencia de evento.
+
 ### Additional, short y otros bloques
 
 Los bloques como `additional`, `short` o `short_review` pueden tener closeouts institucionales mas compactos si su naturaleza no exige case packs visuales equivalentes a `quotes`, `trades` o `daily`.
@@ -1102,14 +1129,20 @@ Riesgo principal: consumirla como feature productiva sin declarar alcance, price
 
 #### `reference`
 
-Estado: foundation layer minima promovida desde auditoria y certification historicas, pero pendiente de upgrade inspector moderno.
+Estado: foundation layer promovida desde auditoria y certification historicas, con dossier inspector moderno completado para promocion foundation.
 
 Evidencia principal actual:
 
 - `reference/README.md`
-- `reference/README.md`
+- `reference/build_reference_inspection_pack.md`
 - `reference/reference_institutional_closeout_v0_1.md`
+- `reference/reference_inspection_readout_v0_2.md`
 - `reference/reference_modernization_gap_audit_2026-06-12.md`
+- `reference/reference_casepacks_traceability_audit_v0_1.md`
+- `reference/integration_notes.md`
+- `reference/evidence_assets/run_manifest.json`
+- `reference/evidence_assets/population_visual_overview/`
+- `reference/evidence_assets/case_manifest/reference_case_manifest_v0_1.md`
 - `../contract_registry/dataset_contracts/reference_dataset_contract_v0_1.md`
 - `../data_consumption_policies/reference_consumption_policy.md`
 - `../dataset_registry/reference/reference_registry_entry.yaml`
@@ -1123,11 +1156,46 @@ Lectura correcta:
 - `events/ticker_change` es detector causal fuerte en `halts` y `quotes`, pero no continuidad economica cerrada;
 - `all_tickers` no es universe final;
 - `overview.market_cap` no es membership diaria fully PTI;
-- la evidencia historica pesada existe, pero todavia no esta empaquetada como dossier visual moderno.
+- la evidencia historica pesada existe y ahora esta promocionada como manifests, summaries, visuales y casepacks ligeros bajo `01_foundations`.
 
-Madurez relativa: media/alta como contrato foundation y baja/media como dossier inspector moderno. No esta a paridad con `daily`, `quotes`, `trades`, `minute` ni `1m_split_normalized` hasta que existan population visuals, evidence assets activos, manifests, casepacks, builder y `reference_inspection_readout_v0_2.md`.
+Madurez relativa: alta para su rol de foundation/reference layer. Ya tiene builder residente, physical root audit, historical/cache inventory, certification inventory, population summary, `5` visuales poblacionales, manifests y `5` casepacks. Sigue sin habilitar consumidores sensibles nuevos.
 
-Riesgo principal: sobrepromover un closeout compacto como si fuera una capa visual-forense cerrada, o usar `reference` como feature/alpha/continuidad corporativa sin contrato temporal y causal posterior.
+Riesgo principal: confundir madurez inspectora de foundation layer con permiso para feature/alpha/continuidad corporativa/live/RL sin contrato temporal y causal posterior.
+
+#### `halts`
+
+Estado: event/reference layer promovida desde auditoria y certification historicas, con dossier inspector moderno completado para promocion foundation.
+
+Evidencia principal actual:
+
+- `halts/README.md`
+- `halts/build_halts_inspection_pack.md`
+- `halts/halts_inspection_readout_v0_1.md`
+- `halts/halts_casepacks_traceability_audit_v0_1.md`
+- `halts/integration_notes.md`
+- `halts/evidence_assets/run_manifest.json`
+- `halts/evidence_assets/population_summary/halts_population_summary_v0_1.md`
+- `halts/evidence_assets/population_visual_overview/`
+- `halts/evidence_assets/case_manifest/halts_case_manifest_v0_1.md`
+- `../contract_registry/dataset_contracts/halts_dataset_contract_v0_1.md`
+- `../data_consumption_policies/halts_consumption_policy.md`
+- `../dataset_registry/halts/halts_registry_entry.yaml`
+- `../validators/halts/halts_validators.md`
+- `../canonical_schemas/halts/`
+
+Lectura correcta:
+
+- `halts` gobierna eventos oficiales Nasdaq/NYSE y contexto SEC;
+- `good_full_intraday_event` no debe mezclarse con `good_date_level_event`;
+- `regulatory_context_only` no es ventana intradia;
+- visuales contra `quotes` y `trades` son evidencia forense, no sustituto del evento oficial;
+- ausencia de halt no prueba missing data ni mercado limpio;
+- y `halts` no habilita alpha, live, RL ni execution simulation final.
+
+Madurez relativa: alta para su rol de event/reference layer. Ya tiene builder residente, root audit, historical/cache inventory, certification inventory, population summary, `5` visuales poblacionales, manifests y `5` casepacks. Sigue sin habilitar consumidores sensibles nuevos.
+
+Riesgo principal: convertir eventos oficiales o buckets visuales en features/alpha/masks productivos sin contrato de temporalidad, leakage y consumidor.
+
 #### `additional`
 
 Estado: closeout institucional compacto.

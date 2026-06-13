@@ -1,14 +1,29 @@
 # Data Audit Completion Artifact Contract
 
 Fecha: 2026-06-12
-Estado: contract v0.2
+Estado: contract v0.3
 Ambito: cierre moderno de datasets pendientes en `01_TSIS_backtest_SmallCaps/01_foundations`
 
 ## 1. Proposito
 
 Este contrato fija que debe producir cualquier agente que cierre un dataset pendiente de la auditoria de data.
 
-El objetivo es que `reference`, `Halts`, `financial` y `regime_indicators` no queden cerrados con menos rigor que los bloques ya maduros.
+El objetivo es que los datasets pendientes no queden cerrados con menos rigor que los bloques ya maduros.
+
+Antes de trabajar sobre datasets con auditoria historica profunda, manda el contrato:
+
+```text
+historical_audit_preservation_and_promotion_contract.md
+```
+
+Ese contrato aplica especialmente a:
+
+- `additional`;
+- `halts`;
+- `reference`;
+- `short`.
+
+Para esos datasets, el trabajo correcto es primero preservar, reconciliar y promocionar la auditoria historica existente. No se debe empezar por una reauditoria desde cero.
 
 Fuera de alcance:
 
@@ -47,6 +62,37 @@ root fisico verificado en modo read-only
 ```
 
 Si falta una pieza, el dataset puede estar `partially_institutionalized`, pero no debe declararse a paridad con los bloques maduros.
+
+## 2.1. Preflight historico obligatorio
+
+Antes de crear o modificar artefactos de un dataset, el agente debe responder:
+
+```text
+Existe auditoria historica en 00_data_certification/auditoria/<dataset>?
+Existe certificacion historica en 00_data_certification/certification/<dataset>?
+Que parte de esa auditoria ya esta promovida a 01_foundations?
+Que parte falta institucionalizar?
+Que evidencia moderna falta?
+```
+
+Si existe auditoria historica profunda, el agente debe crear o actualizar primero:
+
+```text
+inspection_dossiers/<dataset>/integration_notes.md
+```
+
+o un promotion gap equivalente, con:
+
+- archivos historicos leidos;
+- certification files leidos;
+- estado actual en `01_foundations`;
+- verdades historicas ya promovidas;
+- verdades historicas pendientes de promocion;
+- archivos que se van a crear/modificar;
+- rutas protegidas no tocadas;
+- condicion de parada.
+
+Sin este preflight, el dataset no puede pasar a `modern_dossier_partial` ni `modern_dossier_complete`.
 
 ## 3. Rutas protegidas
 

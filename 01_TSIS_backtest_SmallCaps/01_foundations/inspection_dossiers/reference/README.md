@@ -21,28 +21,33 @@ Su funcion dentro de TSIS es impedir que backtest, ML, price views, auditoria de
 
 ## Estado actual
 
-Estado correcto a 2026-06-12:
+Estado correcto a 2026-06-13:
 
 - `reference` esta promovido como foundation layer contractual minima.
 - Ya existen dataset contract, registry entry, consumption policy, validators contract, canonical schemas y closeout institucional compacto.
 - La evidencia historica fuerte existe y esta preservada bajo `01_research`.
 - La evidencia pesada tambien existe en caches historicos `cache_v2`.
-- El dossier moderno todavia no esta al nivel inspector de `daily`, `quotes`, `trades`, `minute` o `1m_split_normalized`.
+- El dossier moderno ya tiene builder residente, evidence assets activos, physical root audit, population summary, population visuals, manifests, casepacks y readout v0.2.
 
 Por tanto, la lectura precisa es:
 
 ```text
-reference = contractualmente institucionalizado, pero pendiente de upgrade inspector moderno general-a-particular
+reference = historical_deep_audit_closed + modern_dossier_complete_for_foundation_promotion
 ```
 
-No debe venderse como dossier visual maduro hasta que tenga population overview, manifests activos, casepacks y readout v0.2.
+No debe confundirse esta promocion con habilitacion de alpha, live, RL, continuity remap service o universe final. Es madurez inspectora de foundation layer.
 
 ## Autoridad documental
 
 Documentos actuales de `01_foundations`:
 
 - `reference_institutional_closeout_v0_1.md`
+- `reference_inspection_readout_v0_2.md`
 - `reference_modernization_gap_audit_2026-06-12.md`
+- `reference_casepacks_traceability_audit_v0_1.md`
+- `build_reference_inspection_pack.md`
+- `integration_notes.md`
+- `evidence_assets/run_manifest.json`
 - `reference_upgrade_agent_prompt_2026-06-12.md`
 - `../../contract_registry/dataset_contracts/reference_dataset_contract_v0_1.md`
 - `../../data_consumption_policies/reference_consumption_policy.md`
@@ -101,9 +106,9 @@ La diferencia importante no es solo numerica. Los dossiers maduros tienen:
 
 `reference` todavia no.
 
-## Target structure
+## Estructura activa
 
-El upgrade moderno debe aterrizar, como minimo:
+El upgrade moderno aterriza en:
 
 ```text
 inspection_dossiers/reference/
@@ -113,13 +118,14 @@ inspection_dossiers/reference/
   reference_inspection_readout_v0_2.md
   reference_modernization_gap_audit_2026-06-12.md
   reference_casepacks_traceability_audit_v0_1.md
+  integration_notes.md
   evidence_assets/
     historical_cache_inventory/
+    historical_certification_inventory/
     physical_root_audit/
+    population_summary/
     population_visual_overview/
-    identity/
-    corporate_actions/
-    causal_overlays/
+    case_manifest/
   good_justification/
   flagged_case_evidence_packs/
   bad_case_evidence_packs/
@@ -131,10 +137,7 @@ Scripts esperados:
 
 ```text
 scripts/inspection/reference/
-  audit_reference_foundation_physical_root.py
-  export_reference_population_visuals.py
-  export_reference_casepacks.py
-  build_reference_visual_readout.py
+  build_reference_inspection_pack.py
 ```
 
 ## Preguntas que debe responder el upgrade
@@ -152,10 +155,10 @@ scripts/inspection/reference/
 
 ## Regla de consumo
 
-Hasta que exista `reference_inspection_readout_v0_2.md` con assets y casepacks:
+Con `reference_inspection_readout_v0_2.md` activo:
 
 - `reference` puede seguir usandose como foundation layer bajo sus contratos actuales;
-- no debe describirse como dossier visual maduro;
+- puede describirse como dossier inspector moderno para promocion foundation;
 - no debe promoverse a feature, alpha, remap continuity service, live o RL;
 - no debe usarse `ticker_change` como continuidad economica cerrada;
 - no debe usarse `all_tickers` como universe final;
@@ -163,6 +166,6 @@ Hasta que exista `reference_inspection_readout_v0_2.md` con assets y casepacks:
 
 ## Regla final
 
-`reference` esta a la altura minima contractual de `01_foundations`, pero no a la altura inspector-forense de `quotes`, `trades`, `daily` o `1m`.
+`reference` ya esta convertido en un dossier moderno reproducible, visible y navegable para su rol de foundation layer.
 
-El siguiente trabajo no es reescribir la auditoria historica. Es convertirla en un dossier moderno reproducible, visible y navegable.
+El siguiente trabajo no es reescribir `reference`. Es revisar humanamente el readout v0.2 y, si se acepta, continuar con `halts` bajo el mismo contrato de preservacion historica.

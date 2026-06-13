@@ -1,0 +1,56 @@
+{
+  "run_id": "halts_inspection_pack_v0_1_2026-06-13",
+  "status": "pass",
+  "started_at_utc": "2026-06-13T08:30:14.719120+00:00",
+  "finished_at_utc": "2026-06-13T08:30:20.499059+00:00",
+  "builder": "scripts/inspection/halts/build_halts_inspection_pack.py",
+  "protected_roots_read_only": [
+    "E:/TSIS/data/Halts",
+    "D:/Halts",
+    "01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/halts",
+    "01_research/01_auditoria_RAW_DATA/00_data_certification/certification/halts"
+  ],
+  "outputs": {
+    "historical_cache_inventory": {
+      "csv": "01_foundations/inspection_dossiers/halts/evidence_assets/historical_cache_inventory/halts_historical_cache_inventory_v0_1.csv",
+      "md": "01_foundations/inspection_dossiers/halts/evidence_assets/historical_cache_inventory/halts_historical_cache_inventory_v0_1.md",
+      "rows": 19
+    },
+    "certification_inventory": {
+      "csv": "01_foundations/inspection_dossiers/halts/evidence_assets/historical_certification_inventory/halts_certification_inventory_v0_1.csv",
+      "md": "01_foundations/inspection_dossiers/halts/evidence_assets/historical_certification_inventory/halts_certification_inventory_v0_1.md",
+      "rows": 10
+    },
+    "physical_root_audit": {
+      "csv": "01_foundations/inspection_dossiers/halts/evidence_assets/physical_root_audit/halts_physical_root_audit_v0_1.csv",
+      "md": "01_foundations/inspection_dossiers/halts/evidence_assets/physical_root_audit/halts_physical_root_audit_summary_v0_1.md",
+      "rows": 6
+    },
+    "population_summary": {
+      "csv": "01_foundations/inspection_dossiers/halts/evidence_assets/population_summary/halts_population_summary_v0_1.csv",
+      "source_csv": "01_foundations/inspection_dossiers/halts/evidence_assets/population_summary/halts_source_quality_summary_v0_1.csv",
+      "taxonomy_csv": "01_foundations/inspection_dossiers/halts/evidence_assets/population_summary/halts_event_taxonomy_summary_v0_1.csv",
+      "lt1b_csv": "01_foundations/inspection_dossiers/halts/evidence_assets/population_summary/halts_lt1b_event_taxonomy_summary_v0_1.csv",
+      "visual_csv": "01_foundations/inspection_dossiers/halts/evidence_assets/population_summary/halts_visual_bucket_summary_v0_1.csv",
+      "coverage_csv": "01_foundations/inspection_dossiers/halts/evidence_assets/population_summary/halts_coverage_summary_v0_1.csv",
+      "recon_csv": "01_foundations/inspection_dossiers/halts/evidence_assets/population_summary/halts_multisource_reconciliation_v0_1.csv",
+      "md": "01_foundations/inspection_dossiers/halts/evidence_assets/population_summary/halts_population_summary_v0_1.md",
+      "rows": 16
+    },
+    "population_visual_overview": {
+      "manifest_csv": "01_foundations/inspection_dossiers/halts/evidence_assets/population_visual_overview/halts_population_visual_manifest_v0_1.csv",
+      "manifest_md": "01_foundations/inspection_dossiers/halts/evidence_assets/population_visual_overview/halts_population_visual_manifest_v0_1.md",
+      "visuals": 5
+    },
+    "casepacks": {
+      "manifest_csv": "01_foundations/inspection_dossiers/halts/evidence_assets/case_manifest/halts_case_manifest_v0_1.csv",
+      "manifest_md": "01_foundations/inspection_dossiers/halts/evidence_assets/case_manifest/halts_case_manifest_v0_1.md",
+      "casepacks": 5
+    }
+  },
+  "notes": [
+    "No raw data was modified.",
+    "Historical parquets were not copied to foundations.",
+    "Outputs are lightweight manifests, summaries, visuals and casepacks."
+  ]
+}

@@ -16,6 +16,7 @@
   - [`additional/`](#additional)
   - [`daily/`](#daily)
   - [`features/`](#features)
+  - [`halts/`](#halts)
   - [`ohlcv_1m/`](#ohlcv1m)
   - [`quotes/`](#quotes)
   - [`reference/`](#reference)
@@ -258,8 +259,10 @@ dataset_registry/
   additional/
   daily/
   features/
+  halts/
   ohlcv_1m/
   quotes/
+  reference/
   short/
   short_review/
   trades/
@@ -365,6 +368,22 @@ Debe leerse junto con:
 Regla:
 
 - `reference` habilita price views, universe support y event overlays, pero no es precio, tape, universe final ni feature productiva por defecto.
+
+### `halts/`
+
+Registra `halts_v0_1` como capa oficial de eventos de halt/suspension y contexto regulatorio.
+
+Debe leerse junto con:
+
+- `contract_registry/dataset_contracts/halts_dataset_contract_v0_1.md`
+- `data_consumption_policies/halts_consumption_policy.md`
+- `canonical_schemas/halts/`
+- `inspection_dossiers/halts/`
+- `validators/halts/halts_validators.md`
+
+Regla:
+
+- `halts` habilita event overlays, forensic review y masks/contexto condicionados, pero no es precio, tape, alpha, execution truth ni feature productiva por defecto.
 
 ### `short/`
 

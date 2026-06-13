@@ -1,0 +1,4 @@
+metric,value,reading
+listing_snapshot_summary_rows,13124,tickers observed in all_tickers summary
+listing_snapshot_rows_total,12977501,total all_tickers snapshot rows represented by the summary
+listing_tickers_lt1b,4824,tickers flagged in lt1b universe

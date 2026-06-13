@@ -1,0 +1,4 @@
+source,rows,ticker_nonnull_rows,halt_date_nonnull_rows,halt_start_nonnull_rows,resume_trade_nonnull_rows,release_no_nonnull_rows,item_link_nonnull_rows,issuer_name_nonnull_rows,unique_tickers,unique_event_key_exact,unique_event_key_semantic
+nasdaq,119630,119619,119619,119619,118730,0,119619,116323,16572,118475,118475
+nyse,13178,13172,13178,13178,12052,0,0,13178,2568,12436,12436
+sec,1346,250,1346,0,0,1346,1346,1346,250,1346,1346

@@ -1,13 +1,27 @@
 # Reference Modernization Gap Audit - 2026-06-12
 
-## 1. Veredicto
+Estado actualizado 2026-06-13:
 
-`reference` no esta todavia a la altura de excelencia de `daily`, `quotes`, `trades`, `minute` o `1m_split_normalized`.
+Este gap audit queda cerrado para el alcance `foundation_promotion` por:
 
-La conclusion exacta es:
+- `reference_inspection_readout_v0_2.md`
+- `build_reference_inspection_pack.md`
+- `reference_casepacks_traceability_audit_v0_1.md`
+- `integration_notes.md`
+- `evidence_assets/run_manifest.json`
+
+Debe conservarse como antecedente historico del upgrade, no como lista pendiente vigente.
+
+## 1. Veredicto historico original
+
+Lectura original del 2026-06-12, antes del upgrade v0.4.45:
+
+`reference` no estaba todavia a la altura de excelencia de `daily`, `quotes`, `trades`, `minute` o `1m_split_normalized`.
+
+La conclusion exacta original era:
 
 ```text
-reference esta institucionalizado como foundation layer minima, pero no esta cerrado como dossier inspector moderno.
+reference estaba institucionalizado como foundation layer minima, pero no estaba cerrado como dossier inspector moderno.
 ```
 
 Lo que se creo en `v0.4.43` es correcto como primera promocion documental:

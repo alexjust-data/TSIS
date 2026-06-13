@@ -23,6 +23,7 @@
   - [`quotes_dataset_contract_v0_1.md`](#quotesdatasetcontractv01md)
   - [`quotes_label_taxonomy_and_cut_policy.md`](#quoteslabeltaxonomyandcutpolicymd)
   - [`reference_dataset_contract_v0_1.md`](#referencedatasetcontractv01md)
+  - [`halts_dataset_contract_v0_1.md`](#haltsdatasetcontractv01md)
   - [`trades_dataset_contract_v0_1.md`](#tradesdatasetcontractv01md)
   - [`trades_label_taxonomy_and_cut_policy.md`](#tradeslabeltaxonomyandcutpolicymd)
   - [`ohlcv_1m_raw_dataset_contract_v0_1.md`](#ohlcv1mrawdatasetcontractv01md)
@@ -315,6 +316,7 @@ contract_registry/dataset_contracts/
   daily_label_taxonomy_and_cut_policy.md
   daily_return_labels_dataset_contract_v0_1.md
   intraday_regime_features_dataset_contract_v0_1.md
+  halts_dataset_contract_v0_1.md
   lt1b_universe_dataset_contract_v0_1.md
   ohlcv_1m_raw_dataset_contract_v0_1.md
   ohlcv_1m_split_normalized_dataset_contract_v0_1.md
@@ -510,6 +512,19 @@ Fija:
 - relacion con price views, universe builder, event overlays y auditoria de market data;
 - estados `good`, `review` y `bad_unresolved_identity`;
 - y restriccion explicita de backtest, ML, execution, live y RL hasta contrato posterior.
+
+### `halts_dataset_contract_v0_1.md`
+
+Contrato institucional de `halts_v0_1`.
+
+Fija:
+
+- raiz operativa actual `E:/TSIS/data/Halts`;
+- raiz historica observada `D:/Halts`;
+- fuentes oficiales Nasdaq, NYSE y SEC;
+- separacion entre evento intradia, evento date-level, contexto regulatorio, review y bad residual;
+- relacion con event engine, audit overlays, quotes/trades/minute/daily context;
+- y restriccion explicita de alpha, backtest sensible, ML, execution, live y RL hasta contrato posterior.
 
 ### `short_dataset_contract_v0_1.md`
 

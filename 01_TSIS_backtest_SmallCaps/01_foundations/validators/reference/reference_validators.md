@@ -8,15 +8,19 @@ Gobierna:
 
 - `E:\TSIS\data\reference`
 
-No implementa todavia un script unico obligatorio.
-Fija que debe comprobar cualquier validador, auditoria o runner futuro antes de cambiar el estado de consumo de `reference`.
+Existe un builder/runner de evidencia inspector moderno:
+
+- `scripts/inspection/reference/build_reference_inspection_pack.py`
+
+Este builder no reemplaza todos los validadores semanticos futuros, pero ya emite outputs reproducibles para root audit, inventories, summaries, visuals, case manifests y run manifest.
 
 ## Governed dataset
 
 - Dataset contract: `01_foundations/contract_registry/dataset_contracts/reference_dataset_contract_v0_1.md`
 - Registry: `01_foundations/dataset_registry/reference/reference_registry_entry.yaml`
 - Consumption policy: `01_foundations/data_consumption_policies/reference_consumption_policy.md`
-- Dossier: `01_foundations/inspection_dossiers/reference/reference_institutional_closeout_v0_1.md`
+- Dossier: `01_foundations/inspection_dossiers/reference/reference_inspection_readout_v0_2.md`
+- Run manifest: `01_foundations/inspection_dossiers/reference/evidence_assets/run_manifest.json`
 - Schemas: `01_foundations/canonical_schemas/reference/`
 
 ## Unit of validation
@@ -277,9 +281,9 @@ Este validador no prueba:
 
 ## Promotion implications
 
-Para promover `reference` a consumidores mas sensibles se necesitara:
+Para promover `reference` a consumidores mas sensibles se seguira necesitando:
 
-- runner ejecutable versionado;
+- runner ejecutable versionado especifico del consumidor sensible;
 - output reproducible;
 - update de registry;
 - update de policy;

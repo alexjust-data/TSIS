@@ -1,5 +1,20 @@
 # Prompt para agente - Upgrade moderno completo de Reference
 
+Estado actualizado 2026-06-13:
+
+Este prompt queda superseded para el alcance `foundation_promotion`.
+
+El upgrade moderno de `reference` fue ejecutado mediante:
+
+- `scripts/inspection/reference/build_reference_inspection_pack.py`
+- `reference_inspection_readout_v0_2.md`
+- `build_reference_inspection_pack.md`
+- `reference_casepacks_traceability_audit_v0_1.md`
+- `integration_notes.md`
+- `evidence_assets/run_manifest.json`
+
+No lanzar este prompt como tarea pendiente sin revisar primero el readout v0.2.
+
 Copia este prompt en un agente Codex iniciado en `C:\TSIS_Data` con permisos autonomos.
 
 ```text

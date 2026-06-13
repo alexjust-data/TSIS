@@ -5,22 +5,34 @@ dataset_identity:
   contract_type: foundation_reference_dataset
 
 status:
-  promotion_state: institutionalized_from_historical_closeout
+  promotion_state: modern_dossier_complete_for_foundation_promotion
   active: true
   owner: module_01_foundations
 
 registry_classification:
   dataset_family: reference_identity_corporate_actions_events
   primary_unit: mixed_reference_subfamily
-  evidence_state: audited_historical_closeout_promoted_to_foundations
+  evidence_state: historical_deep_audit_promoted_with_modern_inspection_assets
 
 artifacts:
   dataset_contract: 01_foundations/contract_registry/dataset_contracts/reference_dataset_contract_v0_1.md
   consumption_policy: 01_foundations/data_consumption_policies/reference_consumption_policy.md
   validators: 01_foundations/validators/reference/reference_validators.md
-  inspection_dossier: 01_foundations/inspection_dossiers/reference/reference_institutional_closeout_v0_1.md
+  inspection_dossier: 01_foundations/inspection_dossiers/reference/reference_inspection_readout_v0_2.md
+  institutional_closeout: 01_foundations/inspection_dossiers/reference/reference_institutional_closeout_v0_1.md
   inspection_dossier_readme: 01_foundations/inspection_dossiers/reference/README.md
   modernization_gap_audit: 01_foundations/inspection_dossiers/reference/reference_modernization_gap_audit_2026-06-12.md
+  build_guide: 01_foundations/inspection_dossiers/reference/build_reference_inspection_pack.md
+  integration_notes: 01_foundations/inspection_dossiers/reference/integration_notes.md
+  casepacks_traceability_audit: 01_foundations/inspection_dossiers/reference/reference_casepacks_traceability_audit_v0_1.md
+  run_manifest: 01_foundations/inspection_dossiers/reference/evidence_assets/run_manifest.json
+  evidence_assets:
+    historical_cache_inventory: 01_foundations/inspection_dossiers/reference/evidence_assets/historical_cache_inventory/reference_historical_cache_inventory_v0_1.md
+    historical_certification_inventory: 01_foundations/inspection_dossiers/reference/evidence_assets/historical_certification_inventory/reference_certification_inventory_v0_1.md
+    physical_root_audit: 01_foundations/inspection_dossiers/reference/evidence_assets/physical_root_audit/reference_physical_root_audit_summary_v0_1.md
+    population_summary: 01_foundations/inspection_dossiers/reference/evidence_assets/population_summary/reference_population_summary_v0_1.md
+    population_visual_manifest: 01_foundations/inspection_dossiers/reference/evidence_assets/population_visual_overview/reference_population_visual_manifest_v0_1.md
+    case_manifest: 01_foundations/inspection_dossiers/reference/evidence_assets/case_manifest/reference_case_manifest_v0_1.md
   schema_contracts:
     - 01_foundations/canonical_schemas/reference/all_tickers_snapshot_schema_contract.md
     - 01_foundations/canonical_schemas/reference/overview_schema_contract.md
@@ -57,7 +69,7 @@ source_lineage:
   transformation_summary: historical download and audit artifacts promoted into foundations as reference_v0_1
 
 coverage_snapshot:
-  observed_on: 2026-06-12
+  observed_on: 2026-06-13
   canonical_root: E:/TSIS/data/reference
   immediate_subfamily_counts:
     all_tickers_files: 3109
@@ -121,6 +133,10 @@ allowed_consumers:
     - treating_reference_as_price_or_execution_data
 
 evidence_references:
+  - 01_foundations/inspection_dossiers/reference/reference_inspection_readout_v0_2.md
+  - 01_foundations/inspection_dossiers/reference/evidence_assets/run_manifest.json
+  - 01_foundations/inspection_dossiers/reference/evidence_assets/population_visual_overview/reference_population_visual_manifest_v0_1.md
+  - 01_foundations/inspection_dossiers/reference/evidence_assets/case_manifest/reference_case_manifest_v0_1.md
   - 01_foundations/inspection_dossiers/reference/reference_institutional_closeout_v0_1.md
   - 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/04_reference_closeout.md
   - 01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/04_reference_causal_overlay_closeout.md
@@ -140,5 +156,6 @@ known_limitations:
 
 notes:
   - Reference is now locatable and consumable through foundations contracts, not only historical audit notes.
-  - The current dossier is a compact foundation closeout, not yet a modern visual inspector pack at parity with daily/quotes/trades/minute.
+  - The current dossier has modern inspection assets for foundation promotion, including visuals, manifests, casepacks and run_manifest.
   - The historical audit remains preserved and must not be reorganized for this promotion.
+  - This promotion does not enable alpha, live, RL, final universe membership or continuity remap service.

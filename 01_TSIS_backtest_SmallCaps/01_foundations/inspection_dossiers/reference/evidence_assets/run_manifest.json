@@ -1,0 +1,51 @@
+{
+  "run_id": "reference_inspection_pack_v0_1_2026-06-13",
+  "status": "pass",
+  "started_at_utc": "2026-06-13T07:24:38.100072+00:00",
+  "finished_at_utc": "2026-06-13T07:25:18.211991+00:00",
+  "builder": "scripts/inspection/reference/build_reference_inspection_pack.py",
+  "protected_roots_read_only": [
+    "E:/TSIS/data/reference",
+    "01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference",
+    "01_research/01_auditoria_RAW_DATA/00_data_certification/certification/reference"
+  ],
+  "outputs": {
+    "historical_cache_inventory": {
+      "csv": "01_foundations/inspection_dossiers/reference/evidence_assets/historical_cache_inventory/reference_historical_cache_inventory_v0_1.csv",
+      "md": "01_foundations/inspection_dossiers/reference/evidence_assets/historical_cache_inventory/reference_historical_cache_inventory_v0_1.md",
+      "rows": 31
+    },
+    "certification_inventory": {
+      "csv": "01_foundations/inspection_dossiers/reference/evidence_assets/historical_certification_inventory/reference_certification_inventory_v0_1.csv",
+      "md": "01_foundations/inspection_dossiers/reference/evidence_assets/historical_certification_inventory/reference_certification_inventory_v0_1.md",
+      "rows": 7
+    },
+    "physical_root_audit": {
+      "csv": "01_foundations/inspection_dossiers/reference/evidence_assets/physical_root_audit/reference_physical_root_audit_v0_1.csv",
+      "md": "01_foundations/inspection_dossiers/reference/evidence_assets/physical_root_audit/reference_physical_root_audit_summary_v0_1.md",
+      "rows": 8
+    },
+    "population_summary": {
+      "csv": "01_foundations/inspection_dossiers/reference/evidence_assets/population_summary/reference_population_summary_v0_1.csv",
+      "endpoint_csv": "01_foundations/inspection_dossiers/reference/evidence_assets/population_summary/reference_download_endpoint_summary_v0_1.csv",
+      "listing_csv": "01_foundations/inspection_dossiers/reference/evidence_assets/population_summary/reference_listing_presence_summary_v0_1.csv",
+      "md": "01_foundations/inspection_dossiers/reference/evidence_assets/population_summary/reference_population_summary_v0_1.md",
+      "rows": 26
+    },
+    "population_visual_overview": {
+      "manifest_csv": "01_foundations/inspection_dossiers/reference/evidence_assets/population_visual_overview/reference_population_visual_manifest_v0_1.csv",
+      "manifest_md": "01_foundations/inspection_dossiers/reference/evidence_assets/population_visual_overview/reference_population_visual_manifest_v0_1.md",
+      "visuals": 5
+    },
+    "casepacks": {
+      "manifest_csv": "01_foundations/inspection_dossiers/reference/evidence_assets/case_manifest/reference_case_manifest_v0_1.csv",
+      "manifest_md": "01_foundations/inspection_dossiers/reference/evidence_assets/case_manifest/reference_case_manifest_v0_1.md",
+      "casepacks": 5
+    }
+  },
+  "notes": [
+    "No raw data was modified.",
+    "Historical parquets were not copied to foundations.",
+    "Outputs are lightweight manifests, summaries, visuals and casepacks."
+  ]
+}

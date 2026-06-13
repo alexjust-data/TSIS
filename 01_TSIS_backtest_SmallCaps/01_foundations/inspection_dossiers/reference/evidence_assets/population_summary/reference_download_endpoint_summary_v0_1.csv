@@ -1,0 +1,8 @@
+dataset,audit_rows,ok_rows,error_rows,resume_skip_rows,distinct_tickers,http_404_rows,nonzero_rows_saved,ok_pct,error_pct,http_404_pct
+all_tickers,3109,3032,0,77,0,0,3032,97.52,0.0,0.0
+dividends,12468,12443,0,25,12467,0,12443,99.8,0.0,0.0
+events,12468,12443,0,25,12467,6250,12443,99.8,0.0,50.13
+exchanges,1,0,0,1,0,0,0,0.0,0.0,0.0
+overview,12468,12243,200,25,12467,200,12443,98.2,1.6,1.6
+splits,12468,12443,0,25,12467,0,12443,99.8,0.0,0.0
+ticker_types,1,0,0,1,0,0,0,0.0,0.0,0.0

@@ -1,0 +1,14 @@
+# Halts Physical Root Audit v0.1
+
+- Canonical current root: `E:/TSIS/data/Halts`
+- Legacy observed root: `D:/Halts`
+- Policy: read-only. Este builder no modifica ni reorganiza ninguna raiz fisica.
+
+| root_role | root | subtree | dirs | files | parquet_files | csv_files | xml_files | html_files | json_files | other_files | bytes | write_policy |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| canonical_current | E:/TSIS/data/Halts | . | 6 | 5702 | 5 | 17 | 5662 | 16 | 2 | 0 | 392678889 | read_only |
+| canonical_current | E:/TSIS/data/Halts | processed | 0 | 20 | 5 | 15 | 0 | 0 | 0 | 0 | 205863232 | read_only |
+| canonical_current | E:/TSIS/data/Halts | raw | 4 | 5681 | 0 | 2 | 5662 | 16 | 1 | 0 | 186815306 | read_only |
+| legacy_observed | D:/Halts | . | 6 | 5702 | 5 | 17 | 5662 | 16 | 2 | 0 | 392678889 | read_only |
+| legacy_observed | D:/Halts | processed | 0 | 20 | 5 | 15 | 0 | 0 | 0 | 0 | 205863232 | read_only |
+| legacy_observed | D:/Halts | raw | 4 | 5681 | 0 | 2 | 5662 | 16 | 1 | 0 | 186815306 | read_only |
