@@ -1,0 +1,93 @@
+{
+  "run_id": "sersan_full_corpus_distillation_20260612T152007Z",
+  "lesson_id_or_scope": "sersan_full_corpus",
+  "mode": "replay",
+  "status": "pass_with_warnings",
+  "contract_version": "sersan_lesson_pack_contract_v0_1",
+  "toolchain_traceability_contract": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/harness_toolchain_traceability_contract.md",
+  "started_at_utc": "2026-06-12T15:19:49Z",
+  "completed_at_utc": "2026-06-12T15:20:07Z",
+  "execution_command": "python 00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/run_sersan_corpus_distillation.py --process-all",
+  "toolchain_artifacts": [
+    {
+      "tool_id": "sersan_full_corpus_distillation_generator_v0_1",
+      "role": "generator",
+      "project_relative_path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/run_sersan_corpus_distillation.py",
+      "sha256": "sha256:f842356f842bdc7b6140fa7cea65bf2821b5e71c9df848e06e31b302ffa8dbcf",
+      "runtime": "python",
+      "project_resident": true
+    },
+    {
+      "tool_id": "sersan_full_corpus_distillation_validator_v0_1",
+      "role": "validator",
+      "project_relative_path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/validate_sersan_distillation.py",
+      "sha256": "sha256:f60ccad1cad01f7dc03ea2386c73f3c0a27f20509d9f98ea091a854b4c095c29",
+      "runtime": "python",
+      "project_resident": true
+    },
+    {
+      "tool_id": "sersan_corpus_distillation_config_v0_1",
+      "role": "config",
+      "project_relative_path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/sersan_corpus_distillation_config.json",
+      "sha256": "sha256:78eab6eb4cb2c653d753a7ca0f1a4828daddc6fb27b4c941e6f6bfd4350700d8",
+      "runtime": "python",
+      "project_resident": true
+    }
+  ],
+  "input_artifacts": [
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_protocol.md",
+      "sha256": "sha256:0062328c104fb3e400fb9194858a0df6a504941cc7dc0ad15aef7d8656964549"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_lesson_pack_contract.md",
+      "sha256": "sha256:6bc974c952049bfd8e5ea9ffe053346d895246e0710e5ea402401257612f4e14"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_pilot_harness_runbook.md",
+      "sha256": "sha256:b968bc2cb0d1bd436110368a415be5a19174319a66d90e4e0fa002ca97dc17c1"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/harness_toolchain_traceability_contract.md",
+      "sha256": "sha256:a762e90b34080a534404dab0560f54e105a4fde371e55fc3185f4f9a481b0249"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/shared_run_manifest_contract.md",
+      "sha256": "sha256:5785f54e81cd5e14cc0abc22dac1c1bd7b20ef08bb3303f15917ed3856c8334e"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/shared_validation_principles.md",
+      "sha256": "sha256:b3e27d75c6c0f5438ec892ac0bb90ce553c55e695efc392231980a8bd61beb16"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/_corpus_inventory/sersan_corpus_manifest.csv",
+      "sha256": "sha256:9499f46ffb2faacd8b6d627b372cc6cc1c59358836f80df1e20acf8f7962110f"
+    }
+  ],
+  "output_artifacts": [
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/_readiness_gate_report.json",
+      "sha256": "sha256:e303af9cb2576ba303f7aaa3d33cb7d89ad951c1708f87084c89d2149ae289b0"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/_readiness_gate_report.md",
+      "sha256": "sha256:06f4ad1a84717cc539f90edece4dd3d05d08bc177bf670eaaf296aa782180cdf"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/_corpus_distillation_summary.json",
+      "sha256": "sha256:925db53a75881ce75a29f535444a3f17047ceb512a589b88de5404d5e59f5ca0"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/_corpus_distillation_report.md",
+      "sha256": "sha256:5b1dedd32ec81811916b62d313e14304ad6dd1c61299218251a53b8db4ab9554"
+    }
+  ],
+  "non_project_artifacts_used": [],
+  "known_limitations": [
+    "Human visual review/OCR remains required for images carrying parameter, risk, optimization or execution evidence.",
+    "Code and XLSX semantic parsing remain pending.",
+    "Sersan outputs are mechanical-rule candidates only; no doctrine is promoted by this run.",
+    "The inventory_only lesson sersan_unmapped_xxx_revised remains blocked until mapped or explicitly reclassified."
+  ],
+  "acceptance_decision": "pass_with_warnings"
+}

@@ -14,6 +14,7 @@
 - [Quotes](#quotes)
 - [Trades](#trades)
 - [Ohlcv 1m raw](#ohlcv-1m-raw)
+- [Reference](#reference)
 - [Validacion de capas derivadas](#validacion-de-capas-derivadas)
 - [Relacion con inspection_dossiers](#relacion-con-inspectiondossiers)
 - [Relacion con data_consumption_policies](#relacion-con-dataconsumptionpolicies)
@@ -96,6 +97,8 @@ validators/
     ohlcv_1m_raw_validators.md
   quotes/
     quotes_validators.md
+  reference/
+    reference_validators.md
   trades/
     trades_validators.md
 ```
@@ -224,6 +227,22 @@ Debe validar:
 Este validador distingue raw de split-normalized. Que `ohlcv_1m_raw` este reconciliado no significa que `ohlcv_1m_split_normalized` este validado o promovido para el mismo scope.
 
 La promocion no puede ir mas alla de lo que dice la evidencia vigente: si el cierre es `institutional_raw_closeout_reconciled_lt1b`, ese es el limite hasta que una validacion posterior amplie calidad, scope o consumo.
+
+## Reference
+
+`reference/reference_validators.md` gobierna `reference_v0_1`.
+
+Debe validar por subfamilia:
+
+- presencia de raiz y subfamilias;
+- schema y parseabilidad;
+- identity checks;
+- corporate actions;
+- events/ticker_change;
+- operational artifacts;
+- evidencia cruzada contra market data cuando se declare causalidad.
+
+La regla critica es que `reference` no tiene un pass unico que autorice todos los consumidores. Se valida por subfamilia y por uso.
 
 ## Validacion de capas derivadas
 

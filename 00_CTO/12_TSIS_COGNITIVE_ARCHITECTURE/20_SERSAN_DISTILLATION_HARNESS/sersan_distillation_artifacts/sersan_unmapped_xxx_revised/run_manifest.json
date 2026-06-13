@@ -1,0 +1,114 @@
+{
+  "run_id": "sersan_full_corpus_distillation_sersan_unmapped_xxx_revised_20260612T152007Z",
+  "lesson_id_or_scope": "sersan_unmapped_xxx_revised",
+  "lesson_id": "sersan_unmapped_xxx_revised",
+  "mode": "replay",
+  "status": "blocked",
+  "contract_version": "sersan_lesson_pack_contract_v0_1",
+  "toolchain_traceability_contract": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/harness_toolchain_traceability_contract.md",
+  "started_at_utc": "2026-06-12T15:20:07Z",
+  "completed_at_utc": "2026-06-12T15:20:07Z",
+  "execution_command": "python 00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/run_sersan_corpus_distillation.py --process-all",
+  "toolchain_artifacts": [
+    {
+      "tool_id": "sersan_full_corpus_distillation_generator_v0_1",
+      "role": "generator",
+      "project_relative_path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/run_sersan_corpus_distillation.py",
+      "sha256": "sha256:f842356f842bdc7b6140fa7cea65bf2821b5e71c9df848e06e31b302ffa8dbcf",
+      "runtime": "python",
+      "project_resident": true
+    },
+    {
+      "tool_id": "sersan_full_corpus_distillation_validator_v0_1",
+      "role": "validator",
+      "project_relative_path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/validate_sersan_distillation.py",
+      "sha256": "sha256:f60ccad1cad01f7dc03ea2386c73f3c0a27f20509d9f98ea091a854b4c095c29",
+      "runtime": "python",
+      "project_resident": true
+    },
+    {
+      "tool_id": "sersan_corpus_distillation_config_v0_1",
+      "role": "config",
+      "project_relative_path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/sersan_corpus_distillation_config.json",
+      "sha256": "sha256:78eab6eb4cb2c653d753a7ca0f1a4828daddc6fb27b4c941e6f6bfd4350700d8",
+      "runtime": "python",
+      "project_resident": true
+    }
+  ],
+  "input_artifacts": [
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_protocol.md",
+      "sha256": "sha256:0062328c104fb3e400fb9194858a0df6a504941cc7dc0ad15aef7d8656964549"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_lesson_pack_contract.md",
+      "sha256": "sha256:6bc974c952049bfd8e5ea9ffe053346d895246e0710e5ea402401257612f4e14"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_pilot_harness_runbook.md",
+      "sha256": "sha256:b968bc2cb0d1bd436110368a415be5a19174319a66d90e4e0fa002ca97dc17c1"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/harness_toolchain_traceability_contract.md",
+      "sha256": "sha256:a762e90b34080a534404dab0560f54e105a4fde371e55fc3185f4f9a481b0249"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/shared_run_manifest_contract.md",
+      "sha256": "sha256:5785f54e81cd5e14cc0abc22dac1c1bd7b20ef08bb3303f15917ed3856c8334e"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/shared_validation_principles.md",
+      "sha256": "sha256:b3e27d75c6c0f5438ec892ac0bb90ce553c55e695efc392231980a8bd61beb16"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/_corpus_inventory/sersan_corpus_manifest.csv",
+      "sha256": "sha256:9499f46ffb2faacd8b6d627b372cc6cc1c59358836f80df1e20acf8f7962110f"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised/xxx_revised.md",
+      "sha256": "sha256:13e35d51c342121776065d5e9a282df2b1ae2e1937b8b94a0c2bb798aaeb5391"
+    }
+  ],
+  "output_artifacts": [
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_unmapped_xxx_revised/image_evidence_index.csv",
+      "sha256": "sha256:d0e0578181588cb82322835111a530ba93e9bbb0129e0a353717c7a5140ed8ea"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_unmapped_xxx_revised/lesson_distillation.md",
+      "sha256": "sha256:f5fd213bb6a7a4416cbc382e96c80eaf1aa8556c5bd8afc21e3130ea7b4fc702"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_unmapped_xxx_revised/lesson_pack_manifest.json",
+      "sha256": "sha256:d1a6e9845bcd540d7d075b97d0286ac33a1f1159389c4ce44d7c37ce2731f73e"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_unmapped_xxx_revised/lesson_sections.jsonl",
+      "sha256": "sha256:26f0a31dc33d6a68ac402c8a4e80a8a98cf576dbfd92f706f88b27258ff9248b"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_unmapped_xxx_revised/mechanical_rules.yaml",
+      "sha256": "sha256:45834eaebc7958bd448b985cddebb413decf9f05a2c2fe9f703f79e8ed9eb14d"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_unmapped_xxx_revised/open_questions.md",
+      "sha256": "sha256:26dcd7362734ade5e78ed2a3565576e15fa1ae9ad12d967dfb1b2a56099348b0"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_unmapped_xxx_revised/quality_report.md",
+      "sha256": "sha256:c16b7c4f78f34b92ff88682260903bfcbc1b7a7a5bcb2b44b84e56b6fb7d38c0"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_unmapped_xxx_revised/tsis_translation_map.csv",
+      "sha256": "sha256:727bbe72f14aadc581a1b134af0f9cb9a352fbc19328416e0f232351992be541"
+    }
+  ],
+  "non_project_artifacts_used": [],
+  "known_limitations": [
+    "Automated numeric OCR is not implemented in this run.",
+    "Code artifacts are inventoried but not semantically parsed.",
+    "XLSX artifacts are inventoried but not semantically parsed.",
+    "inventory_only lesson has no mapped workshop/practice number; kept blocked for human mapping."
+  ],
+  "acceptance_decision": "blocked"
+}

@@ -1,0 +1,197 @@
+# Data Quality Harness
+
+Estado: design-to-runtime bridge v0.2
+Fecha: 2026-06-12
+Ambito: auditoria historica de data y futura vigilancia live de TSIS.
+
+## Rol
+
+Este Harness convierte la auditoria historica de `01_TSIS_backtest_SmallCaps/01_foundations` en un sistema operativo agentico.
+
+No existe para inventar una auditoria paralela.
+Existe para que un agente pueda:
+
+- leer contratos;
+- verificar roots fisicos;
+- producir evidence assets;
+- generar readouts;
+- construir notebooks inspectores cuando sean necesarios;
+- generar visuales estables y casepacks;
+- interpretar visuales uno a uno;
+- validar manifests;
+- actualizar registries/policies/validators;
+- y dejar una decision de consumo defendible.
+
+## Correccion operativa v0.2
+
+Para el siguiente run se usara un solo agente, estilo SersanSistemas.
+
+El modelo multi-agente queda como arquitectura futura, no como ejecucion nocturna inmediata.
+
+La razon es practica: aun no existe un orquestador runtime que coordine locks, integracion, revision cruzada y promocion de estado. Hasta que exista, un solo agente autonomo debe ejecutar el ciclo completo de forma secuencial y dejar trazabilidad.
+
+## Documentos activos
+
+Leer en este orden:
+
+1. `data_audit_harness_agentic_operating_map.md`
+   - Snapshot auditor de `01_foundations` y mapa general para convertir la auditoria historica en Harness.
+2. `data_audit_completion_artifact_contract.md`
+   - Contrato comun de outputs para cerrar datasets pendientes con calidad comparable a `daily`, `quotes`, `trades` y `1m`.
+3. `runbooks/2026-06-12_overnight_data_audit_completion_harness_runbook.md`
+   - Runbook single-agent para cerrar datasets pendientes.
+4. `runbooks/2026-06-12_data_audit_agent_prompt_pack.md`
+   - Prompt unico recomendado para el agente Codex autonomo.
+5. `future_live_data_quality_contract.md`
+   - Seed futuro para live data quality. No es todavia runtime operativo.
+
+## Datasets maduros usados como benchmark
+
+El estandar de excelencia actual no es solo documental. Es un sistema inspector completo.
+
+Un dataset pendiente no esta a la altura si solo tiene README, contrato, registry y policy. Debe aproximarse, cuando aplique, al patron real de los bloques maduros:
+
+- `daily`
+  - separa calidad del bar y coverage;
+  - tiene readout principal, build guide, casepacks de good/flagged/bad/coverage, imagenes y assets;
+  - no colapsa gaps de coverage en `good/bad`.
+- `quotes`
+  - separa calidad local del libro, severidad economica, crossed/locked behavior, contexto externo y consumo;
+  - usa imagenes globales, casepacks por estado, manifests y auditoria de casepacks abiertos;
+  - no trata contexto externo como rehabilitacion automatica.
+- `trades`
+  - combina readouts, notebooks inspectores, universo global `57f`, visuales poblacionales, manifests estratificados, family casepacks y scripts residentes;
+  - distingue snapshot poblacional, muestra metodologica, full closeout, familias semanticas y estado final;
+  - no usa `good` como proxy de utilidad total.
+- `minute / ohlcv_1m_raw`
+  - tiene notebooks modernos `minute_00` a `minute_05`, incluyendo notebooks con widgets;
+  - separa core OHLCV y `vw`;
+  - tiene un dossier visual fijo de `67` imagenes: `7` mapas poblacionales y `60` casos;
+  - cada imagen se lee individualmente con `Que muestra / Responde / No responde / Consecuencia`.
+- `1m_split_normalized`
+  - trata una capa derivada, no raw 1m;
+  - tiene readout final, notebooks, mapa visual poblacional, casepacks de eventos split y auditoria full-universe de eventos auditables;
+  - distingue auditoria full-universe de eventos de materializacion fisica full-universe.
+
+Un dataset pendiente no debe considerarse cerrado al mismo nivel si solo tiene contrato narrativo.
+Debe tener, cuando aplique:
+
+- README local;
+- dataset contract;
+- canonical schemas;
+- dataset registry;
+- consumption policy;
+- validators;
+- inspection readout;
+- evidence assets;
+- manifests;
+- casepacks;
+- builder/toolchain residente;
+- changelog;
+- y estado de madurez honesto.
+
+## Regla sobre notebooks
+
+Los notebooks no son almacenes de codigo.
+
+En este proyecto cumplen roles inspectores:
+
+- exploracion;
+- lectura de outputs ejecutados;
+- widgets y selectores para navegar casos;
+- drilldown por ticker, fecha, mes, familia o estado;
+- generacion inicial de evidencia;
+- y validacion humana de hipotesis.
+
+La logica pesada y estable debe vivir, cuando el formato este claro, en scripts o builders residentes bajo:
+
+```text
+01_TSIS_backtest_SmallCaps/scripts/inspection/<dataset>/
+```
+
+Si un notebook demuestra una conclusion estable, esa conclusion debe quedar encapsulada en markdown institucional, manifest, visual pack o asset persistido. No debe quedar solo dentro del notebook.
+
+## Regla visual
+
+Las imagenes no son decoracion.
+
+Todo visual, tabla o panel relevante debe declarar:
+
+```text
+Que muestra
+Responde
+No responde
+Consecuencia
+```
+
+Ademas, la explicacion debe salir de la lectura real del visual.
+
+Reglas:
+
+- si el fenomeno se ve, hay que decir donde se ve;
+- si no se ve bien, hay que decirlo;
+- si el panel no prueba la causa, debe pedirse panel o tabla complementaria;
+- no se puede justificar un caso solo por el nombre del bucket;
+- no se puede sustituir mapa poblacional por dos ejemplos bonitos;
+- no se puede sustituir caso forense por solo estadistica agregada.
+
+## Datasets pendientes de cierre moderno
+
+Foto operacional a 2026-06-12:
+
+| Dataset/root | Estado actual | Decision Harness |
+| --- | --- | --- |
+| `reference` | foundation minima promovida, gap inspector documentado | upgrade moderno obligatorio antes de tratarlo como paridad con mature dossiers |
+| `E:/TSIS/data/Halts` | data fisica y auditoria historica parcial/localizada | cerrar como dossier moderno despues de reference |
+| `E:/TSIS/data/financial` | schemas existen, sin paquete foundation completo | cerrar contrato, registry, policy, validator y dossier |
+| `E:/TSIS/data/regime_indicators` | schemas existen, sin paquete foundation completo | cerrar como capa de contexto/indicadores, no como alpha |
+
+Fuera de alcance para este Harness:
+
+- `E:/TSIS/data/images_Flash_Research`
+
+`images_Flash_Research` no forma parte del cierre de auditoria Polygon de este Harness. No debe inventariarse, moverse, validar, OCRizar ni institucionalizarse en este run.
+
+## Rutas de no tocar
+
+Prohibido modificar, mover, limpiar, normalizar o reorganizar:
+
+```text
+E:/TSIS/data/
+C:/TSIS_Data/data/
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/data/
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/run/
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/
+```
+
+Esas rutas solo se leen como evidencia y provenance.
+
+El trabajo nuevo vive en:
+
+```text
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/inspection/<dataset>/
+```
+
+## Regla de ejecucion recomendada
+
+El siguiente run debe ejecutarse con un unico agente autonomo.
+
+Orden:
+
+1. Leer contratos raiz, locales y CTO/Harness.
+2. Leer el contrato de dossier inspector.
+3. Leer los benchmarks maduros, incluyendo notebooks y visual packs declarados.
+4. Cerrar `reference` o dejarlo bloqueado con gap exacto.
+5. Cerrar `Halts`.
+6. Cerrar `financial`.
+7. Cerrar `regime_indicators`.
+8. Integrar indices y changelog al final.
+
+Si el tiempo no alcanza, el agente debe preservar trazabilidad y no sobrepromover estado.
+
+## Regla final
+
+El objetivo del Harness no es que "termine el agente".
+El objetivo es que cada dataset quede con evidencia suficiente para que otro humano o agente pueda inspeccionar la decision sin depender del chat.

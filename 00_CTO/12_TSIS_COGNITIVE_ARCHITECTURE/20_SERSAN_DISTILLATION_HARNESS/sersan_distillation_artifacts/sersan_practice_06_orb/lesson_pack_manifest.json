@@ -1,0 +1,42 @@
+{
+  "contract_version": "sersan_lesson_pack_contract_v0_1",
+  "generated_at_utc": "2026-06-12T15:19:53Z",
+  "generated_by": "sersan_full_corpus_distillation_generator_v0_1",
+  "lesson_id": "sersan_practice_06_orb",
+  "practice_number": 6,
+  "title": "Consultas",
+  "status": "translated",
+  "source_md": "03_only_md_revised/practica_06_ORB.md",
+  "workshop_dir": "02_workshops/16-practice-06",
+  "image_dir": "02_workshops/16-practice-06/img",
+  "pdf_role": "duplicate_md",
+  "video_role": "out_of_scope",
+  "asset_resolution": {
+    "resolver_version": "sersan_full_corpus_resolver_v0_1",
+    "image_refs_total": 76,
+    "resolved_direct": 75,
+    "resolved_lesson_fallback": 1,
+    "external_reference": 0,
+    "missing": 0,
+    "needs_human_review": 76
+  },
+  "source_hashes": {
+    "03_only_md_revised/practica_06_ORB.md": "sha256:7c53be4365a60ace3e340eb611a21c08cb9784fc2574701458a015c64abfa0ba"
+  },
+  "counts": {
+    "md_lines": 1791,
+    "sections": 7,
+    "images": 76,
+    "code_artifacts": 6,
+    "xlsx_artifacts": 0,
+    "rules": 6,
+    "translations": 6,
+    "open_questions": 1
+  },
+  "known_issues": [
+    "Automated numeric OCR is not implemented in this run.",
+    "Code artifacts are inventoried but not semantically parsed.",
+    "XLSX artifacts are inventoried but not semantically parsed.",
+    "High-impact or numeric images require human review."
+  ]
+}

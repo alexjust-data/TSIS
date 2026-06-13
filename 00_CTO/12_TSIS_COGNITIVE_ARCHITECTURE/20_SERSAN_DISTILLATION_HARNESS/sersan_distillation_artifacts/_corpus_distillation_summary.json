@@ -1,0 +1,319 @@
+{
+  "generated_at_utc": "2026-06-12T15:20:07Z",
+  "run_id": "sersan_full_corpus_distillation_20260612T152007Z",
+  "readiness_status": "pass_with_warnings",
+  "lesson_packs_processed": 17,
+  "status_counts": {
+    "pass_with_warnings": 16,
+    "blocked": 1
+  },
+  "rules_extracted": 225,
+  "translations_created": 225,
+  "images_indexed": 2108,
+  "images_needing_human_review": 2105,
+  "lessons": [
+    {
+      "lesson_id": "sersan_practice_02_donchain",
+      "status": "pass_with_warnings",
+      "acceptance_decision": "pass_with_warnings",
+      "sections": 12,
+      "images": 60,
+      "images_needing_human_review": 60,
+      "rules": 11,
+      "translations": 11,
+      "warnings": [
+        "Automated numeric OCR is not implemented in this run.",
+        "Code artifacts are inventoried but not semantically parsed.",
+        "XLSX artifacts are inventoried but not semantically parsed.",
+        "High-impact or numeric images require human review."
+      ],
+      "blocking_issues": []
+    },
+    {
+      "lesson_id": "sersan_practice_03_donchain",
+      "status": "pass_with_warnings",
+      "acceptance_decision": "pass_with_warnings",
+      "sections": 31,
+      "images": 97,
+      "images_needing_human_review": 97,
+      "rules": 31,
+      "translations": 31,
+      "warnings": [
+        "Automated numeric OCR is not implemented in this run.",
+        "Code artifacts are inventoried but not semantically parsed.",
+        "XLSX artifacts are inventoried but not semantically parsed.",
+        "High-impact or numeric images require human review."
+      ],
+      "blocking_issues": []
+    },
+    {
+      "lesson_id": "sersan_practice_04_donchain",
+      "status": "pass_with_warnings",
+      "acceptance_decision": "pass_with_warnings",
+      "sections": 24,
+      "images": 196,
+      "images_needing_human_review": 196,
+      "rules": 23,
+      "translations": 23,
+      "warnings": [
+        "Automated numeric OCR is not implemented in this run.",
+        "Code artifacts are inventoried but not semantically parsed.",
+        "XLSX artifacts are inventoried but not semantically parsed.",
+        "High-impact or numeric images require human review."
+      ],
+      "blocking_issues": []
+    },
+    {
+      "lesson_id": "sersan_practice_05_donchain",
+      "status": "pass_with_warnings",
+      "acceptance_decision": "pass_with_warnings",
+      "sections": 14,
+      "images": 119,
+      "images_needing_human_review": 119,
+      "rules": 13,
+      "translations": 13,
+      "warnings": [
+        "Automated numeric OCR is not implemented in this run.",
+        "Code artifacts are inventoried but not semantically parsed.",
+        "XLSX artifacts are inventoried but not semantically parsed.",
+        "High-impact or numeric images require human review."
+      ],
+      "blocking_issues": []
+    },
+    {
+      "lesson_id": "sersan_practice_06_orb",
+      "status": "pass_with_warnings",
+      "acceptance_decision": "pass_with_warnings",
+      "sections": 7,
+      "images": 76,
+      "images_needing_human_review": 76,
+      "rules": 6,
+      "translations": 6,
+      "warnings": [
+        "Automated numeric OCR is not implemented in this run.",
+        "Code artifacts are inventoried but not semantically parsed.",
+        "XLSX artifacts are inventoried but not semantically parsed.",
+        "High-impact or numeric images require human review."
+      ],
+      "blocking_issues": []
+    },
+    {
+      "lesson_id": "sersan_practice_07_orb",
+      "status": "pass_with_warnings",
+      "acceptance_decision": "pass_with_warnings",
+      "sections": 11,
+      "images": 86,
+      "images_needing_human_review": 86,
+      "rules": 10,
+      "translations": 10,
+      "warnings": [
+        "Automated numeric OCR is not implemented in this run.",
+        "Code artifacts are inventoried but not semantically parsed.",
+        "XLSX artifacts are inventoried but not semantically parsed.",
+        "High-impact or numeric images require human review."
+      ],
+      "blocking_issues": []
+    },
+    {
+      "lesson_id": "sersan_practice_08_orb",
+      "status": "pass_with_warnings",
+      "acceptance_decision": "pass_with_warnings",
+      "sections": 18,
+      "images": 95,
+      "images_needing_human_review": 92,
+      "rules": 17,
+      "translations": 17,
+      "warnings": [
+        "Automated numeric OCR is not implemented in this run.",
+        "Code artifacts are inventoried but not semantically parsed.",
+        "XLSX artifacts are inventoried but not semantically parsed.",
+        "High-impact or numeric images require human review."
+      ],
+      "blocking_issues": []
+    },
+    {
+      "lesson_id": "sersan_practice_09_revision_apolo",
+      "status": "pass_with_warnings",
+      "acceptance_decision": "pass_with_warnings",
+      "sections": 25,
+      "images": 171,
+      "images_needing_human_review": 171,
+      "rules": 24,
+      "translations": 24,
+      "warnings": [
+        "Automated numeric OCR is not implemented in this run.",
+        "Code artifacts are inventoried but not semantically parsed.",
+        "XLSX artifacts are inventoried but not semantically parsed.",
+        "High-impact or numeric images require human review."
+      ],
+      "blocking_issues": []
+    },
+    {
+      "lesson_id": "sersan_practice_10_bollinger_bands",
+      "status": "pass_with_warnings",
+      "acceptance_decision": "pass_with_warnings",
+      "sections": 10,
+      "images": 176,
+      "images_needing_human_review": 176,
+      "rules": 9,
+      "translations": 9,
+      "warnings": [
+        "Automated numeric OCR is not implemented in this run.",
+        "Code artifacts are inventoried but not semantically parsed.",
+        "XLSX artifacts are inventoried but not semantically parsed.",
+        "High-impact or numeric images require human review."
+      ],
+      "blocking_issues": []
+    },
+    {
+      "lesson_id": "sersan_practice_11_bollinger_aberration",
+      "status": "pass_with_warnings",
+      "acceptance_decision": "pass_with_warnings",
+      "sections": 12,
+      "images": 66,
+      "images_needing_human_review": 66,
+      "rules": 12,
+      "translations": 12,
+      "warnings": [
+        "Automated numeric OCR is not implemented in this run.",
+        "Code artifacts are inventoried but not semantically parsed.",
+        "XLSX artifacts are inventoried but not semantically parsed.",
+        "High-impact or numeric images require human review."
+      ],
+      "blocking_issues": []
+    },
+    {
+      "lesson_id": "sersan_practice_12_revised",
+      "status": "pass_with_warnings",
+      "acceptance_decision": "pass_with_warnings",
+      "sections": 7,
+      "images": 175,
+      "images_needing_human_review": 175,
+      "rules": 7,
+      "translations": 7,
+      "warnings": [
+        "Automated numeric OCR is not implemented in this run.",
+        "Code artifacts are inventoried but not semantically parsed.",
+        "XLSX artifacts are inventoried but not semantically parsed.",
+        "High-impact or numeric images require human review."
+      ],
+      "blocking_issues": []
+    },
+    {
+      "lesson_id": "sersan_practice_13_revised",
+      "status": "pass_with_warnings",
+      "acceptance_decision": "pass_with_warnings",
+      "sections": 16,
+      "images": 184,
+      "images_needing_human_review": 184,
+      "rules": 14,
+      "translations": 14,
+      "warnings": [
+        "Automated numeric OCR is not implemented in this run.",
+        "Code artifacts are inventoried but not semantically parsed.",
+        "XLSX artifacts are inventoried but not semantically parsed.",
+        "High-impact or numeric images require human review."
+      ],
+      "blocking_issues": []
+    },
+    {
+      "lesson_id": "sersan_practice_14_revised",
+      "status": "pass_with_warnings",
+      "acceptance_decision": "pass_with_warnings",
+      "sections": 17,
+      "images": 144,
+      "images_needing_human_review": 144,
+      "rules": 17,
+      "translations": 17,
+      "warnings": [
+        "Automated numeric OCR is not implemented in this run.",
+        "Code artifacts are inventoried but not semantically parsed.",
+        "XLSX artifacts are inventoried but not semantically parsed.",
+        "High-impact or numeric images require human review."
+      ],
+      "blocking_issues": []
+    },
+    {
+      "lesson_id": "sersan_practice_15_revised",
+      "status": "pass_with_warnings",
+      "acceptance_decision": "pass_with_warnings",
+      "sections": 7,
+      "images": 206,
+      "images_needing_human_review": 206,
+      "rules": 7,
+      "translations": 7,
+      "warnings": [
+        "Automated numeric OCR is not implemented in this run.",
+        "Code artifacts are inventoried but not semantically parsed.",
+        "XLSX artifacts are inventoried but not semantically parsed.",
+        "High-impact or numeric images require human review."
+      ],
+      "blocking_issues": []
+    },
+    {
+      "lesson_id": "sersan_practice_16_revised",
+      "status": "pass_with_warnings",
+      "acceptance_decision": "pass_with_warnings",
+      "sections": 19,
+      "images": 91,
+      "images_needing_human_review": 91,
+      "rules": 19,
+      "translations": 19,
+      "warnings": [
+        "Automated numeric OCR is not implemented in this run.",
+        "Code artifacts are inventoried but not semantically parsed.",
+        "XLSX artifacts are inventoried but not semantically parsed.",
+        "High-impact or numeric images require human review."
+      ],
+      "blocking_issues": []
+    },
+    {
+      "lesson_id": "sersan_practice_17_revised",
+      "status": "pass_with_warnings",
+      "acceptance_decision": "pass_with_warnings",
+      "sections": 6,
+      "images": 166,
+      "images_needing_human_review": 166,
+      "rules": 5,
+      "translations": 5,
+      "warnings": [
+        "Automated numeric OCR is not implemented in this run.",
+        "Code artifacts are inventoried but not semantically parsed.",
+        "XLSX artifacts are inventoried but not semantically parsed.",
+        "High-impact or numeric images require human review."
+      ],
+      "blocking_issues": []
+    },
+    {
+      "lesson_id": "sersan_unmapped_xxx_revised",
+      "status": "blocked",
+      "acceptance_decision": "needs_human_review",
+      "sections": 1,
+      "images": 0,
+      "images_needing_human_review": 0,
+      "rules": 0,
+      "translations": 0,
+      "warnings": [
+        "Automated numeric OCR is not implemented in this run.",
+        "Code artifacts are inventoried but not semantically parsed.",
+        "XLSX artifacts are inventoried but not semantically parsed."
+      ],
+      "blocking_issues": [
+        "inventory_only lesson has no mapped workshop/practice number; kept blocked for human mapping."
+      ]
+    }
+  ],
+  "repeated_warnings": [
+    "Automated numeric OCR not implemented.",
+    "Code artifacts inventoried but not semantically parsed.",
+    "XLSX artifacts inventoried but not semantically parsed.",
+    "High-impact image evidence requires human review before doctrine promotion."
+  ],
+  "contract_debt": [
+    "Human visual review/OCR remains required for images carrying parameter, risk, optimization or execution evidence.",
+    "Code and XLSX semantic parsing remain pending.",
+    "Sersan outputs are mechanical-rule candidates only; no doctrine is promoted by this run.",
+    "The inventory_only lesson sersan_unmapped_xxx_revised remains blocked until mapped or explicitly reclassified."
+  ],
+  "promotion_recommendation": "Do not promote to canonical TSIS doctrine yet. Proceed to human doctrine review and domain consolidation after validating high-impact image evidence."
+}

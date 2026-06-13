@@ -1,0 +1,424 @@
+contract_version: "sersan_mechanical_rules_v0_1"
+lesson_id: "sersan_practice_02_donchain"
+generated_at_utc: "2026-06-13T05:49:10Z"
+generated_by: "mechanical_rule_extractor_agent_v0_1"
+rules:
+  -
+    rule_id: "sersan_practice_02_donchain_rule_0001"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "hard_rule"
+    domains:
+      - "bar_construction"
+      - "price_view"
+      - "data_semantics"
+    statement: "For futures swing or system backtests where current tradable price must remain real, prefer backward-adjusted continuous contracts."
+    trigger: "Building continuous futures data for backtest or research."
+    action: "Use backward-adjusted continuous series unless the research case explicitly requires another price view."
+    failure_mode_if_ignored: "The current price in the backtest may stop matching the tradable contract price."
+    required_evidence:
+      - "continuous_contract_method"
+      - "current_contract_price_check"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_02_donchain"
+        md_path: "03_only_md_revised/practica_02_donchain.md"
+        section_id: "sersan_practice_02_donchain_sec_0003"
+        line_start: 127
+        line_end: 192
+        image_ids:
+
+    caveats:
+      - "Applies to futures; equities and ETFs require separate corporate-action treatment."
+      - "Candidate extracted from Sersan practice 02; not promoted to canonical doctrine."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_02_donchain_rule_0002"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "hard_rule"
+    domains:
+      - "bar_construction"
+      - "execution_realism"
+    statement: "Do not treat roll gaps in unadjusted continuous futures as real tradable PnL."
+    trigger: "Using unadjusted continuous futures charts or roll-linked series."
+    action: "Identify artificial roll gaps and exclude them from performance interpretation."
+    failure_mode_if_ignored: "Backtest may count synthetic jumps created by contract stitching as alpha."
+    required_evidence:
+      - "roll_calendar"
+      - "contract_boundary_check"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_02_donchain"
+        md_path: "03_only_md_revised/practica_02_donchain.md"
+        section_id: "sersan_practice_02_donchain_sec_0003"
+        line_start: 127
+        line_end: 192
+        image_ids:
+
+    caveats:
+      - "Very intraday systems that close/reopen around roll dates may justify unadjusted views."
+      - "Candidate extracted from Sersan practice 02; not promoted to canonical doctrine."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_02_donchain_rule_0003"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "medium"
+    rule_type: "heuristic"
+    domains:
+      - "bar_construction"
+      - "price_view"
+    statement: "When long historical scale matters, ratio adjustment is usually safer than fixed difference adjustment."
+    trigger: "Choosing a continuous price adjustment method for long futures history."
+    action: "Prefer ratio adjustment and round to tick size when the platform or execution model requires it."
+    failure_mode_if_ignored: "Old prices may become distorted or even negative after repeated fixed differences."
+    required_evidence:
+      - "adjustment_method_documentation"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_02_donchain"
+        md_path: "03_only_md_revised/practica_02_donchain.md"
+        section_id: "sersan_practice_02_donchain_sec_0004"
+        line_start: 193
+        line_end: 224
+        image_ids:
+
+    caveats:
+      - "Exact method must be aligned with the instrument, vendor and execution assumptions."
+      - "Candidate extracted from Sersan practice 02; not promoted to canonical doctrine."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_02_donchain_rule_0004"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "hard_rule"
+    domains:
+      - "entry_logic"
+      - "exit_logic"
+      - "stop_loss"
+      - "take_profit"
+    statement: "A preliminary entry-edge test should use symmetric stop and profit target so payoff is close to one before interpreting win rate."
+    trigger: "Testing whether an entry setup has raw directional edge."
+    action: "Set stop and target at comparable distance and require win rate above 50% before calling the entry promising."
+    failure_mode_if_ignored: "Win rate may be interpreted without payoff context, producing false edge claims."
+    required_evidence:
+      - "win_rate"
+      - "average_win_loss"
+      - "stop_target_config"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_02_donchain"
+        md_path: "03_only_md_revised/practica_02_donchain.md"
+        section_id: "sersan_practice_02_donchain_sec_0006"
+        line_start: 274
+        line_end: 405
+        image_ids:
+          - "sersan_practice_02_donchain_img_004"
+          - "sersan_practice_02_donchain_img_008"
+    caveats:
+      - "This is a preliminary filter, not proof that the complete system is tradable."
+      - "Candidate extracted from Sersan practice 02; not promoted to canonical doctrine."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_02_donchain_rule_0005"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "hard_rule"
+    domains:
+      - "sample_size"
+      - "stop_loss"
+      - "take_profit"
+      - "exit_logic"
+    statement: "Stop and profit target tests are invalid if one of the two exits almost never triggers."
+    trigger: "Evaluating stop/target behavior in preliminary backtests."
+    action: "Report exit activation counts and reject conclusions where the rule lacks enough observed events."
+    failure_mode_if_ignored: "The test may claim a balanced payoff while one side of the distribution is unobserved."
+    required_evidence:
+      - "exit_reason_counts"
+      - "trade_list"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_02_donchain"
+        md_path: "03_only_md_revised/practica_02_donchain.md"
+        section_id: "sersan_practice_02_donchain_sec_0006"
+        line_start: 274
+        line_end: 405
+        image_ids:
+          - "sersan_practice_02_donchain_img_008"
+    caveats:
+      - "Minimum event count should be standardized by TSIS doctrine review."
+      - "Candidate extracted from Sersan practice 02; not promoted to canonical doctrine."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_02_donchain_rule_0006"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "hard_rule"
+    domains:
+      - "portfolio"
+      - "money_management"
+      - "other"
+    statement: "Equity strategy tests must be compared with buy and hold on return/risk, not raw return only."
+    trigger: "Evaluating a strategy on stocks or equity portfolios."
+    action: "Compute buy-and-hold benchmark and compare both return and drawdown/risk profile."
+    failure_mode_if_ignored: "A strategy may look inferior or superior for the wrong reason because risk is omitted."
+    required_evidence:
+      - "benchmark_return"
+      - "benchmark_drawdown"
+      - "strategy_return"
+      - "strategy_drawdown"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_02_donchain"
+        md_path: "03_only_md_revised/practica_02_donchain.md"
+        section_id: "sersan_practice_02_donchain_sec_0006"
+        line_start: 274
+        line_end: 405
+        image_ids:
+          - "sersan_practice_02_donchain_img_014"
+          - "sersan_practice_02_donchain_img_020"
+    caveats:
+      - "Benchmark choice must match universe and trade constraints."
+      - "Candidate extracted from Sersan practice 02; not promoted to canonical doctrine."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_02_donchain_rule_0007"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "hard_rule"
+    domains:
+      - "sample_size"
+      - "trade_distribution"
+      - "robustness"
+    statement: "A preliminary setup should be tested across a broad enough universe when single-symbol evidence is insufficient."
+    trigger: "A setup appears promising on one stock or a small sample."
+    action: "Run the same non-optimized setup across a representative universe and inspect distribution by symbol."
+    failure_mode_if_ignored: "The setup may be a single-name artifact rather than a repeatable market behavior."
+    required_evidence:
+      - "multi_asset_report"
+      - "symbol_distribution"
+      - "trade_count"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_02_donchain"
+        md_path: "03_only_md_revised/practica_02_donchain.md"
+        section_id: "sersan_practice_02_donchain_sec_0008"
+        line_start: 566
+        line_end: 747
+        image_ids:
+          - "sersan_practice_02_donchain_img_057"
+          - "sersan_practice_02_donchain_img_058"
+    caveats:
+      - "Universe survivorship and delisting treatment must be checked separately in TSIS small caps."
+      - "Candidate extracted from Sersan practice 02; not promoted to canonical doctrine."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_02_donchain_rule_0008"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "hard_rule"
+    domains:
+      - "position_sizing"
+      - "money_management"
+      - "execution_realism"
+    statement: "Sizing mistakes must be corrected before interpreting portfolio-level results."
+    trigger: "Backtest exposure or leverage appears inconsistent with intended capital usage."
+    action: "Audit sizing inputs, exposure and position net before accepting performance metrics."
+    failure_mode_if_ignored: "The edge estimate may reflect accidental leverage rather than signal quality."
+    required_evidence:
+      - "sizing_parameters"
+      - "exposure_curve"
+      - "position_net"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_02_donchain"
+        md_path: "03_only_md_revised/practica_02_donchain.md"
+        section_id: "sersan_practice_02_donchain_sec_0008"
+        line_start: 566
+        line_end: 747
+        image_ids:
+          - "sersan_practice_02_donchain_img_064"
+          - "sersan_practice_02_donchain_img_065"
+    caveats:
+      - "Exact accepted exposure limits belong in TSIS money-management policy."
+      - "Candidate extracted from Sersan practice 02; not promoted to canonical doctrine."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_02_donchain_rule_0009"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "heuristic"
+    domains:
+      - "exit_logic"
+      - "entry_logic"
+      - "other"
+    statement: "The same entry can become trend-following or mean-reverting depending on the exit design."
+    trigger: "Classifying a system from entry logic alone."
+    action: "Evaluate the entry together with stop, target, time exit and trailing logic before labeling the system."
+    failure_mode_if_ignored: "The system may be classified incorrectly and optimized against the wrong behavior."
+    required_evidence:
+      - "exit_configuration"
+      - "exit_reason_counts"
+      - "trade_duration"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_02_donchain"
+        md_path: "03_only_md_revised/practica_02_donchain.md"
+        section_id: "sersan_practice_02_donchain_sec_0007"
+        line_start: 406
+        line_end: 565
+        image_ids:
+          - "sersan_practice_02_donchain_img_030"
+          - "sersan_practice_02_donchain_img_034"
+    caveats:
+      - "This rule guides interpretation; it is not a standalone performance gate."
+      - "Candidate extracted from Sersan practice 02; not promoted to canonical doctrine."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_02_donchain_rule_0010"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "medium"
+    rule_type: "soft_rule"
+    domains:
+      - "walk_forward"
+      - "BRaC"
+      - "robustness"
+      - "sample_size"
+    statement: "Systems with very few parameters may use forward testing or broad samples instead of heavy walk-forward optimization, but the validation route must be explicit."
+    trigger: "A strategy has few or no optimizable parameters."
+    action: "Document whether validation uses walk-forward, BRaC, anchored samples, forward test or broad multi-asset evidence."
+    failure_mode_if_ignored: "A simple system may skip validation entirely because classic optimization tools seem unnecessary."
+    required_evidence:
+      - "validation_route"
+      - "sample_size"
+      - "oos_or_forward_period"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_02_donchain"
+        md_path: "03_only_md_revised/practica_02_donchain.md"
+        section_id: "sersan_practice_02_donchain_sec_0009"
+        line_start: 748
+        line_end: 962
+        image_ids:
+
+      -
+        lesson_id: "sersan_practice_02_donchain"
+        md_path: "03_only_md_revised/practica_02_donchain.md"
+        section_id: "sersan_practice_02_donchain_sec_0010"
+        line_start: 963
+        line_end: 1060
+        image_ids:
+          - "sersan_practice_02_donchain_img_072"
+    caveats:
+      - "Choice of validation route requires human review before becoming canonical policy."
+      - "Candidate extracted from Sersan practice 02; not promoted to canonical doctrine."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_02_donchain_rule_0011"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "hard_rule"
+    domains:
+      - "filters"
+      - "sample_size"
+      - "overfitting"
+      - "regime"
+    statement: "A filter is not evaluable unless it affects enough trades and leaves enough post-filter sample."
+    trigger: "Adding regime, indicator or multidata filters to a strategy."
+    action: "Report affected trade count, remaining trade count and performance before/after filter."
+    failure_mode_if_ignored: "A filter may be overfit or statistically meaningless while appearing useful."
+    required_evidence:
+      - "affected_trade_count"
+      - "remaining_trade_count"
+      - "before_after_comparison"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_02_donchain"
+        md_path: "03_only_md_revised/practica_02_donchain.md"
+        section_id: "sersan_practice_02_donchain_sec_0012"
+        line_start: 1076
+        line_end: 1117
+        image_ids:
+
+      -
+        lesson_id: "sersan_practice_02_donchain"
+        md_path: "03_only_md_revised/practica_02_donchain.md"
+        section_id: "sersan_practice_02_donchain_sec_0013"
+        line_start: 1118
+        line_end: 1154
+        image_ids:
+
+    caveats:
+      - "The course mentions 30-50 affected trades as a practical lower bound; TSIS must formalize final thresholds."
+      - "Candidate extracted from Sersan practice 02; not promoted to canonical doctrine."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_02_donchain_rule_0012"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "warning"
+    domains:
+      - "filters"
+      - "overfitting"
+    statement: "If the value of a filter is doubtful, do not add it to the system."
+    trigger: "Considering an optional filter without strong evidence."
+    action: "Prefer the unfiltered simpler system unless the filter passes sample and robustness checks."
+    failure_mode_if_ignored: "The research process can accumulate fragile filters that fit noise."
+    required_evidence:
+      - "filter_evidence"
+      - "simplicity_comparison"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_02_donchain"
+        md_path: "03_only_md_revised/practica_02_donchain.md"
+        section_id: "sersan_practice_02_donchain_sec_0012"
+        line_start: 1076
+        line_end: 1117
+        image_ids:
+
+    caveats:
+      - "Risk-management constraints are separate from alpha filters and may be justified by risk policy."
+      - "Candidate extracted from Sersan practice 02; not promoted to canonical doctrine."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_02_donchain_rule_0013"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "medium"
+    rule_type: "soft_rule"
+    domains:
+      - "portfolio"
+      - "money_management"
+    statement: "Portfolio-level stop or profit target rules can be evaluated as portfolio risk rules."
+    trigger: "Designing risk exits that apply to the whole portfolio rather than one trade."
+    action: "Backtest portfolio-level exits with tools that can evaluate aggregate equity and exposure."
+    failure_mode_if_ignored: "A valid portfolio risk mechanism may be rejected because it is not visible at single-trade level."
+    required_evidence:
+      - "portfolio_equity"
+      - "portfolio_drawdown"
+      - "aggregate_exposure"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_02_donchain"
+        md_path: "03_only_md_revised/practica_02_donchain.md"
+        section_id: "sersan_practice_02_donchain_sec_0011"
+        line_start: 1061
+        line_end: 1075
+        image_ids:
+
+    caveats:
+      - "Needs separate engineering contract for live execution and risk controls."
+      - "Candidate extracted from Sersan practice 02; not promoted to canonical doctrine."
+    related_rules:
+

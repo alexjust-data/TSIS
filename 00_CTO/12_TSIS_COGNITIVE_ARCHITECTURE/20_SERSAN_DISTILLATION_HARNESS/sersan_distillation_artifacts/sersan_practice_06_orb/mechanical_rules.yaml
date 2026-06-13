@@ -1,0 +1,212 @@
+contract_version: sersan_mechanical_rules_v0_1
+lesson_id: sersan_practice_06_orb
+generated_at_utc: '2026-06-12T15:19:53Z'
+generated_by: sersan_full_corpus_distillation_generator_v0_1
+rules:
+- rule_id: sersan_practice_06_orb_rule_0001
+  promotion_state: mechanical_rule_candidate
+  confidence: requires_human_review
+  rule_type: hard_rule
+  domains:
+  - bar_construction
+  - price_view
+  - setup_logic
+  - entry_logic
+  - exit_logic
+  - stop_loss
+  statement: Exit, stop and profit logic from this section must be declared as part of the strategy contract before comparing
+    results.
+  trigger: A system variant changes stop, profit, trailing, time exit, break-even or opposite-channel exit behavior.
+  action: Version the exit policy and compare variants under the same data, cost and validation assumptions.
+  failure_mode_if_ignored: Backtest comparisons may attribute edge to entries when the result is driven by untracked exit
+    policy changes.
+  required_evidence:
+  - exit_policy
+  - variant_comparison
+  - cost_model
+  source_anchors:
+  - lesson_id: sersan_practice_06_orb
+    md_path: 03_only_md_revised/practica_06_ORB.md
+    section_id: sersan_practice_06_orb_sec_0002
+    line_start: 4
+    line_end: 390
+    image_ids:
+    - sersan_practice_06_orb_img_0001
+    - sersan_practice_06_orb_img_0002
+    - sersan_practice_06_orb_img_0003
+    - sersan_practice_06_orb_img_0004
+    - sersan_practice_06_orb_img_0005
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []
+- rule_id: sersan_practice_06_orb_rule_0002
+  promotion_state: mechanical_rule_candidate
+  confidence: medium
+  rule_type: soft_rule
+  domains:
+  - setup_logic
+  - entry_logic
+  - exit_logic
+  - take_profit
+  statement: Exit, stop and profit logic from this section must be declared as part of the strategy contract before comparing
+    results.
+  trigger: A system variant changes stop, profit, trailing, time exit, break-even or opposite-channel exit behavior.
+  action: Version the exit policy and compare variants under the same data, cost and validation assumptions.
+  failure_mode_if_ignored: Backtest comparisons may attribute edge to entries when the result is driven by untracked exit
+    policy changes.
+  required_evidence:
+  - exit_policy
+  - variant_comparison
+  - cost_model
+  source_anchors:
+  - lesson_id: sersan_practice_06_orb
+    md_path: 03_only_md_revised/practica_06_ORB.md
+    section_id: sersan_practice_06_orb_sec_0003
+    line_start: 391
+    line_end: 409
+    image_ids: []
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []
+- rule_id: sersan_practice_06_orb_rule_0003
+  promotion_state: mechanical_rule_candidate
+  confidence: medium
+  rule_type: soft_rule
+  domains:
+  - setup_logic
+  - entry_logic
+  - filters
+  - sample_size
+  - trade_distribution
+  statement: Entry/setup filters from this section must be tested as explicit optional components with sample-size and robustness
+    impact recorded.
+  trigger: Adding or modifying an entry, setup, filter or market-condition gate.
+  action: Measure before/after impact, trade-count change, stability across periods and interaction with other filters.
+  failure_mode_if_ignored: Stacked filters can reduce sample size, overfit the lesson example or hide a non-causal proxy.
+  required_evidence:
+  - baseline_comparison
+  - filter_delta
+  - sample_size
+  - robustness_check
+  source_anchors:
+  - lesson_id: sersan_practice_06_orb
+    md_path: 03_only_md_revised/practica_06_ORB.md
+    section_id: sersan_practice_06_orb_sec_0004
+    line_start: 410
+    line_end: 436
+    image_ids: []
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []
+- rule_id: sersan_practice_06_orb_rule_0004
+  promotion_state: mechanical_rule_candidate
+  confidence: requires_human_review
+  rule_type: hard_rule
+  domains:
+  - bar_construction
+  - price_view
+  - setup_logic
+  - entry_logic
+  - exit_logic
+  - stop_loss
+  statement: Exit, stop and profit logic from this section must be declared as part of the strategy contract before comparing
+    results.
+  trigger: A system variant changes stop, profit, trailing, time exit, break-even or opposite-channel exit behavior.
+  action: Version the exit policy and compare variants under the same data, cost and validation assumptions.
+  failure_mode_if_ignored: Backtest comparisons may attribute edge to entries when the result is driven by untracked exit
+    policy changes.
+  required_evidence:
+  - exit_policy
+  - variant_comparison
+  - cost_model
+  source_anchors:
+  - lesson_id: sersan_practice_06_orb
+    md_path: 03_only_md_revised/practica_06_ORB.md
+    section_id: sersan_practice_06_orb_sec_0005
+    line_start: 437
+    line_end: 585
+    image_ids:
+    - sersan_practice_06_orb_img_0009
+    - sersan_practice_06_orb_img_0010
+    - sersan_practice_06_orb_img_0011
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []
+- rule_id: sersan_practice_06_orb_rule_0005
+  promotion_state: mechanical_rule_candidate
+  confidence: requires_human_review
+  rule_type: hard_rule
+  domains:
+  - bar_construction
+  - price_view
+  - setup_logic
+  - entry_logic
+  - exit_logic
+  - stop_loss
+  statement: Exit, stop and profit logic from this section must be declared as part of the strategy contract before comparing
+    results.
+  trigger: A system variant changes stop, profit, trailing, time exit, break-even or opposite-channel exit behavior.
+  action: Version the exit policy and compare variants under the same data, cost and validation assumptions.
+  failure_mode_if_ignored: Backtest comparisons may attribute edge to entries when the result is driven by untracked exit
+    policy changes.
+  required_evidence:
+  - exit_policy
+  - variant_comparison
+  - cost_model
+  source_anchors:
+  - lesson_id: sersan_practice_06_orb
+    md_path: 03_only_md_revised/practica_06_ORB.md
+    section_id: sersan_practice_06_orb_sec_0006
+    line_start: 586
+    line_end: 839
+    image_ids:
+    - sersan_practice_06_orb_img_0012
+    - sersan_practice_06_orb_img_0013
+    - sersan_practice_06_orb_img_0014
+    - sersan_practice_06_orb_img_0015
+    - sersan_practice_06_orb_img_0016
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []
+- rule_id: sersan_practice_06_orb_rule_0006
+  promotion_state: mechanical_rule_candidate
+  confidence: requires_human_review
+  rule_type: hard_rule
+  domains:
+  - bar_construction
+  - price_view
+  - setup_logic
+  - entry_logic
+  - exit_logic
+  - stop_loss
+  statement: Exit, stop and profit logic from this section must be declared as part of the strategy contract before comparing
+    results.
+  trigger: A system variant changes stop, profit, trailing, time exit, break-even or opposite-channel exit behavior.
+  action: Version the exit policy and compare variants under the same data, cost and validation assumptions.
+  failure_mode_if_ignored: Backtest comparisons may attribute edge to entries when the result is driven by untracked exit
+    policy changes.
+  required_evidence:
+  - exit_policy
+  - variant_comparison
+  - cost_model
+  source_anchors:
+  - lesson_id: sersan_practice_06_orb
+    md_path: 03_only_md_revised/practica_06_ORB.md
+    section_id: sersan_practice_06_orb_sec_0007
+    line_start: 840
+    line_end: 1791
+    image_ids:
+    - sersan_practice_06_orb_img_0017
+    - sersan_practice_06_orb_img_0018
+    - sersan_practice_06_orb_img_0019
+    - sersan_practice_06_orb_img_0020
+    - sersan_practice_06_orb_img_0021
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []

@@ -1,0 +1,42 @@
+{
+  "contract_version": "sersan_lesson_pack_contract_v0_1",
+  "generated_at_utc": "2026-06-12T15:19:53Z",
+  "generated_by": "sersan_full_corpus_distillation_generator_v0_1",
+  "lesson_id": "sersan_practice_07_orb",
+  "practice_number": 7,
+  "title": "Practice 7",
+  "status": "translated",
+  "source_md": "03_only_md_revised/practica_07_ORB.md",
+  "workshop_dir": "02_workshops/17-practice-07",
+  "image_dir": "02_workshops/17-practice-07/img",
+  "pdf_role": "duplicate_md",
+  "video_role": "out_of_scope",
+  "asset_resolution": {
+    "resolver_version": "sersan_full_corpus_resolver_v0_1",
+    "image_refs_total": 86,
+    "resolved_direct": 85,
+    "resolved_lesson_fallback": 0,
+    "external_reference": 1,
+    "missing": 0,
+    "needs_human_review": 86
+  },
+  "source_hashes": {
+    "03_only_md_revised/practica_07_ORB.md": "sha256:91c8c902b2e3ef78b272c06230aa40ff5c366eb7c1584d11df9b604a6798fb33"
+  },
+  "counts": {
+    "md_lines": 1348,
+    "sections": 11,
+    "images": 86,
+    "code_artifacts": 6,
+    "xlsx_artifacts": 0,
+    "rules": 10,
+    "translations": 10,
+    "open_questions": 1
+  },
+  "known_issues": [
+    "Automated numeric OCR is not implemented in this run.",
+    "Code artifacts are inventoried but not semantically parsed.",
+    "XLSX artifacts are inventoried but not semantically parsed.",
+    "High-impact or numeric images require human review."
+  ]
+}

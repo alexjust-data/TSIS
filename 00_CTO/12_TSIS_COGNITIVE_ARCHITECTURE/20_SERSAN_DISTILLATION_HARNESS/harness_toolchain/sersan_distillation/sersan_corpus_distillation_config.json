@@ -1,0 +1,13 @@
+{
+  "contract_version": "sersan_lesson_pack_contract_v0_1",
+  "generator_id": "sersan_full_corpus_distillation_generator_v0_1",
+  "validator_id": "sersan_full_corpus_distillation_validator_v0_1",
+  "run_id_prefix": "sersan_full_corpus_distillation",
+  "normalize_completed_pilots": true,
+  "image_note_policy": "all_referenced_images",
+  "image_reading_method": "local_file_hash_dimensions_and_contextual_markdown_reading",
+  "numeric_image_policy": "mark_requires_human_review_when_ocr_is_not_available",
+  "max_distillation_embedded_images": 12,
+  "max_rule_images": 5,
+  "process_inventory_only_lessons_as_blocked": true
+}

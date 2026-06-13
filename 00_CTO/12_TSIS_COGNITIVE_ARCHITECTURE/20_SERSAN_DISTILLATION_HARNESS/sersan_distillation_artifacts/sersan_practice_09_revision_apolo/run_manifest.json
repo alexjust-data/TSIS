@@ -1,0 +1,257 @@
+{
+  "run_id": "2026-06-12_sersan_practice_09_revision_apolo_pilot_run_v0_2",
+  "lesson_id": "sersan_practice_09_revision_apolo",
+  "generated_at_utc": "2026-06-13T05:48:42Z",
+  "generated_by": "manual_sersan_pilot_harness_codex_v0_2",
+  "mode": "pilot",
+  "status": "pass_with_warnings",
+  "contract_version": "sersan_lesson_pack_contract_v0_1",
+  "toolchain_traceability_contract": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/harness_toolchain_traceability_contract.md",
+  "runbook": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_pilot_harness_runbook.md",
+  "artifact_contract": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_lesson_pack_contract.md",
+  "execution_command": "python 00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/generate_sersan_p09_pilot.py",
+  "toolchain_artifacts": [
+    {
+      "tool_id": "generate_sersan_p09_pilot",
+      "role": "generator",
+      "project_relative_path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/generate_sersan_p09_pilot.py",
+      "sha256": "sha256:bda2b6d399907afc23498068caaff07dd4a7b67dcc18314d164bb2d14b572aef",
+      "runtime": "python",
+      "project_resident": true
+    }
+  ],
+  "input_artifacts": [
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised/practica_09_revision_apolo.md",
+      "sha256": "sha256:ad77aa427bb17402743e048ee1250ab80cbd3b1d6305c5a0e0400343d43684d6"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/harness_toolchain_traceability_contract.md",
+      "sha256": "sha256:a762e90b34080a534404dab0560f54e105a4fde371e55fc3185f4f9a481b0249",
+      "role": "governing_contract"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/shared_run_manifest_contract.md",
+      "sha256": "sha256:5785f54e81cd5e14cc0abc22dac1c1bd7b20ef08bb3303f15917ed3856c8334e",
+      "role": "shared_manifest_contract"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/shared_validation_principles.md",
+      "sha256": "sha256:b3e27d75c6c0f5438ec892ac0bb90ce553c55e695efc392231980a8bd61beb16",
+      "role": "shared_validation_principles"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_lesson_pack_contract.md",
+      "sha256": "sha256:6bc974c952049bfd8e5ea9ffe053346d895246e0710e5ea402401257612f4e14",
+      "role": "artifact_contract"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_pilot_harness_runbook.md",
+      "sha256": "sha256:b968bc2cb0d1bd436110368a415be5a19174319a66d90e4e0fa002ca97dc17c1",
+      "role": "runbook"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/19-practice-09/code/PRACTICA 09.ELD",
+      "sha256": "sha256:69d3fa571ac1a0ce3962169bb186f32797a450176fd80c349e2009e5bd82c4fe",
+      "role": "code_artifact"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/19-practice-09/docs/MAPA ES SHORT zona 3.xlsx",
+      "sha256": "sha256:6e1d8d8bd552fe2f6660c5a992aa2b6c3f8a933f1d95c9ab58a05933acda1010",
+      "role": "xlsx_artifact"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/19-practice-09/img/020.png",
+      "sha256": "sha256:a3355519bf2e4def4bdcb53d2f1e4d2a979deb3c25abc9af776c744edf4b9020",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_09_revision_apolo_img_020",
+      "doctrine_relevance": "critical"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/19-practice-09/img/038.png",
+      "sha256": "sha256:ed5d486f3713e9ceb7d5dd28c49bf51eedf3636a7988e6c5b677a894651d8f25",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_09_revision_apolo_img_038",
+      "doctrine_relevance": "high"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/19-practice-09/img/040.png",
+      "sha256": "sha256:e9e3929ee23773b87c12c96fe7dcca1ddb042709cd01fd262d20c8c31bc17a1f",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_09_revision_apolo_img_040",
+      "doctrine_relevance": "medium"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/19-practice-09/img/049.png",
+      "sha256": "sha256:a43eb07fb2d1a224ad4e71863da4f1018cd7edb71ead25f890e2b563de044197",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_09_revision_apolo_img_049",
+      "doctrine_relevance": "high"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/19-practice-09/img/053.png",
+      "sha256": "sha256:abbb6b84feecfe30828580a1938dd334ffb643c18cc96a425cd6cb2583d8c3ab",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_09_revision_apolo_img_053",
+      "doctrine_relevance": "high"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/19-practice-09/img/057.png",
+      "sha256": "sha256:05e25cb198fc15d2d18b455fba240bd1b21aceb69b56a61d673b6a3d830bb9c6",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_09_revision_apolo_img_057",
+      "doctrine_relevance": "high"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/19-practice-09/img/064.png",
+      "sha256": "sha256:fa0f0aac1fe2b843b656a01b4eccecbdb52e48e5d621598cbe4008f1cd0a5f6b",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_09_revision_apolo_img_064",
+      "doctrine_relevance": "high"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/19-practice-09/img/066.png",
+      "sha256": "sha256:c7f7645600db069e607ec17ee4108f9a9b63d02b2ff22dd6d79592ead7cb12bf",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_09_revision_apolo_img_066",
+      "doctrine_relevance": "critical"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/19-practice-09/img/090.png",
+      "sha256": "sha256:e647e7f74d6e181171055761687cdd6067ac9cd7f908c47844973688706b6640",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_09_revision_apolo_img_090",
+      "doctrine_relevance": "high"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/19-practice-09/img/093.png",
+      "sha256": "sha256:92b5c116f516fb1e8b4b7fb5960accf24a7b8a6ec566f12fe49471b42899bda9",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_09_revision_apolo_img_093",
+      "doctrine_relevance": "high"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/19-practice-09/img/098.jpg",
+      "sha256": "sha256:b9b0835e99190bfc5eeec3ad3a911595aab847a0579d4f7e0ed967c4873fa014",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_09_revision_apolo_img_098",
+      "doctrine_relevance": "high"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/19-practice-09/img/111.png",
+      "sha256": "sha256:53dcb14d1298c4a057153abb3995fe7222f05c4d9a4b3ba070c752f5ca29c384",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_09_revision_apolo_img_111",
+      "doctrine_relevance": "high"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/19-practice-09/img/117.png",
+      "sha256": "sha256:54c021cd0185b2debafc9a9c762a6a7b640058f6e687c70fd1570196438d481a",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_09_revision_apolo_img_117",
+      "doctrine_relevance": "high"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/19-practice-09/img/126.png",
+      "sha256": "sha256:b73bb39754d8f921c1cd0a7584ddb30758df09c7b28d09a1bddd77fe4febbcd4",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_09_revision_apolo_img_126",
+      "doctrine_relevance": "critical"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/19-practice-09/img/127.png",
+      "sha256": "sha256:78ef1eb0a0b26ea249780332887fe750038a7e0b9edb8e6e0661f99f5424d82b",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_09_revision_apolo_img_127",
+      "doctrine_relevance": "high"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/19-practice-09/img/131.png",
+      "sha256": "sha256:19fbcf02b9695ec0e11222697b332d99beb08c6c0189262b98cb07a5f33aa6fa",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_09_revision_apolo_img_131",
+      "doctrine_relevance": "medium"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/19-practice-09/img/142.png",
+      "sha256": "sha256:82b140b0b57c7343dde03f0f1124282e0311060d86543eb92bc34d7927da1bc2",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_09_revision_apolo_img_142",
+      "doctrine_relevance": "critical"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/19-practice-09/img/143.png",
+      "sha256": "sha256:591e3a59ca5853325c03dc72ec62b50cc6d71423a6e3a6fe8ea41c27d159b903",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_09_revision_apolo_img_143",
+      "doctrine_relevance": "high"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/19-practice-09/img/151.png",
+      "sha256": "sha256:56124b0d3ebb674001c1839966e1b476dc1744d045c184aa6802ca66b9f86c64",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_09_revision_apolo_img_151",
+      "doctrine_relevance": "high"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/19-practice-09/img/158.png",
+      "sha256": "sha256:48c2341b8a91a9e36e152d3480e7c8af74a6fbab1e0c731f8e7e130540b2ac2d",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_09_revision_apolo_img_158",
+      "doctrine_relevance": "critical"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/19-practice-09/img/163.png",
+      "sha256": "sha256:293544f8b765d6b3dd51ef1f94ce75445b7eab59feca10967c61b11c736e6571",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_09_revision_apolo_img_163",
+      "doctrine_relevance": "high"
+    }
+  ],
+  "output_artifacts": [
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_09_revision_apolo/lesson_pack_manifest.json",
+      "sha256": "sha256:368af0ae1db6fc31b9e2f8f62676f9b6ab1e6467d8535bde802fd346f49a81b9"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_09_revision_apolo/lesson_sections.jsonl",
+      "sha256": "sha256:0eb14850457f839120fc2d0e85629732554c60c37580fd641c4856bdef5d75c6"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_09_revision_apolo/image_evidence_index.csv",
+      "sha256": "sha256:d91d610c8e8ca83d404b191fc3fc78e28e87f9af7c6b5fff94e605819e6c6f77"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_09_revision_apolo/mechanical_rules.yaml",
+      "sha256": "sha256:f1f49aa8f463f30b12f27adc1d50cea8e307ef3329b4c4698f8ab9d0815f1da5"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_09_revision_apolo/lesson_distillation.md",
+      "sha256": "sha256:68ba2fc9fc73d4090dd8c80372ba8e191ac1ed3da67c4626532466934659191e"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_09_revision_apolo/tsis_translation_map.csv",
+      "sha256": "sha256:9f4960f73e9451e1c73789b6fe40b5bbead540aca44ce763d01b97488e93d55f"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_09_revision_apolo/open_questions.md",
+      "sha256": "sha256:7d7f352c5ddb9ae01768d35e322620e995b2915b8d9ea0cb74ff763052cd4baf"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_09_revision_apolo/quality_report.md",
+      "sha256": "sha256:ae07d5150d1727e4963683fd666972844e40a9dd7e498e80219fe692d65070c9"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_09_revision_apolo/image_evidence_notes",
+      "sha256": "sha256:dd5a2df9a9e312f50e1e39455e74e4a5c3189630e982e88260884be807ae39de",
+      "role": "directory_aggregate"
+    }
+  ],
+  "non_project_artifacts_used": [],
+  "human_review_required": true,
+  "warnings": [
+    "XLSX map is inventoried but not parsed into structured surfaces.",
+    "Low-relevance images are structurally indexed without full OCR.",
+    "Candidate rules are not promoted doctrine."
+  ]
+}

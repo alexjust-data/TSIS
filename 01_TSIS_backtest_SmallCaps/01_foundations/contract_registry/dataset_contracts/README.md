@@ -22,6 +22,7 @@
   - [`daily_return_labels_dataset_contract_v0_1.md`](#dailyreturnlabelsdatasetcontractv01md)
   - [`quotes_dataset_contract_v0_1.md`](#quotesdatasetcontractv01md)
   - [`quotes_label_taxonomy_and_cut_policy.md`](#quoteslabeltaxonomyandcutpolicymd)
+  - [`reference_dataset_contract_v0_1.md`](#referencedatasetcontractv01md)
   - [`trades_dataset_contract_v0_1.md`](#tradesdatasetcontractv01md)
   - [`trades_label_taxonomy_and_cut_policy.md`](#tradeslabeltaxonomyandcutpolicymd)
   - [`ohlcv_1m_raw_dataset_contract_v0_1.md`](#ohlcv1mrawdatasetcontractv01md)
@@ -497,6 +498,18 @@ Fija:
 - source scope;
 - relacion con features/eventos;
 - y restricciones de consumo.
+
+### `reference_dataset_contract_v0_1.md`
+
+Contrato institucional de `reference_v0_1`.
+
+Fija:
+
+- identidad, snapshots, events, splits, dividends, exchanges y ticker types;
+- raiz operativa actual `E:/TSIS/data/reference`;
+- relacion con price views, universe builder, event overlays y auditoria de market data;
+- estados `good`, `review` y `bad_unresolved_identity`;
+- y restriccion explicita de backtest, ML, execution, live y RL hasta contrato posterior.
 
 ### `short_dataset_contract_v0_1.md`
 

@@ -1,0 +1,37 @@
+{
+  "generated_at_utc": "2026-06-12T15:19:49Z",
+  "gate": "sersan_corpus_distillation_readiness_v0_1",
+  "status": "pass_with_warnings",
+  "branch": "docs/update-00-cto-readme-20260611",
+  "lesson_packs_in_inventory": 17,
+  "contracts_checked": [
+    "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_protocol.md",
+    "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_lesson_pack_contract.md",
+    "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_pilot_harness_runbook.md",
+    "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/harness_toolchain_traceability_contract.md",
+    "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/shared_run_manifest_contract.md",
+    "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/shared_validation_principles.md",
+    "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/_corpus_inventory/sersan_corpus_manifest.csv",
+    "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/run_sersan_corpus_distillation.py",
+    "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/validate_sersan_distillation.py",
+    "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/sersan_corpus_distillation_config.json"
+  ],
+  "errors": [],
+  "warnings": [
+    "sersan_unmapped_xxx_revised is inventory_only and will be blocked locally"
+  ],
+  "decision": "continue",
+  "config": {
+    "contract_version": "sersan_lesson_pack_contract_v0_1",
+    "generator_id": "sersan_full_corpus_distillation_generator_v0_1",
+    "validator_id": "sersan_full_corpus_distillation_validator_v0_1",
+    "run_id_prefix": "sersan_full_corpus_distillation",
+    "normalize_completed_pilots": true,
+    "image_note_policy": "all_referenced_images",
+    "image_reading_method": "local_file_hash_dimensions_and_contextual_markdown_reading",
+    "numeric_image_policy": "mark_requires_human_review_when_ocr_is_not_available",
+    "max_distillation_embedded_images": 12,
+    "max_rule_images": 5,
+    "process_inventory_only_lessons_as_blocked": true
+  }
+}

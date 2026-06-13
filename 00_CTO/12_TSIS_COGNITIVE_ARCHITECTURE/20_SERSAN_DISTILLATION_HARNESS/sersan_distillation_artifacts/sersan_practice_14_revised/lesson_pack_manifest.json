@@ -1,0 +1,42 @@
+{
+  "contract_version": "sersan_lesson_pack_contract_v0_1",
+  "generated_at_utc": "2026-06-12T15:20:02Z",
+  "generated_by": "sersan_full_corpus_distillation_generator_v0_1",
+  "lesson_id": "sersan_practice_14_revised",
+  "practice_number": 14,
+  "title": "Práctica 14 - Buscador de Entradas y Sistema Tomorrow's Trend",
+  "status": "translated",
+  "source_md": "03_only_md_revised/practica_14_revised.md",
+  "workshop_dir": "02_workshops/24-practice-14",
+  "image_dir": "02_workshops/24-practice-14/img",
+  "pdf_role": "duplicate_md",
+  "video_role": "out_of_scope",
+  "asset_resolution": {
+    "resolver_version": "sersan_full_corpus_resolver_v0_1",
+    "image_refs_total": 144,
+    "resolved_direct": 0,
+    "resolved_lesson_fallback": 144,
+    "external_reference": 0,
+    "missing": 0,
+    "needs_human_review": 144
+  },
+  "source_hashes": {
+    "03_only_md_revised/practica_14_revised.md": "sha256:b1dd23b6b1fb28dcfe4c117d7bc0e6e247b141c21d55692895e8a343568eb023"
+  },
+  "counts": {
+    "md_lines": 2563,
+    "sections": 17,
+    "images": 144,
+    "code_artifacts": 7,
+    "xlsx_artifacts": 0,
+    "rules": 17,
+    "translations": 17,
+    "open_questions": 1
+  },
+  "known_issues": [
+    "Automated numeric OCR is not implemented in this run.",
+    "Code artifacts are inventoried but not semantically parsed.",
+    "XLSX artifacts are inventoried but not semantically parsed.",
+    "High-impact or numeric images require human review."
+  ]
+}

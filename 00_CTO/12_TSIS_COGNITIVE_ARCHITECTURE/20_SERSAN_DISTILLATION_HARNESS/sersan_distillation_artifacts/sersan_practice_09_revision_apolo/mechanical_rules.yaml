@@ -1,0 +1,547 @@
+contract_version: "sersan_mechanical_rules_v0_1"
+lesson_id: "sersan_practice_09_revision_apolo"
+generated_at_utc: "2026-06-13T05:48:42Z"
+generated_by: "mechanical_rule_extractor_agent_v0_2"
+rules:
+  -
+    rule_id: "sersan_practice_09_revision_apolo_rule_0001"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "hard_rule"
+    domains:
+      - "optimization_scope"
+      - "research_protocol"
+    statement: "Do not optimize every input; split fixed money-management inputs, known constants and true research variables before running the optimizer."
+    trigger: "Preparing an optimization map for a strategy revision."
+    action: "Declare which inputs are fixed, which are inherited from prior study and which are allowed to vary."
+    failure_mode_if_ignored: "The optimizer can fit implementation details or money-management artifacts instead of strategy mechanics."
+    required_evidence:
+      - "input_scope_table"
+      - "fixed_parameter_rationale"
+      - "optimizable_variable_list"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_09_revision_apolo"
+        md_path: "03_only_md_revised/practica_09_revision_apolo.md"
+        section_id: "sersan_practice_09_revision_apolo_sec_0005"
+        line_start: 393
+        line_end: 643
+        image_ids:
+
+    caveats:
+      - "Candidate extracted from Sersan practice 09; not promoted to canonical doctrine."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_09_revision_apolo_rule_0002"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "hard_rule"
+    domains:
+      - "execution_realism"
+      - "optimizer_safety"
+    statement: "If a backtest benefits from a known non-executable fill or halt artifact, encode a penalty before optimization."
+    trigger: "A historical execution anomaly improves the backtest but could not have been traded in real time."
+    action: "Add an explicit penalty input or correction so the optimizer cannot select the artificial benefit."
+    failure_mode_if_ignored: "AlphaEvolve or a human optimizer may select a strategy because of impossible execution alpha."
+    required_evidence:
+      - "anomaly_case"
+      - "penalty_value"
+      - "before_after_performance"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_09_revision_apolo"
+        md_path: "03_only_md_revised/practica_09_revision_apolo.md"
+        section_id: "sersan_practice_09_revision_apolo_sec_0005"
+        line_start: 497
+        line_end: 573
+        image_ids:
+          - "sersan_practice_09_revision_apolo_img_020"
+    caveats:
+      - "The exact penalty must be justified per instrument and event."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_09_revision_apolo_rule_0003"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "hard_rule"
+    domains:
+      - "overoptimization"
+      - "selection_protocol"
+    statement: "Use the 8000 best in-sample combinations to build maps, not to choose the final parameter set directly."
+    trigger: "The platform exports a large ranked list of best IS optimization candidates."
+    action: "Treat the list as map material, filter robust zones, then rerun a bounded exhaustive search with a much smaller final candidate set."
+    failure_mode_if_ignored: "Final selection is dominated by in-sample ranking bias."
+    required_evidence:
+      - "map_from_large_sample"
+      - "bounded_zone_definition"
+      - "reduced_candidate_set"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_09_revision_apolo"
+        md_path: "03_only_md_revised/practica_09_revision_apolo.md"
+        section_id: "sersan_practice_09_revision_apolo_sec_0010"
+        line_start: 1686
+        line_end: 1719
+        image_ids:
+          - "sersan_practice_09_revision_apolo_img_126"
+    caveats:
+      - "The number 8000 is platform/context-specific; the principle is selection-pressure control."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_09_revision_apolo_rule_0004"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "heuristic"
+    domains:
+      - "optimization_map"
+      - "visual_validation"
+    statement: "Prefer pivot-table heatmaps over 3D surfaces when reading optimization zones."
+    trigger: "A parameter map is visualized for zone selection."
+    action: "Use 2D heatmaps/tables as primary evidence and treat 3D surfaces as auxiliary only after checking scale."
+    failure_mode_if_ignored: "Visual scale can exaggerate peaks or hide cliffs."
+    required_evidence:
+      - "heatmap"
+      - "scale_check"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_09_revision_apolo"
+        md_path: "03_only_md_revised/practica_09_revision_apolo.md"
+        section_id: "sersan_practice_09_revision_apolo_sec_0006"
+        line_start: 644
+        line_end: 744
+        image_ids:
+          - "sersan_practice_09_revision_apolo_img_038"
+          - "sersan_practice_09_revision_apolo_img_040"
+    caveats:
+      - "3D can remain useful as orientation, not as final proof."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_09_revision_apolo_rule_0005"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "hard_rule"
+    domains:
+      - "robustness"
+      - "parameter_selection"
+    statement: "Select parameter zones with neighbor support, not isolated best cells."
+    trigger: "Choosing candidate parameters from an optimization map."
+    action: "Require neighboring values to preserve acceptable behavior and reject cliff-like optima."
+    failure_mode_if_ignored: "A single fragile optimum may be promoted as robust edge."
+    required_evidence:
+      - "neighbor_cells"
+      - "zone_continuity"
+      - "cliff_detection"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_09_revision_apolo"
+        md_path: "03_only_md_revised/practica_09_revision_apolo.md"
+        section_id: "sersan_practice_09_revision_apolo_sec_0006"
+        line_start: 744
+        line_end: 1056
+        image_ids:
+          - "sersan_practice_09_revision_apolo_img_049"
+          - "sersan_practice_09_revision_apolo_img_066"
+    caveats:
+      - "Acceptable neighbor degradation must be calibrated by system family."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_09_revision_apolo_rule_0006"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "hard_rule"
+    domains:
+      - "parameter_range"
+      - "optimizer_safety"
+    statement: "When an apparent optimum touches the edge of the tested range, extend the range before closing the selection."
+    trigger: "Best candidates cluster at the minimum or maximum value tested."
+    action: "Rerun or inspect an expanded range to determine whether the edge is artificial."
+    failure_mode_if_ignored: "The chosen set may be a truncated optimum or an unexamined cliff."
+    required_evidence:
+      - "boundary_cluster"
+      - "expanded_range_result"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_09_revision_apolo"
+        md_path: "03_only_md_revised/practica_09_revision_apolo.md"
+        section_id: "sersan_practice_09_revision_apolo_sec_0009"
+        line_start: 1378
+        line_end: 1685
+        image_ids:
+          - "sersan_practice_09_revision_apolo_img_111"
+    caveats:
+      - "Expansion should stay economically and mechanically plausible."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_09_revision_apolo_rule_0007"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "heuristic"
+    domains:
+      - "robustness"
+      - "parameter_selection"
+    statement: "Prefer a parameter value that works across many neighboring periods over a sharper local maximum."
+    trigger: "Two candidate values compete, one with higher local score and another with broader map support."
+    action: "Score tolerance and distribution across the map before final selection."
+    failure_mode_if_ignored: "The process may choose a value that only works in a narrow pocket."
+    required_evidence:
+      - "distribution_map"
+      - "neighbor_score_profile"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_09_revision_apolo"
+        md_path: "03_only_md_revised/practica_09_revision_apolo.md"
+        section_id: "sersan_practice_09_revision_apolo_sec_0008"
+        line_start: 1223
+        line_end: 1377
+        image_ids:
+          - "sersan_practice_09_revision_apolo_img_066"
+          - "sersan_practice_09_revision_apolo_img_098"
+    caveats:
+      - "A very broad but weak zone still needs absolute performance thresholds."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_09_revision_apolo_rule_0008"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "hard_rule"
+    domains:
+      - "fitness"
+      - "is_oos_validation"
+    statement: "Compare candidate sets across IS, OOS and AllData using multiple normalized metrics, not a single fitness score."
+    trigger: "Ranking candidates after an optimization pass."
+    action: "Track TSI, expectancy, PPC and robustness, and document whether robustness is included in the combined score."
+    failure_mode_if_ignored: "A candidate can be selected for one metric while failing stability or OOS behavior."
+    required_evidence:
+      - "IS_metrics"
+      - "OOS_metrics"
+      - "AllData_metrics"
+      - "normalization_method"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_09_revision_apolo"
+        md_path: "03_only_md_revised/practica_09_revision_apolo.md"
+        section_id: "sersan_practice_09_revision_apolo_sec_0011"
+        line_start: 1720
+        line_end: 1964
+        image_ids:
+          - "sersan_practice_09_revision_apolo_img_127"
+          - "sersan_practice_09_revision_apolo_img_142"
+          - "sersan_practice_09_revision_apolo_img_143"
+    caveats:
+      - "Metric weights are candidates for TSIS doctrine review."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_09_revision_apolo_rule_0009"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "hard_rule"
+    domains:
+      - "overoptimization"
+      - "selection_protocol"
+    statement: "After map filtering, reduce the final decision universe to a bounded candidate set such as 250 before visual and portfolio review."
+    trigger: "The robust zones have been defined and a final optimizer pass is required."
+    action: "Run the bounded exhaustive optimization, save the reduced set and compare only that reduced set for final selection."
+    failure_mode_if_ignored: "The final process still faces too many degrees of freedom and can overfit by choice."
+    required_evidence:
+      - "zone_bounds"
+      - "candidate_count"
+      - "reduced_optimization_manifest"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_09_revision_apolo"
+        md_path: "03_only_md_revised/practica_09_revision_apolo.md"
+        section_id: "sersan_practice_09_revision_apolo_sec_0011"
+        line_start: 1720
+        line_end: 1964
+        image_ids:
+          - "sersan_practice_09_revision_apolo_img_142"
+    caveats:
+      - "250 is extracted from the class case; TSIS may calibrate by strategy family."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_09_revision_apolo_rule_0010"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "hard_rule"
+    domains:
+      - "human_review"
+      - "performance_report"
+    statement: "A final parameter set must pass Performance Report and equity-curve review after map validation."
+    trigger: "Candidate sets survive the quantitative map and reduced optimization stages."
+    action: "Inspect report metrics, equity behavior, drawdowns and trade distribution before promotion."
+    failure_mode_if_ignored: "A map-valid set can still have unacceptable realized path behavior."
+    required_evidence:
+      - "performance_report"
+      - "equity_curve"
+      - "trade_distribution"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_09_revision_apolo"
+        md_path: "03_only_md_revised/practica_09_revision_apolo.md"
+        section_id: "sersan_practice_09_revision_apolo_sec_0012"
+        line_start: 1965
+        line_end: 2074
+        image_ids:
+          - "sersan_practice_09_revision_apolo_img_151"
+    caveats:
+      - "Visual review must not override hard risk limits."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_09_revision_apolo_rule_0011"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "medium"
+    rule_type: "process_rule"
+    domains:
+      - "human_review"
+      - "bias_control"
+    statement: "Reduce final-selection bias by reviewing reports without looking at parameter values and by comparing independent reviewer choices."
+    trigger: "Humans visually compare candidate Performance Reports."
+    action: "Hide parameter identities until after selection and record independent reviewer votes."
+    failure_mode_if_ignored: "Reviewers may rationalize favored inputs instead of selecting behavior."
+    required_evidence:
+      - "blind_review_log"
+      - "reviewer_votes"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_09_revision_apolo"
+        md_path: "03_only_md_revised/practica_09_revision_apolo.md"
+        section_id: "sersan_practice_09_revision_apolo_sec_0012"
+        line_start: 1965
+        line_end: 2074
+        image_ids:
+
+    caveats:
+      - "Operational feasibility depends on tooling around report export."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_09_revision_apolo_rule_0012"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "hard_rule"
+    domains:
+      - "portfolio"
+      - "strategy_selection"
+    statement: "Final strategy selection must include portfolio contribution; the best standalone set is not necessarily the best portfolio set."
+    trigger: "A strategy is intended for a multi-strategy client portfolio."
+    action: "Evaluate correlation, diversification and portfolio-level risk/return before final deployment."
+    failure_mode_if_ignored: "The portfolio can become more fragile even if the standalone strategy looks stronger."
+    required_evidence:
+      - "portfolio_correlation"
+      - "portfolio_drawdown"
+      - "allocation_effect"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_09_revision_apolo"
+        md_path: "03_only_md_revised/practica_09_revision_apolo.md"
+        section_id: "sersan_practice_09_revision_apolo_sec_0012"
+        line_start: 1965
+        line_end: 2074
+        image_ids:
+
+      -
+        lesson_id: "sersan_practice_09_revision_apolo"
+        md_path: "03_only_md_revised/practica_09_revision_apolo.md"
+        section_id: "sersan_practice_09_revision_apolo_sec_0016"
+        line_start: 2340
+        line_end: 2400
+        image_ids:
+
+    caveats:
+      - "Portfolio constraints may select a lower standalone score intentionally."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_09_revision_apolo_rule_0013"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "hard_rule"
+    domains:
+      - "parameter_granularity"
+      - "optimizer_safety"
+    statement: "Validate optimization increment size by measuring how many trades change when a parameter moves one step."
+    trigger: "A continuous parameter has an arbitrary optimization increment."
+    action: "Compare adjacent rows with other inputs fixed; reduce increments that produce too-large trade-count jumps."
+    failure_mode_if_ignored: "The optimizer may skip relevant regions or create artificial discontinuities."
+    required_evidence:
+      - "adjacent_parameter_rows"
+      - "trade_count_delta"
+      - "increment_rationale"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_09_revision_apolo"
+        md_path: "03_only_md_revised/practica_09_revision_apolo.md"
+        section_id: "sersan_practice_09_revision_apolo_sec_0013"
+        line_start: 2075
+        line_end: 2227
+        image_ids:
+          - "sersan_practice_09_revision_apolo_img_064"
+          - "sersan_practice_09_revision_apolo_img_158"
+          - "sersan_practice_09_revision_apolo_img_163"
+    caveats:
+      - "Acceptable trade-count delta depends on total trades and system frequency."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_09_revision_apolo_rule_0014"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "medium"
+    rule_type: "heuristic"
+    domains:
+      - "recent_period_review"
+      - "sample_size"
+    statement: "Optimize on all available history, but inspect recent-period behavior with a window appropriate to system frequency and trade count."
+    trigger: "Final Performance Report comparison after full-history optimization."
+    action: "For daily systems, review a recent period long enough to retain meaningful trades; for intraday, calibrate shorter windows by sample size."
+    failure_mode_if_ignored: "The selected set may be dominated by old regimes or by too-small recent samples."
+    required_evidence:
+      - "full_history_report"
+      - "recent_window_report"
+      - "recent_trade_count"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_09_revision_apolo"
+        md_path: "03_only_md_revised/practica_09_revision_apolo.md"
+        section_id: "sersan_practice_09_revision_apolo_sec_0014"
+        line_start: 2228
+        line_end: 2289
+        image_ids:
+          - "sersan_practice_09_revision_apolo_img_151"
+    caveats:
+      - "The class suggests about 10 recent years for this daily case; not universal."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_09_revision_apolo_rule_0015"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "medium"
+    rule_type: "decision_rule"
+    domains:
+      - "walk_forward"
+      - "validation_design"
+    statement: "Do not force rolling Walk-Forward when the system structure, trade count and money-management distortion make the test misleading."
+    trigger: "Considering WF for daily short-equity systems with few trades or money management embedded."
+    action: "Test without money management when possible and consider anchored WF or alternative validation if rolling windows are too narrow."
+    failure_mode_if_ignored: "A formally rigorous WF can reject or accept a system for artifacts unrelated to mechanics."
+    required_evidence:
+      - "trade_count_by_window"
+      - "MM_removed_variant"
+      - "validation_route_rationale"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_09_revision_apolo"
+        md_path: "03_only_md_revised/practica_09_revision_apolo.md"
+        section_id: "sersan_practice_09_revision_apolo_sec_0015"
+        line_start: 2290
+        line_end: 2339
+        image_ids:
+
+    caveats:
+      - "This is a validation-design rule, not permission to skip OOS evidence."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_09_revision_apolo_rule_0016"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "domain_rule"
+    domains:
+      - "short_equity"
+      - "portfolio"
+    statement: "Short-equity systems are primarily alpha/diversification tools and require faster exits than long-equity systems."
+    trigger: "Designing or evaluating equity short strategies."
+    action: "Favor quick exit logic, near take profits and portfolio-level justification; do not treat shorts as beginner smart-beta research."
+    failure_mode_if_ignored: "The system may fight equity market drift without enough compensating alpha or diversification value."
+    required_evidence:
+      - "short_exit_profile"
+      - "portfolio_diversification_rationale"
+      - "holding_period_distribution"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_09_revision_apolo"
+        md_path: "03_only_md_revised/practica_09_revision_apolo.md"
+        section_id: "sersan_practice_09_revision_apolo_sec_0003"
+        line_start: 217
+        line_end: 304
+        image_ids:
+
+      -
+        lesson_id: "sersan_practice_09_revision_apolo"
+        md_path: "03_only_md_revised/practica_09_revision_apolo.md"
+        section_id: "sersan_practice_09_revision_apolo_sec_0016"
+        line_start: 2340
+        line_end: 2400
+        image_ids:
+
+    caveats:
+      - "Instrument universe and borrow/friction constraints must be added by TSIS before live use."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_09_revision_apolo_rule_0017"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "medium"
+    rule_type: "research_rule"
+    domains:
+      - "fitness"
+      - "empirical_tracking"
+    statement: "Track which fitness function best predicts OOS for each system family instead of assuming one universal fitness."
+    trigger: "Multiple fitness functions rank candidates differently."
+    action: "Record TSI, ES, PPC and robustness outcomes by lesson/system family and update family-level priors."
+    failure_mode_if_ignored: "The research process may reuse a default fitness where another one is empirically more predictive."
+    required_evidence:
+      - "fitness_comparison"
+      - "OOS_predictivity_log"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_09_revision_apolo"
+        md_path: "03_only_md_revised/practica_09_revision_apolo.md"
+        section_id: "sersan_practice_09_revision_apolo_sec_0011"
+        line_start: 1720
+        line_end: 1964
+        image_ids:
+          - "sersan_practice_09_revision_apolo_img_142"
+          - "sersan_practice_09_revision_apolo_img_143"
+    caveats:
+      - "Practice 09 suggests ES was strongest here; that is not global doctrine."
+    related_rules:
+
+  -
+    rule_id: "sersan_practice_09_revision_apolo_rule_0018"
+    promotion_state: "mechanical_rule_candidate"
+    confidence: "high"
+    rule_type: "hard_rule"
+    domains:
+      - "filters"
+      - "overoptimization"
+    statement: "A filter is researchable only when its type and parameter search are constrained before testing."
+    trigger: "Adding filters to improve an already tested strategy."
+    action: "Use standard/default filter parameters, compare before/after metrics and require enough affected trades."
+    failure_mode_if_ignored: "The process can search hundreds of filters until a random in-sample improvement appears."
+    required_evidence:
+      - "filter_predefinition"
+      - "before_after_metrics"
+      - "affected_trade_count"
+    source_anchors:
+      -
+        lesson_id: "sersan_practice_09_revision_apolo"
+        md_path: "03_only_md_revised/practica_09_revision_apolo.md"
+        section_id: "sersan_practice_09_revision_apolo_sec_0002"
+        line_start: 20
+        line_end: 216
+        image_ids:
+
+    caveats:
+      - "Exact significance thresholds remain an open TSIS doctrine item."
+    related_rules:
+

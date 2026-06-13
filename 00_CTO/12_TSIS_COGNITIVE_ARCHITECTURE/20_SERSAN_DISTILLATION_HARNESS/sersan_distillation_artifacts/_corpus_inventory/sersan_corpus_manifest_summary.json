@@ -1,0 +1,16 @@
+{
+  "contract_version": "sersan_lesson_pack_contract_v0_1",
+  "generated_at_utc": "2026-06-11T19:49:50Z",
+  "generated_by": "manual_inventory_generator_v0_1",
+  "corpus_root": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\SersanSistemas",
+  "artifact_root": "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE\\20_SERSAN_DISTILLATION_HARNESS\\sersan_distillation_artifacts",
+  "lesson_packs": 17,
+  "image_refs_total": 2108,
+  "external_image_refs": 1,
+  "missing_local_image_refs": 0,
+  "assets_resolved_lesson_packs": 16,
+  "inventory_only_lesson_packs": 1,
+  "code_artifacts": 183,
+  "xlsx_artifacts": 11,
+  "pdf_files": 101
+}

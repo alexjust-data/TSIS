@@ -7,6 +7,83 @@ Este changelog registra cambios institucionales y semanticamente relevantes para
 No duplica el historial de Git.
 Existe para preservar memoria arquitectonica y metodologica del modulo.
 
+## v0.4.44 - reference modernization gap audit
+
+### Added
+
+- `01_foundations/inspection_dossiers/reference/README.md`
+- `01_foundations/inspection_dossiers/reference/reference_modernization_gap_audit_2026-06-12.md`
+- `01_foundations/inspection_dossiers/reference/reference_upgrade_agent_prompt_2026-06-12.md`
+
+### Changed
+
+- `01_foundations/inspection_dossiers/reference/reference_institutional_closeout_v0_1.md`
+- `01_foundations/inspection_dossiers/README.md`
+- `01_foundations/contract_registry/dataset_contracts/reference_dataset_contract_v0_1.md`
+- `01_foundations/dataset_registry/reference/reference_registry_entry.yaml`
+
+### Notes
+
+This update corrects the maturity reading of `reference`.
+
+`reference` remains valid as a minimally promoted foundation layer, but it must not be described as inspector-forensic parity with `daily`, `quotes`, `trades`, `minute` or `1m_split_normalized` until it has:
+
+- active evidence assets under `01_foundations`;
+- a physical root audit;
+- population visual overview;
+- manifests;
+- casepacks;
+- a reproducible builder/toolchain;
+- and `reference_inspection_readout_v0_2.md`.
+
+The historical evidence is strong and preserved, including `auditoria/reference`, `certification/reference` and `cache_v2`.
+The new gap audit makes the next agent task explicit: convert that evidence into a modern general-to-specific inspection dossier without moving historical evidence or physical source data.
+
+## v0.4.43 - reference foundation layer institutionalization
+
+### Added
+
+- `01_foundations/contract_registry/dataset_contracts/reference_dataset_contract_v0_1.md`
+- `01_foundations/dataset_registry/reference/reference_registry_entry.yaml`
+- `01_foundations/data_consumption_policies/reference_consumption_policy.md`
+- `01_foundations/inspection_dossiers/reference/reference_institutional_closeout_v0_1.md`
+- `01_foundations/validators/reference/reference_validators.md`
+
+### Changed
+
+- `01_foundations/contract_registry/dataset_contracts/README.md`
+- `01_foundations/dataset_registry/README.md`
+- `01_foundations/data_consumption_policies/README.md`
+- `01_foundations/inspection_dossiers/README.md`
+- `01_foundations/validators/README.md`
+
+### Notes
+
+`reference` is now promoted from preserved historical audit evidence into an active `01_foundations` layer.
+
+The promotion does not rerun the historical audit and does not move preserved evidence.
+It creates the modern operating layer that connects:
+
+- dataset contract;
+- registry entry;
+- consumption policy;
+- inspection dossier;
+- validators;
+- existing canonical schemas;
+- and historical closeout evidence.
+
+The active physical root is recorded as:
+
+- `E:\TSIS\data\reference`
+
+The historical schemas and audit notes may still contain `D:\reference` examples because those were representative inspection paths at the time of schema drafting.
+
+### Impact
+
+`reference` is now governed as a foundation layer for identity, ticker types, events, splits, dividends, exchanges, price-view support, universe support and causal overlays.
+
+It remains explicitly prohibited to treat `reference` as price, execution tape, final universe membership, feature alpha or full continuity remap service without a later contract.
+
 ## v0.4.30 - transversal layer validation standard
 
 ### Added

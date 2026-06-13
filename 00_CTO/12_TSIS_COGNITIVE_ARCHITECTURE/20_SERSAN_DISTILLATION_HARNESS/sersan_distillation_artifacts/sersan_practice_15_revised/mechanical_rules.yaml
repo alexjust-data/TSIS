@@ -1,0 +1,468 @@
+contract_version: "sersan_mechanical_rules_v0_1"
+lesson_id: "sersan_practice_15_revised"
+generated_at_utc: "2026-06-13T05:48:42Z"
+promotion_status: "candidate_only"
+rules:
+  -
+    rule_id: "sersan_practice_15_revised_rule_0001"
+    title: "Built-in stops must be placed at root when symmetric"
+    status: "candidate"
+    priority: "medium"
+    statement: "If the same stop or target applies to long and short, built-in EasyLanguage stops should be declared at strategy root, not gated by MarketPosition."
+    trigger: "Strategy uses SetStopLoss, SetProfitTarget or equivalent built-in stop/target."
+    required_action: "Check whether side-specific logic is truly needed; otherwise keep the built-in stop active globally so entry-bar protection remains available."
+    failure_mode_if_ignored: "A stop hidden inside position logic can miss entry-bar behavior or create side-specific inconsistencies."
+    source_anchor:
+      lesson_id: "sersan_practice_15_revised"
+      md_path: "03_only_md_revised/practica_15_revised.md"
+      section_id: "sersan_practice_15_revised_sec_0002"
+      line_start: 11
+      line_end: 58
+      image_ids:
+
+    promotion_requirement: "Human doctrine review plus implementation-specific validation before canonical TSIS promotion."
+  -
+    rule_id: "sersan_practice_15_revised_rule_0002"
+    title: "Do not use martingale to compensate absence of edge"
+    status: "candidate"
+    priority: "critical"
+    statement: "Money management must not be used to manufacture edge; martingale-style recovery is rejected as a substitute for a valid system edge."
+    trigger: "A candidate improves equity mainly by increasing size after losses or by recovery logic."
+    required_action: "Block promotion until raw edge is demonstrated without martingale compensation."
+    failure_mode_if_ignored: "Sizing hides a negative or fragile expectancy and creates tail risk."
+    source_anchor:
+      lesson_id: "sersan_practice_15_revised"
+      md_path: "03_only_md_revised/practica_15_revised.md"
+      section_id: "sersan_practice_15_revised_sec_0009"
+      line_start: 1100
+      line_end: 1180
+      image_ids:
+        - "sersan_practice_15_revised_img_020"
+        - "sersan_practice_15_revised_img_021"
+        - "sersan_practice_15_revised_img_022"
+    promotion_requirement: "Human doctrine review plus implementation-specific validation before canonical TSIS promotion."
+  -
+    rule_id: "sersan_practice_15_revised_rule_0003"
+    title: "Search tools are not final systems"
+    status: "candidate"
+    priority: "high"
+    statement: "The Buscador E/S is an exploration tool; promising ideas must be developed and audited independently before becoming systems."
+    trigger: "A candidate comes directly from the 23 x 35 entry/exit exploration space."
+    required_action: "Require independent system implementation, cost checks and robustness review before promotion."
+    failure_mode_if_ignored: "The project ships a combinatorial search artifact instead of an engineered strategy."
+    source_anchor:
+      lesson_id: "sersan_practice_15_revised"
+      md_path: "03_only_md_revised/practica_15_revised.md"
+      section_id: "sersan_practice_15_revised_sec_0005"
+      line_start: 294
+      line_end: 998
+      image_ids:
+
+    promotion_requirement: "Human doctrine review plus implementation-specific validation before canonical TSIS promotion."
+  -
+    rule_id: "sersan_practice_15_revised_rule_0004"
+    title: "Side sample threshold depends on degrees of freedom"
+    status: "candidate"
+    priority: "high"
+    statement: "A weak side sample, such as few short trades, is not automatically invalid, but its significance depends on optimization intensity, degrees of freedom and mirror/joint logic."
+    trigger: "Long and short sides have materially different trade counts."
+    required_action: "Report trade counts by side, degrees of freedom and whether side logic is independent or mirrored."
+    failure_mode_if_ignored: "A blunt minimum trade rule either rejects useful evidence or accepts overfit side logic."
+    source_anchor:
+      lesson_id: "sersan_practice_15_revised"
+      md_path: "03_only_md_revised/practica_15_revised.md"
+      section_id: "sersan_practice_15_revised_sec_0003"
+      line_start: 59
+      line_end: 109
+      image_ids:
+
+    promotion_requirement: "Human doctrine review plus implementation-specific validation before canonical TSIS promotion."
+  -
+    rule_id: "sersan_practice_15_revised_rule_0005"
+    title: "Friction and financing must be explicit"
+    status: "candidate"
+    priority: "high"
+    statement: "Commissions, slippage, swaps or equivalent financing costs must be approximated before comparing systems, especially intraday or high-turnover systems."
+    trigger: "Instrument includes CFD/swap/borrow/friction exposure or high trade count."
+    required_action: "Declare cost model and stress the strategy under realistic friction assumptions."
+    failure_mode_if_ignored: "A marginal edge disappears live because financing and execution costs were ignored."
+    source_anchor:
+      lesson_id: "sersan_practice_15_revised"
+      md_path: "03_only_md_revised/practica_15_revised.md"
+      section_id: "sersan_practice_15_revised_sec_0004"
+      line_start: 110
+      line_end: 293
+      image_ids:
+
+    promotion_requirement: "Human doctrine review plus implementation-specific validation before canonical TSIS promotion."
+  -
+    rule_id: "sersan_practice_15_revised_rule_0006"
+    title: "Instrument choice is a portfolio feasibility decision"
+    status: "candidate"
+    priority: "medium"
+    statement: "Futures are preferred when feasible, but diversified CFDs or ETFs can be rational if capital or instrument constraints prevent adequate futures diversification."
+    trigger: "System universe can be implemented through futures, CFDs, ETFs or equities."
+    required_action: "Compare operational feasibility, diversification breadth, frictions, liquidity and capital requirements."
+    failure_mode_if_ignored: "The project chooses a theoretically superior instrument and loses portfolio robustness through under-diversification."
+    source_anchor:
+      lesson_id: "sersan_practice_15_revised"
+      md_path: "03_only_md_revised/practica_15_revised.md"
+      section_id: "sersan_practice_15_revised_sec_0004"
+      line_start: 110
+      line_end: 293
+      image_ids:
+
+    promotion_requirement: "Human doctrine review plus implementation-specific validation before canonical TSIS promotion."
+  -
+    rule_id: "sersan_practice_15_revised_rule_0007"
+    title: "Raw trade export must be preserved before MSA sizing"
+    status: "candidate"
+    priority: "critical"
+    statement: "Trades should be exported without final money management and then sized in MSA or equivalent tooling for comparable analysis."
+    trigger: "A lesson pack or strategy enters money-management analysis."
+    required_action: "Store raw trade list, risk-per-trade field and sizing method outputs separately."
+    failure_mode_if_ignored: "Sizing effects contaminate raw edge and make method comparison impossible."
+    source_anchor:
+      lesson_id: "sersan_practice_15_revised"
+      md_path: "03_only_md_revised/practica_15_revised.md"
+      section_id: "sersan_practice_15_revised_sec_0010"
+      line_start: 1181
+      line_end: 2245
+      image_ids:
+        - "sersan_practice_15_revised_img_107"
+        - "sersan_practice_15_revised_img_110"
+        - "sersan_practice_15_revised_img_113"
+    promotion_requirement: "Human doctrine review plus implementation-specific validation before canonical TSIS promotion."
+  -
+    rule_id: "sersan_practice_15_revised_rule_0008"
+    title: "MSA export must be guarded by last bar execution"
+    status: "candidate"
+    priority: "high"
+    statement: "WriteTrades32 or equivalent export should run once at the end of the chart, outside loops and under a lastbar guard."
+    trigger: "Strategy exports trades or risk values to external files."
+    required_action: "Validate lastbaronchart guard and check that export paths are not repeated per bar."
+    failure_mode_if_ignored: "Duplicate, partial or inconsistent trade files enter MSA analysis."
+    source_anchor:
+      lesson_id: "sersan_practice_15_revised"
+      md_path: "03_only_md_revised/practica_15_revised.md"
+      section_id: "sersan_practice_15_revised_sec_0010"
+      line_start: 1181
+      line_end: 1318
+      image_ids:
+        - "sersan_practice_15_revised_img_107"
+    promotion_requirement: "Human doctrine review plus implementation-specific validation before canonical TSIS promotion."
+  -
+    rule_id: "sersan_practice_15_revised_rule_0009"
+    title: "Trade risk definition is mandatory"
+    status: "candidate"
+    priority: "critical"
+    statement: "Fixed Fractional sizing requires a declared Trade Risk; if stops are rare, distant or absent, risk must be estimated rather than assumed zero."
+    trigger: "A strategy applies Fixed Fractional, Fixed Risk, Kelly or risk-based position sizing."
+    required_action: "Check that risk source is explicit, same-unit as P/L and stable enough for sizing."
+    failure_mode_if_ignored: "Position size becomes arbitrary or infinitely large when risk is undefined or too small."
+    source_anchor:
+      lesson_id: "sersan_practice_15_revised"
+      md_path: "03_only_md_revised/practica_15_revised.md"
+      section_id: "sersan_practice_15_revised_sec_0009"
+      line_start: 1100
+      line_end: 1318
+      image_ids:
+        - "sersan_practice_15_revised_img_021"
+        - "sersan_practice_15_revised_img_022"
+        - "sersan_practice_15_revised_img_057"
+    promotion_requirement: "Human doctrine review plus implementation-specific validation before canonical TSIS promotion."
+  -
+    rule_id: "sersan_practice_15_revised_rule_0010"
+    title: "Use normalized volatility for long historical sizing"
+    status: "candidate"
+    priority: "critical"
+    statement: "Normalized volatility, such as Average Normalized True Range, is preferred over ATR in points when price level changes materially over history."
+    trigger: "Sizing uses volatility over a long historical series or changing nominal price regime."
+    required_action: "Normalize true range by price before converting back to current risk units."
+    failure_mode_if_ignored: "Raw ATR points understate or overstate risk because the instrument price level changed."
+    source_anchor:
+      lesson_id: "sersan_practice_15_revised"
+      md_path: "03_only_md_revised/practica_15_revised.md"
+      section_id: "sersan_practice_15_revised_sec_0011"
+      line_start: 1319
+      line_end: 1450
+      image_ids:
+        - "sersan_practice_15_revised_img_034"
+        - "sersan_practice_15_revised_img_038"
+    promotion_requirement: "Human doctrine review plus implementation-specific validation before canonical TSIS promotion."
+  -
+    rule_id: "sersan_practice_15_revised_rule_0011"
+    title: "Apply a volatility floor before using volatility as denominator"
+    status: "candidate"
+    priority: "critical"
+    statement: "When volatility drives position size, apply a floor such as MaxList(AvgNormalizedTrueRange, Filt_ATR) before dividing by risk."
+    trigger: "Position size increases when observed volatility falls."
+    required_action: "Declare and test a floor, then compare with and without floor under low-vol-to-high-vol transitions."
+    failure_mode_if_ignored: "Low volatility causes overleverage immediately before a volatility expansion."
+    source_anchor:
+      lesson_id: "sersan_practice_15_revised"
+      md_path: "03_only_md_revised/practica_15_revised.md"
+      section_id: "sersan_practice_15_revised_sec_0011"
+      line_start: 1319
+      line_end: 2087
+      image_ids:
+        - "sersan_practice_15_revised_img_035"
+        - "sersan_practice_15_revised_img_036"
+        - "sersan_practice_15_revised_img_041"
+        - "sersan_practice_15_revised_img_084"
+        - "sersan_practice_15_revised_img_085"
+    promotion_requirement: "Human doctrine review plus implementation-specific validation before canonical TSIS promotion."
+  -
+    rule_id: "sersan_practice_15_revised_rule_0012"
+    title: "Convert normalized risk back to current money risk"
+    status: "candidate"
+    priority: "critical"
+    statement: "Risk for sizing must combine normalized volatility, current price proxy and BigPointValue or equivalent nominal multiplier."
+    trigger: "Risk is computed from percentage volatility."
+    required_action: "Validate formula equivalent to Risk = normalized_vol * price * BigPointValue."
+    failure_mode_if_ignored: "Sizing uses percentage volatility but fails to account for current nominal exposure."
+    source_anchor:
+      lesson_id: "sersan_practice_15_revised"
+      md_path: "03_only_md_revised/practica_15_revised.md"
+      section_id: "sersan_practice_15_revised_sec_0011"
+      line_start: 1319
+      line_end: 1779
+      image_ids:
+        - "sersan_practice_15_revised_img_043"
+        - "sersan_practice_15_revised_img_044"
+    promotion_requirement: "Human doctrine review plus implementation-specific validation before canonical TSIS promotion."
+  -
+    rule_id: "sersan_practice_15_revised_rule_0013"
+    title: "Round position size down and cap it"
+    status: "candidate"
+    priority: "critical"
+    statement: "After computing raw size, round down by lot size and apply Min_Size and Max_Size caps."
+    trigger: "Computed trade size is non-integer or larger than operational caps."
+    required_action: "Use truncation/IntPortion style logic and verify min/max bounds."
+    failure_mode_if_ignored: "Rounding up or missing caps exposes more risk than intended."
+    source_anchor:
+      lesson_id: "sersan_practice_15_revised"
+      md_path: "03_only_md_revised/practica_15_revised.md"
+      section_id: "sersan_practice_15_revised_sec_0013"
+      line_start: 1599
+      line_end: 1779
+      image_ids:
+        - "sersan_practice_15_revised_img_044"
+        - "sersan_practice_15_revised_img_045"
+        - "sersan_practice_15_revised_img_046"
+    promotion_requirement: "Human doctrine review plus implementation-specific validation before canonical TSIS promotion."
+  -
+    rule_id: "sersan_practice_15_revised_rule_0014"
+    title: "F and risk jointly define aggressiveness"
+    status: "candidate"
+    priority: "high"
+    statement: "The money-management fraction and risk definition jointly determine aggressiveness; neither can be reviewed in isolation."
+    trigger: "A strategy reports f, MMVar, Kelly value or Fixed Risk fraction."
+    required_action: "Record both fraction and risk formula, then compare at equal drawdown targets."
+    failure_mode_if_ignored: "A low f with low risk denominator can be more aggressive than it appears."
+    source_anchor:
+      lesson_id: "sersan_practice_15_revised"
+      md_path: "03_only_md_revised/practica_15_revised.md"
+      section_id: "sersan_practice_15_revised_sec_0016"
+      line_start: 2246
+      line_end: 2406
+      image_ids:
+        - "sersan_practice_15_revised_img_117"
+        - "sersan_practice_15_revised_img_123"
+        - "sersan_practice_15_revised_img_125"
+        - "sersan_practice_15_revised_img_195"
+    promotion_requirement: "Human doctrine review plus implementation-specific validation before canonical TSIS promotion."
+  -
+    rule_id: "sersan_practice_15_revised_rule_0015"
+    title: "Profit-only optimization is not accepted for sizing"
+    status: "candidate"
+    priority: "critical"
+    statement: "Sizing optimizers must include drawdown or risk constraints; net profit alone is not an acceptance metric."
+    trigger: "MSA or another optimizer searches sizing parameters."
+    required_action: "Require max drawdown cap, sequence declaration and sensitivity comparison."
+    failure_mode_if_ignored: "The optimizer selects an intolerable path because it maximizes final equity."
+    source_anchor:
+      lesson_id: "sersan_practice_15_revised"
+      md_path: "03_only_md_revised/practica_15_revised.md"
+      section_id: "sersan_practice_15_revised_sec_0016"
+      line_start: 2246
+      line_end: 2406
+      image_ids:
+        - "sersan_practice_15_revised_img_122"
+        - "sersan_practice_15_revised_img_123"
+        - "sersan_practice_15_revised_img_125"
+        - "sersan_practice_15_revised_img_210"
+        - "sersan_practice_15_revised_img_227"
+    promotion_requirement: "Human doctrine review plus implementation-specific validation before canonical TSIS promotion."
+  -
+    rule_id: "sersan_practice_15_revised_rule_0016"
+    title: "Exponential equity curves require drawdown review"
+    status: "candidate"
+    priority: "critical"
+    statement: "Money-management curves must be reviewed with drawdown percentages, max loss, rachas and zooms, not only visual equity growth."
+    trigger: "A sized equity curve appears strongly exponential or visually smooth."
+    required_action: "Inspect max percent drawdown, max loss, losing streak and zoomed periods before approval."
+    failure_mode_if_ignored: "A visually impressive curve hides 28% to 50% drawdowns."
+    source_anchor:
+      lesson_id: "sersan_practice_15_revised"
+      md_path: "03_only_md_revised/practica_15_revised.md"
+      section_id: "sersan_practice_15_revised_sec_0017"
+      line_start: 2407
+      line_end: 2471
+      image_ids:
+        - "sersan_practice_15_revised_img_118"
+        - "sersan_practice_15_revised_img_139"
+        - "sersan_practice_15_revised_img_140"
+        - "sersan_practice_15_revised_img_145"
+        - "sersan_practice_15_revised_img_146"
+    promotion_requirement: "Human doctrine review plus implementation-specific validation before canonical TSIS promotion."
+  -
+    rule_id: "sersan_practice_15_revised_rule_0017"
+    title: "Kelly is research evidence, not production sizing by default"
+    status: "candidate"
+    priority: "critical"
+    statement: "Kelly can be calculated for comparison, but it must not be promoted automatically because it ignores drawdown and can be impractical."
+    trigger: "A candidate uses Kelly formula or reports Kelly f."
+    required_action: "Mark Kelly outputs as research unless they pass drawdown, rachas and operational cap gates."
+    failure_mode_if_ignored: "Kelly f creates excessive leverage and unacceptable drawdown."
+    source_anchor:
+      lesson_id: "sersan_practice_15_revised"
+      md_path: "03_only_md_revised/practica_15_revised.md"
+      section_id: "sersan_practice_15_revised_sec_0019"
+      line_start: 2628
+      line_end: 2913
+      image_ids:
+        - "sersan_practice_15_revised_img_117"
+        - "sersan_practice_15_revised_img_118"
+        - "sersan_practice_15_revised_img_161"
+        - "sersan_practice_15_revised_img_162"
+        - "sersan_practice_15_revised_img_169"
+        - "sersan_practice_15_revised_img_204"
+        - "sersan_practice_15_revised_img_205"
+    promotion_requirement: "Human doctrine review plus implementation-specific validation before canonical TSIS promotion."
+  -
+    rule_id: "sersan_practice_15_revised_rule_0018"
+    title: "Losing streaks are mandatory MM stress tests"
+    status: "candidate"
+    priority: "high"
+    statement: "Maximum consecutive losses must be reviewed because equity-only or Kelly-style adjustment can react too slowly during a long losing streak."
+    trigger: "Sizing method increases/contracts size based mainly on equity or historical f."
+    required_action: "Report max consecutive losses, worst historical loss and simulated losing-streak stress."
+    failure_mode_if_ignored: "The system survives average volatility but fails in realistic streak clustering."
+    source_anchor:
+      lesson_id: "sersan_practice_15_revised"
+      md_path: "03_only_md_revised/practica_15_revised.md"
+      section_id: "sersan_practice_15_revised_sec_0019"
+      line_start: 2628
+      line_end: 2913
+      image_ids:
+        - "sersan_practice_15_revised_img_171"
+        - "sersan_practice_15_revised_img_174"
+    promotion_requirement: "Human doctrine review plus implementation-specific validation before canonical TSIS promotion."
+  -
+    rule_id: "sersan_practice_15_revised_rule_0019"
+    title: "Evaluate MM at portfolio and family level"
+    status: "candidate"
+    priority: "critical"
+    statement: "Sizing decisions must be evaluated at system, side, family and portfolio levels; the best standalone sizing may be wrong for the combined book."
+    trigger: "Multiple systems, sets, assets or long/short sides are combined."
+    required_action: "Compare Apolo/Nemesis or equivalent families separately and together, including correlation and drawdown contribution."
+    failure_mode_if_ignored: "A method overfits standalone equity and worsens portfolio risk."
+    source_anchor:
+      lesson_id: "sersan_practice_15_revised"
+      md_path: "03_only_md_revised/practica_15_revised.md"
+      section_id: "sersan_practice_15_revised_sec_0018"
+      line_start: 2472
+      line_end: 2913
+      image_ids:
+        - "sersan_practice_15_revised_img_139"
+        - "sersan_practice_15_revised_img_151"
+        - "sersan_practice_15_revised_img_153"
+        - "sersan_practice_15_revised_img_156"
+        - "sersan_practice_15_revised_img_202"
+        - "sersan_practice_15_revised_img_203"
+    promotion_requirement: "Human doctrine review plus implementation-specific validation before canonical TSIS promotion."
+  -
+    rule_id: "sersan_practice_15_revised_rule_0020"
+    title: "Compare sizing methods at equal drawdown constraints"
+    status: "candidate"
+    priority: "high"
+    statement: "Fixed Risk, Percent Volatility, Fixed Ratio, Kelly and other methods should be compared under the same drawdown or risk budget."
+    trigger: "Multiple MSA position-sizing methods are available for a strategy."
+    required_action: "Run method comparison under common max drawdown, cost and sequence assumptions."
+    failure_mode_if_ignored: "A method is selected because its risk budget was looser than alternatives."
+    source_anchor:
+      lesson_id: "sersan_practice_15_revised"
+      md_path: "03_only_md_revised/practica_15_revised.md"
+      section_id: "sersan_practice_15_revised_sec_0019"
+      line_start: 2628
+      line_end: 3175
+      image_ids:
+        - "sersan_practice_15_revised_img_193"
+        - "sersan_practice_15_revised_img_194"
+        - "sersan_practice_15_revised_img_195"
+        - "sersan_practice_15_revised_img_214"
+        - "sersan_practice_15_revised_img_227"
+    promotion_requirement: "Human doctrine review plus implementation-specific validation before canonical TSIS promotion."
+  -
+    rule_id: "sersan_practice_15_revised_rule_0021"
+    title: "Measure contract oscillation with and without volatility floor"
+    status: "candidate"
+    priority: "critical"
+    statement: "Removing a volatility floor may improve historical profit but must be reviewed for contract oscillation and low-vol shock exposure."
+    trigger: "A candidate proposes lower or no Filt_ATR floor."
+    required_action: "Compare max contracts, contract path and drawdown in with-floor versus without-floor runs."
+    failure_mode_if_ignored: "The system earns more historically by taking excessive size in artificially quiet regimes."
+    source_anchor:
+      lesson_id: "sersan_practice_15_revised"
+      md_path: "03_only_md_revised/practica_15_revised.md"
+      section_id: "sersan_practice_15_revised_sec_0014"
+      line_start: 1780
+      line_end: 2087
+      image_ids:
+        - "sersan_practice_15_revised_img_066"
+        - "sersan_practice_15_revised_img_070"
+        - "sersan_practice_15_revised_img_071"
+        - "sersan_practice_15_revised_img_084"
+        - "sersan_practice_15_revised_img_088"
+    promotion_requirement: "Human doctrine review plus implementation-specific validation before canonical TSIS promotion."
+  -
+    rule_id: "sersan_practice_15_revised_rule_0022"
+    title: "Operational tooling limits are blockers, not evidence"
+    status: "candidate"
+    priority: "medium"
+    statement: "If MSA/Maestro or CPU limits prevent an optimization or portfolio review, the result must be marked blocked/needs review rather than extrapolated."
+    trigger: "A tool fails, hangs or cannot complete a requested portfolio/MM computation."
+    required_action: "Record blocker, partial evidence and next reproducible run condition."
+    failure_mode_if_ignored: "A quantitative conclusion is inferred from an incomplete tool run."
+    source_anchor:
+      lesson_id: "sersan_practice_15_revised"
+      md_path: "03_only_md_revised/practica_15_revised.md"
+      section_id: "sersan_practice_15_revised_sec_0020"
+      line_start: 2914
+      line_end: 3175
+      image_ids:
+
+    promotion_requirement: "Human doctrine review plus implementation-specific validation before canonical TSIS promotion."
+  -
+    rule_id: "sersan_practice_15_revised_rule_0023"
+    title: "AlphaEvolve must optimize under MM gates"
+    status: "candidate"
+    priority: "critical"
+    statement: "Future AlphaEvolve strategy search must treat trade risk, floor, caps, cost model, drawdown target, rachas and portfolio contribution as evaluator gates."
+    trigger: "A generated strategy enters evolutionary search or ranking."
+    required_action: "Reject candidates that optimize edge or equity without passing the Sersan MM and portfolio validation gates."
+    failure_mode_if_ignored: "Evolution rewards fragile leverage, not robust edge."
+    source_anchor:
+      lesson_id: "sersan_practice_15_revised"
+      md_path: "03_only_md_revised/practica_15_revised.md"
+      section_id: "sersan_practice_15_revised_sec_0020"
+      line_start: 2914
+      line_end: 3175
+      image_ids:
+        - "sersan_practice_15_revised_img_139"
+        - "sersan_practice_15_revised_img_145"
+        - "sersan_practice_15_revised_img_169"
+        - "sersan_practice_15_revised_img_181"
+        - "sersan_practice_15_revised_img_227"
+    promotion_requirement: "Human doctrine review plus implementation-specific validation before canonical TSIS promotion."

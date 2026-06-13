@@ -1,0 +1,898 @@
+{
+  "run_id": "sersan_full_corpus_distillation_sersan_practice_04_donchain_20260612T151951Z",
+  "lesson_id_or_scope": "sersan_practice_04_donchain",
+  "lesson_id": "sersan_practice_04_donchain",
+  "mode": "replay",
+  "status": "pass_with_warnings",
+  "contract_version": "sersan_lesson_pack_contract_v0_1",
+  "toolchain_traceability_contract": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/harness_toolchain_traceability_contract.md",
+  "started_at_utc": "2026-06-12T15:19:50Z",
+  "completed_at_utc": "2026-06-12T15:19:51Z",
+  "execution_command": "python 00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/run_sersan_corpus_distillation.py --process-all",
+  "toolchain_artifacts": [
+    {
+      "tool_id": "sersan_full_corpus_distillation_generator_v0_1",
+      "role": "generator",
+      "project_relative_path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/run_sersan_corpus_distillation.py",
+      "sha256": "sha256:f842356f842bdc7b6140fa7cea65bf2821b5e71c9df848e06e31b302ffa8dbcf",
+      "runtime": "python",
+      "project_resident": true
+    },
+    {
+      "tool_id": "sersan_full_corpus_distillation_validator_v0_1",
+      "role": "validator",
+      "project_relative_path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/validate_sersan_distillation.py",
+      "sha256": "sha256:f60ccad1cad01f7dc03ea2386c73f3c0a27f20509d9f98ea091a854b4c095c29",
+      "runtime": "python",
+      "project_resident": true
+    },
+    {
+      "tool_id": "sersan_corpus_distillation_config_v0_1",
+      "role": "config",
+      "project_relative_path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/sersan_corpus_distillation_config.json",
+      "sha256": "sha256:78eab6eb4cb2c653d753a7ca0f1a4828daddc6fb27b4c941e6f6bfd4350700d8",
+      "runtime": "python",
+      "project_resident": true
+    }
+  ],
+  "input_artifacts": [
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_protocol.md",
+      "sha256": "sha256:0062328c104fb3e400fb9194858a0df6a504941cc7dc0ad15aef7d8656964549"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_lesson_pack_contract.md",
+      "sha256": "sha256:6bc974c952049bfd8e5ea9ffe053346d895246e0710e5ea402401257612f4e14"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_pilot_harness_runbook.md",
+      "sha256": "sha256:b968bc2cb0d1bd436110368a415be5a19174319a66d90e4e0fa002ca97dc17c1"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/harness_toolchain_traceability_contract.md",
+      "sha256": "sha256:a762e90b34080a534404dab0560f54e105a4fde371e55fc3185f4f9a481b0249"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/shared_run_manifest_contract.md",
+      "sha256": "sha256:5785f54e81cd5e14cc0abc22dac1c1bd7b20ef08bb3303f15917ed3856c8334e"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/shared_validation_principles.md",
+      "sha256": "sha256:b3e27d75c6c0f5438ec892ac0bb90ce553c55e695efc392231980a8bd61beb16"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/_corpus_inventory/sersan_corpus_manifest.csv",
+      "sha256": "sha256:9499f46ffb2faacd8b6d627b372cc6cc1c59358836f80df1e20acf8f7962110f"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised/practica_04_donchain.md",
+      "sha256": "sha256:80738fc5f226738751e95b2dc32390554d3903098de9dc48d71d52fc84485fb8"
+    }
+  ],
+  "output_artifacts": [
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_index.csv",
+      "sha256": "sha256:ddc3c85949871ed3b3260d55447d68094fce63010c6308abd315aeab644c15da"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0001.md",
+      "sha256": "sha256:2a50eb3fc0594f32fc2a656021967497e2981082fcd630bea1e152d77e5cbe7c"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0002.md",
+      "sha256": "sha256:06fd6ad9e086ffedad6197b16f8fc7b606823d3791f5821973fa378bd238f995"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0003.md",
+      "sha256": "sha256:0311a097f8836ed7b6947175d4938bf51e11bdecb30c17a419a64c081ce93d0d"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0004.md",
+      "sha256": "sha256:51549213556c968c57cd096efe50d72943dd84ca9ca3ad6a3b0e07c1c461ffd2"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0005.md",
+      "sha256": "sha256:1dc9917992b88acc99f2bc2100a34d07e735dd0afd3a4ab65ba4048f8f97f463"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0006.md",
+      "sha256": "sha256:564bebf717b705ab01ea6a57a76fe9946d2a372c120d589ae58a5a158334295e"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0007.md",
+      "sha256": "sha256:87bdce84dbe4f4b570da744ce1a6911d184e2fbd8af19791b6249823a5979e35"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0008.md",
+      "sha256": "sha256:15b807c9f0ed1299fa7da08d83c8caf65a8586a13348541b36f053e394348231"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0009.md",
+      "sha256": "sha256:a9a95fe8cf37493a8511cb1159b8e5d225de8a648119371bc6dbe45b34ced500"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0010.md",
+      "sha256": "sha256:ad9469a6e4e2c627298ad794bca1cdd6f443c72aae80706c7cf6ede84fb2a2c5"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0011.md",
+      "sha256": "sha256:b70a7c2a37e753bcf16bea2c0226b9ff87aa9ee793867937047db213608a7316"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0012.md",
+      "sha256": "sha256:51ca6dce3f498044e895ecba1bea2ebae0ddf63866aebef3c5edd7de0bf2d677"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0013.md",
+      "sha256": "sha256:cd3a09ec18f95db93750e9809dc5034210a6902ff8cb98b853dafd217f462deb"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0014.md",
+      "sha256": "sha256:e2b8209172d4bf9893e8f117a75b20149c7f547558d14a4966a822d971577299"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0015.md",
+      "sha256": "sha256:71b710002ff0750f2c064ce985fc147a4b488cf02226c935436cedabfd9e3190"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0016.md",
+      "sha256": "sha256:4bcd146d6f7278d5af82637e1c27a56d7dab3b82cf9225c87fd5f87c7cbbb303"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0017.md",
+      "sha256": "sha256:857ed187f9cc5f3ef4bc9bbce50a12b3cef831f4c59880d10091138b43ac1bbb"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0018.md",
+      "sha256": "sha256:7ec75b8dfd773b8bbb7e68da093712be514178d0ba9f67c67c3ab4348863fed0"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0019.md",
+      "sha256": "sha256:e3d86b2ec8920f68b45ae4d2d4ed836164e74f609610f64f2505ec4929c744bc"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0020.md",
+      "sha256": "sha256:f1cb9b8647cd2ac992304eb82b3fc6461c6206b9c63c3877146c867bafdd3211"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0021.md",
+      "sha256": "sha256:403f613e8a6e62d2b427ade7495d67003eb6fe3ce9b6f7cfec20ce8dc911194f"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0022.md",
+      "sha256": "sha256:d0f11c5505dd85c0524ade58973c91565db8f04c007845e037c90642ae74ed5c"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0023.md",
+      "sha256": "sha256:ea33edcc9641e021be1cb9afc50f3477421409b23a04e9be1735afb27364e2b5"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0024.md",
+      "sha256": "sha256:00ad51d4280a1c7e47b2569f2ba2da31033be82ff66b7309e3de10105af8b970"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0025.md",
+      "sha256": "sha256:01ba45c50042926ead11da773ef6ced603f923c01be5e61f3babb7bff7bfd946"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0026.md",
+      "sha256": "sha256:7b6836f61dc7ad907c4272e4a719aed29b1eb56e16ae031cff6ba3f7deb41afc"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0027.md",
+      "sha256": "sha256:184f4144afa4de2bc16a1373d17199b479bce6b71a9d67b0f5a19e483855658b"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0028.md",
+      "sha256": "sha256:fc233b5454be89ed041eaef6d498feb43a7cb25526fa22c9b641122db9143171"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0029.md",
+      "sha256": "sha256:f80ac88268bbeabc49b42f678368d26e7ef691d9bed1415f6a3804c94b853759"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0030.md",
+      "sha256": "sha256:f1bff99894f92c165124a9b4d8fb26a775aa37e527b7e8030659df66664e60e4"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0031.md",
+      "sha256": "sha256:0c3239f87d8e170deede1ef9a21b759545697e95c3053bd61b820954f04c8c51"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0032.md",
+      "sha256": "sha256:2964f686f67cd9fe533e0be2f24fe0da59304a69e1b2f1e200645b1ed17e9962"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0033.md",
+      "sha256": "sha256:074c20ac5df8d8b2555fe0a205570c7830e368832963d1f4f9cad3cf1e05d4ee"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0034.md",
+      "sha256": "sha256:4067a54e41ad8d7b3e9eae76f7af2577cbf3f45cc7ab6c010bf3fdae48613faa"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0035.md",
+      "sha256": "sha256:ff17f15da0f4fa87eac730b4f1afc89fa17067ac0a82bd92bb6ddeb327614501"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0036.md",
+      "sha256": "sha256:23f1b20e94a80666dfcb1bab43c49601ef985b9d6a3dd71822c3fddde9ccebd7"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0037.md",
+      "sha256": "sha256:d1245a10e722ca3588f952cd4f58c3fb3291fa94f47c57af33fb32bbe81800aa"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0038.md",
+      "sha256": "sha256:436c28793c671e938f17c75e8e8b5197f15383a81fa1f416aa9d03fb44c44e79"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0039.md",
+      "sha256": "sha256:2539efa9ec2cc037bd4d8dc698f86c30445864f8f24d0959bbdda29ba4792ec4"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0040.md",
+      "sha256": "sha256:eff0d348069d0badef3d4814fec26c349e04dce6de43a9e2b1f343dd608aa456"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0041.md",
+      "sha256": "sha256:2f381cbe5906f19b5b54f88c95765aa938f98bf60679de2c08dc7e9eca4e72f6"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0042.md",
+      "sha256": "sha256:500bccef9aaa71e17f6417c2c10365c85bd3a794e11a1005d1feb8937b1cfc69"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0043.md",
+      "sha256": "sha256:10e781b3d05416310008ebf6a95d2a839d082fd84994b932fed358c43cd7b6ce"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0044.md",
+      "sha256": "sha256:415707a49345b43ccb5dfc0045892194c8a302671800c5bc8eb33d61886513fa"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0045.md",
+      "sha256": "sha256:c0d71d0933e1974f40d8215e1898f56ca7856010a3f45550f59749547a6e4dbb"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0046.md",
+      "sha256": "sha256:4fb43d754af6970d54cadac9b682311cbc0c551902068806a89d8844a9e27e33"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0047.md",
+      "sha256": "sha256:b569d69007bc31c04bc72045457b41c06a76a63503929d4f986397316d25077e"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0048.md",
+      "sha256": "sha256:12b57980727f63f4738514490b5cbc9d4d815eb750e796dfffdc4a4750678ebc"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0049.md",
+      "sha256": "sha256:e01d455e3a98d25649f12b056339971b2987308ae972acc23cdfd73c2604260c"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0050.md",
+      "sha256": "sha256:b4deab633241e6d480e25dd06afe0e57f3d443f9d3e031a4a7cb20dbdd93d875"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0051.md",
+      "sha256": "sha256:1a393d7de66fec9c718b1b82a7500a162a257414f28a1dbc714b41ddde31cd47"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0052.md",
+      "sha256": "sha256:bcfc22fbef4f6f4ab866c8603816f4537bb4c160502318978efc932e2eb35bfe"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0053.md",
+      "sha256": "sha256:0aa66e04da0e39b1f6ef0e138a0571d528664e15bf3cd00b88844865a47ae6a7"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0054.md",
+      "sha256": "sha256:02a120314cda68ec8fe50f1f3940a815a127a34233aeeba413ba14395c7cb55e"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0055.md",
+      "sha256": "sha256:de7f39c2d56e4d18bcf07a57b2c1472bd8231d550265c1b3c58f4d46deb5c6f1"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0056.md",
+      "sha256": "sha256:b5f78532df6a21cbbfc1b33406fa69c2c52e41468706157dcb96a06bc510351e"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0057.md",
+      "sha256": "sha256:7495f88aafd83c3f463238ee2b0056eb87872e05741811071b16623a1aa02822"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0058.md",
+      "sha256": "sha256:3201e828b501a56899add0315e984d6e87a288958b0a218c1029de97b5f996d1"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0059.md",
+      "sha256": "sha256:021edfb3be1a5c6be5403f2aa7053b3e3075b3190b4898f0b2a4dc6629de49c7"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0060.md",
+      "sha256": "sha256:ff674e9d19288efc686c5949ac3a05cb7ddf7469639968c5bea8f4280388948b"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0061.md",
+      "sha256": "sha256:2e5a09749cacc50184c08d749793d7d557619b43e319c5d9e74206fd1a05c615"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0062.md",
+      "sha256": "sha256:0e6578dee5eedde54d0d86f43525388a5efb14820bb409f11f5d8c816441a0e6"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0063.md",
+      "sha256": "sha256:e73156d634284a4aa284c964a99db359139d646f2928b0caeb170c82db485825"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0064.md",
+      "sha256": "sha256:5bcf695205151d71fa69618f6ed6aba12658faf66750dec9bd6f57b6c39df2a7"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0065.md",
+      "sha256": "sha256:a9b24de9fd801d00ba7bde730b1d8b51c21be15a488cb2c83d2ad9944000bd27"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0066.md",
+      "sha256": "sha256:4874e3fe2dd2aa935105259232344cf3e5227017cd8da0e5981be976245f95be"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0067.md",
+      "sha256": "sha256:8b9ea3f0992b6bca3dad29c04d5d61f2b8ef6cb19874a7e43052dbf9f8845e04"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0068.md",
+      "sha256": "sha256:8a3586f26004da87ecf1a86ac4159102cf82f33b06448292268f5d65872ff552"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0069.md",
+      "sha256": "sha256:aa08b7720caa70fa1e3c1db979c869f1cf35ad24cc28dbddfaceaa54012235d9"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0070.md",
+      "sha256": "sha256:e064af5bc5b7d303bdce0fb78ca444bf5a42d012df6d41117ff37a00959cc10c"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0071.md",
+      "sha256": "sha256:579914767bc2f5cf37d2ac3c865ccc5152780c72f1b43a3c3ae36419c020f270"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0072.md",
+      "sha256": "sha256:cbf53aa30bce97f252929fd793ee408b5473f952f1177801179c2b32eb1ed799"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0073.md",
+      "sha256": "sha256:4387214fc9fbc8a879f3049667cf6d1aa3799392b48da728afc1b2ab68217456"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0074.md",
+      "sha256": "sha256:52dcd8a6ebac02c357713b546dc07776ce831ffc269575c41d4f92c57f0a06fe"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0075.md",
+      "sha256": "sha256:5a8e180f221d5ba84ae4d1a28315ec7c45ae08b340945c182cd6cc4cea4f621e"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0076.md",
+      "sha256": "sha256:2c021bcb3ba455cc4cd2d98c75dad0ce722e665684acc3e9b2d7c86ae565a82d"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0077.md",
+      "sha256": "sha256:5f281a66f4c244019eba9be64302940afa0c4f3f35c4f097c21dd04b1b028c86"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0078.md",
+      "sha256": "sha256:e648790c9206fe2f91044f4aa3bac39854e6e42b9bc0b01ed4854c085b595243"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0079.md",
+      "sha256": "sha256:2f267ddfe2fb27755822d986b194ee48daa7305d76cfd35a1effc453beca2143"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0080.md",
+      "sha256": "sha256:6454a827b9f44339e79c638f5e39f21e83811e499d1a1584e7263b6b76a98167"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0081.md",
+      "sha256": "sha256:72fae808ec78dc17d41c4818fe12446f865a7848f48e6eb2555361f380aacc03"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0082.md",
+      "sha256": "sha256:c7e82cbe35e5f6be911a251c696a91a7d7b7ea8b08aabdcdb9d1b30cae2a388f"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0083.md",
+      "sha256": "sha256:a37bff2a391324381e99edcc5f4b1b4a4f85a56585103c5d88fdf9facd529252"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0084.md",
+      "sha256": "sha256:8048d972e5cc956043a6260570ba8028a960e53d60c0503203a9e51455cf68a7"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0085.md",
+      "sha256": "sha256:826214e040880fc5da9820932b66acac6c7c82cb31d5ffd73088c17ee65ee6ba"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0086.md",
+      "sha256": "sha256:4e85ebf00566847b86875a4f57966d362c8214a25b7367619a681e81c2be2c79"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0087.md",
+      "sha256": "sha256:a09488c972a2002e5a318c8850b77d13233333eb5362c69bfb672b8bae8aad0d"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0088.md",
+      "sha256": "sha256:a147af5c56011a6549ed6e75cf17b130ff8062e294c57926eda9d8108dd135cb"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0089.md",
+      "sha256": "sha256:c055fea94f11651c977adc9274b3d19fae427275aa5e361d4096704b0027a5b8"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0090.md",
+      "sha256": "sha256:9986981309b5f4152d3d364ec7effd010d9dbd82c1633359df023c6219765912"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0091.md",
+      "sha256": "sha256:67ecfe30492f3dc33b48670f1bf12b90491fd2ca12dd6f0e2a5f935f3acf9e92"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0092.md",
+      "sha256": "sha256:bf60765c628411cbd9527cd4f8b4b1216bd0fc29c6f1c9caf28478ee08d82a47"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0093.md",
+      "sha256": "sha256:313feba3bf0f4f3452d5ffe339943fe5fe5d5845c285c07bfd51407a9536dd8f"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0094.md",
+      "sha256": "sha256:dee9946df1812a1d514a935f2542ca1edbe8336fe2509d2c3cf5dd89ccb4b9eb"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0095.md",
+      "sha256": "sha256:a7ef0c80379fcfc887be6bfc3b633bae1b95e272702393529b90d3b8eca3c2be"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0096.md",
+      "sha256": "sha256:8df75810378acd85b20e81a00a3d0049e8943ec84388d007f8c2be2da2a44b86"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0097.md",
+      "sha256": "sha256:4474a54582dcfcac3705a736a12dec174341f2219724b66b0087d2904bb4f64f"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0098.md",
+      "sha256": "sha256:3e5acc93676d5739420bea3b097383604398827455668aa39ca95f37b81c4b11"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0099.md",
+      "sha256": "sha256:52455c3f0abf28f1e45fc91b102186a2106a76b84731605f2d580433945b6a9a"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0100.md",
+      "sha256": "sha256:f0d287d84b9cfdc59c6554f30ac07fe54ad7d3dad8ac74ae96b8fd085ee95e87"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0101.md",
+      "sha256": "sha256:2ef910c8ca7d68f457d81cb80e980a47b753f5595c3f0dab4ed1a3aaae895702"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0102.md",
+      "sha256": "sha256:4887c77fc633b1700c63401e22e010e16299fb87aee999075dae04c98fbd4b66"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0103.md",
+      "sha256": "sha256:f79bc0e6694a29f265f4e8708660e827f9d4c67c5ab8b07b20fb911595889bac"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0104.md",
+      "sha256": "sha256:014b26c688d6154a974395cda75e28c594d7efff73e283ad9fd22834bc8b52fb"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0105.md",
+      "sha256": "sha256:1966c6654521f728f11a82aa19d3477a62787a751b3322de3fb81d17dcbc7ad0"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0106.md",
+      "sha256": "sha256:f02ff0b51738f03fb9871ca6bd0bbd0d03a6144649d36dbae8e1a42d7a0cdbb6"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0107.md",
+      "sha256": "sha256:4387da2cda764a5a03643d1f5c8deff69425f2fd255a20c7274f1b6c6d108f2b"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0108.md",
+      "sha256": "sha256:e8e7fbc73eeac80cb4c3eba9e34a1a96674ecfff383829778c7be791f3e40c25"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0109.md",
+      "sha256": "sha256:6c0852b651323a21f289827ec374de45f972a63074ffe0dbb72bb28b034ea1bb"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0110.md",
+      "sha256": "sha256:6ede2b2c1babe215ef6e0769f3572200bd5194a76a938b47477801e74f4e085b"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0111.md",
+      "sha256": "sha256:78d8ee0177026c6c5294a75813e4da54547c6ea2667773bfd6cbadd46c87d6e3"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0112.md",
+      "sha256": "sha256:8524778f05a1ce436c34ba2b535cb39baccbf35fbdfe00e09a154d7c1be2f6e8"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0113.md",
+      "sha256": "sha256:f6465a8d64bb191df97009bedcf298e4d70e33a813ce34ffd99035f28149380e"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0114.md",
+      "sha256": "sha256:3ba0f95a50b26d506f2beea1d92ab1c762ebb59aaee6d4ec02a2c62af1ee6db1"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0115.md",
+      "sha256": "sha256:61b910eefcf38e4841716054e67851c01462612e2edefbf3e82b48a746ed5c86"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0116.md",
+      "sha256": "sha256:08aa185b356afee9e66842716ae6be47b963f1c64d75f013ef263be4180524e0"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0117.md",
+      "sha256": "sha256:20952817562f8d127627326842da0a681e381aa5ad01c1dab8fdbf9877b13e53"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0118.md",
+      "sha256": "sha256:5e4b9c1b7d2c392b013c8819adbdacf60adee4998dd38833841ff66753f0f4db"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0119.md",
+      "sha256": "sha256:bfab528336f41b4fb20ec8612a659ec23b641bfec5dbf828e66a97c46d6333de"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0120.md",
+      "sha256": "sha256:1496add9c973d63f4500265a9e1e358c4071bb599ed899bef8fb47d2953f5ec9"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0121.md",
+      "sha256": "sha256:ff038ea96b8ea69569f02dc2d2e85cab028183c3871278ae2cc69a97db0de8aa"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0122.md",
+      "sha256": "sha256:6d2b46370ffe5c4509ac14ba824342a84f7485c8f39e047e223d51238f723fab"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0123.md",
+      "sha256": "sha256:2f4c37e2122b9994f4be03fe3ea956d04a69e46dc38030eecf61d9b036015ad0"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0124.md",
+      "sha256": "sha256:1a93e44fb951a935065fd9bdcfe4eb71cafc46d48198c8b5406ae55512e56cb8"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0125.md",
+      "sha256": "sha256:09417477cae2a84fd812a7b905f9be91b8eac5d0045d5afca15de5faa1d7225b"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0126.md",
+      "sha256": "sha256:a1bd096490f6e260011ed492d3cdd19526624f5d8d639aa6ea7f5765fe412da9"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0127.md",
+      "sha256": "sha256:b27dd3adea1319122e8062659e3278f03c9b12200126efdba924a22aee0da597"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0128.md",
+      "sha256": "sha256:1eee0684c712b1f17a45ef6df0e67626f206ee940328458f5233e6b1f3886930"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0129.md",
+      "sha256": "sha256:f933c83dc9839f3af1552ebc7b47e759866d375debbf78aa0855f08fb8af7ed0"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0130.md",
+      "sha256": "sha256:02d2c7b556957ddf13d96c2b4ab0e7993b2d3e2b4d0df70a3508b3abffd43b3d"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0131.md",
+      "sha256": "sha256:29c14a4223f21602596fd7e036c1b794e2c7a6c92bee14b08b3aa4b1c64b691f"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0132.md",
+      "sha256": "sha256:e37f394e355a3bd8f3bc6b1264d0d959e5541ee1c5a1a5865c987c11a24e6efa"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0133.md",
+      "sha256": "sha256:503d55a8416ea783c8aa4ca7b56fa539407dd66d4f99edadb52b5b94ed058219"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0134.md",
+      "sha256": "sha256:38ec7941c218c64632b2fc7349496ee9e4f382dfe3db4bbf8e6caaa6991fc1d2"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0135.md",
+      "sha256": "sha256:a23678a3421627d5390767cf79fac08f925f415ebdb61cb60d936305998be6ff"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0136.md",
+      "sha256": "sha256:3f4e5bb6ff932413687aa67ac6c8c6693887a59e5f9e89a32aae095e7051a9f1"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0137.md",
+      "sha256": "sha256:32b75cfb27979d094bcde9246168b1141d9ba10f3f2ca4a1e22d49ec74cfb777"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0138.md",
+      "sha256": "sha256:e2bc506b98dba5d586af066670d62389932118239e107a2cc0c113701c68f4ef"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0139.md",
+      "sha256": "sha256:a9f9c4014c0d7db727c2c457f016f5365e42be91557ed3ea987b852200f068d0"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0140.md",
+      "sha256": "sha256:d9179214b297a54ddc67979ac1b2436a8eba14dac32f34e0d956933f058b560b"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0141.md",
+      "sha256": "sha256:5374595afad86fa578326a461e564c4beb4402b209338bb2e2d1d00dd5c391ea"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0142.md",
+      "sha256": "sha256:62d6d51a5e62c74c3e87e428cb0bb4115fd342cb97c9256812089d25f9fd13cd"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0143.md",
+      "sha256": "sha256:59b59e44ef000896454ccfae2b1334c242f1b8f4a7349aa624c1c83cd6751b57"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0144.md",
+      "sha256": "sha256:ecefece2f65d2e9acad040ea20c1ded0a49d194b6daf6368b26963bada3104c6"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0145.md",
+      "sha256": "sha256:835c178ff93adca7c592c16486034c949599f1044d94ff0f8d14e7ad4ee5c430"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0146.md",
+      "sha256": "sha256:2aa7a6f3a3b85009fb0995ce4a41f1784a834744da19e1aeeeed568f6c0bba5d"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0147.md",
+      "sha256": "sha256:de1b316256ecca3aab2c245c040bc65255fc869a9486a883b54e68964f523f40"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0148.md",
+      "sha256": "sha256:4da82dd4115df1ef64d7e215b97c5ab40675f520a90525dd73955f5307d318dd"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0149.md",
+      "sha256": "sha256:ecb4d3fb30466b15be7866a3bfab15779482ac39cfaf14fa3e7350c343dc877e"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0150.md",
+      "sha256": "sha256:d28cdc541292fe8d3c6226a80d479c9e741607c3f30e139d26b1549622d3909f"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0151.md",
+      "sha256": "sha256:7d312348aad1b932016d4b8b0a0a3588fee93204d0bb0889bdab3889d75474d7"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0152.md",
+      "sha256": "sha256:9bfc2169b76b0b8b700a5e08505c605291939b0fa949dad5e6d2ce35ae526be9"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0153.md",
+      "sha256": "sha256:719de3d5427771bd384fee85cb60659f00e1033ba5326aac8e10fc130fe9cd1a"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0154.md",
+      "sha256": "sha256:b769b96d9fed72d26d72b4d7bba057869b25dd9390f1167882ab09c53edd9779"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0155.md",
+      "sha256": "sha256:ebd7a3f9ad7f77f3475c65dfff72f76f26c864ffd7b1c26cfda5f878f9600712"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0156.md",
+      "sha256": "sha256:d1b2676a1cfe38608d422fe973663d404335625196cb56c3b1a22fc3f165a601"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0157.md",
+      "sha256": "sha256:45442dd003a87a12e7ecf4c6352de26cc387bfe6200c0b2cd2a2b45f032fce34"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0158.md",
+      "sha256": "sha256:e18b38e3c06b6bf639af0aa9e336243b1f3b14f0bfc28e55723cbd4a3d16b4bf"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0159.md",
+      "sha256": "sha256:7ebee5b5322a50a2306bb88fdd2966229ed6de9081c9e14237292a0e5e1fdc02"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0160.md",
+      "sha256": "sha256:aabb74f5b5eb35055423af7e202e7b6917507a2fb1ff9b8b20a76d4d69525f62"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0161.md",
+      "sha256": "sha256:e3c19ab495a0acfba6d7a5c6db6da41c68cb767ea9467bf7ccb16da17a8c726d"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0162.md",
+      "sha256": "sha256:d996d11ee1e767b6d23e5f13d21c7fe2958a8827a2a921d74226ebb892e877bf"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0163.md",
+      "sha256": "sha256:704893e9b404b0ee9ad5a7ccd0b1641ac796757de3c379c4c03ecc6db384dc6a"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0164.md",
+      "sha256": "sha256:aa4449114568c2070968af6fdfbe2deaa18e58024c99dc1cc676663223c7f69b"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0165.md",
+      "sha256": "sha256:54673c01709d992d255e3f9a74fbb7221a78a55849f22953b4a316f6c18c02e7"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0166.md",
+      "sha256": "sha256:df93212fcea7037c6434e6d1dc33ce92f67679b31dc6222ccb7293147017340a"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0167.md",
+      "sha256": "sha256:47ed985b9c6b3cac849637a089e3fea2e03828738430b4cd5f5174ac0418042b"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0168.md",
+      "sha256": "sha256:fd834709829be06190271a8a4dc678300028e203ce687b740879a2bcf70588ec"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0169.md",
+      "sha256": "sha256:1a204602dbe8c7b0e0f42ad10d1430d0fe1c9d1d917a7184a32480bdc81d5a03"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0170.md",
+      "sha256": "sha256:d71b44d4c295866d4b2449d050a730125f3118e616a4e9ad055826023ff4fdf4"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0171.md",
+      "sha256": "sha256:05113f265f08fe54f7134093c44c5a9a843af5538deaabb09b95a0c263bb1434"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0172.md",
+      "sha256": "sha256:dbf32ded6770300bde64dbd05d531d05888aac5d764dc3f4737bd2d546448d5f"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0173.md",
+      "sha256": "sha256:6d8ee764d47503a18aef856c5ca6f2997a9b1e60d4f5ec8684c5078f825327ff"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0174.md",
+      "sha256": "sha256:929696793340c4e5e0b0105983cbb2fb8b6ce2c40234f9eb70cb9dfa46dce7da"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0175.md",
+      "sha256": "sha256:6dd46a8e2367219127f770c3e672dda6961cb36a3f5a804ada275b69d4c659f7"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0176.md",
+      "sha256": "sha256:77e3fd6901da48981fc8e6794f1e3058853471eb7b3764247d53b4096d4af856"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0177.md",
+      "sha256": "sha256:9a420d7c9a8235429c6a6fcaf00029cc90555bd3ad32415f2992c29c5a213758"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0178.md",
+      "sha256": "sha256:a782b00f7ab729e18ee8415584f13d4f7a45314eb3877910f3d2ae185aaab445"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0179.md",
+      "sha256": "sha256:6a4c498ed176a9c0dbde53ffd3d5e79ec75d38466e75e2a4d3aba52f12c1f17b"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0180.md",
+      "sha256": "sha256:31d55eb21e412015725cf448423522ed6a29907f5e093ab21022615be412e21c"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0181.md",
+      "sha256": "sha256:ce687a3551f8556ebdc714af1b1a765ff6de64acc352840d8a4bdee41ec928d5"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0182.md",
+      "sha256": "sha256:7f03cadb58d87e3d75663c3a3be13494423e1df4caf409097798897ac16d54ee"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0183.md",
+      "sha256": "sha256:5dc13b18bc09bbb153fa1040710319d156116fc1d3a66b93e00b3bed635643a7"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0184.md",
+      "sha256": "sha256:d09911e8e88543a1819c1c3e05f4ccbc7e90a3fab28bfa37ba736baa6b99c507"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0185.md",
+      "sha256": "sha256:09f12c1bede9f596400cec10005e4a66bb45be7b0887e87184608f76b13dac2b"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0186.md",
+      "sha256": "sha256:5266d66b8d96c9dd86dede0c38044ec888d432836f7bba7a5418de931420f56e"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0187.md",
+      "sha256": "sha256:85fa25b04fb213fdfa35d26071438520aa42cfe8e2356633d9041b0c4dc0fb54"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0188.md",
+      "sha256": "sha256:bf6e1ec5d5090ef4c72415ba47bfc1256dddfb233342e49eb8b1cf1e4fc44c52"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0189.md",
+      "sha256": "sha256:0f696ae546e44bd29a3f7893bb617f0438218770d0979789f95d37fe7a294f3a"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0190.md",
+      "sha256": "sha256:89aae600d1e48877216d8689e055fdb5377bc7d2e7b851854479141d67bc82b2"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0191.md",
+      "sha256": "sha256:c8aa39f2e0494f96d9994fdf40f734bf30b9ac4451bbc1175a7d52d2f49ecb58"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0192.md",
+      "sha256": "sha256:714c694ce61197d20dfc123bd85d4a56daa692924d2e18ecdfb580c4504d9e63"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0193.md",
+      "sha256": "sha256:3ba4651884d6ce70951ccd00a3a034a10b6ad98869f36629b4368fba1f31ffb9"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0194.md",
+      "sha256": "sha256:a0df3d592cf43c3bec151fd67404f186a354b281fec270ec7c167db8315522c4"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0195.md",
+      "sha256": "sha256:b2d10716b91ecf65b321bb54b5cb8aa247df777d8c4e1ea94dcd3d039695e5c2"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/image_evidence_notes/sersan_practice_04_donchain_img_0196.md",
+      "sha256": "sha256:41ac1d82d4a8dda0ca953765cb79a19f251147bb7259bb8f8fafe1416259447a"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/lesson_distillation.md",
+      "sha256": "sha256:9e2d9011a1b428c78f301bf3402eecc7005c7c2784d621ee3217f9ae05c041ac"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/lesson_pack_manifest.json",
+      "sha256": "sha256:18c31c6886bc3341c4445b4bf31f528db6cb29e5a5058f561a2f5a9d849c213b"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/lesson_sections.jsonl",
+      "sha256": "sha256:ac792be66a98af6fb10f7d2d156a2e7f446d61e74021e4aae248ed404cc59698"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/mechanical_rules.yaml",
+      "sha256": "sha256:f243e43ebde287ba1f3ff2a157e51b144c0f32e528964eaeac055ef9e62467a9"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/open_questions.md",
+      "sha256": "sha256:358830dc5a24b2ba7a8eba2e85d9686c75da915d6b37be6c3165ad589b1074a9"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/quality_report.md",
+      "sha256": "sha256:c6f1438a510b6a2a82e1eb6e88ae1fbf45faabdc445f52980fb1864649560b3d"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_04_donchain/tsis_translation_map.csv",
+      "sha256": "sha256:8763e5e77dd15871ed479232bdaba0c8538a850f4026701e4d49db80b4fecfe7"
+    }
+  ],
+  "non_project_artifacts_used": [],
+  "known_limitations": [
+    "Automated numeric OCR is not implemented in this run.",
+    "Code artifacts are inventoried but not semantically parsed.",
+    "XLSX artifacts are inventoried but not semantically parsed.",
+    "High-impact or numeric images require human review."
+  ],
+  "acceptance_decision": "pass_with_warnings"
+}

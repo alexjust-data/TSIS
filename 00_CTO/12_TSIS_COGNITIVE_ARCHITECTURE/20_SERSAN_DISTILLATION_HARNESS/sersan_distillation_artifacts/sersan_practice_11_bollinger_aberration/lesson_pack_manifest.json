@@ -1,0 +1,42 @@
+{
+  "contract_version": "sersan_lesson_pack_contract_v0_1",
+  "generated_at_utc": "2026-06-12T15:19:58Z",
+  "generated_by": "sersan_full_corpus_distillation_generator_v0_1",
+  "lesson_id": "sersan_practice_11_bollinger_aberration",
+  "practice_number": 11,
+  "title": "Practice 11",
+  "status": "translated",
+  "source_md": "03_only_md_revised/practica_11_bollinger_Aberration.md",
+  "workshop_dir": "02_workshops/21-practice-11",
+  "image_dir": "02_workshops/21-practice-11/img",
+  "pdf_role": "duplicate_md",
+  "video_role": "out_of_scope",
+  "asset_resolution": {
+    "resolver_version": "sersan_full_corpus_resolver_v0_1",
+    "image_refs_total": 66,
+    "resolved_direct": 66,
+    "resolved_lesson_fallback": 0,
+    "external_reference": 0,
+    "missing": 0,
+    "needs_human_review": 66
+  },
+  "source_hashes": {
+    "03_only_md_revised/practica_11_bollinger_Aberration.md": "sha256:2a21ff3c8ce4394835bdc23f7590caa41ada2a9798473e7768ee07ad9ac5c726"
+  },
+  "counts": {
+    "md_lines": 1470,
+    "sections": 12,
+    "images": 66,
+    "code_artifacts": 9,
+    "xlsx_artifacts": 0,
+    "rules": 12,
+    "translations": 12,
+    "open_questions": 1
+  },
+  "known_issues": [
+    "Automated numeric OCR is not implemented in this run.",
+    "Code artifacts are inventoried but not semantically parsed.",
+    "XLSX artifacts are inventoried but not semantically parsed.",
+    "High-impact or numeric images require human review."
+  ]
+}

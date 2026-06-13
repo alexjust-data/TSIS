@@ -1,0 +1,43 @@
+{
+  "contract_version": "sersan_lesson_pack_contract_v0_1",
+  "generated_at_utc": "2026-06-12T15:20:07Z",
+  "generated_by": "sersan_full_corpus_distillation_generator_v0_1",
+  "lesson_id": "sersan_unmapped_xxx_revised",
+  "practice_number": null,
+  "title": "sersan_unmapped_xxx_revised",
+  "status": "blocked",
+  "source_md": "03_only_md_revised/xxx_revised.md",
+  "workshop_dir": null,
+  "image_dir": null,
+  "pdf_role": "not_present",
+  "video_role": "out_of_scope",
+  "asset_resolution": {
+    "resolver_version": "sersan_full_corpus_resolver_v0_1",
+    "image_refs_total": 0,
+    "resolved_direct": 0,
+    "resolved_lesson_fallback": 0,
+    "external_reference": 0,
+    "missing": 0,
+    "needs_human_review": 0
+  },
+  "source_hashes": {
+    "03_only_md_revised/xxx_revised.md": "sha256:13e35d51c342121776065d5e9a282df2b1ae2e1937b8b94a0c2bb798aaeb5391"
+  },
+  "counts": {
+    "md_lines": 295,
+    "sections": 1,
+    "images": 0,
+    "code_artifacts": 0,
+    "xlsx_artifacts": 0,
+    "rules": 0,
+    "translations": 0,
+    "open_questions": 2
+  },
+  "known_issues": [
+    "no practice number detected; lesson is unmapped",
+    "inventory_only lesson has no mapped workshop/practice number; kept blocked for human mapping.",
+    "Automated numeric OCR is not implemented in this run.",
+    "Code artifacts are inventoried but not semantically parsed.",
+    "XLSX artifacts are inventoried but not semantically parsed."
+  ]
+}

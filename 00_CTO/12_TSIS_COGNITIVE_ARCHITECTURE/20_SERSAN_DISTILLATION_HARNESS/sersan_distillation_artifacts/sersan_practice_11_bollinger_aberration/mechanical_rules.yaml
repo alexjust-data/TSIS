@@ -1,0 +1,423 @@
+contract_version: sersan_mechanical_rules_v0_1
+lesson_id: sersan_practice_11_bollinger_aberration
+generated_at_utc: '2026-06-12T15:19:58Z'
+generated_by: sersan_full_corpus_distillation_generator_v0_1
+rules:
+- rule_id: sersan_practice_11_bollinger_aberration_rule_0001
+  promotion_state: mechanical_rule_candidate
+  confidence: medium
+  rule_type: warning
+  domains:
+  - setup_logic
+  - entry_logic
+  - exit_logic
+  - filters
+  - portfolio
+  statement: Portfolio claims from this section must be evaluated as marginal contribution under correlation, drawdown and
+    allocation constraints.
+  trigger: Combining systems, symbols, markets, families or capital allocations into a portfolio.
+  action: Measure diversification, correlation, marginal drawdown contribution, allocation method and rebalance assumptions
+    before promotion.
+  failure_mode_if_ignored: A portfolio can look robust through accidental diversification, hidden concentration or unstable
+    allocation assumptions.
+  required_evidence:
+  - portfolio_report
+  - correlation_review
+  - allocation_policy
+  - drawdown_contribution
+  source_anchors:
+  - lesson_id: sersan_practice_11_bollinger_aberration
+    md_path: 03_only_md_revised/practica_11_bollinger_Aberration.md
+    section_id: sersan_practice_11_bollinger_aberration_sec_0001
+    line_start: 1
+    line_end: 22
+    image_ids: []
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []
+- rule_id: sersan_practice_11_bollinger_aberration_rule_0002
+  promotion_state: mechanical_rule_candidate
+  confidence: medium
+  rule_type: hard_rule
+  domains:
+  - bar_construction
+  - price_view
+  - exit_logic
+  - stop_loss
+  - filters
+  - optimization
+  statement: Do not accept an optimized parameter or system variant from this section by rank alone; require robust-zone evidence,
+    validation split evidence and neighboring-parameter review.
+  trigger: Selecting or validating parameters, filters or variants after an optimization/review workflow.
+  action: Record IS/OOS or comparable validation evidence, local stability and selection rationale before the candidate can
+    feed TSIS evaluators or AlphaEvolve.
+  failure_mode_if_ignored: The selected result may be an isolated optimum, an overfit map artifact or a visually attractive
+    but unstable candidate.
+  required_evidence:
+  - optimization_map
+  - IS_OOS_comparison
+  - neighbor_parameter_stability
+  - selection_rationale
+  source_anchors:
+  - lesson_id: sersan_practice_11_bollinger_aberration
+    md_path: 03_only_md_revised/practica_11_bollinger_Aberration.md
+    section_id: sersan_practice_11_bollinger_aberration_sec_0002
+    line_start: 23
+    line_end: 84
+    image_ids: []
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []
+- rule_id: sersan_practice_11_bollinger_aberration_rule_0003
+  promotion_state: mechanical_rule_candidate
+  confidence: medium
+  rule_type: soft_rule
+  domains:
+  - setup_logic
+  - entry_logic
+  - exit_logic
+  - filters
+  statement: Exit, stop and profit logic from this section must be declared as part of the strategy contract before comparing
+    results.
+  trigger: A system variant changes stop, profit, trailing, time exit, break-even or opposite-channel exit behavior.
+  action: Version the exit policy and compare variants under the same data, cost and validation assumptions.
+  failure_mode_if_ignored: Backtest comparisons may attribute edge to entries when the result is driven by untracked exit
+    policy changes.
+  required_evidence:
+  - exit_policy
+  - variant_comparison
+  - cost_model
+  source_anchors:
+  - lesson_id: sersan_practice_11_bollinger_aberration
+    md_path: 03_only_md_revised/practica_11_bollinger_Aberration.md
+    section_id: sersan_practice_11_bollinger_aberration_sec_0003
+    line_start: 85
+    line_end: 116
+    image_ids: []
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []
+- rule_id: sersan_practice_11_bollinger_aberration_rule_0004
+  promotion_state: mechanical_rule_candidate
+  confidence: requires_human_review
+  rule_type: soft_rule
+  domains:
+  - setup_logic
+  - entry_logic
+  - exit_logic
+  - filters
+  - optimization
+  - robustness
+  statement: Do not accept an optimized parameter or system variant from this section by rank alone; require robust-zone evidence,
+    validation split evidence and neighboring-parameter review.
+  trigger: Selecting or validating parameters, filters or variants after an optimization/review workflow.
+  action: Record IS/OOS or comparable validation evidence, local stability and selection rationale before the candidate can
+    feed TSIS evaluators or AlphaEvolve.
+  failure_mode_if_ignored: The selected result may be an isolated optimum, an overfit map artifact or a visually attractive
+    but unstable candidate.
+  required_evidence:
+  - optimization_map
+  - IS_OOS_comparison
+  - neighbor_parameter_stability
+  - selection_rationale
+  source_anchors:
+  - lesson_id: sersan_practice_11_bollinger_aberration
+    md_path: 03_only_md_revised/practica_11_bollinger_Aberration.md
+    section_id: sersan_practice_11_bollinger_aberration_sec_0004
+    line_start: 117
+    line_end: 278
+    image_ids:
+    - sersan_practice_11_bollinger_aberration_img_0001
+    - sersan_practice_11_bollinger_aberration_img_0002
+    - sersan_practice_11_bollinger_aberration_img_0003
+    - sersan_practice_11_bollinger_aberration_img_0004
+    - sersan_practice_11_bollinger_aberration_img_0005
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []
+- rule_id: sersan_practice_11_bollinger_aberration_rule_0005
+  promotion_state: mechanical_rule_candidate
+  confidence: requires_human_review
+  rule_type: soft_rule
+  domains:
+  - setup_logic
+  - entry_logic
+  - exit_logic
+  - stop_loss
+  - take_profit
+  - filters
+  statement: Exit, stop and profit logic from this section must be declared as part of the strategy contract before comparing
+    results.
+  trigger: A system variant changes stop, profit, trailing, time exit, break-even or opposite-channel exit behavior.
+  action: Version the exit policy and compare variants under the same data, cost and validation assumptions.
+  failure_mode_if_ignored: Backtest comparisons may attribute edge to entries when the result is driven by untracked exit
+    policy changes.
+  required_evidence:
+  - exit_policy
+  - variant_comparison
+  - cost_model
+  source_anchors:
+  - lesson_id: sersan_practice_11_bollinger_aberration
+    md_path: 03_only_md_revised/practica_11_bollinger_Aberration.md
+    section_id: sersan_practice_11_bollinger_aberration_sec_0005
+    line_start: 279
+    line_end: 381
+    image_ids:
+    - sersan_practice_11_bollinger_aberration_img_0019
+    - sersan_practice_11_bollinger_aberration_img_0020
+    - sersan_practice_11_bollinger_aberration_img_0021
+    - sersan_practice_11_bollinger_aberration_img_0022
+    - sersan_practice_11_bollinger_aberration_img_0023
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []
+- rule_id: sersan_practice_11_bollinger_aberration_rule_0006
+  promotion_state: mechanical_rule_candidate
+  confidence: requires_human_review
+  rule_type: hard_rule
+  domains:
+  - bar_construction
+  - price_view
+  - setup_logic
+  - entry_logic
+  - exit_logic
+  - take_profit
+  statement: Exit, stop and profit logic from this section must be declared as part of the strategy contract before comparing
+    results.
+  trigger: A system variant changes stop, profit, trailing, time exit, break-even or opposite-channel exit behavior.
+  action: Version the exit policy and compare variants under the same data, cost and validation assumptions.
+  failure_mode_if_ignored: Backtest comparisons may attribute edge to entries when the result is driven by untracked exit
+    policy changes.
+  required_evidence:
+  - exit_policy
+  - variant_comparison
+  - cost_model
+  source_anchors:
+  - lesson_id: sersan_practice_11_bollinger_aberration
+    md_path: 03_only_md_revised/practica_11_bollinger_Aberration.md
+    section_id: sersan_practice_11_bollinger_aberration_sec_0006
+    line_start: 382
+    line_end: 579
+    image_ids:
+    - sersan_practice_11_bollinger_aberration_img_0025
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []
+- rule_id: sersan_practice_11_bollinger_aberration_rule_0007
+  promotion_state: mechanical_rule_candidate
+  confidence: requires_human_review
+  rule_type: hard_rule
+  domains:
+  - bar_construction
+  - price_view
+  - setup_logic
+  - entry_logic
+  - exit_logic
+  - filters
+  statement: Exit, stop and profit logic from this section must be declared as part of the strategy contract before comparing
+    results.
+  trigger: A system variant changes stop, profit, trailing, time exit, break-even or opposite-channel exit behavior.
+  action: Version the exit policy and compare variants under the same data, cost and validation assumptions.
+  failure_mode_if_ignored: Backtest comparisons may attribute edge to entries when the result is driven by untracked exit
+    policy changes.
+  required_evidence:
+  - exit_policy
+  - variant_comparison
+  - cost_model
+  source_anchors:
+  - lesson_id: sersan_practice_11_bollinger_aberration
+    md_path: 03_only_md_revised/practica_11_bollinger_Aberration.md
+    section_id: sersan_practice_11_bollinger_aberration_sec_0007
+    line_start: 580
+    line_end: 973
+    image_ids:
+    - sersan_practice_11_bollinger_aberration_img_0026
+    - sersan_practice_11_bollinger_aberration_img_0027
+    - sersan_practice_11_bollinger_aberration_img_0028
+    - sersan_practice_11_bollinger_aberration_img_0029
+    - sersan_practice_11_bollinger_aberration_img_0030
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []
+- rule_id: sersan_practice_11_bollinger_aberration_rule_0008
+  promotion_state: mechanical_rule_candidate
+  confidence: medium
+  rule_type: hard_rule
+  domains:
+  - bar_construction
+  - price_view
+  - setup_logic
+  - entry_logic
+  - filters
+  statement: Entry/setup filters from this section must be tested as explicit optional components with sample-size and robustness
+    impact recorded.
+  trigger: Adding or modifying an entry, setup, filter or market-condition gate.
+  action: Measure before/after impact, trade-count change, stability across periods and interaction with other filters.
+  failure_mode_if_ignored: Stacked filters can reduce sample size, overfit the lesson example or hide a non-causal proxy.
+  required_evidence:
+  - baseline_comparison
+  - filter_delta
+  - sample_size
+  - robustness_check
+  source_anchors:
+  - lesson_id: sersan_practice_11_bollinger_aberration
+    md_path: 03_only_md_revised/practica_11_bollinger_Aberration.md
+    section_id: sersan_practice_11_bollinger_aberration_sec_0008
+    line_start: 974
+    line_end: 997
+    image_ids: []
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []
+- rule_id: sersan_practice_11_bollinger_aberration_rule_0009
+  promotion_state: mechanical_rule_candidate
+  confidence: requires_human_review
+  rule_type: soft_rule
+  domains:
+  - setup_logic
+  - entry_logic
+  - exit_logic
+  - stop_loss
+  - filters
+  - optimization
+  statement: Do not accept an optimized parameter or system variant from this section by rank alone; require robust-zone evidence,
+    validation split evidence and neighboring-parameter review.
+  trigger: Selecting or validating parameters, filters or variants after an optimization/review workflow.
+  action: Record IS/OOS or comparable validation evidence, local stability and selection rationale before the candidate can
+    feed TSIS evaluators or AlphaEvolve.
+  failure_mode_if_ignored: The selected result may be an isolated optimum, an overfit map artifact or a visually attractive
+    but unstable candidate.
+  required_evidence:
+  - optimization_map
+  - IS_OOS_comparison
+  - neighbor_parameter_stability
+  - selection_rationale
+  source_anchors:
+  - lesson_id: sersan_practice_11_bollinger_aberration
+    md_path: 03_only_md_revised/practica_11_bollinger_Aberration.md
+    section_id: sersan_practice_11_bollinger_aberration_sec_0009
+    line_start: 998
+    line_end: 1085
+    image_ids:
+    - sersan_practice_11_bollinger_aberration_img_0050
+    - sersan_practice_11_bollinger_aberration_img_0051
+    - sersan_practice_11_bollinger_aberration_img_0052
+    - sersan_practice_11_bollinger_aberration_img_0053
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []
+- rule_id: sersan_practice_11_bollinger_aberration_rule_0010
+  promotion_state: mechanical_rule_candidate
+  confidence: requires_human_review
+  rule_type: hard_rule
+  domains:
+  - bar_construction
+  - price_view
+  - setup_logic
+  - entry_logic
+  - exit_logic
+  - stop_loss
+  statement: Exit, stop and profit logic from this section must be declared as part of the strategy contract before comparing
+    results.
+  trigger: A system variant changes stop, profit, trailing, time exit, break-even or opposite-channel exit behavior.
+  action: Version the exit policy and compare variants under the same data, cost and validation assumptions.
+  failure_mode_if_ignored: Backtest comparisons may attribute edge to entries when the result is driven by untracked exit
+    policy changes.
+  required_evidence:
+  - exit_policy
+  - variant_comparison
+  - cost_model
+  source_anchors:
+  - lesson_id: sersan_practice_11_bollinger_aberration
+    md_path: 03_only_md_revised/practica_11_bollinger_Aberration.md
+    section_id: sersan_practice_11_bollinger_aberration_sec_0010
+    line_start: 1086
+    line_end: 1272
+    image_ids:
+    - sersan_practice_11_bollinger_aberration_img_0054
+    - sersan_practice_11_bollinger_aberration_img_0055
+    - sersan_practice_11_bollinger_aberration_img_0056
+    - sersan_practice_11_bollinger_aberration_img_0057
+    - sersan_practice_11_bollinger_aberration_img_0058
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []
+- rule_id: sersan_practice_11_bollinger_aberration_rule_0011
+  promotion_state: mechanical_rule_candidate
+  confidence: requires_human_review
+  rule_type: warning
+  domains:
+  - setup_logic
+  - entry_logic
+  - exit_logic
+  - filters
+  - robustness
+  - portfolio
+  statement: Do not accept an optimized parameter or system variant from this section by rank alone; require robust-zone evidence,
+    validation split evidence and neighboring-parameter review.
+  trigger: Selecting or validating parameters, filters or variants after an optimization/review workflow.
+  action: Record IS/OOS or comparable validation evidence, local stability and selection rationale before the candidate can
+    feed TSIS evaluators or AlphaEvolve.
+  failure_mode_if_ignored: The selected result may be an isolated optimum, an overfit map artifact or a visually attractive
+    but unstable candidate.
+  required_evidence:
+  - optimization_map
+  - IS_OOS_comparison
+  - neighbor_parameter_stability
+  - selection_rationale
+  source_anchors:
+  - lesson_id: sersan_practice_11_bollinger_aberration
+    md_path: 03_only_md_revised/practica_11_bollinger_Aberration.md
+    section_id: sersan_practice_11_bollinger_aberration_sec_0011
+    line_start: 1273
+    line_end: 1334
+    image_ids:
+    - sersan_practice_11_bollinger_aberration_img_0064
+    - sersan_practice_11_bollinger_aberration_img_0065
+    - sersan_practice_11_bollinger_aberration_img_0066
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []
+- rule_id: sersan_practice_11_bollinger_aberration_rule_0012
+  promotion_state: mechanical_rule_candidate
+  confidence: medium
+  rule_type: hard_rule
+  domains:
+  - bar_construction
+  - price_view
+  - setup_logic
+  - entry_logic
+  - exit_logic
+  - stop_loss
+  statement: Exit, stop and profit logic from this section must be declared as part of the strategy contract before comparing
+    results.
+  trigger: A system variant changes stop, profit, trailing, time exit, break-even or opposite-channel exit behavior.
+  action: Version the exit policy and compare variants under the same data, cost and validation assumptions.
+  failure_mode_if_ignored: Backtest comparisons may attribute edge to entries when the result is driven by untracked exit
+    policy changes.
+  required_evidence:
+  - exit_policy
+  - variant_comparison
+  - cost_model
+  source_anchors:
+  - lesson_id: sersan_practice_11_bollinger_aberration
+    md_path: 03_only_md_revised/practica_11_bollinger_Aberration.md
+    section_id: sersan_practice_11_bollinger_aberration_sec_0012
+    line_start: 1335
+    line_end: 1470
+    image_ids: []
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []

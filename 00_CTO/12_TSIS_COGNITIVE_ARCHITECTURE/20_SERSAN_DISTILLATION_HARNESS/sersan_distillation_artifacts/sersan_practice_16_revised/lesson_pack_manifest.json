@@ -1,0 +1,42 @@
+{
+  "contract_version": "sersan_lesson_pack_contract_v0_1",
+  "generated_at_utc": "2026-06-12T15:20:05Z",
+  "generated_by": "sersan_full_corpus_distillation_generator_v0_1",
+  "lesson_id": "sersan_practice_16_revised",
+  "practice_number": 16,
+  "title": "Práctica 16 - Portfolio, Money Management y Diversificación",
+  "status": "translated",
+  "source_md": "03_only_md_revised/practica_16_revised.md",
+  "workshop_dir": "02_workshops/26-practice-16",
+  "image_dir": "02_workshops/26-practice-16/img",
+  "pdf_role": "duplicate_md",
+  "video_role": "out_of_scope",
+  "asset_resolution": {
+    "resolver_version": "sersan_full_corpus_resolver_v0_1",
+    "image_refs_total": 91,
+    "resolved_direct": 0,
+    "resolved_lesson_fallback": 91,
+    "external_reference": 0,
+    "missing": 0,
+    "needs_human_review": 91
+  },
+  "source_hashes": {
+    "03_only_md_revised/practica_16_revised.md": "sha256:6ee8aed82430940112a905d842496bcd1789d6c35d25f70e2498857efa4739a6"
+  },
+  "counts": {
+    "md_lines": 1762,
+    "sections": 19,
+    "images": 91,
+    "code_artifacts": 2,
+    "xlsx_artifacts": 0,
+    "rules": 19,
+    "translations": 19,
+    "open_questions": 1
+  },
+  "known_issues": [
+    "Automated numeric OCR is not implemented in this run.",
+    "Code artifacts are inventoried but not semantically parsed.",
+    "XLSX artifacts are inventoried but not semantically parsed.",
+    "High-impact or numeric images require human review."
+  ]
+}

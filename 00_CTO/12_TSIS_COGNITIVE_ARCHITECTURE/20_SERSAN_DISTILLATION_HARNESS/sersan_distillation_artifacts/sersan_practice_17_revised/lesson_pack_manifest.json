@@ -1,0 +1,42 @@
+{
+  "contract_version": "sersan_lesson_pack_contract_v0_1",
+  "generated_at_utc": "2026-06-12T15:20:06Z",
+  "generated_by": "sersan_full_corpus_distillation_generator_v0_1",
+  "lesson_id": "sersan_practice_17_revised",
+  "practice_number": 17,
+  "title": "Práctica 17 - Clase Final de Repaso y Dudas",
+  "status": "translated",
+  "source_md": "03_only_md_revised/practica_17_revised.md",
+  "workshop_dir": "02_workshops/27-practice-17",
+  "image_dir": "02_workshops/27-practice-17/img",
+  "pdf_role": "duplicate_md",
+  "video_role": "out_of_scope",
+  "asset_resolution": {
+    "resolver_version": "sersan_full_corpus_resolver_v0_1",
+    "image_refs_total": 166,
+    "resolved_direct": 0,
+    "resolved_lesson_fallback": 166,
+    "external_reference": 0,
+    "missing": 0,
+    "needs_human_review": 166
+  },
+  "source_hashes": {
+    "03_only_md_revised/practica_17_revised.md": "sha256:0770e89b6ff430cf3721ee38ec92f200b116151528b5ff5c193794c7a3bed2ad"
+  },
+  "counts": {
+    "md_lines": 2612,
+    "sections": 6,
+    "images": 166,
+    "code_artifacts": 11,
+    "xlsx_artifacts": 2,
+    "rules": 5,
+    "translations": 5,
+    "open_questions": 1
+  },
+  "known_issues": [
+    "Automated numeric OCR is not implemented in this run.",
+    "Code artifacts are inventoried but not semantically parsed.",
+    "XLSX artifacts are inventoried but not semantically parsed.",
+    "High-impact or numeric images require human review."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "contract_version": "sersan_lesson_pack_contract_v0_1",
+  "generated_at_utc": "2026-06-13T05:49:10Z",
+  "generated_by": "manual_sersan_pilot_harness_codex_v0_1",
+  "lesson_id": "sersan_practice_02_donchain",
+  "practice_number": 2,
+  "title": "Práctica 02",
+  "status": "translated",
+  "source_md": "03_only_md_revised/practica_02_donchain.md",
+  "workshop_dir": "02_workshops/12-practice-02",
+  "image_dir": "02_workshops/12-practice-02/img",
+  "pdf_role": "duplicate_md",
+  "video_role": "out_of_scope",
+  "asset_resolution": {
+    "resolver_version": "sersan_full_corpus_resolver_v0_1",
+    "image_refs_total": 60,
+    "resolved_direct": 60,
+    "resolved_lesson_fallback": 0,
+    "external_reference": 0,
+    "missing": 0,
+    "needs_human_review": 60
+  },
+  "source_hashes": {
+    "03_only_md_revised/practica_02_donchain.md": "sha256:c4bf4950a7b12049428ac92d20ee526666831a5d4a6e996ef52d9f0ef6cc2a82",
+    "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/generate_sersan_p02_pilot.py": "sha256:5686c84f4899918deb405f684449424434214239a81fb8cf5ff73cc3895ef96f"
+  },
+  "counts": {
+    "md_lines": 1154,
+    "sections": 13,
+    "images": 60,
+    "code_artifacts": 4,
+    "xlsx_artifacts": 0,
+    "rules": 13,
+    "translations": 13,
+    "open_questions": 7
+  },
+  "known_issues": [
+    "Primer piloto; requiere revision humana antes de promocion canonica.",
+    "Code artifacts inventoried but not parsed in this pilot.",
+    "Low-relevance images indexed structurally without full OCR."
+  ]
+}

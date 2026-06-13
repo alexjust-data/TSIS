@@ -1,0 +1,181 @@
+{
+  "generated_at_utc": "2026-06-12T15:20:17Z",
+  "status": "pass_with_warnings",
+  "lesson_packs_validated": 17,
+  "total_errors": 0,
+  "total_warnings": 1,
+  "results": [
+    {
+      "lesson_id": "sersan_practice_02_donchain",
+      "status": "pass_with_warnings",
+      "errors": [],
+      "warnings": [],
+      "sections": 12,
+      "images": 60,
+      "rules": 11,
+      "translations": 11
+    },
+    {
+      "lesson_id": "sersan_practice_03_donchain",
+      "status": "pass_with_warnings",
+      "errors": [],
+      "warnings": [],
+      "sections": 31,
+      "images": 97,
+      "rules": 31,
+      "translations": 31
+    },
+    {
+      "lesson_id": "sersan_practice_04_donchain",
+      "status": "pass_with_warnings",
+      "errors": [],
+      "warnings": [],
+      "sections": 24,
+      "images": 196,
+      "rules": 23,
+      "translations": 23
+    },
+    {
+      "lesson_id": "sersan_practice_05_donchain",
+      "status": "pass_with_warnings",
+      "errors": [],
+      "warnings": [],
+      "sections": 14,
+      "images": 119,
+      "rules": 13,
+      "translations": 13
+    },
+    {
+      "lesson_id": "sersan_practice_06_orb",
+      "status": "pass_with_warnings",
+      "errors": [],
+      "warnings": [],
+      "sections": 7,
+      "images": 76,
+      "rules": 6,
+      "translations": 6
+    },
+    {
+      "lesson_id": "sersan_practice_07_orb",
+      "status": "pass_with_warnings",
+      "errors": [],
+      "warnings": [],
+      "sections": 11,
+      "images": 86,
+      "rules": 10,
+      "translations": 10
+    },
+    {
+      "lesson_id": "sersan_practice_08_orb",
+      "status": "pass_with_warnings",
+      "errors": [],
+      "warnings": [],
+      "sections": 18,
+      "images": 95,
+      "rules": 17,
+      "translations": 17
+    },
+    {
+      "lesson_id": "sersan_practice_09_revision_apolo",
+      "status": "pass_with_warnings",
+      "errors": [],
+      "warnings": [],
+      "sections": 25,
+      "images": 171,
+      "rules": 24,
+      "translations": 24
+    },
+    {
+      "lesson_id": "sersan_practice_10_bollinger_bands",
+      "status": "pass_with_warnings",
+      "errors": [],
+      "warnings": [],
+      "sections": 10,
+      "images": 176,
+      "rules": 9,
+      "translations": 9
+    },
+    {
+      "lesson_id": "sersan_practice_11_bollinger_aberration",
+      "status": "pass_with_warnings",
+      "errors": [],
+      "warnings": [],
+      "sections": 12,
+      "images": 66,
+      "rules": 12,
+      "translations": 12
+    },
+    {
+      "lesson_id": "sersan_practice_12_revised",
+      "status": "pass_with_warnings",
+      "errors": [],
+      "warnings": [],
+      "sections": 7,
+      "images": 175,
+      "rules": 7,
+      "translations": 7
+    },
+    {
+      "lesson_id": "sersan_practice_13_revised",
+      "status": "pass_with_warnings",
+      "errors": [],
+      "warnings": [],
+      "sections": 16,
+      "images": 184,
+      "rules": 14,
+      "translations": 14
+    },
+    {
+      "lesson_id": "sersan_practice_14_revised",
+      "status": "pass_with_warnings",
+      "errors": [],
+      "warnings": [],
+      "sections": 17,
+      "images": 144,
+      "rules": 17,
+      "translations": 17
+    },
+    {
+      "lesson_id": "sersan_practice_15_revised",
+      "status": "pass_with_warnings",
+      "errors": [],
+      "warnings": [],
+      "sections": 7,
+      "images": 206,
+      "rules": 7,
+      "translations": 7
+    },
+    {
+      "lesson_id": "sersan_practice_16_revised",
+      "status": "pass_with_warnings",
+      "errors": [],
+      "warnings": [],
+      "sections": 19,
+      "images": 91,
+      "rules": 19,
+      "translations": 19
+    },
+    {
+      "lesson_id": "sersan_practice_17_revised",
+      "status": "pass_with_warnings",
+      "errors": [],
+      "warnings": [],
+      "sections": 6,
+      "images": 166,
+      "rules": 5,
+      "translations": 5
+    },
+    {
+      "lesson_id": "sersan_unmapped_xxx_revised",
+      "status": "blocked",
+      "errors": [],
+      "warnings": [
+        "sersan_unmapped_xxx_revised: lesson is locally blocked"
+      ],
+      "sections": 1,
+      "images": 0,
+      "rules": 0,
+      "translations": 0
+    }
+  ]
+}

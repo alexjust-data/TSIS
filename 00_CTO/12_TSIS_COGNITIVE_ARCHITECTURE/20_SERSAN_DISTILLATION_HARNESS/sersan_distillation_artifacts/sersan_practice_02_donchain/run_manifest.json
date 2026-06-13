@@ -1,0 +1,183 @@
+{
+  "run_id": "2026-06-11_sersan_practice_02_donchain_pilot_run_v0_1",
+  "lesson_id": "sersan_practice_02_donchain",
+  "generated_at_utc": "2026-06-13T05:49:11Z",
+  "generated_by": "manual_sersan_pilot_harness_codex_v0_1",
+  "mode": "pilot",
+  "status": "pass_with_warnings",
+  "contract_version": "sersan_lesson_pack_contract_v0_1",
+  "toolchain_traceability_contract": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/harness_toolchain_traceability_contract.md",
+  "runbook": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_pilot_harness_runbook.md",
+  "artifact_contract": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_lesson_pack_contract.md",
+  "execution_command": "python 00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/generate_sersan_p02_pilot.py",
+  "toolchain_artifacts": [
+    {
+      "tool_id": "generate_sersan_p02_pilot",
+      "role": "generator",
+      "project_relative_path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/generate_sersan_p02_pilot.py",
+      "sha256": "sha256:5686c84f4899918deb405f684449424434214239a81fb8cf5ff73cc3895ef96f",
+      "runtime": "python",
+      "project_resident": true
+    }
+  ],
+  "input_artifacts": [
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised/practica_02_donchain.md",
+      "sha256": "sha256:c4bf4950a7b12049428ac92d20ee526666831a5d4a6e996ef52d9f0ef6cc2a82"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/harness_toolchain_traceability_contract.md",
+      "sha256": "sha256:a762e90b34080a534404dab0560f54e105a4fde371e55fc3185f4f9a481b0249",
+      "role": "governing_contract"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_lesson_pack_contract.md",
+      "sha256": "sha256:6bc974c952049bfd8e5ea9ffe053346d895246e0710e5ea402401257612f4e14",
+      "role": "artifact_contract"
+    },
+    {
+      "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_pilot_harness_runbook.md",
+      "sha256": "sha256:b968bc2cb0d1bd436110368a415be5a19174319a66d90e4e0fa002ca97dc17c1",
+      "role": "runbook"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/12-practice-02/img/004.png",
+      "sha256": "sha256:1389ce75dec5ea57cdb89a2be99da48f3abd853a6f32ba996782e3e04e41986d",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_02_donchain_img_004",
+      "doctrine_relevance": "high"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/12-practice-02/img/008.png",
+      "sha256": "sha256:5582ea715a2937b86c459a91641faf92bd3b45d93f0b6f26a860c064ce69bdd2",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_02_donchain_img_008",
+      "doctrine_relevance": "high"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/12-practice-02/img/014.png",
+      "sha256": "sha256:747cacf8b41a018a02029589704ff7812fb7e374564f5c91408f7d256cb77cea",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_02_donchain_img_014",
+      "doctrine_relevance": "medium"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/12-practice-02/img/020.png",
+      "sha256": "sha256:f2ec31a449b13ba73173bd396040b08134feba658038bd69ca95bb2d3cbbffa4",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_02_donchain_img_020",
+      "doctrine_relevance": "high"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/12-practice-02/img/021.png",
+      "sha256": "sha256:6a2c44fb5311a1f6f5a40de753f80d910e758f5d3278ace64893c42b1583d36e",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_02_donchain_img_021",
+      "doctrine_relevance": "medium"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/12-practice-02/img/030.png",
+      "sha256": "sha256:f63947544fd34ed6cb5cc12dac89643ed61fb3640980bf6958efdb249c01c5a2",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_02_donchain_img_030",
+      "doctrine_relevance": "medium"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/12-practice-02/img/034.png",
+      "sha256": "sha256:efd03db4c65ab41de6bef01972d2185712a55cd5d90dfee300c62321e1ed76a9",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_02_donchain_img_034",
+      "doctrine_relevance": "critical"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/12-practice-02/img/057.png",
+      "sha256": "sha256:dd6dc759ea6e5cd6e1d6893a7962eb9dd7229f035f6e46892c307d9334155b25",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_02_donchain_img_057",
+      "doctrine_relevance": "high"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/12-practice-02/img/058.png",
+      "sha256": "sha256:8f8a9bf75e35365212d3c5dd37a7c50647c6915b6df44fc7caa3746d312cd655",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_02_donchain_img_058",
+      "doctrine_relevance": "critical"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/12-practice-02/img/064.png",
+      "sha256": "sha256:474c20f300137982d68805e6c4da6b81d11dab304b29cf6f14650e64edd6954f",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_02_donchain_img_064",
+      "doctrine_relevance": "high"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/12-practice-02/img/065.png",
+      "sha256": "sha256:bb5767b359cf1496f973b6b9f015a012bc0c652d3e24b94b13e514856b4ffc02",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_02_donchain_img_065",
+      "doctrine_relevance": "high"
+    },
+    {
+      "path": "00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/12-practice-02/img/072.png",
+      "sha256": "sha256:2e39920fae84d035b4c14654e9ac8110a9e5454cc0f9f650915307e00d3244e1",
+      "role": "image_evidence",
+      "image_id": "sersan_practice_02_donchain_img_072",
+      "doctrine_relevance": "critical"
+    }
+  ],
+  "output_artifacts": [
+    {
+      "path": "lesson_pack_manifest.json",
+      "sha256": "sha256:1735dece08000fb5c3941ad559e84379f9f85d73209daaab6a88ba65ec946f9e"
+    },
+    {
+      "path": "lesson_sections.jsonl",
+      "sha256": "sha256:a83dbea8461ac1ca761efcb48c81b3557a60695f3857c915fcb4f8eb4920a0d6"
+    },
+    {
+      "path": "image_evidence_index.csv",
+      "sha256": "sha256:54c0f814672e6e8b679e505df8c8b7694f4068ab606e7d623a220aa964d3d55f"
+    },
+    {
+      "path": "image_evidence_notes",
+      "sha256": "sha256:fc163c777f1011cdafff3870dab6b242a98f7bd396849bde9dd943217b60d61e"
+    },
+    {
+      "path": "mechanical_rules.yaml",
+      "sha256": "sha256:3b0e76ed4038cbc5cb3d22878e04a6103049ba40755ffefc7230975806d2fbe6"
+    },
+    {
+      "path": "lesson_distillation.md",
+      "sha256": "sha256:5b6eedded80aa1f916ed0e0d446887167698cdac2982bde9f6c28c1552dbc4e6"
+    },
+    {
+      "path": "tsis_translation_map.csv",
+      "sha256": "sha256:e7059cca6f23774a08ea7d3c50a9a4824fa53049cee7a3b80f704de7e76bb478"
+    },
+    {
+      "path": "open_questions.md",
+      "sha256": "sha256:e05993713bfaff9542f6a9b59a2aaa5461636f40abf00988f2076a88d08ff71c"
+    },
+    {
+      "path": "quality_report.md",
+      "sha256": "sha256:a5a8b45dd7b70989aa67c86ecedace8de751c57a579f5ec63ae7b97a73dbcf81"
+    }
+  ],
+  "run_manifest_self_hash_policy": "run_manifest.json is excluded from output_artifacts to avoid self-referential hash mutation.",
+  "non_project_artifacts_used": [],
+  "workspace_temp_sources": "not_allowed_for_accepted_run",
+  "loop_policy": {
+    "max_iterations_per_phase": 3,
+    "actual_iterations": 1,
+    "stop_condition": "contract_artifacts_generated_and_basic_validation_passed"
+  },
+  "phases_completed": [
+    "source_sectionization",
+    "image_evidence_indexing",
+    "mechanical_rule_extraction",
+    "tsis_translation_mapping",
+    "quality_report",
+    "toolchain_traceability"
+  ],
+  "acceptance_decision": "pass_with_warnings"
+}

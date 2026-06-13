@@ -1,0 +1,43 @@
+# sersan_practice_03_donchain_img_0091
+
+## Source
+
+- lesson_id: `sersan_practice_03_donchain`
+- source_ref: `../02_workshops/13-practice-03/img/995.png`
+- resolved_path: `00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/13-practice-03/img/995.png`
+- referenced_from_sections: `sersan_practice_03_donchain_sec_0014`
+
+## Visual Type
+
+`optimization_map`
+
+## Extracted Values
+
+Automated numeric OCR was not performed. If this image contains parameter values, equity metrics, drawdown, costs or optimization maps, it is marked for human review.
+
+## Technical Reading
+
+- doctrine_relevance: `high`
+- contains_numbers: `true`
+- contains_code: `false`
+- contains_chart: `true`
+- contains_platform_config: `false`
+- contextual_note: automated contextual image reading; numeric OCR not performed
+
+## Doctrine Relevance
+
+This image is treated as evidence for the section-level mechanical-rule candidate only through its source anchor. It does not promote doctrine by itself.
+
+## Image Metadata
+
+- project_relative_path: `00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/02_workshops/13-practice-03/img/995.png`
+- sha256: `sha256:c112d98876c005d81aa68b2ca65b1dca447cee02d01352527bf888d3a84224a6`
+- bytes: `193033`
+- format: `PNG`
+- width: `1106`
+- height: `529`
+- mode: `RGBA`
+
+## Open Questions
+
+- Human reviewer should inspect this image if it carries optimization, risk, execution, code or portfolio evidence.

@@ -1,0 +1,44 @@
+{
+  "contract_version": "sersan_lesson_pack_contract_v0_1",
+  "generated_at_utc": "2026-06-13T05:48:42Z",
+  "generated_by": "manual_sersan_pilot_harness_codex_v0_2",
+  "lesson_id": "sersan_practice_09_revision_apolo",
+  "practice_number": 9,
+  "title": "Practice 9 - Revision de Apolo",
+  "status": "translated",
+  "source_md": "03_only_md_revised/practica_09_revision_apolo.md",
+  "workshop_dir": "02_workshops/19-practice-09",
+  "image_dir": "02_workshops/19-practice-09/img",
+  "pdf_role": "duplicate_md_or_layout_artifact",
+  "video_role": "out_of_scope",
+  "asset_resolution": {
+    "resolver_version": "lesson_pack_resolver_v0_2",
+    "image_refs_total": 171,
+    "resolved_direct": 171,
+    "resolved_lesson_fallback": 0,
+    "external_reference": 0,
+    "missing": 0,
+    "needs_human_review": 26
+  },
+  "source_hashes": {
+    "03_only_md_revised/practica_09_revision_apolo.md": "sha256:ad77aa427bb17402743e048ee1250ab80cbd3b1d6305c5a0e0400343d43684d6",
+    "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/generate_sersan_p09_pilot.py": "sha256:bda2b6d399907afc23498068caaff07dd4a7b67dcc18314d164bb2d14b572aef"
+  },
+  "counts": {
+    "md_lines": 2400,
+    "sections": 16,
+    "images": 171,
+    "images_read": 26,
+    "code_artifacts": 1,
+    "xlsx_artifacts": 1,
+    "rules": 18,
+    "translations": 18,
+    "open_questions": 8
+  },
+  "known_issues": [
+    "Segundo piloto; requiere revision humana antes de promocion canonica.",
+    "XLSX map inventoried but not parsed into structured surfaces.",
+    "Code artifact inventoried but not parsed in this pilot.",
+    "Low-relevance images indexed structurally without full OCR."
+  ]
+}

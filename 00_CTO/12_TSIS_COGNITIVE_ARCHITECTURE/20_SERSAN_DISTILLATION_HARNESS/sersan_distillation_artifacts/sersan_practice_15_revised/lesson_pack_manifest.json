@@ -1,0 +1,44 @@
+{
+  "contract_version": "sersan_lesson_pack_contract_v0_1",
+  "generated_at_utc": "2026-06-13T05:48:42Z",
+  "generated_by": "manual_sersan_pilot_harness_codex_v0_3",
+  "lesson_id": "sersan_practice_15_revised",
+  "practice_number": 15,
+  "title": "Practice 15 - Money Management y Position Sizing",
+  "status": "translated",
+  "source_md": "03_only_md_revised/practica_15_revised.md",
+  "workshop_dir": "02_workshops/25-practice-15",
+  "image_dir": "02_workshops/25-practice-15/img",
+  "pdf_role": "duplicate_md_or_layout_artifact",
+  "video_role": "out_of_scope",
+  "asset_resolution": {
+    "resolver_version": "lesson_pack_resolver_v0_3",
+    "image_refs_total": 206,
+    "resolved_direct": 0,
+    "resolved_lesson_fallback": 206,
+    "external_reference": 0,
+    "missing": 0,
+    "needs_human_review": 52
+  },
+  "source_hashes": {
+    "03_only_md_revised/practica_15_revised.md": "sha256:3bf4acad63df1c951ff466f78fd33b710695af23d990cc87d3830baf921e1740",
+    "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/generate_sersan_p15_pilot.py": "sha256:124b0e438f3fed53f51a0ad9b8194652e72f6f8e2ec0b7dae809dbd658f9a49a"
+  },
+  "counts": {
+    "md_lines": 3175,
+    "sections": 20,
+    "images": 206,
+    "images_read": 66,
+    "code_artifacts": 4,
+    "xlsx_artifacts": 0,
+    "rules": 23,
+    "translations": 23,
+    "open_questions": 8
+  },
+  "known_issues": [
+    "Third pilot; requires human review before canonical promotion.",
+    "Code artifacts inventoried but not compiled or parsed in this pilot.",
+    "Low-relevance images indexed structurally without full OCR.",
+    "Numeric sizing examples are evidence, not universal TSIS constants."
+  ]
+}

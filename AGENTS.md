@@ -1,4 +1,4 @@
-﻿# TSIS
+﻿﻿# TSIS
 
 TSIS is an institutional-grade, agent-first quantitative research system focused on:
 
@@ -47,6 +47,12 @@ Es la puerta de entrada operativa al repositorio.
 Todo agente debe comportarse como si el repositorio fuera su única memoria fiable.
 
 ---
+
+## 1.1 Nota humana de arranque
+
+`START_HERE.md` es la primera nota operativa que debe leer el humano al abrir TSIS.
+
+No sustituye este contrato. Todo agente debe seguir obedeciendo el orden de lectura obligatorio definido en este documento y en los contratos locales aplicables.
 
 ## 2. Repository Modules
 

@@ -33,6 +33,7 @@
   - [`daily_return_labels_consumption_policy.md`](#dailyreturnlabelsconsumptionpolicymd)
   - [`intraday_regime_features_consumption_policy.md`](#intradayregimefeaturesconsumptionpolicymd)
   - [`lt1b_universe_consumption_policy.md`](#lt1buniverseconsumptionpolicymd)
+  - [`reference_consumption_policy.md`](#referenceconsumptionpolicymd)
   - [`additional_consumption_policy.md`](#additionalconsumptionpolicymd)
   - [`short_consumption_policy.md`](#shortconsumptionpolicymd)
   - [`short_review_consumption_policy.md`](#shortreviewconsumptionpolicymd)
@@ -496,6 +497,27 @@ Debe preservar:
 Regla clave:
 
 - `additional` puede ser valioso, pero no debe entrar en consumidores principales sin subcontrato o interpretacion especifica cuando el uso sea sensible.
+
+### `reference_consumption_policy.md`
+
+Gobierna `reference_v0_1`.
+
+Distingue:
+
+- identity;
+- snapshots;
+- events;
+- splits;
+- dividends;
+- exchanges;
+- ticker types;
+- operational provenance;
+- causal overlays;
+- y price-view support.
+
+Regla clave:
+
+- `reference` puede alimentar price views, universe builder y event overlays, pero no es precio, tape, feature productiva ni continuidad economica completa por defecto.
 
 ### `short_consumption_policy.md`
 

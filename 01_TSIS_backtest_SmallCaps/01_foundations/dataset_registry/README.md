@@ -18,6 +18,7 @@
   - [`features/`](#features)
   - [`ohlcv_1m/`](#ohlcv1m)
   - [`quotes/`](#quotes)
+  - [`reference/`](#reference)
   - [`short/`](#short)
   - [`short_review/`](#shortreview)
   - [`trades/`](#trades)
@@ -348,6 +349,22 @@ Debe enlazar:
 - evidencia historica de auditoria.
 
 En `quotes`, el registry no debe colapsar calidad local del libro con explicacion externa de eventos.
+
+### `reference/`
+
+Registra `reference_v0_1` como capa fundacional de identidad, corporate actions, eventos y metadata.
+
+Debe leerse junto con:
+
+- `contract_registry/dataset_contracts/reference_dataset_contract_v0_1.md`
+- `data_consumption_policies/reference_consumption_policy.md`
+- `canonical_schemas/reference/`
+- `inspection_dossiers/reference/`
+- `validators/reference/reference_validators.md`
+
+Regla:
+
+- `reference` habilita price views, universe support y event overlays, pero no es precio, tape, universe final ni feature productiva por defecto.
 
 ### `short/`
 

@@ -1,0 +1,253 @@
+contract_version: sersan_mechanical_rules_v0_1
+lesson_id: sersan_practice_12_revised
+generated_at_utc: '2026-06-12T15:19:59Z'
+generated_by: sersan_full_corpus_distillation_generator_v0_1
+rules:
+- rule_id: sersan_practice_12_revised_rule_0001
+  promotion_state: mechanical_rule_candidate
+  confidence: medium
+  rule_type: heuristic
+  domains:
+  - setup_logic
+  - entry_logic
+  - exit_logic
+  - stop_loss
+  - take_profit
+  - filters
+  statement: Exit, stop and profit logic from this section must be declared as part of the strategy contract before comparing
+    results.
+  trigger: A system variant changes stop, profit, trailing, time exit, break-even or opposite-channel exit behavior.
+  action: Version the exit policy and compare variants under the same data, cost and validation assumptions.
+  failure_mode_if_ignored: Backtest comparisons may attribute edge to entries when the result is driven by untracked exit
+    policy changes.
+  required_evidence:
+  - exit_policy
+  - variant_comparison
+  - cost_model
+  source_anchors:
+  - lesson_id: sersan_practice_12_revised
+    md_path: 03_only_md_revised/practica_12_revised.md
+    section_id: sersan_practice_12_revised_sec_0001
+    line_start: 1
+    line_end: 33
+    image_ids: []
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []
+- rule_id: sersan_practice_12_revised_rule_0002
+  promotion_state: mechanical_rule_candidate
+  confidence: requires_human_review
+  rule_type: hard_rule
+  domains:
+  - exit_logic
+  - stop_loss
+  - filters
+  - optimization
+  - overfitting
+  - robustness
+  statement: Do not accept an optimized parameter or system variant from this section by rank alone; require robust-zone evidence,
+    validation split evidence and neighboring-parameter review.
+  trigger: Selecting or validating parameters, filters or variants after an optimization/review workflow.
+  action: Record IS/OOS or comparable validation evidence, local stability and selection rationale before the candidate can
+    feed TSIS evaluators or AlphaEvolve.
+  failure_mode_if_ignored: The selected result may be an isolated optimum, an overfit map artifact or a visually attractive
+    but unstable candidate.
+  required_evidence:
+  - optimization_map
+  - IS_OOS_comparison
+  - neighbor_parameter_stability
+  - selection_rationale
+  source_anchors:
+  - lesson_id: sersan_practice_12_revised
+    md_path: 03_only_md_revised/practica_12_revised.md
+    section_id: sersan_practice_12_revised_sec_0002
+    line_start: 34
+    line_end: 76
+    image_ids:
+    - sersan_practice_12_revised_img_0001
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []
+- rule_id: sersan_practice_12_revised_rule_0003
+  promotion_state: mechanical_rule_candidate
+  confidence: requires_human_review
+  rule_type: hard_rule
+  domains:
+  - bar_construction
+  - price_view
+  - exit_logic
+  - stop_loss
+  - filters
+  - robustness
+  statement: Do not accept an optimized parameter or system variant from this section by rank alone; require robust-zone evidence,
+    validation split evidence and neighboring-parameter review.
+  trigger: Selecting or validating parameters, filters or variants after an optimization/review workflow.
+  action: Record IS/OOS or comparable validation evidence, local stability and selection rationale before the candidate can
+    feed TSIS evaluators or AlphaEvolve.
+  failure_mode_if_ignored: The selected result may be an isolated optimum, an overfit map artifact or a visually attractive
+    but unstable candidate.
+  required_evidence:
+  - optimization_map
+  - IS_OOS_comparison
+  - neighbor_parameter_stability
+  - selection_rationale
+  source_anchors:
+  - lesson_id: sersan_practice_12_revised
+    md_path: 03_only_md_revised/practica_12_revised.md
+    section_id: sersan_practice_12_revised_sec_0003
+    line_start: 77
+    line_end: 157
+    image_ids:
+    - sersan_practice_12_revised_img_0002
+    - sersan_practice_12_revised_img_0003
+    - sersan_practice_12_revised_img_0004
+    - sersan_practice_12_revised_img_0005
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []
+- rule_id: sersan_practice_12_revised_rule_0004
+  promotion_state: mechanical_rule_candidate
+  confidence: high
+  rule_type: hard_rule
+  domains:
+  - bar_construction
+  - price_view
+  - setup_logic
+  - entry_logic
+  - exit_logic
+  - stop_loss
+  statement: Exit, stop and profit logic from this section must be declared as part of the strategy contract before comparing
+    results.
+  trigger: A system variant changes stop, profit, trailing, time exit, break-even or opposite-channel exit behavior.
+  action: Version the exit policy and compare variants under the same data, cost and validation assumptions.
+  failure_mode_if_ignored: Backtest comparisons may attribute edge to entries when the result is driven by untracked exit
+    policy changes.
+  required_evidence:
+  - exit_policy
+  - variant_comparison
+  - cost_model
+  source_anchors:
+  - lesson_id: sersan_practice_12_revised
+    md_path: 03_only_md_revised/practica_12_revised.md
+    section_id: sersan_practice_12_revised_sec_0004
+    line_start: 158
+    line_end: 278
+    image_ids: []
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []
+- rule_id: sersan_practice_12_revised_rule_0005
+  promotion_state: mechanical_rule_candidate
+  confidence: requires_human_review
+  rule_type: hard_rule
+  domains:
+  - bar_construction
+  - price_view
+  - setup_logic
+  - entry_logic
+  - exit_logic
+  - stop_loss
+  statement: Exit, stop and profit logic from this section must be declared as part of the strategy contract before comparing
+    results.
+  trigger: A system variant changes stop, profit, trailing, time exit, break-even or opposite-channel exit behavior.
+  action: Version the exit policy and compare variants under the same data, cost and validation assumptions.
+  failure_mode_if_ignored: Backtest comparisons may attribute edge to entries when the result is driven by untracked exit
+    policy changes.
+  required_evidence:
+  - exit_policy
+  - variant_comparison
+  - cost_model
+  source_anchors:
+  - lesson_id: sersan_practice_12_revised
+    md_path: 03_only_md_revised/practica_12_revised.md
+    section_id: sersan_practice_12_revised_sec_0005
+    line_start: 279
+    line_end: 1136
+    image_ids:
+    - sersan_practice_12_revised_img_0006
+    - sersan_practice_12_revised_img_0007
+    - sersan_practice_12_revised_img_0008
+    - sersan_practice_12_revised_img_0009
+    - sersan_practice_12_revised_img_0010
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []
+- rule_id: sersan_practice_12_revised_rule_0006
+  promotion_state: mechanical_rule_candidate
+  confidence: requires_human_review
+  rule_type: soft_rule
+  domains:
+  - setup_logic
+  - entry_logic
+  - exit_logic
+  - stop_loss
+  - take_profit
+  - filters
+  statement: Exit, stop and profit logic from this section must be declared as part of the strategy contract before comparing
+    results.
+  trigger: A system variant changes stop, profit, trailing, time exit, break-even or opposite-channel exit behavior.
+  action: Version the exit policy and compare variants under the same data, cost and validation assumptions.
+  failure_mode_if_ignored: Backtest comparisons may attribute edge to entries when the result is driven by untracked exit
+    policy changes.
+  required_evidence:
+  - exit_policy
+  - variant_comparison
+  - cost_model
+  source_anchors:
+  - lesson_id: sersan_practice_12_revised
+    md_path: 03_only_md_revised/practica_12_revised.md
+    section_id: sersan_practice_12_revised_sec_0006
+    line_start: 1137
+    line_end: 1495
+    image_ids:
+    - sersan_practice_12_revised_img_0051
+    - sersan_practice_12_revised_img_0052
+    - sersan_practice_12_revised_img_0053
+    - sersan_practice_12_revised_img_0054
+    - sersan_practice_12_revised_img_0055
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []
+- rule_id: sersan_practice_12_revised_rule_0007
+  promotion_state: mechanical_rule_candidate
+  confidence: requires_human_review
+  rule_type: hard_rule
+  domains:
+  - bar_construction
+  - price_view
+  - setup_logic
+  - entry_logic
+  - exit_logic
+  - stop_loss
+  statement: Exit, stop and profit logic from this section must be declared as part of the strategy contract before comparing
+    results.
+  trigger: A system variant changes stop, profit, trailing, time exit, break-even or opposite-channel exit behavior.
+  action: Version the exit policy and compare variants under the same data, cost and validation assumptions.
+  failure_mode_if_ignored: Backtest comparisons may attribute edge to entries when the result is driven by untracked exit
+    policy changes.
+  required_evidence:
+  - exit_policy
+  - variant_comparison
+  - cost_model
+  source_anchors:
+  - lesson_id: sersan_practice_12_revised
+    md_path: 03_only_md_revised/practica_12_revised.md
+    section_id: sersan_practice_12_revised_sec_0007
+    line_start: 1496
+    line_end: 2933
+    image_ids:
+    - sersan_practice_12_revised_img_0081
+    - sersan_practice_12_revised_img_0082
+    - sersan_practice_12_revised_img_0083
+    - sersan_practice_12_revised_img_0084
+    - sersan_practice_12_revised_img_0085
+  caveats:
+  - Candidate only; not promoted TSIS doctrine.
+  - Automated extraction from revised MD and contextual image metadata; human doctrine review required before promotion.
+  related_rules: []

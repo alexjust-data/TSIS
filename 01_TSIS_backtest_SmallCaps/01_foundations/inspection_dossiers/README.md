@@ -29,7 +29,8 @@
   - [Minute / ohlcv_1m raw](#minute--ohlcv1m-raw)
   - [1m split normalized](#1m-split-normalized)
   - [Intraday regime features](#intraday-regime-features)
-  - [Additional, short y otros bloques](#additional-short-y-otros-bloques)
+  - [Reference](#reference)
+- [Additional, short y otros bloques](#additional-short-y-otros-bloques)
 - [Flujo recomendado de trabajo](#flujo-recomendado-de-trabajo)
 - [Paquete Inspector Profundo](#paquete-inspector-profundo) Para humanos
   - [Orden general obligatorio](#orden-general-obligatorio)
@@ -590,6 +591,27 @@ Referencia local:
 
 - `intraday_regime_features/intraday_regime_features_semantic_pilot_readout_v0_1.md`
 
+### Reference
+
+`reference` documenta identidad, eventos, corporate actions y metadata upstream.
+
+Referencias locales:
+
+- `reference/README.md`
+- `reference/reference_institutional_closeout_v0_1.md`
+- `reference/reference_modernization_gap_audit_2026-06-12.md`
+
+Debe distinguir:
+
+- metadata e identidad;
+- corporate actions;
+- eventos de continuidad;
+- overlays causales;
+- price-view support;
+- y consumidores restringidos.
+
+No debe tratarse como precio, tape, universe final ni feature productiva por defecto.
+
 ### Additional, short y otros bloques
 
 Los bloques como `additional`, `short` o `short_review` pueden tener closeouts institucionales mas compactos si su naturaleza no exige case packs visuales equivalentes a `quotes`, `trades` o `daily`.
@@ -1078,6 +1100,34 @@ Madurez relativa: baja/media frente a `daily`, `quotes`, `trades` y `1m_split_no
 
 Riesgo principal: consumirla como feature productiva sin declarar alcance, price view y madurez.
 
+#### `reference`
+
+Estado: foundation layer minima promovida desde auditoria y certification historicas, pero pendiente de upgrade inspector moderno.
+
+Evidencia principal actual:
+
+- `reference/README.md`
+- `reference/README.md`
+- `reference/reference_institutional_closeout_v0_1.md`
+- `reference/reference_modernization_gap_audit_2026-06-12.md`
+- `../contract_registry/dataset_contracts/reference_dataset_contract_v0_1.md`
+- `../data_consumption_policies/reference_consumption_policy.md`
+- `../dataset_registry/reference/reference_registry_entry.yaml`
+- `../validators/reference/reference_validators.md`
+- `../canonical_schemas/reference/`
+
+Lectura correcta:
+
+- `reference` gobierna identidad, ticker types, snapshots, corporate actions y eventos;
+- `splits` y `dividends` alimentan price views;
+- `events/ticker_change` es detector causal fuerte en `halts` y `quotes`, pero no continuidad economica cerrada;
+- `all_tickers` no es universe final;
+- `overview.market_cap` no es membership diaria fully PTI;
+- la evidencia historica pesada existe, pero todavia no esta empaquetada como dossier visual moderno.
+
+Madurez relativa: media/alta como contrato foundation y baja/media como dossier inspector moderno. No esta a paridad con `daily`, `quotes`, `trades`, `minute` ni `1m_split_normalized` hasta que existan population visuals, evidence assets activos, manifests, casepacks, builder y `reference_inspection_readout_v0_2.md`.
+
+Riesgo principal: sobrepromover un closeout compacto como si fuera una capa visual-forense cerrada, o usar `reference` como feature/alpha/continuidad corporativa sin contrato temporal y causal posterior.
 #### `additional`
 
 Estado: closeout institucional compacto.
