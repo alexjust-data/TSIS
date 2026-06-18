@@ -287,6 +287,46 @@ el agente debe elegir la opción que preserve la estructura del sistema.
 
 Los agentes no deben optimizar localmente a costa del orden global del proyecto.
 
+### 11.1. Regla oficial para builds Graphify
+
+Graphify es una herramienta externa con un pipeline propio. Dentro de TSIS, un
+grafo Graphify solo puede llamarse oficial si ha sido producido por el flujo
+Graphify real:
+
+- skill Graphify invocado desde el asistente (`$graphify ...` en Codex);
+- o CLI oficial `graphify extract ...`;
+- o subcomandos oficiales de Graphify para `update`, `cluster-only`, `tree`,
+  `merge-graphs` o exports documentados.
+
+Un agente no debe fabricar manualmente `graphify-out/graph.json`,
+`GRAPH_REPORT.md` ni `graph.html` mediante scripts propios y presentarlos como
+Graphify oficial.
+
+Regla:
+
+```text
+Compatible con graphify query no significa oficial Graphify.
+```
+
+Si el pipeline oficial falla por permisos, falta de backend LLM, falta de
+subagentes, API keys, version de CLI o cualquier otra causa, el agente debe:
+
+1. parar;
+2. explicar la causa concreta;
+3. no escribir en el path canonico `graphify-out/graph.json`;
+4. si conserva un experimento, guardarlo fuera del path canonico con nombre
+   `non_official_fallback`;
+5. documentar la incidencia en el changelog correspondiente.
+
+El path `graphify-out/graph.json` activa el comportamiento "fast path" de la
+skill Graphify. Por tanto, dejar ahi un JSON no oficial es un error operativo:
+puede hacer que futuros agentes consulten un mapa que no fue construido por
+Graphify.
+
+La ausencia de `graph.html` tambien debe tratarse como senal de revision. Puede
+ser valida solo si el build oficial se ejecuto con una opcion documentada que
+omite visualizacion, por ejemplo `--no-viz`, y esa decision quedo registrada.
+
 ---
 
 ## 12. Regla final

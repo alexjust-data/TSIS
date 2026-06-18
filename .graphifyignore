@@ -1,0 +1,42 @@
+# Runtime and generated graph artifacts
+graphify-out/
+**/graphify-out/
+**/_graphify_staging*/
+**/graphify-*-corpus/
+**/graphstatus-docs-corpus/
+
+# Local environments and package/build caches
+.venv/
+venv/
+__pycache__/
+node_modules/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+
+# TSIS runtime/output folders
+data/
+run/
+runs/
+logs/
+tmp/
+temp/
+
+# Large or non-authoritative data artifacts
+*.parquet
+*.csv
+*.zip
+*.log
+*.db
+*.sqlite
+*.sqlite3
+*.duckdb
+
+# Model and binary blobs
+*.pkl
+*.joblib
+*.onnx
+*.pt
+*.pth
+*.h5

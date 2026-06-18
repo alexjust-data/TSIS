@@ -1,6 +1,6 @@
 ﻿# 00_CTO
 
-Fecha de actualizacion: 2026-06-12
+Fecha de actualizacion: 2026-06-18
 Estado: CTO workspace activo para arquitectura de automatizaciones TSIS.
 
 `00_CTO/` es la capa de direccion tecnica, memoria intelectual y diseno
@@ -223,6 +223,221 @@ Regla:
 ```text
 SersanSistemas es fuente experta; solo gobierna TSIS despues de destilacion y promocion
 ```
+
+## Politica de grafo semantico Graphify
+
+Graphify puede usarse como mapa semantico de navegacion para Codex y futuros
+agentes, pero no es autoridad canonica ni sustituye Git, `AGENTS.md`, los
+documentos raiz, `01_foundations` ni los changelogs.
+
+El protocolo operativo local obligatorio esta en:
+
+```text
+00_CTO/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md
+```
+
+Ese protocolo manda sobre cualquier improvisacion local. En particular, ningun
+agente debe crear manualmente `00_CTO/graphify-out/graph.json` y presentarlo
+como Graphify oficial.
+
+Regla:
+
+```text
+Graphify indexa conocimiento para navegar.
+Los contratos versionados gobiernan conocimiento.
+```
+
+Por tanto, `graphify-out/` debe tratarse por defecto como artefacto runtime
+reconstruible. No es source of truth institucional salvo decision explicita,
+manifest y promocion posterior.
+
+Regla de procedencia:
+
+```text
+Compatible con graphify query no significa oficial Graphify.
+Si no lo genero el pipeline oficial, no debe ocupar graphify-out/graph.json.
+```
+
+### Actualizaciones incrementales
+
+Las actualizaciones del grafo de `00_CTO` se gobiernan en:
+
+```text
+00_CTO/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md
+```
+
+El grafo raiz actual es un grafo fusionado. Cuando se anadan o modifiquen
+archivos, un agente no debe reescanear todo `00_CTO` como bloque unico por
+defecto. Debe identificar el slice afectado, reconstruir o actualizar ese leaf
+mediante Graphify oficial, fusionarlo con `graphify merge-graphs`, reclusterizar
+con `graphify cluster-only` y validar con `graphify diagnose multigraph`.
+
+Mapping vigente para trading:
+
+```text
+13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY/
+-> core_cto_graph / trading_systems_slice
+```
+
+Por tanto, una incorporacion de documentos o PDFs en
+`13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY/` no queda absorbida por el grafo raiz
+hasta que ese slice haya sido extraido, fusionado y diagnosticado oficialmente.
+
+### Scope operativo inicial
+
+No debe construirse un unico grafo monolitico de `00_CTO/`.
+
+La capa CTO contiene material con estados distintos:
+
+- workspace operativo de Harness;
+- memoria arquitectonica;
+- destilaciones Sersan;
+- biblioteca externa consultiva;
+- notas privadas o fuente no canonica;
+- outputs runtime reconstruibles.
+
+Fusionarlo todo sin distincion haria que el grafo confundiera autoridad,
+referencia, borrador, output y fuente externa.
+
+El grafo operativo inicial debe priorizar:
+
+- `00_CTO/README.md`
+- `00_CTO/CHANGELOG.md`
+- `00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/README.md`
+- `00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/`
+- `00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/`
+
+Ese scope conecta direccion CTO, Harness y contratos de artefactos dentro de
+`00_CTO`.
+
+`C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations` es dependencia
+operativa externa referenciada por `00_CTO`, pero no forma parte del grafo
+`00_CTO` por defecto. Si se necesita, debe construirse como grafo separado del
+modulo `01_TSIS_backtest_SmallCaps` y fusionarse solo mediante una decision de
+scope explicita.
+
+### Subgrafos y merges
+
+Para respetar las reglas de Graphify y preservar semantica, el grafo de
+`00_CTO` debe construirse por subgrafos leaf y merges gobernados:
+
+Los nombres siguientes son ids logicos de build, no carpetas existentes:
+
+1. `core_cto_graph`
+   - README, CHANGELOG, folders ligeros de direccion CTO y memoria.
+2. `data_quality_harness_graph`
+   - `00_SHARED_HARNESS_KERNEL`
+   - `10_DATA_QUALITY_HARNESS`
+3. `sersan_distillation_graph`
+   - `20_SERSAN_DISTILLATION_HARNESS`, partido por practica o lesson pack.
+4. `reference_sersan_graph`
+   - `99_REFERENCE_LIBRARY/SersanSistemas`, construido por slices gobernadas.
+
+Regla de merge:
+
+```text
+core_cto_graph + data_quality_harness_graph + sersan_distillation_graph
+= grafo operativo CTO inicial
+```
+
+`reference_sersan_graph` no debe absorberse a ciegas. Puede fusionarse con el
+grafo raiz solo mediante una decision explicita de scope, con manifest,
+verificacion y separacion clara entre fuente experta, destilacion, contrato y
+doctrina TSIS.
+
+### Estado del build Graphify actual
+
+Estado al 2026-06-18:
+
+```text
+00_CTO/graphify-out/
+├── graph.json
+├── GRAPH_REPORT.md
+├── graph.html
+└── BUILD_MANIFEST.md
+```
+
+El grafo raiz actual fue generado y reclusterizado mediante Graphify oficial.
+No es un fallback manual.
+
+Cobertura incluida:
+
+- `12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL`
+- `12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS`
+- core CTO Markdown: README, changelog, protocolo Graphify, carpetas ligeras
+  `01_*` a `13_*`, `agent_standards`, `architecture_decisions`,
+  `research_principles`, `roadmap`
+- `12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS`, slice
+  operativa de protocolos, contratos, runbooks, toolchain, manifests, reports,
+  mechanical rules, open questions y quality reports
+- `99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised`
+- `99_REFERENCE_LIBRARY/SersanSistemas/02_workshops`, slice documental
+  detectada por Graphify: `.md`, `.txt`, `.html`
+- `13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY`, slice incremental de trading:
+  `07_Long_plays.md`, `07_Short_Plays.md` y
+  `Day Trading en Small Caps - XVNTrading.pdf`
+
+Verificacion raiz final:
+
+```text
+nodes: 1732
+edges: 2269
+communities: 166
+missing_endpoint_edges: 0
+dangling_endpoint_edges: 0
+exact_duplicate_edges: 0
+```
+
+Pendiente o diferido:
+
+- imagenes y videos de `02_workshops`, por coste/tamano operativo;
+- JSON de alineacion/transcripcion de `02_workshops`: Graphify 0.8.40 los
+  detecto como `code`, pero el extractor AST oficial produjo `0` nodos y `0`
+  edges, por lo que no se fusionaron;
+- `.ELD`, `.tsw` y formatos TradeStation: no quedaron absorbidos por el scan
+  documento/code oficial actual y requieren transformacion o importer
+  gobernado antes de integrarse.
+
+### Politica de outputs
+
+Los grafos intermedios deben poder vivir fuera del repositorio, por ejemplo en:
+
+```text
+C:\tmp\graphify_00_cto\
+```
+
+Esa ruta es un area runtime sugerida, no una carpeta fuente de `00_CTO`.
+
+El grafo operativo final, si se decide materializarlo dentro de `00_CTO`, debe
+vivir en:
+
+```text
+00_CTO/graphify-out/graph.json
+```
+
+Ese path solo puede existir si el archivo fue generado por Graphify. Un fallback
+manual, aunque sea JSON compatible, debe guardarse fuera del path canonico con
+nombre `non_official_fallback`.
+
+Antes de tratar cualquier grafo como artefacto gobernado, debe existir al menos:
+
+- manifest de build;
+- lista de subgrafos fuente;
+- fecha;
+- comando o procedimiento usado;
+- alcance incluido y excluido;
+- decision explicita de si es runtime, consultivo o promovido.
+
+Las exclusiones tecnicas globales para builds Graphify se declaran en:
+
+```text
+C:\TSIS_Data\.graphifyignore
+```
+
+Ese archivo debe excluir datos, caches, outputs runtime y artefactos binarios,
+pero no debe usarse para ocultar diferencias semanticas entre fuente, doctrina,
+contrato y referencia. Esa separacion debe resolverse por scopes de build y
+por manifests.
 
 ## Documentos activos y siguientes
 
@@ -647,6 +862,7 @@ explicita:
 - PDFs grandes;
 - zips;
 - runtime outputs;
+- `graphify-out/` generado;
 - raw datasets;
 - caches generadas;
 - credenciales privadas;

@@ -50,10 +50,167 @@ run summaries, trace logs y, si procede, release log propio.
 
 ## Unreleased
 
+### Added
+
+- Documented the official incremental Graphify update protocol for `00_CTO`
+  leaf slices in `GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md`.
+- Added the current mapping for
+  `13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY/`:
+  `core_cto_graph / trading_systems_slice`.
+- Updated the official runtime Graphify root graph with the incremental
+  `trading_systems_slice`.
+
+### Notes
+
+- New or modified trading strategy docs and PDFs under
+  `13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY/` must be absorbed through an
+  official Graphify leaf update/rebuild, followed by `graphify merge-graphs`,
+  `graphify cluster-only` and `graphify diagnose multigraph`.
+- The root graph must not be declared current for that source path until the
+  trading systems slice has been extracted, merged, reclustered and diagnosed.
+- Absorbed files in the current update:
+  - `13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY/07_Long_plays.md`
+  - `13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY/07_Short_Plays.md`
+  - `13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY/Day Trading en Small Caps - XVNTrading.pdf`
+- Root graph after the trading slice merge:
+
+```text
+nodes: 1732
+edges: 2269
+communities: 166
+missing_endpoint_edges: 0
+dangling_endpoint_edges: 0
+exact_duplicate_edges: 0
+```
+
 ### Pending
 
 - Crear vocabulario canonico de estados para Data Quality Harness.
 - Crear contrato de artefactos live para Data Quality Harness.
+
+## 2026-06-18 - Official 00_CTO Graphify graph build
+
+### Added
+
+- Built the official root Graphify runtime graph at:
+  `00_CTO/graphify-out/graph.json`
+- Generated official runtime outputs:
+  - `00_CTO/graphify-out/GRAPH_REPORT.md`
+  - `00_CTO/graphify-out/graph.html`
+  - `00_CTO/graphify-out/BUILD_MANIFEST.md`
+- Added governed Graphify runtime corpus ignore pattern:
+  `**/graphify-*-corpus/`
+
+### Included
+
+The root graph was built through official Graphify subgraph extraction,
+`graphify merge-graphs`, and `graphify cluster-only`.
+
+Included graph slices:
+
+- shared Harness kernel;
+- Data Quality Harness;
+- core CTO Markdown folders;
+- SERSAN distillation operational protocols, contracts, runbooks, toolchain,
+  manifests and quality reports;
+- `99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised`;
+- `99_REFERENCE_LIBRARY/SersanSistemas/02_workshops` textual documents detected
+  by Graphify: `.md`, `.txt`, `.html`.
+
+### Verification
+
+Root graph after final merge:
+
+```text
+nodes: 1667
+edges: 2184
+communities: 164
+missing_endpoint_edges: 0
+dangling_endpoint_edges: 0
+exact_duplicate_edges: 0
+```
+
+### Deferred
+
+- `02_workshops` images and videos were not absorbed in this phase because they
+  are large media slices requiring a separate cost/scope decision.
+- `02_workshops` JSON alignment/transcription files were checked with official
+  Graphify detect and AST extraction; Graphify 0.8.40 produced `0` nodes and
+  `0` edges, so they were not merged.
+- `.ELD`, `.tsw` and TradeStation-specific payloads remain outside the current
+  official Graphify graph until a governed transformation/import path exists.
+
+### Notes
+
+`graphify-out/` and `graphify-*-corpus/` are runtime reconstructible artifacts
+by default. They are not canonical source of truth unless explicitly promoted
+later.
+
+## 2026-06-18 - CTO Graphify semantic graph policy
+
+### Added
+
+- Documented the `00_CTO` Graphify policy in `README.md`.
+- Added `GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md` to define what counts as an
+  official Graphify build and what must never be presented as one.
+- Added root `.graphifyignore` to exclude generated graph artifacts, runtime
+  folders, caches, data outputs and binary model/data blobs from Graphify
+  builds.
+- Updated root `.gitignore` so Graphify runtime outputs and staging folders
+  remain reconstructible local artifacts by default.
+
+### Notes
+
+The policy defines Graphify as a semantic navigation layer for Codex and future
+agents, not as canonical authority.
+
+It fixes the intended graph construction model:
+
+- build leaf subgraphs instead of one monolithic `00_CTO` graph;
+- merge `core_cto_graph`, `data_quality_harness_graph` and
+  `sersan_distillation_graph` into the operating CTO graph;
+- keep `reference_sersan_graph` separate and consultative by default;
+- treat `graphify-out/` as rebuildable runtime output unless explicitly
+  promoted with a manifest and scope record.
+- use `.graphifyignore` only for technical exclusions; semantic separation
+  between operating graph and reference graph remains a build-scope decision.
+- keep `01_foundations` as an external operational dependency referenced by
+  `00_CTO`, not as part of the default `00_CTO` graph.
+
+### Incident correction
+
+A manual fallback graph was generated during the first attempt and was initially
+placed under the canonical Graphify path. That was incorrect: compatibility with
+`graphify query`, `graphify explain` or `graphify path` does not prove that the
+artifact was produced by the official Graphify pipeline.
+
+The fallback was removed from:
+
+```text
+00_CTO/graphify-out/graph.json
+00_CTO/graphify-out/GRAPH_REPORT.md
+```
+
+and quarantined at:
+
+```text
+C:\tmp\graphify_00_cto\non_official_fallback_2026-06-18
+```
+
+The temporary mirror under `C:\tmp\graphify_00_cto\phase1_outputs` was also
+cleared of canonical `graph.json` / `GRAPH_REPORT.md` names.
+
+Until Graphify itself generates the output, `00_CTO/graphify-out/graph.json`
+must not exist.
+
+### Impact
+
+Future Graphify work on `00_CTO` must preserve the authority distinction
+between CTO workspace, canonical project contracts, `01_foundations`, Sersan
+distillation artifacts and external reference material.
+
+This prevents the reference library or private/source notes from silently
+dominating the operational graph used by agents.
 
 ## 2026-06-13 - Data Quality Harness historical preservation contract
 

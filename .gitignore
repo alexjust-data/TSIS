@@ -17,6 +17,11 @@
 **/cache/
 **/tmp/
 **/temp/
+graphify-out/
+**/graphify-out/
+**/_graphify_staging*/
+**/graphify-*-corpus/
+**/graphstatus-docs-corpus/
 *_files_inventory.csv
 *_files_inventory_summary.json
 00_CTO/disenys/design_references/
