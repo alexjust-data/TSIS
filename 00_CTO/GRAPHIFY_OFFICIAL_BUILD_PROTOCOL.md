@@ -187,6 +187,46 @@ Flujo obligatorio para nuevos archivos o modificaciones:
 7. Actualizar `graphify-out/BUILD_MANIFEST.md` y, si el cambio altera scope o
    semantica, actualizar `README.md` y `CHANGELOG.md`.
 
+Si el humano ya hizo commit y el working tree esta limpio, el agente no debe
+asumir que no hay nada que actualizar. Debe usar el manifest incremental de
+Graphify y el historial Git reciente para comparar contra el ultimo build
+documentado.
+
+Prompt operativo reutilizable:
+
+```text
+Actualiza el grafo Graphify oficial de 00_CTO tras los cambios recientes.
+
+Reglas:
+- Lee 00_CTO/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md antes de actuar.
+- No hagas un rebuild monolitico de 00_CTO por defecto.
+- Identifica los paths cambiados desde el ultimo build Graphify documentado.
+- Mapea cada path a su slice Graphify.
+- Si el slice ya tiene manifest compatible, usa el flujo oficial --update.
+- Si el slice no tiene manifest compatible, reconstruye el leaf con Graphify
+  oficial y despues fusiona.
+- Fusiona con graphify merge-graphs.
+- Reclustering con graphify cluster-only.
+- Diagnostica con graphify diagnose multigraph.
+- Actualiza graphify-out/BUILD_MANIFEST.md.
+- Actualiza README.md y CHANGELOG.md solo si cambia scope, cobertura o
+  semantica.
+- No escribas graphify-out/graph.json con scripts manuales.
+```
+
+Nota sobre hooks:
+
+```text
+No asumir hook automatico.
+```
+
+Graphify upstream ofrece `graphify hook install` para reconstruccion automatica
+post-commit. TSIS no debe depender de ese mecanismo para `00_CTO` mientras el
+grafo raiz sea un grafo fusionado por slices y contenga documentos, PDFs o
+referencias que requieren decision de scope. El hook puede ser util para
+proyectos simples o cambios AST/code-only; en `00_CTO`, las actualizaciones
+semanticamente relevantes deben seguir el protocolo de slices.
+
 Mapping operativo actual:
 
 ```text

@@ -54,6 +54,8 @@ run summaries, trace logs y, si procede, release log propio.
 
 - Documented the official incremental Graphify update protocol for `00_CTO`
   leaf slices in `GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md`.
+- Added a reusable agent prompt for refreshing the official `00_CTO` Graphify
+  graph after recent Git changes.
 - Added the current mapping for
   `13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY/`:
   `core_cto_graph / trading_systems_slice`.
@@ -68,6 +70,9 @@ run summaries, trace logs y, si procede, release log propio.
   `graphify cluster-only` and `graphify diagnose multigraph`.
 - The root graph must not be declared current for that source path until the
   trading systems slice has been extracted, merged, reclustered and diagnosed.
+- Do not assume a post-commit hook updates `00_CTO` Graphify correctly. Because
+  the root graph is slice-merged and includes semantic docs/PDFs/references,
+  agents must follow the governed slice update protocol.
 - Absorbed files in the current update:
   - `13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY/07_Long_plays.md`
   - `13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY/07_Short_Plays.md`
