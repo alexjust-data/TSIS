@@ -365,7 +365,7 @@ Cobertura incluida:
 - `12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL`
 - `12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS`
 - core CTO Markdown: README, changelog, protocolo Graphify, carpetas ligeras
-  `01_*` a `13_*`, `agent_standards`, `architecture_decisions`,
+  `01_*` a `13_*`, `00_private/agent_standards`, `architecture_decisions`,
   `research_principles`, `roadmap`
 - `12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS`, slice
   operativa de protocolos, contratos, runbooks, toolchain, manifests, reports,
