@@ -172,20 +172,79 @@ Primero se actualiza el subgrafo leaf afectado.
 Despues se fusiona oficialmente contra el grafo raiz.
 ```
 
+### Cadencia de refresco
+
+Graphify no debe seguir el ritmo de Git commit a commit.
+
+Git es memoria continua. Graphify es mapa semantico. El mapa se refresca por
+hitos, por severidad o por lote, no por cada modificacion menor.
+
+La cola versionada de refrescos vive en:
+
+```text
+00_CTO/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Regla operativa:
+
+```text
+LOW      -> no actualizar Graphify
+MEDIUM   -> anotar en GRAPHIFY_REFRESH_QUEUE.md
+HIGH     -> reconstruir leaf en ventana dedicada
+CRITICAL -> reconstruir leaf y decidir root explicitamente
+```
+
+Severidad minima:
+
+- `LOW`: typo, README menor, limpieza textual, nota privada no promovida.
+- `MEDIUM`: nuevo README funcional, nueva nota de research, documento
+  conceptual no promovido.
+- `HIGH`: nueva Event Library, nueva Strategy Library, nuevo PDF importante,
+  policy local o arquitectura promovida.
+- `CRITICAL`: renombres, eliminaciones o migraciones de rutas ya indexadas,
+  event taxonomy, contratos canonicos, schemas o semantica de datasets.
+
+Un agente no debe gastar tokens en rebuild Graphify inmediato si el cambio solo
+requiere quedar en cola. La decision correcta es documentar el pending refresh y
+seguir trabajando en Git.
+
 Flujo obligatorio para nuevos archivos o modificaciones:
 
 1. Revisar `git status --short` y localizar archivos nuevos, modificados o
    eliminados.
-2. Mapear cada path al slice Graphify correspondiente.
-3. Ejecutar el flujo oficial Graphify sobre ese slice:
+2. Clasificar severidad Graphify: `LOW`, `MEDIUM`, `HIGH` o `CRITICAL`.
+3. Si es `LOW`, no tocar Graphify.
+4. Si es `MEDIUM`, anotar o actualizar entrada en
+   `GRAPHIFY_REFRESH_QUEUE.md` y parar ahi.
+5. Si es `HIGH` o `CRITICAL`, mapear cada path al slice Graphify
+   correspondiente.
+6. Ejecutar el flujo oficial Graphify sobre ese slice solo si la tarea actual
+   requiere el mapa actualizado o si se esta en una ventana dedicada de refresh:
    - `graphify update` si el slice ya tiene manifest compatible;
    - o rebuild del leaf con la skill Graphify si contiene docs, papers,
      imagenes o material semantico que requiere extraccion LLM/subagentes.
-4. Fusionar el leaf actualizado con `graphify merge-graphs`.
-5. Recalcular comunidades con `graphify cluster-only`.
-6. Validar con `graphify diagnose multigraph`.
-7. Actualizar `graphify-out/BUILD_MANIFEST.md` y, si el cambio altera scope o
+7. Decidir si el root puede aceptar un merge aditivo:
+   - si solo hay nuevos documentos o modificaciones en paths ya vigentes,
+     fusionar el leaf actualizado con `graphify merge-graphs`;
+   - si hubo renombres, eliminaciones o migracion de paths, no usar un merge
+     aditivo hasta confirmar que el root no conserva nodos antiguos del slice.
+8. Recalcular comunidades con `graphify cluster-only` cuando el root haya sido
+   actualizado.
+9. Validar con `graphify diagnose multigraph`.
+10. Actualizar `graphify-out/BUILD_MANIFEST.md` y, si el cambio altera scope o
    semantica, actualizar `README.md` y `CHANGELOG.md`.
+
+Regla para renombres:
+
+```text
+graphify merge-graphs no es reemplazo de slice.
+Si el root conserva rutas antiguas, un merge aditivo crea ruido.
+```
+
+En ese caso, el agente debe dejar el leaf oficial construido y diagnosticado,
+pero no declarar el root actualizado. La integracion correcta requiere rebuild
+controlado desde leaves vigentes, o una funcion oficial de reemplazo de slice
+si Graphify la ofrece en una version futura.
 
 Si el humano ya hizo commit y el working tree esta limpio, el agente no debe
 asumir que no hay nada que actualizar. Debe usar el manifest incremental de
@@ -201,13 +260,20 @@ Reglas:
 - Lee 00_CTO/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md antes de actuar.
 - No hagas un rebuild monolitico de 00_CTO por defecto.
 - Identifica los paths cambiados desde el ultimo build Graphify documentado.
-- Mapea cada path a su slice Graphify.
+- Clasifica la severidad Graphify: LOW, MEDIUM, HIGH o CRITICAL.
+- Si es LOW, no actualices Graphify.
+- Si es MEDIUM, anota o actualiza 00_CTO/GRAPHIFY_REFRESH_QUEUE.md y termina.
+- Si es HIGH o CRITICAL, mapea cada path a su slice Graphify.
 - Si el slice ya tiene manifest compatible, usa el flujo oficial --update.
 - Si el slice no tiene manifest compatible, reconstruye el leaf con Graphify
   oficial y despues fusiona.
-- Fusiona con graphify merge-graphs.
-- Reclustering con graphify cluster-only.
+- Si no hay renombres ni eliminaciones en el slice, fusiona con
+  graphify merge-graphs.
+- Si hay renombres o eliminaciones, verifica primero que el root no conserva
+  nodos de rutas antiguas; si los conserva, no hagas merge aditivo.
+- Reclustering con graphify cluster-only solo despues de actualizar el root.
 - Diagnostica con graphify diagnose multigraph.
+- Actualiza 00_CTO/GRAPHIFY_REFRESH_QUEUE.md con el estado final.
 - Actualiza graphify-out/BUILD_MANIFEST.md.
 - Actualiza README.md y CHANGELOG.md solo si cambia scope, cobertura o
   semantica.
@@ -230,9 +296,13 @@ semanticamente relevantes deben seguir el protocolo de slices.
 Mapping operativo actual:
 
 ```text
-13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY/
+13_TRADING_SYSTEMS/
 -> core_cto_graph / trading_systems_slice
--> docs/papers de estrategia; requiere extraccion semantica oficial
+-> Event Library, Event Engine Model, Outcome Research, Strategy Library,
+   Strategy Research, Edge Hypotheses, Pattern Discovery, Cluster Research,
+   Execution Models, Decision Models, Evolution Systems, Squeeze Research,
+   Discretionary Frameworks and Experimental material
+-> docs/papers de trading systems; requiere extraccion semantica oficial
 
 12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/
 12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/
@@ -255,13 +325,21 @@ fuentes relevantes.
 Para una carpeta nueva como:
 
 ```text
-C:\TSIS_Data\00_CTO\13_TRADING_SYSTEMS\01_STRATEGY_LIBRARY
+C:\TSIS_Data\00_CTO\13_TRADING_SYSTEMS
 ```
 
 el agente debe tratarla como ampliacion del `core_cto_graph` mediante un
 `trading_systems_slice`. El grafo raiz no debe declararse actualizado hasta que
-ese slice haya sido extraido por Graphify, fusionado, reclusterizado y
-diagnosticado.
+ese slice haya sido extraido por Graphify, integrado sin nodos antiguos del
+mismo slice, reclusterizado y diagnosticado.
+
+Estado especial 2026-06-18 para `13_TRADING_SYSTEMS/`:
+
+- El leaf event-first ya fue construido y diagnosticado oficialmente.
+- El root actual conserva nodos historicos de
+  `13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY/`.
+- No debe hacerse un merge aditivo de ese leaf al root actual porque dejaria
+  rutas viejas y nuevas en el mismo grafo.
 
 ## Prohibicion final
 

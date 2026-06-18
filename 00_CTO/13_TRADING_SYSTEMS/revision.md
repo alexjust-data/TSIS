@@ -433,3 +433,12 @@ Ahí AlphaEvolve tiene muchísimo sentido.
 
 [1]: https://arxiv.org/abs/2506.13131?utm_source=chatgpt.com "AlphaEvolve: A coding agent for scientific and algorithmic ..."
 [2]: https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/?utm_source=chatgpt.com "AlphaEvolve: A Gemini-powered coding agent for ..."
+> Estado: source note historica.
+>
+> Este archivo conserva una propuesta previa de estructura para
+> `13_TRADING_SYSTEMS/`. No es la arquitectura vigente. La arquitectura activa
+> vive en `README.md`, `../TSIS_LAB_ARCHITECTURE.md` y
+> `../00_CTO_REFACTOR_PLAN.md`.
+>
+> Muchas rutas mencionadas aqui son anteriores al refactor event-first ejecutado
+> el 2026-06-18.

@@ -1,527 +1,403 @@
 # 13_TRADING_SYSTEMS
 
-## Propósito
+Fecha de actualizacion: 2026-06-18
+Estado: capa CTO en refactor gobernado hacia arquitectura event-first.
 
-Esta carpeta representa el **conocimiento de dominio de trading** que TSIS estudia, valida, evoluciona y explota.
+`13_TRADING_SYSTEMS/` es la capa de conocimiento de dominio de mercado que TSIS
+estudia, valida, convierte en eventos, mide con outcomes y solo despues traduce
+en estrategias o modelos de decision.
 
-Mientras que otras áreas del proyecto se centran en:
+No es una carpeta de backtests.
+No es una carpeta de outputs.
+No es la autoridad de datos.
+No es el lugar donde se duplican contratos de `01_foundations`.
 
-* Ingeniería de sistemas
-* Machine Learning
-* Reinforcement Learning
-* Infraestructura
-* Agentes
-* MLOps
+## Autoridad local
 
-`13_TRADING_SYSTEMS` responde a una pregunta diferente:
+Antes de modificar esta carpeta, leer:
 
-> ¿Qué sabemos realmente sobre el mercado?
+- `../LOCAL_RULES.md`
+- `../TSIS_LAB_ARCHITECTURE.md`
+- `../00_CTO_REFACTOR_PLAN.md`
+- `00_EVENT_LIBRARY/README.md`
 
-Aquí viven las hipótesis, estrategias, patrones, modelos mentales y marcos de decisión que constituyen el conocimiento operativo del sistema.
-
----
-
-# 01_STRATEGY_LIBRARY
-
-## Objetivo
-
-Repositorio maestro de estrategias.
-
-Cada estrategia debe existir como un objeto de conocimiento independiente de cualquier implementación.
-
-Una estrategia debe poder entenderse completamente sin leer una sola línea de código.
-
----
-
-## Contenido esperado
-
-Ejemplos:
+La autoridad de Data Foundation vive fuera de `00_CTO`, en:
 
 ```text
-PM_Squeeze/
-Gap_and_Go/
-First_Green_Day/
-VWAP_Reclaim/
-SSR_Squeeze/
-Parabolic_Reversal/
+C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations
 ```
 
-Cada estrategia debería incluir:
+`13_TRADING_SYSTEMS/` consume esa base auditada como dependencia conceptual,
+pero no la redefine.
+
+## Regla central
 
 ```text
-README.md
-setup_definition.md
-market_context.md
-execution_rules.md
-examples/
-charts/
-research_notes/
+evento != setup != estrategia != decision
 ```
 
----
+Un evento describe algo observable en el mercado.
+Una hipotesis explica por que podria existir edge.
+Una estrategia define una respuesta operacional.
+Un modelo de decision decide si actuar, cuando actuar, como dimensionar y bajo
+que restricciones.
 
-## Preguntas que responde
+Por tanto:
+
+- la Event Library no debe contener entradas, stops, targets, sizing ni reglas
+  de ejecucion;
+- la Strategy Library no debe redefinir datos upstream ni inventar eventos;
+- los modelos ML no deben decidir operaciones por si solos;
+- AlphaEvolve/OpenEvolve no puede actuar antes de existir eventos, outcomes,
+  evaluadores bloqueados y constraints gobernados.
+
+## Cadena funcional TSIS Lab
+
+La lectura vigente para esta carpeta es:
 
 ```text
-¿Qué es esta estrategia?
-
-¿Por qué debería funcionar?
-
-Quiénes son los participantes implicados?
-
-Qué ineficiencia explota?
-
-Cuáles son sus variantes?
+Data Foundation
+-> Event Library
+-> Event Engine Model
+-> Outcome Research
+-> Strategy Library
+-> Strategy Research
+-> Edge Hypotheses
+-> Pattern Discovery
+-> Cluster Research
+-> Execution Models
+-> Decision Models
+-> Evolution Systems
 ```
 
----
-
-# 02_SETUP_TAXONOMY
-
-## Objetivo
-
-Crear una clasificación formal de todos los setups observados en el mercado.
-
-Una estrategia puede contener múltiples setups.
-
-Un setup puede aparecer dentro de múltiples estrategias.
-
----
-
-## Ejemplos
+`Data Foundation` no vive aqui. Es el input gobernado que produce, como minimo:
 
 ```text
-Momentum_Setups/
-Continuation_Setups/
-Squeeze_Setups/
-Reversal_Setups/
-Liquidity_Events/
-News_Driven_Setups/
+master_daily_table
+master_intraday_table
+data_quality_report
+symbol_master
+corporate_actions_table
+calendar_table
 ```
 
----
+## Estado fisico actual
 
-## Ejemplos concretos
+Esta carpeta ya fue normalizada al arbol event-first de Fase 2:
 
 ```text
-Break_PM_High
-ORB
-Micro_Pullback
-VWAP_Reclaim
-SSR_Squeeze
-Parabolic_Extension
-Failed_Breakout
+00_EVENT_LIBRARY/
+01_EVENT_ENGINE_MODEL/
+02_OUTCOME_RESEARCH/
+03_STRATEGY_LIBRARY/
+04_STRATEGY_RESEARCH/
+05_EDGE_HYPOTHESES/
+06_PATTERN_DISCOVERY/
+07_CLUSTER_RESEARCH/
+08_EXECUTION_MODELS/
+09_DECISION_MODELS/
+10_EVOLUTION_SYSTEMS/
+11_SQUEEZE_RESEARCH/
+90_DISCRETIONARY_FRAMEWORKS/
+99_EXPERIMENTAL/
 ```
 
----
+Cambios ejecutados:
 
-## Preguntas que responde
+- `00__EVENT_LIBRARY/` fue renombrada a `00_EVENT_LIBRARY/`;
+- `01_STRATEGY_LIBRARY/` fue movida a `03_STRATEGY_LIBRARY/`;
+- las carpetas vacias antiguas se convirtieron en carpetas canonicas cuando
+  habia equivalencia semantica clara;
+- `02_SETUP_TAXONOMY/` fue eliminado porque estaba vacia y ya no es una capa
+  top-level canonica;
+- cada carpeta activa tiene README funcional minimo.
+
+## Arbol canonico activo
+
+El arbol gobernado activo es:
 
 ```text
-Qué tipo de evento de mercado estoy observando?
-
-A qué familia pertenece?
-
-Qué otros setups son similares?
+13_TRADING_SYSTEMS/
+  README.md
+  00_EVENT_LIBRARY/
+  01_EVENT_ENGINE_MODEL/
+  02_OUTCOME_RESEARCH/
+  03_STRATEGY_LIBRARY/
+  04_STRATEGY_RESEARCH/
+  05_EDGE_HYPOTHESES/
+  06_PATTERN_DISCOVERY/
+  07_CLUSTER_RESEARCH/
+  08_EXECUTION_MODELS/
+  09_DECISION_MODELS/
+  10_EVOLUTION_SYSTEMS/
+  11_SQUEEZE_RESEARCH/
+  90_DISCRETIONARY_FRAMEWORKS/
+  99_EXPERIMENTAL/
 ```
 
----
+Los siguientes cambios deben hacerse en commits pequenos y verificables, no
+como reestructuraciones silenciosas.
 
-# 03_EDGE_HYPOTHESES
+## Funcion de cada carpeta objetivo
 
-## Objetivo
+### `00_EVENT_LIBRARY/`
 
-Repositorio de hipótesis de ventaja estadística.
+Catalogo de eventos observables de mercado.
+
+Inputs:
+
+- datos auditados de Data Foundation;
+- conocimiento de microestructura;
+- fenomenos documentados en la referencia;
+- `00_private/eventos.md` como nota fuente.
+
+Outputs:
+
+- definiciones de eventos;
+- criterios observables;
+- familias de eventos;
+- prerequisitos de datos;
+- exclusions y ambiguedades.
+
+No-goals:
+
+- estrategias;
+- reglas de entrada;
+- stops;
+- targets;
+- sizing;
+- ejecucion.
+
+### `01_EVENT_ENGINE_MODEL/`
+
+Diseno conceptual del motor que transforma datos auditados en `event_table`.
+
+Inputs:
+
+- `master_daily_table`;
+- `master_intraday_table`;
+- `symbol_master`;
+- `corporate_actions_table`;
+- `calendar_table`;
+- definiciones de `00_EVENT_LIBRARY/`.
+
+Outputs:
+
+- especificacion de `event_table`;
+- reglas de deteccion;
+- reglas de versionado de eventos;
+- criterios de reproducibilidad.
+
+### `02_OUTCOME_RESEARCH/`
+
+Marco para medir que ocurre despues de un evento.
+
+Inputs:
+
+- `event_table`;
+- datos de precios y liquidez auditados;
+- calendario;
+- constraints de corporate actions y halts.
+
+Outputs:
+
+- `outcome_table`;
+- horizontes de outcome;
+- metricas de continuation, reversal, failure, volatility, liquidity y risk;
+- taxonomia de resultados.
+
+### `03_STRATEGY_LIBRARY/`
+
+Biblioteca de respuestas operacionales propuestas.
+
+Inputs:
+
+- eventos;
+- outcomes;
+- hipotesis de edge;
+- doctrina de ejecucion.
+
+Outputs:
+
+- definiciones de estrategias;
+- variantes;
+- reglas de accion;
+- prerequisitos;
+- condiciones de invalidez.
+
+Regla:
+
+```text
+una estrategia responde a eventos; no inventa la realidad upstream
+```
+
+### `04_STRATEGY_RESEARCH/`
+
+Marco para evaluar estrategias bajo reglas reproducibles.
+
+Inputs:
+
+- `event_table`;
+- `outcome_table`;
+- Strategy Library;
+- constraints de ejecucion;
+- costes, slippage y riesgo.
+
+Outputs:
+
+- resultados de estrategia;
+- walk-forward results;
+- robustness checks;
+- failure modes;
+- evidencia para promocion o descarte.
+
+### `05_EDGE_HYPOTHESES/`
+
+Hipotesis causales o mecanicas sobre por que podria existir edge.
 
 No contiene estrategias completas.
+No contiene resultados de backtest como autoridad final.
 
-Contiene explicaciones sobre por qué una ventaja podría existir.
+### `06_PATTERN_DISCOVERY/`
 
----
+Patrones encontrados en datos, no ideas humanas sueltas.
 
-## Ejemplos
+Outputs esperados:
 
-```text
-Short_Seller_Trap.md
+- candidate patterns;
+- support metrics;
+- stability notes;
+- limits of evidence.
 
-Low_Float_Inefficiency.md
+### `07_CLUSTER_RESEARCH/`
 
-News_Repricing_Delay.md
+Agrupacion de comportamientos de mercado.
 
-Liquidity_Vacuum.md
+No agrupa tickers por identidad empresarial.
+Agrupa estados, trayectorias, eventos y respuestas observadas.
 
-Retail_FOMO_Cascade.md
+### `08_EXECUTION_MODELS/`
 
-Market_Maker_Hedging.md
-```
+Modelos de ejecucion realista.
 
----
+Debe cubrir:
 
-## Ejemplos de hipótesis
+- fills;
+- liquidity;
+- spread;
+- slippage;
+- halts;
+- partial fills;
+- latency;
+- constraints operativas.
 
-```text
-Los floats extremadamente bajos generan squeezes más violentos.
+### `09_DECISION_MODELS/`
 
-Los shorts atrapados producen aceleraciones no lineales.
+Modelos que convierten probabilidades, constraints y contexto en decision.
 
-Los gaps con noticia positiva presentan persistencia intradía.
-```
+Inputs:
 
----
+- predicciones ML;
+- outcomes;
+- risk state;
+- execution constraints;
+- portfolio context.
 
-## Pregunta principal
+Outputs:
 
-```text
-¿Por qué debería existir el edge?
-```
+- action policy;
+- abstention rules;
+- sizing policy;
+- risk gates.
 
----
+### `10_EVOLUTION_SYSTEMS/`
 
-# 04_PATTERN_CATALOG
+Espacio de diseno para AlphaEvolve/OpenEvolve aplicado a TSIS.
 
-## Objetivo
+Solo puede operar cuando existan:
 
-Base de conocimiento de patrones descubiertos mediante investigación.
+- datos auditados;
+- eventos versionados;
+- outcomes versionados;
+- evaluadores bloqueados;
+- constraints explicitos;
+- lineage completo;
+- validacion out-of-sample.
 
-Aquí no viven las hipótesis humanas.
+### `11_SQUEEZE_RESEARCH/`
 
-Aquí viven los patrones encontrados en los datos.
+Investigacion especializada sobre squeezes, low float runners, liquidity
+vacuum, trapped shorts, SSR, halts y expansiones intradia.
 
----
+Debe estar conectada a Event Library, Outcome Research y Strategy Research.
 
-## Fuentes
+### `90_DISCRETIONARY_FRAMEWORKS/`
 
-```text
-Backtesting
-Pattern Mining
-Machine Learning
-Clustering
-Análisis estadístico
-```
+Material discrecional, modelos mentales y doctrina humana que todavia no ha
+sido mecanizada.
 
----
+No debe contaminar eventos ni evaluadores como si fuera contrato objetivo.
 
-## Ejemplos
+### `99_EXPERIMENTAL/`
 
-```text
-Pattern_001.md
+Ideas no promovidas, prototipos conceptuales y notas de investigacion
+contenidas.
 
-Pattern_002.md
+Nada en esta carpeta es autoridad hasta promocion documentada.
 
-Pattern_003.md
-```
+## Criterio para conservar carpetas
 
----
+Una carpeta de `13_TRADING_SYSTEMS/` solo debe mantenerse si tiene:
 
-## Ejemplo de patrón
+- README funcional;
+- proposito claro;
+- inputs;
+- outputs;
+- no-goals;
+- estado de madurez;
+- relacion con `TSIS_LAB_ARCHITECTURE.md`;
+- relacion con Graphify si debe entrar en el grafo.
 
-```text
-83% de los movimientos >80%
+Las carpetas vacias sin README funcional deben eliminarse, fusionarse o
+archivarse durante el refactor.
 
-ocurren cuando:
+## Relacion con Graphify
 
-Float < 5M
-PM Volume > 3M
-Gap > 40%
-```
-
----
-
-## Pregunta principal
-
-```text
-¿Qué patrones aparecen realmente en los datos?
-```
-
----
-
-# 05_EXECUTION_MODELS
-
-## Objetivo
-
-Documentar cómo se ejecutan las operaciones.
-
-Dos traders pueden utilizar la misma estrategia y ejecutar de forma completamente distinta.
-
----
-
-## Ejemplos
+El grafo debe seguir el protocolo oficial:
 
 ```text
-Aggressive_Breakout.md
-
-Passive_Pullback.md
-
-Scale_In.md
-
-Scale_Out.md
-
-Momentum_Chase.md
-
-Confirmation_Entry.md
+../GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md
 ```
 
----
-
-## Variables estudiadas
-
-```text
-Entradas
-
-Salidas
-
-Stops
-
-Gestión parcial
-
-Escalado
-
-Gestión de riesgo
-```
-
----
-
-## Pregunta principal
-
-```text
-¿Cómo se ejecuta el trade?
-```
-
----
-
-# 06_DISCRETIONARY_FRAMEWORKS
-
-## Objetivo
-
-Capturar conocimiento discrecional difícil de formalizar.
-
-Representa cómo piensa un trader experto.
-
----
-
-## Ejemplos
-
-```text
-Tape_Reading/
-
-Level2_Interpretation/
-
-Market_Psychology/
-
-Momentum_Assessment/
-
-Context_Recognition/
-```
-
----
-
-## Contenido esperado
-
-```text
-Casos reales
-
-Diagramas
-
-Capturas DAS
-
-Análisis de tape
-
-Lecturas de L2
-
-Estudios subjetivos
-```
-
----
-
-## Pregunta principal
-
-```text
-¿Qué observa un trader experto que todavía no está modelado?
-```
-
----
-
-# 07_STRATEGY_EVOLUTION
-
-## Objetivo
-
-Historial evolutivo de las estrategias.
-
-Permite entender cómo una estrategia cambia a lo largo del tiempo.
-
----
-
-## Ejemplos
-
-```text
-PM_Squeeze/
-    v1/
-    v2/
-    v3/
-```
-
----
-
-## Información almacenada
-
-```text
-Cambios
-
-Motivación
-
-Resultados
-
-Mejoras
-
-Regresiones
-```
-
----
-
-## Pregunta principal
-
-```text
-¿Cómo ha evolucionado esta estrategia?
-```
-
----
-
-# 08_STRATEGY_CLUSTERS
-
-## Objetivo
-
-Agrupar eventos de mercado similares.
-
-No agrupa tickers.
-
-No agrupa empresas.
-
-Agrupa comportamientos.
-
----
-
-## Ejemplos
-
-```text
-Cluster_001_Explosive_Squeezes/
-
-Cluster_002_Slow_Grinders/
-
-Cluster_003_Parabolic_Runners/
-
-Cluster_004_Failed_Breakouts/
-```
-
----
-
-## Fuentes
-
-```text
-K-Means
-
-HDBSCAN
-
-UMAP
-
-Hierarchical Clustering
-
-Representation Learning
-```
-
----
-
-## Pregunta principal
-
-```text
-Qué familias de comportamiento existen?
-```
-
----
-
-# 09_SQUEEZE_RESEARCH
-
-## Objetivo
-
-Área especializada para el fenómeno más importante del proyecto.
-
-Estudio sistemático de:
-
-```text
-Short Squeezes
-
-Momentum Squeezes
-
-Low Float Runners
-
-Intraday Expansions
-
-Liquidity Vacuums
-```
-
----
-
-## Posibles secciones
-
-```text
-01_Theory
-
-02_Microstructure
-
-03_Historical_Cases
-
-04_Tape_and_L2
-
-05_Pattern_Mining
-
-06_ML_Research
-
-07_Offline_RL
-
-08_Squeeze_Dataset
-```
-
----
-
-## Preguntas principales
-
-```text
-Qué genera un squeeze?
-
-Cómo nace?
-
-Cómo evoluciona?
-
-Qué variables predicen su magnitud?
-
-Qué diferencia un squeeze mediocre de uno explosivo?
-
-Cuál es el retroceso óptimo?
-
-Qué estados de mercado preceden los mayores runners?
-```
-
----
-
-# Relación con TSIS
-
-```text
-Strategy Library
-        ↓
-Setup Taxonomy
-        ↓
-Edge Hypotheses
-        ↓
-Backtesting
-        ↓
-Pattern Catalog
-        ↓
-Strategy Clusters
-        ↓
-Machine Learning
-        ↓
-Offline RL
-        ↓
-Strategy Evolution
-```
-
-Esta carpeta representa la capa de conocimiento financiero de TSIS. Todo el resto del sistema existe para estudiar, validar, explicar y evolucionar los conceptos almacenados aquí.
+Despues de cambios estructurales en esta carpeta, no basta con Git commit.
+
+Debe actualizarse el slice de Graphify correspondiente mediante el protocolo
+oficial. Si el cambio incluye renombres o eliminaciones, no debe fusionarse a
+ciegas con el grafo raiz: primero hay que verificar que el root no conserva
+nodos de rutas antiguas del mismo slice.
+
+Estado 2026-06-18:
+
+- el leaf event-first de `13_TRADING_SYSTEMS/` ya fue construido y diagnosticado;
+- el leaf local esta en
+  `../graphify-out/leaf_slices/trading_systems_event_first_20260618/`;
+- el root `../graphify-out/graph.json` conserva rutas antiguas de
+  `13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY/`;
+- por tanto, el root no debe declararse actualizado para trading hasta hacer
+  un rebuild controlado o un reemplazo oficial de slice.
+
+`graphify-out/` es runtime reconstruible. No es source of truth.
+
+## Siguientes acciones
+
+1. Convertir eventos de `00_private/eventos.md` en definiciones gobernadas
+   dentro de `00_EVENT_LIBRARY/`.
+2. Definir el contrato conceptual de `event_table` en
+   `01_EVENT_ENGINE_MODEL/`.
+3. Definir el contrato conceptual de `outcome_table` en
+   `02_OUTCOME_RESEARCH/`.
+4. Revisar el material existente en `03_STRATEGY_LIBRARY/` y mover piezas si
+   alguna pertenece mejor a Edge Hypotheses, Execution Models o Squeeze
+   Research.
+5. Integrar el leaf Graphify event-first en el root sin conservar rutas
+   antiguas.

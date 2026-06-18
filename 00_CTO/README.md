@@ -53,7 +53,38 @@ No debe crearse un changelog por cada Harness mientras sigan en fase de diseno.
 Los Harness operativos futuros deben dejar `run_manifest`, `run_summary`,
 `trace logs` y, solo si procede, release log propio.
 
+## Reglas locales y arquitectura promovida
 
+Antes de modificar `00_CTO/`, todo agente debe leer:
+
+- `LOCAL_RULES.md`
+- `TSIS_LAB_ARCHITECTURE.md`
+- `00_CTO_REFACTOR_PLAN.md`
+
+Estos documentos fijan la interpretacion vigente de esta capa:
+
+- `LOCAL_RULES.md` define las reglas locales, estados de conocimiento,
+  relacion con `00_private/`, politica Graphify y criterio funcional para
+  carpetas activas.
+- `TSIS_LAB_ARCHITECTURE.md` promueve la arquitectura derivada de
+  `00_private/arquitectura.md` a una lectura gobernada.
+- `00_CTO_REFACTOR_PLAN.md` define como alinear el arbol fisico con esa
+  arquitectura sin destruir memoria historica ni duplicar autoridad operativa.
+
+Regla practica:
+
+```text
+ninguna carpeta activa de 00_CTO se conserva solo por inercia historica
+```
+
+Cada carpeta activa debe poder explicar:
+
+- proposito funcional;
+- inputs;
+- outputs;
+- no-goals;
+- estado de madurez;
+- relacion con la arquitectura TSIS Lab.
 
 ## Regla de trazabilidad Harness
 
@@ -236,6 +267,13 @@ El protocolo operativo local obligatorio esta en:
 00_CTO/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md
 ```
 
+La cola versionada para agrupar refrescos y evitar gastar tokens por cambios
+menores esta en:
+
+```text
+00_CTO/GRAPHIFY_REFRESH_QUEUE.md
+```
+
 Ese protocolo manda sobre cualquier improvisacion local. En particular, ningun
 agente debe crear manualmente `00_CTO/graphify-out/graph.json` y presentarlo
 como Graphify oficial.
@@ -269,19 +307,60 @@ Las actualizaciones del grafo de `00_CTO` se gobiernan en:
 El grafo raiz actual es un grafo fusionado. Cuando se anadan o modifiquen
 archivos, un agente no debe reescanear todo `00_CTO` como bloque unico por
 defecto. Debe identificar el slice afectado, reconstruir o actualizar ese leaf
-mediante Graphify oficial, fusionarlo con `graphify merge-graphs`, reclusterizar
-con `graphify cluster-only` y validar con `graphify diagnose multigraph`.
+mediante Graphify oficial y decidir si el root puede aceptar un merge aditivo.
+Si no hubo renombres ni eliminaciones, puede fusionarlo con
+`graphify merge-graphs`, reclusterizar con `graphify cluster-only` y validar con
+`graphify diagnose multigraph`. Si hubo renombres o eliminaciones, primero debe
+confirmar que el root no conserva nodos antiguos del slice.
 
 Mapping vigente para trading:
 
 ```text
-13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY/
+13_TRADING_SYSTEMS/
 -> core_cto_graph / trading_systems_slice
 ```
 
 Por tanto, una incorporacion de documentos o PDFs en
-`13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY/` no queda absorbida por el grafo raiz
-hasta que ese slice haya sido extraido, fusionado y diagnosticado oficialmente.
+`13_TRADING_SYSTEMS/` no queda absorbida por el grafo raiz hasta que el slice
+de trading haya sido extraido, integrado sin nodos antiguos y diagnosticado
+oficialmente.
+
+Nota 2026-06-18:
+
+```text
+01_STRATEGY_LIBRARY -> 03_STRATEGY_LIBRARY
+```
+
+El grafo raiz actual fue construido antes del refactor fisico event-first de
+`13_TRADING_SYSTEMS/`. Por tanto, las consultas Graphify sobre trading systems
+deben tratarse como potencialmente desactualizadas hasta ejecutar el rebuild
+oficial del slice.
+
+Actualizacion 2026-06-18:
+
+- El leaf oficial event-first de `13_TRADING_SYSTEMS/` ya fue construido y
+  diagnosticado con Graphify.
+- Leaf local runtime:
+  `00_CTO/graphify-out/leaf_slices/trading_systems_event_first_20260618/`
+- Verificacion del leaf:
+
+```text
+nodes: 438
+links: 614
+hyperedges: 18
+communities: 19
+missing_endpoint_edges: 0
+dangling_endpoint_edges: 0
+exact_duplicate_edges: 0
+```
+
+Ese leaf no se fusiono al grafo raiz porque el root actual conserva nodos con
+rutas historicas como `13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY/`. En Graphify
+0.8.40, `graphify merge-graphs` compone grafos; no reemplaza un slice antiguo.
+Fusionar ahora dejaria simultaneamente rutas viejas y nuevas, degradando las
+busquedas. La siguiente actualizacion del root debe ser un rebuild controlado
+desde leaves vigentes, o un mecanismo oficial de reemplazo de slice si Graphify
+lo incorpora.
 
 ### Scope operativo inicial
 
@@ -373,7 +452,8 @@ Cobertura incluida:
 - `99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised`
 - `99_REFERENCE_LIBRARY/SersanSistemas/02_workshops`, slice documental
   detectada por Graphify: `.md`, `.txt`, `.html`
-- `13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY`, slice incremental de trading:
+- `13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY`, slice incremental historico de trading
+  antes del refactor fisico event-first:
   `07_Long_plays.md`, `07_Short_Plays.md` y
   `Day Trading en Small Caps - XVNTrading.pdf`
 
@@ -390,6 +470,9 @@ exact_duplicate_edges: 0
 
 Pendiente o diferido:
 
+- integracion del leaf event-first de `13_TRADING_SYSTEMS/` en el grafo raiz
+  mediante rebuild controlado desde leaves vigentes o reemplazo oficial de
+  slice; no usar merge aditivo mientras existan nodos de rutas antiguas;
 - imagenes y videos de `02_workshops`, por coste/tamano operativo;
 - JSON de alineacion/transcripcion de `02_workshops`: Graphify 0.8.40 los
   detecto como `code`, pero el extractor AST oficial produjo `0` nodos y `0`
@@ -441,6 +524,35 @@ por manifests.
 
 ## Documentos activos y siguientes
 
+### Gobierno arquitectonico activo
+
+1. `LOCAL_RULES.md`
+
+   Contrato local de `00_CTO/`: autoridad, estados de conocimiento, regla
+   event-first, politica Graphify y criterio funcional para carpetas activas.
+
+2. `TSIS_LAB_ARCHITECTURE.md`
+
+   Arquitectura promovida del laboratorio TSIS:
+
+   ```text
+   Data Foundation
+   -> Event Library
+   -> Event Engine
+   -> Outcome Research
+   -> Strategy Research
+   -> Pattern Discovery
+   -> Cluster Research
+   -> Machine Learning
+   -> Decision Models
+   -> Evolution Systems
+   ```
+
+3. `00_CTO_REFACTOR_PLAN.md`
+
+   Plan gobernado para decidir que carpetas se conservan, clarifican,
+   refactorizan, mueven, separan o archivan.
+
 ### Documento activo creado
 
 1. `12_TSIS_COGNITIVE_ARCHITECTURE/README.md`
@@ -485,6 +597,17 @@ despues permitir busqueda evolutiva.
 ```
 
 ## Mapa de carpetas
+
+El mapa siguiente es descriptivo. La decision activa sobre si una carpeta se
+mantiene, se clarifica, se refactoriza, se mueve o se archiva vive en:
+
+```text
+00_CTO_REFACTOR_PLAN.md
+```
+
+La regla actual es funcional: si una carpeta no tiene proposito, inputs,
+outputs, no-goals, madurez y relacion clara con `TSIS_LAB_ARCHITECTURE.md`, no
+debe tratarse como carpeta estable.
 
 ### `00_private/`
 

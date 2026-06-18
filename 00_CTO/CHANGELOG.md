@@ -52,28 +52,63 @@ run summaries, trace logs y, si procede, release log propio.
 
 ### Added
 
+- Added `LOCAL_RULES.md` as the local operating contract for `00_CTO`,
+  including authority boundaries, knowledge states, event-first architecture
+  rules, Graphify policy and functional folder criteria.
+- Added `TSIS_LAB_ARCHITECTURE.md` as the promoted architecture derived from
+  `00_private/arquitectura.md`, covering the governed sequence from Data
+  Foundation to Evolution Systems.
+- Added `00_CTO_REFACTOR_PLAN.md` with a functional matrix for active
+  top-level folders and a governed target structure for
+  `13_TRADING_SYSTEMS/`.
+- Refactored `13_TRADING_SYSTEMS/` into the governed event-first physical tree:
+  `00_EVENT_LIBRARY`, `01_EVENT_ENGINE_MODEL`, `02_OUTCOME_RESEARCH`,
+  `03_STRATEGY_LIBRARY`, `04_STRATEGY_RESEARCH`, `05_EDGE_HYPOTHESES`,
+  `06_PATTERN_DISCOVERY`, `07_CLUSTER_RESEARCH`, `08_EXECUTION_MODELS`,
+  `09_DECISION_MODELS`, `10_EVOLUTION_SYSTEMS`, `11_SQUEEZE_RESEARCH`,
+  `90_DISCRETIONARY_FRAMEWORKS` and `99_EXPERIMENTAL`.
+- Added functional READMEs for active `13_TRADING_SYSTEMS/` folders and Event
+  Library event-family folders.
 - Documented the official incremental Graphify update protocol for `00_CTO`
   leaf slices in `GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md`.
 - Added a reusable agent prompt for refreshing the official `00_CTO` Graphify
   graph after recent Git changes.
-- Added the current mapping for
+- Added `GRAPHIFY_REFRESH_QUEUE.md` to stop treating Graphify like continuous
+  Git state and to batch refreshes by semantic severity.
+- Documented Graphify refresh cadence:
+  `LOW` no refresh, `MEDIUM` queue, `HIGH` leaf rebuild, `CRITICAL` leaf rebuild
+  plus explicit root decision.
+- Added the historical Graphify mapping for
   `13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY/`:
   `core_cto_graph / trading_systems_slice`.
-- Updated the official runtime Graphify root graph with the incremental
-  `trading_systems_slice`.
+- Built and diagnosed the official event-first Graphify leaf for
+  `13_TRADING_SYSTEMS/` after the physical refactor. The leaf is stored as
+  ignored runtime output under
+  `00_CTO/graphify-out/leaf_slices/trading_systems_event_first_20260618/`.
 
 ### Notes
 
+- Physical folder refactor has been executed for `13_TRADING_SYSTEMS/` and the
+  new event-first Graphify leaf has been built and diagnosed, but the root
+  graph has not been merged with that leaf. Treat trading-system graph queries
+  against `00_CTO/graphify-out/graph.json` as potentially stale until a
+  controlled root rebuild or official slice-replacement flow is completed.
 - New or modified trading strategy docs and PDFs under
-  `13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY/` must be absorbed through an
-  official Graphify leaf update/rebuild, followed by `graphify merge-graphs`,
-  `graphify cluster-only` and `graphify diagnose multigraph`.
-- The root graph must not be declared current for that source path until the
-  trading systems slice has been extracted, merged, reclustered and diagnosed.
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/` must be absorbed through the
+  official Graphify leaf update/rebuild flow.
+- Do not use `graphify merge-graphs` as a blind update after folder renames or
+  deletions. In Graphify 0.8.40, the command composes graphs and does not
+  remove old slice nodes from the root graph.
+- The root graph must not be declared current for `13_TRADING_SYSTEMS/` until
+  the new event-first leaf has been integrated without retaining stale path
+  nodes, then reclustered and diagnosed.
 - Do not assume a post-commit hook updates `00_CTO` Graphify correctly. Because
   the root graph is slice-merged and includes semantic docs/PDFs/references,
   agents must follow the governed slice update protocol.
-- Absorbed files in the current update:
+- Do not spend Graphify extraction tokens for every small Git change. Agents
+  must classify refresh severity and use `GRAPHIFY_REFRESH_QUEUE.md` unless the
+  current task genuinely requires an updated semantic map.
+- Absorbed files in the previous trading slice update before the path refactor:
   - `13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY/07_Long_plays.md`
   - `13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY/07_Short_Plays.md`
   - `13_TRADING_SYSTEMS/01_STRATEGY_LIBRARY/Day Trading en Small Caps - XVNTrading.pdf`
@@ -83,6 +118,18 @@ run summaries, trace logs y, si procede, release log propio.
 nodes: 1732
 edges: 2269
 communities: 166
+missing_endpoint_edges: 0
+dangling_endpoint_edges: 0
+exact_duplicate_edges: 0
+```
+
+Event-first `13_TRADING_SYSTEMS/` leaf built after the physical refactor:
+
+```text
+nodes: 438
+links: 614
+hyperedges: 18
+communities: 19
 missing_endpoint_edges: 0
 dangling_endpoint_edges: 0
 exact_duplicate_edges: 0
