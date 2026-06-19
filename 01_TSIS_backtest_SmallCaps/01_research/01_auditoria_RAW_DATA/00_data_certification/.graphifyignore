@@ -1,0 +1,40 @@
+# Runtime and generated graph outputs
+graphify-out/
+**/graphify-out/
+**/_graphify_staging*/
+**/graphify-*-corpus/
+
+# Python/runtime caches
+__pycache__/
+**/__pycache__/
+.pytest_cache/
+**/.pytest_cache/
+cache/
+cache*/
+**/cache/
+**/cache*/
+runtime/
+run/
+runs/
+
+# Physical data and heavy profiling artifacts
+*.parquet
+*.csv
+*.zip
+*.7z
+*.gz
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Visual or binary evidence belongs in explicit evidence leaves, not decisions.
+*.png
+*.jpg
+*.jpeg
+*.webp
+img/
+**/img/
+
+# Notebooks are important evidence, but not part of certification_decisions_graph.
+*.ipynb

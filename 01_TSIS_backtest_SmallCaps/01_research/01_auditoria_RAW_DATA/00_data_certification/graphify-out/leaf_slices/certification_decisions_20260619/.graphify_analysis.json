@@ -1,0 +1,470 @@
+{
+  "communities": {
+    "0": [
+      "trades_04_trades_provisional_cert_policy_document",
+      "trades_04_trades_provisional_cert_policy_provisional_certification_policy",
+      "trades_05_trades_review_1m_reference_alignment_document",
+      "trades_05_trades_review_1m_reference_alignment_review_1m_reference_alignment",
+      "trades_06_trades_review_microstructure_document",
+      "trades_06_trades_review_microstructure_review_microstructure",
+      "trades_07_trades_reference_scale_mismatch_document",
+      "trades_07_trades_reference_scale_mismatch_reference_scale_mismatch",
+      "trades_08_trades_bad_data_bad_data",
+      "trades_08_trades_bad_data_document",
+      "trades_09_trades_review_no_1m_reference_document",
+      "trades_09_trades_review_no_1m_reference_review_no_1m_reference",
+      "trades_10_trades_bucket_synthesis_bucket_synthesis",
+      "trades_10_trades_bucket_synthesis_document",
+      "trades_11_trades_review_generic_document",
+      "trades_11_trades_review_generic_review_generic",
+      "trades_12_trades_good_document",
+      "trades_12_trades_good_good",
+      "trades_13_trades_recovery_review_no_1m_reference_document",
+      "trades_13_trades_recovery_review_no_1m_reference_recovery_review_no_1m_reference",
+      "trades_14_trades_recovery_reference_scale_mismatch_document",
+      "trades_14_trades_recovery_reference_scale_mismatch_recovery_reference_scale_mismatch",
+      "trades_15_trades_recovery_review_microstructure_document",
+      "trades_15_trades_recovery_review_microstructure_recovery_review_microstructure",
+      "trades_16_trades_recovery_review_1m_reference_alignment_document",
+      "trades_16_trades_recovery_review_1m_reference_alignment_recovery_review_1m_reference_alignment",
+      "trades_17_trades_recovery_review_generic_document",
+      "trades_17_trades_recovery_review_generic_recovery_review_generic",
+      "trades_18_trades_recovery_synthesis_document",
+      "trades_18_trades_recovery_synthesis_recovery_synthesis",
+      "trades_19_trades_final_recovery_policy_document",
+      "trades_19_trades_final_recovery_policy_final_certification_states",
+      "trades_19_trades_final_recovery_policy_final_recovery_policy"
+    ],
+    "1": [
+      "additional_04_additional_closeout_family_level_certification_states",
+      "daily_04_daily_closeout",
+      "daily_04_daily_closeout_daily_final_policy",
+      "daily_04_daily_closeout_daily_hard_invalid_exclusion",
+      "daily_04_daily_closeout_vw_illiquidity_review",
+      "halts_01_contrato_halts",
+      "halts_01_contrato_halts_halts_as_event_truth",
+      "ohlcv_1m_04_ohlcv_1m_closeout",
+      "ohlcv_1m_04_ohlcv_1m_closeout_ohlcv_1m_final_policy",
+      "ohlcv_1m_04_ohlcv_1m_closeout_rescue_schema_only_good",
+      "ohlcv_1m_04_ohlcv_1m_closeout_vw_severe_bad",
+      "reference_01_contrato_reference",
+      "reference_01_contrato_reference_reference_identity_corporate_actions_truth",
+      "reference_03_reference_root_cause_audit_phase1_closeout",
+      "reference_03_reference_root_cause_audit_phase1_closeout_reference_structural_phase1_decision",
+      "reference_04_reference_causal_overlay_closeout",
+      "reference_04_reference_causal_overlay_closeout_reference_causal_overlay_policy",
+      "reference_04_reference_closeout",
+      "reference_04_reference_closeout_bad_unresolved_identity",
+      "reference_04_reference_closeout_reference_final_policy",
+      "reference_04_reference_closeout_split_explains_trade_scale_mismatch",
+      "reference_04_reference_closeout_ticker_change_near_halt",
+      "reference_04_reference_closeout_ticker_change_near_quotes_anomaly",
+      "v2_04_quotes_full_c_d_closeout",
+      "v2_04_quotes_full_c_d_closeout_ask_zero_degenerate_hard_fail",
+      "v2_04_quotes_full_c_d_closeout_positive_cross_severity_policy",
+      "v2_04_quotes_full_c_d_closeout_quotes_final_policy",
+      "v2_04_quotes_full_c_d_closeout_soft_crossed_micro_noise_good"
+    ],
+    "2": [
+      "additional_01_contrato_additional",
+      "additional_01_contrato_additional_additional_subblock_policy",
+      "additional_01_contrato_additional_empty_placeholders_not_failure",
+      "additional_04_additional_causal_overlay_closeout",
+      "additional_04_additional_causal_overlay_closeout_additional_causal_overlay_policy",
+      "additional_04_additional_closeout",
+      "additional_04_additional_closeout_additional_final_policy",
+      "additional_04_additional_closeout_corporate_actions_additional_review",
+      "additional_04_additional_closeout_financials_core_good",
+      "additional_04_additional_closeout_ipo_near_halt_market_event",
+      "additional_04_additional_closeout_news_near_halt_market_event",
+      "halts_03_halts_root_cause_audit_phase1_closeout",
+      "halts_03_halts_root_cause_audit_phase1_closeout_halts_structural_phase1_decision",
+      "halts_03_halts_root_cause_audit_phase1_closeout_nasdaq_recovered_intraday",
+      "halts_03_halts_root_cause_audit_phase1_closeout_sec_regulatory_context_only",
+      "halts_04_halts_causal_overlay_closeout",
+      "halts_04_halts_causal_overlay_closeout_halts_causal_overlay_policy",
+      "halts_04_halts_closeout",
+      "halts_04_halts_closeout_confirmed_halt_microstructure_coherent",
+      "halts_04_halts_closeout_halt_overlay_review_buckets",
+      "halts_04_halts_closeout_halts_final_policy"
+    ],
+    "3": [
+      "additional_00_additional_current_state",
+      "additional_01_additional_subblock_policy",
+      "additional_01_additional_subblock_policy_corporate_actions_secondary_reference",
+      "additional_01_additional_subblock_policy_news_ambiguous_multiticker",
+      "additional_01_additional_subblock_policy_six_subblocks",
+      "additional_02_additional_closeout",
+      "additional_02_additional_closeout_accepted_heterogeneous_block",
+      "certification_00_final_certification_process",
+      "certification_00_final_certification_process_blocking_policy_by_dataset",
+      "certification_00_final_certification_process_canonical_decision_units",
+      "certification_00_final_certification_process_canonical_output_package",
+      "certification_00_final_certification_process_canonical_universe_scope",
+      "certification_00_final_certification_process_certification_verdicts",
+      "certification_00_final_certification_process_expected_present_healthy_usable",
+      "certification_00_final_certification_process_sequential_certification_layers",
+      "short_04_short_closeout",
+      "short_04_short_closeout_finra_short_baseline"
+    ],
+    "4": [
+      "quotes_08_persistent_soft_crossed_mid_large_scale_bucket_review_decision",
+      "quotes_08_persistent_soft_crossed_mid_large_scale_document",
+      "quotes_08_persistent_soft_crossed_mid_large_scale_halt_explains_not_clean",
+      "quotes_09_large_file_threshold_edge_hard_many_crosses_bucket_review_decision",
+      "quotes_09_large_file_threshold_edge_hard_many_crosses_document",
+      "quotes_09_large_file_threshold_edge_hard_many_crosses_mixed_severity_tail",
+      "quotes_10_medium_file_threshold_edge_hard_many_crosses_bucket_bad_decision",
+      "quotes_10_medium_file_threshold_edge_hard_many_crosses_document",
+      "quotes_10_medium_file_threshold_edge_hard_many_crosses_hard_fail_not_rehabilitated",
+      "quotes_11_high_hard_crossed_10_to_20_bucket_bad_decision",
+      "quotes_11_high_hard_crossed_10_to_20_document",
+      "quotes_11_high_hard_crossed_10_to_20_extreme_hard_fail",
+      "quotes_12_quotes_open_buckets_synthesis_causal_context_vs_book_quality",
+      "quotes_12_quotes_open_buckets_synthesis_document",
+      "quotes_12_quotes_open_buckets_synthesis_open_bucket_final_classification",
+      "quotes_12_quotes_open_buckets_synthesis_transversal_layer_strength"
+    ],
+    "5": [
+      "halts_02_halts_quality_policy_bad_unusable_event_residue",
+      "halts_02_halts_quality_policy_document",
+      "halts_02_halts_quality_policy_halts_quality_states",
+      "halts_03_halts_closeout_document",
+      "halts_03_halts_closeout_halts_event_truth_layer",
+      "halts_03_halts_closeout_halts_final_policy",
+      "reference_00_reference_current_state_reference_identity_recovered",
+      "reference_01_reference_causal_value_document",
+      "reference_01_reference_causal_value_events_to_halts_strong_signal",
+      "reference_01_reference_causal_value_events_to_quotes_mixed_signal",
+      "reference_01_reference_causal_value_splits_to_daily_1m_weak_alignment",
+      "reference_01_reference_causal_value_splits_to_trades_small_defensible_subset",
+      "reference_02_reference_closeout_document",
+      "reference_02_reference_closeout_reference_confidence_order",
+      "reference_02_reference_closeout_reference_final_policy"
+    ],
+    "6": [
+      "quotes_01_quotes_certification_contract_document",
+      "quotes_01_quotes_certification_contract_quotes_expected_not_closed",
+      "quotes_01_quotes_certification_contract_quotes_present_materialization",
+      "quotes_01_quotes_certification_contract_quotes_usable_policy",
+      "quotes_02_quotes_expected_presence_logic_document",
+      "quotes_02_quotes_expected_presence_logic_quotes_expected_constraints",
+      "quotes_02_quotes_expected_presence_logic_synthetic_expected_deferred",
+      "quotes_03_quotes_quality_policy_document",
+      "quotes_03_quotes_quality_policy_local_then_crosswalk_explanation",
+      "quotes_03_quotes_quality_policy_quotes_quality_bucket_map",
+      "quotes_04_quotes_usage_policy_document",
+      "quotes_04_quotes_usage_policy_quotes_backtest_usage_policy",
+      "quotes_04_quotes_usage_policy_quotes_ml_usage_policy"
+    ],
+    "7": [
+      "daily_00_daily_current_state",
+      "daily_01_daily_recovery_and_coverage",
+      "daily_01_daily_recovery_and_coverage_coverage_recovery",
+      "daily_02_daily_quality_policy",
+      "daily_02_daily_quality_policy_hard_invalid_tail",
+      "daily_03_daily_closeout",
+      "daily_03_daily_closeout_problematic57_review_not_rehabilitated",
+      "daily_03_daily_closeout_recovery_states",
+      "v1_01_contrato_agent02_agent03_trades_04012026",
+      "v1_01_contrato_agent02_agent03_trades_04012026_agent02_agent03_trades_interface",
+      "v1_01_contrato_agent02_agent03_trades_04012026_trade_price_scale_mismatch_reclassification"
+    ],
+    "8": [
+      "graphify_readme_certification_decisions_graph_governance",
+      "graphify_readme_document",
+      "trades_00_trades_current_state_57f_full_clean_fast_same_schema",
+      "trades_00_trades_current_state_document",
+      "trades_02_trades_base_certification_decision_document",
+      "trades_02_trades_base_certification_decision_three_layer_certification_base",
+      "trades_02_trades_base_certification_decision_trades_certification_decision",
+      "trades_03_trades_old_vs_new_bucket_bridge_document",
+      "trades_03_trades_old_vs_new_bucket_bridge_old_vs_new_bucket_bridge",
+      "trades_20_trades_closeout_closeout_verdict",
+      "trades_20_trades_closeout_document"
+    ],
+    "9": [
+      "graphify_official_build_protocol",
+      "graphify_official_build_protocol_certification_decisions_graph",
+      "graphify_official_build_protocol_expected_present_healthy_usable_for",
+      "graphify_official_build_protocol_leaf_graph_family",
+      "graphify_official_build_protocol_notebooks_separate_leaf",
+      "graphify_official_build_protocol_official_graphify_build",
+      "graphify_official_build_protocol_recovery_and_exclusion",
+      "graphify_refresh_queue",
+      "graphify_refresh_queue_pending_leaf_build",
+      "graphify_refresh_queue_refresh_severity"
+    ],
+    "10": [
+      "quotes_00_quotes_certification_guide_document",
+      "quotes_00_quotes_certification_guide_quotes_auditoria_master_sources",
+      "quotes_00_quotes_certification_guide_quotes_certification_assembly_scope",
+      "quotes_05_quotes_artifact_mapping_document",
+      "quotes_05_quotes_artifact_mapping_quotes_canonical_artifacts",
+      "quotes_05_quotes_artifact_mapping_quotes_final_artifact_gap",
+      "quotes_06_quotes_cert_table_spec_document",
+      "quotes_06_quotes_cert_table_spec_quotes_table_grain_ticker_date",
+      "quotes_07_quotes_local_certification_build_plan_document",
+      "quotes_07_quotes_local_certification_build_plan_quotes_local_build_parked"
+    ],
+    "11": [
+      "short_00_short_current_state_document",
+      "short_00_short_current_state_finra_short_baseline",
+      "short_00_short_current_state_only_polygon_gap_overstated",
+      "short_00_short_current_state_polygon_secondary_context",
+      "short_01_short_recovery_and_limits_document",
+      "short_01_short_recovery_and_limits_short_recoverable_context",
+      "short_01_short_recovery_and_limits_short_recovery_limits",
+      "short_02_short_closeout_document",
+      "short_02_short_closeout_short_final_policy",
+      "short_02_short_closeout_short_operational_baseline"
+    ],
+    "12": [
+      "global_metrics_00_global_metrics_tables",
+      "global_metrics_00_global_metrics_tables_quantitative_summary_tables",
+      "global_metrics_01_global_metrics_tables_traceable",
+      "global_metrics_01_global_metrics_tables_traceable_source_artifact_traceability",
+      "global_metrics_02_working_links",
+      "global_metrics_04_global_metrics_tables_traceable_plain_paths",
+      "global_metrics_04_global_metrics_tables_traceable_plain_paths_plain_path_traceability",
+      "global_metrics_manifest",
+      "global_metrics_manifest_artifact_inventory"
+    ],
+    "13": [
+      "1m_00_1m_current_state",
+      "1m_01_1m_recovery_policy",
+      "1m_01_1m_recovery_policy_rescue_over_quarantine",
+      "1m_02_1m_quality_policy",
+      "1m_02_1m_quality_policy_good_review_bad_buckets",
+      "1m_02_1m_quality_policy_vw_taxonomy",
+      "1m_03_1m_closeout",
+      "1m_03_1m_closeout_full_scope_caveat"
+    ],
+    "14": [
+      "graphify_certification_decisions_graph_protocol_acceptance_criteria",
+      "graphify_certification_decisions_graph_protocol_corpus_inclusion_exclusion",
+      "graphify_certification_decisions_graph_protocol_document",
+      "graphify_certification_decisions_graph_protocol_downstream_impact",
+      "graphify_certification_decisions_graph_protocol_expected_families",
+      "graphify_certification_decisions_graph_protocol_expected_relationships",
+      "graphify_certification_decisions_graph_protocol_notebooks_future_leaf",
+      "graphify_certification_decisions_graph_protocol_objective"
+    ],
+    "15": [
+      "short_01_contrato_short",
+      "short_01_contrato_short_finra_baseline",
+      "short_01_contrato_short_short_market_link",
+      "short_03_short_root_cause_audit_phase1_closeout",
+      "short_03_short_root_cause_audit_phase1_closeout_days_to_cover_adv_zero_review",
+      "short_03_short_root_cause_audit_phase1_closeout_finra_short_volume_superior",
+      "short_03_short_root_cause_audit_phase1_closeout_polygon_secondary_provider",
+      "short_03_short_root_cause_audit_phase1_closeout_short_structural_phase1_decision"
+    ],
+    "16": [
+      "halts_00_halts_current_state",
+      "halts_00_halts_current_state_solid_event_layer",
+      "halts_01_halts_overlay_and_recovery",
+      "halts_01_halts_overlay_and_recovery_microstructure_overlay",
+      "halts_01_halts_overlay_and_recovery_problem_flags_context",
+      "short_04_short_causal_overlay_closeout",
+      "short_04_short_causal_overlay_closeout_short_context_not_universal_cause"
+    ],
+    "17": [
+      "reference_00_reference_current_state_document",
+      "reference_00_reference_current_state_reference_as_causal_layer",
+      "reference_00_reference_current_state_splits_to_trades_narrow_signal",
+      "trades_00_current_state_from_raw_shards_acceptance_counts_distribution",
+      "trades_00_current_state_from_raw_shards_document",
+      "trades_00_current_state_from_raw_shards_raw_shard_progress_snapshot",
+      "trades_00_current_state_from_raw_shards_recompute_running_metadata"
+    ],
+    "18": [
+      "daily_01_contrato_agent02_agent03_daily_04032026",
+      "daily_01_contrato_agent02_agent03_daily_04032026_daily_file_validation_contract",
+      "ohlcv_1m_01_contrato_agent02_agent03_ohlcv_1m_04032026",
+      "ohlcv_1m_01_contrato_agent02_agent03_ohlcv_1m_04032026_minute_file_validation_contract"
+    ],
+    "19": [
+      "additional_03_additional_root_cause_audit_phase1_closeout",
+      "additional_03_additional_root_cause_audit_phase1_closeout_additional_structural_phase1_decision"
+    ],
+    "20": [
+      "trades_01_trades_label_assessment_document",
+      "trades_01_trades_label_assessment_label_assessment"
+    ],
+    "21": [
+      "v1_01_contrato_agent02_agent03_03312026",
+      "v1_01_contrato_agent02_agent03_03312026_quotes_agent02_agent03_handoff_contract"
+    ]
+  },
+  "cohesion": {
+    "0": 0.0928030303030303,
+    "1": 0.07936507936507936,
+    "2": 0.1,
+    "3": 0.18382352941176472,
+    "4": 0.175,
+    "5": 0.17142857142857143,
+    "6": 0.19230769230769232,
+    "7": 0.21818181818181817,
+    "8": 0.21818181818181817,
+    "9": 0.3333333333333333,
+    "10": 0.2222222222222222,
+    "11": 0.28888888888888886,
+    "12": 0.25,
+    "13": 0.2857142857142857,
+    "14": 0.39285714285714285,
+    "15": 0.32142857142857145,
+    "16": 0.3333333333333333,
+    "17": 0.38095238095238093,
+    "18": 0.5,
+    "19": 1.0,
+    "20": 1.0,
+    "21": 1.0
+  },
+  "gods": [
+    {
+      "id": "trades_04_trades_provisional_cert_policy_provisional_certification_policy",
+      "label": "Provisional Certification Policy",
+      "degree": 10
+    },
+    {
+      "id": "trades_10_trades_bucket_synthesis_bucket_synthesis",
+      "label": "Bucket Synthesis",
+      "degree": 10
+    },
+    {
+      "id": "trades_19_trades_final_recovery_policy_final_recovery_policy",
+      "label": "Final Recovery Policy",
+      "degree": 9
+    },
+    {
+      "id": "trades_18_trades_recovery_synthesis_recovery_synthesis",
+      "label": "Recovery Synthesis",
+      "degree": 8
+    },
+    {
+      "id": "graphify_official_build_protocol_recovery_and_exclusion",
+      "label": "Recovery And Exclusion",
+      "degree": 7
+    },
+    {
+      "id": "additional_04_additional_closeout_family_level_certification_states",
+      "label": "Good Review Bad Certification States",
+      "degree": 7
+    },
+    {
+      "id": "certification_00_final_certification_process",
+      "label": "Final Certification Process",
+      "degree": 7
+    },
+    {
+      "id": "certification_00_final_certification_process_blocking_policy_by_dataset",
+      "label": "Blocking Policy By Dataset",
+      "degree": 7
+    },
+    {
+      "id": "trades_20_trades_closeout_closeout_verdict",
+      "label": "Trades Closeout Verdict",
+      "degree": 7
+    },
+    {
+      "id": "graphify_certification_decisions_graph_protocol_document",
+      "label": "Certification Decisions Graph Protocol",
+      "degree": 7
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Empty Placeholders Not Failure",
+      "target": "Recovery And Exclusion",
+      "source_files": [
+        "auditoria/additional/01_contrato_additional.md",
+        "GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities; peripheral node `Empty Placeholders Not Failure` unexpectedly reaches hub `Recovery And Exclusion`"
+    },
+    {
+      "source": "Daily Hard Invalid Exclusion",
+      "target": "Recovery And Exclusion",
+      "source_files": [
+        "auditoria/daily/04_daily_closeout.md",
+        "GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities; peripheral node `Daily Hard Invalid Exclusion` unexpectedly reaches hub `Recovery And Exclusion`"
+    },
+    {
+      "source": "Nasdaq Recovered Intraday",
+      "target": "Recovery And Exclusion",
+      "source_files": [
+        "auditoria/halts/03_halts_root_cause_audit_phase1_closeout.md",
+        "GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities; peripheral node `Nasdaq Recovered Intraday` unexpectedly reaches hub `Recovery And Exclusion`"
+    },
+    {
+      "source": "Rescue Schema Only Good",
+      "target": "Recovery And Exclusion",
+      "source_files": [
+        "auditoria/ohlcv_1m/04_ohlcv_1m_closeout.md",
+        "GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities; peripheral node `Rescue Schema Only Good` unexpectedly reaches hub `Recovery And Exclusion`"
+    },
+    {
+      "source": "Bad Unresolved Identity",
+      "target": "Recovery And Exclusion",
+      "source_files": [
+        "auditoria/reference/04_reference_closeout.md",
+        "GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities; peripheral node `Bad Unresolved Identity` unexpectedly reaches hub `Recovery And Exclusion`"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `Quotes Open Bucket Final Classification` connect `Quotes Certification` to `Quotes Certification 2`?",
+      "why": "High betweenness centrality (0.046) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Transversal Layer Strength For Quotes Residue` connect `Quotes Certification` to `Trades Certification 3`, `Halts Certification 2`?",
+      "why": "High betweenness centrality (0.044) - this node is a cross-community bridge."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 5 inferred relationships involving `Recovery And Exclusion` (e.g. with `Empty Placeholders Not Failure` and `Daily Hard Invalid Exclusion`) actually correct?",
+      "why": "`Recovery And Exclusion` has 5 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `Additional Root Cause Audit Phase 1 Closeout`, `Additional Causal Overlay Closeout`, `Daily Agent02 Agent03 Contract` to the rest of the system?",
+      "why": "58 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Trades Certification` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.0928030303030303 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Reference Certification` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.07936507936507936 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Halts Certification` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.1 - nodes in this community are weakly interconnected."
+    }
+  ]
+}
