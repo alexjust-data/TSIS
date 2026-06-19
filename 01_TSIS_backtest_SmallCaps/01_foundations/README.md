@@ -6,6 +6,7 @@
 - [Como leer los porcentajes](#como-leer-los-porcentajes)
 - [Resumen ejecutivo](#resumen-ejecutivo)
 - [Graphify operativo](#graphify-operativo)
+  - [Leaf graphs oficiales publicados](#leaf-graphs-oficiales-publicados)
 - [Mapa por elemento de data](#mapa-por-elemento-de-data)
   - [Daily raw](#daily-raw)
   - [Daily adjusted](#daily-adjusted)
@@ -132,6 +133,54 @@ Es el nombre del primer grafo leaf oficial.
 Cubrir `01_foundations` no significa escanear todo el arbol en un solo comando.
 Significa cubrir sus partes institucionales mediante grafos leaf separados y,
 si aporta valor, fusionarlos despues en `data_foundation_root_graph`.
+
+### Leaf graphs oficiales publicados
+
+Estado al cierre de la fase Graphify inicial:
+
+| Leaf graph | Scope | Output oficial | Estado | Stats |
+| --- | --- | --- | --- | --- |
+| `foundations_authority_graph` | `01_foundations` | [foundations_authority_20260619](graphify-out/leaf_slices/foundations_authority_20260619/) | `published_to_main` | `246 files`, `411452 words`, `696 nodes`, `854 edges`, `75 communities` |
+| `certification_decisions_graph` | `01_research/01_auditoria_RAW_DATA/00_data_certification` | [certification_decisions_20260619](../01_research/01_auditoria_RAW_DATA/00_data_certification/graphify-out/leaf_slices/certification_decisions_20260619/) | `published_to_main` | `89 files`, `45813 words`, `252 nodes`, `322 edges`, `22 communities` |
+
+Regla operativa para agentes:
+
+```text
+No consultar solo foundations_authority_graph cuando la pregunta dependa de
+auditoria historica, certificacion, closeouts, policies historicas, global
+metrics o decisiones expected/present/healthy/usable.
+```
+
+En esos casos debe consultarse tambien:
+
+```text
+01_research/01_auditoria_RAW_DATA/00_data_certification/graphify-out/leaf_slices/certification_decisions_20260619/
+```
+
+El grafo `foundations_authority_graph` mapea autoridad, contratos, schemas,
+registries, policies, validators y dossiers promovidos dentro de
+`01_foundations`.
+
+El grafo `certification_decisions_graph` mapea decisiones historicas de
+auditoria/certificacion, closeouts, policies, contratos historicos y global
+metrics ligeros dentro de `00_data_certification`.
+
+Consecuencia:
+
+- cualquier propuesta para subir madurez de capas por debajo de `90%` debe
+  revisar si existe evidencia historica en `certification_decisions_graph`;
+- esa evidencia no promociona nada por si sola;
+- si se reutiliza, debe aterrizarse en `01_foundations` como contrato, policy,
+  registry, validator, dossier o nota de deuda claramente delimitada;
+- notebooks y evidencia exploratoria quedan fuera de
+  `certification_decisions_graph` y deben entrar, si procede, en un leaf futuro
+  separado.
+
+Leaf futuro esperado para esa evidencia:
+
+```text
+certification_notebook_evidence_graph
+```
 
 Entrada operativa:
 

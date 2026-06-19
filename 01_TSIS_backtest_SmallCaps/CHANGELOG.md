@@ -7,6 +7,31 @@ Este changelog registra cambios institucionales y semanticamente relevantes para
 No duplica el historial de Git.
 Existe para preservar memoria arquitectonica y metodologica del modulo.
 
+## v0.4.49 - foundations README cross-graph lookup rule
+
+### Changed
+
+- `01_foundations/README.md`
+- `01_foundations/GRAPHIFY_REFRESH_QUEUE.md`
+
+### Notes
+
+The `01_foundations` README now records that the official
+`certification_decisions_graph` exists outside `01_foundations` and must be
+consulted for questions that depend on historical audit/certification,
+closeouts, historical policies, global metrics or
+`expected/present/healthy/usable` decisions.
+
+This prevents future agents from treating `foundations_authority_graph` as the
+only semantic graph relevant to data-foundation completion.
+
+### Impact
+
+The README update is registered as `GFQ-20260619-002` with status `pending` and
+severity `MEDIUM`; it should be included in the next
+`foundations_authority_graph` refresh, but it does not require an immediate
+Graphify rebuild.
+
 ## v0.4.48 - official graphify leaf publication
 
 ### Added

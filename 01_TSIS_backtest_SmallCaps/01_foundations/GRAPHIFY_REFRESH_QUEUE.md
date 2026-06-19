@@ -211,6 +211,56 @@ Validation:
   01_foundations/graphify-out/graph.json = absent
 ```
 
+### GFQ-20260619-002 - README cross-graph lookup rule
+
+Status: `pending`
+
+Severity: `MEDIUM`
+
+Slice:
+
+```text
+foundations_authority_graph
+```
+
+Reason:
+
+- `01_foundations/README.md` now records that the official
+  `certification_decisions_graph` exists outside `01_foundations`.
+- Future agents must consult the certification leaf when a question depends on
+  historical audit/certification, closeouts, historical policies, global
+  metrics or decisions expressed as `expected/present/healthy/usable`.
+
+Changed paths:
+
+```text
+01_foundations/README.md
+```
+
+Recommended action:
+
+```text
+Do not rebuild immediately.
+Include this README change in the next foundations_authority_graph refresh.
+```
+
+Root action:
+
+```text
+No root graph yet.
+```
+
+Owner:
+
+```text
+Modulo 01 / Data Foundation governance
+```
+
+Notes:
+
+This change is a navigation and agent-usage update. It does not alter dataset
+contracts, schemas, validators or consumption policies.
+
 ## Entry template
 
 ```text
