@@ -7,6 +7,78 @@ Este changelog registra cambios institucionales y semanticamente relevantes para
 No duplica el historial de Git.
 Existe para preservar memoria arquitectonica y metodologica del modulo.
 
+## v0.4.48 - official graphify leaf publication
+
+### Added
+
+- `01_foundations/graphify-out/leaf_slices/foundations_authority_20260619/`
+- `01_research/01_auditoria_RAW_DATA/00_data_certification/graphify-out/leaf_slices/certification_decisions_20260619/`
+- `01_research/01_auditoria_RAW_DATA/00_data_certification/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md`
+- `01_research/01_auditoria_RAW_DATA/00_data_certification/GRAPHIFY_REFRESH_QUEUE.md`
+- `01_research/01_auditoria_RAW_DATA/00_data_certification/.graphifyignore`
+- `01_research/01_auditoria_RAW_DATA/00_data_certification/module_contracts/graphify/README.md`
+- `01_research/01_auditoria_RAW_DATA/00_data_certification/module_contracts/graphify/certification_decisions_graph_protocol.md`
+
+### Changed
+
+- Root `.gitignore` now explicitly opens the governed
+  `00_data_certification` Graphify leaf path while preserving the default
+  protection of heavy historical artifacts.
+- `01_foundations/GRAPHIFY_REFRESH_QUEUE.md` records
+  `foundations_authority_graph` as `leaf_built`.
+- `00_data_certification/GRAPHIFY_REFRESH_QUEUE.md` records
+  `certification_decisions_graph` as `leaf_built`.
+
+### Notes
+
+This closes the first two official Module 01 Graphify leaves and publishes them
+to `origin/main`:
+
+```text
+foundations_authority_graph
+certification_decisions_graph
+```
+
+`foundations_authority_graph` maps the authority and contract layer for
+`01_foundations`:
+
+```text
+detected_files: 246
+detected_words: 411452
+nodes: 696
+edges: 854
+communities: 75
+```
+
+`certification_decisions_graph` maps final certification decisions, policies,
+contracts and lightweight global metrics inside `00_data_certification`:
+
+```text
+detected_files: 89
+detected_words: 45813
+nodes: 252
+edges: 322
+communities: 22
+```
+
+Both leaves passed `graphify diagnose multigraph` with 0 dangling endpoints, 0
+duplicate edges and 0 endpoint-collapsed edge groups. Both intentionally avoid
+creating a root `graphify-out/graph.json` for their parent scopes.
+
+### Impact
+
+Future agents can use the two official Graphify leaves as semantic maps, but
+must not treat them as physical dataset profilers, certification substitutes or
+table design authority by themselves.
+
+Notebook evidence is intentionally not included in
+`certification_decisions_graph`. It remains important and should be handled by a
+separate future leaf, provisionally:
+
+```text
+certification_notebook_evidence_graph
+```
+
 ## v0.4.47 - data foundation graphify governance protocol
 
 ### Added

@@ -248,6 +248,38 @@ Todo conocimiento estructural relevante debe vivir en el repositorio de forma:
 - legible;
 - persistente.
 
+### 9.4. Documentos raiz protegidos
+
+Los documentos de gobernanza raiz son artefactos institucionales protegidos.
+
+Esto aplica como minimo a:
+
+- `AGENTS.md`;
+- `PROJECT_OPERATING_SYSTEM.md`;
+- `PROJECT_RULES.md`;
+- `VERSIONING_STANDARDS.md`;
+- `ARCHITECTURE_OVERVIEW.md`;
+- `RESEARCH_PHILOSOPHY.md`;
+- `CHANGELOG.md`.
+
+Un agente no tiene autorizacion para borrar, reemplazar, reescribir
+masivamente, normalizar por estetica o reorganizar el contenido de estos
+documentos sin autorizacion explicita del humano.
+
+La regla por defecto para estos documentos es:
+
+```text
+edicion aditiva y minima
+```
+
+Si se necesita una modificacion no aditiva, el agente debe:
+
+- explicar antes que contenido se propone reemplazar;
+- justificar por que no basta una adicion;
+- esperar autorizacion explicita;
+- preservar trazabilidad del cambio en Git;
+- y registrar el impacto si altera semantica institucional.
+
 ---
 
 ## 10. Reglas para humanos

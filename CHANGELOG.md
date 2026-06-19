@@ -315,3 +315,53 @@ historia constitucional de TSIS
 
 NO como log técnico.
 
+---
+
+## v0.2.0 — Module 01 official Graphify leaf publication
+
+### Added
+
+- Published the first official Graphify leaf for `01_foundations`:
+  `01_TSIS_backtest_SmallCaps/01_foundations/graphify-out/leaf_slices/foundations_authority_20260619/`.
+- Published the first official Graphify leaf for RAW data certification
+  decisions:
+  `01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/graphify-out/leaf_slices/certification_decisions_20260619/`.
+- Versioned Graphify governance files for `01_foundations` and
+  `00_data_certification`, including build protocols, refresh queues and
+  module-local graphify contracts.
+
+### Changed
+
+- `origin/main` now contains the official Graphify leaf artifacts for both
+  initial Module 01 graphs.
+- `.gitignore` now explicitly opens the governed
+  `00_data_certification` Graphify leaf path while keeping heavy runtime and
+  evidence artifacts protected by default.
+
+### Notes
+
+The two published leaves are semantic navigation artifacts for agents and
+humans. They do not replace manifests, dataset contracts, validators, physical
+profiling or certification evidence.
+
+Root Graphify graphs were intentionally not created for these scopes. The
+official state is leaf-first:
+
+```text
+01_foundations -> foundations_authority_graph
+00_data_certification -> certification_decisions_graph
+```
+
+### Impact
+
+- Future agents can query the official leaf graph outputs directly from
+  `main`.
+- Future data-foundation table design must still combine:
+
+```text
+contract + certification + evidence + physical profiling + validator
+```
+
+- Notebook evidence remains important but is deferred to a separate future
+  Graphify leaf instead of being mixed into the first certification decisions
+  graph.
