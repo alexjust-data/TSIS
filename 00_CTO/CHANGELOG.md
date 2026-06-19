@@ -86,6 +86,13 @@ run summaries, trace logs y, si procede, release log propio.
   ignored runtime output under
   `00_CTO/graphify-out/leaf_slices/trading_systems_event_first_20260618/`.
 
+### Changed
+
+- Expanded `TSIS_LAB_ARCHITECTURE.md` from a compact summary into a richer
+  promoted architecture derived from `00_private/arquitectura.md`, preserving
+  the detailed layer-by-layer rationale while cleaning encoding, current folder
+  names and authority boundaries.
+
 ### Notes
 
 - Physical folder refactor has been executed for `13_TRADING_SYSTEMS/` and the

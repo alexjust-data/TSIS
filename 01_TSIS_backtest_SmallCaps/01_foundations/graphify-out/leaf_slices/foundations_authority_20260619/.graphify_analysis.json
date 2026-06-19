@@ -1,0 +1,1073 @@
+{
+  "communities": {
+    "0": [
+      "module_contracts_daily_adjusted_incremental_materialization_plan_v0_1_document",
+      "module_contracts_daily_adjusted_incremental_materialization_plan_v0_1_incremental_promotion_flow",
+      "module_contracts_daily_adjusted_operational_landing_v0_1_daily_adjusted_v0_1",
+      "module_contracts_daily_adjusted_operational_landing_v0_1_document",
+      "module_contracts_daily_adjusted_operational_landing_v0_1_official_daily_adjusted_landing",
+      "module_contracts_daily_adjusted_pilot_manifest_v0_1_document",
+      "module_contracts_daily_adjusted_pilot_manifest_v0_1_semantic_pilot_basket",
+      "module_contracts_daily_adjusted_pilot_results_v0_1_document",
+      "module_contracts_daily_adjusted_pilot_results_v0_1_pilot_refinement_decision",
+      "module_contracts_daily_adjusted_pilot_results_v0_2_document",
+      "module_contracts_daily_adjusted_pilot_results_v0_2_validated_semantic_pilot",
+      "module_contracts_daily_return_labels_consumer_contract_v0_1_adjusted_return_label_contract",
+      "module_contracts_daily_return_labels_consumer_contract_v0_1_document",
+      "module_contracts_daily_return_labels_consumer_contract_v0_1_ret_1d_ret_3d_ret_5d_labels",
+      "module_contracts_daily_return_labels_lt1b_promotion_plan_v0_1_document",
+      "module_contracts_daily_return_labels_lt1b_promotion_plan_v0_1_labels_are_outcomes_not_features",
+      "module_contracts_daily_return_labels_lt1b_promotion_plan_v0_1_lt1b_label_promotion_path",
+      "module_contracts_daily_return_labels_operational_landing_v0_1_daily_return_labels_landing",
+      "module_contracts_daily_return_labels_operational_landing_v0_1_document",
+      "module_contracts_foundations_transversal_final_review_v0_1_document",
+      "module_contracts_foundations_transversal_final_review_v0_1_foundations_snapshot_v0_1",
+      "module_contracts_foundations_transversal_final_review_v0_2_document",
+      "module_contracts_foundations_transversal_final_review_v0_2_foundations_snapshot_v0_2",
+      "module_contracts_intraday_regime_features_consumer_contract_v0_1_cross_session_vs_intraday_price_view_rule",
+      "module_contracts_intraday_regime_features_consumer_contract_v0_1_document",
+      "module_contracts_intraday_regime_features_consumer_contract_v0_1_intraday_regime_feature_contract",
+      "module_contracts_intraday_regime_features_consumer_contract_v0_1_one_m_split_normalized_consumer_validation",
+      "module_contracts_intraday_regime_features_deferred_families_v0_1_deferred_feature_families",
+      "module_contracts_intraday_regime_features_deferred_families_v0_1_document",
+      "module_contracts_intraday_regime_features_initial_materialization_results_v0_1_cross_session_feature_set",
+      "module_contracts_intraday_regime_features_initial_materialization_results_v0_1_document",
+      "module_contracts_intraday_regime_features_initial_materialization_results_v0_1_intraday_regime_features_initial_materialization",
+      "module_contracts_intraday_regime_features_lt1b_promotion_plan_v0_1_document",
+      "module_contracts_intraday_regime_features_lt1b_promotion_plan_v0_1_intraday_regime_lt1b_promotion_path",
+      "module_contracts_intraday_regime_features_lt1b_promotion_plan_v0_1_leakage_policy_for_features"
+    ],
+    "1": [
+      "bad_case_evidence_packs_daily_hard_invalid_cases_v0_1_document",
+      "bad_case_evidence_packs_daily_hard_invalid_cases_v0_1_hard_invalid_parse_or_price",
+      "core_quality_case_evidence_packs_minute_core_quality_visual_cases_v0_1_document",
+      "core_quality_case_evidence_packs_minute_core_quality_visual_cases_v0_1_minute_visual_core_quality_casepack",
+      "core_quality_case_evidence_packs_minute_core_quality_visual_cases_v0_1_vw_debt_dominant",
+      "coverage_case_evidence_packs_daily_coverage_cases_v0_1_daily_coverage_rehabilitation",
+      "coverage_case_evidence_packs_daily_coverage_cases_v0_1_document",
+      "daily_build_daily_inspection_pack_document",
+      "daily_daily_adjusted_complex_corporate_actions_tail_audit_v0_1_complex_tail_debt",
+      "daily_daily_adjusted_complex_corporate_actions_tail_audit_v0_1_document",
+      "daily_daily_adjusted_complex_corporate_actions_tail_audit_v0_1_ticker_change_remap_policy_debt",
+      "daily_daily_adjusted_full_universe_audit_v0_1_daily_adjusted_v0_1_promoted",
+      "daily_daily_adjusted_full_universe_audit_v0_1_document",
+      "daily_daily_inspection_readout_v0_1_daily_core_v0_1",
+      "daily_daily_inspection_readout_v0_1_daily_coverage_axis",
+      "daily_daily_inspection_readout_v0_1_daily_quality_axis",
+      "daily_daily_inspection_readout_v0_1_document",
+      "daily_readme_document",
+      "flagged_case_evidence_packs_daily_non_good_quality_cases_v0_1_document",
+      "flagged_case_evidence_packs_daily_non_good_quality_cases_v0_1_recoverable_with_flag",
+      "good_justification_daily_good_cases_v0_1_document",
+      "good_justification_daily_good_cases_v0_1_good_daily_acceptance",
+      "intraday_regime_features_intraday_regime_features_semantic_pilot_readout_v0_1_document",
+      "intraday_regime_features_intraday_regime_features_semantic_pilot_readout_v0_1_raw_split_signal_distortion",
+      "intraday_regime_features_intraday_regime_features_semantic_pilot_readout_v0_1_split_normalized_regime_features",
+      "minute_raw_1m_lt1b_closeout_recalculation_v0_1_document",
+      "minute_raw_1m_lt1b_closeout_recalculation_v0_1_raw_1m_lt1b_closeout",
+      "minute_raw_1m_schema_only_lt1b_inspection_readout_v0_1_document",
+      "minute_raw_1m_schema_only_lt1b_inspection_readout_v0_1_schema_only_structural_readability",
+      "minute_readme_core_vw_separation",
+      "minute_readme_document",
+      "minute_readme_ohlcv_1m_raw_not_production_clean"
+    ],
+    "2": [
+      "bad_case_evidence_packs_reference_bad_unresolved_identity_cases_v0_1_bad_unresolved_identity",
+      "bad_case_evidence_packs_reference_bad_unresolved_identity_cases_v0_1_document",
+      "causal_case_evidence_packs_reference_causal_overlay_cases_v0_1_causal_overlay",
+      "causal_case_evidence_packs_reference_causal_overlay_cases_v0_1_document",
+      "coverage_case_evidence_packs_reference_presence_coverage_cases_v0_1_document",
+      "coverage_case_evidence_packs_reference_presence_coverage_cases_v0_1_presence_coverage_limits",
+      "flagged_case_evidence_packs_reference_review_identity_and_quotes_cases_v0_1_document",
+      "flagged_case_evidence_packs_reference_review_identity_and_quotes_cases_v0_1_review_identity_and_quotes",
+      "good_justification_reference_good_identity_and_payload_cases_v0_1_document",
+      "good_justification_reference_good_identity_and_payload_cases_v0_1_good_identity_and_payload",
+      "quotes_quotes_inspection_readout_v0_1_quotes_price_view_separation",
+      "reference_readme_document",
+      "reference_reference_casepacks_traceability_audit_v0_1_document",
+      "reference_reference_casepacks_traceability_audit_v0_1_traceability_pass",
+      "reference_reference_inspection_readout_v0_2_all_tickers_presence_not_universe_final",
+      "reference_reference_inspection_readout_v0_2_document",
+      "reference_reference_inspection_readout_v0_2_identity_quality_distribution",
+      "reference_reference_inspection_readout_v0_2_payload_family_distribution",
+      "reference_reference_inspection_readout_v0_2_reference_consumption_boundaries",
+      "reference_reference_inspection_readout_v0_2_reference_modern_dossier_promotion",
+      "reference_reference_institutional_closeout_v0_1_document",
+      "reference_reference_institutional_closeout_v0_1_reference_semantic_upstream_layer",
+      "reference_reference_modernization_gap_audit_2026_06_12_document",
+      "reference_reference_modernization_gap_audit_2026_06_12_modernization_gap_closed",
+      "reference_reference_upgrade_agent_prompt_2026_06_12_document",
+      "reference_reference_upgrade_agent_prompt_2026_06_12_superseded_upgrade_prompt",
+      "short_short_institutional_closeout_v0_1_document",
+      "short_short_institutional_closeout_v0_1_finra_provenance_baseline",
+      "short_short_institutional_closeout_v0_1_full_history_claim_not_supported",
+      "short_short_institutional_closeout_v0_1_short_certification_aware_filtering"
+    ],
+    "3": [
+      "data_consumption_policies_additional_consumption_policy_additional_auxiliary_block",
+      "data_consumption_policies_additional_consumption_policy_document",
+      "data_consumption_policies_additional_consumption_policy_empty_sentinel_rule",
+      "data_consumption_policies_intraday_regime_features_consumption_policy_cross_session_price_view",
+      "data_consumption_policies_intraday_regime_features_consumption_policy_document",
+      "data_consumption_policies_intraday_regime_features_consumption_policy_intraday_features_pilot_consumption",
+      "data_consumption_policies_ohlcv_1m_raw_consumption_policy_document",
+      "data_consumption_policies_ohlcv_1m_raw_consumption_policy_raw_1m_consumption",
+      "data_consumption_policies_ohlcv_1m_raw_consumption_policy_vw_severity_handling",
+      "data_consumption_policies_reference_consumption_policy_document",
+      "data_consumption_policies_reference_consumption_policy_reference_infrastructure_consumption",
+      "data_consumption_policies_reference_consumption_policy_reference_temporal_leakage",
+      "dataset_contracts_intraday_regime_features_dataset_contract_v0_1_document",
+      "dataset_contracts_intraday_regime_features_dataset_contract_v0_1_intraday_regime_features_v0_1",
+      "dataset_contracts_intraday_regime_features_dataset_contract_v0_1_split_safe_intraday_features",
+      "dataset_contracts_ohlcv_1m_raw_dataset_contract_v0_1_document",
+      "dataset_contracts_ohlcv_1m_raw_dataset_contract_v0_1_ohlcv_1m_raw_v0_1",
+      "dataset_contracts_ohlcv_1m_raw_dataset_contract_v0_1_raw_1m_quality_states",
+      "dataset_contracts_ohlcv_1m_raw_dataset_contract_v0_1_vw_quality_debt",
+      "dataset_contracts_ohlcv_1m_split_normalized_dataset_contract_v0_1_cross_session_split_protection",
+      "dataset_contracts_ohlcv_1m_split_normalized_dataset_contract_v0_1_document",
+      "dataset_contracts_ohlcv_1m_split_normalized_dataset_contract_v0_1_future_split_factor",
+      "dataset_contracts_ohlcv_1m_split_normalized_dataset_contract_v0_1_ohlcv_1m_split_normalized",
+      "dataset_contracts_reference_dataset_contract_v0_1_corporate_actions_support",
+      "dataset_contracts_reference_dataset_contract_v0_1_document",
+      "dataset_contracts_reference_dataset_contract_v0_1_reference_subfamilies",
+      "dataset_contracts_reference_dataset_contract_v0_1_reference_v0_1",
+      "dataset_contracts_reference_dataset_contract_v0_1_ticker_change_not_continuity"
+    ],
+    "4": [
+      "module_contracts_intraday_regime_features_operational_landing_v0_1_document",
+      "module_contracts_intraday_regime_features_operational_landing_v0_1_intraday_regime_features_landing",
+      "module_contracts_intraday_regime_features_semantic_pilot_results_v0_1_document",
+      "module_contracts_intraday_regime_features_semantic_pilot_results_v0_1_intraday_regime_features_pilot_verdict",
+      "module_contracts_layer_maturity_assessment_v0_1_daily_adjusted_level_6",
+      "module_contracts_layer_maturity_assessment_v0_1_document",
+      "module_contracts_layer_maturity_assessment_v0_1_intraday_regime_features_level_3",
+      "module_contracts_layer_maturity_assessment_v0_1_layer_maturity_assignments",
+      "module_contracts_layer_maturity_assessment_v0_1_ohlcv_1m_split_normalized_level_5",
+      "module_contracts_layer_validation_standard_v0_1_document",
+      "module_contracts_layer_validation_standard_v0_1_layer_validation_standard",
+      "module_contracts_layer_validation_standard_v0_1_maturity_ladder",
+      "module_contracts_ohlcv_1m_contracts_index_document",
+      "module_contracts_ohlcv_1m_contracts_index_minute_contract_index",
+      "module_contracts_ohlcv_1m_historical_closeout_lt1b_reconciliation_v0_1_document",
+      "module_contracts_ohlcv_1m_historical_closeout_lt1b_reconciliation_v0_1_raw_full_scope_reconciliation",
+      "module_contracts_ohlcv_1m_split_normalized_incremental_materialization_plan_v0_1_consumer_guided_materialization",
+      "module_contracts_ohlcv_1m_split_normalized_incremental_materialization_plan_v0_1_document",
+      "module_contracts_ohlcv_1m_split_normalized_operational_landing_v0_1_document",
+      "module_contracts_ohlcv_1m_split_normalized_operational_landing_v0_1_split_normalized_landing",
+      "module_contracts_ohlcv_1m_split_normalized_pilot_manifest_v0_2_document",
+      "module_contracts_ohlcv_1m_split_normalized_pilot_manifest_v0_2_pilot_case_manifest",
+      "module_contracts_ohlcv_1m_split_normalized_pilot_results_v0_1_document",
+      "module_contracts_ohlcv_1m_split_normalized_pilot_results_v0_1_future_split_factor_rule",
+      "module_contracts_ohlcv_1m_split_normalized_semantic_pilot_v0_1_document",
+      "module_contracts_ohlcv_1m_split_normalized_semantic_pilot_v0_1_split_normalization_semantic_pilot"
+    ],
+    "5": [
+      "graphify_data_foundation_graph_and_table_design_protocol_capa_1_table_acceptance_flow",
+      "graphify_data_foundation_graph_and_table_design_protocol_document",
+      "graphify_data_foundation_graph_and_table_design_protocol_foundations_authority_graph",
+      "graphify_data_foundation_graph_and_table_design_protocol_official_graphify_flow",
+      "graphify_data_foundation_graph_and_table_design_protocol_physical_profiling_requirement",
+      "graphify_readme_document",
+      "graphify_readme_graphify_governance",
+      "module_contracts_daily_rules_explained_line_by_line_daily_price_view_rules",
+      "module_contracts_daily_rules_explained_line_by_line_document",
+      "module_contracts_daily_rules_explained_line_by_line_quality_coverage_state_model",
+      "module_contracts_dataset_contract_template_dataset_contract_minimum_sections",
+      "module_contracts_dataset_contract_template_document",
+      "module_contracts_evidence_model_document",
+      "module_contracts_evidence_model_evidence_strength_levels",
+      "module_contracts_evidence_model_institutional_evidence_model",
+      "module_contracts_external_price_comparison_caveats_adjusted_proxy_reconciliation",
+      "module_contracts_external_price_comparison_caveats_document",
+      "module_contracts_external_price_comparison_caveats_external_price_comparison_policy",
+      "module_contracts_external_price_comparison_rules_line_by_line_document",
+      "module_contracts_external_price_comparison_rules_line_by_line_external_comparison_classes",
+      "module_contracts_inspection_dossier_model_document",
+      "module_contracts_inspection_dossier_model_inspection_dossier_model",
+      "module_contracts_inspection_dossier_model_population_to_case_evidence_sequence"
+    ],
+    "6": [
+      "module_contracts_intraday_regime_features_variable_taxonomy_v0_1_cross_session_intraday_taxonomy",
+      "module_contracts_intraday_regime_features_variable_taxonomy_v0_1_document",
+      "module_contracts_market_session_scope_document",
+      "module_contracts_market_session_scope_extended_session_scope",
+      "module_contracts_pipeline_price_view_policy_declared_price_view_roles",
+      "module_contracts_pipeline_price_view_policy_document",
+      "module_contracts_pipeline_price_view_policy_explained_document",
+      "module_contracts_pipeline_price_view_policy_explained_price_view_rationale",
+      "module_contracts_pipeline_price_view_policy_pipeline_price_view_policy",
+      "module_contracts_pipeline_price_view_rules_line_by_line_document",
+      "module_contracts_pipeline_price_view_rules_line_by_line_price_view_rule_summary",
+      "module_contracts_policy_explanation_standard_document",
+      "module_contracts_policy_explanation_standard_two_layer_policy_structure",
+      "module_contracts_price_semantics_and_adjustment_policy_adjusted_proxy_role",
+      "module_contracts_price_semantics_and_adjustment_policy_adjustment_workflow",
+      "module_contracts_price_semantics_and_adjustment_policy_document",
+      "module_contracts_price_semantics_and_adjustment_policy_no_single_price",
+      "module_contracts_price_semantics_and_adjustment_policy_price_view_family"
+    ],
+    "7": [
+      "additional_additional_registry_entry_additional_v0_1",
+      "additional_additional_registry_entry_document",
+      "daily_daily_adjusted_registry_entry_daily_adjusted_v0_1",
+      "daily_daily_adjusted_registry_entry_document",
+      "daily_daily_registry_entry_daily_core_v0_1",
+      "daily_daily_registry_entry_document",
+      "daily_daily_return_labels_registry_entry_daily_return_labels_v0_1",
+      "daily_daily_return_labels_registry_entry_document",
+      "dataset_registry_readme_dataset_registry_operational_index",
+      "dataset_registry_readme_document",
+      "dataset_registry_readme_expected_present_healthy_usable",
+      "dataset_registry_readme_registry_entry_authority_chain",
+      "dataset_registry_readme_registry_entry_vs_manifest",
+      "reference_reference_registry_entry_document",
+      "reference_reference_registry_entry_reference_v0_1",
+      "universes_lt1b_universe_registry_entry_document",
+      "universes_lt1b_universe_registry_entry_lt1b_universe_v0_1"
+    ],
+    "8": [
+      "bad_case_evidence_packs_quotes_bad_cases_v0_1_bad_forensic_only",
+      "bad_case_evidence_packs_quotes_bad_cases_v0_1_document",
+      "flagged_case_evidence_packs_quotes_review_cases_v0_1_document",
+      "flagged_case_evidence_packs_quotes_review_cases_v0_1_review_not_execution_clean",
+      "good_justification_quotes_good_cases_v0_1_document",
+      "good_justification_quotes_good_cases_v0_1_good_representative_sample",
+      "quotes_build_quotes_inspection_pack_document",
+      "quotes_build_quotes_inspection_pack_population_vs_forensic_evidence",
+      "quotes_quotes_inspection_readout_v0_1_document",
+      "quotes_quotes_inspection_readout_v0_1_quotes_good_review_bad_policy",
+      "quotes_quotes_inspection_readout_v0_1_quotes_population_taxonomy",
+      "quotes_quotes_inspection_readout_v0_1_ticker_date_file_unit",
+      "quotes_quotes_open_casepacks_audit_v0_1_document",
+      "quotes_quotes_open_casepacks_audit_v0_1_open_casepack_traceability_pass",
+      "quotes_readme_document",
+      "quotes_readme_quotes_inspection_dossier"
+    ],
+    "9": [
+      "bad_data_bad_data_cases_v0_1",
+      "family_case_evidence_packs_family_casepacks_index_v0_1",
+      "file_acceptance_evidence_packs_trades_file_acceptance_readout_v0_1_taxonomic_refactor",
+      "flagged_case_evidence_packs_trades_review_cases_v0_1",
+      "good_good_cases_v0_1",
+      "module_contracts_corporate_actions_adjustment_methodology_adjusted_proxy",
+      "reference_scale_mismatch_reference_scale_mismatch_cases_v0_1",
+      "review_1m_reference_alignment_review_1m_reference_alignment_cases_v0_1",
+      "review_microstructure_review_microstructure_cases_v0_1",
+      "review_no_1m_reference_review_no_1m_reference_cases_v0_1",
+      "trades_readme_price_views_and_arbiters",
+      "trades_readme_reference_scale_mismatch",
+      "trades_readme_review_1m_reference_alignment",
+      "trades_readme_review_microstructure",
+      "trades_readme_review_no_1m_reference"
+    ],
+    "10": [
+      "dataset_contracts_readme_short_dataset_contract_v0_1",
+      "dataset_contracts_readme_short_review_dataset_contract_v0_1",
+      "short_review_finra_short_interest_schema_contract_document",
+      "short_review_finra_short_interest_schema_contract_finra_short_interest_baseline",
+      "short_review_finra_short_provenance_schema_contract_document",
+      "short_review_finra_short_provenance_schema_contract_finra_short_provenance_metadata",
+      "short_review_finra_short_volume_schema_contract_document",
+      "short_review_finra_short_volume_schema_contract_finra_short_volume_baseline",
+      "short_short_interest_schema_contract_certification_aware_short_consumption",
+      "short_short_interest_schema_contract_document",
+      "short_short_interest_schema_contract_short_interest_schema",
+      "short_short_volume_schema_contract_document",
+      "short_short_volume_schema_contract_short_volume_schema",
+      "short_short_volume_schema_contract_short_volume_scope_limits"
+    ],
+    "11": [
+      "good_justification_trades_good_cases_v0_1",
+      "module_contracts_consumer_classes_ml_flagged",
+      "review_review_cases_v0_1",
+      "trades_build_trades_inspection_pack",
+      "trades_readme",
+      "trades_readme_family_casepacks_layer",
+      "trades_readme_final_operational_states",
+      "trades_readme_good_class",
+      "trades_readme_rehabilitation",
+      "trades_readme_review_class",
+      "trades_readme_trades_inspection_dossier",
+      "trades_trades_sampling_strategy_v0_1",
+      "trades_trades_sampling_strategy_v0_1_full_enumeration",
+      "trades_trades_sampling_strategy_v0_1_stratified_sampling"
+    ],
+    "12": [
+      "graphify_official_build_protocol_document",
+      "graphify_official_build_protocol_foundations_authority_graph",
+      "graphify_official_build_protocol_graphify_out_runtime",
+      "graphify_official_build_protocol_leaf_graph_family",
+      "graphify_official_build_protocol_no_manual_graph_json",
+      "graphify_official_build_protocol_official_graphify_build",
+      "graphify_official_build_protocol_table_promotion_gate",
+      "graphify_refresh_queue_document",
+      "graphify_refresh_queue_gfq_20260619_001",
+      "graphify_refresh_queue_refresh_severity_policy",
+      "readme_coverage_completion_pillars",
+      "readme_document",
+      "readme_foundations_data_governance_layer",
+      "readme_institutional_coverage_map"
+    ],
+    "13": [
+      "halts_halts_master_multisource_schema_contract_document",
+      "halts_halts_master_multisource_schema_contract_halt_suspension_event_dataset",
+      "halts_halts_master_multisource_schema_contract_halts_master_multisource_dataset",
+      "halts_halts_master_multisource_schema_contract_halts_master_multisource_schema",
+      "halts_halts_master_multisource_schema_contract_ticker_not_unique_key",
+      "halts_halts_raw_sources_schema_contract_document",
+      "halts_halts_raw_sources_schema_contract_halts_raw_sources_schema",
+      "halts_halts_raw_sources_schema_contract_raw_source_evidence_layer",
+      "halts_halts_source_specific_outputs_schema_contract_document",
+      "halts_halts_source_specific_outputs_schema_contract_halts_source_specific_outputs_schema",
+      "halts_halts_source_specific_outputs_schema_contract_source_specific_intermediate_outputs",
+      "halts_halts_universe_coverage_schema_contract_document",
+      "halts_halts_universe_coverage_schema_contract_halts_universe_coverage_schema",
+      "halts_halts_universe_coverage_schema_contract_universe_halts_coverage_artifacts"
+    ],
+    "14": [
+      "additional_additional_corporate_actions_schema_contract_additional_corporate_actions_dataset",
+      "additional_additional_corporate_actions_schema_contract_secondary_to_reference_authority",
+      "additional_additional_financials_schema_contract_additional_financials_dataset",
+      "additional_additional_financials_schema_contract_ratios_review_due_sparse_coverage",
+      "canonical_schemas_readme_empty_sentinel_semantics",
+      "canonical_schemas_readme_filing_date_point_in_time_availability",
+      "financial_balance_sheets_schema_contract_balance_sheets_dataset",
+      "financial_cash_flow_statements_schema_contract_cash_flow_statements_dataset",
+      "financial_cash_flow_statements_schema_contract_cash_flow_statements_schema",
+      "financial_cash_flow_statements_schema_contract_document",
+      "financial_income_statements_schema_contract_document",
+      "financial_income_statements_schema_contract_income_statements_dataset",
+      "financial_income_statements_schema_contract_income_statements_schema"
+    ],
+    "15": [
+      "bad_case_evidence_packs_halts_bad_residual_cases_v0_1_bad_residual_marginal",
+      "bad_case_evidence_packs_halts_bad_residual_cases_v0_1_document",
+      "causal_case_evidence_packs_halts_causal_overlay_cases_v0_1_causal_overlay",
+      "causal_case_evidence_packs_halts_causal_overlay_cases_v0_1_document",
+      "coverage_case_evidence_packs_halts_universe_coverage_cases_v0_1_absence_not_missing_data",
+      "coverage_case_evidence_packs_halts_universe_coverage_cases_v0_1_document",
+      "flagged_case_evidence_packs_halts_review_visual_cases_v0_1_document",
+      "flagged_case_evidence_packs_halts_review_visual_cases_v0_1_review_not_bad",
+      "good_justification_halts_good_coherent_visual_cases_v0_1_document",
+      "halts_halts_inspection_readout_v0_1_document",
+      "halts_halts_inspection_readout_v0_1_event_reference_layer",
+      "halts_halts_inspection_readout_v0_1_halts_v0_1_foundation_promotion",
+      "halts_readme_document"
+    ],
+    "16": [
+      "daily_daily_validators_daily_core_v0_1",
+      "daily_daily_validators_daily_core_validation",
+      "daily_daily_validators_document",
+      "halts_halts_validators_document",
+      "halts_halts_validators_halts_v0_1",
+      "ohlcv_1m_ohlcv_1m_raw_validators_document",
+      "ohlcv_1m_ohlcv_1m_raw_validators_ohlcv_1m_raw_v0_1",
+      "ohlcv_1m_ohlcv_1m_raw_validators_ohlcv_1m_raw_validation",
+      "reference_reference_validators_document",
+      "reference_reference_validators_reference_v0_1",
+      "reference_reference_validators_reference_validation_by_subfamily",
+      "validators_readme_document",
+      "validators_readme_validation_layers"
+    ],
+    "17": [
+      "canonical_schemas_readme_operational_artifact_semantics",
+      "financial_operational_audit_schema_contract_audit_status_blocks_promotion",
+      "financial_operational_audit_schema_contract_document",
+      "financial_operational_audit_schema_contract_financial_audit_artifacts",
+      "financial_operational_audit_schema_contract_financial_operational_audit_schema",
+      "financial_operational_run_schema_contract_document",
+      "financial_operational_run_schema_contract_financial_operational_run_schema",
+      "financial_operational_run_schema_contract_financial_run_artifacts",
+      "halts_halts_operational_summary_schema_contract_document",
+      "halts_halts_operational_summary_schema_contract_halts_operational_summary_artifacts",
+      "halts_halts_operational_summary_schema_contract_halts_operational_summary_schema"
+    ],
+    "18": [
+      "dataset_contracts_readme_reference_dataset_contract_v0_1",
+      "reference_all_tickers_snapshot_schema_contract_all_tickers_snapshot_schema",
+      "reference_all_tickers_snapshot_schema_contract_document",
+      "reference_dividends_schema_contract_document",
+      "reference_dividends_schema_contract_reference_dividends_schema",
+      "reference_exchanges_schema_contract_document",
+      "reference_exchanges_schema_contract_reference_exchanges_schema",
+      "reference_overview_schema_contract_document",
+      "reference_overview_schema_contract_reference_overview_schema",
+      "reference_ticker_types_schema_contract_document",
+      "reference_ticker_types_schema_contract_reference_ticker_types_schema"
+    ],
+    "19": [
+      "halts_halts_validators_halts_validation_by_source_event_time_use",
+      "module_contracts_price_semantics_rules_line_by_line_document",
+      "module_contracts_price_semantics_rules_line_by_line_no_single_institutional_price",
+      "module_contracts_price_semantics_rules_line_by_line_price_series_declaration_fields",
+      "module_contracts_price_views_registry_adjusted",
+      "module_contracts_price_views_registry_adjusted_proxy",
+      "module_contracts_price_views_registry_daily_raw",
+      "module_contracts_price_views_registry_document",
+      "module_contracts_price_views_registry_quotes_raw",
+      "module_contracts_price_views_registry_split_normalized",
+      "module_contracts_price_views_registry_trades_raw"
+    ],
+    "20": [
+      "module_contracts_promotion_pipeline_document",
+      "module_contracts_promotion_pipeline_promotion_requirements",
+      "module_contracts_promotion_pipeline_promotion_states",
+      "module_contracts_semantic_authority_bad_requires_evidence",
+      "module_contracts_semantic_authority_consumption_classes",
+      "module_contracts_semantic_authority_document",
+      "module_contracts_semantic_authority_quality_states",
+      "module_contracts_transversal_contracts_index_document",
+      "module_contracts_transversal_contracts_index_transversal_contracts_map",
+      "validators_readme_policy_acceptance_separation",
+      "validators_readme_validator_governance"
+    ],
+    "21": [
+      "additional_additional_corporate_actions_schema_contract_additional_corporate_actions_schema",
+      "additional_additional_corporate_actions_schema_contract_document",
+      "additional_additional_financials_schema_contract_additional_financials_schema",
+      "additional_additional_financials_schema_contract_document",
+      "canonical_schemas_readme_canonical_schema_contract",
+      "canonical_schemas_readme_document",
+      "canonical_schemas_readme_schema_change_high_severity",
+      "canonical_schemas_readme_schema_conformity_vs_quality",
+      "financial_balance_sheets_schema_contract_balance_sheets_schema",
+      "financial_balance_sheets_schema_contract_document"
+    ],
+    "22": [
+      "data_consumption_policies_readme_price_views_by_consumer",
+      "dataset_contracts_halts_dataset_contract_v0_1_halt_event_taxonomy",
+      "dataset_contracts_halts_dataset_contract_v0_1_halts_v0_1",
+      "dataset_contracts_halts_dataset_contract_v0_1_regulatory_context_only",
+      "dataset_contracts_lt1b_universe_dataset_contract_v0_1_lt1b_universe_v0_1",
+      "dataset_contracts_lt1b_universe_dataset_contract_v0_1_pti_window_filter",
+      "dataset_contracts_quotes_dataset_contract_v0_1_quotes_core_v0_1",
+      "dataset_contracts_trades_dataset_contract_v0_1_tape_vs_reference",
+      "dataset_contracts_trades_dataset_contract_v0_1_trades_certification_semantics",
+      "dataset_contracts_trades_dataset_contract_v0_1_trades_raw"
+    ],
+    "23": [
+      "dataset_contracts_additional_dataset_contract_v0_1_additional_auxiliary_block",
+      "dataset_contracts_additional_dataset_contract_v0_1_document",
+      "dataset_contracts_additional_dataset_contract_v0_1_subblock_specific_consumption",
+      "dataset_contracts_readme_dataset_contract_authority",
+      "dataset_contracts_readme_document",
+      "dataset_contracts_readme_lt1b_universe_dataset_contract_v0_1",
+      "dataset_contracts_readme_schema_policy_registry_validator_model",
+      "universes_lt1b_universe_schema_contract_document",
+      "universes_lt1b_universe_schema_contract_lt1b_universe_v0_1",
+      "universes_lt1b_universe_schema_contract_point_in_time_window_filter"
+    ],
+    "24": [
+      "module_contracts_layer_model_dependency_direction",
+      "module_contracts_layer_model_document",
+      "module_contracts_layer_model_foundations_authority_layer",
+      "module_contracts_layer_model_module_layer_model",
+      "module_contracts_module_scope_document",
+      "module_contracts_module_scope_modulo_01_scope",
+      "module_contracts_naming_authority_document",
+      "module_contracts_naming_authority_institutional_naming_authority",
+      "module_contracts_operational_boundaries_consolidation_boundaries",
+      "module_contracts_operational_boundaries_document"
+    ],
+    "25": [
+      "module_contracts_trades_acceptance_policy_explained_document",
+      "module_contracts_trades_acceptance_policy_explained_trades_acceptance_policy",
+      "module_contracts_trades_contracts_index_document",
+      "module_contracts_trades_rules_explained_line_by_line_document",
+      "module_contracts_trades_rules_explained_line_by_line_trades_operational_states",
+      "module_contracts_trades_rules_explained_line_by_line_trades_rehabilitation_rules",
+      "module_contracts_trades_rules_explained_line_by_line_trades_tape_integrity_rules",
+      "trades_trades_validators_document",
+      "trades_trades_validators_trades_institutional_dataset",
+      "trades_trades_validators_trades_layered_validation"
+    ],
+    "26": [
+      "1m_split_normalized_ohlcv_1m_split_normalized_pilot_readout_v0_1_document",
+      "1m_split_normalized_ohlcv_1m_split_normalized_pilot_readout_v0_1_future_split_factor_rule",
+      "1m_split_normalized_ohlcv_1m_split_normalized_pilot_readout_v0_1_pilot_visual_audit",
+      "features_intraday_regime_features_registry_entry_document",
+      "features_intraday_regime_features_registry_entry_intraday_regime_features_v0_1",
+      "ohlcv_1m_ohlcv_1m_raw_registry_entry_document",
+      "ohlcv_1m_ohlcv_1m_raw_registry_entry_ohlcv_1m_raw_v0_1",
+      "ohlcv_1m_ohlcv_1m_split_normalized_registry_entry_document",
+      "ohlcv_1m_ohlcv_1m_split_normalized_registry_entry_ohlcv_1m_split_normalized_v0_1"
+    ],
+    "27": [
+      "bad_case_evidence_packs_trades_bad_cases_v0_1",
+      "module_contracts_bad_evidence_and_rehabilitation",
+      "module_contracts_bad_evidence_and_rehabilitation_bad_protocol",
+      "module_contracts_bad_evidence_and_rehabilitation_forensic_only",
+      "module_contracts_bad_evidence_and_rehabilitation_rehabilitation_evaluation",
+      "module_contracts_readme",
+      "module_contracts_readme_foundations_authority_hierarchy",
+      "module_contracts_readme_module_contracts_authority",
+      "trades_readme_bad_data"
+    ],
+    "28": [
+      "data_consumption_policies_short_consumption_policy_document",
+      "data_consumption_policies_short_consumption_policy_finra_review_layer",
+      "data_consumption_policies_short_consumption_policy_short_certification_consumption",
+      "dataset_contracts_short_dataset_contract_v0_1_document",
+      "dataset_contracts_short_dataset_contract_v0_1_short_certification_bound",
+      "dataset_contracts_short_dataset_contract_v0_1_short_data_context",
+      "dataset_contracts_short_review_dataset_contract_v0_1_document",
+      "dataset_contracts_short_review_dataset_contract_v0_1_official_free_finra_baseline",
+      "dataset_contracts_short_review_dataset_contract_v0_1_short_review_finra_v0_1"
+    ],
+    "29": [
+      "data_consumption_policies_short_review_consumption_policy_document",
+      "data_consumption_policies_short_review_consumption_policy_short_interest_lag_rule",
+      "data_consumption_policies_short_review_consumption_policy_short_review_finra_baseline",
+      "data_consumption_policies_short_review_consumption_policy_short_review_not_silent_short_substitute",
+      "data_consumption_policies_short_review_consumption_policy_short_volume_source_scope_rule",
+      "short_review_short_review_registry_entry_document",
+      "short_review_short_review_registry_entry_short_review_finra_v0_1",
+      "short_short_registry_entry_document",
+      "short_short_registry_entry_short_v0_1"
+    ],
+    "30": [
+      "dataset_contracts_daily_adjusted_dataset_contract_v0_1_daily_adjusted",
+      "dataset_contracts_daily_adjusted_dataset_contract_v0_1_document",
+      "dataset_contracts_daily_adjusted_dataset_contract_v0_1_economic_return_price_view",
+      "dataset_contracts_daily_dataset_contract_v0_1_daily_core_v0_1",
+      "dataset_contracts_daily_dataset_contract_v0_1_daily_quality_coverage_axes",
+      "dataset_contracts_daily_dataset_contract_v0_1_document",
+      "reference_events_schema_contract_document",
+      "reference_events_schema_contract_reference_events_schema",
+      "reference_events_schema_contract_ticker_change_event"
+    ],
+    "31": [
+      "features_intraday_regime_features_schema_contract_cross_session_split_normalized_rule",
+      "features_intraday_regime_features_schema_contract_document",
+      "features_intraday_regime_features_schema_contract_intraday_regime_features_dataset",
+      "features_intraday_regime_features_schema_contract_intraday_regime_features_schema",
+      "ohlcv_1m_ohlcv_1m_schema_contract_document",
+      "ohlcv_1m_ohlcv_1m_schema_contract_ohlcv_1m_raw_dataset",
+      "ohlcv_1m_ohlcv_1m_schema_contract_ohlcv_1m_raw_schema",
+      "ohlcv_1m_ohlcv_1m_schema_contract_split_normalized_boundary",
+      "ohlcv_1m_ohlcv_1m_schema_contract_ticker_minute_bar"
+    ],
+    "32": [
+      "module_contracts_quotes_acceptance_policy_explained_context_explains_not_rehabilitates",
+      "module_contracts_quotes_acceptance_policy_explained_document",
+      "module_contracts_quotes_acceptance_policy_explained_quotes_acceptance_policy",
+      "module_contracts_quotes_contracts_index_document",
+      "module_contracts_quotes_rules_explained_line_by_line_document",
+      "module_contracts_quotes_rules_explained_line_by_line_quotes_family_cut_policy",
+      "quotes_quotes_validators_document",
+      "quotes_quotes_validators_quotes_core_v0_1",
+      "quotes_quotes_validators_quotes_core_validation"
+    ],
+    "33": [
+      "regime_indicators_regime_etf_bars_schema_contract_document",
+      "regime_indicators_regime_etf_bars_schema_contract_regime_etf_bars_schema",
+      "regime_indicators_regime_index_bars_schema_contract_document",
+      "regime_indicators_regime_index_bars_schema_contract_regime_index_bars_schema",
+      "regime_indicators_regime_indicators_quality_notes_daily_regime_date_defect",
+      "regime_indicators_regime_indicators_quality_notes_document",
+      "regime_indicators_regime_indicators_quality_notes_minute_regime_bars_structurally_readable",
+      "regime_indicators_regime_metadata_schema_contract_document",
+      "regime_indicators_regime_metadata_schema_contract_regime_metadata_schema"
+    ],
+    "34": [
+      "1m_split_normalized_notocar_document",
+      "1m_split_normalized_notocar_not_active_inspector_pack",
+      "1m_split_normalized_notocar_raw_1m_core_quality_before_vw",
+      "1m_split_normalized_readme_document",
+      "1m_split_normalized_readme_fail_zero_institutional_reading",
+      "1m_split_normalized_readme_split_event_audit_boundary",
+      "1m_split_normalized_readme_split_normalized_dossier_scope",
+      "inspection_dossiers_readme_raw_1m_core_vw_separation"
+    ],
+    "35": [
+      "daily_daily_adjusted_schema_contract_adjusted_economic_price_columns",
+      "daily_daily_adjusted_schema_contract_daily_adjusted_dataset",
+      "daily_daily_adjusted_schema_contract_daily_adjusted_schema",
+      "daily_daily_adjusted_schema_contract_document",
+      "daily_daily_schema_contract_daily_core_dataset",
+      "daily_daily_schema_contract_daily_core_schema",
+      "daily_daily_schema_contract_document",
+      "daily_daily_schema_contract_ticker_day_bar"
+    ],
+    "36": [
+      "data_consumption_policies_daily_return_labels_consumption_policy_document",
+      "data_consumption_policies_daily_return_labels_consumption_policy_forward_looking_labels",
+      "data_consumption_policies_daily_return_labels_consumption_policy_pilot_target_layer",
+      "data_consumption_policies_readme_labels_features_leakage",
+      "dataset_contracts_daily_return_labels_dataset_contract_v0_1_daily_adjusted_source",
+      "dataset_contracts_daily_return_labels_dataset_contract_v0_1_daily_return_labels_v0_1",
+      "dataset_contracts_daily_return_labels_dataset_contract_v0_1_document",
+      "dataset_contracts_daily_return_labels_dataset_contract_v0_1_labels_are_outcomes"
+    ],
+    "37": [
+      "data_consumption_policies_quotes_consumption_policy_document",
+      "data_consumption_policies_quotes_consumption_policy_external_context_not_rehabilitation",
+      "data_consumption_policies_quotes_consumption_policy_quotes_core_consumption",
+      "dataset_contracts_quotes_dataset_contract_v0_1_context_not_rehabilitation",
+      "dataset_contracts_quotes_dataset_contract_v0_1_document",
+      "dataset_contracts_quotes_dataset_contract_v0_1_quotes_local_book_quality",
+      "dataset_contracts_quotes_label_taxonomy_and_cut_policy_document",
+      "dataset_contracts_quotes_label_taxonomy_and_cut_policy_quotes_quality_taxonomy"
+    ],
+    "38": [
+      "data_consumption_policies_readme_consumer_classes",
+      "data_consumption_policies_readme_coverage_not_quality",
+      "data_consumption_policies_readme_data_consumption_policy_framework",
+      "data_consumption_policies_readme_document",
+      "data_consumption_policies_readme_flags_downstream",
+      "data_consumption_policies_readme_non_transitive_consumers",
+      "data_consumption_policies_readme_quality_states",
+      "dataset_contracts_daily_label_taxonomy_and_cut_policy_daily_coverage_taxonomy"
+    ],
+    "39": [
+      "data_consumption_policies_trades_consumption_policy_document",
+      "data_consumption_policies_trades_consumption_policy_execution_microstructure_allowed_states",
+      "data_consumption_policies_trades_consumption_policy_trades_final_certification_states",
+      "data_consumption_policies_trades_consumption_policy_trades_not_daily_return_target",
+      "data_consumption_policies_trades_consumption_policy_trades_raw_native_view",
+      "data_consumption_policies_trades_consumption_policy_trades_review_rehabilitation_quant_update",
+      "trades_trades_registry_entry_document",
+      "trades_trades_registry_entry_trades_v0_1"
+    ],
+    "40": [
+      "1m_split_normalized_ohlcv_1m_split_normalized_final_readout_v0_1_document",
+      "1m_split_normalized_ohlcv_1m_split_normalized_final_readout_v0_1_final_verdict",
+      "1m_split_normalized_ohlcv_1m_split_normalized_final_readout_v0_1_maturity_level_5_not_promoted",
+      "1m_split_normalized_ohlcv_1m_split_normalized_final_readout_v0_1_minimum_real_consumer",
+      "1m_split_normalized_ohlcv_1m_split_normalized_full_universe_audit_readout_v0_1_auditable_cases_pass_100_percent",
+      "1m_split_normalized_ohlcv_1m_split_normalized_full_universe_audit_readout_v0_1_document",
+      "1m_split_normalized_ohlcv_1m_split_normalized_full_universe_audit_readout_v0_1_full_universe_split_event_audit"
+    ],
+    "41": [
+      "dataset_registry_readme_consumption_policy_and_evidence_gate",
+      "inspection_dossiers_readme_dataset_readout_evidence_chain",
+      "inspection_dossiers_readme_document",
+      "inspection_dossiers_readme_evidence_question_template",
+      "inspection_dossiers_readme_general_to_particular_visual_order",
+      "inspection_dossiers_readme_inspection_dossier_model",
+      "inspection_dossiers_readme_layer_validation_maturity"
+    ],
+    "42": [
+      "file_acceptance_evidence_packs_trades_file_acceptance_readout_v0_1",
+      "file_acceptance_evidence_packs_trades_file_acceptance_readout_v0_1_muestra_380",
+      "population_evidence_packs_trades_population_readout_v0_1",
+      "trades_readme_file_acceptance_layer",
+      "trades_readme_population_layer",
+      "trades_trades_global_universe_readout_v0_1",
+      "trades_trades_inspection_readout_v0_1"
+    ],
+    "43": [
+      "module_contracts_corporate_actions_adjustment_methodology",
+      "module_contracts_corporate_actions_adjustment_methodology_adjusted",
+      "module_contracts_corporate_actions_adjustment_methodology_split_normalized",
+      "module_contracts_corporate_actions_adjustment_methodology_ticker_change_continuity",
+      "module_contracts_daily_adjusted_full_universe_promotion_plan_v0_1",
+      "module_contracts_daily_adjusted_full_universe_promotion_plan_v0_1_daily_adjusted_full_universe_promotion",
+      "module_contracts_daily_adjusted_full_universe_promotion_plan_v0_1_daily_return_labels"
+    ],
+    "44": [
+      "module_contracts_price_view_consumer_integration_status_document",
+      "module_contracts_price_view_consumer_integration_status_price_view_integration_debt",
+      "module_contracts_price_view_integration_priority_plan_v0_1_1m_split_normalized_pilot",
+      "module_contracts_price_view_integration_priority_plan_v0_1_daily_adjusted_first_priority",
+      "module_contracts_price_view_integration_priority_plan_v0_1_document",
+      "module_contracts_state_snapshot_standard_document",
+      "module_contracts_state_snapshot_standard_state_snapshot"
+    ],
+    "45": [
+      "data_consumption_policies_daily_consumption_policy_daily_core_consumption",
+      "data_consumption_policies_daily_consumption_policy_daily_final_certification_state",
+      "data_consumption_policies_daily_consumption_policy_document",
+      "dataset_contracts_daily_label_taxonomy_and_cut_policy_daily_quality_taxonomy",
+      "dataset_contracts_daily_label_taxonomy_and_cut_policy_document",
+      "dataset_contracts_daily_label_taxonomy_and_cut_policy_recoverable_with_flag"
+    ],
+    "46": [
+      "dataset_contracts_readme_ohlcv_1m_split_normalized_dataset_contract_v0_1",
+      "ohlcv_1m_ohlcv_1m_split_normalized_schema_contract_document",
+      "ohlcv_1m_ohlcv_1m_split_normalized_schema_contract_ohlcv_1m_split_normalized_schema",
+      "ohlcv_1m_ohlcv_1m_split_normalized_schema_contract_split_normalized_price_view",
+      "reference_splits_schema_contract_document",
+      "reference_splits_schema_contract_reference_splits_schema"
+    ],
+    "47": [
+      "module_contracts_consumer_classes",
+      "module_contracts_consumer_classes_backtest_core",
+      "module_contracts_consumer_classes_execution_simulator",
+      "module_contracts_consumer_classes_forensic_only",
+      "module_contracts_consumer_classes_rl_allowed",
+      "trades_readme_trades_raw"
+    ],
+    "48": [
+      "module_contracts_data_storage_topology_and_target_state_data_storage_topology",
+      "module_contracts_data_storage_topology_and_target_state_document",
+      "module_contracts_data_storage_topology_and_target_state_foundations_contractual_truth",
+      "module_contracts_event_families_and_reference_inventory_document",
+      "module_contracts_event_families_and_reference_inventory_event_reference_inventory",
+      "module_contracts_event_families_and_reference_inventory_price_event_identity_feature_views"
+    ],
+    "49": [
+      "module_contracts_module_contracts_migration_execution_plan_v0_1_document",
+      "module_contracts_module_contracts_migration_execution_plan_v0_1_incremental_migration_plan",
+      "module_contracts_module_contracts_migration_map_v0_1_document",
+      "module_contracts_module_contracts_migration_map_v0_1_migration_path_map",
+      "module_contracts_module_contracts_reference_pre_audit_v0_1_document",
+      "module_contracts_module_contracts_reference_pre_audit_v0_1_reference_surface_audit"
+    ],
+    "50": [
+      "daily_daily_return_labels_schema_contract_anti_leakage_rule",
+      "daily_daily_return_labels_schema_contract_daily_return_labels_dataset",
+      "daily_daily_return_labels_schema_contract_daily_return_labels_schema",
+      "daily_daily_return_labels_schema_contract_document",
+      "daily_daily_return_labels_schema_contract_forward_looking_target_layer"
+    ],
+    "51": [
+      "dataset_contracts_readme_trades_dataset_contract_v0_1",
+      "trades_trades_schema_contract_document",
+      "trades_trades_schema_contract_file_level_audit_acceptance_schema",
+      "trades_trades_schema_contract_raw_observation_vs_acceptance_semantics",
+      "trades_trades_schema_contract_trades_raw_schema"
+    ],
+    "52": [
+      "dataset_contracts_trades_dataset_contract_v0_1_document",
+      "dataset_contracts_trades_label_taxonomy_and_cut_policy_bad_data_separate_from_review",
+      "dataset_contracts_trades_label_taxonomy_and_cut_policy_document",
+      "dataset_contracts_trades_label_taxonomy_and_cut_policy_tape_intrinsic_vs_reference_relative",
+      "dataset_contracts_trades_label_taxonomy_and_cut_policy_trades_file_acceptance_labels"
+    ],
+    "53": [
+      "module_contracts_auditoria_and_certification_source_hierarchy",
+      "module_contracts_auditoria_and_certification_source_hierarchy_auditoria_layer",
+      "module_contracts_auditoria_and_certification_source_hierarchy_certification_layer",
+      "module_contracts_auditoria_and_certification_source_hierarchy_foundations_layer",
+      "module_contracts_auditoria_and_certification_source_hierarchy_global_metrics_layer"
+    ],
+    "54": [
+      "additional_additional_economic_schema_contract_additional_economic_dataset",
+      "additional_additional_economic_schema_contract_additional_economic_schema",
+      "additional_additional_economic_schema_contract_document",
+      "additional_additional_economic_schema_contract_macro_regime_overlay"
+    ],
+    "55": [
+      "additional_additional_ipos_schema_contract_additional_ipos_dataset",
+      "additional_additional_ipos_schema_contract_additional_ipos_schema",
+      "additional_additional_ipos_schema_contract_document",
+      "additional_additional_ipos_schema_contract_early_life_halt_anomaly_context"
+    ],
+    "56": [
+      "additional_additional_news_schema_contract_additional_news_dataset",
+      "additional_additional_news_schema_contract_additional_news_schema",
+      "additional_additional_news_schema_contract_document",
+      "additional_additional_news_schema_contract_multi_ticker_attribution_ambiguity"
+    ],
+    "57": [
+      "data_consumption_policies_halts_consumption_policy_document",
+      "data_consumption_policies_halts_consumption_policy_halts_event_consumption",
+      "data_consumption_policies_halts_consumption_policy_halts_temporal_leakage",
+      "dataset_contracts_halts_dataset_contract_v0_1_document"
+    ],
+    "58": [
+      "data_consumption_policies_lt1b_universe_consumption_policy_document",
+      "data_consumption_policies_lt1b_universe_consumption_policy_expected_not_healthy",
+      "data_consumption_policies_lt1b_universe_consumption_policy_lt1b_filtering_rule",
+      "dataset_contracts_lt1b_universe_dataset_contract_v0_1_document"
+    ],
+    "59": [
+      "dataset_contracts_readme_quotes_dataset_contract_v0_1",
+      "quotes_quotes_schema_contract_bid_ask_book_observation",
+      "quotes_quotes_schema_contract_document",
+      "quotes_quotes_schema_contract_quotes_core_v0_1_schema"
+    ],
+    "60": [
+      "event_case_evidence_packs_ohlcv_1m_split_normalized_visual_inspector_pack_v0_1_document",
+      "event_case_evidence_packs_ohlcv_1m_split_normalized_visual_inspector_pack_v0_1_pass_and_coverage_limited_casepacks",
+      "event_case_evidence_packs_ohlcv_1m_split_normalized_visual_inspector_pack_v0_1_population_visual_map",
+      "event_case_evidence_packs_ohlcv_1m_split_normalized_visual_inspector_pack_v0_1_visual_inspector_pack"
+    ],
+    "61": [
+      "financial_ratios_schema_contract_derived_ratio_snapshots",
+      "financial_ratios_schema_contract_document",
+      "financial_ratios_schema_contract_financial_ratios_dataset",
+      "financial_ratios_schema_contract_financial_ratios_schema"
+    ],
+    "62": [
+      "halts_halts_registry_entry_document",
+      "halts_halts_registry_entry_halts_v0_1",
+      "quotes_quotes_registry_entry_document",
+      "quotes_quotes_registry_entry_quotes_core_v0_1"
+    ],
+    "63": [
+      "module_contracts_daily_acceptance_policy_explained",
+      "module_contracts_daily_acceptance_policy_explained_coverage_axis",
+      "module_contracts_daily_acceptance_policy_explained_hard_invalid_parse_or_price",
+      "module_contracts_daily_acceptance_policy_explained_quality_axis"
+    ],
+    "64": [
+      "additional_additional_institutional_closeout_v0_1_additional_auxiliary_block",
+      "additional_additional_institutional_closeout_v0_1_document",
+      "additional_additional_institutional_closeout_v0_1_subblock_specific_consumption"
+    ],
+    "65": [
+      "halts_build_halts_inspection_pack_document",
+      "halts_halts_casepacks_traceability_audit_v0_1_casepacks_traceability_pass",
+      "halts_halts_casepacks_traceability_audit_v0_1_document"
+    ],
+    "66": [
+      "ohlcv_1m_ohlcv_1m_split_normalized_pilot_manifest_v0_1_document",
+      "ohlcv_1m_ohlcv_1m_split_normalized_pilot_manifest_v0_1_pilot_manifest",
+      "ohlcv_1m_ohlcv_1m_split_normalized_pilot_manifest_v0_1_verified_coverage_eligibility"
+    ],
+    "67": [
+      "reference_build_reference_inspection_pack_document",
+      "reference_integration_notes_document",
+      "reference_integration_notes_modern_dossier_complete_for_foundation_promotion"
+    ],
+    "68": [
+      "halts_integration_notes_canonical_root_promotion",
+      "halts_integration_notes_document"
+    ],
+    "69": [
+      "module_contracts_daily_contracts_index_daily_contract_navigation",
+      "module_contracts_daily_contracts_index_document"
+    ],
+    "70": [
+      "reference_operational_run_schema_contract_document",
+      "reference_operational_run_schema_contract_reference_operational_run_artifacts"
+    ],
+    "71": [
+      "bad_case_evidence_packs_readme_document"
+    ],
+    "72": [
+      "coverage_case_evidence_packs_readme_document"
+    ],
+    "73": [
+      "flagged_case_evidence_packs_readme_document"
+    ],
+    "74": [
+      "good_justification_readme_document"
+    ]
+  },
+  "cohesion": {
+    "0": 0.07899159663865546,
+    "1": 0.0625,
+    "2": 0.08505747126436781,
+    "3": 0.082010582010582,
+    "4": 0.1076923076923077,
+    "5": 0.1067193675889328,
+    "6": 0.16339869281045752,
+    "7": 0.15441176470588236,
+    "8": 0.16666666666666666,
+    "9": 0.19047619047619047,
+    "10": 0.15384615384615385,
+    "11": 0.17582417582417584,
+    "12": 0.15384615384615385,
+    "13": 0.14285714285714285,
+    "14": 0.19230769230769232,
+    "15": 0.15384615384615385,
+    "16": 0.16666666666666666,
+    "17": 0.2,
+    "18": 0.18181818181818182,
+    "19": 0.3090909090909091,
+    "20": 0.21818181818181817,
+    "21": 0.2,
+    "22": 0.28888888888888886,
+    "23": 0.2,
+    "24": 0.2,
+    "25": 0.28888888888888886,
+    "26": 0.25,
+    "27": 0.25,
+    "28": 0.25,
+    "29": 0.3055555555555556,
+    "30": 0.2222222222222222,
+    "31": 0.25,
+    "32": 0.3055555555555556,
+    "33": 0.2777777777777778,
+    "34": 0.2857142857142857,
+    "35": 0.25,
+    "36": 0.25,
+    "37": 0.25,
+    "38": 0.25,
+    "39": 0.39285714285714285,
+    "40": 0.42857142857142855,
+    "41": 0.3333333333333333,
+    "42": 0.2857142857142857,
+    "43": 0.3333333333333333,
+    "44": 0.2857142857142857,
+    "45": 0.4,
+    "46": 0.3333333333333333,
+    "47": 0.3333333333333333,
+    "48": 0.4,
+    "49": 0.4666666666666667,
+    "50": 0.4,
+    "51": 0.6,
+    "52": 0.4,
+    "53": 0.6,
+    "54": 0.5,
+    "55": 0.5,
+    "56": 0.5,
+    "57": 0.5,
+    "58": 0.5,
+    "59": 0.5,
+    "60": 0.8333333333333334,
+    "61": 0.5,
+    "62": 0.5,
+    "63": 0.5,
+    "64": 0.6666666666666666,
+    "65": 0.6666666666666666,
+    "66": 1.0,
+    "67": 0.6666666666666666,
+    "68": 1.0,
+    "69": 1.0,
+    "70": 1.0,
+    "71": 1.0,
+    "72": 1.0,
+    "73": 1.0,
+    "74": 1.0
+  },
+  "gods": [
+    {
+      "id": "canonical_schemas_readme_canonical_schema_contract",
+      "label": "Canonical Schema Contract",
+      "degree": 21
+    },
+    {
+      "id": "dataset_registry_readme_registry_entry_authority_chain",
+      "label": "Registry Entry Authority Chain",
+      "degree": 17
+    },
+    {
+      "id": "dataset_contracts_readme_document",
+      "label": "Dataset Contracts README",
+      "degree": 11
+    },
+    {
+      "id": "dataset_contracts_lt1b_universe_dataset_contract_v0_1_lt1b_universe_v0_1",
+      "label": "lt1b_universe_v0_1",
+      "degree": 11
+    },
+    {
+      "id": "reference_reference_inspection_readout_v0_2_document",
+      "label": "Reference Inspection Readout v0.2",
+      "degree": 11
+    },
+    {
+      "id": "module_contracts_ohlcv_1m_contracts_index_document",
+      "label": "OHLCV 1m Contracts Index",
+      "degree": 10
+    },
+    {
+      "id": "validators_readme_document",
+      "label": "validators/README.md",
+      "degree": 9
+    },
+    {
+      "id": "dataset_contracts_readme_reference_dataset_contract_v0_1",
+      "label": "Reference Dataset Contract v0.1",
+      "degree": 8
+    },
+    {
+      "id": "dataset_contracts_ohlcv_1m_split_normalized_dataset_contract_v0_1_ohlcv_1m_split_normalized",
+      "label": "ohlcv_1m_split_normalized",
+      "degree": 8
+    },
+    {
+      "id": "data_consumption_policies_readme_data_consumption_policy_framework",
+      "label": "Data Consumption Policy Framework",
+      "degree": 8
+    }
+  ],
+  "surprises": [
+    {
+      "source": "adjusted_proxy",
+      "target": "reference_scale_mismatch",
+      "source_files": [
+        "module_contracts/corporate_actions_adjustment_methodology.md",
+        "inspection_dossiers/trades/README.md"
+      ],
+      "confidence": "AMBIGUOUS",
+      "relation": "conceptually_related_to",
+      "why": "ambiguous connection - not explicitly stated in source; connects across different repos/directories; peripheral node `adjusted_proxy` unexpectedly reaches hub `reference_scale_mismatch`"
+    },
+    {
+      "source": "Institutional Coverage Map",
+      "target": "Canonical Schema Contract",
+      "source_files": [
+        "README.md",
+        "canonical_schemas/README.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; bridges separate communities; peripheral node `Institutional Coverage Map` unexpectedly reaches hub `Canonical Schema Contract`"
+    },
+    {
+      "source": "Reference Events Schema",
+      "target": "Reference Dataset Contract v0.1",
+      "source_files": [
+        "canonical_schemas/reference/events_schema_contract.md",
+        "contract_registry/dataset_contracts/README.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; bridges separate communities; peripheral node `Reference Events Schema` unexpectedly reaches hub `Reference Dataset Contract v0.1`"
+    },
+    {
+      "source": "Registry Entry Authority Chain",
+      "target": "Inspection Dossier Model",
+      "source_files": [
+        "dataset_registry/README.md",
+        "inspection_dossiers/README.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; bridges separate communities; peripheral node `Inspection Dossier Model` unexpectedly reaches hub `Registry Entry Authority Chain`"
+    },
+    {
+      "source": "trades_v0_1",
+      "target": "Trades Review Rehabilitation Quantitative Update",
+      "source_files": [
+        "dataset_registry/trades/trades_registry_entry.yaml",
+        "data_consumption_policies/trades_consumption_policy.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `Trades Review Rehabilitation Quantitative Update` unexpectedly reaches hub `trades_v0_1`"
+    }
+  ],
+  "questions": [
+    {
+      "type": "ambiguous_edge",
+      "question": "What is the exact relationship between `reference_scale_mismatch` and `adjusted_proxy`?",
+      "why": "Edge tagged AMBIGUOUS (relation: conceptually_related_to) - confidence is low."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Canonical Schema Contract` connect `Canonical Schemas 2` to `Canonical Schemas 3`, `Graphify Governance`, `Halts Evidence`, `Canonical Schemas`, `Halts Evidence 3`, `Trading Data Quality 8`, `Canonical Schemas 5`, `Canonical Schemas 6`, `Canonical Schemas 7`, `Canonical Schemas 8`, `Regime Features`?",
+      "why": "High betweenness centrality (0.018) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `lt1b_universe_v0_1` connect `Dataset Contracts 2` to `Dataset Contracts`, `Dataset Contracts 5`, `Consumption Policies`, `Consumption Policies 2`, `Short Data 2`?",
+      "why": "High betweenness centrality (0.011) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Registry Entry Authority Chain` connect `Dataset Registry` to `Trading Data Quality 7`, `Inspection Dossiers 3`, `OHLCV Minute Data 2`, `Short Data 3`, `Halts Evidence 5`?",
+      "why": "High betweenness centrality (0.007) - this node is a cross-community bridge."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 14 inferred relationships involving `Registry Entry Authority Chain` (e.g. with `additional_v0_1` and `daily_adjusted_v0_1`) actually correct?",
+      "why": "`Registry Entry Authority Chain` has 14 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `Canonical Schemas README`, `Leaf Graph Family`, `No Manual graph.json` to the rest of the system?",
+      "why": "185 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Module Contracts` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.07899159663865546 - nodes in this community are weakly interconnected."
+    }
+  ]
+}

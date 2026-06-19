@@ -1,0 +1,39 @@
+# Runtime and generated graph outputs
+graphify-out/
+**/graphify-out/
+**/_graphify_staging*/
+
+# Local CTO notes are contextual carry-over, not part of the foundations authority leaf.
+00_CTO/
+**/00_CTO/
+
+# Python/runtime caches
+__pycache__/
+**/__pycache__/
+.pytest_cache/
+**/.pytest_cache/
+
+# Inspection dossier readouts are semantic documents and may enter governed slices.
+# Heavy inspection evidence is handled by explicit slices/assets rules, not root scans.
+**/inspection_dossiers/**/evidence_assets/
+**/evidence_assets/
+
+# Heavy or physical data artifacts require profiling, not semantic graph scans.
+*.parquet
+*.csv
+*.zip
+*.7z
+*.gz
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Visual evidence should enter only through explicit casepack slices.
+*.png
+*.jpg
+*.jpeg
+*.webp
+
+# Notebooks are preserved evidence, not default graph corpus.
+*.ipynb

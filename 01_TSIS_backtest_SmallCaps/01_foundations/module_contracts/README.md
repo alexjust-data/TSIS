@@ -81,6 +81,8 @@
   - [`trades_rules_explained_line_by_line.md`](#tradesrulesexplainedlinebylinemd)
 - [11. Governance, indices y migracion](#11-governance-indices-y-migracion)
   - [`README.md`](#readmemd)
+  - [`graphify/README.md`](#graphifyreadmemd)
+  - [`graphify/data_foundation_graph_and_table_design_protocol.md`](#graphifydatafoundationgraphandtabledesignprotocolmd)
   - [`daily_contracts_index.md`](#dailycontractsindexmd)
   - [`quotes_contracts_index.md`](#quotescontractsindexmd)
   - [`trades_contracts_index.md`](#tradescontractsindexmd)
@@ -97,6 +99,7 @@
   - [Si vas a tocar market data o price views](#si-vas-a-tocar-market-data-o-price-views)
   - [Si vas a tocar un dataset certificado](#si-vas-a-tocar-un-dataset-certificado)
   - [Si vas a tocar una capa derivada](#si-vas-a-tocar-una-capa-derivada)
+  - [Si vas a construir grafos Graphify o disenar tablas CAPA 1](#si-vas-a-construir-grafos-graphify-o-disenar-tablas-capa-1)
   - [Si vas a tocar consumidores](#si-vas-a-tocar-consumidores)
   - [Si vas a reorganizar documentos](#si-vas-a-reorganizar-documentos)
 - [Reglas de creacion de nuevos module contracts](#reglas-de-creacion-de-nuevos-module-contracts)
@@ -837,6 +840,28 @@ Este documento.
 
 Mapa maestro de la carpeta.
 
+### `graphify/README.md`
+
+Indice local para gobernanza Graphify de `01_foundations`.
+
+Declara que Graphify es mapa semantico, no source of truth ni profiler fisico
+de datos. La operacion de build vive en
+`01_foundations/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md` y la cadencia en
+`01_foundations/GRAPHIFY_REFRESH_QUEUE.md`.
+
+### `graphify/data_foundation_graph_and_table_design_protocol.md`
+
+Protocolo para construir grafos independientes de CAPA 1 y usarlos como paso
+previo al diseno de tablas institucionales.
+
+Fija la separacion entre:
+
+- arquitectura `00_CTO`;
+- autoridad contractual `01_foundations`;
+- evidencia `00_data_certification`;
+- profiling fisico de datos;
+- y runtime reconstruible `graphify-out/`.
+
 ### `daily_contracts_index.md`
 
 Indice del bloque daily.
@@ -897,6 +922,7 @@ Estos documentos tienen impacto transversal fuerte y muchas referencias:
 - `bad_evidence_and_rehabilitation.md`
 - `semantic_authority.md`
 - `operational_boundaries.md`
+- `graphify/data_foundation_graph_and_table_design_protocol.md`
 
 No deben moverse ni reinterpretarse sin plan.
 
@@ -958,6 +984,25 @@ Lee:
 5. el operational landing;
 6. el promotion plan;
 7. el pilot/results document.
+
+### Si vas a construir grafos Graphify o disenar tablas CAPA 1
+
+Lee:
+
+1. `../GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md`
+2. `../GRAPHIFY_REFRESH_QUEUE.md`
+3. `graphify/README.md`
+4. `graphify/data_foundation_graph_and_table_design_protocol.md`
+5. `auditoria_and_certification_source_hierarchy.md`
+6. `data_storage_topology_and_target_state.md`
+7. `layer_model.md`
+8. los dataset contracts de la familia afectada;
+9. schemas, registries, policies y validators de la familia afectada.
+
+No construyas un grafo unico gigante de `01_foundations` ni de
+`00_data_certification` como primer paso.
+
+No propongas tablas institucionales sin profiling fisico de parquet/CSV reales.
 
 ### Si vas a tocar consumidores
 

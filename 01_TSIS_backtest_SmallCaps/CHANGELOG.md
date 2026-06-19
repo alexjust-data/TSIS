@@ -7,6 +7,55 @@ Este changelog registra cambios institucionales y semanticamente relevantes para
 No duplica el historial de Git.
 Existe para preservar memoria arquitectonica y metodologica del modulo.
 
+## v0.4.47 - data foundation graphify governance protocol
+
+### Added
+
+- `01_foundations/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md`
+- `01_foundations/GRAPHIFY_REFRESH_QUEUE.md`
+- `01_foundations/.graphifyignore`
+- `01_foundations/module_contracts/graphify/README.md`
+- `01_foundations/module_contracts/graphify/data_foundation_graph_and_table_design_protocol.md`
+
+### Changed
+
+- `01_foundations/README.md`
+- `01_foundations/module_contracts/README.md`
+
+### Notes
+
+This adds a module-level protocol for using Graphify before designing CAPA 1
+Data Foundation tables.
+
+The root `01_foundations` protocol now mirrors the role of the `00_CTO`
+Graphify protocol: it defines what counts as official Graphify output, how to
+avoid manual `graph.json` fallbacks, and when to refresh by severity instead of
+per commit.
+
+The protocol requires separate graphs for:
+
+- `foundations_authority_graph`
+- `certification_decisions_graph`
+- `reference_identity_graph`
+- `daily_ohlcv_graph`
+- `microstructure_quotes_trades_graph`
+- `additional_fundamentals_news_graph`
+
+It also states that Graphify is a semantic map, not a physical data profiler or
+source of truth. Table design must combine architecture, `01_foundations`
+contracts, `00_data_certification` evidence and physical parquet/CSV profiling.
+
+### Impact
+
+Future agents must not build one giant graph of all `01_foundations` or all
+`00_data_certification` as the first step for CAPA 1.
+
+Future CAPA 1 tables remain hypotheses until justified by:
+
+```text
+contract + certification + evidence + physical profiling + validator
+```
+
 ## v0.4.46 - halts modern inspection dossier completion
 
 ### Added
