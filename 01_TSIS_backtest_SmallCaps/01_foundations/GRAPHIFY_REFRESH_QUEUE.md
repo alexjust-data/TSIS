@@ -630,6 +630,78 @@ Operational note:
 - this limitation is recorded in the leaf BUILD_MANIFEST.md.
 ```
 
+### GFQ-20260621-001 - Homogeneous Graphify semantic extraction remediation
+
+Status: `pending_leaf_build`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+foundations_authority_graph
+```
+
+Reason:
+
+- `foundations_authority_20260620` is materialized, valid, consultable and
+  diagnostically clean, but it is not a fully homogeneous semantic extraction.
+- Chunks `01-12` were produced by Codex worker semantic extraction.
+- Chunks `13-16` were produced by deterministic bounded structural extraction
+  after worker subagents failed to write chunk files within the operational
+  window.
+- That fallback was intentionally documented, but it means the current leaf
+  must not be represented as final institutional Graphify parity.
+
+Changed paths:
+
+```text
+01_foundations/graphify-out/leaf_slices/foundations_authority_20260620/BUILD_MANIFEST.md
+01_foundations/GRAPHIFY_REFRESH_QUEUE.md
+01_foundations/README.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Recommended action:
+
+```text
+Reopen the Graphify build work.
+Re-extract chunks 13-16 using the same worker semantic-extraction standard as
+chunks 01-12, splitting them into smaller chunks if needed.
+Regenerate foundations_authority_graph as a new dated leaf.
+Update BUILD_MANIFEST.md, GRAPHIFY_REFRESH_QUEUE.md, README.md and CHANGELOG.md.
+Remove the limitation only after all chunks have homogeneous semantic extraction
+evidence.
+```
+
+Root action:
+
+```text
+No root graph yet.
+Do not integrate this leaf into a root graph until the homogeneous extraction
+remediation is complete or an explicit waiver is documented.
+```
+
+Owner:
+
+```text
+Modulo 01 / Data Foundation Graphify governance
+```
+
+Notes:
+
+Current state:
+
+```text
+graph materialized = yes
+graph valid JSON / consultable = yes
+root graph = no, by protocol
+fully homogeneous Graphify semantic extraction = no
+institutional final without caveat = no
+```
+
+This entry exists so the remediation is not left only in conversation memory.
+
 ## Entry template
 
 ```text

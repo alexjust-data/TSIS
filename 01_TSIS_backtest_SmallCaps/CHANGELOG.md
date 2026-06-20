@@ -7,6 +7,41 @@ Este changelog registra cambios institucionales y semanticamente relevantes para
 No duplica el historial de Git.
 Existe para preservar memoria arquitectonica y metodologica del modulo.
 
+## v0.4.64 - Graphify homogeneous extraction remediation registered
+
+### Changed
+
+- `01_foundations/GRAPHIFY_REFRESH_QUEUE.md`
+
+### Notes
+
+The limitation in `foundations_authority_20260620` is now registered as explicit
+pending work, not only as a caveat in the manifest.
+
+Current state:
+
+```text
+graph materialized = yes
+graph valid JSON / consultable = yes
+root graph = no, by protocol
+fully homogeneous Graphify semantic extraction = no
+institutional final without caveat = no
+```
+
+Required remediation:
+
+```text
+Re-extract chunks 13-16 using the same worker semantic-extraction standard as
+chunks 01-12, splitting them into smaller chunks if needed.
+Regenerate foundations_authority_graph as a new dated leaf.
+Update BUILD_MANIFEST.md, GRAPHIFY_REFRESH_QUEUE.md, README.md and CHANGELOG.md.
+Remove the limitation only after all chunks have homogeneous semantic extraction
+evidence.
+```
+
+The remediation is tracked as `GFQ-20260621-001` with status
+`pending_leaf_build`.
+
 ## v0.4.63 - Foundations Graphify authority leaf refresh
 
 ### Added
