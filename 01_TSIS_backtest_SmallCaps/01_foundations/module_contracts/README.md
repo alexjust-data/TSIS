@@ -15,6 +15,7 @@
   - [`semantic_authority.md`](#semanticauthoritymd)
   - [`naming_authority.md`](#namingauthoritymd)
   - [`data_storage_topology_and_target_state.md`](#datastoragetopologyandtargetstatemd)
+  - [`raw_data_authority_and_derivation_map.md`](#rawdataauthorityandderivationmapmd)
   - [`promotion_pipeline.md`](#promotionpipelinemd)
   - [`dataset_contract_template.md`](#datasetcontracttemplatemd)
 - [2. Evidencia, inspeccion y rehabilitacion](#2-evidencia-inspeccion-y-rehabilitacion)
@@ -25,6 +26,7 @@
   - [`layer_model.md`](#layermodelmd)
 - [3. Consumers y consumo](#3-consumers-y-consumo)
   - [`consumer_classes.md`](#consumerclassesmd)
+  - [`additional_to_master_tables_policy_v0_1.md`](#additionaltomastertablespolicyv01md)
   - [`daily_return_labels_consumer_contract_v0_1.md`](#dailyreturnlabelsconsumercontractv01md)
   - [`intraday_regime_features_consumer_contract_v0_1.md`](#intradayregimefeaturesconsumercontractv01md)
   - [`price_view_consumer_integration_status.md`](#priceviewconsumerintegrationstatusmd)
@@ -87,6 +89,7 @@
   - [`quotes_contracts_index.md`](#quotescontractsindexmd)
   - [`trades_contracts_index.md`](#tradescontractsindexmd)
   - [`ohlcv_1m_contracts_index.md`](#ohlcv1mcontractsindexmd)
+  - [`additional_contracts_index.md`](#additionalcontractsindexmd)
   - [`transversal_contracts_index.md`](#transversalcontractsindexmd)
   - [`module_contracts_migration_map_v0_1.md`](#modulecontractsmigrationmapv01md)
   - [`module_contracts_reference_pre_audit_v0_1.md`](#modulecontractsreferencepreauditv01md)
@@ -251,6 +254,7 @@ Existen indices de navegacion:
 - `quotes_contracts_index.md`
 - `trades_contracts_index.md`
 - `ohlcv_1m_contracts_index.md`
+- `additional_contracts_index.md`
 - `transversal_contracts_index.md`
 
 Estos indices no reemplazan los contratos.
@@ -351,6 +355,39 @@ Distingue:
 Regla:
 
 - dos carpetas con nombres parecidos no implican la misma semantica.
+
+### `raw_data_authority_and_derivation_map.md`
+
+Fija la clasificacion transversal entre:
+
+- RAW vendor/original o staged por procedencia;
+- raw market data por rol funcional;
+- raw reference/context data por rol funcional;
+- RAW auditada;
+- reference data;
+- context data;
+- vistas derivadas ETL;
+- feature layers;
+- label/target layers;
+- audit evidence;
+- runtime/cache artifacts.
+
+Regla central:
+
+```text
+RAW data significa dato preservado sin alterar su contenido semantico.
+No significa dato con minima transformacion.
+```
+
+Tambien fija que todo payload descargado de Polygon y preservado sin alterar su
+contenido semantico es RAW vendor data, incluyendo `short`, `financials`,
+`news`, `ipos`, `economic`, `reference`, `halts` y `additional`. La pregunta
+separada es el rol: market, reference, context, fundamentals, event, derived,
+feature, label o evidence.
+
+Es lectura obligatoria cuando una pregunta pueda confundir data raw con
+derivados, features, labels, evidence assets, Graphify outputs o material
+historico de auditoria.
 
 ### `promotion_pipeline.md`
 
@@ -493,6 +530,21 @@ Ejemplos:
 - `backtest_core` no implica `execution_simulator`;
 - `ml_primary` no implica `rl_allowed`;
 - `research_only` no implica `backtest_extended`.
+
+### `additional_to_master_tables_policy_v0_1.md`
+
+Define como `additional_v0_1` puede alimentar outputs de CAPA 1:
+
+- `data_quality_report`;
+- `master_daily_table`;
+- `master_intraday_table`;
+- `symbol_master`;
+- `corporate_actions_table`;
+- `calendar_table`.
+
+Regla central:
+
+- Additional puede enriquecer tablas de calidad/contexto, pero no certifica raw market data, no reemplaza `reference` y no promociona features downstream por si solo.
 
 ### `daily_return_labels_consumer_contract_v0_1.md`
 
@@ -878,6 +930,19 @@ Indice del bloque trades.
 
 Indice del bloque ohlcv_1m y primer consumidor `intraday_regime_features`.
 
+### `additional_contracts_index.md`
+
+Indice del bloque `additional_v0_1`.
+
+Agrupa contrato, schemas, policy, registry, validator, dossier, evidence assets
+y la policy de uso hacia tablas maestras.
+
+Regla central:
+
+- `additional` es RAW vendor context por procedencia, pero su rol funcional es
+  context/fundamentals/event/macro; no es precio, book, tape ni reference
+  authority.
+
 ### `transversal_contracts_index.md`
 
 Indice de gobernanza, semantica, evidencia, price views, operacion y storage.
@@ -918,6 +983,7 @@ Estos documentos tienen impacto transversal fuerte y muchas referencias:
 - `corporate_actions_adjustment_methodology.md`
 - `price_views_registry.md`
 - `data_storage_topology_and_target_state.md`
+- `raw_data_authority_and_derivation_map.md`
 - `event_families_and_reference_inventory.md`
 - `bad_evidence_and_rehabilitation.md`
 - `semantic_authority.md`
@@ -952,13 +1018,14 @@ Cambios aqui pueden alterar madurez, promocion o consumo downstream.
 Lee primero:
 
 1. `data_storage_topology_and_target_state.md`
-2. `event_families_and_reference_inventory.md`
-3. `price_semantics_and_adjustment_policy.md`
-4. `price_views_registry.md`
-5. `corporate_actions_adjustment_methodology.md`
-6. `external_price_comparison_caveats.md`
-7. `pipeline_price_view_policy.md`
-8. `policy_explanation_standard.md`
+2. `raw_data_authority_and_derivation_map.md`
+3. `event_families_and_reference_inventory.md`
+4. `price_semantics_and_adjustment_policy.md`
+5. `price_views_registry.md`
+6. `corporate_actions_adjustment_methodology.md`
+7. `external_price_comparison_caveats.md`
+8. `pipeline_price_view_policy.md`
+9. `policy_explanation_standard.md`
 
 ### Si vas a tocar un dataset certificado
 

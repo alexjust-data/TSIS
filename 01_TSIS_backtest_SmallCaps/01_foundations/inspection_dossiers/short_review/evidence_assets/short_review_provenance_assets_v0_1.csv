@@ -1,0 +1,10 @@
+path,exists,bytes
+E:\TSIS\data\short_review\finra_short_build_status.md,True,3137
+E:\TSIS\data\short_review\research_short_sources.md,True,5854
+E:\TSIS\data\short_review\short_data_recovery_plan.md,True,2425
+E:\TSIS\data\short_review\finra_short\README.md,True,2021
+E:\TSIS\data\short_review\finra_short\artifacts\short_interest_manifest.json,True,230
+E:\TSIS\data\short_review\finra_short\artifacts\short_volume_manifest.json,True,600
+E:\TSIS\data\short_review\finra_short\logs\download_short_interest_raw.csv,True,25787
+E:\TSIS\data\short_review\finra_short\logs\download_short_volume_raw.csv,True,174338
+E:\TSIS\data\short_review\finra_short\finra_short_pipeline.py,True,16874

@@ -52,6 +52,12 @@ La Event Library no contiene:
 Si una definicion incluye accion operativa, deja de ser evento y debe moverse a
 Strategy Library, Execution Models o Decision Models.
 
+## Documentos transversales
+
+- `EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md`: guia draft para documentar
+  psicologia de traders, teoria de juegos, dinamica de masas y microestructura
+  conductual dentro de eventos sin convertirlos en estrategias.
+
 ## Familias activas
 
 ```text

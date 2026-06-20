@@ -12,12 +12,15 @@ status:
 registry_classification:
   dataset_family: short_review
   primary_unit: mixed_ticker_settlement_date_and_ticker_date
-  evidence_state: official_free_finra_rebuilt_and_documented
+  evidence_state: official_free_finra_rebuilt_documented_with_short_volume_key_flags
 
 artifacts:
   dataset_contract: 01_foundations/contract_registry/dataset_contracts/short_review_dataset_contract_v0_1.md
   consumption_policy: 01_foundations/data_consumption_policies/short_review_consumption_policy.md
-  evidence_dossier: 01_foundations/inspection_dossiers/short/short_institutional_closeout_v0_1.md
+  evidence_dossier: 01_foundations/inspection_dossiers/short_review/short_review_inspection_readout_v0_1.md
+  related_short_closeout: 01_foundations/inspection_dossiers/short/short_institutional_closeout_v0_1.md
+  data_quality_report: 01_foundations/data_quality_report/families/short_review_quality_report_v0_1.md
+  validator: 01_foundations/validators/short_review/short_review_validators.md
   schema_contracts:
     - 01_foundations/canonical_schemas/short_review/finra_short_interest_schema_contract.md
     - 01_foundations/canonical_schemas/short_review/finra_short_volume_schema_contract.md
@@ -43,6 +46,17 @@ coverage_snapshot:
     date_min: 2018-08-01
     date_max: 2026-04-29
     aggregate_file: E:/TSIS/data/short_review/finra_short/artifacts/short_volume_all_daily_finra.parquet
+
+quality_flags:
+  short_volume_duplicate_key_flags:
+    key: ticker + date
+    duplicate_keys: 824
+    duplicate_excess_rows: 5250
+    affected_tickers:
+      - CPS
+      - OP
+      - LFTR
+    policy: do_not_silently_collapse
 
 comparison_to_local_short:
   short_volume:
@@ -77,4 +91,5 @@ notes:
   - short_review is FINRA official/free baseline and provenance.
   - It does not replace E:/TSIS/data/short silently.
   - It does not certify full 2005-2026 official/free short completeness.
+  - FINRA short volume has duplicate ticker-date keys requiring explicit handling.
   - Derived features must preserve source scope and valid date windows.

@@ -59,6 +59,9 @@ FINRA short volume:
 - rows: `4689038`
 - tickers: `4623`
 - date range: `2018-08-01` to `2026-04-29`
+- duplicate `ticker + date` keys: `824`
+- duplicate excess rows: `5250`
+- affected duplicate-key tickers: `CPS`, `OP`, `LFTR`
 
 Comparison to local `short`:
 
@@ -92,8 +95,12 @@ Not automatically enabled:
 - FINRA `short_interest` pre-modern semantics require caution.
 - FINRA source scope must travel with all derived features.
 - `short_volume_ratio` is source-scope, not universal market shorting pressure.
+- FINRA short volume currently has duplicate `ticker + date` keys and must not be consumed as a clean analytic table without explicit handling.
 - Local-only tickers require review for identity, ticker reuse, provider coverage, or valid-window differences.
 
 ## 8. Verdict
 
 `short_review` is accepted as an institutional official/free FINRA baseline and provenance layer. It should be preserved and cited whenever `short` is used, audited, compared, or promoted.
+
+This acceptance is scoped. It does not clear direct analytic consumption of
+FINRA short volume without duplicate-key handling.

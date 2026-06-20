@@ -1,0 +1,68 @@
+{
+  "root": "E:\\TSIS\\data\\short_review\\finra_short",
+  "read_errors": 0,
+  "profiles": [
+    {
+      "dataset": "short_interest",
+      "relative_path": "artifacts/short_interest_all_biweekly_finra.parquet",
+      "rows": 505745,
+      "tickers": 4687,
+      "date_col": "settlement_date",
+      "date_min": "2017-12-29",
+      "date_max": "2026-04-15",
+      "date_nulls": 0,
+      "columns_count": 5,
+      "columns": "settlement_date|ticker|short_interest|avg_daily_volume|days_to_cover"
+    },
+    {
+      "dataset": "short_volume",
+      "relative_path": "artifacts/short_volume_all_daily_finra.parquet",
+      "rows": 4689038,
+      "tickers": 4623,
+      "date_col": "date",
+      "date_min": "2018-08-01",
+      "date_max": "2026-04-29",
+      "date_nulls": 0,
+      "columns_count": 17,
+      "columns": "ticker|date|total_volume|short_volume|exempt_volume|non_exempt_volume|short_volume_ratio|nyse_short_volume|nyse_short_volume_exempt|nasdaq_carteret_short_volume|nasdaq_carteret_short_volume_exempt|nasdaq_chicago_short_volume|nasdaq_chicago_short_volume_exempt|adf_short_volume|adf_short_volume_exempt|orf_short_volume|orf_short_volume_exempt"
+    }
+  ],
+  "normalized_file_counts": [
+    {
+      "dataset": "short_volume",
+      "normalized_parquet_files": 4623,
+      "sample_tickers": "AACT|AAGR|AAIC|AAMC|AAME|AAN|AAQC|AARD|AATC|ABAC"
+    },
+    {
+      "dataset": "short_interest",
+      "normalized_parquet_files": 4687,
+      "sample_tickers": "AACT|AAGR|AAIC|AAMC|AAME|AAN|AAQC|AARD|AATC|ABAC"
+    }
+  ],
+  "provenance_assets_all_present": true,
+  "sample_tickers": [
+    "AAME",
+    "ABEO",
+    "SAVA"
+  ],
+  "local_comparison": [
+    {
+      "dataset": "short_volume",
+      "local_or_polygon_files": 4824,
+      "finra_files": 4623,
+      "intersection": 4623,
+      "local_only": 201,
+      "finra_only": 0,
+      "source": "documented_current_baseline"
+    },
+    {
+      "dataset": "short_interest",
+      "local_or_polygon_files": 4824,
+      "finra_files": 4687,
+      "intersection": 4687,
+      "local_only": 137,
+      "finra_only": 0,
+      "source": "documented_current_baseline"
+    }
+  ]
+}

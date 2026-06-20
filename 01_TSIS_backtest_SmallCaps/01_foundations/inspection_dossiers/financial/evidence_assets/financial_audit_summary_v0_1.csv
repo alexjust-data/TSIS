@@ -1,0 +1,2 @@
+status,expected_tickers,datasets,missing_total,extra_total,multi_file_tickers_total,severe_issues,temporal_issues,temporal_status_counts,outdir,audit_dir,lifecycle_path,tolerance_pre_days,tolerance_post_days
+FAIL,12468,"['income_statements', 'balance_sheets', 'cash_flow_statements', 'ratios']",0,0,0,13337,3171,"{'OK': 4859, 'NO_DATA': 4438, 'ANOMALY_PRE_START': 2244, 'ANOMALY_POST_END': 927}",D:\financial,C:\Users\AlexJ\financial_audit,C:\TSIS_Data\v1\backtest_SmallCaps\data\reference\official_lifecycle_compiled.multisource.parquet,365,180

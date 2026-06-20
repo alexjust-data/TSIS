@@ -1,0 +1,3 @@
+file,top_level_type,top_level_keys_count,sample_keys
+download_metadata.json,dict,2,downloads|last_update
+ticker_ranges.json,dict,34,I:NDX|I:SOX|SPY|QQQ|IWM|DIA|VIXY|VXX|UVXY|TLT|HYG|LQD

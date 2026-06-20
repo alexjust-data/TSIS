@@ -641,7 +641,9 @@ No debe tratarse como precio, tape, alpha, execution truth ni prueba de mercado 
 
 ### Additional, short y otros bloques
 
-Los bloques como `additional`, `short` o `short_review` pueden tener closeouts institucionales mas compactos si su naturaleza no exige case packs visuales equivalentes a `quotes`, `trades` o `daily`.
+Los bloques como `short` o `short_review` pueden tener closeouts institucionales mas compactos si su naturaleza no exige case packs visuales equivalentes a `quotes`, `trades` o `daily`.
+
+`additional` ya no debe leerse solo como closeout compacto. Tiene un paquete propio de inspector para contexto RAW vendor, con builder, readout, quality tables, readiness hacia tablas maestras, visual overview y casepacks por subfamilia.
 
 Aun asi, deben declarar:
 
@@ -1198,21 +1200,34 @@ Riesgo principal: convertir eventos oficiales o buckets visuales en features/alp
 
 #### `additional`
 
-Estado: closeout institucional compacto.
+Estado: RAW vendor context dossier institucionalizado.
 
 Evidencia principal:
 
+- `additional/README.md`
 - `additional/additional_institutional_closeout_v0_1.md`
+- `additional/additional_inspection_readout_v0_2.md`
+- `additional/build_additional_inspection_pack.md`
+- `additional/evidence_assets/quality_tables/additional_subfamily_quality_table_v0_2.csv`
+- `additional/evidence_assets/quality_tables/additional_master_table_readiness_v0_1.csv`
+- `additional/good_justification/additional_financials_core_good_cases_v0_1.md`
+- `additional/flagged_case_evidence_packs/additional_news_attribution_review_cases_v0_1.md`
+- `additional/flagged_case_evidence_packs/additional_corporate_actions_reference_review_v0_1.md`
+- `additional/coverage_case_evidence_packs/additional_sparse_valid_context_cases_v0_1.md`
 
 Lectura correcta:
 
-- agrupa datasets auxiliares, no tape;
-- su consumo depende de lag, provenance, cobertura, fuente y semantica temporal;
-- presencia fisica no implica consumo permitido.
+- agrupa RAW vendor context, no tape ni book ni precio;
+- cada subfamilia tiene destino y restriccion propios;
+- puede enriquecer `data_quality_report`, `master_daily_table`, `symbol_master`, `corporate_actions_table` y `calendar_table`;
+- `corporate_actions_additional` es secundario frente a `reference`;
+- `news` requiere attribution guardrails;
+- `financials` requiere filing-date/point-in-time guardrails;
+- presencia fisica no implica consumo permitido ni feature promotion.
 
-Madurez relativa: compacta por naturaleza; suficiente como closeout de inventario/politica si no exige casepacks visuales.
+Madurez relativa: alta para su rol de RAW vendor context. Ya tiene validator documental, builder residente, evidence assets, visual overview, quality/readiness tables y casepacks humanos. No habilita consumidores sensibles nuevos ni convierte Additional en core market data.
 
-Riesgo principal: usar `additional` como cajon generico sin schema/policy por subdataset.
+Riesgo principal: usar `additional` como cajon generico, reemplazar `reference`, inferir causalidad ticker desde news multi-ticker o convertir context fields en features sin promocion posterior.
 
 #### `short`
 

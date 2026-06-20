@@ -1,0 +1,7 @@
+asset,bytes,created_utc,source,role
+images/regime_indicators_daily_date_collapse_panel_v0_1.png,143918,2026-06-20T20:16:20.897332+00:00,regime_indicators_daily_date_quality_v0_1.csv; sample_payloads/spy_day_broken_sample_v0_1.csv; sample_payloads/i_ndx_day_broken_sample_v0_1.csv,bad_blocking
+images/regime_indicators_daily_file_date_heatmap_v0_1.png,191916,2026-06-20T20:16:20.897332+00:00,regime_indicators_daily_date_quality_v0_1.csv,coverage_blocker
+images/regime_indicators_minute_high_low_inversion_panel_v0_1.png,106981,2026-06-20T20:16:20.897332+00:00,regime_indicators_minute_schema_review_v0_1.csv; sample_payloads/minute_high_lt_low_issue_samples_v0_1.csv,flagged_review
+images/regime_indicators_minute_coverage_readability_map_v0_1.png,88510,2026-06-20T20:16:20.897332+00:00,regime_indicators_minute_schema_review_v0_1.csv,good_scoped
+images/regime_indicators_metadata_good_examples_v0_1.png,53255,2026-06-20T20:16:20.897332+00:00,regime_indicators_metadata_summary_v0_1.csv,good_scoped
+images/regime_indicators_blocked_vs_scoped_consumption_panel_v0_1.png,92231,2026-06-20T20:16:20.897332+00:00,regime_indicators_inspection_readout_v0_1.md; regime_indicators_quality_report_v0_1.md,consumption_policy

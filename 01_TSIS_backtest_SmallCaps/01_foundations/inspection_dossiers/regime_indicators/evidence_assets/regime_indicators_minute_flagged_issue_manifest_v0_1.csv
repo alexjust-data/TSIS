@@ -1,0 +1,2 @@
+relative_path,group,symbol_dir,rows,columns,timestamp_nulls,timestamp_min,timestamp_max,timestamp_unique,duplicate_timestamp_rows,monotonic_increasing,open_nulls,close_nulls,high_lt_low_rows,negative_volume_rows
+etfs/UVXY/minute.parquet,etfs,UVXY,2375050,timestamp|open|high|low|close|volume|vwap,0,2011-10-04 13:36:00,2025-12-02 14:27:00,2375050,0,True,0,0,204,0.0

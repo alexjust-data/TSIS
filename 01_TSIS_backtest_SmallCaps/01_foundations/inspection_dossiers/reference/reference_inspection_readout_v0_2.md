@@ -3,6 +3,10 @@
 Fecha: 2026-06-13
 Estado: modern_dossier_complete_for_foundation_promotion
 
+Foundations completion status: `human_inspector_ready`
+
+Visual inspection status: `visual_complete`
+
 ## 1. Veredicto
 
 `reference_v0_1` queda promovido de foundation minima documental a dossier inspector moderno.
@@ -63,6 +67,9 @@ Assets:
 - `evidence_assets/population_summary/reference_population_summary_v0_1.md`
 - `evidence_assets/population_visual_overview/reference_population_visual_manifest_v0_1.md`
 - `evidence_assets/case_manifest/reference_case_manifest_v0_1.md`
+- `visual_inspector_pack/reference_visual_inspector_pack_v0_1.md`
+- `visual_inspector_pack/reference_visual_case_manifest_v0_1.csv`
+- `visual_inspector_pack/reference_visual_asset_audit_v0_1.csv`
 
 Builder:
 
@@ -348,6 +355,7 @@ Cerrado:
 - build guide;
 - traceability audit;
 - readout moderno general-a-particular.
+- visual inspector pack formal con manifiesto y auditoria de assets.
 
 Permanece restringido por contrato:
 

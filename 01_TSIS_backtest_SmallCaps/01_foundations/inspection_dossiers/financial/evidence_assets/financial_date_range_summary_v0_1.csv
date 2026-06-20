@@ -1,0 +1,5 @@
+dataset,ticker_endpoint_rows,with_business_rows,zero_business_rows,min_date_start,max_date_end,missing_required,multi_cik
+balance_sheets,12467,8019,4449,2009-04-30 00:00:00+00:00,2026-02-01 00:00:00+00:00,4449,258
+cash_flow_statements,12467,8023,4445,2009-03-29 00:00:00+00:00,2026-02-01 00:00:00+00:00,4445,258
+income_statements,12467,8025,4443,2009-03-29 00:00:00+00:00,2026-02-01 00:00:00+00:00,4443,259
+ratios,12467,4309,8159,2026-02-06 00:00:00+00:00,2026-03-06 00:00:00+00:00,0,2

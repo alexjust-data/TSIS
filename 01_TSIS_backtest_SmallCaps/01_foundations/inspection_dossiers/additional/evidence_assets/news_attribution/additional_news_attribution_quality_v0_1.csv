@@ -1,0 +1,6 @@
+news_link_bucket,events,tickers,mean_tickers_per_news,institutional_reading
+review_multi_ticker_ambiguous_news,169154,3627,16.26471144637431,high attribution risk; context only unless ticker attribution is explicit
+news_near_market_anomaly,98400,3103,1.0,candidate event context with market evidence; still not causal proof
+news_context_only,18296,2798,28.048589855706165,contextual news without nearby market anomaly
+news_near_halt_market_event,1268,707,1.0,strongest contextual bucket; halt/event evidence required
+news_near_short_flow_only,20,15,6.2,short-flow context only; not price authority

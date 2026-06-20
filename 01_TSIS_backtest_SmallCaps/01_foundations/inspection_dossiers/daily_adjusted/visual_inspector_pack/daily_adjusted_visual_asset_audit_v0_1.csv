@@ -1,0 +1,8 @@
+asset,bytes,created_utc,source,role
+images/daily_adjusted_full_universe_coverage_panel_v0_1.png,78879,2026-06-20T21:20:59.998000+00:00,daily_adjusted_full_universe_summary.csv,coverage_scope
+images/daily_adjusted_validation_gate_panel_v0_1.png,57561,2026-06-20T21:20:59.998000+00:00,daily_adjusted_full_universe_summary.csv; daily_adjusted_missing_required_columns.csv; daily_adjusted_read_errors.csv,quality_gate
+images/daily_adjusted_activation_profile_panel_v0_1.png,72157,2026-06-20T21:20:59.998000+00:00,daily_adjusted_ticker_activation_summary.csv; daily_adjusted_full_universe_summary.csv,adjustment_semantics
+images/daily_adjusted_factor_minima_panel_v0_1.png,58813,2026-06-20T21:20:59.998000+00:00,daily_adjusted_full_universe_summary.csv,factor_integrity
+images/daily_adjusted_complex_tail_panel_v0_1.png,73847,2026-06-20T21:20:59.998000+00:00,daily_adjusted_complex_actions_tail_summary.csv; daily_adjusted_complex_actions_type_summary.csv,corporate_action_tail
+images/daily_adjusted_tail_case_panel_v0_1.png,97230,2026-06-20T21:20:59.998000+00:00,daily_adjusted_ticker_change_tail.csv; daily_adjusted_non_cd_dividend_tail.csv,boundary_case
+images/daily_adjusted_consumer_boundary_panel_v0_1.png,67165,2026-06-20T21:20:59.998000+00:00,daily_adjusted_quality_report_v0_1.md; daily_return_labels_schema_contract.md,consumer_boundary

@@ -167,3 +167,29 @@ Preferred read discipline:
 `additional` may be used as an auxiliary institutional block.
 
 It must not be promoted as a uniform core dataset. The most restrictive applicable subblock status governs consumption.
+
+## 7. CAPA 1 Master Table Rule
+
+The current Additional quality/readiness evidence lives in:
+
+- `01_foundations/inspection_dossiers/additional/additional_inspection_readout_v0_2.md`
+- `01_foundations/inspection_dossiers/additional/evidence_assets/quality_tables/additional_subfamily_quality_table_v0_2.csv`
+- `01_foundations/inspection_dossiers/additional/evidence_assets/quality_tables/additional_master_table_readiness_v0_1.csv`
+- `01_foundations/module_contracts/additional_to_master_tables_policy_v0_1.md`
+
+Allowed CAPA 1 uses:
+
+- `data_quality_report`: subfamily quality, coverage, attribution and reference-overlap flags.
+- `master_daily_table`: context fields only, such as `news_flag`, IPO/listing context, macro date overlays and filing-aware fundamentals context.
+- `symbol_master`: issuer/listing/fundamental identity context, with `reference` still primary.
+- `corporate_actions_table`: secondary reconciliation only; `reference` remains primary.
+- `calendar_table`: macro context series.
+- `master_intraday_table`: indirect event-time context only; no replacement for quotes, trades or 1m.
+
+Forbidden:
+
+- treating Additional as core market data;
+- treating Additional corporate actions as primary adjustment authority;
+- using financial fields as decision-time features without filing-date logic;
+- using news as ticker-causal truth without attribution controls;
+- promoting any field to `ml_primary`, `rl_allowed`, execution or live consumers without a separate downstream promotion.

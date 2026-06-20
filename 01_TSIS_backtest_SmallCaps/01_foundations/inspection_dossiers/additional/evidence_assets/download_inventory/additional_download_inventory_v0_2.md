@@ -1,0 +1,8 @@
+# Additional Download Inventory v0.2
+
+Download manifests that prove materialization provenance for the Additional block.
+
+| download_family | root | root_exists | summary_exists | manifest_csv_exists | manifest_parquet_exists | summary_keys | summary_sha256 | manifest_csv_sha256 | manifest_parquet_sha256 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ticker_based | runs/backtest/additional_downloads/20260405_full_refresh_ticker_based | True | True | True | True | datasets, error_tasks, finished_at_utc, ok_tasks, out_root, pause_sec, resume, run_dir, sources, started_at_utc, submitted_tasks, summary_by_dataset, universe_parquet, universe_tic... | aaedad0b113f3491e5afdb28722d34b84fb8417dedb4894ea438c23d703c3b73 | 245de4012e5ef120d12929863bd8b54516330a9ecb4a60d8b3bbcb8604a9338e | f12a97f5284b175eb05eda321b3a2d6a7e8b68fa6847fd2435e7f14f1c8d2808 |
+| macro | runs/backtest/additional_downloads/20260405_full_refresh_macro | True | True | True | True | datasets, error_tasks, finished_at_utc, ok_tasks, out_root, run_dir, sources, started_at_utc, submitted_tasks, summary_by_dataset | 7f22af8a5a404f3847c9dfdfab0c42bb175e989e001b4d78994f39b30a7a0e9d | 179d3e6886a3678514b34543138363ea746f48e71d6b939888f74ce3f9fb4490 | 7a9a7645be8019bc6d191b0c296e29a7b438f74dfdc9e570d0e1e44d682d390c |

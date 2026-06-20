@@ -4,6 +4,8 @@
 
 - Dataset: `halts_v0_1`
 - Estado operativo: `modern_dossier_complete_for_foundation_promotion`
+- Foundations completion status: `human_inspector_ready`
+- Visual inspection status: `visual_complete`
 - Rol: capa oficial de eventos de halt/suspension y contexto regulatorio.
 - Root canonico: `E:\TSIS\data\Halts`
 - Root historico observado: `D:\Halts`
@@ -11,10 +13,12 @@
 ## Lectura obligatoria
 
 1. `halts_inspection_readout_v0_1.md`
-2. `build_halts_inspection_pack.md`
-3. `halts_casepacks_traceability_audit_v0_1.md`
-4. `integration_notes.md`
-5. `evidence_assets/run_manifest.json`
+2. `visual_inspector_pack/halts_visual_inspector_pack_v0_1.md`
+3. `visual_inspector_pack/halts_visual_case_manifest_v0_1.csv`
+4. `visual_inspector_pack/halts_visual_asset_audit_v0_1.csv`
+5. `build_halts_inspection_pack.md`
+6. `halts_casepacks_traceability_audit_v0_1.md`
+7. `evidence_assets/run_manifest.json`
 
 ## Contratos relacionados
 
@@ -34,6 +38,7 @@ Artefactos ligeros generados:
 - `evidence_assets/population_summary/`
 - `evidence_assets/population_visual_overview/`
 - `evidence_assets/case_manifest/`
+- `visual_inspector_pack/`
 
 Casepacks:
 

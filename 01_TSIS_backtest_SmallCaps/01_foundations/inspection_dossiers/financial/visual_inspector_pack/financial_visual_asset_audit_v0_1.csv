@@ -1,0 +1,7 @@
+asset,bytes,created_utc,source,role
+images/financial_endpoint_coverage_heatmap_v0_1.png,78823,2026-06-20T19:44:04.916663+00:00,financial_coverage_by_endpoint_v0_1.csv; financial_file_level_quality_summary_v0_1.csv,population_coverage
+images/financial_severe_issue_distribution_v0_1.png,36227,2026-06-20T19:44:04.916663+00:00,financial_severe_issue_summary_v0_1.csv,bad_blocking
+images/financial_temporal_issue_timeline_v0_1.png,88693,2026-06-20T19:44:04.916663+00:00,financial_temporal_status_summary_v0_1.csv; financial_temporal_issue_sample_manifest_v0_1.csv,flagged_review
+images/financial_empty_sentinel_case_panel_v0_1.png,123283,2026-06-20T19:44:04.916663+00:00,financial_file_level_quality_summary_v0_1.csv; financial_empty_sentinel_example_manifest_v0_1.csv,bad_blocking_case
+images/financial_multi_cik_identity_panel_v0_1.png,130143,2026-06-20T19:44:04.916663+00:00,financial_date_range_summary_v0_1.csv; financial_multi_cik_example_manifest_v0_1.csv,identity_review
+images/financial_payload_schema_drift_panel_v0_1.png,97871,2026-06-20T19:44:04.916663+00:00,sample_payloads/*.csv; financial_empty_sentinel_example_manifest_v0_1.csv,schema_form

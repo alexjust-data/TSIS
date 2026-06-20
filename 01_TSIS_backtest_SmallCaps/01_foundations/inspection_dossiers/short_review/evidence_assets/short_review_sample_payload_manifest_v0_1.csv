@@ -1,0 +1,7 @@
+dataset,ticker,sample_asset,rows_sampled
+short_volume,AAME,sample_payloads/short_volume_AAME_sample_v0_1.csv,20
+short_volume,ABEO,sample_payloads/short_volume_ABEO_sample_v0_1.csv,20
+short_volume,SAVA,sample_payloads/short_volume_SAVA_sample_v0_1.csv,20
+short_interest,AAME,sample_payloads/short_interest_AAME_sample_v0_1.csv,20
+short_interest,ABEO,sample_payloads/short_interest_ABEO_sample_v0_1.csv,20
+short_interest,SAVA,sample_payloads/short_interest_SAVA_sample_v0_1.csv,20

@@ -24,6 +24,8 @@ Su funcion dentro de TSIS es impedir que backtest, ML, price views, auditoria de
 Estado correcto a 2026-06-13:
 
 - `reference` esta promovido como foundation layer contractual minima.
+- Foundations completion status: `human_inspector_ready`.
+- Visual inspection status: `visual_complete`.
 - Ya existen dataset contract, registry entry, consumption policy, validators contract, canonical schemas y closeout institucional compacto.
 - La evidencia historica fuerte existe y esta preservada bajo `01_research`.
 - La evidencia pesada tambien existe en caches historicos `cache_v2`.
@@ -126,6 +128,7 @@ inspection_dossiers/reference/
     population_summary/
     population_visual_overview/
     case_manifest/
+  visual_inspector_pack/
   good_justification/
   flagged_case_evidence_packs/
   bad_case_evidence_packs/
@@ -159,6 +162,7 @@ Con `reference_inspection_readout_v0_2.md` activo:
 
 - `reference` puede seguir usandose como foundation layer bajo sus contratos actuales;
 - puede describirse como dossier inspector moderno para promocion foundation;
+- el paquete visual formal vive en `visual_inspector_pack/`;
 - no debe promoverse a feature, alpha, remap continuity service, live o RL;
 - no debe usarse `ticker_change` como continuidad economica cerrada;
 - no debe usarse `all_tickers` como universe final;

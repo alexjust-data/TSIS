@@ -118,6 +118,128 @@ Por ventana dedicada:
 
 ## Entradas activas
 
+### GFQ-20260620-002 - DAS event draft definition
+
+Status: `leaf_refreshed`
+
+Severity: `MEDIUM`
+
+Slice:
+
+```text
+13_TRADING_SYSTEMS/00_EVENT_LIBRARY/07_SHORT_SQUEEZE_DYNAMICS/
+```
+
+Reason:
+
+- Added the first draft event definition for `DAS_Event` / `Dips After
+  Squeeze`, including variants, behavioral mechanism hypothesis, recurrent
+  sequence indexing and explicit event/strategy boundary.
+
+Changed paths:
+
+```text
+00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/07_SHORT_SQUEEZE_DYNAMICS/DAS_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md
+00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/07_SHORT_SQUEEZE_DYNAMICS/README.md
+00_CTO/CHANGELOG.md
+00_CTO/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Recommended action:
+
+```text
+Absorbed by Trading Systems leaf refresh.
+```
+
+Root action:
+
+```text
+No immediate root update.
+```
+
+Leaf refresh:
+
+```text
+00_CTO/graphify-out/leaf_slices/trading_systems_event_first_20260620/
+nodes: 313
+edges: 408
+communities: 20
+missing_endpoint_edges: 0
+dangling_endpoint_edges: 0
+exact_duplicate_edges: 0
+```
+
+Owner:
+
+```text
+AlexJ / TSIS CTO
+```
+
+Notes:
+
+- This is a draft definition, not a promoted event and not a detector.
+
+### GFQ-20260620-001 - Event Library behavioral mechanics guide
+
+Status: `leaf_refreshed`
+
+Severity: `MEDIUM`
+
+Slice:
+
+```text
+13_TRADING_SYSTEMS/00_EVENT_LIBRARY/
+```
+
+Reason:
+
+- Added a draft Event Library guide for documenting behavioral mechanics,
+  trader psychology, game-theoretic pressure and crowd dynamics inside event
+  definitions while preserving the event/strategy boundary.
+
+Changed paths:
+
+```text
+00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md
+00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/README.md
+00_CTO/CHANGELOG.md
+00_CTO/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Recommended action:
+
+```text
+Absorbed by Trading Systems leaf refresh.
+```
+
+Root action:
+
+```text
+No immediate root update.
+```
+
+Leaf refresh:
+
+```text
+00_CTO/graphify-out/leaf_slices/trading_systems_event_first_20260620/
+nodes: 313
+edges: 408
+communities: 20
+missing_endpoint_edges: 0
+dangling_endpoint_edges: 0
+exact_duplicate_edges: 0
+```
+
+Owner:
+
+```text
+AlexJ / TSIS CTO
+```
+
+Notes:
+
+- Do not rebuild Graphify immediately for this isolated draft guide.
+
 ### GFQ-20260618-001 - Trading Systems event-first root integration
 
 Status: `pending_root_integration`
@@ -140,15 +262,16 @@ Reason:
 Current leaf:
 
 ```text
-00_CTO/graphify-out/leaf_slices/trading_systems_event_first_20260618/
+00_CTO/graphify-out/leaf_slices/trading_systems_event_first_20260620/
 ```
 
 Leaf verification:
 
 ```text
-nodes: 438
-links: 614
-hyperedges: 18
+nodes: 313
+links: 408
+hyperedges: 10
+communities: 20
 missing_endpoint_edges: 0
 dangling_endpoint_edges: 0
 exact_duplicate_edges: 0

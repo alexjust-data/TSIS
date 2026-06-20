@@ -1,0 +1,90 @@
+dataset_identity:
+  name: financial_v0_1
+  domain: fundamentals_context
+  logical_version: v0_1
+  contract_type: standalone_financial_fundamentals
+
+status:
+  promotion_state: audited_blocked
+  active: true
+  owner: 01_TSIS_backtest_SmallCaps
+  blocker: audit_summary_status_fail
+
+registry_classification:
+  dataset_family: financial
+  primary_unit: mixed_statement_observation_and_ratio_snapshot
+  provenance_class: raw_vendor_context_or_vendor_derived_context
+  evidence_state: operational_audit_fail_documented
+
+artifacts:
+  dataset_contract: 01_foundations/contract_registry/dataset_contracts/financial_dataset_contract_v0_1.md
+  consumption_policy: 01_foundations/data_consumption_policies/financial_consumption_policy.md
+  evidence_dossier: 01_foundations/inspection_dossiers/financial/financial_inspection_readout_v0_1.md
+  data_quality_report: 01_foundations/data_quality_report/families/financial_quality_report_v0_1.md
+  validator: 01_foundations/validators/financial/financial_validators.md
+  schema_contracts:
+    - 01_foundations/canonical_schemas/financial/balance_sheets_schema_contract.md
+    - 01_foundations/canonical_schemas/financial/cash_flow_statements_schema_contract.md
+    - 01_foundations/canonical_schemas/financial/income_statements_schema_contract.md
+    - 01_foundations/canonical_schemas/financial/ratios_schema_contract.md
+    - 01_foundations/canonical_schemas/financial/operational_audit_schema_contract.md
+    - 01_foundations/canonical_schemas/financial/operational_run_schema_contract.md
+
+physical_layout:
+  canonical_root: E:/TSIS/data/financial
+  balance_sheets_root: E:/TSIS/data/financial/balance_sheets
+  cash_flow_statements_root: E:/TSIS/data/financial/cash_flow_statements
+  income_statements_root: E:/TSIS/data/financial/income_statements
+  ratios_root: E:/TSIS/data/financial/ratios
+  audit_root: E:/TSIS/data/financial/_audit
+  run_root: E:/TSIS/data/financial/_run
+
+coverage_snapshot:
+  expected_tickers: 12468
+  datasets:
+    - income_statements
+    - balance_sheets
+    - cash_flow_statements
+    - ratios
+  endpoint_coverage_pct: 100.0
+  missing_total: 0
+  extra_total: 0
+  multi_file_tickers_total: 0
+
+quality_snapshot:
+  audit_status: FAIL
+  severe_issues: 13337
+  temporal_issues: 3171
+  read_error_files: 0
+  files_missing_required_columns: 13337
+  severe_issue_type_observed: missing_required_cols
+  temporal_status_counts:
+    OK: 4859
+    NO_DATA: 4438
+    ANOMALY_PRE_START: 2244
+    ANOMALY_POST_END: 927
+
+allowed_consumers:
+  permitted:
+    - data_quality_report
+    - source_validation
+    - forensic_review
+    - repair_planning
+    - schema_review
+  restricted:
+    - research_only_blocked_until_filtered
+  prohibited_until_reaudit:
+    - master_daily_table
+    - symbol_master
+    - backtest_core
+    - backtest_extended
+    - ml_primary
+    - ml_flagged
+    - execution_simulator
+    - rl_allowed
+    - live_downstream_candidate
+
+notes:
+  - Coverage is complete but quality is blocked by audit status FAIL.
+  - Schema contracts currently mention D:/financial; current physical root is E:/TSIS/data/financial.
+  - Empty sentinel semantics and missing_required_cols audit findings must be reconciled before promotion.

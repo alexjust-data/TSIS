@@ -1,0 +1,9 @@
+# Additional IPO Context Quality v0.1
+
+IPO context buckets and their permitted institutional reading.
+
+| ipo_link_bucket | events | tickers | institutional_reading |
+| --- | --- | --- | --- |
+| ipo_near_market_anomaly | 676 | 668 | candidate early-life event context |
+| ipo_market_clean | 449 | 443 | sparse valid IPO context without nearby anomaly |
+| ipo_near_halt_market_event | 156 | 156 | strong IPO/halt context; requires event-aware handling |

@@ -1,0 +1,3 @@
+dataset,relative_path,rows,tickers,date_col,date_min,date_max,date_nulls,columns_count,columns
+short_interest,artifacts/short_interest_all_biweekly_finra.parquet,505745,4687,settlement_date,2017-12-29,2026-04-15,0,5,settlement_date|ticker|short_interest|avg_daily_volume|days_to_cover
+short_volume,artifacts/short_volume_all_daily_finra.parquet,4689038,4623,date,2018-08-01,2026-04-29,0,17,ticker|date|total_volume|short_volume|exempt_volume|non_exempt_volume|short_volume_ratio|nyse_short_volume|nyse_short_volume_exempt|nasdaq_carteret_short_volume|nasdaq_carteret_short_volume_exempt|nasdaq_chicago_short_volume|nasdaq_chicago_short_volume_exempt|adf_short_volume|adf_short_volume_exempt|orf_short_volume|orf_short_volume_exempt

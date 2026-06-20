@@ -1,0 +1,17 @@
+asset,bytes
+README.md,2887
+regime_indicators_audit_summary_v0_1.json,1870
+regime_indicators_daily_blocking_date_manifest_v0_1.csv,4278
+regime_indicators_daily_date_quality_v0_1.csv,6452
+regime_indicators_file_counts_v0_1.csv,85
+regime_indicators_inventory_v0_1.csv,6557
+regime_indicators_metadata_summary_v0_1.csv,189
+regime_indicators_minute_flagged_issue_manifest_v0_1.csv,368
+regime_indicators_minute_schema_review_v0_1.csv,5178
+regime_indicators_read_errors_v0_1.csv,2
+regime_indicators_sample_payload_manifest_v0_1.csv,508
+sample_payloads/i_ndx_day_broken_sample_v0_1.csv,2245
+sample_payloads/i_ndx_minute_sample_v0_1.csv,1872
+sample_payloads/minute_high_lt_low_issue_samples_v0_1.csv,1045
+sample_payloads/spy_day_broken_sample_v0_1.csv,1900
+sample_payloads/spy_minute_sample_v0_1.csv,1287

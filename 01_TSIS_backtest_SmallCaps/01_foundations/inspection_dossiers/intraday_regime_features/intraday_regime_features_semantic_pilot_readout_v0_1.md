@@ -26,13 +26,70 @@ Intenta demostrar algo mas basico y mas importante:
 | BXRX | 2022-11 | control | 22 | 22 | 0.00% | 0.00% | 0.00% | 0 |
 | BNGO | 2025-02 | control | 21 | 0 | 0.00% | 0.00% | 0.00% | 0 |
 
-## 3. Lectura global
+## 3. Foundation Package Status
+
+Data-quality state:
+
+```text
+complete_scoped_pilot
+```
+
+Foundations completion status:
+
+```text
+human_inspector_ready_scoped
+```
+
+Visual inspection status:
+
+```text
+visual_complete_scoped
+```
+
+This status is scoped. It means the pilot is complete enough for human
+inspection as a semantic consumer of `ohlcv_1m_split_normalized`. It does not
+promote a production feature store.
+
+Structured dossier evidence:
+
+- `evidence_assets/README.md`
+- `evidence_assets/intraday_regime_features_evidence_assets_manifest_v0_1.csv`
+- `good_justification/intraday_regime_features_semantic_pilot_good_cases_v0_1.md`
+- `flagged_case_evidence_packs/intraday_regime_features_lookback_and_boundary_cases_v0_1.md`
+- `bad_case_evidence_packs/intraday_regime_features_production_boundary_v0_1.md`
+- `coverage_case_evidence_packs/intraday_regime_features_materialization_coverage_v0_1.md`
+- `visual_inspector_pack/intraday_regime_features_visual_inspector_pack_v0_1.md`
+- `visual_inspector_pack/intraday_regime_features_visual_case_manifest_v0_1.csv`
+- `visual_inspector_pack/intraday_regime_features_visual_asset_audit_v0_1.csv`
+- `build_intraday_regime_features_inspection_pack.md`
+
+Physical evidence snapshot:
+
+| Metric | Value |
+| --- | ---: |
+| Feature parquet files | 8 |
+| Ticker-day rows | 243 |
+| Columns | 41 |
+| Duplicate `ticker + date` rows | 0 |
+| Read errors | 0 |
+| Visual case images | 10 |
+| Formal visual pack images | 15 |
+| Provenance checks matching expected values | 100% |
+
+Expected provenance values are:
+
+- `feature_contract = intraday_regime_features_v0_1`;
+- `feature_grain = ticker_day`;
+- `cross_session_price_view = 1m_split_normalized_v0_1`;
+- `intraday_price_view = 1m_raw`.
+
+## 4. Lectura global
 
 - Cuando el split cae dentro de la memoria util de la feature, las diferencias `raw vs split_normalized` se vuelven grandes y localizadas.
 - Cuando toda la ventana vive ya en escala post-evento, o toda ella vive aun en escala pre-evento homogénea, las razones cross-session pueden permanecer casi invariantes.
 - Esto es exactamente lo que queriamos auditar: no que la capa cambie siempre, sino que cambie solo cuando el shock mecanico afectaria de verdad al cociente entre sesiones.
 
-## 4. Casos
+## 5. Casos
 
 ### BXRX | 2022-12
 

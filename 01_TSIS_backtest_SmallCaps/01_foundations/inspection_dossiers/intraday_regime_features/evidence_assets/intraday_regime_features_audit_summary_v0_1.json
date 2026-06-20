@@ -1,0 +1,40 @@
+{
+  "root": "E:\\TSIS\\data\\intraday_regime_features",
+  "parquet_files": 8,
+  "read_errors": 0,
+  "materialization_summary_present": true,
+  "image_files": 10,
+  "feature_summary": {
+    "rows_total": 243,
+    "tickers": [
+      "BNGO",
+      "BXRX",
+      "CEI",
+      "COSM",
+      "EFSH",
+      "LIVE",
+      "PD",
+      "SAVA"
+    ],
+    "ticker_count": 8,
+    "date_min": "2006-03-01",
+    "date_max": "2025-02-28",
+    "duplicate_ticker_date_rows": 0,
+    "columns_count": 41,
+    "contract_values": [
+      "intraday_regime_features_v0_1"
+    ],
+    "grain_values": [
+      "ticker_day"
+    ],
+    "cross_session_price_view_values": [
+      "1m_split_normalized_v0_1"
+    ],
+    "intraday_price_view_values": [
+      "1m_raw"
+    ]
+  },
+  "null_profile_rows": 328,
+  "provenance_checks_all_match": true,
+  "duplicate_ticker_date_rows_total": 0
+}

@@ -16,6 +16,7 @@
 - [Ohlcv 1m raw](#ohlcv-1m-raw)
 - [Reference](#reference)
 - [Halts](#halts)
+- [Additional](#additional)
 - [Validacion de capas derivadas](#validacion-de-capas-derivadas)
 - [Relacion con inspection_dossiers](#relacion-con-inspectiondossiers)
 - [Relacion con data_consumption_policies](#relacion-con-dataconsumptionpolicies)
@@ -102,6 +103,8 @@ validators/
     reference_validators.md
   halts/
     halts_validators.md
+  additional/
+    additional_validators.md
   trades/
     trades_validators.md
 ```
@@ -263,6 +266,21 @@ Debe validar por fuente, evento, temporalidad y uso:
 - overlay visual contra `quotes` y `trades` cuando se declare causalidad.
 
 La regla critica es que `halts` no tiene un pass unico que autorice todos los consumidores. SEC/context/date-level, review visual buckets y eventos intradia completos deben mantenerse separados.
+
+## Additional
+
+`additional/additional_validators.md` gobierna `additional_v0_1`.
+
+Debe validar por subfamilia, no como dataset uniforme:
+
+- financial statements: keys de filing, period_end, fiscal period y point-in-time guardrails;
+- ratios: sparsity, derivacion vendor y no-universalidad;
+- news: `published_utc`, ticker attribution, multi-ticker ambiguity y timezone;
+- IPOs: listing/announced dates y expectedness sparse;
+- corporate actions additional: overlap contra `reference` y estado secundario;
+- economic: macro calendar context, no causalidad ticker directa.
+
+La regla critica es que Additional puede enriquecer `data_quality_report`, `master_daily_table`, `symbol_master`, `corporate_actions_table` y `calendar_table`, pero no reemplaza `daily`, `quotes`, `trades`, `ohlcv_1m`, `reference` ni `halts`.
 
 ## Validacion de capas derivadas
 

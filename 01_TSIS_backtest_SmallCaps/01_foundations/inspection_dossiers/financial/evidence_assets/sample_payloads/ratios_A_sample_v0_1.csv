@@ -1,0 +1,2 @@
+ticker,cik,date,price,average_volume,market_cap,earnings_per_share,price_to_earnings,price_to_book,price_to_sales,price_to_cash_flow,price_to_free_cash_flow,dividend_yield,return_on_assets,return_on_equity,debt_to_equity,current,quick,cash,ev_to_sales,ev_to_ebitda,enterprise_value,free_cash_flow,_dataset,_ingested_utc
+A,0001090872,2026-03-06,115.07,2424738.0,32519048617.0,4.56,25.21,4.71,4.6,23.29,32.75,0.0087,0.1007,0.1867,0.49,2.07,1.59,0.79,4.83,20.48,34115048617.0,993000000.0,ratios,2026-03-08T12:38:21.510049+00:00

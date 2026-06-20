@@ -1,0 +1,11 @@
+# Additional Corporate Actions Reference Reconciliation v0.1
+
+Reference reconciliation summary for Additional corporate-action subfamilies.
+
+| dataset | overlap_bucket | tickers | rows | overlap_rows | institutional_reading |
+| --- | --- | --- | --- | --- | --- |
+| dividends | reference_exact_overlap | 1253 | 1253 | 45968 | secondary confirmation; reference remains primary |
+| dividends | reference_present_no_exact_overlap | 5 | 5 | 0 | review queue; do not override reference |
+| splits | reference_exact_overlap | 1858 | 1858 | 3293 | secondary confirmation; reference remains primary |
+| splits | reference_present_no_exact_overlap | 18 | 18 | 0 | review queue; do not override reference |
+| ticker_events | reference_present_no_exact_overlap | 2703 | 2703 | 0 | review queue; do not override reference |

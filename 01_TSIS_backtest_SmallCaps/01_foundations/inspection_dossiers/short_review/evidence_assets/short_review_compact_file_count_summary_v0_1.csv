@@ -1,0 +1,7 @@
+segment,logical_group,extension,files,bytes
+artifacts,artifacts,all,4,140227071
+logs,logs,all,2,200125
+normalized,short_interest,.parquet,4687,29691244
+normalized,short_volume,.parquet,4623,285342475
+raw,short_interest,all,193,353421355
+raw,short_volume,all,11676,1976550050

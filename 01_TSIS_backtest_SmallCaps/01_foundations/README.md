@@ -4,8 +4,11 @@
 
 - [Rol de esta carpeta](#rol-de-esta-carpeta)
 - [Como leer los porcentajes](#como-leer-los-porcentajes)
+- [Completitud por familia](#completitud-por-familia)
 - [Resumen ejecutivo](#resumen-ejecutivo)
+- [Raw, derivados y evidencia](#raw-derivados-y-evidencia)
 - [Graphify operativo](#graphify-operativo)
+  - [Protocolo de consulta para agentes](#protocolo-de-consulta-para-agentes)
   - [Leaf graphs oficiales publicados](#leaf-graphs-oficiales-publicados)
 - [Mapa por elemento de data](#mapa-por-elemento-de-data)
   - [Daily raw](#daily-raw)
@@ -50,6 +53,20 @@ Este README es un mapa de estado. No sustituye los contratos, schemas, policies,
 
 Si este README contradice un artefacto vivo mas especifico, manda el artefacto vivo mas especifico.
 
+La regla de completitud por familia vive en:
+
+- [FOUNDATIONS_FAMILY_COMPLETION_STANDARD.md](FOUNDATIONS_FAMILY_COMPLETION_STANDARD.md)
+- [VISUAL_INSPECTION_PACK_REQUIREMENTS.md](VISUAL_INSPECTION_PACK_REQUIREMENTS.md)
+
+Estos documentos separan tres ejes que no deben mezclarse:
+
+- `data_quality_verdict`: que concluyo la auditoria sobre la data;
+- `foundations_completion_status`: si la familia esta completa dentro de
+  `01_foundations` para revision de un inspector humano.
+- `visual_inspection_status`: si la familia tiene evidencia visual suficiente
+  al nivel de `quotes`, `daily`, `trades`, `minute` y
+  `ohlcv_1m_split_normalized`, o un waiver explicito.
+
 Para Graphify, la operacion de build y refresco no se gobierna desde memoria de
 conversacion. Vive en:
 
@@ -83,6 +100,68 @@ Lectura practica:
 
 Los porcentajes no deben usarse para saltarse las policies de consumo. Un dataset al `90%` puede seguir bloqueado para `rl_allowed`, `execution_simulator` o `live_downstream_candidate`.
 
+Los porcentajes tampoco bastan para llamar terminada a una familia.
+
+Regla:
+
+```text
+completitud porcentual no equivale a human_inspector_ready.
+```
+
+El estado terminado para auditor humano se decide con:
+
+- [FOUNDATIONS_FAMILY_COMPLETION_STANDARD.md](FOUNDATIONS_FAMILY_COMPLETION_STANDARD.md)
+- [data_quality_report/family_status_matrix_v0_1.md](data_quality_report/family_status_matrix_v0_1.md)
+
+## Completitud por familia
+
+Toda familia debe leerse con tres columnas conceptuales separadas:
+
+| Eje | Pregunta que responde |
+| --- | --- |
+| `data_quality_verdict` | Que dice la auditoria sobre la data. |
+| `foundations_completion_status` | Si `01_foundations` contiene suficiente estructura y evidencia para un inspector humano. |
+| `visual_inspection_status` | Si la evidencia visual permite inspeccion humana real de poblacion, coverage, estados de calidad y casos buenos/review/bad. |
+
+Una familia puede estar:
+
+- bloqueada por calidad de data y aun asi estar perfectamente documentada;
+- limpia para su scope y aun asi no estar terminada como paquete de auditoria;
+- resumida en `data_quality_report/` y aun no ser `human_inspector_ready`.
+
+Ningun agente debe llamar terminada a una familia solo porque tenga:
+
+- un schema;
+- un contrato;
+- un readout;
+- un report;
+- un CSV/JSON de evidencia;
+- o un verdict conocido.
+
+Para estar terminada, la familia debe tener o justificar todas las superficies
+esperadas:
+
+- `canonical_schemas/`
+- `contract_registry/dataset_contracts/`
+- `data_consumption_policies/`
+- `dataset_registry/`
+- `validators/`
+- `inspection_dossiers/`
+- `data_quality_report/`
+- `visual_inspector_pack/` o waiver visual explicito;
+- indices/README;
+- changelog.
+
+Cuando una familia no pueda replicar literalmente la estructura de `quotes`,
+debe aportar evidencia equivalente y explicar la excepcion.
+
+Regla visual:
+
+```text
+sin visual_inspection_status = visual_complete o visual_waived,
+la familia no es human_inspector_ready.
+```
+
 ## Resumen ejecutivo
 
 | Elemento | Estado rapido | Completitud | Lectura de una linea |
@@ -97,7 +176,7 @@ Los porcentajes no deben usarse para saltarse las policies de consumo. Un datase
 | [Intraday regime features](#intraday-regime-features) | Nivel 3 pilotada | 66% | Primer consumidor real de 1m split-normalized; falta auditoria amplia y validator. |
 | [Halts](#halts) | foundation promotion ready | 92% | Eventos oficiales gobernados con dossier moderno, coverage y casepacks. |
 | [Reference](#reference) | foundation promotion ready | 90% | Identidad, corporate actions y eventos bien encapsulados; no es fuente alpha ni precio. |
-| [Additional context](#additional-context) | accepted auxiliary | 78% | Bloque auxiliar institucional con restricciones por subfamilia; sin validator propio. |
+| [Additional context](#additional-context) | raw vendor context governed | 92% | Bloque RAW vendor/context con validator, quality tables y readiness hacia tablas maestras; no es core market data. |
 | [Short](#short) | accepted with restrictions | 74% | Contexto short usable con flags; no es core limpio universal. |
 | [Short review FINRA](#short-review-finra) | FINRA baseline | 76% | Baseline oficial/free y provenance; no sustituye short local. |
 | [LT1B universe](#lt1b-universe) | canonical operational cut | 78% | Corte operacional canonico; no es membership diaria fully PTI. |
@@ -109,6 +188,52 @@ Lectura de avance global de la seccion:
 - Si se mide por datasets/capas principales ya gobernadas: `01_foundations` esta alrededor de `82-85%`.
 - Si se incluyen tambien familias schema-only y contextuales pendientes: la cobertura transversal real baja a `75-80%`.
 - La deuda ya no es ausencia de arquitectura. La deuda esta en uniformidad final, validators especificos de capas derivadas/contextuales, dossiers de familias parciales y cierre editorial de algunas navegaciones.
+
+## Raw, derivados y evidencia
+
+La lectura institucional de `01_foundations` debe separar explicitamente dos
+ejes:
+
+- procedencia RAW vendor;
+- rol funcional dentro del sistema.
+
+El contrato transversal vivo es:
+
+- [raw_data_authority_and_derivation_map.md](module_contracts/raw_data_authority_and_derivation_map.md)
+
+Regla corta:
+
+```text
+RAW data significa dato preservado sin alterar su contenido semantico.
+No significa dato con minima transformacion.
+```
+
+Consecuencia:
+
+- todo lo descargado de Polygon y preservado sin alterar su contenido semantico
+  es RAW vendor, incluyendo `short`, `financials`, `news`, `ipos`, `economic`,
+  `reference`, `halts` y `additional`.
+- `daily`, `quotes`, `trades` y `ohlcv_1m_raw` son RAW market-data y deben
+  prevalecer cuando la pregunta sea precio, liquidez, book o tape.
+- `reference`, `halts`, `short`, `additional`, `financial` y otros overlays
+  pueden ser RAW vendor por procedencia, pero su rol funcional es
+  reference/context/fundamentals/event; no son intercambiables con
+  price/book/tape raw.
+- `daily_adjusted` y `ohlcv_1m_split_normalized` son vistas derivadas ETL,
+  aunque puedan estar muy maduras.
+- `daily_return_labels` es `LABEL_TARGET_LAYER`; sirve como outcome futuro,
+  no como auditoria primaria ni como feature disponible en decision time.
+- `intraday_regime_features` es `FEATURE_LAYER`; valida consumo downstream y
+  feature engineering, no la calidad primaria de la RAW.
+- `inspection_dossiers/`, `evidence_assets/` y `graphify-out/` son evidencia y
+  mapas semanticos; no son datasets de mercado por defecto.
+
+Regla final de prioridad:
+
+```text
+Ninguna capa derivada certifica retroactivamente la calidad de la RAW que la
+alimenta.
+```
 
 ## Graphify operativo
 
@@ -134,14 +259,83 @@ Cubrir `01_foundations` no significa escanear todo el arbol en un solo comando.
 Significa cubrir sus partes institucionales mediante grafos leaf separados y,
 si aporta valor, fusionarlos despues en `data_foundation_root_graph`.
 
+### Protocolo de consulta para agentes
+
+Regla operativa:
+
+```text
+Primero consultar Graphify.
+Despues consultar documentos fuente, scripts, dossiers y evidence_assets.
+```
+
+La consulta al grafo es obligatoria como primer paso cuando una pregunta trate
+arquitectura, relaciones entre artefactos, calidad institucional, cobertura,
+madurez o estado de una capa de `01_foundations`.
+
+La respuesta del agente debe dejar claro que tipo de evidencia uso:
+
+- `graph_only`: respuesta derivada solo del grafo; util para orientacion,
+  relaciones, comunidades y rutas semanticas, pero no suficiente como prueba
+  final de una afirmacion material.
+- `graph_first_source_verified`: primero se consulto el grafo y despues se
+  verifico la afirmacion en contratos, policies, schemas, registries,
+  validators, dossiers, scripts o assets de evidencia.
+- `source_only_exception`: excepcion permitida solo cuando el grafo no existe,
+  no puede abrirse o la pregunta es estrictamente sobre contenido fisico que el
+  grafo no contiene. La excepcion debe declararse.
+
+Distincion institucional:
+
+- Graphify es el mapa semantico: muestra autoridad, relaciones, comunidades,
+  rutas y zonas que deben investigarse.
+- Los contratos, schemas, registries, policies y validators son la autoridad
+  viva.
+- Los `inspection_dossiers/` y sus `evidence_assets/` son la prueba humana de
+  realidad material: paneles, casos por ticker/fecha, severidad, familias de
+  error, imagenes y lecturas que permiten a un inspector entender que ocurre en
+  los datos.
+
+Por tanto, una consulta correcta no termina solo en el grafo cuando la pregunta
+requiere prueba fina. El grafo dice donde mirar; las fuentes vivas y los
+evidence assets demuestran que hay alli.
+
+Ademas, existe un grafo historico de research:
+
+```text
+certification_decisions_graph
+```
+
+Ese grafo vive fuera de `01_foundations`, dentro de la auditoria historica
+preservada:
+
+```text
+01_research/01_auditoria_RAW_DATA/00_data_certification/graphify-out/leaf_slices/certification_decisions_20260619/
+```
+
+Debe tratarse como contexto primordial cuando una consulta pueda depender de
+auditorias historicas, certificaciones, closeouts, policies historicas, global
+metrics, criterios `expected/present/healthy/usable`, material exploratorio
+preservado o decisiones que expliquen por que una capa moderna quedo como esta.
+
+Ese grafo historico puede enriquecer, limitar o matizar la interpretacion de
+`01_foundations`, pero no promociona por si solo ningun contrato moderno. Si se
+reutiliza conocimiento historico, debe aterrizarse en `01_foundations` como
+contrato, policy, registry, validator, dossier o deuda documentada.
+
 ### Leaf graphs oficiales publicados
 
-Estado al cierre de la fase Graphify inicial:
+Estado vigente de los leaf graphs oficiales:
 
 | Leaf graph | Scope | Output oficial | Estado | Stats |
 | --- | --- | --- | --- | --- |
-| `foundations_authority_graph` | `01_foundations` | [foundations_authority_20260619](graphify-out/leaf_slices/foundations_authority_20260619/) | `published_to_main` | `246 files`, `411452 words`, `696 nodes`, `854 edges`, `75 communities` |
+| `foundations_authority_graph` | `01_foundations` | [foundations_authority_20260620](graphify-out/leaf_slices/foundations_authority_20260620/) | `published_to_main` | `341 files`, `476827 words`, `1002 nodes`, `1381 edges`, `93 communities` |
 | `certification_decisions_graph` | `01_research/01_auditoria_RAW_DATA/00_data_certification` | [certification_decisions_20260619](../01_research/01_auditoria_RAW_DATA/00_data_certification/graphify-out/leaf_slices/certification_decisions_20260619/) | `published_to_main` | `89 files`, `45813 words`, `252 nodes`, `322 edges`, `22 communities` |
+
+Nota operativa: `foundations_authority_20260620` satisface la cola Graphify de
+institucionalizacion y visual-inspection gate. Sus chunks `13-16` fueron
+extraidos mediante extraccion deterministica bounded despues de que los
+subagentes no escribieran salidas dentro de la ventana operativa; la limitacion
+esta documentada en su `BUILD_MANIFEST.md`.
 
 Regla operativa para agentes:
 
@@ -242,7 +436,7 @@ contract + certification + evidence + physical profiling + validator
 - `contract_registry`: [daily_adjusted_dataset_contract_v0_1.md](contract_registry/dataset_contracts/daily_adjusted_dataset_contract_v0_1.md)
 - `data_consumption_policies`: gobernado por [daily_consumption_policy.md](data_consumption_policies/daily_consumption_policy.md) y las policies transversales de price view.
 - `dataset_registry`: [daily_adjusted_registry_entry.yaml](dataset_registry/daily/daily_adjusted_registry_entry.yaml), [daily_adjusted_pilot_manifest_v0_1.csv](dataset_registry/daily/daily_adjusted_pilot_manifest_v0_1.csv), [daily_adjusted_pilot_manifest_v0_2.csv](dataset_registry/daily/daily_adjusted_pilot_manifest_v0_2.csv)
-- `inspection_dossiers`: [daily_adjusted_full_universe_audit_v0_1.md](inspection_dossiers/daily/daily_adjusted_full_universe_audit_v0_1.md), [daily_adjusted_complex_corporate_actions_tail_audit_v0_1.md](inspection_dossiers/daily/daily_adjusted_complex_corporate_actions_tail_audit_v0_1.md)
+- `inspection_dossiers`: [daily_adjusted README](inspection_dossiers/daily_adjusted/README.md), [daily_adjusted visual inspector pack](inspection_dossiers/daily_adjusted/visual_inspector_pack/daily_adjusted_visual_inspector_pack_v0_1.md), [daily_adjusted_full_universe_audit_v0_1.md](inspection_dossiers/daily/daily_adjusted_full_universe_audit_v0_1.md), [daily_adjusted_complex_corporate_actions_tail_audit_v0_1.md](inspection_dossiers/daily/daily_adjusted_complex_corporate_actions_tail_audit_v0_1.md)
 - `module_contracts`: [daily_adjusted_operational_landing_v0_1.md](module_contracts/daily_adjusted_operational_landing_v0_1.md), [daily_adjusted_incremental_materialization_plan_v0_1.md](module_contracts/daily_adjusted_incremental_materialization_plan_v0_1.md), [daily_adjusted_full_universe_promotion_plan_v0_1.md](module_contracts/daily_adjusted_full_universe_promotion_plan_v0_1.md), [daily_adjusted_pilot_results_v0_2.md](module_contracts/daily_adjusted_pilot_results_v0_2.md)
 
 **Madurez:** `100%`.
@@ -413,21 +607,22 @@ contract + certification + evidence + physical profiling + validator
 
 **Identidad:** `additional_v0_1`.
 
-**Que hay:** bloque auxiliar Polygon para `financials`, `corporate_actions`, `economic`, `ipos` y `news`. No debe consumirse como dataset uniforme; cada subfamilia tiene semantica y riesgo propio.
+**Que hay:** bloque RAW vendor/context Polygon para `financials`, `corporate_actions`, `economic`, `ipos` y `news`. No debe consumirse como dataset uniforme; cada subfamilia tiene semantica, riesgo y destino de tabla propio.
 
 **Artefactos por carpeta:**
 
-- `validators`: no hay validator propio.
+- `validators`: [additional_validators.md](validators/additional/additional_validators.md)
 - `canonical_schemas`: [additional_financials_schema_contract.md](canonical_schemas/additional/additional_financials_schema_contract.md), [additional_corporate_actions_schema_contract.md](canonical_schemas/additional/additional_corporate_actions_schema_contract.md), [additional_economic_schema_contract.md](canonical_schemas/additional/additional_economic_schema_contract.md), [additional_ipos_schema_contract.md](canonical_schemas/additional/additional_ipos_schema_contract.md), [additional_news_schema_contract.md](canonical_schemas/additional/additional_news_schema_contract.md)
 - `contract_registry`: [additional_dataset_contract_v0_1.md](contract_registry/dataset_contracts/additional_dataset_contract_v0_1.md)
 - `data_consumption_policies`: [additional_consumption_policy.md](data_consumption_policies/additional_consumption_policy.md)
 - `dataset_registry`: [additional_registry_entry.yaml](dataset_registry/additional/additional_registry_entry.yaml)
-- `inspection_dossiers`: [additional_institutional_closeout_v0_1.md](inspection_dossiers/additional/additional_institutional_closeout_v0_1.md)
-- `module_contracts`: usa contratos transversales de eventos, price views, storage, consumers y evidence; no tiene indice/module-contract especifico propio.
+- `inspection_dossiers`: [additional/README.md](inspection_dossiers/additional/README.md), [additional_inspection_readout_v0_2.md](inspection_dossiers/additional/additional_inspection_readout_v0_2.md), [additional_institutional_closeout_v0_1.md](inspection_dossiers/additional/additional_institutional_closeout_v0_1.md), [build_additional_inspection_pack.md](inspection_dossiers/additional/build_additional_inspection_pack.md)
+- `evidence_assets`: [additional_subfamily_quality_table_v0_2.csv](inspection_dossiers/additional/evidence_assets/quality_tables/additional_subfamily_quality_table_v0_2.csv), [additional_master_table_readiness_v0_1.csv](inspection_dossiers/additional/evidence_assets/quality_tables/additional_master_table_readiness_v0_1.csv), [additional_corporate_actions_reference_reconciliation_v0_1.csv](inspection_dossiers/additional/evidence_assets/reference_reconciliation/additional_corporate_actions_reference_reconciliation_v0_1.csv), [additional_news_attribution_quality_v0_1.csv](inspection_dossiers/additional/evidence_assets/news_attribution/additional_news_attribution_quality_v0_1.csv), [additional_ipo_context_quality_v0_1.csv](inspection_dossiers/additional/evidence_assets/ipo_context/additional_ipo_context_quality_v0_1.csv)
+- `module_contracts`: [additional_contracts_index.md](module_contracts/additional_contracts_index.md), [additional_to_master_tables_policy_v0_1.md](module_contracts/additional_to_master_tables_policy_v0_1.md), [raw_data_authority_and_derivation_map.md](module_contracts/raw_data_authority_and_derivation_map.md)
 
-**Madurez:** `78%`.
+**Madurez:** `92%`.
 
-**Lectura institucional:** aceptado como bloque auxiliar con restricciones. La deuda es validator por subfamilia, mayor dossier visual/casepack si se abre consumo sensible y separacion mas fuerte de `corporate_actions` frente a `reference`.
+**Lectura institucional:** Additional queda institucionalizado como bloque RAW vendor/context para CAPA 1. Ya tiene validator documental, builder reproducible, evidence assets, casepacks humanos, readiness hacia `data_quality_report`, `master_daily_table`, `symbol_master`, `corporate_actions_table` y `calendar_table`, y frontera explicita frente a RAW market data/reference. No sube a `100%` porque `ratios` siguen como sparse/review, `news` exige attribution guardrails, `corporate_actions_additional` sigue subordinado a `reference` y ningun campo queda promovido automaticamente como feature/label downstream.
 
 ### Short
 
@@ -543,13 +738,14 @@ contract + certification + evidence + physical profiling + validator
 
 ## Deuda principal para cerrar 01_foundations
 
-1. Crear validators dedicados para capas derivadas y auxiliares que ya tienen consumo potencial: `daily_return_labels`, `ohlcv_1m_split_normalized`, `intraday_regime_features`, `additional`, `short`, `short_review` y `lt1b_universe`.
-2. Crear o completar dossiers propios para `daily_return_labels`, `lt1b_universe`, `financial standalone` y `regime indicators` si se decide que no son solo schema/backlog.
-3. Decidir si `financial/` standalone se fusiona semanticamente bajo `additional/financials` o si merece dataset contract, policy y registry propios.
-4. Decidir si `regime_indicators/` pasa de schema-only a capa institucional; si pasa, necesita contrato, registry, policy, validators y dossier.
-5. Separar policy propia de `ohlcv_1m_split_normalized` si se va a promover mas alla del piloto/split audit.
-6. Limpiar deuda de navegacion en `trades` family casepacks para que el indice liste todas las familias documentadas.
-7. Mantener sincronizados snapshots transversales antiguos con registros especificos mas nuevos; los artefactos vivos especificos mandan.
+1. Cerrar paquetes visuales de inspector para las familias marcadas `visual_casepack_required` en [data_quality_report/family_status_matrix_v0_1.md](data_quality_report/family_status_matrix_v0_1.md), siguiendo [VISUAL_INSPECTION_PACK_REQUIREMENTS.md](VISUAL_INSPECTION_PACK_REQUIREMENTS.md).
+2. Crear validators dedicados para capas derivadas y auxiliares que ya tienen consumo potencial: `daily_return_labels`, `ohlcv_1m_split_normalized`, `intraday_regime_features`, `additional`, `short`, `short_review` y `lt1b_universe`.
+3. Crear o completar dossiers propios para `daily_return_labels`, `lt1b_universe`, `financial standalone` y `regime indicators` si se decide que no son solo schema/backlog.
+4. Decidir si `financial/` standalone se fusiona semanticamente bajo `additional/financials` o si merece dataset contract, policy y registry propios.
+5. Decidir si `regime_indicators/` pasa de schema-only a capa institucional; si pasa, necesita contrato, registry, policy, validators y dossier.
+6. Separar policy propia de `ohlcv_1m_split_normalized` si se va a promover mas alla del piloto/split audit.
+7. Limpiar deuda de navegacion en `trades` family casepacks para que el indice liste todas las familias documentadas.
+8. Mantener sincronizados snapshots transversales antiguos con registros especificos mas nuevos; los artefactos vivos especificos mandan.
 
 ## Regla final
 

@@ -1,0 +1,16 @@
+asset,bytes,created_utc,source,role
+images/intraday_regime_features_pilot_population_map_v0_1.png,61590,2026-06-20T21:01:42.733310+00:00,intraday_regime_features_materialization_summary_v0_1.csv; intraday_regime_features_audit_summary_v0_1.json,coverage_scope
+images/intraday_regime_features_semantic_case_summary_v0_1.png,94971,2026-06-20T21:01:42.733310+00:00,intraday_regime_features_semantic_case_manifest_v0_1.csv,good_boundary_control
+images/intraday_regime_features_lookback_null_boundary_panel_v0_1.png,94751,2026-06-20T21:01:42.733310+00:00,intraday_regime_features_null_summary_v0_1.csv,boundary_case
+images/intraday_regime_features_provenance_matrix_v0_1.png,50060,2026-06-20T21:01:42.733310+00:00,intraday_regime_features_provenance_summary_v0_1.csv,provenance
+images/intraday_regime_features_production_boundary_panel_v0_1.png,69578,2026-06-20T21:01:42.733310+00:00,intraday_regime_features_quality_report_v0_1.md,production_boundary
+images/BNGO_2025_01.png,173196,2026-06-20T21:01:42.733310+00:00,intraday_regime_features_semantic_case_manifest_v0_1.csv; dossier images/,good_split_case
+images/CEI_2022_12.png,175778,2026-06-20T21:01:42.733310+00:00,intraday_regime_features_semantic_case_manifest_v0_1.csv; dossier images/,good_split_case
+images/BXRX_2022_12.png,174889,2026-06-20T21:01:42.733310+00:00,intraday_regime_features_semantic_case_manifest_v0_1.csv; dossier images/,good_split_case
+images/COSM_2022_12.png,182532,2026-06-20T21:01:42.733310+00:00,intraday_regime_features_semantic_case_manifest_v0_1.csv; dossier images/,good_split_case
+images/EFSH_2025_01.png,189245,2026-06-20T21:01:42.733310+00:00,intraday_regime_features_semantic_case_manifest_v0_1.csv; dossier images/,good_split_case
+images/LIVE_2014_02.png,208281,2026-06-20T21:01:42.733310+00:00,intraday_regime_features_semantic_case_manifest_v0_1.csv; dossier images/,good_split_case
+images/PD_2006_03.png,210619,2026-06-20T21:01:42.733310+00:00,intraday_regime_features_semantic_case_manifest_v0_1.csv; dossier images/,boundary_split_case
+images/SAVA_2023_12.png,223552,2026-06-20T21:01:42.733310+00:00,intraday_regime_features_semantic_case_manifest_v0_1.csv; dossier images/,boundary_split_case
+images/BXRX_2022_11.png,232182,2026-06-20T21:01:42.733310+00:00,intraday_regime_features_semantic_case_manifest_v0_1.csv; dossier images/,control_case
+images/BNGO_2025_02.png,254348,2026-06-20T21:01:42.733310+00:00,intraday_regime_features_semantic_case_manifest_v0_1.csv; dossier images/,control_case

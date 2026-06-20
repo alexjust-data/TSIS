@@ -1,0 +1,3 @@
+dataset,local_or_polygon_files,finra_files,intersection,local_only,finra_only,source
+short_volume,4824,4623,4623,201,0,documented_current_baseline
+short_interest,4824,4687,4687,137,0,documented_current_baseline

@@ -17,6 +17,7 @@ Any consumer must preserve:
 - ticker coverage;
 - venue/source scope;
 - known official/free history gaps.
+- duplicate-key handling for FINRA short volume.
 
 ## 3. Short Interest
 
@@ -50,6 +51,18 @@ Rules:
 - treat `short_volume_ratio` as FINRA source-scope ratio;
 - do not claim consolidated market-wide shorting pressure;
 - do not claim pre-2018 official/free completeness.
+- do not silently collapse duplicate `ticker + date` keys.
+
+Current key flag:
+
+| Metric | Value |
+| --- | ---: |
+| duplicate `ticker + date` keys | 824 |
+| duplicate excess rows | 5,250 |
+| affected tickers | `CPS`, `OP`, `LFTR` |
+
+Until a repair or downstream contract defines deduplication/aggregation
+semantics, direct analytic short-volume use must carry this flag.
 
 ## 5. Provenance Assets
 
@@ -77,6 +90,7 @@ When both layers are used together, the consumer must report:
 - whether a ticker is in the intersection or local-only set;
 - whether the feature relies on `short_interest`, `short_volume`, or both;
 - whether the selected date is inside the FINRA available window.
+- whether the selected `short_volume` rows are affected by duplicate keys.
 
 ## 7. Non-Enabled Consumers
 

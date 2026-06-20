@@ -1,0 +1,26 @@
+{
+  "status": "FAIL",
+  "expected_tickers": 12468,
+  "datasets": [
+    "income_statements",
+    "balance_sheets",
+    "cash_flow_statements",
+    "ratios"
+  ],
+  "missing_total": 0,
+  "extra_total": 0,
+  "multi_file_tickers_total": 0,
+  "severe_issues": 13337,
+  "temporal_issues": 3171,
+  "temporal_status_counts": {
+    "OK": 4859,
+    "NO_DATA": 4438,
+    "ANOMALY_PRE_START": 2244,
+    "ANOMALY_POST_END": 927
+  },
+  "outdir": "D:\\financial",
+  "audit_dir": "C:\\Users\\AlexJ\\financial_audit",
+  "lifecycle_path": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\data\\reference\\official_lifecycle_compiled.multisource.parquet",
+  "tolerance_pre_days": 365,
+  "tolerance_post_days": 180
+}

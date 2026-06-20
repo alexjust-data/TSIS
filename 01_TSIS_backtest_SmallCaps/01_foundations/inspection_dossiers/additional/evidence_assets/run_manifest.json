@@ -1,0 +1,16 @@
+{
+  "active_data_root": "E:/TSIS/data/additional",
+  "download_inventory_rows": 2,
+  "generated_at_utc": "2026-06-19T15:28:56.535577+00:00",
+  "historical_cache": "01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/additional/cache_v2",
+  "historical_cache_artifacts": 26,
+  "ipo_bucket_rows": 3,
+  "news_bucket_rows": 5,
+  "physical_audit_rows": 5,
+  "quality_rows": 12,
+  "readiness_rows": 6,
+  "reconciliation_rows": 5,
+  "run_audit_root": "runs/backtest/additional_audit/20260405_additional_lt1b_coverage",
+  "run_id": "additional_inspection_pack_v0_2",
+  "script": "scripts/inspection/additional/build_additional_inspection_pack.py"
+}

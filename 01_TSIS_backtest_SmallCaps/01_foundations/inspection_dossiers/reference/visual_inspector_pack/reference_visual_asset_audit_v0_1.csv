@@ -1,0 +1,12 @@
+asset,bytes,created_utc,source,role
+images/reference_identity_quality_panel_v0_1.png,86740,2026-06-20T21:13:59.942633+00:00,reference_population_summary_v0_1.csv,identity_quality
+images/reference_download_endpoint_status_panel_v0_1.png,88064,2026-06-20T21:13:59.942633+00:00,reference_download_endpoint_summary_v0_1.csv,endpoint_quality
+images/reference_payload_family_panel_v0_1.png,66554,2026-06-20T21:13:59.942633+00:00,reference_population_summary_v0_1.csv,payload_semantics
+images/reference_causal_alignment_panel_v0_1.png,117912,2026-06-20T21:13:59.942633+00:00,reference_population_summary_v0_1.csv,causal_overlay
+images/reference_listing_presence_boundary_panel_v0_1.png,81263,2026-06-20T21:13:59.942633+00:00,reference_listing_presence_summary_v0_1.csv; reference_case_manifest_v0_1.csv,coverage_boundary
+images/reference_casepack_status_panel_v0_1.png,55717,2026-06-20T21:13:59.942633+00:00,reference_case_manifest_v0_1.csv,good_review_bad_boundary
+images/01_identity_quality_distribution.png,31773,2026-06-20T21:13:59.942633+00:00,evidence_assets/population_visual_overview/,identity_historical
+images/02_download_endpoint_status.png,58686,2026-06-20T21:13:59.942633+00:00,evidence_assets/population_visual_overview/,endpoint_historical
+images/03_payload_family_distribution.png,48974,2026-06-20T21:13:59.942633+00:00,evidence_assets/population_visual_overview/,payload_historical
+images/04_causal_alignment_distribution.png,116969,2026-06-20T21:13:59.942633+00:00,evidence_assets/population_visual_overview/,causal_historical
+images/05_listing_snapshot_density.png,28250,2026-06-20T21:13:59.942633+00:00,evidence_assets/population_visual_overview/,coverage_historical

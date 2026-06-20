@@ -5,7 +5,7 @@ dataset_identity:
   contract_type: composite_auxiliary_block
 
 status:
-  promotion_state: accepted_auxiliary_with_subblock_restrictions
+  promotion_state: raw_vendor_context_governed_with_subblock_restrictions
   active: true
   owner: 01_TSIS_backtest_SmallCaps
 
@@ -18,6 +18,12 @@ artifacts:
   dataset_contract: 01_foundations/contract_registry/dataset_contracts/additional_dataset_contract_v0_1.md
   consumption_policy: 01_foundations/data_consumption_policies/additional_consumption_policy.md
   evidence_dossier: 01_foundations/inspection_dossiers/additional/additional_institutional_closeout_v0_1.md
+  inspection_readout: 01_foundations/inspection_dossiers/additional/additional_inspection_readout_v0_2.md
+  validator: 01_foundations/validators/additional/additional_validators.md
+  contracts_index: 01_foundations/module_contracts/additional_contracts_index.md
+  master_table_policy: 01_foundations/module_contracts/additional_to_master_tables_policy_v0_1.md
+  quality_table: 01_foundations/inspection_dossiers/additional/evidence_assets/quality_tables/additional_subfamily_quality_table_v0_2.csv
+  master_table_readiness: 01_foundations/inspection_dossiers/additional/evidence_assets/quality_tables/additional_master_table_readiness_v0_1.csv
   schema_contracts:
     - 01_foundations/canonical_schemas/additional/additional_financials_schema_contract.md
     - 01_foundations/canonical_schemas/additional/additional_corporate_actions_schema_contract.md
@@ -72,6 +78,12 @@ allowed_consumers:
 
 evidence_references:
   - 01_foundations/inspection_dossiers/additional/additional_institutional_closeout_v0_1.md
+  - 01_foundations/inspection_dossiers/additional/additional_inspection_readout_v0_2.md
+  - 01_foundations/inspection_dossiers/additional/evidence_assets/quality_tables/additional_subfamily_quality_table_v0_2.csv
+  - 01_foundations/inspection_dossiers/additional/evidence_assets/quality_tables/additional_master_table_readiness_v0_1.csv
+  - 01_foundations/inspection_dossiers/additional/evidence_assets/reference_reconciliation/additional_corporate_actions_reference_reconciliation_v0_1.csv
+  - 01_foundations/inspection_dossiers/additional/evidence_assets/news_attribution/additional_news_attribution_quality_v0_1.csv
+  - 01_foundations/inspection_dossiers/additional/evidence_assets/ipo_context/additional_ipo_context_quality_v0_1.csv
   - runs/backtest/additional_audit/20260405_additional_lt1b_coverage/additional_lt1b_coverage_audit_summary.json
   - runs/backtest/additional_audit/20260405_additional_lt1b_coverage/additional_ticker_datasets_summary.parquet
   - runs/backtest/additional_audit/20260405_additional_lt1b_coverage/additional_macro_datasets_summary.parquet

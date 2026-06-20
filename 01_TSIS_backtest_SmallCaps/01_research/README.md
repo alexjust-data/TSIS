@@ -1,0 +1,463 @@
+# 01_research
+
+Fecha de actualizacion: 2026-06-20
+Estado: README raiz para organizacion conceptual de research.
+
+`01_research/` es el espacio de investigacion del modulo
+`01_TSIS_backtest_SmallCaps`.
+
+No es la autoridad de datos.
+No es una carpeta de outputs institucionales.
+No es el lugar final para logica productiva promovida.
+
+Su funcion es organizar el trabajo de research por areas conceptuales antes de
+que una pieza sea promovida a pipelines, scripts productivos, contratos
+institucionales o outputs gobernados.
+
+## Regla de lectura por fecha
+
+Este README es la referencia local mas reciente para interpretar la
+organizacion de `01_research/`.
+
+Algunas carpetas fisicas existentes pueden conservar nombres historicos. La
+fecha de actualizacion de este README indica la organizacion objetivo vigente
+hasta que se ejecute una migracion formal de nombres.
+
+Este documento no renombra carpetas por si mismo.
+
+## Principio central
+
+Las carpetas de `01_research/` deben representar areas conceptuales de trabajo,
+no scripts sueltos ni resultados temporales.
+
+Cada area conceptual debe tener, como minimo:
+
+- proposito;
+- inputs;
+- outputs esperados;
+- no-goals;
+- relacion con Data Foundation;
+- relacion con scripts;
+- relacion con runs;
+- estado de madurez.
+
+## Separacion entre research, scripts y runs
+
+La organizacion debe mantenerse local por area conceptual:
+
+```text
+01_research/<area_conceptual>/
+  notebooks/
+  scripts/
+  configs/
+  runs/
+  notes/
+```
+
+### `01_research/<area_conceptual>/`
+
+Contiene:
+
+- notebooks lanzadera;
+- scripts exploratorios repetibles;
+- configs exploratorias;
+- runs runtime reconstruibles;
+- notas de research;
+- revisiones humanas;
+- definiciones preliminares;
+- documentacion metodologica.
+
+No debe contener:
+
+- outputs pesados promocionados;
+- datasets materializados;
+- logica productiva final.
+
+### `01_research/<area_conceptual>/scripts/`
+
+Contiene scripts ejecutables asociados a esa area.
+
+Los notebooks deben llamar a scripts de esta carpeta cuando la logica deje de
+ser trivial pero todavia sea exploratoria/local al area.
+
+Regla:
+
+```text
+notebook = lanzadera e inspeccion
+script = logica repetible
+```
+
+### `01_research/<area_conceptual>/runs/`
+
+Contiene outputs runtime reconstruibles:
+
+- resultados de busqueda;
+- parquet/csv temporales;
+- manifests;
+- paneles graficos;
+- logs;
+- outputs de notebooks o scripts locales.
+
+Nada en `01_research/<area_conceptual>/runs/` es source of truth institucional
+salvo promocion explicita.
+
+Regla de promocion:
+
+```text
+research local -> 01_research/<area>/scripts
+runtime local  -> 01_research/<area>/runs
+codigo promovido/reusable -> scripts/ o src/
+```
+
+## Ubicacion operativa de datos
+
+Para trabajo operativo nuevo de research, la data activa debe asumirse en:
+
+```text
+E:\TSIS\data
+```
+
+Esta es la ubicacion operativa que debe usarse como punto de partida para
+busquedas, notebooks lanzadera y scripts nuevos de Event Discovery.
+
+No se debe asumir como fuente operativa principal:
+
+- `C:\TSIS_Data\data`;
+- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\data`;
+- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs`;
+- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest`;
+- `D:\`.
+
+`runs/` sigue siendo carpeta de outputs runtime, manifests, logs y resultados
+reconstruibles. No es la raiz de consumo de market data operativa.
+
+Si algun contrato historico, registry o dossier apunta a una ruta diferente,
+este README fija la lectura operativa vigente para la fase actual:
+
+```text
+data operativa nueva -> E:\TSIS\data
+```
+
+## Universo `<1B>` certificado para research
+
+Para busquedas de eventos, preparacion de estrategias, backtests de research y
+labels derivados sobre smallcaps `<1B`, la fuente de verdad de universo es:
+
+```text
+lt1b_universe_v0_1
+```
+
+El certificado local de consumo vive en:
+
+```text
+01_research/LT1B_UNIVERSE_SOURCE_OF_TRUTH_CERTIFICATION.md
+```
+
+Regla corta:
+
+```text
+data operativa -> E:\TSIS\data
+universo <1B   -> lt1b_universe_v0_1
+filtro         -> ticker + ventana [first_seen_date, last_observed_date]
+```
+
+Para Event Discovery y backtests smallcap `<1B`, el conteo de carpetas fisicas
+en `E:\TSIS\data\ohlcv_1m` no define el universo. Esa carpeta puede contener
+mas simbolos que el universo objetivo. La primera puerta de consumo debe ser:
+
+```text
+LT1B_UNIVERSE_SOURCE_OF_TRUTH_CERTIFICATION.md
+-> lt1b_universe_v0_1
+-> market_cap_cutoff_lt_1b_active_inactive.parquet
+-> ticker + [first_seen_date, last_observed_date]
+```
+
+Por tanto, una busqueda no debe escanear ni reportar como poblacion valida los
+~12k tickers fisicos de `ohlcv_1m`. Debe filtrar primero a los 4.824 tickers
+certificados del universo `<1B` y despues respetar la ventana temporal de cada
+ticker.
+
+`01_research` no debe reconstruir el universo `<1B>` desde `financial`,
+`reference`, conteos de carpetas o snapshots ad hoc. La autoridad viva sigue en
+`01_foundations`.
+
+### Regla operativa para backtest 1m
+
+Para un backtest 1m full-universe en la fase actual, usar como fuente base:
+
+```text
+E:\TSIS\data\ohlcv_1m
+```
+
+La razon operativa es cobertura: `ohlcv_1m` es la fuente amplia disponible.
+
+La carpeta:
+
+```text
+E:\TSIS\data\ohlcv_1m_split_normalized
+```
+
+debe tratarse como piloto/validacion de normalizacion split-aware mientras no
+exista materializacion completa para el universo objetivo. No debe asumirse
+como fuente full-universe de backtesting 1m.
+
+Regla estricta:
+
+- si la estrategia o busqueda es intradia pura y no cruza sesiones, raw
+  `ohlcv_1m` esta permitido con flags/calidad;
+- si la logica usa gaps, retornos multi-dia, medias, `prev_close`, rangos
+  previos o cualquier comparacion cross-session, raw `ohlcv_1m` no debe
+  consumirse ciegamente alrededor de splits/reverse splits;
+- resultados globales basados en raw no son promocionables como limpios si no
+  controlan split risk;
+- antes de declarar un backtest institucional, debe existir una capa
+  split-normalized completa para el universo objetivo o, como minimo, para:
+  - todos los tickers con splits/reverse splits;
+  - todos los tickers usados por la estrategia;
+  - controles sin split para comprobar que `factor = 1` no cambia nada.
+
+Mientras esa capa completa no exista:
+
+- intradia puro sin cruzar sesiones: raw permitido;
+- cross-session o lookbacks multi-dia: raw permitido solo con flags/exclusion de
+  ventanas afectadas por splits;
+- resultados globales: no promocionables como limpios sin controlar split risk.
+
+Para ejecucion/fills, usar raw `ohlcv_1m`, porque los fills deben ocurrir en
+precios observados de mercado, no en precios normalizados.
+
+Regla de separacion:
+
+```text
+senal/research global actual -> E:\TSIS\data\ohlcv_1m con split-risk flags
+senal/research split-aware piloto -> E:\TSIS\data\ohlcv_1m_split_normalized
+ejecucion/fills -> E:\TSIS\data\ohlcv_1m
+```
+
+## Secuencia event-first vigente
+
+Para la fase actual, la secuencia conceptual correcta es:
+
+```text
+event_discovery
+-> event_definition
+-> feature_requirements
+-> event_engine
+-> event_table
+-> outcome_research
+```
+
+La razon es simple:
+
+1. primero se descubren fenomenos candidatos;
+2. despues se definen como eventos humanos revisables;
+3. despues se decide que features hacen falta para detectarlos bien;
+4. solo entonces se construye el Event Engine.
+
+Por tanto, la primera fase no debe llamarse `feature_engine` ni `event_engine`
+si todavia estamos buscando ejemplos, inspeccionando graficos y convirtiendo
+conocimiento humano en eventos candidatos.
+
+La fase inicial debe llamarse:
+
+```text
+event_discovery
+```
+
+`event_discovery` responde:
+
+```text
+Que fenomenos candidatos vemos en daily/intraday?
+```
+
+`event_engine` responde despues:
+
+```text
+Como detectamos eventos ya definidos y producimos event_table?
+```
+
+`feature_requirements` responde en medio:
+
+```text
+Que variables necesita este evento para poder ser detectado de forma robusta?
+```
+
+## Organizacion objetivo para eventos
+
+La organizacion objetivo para la fase actual es:
+
+```text
+01_TSIS_backtest_SmallCaps/
+  01_research/
+    04_event_discovery/
+      README.md
+      notebooks/
+        event_case_explorer.ipynb
+      scripts/
+        find_event_candidates.py
+        render_event_case_panel.py
+        event_case_widgets.py
+      configs/
+        queries/
+      runs/
+        <run_id>/
+          query_config.json
+          candidate_events.parquet
+          candidate_events.csv
+          case_panels/
+          manifest.json
+      notes/
+      candidate_reviews/
+
+    05_event_definition/
+      README.md
+      draft_events/
+      notes/
+
+    06_feature_requirements/
+      README.md
+      event_feature_specs/
+```
+
+Mas adelante, cuando existan eventos definidos y aceptados:
+
+```text
+01_TSIS_backtest_SmallCaps/
+  01_research/
+    07_event_engine/
+      README.md
+      contracts/
+      prototypes/
+      scripts/
+        build_event_table.py
+      runs/
+        <run_id>/
+          event_table.parquet
+          manifest.json
+
+```
+
+## Notebook lanzadera de Event Discovery
+
+El notebook de Event Discovery debe servir para inspeccion humana, no para
+guardar logica canonica pesada.
+
+Caso esperado:
+
+```text
+notebooks/event_case_explorer.ipynb
+```
+
+La celda principal debe permitir seleccionar, mediante widgets:
+
+- query/run;
+- ticker;
+- fecha;
+- evento o caso candidato;
+- ventana temporal;
+- modo de visualizacion.
+
+Debe llamar a scripts bajo:
+
+```text
+01_research/04_event_discovery/scripts/
+```
+
+## Panel grafico esperado
+
+Para cada caso candidato, el panel minimo debe incluir un grafico interactivo:
+
+- velas de 1m;
+- tres dias antes del evento y tres dias despues;
+- scroll, pan y zoom tipo TradingView;
+- premarket, regular market y after-hours separados visualmente;
+- push de tres velas marcado;
+- aire visual suficiente por arriba y por abajo.
+
+Este grafico sirve para inspeccion y formulacion de eventos. No prueba edge.
+
+## Queries humanas iniciales
+
+Las instrucciones humanas pueden expresarse como busquedas exploratorias.
+
+Ejemplos:
+
+```text
+Busca momentos en cualquier ticker donde en premarket o mercado sube en las
+tres primeras velas de 1m mas de 20%.
+
+Busca momentos en que hubo +100% de subida.
+```
+
+Estas instrucciones deben convertirse en configs o parametros reproducibles y
+luego ejecutarse por scripts de `event_discovery`.
+
+El resultado son candidatos observables, no eventos promovidos.
+
+## Relacion con 00_CTO
+
+`00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/` gobierna el lenguaje conceptual de
+eventos.
+
+`01_research/event_discovery` encuentra, inspecciona y documenta casos
+candidatos usando data daily/intraday.
+
+La direccion correcta es:
+
+```text
+casos candidatos observados
+-> concepto humano de evento
+-> definicion revisada en Event Library
+-> requerimientos de features
+-> detector futuro
+-> event_table
+```
+
+## Arbol fisico historico observado
+
+En la fecha de este README, el arbol fisico contiene carpetas historicas:
+
+```text
+01_auditoria_RAW_DATA
+02_reference_layer
+03_universe_builder
+04_feature_engine
+05_event_engine
+06_strategy_engine
+07_execution_simulator
+08_research_backtests
+09_edge_statistico
+10_regime_modeling
+11_ml_preparation
+```
+
+La carpeta historica `04_feature_engine` no debe interpretarse como fase previa
+obligatoria para esta etapa. En el flujo event-first, primero se descubren los
+eventos candidatos y despues se documentan los requerimientos de features que
+permiten detectarlos.
+
+La carpeta historica `05_event_engine` tambien debe revisarse antes de usarla
+para la fase actual. Si todavia no produce `event_table`, no debe actuar como
+Event Engine real.
+
+La organizacion objetivo futura para esta zona es:
+
+```text
+04_event_discovery
+05_event_definition
+06_feature_requirements
+07_event_engine
+```
+
+No se debe renombrar de forma silenciosa. Cualquier migracion de nombres debe
+ser explicita, pequena y documentada.
+
+## Regla final
+
+Primero discovery.
+Despues definicion.
+Despues requerimientos de features.
+Despues engine.
+
+No se debe llamar Feature Engine ni Event Engine a una fase que todavia esta
+buscando, visualizando y entendiendo fenomenos candidatos.

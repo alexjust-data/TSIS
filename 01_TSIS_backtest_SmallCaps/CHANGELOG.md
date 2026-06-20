@@ -7,6 +7,769 @@ Este changelog registra cambios institucionales y semanticamente relevantes para
 No duplica el historial de Git.
 Existe para preservar memoria arquitectonica y metodologica del modulo.
 
+## v0.4.63 - Foundations Graphify authority leaf refresh
+
+### Added
+
+- `01_foundations/graphify-out/leaf_slices/foundations_authority_20260620/`
+
+### Changed
+
+- `01_foundations/GRAPHIFY_REFRESH_QUEUE.md`
+
+### Notes
+
+The `foundations_authority_graph` leaf was refreshed for the foundation
+institutionalization and visual-inspection completion work.
+
+Build summary:
+
+```text
+detected_files = 341
+detected_words = 476827
+nodes = 1002
+edges = 1381
+communities = 93
+root graph = not created
+```
+
+The build satisfies queue entries `GFQ-20260619-002`,
+`GFQ-20260619-003`, `GFQ-20260619-004`, `GFQ-20260620-001` and
+`GFQ-20260620-002`.
+
+Operational limitation: chunks `13-16` were generated through deterministic
+bounded structural extraction after worker subagents failed to write chunk
+files within the operational window. This is recorded in the leaf
+`BUILD_MANIFEST.md` and does not claim equivalence to full worker semantic
+extraction for those chunks.
+
+## v0.4.62 - Visual inspector pack completion gate
+
+### Added
+
+- `01_foundations/VISUAL_INSPECTION_PACK_REQUIREMENTS.md`
+- `01_foundations/inspection_dossiers/financial/visual_inspector_pack/`
+- `01_foundations/inspection_dossiers/regime_indicators/visual_inspector_pack/`
+- `01_foundations/inspection_dossiers/short_review/visual_inspector_pack/`
+- `01_foundations/inspection_dossiers/additional/visual_inspector_pack/`
+- `01_foundations/inspection_dossiers/intraday_regime_features/visual_inspector_pack/`
+- `01_foundations/inspection_dossiers/halts/visual_inspector_pack/`
+- `01_foundations/inspection_dossiers/reference/visual_inspector_pack/`
+- `01_foundations/inspection_dossiers/daily_adjusted/`
+
+### Changed
+
+- `01_foundations/FOUNDATIONS_FAMILY_COMPLETION_STANDARD.md`
+- `01_foundations/DATA_AUDIT_QUALITY_STANDARD.md`
+- `01_foundations/data_quality_report/family_status_matrix_v0_1.md`
+- `01_foundations/README.md`
+- `01_foundations/inspection_dossiers/financial/README.md`
+- `01_foundations/inspection_dossiers/financial/financial_inspection_readout_v0_1.md`
+- `01_foundations/data_quality_report/families/financial_quality_report_v0_1.md`
+- `01_foundations/inspection_dossiers/regime_indicators/README.md`
+- `01_foundations/inspection_dossiers/regime_indicators/regime_indicators_inspection_readout_v0_1.md`
+- `01_foundations/data_quality_report/families/regime_indicators_quality_report_v0_1.md`
+- `01_foundations/inspection_dossiers/short_review/README.md`
+- `01_foundations/inspection_dossiers/short_review/short_review_inspection_readout_v0_1.md`
+- `01_foundations/data_quality_report/families/short_review_quality_report_v0_1.md`
+- `01_foundations/inspection_dossiers/additional/README.md`
+- `01_foundations/inspection_dossiers/additional/additional_inspection_readout_v0_2.md`
+- `01_foundations/data_quality_report/families/additional_quality_report_v0_1.md`
+- `01_foundations/inspection_dossiers/intraday_regime_features/README.md`
+- `01_foundations/inspection_dossiers/intraday_regime_features/intraday_regime_features_semantic_pilot_readout_v0_1.md`
+- `01_foundations/data_quality_report/families/intraday_regime_features_quality_report_v0_1.md`
+- `01_foundations/inspection_dossiers/halts/README.md`
+- `01_foundations/inspection_dossiers/halts/halts_inspection_readout_v0_1.md`
+- `01_foundations/data_quality_report/families/halts_quality_report_v0_1.md`
+- `01_foundations/inspection_dossiers/reference/README.md`
+- `01_foundations/inspection_dossiers/reference/reference_inspection_readout_v0_2.md`
+- `01_foundations/data_quality_report/families/reference_quality_report_v0_1.md`
+- `01_foundations/README.md`
+- `01_foundations/data_quality_report/families/daily_adjusted_quality_report_v0_1.md`
+
+### Notes
+
+The foundation completion standard now requires a third axis:
+
+```text
+visual_inspection_status
+```
+
+Families without a benchmark-level visual inspector pack or an explicit visual
+waiver can no longer be marked `human_inspector_ready`, even when their schemas,
+contracts, registries, validators, readouts and tabular evidence exist.
+
+This corrects completion semantics only. It does not change the underlying
+data-quality verdicts. The first visual closure loop is:
+
+```text
+financial -> regime_indicators -> short_review -> additional ->
+intraday_regime_features -> Halts -> reference -> ohlcv_daily_adjusted
+```
+
+The benchmark families remain `daily`, `quotes`, `trades`, `ohlcv_1m_raw` and
+`ohlcv_1m_split_normalized`, each within its declared scope.
+
+`financial_v0_1` was the first family closed under the corrected visual gate.
+It now has six visual assets, a visual case manifest, an asset audit and a
+reproducible visual builder. Its completion state is again:
+
+```text
+foundations_completion_status = human_inspector_ready
+visual_inspection_status = visual_complete
+```
+
+Its data-quality verdict remains:
+
+```text
+blocked_by_data_defect
+```
+
+`regime_indicators_v0_1` was also closed under the corrected visual gate. It
+now has six visual assets, a visual case manifest, an asset audit and a
+reproducible visual builder. Its completion state is:
+
+```text
+foundations_completion_status = human_inspector_ready
+visual_inspection_status = visual_complete
+```
+
+Its data-quality state remains:
+
+```text
+daily_bars_blocked_minute_bars_review_only
+```
+
+`short_review_finra_v0_1` was also closed under the corrected visual gate. It
+now has six visual assets, a visual case manifest, an asset audit and a
+reproducible visual builder. Its completion state is:
+
+```text
+foundations_completion_status = human_inspector_ready_scoped
+visual_inspection_status = visual_complete
+```
+
+Its scoped verdict remains:
+
+```text
+official_free_baseline_provenance_not_short_replacement_with_short_volume_key_flags
+```
+
+`additional_v0_1` was also closed under the corrected visual gate. It now has
+six generated visual assets, a visual case manifest, an asset audit and a
+reproducible visual builder. Its completion state is:
+
+```text
+foundations_completion_status = human_inspector_ready
+visual_inspection_status = visual_complete
+```
+
+Its scoped role remains:
+
+```text
+subfamily-governed RAW vendor context block
+```
+
+`intraday_regime_features_v0_1` was also closed under the corrected visual
+gate. It now has five generated aggregate panels, ten governed semantic case
+images, a visual case manifest, an asset audit and a reproducible visual
+builder. Its completion state is:
+
+```text
+foundations_completion_status = human_inspector_ready_scoped
+visual_inspection_status = visual_complete_scoped
+```
+
+Its scoped role remains:
+
+```text
+semantic pilot consumer of ohlcv_1m_split_normalized, not a production feature store
+```
+
+`halts_v0_1` was also closed under the corrected visual gate. It now has five
+generated aggregate panels, five governed population visuals, a visual case
+manifest, an asset audit and a reproducible visual builder. Its completion
+state is:
+
+```text
+foundations_completion_status = human_inspector_ready
+visual_inspection_status = visual_complete
+```
+
+Its scoped role remains:
+
+```text
+official halt/event context layer, not alpha or execution input
+```
+
+`reference_v0_1` was also closed under the corrected visual gate. It now has
+six generated aggregate panels, five governed population visuals, a visual case
+manifest, an asset audit and a reproducible visual builder. Its completion
+state is:
+
+```text
+foundations_completion_status = human_inspector_ready
+visual_inspection_status = visual_complete
+```
+
+Its scoped role remains:
+
+```text
+identity/lifecycle/corporate-action support, not final universe membership or alpha input
+```
+
+`daily_adjusted_v0_1` was also closed under the corrected visual gate by
+creating a dedicated wrapper dossier and visual inspector pack while preserving
+the source evidence under `inspection_dossiers/daily/`. It now has seven
+generated visual panels, a visual case manifest, an asset audit and a
+reproducible visual builder. Its completion state is:
+
+```text
+foundations_completion_status = human_inspector_ready
+visual_inspection_status = visual_complete
+```
+
+Its scoped role remains:
+
+```text
+full-universe derived economic daily price view, not raw or execution authority
+```
+
+## v0.4.61 - LT1B universe source-of-truth research certification
+
+### Added
+
+- `01_research/LT1B_UNIVERSE_SOURCE_OF_TRUTH_CERTIFICATION.md`
+
+### Changed
+
+- `01_research/README.md`
+
+### Notes
+
+`01_research` now has an explicit consumption certificate for the `<1B>`
+research universe used by Event Discovery, strategy preparation, research
+backtests and derived labels.
+
+The certificate does not redefine the universe. It anchors research consumption
+to the governed `lt1b_universe_v0_1` source of truth:
+
+```text
+runs/backtest/market_cap_last_observed_cutoff/20260320_market_cap_last_observed_cutoff/market_cap_cutoff_lt_1b_active_inactive.parquet
+```
+
+The certified rule is:
+
+```text
+ticker + PTI window [first_seen_date, last_observed_date]
+```
+
+The document records the verified 4,824 ticker count, the eligible
+`classification_1b` classes, the lineage through `population_target_pti`, the
+relationship with `E:\TSIS\data`, and the explicit non-goals: this is not RAW
+vendor data, not daily fully point-in-time market-cap membership, and not a live
+current-membership list.
+
+## v0.4.60 - Short review scoped dossier completion
+
+### Added
+
+- `01_foundations/inspection_dossiers/short_review/evidence_assets/`
+- `01_foundations/inspection_dossiers/short_review/build_short_review_inspection_pack.md`
+- `01_foundations/inspection_dossiers/short_review/good_justification/short_review_finra_baseline_good_cases_v0_1.md`
+- `01_foundations/inspection_dossiers/short_review/flagged_case_evidence_packs/short_review_short_volume_key_flags_v0_1.md`
+- `01_foundations/inspection_dossiers/short_review/bad_case_evidence_packs/short_review_scope_and_history_boundaries_v0_1.md`
+- `01_foundations/inspection_dossiers/short_review/coverage_case_evidence_packs/short_review_coverage_and_provenance_v0_1.md`
+
+### Changed
+
+- `01_foundations/inspection_dossiers/short_review/README.md`
+- `01_foundations/inspection_dossiers/short_review/short_review_inspection_readout_v0_1.md`
+- `01_foundations/data_quality_report/families/short_review_quality_report_v0_1.md`
+- `01_foundations/data_quality_report/family_status_matrix_v0_1.md`
+- `01_foundations/contract_registry/dataset_contracts/short_review_dataset_contract_v0_1.md`
+- `01_foundations/data_consumption_policies/short_review_consumption_policy.md`
+- `01_foundations/dataset_registry/short_review/short_review_registry_entry.yaml`
+- `01_foundations/validators/short_review/short_review_validators.md`
+
+### Notes
+
+`short_review_finra_v0_1` is now complete at the scoped foundation package
+level:
+
+```text
+foundations_completion_status = human_inspector_ready_scoped
+```
+
+The data-quality verdict remains scoped:
+
+```text
+data_quality_verdict = complete_scoped
+```
+
+The evidence package records FINRA short interest with 505,745 rows and 4,687
+tickers, and FINRA short volume with 4,689,038 rows and 4,623 tickers. It also
+documents a new key-quality flag: short volume has 824 duplicate `ticker + date`
+keys, 5,250 excess rows, concentrated in `CPS`, `OP` and `LFTR`.
+
+This does not promote `short_review` as a production short dataset replacement.
+It remains official/free baseline and provenance evidence with explicit source,
+history and duplicate-key boundaries.
+
+## v0.4.59 - Intraday regime features scoped dossier completion
+
+### Added
+
+- `01_foundations/inspection_dossiers/intraday_regime_features/evidence_assets/`
+- `01_foundations/inspection_dossiers/intraday_regime_features/build_intraday_regime_features_inspection_pack.md`
+- `01_foundations/inspection_dossiers/intraday_regime_features/good_justification/intraday_regime_features_semantic_pilot_good_cases_v0_1.md`
+- `01_foundations/inspection_dossiers/intraday_regime_features/flagged_case_evidence_packs/intraday_regime_features_lookback_and_boundary_cases_v0_1.md`
+- `01_foundations/inspection_dossiers/intraday_regime_features/bad_case_evidence_packs/intraday_regime_features_production_boundary_v0_1.md`
+- `01_foundations/inspection_dossiers/intraday_regime_features/coverage_case_evidence_packs/intraday_regime_features_materialization_coverage_v0_1.md`
+
+### Changed
+
+- `01_foundations/inspection_dossiers/intraday_regime_features/README.md`
+- `01_foundations/inspection_dossiers/intraday_regime_features/intraday_regime_features_semantic_pilot_readout_v0_1.md`
+- `01_foundations/data_quality_report/families/intraday_regime_features_quality_report_v0_1.md`
+- `01_foundations/data_quality_report/family_status_matrix_v0_1.md`
+
+### Notes
+
+`intraday_regime_features_v0_1` is now complete at the scoped foundation package
+level:
+
+```text
+foundations_completion_status = human_inspector_ready_scoped
+```
+
+The data-quality verdict remains scoped:
+
+```text
+data_quality_verdict = complete_scoped
+```
+
+The evidence package records 8 feature parquets, 243 ticker-day rows, 41
+columns, no read errors, no duplicate `ticker + date` rows, expected provenance
+values for raw and split-normalized price views, and the 10 semantic pilot
+images.
+
+This does not promote the feature layer as a full-universe feature store.
+
+## v0.4.58 - Regime indicators human-inspector dossier completion
+
+### Added
+
+- `01_foundations/inspection_dossiers/regime_indicators/evidence_assets/`
+- `01_foundations/inspection_dossiers/regime_indicators/build_regime_indicators_inspection_pack.md`
+- `01_foundations/inspection_dossiers/regime_indicators/good_justification/regime_indicators_minute_and_metadata_examples_v0_1.md`
+- `01_foundations/inspection_dossiers/regime_indicators/bad_case_evidence_packs/regime_indicators_daily_date_blocker_v0_1.md`
+- `01_foundations/inspection_dossiers/regime_indicators/flagged_case_evidence_packs/regime_indicators_minute_review_cases_v0_1.md`
+- `01_foundations/inspection_dossiers/regime_indicators/coverage_case_evidence_packs/regime_indicators_inventory_coverage_v0_1.md`
+
+### Changed
+
+- `01_foundations/inspection_dossiers/regime_indicators/README.md`
+- `01_foundations/inspection_dossiers/regime_indicators/regime_indicators_inspection_readout_v0_1.md`
+- `01_foundations/data_quality_report/families/regime_indicators_quality_report_v0_1.md`
+- `01_foundations/data_quality_report/family_status_matrix_v0_1.md`
+
+### Notes
+
+`regime_indicators_v0_1` is now complete at the foundation package level:
+
+```text
+foundations_completion_status = human_inspector_ready
+```
+
+The data-quality verdict remains blocked:
+
+```text
+data_quality_verdict = blocked_by_data_defect
+```
+
+The new evidence package proves the daily blocker directly: all 34 daily files
+have only `1970-01-01` as `date`, covering 153,397 daily rows. The scoped minute
+review found 33 minute files, 64,348,953 rows, no duplicate timestamp rows, no
+non-monotonic files, and 204 `high < low` rows concentrated in
+`etfs/UVXY/minute.parquet`.
+
+This does not promote regime indicators for consumption. Daily bars remain
+blocked and minute bars remain review/scoped.
+
+## v0.4.57 - Financial human-inspector dossier completion
+
+### Added
+
+- `01_foundations/inspection_dossiers/financial/evidence_assets/`
+- `01_foundations/inspection_dossiers/financial/build_financial_inspection_pack.md`
+- `01_foundations/inspection_dossiers/financial/good_justification/financial_payload_examples_v0_1.md`
+- `01_foundations/inspection_dossiers/financial/bad_case_evidence_packs/financial_blocking_schema_cases_v0_1.md`
+- `01_foundations/inspection_dossiers/financial/flagged_case_evidence_packs/financial_temporal_cases_v0_1.md`
+- `01_foundations/inspection_dossiers/financial/coverage_case_evidence_packs/financial_coverage_cases_v0_1.md`
+
+### Changed
+
+- `01_foundations/inspection_dossiers/financial/README.md`
+- `01_foundations/inspection_dossiers/financial/financial_inspection_readout_v0_1.md`
+- `01_foundations/data_quality_report/families/financial_quality_report_v0_1.md`
+- `01_foundations/data_quality_report/family_status_matrix_v0_1.md`
+
+### Notes
+
+`financial_v0_1` is now complete at the foundation package level:
+
+```text
+foundations_completion_status = human_inspector_ready
+```
+
+The data-quality verdict remains blocked:
+
+```text
+data_quality_verdict = blocked_by_data_defect
+```
+
+The update converts the previous minimal dossier into a human-inspector package
+with stable evidence assets, good payload examples, bad/blocking schema cases,
+temporal/lifecycle cases and coverage evidence. The assets are derived from the
+existing `E:/TSIS/data/financial/_audit` and `_run` outputs.
+
+This does not promote financial data for consumption. It only means the
+blockers are now visible and inspectable at the same foundation standard used by
+the stricter market-data dossiers.
+
+## v0.4.56 - Raw 1m completion status correction
+
+### Changed
+
+- `01_foundations/data_quality_report/families/ohlcv_1m_raw_quality_report_v0_1.md`
+- `01_foundations/data_quality_report/family_status_matrix_v0_1.md`
+
+### Notes
+
+The previous matrix entry understated the `ohlcv_1m_raw` inspection package.
+After checking `inspection_dossiers/minute/`, the raw minute dossier already
+contains modern core/vw evidence:
+
+- `minute_00` through `minute_05` notebooks;
+- `core_quality_case_evidence_packs/minute_core_quality_visual_cases_v0_1.md`;
+- 7 population maps;
+- 60 individual case images;
+- contact sheets for core/vw families;
+- reproducible visual and population manifests;
+- core quality manifests and summaries.
+
+The completion status is therefore corrected to:
+
+```text
+foundations_completion_status = human_inspector_ready_scoped
+```
+
+This does not change the data-quality verdict. Raw 1m remains scoped and not
+globally clean for unflagged production use. The dominant distinction is that
+core OHLCV quality and `vw` quality must be read separately, and split-sensitive
+cross-session work should continue to use `ohlcv_1m_split_normalized`.
+
+## v0.4.55 - Foundations family completion standard
+
+### Added
+
+- `01_foundations/FOUNDATIONS_FAMILY_COMPLETION_STANDARD.md`
+
+### Changed
+
+- `01_foundations/README.md`
+- `01_foundations/DATA_AUDIT_QUALITY_STANDARD.md`
+- `01_foundations/data_quality_report/README.md`
+- `01_foundations/data_quality_report/family_status_matrix_v0_1.md`
+
+### Notes
+
+This update clarifies that "institutionalized" inside `01_foundations` means
+complete enough for human inspection across all required foundation surfaces. It
+does not mean production-ready data.
+
+The new standard separates:
+
+- `data_quality_verdict`: what the audit concluded about the data;
+- `foundations_completion_status`: whether the family package is complete for a
+  human inspector.
+
+The matrix now records both axes explicitly. At this version boundary,
+`financial` was classified as:
+
+- `data_quality_verdict = blocked_by_data_defect`
+- `foundations_completion_status = governance_pack_created_dossier_missing`
+
+This specific `financial` completion status was superseded by `v0.4.57`, where
+the dossier package was completed as `human_inspector_ready`.
+
+This prevents a blocked summary report from being mistaken for a finished
+`inspection_dossiers/` package.
+
+### Impact
+
+Future family work must not be called complete unless schemas, contracts,
+policies, registries, validators, inspection dossiers, evidence assets,
+quality reports, indexes and changelog entries meet the completion gate or have
+an explicit documented waiver.
+
+## v0.4.54 - Core market data quality reports
+
+### Added
+
+- `01_foundations/data_quality_report/families/daily_quality_report_v0_1.md`
+- `01_foundations/data_quality_report/families/quotes_quality_report_v0_1.md`
+- `01_foundations/data_quality_report/families/trades_quality_report_v0_1.md`
+- `01_foundations/data_quality_report/families/ohlcv_1m_raw_quality_report_v0_1.md`
+
+### Changed
+
+- `01_foundations/data_quality_report/README.md`
+- `01_foundations/data_quality_report/family_status_matrix_v0_1.md`
+
+### Notes
+
+The normalized `data_quality_report/` surface now includes the core market data
+families that had already served as the strictness baseline:
+
+- `daily_core_v0_1`
+- `quotes_core_v0_1`
+- `trades_core_v0_1`
+- `ohlcv_1m_raw_v0_1`
+
+This does not re-audit those families from scratch. It imports their existing
+contracts, policies, validators, readouts, casepacks and closeout evidence into
+the common per-family report structure.
+
+### Impact
+
+Auditors can now enter `data_quality_report/` and find both:
+
+- the newer `E:/TSIS/data` family reports;
+- and the core `daily`, `quotes`, `trades` and raw `1m` reports that define the
+  quality bar future data layers must meet.
+
+## v0.4.53 - Data quality report foundation surface
+
+### Added
+
+- `01_foundations/data_quality_report/README.md`
+- `01_foundations/data_quality_report/family_status_matrix_v0_1.md`
+- `01_foundations/DATA_AUDIT_QUALITY_STANDARD.md`
+- `01_foundations/DATA_AUDIT_TOPIC_NAVIGATION.md`
+- `01_foundations/data_quality_report/families/additional_quality_report_v0_1.md`
+- `01_foundations/data_quality_report/families/daily_adjusted_quality_report_v0_1.md`
+- `01_foundations/data_quality_report/families/financial_quality_report_v0_1.md`
+- `01_foundations/data_quality_report/families/halts_quality_report_v0_1.md`
+- `01_foundations/data_quality_report/families/intraday_regime_features_quality_report_v0_1.md`
+- `01_foundations/data_quality_report/families/ohlcv_1m_split_normalized_quality_report_v0_1.md`
+- `01_foundations/data_quality_report/families/reference_quality_report_v0_1.md`
+- `01_foundations/data_quality_report/families/regime_indicators_quality_report_v0_1.md`
+- `01_foundations/data_quality_report/families/short_review_quality_report_v0_1.md`
+- `01_foundations/contract_registry/dataset_contracts/financial_dataset_contract_v0_1.md`
+- `01_foundations/contract_registry/dataset_contracts/regime_indicators_dataset_contract_v0_1.md`
+- `01_foundations/data_consumption_policies/daily_adjusted_consumption_policy.md`
+- `01_foundations/data_consumption_policies/financial_consumption_policy.md`
+- `01_foundations/data_consumption_policies/ohlcv_1m_split_normalized_consumption_policy.md`
+- `01_foundations/data_consumption_policies/regime_indicators_consumption_policy.md`
+- `01_foundations/dataset_registry/financial/financial_registry_entry.yaml`
+- `01_foundations/dataset_registry/regime_indicators/regime_indicators_registry_entry.yaml`
+- `01_foundations/validators/financial/financial_validators.md`
+- `01_foundations/validators/intraday_regime_features/intraday_regime_features_validators.md`
+- `01_foundations/validators/regime_indicators/regime_indicators_validators.md`
+- `01_foundations/validators/short_review/short_review_validators.md`
+- `01_foundations/inspection_dossiers/financial/`
+- `01_foundations/inspection_dossiers/regime_indicators/`
+- `01_foundations/inspection_dossiers/short_review/`
+- `01_foundations/inspection_dossiers/intraday_regime_features/README.md`
+
+### Changed
+
+- `01_foundations/data_quality_report/family_status_matrix_v0_1.md` records
+  `2026-06-20` as the initial reference date for future modifications.
+
+### Notes
+
+The new `data_quality_report/` layer normalizes the audit surface for the
+physical roots under `E:/TSIS/data` without treating the physical path as
+semantic authority.
+
+The first pass classifies:
+
+- `additional`, `Halts`, `reference`, `ohlcv_daily_adjusted` as
+  `complete_import_ready`;
+- `ohlcv_1m_split_normalized` as `complete_scoped`;
+- `intraday_regime_features` as `complete_scoped_pilot`;
+- `short_review` as `complete_scoped_provenance`;
+- `financial` as `blocked_documented`;
+- `regime_indicators` as `blocked_documented`.
+
+The blocked states are intentional quality outcomes, not missing work:
+
+- `financial_v0_1` has complete endpoint coverage but operational audit
+  `status = FAIL`, with severe and temporal issues still blocking consumption;
+- `regime_indicators_v0_1` has readable daily files, but daily `date` and
+  `datetime` semantics are invalid and clustered in 1970.
+
+### Impact
+
+This is a CAPA 1 governance and reporting update. It defines where future
+auditors should look for per-family quality verdicts before building
+`master_daily_table`, `master_intraday_table`, features, labels, ML/RL inputs or
+live consumers.
+
+## v0.4.52 - Additional RAW vendor context quality package
+
+### Added
+
+- `01_foundations/validators/additional/additional_validators.md`
+- `01_foundations/module_contracts/additional_contracts_index.md`
+- `01_foundations/module_contracts/additional_to_master_tables_policy_v0_1.md`
+- `01_foundations/inspection_dossiers/additional/README.md`
+- `01_foundations/inspection_dossiers/additional/additional_inspection_readout_v0_2.md`
+- `01_foundations/inspection_dossiers/additional/build_additional_inspection_pack.md`
+- `01_foundations/inspection_dossiers/additional/evidence_assets/`
+- `01_foundations/inspection_dossiers/additional/good_justification/`
+- `01_foundations/inspection_dossiers/additional/flagged_case_evidence_packs/`
+- `01_foundations/inspection_dossiers/additional/coverage_case_evidence_packs/`
+- `scripts/inspection/additional/build_additional_inspection_pack.py`
+
+### Changed
+
+- `01_foundations/README.md`
+- `01_foundations/validators/README.md`
+- `01_foundations/module_contracts/README.md`
+- `01_foundations/module_contracts/transversal_contracts_index.md`
+- `01_foundations/inspection_dossiers/README.md`
+- `01_foundations/contract_registry/dataset_contracts/additional_dataset_contract_v0_1.md`
+- `01_foundations/data_consumption_policies/additional_consumption_policy.md`
+- `01_foundations/dataset_registry/additional/additional_registry_entry.yaml`
+- `01_foundations/GRAPHIFY_REFRESH_QUEUE.md`
+
+### Notes
+
+`additional_v0_1` is now governed as RAW vendor context data with explicit
+subfamily quality tables and master-table readiness evidence.
+
+The package records how Additional can contribute to:
+
+- `data_quality_report`
+- `master_daily_table`
+- `master_intraday_table` as indirect event-time context only
+- `symbol_master`
+- `corporate_actions_table` as secondary reconciliation only
+- `calendar_table`
+
+The maturity reading for `Additional context` moves from `78%` to `92%`.
+
+This is not a promotion to core market data, not a materialized master-table
+release and not permission for `ml_primary`, `execution_simulator`,
+`rl_allowed` or live consumers. Remaining limits are explicit: ratios are sparse
+and vendor-derived, news requires attribution guardrails, corporate actions are
+secondary to `reference`, and fundamentals require point-in-time filing logic.
+
+### Impact
+
+This is a CAPA 1 governance/evidence update. It changes how agents should read
+Additional when designing data-quality tables and future master tables. It made
+the prior `foundations_authority_graph` stale for Additional/master-table
+queries; `GFQ-20260619-004` was satisfied by
+`foundations_authority_20260620`.
+
+## v0.4.51 - RAW authority and derivation map
+
+### Added
+
+- `01_foundations/module_contracts/raw_data_authority_and_derivation_map.md`
+- external physical guide `E:/TSIS/data/README.md`
+
+### Changed
+
+- `01_foundations/README.md`
+- `01_foundations/module_contracts/README.md`
+- `01_foundations/module_contracts/transversal_contracts_index.md`
+- `01_foundations/GRAPHIFY_REFRESH_QUEUE.md`
+
+### Notes
+
+The new module contract formalizes the distinction between:
+
+- RAW vendor/original or staged data by provenance;
+- raw market data by functional role;
+- raw reference/context data by functional role;
+- RAW audited data;
+- reference data;
+- context data;
+- derived ETL views;
+- feature layers;
+- label/target layers;
+- audit evidence;
+- runtime/cache artifacts.
+
+The contract fixes the central rule:
+
+```text
+RAW data means data preserved without semantic content alteration.
+It does not mean data with minimal transformation.
+```
+
+It also records that derived layers such as `daily_adjusted` or
+`ohlcv_1m_split_normalized`, feature layers such as
+`intraday_regime_features`, label layers such as `daily_return_labels`, and
+evidence assets such as dossiers or Graphify outputs cannot displace primary
+RAW/reference audit.
+
+Clarification: `RAW` is not limited to price/book/tape market data. Any Polygon
+payload preserved without semantic alteration is RAW vendor data, including
+short, financials, news, IPOs, economic, reference, halts and additional
+subfamilies. The separate question is functional role: market, reference,
+context, fundamentals, event, derived, feature, label or evidence.
+
+An external physical guide was also created at `E:/TSIS/data/README.md`. That
+file is a disk-level orientation guide only; the versioned authority remains the
+`01_foundations` module contract.
+
+### Impact
+
+This is a semantic-governance update. It does not change physical datasets,
+schemas, validators or allowed consumers. It made the prior
+`foundations_authority_graph` stale for raw-vs-derived questions;
+`GFQ-20260619-003` was satisfied by `foundations_authority_20260620`.
+
+## v0.4.50 - graph-first query protocol for foundations
+
+### Changed
+
+- `01_foundations/README.md`
+- `01_foundations/GRAPHIFY_REFRESH_QUEUE.md`
+
+### Notes
+
+The `01_foundations` README now records the operational distinction between:
+
+- `graph_only` answers;
+- `graph_first_source_verified` answers;
+- `source_only_exception` answers.
+
+Future agents must query the official Graphify leaf first for architecture,
+relationships, institutional quality, maturity or coverage questions, and then
+verify material claims against source documents, scripts, dossiers and
+`evidence_assets`.
+
+The README also records that the historical research graph
+`certification_decisions_graph` is primary context for questions that may depend
+on historical audit/certification, closeouts, historical policies, global
+metrics, `expected/present/healthy/usable` decisions or preserved exploratory
+evidence.
+
+### Impact
+
+This is an agent navigation and evidence-use update. It does not change dataset
+contracts, schemas, validators or consumption policies. The README change is
+covered by `GFQ-20260619-002`, which was satisfied by
+`foundations_authority_20260620`.
+
 ## v0.4.49 - foundations README cross-graph lookup rule
 
 ### Changed
@@ -27,10 +790,8 @@ only semantic graph relevant to data-foundation completion.
 
 ### Impact
 
-The README update is registered as `GFQ-20260619-002` with status `pending` and
-severity `MEDIUM`; it should be included in the next
-`foundations_authority_graph` refresh, but it does not require an immediate
-Graphify rebuild.
+The README update was registered as `GFQ-20260619-002` with severity `MEDIUM`.
+Superseded note: it was satisfied by `foundations_authority_20260620`.
 
 ## v0.4.48 - official graphify leaf publication
 

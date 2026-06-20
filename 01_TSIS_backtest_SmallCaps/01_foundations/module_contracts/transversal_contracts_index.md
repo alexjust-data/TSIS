@@ -9,6 +9,7 @@ Indice navegable de documentos transversales, de gobernanza, de semantica de pre
 - `module_scope.md`
 - `semantic_authority.md`
 - `naming_authority.md`
+- `raw_data_authority_and_derivation_map.md`
 - `auditoria_and_certification_source_hierarchy.md`
 - `state_snapshot_standard.md`
 - `policy_explanation_standard.md`
@@ -41,8 +42,14 @@ Indice navegable de documentos transversales, de gobernanza, de semantica de pre
 
 - `consumer_classes.md`
 - `data_storage_topology_and_target_state.md`
+- `raw_data_authority_and_derivation_map.md`
+- `additional_to_master_tables_policy_v0_1.md`
 - `promotion_pipeline.md`
 - `operational_boundaries.md`
 - `market_session_scope.md`
 - `dataset_contract_template.md`
 - `event_families_and_reference_inventory.md`
+
+## Indices por dominio
+
+- `additional_contracts_index.md`

@@ -52,6 +52,20 @@ run summaries, trace logs y, si procede, release log propio.
 
 ### Added
 
+- Added
+  `13_TRADING_SYSTEMS/00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md`
+  as a draft Event Library guide for documenting behavioral mechanics,
+  trader psychology, game-theoretic pressure, crowd dynamics and falsifiable
+  mechanism hypotheses without contaminating events with strategies.
+- Added
+  `13_TRADING_SYSTEMS/00_EVENT_LIBRARY/07_SHORT_SQUEEZE_DYNAMICS/DAS_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md`
+  as the first draft definition for `DAS_Event` / `Dips After Squeeze`, keeping
+  the observable event, behavioral mechanism hypothesis and strategy boundary
+  separated.
+- Built and diagnosed the updated Graphify leaf for `13_TRADING_SYSTEMS/`
+  after adding the behavioral mechanics guide and DAS draft event definition.
+  The leaf is stored as ignored runtime output under
+  `00_CTO/graphify-out/leaf_slices/trading_systems_event_first_20260620/`.
 - Added `LOCAL_RULES.md` as the local operating contract for `00_CTO`,
   including authority boundaries, knowledge states, event-first architecture
   rules, Graphify policy and functional folder criteria.
@@ -137,6 +151,20 @@ nodes: 438
 links: 614
 hyperedges: 18
 communities: 19
+missing_endpoint_edges: 0
+dangling_endpoint_edges: 0
+exact_duplicate_edges: 0
+```
+
+Updated `13_TRADING_SYSTEMS/` leaf after Event Library behavioral/DAS docs:
+
+```text
+nodes: 313
+links: 408
+hyperedges: 10
+communities: 20
+detected_files: 42
+detected_words: 30071
 missing_endpoint_edges: 0
 dangling_endpoint_edges: 0
 exact_duplicate_edges: 0

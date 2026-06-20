@@ -1,0 +1,11 @@
+asset,bytes,created_utc,source,role
+images/halts_source_completeness_panel_v0_1.png,76327,2026-06-20T21:07:43.243945+00:00,halts_source_quality_summary_v0_1.csv,source_quality
+images/halts_event_taxonomy_scope_panel_v0_1.png,62200,2026-06-20T21:07:43.243945+00:00,halts_event_taxonomy_summary_v0_1.csv; halts_lt1b_event_taxonomy_summary_v0_1.csv,population_taxonomy
+images/halts_lt1b_universe_coverage_panel_v0_1.png,57531,2026-06-20T21:07:43.243945+00:00,halts_coverage_summary_v0_1.csv,coverage_scope
+images/halts_multisource_reconciliation_panel_v0_1.png,63779,2026-06-20T21:07:43.243945+00:00,halts_multisource_reconciliation_v0_1.csv,reconciliation
+images/halts_visual_casepack_boundary_panel_v0_1.png,82210,2026-06-20T21:07:43.243945+00:00,halts_visual_bucket_summary_v0_1.csv; halts_case_manifest_v0_1.csv,good_review_bad_boundary
+images/01_source_quality_rows.png,22741,2026-06-20T21:07:43.243945+00:00,evidence_assets/population_visual_overview/,source_quality_historical
+images/02_canonical_event_taxonomy.png,40431,2026-06-20T21:07:43.243945+00:00,evidence_assets/population_visual_overview/,taxonomy_historical
+images/03_lt1b_event_taxonomy.png,28868,2026-06-20T21:07:43.243945+00:00,evidence_assets/population_visual_overview/,taxonomy_historical
+images/04_visual_case_bucket_distribution.png,46562,2026-06-20T21:07:43.243945+00:00,evidence_assets/population_visual_overview/,visual_overlay_historical
+images/05_top_tickers_by_halt_events.png,62612,2026-06-20T21:07:43.243945+00:00,evidence_assets/population_visual_overview/,coverage_historical

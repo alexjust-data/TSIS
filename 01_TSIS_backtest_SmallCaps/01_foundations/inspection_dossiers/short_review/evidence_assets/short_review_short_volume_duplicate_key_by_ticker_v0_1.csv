@@ -1,0 +1,4 @@
+ticker,duplicate_keys,duplicate_rows,excess_rows,date_min,date_max
+CPS,638,5188,4550,2018-08-01,2021-02-11
+OP,173,828,655,2024-01-23,2024-09-27
+LFTR,13,58,45,2022-01-20,2022-02-10

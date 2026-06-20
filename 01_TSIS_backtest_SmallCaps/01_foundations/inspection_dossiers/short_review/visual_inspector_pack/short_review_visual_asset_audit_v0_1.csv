@@ -1,0 +1,7 @@
+asset,bytes,created_utc,source,role
+images/short_review_finra_coverage_timeline_v0_1.png,64608,2026-06-20T20:29:53.747040+00:00,short_review_aggregate_profile_v0_1.csv,coverage_scope
+images/short_review_duplicate_key_concentration_v0_1.png,57697,2026-06-20T20:29:53.747040+00:00,short_review_short_volume_duplicate_key_by_ticker_v0_1.csv,flagged_review
+images/short_review_duplicate_key_case_panel_v0_1.png,101402,2026-06-20T20:29:53.747040+00:00,short_review_short_volume_duplicate_key_manifest_v0_1.csv; sample_payloads/short_volume_duplicate_key_sample_v0_1.csv,flagged_case
+images/short_review_finra_vs_local_overlap_panel_v0_1.png,47649,2026-06-20T20:29:53.747040+00:00,short_review_local_comparison_summary_v0_1.csv,coverage_comparison
+images/short_review_numeric_sanity_panel_v0_1.png,183408,2026-06-20T20:29:53.747040+00:00,short_review_numeric_sanity_v0_1.csv; short_review_null_profile_v0_1.csv,good_scoped
+images/short_review_provenance_history_boundary_panel_v0_1.png,107486,2026-06-20T20:29:53.747040+00:00,short_review_scope_limitations_v0_1.csv; short_review_provenance_assets_v0_1.csv,scope_boundary

@@ -1,0 +1,3 @@
+dataset,normalized_parquet_files,sample_tickers
+short_volume,4623,AACT|AAGR|AAIC|AAMC|AAME|AAN|AAQC|AARD|AATC|ABAC
+short_interest,4687,AACT|AAGR|AAIC|AAMC|AAME|AAN|AAQC|AARD|AATC|ABAC

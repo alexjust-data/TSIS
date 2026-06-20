@@ -1,0 +1,5 @@
+dataset,expected_tickers,downloaded_tickers,missing_tickers,extra_tickers,tickers_with_multiple_files,coverage_pct
+income_statements,12468,12468,0,0,0,100.0
+balance_sheets,12468,12468,0,0,0,100.0
+cash_flow_statements,12468,12468,0,0,0,100.0
+ratios,12468,12468,0,0,0,100.0

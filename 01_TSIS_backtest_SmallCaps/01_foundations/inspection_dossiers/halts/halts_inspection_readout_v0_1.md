@@ -5,6 +5,8 @@
 `halts_v0_1` queda promovido como dossier moderno de foundation con estado:
 
 - `modern_dossier_complete_for_foundation_promotion`
+- `foundations_completion_status = human_inspector_ready`
+- `visual_inspection_status = visual_complete`
 
 La lectura institucional es:
 
@@ -234,6 +236,9 @@ Casepacks modernos:
 - `bad_case_evidence_packs/halts_bad_residual_cases_v0_1.md`
 - `causal_case_evidence_packs/halts_causal_overlay_cases_v0_1.md`
 - `coverage_case_evidence_packs/halts_universe_coverage_cases_v0_1.md`
+- `visual_inspector_pack/halts_visual_inspector_pack_v0_1.md`
+- `visual_inspector_pack/halts_visual_case_manifest_v0_1.csv`
+- `visual_inspector_pack/halts_visual_asset_audit_v0_1.csv`
 
 Cada casepack declara:
 

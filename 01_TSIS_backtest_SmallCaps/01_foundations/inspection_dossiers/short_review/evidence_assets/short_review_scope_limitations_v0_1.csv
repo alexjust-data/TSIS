@@ -1,0 +1,5 @@
+topic,status,scope
+short_volume_history,gap_not_closed_by_official_free_sources,2005-2018 not proven equivalent
+short_interest_history,gap_not_closed_by_official_free_sources,2005-2013 not proven equivalent
+short_volume_ratio,source_scope_required,"FINRA source-scope ratio, not consolidated market-wide pressure"
+local_only_tickers,review_required,201 short_volume local-only and 137 short_interest local-only tickers

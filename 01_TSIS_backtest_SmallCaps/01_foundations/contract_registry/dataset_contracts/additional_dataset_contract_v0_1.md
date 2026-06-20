@@ -66,6 +66,11 @@ Operational consumption rules live in:
 Institutional evidence lives in:
 
 - `01_foundations/inspection_dossiers/additional/additional_institutional_closeout_v0_1.md`
+- `01_foundations/inspection_dossiers/additional/additional_inspection_readout_v0_2.md`
+- `01_foundations/inspection_dossiers/additional/evidence_assets/quality_tables/additional_subfamily_quality_table_v0_2.csv`
+- `01_foundations/inspection_dossiers/additional/evidence_assets/quality_tables/additional_master_table_readiness_v0_1.csv`
+- `01_foundations/validators/additional/additional_validators.md`
+- `01_foundations/module_contracts/additional_to_master_tables_policy_v0_1.md`
 
 Historical source evidence remains preserved under:
 
@@ -125,3 +130,29 @@ This contract does not:
 ## 10. Verdict
 
 `additional` is accepted as an institutional auxiliary block. It must be preserved and consumed by subblock-specific rules.
+
+## 11. CAPA 1 Use Boundary
+
+`additional` is RAW vendor context by provenance.
+
+It may enrich CAPA 1 outputs:
+
+- `data_quality_report`
+- `master_daily_table`
+- `symbol_master`
+- `corporate_actions_table`
+- `calendar_table`
+- indirect `master_intraday_table` context
+
+It does not replace:
+
+- `daily`
+- `quotes`
+- `trades`
+- `ohlcv_1m`
+- `reference`
+- `halts`
+
+The current master-table boundary is governed by:
+
+- `01_foundations/module_contracts/additional_to_master_tables_policy_v0_1.md`

@@ -1,0 +1,5 @@
+dataset,files,read_errors,rows_total,rows_business,zero_business_files,missing_required_files,ticker_col_bad,dataset_col_bad,ingested_utc_parseable_bad,suspicious_page_cap
+balance_sheets,12468,0,280285,275836,4449,4449,0,0,0,0
+cash_flow_statements,12468,0,495784,491339,4445,4445,0,0,0,0
+income_statements,12468,0,496350,491907,4443,4443,0,0,0,0
+ratios,12468,0,12470,4311,8159,0,0,0,0,0

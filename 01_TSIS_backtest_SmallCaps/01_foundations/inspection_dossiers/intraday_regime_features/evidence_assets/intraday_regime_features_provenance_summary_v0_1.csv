@@ -1,0 +1,5 @@
+column,files,matching_files,unique_values,all_match_expected
+cross_session_price_view,8,8,1m_split_normalized_v0_1,True
+feature_contract,8,8,intraday_regime_features_v0_1,True
+feature_grain,8,8,ticker_day,True
+intraday_price_view,8,8,1m_raw,True

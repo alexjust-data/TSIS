@@ -1,0 +1,6 @@
+expected_subroot,active_path,exists,parquet_files_detected,interpretation
+financials,E:/TSIS/data/additional/financials,True,19296,present
+corporate_actions,E:/TSIS/data/additional/corporate_actions,True,14472,present
+economic,E:/TSIS/data/additional/economic,True,3,present
+ipos,E:/TSIS/data/additional/ipos,True,4824,present
+news,E:/TSIS/data/additional/news,True,4824,present

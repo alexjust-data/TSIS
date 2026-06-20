@@ -1,0 +1,3 @@
+log,rows,columns,status_top_values
+download_short_interest_raw.csv,240,dataset|settlement_date|url|status|detail|bytes,"{""exists"": 4, ""http_error"": 47, ""ok"": 189}"
+download_short_volume_raw.csv,3234,dataset|date|prefix|venue|status|url|detail,"{""exists"": 3108, ""http_error"": 126}"

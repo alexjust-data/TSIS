@@ -1,0 +1,5 @@
+ticker,sample_asset,rows_sampled,role_hint
+BNGO,sample_payloads/BNGO_feature_sample_v0_1.csv,20,reverse_split/control
+CEI,sample_payloads/CEI_feature_sample_v0_1.csv,20,reverse_split
+PD,sample_payloads/PD_feature_sample_v0_1.csv,20,forward_split_boundary
+BXRX,sample_payloads/BXRX_feature_sample_v0_1.csv,20,reverse_split/control

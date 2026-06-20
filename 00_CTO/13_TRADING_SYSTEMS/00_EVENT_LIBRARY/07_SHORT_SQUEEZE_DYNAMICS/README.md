@@ -7,10 +7,15 @@ shape price behavior.
 
 ## Candidate Events
 
+- `DAS_Event`
 - `SSR_Triggered_Event`
 - `Short_Squeeze_Event`
 - `Forced_Covering_Event`
 - `High_Short_Interest_Event`
+
+## Draft Definitions
+
+- `DAS_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md`
 
 ## Inputs
 

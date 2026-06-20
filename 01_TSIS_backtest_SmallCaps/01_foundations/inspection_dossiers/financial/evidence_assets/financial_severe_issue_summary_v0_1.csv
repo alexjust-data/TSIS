@@ -1,0 +1,4 @@
+dataset,issues,issue_count
+balance_sheets,missing_required_cols,4449
+cash_flow_statements,missing_required_cols,4445
+income_statements,missing_required_cols,4443

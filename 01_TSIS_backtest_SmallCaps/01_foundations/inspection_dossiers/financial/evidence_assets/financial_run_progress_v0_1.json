@@ -1,0 +1,23 @@
+{
+  "status": "completed",
+  "updated_at_utc": "2026-03-08T13:39:39.675640+00:00",
+  "input": "C:\\TSIS_Data\\v1\\backtest_SmallCaps\\data\\reference\\universe_pti\\tickers_2005_2026_upper.parquet",
+  "outdir": "D:\\financial",
+  "datasets": [
+    "income_statements",
+    "balance_sheets",
+    "cash_flow_statements",
+    "ratios"
+  ],
+  "done_tickers": 263,
+  "total_tickers": 263,
+  "progress_pct": 100.0,
+  "resume": true,
+  "resume_validate": true,
+  "skipped_valid": 12205,
+  "errors": 263,
+  "workers": 12,
+  "limit": 1000,
+  "max_pages": 50,
+  "keep_records_without_ticker": false
+}

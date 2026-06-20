@@ -1,0 +1,3 @@
+dataset,key,rows,unique_keys,duplicate_key_rows
+short_interest,ticker+settlement_date,505745,505745,0
+short_volume,ticker+date,4689038,4683788,5250

@@ -1,0 +1,11 @@
+ticker,month,role,days,days_factor_ne_1,max_abs_gap_diff_pct,max_abs_ret3_diff_pct,max_abs_range_center_diff_pct,days_gap_diff_gt_50pct,image
+BNGO,2025-01,reverse_split,26,21,5183.28,4732.34,5054.43,1,images/BNGO_2025_01.png
+CEI,2022-12,reverse_split,26,17,4900.0,4694.29,4337.15,1,images/CEI_2022_12.png
+BXRX,2022-12,reverse_split,26,0,3897.11,4175.48,3340.38,1,images/BXRX_2022_12.png
+COSM,2022-12,reverse_split,26,13,2450.7,4507.04,1969.81,1,images/COSM_2022_12.png
+EFSH,2025-01,forward_split,26,8,111.76,99.33,110.25,1,images/EFSH_2025_01.png
+LIVE,2014-02,forward_split,23,23,66.67,119.08,66.47,1,images/LIVE_2014_02.png
+PD,2006-03,forward_split,23,8,49.81,52.38,51.01,0,images/PD_2006_03.png
+SAVA,2023-12,forward_split,24,17,28.49,35.45,28.21,0,images/SAVA_2023_12.png
+BXRX,2022-11,control,22,22,0.0,0.0,0.0,0,images/BXRX_2022_11.png
+BNGO,2025-02,control,21,0,0.0,0.0,0.0,0,images/BNGO_2025_02.png

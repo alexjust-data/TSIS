@@ -1,0 +1,5 @@
+relative_path,sample_asset,rows_sampled,columns
+etfs/SPY/day.parquet,sample_payloads/spy_day_broken_sample_v0_1.csv,20,volume|vwap|open|close|high|low|trades|datetime|date
+indices/I_NDX/day.parquet,sample_payloads/i_ndx_day_broken_sample_v0_1.csv,20,open|close|high|low|datetime|date
+etfs/SPY/minute.parquet,sample_payloads/spy_minute_sample_v0_1.csv,20,timestamp|open|high|low|close|volume|vwap
+indices/I_NDX/minute.parquet,sample_payloads/i_ndx_minute_sample_v0_1.csv,20,timestamp|open|high|low|close
