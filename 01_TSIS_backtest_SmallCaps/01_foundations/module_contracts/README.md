@@ -27,6 +27,7 @@
 - [3. Consumers y consumo](#3-consumers-y-consumo)
   - [`consumer_classes.md`](#consumerclassesmd)
   - [`additional_to_master_tables_policy_v0_1.md`](#additionaltomastertablespolicyv01md)
+  - [`outputs/data_foundation_outputs_target_contract_v0_1.md`](#outputsdatafoundationoutputstargetcontractv01md)
   - [`daily_return_labels_consumer_contract_v0_1.md`](#dailyreturnlabelsconsumercontractv01md)
   - [`intraday_regime_features_consumer_contract_v0_1.md`](#intradayregimefeaturesconsumercontractv01md)
   - [`price_view_consumer_integration_status.md`](#priceviewconsumerintegrationstatusmd)
@@ -545,6 +546,26 @@ Define como `additional_v0_1` puede alimentar outputs de CAPA 1:
 Regla central:
 
 - Additional puede enriquecer tablas de calidad/contexto, pero no certifica raw market data, no reemplaza `reference` y no promociona features downstream por si solo.
+
+### `outputs/data_foundation_outputs_target_contract_v0_1.md`
+
+Contrato objetivo de outputs CAPA 1.
+
+Define:
+
+- que tablas deben existir;
+- para que sirven cuando aparece un evento;
+- que fuentes fisicas reales alimentan cada tabla;
+- que muestras de ficheros soportan la propuesta;
+- que outputs son tablas y cuales son evidencia;
+- que alerta corporativa live falta para offerings, filings y eventos
+  market-moving en segundos;
+- como evitar duplicar el terabyte raw sin perder informacion.
+
+Regla central:
+
+- Data Foundation produce estado defendible para detectar eventos; no produce
+  eventos, estrategias ni outcomes.
 
 ### `daily_return_labels_consumer_contract_v0_1.md`
 

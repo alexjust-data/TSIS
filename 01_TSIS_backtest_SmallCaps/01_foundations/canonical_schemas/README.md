@@ -241,6 +241,25 @@ Deben declarar:
 - limitaciones frente a membership diaria fully PTI;
 - y relacion con expected coverage.
 
+### Outputs
+
+Schemas de outputs gobernados de CAPA 1:
+
+- `outputs/instrument_master_schema_contract.md`
+
+Deben distinguir:
+
+- tabla limpia derivada;
+- fuentes upstream;
+- grano materializado;
+- lineage;
+- flags obligatorias;
+- y limites frente a raw/source datasets.
+
+Regla:
+
+- un output de Data Foundation no reemplaza su raw/source upstream.
+
 ### Reference
 
 Schemas de referencia:
@@ -379,6 +398,7 @@ canonical_schemas/
   financial/
   halts/
   ohlcv_1m/
+  outputs/
   quotes/
   reference/
   regime_indicators/

@@ -261,6 +261,7 @@ dataset_registry/
   features/
   halts/
   ohlcv_1m/
+  outputs/
   quotes/
   reference/
   short/
@@ -336,6 +337,21 @@ Debe distinguirse siempre:
 - y promocion.
 
 Raw 1m no debe confundirse con split-normalized 1m.
+
+### `outputs/`
+
+Registra outputs limpios y gobernados de CAPA 1 materializados bajo:
+
+```text
+E:/TSIS/data/data_foundation_outputs/
+```
+
+Incluye:
+
+- `instrument_master_registry_entry.yaml`
+
+Estos outputs no son raw/source folders. Deben enlazar contrato, schema,
+policy, validators, materializer, manifest y summary de materializacion.
 
 ### `quotes/`
 

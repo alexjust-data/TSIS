@@ -281,6 +281,27 @@ Regla:
 
 - un universo puede ayudar a definir `expected`, pero no decide por si solo `present`, `healthy` ni `usable`.
 
+### Data Foundation outputs
+
+Contratos para tablas limpias derivadas de CAPA 1.
+
+Ejemplo:
+
+- `instrument_master_dataset_contract_v0_1.md`
+
+Estos contratos deben distinguir:
+
+- fuente upstream;
+- grano materializado;
+- ruta bajo `E:/TSIS/data/data_foundation_outputs/`;
+- lineage;
+- promotion barrier;
+- y consumidores permitidos/restringidos.
+
+Regla:
+
+- un output gobernado no debe mezclarse fisicamente con raw/source folders.
+
 ### Auxiliary / contextual datasets
 
 Contratos para familias de soporte.
@@ -317,6 +338,7 @@ contract_registry/dataset_contracts/
   daily_return_labels_dataset_contract_v0_1.md
   intraday_regime_features_dataset_contract_v0_1.md
   halts_dataset_contract_v0_1.md
+  instrument_master_dataset_contract_v0_1.md
   lt1b_universe_dataset_contract_v0_1.md
   ohlcv_1m_raw_dataset_contract_v0_1.md
   ohlcv_1m_split_normalized_dataset_contract_v0_1.md

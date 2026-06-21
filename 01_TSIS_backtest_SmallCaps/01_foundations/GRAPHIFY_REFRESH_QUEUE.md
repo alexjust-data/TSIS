@@ -129,6 +129,78 @@ Por ventana dedicada:
 
 ## Entradas activas
 
+### GFQ-20260621-003 - Instrument master v0.1 initial materialization
+
+Status: `pending_leaf_build`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+foundations_authority_graph
+reference_identity_graph
+data_foundation_outputs_graph
+```
+
+Reason:
+
+- `instrument_master_v0_1` was defined as the first compact CAPA 1 output
+  table.
+- Contract, schema, registry entry, consumption policy, validator and
+  materializer were added.
+- The first materialized parquet was written under:
+
+```text
+E:/TSIS/data/data_foundation_outputs/instrument_master/instrument_master_v0_1.parquet
+```
+
+- The output reconciles exactly to `lt1b_universe_v0_1`:
+
+```text
+rows = 4824
+tickers = 4824
+hard_fail_count = 0
+duplicate_ticker_count = 0
+sha256 = 69104387d2607306c3fa1740573d130db5e7c30b1d1527d3ee8a8d2b4d53c2d2
+```
+
+- The table is ticker-grain for the `<1B>` operational universe. It does not
+  resolve final economic continuity or daily fully point-in-time market-cap
+  membership.
+
+Changed paths:
+
+```text
+01_foundations/canonical_schemas/outputs/instrument_master_schema_contract.md
+01_foundations/contract_registry/dataset_contracts/instrument_master_dataset_contract_v0_1.md
+01_foundations/data_consumption_policies/instrument_master_consumption_policy.md
+01_foundations/dataset_registry/outputs/instrument_master_registry_entry.yaml
+01_foundations/validators/outputs/instrument_master_validators.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+scripts/materialize_instrument_master.py
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Recommended action:
+
+```text
+Include in the next foundations/reference identity leaf refresh. Keep linked
+to the outputs target contract and the data storage topology decision.
+```
+
+Root action:
+
+```text
+No immediate root update.
+```
+
+Owner:
+
+```text
+Modulo 01 / Data Foundation output governance
+```
+
 ### GFQ-20260619-001 - Initial Data Foundation Graphify governance
 
 Status: `leaf_built`
@@ -701,6 +773,88 @@ institutional final without caveat = no
 ```
 
 This entry exists so the remediation is not left only in conversation memory.
+
+### GFQ-20260621-002 - Data Foundation outputs target contract
+
+Status: `pending_leaf_build`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+foundations_authority_graph
+daily_ohlcv_graph
+reference_identity_graph
+microstructure_quotes_trades_graph
+additional_fundamentals_news_graph
+```
+
+Reason:
+
+- A new CAPA 1 output target contract was added under `module_contracts/outputs/`.
+- The contract defines how Data Foundation outputs work together when an event
+  is evaluated.
+- It affects master table design, reference identity, market calendar,
+  corporate actions, daily/intraday bars, microstructure sidecars, context
+  sidecars and quality gates.
+- It now fixes the common physical landing root for governed CAPA 1 outputs:
+  `E:/TSIS/data/data_foundation_outputs/`.
+- It distinguishes clean Data Foundation output tables from append-only live
+  ingestion logs such as `E:/TSIS/data/live_ingestion/raw_alert_log/`.
+- It now also records the missing governed live table for low-latency corporate
+  event alerts: offerings, private placements, warrants, SEC 8-K/6-K/424B
+  filings, reverse splits and comparable smallcap catalysts.
+- It includes a DAS Trader / NewsWare investigation note: DAS/NewsWare is a
+  candidate live alert source, but public DAS API documentation is not enough
+  evidence to assume governed API ingestion through DAS Trader Pro API.
+- The alert-table semantics distinguish historical/contextual news from
+  `received_utc`-tracked live alerts and should be visible in downstream Event
+  Engine and Strategy Research graph slices.
+- The Graphify table-design protocol classifies a new master table contract as
+  `HIGH`.
+
+Changed paths:
+
+```text
+01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_foundations/module_contracts/data_storage_topology_and_target_state.md
+01_foundations/module_contracts/README.md
+01_foundations/GRAPHIFY_REFRESH_QUEUE.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Recommended action:
+
+```text
+Include the new outputs contract in the next foundations_authority_graph rebuild.
+When the specialized graph slices are materialized, include the contract as a
+cross-slice anchor for daily/intraday, reference identity, microstructure and
+additional/context table design.
+Do not create a monolithic 01_foundations graph.
+```
+
+Root action:
+
+```text
+No root graph yet.
+Do not integrate into a root graph until GFQ-20260621-001 is remediated or an
+explicit waiver is documented.
+```
+
+Owner:
+
+```text
+Modulo 01 / Data Foundation output governance
+```
+
+Notes:
+
+The contract records that `market_calendar_official_XNYS_20050101_20251231`
+is locally reproducible byte-for-byte from
+`scripts/agent05_build_market_calendar_official.py` with
+`exchange_calendars 4.13.1`, but also states that the artifact is not a raw
+download from NYSE.
 
 ## Entry template
 

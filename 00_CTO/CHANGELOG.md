@@ -66,12 +66,28 @@ run summaries, trace logs y, si procede, release log propio.
   after adding the behavioral mechanics guide and DAS draft event definition.
   The leaf is stored as ignored runtime output under
   `00_CTO/graphify-out/leaf_slices/trading_systems_event_first_20260620/`.
+- Added
+  `13_TRADING_SYSTEMS/00_EVENT_LIBRARY/MOSQUITO_SMALLCAPS_SOURCE_EVENT_INDEX_v0_1.md`
+  as a visual source-note event inventory derived from external discretionary
+  small-cap trader material, including the copied source markdown, copied image
+  assets, 20 candidate events and TSIS event-first interpretation of each
+  candidate phenomenon.
+- Added
+  `13_TRADING_SYSTEMS/00_EVENT_LIBRARY/EDUTRADES_LONG_PLAYS_SOURCE_EVENT_INDEX_v0_1.md`
+  as a visual source-note event inventory derived from EduTrades long-play
+  material, including the copied source markdown, existing EduTrades image
+  assets, 12 event-search candidate definitions, transverse context filters
+  and TSIS event-first interpretation of each candidate phenomenon.
 - Added `LOCAL_RULES.md` as the local operating contract for `00_CTO`,
   including authority boundaries, knowledge states, event-first architecture
   rules, Graphify policy and functional folder criteria.
 - Added `TSIS_LAB_ARCHITECTURE.md` as the promoted architecture derived from
   `00_private/arquitectura.md`, covering the governed sequence from Data
   Foundation to Evolution Systems.
+- Added `real_time_corporate_event_alerts_table` to CAPA 1 Data Foundation
+  output targets in `TSIS_LAB_ARCHITECTURE.md`, with detailed operational
+  semantics governed by the module output contract.
+- Queued the corresponding CTO Graphify refresh in `GRAPHIFY_REFRESH_QUEUE.md`.
 - Added `00_CTO_REFACTOR_PLAN.md` with a functional matrix for active
   top-level folders and a governed target structure for
   `13_TRADING_SYSTEMS/`.

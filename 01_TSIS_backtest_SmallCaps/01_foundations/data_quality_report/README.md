@@ -151,6 +151,7 @@ Priority order:
 ## Current Index
 
 - `family_status_matrix_v0_1.md`
+- `inspection_visual_dossier/`
 
 Family-specific reports will be added under:
 

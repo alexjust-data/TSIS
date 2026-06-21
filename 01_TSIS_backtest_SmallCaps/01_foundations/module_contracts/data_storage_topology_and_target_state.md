@@ -75,6 +75,60 @@ Aqui viven:
 - inspection dossiers
 - scripts de builders e inspeccion
 
+### 3.4 `E:\TSIS\data`
+
+Representa el plano operativo activo preferido para datos actuales del modulo.
+
+Lectura institucional:
+
+- las familias raw/source-preserved viven en carpetas semanticas propias
+  (`reference`, `ohlcv_daily`, `ohlcv_1m`, `quotes`,
+  `trades_ticks_prod_2005_2026`, `Halts`, `additional`, etc.);
+- los outputs derivados y gobernados de CAPA 1 deben agruparse bajo una raiz
+  comun para no mezclarlos con raw/source folders.
+
+Raiz comun para outputs de CAPA 1:
+
+```text
+E:\TSIS\data\data_foundation_outputs\
+```
+
+Layout objetivo:
+
+```text
+E:\TSIS\data\data_foundation_outputs\
+  instrument_master\
+  market_calendar\
+  corporate_actions_table\
+  dataset_certification_matrix\
+  master_daily_table\
+  master_intraday_bar_table\
+  microstructure_features_table\
+  real_time_corporate_event_alerts_table\
+  halts_table\
+  fundamentals_asof_table\
+  news_context_table\
+  short_context_table\
+  regime_context_table\
+  data_quality_report\
+```
+
+Regla:
+
+```text
+No crear outputs de CAPA 1 directamente como hermanos de raw/source folders si
+pertenecen al conjunto de tablas gobernadas del contrato de outputs.
+```
+
+Excepcion:
+
+```text
+raw_alert_log y otros logs append-only de ingesta live no son tablas limpias de
+Data Foundation. Deben vivir bajo una raiz separada de ingesta, por ejemplo:
+
+E:\TSIS\data\live_ingestion\raw_alert_log\
+```
+
 ## 4. Estado objetivo
 
 La direccion operativa deseada del modulo es:

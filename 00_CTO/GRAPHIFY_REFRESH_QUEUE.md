@@ -118,6 +118,164 @@ Por ventana dedicada:
 
 ## Entradas activas
 
+### GFQ-20260621-003 - EduTrades Long Plays visual event source index
+
+Status: `pending`
+
+Severity: `MEDIUM`
+
+Slice:
+
+```text
+13_TRADING_SYSTEMS/00_EVENT_LIBRARY/
+```
+
+Reason:
+
+- Added a visual Event Library source note derived from EduTrades long-play
+  material.
+- The document stores the copied source markdown under `source_assets/`, uses
+  existing EduTrades image assets, and translates strategy/discretionary wording
+  into 12 event-search candidate definitions plus transverse context filters.
+- No promoted event definitions, detectors or strategies were created.
+
+Changed paths:
+
+```text
+00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/EDUTRADES_LONG_PLAYS_SOURCE_EVENT_INDEX_v0_1.md
+00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/source_assets/edu_trades/07_Long_plays.md
+00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/source_assets/edu_trades/
+00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/README.md
+00_CTO/CHANGELOG.md
+00_CTO/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Recommended action:
+
+```text
+Batch with next Event Library source-note/documentation refresh.
+```
+
+Root action:
+
+```text
+No immediate root update.
+```
+
+Owner:
+
+```text
+AlexJ / TSIS CTO
+```
+
+Notes:
+
+- This is source-note evidence for Event Library, not a promoted event, not a
+  detector and not a strategy.
+
+### GFQ-20260621-002 - Data Foundation real-time corporate alerts output target
+
+Status: `pending`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+TSIS_LAB_ARCHITECTURE.md
+```
+
+Reason:
+
+- CAPA 1 Data Foundation output targets now include
+  `real_time_corporate_event_alerts_table`.
+- This aligns the promoted architecture with the module-level output contract
+  that documents the missing governed low-latency alerts stream for offerings,
+  SEC filings, warrants, reverse splits and comparable smallcap catalysts.
+- The operational contract remains under
+  `01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/`.
+
+Changed paths:
+
+```text
+00_CTO/TSIS_LAB_ARCHITECTURE.md
+00_CTO/CHANGELOG.md
+00_CTO/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Recommended action:
+
+```text
+Include in the next CTO architecture leaf refresh. Do not force root rebuild
+only for this change unless a root architecture query requires it.
+```
+
+Root action:
+
+```text
+No immediate root update.
+```
+
+Owner:
+
+```text
+AlexJ / TSIS CTO
+```
+
+### GFQ-20260621-001 - Mosquito Small Caps visual event source index
+
+Status: `pending`
+
+Severity: `MEDIUM`
+
+Slice:
+
+```text
+13_TRADING_SYSTEMS/00_EVENT_LIBRARY/
+```
+
+Reason:
+
+- Added a visual Event Library source note derived from external discretionary
+  small-cap trader material.
+- The document embeds copied source images, stores the source markdown under
+  `source_assets/`, and translates strategy/discretionary wording into 20
+  event-first candidate phenomena.
+- No promoted event definitions, detectors or strategies were created.
+
+Changed paths:
+
+```text
+00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/MOSQUITO_SMALLCAPS_SOURCE_EVENT_INDEX_v0_1.md
+00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/source_assets/mosquito_smallcaps/La-Formula-Exacta-para-Entrar-en-Trades_Media_4Xh34AFFGJc_001_1080p_pdf.md
+00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/source_assets/mosquito_smallcaps/img/
+00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/README.md
+00_CTO/CHANGELOG.md
+00_CTO/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Recommended action:
+
+```text
+Batch with next Event Library source-note/documentation refresh.
+```
+
+Root action:
+
+```text
+No immediate root update.
+```
+
+Owner:
+
+```text
+AlexJ / TSIS CTO
+```
+
+Notes:
+
+- This is source-note evidence, not a promoted event and not a detector.
+
 ### GFQ-20260620-002 - DAS event draft definition
 
 Status: `leaf_refreshed`

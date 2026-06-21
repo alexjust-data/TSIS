@@ -7,6 +7,191 @@ Este changelog registra cambios institucionales y semanticamente relevantes para
 No duplica el historial de Git.
 Existe para preservar memoria arquitectonica y metodologica del modulo.
 
+## v0.4.69 - Instrument master initial materialization
+
+### Added
+
+- `01_foundations/canonical_schemas/outputs/instrument_master_schema_contract.md`
+- `01_foundations/contract_registry/dataset_contracts/instrument_master_dataset_contract_v0_1.md`
+- `01_foundations/data_consumption_policies/instrument_master_consumption_policy.md`
+- `01_foundations/dataset_registry/outputs/instrument_master_registry_entry.yaml`
+- `01_foundations/validators/outputs/instrument_master_validators.md`
+- `scripts/materialize_instrument_master.py`
+
+### Changed
+
+- `01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+- `01_foundations/canonical_schemas/README.md`
+- `01_foundations/contract_registry/dataset_contracts/README.md`
+- `01_foundations/data_consumption_policies/README.md`
+- `01_foundations/dataset_registry/README.md`
+- `01_foundations/validators/README.md`
+- `01_foundations/GRAPHIFY_REFRESH_QUEUE.md`
+
+### Materialized
+
+```text
+dataset_id = instrument_master_v0_1
+path = E:/TSIS/data/data_foundation_outputs/instrument_master/instrument_master_v0_1.parquet
+rows = 4824
+tickers = 4824
+build_run_id = instrument_master_v0_1_20260621T145725Z
+sha256 = 69104387d2607306c3fa1740573d130db5e7c30b1d1527d3ee8a8d2b4d53c2d2
+hard_fail_count = 0
+duplicate_ticker_count = 0
+```
+
+### Notes
+
+This is the first compact CAPA 1 output table materialized under the common
+landing root.
+
+It is derived from `reference_v0_1` and `lt1b_universe_v0_1`. Its current
+grain is one row per ticker in the `<1B>` operational universe. It flags ticker
+change risk but does not resolve final economic continuity or daily fully
+point-in-time market-cap membership.
+
+## v0.4.68 - Data Foundation outputs landing root
+
+### Changed
+
+- `01_foundations/module_contracts/data_storage_topology_and_target_state.md`
+- `01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+- `01_foundations/canonical_schemas/outputs/instrument_master_schema_contract.md`
+- `01_foundations/contract_registry/dataset_contracts/instrument_master_dataset_contract_v0_1.md`
+- `01_foundations/dataset_registry/outputs/instrument_master_registry_entry.yaml`
+- `01_foundations/validators/outputs/instrument_master_validators.md`
+- `scripts/materialize_instrument_master.py`
+
+### Notes
+
+Defined the common physical landing root for governed CAPA 1 outputs:
+
+```text
+E:/TSIS/data/data_foundation_outputs/
+```
+
+Future Data Foundation output tables must be materialized below this root
+instead of being created as loose siblings of raw/source folders such as
+`reference`, `ohlcv_daily`, `quotes` or `trades`.
+
+`raw_alert_log` and comparable append-only live ingestion logs are explicitly
+excluded from this clean-output root and should live under a separate ingestion
+root, for example:
+
+```text
+E:/TSIS/data/live_ingestion/raw_alert_log/
+```
+
+## v0.4.67 - Real-time corporate event alerts contract gap
+
+### Changed
+
+- `01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+- `01_foundations/module_contracts/README.md`
+- `01_foundations/GRAPHIFY_REFRESH_QUEUE.md`
+
+### Notes
+
+Added `real_time_corporate_event_alerts_table` to the CAPA 1 outputs contract.
+
+This records that TSIS currently has historical/contextual news, but does not
+yet have a governed low-latency alert stream for offerings, private placements,
+warrants, 424B filings, 8-K/6-K filings, reverse splits or similar corporate
+events that can move smallcaps within seconds.
+
+The contract now distinguishes:
+
+```text
+historical/contextual news
+SEC filing/submissions monitoring
+low-latency newswire/vendor alerts
+received_utc latency measurement
+```
+
+It also records the DAS Trader / NewsWare investigation note: DAS publicly
+advertises real-time streaming news from NewsWare, but public DAS API
+documentation is not sufficient evidence that DAS Trader Pro API exposes that
+news stream for governed ingestion. Direct NewsWare API evaluation is the
+preferred institutional route unless DAS provides certified API documentation.
+
+and requires this table to be consumed by Event Engine and Strategy Research as
+a risk/event input, not as a price source.
+
+## v0.4.66 - Data Foundation outputs target contract
+
+### Added
+
+- `01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+
+### Changed
+
+- `01_foundations/module_contracts/README.md`
+- `01_foundations/GRAPHIFY_REFRESH_QUEUE.md`
+
+### Notes
+
+Formalized the CAPA 1 output target contract for future agents.
+
+The contract explains how `instrument_master`, `market_calendar`,
+`corporate_actions_table`, `master_daily_table`,
+`master_intraday_bar_table`, microstructure/context sidecars,
+`dataset_certification_matrix`, and `data_quality_report` work together when an
+event is evaluated.
+
+It also records that the local `market_calendar_official_XNYS_20050101_20251231`
+artifact is reproducible byte-for-byte with:
+
+```text
+scripts/agent05_build_market_calendar_official.py
+exchange_calendars 4.13.1
+calendar = XNYS
+timezone = America/New_York
+sha256 = 8aac3ea4f7fbcaf6c394320f53acc1524bf5e5e3addbcd48ef31718bc0214228
+```
+
+External contrast sources documented in the contract:
+
+```text
+NYSE Holidays & Trading Hours
+Nasdaq Stock Market Holiday Schedule
+exchange_calendars project source
+```
+
+## v0.4.65 - Aggregated visual inspection dossiers
+
+### Added
+
+- `01_foundations/data_quality_report/inspection_visual_dossier/quotes_inspection_visual_dossier_v0_1.md`
+- `01_foundations/data_quality_report/inspection_visual_dossier/trades_inspection_visual_dossier_v0_1.md`
+
+### Changed
+
+- `01_foundations/data_quality_report/README.md`
+
+### Notes
+
+Created one consolidated visual-inspection dossier per family for `quotes` and
+`trades`.
+
+Each dossier preserves the source report text and source image content, places a
+collapsible navigation menu below `Documentos fuente`, groups that menu by
+source document and parent heading hierarchy, uses each source document's
+original title as the parent menu label, preserves that same original title as
+the visible section heading in the body, adds the source path directly below
+that title, and rebases only local relative paths inside the generated
+aggregate files so the original images render from the new
+`data_quality_report/inspection_visual_dossier/` location.
+
+Validation:
+
+```text
+quotes images = 611
+quotes missing_images = 0
+trades images = 495
+trades missing_images = 0
+```
+
 ## v0.4.64 - Graphify homogeneous extraction remediation registered
 
 ### Changed

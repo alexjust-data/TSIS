@@ -57,6 +57,13 @@ Strategy Library, Execution Models o Decision Models.
 - `EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md`: guia draft para documentar
   psicologia de traders, teoria de juegos, dinamica de masas y microestructura
   conductual dentro de eventos sin convertirlos en estrategias.
+- `MOSQUITO_SMALLCAPS_SOURCE_EVENT_INDEX_v0_1.md`: source note estructurado
+  que identifica eventos candidatos desde material discrecional externo y
+  contextualiza las imagenes fuente sin promover eventos ni estrategias.
+- `EDUTRADES_LONG_PLAYS_SOURCE_EVENT_INDEX_v0_1.md`: source note estructurado
+  que extrae fenomenos observables desde material discrecional long de
+  EduTrades, con imagenes fuente, bloques de busqueda historica y frontera
+  explicita entre evento y estrategia.
 
 ## Familias activas
 

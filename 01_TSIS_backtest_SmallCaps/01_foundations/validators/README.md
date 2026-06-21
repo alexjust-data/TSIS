@@ -97,6 +97,8 @@ validators/
     daily_validators.md
   ohlcv_1m/
     ohlcv_1m_raw_validators.md
+  outputs/
+    instrument_master_validators.md
   quotes/
     quotes_validators.md
   reference/

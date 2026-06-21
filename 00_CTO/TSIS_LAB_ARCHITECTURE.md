@@ -202,11 +202,22 @@ data_quality_report
 symbol_master
 corporate_actions_table
 calendar_table
+real_time_corporate_event_alerts_table
 ```
 
 Estos outputs no quedan institucionales por estar nombrados aqui. Deben ser
 materializados y gobernados en `01_foundations` mediante contracts, schemas,
 registries, validators, policies, manifests y evidencia.
+
+Referencia operativa actual:
+
+```text
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+```
+
+Ese contrato define el uso tecnico de estos outputs, sus nombres preferidos,
+sus fuentes fisicas, su papel cuando aparece un evento y la politica de
+materializacion compacta para no duplicar innecesariamente la raw data.
 
 ## `master_daily_table`
 
@@ -2067,6 +2078,7 @@ data_quality_report
 symbol_master
 corporate_actions_table
 calendar_table
+real_time_corporate_event_alerts_table
 ```
 
 Condicion de avance:
