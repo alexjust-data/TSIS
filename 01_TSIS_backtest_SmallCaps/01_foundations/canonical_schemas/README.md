@@ -250,6 +250,7 @@ Schemas de outputs gobernados de CAPA 1:
 - `outputs/expected_data_calendar_schema_contract.md`
 - `outputs/corporate_actions_table_schema_contract.md`
 - `outputs/dataset_certification_matrix_schema_contract.md`
+- `outputs/master_daily_table_schema_contract.md`
 
 Deben distinguir:
 

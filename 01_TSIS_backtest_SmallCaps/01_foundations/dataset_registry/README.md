@@ -353,6 +353,7 @@ Incluye:
 - `expected_data_calendar_registry_entry.yaml`
 - `corporate_actions_table_registry_entry.yaml`
 - `dataset_certification_matrix_registry_entry.yaml`
+- `master_daily_table_registry_entry.yaml`
 
 Estos outputs no son raw/source folders. Deben enlazar contrato, schema,
 policy, validators, materializer, manifest y summary de materializacion.

@@ -292,6 +292,7 @@ Ejemplo:
 - `expected_data_calendar_dataset_contract_v0_1.md`
 - `corporate_actions_table_dataset_contract_v0_1.md`
 - `dataset_certification_matrix_dataset_contract_v0_1.md`
+- `master_daily_table_dataset_contract_v0_1.md`
 
 Estos contratos deben distinguir:
 

@@ -7,6 +7,68 @@ Este changelog registra cambios institucionales y semanticamente relevantes para
 No duplica el historial de Git.
 Existe para preservar memoria arquitectonica y metodologica del modulo.
 
+## v0.4.78 - Master daily table initial materialization
+
+### Added
+
+- `01_foundations/canonical_schemas/outputs/master_daily_table_schema_contract.md`
+- `01_foundations/contract_registry/dataset_contracts/master_daily_table_dataset_contract_v0_1.md`
+- `01_foundations/data_consumption_policies/master_daily_table_consumption_policy.md`
+- `01_foundations/dataset_registry/outputs/master_daily_table_registry_entry.yaml`
+- `01_foundations/validators/outputs/master_daily_table_validators.md`
+- `scripts/materialize_master_daily_table.py`
+- `tests/data_foundation_outputs/test_master_daily_table_contract.py`
+
+### Changed
+
+- `01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+- `01_foundations/canonical_schemas/README.md`
+- `01_foundations/contract_registry/dataset_contracts/README.md`
+- `01_foundations/data_consumption_policies/README.md`
+- `01_foundations/dataset_registry/README.md`
+- `01_foundations/validators/README.md`
+
+### Materialized
+
+```text
+dataset_id = master_daily_table_v0_1
+path = E:/TSIS/data/data_foundation_outputs/master_daily_table/master_daily_table_v0_1
+layout = partitioned parquet dataset by year/price_view
+rows = 21771864
+expected_daily_rows = 7257288
+price_views = daily_raw, split_normalized, adjusted
+rows_per_price_view = 7257288
+data_present_rows = 19782153
+missing_expected_data_rows = 1989711
+selected_price_hard_invalid_rows = 0
+negative_volume_rows = 0
+backtest_core_row_candidate_rows = 19782153
+rows_with_corporate_action = 92979
+parquet_file_count = 63
+output_tree_sha256 = 1c9c39202514e41a879261a62e0dbcae054bb7e503b40e6e0e44138f38894e9e
+build_run_id = master_daily_table_v0_1_20260622T161747Z
+hard_fail_count = 0
+```
+
+### Test Evidence
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-22/data_foundation_outputs_six_tables_v0_1/
+tests = 24
+passed = 24
+failed = 0
+skipped = 0
+```
+
+### Notes
+
+`master_daily_table_v0_1` is materialized at
+`instrument_id + ticker + session_date + price_view` grain. It preserves three
+explicit price views: `daily_raw`, `split_normalized` and `adjusted`. v0.1
+keeps missing expected rows for coverage accounting, exposes daily context
+metrics and corporate-action flags, and does not yet join fundamentals, news,
+short, halts or regime context.
+
 ## v0.4.77 - Dataset certification matrix initial materialization
 
 ### Added

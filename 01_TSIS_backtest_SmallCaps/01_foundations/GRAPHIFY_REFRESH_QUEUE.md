@@ -129,6 +129,37 @@ Por ventana dedicada:
 
 ## Entradas activas
 
+### GFQ-20260622-008 - Master daily table v0.1 initial materialization
+
+Status: `pending_leaf_build`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+foundations_authority_graph
+data_foundation_outputs_graph
+daily_price_views_graph
+event_state_reconstruction_graph
+module_test_governance_graph
+```
+
+Reason:
+
+- Added `master_daily_table_v0_1` as the sixth CAPA 1 output table.
+- Added contract, schema, registry entry, consumption policy, validators,
+  materializer and pytest contract coverage.
+- Materialized a partitioned parquet dataset under:
+
+```text
+E:/TSIS/data/data_foundation_outputs/master_daily_table/master_daily_table_v0_1
+```
+
+- The table preserves explicit `daily_raw`, `split_normalized` and `adjusted`
+  price views and links expected coverage, corporate actions and family-level
+  certification gates.
+
 ### GFQ-20260622-007 - Dataset certification matrix v0.1 initial materialization
 
 Status: `pending_leaf_build`

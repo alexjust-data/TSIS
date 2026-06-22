@@ -357,6 +357,7 @@ data_consumption_policies/
   instrument_master_consumption_policy.md
   lt1b_universe_consumption_policy.md
   market_calendar_consumption_policy.md
+  master_daily_table_consumption_policy.md
   ohlcv_1m_raw_consumption_policy.md
   quotes_consumption_policy.md
   reference_consumption_policy.md

@@ -105,6 +105,7 @@ validators/
     expected_data_calendar_validators.md
     corporate_actions_table_validators.md
     dataset_certification_matrix_validators.md
+    master_daily_table_validators.md
   quotes/
     quotes_validators.md
   reference/

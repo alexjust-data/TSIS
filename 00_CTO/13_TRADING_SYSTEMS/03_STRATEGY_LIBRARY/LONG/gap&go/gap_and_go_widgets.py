@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 import html as html_lib
 import json
 from pathlib import Path
-from typing import Iterable
+from typing import Callable, Iterable
 from urllib.parse import urlencode
 from uuid import uuid4
 
@@ -1192,7 +1192,7 @@ def _add_compact_session_backgrounds(fig: go.Figure, df: pd.DataFrame) -> None:
             )
 
 
-def _detail_window_until_noon(df: pd.DataFrame, candidate: dict) -> pd.DataFrame:
+def _detail_window_until_hour(df: pd.DataFrame, candidate: dict, end_hour_ny: int) -> pd.DataFrame:
     if df.empty:
         return df
 
@@ -1202,7 +1202,7 @@ def _detail_window_until_noon(df: pd.DataFrame, candidate: dict) -> pd.DataFrame
         return df
 
     event_midnight = event_rows["ts_et"].iloc[0].normalize()
-    end_et = event_midnight + pd.Timedelta(hours=12)
+    end_et = event_midnight + pd.Timedelta(hours=end_hour_ny)
 
     prior_dates = sorted(date for date in df["session_date"].dropna().unique().tolist() if str(date) < session_date)
     if prior_dates:
@@ -1214,6 +1214,14 @@ def _detail_window_until_noon(df: pd.DataFrame, candidate: dict) -> pd.DataFrame
 
     detail = df[(df["ts_et"] >= start_et) & (df["ts_et"] <= end_et)].copy()
     return detail if not detail.empty else event_rows.copy()
+
+
+def _detail_window_until_noon(df: pd.DataFrame, candidate: dict) -> pd.DataFrame:
+    return _detail_window_until_hour(df, candidate, 12)
+
+
+def _detail_window_until_regular_close(df: pd.DataFrame, candidate: dict) -> pd.DataFrame:
+    return _detail_window_until_hour(df, candidate, 16)
 
 
 def render_candidate(candidate: dict, data_root: str, price_view: str, y_padding_pct: float) -> go.Figure:
@@ -1242,7 +1250,7 @@ def render_candidate_charts(
     y_padding_pct: float,
 ) -> list[tuple[str, go.Figure]]:
     df = load_chart_window(candidate["ticker"], candidate["break_ts_utc"], data_root, price_view=price_view)
-    detail_df = _detail_window_until_noon(df, candidate)
+    detail_until_close_df = _detail_window_until_regular_close(df, candidate)
     split_events = load_split_events_for_chart(
         candidate["ticker"],
         str(df["session_date"].min()) if not df.empty else str(candidate.get("session_date", "")),
@@ -1278,12 +1286,12 @@ def render_candidate_charts(
             ),
         ),
         (
-            "3. Event-day detail until 12:00 NY",
+            "3. Event-day detail until 16:00 NY",
             make_gap_and_go_chart(
-                detail_df,
+                detail_until_close_df,
                 candidate,
                 y_padding_pct=y_padding_pct,
-                chart_label="detail until 12:00 NY",
+                chart_label="detail until 16:00 NY",
                 show_rangeslider=False,
                 height=780,
                 static_axes=True,
@@ -1296,7 +1304,7 @@ def render_candidate_charts(
 
 def render_candidate_detail_chart(candidate: dict, data_root: str, price_view: str, y_padding_pct: float) -> go.Figure:
     df = load_chart_window(candidate["ticker"], candidate["break_ts_utc"], data_root, price_view=price_view)
-    detail_df = _detail_window_until_noon(df, candidate)
+    detail_df = _detail_window_until_regular_close(df, candidate)
     split_events = load_split_events_for_chart(
         candidate["ticker"],
         str(df["session_date"].min()) if not df.empty else str(candidate.get("session_date", "")),
@@ -1306,7 +1314,7 @@ def render_candidate_detail_chart(candidate: dict, data_root: str, price_view: s
         detail_df,
         candidate,
         y_padding_pct=y_padding_pct,
-        chart_label="detail until 12:00 NY",
+        chart_label="detail until 16:00 NY",
         show_rangeslider=False,
         height=780,
         static_axes=True,
@@ -1376,9 +1384,10 @@ def export_run_event_day_detail_images(
     width: int = 1800,
     height: int = 950,
     scale: int = 2,
+    progress_callback: Callable[[int, int, Path, dict], None] | None = None,
 ) -> tuple[Path, list[Path]]:
     if candidates.empty:
-        return run_dir / "chart_exports" / "event_day_detail_until_1200_ny", []
+        return run_dir / "chart_exports" / "event_day_detail_until_1600_ny", []
 
     _ensure_plotly_png_export_available()
 
@@ -1386,13 +1395,15 @@ def export_run_event_day_detail_images(
     if limit is not None and limit > 0:
         candidates = candidates.head(limit).copy()
 
-    export_root = run_dir / "chart_exports" / "event_day_detail_until_1200_ny"
+    export_root = run_dir / "chart_exports" / "event_day_detail_until_1600_ny"
     images_dir = export_root / "images"
     images_dir.mkdir(parents=True, exist_ok=True)
 
     manifest_rows: list[dict] = []
     paths: list[Path] = []
-    for position, row in enumerate(candidates.to_dict("records"), start=1):
+    rows = candidates.to_dict("records")
+    total = len(rows)
+    for position, row in enumerate(rows, start=1):
         path = images_dir / _candidate_detail_image_name(position, row)
         fig = render_candidate_detail_chart(row, data_root, price_view, y_padding_pct)
         try:
@@ -1416,6 +1427,8 @@ def export_run_event_day_detail_images(
                 "image_path": str(path),
             }
         )
+        if progress_callback is not None:
+            progress_callback(position, total, path, row)
 
     pd.DataFrame(manifest_rows).to_csv(export_root / "EXPORT_MANIFEST.csv", index=False)
     return export_root, paths
@@ -1813,12 +1826,17 @@ def launch_gap_and_go_app():
 
     def _export_detail_run(_button) -> None:
         with out:
+            clear_output()
+            def _emit(message: str) -> None:
+                out.append_stdout(f"{message}\n")
+
+            _emit("Export detail run clicked.")
             if not run_dir_text.value.strip():
-                print("Paste a run_dir first, or use Load latest.")
+                _emit("Paste a run_dir first, or use Load latest.")
                 return
             path = Path(run_dir_text.value.strip())
             if not path.exists():
-                print(f"Run dir not found: {path}")
+                _emit(f"Run dir not found: {path}")
                 return
 
             candidates = _load_candidates_from_run(path)
@@ -1826,12 +1844,30 @@ def launch_gap_and_go_app():
                 candidates = _load_partial_candidates_from_run(path)
             candidates = _enrich_widget_reference(candidates)
             if candidates.empty:
-                print(f"No candidates found in run: {path}")
+                _emit(f"No candidates found in run: {path}")
                 return
 
-            print("Exporting Event-day detail until 12:00 NY images...")
-            print(f"Run dir: {path}")
-            print(f"Candidates: {len(candidates)}")
+            export_root = path / "chart_exports" / "event_day_detail_until_1600_ny"
+            _emit("Exporting Event-day detail until 16:00 NY images...")
+            _emit(f"Run dir: {path}")
+            _emit(f"Export dir: {export_root}")
+            _emit(f"Candidates: {len(candidates)}")
+            _emit("Checking Plotly PNG exporter...")
+            try:
+                _ensure_plotly_png_export_available()
+            except RuntimeError as exc:
+                _emit(str(exc))
+                _emit("Install kaleido in the active notebook kernel, then click this button again.")
+                return
+            _emit("PNG exporter available. Starting image export.")
+
+            def _progress(position: int, total: int, image_path: Path, row: dict) -> None:
+                _emit(
+                    "exported "
+                    f"{position}/{total} "
+                    f"{row.get('ticker')} {row.get('session_date')} -> {image_path.name}"
+                )
+
             try:
                 export_root, paths = export_run_event_day_detail_images(
                     candidates,
@@ -1840,17 +1876,20 @@ def launch_gap_and_go_app():
                     price_view.value,
                     y_padding.value,
                     sort_mode=candidate_sort.value,
+                    progress_callback=_progress,
                 )
             except RuntimeError as exc:
-                print(str(exc))
+                _emit(str(exc))
+                return
+            except Exception as exc:
+                _emit(f"Export failed: {type(exc).__name__}: {exc}")
                 return
 
-            print(f"Export dir: {export_root}")
-            print(f"Images: {len(paths)}")
-            print(f"Manifest: {export_root / 'EXPORT_MANIFEST.csv'}")
+            _emit(f"Done. Images: {len(paths)}")
+            _emit(f"Manifest: {export_root / 'EXPORT_MANIFEST.csv'}")
             if paths:
-                print(f"First image: {paths[0]}")
-                print(f"Last image: {paths[-1]}")
+                _emit(f"First image: {paths[0]}")
+                _emit(f"Last image: {paths[-1]}")
 
     def _render_tradingview_selected(_button) -> None:
         with out:

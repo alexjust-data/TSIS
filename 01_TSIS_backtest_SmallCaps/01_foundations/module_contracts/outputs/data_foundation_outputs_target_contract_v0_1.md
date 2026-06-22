@@ -646,6 +646,40 @@ No debe contener:
 - noticias sin `published_utc`;
 - labels forward-looking como features.
 
+Estado materializado inicial:
+
+```text
+dataset_id: master_daily_table_v0_1
+path: E:/TSIS/data/data_foundation_outputs/master_daily_table/master_daily_table_v0_1
+layout: partitioned parquet dataset by year/price_view
+rows: 21771864
+expected_daily_rows: 7257288
+price_views: daily_raw, split_normalized, adjusted
+rows_per_price_view: 7257288
+data_present_rows: 19782153
+missing_expected_data_rows: 1989711
+selected_price_hard_invalid_rows: 0
+negative_volume_rows: 0
+backtest_core_row_candidate_rows: 19782153
+rows_with_corporate_action: 92979
+parquet_file_count: 63
+tree_sha256: 1c9c39202514e41a879261a62e0dbcae054bb7e503b40e6e0e44138f38894e9e
+build_run_id: master_daily_table_v0_1_20260622T161747Z
+hard_fail_count: 0
+test_evidence: C:/TSIS_Data/tests/test_runs/2026-06-22/data_foundation_outputs_six_tables_v0_1/
+```
+
+Lectura institucional:
+
+```text
+master_daily_table_v0_1 existe como superficie diaria compacta para eventos,
+backtest diario y research. Mantiene grano instrument/ticker/session/price_view
+y no mezcla `daily_raw`, `split_normalized` y `adjusted` en una fila opaca.
+Conserva filas missing esperadas para coverage accounting y marca
+`backtest_core_row_candidate`. v0.1 no une fundamentals, news, short, halts ni
+regime context.
+```
+
 ### 6. `master_intraday_bar_table`
 
 Alias arquitectonico:
