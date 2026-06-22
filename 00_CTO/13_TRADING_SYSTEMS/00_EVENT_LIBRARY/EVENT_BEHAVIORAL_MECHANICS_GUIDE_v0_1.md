@@ -29,6 +29,7 @@ hipotesis mecanicas, falsables y progresivamente investigables.
 - [8. Evidence ladder](#8-evidence-ladder)
 - [9. Claims prohibidos](#9-claims-prohibidos)
 - [10. Referencias y research queue](#10-referencias-y-research-queue)
+- [10.1. Carpeta de investigacion y desarrollo](#101-carpeta-de-investigacion-y-desarrollo)
 - [11. Regla final](#11-regla-final)
 
 ---
@@ -241,7 +242,8 @@ Proxies posibles:
 Fenomeno:
 
 ```text
-varios grupos actuan anticipando la reaccion de otros grupos.
+varios grupos con posiciones, restricciones e informacion parcial actuan
+anticipando la reaccion de otros grupos ante niveles observables del mercado.
 ```
 
 Ejemplo:
@@ -252,8 +254,61 @@ Ejemplo:
 - shorts cubren al perder el nivel;
 - la cobertura acelera el nuevo impulso.
 
-Este marco debe describirse como presion/incentivos, no como certeza mental de
-participantes individuales.
+Este marco no debe documentarse como narrativa psicologica vaga. Si se invoca
+teoria de juegos, debe tratarse como un modelo matematico o semi-matematico de:
+
+```text
+jugadores
+acciones posibles
+informacion observable
+payoffs/incentivos
+restricciones
+niveles que cambian incentivos
+proxies medibles
+tests de falsificacion
+```
+
+La Event Library no necesita probar la teoria de juegos en cada draft, pero si
+debe distinguir:
+
+```text
+observacion de mercado
+hipotesis de incentivos
+proxy medible
+modelo falsable
+```
+
+Modelos permitidos como punto de partida:
+
+1. `Pressure Payoff Model`
+   - estima presion latente de un grupo mediante perdida/riesgo aproximado;
+   - ejemplo: `pressure_short(t)` como funcion de perdida latente, ruptura de
+     nivel, aceleracion de volumen y liquidez.
+
+2. `Sequential Trigger Game`
+   - modela el evento como fases y transiciones;
+   - ejemplo: `initial_push -> dip_or_pause -> defended_level -> rebreak ->
+     forced_reaction/failure`.
+
+3. `Mean-Field Feedback Game`
+   - modela presion agregada de masa, liquidez e impacto;
+   - ejemplo: `K(t) = attention(t) * pressure_density(t) * impact(t)`.
+
+Referencia R&D:
+
+```text
+RESEARCH_AND_DEVELOPMENT/GAME_THEORETIC_PRESSURE_FOR_EVENT_SEARCH_ALPHAEVOLVE_v0_1.md
+```
+
+Ese documento conserva la primera formalizacion matematica de trabajo para que
+AlphaEvolve pueda evolucionar busquedas de eventos sin evolucionar estrategias.
+
+Regla:
+
+```text
+Game-theoretic pressure no significa "sabemos que los shorts estan asustados".
+Significa "proponemos un modelo de incentivos observable, medible y falsable".
+```
 
 ## 6. Estandar cientifico
 
@@ -312,9 +367,15 @@ behavioral_mechanics:
 
   game_theory_frame:
     incentive_conflict:
+    players:
+    actions:
+    observable_information:
+    payoff_or_pressure_proxy:
+    constraints:
     who_is_forced_to_act:
     what_level_changes_incentives:
     what_failure_would_invalidate_the_pressure:
+    alphaevolve_objective_candidate:
 
   crowd_dynamics:
     attention_source:
@@ -419,6 +480,53 @@ Hasta entonces, el documento debe marcar:
 
 ```text
 references_status: pending
+```
+
+### 10.1. Carpeta de investigacion y desarrollo
+
+La investigacion teorica y metodologica asociada a Event Library debe vivir en:
+
+```text
+00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/RESEARCH_AND_DEVELOPMENT/
+```
+
+Esta carpeta sirve para guardar:
+
+- notas matematicas;
+- marcos de investigacion;
+- referencias bibliograficas;
+- enlaces a papers;
+- hipotesis de modelado;
+- propuestas para AlphaEvolve;
+- criterios de falsacion;
+- borradores que todavia no pertenecen a un evento concreto.
+
+Regla:
+
+```text
+R&D documenta como pensar y formalizar mecanismos.
+EVENT.md documenta un evento concreto.
+Strategy Library documenta decisiones operativas.
+```
+
+Primer documento de la carpeta:
+
+```text
+RESEARCH_AND_DEVELOPMENT/GAME_THEORETIC_PRESSURE_FOR_EVENT_SEARCH_ALPHAEVOLVE_v0_1.md
+```
+
+Ese documento debe citarse cuando un evento use `Game-theoretic pressure` de
+forma sustantiva. Si un evento solo usa narrativa conductual sin modelo, debe
+marcar:
+
+```text
+game_theory_model_status: not_formalized
+```
+
+Si un evento usa una de las tres propuestas matematicas, debe marcar:
+
+```text
+game_theory_model_status: pressure_payoff | sequential_trigger | mean_field_feedback
 ```
 
 ## 11. Regla final

@@ -1,0 +1,78 @@
+dataset_identity:
+  name: dataset_certification_matrix_v0_1
+  domain: outputs
+  logical_version: v0_1
+  contract_type: data_foundation_quality_output
+
+status:
+  promotion_state: initial_materialized_candidate
+  active: true
+  owner: module_01_foundations
+
+registry_classification:
+  dataset_family: data_foundation_outputs
+  primary_unit: dataset_family_certification_state
+  evidence_state: initial_materialization_completed_with_manifest
+
+artifacts:
+  dataset_contract: 01_foundations/contract_registry/dataset_contracts/dataset_certification_matrix_dataset_contract_v0_1.md
+  canonical_schema: 01_foundations/canonical_schemas/outputs/dataset_certification_matrix_schema_contract.md
+  consumption_policy: 01_foundations/data_consumption_policies/dataset_certification_matrix_consumption_policy.md
+  validators: 01_foundations/validators/outputs/dataset_certification_matrix_validators.md
+  output_target_contract: 01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+  materializer: scripts/materialize_dataset_certification_matrix.py
+
+physical_layout:
+  canonical_root: E:/TSIS/data/data_foundation_outputs/dataset_certification_matrix
+  parquet_file: E:/TSIS/data/data_foundation_outputs/dataset_certification_matrix/dataset_certification_matrix_v0_1.parquet
+  summary_csv: E:/TSIS/data/data_foundation_outputs/dataset_certification_matrix/_dataset_certification_matrix_summary_v0_1.csv
+  manifest_json: E:/TSIS/data/data_foundation_outputs/dataset_certification_matrix/_dataset_certification_matrix_manifest_v0_1.json
+  layout: single parquet file plus manifest and summary
+
+source_lineage:
+  upstream_documents:
+    - 01_foundations/data_quality_report/family_status_matrix_v0_1.md
+  quality_policy_version: dataset_certification_matrix_policy_v0_1
+  source_family_status_matrix_sha256: c380c7a5f85c14925410899b264de4e52c62571a1b1ff7b359cec733f16f5d35
+
+current_materialization:
+  build_run_id: dataset_certification_matrix_v0_1_20260622T154116Z
+  created_at_utc: 2026-06-22T15:41:16.124579+00:00
+  rows: 13
+  family_count: 13
+  human_inspector_ready_count: 13
+  visual_casepack_complete_count: 13
+  blocked_from_backtest_core_count: 2
+  scoped_only_count: 5
+  hard_fail_count: 0
+  output_sha256: e7803e3ec58cfb92c1313efc09bdd3a015800c4680437e4567a0174b257f1fb0
+  manifest: E:/TSIS/data/data_foundation_outputs/dataset_certification_matrix/_dataset_certification_matrix_manifest_v0_1.json
+  summary: E:/TSIS/data/data_foundation_outputs/dataset_certification_matrix/_dataset_certification_matrix_summary_v0_1.csv
+  test_evidence: C:/TSIS_Data/tests/test_runs/2026-06-22/data_foundation_outputs_five_tables_v0_1/
+
+allowed_consumers:
+  permitted:
+    - data_quality_report
+    - event_engine
+    - research_only
+    - forensic_only
+  conditional:
+    - master_daily_table
+    - master_intraday_bar_table
+    - backtest_core
+    - backtest_extended
+    - ml_flagged
+  prohibited_as_primary_data:
+    - execution_simulator
+    - ml_primary
+    - rl_allowed
+
+known_limitations:
+  - family_level_not_ticker_date_level
+  - gate_only_not_market_data
+  - inherits_family_status_matrix_reference_date
+  - does_not_repair_blocked_families
+
+notes:
+  - Must be rematerialized whenever family_status_matrix_v0_1.md changes.
+  - Downstream consumers must still apply family-specific validators and policies.

@@ -17,6 +17,15 @@
 **/cache/
 **/tmp/
 **/temp/
+
+# TSIS test runtime evidence.
+# Keep test code and README contracts in Git; do not commit dated execution
+# outputs, junit files, local logs or generated test artifacts.
+/tests/test_runs/*/
+/tests/**/artifacts/
+/tests/**/*.xml
+/tests/**/*.log
+/tests/**/pytest_output.txt
 graphify-out/
 **/graphify-out/
 **/_graphify_staging*/

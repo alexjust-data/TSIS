@@ -347,12 +347,16 @@ La carpeta contiene actualmente:
 ```text
 data_consumption_policies/
   additional_consumption_policy.md
+  corporate_actions_table_consumption_policy.md
+  dataset_certification_matrix_consumption_policy.md
   daily_consumption_policy.md
   daily_return_labels_consumption_policy.md
+  expected_data_calendar_consumption_policy.md
   halts_consumption_policy.md
   intraday_regime_features_consumption_policy.md
   instrument_master_consumption_policy.md
   lt1b_universe_consumption_policy.md
+  market_calendar_consumption_policy.md
   ohlcv_1m_raw_consumption_policy.md
   quotes_consumption_policy.md
   reference_consumption_policy.md

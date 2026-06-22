@@ -7,6 +7,345 @@ Este changelog registra cambios institucionales y semanticamente relevantes para
 No duplica el historial de Git.
 Existe para preservar memoria arquitectonica y metodologica del modulo.
 
+## v0.4.77 - Dataset certification matrix initial materialization
+
+### Added
+
+- `01_foundations/canonical_schemas/outputs/dataset_certification_matrix_schema_contract.md`
+- `01_foundations/contract_registry/dataset_contracts/dataset_certification_matrix_dataset_contract_v0_1.md`
+- `01_foundations/data_consumption_policies/dataset_certification_matrix_consumption_policy.md`
+- `01_foundations/dataset_registry/outputs/dataset_certification_matrix_registry_entry.yaml`
+- `01_foundations/validators/outputs/dataset_certification_matrix_validators.md`
+- `01_foundations/validators/daily/daily_adjusted_validators.md`
+- `01_foundations/validators/ohlcv_1m/ohlcv_1m_split_normalized_validators.md`
+- `scripts/materialize_dataset_certification_matrix.py`
+- `tests/data_foundation_outputs/test_dataset_certification_matrix_contract.py`
+
+### Changed
+
+- `01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+- `01_foundations/canonical_schemas/README.md`
+- `01_foundations/contract_registry/dataset_contracts/README.md`
+- `01_foundations/data_consumption_policies/README.md`
+- `01_foundations/dataset_registry/README.md`
+- `01_foundations/validators/README.md`
+
+### Materialized
+
+```text
+dataset_id = dataset_certification_matrix_v0_1
+path = E:/TSIS/data/data_foundation_outputs/dataset_certification_matrix/dataset_certification_matrix_v0_1.parquet
+rows = 13
+family_count = 13
+human_inspector_ready_count = 13
+visual_casepack_complete_count = 13
+blocked_from_backtest_core_count = 2
+scoped_only_count = 5
+data_quality_verdict_counts = blocked_by_data_defect: 2, complete_scoped: 5, usable_for_declared_scope: 6
+foundations_completion_status_counts = human_inspector_ready: 9, human_inspector_ready_scoped: 4
+visual_inspection_status_counts = visual_complete: 10, visual_complete_scoped: 3
+build_run_id = dataset_certification_matrix_v0_1_20260622T154116Z
+output_sha256 = e7803e3ec58cfb92c1313efc09bdd3a015800c4680437e4567a0174b257f1fb0
+source_family_status_matrix_sha256 = c380c7a5f85c14925410899b264de4e52c62571a1b1ff7b359cec733f16f5d35
+hard_fail_count = 0
+```
+
+### Test Evidence
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-22/data_foundation_outputs_five_tables_v0_1/
+tests = 20
+passed = 20
+failed = 0
+skipped = 0
+```
+
+### Notes
+
+`dataset_certification_matrix_v0_1` materializes the family-level gates from
+`family_status_matrix_v0_1.md`. It verifies physical roots, quality reports,
+inspection dossiers, schemas, contracts, registries, policies, validators and
+visual evidence. It is a gate/evidence table, not market data and not a
+row-level validator.
+
+## v0.4.76 - Corporate actions table initial materialization
+
+### Added
+
+- `01_foundations/canonical_schemas/outputs/corporate_actions_table_schema_contract.md`
+- `01_foundations/contract_registry/dataset_contracts/corporate_actions_table_dataset_contract_v0_1.md`
+- `01_foundations/data_consumption_policies/corporate_actions_table_consumption_policy.md`
+- `01_foundations/dataset_registry/outputs/corporate_actions_table_registry_entry.yaml`
+- `01_foundations/validators/outputs/corporate_actions_table_validators.md`
+- `scripts/materialize_corporate_actions_table.py`
+- `tests/data_foundation_outputs/test_corporate_actions_table_contract.py`
+
+### Changed
+
+- `01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+- `01_foundations/canonical_schemas/README.md`
+- `01_foundations/contract_registry/dataset_contracts/README.md`
+- `01_foundations/data_consumption_policies/README.md`
+- `01_foundations/dataset_registry/README.md`
+- `01_foundations/validators/README.md`
+
+### Materialized
+
+```text
+dataset_id = corporate_actions_table_v0_1
+path = E:/TSIS/data/data_foundation_outputs/corporate_actions_table/corporate_actions_table_v0_1.parquet
+rows = 104757
+tickers = 3621
+instrument_ids = 3497
+action_type_counts = dividend: 92033, split: 6630, ticker_change: 6094
+source_system_counts = additional: 52490, reference: 52267
+first_action_date = 1969-12-31
+last_action_date = 2027-06-15
+build_run_id = corporate_actions_table_v0_1_20260622T144845Z
+output_sha256 = 01989eb301a2cdd83e297fbf6384e0bd4d5b4fb300bdccee6b1adbde87d5e4ce
+hard_fail_count = 0
+duplicate_corporate_action_id_count = 0
+invalid_split_terms_count = 0
+negative_dividend_amount_count = 0
+within_instrument_valid_window_false_count = 39525
+cross_source_overlap_groups = 51336
+```
+
+### Test Evidence
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-22/data_foundation_outputs_four_tables_v0_1/
+tests = 16
+passed = 16
+failed = 0
+skipped = 0
+```
+
+### Notes
+
+`corporate_actions_table_v0_1` preserves `reference` as primary source and
+`additional` as secondary/reconciliation source. Empty placeholder source rows
+are excluded. The table provides corporate-action context and adjustment
+lineage; it does not solve full economic continuity across ticker changes and
+does not output adjusted prices.
+
+## v0.4.75 - Expected data calendar initial materialization
+
+### Added
+
+- `01_foundations/canonical_schemas/outputs/expected_data_calendar_schema_contract.md`
+- `01_foundations/contract_registry/dataset_contracts/expected_data_calendar_dataset_contract_v0_1.md`
+- `01_foundations/data_consumption_policies/expected_data_calendar_consumption_policy.md`
+- `01_foundations/dataset_registry/outputs/expected_data_calendar_registry_entry.yaml`
+- `01_foundations/validators/outputs/expected_data_calendar_validators.md`
+- `scripts/materialize_expected_data_calendar.py`
+- `tests/data_foundation_outputs/test_expected_data_calendar_contract.py`
+
+### Changed
+
+- `01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+- `01_foundations/canonical_schemas/README.md`
+- `01_foundations/contract_registry/dataset_contracts/README.md`
+- `01_foundations/data_consumption_policies/README.md`
+- `01_foundations/dataset_registry/README.md`
+- `01_foundations/validators/README.md`
+
+### Materialized
+
+```text
+dataset_id = expected_data_calendar_v0_1
+path = E:/TSIS/data/data_foundation_outputs/expected_data_calendar/expected_data_calendar_v0_1
+layout = partitioned parquet dataset by dataset_family/year
+rows = 29029152
+dataset_families = daily_raw, ohlcv_1m_raw, quotes_raw, trades_raw
+rows_per_family = 7257288
+tickers = 4824
+first_session = 2005-01-03
+last_session = 2025-12-31
+parquet_file_count = 84
+tree_sha256 = 1c7571cdcefc1ffd3f0f6cda921d32d64dee33cc41c3676809686c1bc575a57f
+build_run_id = expected_data_calendar_v0_1_20260622T141019Z
+hard_fail_count = 0
+duplicate_key_groups = 0
+invalid_window_count = 0
+```
+
+### Test Evidence
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-22/data_foundation_outputs_instrument_master_market_calendar_expected_data_calendar_v0_1/
+tests = 12
+passed = 12
+failed = 0
+skipped = 0
+```
+
+### Notes
+
+`expected_data_calendar_v0_1` is a coverage expectation denominator. It
+declares expected family/ticker/session rows from `instrument_master_v0_1` and
+`market_calendar_v0_1`; it does not measure physical presence or data quality.
+
+## v0.4.74 - Test runtime ignore protections
+
+### Changed
+
+- `C:/TSIS_Data/.gitignore`
+- `C:/TSIS_Data/.graphifyignore`
+
+### Notes
+
+Git and Graphify now exclude dated test runtime evidence under
+`C:/TSIS_Data/tests/test_runs/*/`, generated test `artifacts/`, junit XML files,
+pytest logs and captured pytest output.
+
+README contracts and executable test code remain visible for Git and Graphify.
+
+## v0.4.73 - Data Foundation output contract tests
+
+### Added
+
+- `tests/conftest.py`
+- `tests/_helpers/__init__.py`
+- `tests/_helpers/data_foundation.py`
+- `tests/data_foundation_outputs/test_instrument_master_contract.py`
+- `tests/data_foundation_outputs/test_market_calendar_contract.py`
+
+### Test Evidence
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-22/data_foundation_outputs_instrument_master_market_calendar_v0_1/
+```
+
+Generated artifacts:
+
+- `metadata.json`
+- `summary.md`
+- `pytest_output.txt`
+- `junit.xml`
+- `artifacts/instrument_master_manifest_check.json`
+- `artifacts/instrument_master_source_reconciliation.json`
+- `artifacts/market_calendar_manifest_check.json`
+- `artifacts/market_calendar_source_reconciliation.json`
+
+### Result
+
+```text
+tests = 8
+passed = 8
+failed = 0
+skipped = 0
+```
+
+### Notes
+
+The pytest harness now creates dated institutional test-run evidence under
+`C:/TSIS_Data/tests/test_runs/`. The first executable Data Foundation output
+tests validate manifest/hash integrity, contract links, schema/lineage,
+contractual hard gates and basic source reconciliation for
+`instrument_master_v0_1` and `market_calendar_v0_1`.
+
+## v0.4.72 - Data root and test artifact topology clarification
+
+### Added
+
+- Root test artifact folders:
+  - `C:/TSIS_Data/tests/test_runs/`
+  - `C:/TSIS_Data/tests/fixtures/`
+  - `C:/TSIS_Data/tests/third_party_evidence/`
+
+### Changed
+
+- `01_foundations/module_contracts/data_storage_topology_and_target_state.md`
+- `C:/TSIS_Data/tests/README.md`
+
+### Notes
+
+The storage topology now distinguishes:
+
+- `E:/TSIS/data/` as the active preferred data plane;
+- `E:/TSIS/data/data_foundation_outputs/` as the governed CAPA 1 table output
+  root;
+- `C:/TSIS_Data/tests/test_runs/` as the root for dated test execution outputs;
+- `C:/TSIS_Data/tests/fixtures/` as the root for small deterministic fixtures;
+- `C:/TSIS_Data/tests/third_party_evidence/` as the root for cached external
+  evidence;
+- `C:/TSIS_Data/data/` as legacy/quarantine until a migration audit proves what
+  can be removed.
+
+No deletion of legacy data was performed.
+
+## v0.4.71 - SmallCaps test topology scaffold
+
+### Added
+
+- `tests/README.md`
+- `tests/data_foundation_outputs/README.md`
+- `tests/foundations/README.md`
+- `tests/pipelines/README.md`
+- `tests/research/README.md`
+- `tests/event_engine/README.md`
+- `tests/strategy_engine/README.md`
+- `tests/execution/README.md`
+- `tests/rl_preparation/README.md`
+
+### Notes
+
+The module now has an explicit test topology for Data Foundation outputs,
+foundations governance, pipelines, research promotion, event semantics,
+strategy boundaries, execution realism and offline RL preparation.
+
+No executable validators were added in this entry. The scaffold defines where
+future tests must live and the minimum evidence expected for institutional
+table validation: schema contract, manifest/hash, source reconciliation,
+third-party evidence and adversarial/mutation checks.
+
+## v0.4.70 - Market calendar initial materialization
+
+### Added
+
+- `01_foundations/canonical_schemas/outputs/market_calendar_schema_contract.md`
+- `01_foundations/contract_registry/dataset_contracts/market_calendar_dataset_contract_v0_1.md`
+- `01_foundations/data_consumption_policies/market_calendar_consumption_policy.md`
+- `01_foundations/dataset_registry/outputs/market_calendar_registry_entry.yaml`
+- `01_foundations/validators/outputs/market_calendar_validators.md`
+- `scripts/materialize_market_calendar.py`
+
+### Changed
+
+- `01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+- `01_foundations/canonical_schemas/README.md`
+- `01_foundations/contract_registry/dataset_contracts/README.md`
+- `01_foundations/data_consumption_policies/README.md`
+- `01_foundations/dataset_registry/README.md`
+- `01_foundations/validators/README.md`
+- `01_foundations/GRAPHIFY_REFRESH_QUEUE.md`
+
+### Materialized
+
+```text
+dataset_id = market_calendar_v0_1
+path = E:/TSIS/data/data_foundation_outputs/market_calendar/market_calendar_v0_1.parquet
+rows = 5283
+calendar = XNYS
+timezone = America/New_York
+first_session = 2005-01-03
+last_session = 2025-12-31
+early_close_sessions = 45
+build_run_id = market_calendar_v0_1_20260622T072422Z
+source_parquet_sha256 = 8aac3ea4f7fbcaf6c394320f53acc1524bf5e5e3addbcd48ef31718bc0214228
+output_sha256 = 96bd60c124e6552d269f8846205ed28bf6e58881453a5bbb4f73ced0657b56d5
+hard_fail_count = 0
+duplicate_session_count = 0
+```
+
+### Notes
+
+This is the second compact CAPA 1 output table materialized under the common
+landing root. It derives from the local TSIS official calendar candidate built
+with `exchange_calendars` (`XNYS`, `America/New_York`) and normalizes types plus
+lineage for downstream consumption.
+
 ## v0.4.69 - Instrument master initial materialization
 
 ### Added

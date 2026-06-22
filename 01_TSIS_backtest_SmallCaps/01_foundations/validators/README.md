@@ -95,10 +95,16 @@ La estructura actual es:
 validators/
   daily/
     daily_validators.md
+    daily_adjusted_validators.md
   ohlcv_1m/
     ohlcv_1m_raw_validators.md
+    ohlcv_1m_split_normalized_validators.md
   outputs/
     instrument_master_validators.md
+    market_calendar_validators.md
+    expected_data_calendar_validators.md
+    corporate_actions_table_validators.md
+    dataset_certification_matrix_validators.md
   quotes/
     quotes_validators.md
   reference/

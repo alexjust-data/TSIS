@@ -129,6 +129,507 @@ Por ventana dedicada:
 
 ## Entradas activas
 
+### GFQ-20260622-007 - Dataset certification matrix v0.1 initial materialization
+
+Status: `pending_leaf_build`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+foundations_authority_graph
+data_foundation_outputs_graph
+data_quality_report_graph
+module_test_governance_graph
+```
+
+Reason:
+
+- Added `dataset_certification_matrix_v0_1` as the fifth CAPA 1 output table.
+- Added contract, schema, registry entry, consumption policy, validators,
+  materializer and pytest contract coverage.
+- Added dedicated validators for `ohlcv_daily_adjusted` and
+  `ohlcv_1m_split_normalized` to satisfy the family status matrix evidence
+  surface.
+- Materialized a compact parquet table under:
+
+```text
+E:/TSIS/data/data_foundation_outputs/dataset_certification_matrix/dataset_certification_matrix_v0_1.parquet
+```
+
+- The table normalizes `family_status_matrix_v0_1.md` into a family-level
+  gate and verifies linked evidence surfaces.
+
+### GFQ-20260622-006 - Corporate actions table v0.1 initial materialization
+
+Status: `pending_leaf_build`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+foundations_authority_graph
+data_foundation_outputs_graph
+corporate_actions_adjustment_graph
+module_test_governance_graph
+```
+
+Reason:
+
+- Added `corporate_actions_table_v0_1` as the fourth CAPA 1 output table.
+- Added contract, schema, registry entry, consumption policy, validators,
+  materializer and pytest contract coverage.
+- Materialized a compact parquet table under:
+
+```text
+E:/TSIS/data/data_foundation_outputs/corporate_actions_table/corporate_actions_table_v0_1.parquet
+```
+
+- The table preserves `reference` as primary source and `additional` as
+  secondary/reconciliation source.
+
+Materialized:
+
+```text
+rows = 104757
+tickers = 3621
+instrument_ids = 3497
+action_type_counts = dividend: 92033, split: 6630, ticker_change: 6094
+source_system_counts = additional: 52490, reference: 52267
+first_action_date = 1969-12-31
+last_action_date = 2027-06-15
+build_run_id = corporate_actions_table_v0_1_20260622T144845Z
+output_sha256 = 01989eb301a2cdd83e297fbf6384e0bd4d5b4fb300bdccee6b1adbde87d5e4ce
+hard_fail_count = 0
+```
+
+Test evidence:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-22/data_foundation_outputs_four_tables_v0_1/
+tests = 16
+passed = 16
+failed = 0
+skipped = 0
+```
+
+Changed paths:
+
+```text
+01_foundations/canonical_schemas/outputs/corporate_actions_table_schema_contract.md
+01_foundations/contract_registry/dataset_contracts/corporate_actions_table_dataset_contract_v0_1.md
+01_foundations/data_consumption_policies/corporate_actions_table_consumption_policy.md
+01_foundations/dataset_registry/outputs/corporate_actions_table_registry_entry.yaml
+01_foundations/validators/outputs/corporate_actions_table_validators.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+scripts/materialize_corporate_actions_table.py
+tests/data_foundation_outputs/test_corporate_actions_table_contract.py
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Recommended action:
+
+```text
+Include in the next Data Foundation outputs/corporate-actions leaf refresh.
+Link this node to daily_adjusted, master_daily_table, event_engine and
+data_quality_report.
+```
+
+Root action:
+
+```text
+No immediate root update.
+```
+
+Owner:
+
+```text
+Modulo 01 / Data Foundation output governance
+```
+
+Notes:
+
+- This table is context and adjustment lineage, not final adjusted price output.
+
+### GFQ-20260622-005 - Expected data calendar v0.1 initial materialization
+
+Status: `pending_leaf_build`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+foundations_authority_graph
+data_foundation_outputs_graph
+module_test_governance_graph
+```
+
+Reason:
+
+- Added `expected_data_calendar_v0_1` as the third CAPA 1 output table.
+- Added contract, schema, registry entry, consumption policy, validators,
+  materializer and pytest contract coverage.
+- Materialized a partitioned parquet dataset under:
+
+```text
+E:/TSIS/data/data_foundation_outputs/expected_data_calendar/expected_data_calendar_v0_1
+```
+
+- The table is a coverage expectation denominator, not proof of physical
+  presence or quality.
+
+Materialized:
+
+```text
+rows = 29029152
+dataset_families = daily_raw, ohlcv_1m_raw, quotes_raw, trades_raw
+rows_per_family = 7257288
+tickers = 4824
+first_session = 2005-01-03
+last_session = 2025-12-31
+parquet_file_count = 84
+tree_sha256 = 1c7571cdcefc1ffd3f0f6cda921d32d64dee33cc41c3676809686c1bc575a57f
+build_run_id = expected_data_calendar_v0_1_20260622T141019Z
+hard_fail_count = 0
+```
+
+Test evidence:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-22/data_foundation_outputs_instrument_master_market_calendar_expected_data_calendar_v0_1/
+tests = 12
+passed = 12
+failed = 0
+skipped = 0
+```
+
+Changed paths:
+
+```text
+01_foundations/canonical_schemas/outputs/expected_data_calendar_schema_contract.md
+01_foundations/contract_registry/dataset_contracts/expected_data_calendar_dataset_contract_v0_1.md
+01_foundations/data_consumption_policies/expected_data_calendar_consumption_policy.md
+01_foundations/dataset_registry/outputs/expected_data_calendar_registry_entry.yaml
+01_foundations/validators/outputs/expected_data_calendar_validators.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+scripts/materialize_expected_data_calendar.py
+tests/data_foundation_outputs/test_expected_data_calendar_contract.py
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Recommended action:
+
+```text
+Include in the next Data Foundation outputs leaf refresh. Link this node to
+instrument_master, market_calendar, dataset_certification_matrix and
+data_quality_report.
+```
+
+Root action:
+
+```text
+No immediate root update.
+```
+
+Owner:
+
+```text
+Modulo 01 / Data Foundation output governance
+```
+
+Notes:
+
+- Future data_quality_report work must join expected rows against actual
+  family presence/quality evidence.
+
+### GFQ-20260622-004 - Data Foundation output contract tests
+
+Status: `pending_leaf_build`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+foundations_authority_graph
+data_foundation_outputs_graph
+module_test_governance_graph
+```
+
+Reason:
+
+- Added executable pytest contract tests for `instrument_master_v0_1` and
+  `market_calendar_v0_1`.
+- Added a pytest harness that writes dated institutional evidence under
+  `C:/TSIS_Data/tests/test_runs/`.
+- The tests validate manifest/hash integrity, contract links, schema/lineage,
+  hard contractual gates and source reconciliation.
+- Executed the first two table tests successfully.
+
+Changed paths:
+
+```text
+01_TSIS_backtest_SmallCaps/tests/conftest.py
+01_TSIS_backtest_SmallCaps/tests/_helpers/__init__.py
+01_TSIS_backtest_SmallCaps/tests/_helpers/data_foundation.py
+01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_instrument_master_contract.py
+01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_market_calendar_contract.py
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/01_foundations/GRAPHIFY_REFRESH_QUEUE.md
+C:/TSIS_Data/tests/test_runs/2026-06-22/data_foundation_outputs_instrument_master_market_calendar_v0_1/
+```
+
+Test evidence:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-22/data_foundation_outputs_instrument_master_market_calendar_v0_1/
+```
+
+Result:
+
+```text
+tests = 8
+passed = 8
+failed = 0
+skipped = 0
+```
+
+Recommended action:
+
+```text
+Include in the next foundations/test-governance leaf refresh. Link the test
+harness to future Data Foundation output tables before they are promoted.
+```
+
+Root action:
+
+```text
+No immediate root update.
+```
+
+Owner:
+
+```text
+Modulo 01 / Data Foundation test governance
+```
+
+Notes:
+
+- These are offline tests. Third-party live checks remain a future opt-in layer.
+
+### GFQ-20260622-003 - Data root and test artifact topology clarification
+
+Status: `pending_leaf_build`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+foundations_authority_graph
+data_storage_topology_graph
+module_test_governance_graph
+```
+
+Reason:
+
+- Clarified that `E:/TSIS/data/` is the active preferred data plane.
+- Clarified that `E:/TSIS/data/data_foundation_outputs/` is for governed CAPA 1
+  table outputs, not test execution artifacts.
+- Clarified that `C:/TSIS_Data/tests/test_runs/`, `fixtures/` and
+  `third_party_evidence/` are the roots for test outputs, small test data and
+  cached external evidence.
+- Reclassified `C:/TSIS_Data/data/` as legacy/quarantine until a migration audit
+  proves which families can be removed.
+- No deletion of legacy data was performed.
+
+Changed paths:
+
+```text
+tests/README.md
+tests/test_runs/README.md
+tests/fixtures/README.md
+tests/third_party_evidence/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/data_storage_topology_and_target_state.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/01_foundations/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Recommended action:
+
+```text
+Include in the next foundations/storage/test-governance leaf refresh. Link this
+entry to the future migration audit for C:/TSIS_Data/data.
+```
+
+Root action:
+
+```text
+No immediate root update.
+```
+
+Owner:
+
+```text
+Modulo 01 / Data storage and test governance
+```
+
+Notes:
+
+- A lightweight path check showed counterparts in `E:/TSIS/data` for
+  `additional`, `quotes`, `short`, `short_review` and
+  `trades_ticks_prod_2005_2026`.
+- `trades_ticks_2019_2025` was present in `C:/TSIS_Data/data` and did not have
+  an immediate same-name counterpart in `E:/TSIS/data` during the check.
+- Many existing docs/scripts still reference `C:/TSIS_Data/data`; deletion must
+  wait for a migration audit.
+
+### GFQ-20260622-002 - SmallCaps test topology scaffold
+
+Status: `pending_leaf_build`
+
+Severity: `MEDIUM`
+
+Slice:
+
+```text
+foundations_authority_graph
+data_foundation_outputs_graph
+module_test_governance_graph
+```
+
+Reason:
+
+- Added module-level test documentation under `01_TSIS_backtest_SmallCaps/tests/`.
+- The scaffold defines where executable tests should live for Data Foundation
+  outputs, foundations governance, pipelines, research, event engine, strategy
+  engine, execution and offline RL preparation.
+- The Data Foundation output test README formalizes the five minimum validation
+  layers for institutional tables: schema contract, manifest/hash,
+  source reconciliation, third-party evidence and adversarial/mutation checks.
+- No executable validators were added in this entry.
+
+Changed paths:
+
+```text
+01_TSIS_backtest_SmallCaps/tests/README.md
+01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/README.md
+01_TSIS_backtest_SmallCaps/tests/foundations/README.md
+01_TSIS_backtest_SmallCaps/tests/pipelines/README.md
+01_TSIS_backtest_SmallCaps/tests/research/README.md
+01_TSIS_backtest_SmallCaps/tests/event_engine/README.md
+01_TSIS_backtest_SmallCaps/tests/strategy_engine/README.md
+01_TSIS_backtest_SmallCaps/tests/execution/README.md
+01_TSIS_backtest_SmallCaps/tests/rl_preparation/README.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/01_foundations/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Recommended action:
+
+```text
+Include in the next foundations/test-governance leaf refresh. Link the
+`data_foundation_outputs/` tests to the CAPA 1 output contracts and table
+materialization manifests.
+```
+
+Root action:
+
+```text
+No immediate root update.
+```
+
+Owner:
+
+```text
+Modulo 01 / Data Foundation test governance
+```
+
+Notes:
+
+- Existing `tests/test_price_views.py` remains in place and was not moved.
+- This entry should be followed by executable pytest contracts for
+  `instrument_master_v0_1` and `market_calendar_v0_1`.
+
+### GFQ-20260622-001 - Market calendar v0.1 initial materialization
+
+Status: `pending_leaf_build`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+foundations_authority_graph
+data_foundation_outputs_graph
+daily_intraday_calendar_graph
+```
+
+Reason:
+
+- `market_calendar_v0_1` was defined as the second compact CAPA 1 output
+  table.
+- Contract, schema, registry entry, consumption policy, validator and
+  materializer were added.
+- The first materialized parquet was written under:
+
+```text
+E:/TSIS/data/data_foundation_outputs/market_calendar/market_calendar_v0_1.parquet
+```
+
+- The output reconciles to the local official calendar candidate:
+
+```text
+rows = 5283
+calendar = XNYS
+timezone = America/New_York
+first_session = 2005-01-03
+last_session = 2025-12-31
+early_close_sessions = 45
+source_parquet_sha256 = 8aac3ea4f7fbcaf6c394320f53acc1524bf5e5e3addbcd48ef31718bc0214228
+output_sha256 = 96bd60c124e6552d269f8846205ed28bf6e58881453a5bbb4f73ced0657b56d5
+hard_fail_count = 0
+```
+
+- The output is an XNYS session calendar. It does not encode halts, liquidity,
+  venue outages or dates after `2025-12-31`.
+
+Changed paths:
+
+```text
+01_foundations/canonical_schemas/outputs/market_calendar_schema_contract.md
+01_foundations/contract_registry/dataset_contracts/market_calendar_dataset_contract_v0_1.md
+01_foundations/data_consumption_policies/market_calendar_consumption_policy.md
+01_foundations/dataset_registry/outputs/market_calendar_registry_entry.yaml
+01_foundations/validators/outputs/market_calendar_validators.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+scripts/materialize_market_calendar.py
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Recommended action:
+
+```text
+Include in the next foundations/calendar/output leaf refresh. Link it to
+instrument_master, expected_data_calendar, master_daily_table and
+master_intraday_bar_table.
+```
+
+Root action:
+
+```text
+No immediate root update.
+```
+
+Owner:
+
+```text
+Modulo 01 / Data Foundation output governance
+```
+
 ### GFQ-20260621-003 - Instrument master v0.1 initial materialization
 
 Status: `pending_leaf_build`

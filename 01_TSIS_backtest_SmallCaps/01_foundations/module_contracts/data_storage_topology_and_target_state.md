@@ -7,7 +7,9 @@ Este documento fija la topologia general de almacenamiento de datos del modulo y
 Su funcion es evitar tres errores:
 
 - confundir fuentes primarias con materializaciones operativas;
-- asumir que todo lo que existe en `C:\TSIS_Data\data` y `D:\` cumple el mismo rol;
+- asumir que todo lo que existe en `C:\TSIS_Data\data`, `D:\` y `E:\TSIS\data`
+  cumple el mismo rol;
+- mezclar outputs de tests con raw data o tablas institucionales;
 - y dejar a humanos o agentes sin una lectura minima de donde estan los datos, que semantica tienen y que capa deben consultar primero.
 
 ## 2. Principio rector
@@ -24,7 +26,11 @@ Debe operar como una arquitectura con capas:
 
 ### 3.1 `C:\TSIS_Data\data`
 
-Representa una capa estructural del proyecto con familias de datos activas y de soporte.
+Representa una capa legacy/historica de datos del proyecto.
+
+No es la raiz objetivo para datos activos.
+No es la raiz objetivo para outputs de tests.
+No debe usarse para nuevas materializaciones institucionales.
 
 Familias confirmadas:
 
@@ -38,8 +44,27 @@ Familias confirmadas:
 
 Lectura institucional:
 
-- `additional`, `quotes`, `trades_ticks_*` y `short` son familias de dato relevantes;
-- `images` y `short_review` son capas auxiliares o documentales, no price views primarias.
+- estas carpetas existen porque descargas, auditorias y builders historicos
+  escribieron explicitamente contra `C:\TSIS_Data\data`;
+- muchas evidencias, dossiers, registries y scripts antiguos todavia contienen
+  referencias a esta raiz;
+- por tanto no debe borrarse en bloque sin una auditoria de migracion;
+- `additional`, `quotes`, `trades_ticks_*` y `short` pueden contener dato
+  historico relevante, pero no son automaticamente la fuente activa preferida;
+- `images` y `short_review` son capas auxiliares o documentales, no price views
+  primarias.
+
+Estado operativo:
+
+```text
+legacy / quarantine until migration audit
+```
+
+Regla:
+
+```text
+Ningun test nuevo debe escribir outputs bajo C:\TSIS_Data\data.
+```
 
 ### 3.2 `D:\`
 
@@ -129,18 +154,50 @@ Data Foundation. Deben vivir bajo una raiz separada de ingesta, por ejemplo:
 E:\TSIS\data\live_ingestion\raw_alert_log\
 ```
 
+### 3.5 `C:\TSIS_Data\tests`
+
+Representa la raiz canonica para tests del monorepo y sus outputs.
+
+No es raw data.
+No es tabla institucional.
+No es staging de datos productivos.
+
+Rutas canonicas:
+
+```text
+C:\TSIS_Data\tests\test_runs\
+C:\TSIS_Data\tests\fixtures\
+C:\TSIS_Data\tests\third_party_evidence\
+```
+
+Lectura institucional:
+
+- `test_runs` guarda ejecuciones fechadas con metadata;
+- `fixtures` guarda muestras pequenas, sinteticas o congeladas;
+- `third_party_evidence` guarda snapshots externos cacheados para tests
+  independientes;
+- los tests de modulo pueden vivir bajo el modulo, pero sus outputs raiz
+  auditables deben poder enlazarse desde `C:\TSIS_Data\tests\test_runs`.
+
+Regla:
+
+```text
+Los outputs de tests no deben escribirse en E:\TSIS\data ni en
+C:\TSIS_Data\data.
+```
+
 ## 4. Estado objetivo
 
 La direccion operativa deseada del modulo es:
 
 ```text
-unificar progresivamente la data activa en D:\
+unificar progresivamente la data activa en E:\TSIS\data
 manteniendo en 01_foundations la semantica, el contrato y la gobernanza
 ```
 
 Esto no significa:
 
-- mover sin criterio toda carpeta a `D:\`;
+- mover sin criterio toda carpeta a `E:\TSIS\data`;
 - ni reescribir el lineage historico.
 
 Significa:
@@ -154,20 +211,41 @@ Significa:
 Todo agente que empiece a trabajar en el modulo debe asumir:
 
 1. `01_foundations` contiene la verdad contractual e institucional;
-2. `C:\TSIS_Data\data` y `D:\` contienen datos y materializaciones que deben interpretarse segun su rol;
-3. no debe asumirse que dos carpetas con nombres parecidos representan la misma vista semantica;
-4. toda lectura seria de datos debe pasar por:
+2. `E:\TSIS\data` es el plano operativo activo preferido para datos actuales;
+3. `C:\TSIS_Data\data` es legacy/quarantine hasta auditoria de migracion;
+4. `C:\TSIS_Data\tests` es la raiz para outputs de tests, fixtures y evidencia
+   externa cacheada;
+5. `D:\` puede contener materializaciones historicas o staging que deben
+   interpretarse segun contrato;
+6. no debe asumirse que dos carpetas con nombres parecidos representan la misma vista semantica;
+7. toda lectura seria de datos debe pasar por:
    - identificacion de familia;
    - identificacion de semantica;
    - y comprobacion de si el dato es fuente primaria, derivado o soporte.
 
-## 6. Politica transitoria mientras exista doble plano
+## 6. Politica transitoria mientras exista multiple plano
 
-Mientras convivan `C:\TSIS_Data\data` y `D:\`:
+Mientras convivan `C:\TSIS_Data\data`, `D:\` y `E:\TSIS\data`:
 
 - debe dejarse explicitamente anotado en los documentos relevantes que plano se esta consumiendo;
 - los builders y dossiers deben declarar la ruta o familia activa que usan;
-- y cualquier plan de unificacion futura debe preservar trazabilidad, no solo ahorrar espacio o simplificar paths.
+- cualquier plan de unificacion futura debe preservar trazabilidad, no solo
+  ahorrar espacio o simplificar paths;
+- antes de borrar `C:\TSIS_Data\data`, debe existir una auditoria de migracion
+  que confirme por familia:
+  - existencia de contraparte en `E:\TSIS\data`;
+  - conteos o hashes comparables;
+  - scripts o dossiers todavia dependientes;
+  - decision explicita para familias sin contraparte;
+  - plan de reemplazo de rutas hardcodeadas;
+  - copia de seguridad o ventana de rollback.
+
+Decision actual:
+
+```text
+C:\TSIS_Data\data no se considera raiz valida para nuevos tests.
+C:\TSIS_Data\data no debe borrarse en bloque hasta completar auditoria.
+```
 
 ## 7. Relacion con otros documentos
 

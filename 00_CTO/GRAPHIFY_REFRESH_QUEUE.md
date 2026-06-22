@@ -118,6 +118,66 @@ Por ventana dedicada:
 
 ## Entradas activas
 
+### GFQ-20260622-001 - CTO and root test topology scaffold
+
+Status: `pending`
+
+Severity: `MEDIUM`
+
+Slice:
+
+```text
+00_CTO/tests/
+tests/institutional/
+```
+
+Reason:
+
+- Added CTO-specific test governance folders for architecture contracts,
+  governance contracts and private/public consistency.
+- Added root monorepo test documentation to separate global institutional
+  gates from module-owned executable tests.
+- The change affects how future agents should locate and classify tests, but
+  does not add executable validators yet.
+
+Changed paths:
+
+```text
+tests/README.md
+tests/institutional/README.md
+tests/test_runs/README.md
+tests/fixtures/README.md
+tests/third_party_evidence/README.md
+00_CTO/tests/README.md
+00_CTO/tests/architecture_contracts/README.md
+00_CTO/tests/governance_contracts/README.md
+00_CTO/tests/private_consistency/README.md
+00_CTO/CHANGELOG.md
+00_CTO/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Recommended action:
+
+```text
+Batch with the next CTO governance/architecture documentation refresh.
+```
+
+Root action:
+
+```text
+No immediate root update.
+```
+
+Owner:
+
+```text
+AlexJ / TSIS CTO
+```
+
+Notes:
+
+- This is a test topology and navigation scaffold, not a CI implementation.
+
 ### GFQ-20260621-003 - EduTrades Long Plays visual event source index
 
 Status: `pending`

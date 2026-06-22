@@ -22,6 +22,12 @@ runs/
 logs/
 tmp/
 temp/
+tests/test_runs/*/
+tests/**/artifacts/
+tests/**/*.xml
+tests/**/*.log
+tests/**/pytest_output.txt
+tests/**/metadata.json
 
 # Large or non-authoritative data artifacts
 *.parquet

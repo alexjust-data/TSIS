@@ -288,6 +288,10 @@ Contratos para tablas limpias derivadas de CAPA 1.
 Ejemplo:
 
 - `instrument_master_dataset_contract_v0_1.md`
+- `market_calendar_dataset_contract_v0_1.md`
+- `expected_data_calendar_dataset_contract_v0_1.md`
+- `corporate_actions_table_dataset_contract_v0_1.md`
+- `dataset_certification_matrix_dataset_contract_v0_1.md`
 
 Estos contratos deben distinguir:
 
@@ -340,6 +344,7 @@ contract_registry/dataset_contracts/
   halts_dataset_contract_v0_1.md
   instrument_master_dataset_contract_v0_1.md
   lt1b_universe_dataset_contract_v0_1.md
+  market_calendar_dataset_contract_v0_1.md
   ohlcv_1m_raw_dataset_contract_v0_1.md
   ohlcv_1m_split_normalized_dataset_contract_v0_1.md
   quotes_dataset_contract_v0_1.md

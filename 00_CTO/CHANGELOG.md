@@ -52,6 +52,18 @@ run summaries, trace logs y, si procede, release log propio.
 
 ### Added
 
+- Added `00_CTO/tests/` as the CTO test-governance scaffold, with dedicated
+  README contracts for architecture contracts, governance contracts and private
+  consistency checks.
+- Added root monorepo test documentation under `tests/` and
+  `tests/institutional/` to separate global institutional gates from module
+  executable tests.
+- Added root test artifact folders under `tests/test_runs/`, `tests/fixtures/`
+  and `tests/third_party_evidence/` so test outputs, small fixtures and cached
+  external evidence do not contaminate raw data roots.
+- Updated root `.gitignore` and `.graphifyignore` protections so dated test
+  execution outputs, junit files, pytest logs and generated artifacts are not
+  committed or loaded into Graphify.
 - Added
   `13_TRADING_SYSTEMS/00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md`
   as a draft Event Library guide for documenting behavioral mechanics,

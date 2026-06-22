@@ -336,6 +336,43 @@ No debe contener:
 - decisiones de estrategia;
 - reparaciones manuales sin lineage.
 
+Estado materializado inicial:
+
+```text
+dataset_id: corporate_actions_table_v0_1
+path: E:/TSIS/data/data_foundation_outputs/corporate_actions_table/corporate_actions_table_v0_1.parquet
+rows: 104757
+tickers: 3621
+instrument_ids: 3497
+action_type_counts:
+  dividend: 92033
+  split: 6630
+  ticker_change: 6094
+source_system_counts:
+  additional: 52490
+  reference: 52267
+first_action_date: 1969-12-31
+last_action_date: 2027-06-15
+build_run_id: corporate_actions_table_v0_1_20260622T144845Z
+output_sha256: 01989eb301a2cdd83e297fbf6384e0bd4d5b4fb300bdccee6b1adbde87d5e4ce
+hard_fail_count: 0
+duplicate_corporate_action_id_count: 0
+invalid_split_terms_count: 0
+negative_dividend_amount_count: 0
+within_instrument_valid_window_false_count: 39525
+cross_source_overlap_groups: 51336
+test_evidence: C:/TSIS_Data/tests/test_runs/2026-06-22/data_foundation_outputs_four_tables_v0_1/
+```
+
+Lectura institucional:
+
+```text
+corporate_actions_table_v0_1 existe como tabla de contexto corporativo y
+lineage de ajustes. reference se conserva como fuente primaria y additional
+como fuente secundaria/reconciliacion. La tabla no resuelve continuidad
+economica completa entre ticker changes ni produce precios ajustados finales.
+```
+
 ### 3. `market_calendar`
 
 Alias arquitectonico:
@@ -437,6 +474,32 @@ son fuentes externas de contraste para reglas de holidays, early closes y
 regular trading hours.
 ```
 
+Materializacion actual:
+
+```text
+dataset_id: market_calendar_v0_1
+path: E:/TSIS/data/data_foundation_outputs/market_calendar/market_calendar_v0_1.parquet
+rows: 5283
+calendar: XNYS
+timezone: America/New_York
+first_session: 2005-01-03
+last_session: 2025-12-31
+early_close_sessions: 45
+build_run_id: market_calendar_v0_1_20260622T072422Z
+source_parquet_sha256: 8aac3ea4f7fbcaf6c394320f53acc1524bf5e5e3addbcd48ef31718bc0214228
+output_sha256: 96bd60c124e6552d269f8846205ed28bf6e58881453a5bbb4f73ced0657b56d5
+hard_fail_count: 0
+duplicate_session_count: 0
+```
+
+Lectura institucional:
+
+```text
+market_calendar_v0_1 existe como tabla limpia de CAPA 1.
+El source local conserva el calendario oficial candidato reproducible.
+El output materializado normaliza tipos y agrega lineage para consumo downstream.
+```
+
 ### 4. `expected_data_calendar`
 
 Clase:
@@ -477,6 +540,36 @@ No debe contener:
 - precio;
 - retornos;
 - features de estrategia.
+
+Estado materializado inicial:
+
+```text
+dataset_id: expected_data_calendar_v0_1
+path: E:/TSIS/data/data_foundation_outputs/expected_data_calendar/expected_data_calendar_v0_1
+layout: partitioned parquet dataset by dataset_family/year
+rows: 29029152
+dataset_families: daily_raw, ohlcv_1m_raw, quotes_raw, trades_raw
+rows_per_family: 7257288
+tickers: 4824
+first_session: 2005-01-03
+last_session: 2025-12-31
+parquet_file_count: 84
+tree_sha256: 1c7571cdcefc1ffd3f0f6cda921d32d64dee33cc41c3676809686c1bc575a57f
+build_run_id: expected_data_calendar_v0_1_20260622T141019Z
+hard_fail_count: 0
+duplicate_key_groups: 0
+invalid_window_count: 0
+test_evidence: C:/TSIS_Data/tests/test_runs/2026-06-22/data_foundation_outputs_instrument_master_market_calendar_expected_data_calendar_v0_1/
+```
+
+Lectura institucional:
+
+```text
+expected_data_calendar_v0_1 existe como denominador contractual de cobertura.
+Declara expectativas por familia/ticker/sesion; no mide presencia real ni
+calidad. Los reports posteriores deben unirlo contra presencia fisica,
+validadores de familia y data_quality_report.
+```
 
 ### 5. `master_daily_table`
 
@@ -1233,6 +1326,12 @@ Grain recomendado:
 dataset_family + scope + ticker/date optional + quality_version
 ```
 
+Materializacion v0.1:
+
+```text
+dataset_family + family_level + dataset_certification_matrix_policy_v0_1
+```
+
 Fuentes candidatas:
 
 ```text
@@ -1258,6 +1357,38 @@ No debe contener:
 - book/tape;
 - fundamentales;
 - estrategia.
+
+Estado materializado inicial:
+
+```text
+dataset_id: dataset_certification_matrix_v0_1
+path: E:/TSIS/data/data_foundation_outputs/dataset_certification_matrix/dataset_certification_matrix_v0_1.parquet
+rows: 13
+family_count: 13
+human_inspector_ready_count: 13
+visual_casepack_complete_count: 13
+blocked_from_backtest_core_count: 2
+scoped_only_count: 5
+data_quality_verdict_counts:
+  blocked_by_data_defect: 2
+  complete_scoped: 5
+  usable_for_declared_scope: 6
+build_run_id: dataset_certification_matrix_v0_1_20260622T154116Z
+output_sha256: e7803e3ec58cfb92c1313efc09bdd3a015800c4680437e4567a0174b257f1fb0
+source_family_status_matrix_sha256: c380c7a5f85c14925410899b264de4e52c62571a1b1ff7b359cec733f16f5d35
+hard_fail_count: 0
+test_evidence: C:/TSIS_Data/tests/test_runs/2026-06-22/data_foundation_outputs_five_tables_v0_1/
+```
+
+Lectura institucional:
+
+```text
+dataset_certification_matrix_v0_1 existe como gate familiar de calidad y
+evidencia. Convierte `family_status_matrix_v0_1.md` en tabla gobernada y
+verifica que cada familia tenga root fisico, report, dossier, schema,
+contract, registry, policy, validator y evidencia visual. No valida filas de
+mercado y no repara familias bloqueadas.
+```
 
 ### 14. `data_quality_report`
 
