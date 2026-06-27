@@ -16,6 +16,7 @@
   - [`naming_authority.md`](#namingauthoritymd)
   - [`data_storage_topology_and_target_state.md`](#datastoragetopologyandtargetstatemd)
   - [`raw_data_authority_and_derivation_map.md`](#rawdataauthorityandderivationmapmd)
+  - [`transversal/raw_storage_parity_audit_requirement_v0_1.md`](#transversalrawstorageparityauditrequirementv01md)
   - [`promotion_pipeline.md`](#promotionpipelinemd)
   - [`dataset_contract_template.md`](#datasetcontracttemplatemd)
 - [2. Evidencia, inspeccion y rehabilitacion](#2-evidencia-inspeccion-y-rehabilitacion)
@@ -28,6 +29,11 @@
   - [`consumer_classes.md`](#consumerclassesmd)
   - [`additional_to_master_tables_policy_v0_1.md`](#additionaltomastertablespolicyv01md)
   - [`outputs/data_foundation_outputs_target_contract_v0_1.md`](#outputsdatafoundationoutputstargetcontractv01md)
+  - [`outputs/data_foundation_outputs_status_matrix_v0_1.md`](#outputsdatafoundationoutputsstatusmatrixv01md)
+  - [`outputs/market_state_event_state_composition_contract_v0_1.md`](#outputsmarketstateeventstatecompositioncontractv01md)
+  - [`outputs/market_state_event_state_build_loop_runbook_v0_1.md`](#outputsmarketstateeventstatebuildlooprunbookv01md)
+  - [`outputs/short_sale_constraints_table_target_contract_v0_1.md`](#outputsshortsaleconstraintstabletargetcontractv01md)
+  - [`outputs/short_sale_constraints_data_acquisition_runbook_v0_1.md`](#outputsshortsaleconstraintsdataacquisitionrunbookv01md)
   - [`daily_return_labels_consumer_contract_v0_1.md`](#dailyreturnlabelsconsumercontractv01md)
   - [`intraday_regime_features_consumer_contract_v0_1.md`](#intradayregimefeaturesconsumercontractv01md)
   - [`price_view_consumer_integration_status.md`](#priceviewconsumerintegrationstatusmd)
@@ -64,8 +70,12 @@
   - [`daily_return_labels_operational_landing_v0_1.md`](#dailyreturnlabelsoperationallandingv01md)
   - [`daily_return_labels_lt1b_promotion_plan_v0_1.md`](#dailyreturnlabelslt1bpromotionplanv01md)
 - [8. OHLCV 1m y split normalization](#8-ohlcv-1m-y-split-normalization)
+  - [`ohlcv_1m_quote_guarded/README.md`](#ohlcv1mquoteguardedreadmemd)
+  - [`ohlcv_1m_quote_guarded/ohlcv_1m_quote_guarded_single_reading_v0_1.md`](#ohlcv1mquoteguardedohlcv1mquoteguardedsinglereadingv01md)
+  - [`ohlcv_1m_quote_guarded/ohlcv_1m_quote_guarded_repair_runbook_v0_1.md`](#ohlcv1mquoteguardedohlcv1mquoteguardedrepairrunbookv01md)
   - [`ohlcv_1m_historical_closeout_lt1b_reconciliation_v0_1.md`](#ohlcv1mhistoricalcloseoutlt1breconciliationv01md)
   - [`ohlcv_1m_split_normalized_operational_landing_v0_1.md`](#ohlcv1msplitnormalizedoperationallandingv01md)
+  - [`ohlcv_1m_split_normalized_full_universe_materialization_runbook_v0_1.md`](#ohlcv1msplitnormalizedfulluniversematerializationrunbookv01md)
   - [`ohlcv_1m_split_normalized_incremental_materialization_plan_v0_1.md`](#ohlcv1msplitnormalizedincrementalmaterializationplanv01md)
   - [`ohlcv_1m_split_normalized_semantic_pilot_v0_1.md`](#ohlcv1msplitnormalizedsemanticpilotv01md)
   - [`ohlcv_1m_split_normalized_pilot_manifest_v0_2.md`](#ohlcv1msplitnormalizedpilotmanifestv02md)
@@ -78,6 +88,7 @@
   - [`intraday_regime_features_deferred_families_v0_1.md`](#intradayregimefeaturesdeferredfamiliesv01md)
   - [`intraday_regime_features_lt1b_promotion_plan_v0_1.md`](#intradayregimefeatureslt1bpromotionplanv01md)
 - [10. Quotes y trades](#10-quotes-y-trades)
+  - [`quotes/quotes_staging_clone_runbook_v0_1.md`](#quotesquotesstagingclonerunbookv01md)
   - [`quotes_acceptance_policy_explained.md`](#quotesacceptancepolicyexplainedmd)
   - [`quotes_rules_explained_line_by_line.md`](#quotesrulesexplainedlinebylinemd)
   - [`trades_acceptance_policy_explained.md`](#tradesacceptancepolicyexplainedmd)
@@ -371,6 +382,15 @@ Fija la clasificacion transversal entre:
 - feature layers;
 - label/target layers;
 - audit evidence;
+
+### `transversal/raw_storage_parity_audit_requirement_v0_1.md`
+
+Fija el trabajo final de auditoria de almacenamiento RAW: todas las familias
+raw/source-preserved relevantes bajo `D:/` deben tener aterrizaje equivalente
+en `E:/TSIS/data` antes de tratar la migracion como convergida.
+
+Esta regla es fisica y de lineage. No sustituye la auditoria de calidad de cada
+familia.
 - runtime/cache artifacts.
 
 Regla central:
@@ -566,6 +586,154 @@ Regla central:
 
 - Data Foundation produce estado defendible para detectar eventos; no produce
   eventos, estrategias ni outcomes.
+
+### `outputs/data_foundation_outputs_status_matrix_v0_1.md`
+
+Matriz operativa de estado actual de outputs CAPA 1.
+
+Define:
+
+- que outputs existen fisicamente hoy bajo `E:/TSIS/data/data_foundation_outputs/`;
+- que scope tiene cada materializacion;
+- que evidencia de tests respalda cada tabla;
+- que consumidores pueden usarla hoy y con que restricciones;
+- que target outputs siguen bloqueados o pendientes.
+
+Regla central:
+
+- un output `validated_for_declared_scope` no implica uso irrestricto ni
+  preparacion directa para ML/RL, ejecucion o mercado en vivo.
+
+### `outputs/master_intraday_bar_table_wider_scope_materialization_plan_v0_1.md`
+
+Contrato operativo para el siguiente loop de ampliacion de
+`master_intraday_bar_table`.
+
+Define:
+
+- que `master_intraday_bar_table_v0_1` sigue siendo una muestra gobernada;
+- por que no se puede reclamar full-universe desde el piloto actual;
+- que significa full-universe para barras 1m dentro de TSIS;
+- que path split-safe debe ejecutarse primero;
+- que cambios exige el builder antes de un candidato `v0_2`;
+- que tests, manifests y gates hacen falta antes de promocionar.
+
+Regla central:
+
+- no se lanza full-universe ciego; primero denominador, manifest, tests,
+  quality gates, versionado y cola Graphify.
+
+### `outputs/microstructure_features_table_multi_window_materialization_plan_v0_1.md`
+
+Contrato operativo para el siguiente loop de ampliacion de
+`microstructure_features_table`.
+
+Define:
+
+- que `microstructure_features_table_v0_1` sigue siendo una seed window;
+- por que no sirve para entrenar/modelar microestructura de forma
+  institucional;
+- que el siguiente salto debe ser multi-window/multi-event, no scan ciego de
+  todo quotes/trades;
+- que `event_windows_table_v0_1` es el primer denominador gobernado para halts;
+- que hacer con la raiz provisional `D:/quotes` frente a la futura raiz oficial
+  `E:/TSIS/data/quotes`;
+- que ya existe un builder de manifest candidato:
+  `scripts/build_microstructure_candidate_window_manifest.py`;
+- que el materializer existente ya tiene un path candidato parametrizado
+  probado bajo `C:/TSIS_Data/tests/test_runs/...`;
+- que cambios exige el builder antes de un candidato `v0_2`;
+- que la primera evidencia visual/forense de 6 filas ya existe en
+  `inspection_dossiers/microstructure_features/`, con notebook companion en
+  `01_research/notebooks/data_foundation_outputs/`;
+- que una promocion futura sigue exigiendo tests, recomputacion desde raw,
+  source-root state y evidencia visual/forense para el alcance promovido.
+
+Regla central:
+
+- microestructura se materializa por ventanas gobernadas con lineage a quotes/
+  trades, no por inferencia desde OHLCV ni por exploracion sin denominador.
+
+### `outputs/market_state_event_state_composition_contract_v0_1.md`
+
+Contrato skeleton de composicion para `market_state_table` y
+`event_state_table`.
+
+Define:
+
+- diferencia entre state, signal, strategy, outcome y reward;
+- como componer componentes CAPA 1 bajo un cutoff as-of;
+- que fuentes actuales pueden ser componentes y con que restricciones;
+- que schema skeleton minimo deben tener `market_state_table` y
+  `event_state_table`;
+- que queda prohibido antes de materializar: labels inline, rewards inline,
+  future information, intraday same-session leakage y claims ML/RL directos.
+
+Regla central:
+
+- los context tables no son estado final por si solos; el estado solo existe
+  cuando un builder declara decision time, as-of policy, quality gates y
+  lineage por componente.
+
+### `outputs/market_state_event_state_build_loop_runbook_v0_1.md`
+
+Runbook de continuidad del loop de construccion para `market_state_table` y
+`event_state_table`.
+
+Define:
+
+- checklist recuperable si se corta la sesion;
+- contratos creados para schemas, dataset contracts, policies, validators,
+  registry target entries, builder skeletons y tests;
+- barreras que impiden llamar materializada a una tabla que aun no tiene
+  parquet/manifest;
+- criterio de cierre del loop documental/contractual.
+
+Regla central:
+
+- el stack skeleton puede estar completo aunque `market_state_table_v0_1` y
+  `event_state_table_v0_1` sigan sin materializar.
+
+### `outputs/short_sale_constraints_table_target_contract_v0_1.md`
+
+Contrato objetivo para SSR, borrow, locate y short availability.
+
+Define:
+
+- por que SSR/borrow/locate no pertenecen a `short_context_table`;
+- que datos hacen falta para saber si una estrategia short era ejecutable;
+- que campos requiere SSR historico u oficial/vendor;
+- que campos requiere borrow/locate/availability por broker/vendor/account;
+- que fuentes no bastan, incluyendo short interest y short volume;
+- que promotion barrier aplica antes de materializar.
+
+Regla central:
+
+- TSIS puede estudiar short pressure con `short_context_table_v0_1`, pero no
+  puede afirmar short execution feasibility institucional hasta que exista
+  `short_sale_constraints_table` con fuente SSR/borrow/locate trazable.
+
+### `outputs/short_sale_constraints_data_acquisition_runbook_v0_1.md`
+
+Runbook de adquisicion para preparar `short_sale_constraints_table`.
+
+Define:
+
+- por que tener muchos anos de market data no equivale a tener historico de
+  borrow/locate/availability;
+- como separar SSR historico derivado, DAS/SageTrader live capture e historico
+  broker/vendor;
+- que raw capture minimo debe existir cuando se conecte DAS;
+- que metadata debe traer cualquier historico broker/vendor;
+- que validaciones impiden usar EOD snapshots o datos posteriores al evento
+  como prueba de ejecucion intradia;
+- que checklist de promocion debe cumplirse antes de materializar.
+
+Regla central:
+
+- DAS/live captura hacia adelante desde el primer dia conectado; solo una
+  fuente broker/vendor historica point-in-time puede convertir
+  borrow/locate/availability pasado en evidencia institucional.
 
 ### `daily_return_labels_consumer_contract_v0_1.md`
 
@@ -804,6 +972,29 @@ No implica que ya esten full-universe.
 
 ## 8. OHLCV 1m y split normalization
 
+### `ohlcv_1m_quote_guarded/README.md`
+
+Indice contractual del workstream `ohlcv_1m_quote_guarded`.
+
+Centraliza la documentacion especifica del problema de velas 1m
+semantically impossible frente al envelope de quotes, evitando mezclar nuevos
+documentos sueltos en la raiz de `module_contracts`.
+
+### `ohlcv_1m_quote_guarded/ohlcv_1m_quote_guarded_single_reading_v0_1.md`
+
+Lectura consolidada inicial del workstream.
+
+Define el problema, la terminologia, la estrategia manifest-first, la semantica
+del loader `quote_guarded`, la estrategia de auditoria paralela y los contratos
+pendientes antes de cualquier reparacion promovida.
+
+### `ohlcv_1m_quote_guarded/ohlcv_1m_quote_guarded_repair_runbook_v0_1.md`
+
+Runbook ejecutable para construir el manifest `ohlcv_1m_quote_guarded_v0_1`.
+
+Incluye comando PowerShell full-universe, smoke test, reanudacion por shards,
+outputs promovidos y semantica exacta de reparacion.
+
 ### `ohlcv_1m_historical_closeout_lt1b_reconciliation_v0_1.md`
 
 Reconcilia el closeout historico de `ohlcv_1m` con el scope `<1B>`.
@@ -815,6 +1006,12 @@ Clave:
 ### `ohlcv_1m_split_normalized_operational_landing_v0_1.md`
 
 Aterrizaje operacional de `ohlcv_1m_split_normalized`.
+
+### `ohlcv_1m_split_normalized_full_universe_materialization_runbook_v0_1.md`
+
+Runbook para materializaciones amplias de `1m_split_normalized` destinadas a
+backtesting intradia oficial y ML. Distingue full-universe logico frente a copia
+fisica completa y deja comandos PowerShell para ejecuciones largas.
 
 ### `ohlcv_1m_split_normalized_incremental_materialization_plan_v0_1.md`
 
@@ -872,6 +1069,15 @@ Plan de promocion `<1B>`.
 No convierte la capa piloto en full-universe por si solo.
 
 ## 10. Quotes y trades
+
+### `quotes/quotes_staging_clone_runbook_v0_1.md`
+
+Runbook operacional para clonar `D:/quotes` hacia
+`E:/TSIS/data/quotes_` como staging root sin tocar
+`E:/TSIS/data/quotes`.
+
+Fija que `quotes_` no es source of truth hasta que exista auditoria post-copy y
+decision separada de promocion.
 
 ### `quotes_acceptance_policy_explained.md`
 

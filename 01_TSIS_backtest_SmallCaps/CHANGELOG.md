@@ -7,6 +7,1416 @@ Este changelog registra cambios institucionales y semanticamente relevantes para
 No duplica el historial de Git.
 Existe para preservar memoria arquitectonica y metodologica del modulo.
 
+## v0.4.100 - Microstructure candidate visual evidence notebook and dossier
+
+### Added
+
+- `scripts/inspection/microstructure/build_microstructure_candidate_visual_evidence.py`
+- `01_foundations/inspection_dossiers/microstructure_features/`
+- `01_foundations/inspection_dossiers/microstructure_features/microstructure_candidate_visual_readout_v0_1.md`
+- `01_foundations/inspection_dossiers/microstructure_features/visual_evidence_v0_1/microstructure_candidate_visual_manifest_v0_1.json`
+- `01_research/notebooks/data_foundation_outputs/microstructure_candidate_visual_evidence_v0_1.ipynb`
+
+### Changed
+
+- Added human-viewable visual/forensic evidence for the 6-row
+  `microstructure_features_table_v0_2_candidate` smoke artifact generated under
+  the test-run artifact path.
+- Updated the microstructure multi-window materialization plan, Data Foundation
+  output target/status docs, module contract README and Graphify queue so the
+  visual evidence is discoverable and not confused with an official E-root
+  parquet promotion.
+
+### Validation
+
+```text
+notebook: 01_research/notebooks/data_foundation_outputs/microstructure_candidate_visual_evidence_v0_1.ipynb
+execution_status: completed
+visual_case_count: 6
+png_panels_created: 6
+readout: 01_foundations/inspection_dossiers/microstructure_features/microstructure_candidate_visual_readout_v0_1.md
+visual_manifest: 01_foundations/inspection_dossiers/microstructure_features/visual_evidence_v0_1/microstructure_candidate_visual_manifest_v0_1.json
+```
+
+### Scope Notes
+
+This change creates human-readable inspection evidence for the existing
+candidate smoke artifact only.
+
+It does not:
+
+```text
+materialize microstructure_features_table_v0_2_candidate under E:/TSIS/data
+promote microstructure_features_table_v0_1
+claim full-universe microstructure coverage
+authorize ML/RL primary training or execution simulation
+resolve D:/quotes versus E:/TSIS/data/quotes parity
+```
+
+## v0.4.99 - OHLCV 1m quote-guarded live supervision and validation
+
+### Added
+
+- `scripts/supervise_ohlcv_1m_quote_guarded_repair_v0_2.ps1`
+- `scripts/validate_ohlcv_1m_quote_guarded_repair_v0_2.ps1`
+
+### Changed
+
+- Updated the local `ohlcv_1m_quote_guarded` module contract README so the
+  v0_2 monitor, supervisor and validator are discoverable from the single
+  workstream entry point.
+- Added the detailed live supervision/validation protocol to the same
+  workstream folder:
+  - `01_foundations/module_contracts/ohlcv_1m_quote_guarded/ohlcv_1m_quote_guarded_live_supervision_validation_protocol_v0_1.md`
+- Linked the live protocol from the existing repair runbook.
+
+### Validation
+
+```text
+supervisor one-shot:
+processes = 1
+latest_age_min = 0.04
+action = no duplicate runner started
+
+validator bounded pass:
+status = PASS
+errors = []
+month_summary_files = 19876
+stable_month_summary_files = 19784
+repair_shards = 6734
+stable_repair_shards = 6583
+validated_shards = 25
+month_summary_repair_rows = 6615018
+shard_row_total = 6615018
+```
+
+### Scope Notes
+
+This change adds operational guardrails around the existing long-running
+quote-guarded v0_2 repair run.
+
+It does not:
+
+```text
+modify raw E:/TSIS/data/ohlcv_1m files
+change quote-guarded repair semantics
+restart the active run during validation
+promote a new final manifest
+claim final full-universe completion
+```
+
+## v0.4.98 - Microstructure candidate window manifest builder
+
+### Added
+
+- `scripts/build_microstructure_candidate_window_manifest.py`
+- `tests/data_foundation_outputs/test_microstructure_candidate_window_manifest.py`
+
+### Changed
+
+- Parameterized `scripts/materialize_microstructure_features_table.py` so it
+  can write a candidate dataset id/scope/output path while preserving v0.1
+  defaults.
+- Updated the microstructure multi-window materialization plan with the new
+  manifest-builder/materializer-candidate status and test evidence.
+- Updated Data Foundation output target/status docs and the module contract
+  README to record that the first microstructure expansion substep is now
+  executable.
+- Updated the Data Foundation tests README with the new evidence path.
+- Updated `01_foundations/GRAPHIFY_REFRESH_QUEUE.md` with a pending HIGH
+  refresh entry for the manifest-builder change.
+
+### Validation
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_microstructure_candidate_window_manifest_v0_1/
+tests = 5
+passed = 5
+failed = 0
+skipped = 0
+
+C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_microstructure_features_table_v0_1_default_guard/
+tests = 3
+passed = 3
+failed = 0
+skipped = 0
+```
+
+### Scope Notes
+
+This change creates a governed candidate window manifest builder and a
+parameterized candidate path in the existing materializer.
+
+It also verifies a 6-row candidate feature materialization under the test
+artifact path only.
+
+It does not:
+
+```text
+materialize microstructure_features_table_v0_2_candidate under E:/TSIS/data
+modify microstructure_features_table_v0_1
+read all quotes/trades files
+claim full-universe microstructure coverage
+allow ML/RL primary training
+```
+
+The tested manifest derives from `event_windows_table_v0_1`:
+
+```text
+source_event_windows_rows = 214112
+eligible_microstructure_rows = 85658
+eligible_role_counts:
+  pre_event_30m = 42829
+  same_session_regular = 42829
+selected_rows_in_test_manifest = 6
+candidate_feature_rows_materialized_under_test_artifacts = 6
+candidate_quotes_file_present_rows = 6
+candidate_trades_file_present_rows = 6
+candidate_hard_fail_count = 0
+candidate_source_quotes_rows_total = 20626
+candidate_source_trades_rows_total = 71141
+source_window_dataset_id = event_windows_table_v0_1
+source_event_dataset_id = halts_table_v0_1
+official_dataset_created = false
+```
+
+## v0.4.97 - Microstructure multi-window plan
+
+### Added
+
+- `01_foundations/module_contracts/outputs/microstructure_features_table_multi_window_materialization_plan_v0_1.md`
+
+### Changed
+
+- Updated the Data Foundation output target contract and status matrix to point
+  to the new `microstructure_features_table` multi-window plan as the second
+  executable loop before broader `market_state_table` / `event_state_table`
+  materialization.
+- Updated `01_foundations/module_contracts/README.md` so the new plan is
+  discoverable from the module contract index.
+- Updated `01_foundations/GRAPHIFY_REFRESH_QUEUE.md` with a pending HIGH
+  refresh entry for the microstructure expansion governance contract.
+
+### Scope Notes
+
+This change does not create or promote a new microstructure parquet dataset.
+
+The official current table remains:
+
+```text
+dataset_id = microstructure_features_table_v0_1
+scope = seed_event_window_smoke
+full_universe_claim = false
+rows = 1
+```
+
+The new plan defines the required sequence before any broader microstructure
+claim:
+
+```text
+governed event-window denominator
+explicit quotes root state
+candidate-only v0.2 output
+builder parameterization
+source hash/recomputation tests
+visual/forensic evidence
+promotion gates
+```
+
+## v0.4.96 - Master intraday wider-scope plan
+
+### Added
+
+- `01_foundations/module_contracts/outputs/master_intraday_bar_table_wider_scope_materialization_plan_v0_1.md`
+
+### Changed
+
+- Updated the Data Foundation output target contract and status matrix to point
+  to the new `master_intraday_bar_table` wider-scope plan as the next
+  executable loop before broader `market_state_table` / `event_state_table`
+  materialization.
+- Updated `01_foundations/module_contracts/README.md` so the new plan is
+  discoverable from the module contract index.
+- Updated `01_foundations/GRAPHIFY_REFRESH_QUEUE.md` with a pending HIGH
+  refresh entry for the new intraday expansion governance contract.
+
+### Scope Notes
+
+This change does not create or promote a new intraday parquet dataset.
+
+The official current table remains:
+
+```text
+dataset_id = master_intraday_bar_table_v0_1
+scope = scoped_split_normalized_event_cases
+full_universe_claim = false
+```
+
+The new plan defines the required sequence before any wider/full-scope claim:
+
+```text
+1m split-safe smoke manifest
+split-affected candidate materialization/audit
+candidate-only master_intraday_bar_table v0.2 path
+builder parameterization
+denominator/manifest/recomputation tests
+promotion gates
+```
+
+## v0.4.95 - Market/event state deterministic fixture loop
+
+### Added
+
+- `scripts/_state_fixture_builder.py`
+- `tests/fixtures/data_foundation_outputs/market_event_state_v0_1/`
+- `configs/data_foundation_outputs/market_state_builder_fixture_v0_1.json`
+- `configs/data_foundation_outputs/event_state_builder_fixture_v0_1.json`
+
+### Changed
+
+- Extended `scripts/materialize_market_state_table.py` and
+  `scripts/materialize_event_state_table.py` with deterministic fixture-only
+  builder mode:
+
+```text
+--config <fixture_config> --output-dir <C:/TSIS_Data/tests/test_runs/...>
+```
+
+- The official builder remains not implemented and official materialization is
+  still blocked.
+- Extended market/event state tests with fixture sample execution and
+  adversarial leakage rejection.
+- Updated output target contract, status matrix, build-loop runbook, root tests
+  README and module tests README.
+- Added explicit next-priority rule: expand `master_intraday_bar_table` and
+  `microstructure_features_table` coverage before official
+  `market_state_table` / `event_state_table` materialization.
+- Updated `01_foundations/GRAPHIFY_REFRESH_QUEUE.md` with a pending HIGH
+  refresh entry for fixture-builder state governance.
+
+### Validation
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_market_event_state_fixture_loop_v0_1/
+tests = 14
+passed = 14
+failed = 0
+skipped = 0
+```
+
+### Scope Notes
+
+This change creates deterministic test samples only. It does not create:
+
+```text
+E:/TSIS/data/data_foundation_outputs/market_state_table/
+E:/TSIS/data/data_foundation_outputs/event_state_table/
+```
+
+The builders reject future as-of leakage, prohibited label/outcome/reward/
+future/signal/action/policy/fill/pnl feature families, and post-event review
+rows marked as ML feature candidates.
+
+## v0.4.94 - Market/event state contract stack skeletons
+
+### Added
+
+- `01_foundations/module_contracts/outputs/market_state_event_state_build_loop_runbook_v0_1.md`
+- `01_foundations/canonical_schemas/outputs/market_state_table_schema_contract.md`
+- `01_foundations/canonical_schemas/outputs/event_state_table_schema_contract.md`
+- `01_foundations/contract_registry/dataset_contracts/market_state_table_dataset_contract_v0_1.md`
+- `01_foundations/contract_registry/dataset_contracts/event_state_table_dataset_contract_v0_1.md`
+- `01_foundations/data_consumption_policies/market_state_table_consumption_policy.md`
+- `01_foundations/data_consumption_policies/event_state_table_consumption_policy.md`
+- `01_foundations/validators/outputs/market_state_table_validators.md`
+- `01_foundations/validators/outputs/event_state_table_validators.md`
+- `01_foundations/dataset_registry/outputs/market_state_table_registry_entry.yaml`
+- `01_foundations/dataset_registry/outputs/event_state_table_registry_entry.yaml`
+- `scripts/materialize_market_state_table.py`
+- `scripts/materialize_event_state_table.py`
+- `tests/data_foundation_outputs/test_market_state_table_contract.py`
+- `tests/data_foundation_outputs/test_event_state_table_contract.py`
+
+### Changed
+
+- Updated schema, dataset-contract, consumption-policy, dataset-registry,
+  validator, module-contract and test README indexes for market/event state.
+- Updated
+  `01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+  with the current market/event state skeleton stack status.
+- Updated
+  `01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md`
+  with contract-skeleton evidence and the `contract_defined_not_materialized`
+  status.
+- Updated `01_foundations/GRAPHIFY_REFRESH_QUEUE.md` with a pending HIGH
+  refresh entry for the expanded market/event state skeleton stack.
+
+### Validation
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_market_state_table_contract_skeleton_v0_1/
+tests = 4
+passed = 4
+failed = 0
+skipped = 0
+
+C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_event_state_table_contract_skeleton_v0_1/
+tests = 4
+passed = 4
+failed = 0
+skipped = 0
+```
+
+### Scope Notes
+
+The skeleton builders are non-writing guards. They support
+`--contract-check-only` and fail explicitly if invoked as materializers.
+
+No official parquet, manifest or summary exists for:
+
+```text
+market_state_table_v0_1
+event_state_table_v0_1
+```
+
+Registry entries are intentionally marked:
+
+```text
+contract_defined_not_materialized
+```
+
+The next work is deterministic fixtures plus real builder configs and
+adversarial leakage tests. This change does not enable direct RL training,
+execution truth or live trading authority.
+
+## v0.4.93 - Market/event state composition contract skeleton
+
+### Added
+
+- `01_foundations/module_contracts/outputs/market_state_event_state_composition_contract_v0_1.md`
+
+### Changed
+
+- Updated `01_foundations/module_contracts/README.md` to expose the new
+  composition contract.
+- Updated
+  `01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+  to make the composition contract the authority between governed CAPA 1
+  context outputs and future `market_state_table` / `event_state_table`.
+- Updated
+  `01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md`
+  to mark `market_state_table` / `event_state_table` as
+  `composition contract defined, not materialized`.
+- Updated `01_foundations/GRAPHIFY_REFRESH_QUEUE.md` with a pending HIGH
+  refresh entry for state composition, Data Foundation outputs and ML/RL
+  governance graphs.
+
+### Scope Notes
+
+The new contract defines:
+
+```text
+state != signal
+state != strategy
+state != outcome
+state != reward
+state != execution fill
+```
+
+It records that current CAPA 1 outputs may become state components only through
+a future builder that declares `decision_timestamp_utc`, component as-of
+policies, quality gates, lineage, feature namespaces and leakage/adversarial
+validation. It also blocks inline labels/outcomes/rewards inside state tables.
+
+No `market_state_table_v0_1` or `event_state_table_v0_1` output has been
+materialized by this change.
+
+## v0.4.92 - Regime context table CAPA 1 output materialization
+
+### Added
+
+- `scripts/materialize_regime_context_table.py`
+- `01_foundations/canonical_schemas/outputs/regime_context_table_schema_contract.md`
+- `01_foundations/contract_registry/dataset_contracts/regime_context_table_dataset_contract_v0_1.md`
+- `01_foundations/data_consumption_policies/regime_context_table_consumption_policy.md`
+- `01_foundations/dataset_registry/outputs/regime_context_table_registry_entry.yaml`
+- `01_foundations/validators/outputs/regime_context_table_validators.md`
+- `tests/data_foundation_outputs/test_regime_context_table_contract.py`
+
+### Changed
+
+- Promoted `regime_context_table` from target concept to governed CAPA 1 output
+  materialization for session-level market-regime proxy context.
+- Updated
+  `01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+  with the actual materialized scope, source exclusions, quality states,
+  as-of/leakage gates and current counts.
+- Updated
+  `01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md`
+  to record fifteen current materialized outputs and remove
+  `regime_context_table` from the non-materialized target list.
+- Updated schema, dataset-contract, consumption-policy, dataset-registry,
+  validator and test README indexes to include the new
+  `regime_context_table_v0_1` contract stack.
+- Updated `01_foundations/GRAPHIFY_REFRESH_QUEUE.md` as a pending HIGH refresh
+  item for Data Foundation output, event-state reconstruction and ML feature
+  governance graphs.
+
+### Materialized
+
+```text
+dataset_id = regime_context_table_v0_1
+path = E:/TSIS/data/data_foundation_outputs/regime_context_table/regime_context_table_v0_1/
+manifest = E:/TSIS/data/data_foundation_outputs/regime_context_table/_regime_context_table_manifest_v0_1.json
+summary = E:/TSIS/data/data_foundation_outputs/regime_context_table/_regime_context_table_summary_v0_1.csv
+build_run_id = regime_context_table_v0_1_20260627T084649Z
+materialization_scope = regime_indicators_minute_aggregated_daily_context_v0_1
+rows = 154692
+regime_symbols = 33
+source_minute_files = 33
+source_minute_rows_aggregated = 64348953
+blocked_day_files = 34
+parquet_files = 25
+output_tree_sha256 = 6cb774257e72ec1fa0e0c4fd514141b684f21e262de0a82206362bdbfbcba48c
+```
+
+### Validation
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_regime_context_table_v0_1/
+tests = 4
+passed = 4
+failed = 0
+skipped = 0
+```
+
+### Scope Notes
+
+`regime_context_table_v0_1` is built from `regime_indicators/**/minute.parquet`.
+It explicitly does not consume `regime_indicators/**/day.parquet` because those
+daily files remain blocked by invalid 1970 date semantics. It also does not
+include `E:/TSIS/data/intraday_regime_features`, which remains a separate pilot
+feature layer.
+
+The table is a session-close context component. Consumers must apply an
+external as-of filter and must not use same-session completed aggregates for
+intraday causal decisions. Direct backtest-core, execution-simulation and
+direct RL training rows remain disabled in v0.1.
+
+## v0.4.91 - Short sale constraints acquisition runbook
+
+### Added
+
+- `01_foundations/module_contracts/outputs/short_sale_constraints_data_acquisition_runbook_v0_1.md`
+
+### Changed
+
+- Updated
+  `01_foundations/module_contracts/outputs/short_sale_constraints_table_target_contract_v0_1.md`
+  to record the historical rule that broad market data history is not
+  broker-specific borrow/locate/availability history.
+- Updated
+  `01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+  to link the acquisition runbook and preserve the same historical boundary in
+  the CAPA 1 output contract.
+- Updated
+  `01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md`
+  to mark `short_sale_constraints_table` as target-and-runbook-defined but not
+  materialized.
+- Updated `01_foundations/module_contracts/README.md` to expose the new runbook.
+- Updated `01_foundations/GRAPHIFY_REFRESH_QUEUE.md` with a pending HIGH
+  refresh entry for the new short-sale-constraint acquisition semantics.
+
+### Scope Notes
+
+The new runbook prepares three separate acquisition tracks:
+
+```text
+SSR derived proxy
+DAS/SageTrader live capture
+broker/vendor historical borrow-locate-availability intake
+```
+
+It records that DAS/live capture starts from the first audited connection date
+and does not reconstruct past broker inventory unless the broker/vendor provides
+historical point-in-time backfill. It also requires raw append-only capture,
+`received_utc`, broker/account scope, raw status preservation, source manifests,
+validators and promotion evidence before any materialization can be treated as
+institutional.
+
+## v0.4.90 - Short sale constraints target contract
+
+### Added
+
+- `01_foundations/module_contracts/outputs/short_sale_constraints_table_target_contract_v0_1.md`
+
+### Changed
+
+- Updated
+  `01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+  to add `short_sale_constraints_table` as a distinct CAPA 1 output target for
+  SSR, borrow, locate, short availability, hard-to-borrow state and borrow fee.
+- Updated
+  `01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md`
+  to mark `short_sale_constraints_table` as target-defined but not materialized.
+- Updated `01_foundations/module_contracts/README.md` to link the new target
+  contract.
+- Updated `01_foundations/GRAPHIFY_REFRESH_QUEUE.md` with a pending HIGH
+  refresh entry for Data Foundation output, event-state, short-strategy,
+  execution-simulation and ML feature governance graphs.
+
+### Scope Notes
+
+`short_sale_constraints_table` exists to prevent a false inference:
+
+```text
+short interest / short volume != borrow / locate / SSR / shortability
+```
+
+`short_context_table_v0_1` remains valid for short pressure and crowding
+context, but it cannot prove whether a short order was executable. SSR may be
+materialized later either from official/vendor sources or as a labelled
+`derived_regulatory_proxy` using validated daily/intraday prices and explicit
+rule/version assumptions. Borrow, locate and availability require broker/vendor
+or internal order/locate logs with `received_utc`, broker/account scope and
+staleness policy.
+
+Current state:
+
+```text
+short_sale_constraints_table_v0_1 materialized = false
+known physical SSR/borrow/locate source under E:/TSIS/data = false
+backtest short execution feasibility = not institutional
+live short trading readiness = not institutional
+```
+
+## v0.4.89 - Short context table CAPA 1 output materialization
+
+### Added
+
+- `scripts/materialize_short_context_table.py`
+- `01_foundations/canonical_schemas/outputs/short_context_table_schema_contract.md`
+- `01_foundations/contract_registry/dataset_contracts/short_context_table_dataset_contract_v0_1.md`
+- `01_foundations/data_consumption_policies/short_context_table_consumption_policy.md`
+- `01_foundations/dataset_registry/outputs/short_context_table_registry_entry.yaml`
+- `01_foundations/validators/outputs/short_context_table_validators.md`
+- `tests/data_foundation_outputs/test_short_context_table_contract.py`
+
+### Changed
+
+- Promoted `short_context_table` from target concept to governed CAPA 1 output
+  materialization for source-scoped short interest and short volume context.
+- Updated
+  `01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+  with the actual materialized scope, source planes, quality states and
+  required as-of/lag consumption rules for short context.
+- Updated
+  `01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md`
+  to record fourteen current materialized outputs and `regime_context_table`
+  as the next dependency-led historical context candidate.
+- Updated schema, dataset-contract, consumption-policy, dataset-registry,
+  validator and test README indexes to include the new
+  `short_context_table_v0_1` contract stack.
+- Updated `01_foundations/GRAPHIFY_REFRESH_QUEUE.md` as a pending HIGH refresh
+  item for Data Foundation output, event-state reconstruction and ML feature
+  governance graphs.
+
+### Materialized
+
+```text
+dataset_id = short_context_table_v0_1
+path = E:/TSIS/data/data_foundation_outputs/short_context_table/short_context_table_v0_1/
+manifest = E:/TSIS/data/data_foundation_outputs/short_context_table/_short_context_table_manifest_v0_1.json
+summary = E:/TSIS/data/data_foundation_outputs/short_context_table/_short_context_table_summary_v0_1.csv
+build_run_id = short_context_table_v0_1_20260626T215417Z
+materialization_scope = short_and_short_review_source_scoped_context_v0_1
+rows = 7145337
+tickers = 4694
+instruments = 4462
+parquet_files = 32
+output_tree_sha256 = 57c0abbdf6a1d4ef4d1ab6bd7ac326e2d57415645d7cd759605334334271652b
+```
+
+### Validation
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-26/data_foundation_outputs_short_context_table_v0_1/
+tests = 4
+passed = 4
+failed = 0
+skipped = 0
+```
+
+### Scope Notes
+
+`short_context_table_v0_1` preserves two source planes instead of silently
+choosing one:
+
+```text
+finra_official_free:short_interest rows = 505745
+finra_official_free:short_volume rows = 4689038
+local_polygon:short_interest rows = 520048
+local_polygon:short_volume rows = 1430506
+```
+
+It records `short_review`/FINRA as official/free baseline and provenance while
+preserving the local `short` plane for operational comparison. It is valid for
+event/state context only after explicit source selection, quality filtering and
+as-of/availability lag. It is not SSR, not borrow/locate/availability, not
+intraday tape, not direct `ml_primary`, not execution truth and not RL training
+data.
+
+## v0.4.88 - OHLCV 1m quote-guarded governance workstream
+
+### Added
+
+- `01_foundations/module_contracts/ohlcv_1m_quote_guarded/README.md`
+- `01_foundations/module_contracts/ohlcv_1m_quote_guarded/ohlcv_1m_quote_guarded_single_reading_v0_1.md`
+- `01_foundations/module_contracts/ohlcv_1m_quote_guarded/ohlcv_1m_quote_guarded_repair_runbook_v0_1.md`
+- `src/data/ohlcv_1m_quote_guarded.py`
+- `scripts/inspection/minute/build_ohlcv_1m_quote_guarded_repairs.py`
+- `scripts/run_ohlcv_1m_quote_guarded_repair.ps1`
+- `tests/test_ohlcv_1m_quote_guarded.py`
+
+### Changed
+
+- Opened a dedicated governance folder for the `ohlcv_1m_quote_guarded_v0_1`
+  workstream instead of scattering the topic across generic module contracts.
+- Established a single consolidated human reading for the provisional
+  quote-guarded repair architecture for raw one-minute OHLC bars.
+- Documented the planned foundation chain before implementation:
+  canonical schema, dataset contract, consumption policy, dataset registry
+  entry, validators, inspection dossier, data-quality report and evidence
+  assets.
+- Added executable manifest-first tooling for the quote-guarded repair audit.
+- Exposed quote-guarded helpers through `src/data/__init__.py`.
+- Added a narrow `.gitignore` exception so Python modules under `src/data/`
+  remain versionable while dataset folders stay ignored.
+
+### Scope Notes
+
+`ohlcv_1m_quote_guarded_v0_1` is documented as a provisional derived price view
+for quote-bounded OHLC repair. It preserves raw `ohlcv_1m` lineage, uses
+`quotes` as a guardrail for impossible minute bars, and explicitly does not
+claim executed trade reconstruction, true VWAP reconstruction, execution
+simulation suitability or a permanent substitute for future extended-hours
+trades.
+
+The raw source remains immutable. The intended architecture is:
+
+```text
+raw ohlcv_1m + quote-derived repair manifest -> quote_guarded view
+```
+
+The workstream remains governance-defined only until a pilot, validators,
+visual evidence and reproducible audit manifests are produced.
+
+## v0.4.87 - News context table CAPA 1 output materialization
+
+### Added
+
+- `scripts/materialize_news_context_table.py`
+- `01_foundations/canonical_schemas/outputs/news_context_table_schema_contract.md`
+- `01_foundations/contract_registry/dataset_contracts/news_context_table_dataset_contract_v0_1.md`
+- `01_foundations/data_consumption_policies/news_context_table_consumption_policy.md`
+- `01_foundations/dataset_registry/outputs/news_context_table_registry_entry.yaml`
+- `01_foundations/validators/outputs/news_context_table_validators.md`
+- `tests/data_foundation_outputs/test_news_context_table_contract.py`
+
+### Changed
+
+- Promoted `news_context_table` from target concept to governed CAPA 1 output
+  materialization for `published_utc`-aware historical news context.
+- Updated
+  `01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+  with the actual materialized scope, quality states and required consumption
+  rules for news.
+- Updated
+  `01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md`
+  to record thirteen current materialized outputs and `short_context_table` as
+  the next dependency-led context candidate.
+- Updated schema, dataset-contract, consumption-policy, dataset-registry,
+  validator and test README indexes to include the new
+  `news_context_table_v0_1` contract stack.
+- Updated `01_foundations/GRAPHIFY_REFRESH_QUEUE.md` as a pending HIGH refresh
+  item for Data Foundation output, event-state reconstruction and ML feature
+  governance graphs.
+
+### Materialized
+
+```text
+dataset_id = news_context_table_v0_1
+path = E:/TSIS/data/data_foundation_outputs/news_context_table/news_context_table_v0_1/
+manifest = E:/TSIS/data/data_foundation_outputs/news_context_table/_news_context_table_manifest_v0_1.json
+summary = E:/TSIS/data/data_foundation_outputs/news_context_table/_news_context_table_summary_v0_1.csv
+build_run_id = news_context_table_v0_1_20260626T123436Z
+materialization_scope = additional_news_lt1b_published_utc_context_v0_1
+rows = 287138
+tickers = 3869
+instruments = 3699
+publishers = 11
+parquet_files = 9
+output_tree_sha256 = bff4a26caaab27e1d7974e8947ecea8b26cea09e585fe304206812db8aafdbff
+```
+
+### Validation
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-26/data_foundation_outputs_news_context_table_v0_1/
+tests = 4
+passed = 4
+failed = 0
+skipped = 0
+```
+
+### Scope Notes
+
+`news_context_table_v0_1` covers non-empty `additional/news` business rows:
+
+```text
+source_files = 4824
+business_files = 3869
+empty_sentinel_files = 955
+business_rows = 287138
+good_mono_ticker_news_context = 102556
+good_review_multi_ticker_news_context = 180051
+review_no_temporal_identity = 4531
+valid_for_event_context_candidate_rows = 282607
+valid_for_rl_training_direct_rows = 0
+```
+
+It sets `as_of_utc = published_utc`, preserves requested ticker separately from
+article `payload_tickers`, and keeps multi-ticker rows in attribution-review
+state. It is historical news context, not proof of causality, not a live
+`received_utc` alert feed, not direct `ml_primary` and not RL training data.
+
+## v0.4.86 - Fundamentals as-of table CAPA 1 output materialization
+
+### Added
+
+- `scripts/materialize_fundamentals_asof_table.py`
+- `01_foundations/canonical_schemas/outputs/fundamentals_asof_table_schema_contract.md`
+- `01_foundations/contract_registry/dataset_contracts/fundamentals_asof_table_dataset_contract_v0_1.md`
+- `01_foundations/data_consumption_policies/fundamentals_asof_table_consumption_policy.md`
+- `01_foundations/dataset_registry/outputs/fundamentals_asof_table_registry_entry.yaml`
+- `01_foundations/validators/outputs/fundamentals_asof_table_validators.md`
+- `tests/data_foundation_outputs/test_fundamentals_asof_table_contract.py`
+
+### Changed
+
+- Promoted `fundamentals_asof_table` from target concept to governed CAPA 1
+  output materialization for filing-date-aware statement fundamentals.
+- Updated
+  `01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+  to replace the old ratios/standalone-financial example with the actual
+  `additional/financials` statement materialization.
+- Updated
+  `01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md`
+  to record twelve current materialized outputs and `news_context_table` as the
+  next dependency-led context candidate.
+- Updated dataset-contract, consumption-policy, validator and test README
+  indexes to include the new `fundamentals_asof_table_v0_1` contract stack.
+- Updated `01_foundations/GRAPHIFY_REFRESH_QUEUE.md` as a pending HIGH refresh
+  item for Data Foundation output, event-state reconstruction and ML feature
+  governance graphs.
+
+### Materialized
+
+```text
+dataset_id = fundamentals_asof_table_v0_1
+path = E:/TSIS/data/data_foundation_outputs/fundamentals_asof_table/fundamentals_asof_table_v0_1/
+manifest = E:/TSIS/data/data_foundation_outputs/fundamentals_asof_table/_fundamentals_asof_table_manifest_v0_1.json
+summary = E:/TSIS/data/data_foundation_outputs/fundamentals_asof_table/_fundamentals_asof_table_summary_v0_1.csv
+build_run_id = fundamentals_asof_table_v0_1_20260626T101617Z
+materialization_scope = additional_financials_core_lt1b_statement_asof_v0_1
+rows = 621756
+tickers = 4813
+instruments = 4590
+parquet_files = 51
+output_tree_sha256 = 07d3d0200e16e020cee79fc2cf6aa873cde0145cf7efa0f07d0e78c8aefe5d58
+```
+
+### Validation
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-26/data_foundation_outputs_fundamentals_asof_table_v0_1/
+tests = 4
+passed = 4
+failed = 0
+skipped = 0
+```
+
+### Scope Notes
+
+`fundamentals_asof_table_v0_1` covers accepted `additional/financials` statement
+families only:
+
+```text
+income_statements = 242886 rows
+balance_sheets = 136661 rows
+cash_flow_statements = 242209 rows
+good_statement_asof = 500530
+review_no_temporal_identity = 121217
+review_period_after_filing_date = 9
+valid_for_rl_training_direct_rows = 0
+```
+
+It sets `as_of_date = filing_date` and explicitly blocks `period_end` as an
+availability date. It excludes `additional/financials/ratios` and standalone
+`E:/TSIS/data/financial` from v0.1 core. It is a state component requiring an
+external as-of/event cutoff builder; it is not a latest-before-event snapshot,
+not direct `ml_primary`, not RL training data and not market-cap/float
+authority.
+
+## v0.4.85 - Outcomes table CAPA 1 output materialization
+
+### Added
+
+- `scripts/materialize_outcomes_table.py`
+- `01_foundations/canonical_schemas/outputs/outcomes_table_schema_contract.md`
+- `01_foundations/contract_registry/dataset_contracts/outcomes_table_dataset_contract_v0_1.md`
+- `01_foundations/data_consumption_policies/outcomes_table_consumption_policy.md`
+- `01_foundations/dataset_registry/outputs/outcomes_table_registry_entry.yaml`
+- `01_foundations/validators/outputs/outcomes_table_validators.md`
+- `tests/data_foundation_outputs/test_outcomes_table_contract.py`
+
+### Changed
+
+- Promoted `outcomes_table` from target concept to governed CAPA 1 output
+  materialization for daily next-session labels/outcomes.
+- Updated
+  `01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+  to define `outcomes_table_v0_1` as post-event `y`, not pre-event features,
+  strategy, execution outcome or RL reward.
+- Updated
+  `01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md`
+  to record eleven current materialized outputs, four isolated test passes and
+  `fundamentals_asof_table` as the next dependency-led materialization target.
+- Updated schema, dataset-contract, consumption-policy, dataset-registry,
+  validator and test README indexes to include the new `outcomes_table_v0_1`
+  contract stack.
+- Updated `tests/data_foundation_outputs/README.md` and
+  `C:/TSIS_Data/tests/README.md` so humans and agents can locate outcomes-table
+  tests and evidence.
+- Updated `01_foundations/GRAPHIFY_REFRESH_QUEUE.md` as a pending HIGH refresh
+  item for the Data Foundation output and event-state graphs.
+
+### Materialized
+
+```text
+dataset_id = outcomes_table_v0_1
+path = E:/TSIS/data/data_foundation_outputs/outcomes_table/outcomes_table_v0_1.parquet
+manifest = E:/TSIS/data/data_foundation_outputs/outcomes_table/_outcomes_table_manifest_v0_1.json
+summary = E:/TSIS/data/data_foundation_outputs/outcomes_table/_outcomes_table_summary_v0_1.csv
+build_run_id = outcomes_table_v0_1_20260626T073950Z
+materialization_scope = halt_next_session_daily_outcomes_v0_1
+outcome_horizon = next_session_regular_daily
+rows = 128388
+event_windows = 42796
+source_events = 42796
+tickers = 3709
+instruments = 3566
+price_views = daily_raw, split_normalized, adjusted
+output_sha256 = ce793a75d747d50c053f44433d5e3e59ebb3616db7056c3e5087a005fb6db09e
+```
+
+### Validation
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-26/data_foundation_outputs_outcomes_table_v0_1/
+tests = 4
+passed = 4
+failed = 0
+skipped = 0
+```
+
+### Scope Notes
+
+`outcomes_table_v0_1` covers only halt-derived event windows already emitted by
+`event_windows_table_v0_1`:
+
+```text
+source_event_windows_candidate_window_rows = 42796
+rows_by_price_view = 42796 each for daily_raw, split_normalized, adjusted
+good_daily_outcome_rows = 121761
+review_rows = 6627
+valid_for_ml_label_candidate_rows = 121761
+valid_for_rl_reward_candidate_rows = 0
+outcome_daily_join_missing_rows = 1389
+```
+
+It is valid for daily post-event outcome research and ML/strategy labels where
+`valid_for_ml_label_candidate=true`. It is not a pre-event feature source, not
+intraday execution truth, not slippage/fill evidence and not an RL reward table.
+
+## v0.4.84 - Event windows table CAPA 1 output materialization
+
+### Added
+
+- `scripts/materialize_event_windows_table.py`
+- `01_foundations/canonical_schemas/outputs/event_windows_table_schema_contract.md`
+- `01_foundations/contract_registry/dataset_contracts/event_windows_table_dataset_contract_v0_1.md`
+- `01_foundations/data_consumption_policies/event_windows_table_consumption_policy.md`
+- `01_foundations/dataset_registry/outputs/event_windows_table_registry_entry.yaml`
+- `01_foundations/validators/outputs/event_windows_table_validators.md`
+- `tests/data_foundation_outputs/test_event_windows_table_contract.py`
+
+### Changed
+
+- Promoted `event_windows_table` from target concept to governed CAPA 1 output
+  materialization.
+- Updated
+  `01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+  to define `event_windows_table_v0_1` as a state-boundary table, not a
+  feature, outcome, strategy or reward table.
+- Updated
+  `01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md`
+  to record ten current materialized outputs, three isolated test passes and
+  `outcomes_table` as the next dependency-led materialization target.
+- Updated schema, dataset-contract, consumption-policy, dataset-registry and
+  validator README indexes to include the new `event_windows_table_v0_1`
+  contract stack.
+- Updated `tests/data_foundation_outputs/README.md` and
+  `C:/TSIS_Data/tests/README.md` so humans and agents can locate
+  event-windows tests and evidence.
+- Updated `01_foundations/GRAPHIFY_REFRESH_QUEUE.md` as a pending HIGH refresh
+  item for the Data Foundation output graph.
+
+### Materialized
+
+```text
+dataset_id = event_windows_table_v0_1
+path = E:/TSIS/data/data_foundation_outputs/event_windows_table/event_windows_table_v0_1.parquet
+manifest = E:/TSIS/data/data_foundation_outputs/event_windows_table/_event_windows_table_manifest_v0_1.json
+summary = E:/TSIS/data/data_foundation_outputs/event_windows_table/_event_windows_table_summary_v0_1.csv
+build_run_id = event_windows_table_v0_1_20260625T231016Z
+materialization_scope = halts_intraday_lt1b_calendar_covered
+source_event_dataset_id = halts_table_v0_1
+rows = 214112
+source_events = 42829
+tickers = 3710
+instruments = 3567
+output_sha256 = cee3675487d13353f409813b24f44565aeb0187312dea860bbba13c977b1643e
+```
+
+### Validation
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-25/data_foundation_outputs_event_windows_table_v0_1/
+tests = 4
+passed = 4
+failed = 0
+skipped = 0
+```
+
+### Scope Notes
+
+`event_windows_table_v0_1` covers halt-derived intraday events only:
+
+```text
+source_valid_intraday_event_count = 131671
+identity_temporal_match_event_count = 44976
+calendar_covered_event_count = 42829
+excluded_no_temporal_identity_event_count = 86695
+excluded_no_market_calendar_session_event_count = 2147
+```
+
+It is valid for event-window boundaries and leakage-safe separation of
+pre-event feature windows from event-response/outcome windows. It is not a
+general event table, not all event families, not execution truth and not a
+primary ML/RL dataset.
+
+Initial partitioned-write attempts timed out and left a partial folder under:
+
+```text
+E:/TSIS/data/data_foundation_outputs/event_windows_table/event_windows_table_v0_1_partial_timeout_do_not_use/
+```
+
+The official materialization is the `.parquet` file listed above. The partial
+folder must not be consumed.
+
+## v0.4.83 - Halts table CAPA 1 output materialization
+
+### Added
+
+- `scripts/materialize_halts_table.py`
+- `01_foundations/canonical_schemas/outputs/halts_table_schema_contract.md`
+- `01_foundations/contract_registry/dataset_contracts/halts_table_dataset_contract_v0_1.md`
+- `01_foundations/data_consumption_policies/halts_table_consumption_policy.md`
+- `01_foundations/dataset_registry/outputs/halts_table_registry_entry.yaml`
+- `01_foundations/validators/outputs/halts_table_validators.md`
+- `tests/data_foundation_outputs/test_halts_table_contract.py`
+
+### Changed
+
+- Promoted `halts_table` from target concept to governed CAPA 1 output
+  materialization.
+- Updated
+  `01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+  with the materialized path, manifest, source hashes, source counts,
+  event-state counts, quality-state counts, test evidence and consumption
+  limits.
+- Updated
+  `01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md`
+  to record nine current materialized outputs, two isolated test passes and
+  `event_windows_table` as the next dependency-led materialization target.
+- Updated `tests/data_foundation_outputs/README.md` and
+  `C:/TSIS_Data/tests/README.md` so humans and agents can locate halts-table
+  tests and evidence.
+- Updated schema, dataset-contract, consumption-policy, dataset-registry and
+  validator README indexes to include the new `halts_table_v0_1` contract
+  stack.
+- Updated `01_foundations/GRAPHIFY_REFRESH_QUEUE.md` as a pending HIGH refresh
+  item for the Data Foundation output graph.
+
+### Materialized
+
+```text
+dataset_id = halts_table_v0_1
+path = E:/TSIS/data/data_foundation_outputs/halts_table/halts_table_v0_1.parquet
+manifest = E:/TSIS/data/data_foundation_outputs/halts_table/_halts_table_manifest_v0_1.json
+summary = E:/TSIS/data/data_foundation_outputs/halts_table/_halts_table_summary_v0_1.csv
+build_run_id = halts_table_v0_1_20260625T191305Z
+source_dataset_id = halts_v0_1
+source_master = E:/TSIS/data/Halts/processed/halts_master_multisource.parquet
+rows = 133116
+output_sha256 = b7a2be01e8af852b9c00a7509648f8554e796ad04867fbc67879596a074084a8
+source_master_sha256 = f7b72c298434529788e5ca65fee775e1869c04e02c69c1730ac77509ca899213
+```
+
+### Validation
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-25/data_foundation_outputs_halts_table_v0_1/
+tests = 4
+passed = 4
+failed = 0
+skipped = 0
+```
+
+### Notes
+
+`halts_table_v0_1` is an event/context output. It is allowed for halt masks,
+event interruption context and outcome/backtest restrictions where quality
+gates allow. It is not execution truth, not a live latency contract, not a
+decision-time availability proof and not a primary ML/RL dataset by itself.
+
+The table preserves source anomalies as explicit state:
+
+```text
+missing_halt_date_count = 11
+future_date_flag_count = 8
+timestamp_order_review_flag_count = 87
+parse_suspect_flag_count = 88
+duplicate_source_event_key_row_count = 1709
+```
+
+## v0.4.82 - Microstructure features table seed materialization
+
+### Added
+
+- `configs/data_foundation_outputs/microstructure_features_seed_windows_v0_1.csv`
+- `scripts/materialize_microstructure_features_table.py`
+- `01_foundations/canonical_schemas/outputs/microstructure_features_table_schema_contract.md`
+- `01_foundations/contract_registry/dataset_contracts/microstructure_features_table_dataset_contract_v0_1.md`
+- `01_foundations/data_consumption_policies/microstructure_features_table_consumption_policy.md`
+- `01_foundations/dataset_registry/outputs/microstructure_features_table_registry_entry.yaml`
+- `01_foundations/validators/outputs/microstructure_features_table_validators.md`
+- `tests/data_foundation_outputs/test_microstructure_features_table_contract.py`
+
+### Changed
+
+- Clarified that Data Foundation output tables are `state_components`, not final
+  institutional `market_state` objects, and that
+  `microstructure_features_table_v0_1` remains a `scoped_state_sample` /
+  `seed_event_window_smoke` until a later version is rebuilt from governed
+  event windows, official raw roots, validators, visual/forensic evidence and
+  explicit ML/RL/backtest/execution consumption gates.
+- Added an agent-facing table-by-table explanation of what data each Data
+  Foundation output carries and how each piece participates in future
+  `market_state` / `event_state` reconstruction.
+- Clarified explicitly that `microstructure_features_table_v0_1` is not
+  sufficient to train or model microstructure institutionally; a later version
+  needs governed event-window coverage, official raw roots, quality inheritance,
+  leakage-safe cutoffs, recomputation tests and visual/forensic evidence.
+- Added explicit rationale for building scoped state components before model
+  training: v0.1 seed tables prove schema, lineage, recomputation, gates and
+  misuse prevention before scaling to broad coverage.
+- Added a promotion ladder for `microstructure_features_table` from raw-root
+  authority through seed vertical slice, governed event-window input,
+  multi-window pilot, coverage declaration, institutional state component and
+  ML/RL readiness.
+- Clarified that Data Foundation outputs must be derived from the real
+  downloaded market data, while preserving raw/audited sources as physical
+  truth, rather than copying all raw data into one giant table.
+- Added direct scientific justification for the state-component architecture,
+  citing Offline RL, Conservative Q-Learning, DeepLOB, LOBFrame, JAX-LOB,
+  AlphaEvolve, FunSearch and Causality for Machine Learning as the basis for
+  raw-derived, lineage-preserving, leakage-safe state construction.
+- Added an explicit decision-evidence matrix mapping TSIS table/state design
+  obligations to specific scientific references, including sequential decision
+  states, Offline RL datasets, distribution shift, LOB modeling, LOB
+  simulation, evaluator-driven program search and causal ML.
+- Added
+  `01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md`
+  to record the real materialization, validation evidence, consumer readiness
+  and blockers of the current Data Foundation output tables.
+- `01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+- `01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md`
+- `01_foundations/canonical_schemas/README.md`
+- `01_foundations/contract_registry/dataset_contracts/README.md`
+- `01_foundations/data_consumption_policies/README.md`
+- `01_foundations/dataset_registry/README.md`
+- `01_foundations/validators/README.md`
+- `tests/data_foundation_outputs/README.md`
+- `C:/TSIS_Data/tests/README.md`
+- `01_foundations/GRAPHIFY_REFRESH_QUEUE.md`
+
+### Materialized
+
+```text
+dataset_id = microstructure_features_table_v0_1
+path = E:/TSIS/data/data_foundation_outputs/microstructure_features_table/microstructure_features_table_v0_1
+manifest = E:/TSIS/data/data_foundation_outputs/microstructure_features_table/_microstructure_features_table_manifest_v0_1.json
+summary = E:/TSIS/data/data_foundation_outputs/microstructure_features_table/_microstructure_features_table_summary_v0_1.csv
+build_run_id = microstructure_features_table_v0_1_20260625T155732Z
+materialization_scope = seed_event_window_smoke
+full_universe_claim = false
+rows = 1
+tickers = 1
+windows = 1
+```
+
+### Source Lineage
+
+This table is not derived from visual casepacks. The current v0.1 row computes
+features from raw source files:
+
+```text
+seed input:
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/configs/data_foundation_outputs/microstructure_features_seed_windows_v0_1.csv
+
+quotes source used now:
+D:/quotes/ZYXI/year=2025/month=12/day=01/quotes.parquet
+sha256 = 9b73b6bdd3d1e23e65f95b39926b36a4416e82aa9f00ae1fe62544b0e2099245
+rows_in_window = 13288
+
+trades source used now:
+E:/TSIS/data/trades_ticks_prod_2005_2026/ZYXI/year=2025/month=12/day=2025-12-01/market.parquet
+sha256 = d23f0dda5a5f8c65c9785d50675e061cee987b5e509da6007698dc60425d0646
+rows_in_window = 18182
+
+identity source:
+E:/TSIS/data/data_foundation_outputs/instrument_master/instrument_master_v0_1.parquet
+
+family gate source:
+E:/TSIS/data/data_foundation_outputs/dataset_certification_matrix/dataset_certification_matrix_v0_1.parquet
+```
+
+`D:/quotes` is provisional legacy/recovery lineage. The future official target
+is a governed E-root after raw storage parity is completed. Before any promotion
+to execution simulation, core backtesting, ML/RL primary training or broader
+event sweeps, the table must be rebuilt or compared against the official E-root.
+
+### Tests
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-25/data_foundation_outputs_microstructure_features_table_v0_1_rerun/
+tests = 3
+passed = 3
+failed = 0
+skipped = 0
+```
+
+The test validates manifest/source hashes, schema/scope flags and recomputes
+seed quote/trade metrics from the raw files.
+
+## v0.4.81 - Quotes staging clone runbook and safe robocopy entry point
+
+### Added
+
+- `scripts/data_ops/clone_quotes_to_staging.ps1`
+- `01_foundations/module_contracts/quotes/quotes_staging_clone_runbook_v0_1.md`
+- `01_foundations/module_contracts/transversal/raw_storage_parity_audit_requirement_v0_1.md`
+
+### Changed
+
+- `01_foundations/module_contracts/data_storage_topology_and_target_state.md`
+- `01_foundations/module_contracts/raw_data_authority_and_derivation_map.md`
+- `01_foundations/module_contracts/README.md`
+- `01_foundations/module_contracts/quotes_contracts_index.md`
+- `01_foundations/module_contracts/transversal_contracts_index.md`
+- `01_foundations/GRAPHIFY_REFRESH_QUEUE.md`
+
+### Notes
+
+The quotes visual inspection manifests contain audited cases whose physical
+`source_file` points to `D:/quotes`, while some of those case files are absent
+from `E:/TSIS/data/quotes`.
+
+This is a provenance/recovery issue, not a source-of-truth change. The official
+TSIS market-data database root remains `E:/TSIS/data`. Legacy paths such as
+`D:/quotes` and `C:/TSIS_Data/data/quotes` may appear in historical manifests
+but must not be used as primary roots in new downstream contracts.
+
+The new operational target is:
+
+```text
+E:/TSIS/data/quotes_
+```
+
+This is a staging root only. It does not replace `E:/TSIS/data/quotes` and is
+not an official source of truth until a post-copy audit and separate promotion
+decision exist.
+
+The script defaults to dry-run mode, rejects accidental use of
+`E:/TSIS/data/quotes` as target, avoids `/MIR` and `/PURGE`, and writes logs plus
+JSON manifests under:
+
+```text
+E:/TSIS/data/data_ops_manifests/quotes_clone/
+```
+
+After operator feedback that full-tree dry-run is impractical on millions of
+files, the script now supports scoped smoke tests with `-SubPath`, allowing a
+small real copy such as one ticker-day before launching the resumable full
+clone.
+
+The same release also records the broader final Data Foundation requirement:
+all relevant raw/source-preserved folders still present under `D:/` must be
+audited against equivalent governed landings under `E:/TSIS/data`. This is a
+physical preservation/parity audit and does not replace per-family quality
+certification.
+
+## v0.4.80 - 1m split-normalized official backtest and ML runbook
+
+### Added
+
+- `01_foundations/module_contracts/ohlcv_1m_split_normalized_full_universe_materialization_runbook_v0_1.md`
+- `scripts/build_1m_split_normalized_materialization_manifest.py`
+- `scripts/run_1m_split_normalized_materialization.ps1`
+
+### Changed
+
+- `01_foundations/module_contracts/ohlcv_1m_split_normalized_operational_landing_v0_1.md`
+- `01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+- `01_foundations/module_contracts/README.md`
+- `01_foundations/GRAPHIFY_REFRESH_QUEUE.md`
+
+### Notes
+
+The runbook records the official rule for intraday backtesting and ML:
+
+```text
+the exact scope consumed by an official run must have a declared split-safe 1m
+price-view strategy, manifest, tests, output root and registry status.
+```
+
+It distinguishes:
+
+- logical full-universe split-safe view: materialize only split-affected
+  ticker-months and use raw as factor-1 fallback;
+- physical full copy: materialize every raw 1m ticker-month into a
+  split-normalized root.
+
+It also provides PowerShell commands for smoke tests, overnight split-affected
+materialization, heavier physical full-copy materialization and post-run audit.
+The preferred entry point is now
+`scripts/run_1m_split_normalized_materialization.ps1`, smoke-tested with
+`-SmokeOnly -SmokeLimit 5`.
+
+## v0.4.79 - Master intraday bar table scoped materialization
+
+### Added
+
+- `01_foundations/canonical_schemas/outputs/master_intraday_bar_table_schema_contract.md`
+- `01_foundations/contract_registry/dataset_contracts/master_intraday_bar_table_dataset_contract_v0_1.md`
+- `01_foundations/data_consumption_policies/master_intraday_bar_table_consumption_policy.md`
+- `01_foundations/dataset_registry/outputs/master_intraday_bar_table_registry_entry.yaml`
+- `01_foundations/validators/outputs/master_intraday_bar_table_validators.md`
+- `scripts/materialize_master_intraday_bar_table.py`
+- `tests/data_foundation_outputs/test_master_intraday_bar_table_contract.py`
+
+### Changed
+
+- `01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+- `01_foundations/canonical_schemas/README.md`
+- `01_foundations/contract_registry/dataset_contracts/README.md`
+- `01_foundations/data_consumption_policies/README.md`
+- `01_foundations/dataset_registry/README.md`
+- `01_foundations/validators/README.md`
+- `tests/data_foundation_outputs/README.md`
+- `01_foundations/GRAPHIFY_REFRESH_QUEUE.md`
+- `tests/README.md`
+
+### Materialized
+
+```text
+dataset_id = master_intraday_bar_table_v0_1
+path = E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_1
+layout = partitioned parquet dataset by year/month/price_view
+materialization_scope = scoped_split_normalized_event_cases
+full_universe_claim = false
+rows = 175252
+source_split_normalized_bar_rows = 87626
+tickers = 8
+ticker_months = 10
+price_views = 1m_raw, 1m_split_normalized
+first_ts_utc = 2006-03-01 13:02:00+00:00
+last_ts_utc = 2025-02-28 22:10:00+00:00
+selected_price_hard_invalid_rows = 0
+negative_volume_rows = 0
+event_research_bar_candidate_rows = 161176
+backtest_core_bar_candidate_rows = 0
+raw_quality_manifest_missing_rows = 14076
+raw_quality_manifest_missing_ticker_months = 1
+parquet_file_count = 14
+output_tree_sha256 = 288b5b296bfec4a629ef5cf841340d8b72ca3f00cbda7f51b9092a34b84bb79e
+source_split_normalized_tree_sha256 = 796c5d8151677f90ba4a2a951399fcd44e353fb72ddbe090588f9edf761c43d4
+build_run_id = master_intraday_bar_table_v0_1_20260623T155007Z
+hard_fail_count = 0
+```
+
+### Test Evidence
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-23/data_foundation_outputs_master_intraday_v0_1_rerun/
+tests = 5
+passed = 5
+failed = 0
+skipped = 0
+
+C:/TSIS_Data/tests/test_runs/2026-06-23/data_foundation_outputs_seven_tables_v0_1_rerun/
+tests = 29
+passed = 29
+failed = 0
+skipped = 0
+```
+
+### Notes
+
+`master_intraday_bar_table_v0_1` is a governed scoped surface over the
+currently materialized `ohlcv_1m_split_normalized` event cases. That source
+folder is a validated proof/pilot of the 1m split-normalization method, not a
+precomputed normalized copy of all raw 1m ticker-months. This table exposes
+`1m_raw` and `1m_split_normalized` price views for that proof surface, carries
+raw 1m quality gates, and deliberately sets `backtest_core_bar_candidate =
+false` for all rows. It must not be read as full-universe raw 1m, as the final
+normalized 1m universe, or as execution truth. Future event/backtest scopes that
+need split-safe 1m must rerun the audited normalization pipeline on the required
+ticker-months and register that new scope.
+
+### Clarified After Review
+
+```text
+2026-06-23
+```
+
+The documentation was tightened to state explicitly that
+`E:/TSIS/data/ohlcv_1m_split_normalized` was built to demonstrate and inspect
+the correctness of the 1m split-normalization process on selected split cases.
+It was not intended to physically normalize the full `<1B>` universe in advance.
+
 ## v0.4.78 - Master daily table initial materialization
 
 ### Added

@@ -14,6 +14,19 @@ Este documento no materializa tablas. Define que outputs deben existir, para que
 sirven, de donde debe salir su informacion, como trabajan cuando aparece un
 evento y que no deben contener.
 
+La matriz de estado real de estas tablas vive en:
+
+```text
+01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+```
+
+Lectura obligatoria:
+
+```text
+target_contract = que debe existir y por que
+status_matrix   = que existe hoy, que esta validado y que sigue bloqueado
+```
+
 ## Graphify Context Consultado
 
 Este contrato fue preparado despues de consultar tres contextos Graphify del
@@ -73,6 +86,349 @@ La informacion completa se conserva en las fuentes raw/auditadas. Las tablas
 maestras deben guardar lo necesario para operar y enlazar el resto mediante
 keys estables.
 
+## Relacion Con La Data De Mercado Descargada
+
+Si: estas tablas deben venir de la data real descargada del mercado.
+
+No: estas tablas no deben copiar toda la raw data de mercado dentro de una tabla
+gigante.
+
+La regla es:
+
+```text
+raw market data descargada
+-> auditoria/calidad
+-> componentes derivados de estado
+-> market_state / event_state
+-> modelos, decisiones, backtests y evaluadores
+```
+
+La raw data descargada sigue siendo la verdad fisica completa:
+
+```text
+quotes
+trades
+daily
+1m
+halts
+reference
+short / short_review
+financial
+news / filings / alerts
+```
+
+Los outputs de Data Foundation deben extraer o normalizar de esa raw data solo
+lo necesario para reconstruir estado de forma eficiente, auditable y sin
+leakage.
+
+Ejemplo:
+
+```text
+quotes raw completos
+-> spread_median, spread_p95, locked_crossed_ratio, quote_update_rate,
+   nbbo_staleness, depth_proxy, liquidity_thinning_score
+```
+
+```text
+trades raw completos
+-> trade_count, trade_intensity, dollar_volume, odd_lot_ratio,
+   aggressive_flow_proxy, price_impact_proxy, duplicate_trade_ratio
+```
+
+Cuando un consumidor necesite inspeccion profunda, replay o recomputacion, debe
+volver al raw/auditado mediante keys, source paths, hashes y manifests.
+
+Regla:
+
+```text
+El estado debe estar basado en la data de mercado real descargada.
+El estado no debe ser una copia indiscriminada de toda la raw data.
+```
+
+## Justificacion Cientifica De Esta Arquitectura
+
+Esta decision no es solo preferencia de ingenieria.
+
+La literatura relevante apunta a una misma conclusion:
+
+```text
+los modelos de decision aprenden sobre estados estructurados;
+los estados deben venir de datos reales;
+la raw data debe conservarse como verdad recomputable;
+la tabla de entrenamiento debe ser legal en el tiempo, auditada y evaluable.
+```
+
+### 1. Offline RL Convierte Datasets En Decision Engines, Pero Solo Si El Dataset Esta Bien Definido
+
+Levine, Kumar, Tucker y Fu describen Offline RL como aprendizaje de politicas
+desde datos previamente recogidos, sin nueva interaccion online, y senalan que
+la promesa es convertir grandes datasets en motores de decision.
+
+Referencia:
+
+```text
+Levine et al. (2020)
+Offline Reinforcement Learning: Tutorial, Review, and Perspectives on Open Problems
+https://arxiv.org/abs/2005.01643
+```
+
+Implicacion TSIS:
+
+```text
+No basta tener raw data.
+Hay que construir datasets de estado/accion/reward con semantica estable.
+```
+
+### 2. Offline RL Falla Con Distribution Shift Si El Dataset No Cubre El Estado/Accion
+
+Kumar, Zhou, Tucker y Levine muestran que los metodos off-policy pueden fallar
+en Offline RL por sobreestimacion inducida por distribution shift entre el
+dataset y la politica aprendida.
+
+Referencia:
+
+```text
+Kumar et al. (2020)
+Conservative Q-Learning for Offline Reinforcement Learning
+https://arxiv.org/abs/2006.04779
+```
+
+Implicacion TSIS:
+
+```text
+Antes de entrenar RL hay que declarar cobertura, calidad, ventanas, acciones,
+labels/rewards y out-of-distribution guards.
+```
+
+### 3. La Microestructura No Se Modela Bien Como OHLCV Plano
+
+DeepLOB modela limit order books capturando estructura espacial del libro con
+convoluciones y dependencias temporales con LSTM, usando LOB data real de cash
+equities.
+
+Referencia:
+
+```text
+Zhang, Zohren, Roberts (2018/2020)
+DeepLOB: Deep Convolutional Neural Networks for Limit Order Books
+https://arxiv.org/abs/1808.03668
+```
+
+Implicacion TSIS:
+
+```text
+quotes/trades deben transformarse en representaciones microestructurales,
+ventanas, secuencias o embeddings, no simplemente pegarse a una tabla plana.
+```
+
+### 4. Alta Accuracy En LOB No Implica Senal Operable
+
+LOBFrame muestra que las caracteristicas microestructurales de las acciones
+afectan la eficacia de deep learning y que alta capacidad predictiva no equivale
+necesariamente a trading accionable. Tambien argumenta que metricas ML
+tradicionales pueden no evaluar bien forecasts de LOB.
+
+Referencia:
+
+```text
+Briola, Bartolucci, Aste (2024)
+Deep Limit Order Book Forecasting
+https://arxiv.org/abs/2403.09267
+```
+
+Implicacion TSIS:
+
+```text
+Por eso separamos prediccion, decision, ejecucion, costes, calidad y outcomes.
+```
+
+### 5. RL De Ejecucion Sobre LOB Requiere Simulacion Y Estado Escalable
+
+JAX-LOB se disena para procesar miles de libros en paralelo y se integra con
+paquetes JAX para abordar un problema de optimal execution con RL.
+
+Referencia:
+
+```text
+Frey et al. (2023)
+JAX-LOB: A GPU-Accelerated limit order book simulator to unlock large scale
+reinforcement learning for trading
+https://arxiv.org/abs/2308.13289
+```
+
+Implicacion TSIS:
+
+```text
+Si queremos RL/execution realista, necesitamos estados microestructurales
+recomputables y simulables, no solo snapshots sin lineage.
+```
+
+### 6. AlphaEvolve/FunSearch Demuestran Que La Busqueda Requiere Evaluadores Bloqueados
+
+AlphaEvolve mejora algoritmos mediante una tuberia evolutiva que recibe feedback
+continuo de evaluadores. FunSearch combina LLMs y procedimientos evolutivos para
+descubrimiento programatico.
+
+Referencias:
+
+```text
+Novikov et al. (2025)
+AlphaEvolve: A coding agent for scientific and algorithmic discovery
+https://arxiv.org/abs/2506.13131
+
+Romera-Paredes et al. (2024)
+Mathematical discoveries from program search with large language models
+https://www.nature.com/articles/s41586-023-06924-6
+```
+
+Implicacion TSIS:
+
+```text
+Antes de permitir busqueda evolutiva sobre eventos, features o policies,
+debemos bloquear datasets, estados, evaluadores, fitness y leakage gates.
+```
+
+### 7. Causal ML Justifica No Entrenar Solo Sobre Proxies Bonitos
+
+Scholkopf argumenta que problemas duros de ML e IA estan relacionados con
+causalidad.
+
+Referencia:
+
+```text
+Scholkopf (2019/2022)
+Causality for Machine Learning
+https://arxiv.org/abs/1911.10500
+```
+
+Implicacion TSIS:
+
+```text
+El estado debe intentar representar mecanismos: attention, liquidity stress,
+inventory stress, catalyst, regime, halts, short pressure y execution context,
+no solo indicadores visuales correlacionados.
+```
+
+### 8. Matriz Decision-Evidencia Para Agentes
+
+Ningun paper externo demuestra "TSIS" como arquitectura exacta.
+
+Lo que si existe es evidencia directa de cada obligacion tecnica que este
+contrato impone. Por tanto, un agente no debe leer esta seccion como
+bibliografia decorativa, sino como justificacion de diseno.
+
+| Decision TSIS | Evidencia directa | Obligacion tecnica |
+| --- | --- | --- |
+| Modelar eventos como estados, no como velas sueltas. | Kaelbling, Littman y Moore (1996) describen RL como decision secuencial fundada en Markov decision theory, delayed reinforcement y hidden state: https://arxiv.org/abs/cs/9605103 | Las tablas deben poder componer `state -> action -> reward/outcome`, no solo describir precio historico. |
+| Usar datasets historicos gobernados para decision engines. | Levine et al. (2020) definen Offline RL como uso de datos previamente recogidos para aprender politicas sin nueva interaccion online: https://arxiv.org/abs/2005.01643 | Cada tabla entrenable debe declarar cobertura, periodo, lineage, cutoffs y limitaciones. |
+| No entrenar RL sobre cobertura pobre o no declarada. | Kumar et al. (2020) muestran fallo por distribution shift entre dataset y politica aprendida: https://arxiv.org/abs/2006.04779 | Todo output debe exponer universe scope, full-universe claim, OOD risk y promotion status. |
+| No reducir microestructura a OHLCV plano. | DeepLOB usa estructura espacial del LOB y dependencias temporales para cash equities: https://arxiv.org/abs/1808.03668 | quotes/trades deben derivar features/secuencias microestructurales con ventana, reloj y contexto. |
+| Evaluar si una prediccion LOB es operable, no solo accurate. | LOBFrame muestra que alta forecasting power en LOB no implica senal accionable y propone evaluacion operacional: https://arxiv.org/abs/2403.09267 | Separar features, labels, outcomes, costes, ejecucion y evaluadores. |
+| Preparar simulacion/replay para ejecucion y RL. | ABIDES modela mercados con agentes, exchange, latencias y protocolos tipo NASDAQ ITCH/OUCH; JAX-LOB escala simulacion LOB para RL: https://arxiv.org/abs/1904.12066 y https://arxiv.org/abs/2308.13289 | Las tablas no sustituyen al raw; deben permitir replay, simulacion y recomputacion desde raw. |
+| Bloquear evaluadores antes de busqueda evolutiva. | FunSearch y AlphaEvolve dependen de evaluadores sistematicos para puntuar programas y evitar confabulacion: https://www.nature.com/articles/s41586-023-06924-6 y https://arxiv.org/abs/2506.13131 | Antes de AlphaEvolve financiero deben estar fijos datasets, validators, fitness, leakage gates y archive schema. |
+| Preferir mecanismos sobre correlaciones fragiles. | Scholkopf (2019/2022) conecta los problemas duros de ML con causalidad: https://arxiv.org/abs/1911.10500 | `market_state` debe representar mecanismos plausibles: attention, catalyst, liquidity stress, inventory stress, regime, short pressure y execution context. |
+
+## Regla Para Agentes Nuevos: Tablas Como Componentes De Estado
+
+Estas tablas son `state_components`.
+
+No son, por separado, el `market_state` institucional final.
+
+Interpretacion obligatoria:
+
+```text
+raw/audited data
+-> Data Foundation state components
+-> market_state / event_state reconstruction
+-> event_table
+-> outcome / strategy / ML / execution / RL
+```
+
+Por tanto:
+
+- una tabla puede estar bien materializada y seguir siendo solo un componente;
+- ningun consumidor debe llamarla `market_state` si no compone reloj causal,
+  lineage, quality gates, leakage boundaries y schema de estado;
+- los outputs de Data Foundation deben facilitar reconstruccion de estado, no
+  mezclar eventos, outcomes, estrategias, acciones o rewards;
+- todo builder nuevo debe declarar si produce `state_component`,
+  `event_state_candidate` o `institutional_market_state`.
+
+## Lectura Rapida: Que Data Lleva Cada Tabla
+
+Esta seccion existe para agentes nuevos sin contexto previo.
+
+Cada tabla lleva una parte distinta del futuro `market_state` / `event_state`.
+
+| Tabla | Que data lleva | Para que sirve en un evento |
+|---|---|---|
+| `instrument_master` | Identidad temporal del instrumento: `instrument_id`, ticker, nombre, tipo de activo, exchange, activo/inactivo, fechas, remaps y ticker lineage cuando aplique. | Saber que instrumento era realmente en esa fecha y evitar survivorship bias o errores por ticker label. |
+| `market_calendar` | Dias abiertos/cerrados, sesiones, premarket, regular session, after-hours, early close, timezone y session clocks. | Saber si ese dia/minuto es comparable y construir ventanas correctas. |
+| `expected_data_calendar` | Que data se espera por familia, ticker, fecha o sesion. | Distinguir ausencia esperada de ausencia patologica. |
+| `corporate_actions_table` | Splits, dividends, ticker changes, mergers, symbol events y price-view implications. | Evitar leer un split, dividendo o cambio de ticker como evento de trading. |
+| `master_daily_table` | Contexto diario por ticker/dia: OHLCV, gaps, volumen, RVOL, price view, daily liquidity, flags basicos y calidad. | Saber el contexto estructural antes y durante el evento. |
+| `master_intraday_bar_table` | Barras intradia, normalmente 1m: OHLCV, volumen, VWAP si aplica, sesion, minute index, price view y calidad. | Reconstruir evolucion intradia, premarket, opening drive y deteccion inicial del evento. |
+| `microstructure_features_table` | Resumen de quotes/trades en una ventana: spread, locked/crossed, tape intensity, odd lots, liquidez, calidad y textura libro/tape. | Saber como estaba la microestructura durante una ventana de evento. v0.1 es solo `seed_event_window_smoke`; no es entrenamiento ML/RL ni full-universe. |
+| `halts_table` | Halts, resumes, suspensions, timestamps y tipo/razon de halt cuando exista. | Saber si el evento fue interrumpido o condicionado por halt. |
+| `event_windows_table` | Ventanas gobernadas por evento: prior session, pre-event, event-response, same-session y next-session; incluye leakage gates y lineage del evento fuente. | Impedir que microestructura, outcomes, ML/RL o backtests inventen ventanas distintas o mezclen features pre-evento con labels post-evento. v0.1 cubre solo halts intradia LT1B con calendario. |
+| `outcomes_table` | Outcomes/labels post-evento por ventana gobernada y `price_view`: retornos next-session desde cierre del evento hacia open/high/low/close de la sesion siguiente, labels discretos y quality gates. | Separar `y` de `X`: permite Outcome Research, Strategy Research y ML labels sin contaminar features pre-evento. v0.1 es diario/halt-derived; no es reward RL ni outcome de ejecucion intradia. |
+| `fundamentals_asof_table` | Statement fundamentals conocidos as-of: income statements, balance sheets y cash flows con `filing_date` como disponibilidad; ratios y standalone `financial_v0_1` excluidos en v0.1. | Dar contexto estructural sin mirar informacion futura. Requiere seleccion externa `as_of_date <= event/session cutoff`; no es tabla directa de ML/RL. |
+| `short_context_table` | Short interest y short volume source-scoped desde `short` y `short_review`; v0.1 no trae SSR ni borrow/availability. | Medir short pressure, squeeze context y crowding bajo as-of/lag explicito. |
+| `short_sale_constraints_table` | SSR, borrow, locate, short availability, HTB/ETB state y borrow fee cuando exista fuente broker/vendor/regulatoria. | Saber si una estrategia short era ejecutable o restringida en ese instante. No puede inferirse desde short interest/volume. |
+| `regime_context_table` | Regimen de mercado/ticker/sector: volatilidad, liquidez, momentum, attention regime y condiciones agregadas. | Condicionar ML/RL por regimen y evitar mezclar estados visualmente parecidos pero semanticamente distintos. |
+| `news_context_table` | Noticias conocidas hasta el corte temporal: catalyst type, fuente, timestamps, ticker attribution y confidence. | Distinguir evento tecnico de evento con catalyst. |
+| `real_time_corporate_event_alerts_table` | Alertas live: offering, warrants, 8-K, 6-K, SEC/newswire/vendor, `received_utc`, event type y lineage. | Detectar eventos corporativos market-moving en tiempo real y generar `corporate_event_risk_state`. |
+| `dataset_certification_matrix` | Estado de calidad por familia/dataset: good/review/bad/scoped/blocked y gates de consumo. | Decidir si el caso puede usarse para research, backtest, ML o solo forense. |
+| `data_quality_report` | Evidencia humana, visual, estadistica y tecnica de auditoria. | No es feature. Sirve para justificar si los inputs que alimentan el estado son confiables. |
+
+Regla:
+
+```text
+una tabla = una pieza del estado
+market_state = composicion legal y auditada de piezas
+event_state = market_state + contexto/ventana/definicion del evento
+```
+
+## Por Que Hacemos Componentes Antes De Entrenar
+
+La fase actual no intenta entrenar modelos todavia.
+
+Intenta construir la cadena de custodia que hara posible entrenarlos despues sin
+engano estadistico, sin leakage y sin ambiguedad semantica.
+
+Motivo:
+
+```text
+Si una tabla no puede demostrar schema, lineage, calidad, hashes, tests,
+as-of semantics y uso permitido en pequeno, escalarla a millones de filas solo
+escala el error.
+```
+
+Por eso TSIS construye primero componentes pequenos o acotados:
+
+1. demostrar que la forma de la tabla es correcta;
+2. demostrar que se puede recomputar desde raw/auditado;
+3. demostrar que cada fila conserva lineage y calidad;
+4. demostrar que el consumidor sabe que puede y no puede hacer;
+5. documentar visualmente ejemplos humanos;
+6. solo despues ampliar cobertura.
+
+Esta fase responde:
+
+```text
+Podemos construir correctamente la pieza?
+Podemos auditarla?
+Podemos explicar que representa?
+Podemos impedir usos indebidos?
+```
+
+La fase futura de entrenamiento respondera:
+
+```text
+Con suficiente cobertura y labels separados, este estado ayuda a predecir,
+decidir o ejecutar?
+```
+
 ## Cuando Aparece Un Evento
 
 Supongamos que el Event Engine evalua:
@@ -120,21 +476,39 @@ El flujo correcto es:
    - consulta solo la ventana del evento cuando se necesita libro/tape;
    - calcula spread, crossed/locked, bid/ask depth, trade intensity,
      odd-lots, fuera de NBBO y liquidez usable;
-   - alimenta execution realism y filtros de viabilidad.
+   - alimenta execution realism y filtros de viabilidad;
+   - v0.1 existe solo como `seed_event_window_smoke`; para ML/RL,
+     backtest core o execution simulation debe existir una version posterior
+     con ventanas oficiales, E-root gobernado y cobertura declarada.
 
 7. `halts_table`
    - detecta si el evento fue interrumpido por halt, resume quote/trade o SEC
      suspension;
    - ajusta outcomes y simulacion.
 
-8. `fundamentals_asof_table`, `short_context_table`, `regime_context_table`,
+8. `event_windows_table`
+   - define ventanas comunes para pre-event features, event response,
+     same-session context y post-event outcomes;
+   - separa ventanas legalmente usables como features de ventanas que contienen
+     informacion posterior;
+   - v0.1 cubre solo eventos de halt intradia resueltos contra
+     `instrument_master` y `market_calendar`.
+
+9. `outcomes_table`
+   - materializa labels/outcomes post-evento desde ventanas gobernadas;
+   - separa resultados `y` de features pre-evento `X`;
+   - v0.1 cubre solo `next_session_regular_daily` para eventos halt-derived y
+     no debe usarse como reward RL ni como ejecucion intradia.
+
+10. `fundamentals_asof_table`, `short_context_table`,
+   `short_sale_constraints_table`, `regime_context_table`,
    `news_context_table`, `real_time_corporate_event_alerts_table`
    - agregan contexto solo si tienen semantica `as-of`;
    - capturan eventos corporativos market-moving publicados en segundos o
      minutos;
    - no deben contaminar el evento con informacion publicada despues.
 
-9. `dataset_certification_matrix` y `data_quality_report`
+11. `dataset_certification_matrix` y `data_quality_report`
    - deciden si el caso es `backtest_core`, `research`, `ml_flagged`,
      `forensic` o `quarantine`;
    - no son fuentes de mercado, son gates y evidencia.
@@ -743,6 +1117,23 @@ l_split_normalized, c_split_normalized, vw_split_normalized,
 materialized_price_view, source_1m_file, source_splits_file
 ```
 
+Scope de esta fuente:
+
+```text
+E:/TSIS/data/ohlcv_1m_split_normalized/ no es una copia normalizada full-universe
+de todo 1m. Es una materializacion piloto/proof con casos de split inspeccionados
+para demostrar que el codigo y la semantica de normalizacion 1m por split son
+correctos. Cuando un evento/backtest necesite otros ticker-meses con splits,
+debe ejecutarse ese pipeline ya auditado sobre el scope requerido y registrarse
+una nueva materializacion gobernada.
+```
+
+Runbook para materializacion amplia/full-universe:
+
+```text
+01_foundations/module_contracts/ohlcv_1m_split_normalized_full_universe_materialization_runbook_v0_1.md
+```
+
 Uso en evento:
 
 - detecta PM volume, first push, HOD, LOD, VWAP reclaim, pullback y event_end;
@@ -755,6 +1146,46 @@ No debe contener:
 - todos los trades;
 - fields de fundamentals;
 - labels que solo se conocen despues de la ventana.
+
+Materializacion actual:
+
+```text
+dataset_id: master_intraday_bar_table_v0_1
+path: E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_1
+layout: partitioned parquet dataset by year/month/price_view
+materialization_scope: scoped_split_normalized_event_cases
+full_universe_claim: false
+rows: 175252
+source_split_normalized_bar_rows: 87626
+tickers: 8
+ticker_months: 10
+price_views: 1m_raw, 1m_split_normalized
+first_ts_utc: 2006-03-01 13:02:00+00:00
+last_ts_utc: 2025-02-28 22:10:00+00:00
+selected_price_hard_invalid_rows: 0
+negative_volume_rows: 0
+event_research_bar_candidate_rows: 161176
+backtest_core_bar_candidate_rows: 0
+raw_quality_manifest_missing_rows: 14076
+raw_quality_manifest_missing_ticker_months: 1
+parquet_file_count: 14
+output_tree_sha256: 288b5b296bfec4a629ef5cf841340d8b72ca3f00cbda7f51b9092a34b84bb79e
+build_run_id: master_intraday_bar_table_v0_1_20260623T155007Z
+test_evidence: C:/TSIS_Data/tests/test_runs/2026-06-23/data_foundation_outputs_seven_tables_v0_1_rerun/
+hard_fail_count: 0
+```
+
+Lectura institucional:
+
+```text
+master_intraday_bar_table_v0_1 existe como superficie intradia gobernada,
+pero scoped. No es una copia full-universe de raw 1m ni la normalizacion fisica
+de todos los ticker-meses con split. Su denominador son los ticker-meses piloto
+ya materializados en ohlcv_1m_split_normalized para probar el mecanismo de
+normalizacion. Por contrato, backtest_core_bar_candidate es false en v0.1 y todo
+consumo debe preservar materialization_scope, full_universe_claim, price_view,
+raw_allowed_consumption y vwap_consumption_state.
+```
 
 ### 7. `microstructure_features_table`
 
@@ -770,7 +1201,7 @@ Grain recomendado:
 instrument_id/ticker + ts_utc or event_window_id + feature_window
 ```
 
-Fuentes candidatas:
+Fuentes conceptuales:
 
 ```text
 E:/TSIS/data/quotes/
@@ -781,11 +1212,55 @@ data_consumption_policies/quotes_consumption_policy.md
 data_consumption_policies/trades_consumption_policy.md
 ```
 
+Fuentes usadas por la materializacion v0.1:
+
+```text
+seed input:
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/configs/data_foundation_outputs/microstructure_features_seed_windows_v0_1.csv
+
+quotes source used now:
+D:/quotes
+
+future official quotes root:
+E:/TSIS/data/quotes
+
+quotes staging root:
+E:/TSIS/data/quotes_
+
+trades source used now:
+E:/TSIS/data/trades_ticks_prod_2005_2026
+
+identity source:
+E:/TSIS/data/data_foundation_outputs/instrument_master/instrument_master_v0_1.parquet
+
+family gate source:
+E:/TSIS/data/data_foundation_outputs/dataset_certification_matrix/dataset_certification_matrix_v0_1.parquet
+```
+
+Regla de interpretacion:
+
+```text
+inspection_dossiers/quotes and inspection_dossiers/trades explain audit quality,
+visual evidence, policies and human-readable findings. They are not the raw
+source used to compute the table values.
+
+microstructure_features_table_v0_1 computes features from the raw files declared
+in source_quotes_file and source_trades_file, then attaches family gates and
+identity context from governed CAPA 1 outputs.
+```
+
+La raiz `D:/quotes` es provisional para este seed porque la paridad fisica de
+quotes hacia `E:/TSIS/data/quotes` todavia esta abierta. La tabla conserva
+`quotes_root_state = provisional_d_legacy_recovery_root_pending_e_parity` y debe
+reconstruirse/compararse contra el root E gobernado antes de cualquier promocion
+de consumo.
+
 Muestra fisica quotes:
 
 ```text
-file: E:/TSIS/data/quotes/ZYXI/year=2025/month=12/day=03/quotes.parquet
-rows_in_file: 5940
+file: D:/quotes/ZYXI/year=2025/month=12/day=01/quotes.parquet
+rows_in_window: 13288
+sha256: 9b73b6bdd3d1e23e65f95b39926b36a4416e82aa9f00ae1fe62544b0e2099245
 columns: ask_exchange, ask_price, ask_size, bid_exchange, bid_price, bid_size,
 conditions, indicators, participant_timestamp, sequence_number, timestamp,
 tape, trf_timestamp, year, month, day
@@ -799,13 +1274,60 @@ Muestra fisica trades:
 
 ```text
 file: E:/TSIS/data/trades_ticks_prod_2005_2026/ZYXI/year=2025/month=12/day=2025-12-01/market.parquet
-rows_in_file: 18182
+rows_in_window: 18182
+sha256: d23f0dda5a5f8c65c9785d50675e061cee987b5e509da6007698dc60425d0646
 columns: ticker, date, timestamp, price, size, exchange, conditions, year,
 month, day
 
 ticker  date        timestamp                   price  size   exchange  conditions
 ZYXI    2025-12-01  2025-12-01 14:30:00.772845  1.21   29595  12        [17, 9, 41]
 ZYXI    2025-12-01  2025-12-01 14:30:00.772855  1.21   29595  12        [16]
+```
+
+Current materialization:
+
+```text
+dataset_id: microstructure_features_table_v0_1
+path: E:/TSIS/data/data_foundation_outputs/microstructure_features_table/microstructure_features_table_v0_1
+manifest: E:/TSIS/data/data_foundation_outputs/microstructure_features_table/_microstructure_features_table_manifest_v0_1.json
+summary: E:/TSIS/data/data_foundation_outputs/microstructure_features_table/_microstructure_features_table_summary_v0_1.csv
+schema: 01_foundations/canonical_schemas/outputs/microstructure_features_table_schema_contract.md
+dataset_contract: 01_foundations/contract_registry/dataset_contracts/microstructure_features_table_dataset_contract_v0_1.md
+consumption_policy: 01_foundations/data_consumption_policies/microstructure_features_table_consumption_policy.md
+registry: 01_foundations/dataset_registry/outputs/microstructure_features_table_registry_entry.yaml
+validators: 01_foundations/validators/outputs/microstructure_features_table_validators.md
+materializer: scripts/materialize_microstructure_features_table.py
+test: tests/data_foundation_outputs/test_microstructure_features_table_contract.py
+test_evidence: C:/TSIS_Data/tests/test_runs/2026-06-25/data_foundation_outputs_microstructure_features_table_v0_1_rerun/
+```
+
+Current candidate visual evidence:
+
+```text
+candidate_dataset_id: microstructure_features_table_v0_2_candidate
+candidate_scope: 6-row smoke artifact under test-run artifacts only
+visual_readout: 01_foundations/inspection_dossiers/microstructure_features/microstructure_candidate_visual_readout_v0_1.md
+visual_manifest: 01_foundations/inspection_dossiers/microstructure_features/visual_evidence_v0_1/microstructure_candidate_visual_manifest_v0_1.json
+image_dir: 01_foundations/inspection_dossiers/microstructure_features/visual_evidence_v0_1/images/
+human_notebook: 01_research/notebooks/data_foundation_outputs/microstructure_candidate_visual_evidence_v0_1.ipynb
+official_dataset_created: false
+full_universe_claim: false
+```
+
+Current v0.1 scope:
+
+```text
+build_run_id: microstructure_features_table_v0_1_20260625T155732Z
+materialization_scope: seed_event_window_smoke
+full_universe_claim: false
+seed_window: seed_zyxi_20251201_full_day
+row_count: 1
+ticker_count: 1
+quotes_rows: 13288
+trades_rows: 18182
+hard_fail_count: 0
+execution_sim_candidate_rows: 0
+backtest_core_microstructure_candidate_rows: 0
 ```
 
 Uso en evento:
@@ -820,6 +1342,9 @@ No debe contener:
 - todo quotes/trades bruto duplicado;
 - price adjustment economico;
 - targets de outcome.
+- claims de cobertura full-universe;
+- autorizacion de core backtesting o execution simulation mientras el scope sea
+  `seed_event_window_smoke`.
 
 ### 8. `fundamentals_asof_table`
 
@@ -829,44 +1354,84 @@ Clase:
 reference/context table
 ```
 
-Grain recomendado:
+Grain materializado v0.1:
 
 ```text
-instrument_id/ticker + as_of_date + statement_period + source
+source_file_relative_path + source_file_row_number + statement_family
 ```
 
-Fuentes candidatas:
+Fuente v0.1:
 
 ```text
-E:/TSIS/data/financial/
-E:/TSIS/data/additional/
-E:/TSIS/data/reference/overview/
+E:/TSIS/data/additional/financials
 ```
 
-Muestra fisica:
+Subfamilias incluidas:
 
 ```text
-file: E:/TSIS/data/financial/ratios/ticker=A/ratios_A.parquet
-rows_in_file: 1
-columns: ticker, cik, date, price, average_volume, market_cap,
-earnings_per_share, price_to_earnings, price_to_book, price_to_sales,
-debt_to_equity, enterprise_value
+income_statements
+balance_sheets
+cash_flow_statements
+```
 
-ticker  cik         date        price   average_volume  market_cap
-A       0001090872  2026-03-06  115.07  2424738.0       32519050000.0
+Exclusiones v0.1:
+
+```text
+additional/financials/ratios = review_sparse_vendor_derived_snapshot_not_statement_asof_core
+E:/TSIS/data/financial = blocked_by_financial_consumption_policy_audit_status_FAIL
+```
+
+Materializacion actual:
+
+```text
+dataset_id: fundamentals_asof_table_v0_1
+path: E:/TSIS/data/data_foundation_outputs/fundamentals_asof_table/fundamentals_asof_table_v0_1
+rows: 621756
+tickers: 4813
+instruments: 4590
+parquet_files: 51
+build_run_id: fundamentals_asof_table_v0_1_20260626T101617Z
+materialization_scope: additional_financials_core_lt1b_statement_asof_v0_1
+output_tree_sha256: 07d3d0200e16e020cee79fc2cf6aa873cde0145cf7efa0f07d0e78c8aefe5d58
+manifest: E:/TSIS/data/data_foundation_outputs/fundamentals_asof_table/_fundamentals_asof_table_manifest_v0_1.json
+summary: E:/TSIS/data/data_foundation_outputs/fundamentals_asof_table/_fundamentals_asof_table_summary_v0_1.csv
+full_universe_claim: false
+```
+
+Conteos:
+
+```text
+source_files = 14472
+business_files = 14436
+empty_sentinel_files = 36
+business_rows = 621756
+
+statement rows:
+  income_statements = 242886
+  balance_sheets = 136661
+  cash_flow_statements = 242209
+
+quality:
+  good_statement_asof = 500530
+  review_no_temporal_identity = 121217
+  review_period_after_filing_date = 9
 ```
 
 Uso en evento:
 
-- aporta market cap, float, dilution risk y financial context cuando hay
-  `filing_date` o `as_of_date` defendible;
-- permite filtrar smallcaps sin lookahead;
-- alimenta Pattern Discovery y ML despues de pasar leakage checks.
+- aporta statement fundamentals conocidos legalmente por `filing_date`;
+- permite enriquecer un evento solo despues de seleccionar la ultima fila
+  elegible con `as_of_date <= event/session cutoff`;
+- alimenta Pattern Discovery y ML flagged despues de pasar leakage checks y
+  conservar `fundamental_quality_state`.
 
 No debe contener:
 
 - datos conocidos despues del evento como si fueran presentes;
 - period_end tratado como availability date;
+- ratios vendor snapshot de v0.1;
+- standalone `financial_v0_1` mientras siga bloqueado;
+- market cap/float historico intradia sin fuente as-of propia;
 - causalidad por defecto.
 
 ### 9. `news_context_table`
@@ -901,52 +1466,293 @@ No debe contener:
 - prueba de causalidad por si sola;
 - articulo posterior al evento como feature pre-event.
 
+Materializacion v0.1:
+
+```text
+dataset_id: news_context_table_v0_1
+path: E:/TSIS/data/data_foundation_outputs/news_context_table/news_context_table_v0_1/
+manifest: E:/TSIS/data/data_foundation_outputs/news_context_table/_news_context_table_manifest_v0_1.json
+summary: E:/TSIS/data/data_foundation_outputs/news_context_table/_news_context_table_summary_v0_1.csv
+build_run_id: news_context_table_v0_1_20260626T123436Z
+materialization_scope: additional_news_lt1b_published_utc_context_v0_1
+rows: 287138
+tickers: 3869
+instruments: 3699
+parquet_files: 9
+output_tree_sha256: bff4a26caaab27e1d7974e8947ecea8b26cea09e585fe304206812db8aafdbff
+```
+
+Quality:
+
+```text
+good_mono_ticker_news_context: 102556
+good_review_multi_ticker_news_context: 180051
+review_no_temporal_identity: 4531
+hard_fail_count: 0
+valid_for_event_context_candidate_rows: 282607
+valid_for_rl_training_direct_rows: 0
+```
+
+Uso correcto:
+
+- consumir solo con `published_utc <= event/decision cutoff`;
+- preservar `ticker` solicitado separado de `payload_tickers`;
+- tratar multi-ticker como attribution-review aunque pueda ser contexto valido;
+- no confundir `published_utc` historico con `received_utc` live.
+
 ### 10. `short_context_table`
 
 Clase:
 
 ```text
-reference/context table
+reference/context state component table
 ```
 
-Grain recomendado:
+Grain materializado v0.1:
 
 ```text
-ticker/instrument_id + settlement_date/date + source
+source_system + observation_family + ticker + observation_date +
+source_duplicate_key_ordinal
 ```
 
-Fuentes candidatas:
+Fuentes v0.1:
 
 ```text
 E:/TSIS/data/short/
-E:/TSIS/data/short_review/
-C:/TSIS_Data/data/short/
+E:/TSIS/data/short_review/finra_short/
+instrument_master_v0_1
 ```
 
-Muestra fisica:
+Materializacion actual:
 
 ```text
-file: E:/TSIS/data/short/short_interest/AACT.parquet
-rows_in_file: 54
-columns: settlement_date, ticker, short_interest, avg_daily_volume,
-days_to_cover
+dataset_id: short_context_table_v0_1
+path: E:/TSIS/data/data_foundation_outputs/short_context_table/short_context_table_v0_1/
+manifest: E:/TSIS/data/data_foundation_outputs/short_context_table/_short_context_table_manifest_v0_1.json
+summary: E:/TSIS/data/data_foundation_outputs/short_context_table/_short_context_table_summary_v0_1.csv
+build_run_id: short_context_table_v0_1_20260626T215417Z
+materialization_scope: short_and_short_review_source_scoped_context_v0_1
+rows: 7145337
+tickers: 4694
+instruments: 4462
+first_observation_date: 2017-12-29
+last_observation_date: 2026-04-29
+parquet_files: 32
+output_tree_sha256: 57c0abbdf6a1d4ef4d1ab6bd7ac326e2d57415645d7cd759605334334271652b
+full_universe_claim: false
+```
 
-settlement_date  ticker  short_interest  avg_daily_volume  days_to_cover
-2023-06-15       AACT    101578          255782            1.0
-2023-06-30       AACT    1572            190387            1.0
+Contratos y codigo:
+
+```text
+schema: 01_foundations/canonical_schemas/outputs/short_context_table_schema_contract.md
+dataset contract: 01_foundations/contract_registry/dataset_contracts/short_context_table_dataset_contract_v0_1.md
+registry: 01_foundations/dataset_registry/outputs/short_context_table_registry_entry.yaml
+policy: 01_foundations/data_consumption_policies/short_context_table_consumption_policy.md
+validators: 01_foundations/validators/outputs/short_context_table_validators.md
+materializer: scripts/materialize_short_context_table.py
+tests: tests/data_foundation_outputs/test_short_context_table_contract.py
+```
+
+Evidencia de test:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-26/data_foundation_outputs_short_context_table_v0_1/
+tests = 4
+passed = 4
+failed = 0
+skipped = 0
+```
+
+Conteos por fuente/familia:
+
+```text
+finra_official_free:short_interest rows = 505745, tickers = 4687
+finra_official_free:short_volume   rows = 4689038, tickers = 4623
+local_polygon:short_interest       rows = 520048, tickers = 4693
+local_polygon:short_volume         rows = 1430506, tickers = 3381
+
+source_system_counts:
+  finra_official_free = 5194783
+  local_polygon = 1950554
+
+observation_family_counts:
+  short_interest = 1025793
+  short_volume = 6119544
+```
+
+Quality:
+
+```text
+good_finra_official_free_short_interest_context = 306856
+good_finra_official_free_short_volume_context = 4528387
+good_local_certified_short_interest_context = 130656
+good_local_certified_short_volume_context = 114128
+review_finra_pre_2021_short_interest_semantics = 160406
+review_local_certification_status = 1705770
+review_no_temporal_identity = 193060
+review_source_duplicate_key = 6074
+
+bad_rows = 0
+duplicate_key_excess_rows = 5250
+valid_for_event_context_candidate_rows = 5240433
+valid_for_ml_feature_candidate_rows = 5080027
+valid_for_state_component_candidate_rows = 5240433
+valid_for_rl_training_direct_rows = 0
+borrow_data_present_rows = 0
+ssr_data_present_rows = 0
+full_universe_claim_rows = 0
+```
+
+Lectura institucional:
+
+```text
+short_context_table_v0_1 no elige una fuente unica de verdad opaca para short.
+Preserva dos planos fuente: `local_polygon` y `finra_official_free`.
+
+`short_review`/FINRA es baseline oficial/free y provenance. `short` conserva
+el plano local operativo. Los consumidores deben seleccionar fuente, familia,
+quality gate y lag/as-of de forma explicita.
 ```
 
 Uso en evento:
 
 - contexto de crowding y squeeze risk;
-- no tiene granularidad intradia fina;
-- debe consumirse con lag/availability explicitos.
+- short interest como contexto de posicionamiento reportado, no como intraday
+  inventory;
+- short volume como contexto diario de flujo/crowding, no como sell-short tape
+  completo;
+- debe consumirse con `observation_date <= event/decision cutoff` y lag/
+  availability explicitos;
+- puede alimentar Event Engine, Market State Builder, backtest extended y
+  `ml_flagged` solo bajo gates de calidad y as-of externo.
 
 No debe contener:
 
 - tape;
-- borrow real-time si no existe fuente;
-- causalidad intradia no demostrada.
+- SSR;
+- borrow/locate/availability real-time;
+- causalidad intradia no demostrada;
+- senales de estrategia;
+- labels/outcomes;
+- reward RL;
+- una decision silenciosa entre FINRA y local.
+
+### 10b. `short_sale_constraints_table`
+
+Clase:
+
+```text
+execution constraint / reference state component table
+```
+
+Status:
+
+```text
+target_defined_not_materialized
+```
+
+Contrato especifico:
+
+```text
+01_foundations/module_contracts/outputs/short_sale_constraints_table_target_contract_v0_1.md
+```
+
+Runbook de adquisicion y preparacion:
+
+```text
+01_foundations/module_contracts/outputs/short_sale_constraints_data_acquisition_runbook_v0_1.md
+```
+
+Grain objetivo:
+
+```text
+SSR:
+source_system + ticker/instrument_id + trading_date + venue_or_listing_market
+
+borrow/locate/availability:
+source_system + broker_or_vendor + account_scope + ticker/instrument_id +
+as_of_utc + source_event_id
+```
+
+Fuentes candidatas:
+
+```text
+SSR:
+official exchange/listing-market short-sale restriction files
+SEC / Regulation SHO rule reference
+vendor market data SSR feeds
+derived proxy from validated daily + intraday prices
+broker/order-route reject logs
+
+borrow/locate/availability:
+broker API or broker export
+DAS/SageTrader-compatible broker records if exposed by broker/API
+vendor securities-lending data
+internal OMS/order logs for locate requests and approvals
+execution reject logs
+```
+
+Fuentes que no bastan:
+
+```text
+short_context_table_v0_1
+FINRA short volume
+FINRA short interest
+daily OHLCV alone
+quotes/trades alone for borrow
+```
+
+Uso en evento:
+
+- determinar si SSR estaba activo en el momento del evento;
+- bloquear o ajustar ejecucion short cuando SSR restringe ordenes agresivas;
+- saber si habia shares available to short antes del cutoff;
+- saber si locate era requerido, solicitado y aprobado;
+- conocer broker/vendor/account scope de la disponibilidad;
+- alimentar execution realism, short strategy feasibility y live pre-checks.
+
+No debe contener:
+
+- short interest;
+- short volume;
+- senales de estrategia;
+- labels/outcomes;
+- claims de borrow universal entre brokers;
+- availability posterior al evento;
+- reward RL directo.
+
+Bloqueo actual:
+
+```text
+materialized = false
+known_physical_source_under_E:/TSIS/data = false
+short_context_table_replacement = false
+backtest_short_execution_ready = false
+live_trading_ready = false
+```
+
+Regla historica:
+
+```text
+20 years of market data
+!=
+20 years of broker-specific borrow inventory
+```
+
+El historico de precios, volumen, quotes, trades y short context permite
+estudiar mercado y presion short. No permite afirmar historico de borrow,
+locate, availability, HTB/ETB o borrow fee por broker/cuenta. Para eso hace
+falta fuente broker/vendor historica o captura live desde el primer dia
+operativo.
+
+Lectura institucional:
+
+```text
+TSIS puede estudiar short pressure con `short_context_table_v0_1`.
+TSIS no puede afirmar short execution feasibility institucional hasta que
+`short_sale_constraints_table` exista con fuente SSR/borrow/locate trazable.
+```
 
 ### 11. `real_time_corporate_event_alerts_table`
 
@@ -1268,6 +2074,90 @@ sec     1                <NA>    Garcis U.S.A., Inc.                  1995-10-13
 sec     1                <NA>    Environmental Chemicals Group, Inc.   1995-12-12
 ```
 
+Materializacion actual:
+
+```text
+dataset_id: halts_table_v0_1
+path: E:/TSIS/data/data_foundation_outputs/halts_table/halts_table_v0_1.parquet
+rows: 133116
+build_run_id: halts_table_v0_1_20260625T191305Z
+sha256: b7a2be01e8af852b9c00a7509648f8554e796ad04867fbc67879596a074084a8
+manifest: E:/TSIS/data/data_foundation_outputs/halts_table/_halts_table_manifest_v0_1.json
+summary: E:/TSIS/data/data_foundation_outputs/halts_table/_halts_table_summary_v0_1.csv
+source_master: E:/TSIS/data/Halts/processed/halts_master_multisource.parquet
+source_master_sha256: f7b72c298434529788e5ca65fee775e1869c04e02c69c1730ac77509ca899213
+source_summary_sha256: 8b2a8eda463b04dd2a1802a9f79061b565a67e292d823302beb3249cb89ae387
+```
+
+Contratos y codigo:
+
+```text
+schema: 01_foundations/canonical_schemas/outputs/halts_table_schema_contract.md
+dataset contract: 01_foundations/contract_registry/dataset_contracts/halts_table_dataset_contract_v0_1.md
+registry: 01_foundations/dataset_registry/outputs/halts_table_registry_entry.yaml
+policy: 01_foundations/data_consumption_policies/halts_table_consumption_policy.md
+validators: 01_foundations/validators/outputs/halts_table_validators.md
+materializer: scripts/materialize_halts_table.py
+tests: tests/data_foundation_outputs/test_halts_table_contract.py
+```
+
+Evidencia de test:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-25/data_foundation_outputs_halts_table_v0_1/
+tests = 4
+passed = 4
+failed = 0
+skipped = 0
+```
+
+Conteos materializados:
+
+```text
+source_counts:
+  nasdaq = 118592
+  nyse = 13178
+  sec = 1346
+
+event_state_counts:
+  good_full_intraday_event = 131671
+  regulatory_context_only = 1346
+  review_partial_identity = 88
+  bad_unusable_event = 11
+
+quality_state_counts:
+  good = 133017
+  review = 88
+  bad = 11
+
+valid_for_intraday_mask_count = 131671
+valid_for_date_context_count = 133017
+valid_for_backtest_event_mask_candidate_count = 131671
+```
+
+Anomalias preservadas:
+
+```text
+missing_halt_date_count = 11
+future_date_flag_count = 8
+timestamp_order_review_flag_count = 87
+parse_suspect_flag_count = 88
+duplicate_source_event_key_row_count = 1709
+```
+
+Lectura institucional:
+
+```text
+halts_table_v0_1 existe como output gobernado de CAPA 1 para contexto de
+interrupciones de mercado. No repara silenciosamente anomalias del source:
+las clasifica como good/review/bad y conserva lineage por fila.
+
+Es apta para event context, halt masks y restricciones de outcome/backtest
+cuando los gates lo permitan. No es fuente de precio, no es verdad de
+ejecucion, no prueba disponibilidad decision-time y no sustituye un contrato
+live con received_utc/latency.
+```
+
 Uso en evento:
 
 - interrumpe event windows;
@@ -1280,6 +2170,237 @@ No debe contener:
 - inferencias de estrategia;
 - timestamps inventados cuando solo existe fecha.
 
+### 12b. `event_windows_table`
+
+Clase:
+
+```text
+event-window/state-boundary table
+```
+
+Grain materializado v0.1:
+
+```text
+source_event_id + window_role
+```
+
+Fuente v0.1:
+
+```text
+halts_table_v0_1
+instrument_master_v0_1
+market_calendar_v0_1
+```
+
+Materializacion actual:
+
+```text
+dataset_id: event_windows_table_v0_1
+path: E:/TSIS/data/data_foundation_outputs/event_windows_table/event_windows_table_v0_1.parquet
+rows: 214112
+source_events: 42829
+tickers: 3710
+instruments: 3567
+build_run_id: event_windows_table_v0_1_20260625T231016Z
+sha256: cee3675487d13353f409813b24f44565aeb0187312dea860bbba13c977b1643e
+manifest: E:/TSIS/data/data_foundation_outputs/event_windows_table/_event_windows_table_manifest_v0_1.json
+summary: E:/TSIS/data/data_foundation_outputs/event_windows_table/_event_windows_table_summary_v0_1.csv
+materialization_scope: halts_intraday_lt1b_calendar_covered
+full_universe_claim: false
+```
+
+Contratos y codigo:
+
+```text
+schema: 01_foundations/canonical_schemas/outputs/event_windows_table_schema_contract.md
+dataset contract: 01_foundations/contract_registry/dataset_contracts/event_windows_table_dataset_contract_v0_1.md
+registry: 01_foundations/dataset_registry/outputs/event_windows_table_registry_entry.yaml
+policy: 01_foundations/data_consumption_policies/event_windows_table_consumption_policy.md
+validators: 01_foundations/validators/outputs/event_windows_table_validators.md
+materializer: scripts/materialize_event_windows_table.py
+tests: tests/data_foundation_outputs/test_event_windows_table_contract.py
+```
+
+Evidencia de test:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-25/data_foundation_outputs_event_windows_table_v0_1/
+tests = 4
+passed = 4
+failed = 0
+skipped = 0
+```
+
+Conteos materializados:
+
+```text
+source_valid_intraday_event_count = 131671
+identity_temporal_match_event_count = 44976
+calendar_covered_event_count = 42829
+excluded_no_temporal_identity_event_count = 86695
+excluded_no_market_calendar_session_event_count = 2147
+
+window_role_counts:
+  prior_session_regular = 42829
+  pre_event_30m = 42829
+  event_to_resume_or_30m = 42829
+  same_session_regular = 42829
+  next_session_regular = 42796
+
+event_session_phase_counts:
+  regular = 38672
+  afterhours = 2537
+  premarket = 1620
+
+event_window_quality_state_counts:
+  good = 213651
+  review_resume_fallback = 461
+```
+
+Lectura institucional:
+
+```text
+event_windows_table_v0_1 existe para fijar fronteras temporales, no para
+crear features, labels, estrategias o rewards.
+
+La tabla separa ventanas pre-evento legalmente usables como features de
+ventanas que contienen informacion posterior y solo deben alimentar outcomes,
+labels o analisis de respuesta.
+```
+
+Uso en evento:
+
+- define `prior_session_regular`, `pre_event_30m`,
+  `event_to_resume_or_30m`, `same_session_regular` y
+  `next_session_regular`;
+- permite que microstructure/outcomes/ML/backtest usen la misma frontera de
+  evento;
+- bloquea leakage mediante `leakage_safe_as_pre_event_feature` y
+  `valid_for_ml_feature_candidate`.
+
+No debe contener:
+
+- OHLCV;
+- quotes/trades bruto;
+- returns/outcomes calculados;
+- estrategia;
+- reward RL;
+- event families no materializadas.
+
+### 12c. `outcomes_table`
+
+Clase:
+
+```text
+outcome/label component table
+```
+
+Grain materializado v0.1:
+
+```text
+event_window_id + outcome_horizon + price_view
+```
+
+Fuente v0.1:
+
+```text
+event_windows_table_v0_1
+master_daily_table_v0_1
+```
+
+Materializacion actual:
+
+```text
+dataset_id: outcomes_table_v0_1
+path: E:/TSIS/data/data_foundation_outputs/outcomes_table/outcomes_table_v0_1.parquet
+rows: 128388
+event_windows: 42796
+source_events: 42796
+tickers: 3709
+instruments: 3566
+price_views: daily_raw, split_normalized, adjusted
+outcome_horizon: next_session_regular_daily
+materialization_scope: halt_next_session_daily_outcomes_v0_1
+build_run_id: outcomes_table_v0_1_20260626T073950Z
+sha256: ce793a75d747d50c053f44433d5e3e59ebb3616db7056c3e5087a005fb6db09e
+manifest: E:/TSIS/data/data_foundation_outputs/outcomes_table/_outcomes_table_manifest_v0_1.json
+summary: E:/TSIS/data/data_foundation_outputs/outcomes_table/_outcomes_table_summary_v0_1.csv
+full_universe_claim: false
+```
+
+Contratos y codigo:
+
+```text
+schema: 01_foundations/canonical_schemas/outputs/outcomes_table_schema_contract.md
+dataset contract: 01_foundations/contract_registry/dataset_contracts/outcomes_table_dataset_contract_v0_1.md
+registry: 01_foundations/dataset_registry/outputs/outcomes_table_registry_entry.yaml
+policy: 01_foundations/data_consumption_policies/outcomes_table_consumption_policy.md
+validators: 01_foundations/validators/outputs/outcomes_table_validators.md
+materializer: scripts/materialize_outcomes_table.py
+tests: tests/data_foundation_outputs/test_outcomes_table_contract.py
+```
+
+Evidencia de test:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-26/data_foundation_outputs_outcomes_table_v0_1/
+tests = 4
+passed = 4
+failed = 0
+skipped = 0
+```
+
+Conteos materializados:
+
+```text
+outcome_quality_state_counts:
+  good_daily_outcome = 121761
+  review_outcome_daily_missing = 3858
+  review_event_and_outcome_daily_missing = 1980
+  review_event_daily_missing = 789
+
+rows_by_price_view:
+  daily_raw = 42796
+  split_normalized = 42796
+  adjusted = 42796
+
+valid_for_ml_label_candidate_rows = 121761
+valid_for_strategy_label_candidate_rows = 121761
+valid_for_backtest_outcome_candidate_rows = 121761
+valid_for_rl_reward_candidate_rows = 0
+outcome_daily_join_missing_rows = 1389
+```
+
+Lectura institucional:
+
+```text
+outcomes_table_v0_1 existe para materializar la parte `y` post-evento de una
+ventana gobernada. No puede consumirse como feature pre-evento.
+
+La tabla separa labels y outcomes diarios de los componentes de estado. Las
+filas review se preservan para explicar cobertura y evitar fabricar labels
+cuando falta data diaria esperada o no existe fila outcome enlazable.
+```
+
+Uso en evento:
+
+- calcula retornos desde `event_close` hacia `outcome_open/high/low/close` de
+  la siguiente sesion regular;
+- emite labels discretos por umbrales diarios;
+- habilita Outcome Research, Strategy Research y ML labels bajo
+  `valid_for_ml_label_candidate=true`;
+- preserva `price_view` para no mezclar raw, split-normalized y adjusted.
+
+No debe contener:
+
+- features pre-evento;
+- estrategia;
+- accion o policy;
+- reward RL;
+- slippage/fills;
+- outcome intradia halt-resume;
+- quotes/trades bruto.
+
 ### 12. `regime_context_table`
 
 Clase:
@@ -1288,63 +2409,112 @@ Clase:
 reference/context table
 ```
 
-Grain recomendado:
+Grain materializado v0.1:
 
 ```text
-date or timestamp + regime_source + market_proxy
+regime_symbol + trading_date + source_granularity
 ```
 
-Fuentes candidatas:
+Fuente materializada:
 
 ```text
-E:/TSIS/data/regime_indicators/
+E:/TSIS/data/regime_indicators/**/minute.parquet
+E:/TSIS/data/data_foundation_outputs/market_calendar/market_calendar_v0_1.parquet
+```
+
+Fuentes explicitamente excluidas en v0.1:
+
+```text
+E:/TSIS/data/regime_indicators/**/day.parquet
 E:/TSIS/data/intraday_regime_features/
 E:/TSIS/data/additional/economic/
-```
-
-Muestra fisica regime:
-
-```text
-file: E:/TSIS/data/regime_indicators/indices/I_COMP/day.parquet
-rows_in_file: 705
-columns: open, close, high, low, datetime, date
-
-open         close        high         low          datetime
-11905.1231   12070.5929   12071.2871   11876.8166  1970-01-01 00:27:56.440800
-11896.3086   11855.8341   12040.3359   11853.3602  1970-01-01 00:27:56.527200
 ```
 
 Nota:
 
 ```text
-La muestra de regime_indicators muestra datetime/date sospechosos 1970-01-01.
-No debe consumirse como tabla institucional sin auditoria y validator.
+regime_indicators day.parquet queda bloqueado porque la auditoria previa mostro
+date/datetime sospechosos 1970-01-01. regime_context_table_v0_1 se construye
+desde minute.parquet y conserva el bloqueo en manifest, schema, policy y tests.
 ```
 
-Muestra fisica macro:
+Materializacion v0.1:
 
 ```text
-file: E:/TSIS/data/additional/economic/inflation.parquet
-rows_in_file: 950
-columns: date, cpi, cpi_year_over_year, cpi_core, pce, pce_core,
-pce_spending, _dataset, _ingested_utc
+dataset_id: regime_context_table_v0_1
+path: E:/TSIS/data/data_foundation_outputs/regime_context_table/regime_context_table_v0_1/
+manifest: E:/TSIS/data/data_foundation_outputs/regime_context_table/_regime_context_table_manifest_v0_1.json
+summary: E:/TSIS/data/data_foundation_outputs/regime_context_table/_regime_context_table_summary_v0_1.csv
+build_run_id: regime_context_table_v0_1_20260627T084649Z
+rows: 154692
+regime_symbols: 33
+parquet_files: 25
+source_minute_files: 33
+source_minute_rows_aggregated: 64348953
+blocked_day_files: 34
+output_tree_sha256: 6cb774257e72ec1fa0e0c4fd514141b684f21e262de0a82206362bdbfbcba48c
+```
 
-date        cpi    cpi_year_over_year  _dataset
-1947-01-01  21.48  NaN                 inflation
-1947-02-01  21.62  NaN                 inflation
+Quality:
+
+```text
+good_minute_aggregated_regime_context: 143840
+review_no_market_calendar_session: 9214
+review_source_bar_integrity: 107
+review_sparse_minute_coverage: 1531
+bad_rows: 0
+```
+
+Consumer gates:
+
+```text
+valid_for_event_context_candidate_rows: 143840
+valid_for_ml_feature_candidate_rows: 143834
+valid_for_state_component_candidate_rows: 143840
+valid_for_backtest_core_direct_rows: 0
+valid_for_rl_training_direct_rows: 0
+requires_asof_filter: true
+contains_future_information_without_event_filter: true
+same_session_intraday_causal_claim_allowed: false
+execution_truth: false
+full_universe_claim: false
+```
+
+Contract stack:
+
+```text
+schema: 01_foundations/canonical_schemas/outputs/regime_context_table_schema_contract.md
+dataset contract: 01_foundations/contract_registry/dataset_contracts/regime_context_table_dataset_contract_v0_1.md
+registry: 01_foundations/dataset_registry/outputs/regime_context_table_registry_entry.yaml
+policy: 01_foundations/data_consumption_policies/regime_context_table_consumption_policy.md
+validators: 01_foundations/validators/outputs/regime_context_table_validators.md
+materializer: scripts/materialize_regime_context_table.py
+tests: tests/data_foundation_outputs/test_regime_context_table_contract.py
+```
+
+Test evidence:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_regime_context_table_v0_1/
 ```
 
 Uso en evento:
 
 - marca contexto de mercado: risk-on/risk-off, volatility, index trend,
   liquidity regime;
-- permite Pattern Discovery y ML condicionado por regimen.
+- permite Pattern Discovery y ML condicionado por regimen despues de un as-of
+  join externo;
+- aporta un componente de estado para `market_state_builder`, no el estado
+  final completo.
 
 No debe contener:
 
 - ticker-level causality por defecto;
 - fechas erroneas sin correction contract;
 - labels forward-looking.
+- same-session intraday causal state;
+- execution truth;
+- direct RL training rows.
 
 ### 13. `dataset_certification_matrix`
 
@@ -1497,11 +2667,17 @@ microstructure_features_table
 halts_table
   -> interrumpe o clasifica el evento
 
+event_windows_table
+  -> fija fronteras temporales pre-evento, respuesta y outcome
+
 real_time_corporate_event_alerts_table
   -> captura catalysts corporativos publicados en segundos/minutos
 
 fundamentals/news/short/regime context
   -> explica contexto con as-of semantics
+
+short_sale_constraints_table
+  -> valida SSR, borrow, locate y shortability antes de asumir ejecucion short
 
 dataset_certification_matrix + data_quality_report
   -> decide si el caso se puede usar y bajo que restricciones
@@ -1530,9 +2706,12 @@ E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/
 E:/TSIS/data/data_foundation_outputs/microstructure_features_table/
 E:/TSIS/data/data_foundation_outputs/real_time_corporate_event_alerts_table/
 E:/TSIS/data/data_foundation_outputs/halts_table/
+E:/TSIS/data/data_foundation_outputs/event_windows_table/
+E:/TSIS/data/data_foundation_outputs/outcomes_table/
 E:/TSIS/data/data_foundation_outputs/fundamentals_asof_table/
 E:/TSIS/data/data_foundation_outputs/news_context_table/
 E:/TSIS/data/data_foundation_outputs/short_context_table/
+E:/TSIS/data/data_foundation_outputs/short_sale_constraints_table/
 E:/TSIS/data/data_foundation_outputs/regime_context_table/
 E:/TSIS/data/data_foundation_outputs/data_quality_report/
 ```
@@ -1661,6 +2840,7 @@ master_daily_table
 master_intraday_bar_table
 real_time_corporate_event_alerts_table
 halts_table
+event_windows_table
 dataset_certification_matrix
 ```
 
@@ -1670,6 +2850,7 @@ Consulta bajo demanda:
 microstructure_features_table
 news_context_table
 short_context_table
+short_sale_constraints_table
 regime_context_table
 fundamentals_asof_table
 ```
@@ -1680,6 +2861,8 @@ Consume:
 
 ```text
 event_table
+event_windows_table
+outcomes_table
 master_daily_table
 master_intraday_bar_table
 corporate_actions_table
@@ -1699,11 +2882,13 @@ Consume:
 ```text
 event_table
 outcome_table
+outcomes_table
+event_windows_table
 master_intraday_bar_table
 microstructure_features_table
 real_time_corporate_event_alerts_table
+short_sale_constraints_table
 halts_table
-execution constraints
 ```
 
 Regla:
@@ -1724,6 +2909,7 @@ quality flags
 instrument identity
 regime context
 execution feasibility
+short-sale constraints when legally as-of
 ```
 
 Regla:
@@ -1731,6 +2917,83 @@ Regla:
 ```text
 labels no pueden mezclarse con features.
 ```
+
+## State Composition Contract
+
+La composicion de `market_state_table` y `event_state_table` queda gobernada
+por:
+
+```text
+01_foundations/module_contracts/outputs/market_state_event_state_composition_contract_v0_1.md
+```
+
+Runbook de continuidad y build-loop skeleton:
+
+```text
+01_foundations/module_contracts/outputs/market_state_event_state_build_loop_runbook_v0_1.md
+```
+
+Lectura institucional:
+
+```text
+context tables != final state
+```
+
+Un estado solo existe institucionalmente cuando un builder declara:
+
+- `decision_timestamp_utc`;
+- as-of policy por componente;
+- source/manifest lineage;
+- component quality gates;
+- feature namespace version;
+- separacion explicita entre features y labels;
+- prohibicion de outcomes/rewards inline;
+- leakage/adversarial validation.
+
+Por tanto, los outputs ya materializados pueden ser componentes, pero no son
+por si solos `market_state_table` ni `event_state_table`.
+
+Estado actual del stack skeleton:
+
+```text
+schema contracts: defined
+dataset contracts: defined
+consumption policies: defined
+validator contracts: defined
+registry target entries: defined_not_materialized
+official builder status: not implemented
+fixture builder status: deterministic_fixture_only implemented
+fixture configs: defined
+test status: contract consistency + adversarial leakage fixtures passed
+market_state_table_v0_1 materialized: false
+event_state_table_v0_1 materialized: false
+```
+
+Evidencia fixture loop:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_market_event_state_fixture_loop_v0_1/
+tests = 14
+passed = 14
+failed = 0
+skipped = 0
+```
+
+Lectura obligatoria:
+
+```text
+Los builders actuales pueden escribir muestras JSONL solo bajo
+C:/TSIS_Data/tests/test_runs/.
+No escriben outputs oficiales bajo E:/TSIS/data/data_foundation_outputs/.
+No crean parquet oficial, manifest oficial ni summary oficial.
+```
+
+El fixture loop prueba que se bloquean:
+
+- `*_as_of_utc > decision_timestamp_utc`;
+- prefijos de labels/outcomes/rewards/future/signal/strategy/action/policy/
+  fill/pnl dentro del estado;
+- `post_event_review` usado como feature candidata ML.
 
 ## Promotion Barrier
 
@@ -1760,12 +3023,95 @@ Graphify refresh queue si altera el mapa semantico
 5. `master_daily_table`
 6. `master_intraday_bar_table`
 7. `microstructure_features_table`
-8. `real_time_corporate_event_alerts_table`
-9. `halts_table`
-10. `fundamentals_asof_table`
-11. `news_context_table`
-12. `short_context_table`
-13. `regime_context_table`
+8. `halts_table`
+9. `event_windows_table`
+10. `outcomes_table`
+11. `real_time_corporate_event_alerts_table`
+12. `fundamentals_asof_table`
+13. `news_context_table`
+14. `short_context_table`
+15. `short_sale_constraints_table`
+16. `regime_context_table`
+
+Estado actual de esta lista:
+
+```text
+items 1-10, 12-14 and 16 are materialized for their declared v0.1 scopes.
+items 11 and 15 remain pending governed materialization.
+```
+
+## Next Materialization Priority After Current v0.1 Stack
+
+La siguiente prioridad no es materializar `market_state_table` y
+`event_state_table` directamente.
+
+Orden operativo recomendado:
+
+```text
+1. master_intraday_bar_table wider/full-scope materialization plan
+2. microstructure_features_table multi-window/multi-event materialization plan
+3. market_state_table controlled real sample
+4. event_state_table controlled real sample
+5. short_sale_constraints_table after SSR/borrow/locate source acquisition
+6. real_time_corporate_event_alerts_table after live/vendor latency contract
+```
+
+Motivo:
+
+```text
+market_state_table y event_state_table son composiciones de estado.
+No deben promocionarse sobre una base intradia/microestructural debil.
+```
+
+Regla para comenzar una materializacion amplia/full-universe:
+
+```text
+No se lanza full-universe ciego.
+```
+
+Cada tabla debe tener antes:
+
+- source root oficial o paridad documentada;
+- scope/denominador declarados;
+- manifest policy;
+- recomputation test desde raw/source;
+- quality gates;
+- `full_universe_claim` explicito;
+- evidencia de tests;
+- changelog, registry y Graphify queue actualizados.
+
+Lectura por tabla:
+
+- `master_intraday_bar_table`: primera candidata para ampliar cobertura porque
+  ya existe pipeline piloto y runbook de normalizacion 1m. El loop operativo
+  queda definido en
+  `01_foundations/module_contracts/outputs/master_intraday_bar_table_wider_scope_materialization_plan_v0_1.md`.
+  Ese plan exige primero smoke split-safe, denominador, manifest, candidate
+  output, builder parametrizado, tests y gates de promocion. No autoriza
+  reutilizar `master_intraday_bar_table_v0_1` como full-universe.
+- `microstructure_features_table`: no debe ampliarse como tick-by-tick ciego
+  para todo minuto/ticker; primero debe materializar ventanas gobernadas de
+  eventos y decision timestamps. El loop operativo queda definido en
+  `01_foundations/module_contracts/outputs/microstructure_features_table_multi_window_materialization_plan_v0_1.md`.
+  Ese plan exige denominador de `event_windows_table`, estado explicito de la
+  raiz quotes (`E:/TSIS/data/quotes` oficial o `D:/quotes` candidato
+  provisional), output candidate-only, builder parametrizado, recomputacion
+  desde raw quotes/trades y evidencia visual/forense antes de promocionar. El
+  primer subpaso ya existe como manifest builder:
+  `scripts/build_microstructure_candidate_window_manifest.py`; ademas
+  `scripts/materialize_microstructure_features_table.py` ya soporta un path
+  candidato parametrizado probado bajo `C:/TSIS_Data/tests/test_runs/...`. La
+  primera evidencia visual/forense de 6 filas vive en
+  `01_foundations/inspection_dossiers/microstructure_features/` y el notebook
+  humano companion vive en
+  `01_research/notebooks/data_foundation_outputs/microstructure_candidate_visual_evidence_v0_1.ipynb`.
+  No escribe parquet oficial ni autoriza promocion.
+- `market_state_table` / `event_state_table`: deben esperar a tener componentes
+  intradia/microestructura mas defendibles.
+- `short_sale_constraints_table`: bloqueada por falta de fuente SSR/borrow/
+  locate/availability oficial, broker o vendor.
+- `real_time_corporate_event_alerts_table`: bloqueada por contrato live/vendor,
+  latency semantics y received-time lineage.
 
 Motivo:
 
@@ -1790,6 +3136,7 @@ La arquitectura correcta es:
 raw/audited truth
   -> governed compact outputs
   -> event-state reconstruction
+  -> market_state_table / event_state_table under composition contract
   -> event_table downstream
   -> outcome/strategy/ML/execution/RL
 ```
