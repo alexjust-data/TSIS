@@ -1,0 +1,42 @@
+{
+  "dataset_id": "event_state_table_v0_1",
+  "builder_version": "event_state_builder_fixture_v0_1",
+  "materialization_scope": "deterministic_fixture_smoke_v0_1",
+  "mode": "deterministic_fixture_only",
+  "official_output_allowed": false,
+  "input_fixture": "tests/fixtures/data_foundation_outputs/market_event_state_v0_1/event_state_events_good_v0_1.json",
+  "output_file": "event_state_sample_v0_1.jsonl",
+  "manifest_file": "event_state_sample_manifest_v0_1.json",
+  "allowed_state_roles": [
+    "pre_event",
+    "at_event",
+    "post_event_review",
+    "research_replay"
+  ],
+  "ml_feature_state_roles": [
+    "pre_event",
+    "at_event"
+  ],
+  "prohibited_prefixes": [
+    "outcome__",
+    "label__",
+    "reward__",
+    "action__",
+    "policy__",
+    "fill__",
+    "pnl__",
+    "future__",
+    "strategy__",
+    "signal__"
+  ],
+  "required_flags": {
+    "outcome_values_inline_allowed": false,
+    "label_columns_inline_allowed": false,
+    "reward_columns_inline_allowed": false,
+    "valid_for_rl_training_direct": false,
+    "valid_for_execution_simulator_direct": false,
+    "execution_truth": false,
+    "requires_asof_filter": true,
+    "full_universe_claim": false
+  }
+}

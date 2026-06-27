@@ -1566,8 +1566,22 @@ def launch_gap_and_go_app():
             if col not in out_df.columns:
                 out_df[col] = pd.NA
 
+        unique_tickers = sorted(out_df["ticker"].astype(str).str.upper().dropna().unique())
+        if len(unique_tickers) > 50:
+            missing_tv = (
+                out_df["tradingview_symbol"].astype("string").isna()
+                | ~out_df["tradingview_symbol"].astype("string").str.contains(":", regex=False, na=False)
+            )
+            if "primary_exchange" in out_df.columns:
+                for idx in out_df.index[missing_tv]:
+                    out_df.at[idx, "tradingview_symbol"] = _tradingview_symbol(
+                        str(out_df.at[idx, "ticker"]),
+                        out_df.at[idx, "primary_exchange"],
+                    )
+            return out_df
+
         overview_root = Path(reference_root.value)
-        for ticker in sorted(out_df["ticker"].astype(str).str.upper().dropna().unique()):
+        for ticker in unique_tickers:
             if ticker not in reference_cache:
                 reference_cache[ticker] = _load_market_cap_history(overview_root, ticker)
             hist = reference_cache[ticker]
@@ -1616,6 +1630,11 @@ def launch_gap_and_go_app():
                 )
             )
         candidate_dropdown.options = options
+        option_values = [value for _, value in options]
+        if option_values and candidate_dropdown.value not in option_values:
+            candidate_dropdown.value = option_values[0]
+        elif not option_values:
+            candidate_dropdown.value = None
         _sync_tradingview_symbol()
 
     def _resort_loaded_candidates(_change=None) -> None:

@@ -352,12 +352,23 @@ data_consumption_policies/
   daily_consumption_policy.md
   daily_return_labels_consumption_policy.md
   expected_data_calendar_consumption_policy.md
+  fundamentals_asof_table_consumption_policy.md
   halts_consumption_policy.md
   intraday_regime_features_consumption_policy.md
   instrument_master_consumption_policy.md
   lt1b_universe_consumption_policy.md
   market_calendar_consumption_policy.md
   master_daily_table_consumption_policy.md
+  master_intraday_bar_table_consumption_policy.md
+  microstructure_features_table_consumption_policy.md
+  news_context_table_consumption_policy.md
+  short_context_table_consumption_policy.md
+  regime_context_table_consumption_policy.md
+  market_state_table_consumption_policy.md
+  event_state_table_consumption_policy.md
+  halts_table_consumption_policy.md
+  event_windows_table_consumption_policy.md
+  outcomes_table_consumption_policy.md
   ohlcv_1m_raw_consumption_policy.md
   quotes_consumption_policy.md
   reference_consumption_policy.md

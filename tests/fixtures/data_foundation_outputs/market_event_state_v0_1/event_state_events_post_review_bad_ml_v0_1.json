@@ -1,0 +1,30 @@
+{
+  "rows": [
+    {
+      "event_state_id": "event_state_fixture_BAD_post_review_ml_v0_1",
+      "event_id": "event_fixture_BAD_0002",
+      "event_window_id": "event_window_fixture_BAD_0002",
+      "market_state_id": "market_state_fixture_ABCD_20260601T140000Z_pre_event_v0_1",
+      "instrument_id": "fixture_instrument_ABCD",
+      "ticker": "ABCD",
+      "event_family": "halt",
+      "event_timestamp_utc": "2026-06-01T14:05:00Z",
+      "decision_timestamp_utc": "2026-06-01T14:45:00Z",
+      "decision_date": "2026-06-01",
+      "state_role": "post_event_review",
+      "state_schema_version": "event_state_table_v0_1",
+      "state_builder_version": "event_state_builder_fixture_v0_1",
+      "state_quality_state": "event_state_blocked_future_information_detected",
+      "state_cutoff_utc": "2026-06-01T14:45:00Z",
+      "outcome_values_inline_allowed": false,
+      "label_columns_inline_allowed": false,
+      "reward_columns_inline_allowed": false,
+      "valid_for_rl_training_direct": false,
+      "valid_for_execution_simulator_direct": false,
+      "execution_truth": false,
+      "requires_asof_filter": true,
+      "full_universe_claim": false,
+      "valid_for_ml_feature_candidate": true
+    }
+  ]
+}

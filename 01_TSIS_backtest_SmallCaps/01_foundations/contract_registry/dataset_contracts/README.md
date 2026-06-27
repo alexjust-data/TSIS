@@ -293,6 +293,17 @@ Ejemplo:
 - `corporate_actions_table_dataset_contract_v0_1.md`
 - `dataset_certification_matrix_dataset_contract_v0_1.md`
 - `master_daily_table_dataset_contract_v0_1.md`
+- `master_intraday_bar_table_dataset_contract_v0_1.md`
+- `microstructure_features_table_dataset_contract_v0_1.md`
+- `halts_table_dataset_contract_v0_1.md`
+- `event_windows_table_dataset_contract_v0_1.md`
+- `outcomes_table_dataset_contract_v0_1.md`
+- `fundamentals_asof_table_dataset_contract_v0_1.md`
+- `news_context_table_dataset_contract_v0_1.md`
+- `short_context_table_dataset_contract_v0_1.md`
+- `regime_context_table_dataset_contract_v0_1.md`
+- `market_state_table_dataset_contract_v0_1.md`
+- `event_state_table_dataset_contract_v0_1.md`
 
 Estos contratos deben distinguir:
 
@@ -341,6 +352,12 @@ contract_registry/dataset_contracts/
   daily_dataset_contract_v0_1.md
   daily_label_taxonomy_and_cut_policy.md
   daily_return_labels_dataset_contract_v0_1.md
+  fundamentals_asof_table_dataset_contract_v0_1.md
+  news_context_table_dataset_contract_v0_1.md
+  short_context_table_dataset_contract_v0_1.md
+  regime_context_table_dataset_contract_v0_1.md
+  market_state_table_dataset_contract_v0_1.md
+  event_state_table_dataset_contract_v0_1.md
   intraday_regime_features_dataset_contract_v0_1.md
   halts_dataset_contract_v0_1.md
   instrument_master_dataset_contract_v0_1.md

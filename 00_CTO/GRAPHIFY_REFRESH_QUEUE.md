@@ -118,6 +118,107 @@ Por ventana dedicada:
 
 ## Entradas activas
 
+### 2026-06-25 - Market State Representation contract
+
+Estado: pending
+Severidad: HIGH
+
+Cambios:
+
+- `11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/market_state_representation_contract_v0_1.md`
+- `11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/market_state_representation_source_file_map_v0_1.md`
+
+Motivo:
+
+- nuevo contrato conceptual `candidate_policy`;
+- define Market State Representation como eje comun entre Data Foundation,
+  Event Engine, ML, Offline RL, live learning y AlphaEvolve;
+- incorpora justificacion cientifica directa y una lectura obligatoria de las
+  referencias que conectan estados, Offline RL, distribution shift, LOB
+  modeling, LOB simulation, evaluadores de program search y causal ML;
+- altera el mapa semantico que futuros agentes deben consultar.
+
+Accion requerida:
+
+```text
+Rebuild leaf:
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION
+
+Despues decidir si se actualiza el leaf de 11_MARKET_SCIENCE o el root CTO.
+No editar graphify-out manualmente.
+```
+
+### GFQ-20260623-001 - Long strategy definitions for DAS and Breakout
+
+Status: `pending`
+
+Severity: `MEDIUM`
+
+Slice:
+
+```text
+00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/
+```
+
+Reason:
+
+- Added initial `STRATEGY.md` definitions for DAS and Breakout.
+- Added the exploratory DAS notebook stack for first-push, first-dip and
+  first-push-high rebreak sample discovery.
+- Reworked DAS sample discovery to be scanner-first: screener appearance is the
+  candidate unit, while push/dip/rebreak are downstream diagnostics.
+- Added DAS `green_wick_dip_reactivation` semantics for wick dips inside green
+  continuation candles after first-push rebreak, with notebook diagnostics and
+  chart markers.
+- Added a static DAS premarket-only detail chart for focused event-day
+  premarket review.
+- Reworked DAS chart sizing toward square canvases so vertical price structure
+  is easier to inspect without shrinking the X-axis.
+- Adjusted DAS chart layout to reduce volume-panel height, lower chart
+  footprint and separate title/legend text.
+- Replaced inherited Gap and Go gap-measurement lines in DAS charts with a
+  dedicated premarket-open-to-first-push measurement.
+- Updated LONG Strategy Library navigation and documented the pilot sequence
+  `gap&go -> DAS -> Breakout`.
+- The change affects how future agents should locate and interpret long-side
+  strategy research, but does not promote event definitions or rebuild Graphify.
+
+Changed paths:
+
+```text
+00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/README.md
+00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/README.md
+00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/STRATEGY.md
+00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/das_widgets.py
+00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/das_case_explorer.ipynb
+00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/STRATEGY.md
+00_CTO/CHANGELOG.md
+00_CTO/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Recommended action:
+
+```text
+Batch with the next Trading Systems strategy-library Graphify refresh.
+```
+
+Root action:
+
+```text
+No immediate root update.
+```
+
+Owner:
+
+```text
+AlexJ / TSIS CTO
+```
+
+Notes:
+
+- These are exploratory strategy definitions for sample discovery and later
+  Event Library v0 decomposition, not promoted strategy contracts.
+
 ### GFQ-20260622-001 - CTO and root test topology scaffold
 
 Status: `pending`

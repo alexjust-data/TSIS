@@ -1,0 +1,2 @@
+event_window_id,ticker,session_date,window_start_utc,window_end_utc,window_label,source_scope_note
+seed_zyxi_20251201_full_day,ZYXI,2025-12-01,2025-12-01T00:00:00Z,2025-12-02T00:00:00Z,full_utc_day,Seed window for provisional microstructure table v0.1; quotes are read from D:/quotes until E:/TSIS/data/quotes parity is completed; trades are read from E:/TSIS/data/trades_ticks_prod_2005_2026.

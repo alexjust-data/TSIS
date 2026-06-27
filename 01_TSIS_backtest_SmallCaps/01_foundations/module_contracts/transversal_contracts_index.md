@@ -43,6 +43,7 @@ Indice navegable de documentos transversales, de gobernanza, de semantica de pre
 - `consumer_classes.md`
 - `data_storage_topology_and_target_state.md`
 - `raw_data_authority_and_derivation_map.md`
+- `transversal/raw_storage_parity_audit_requirement_v0_1.md`
 - `additional_to_master_tables_policy_v0_1.md`
 - `promotion_pipeline.md`
 - `operational_boundaries.md`

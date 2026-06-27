@@ -197,6 +197,75 @@ Toda hipótesis relevante debe poder degradarse, falsarse o ponerse en cuarenten
 TSIS no persigue el mejor resultado aislado.
 Persigue mecanismos suficientemente sólidos como para sobrevivir a validación, fricción y cambio de régimen.
 
+### 7.5. Justificación científica directa obligatoria
+
+Toda decisión técnica con pretensión institucional debe estar justificada con
+evidencia directa, no solo con intuición, conveniencia local o conversación.
+
+Esta regla aplica transversalmente a:
+
+- arquitectura;
+- contratos entre capas;
+- definición de datasets;
+- auditorías de calidad de datos;
+- schemas canónicos;
+- estados de mercado;
+- eventos;
+- features;
+- modelos ML/RL;
+- simuladores;
+- execution logic;
+- evaluadores;
+- funciones de fitness;
+- políticas de promoción;
+- y outputs consumidos downstream.
+
+Cuando una decisión se apoye en ciencia, research cuantitativo o literatura
+técnica, la documentación debe incluir referencias concretas y particulares.
+
+No basta escribir:
+
+```text
+esto sigue buenas prácticas
+```
+
+Debe quedar claro:
+
+```text
+qué decisión toma TSIS
+qué evidencia externa o interna la justifica
+qué obligación técnica impone esa evidencia
+qué limitación o supuesto queda abierto
+```
+
+Formato recomendado para decisiones relevantes:
+
+```text
+Decision TSIS -> Evidencia directa -> Obligacion tecnica -> Limitacion abierta
+```
+
+Si no existe evidencia científica directa suficiente, el componente no debe
+presentarse como institucionalmente demostrado. Debe marcarse como:
+
+- `engineering convention`;
+- `working hypothesis`;
+- `candidate_policy`;
+- `provisional`;
+- o `exploratory`;
+
+según corresponda.
+
+Esta exigencia no es local de una carpeta ni de una fase.
+Aplica con la misma dureza a todos los módulos de TSIS:
+
+- `01_TSIS_backtest_SmallCaps`;
+- `02_TSIS_webSocket_SmallCaps`;
+- `03_TSIS_Offline_RL`;
+- `00_CTO`;
+- y cualquier capa futura.
+
+Las reglas locales pueden endurecer este estándar, pero no rebajarlo.
+
 ---
 
 ## 8. Reglas sobre módulos y capas

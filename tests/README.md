@@ -83,7 +83,30 @@ materializadas:
 ```text
 instrument_master_v0_1
 market_calendar_v0_1
+expected_data_calendar_v0_1
+corporate_actions_table_v0_1
+dataset_certification_matrix_v0_1
+master_daily_table_v0_1
+master_intraday_bar_table_v0_1
+microstructure_features_table_v0_1
+halts_table_v0_1
+event_windows_table_v0_1
+outcomes_table_v0_1
+fundamentals_asof_table_v0_1
+news_context_table_v0_1
+short_context_table_v0_1
+regime_context_table_v0_1
 ```
+
+Contract skeletons not materialized:
+
+```text
+market_state_table_v0_1
+event_state_table_v0_1
+```
+
+These two state tables now also have deterministic fixture-only builders and
+adversarial leakage tests. This is not an official materialization.
 
 Ruta de tests:
 
@@ -96,7 +119,57 @@ Rutas de outputs:
 ```text
 E:/TSIS/data/data_foundation_outputs/instrument_master/
 E:/TSIS/data/data_foundation_outputs/market_calendar/
+E:/TSIS/data/data_foundation_outputs/expected_data_calendar/
+E:/TSIS/data/data_foundation_outputs/corporate_actions_table/
+E:/TSIS/data/data_foundation_outputs/dataset_certification_matrix/
+E:/TSIS/data/data_foundation_outputs/master_daily_table/
+E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/
+E:/TSIS/data/data_foundation_outputs/microstructure_features_table/
+E:/TSIS/data/data_foundation_outputs/halts_table/
+E:/TSIS/data/data_foundation_outputs/event_windows_table/
+E:/TSIS/data/data_foundation_outputs/outcomes_table/
+E:/TSIS/data/data_foundation_outputs/fundamentals_asof_table/
+E:/TSIS/data/data_foundation_outputs/news_context_table/
+E:/TSIS/data/data_foundation_outputs/short_context_table/
+E:/TSIS/data/data_foundation_outputs/regime_context_table/
 ```
+
+Future output roots reserved but not materialized:
+
+```text
+E:/TSIS/data/data_foundation_outputs/market_state_table/
+E:/TSIS/data/data_foundation_outputs/event_state_table/
+```
+
+Evidencia reciente:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-23/data_foundation_outputs_seven_tables_v0_1_rerun/
+C:/TSIS_Data/tests/test_runs/2026-06-25/data_foundation_outputs_microstructure_features_table_v0_1_rerun/
+C:/TSIS_Data/tests/test_runs/2026-06-25/data_foundation_outputs_halts_table_v0_1/
+C:/TSIS_Data/tests/test_runs/2026-06-25/data_foundation_outputs_event_windows_table_v0_1/
+C:/TSIS_Data/tests/test_runs/2026-06-26/data_foundation_outputs_outcomes_table_v0_1/
+C:/TSIS_Data/tests/test_runs/2026-06-26/data_foundation_outputs_fundamentals_asof_table_v0_1/
+C:/TSIS_Data/tests/test_runs/2026-06-26/data_foundation_outputs_news_context_table_v0_1/
+C:/TSIS_Data/tests/test_runs/2026-06-26/data_foundation_outputs_short_context_table_v0_1/
+C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_regime_context_table_v0_1/
+C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_market_state_table_contract_skeleton_v0_1/
+C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_event_state_table_contract_skeleton_v0_1/
+C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_market_event_state_fixture_loop_v0_1/
+C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_microstructure_candidate_window_manifest_v0_1/
+C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_microstructure_features_table_v0_1_default_guard/
+```
+
+Nota:
+
+```text
+data_foundation_outputs_microstructure_candidate_window_manifest_v0_1
+```
+
+valida solo el manifest candidato de ventanas para
+`microstructure_features_table_v0_2_candidate` y un candidato pequeño de
+features bajo `artifacts/`. No crea parquet oficial ni modifica
+`E:/TSIS/data/data_foundation_outputs/microstructure_features_table/`.
 
 Rutas de contratos relacionados:
 
@@ -110,8 +183,8 @@ C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/validators/outputs/
 
 Orden recomendado:
 
-1. Crear tests contractuales offline para `instrument_master_v0_1`.
-2. Crear tests contractuales offline para `market_calendar_v0_1`.
+1. Mantener tests contractuales offline para las tablas CAPA 1 ya materializadas.
+2. Ampliar tests contractuales cuando se materialice una tabla nueva.
 3. Crear evidencia third-party cacheada para muestras deterministicas.
 4. Crear tests opcionales con red solo bajo opt-in explicito.
 5. Crear tests adversariales que demuestren que los validadores fallan cuando

@@ -255,6 +255,26 @@ alimenta.
 Una capa derivada puede detectar problemas upstream, puede exigir revisar la
 RAW y puede quedar bloqueada por la RAW. Pero no convierte la RAW en buena.
 
+## 5.1 Regla de raiz operativa preferida
+
+La raiz operativa preferida para la base de datos activa de TSIS es:
+
+```text
+E:/TSIS/data
+```
+
+Las referencias a `D:/...` o `C:/TSIS_Data/data/...` en documentos historicos,
+manifests o dossiers deben leerse como rutas legacy/provenance mientras no
+exista una excepcion explicita.
+
+El cierre final de almacenamiento RAW exige demostrar paridad entre las carpetas
+raw/source-preserved relevantes bajo `D:/` y sus landings bajo `E:/TSIS/data`,
+segun:
+
+```text
+01_foundations/module_contracts/transversal/raw_storage_parity_audit_requirement_v0_1.md
+```
+
 ## 6. Mapa institucional por familia
 
 | Familia | Raiz fisica o logica principal | Procedencia RAW vendor | Rol funcional | Rol correcto en la cadena de auditoria | No debe usarse para afirmar |

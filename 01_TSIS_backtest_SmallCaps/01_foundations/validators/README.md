@@ -106,6 +106,17 @@ validators/
     corporate_actions_table_validators.md
     dataset_certification_matrix_validators.md
     master_daily_table_validators.md
+    master_intraday_bar_table_validators.md
+    microstructure_features_table_validators.md
+    halts_table_validators.md
+    event_windows_table_validators.md
+    outcomes_table_validators.md
+    fundamentals_asof_table_validators.md
+    news_context_table_validators.md
+    short_context_table_validators.md
+    regime_context_table_validators.md
+    market_state_table_validators.md
+    event_state_table_validators.md
   quotes/
     quotes_validators.md
   reference/

@@ -1,0 +1,29 @@
+{
+  "rows": [
+    {
+      "market_state_id": "market_state_fixture_BAD_20260601T140000Z_future_regime_v0_1",
+      "instrument_id": "fixture_instrument_BAD",
+      "ticker": "BAD",
+      "decision_timestamp_utc": "2026-06-01T14:00:00Z",
+      "decision_date": "2026-06-01",
+      "decision_session_date": "2026-06-01",
+      "state_horizon": "pre_event_30m",
+      "state_scope": "deterministic_fixture_smoke",
+      "state_schema_version": "market_state_table_v0_1",
+      "state_builder_version": "market_state_builder_fixture_v0_1",
+      "state_quality_state": "state_blocked_future_information_detected",
+      "identity_as_of_utc": "2026-06-01T09:00:00Z",
+      "regime_as_of_utc": "2026-06-01T21:00:00Z",
+      "identity_component_state": "included_good",
+      "regime_component_state": "included_good",
+      "identity__is_common_stock": true,
+      "regime__broad_market_return_1d": 0.006,
+      "quality__all_required_components_legal": false,
+      "valid_for_rl_training_direct": false,
+      "valid_for_execution_simulator_direct": false,
+      "execution_truth": false,
+      "requires_asof_filter": true,
+      "full_universe_claim": false
+    }
+  ]
+}

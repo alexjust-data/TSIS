@@ -86,6 +86,23 @@ Lectura institucional:
 - `D:\` no es una copia trivial;
 - contiene materializaciones operativas y datasets de trabajo muy usados por research, inspeccion y builders.
 
+Regla de convergencia:
+
+```text
+Todo raw/source-preserved relevante que permanezca bajo D:\ debe auditarse
+contra su landing equivalente bajo E:\TSIS\data antes de considerar cerrada la
+migracion fisica de datos.
+```
+
+El contrato operativo de esa auditoria vive en:
+
+```text
+01_foundations/module_contracts/transversal/raw_storage_parity_audit_requirement_v0_1.md
+```
+
+Esta regla aplica a todas las familias raw/source-preserved relevantes, no solo
+a `quotes`.
+
 ### 3.3 `C:\TSIS_Data\01_TSIS_backtest_SmallCaps`
 
 Representa la capa institucional del modulo.
@@ -111,6 +128,14 @@ Lectura institucional:
   `trades_ticks_prod_2005_2026`, `Halts`, `additional`, etc.);
 - los outputs derivados y gobernados de CAPA 1 deben agruparse bajo una raiz
   comun para no mezclarlos con raw/source folders.
+
+Target state:
+
+```text
+E:\TSIS\data es la raiz operativa preferida.
+D:\ puede existir como legacy/provenance/recovery mientras la auditoria de
+paridad RAW no este cerrada.
+```
 
 Raiz comun para outputs de CAPA 1:
 

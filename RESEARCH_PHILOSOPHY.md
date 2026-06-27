@@ -398,6 +398,27 @@ Cada resultado relevante debe poder responder:
 Sin trazabilidad no hay ciencia.
 Sin ciencia no hay edge defendible.
 
+### 9.4. La justificación científica debe ser directa
+
+TSIS no acepta referencias vagas como sustituto de razonamiento.
+
+Cuando una decisión de research, datos, eventos, estados, ML/RL, simulación o
+ejecución invoque ciencia o literatura técnica, debe explicar de forma directa:
+
+```text
+qué afirma la referencia;
+qué parte de TSIS justifica;
+qué obligación técnica genera;
+qué límites deja abiertos.
+```
+
+La bibliografía no debe usarse como decoración.
+Debe conectar explícitamente con decisiones operativas del sistema.
+
+Si una decisión no puede justificarse todavía con evidencia externa o interna
+suficiente, debe permanecer como hipótesis, convención de ingeniería o
+candidate policy, no como verdad institucional.
+
 ---
 
 ## 10. Limitaciones de TSIS

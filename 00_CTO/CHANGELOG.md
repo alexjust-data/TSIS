@@ -52,6 +52,116 @@ run summaries, trace logs y, si procede, release log propio.
 
 ### Added
 
+- Added
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/STEVEN_DUX_SOURCE_STRATEGY_INDEX_v0_1.md`
+  as a `source_note/draft` mapping Steven Dux source material into TSIS
+  strategy-research language: visual examples, strategy candidates, measurable
+  variables, crowding/dollar-block contexts and the requirement that future
+  Dux-style daily strategy notebooks produce both visual review artifacts and
+  statistics ledgers before any promotion.
+- Added
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/First_Red_Day/STRATEGY.md`
+  as the Duxinator-derived `source_note/strategy draft` for First Red Day,
+  including pre-red-day semantics, multi-day runner criteria, volume/dollar
+  volume requirements, range-damage math, remaining-reward formulas, required
+  candidate-table fields and embedded source images from the Duxinator lesson.
+- Added
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/Double_Layer_Resistance/STRATEGY.md`
+  as the Duxinator-derived `source_note/strategy draft` for Double Layer
+  Resistance, defining crowded ticker context, historical resistance proximity,
+  intraday consolidation failure, double-layer overhead supply semantics,
+  candidate states, formulas, table fields and required chart reviews for
+  future short-side strategy research.
+- Added the remaining Duxinator strategy/factor drafts under source-scoped
+  `stevenDux/` subfolders:
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/Bounce_Plus_Gap_Up_Short/STRATEGY.md`,
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/stevenDux/Gap_Up_Buying/STRATEGY.md`,
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/Double_Intraday_Top/STRATEGY.md`,
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/Parabolic_Breakout_Failed_Breakout/STRATEGY.md`,
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/stevenDux/Dip_Buying_Multi_Day_Runner/STRATEGY.md`,
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/Multi_Day_Top_Risk_Reward/STRATEGY.md`
+  and
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/stevenDux/Float_Rotation/FACTOR.md`;
+  each file preserves strategy/factor semantics as draft research, defines
+  measurable candidate fields for future notebooks, lists event-decomposition
+  candidates and records desired screenshots from its own source video only.
+- Added a Strategy Library provenance rule requiring embedded strategy images
+  to come from the same primary video/document/source as the strategy being
+  documented; missing images must be recorded as `Imagenes deseadas del propio
+  video` instead of substituting unrelated visual evidence.
+- Added
+  `11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/market_state_representation_contract_v0_1.md`
+  as a `candidate_policy` defining TSIS market state representation as the
+  state-first foundation for Event Engine, ML, Offline RL, live learning and
+  AlphaEvolve-style evaluator-driven research; the contract explicitly
+  separates current state components from future institutional `market_state`
+  and `event_state` objects, and clarifies that states derive from downloaded
+  market data without copying all raw data into a single training table, with
+  direct references to Offline RL, LOB modeling, evaluator-driven discovery and
+  causal ML literature, plus an explicit note that no single paper proves TSIS
+  end-to-end but the architecture is forced by convergent evidence on states,
+  historical datasets, distribution shift, LOB structure, simulation,
+  evaluators and causal mechanisms.
+- Added
+  `11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/market_state_representation_source_file_map_v0_1.md`
+  to preserve the discovered route map of TSIS files explaining market states,
+  event states, Data Foundation outputs, ML/RL consumption and AlphaEvolve
+  evaluator dependencies.
+- Added
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/STRATEGY.md` as the initial
+  long-side DAS strategy definition, separating awakening push, first dip hold,
+  first-push-high rebreak, DAS sequence activation and future Event Library v0
+  decomposition.
+- Added
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/STRATEGY.md` as the
+  initial long-side Breakout strategy definition, including level taxonomy,
+  breakout acceptance/failure semantics and future Event Library v0
+  decomposition.
+- Added the first exploratory DAS notebook stack under
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/`, including
+  `das_widgets.py`, `das_case_explorer.ipynb` and local `runs/` containment for
+  first-push, first-dip and first-push-high rebreak sample discovery.
+- Reworked the DAS exploratory notebook stack to use a scanner-first workflow:
+  market cap, session volume and price are hard screener filters, while push,
+  dip, rebreak, VWAP context and DAS state are measured as diagnostics for
+  later visual review.
+- Added DAS `green_wick_dip_reactivation` semantics and notebook diagnostics
+  for intrabar wick dips inside green continuation candles after first-push
+  rebreak.
+- Added a static DAS premarket-only detail chart with compact X-axis and tight
+  Y-axis scaling for event-day premarket review.
+- Reworked DAS chart sizing to use square notebook canvases and square exported
+  PNGs, increasing vertical space without reducing the available X-axis width.
+- Reduced DAS chart footprint by 15%, lowered the volume panel height, and split
+  chart titles into multiple lines to avoid title/legend overlap.
+- Replaced inherited Gap and Go percentage lines in DAS charts with a dedicated
+  premarket-open-to-first-push measurement.
+- Clarified the DAS strategy definition so first-push-high rebreak is an
+  operative candidate worth studying, while also activating the downstream DAS
+  dip sequence when not traded directly.
+- Expanded the DAS strategy definition with PAVM/JFBR scanner-timing examples,
+  explicit negative-case states for failed scanner-only candidates, and the
+  scanner v2 refactor contract requiring first-push percentage from premarket
+  open plus max-momentum percentage for the full live momentum move.
+- Refined the DAS scanner v2 implementation so `min_session_volume` is measured
+  as cumulative premarket volume before/during first-push construction, the
+  first dip must occur after the first-push high candle, and structural rebreaks
+  must occur within the initial DAS window instead of recapturing stale lower
+  highs later in premarket.
+- Updated DAS charts so scanner trigger labels show premarket-open gap percent,
+  trigger price and cumulative volume in an offset below-price arrow annotation; `prior
+  close` uses the inherited full-chart reference line again; `first push high`
+  remains a bounded labeled segment; and the exploratory `push start` marker is
+  removed from candidate review charts.
+- Added a shared EMA8/Wilder8 momentum overlay to strategy 1m charts: bullish
+  `EMA8 > Wilder8` regions use a translucent green band with green EMA/Wilder
+  lines, with Wilder thicker; bearish `EMA8 < Wilder8` regions use the same
+  visual grammar in red.
+- Updated Strategy Library LONG navigation to document the current pilot
+  sequence `gap&go -> DAS -> Breakout`.
+- Added `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/_shared/` as neutral
+  exploratory infrastructure for reusable strategy widgets/helpers, preventing
+  direct imports from one strategy folder into another.
 - Added `00_CTO/tests/` as the CTO test-governance scaffold, with dedicated
   README contracts for architecture contracts, governance contracts and private
   consistency checks.
@@ -130,6 +240,40 @@ run summaries, trace logs y, si procede, release log propio.
 
 ### Changed
 
+- Expanded `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/STRATEGY.md`
+  with corrected good DAS variants from annotated review images, including
+  `ROLR_clean_frontside_DAS_ladder`,
+  `TWG_deep_first_dip_VWAP_reclaim_rebreak`, embedded visual examples and
+  required scanner v2 metrics for first-push percentage, first-push high,
+  max-momentum high and momentum-end reason.
+- Added the Strategy Library dependency contract: strategy folders must not
+  import code, runs, notebooks, defaults or semantic helpers from other
+  strategy folders; shared utilities must live in neutral infrastructure such
+  as `03_STRATEGY_LIBRARY/_shared/`, or remain temporarily duplicated while
+  exploratory.
+- Shortened DAS exported PNG filenames while preserving full candidate metadata
+  in `EXPORT_MANIFEST.csv`, preventing Windows path-length failures during
+  full-run chart exports.
+- Reworked DAS chart exports to generate both `event_day_premarket_detail` and
+  `event_day_detail_until_1600_ny` PNG folders, omit only the selected
+  diagnostic marker signals from export charts, segment the first-push-high line
+  only up to the detected high, and continue exporting when an individual
+  candidate is malformed while recording `EXPORT_ERRORS.csv`.
+- Reworked DAS detail exports so chart 2, chart 3 and chart 4 are written
+  together per candidate under
+  `chart_exports/event_day_details_grouped/<candidate>/`, preserving grouped
+  review context while keeping `EXPORT_MANIFEST.csv`.
+- Fixed DAS and Gap&Go notebook run loading so large candidate sets avoid
+  blocking on full reference enrichment, and Gap&Go now selects the first loaded
+  candidate explicitly after run load.
+- Reworked DAS `maxpush` review semantics so notebook sorting, labels and PNG
+  names prefer the move from the first valid 04:00+ NY premarket bar to the
+  first-push high, while preserving scanner-to-max-high metrics for lineage.
+- Removed the DAS `green wick dip` visual marker from candidate charts while
+  preserving the underlying `first_green_wick_dip_*` diagnostic fields.
+- Added a DAS chart VWAP source selector: `calculated` keeps the session VWAP
+  computed from OHLCV, while `raw` plots the `vw`/`vw_split_normalized` column
+  carried by the 1m parquet when available.
 - Expanded `TSIS_LAB_ARCHITECTURE.md` from a compact summary into a richer
   promoted architecture derived from `00_private/arquitectura.md`, preserving
   the detailed layer-by-layer rationale while cleaning encoding, current folder

@@ -12,6 +12,15 @@ Indice navegable de documentos especificos de `ohlcv_1m` y de consumidores nacid
 - `../validators/ohlcv_1m/ohlcv_1m_raw_validators.md`
 - `ohlcv_1m_historical_closeout_lt1b_reconciliation_v0_1.md`
 
+## `ohlcv_1m_quote_guarded` workstream
+
+- `ohlcv_1m_quote_guarded/README.md`
+- `ohlcv_1m_quote_guarded/ohlcv_1m_quote_guarded_single_reading_v0_1.md`
+- `ohlcv_1m_quote_guarded/ohlcv_1m_quote_guarded_repair_runbook_v0_1.md`
+
+Estado: contrato inicial de gobernanza y tooling ejecutable manifest-first.
+Todavia no autoriza mutacion de `ohlcv_1m_raw`.
+
 ## `ohlcv_1m_split_normalized`
 
 - `ohlcv_1m_split_normalized_operational_landing_v0_1.md`

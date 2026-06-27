@@ -1,0 +1,43 @@
+{
+  "dataset_id": "market_state_table_v0_1",
+  "builder_version": "market_state_builder_fixture_v0_1",
+  "materialization_scope": "deterministic_fixture_smoke_v0_1",
+  "mode": "deterministic_fixture_only",
+  "official_output_allowed": false,
+  "input_fixture": "tests/fixtures/data_foundation_outputs/market_event_state_v0_1/market_state_components_good_v0_1.json",
+  "output_file": "market_state_sample_v0_1.jsonl",
+  "manifest_file": "market_state_sample_manifest_v0_1.json",
+  "required_feature_namespaces": [
+    "identity__",
+    "calendar__",
+    "daily__",
+    "intraday__",
+    "microstructure__",
+    "halt__",
+    "fundamentals__",
+    "news__",
+    "short_context__",
+    "short_constraints__",
+    "regime__",
+    "quality__"
+  ],
+  "prohibited_prefixes": [
+    "outcome__",
+    "label__",
+    "reward__",
+    "action__",
+    "policy__",
+    "fill__",
+    "pnl__",
+    "future__",
+    "strategy__",
+    "signal__"
+  ],
+  "required_flags": {
+    "valid_for_rl_training_direct": false,
+    "valid_for_execution_simulator_direct": false,
+    "execution_truth": false,
+    "requires_asof_filter": true,
+    "full_universe_claim": false
+  }
+}

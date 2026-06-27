@@ -93,6 +93,32 @@ El archivo `STRATEGY.md` debe explicar:
 - que notebooks o scripts sirven para buscar muestras;
 - que eventos v0 se derivaron de ella.
 
+## 4.1. Regla de procedencia de imagenes
+
+Las imagenes incrustadas dentro de un `STRATEGY.md` deben venir del mismo video,
+documento o fuente primaria que esta definiendo esa estrategia.
+
+Regla:
+
+```text
+No se pueden usar imagenes de otro video, otro playbook u otra estrategia como
+evidencia visual dentro de una estrategia concreta.
+```
+
+Si una imagen de otra fuente parece conceptualmente parecida, puede mencionarse
+solo como material relacionado, pero no debe incrustarse ni tratarse como
+evidencia de esa estrategia.
+
+Cuando aun no existan capturas del video propio, el documento debe incluir una
+seccion de `Imagenes deseadas del propio video` con timestamps concretos y una
+descripcion de que captura se necesita.
+
+Objetivo:
+
+```text
+texto, imagen y estrategia deben compartir la misma fuente primaria.
+```
+
 ## 5. Notebooks de estrategia
 
 Cada estrategia puede tener un notebook asociado.
@@ -119,6 +145,142 @@ Regla:
 ```text
 El notebook de estrategia es visor/lanzadera.
 La logica reutilizable debe vivir en scripts reproducibles.
+```
+
+## 5.1. Regla general de screener
+
+En la fase actual, muchas estrategias long deben empezar como si el humano
+estuviera mirando un screener operativo, no como si ya conociera el patron
+perfecto.
+
+El screener base para small/micro caps funciona con filtros simples:
+
+```text
+market_cap < 100M
+session_volume >= 500000
+0.5 <= price <= 20
+```
+
+El screener no exige todavia:
+
+- push perfecto;
+- numero fijo de velas;
+- volumen especifico del push;
+- bandera limpia;
+- rebreak dentro de X minutos;
+- close por encima de un nivel;
+- retencion perfecta del primer dip.
+
+Regla:
+
+```text
+Primero se captura la aparicion en screener.
+Despues el notebook etiqueta que ocurrio.
+```
+
+Por tanto, en notebooks de descubrimiento:
+
+- los filtros de screener pueden ser filtros duros;
+- los elementos del patron deben empezar como metricas o etiquetas;
+- las muestras malas, ambiguas y raras son utiles;
+- la optimizacion de filtros viene despues de revisar graficos.
+
+Ejemplo para DAS:
+
+```text
+Scanner_Appearance_Candidate
+-> medir si hubo primer push
+-> medir si hubo primer dip
+-> medir si hubo rebreak
+-> clasificar estado DAS
+```
+
+## 5.2. Contrato de dependencias entre estrategias
+
+Las estrategias deben ser independientes entre si.
+
+Regla contractual:
+
+```text
+Una estrategia no puede depender de otra estrategia.
+```
+
+Por tanto, esta prohibido que una carpeta de estrategia importe codigo desde
+otra carpeta de estrategia.
+
+Ejemplos prohibidos:
+
+```text
+LONG/DAS importando helpers desde LONG/gap&go
+LONG/Breakout importando helpers desde LONG/DAS
+SHORT/stevenDux/First_Red_Day importando helpers desde LONG/Breakout
+```
+
+La razon es semantica, no solo tecnica.
+
+Si `DAS` depende de `gap&go`, entonces DAS queda contaminado por decisiones de
+implementacion, nombres, defaults, graficos, filtros o supuestos que pertenecen
+a otra estrategia. Eso rompe la trazabilidad y dificulta saber si un resultado
+pertenece realmente a DAS o a una herencia accidental de Gap and Go.
+
+Regla correcta:
+
+```text
+codigo especifico de una estrategia -> vive dentro de la carpeta de esa estrategia
+codigo comun reutilizable -> vive en infraestructura neutral compartida
+runs de una estrategia -> viven dentro de runs/ de esa estrategia
+notebook de una estrategia -> lanza scripts de esa estrategia
+```
+
+Infraestructura neutral significa una ruta comun que no represente ninguna
+estrategia concreta.
+
+Ejemplo valido:
+
+```text
+03_STRATEGY_LIBRARY/
+  _shared/
+    strategy_widgets_common.py
+  LONG/
+    gap&go/
+    DAS/
+    Breakout/
+  SHORT/
+```
+
+Una estrategia puede reutilizar utilidades neutrales para:
+
+- lectura de datos;
+- formateo de comandos;
+- carga de universo;
+- referencia de exchange/company;
+- helpers de charts;
+- exportacion de PNGs;
+- utilidades de runs.
+
+Una estrategia no puede reutilizar desde otra estrategia:
+
+- definiciones operativas;
+- defaults semanticos;
+- filtros propios;
+- etiquetas de evento;
+- nombres de triggers;
+- reglas de seleccion;
+- notebooks;
+- runs;
+- archivos de salida.
+
+Si dos estrategias necesitan el mismo helper, el helper debe extraerse a una
+capa neutral antes de ser compartido.
+
+Si todavia no existe la capa neutral, se permite duplicacion temporal pequeña
+antes que dependencia lateral entre estrategias.
+
+Regla final:
+
+```text
+Compartir infraestructura neutral esta permitido.
+Heredar semantica o codigo desde otra estrategia esta prohibido.
 ```
 
 ## 6. Primera estrategia piloto
@@ -157,6 +319,33 @@ Los eventos finales deben escribirse primero en Event Library como:
 ```
 
 y solo despues, cuando esten claros, se moveran a su familia final.
+
+## 6.1. Siguiente secuencia long
+
+Despues de Gap and Go, la secuencia de trabajo long continua con:
+
+```text
+DAS
+Breakout
+```
+
+`DAS` se estudia primero porque parte de una accion que despierta, hace un
+primer push, aguanta el primer dip y vuelve a romper el high de ese primer
+push. El notebook debe ayudar a clasificar como se supera ese primer push:
+ruptura de una vela, bandera, shelf, compresion, reclaim de VWAP u otra forma
+observable.
+
+`Breakout` se estudia despues porque generaliza la ruptura alcista de niveles
+relevantes: premarket high, high of day, previous day high, rangos, whole
+dollars, VWAP, trendlines y niveles multi-day.
+
+Ambas estrategias pueden compartir visualizadores y scripts, pero deben mantener
+definiciones separadas:
+
+```text
+DAS = ruptura o recuperacion del high del primer push tras primer dip retenido.
+Breakout = ruptura alcista de un nivel relevante, sea o no el high del primer push.
+```
 
 ## 7. Material fuente actual
 

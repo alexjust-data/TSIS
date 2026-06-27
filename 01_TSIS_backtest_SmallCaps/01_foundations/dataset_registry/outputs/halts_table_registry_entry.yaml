@@ -1,0 +1,40 @@
+dataset_id: halts_table_v0_1
+logical_name: halts_table
+version: v0_1
+domain: data_foundation_outputs
+promotion_state: provisional_validated_for_declared_scope
+physical_root: E:/TSIS/data/data_foundation_outputs/halts_table
+primary_file: E:/TSIS/data/data_foundation_outputs/halts_table/halts_table_v0_1.parquet
+manifest: E:/TSIS/data/data_foundation_outputs/halts_table/_halts_table_manifest_v0_1.json
+summary: E:/TSIS/data/data_foundation_outputs/halts_table/_halts_table_summary_v0_1.csv
+source_dataset_id: halts_v0_1
+source_root: E:/TSIS/data/Halts
+source_file: E:/TSIS/data/Halts/processed/halts_master_multisource.parquet
+schema_contract: 01_foundations/canonical_schemas/outputs/halts_table_schema_contract.md
+dataset_contract: 01_foundations/contract_registry/dataset_contracts/halts_table_dataset_contract_v0_1.md
+source_dataset_contract: 01_foundations/contract_registry/dataset_contracts/halts_dataset_contract_v0_1.md
+consumption_policy: 01_foundations/data_consumption_policies/halts_table_consumption_policy.md
+source_consumption_policy: 01_foundations/data_consumption_policies/halts_consumption_policy.md
+validators: 01_foundations/validators/outputs/halts_table_validators.md
+materializer: scripts/materialize_halts_table.py
+allowed_consumers:
+  - event_engine
+  - data_quality_report
+  - data_audit_overlay
+  - forensic_review
+  - daily_event_context
+  - research_only
+restricted_consumers:
+  - backtest_event_mask_candidate
+  - backtest_extended
+  - ml_flagged
+  - execution_simulator
+blocked_consumers:
+  - strategy_alpha
+  - ml_primary
+  - rl_allowed
+  - live_downstream_candidate
+notes:
+  - Derived CAPA 1 output table; raw/source authority remains E:/TSIS/data/Halts.
+  - Review and bad halt rows are preserved with flags, not silently repaired.
+

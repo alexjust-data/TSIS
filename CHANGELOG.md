@@ -317,6 +317,31 @@ NO como log técnico.
 
 ---
 
+## v0.2.1 — Project-wide scientific justification standard
+
+### Changed
+
+- Promoted the scientific-justification requirement to root governance in
+  `PROJECT_RULES.md`.
+- Added the matching research-method principle to `RESEARCH_PHILOSOPHY.md`.
+
+### Impact
+
+- Any institutional decision across TSIS must now connect:
+
+```text
+Decision TSIS -> Evidencia directa -> Obligacion tecnica -> Limitacion abierta
+```
+
+- The requirement applies equally to data, contracts, audits, schemas, events,
+  market states, features, ML/RL, simulators, execution, evaluators, fitness
+  functions, promotion policies and downstream outputs.
+- Components without sufficient direct evidence must remain explicitly marked
+  as `engineering convention`, `working hypothesis`, `candidate_policy`,
+  `provisional` or `exploratory`.
+
+---
+
 ## v0.2.0 — Module 01 official Graphify leaf publication
 
 ### Added

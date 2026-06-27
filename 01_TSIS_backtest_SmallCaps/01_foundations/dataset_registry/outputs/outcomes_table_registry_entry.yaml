@@ -1,0 +1,57 @@
+dataset_id: outcomes_table_v0_1
+family: data_foundation_outputs
+class: outcome_label_component_table
+status: materialized_validated_for_declared_scope
+owner: 01_TSIS_backtest_SmallCaps/01_foundations
+root: E:/TSIS/data/data_foundation_outputs/outcomes_table
+artifacts:
+  dataset: E:/TSIS/data/data_foundation_outputs/outcomes_table/outcomes_table_v0_1.parquet
+  manifest: E:/TSIS/data/data_foundation_outputs/outcomes_table/_outcomes_table_manifest_v0_1.json
+  summary: E:/TSIS/data/data_foundation_outputs/outcomes_table/_outcomes_table_summary_v0_1.csv
+grain:
+  - event_window_id
+  - outcome_horizon
+  - price_view
+scope:
+  materialization_scope: halt_next_session_daily_outcomes_v0_1
+  outcome_horizon: next_session_regular_daily
+  full_universe_claim: false
+sources:
+  - dataset_id: event_windows_table_v0_1
+    role: temporal_boundary_source
+  - dataset_id: master_daily_table_v0_1
+    role: daily_price_view_source
+contracts:
+  schema: 01_foundations/canonical_schemas/outputs/outcomes_table_schema_contract.md
+  dataset_contract: 01_foundations/contract_registry/dataset_contracts/outcomes_table_dataset_contract_v0_1.md
+  consumption_policy: 01_foundations/data_consumption_policies/outcomes_table_consumption_policy.md
+  validators: 01_foundations/validators/outputs/outcomes_table_validators.md
+  materializer: scripts/materialize_outcomes_table.py
+allowed_consumers:
+  - outcome_research
+  - strategy_research
+  - ml_primary_with_label_gate
+  - ml_flagged
+  - backtest_extended
+  - forensic_only
+restricted_consumers:
+  - pre_event_feature_builder
+  - execution_simulator
+  - rl_allowed_reward
+  - live_downstream_candidate
+promotion_notes:
+  - v0.1 is daily next-session outcome only.
+  - v0.1 must not be used as intraday execution reward.
+  - Review rows are preserved for coverage diagnostics.
+current_materialization:
+  build_run_id: outcomes_table_v0_1_20260626T073950Z
+  rows: 128388
+  event_windows: 42796
+  price_views:
+    - daily_raw
+    - split_normalized
+    - adjusted
+  good_daily_outcome_rows: 121761
+  review_rows: 6627
+  output_sha256: ce793a75d747d50c053f44433d5e3e59ebb3616db7056c3e5087a005fb6db09e
+  test_evidence: C:/TSIS_Data/tests/test_runs/2026-06-26/data_foundation_outputs_outcomes_table_v0_1/

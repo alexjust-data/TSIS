@@ -354,9 +354,23 @@ Incluye:
 - `corporate_actions_table_registry_entry.yaml`
 - `dataset_certification_matrix_registry_entry.yaml`
 - `master_daily_table_registry_entry.yaml`
+- `master_intraday_bar_table_registry_entry.yaml`
+- `microstructure_features_table_registry_entry.yaml`
+- `halts_table_registry_entry.yaml`
+- `event_windows_table_registry_entry.yaml`
+- `outcomes_table_registry_entry.yaml`
+- `fundamentals_asof_table_registry_entry.yaml`
+- `news_context_table_registry_entry.yaml`
+- `short_context_table_registry_entry.yaml`
+- `regime_context_table_registry_entry.yaml`
+- `market_state_table_registry_entry.yaml`
+- `event_state_table_registry_entry.yaml`
 
-Estos outputs no son raw/source folders. Deben enlazar contrato, schema,
-policy, validators, materializer, manifest y summary de materializacion.
+Estos outputs no son raw/source folders. Los outputs materializados deben
+enlazar contrato, schema, policy, validators, materializer, manifest y summary
+de materializacion. Las entries `contract_defined_not_materialized` deben
+marcar `dataset`, `manifest` y `summary` como `null` hasta que exista
+materializacion real.
 
 ### `quotes/`
 

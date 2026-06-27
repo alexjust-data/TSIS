@@ -251,6 +251,17 @@ Schemas de outputs gobernados de CAPA 1:
 - `outputs/corporate_actions_table_schema_contract.md`
 - `outputs/dataset_certification_matrix_schema_contract.md`
 - `outputs/master_daily_table_schema_contract.md`
+- `outputs/master_intraday_bar_table_schema_contract.md`
+- `outputs/microstructure_features_table_schema_contract.md`
+- `outputs/halts_table_schema_contract.md`
+- `outputs/event_windows_table_schema_contract.md`
+- `outputs/outcomes_table_schema_contract.md`
+- `outputs/fundamentals_asof_table_schema_contract.md`
+- `outputs/news_context_table_schema_contract.md`
+- `outputs/short_context_table_schema_contract.md`
+- `outputs/regime_context_table_schema_contract.md`
+- `outputs/market_state_table_schema_contract.md`
+- `outputs/event_state_table_schema_contract.md`
 
 Deben distinguir:
 

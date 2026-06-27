@@ -64,6 +64,32 @@ Esta capa no reemplaza el intradia raw.
 
 Lo protege cuando el problema dominante deja de ser la microestructura local y pasa a ser la comparabilidad historica entre sesiones.
 
+## 7.1 Backtesting Oficial Y ML
+
+Para backtesting intradia oficial y ML, la regla es:
+
+```text
+el scope exacto consumido debe tener estrategia split-safe declarada.
+```
+
+Si el experimento declara universo `<1B>` completo, entonces la vista 1m
+split-normalized debe cubrir ese mismo universo/scope. Si el experimento usa
+event windows o ticker-months concretos, basta con materializar y registrar ese
+scope exacto.
+
+Esto permite dos rutas:
+
+- full-universe logico: materializar ticker-months afectados por splits y usar
+  raw como fallback cuando `future_split_factor = 1`;
+- full-universe fisico: copiar/materializar todo raw 1m en una raiz
+  split-normalized completa.
+
+Runbook operativo:
+
+```text
+01_foundations/module_contracts/ohlcv_1m_split_normalized_full_universe_materialization_runbook_v0_1.md
+```
+
 ## 8. Estado actual
 
 El piloto ya fue materializado en la ruta operativa propuesta:
