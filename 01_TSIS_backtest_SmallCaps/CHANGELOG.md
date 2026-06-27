@@ -18,6 +18,8 @@ Existe para preservar memoria arquitectonica y metodologica del modulo.
 - Registered the controlled 50-window
   `microstructure_features_table_v0_2_candidate` materialization in the Data
   Foundation output contracts and status matrix.
+- Added a 50-case visual/forensic inspection pack for the controlled candidate
+  under `inspection_dossiers/microstructure_features/`.
 - Documented that the candidate is physically materialized under
   `E:/TSIS/data/data_foundation_outputs/microstructure_features_table/` but is
   not an official promoted replacement for `microstructure_features_table_v0_1`.
@@ -33,8 +35,8 @@ Existe para preservar memoria arquitectonica y metodologica del modulo.
 
 ```text
 test_run: C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_microstructure_v0_2_controlled_candidate/
-tests: 4
-passed: 4
+tests: 5
+passed: 5
 failed: 0
 dataset_id: microstructure_features_table_v0_2_candidate
 materialization_scope: halt_event_windows_microstructure_candidate_controlled_25_per_role
@@ -48,6 +50,11 @@ pass_seed_window_rows: 24
 hard_fail_count: 0
 duplicate_key_groups: 0
 output_tree_sha256: a3d418b06d8c4bd200d51d8eb9c6d888664c1af86ab3dd37c80d48ff2397d128
+visual_readout: 01_foundations/inspection_dossiers/microstructure_features/microstructure_candidate_controlled_visual_readout_v0_2.md
+visual_manifest: 01_foundations/inspection_dossiers/microstructure_features/visual_evidence_v0_2_controlled_25_per_role/microstructure_candidate_controlled_visual_manifest_v0_2.json
+visual_case_count: 50
+visual_cached_quote_files_read: 9
+visual_cached_trade_files_read: 5
 ```
 
 ### Scope Notes

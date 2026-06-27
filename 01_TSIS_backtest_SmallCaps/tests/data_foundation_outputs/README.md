@@ -246,8 +246,8 @@ Ultima evidencia de candidato controlado materializado para
 
 ```text
 C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_microstructure_v0_2_controlled_candidate/
-tests = 4
-passed = 4
+tests = 5
+passed = 5
 failed = 0
 skipped = 0
 ```
@@ -273,13 +273,19 @@ execution_sim_candidate_rows = 0
 backtest_core_microstructure_candidate_rows = 0
 quotes_root_state = provisional_d_legacy_recovery_root_pending_e_parity
 trades_root_state = official_e_raw_root
+visual_readout = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/microstructure_features/microstructure_candidate_controlled_visual_readout_v0_2.md
+visual_manifest = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/microstructure_features/visual_evidence_v0_2_controlled_25_per_role/microstructure_candidate_controlled_visual_manifest_v0_2.json
+visual_case_count = 50
+visual_cached_quote_files_read = 9
+visual_cached_trade_files_read = 5
 ```
 
 El test comprueba manifest, summary, hash del arbol parquet, paths de contratos,
 semantica de source-window, flags de no promocion, missingness de trades y
-recomputacion puntual desde raw quotes/trades. No hace scans amplios sobre
-roots con millones de archivos: lee la particion declarada del candidato y dos
-muestras raw por path exacto.
+recomputacion puntual desde raw quotes/trades. Tambien valida que exista el pack
+visual/forense de 50 imagenes. No hace scans amplios sobre roots con millones
+de archivos: lee la particion declarada del candidato, dos muestras raw por path
+exacto y el manifest visual con rutas de imagen exactas.
 
 Interpretacion obligatoria:
 

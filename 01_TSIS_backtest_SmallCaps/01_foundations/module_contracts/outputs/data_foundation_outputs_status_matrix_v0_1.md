@@ -169,7 +169,7 @@ Latest controlled materialized candidate evidence for
 ```text
 C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_microstructure_v0_2_controlled_candidate/
 status = passed
-tests = 4
+tests = 5
 failed = 0
 skipped = 0
 dataset_id = microstructure_features_table_v0_2_candidate
@@ -189,6 +189,11 @@ backtest_core_microstructure_candidate_rows = 0
 output_tree_sha256 = a3d418b06d8c4bd200d51d8eb9c6d888664c1af86ab3dd37c80d48ff2397d128
 source_quotes_root_state = provisional_d_legacy_recovery_root_pending_e_parity
 source_trades_root_state = official_e_raw_root
+visual_readout = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/microstructure_features/microstructure_candidate_controlled_visual_readout_v0_2.md
+visual_manifest = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/microstructure_features/visual_evidence_v0_2_controlled_25_per_role/microstructure_candidate_controlled_visual_manifest_v0_2.json
+visual_case_count = 50
+visual_cached_quote_files_read = 9
+visual_cached_trade_files_read = 5
 ```
 
 This candidate validates a controlled materialization and sample recomputation

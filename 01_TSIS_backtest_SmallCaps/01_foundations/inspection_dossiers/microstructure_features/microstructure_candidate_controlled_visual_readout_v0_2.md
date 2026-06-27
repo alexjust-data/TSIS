@@ -1,4 +1,4 @@
-# Microstructure Candidate Visual Readout v0.1
+# Microstructure Candidate Controlled Visual Readout v0.2
 
 ## Scope
 

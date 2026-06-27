@@ -653,6 +653,9 @@ Define:
 - que la primera evidencia visual/forense de 6 filas ya existe en
   `inspection_dossiers/microstructure_features/`, con notebook companion en
   `01_research/notebooks/data_foundation_outputs/`;
+- que la evidencia visual/forense controlada de 50 filas ya existe en
+  `inspection_dossiers/microstructure_features/microstructure_candidate_controlled_visual_readout_v0_2.md`
+  y `visual_evidence_v0_2_controlled_25_per_role/`;
 - que una promocion futura sigue exigiendo tests, recomputacion desde raw,
   source-root state y evidencia visual/forense para el alcance promovido.
 

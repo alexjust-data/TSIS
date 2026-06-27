@@ -1,6 +1,6 @@
 {
   "pack_id": "microstructure_candidate_controlled_visual_evidence_v0_2",
-  "created_at_utc": "2026-06-27T18:25:53.150657+00:00",
+  "created_at_utc": "2026-06-27T18:28:31.778043+00:00",
   "candidate_dir": "E:\\TSIS\\data\\data_foundation_outputs\\microstructure_features_table\\microstructure_features_table_v0_2_candidate_controlled_25_per_role",
   "candidate_partition": "E:\\TSIS\\data\\data_foundation_outputs\\microstructure_features_table\\microstructure_features_table_v0_2_candidate_controlled_25_per_role\\year=2025\\month=12\\part-0000.parquet",
   "window_manifest": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\data_foundation\\microstructure_features_table_v0_2_candidate_controlled_25_per_role\\microstructure_features_table_v0_2_candidate_window_manifest_v0_1.csv",

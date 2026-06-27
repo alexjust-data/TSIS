@@ -445,9 +445,14 @@ trades_root: E:/TSIS/data/trades_ticks_prod_2005_2026
 trades_root_state: official_e_raw_root
 output_tree_sha256: a3d418b06d8c4bd200d51d8eb9c6d888664c1af86ab3dd37c80d48ff2397d128
 test_evidence: C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_microstructure_v0_2_controlled_candidate/
-tests: 4
-passed: 4
+tests: 5
+passed: 5
 failed: 0
+visual_readout: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/microstructure_features/microstructure_candidate_controlled_visual_readout_v0_2.md
+visual_manifest: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/microstructure_features/visual_evidence_v0_2_controlled_25_per_role/microstructure_candidate_controlled_visual_manifest_v0_2.json
+visual_case_count: 50
+visual_cached_quote_files_read: 9
+visual_cached_trade_files_read: 5
 ```
 
 Interpretation:

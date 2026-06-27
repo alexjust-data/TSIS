@@ -22,6 +22,16 @@ SOURCE_WINDOWS_CSV = (
     / "microstructure_features_table_v0_2_candidate_window_manifest_v0_1.csv"
 )
 OFFICIAL_V0_1_DIR = OUTPUT_ROOT / "microstructure_features_table_v0_1"
+VISUAL_READOUT = (
+    MODULE_ROOT
+    / "01_foundations/inspection_dossiers/microstructure_features/"
+    "microstructure_candidate_controlled_visual_readout_v0_2.md"
+)
+VISUAL_MANIFEST = (
+    MODULE_ROOT
+    / "01_foundations/inspection_dossiers/microstructure_features/"
+    "visual_evidence_v0_2_controlled_25_per_role/microstructure_candidate_controlled_visual_manifest_v0_2.json"
+)
 
 
 def _load_manifest() -> dict[str, Any]:
@@ -265,5 +275,44 @@ def test_microstructure_v0_2_controlled_candidate_sample_recomputes_from_raw(
                 "trades_rows": int(missing_row["trades_rows"]),
                 "quality_state": missing_row["microstructure_quality_state"],
             },
+        },
+    )
+
+
+def test_microstructure_v0_2_controlled_candidate_visual_evidence_pack(tsis_artifacts_dir: Path) -> None:
+    assert VISUAL_READOUT.exists()
+    assert VISUAL_MANIFEST.exists()
+    visual_manifest = json.loads(VISUAL_MANIFEST.read_text(encoding="utf-8"))
+    readout_text = VISUAL_READOUT.read_text(encoding="utf-8")
+
+    assert visual_manifest["pack_id"] == "microstructure_candidate_controlled_visual_evidence_v0_2"
+    assert visual_manifest["status"] == "visual_forensic_candidate_evidence_only"
+    assert visual_manifest["case_count"] == 50
+    assert visual_manifest["cached_quote_files_read"] == 9
+    assert visual_manifest["cached_trade_files_read"] == 5
+    assert visual_manifest["candidate_partition"] == str(DATASET_PARTITION)
+    assert visual_manifest["window_manifest"] == str(SOURCE_WINDOWS_CSV)
+    assert visual_manifest["official_dataset_created"] is False
+    assert visual_manifest["full_universe_claim"] is False
+    assert "# Microstructure Candidate Controlled Visual Readout v0.2" in readout_text
+    assert "case_count = 50" in readout_text
+
+    cases = visual_manifest["cases"]
+    assert len(cases) == 50
+    for case in cases:
+        image_path = Path(case["image_path"])
+        assert image_path.exists(), f"Missing visual evidence image: {image_path}"
+        assert image_path.suffix.lower() == ".png"
+        assert image_path.stat().st_size > 0
+
+    write_json_artifact(
+        tsis_artifacts_dir,
+        "microstructure_v0_2_controlled_candidate_visual_pack_check.json",
+        {
+            "visual_readout": str(VISUAL_READOUT),
+            "visual_manifest": str(VISUAL_MANIFEST),
+            "case_count": visual_manifest["case_count"],
+            "cached_quote_files_read": visual_manifest["cached_quote_files_read"],
+            "cached_trade_files_read": visual_manifest["cached_trade_files_read"],
         },
     )

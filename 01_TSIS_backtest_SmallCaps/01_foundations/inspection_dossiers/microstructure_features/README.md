@@ -5,6 +5,14 @@ This folder stores visual/forensic inspection evidence for microstructure featur
 Current readout:
 
 - `microstructure_candidate_visual_readout_v0_1.md`
+- `microstructure_candidate_controlled_visual_readout_v0_2.md`
+
+Current visual packs:
+
+- `visual_evidence_v0_1/`: 6-row smoke candidate visual evidence.
+- `visual_evidence_v0_2_controlled_25_per_role/`: 50-window controlled
+  candidate visual evidence for
+  `microstructure_features_table_v0_2_candidate`.
 
 Human notebook companion:
 

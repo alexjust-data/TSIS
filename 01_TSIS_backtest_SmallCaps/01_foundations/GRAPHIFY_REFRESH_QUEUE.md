@@ -3349,7 +3349,11 @@ Reason:
   partition under the governed Data Foundation output root.
 - Tests validate manifest, summary, output-tree hash, contract paths,
   source-window semantics, no-promotion flags, partial trade-source missingness
-  and sampled raw quote/trade recomputation.
+  sampled raw quote/trade recomputation and the 50-case visual/forensic pack.
+- Added a controlled visual evidence pack with 50 PNG panels and per-image
+  explanatory markdown. The builder reads the declared candidate partition and
+  caches raw quote/trade files, so the run read 9 quote files and 5 trade files
+  instead of reloading per window.
 - The test deliberately avoids broad filesystem scans over million-file roots:
   it reads the declared candidate partition and exact raw sample paths.
 - The candidate remains not promoted: `full_universe_claim=false`,
@@ -3366,6 +3370,11 @@ Changed paths:
 ```text
 tests/data_foundation_outputs/test_microstructure_features_controlled_candidate.py
 tests/data_foundation_outputs/README.md
+scripts/inspection/microstructure/build_microstructure_candidate_visual_evidence.py
+01_foundations/inspection_dossiers/microstructure_features/README.md
+01_foundations/inspection_dossiers/microstructure_features/microstructure_candidate_controlled_visual_readout_v0_2.md
+01_foundations/inspection_dossiers/microstructure_features/visual_evidence_v0_2_controlled_25_per_role/microstructure_candidate_controlled_visual_manifest_v0_2.json
+01_foundations/inspection_dossiers/microstructure_features/visual_evidence_v0_2_controlled_25_per_role/images/
 01_foundations/module_contracts/outputs/microstructure_features_table_multi_window_materialization_plan_v0_1.md
 01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
 01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
@@ -3382,6 +3391,8 @@ E:/TSIS/data/data_foundation_outputs/microstructure_features_table/_microstructu
 E:/TSIS/data/data_foundation_outputs/microstructure_features_table/_microstructure_features_table_summary_v0_2_candidate_controlled_25_per_role.csv
 C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/microstructure_features_table_v0_2_candidate_controlled_25_per_role/microstructure_features_table_v0_2_candidate_window_manifest_v0_1.csv
 C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_microstructure_v0_2_controlled_candidate/
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/microstructure_features/microstructure_candidate_controlled_visual_readout_v0_2.md
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/microstructure_features/visual_evidence_v0_2_controlled_25_per_role/
 ```
 
 Recommended action:
