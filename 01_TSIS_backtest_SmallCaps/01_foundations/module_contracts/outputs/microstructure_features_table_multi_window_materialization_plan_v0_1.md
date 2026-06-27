@@ -192,7 +192,9 @@ candidate_window_manifest_builder: implemented
 builder_path: scripts/build_microstructure_candidate_window_manifest.py
 feature_materializer_v0_2: parameterized candidate path tested
 materializer_path: scripts/materialize_microstructure_features_table.py
-official_parquet_created: false
+controlled_candidate_parquet_created: true
+controlled_candidate_promoted: false
+official_promoted_parquet_created: false
 ```
 
 The manifest builder creates a governed candidate window CSV/JSON from
@@ -370,13 +372,14 @@ The next agent should execute in this order:
 ## 15. Current Status
 
 ```text
-status: candidate_visual_evidence_created_for_6_row_smoke
+status: controlled_50_window_candidate_materialized_and_tested_not_promoted
 official_new_dataset_created: false
+controlled_candidate_dataset_created: true
 heavy_materialization_started: false
 test_candidate_feature_materialization_created: true
 candidate_visual_evidence_created: true
 full_universe_claim_granted: false
-next_executable_action: decide quotes-root state and expand only with declared denominator/recompute policy
+next_executable_action: expand visual/forensic evidence and resolve quotes E-root parity before any stronger promotion
 ```
 
 Latest candidate manifest evidence:
@@ -410,4 +413,51 @@ image_dir: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspection_dos
 notebook: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/notebooks/data_foundation_outputs/microstructure_candidate_visual_evidence_v0_1.ipynb
 visual_case_count: 6
 official_dataset_created: false
+```
+
+Latest controlled candidate materialization evidence:
+
+```text
+dataset_id: microstructure_features_table_v0_2_candidate
+materialization_scope: halt_event_windows_microstructure_candidate_controlled_25_per_role
+build_run_id: microstructure_features_table_v0_2_candidate_20260627T163646Z
+output: E:/TSIS/data/data_foundation_outputs/microstructure_features_table/microstructure_features_table_v0_2_candidate_controlled_25_per_role
+manifest: E:/TSIS/data/data_foundation_outputs/microstructure_features_table/_microstructure_features_table_manifest_v0_2_candidate_controlled_25_per_role.json
+summary: E:/TSIS/data/data_foundation_outputs/microstructure_features_table/_microstructure_features_table_summary_v0_2_candidate_controlled_25_per_role.csv
+source_windows_csv: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/microstructure_features_table_v0_2_candidate_controlled_25_per_role/microstructure_features_table_v0_2_candidate_window_manifest_v0_1.csv
+source_windows_csv_sha256: 969e8af1535b021f1306a8b80457ca18124ece8d0fceb5365d73edf4eb10645d
+rows: 50
+tickers: 9
+windows: 50
+quotes_file_present_rows: 50
+trades_file_present_rows: 24
+review_partial_source_rows: 26
+pass_seed_window_rows: 24
+hard_fail_count: 0
+duplicate_key_groups: 0
+full_universe_claim: false
+execution_sim_candidate_rows: 0
+backtest_core_microstructure_candidate_rows: 0
+quotes_root: D:/quotes
+quotes_root_state: provisional_d_legacy_recovery_root_pending_e_parity
+future_official_quotes_root: E:/TSIS/data/quotes
+trades_root: E:/TSIS/data/trades_ticks_prod_2005_2026
+trades_root_state: official_e_raw_root
+output_tree_sha256: a3d418b06d8c4bd200d51d8eb9c6d888664c1af86ab3dd37c80d48ff2397d128
+test_evidence: C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_microstructure_v0_2_controlled_candidate/
+tests: 4
+passed: 4
+failed: 0
+```
+
+Interpretation:
+
+```text
+This is a controlled candidate dataset, not an official replacement for
+microstructure_features_table_v0_1 and not an institutional microstructure
+training corpus. It proves candidate materialization, manifest/tree hashing,
+source-window lineage, row-level source hash handling, missing-trades state and
+sample raw recomputation. It remains blocked from ML/RL primary use, core
+backtesting and execution simulation until coverage, quotes E-root authority,
+larger visual/forensic evidence and promotion gates pass.
 ```

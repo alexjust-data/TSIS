@@ -80,7 +80,48 @@ LogRoot    = E:/TSIS/data/data_ops_manifests/quotes_clone
 ```
 
 The script uses `robocopy` because the operation can involve millions of files.
-It writes a robocopy log and a JSON manifest for each run.
+It writes a pre-manifest, PID manifest, heartbeat JSON/JSONL, robocopy log and
+final JSON manifest for each new run.
+
+This runbook is governed by:
+
+```text
+C:/TSIS_Data/LONG_RUNNING_OPERATIONS_CONTRACT.md
+```
+
+Every new full clone, scoped clone, dry-run or resume must print a monitor
+command at startup. The generic monitor is:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass `
+  -File "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\monitor_long_running_operation.ps1" `
+  -RunRoot "E:\TSIS\data\data_ops_manifests\quotes_clone" `
+  -Compact `
+  -Watch
+```
+
+If a specific `Run ID` is printed by the runner, add:
+
+```powershell
+-RunId "<printed_run_id>"
+```
+
+Expected telemetry files:
+
+```text
+E:/TSIS/data/data_ops_manifests/quotes_clone/<run_id>.pre_manifest.json
+E:/TSIS/data/data_ops_manifests/quotes_clone/<run_id>.heartbeat.json
+E:/TSIS/data/data_ops_manifests/quotes_clone/<run_id>.heartbeat.jsonl
+E:/TSIS/data/data_ops_manifests/quotes_clone/<run_id>.pids.json
+E:/TSIS/data/data_ops_manifests/quotes_clone/<run_id>.robocopy.log
+E:/TSIS/data/data_ops_manifests/quotes_clone/<run_id>.manifest.json
+```
+
+Operational note:
+
+An old run launched before this telemetry upgrade may only have a robocopy log
+and final manifest at completion. That legacy limitation must not be used as a
+template for new long-running commands.
 
 ## Dry Run
 

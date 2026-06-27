@@ -371,6 +371,25 @@ Lo que “sabemos” de palabra no sustituye:
 
 Quien toma decisiones finales dentro del proyecto debe aumentar el nivel de trazabilidad, no relajarlo.
 
+### 10.4. Operaciones largas observables
+
+Toda operación larga ejecutada por humanos, agentes o scripts debe obedecer:
+
+- `LONG_RUNNING_OPERATIONS_CONTRACT.md`
+
+Esto aplica a copias masivas, materializaciones, auditorías, normalizaciones,
+reparaciones, builds Graphify, entrenamientos, evaluaciones y cualquier comando
+que pueda quedar corriendo sin supervisión directa.
+
+Regla mínima:
+
+```text
+pre-manifest al inicio + PID + heartbeat + timestamps + log vivo + monitor separado + final manifest
+```
+
+Un comando serio que no permita saber dónde está, qué PID tiene, qué etapa
+ejecuta, qué logs actualiza y cómo monitorizarlo no cumple el estándar TSIS.
+
 ---
 
 ## 11. Reglas para agentes

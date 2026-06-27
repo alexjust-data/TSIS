@@ -91,6 +91,14 @@ full universe, ML/RL-ready, execution-ready or core-backtest-ready.
 The output proves the computation path and misuse gates on a seed window. It is
 not a trainable or institutional state component.
 
+`controlled_candidate_not_promoted`
+
+The output exists physically as a candidate under the governed output root, has
+manifest/test evidence for a declared controlled scope, and is useful for
+lineage/recompute/missingness diagnostics. It is not an official promoted
+replacement and must not be used as primary ML/RL, execution or core-backtest
+truth.
+
 `not_materialized`
 
 The target table is conceptually defined or expected, but no governed output
@@ -108,6 +116,7 @@ exists under `E:/TSIS/data/data_foundation_outputs/`.
 | `master_daily_table_v0_1` | 21,771,864 | 63 | daily rows x three price views | Seven-table rerun passed | `validated_for_declared_scope` | daily event context, outcome research, backtest core rows where flags allow | no full row-level audit labels; no execution/microstructure |
 | `master_intraday_bar_table_v0_1` | 175,252 | 14 | `scoped_split_normalized_event_cases`; `full_universe_claim=false` | Seven-table rerun passed | `scoped_pilot` | scoped event research and backtest extended with flags | not full-universe 1m; backtest core rows = 0; not execution truth |
 | `microstructure_features_table_v0_1` | 1 | 1 | `seed_event_window_smoke`; `full_universe_claim=false` | isolated rerun passed; 6-row candidate visual smoke evidence exists | `seed_state_sample` | schema/lineage/recompute proof for one event window | not ML/RL-ready, not core-backtest-ready, not execution-ready |
+| `microstructure_features_table_v0_2_candidate_controlled_25_per_role` | 50 | 1 | halt event-window candidate; 25 rows per selected role; `full_universe_claim=false` | isolated candidate test passed | `controlled_candidate_not_promoted` | controlled candidate diagnostics for quote/trade lineage, missingness, recomputation and market-state design | quotes uses provisional `D:/quotes`; trades present only 24/50; not ML/RL-ready, not core-backtest-ready, not execution-ready |
 | `halts_table_v0_1` | 133,116 | 1 | Nasdaq/NYSE halts and SEC suspensions from `halts_v0_1` | isolated rerun passed | `validated_for_declared_scope` | event interruption context, halt masks, date/intraday halt state | no decision-time availability model, no live latency contract, review/bad rows preserved |
 | `event_windows_table_v0_1` | 214,112 | 1 | halt-derived event windows for LT1B/calendar-covered intraday halt events | isolated rerun passed | `validated_for_declared_scope` | event-window boundaries, pre-event feature windows, outcome-window candidates | halts only; not all event families; not primary ML/RL/execution truth |
 | `outcomes_table_v0_1` | 128,388 | 1 | next-session daily outcomes for halt-derived event windows x three daily price views | isolated rerun passed | `validated_for_declared_scope` | daily post-event labels/outcome research with feature/label separation | daily labels only; not intraday execution outcome, not RL reward, not all event families |
@@ -153,6 +162,39 @@ visual_readout = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspecti
 notebook = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/notebooks/data_foundation_outputs/microstructure_candidate_visual_evidence_v0_1.ipynb
 visual_case_count = 6
 ```
+
+Latest controlled materialized candidate evidence for
+`microstructure_features_table_v0_2_candidate`:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_microstructure_v0_2_controlled_candidate/
+status = passed
+tests = 4
+failed = 0
+skipped = 0
+dataset_id = microstructure_features_table_v0_2_candidate
+materialization_scope = halt_event_windows_microstructure_candidate_controlled_25_per_role
+rows = 50
+tickers = 9
+windows = 50
+quotes_file_present_rows = 50
+trades_file_present_rows = 24
+review_partial_source_rows = 26
+pass_seed_window_rows = 24
+hard_fail_count = 0
+duplicate_key_groups = 0
+full_universe_claim_rows = 0
+execution_sim_candidate_rows = 0
+backtest_core_microstructure_candidate_rows = 0
+output_tree_sha256 = a3d418b06d8c4bd200d51d8eb9c6d888664c1af86ab3dd37c80d48ff2397d128
+source_quotes_root_state = provisional_d_legacy_recovery_root_pending_e_parity
+source_trades_root_state = official_e_raw_root
+```
+
+This candidate validates a controlled materialization and sample recomputation
+from raw quote/trade files. It does not override the official v0.1 seed table,
+does not resolve E-root quotes parity and does not grant ML/RL, execution or
+core-backtest readiness.
 
 Latest successful isolated evidence for `halts_table_v0_1`:
 
@@ -471,12 +513,14 @@ Reason:
 Current state:
 
 ```text
-15 outputs materialized.
+15 official v0.1 outputs materialized.
+1 controlled v0.2 candidate microstructure output materialized but not promoted.
 7 outputs have integrated passed evidence as a group.
 8 outputs have isolated passed evidence.
 0 outputs should be called final institutional market_state.
 1 market/event state contract stack plus deterministic fixture loop defines the future boundary.
-2 outputs are explicitly scoped/seed and must not be overpromoted.
+2 official outputs are explicitly scoped/seed and must not be overpromoted.
+1 candidate output is explicitly controlled/not-promoted and must not be overpromoted.
 several target context/state outputs remain unmaterialized.
 ```
 

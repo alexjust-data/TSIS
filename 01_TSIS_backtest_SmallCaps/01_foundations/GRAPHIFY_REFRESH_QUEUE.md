@@ -3246,6 +3246,173 @@ The next executable action is to decide whether to launch
 `run_1m_split_normalized_materialization.ps1 -Mode split-affected -RunAudit`
 or provide the command for manual overnight execution.
 
+### GFQ-20260627-012 - Long-running operation telemetry contract
+
+Status: `pending_leaf_build`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+foundations_authority_graph
+module_test_governance_graph
+data_foundation_outputs_graph
+daily_ohlcv_graph
+quotes_graph
+graphify_governance_graph
+```
+
+Reason:
+
+- Added the root-level `LONG_RUNNING_OPERATIONS_CONTRACT.md`.
+- The contract makes pre-manifest, PID manifest, heartbeat JSON/JSONL,
+  timestamps, live log, monitor command and final manifest/summary mandatory
+  for long-running operations across TSIS.
+- Instrumented the 1m split-normalized materialization runner and quotes
+  staging clone runner so new runs expose telemetry from startup.
+- Added generic monitor script for humans/agents to inspect long-running runs
+  from a separate terminal, including compact append-only progress lines.
+- Updated quotes and 1m split-normalized runbooks with the new telemetry
+  expectation and monitor command shape.
+
+Changed paths:
+
+```text
+LONG_RUNNING_OPERATIONS_CONTRACT.md
+PROJECT_OPERATING_SYSTEM.md
+PROJECT_RULES.md
+AGENTS.md
+01_TSIS_backtest_SmallCaps/README.md
+01_TSIS_backtest_SmallCaps/scripts/monitor_long_running_operation.ps1
+01_TSIS_backtest_SmallCaps/scripts/run_1m_split_normalized_materialization.ps1
+01_TSIS_backtest_SmallCaps/scripts/data_ops/clone_quotes_to_staging.ps1
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/quotes/quotes_staging_clone_runbook_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/ohlcv_1m_split_normalized_full_universe_materialization_runbook_v0_1.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/01_foundations/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+External/runtime validation artifacts:
+
+```text
+E:/TSIS/data/data_ops_manifests/quotes_clone/quotes_clone_to_staging_20260627T170447Z.*
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/1m_split_normalized_full_universe_candidate/telemetry_smoke_20260627_1912/
+```
+
+Recommended action:
+
+```text
+Include the new root long-running operations contract and the two instrumented
+runners in the next foundations governance leaf build. Preserve that the
+currently alive legacy robocopy run predates this contract and is not evidence
+of the new telemetry standard.
+```
+
+Root action:
+
+```text
+Do not rebuild root graph until foundations Graphify remediation state is
+resolved or explicitly waived.
+```
+
+Owner:
+
+```text
+TSIS root governance / Modulo 01 Data Foundation operations
+```
+
+### GFQ-20260627-013 - Microstructure v0.2 controlled candidate validation
+
+Status: `pending_leaf_build`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+foundations_authority_graph
+data_foundation_outputs_graph
+microstructure_quotes_trades_graph
+event_state_reconstruction_graph
+market_state_representation_graph
+ml_feature_governance_graph
+offline_rl_governance_graph
+module_test_governance_graph
+```
+
+Reason:
+
+- Added executable validation for the physically materialized controlled
+  `microstructure_features_table_v0_2_candidate` dataset.
+- The candidate has 50 halt-derived event windows, 9 tickers and 1 parquet
+  partition under the governed Data Foundation output root.
+- Tests validate manifest, summary, output-tree hash, contract paths,
+  source-window semantics, no-promotion flags, partial trade-source missingness
+  and sampled raw quote/trade recomputation.
+- The test deliberately avoids broad filesystem scans over million-file roots:
+  it reads the declared candidate partition and exact raw sample paths.
+- The candidate remains not promoted: `full_universe_claim=false`,
+  `execution_sim_candidate_rows=0`,
+  `backtest_core_microstructure_candidate_rows=0`.
+- Quotes lineage remains provisional through
+  `quotes_root_state=provisional_d_legacy_recovery_root_pending_e_parity`.
+- Trades are present for 24/50 rows; 26 rows are explicit
+  `review_partial_source` rows and cannot be treated as clean execution/ML
+  state.
+
+Changed paths:
+
+```text
+tests/data_foundation_outputs/test_microstructure_features_controlled_candidate.py
+tests/data_foundation_outputs/README.md
+01_foundations/module_contracts/outputs/microstructure_features_table_multi_window_materialization_plan_v0_1.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_foundations/module_contracts/README.md
+01_foundations/GRAPHIFY_REFRESH_QUEUE.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+External/output artifacts:
+
+```text
+E:/TSIS/data/data_foundation_outputs/microstructure_features_table/microstructure_features_table_v0_2_candidate_controlled_25_per_role
+E:/TSIS/data/data_foundation_outputs/microstructure_features_table/_microstructure_features_table_manifest_v0_2_candidate_controlled_25_per_role.json
+E:/TSIS/data/data_foundation_outputs/microstructure_features_table/_microstructure_features_table_summary_v0_2_candidate_controlled_25_per_role.csv
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/microstructure_features_table_v0_2_candidate_controlled_25_per_role/microstructure_features_table_v0_2_candidate_window_manifest_v0_1.csv
+C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_microstructure_v0_2_controlled_candidate/
+```
+
+Recommended action:
+
+```text
+Include this candidate validation in the next foundations_authority_graph
+rebuild and in specialized data_foundation_outputs, microstructure_quotes_trades,
+event_state_reconstruction, market_state_representation, ML feature and offline
+RL governance leaves. Preserve the candidate-only status, provisional quotes
+root and partial trades-source coverage as graph facts.
+```
+
+Root action:
+
+```text
+Do not rebuild root graph until foundations Graphify remediation state is
+resolved or explicitly waived.
+```
+
+Owner:
+
+```text
+Modulo 01 / Data Foundation output governance
+```
+
+Notes:
+
+The next executable work is visual/forensic evidence for the 50-window
+controlled candidate and quotes E-root parity resolution before any broader
+candidate or promotion claim.
+
 ## Entry template
 
 ```text

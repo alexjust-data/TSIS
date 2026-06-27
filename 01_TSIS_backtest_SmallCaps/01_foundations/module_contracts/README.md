@@ -644,6 +644,11 @@ Define:
   `scripts/build_microstructure_candidate_window_manifest.py`;
 - que el materializer existente ya tiene un path candidato parametrizado
   probado bajo `C:/TSIS_Data/tests/test_runs/...`;
+- que existe una materializacion controlada de 50 ventanas bajo
+  `E:/TSIS/data/data_foundation_outputs/microstructure_features_table/`
+  con `quotes_file_present_rows = 50`, `trades_file_present_rows = 24`,
+  `full_universe_claim = false` y test aislado pasado en
+  `C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_microstructure_v0_2_controlled_candidate/`;
 - que cambios exige el builder antes de un candidato `v0_2`;
 - que la primera evidencia visual/forense de 6 filas ya existe en
   `inspection_dossiers/microstructure_features/`, con notebook companion en

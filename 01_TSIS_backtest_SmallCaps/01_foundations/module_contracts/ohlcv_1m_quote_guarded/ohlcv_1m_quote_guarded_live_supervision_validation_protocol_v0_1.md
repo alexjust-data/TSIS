@@ -247,6 +247,88 @@ run_ohlcv_1m_quote_guarded_repair_v0_2.ps1
 
 This avoids false duplicate restarts.
 
+### 2026-06-27 stale wrapper incident
+
+At approximately `18:18` Europe/Madrid, the supervisor terminal reported:
+
+```text
+processes = 1
+latest_age_min ~= 168
+months = 18945/19640
+repairs = 6110918
+```
+
+This did not mean the job was merely slow.
+
+It meant:
+
+- no durable output had been written since approximately `15:31`;
+- the visible matching process was only the PowerShell runner wrapper;
+- the wrapper had no Python child process;
+- therefore no 12-worker repair pool was actually running.
+
+Confirmed stale process:
+
+```text
+PID = 10444
+process = powershell.exe
+role = run_ohlcv_1m_quote_guarded_repair_v0_2.ps1 wrapper
+children = conhost.exe only
+python repair child = absent
+```
+
+The supervisor was corrected so a stale wrapper with no Python descendants is
+classified as an orphan runner wrapper. The corrected behavior is:
+
+```text
+if output is stale and runner wrapper has no Python descendants:
+    stop only that orphan wrapper
+    append stale_orphan_wrapper_stopped to supervisor_events.jsonl
+    relaunch v0_2 runner on the same RunRoot without -Overwrite
+```
+
+Recorded recovery event:
+
+```text
+stale_orphan_wrapper_stopped:
+  pid = 10444
+restart_started:
+  pid = 45836
+  python child = 51120
+  run_root = quote_guarded_v0_2_20260627_091838
+  overwrite = false
+```
+
+Post-restart evidence:
+
+```text
+18:31 local Europe/Madrid
+new month summaries written:
+  ADX_2023_04.json
+  AEG_2012_10.json
+  AEHL_2025_11.json
+  AEGR_2016_07.json
+new repair shards written:
+  AEGN_2012_01_repair_manifest.parquet
+  ADV_2022_01_repair_manifest.parquet
+  AE_2007_03_repair_manifest.parquet
+progress_snapshot:
+  ticker_status_files = 233
+  DONE = 221
+  RUNNING = 12
+  months_done = 21584
+  months_planned_in_started_tickers = 22800
+  repair_rows = 7325758
+```
+
+Important operational note:
+
+```text
+PowerShell scripts already running in a terminal do not reload changed script
+files. After this correction, any already-open supervisor terminal must be
+stopped and relaunched so it uses the orphan-wrapper logic.
+```
+
 ## 9. Why A Separate Validator Is Required
 
 The monitor and supervisor answer:
@@ -423,6 +505,11 @@ checking:
 
 Only a same-RunRoot, non-overwrite restart is allowed as the default recovery
 path.
+
+If `latest_age_min` exceeds the stale threshold while `processes=1`, inspect
+whether that single process is only the wrapper. A wrapper without Python
+descendants is not active work and should be treated as restartable by the
+supervisor.
 
 ## 16. Documentation Rule
 

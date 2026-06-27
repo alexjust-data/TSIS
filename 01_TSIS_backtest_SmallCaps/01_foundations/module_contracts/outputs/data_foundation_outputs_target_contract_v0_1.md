@@ -1314,6 +1314,48 @@ official_dataset_created: false
 full_universe_claim: false
 ```
 
+Current controlled v0.2 candidate materialization:
+
+```text
+dataset_id: microstructure_features_table_v0_2_candidate
+materialization_scope: halt_event_windows_microstructure_candidate_controlled_25_per_role
+path: E:/TSIS/data/data_foundation_outputs/microstructure_features_table/microstructure_features_table_v0_2_candidate_controlled_25_per_role
+manifest: E:/TSIS/data/data_foundation_outputs/microstructure_features_table/_microstructure_features_table_manifest_v0_2_candidate_controlled_25_per_role.json
+summary: E:/TSIS/data/data_foundation_outputs/microstructure_features_table/_microstructure_features_table_summary_v0_2_candidate_controlled_25_per_role.csv
+source_windows_csv: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/microstructure_features_table_v0_2_candidate_controlled_25_per_role/microstructure_features_table_v0_2_candidate_window_manifest_v0_1.csv
+test: tests/data_foundation_outputs/test_microstructure_features_controlled_candidate.py
+test_evidence: C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_microstructure_v0_2_controlled_candidate/
+rows: 50
+tickers: 9
+windows: 50
+quotes_file_present_rows: 50
+trades_file_present_rows: 24
+review_partial_source_rows: 26
+pass_seed_window_rows: 24
+hard_fail_count: 0
+duplicate_key_groups: 0
+full_universe_claim: false
+execution_sim_candidate_rows: 0
+backtest_core_microstructure_candidate_rows: 0
+quotes_root: D:/quotes
+quotes_root_state: provisional_d_legacy_recovery_root_pending_e_parity
+future_official_quotes_root: E:/TSIS/data/quotes
+trades_root: E:/TSIS/data/trades_ticks_prod_2005_2026
+trades_root_state: official_e_raw_root
+output_tree_sha256: a3d418b06d8c4bd200d51d8eb9c6d888664c1af86ab3dd37c80d48ff2397d128
+```
+
+Interpretacion:
+
+```text
+microstructure_features_table_v0_2_candidate_controlled_25_per_role is a
+controlled candidate surface for market-state design. It proves event-window
+microstructure feature materialization, source lineage, quote/trade hashes,
+partial-source states and sampled raw recomputation. It is not the official
+production table, not full universe, not a primary ML/RL training corpus, not
+core-backtest-ready and not execution-simulation truth.
+```
+
 Current v0.1 scope:
 
 ```text

@@ -241,6 +241,55 @@ No escribe parquet oficial y no modifica `microstructure_features_table_v0_1`.
 La prueba reconcilia hashes y conteos de filas contra raw quotes/trades para
 las ventanas candidatas seleccionadas.
 
+Ultima evidencia de candidato controlado materializado para
+`microstructure_features_table_v0_2_candidate`:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_microstructure_v0_2_controlled_candidate/
+tests = 4
+passed = 4
+failed = 0
+skipped = 0
+```
+
+Esta evidencia valida el candidato fisico:
+
+```text
+dataset_id = microstructure_features_table_v0_2_candidate
+materialization_scope = halt_event_windows_microstructure_candidate_controlled_25_per_role
+output = E:/TSIS/data/data_foundation_outputs/microstructure_features_table/microstructure_features_table_v0_2_candidate_controlled_25_per_role
+manifest = E:/TSIS/data/data_foundation_outputs/microstructure_features_table/_microstructure_features_table_manifest_v0_2_candidate_controlled_25_per_role.json
+rows = 50
+tickers = 9
+windows = 50
+quotes_file_present_rows = 50
+trades_file_present_rows = 24
+review_partial_source_rows = 26
+pass_seed_window_rows = 24
+hard_fail_count = 0
+duplicate_key_groups = 0
+full_universe_claim_rows = 0
+execution_sim_candidate_rows = 0
+backtest_core_microstructure_candidate_rows = 0
+quotes_root_state = provisional_d_legacy_recovery_root_pending_e_parity
+trades_root_state = official_e_raw_root
+```
+
+El test comprueba manifest, summary, hash del arbol parquet, paths de contratos,
+semantica de source-window, flags de no promocion, missingness de trades y
+recomputacion puntual desde raw quotes/trades. No hace scans amplios sobre
+roots con millones de archivos: lee la particion declarada del candidato y dos
+muestras raw por path exacto.
+
+Interpretacion obligatoria:
+
+```text
+candidate materialized != official promoted dataset
+```
+
+Este candidato no autoriza ML/RL primario, core backtesting, execution
+simulation ni claim full-universe.
+
 Guardia de regresion de `microstructure_features_table_v0_1` despues de
 parametrizar el materializer:
 

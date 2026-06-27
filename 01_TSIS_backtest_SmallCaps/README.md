@@ -166,6 +166,7 @@ Antes de cambiar algo en este modulo, leer en este orden:
 12. `01_foundations/module_contracts/corporate_actions_adjustment_methodology.md`
 13. `01_foundations/module_contracts/external_price_comparison_caveats.md`
 14. `01_foundations/module_contracts/policy_explanation_standard.md`
+15. `C:\TSIS_Data\LONG_RUNNING_OPERATIONS_CONTRACT.md`
 
 Estos documentos adicionales no son lectura opcional.
 
@@ -178,6 +179,10 @@ Son lectura obligatoria cuando el trabajo toque:
 - backtest;
 - ML;
 - o inspeccion institucional de evidencia.
+
+Cuando el trabajo implique una operacion larga, copia masiva, materializacion,
+auditoria, normalizacion, repair, build Graphify o entrenamiento, el contrato
+de operaciones largas tambien es obligatorio antes de ejecutar el comando.
 
 ## Regla general de explicacion de evidencia
 

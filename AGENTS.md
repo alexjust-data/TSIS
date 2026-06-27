@@ -272,6 +272,16 @@ Por tanto, todo resultado relevante debe poder responder:
 
 Si eso no puede reconstruirse, el resultado no debe presentarse como institucional.
 
+Además, toda operación larga que un agente ejecute o deje preparada para un
+humano debe cumplir:
+
+- `LONG_RUNNING_OPERATIONS_CONTRACT.md`
+
+Ningún agente debe recomendar una copia masiva, materialización, auditoría,
+normalización, reparación, build Graphify, entrenamiento o evaluación larga sin
+pre-manifest, PID, heartbeat, timestamps, log vivo, monitor separado y final
+manifest.
+
 ---
 
 ## 14. Promoción institucional

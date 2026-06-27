@@ -126,6 +126,48 @@ Preferred runner:
   -Mode split-affected
 ```
 
+The preferred runner is governed by:
+
+```text
+C:/TSIS_Data/LONG_RUNNING_OPERATIONS_CONTRACT.md
+```
+
+At startup it must print:
+
+- run id;
+- run root;
+- output root;
+- pre-manifest path;
+- heartbeat path;
+- PID manifest path;
+- monitor command.
+
+Monitor command shape:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass `
+  -File "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\monitor_long_running_operation.ps1" `
+  -RunRoot "<printed_run_root>" `
+  -RunId "<printed_run_id>" `
+  -Compact `
+  -Watch
+```
+
+Expected telemetry files inside the printed run root:
+
+```text
+<run_id>.pre_manifest.json
+<run_id>.heartbeat.json
+<run_id>.heartbeat.jsonl
+<run_id>.pids.json
+_run_summary.json
+```
+
+Manual equivalents in this document are documentation of the underlying steps,
+not the preferred operational path. If a human or agent uses a manual
+equivalent for a long run, it must reproduce the same pre-manifest, heartbeat,
+PID manifest, timestamps, logs and monitor surface.
+
 Manual equivalent:
 
 ```powershell

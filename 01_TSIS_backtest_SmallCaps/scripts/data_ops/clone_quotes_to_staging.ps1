@@ -11,6 +11,8 @@ Examples:
   powershell -ExecutionPolicy Bypass -File .\scripts\data_ops\clone_quotes_to_staging.ps1 -Run -AllowNonEmptyTarget
 
   powershell -ExecutionPolicy Bypass -File .\scripts\data_ops\clone_quotes_to_staging.ps1 -Run -SubPath "SGC\year=2013\month=11\day=04"
+
+  powershell -ExecutionPolicy Bypass -File .\scripts\monitor_long_running_operation.ps1 -RunRoot "E:\TSIS\data\data_ops_manifests\quotes_clone" -Watch
 #>
 
 [CmdletBinding()]
@@ -49,11 +51,17 @@ param(
 
     [Parameter()]
     [ValidateRange(0, 3600)]
-    [int]$WaitSeconds = 5
+    [int]$WaitSeconds = 5,
+
+    [Parameter()]
+    [ValidateRange(10, 3600)]
+    [int]$HeartbeatSeconds = 60
 )
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
+$scriptStartedAtUtc = (Get-Date).ToUniversalTime()
+$scriptPath = $MyInvocation.MyCommand.Path
 
 function Get-NormalizedPath {
     param([Parameter(Mandatory = $true)][string]$PathValue)
@@ -133,40 +141,193 @@ function Resolve-SafeRelativeSubPath {
     return ($parts -join "\")
 }
 
-$source = Assert-SourceRoot -PathValue $SourceRoot
-$target = Assert-SafeTargetRoot -Source $source -PathValue $TargetRoot
-$targetWasNonEmpty = Test-DirectoryHasAnyEntry -PathValue $target
+function Write-JsonAtomic {
+    param(
+        [Parameter(Mandatory = $true)][string]$Path,
+        [Parameter(Mandatory = $true)][object]$Payload,
+        [int]$Depth = 8
+    )
+    $dir = Split-Path -Parent $Path
+    if (-not [string]::IsNullOrWhiteSpace($dir)) {
+        New-Item -ItemType Directory -Force -Path $dir | Out-Null
+    }
+    $tmp = "$Path.$PID.tmp"
+    $Payload | ConvertTo-Json -Depth $Depth | Set-Content -LiteralPath $tmp -Encoding UTF8
+    Move-Item -LiteralPath $tmp -Destination $Path -Force
+}
+
+function Add-JsonLine {
+    param(
+        [Parameter(Mandatory = $true)][string]$Path,
+        [Parameter(Mandatory = $true)][object]$Payload,
+        [int]$Depth = 8
+    )
+    $dir = Split-Path -Parent $Path
+    if (-not [string]::IsNullOrWhiteSpace($dir)) {
+        New-Item -ItemType Directory -Force -Path $dir | Out-Null
+    }
+    Add-Content -LiteralPath $Path -Encoding UTF8 -Value ($Payload | ConvertTo-Json -Compress -Depth $Depth)
+}
+
+function Get-GitSnapshot {
+    $repoRoot = "C:\TSIS_Data"
+    $snapshot = [ordered]@{
+        branch = $null
+        commit = $null
+        dirty_state = "unknown"
+    }
+    try {
+        $snapshot.branch = (& git -C $repoRoot rev-parse --abbrev-ref HEAD 2>$null)
+        $snapshot.commit = (& git -C $repoRoot rev-parse HEAD 2>$null)
+        $dirty = (& git -C $repoRoot status --porcelain 2>$null)
+        $snapshot.dirty_state = if ([string]::IsNullOrWhiteSpace(($dirty -join ""))) { "clean" } else { "dirty" }
+    } catch {
+        $snapshot.dirty_state = "unavailable"
+    }
+    return $snapshot
+}
+
+function Get-ProcessPerfSnapshot {
+    param([Nullable[int]]$ProcessId)
+    if ($null -eq $ProcessId) {
+        return [ordered]@{
+            active_pid_alive = $null
+            process_cpu_pct = $null
+            io_read_bytes_per_sec = $null
+            io_write_bytes_per_sec = $null
+            io_data_bytes_per_sec = $null
+        }
+    }
+    $alive = $false
+    try {
+        $proc = Get-Process -Id ([int]$ProcessId) -ErrorAction Stop
+        $alive = -not $proc.HasExited
+    } catch {
+        $alive = $false
+    }
+    $perf = $null
+    try {
+        $perf = Get-CimInstance Win32_PerfFormattedData_PerfProc_Process |
+            Where-Object { [int]$_.IDProcess -eq [int]$ProcessId } |
+            Select-Object -First 1
+    } catch {
+        $perf = $null
+    }
+    return [ordered]@{
+        active_pid_alive = [bool]$alive
+        process_cpu_pct = if ($perf -ne $null) { $perf.PercentProcessorTime } else { $null }
+        io_read_bytes_per_sec = if ($perf -ne $null) { $perf.IOReadBytesPersec } else { $null }
+        io_write_bytes_per_sec = if ($perf -ne $null) { $perf.IOWriteBytesPersec } else { $null }
+        io_data_bytes_per_sec = if ($perf -ne $null) { $perf.IODataBytesPersec } else { $null }
+    }
+}
+
+function Get-DriveFreeGbForPath {
+    param([string]$PathValue)
+    try {
+        $root = [System.IO.Path]::GetPathRoot($PathValue)
+        if ([string]::IsNullOrWhiteSpace($root)) {
+            return $null
+        }
+        $drive = Get-PSDrive -Name $root.Substring(0, 1) -ErrorAction Stop
+        return [Math]::Round($drive.Free / 1GB, 2)
+    } catch {
+        return $null
+    }
+}
+
+function Write-CloneHeartbeat {
+    param(
+        [string]$Status,
+        [string]$Stage,
+        [string]$CurrentItem = "",
+        [int]$CurrentIndex = 0,
+        [int]$TotalCount = 0,
+        [Nullable[int]]$ActivePid = $null,
+        [string]$ActiveSource = "",
+        [string]$ActiveTarget = "",
+        [hashtable]$Extra = @{}
+    )
+    if ([string]::IsNullOrWhiteSpace($script:heartbeatPath)) {
+        return
+    }
+    $nowUtc = (Get-Date).ToUniversalTime()
+    $perf = Get-ProcessPerfSnapshot -ProcessId $ActivePid
+    $logInfo = [ordered]@{
+        log_path = $script:robocopyLog
+        log_size_bytes = $null
+        log_last_write_utc = $null
+    }
+    if (Test-Path -LiteralPath $script:robocopyLog -PathType Leaf) {
+        $logItem = Get-Item -LiteralPath $script:robocopyLog
+        $logInfo.log_size_bytes = $logItem.Length
+        $logInfo.log_last_write_utc = $logItem.LastWriteTimeUtc.ToString("o")
+    }
+    $payload = [ordered]@{
+        run_id = $script:runId
+        observed_at_utc = $nowUtc.ToString("o")
+        status = $Status
+        stage = $Stage
+        elapsed_seconds = [Math]::Round(($nowUtc - $scriptStartedAtUtc).TotalSeconds, 1)
+        wrapper_pid = $PID
+        active_pid = $ActivePid
+        current_item = $CurrentItem
+        current_index = $CurrentIndex
+        total_count = $TotalCount
+        source_root = $script:source
+        target_root = $script:target
+        active_source = $ActiveSource
+        active_target = $ActiveTarget
+        output_drive_free_gb = Get-DriveFreeGbForPath -PathValue $script:target
+        physical_counting_policy = "no recursive target counting during million-file clone; use process IO, robocopy log and final summary"
+    }
+    foreach ($key in $perf.Keys) { $payload[$key] = $perf[$key] }
+    foreach ($key in $logInfo.Keys) { $payload[$key] = $logInfo[$key] }
+    foreach ($key in $Extra.Keys) { $payload[$key] = $Extra[$key] }
+    Write-JsonAtomic -Path $script:heartbeatPath -Payload $payload
+    Add-JsonLine -Path $script:heartbeatLogPath -Payload $payload
+}
+
+$script:source = Assert-SourceRoot -PathValue $SourceRoot
+$script:target = Assert-SafeTargetRoot -Source $script:source -PathValue $TargetRoot
+$targetWasNonEmpty = Test-DirectoryHasAnyEntry -PathValue $script:target
 
 if ($Run -and $targetWasNonEmpty -and -not $AllowNonEmptyTarget) {
-    throw "Target already has content: $target. Re-run with -AllowNonEmptyTarget if this is an intentional resume/update."
+    throw "Target already has content: $script:target. Re-run with -AllowNonEmptyTarget if this is an intentional resume/update."
 }
 
 New-Item -ItemType Directory -Force -Path $LogRoot | Out-Null
 $logRootItem = Get-Item -LiteralPath $LogRoot
-$runId = "quotes_clone_to_staging_{0}" -f (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmssZ")
-$robocopyLog = Join-Path $logRootItem.FullName "$runId.robocopy.log"
-$manifestPath = Join-Path $logRootItem.FullName "$runId.manifest.json"
+$script:runId = "quotes_clone_to_staging_{0}" -f (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmssZ")
+$script:robocopyLog = Join-Path $logRootItem.FullName ("{0}.robocopy.log" -f $script:runId)
+$manifestPath = Join-Path $logRootItem.FullName ("{0}.manifest.json" -f $script:runId)
+$preManifestPath = Join-Path $logRootItem.FullName ("{0}.pre_manifest.json" -f $script:runId)
+$script:heartbeatPath = Join-Path $logRootItem.FullName ("{0}.heartbeat.json" -f $script:runId)
+$script:heartbeatLogPath = Join-Path $logRootItem.FullName ("{0}.heartbeat.jsonl" -f $script:runId)
+$pidManifestPath = Join-Path $logRootItem.FullName ("{0}.pids.json" -f $script:runId)
+$monitorScript = "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\monitor_long_running_operation.ps1"
+$monitorCommand = "powershell -NoProfile -ExecutionPolicy Bypass -File `"$monitorScript`" -RunRoot `"$($logRootItem.FullName)`" -RunId `"$($script:runId)`" -Compact -Watch"
 
 $copyPairs = @()
 if ($SubPath.Count -gt 0) {
     foreach ($item in $SubPath) {
         $relative = Resolve-SafeRelativeSubPath -PathValue $item
-        $pairSource = Join-Path $source $relative
+        $pairSource = Join-Path $script:source $relative
         if (-not (Test-Path -LiteralPath $pairSource -PathType Container)) {
             throw "SubPath does not exist under source root: $pairSource"
         }
         $copyPairs += [ordered]@{
             relative_subpath = $relative
             source = (Get-Item -LiteralPath $pairSource).FullName.TrimEnd("\")
-            target = (Join-Path $target $relative)
+            target = (Join-Path $script:target $relative)
         }
     }
 }
 else {
     $copyPairs += [ordered]@{
         relative_subpath = $null
-        source = $source
-        target = $target
+        source = $script:source
+        target = $script:target
     }
 }
 
@@ -204,18 +365,74 @@ if ($SubPath.Count -gt 0) {
 }
 $startedAtUtc = (Get-Date).ToUniversalTime().ToString("o")
 
+$preManifest = [ordered]@{
+    run_id = $script:runId
+    status = "starting"
+    created_at_utc = $startedAtUtc
+    script_path = $scriptPath
+    command_line = [Environment]::CommandLine
+    cwd = (Get-Location).Path
+    host = $env:COMPUTERNAME
+    user = [Environment]::UserName
+    wrapper_pid = $PID
+    git = Get-GitSnapshot
+    mode = $mode
+    dry_run = -not [bool]$Run
+    source_root = $script:source
+    target_root = $script:target
+    scoped_subpaths = @($SubPath)
+    copy_pairs = @($copyPairs)
+    log_root = $logRootItem.FullName
+    robocopy_log = $script:robocopyLog
+    manifest_path = $manifestPath
+    pre_manifest_path = $preManifestPath
+    heartbeat_path = $script:heartbeatPath
+    heartbeat_log_path = $script:heartbeatLogPath
+    pid_manifest_path = $pidManifestPath
+    heartbeat_seconds = $HeartbeatSeconds
+    target_was_non_empty = [bool]$targetWasNonEmpty
+    allow_non_empty_target = [bool]$AllowNonEmptyTarget
+    thread_count = $ThreadCount
+    retries = $Retries
+    wait_seconds = $WaitSeconds
+    verbose_file_list = [bool]$VerboseFileList
+    unbuffered = [bool]$Unbuffered
+    expected_scope = if ($SubPath.Count -gt 0) { "scoped subpaths only" } else { "full source tree clone/update into staging target" }
+    resume_policy = "rerun with -Run -AllowNonEmptyTarget against the same target; robocopy skips unchanged files under copy semantics"
+    overwrite_policy = "changed files inside target may be overwritten; no /MIRROR or /PURGE is used"
+    success_rule = "robocopy exit codes 0-7 are success; >=8 is failure"
+    monitor_command = $monitorCommand
+}
+Write-JsonAtomic -Path $preManifestPath -Payload $preManifest
+Write-JsonAtomic -Path $pidManifestPath -Payload ([ordered]@{
+    run_id = $script:runId
+    observed_at_utc = (Get-Date).ToUniversalTime().ToString("o")
+    wrapper_pid = $PID
+    active_pid = $null
+    active_stage = "startup"
+})
+Write-CloneHeartbeat -Status "running" -Stage "startup" -Extra @{
+    monitor_command = $monitorCommand
+}
+
 Write-Host "TSIS quotes staging clone"
+Write-Host "Run ID: $script:runId"
 Write-Host "Mode: $mode"
-Write-Host "Source: $source"
-Write-Host "Target: $target"
+Write-Host "Source: $script:source"
+Write-Host "Target: $script:target"
 if ($SubPath.Count -gt 0) {
     Write-Host "Scoped subpaths:"
     foreach ($pair in $copyPairs) {
         Write-Host "  - $($pair.relative_subpath)"
     }
 }
-Write-Host "Log: $robocopyLog"
+Write-Host "Log: $script:robocopyLog"
 Write-Host "Manifest: $manifestPath"
+Write-Host "Pre-manifest: $preManifestPath"
+Write-Host "Heartbeat: $script:heartbeatPath"
+Write-Host "PID manifest: $pidManifestPath"
+Write-Host "Monitor command:"
+Write-Host "  $monitorCommand"
 Write-Host "Robocopy success convention: exit codes 0-7 are success; >=8 is failure."
 
 $pairResults = @()
@@ -223,7 +440,7 @@ $robocopyExitCode = 0
 $commandText = @()
 for ($i = 0; $i -lt $copyPairs.Count; $i++) {
     $pair = $copyPairs[$i]
-    $logOption = if ($i -eq 0) { "/LOG:$robocopyLog" } else { "/LOG+:$robocopyLog" }
+    $logOption = if ($i -eq 0) { "/LOG:$script:robocopyLog" } else { "/LOG+:$script:robocopyLog" }
     $robocopyArgs = @($pair.source, $pair.target) + $baseRobocopyOptions + @($logOption)
     $commandText += "robocopy " + (($robocopyArgs | ForEach-Object { Quote-Argument -Value ([string]$_) }) -join " ")
 
@@ -232,8 +449,31 @@ for ($i = 0; $i -lt $copyPairs.Count; $i++) {
         Write-Host "Running scoped copy: $($pair.relative_subpath)"
     }
 
-    & robocopy @robocopyArgs
-    $pairExitCode = $LASTEXITCODE
+    Write-CloneHeartbeat -Status "running" -Stage "robocopy_pair_start" -CurrentItem ([string]$pair.relative_subpath) -CurrentIndex ($i + 1) -TotalCount $copyPairs.Count -ActiveSource $pair.source -ActiveTarget $pair.target -Extra @{
+        robocopy_args = @($robocopyArgs)
+    }
+    $proc = Start-Process -FilePath "robocopy.exe" -ArgumentList $robocopyArgs -PassThru -NoNewWindow
+    Write-JsonAtomic -Path $pidManifestPath -Payload ([ordered]@{
+        run_id = $script:runId
+        observed_at_utc = (Get-Date).ToUniversalTime().ToString("o")
+        wrapper_pid = $PID
+        active_pid = $proc.Id
+        active_stage = "robocopy"
+        source = $pair.source
+        target = $pair.target
+        robocopy_log = $script:robocopyLog
+    })
+    while (-not $proc.HasExited) {
+        Write-CloneHeartbeat -Status "running" -Stage "robocopy" -CurrentItem ([string]$pair.relative_subpath) -CurrentIndex ($i + 1) -TotalCount $copyPairs.Count -ActivePid $proc.Id -ActiveSource $pair.source -ActiveTarget $pair.target
+        Start-Sleep -Seconds $HeartbeatSeconds
+        $proc.Refresh()
+    }
+    $proc.WaitForExit()
+    $proc.Refresh()
+    $pairExitCode = [int]$proc.ExitCode
+    Write-CloneHeartbeat -Status "running" -Stage "robocopy_pair_finished" -CurrentItem ([string]$pair.relative_subpath) -CurrentIndex ($i + 1) -TotalCount $copyPairs.Count -ActivePid $proc.Id -ActiveSource $pair.source -ActiveTarget $pair.target -Extra @{
+        robocopy_exit_code = $pairExitCode
+    }
     if ($pairExitCode -gt $robocopyExitCode) {
         $robocopyExitCode = $pairExitCode
     }
@@ -241,6 +481,7 @@ for ($i = 0; $i -lt $copyPairs.Count; $i++) {
         relative_subpath = $pair.relative_subpath
         source = $pair.source
         target = $pair.target
+        robocopy_pid = $proc.Id
         robocopy_exit_code = $pairExitCode
         robocopy_success = [bool]($pairExitCode -le 7)
     }
@@ -249,10 +490,10 @@ $endedAtUtc = (Get-Date).ToUniversalTime().ToString("o")
 $robocopySucceeded = $robocopyExitCode -le 7
 
 $manifest = [ordered]@{
-    run_id = $runId
+    run_id = $script:runId
     mode = $mode
-    source_root = $source
-    target_root = $target
+    source_root = $script:source
+    target_root = $script:target
     scoped_subpaths = @($SubPath)
     target_was_non_empty = [bool]$targetWasNonEmpty
     allow_non_empty_target = [bool]$AllowNonEmptyTarget
@@ -276,14 +517,23 @@ $manifest = [ordered]@{
         live_quotes_root = "E:\TSIS\data\quotes"
     }
     robocopy_command = @($commandText)
-    robocopy_log = $robocopyLog
+    robocopy_log = $script:robocopyLog
+    pre_manifest_path = $preManifestPath
+    heartbeat_path = $script:heartbeatPath
+    heartbeat_log_path = $script:heartbeatLogPath
+    pid_manifest_path = $pidManifestPath
+    monitor_command = $monitorCommand
     manifest_path = $manifestPath
 }
 
 $manifest | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath $manifestPath -Encoding UTF8
+Write-CloneHeartbeat -Status $(if ($robocopySucceeded) { "completed" } else { "failed" }) -Stage "final_manifest_written" -Extra @{
+    robocopy_exit_code = $robocopyExitCode
+    manifest_path = $manifestPath
+}
 
 if (-not $robocopySucceeded) {
-    Write-Error "Robocopy failed with exit code $robocopyExitCode. See log: $robocopyLog"
+    Write-Error "Robocopy failed with exit code $robocopyExitCode. See log: $script:robocopyLog"
     exit $robocopyExitCode
 }
 

@@ -7,6 +7,120 @@ Este changelog registra cambios institucionales y semanticamente relevantes para
 No duplica el historial de Git.
 Existe para preservar memoria arquitectonica y metodologica del modulo.
 
+## v0.4.103 - Microstructure v0.2 controlled candidate validation
+
+### Added
+
+- `tests/data_foundation_outputs/test_microstructure_features_controlled_candidate.py`
+
+### Changed
+
+- Registered the controlled 50-window
+  `microstructure_features_table_v0_2_candidate` materialization in the Data
+  Foundation output contracts and status matrix.
+- Documented that the candidate is physically materialized under
+  `E:/TSIS/data/data_foundation_outputs/microstructure_features_table/` but is
+  not an official promoted replacement for `microstructure_features_table_v0_1`.
+- Preserved the hard boundary that the candidate has
+  `full_universe_claim=false`, `execution_sim_candidate_rows=0` and
+  `backtest_core_microstructure_candidate_rows=0`.
+- Documented the source-root limitation:
+  `quotes_root_state=provisional_d_legacy_recovery_root_pending_e_parity`.
+- Documented partial trade-source coverage as explicit candidate evidence, not
+  as a silent pass condition.
+
+### Validation
+
+```text
+test_run: C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_microstructure_v0_2_controlled_candidate/
+tests: 4
+passed: 4
+failed: 0
+dataset_id: microstructure_features_table_v0_2_candidate
+materialization_scope: halt_event_windows_microstructure_candidate_controlled_25_per_role
+rows: 50
+tickers: 9
+windows: 50
+quotes_file_present_rows: 50
+trades_file_present_rows: 24
+review_partial_source_rows: 26
+pass_seed_window_rows: 24
+hard_fail_count: 0
+duplicate_key_groups: 0
+output_tree_sha256: a3d418b06d8c4bd200d51d8eb9c6d888664c1af86ab3dd37c80d48ff2397d128
+```
+
+### Scope Notes
+
+This candidate is useful for controlled market-state and microstructure design
+diagnostics. It is not approved for primary ML/RL training, execution
+simulation, core backtesting or full-universe claims.
+
+## v0.4.102 - Long-running operation telemetry contract and runner instrumentation
+
+### Added
+
+- `C:/TSIS_Data/LONG_RUNNING_OPERATIONS_CONTRACT.md`
+- `scripts/monitor_long_running_operation.ps1`
+
+### Changed
+
+- Added root-level references so long-running operations across TSIS require
+  pre-manifest, PID manifest, heartbeat JSON/JSONL, timestamps, live log,
+  monitor command and final summary/manifest.
+- Instrumented `scripts/run_1m_split_normalized_materialization.ps1` so new
+  runs print telemetry paths at startup and write heartbeat evidence during
+  manifest build, chunk materialization and optional audit stages.
+- Instrumented `scripts/data_ops/clone_quotes_to_staging.ps1` so new robocopy
+  runs write pre-manifest, heartbeat, PID manifest and monitor commands before
+  copy/dry-run work begins.
+- Updated the quotes staging clone runbook and 1m split-normalized runbook so
+  future humans/agents do not launch opaque overnight jobs.
+- Added compact append-only monitor output so humans can see one progress line
+  per interval instead of only a refreshed technical snapshot.
+
+### Validation
+
+```text
+quotes_dry_run_scoped:
+  command: clone_quotes_to_staging.ps1 -SubPath "SGC\year=2013\month=11\day=04"
+  run_id: quotes_clone_to_staging_20260627T170447Z
+  result: PASS
+  pre_manifest: E:/TSIS/data/data_ops_manifests/quotes_clone/quotes_clone_to_staging_20260627T170447Z.pre_manifest.json
+  heartbeat: E:/TSIS/data/data_ops_manifests/quotes_clone/quotes_clone_to_staging_20260627T170447Z.heartbeat.json
+  manifest: E:/TSIS/data/data_ops_manifests/quotes_clone/quotes_clone_to_staging_20260627T170447Z.manifest.json
+  robocopy_exit_code: 0
+
+one_minute_split_smoke:
+  command: run_1m_split_normalized_materialization.ps1 -Mode split-affected -SmokeOnly -SmokeLimit 1
+  run_id: telemetry_smoke_20260627_1912
+  result: PASS
+  run_root: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/1m_split_normalized_full_universe_candidate/telemetry_smoke_20260627_1912/
+  heartbeat_status: completed
+  heartbeat_stage: smoke_only_completed
+  summary: _run_summary.json
+
+monitor:
+  command: scripts/monitor_long_running_operation.ps1
+  result: PASS against both instrumented test runs
+
+compact_monitor:
+  command: monitor_long_running_operation.ps1 -Compact
+  run_id: split_affected_20260627_192314
+  result: PASS
+  example: status=running stage=build_manifest processes=2 progress=unknown reason=total_known_after_manifest worker=python.exe
+```
+
+### Scope Notes
+
+This change does not stop or reinterpret legacy runs that were already alive
+before the telemetry contract existed.
+
+The active legacy `clone_quotes_to_staging.ps1 -Run -AllowNonEmptyTarget` run
+started on 2026-06-24 11:10:57 may still expose only robocopy/process-level
+evidence until it completes. That legacy opacity is now documented as
+non-compliant for future runs.
+
 ## v0.4.101 - Optimized 1m split-normalized manifest smoke
 
 ### Added
@@ -125,6 +239,9 @@ resolve D:/quotes versus E:/TSIS/data/quotes parity
   workstream folder:
   - `01_foundations/module_contracts/ohlcv_1m_quote_guarded/ohlcv_1m_quote_guarded_live_supervision_validation_protocol_v0_1.md`
 - Linked the live protocol from the existing repair runbook.
+- Hardened the supervisor so a stale runner wrapper with no Python descendants
+  is treated as an orphan wrapper and can be stopped/restarted on the same
+  `RunRoot` without `-Overwrite`.
 
 ### Validation
 
@@ -144,6 +261,17 @@ stable_repair_shards = 6583
 validated_shards = 25
 month_summary_repair_rows = 6615018
 shard_row_total = 6615018
+
+stale wrapper recovery:
+stale_wrapper_pid = 10444
+restart_wrapper_pid = 45836
+restart_python_pid = 51120
+post_restart_latest_outputs = 2026-06-27 18:31 local
+post_restart_status = RUNNING
+post_restart_done_tickers = 221
+post_restart_running_tickers = 12
+post_restart_months_done = 21584
+post_restart_repair_rows = 7325758
 ```
 
 ### Scope Notes

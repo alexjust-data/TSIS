@@ -85,6 +85,58 @@ run summaries, trace logs y, si procede, release log propio.
   each file preserves strategy/factor semantics as draft research, defines
   measurable candidate fields for future notebooks, lists event-decomposition
   candidates and records desired screenshots from its own source video only.
+- Added
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/stevenDux/Pattern_Variation_Acceptable_Range/FACTOR.md`
+  as the Duxinator-derived `source_note/factor draft` for classifying whether a
+  pattern variation remains acceptable by comparing breakout volume, projected
+  day volume, prior resistance volume, float/float rotation and SSR or
+  short-covering context; also updated the Steven Dux source index to mark
+  Duxinator `Patterns And Factors` lessons 1-10 as covered and `Advance
+  Concepts` as pending transcript/source images before documentation.
+- Added separated Steven Dux public-source strategy drafts for
+  `Gap Up Short` and `Bounce Short` under
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/Gap_Up_Short/STRATEGY.md`
+  and
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/Bounce_Short/STRATEGY.md`,
+  preserving the distinction between gap/crowding failure logic and historical
+  resistance-volume retest logic while linking both from the Steven Dux source
+  strategy index.
+- Added
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/stevenDux/Volume_Prediction/FACTOR.md`
+  as the first Duxinator `Advance Concepts` factor draft, covering `Volume
+  Prediction Intraday`, `Scenarios of Intraday Volume Prediction` and `Volume
+  Prediction Pre-Market`; the factor defines projected day volume, premarket and
+  first-hour volume estimators, resistance-volume comparison states, crowding
+  buckets and minimum fields for future Dux-style candidate tables.
+- Added
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/stevenDux/Liquidity_Gain_Loss/FACTOR.md`
+  as the Duxinator `Advance Concepts` factor draft for `The Gain / Loss of
+  Liquidity` and `Volume Range and Liquidity Collaboration`, defining liquidity
+  state adjustments to volume prediction, morning panic/consolidation breakdown
+  volume loss, consolidation/parabolic liquidity gain, gap-through-resistance
+  semantics and volume-range buckets for future strategy notebooks.
+- Added
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/stevenDux/Neutralized_Area/FACTOR.md`
+  as the Duxinator `Advance Concepts` factor draft for identifying accepted or
+  volume-supported zones that cap remaining reward, including multi-day runner
+  neutralization, support-volume layers, half-gain neutralized targets and
+  clean-air distance fields for future First Red Day, Gap Up Short and Bounce
+  Short notebooks.
+- Added
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/stevenDux/Short_Seller_Trap_Layers/FACTOR.md`
+  as the Duxinator `Advance Concepts` factor draft for identifying stacked
+  short-seller layers, covering-pressure chain reactions, gap-down traps and
+  proximity-to-layer risk that can invalidate otherwise plausible short setups.
+- Added
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/stevenDux/Crowded_Ticker_Context/FACTOR.md`
+  as the Duxinator `Advance Concepts` factor draft for identifying intraday
+  crowded tickers, no-trade crowded states, future resistance creation and
+  later bounce-short source context.
+- Extended
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/stevenDux/Float_Rotation/FACTOR.md`
+  with the Duxinator `Advance Concepts` warning `The Danger of Float Rotation`,
+  documenting why microfloat rotation can degrade individual resistance,
+  random consolidation shorts and raw volume-at-level assumptions.
 - Added a Strategy Library provenance rule requiring embedded strategy images
   to come from the same primary video/document/source as the strategy being
   documented; missing images must be recorded as `Imagenes deseadas del propio

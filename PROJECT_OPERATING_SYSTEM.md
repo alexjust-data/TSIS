@@ -264,6 +264,7 @@ TSIS se gobierna mediante documentos raíz con roles distintos.
 - `RESEARCH_PHILOSOPHY.md`: cómo piensa TSIS sobre mercado, datos, edge, causalidad y aprendizaje.
 - `AGENTS.md`: cómo deben actuar agentes y colaboradores dentro del repositorio.
 - `ARCHITECTURE_OVERVIEW.md`: cómo fluye TSIS técnicamente.
+- `LONG_RUNNING_OPERATIONS_CONTRACT.md`: cómo deben instrumentarse operaciones largas, copias, materializaciones, auditorías, entrenamientos y builds para que nunca sean cajas negras.
 
 ### 8.2. Regla de precedencia
 

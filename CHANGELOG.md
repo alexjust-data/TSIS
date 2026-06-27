@@ -1,3 +1,13 @@
+## 2026-06-27 - Long-running operations observability contract
+
+- Added `LONG_RUNNING_OPERATIONS_CONTRACT.md` as a root TSIS contract.
+- Root governance now requires pre-manifest, PID manifest, heartbeat, timestamps,
+  live logs, compact progress-line monitor command and final manifest/summary
+  for long-running operations across all modules.
+- The first instrumented Module 01 runners are:
+  `scripts/run_1m_split_normalized_materialization.ps1` and
+  `scripts/data_ops/clone_quotes_to_staging.ps1`.
+
 `CHANGELOG.md` es:
 
 ```text id="cl1"

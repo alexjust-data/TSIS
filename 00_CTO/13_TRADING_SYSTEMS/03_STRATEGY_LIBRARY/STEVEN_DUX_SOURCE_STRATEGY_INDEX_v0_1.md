@@ -89,6 +89,12 @@ Estrategia short sobre small caps que hacen gap fuerte en premarket o al open,
 pero cuya extension puede fallar si las condiciones de market cap, float,
 volumen y crowding son favorables al fade.
 
+Documento TSIS:
+
+```text
+SHORT/stevenDux/Gap_Up_Short/STRATEGY.md
+```
+
 No todos los gaps son buenos shorts.
 
 Dux separa especialmente:
@@ -122,6 +128,12 @@ volume_after_1130
 ### 4.2. Bounce Short
 
 Estrategia short basada en memoria de resistencia.
+
+Documento TSIS:
+
+```text
+SHORT/stevenDux/Bounce_Short/STRATEGY.md
+```
 
 Un ticker tuvo previamente un dia de gran volumen y concentracion de dinero en
 una zona de precio. En una sesion posterior, rebota hacia esa zona con mucho
@@ -504,7 +516,102 @@ en que bucket de market cap, float, volumen, dollar volume, sector y regimen
 vive este patron, con que frecuencia aparece, y que outcome produce?
 ```
 
-## 10. No-goals
+## 10. Duxinator Patterns And Factors incorporados
+
+Ademas del video publico principal, TSIS ya empezo a destilar la carpeta:
+
+```text
+E:\04_Steven_Dux\Duxinator\Steven Dux - Duxinator - High Odds Penny Trading  [Hacksnation.com]\3 - Patterns And Factors  [Hacksnation.com]
+```
+
+Estos documentos son `source_note / draft`. No validan edge. Su funcion es
+convertir explicaciones Duxinator en lenguaje medible para Strategy Library,
+Event Library y notebooks de busqueda historica.
+
+| Source lesson | TSIS artifact | Tipo |
+|---|---|---|
+| `1 - First Red Day The advantage and disadvantage` | `SHORT/stevenDux/First_Red_Day/STRATEGY.md` | short strategy draft |
+| `2 - Double Layer Resistance` | `SHORT/stevenDux/Double_Layer_Resistance/STRATEGY.md` | short strategy draft |
+| `3 - Bounce Short plus Gap Up Short` | `SHORT/stevenDux/Bounce_Plus_Gap_Up_Short/STRATEGY.md` | short strategy draft |
+| `4 - Gap Up Buying` | `LONG/stevenDux/Gap_Up_Buying/STRATEGY.md` | long strategy draft |
+| `5 - Double Intra-day Top` | `SHORT/stevenDux/Double_Intraday_Top/STRATEGY.md` | short strategy draft |
+| `6 - Parabolic Breakout and Failed Breakout` | `SHORT/stevenDux/Parabolic_Breakout_Failed_Breakout/STRATEGY.md` | short strategy draft with long/short source context |
+| `7 - Dip Buying Multi-day Runner` | `LONG/stevenDux/Dip_Buying_Multi_Day_Runner/STRATEGY.md` | long strategy draft |
+| `8 - The Risk Reward on Multi-day Top` | `SHORT/stevenDux/Multi_Day_Top_Risk_Reward/STRATEGY.md` | short strategy draft |
+| `9 - Introduction to Float Rotation` | `FACTORS/stevenDux/Float_Rotation/FACTOR.md` | factor draft |
+| `10 - Pattern Variation and its Acceptable Range` | `FACTORS/stevenDux/Pattern_Variation_Acceptable_Range/FACTOR.md` | factor draft |
+
+Regla:
+
+```text
+Los factores Dux no son estrategias por si solos.
+Gobiernan si una variacion visual sigue siendo aceptable.
+```
+
+Ejemplo:
+
+```text
+breakout visual
++ float rotation
++ prior resistance volume
++ projected day volume
++ SSR / short-covering context
+= breakout aceptable o breakout debil
+```
+
+## 11. Duxinator Advance Concepts
+
+La carpeta Duxinator:
+
+```text
+E:\04_Steven_Dux\Duxinator\Steven Dux - Duxinator - High Odds Penny Trading  [Hacksnation.com]\4 - Advance Concepts  [Hacksnation.com]
+```
+
+contiene conceptos avanzados que deben tratarse principalmente como factores
+transversales, no como estrategias independientes.
+
+Los transcripts locales estan en:
+
+```text
+E:\04_Steven_Dux\Duxinator\Steven Dux - Duxinator - High Odds Penny Trading  [Hacksnation.com]\4 - Advance Concepts  [Hacksnation.com]\transcripts
+```
+
+Videos detectados:
+
+```text
+1 - Volume Prediction Intraday
+2 - Scenarios of Intraday Volume Prediction
+3 - Volume Prediction Pre-Market
+4 - The Gain _ Loss of Liquidity
+5 - Volume Range and Liquidity Collaboration
+6 - Identifying Neutralized Area
+7 - Layers of Short Seller Trap
+8 - Characteristics of Crowded Tickers
+9 - The Danger of Float Rotation
+```
+
+Estado de incorporacion TSIS:
+
+| Source lesson | TSIS artifact | Estado |
+|---|---|---|
+| `1 - Volume Prediction Intraday` | `FACTORS/stevenDux/Volume_Prediction/FACTOR.md` | covered as part of volume prediction factor |
+| `2 - Scenarios of Intraday Volume Prediction` | `FACTORS/stevenDux/Volume_Prediction/FACTOR.md` | covered as part of volume prediction factor |
+| `3 - Volume Prediction Pre-Market` | `FACTORS/stevenDux/Volume_Prediction/FACTOR.md` | covered as part of volume prediction factor |
+| `4 - The Gain _ Loss of Liquidity` | `FACTORS/stevenDux/Liquidity_Gain_Loss/FACTOR.md` | covered as part of liquidity state factor |
+| `5 - Volume Range and Liquidity Collaboration` | `FACTORS/stevenDux/Liquidity_Gain_Loss/FACTOR.md` | covered as part of liquidity state factor |
+| `6 - Identifying Neutralized Area` | `FACTORS/stevenDux/Neutralized_Area/FACTOR.md` | covered as neutralized reward/risk factor |
+| `7 - Layers of Short Seller Trap` | `FACTORS/stevenDux/Short_Seller_Trap_Layers/FACTOR.md` | covered as short-covering layer risk factor |
+| `8 - Characteristics of Crowded Tickers` | `FACTORS/stevenDux/Crowded_Ticker_Context/FACTOR.md` | covered as crowded ticker context and future-resistance factor |
+| `9 - The Danger of Float Rotation` | `FACTORS/stevenDux/Float_Rotation/FACTOR.md` | covered as advanced float-rotation danger section |
+
+Regla:
+
+```text
+Advance Concepts no se debe convertir en entradas/stops/sizing directamente.
+Primero se convierte en factores medibles que condicionan estrategias.
+```
+
+## 12. No-goals
 
 Este documento no:
 
@@ -517,7 +624,7 @@ Este documento no:
 - sustituye Outcome Research;
 - sustituye backtesting.
 
-## 11. Regla final
+## 13. Regla final
 
 El aporte principal de Dux para TSIS no es una lista de setups.
 
