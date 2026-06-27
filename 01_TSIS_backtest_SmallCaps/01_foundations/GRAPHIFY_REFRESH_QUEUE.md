@@ -3166,6 +3166,86 @@ The next executable action is to decide the quotes-root state and materialize a
 larger declared candidate only after source-root, denominator and recomputation
 policy are explicit.
 
+### GFQ-20260627-011 - Optimized 1m split-normalized manifest smoke
+
+Status: `pending_leaf_build`
+
+Severity: `MEDIUM`
+
+Slice:
+
+```text
+foundations_authority_graph
+data_foundation_outputs_graph
+daily_ohlcv_graph
+event_state_reconstruction_graph
+market_state_representation_graph
+ml_feature_governance_graph
+offline_rl_governance_graph
+module_test_governance_graph
+```
+
+Reason:
+
+- Reworked `scripts/build_1m_split_normalized_materialization_manifest.py` so
+  `split-affected` mode no longer uses a global `Path.rglob()` over
+  `E:/TSIS/data/ohlcv_1m`.
+- The optimized strategy starts from split files and checks expected
+  `ticker/year/month` minute paths directly.
+- Added regression tests that monkeypatch `Path.rglob()` to fail if this path
+  regresses.
+- Ran the official smoke wrapper successfully and recorded the smoke manifest
+  evidence for the next `master_intraday_bar_table` wider-scope loop.
+
+Changed paths:
+
+```text
+scripts/build_1m_split_normalized_materialization_manifest.py
+tests/data_foundation_outputs/test_1m_split_normalized_manifest_builder.py
+tests/data_foundation_outputs/README.md
+01_foundations/module_contracts/ohlcv_1m_split_normalized_full_universe_materialization_runbook_v0_1.md
+01_foundations/module_contracts/outputs/master_intraday_bar_table_wider_scope_materialization_plan_v0_1.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_foundations/GRAPHIFY_REFRESH_QUEUE.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+External/test artifacts:
+
+```text
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/1m_split_normalized_full_universe_candidate/split_affected_20260627_153012/
+C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_1m_split_manifest_builder_v0_1/
+```
+
+Recommended action:
+
+```text
+Include the optimized builder/test/runbook evidence in the next Data Foundation
+outputs and daily_ohlcv graph leaf rebuild. Preserve that this is manifest
+smoke/test evidence only: no split-normalized full-universe parquet candidate
+or master_intraday v0.2 candidate has been promoted.
+```
+
+Root action:
+
+```text
+No root graph yet.
+Do not integrate into a root graph until the foundations Graphify remediation
+state is resolved or explicitly waived.
+```
+
+Owner:
+
+```text
+Modulo 01 / Data Foundation output governance
+```
+
+Notes:
+
+The next executable action is to decide whether to launch
+`run_1m_split_normalized_materialization.ps1 -Mode split-affected -RunAudit`
+or provide the command for manual overnight execution.
+
 ## Entry template
 
 ```text

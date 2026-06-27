@@ -219,6 +219,24 @@ candidate_hard_fail_count = 0
 official_dataset_created = false
 ```
 
+Ultima evidencia de regresion para el builder de manifiesto
+`ohlcv_1m_split_normalized`:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_1m_split_manifest_builder_v0_1/
+tests = 2
+passed = 2
+failed = 0
+skipped = 0
+```
+
+Esta evidencia usa fixtures sinteticos y bloquea que el builder vuelva a usar
+`Path.rglob()` para el smoke `split-affected`. La ruta correcta es:
+
+```text
+splits_root -> ticker con split -> ticker/year/month esperado en ohlcv_1m
+```
+
 No escribe parquet oficial y no modifica `microstructure_features_table_v0_1`.
 La prueba reconcilia hashes y conteos de filas contra raw quotes/trades para
 las ventanas candidatas seleccionadas.

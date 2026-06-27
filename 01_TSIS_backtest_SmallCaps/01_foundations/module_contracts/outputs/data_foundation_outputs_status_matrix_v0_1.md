@@ -234,6 +234,27 @@ failed = 0
 skipped = 0
 ```
 
+Latest successful 1m split-normalized manifest-builder regression evidence
+for the next `master_intraday_bar_table` wider-scope loop:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_1m_split_manifest_builder_v0_1/
+status = passed
+tests = 2
+failed = 0
+skipped = 0
+```
+
+Latest successful split-affected smoke manifest:
+
+```text
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/1m_split_normalized_full_universe_candidate/split_affected_20260627_153012/
+rows = 100
+tickers = 1
+scan_strategy = split_tickers_then_partition_direct
+official_dataset_created = false
+```
+
 Latest successful earlier contract-skeleton evidence for `market_state_table_v0_1`:
 
 ```text

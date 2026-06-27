@@ -150,6 +150,41 @@ manifest_smoke.summary.json
 
 Do not promote smoke outputs.
 
+Optimization requirement:
+
+```text
+split-affected smoke must not scan the entire ohlcv_1m tree with Path.rglob().
+```
+
+The manifest builder must use:
+
+```text
+splits_root -> ticker with split file -> expected ticker/year/month path in ohlcv_1m
+```
+
+Latest successful smoke evidence:
+
+```text
+run_root: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/1m_split_normalized_full_universe_candidate/split_affected_20260627_153012/
+rows: 100
+tickers: 1
+scan_strategy: split_tickers_then_partition_direct
+files_seen: 139
+files_without_split_effect: 39
+split_tickers_seen: 4
+runtime: 7.7s
+official_dataset_created: false
+```
+
+Non-valid smoke attempt:
+
+```text
+run_root: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/1m_split_normalized_full_universe_candidate/split_affected_20260627_152403/
+state: timed out before manifest/log creation
+reason: previous builder path used global ohlcv_1m tree scan
+valid_evidence: false
+```
+
 ## 7. Recommended Overnight Command - Split-Affected Scope
 
 This builds a manifest for ticker-months that actually need split-normalized

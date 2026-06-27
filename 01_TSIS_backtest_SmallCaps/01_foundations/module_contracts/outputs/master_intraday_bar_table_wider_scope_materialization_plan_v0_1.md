@@ -350,8 +350,9 @@ The next agent should execute in this order:
 1. Read this document.
 2. Read
    `01_foundations/module_contracts/ohlcv_1m_split_normalized_full_universe_materialization_runbook_v0_1.md`.
-3. Run the smoke command.
-4. Review smoke manifest output.
+3. Review the latest successful smoke command evidence.
+4. If smoke must be rerun, verify it uses `scan_strategy =
+   split_tickers_then_partition_direct`.
 5. If smoke is clean, ask the human whether to launch the overnight
    `split-affected -RunAudit` command or provide it for manual execution.
 6. After candidate split-safe output exists, implement the config-driven
@@ -362,9 +363,32 @@ The next agent should execute in this order:
 ## 13. Current Status
 
 ```text
-status: plan_defined
+status: split_safe_smoke_manifest_passed
 official_new_dataset_created: false
 heavy_materialization_started: false
 full_universe_claim_granted: false
-next_executable_action: run 1m split-safe smoke manifest
+next_executable_action: decide whether to launch split-affected RunAudit or provide command for manual overnight execution
+```
+
+Latest smoke evidence:
+
+```text
+run_root: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/1m_split_normalized_full_universe_candidate/split_affected_20260627_153012/
+rows: 100
+tickers: 1
+scan_strategy: split_tickers_then_partition_direct
+files_seen: 139
+files_without_split_effect: 39
+split_tickers_seen: 4
+official_dataset_created: false
+```
+
+Latest regression test evidence:
+
+```text
+test_run: C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_1m_split_manifest_builder_v0_1/
+tests: 2
+passed: 2
+failed: 0
+skipped: 0
 ```

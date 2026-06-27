@@ -7,6 +7,62 @@ Este changelog registra cambios institucionales y semanticamente relevantes para
 No duplica el historial de Git.
 Existe para preservar memoria arquitectonica y metodologica del modulo.
 
+## v0.4.101 - Optimized 1m split-normalized manifest smoke
+
+### Added
+
+- `tests/data_foundation_outputs/test_1m_split_normalized_manifest_builder.py`
+
+### Changed
+
+- Reworked `scripts/build_1m_split_normalized_materialization_manifest.py` so
+  `split-affected` mode no longer scans the entire `ohlcv_1m` tree with
+  `Path.rglob()`.
+- The optimized path now starts from `splits_root`, walks only tickers with
+  split files, and checks expected `ticker/year/month` raw 1m paths directly.
+- Added summary field `scan_strategy` so smoke and manifest evidence can prove
+  which scan strategy was used.
+- Updated the `master_intraday_bar_table` wider-scope plan, split-normalized
+  runbook, output status matrix, tests README and Graphify queue with the new
+  smoke evidence.
+
+### Validation
+
+```text
+smoke_run: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/1m_split_normalized_full_universe_candidate/split_affected_20260627_153012/
+smoke_rows: 100
+smoke_tickers: 1
+scan_strategy: split_tickers_then_partition_direct
+files_seen: 139
+files_without_split_effect: 39
+split_tickers_seen: 4
+runtime: 7.7s
+
+tests: C:/TSIS_Data/tests/test_runs/2026-06-27/data_foundation_outputs_1m_split_manifest_builder_v0_1/
+passed: 2
+failed: 0
+skipped: 0
+```
+
+### Scope Notes
+
+This change only optimizes and validates manifest creation for the next
+`master_intraday_bar_table` loop.
+
+The earlier run
+`runs/data_foundation/1m_split_normalized_full_universe_candidate/split_affected_20260627_152403/`
+timed out before manifest/log creation and must not be treated as evidence.
+
+It does not:
+
+```text
+materialize split-normalized 1m parquet under E:/TSIS/data
+modify master_intraday_bar_table_v0_1
+create master_intraday_bar_table_v0_2_candidate
+claim full-universe intraday coverage
+authorize ML/RL primary training or backtest-core promotion
+```
+
 ## v0.4.100 - Microstructure candidate visual evidence notebook and dossier
 
 ### Added

@@ -3087,7 +3087,10 @@ Lectura por tabla:
   queda definido en
   `01_foundations/module_contracts/outputs/master_intraday_bar_table_wider_scope_materialization_plan_v0_1.md`.
   Ese plan exige primero smoke split-safe, denominador, manifest, candidate
-  output, builder parametrizado, tests y gates de promocion. No autoriza
+  output, builder parametrizado, tests y gates de promocion. El smoke
+  split-safe ya paso en
+  `runs/data_foundation/1m_split_normalized_full_universe_candidate/split_affected_20260627_153012/`
+  con `scan_strategy = split_tickers_then_partition_direct`; no autoriza
   reutilizar `master_intraday_bar_table_v0_1` como full-universe.
 - `microstructure_features_table`: no debe ampliarse como tick-by-tick ciego
   para todo minuto/ticker; primero debe materializar ventanas gobernadas de

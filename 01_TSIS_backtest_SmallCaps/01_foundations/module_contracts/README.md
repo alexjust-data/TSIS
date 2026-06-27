@@ -616,6 +616,8 @@ Define:
 - que significa full-universe para barras 1m dentro de TSIS;
 - que path split-safe debe ejecutarse primero;
 - que cambios exige el builder antes de un candidato `v0_2`;
+- que el smoke split-safe ya paso usando `scan_strategy =
+  split_tickers_then_partition_direct`, no `Path.rglob()` global;
 - que tests, manifests y gates hacen falta antes de promocionar.
 
 Regla central:
