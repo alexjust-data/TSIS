@@ -301,16 +301,32 @@ Operativa:
 01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_1.md
 ```
 
-## Definiciones v0.1
+## Definicion activa v0.2
 
 ```text
-trade_station_like_scanner_v0_1
-broad_in_play_discovery_scanner_v0_1
+base_in_play_universe_scanner_v0_2
+trade_station_like_profile_v0_2
+relative_volume_profile_v0_2
+percent_change_profile_v0_2
+dollar_volume_tradability_profile_v0_2
+das_research_profile_v0_2
 ```
 
-`trade_station_like_scanner_v0_1` reconstruye visibilidad operativa humana.
+`base_in_play_universe_scanner_v0_2` define la poblacion observable:
 
-`broad_in_play_discovery_scanner_v0_1` protege research contra llegada tardia.
+```text
+common_stock = true
+market_cap_usd < 100000000
+0.5 < last_price <= 20
+data_quality in usable/review
+```
+
+`trade_station_like_profile_v0_2` reconstruye visibilidad operativa humana
+como perfil sobre el universo base, no como universo separado.
+
+Los perfiles de relative volume, percent change, tradability y DAS research
+permiten estudiar timing, atencion, contrapartida y frontside sin convertir
+esas variables en filtros universales prematuros.
 
 ## Regla
 
@@ -1162,4 +1178,3 @@ live operation
 Si una carpeta, documento, output, notebook, builder o agente mezcla esos
 niveles sin contrato explicito, debe corregirse antes de tratarse como
 arquitectura activa.
-

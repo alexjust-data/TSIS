@@ -1,47 +1,93 @@
-# Scanner Definitions: TradeStation-Like vs Broad Discovery v0.1
+# Scanner Definitions v0.1 Historical Note
 
 Fecha: 2026-06-30
-Estado: candidate_policy
+Estado: historical_reference
 
-## 1. Decision
+## 1. Nota de revision 2026-06-30
 
-TSIS no tendra un unico scanner general.
-
-La version v0.1 separa:
+Este documento conservaba la definicion v0.1:
 
 ```text
 trade_station_like_scanner_v0_1
 broad_in_play_discovery_scanner_v0_1
 ```
 
-Ambos producen candidatos.
+Esa lectura queda degradada a referencia historica del primer replay
+controlado.
 
-Ninguno produce senales, labels, outcomes, rewards ni decisiones.
+La decision activa vive en:
 
-## 2. `trade_station_like_scanner_v0_1`
+```text
+scanner_base_universe_and_profiles_contract_v0_2.md
+```
+
+La arquitectura activa es:
+
+```text
+base_in_play_universe_scanner_v0_2
+-> profiles / views / rankings
+```
+
+No se deben crear dos universos de scanner independientes salvo experimento
+versionado y justificado.
+
+## 2. Scanner base v0.2
 
 Pregunta:
 
 ```text
-Que habria visto el operador en una hot list operativa similar a TradeStation?
+Que instrumentos pertenecen a la poblacion smallcap/microcap observable que TSIS
+debe considerar para candidate selection?
+```
+
+Hard filters:
+
+```text
+common_stock = true
+market_cap_usd < 100000000
+0.5 < last_price <= 20
+data_quality in usable/review
+```
+
+No son hard filters universales:
+
+```text
+volume_today >= 500000
+pct_chg_1d top 25
+relative_volume threshold
+float threshold
+news present
+afterhours breakout present
+premarket new high present
+```
+
+## 3. Perfiles activos
+
+| Perfil | Pregunta | Seleccion / ranking | Uso |
+| --- | --- | --- | --- |
+| `trade_station_like_profile_v0_2` | Que habria visto el operador? | `volume_today >= 500k`, rank `% change 1D`, top 25 | Visibilidad operativa humana |
+| `relative_volume_profile_v0_2` | Que esta acelerando actividad? | `rvol_to_time`, `volume_acceleration`, volume tiers | Timing, attention proxy, discovery temprano |
+| `percent_change_profile_v0_2` | Que es visible por movimiento porcentual? | `pct_chg_1d`, gap/range expansion | Momentum/hot-list visibility |
+| `dollar_volume_tradability_profile_v0_2` | Que parece operable? | dollar volume, liquidity/tradability tiers | Execution realism y risk gates |
+| `das_research_profile_v0_2` | Que candidatos merecen reconstruccion DAS/frontside? | flags/reasons sobre el base universe | Denominador experimental DAS, no senal |
+
+## 4. TradeStation-like profile
+
+Forma conceptual:
+
+```text
+base_in_play_universe_scanner_v0_2
++ volume_today >= 500000
++ rank by pct_chg_1d desc
++ top_n = 25
 ```
 
 Uso:
 
 - reconstruir visibilidad humana historica;
 - medir si una estrategia aparecia tarde para el operador;
-- comparar research broad contra realidad operativa;
+- comparar research contra realidad operativa;
 - construir un baseline operacional simple.
-
-Forma conceptual:
-
-```text
-market_cap_usd < 100000000
-volume_today > 500000
-0.5 < last_price <= 20
-rank by pct_chg_1d desc
-top_n = 25
-```
 
 Limitacion:
 
@@ -49,23 +95,12 @@ Limitacion:
 Puede llegar tarde para patrones tempranos como DAS/frontside.
 ```
 
-## 3. `broad_in_play_discovery_scanner_v0_1`
+## 5. Broad discovery v0.1 como concepto historico
 
-Pregunta:
+La idea v0.1 de `broad_in_play_discovery_scanner_v0_1` no se elimina: se
+descompone en perfiles y razones.
 
-```text
-Que tickers empezaban a estar vivos aunque todavia no cumplieran el scanner humano?
-```
-
-Uso:
-
-- discovery amplio;
-- detectar eventos tempranos;
-- medir cuantos casos buenos habria perdido un scanner estrecho;
-- crear denominadores mas honestos para research;
-- alimentar futuras tablas experimentales de estado por estrategia.
-
-Inclusion por razones:
+Razones que sobreviven como features/ranks/flags:
 
 ```text
 reason_pct_chg_1d_move
@@ -80,40 +115,12 @@ reason_news_context
 reason_halt_or_reopen_context
 ```
 
-Limitacion:
+Regla:
 
 ```text
-No es una senal de trading ni un universo completo de oportunidad.
+Una razon in-play no crea un universo alternativo; etiqueta una fila del
+universo base.
 ```
-
-## 4. Diferencia clave
-
-| Pregunta | Scanner |
-| --- | --- |
-| Que vio el humano? | `trade_station_like_scanner_v0_1` |
-| Que estaba empezando a moverse? | `broad_in_play_discovery_scanner_v0_1` |
-| Que estado real tenia el ticker? | `market_state` / `event_state` |
-| Que hizo la estrategia? | strategy table / decision model |
-| Que outcome ocurrio? | outcome table |
-
-## 5. Por que esto importa para DAS
-
-DAS puede activarse antes de que:
-
-- `volume_today` alcance 500k;
-- el ticker sea top 25 por `% change 1D`;
-- el operador lo vea en una hot list estrecha.
-
-Si TSIS solo conserva el scanner operativo, puede concluir falsamente que un
-patron no existia o que no era observable.
-
-Si TSIS solo conserva el scanner broad, puede olvidar la pregunta operacional:
-
-```text
-Lo habria visto realmente el operador?
-```
-
-Por eso ambos deben vivir juntos y compararse.
 
 ## 6. Columnas que deben sobrevivir
 
@@ -129,6 +136,7 @@ ticker / instrument_id
 population_denominator_count
 evaluated_candidate_count
 selected_candidate_count
+profile_ids
 candidate_reasons
 candidate_reason_count
 rank_pct_chg_1d
@@ -137,8 +145,13 @@ rank_dollar_volume_to_time
 rank_rvol_to_time
 rank_composite_in_play
 selected_trade_station_like_top25
-selected_broad_discovery
+selected_relative_volume_profile
+selected_percent_change_profile
+selected_dollar_volume_tradability_profile
+selected_das_research_profile
 volume_tier
+float_available_point_in_time
+float_source_id
 valid_for_event_discovery_candidate
 valid_for_market_state_seed_candidate
 valid_for_ml_feature_candidate = false by default
@@ -148,8 +161,7 @@ valid_for_rl_state_candidate = false by default
 ## 7. Regla de uso
 
 ```text
-TradeStation-like reproduce la visibilidad operacional.
-Broad discovery protege el research contra llegada tardia.
+El scanner base crea el denominador.
+Los perfiles crean formas reproducibles de mirar ese denominador.
 Ninguno reemplaza market_state.
 ```
-

@@ -171,19 +171,30 @@ data_quality_report
 
 - `C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/README.md`
   - Mapa CTO activo de la capa scanner.
-  - Explica que scanner decide donde mirar, no que estado operar.
+  - Explica que scanner base decide a quien mirar, perfiles deciden como
+    inspeccionar, y ninguno reemplaza estado.
+
+- `C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_base_universe_and_profiles_contract_v0_2.md`
+  - Decision CTO activa: un scanner base con `common_stock`, `market_cap < 100M`,
+    `0.5 < last_price <= 20` y quality `usable/review`, mas perfiles de
+    visibilidad operativa, relative volume, percent change, tradability y DAS
+    research.
+  - Incluye justificacion cientifica directa para no convertir volumen,
+    pct-change, float o winners historicos en filtros universales sin estudio.
 
 - `C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_candidate_selection_architecture_v0_1.md`
   - Define el scanner como capa de candidate selection previa a
     `market_state`/`event_state`.
+  - Conserva v0.1 como referencia historica y apunta a la decision v0.2.
 
 - `C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_table_and_contract_map_v0_1.md`
   - Lista contratos, schema, registry, policy, validators, builder, notebook y
     replay controlado existentes.
 
 - `C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_definitions_trade_station_vs_broad_discovery_v0_1.md`
-  - Separa `trade_station_like_scanner_v0_1` de
-    `broad_in_play_discovery_scanner_v0_1`.
+  - Conserva como referencia historica el modelo v0.1 de
+    `trade_station_like_scanner_v0_1` y `broad_in_play_discovery_scanner_v0_1`.
+  - Registra que v0.2 reemplaza esa lectura por scanner base + perfiles.
 
 - `C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_to_market_state_promotion_path_v0_1.md`
   - Define la ruta desde scanner candidates hasta `institutional_market_state`.

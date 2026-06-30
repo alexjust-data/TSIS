@@ -9,6 +9,26 @@ Este documento lista donde vive el trabajo real ya hecho sobre el scanner.
 
 No reemplaza esos contratos. Sirve como mapa para humanos y agentes.
 
+## Nota de revision 2026-06-30
+
+Los artefactos operativos existentes son v0.1 y prueban un replay controlado con
+dos definiciones:
+
+```text
+trade_station_like_scanner_v0_1
+broad_in_play_discovery_scanner_v0_1
+```
+
+La decision CTO activa para nuevo trabajo es v0.2:
+
+```text
+base_in_play_universe_scanner_v0_2
+-> profiles / views / rankings
+```
+
+Por tanto, este mapa describe lo que existe hoy en `01_foundations`, no lo que
+debe quedar como contrato final despues del refactor operativo.
+
 ## Autoridad operativa
 
 ```text
@@ -19,7 +39,7 @@ No reemplaza esos contratos. Sirve como mapa para humanos y agentes.
 
 | Tema | Ruta | Rol |
 | --- | --- | --- |
-| Framework de scanners | `01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_1.md` | Define `trade_station_like` y `broad_discovery`. |
+| Framework de scanners | `01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_1.md` | Define `trade_station_like` y `broad_discovery` v0.1; debe migrar a scanner base + perfiles v0.2. |
 | Tabla objetivo | `01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_1.md` | Define rol, replay, output roots y prohibiciones. |
 | Schema canonico | `01_foundations/canonical_schemas/outputs/daily_scanner_candidates_table_schema_contract.md` | Define columnas, grain y flags. |
 | Dataset contract | `01_foundations/contract_registry/dataset_contracts/daily_scanner_candidates_table_dataset_contract_v0_1.md` | Define identidad logica y estado del dataset. |
@@ -38,6 +58,17 @@ Regla:
 
 ```text
 Los thresholds de scanner no deben esconderse en notebooks ni en prompts.
+```
+
+Migracion esperada:
+
+```text
+base_in_play_universe_scanner_v0_2.yaml
+trade_station_like_profile_v0_2.yaml
+relative_volume_profile_v0_2.yaml
+percent_change_profile_v0_2.yaml
+dollar_volume_tradability_profile_v0_2.yaml
+das_research_profile_v0_2.yaml
 ```
 
 ## Implementacion
@@ -100,6 +131,7 @@ Interpretacion:
 ```text
 El replay prueba forma, lineage y separacion operacional-vs-broad.
 No prueba output oficial E:/ ni full universe institucional.
+No prueba que el modelo de dos scanners sea la arquitectura final.
 ```
 
 ## Output roots
@@ -138,6 +170,8 @@ Significa:
 - hay notebook de inspeccion;
 - no hay promocion oficial full historical;
 - no debe consumirse como estado ML/RL final.
+- la semantica operativa debe migrar a base scanner + perfiles antes de
+  promocion amplia.
 
 ## Pendiente antes de promocion
 
@@ -146,4 +180,5 @@ Significa:
 3. Materializar candidate replay amplio en `E:/TSIS/data/.../candidate_replays/`.
 4. Revisar evidencia visual/forense si se usa como seed de estados.
 5. Promocionar solo con manifest, changelog, registry status y consumo downstream claro.
-
+6. Refactorizar contratos/configs/builders de v0.1 a v0.2 antes de tratar el
+   scanner como arquitectura estable.

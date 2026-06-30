@@ -24,7 +24,9 @@ Por tanto, debe existir una ruta explicita de promocion.
 ## 2. Ruta canonica
 
 ```text
-daily_scanner_candidates_table
+base_in_play_universe_scanner
+-> scanner profiles / ranks / candidate reasons
+-> daily_scanner_candidates_table
 -> candidate set / denominator
 -> strategy-specific experimental state table
 -> event_state_candidate
@@ -40,9 +42,19 @@ Rol:
 Define donde mirar.
 ```
 
+Lectura vigente:
+
+```text
+un scanner base define la poblacion observable;
+los perfiles definen ranking, visibilidad operativa o research;
+la tabla persiste ambas cosas como lineage.
+```
+
 Debe contener:
 
 - scanner definition;
+- base universe definition;
+- profile ids;
 - session/as-of;
 - denominator;
 - ranks;
@@ -157,7 +169,8 @@ Hasta entonces, cualquier estado es candidato o experimental.
 ## 8. Regla de promocion
 
 ```text
-El scanner abre la puerta.
+El scanner base abre la puerta.
+Los perfiles explican por que una fila merece inspeccion.
 El estado reconstruye el mundo observable.
 La estrategia interpreta el estado.
 El evaluador juzga decisiones bajo reglas bloqueadas.
@@ -174,4 +187,3 @@ Pendiente antes de usar scanner-derived state para ML/RL institucional:
 5. evidencia visual/forense por muestras;
 6. promotion review;
 7. registro de consumo por ML/RL.
-

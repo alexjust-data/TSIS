@@ -52,6 +52,16 @@ run summaries, trace logs y, si procede, release log propio.
 
 ### Added
 
+- Added `scanner_base_universe_and_profiles_contract_v0_2.md` under
+  `11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/`.
+  The v0.2 candidate policy replaces the two-independent-scanner mental model
+  with one base in-play universe plus reproducible profiles. It defines the
+  base filters (`common_stock`, `market_cap < 100M`, `0.5 < last_price <= 20`,
+  `data_quality in usable/review`), moves `volume_today >= 500k` and
+  `% change 1D top 25` into a TradeStation-like profile, blocks float as a hard
+  filter until point-in-time coverage is audited, and requires scientific
+  justification for using volume, percent-change, microstructure and winners or
+  failures in scanner-derived state research.
 - Added `TSIS_LAB_ARCHITECTURE_v2.md` as the 2026-06-30 CTO architecture
   candidate. The v2 preserves `TSIS_LAB_ARCHITECTURE.md` as historical v1 and
   updates the active lab architecture around Data Foundation maturity, Scanner
@@ -63,10 +73,9 @@ run summaries, trace logs y, si procede, release log propio.
   scanner rows or partial state seeds as ML/RL-ready institutional state.
 - Added the CTO Scanner Candidate Selection architecture under
   `11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/`.
-  The new candidate-policy stack explains why TSIS separates operational
-  visibility (`trade_station_like_scanner_v0_1`) from broad research discovery
-  (`broad_in_play_discovery_scanner_v0_1`), maps all operational contracts in
-  `01_foundations`, and defines the promotion path from scanner candidates to
+  The stack now records the v0.1 two-scanner replay as historical evidence,
+  maps all operational contracts in `01_foundations`, and points active design
+  work to the v0.2 base universe plus profiles policy before promotion toward
   strategy-specific experimental state, `event_state_candidate`,
   `market_state_candidate` and `institutional_market_state`.
 - Added the `00_CTO` Graphify leaf Git publication rule: root
@@ -350,6 +359,11 @@ run summaries, trace logs y, si procede, release log propio.
 
 ### Changed
 
+- Reframed the active Scanner Candidate Selection architecture from
+  `trade_station_like_scanner_v0_1` plus `broad_in_play_discovery_scanner_v0_1`
+  to `base_in_play_universe_scanner_v0_2` plus profiles. The v0.1 replay and
+  configs remain historical controlled evidence until `01_foundations`
+  contracts, schemas, configs, builder, validators and notebooks are migrated.
 - Expanded `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/STRATEGY.md`
   with corrected good DAS variants from annotated review images, including
   `ROLR_clean_frontside_DAS_ladder`,

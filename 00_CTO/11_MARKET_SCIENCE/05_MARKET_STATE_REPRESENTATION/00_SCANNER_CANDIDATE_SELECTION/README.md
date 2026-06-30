@@ -29,7 +29,8 @@ Esta carpeta existe para que un humano o agente entienda:
 ## Regla central
 
 ```text
-El scanner decide donde mirar.
+El scanner base decide a quien mirar.
+Los perfiles deciden como ordenar o inspeccionar.
 El market_state decide que sabia TSIS en ese momento.
 La estrategia decide si ese estado encaja con una hipotesis.
 ML/RL no entrena directamente sobre scanner rows.
@@ -37,10 +38,48 @@ ML/RL no entrena directamente sobre scanner rows.
 
 ## Orden de lectura
 
-1. `scanner_candidate_selection_architecture_v0_1.md`
-2. `scanner_definitions_trade_station_vs_broad_discovery_v0_1.md`
-3. `scanner_table_and_contract_map_v0_1.md`
-4. `scanner_to_market_state_promotion_path_v0_1.md`
+1. `scanner_base_universe_and_profiles_contract_v0_2.md`
+2. `scanner_candidate_selection_architecture_v0_1.md`
+3. `scanner_definitions_trade_station_vs_broad_discovery_v0_1.md`
+4. `scanner_table_and_contract_map_v0_1.md`
+5. `scanner_to_market_state_promotion_path_v0_1.md`
+
+## Decision activa 2026-06-30
+
+La lectura activa ya no es:
+
+```text
+dos scanners independientes
+```
+
+La lectura activa es:
+
+```text
+un scanner base + perfiles reproducibles
+```
+
+Scanner base:
+
+```text
+common_stock = true
+market_cap_usd < 100000000
+0.5 < last_price <= 20
+data_quality in usable/review
+```
+
+Perfiles:
+
+```text
+trade_station_like_profile_v0_2
+relative_volume_profile_v0_2
+percent_change_profile_v0_2
+dollar_volume_tradability_profile_v0_2
+das_research_profile_v0_2
+```
+
+El replay v0.1 de `trade_station_like_scanner_v0_1` y
+`broad_in_play_discovery_scanner_v0_1` queda como evidencia historica de forma
+y lineage, no como arquitectura final.
 
 ## Cadena conceptual
 
@@ -80,4 +119,3 @@ Esta carpeta no debe:
 01_TSIS_backtest_SmallCaps/configs/data_foundation_outputs/scanner_definitions/
 01_TSIS_backtest_SmallCaps/scripts/materialize_daily_scanner_candidates_table.py
 ```
-

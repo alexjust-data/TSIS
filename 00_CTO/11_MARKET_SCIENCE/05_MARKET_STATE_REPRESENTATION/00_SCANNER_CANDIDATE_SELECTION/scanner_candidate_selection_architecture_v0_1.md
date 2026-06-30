@@ -5,6 +5,30 @@ Estado: candidate_policy
 Scope: TSIS Market State Representation, Data Foundation, Trading Systems,
 ML/RL, live readiness and AlphaEvolve evaluators
 
+## Nota de revision 2026-06-30
+
+Este documento queda conservado como arquitectura de candidate selection v0.1,
+pero la decision CTO activa para nueva implementacion vive en:
+
+```text
+scanner_base_universe_and_profiles_contract_v0_2.md
+```
+
+La lectura vigente ya no es:
+
+```text
+dos scanners independientes
+```
+
+La lectura vigente es:
+
+```text
+un scanner base + perfiles reproducibles
+```
+
+El replay v0.1 sigue siendo evidencia util de forma, lineage y separacion de
+responsabilidades, pero no debe usarse como doctrina final.
+
 ## 1. Tesis
 
 TSIS necesita una capa explicita de seleccion de candidatos antes de construir
@@ -22,7 +46,7 @@ en una fecha/as-of concreta, y por que razon entraron en el conjunto?
 Sin esta capa, el research queda expuesto a dos errores:
 
 - mirar solo los casos que ya sabemos que funcionaron;
-- confundir una hot list operativa con el universo real de discovery.
+- confundir una hot list operativa con el estado completo del mercado.
 
 ## 2. Lugar en la arquitectura
 
@@ -51,29 +75,41 @@ Un scanner row no es:
 - fill;
 - orden.
 
-## 3. Por que no basta un scanner unico
+## 3. Decision v0.2: un scanner base, multiples perfiles
 
-TSIS separa dos preguntas distintas:
-
-```text
-Que habria visto el operador?
-```
-
-y:
+La conclusion posterior a la revision DAS y Market State es:
 
 ```text
-Que ticker empezaba a estar vivo aunque el operador todavia no lo hubiera visto?
+TSIS debe mantener una sola poblacion base y derivar perfiles sobre ella.
 ```
 
-La primera pregunta protege la reconstruccion de la realidad operativa humana.
-La segunda protege el research contra sesgo de llegada tardia.
-
-Por eso el framework v0.1 tiene dos definiciones:
+Hard filters del scanner base:
 
 ```text
-trade_station_like_scanner_v0_1
-broad_in_play_discovery_scanner_v0_1
+common_stock = true
+market_cap_usd < 100000000
+0.5 < last_price <= 20
+data_quality in usable/review
 ```
+
+Perfiles derivados:
+
+```text
+trade_station_like_profile_v0_2
+relative_volume_profile_v0_2
+percent_change_profile_v0_2
+dollar_volume_tradability_profile_v0_2
+das_research_profile_v0_2
+```
+
+La razon es tecnica:
+
+- `volume_today >= 500k` puede llegar tarde para frontside/DAS;
+- `% change 1D top 25` reconstruye visibilidad humana, pero no agota discovery;
+- float bajo importa, pero debe tener fuente point-in-time auditada antes de
+  ser hard filter;
+- el scanner debe crear denominador, no seleccionar solo buenos ejemplos;
+- ML/RL necesita estados, no filas de scanner.
 
 ## 4. Relacion con Data Foundation
 
@@ -131,11 +167,17 @@ Decision TSIS -> Evidencia directa -> Obligacion tecnica -> Limitacion abierta:
 
 | Decision TSIS | Evidencia directa | Obligacion tecnica | Limitacion abierta |
 | --- | --- | --- | --- |
-| Separar candidate selection de estado. | RL y decision models operan sobre estados, no sobre listas de observacion. `RESEARCH_PHILOSOPHY.md` define setups como transiciones de estado. | Scanner rows no pueden usarse como `market_state` final. | Hace falta construir `market_state_table`/`event_state_table` completos. |
-| Mantener scanner operativo y scanner broad separados. | La comparacion entre visibilidad humana y discovery amplio evita sesgo de llegada tardia. | Persistir `scanner_definition_id`, `candidate_reasons`, rankings y flags separados. | Los thresholds broad v0.1 deben calibrarse con replay amplio. |
-| No hacer hard filter universal de `volume_today > 500k`. | DAS/frontside puede aparecer antes de volumen acumulado alto. | Guardar volumen como feature, tier y razon; no como exclusion universal. | Requiere replay intradia/as-of mas rico para medir timing. |
-| No usar `% change 1D` como unica razon. | Market state incluye atencion, liquidez, after-hours, premarket, news, halts y regimen. | Persistir razones multiples de inclusion. | Algunas razones dependen de tablas contextuales aun no maduras. |
-| Bloquear labels/outcomes/rewards dentro del scanner. | `VERSIONING_STANDARDS.md` exige separar features, labels, rewards, actions y datasets. | Validators deben prohibir PnL/fill/reward/label/action en scanner table. | Strategy tables pueden tener labels, pero fuera del scanner general. |
+| Separar candidate selection de estado. | RL y decision models operan sobre estados, no sobre listas de observacion. Levine et al. (2020) revisa offline RL como aprendizaje desde datasets historicos de decision. | Scanner rows no pueden usarse como `market_state` final. | Hace falta construir `market_state_table`/`event_state_table` completos. |
+| Reemplazar dos scanners por scanner base + perfiles. | La cobertura del dataset condiciona cualquier politica aprendida; dividir universos por thresholds de research puede crear sesgo de seleccion. | Mantener denominador base y guardar perfiles como flags/ranks/reasons. | Los contratos operativos de `01_foundations` aun son v0.1. |
+| No hacer hard filter universal de `volume_today > 500k`. | Causal ML y Causal Factor Investing advierten contra confundir proxy observable con mecanismo. En microcaps, volumen puede ser consecuencia de attention shock. | Guardar volumen como feature, tier, ranking y razon; medir si llega tarde. | Requiere replay intradia/as-of mas rico para medir timing. |
+| No usar `% change 1D` como unica razon. | DeepLOB y literatura LOB muestran que el mercado relevante para decision tiene estructura espacio-temporal, no solo retorno diario. | Persistir multiples perfiles de ranking. | Algunas razones dependen de tablas contextuales aun no maduras. |
+| Bloquear labels/outcomes/rewards dentro del scanner. | `VERSIONING_STANDARDS.md` exige separar features, labels, rewards, actions y datasets; offline RL necesita transiciones gobernadas. | Validators deben prohibir PnL/fill/reward/label/action en scanner table. | Strategy tables pueden tener labels, pero fuera del scanner general. |
+
+Referencias primarias y detalle operativo viven en:
+
+```text
+scanner_base_universe_and_profiles_contract_v0_2.md
+```
 
 ## 8. Definicion corta para agentes
 
@@ -144,6 +186,5 @@ Scanner Candidate Selection = capa reproducible que define que instrumentos
 estaban bajo observacion o discovery en un as-of determinado.
 ```
 
-Si un agente no puede explicar la diferencia entre scanner, state, event,
-strategy y outcome, no debe modificar esta capa.
-
+Si un agente no puede explicar la diferencia entre scanner, profile, state,
+event, strategy y outcome, no debe modificar esta capa.

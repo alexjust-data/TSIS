@@ -275,8 +275,8 @@ Proposito:
 
 - explicar como TSIS decide que instrumentos mirar antes de construir
   `market_state` o `event_state`;
-- separar scanner operativo, discovery amplio, estrategia, evento, estado,
-  label y outcome;
+- separar scanner base, perfiles operativos/research, estrategia, evento,
+  estado, label y outcome;
 - enlazar los contratos reales de `daily_scanner_candidates_table` sin crear
   una segunda source of truth;
 - preservar la regla de que ML/RL no entrena directamente sobre filas de
@@ -285,14 +285,19 @@ Proposito:
 Estado:
 
 - candidate policy CTO creada;
+- decision v0.2 activa: un scanner base `common_stock`, `market_cap < 100M`,
+  `0.5 < last_price <= 20`, quality `usable/review`, mas perfiles
+  reproducibles;
 - contratos operativos y builder inicial viven en `01_foundations`;
-- replay controlado pequeno existe, pero no hay promocion full historical
-  oficial.
+- replay controlado pequeno v0.1 existe, pero queda como evidencia historica,
+  no como arquitectura final;
+- no hay promocion full historical oficial.
 
 Regla:
 
 ```text
-el scanner decide donde mirar; el market_state decide que sabia TSIS
+el scanner base decide a quien mirar; los perfiles explican como inspeccionar;
+el market_state decide que sabia TSIS
 ```
 
 ## Politica de grafo semantico Graphify

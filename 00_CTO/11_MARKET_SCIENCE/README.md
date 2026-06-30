@@ -14,8 +14,9 @@ Para scanner candidate selection, leer:
 05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/README.md
 ```
 
-Esa carpeta explica que el scanner decide donde mirar; no define una estrategia
-ni reemplaza `market_state`/`event_state`.
+Esa carpeta explica que el scanner base decide a quien mirar, que los perfiles
+deciden como ordenar o inspeccionar, y que ninguno define estrategia ni
+reemplaza `market_state`/`event_state`.
 
 ---
 

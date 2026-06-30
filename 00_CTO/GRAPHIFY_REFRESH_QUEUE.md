@@ -118,6 +118,56 @@ Por ventana dedicada:
 
 ## Entradas activas
 
+### 2026-06-30 - Scanner base universe and profiles v0.2
+
+Estado: pending
+Severidad: HIGH
+
+Slice:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/
+```
+
+Motivo:
+
+- la arquitectura activa de Scanner Candidate Selection cambia de dos scanners
+  independientes a un scanner base con perfiles reproducibles;
+- `volume_today >= 500k` y `% change 1D top 25` pasan a ser
+  `trade_station_like_profile_v0_2`, no filtros universales;
+- `broad_in_play_discovery_scanner_v0_1` queda descompuesto en perfiles,
+  razones y rankings sobre el universo base;
+- se bloquea float como hard filter hasta auditar disponibilidad point-in-time;
+- se anade justificacion cientifica directa con Offline RL, causal ML,
+  Causal Factor Investing, DeepLOB, Kyle y order-flow toxicity;
+- futuras consultas Graphify sobre scanner deben saber que v0.1 es evidencia
+  historica y v0.2 es la candidate policy activa.
+
+Changed paths:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_base_universe_and_profiles_contract_v0_2.md
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/README.md
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_candidate_selection_architecture_v0_1.md
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_definitions_trade_station_vs_broad_discovery_v0_1.md
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_table_and_contract_map_v0_1.md
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_to_market_state_promotion_path_v0_1.md
+00_CTO/11_MARKET_SCIENCE/README.md
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/market_state_representation_source_file_map_v0_1.md
+00_CTO/TSIS_LAB_ARCHITECTURE_v2.md
+00_CTO/README.md
+00_CTO/CHANGELOG.md
+00_CTO/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Required Graphify action:
+
+```text
+Rebuild or update the Market State Representation leaf with official Graphify.
+Do not manually edit graphify-out/graph.json, GRAPH_REPORT.md or graph.html.
+Root graph merge is not required for this documentation step.
+```
+
 ### 2026-06-30 - TSIS Lab Architecture v2
 
 Estado: pending
@@ -164,7 +214,7 @@ edit generated Graphify outputs.
 
 ### 2026-06-30 - Scanner Candidate Selection architecture
 
-Estado: pending
+Estado: superseded_by_2026-06-30_scanner_base_universe_and_profiles_v0_2
 Severidad: HIGH
 
 Slice:
@@ -179,8 +229,9 @@ Motivo:
   `05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/`;
 - la nueva documentacion explica scanner candidate selection como capa previa a
   `market_state` y `event_state`;
-- se separa la visibilidad operacional `trade_station_like_scanner_v0_1` de
-  `broad_in_play_discovery_scanner_v0_1`;
+- nota posterior: esta entrada describe la creacion inicial v0.1. La
+  semantica activa queda reemplazada por scanner base + perfiles v0.2 en la
+  entrada `Scanner base universe and profiles v0.2`;
 - se enlazan los contratos operativos reales de `01_foundations` sin crear una
   segunda source of truth;
 - se actualizan los mapas CTO para que futuros agentes entiendan que scanner
