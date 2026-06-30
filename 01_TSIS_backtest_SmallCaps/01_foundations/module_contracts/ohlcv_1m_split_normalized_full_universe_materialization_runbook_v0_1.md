@@ -294,6 +294,26 @@ Important:
 - rerunning skips existing files where possible;
 - this is the preferred first large run.
 
+Latest completed run:
+
+```text
+run_id: split_affected_20260627_192314
+mode: split-affected
+run_root: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/1m_split_normalized_full_universe_candidate/split_affected_20260627_192314
+output_root: E:/TSIS/data/ohlcv_1m_split_normalized_full_universe_candidate
+manifest_rows: 115667
+chunk_count: 24
+output_files_present: 115667
+audit_run: true
+audit_status: completed
+```
+
+Results document:
+
+```text
+01_foundations/module_contracts/ohlcv_1m_split_normalized_split_affected_materialization_results_v0_1.md
+```
+
 ## 8. Heavier Overnight Command - Physical Full Copy
 
 Use only if the goal is to physically materialize every raw 1m ticker-month,

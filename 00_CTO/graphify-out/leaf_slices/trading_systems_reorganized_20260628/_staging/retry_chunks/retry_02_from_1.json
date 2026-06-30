@@ -1,0 +1,36 @@
+{
+  "parent_failed_chunk": 1,
+  "parent_name": "event_library",
+  "scope_root": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS",
+  "files": [
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\01_MOMENTUM_EXPANSION\\PM_ACCEPTED_EXTENSION_BREAK_EVENT\\SOURCE_NOTE_RESPONSE_CLONE.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/SOURCE_NOTE_RESPONSE_CLONE.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/SOURCE_NOTE_RESPONSE_CLONE.md",
+      "bytes": 3802,
+      "line_count": 107,
+      "word_count_approx": 553,
+      "sha256": "fd73b7fb8ba5a34dbc10d130f8c1a1b4551476b86f7e92ef9ef653c29620a7a1"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/README.md",
+      "bytes": 3003,
+      "line_count": 124,
+      "word_count_approx": 360,
+      "sha256": "7a298cccd8651cf6dd0e6960baa7d3fbb34a5353549fc96efda7f2944faf861b"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\02_VWAP_CONTROL\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/02_VWAP_CONTROL/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/02_VWAP_CONTROL/README.md",
+      "bytes": 581,
+      "line_count": 30,
+      "word_count_approx": 78,
+      "sha256": "4d7f8052a5fbdbf6f056113439e3637a977edfddd2025073ddc9f8cb9b2c58e4"
+    }
+  ],
+  "word_count_approx": 991,
+  "retry_chunk_id": 2
+}

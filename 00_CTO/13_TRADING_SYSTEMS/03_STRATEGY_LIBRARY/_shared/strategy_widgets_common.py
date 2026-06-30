@@ -68,7 +68,9 @@ def _parse_years(value: str | None) -> tuple[int, ...]:
         if not part:
             continue
         if "-" in part:
-            start, end = part.split("-", 1)
+            start, end = (item.strip() for item in part.split("-", 1))
+            if not start or not end:
+                continue
             years.extend(range(int(start), int(end) + 1))
         else:
             years.append(int(part))

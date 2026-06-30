@@ -5,6 +5,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+import pandas as pd
+
 from _helpers.data_foundation import write_json_artifact
 
 
@@ -242,3 +244,74 @@ def test_market_state_builder_rejects_prohibited_feature(
     assert result.returncode != 0
     assert "prohibited state feature family detected" in result.stderr
     assert "label__future_return" in result.stderr
+
+
+def test_market_state_candidate_materializes_from_microstructure(
+    tsis_artifacts_dir: Path,
+) -> None:
+    output_root = tsis_artifacts_dir / "market_state_candidate_from_microstructure"
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(CONTRACT_PATHS["builder"]),
+            "--materialize-candidate",
+            "--candidate-output-root",
+            str(output_root),
+            "--overwrite",
+        ],
+        cwd=MODULE_ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    payload = json.loads(result.stdout)
+    manifest = json.loads(Path(payload["manifest"]).read_text(encoding="utf-8"))
+    frame = pd.read_parquet(payload["output"])
+
+    assert manifest["dataset_id"] == "market_state_table_v0_1_candidate"
+    assert manifest["status"] == "controlled_candidate_not_promoted"
+    assert manifest["full_universe_claim"] is False
+    assert manifest["source_root_states"]["quotes_root_state"] == (
+        "provisional_d_legacy_recovery_root_pending_e_parity"
+    )
+    assert manifest["source_root_states"]["requires_rebuild_after_e_quotes_parity"] is True
+    assert len(frame) == 50
+    assert frame["ticker"].nunique() == 9
+    assert frame["market_state_id"].is_unique
+    assert set(frame["state_quality_state"]) == {"state_review_microstructure_seed_only"}
+    assert frame["valid_for_event_context_candidate"].all()
+    assert not frame["valid_for_ml_feature_candidate"].any()
+    assert not frame["valid_for_rl_state_candidate"].any()
+    assert not frame["valid_for_rl_training_direct"].any()
+    assert not frame["valid_for_execution_simulator_direct"].any()
+    assert not frame["full_universe_claim"].any()
+    assert not frame["execution_truth"].any()
+
+    prohibited_prefixes = (
+        "outcome__",
+        "label__",
+        "reward__",
+        "action__",
+        "policy__",
+        "fill__",
+        "pnl__",
+        "future__",
+        "strategy__",
+        "signal__",
+    )
+    assert not any(column.startswith(prohibited_prefixes) for column in frame.columns)
+
+    decision_ts = pd.to_datetime(frame["decision_timestamp_utc"], utc=True)
+    for column in [c for c in frame.columns if c.endswith("_as_of_utc")]:
+        values = pd.to_datetime(frame[column], utc=True, errors="coerce")
+        assert not (values.notna() & (values > decision_ts)).any(), column
+
+    write_json_artifact(
+        tsis_artifacts_dir,
+        "market_state_candidate_materialization_check.json",
+        {
+            "manifest": payload["manifest"],
+            "output": payload["output"],
+            "validations": manifest["validations"],
+        },
+    )

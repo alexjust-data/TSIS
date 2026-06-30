@@ -125,6 +125,160 @@ Por ventana dedicada:
 
 ## Entradas activas
 
+### GFQ-20260628-002 - Graphify no-API and version-alignment protocol
+
+Status: topology_leaf_built_full_semantic_refresh_pending
+
+Severity: HIGH
+
+Slice:
+
+```text
+certification_decisions_graph
+graphify_governance_slice
+```
+
+Why:
+
+- `00_data_certification/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md` now explicitly
+  requires no-API Codex semantic extraction through the Graphify skill
+  host-agent/subagent path when no Gemini/Google API is configured.
+- Future certification Graphify `BUILD_MANIFEST.md` files must record package
+  version, skill/source version, upstream reference, no-API mode and semantic
+  coverage.
+- CLI `graphify update` alone is not sufficient semantic coverage for
+  closeouts, policies, markdown, papers, notebooks converted to documents or
+  images.
+
+Changed paths:
+
+```text
+00_data_certification/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md
+00_data_certification/GRAPHIFY_REFRESH_QUEUE.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Required Graphify action:
+
+```text
+Include this protocol change in the next official certification governance
+leaf. This queue entry does not prove graph refresh completion.
+```
+
+Build result:
+
+```text
+Covered by cross-project governance leaf:
+C:/TSIS_Data/00_CTO/graphify-out/leaf_slices/graphify_governance_20260629/
+
+Graphify package: graphifyy 0.9.1
+Semantic mode: Codex host inline extraction, no external API required
+Nodes: 37
+Edges: 60
+Communities: 9
+Diagnostic: clean
+
+Important limitation:
+This satisfies graphify_governance_slice coverage for the protocol change, but
+it does not rebuild certification_decisions_graph or any certification root
+graph. Those remain pending by slice.
+```
+
+Certification leaf result:
+
+```text
+Built topology refresh leaf:
+00_data_certification/graphify-out/leaf_slices/certification_decisions_topology_20260629/
+
+Graphify package: graphifyy 0.9.1
+Semantic mode: deterministic_certification_decision_topology
+Corpus files: 88
+Nodes: 122
+Edges: 653
+Communities: 11
+Diagnostic: clean
+Root graph: absent / not merged
+```
+
+Important limitation:
+
+```text
+This topology leaf records modern provenance, corpus and diagnostics for the
+controlled certification decisions corpus. It does not replace the full
+semantic `certification_decisions_20260619` leaf produced with semantic worker
+chunks. A full semantic refresh remains pending if field-level/case-level graph
+reasoning is needed.
+```
+
+### GFQ-20260628-001 - Graphify build baseline provenance rule
+
+Status: topology_leaf_built_full_semantic_refresh_pending
+
+Severity: HIGH
+
+Slice:
+
+```text
+certification_graphify_governance
+```
+
+Reason:
+
+- The certification Graphify protocol now requires every future
+  `BUILD_MANIFEST.md` to record commit, dirty state, exact corpus, queue
+  coverage, diagnostics and next-delta commands.
+- This keeps future certification leaf rebuilds auditable from the previous
+  graph baseline instead of relying on conversation memory.
+
+Changed paths:
+
+```text
+00_data_certification/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md
+00_data_certification/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Recommended action:
+
+```text
+Include this governance change in the next certification graph governance or
+certification_decisions leaf refresh. Do not rebuild a monolithic
+00_data_certification graph.
+```
+
+Root action:
+
+```text
+No root graph.
+```
+
+Build result:
+
+```text
+Covered by:
+C:/TSIS_Data/00_CTO/graphify-out/leaf_slices/graphify_governance_20260629/BUILD_MANIFEST.md
+
+The manifest records graphify package version, skill path/hash, upstream
+reference, no-API mode, semantic extraction mode, commit, dirty state, exact
+corpus, diagnostics and next-delta commands.
+```
+
+Certification leaf result:
+
+```text
+Covered by:
+00_data_certification/graphify-out/leaf_slices/certification_decisions_topology_20260629/BUILD_MANIFEST.md
+
+The manifest records graphify package version, skill path/hash, upstream
+reference, no-API mode, semantic extraction mode, commit, dirty state, exact
+corpus, diagnostics and next-delta commands.
+```
+
+Owner:
+
+```text
+Modulo 01 / RAW data certification governance
+```
+
 ### GFQ-20260619-001 - Initial certification decisions Graphify governance
 
 Status: `leaf_built`

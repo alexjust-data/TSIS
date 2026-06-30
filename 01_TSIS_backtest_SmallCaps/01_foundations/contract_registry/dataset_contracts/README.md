@@ -293,6 +293,7 @@ Ejemplo:
 - `corporate_actions_table_dataset_contract_v0_1.md`
 - `dataset_certification_matrix_dataset_contract_v0_1.md`
 - `master_daily_table_dataset_contract_v0_1.md`
+- `daily_scanner_candidates_table_dataset_contract_v0_1.md`
 - `master_intraday_bar_table_dataset_contract_v0_1.md`
 - `microstructure_features_table_dataset_contract_v0_1.md`
 - `halts_table_dataset_contract_v0_1.md`
@@ -352,6 +353,7 @@ contract_registry/dataset_contracts/
   daily_dataset_contract_v0_1.md
   daily_label_taxonomy_and_cut_policy.md
   daily_return_labels_dataset_contract_v0_1.md
+  daily_scanner_candidates_table_dataset_contract_v0_1.md
   fundamentals_asof_table_dataset_contract_v0_1.md
   news_context_table_dataset_contract_v0_1.md
   short_context_table_dataset_contract_v0_1.md

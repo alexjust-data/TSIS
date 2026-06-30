@@ -1,0 +1,221 @@
+{
+  "communities": {
+    "0": [
+      "00_cto_graphify_official_build_protocol_no_api_mode",
+      "01_tsis_backtest_smallcaps_01_foundations_graphify_official_build_protocol_data_foundation_graphify_official_build_protocol",
+      "01_tsis_backtest_smallcaps_01_foundations_graphify_refresh_queue_data_foundation_graphify_refresh_queue",
+      "01_tsis_backtest_smallcaps_01_foundations_readme_data_foundation_readme",
+      "01_tsis_backtest_smallcaps_local_rules_smallcaps_local_rules"
+    ],
+    "1": [
+      "long_running_operations_contract_heartbeat",
+      "long_running_operations_contract_pid_manifest",
+      "long_running_operations_contract_pre_manifest",
+      "long_running_operations_contract_progress_telemetry_standard",
+      "long_running_operations_contract_separate_monitor"
+    ],
+    "2": [
+      "00_cto_graphify_official_build_protocol_cto_graphify_official_build_protocol",
+      "00_cto_graphify_official_build_protocol_leaf_first_graph_build",
+      "00_cto_graphify_refresh_queue_cto_graphify_refresh_queue",
+      "00_cto_local_rules_cto_local_rules"
+    ],
+    "3": [
+      "00_cto_graphify_official_build_protocol_cto_root_graph",
+      "00_cto_graphify_official_build_protocol_root_merge_gate",
+      "01_tsis_backtest_smallcaps_01_foundations_graphify_official_build_protocol_data_foundation_root_graph",
+      "01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_official_build_protocol_data_certification_root_graph"
+    ],
+    "4": [
+      "00_cto_graphify_official_build_protocol_graphify_runtime_output",
+      "agents_institutional_artifacts",
+      "agents_no_hidden_state_assumption",
+      "agents_tsis_agents_contract"
+    ],
+    "5": [
+      "agents_mandatory_reading_order",
+      "architecture_overview_architecture_overview",
+      "project_operating_system_project_operating_system",
+      "research_philosophy_research_philosophy"
+    ],
+    "6": [
+      "changelog_cross_project_graphify_governance_leaf_build",
+      "changelog_root_changelog",
+      "long_running_operations_contract_long_running_operations_contract",
+      "project_rules_project_rules"
+    ],
+    "7": [
+      "00_cto_graphify_official_build_protocol_build_manifest_baseline",
+      "agents_reproducibility_minimum",
+      "versioning_standards_versioning_standards"
+    ],
+    "8": [
+      "00_cto_graphify_official_build_protocol_graph_delta_audit",
+      "01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_official_build_protocol_data_certification_graphify_official_build_protocol",
+      "01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_refresh_queue_data_certification_graphify_refresh_queue"
+    ],
+    "9": [
+      "01_tsis_backtest_smallcaps_01_foundations_module_contracts_graphify_data_foundation_graph_and_table_design_protocol_data_foundation_graph_and_table_design_protocol",
+      "01_tsis_backtest_smallcaps_01_foundations_module_contracts_graphify_data_foundation_graph_and_table_design_protocol_data_foundation_outputs",
+      "01_tsis_backtest_smallcaps_01_foundations_module_contracts_graphify_data_foundation_graph_and_table_design_protocol_market_state_tables"
+    ]
+  },
+  "cohesion": {
+    "0": 0.4,
+    "1": 0.4,
+    "2": 0.5,
+    "3": 1.0,
+    "4": 0.5,
+    "5": 0.5,
+    "6": 0.5,
+    "7": 0.6666666666666666,
+    "8": 1.0,
+    "9": 1.0
+  },
+  "gods": [
+    {
+      "id": "00_cto_graphify_official_build_protocol_cto_graphify_official_build_protocol",
+      "label": "CTO Graphify Official Build Protocol",
+      "degree": 12
+    },
+    {
+      "id": "01_tsis_backtest_smallcaps_01_foundations_graphify_official_build_protocol_data_foundation_graphify_official_build_protocol",
+      "label": "Data Foundation Graphify Official Build Protocol",
+      "degree": 11
+    },
+    {
+      "id": "01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_official_build_protocol_data_certification_graphify_official_build_protocol",
+      "label": "Data Certification Graphify Official Build Protocol",
+      "degree": 8
+    },
+    {
+      "id": "00_cto_graphify_official_build_protocol_graph_delta_audit",
+      "label": "Graph Delta Audit",
+      "degree": 7
+    },
+    {
+      "id": "agents_mandatory_reading_order",
+      "label": "Mandatory Reading Order",
+      "degree": 6
+    },
+    {
+      "id": "long_running_operations_contract_long_running_operations_contract",
+      "label": "Long Running Operations Contract",
+      "degree": 6
+    },
+    {
+      "id": "changelog_cross_project_graphify_governance_leaf_build",
+      "label": "Cross Project Graphify Governance Leaf Build",
+      "degree": 5
+    },
+    {
+      "id": "long_running_operations_contract_progress_telemetry_standard",
+      "label": "Progress Telemetry Standard",
+      "degree": 5
+    },
+    {
+      "id": "00_cto_graphify_official_build_protocol_cto_root_graph",
+      "label": "CTO Root Graph",
+      "degree": 5
+    },
+    {
+      "id": "00_cto_graphify_official_build_protocol_build_manifest_baseline",
+      "label": "Build Manifest Baseline",
+      "degree": 5
+    }
+  ],
+  "surprises": [
+    {
+      "source": "No Hidden State Assumption",
+      "target": "Graph Delta Audit",
+      "source_files": [
+        "AGENTS.md",
+        "00_CTO/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities; peripheral node `No Hidden State Assumption` unexpectedly reaches hub `Graph Delta Audit`"
+    },
+    {
+      "source": "Architecture Overview",
+      "target": "CTO Root Graph",
+      "source_files": [
+        "ARCHITECTURE_OVERVIEW.md",
+        "00_CTO/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities; peripheral node `Architecture Overview` unexpectedly reaches hub `CTO Root Graph`"
+    },
+    {
+      "source": "Data Foundation Graphify Refresh Queue",
+      "target": "Graph Delta Audit",
+      "source_files": [
+        "01_TSIS_backtest_SmallCaps/01_foundations/GRAPHIFY_REFRESH_QUEUE.md",
+        "00_CTO/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities; peripheral node `Data Foundation Graphify Refresh Queue` unexpectedly reaches hub `Graph Delta Audit`"
+    },
+    {
+      "source": "Mandatory Reading Order",
+      "target": "Versioning Standards",
+      "source_files": [
+        "AGENTS.md",
+        "VERSIONING_STANDARDS.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; bridges separate communities; peripheral node `Versioning Standards` unexpectedly reaches hub `Mandatory Reading Order`"
+    },
+    {
+      "source": "Reproducibility Minimum",
+      "target": "Build Manifest Baseline",
+      "source_files": [
+        "AGENTS.md",
+        "00_CTO/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `Reproducibility Minimum` unexpectedly reaches hub `Build Manifest Baseline`"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `Data Foundation Graphify Official Build Protocol` connect `Refresh Queue Control` to `Refresh Queue Control`, `Certification Graph`, `Governance Cluster 6`, `Agent Traceability`, `Refresh Queue Control`, `Data Foundation Graph`?",
+      "why": "High betweenness centrality (0.328) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `CTO Graphify Official Build Protocol` connect `Refresh Queue Control` to `Refresh Queue Control`, `Certification Graph`, `Agent Traceability`, `Governance Cluster 6`, `Agent Traceability`, `Refresh Queue Control`?",
+      "why": "High betweenness centrality (0.289) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Long Running Operations Contract` connect `Governance Cluster 6` to `Refresh Queue Control`, `Refresh Queue Control`, `Refresh Queue Control`, `Operational Telemetry`?",
+      "why": "High betweenness centrality (0.278) - this node is a cross-community bridge."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 4 inferred relationships involving `CTO Graphify Official Build Protocol` (e.g. with `CTO Local Rules` and `Cross Project Graphify Governance Leaf Build`) actually correct?",
+      "why": "`CTO Graphify Official Build Protocol` has 4 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 5 inferred relationships involving `Data Foundation Graphify Official Build Protocol` (e.g. with `Leaf First Graph Build` and `Data Foundation README`) actually correct?",
+      "why": "`Data Foundation Graphify Official Build Protocol` has 5 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 3 inferred relationships involving `Data Certification Graphify Official Build Protocol` (e.g. with `Leaf First Graph Build` and `Cross Project Graphify Governance Leaf Build`) actually correct?",
+      "why": "`Data Certification Graphify Official Build Protocol` has 3 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 4 inferred relationships involving `Graph Delta Audit` (e.g. with `CTO Graphify Refresh Queue` and `Data Foundation Graphify Refresh Queue`) actually correct?",
+      "why": "`Graph Delta Audit` has 4 INFERRED edges - model-reasoned connections that need verification."
+    }
+  ]
+}

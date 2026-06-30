@@ -106,6 +106,7 @@ validators/
     corporate_actions_table_validators.md
     dataset_certification_matrix_validators.md
     master_daily_table_validators.md
+    daily_scanner_candidates_table_validators.md
     master_intraday_bar_table_validators.md
     microstructure_features_table_validators.md
     halts_table_validators.md

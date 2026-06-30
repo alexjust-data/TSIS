@@ -42,6 +42,35 @@ Graphify: la skill/CLI debe producir los outputs. Ningun agente debe escribir
 `graph.json`, `GRAPH_REPORT.md` o `graph.html` manualmente y presentarlos como
 Graphify oficial.
 
+## Modo operativo sin APIs
+
+TSIS no asume APIs externas disponibles para Graphify.
+
+Regla:
+
+```text
+Sin GEMINI_API_KEY/GOOGLE_API_KEY no se pide otra API.
+```
+
+Para corpus de CAPA 1 con markdown, contratos, policies, dossiers, papers o
+imagenes, el flujo esperado en Codex es usar la skill Graphify con
+subagentes/host agent para la extraccion semantica. Un `graphify update` CLI
+code-only o AST-only no prueba cobertura semantica de esos documentos.
+
+Antes de usar un grafo para justificar tablas, el agente debe comprobar en su
+`BUILD_MANIFEST.md`:
+
+- version instalada de Graphify;
+- fuente/version de la skill usada;
+- upstream de referencia;
+- modo sin APIs;
+- modo de extraccion semantica;
+- corpus exacto cubierto;
+- diagnostics.
+
+Si falta esa metadata, el grafo puede ser util como ayuda de navegacion, pero
+no debe tratarse como baseline institucional completo.
+
 ## Documentos activos
 
 - `data_foundation_graph_and_table_design_protocol.md`

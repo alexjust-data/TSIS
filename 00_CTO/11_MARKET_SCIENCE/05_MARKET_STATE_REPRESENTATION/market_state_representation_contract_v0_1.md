@@ -184,7 +184,55 @@ de estas categorias:
 Mientras un artefacto no llegue a `institutional_market_state`, no debe
 presentarse como base final de entrenamiento ni como source of truth de decision.
 
-### 2.3 Caso Especial: Microstructure Features Table
+### 2.3 Caso Especial: Scanner Candidate Selection
+
+`daily_scanner_candidates_table` tampoco es un `market_state`.
+
+Su rol correcto es:
+
+```text
+candidate_selection_component
+```
+
+porque responde:
+
+```text
+Que instrumentos merecian ser mirados bajo una definicion de scanner,
+en esta fecha/as-of, y por que razones?
+```
+
+No responde:
+
+```text
+Que sabia TSIS exactamente sobre ese instrumento?
+Que evento ocurrio?
+Que estrategia debe operar?
+Que outcome/reward debe asignarse?
+```
+
+La documentacion CTO activa vive en:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/
+```
+
+La autoridad operativa vive en:
+
+```text
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_1.md
+```
+
+Regla:
+
+```text
+El scanner decide donde mirar.
+El market_state decide que sabia TSIS en ese momento.
+La estrategia decide si ese estado encaja con una hipotesis.
+ML/RL no entrena directamente sobre scanner rows.
+```
+
+### 2.4 Caso Especial: Microstructure Features Table
 
 `microstructure_features_table_v0_1` no esta mal.
 

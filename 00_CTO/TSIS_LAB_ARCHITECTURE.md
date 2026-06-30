@@ -203,6 +203,7 @@ symbol_master
 corporate_actions_table
 calendar_table
 real_time_corporate_event_alerts_table
+daily_scanner_candidates_table
 ```
 
 Estos outputs no quedan institucionales por estar nombrados aqui. Deben ser
@@ -218,6 +219,17 @@ Referencia operativa actual:
 Ese contrato define el uso tecnico de estos outputs, sus nombres preferidos,
 sus fuentes fisicas, su papel cuando aparece un evento y la politica de
 materializacion compacta para no duplicar innecesariamente la raw data.
+
+Referencia CTO para scanner candidate selection:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/
+```
+
+`daily_scanner_candidates_table` no es una senal ni un estado completo.
+Define donde mirar y conserva denominador, razones de entrada, ranking,
+lineage y flags de consumo. El `market_state` y el `event_state` reconstruyen
+despues que sabia TSIS legalmente sobre esos candidatos.
 
 ## `master_daily_table`
 

@@ -1,0 +1,18 @@
+{
+  "parent_chunk": "strategy_tsis_long_shared",
+  "subchunk": 4,
+  "scope_root": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS",
+  "files": [
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\README.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/README.md",
+      "bytes": 11482,
+      "line_count": 466,
+      "word_count_approx": 1645,
+      "sha256": "5eb02ab7dd59163b14b76d43e28bd47b3a96df2c64a8c21cda8cc6cc95af6188"
+    }
+  ],
+  "word_count_approx": 1645,
+  "chunk_id": 11
+}

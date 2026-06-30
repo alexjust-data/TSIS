@@ -215,3 +215,32 @@ Version bump required when:
 - event/backtest eligibility semantics change;
 - output layout changes;
 - consumers are materially expanded.
+
+## 11. Quote-Guarded Candidate Route
+
+The next candidate route is defined separately as:
+
+```text
+dataset_id: master_intraday_bar_table_v0_2_candidate_quote_guarded
+contract: 01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md
+config: configs/data_foundation_outputs/master_intraday_bar_table_quote_guarded_candidate_v0_2.json
+status: candidate_contract_defined_not_materialized
+```
+
+This route exists because `ohlcv_1m` contains raw minute bars that may be
+outside quote-derived OHLC envelopes. The quote-guarded workstream builds a
+repair manifest without modifying raw 1m parquets.
+
+Current bridge:
+
+```text
+repair_run_root: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838
+minute_root: E:/TSIS/data/ohlcv_1m
+quotes_root: D:/quotes
+future_official_root: E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded
+```
+
+The candidate cannot be materialized or promoted until the future official root
+contains the final quote-guarded repair manifest and validation report.
+
+`master_intraday_bar_table_v0_1` remains unchanged and scoped.

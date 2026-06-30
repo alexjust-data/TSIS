@@ -76,16 +76,17 @@ Important:
 
 ```text
 D:/quotes is a provisional legacy/recovery source for this v0.1 seed
-materialization. The future official root is E:/TSIS/data/quotes after raw
-storage parity is completed and audited.
+materialization. The target official E-root is E:/TSIS/data/quotes_ after raw
+storage parity is completed, audited and promoted. E:/TSIS/data/quotes is
+legacy/incomplete for this recovery decision.
 ```
 
 The row-level output must preserve:
 
 - `quotes_root_used`;
 - `quotes_root_state`;
-- `future_official_quotes_root`;
-- `quotes_staging_root`;
+- `target_official_quotes_root`;
+- `legacy_incomplete_e_quotes_root`;
 - `trades_root_used`;
 - `source_quotes_file`;
 - `source_trades_file`;
@@ -113,8 +114,8 @@ Source lineage:
 - `source_scope_note`
 - `quotes_root_used`
 - `quotes_root_state`
-- `future_official_quotes_root`
-- `quotes_staging_root`
+- `target_official_quotes_root`
+- `legacy_incomplete_e_quotes_root`
 - `trades_root_used`
 - `trades_root_state`
 - `source_quotes_file`

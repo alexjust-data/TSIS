@@ -1,0 +1,18 @@
+{
+  "parent_chunk": "strategy_tsis_long_shared",
+  "subchunk": 1,
+  "scope_root": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS",
+  "files": [
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\DAS\\das_widgets.py",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/DAS/das_widgets.py",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/das_widgets.py",
+      "bytes": 141810,
+      "line_count": 3188,
+      "word_count_approx": 9750,
+      "sha256": "2dc8fab8af080f19b7e3ff275bab4550ddb33dd275a2bdffbbd60ef35d8cabc6"
+    }
+  ],
+  "word_count_approx": 9750,
+  "chunk_id": 8
+}

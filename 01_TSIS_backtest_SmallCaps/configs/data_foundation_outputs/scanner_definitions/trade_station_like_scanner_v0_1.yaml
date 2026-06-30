@@ -1,0 +1,76 @@
+scanner_definition_id: trade_station_like_scanner_v0_1
+scanner_definition_version: v0_1
+scanner_family: daily_in_play
+scanner_name: trade_station_like_small_cap_momentum
+scanner_role: operational_visibility_replay
+status: config_defined_not_materialized
+
+purpose:
+  answers: "What would an operator likely have seen in a TradeStation-like small-cap momentum hot list?"
+  does_not_answer:
+    - complete_in_play_universe
+    - broad_das_early_discovery
+    - strategy_signal
+    - market_state
+    - label
+    - outcome
+
+source_semantics:
+  replay_mode: historical_replay
+  requires_asof_policy: true
+  price_view: declared_snapshot_or_daily_raw_for_replay
+  execution_price_view: none
+  live_authority: false
+
+universe_eligibility:
+  is_common_stock_required: true
+  market_cap_max_usd: 100000000
+  last_price_min_exclusive: 0.5
+  last_price_max_inclusive: 20.0
+  data_quality_allowed:
+    - good
+    - review_with_flag
+
+hard_filters:
+  volume_today_min: 500000
+  pct_chg_1d_required_for_ranking: true
+
+ranking:
+  primary_metric: pct_chg_1d
+  primary_order: desc
+  top_n: 25
+  include_evaluated_not_selected: true
+
+candidate_reason_flags:
+  - reason_pct_chg_1d_rank
+  - reason_volume_today_min_passed
+  - reason_price_band_passed
+  - reason_market_cap_band_passed
+
+required_output_columns:
+  - selected_trade_station_like_top25
+  - selected_broad_discovery
+  - selected_by_pct_chg_rank
+  - selected_by_volume_acceleration_rank
+  - selected_by_dollar_volume_rank
+  - selected_by_composite_in_play_rank
+
+selection_semantics:
+  selected_trade_station_like_top25: computed_from_pct_chg_1d_top_n
+  selected_broad_discovery: false_for_this_scanner_definition
+  selected_by_pct_chg_rank: computed_from_pct_chg_1d_top_n
+  selected_by_volume_acceleration_rank: false_for_this_scanner_definition
+  selected_by_dollar_volume_rank: false_for_this_scanner_definition
+  selected_by_composite_in_play_rank: false_for_this_scanner_definition
+
+prohibited_claims:
+  - full_universe_claim
+  - direct_ml_feature
+  - direct_rl_state
+  - strategy_signal
+  - execution_truth
+  - live_trading_authority
+
+notes:
+  - "This scanner intentionally preserves the 500k accumulated volume filter because its purpose is operational visibility replay."
+  - "It must not be used as the only discovery surface for DAS because early DAS/frontside candidates can appear before 500k volume."

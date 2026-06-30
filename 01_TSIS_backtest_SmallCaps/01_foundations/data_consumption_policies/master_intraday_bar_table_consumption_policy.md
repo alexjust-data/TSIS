@@ -122,6 +122,43 @@ The correct workflow is:
 4. declare whether the resulting scope is pilot, event-window, partial universe
    or full-universe.
 
+## Quote-Guarded Candidate Rule
+
+Planned candidate:
+
+```text
+master_intraday_bar_table_v0_2_candidate_quote_guarded
+```
+
+This candidate route exists only as a contract/config until the
+`ohlcv_1m_quote_guarded` repair workstream finishes and promotes validated
+artifacts under:
+
+```text
+E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/
+```
+
+Until then, consumers must treat the route as:
+
+```text
+candidate_contract_defined_not_materialized
+full_universe_claim=false
+not_backtest_core
+not_ml_primary
+not_rl_allowed
+not_execution_truth
+```
+
+If a downstream experiment uses bridge artifacts from:
+
+```text
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/
+```
+
+it must label them as run artifacts, not governed output tables. The current
+`D:/quotes` lineage is provisional candidate lineage only and must not be
+presented as the final official E-root source.
+
 ## Required Citations
 
 Any notebook, module or downstream table derived from this output must cite:
@@ -132,6 +169,7 @@ Any notebook, module or downstream table derived from this output must cite:
 - `01_foundations/validators/outputs/master_intraday_bar_table_validators.md`
 - `01_foundations/contract_registry/dataset_contracts/ohlcv_1m_raw_dataset_contract_v0_1.md`
 - `01_foundations/contract_registry/dataset_contracts/ohlcv_1m_split_normalized_dataset_contract_v0_1.md`
+- `01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md` when using the quote-guarded candidate route
 
 ## Final Rule
 

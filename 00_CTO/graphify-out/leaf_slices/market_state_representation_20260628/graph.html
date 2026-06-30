@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>graphify - C:\TSIS_Data\00_CTO\graphify-out\leaf_slices\market_state_representation_20260628\graph.html</title>
+<script src="https://unpkg.com/vis-network@9.1.6/standalone/umd/vis-network.min.js"
+        integrity="sha384-Ux6phic9PEHJ38YtrijhkzyJ8yQlH8i/+buBR8s3mAZOJrP1gwyvAcIYl3GWtpX1"
+        crossorigin="anonymous"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0f0f1a; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; display: flex; height: 100vh; overflow: hidden; }
+  #graph { flex: 1; }
+  #sidebar { width: 280px; background: #1a1a2e; border-left: 1px solid #2a2a4e; display: flex; flex-direction: column; overflow: hidden; }
+  #search-wrap { padding: 12px; border-bottom: 1px solid #2a2a4e; }
+  #search { width: 100%; background: #0f0f1a; border: 1px solid #3a3a5e; color: #e0e0e0; padding: 7px 10px; border-radius: 6px; font-size: 13px; outline: none; }
+  #search:focus { border-color: #4E79A7; }
+  #search-results { max-height: 140px; overflow-y: auto; padding: 4px 12px; border-bottom: 1px solid #2a2a4e; display: none; }
+  .search-item { padding: 4px 6px; cursor: pointer; border-radius: 4px; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .search-item:hover { background: #2a2a4e; }
+  #info-panel { padding: 14px; border-bottom: 1px solid #2a2a4e; min-height: 140px; }
+  #info-panel h3 { font-size: 13px; color: #aaa; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+  #info-content { font-size: 13px; color: #ccc; line-height: 1.6; }
+  #info-content .field { margin-bottom: 5px; }
+  #info-content .field b { color: #e0e0e0; }
+  #info-content .empty { color: #555; font-style: italic; }
+  .neighbor-link { display: block; padding: 2px 6px; margin: 2px 0; border-radius: 3px; cursor: pointer; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border-left: 3px solid #333; }
+  .neighbor-link:hover { background: #2a2a4e; }
+  #neighbors-list { max-height: 160px; overflow-y: auto; margin-top: 4px; }
+  #legend-wrap { flex: 1; overflow-y: auto; padding: 12px; }
+  #legend-wrap h3 { font-size: 13px; color: #aaa; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .legend-item { display: flex; align-items: center; gap: 8px; padding: 4px 0; cursor: pointer; border-radius: 4px; font-size: 12px; }
+  .legend-item:hover { background: #2a2a4e; padding-left: 4px; }
+  .legend-item.dimmed { opacity: 0.35; }
+  .legend-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+  .legend-label { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .legend-count { color: #666; font-size: 11px; }
+  #stats { padding: 10px 14px; border-top: 1px solid #2a2a4e; font-size: 11px; color: #555; }
+  #legend-controls { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; padding: 4px 0; }
+  #legend-controls label { display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 12px; color: #aaa; user-select: none; }
+  #legend-controls label:hover { color: #e0e0e0; }
+  .legend-cb, #select-all-cb { appearance: none; -webkit-appearance: none; width: 14px; height: 14px; border: 1.5px solid #3a3a5e; border-radius: 3px; background: #0f0f1a; cursor: pointer; position: relative; flex-shrink: 0; }
+  .legend-cb:checked, #select-all-cb:checked { background: #4E79A7; border-color: #4E79A7; }
+  .legend-cb:checked::after, #select-all-cb:checked::after { content: ''; position: absolute; left: 3.5px; top: 1px; width: 4px; height: 7px; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+  #select-all-cb:indeterminate { background: #4E79A7; border-color: #4E79A7; }
+  #select-all-cb:indeterminate::after { content: ''; position: absolute; left: 2px; top: 5px; width: 8px; height: 2px; background: #fff; border: none; transform: none; }
+</style>
+</head>
+<body>
+<div id="graph"></div>
+<div id="sidebar">
+  <div id="search-wrap">
+    <input id="search" type="text" placeholder="Search nodes..." autocomplete="off">
+    <div id="search-results"></div>
+  </div>
+  <div id="info-panel">
+    <h3>Node Info</h3>
+    <div id="info-content"><span class="empty">Click a node to inspect it</span></div>
+  </div>
+  <div id="legend-wrap">
+    <h3>Communities</h3>
+    <div id="legend-controls">
+      <label><input type="checkbox" id="select-all-cb" checked onchange="toggleAllCommunities(!this.checked)">Select All</label>
+    </div>
+    <div id="legend"></div>
+  </div>
+  <div id="stats">60 nodes &middot; 83 edges &middot; 7 communities</div>
+</div>
+<script>
+const RAW_NODES = [{"id": "contract_market_state_representation_contract_v0_1", "label": "Market State Contract", "color": {"background": "#59A14F", "border": "#59A14F", "highlight": {"background": "#ffffff", "border": "#59A14F"}}, "size": 13.8, "font": {"size": 0, "color": "#ffffff"}, "title": "Market State Contract", "community": 4, "community_name": "Community 4", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "document", "degree": 2}, {"id": "map_market_state_representation_source_file_map_v0_1", "label": "Market State Source File Map Document", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 11.9, "font": {"size": 0, "color": "#ffffff"}, "title": "Market State Source File Map Document", "community": 1, "community_name": "Community 1", "source_file": "market_state_representation_source_file_map_v0_1.md", "file_type": "document", "degree": 1}, {"id": "contract_market_state_representation", "label": "Market State Representation", "color": {"background": "#59A14F", "border": "#59A14F", "highlight": {"background": "#ffffff", "border": "#59A14F"}}, "size": 17.5, "font": {"size": 12, "color": "#ffffff"}, "title": "Market State Representation", "community": 4, "community_name": "Community 4", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 4}, {"id": "contract_market_state_signature", "label": "Market State Function", "color": {"background": "#59A14F", "border": "#59A14F", "highlight": {"background": "#ffffff", "border": "#59A14F"}}, "size": 13.8, "font": {"size": 0, "color": "#ffffff"}, "title": "Market State Function", "community": 4, "community_name": "Community 4", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 2}, {"id": "contract_downloaded_market_data", "label": "Downloaded Market Data", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 11.9, "font": {"size": 0, "color": "#ffffff"}, "title": "Downloaded Market Data", "community": 1, "community_name": "Community 1", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 1}, {"id": "contract_audited_raw_source_truth", "label": "Raw Source Truth", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 13.8, "font": {"size": 0, "color": "#ffffff"}, "title": "Raw Source Truth", "community": 1, "community_name": "Community 1", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 2}, {"id": "contract_derived_state_components", "label": "Derived State Components", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 15.6, "font": {"size": 12, "color": "#ffffff"}, "title": "Derived State Components", "community": 1, "community_name": "Community 1", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 3}, {"id": "contract_market_state", "label": "Market State", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 40.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Market State", "community": 0, "community_name": "Community 0", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 16}, {"id": "contract_event_state", "label": "Event State", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 19.4, "font": {"size": 12, "color": "#ffffff"}, "title": "Event State", "community": 2, "community_name": "Community 2", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 5}, {"id": "contract_event_engine", "label": "Event Engine", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 17.5, "font": {"size": 12, "color": "#ffffff"}, "title": "Event Engine", "community": 1, "community_name": "Community 1", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 4}, {"id": "contract_event_table", "label": "Event Table", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 13.8, "font": {"size": 0, "color": "#ffffff"}, "title": "Event Table", "community": 1, "community_name": "Community 1", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 2}, {"id": "contract_outcome_table", "label": "Outcome Table", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 17.5, "font": {"size": 12, "color": "#ffffff"}, "title": "Outcome Table", "community": 2, "community_name": "Community 2", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 4}, {"id": "contract_ml_probability_models", "label": "ML Probability Models", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 15.6, "font": {"size": 12, "color": "#ffffff"}, "title": "ML Probability Models", "community": 2, "community_name": "Community 2", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 3}, {"id": "contract_decision_models", "label": "Decision Models", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 15.6, "font": {"size": 12, "color": "#ffffff"}, "title": "Decision Models", "community": 2, "community_name": "Community 2", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 3}, {"id": "contract_offline_rl", "label": "Offline RL", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 19.4, "font": {"size": 12, "color": "#ffffff"}, "title": "Offline RL", "community": 2, "community_name": "Community 2", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 5}, {"id": "contract_execution_models", "label": "Execution Models", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 13.8, "font": {"size": 0, "color": "#ffffff"}, "title": "Execution Models", "community": 2, "community_name": "Community 2", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 2}, {"id": "contract_evolution_systems_alphaevolve", "label": "Evolution Systems", "color": {"background": "#B07AA1", "border": "#B07AA1", "highlight": {"background": "#ffffff", "border": "#B07AA1"}}, "size": 19.4, "font": {"size": 12, "color": "#ffffff"}, "title": "Evolution Systems", "community": 6, "community_name": "Community 6", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 5}, {"id": "contract_data_foundation_outputs", "label": "Data Foundation Outputs", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 13.8, "font": {"size": 0, "color": "#ffffff"}, "title": "Data Foundation Outputs", "community": 1, "community_name": "Community 1", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 2}, {"id": "contract_components_not_market_state_rule", "label": "Components Are Not State", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 11.9, "font": {"size": 0, "color": "#ffffff"}, "title": "Components Are Not State", "community": 0, "community_name": "Community 0", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "rationale", "degree": 1}, {"id": "contract_maturity_matrix", "label": "State Maturity Matrix", "color": {"background": "#EDC948", "border": "#EDC948", "highlight": {"background": "#ffffff", "border": "#EDC948"}}, "size": 13.8, "font": {"size": 0, "color": "#ffffff"}, "title": "State Maturity Matrix", "community": 5, "community_name": "Community 5", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 2}, {"id": "contract_microstructure_features_table_v0_1", "label": "Microstructure Features v0.1", "color": {"background": "#EDC948", "border": "#EDC948", "highlight": {"background": "#ffffff", "border": "#EDC948"}}, "size": 13.8, "font": {"size": 0, "color": "#ffffff"}, "title": "Microstructure Features v0.1", "community": 5, "community_name": "Community 5", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 2}, {"id": "contract_scoped_state_sample", "label": "Scoped State Sample", "color": {"background": "#EDC948", "border": "#EDC948", "highlight": {"background": "#ffffff", "border": "#EDC948"}}, "size": 13.8, "font": {"size": 0, "color": "#ffffff"}, "title": "Scoped State Sample", "community": 5, "community_name": "Community 5", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 2}, {"id": "contract_institutional_market_state", "label": "Institutional Market State", "color": {"background": "#EDC948", "border": "#EDC948", "highlight": {"background": "#ffffff", "border": "#EDC948"}}, "size": 13.8, "font": {"size": 0, "color": "#ffffff"}, "title": "Institutional Market State", "community": 5, "community_name": "Community 5", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 2}, {"id": "contract_canonical_definition", "label": "Canonical Definition", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 11.9, "font": {"size": 0, "color": "#ffffff"}, "title": "Canonical Definition", "community": 0, "community_name": "Community 0", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 1}, {"id": "contract_semantic_separation_chain", "label": "Semantic Separation", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 15.6, "font": {"size": 12, "color": "#ffffff"}, "title": "Semantic Separation", "community": 2, "community_name": "Community 2", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "rationale", "degree": 3}, {"id": "contract_live_state_learning_loop", "label": "Live Learning Loop", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 15.6, "font": {"size": 12, "color": "#ffffff"}, "title": "Live Learning Loop", "community": 2, "community_name": "Community 2", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 3}, {"id": "contract_state_vector_minimum_schema", "label": "State Vector Schema", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 17.5, "font": {"size": 12, "color": "#ffffff"}, "title": "State Vector Schema", "community": 0, "community_name": "Community 0", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 4}, {"id": "contract_state_domains", "label": "State Domains", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 32.5, "font": {"size": 12, "color": "#ffffff"}, "title": "State Domains", "community": 3, "community_name": "Community 3", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 12}, {"id": "contract_identity_universe_domain", "label": "Identity Domain", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 11.9, "font": {"size": 0, "color": "#ffffff"}, "title": "Identity Domain", "community": 3, "community_name": "Community 3", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 1}, {"id": "contract_calendar_session_domain", "label": "Calendar Domain", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 11.9, "font": {"size": 0, "color": "#ffffff"}, "title": "Calendar Domain", "community": 3, "community_name": "Community 3", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 1}, {"id": "contract_corporate_actions_price_semantics_domain", "label": "Price Semantics Domain", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 11.9, "font": {"size": 0, "color": "#ffffff"}, "title": "Price Semantics Domain", "community": 3, "community_name": "Community 3", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 1}, {"id": "contract_daily_context_domain", "label": "Daily Context Domain", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 11.9, "font": {"size": 0, "color": "#ffffff"}, "title": "Daily Context Domain", "community": 3, "community_name": "Community 3", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 1}, {"id": "contract_intraday_evolution_domain", "label": "Intraday Domain", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 11.9, "font": {"size": 0, "color": "#ffffff"}, "title": "Intraday Domain", "community": 3, "community_name": "Community 3", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 1}, {"id": "contract_microstructure_domain", "label": "Microstructure Domain", "color": {"background": "#EDC948", "border": "#EDC948", "highlight": {"background": "#ffffff", "border": "#EDC948"}}, "size": 15.6, "font": {"size": 12, "color": "#ffffff"}, "title": "Microstructure Domain", "community": 5, "community_name": "Community 5", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 3}, {"id": "contract_regime_domain", "label": "Regime Domain", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 11.9, "font": {"size": 0, "color": "#ffffff"}, "title": "Regime Domain", "community": 3, "community_name": "Community 3", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 1}, {"id": "contract_catalyst_external_information_domain", "label": "Catalyst Domain", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 11.9, "font": {"size": 0, "color": "#ffffff"}, "title": "Catalyst Domain", "community": 3, "community_name": "Community 3", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 1}, {"id": "contract_halts_ssr_borrow_short_pressure_domain", "label": "Halts SSR Borrow Domain", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 11.9, "font": {"size": 0, "color": "#ffffff"}, "title": "Halts SSR Borrow Domain", "community": 3, "community_name": "Community 3", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 1}, {"id": "contract_fundamentals_financial_domain", "label": "Financial Domain", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 11.9, "font": {"size": 0, "color": "#ffffff"}, "title": "Financial Domain", "community": 3, "community_name": "Community 3", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 1}, {"id": "contract_ml_state_interface", "label": "ML State Interface", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 17.5, "font": {"size": 12, "color": "#ffffff"}, "title": "ML State Interface", "community": 2, "community_name": "Community 2", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 4}, {"id": "contract_offline_rl_transition_interface", "label": "Offline RL Transition", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 17.5, "font": {"size": 12, "color": "#ffffff"}, "title": "Offline RL Transition", "community": 0, "community_name": "Community 0", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 4}, {"id": "contract_alphaevolve_evaluable_objects", "label": "AlphaEvolve Objects", "color": {"background": "#B07AA1", "border": "#B07AA1", "highlight": {"background": "#ffffff", "border": "#B07AA1"}}, "size": 13.8, "font": {"size": 0, "color": "#ffffff"}, "title": "AlphaEvolve Objects", "community": 6, "community_name": "Community 6", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 2}, {"id": "contract_locked_evaluator_rule", "label": "Locked Evaluator Rule", "color": {"background": "#B07AA1", "border": "#B07AA1", "highlight": {"background": "#ffffff", "border": "#B07AA1"}}, "size": 13.8, "font": {"size": 0, "color": "#ffffff"}, "title": "Locked Evaluator Rule", "community": 6, "community_name": "Community 6", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "rationale", "degree": 2}, {"id": "contract_real_time_state_update_pipeline", "label": "Real Time Update Pipeline", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 15.6, "font": {"size": 12, "color": "#ffffff"}, "title": "Real Time Update Pipeline", "community": 0, "community_name": "Community 0", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 3}, {"id": "contract_quality_state_inheritance", "label": "Quality Inheritance", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 15.6, "font": {"size": 12, "color": "#ffffff"}, "title": "Quality Inheritance", "community": 0, "community_name": "Community 0", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 3}, {"id": "contract_anti_leakage_boundary", "label": "Anti Leakage Boundary", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 21.2, "font": {"size": 12, "color": "#ffffff"}, "title": "Anti Leakage Boundary", "community": 0, "community_name": "Community 0", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 6}, {"id": "contract_labels_features_separation", "label": "Labels Features Separation", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 15.6, "font": {"size": 12, "color": "#ffffff"}, "title": "Labels Features Separation", "community": 0, "community_name": "Community 0", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "rationale", "degree": 3}, {"id": "contract_future_required_components", "label": "Future Required Components", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 13.8, "font": {"size": 0, "color": "#ffffff"}, "title": "Future Required Components", "community": 0, "community_name": "Community 0", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 2}, {"id": "contract_promotion_criteria", "label": "Promotion Criteria", "color": {"background": "#EDC948", "border": "#EDC948", "highlight": {"background": "#ffffff", "border": "#EDC948"}}, "size": 13.8, "font": {"size": 0, "color": "#ffffff"}, "title": "Promotion Criteria", "community": 5, "community_name": "Community 5", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 2}, {"id": "contract_scientific_rationale", "label": "Scientific Rationale", "color": {"background": "#59A14F", "border": "#59A14F", "highlight": {"background": "#ffffff", "border": "#59A14F"}}, "size": 11.9, "font": {"size": 0, "color": "#ffffff"}, "title": "Scientific Rationale", "community": 4, "community_name": "Community 4", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "rationale", "degree": 1}, {"id": "contract_distribution_shift", "label": "Distribution Shift", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 11.9, "font": {"size": 0, "color": "#ffffff"}, "title": "Distribution Shift", "community": 2, "community_name": "Community 2", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 1}, {"id": "contract_causality_mechanisms", "label": "Causality Mechanisms", "color": {"background": "#59A14F", "border": "#59A14F", "highlight": {"background": "#ffffff", "border": "#59A14F"}}, "size": 13.8, "font": {"size": 0, "color": "#ffffff"}, "title": "Causality Mechanisms", "community": 4, "community_name": "Community 4", "source_file": "market_state_representation_contract_v0_1.md", "file_type": "concept", "degree": 2}, {"id": "map_source_file_map", "label": "Source File Map Role", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 19.4, "font": {"size": 12, "color": "#ffffff"}, "title": "Source File Map Role", "community": 1, "community_name": "Community 1", "source_file": "market_state_representation_source_file_map_v0_1.md", "file_type": "concept", "degree": 5}, {"id": "map_event_first_sources", "label": "Event First Sources", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 13.8, "font": {"size": 0, "color": "#ffffff"}, "title": "Event First Sources", "community": 1, "community_name": "Community 1", "source_file": "market_state_representation_source_file_map_v0_1.md", "file_type": "document", "degree": 2}, {"id": "map_market_science_sources", "label": "Market Science Sources", "color": {"background": "#59A14F", "border": "#59A14F", "highlight": {"background": "#ffffff", "border": "#59A14F"}}, "size": 15.6, "font": {"size": 12, "color": "#ffffff"}, "title": "Market Science Sources", "community": 4, "community_name": "Community 4", "source_file": "market_state_representation_source_file_map_v0_1.md", "file_type": "document", "degree": 3}, {"id": "map_alphaevolve_evaluator_sources", "label": "AlphaEvolve Evaluator Sources", "color": {"background": "#B07AA1", "border": "#B07AA1", "highlight": {"background": "#ffffff", "border": "#B07AA1"}}, "size": 15.6, "font": {"size": 12, "color": "#ffffff"}, "title": "AlphaEvolve Evaluator Sources", "community": 6, "community_name": "Community 6", "source_file": "market_state_representation_source_file_map_v0_1.md", "file_type": "document", "degree": 3}, {"id": "map_data_foundation_outputs_contract", "label": "Data Foundation Contract", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 15.6, "font": {"size": 12, "color": "#ffffff"}, "title": "Data Foundation Contract", "community": 1, "community_name": "Community 1", "source_file": "market_state_representation_source_file_map_v0_1.md", "file_type": "document", "degree": 3}, {"id": "map_feature_engine_source", "label": "Feature Engine Source", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 11.9, "font": {"size": 0, "color": "#ffffff"}, "title": "Feature Engine Source", "community": 0, "community_name": "Community 0", "source_file": "market_state_representation_source_file_map_v0_1.md", "file_type": "document", "degree": 1}, {"id": "map_event_engine_source", "label": "Event Engine Source", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 11.9, "font": {"size": 0, "color": "#ffffff"}, "title": "Event Engine Source", "community": 1, "community_name": "Community 1", "source_file": "market_state_representation_source_file_map_v0_1.md", "file_type": "document", "degree": 1}, {"id": "map_ml_rl_sources", "label": "ML RL Sources", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 13.8, "font": {"size": 0, "color": "#ffffff"}, "title": "ML RL Sources", "community": 2, "community_name": "Community 2", "source_file": "market_state_representation_source_file_map_v0_1.md", "file_type": "document", "degree": 2}, {"id": "map_detected_gap_market_state_representation", "label": "Detected State Gap", "color": {"background": "#59A14F", "border": "#59A14F", "highlight": {"background": "#ffffff", "border": "#59A14F"}}, "size": 11.9, "font": {"size": 0, "color": "#ffffff"}, "title": "Detected State Gap", "community": 4, "community_name": "Community 4", "source_file": "market_state_representation_source_file_map_v0_1.md", "file_type": "rationale", "degree": 1}];
+const RAW_EDGES = [{"from": "contract_market_state_representation_contract_v0_1", "to": "contract_market_state_representation", "label": "defines", "title": "defines [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_market_state_representation_contract_v0_1", "to": "contract_scientific_rationale", "label": "states", "title": "states [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "map_market_state_representation_source_file_map_v0_1", "to": "map_source_file_map", "label": "defines", "title": "defines [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_causality_mechanisms", "to": "contract_market_state_representation", "label": "motivates", "title": "motivates [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_market_state_representation", "to": "contract_market_state_signature", "label": "centers_on", "title": "centers_on [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "map_detected_gap_market_state_representation", "to": "contract_market_state_representation", "label": "motivates", "title": "motivates [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_market_state_signature", "to": "contract_market_state", "label": "instantiates", "title": "instantiates [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_downloaded_market_data", "to": "contract_audited_raw_source_truth", "label": "flows_to", "title": "flows_to [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_audited_raw_source_truth", "to": "contract_derived_state_components", "label": "flows_to", "title": "flows_to [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_data_foundation_outputs", "to": "contract_derived_state_components", "label": "provides", "title": "provides [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_derived_state_components", "to": "contract_market_state", "label": "flows_to", "title": "flows_to [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_anti_leakage_boundary", "to": "contract_market_state", "label": "guards", "title": "guards [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_canonical_definition", "to": "contract_market_state", "label": "defines", "title": "defines [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_components_not_market_state_rule", "to": "contract_market_state", "label": "distinguishes_from_components", "title": "distinguishes_from_components [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_market_state", "to": "contract_event_state", "label": "pairs_with", "title": "pairs_with [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_live_state_learning_loop", "to": "contract_market_state", "label": "updates", "title": "updates [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_market_state", "to": "contract_event_engine", "label": "feeds", "title": "feeds [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_offline_rl_transition_interface", "to": "contract_market_state", "label": "requires_governed_state", "title": "requires_governed_state [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_quality_state_inheritance", "to": "contract_market_state", "label": "qualifies", "title": "qualifies [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_real_time_state_update_pipeline", "to": "contract_market_state", "label": "updates", "title": "updates [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_semantic_separation_chain", "to": "contract_market_state", "label": "separates", "title": "separates [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_state_domains", "to": "contract_market_state", "label": "decomposes", "title": "decomposes [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_state_vector_minimum_schema", "to": "contract_market_state", "label": "specifies_fields_for", "title": "specifies_fields_for [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "map_data_foundation_outputs_contract", "to": "contract_market_state", "label": "produces_defendible_state_for", "title": "produces_defendible_state_for [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "map_feature_engine_source", "to": "contract_market_state", "label": "represents_observable_state", "title": "represents_observable_state [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_live_state_learning_loop", "to": "contract_event_state", "label": "updates", "title": "updates [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_ml_state_interface", "to": "contract_event_state", "label": "consumes", "title": "consumes [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_semantic_separation_chain", "to": "contract_event_state", "label": "separates", "title": "separates [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "map_ml_rl_sources", "to": "contract_event_state", "label": "mentions", "title": "mentions [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_event_engine", "to": "contract_event_table", "label": "feeds", "title": "feeds [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "map_event_engine_source", "to": "contract_event_engine", "label": "documents", "title": "documents [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "map_event_first_sources", "to": "contract_event_engine", "label": "supports", "title": "supports [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_event_table", "to": "contract_outcome_table", "label": "feeds", "title": "feeds [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_ml_state_interface", "to": "contract_outcome_table", "label": "estimates_outcome_from_state", "title": "estimates_outcome_from_state [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_outcome_table", "to": "contract_ml_probability_models", "label": "feeds", "title": "feeds [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_semantic_separation_chain", "to": "contract_outcome_table", "label": "separates", "title": "separates [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_ml_probability_models", "to": "contract_decision_models", "label": "feeds", "title": "feeds [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_ml_probability_models", "to": "contract_offline_rl", "label": "feeds", "title": "feeds [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_decision_models", "to": "contract_execution_models", "label": "feeds", "title": "feeds [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_ml_state_interface", "to": "contract_decision_models", "label": "does_not_decide", "title": "does_not_decide [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_distribution_shift", "to": "contract_offline_rl", "label": "constrains", "title": "constrains [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_live_state_learning_loop", "to": "contract_offline_rl", "label": "feeds_retraining", "title": "feeds_retraining [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_offline_rl_transition_interface", "to": "contract_offline_rl", "label": "defines_input_for", "title": "defines_input_for [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "map_ml_rl_sources", "to": "contract_offline_rl", "label": "supports", "title": "supports [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_execution_models", "to": "contract_evolution_systems_alphaevolve", "label": "feeds", "title": "feeds [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_alphaevolve_evaluable_objects", "to": "contract_evolution_systems_alphaevolve", "label": "defines_scope_for", "title": "defines_scope_for [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_evolution_systems_alphaevolve", "to": "contract_anti_leakage_boundary", "label": "must_respect", "title": "must_respect [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_evolution_systems_alphaevolve", "to": "contract_locked_evaluator_rule", "label": "requires", "title": "requires [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "map_alphaevolve_evaluator_sources", "to": "contract_evolution_systems_alphaevolve", "label": "supports", "title": "supports [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "map_data_foundation_outputs_contract", "to": "contract_data_foundation_outputs", "label": "documents", "title": "documents [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_maturity_matrix", "to": "contract_institutional_market_state", "label": "classifies", "title": "classifies [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_maturity_matrix", "to": "contract_scoped_state_sample", "label": "classifies", "title": "classifies [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_microstructure_features_table_v0_1", "to": "contract_microstructure_domain", "label": "contributes_to", "title": "contributes_to [INFERRED]", "dashes": true, "width": 1, "color": {"opacity": 0.35}, "confidence": "INFERRED"}, {"from": "contract_microstructure_features_table_v0_1", "to": "contract_scoped_state_sample", "label": "has_role", "title": "has_role [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_promotion_criteria", "to": "contract_institutional_market_state", "label": "governs_promotion_to", "title": "governs_promotion_to [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_future_required_components", "to": "contract_state_vector_minimum_schema", "label": "requires_schema_contract", "title": "requires_schema_contract [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_state_vector_minimum_schema", "to": "contract_anti_leakage_boundary", "label": "contains_leakage_boundary", "title": "contains_leakage_boundary [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_state_vector_minimum_schema", "to": "contract_quality_state_inheritance", "label": "contains_quality_state", "title": "contains_quality_state [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_alphaevolve_evaluable_objects", "to": "contract_state_domains", "label": "may_propose_variables_for", "title": "may_propose_variables_for [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_state_domains", "to": "contract_calendar_session_domain", "label": "includes", "title": "includes [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_state_domains", "to": "contract_catalyst_external_information_domain", "label": "includes", "title": "includes [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_state_domains", "to": "contract_corporate_actions_price_semantics_domain", "label": "includes", "title": "includes [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_state_domains", "to": "contract_daily_context_domain", "label": "includes", "title": "includes [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_state_domains", "to": "contract_fundamentals_financial_domain", "label": "includes", "title": "includes [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_state_domains", "to": "contract_halts_ssr_borrow_short_pressure_domain", "label": "includes", "title": "includes [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_state_domains", "to": "contract_identity_universe_domain", "label": "includes", "title": "includes [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_state_domains", "to": "contract_intraday_evolution_domain", "label": "includes", "title": "includes [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_state_domains", "to": "contract_microstructure_domain", "label": "includes", "title": "includes [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_state_domains", "to": "contract_regime_domain", "label": "includes", "title": "includes [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "map_market_science_sources", "to": "contract_microstructure_domain", "label": "connects", "title": "connects [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_labels_features_separation", "to": "contract_ml_state_interface", "label": "constrains", "title": "constrains [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_labels_features_separation", "to": "contract_offline_rl_transition_interface", "label": "constrains", "title": "constrains [INFERRED]", "dashes": true, "width": 1, "color": {"opacity": 0.35}, "confidence": "INFERRED"}, {"from": "contract_offline_rl_transition_interface", "to": "contract_anti_leakage_boundary", "label": "requires", "title": "requires [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "map_alphaevolve_evaluator_sources", "to": "contract_locked_evaluator_rule", "label": "supports", "title": "supports [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_real_time_state_update_pipeline", "to": "contract_anti_leakage_boundary", "label": "preserves_temporal_legality", "title": "preserves_temporal_legality [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_real_time_state_update_pipeline", "to": "contract_quality_state_inheritance", "label": "applies_quality_gate", "title": "applies_quality_gate [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_labels_features_separation", "to": "contract_anti_leakage_boundary", "label": "is_part_of", "title": "is_part_of [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "contract_future_required_components", "to": "contract_promotion_criteria", "label": "supports", "title": "supports [INFERRED]", "dashes": true, "width": 1, "color": {"opacity": 0.35}, "confidence": "INFERRED"}, {"from": "map_market_science_sources", "to": "contract_causality_mechanisms", "label": "connects", "title": "connects [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "map_source_file_map", "to": "map_alphaevolve_evaluator_sources", "label": "maps_to", "title": "maps_to [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "map_source_file_map", "to": "map_data_foundation_outputs_contract", "label": "maps_to", "title": "maps_to [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "map_source_file_map", "to": "map_event_first_sources", "label": "maps_to", "title": "maps_to [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "map_source_file_map", "to": "map_market_science_sources", "label": "maps_to", "title": "maps_to [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}];
+const LEGEND = [{"cid": 0, "color": "#4E79A7", "label": "Community 0", "count": 11}, {"cid": 1, "color": "#F28E2B", "label": "Community 1", "count": 11}, {"cid": 2, "color": "#E15759", "label": "Community 2", "count": 11}, {"cid": 3, "color": "#76B7B2", "label": "Community 3", "count": 10}, {"cid": 4, "color": "#59A14F", "label": "Community 4", "count": 7}, {"cid": 5, "color": "#EDC948", "label": "Community 5", "count": 6}, {"cid": 6, "color": "#B07AA1", "label": "Community 6", "count": 4}];
+
+// HTML-escape helper — prevents XSS when injecting graph data into innerHTML
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+// Build vis datasets
+const nodesDS = new vis.DataSet(RAW_NODES.map(n => ({
+  id: n.id, label: n.label, color: n.color, size: n.size,
+  font: n.font, title: n.title,
+  _community: n.community, _community_name: n.community_name,
+  _source_file: n.source_file, _file_type: n.file_type, _degree: n.degree,
+})));
+
+const edgesDS = new vis.DataSet(RAW_EDGES.map((e, i) => ({
+  id: i, from: e.from, to: e.to,
+  label: '',
+  title: e.title,
+  dashes: e.dashes,
+  width: e.width,
+  color: e.color,
+  arrows: { to: { enabled: true, scaleFactor: 0.5 } },
+})));
+
+const container = document.getElementById('graph');
+const network = new vis.Network(container, { nodes: nodesDS, edges: edgesDS }, {
+  physics: {
+    enabled: true,
+    solver: 'forceAtlas2Based',
+    forceAtlas2Based: {
+      gravitationalConstant: -60,
+      centralGravity: 0.005,
+      springLength: 120,
+      springConstant: 0.08,
+      damping: 0.4,
+      avoidOverlap: 0.8,
+    },
+    stabilization: { iterations: 200, fit: true },
+  },
+  interaction: {
+    hover: true,
+    tooltipDelay: 100,
+    hideEdgesOnDrag: true,
+    navigationButtons: false,
+    keyboard: false,
+  },
+  nodes: { shape: 'dot', borderWidth: 1.5 },
+  edges: { smooth: { type: 'continuous', roundness: 0.2 }, selectionWidth: 3 },
+});
+
+network.once('stabilizationIterationsDone', () => {
+  network.setOptions({ physics: { enabled: false } });
+});
+
+function showInfo(nodeId) {
+  const n = nodesDS.get(nodeId);
+  if (!n) return;
+  const neighborIds = network.getConnectedNodes(nodeId);
+  const neighborItems = neighborIds.map(nid => {
+    const nb = nodesDS.get(nid);
+    const color = nb ? nb.color.background : '#555';
+    return `<span class="neighbor-link" style="border-left-color:${esc(color)}" onclick="focusNode(${JSON.stringify(nid)})">${esc(nb ? nb.label : nid)}</span>`;
+  }).join('');
+  document.getElementById('info-content').innerHTML = `
+    <div class="field"><b>${esc(n.label)}</b></div>
+    <div class="field">Type: ${esc(n._file_type || 'unknown')}</div>
+    <div class="field">Community: ${esc(n._community_name)}</div>
+    <div class="field">Source: ${esc(n._source_file || '-')}</div>
+    <div class="field">Degree: ${n._degree}</div>
+    ${neighborIds.length ? `<div class="field" style="margin-top:8px;color:#aaa;font-size:11px">Neighbors (${neighborIds.length})</div><div id="neighbors-list">${neighborItems}</div>` : ''}
+  `;
+}
+
+function focusNode(nodeId) {
+  network.focus(nodeId, { scale: 1.4, animation: true });
+  network.selectNodes([nodeId]);
+  showInfo(nodeId);
+}
+
+// Track hovered node — hover detection is more reliable than click params
+let hoveredNodeId = null;
+network.on('hoverNode', params => {
+  hoveredNodeId = params.node;
+  container.style.cursor = 'pointer';
+});
+network.on('blurNode', () => {
+  hoveredNodeId = null;
+  container.style.cursor = 'default';
+});
+container.addEventListener('click', () => {
+  if (hoveredNodeId !== null) {
+    showInfo(hoveredNodeId);
+    network.selectNodes([hoveredNodeId]);
+  }
+});
+network.on('click', params => {
+  if (params.nodes.length > 0) {
+    showInfo(params.nodes[0]);
+  } else if (hoveredNodeId === null) {
+    document.getElementById('info-content').innerHTML = '<span class="empty">Click a node to inspect it</span>';
+  }
+});
+
+const searchInput = document.getElementById('search');
+const searchResults = document.getElementById('search-results');
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.toLowerCase().trim();
+  searchResults.innerHTML = '';
+  if (!q) { searchResults.style.display = 'none'; return; }
+  const matches = RAW_NODES.filter(n => n.label.toLowerCase().includes(q)).slice(0, 20);
+  if (!matches.length) { searchResults.style.display = 'none'; return; }
+  searchResults.style.display = 'block';
+  matches.forEach(n => {
+    const el = document.createElement('div');
+    el.className = 'search-item';
+    el.textContent = n.label;
+    el.style.borderLeft = `3px solid ${n.color.background}`;
+    el.style.paddingLeft = '8px';
+    el.onclick = () => {
+      network.focus(n.id, { scale: 1.5, animation: true });
+      network.selectNodes([n.id]);
+      showInfo(n.id);
+      searchResults.style.display = 'none';
+      searchInput.value = '';
+    };
+    searchResults.appendChild(el);
+  });
+});
+document.addEventListener('click', e => {
+  if (!searchResults.contains(e.target) && e.target !== searchInput)
+    searchResults.style.display = 'none';
+});
+
+const hiddenCommunities = new Set();
+
+const selectAllCb = document.getElementById('select-all-cb');
+
+function updateSelectAllState() {
+  const total = LEGEND.length;
+  const hidden = hiddenCommunities.size;
+  selectAllCb.checked = hidden === 0;
+  selectAllCb.indeterminate = hidden > 0 && hidden < total;
+}
+
+function toggleAllCommunities(hide) {
+  document.querySelectorAll('.legend-item').forEach(item => {
+    hide ? item.classList.add('dimmed') : item.classList.remove('dimmed');
+  });
+  document.querySelectorAll('.legend-cb').forEach(cb => {
+    cb.checked = !hide;
+  });
+  LEGEND.forEach(c => {
+    if (hide) hiddenCommunities.add(c.cid); else hiddenCommunities.delete(c.cid);
+  });
+  const updates = RAW_NODES.map(n => ({ id: n.id, hidden: hide }));
+  nodesDS.update(updates);
+  updateSelectAllState();
+}
+
+const legendEl = document.getElementById('legend');
+LEGEND.forEach(c => {
+  const item = document.createElement('div');
+  item.className = 'legend-item';
+  const cb = document.createElement('input');
+  cb.type = 'checkbox';
+  cb.className = 'legend-cb';
+  cb.checked = true;
+  cb.addEventListener('change', (e) => {
+    e.stopPropagation();
+    if (cb.checked) {
+      hiddenCommunities.delete(c.cid);
+      item.classList.remove('dimmed');
+    } else {
+      hiddenCommunities.add(c.cid);
+      item.classList.add('dimmed');
+    }
+    const updates = RAW_NODES
+      .filter(n => n.community === c.cid)
+      .map(n => ({ id: n.id, hidden: !cb.checked }));
+    nodesDS.update(updates);
+    updateSelectAllState();
+  });
+  item.innerHTML = `<div class="legend-dot" style="background:${c.color}"></div>
+    <span class="legend-label">${c.label}</span>
+    <span class="legend-count">${c.count}</span>`;
+  item.prepend(cb);
+  item.onclick = (e) => {
+    if (e.target === cb) return;
+    cb.checked = !cb.checked;
+    cb.dispatchEvent(new Event('change'));
+  };
+  legendEl.appendChild(item);
+});
+</script>
+<script>
+// Render hyperedges as shaded regions
+const hyperedges = [];
+// afterDrawing passes ctx already transformed to network coordinate space.
+// Draw node positions raw — no manual pan/zoom/DPR math needed.
+network.on('afterDrawing', function(ctx) {
+    hyperedges.forEach(h => {
+        const positions = h.nodes
+            .map(nid => network.getPositions([nid])[nid])
+            .filter(p => p !== undefined);
+        if (positions.length < 2) return;
+        ctx.save();
+        ctx.globalAlpha = 0.12;
+        ctx.fillStyle = '#6366f1';
+        ctx.strokeStyle = '#6366f1';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        // Centroid and expanded hull in network coordinates
+        const cx = positions.reduce((s, p) => s + p.x, 0) / positions.length;
+        const cy = positions.reduce((s, p) => s + p.y, 0) / positions.length;
+        const expanded = positions.map(p => ({
+            x: cx + (p.x - cx) * 1.15,
+            y: cy + (p.y - cy) * 1.15
+        }));
+        ctx.moveTo(expanded[0].x, expanded[0].y);
+        expanded.slice(1).forEach(p => ctx.lineTo(p.x, p.y));
+        ctx.closePath();
+        ctx.fill();
+        ctx.globalAlpha = 0.4;
+        ctx.stroke();
+        // Label
+        ctx.globalAlpha = 0.8;
+        ctx.fillStyle = '#4f46e5';
+        ctx.font = 'bold 11px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(h.label, cx, cy - 5);
+        ctx.restore();
+    });
+});
+</script>
+</body>
+</html>

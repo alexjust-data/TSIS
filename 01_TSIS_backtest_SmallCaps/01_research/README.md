@@ -234,6 +234,59 @@ senal/research split-aware piloto -> E:\TSIS\data\ohlcv_1m_split_normalized
 ejecucion/fills -> E:\TSIS\data\ohlcv_1m
 ```
 
+## Notebook operativo de Daily Scanner Candidates
+
+Para inspeccionar visualmente el primer replay controlado del scanner diario,
+usar:
+
+```text
+01_research/notebooks/data_foundation_outputs/daily_scanner_candidates_replay_view_v0_1.ipynb
+```
+
+Ese notebook permite ver muestras de:
+
+- `trade_station_like_scanner_v0_1`;
+- `broad_in_play_discovery_scanner_v0_1`;
+- candidatos broad descubiertos por debajo de `500k` de volumen;
+- summary, manifest, columnas, flags de prohibicion y deduplicacion.
+
+El builder real vive en:
+
+```text
+scripts/materialize_daily_scanner_candidates_table.py
+```
+
+La evidencia de replay controlado inicial vive en:
+
+```text
+C:\TSIS_Data\tests\test_runs\2026-06-29\daily_scanner_candidates_replay_20250102_20250110_v0_1
+```
+
+Regla:
+
+```text
+notebook = inspeccion visual / research
+builder  = logica repetible
+contrato = autoridad semantica
+```
+
+Politica de carpetas para ejecutar scanners:
+
+```text
+muestras pequenas / tests / demos:
+  C:\TSIS_Data\tests\test_runs\<run_date>\<run_id>\
+
+runs largos / multi-year / 20 anos:
+  E:\TSIS\data\data_foundation_outputs\daily_scanner_candidates_table\candidate_replays\<run_id>\
+
+root oficial reservado:
+  E:\TSIS\data\data_foundation_outputs\daily_scanner_candidates_table\daily_scanner_candidates_table_v0_1\
+```
+
+El notebook no es autoridad productiva, no materializa el output oficial en
+`E:\TSIS\data` y no convierte scanner rows en `market_state_table`, labels,
+rewards, senales de estrategia, fills, PnL ni autoridad live.
+
 ## Secuencia event-first vigente
 
 Para la fase actual, la secuencia conceptual correcta es:

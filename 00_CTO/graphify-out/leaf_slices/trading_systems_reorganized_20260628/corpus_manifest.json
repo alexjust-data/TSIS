@@ -1,0 +1,790 @@
+{
+  "schema_version": 1,
+  "leaf_id": "trading_systems_reorganized_20260628",
+  "graph_family": "00_CTO_trading_systems_leaf",
+  "created_at_utc": "2026-06-28T17:01:46.706739+00:00",
+  "scope_root": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS",
+  "output_root": "C:\\TSIS_Data\\00_CTO\\graphify-out\\leaf_slices\\trading_systems_reorganized_20260628",
+  "graph_build_git_branch": "integrate/main-data-quality-dossiers-20260613",
+  "graph_build_git_commit": "362a031efd006fe44f5c1a775d1ee3af80634767",
+  "graph_build_dirty_state": true,
+  "graph_build_dirty_paths": [
+    "0_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/07_Long_plays.md",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/07_Short_Plays.md",
+    "\"00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/Day Trading en Small Caps - XVNTrading.pdf\"",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/stevenDux/Crowded_Ticker_Context/FACTOR.md",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/stevenDux/Float_Rotation/FACTOR.md",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/stevenDux/Liquidity_Gain_Loss/FACTOR.md",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/stevenDux/Neutralized_Area/FACTOR.md",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/stevenDux/Pattern_Variation_Acceptable_Range/FACTOR.md",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/stevenDux/Short_Seller_Trap_Layers/FACTOR.md",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/stevenDux/Volume_Prediction/FACTOR.md",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/das_case_explorer.ipynb",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/das_widgets.py",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/stevenDux/Dip_Buying_Multi_Day_Runner/STRATEGY.md",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/stevenDux/Gap_Up_Buying/STRATEGY.md",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/README.md",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/Bounce_Plus_Gap_Up_Short/STRATEGY.md",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/Bounce_Short/STRATEGY.md",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/Double_Intraday_Top/STRATEGY.md",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/Double_Layer_Resistance/STRATEGY.md",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/First_Red_Day/STRATEGY.md",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/First_Red_Day/estrtategia.md",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/Gap_Up_Short/STRATEGY.md",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/Multi_Day_Top_Risk_Reward/STRATEGY.md",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/Parabolic_Breakout_Failed_Breakout/STRATEGY.md",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/STEVEN_DUX_SOURCE_STRATEGY_INDEX_v0_1.md",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/_shared/strategy_widgets_common.py",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/source_assets/steven_dux/000CAR.png",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/source_assets/steven_dux/001SLV.png",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/source_assets/steven_dux/003BIRD.png",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/source_assets/steven_dux/004BRID.png",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/source_assets/steven_dux/005EEIQ.png",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/source_assets/steven_dux/006EEIQ.png",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/source_assets/steven_dux/007ASTC.png",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/source_assets/steven_dux/01_30.png",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/source_assets/steven_dux/02SLV.png",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/source_assets/steven_dux/02_40.png",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/source_assets/steven_dux/04_51.png",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/source_assets/steven_dux/06_00.png",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/source_assets/steven_dux/07_41.png",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/source_assets/steven_dux/08ASTC.png",
+    "00_CTO/13_TRADING_SYSTEMS/README.md",
+    "00_CTO/CHANGELOG.md",
+    "00_CTO/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+    "00_CTO/GRAPHIFY_REFRESH_QUEUE.md",
+    "01_TSIS_backtest_SmallCaps/01_foundations/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+    "01_TSIS_backtest_SmallCaps/01_foundations/GRAPHIFY_REFRESH_QUEUE.md",
+    "01_TSIS_backtest_SmallCaps/01_foundations/data_consumption_policies/ohlcv_1m_split_normalized_consumption_policy.md",
+    "01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/ohlcv_1m/ohlcv_1m_split_normalized_registry_entry.yaml",
+    "01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md",
+    "01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/ohlcv_1m_quote_guarded/ohlcv_1m_quote_guarded_live_supervision_validation_protocol_v0_1.md",
+    "01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/ohlcv_1m_split_normalized_full_universe_materialization_runbook_v0_1.md",
+    "01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/ohlcv_1m_split_normalized_operational_landing_v0_1.md",
+    "01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/quotes/quotes_staging_clone_runbook_v0_1.md",
+    "01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+    "01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/GRAPHIFY_REFRESH_QUEUE.md",
+    "01_TSIS_backtest_SmallCaps/CHANGELOG.md",
+    "01_TSIS_backtest_SmallCaps/scripts/data_ops/clone_quotes_to_staging.ps1",
+    "01_TSIS_backtest_SmallCaps/scripts/monitor_long_running_operation.ps1",
+    "01_TSIS_backtest_SmallCaps/scripts/run_1m_split_normalized_materialization.ps1",
+    "01_TSIS_backtest_SmallCaps/scripts/validate_ohlcv_1m_quote_guarded_repair_v0_2.ps1",
+    "CHANGELOG.md",
+    "LONG_RUNNING_OPERATIONS_CONTRACT.md",
+    "PROJECT_RULES.md"
+  ],
+  "graph_build_untracked_paths": [
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/03_Edu_Trades/",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/04_Xavineta/",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/README.md",
+    "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/source_assets/999.png",
+    "01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/ohlcv_1m_split_normalized_split_affected_materialization_results_v0_1.md"
+  ],
+  "corpus_file_count": 75,
+  "corpus_files": [
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\01_MOMENTUM_EXPANSION\\PM_ACCEPTED_EXTENSION_BREAK_EVENT\\EVENT_DEFINITION_DRAFT_v0_1.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "bytes": 16380,
+      "line_count": 650,
+      "word_count_approx": 2288,
+      "sha256": "50380e9db6f1239a2b39e300b036febc36f704d64e50cbd4062509a7fb7f1f2d"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\01_MOMENTUM_EXPANSION\\PM_ACCEPTED_EXTENSION_BREAK_EVENT\\SOURCE_NOTE_RESPONSE_CLONE.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/SOURCE_NOTE_RESPONSE_CLONE.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/SOURCE_NOTE_RESPONSE_CLONE.md",
+      "bytes": 3802,
+      "line_count": 107,
+      "word_count_approx": 553,
+      "sha256": "fd73b7fb8ba5a34dbc10d130f8c1a1b4551476b86f7e92ef9ef653c29620a7a1"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\01_MOMENTUM_EXPANSION\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/README.md",
+      "bytes": 604,
+      "line_count": 31,
+      "word_count_approx": 70,
+      "sha256": "8ed30cecd6dd6a9eb7ee3e9ec930e2314c9cbc9c8d08bfc853e72b6167186563"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\02_VWAP_CONTROL\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/02_VWAP_CONTROL/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/02_VWAP_CONTROL/README.md",
+      "bytes": 581,
+      "line_count": 30,
+      "word_count_approx": 78,
+      "sha256": "4d7f8052a5fbdbf6f056113439e3637a977edfddd2025073ddc9f8cb9b2c58e4"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\03_INTRADAY_REVERSALS\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/03_INTRADAY_REVERSALS/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/03_INTRADAY_REVERSALS/README.md",
+      "bytes": 510,
+      "line_count": 29,
+      "word_count_approx": 63,
+      "sha256": "7382f16a6a47f0608ef2d88477ba7d47c310a53a74ef8dd350297c52238a7876"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\04_MOMENTUM_EXHAUSTION\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/04_MOMENTUM_EXHAUSTION/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/04_MOMENTUM_EXHAUSTION/README.md",
+      "bytes": 599,
+      "line_count": 30,
+      "word_count_approx": 77,
+      "sha256": "74dca3ec2087ee14704dc27c04a4955c30e612e529f1b235200d8f5ef410a609"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\05_RUNNER_LIFECYCLE\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/05_RUNNER_LIFECYCLE/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/05_RUNNER_LIFECYCLE/README.md",
+      "bytes": 625,
+      "line_count": 32,
+      "word_count_approx": 76,
+      "sha256": "795e1e7dc59d7c8b0b60d0148984e10a32bbff2cead058e817d90b3886ba776a"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\06_RESISTANCE_AND_BREAKOUTS\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/06_RESISTANCE_AND_BREAKOUTS/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/06_RESISTANCE_AND_BREAKOUTS/README.md",
+      "bytes": 560,
+      "line_count": 30,
+      "word_count_approx": 65,
+      "sha256": "3646f4251af7175b402da28266252481ed874a03bc0268737cd3214692907b81"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\07_SHORT_SQUEEZE_DYNAMICS\\DAS_EVENT\\EVENT_DEFINITION_DRAFT_v0_1.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/07_SHORT_SQUEEZE_DYNAMICS/DAS_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/07_SHORT_SQUEEZE_DYNAMICS/DAS_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "bytes": 19634,
+      "line_count": 938,
+      "word_count_approx": 2611,
+      "sha256": "f37827c7855df7110419d00c770701970c7a44fd2449e81dd9d55c29a396d9fc"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\07_SHORT_SQUEEZE_DYNAMICS\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/07_SHORT_SQUEEZE_DYNAMICS/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/07_SHORT_SQUEEZE_DYNAMICS/README.md",
+      "bytes": 733,
+      "line_count": 36,
+      "word_count_approx": 89,
+      "sha256": "00acd401cf0ec6aeced6a092998667f4688346cc3d092e407b3ab134bcc9f7df"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\99_EXPERIMENTAL\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/99_EXPERIMENTAL/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/99_EXPERIMENTAL/README.md",
+      "bytes": 477,
+      "line_count": 24,
+      "word_count_approx": 66,
+      "sha256": "339dc41f47a5bfa4172b7b0e009f9ae35920ce83be6e7f6fce6d77d168f43ad7"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "bytes": 13945,
+      "line_count": 550,
+      "word_count_approx": 1847,
+      "sha256": "0a848e9cf624b69a217f2c4582df89a0a3dc973a5b0514f955f35cf45b575c4a"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "bytes": 14159,
+      "line_count": 685,
+      "word_count_approx": 1895,
+      "sha256": "ec5aae17e155d25a23d5719d1ce701603d5b9a0c979b67ac677c2cf8489416eb"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/README.md",
+      "bytes": 3003,
+      "line_count": 124,
+      "word_count_approx": 360,
+      "sha256": "7a298cccd8651cf6dd0e6960baa7d3fbb34a5353549fc96efda7f2944faf861b"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\RESEARCH_AND_DEVELOPMENT\\GAME_THEORETIC_PRESSURE_FOR_EVENT_SEARCH_ALPHAEVOLVE_v0_1.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/RESEARCH_AND_DEVELOPMENT/GAME_THEORETIC_PRESSURE_FOR_EVENT_SEARCH_ALPHAEVOLVE_v0_1.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/RESEARCH_AND_DEVELOPMENT/GAME_THEORETIC_PRESSURE_FOR_EVENT_SEARCH_ALPHAEVOLVE_v0_1.md",
+      "bytes": 10252,
+      "line_count": 384,
+      "word_count_approx": 1333,
+      "sha256": "9cf8ffc6fac7d8b0ac702ad42bf7210eb9e3877368bbafdeda94202fa634698a"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\source_assets\\edu_trades\\07_Long_plays.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/source_assets/edu_trades/07_Long_plays.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/source_assets/edu_trades/07_Long_plays.md",
+      "bytes": 15916,
+      "line_count": 295,
+      "word_count_approx": 2497,
+      "sha256": "d3e45852e9021fb92074f62fb6fdc5e36c3ab2dc4bb55870d3800905763ed581"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\source_assets\\mosquito_smallcaps\\La-Formula-Exacta-para-Entrar-en-Trades_Media_4Xh34AFFGJc_001_1080p_pdf.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/source_assets/mosquito_smallcaps/La-Formula-Exacta-para-Entrar-en-Trades_Media_4Xh34AFFGJc_001_1080p_pdf.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/source_assets/mosquito_smallcaps/La-Formula-Exacta-para-Entrar-en-Trades_Media_4Xh34AFFGJc_001_1080p_pdf.md",
+      "bytes": 35059,
+      "line_count": 335,
+      "word_count_approx": 6044,
+      "sha256": "d13c5fd5f3f9ef058392e29d992869ba9e59667059b4e2837f36408fa08b4617"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\traders_strategies\\EDUTRADES_LONG_PLAYS_SOURCE_EVENT_INDEX_v0_1.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/traders_strategies/EDUTRADES_LONG_PLAYS_SOURCE_EVENT_INDEX_v0_1.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/traders_strategies/EDUTRADES_LONG_PLAYS_SOURCE_EVENT_INDEX_v0_1.md",
+      "bytes": 35014,
+      "line_count": 1456,
+      "word_count_approx": 4685,
+      "sha256": "39fb22b6da85647cc1e26c2e2c5ba7089c10483bfcbf1a7c51f711ec916b4a2d"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\traders_strategies\\MOSQUITO_SMALLCAPS_SOURCE_EVENT_INDEX_v0_1.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/traders_strategies/MOSQUITO_SMALLCAPS_SOURCE_EVENT_INDEX_v0_1.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/traders_strategies/MOSQUITO_SMALLCAPS_SOURCE_EVENT_INDEX_v0_1.md",
+      "bytes": 61154,
+      "line_count": 2244,
+      "word_count_approx": 8009,
+      "sha256": "ee4271b26f5d7911698660cc919194b62e0f2477067d356f14c78389051a43da"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\01_EVENT_ENGINE_MODEL\\README.md",
+      "relative_to_scope": "01_EVENT_ENGINE_MODEL/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/01_EVENT_ENGINE_MODEL/README.md",
+      "bytes": 667,
+      "line_count": 31,
+      "word_count_approx": 79,
+      "sha256": "ba17dc520a07ff20913a515832edfcf228e97f154608b5c32f9150b607d70ca2"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\02_OUTCOME_RESEARCH\\README.md",
+      "relative_to_scope": "02_OUTCOME_RESEARCH/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/02_OUTCOME_RESEARCH/README.md",
+      "bytes": 622,
+      "line_count": 29,
+      "word_count_approx": 82,
+      "sha256": "00b5ea7b8d481b8a562d08b98277d58b7986b323431b31cb369629415117e312"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\FACTORS\\Crowded_Ticker_Context\\FACTOR.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Crowded_Ticker_Context/FACTOR.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Crowded_Ticker_Context/FACTOR.md",
+      "bytes": 4796,
+      "line_count": 239,
+      "word_count_approx": 631,
+      "sha256": "a6cc14f2050359c950c950d0a7a7e2ffd5f28f5c032ce61fdcb724dfb0a19c8f"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\FACTORS\\Float_Rotation\\FACTOR.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Float_Rotation/FACTOR.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Float_Rotation/FACTOR.md",
+      "bytes": 9102,
+      "line_count": 442,
+      "word_count_approx": 1223,
+      "sha256": "2a4ffd188f9287d6becbbfe39dd09d9f68a3fc30fb00fdff537f28bef73c1bb8"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\FACTORS\\Liquidity_Gain_Loss\\FACTOR.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Liquidity_Gain_Loss/FACTOR.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Liquidity_Gain_Loss/FACTOR.md",
+      "bytes": 10274,
+      "line_count": 502,
+      "word_count_approx": 1335,
+      "sha256": "91cba32c891c8dadd3ff425a6d044df2382fc7eda70ffd4969f2747c0be36d5e"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\FACTORS\\Neutralized_Area\\FACTOR.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Neutralized_Area/FACTOR.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Neutralized_Area/FACTOR.md",
+      "bytes": 8635,
+      "line_count": 406,
+      "word_count_approx": 1119,
+      "sha256": "436bb1d7688fc1337a89f5b72f82e63d82bd104e23133e84102b653bf5f2361f"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\FACTORS\\Pattern_Variation_Acceptable_Range\\FACTOR.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Pattern_Variation_Acceptable_Range/FACTOR.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Pattern_Variation_Acceptable_Range/FACTOR.md",
+      "bytes": 11601,
+      "line_count": 542,
+      "word_count_approx": 1571,
+      "sha256": "c692b286b5dafb294f4a7b83442f351e24f0b60ce7c88445ee81003ab26e22e2"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\FACTORS\\Short_Seller_Trap_Layers\\FACTOR.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Short_Seller_Trap_Layers/FACTOR.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Short_Seller_Trap_Layers/FACTOR.md",
+      "bytes": 7790,
+      "line_count": 359,
+      "word_count_approx": 1074,
+      "sha256": "b2b66a738ae9ca805315917f91642622cd0f1881b7e911bbfe911c1476cee846"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\FACTORS\\Volume_Prediction\\FACTOR.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Volume_Prediction/FACTOR.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Volume_Prediction/FACTOR.md",
+      "bytes": 12201,
+      "line_count": 545,
+      "word_count_approx": 1563,
+      "sha256": "6adc525219b5724061109d7b0f366b41937cfad38f53308dcb4032aaaea22664"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\LONG\\Dip_Buying_Multi_Day_Runner\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/LONG/Dip_Buying_Multi_Day_Runner/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/LONG/Dip_Buying_Multi_Day_Runner/STRATEGY.md",
+      "bytes": 4193,
+      "line_count": 236,
+      "word_count_approx": 578,
+      "sha256": "e6f13ce866b212c64f030f562455b0c91b024eb7fcf5c2aa37e67cfead413a60"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\LONG\\Gap_Up_Buying\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/LONG/Gap_Up_Buying/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/LONG/Gap_Up_Buying/STRATEGY.md",
+      "bytes": 4731,
+      "line_count": 234,
+      "word_count_approx": 643,
+      "sha256": "a06c9479771de916e5dff1f64ba0042293ec7af89734c24a70895b2781f12788"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\README.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/README.md",
+      "bytes": 1475,
+      "line_count": 69,
+      "word_count_approx": 184,
+      "sha256": "1cb9b0047795a5baf99221f3c06605926c72e36ff0977b51d4eaa0e351eaef6e"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\SHORT\\Bounce_Plus_Gap_Up_Short\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Bounce_Plus_Gap_Up_Short/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Bounce_Plus_Gap_Up_Short/STRATEGY.md",
+      "bytes": 7391,
+      "line_count": 337,
+      "word_count_approx": 1030,
+      "sha256": "646c1b6637bcbc10f02eb63664fec2c4b43ee016671a5f104da52686fd5b3b73"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\SHORT\\Bounce_Short\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Bounce_Short/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Bounce_Short/STRATEGY.md",
+      "bytes": 9736,
+      "line_count": 424,
+      "word_count_approx": 1236,
+      "sha256": "18e277f67b5eb2bbece43914ee7b5c954ca9a9f0f5cbb4887fd224e9891351aa"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\SHORT\\Double_Intraday_Top\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Double_Intraday_Top/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Double_Intraday_Top/STRATEGY.md",
+      "bytes": 4626,
+      "line_count": 244,
+      "word_count_approx": 602,
+      "sha256": "a6113451eaba1d0cfb33b115e2328570c4061eb8e7e614c7b19d589137681a6e"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\SHORT\\Double_Layer_Resistance\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Double_Layer_Resistance/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Double_Layer_Resistance/STRATEGY.md",
+      "bytes": 14261,
+      "line_count": 583,
+      "word_count_approx": 1805,
+      "sha256": "31700433eca69042126bb4d4d2f7d7560189b02a3c1d4f19836e7de5b4ad3215"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\SHORT\\First_Red_Day\\estrtategia.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/First_Red_Day/estrtategia.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/First_Red_Day/estrtategia.md",
+      "bytes": 1117,
+      "line_count": 25,
+      "word_count_approx": 181,
+      "sha256": "a618c9c27a7e3b1ec9d309b5fe698ac4d264d87d0579484ccdccc7b6cc7dbfa5"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\SHORT\\First_Red_Day\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/First_Red_Day/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/First_Red_Day/STRATEGY.md",
+      "bytes": 10401,
+      "line_count": 448,
+      "word_count_approx": 1457,
+      "sha256": "f58b8134497c39995677273a687e507dbc5d4811f333edd246a9f08729e546b3"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\SHORT\\Gap_Up_Short\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Gap_Up_Short/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Gap_Up_Short/STRATEGY.md",
+      "bytes": 37352,
+      "line_count": 1441,
+      "word_count_approx": 4930,
+      "sha256": "96e4b041a9c61560f833ce3b8ebc4eba6d9e03b59e2815b0fd396767e17d8f9d"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\SHORT\\Gap_Up_Short\\STRATEGY_old.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Gap_Up_Short/STRATEGY_old.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Gap_Up_Short/STRATEGY_old.md",
+      "bytes": 10358,
+      "line_count": 453,
+      "word_count_approx": 1384,
+      "sha256": "ac02dbee4aacd1da620d655a8787c0ce5737708835787ad4664a7730e097bec3"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\SHORT\\Multi_Day_Top_Risk_Reward\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Multi_Day_Top_Risk_Reward/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Multi_Day_Top_Risk_Reward/STRATEGY.md",
+      "bytes": 3809,
+      "line_count": 204,
+      "word_count_approx": 508,
+      "sha256": "28dfec66bc3c280c9d272ff70fc5d792e20808e8129e3aabc412fa5487c8917a"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\SHORT\\Parabolic_Breakout_Failed_Breakout\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Parabolic_Breakout_Failed_Breakout/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Parabolic_Breakout_Failed_Breakout/STRATEGY.md",
+      "bytes": 5054,
+      "line_count": 236,
+      "word_count_approx": 660,
+      "sha256": "395f62f2d5a2a60e842ad8993e01239048501ff34bd272ed8a630881769b75cc"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\STEVEN_DUX_SOURCE_STRATEGY_INDEX_v0_1.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/STEVEN_DUX_SOURCE_STRATEGY_INDEX_v0_1.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/STEVEN_DUX_SOURCE_STRATEGY_INDEX_v0_1.md",
+      "bytes": 17744,
+      "line_count": 643,
+      "word_count_approx": 2291,
+      "sha256": "56df51a4450da953834a3c16e33e96fce9022390de265a114a8f173a27d8ad65"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\03_Edu_Trades\\07_Long_plays.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/03_Edu_Trades/07_Long_plays.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/03_Edu_Trades/07_Long_plays.md",
+      "bytes": 15916,
+      "line_count": 295,
+      "word_count_approx": 2497,
+      "sha256": "d3e45852e9021fb92074f62fb6fdc5e36c3ab2dc4bb55870d3800905763ed581"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\03_Edu_Trades\\07_Short_Plays.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/03_Edu_Trades/07_Short_Plays.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/03_Edu_Trades/07_Short_Plays.md",
+      "bytes": 8634,
+      "line_count": 236,
+      "word_count_approx": 1290,
+      "sha256": "8568b8d1fd2e508394ee57a0ff347a10a56e2e557a1235c3224c9e527baae40d"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\_shared\\README.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/_shared/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/_shared/README.md",
+      "bytes": 955,
+      "line_count": 40,
+      "word_count_approx": 134,
+      "sha256": "6e2596328aa11770a70a939206c711cdf495caf4b3e78e164b76d75b9163e005"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\_shared\\strategy_widgets_common.py",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/_shared/strategy_widgets_common.py",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/_shared/strategy_widgets_common.py",
+      "bytes": 25402,
+      "line_count": 711,
+      "word_count_approx": 1896,
+      "sha256": "87817279e186e8b066f67eb3d2ca091412e3572114ac0bce29b21e3ed207cc7d"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\FACTORS\\README.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/FACTORS/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/README.md",
+      "bytes": 663,
+      "line_count": 29,
+      "word_count_approx": 94,
+      "sha256": "b38f9d4b49e6dbc580cebf88dac6e6ec69642800ec8009c3502f5fdda2cbce00"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\Breakout\\edge_hypothesis.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/Breakout/edge_hypothesis.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/edge_hypothesis.md",
+      "bytes": 202,
+      "line_count": 11,
+      "word_count_approx": 29,
+      "sha256": "37edb6896f79266db87b2adc066c97c705014b92ca1210de32a9ed3cac201848"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\Breakout\\execution_model.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/Breakout/execution_model.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/execution_model.md",
+      "bytes": 213,
+      "line_count": 22,
+      "word_count_approx": 27,
+      "sha256": "a5a1b4796f1bb7e1e999b800cb84c8b4bd830bf4cd4cf449fdca7a4a3275d7cb"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\Breakout\\failure_modes.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/Breakout/failure_modes.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/failure_modes.md",
+      "bytes": 105,
+      "line_count": 11,
+      "word_count_approx": 14,
+      "sha256": "4fb8833fcad2081848afe424591c4d5607ed6f31941e9adca79f71f931691a1f"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\Breakout\\market_structure.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/Breakout/market_structure.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/market_structure.md",
+      "bytes": 258,
+      "line_count": 14,
+      "word_count_approx": 36,
+      "sha256": "4ff39e5f5d805153ae423417b660502226df3b6d57e1fcc1f88d0f3fa5114153"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\Breakout\\ml_features.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/Breakout/ml_features.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/ml_features.md",
+      "bytes": 156,
+      "line_count": 21,
+      "word_count_approx": 13,
+      "sha256": "78ac797fbbe3e007c437c026b0db1cc336fd24d7aa33f08143be6cafbe667be9"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\Breakout\\pattern_mining_questions.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/Breakout/pattern_mining_questions.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/pattern_mining_questions.md",
+      "bytes": 195,
+      "line_count": 13,
+      "word_count_approx": 26,
+      "sha256": "d7ea8b29861e06624feee66a0f77d5ab2028e69a93f1c8ca44f7f46e1d33ce0f"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\Breakout\\README.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/Breakout/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/README.md",
+      "bytes": 155,
+      "line_count": 20,
+      "word_count_approx": 18,
+      "sha256": "15f4a2912e5a5bda8c043005708822eae69feed447de62ed72158ad296fb98f1"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\Breakout\\squeeze_relevance.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/Breakout/squeeze_relevance.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/squeeze_relevance.md",
+      "bytes": 181,
+      "line_count": 18,
+      "word_count_approx": 34,
+      "sha256": "0e19c13673e5874ca2c1e2cf626c270d9584de59dc0fac8261891b797fa2df13"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\Breakout\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/Breakout/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/STRATEGY.md",
+      "bytes": 13902,
+      "line_count": 687,
+      "word_count_approx": 1913,
+      "sha256": "00286a8d0f3944a0ad9c61914809736beee64836f22b49042386595f2b7c8712"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\DAS\\das_widgets.py",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/DAS/das_widgets.py",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/das_widgets.py",
+      "bytes": 141810,
+      "line_count": 3188,
+      "word_count_approx": 9750,
+      "sha256": "2dc8fab8af080f19b7e3ff275bab4550ddb33dd275a2bdffbbd60ef35d8cabc6"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\DAS\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/DAS/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/STRATEGY.md",
+      "bytes": 37743,
+      "line_count": 1569,
+      "word_count_approx": 5147,
+      "sha256": "dfa6aa8903ac19bde8382b68e4643f86d011caa608467f307bdc49b618af36e1"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\gap&go\\gap_and_go_widgets.py",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/gap&go/gap_and_go_widgets.py",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/gap&go/gap_and_go_widgets.py",
+      "bytes": 89009,
+      "line_count": 2147,
+      "word_count_approx": 6258,
+      "sha256": "4268511aaa5e00da22b75b8529e3b2c22905111c05cd2927023ef9b232ef9c0a"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\gap&go\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/gap&go/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/gap&go/STRATEGY.md",
+      "bytes": 11638,
+      "line_count": 499,
+      "word_count_approx": 1718,
+      "sha256": "49a301fde57c4800c7f592abcb8d2f6c62019aff1611bbfc35c8dfcec50925ee"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\README.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/README.md",
+      "bytes": 758,
+      "line_count": 45,
+      "word_count_approx": 113,
+      "sha256": "471b59d983a6b86e87aa64ffe4c2e384babbee17a8a1686c561858ae61a93985"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\README.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/README.md",
+      "bytes": 11482,
+      "line_count": 466,
+      "word_count_approx": 1645,
+      "sha256": "5eb02ab7dd59163b14b76d43e28bd47b3a96df2c64a8c21cda8cc6cc95af6188"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\SHORT\\README.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/SHORT/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/README.md",
+      "bytes": 457,
+      "line_count": 29,
+      "word_count_approx": 64,
+      "sha256": "3cde0cc5de04ecf52c6e1592300e79e5a1fa2080c8f4fe99b2e2b34b4db0f48e"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\04_STRATEGY_RESEARCH\\README.md",
+      "relative_to_scope": "04_STRATEGY_RESEARCH/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/04_STRATEGY_RESEARCH/README.md",
+      "bytes": 545,
+      "line_count": 29,
+      "word_count_approx": 72,
+      "sha256": "c53ab21dd466844bd2f79e0f546706985dddfe3e79ae19d4d7d453ba866b28cd"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\05_EDGE_HYPOTHESES\\README.md",
+      "relative_to_scope": "05_EDGE_HYPOTHESES/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/05_EDGE_HYPOTHESES/README.md",
+      "bytes": 513,
+      "line_count": 27,
+      "word_count_approx": 74,
+      "sha256": "dfbe9fcc6f2f53d72d62e172379c0b8d3a88e0a1fb59c19ee4786097d3be2c0c"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\06_PATTERN_DISCOVERY\\README.md",
+      "relative_to_scope": "06_PATTERN_DISCOVERY/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/06_PATTERN_DISCOVERY/README.md",
+      "bytes": 545,
+      "line_count": 28,
+      "word_count_approx": 78,
+      "sha256": "a67bc71075e75a2dacb0c18c1b0e2c68aa301e346e328fb357f3a0e86ece657c"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\07_CLUSTER_RESEARCH\\README.md",
+      "relative_to_scope": "07_CLUSTER_RESEARCH/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/07_CLUSTER_RESEARCH/README.md",
+      "bytes": 479,
+      "line_count": 27,
+      "word_count_approx": 66,
+      "sha256": "9aaa67499c3c14f20ed1930e6be1e6dbdaeac07f5cff64ffb404df4feee2f0c3"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\08_EXECUTION_MODELS\\README.md",
+      "relative_to_scope": "08_EXECUTION_MODELS/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/08_EXECUTION_MODELS/README.md",
+      "bytes": 540,
+      "line_count": 28,
+      "word_count_approx": 69,
+      "sha256": "d35e35a8abe698717783cf6b7b35cf04d1a0f62201a1a513cda337218aa18d80"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\09_DECISION_MODELS\\README.md",
+      "relative_to_scope": "09_DECISION_MODELS/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/09_DECISION_MODELS/README.md",
+      "bytes": 520,
+      "line_count": 29,
+      "word_count_approx": 71,
+      "sha256": "d262cb0c008761405067de37e1d261a967dd4cca3f047c0618eea1a90fc9af48"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\10_EVOLUTION_SYSTEMS\\README.md",
+      "relative_to_scope": "10_EVOLUTION_SYSTEMS/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/10_EVOLUTION_SYSTEMS/README.md",
+      "bytes": 593,
+      "line_count": 32,
+      "word_count_approx": 76,
+      "sha256": "56dbfe1f2650ae39f31680dae928e658cb8377d5f7be4c229ce6c0d91f5b127e"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\11_SQUEEZE_RESEARCH\\README.md",
+      "relative_to_scope": "11_SQUEEZE_RESEARCH/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/11_SQUEEZE_RESEARCH/README.md",
+      "bytes": 526,
+      "line_count": 28,
+      "word_count_approx": 69,
+      "sha256": "14097daf11d86b8936a5dedeb84ca858bb8dae1f5e377d52f11ba1f9dc2e0123"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\90_DISCRETIONARY_FRAMEWORKS\\README.md",
+      "relative_to_scope": "90_DISCRETIONARY_FRAMEWORKS/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/90_DISCRETIONARY_FRAMEWORKS/README.md",
+      "bytes": 642,
+      "line_count": 27,
+      "word_count_approx": 83,
+      "sha256": "91b280b8f10d8888ffe9694adb3fed0fdf728a2cd597b015277e3c8ac7319121"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\99_EXPERIMENTAL\\README.md",
+      "relative_to_scope": "99_EXPERIMENTAL/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/99_EXPERIMENTAL/README.md",
+      "bytes": 445,
+      "line_count": 26,
+      "word_count_approx": 61,
+      "sha256": "403aa54ea4907d1fc7a3e51286d6d594d6dca5906b20772c313674fb19072198"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\README.md",
+      "relative_to_scope": "README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/README.md",
+      "bytes": 9942,
+      "line_count": 414,
+      "word_count_approx": 1206,
+      "sha256": "9bb841ba807d3951d839ef25bdeec123ed1256b48a15d10b944dbbb94492c65a"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\revision.md",
+      "relative_to_scope": "revision.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/revision.md",
+      "bytes": 7306,
+      "line_count": 445,
+      "word_count_approx": 879,
+      "sha256": "c93e1f31b79c3f15068e5c370c415732ac5ce8eeef218998842dca7615654b05"
+    }
+  ],
+  "corpus_inclusion_rules": [
+    "*.md",
+    "*.py under 00_CTO/13_TRADING_SYSTEMS"
+  ],
+  "corpus_exclusion_rules": [
+    "graphify-out",
+    "runs/run/runtime",
+    "notebooks",
+    "images",
+    "pdfs",
+    "physical data",
+    "cache folders"
+  ],
+  "queue_entries_covered": [
+    "00_CTO GRAPHIFY_REFRESH_QUEUE: 2026-06-28 - Strategy Library trader-source reorganization",
+    "00_CTO GRAPHIFY_REFRESH_QUEUE: GFQ-20260618-001 - Trading Systems event-first root integration basis"
+  ],
+  "queue_entries_left_pending": [
+    "00_CTO GRAPHIFY_REFRESH_QUEUE: 2026-06-28 - Graphify build baseline provenance rule",
+    "00_CTO MEDIUM strategy/event entries not merged to root"
+  ],
+  "graph_build_backend_or_agent_mode": "codex_subagent_semantic_extraction_no_api_keys_no_ollama",
+  "next_delta_commands": [
+    "git diff --name-status <graph_build_git_commit>...HEAD",
+    "git status --short"
+  ],
+  "host": "Alex",
+  "user": "AlexJ"
+}

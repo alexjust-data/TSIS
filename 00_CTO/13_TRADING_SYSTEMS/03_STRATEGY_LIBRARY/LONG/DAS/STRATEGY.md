@@ -446,7 +446,7 @@ Por tanto, cada imagen buena debe ayudar a responder:
 
 Imagen fuente:
 
-<img src="BUENOS%20CORREGIDOS/0007_ROLR_2026-01-14_push165.17_rebreak.png" width="1000" alt="ROLR clean frontside DAS ladder">
+<img src="DAS_VISUAL_CASEBOOK/img/human_good_cases/BUENOS%20CORREGIDOS/0007_ROLR_2026-01-14_push165.17_rebreak.png" width="1000" alt="ROLR clean frontside DAS ladder">
 
 Lectura:
 
@@ -569,7 +569,7 @@ Despues de momentum_end_ts, no se deben seguir generando DAS candidatos buenos.
 
 Imagen fuente:
 
-<img src="BUENOS%20CORREGIDOS/0003_TWG_2026-01-20_push209.48_rebreak.png" width="1000" alt="TWG deep first dip VWAP reclaim DAS">
+<img src="DAS_VISUAL_CASEBOOK/img/human_good_cases/BUENOS%20CORREGIDOS/0003_TWG_2026-01-20_push209.48_rebreak.png" width="1000" alt="TWG deep first dip VWAP reclaim DAS">
 
 Lectura:
 
@@ -694,7 +694,7 @@ Invalida DAS si no hay recuperacion de VWAP/estructura antes del rebreak.
 
 Imagen fuente:
 
-<img src="BUENOS%20CORREGIDOS/0009_PAVM_2026-01-21_push136.83_rebreak.png" width="1000" alt="PAVM delayed scanner but valid awakening reconstruction">
+<img src="DAS_VISUAL_CASEBOOK/img/human_good_cases/BUENOS%20CORREGIDOS/0009_PAVM_2026-01-21_push136.83_rebreak.png" width="1000" alt="PAVM delayed scanner but valid awakening reconstruction">
 
 Lectura:
 
@@ -767,7 +767,7 @@ estructura ya estaba destruida antes del supuesto DAS.
 
 Imagen fuente:
 
-<img src="BUENOS%20CORREGIDOS/0005_JFBR_2026-01-16_push177.68_scanner_only.png" width="1000" alt="JFBR stale scanner trigger after first push">
+<img src="DAS_VISUAL_CASEBOOK/img/human_good_cases/BUENOS%20CORREGIDOS/0005_JFBR_2026-01-16_push177.68_scanner_only.png" width="1000" alt="JFBR stale scanner trigger after first push">
 
 Lectura:
 

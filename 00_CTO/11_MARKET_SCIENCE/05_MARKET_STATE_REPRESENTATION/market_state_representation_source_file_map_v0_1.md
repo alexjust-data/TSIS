@@ -167,7 +167,34 @@ data_quality_report
   - Aclara que v0.1 no es feature store productivo.
   - No debe usarse como entrenamiento ML/RL full-universe.
 
-## Estado Del Hueco Detectado
+## Scanner Candidate Selection
+
+- `C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/README.md`
+  - Mapa CTO activo de la capa scanner.
+  - Explica que scanner decide donde mirar, no que estado operar.
+
+- `C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_candidate_selection_architecture_v0_1.md`
+  - Define el scanner como capa de candidate selection previa a
+    `market_state`/`event_state`.
+
+- `C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_table_and_contract_map_v0_1.md`
+  - Lista contratos, schema, registry, policy, validators, builder, notebook y
+    replay controlado existentes.
+
+- `C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_definitions_trade_station_vs_broad_discovery_v0_1.md`
+  - Separa `trade_station_like_scanner_v0_1` de
+    `broad_in_play_discovery_scanner_v0_1`.
+
+- `C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_to_market_state_promotion_path_v0_1.md`
+  - Define la ruta desde scanner candidates hasta `institutional_market_state`.
+
+- `C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_1.md`
+  - Autoridad operativa del framework de scanners.
+
+- `C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_1.md`
+  - Autoridad operativa de la tabla objetivo `daily_scanner_candidates_table`.
+
+## Estado Del Hueco Cerrado Parcialmente
 
 Existe:
 
@@ -175,9 +202,19 @@ Existe:
 C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/
 ```
 
-pero estaba vacia antes de esta promocion documental.
+La sede CTO de `Market State Representation` ya contiene:
 
-Debe convertirse en la sede CTO de la pregunta cientifica:
+```text
+market_state_representation_contract_v0_1.md
+market_state_representation_source_file_map_v0_1.md
+00_SCANNER_CANDIDATE_SELECTION/
+```
+
+La carpeta de scanner cierra el hueco de navegacion sobre candidate selection,
+pero no cierra todavia la construccion institucional completa de
+`market_state`/`event_state`.
+
+La pregunta cientifica central sigue siendo:
 
 ```text
 Cual es la representacion minima, causalmente defendible y temporalmente
@@ -196,4 +233,3 @@ Sirve para que un humano o agente encuentre rapidamente donde se explica:
 - por que ML/RL dependen de representacion de estado;
 - por que AlphaEvolve no debe empezar por estrategias;
 - por que microestructura y causalidad son parte del estado.
-

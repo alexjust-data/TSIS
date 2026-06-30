@@ -207,13 +207,13 @@ It must not:
 Recommended live command:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\supervise_ohlcv_1m_quote_guarded_repair_v0_2.ps1" -RunRoot "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\data_foundation\ohlcv_1m_quote_guarded\quote_guarded_v0_2_20260627_091838" -Workers 12 -PollSeconds 60 -StaleMinutes 20
+powershell -NoProfile -ExecutionPolicy Bypass -File "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\supervise_ohlcv_1m_quote_guarded_repair_v0_2.ps1" -RunRoot "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\data_foundation\ohlcv_1m_quote_guarded\quote_guarded_v0_2_20260627_091838" -Workers 12 -PollSeconds 60 -StaleMinutes 20 -OrphanGraceMinutes 3
 ```
 
 One-shot diagnostic command:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\supervise_ohlcv_1m_quote_guarded_repair_v0_2.ps1" -RunRoot "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\data_foundation\ohlcv_1m_quote_guarded\quote_guarded_v0_2_20260627_091838" -Workers 12 -Once
+powershell -NoProfile -ExecutionPolicy Bypass -File "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\supervise_ohlcv_1m_quote_guarded_repair_v0_2.ps1" -RunRoot "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\data_foundation\ohlcv_1m_quote_guarded\quote_guarded_v0_2_20260627_091838" -Workers 12 -OrphanGraceMinutes 3 -Once
 ```
 
 The one-shot command is for testing only. It should print process and freshness
@@ -327,6 +327,63 @@ Important operational note:
 PowerShell scripts already running in a terminal do not reload changed script
 files. After this correction, any already-open supervisor terminal must be
 stopped and relaunched so it uses the orphan-wrapper logic.
+```
+
+### 2026-06-29 orphan wrapper grace correction
+
+During the same live full-universe run, a later orphan-wrapper state was
+observed again:
+
+```text
+monitor:
+  DONE = 4255
+  RUNNING = 0
+  months_done/planned_in_started_tickers = 457939/457939
+
+supervisor:
+  processes = 1
+  orphan_wrappers = 1
+  latest_age_min ~= 13
+  months = 456641/457130
+  repairs = 126013538
+```
+
+This state is not equivalent to ordinary slow processing. When the only
+matching runner process is a PowerShell wrapper and it has no Python descendant,
+there is no active repair worker pool. Waiting for the general stale threshold
+therefore wastes time without protecting useful work.
+
+The supervisor was corrected to use two independent thresholds:
+
+```text
+StaleMinutes:
+  default = 20
+  purpose = conservative restart when process state is ambiguous
+
+OrphanGraceMinutes:
+  default = 3
+  purpose = fast restart when wrapper is clearly orphaned
+```
+
+Corrected behavior:
+
+```text
+if orphan wrapper exists and latest output age >= OrphanGraceMinutes:
+    stop only the orphan wrapper
+    append orphan_wrapper_grace_exceeded_stopped to supervisor_events.jsonl
+    relaunch v0_2 runner on the same RunRoot without -Overwrite
+else if no matching process exists and latest output age >= StaleMinutes:
+    relaunch v0_2 runner on the same RunRoot without -Overwrite
+```
+
+Operational note:
+
+```text
+Any supervisor terminal already open before this correction is still running
+the old in-memory script. Stop only that supervisor terminal and relaunch it.
+Do not stop the runner, monitor, or validator terminals for this correction.
+The relaunched header must include:
+  orphan grace: 3m
 ```
 
 ## 9. Why A Separate Validator Is Required
@@ -453,6 +510,61 @@ Interpretation:
 - the result is not a final full validation because only 25 stable shards were
   deeply sampled in that diagnostic command.
 
+### 2026-06-28 live validator snapshot race
+
+At approximately `00:06` Europe/Madrid, the live validator emitted:
+
+```text
+status = FAIL
+errors = ["repair_row_total_mismatch"]
+month_summary_repair_rows = 36172835
+shard_row_total = 37183284
+orphan_shards_count = 1302
+sample_orphans included ATNI_2017_02_repair_manifest.parquet
+```
+
+Follow-up inspection showed that sampled `ATNI` shards did have matching
+month summaries and internally consistent row counts. Example:
+
+```text
+ATNI_2017_02 summary repair_rows = 514
+ATNI_2017_02 shard rows = 514
+ATNI ticker status = DONE
+ATNI months_done = 239/239
+```
+
+Root cause:
+
+```text
+The live validator was taking an inconsistent snapshot while the runner was
+writing thousands of new files. It listed/read month summaries first, then
+spent time counting shard metadata. By the time it compared totals, some shards
+created after the summary listing had become old enough to pass the shard-age
+filter, but their summaries were not present in the validator's earlier
+in-memory month-summary snapshot.
+```
+
+This is a validator snapshot-race failure, not evidence that the quote-guarded
+repair artifacts violated price-envelope invariants.
+
+Correction:
+
+```text
+The validator now computes one snapshot_cutoff at pass start.
+Month summaries and repair shards must both be older than that same cutoff.
+In live sampled mode (-MaxShardsPerPass > 0), row-total comparison is scoped to
+the sampled stable shards instead of all stable shards.
+Final full validation after the writer stops should use -MaxShardsPerPass 0.
+```
+
+Operational consequence:
+
+```text
+Any already-running validator terminal must be stopped and relaunched after
+this correction. Like the supervisor, the validator embeds a temporary Python
+script at startup and does not reload edits while running.
+```
+
 ## 14. Terminal Layout Recommended For Long Runs
 
 Use separate terminals:
@@ -472,7 +584,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "C:\TSIS_Data\01_TSIS_backte
 ### Terminal 3 - Supervisor
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\supervise_ohlcv_1m_quote_guarded_repair_v0_2.ps1" -RunRoot "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\data_foundation\ohlcv_1m_quote_guarded\quote_guarded_v0_2_20260627_091838" -Workers 12 -PollSeconds 60 -StaleMinutes 20
+powershell -NoProfile -ExecutionPolicy Bypass -File "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\supervise_ohlcv_1m_quote_guarded_repair_v0_2.ps1" -RunRoot "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\data_foundation\ohlcv_1m_quote_guarded\quote_guarded_v0_2_20260627_091838" -Workers 12 -PollSeconds 60 -StaleMinutes 20 -OrphanGraceMinutes 3
 ```
 
 ### Terminal 4 - Validator

@@ -31,6 +31,7 @@
   - [`trades_consumption_policy.md`](#tradesconsumptionpolicymd)
   - [`ohlcv_1m_raw_consumption_policy.md`](#ohlcv1mrawconsumptionpolicymd)
   - [`daily_return_labels_consumption_policy.md`](#dailyreturnlabelsconsumptionpolicymd)
+  - [`daily_scanner_candidates_table_consumption_policy.md`](#dailyscannercandidatestableconsumptionpolicymd)
   - [`intraday_regime_features_consumption_policy.md`](#intradayregimefeaturesconsumptionpolicymd)
   - [`lt1b_universe_consumption_policy.md`](#lt1buniverseconsumptionpolicymd)
   - [`reference_consumption_policy.md`](#referenceconsumptionpolicymd)
@@ -351,6 +352,7 @@ data_consumption_policies/
   dataset_certification_matrix_consumption_policy.md
   daily_consumption_policy.md
   daily_return_labels_consumption_policy.md
+  daily_scanner_candidates_table_consumption_policy.md
   expected_data_calendar_consumption_policy.md
   fundamentals_asof_table_consumption_policy.md
   halts_consumption_policy.md
@@ -469,6 +471,23 @@ Distingue:
 Regla clave:
 
 - labels forward-looking no son features y no prueban edge por si mismos.
+
+### `daily_scanner_candidates_table_consumption_policy.md`
+
+Gobierna `daily_scanner_candidates_table_v0_1`.
+
+Distingue:
+
+- candidate-set lineage;
+- scanner replay;
+- event discovery;
+- market-state seed;
+- prohibicion de ML/RL directo por defecto.
+
+Regla clave:
+
+- el scanner dice donde mirar; no es estado completo, universo completo,
+  estrategia, label, reward ni execution truth.
 
 ### `intraday_regime_features_consumption_policy.md`
 

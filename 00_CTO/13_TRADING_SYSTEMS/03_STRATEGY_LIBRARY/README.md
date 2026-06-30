@@ -76,10 +76,19 @@ Ejemplo inicial:
 
 ```text
 03_STRATEGY_LIBRARY/
-  GAP_AND_GO/
-    STRATEGY.md
-    strategy_case_explorer.ipynb
-    img/
+  LONG/
+    gap&go/
+      STRATEGY.md
+      strategy_case_explorer.ipynb
+      runs/
+      img/
+
+  SHORT/
+    first_red_day/
+      STRATEGY.md
+      strategy_case_explorer.ipynb
+      runs/
+      img/
 ```
 
 El archivo `STRATEGY.md` debe explicar:
@@ -93,7 +102,64 @@ El archivo `STRATEGY.md` debe explicar:
 - que notebooks o scripts sirven para buscar muestras;
 - que eventos v0 se derivaron de ella.
 
-## 4.1. Regla de procedencia de imagenes
+## 4.1. Separacion entre traders fuente y estrategias TSIS
+
+`03_STRATEGY_LIBRARY` separa dos cosas distintas:
+
+```text
+enseñanzas fuente de traders
+estrategias/factores TSIS en investigacion o consolidacion
+```
+
+Las carpetas numeradas por trader/fuente guardan material didactico,
+transcripciones, capturas, factores fuente y lecturas iniciales.
+
+Ejemplos:
+
+```text
+00_Brian Lee/
+01_Steven_Dux/
+03_Edu_Trades/
+04_Xavineta/
+```
+
+Las carpetas operativas de TSIS guardan estrategias propias, trabajadas o en
+investigacion, independientemente de que hayan nacido inspiradas por un trader:
+
+```text
+LONG/
+SHORT/
+FACTORS/
+```
+
+Regla:
+
+```text
+Si el documento explica lo que enseña un trader, vive en la carpeta del trader.
+Si el documento define una estrategia TSIS que vamos a buscar, medir, depurar y
+mantener como nuestra, vive en LONG/ o SHORT/.
+Si el documento define un factor TSIS transversal, vive en FACTORS/.
+```
+
+Ejemplo:
+
+```text
+01_Steven_Dux/SHORT/Gap_Up_Short/STRATEGY.md
+```
+
+es lectura fuente de Steven Dux.
+
+```text
+SHORT/gap_up_short/STRATEGY.md
+```
+
+seria una estrategia TSIS consolidada o en investigacion propia, si decidimos
+crearla despues a partir de la fuente.
+
+Por tanto, `LONG/`, `SHORT/` y `FACTORS/` no deben contener subcarpetas con el
+nombre de un trader.
+
+## 4.2. Regla de procedencia de imagenes
 
 Las imagenes incrustadas dentro de un `STRATEGY.md` deben venir del mismo video,
 documento o fuente primaria que esta definiendo esa estrategia.
@@ -161,6 +227,25 @@ session_volume >= 500000
 0.5 <= price <= 20
 ```
 
+La arquitectura CTO activa del scanner vive en:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/
+```
+
+La autoridad operativa del output vive en:
+
+```text
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_1.md
+```
+
+Regla:
+
+```text
+El screener de estrategia consume candidatos.
+No redefine el scanner transversal ni el market_state.
+```
+
 El screener no exige todavia:
 
 - push perfecto;
@@ -213,7 +298,7 @@ Ejemplos prohibidos:
 ```text
 LONG/DAS importando helpers desde LONG/gap&go
 LONG/Breakout importando helpers desde LONG/DAS
-SHORT/stevenDux/First_Red_Day importando helpers desde LONG/Breakout
+01_Steven_Dux/SHORT/First_Red_Day importando helpers desde LONG/Breakout
 ```
 
 La razon es semantica, no solo tecnica.

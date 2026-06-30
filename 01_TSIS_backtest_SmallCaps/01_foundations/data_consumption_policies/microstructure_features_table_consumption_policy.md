@@ -76,8 +76,8 @@ Every consumer must preserve:
 
 - `quotes_root_used`;
 - `quotes_root_state`;
-- `future_official_quotes_root`;
-- `quotes_staging_root`;
+- `target_official_quotes_root`;
+- `legacy_incomplete_e_quotes_root`;
 - `source_quotes_file`;
 - `source_quotes_file_sha256`.
 

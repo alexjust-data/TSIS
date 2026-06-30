@@ -1,0 +1,82 @@
+{
+  "dataset_id": "master_intraday_bar_table_v0_2_candidate_quote_guarded",
+  "promotion_state": "candidate_contract_defined_not_materialized",
+  "materialization_scope": "quote_guarded_full_universe_candidate_pending_final_repair",
+  "full_universe_claim": false,
+  "official_dataset_created": false,
+  "safe_to_launch_full_materialization": false,
+  "storage_model": "raw_ohlcv_1m_plus_repair_manifest_overlay",
+  "creates_full_corrected_tree": false,
+  "raw_ohlcv_1m_mutation_allowed": false,
+  "primary_promoted_artifact_type": "repair_manifest_overlay",
+  "target_output_root": "E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table",
+  "target_dataset_path": "E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_2_candidate_quote_guarded",
+  "must_not_write_paths": [
+    "E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_1"
+  ],
+  "current_bridge_sources": {
+    "repair_run_root": "C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838",
+    "minute_root": "E:/TSIS/data/ohlcv_1m",
+    "quotes_root": "D:/quotes",
+    "output_root": "E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded",
+    "active_repair_shards_dir": "C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838/repair_shards",
+    "active_consolidated_repair_manifest": "C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838/repair_manifest.parquet",
+    "repair_run_state": "running_or_not_final_validated",
+    "quotes_root_state": "provisional_d_legacy_recovery_root_pending_e_parity",
+    "raw_1m_root_state": "official_e_raw_root",
+    "official_quote_guarded_root_state": "pending_final_manifest_and_validation"
+  },
+  "future_official_sources": {
+    "quote_guarded_output_root": "E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded",
+    "repair_summary": "E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_summary_v0_2_or_later.json",
+    "repair_manifest": "E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_v0_2_or_later.parquet",
+    "validation_report": "E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/validation_report_final.json"
+  },
+  "loader_semantics": [
+    "load_raw_monthly_ohlcv_parquet",
+    "lookup_matching_repair_manifest_rows",
+    "replace_o_h_l_c_in_memory_only_for_affected_minutes",
+    "preserve_raw_storage",
+    "preserve_or_block_vwap_without_quote_reconstruction",
+    "return_quote_guarded_view_with_repair_flags"
+  ],
+  "repair_row_count_interpretation": {
+    "repair_rows": "affected_manifest_rows_not_full_replacement_bars",
+    "ohlc_repair_rows": "rows_where_o_h_l_c_change",
+    "vw_invalid_rows": "rows_where_vwap_is_invalid_or_blocked_without_vwap_rebuild"
+  },
+  "required_price_views": [
+    "1m_raw",
+    "1m_quote_guarded_raw"
+  ],
+  "blocked_price_views_until_proven": [
+    "1m_quote_guarded_split_normalized"
+  ],
+  "required_added_columns": [
+    "quote_guarded_view",
+    "quote_guarded_repair_applied",
+    "repair_state",
+    "repair_reason",
+    "vw_quote_guarded_status",
+    "quote_bid_floor",
+    "quote_ask_cap",
+    "quote_count",
+    "source_quote_guarded_repair_manifest",
+    "source_quote_guarded_run_id",
+    "source_quotes_root",
+    "source_quotes_root_state",
+    "requires_rebuild_after_e_quotes_parity",
+    "requires_rebuild_after_quote_guarded_e_promotion"
+  ],
+  "promotion_blockers": [
+    "quote_guarded_repair_run_completed",
+    "final_validation_report_passed",
+    "official_e_root_quote_guarded_manifest_exists",
+    "source_quotes_root_state_resolved_or_candidate_only",
+    "builder_consumes_manifest_not_blind_recursive_scan",
+    "candidate_tests_pass_against_final_artifacts",
+    "registry_schema_validator_status_matrix_changelog_updated",
+    "graphify_refresh_queue_updated",
+    "human_review_accepts_candidate_evidence"
+  ]
+}

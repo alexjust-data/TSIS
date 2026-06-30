@@ -1,0 +1,31 @@
+{
+  "run_id": "data_foundation_outputs_topology_20260629",
+  "created_at_utc": "2026-06-29T08:10:54.863664+00:00",
+  "repo_root": "C:\\TSIS_Data",
+  "leaf_dir": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\graphify-out\\leaf_slices\\data_foundation_outputs_topology_20260629",
+  "corpus_file_count": 96,
+  "missing_components": [
+    {
+      "table": "short_sale_constraints_table",
+      "component": "schema"
+    },
+    {
+      "table": "short_sale_constraints_table",
+      "component": "dataset_contract"
+    },
+    {
+      "table": "short_sale_constraints_table",
+      "component": "registry"
+    },
+    {
+      "table": "short_sale_constraints_table",
+      "component": "consumption_policy"
+    },
+    {
+      "table": "short_sale_constraints_table",
+      "component": "validator"
+    }
+  ],
+  "graphify_package_version": "0.9.1",
+  "semantic_extraction_mode": "deterministic_file_topology_extraction"
+}

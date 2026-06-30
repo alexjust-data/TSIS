@@ -225,6 +225,16 @@ Outputs:
 - prerequisitos;
 - condiciones de invalidez.
 
+Organizacion interna:
+
+```text
+carpetas numeradas por trader/fuente -> enseñanzas, capturas, transcripts y
+lecturas fuente
+
+LONG/ SHORT/ FACTORS/ -> estrategias y factores TSIS propios, consolidados o
+en investigacion
+```
+
 Regla:
 
 ```text

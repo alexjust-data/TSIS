@@ -17,6 +17,8 @@ grain:
 scope:
   materialized: false
   builder_implemented: false
+  candidate_builder_implemented: true
+  controlled_candidate_materialized: true
   full_universe_claim: false
   direct_rl_training_allowed: false
   execution_truth: false
@@ -45,4 +47,24 @@ current_state:
   parquet_rows: 0
   official_manifest_exists: false
   official_dataset_exists: false
-  next_required_step: schema_builder_validator_fixture_implementation
+  next_required_step: expand_candidate_coverage_after_quotes_parity_and_asof_context_gates
+candidate_state:
+  dataset_id: market_state_table_v0_1_candidate
+  status: controlled_candidate_not_promoted
+  materialization_scope: halt_event_window_microstructure_controlled_candidate
+  dataset: E:/TSIS/data/data_foundation_outputs/market_state_table/market_state_table_v0_1_candidate_microstructure_halt_controlled
+  manifest: E:/TSIS/data/data_foundation_outputs/market_state_table/_market_state_table_manifest_v0_1_candidate_microstructure_halt_controlled.json
+  summary: E:/TSIS/data/data_foundation_outputs/market_state_table/_market_state_table_summary_v0_1_candidate_microstructure_halt_controlled.csv
+  build_run_id: market_state_table_v0_1_candidate_20260629T194351Z
+  rows: 50
+  tickers: 9
+  event_windows: 50
+  parquet_files: 2
+  full_universe_claim: false
+  valid_for_event_context_candidate_rows: 50
+  valid_for_ml_feature_candidate_rows: 0
+  valid_for_rl_state_candidate_rows: 0
+  output_tree_sha256: 05abf763bca2b97bc6d61d8d2c8e99bf7a23ee7ba9ec05aa8fc1c00bdf488abd
+  inherits_quotes_root_state: provisional_d_legacy_recovery_root_pending_e_parity
+  requires_rebuild_after_e_quotes_parity: true
+  direct_ml_rl_backtest_execution_use_allowed: false

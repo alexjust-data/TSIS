@@ -14,6 +14,38 @@ Current status:
 contract_defined_not_materialized
 ```
 
+## 1.1 Provisional Microstructure Source Rule
+
+For the next controlled candidate loop, `market_state_table` may consume
+microstructure components derived from:
+
+```text
+quotes_root_used = D:/quotes
+quotes_root_state = provisional_d_legacy_recovery_root_pending_e_parity
+target_official_quotes_root = E:/TSIS/data/quotes_
+legacy_incomplete_e_quotes_root = E:/TSIS/data/quotes
+```
+
+This is a candidate-only allowance. Rows inheriting this root state must expose
+lineage and must not be consumed as:
+
+```text
+valid_for_ml_feature_candidate = true
+valid_for_backtest_context_candidate = true
+valid_for_rl_state_candidate = true
+valid_for_execution_simulator_direct = true
+```
+
+unless a later contract explicitly proves `E:/TSIS/data/quotes_` parity/audit
+and recomputes or promotes the affected candidate. Until then, the correct
+interpretation is:
+
+```text
+state_component_candidate = true
+institutional_state = false
+requires_rebuild_after_e_quotes_parity = true
+```
+
 ## 2. Permitted Meaning
 
 Permitted meaning after materialization:
@@ -52,6 +84,7 @@ Consumers may only read feature columns from approved namespaces:
 ```text
 identity__
 calendar__
+scanner__
 daily__
 intraday__
 microstructure__

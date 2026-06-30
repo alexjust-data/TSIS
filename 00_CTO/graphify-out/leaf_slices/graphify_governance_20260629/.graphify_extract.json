@@ -1,0 +1,1116 @@
+{
+  "nodes": [
+    {
+      "id": "agents_tsis_agents_contract",
+      "label": "TSIS Agents Contract",
+      "file_type": "document",
+      "source_file": "C:\\TSIS_Data\\AGENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agents_mandatory_reading_order",
+      "label": "Mandatory Reading Order",
+      "file_type": "concept",
+      "source_file": "C:\\TSIS_Data\\AGENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agents_no_hidden_state_assumption",
+      "label": "No Hidden State Assumption",
+      "file_type": "concept",
+      "source_file": "C:\\TSIS_Data\\AGENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agents_institutional_artifacts",
+      "label": "Institutional Artifacts",
+      "file_type": "concept",
+      "source_file": "C:\\TSIS_Data\\AGENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agents_reproducibility_minimum",
+      "label": "Reproducibility Minimum",
+      "file_type": "concept",
+      "source_file": "C:\\TSIS_Data\\AGENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "project_operating_system_project_operating_system",
+      "label": "Project Operating System",
+      "file_type": "document",
+      "source_file": "C:\\TSIS_Data\\PROJECT_OPERATING_SYSTEM.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "changelog_root_changelog",
+      "label": "Root Changelog",
+      "file_type": "document",
+      "source_file": "C:\\TSIS_Data\\CHANGELOG.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "changelog_cross_project_graphify_governance_leaf_build",
+      "label": "Cross Project Graphify Governance Leaf Build",
+      "file_type": "concept",
+      "source_file": "C:\\TSIS_Data\\CHANGELOG.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "project_rules_project_rules",
+      "label": "Project Rules",
+      "file_type": "document",
+      "source_file": "C:\\TSIS_Data\\PROJECT_RULES.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "versioning_standards_versioning_standards",
+      "label": "Versioning Standards",
+      "file_type": "document",
+      "source_file": "C:\\TSIS_Data\\VERSIONING_STANDARDS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "architecture_overview_architecture_overview",
+      "label": "Architecture Overview",
+      "file_type": "document",
+      "source_file": "C:\\TSIS_Data\\ARCHITECTURE_OVERVIEW.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "research_philosophy_research_philosophy",
+      "label": "Research Philosophy",
+      "file_type": "document",
+      "source_file": "C:\\TSIS_Data\\RESEARCH_PHILOSOPHY.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "long_running_operations_contract_long_running_operations_contract",
+      "label": "Long Running Operations Contract",
+      "file_type": "document",
+      "source_file": "C:\\TSIS_Data\\LONG_RUNNING_OPERATIONS_CONTRACT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "long_running_operations_contract_progress_telemetry_standard",
+      "label": "Progress Telemetry Standard",
+      "file_type": "concept",
+      "source_file": "C:\\TSIS_Data\\LONG_RUNNING_OPERATIONS_CONTRACT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "long_running_operations_contract_pre_manifest",
+      "label": "Pre Manifest",
+      "file_type": "concept",
+      "source_file": "C:\\TSIS_Data\\LONG_RUNNING_OPERATIONS_CONTRACT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "long_running_operations_contract_heartbeat",
+      "label": "Heartbeat",
+      "file_type": "concept",
+      "source_file": "C:\\TSIS_Data\\LONG_RUNNING_OPERATIONS_CONTRACT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "long_running_operations_contract_pid_manifest",
+      "label": "PID Manifest",
+      "file_type": "concept",
+      "source_file": "C:\\TSIS_Data\\LONG_RUNNING_OPERATIONS_CONTRACT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "long_running_operations_contract_separate_monitor",
+      "label": "Separate Monitor",
+      "file_type": "concept",
+      "source_file": "C:\\TSIS_Data\\LONG_RUNNING_OPERATIONS_CONTRACT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "00_cto_local_rules_cto_local_rules",
+      "label": "CTO Local Rules",
+      "file_type": "document",
+      "source_file": "C:\\TSIS_Data\\00_CTO\\LOCAL_RULES.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "00_cto_graphify_official_build_protocol_cto_graphify_official_build_protocol",
+      "label": "CTO Graphify Official Build Protocol",
+      "file_type": "document",
+      "source_file": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "00_cto_graphify_refresh_queue_cto_graphify_refresh_queue",
+      "label": "CTO Graphify Refresh Queue",
+      "file_type": "document",
+      "source_file": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_REFRESH_QUEUE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "00_cto_graphify_official_build_protocol_cto_root_graph",
+      "label": "CTO Root Graph",
+      "file_type": "concept",
+      "source_file": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "00_cto_graphify_official_build_protocol_leaf_first_graph_build",
+      "label": "Leaf First Graph Build",
+      "file_type": "concept",
+      "source_file": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "00_cto_graphify_official_build_protocol_build_manifest_baseline",
+      "label": "Build Manifest Baseline",
+      "file_type": "concept",
+      "source_file": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "00_cto_graphify_official_build_protocol_no_api_mode",
+      "label": "No API Mode",
+      "file_type": "concept",
+      "source_file": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "00_cto_graphify_official_build_protocol_graph_delta_audit",
+      "label": "Graph Delta Audit",
+      "file_type": "concept",
+      "source_file": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "00_cto_graphify_official_build_protocol_root_merge_gate",
+      "label": "Root Merge Gate",
+      "file_type": "concept",
+      "source_file": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "00_cto_graphify_official_build_protocol_graphify_runtime_output",
+      "label": "Graphify Runtime Output",
+      "file_type": "concept",
+      "source_file": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "01_tsis_backtest_smallcaps_local_rules_smallcaps_local_rules",
+      "label": "SmallCaps Local Rules",
+      "file_type": "document",
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\LOCAL_RULES.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "01_tsis_backtest_smallcaps_01_foundations_readme_data_foundation_readme",
+      "label": "Data Foundation README",
+      "file_type": "document",
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "01_tsis_backtest_smallcaps_01_foundations_graphify_official_build_protocol_data_foundation_graphify_official_build_protocol",
+      "label": "Data Foundation Graphify Official Build Protocol",
+      "file_type": "document",
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "01_tsis_backtest_smallcaps_01_foundations_graphify_refresh_queue_data_foundation_graphify_refresh_queue",
+      "label": "Data Foundation Graphify Refresh Queue",
+      "file_type": "document",
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\GRAPHIFY_REFRESH_QUEUE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "01_tsis_backtest_smallcaps_01_foundations_graphify_official_build_protocol_data_foundation_root_graph",
+      "label": "Data Foundation Root Graph",
+      "file_type": "concept",
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "01_tsis_backtest_smallcaps_01_foundations_module_contracts_graphify_data_foundation_graph_and_table_design_protocol_data_foundation_graph_and_table_design_protocol",
+      "label": "Data Foundation Graph and Table Design Protocol",
+      "file_type": "document",
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\module_contracts\\graphify\\data_foundation_graph_and_table_design_protocol.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "01_tsis_backtest_smallcaps_01_foundations_module_contracts_graphify_data_foundation_graph_and_table_design_protocol_data_foundation_outputs",
+      "label": "Data Foundation Outputs",
+      "file_type": "concept",
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\module_contracts\\graphify\\data_foundation_graph_and_table_design_protocol.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "01_tsis_backtest_smallcaps_01_foundations_module_contracts_graphify_data_foundation_graph_and_table_design_protocol_market_state_tables",
+      "label": "Market State Tables",
+      "file_type": "concept",
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\module_contracts\\graphify\\data_foundation_graph_and_table_design_protocol.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_official_build_protocol_data_certification_graphify_official_build_protocol",
+      "label": "Data Certification Graphify Official Build Protocol",
+      "file_type": "document",
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_refresh_queue_data_certification_graphify_refresh_queue",
+      "label": "Data Certification Graphify Refresh Queue",
+      "file_type": "document",
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\GRAPHIFY_REFRESH_QUEUE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_official_build_protocol_data_certification_root_graph",
+      "label": "Data Certification Root Graph",
+      "file_type": "concept",
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "agents_tsis_agents_contract",
+      "target": "agents_mandatory_reading_order",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\AGENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agents_tsis_agents_contract",
+      "target": "agents_no_hidden_state_assumption",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\AGENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agents_tsis_agents_contract",
+      "target": "agents_institutional_artifacts",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\AGENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agents_tsis_agents_contract",
+      "target": "agents_reproducibility_minimum",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\AGENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agents_mandatory_reading_order",
+      "target": "project_operating_system_project_operating_system",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\AGENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agents_mandatory_reading_order",
+      "target": "project_rules_project_rules",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\AGENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agents_mandatory_reading_order",
+      "target": "versioning_standards_versioning_standards",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\AGENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agents_mandatory_reading_order",
+      "target": "architecture_overview_architecture_overview",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\AGENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agents_mandatory_reading_order",
+      "target": "research_philosophy_research_philosophy",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\AGENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agents_reproducibility_minimum",
+      "target": "00_cto_graphify_official_build_protocol_build_manifest_baseline",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\TSIS_Data\\AGENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agents_no_hidden_state_assumption",
+      "target": "00_cto_graphify_official_build_protocol_graph_delta_audit",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\TSIS_Data\\AGENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "changelog_root_changelog",
+      "target": "changelog_cross_project_graphify_governance_leaf_build",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\CHANGELOG.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "changelog_cross_project_graphify_governance_leaf_build",
+      "target": "00_cto_graphify_official_build_protocol_cto_graphify_official_build_protocol",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\TSIS_Data\\CHANGELOG.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "changelog_cross_project_graphify_governance_leaf_build",
+      "target": "01_tsis_backtest_smallcaps_01_foundations_graphify_official_build_protocol_data_foundation_graphify_official_build_protocol",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\TSIS_Data\\CHANGELOG.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "changelog_cross_project_graphify_governance_leaf_build",
+      "target": "01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_official_build_protocol_data_certification_graphify_official_build_protocol",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\TSIS_Data\\CHANGELOG.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "changelog_cross_project_graphify_governance_leaf_build",
+      "target": "long_running_operations_contract_long_running_operations_contract",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "C:\\TSIS_Data\\CHANGELOG.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "project_rules_project_rules",
+      "target": "long_running_operations_contract_long_running_operations_contract",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\TSIS_Data\\PROJECT_RULES.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "project_rules_project_rules",
+      "target": "00_cto_graphify_official_build_protocol_cto_graphify_official_build_protocol",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\TSIS_Data\\PROJECT_RULES.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "versioning_standards_versioning_standards",
+      "target": "00_cto_graphify_official_build_protocol_build_manifest_baseline",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\TSIS_Data\\VERSIONING_STANDARDS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_overview_architecture_overview",
+      "target": "00_cto_graphify_official_build_protocol_cto_root_graph",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "C:\\TSIS_Data\\ARCHITECTURE_OVERVIEW.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "long_running_operations_contract_long_running_operations_contract",
+      "target": "long_running_operations_contract_progress_telemetry_standard",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\LONG_RUNNING_OPERATIONS_CONTRACT.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "long_running_operations_contract_progress_telemetry_standard",
+      "target": "long_running_operations_contract_pre_manifest",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\LONG_RUNNING_OPERATIONS_CONTRACT.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "long_running_operations_contract_progress_telemetry_standard",
+      "target": "long_running_operations_contract_heartbeat",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\LONG_RUNNING_OPERATIONS_CONTRACT.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "long_running_operations_contract_progress_telemetry_standard",
+      "target": "long_running_operations_contract_pid_manifest",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\LONG_RUNNING_OPERATIONS_CONTRACT.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "long_running_operations_contract_progress_telemetry_standard",
+      "target": "long_running_operations_contract_separate_monitor",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\LONG_RUNNING_OPERATIONS_CONTRACT.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "long_running_operations_contract_long_running_operations_contract",
+      "target": "00_cto_graphify_official_build_protocol_cto_graphify_official_build_protocol",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "C:\\TSIS_Data\\LONG_RUNNING_OPERATIONS_CONTRACT.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "long_running_operations_contract_long_running_operations_contract",
+      "target": "01_tsis_backtest_smallcaps_01_foundations_graphify_official_build_protocol_data_foundation_graphify_official_build_protocol",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "C:\\TSIS_Data\\LONG_RUNNING_OPERATIONS_CONTRACT.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "long_running_operations_contract_long_running_operations_contract",
+      "target": "01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_official_build_protocol_data_certification_graphify_official_build_protocol",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "C:\\TSIS_Data\\LONG_RUNNING_OPERATIONS_CONTRACT.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_cto_local_rules_cto_local_rules",
+      "target": "00_cto_graphify_official_build_protocol_cto_graphify_official_build_protocol",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "C:\\TSIS_Data\\00_CTO\\LOCAL_RULES.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_cto_graphify_official_build_protocol_cto_graphify_official_build_protocol",
+      "target": "00_cto_graphify_official_build_protocol_cto_root_graph",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_cto_graphify_official_build_protocol_cto_graphify_official_build_protocol",
+      "target": "00_cto_graphify_official_build_protocol_leaf_first_graph_build",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_cto_graphify_official_build_protocol_cto_graphify_official_build_protocol",
+      "target": "00_cto_graphify_official_build_protocol_build_manifest_baseline",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_cto_graphify_official_build_protocol_cto_graphify_official_build_protocol",
+      "target": "00_cto_graphify_official_build_protocol_no_api_mode",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_cto_graphify_official_build_protocol_cto_graphify_official_build_protocol",
+      "target": "00_cto_graphify_official_build_protocol_graph_delta_audit",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_cto_graphify_official_build_protocol_cto_graphify_official_build_protocol",
+      "target": "00_cto_graphify_official_build_protocol_root_merge_gate",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_cto_graphify_official_build_protocol_cto_graphify_official_build_protocol",
+      "target": "00_cto_graphify_official_build_protocol_graphify_runtime_output",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_cto_graphify_refresh_queue_cto_graphify_refresh_queue",
+      "target": "00_cto_graphify_official_build_protocol_cto_graphify_official_build_protocol",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_REFRESH_QUEUE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_cto_graphify_refresh_queue_cto_graphify_refresh_queue",
+      "target": "00_cto_graphify_official_build_protocol_graph_delta_audit",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_REFRESH_QUEUE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_tsis_backtest_smallcaps_local_rules_smallcaps_local_rules",
+      "target": "01_tsis_backtest_smallcaps_01_foundations_graphify_official_build_protocol_data_foundation_graphify_official_build_protocol",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\LOCAL_RULES.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_tsis_backtest_smallcaps_01_foundations_readme_data_foundation_readme",
+      "target": "01_tsis_backtest_smallcaps_01_foundations_graphify_official_build_protocol_data_foundation_graphify_official_build_protocol",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_tsis_backtest_smallcaps_01_foundations_graphify_official_build_protocol_data_foundation_graphify_official_build_protocol",
+      "target": "01_tsis_backtest_smallcaps_01_foundations_graphify_official_build_protocol_data_foundation_root_graph",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_tsis_backtest_smallcaps_01_foundations_graphify_official_build_protocol_data_foundation_graphify_official_build_protocol",
+      "target": "00_cto_graphify_official_build_protocol_leaf_first_graph_build",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_tsis_backtest_smallcaps_01_foundations_graphify_official_build_protocol_data_foundation_graphify_official_build_protocol",
+      "target": "00_cto_graphify_official_build_protocol_build_manifest_baseline",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_tsis_backtest_smallcaps_01_foundations_graphify_official_build_protocol_data_foundation_graphify_official_build_protocol",
+      "target": "00_cto_graphify_official_build_protocol_no_api_mode",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_tsis_backtest_smallcaps_01_foundations_graphify_official_build_protocol_data_foundation_graphify_official_build_protocol",
+      "target": "00_cto_graphify_official_build_protocol_graph_delta_audit",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_tsis_backtest_smallcaps_01_foundations_graphify_refresh_queue_data_foundation_graphify_refresh_queue",
+      "target": "01_tsis_backtest_smallcaps_01_foundations_graphify_official_build_protocol_data_foundation_graphify_official_build_protocol",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\GRAPHIFY_REFRESH_QUEUE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_tsis_backtest_smallcaps_01_foundations_graphify_refresh_queue_data_foundation_graphify_refresh_queue",
+      "target": "00_cto_graphify_official_build_protocol_graph_delta_audit",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\GRAPHIFY_REFRESH_QUEUE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_tsis_backtest_smallcaps_01_foundations_module_contracts_graphify_data_foundation_graph_and_table_design_protocol_data_foundation_graph_and_table_design_protocol",
+      "target": "01_tsis_backtest_smallcaps_01_foundations_graphify_official_build_protocol_data_foundation_graphify_official_build_protocol",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\module_contracts\\graphify\\data_foundation_graph_and_table_design_protocol.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_tsis_backtest_smallcaps_01_foundations_module_contracts_graphify_data_foundation_graph_and_table_design_protocol_data_foundation_graph_and_table_design_protocol",
+      "target": "01_tsis_backtest_smallcaps_01_foundations_module_contracts_graphify_data_foundation_graph_and_table_design_protocol_data_foundation_outputs",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\module_contracts\\graphify\\data_foundation_graph_and_table_design_protocol.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_tsis_backtest_smallcaps_01_foundations_module_contracts_graphify_data_foundation_graph_and_table_design_protocol_data_foundation_graph_and_table_design_protocol",
+      "target": "01_tsis_backtest_smallcaps_01_foundations_module_contracts_graphify_data_foundation_graph_and_table_design_protocol_market_state_tables",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\module_contracts\\graphify\\data_foundation_graph_and_table_design_protocol.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_tsis_backtest_smallcaps_01_foundations_module_contracts_graphify_data_foundation_graph_and_table_design_protocol_data_foundation_outputs",
+      "target": "01_tsis_backtest_smallcaps_01_foundations_module_contracts_graphify_data_foundation_graph_and_table_design_protocol_market_state_tables",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\module_contracts\\graphify\\data_foundation_graph_and_table_design_protocol.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_official_build_protocol_data_certification_graphify_official_build_protocol",
+      "target": "01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_official_build_protocol_data_certification_root_graph",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_official_build_protocol_data_certification_graphify_official_build_protocol",
+      "target": "00_cto_graphify_official_build_protocol_leaf_first_graph_build",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_official_build_protocol_data_certification_graphify_official_build_protocol",
+      "target": "00_cto_graphify_official_build_protocol_build_manifest_baseline",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_official_build_protocol_data_certification_graphify_official_build_protocol",
+      "target": "00_cto_graphify_official_build_protocol_no_api_mode",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_official_build_protocol_data_certification_graphify_official_build_protocol",
+      "target": "00_cto_graphify_official_build_protocol_graph_delta_audit",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_refresh_queue_data_certification_graphify_refresh_queue",
+      "target": "01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_official_build_protocol_data_certification_graphify_official_build_protocol",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\GRAPHIFY_REFRESH_QUEUE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_refresh_queue_data_certification_graphify_refresh_queue",
+      "target": "00_cto_graphify_official_build_protocol_graph_delta_audit",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\GRAPHIFY_REFRESH_QUEUE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_cto_graphify_official_build_protocol_cto_root_graph",
+      "target": "01_tsis_backtest_smallcaps_01_foundations_graphify_official_build_protocol_data_foundation_root_graph",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "01_tsis_backtest_smallcaps_01_foundations_graphify_official_build_protocol_data_foundation_root_graph",
+      "target": "01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_official_build_protocol_data_certification_root_graph",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_cto_graphify_official_build_protocol_cto_root_graph",
+      "target": "01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_official_build_protocol_data_certification_root_graph",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_cto_graphify_official_build_protocol_root_merge_gate",
+      "target": "00_cto_graphify_official_build_protocol_cto_root_graph",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_cto_graphify_official_build_protocol_root_merge_gate",
+      "target": "01_tsis_backtest_smallcaps_01_foundations_graphify_official_build_protocol_data_foundation_root_graph",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_cto_graphify_official_build_protocol_root_merge_gate",
+      "target": "01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_official_build_protocol_data_certification_root_graph",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "00_cto_graphify_official_build_protocol_graphify_runtime_output",
+      "target": "agents_institutional_artifacts",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "three_root_graphify_governance",
+      "label": "Three Root Graphify Governance",
+      "nodes": [
+        "00_cto_graphify_official_build_protocol_cto_root_graph",
+        "01_tsis_backtest_smallcaps_01_foundations_graphify_official_build_protocol_data_foundation_root_graph",
+        "01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_official_build_protocol_data_certification_root_graph"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md"
+    },
+    {
+      "id": "long_running_graphify_observability",
+      "label": "Long Running Graphify Observability",
+      "nodes": [
+        "long_running_operations_contract_pre_manifest",
+        "long_running_operations_contract_heartbeat",
+        "long_running_operations_contract_pid_manifest",
+        "long_running_operations_contract_separate_monitor"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\TSIS_Data\\LONG_RUNNING_OPERATIONS_CONTRACT.md"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

@@ -1,0 +1,36 @@
+{
+  "parent_chunk": "event_library",
+  "subchunk": 4,
+  "scope_root": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS",
+  "files": [
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\01_MOMENTUM_EXPANSION\\PM_ACCEPTED_EXTENSION_BREAK_EVENT\\EVENT_DEFINITION_DRAFT_v0_1.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "bytes": 16380,
+      "line_count": 650,
+      "word_count_approx": 2288,
+      "sha256": "50380e9db6f1239a2b39e300b036febc36f704d64e50cbd4062509a7fb7f1f2d"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "bytes": 14159,
+      "line_count": 685,
+      "word_count_approx": 1895,
+      "sha256": "ec5aae17e155d25a23d5719d1ce701603d5b9a0c979b67ac677c2cf8489416eb"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "bytes": 13945,
+      "line_count": 550,
+      "word_count_approx": 1847,
+      "sha256": "0a848e9cf624b69a217f2c4582df89a0a3dc973a5b0514f955f35cf45b575c4a"
+    }
+  ],
+  "word_count_approx": 6030,
+  "chunk_id": 4
+}

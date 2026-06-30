@@ -1,3 +1,24 @@
+# 11_MARKET_SCIENCE
+
+## Active Navigation
+
+`05_MARKET_STATE_REPRESENTATION/` es la sede CTO de la pregunta central:
+
+```text
+Como representamos el estado real de una microcap?
+```
+
+Para scanner candidate selection, leer:
+
+```text
+05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/README.md
+```
+
+Esa carpeta explica que el scanner decide donde mirar; no define una estrategia
+ni reemplaza `market_state`/`event_state`.
+
+---
+
 Son sobre la **ciencia del mercado** que TSIS necesita aprender.
 
 AlphaEvolve es un método para descubrir cosas.

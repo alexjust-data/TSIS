@@ -97,15 +97,46 @@ Future tests must inject or simulate:
 
 The validator must fail these cases.
 
-## 7. Current Expected v0.1 Counts
+## 7. Current Expected Official v0.1 Counts
 
-Because the table is not materialized:
+Because the official institutional table is not materialized:
 
 ```text
 expected_parquet_rows: 0
-materialized: false
-builder_implemented: false
+official_materialized: false
+official_builder_implemented: false
 ```
 
-The current tests may validate contract consistency only. They must not claim
-parquet validation.
+## 8. Current Controlled Candidate Evidence
+
+As of `2026-06-29`, a controlled candidate exists:
+
+```text
+dataset_id: event_state_table_v0_1_candidate
+status: controlled_candidate_not_promoted
+dataset: E:/TSIS/data/data_foundation_outputs/event_state_table/event_state_table_v0_1_candidate_microstructure_halt_controlled/
+manifest: E:/TSIS/data/data_foundation_outputs/event_state_table/_event_state_table_manifest_v0_1_candidate_microstructure_halt_controlled.json
+summary: E:/TSIS/data/data_foundation_outputs/event_state_table/_event_state_table_summary_v0_1_candidate_microstructure_halt_controlled.csv
+rows: 50
+tickers: 9
+event_windows: 50
+pre_event_rows: 25
+post_event_review_rows: 25
+valid_for_pattern_discovery_rows: 50
+valid_for_ml_feature_candidate_rows: 0
+valid_for_rl_state_candidate_rows: 0
+full_universe_claim_rows: 0
+state_quality_counts: {"event_state_review_microstructure_seed_only":50}
+```
+
+Executable evidence:
+
+```text
+tests/data_foundation_outputs/test_event_state_table_contract.py
+```
+
+The candidate validator proves linked `market_state_id`, state-role separation,
+label/outcome/reward inline prohibition, state cutoff legality, unique
+`event_state_id`, manifest presence and non-promotion flags. It does not
+promote the official table and does not allow direct ML/RL/backtest/execution
+use.

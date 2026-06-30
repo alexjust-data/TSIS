@@ -56,6 +56,53 @@ graphify-out/
 Si se omite `graph.html` por `--no-viz`, debe quedar documentado en la cola o
 manifest del build.
 
+## Modo sin APIs y version de Graphify
+
+Fuente directa de esta regla: `https://github.com/safishamsi/graphify`, rama
+`v8`, version upstream `graphifyy 0.9.1`, revisada el 2026-06-28.
+
+Estado observado en esta maquina el 2026-06-28:
+
+```text
+graphifyy instalado: 0.8.40
+upstream revisado:   0.9.1
+```
+
+Antes de cualquier nuevo build oficial de `01_foundations`, el agente debe
+comprobar y registrar la version efectiva de Graphify y de la skill usada. Si
+la version instalada sigue por detras del protocolo upstream revisado, el build
+solo puede declararse baseline oficial si se documenta una de estas opciones:
+
+- Graphify instalado fue actualizado/alineado;
+- se ejecuto el flujo oficial desde la version upstream revisada;
+- o el build queda marcado como `provisional` por limitacion de version.
+
+TSIS opera por defecto sin APIs externas para Graphify. La ausencia de
+`GEMINI_API_KEY` o `GOOGLE_API_KEY` no autoriza a pedir `ANTHROPIC_API_KEY`,
+`OPENAI_API_KEY` ni otro proveedor. Para contratos, registries, policies,
+validators, dossiers markdown, papers o imagenes, el modo correcto en Codex es:
+
+```text
+skill Graphify -> AST local para codigo -> subagentes/host agent para
+extraccion semantica -> build oficial -> diagnostics -> manifest.
+```
+
+Un corpus solo de codigo puede usar el flujo AST/code-only sin API y sin
+subagentes semanticos.
+
+Regla critica:
+
+```text
+graphify update por CLI es suficiente solo para cambios code/AST cuando ese
+scope lo permita. No prueba cobertura semantica de markdown, contracts, papers
+o imagenes.
+```
+
+Para cambios documentales de CAPA 1, usar el flujo semantico de la skill
+Graphify o `graphify extract` con backend ya configurado. Si no hay backend ni
+subagentes disponibles, el agente debe parar, documentar la causa y no escribir
+un grafo parcial en `graphify-out/`.
+
 ## Que no cuenta como build oficial
 
 No cuenta como oficial:
@@ -89,6 +136,21 @@ explicita. La memoria versionada de como construir el grafo vive en:
 ```
 
 Esto solo gobierna versionado y trazabilidad. No autoriza builds manuales.
+
+Politica Git local:
+
+```text
+01_foundations/graphify-out/ raiz sigue siendo runtime reconstruible.
+01_foundations/graphify-out/leaf_slices/<leaf_id>/ puede publicarse en Git si
+fue promocionado con BUILD_MANIFEST.md, corpus reconstruible, graph.json,
+GRAPH_REPORT.md, graph.html y diagnostico limpio.
+```
+
+Un leaf deterministico, topologico, de navegacion o de provenance debe declarar
+esa limitacion en `BUILD_MANIFEST.md` y `GRAPH_REPORT.md`. Puede servir para
+trazabilidad y navegacion, pero no debe presentarse como extraccion semantica
+completa de contratos, schemas, validadores o policies si no hubo cobertura
+semantica completa.
 
 ## Directorio de ejecucion
 
@@ -257,11 +319,73 @@ Test-Path .\graphify-out\GRAPH_REPORT.md
 Test-Path .\graphify-out\graph.html
 ```
 
+Si el build es un leaf, verificar el path final promocionado:
+
+```powershell
+Test-Path .\graphify-out\leaf_slices\<leaf_id>\graph.json
+Test-Path .\graphify-out\leaf_slices\<leaf_id>\GRAPH_REPORT.md
+Test-Path .\graphify-out\leaf_slices\<leaf_id>\graph.html
+graphify diagnose multigraph --graph .\graphify-out\leaf_slices\<leaf_id>\graph.json
+```
+
 8. Si `graph.html` no existe por decision oficial, anotar el flag.
 9. Consultar al menos un nodo canonico con `graphify explain` o una query
    equivalente.
 10. Actualizar `GRAPHIFY_REFRESH_QUEUE.md` con estado final.
 11. Si cambia scope o politica de uso, actualizar `CHANGELOG.md`.
+
+## Baseline Git obligatorio del BUILD_MANIFEST
+
+Cada nuevo leaf Graphify de `01_foundations` debe incluir en su
+`BUILD_MANIFEST.md` un baseline Git reconstruible.
+
+El manifest debe registrar:
+
+- `graph_build_git_branch`;
+- `graph_build_git_commit`;
+- `graph_build_dirty_state`;
+- `graph_build_dirty_paths`;
+- `graph_build_untracked_paths`;
+- `graph_build_timestamp_utc`;
+- `graph_build_command`;
+- `graph_build_backend_or_agent_mode`;
+- `graphify_package_version`;
+- `graphify_skill_version_or_source`;
+- `graphify_upstream_reference`;
+- `graphify_installed_vs_protocol_status`;
+- `no_api_mode`;
+- `semantic_extraction_mode`;
+- `build_from_json_root_or_equivalent`;
+- `semantic_update_coverage`;
+- `corpus_manifest_path`;
+- `corpus_file_count`;
+- `corpus_inclusion_rules`;
+- `corpus_exclusion_rules`;
+- `queue_entries_covered`;
+- `queue_entries_left_pending`;
+- `diagnostics_command`;
+- `diagnostics_result`;
+- `next_delta_commands`.
+
+Regla:
+
+```text
+El grafo no se refresca leyendo solo la queue. La queue decide el scope; el
+corpus real debe quedar listado y versionado en el manifest del build.
+```
+
+Comandos que deben quedar escritos para el siguiente agente:
+
+```powershell
+git diff --name-status <graph_build_git_commit>...HEAD
+git status --short
+```
+
+Si el build se hace con working tree sucio, el manifest debe decirlo y listar
+los paths modificados o no trackeados incluidos en el baseline. Si el build
+anterior no tiene commit base, el nuevo manifest debe reconstruir la comparacion
+con fecha de build, `GRAPHIFY_REFRESH_QUEUE.md`, manifest anterior y
+`git status --short`, y debe registrar esa limitacion.
 
 ## Cadencia de actualizacion
 
@@ -368,6 +492,12 @@ Reglas:
 - Si es LOW, no actualices Graphify.
 - Si es MEDIUM, anota o actualiza la refresh queue y termina.
 - Si es HIGH o CRITICAL, reconstruye el leaf con flujo oficial Graphify.
+- Si no hay APIs, no pidas claves externas; usa la skill Graphify con
+  subagentes/host agent para docs, contracts, papers o imagenes.
+- No trates `graphify update` CLI como cobertura semantica suficiente para
+  markdown/contracts; es valido solo para code/AST cuando el scope lo permita.
+- Registra version instalada, fuente de skill, upstream de referencia y modo
+  semantico en el BUILD_MANIFEST.
 - No escribas graphify-out/graph.json con scripts manuales.
 - Trata graphify-out/ como runtime reconstruible.
 - No propongas tablas sin profiling fisico posterior.

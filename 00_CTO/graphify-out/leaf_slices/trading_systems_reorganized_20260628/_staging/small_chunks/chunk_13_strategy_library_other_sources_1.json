@@ -1,0 +1,27 @@
+{
+  "parent_chunk": "strategy_library_other_sources",
+  "subchunk": 1,
+  "scope_root": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS",
+  "files": [
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\03_Edu_Trades\\07_Long_plays.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/03_Edu_Trades/07_Long_plays.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/03_Edu_Trades/07_Long_plays.md",
+      "bytes": 15916,
+      "line_count": 295,
+      "word_count_approx": 2497,
+      "sha256": "d3e45852e9021fb92074f62fb6fdc5e36c3ab2dc4bb55870d3800905763ed581"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\03_Edu_Trades\\07_Short_Plays.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/03_Edu_Trades/07_Short_Plays.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/03_Edu_Trades/07_Short_Plays.md",
+      "bytes": 8634,
+      "line_count": 236,
+      "word_count_approx": 1290,
+      "sha256": "8568b8d1fd2e508394ee57a0ff347a10a56e2e557a1235c3224c9e527baae40d"
+    }
+  ],
+  "word_count_approx": 3787,
+  "chunk_id": 13
+}

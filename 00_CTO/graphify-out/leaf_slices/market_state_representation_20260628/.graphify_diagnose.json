@@ -1,0 +1,383 @@
+{
+  "schema_version": 1,
+  "summary": {
+    "node_count": 60,
+    "raw_edge_count": 83,
+    "non_object_edges": 0,
+    "missing_endpoint_edges": 0,
+    "dangling_endpoint_edges": 0,
+    "self_loop_edges": 0,
+    "valid_candidate_edges": 83,
+    "exact_duplicate_edges": 0,
+    "directed_unique_endpoint_pairs": 83,
+    "directed_same_endpoint_collapsed_edges": 0,
+    "undirected_unique_endpoint_pairs": 83,
+    "undirected_same_endpoint_collapsed_edges": 0,
+    "same_endpoint_group_count": 0,
+    "relation_variant_groups": 0,
+    "source_file_variant_groups": 0,
+    "source_location_variant_groups": 0,
+    "context_variant_groups": 0,
+    "post_build_graph_type": "Graph",
+    "post_build_node_count": 60,
+    "post_build_edge_count": 83,
+    "post_build_error": "",
+    "input_path": "C:\\TSIS_Data\\00_CTO\\graphify-out\\leaf_slices\\market_state_representation_20260628\\graph.json",
+    "effective_directed": false
+  },
+  "examples": [],
+  "producer_suppression": {
+    "path": "C:\\Users\\AlexJ\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\graphify\\extract.py",
+    "total_sites": 57,
+    "sites": [
+      {
+        "line": 1354,
+        "name": "seen_dyn_pairs",
+        "tuple_arity": 0,
+        "sample": "seen_dyn_pairs: set) -> bool:"
+      },
+      {
+        "line": 2322,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 2460,
+        "name": "seen_swift_base",
+        "tuple_arity": 0,
+        "sample": "seen_swift_base = False"
+      },
+      {
+        "line": 2495,
+        "name": "seen_swift_base",
+        "tuple_arity": 0,
+        "sample": "seen_swift_base = True"
+      },
+      {
+        "line": 3327,
+        "name": "seen_call_pairs",
+        "tuple_arity": 2,
+        "sample": "seen_call_pairs: set[tuple[str, str]] = set()"
+      },
+      {
+        "line": 3328,
+        "name": "seen_dyn_import_pairs",
+        "tuple_arity": 2,
+        "sample": "seen_dyn_import_pairs: set[tuple[str, str]] = set()"
+      },
+      {
+        "line": 3329,
+        "name": "seen_static_ref_pairs",
+        "tuple_arity": 3,
+        "sample": "seen_static_ref_pairs: set[tuple[str, str, str]] = set()"
+      },
+      {
+        "line": 3330,
+        "name": "seen_helper_ref_pairs",
+        "tuple_arity": 3,
+        "sample": "seen_helper_ref_pairs: set[tuple[str, str, str]] = set()"
+      },
+      {
+        "line": 3331,
+        "name": "seen_bind_pairs",
+        "tuple_arity": 3,
+        "sample": "seen_bind_pairs: set[tuple[str, str, str]] = set()"
+      },
+      {
+        "line": 3625,
+        "name": "seen_listen_pairs",
+        "tuple_arity": 2,
+        "sample": "seen_listen_pairs: set[tuple[str, str]] = set()"
+      },
+      {
+        "line": 3705,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids = {n[\"id\"] for n in nodes}"
+      },
+      {
+        "line": 4114,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = {n[\"id\"] for n in nodes}"
+      },
+      {
+        "line": 4238,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 5112,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str],"
+      },
+      {
+        "line": 5227,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 5359,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = {file_nid}"
+      },
+      {
+        "line": 5399,
+        "name": "seen_refs",
+        "tuple_arity": 0,
+        "sample": "seen_refs: set[str] = set()"
+      },
+      {
+        "line": 5538,
+        "name": "seen_tbls",
+        "tuple_arity": 0,
+        "sample": "seen_tbls: set[str] = set()"
+      },
+      {
+        "line": 5633,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 5908,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 6149,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 6393,
+        "name": "seen_call_pairs",
+        "tuple_arity": 2,
+        "sample": "seen_call_pairs: set[tuple[str, str]] = set()"
+      },
+      {
+        "line": 6490,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 6678,
+        "name": "seen_call_pairs",
+        "tuple_arity": 2,
+        "sample": "seen_call_pairs: set[tuple[str, str]] = set()"
+      },
+      {
+        "line": 6769,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 6876,
+        "name": "seen_call_pairs",
+        "tuple_arity": 2,
+        "sample": "seen_call_pairs: set[tuple[str, str]] = set()"
+      },
+      {
+        "line": 6939,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 7108,
+        "name": "seen_call_pairs",
+        "tuple_arity": 2,
+        "sample": "seen_call_pairs: set[tuple[str, str]] = set()"
+      },
+      {
+        "line": 8530,
+        "name": "seen_keys",
+        "tuple_arity": 0,
+        "sample": "seen_keys: set[tuple] = set()"
+      },
+      {
+        "line": 8582,
+        "name": "seen_pairs",
+        "tuple_arity": 2,
+        "sample": "seen_pairs: set[tuple[str, str]] = set()"
+      },
+      {
+        "line": 8652,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 8821,
+        "name": "seen_calls",
+        "tuple_arity": 2,
+        "sample": "seen_calls: set[tuple[str, str]] = set()"
+      },
+      {
+        "line": 8873,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 8982,
+        "name": "seen_call_pairs",
+        "tuple_arity": 2,
+        "sample": "seen_call_pairs: set[tuple[str, str]] = set()"
+      },
+      {
+        "line": 9073,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 9369,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 9370,
+        "name": "seen_call_pairs",
+        "tuple_arity": 2,
+        "sample": "seen_call_pairs: set[tuple[str, str]] = set()"
+      },
+      {
+        "line": 9547,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 9695,
+        "name": "seen_call_pairs",
+        "tuple_arity": 2,
+        "sample": "seen_call_pairs: set[tuple[str, str]] = set()"
+      },
+      {
+        "line": 9770,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 9771,
+        "name": "seen_edge_pairs",
+        "tuple_arity": 3,
+        "sample": "seen_edge_pairs: set[tuple[str, str, str]] = set()"
+      },
+      {
+        "line": 9870,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 9871,
+        "name": "seen_edge_pairs",
+        "tuple_arity": 3,
+        "sample": "seen_edge_pairs: set[tuple[str, str, str]] = set()"
+      },
+      {
+        "line": 9990,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 10084,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 10300,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 10394,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 10473,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 10574,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 10759,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 10907,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 11058,
+        "name": "seen_call_pairs",
+        "tuple_arity": 2,
+        "sample": "seen_call_pairs: set[tuple[str, str]] = set()"
+      },
+      {
+        "line": 11274,
+        "name": "seen_targets",
+        "tuple_arity": 0,
+        "sample": "seen_targets: set[str] = set()"
+      },
+      {
+        "line": 11432,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = {file_nid}"
+      },
+      {
+        "line": 11433,
+        "name": "seen_edges",
+        "tuple_arity": 3,
+        "sample": "seen_edges: set[tuple[str, str, str]] = set()"
+      },
+      {
+        "line": 11481,
+        "name": "seen_self",
+        "tuple_arity": 0,
+        "sample": "seen_self = False"
+      },
+      {
+        "line": 11484,
+        "name": "seen_self",
+        "tuple_arity": 0,
+        "sample": "seen_self = True"
+      }
+    ],
+    "error": ""
+  },
+  "notes": [
+    "Diagnostics are read-only.",
+    "A normal graph.json is already post-build and cannot recover raw producer edges.",
+    "Producer suppression sites are heuristic source-code evidence."
+  ]
+}

@@ -60,12 +60,14 @@ def read_json(path: Path) -> dict | None:
         return None
 
 
-def iter_json(path: Path) -> tuple[list[dict], list[str]]:
+def iter_json(path: Path, cutoff_ts: float | None = None) -> tuple[list[dict], list[str]]:
     rows = []
     bad = []
     if not path.exists():
         return rows, bad
     for item in path.glob("*.json"):
+        if cutoff_ts is not None and item.stat().st_mtime > cutoff_ts:
+            continue
         obj = read_json(item)
         if obj is None:
             bad.append(str(item))
@@ -176,21 +178,27 @@ def main() -> int:
     report_dir = run_root / "validation"
     report_dir.mkdir(parents=True, exist_ok=True)
 
-    month_rows, bad_month_json = iter_json(month_dir)
+    snapshot_cutoff_ts = datetime.now(timezone.utc).timestamp() - max(0, args.min_shard_age_seconds)
+    snapshot_cutoff_utc = datetime.fromtimestamp(snapshot_cutoff_ts, tz=timezone.utc).isoformat()
+
+    month_rows, bad_month_json = iter_json(month_dir, cutoff_ts=snapshot_cutoff_ts)
     status_rows, bad_status_json = iter_json(status_dir)
     all_shards = sorted(shard_dir.glob("*.parquet")) if shard_dir.exists() else []
-    now_ts = datetime.now(timezone.utc).timestamp()
     shards = [
         p for p in all_shards
-        if now_ts - p.stat().st_mtime >= max(0, args.min_shard_age_seconds)
+        if p.stat().st_mtime <= snapshot_cutoff_ts
     ]
     if args.max_shards and len(shards) > args.max_shards:
         random.seed(17)
         shards_to_validate = sorted(random.sample(shards, args.max_shards))
+        shards_for_row_total = shards_to_validate
+        row_total_scope = "sampled_stable_shards"
     else:
         shards_to_validate = shards
+        shards_for_row_total = shards
+        row_total_scope = "all_stable_shards"
 
-    stable_shard_names = {p.name for p in shards}
+    stable_shard_names = {p.name for p in shards_for_row_total}
     stable_month_rows = [
         row for row in month_rows
         if not row.get("repair_shard_path")
@@ -204,7 +212,7 @@ def main() -> int:
     shard_errors = []
     shard_warnings = []
 
-    for shard in shards:
+    for shard in shards_for_row_total:
         rows, err = parquet_rows(shard)
         if rows is None:
             bad_parquet.append({"path": str(shard), "error": err})
@@ -252,6 +260,8 @@ def main() -> int:
         "status": "PASS" if not errors else "FAIL",
         "errors": errors,
         "min_shard_age_seconds": args.min_shard_age_seconds,
+        "snapshot_cutoff_utc": snapshot_cutoff_utc,
+        "row_total_scope": row_total_scope,
         "ticker_status_counts": status_counts,
         "month_summary_files": len(month_rows),
         "stable_month_summary_files": len(stable_month_rows),
@@ -260,6 +270,7 @@ def main() -> int:
         "bad_ticker_status_json_count": len(bad_status_json),
         "repair_shards": len(all_shards),
         "stable_repair_shards": len(shards),
+        "counted_repair_shards": len(shards_for_row_total),
         "validated_shards": len(shards_to_validate),
         "bad_parquet_count": len(bad_parquet),
         "month_summary_repair_rows": int(month_repair_rows),
@@ -288,9 +299,11 @@ def main() -> int:
         "stable_month_summary_files": report["stable_month_summary_files"],
         "repair_shards": report["repair_shards"],
         "stable_repair_shards": report["stable_repair_shards"],
+        "counted_repair_shards": report["counted_repair_shards"],
         "validated_shards": report["validated_shards"],
         "month_summary_repair_rows": report["month_summary_repair_rows"],
         "shard_row_total": report["shard_row_total"],
+        "row_total_scope": report["row_total_scope"],
         "report": str(out),
     }, indent=2, ensure_ascii=False))
     return 0 if report["status"] == "PASS" else 2

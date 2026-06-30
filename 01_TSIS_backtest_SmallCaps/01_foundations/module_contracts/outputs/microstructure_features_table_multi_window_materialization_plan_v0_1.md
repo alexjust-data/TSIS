@@ -123,8 +123,8 @@ The current v0.1 seed uses:
 ```text
 quotes_root_used = D:/quotes
 quotes_root_state = provisional_d_legacy_recovery_root_pending_e_parity
-future_official_quotes_root = E:/TSIS/data/quotes
-quotes_staging_root = E:/TSIS/data/quotes_
+target_official_quotes_root = E:/TSIS/data/quotes_
+legacy_incomplete_e_quotes_root = E:/TSIS/data/quotes
 ```
 
 Before stronger promotion, choose one of these states:
@@ -132,11 +132,13 @@ Before stronger promotion, choose one of these states:
 ### State A - Official E-root
 
 ```text
-quotes_root_used = E:/TSIS/data/quotes
+quotes_root_used = E:/TSIS/data/quotes_
 quotes_root_state = official_e_raw_root
 ```
 
-Allowed for stronger candidate work when E-root parity/audit is complete.
+Allowed for stronger candidate work when `D:/quotes -> E:/TSIS/data/quotes_`
+clone parity/audit is complete. `E:/TSIS/data/quotes` is not the target official
+root for this recovery decision; it is treated as incomplete/legacy E-root.
 
 ### State B - Provisional D-root candidate
 
@@ -440,7 +442,8 @@ execution_sim_candidate_rows: 0
 backtest_core_microstructure_candidate_rows: 0
 quotes_root: D:/quotes
 quotes_root_state: provisional_d_legacy_recovery_root_pending_e_parity
-future_official_quotes_root: E:/TSIS/data/quotes
+target_official_quotes_root: E:/TSIS/data/quotes_
+legacy_incomplete_e_quotes_root: E:/TSIS/data/quotes
 trades_root: E:/TSIS/data/trades_ticks_prod_2005_2026
 trades_root_state: official_e_raw_root
 output_tree_sha256: a3d418b06d8c4bd200d51d8eb9c6d888664c1af86ab3dd37c80d48ff2397d128

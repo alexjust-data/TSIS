@@ -1,0 +1,166 @@
+scanner_definition_id: broad_in_play_discovery_scanner_v0_1
+scanner_definition_version: v0_1
+scanner_family: daily_in_play
+scanner_name: broad_small_cap_in_play_discovery
+scanner_role: broad_research_discovery
+status: config_defined_not_materialized
+
+purpose:
+  answers: "Which tickers were starting to become in-play before a narrow human hot list necessarily saw them?"
+  does_not_answer:
+    - what_operator_saw_in_tradestation
+    - strategy_signal
+    - final_market_state
+    - label
+    - outcome
+    - execution_truth
+
+source_semantics:
+  replay_mode: historical_replay
+  requires_asof_policy: true
+  price_view: declared_snapshot_or_intraday_asof_for_replay
+  execution_price_view: none
+  live_authority: false
+
+universe_eligibility:
+  is_common_stock_required: true
+  market_cap_max_usd: 300000000
+  last_price_min_exclusive: 0.5
+  last_price_max_inclusive: 20.0
+  data_quality_allowed:
+    - good
+    - review_with_flag
+
+hard_filters:
+  volume_today_min: null
+  pct_chg_1d_required_for_inclusion: false
+  require_at_least_one_in_play_reason: true
+
+market_cap_tiers:
+  - tier_id: lt_100m
+    min_usd: 0
+    max_usd: 100000000
+  - tier_id: 100m_300m
+    min_usd: 100000000
+    max_usd: 300000000
+  - tier_id: 300m_1b_reference_only
+    min_usd: 300000000
+    max_usd: 1000000000
+    included_by_default: false
+
+volume_tiers:
+  - tier_id: lt_100k
+    min_shares: 0
+    max_shares: 100000
+  - tier_id: 100k_250k
+    min_shares: 100000
+    max_shares: 250000
+  - tier_id: 250k_500k
+    min_shares: 250000
+    max_shares: 500000
+  - tier_id: 500k_1m
+    min_shares: 500000
+    max_shares: 1000000
+  - tier_id: gt_1m
+    min_shares: 1000000
+    max_shares: null
+
+in_play_reasons:
+  reason_pct_chg_1d_move:
+    metric: pct_chg_1d
+    threshold_pct: 3.0
+    direction: gte
+  reason_gap_pct_move:
+    metric: gap_pct
+    threshold_pct: 2.0
+    direction: gte
+  reason_volume_acceleration:
+    metric: volume_acceleration
+    threshold_multiple: 2.0
+    direction: gte
+  reason_rvol_to_time:
+    metric: rvol_to_time
+    threshold_multiple: 2.0
+    direction: gte
+  reason_afterhours_breakout:
+    metric: afterhours_breakout
+    threshold_boolean: true
+  reason_premarket_new_high:
+    metric: premarket_new_high
+    threshold_boolean: true
+  reason_prior_day_high_reclaim:
+    metric: prior_day_high_reclaim
+    threshold_boolean: true
+  reason_unusual_range_expansion:
+    metric: range_expansion_vs_recent_context
+    threshold_multiple: 1.5
+    direction: gte
+  reason_news_context:
+    metric: news_context_present_asof
+    threshold_boolean: true
+  reason_halt_or_reopen_context:
+    metric: halt_or_reopen_context_present_asof
+    threshold_boolean: true
+
+volume_features_required_when_available:
+  - volume_to_time
+  - volume_since_04_00
+  - volume_last_5m
+  - volume_last_15m
+  - volume_acceleration
+  - dollar_volume_to_time
+  - rvol_to_time
+  - volume_tier
+
+rankings:
+  - metric: pct_chg_1d
+    order: desc
+    output_rank_column: rank_pct_chg_1d
+  - metric: volume_acceleration
+    order: desc
+    output_rank_column: rank_volume_acceleration
+  - metric: dollar_volume_to_time
+    order: desc
+    output_rank_column: rank_dollar_volume_to_time
+  - metric: rvol_to_time
+    order: desc
+    output_rank_column: rank_rvol_to_time
+  - metric: composite_in_play_score
+    order: desc
+    output_rank_column: rank_composite_in_play
+
+selection_sets:
+  include_all_reason_passed: true
+  top_n_by_pct_chg_1d: 25
+  top_n_by_volume_acceleration: 25
+  top_n_by_dollar_volume_to_time: 25
+  top_n_by_composite_in_play_score: 25
+
+required_output_columns:
+  - selected_trade_station_like_top25
+  - selected_broad_discovery
+  - selected_by_pct_chg_rank
+  - selected_by_volume_acceleration_rank
+  - selected_by_dollar_volume_rank
+  - selected_by_composite_in_play_rank
+
+selection_semantics:
+  selected_trade_station_like_top25: false_for_this_scanner_definition
+  selected_broad_discovery: true_when_any_in_play_reason_or_selection_set_passes
+  selected_by_pct_chg_rank: computed_from_pct_chg_1d_selection_set
+  selected_by_volume_acceleration_rank: computed_from_volume_acceleration_selection_set
+  selected_by_dollar_volume_rank: computed_from_dollar_volume_to_time_selection_set
+  selected_by_composite_in_play_rank: computed_from_composite_in_play_selection_set
+
+prohibited_claims:
+  - full_universe_claim
+  - direct_ml_feature
+  - direct_rl_state
+  - strategy_signal
+  - execution_truth
+  - live_trading_authority
+
+notes:
+  - "This scanner intentionally does not use volume_today > 500000 as a hard filter."
+  - "Thresholds are candidate policy v0.1 and must be calibrated with controlled replay before any broader promotion."
+  - "DAS may use this scanner as early discovery input, but DAS labels/outcomes must live outside the scanner table."

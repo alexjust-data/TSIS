@@ -367,6 +367,7 @@ Cada tabla lleva una parte distinta del futuro `market_state` / `event_state`.
 | `expected_data_calendar` | Que data se espera por familia, ticker, fecha o sesion. | Distinguir ausencia esperada de ausencia patologica. |
 | `corporate_actions_table` | Splits, dividends, ticker changes, mergers, symbol events y price-view implications. | Evitar leer un split, dividendo o cambio de ticker como evento de trading. |
 | `master_daily_table` | Contexto diario por ticker/dia: OHLCV, gaps, volumen, RVOL, price view, daily liquidity, flags basicos y calidad. | Saber el contexto estructural antes y durante el evento. |
+| `daily_scanner_candidates_table` | Candidatos in-play por definicion de scanner: filtros, ranking, top-N, denominador, as-of, source lineage y flags de calidad. | Reconstruir que tickers estaban en play y bajo que regla. No es estado completo ni universo completo. |
 | `master_intraday_bar_table` | Barras intradia, normalmente 1m: OHLCV, volumen, VWAP si aplica, sesion, minute index, price view y calidad. | Reconstruir evolucion intradia, premarket, opening drive y deteccion inicial del evento. |
 | `microstructure_features_table` | Resumen de quotes/trades en una ventana: spread, locked/crossed, tape intensity, odd lots, liquidez, calidad y textura libro/tape. | Saber como estaba la microestructura durante una ventana de evento. v0.1 es solo `seed_event_window_smoke`; no es entrenamiento ML/RL ni full-universe. |
 | `halts_table` | Halts, resumes, suspensions, timestamps y tipo/razon de halt cuando exista. | Saber si el evento fue interrumpido o condicionado por halt. |
@@ -466,13 +467,19 @@ El flujo correcto es:
      halt, calidad y price view;
    - permite decidir si el dia entra en el universo de investigacion.
 
-5. `master_intraday_bar_table`
+5. `daily_scanner_candidates_table`
+   - reconstruye que tickers estaban en play bajo una definicion de scanner;
+   - preserva filtros, ranking, top-N, denominador, as-of y source lineage;
+   - no es estado completo ni universo completo; solo seed/candidate set para
+     builders posteriores.
+
+6. `master_intraday_bar_table`
    - entrega barras intradia canonicas, normalmente 1m;
    - permite detectar primer push, HOD, pullbacks, VWAP, PM volume,
      opening drive y evolucion del evento;
    - no debe contener todo quotes/trades bruto.
 
-6. `microstructure_features_table`
+7. `microstructure_features_table`
    - consulta solo la ventana del evento cuando se necesita libro/tape;
    - calcula spread, crossed/locked, bid/ask depth, trade intensity,
      odd-lots, fuera de NBBO y liquidez usable;
@@ -481,12 +488,12 @@ El flujo correcto es:
      backtest core o execution simulation debe existir una version posterior
      con ventanas oficiales, E-root gobernado y cobertura declarada.
 
-7. `halts_table`
+8. `halts_table`
    - detecta si el evento fue interrumpido por halt, resume quote/trade o SEC
      suspension;
    - ajusta outcomes y simulacion.
 
-8. `event_windows_table`
+9. `event_windows_table`
    - define ventanas comunes para pre-event features, event response,
      same-session context y post-event outcomes;
    - separa ventanas legalmente usables como features de ventanas que contienen
@@ -494,13 +501,13 @@ El flujo correcto es:
    - v0.1 cubre solo eventos de halt intradia resueltos contra
      `instrument_master` y `market_calendar`.
 
-9. `outcomes_table`
+10. `outcomes_table`
    - materializa labels/outcomes post-evento desde ventanas gobernadas;
    - separa resultados `y` de features pre-evento `X`;
    - v0.1 cubre solo `next_session_regular_daily` para eventos halt-derived y
      no debe usarse como reward RL ni como ejecucion intradia.
 
-10. `fundamentals_asof_table`, `short_context_table`,
+11. `fundamentals_asof_table`, `short_context_table`,
    `short_sale_constraints_table`, `regime_context_table`,
    `news_context_table`, `real_time_corporate_event_alerts_table`
    - agregan contexto solo si tienen semantica `as-of`;
@@ -508,7 +515,7 @@ El flujo correcto es:
      minutos;
    - no deben contaminar el evento con informacion publicada despues.
 
-11. `dataset_certification_matrix` y `data_quality_report`
+12. `dataset_certification_matrix` y `data_quality_report`
    - deciden si el caso es `backtest_core`, `research`, `ml_flagged`,
      `forensic` o `quarantine`;
    - no son fuentes de mercado, son gates y evidencia.
@@ -1054,6 +1061,72 @@ Conserva filas missing esperadas para coverage accounting y marca
 regime context.
 ```
 
+### 5A. `daily_scanner_candidates_table`
+
+Clase:
+
+```text
+candidate generation table
+```
+
+Grain recomendado:
+
+```text
+scanner_run_id + scanner_definition_id + session_date + as_of_utc + instrument_id
+```
+
+Fuentes candidatas:
+
+```text
+instrument_master_v0_1
+market_calendar_v0_1
+master_daily_table_v0_1
+master_intraday_bar_table_v0_1 where scoped/legal
+fundamentals_asof_table_v0_1 when market-cap/float context is legal
+short_context_table_v0_1 when source lag/as-of rules permit
+regime_context_table_v0_1 when source lag/as-of rules permit
+news_context_table_v0_1 for catalyst-aware variants
+```
+
+Contrato especifico:
+
+```text
+01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_1.md
+01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_1.md
+configs/data_foundation_outputs/scanner_definitions/
+```
+
+Uso en evento:
+
+- reconstruye que tickers estaban en play bajo un scanner versionado;
+- conserva filtros, ranking, top-N, denominador, as-of y lineage;
+- separa visibilidad operativa humana de discovery amplio;
+- sirve como seed/candidate set para builders de `market_state_table`;
+- permite comparar diferentes definiciones de scanner sin contaminar estado,
+  labels o estrategia.
+
+Definiciones v0.1:
+
+```text
+trade_station_like_scanner_v0_1
+  -> replica el scanner operativo humano con `volume_today > 500000` y ranking
+     por `% change 1D`.
+
+broad_in_play_discovery_scanner_v0_1
+  -> protege research contra sesgo de llegada tardia y permite inclusion por
+     volumen acelerado, RVOL-to-time, after-hours breakout, premarket new high,
+     prior-day high reclaim, range expansion, news context o halt/reopen
+     context.
+```
+
+No debe contener:
+
+- market state completo;
+- universo completo salvo denominador probado;
+- labels, outcomes, rewards, fills, PnL o estrategia;
+- autorizacion directa de ML/RL;
+- seleccion manual oculta como si fuera scanner.
+
 ### 6. `master_intraday_bar_table`
 
 Alias arquitectonico:
@@ -1187,6 +1260,56 @@ consumo debe preservar materialization_scope, full_universe_claim, price_view,
 raw_allowed_consumption y vwap_consumption_state.
 ```
 
+Ruta quote-guarded candidate definida:
+
+```text
+dataset_id: master_intraday_bar_table_v0_2_candidate_quote_guarded
+contract: 01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md
+config: configs/data_foundation_outputs/master_intraday_bar_table_quote_guarded_candidate_v0_2.json
+target_path: E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_2_candidate_quote_guarded
+status: candidate_contract_defined_not_materialized
+full_universe_claim: false
+```
+
+Motivo:
+
+```text
+El reparador quote-guarded `ohlcv_1m` esta disenado para corregir OHLC 1m
+imposibles contra envelopes de quotes sin modificar los parquets raw. La tabla
+intradia debe poder consumir esa vista cuando este completa, pero no debe
+promocionarse mientras el repair final y su validacion no existan en E-root.
+```
+
+Bridge actual:
+
+```text
+repair_run_root: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838
+minute_root: E:/TSIS/data/ohlcv_1m
+quotes_root: D:/quotes
+quotes_root_state: provisional_d_legacy_recovery_root_pending_e_parity
+future_official_root: E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded
+```
+
+Modelo de almacenamiento de la ruta quote-guarded:
+
+```text
+raw ohlcv_1m + repair_manifest_v0_2.parquet = vista ohlcv_1m_quote_guarded
+```
+
+La ruta no presupone un arbol fisico completo corregido. El artefacto
+promocionado esperado es el manifest de minutos afectados y los campos
+`o_qg/h_qg/l_qg/c_qg` que debe aplicar el loader en memoria.
+
+Regla:
+
+```text
+La pieza pendiente aceptada para esta ruta es cambiar de bridge/run-root a un
+repair manifest oficial bajo
+E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded cuando el repair
+termine y pase validacion final. Hasta entonces no hay parquet oficial
+`master_intraday_bar_table_v0_2_candidate_quote_guarded`.
+```
+
 ### 7. `microstructure_features_table`
 
 Clase:
@@ -1204,7 +1327,7 @@ instrument_id/ticker + ts_utc or event_window_id + feature_window
 Fuentes conceptuales:
 
 ```text
-E:/TSIS/data/quotes/
+E:/TSIS/data/quotes_/   # target official E-root after D:/quotes clone/audit
 E:/TSIS/data/trades_ticks_prod_2005_2026/
 inspection_dossiers/quotes/
 inspection_dossiers/trades/
@@ -1221,11 +1344,11 @@ C:/TSIS_Data/01_TSIS_backtest_SmallCaps/configs/data_foundation_outputs/microstr
 quotes source used now:
 D:/quotes
 
-future official quotes root:
-E:/TSIS/data/quotes
-
-quotes staging root:
+target official quotes root:
 E:/TSIS/data/quotes_
+
+legacy incomplete E quotes root:
+E:/TSIS/data/quotes
 
 trades source used now:
 E:/TSIS/data/trades_ticks_prod_2005_2026
@@ -1250,10 +1373,11 @@ identity context from governed CAPA 1 outputs.
 ```
 
 La raiz `D:/quotes` es provisional para este seed porque la paridad fisica de
-quotes hacia `E:/TSIS/data/quotes` todavia esta abierta. La tabla conserva
+quotes hacia `E:/TSIS/data/quotes_` todavia esta abierta. La tabla conserva
 `quotes_root_state = provisional_d_legacy_recovery_root_pending_e_parity` y debe
 reconstruirse/compararse contra el root E gobernado antes de cualquier promocion
-de consumo.
+de consumo. `E:/TSIS/data/quotes` queda tratado como raiz E incompleta/legacy,
+no como raiz oficial objetivo.
 
 Muestra fisica quotes:
 
@@ -1343,7 +1467,8 @@ execution_sim_candidate_rows: 0
 backtest_core_microstructure_candidate_rows: 0
 quotes_root: D:/quotes
 quotes_root_state: provisional_d_legacy_recovery_root_pending_e_parity
-future_official_quotes_root: E:/TSIS/data/quotes
+target_official_quotes_root: E:/TSIS/data/quotes_
+legacy_incomplete_e_quotes_root: E:/TSIS/data/quotes
 trades_root: E:/TSIS/data/trades_ticks_prod_2005_2026
 trades_root_state: official_e_raw_root
 output_tree_sha256: a3d418b06d8c4bd200d51d8eb9c6d888664c1af86ab3dd37c80d48ff2397d128
@@ -2748,6 +2873,7 @@ E:/TSIS/data/data_foundation_outputs/market_calendar/
 E:/TSIS/data/data_foundation_outputs/corporate_actions_table/
 E:/TSIS/data/data_foundation_outputs/dataset_certification_matrix/
 E:/TSIS/data/data_foundation_outputs/master_daily_table/
+E:/TSIS/data/data_foundation_outputs/daily_scanner_candidates_table/
 E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/
 E:/TSIS/data/data_foundation_outputs/microstructure_features_table/
 E:/TSIS/data/data_foundation_outputs/real_time_corporate_event_alerts_table/
@@ -2883,6 +3009,7 @@ instrument_master
 market_calendar
 corporate_actions_table
 master_daily_table
+daily_scanner_candidates_table
 master_intraday_bar_table
 real_time_corporate_event_alerts_table
 halts_table
@@ -2979,6 +3106,19 @@ Runbook de continuidad y build-loop skeleton:
 01_foundations/module_contracts/outputs/market_state_event_state_build_loop_runbook_v0_1.md
 ```
 
+Politica obligatoria de cobertura, scanner diario y lookbacks:
+
+```text
+01_foundations/module_contracts/outputs/market_state_coverage_and_lookback_policy_v0_1.md
+```
+
+Contrato objetivo del scanner diario/candidate set:
+
+```text
+01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_1.md
+01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_1.md
+```
+
 Lectura institucional:
 
 ```text
@@ -3008,11 +3148,14 @@ consumption policies: defined
 validator contracts: defined
 registry target entries: defined_not_materialized
 official builder status: not implemented
+candidate builder status: controlled_candidate implemented
 fixture builder status: deterministic_fixture_only implemented
 fixture configs: defined
-test status: contract consistency + adversarial leakage fixtures passed
+test status: contract consistency + adversarial leakage fixtures + controlled candidate materialization passed
 market_state_table_v0_1 materialized: false
 event_state_table_v0_1 materialized: false
+market_state_table_v0_1_candidate materialized: true
+event_state_table_v0_1_candidate materialized: true
 ```
 
 Evidencia fixture loop:
@@ -3028,10 +3171,46 @@ skipped = 0
 Lectura obligatoria:
 
 ```text
-Los builders actuales pueden escribir muestras JSONL solo bajo
+Los builders actuales conservan el modo fixture JSONL bajo
 C:/TSIS_Data/tests/test_runs/.
-No escriben outputs oficiales bajo E:/TSIS/data/data_foundation_outputs/.
-No crean parquet oficial, manifest oficial ni summary oficial.
+Tambien pueden escribir controlled candidates bajo
+E:/TSIS/data/data_foundation_outputs/.
+No escriben ni promocionan el parquet oficial market_state_table_v0_1 ni
+event_state_table_v0_1.
+No habilitan ML/RL/backtest/execution directos.
+```
+
+Evidencia controlled candidate loop:
+
+```text
+market_state_candidate:
+  dataset: E:/TSIS/data/data_foundation_outputs/market_state_table/market_state_table_v0_1_candidate_microstructure_halt_controlled/
+  manifest: E:/TSIS/data/data_foundation_outputs/market_state_table/_market_state_table_manifest_v0_1_candidate_microstructure_halt_controlled.json
+  rows: 50
+  tickers: 9
+  event_windows: 50
+  valid_for_event_context_candidate_rows: 50
+  valid_for_ml_feature_candidate_rows: 0
+  valid_for_rl_state_candidate_rows: 0
+  full_universe_claim_rows: 0
+
+event_state_candidate:
+  dataset: E:/TSIS/data/data_foundation_outputs/event_state_table/event_state_table_v0_1_candidate_microstructure_halt_controlled/
+  manifest: E:/TSIS/data/data_foundation_outputs/event_state_table/_event_state_table_manifest_v0_1_candidate_microstructure_halt_controlled.json
+  rows: 50
+  tickers: 9
+  event_windows: 50
+  pre_event_rows: 25
+  post_event_review_rows: 25
+  valid_for_pattern_discovery_rows: 50
+  valid_for_ml_feature_candidate_rows: 0
+  valid_for_rl_state_candidate_rows: 0
+  full_universe_claim_rows: 0
+
+tests:
+  python -m pytest tests/data_foundation_outputs/test_market_state_table_contract.py tests/data_foundation_outputs/test_event_state_table_contract.py -q
+  passed = 16
+  failed = 0
 ```
 
 El fixture loop prueba que se bloquean:
@@ -3067,23 +3246,25 @@ Graphify refresh queue si altera el mapa semantico
 3. `market_calendar` + `expected_data_calendar`
 4. `dataset_certification_matrix`
 5. `master_daily_table`
-6. `master_intraday_bar_table`
-7. `microstructure_features_table`
-8. `halts_table`
-9. `event_windows_table`
-10. `outcomes_table`
-11. `real_time_corporate_event_alerts_table`
-12. `fundamentals_asof_table`
-13. `news_context_table`
-14. `short_context_table`
-15. `short_sale_constraints_table`
-16. `regime_context_table`
+6. `daily_scanner_candidates_table`
+7. `master_intraday_bar_table`
+8. `microstructure_features_table`
+9. `halts_table`
+10. `event_windows_table`
+11. `outcomes_table`
+12. `real_time_corporate_event_alerts_table`
+13. `fundamentals_asof_table`
+14. `news_context_table`
+15. `short_context_table`
+16. `short_sale_constraints_table`
+17. `regime_context_table`
 
 Estado actual de esta lista:
 
 ```text
-items 1-10, 12-14 and 16 are materialized for their declared v0.1 scopes.
-items 11 and 15 remain pending governed materialization.
+All listed outputs except `daily_scanner_candidates_table`,
+`real_time_corporate_event_alerts_table` and `short_sale_constraints_table` are
+materialized for their declared v0.1 scopes.
 ```
 
 ## Next Materialization Priority After Current v0.1 Stack
@@ -3094,12 +3275,13 @@ La siguiente prioridad no es materializar `market_state_table` y
 Orden operativo recomendado:
 
 ```text
-1. master_intraday_bar_table wider/full-scope materialization plan
-2. microstructure_features_table multi-window/multi-event materialization plan
-3. market_state_table controlled real sample
-4. event_state_table controlled real sample
-5. short_sale_constraints_table after SSR/borrow/locate source acquisition
-6. real_time_corporate_event_alerts_table after live/vendor latency contract
+1. daily_scanner_candidates_table controlled historical replay
+2. master_intraday_bar_table wider/full-scope materialization plan
+3. microstructure_features_table multi-window/multi-event materialization plan
+4. market_state_table controlled real sample
+5. event_state_table controlled real sample
+6. short_sale_constraints_table after SSR/borrow/locate source acquisition
+7. real_time_corporate_event_alerts_table after live/vendor latency contract
 ```
 
 Motivo:
@@ -3107,6 +3289,9 @@ Motivo:
 ```text
 market_state_table y event_state_table son composiciones de estado.
 No deben promocionarse sobre una base intradia/microestructural debil.
+Tampoco deben promocionarse como ticker-dia aislado: deben declarar scanner,
+denominador, lookback policy y memoria historica as-of cuando la estrategia lo
+requiera.
 ```
 
 Regla para comenzar una materializacion amplia/full-universe:
@@ -3128,7 +3313,21 @@ Cada tabla debe tener antes:
 
 Lectura por tabla:
 
-- `master_intraday_bar_table`: primera candidata para ampliar cobertura porque
+- `daily_scanner_candidates_table`: primera candidata de este loop porque
+  define el candidate set/in-play discovery que usaran los builders de estado.
+  No requiere copiar quotes/trades completos ni esperar la promocion final de
+  microestructura. Debe empezar con replay historico controlado, scanner
+  definition config, manifest, summary, validators y `full_universe_claim=false`
+  salvo denominador probado. El primer replay debe ejecutar como minimo
+  `trade_station_like_scanner_v0_1` y
+  `broad_in_play_discovery_scanner_v0_1`, preservando candidatos vistos por el
+  scanner operativo, candidatos solo vistos por discovery amplio, razones de
+  inclusion y evidencia de casos que el filtro `volume_today > 500000` o el
+  ranking `% change 1D` habrian detectado tarde. El contrato objetivo vive en
+  `01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_1.md`.
+  El contrato de definiciones vive en
+  `01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_1.md`.
+- `master_intraday_bar_table`: siguiente candidata para ampliar cobertura porque
   ya existe pipeline piloto y runbook de normalizacion 1m. El loop operativo
   queda definido en
   `01_foundations/module_contracts/outputs/master_intraday_bar_table_wider_scope_materialization_plan_v0_1.md`.
@@ -3138,12 +3337,18 @@ Lectura por tabla:
   `runs/data_foundation/1m_split_normalized_full_universe_candidate/split_affected_20260627_153012/`
   con `scan_strategy = split_tickers_then_partition_direct`; no autoriza
   reutilizar `master_intraday_bar_table_v0_1` como full-universe.
+  Decision operativa `2026-06-29`: se anade la subruta
+  `master_intraday_bar_table_v0_2_candidate_quote_guarded` para la vista
+  quote-guarded. Esta subruta queda bloqueada hasta que el output final
+  `E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/` tenga repair
+  manifest y validacion final. El bridge actual usa `D:/quotes` solo como
+  lineage provisional candidate-only.
 - `microstructure_features_table`: no debe ampliarse como tick-by-tick ciego
   para todo minuto/ticker; primero debe materializar ventanas gobernadas de
   eventos y decision timestamps. El loop operativo queda definido en
   `01_foundations/module_contracts/outputs/microstructure_features_table_multi_window_materialization_plan_v0_1.md`.
   Ese plan exige denominador de `event_windows_table`, estado explicito de la
-  raiz quotes (`E:/TSIS/data/quotes` oficial o `D:/quotes` candidato
+  raiz quotes (`E:/TSIS/data/quotes_` oficial objetivo o `D:/quotes` candidato
   provisional), output candidate-only, builder parametrizado, recomputacion
   desde raw quotes/trades y evidencia visual/forense antes de promocionar. El
   primer subpaso ya existe como manifest builder:
@@ -3154,7 +3359,14 @@ Lectura por tabla:
   `01_foundations/inspection_dossiers/microstructure_features/` y el notebook
   humano companion vive en
   `01_research/notebooks/data_foundation_outputs/microstructure_candidate_visual_evidence_v0_1.ipynb`.
-  No escribe parquet oficial ni autoriza promocion.
+  No escribe parquet oficial ni autoriza promocion. Decision operativa
+  `2026-06-29`: para no bloquear el loop controlado de estados, `D:/quotes`
+  queda aceptado como raiz provisional candidate-only mientras continua la
+  clonacion/auditoria hacia la raiz oficial objetivo `E:/TSIS/data/quotes_`.
+  `E:/TSIS/data/quotes` queda como raiz E incompleta/legacy. Cualquier
+  candidato que herede esa raiz debe declarar
+  `quotes_root_state=provisional_d_legacy_recovery_root_pending_e_parity` y
+  `requires_rebuild_after_e_quotes_parity=true`.
 - `market_state_table` / `event_state_table`: deben esperar a tener componentes
   intradia/microestructura mas defendibles.
 - `short_sale_constraints_table`: bloqueada por falta de fuente SSR/borrow/

@@ -26,8 +26,21 @@
 /tests/**/*.xml
 /tests/**/*.log
 /tests/**/pytest_output.txt
-graphify-out/
-**/graphify-out/
+# Graphify runtime and official leaf policy.
+# Root graphify-out payloads remain runtime ignored by default.
+# Reconstructible leaves under graphify-out/leaf_slices/<leaf>/ are allowed
+# in Git only when their BUILD_MANIFEST.md declares scope, corpus, provenance
+# and clean diagnostics.
+graphify-out/*
+**/graphify-out/*
+!graphify-out/leaf_slices/
+!**/graphify-out/leaf_slices/
+graphify-out/leaf_slices/*
+**/graphify-out/leaf_slices/*
+!graphify-out/leaf_slices/*/
+!graphify-out/leaf_slices/*/**
+!**/graphify-out/leaf_slices/*/
+!**/graphify-out/leaf_slices/*/**
 **/_graphify_staging*/
 **/graphify-*-corpus/
 **/graphstatus-docs-corpus/

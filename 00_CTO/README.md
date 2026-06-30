@@ -1,6 +1,6 @@
 ﻿# 00_CTO
 
-Fecha de actualizacion: 2026-06-18
+Fecha de actualizacion: 2026-06-30
 Estado: CTO workspace activo para arquitectura de automatizaciones TSIS.
 
 `00_CTO/` es la capa de direccion tecnica, memoria intelectual y diseno
@@ -59,6 +59,7 @@ Antes de modificar `00_CTO/`, todo agente debe leer:
 
 - `LOCAL_RULES.md`
 - `TSIS_LAB_ARCHITECTURE.md`
+- `TSIS_LAB_ARCHITECTURE_v2.md`
 - `00_CTO_REFACTOR_PLAN.md`
 
 Estos documentos fijan la interpretacion vigente de esta capa:
@@ -68,6 +69,11 @@ Estos documentos fijan la interpretacion vigente de esta capa:
   carpetas activas.
 - `TSIS_LAB_ARCHITECTURE.md` promueve la arquitectura derivada de
   `00_private/arquitectura.md` a una lectura gobernada.
+- `TSIS_LAB_ARCHITECTURE_v2.md` es la lectura CTO candidata vigente del
+  2026-06-30: incorpora Data Foundation real, Scanner Candidate Selection,
+  Market State Representation, Event State, evaluadores, execution models,
+  Graphify governance y Evolution Systems. La v1 queda como referencia
+  historica, no como imagen completa del estado actual.
 - `00_CTO_REFACTOR_PLAN.md` define como alinear el arbol fisico con esa
   arquitectura sin destruir memoria historica ni duplicar autoridad operativa.
 
@@ -255,6 +261,40 @@ Regla:
 SersanSistemas es fuente experta; solo gobierna TSIS despues de destilacion y promocion
 ```
 
+### 3. Scanner Candidate Selection / Market State Seeds
+
+Fuente operativa:
+
+- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations`
+
+Documento CTO vigente:
+
+- `11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/README.md`
+
+Proposito:
+
+- explicar como TSIS decide que instrumentos mirar antes de construir
+  `market_state` o `event_state`;
+- separar scanner operativo, discovery amplio, estrategia, evento, estado,
+  label y outcome;
+- enlazar los contratos reales de `daily_scanner_candidates_table` sin crear
+  una segunda source of truth;
+- preservar la regla de que ML/RL no entrena directamente sobre filas de
+  scanner.
+
+Estado:
+
+- candidate policy CTO creada;
+- contratos operativos y builder inicial viven en `01_foundations`;
+- replay controlado pequeno existe, pero no hay promocion full historical
+  oficial.
+
+Regla:
+
+```text
+el scanner decide donde mirar; el market_state decide que sabia TSIS
+```
+
 ## Politica de grafo semantico Graphify
 
 Graphify puede usarse como mapa semantico de navegacion para Codex y futuros
@@ -295,6 +335,19 @@ Regla de procedencia:
 Compatible con graphify query no significa oficial Graphify.
 Si no lo genero el pipeline oficial, no debe ocupar graphify-out/graph.json.
 ```
+
+Regla sin APIs:
+
+```text
+La ausencia de API keys no bloquea Graphify en Codex.
+Para docs/papers/images se usa la skill Graphify con host-agent/subagentes.
+graphify update CLI no prueba cobertura semantica documental.
+```
+
+Antes de usar un build como baseline oficial, revisar
+`GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md`: debe registrar version instalada,
+fuente/version de skill, upstream de referencia, modo sin APIs y cobertura
+semantica.
 
 ### Actualizaciones incrementales
 

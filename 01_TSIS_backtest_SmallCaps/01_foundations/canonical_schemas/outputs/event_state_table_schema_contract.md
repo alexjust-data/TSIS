@@ -153,6 +153,7 @@ the original namespaces must be preserved:
 ```text
 identity__
 calendar__
+scanner__
 daily__
 intraday__
 microstructure__
@@ -168,6 +169,10 @@ event__
 
 The `event__` namespace may only describe event metadata known at or before the
 decision cutoff. It must not contain outcome labels.
+
+The `scanner__` namespace may only carry candidate-set lineage from
+`daily_scanner_candidates_table`. It must not be interpreted as complete state,
+complete universe or strategy signal.
 
 ## 10. Prohibited Columns
 
@@ -217,7 +222,15 @@ Allowed `state_quality_state` values:
 event_state_table_v0_1 materialized = false
 builder_implemented = false
 schema_status = target_schema_defined
+controlled_candidate_materialized = true
+candidate_dataset_id = event_state_table_v0_1_candidate
+candidate_status = controlled_candidate_not_promoted
+candidate_scope = halt_event_window_event_state_controlled_candidate
+candidate_rows = 50
+candidate_manifest = E:/TSIS/data/data_foundation_outputs/event_state_table/_event_state_table_manifest_v0_1_candidate_microstructure_halt_controlled.json
 ```
 
 The schema exists so future event-state builders have a strict target. It does
-not certify that event-state data exists.
+not certify that the official institutional event-state dataset exists. The
+controlled candidate is an integration proof only and inherits provisional
+market/microstructure lineage.

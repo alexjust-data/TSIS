@@ -447,6 +447,161 @@ La ausencia de `graph.html` tambien debe tratarse como senal de revision. Puede
 ser valida solo si el build oficial se ejecuto con una opcion documentada que
 omite visualizacion, por ejemplo `--no-viz`, y esa decision quedo registrada.
 
+### 11.1.1. Politica Git para `graphify-out` y `leaf_slices`
+
+TSIS distingue entre runtime Graphify y grafo publicable.
+
+Regla:
+
+```text
+El runtime raiz de graphify-out no es memoria institucional por defecto.
+Los leaf_slices promocionados si pueden ser memoria versionada.
+```
+
+Por defecto, Git debe ignorar payloads raiz como:
+
+- `graphify-out/graph.json`;
+- `graphify-out/GRAPH_REPORT.md`;
+- `graphify-out/graph.html`;
+- caches, staging, manifests temporales, sidecars de deteccion/extraccion y
+  outputs intermedios.
+
+Un directorio `graphify-out/leaf_slices/<leaf_id>/` puede publicarse en Git
+solo si cumple todos estos criterios:
+
+- incluye `BUILD_MANIFEST.md` con baseline Git, corpus, modo de extraccion,
+  version de Graphify, version/fuente de la skill y limitaciones;
+- incluye `graph.json`, `GRAPH_REPORT.md` y `graph.html`, salvo decision
+  oficial documentada como `--no-viz`;
+- incluye manifest de corpus o equivalente reconstruible;
+- tiene diagnostico limpio o limitaciones explicitas mediante
+  `graphify diagnose multigraph --graph <leaf>/graph.json`;
+- no contiene raw market data, parquet/feather/duckdb, caches, staging,
+  notebooks temporales, imagenes pesadas ni evidencia fisica no gobernada;
+- la cola `GRAPHIFY_REFRESH_QUEUE.md`, el changelog y el README/protocolo local
+  quedan actualizados cuando cambia scope, semantica o estado de cobertura.
+
+Si el leaf fue construido como topologia deterministica, navegacion,
+provenance graph o modo sin cobertura semantica completa, el manifest y el
+reporte deben decirlo de forma visible. Un leaf de este tipo puede ser util y
+versionable, pero no debe presentarse como extraccion semantica completa de un
+corpus documental.
+
+La politica de `.gitignore` debe reflejar exactamente esta distincion:
+
+```text
+ignorar graphify-out raiz;
+permitir graphify-out/leaf_slices/<leaf_id>/ cuando el leaf este promocionado.
+```
+
+### 11.2. Baseline obligatorio para builds Graphify
+
+Todo `BUILD_MANIFEST.md` nuevo o actualizado de Graphify debe dejar un baseline
+Git reconstruible. El objetivo es que el siguiente agente pueda calcular el
+delta desde el ultimo grafo sin depender de memoria humana ni conversacion.
+
+Campos minimos obligatorios:
+
+- `graph_build_git_branch`;
+- `graph_build_git_commit`;
+- `graph_build_dirty_state`;
+- `graph_build_dirty_paths`;
+- `graph_build_untracked_paths`;
+- `graph_build_timestamp_utc`;
+- `graph_build_command`;
+- `graph_build_backend_or_agent_mode`;
+- `corpus_manifest_path`;
+- `corpus_file_count`;
+- `corpus_inclusion_rules`;
+- `corpus_exclusion_rules`;
+- `queue_entries_covered`;
+- `queue_entries_left_pending`;
+- `diagnostics_command`;
+- `diagnostics_result`;
+- `next_delta_commands`.
+
+Si el build se hace con working tree sucio, el manifest debe decirlo
+explicitamente y conservar la lista de paths modificados/no trackeados que
+formaron parte del baseline. Un build con dirty state puede ser valido, pero no
+puede presentarse como si correspondiera solo a un commit limpio.
+
+Los comandos minimos para el siguiente delta deben quedar escritos asi:
+
+```powershell
+git diff --name-status <graph_build_git_commit>...HEAD
+git status --short
+```
+
+Si el manifest anterior no tiene `graph_build_git_commit`, el agente debe
+reconstruir el baseline con fecha de build, `GRAPHIFY_REFRESH_QUEUE.md`,
+`BUILD_MANIFEST.md` y `git status --short`, y debe registrar esa limitacion en
+el nuevo manifest.
+
+### 11.3. Modo Graphify sin APIs y alineacion de version
+
+Fuente directa revisada para esta regla: `safishamsi/graphify`, rama `v8`,
+version upstream `graphifyy 0.9.1`, consultada el 2026-06-28.
+
+Regla operativa TSIS:
+
+```text
+Graphify no debe bloquearse por falta de API keys.
+```
+
+Si no existen `GEMINI_API_KEY` ni `GOOGLE_API_KEY`, un agente no debe pedir
+`ANTHROPIC_API_KEY`, `OPENAI_API_KEY` ni otra API externa para completar un
+build semantico desde Codex. En el modo TSIS actual, sin APIs externas, el
+flujo correcto para corpus con documentos, papers o imagenes es:
+
+- skill Graphify activa;
+- extraccion AST local para codigo;
+- extraccion semantica con el propio agente/subagentes de Codex;
+- cache semantica cuando exista;
+- build con `root=<scan_root>` para que `source_file`, manifest y futuros
+  updates no deriven entre maquinas o clones.
+
+Un corpus solo de codigo puede usar extraccion AST/code-only sin API y sin
+subagentes semanticos.
+
+Regla especifica sobre CLI:
+
+```text
+graphify update por CLI no equivale automaticamente a update semantico de
+docs/papers/images.
+```
+
+Para cambios en contratos, markdown, papers, imagenes o research documental,
+un agente debe usar el flujo semantico de la skill Graphify o un
+`graphify extract` oficial con backend ya configurado. Si no hay backend API y
+el entorno no permite subagentes, el agente debe parar y documentar la causa;
+no debe escribir un grafo parcial AST-only como si cubriera el corpus
+documental.
+
+Antes de declarar un build como baseline oficial, el agente debe registrar:
+
+- `graphify_package_version`;
+- `graphify_skill_version_or_source`;
+- `graphify_upstream_reference`;
+- `graphify_installed_vs_protocol_status`;
+- `no_api_mode`;
+- `semantic_extraction_mode`;
+- `build_from_json_root_or_equivalent`;
+- `semantic_update_coverage`.
+
+Si la version instalada de Graphify es anterior a la version upstream que
+gobierna el protocolo vigente, el build no debe presentarse como nuevo
+baseline oficial hasta que una de estas condiciones quede documentada:
+
+- Graphify instalado fue actualizado/alineado;
+- se ejecuto el flujo oficial desde la version upstream revisada;
+- o el build queda marcado explicitamente como `provisional` con limitaciones
+  de version.
+
+La cola `GRAPHIFY_REFRESH_QUEUE.md` sigue siendo solo plano de control:
+declara cambios semanticos pendientes y scope esperado. No prueba que el grafo
+haya sido reconstruido ni sustituye detect, extraction, build, manifest,
+diagnostics ni report.
+
 ---
 
 ## 12. Regla final

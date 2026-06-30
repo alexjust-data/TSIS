@@ -1,0 +1,36 @@
+{
+  "parent_chunk": "strategy_tsis_long_shared",
+  "subchunk": 3,
+  "scope_root": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS",
+  "files": [
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\DAS\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/DAS/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/STRATEGY.md",
+      "bytes": 37743,
+      "line_count": 1569,
+      "word_count_approx": 5147,
+      "sha256": "dfa6aa8903ac19bde8382b68e4643f86d011caa608467f307bdc49b618af36e1"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\_shared\\strategy_widgets_common.py",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/_shared/strategy_widgets_common.py",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/_shared/strategy_widgets_common.py",
+      "bytes": 25402,
+      "line_count": 711,
+      "word_count_approx": 1896,
+      "sha256": "87817279e186e8b066f67eb3d2ca091412e3572114ac0bce29b21e3ed207cc7d"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\gap&go\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/gap&go/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/gap&go/STRATEGY.md",
+      "bytes": 11638,
+      "line_count": 499,
+      "word_count_approx": 1718,
+      "sha256": "49a301fde57c4800c7f592abcb8d2f6c62019aff1611bbfc35c8dfcec50925ee"
+    }
+  ],
+  "word_count_approx": 8761,
+  "chunk_id": 10
+}

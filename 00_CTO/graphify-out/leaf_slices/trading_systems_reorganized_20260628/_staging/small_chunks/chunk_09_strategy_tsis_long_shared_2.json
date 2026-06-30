@@ -1,0 +1,135 @@
+{
+  "parent_chunk": "strategy_tsis_long_shared",
+  "subchunk": 2,
+  "scope_root": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS",
+  "files": [
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\gap&go\\gap_and_go_widgets.py",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/gap&go/gap_and_go_widgets.py",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/gap&go/gap_and_go_widgets.py",
+      "bytes": 89009,
+      "line_count": 2147,
+      "word_count_approx": 6258,
+      "sha256": "4268511aaa5e00da22b75b8529e3b2c22905111c05cd2927023ef9b232ef9c0a"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\Breakout\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/Breakout/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/STRATEGY.md",
+      "bytes": 13902,
+      "line_count": 687,
+      "word_count_approx": 1913,
+      "sha256": "00286a8d0f3944a0ad9c61914809736beee64836f22b49042386595f2b7c8712"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\_shared\\README.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/_shared/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/_shared/README.md",
+      "bytes": 955,
+      "line_count": 40,
+      "word_count_approx": 134,
+      "sha256": "6e2596328aa11770a70a939206c711cdf495caf4b3e78e164b76d75b9163e005"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\README.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/README.md",
+      "bytes": 758,
+      "line_count": 45,
+      "word_count_approx": 113,
+      "sha256": "471b59d983a6b86e87aa64ffe4c2e384babbee17a8a1686c561858ae61a93985"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\FACTORS\\README.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/FACTORS/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/README.md",
+      "bytes": 663,
+      "line_count": 29,
+      "word_count_approx": 94,
+      "sha256": "b38f9d4b49e6dbc580cebf88dac6e6ec69642800ec8009c3502f5fdda2cbce00"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\SHORT\\README.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/SHORT/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/README.md",
+      "bytes": 457,
+      "line_count": 29,
+      "word_count_approx": 64,
+      "sha256": "3cde0cc5de04ecf52c6e1592300e79e5a1fa2080c8f4fe99b2e2b34b4db0f48e"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\Breakout\\market_structure.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/Breakout/market_structure.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/market_structure.md",
+      "bytes": 258,
+      "line_count": 14,
+      "word_count_approx": 36,
+      "sha256": "4ff39e5f5d805153ae423417b660502226df3b6d57e1fcc1f88d0f3fa5114153"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\Breakout\\squeeze_relevance.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/Breakout/squeeze_relevance.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/squeeze_relevance.md",
+      "bytes": 181,
+      "line_count": 18,
+      "word_count_approx": 34,
+      "sha256": "0e19c13673e5874ca2c1e2cf626c270d9584de59dc0fac8261891b797fa2df13"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\Breakout\\edge_hypothesis.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/Breakout/edge_hypothesis.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/edge_hypothesis.md",
+      "bytes": 202,
+      "line_count": 11,
+      "word_count_approx": 29,
+      "sha256": "37edb6896f79266db87b2adc066c97c705014b92ca1210de32a9ed3cac201848"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\Breakout\\execution_model.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/Breakout/execution_model.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/execution_model.md",
+      "bytes": 213,
+      "line_count": 22,
+      "word_count_approx": 27,
+      "sha256": "a5a1b4796f1bb7e1e999b800cb84c8b4bd830bf4cd4cf449fdca7a4a3275d7cb"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\Breakout\\pattern_mining_questions.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/Breakout/pattern_mining_questions.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/pattern_mining_questions.md",
+      "bytes": 195,
+      "line_count": 13,
+      "word_count_approx": 26,
+      "sha256": "d7ea8b29861e06624feee66a0f77d5ab2028e69a93f1c8ca44f7f46e1d33ce0f"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\Breakout\\README.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/Breakout/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/README.md",
+      "bytes": 155,
+      "line_count": 20,
+      "word_count_approx": 18,
+      "sha256": "15f4a2912e5a5bda8c043005708822eae69feed447de62ed72158ad296fb98f1"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\Breakout\\failure_modes.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/Breakout/failure_modes.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/failure_modes.md",
+      "bytes": 105,
+      "line_count": 11,
+      "word_count_approx": 14,
+      "sha256": "4fb8833fcad2081848afe424591c4d5607ed6f31941e9adca79f71f931691a1f"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\Breakout\\ml_features.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/Breakout/ml_features.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/ml_features.md",
+      "bytes": 156,
+      "line_count": 21,
+      "word_count_approx": 13,
+      "sha256": "78ac797fbbe3e007c437c026b0db1cc336fd24d7aa33f08143be6cafbe667be9"
+    }
+  ],
+  "word_count_approx": 8773,
+  "chunk_id": 9
+}

@@ -109,6 +109,7 @@ requires_asof_filter = true
 
 - `identity_component_state`
 - `calendar_component_state`
+- `scanner_component_state`
 - `daily_component_state`
 - `intraday_component_state`
 - `microstructure_component_state`
@@ -139,6 +140,7 @@ Every feature column must begin with one of these prefixes:
 ```text
 identity__
 calendar__
+scanner__
 daily__
 intraday__
 microstructure__
@@ -185,6 +187,7 @@ The table must preserve component cutoff evidence:
 
 - `identity_as_of_utc`
 - `calendar_as_of_utc`
+- `scanner_as_of_utc`
 - `daily_as_of_utc`
 - `intraday_as_of_utc`
 - `microstructure_as_of_utc`
@@ -222,7 +225,15 @@ Allowed `state_quality_state` values:
 market_state_table_v0_1 materialized = false
 builder_implemented = false
 schema_status = target_schema_defined
+controlled_candidate_materialized = true
+candidate_dataset_id = market_state_table_v0_1_candidate
+candidate_status = controlled_candidate_not_promoted
+candidate_scope = halt_event_window_microstructure_controlled_candidate
+candidate_rows = 50
+candidate_manifest = E:/TSIS/data/data_foundation_outputs/market_state_table/_market_state_table_manifest_v0_1_candidate_microstructure_halt_controlled.json
 ```
 
 The schema exists so future builders have a strict target. It does not certify
-that state data exists.
+that the official institutional state dataset exists. The controlled candidate
+is an integration proof only and inherits provisional `D:/quotes` lineage from
+the upstream microstructure component.

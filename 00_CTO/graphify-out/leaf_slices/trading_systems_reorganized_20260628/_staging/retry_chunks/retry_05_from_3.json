@@ -1,0 +1,18 @@
+{
+  "parent_failed_chunk": 3,
+  "parent_name": "event_library",
+  "scope_root": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS",
+  "files": [
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\traders_strategies\\EDUTRADES_LONG_PLAYS_SOURCE_EVENT_INDEX_v0_1.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/traders_strategies/EDUTRADES_LONG_PLAYS_SOURCE_EVENT_INDEX_v0_1.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/traders_strategies/EDUTRADES_LONG_PLAYS_SOURCE_EVENT_INDEX_v0_1.md",
+      "bytes": 35014,
+      "line_count": 1456,
+      "word_count_approx": 4685,
+      "sha256": "39fb22b6da85647cc1e26c2e2c5ba7089c10483bfcbf1a7c51f711ec916b4a2d"
+    }
+  ],
+  "word_count_approx": 4685,
+  "retry_chunk_id": 5
+}

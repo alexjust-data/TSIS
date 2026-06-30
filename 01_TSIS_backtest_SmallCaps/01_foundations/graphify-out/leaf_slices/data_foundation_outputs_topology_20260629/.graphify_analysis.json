@@ -1,0 +1,330 @@
+{
+  "communities": {
+    "0": [
+      "data_foundation_outputs_consumption_policy_event_state_table",
+      "data_foundation_outputs_consumption_policy_market_state_table",
+      "data_foundation_outputs_contract_market_state_event_state_build_loop",
+      "data_foundation_outputs_contract_market_state_event_state_composition",
+      "data_foundation_outputs_dataset_contract_event_state_table",
+      "data_foundation_outputs_dataset_contract_market_state_table",
+      "data_foundation_outputs_output_path_event_state_table",
+      "data_foundation_outputs_output_path_market_state_table",
+      "data_foundation_outputs_registry_event_state_table",
+      "data_foundation_outputs_registry_market_state_table",
+      "data_foundation_outputs_schema_event_state_table",
+      "data_foundation_outputs_schema_market_state_table",
+      "data_foundation_outputs_table_event_state_table",
+      "data_foundation_outputs_table_market_state_table",
+      "data_foundation_outputs_validator_event_state_table",
+      "data_foundation_outputs_validator_market_state_table"
+    ],
+    "1": [
+      "data_foundation_outputs_consumption_policy_short_context_table",
+      "data_foundation_outputs_contract_short_sale_constraints_target",
+      "data_foundation_outputs_contract_status_matrix",
+      "data_foundation_outputs_dataset_contract_short_context_table",
+      "data_foundation_outputs_output_path_short_context_table",
+      "data_foundation_outputs_registry_short_context_table",
+      "data_foundation_outputs_runbook_short_sale_constraints_acquisition",
+      "data_foundation_outputs_schema_short_context_table",
+      "data_foundation_outputs_table_short_context_table",
+      "data_foundation_outputs_table_short_sale_constraints_table",
+      "data_foundation_outputs_validator_short_context_table"
+    ],
+    "2": [
+      "data_foundation_outputs_consumption_policy_expected_data_calendar",
+      "data_foundation_outputs_dataset_contract_expected_data_calendar",
+      "data_foundation_outputs_filesystem_data_foundation_outputs",
+      "data_foundation_outputs_output_path_expected_data_calendar",
+      "data_foundation_outputs_output_path_short_sale_constraints_table",
+      "data_foundation_outputs_registry_expected_data_calendar",
+      "data_foundation_outputs_schema_expected_data_calendar",
+      "data_foundation_outputs_table_expected_data_calendar",
+      "data_foundation_outputs_validator_expected_data_calendar"
+    ],
+    "3": [
+      "data_foundation_outputs_consumption_policy_corporate_actions_table",
+      "data_foundation_outputs_contract_target_contract",
+      "data_foundation_outputs_dataset_contract_corporate_actions_table",
+      "data_foundation_outputs_output_path_corporate_actions_table",
+      "data_foundation_outputs_registry_corporate_actions_table",
+      "data_foundation_outputs_schema_corporate_actions_table",
+      "data_foundation_outputs_table_corporate_actions_table",
+      "data_foundation_outputs_validator_corporate_actions_table"
+    ],
+    "4": [
+      "data_foundation_outputs_consumption_policy_master_intraday_bar_table",
+      "data_foundation_outputs_dataset_contract_master_intraday_bar_table",
+      "data_foundation_outputs_output_path_master_intraday_bar_table",
+      "data_foundation_outputs_plan_master_intraday_wider_scope",
+      "data_foundation_outputs_registry_master_intraday_bar_table",
+      "data_foundation_outputs_schema_master_intraday_bar_table",
+      "data_foundation_outputs_table_master_intraday_bar_table",
+      "data_foundation_outputs_validator_master_intraday_bar_table"
+    ],
+    "5": [
+      "data_foundation_outputs_consumption_policy_microstructure_features_table",
+      "data_foundation_outputs_dataset_contract_microstructure_features_table",
+      "data_foundation_outputs_output_path_microstructure_features_table",
+      "data_foundation_outputs_plan_microstructure_multi_window",
+      "data_foundation_outputs_registry_microstructure_features_table",
+      "data_foundation_outputs_schema_microstructure_features_table",
+      "data_foundation_outputs_table_microstructure_features_table",
+      "data_foundation_outputs_validator_microstructure_features_table"
+    ],
+    "6": [
+      "data_foundation_outputs_consumption_policy_dataset_certification_matrix",
+      "data_foundation_outputs_dataset_contract_dataset_certification_matrix",
+      "data_foundation_outputs_output_path_dataset_certification_matrix",
+      "data_foundation_outputs_registry_dataset_certification_matrix",
+      "data_foundation_outputs_schema_dataset_certification_matrix",
+      "data_foundation_outputs_table_dataset_certification_matrix",
+      "data_foundation_outputs_validator_dataset_certification_matrix"
+    ],
+    "7": [
+      "data_foundation_outputs_consumption_policy_event_windows_table",
+      "data_foundation_outputs_dataset_contract_event_windows_table",
+      "data_foundation_outputs_output_path_event_windows_table",
+      "data_foundation_outputs_registry_event_windows_table",
+      "data_foundation_outputs_schema_event_windows_table",
+      "data_foundation_outputs_table_event_windows_table",
+      "data_foundation_outputs_validator_event_windows_table"
+    ],
+    "8": [
+      "data_foundation_outputs_consumption_policy_fundamentals_asof_table",
+      "data_foundation_outputs_dataset_contract_fundamentals_asof_table",
+      "data_foundation_outputs_output_path_fundamentals_asof_table",
+      "data_foundation_outputs_registry_fundamentals_asof_table",
+      "data_foundation_outputs_schema_fundamentals_asof_table",
+      "data_foundation_outputs_table_fundamentals_asof_table",
+      "data_foundation_outputs_validator_fundamentals_asof_table"
+    ],
+    "9": [
+      "data_foundation_outputs_consumption_policy_halts_table",
+      "data_foundation_outputs_dataset_contract_halts_table",
+      "data_foundation_outputs_output_path_halts_table",
+      "data_foundation_outputs_registry_halts_table",
+      "data_foundation_outputs_schema_halts_table",
+      "data_foundation_outputs_table_halts_table",
+      "data_foundation_outputs_validator_halts_table"
+    ],
+    "10": [
+      "data_foundation_outputs_consumption_policy_instrument_master",
+      "data_foundation_outputs_dataset_contract_instrument_master",
+      "data_foundation_outputs_output_path_instrument_master",
+      "data_foundation_outputs_registry_instrument_master",
+      "data_foundation_outputs_schema_instrument_master",
+      "data_foundation_outputs_table_instrument_master",
+      "data_foundation_outputs_validator_instrument_master"
+    ],
+    "11": [
+      "data_foundation_outputs_consumption_policy_market_calendar",
+      "data_foundation_outputs_dataset_contract_market_calendar",
+      "data_foundation_outputs_output_path_market_calendar",
+      "data_foundation_outputs_registry_market_calendar",
+      "data_foundation_outputs_schema_market_calendar",
+      "data_foundation_outputs_table_market_calendar",
+      "data_foundation_outputs_validator_market_calendar"
+    ],
+    "12": [
+      "data_foundation_outputs_consumption_policy_master_daily_table",
+      "data_foundation_outputs_dataset_contract_master_daily_table",
+      "data_foundation_outputs_output_path_master_daily_table",
+      "data_foundation_outputs_registry_master_daily_table",
+      "data_foundation_outputs_schema_master_daily_table",
+      "data_foundation_outputs_table_master_daily_table",
+      "data_foundation_outputs_validator_master_daily_table"
+    ],
+    "13": [
+      "data_foundation_outputs_consumption_policy_news_context_table",
+      "data_foundation_outputs_dataset_contract_news_context_table",
+      "data_foundation_outputs_output_path_news_context_table",
+      "data_foundation_outputs_registry_news_context_table",
+      "data_foundation_outputs_schema_news_context_table",
+      "data_foundation_outputs_table_news_context_table",
+      "data_foundation_outputs_validator_news_context_table"
+    ],
+    "14": [
+      "data_foundation_outputs_consumption_policy_outcomes_table",
+      "data_foundation_outputs_dataset_contract_outcomes_table",
+      "data_foundation_outputs_output_path_outcomes_table",
+      "data_foundation_outputs_registry_outcomes_table",
+      "data_foundation_outputs_schema_outcomes_table",
+      "data_foundation_outputs_table_outcomes_table",
+      "data_foundation_outputs_validator_outcomes_table"
+    ],
+    "15": [
+      "data_foundation_outputs_consumption_policy_regime_context_table",
+      "data_foundation_outputs_dataset_contract_regime_context_table",
+      "data_foundation_outputs_output_path_regime_context_table",
+      "data_foundation_outputs_registry_regime_context_table",
+      "data_foundation_outputs_schema_regime_context_table",
+      "data_foundation_outputs_table_regime_context_table",
+      "data_foundation_outputs_validator_regime_context_table"
+    ]
+  },
+  "cohesion": {
+    "0": 0.15833333333333333,
+    "1": 0.21818181818181817,
+    "2": 0.25,
+    "3": 0.2857142857142857,
+    "4": 0.2857142857142857,
+    "5": 0.2857142857142857,
+    "6": 0.3333333333333333,
+    "7": 0.3333333333333333,
+    "8": 0.3333333333333333,
+    "9": 0.3333333333333333,
+    "10": 0.3333333333333333,
+    "11": 0.3333333333333333,
+    "12": 0.3333333333333333,
+    "13": 0.3333333333333333,
+    "14": 0.3333333333333333,
+    "15": 0.3333333333333333
+  },
+  "gods": [
+    {
+      "id": "data_foundation_outputs_table_market_state_table",
+      "label": "market_state_table",
+      "degree": 23
+    },
+    {
+      "id": "data_foundation_outputs_contract_target_contract",
+      "label": "Data Foundation Outputs Target Contract",
+      "degree": 18
+    },
+    {
+      "id": "data_foundation_outputs_contract_status_matrix",
+      "label": "Data Foundation Outputs Status Matrix",
+      "degree": 18
+    },
+    {
+      "id": "data_foundation_outputs_filesystem_data_foundation_outputs",
+      "label": "E:/TSIS/data/data_foundation_outputs",
+      "degree": 18
+    },
+    {
+      "id": "data_foundation_outputs_table_event_state_table",
+      "label": "event_state_table",
+      "degree": 15
+    },
+    {
+      "id": "data_foundation_outputs_table_master_intraday_bar_table",
+      "label": "master_intraday_bar_table",
+      "degree": 10
+    },
+    {
+      "id": "data_foundation_outputs_table_microstructure_features_table",
+      "label": "microstructure_features_table",
+      "degree": 10
+    },
+    {
+      "id": "data_foundation_outputs_table_halts_table",
+      "label": "halts_table",
+      "degree": 10
+    },
+    {
+      "id": "data_foundation_outputs_table_news_context_table",
+      "label": "news_context_table",
+      "degree": 10
+    },
+    {
+      "id": "data_foundation_outputs_table_short_context_table",
+      "label": "short_context_table",
+      "degree": 10
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Market State Event State Build Loop",
+      "target": "event_state_table",
+      "source_files": [
+        "01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/market_state_event_state_build_loop_runbook_v0_1.md",
+        "01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "rationale_for",
+      "why": "inferred connection - not explicitly stated in source; peripheral node `Market State Event State Build Loop` unexpectedly reaches hub `event_state_table`"
+    },
+    {
+      "source": "Market State Event State Build Loop",
+      "target": "market_state_table",
+      "source_files": [
+        "01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/market_state_event_state_build_loop_runbook_v0_1.md",
+        "01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "rationale_for",
+      "why": "inferred connection - not explicitly stated in source; peripheral node `Market State Event State Build Loop` unexpectedly reaches hub `market_state_table`"
+    },
+    {
+      "source": "instrument_master validator",
+      "target": "instrument_master",
+      "source_files": [
+        "01_TSIS_backtest_SmallCaps/01_foundations/validators/outputs/instrument_master_validators.md",
+        "01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; peripheral node `instrument_master validator` unexpectedly reaches hub `instrument_master`"
+    },
+    {
+      "source": "market_calendar validator",
+      "target": "market_calendar",
+      "source_files": [
+        "01_TSIS_backtest_SmallCaps/01_foundations/validators/outputs/market_calendar_validators.md",
+        "01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; peripheral node `market_calendar validator` unexpectedly reaches hub `market_calendar`"
+    },
+    {
+      "source": "corporate_actions_table validator",
+      "target": "corporate_actions_table",
+      "source_files": [
+        "01_TSIS_backtest_SmallCaps/01_foundations/validators/outputs/corporate_actions_table_validators.md",
+        "01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; peripheral node `corporate_actions_table validator` unexpectedly reaches hub `corporate_actions_table`"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `Data Foundation Outputs Target Contract` connect `Schema Stack` to `Market Event State`, `Short Context`, `Short Context`, `Intraday Microstructure`, `Intraday Microstructure`, `Schema Stack`, `Schema Stack`, `Schema Stack`, `Schema Stack`, `Reference Identity`, `Reference Identity`, `Schema Stack`, `Schema Stack`, `Schema Stack`, `Schema Stack`?",
+      "why": "High betweenness centrality (0.277) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Data Foundation Outputs Status Matrix` connect `Short Context` to `Market Event State`, `Short Context`, `Schema Stack`, `Intraday Microstructure`, `Intraday Microstructure`, `Schema Stack`, `Schema Stack`, `Schema Stack`, `Schema Stack`, `Reference Identity`, `Reference Identity`, `Schema Stack`, `Schema Stack`, `Schema Stack`, `Schema Stack`?",
+      "why": "High betweenness centrality (0.277) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `market_state_table` connect `Market Event State` to `Short Context`, `Schema Stack`, `Intraday Microstructure`, `Intraday Microstructure`, `Schema Stack`, `Schema Stack`, `Schema Stack`, `Reference Identity`, `Reference Identity`, `Schema Stack`, `Schema Stack`, `Schema Stack`?",
+      "why": "High betweenness centrality (0.234) - this node is a cross-community bridge."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 16 inferred relationships involving `market_state_table` (e.g. with `Market State Event State Build Loop` and `dataset_certification_matrix`) actually correct?",
+      "why": "`market_state_table` has 16 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 18 inferred relationships involving `E:/TSIS/data/data_foundation_outputs` (e.g. with `E:/TSIS/data/data_foundation_outputs/corporate_actions_table` and `E:/TSIS/data/data_foundation_outputs/dataset_certification_matrix`) actually correct?",
+      "why": "`E:/TSIS/data/data_foundation_outputs` has 18 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 8 inferred relationships involving `event_state_table` (e.g. with `Market State Event State Build Loop` and `E:/TSIS/data/data_foundation_outputs/event_state_table`) actually correct?",
+      "why": "`event_state_table` has 8 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `instrument_master schema`, `instrument_master dataset_contract`, `instrument_master consumption_policy` to the rest of the system?",
+      "why": "72 weakly-connected nodes found - possible documentation gaps or missing edges."
+    }
+  ]
+}

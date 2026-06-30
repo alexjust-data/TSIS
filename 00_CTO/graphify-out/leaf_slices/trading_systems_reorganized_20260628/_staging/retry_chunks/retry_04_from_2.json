@@ -1,0 +1,54 @@
+{
+  "parent_failed_chunk": 2,
+  "parent_name": "event_library",
+  "scope_root": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS",
+  "files": [
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\07_SHORT_SQUEEZE_DYNAMICS\\DAS_EVENT\\EVENT_DEFINITION_DRAFT_v0_1.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/07_SHORT_SQUEEZE_DYNAMICS/DAS_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/07_SHORT_SQUEEZE_DYNAMICS/DAS_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "bytes": 19634,
+      "line_count": 938,
+      "word_count_approx": 2611,
+      "sha256": "f37827c7855df7110419d00c770701970c7a44fd2449e81dd9d55c29a396d9fc"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\07_SHORT_SQUEEZE_DYNAMICS\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/07_SHORT_SQUEEZE_DYNAMICS/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/07_SHORT_SQUEEZE_DYNAMICS/README.md",
+      "bytes": 733,
+      "line_count": 36,
+      "word_count_approx": 89,
+      "sha256": "00acd401cf0ec6aeced6a092998667f4688346cc3d092e407b3ab134bcc9f7df"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\04_MOMENTUM_EXHAUSTION\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/04_MOMENTUM_EXHAUSTION/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/04_MOMENTUM_EXHAUSTION/README.md",
+      "bytes": 599,
+      "line_count": 30,
+      "word_count_approx": 77,
+      "sha256": "74dca3ec2087ee14704dc27c04a4955c30e612e529f1b235200d8f5ef410a609"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\05_RUNNER_LIFECYCLE\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/05_RUNNER_LIFECYCLE/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/05_RUNNER_LIFECYCLE/README.md",
+      "bytes": 625,
+      "line_count": 32,
+      "word_count_approx": 76,
+      "sha256": "795e1e7dc59d7c8b0b60d0148984e10a32bbff2cead058e817d90b3886ba776a"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\01_MOMENTUM_EXPANSION\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/README.md",
+      "bytes": 604,
+      "line_count": 31,
+      "word_count_approx": 70,
+      "sha256": "8ed30cecd6dd6a9eb7ee3e9ec930e2314c9cbc9c8d08bfc853e72b6167186563"
+    }
+  ],
+  "word_count_approx": 2923,
+  "retry_chunk_id": 4
+}

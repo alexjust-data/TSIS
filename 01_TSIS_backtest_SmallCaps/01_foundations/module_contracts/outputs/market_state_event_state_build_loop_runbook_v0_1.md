@@ -16,10 +16,58 @@ market_state_table_materialized = false
 event_state_table_materialized = false
 ```
 
+## Decision Operativa Provisional Sobre Quotes
+
+Fecha: `2026-06-29`.
+
+Para desbloquear el siguiente loop controlado, TSIS acepta trabajar
+provisionalmente con:
+
+```text
+quotes_root_used = D:/quotes
+quotes_root_state = provisional_d_legacy_recovery_root_pending_e_parity
+target_official_quotes_root = E:/TSIS/data/quotes_
+legacy_incomplete_e_quotes_root = E:/TSIS/data/quotes
+```
+
+Esta decision solo habilita candidatos y muestras controladas. No habilita:
+
+- promocion institucional final;
+- ML/RL primary training;
+- backtest-core directo;
+- execution simulation;
+- sustitucion de la futura raiz oficial objetivo `E:/TSIS/data/quotes_`.
+
+Todo output de microestructura, `market_state_table` o `event_state_table` que
+use esta raiz debe conservar lineage visible por fila o manifest:
+
+```text
+quotes_root_used
+quotes_root_state
+target_official_quotes_root
+legacy_incomplete_e_quotes_root
+source_quotes_file
+source_quotes_file_sha256
+requires_rebuild_after_e_quotes_parity = true
+```
+
+Cuando termine la clonacion/auditoria de `D:/quotes -> E:/TSIS/data/quotes_` y
+`E:/TSIS/data/quotes_` quede aceptada como raiz oficial, cualquier candidato
+basado en `D:/quotes` debera recomputarse o quedar marcado como lineage
+provisional. `E:/TSIS/data/quotes` queda tratado como raiz E incompleta/legacy,
+no como raiz oficial futura.
+
 Contrato base:
 
 ```text
 01_foundations/module_contracts/outputs/market_state_event_state_composition_contract_v0_1.md
+```
+
+Contrato companion obligatorio para decidir cobertura, scanner diario y
+lookbacks:
+
+```text
+01_foundations/module_contracts/outputs/market_state_coverage_and_lookback_policy_v0_1.md
 ```
 
 ## Objetivo Del Loop
@@ -52,15 +100,17 @@ Si el loop queda interrumpido, el siguiente agente debe continuar en este orden:
 1. Leer este runbook completo.
 2. Leer
    `market_state_event_state_composition_contract_v0_1.md`.
-3. Revisar `CHANGELOG.md` y `GRAPHIFY_REFRESH_QUEUE.md`.
-4. Verificar que no se ha materializado ningun parquet oficial bajo:
+3. Leer
+   `market_state_coverage_and_lookback_policy_v0_1.md`.
+4. Revisar `CHANGELOG.md` y `GRAPHIFY_REFRESH_QUEUE.md`.
+5. Verificar que no se ha materializado ningun parquet oficial bajo:
 
 ```text
 E:/TSIS/data/data_foundation_outputs/market_state_table/
 E:/TSIS/data/data_foundation_outputs/event_state_table/
 ```
 
-5. Continuar desde el primer item pendiente en la checklist.
+6. Continuar desde el primer item pendiente en la checklist.
 
 ## Checklist De Trabajo
 
@@ -320,3 +370,87 @@ Siguiente loop permitido:
 - definir config de builder real contra outputs CAPA 1 ya materializados;
 - mantener bloqueado cualquier parquet oficial o full-universe hasta que pasen
   recomputation tests, manifest policy y coverage gates.
+
+## Controlled Candidate Loop v0.2
+
+Estado: `completed_candidate_not_promoted`
+
+Fecha: `2026-06-29`
+
+Este loop crea la primera muestra controlada real sobre outputs CAPA 1:
+
+```text
+microstructure_features_table_v0_2_candidate_controlled_25_per_role
+  -> market_state_table_v0_1_candidate_microstructure_halt_controlled
+  -> event_state_table_v0_1_candidate_microstructure_halt_controlled
+```
+
+Builders activados:
+
+```text
+scripts/materialize_market_state_table.py --materialize-candidate
+scripts/materialize_event_state_table.py --materialize-candidate
+```
+
+Salidas:
+
+```text
+E:/TSIS/data/data_foundation_outputs/market_state_table/market_state_table_v0_1_candidate_microstructure_halt_controlled/
+E:/TSIS/data/data_foundation_outputs/market_state_table/_market_state_table_manifest_v0_1_candidate_microstructure_halt_controlled.json
+E:/TSIS/data/data_foundation_outputs/event_state_table/event_state_table_v0_1_candidate_microstructure_halt_controlled/
+E:/TSIS/data/data_foundation_outputs/event_state_table/_event_state_table_manifest_v0_1_candidate_microstructure_halt_controlled.json
+```
+
+Resultados:
+
+```text
+market_state_candidate_rows = 50
+market_state_candidate_tickers = 9
+market_state_candidate_event_windows = 50
+market_state_valid_for_event_context_candidate_rows = 50
+market_state_valid_for_ml_feature_candidate_rows = 0
+market_state_valid_for_rl_state_candidate_rows = 0
+market_state_full_universe_claim_rows = 0
+market_state_quality_counts = {"state_review_microstructure_seed_only":50}
+
+event_state_candidate_rows = 50
+event_state_candidate_tickers = 9
+event_state_candidate_event_windows = 50
+event_state_pre_event_rows = 25
+event_state_post_event_review_rows = 25
+event_state_valid_for_pattern_discovery_rows = 50
+event_state_valid_for_ml_feature_candidate_rows = 0
+event_state_valid_for_rl_state_candidate_rows = 0
+event_state_full_universe_claim_rows = 0
+event_state_quality_counts = {"event_state_review_microstructure_seed_only":50}
+```
+
+Evidencia ejecutable:
+
+```text
+python -m pytest tests/data_foundation_outputs/test_market_state_table_contract.py tests/data_foundation_outputs/test_event_state_table_contract.py -q
+tests = 16
+passed = 16
+failed = 0
+```
+
+Lectura institucional:
+
+```text
+candidate_builder_implemented = true
+controlled_candidate_materialized = true
+official_builder_implemented = false
+official_output_promoted = false
+full_universe_claim = false
+direct_ml_rl_backtest_execution_use_allowed = false
+```
+
+Bloqueos que permanecen:
+
+- hereda `quotes_root_state=provisional_d_legacy_recovery_root_pending_e_parity`;
+- requiere rebuild despues de la paridad/auditoria de `E:/TSIS/data/quotes_`;
+- no usa short-sale constraints reales porque SSR/borrow/locate siguen sin
+  fuente gobernada;
+- no contiene labels, outcomes, rewards, acciones, fills, PnL, estrategia ni
+  senales;
+- no es dataset final de entrenamiento ML/RL.

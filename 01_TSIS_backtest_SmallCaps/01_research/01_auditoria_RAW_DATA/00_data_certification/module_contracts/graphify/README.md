@@ -27,6 +27,23 @@ Define el primer leaf oficial:
 certification_decisions_graph
 ```
 
+## Leaf outputs conocidos
+
+```text
+graphify-out/leaf_slices/certification_decisions_20260619/
+graphify-out/leaf_slices/certification_decisions_topology_20260629/
+```
+
+Lectura correcta:
+
+- `certification_decisions_20260619` es el leaf semantico historico construido
+  con chunks de workers Graphify/Codex.
+- `certification_decisions_topology_20260629` es un refresh topologico
+  deterministico construido con `graphifyy 0.9.1`, manifest moderno, corpus
+  exacto y diagnostico limpio. No reemplaza el leaf semantico completo; sirve
+  como mapa moderno de familias, documentos, doc types y palabras de decision
+  explicitas.
+
 ## Relacion con otros grafos
 
 `foundations_authority_graph` vive en `01_foundations` y mapea autoridad viva:

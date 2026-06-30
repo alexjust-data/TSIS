@@ -251,6 +251,7 @@ Schemas de outputs gobernados de CAPA 1:
 - `outputs/corporate_actions_table_schema_contract.md`
 - `outputs/dataset_certification_matrix_schema_contract.md`
 - `outputs/master_daily_table_schema_contract.md`
+- `outputs/daily_scanner_candidates_table_schema_contract.md`
 - `outputs/master_intraday_bar_table_schema_contract.md`
 - `outputs/microstructure_features_table_schema_contract.md`
 - `outputs/halts_table_schema_contract.md`

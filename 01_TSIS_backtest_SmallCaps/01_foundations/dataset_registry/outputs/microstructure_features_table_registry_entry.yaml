@@ -40,8 +40,8 @@ source_lineage:
     - instrument_master_v0_1
     - dataset_certification_matrix_v0_1
   source_quotes_root_state: provisional_d_legacy_recovery_root_pending_e_parity
-  future_official_quotes_root: E:/TSIS/data/quotes
-  quotes_staging_root: E:/TSIS/data/quotes_
+  target_official_quotes_root: E:/TSIS/data/quotes_
+  legacy_incomplete_e_quotes_root: E:/TSIS/data/quotes
   source_windows_csv_sha256: 25dbaebf4d43846ec90fcee3fb8f343f8ebf98293520934e8fc8e8eea4768aac
   source_instrument_master_sha256: 69104387d2607306c3fa1740573d130db5e7c30b1d1527d3ee8a8d2b4d53c2d2
   source_dataset_certification_matrix_sha256: e7803e3ec58cfb92c1313efc09bdd3a015800c4680437e4567a0174b257f1fb0

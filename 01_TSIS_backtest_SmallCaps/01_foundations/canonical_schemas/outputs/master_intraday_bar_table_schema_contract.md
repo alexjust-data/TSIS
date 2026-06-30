@@ -265,3 +265,83 @@ Not permitted:
 - raw execution simulator truth;
 - quote/trade microstructure substitute;
 - unflagged ML or RL state source.
+
+## 10. Quote-Guarded Candidate Addendum
+
+Planned candidate:
+
+```text
+dataset_id: master_intraday_bar_table_v0_2_candidate_quote_guarded
+status: candidate_contract_defined_not_materialized
+```
+
+This candidate is governed by:
+
+```text
+01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md
+configs/data_foundation_outputs/master_intraday_bar_table_quote_guarded_candidate_v0_2.json
+```
+
+It is blocked until the `ohlcv_1m_quote_guarded` repair run is completed and
+validated under:
+
+```text
+E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/
+```
+
+Expected candidate price views:
+
+```text
+1m_raw
+1m_quote_guarded_raw
+```
+
+Additional required columns:
+
+```text
+quote_guarded_view
+quote_guarded_repair_applied
+repair_state
+repair_reason
+vw_quote_guarded_status
+quote_bid_floor
+quote_ask_cap
+quote_count
+source_quote_guarded_repair_manifest
+source_quote_guarded_run_id
+source_quotes_root
+source_quotes_root_state
+requires_rebuild_after_e_quotes_parity
+requires_rebuild_after_quote_guarded_e_promotion
+```
+
+Candidate rule:
+
+```text
+full_universe_claim must remain false until a denominator manifest, final
+quote-guarded validation report and promotion review exist.
+```
+
+Storage rule:
+
+```text
+1m_quote_guarded_raw is a view:
+raw ohlcv_1m + repair_manifest_v0_2 = quote-guarded OHLCV view
+```
+
+The first candidate must not assume that
+`E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/` contains a full
+replacement tree of corrected monthly OHLCV parquets. The required source is a
+repair manifest/overlay plus immutable raw 1m.
+
+Required interpretation:
+
+```text
+repair_rows = affected manifest rows
+ohlc_repair_rows = rows where OHLC changes
+vw_invalid_rows = rows where VWAP is invalid/blocked without quote rebuild
+```
+
+`1m_quote_guarded_split_normalized` is intentionally excluded from the first
+candidate schema until split normalization over quote-guarded OHLC is tested
+and documented separately.

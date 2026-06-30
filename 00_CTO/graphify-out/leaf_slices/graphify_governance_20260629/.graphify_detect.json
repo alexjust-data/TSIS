@@ -1,0 +1,37 @@
+{
+  "scan_root": "C:\\TSIS_Data",
+  "total_files": 22,
+  "total_words": 64775,
+  "warning": null,
+  "skipped_sensitive": [],
+  "files": {
+    "code": [],
+    "document": [
+      "C:\\TSIS_Data\\AGENTS.md",
+      "C:\\TSIS_Data\\CHANGELOG.md",
+      "C:\\TSIS_Data\\PROJECT_OPERATING_SYSTEM.md",
+      "C:\\TSIS_Data\\PROJECT_RULES.md",
+      "C:\\TSIS_Data\\VERSIONING_STANDARDS.md",
+      "C:\\TSIS_Data\\ARCHITECTURE_OVERVIEW.md",
+      "C:\\TSIS_Data\\RESEARCH_PHILOSOPHY.md",
+      "C:\\TSIS_Data\\LONG_RUNNING_OPERATIONS_CONTRACT.md",
+      "C:\\TSIS_Data\\00_CTO\\LOCAL_RULES.md",
+      "C:\\TSIS_Data\\00_CTO\\README.md",
+      "C:\\TSIS_Data\\00_CTO\\CHANGELOG.md",
+      "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_REFRESH_QUEUE.md",
+      "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\LOCAL_RULES.md",
+      "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\CHANGELOG.md",
+      "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\README.md",
+      "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\GRAPHIFY_REFRESH_QUEUE.md",
+      "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\module_contracts\\graphify\\README.md",
+      "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\module_contracts\\graphify\\data_foundation_graph_and_table_design_protocol.md",
+      "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+      "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\GRAPHIFY_REFRESH_QUEUE.md"
+    ],
+    "paper": [],
+    "image": [],
+    "video": []
+  }
+}

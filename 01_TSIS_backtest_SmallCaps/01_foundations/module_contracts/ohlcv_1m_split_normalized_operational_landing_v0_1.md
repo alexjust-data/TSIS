@@ -103,3 +103,42 @@ Base usada:
 Resultados:
 
 - `01_foundations/module_contracts/ohlcv_1m_split_normalized_pilot_results_v0_1.md`
+
+## 8.1 Candidato Split-Affected Full-Universe Logico
+
+La ruta candidata nueva es:
+
+- `E:\TSIS\data\ohlcv_1m_split_normalized_full_universe_candidate`
+
+Run completado:
+
+- `split_affected_20260627_192314`
+
+Resultado:
+
+- `115667` filas de manifest;
+- `24` chunks;
+- `115667` outputs presentes;
+- auditoria post-run ejecutada;
+- `FAIL = 0` en los casos de split auditables.
+
+Documento de resultados:
+
+- `01_foundations/module_contracts/ohlcv_1m_split_normalized_split_affected_materialization_results_v0_1.md`
+
+Estado:
+
+```text
+materialized_audited_candidate
+```
+
+Este root no sustituye todavia a:
+
+- `E:\TSIS\data\ohlcv_1m_split_normalized`
+
+ni a:
+
+- `E:\TSIS\data\ohlcv_1m`
+
+La promocion oficial queda pendiente de registry, policy, validators, tests y
+decision explicita de consumo downstream.

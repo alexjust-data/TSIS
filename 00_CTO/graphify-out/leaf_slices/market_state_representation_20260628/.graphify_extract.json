@@ -1,0 +1,1272 @@
+{
+  "nodes": [
+    {
+      "id": "contract_market_state_representation_contract_v0_1",
+      "label": "Market State Contract",
+      "file_type": "document",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "# Market State Representation Contract v0.1"
+    },
+    {
+      "id": "map_market_state_representation_source_file_map_v0_1",
+      "label": "Market State Source File Map Document",
+      "file_type": "document",
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "# Market State Representation Source File Map v0.1"
+    },
+    {
+      "id": "contract_market_state_representation",
+      "label": "Market State Representation",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis"
+    },
+    {
+      "id": "contract_market_state_signature",
+      "label": "Market State Function",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis"
+    },
+    {
+      "id": "contract_downloaded_market_data",
+      "label": "Downloaded Market Data",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis"
+    },
+    {
+      "id": "contract_audited_raw_source_truth",
+      "label": "Raw Source Truth",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis"
+    },
+    {
+      "id": "contract_derived_state_components",
+      "label": "Derived State Components",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis"
+    },
+    {
+      "id": "contract_market_state",
+      "label": "Market State",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis"
+    },
+    {
+      "id": "contract_event_state",
+      "label": "Event State",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 8. Estado Por Evento"
+    },
+    {
+      "id": "contract_event_engine",
+      "label": "Event Engine",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis"
+    },
+    {
+      "id": "contract_event_table",
+      "label": "Event Table",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis"
+    },
+    {
+      "id": "contract_outcome_table",
+      "label": "Outcome Table",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis"
+    },
+    {
+      "id": "contract_ml_probability_models",
+      "label": "ML Probability Models",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis"
+    },
+    {
+      "id": "contract_decision_models",
+      "label": "Decision Models",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis"
+    },
+    {
+      "id": "contract_offline_rl",
+      "label": "Offline RL",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 10. Estados Para Offline RL"
+    },
+    {
+      "id": "contract_execution_models",
+      "label": "Execution Models",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis"
+    },
+    {
+      "id": "contract_evolution_systems_alphaevolve",
+      "label": "Evolution Systems",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 11. Estados Para AlphaEvolve"
+    },
+    {
+      "id": "contract_data_foundation_outputs",
+      "label": "Data Foundation Outputs",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 2. Por Que Existe Este Contrato"
+    },
+    {
+      "id": "contract_components_not_market_state_rule",
+      "label": "Components Are Not State",
+      "file_type": "rationale",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 2.1 Estados Actuales Vs Estados Objetivo"
+    },
+    {
+      "id": "contract_maturity_matrix",
+      "label": "State Maturity Matrix",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 2.2 Matriz De Madurez Del Estado"
+    },
+    {
+      "id": "contract_microstructure_features_table_v0_1",
+      "label": "Microstructure Features v0.1",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 2.3 Caso Especial: Microstructure Features Table"
+    },
+    {
+      "id": "contract_scoped_state_sample",
+      "label": "Scoped State Sample",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 2.2 Matriz De Madurez Del Estado"
+    },
+    {
+      "id": "contract_institutional_market_state",
+      "label": "Institutional Market State",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 2.2 Matriz De Madurez Del Estado"
+    },
+    {
+      "id": "contract_canonical_definition",
+      "label": "Canonical Definition",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 3. Definicion Canonica"
+    },
+    {
+      "id": "contract_semantic_separation_chain",
+      "label": "Semantic Separation",
+      "file_type": "rationale",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 4. Separacion No Negociable"
+    },
+    {
+      "id": "contract_live_state_learning_loop",
+      "label": "Live Learning Loop",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 5. La Maquina Que Aprende En Tiempo Real"
+    },
+    {
+      "id": "contract_state_vector_minimum_schema",
+      "label": "State Vector Schema",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 6. Estructura Minima De Un Market State"
+    },
+    {
+      "id": "contract_state_domains",
+      "label": "State Domains",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 7. Dominios Del Estado"
+    },
+    {
+      "id": "contract_identity_universe_domain",
+      "label": "Identity Domain",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 7.1 Identidad / Universo"
+    },
+    {
+      "id": "contract_calendar_session_domain",
+      "label": "Calendar Domain",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 7.2 Calendario / Sesion"
+    },
+    {
+      "id": "contract_corporate_actions_price_semantics_domain",
+      "label": "Price Semantics Domain",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 7.3 Corporate Actions / Price Semantics"
+    },
+    {
+      "id": "contract_daily_context_domain",
+      "label": "Daily Context Domain",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 7.4 Contexto Diario"
+    },
+    {
+      "id": "contract_intraday_evolution_domain",
+      "label": "Intraday Domain",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 7.5 Evolucion Intradia"
+    },
+    {
+      "id": "contract_microstructure_domain",
+      "label": "Microstructure Domain",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 7.6 Microestructura"
+    },
+    {
+      "id": "contract_regime_domain",
+      "label": "Regime Domain",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 7.7 Regimen"
+    },
+    {
+      "id": "contract_catalyst_external_information_domain",
+      "label": "Catalyst Domain",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 7.8 Catalyst / Informacion Externa"
+    },
+    {
+      "id": "contract_halts_ssr_borrow_short_pressure_domain",
+      "label": "Halts SSR Borrow Domain",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 7.9 Halts / SSR / Borrow / Short Pressure"
+    },
+    {
+      "id": "contract_fundamentals_financial_domain",
+      "label": "Financial Domain",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 7.10 Fundamentals / Financial"
+    },
+    {
+      "id": "contract_ml_state_interface",
+      "label": "ML State Interface",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 9. Estados Para ML"
+    },
+    {
+      "id": "contract_offline_rl_transition_interface",
+      "label": "Offline RL Transition",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 10. Estados Para Offline RL"
+    },
+    {
+      "id": "contract_alphaevolve_evaluable_objects",
+      "label": "AlphaEvolve Objects",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 11. Estados Para AlphaEvolve"
+    },
+    {
+      "id": "contract_locked_evaluator_rule",
+      "label": "Locked Evaluator Rule",
+      "file_type": "rationale",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 11. Estados Para AlphaEvolve"
+    },
+    {
+      "id": "contract_real_time_state_update_pipeline",
+      "label": "Real Time Update Pipeline",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 12. Real Time State Update"
+    },
+    {
+      "id": "contract_quality_state_inheritance",
+      "label": "Quality Inheritance",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 13. Calidad De Estado"
+    },
+    {
+      "id": "contract_anti_leakage_boundary",
+      "label": "Anti Leakage Boundary",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 14. Anti-Leakage"
+    },
+    {
+      "id": "contract_labels_features_separation",
+      "label": "Labels Features Separation",
+      "file_type": "rationale",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 14. Anti-Leakage"
+    },
+    {
+      "id": "contract_future_required_components",
+      "label": "Future Required Components",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 15. Outputs Esperados Fututos"
+    },
+    {
+      "id": "contract_promotion_criteria",
+      "label": "Promotion Criteria",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 19. Criterio De Promocion"
+    },
+    {
+      "id": "contract_scientific_rationale",
+      "label": "Scientific Rationale",
+      "file_type": "rationale",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis"
+    },
+    {
+      "id": "contract_distribution_shift",
+      "label": "Distribution Shift",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis"
+    },
+    {
+      "id": "contract_causality_mechanisms",
+      "label": "Causality Mechanisms",
+      "file_type": "concept",
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis"
+    },
+    {
+      "id": "map_source_file_map",
+      "label": "Source File Map Role",
+      "file_type": "concept",
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## Rol"
+    },
+    {
+      "id": "map_event_first_sources",
+      "label": "Event First Sources",
+      "file_type": "document",
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## Lista Nuclear"
+    },
+    {
+      "id": "map_market_science_sources",
+      "label": "Market Science Sources",
+      "file_type": "document",
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## Market Science"
+    },
+    {
+      "id": "map_alphaevolve_evaluator_sources",
+      "label": "AlphaEvolve Evaluator Sources",
+      "file_type": "document",
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## AlphaEvolve / Evaluadores"
+    },
+    {
+      "id": "map_data_foundation_outputs_contract",
+      "label": "Data Foundation Contract",
+      "file_type": "document",
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## Data Foundation Outputs"
+    },
+    {
+      "id": "map_feature_engine_source",
+      "label": "Feature Engine Source",
+      "file_type": "document",
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## Estado / Evento"
+    },
+    {
+      "id": "map_event_engine_source",
+      "label": "Event Engine Source",
+      "file_type": "document",
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## Estado / Evento"
+    },
+    {
+      "id": "map_ml_rl_sources",
+      "label": "ML RL Sources",
+      "file_type": "document",
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## ML / RL"
+    },
+    {
+      "id": "map_detected_gap_market_state_representation",
+      "label": "Detected State Gap",
+      "file_type": "rationale",
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## Estado Del Hueco Detectado"
+    }
+  ],
+  "edges": [
+    {
+      "source": "contract_market_state_representation_contract_v0_1",
+      "target": "contract_market_state_representation",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "# Market State Representation Contract v0.1",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_market_state_representation_contract_v0_1",
+      "target": "contract_scientific_rationale",
+      "relation": "states",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_market_state_representation",
+      "target": "contract_market_state_signature",
+      "relation": "centers_on",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_market_state_signature",
+      "target": "contract_market_state",
+      "relation": "instantiates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_downloaded_market_data",
+      "target": "contract_audited_raw_source_truth",
+      "relation": "flows_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_audited_raw_source_truth",
+      "target": "contract_derived_state_components",
+      "relation": "flows_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_derived_state_components",
+      "target": "contract_market_state",
+      "relation": "flows_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_market_state",
+      "target": "contract_event_state",
+      "relation": "pairs_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_market_state",
+      "target": "contract_event_engine",
+      "relation": "feeds",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_event_engine",
+      "target": "contract_event_table",
+      "relation": "feeds",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_event_table",
+      "target": "contract_outcome_table",
+      "relation": "feeds",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_outcome_table",
+      "target": "contract_ml_probability_models",
+      "relation": "feeds",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_ml_probability_models",
+      "target": "contract_decision_models",
+      "relation": "feeds",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_ml_probability_models",
+      "target": "contract_offline_rl",
+      "relation": "feeds",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_decision_models",
+      "target": "contract_execution_models",
+      "relation": "feeds",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_execution_models",
+      "target": "contract_evolution_systems_alphaevolve",
+      "relation": "feeds",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_data_foundation_outputs",
+      "target": "contract_derived_state_components",
+      "relation": "provides",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 2.1 Estados Actuales Vs Estados Objetivo",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_components_not_market_state_rule",
+      "target": "contract_market_state",
+      "relation": "distinguishes_from_components",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 2.1 Estados Actuales Vs Estados Objetivo",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_maturity_matrix",
+      "target": "contract_scoped_state_sample",
+      "relation": "classifies",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 2.2 Matriz De Madurez Del Estado",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_maturity_matrix",
+      "target": "contract_institutional_market_state",
+      "relation": "classifies",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 2.2 Matriz De Madurez Del Estado",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_microstructure_features_table_v0_1",
+      "target": "contract_scoped_state_sample",
+      "relation": "has_role",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 2.3 Caso Especial: Microstructure Features Table",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_microstructure_features_table_v0_1",
+      "target": "contract_microstructure_domain",
+      "relation": "contributes_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 2.3 Caso Especial: Microstructure Features Table",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_canonical_definition",
+      "target": "contract_market_state",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 3. Definicion Canonica",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_semantic_separation_chain",
+      "target": "contract_market_state",
+      "relation": "separates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 4. Separacion No Negociable",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_semantic_separation_chain",
+      "target": "contract_event_state",
+      "relation": "separates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 4. Separacion No Negociable",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_semantic_separation_chain",
+      "target": "contract_outcome_table",
+      "relation": "separates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 4. Separacion No Negociable",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_live_state_learning_loop",
+      "target": "contract_market_state",
+      "relation": "updates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 5. La Maquina Que Aprende En Tiempo Real",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_live_state_learning_loop",
+      "target": "contract_event_state",
+      "relation": "updates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 5. La Maquina Que Aprende En Tiempo Real",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_live_state_learning_loop",
+      "target": "contract_offline_rl",
+      "relation": "feeds_retraining",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 5. La Maquina Que Aprende En Tiempo Real",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_state_vector_minimum_schema",
+      "target": "contract_market_state",
+      "relation": "specifies_fields_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 6. Estructura Minima De Un Market State",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_state_vector_minimum_schema",
+      "target": "contract_quality_state_inheritance",
+      "relation": "contains_quality_state",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 6. Estructura Minima De Un Market State",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_state_vector_minimum_schema",
+      "target": "contract_anti_leakage_boundary",
+      "relation": "contains_leakage_boundary",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 6. Estructura Minima De Un Market State",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_state_domains",
+      "target": "contract_market_state",
+      "relation": "decomposes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 7. Dominios Del Estado",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_state_domains",
+      "target": "contract_identity_universe_domain",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 7.1 Identidad / Universo",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_state_domains",
+      "target": "contract_calendar_session_domain",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 7.2 Calendario / Sesion",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_state_domains",
+      "target": "contract_corporate_actions_price_semantics_domain",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 7.3 Corporate Actions / Price Semantics",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_state_domains",
+      "target": "contract_daily_context_domain",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 7.4 Contexto Diario",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_state_domains",
+      "target": "contract_intraday_evolution_domain",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 7.5 Evolucion Intradia",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_state_domains",
+      "target": "contract_microstructure_domain",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 7.6 Microestructura",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_state_domains",
+      "target": "contract_regime_domain",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 7.7 Regimen",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_state_domains",
+      "target": "contract_catalyst_external_information_domain",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 7.8 Catalyst / Informacion Externa",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_state_domains",
+      "target": "contract_halts_ssr_borrow_short_pressure_domain",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 7.9 Halts / SSR / Borrow / Short Pressure",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_state_domains",
+      "target": "contract_fundamentals_financial_domain",
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "### 7.10 Fundamentals / Financial",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_event_state",
+      "target": "contract_market_state",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 8. Estado Por Evento",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_ml_state_interface",
+      "target": "contract_event_state",
+      "relation": "consumes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 9. Estados Para ML",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_ml_state_interface",
+      "target": "contract_outcome_table",
+      "relation": "estimates_outcome_from_state",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 9. Estados Para ML",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_ml_state_interface",
+      "target": "contract_decision_models",
+      "relation": "does_not_decide",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 9. Estados Para ML",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_offline_rl_transition_interface",
+      "target": "contract_market_state",
+      "relation": "requires_governed_state",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 10. Estados Para Offline RL",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_offline_rl_transition_interface",
+      "target": "contract_offline_rl",
+      "relation": "defines_input_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 10. Estados Para Offline RL",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_offline_rl_transition_interface",
+      "target": "contract_anti_leakage_boundary",
+      "relation": "requires",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 10. Estados Para Offline RL",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_distribution_shift",
+      "target": "contract_offline_rl",
+      "relation": "constrains",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_causality_mechanisms",
+      "target": "contract_market_state_representation",
+      "relation": "motivates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 1. Tesis",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_alphaevolve_evaluable_objects",
+      "target": "contract_evolution_systems_alphaevolve",
+      "relation": "defines_scope_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 11. Estados Para AlphaEvolve",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_evolution_systems_alphaevolve",
+      "target": "contract_locked_evaluator_rule",
+      "relation": "requires",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 11. Estados Para AlphaEvolve",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_alphaevolve_evaluable_objects",
+      "target": "contract_state_domains",
+      "relation": "may_propose_variables_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 11. Estados Para AlphaEvolve",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_evolution_systems_alphaevolve",
+      "target": "contract_anti_leakage_boundary",
+      "relation": "must_respect",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 11. Estados Para AlphaEvolve",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_real_time_state_update_pipeline",
+      "target": "contract_market_state",
+      "relation": "updates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 12. Real Time State Update",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_real_time_state_update_pipeline",
+      "target": "contract_quality_state_inheritance",
+      "relation": "applies_quality_gate",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 12. Real Time State Update",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_real_time_state_update_pipeline",
+      "target": "contract_anti_leakage_boundary",
+      "relation": "preserves_temporal_legality",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 12. Real Time State Update",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_quality_state_inheritance",
+      "target": "contract_market_state",
+      "relation": "qualifies",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 13. Calidad De Estado",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_anti_leakage_boundary",
+      "target": "contract_market_state",
+      "relation": "guards",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 14. Anti-Leakage",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_labels_features_separation",
+      "target": "contract_anti_leakage_boundary",
+      "relation": "is_part_of",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 14. Anti-Leakage",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_labels_features_separation",
+      "target": "contract_ml_state_interface",
+      "relation": "constrains",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 14. Anti-Leakage",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_labels_features_separation",
+      "target": "contract_offline_rl_transition_interface",
+      "relation": "constrains",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 14. Anti-Leakage",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_future_required_components",
+      "target": "contract_promotion_criteria",
+      "relation": "supports",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 15. Outputs Esperados Fututos",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_future_required_components",
+      "target": "contract_state_vector_minimum_schema",
+      "relation": "requires_schema_contract",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 15. Outputs Esperados Fututos",
+      "weight": 1.0
+    },
+    {
+      "source": "contract_promotion_criteria",
+      "target": "contract_institutional_market_state",
+      "relation": "governs_promotion_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_contract_v0_1.md",
+      "source_location": "## 19. Criterio De Promocion",
+      "weight": 1.0
+    },
+    {
+      "source": "map_market_state_representation_source_file_map_v0_1",
+      "target": "map_source_file_map",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "# Market State Representation Source File Map v0.1",
+      "weight": 1.0
+    },
+    {
+      "source": "map_source_file_map",
+      "target": "map_event_first_sources",
+      "relation": "maps_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## Lista Nuclear",
+      "weight": 1.0
+    },
+    {
+      "source": "map_source_file_map",
+      "target": "map_market_science_sources",
+      "relation": "maps_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## Market Science",
+      "weight": 1.0
+    },
+    {
+      "source": "map_source_file_map",
+      "target": "map_alphaevolve_evaluator_sources",
+      "relation": "maps_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## AlphaEvolve / Evaluadores",
+      "weight": 1.0
+    },
+    {
+      "source": "map_source_file_map",
+      "target": "map_data_foundation_outputs_contract",
+      "relation": "maps_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## Data Foundation Outputs",
+      "weight": 1.0
+    },
+    {
+      "source": "map_event_first_sources",
+      "target": "contract_event_engine",
+      "relation": "supports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## Lista Nuclear",
+      "weight": 1.0
+    },
+    {
+      "source": "map_feature_engine_source",
+      "target": "contract_market_state",
+      "relation": "represents_observable_state",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## Estado / Evento",
+      "weight": 1.0
+    },
+    {
+      "source": "map_event_engine_source",
+      "target": "contract_event_engine",
+      "relation": "documents",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## Estado / Evento",
+      "weight": 1.0
+    },
+    {
+      "source": "map_ml_rl_sources",
+      "target": "contract_event_state",
+      "relation": "mentions",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## ML / RL",
+      "weight": 1.0
+    },
+    {
+      "source": "map_ml_rl_sources",
+      "target": "contract_offline_rl",
+      "relation": "supports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## ML / RL",
+      "weight": 1.0
+    },
+    {
+      "source": "map_market_science_sources",
+      "target": "contract_microstructure_domain",
+      "relation": "connects",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## Market Science",
+      "weight": 1.0
+    },
+    {
+      "source": "map_market_science_sources",
+      "target": "contract_causality_mechanisms",
+      "relation": "connects",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## Market Science",
+      "weight": 1.0
+    },
+    {
+      "source": "map_alphaevolve_evaluator_sources",
+      "target": "contract_locked_evaluator_rule",
+      "relation": "supports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## AlphaEvolve / Evaluadores",
+      "weight": 1.0
+    },
+    {
+      "source": "map_alphaevolve_evaluator_sources",
+      "target": "contract_evolution_systems_alphaevolve",
+      "relation": "supports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## AlphaEvolve / Evaluadores",
+      "weight": 1.0
+    },
+    {
+      "source": "map_data_foundation_outputs_contract",
+      "target": "contract_data_foundation_outputs",
+      "relation": "documents",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## Data Foundation Outputs",
+      "weight": 1.0
+    },
+    {
+      "source": "map_data_foundation_outputs_contract",
+      "target": "contract_market_state",
+      "relation": "produces_defendible_state_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## Data Foundation Outputs",
+      "weight": 1.0
+    },
+    {
+      "source": "map_detected_gap_market_state_representation",
+      "target": "contract_market_state_representation",
+      "relation": "motivates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "market_state_representation_source_file_map_v0_1.md",
+      "source_location": "## Estado Del Hueco Detectado",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "metadata": {
+    "agent_mode": "codex_subagent_semantic_extraction",
+    "scope": "market_state_representation_20260628",
+    "post_extraction_correction": "Renamed duplicate Source File Map labels to prevent Graphify build_from_json ghost-duplicate collapse into self-loop."
+  }
+}

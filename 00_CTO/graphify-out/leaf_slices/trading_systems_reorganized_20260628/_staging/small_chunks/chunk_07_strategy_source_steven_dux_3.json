@@ -1,0 +1,99 @@
+{
+  "parent_chunk": "strategy_source_steven_dux",
+  "subchunk": 3,
+  "scope_root": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS",
+  "files": [
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\FACTORS\\Float_Rotation\\FACTOR.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Float_Rotation/FACTOR.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Float_Rotation/FACTOR.md",
+      "bytes": 9102,
+      "line_count": 442,
+      "word_count_approx": 1223,
+      "sha256": "2a4ffd188f9287d6becbbfe39dd09d9f68a3fc30fb00fdff537f28bef73c1bb8"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\FACTORS\\Neutralized_Area\\FACTOR.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Neutralized_Area/FACTOR.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Neutralized_Area/FACTOR.md",
+      "bytes": 8635,
+      "line_count": 406,
+      "word_count_approx": 1119,
+      "sha256": "436bb1d7688fc1337a89f5b72f82e63d82bd104e23133e84102b653bf5f2361f"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\FACTORS\\Short_Seller_Trap_Layers\\FACTOR.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Short_Seller_Trap_Layers/FACTOR.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Short_Seller_Trap_Layers/FACTOR.md",
+      "bytes": 7790,
+      "line_count": 359,
+      "word_count_approx": 1074,
+      "sha256": "b2b66a738ae9ca805315917f91642622cd0f1881b7e911bbfe911c1476cee846"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\SHORT\\Bounce_Plus_Gap_Up_Short\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Bounce_Plus_Gap_Up_Short/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Bounce_Plus_Gap_Up_Short/STRATEGY.md",
+      "bytes": 7391,
+      "line_count": 337,
+      "word_count_approx": 1030,
+      "sha256": "646c1b6637bcbc10f02eb63664fec2c4b43ee016671a5f104da52686fd5b3b73"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\SHORT\\Parabolic_Breakout_Failed_Breakout\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Parabolic_Breakout_Failed_Breakout/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Parabolic_Breakout_Failed_Breakout/STRATEGY.md",
+      "bytes": 5054,
+      "line_count": 236,
+      "word_count_approx": 660,
+      "sha256": "395f62f2d5a2a60e842ad8993e01239048501ff34bd272ed8a630881769b75cc"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\LONG\\Gap_Up_Buying\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/LONG/Gap_Up_Buying/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/LONG/Gap_Up_Buying/STRATEGY.md",
+      "bytes": 4731,
+      "line_count": 234,
+      "word_count_approx": 643,
+      "sha256": "a06c9479771de916e5dff1f64ba0042293ec7af89734c24a70895b2781f12788"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\FACTORS\\Crowded_Ticker_Context\\FACTOR.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Crowded_Ticker_Context/FACTOR.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Crowded_Ticker_Context/FACTOR.md",
+      "bytes": 4796,
+      "line_count": 239,
+      "word_count_approx": 631,
+      "sha256": "a6cc14f2050359c950c950d0a7a7e2ffd5f28f5c032ce61fdcb724dfb0a19c8f"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\SHORT\\Double_Intraday_Top\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Double_Intraday_Top/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Double_Intraday_Top/STRATEGY.md",
+      "bytes": 4626,
+      "line_count": 244,
+      "word_count_approx": 602,
+      "sha256": "a6113451eaba1d0cfb33b115e2328570c4061eb8e7e614c7b19d589137681a6e"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\LONG\\Dip_Buying_Multi_Day_Runner\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/LONG/Dip_Buying_Multi_Day_Runner/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/LONG/Dip_Buying_Multi_Day_Runner/STRATEGY.md",
+      "bytes": 4193,
+      "line_count": 236,
+      "word_count_approx": 578,
+      "sha256": "e6f13ce866b212c64f030f562455b0c91b024eb7fcf5c2aa37e67cfead413a60"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\SHORT\\Multi_Day_Top_Risk_Reward\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Multi_Day_Top_Risk_Reward/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Multi_Day_Top_Risk_Reward/STRATEGY.md",
+      "bytes": 3809,
+      "line_count": 204,
+      "word_count_approx": 508,
+      "sha256": "28dfec66bc3c280c9d272ff70fc5d792e20808e8129e3aabc412fa5487c8917a"
+    }
+  ],
+  "word_count_approx": 8068,
+  "chunk_id": 7
+}

@@ -78,6 +78,21 @@ Minimum fields:
 The pre-manifest is not replaced by the final manifest. It exists so that a
 human or a future agent can understand a run even if the machine loses power.
 
+JSON telemetry files that are rewritten during a run, especially heartbeat and
+PID manifests, must use a Windows-safe replacement strategy. A script must not
+depend on `Move-Item -Force` as the only replacement mechanism for an existing
+JSON file, because it can fail with "cannot create a file that already exists"
+and kill the wrapper while the data operation itself is otherwise healthy.
+
+Acceptable patterns include:
+
+- write to a unique temporary file and replace the target with
+  `System.IO.File.Replace` plus a temporary backup file;
+- use a documented fallback that preserves the run or degrades telemetry
+  gracefully;
+- never let a heartbeat rewrite race silently corrupt or stop the governed
+  operation.
+
 ### 3.2. PID Manifest
 
 The PID manifest must record:
@@ -155,11 +170,28 @@ Minimum monitor behavior:
 
 - show latest heartbeat;
 - show PID liveness;
+- show wrapper PID liveness when available;
 - show elapsed time;
 - show stage/current item;
 - show log size and last write time;
 - show output drive free space when available;
 - show final manifest/summary when present.
+
+If the latest heartbeat says `status=running` but:
+
+- the heartbeat is stale;
+- the wrapper PID is not alive;
+- no active child PID is alive;
+- and no final manifest/summary exists;
+
+then the monitor MUST NOT keep presenting the operation as simply running. It
+must surface a derived state such as:
+
+```text
+status=stale_no_process raw_status=running
+```
+
+This protects human operators from confusing a stale heartbeat with live work.
 
 ### 3.5.1. Compact Progress Lines
 
@@ -174,6 +206,12 @@ Required line shape:
 
 ```text
 [timestamp] status=<status> stage=<stage> processes=<n> latest_age_sec=<n> elapsed_sec=<n> progress=<done>/<total> item=<current_item> cpu=<n> io_read_Bps=<n> io_write_Bps=<n> output_free_GB=<n>
+```
+
+When wrapper PID liveness is available, compact mode should expose it:
+
+```text
+wrapper_alive=<true|false>
 ```
 
 When the operation exposes domain counters, the compact line must include them.

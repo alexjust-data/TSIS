@@ -44,6 +44,7 @@ Allowed context references:
 instrument_master_v0_1
 market_calendar_v0_1
 dataset_certification_matrix_v0_1
+daily_scanner_candidates_table_v0_1 as candidate-set lineage when present
 halts_table_v0_1
 ```
 

@@ -5,6 +5,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+import pandas as pd
+
 from _helpers.data_foundation import write_json_artifact
 
 
@@ -231,3 +233,96 @@ def test_event_state_builder_rejects_post_event_review_as_ml_feature(
     )
     assert result.returncode != 0
     assert "post_event/replay rows cannot be valid_for_ml_feature_candidate" in result.stderr
+
+
+def test_event_state_candidate_materializes_from_market_state_candidate(
+    tsis_artifacts_dir: Path,
+) -> None:
+    market_output_root = tsis_artifacts_dir / "event_state_upstream_market_state_candidate"
+    market_result = subprocess.run(
+        [
+            sys.executable,
+            str(MODULE_ROOT / "scripts/materialize_market_state_table.py"),
+            "--materialize-candidate",
+            "--candidate-output-root",
+            str(market_output_root),
+            "--overwrite",
+        ],
+        cwd=MODULE_ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    market_payload = json.loads(market_result.stdout)
+
+    output_root = tsis_artifacts_dir / "event_state_candidate_from_market_state"
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(CONTRACT_PATHS["builder"]),
+            "--materialize-candidate",
+            "--market-state-root",
+            market_payload["output"],
+            "--market-state-manifest",
+            market_payload["manifest"],
+            "--candidate-output-root",
+            str(output_root),
+            "--overwrite",
+        ],
+        cwd=MODULE_ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    payload = json.loads(result.stdout)
+    manifest = json.loads(Path(payload["manifest"]).read_text(encoding="utf-8"))
+    frame = pd.read_parquet(payload["output"])
+
+    assert manifest["dataset_id"] == "event_state_table_v0_1_candidate"
+    assert manifest["status"] == "controlled_candidate_not_promoted"
+    assert manifest["full_universe_claim"] is False
+    assert len(frame) == 50
+    assert frame["ticker"].nunique() == 9
+    assert frame["event_state_id"].is_unique
+    assert set(frame["state_role"]) == {"pre_event", "post_event_review"}
+    assert int(frame["state_role"].eq("pre_event").sum()) == 25
+    assert int(frame["state_role"].eq("post_event_review").sum()) == 25
+    assert frame["valid_for_pattern_discovery"].all()
+    assert not frame["valid_for_ml_feature_candidate"].any()
+    assert not frame["valid_for_rl_state_candidate"].any()
+    assert not frame["valid_for_rl_training_direct"].any()
+    assert not frame["valid_for_execution_simulator_direct"].any()
+    assert not frame["full_universe_claim"].any()
+    assert not frame["execution_truth"].any()
+    assert not frame["outcome_values_inline_allowed"].any()
+    assert not frame["label_columns_inline_allowed"].any()
+    assert not frame["reward_columns_inline_allowed"].any()
+
+    prohibited_prefixes = (
+        "outcome__",
+        "label__",
+        "reward__",
+        "action__",
+        "policy__",
+        "fill__",
+        "pnl__",
+        "future__",
+        "strategy__",
+        "signal__",
+    )
+    assert not any(column.startswith(prohibited_prefixes) for column in frame.columns)
+
+    cutoff = pd.to_datetime(frame["state_cutoff_utc"], utc=True)
+    decision_ts = pd.to_datetime(frame["decision_timestamp_utc"], utc=True)
+    assert not (cutoff > decision_ts).any()
+
+    write_json_artifact(
+        tsis_artifacts_dir,
+        "event_state_candidate_materialization_check.json",
+        {
+            "manifest": payload["manifest"],
+            "output": payload["output"],
+            "validations": manifest["validations"],
+            "upstream_market_state_manifest": market_payload["manifest"],
+        },
+    )

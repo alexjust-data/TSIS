@@ -6,6 +6,7 @@ param(
     [int]$Workers = 12,
     [int]$PollSeconds = 60,
     [int]$StaleMinutes = 20,
+    [int]$OrphanGraceMinutes = 3,
     [int]$MaxRestarts = 0,
     [string]$PythonExe = "python",
     [switch]$Once,
@@ -186,7 +187,7 @@ $restartCount = 0
 Write-Host "TSIS quote-guarded v0_2 supervisor"
 Write-Host ("Run root: {0}" -f $RunRoot)
 Write-Host ("Runner: {0}" -f $RunnerScript)
-Write-Host ("Workers: {0} | poll: {1}s | stale: {2}m" -f $Workers, $PollSeconds, $StaleMinutes)
+Write-Host ("Workers: {0} | poll: {1}s | stale: {2}m | orphan grace: {3}m" -f $Workers, $PollSeconds, $StaleMinutes, $OrphanGraceMinutes)
 Write-Host ""
 
 while ($true) {
@@ -223,12 +224,18 @@ while ($true) {
     }
 
     $isStale = ($latestUtc -eq $null) -or ($ageMin -ge $StaleMinutes)
-    if ($isStale -and $orphanWrappers.Count -gt 0) {
+    $isOrphanRestartable = $orphanWrappers.Count -gt 0 -and (
+        $latestUtc -eq $null -or
+        $ageMin -ge $OrphanGraceMinutes
+    )
+    if ($isOrphanRestartable) {
         foreach ($orphan in $orphanWrappers) {
-            Write-Host ("[{0}] stale orphan runner wrapper detected; stopping PID {1}" -f (Get-Date).ToString("s"), $orphan.ProcessId)
+            Write-Host ("[{0}] orphan runner wrapper exceeded {1}m grace; stopping PID {2}" -f (Get-Date).ToString("s"), $OrphanGraceMinutes, $orphan.ProcessId)
             Write-SupervisorEvent -Root $RunRoot -Payload @{
-                event = "stale_orphan_wrapper_stopped"
+                event = "orphan_wrapper_grace_exceeded_stopped"
                 pid = $orphan.ProcessId
+                latest_output_age_min = $ageMin
+                orphan_grace_minutes = $OrphanGraceMinutes
                 command_line = $orphan.CommandLine
             }
             Stop-Process -Id ([int]$orphan.ProcessId) -Force -ErrorAction SilentlyContinue
@@ -236,12 +243,13 @@ while ($true) {
         $procs = @(Get-MatchingRepairProcesses -Root $RunRoot -Project $ProjectRoot)
     }
 
-    if ($procs.Count -eq 0 -and $isStale) {
+    if ($procs.Count -eq 0 -and ($isStale -or $isOrphanRestartable)) {
         if ($MaxRestarts -gt 0 -and $restartCount -ge $MaxRestarts) {
             Write-Host ("[{0}] restart limit reached ({1}); supervisor stays alive without starting a duplicate." -f (Get-Date).ToString("s"), $MaxRestarts)
         } else {
             $restartCount += 1
-            Write-Host ("[{0}] no matching process and output stale; starting runner, restart #{1}" -f (Get-Date).ToString("s"), $restartCount)
+            $reason = if ($isOrphanRestartable) { "orphan wrapper grace exceeded" } else { "output stale" }
+            Write-Host ("[{0}] no matching process after {1}; starting runner, restart #{2}" -f (Get-Date).ToString("s"), $reason, $restartCount)
             Start-RepairRunner -Root $RunRoot -Runner $RunnerScript -Project $ProjectRoot -WorkerCount $Workers -PythonPath $PythonExe -SkipPromotion ([bool]$NoPromoteManifest) | Out-Null
         }
     }

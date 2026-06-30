@@ -1,0 +1,135 @@
+{
+  "parent_chunk": "strategy_research_layers",
+  "subchunk": 1,
+  "scope_root": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS",
+  "files": [
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\README.md",
+      "relative_to_scope": "README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/README.md",
+      "bytes": 9942,
+      "line_count": 414,
+      "word_count_approx": 1206,
+      "sha256": "9bb841ba807d3951d839ef25bdeec123ed1256b48a15d10b944dbbb94492c65a"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\revision.md",
+      "relative_to_scope": "revision.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/revision.md",
+      "bytes": 7306,
+      "line_count": 445,
+      "word_count_approx": 879,
+      "sha256": "c93e1f31b79c3f15068e5c370c415732ac5ce8eeef218998842dca7615654b05"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\90_DISCRETIONARY_FRAMEWORKS\\README.md",
+      "relative_to_scope": "90_DISCRETIONARY_FRAMEWORKS/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/90_DISCRETIONARY_FRAMEWORKS/README.md",
+      "bytes": 642,
+      "line_count": 27,
+      "word_count_approx": 83,
+      "sha256": "91b280b8f10d8888ffe9694adb3fed0fdf728a2cd597b015277e3c8ac7319121"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\02_OUTCOME_RESEARCH\\README.md",
+      "relative_to_scope": "02_OUTCOME_RESEARCH/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/02_OUTCOME_RESEARCH/README.md",
+      "bytes": 622,
+      "line_count": 29,
+      "word_count_approx": 82,
+      "sha256": "00b5ea7b8d481b8a562d08b98277d58b7986b323431b31cb369629415117e312"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\01_EVENT_ENGINE_MODEL\\README.md",
+      "relative_to_scope": "01_EVENT_ENGINE_MODEL/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/01_EVENT_ENGINE_MODEL/README.md",
+      "bytes": 667,
+      "line_count": 31,
+      "word_count_approx": 79,
+      "sha256": "ba17dc520a07ff20913a515832edfcf228e97f154608b5c32f9150b607d70ca2"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\06_PATTERN_DISCOVERY\\README.md",
+      "relative_to_scope": "06_PATTERN_DISCOVERY/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/06_PATTERN_DISCOVERY/README.md",
+      "bytes": 545,
+      "line_count": 28,
+      "word_count_approx": 78,
+      "sha256": "a67bc71075e75a2dacb0c18c1b0e2c68aa301e346e328fb357f3a0e86ece657c"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\10_EVOLUTION_SYSTEMS\\README.md",
+      "relative_to_scope": "10_EVOLUTION_SYSTEMS/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/10_EVOLUTION_SYSTEMS/README.md",
+      "bytes": 593,
+      "line_count": 32,
+      "word_count_approx": 76,
+      "sha256": "56dbfe1f2650ae39f31680dae928e658cb8377d5f7be4c229ce6c0d91f5b127e"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\05_EDGE_HYPOTHESES\\README.md",
+      "relative_to_scope": "05_EDGE_HYPOTHESES/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/05_EDGE_HYPOTHESES/README.md",
+      "bytes": 513,
+      "line_count": 27,
+      "word_count_approx": 74,
+      "sha256": "dfbe9fcc6f2f53d72d62e172379c0b8d3a88e0a1fb59c19ee4786097d3be2c0c"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\04_STRATEGY_RESEARCH\\README.md",
+      "relative_to_scope": "04_STRATEGY_RESEARCH/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/04_STRATEGY_RESEARCH/README.md",
+      "bytes": 545,
+      "line_count": 29,
+      "word_count_approx": 72,
+      "sha256": "c53ab21dd466844bd2f79e0f546706985dddfe3e79ae19d4d7d453ba866b28cd"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\09_DECISION_MODELS\\README.md",
+      "relative_to_scope": "09_DECISION_MODELS/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/09_DECISION_MODELS/README.md",
+      "bytes": 520,
+      "line_count": 29,
+      "word_count_approx": 71,
+      "sha256": "d262cb0c008761405067de37e1d261a967dd4cca3f047c0618eea1a90fc9af48"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\08_EXECUTION_MODELS\\README.md",
+      "relative_to_scope": "08_EXECUTION_MODELS/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/08_EXECUTION_MODELS/README.md",
+      "bytes": 540,
+      "line_count": 28,
+      "word_count_approx": 69,
+      "sha256": "d35e35a8abe698717783cf6b7b35cf04d1a0f62201a1a513cda337218aa18d80"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\11_SQUEEZE_RESEARCH\\README.md",
+      "relative_to_scope": "11_SQUEEZE_RESEARCH/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/11_SQUEEZE_RESEARCH/README.md",
+      "bytes": 526,
+      "line_count": 28,
+      "word_count_approx": 69,
+      "sha256": "14097daf11d86b8936a5dedeb84ca858bb8dae1f5e377d52f11ba1f9dc2e0123"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\07_CLUSTER_RESEARCH\\README.md",
+      "relative_to_scope": "07_CLUSTER_RESEARCH/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/07_CLUSTER_RESEARCH/README.md",
+      "bytes": 479,
+      "line_count": 27,
+      "word_count_approx": 66,
+      "sha256": "9aaa67499c3c14f20ed1930e6be1e6dbdaeac07f5cff64ffb404df4feee2f0c3"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\99_EXPERIMENTAL\\README.md",
+      "relative_to_scope": "99_EXPERIMENTAL/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/99_EXPERIMENTAL/README.md",
+      "bytes": 445,
+      "line_count": 26,
+      "word_count_approx": 61,
+      "sha256": "403aa54ea4907d1fc7a3e51286d6d594d6dca5906b20772c313674fb19072198"
+    }
+  ],
+  "word_count_approx": 2965,
+  "chunk_id": 12
+}

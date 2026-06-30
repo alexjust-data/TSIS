@@ -118,9 +118,230 @@ Por ventana dedicada:
 
 ## Entradas activas
 
-### 2026-06-25 - Market State Representation contract
+### 2026-06-30 - TSIS Lab Architecture v2
 
 Estado: pending
+Severidad: HIGH
+
+Slice:
+
+```text
+00_CTO/
+```
+
+Motivo:
+
+- se creo `TSIS_LAB_ARCHITECTURE_v2.md` como arquitectura CTO candidata del
+  2026-06-30;
+- la v2 actualiza la cadena logica de TSIS con Data Foundation madura,
+  Scanner Candidate Selection, Market State Representation, Event State,
+  Outcome Research, Strategy Library, Decision Models, Execution Models,
+  Evaluation Systems, Evolution Systems / AlphaEvolve y Shadow Live;
+- separa explicitamente `data`, `scanner_candidate`, `market_state`,
+  `event_state`, `event`, `outcome`, `strategy`, `decision_model`,
+  `execution_model` y `evolution_system`;
+- evita que futuros agentes confundan scanner rows, seeds controlados o
+  materializaciones parciales con estado institucional ML/RL-ready;
+- enlaza la arquitectura v2 con Graphify governance sin editar manualmente
+  `graphify-out/graph.json`, `GRAPH_REPORT.md` ni `graph.html`.
+
+Changed paths:
+
+```text
+00_CTO/TSIS_LAB_ARCHITECTURE_v2.md
+00_CTO/README.md
+00_CTO/CHANGELOG.md
+00_CTO/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Required Graphify action:
+
+```text
+Include this architecture update in the next official 00_CTO architecture or
+governance leaf rebuild. Do not perform a blind root merge. Do not manually
+edit generated Graphify outputs.
+```
+
+### 2026-06-30 - Scanner Candidate Selection architecture
+
+Estado: pending
+Severidad: HIGH
+
+Slice:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/
+```
+
+Motivo:
+
+- se creo la subcapa CTO
+  `05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/`;
+- la nueva documentacion explica scanner candidate selection como capa previa a
+  `market_state` y `event_state`;
+- se separa la visibilidad operacional `trade_station_like_scanner_v0_1` de
+  `broad_in_play_discovery_scanner_v0_1`;
+- se enlazan los contratos operativos reales de `01_foundations` sin crear una
+  segunda source of truth;
+- se actualizan los mapas CTO para que futuros agentes entiendan que scanner
+  rows no son estados ML/RL, estrategias, labels, outcomes, rewards ni fills.
+
+Changed paths:
+
+```text
+00_CTO/11_MARKET_SCIENCE/README.md
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/market_state_representation_contract_v0_1.md
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/market_state_representation_source_file_map_v0_1.md
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/
+00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/README.md
+00_CTO/TSIS_LAB_ARCHITECTURE.md
+00_CTO/README.md
+00_CTO/CHANGELOG.md
+00_CTO/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Required Graphify action:
+
+```text
+Rebuild or update the Market State Representation leaf with official Graphify.
+Do not manually edit graphify-out/graph.json, GRAPH_REPORT.md or graph.html.
+Root graph merge is not required for this documentation step.
+```
+
+### 2026-06-28 - Graphify no-API and version-alignment protocol
+
+Estado: leaf_built_root_not_merged
+Severidad: HIGH
+
+Slice:
+
+```text
+core_cto_graph / graphify_governance_slice
+```
+
+Motivo:
+
+- `PROJECT_RULES.md` and `00_CTO/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md` now
+  distinguish upstream Graphify v0.9.1 behavior from the currently observed
+  installed package version.
+- The protocol now states that no external API keys are required in Codex:
+  without Gemini/Google keys, semantic extraction for docs/papers/images must
+  use host-agent/subagent extraction, not an invented API backend.
+- Future `BUILD_MANIFEST.md` files must record package version, skill/source
+  version, upstream reference, no-API mode and semantic coverage.
+
+Changed paths:
+
+```text
+PROJECT_RULES.md
+CHANGELOG.md
+00_CTO/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md
+00_CTO/GRAPHIFY_REFRESH_QUEUE.md
+00_CTO/CHANGELOG.md
+```
+
+Required Graphify action:
+
+```text
+Include these governance files in the next official governance/CTO leaf.
+Do not treat this queue entry as graph content or as proof of rebuild.
+```
+
+Build result:
+
+```text
+Built cross-project governance leaf:
+00_CTO/graphify-out/leaf_slices/graphify_governance_20260629/
+
+Graphify package: graphifyy 0.9.1
+Semantic mode: Codex host inline extraction, no external API required
+Nodes: 37
+Edges: 60
+Communities: 9
+Diagnostic: clean
+Root graph merge: not performed
+```
+
+### 2026-06-28 - Graphify build baseline provenance rule
+
+Estado: leaf_built_root_not_merged
+Severidad: HIGH
+
+Cambios:
+
+- `C:\TSIS_Data\PROJECT_RULES.md`
+- `00_CTO/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md`
+- `00_CTO/CHANGELOG.md`
+
+Motivo:
+
+- los proximos builds Graphify deben dejar un baseline Git reconstruible;
+- cada `BUILD_MANIFEST.md` nuevo debe registrar commit, dirty state, corpus
+  exacto, cobertura de queue, diagnostico y comandos de delta;
+- sin estos campos no se puede calcular con rigor que cambio desde el ultimo
+  grafo.
+
+Accion recomendada:
+
+```text
+Incluir esta regla en el proximo refresh del leaf de gobernanza Graphify de
+00_CTO o del slice CTO afectado. No crear ni modificar graph.json a mano.
+```
+
+Root action:
+
+```text
+No root merge por esta entrada de forma aislada.
+```
+
+Build result:
+
+```text
+Covered by:
+00_CTO/graphify-out/leaf_slices/graphify_governance_20260629/BUILD_MANIFEST.md
+
+The manifest records graphify package version, skill path/hash, upstream
+reference, no-API mode, semantic extraction mode, commit, dirty state, exact
+corpus, diagnostics and next-delta commands.
+```
+
+### 2026-06-28 - Strategy Library trader-source reorganization
+
+Estado: pending
+Severidad: CRITICAL
+
+Cambios:
+
+- `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/`
+- `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/03_Edu_Trades/`
+- `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/04_Xavineta/`
+- `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/`
+- `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/`
+- `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/`
+- Steven Dux source references to external transcript and Duxinator roots.
+
+Motivo:
+
+- separa enseñanzas fuente por trader de estrategias/factores TSIS propios;
+- mueve documentos, assets e indices de Steven Dux fuera de `LONG/stevenDux`,
+  `SHORT/stevenDux`, `FACTORS/stevenDux` y `source_assets/steven_dux`;
+- mantiene `LONG/`, `SHORT/` y `FACTORS/` como espacios TSIS para estrategias
+  y factores consolidados o en investigacion;
+- actualiza enlaces fuente a transcripts organizados por video en
+  `E:\TSIS_YOUTUBE\00_TRADERS\00_Steven_Dux\TRANSCRIPTS\` y al root activo
+  `E:\00_TRADING\04_Steven_Dux\Duxinator\...`;
+- altera rutas que Graphify puede conservar como nodos antiguos.
+
+Accion recomendada:
+
+```text
+Rebuild del leaf Trading Systems en ventana dedicada.
+No integrar root sin limpiar/reemplazar el slice antiguo.
+```
+
+### 2026-06-25 - Market State Representation contract
+
+Estado: leaf_built
 Severidad: HIGH
 
 Cambios:
@@ -146,6 +367,32 @@ Rebuild leaf:
 
 Despues decidir si se actualiza el leaf de 11_MARKET_SCIENCE o el root CTO.
 No editar graphify-out manualmente.
+```
+
+Build result:
+
+```text
+Output:
+00_CTO/graphify-out/leaf_slices/market_state_representation_20260628/
+
+Stats:
+- corpus_files: 2
+- detected_words_approx: 4035
+- extraction_nodes: 60
+- extraction_edges: 84
+- nodes: 60
+- edges: 83
+- communities: 7
+
+Validation:
+- graphify diagnose multigraph passed with 0 missing endpoints, 0 dangling
+  endpoints, 0 self-loops and 0 exact duplicate edges.
+- graphify explain passed on node `Market State Representation`.
+- BUILD_MANIFEST.md includes graph_build_git_commit, dirty state, exact corpus,
+  queue coverage, diagnostics and next-delta commands.
+
+Root:
+- 00_CTO root graph intentionally not updated.
 ```
 
 ### GFQ-20260623-001 - Long strategy definitions for DAS and Breakout

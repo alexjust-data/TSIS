@@ -32,6 +32,12 @@
   - [`outputs/data_foundation_outputs_status_matrix_v0_1.md`](#outputsdatafoundationoutputsstatusmatrixv01md)
   - [`outputs/market_state_event_state_composition_contract_v0_1.md`](#outputsmarketstateeventstatecompositioncontractv01md)
   - [`outputs/market_state_event_state_build_loop_runbook_v0_1.md`](#outputsmarketstateeventstatebuildlooprunbookv01md)
+  - [`outputs/market_state_coverage_and_lookback_policy_v0_1.md`](#outputsmarketstatecoverageandlookbackpolicyv01md)
+  - [`outputs/master_intraday_bar_table_wider_scope_materialization_plan_v0_1.md`](#outputsmasterintradaybartablewiderscopematerializationplanv01md)
+  - [`outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md`](#outputsmasterintradaybartablequoteguardedcandidatecontractv01md)
+  - [`outputs/microstructure_features_table_multi_window_materialization_plan_v0_1.md`](#outputsmicrostructurefeaturestablemultiwindowmaterializationplanv01md)
+  - [`outputs/daily_scanner_candidates_table_target_contract_v0_1.md`](#outputsdailyscannercandidatestabletargetcontractv01md)
+  - [`outputs/scanner_framework_and_definitions_contract_v0_1.md`](#outputsscannerframeworkanddefinitionscontractv01md)
   - [`outputs/short_sale_constraints_table_target_contract_v0_1.md`](#outputsshortsaleconstraintstabletargetcontractv01md)
   - [`outputs/short_sale_constraints_data_acquisition_runbook_v0_1.md`](#outputsshortsaleconstraintsdataacquisitionrunbookv01md)
   - [`daily_return_labels_consumer_contract_v0_1.md`](#dailyreturnlabelsconsumercontractv01md)
@@ -76,6 +82,7 @@
   - [`ohlcv_1m_historical_closeout_lt1b_reconciliation_v0_1.md`](#ohlcv1mhistoricalcloseoutlt1breconciliationv01md)
   - [`ohlcv_1m_split_normalized_operational_landing_v0_1.md`](#ohlcv1msplitnormalizedoperationallandingv01md)
   - [`ohlcv_1m_split_normalized_full_universe_materialization_runbook_v0_1.md`](#ohlcv1msplitnormalizedfulluniversematerializationrunbookv01md)
+  - [`ohlcv_1m_split_normalized_split_affected_materialization_results_v0_1.md`](#ohlcv1msplitnormalizedsplitaffectedmaterializationresultsv01md)
   - [`ohlcv_1m_split_normalized_incremental_materialization_plan_v0_1.md`](#ohlcv1msplitnormalizedincrementalmaterializationplanv01md)
   - [`ohlcv_1m_split_normalized_semantic_pilot_v0_1.md`](#ohlcv1msplitnormalizedsemanticpilotv01md)
   - [`ohlcv_1m_split_normalized_pilot_manifest_v0_2.md`](#ohlcv1msplitnormalizedpilotmanifestv02md)
@@ -625,6 +632,24 @@ Regla central:
 - no se lanza full-universe ciego; primero denominador, manifest, tests,
   quality gates, versionado y cola Graphify.
 
+### `outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md`
+
+Contrato candidate para preparar
+`master_intraday_bar_table_v0_2_candidate_quote_guarded`.
+
+Define:
+
+- que la ruta quote-guarded existe, pero no esta materializada;
+- que `master_intraday_bar_table_v0_1` no se toca ni se reinterpreta;
+- que el bridge actual usa el run
+  `runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838`;
+- que la fuente final debe pasar a
+  `E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/` cuando el
+  repair termine y valide;
+- que `D:/quotes` es solo lineage provisional candidate-only;
+- que `full_universe_claim=false` hasta tener denominador, manifest y
+  validacion final.
+
 ### `outputs/microstructure_features_table_multi_window_materialization_plan_v0_1.md`
 
 Contrato operativo para el siguiente loop de ampliacion de
@@ -695,14 +720,91 @@ Define:
 - checklist recuperable si se corta la sesion;
 - contratos creados para schemas, dataset contracts, policies, validators,
   registry target entries, builder skeletons y tests;
-- barreras que impiden llamar materializada a una tabla que aun no tiene
+- barreras que impiden llamar oficial a una tabla candidate aunque ya tenga
   parquet/manifest;
+- loop `2026-06-29` con candidates controlados materializados:
+  - `market_state_table_v0_1_candidate_microstructure_halt_controlled`;
+  - `event_state_table_v0_1_candidate_microstructure_halt_controlled`;
 - criterio de cierre del loop documental/contractual.
 
 Regla central:
 
-- el stack skeleton puede estar completo aunque `market_state_table_v0_1` y
-  `event_state_table_v0_1` sigan sin materializar.
+- el stack skeleton puede estar completo y los candidates pueden existir bajo
+  E-root, pero `market_state_table_v0_1` y `event_state_table_v0_1` oficiales
+  siguen sin promocion institucional.
+
+### `outputs/market_state_coverage_and_lookback_policy_v0_1.md`
+
+Politica de cobertura, scanner diario y lookbacks para tablas de estado.
+
+Fija que:
+
+- `daily_in_play` no equivale a estado completo;
+- el contexto compacto puede ser full-history;
+- la microestructura pesada debe construirse por ventanas gobernadas;
+- estrategias como `Short Into Resistance` requieren memoria historica as-of
+  mediante lookback features, no solo ticker-dia;
+- futuros manifests de `market_state_table` y `event_state_table` deben
+  declarar scanner, denominador, scope, lookback policy y root lineage.
+
+### `outputs/daily_scanner_candidates_table_target_contract_v0_1.md`
+
+Contrato objetivo para la tabla de candidatos diarios/in-play.
+
+Define:
+
+- que `daily_scanner_candidates_table` reconstruye candidate sets por
+  definicion versionada de scanner;
+- que debe conservar filtros, ranking, top-N, denominador, as-of, source
+  lineage y quality flags;
+- que no equivale a `market_state_table`, universo completo, label, reward,
+  estrategia ni execution truth;
+- que su primer uso esperado es replay historico controlado para alimentar
+  builders de estado;
+- que requiere schema, dataset contract, registry, consumption policy y
+  validators antes de materializar.
+
+Builder y evidencia controlada:
+
+```text
+scripts/materialize_daily_scanner_candidates_table.py
+tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder.py
+C:/TSIS_Data/tests/test_runs/2026-06-29/daily_scanner_candidates_replay_20250102_20250110_v0_1/
+```
+
+Esa evidencia no es materializacion oficial bajo `E:/TSIS/data/`.
+
+Regla central:
+
+- el scanner dice donde mirar; el estado completo se construye despues con
+  contexto historico, lookbacks, calidad y ventanas gobernadas.
+
+### `outputs/scanner_framework_and_definitions_contract_v0_1.md`
+
+Contrato del framework inicial de scanners para
+`daily_scanner_candidates_table_v0_1`.
+
+Separa:
+
+```text
+trade_station_like_scanner_v0_1
+  -> visibilidad operativa humana
+
+broad_in_play_discovery_scanner_v0_1
+  -> discovery amplio para evitar sesgo de llegada tardia
+```
+
+Regla central:
+
+- `volume_today > 500000` y ranking por `% change 1D` son validos para
+  reproducir un scanner operativo tipo TradeStation, pero no deben ser el unico
+  scanner general de research ni el unico input para DAS.
+
+Las configs versionadas viven en:
+
+```text
+configs/data_foundation_outputs/scanner_definitions/
+```
 
 ### `outputs/short_sale_constraints_table_target_contract_v0_1.md`
 
@@ -1023,6 +1125,14 @@ Runbook para materializaciones amplias de `1m_split_normalized` destinadas a
 backtesting intradia oficial y ML. Distingue full-universe logico frente a copia
 fisica completa y deja comandos PowerShell para ejecuciones largas.
 
+### `ohlcv_1m_split_normalized_split_affected_materialization_results_v0_1.md`
+
+Resultado contractual del run `split_affected_20260627_192314`.
+
+Fija que el candidato `E:/TSIS/data/ohlcv_1m_split_normalized_full_universe_candidate`
+fue materializado con `115667` outputs y auditado con `FAIL = 0`, pero queda
+pendiente de gate de promocion antes de consumo oficial.
+
 ### `ohlcv_1m_split_normalized_incremental_materialization_plan_v0_1.md`
 
 Plan incremental de materializacion.
@@ -1083,11 +1193,12 @@ No convierte la capa piloto en full-universe por si solo.
 ### `quotes/quotes_staging_clone_runbook_v0_1.md`
 
 Runbook operacional para clonar `D:/quotes` hacia
-`E:/TSIS/data/quotes_` como staging root sin tocar
-`E:/TSIS/data/quotes`.
+`E:/TSIS/data/quotes_`, que es la raiz objetivo oficial en E pendiente de
+auditoria post-copy y promocion. `E:/TSIS/data/quotes` queda tratado como raiz
+E incompleta/legacy.
 
-Fija que `quotes_` no es source of truth hasta que exista auditoria post-copy y
-decision separada de promocion.
+Fija que `quotes_` no es consumible por downstream oficial hasta que exista
+auditoria post-copy y decision separada de promocion.
 
 ### `quotes_acceptance_policy_explained.md`
 

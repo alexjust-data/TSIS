@@ -1,0 +1,130 @@
+# Graph Report - C:\TSIS_Data  (2026-06-29)
+
+## Corpus Check
+- 88 files · ~37,485 words
+- Verdict: corpus is large enough that graph structure adds value.
+
+## Summary
+- 122 nodes · 653 edges · 11 communities
+- Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 31 edges (avg confidence: 0.85)
+- Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `362a031e`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
+
+## Community Hubs (Navigation)
+- [[_COMMUNITY_Quotes Certification|Quotes Certification]]
+- [[_COMMUNITY_Trades Certification|Trades Certification]]
+- [[_COMMUNITY_Trades Certification|Trades Certification]]
+- [[_COMMUNITY_Quotes Certification|Quotes Certification]]
+- [[_COMMUNITY_Quotes Certification|Quotes Certification]]
+- [[_COMMUNITY_Halts Certification|Halts Certification]]
+- [[_COMMUNITY_Short Certification|Short Certification]]
+- [[_COMMUNITY_Trades Certification|Trades Certification]]
+- [[_COMMUNITY_Additional Certification|Additional Certification]]
+- [[_COMMUNITY_Reference Certification|Reference Certification]]
+- [[_COMMUNITY_1m Certification|1m Certification]]
+
+## God Nodes (most connected - your core abstractions)
+1. `Certification Decisions Topology` - 100 edges
+2. `Review Bucket` - 72 edges
+3. `Bad Bucket` - 65 edges
+4. `Good Bucket` - 61 edges
+5. `Closeout Decision` - 46 edges
+6. `Present State` - 31 edges
+7. `certification_document` - 25 edges
+8. `closeout` - 23 edges
+9. `trades` - 23 edges
+10. `Certification Decisions Graph Protocol` - 22 edges
+
+## Surprising Connections (you probably didn't know these)
+- `Certification Decisions Topology` --references--> `Manifest`  [EXTRACTED]
+  01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/module_contracts/graphify/certification_decisions_graph_protocol.md → 01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/global_metrics/manifest.json
+- `00 Data Certification Graphify Official Build Protocol` --rationale_for--> `Certification Decisions Topology`  [INFERRED]
+  01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md → 01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/module_contracts/graphify/certification_decisions_graph_protocol.md
+- `Manifest` --references--> `Recovery Decision`  [EXTRACTED]
+  01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/global_metrics/manifest.json → 01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/module_contracts/graphify/certification_decisions_graph_protocol.md
+- `global_metrics` --references--> `Manifest`  [EXTRACTED]
+  01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/module_contracts/graphify/certification_decisions_graph_protocol.md → 01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/global_metrics/manifest.json
+- `global_metrics` --references--> `Manifest`  [EXTRACTED]
+  01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/module_contracts/graphify/certification_decisions_graph_protocol.md → 01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/global_metrics/manifest.json
+
+## Import Cycles
+- None detected.
+
+## Hyperedges (group relationships)
+- **additional Certification Evidence Stack** — certification_decisions_family_additional, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_01_contrato_additional_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_03_additional_root_cause_audit_phase1_closeout_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_04_additional_causal_overlay_closeout_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_04_additional_closeout_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_00_additional_current_state_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_01_additional_subblock_policy_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_02_additional_closeout_md [INFERRED 0.85]
+- **daily Certification Evidence Stack** — certification_decisions_family_daily, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_01_contrato_agent02_agent03_daily_04032026_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_04_daily_closeout_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_00_daily_current_state_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_01_daily_recovery_and_coverage_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_02_daily_quality_policy_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_03_daily_closeout_md [INFERRED 0.85]
+- **global_metrics Certification Evidence Stack** — certification_decisions_family_global_metrics, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_global_metrics_00_global_metrics_tables_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_global_metrics_01_global_metrics_tables_traceable_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_global_metrics_02_working_links_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_global_metrics_04_global_metrics_tables_traceable_plain_paths_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_global_metrics_manifest_json [INFERRED 0.85]
+- **halts Certification Evidence Stack** — certification_decisions_family_halts, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_halts_01_contrato_halts_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_halts_03_halts_root_cause_audit_phase1_closeout_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_halts_04_halts_causal_overlay_closeout_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_halts_04_halts_closeout_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_halts_00_halts_current_state_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_halts_01_halts_overlay_and_recovery_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_halts_02_halts_quality_policy_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_halts_03_halts_closeout_md [INFERRED 0.85]
+- **ohlcv_1m Certification Evidence Stack** — certification_decisions_family_ohlcv_1m, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_ohlcv_1m_01_contrato_agent02_agent03_ohlcv_1m_04032026_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_ohlcv_1m_04_ohlcv_1m_closeout_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_00_1m_current_state_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_01_1m_recovery_policy_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_02_1m_quality_policy_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_03_1m_closeout_md [INFERRED 0.85]
+- **quotes Certification Evidence Stack** — certification_decisions_family_quotes, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_quotes_v1_01_contrato_agent02_agent03_03312026_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_quotes_v2_04_quotes_full_c_d_closeout_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_00_quotes_certification_guide_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_01_quotes_certification_contract_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_02_quotes_expected_presence_logic_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_03_quotes_quality_policy_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_04_quotes_usage_policy_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_05_quotes_artifact_mapping_md [INFERRED 0.85]
+- **reference Certification Evidence Stack** — certification_decisions_family_reference, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_01_contrato_reference_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_03_reference_root_cause_audit_phase1_closeout_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_04_reference_causal_overlay_closeout_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_04_reference_closeout_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_reference_00_reference_current_state_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_reference_01_reference_causal_value_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_reference_02_reference_closeout_md [INFERRED 0.85]
+- **short Certification Evidence Stack** — certification_decisions_family_short, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_short_01_contrato_short_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_short_03_short_root_cause_audit_phase1_closeout_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_short_04_short_causal_overlay_closeout_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_short_04_short_closeout_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_short_00_short_current_state_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_short_01_short_recovery_and_limits_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_short_02_short_closeout_md [INFERRED 0.85]
+- **trades Certification Evidence Stack** — certification_decisions_family_trades, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_trades_v1_01_contrato_agent02_agent03_trades_04012026_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_00_trades_current_state_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_01_trades_label_assessment_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_02_trades_base_certification_decision_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_03_trades_old_vs_new_bucket_bridge_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_04_trades_provisional_cert_policy_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_05_trades_review_1m_reference_alignment_md, certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_06_trades_review_microstructure_md [INFERRED 0.85]
+
+## Communities (11 total, 0 thin omitted)
+
+### Community 0 - "Quotes Certification"
+Cohesion: 0.22
+Nodes (24): Exclusion Decision, Exclusion Decision, Expected State, Healthy State, Present State, Usable For State, contract, graphify_governance (+16 more)
+
+### Community 1 - "Trades Certification"
+Cohesion: 0.25
+Nodes (19): Recoverable Bucket, Recovery Decision, global_metrics, recovery, 01 Daily Recovery And Coverage, 00 Global Metrics Tables, 01 Global Metrics Tables Traceable, 04 Global Metrics Tables Traceable Plain Paths (+11 more)
+
+### Community 2 - "Trades Certification"
+Cohesion: 0.25
+Nodes (17): Good Bucket, certification_document, 02 Working Links, 08 Persistent Soft Crossed Mid Large Scale, 01 Reference Causal Value, 01 Trades Label Assessment, 02 Trades Base Certification Decision, 03 Trades Old Vs New Bucket Bridge (+9 more)
+
+### Community 3 - "Quotes Certification"
+Cohesion: 0.25
+Nodes (14): 04 Quotes Full C D Closeout, 00 Quotes Certification Guide, 02 Quotes Expected Presence Logic, 05 Quotes Artifact Mapping, 06 Quotes Cert Table Spec, 07 Quotes Local Certification Build Plan, 09 Large File Threshold Edge Hard Many Crosses, 10 Medium File Threshold Edge Hard Many Crosses (+6 more)
+
+### Community 4 - "Quotes Certification"
+Cohesion: 0.33
+Nodes (11): Certification Policy, policy, 01 1M Recovery Policy, 02 1M Quality Policy, 01 Additional Subblock Policy, 02 Daily Quality Policy, 02 Halts Quality Policy, 03 Quotes Quality Policy (+3 more)
+
+### Community 5 - "Halts Certification"
+Cohesion: 0.39
+Nodes (8): Bad Bucket, 01 Contrato Halts, 03 Halts Root Cause Audit Phase1 Closeout, 04 Halts Causal Overlay Closeout, 04 Halts Closeout, 01 Contrato Short, 03 Halts Closeout, halts
+
+### Community 6 - "Short Certification"
+Cohesion: 0.48
+Nodes (7): Closeout Decision, 03 Short Root Cause Audit Phase1 Closeout, 04 Short Causal Overlay Closeout, 04 Short Closeout, 00 Short Current State, 02 Short Closeout, short
+
+### Community 7 - "Trades Certification"
+Cohesion: 0.48
+Nodes (7): Review Bucket, current_state, 00 Additional Current State, 00 Daily Current State, 00 Halts Current State, 00 Reference Current State, 00 Trades Current State
+
+### Community 8 - "Additional Certification"
+Cohesion: 0.53
+Nodes (6): closeout, 03 Additional Root Cause Audit Phase1 Closeout, 04 Additional Causal Overlay Closeout, 04 Additional Closeout, 02 Additional Closeout, additional
+
+### Community 9 - "Reference Certification"
+Cohesion: 0.40
+Nodes (5): 03 Reference Root Cause Audit Phase1 Closeout, 04 Reference Causal Overlay Closeout, 04 Reference Closeout, 02 Reference Closeout, reference
+
+### Community 10 - "1m Certification"
+Cohesion: 0.50
+Nodes (4): 04 Ohlcv 1M Closeout, 00 1M Current State, 03 1M Closeout, ohlcv_1m
+
+## Knowledge Gaps
+- **2 isolated node(s):** `00 Data Certification Graphify Official Build Protocol`, `00 Data Certification Graphify Refresh Queue`
+  These have ≤1 connection - possible missing edges or undocumented components.
+
+## Suggested Questions
+_Questions this graph is uniquely positioned to answer:_
+
+- **Why does `Certification Decisions Topology` connect `Quotes Certification` to `Quotes Certification`, `Trades Certification`, `Trades Certification`, `Quotes Certification`, `Halts Certification`, `Short Certification`, `Trades Certification`, `Additional Certification`, `Reference Certification`, `1m Certification`?**
+  _High betweenness centrality (0.428) - this node is a cross-community bridge._
+- **Why does `Review Bucket` connect `Trades Certification` to `Quotes Certification`, `Trades Certification`, `Trades Certification`, `Quotes Certification`, `Quotes Certification`, `Halts Certification`, `Short Certification`, `Additional Certification`, `Reference Certification`, `1m Certification`?**
+  _High betweenness centrality (0.119) - this node is a cross-community bridge._
+- **Why does `Bad Bucket` connect `Halts Certification` to `Quotes Certification`, `Trades Certification`, `Trades Certification`, `Quotes Certification`, `Quotes Certification`, `Short Certification`, `Trades Certification`, `Additional Certification`, `Reference Certification`, `1m Certification`?**
+  _High betweenness centrality (0.090) - this node is a cross-community bridge._
+- **Are the 10 inferred relationships involving `Certification Decisions Topology` (e.g. with `global_metrics` and `00 Data Certification Graphify Official Build Protocol`) actually correct?**
+  _`Certification Decisions Topology` has 10 INFERRED edges - model-reasoned connections that need verification._
+- **What connects `00 Data Certification Graphify Official Build Protocol`, `00 Data Certification Graphify Refresh Queue` to the rest of the system?**
+  _2 weakly-connected nodes found - possible documentation gaps or missing edges._

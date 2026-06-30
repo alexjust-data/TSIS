@@ -1,0 +1,18 @@
+{
+  "parent_failed_chunk": 1,
+  "parent_name": "event_library",
+  "scope_root": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS",
+  "files": [
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\traders_strategies\\MOSQUITO_SMALLCAPS_SOURCE_EVENT_INDEX_v0_1.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/traders_strategies/MOSQUITO_SMALLCAPS_SOURCE_EVENT_INDEX_v0_1.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/traders_strategies/MOSQUITO_SMALLCAPS_SOURCE_EVENT_INDEX_v0_1.md",
+      "bytes": 61154,
+      "line_count": 2244,
+      "word_count_approx": 8009,
+      "sha256": "ee4271b26f5d7911698660cc919194b62e0f2477067d356f14c78389051a43da"
+    }
+  ],
+  "word_count_approx": 8009,
+  "retry_chunk_id": 1
+}

@@ -248,6 +248,20 @@ No construir un grafo monolitico de 01_foundations como primer paso.
 Primero leaf graph. Despues root graph solo si aporta valor.
 ```
 
+Regla sin APIs:
+
+```text
+La ausencia de API keys no bloquea Graphify en Codex.
+Para markdown/contracts/papers/images se usa la skill Graphify con
+host-agent/subagentes.
+graphify update CLI no prueba cobertura semantica documental.
+```
+
+Antes de usar un build como baseline oficial, revisar
+`GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md`: debe registrar version instalada,
+fuente/version de skill, upstream de referencia, modo sin APIs y cobertura
+semantica.
+
 Importante:
 
 ```text
@@ -329,6 +343,7 @@ Estado vigente de los leaf graphs oficiales:
 | Leaf graph | Scope | Output oficial | Estado | Stats |
 | --- | --- | --- | --- | --- |
 | `foundations_authority_graph` | `01_foundations` | [foundations_authority_20260620](graphify-out/leaf_slices/foundations_authority_20260620/) | `published_to_main` | `341 files`, `476827 words`, `1002 nodes`, `1381 edges`, `93 communities` |
+| `data_foundation_outputs_topology_graph` | `01_foundations` output table contracts | [data_foundation_outputs_topology_20260629](graphify-out/leaf_slices/data_foundation_outputs_topology_20260629/) | `leaf_built_root_not_merged` | `96 files`, `130 nodes`, `200 edges`, `16 communities`; deterministic topology, not full semantic extraction |
 | `certification_decisions_graph` | `01_research/01_auditoria_RAW_DATA/00_data_certification` | [certification_decisions_20260619](../01_research/01_auditoria_RAW_DATA/00_data_certification/graphify-out/leaf_slices/certification_decisions_20260619/) | `published_to_main` | `89 files`, `45813 words`, `252 nodes`, `322 edges`, `22 communities` |
 
 Nota operativa: `foundations_authority_20260620` satisface la cola Graphify de
@@ -354,6 +369,14 @@ En esos casos debe consultarse tambien:
 El grafo `foundations_authority_graph` mapea autoridad, contratos, schemas,
 registries, policies, validators y dossiers promovidos dentro de
 `01_foundations`.
+
+El grafo `data_foundation_outputs_topology_graph` mapea la topologia de tablas
+CAPA 1: tabla, schema, dataset contract, registry entry, consumption policy,
+validator y output path. Su manifest declara una limitacion importante: es un
+leaf deterministico de navegacion/control, no una lectura semantica completa de
+cada campo, regla o validator. Detecta como deuda que
+`short_sale_constraints_table` aun no tiene schema, dataset contract, registry,
+policy ni validator propios.
 
 El grafo `certification_decisions_graph` mapea decisiones historicas de
 auditoria/certificacion, closeouts, policies, contratos historicos y global

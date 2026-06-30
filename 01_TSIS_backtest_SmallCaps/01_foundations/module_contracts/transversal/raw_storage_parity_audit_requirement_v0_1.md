@@ -39,7 +39,7 @@ Initial required family map:
 
 | Legacy/source root | E landing root | Status requirement |
 | --- | --- | --- |
-| `D:/quotes` | `E:/TSIS/data/quotes_` staging first; promoted root only after audit | Must be equivalent before any promotion or merge decision |
+| `D:/quotes` | `E:/TSIS/data/quotes_` target official E-root pending audit/promotion; `E:/TSIS/data/quotes` is legacy/incomplete | Must be equivalent before official downstream consumption |
 | `D:/trades_ticks_prod_2005_2026` | `E:/TSIS/data/trades_ticks_prod_2005_2026` | Must be equivalent or explicitly reconciled |
 | `D:/ohlcv_daily` | `E:/TSIS/data/ohlcv_daily` | Must be equivalent or explicitly reconciled |
 | `D:/ohlcv_1m` | `E:/TSIS/data/ohlcv_1m` | Must be equivalent or explicitly reconciled |
@@ -119,21 +119,23 @@ No raw/source-preserved `E:/TSIS/data` family may be represented as fully
 converged from `D:/` until its parity verdict is `parity_pass` or a documented
 exception has been approved in the relevant family contract and changelog.
 
-For `quotes`, the current staging target:
+For `quotes`, the current target official E-root pending parity audit and
+promotion is:
 
 ```text
 E:/TSIS/data/quotes_
 ```
 
-is not the official root. It is a staging location used to recover and inspect
-the `D:/quotes` tree without mutating:
+is not yet available for official downstream consumption. It is used to recover
+and inspect the `D:/quotes` tree without mutating the legacy/incomplete tree:
 
 ```text
 E:/TSIS/data/quotes
 ```
 
-Only a later promotion decision can decide whether `quotes_` is merged,
-renamed, discarded or used to build a new candidate quotes root.
+Only a later promotion decision can authorize downstream consumption from
+`quotes_`. `E:/TSIS/data/quotes` remains legacy/incomplete unless a separate
+documented migration changes that status.
 
 ## Relationship To Data Quality
 

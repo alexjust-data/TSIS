@@ -129,6 +129,522 @@ Por ventana dedicada:
 
 ## Entradas activas
 
+### GFQ-20260629-master-intraday-quote-guarded-candidate
+
+Status: `pending_next_outputs_leaf_refresh`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+data_foundation_outputs_graph
+ohlcv_1m_governance_graph
+price_view_governance_graph
+market_state_representation_graph
+```
+
+Why:
+
+- Added the candidate contract for
+  `master_intraday_bar_table_v0_2_candidate_quote_guarded`.
+- Added a machine-readable candidate config under
+  `configs/data_foundation_outputs/`.
+- Updated the master intraday schema, validator, registry, consumption policy,
+  dataset contract, target contract, status matrix and module-contract index.
+- The semantic map must preserve the distinction between:
+  - `master_intraday_bar_table_v0_1` as a scoped pilot;
+  - quote-guarded v0.2 candidate route defined but not materialized;
+  - current bridge run root under `runs/.../ohlcv_1m_quote_guarded/`;
+  - future official source under
+    `E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/`;
+  - provisional `D:/quotes` lineage that must not be promoted as final.
+
+Required corpus delta for next official build:
+
+```text
+configs/data_foundation_outputs/master_intraday_bar_table_quote_guarded_candidate_v0_2.json
+tests/data_foundation_outputs/test_master_intraday_quote_guarded_candidate_contract.py
+01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md
+01_foundations/module_contracts/outputs/master_intraday_bar_table_wider_scope_materialization_plan_v0_1.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_foundations/canonical_schemas/outputs/master_intraday_bar_table_schema_contract.md
+01_foundations/contract_registry/dataset_contracts/master_intraday_bar_table_dataset_contract_v0_1.md
+01_foundations/data_consumption_policies/master_intraday_bar_table_consumption_policy.md
+01_foundations/dataset_registry/outputs/master_intraday_bar_table_registry_entry.yaml
+01_foundations/validators/outputs/master_intraday_bar_table_validators.md
+01_foundations/module_contracts/README.md
+```
+
+### GFQ-20260629-market-event-state-controlled-candidates
+
+Status: `pending_next_outputs_leaf_refresh`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+data_foundation_outputs_graph
+market_state_representation_graph
+event_state_governance_graph
+ml_feature_governance_graph
+offline_rl_governance_graph
+```
+
+Why:
+
+- Added controlled candidate builder mode to:
+  - `scripts/materialize_market_state_table.py --materialize-candidate`
+  - `scripts/materialize_event_state_table.py --materialize-candidate`
+- Materialized controlled candidates under governed E-root output paths:
+  - `E:/TSIS/data/data_foundation_outputs/market_state_table/market_state_table_v0_1_candidate_microstructure_halt_controlled/`
+  - `E:/TSIS/data/data_foundation_outputs/event_state_table/event_state_table_v0_1_candidate_microstructure_halt_controlled/`
+- Updated schemas, registry entries, validators, status matrix, output target
+  contract, composition contract and build-loop runbook.
+- The semantic map must preserve the distinction between:
+  - official `market_state_table_v0_1` / `event_state_table_v0_1` not
+    materialized/promoted;
+  - controlled candidates materialized but `controlled_candidate_not_promoted`;
+  - inherited provisional `D:/quotes` lineage requiring rebuild after
+    `E:/TSIS/data/quotes_` parity/audit.
+
+Required corpus delta for next official build:
+
+```text
+scripts/materialize_market_state_table.py
+scripts/materialize_event_state_table.py
+tests/data_foundation_outputs/test_market_state_table_contract.py
+tests/data_foundation_outputs/test_event_state_table_contract.py
+01_foundations/canonical_schemas/outputs/market_state_table_schema_contract.md
+01_foundations/canonical_schemas/outputs/event_state_table_schema_contract.md
+01_foundations/dataset_registry/outputs/market_state_table_registry_entry.yaml
+01_foundations/dataset_registry/outputs/event_state_table_registry_entry.yaml
+01_foundations/validators/outputs/market_state_table_validators.md
+01_foundations/validators/outputs/event_state_table_validators.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_foundations/module_contracts/outputs/market_state_event_state_composition_contract_v0_1.md
+01_foundations/module_contracts/outputs/market_state_event_state_build_loop_runbook_v0_1.md
+```
+
+### GFQ-20260629-scanner-framework-das-discovery
+
+Status: `pending_next_outputs_leaf_refresh`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+data_foundation_outputs_graph
+event_discovery_graph
+market_state_representation_graph
+strategy_research_graph
+ml_feature_governance_graph
+offline_rl_governance_graph
+```
+
+Why:
+
+- Added `scanner_framework_and_definitions_contract_v0_1.md` to formalize the
+  initial scanner framework for `daily_scanner_candidates_table_v0_1`.
+- Added two governed scanner configs:
+  `trade_station_like_scanner_v0_1` and
+  `broad_in_play_discovery_scanner_v0_1`.
+- The change prevents future agents from treating `volume_today > 500000` and
+  `% change 1D` ranking as the only general scanner for DAS research.
+- Future controlled scanner replay must compare operational visibility against
+  broad discovery, preserving candidate reasons, independent ranks and evidence
+  of late/missed DAS candidates.
+
+Affected files:
+
+```text
+01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_1.md
+configs/data_foundation_outputs/scanner_definitions/README.md
+configs/data_foundation_outputs/scanner_definitions/trade_station_like_scanner_v0_1.yaml
+configs/data_foundation_outputs/scanner_definitions/broad_in_play_discovery_scanner_v0_1.yaml
+01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_1.md
+01_foundations/canonical_schemas/outputs/daily_scanner_candidates_table_schema_contract.md
+01_foundations/contract_registry/dataset_contracts/daily_scanner_candidates_table_dataset_contract_v0_1.md
+01_foundations/dataset_registry/outputs/daily_scanner_candidates_table_registry_entry.yaml
+01_foundations/data_consumption_policies/daily_scanner_candidates_table_consumption_policy.md
+01_foundations/validators/outputs/daily_scanner_candidates_table_validators.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_foundations/module_contracts/README.md
+CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Required next Graphify action:
+
+```text
+Rebuild or update the data_foundation_outputs_graph leaf and related
+event-discovery / strategy-research / market-state slices in the next Graphify
+maintenance window. Root merge not required immediately.
+```
+
+### GFQ-20260629-daily-scanner-builder-replay
+
+Status: `pending_next_outputs_leaf_refresh`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+data_foundation_outputs_graph
+event_discovery_graph
+market_state_representation_graph
+strategy_research_graph
+ml_feature_governance_graph
+offline_rl_governance_graph
+```
+
+Why:
+
+- Implemented `daily_scanner_candidates_table_v0_1` controlled historical
+  replay builder.
+- Added deterministic fixture test proving scanner separation,
+  broad-discovery candidates below 500k volume, alias deduplication, duplicate
+  logical key prevention and ML/RL/live prohibition flags.
+- Ran first controlled replay:
+  `C:/TSIS_Data/tests/test_runs/2026-06-29/daily_scanner_candidates_replay_20250102_20250110_v0_1/`.
+- The replay produced 30,646 evaluated rows, 150 TradeStation-like top-25 rows,
+  3,196 broad-discovery rows, 2,383 broad-discovery rows below 500k volume,
+  zero duplicate logical keys and no ML/RL/live-authority rows.
+- Added the output-root policy: small samples/tests/demos stay under
+  `C:/TSIS_Data/tests/test_runs/`, while long-range candidate replays must live
+  under
+  `E:/TSIS/data/data_foundation_outputs/daily_scanner_candidates_table/candidate_replays/`;
+  the official promoted root remains reserved.
+- This is evidence for builder shape and scanner comparison only. It is not an
+  official E-root materialization and must not be treated as final
+  `market_state_table` input without downstream validation/promotion gates.
+
+Affected files:
+
+```text
+scripts/materialize_daily_scanner_candidates_table.py
+tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder.py
+01_research/README.md
+01_research/notebooks/data_foundation_outputs/daily_scanner_candidates_replay_view_v0_1.ipynb
+01_research/notebooks/data_foundation_outputs/README.md
+01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_1.md
+01_foundations/canonical_schemas/outputs/daily_scanner_candidates_table_schema_contract.md
+01_foundations/contract_registry/dataset_contracts/daily_scanner_candidates_table_dataset_contract_v0_1.md
+01_foundations/dataset_registry/outputs/daily_scanner_candidates_table_registry_entry.yaml
+01_foundations/validators/outputs/daily_scanner_candidates_table_validators.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Evidence paths:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-29/daily_scanner_candidates_replay_20250102_20250110_v0_1/_daily_scanner_candidates_table_manifest_v0_1_candidate_replay.json
+C:/TSIS_Data/tests/test_runs/2026-06-29/daily_scanner_candidates_replay_20250102_20250110_v0_1/_daily_scanner_candidates_table_summary_v0_1_candidate_replay.csv
+```
+
+Required next Graphify action:
+
+```text
+Rebuild or update the data_foundation_outputs_graph leaf and event-discovery /
+market-state representation slices so graph users know that scanner builder
+and controlled replay evidence exist, but official E-root materialization is
+still pending.
+```
+
+### GFQ-20260629-daily-scanner-candidates-contract-stack
+
+Status: `pending_next_outputs_leaf_refresh`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+data_foundation_outputs_graph
+market_state_representation_graph
+event_discovery_graph
+ml_feature_governance_graph
+offline_rl_governance_graph
+```
+
+Why:
+
+- Added the `daily_scanner_candidates_table_v0_1` target stack as the governed
+  candidate-generation/in-play discovery layer.
+- The new stack defines scanner rows as candidate-set lineage, not as complete
+  market state, full universe, direct ML/RL feature table, strategy signal or
+  execution truth.
+- Future state builders must use scanner candidates only as seeds, then compose
+  full-history context, lookbacks, quality gates and event-window data.
+- This changes the immediate Data Foundation output work order: controlled
+  historical scanner replay precedes broad `market_state_table` samples that
+  depend on daily in-play discovery.
+
+Affected files:
+
+```text
+01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_1.md
+01_foundations/canonical_schemas/outputs/daily_scanner_candidates_table_schema_contract.md
+01_foundations/contract_registry/dataset_contracts/daily_scanner_candidates_table_dataset_contract_v0_1.md
+01_foundations/dataset_registry/outputs/daily_scanner_candidates_table_registry_entry.yaml
+01_foundations/data_consumption_policies/daily_scanner_candidates_table_consumption_policy.md
+01_foundations/validators/outputs/daily_scanner_candidates_table_validators.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_foundations/module_contracts/outputs/market_state_coverage_and_lookback_policy_v0_1.md
+01_foundations/module_contracts/outputs/market_state_event_state_composition_contract_v0_1.md
+01_foundations/canonical_schemas/outputs/market_state_table_schema_contract.md
+01_foundations/canonical_schemas/outputs/event_state_table_schema_contract.md
+01_foundations/contract_registry/dataset_contracts/market_state_table_dataset_contract_v0_1.md
+01_foundations/contract_registry/dataset_contracts/event_state_table_dataset_contract_v0_1.md
+01_foundations/data_consumption_policies/market_state_table_consumption_policy.md
+01_foundations/data_consumption_policies/event_state_table_consumption_policy.md
+01_foundations/data_consumption_policies/README.md
+01_foundations/canonical_schemas/README.md
+01_foundations/contract_registry/dataset_contracts/README.md
+01_foundations/dataset_registry/README.md
+01_foundations/validators/README.md
+01_foundations/module_contracts/README.md
+```
+
+Required next Graphify action:
+
+```text
+Rebuild or update the data_foundation_outputs_graph leaf and event-discovery /
+market-state representation slices in the next Graphify maintenance window;
+root merge not required immediately.
+```
+
+### GFQ-20260629-market-state-coverage-lookback-policy
+
+Status: `pending_next_outputs_leaf_refresh`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+data_foundation_outputs_graph
+market_state_representation_graph
+ml_feature_governance_graph
+offline_rl_governance_graph
+```
+
+Why:
+
+- Added `market_state_coverage_and_lookback_policy_v0_1.md` as the
+  authoritative policy for daily scanner candidates, full-history context and
+  event-window microstructure in market-state construction.
+- The policy prevents a common semantic failure: treating a daily
+  `in-play`/scanner ticker-day as a complete market state.
+- Future `market_state_table` / `event_state_table` candidates must declare
+  `state_population_scope`, `state_population_denominator`,
+  `full_universe_claim`, `scanner_definition_id`, `strategy_family_id`,
+  `event_window_source`, `lookback_policy_id`, price-view policy, as-of policy,
+  leakage guard and quote-root lineage.
+- Strategies that require historical memory, such as `Short Into Resistance`,
+  must receive explicit lookback features instead of relying only on the
+  current ticker-day.
+
+Affected files:
+
+```text
+01_foundations/module_contracts/outputs/market_state_coverage_and_lookback_policy_v0_1.md
+01_foundations/module_contracts/outputs/market_state_event_state_composition_contract_v0_1.md
+01_foundations/module_contracts/outputs/market_state_event_state_build_loop_runbook_v0_1.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_foundations/module_contracts/README.md
+```
+
+Required next Graphify action:
+
+```text
+Rebuild or update the data_foundation_outputs_graph leaf and the affected
+market-state representation/governance slices in the next Graphify maintenance
+window; root merge not required immediately.
+```
+
+### GFQ-20260629-state-tables-provisional-d-quotes-lineage
+
+Status: `pending_next_outputs_leaf_refresh`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+data_foundation_outputs_graph
+```
+
+Why:
+
+- The `market_state_table` / `event_state_table` build loop now explicitly
+  accepts `D:/quotes` as provisional candidate-only quote lineage for controlled
+  state samples while target official `E:/TSIS/data/quotes_` parity/audit
+  remains incomplete.
+- Updated contracts and policies require visible lineage:
+  `quotes_root_used`, `quotes_root_state`, `target_official_quotes_root`,
+  `legacy_incomplete_e_quotes_root` and
+  `requires_rebuild_after_e_quotes_parity`.
+- The change alters downstream interpretation: candidates inheriting this
+  root state remain blocked for ML/RL primary training, backtest core and
+  execution simulation until E-root parity/rebuild gates pass.
+- Correction applied after human clarification: `E:/TSIS/data/quotes_` is the
+  E-root target of the active `D:/quotes` clone; `E:/TSIS/data/quotes` is not
+  the official target for this recovery decision and must be treated as
+  incomplete/legacy.
+
+Affected files:
+
+```text
+01_foundations/module_contracts/outputs/market_state_event_state_build_loop_runbook_v0_1.md
+01_foundations/module_contracts/outputs/market_state_event_state_composition_contract_v0_1.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_foundations/data_consumption_policies/market_state_table_consumption_policy.md
+01_foundations/data_consumption_policies/event_state_table_consumption_policy.md
+```
+
+Required next Graphify action:
+
+```text
+Rebuild or update data_foundation_outputs_graph leaf in the next Graphify
+maintenance window; root merge not required immediately.
+```
+
+### GFQ-20260629-data-foundation-outputs-topology-leaf
+
+Status: `leaf_built_root_not_merged`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+data_foundation_outputs_graph
+```
+
+Why:
+
+- Built a deterministic Graphify topology leaf for CAPA 1 Data Foundation
+  output tables.
+- The leaf maps each output table to its schema contract, dataset contract,
+  registry entry, consumption policy, validator and governed output path when
+  those components exist.
+- The build is useful for agents inspecting generated tables and contracts
+  without scanning the entire `01_foundations` corpus.
+- The leaf explicitly does not claim full semantic extraction of every field,
+  rule or validator body.
+
+Build result:
+
+```text
+Output:
+01_foundations/graphify-out/leaf_slices/data_foundation_outputs_topology_20260629/
+
+Graphify package: graphifyy 0.9.1
+Semantic mode: deterministic_file_topology_extraction
+Corpus files: 96
+Nodes: 130
+Edges: 200
+Communities: 16
+Diagnostic: clean
+Root graph merge: not performed
+```
+
+Detected debt:
+
+```text
+short_sale_constraints_table / schema
+short_sale_constraints_table / dataset_contract
+short_sale_constraints_table / registry
+short_sale_constraints_table / consumption_policy
+short_sale_constraints_table / validator
+```
+
+Required follow-up:
+
+```text
+Create the missing short_sale_constraints_table contract stack before treating
+SSR/borrow/locate/availability constraints as a governed table output.
+Run full semantic extraction leaf later if agents need field-level or
+validator-rule-level graph reasoning.
+```
+
+### GFQ-20260628-Graphify-no-api-version-alignment
+
+Status: `cross_project_governance_leaf_built_foundations_authority_leaf_pending`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+foundations_authority_graph
+certification_decisions_graph
+graphify_governance_slice
+```
+
+Why:
+
+- Graphify governance now explicitly follows upstream `safishamsi/graphify`
+  branch `v8`, `graphifyy 0.9.1`, for no-API Codex behavior.
+- The observed installed package was `graphifyy 0.8.40`; future builds must
+  record whether the installed package was aligned, upstream was used, or the
+  result is provisional by version limitation.
+- Without Gemini/Google API keys, agents must use Graphify skill
+  host-agent/subagent semantic extraction for markdown/contracts/papers/images.
+- CLI `graphify update` alone is not semantic coverage for CAPA 1 documents.
+
+Changed paths:
+
+```text
+PROJECT_RULES.md
+CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/01_foundations/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md
+01_TSIS_backtest_SmallCaps/01_foundations/GRAPHIFY_REFRESH_QUEUE.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/graphify/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/graphify/data_foundation_graph_and_table_design_protocol.md
+01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md
+01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Required Graphify action:
+
+```text
+Include these files in the next official Graphify governance leaf. This queue
+entry is not graph content and does not prove graph refresh completion.
+```
+
+Build result:
+
+```text
+Covered by cross-project governance leaf:
+C:/TSIS_Data/00_CTO/graphify-out/leaf_slices/graphify_governance_20260629/
+
+Graphify package: graphifyy 0.9.1
+Semantic mode: Codex host inline extraction, no external API required
+Nodes: 37
+Edges: 60
+Communities: 9
+Diagnostic: clean
+
+Important limitation:
+This satisfies the graphify_governance_slice coverage for the protocol change,
+but it does not rebuild foundations_authority_graph, data_foundation_outputs
+or any full root graph. Those remain pending by slice.
+```
+
 ### GFQ-20260626-001 - Event windows table CAPA 1 output materialization
 
 Status: `pending_leaf_build`
@@ -1929,7 +2445,7 @@ is locally reproducible byte-for-byte from
 `exchange_calendars 4.13.1`, but also states that the artifact is not a raw
 download from NYSE.
 
-### GFQ-20260624-001 - Quotes staging clone runbook
+### GFQ-20260624-001 - Quotes recovery clone runbook
 
 Status: `pending_leaf_build`
 
@@ -1982,8 +2498,9 @@ Recommended action:
 ```text
 Include the runbook and script entry point in the next foundations authority
 leaf rebuild and the next microstructure quotes/trades graph slice.
-Do not point downstream table contracts to E:/TSIS/data/quotes_ until a
-post-copy audit and promotion note exist.
+Downstream official consumption remains blocked until post-copy audit and
+promotion note exist, but E:/TSIS/data/quotes_ is now the target official
+E-root for the active D:/quotes clone.
 ```
 
 Root action:
@@ -2002,7 +2519,11 @@ Modulo 01 / Data Foundation output governance
 
 Notes:
 
-The target `E:/TSIS/data/quotes_` is staging only.
+Historical correction recorded on `2026-06-29`: the target
+`E:/TSIS/data/quotes_` is no longer described as disposable staging. It is the
+intended E-root produced by the active `D:/quotes` clone, pending final
+post-copy audit/promotion. `E:/TSIS/data/quotes` is treated as incomplete/
+legacy E-root for this recovery decision.
 
 ### GFQ-20260625-001 - Microstructure features table seed output
 
@@ -2944,7 +3465,9 @@ Reason:
 - Defined `event_windows_table_v0_1` as the first governed denominator for a
   halt-only multi-window candidate.
 - Preserved the quotes-root boundary: `D:/quotes` is provisional candidate
-  lineage until `E:/TSIS/data/quotes` parity/authority is resolved.
+  lineage until `E:/TSIS/data/quotes_` parity/authority is resolved. The
+  pre-existing `E:/TSIS/data/quotes` tree is explicitly legacy/incomplete and
+  must not be treated as the official E-root.
 - Defined required builder changes before any `v0_2_candidate`: config-driven
   dataset id, scope, output root, source root state, event-window input,
   denominator manifest, missingness states and no overwrite of v0.1.
@@ -3423,6 +3946,316 @@ Notes:
 The next executable work is visual/forensic evidence for the 50-window
 controlled candidate and quotes E-root parity resolution before any broader
 candidate or promotion claim.
+
+### GFQ-20260627-014 - Quotes recovery clone ticker-chunk telemetry
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+01_foundations/module_contracts/quotes
+data_ops_long_running_operations
+raw_storage_parity
+quotes_recovery_to_target_e_root
+```
+
+Reason:
+
+```text
+The quotes recovery command for D:/quotes -> E:/TSIS/data/quotes_ was extended
+with ticker-chunked telemetry so million-file copy operations are no longer
+launched as opaque one-unit robocopy jobs. This changes operational guidance for
+a raw data recovery workflow and affects how future agents should resume,
+monitor and audit the clone into the target official E-root.
+```
+
+Changed paths:
+
+```text
+scripts/data_ops/clone_quotes_to_staging.ps1
+01_foundations/module_contracts/quotes/quotes_staging_clone_runbook_v0_1.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+01_foundations/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Recommended action:
+
+```text
+Include this operation in the next foundations leaf refresh. Preserve that
+quotes_ is the target official E-root pending post-copy parity audit and
+promotion, that ticker-chunked clone mode is the preferred observable recovery
+path, and that official downstream consumption is blocked until audit/promotion.
+Also preserve that E:/TSIS/data/quotes is legacy/incomplete for this decision.
+```
+
+Root action:
+
+```text
+Do not rebuild root graph until the broader foundations Graphify remediation
+state is resolved or explicitly waived.
+```
+
+Owner:
+
+```text
+Modulo 01 / Data Foundation raw storage recovery governance
+```
+
+Notes:
+
+```text
+The legacy blind clone started on 2026-06-24 may still expose only process-level
+evidence. Future clones/resumes should use -ChunkByTicker when human progress
+observability is required.
+```
+
+### GFQ-20260628-001 - 1m split-normalized split-affected candidate completed
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+01_foundations/module_contracts
+01_foundations/dataset_registry/ohlcv_1m
+01_foundations/data_consumption_policies
+price_views
+ohlcv_1m_split_normalized
+```
+
+Reason:
+
+```text
+The split-affected full-universe logical candidate for ohlcv_1m_split_normalized
+completed materialization and post-run audit. The repository now contains a
+results contract with the completed run id, manifest/output counts, audit
+counts and pending promotion gate. Future agents must not treat this as still
+unexecuted, nor as a promoted production root.
+```
+
+Changed paths:
+
+```text
+01_foundations/module_contracts/ohlcv_1m_split_normalized_split_affected_materialization_results_v0_1.md
+01_foundations/module_contracts/ohlcv_1m_split_normalized_full_universe_materialization_runbook_v0_1.md
+01_foundations/module_contracts/ohlcv_1m_split_normalized_operational_landing_v0_1.md
+01_foundations/module_contracts/README.md
+01_foundations/dataset_registry/ohlcv_1m/ohlcv_1m_split_normalized_registry_entry.yaml
+01_foundations/data_consumption_policies/ohlcv_1m_split_normalized_consumption_policy.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+01_foundations/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Recommended action:
+
+```text
+Refresh the affected foundations price-view leaf so graph users can discover
+that run split_affected_20260627_192314 completed, produced 115667 candidate
+outputs, had 0 audit FAIL cases, and remains pending promotion.
+```
+
+Root action:
+
+```text
+Do not rebuild root graph until the broader foundations Graphify remediation
+state is resolved or explicitly waived.
+```
+
+Owner:
+
+```text
+Modulo 01 / Data Foundation price-view governance
+```
+
+Notes:
+
+```text
+The candidate root is E:/TSIS/data/ohlcv_1m_split_normalized_full_universe_candidate.
+It is a split-affected logical full-universe candidate, not a physical full copy
+and not yet an official production root.
+```
+
+### GFQ-20260628-002 - Long-running monitor stale process detection
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+root_long_running_operations_contract
+module01_long_running_monitor
+data_ops_quotes_clone
+```
+
+Reason:
+
+```text
+The generic long-running monitor now derives stale_no_process when a heartbeat
+still says running but the wrapper/worker processes are dead and the heartbeat
+is old. This prevents stale heartbeat files from being misread as active work,
+which directly affected the quotes clone run quotes_clone_to_staging_20260627T185359Z.
+```
+
+Changed paths:
+
+```text
+LONG_RUNNING_OPERATIONS_CONTRACT.md
+01_TSIS_backtest_SmallCaps/scripts/monitor_long_running_operation.ps1
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/01_foundations/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Recommended action:
+
+```text
+Refresh the affected operations-governance leaf so future graph users know that
+running heartbeats are not sufficient evidence of a live process. The monitor
+must expose wrapper liveness and stale_no_process derived state.
+```
+
+Root action:
+
+```text
+Do not rebuild root graph until the broader foundations Graphify remediation
+state is resolved or explicitly waived.
+```
+
+Owner:
+
+```text
+Modulo 01 / transversal long-running operation governance
+```
+
+Notes:
+
+```text
+This does not resume the quotes clone. It only fixes operator visibility. The
+clone remains resumable by rerunning the ticker-chunk command with
+-AllowNonEmptyTarget.
+```
+
+### GFQ-20260628-003 - Windows-safe telemetry JSON replacement
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+root_long_running_operations_contract
+module01_long_running_runners
+data_ops_quotes_clone
+one_minute_split_normalized_materialization
+```
+
+Reason:
+
+```text
+The quotes clone runner stopped after APEN because Move-Item -Force failed while
+rewriting an existing heartbeat JSON file. The telemetry writer was replaced
+with a Windows-safe temporary-file plus File.Replace strategy in both affected
+long-running runners. The quotes clone runner also gained -StartAtTicker so the
+stopped clone can resume from APEX instead of rechecking the completed prefix.
+Future agents must treat the stopped clone as resumable, not as data
+corruption.
+```
+
+Changed paths:
+
+```text
+LONG_RUNNING_OPERATIONS_CONTRACT.md
+01_TSIS_backtest_SmallCaps/scripts/data_ops/clone_quotes_to_staging.ps1
+01_TSIS_backtest_SmallCaps/scripts/run_1m_split_normalized_materialization.ps1
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/quotes/quotes_staging_clone_runbook_v0_1.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/01_foundations/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Recommended action:
+
+```text
+Refresh the affected long-running operations leaf so graph users know heartbeat
+JSON replacement must be Windows-safe and that quotes clone runs stopped by this
+telemetry failure can be resumed with -AllowNonEmptyTarget and, when supported
+by log evidence, -StartAtTicker.
+```
+
+Root action:
+
+```text
+Do not rebuild root graph until the broader foundations Graphify remediation
+state is resolved or explicitly waived.
+```
+
+Owner:
+
+```text
+Modulo 01 / long-running operation telemetry governance
+```
+
+Notes:
+
+```text
+Validation dry-run after fix: quotes_clone_to_staging_20260628T063552Z.
+```
+
+### GFQ-20260628-004 - Graphify build baseline provenance rule
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+root_project_rules
+foundations_graphify_governance
+certification_graphify_governance
+module01_changelog
+```
+
+Reason:
+
+```text
+Future Graphify builds must expose an exact Git/corpus baseline. Every new
+BUILD_MANIFEST.md must record commit, dirty state, dirty/untracked paths, exact
+corpus manifest, queue entries covered, queue entries left pending, diagnostics
+and next-delta commands. This prevents future agents from guessing whether
+git diff is measured from HEAD or from the last graph build.
+```
+
+Changed paths:
+
+```text
+PROJECT_RULES.md
+00_CTO/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md
+01_foundations/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md
+00_data_certification/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md
+CHANGELOG.md
+00_CTO/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+01_foundations/GRAPHIFY_REFRESH_QUEUE.md
+00_CTO/GRAPHIFY_REFRESH_QUEUE.md
+00_data_certification/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Recommended action:
+
+```text
+Include this governance change in the next foundations authority refresh and in
+any leaf build that will become the next delta baseline.
+```
+
+Root action:
+
+```text
+No root graph yet. Do not treat this queue entry as corpus replacement; the
+actual changed protocol files must be included in the leaf corpus.
+```
+
+Owner:
+
+```text
+Modulo 01 / Graphify governance
+```
 
 ## Entry template
 

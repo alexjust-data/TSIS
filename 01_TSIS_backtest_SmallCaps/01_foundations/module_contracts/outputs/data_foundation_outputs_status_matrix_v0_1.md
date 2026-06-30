@@ -117,6 +117,8 @@ exists under `E:/TSIS/data/data_foundation_outputs/`.
 | `master_intraday_bar_table_v0_1` | 175,252 | 14 | `scoped_split_normalized_event_cases`; `full_universe_claim=false` | Seven-table rerun passed | `scoped_pilot` | scoped event research and backtest extended with flags | not full-universe 1m; backtest core rows = 0; not execution truth |
 | `microstructure_features_table_v0_1` | 1 | 1 | `seed_event_window_smoke`; `full_universe_claim=false` | isolated rerun passed; 6-row candidate visual smoke evidence exists | `seed_state_sample` | schema/lineage/recompute proof for one event window | not ML/RL-ready, not core-backtest-ready, not execution-ready |
 | `microstructure_features_table_v0_2_candidate_controlled_25_per_role` | 50 | 1 | halt event-window candidate; 25 rows per selected role; `full_universe_claim=false` | isolated candidate test passed | `controlled_candidate_not_promoted` | controlled candidate diagnostics for quote/trade lineage, missingness, recomputation and market-state design | quotes uses provisional `D:/quotes`; trades present only 24/50; not ML/RL-ready, not core-backtest-ready, not execution-ready |
+| `market_state_table_v0_1_candidate_microstructure_halt_controlled` | 50 | 2 | controlled halt event-window state snapshots from microstructure v0.2 candidate; `full_universe_claim=false` | market/event state tests passed 2026-06-29 | `controlled_candidate_not_promoted` | event-context candidate and state-builder integration proof | inherits provisional `D:/quotes` lineage; not ML/RL-ready, not backtest-core, not execution truth, not official `market_state_table_v0_1` |
+| `event_state_table_v0_1_candidate_microstructure_halt_controlled` | 50 | 2 | controlled halt event-window event states linked to market-state candidate; 25 pre-event + 25 post-event-review rows; `full_universe_claim=false` | market/event state tests passed 2026-06-29 | `controlled_candidate_not_promoted` | event-state integration proof and pattern-discovery candidate surface | inherits provisional market/microstructure lineage; labels/outcomes/rewards absent; not ML/RL-ready, not backtest-core, not execution truth |
 | `halts_table_v0_1` | 133,116 | 1 | Nasdaq/NYSE halts and SEC suspensions from `halts_v0_1` | isolated rerun passed | `validated_for_declared_scope` | event interruption context, halt masks, date/intraday halt state | no decision-time availability model, no live latency contract, review/bad rows preserved |
 | `event_windows_table_v0_1` | 214,112 | 1 | halt-derived event windows for LT1B/calendar-covered intraday halt events | isolated rerun passed | `validated_for_declared_scope` | event-window boundaries, pre-event feature windows, outcome-window candidates | halts only; not all event families; not primary ML/RL/execution truth |
 | `outcomes_table_v0_1` | 128,388 | 1 | next-session daily outcomes for halt-derived event windows x three daily price views | isolated rerun passed | `validated_for_declared_scope` | daily post-event labels/outcome research with feature/label separation | daily labels only; not intraday execution outcome, not RL reward, not all event families |
@@ -200,6 +202,62 @@ This candidate validates a controlled materialization and sample recomputation
 from raw quote/trade files. It does not override the official v0.1 seed table,
 does not resolve E-root quotes parity and does not grant ML/RL, execution or
 core-backtest readiness.
+
+Latest controlled materialized candidate evidence for
+`market_state_table_v0_1_candidate`:
+
+```text
+E:/TSIS/data/data_foundation_outputs/market_state_table/market_state_table_v0_1_candidate_microstructure_halt_controlled/
+manifest = E:/TSIS/data/data_foundation_outputs/market_state_table/_market_state_table_manifest_v0_1_candidate_microstructure_halt_controlled.json
+summary = E:/TSIS/data/data_foundation_outputs/market_state_table/_market_state_table_summary_v0_1_candidate_microstructure_halt_controlled.csv
+build_run_id = market_state_table_v0_1_candidate_20260629T194351Z
+materialization_scope = halt_event_window_microstructure_controlled_candidate
+rows = 50
+tickers = 9
+event_windows = 50
+parquet_files = 2
+valid_for_event_context_candidate_rows = 50
+valid_for_ml_feature_candidate_rows = 0
+valid_for_rl_state_candidate_rows = 0
+full_universe_claim_rows = 0
+duplicate_state_id_rows = 0
+state_quality_counts = {"state_review_microstructure_seed_only":50}
+output_tree_sha256 = 05abf763bca2b97bc6d61d8d2c8e99bf7a23ee7ba9ec05aa8fc1c00bdf488abd
+```
+
+This candidate composes controlled halt event-window microstructure into
+state-snapshot rows. It intentionally preserves the provisional `D:/quotes`
+lineage inherited from the microstructure component and does not make the
+official `market_state_table_v0_1` institutional.
+
+Latest controlled materialized candidate evidence for
+`event_state_table_v0_1_candidate`:
+
+```text
+E:/TSIS/data/data_foundation_outputs/event_state_table/event_state_table_v0_1_candidate_microstructure_halt_controlled/
+manifest = E:/TSIS/data/data_foundation_outputs/event_state_table/_event_state_table_manifest_v0_1_candidate_microstructure_halt_controlled.json
+summary = E:/TSIS/data/data_foundation_outputs/event_state_table/_event_state_table_summary_v0_1_candidate_microstructure_halt_controlled.csv
+build_run_id = event_state_table_v0_1_candidate_20260629T194750Z
+materialization_scope = halt_event_window_event_state_controlled_candidate
+rows = 50
+tickers = 9
+event_windows = 50
+parquet_files = 2
+pre_event_rows = 25
+post_event_review_rows = 25
+valid_for_pattern_discovery_rows = 50
+valid_for_ml_feature_candidate_rows = 0
+valid_for_rl_state_candidate_rows = 0
+full_universe_claim_rows = 0
+duplicate_state_id_rows = 0
+state_quality_counts = {"event_state_review_microstructure_seed_only":50}
+output_tree_sha256 = ca19b6d65277be718e09ffa88bd2d5b380ed4ca5c9abf681e0b27624b4e60d37
+```
+
+This candidate links the controlled market-state rows to halt event windows.
+It carries no inline outcomes, labels, rewards, actions, fills, PnL, strategy
+signals or execution truth. Pre-event rows are context candidates only; direct
+ML/RL/backtest/execution gates remain false.
 
 Latest successful isolated evidence for `halts_table_v0_1`:
 
@@ -366,6 +424,20 @@ fixture builders and adversarial leakage tests. They still have no official
 parquet, official manifest or official summary. Their registry entries are
 intentionally marked `contract_defined_not_materialized`.
 
+`daily_scanner_candidates_table_v0_1` now has its target contract stack,
+scanner-framework contract, two versioned scanner configs, historical replay
+builder, deterministic fixture test and a controlled replay evidence pack. It
+still has no official E-root parquet, official manifest or official summary. It
+is the candidate-generation layer for in-play discovery, not a replacement for
+`market_state_table`.
+
+Governed scanner definitions currently defined:
+
+```text
+trade_station_like_scanner_v0_1
+broad_in_play_discovery_scanner_v0_1
+```
+
 ## 7. Non-Materialized Target Outputs
 
 The following target outputs are still not governed materializations under
@@ -374,15 +446,17 @@ The following target outputs are still not governed materializations under
 | Target output | Current state | Required before materialization |
 | --- | --- | --- |
 | `data_quality_report` | documentation/evidence exists under `01_foundations/data_quality_report/`, but no governed E-root output table exists | decide if it is a report folder, a table, or both; define schema/manifest if table |
+| `daily_scanner_candidates_table` | builder implemented and controlled replay evidence exists under `C:/TSIS_Data/tests/test_runs/2026-06-29/daily_scanner_candidates_replay_20250102_20250110_v0_1/`; official E-root materialization does not exist | implement full validator suite, decide wider replay/promotion policy, preserve scanner rows as candidate lineage only, obey `market_state_coverage_and_lookback_policy_v0_1`; cannot be treated as complete universe or final market state |
+| `master_intraday_bar_table_v0_2_candidate_quote_guarded` | candidate contract and config defined; no parquet materialization exists | wait for final `E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/` repair manifest and validation report; storage model is raw `ohlcv_1m` plus repair-manifest overlay, not a full corrected parquet tree; keep `D:/quotes` only as provisional candidate lineage; builder must consume a manifest/partition list, not blind recursive file discovery |
 | `real_time_corporate_event_alerts_table` | not materialized | define vendor/source model, latency semantics, SEC/newswire/DAS/vendor lineage, and live-vs-backfill contract |
 | `short_sale_constraints_table` | target contract and acquisition runbook defined, not materialized | derive/validate SSR proxy or acquire official SSR; connect DAS/SageTrader or broker/vendor feed for forward capture; acquire broker/vendor historical borrow/locate/availability if 20-year historical execution feasibility is required; define account/broker scope and as-of/latency semantics |
-| `market_state_table` / `event_state_table` | contract stack plus deterministic fixture loop passed, not materialized | expand to controlled multi-component sample, add recomputation/manifest/coverage gates, then materialize only after leakage/adversarial tests pass |
+| `market_state_table` / `event_state_table` | contract stack plus deterministic fixture loop passed, not materialized | expand to controlled multi-component sample; obey `market_state_coverage_and_lookback_policy_v0_1`; `D:/quotes` may be used only as provisional candidate lineage with `quotes_root_state=provisional_d_legacy_recovery_root_pending_e_parity`; add recomputation/manifest/coverage/lookback gates; promote only after leakage/adversarial tests and E-root parity/rebuild requirements pass |
 
 ## 8. Current Readiness By Consumer
 
 | Consumer | Ready outputs | Not ready / restricted |
 | --- | --- | --- |
-| `event_engine` | instrument, calendar, expected calendar, corporate actions, dataset gates, daily context, halt context/masks, halt-derived event windows, filing-date-aware fundamentals, published-utc-aware news, short context and regime context after explicit source/as-of/lag selection | final market state composition, live alerts, non-halt event families and short-sale constraints still missing |
+| `event_engine` | instrument, calendar, expected calendar, corporate actions, dataset gates, daily context, halt context/masks, halt-derived event windows, filing-date-aware fundamentals, published-utc-aware news, short context, regime context and controlled daily scanner candidate replay after explicit source/as-of/lag selection | official daily scanner candidates materialization, final market state composition, live alerts, non-halt event families and short-sale constraints still missing |
 | `backtest_core` | `master_daily_table_v0_1` where row flags allow; instrument/calendar/context tables, halt exclusions/interruptions and halt-derived event windows where timestamp legality allows | `master_intraday_bar_table_v0_1` has core candidate rows = 0; microstructure seed is prohibited |
 | `backtest_extended` | daily table, scoped intraday table, halts, event windows, next-session daily outcomes, fundamentals/news/short/regime context with flags and legal cutoffs | microstructure table is only seed proof; no intraday execution outcomes; short-sale feasibility is not institutional until `short_sale_constraints_table` exists |
 | `ml_primary` | daily table where price view/flags and leakage policy allow; `outcomes_table_v0_1` only as labels where `valid_for_ml_label_candidate=true` | event windows are boundaries only; microstructure, intraday scoped pilot and halts context are not primary features; fundamentals/news/short/regime still require external as-of/state builder; short-sale constraints missing |
@@ -429,25 +503,57 @@ C:/TSIS_Data/RESEARCH_PHILOSOPHY.md
 3. Decide the next table by dependency, not convenience.
 4. Expand the scoped intraday and microstructure foundations before promoting
    official state tables.
+   For `master_intraday_bar_table`, the next quote-guarded path is now:
+   `master_intraday_bar_table_v0_2_candidate_quote_guarded`. It is contract-
+   defined only and must remain blocked until the final quote-guarded repair
+   manifest and validation report exist under
+   `E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/`.
+5. For the controlled state-table loop, `D:/quotes` is accepted only as
+   provisional quote lineage while target official
+   `E:/TSIS/data/quotes_` parity/audit remains incomplete.
+   `E:/TSIS/data/quotes` is treated as incomplete/legacy E-root, not the
+   official target. Any candidate inheriting this source must carry
+   `requires_rebuild_after_e_quotes_parity=true` and must not be marked ready
+   for ML/RL primary training, backtest core or execution simulation.
+6. Do not build state tables as ticker-day-only snapshots. Future state-table
+   candidates must obey
+   `01_foundations/module_contracts/outputs/market_state_coverage_and_lookback_policy_v0_1.md`:
+   full-history compact context, daily in-play candidates, governed event
+   windows and explicit lookback policies.
+7. Use the controlled `daily_scanner_candidates_table` replay as candidate
+   evidence only. It compares `trade_station_like_scanner_v0_1` against
+   `broad_in_play_discovery_scanner_v0_1`, but remains non-official and cannot
+   be treated as live authority or as a direct ML/RL table.
 
 Dependency order:
 
 ```text
-1. master_intraday_bar_table wider/full-scope materialization plan
-2. microstructure_features_table multi-window/multi-event materialization plan
-3. market_state_table controlled real sample
-4. event_state_table controlled real sample
-5. short_sale_constraints_table when SSR/borrow/locate sources exist
-6. real_time_corporate_event_alerts_table when live/vendor latency semantics exist
+1. daily_scanner_candidates_table wider replay / validator promotion decision
+2. master_intraday_bar_table wider/full-scope materialization plan
+   - quote-guarded subpath:
+     `01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md`
+3. microstructure_features_table multi-window/multi-event materialization plan
+4. market_state_table controlled real sample
+5. event_state_table controlled real sample
+6. short_sale_constraints_table when SSR/borrow/locate sources exist
+7. real_time_corporate_event_alerts_table when live/vendor latency semantics exist
 ```
 
-The executable plan for item 1 is now:
+The executable builder and evidence for item 1 are now:
+
+```text
+scripts/materialize_daily_scanner_candidates_table.py
+tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder.py
+C:/TSIS_Data/tests/test_runs/2026-06-29/daily_scanner_candidates_replay_20250102_20250110_v0_1/
+```
+
+The executable plan for item 2 is now:
 
 ```text
 01_foundations/module_contracts/outputs/master_intraday_bar_table_wider_scope_materialization_plan_v0_1.md
 ```
 
-The executable plan for item 2 is now:
+The executable plan for item 3 is now:
 
 ```text
 01_foundations/module_contracts/outputs/microstructure_features_table_multi_window_materialization_plan_v0_1.md

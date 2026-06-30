@@ -49,9 +49,32 @@ function Write-JsonAtomic {
     if (-not [string]::IsNullOrWhiteSpace($dir)) {
         New-Item -ItemType Directory -Force -Path $dir | Out-Null
     }
-    $tmp = "$Path.$PID.tmp"
+    $replaceId = [guid]::NewGuid().ToString("N")
+    $tmp = "$Path.$PID.$replaceId.tmp"
+    $backup = "$Path.$PID.$replaceId.bak"
     $Payload | ConvertTo-Json -Depth $Depth | Set-Content -LiteralPath $tmp -Encoding UTF8
-    Move-Item -LiteralPath $tmp -Destination $Path -Force
+    try {
+        if (Test-Path -LiteralPath $Path -PathType Leaf) {
+            [System.IO.File]::Replace($tmp, $Path, $backup, $true)
+        }
+        else {
+            [System.IO.File]::Move($tmp, $Path)
+        }
+    }
+    catch {
+        if (Test-Path -LiteralPath $Path -PathType Leaf) {
+            Remove-Item -LiteralPath $Path -Force
+        }
+        [System.IO.File]::Move($tmp, $Path)
+    }
+    finally {
+        if (Test-Path -LiteralPath $tmp -PathType Leaf) {
+            Remove-Item -LiteralPath $tmp -Force -ErrorAction SilentlyContinue
+        }
+        if (Test-Path -LiteralPath $backup -PathType Leaf) {
+            Remove-Item -LiteralPath $backup -Force -ErrorAction SilentlyContinue
+        }
+    }
 }
 
 function Add-JsonLine {

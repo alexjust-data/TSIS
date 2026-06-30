@@ -354,6 +354,7 @@ Incluye:
 - `corporate_actions_table_registry_entry.yaml`
 - `dataset_certification_matrix_registry_entry.yaml`
 - `master_daily_table_registry_entry.yaml`
+- `daily_scanner_candidates_table_registry_entry.yaml`
 - `master_intraday_bar_table_registry_entry.yaml`
 - `microstructure_features_table_registry_entry.yaml`
 - `halts_table_registry_entry.yaml`

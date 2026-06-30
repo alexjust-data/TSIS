@@ -39,6 +39,53 @@ graphify-out/
 Si se omite HTML por `--no-viz` u otra opcion oficial, esa decision debe quedar
 registrada en el changelog o manifest del build.
 
+## Modo sin APIs y version de Graphify
+
+Fuente directa de esta regla: `https://github.com/safishamsi/graphify`, rama
+`v8`, version upstream `graphifyy 0.9.1`, revisada el 2026-06-28.
+
+Estado observado en esta maquina el 2026-06-28:
+
+```text
+graphifyy instalado: 0.8.40
+upstream revisado:   0.9.1
+```
+
+Por tanto, antes de cualquier nuevo build oficial de `00_CTO`, el agente debe
+comprobar y registrar la version efectiva de Graphify y de la skill usada. Si
+la version instalada sigue por detras del protocolo upstream revisado, el build
+solo puede declararse baseline oficial si se documenta una de estas opciones:
+
+- Graphify instalado fue actualizado/alineado;
+- se ejecuto el flujo oficial desde la version upstream revisada;
+- o el build queda marcado como `provisional` por limitacion de version.
+
+TSIS opera por defecto sin APIs externas para Graphify. La ausencia de
+`GEMINI_API_KEY` o `GOOGLE_API_KEY` no autoriza a pedir `ANTHROPIC_API_KEY`,
+`OPENAI_API_KEY` ni otro proveedor. Para documentos, papers o imagenes, el modo
+correcto en Codex es:
+
+```text
+skill Graphify -> AST local para codigo -> subagentes/host agent para
+extraccion semantica -> build oficial -> diagnostics -> manifest.
+```
+
+Un corpus solo de codigo puede usar el flujo AST/code-only sin API y sin
+subagentes semanticos.
+
+Regla critica:
+
+```text
+graphify update por CLI es suficiente solo para cambios code/AST cuando ese
+scope lo permita. No prueba cobertura semantica de markdown, contracts, papers
+o imagenes.
+```
+
+Para cambios documentales de `00_CTO`, usar el flujo semantico de la skill
+Graphify o `graphify extract` con backend ya configurado. Si no hay backend ni
+subagentes disponibles, el agente debe parar, documentar la causa y no escribir
+un grafo parcial en `graphify-out/`.
+
 ## Divergencia TSIS respecto al workflow de equipo de Graphify
 
 Graphify upstream recomienda normalmente compartir `graphify-out/` con el
@@ -56,6 +103,19 @@ Regla:
 TSIS puede gobernar si se versiona graphify-out/.
 TSIS no puede llamar Graphify oficial a algo que Graphify no genero.
 ```
+
+Politica Git local:
+
+```text
+00_CTO/graphify-out/ raiz sigue siendo runtime reconstruible.
+00_CTO/graphify-out/leaf_slices/<leaf_id>/ puede publicarse en Git si fue
+promocionado con BUILD_MANIFEST.md, corpus reconstruible, graph.json,
+GRAPH_REPORT.md, graph.html y diagnostico limpio.
+```
+
+Un leaf topologico, de navegacion o de provenance debe declarar esa limitacion
+en `BUILD_MANIFEST.md` y `GRAPH_REPORT.md`. No puede presentarse como
+extraccion semantica completa si no hubo cobertura semantica completa.
 
 ## Que no cuenta como build oficial
 
@@ -157,6 +217,15 @@ graphify diagnose multigraph --graph .\graphify-out\graph.json
 graphify explain "<nodo canonico>" --graph .\graphify-out\graph.json
 ```
 
+Si el output es un leaf, la comprobacion equivalente debe apuntar a:
+
+```powershell
+Test-Path .\graphify-out\leaf_slices\<leaf_id>\graph.json
+Test-Path .\graphify-out\leaf_slices\<leaf_id>\GRAPH_REPORT.md
+Test-Path .\graphify-out\leaf_slices\<leaf_id>\graph.html
+graphify diagnose multigraph --graph .\graphify-out\leaf_slices\<leaf_id>\graph.json
+```
+
 Si `graph.html` falta por decision oficial, debe indicarse el flag usado.
 
 ## Protocolo de actualizacion incremental
@@ -233,6 +302,59 @@ Flujo obligatorio para nuevos archivos o modificaciones:
 9. Validar con `graphify diagnose multigraph`.
 10. Actualizar `graphify-out/BUILD_MANIFEST.md` y, si el cambio altera scope o
    semantica, actualizar `README.md` y `CHANGELOG.md`.
+
+## Baseline Git obligatorio del BUILD_MANIFEST
+
+Cada nuevo leaf o root Graphify de `00_CTO` debe incluir en su
+`BUILD_MANIFEST.md` un baseline Git reconstruible.
+
+El manifest debe registrar:
+
+- `graph_build_git_branch`;
+- `graph_build_git_commit`;
+- `graph_build_dirty_state`;
+- `graph_build_dirty_paths`;
+- `graph_build_untracked_paths`;
+- `graph_build_timestamp_utc`;
+- `graph_build_command`;
+- `graph_build_backend_or_agent_mode`;
+- `graphify_package_version`;
+- `graphify_skill_version_or_source`;
+- `graphify_upstream_reference`;
+- `graphify_installed_vs_protocol_status`;
+- `no_api_mode`;
+- `semantic_extraction_mode`;
+- `build_from_json_root_or_equivalent`;
+- `semantic_update_coverage`;
+- `corpus_manifest_path`;
+- `corpus_file_count`;
+- `corpus_inclusion_rules`;
+- `corpus_exclusion_rules`;
+- `queue_entries_covered`;
+- `queue_entries_left_pending`;
+- `diagnostics_command`;
+- `diagnostics_result`;
+- `next_delta_commands`.
+
+Regla:
+
+```text
+Un grafo sin commit base y corpus exacto no permite saber que cambio desde el
+ultimo build. No debe promocionarse como baseline completo para futuros diffs.
+```
+
+Comandos que deben quedar escritos para el siguiente agente:
+
+```powershell
+git diff --name-status <graph_build_git_commit>...HEAD
+git status --short
+```
+
+Si el build se hace con working tree sucio, el manifest debe decirlo y listar
+los paths modificados o no trackeados incluidos en el baseline. Si el build
+anterior no tiene commit base, el nuevo manifest debe reconstruir la comparacion
+con fecha de build, `GRAPHIFY_REFRESH_QUEUE.md`, manifest anterior y
+`git status --short`, y debe registrar esa limitacion.
 
 Regla para renombres:
 

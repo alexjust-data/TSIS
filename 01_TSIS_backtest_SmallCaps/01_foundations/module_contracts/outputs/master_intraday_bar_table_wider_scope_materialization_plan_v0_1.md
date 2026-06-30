@@ -128,6 +128,27 @@ output_root = E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table
 Do not use historical `D:/` or `C:/TSIS_Data/data/...` roots for the official
 path unless a separate parity/audit document explicitly authorizes it.
 
+Quote-guarded candidate dependency:
+
+```text
+quote_guarded_repair_run_root = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838
+quote_guarded_future_official_root = E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded
+quote_guarded_current_quotes_root = D:/quotes
+quote_guarded_current_quotes_root_state = provisional_d_legacy_recovery_root_pending_e_parity
+quote_guarded_final_state = pending_final_manifest_and_validation
+```
+
+The quote-guarded route is governed by:
+
+```text
+01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md
+configs/data_foundation_outputs/master_intraday_bar_table_quote_guarded_candidate_v0_2.json
+```
+
+This route is allowed for contract design, builder design and preflight tests.
+It is not allowed for final materialization until the quote-guarded E-root
+output exists with final validation evidence.
+
 ## 6. Recommended Path
 
 The preferred first institutional path is not the physical full copy.
@@ -152,6 +173,26 @@ containing every minute parquet:
 ```text
 Path A2: physical full copy candidate
 ```
+
+Parallel dependency path:
+
+```text
+Path B1: quote-guarded raw-scale candidate
+```
+
+Meaning:
+
+- preserve raw 1m as observed;
+- apply the quote-guarded repair manifest as an overlay price view;
+- do not modify `E:/TSIS/data/ohlcv_1m`;
+- do not reconstruct VWAP from quotes;
+- mark VWAP-invalid rows as blocked for direct VWAP consumption;
+- keep `full_universe_claim=false` until the final denominator and validation
+  gates pass.
+
+Path B1 is currently blocked on completion and final validation of the
+quote-guarded repair run. The current `D:/quotes` dependency is accepted only
+as provisional candidate lineage and must carry rebuild flags.
 
 ## 7. Current Builder Gap
 
@@ -187,6 +228,18 @@ Required builder changes before a wider run:
 - partition-level reconciliation;
 - row-level `full_universe_claim` defaulting to false;
 - backtest-core eligibility computed only after quality gates pass.
+
+Additional quote-guarded builder requirements:
+
+- consume a quote-guarded manifest or partition list, not a blind recursive
+  scan over millions of files;
+- keep `master_intraday_bar_table_v0_1` immutable;
+- write quote-guarded candidates only to a new candidate path;
+- include repair lineage columns from the quote-guarded contract;
+- support `1m_raw` and `1m_quote_guarded_raw` as the first candidate price
+  views;
+- block `1m_quote_guarded_split_normalized` until split normalization over
+  quote-guarded OHLC is separately tested.
 
 ## 8. Execution Sequence
 
@@ -367,7 +420,10 @@ status: split_safe_smoke_manifest_passed
 official_new_dataset_created: false
 heavy_materialization_started: false
 full_universe_claim_granted: false
-next_executable_action: decide whether to launch split-affected RunAudit or provide command for manual overnight execution
+quote_guarded_candidate_contract_defined: true
+quote_guarded_candidate_materialized: false
+quote_guarded_final_e_root_ready: false
+next_executable_action: wait for quote-guarded final E-root repair output or continue with preflight/builder tests only
 ```
 
 Latest smoke evidence:

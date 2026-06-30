@@ -1,0 +1,45 @@
+{
+  "parent_chunk": "strategy_source_steven_dux",
+  "subchunk": 1,
+  "scope_root": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS",
+  "files": [
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\SHORT\\Gap_Up_Short\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Gap_Up_Short/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Gap_Up_Short/STRATEGY.md",
+      "bytes": 37352,
+      "line_count": 1441,
+      "word_count_approx": 4930,
+      "sha256": "96e4b041a9c61560f833ce3b8ebc4eba6d9e03b59e2815b0fd396767e17d8f9d"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\STEVEN_DUX_SOURCE_STRATEGY_INDEX_v0_1.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/STEVEN_DUX_SOURCE_STRATEGY_INDEX_v0_1.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/STEVEN_DUX_SOURCE_STRATEGY_INDEX_v0_1.md",
+      "bytes": 17744,
+      "line_count": 643,
+      "word_count_approx": 2291,
+      "sha256": "56df51a4450da953834a3c16e33e96fce9022390de265a114a8f173a27d8ad65"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\FACTORS\\Pattern_Variation_Acceptable_Range\\FACTOR.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Pattern_Variation_Acceptable_Range/FACTOR.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Pattern_Variation_Acceptable_Range/FACTOR.md",
+      "bytes": 11601,
+      "line_count": 542,
+      "word_count_approx": 1571,
+      "sha256": "c692b286b5dafb294f4a7b83442f351e24f0b60ce7c88445ee81003ab26e22e2"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\README.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/README.md",
+      "bytes": 1475,
+      "line_count": 69,
+      "word_count_approx": 184,
+      "sha256": "1cb9b0047795a5baf99221f3c06605926c72e36ff0977b51d4eaa0e351eaef6e"
+    }
+  ],
+  "word_count_approx": 8976,
+  "chunk_id": 5
+}

@@ -14,6 +14,15 @@ Physical root:
 E:/TSIS/data/ohlcv_1m_split_normalized
 ```
 
+Candidate split-affected root:
+
+```text
+E:/TSIS/data/ohlcv_1m_split_normalized_full_universe_candidate
+```
+
+The candidate root is not the official production root until promotion gates are
+closed.
+
 ## 2. Primary Rule
 
 `ohlcv_1m_split_normalized_v0_1` is a derived ETL price view for split-sensitive intraday comparisons.
@@ -75,6 +84,7 @@ Primary evidence:
 - `contract_registry/dataset_contracts/ohlcv_1m_split_normalized_dataset_contract_v0_1.md`
 - `dataset_registry/ohlcv_1m/ohlcv_1m_split_normalized_registry_entry.yaml`
 - `canonical_schemas/ohlcv_1m/ohlcv_1m_split_normalized_schema_contract.md`
+- `module_contracts/ohlcv_1m_split_normalized_split_affected_materialization_results_v0_1.md`
 
 ## 8. Current Status
 
@@ -84,12 +94,26 @@ Current status:
 complete_scoped_split_event_audit
 ```
 
+Candidate materialization status:
+
+```text
+materialized_audited_candidate_pending_promotion_gate
+```
+
 The split-event audit reports:
 
 - 3,335 event cases;
 - 2,280 PASS;
 - 0 FAIL;
 - remaining non-PASS cases classified as coverage limits, not semantic failures.
+
+The split-affected candidate materialization reports:
+
+- 115,667 manifest rows;
+- 115,667 output files present;
+- 1,589 tickers in manifest;
+- 24 chunks;
+- 0 split-audit FAIL cases.
 
 ## 9. Final Rule
 

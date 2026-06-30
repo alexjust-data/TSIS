@@ -83,13 +83,18 @@ C:\TSIS_Data\PROJECT_OPERATING_SYSTEM.md
 C:\TSIS_Data\VERSIONING_STANDARDS.md
 C:\TSIS_Data\RESEARCH_PHILOSOPHY.md
 C:\TSIS_Data\README.md
+C:\TSIS_Data\LONG_RUNNING_OPERATIONS_CONTRACT.md
 
-Despues lee completos estos contratos del modulo SmallCaps:
+Despues lee completos estos contratos del sub-modulos
 
 C:\TSIS_Data\01_TSIS_backtest_SmallCaps\README.md
 C:\TSIS_Data\01_TSIS_backtest_SmallCaps\AGENTS.md
 C:\TSIS_Data\01_TSIS_backtest_SmallCaps\CHANGELOG.md
 C:\TSIS_Data\01_TSIS_backtest_SmallCaps\LOCAL_RULES.md
+
+C:\TSIS_Data\00_CTO\TSIS_LAB_ARCHITECTURE.md C:\TSIS_Data\00_CTO\CHANGELOG.md C:\TSIS_Data\00_CTO\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md C:\TSIS_Data\00_CTO\GRAPHIFY_REFRESH_QUEUE.md C:\TSIS_Data\00_CTO\LOCAL_RULES.md C:\TSIS_Data\00_CTO\README.md
+
+
 
 No modifiques nada todavia.
 

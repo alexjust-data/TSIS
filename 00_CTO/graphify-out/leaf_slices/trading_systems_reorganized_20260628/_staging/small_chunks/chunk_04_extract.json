@@ -1,0 +1,1149 @@
+{
+  "nodes": [
+    {
+      "id": "event_library",
+      "type": "library",
+      "label": "Event Library",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "description": "Technical library for event definitions, historical searches, visual candidate review, and future detector candidates."
+    },
+    {
+      "id": "pm_accepted_extension_break_event",
+      "type": "event_definition",
+      "label": "PM_Accepted_Extension_Break_Event",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Draft premarket event where an initial extension is accepted in an elevated shelf and later breaks violently."
+    },
+    {
+      "id": "momentum_expansion_family",
+      "type": "event_family",
+      "label": "MOMENTUM_EXPANSION",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Family assigned to the draft event."
+    },
+    {
+      "id": "premarket_session_scope",
+      "type": "session_scope",
+      "label": "premarket",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Session scope required by the current event definition."
+    },
+    {
+      "id": "initial_extension_phase",
+      "type": "event_phase",
+      "label": "initial_extension",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Early premarket extension that marks a first relevant high and shows early attention."
+    },
+    {
+      "id": "accepted_price_shelf_phase",
+      "type": "event_phase",
+      "label": "accepted_price_shelf",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Elevated price zone sustained after the first extension without a full reversal."
+    },
+    {
+      "id": "violent_shelf_break_phase",
+      "type": "event_phase",
+      "label": "violent_shelf_break",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Break of the accepted shelf with multiple expanding one-minute bars."
+    },
+    {
+      "id": "event_timestamp_first_violent_break_bar",
+      "type": "timestamp_rule",
+      "label": "first bar of violent break",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Official event timestamp rule for this draft event."
+    },
+    {
+      "id": "event_context_start_initial_extension",
+      "type": "timestamp_field",
+      "label": "event_context_start",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Conceptual start of the first extension or prior context."
+    },
+    {
+      "id": "shelf_start_timestamp",
+      "type": "timestamp_field",
+      "label": "shelf_start_ts",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Conceptual start timestamp for the acceptance shelf."
+    },
+    {
+      "id": "initial_extension_pct_parameter",
+      "type": "parameter",
+      "label": "initial_extension_pct",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Initial research parameter for percent rise from early premarket base or low to first relevant high."
+    },
+    {
+      "id": "shelf_duration_minutes_parameter",
+      "type": "parameter",
+      "label": "shelf_duration_minutes",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Initial research parameter for minimum and maximum duration of accepted elevated price."
+    },
+    {
+      "id": "max_extension_giveback_pct_parameter",
+      "type": "parameter",
+      "label": "max_extension_giveback_pct",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Initial research parameter for how much of the first extension may be given back."
+    },
+    {
+      "id": "impulse_window_bars_parameter",
+      "type": "parameter",
+      "label": "impulse_window_bars",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Initial research parameter for the number of one-minute bars in the break impulse."
+    },
+    {
+      "id": "impulse_push_pct_parameter",
+      "type": "parameter",
+      "label": "impulse_push_pct",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Initial research parameter for additional price expansion during the violent break."
+    },
+    {
+      "id": "required_observable_conditions",
+      "type": "condition_group",
+      "label": "required observable conditions",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Required conceptual conditions such as initial extension, accepted shelf, violent break, rising highs, and threshold push."
+    },
+    {
+      "id": "optional_observable_conditions",
+      "type": "condition_group",
+      "label": "optional observable conditions",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Optional context such as volume expansion, flat or positive shelf slope, support touches, spread, and catalyst context."
+    },
+    {
+      "id": "identity_time_candidate_features",
+      "type": "feature_group",
+      "label": "identity and time features",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Candidate identity and time fields including ticker, symbol, exchange, date, timestamps, and session segment."
+    },
+    {
+      "id": "initial_extension_candidate_features",
+      "type": "feature_group",
+      "label": "initial extension features",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Candidate fields for extension start, high, low, percent move, duration, and volume."
+    },
+    {
+      "id": "shelf_acceptance_candidate_features",
+      "type": "feature_group",
+      "label": "shelf acceptance features",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Candidate fields for shelf timestamps, range, slope, drift, support touches, volume, and retained extension."
+    },
+    {
+      "id": "violent_break_candidate_features",
+      "type": "feature_group",
+      "label": "violent break features",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Candidate fields for break window, OHLC, push, volume ratio, rising highs, strong closes, and new high over shelf."
+    },
+    {
+      "id": "market_context_candidate_features",
+      "type": "feature_group",
+      "label": "market context features",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Candidate context fields including premarket volume, RVOL proxy, gap, market cap, float, spread proxy, halts, and news context."
+    },
+    {
+      "id": "candidate_quality_states",
+      "type": "quality_state_group",
+      "label": "candidate quality states",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Future row states including good, review, degraded, blocked, and invalid candidate."
+    },
+    {
+      "id": "pm_accepted_extension_review_flags",
+      "type": "review_flag_group",
+      "label": "PM accepted extension review flags",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Conceptual flags for clarity, ambiguity, sparse data, halt overlap, split risk, and manual review."
+    },
+    {
+      "id": "single_spike_no_acceptance_exclusion",
+      "type": "exclusion",
+      "label": "single spike without acceptance",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Case that should not be classified as this event."
+    },
+    {
+      "id": "direct_open_push_no_shelf_exclusion",
+      "type": "exclusion",
+      "label": "direct opening push without shelf",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Case that should not be classified as this event."
+    },
+    {
+      "id": "full_giveback_exclusion",
+      "type": "exclusion",
+      "label": "initial extension mostly reverted",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Case where the first extension gives back almost all of the move."
+    },
+    {
+      "id": "downtrending_base_exclusion",
+      "type": "exclusion",
+      "label": "clearly downtrending base",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Case where the base drifts strongly downward rather than showing accepted price."
+    },
+    {
+      "id": "visual_review_checklist",
+      "type": "review_process",
+      "label": "visual review checklist",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Human checklist for reviewing candidate cases and avoiding event/entry confusion."
+    },
+    {
+      "id": "detector_candidate_status",
+      "type": "maturity_status",
+      "label": "detector_candidate",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "Future maturity status that the event cannot reach yet because key definitions and tests remain open."
+    },
+    {
+      "id": "event_library_restructuring_plan",
+      "type": "planning_document",
+      "label": "Event Library Restructuring Plan v0.1",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "description": "Planning note for making the Event Library more technical, precise, deduplicated, and reproducible."
+    },
+    {
+      "id": "v0_capture_state",
+      "type": "maturity_state",
+      "label": "v0_capture",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "description": "Initial unclassified capture state for provisional event definitions."
+    },
+    {
+      "id": "promoted_event_state",
+      "type": "maturity_state",
+      "label": "promoted event",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "description": "Named and classified event state after enough differentiation and cleanup."
+    },
+    {
+      "id": "numbered_root_event_file",
+      "type": "storage_pattern",
+      "label": "numbered root event file",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "description": "Root-level numbered file such as 001.md, 002.md, or 003.md used during v0 capture."
+    },
+    {
+      "id": "promoted_family_event_folder",
+      "type": "storage_pattern",
+      "label": "family event folder",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "description": "Final family folder with a named event directory, EVENT.md, notebook, and image folder."
+    },
+    {
+      "id": "strategy_library",
+      "type": "library",
+      "label": "Strategy Library",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "description": "Library for operational responses and strategy-level notebooks."
+    },
+    {
+      "id": "gap_and_go_strategy",
+      "type": "strategy",
+      "label": "Gap and Go",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "description": "Recommended first pilot strategy for decomposing human strategy into observable events."
+    },
+    {
+      "id": "strategy_notebook",
+      "type": "notebook_role",
+      "label": "strategy notebook",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "description": "Notebook role for finding samples of a complete strategy and generating visual cases for decomposition."
+    },
+    {
+      "id": "event_notebook",
+      "type": "notebook_role",
+      "label": "event notebook",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "description": "Notebook role for event-level searches, visual candidate review, and comparison of examples."
+    },
+    {
+      "id": "event_case_explorer_notebook",
+      "type": "notebook",
+      "label": "event_case_explorer.ipynb",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "description": "Associated notebook name expected for promoted events."
+    },
+    {
+      "id": "historical_search_contract",
+      "type": "contract",
+      "label": "historical search contract",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "description": "Machine-readable search contract for event id, grain, scope, anchor, data source, columns, parameters, conditions, exclusions, and flags."
+    },
+    {
+      "id": "candidate_row_contract",
+      "type": "contract",
+      "label": "candidate row contract",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "description": "Expected row fields emitted by exploratory event search scripts."
+    },
+    {
+      "id": "deduplication_rule_same_sequence_anchor_fields",
+      "type": "governance_rule",
+      "label": "same sequence, fields, and anchor deduplication rule",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "description": "Rule that events with the same sequence, fields, and temporal anchor are probably aliases or subtypes."
+    },
+    {
+      "id": "component_concept",
+      "type": "concept",
+      "label": "component",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "description": "Reusable piece of a market phenomenon, such as push, pullback, reclaim, or volume expansion."
+    },
+    {
+      "id": "top_level_event_concept",
+      "type": "concept",
+      "label": "top-level event",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "description": "Observable sequence with enough structure and identity to be treated as an event."
+    },
+    {
+      "id": "first_3bar_push_event",
+      "type": "related_event",
+      "label": "First_3Bar_Push_Event",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "description": "Related provisional event that may overlap through impulse components."
+    },
+    {
+      "id": "gap_and_go_event",
+      "type": "related_event",
+      "label": "Gap_And_Go_Event",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "description": "Related event example used in overlap and deduplication discussion."
+    },
+    {
+      "id": "das_event",
+      "type": "related_event",
+      "label": "DAS_Event",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "description": "Related event example used in overlap and final-structure examples."
+    },
+    {
+      "id": "vwap_reclaim_event",
+      "type": "related_event",
+      "label": "VWAP_Reclaim_Event",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "description": "Related event example used in overlap and deduplication discussion."
+    },
+    {
+      "id": "event_behavioral_mechanics_guide",
+      "type": "policy_candidate",
+      "label": "Event Behavioral Mechanics Guide v0.1",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "description": "Draft policy candidate for documenting trader psychology, game theory, crowd dynamics, and microstructure inside event definitions."
+    },
+    {
+      "id": "behavioral_mechanics_hypothesis",
+      "type": "hypothesis_type",
+      "label": "behavioral or microstructural hypothesis",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "description": "Hypothesis allowed in event definitions only when separated from certainty and operational action."
+    },
+    {
+      "id": "observable_phenomenon_layer",
+      "type": "event_documentation_layer",
+      "label": "observable phenomenon",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "description": "Layer for what happened in the market."
+    },
+    {
+      "id": "mechanical_hypothesis_layer",
+      "type": "event_documentation_layer",
+      "label": "mechanical hypothesis",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "description": "Layer for why the observed market behavior might occur."
+    },
+    {
+      "id": "measurable_evidence_layer",
+      "type": "event_documentation_layer",
+      "label": "measurable evidence",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "description": "Layer for how the mechanism can be approximated with observable data."
+    },
+    {
+      "id": "strategy_layer",
+      "type": "event_documentation_layer",
+      "label": "strategy",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "description": "Layer for operational action, which is excluded from Event Library definitions."
+    },
+    {
+      "id": "game_theoretic_pressure_framework",
+      "type": "framework",
+      "label": "game-theoretic pressure",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "description": "Falsable incentive model for participants, actions, information, payoffs, constraints, levels, and measurable proxies."
+    },
+    {
+      "id": "pressure_payoff_model",
+      "type": "model",
+      "label": "Pressure Payoff Model",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "description": "Permitted starting model for estimating latent group pressure from loss, level breaks, volume acceleration, and liquidity."
+    },
+    {
+      "id": "sequential_trigger_game",
+      "type": "model",
+      "label": "Sequential Trigger Game",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "description": "Permitted starting model for representing events as phases and transitions."
+    },
+    {
+      "id": "mean_field_feedback_game",
+      "type": "model",
+      "label": "Mean-Field Feedback Game",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "description": "Permitted starting model for aggregate pressure, liquidity, and impact feedback."
+    },
+    {
+      "id": "game_theoretic_pressure_rnd_document",
+      "type": "research_document",
+      "label": "GAME_THEORETIC_PRESSURE_FOR_EVENT_SEARCH_ALPHAEVOLVE_v0_1.md",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "description": "Referenced R&D document for first mathematical formalization of game-theoretic pressure for event search and AlphaEvolve."
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_event_library_contains_pm_accepted_extension_break_event",
+      "source": "event_library",
+      "target": "pm_accepted_extension_break_event",
+      "type": "contains_event_definition",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "The document defines this named draft event inside the Event Library path."
+    },
+    {
+      "id": "edge_pm_event_member_of_momentum_expansion_family",
+      "source": "pm_accepted_extension_break_event",
+      "target": "momentum_expansion_family",
+      "type": "member_of_family",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "The event header assigns family MOMENTUM_EXPANSION."
+    },
+    {
+      "id": "edge_pm_event_scoped_to_premarket",
+      "source": "pm_accepted_extension_break_event",
+      "target": "premarket_session_scope",
+      "type": "scoped_to_session",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "The current contract sets session_scope to premarket."
+    },
+    {
+      "id": "edge_pm_event_separated_from_strategy_layer",
+      "source": "pm_accepted_extension_break_event",
+      "target": "strategy_layer",
+      "type": "excludes_operational_action",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "The event explicitly excludes entry, stop, target, sizing, and execution instructions."
+    },
+    {
+      "id": "edge_pm_event_has_initial_extension_phase",
+      "source": "pm_accepted_extension_break_event",
+      "target": "initial_extension_phase",
+      "type": "has_phase",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "The didactic sequence starts with initial_extension."
+    },
+    {
+      "id": "edge_pm_event_has_accepted_price_shelf_phase",
+      "source": "pm_accepted_extension_break_event",
+      "target": "accepted_price_shelf_phase",
+      "type": "has_phase",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "The didactic sequence includes accepted_price_shelf."
+    },
+    {
+      "id": "edge_pm_event_has_violent_shelf_break_phase",
+      "source": "pm_accepted_extension_break_event",
+      "target": "violent_shelf_break_phase",
+      "type": "has_phase",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "The didactic sequence ends with violent_shelf_break."
+    },
+    {
+      "id": "edge_initial_extension_precedes_accepted_price_shelf",
+      "source": "initial_extension_phase",
+      "target": "accepted_price_shelf_phase",
+      "type": "precedes",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "The event sequence orders the first extension before the shelf."
+    },
+    {
+      "id": "edge_accepted_price_shelf_precedes_violent_shelf_break",
+      "source": "accepted_price_shelf_phase",
+      "target": "violent_shelf_break_phase",
+      "type": "precedes",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "The shelf is the accepted structure broken by the final impulse."
+    },
+    {
+      "id": "edge_violent_break_sets_event_timestamp",
+      "source": "violent_shelf_break_phase",
+      "target": "event_timestamp_first_violent_break_bar",
+      "type": "sets_event_timestamp",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "The first bar of the violent break is the official event timestamp."
+    },
+    {
+      "id": "edge_initial_extension_sets_event_context_start",
+      "source": "initial_extension_phase",
+      "target": "event_context_start_initial_extension",
+      "type": "sets_context_start",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "The initial extension is the prior context start."
+    },
+    {
+      "id": "edge_accepted_shelf_sets_shelf_start_timestamp",
+      "source": "accepted_price_shelf_phase",
+      "target": "shelf_start_timestamp",
+      "type": "sets_structure_start",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "The accepted shelf starts the structure period."
+    },
+    {
+      "id": "edge_initial_extension_measured_by_initial_extension_pct",
+      "source": "initial_extension_phase",
+      "target": "initial_extension_pct_parameter",
+      "type": "measured_by",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "The initial extension phase lists initial_extension_pct as a research parameter."
+    },
+    {
+      "id": "edge_accepted_shelf_measured_by_shelf_duration_minutes",
+      "source": "accepted_price_shelf_phase",
+      "target": "shelf_duration_minutes_parameter",
+      "type": "measured_by",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "The acceptance phase lists shelf duration parameters."
+    },
+    {
+      "id": "edge_accepted_shelf_constrained_by_max_giveback",
+      "source": "accepted_price_shelf_phase",
+      "target": "max_extension_giveback_pct_parameter",
+      "type": "constrained_by",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "The shelf phase limits how much of the first extension may be returned."
+    },
+    {
+      "id": "edge_violent_break_measured_by_impulse_window_bars",
+      "source": "violent_shelf_break_phase",
+      "target": "impulse_window_bars_parameter",
+      "type": "measured_by",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "The violent break phase lists impulse_window_bars as a research parameter."
+    },
+    {
+      "id": "edge_violent_break_measured_by_impulse_push_pct",
+      "source": "violent_shelf_break_phase",
+      "target": "impulse_push_pct_parameter",
+      "type": "measured_by",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "The violent break phase lists impulse_push_pct as a research parameter."
+    },
+    {
+      "id": "edge_pm_event_requires_observable_conditions",
+      "source": "pm_accepted_extension_break_event",
+      "target": "required_observable_conditions",
+      "type": "requires_condition_group",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "The draft observable contract lists required conditions."
+    },
+    {
+      "id": "edge_pm_event_has_optional_observable_conditions",
+      "source": "pm_accepted_extension_break_event",
+      "target": "optional_observable_conditions",
+      "type": "has_optional_condition_group",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "The draft observable contract lists optional conditions."
+    },
+    {
+      "id": "edge_pm_event_uses_identity_time_features",
+      "source": "pm_accepted_extension_break_event",
+      "target": "identity_time_candidate_features",
+      "type": "uses_candidate_feature_group",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "Candidate features include identity and time."
+    },
+    {
+      "id": "edge_pm_event_uses_initial_extension_features",
+      "source": "pm_accepted_extension_break_event",
+      "target": "initial_extension_candidate_features",
+      "type": "uses_candidate_feature_group",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "Candidate features include initial extension metrics."
+    },
+    {
+      "id": "edge_pm_event_uses_shelf_acceptance_features",
+      "source": "pm_accepted_extension_break_event",
+      "target": "shelf_acceptance_candidate_features",
+      "type": "uses_candidate_feature_group",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "Candidate features include shelf and acceptance metrics."
+    },
+    {
+      "id": "edge_pm_event_uses_violent_break_features",
+      "source": "pm_accepted_extension_break_event",
+      "target": "violent_break_candidate_features",
+      "type": "uses_candidate_feature_group",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "Candidate features include violent break metrics."
+    },
+    {
+      "id": "edge_pm_event_uses_market_context_features",
+      "source": "pm_accepted_extension_break_event",
+      "target": "market_context_candidate_features",
+      "type": "uses_candidate_feature_group",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "Candidate features include market context fields."
+    },
+    {
+      "id": "edge_pm_event_has_candidate_quality_states",
+      "source": "pm_accepted_extension_break_event",
+      "target": "candidate_quality_states",
+      "type": "has_quality_state_group",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "The future row can mark several candidate quality states."
+    },
+    {
+      "id": "edge_pm_event_has_review_flags",
+      "source": "pm_accepted_extension_break_event",
+      "target": "pm_accepted_extension_review_flags",
+      "type": "has_review_flag_group",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "The quality section lists conceptual review flags."
+    },
+    {
+      "id": "edge_pm_event_excludes_single_spike_no_acceptance",
+      "source": "pm_accepted_extension_break_event",
+      "target": "single_spike_no_acceptance_exclusion",
+      "type": "excludes_case",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "A lone spike without accepted extension is excluded."
+    },
+    {
+      "id": "edge_pm_event_excludes_direct_open_push_no_shelf",
+      "source": "pm_accepted_extension_break_event",
+      "target": "direct_open_push_no_shelf_exclusion",
+      "type": "excludes_case",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "A direct push without shelf phase is excluded."
+    },
+    {
+      "id": "edge_pm_event_excludes_full_giveback",
+      "source": "pm_accepted_extension_break_event",
+      "target": "full_giveback_exclusion",
+      "type": "excludes_case",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "A first extension that returns almost all of the move is excluded."
+    },
+    {
+      "id": "edge_pm_event_excludes_downtrending_base",
+      "source": "pm_accepted_extension_break_event",
+      "target": "downtrending_base_exclusion",
+      "type": "excludes_case",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "A base drifting strongly downward is excluded."
+    },
+    {
+      "id": "edge_visual_review_checklist_reviews_pm_event",
+      "source": "visual_review_checklist",
+      "target": "pm_accepted_extension_break_event",
+      "type": "reviews_candidate_for",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "The checklist is for visual review of this event's candidates."
+    },
+    {
+      "id": "edge_pm_event_not_yet_detector_candidate",
+      "source": "pm_accepted_extension_break_event",
+      "target": "detector_candidate_status",
+      "type": "not_ready_for_status",
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "evidence": "The status section says the event cannot yet pass to detector_candidate."
+    },
+    {
+      "id": "edge_restructuring_plan_diagnoses_event_library",
+      "source": "event_library_restructuring_plan",
+      "target": "event_library",
+      "type": "diagnoses_library_risk",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "The plan identifies growth, duplication, and strategy/event confusion risks."
+    },
+    {
+      "id": "edge_restructuring_plan_defines_v0_capture",
+      "source": "event_library_restructuring_plan",
+      "target": "v0_capture_state",
+      "type": "defines_maturity_state",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "The plan defines v0 capture as the initial numbered event stage."
+    },
+    {
+      "id": "edge_restructuring_plan_defines_promoted_event",
+      "source": "event_library_restructuring_plan",
+      "target": "promoted_event_state",
+      "type": "defines_maturity_state",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "The plan defines the promoted event as named and classified."
+    },
+    {
+      "id": "edge_v0_capture_stored_as_numbered_root_event_file",
+      "source": "v0_capture_state",
+      "target": "numbered_root_event_file",
+      "type": "stored_as",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "During v0, events live as numbered root files."
+    },
+    {
+      "id": "edge_promoted_event_stored_as_family_event_folder",
+      "source": "promoted_event_state",
+      "target": "promoted_family_event_folder",
+      "type": "stored_as",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "Promoted events live in named folders under their final family."
+    },
+    {
+      "id": "edge_numbered_root_event_file_matures_to_family_event_folder",
+      "source": "numbered_root_event_file",
+      "target": "promoted_family_event_folder",
+      "type": "matures_to",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "The example promotion moves 001.md into a family event folder."
+    },
+    {
+      "id": "edge_v0_capture_precedes_promoted_event_state",
+      "source": "v0_capture_state",
+      "target": "promoted_event_state",
+      "type": "precedes",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "The workflow matures from capture through definition, comparison, naming, family assignment, and move."
+    },
+    {
+      "id": "edge_restructuring_plan_uses_gap_and_go_pilot",
+      "source": "event_library_restructuring_plan",
+      "target": "gap_and_go_strategy",
+      "type": "selects_initial_pilot",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "The plan names Gap and Go as the first recommended strategy."
+    },
+    {
+      "id": "edge_strategy_library_helps_discover_event_library_components",
+      "source": "strategy_library",
+      "target": "event_library",
+      "type": "helps_decompose_strategies_into_events",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "Strategy Library helps decompose human strategies into observable event pieces."
+    },
+    {
+      "id": "edge_gap_and_go_strategy_pilot_for_event_library",
+      "source": "gap_and_go_strategy",
+      "target": "event_library",
+      "type": "pilot_source_for_event_decomposition",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "Gap and Go is proposed as the first strategy to decompose into events."
+    },
+    {
+      "id": "edge_gap_and_go_possible_decomposition_includes_first_3bar_push",
+      "source": "gap_and_go_strategy",
+      "target": "first_3bar_push_event",
+      "type": "possible_decomposition_includes",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "The plan lists First_3Bar_Push_Event among possible post-analysis events."
+    },
+    {
+      "id": "edge_strategy_notebook_lives_in_strategy_library",
+      "source": "strategy_notebook",
+      "target": "strategy_library",
+      "type": "lives_in",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "Strategy notebooks live in Strategy Library."
+    },
+    {
+      "id": "edge_strategy_notebook_supplies_samples_for_event_library",
+      "source": "strategy_notebook",
+      "target": "event_library",
+      "type": "supplies_visual_cases_for_decomposition",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "Strategy notebooks generate visual cases for event decomposition."
+    },
+    {
+      "id": "edge_event_notebook_supports_event_library",
+      "source": "event_notebook",
+      "target": "event_library",
+      "type": "supports_candidate_review",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "Event notebooks are for searches, filtering, visualization, and case comparison."
+    },
+    {
+      "id": "edge_event_case_explorer_instance_of_event_notebook",
+      "source": "event_case_explorer_notebook",
+      "target": "event_notebook",
+      "type": "instance_of_notebook_role",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "The proposed event template names event_case_explorer.ipynb as the associated notebook."
+    },
+    {
+      "id": "edge_event_notebook_visualizes_candidate_rows",
+      "source": "event_notebook",
+      "target": "candidate_row_contract",
+      "type": "visualizes_outputs_from",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "The notebook should visualize outputs from runs and candidate searches."
+    },
+    {
+      "id": "edge_historical_search_contract_required_by_event_library",
+      "source": "historical_search_contract",
+      "target": "event_library",
+      "type": "required_for_reproducible_event_search",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "The plan calls the search contract the most important Python-facing section."
+    },
+    {
+      "id": "edge_historical_search_contract_defines_candidate_row_contract",
+      "source": "historical_search_contract",
+      "target": "candidate_row_contract",
+      "type": "defines_expected_output",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "The template includes both a search contract and expected candidate row."
+    },
+    {
+      "id": "edge_candidate_row_contract_specified_by_event_definition",
+      "source": "candidate_row_contract",
+      "target": "event_library",
+      "type": "specified_in_event_definition",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "Every event definition should say which fields an exploratory script emits."
+    },
+    {
+      "id": "edge_deduplication_rule_applies_to_event_library",
+      "source": "deduplication_rule_same_sequence_anchor_fields",
+      "target": "event_library",
+      "type": "governs_new_event_creation",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "The rule must be checked before creating a new event."
+    },
+    {
+      "id": "edge_deduplication_rule_compares_pm_accepted_extension_break",
+      "source": "deduplication_rule_same_sequence_anchor_fields",
+      "target": "pm_accepted_extension_break_event",
+      "type": "compares_candidate_event",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "PM_Accepted_Extension_Break_Event appears in possible overlap examples."
+    },
+    {
+      "id": "edge_deduplication_rule_compares_first_3bar_push_event",
+      "source": "deduplication_rule_same_sequence_anchor_fields",
+      "target": "first_3bar_push_event",
+      "type": "compares_candidate_event",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "First_3Bar_Push_Event appears in possible overlap examples."
+    },
+    {
+      "id": "edge_deduplication_rule_compares_gap_and_go_event",
+      "source": "deduplication_rule_same_sequence_anchor_fields",
+      "target": "gap_and_go_event",
+      "type": "compares_candidate_event",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "Gap_And_Go_Event appears in possible overlap examples."
+    },
+    {
+      "id": "edge_deduplication_rule_compares_das_event",
+      "source": "deduplication_rule_same_sequence_anchor_fields",
+      "target": "das_event",
+      "type": "compares_candidate_event",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "DAS_Event appears in possible overlap examples."
+    },
+    {
+      "id": "edge_deduplication_rule_compares_vwap_reclaim_event",
+      "source": "deduplication_rule_same_sequence_anchor_fields",
+      "target": "vwap_reclaim_event",
+      "type": "compares_candidate_event",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "VWAP_Reclaim_Event appears in possible overlap examples."
+    },
+    {
+      "id": "edge_first_3bar_push_differs_from_pm_accepted_extension_break",
+      "source": "first_3bar_push_event",
+      "target": "pm_accepted_extension_break_event",
+      "type": "differs_by_acceptance_requirement",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "The related-event table says a 3-bar push does not require prior acceptance."
+    },
+    {
+      "id": "edge_gap_and_go_event_differs_from_pm_accepted_extension_break",
+      "source": "gap_and_go_event",
+      "target": "pm_accepted_extension_break_event",
+      "type": "differs_by_shelf_requirement",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "The related-event table says Gap and Go may break early without a shelf."
+    },
+    {
+      "id": "edge_das_event_differs_from_pm_accepted_extension_break",
+      "source": "das_event",
+      "target": "pm_accepted_extension_break_event",
+      "type": "differs_by_focus",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "The related-event table distinguishes DAS as focused on dips after squeeze or push."
+    },
+    {
+      "id": "edge_vwap_reclaim_related_to_pm_accepted_extension_break",
+      "source": "vwap_reclaim_event",
+      "target": "pm_accepted_extension_break_event",
+      "type": "shares_possible_component",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "VWAP reclaim is listed among possible overlapping components or related events."
+    },
+    {
+      "id": "edge_component_concept_contrasts_with_top_level_event",
+      "source": "component_concept",
+      "target": "top_level_event_concept",
+      "type": "contrasts_with",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "The plan defines a component as a piece and an event as an observable sequence."
+    },
+    {
+      "id": "edge_top_level_event_represented_by_pm_accepted_extension_break",
+      "source": "top_level_event_concept",
+      "target": "pm_accepted_extension_break_event",
+      "type": "represented_by",
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "evidence": "The plan uses PM_Accepted_Extension_Break_Event as an example promoted event."
+    },
+    {
+      "id": "edge_behavioral_mechanics_guide_governs_event_library",
+      "source": "event_behavioral_mechanics_guide",
+      "target": "event_library",
+      "type": "governs_documentation_practice",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "evidence": "The guide scopes itself to Event Library definitions."
+    },
+    {
+      "id": "edge_behavioral_mechanics_guide_permits_hypothesis",
+      "source": "event_behavioral_mechanics_guide",
+      "target": "behavioral_mechanics_hypothesis",
+      "type": "permits_marked_hypothesis",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "evidence": "Event definitions may include behavioral or microstructural hypotheses if marked as hypotheses."
+    },
+    {
+      "id": "edge_behavioral_hypothesis_belongs_to_mechanical_layer",
+      "source": "behavioral_mechanics_hypothesis",
+      "target": "mechanical_hypothesis_layer",
+      "type": "belongs_to_layer",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "evidence": "The guide separates observed phenomena from proposed mechanisms."
+    },
+    {
+      "id": "edge_mechanics_guide_separates_observable_layer",
+      "source": "event_behavioral_mechanics_guide",
+      "target": "observable_phenomenon_layer",
+      "type": "separates_layer",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "evidence": "The guide requires a layer for what occurred in the market."
+    },
+    {
+      "id": "edge_mechanics_guide_separates_mechanical_layer",
+      "source": "event_behavioral_mechanics_guide",
+      "target": "mechanical_hypothesis_layer",
+      "type": "separates_layer",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "evidence": "The guide requires a layer for why behavior might occur."
+    },
+    {
+      "id": "edge_mechanics_guide_separates_evidence_layer",
+      "source": "event_behavioral_mechanics_guide",
+      "target": "measurable_evidence_layer",
+      "type": "separates_layer",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "evidence": "The guide requires a layer for measurable approximation."
+    },
+    {
+      "id": "edge_mechanics_guide_excludes_strategy_layer",
+      "source": "event_behavioral_mechanics_guide",
+      "target": "strategy_layer",
+      "type": "excludes_layer_from_event_library",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "evidence": "The guide routes strategy decisions out of Event Library."
+    },
+    {
+      "id": "edge_observable_layer_allowed_in_event_library",
+      "source": "observable_phenomenon_layer",
+      "target": "event_library",
+      "type": "allowed_in",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "evidence": "Event Library can contain observable market phenomena."
+    },
+    {
+      "id": "edge_mechanical_layer_allowed_in_event_library",
+      "source": "mechanical_hypothesis_layer",
+      "target": "event_library",
+      "type": "allowed_in",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "evidence": "Event Library can contain marked mechanism hypotheses."
+    },
+    {
+      "id": "edge_evidence_layer_allowed_in_event_library",
+      "source": "measurable_evidence_layer",
+      "target": "event_library",
+      "type": "allowed_in",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "evidence": "Event Library can contain measurable evidence and proxies."
+    },
+    {
+      "id": "edge_strategy_layer_routed_to_strategy_library",
+      "source": "strategy_layer",
+      "target": "strategy_library",
+      "type": "belongs_to_later_layer",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "evidence": "Operational strategy content belongs to Strategy Library, execution models, or decision models."
+    },
+    {
+      "id": "edge_game_theoretic_pressure_framework_allowed_in_event_library",
+      "source": "game_theoretic_pressure_framework",
+      "target": "event_library",
+      "type": "allowed_when_falsable",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "evidence": "The guide allows game-theoretic pressure as an observable, measurable, falsable model."
+    },
+    {
+      "id": "edge_pressure_payoff_model_for_game_theoretic_pressure",
+      "source": "pressure_payoff_model",
+      "target": "game_theoretic_pressure_framework",
+      "type": "permitted_starting_model_for",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "evidence": "Pressure Payoff Model is listed as a permitted starting model."
+    },
+    {
+      "id": "edge_sequential_trigger_game_for_game_theoretic_pressure",
+      "source": "sequential_trigger_game",
+      "target": "game_theoretic_pressure_framework",
+      "type": "permitted_starting_model_for",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "evidence": "Sequential Trigger Game is listed as a permitted starting model."
+    },
+    {
+      "id": "edge_mean_field_feedback_game_for_game_theoretic_pressure",
+      "source": "mean_field_feedback_game",
+      "target": "game_theoretic_pressure_framework",
+      "type": "permitted_starting_model_for",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "evidence": "Mean-Field Feedback Game is listed as a permitted starting model."
+    },
+    {
+      "id": "edge_game_theoretic_pressure_documented_by_rnd_document",
+      "source": "game_theoretic_pressure_framework",
+      "target": "game_theoretic_pressure_rnd_document",
+      "type": "documented_by",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "evidence": "The guide references an R&D document for mathematical formalization."
+    },
+    {
+      "id": "edge_rnd_document_referenced_by_mechanics_guide",
+      "source": "game_theoretic_pressure_rnd_document",
+      "target": "event_behavioral_mechanics_guide",
+      "type": "referenced_by",
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "evidence": "The guide says the R&D document should be cited for substantive game-theoretic pressure use."
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "hyperedge_pm_accepted_extension_break_phase_sequence",
+      "type": "event_phase_sequence",
+      "nodes": [
+        "initial_extension_phase",
+        "accepted_price_shelf_phase",
+        "violent_shelf_break_phase"
+      ],
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "The event is explicitly defined as initial extension, accepted price shelf, then violent shelf break."
+    },
+    {
+      "id": "hyperedge_pm_accepted_extension_break_feature_contract",
+      "type": "candidate_feature_contract",
+      "nodes": [
+        "identity_time_candidate_features",
+        "initial_extension_candidate_features",
+        "shelf_acceptance_candidate_features",
+        "violent_break_candidate_features",
+        "market_context_candidate_features"
+      ],
+      "source_file": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "description": "The draft event lists five candidate feature groups for future rows."
+    },
+    {
+      "id": "hyperedge_event_library_maturation_workflow",
+      "type": "maturation_workflow",
+      "nodes": [
+        "gap_and_go_strategy",
+        "strategy_notebook",
+        "v0_capture_state",
+        "numbered_root_event_file",
+        "deduplication_rule_same_sequence_anchor_fields",
+        "promoted_event_state",
+        "promoted_family_event_folder"
+      ],
+      "source_file": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "description": "The plan describes strategy-led discovery, v0 numbered capture, deduplication, and final promoted event folders."
+    },
+    {
+      "id": "hyperedge_behavioral_mechanics_layer_boundary",
+      "type": "documentation_layer_boundary",
+      "nodes": [
+        "observable_phenomenon_layer",
+        "mechanical_hypothesis_layer",
+        "measurable_evidence_layer",
+        "strategy_layer"
+      ],
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "description": "The guide requires events to separate observable phenomena, mechanism hypotheses, evidence, and strategy."
+    },
+    {
+      "id": "hyperedge_game_theoretic_pressure_models",
+      "type": "model_family",
+      "nodes": [
+        "game_theoretic_pressure_framework",
+        "pressure_payoff_model",
+        "sequential_trigger_game",
+        "mean_field_feedback_game",
+        "game_theoretic_pressure_rnd_document"
+      ],
+      "source_file": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "description": "The guide names three permitted starting models and an R&D document for game-theoretic pressure formalization."
+    }
+  ],
+  "metadata": {
+    "chunk_id": 4,
+    "parent_chunk": "event_library",
+    "subchunk": 4,
+    "scope_root": "00_CTO/13_TRADING_SYSTEMS",
+    "source_files": [
+      "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md"
+    ],
+    "node_count": 60,
+    "edge_count": 80,
+    "hyperedge_count": 5,
+    "id_policy": "snake_case_unique_ids",
+    "extraction_scope": "manual_semantic_chunk_extract_for_staging_slice",
+    "notes": "Relationships are limited to explicit event, library, strategy, notebook, mechanics, and requirement statements in the three manifest files."
+  }
+}

@@ -140,3 +140,50 @@ The validator must protect against the main failure mode:
 ```text
 a scoped 8-ticker split-event output being mistaken for a full-universe 1m table
 ```
+
+## Quote-Guarded Candidate Preflight Validators
+
+Planned candidate:
+
+```text
+master_intraday_bar_table_v0_2_candidate_quote_guarded
+```
+
+Preflight validators must pass before any materialization attempt:
+
+- candidate config exists:
+  `configs/data_foundation_outputs/master_intraday_bar_table_quote_guarded_candidate_v0_2.json`;
+- candidate contract exists:
+  `01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md`;
+- target path is not the v0.1 dataset path;
+- `full_universe_claim=false`;
+- `official_dataset_created=false`;
+- current bridge repair run is marked `running_or_not_final_validated`;
+- final E-root quote-guarded repair manifest is required but not assumed;
+- storage model is `raw_ohlcv_1m_plus_repair_manifest_overlay`;
+- `creates_full_corrected_tree=false`;
+- `raw_ohlcv_1m_mutation_allowed=false`;
+- `D:/quotes` lineage is marked provisional candidate-only when inherited;
+- promotion blockers include final validation and human review.
+
+Hard fail if:
+
+```text
+target_dataset_path == E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_1
+full_universe_claim == true
+safe_to_launch_full_materialization == true before final quote-guarded validation
+creates_full_corrected_tree == true without a separate physical-tree contract
+raw_ohlcv_1m_mutation_allowed == true
+```
+
+Post-materialization validators, once the candidate exists, must add:
+
+- denominator manifest reconciliation;
+- row count by price view;
+- duplicate `ticker + ts_utc + bar_size + price_view` check;
+- raw-vs-quote-guarded OHLC overlay check;
+- VWAP invalid-status preservation;
+- non-negative volume;
+- no execution truth claim;
+- no direct ML/RL eligibility;
+- no backtest-core eligibility unless quality gates explicitly allow it.

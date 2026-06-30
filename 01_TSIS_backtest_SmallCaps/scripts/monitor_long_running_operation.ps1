@@ -143,6 +143,14 @@ function Get-StatusSnapshot {
     if ($heartbeat -ne $null -and $heartbeat.active_pid -ne $null) {
         $activePid = [int]$heartbeat.active_pid
     }
+    $wrapperPid = $null
+    if ($heartbeat -ne $null -and $heartbeat.wrapper_pid -ne $null) {
+        $wrapperPid = [int]$heartbeat.wrapper_pid
+    }
+    elseif ($pids -ne $null -and $pids.wrapper_pid -ne $null) {
+        $wrapperPid = [int]$pids.wrapper_pid
+    }
+    $wrapperAlive = Get-AliveProcess -ProcessId $wrapperPid
     $activeAlive = Get-AliveProcess -ProcessId $activePid
     $children = @(Get-ProcessChildren -ProcessId $activePid)
     $workerChildren = @($children | Where-Object { $_.Name -notlike "conhost*" })
@@ -165,6 +173,8 @@ function Get-StatusSnapshot {
         pre_manifest = $preManifest
         pids = $pids
         heartbeat_age_seconds = $heartbeatAgeSeconds
+        wrapper_pid = $wrapperPid
+        wrapper_alive = $wrapperAlive
         active_pid = $activePid
         active_alive = $activeAlive
         worker_children = $workerChildren
@@ -186,8 +196,23 @@ function Write-CompactStatus {
     }
 
     $processCount = 0
+    if ($snapshot.wrapper_alive) { $processCount += 1 }
     if ($snapshot.active_alive) { $processCount += 1 }
     if ($snapshot.worker_children -ne $null) { $processCount += @($snapshot.worker_children).Count }
+
+    $displayStatus = Format-Optional $heartbeat.status
+    $statusSuffix = ""
+    $isTerminalStatus = ($heartbeat.status -eq "completed" -or $heartbeat.status -eq "failed")
+    $isStaleRunning = $false
+    if (-not $isTerminalStatus -and
+        $heartbeat.status -eq "running" -and
+        $processCount -eq 0 -and
+        $snapshot.heartbeat_age_seconds -ne $null -and
+        [double]$snapshot.heartbeat_age_seconds -gt 180) {
+        $displayStatus = "stale_no_process"
+        $statusSuffix = " raw_status=running"
+        $isStaleRunning = $true
+    }
 
     $progress = "unknown"
     $reason = ""
@@ -225,11 +250,13 @@ function Write-CompactStatus {
         }
     }
 
-    Write-Host ("[{0}] status={1} stage={2} processes={3} latest_age_sec={4} elapsed_sec={5} progress={6}{7} item={8}{9} cpu={10} io_read_Bps={11} io_write_Bps={12} output_free_GB={13}{14}" -f `
+    Write-Host ("[{0}] status={1}{2} stage={3} processes={4} wrapper_alive={5} latest_age_sec={6} elapsed_sec={7} progress={8}{9} item={10}{11} cpu={12} io_read_Bps={13} io_write_Bps={14} output_free_GB={15}{16}" -f `
         $timestamp,
-        (Format-Optional $heartbeat.status),
+        $displayStatus,
+        $statusSuffix,
         (Format-Optional $heartbeat.stage),
         $processCount,
+        (Format-Optional $snapshot.wrapper_alive),
         (Format-Optional $snapshot.heartbeat_age_seconds),
         (Format-Optional $heartbeat.elapsed_seconds),
         $progress,
@@ -299,6 +326,7 @@ function Show-Status {
     }
 
     $activeAlive = $snapshot.active_alive
+    $wrapperAlive = $snapshot.wrapper_alive
     $workerChildren = @($snapshot.worker_children)
     $isHeartbeatFresh = $false
     if ($heartbeatAgeSeconds -ne $null -and [double]$heartbeatAgeSeconds -lt 180) {
@@ -312,7 +340,10 @@ function Show-Status {
     elseif ($heartbeat.status -eq "failed") {
         Write-Host "  Estado: FALLADO. Revisa stderr/log y final manifest."
     }
-    elseif ($activeAlive -or $workerChildren.Count -gt 0) {
+    elseif (-not $isHeartbeatFresh -and -not $wrapperAlive -and -not $activeAlive -and $workerChildren.Count -eq 0) {
+        Write-Host "  Estado: STALE / SIN PROCESO. El ultimo heartbeat dice running, pero no hay wrapper, worker ni PID activo visible."
+    }
+    elseif ($wrapperAlive -or $activeAlive -or $workerChildren.Count -gt 0) {
         Write-Host "  Estado: VIVO."
     }
     else {
@@ -363,6 +394,7 @@ function Show-Status {
     Write-Host ("  elapsed_seconds: {0}" -f (Format-Optional $heartbeat.elapsed_seconds))
     Write-Host ("  current:         {0}/{1} ({2})" -f (Format-Optional $heartbeat.current_index), (Format-Optional $heartbeat.total_count), $percent)
     Write-Host ("  item:            {0}" -f (Format-Optional $heartbeat.current_item))
+    Write-Host ("  wrapper_pid:     {0} alive={1}" -f (Format-Optional $snapshot.wrapper_pid), (Format-Optional $snapshot.wrapper_alive))
     Write-Host ("  pid:             {0} alive={1}" -f (Format-Optional $heartbeat.active_pid), (Format-Optional $heartbeat.active_pid_alive))
     Write-Host ("  cpu_pct:         {0}" -f (Format-Optional $heartbeat.process_cpu_pct))
     Write-Host ("  io_read_Bps:     {0}" -f (Format-Optional $heartbeat.io_read_bytes_per_sec))

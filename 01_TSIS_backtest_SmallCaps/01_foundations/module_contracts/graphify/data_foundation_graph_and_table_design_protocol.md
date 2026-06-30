@@ -120,6 +120,39 @@ Prohibido:
 - mezclar outputs viejos con corpus nuevo sin manifest;
 - usar `graphify-out/` como source of truth.
 
+### Modo sin APIs y cobertura semantica
+
+TSIS no asume APIs externas disponibles para Graphify.
+
+Para corpus documentales de CAPA 1, el modo oficial sin APIs es:
+
+```text
+skill Graphify activa
+-> AST local para codigo
+-> subagentes/host agent para documentos, papers e imagenes
+-> build con root del scan
+-> diagnostics
+-> BUILD_MANIFEST con version, corpus y cobertura.
+```
+
+Un `graphify update` CLI code-only o AST-only no basta para sostener decisiones
+sobre tablas cuando cambiaron markdown, contratos, schemas, policies,
+certification docs, papers o imagenes. En ese caso el agente debe ejecutar el
+flujo semantico de la skill Graphify, o un `graphify extract` oficial con
+backend ya configurado. Si no existen backend ni subagentes disponibles, el
+resultado debe quedar bloqueado como `pending_semantic_graph_refresh`.
+
+El `BUILD_MANIFEST.md` usado para justificar una tabla debe declarar como
+minimo:
+
+- `graphify_package_version`;
+- `graphify_skill_version_or_source`;
+- `graphify_upstream_reference`;
+- `no_api_mode`;
+- `semantic_extraction_mode`;
+- `build_from_json_root_or_equivalent`;
+- `semantic_update_coverage`.
+
 ## Runtime reconstruible
 
 `graphify-out/` es runtime reconstruible.

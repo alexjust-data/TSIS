@@ -7,6 +7,585 @@ Este changelog registra cambios institucionales y semanticamente relevantes para
 No duplica el historial de Git.
 Existe para preservar memoria arquitectonica y metodologica del modulo.
 
+## v0.4.120 - Master intraday quote-guarded candidate route
+
+- Added the candidate contract for:
+
+```text
+master_intraday_bar_table_v0_2_candidate_quote_guarded
+```
+
+- Added the machine-readable preflight config:
+
+```text
+configs/data_foundation_outputs/master_intraday_bar_table_quote_guarded_candidate_v0_2.json
+```
+
+- Updated the master intraday contract stack:
+  - schema contract;
+  - dataset contract;
+  - consumption policy;
+  - registry entry;
+  - validators;
+  - wider-scope plan;
+  - Data Foundation target contract;
+  - Data Foundation status matrix;
+  - module-contracts README.
+
+- Important semantic decision:
+
+```text
+master_intraday_bar_table_v0_1 remains a scoped pilot.
+master_intraday_bar_table_v0_2_candidate_quote_guarded is not materialized.
+The current bridge uses the active quote-guarded repair run and provisional D:/quotes lineage.
+The final source must switch to E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded after repair completion and final validation.
+```
+
+- Clarified the storage model required by this candidate table:
+
+```text
+raw ohlcv_1m + repair_manifest_v0_2.parquet = ohlcv_1m_quote_guarded view
+```
+
+The repair output is an overlay/delta of affected minutes, not a duplicated
+20-year corrected OHLCV 1m parquet tree. A physical corrected tree would require
+a separate contract and promotion decision.
+
+- Added preflight pytest coverage:
+
+```text
+tests/data_foundation_outputs/test_master_intraday_quote_guarded_candidate_contract.py
+```
+
+## v0.4.119 - Controlled market/event state candidate tables
+
+### Added
+
+- Added controlled candidate materialization mode to:
+  - `scripts/materialize_market_state_table.py --materialize-candidate`
+  - `scripts/materialize_event_state_table.py --materialize-candidate`
+- Added executable candidate tests to:
+  - `tests/data_foundation_outputs/test_market_state_table_contract.py`
+  - `tests/data_foundation_outputs/test_event_state_table_contract.py`
+
+### Evidence
+
+Materialized candidates:
+
+```text
+E:/TSIS/data/data_foundation_outputs/market_state_table/market_state_table_v0_1_candidate_microstructure_halt_controlled/
+E:/TSIS/data/data_foundation_outputs/market_state_table/_market_state_table_manifest_v0_1_candidate_microstructure_halt_controlled.json
+
+E:/TSIS/data/data_foundation_outputs/event_state_table/event_state_table_v0_1_candidate_microstructure_halt_controlled/
+E:/TSIS/data/data_foundation_outputs/event_state_table/_event_state_table_manifest_v0_1_candidate_microstructure_halt_controlled.json
+```
+
+Results:
+
+```text
+market_state_candidate_rows: 50
+market_state_candidate_tickers: 9
+market_state_candidate_event_windows: 50
+market_state_valid_for_event_context_candidate_rows: 50
+market_state_valid_for_ml_feature_candidate_rows: 0
+market_state_valid_for_rl_state_candidate_rows: 0
+market_state_full_universe_claim_rows: 0
+
+event_state_candidate_rows: 50
+event_state_candidate_tickers: 9
+event_state_candidate_event_windows: 50
+event_state_pre_event_rows: 25
+event_state_post_event_review_rows: 25
+event_state_valid_for_pattern_discovery_rows: 50
+event_state_valid_for_ml_feature_candidate_rows: 0
+event_state_valid_for_rl_state_candidate_rows: 0
+event_state_full_universe_claim_rows: 0
+```
+
+Tests:
+
+```text
+python -m pytest tests/data_foundation_outputs/test_market_state_table_contract.py tests/data_foundation_outputs/test_event_state_table_contract.py -q
+passed: 16
+failed: 0
+```
+
+### Changed
+
+- Updated schemas, registry entries, validators, target contract, composition
+  contract, status matrix and build-loop runbook to distinguish:
+  - official `market_state_table_v0_1` / `event_state_table_v0_1`: still not
+    materialized/promoted;
+  - controlled candidates: materialized, not promoted, full-universe false.
+- Preserved inherited provisional `D:/quotes` lineage and rebuild requirement
+  after `E:/TSIS/data/quotes_` parity/audit.
+
+## v0.4.118 - Daily scanner candidates builder and controlled replay
+
+### Added
+
+- Added `scripts/materialize_daily_scanner_candidates_table.py` as the
+  controlled historical replay builder for
+  `daily_scanner_candidates_table_v0_1`.
+- Added
+  `tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder.py`
+  with deterministic fixture coverage for:
+  - TradeStation-like versus broad-discovery separation;
+  - broad candidates below 500k volume;
+  - source alias deduplication;
+  - duplicate logical key prevention;
+  - ML/RL/live prohibition flags.
+- Added the research-only notebook explorer:
+
+```text
+01_research/notebooks/data_foundation_outputs/daily_scanner_candidates_replay_view_v0_1.ipynb
+```
+
+- Added a README for Data Foundation output notebooks:
+
+```text
+01_research/notebooks/data_foundation_outputs/README.md
+```
+
+### Evidence
+
+- Ran controlled replay:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-29/daily_scanner_candidates_replay_20250102_20250110_v0_1/
+```
+
+- Result:
+
+```text
+rows: 30646
+sessions: 6
+instruments: 2590
+selected_trade_station_like_top25_rows: 150
+selected_broad_discovery_rows: 3196
+broad_selected_below_500k_volume_rows: 2383
+duplicate_key_groups: 0
+full_universe_claim_true_rows: 0
+ml_feature_candidate_rows: 0
+rl_state_candidate_rows: 0
+live_downstream_candidate_rows: 0
+```
+
+### Changed
+
+- Updated daily scanner schema/contract/registry/validator/status docs to mark
+  builder implemented and controlled replay available while preserving that no
+  official E-root materialization exists.
+- Documented that the notebook is exploratory and must not be treated as the
+  authoritative materializer or source of scanner semantics.
+- Documented scanner replay output-root policy:
+  - small samples/tests/demos:
+    `C:/TSIS_Data/tests/test_runs/<run_date>/<run_id>/`;
+  - long-range candidate replays:
+    `E:/TSIS/data/data_foundation_outputs/daily_scanner_candidates_table/candidate_replays/<run_id>/`;
+  - official promoted root reserved:
+    `E:/TSIS/data/data_foundation_outputs/daily_scanner_candidates_table/daily_scanner_candidates_table_v0_1/`.
+
+## v0.4.117 - Scanner framework and DAS discovery protection
+
+### Added
+
+- Added
+  `01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_1.md`
+  to formalize the initial scanner framework for
+  `daily_scanner_candidates_table_v0_1`.
+- Added governed scanner definition configs:
+  - `configs/data_foundation_outputs/scanner_definitions/trade_station_like_scanner_v0_1.yaml`
+  - `configs/data_foundation_outputs/scanner_definitions/broad_in_play_discovery_scanner_v0_1.yaml`
+- Added config README under
+  `configs/data_foundation_outputs/scanner_definitions/`.
+
+### Changed
+
+- Updated the `daily_scanner_candidates_table_v0_1` schema, dataset contract,
+  target contract, consumption policy, validator contract and registry entry so
+  the scanner layer distinguishes:
+
+```text
+trade_station_like_scanner_v0_1
+  -> operational visibility replay
+
+broad_in_play_discovery_scanner_v0_1
+  -> broad research discovery / late-arrival-bias protection
+```
+
+- Clarified that `volume_today > 500000` and `% change 1D` ranking are valid
+  for reproducing a TradeStation-like operational hot list, but must not be the
+  only general research scanner for DAS.
+- Required future scanner materializations to preserve candidate reasons,
+  volume tiers, independent rankings and flags separating operational
+  visibility from broad discovery.
+- Updated Data Foundation output governance so the first controlled scanner
+  replay must compare both scanners and quantify DAS candidates missed or
+  detected late by the narrow operational scanner.
+
+## v0.4.116 - Daily scanner candidates target stack
+
+### Added
+
+- Added the target stack for `daily_scanner_candidates_table_v0_1`:
+  schema contract, dataset contract, registry entry, consumption policy,
+  validator contract and target contract.
+- Defined `daily_scanner_candidates_table` as the governed daily in-play /
+  candidate-generation layer for scanner replay and candidate-set lineage.
+- Linked the new table from the Data Foundation outputs target contract,
+  status matrix, module contracts README and Graphify refresh queue.
+- Added scanner candidate lineage to the `market_state_table` /
+  `event_state_table` contract stack as the `scanner__` namespace and
+  candidate-set component, while preserving the rule that scanner rows are not
+  complete states.
+
+### Changed
+
+- Updated the Data Foundation output work order so controlled historical
+  scanner replay precedes broad `market_state_table` samples that depend on
+  daily in-play discovery.
+- Clarified that scanner rows are not complete market states, full universe,
+  labels, rewards, strategy signals, execution truth or direct ML/RL state
+  rows.
+
+## v0.4.115 - Market-state coverage and lookback policy
+
+### Added
+
+- Added
+  `01_foundations/module_contracts/outputs/market_state_coverage_and_lookback_policy_v0_1.md`
+  as the authoritative policy for how future `market_state_table` and
+  `event_state_table` builds combine full-history context, daily in-play
+  scanner candidates and governed event-window microstructure.
+- Linked the policy from the state composition contract, state build-loop
+  runbook, Data Foundation outputs target contract, status matrix and module
+  contracts README.
+
+### Changed
+
+- Clarified that a daily scanner ticker-day is not a complete market state.
+  Future state materializations must declare population scope, denominator,
+  full-universe claim status, scanner definition, strategy family, event-window
+  source, lookback policy, price-view policy, as-of policy, leakage guard,
+  quality policy and quote-root lineage.
+- Required strategies with historical memory, such as `Short Into Resistance`,
+  to receive explicit lookback features rather than relying only on the current
+  ticker-day.
+- Added a pending Graphify refresh entry for the affected Data Foundation
+  output and market-state representation slices.
+
+## v0.4.114 - State-table provisional D:/quotes lineage
+
+### Changed
+
+- Accepted `D:/quotes` as provisional candidate-only quote lineage for the next
+  controlled `market_state_table` / `event_state_table` loop while
+  target official `E:/TSIS/data/quotes_` parity/audit remains incomplete.
+- Updated the state composition contract, build-loop runbook, output status
+  matrix, target contract and state consumption policies so candidates must
+  expose `quotes_root_used`, `quotes_root_state`, `target_official_quotes_root`,
+  `legacy_incomplete_e_quotes_root` and
+  `requires_rebuild_after_e_quotes_parity`.
+- Corrected the quote-root target semantics: `E:/TSIS/data/quotes_` is the
+  intended E-root produced by the active `D:/quotes` clone; `E:/TSIS/data/quotes`
+  is an incomplete/legacy E-root for this recovery decision.
+- Kept provisional D-root candidates blocked for institutional promotion,
+  ML/RL primary training, backtest-core direct use and execution simulation
+  until E-root parity/rebuild gates pass.
+
+## v0.4.113 - Graphify leaf Git publication policy
+
+### Changed
+
+- Updated Module 01 Graphify governance so root `graphify-out/` payloads remain
+  runtime ignored while promoted `graphify-out/leaf_slices/<leaf_id>/`
+  directories can be published in Git.
+- Required publishable leaves to include `BUILD_MANIFEST.md`, corpus manifest
+  or equivalent, `graph.json`, `GRAPH_REPORT.md`, `graph.html` unless
+  `--no-viz` is documented, and clean diagnostics or explicit limitations.
+- Clarified that deterministic topology/provenance/navigation leaves are valid
+  only as declared limited-coverage maps, not as replacements for full semantic
+  Graphify extraction.
+
+## v0.4.112 - Data certification topology Graphify leaf
+
+### Added
+
+- Built the `certification_decisions_topology_20260629` Graphify leaf under:
+
+```text
+01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/graphify-out/leaf_slices/certification_decisions_topology_20260629/
+```
+
+- The leaf maps the controlled `00_data_certification` certification decisions
+  corpus by family, document type, closeout/policy/contract/global-metrics
+  membership and explicit decision keywords.
+- Build result: 88 corpus files, 122 nodes, 653 edges, 11 communities and a
+  clean `graphify diagnose multigraph` result with 0 missing endpoints, 0
+  dangling endpoints, 0 self-loops and 0 duplicate or collapsed edges.
+
+### Scope Notes
+
+- This is a deterministic topology refresh with modern `graphifyy 0.9.1`
+  provenance, exact corpus manifest and diagnostics.
+- It does not replace the full semantic
+  `certification_decisions_20260619` leaf produced with semantic worker chunks.
+- No `00_data_certification` root graph was created or merged.
+
+## v0.4.111 - Data Foundation outputs topology Graphify leaf
+
+### Added
+
+- Built the deterministic `data_foundation_outputs_topology_20260629`
+  Graphify leaf under:
+
+```text
+01_TSIS_backtest_SmallCaps/01_foundations/graphify-out/leaf_slices/data_foundation_outputs_topology_20260629/
+```
+
+- The leaf maps CAPA 1 Data Foundation output tables to their schema contract,
+  dataset contract, registry entry, consumption policy, validator and governed
+  output path when those components exist.
+- Build result: 96 corpus files, 130 nodes, 200 edges, 16 communities, and a
+  clean `graphify diagnose multigraph` result with 0 missing endpoints, 0
+  dangling endpoints, 0 self-loops and 0 duplicate or collapsed edges.
+
+### Scope Notes
+
+- This is a deterministic file-topology/navigation graph, not a full semantic
+  extraction of every schema field, validator rule or policy clause.
+- The `01_foundations` root graph was intentionally not merged.
+- The leaf detects current governance debt for `short_sale_constraints_table`:
+  missing schema, dataset contract, registry entry, consumption policy and
+  validator.
+
+## v0.4.110 - Cross-project Graphify governance leaf
+
+### Added
+
+- Built the cross-project Graphify governance leaf at
+  `C:/TSIS_Data/00_CTO/graphify-out/leaf_slices/graphify_governance_20260629/`.
+- The leaf covers the Module 01 Graphify governance files for
+  `01_foundations` and `00_data_certification`, including no-API semantic
+  extraction rules, build-manifest provenance requirements, refresh queue
+  semantics and the Data Foundation graph/table design protocol.
+- The build aligned `graphifyy` and the Codex Graphify skill to `0.9.1`, used
+  no external API, produced 37 nodes, 60 edges and 9 communities, and passed
+  `graphify diagnose multigraph` with 0 missing endpoints, 0 dangling
+  endpoints, 0 self-loops and 0 duplicate or collapsed edges.
+
+### Scope Notes
+
+- This satisfies the `graphify_governance_slice` coverage for the protocol
+  change.
+- It does not rebuild `foundations_authority_graph`,
+  `data_foundation_outputs`, `certification_decisions_graph` or any full root
+  graph. Those remain pending by slice.
+
+## v0.4.109 - Graphify no-API semantic build governance
+
+### Changed
+
+- Updated Graphify protocols for `01_foundations` and
+  `00_data_certification` so missing API keys are not treated as blockers in
+  Codex: documental corpus must use Graphify skill host-agent/subagent semantic
+  extraction when no Gemini/Google API key is configured.
+- Clarified that CLI `graphify update` is not sufficient evidence of semantic
+  coverage for markdown contracts, certification closeouts, papers, images or
+  other documental sources.
+- Required future Graphify `BUILD_MANIFEST.md` files to record installed
+  package version, skill/source version, upstream reference, no-API mode,
+  semantic extraction mode, root/base handling and semantic update coverage.
+- Updated the Data Foundation Graphify/table-design methodology so CAPA 1
+  table proposals cannot rely on AST-only or partial Graphify outputs as
+  semantic evidence.
+
+### Observed Environment
+
+```text
+upstream_reference: safishamsi/graphify branch v8, graphifyy 0.9.1
+installed_graphifyy_observed: 0.8.40
+observed_at: 2026-06-28
+```
+
+## v0.4.108 - Graphify build baseline provenance contract
+
+### Changed
+
+- Updated Graphify build protocols for `01_foundations` and
+  `00_data_certification` so future `BUILD_MANIFEST.md` files must record the
+  Git commit, dirty state, exact corpus, queue coverage, diagnostics and
+  next-delta commands.
+- Clarified that `GRAPHIFY_REFRESH_QUEUE.md` controls refresh scope but does
+  not replace the real corpus manifest for a leaf build.
+
+### Required Next-Delta Commands
+
+```powershell
+git diff --name-status <graph_build_git_commit>...HEAD
+git status --short
+```
+
+## v0.4.107 - Windows-safe telemetry JSON replacement for long-running runners
+
+### Changed
+
+- Replaced `Move-Item -Force` JSON rewrites in
+  `scripts/data_ops/clone_quotes_to_staging.ps1` with a Windows-safe temporary
+  file plus `System.IO.File.Replace` strategy.
+- Applied the same telemetry writer fix to
+  `scripts/run_1m_split_normalized_materialization.ps1`.
+- Added `-StartAtTicker` to `clone_quotes_to_staging.ps1` so a ticker-chunk
+  run can resume from a known top-level ticker without rechecking the whole
+  already-completed prefix.
+- Updated the quotes recovery clone runbook and root long-running operations
+  contract to document this failure class and the safe resume behavior.
+
+### Validation
+
+```text
+clone_parser: PASS
+one_minute_runner_parser: PASS
+quotes_clone_dry_run_after_fix: PASS
+dry_run_id: quotes_clone_to_staging_20260628T063552Z
+dry_run_mode: dry_run_ticker_chunks
+dry_run_scope: MaxTickerChunks=1
+first_ticker: AABA
+manifest_written: true
+start_at_ticker_parser: PASS
+start_at_ticker_dry_run: PASS
+start_at_ticker_dry_run_id: quotes_clone_to_staging_20260628T064037Z
+start_at_ticker_dry_run_scope: StartAtTicker=APEX MaxTickerChunks=1
+error_reproduced_before_fix: Move-Item cannot create file because it already exists
+```
+
+### Scope Notes
+
+The failed live clone run `quotes_clone_to_staging_20260627T230016Z` stopped
+after `APEN` with the telemetry replacement error before it could start `APEX`.
+This is resumable by rerunning the ticker-chunk clone with `-AllowNonEmptyTarget
+-StartAtTicker APEX`; existing files under `E:/TSIS/data/quotes_` must not be
+deleted.
+
+## v0.4.106 - Long-running monitor stale process detection
+
+### Changed
+
+- Updated `scripts/monitor_long_running_operation.ps1` so compact and full
+  monitor output derive `status=stale_no_process raw_status=running` when a
+  run has an old heartbeat, no live wrapper PID and no live worker/active PID.
+- Added wrapper PID liveness to monitor snapshots and compact output.
+- Updated the root `LONG_RUNNING_OPERATIONS_CONTRACT.md` so future TSIS
+  monitors must not present stale running heartbeats as live work.
+
+### Validation
+
+```text
+script_parse: PASS
+test_run: quotes_clone_to_staging_20260627T185359Z
+observed_state_before_fix: status=running stage=robocopy_pair_start processes=0 progress=91/5207 item=ADUR
+observed_state_after_fix: status=stale_no_process raw_status=running stage=robocopy_pair_start processes=0 wrapper_alive=False progress=91/5207 item=ADUR
+```
+
+### Scope Notes
+
+The quotes clone run `quotes_clone_to_staging_20260627T185359Z` is not alive.
+Its latest heartbeat is stale and no `Robocopy` process is visible. It can be
+resumed safely by rerunning the ticker-chunk clone with `-AllowNonEmptyTarget`.
+
+## v0.4.105 - 1m split-normalized split-affected candidate completed
+
+### Added
+
+- `01_foundations/module_contracts/ohlcv_1m_split_normalized_split_affected_materialization_results_v0_1.md`
+
+### Changed
+
+- Registered completed run `split_affected_20260627_192314` as the
+  split-affected full-universe logical candidate materialization for
+  `ohlcv_1m_split_normalized`.
+- Updated the operational landing, runbook, registry, consumption policy and
+  module-contracts index to point to the completed candidate run and preserve
+  its non-promoted status.
+
+### Validation
+
+```text
+run_id: split_affected_20260627_192314
+mode: split-affected
+run_root: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/1m_split_normalized_full_universe_candidate/split_affected_20260627_192314
+output_root: E:/TSIS/data/ohlcv_1m_split_normalized_full_universe_candidate
+manifest_rows: 115667
+chunk_count: 24
+output_files_present: 115667
+tickers_in_manifest: 1589
+split_tickers_seen: 4824
+split_tickers_without_minute_dir: 0
+audit_total_event_cases: 3335
+audit_pass_cases: 2280
+audit_fail_cases: 0
+audit_no_pre_coverage_cases: 164
+audit_no_post_coverage_cases: 151
+audit_no_1m_coverage_cases: 740
+```
+
+### Scope Notes
+
+This is a materialized and audited candidate, not a promoted production root.
+It is the Path A1 logical full-universe split-safe candidate: only
+split-affected ticker-months are physically materialized; non-affected
+ticker-months still require explicit fallback semantics before official
+downstream consumption.
+
+The `NO_PRE_COVERAGE`, `NO_POST_COVERAGE` and `NO_1M_COVERAGE` counts are
+coverage limits inherited from raw `1m` availability, not
+split-normalization failures. The semantic audit family already documented
+under `01_foundations/inspection_dossiers/1m_split_normalized/` established
+that fully auditable split cases pass with `FAIL = 0`; this run adds the
+completed physical candidate materialization and confirms the same zero-fail
+audit state post-run.
+
+## v0.4.104 - Quotes recovery clone ticker-chunk telemetry
+
+### Changed
+
+- Extended `scripts/data_ops/clone_quotes_to_staging.ps1` with
+  ticker-chunked clone mode for `D:/quotes -> E:/TSIS/data/quotes_`.
+- Added `-ChunkByTicker` and `-MaxTickerChunks` so million-file quotes recovery
+  can expose observable progress by top-level ticker without recursively
+  pre-counting the whole tree.
+- Updated the quotes recovery clone runbook to make ticker-chunked mode the
+  preferred resumable full clone path when humans need live progress.
+- Documented that direct root-level robocopy remains allowed but is not the
+  preferred observable mode for this recovery because it reports as one large
+  copy unit.
+
+### Validation
+
+```text
+script_parse: PASS
+dry_run_ticker_chunk_smoke: PASS
+run_id: quotes_clone_to_staging_20260627T184626Z
+mode: dry_run_ticker_chunks
+max_ticker_chunks: 1
+first_ticker_chunk: AABA
+robocopy_exit_code: 0
+dry_run_file_count_reported_by_robocopy: 577
+dry_run_bytes_reported_by_robocopy: 1212214746
+```
+
+### Scope Notes
+
+This change does not stop the legacy blind clone that may still be running from
+2026-06-24. If live progress is required, the operator should stop the legacy
+process, keep the partial target tree, and resume with `-ChunkByTicker
+-AllowNonEmptyTarget`. Supersession note, 2026-06-29:
+`E:/TSIS/data/quotes_` is the target official E-root for the active
+`D:/quotes` clone. It remains blocked from official downstream consumption until
+post-copy parity audit and promotion. `E:/TSIS/data/quotes` is the
+legacy/incomplete E-root and must not be confused with the target official root.
+
 ## v0.4.103 - Microstructure v0.2 controlled candidate validation
 
 ### Added
@@ -81,7 +660,7 @@ simulation, core backtesting or full-universe claims.
 - Instrumented `scripts/data_ops/clone_quotes_to_staging.ps1` so new robocopy
   runs write pre-manifest, heartbeat, PID manifest and monitor commands before
   copy/dry-run work begins.
-- Updated the quotes staging clone runbook and 1m split-normalized runbook so
+- Updated the quotes recovery clone runbook and 1m split-normalized runbook so
   future humans/agents do not launch opaque overnight jobs.
 - Added compact append-only monitor output so humans can see one progress line
   per interval instead of only a refreshed technical snapshot.
@@ -227,7 +806,8 @@ materialize microstructure_features_table_v0_2_candidate under E:/TSIS/data
 promote microstructure_features_table_v0_1
 claim full-universe microstructure coverage
 authorize ML/RL primary training or execution simulation
-resolve D:/quotes versus E:/TSIS/data/quotes parity
+resolve D:/quotes versus E:/TSIS/data/quotes_ parity; treat
+E:/TSIS/data/quotes as legacy/incomplete
 ```
 
 ## v0.4.99 - OHLCV 1m quote-guarded live supervision and validation
@@ -249,6 +829,13 @@ resolve D:/quotes versus E:/TSIS/data/quotes parity
 - Hardened the supervisor so a stale runner wrapper with no Python descendants
   is treated as an orphan wrapper and can be stopped/restarted on the same
   `RunRoot` without `-Overwrite`.
+- Hardened the live validator against active-writer snapshot races by applying
+  one cutoff to both month summaries and repair shards, and by scoping live
+  row-total comparison to sampled stable shards when `-MaxShardsPerPass > 0`.
+- Added `-OrphanGraceMinutes` to the live supervisor so a clearly orphaned
+  runner wrapper is restarted after a short dedicated grace window instead of
+  waiting for the general `-StaleMinutes` threshold. The default is 3 minutes;
+  `-StaleMinutes` remains 20 minutes for ambiguous stale-output cases.
 
 ### Validation
 
@@ -279,6 +866,14 @@ post_restart_done_tickers = 221
 post_restart_running_tickers = 12
 post_restart_months_done = 21584
 post_restart_repair_rows = 7325758
+
+live validator race diagnosis:
+observed_fail = repair_row_total_mismatch
+sampled_false_orphan = ATNI_2017_02_repair_manifest.parquet
+ATNI_2017_02_summary_repair_rows = 514
+ATNI_2017_02_shard_rows = 514
+root_cause = inconsistent active-writer snapshot
+fix = shared snapshot cutoff plus sampled row-total scope for live validation
 ```
 
 ### Scope Notes
@@ -1422,7 +2017,7 @@ skipped = 0
 The test validates manifest/source hashes, schema/scope flags and recomputes
 seed quote/trade metrics from the raw files.
 
-## v0.4.81 - Quotes staging clone runbook and safe robocopy entry point
+## v0.4.81 - Quotes recovery clone runbook and safe robocopy entry point
 
 ### Added
 
@@ -1456,9 +2051,11 @@ The new operational target is:
 E:/TSIS/data/quotes_
 ```
 
-This is a staging root only. It does not replace `E:/TSIS/data/quotes` and is
-not an official source of truth until a post-copy audit and separate promotion
-decision exist.
+Supersession note, 2026-06-29: this path is no longer described as disposable
+staging. `E:/TSIS/data/quotes_` is the target official E-root for the active
+`D:/quotes` clone. It is not available for official downstream consumption until
+a post-copy audit and separate promotion decision exist. The pre-existing
+`E:/TSIS/data/quotes` tree is legacy/incomplete.
 
 The script defaults to dry-run mode, rejects accidental use of
 `E:/TSIS/data/quotes` as target, avoids `/MIR` and `/PURGE`, and writes logs plus

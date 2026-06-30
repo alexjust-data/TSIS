@@ -1,0 +1,18 @@
+{
+  "parent_failed_chunk": 3,
+  "parent_name": "event_library",
+  "scope_root": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS",
+  "files": [
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\source_assets\\edu_trades\\07_Long_plays.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/source_assets/edu_trades/07_Long_plays.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/source_assets/edu_trades/07_Long_plays.md",
+      "bytes": 15916,
+      "line_count": 295,
+      "word_count_approx": 2497,
+      "sha256": "d3e45852e9021fb92074f62fb6fdc5e36c3ab2dc4bb55870d3800905763ed581"
+    }
+  ],
+  "word_count_approx": 2497,
+  "retry_chunk_id": 6
+}

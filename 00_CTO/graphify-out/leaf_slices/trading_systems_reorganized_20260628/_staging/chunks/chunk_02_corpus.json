@@ -1,0 +1,151 @@
+{
+  "chunk_id": 2,
+  "scope_root": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS",
+  "files": [
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\traders_strategies\\MOSQUITO_SMALLCAPS_SOURCE_EVENT_INDEX_v0_1.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/traders_strategies/MOSQUITO_SMALLCAPS_SOURCE_EVENT_INDEX_v0_1.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/traders_strategies/MOSQUITO_SMALLCAPS_SOURCE_EVENT_INDEX_v0_1.md",
+      "bytes": 61154,
+      "line_count": 2244,
+      "word_count_approx": 8009,
+      "sha256": "ee4271b26f5d7911698660cc919194b62e0f2477067d356f14c78389051a43da"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\source_assets\\edu_trades\\07_Long_plays.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/source_assets/edu_trades/07_Long_plays.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/source_assets/edu_trades/07_Long_plays.md",
+      "bytes": 15916,
+      "line_count": 295,
+      "word_count_approx": 2497,
+      "sha256": "d3e45852e9021fb92074f62fb6fdc5e36c3ab2dc4bb55870d3800905763ed581"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\Breakout\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/Breakout/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/STRATEGY.md",
+      "bytes": 13902,
+      "line_count": 687,
+      "word_count_approx": 1913,
+      "sha256": "00286a8d0f3944a0ad9c61914809736beee64836f22b49042386595f2b7c8712"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\gap&go\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/gap&go/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/gap&go/STRATEGY.md",
+      "bytes": 11638,
+      "line_count": 499,
+      "word_count_approx": 1718,
+      "sha256": "49a301fde57c4800c7f592abcb8d2f6c62019aff1611bbfc35c8dfcec50925ee"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\SHORT\\First_Red_Day\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/First_Red_Day/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/First_Red_Day/STRATEGY.md",
+      "bytes": 10401,
+      "line_count": 448,
+      "word_count_approx": 1457,
+      "sha256": "f58b8134497c39995677273a687e507dbc5d4811f333edd246a9f08729e546b3"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\FACTORS\\Float_Rotation\\FACTOR.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Float_Rotation/FACTOR.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Float_Rotation/FACTOR.md",
+      "bytes": 9102,
+      "line_count": 442,
+      "word_count_approx": 1223,
+      "sha256": "2a4ffd188f9287d6becbbfe39dd09d9f68a3fc30fb00fdff537f28bef73c1bb8"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\SHORT\\Parabolic_Breakout_Failed_Breakout\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Parabolic_Breakout_Failed_Breakout/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Parabolic_Breakout_Failed_Breakout/STRATEGY.md",
+      "bytes": 5054,
+      "line_count": 236,
+      "word_count_approx": 660,
+      "sha256": "395f62f2d5a2a60e842ad8993e01239048501ff34bd272ed8a630881769b75cc"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\FACTORS\\Crowded_Ticker_Context\\FACTOR.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Crowded_Ticker_Context/FACTOR.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Crowded_Ticker_Context/FACTOR.md",
+      "bytes": 4796,
+      "line_count": 239,
+      "word_count_approx": 631,
+      "sha256": "a6cc14f2050359c950c950d0a7a7e2ffd5f28f5c032ce61fdcb724dfb0a19c8f"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/README.md",
+      "bytes": 3003,
+      "line_count": 124,
+      "word_count_approx": 360,
+      "sha256": "7a298cccd8651cf6dd0e6960baa7d3fbb34a5353549fc96efda7f2944faf861b"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\FACTORS\\README.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/FACTORS/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/README.md",
+      "bytes": 663,
+      "line_count": 29,
+      "word_count_approx": 94,
+      "sha256": "b38f9d4b49e6dbc580cebf88dac6e6ec69642800ec8009c3502f5fdda2cbce00"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\02_VWAP_CONTROL\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/02_VWAP_CONTROL/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/02_VWAP_CONTROL/README.md",
+      "bytes": 581,
+      "line_count": 30,
+      "word_count_approx": 78,
+      "sha256": "4d7f8052a5fbdbf6f056113439e3637a977edfddd2025073ddc9f8cb9b2c58e4"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\05_EDGE_HYPOTHESES\\README.md",
+      "relative_to_scope": "05_EDGE_HYPOTHESES/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/05_EDGE_HYPOTHESES/README.md",
+      "bytes": 513,
+      "line_count": 27,
+      "word_count_approx": 74,
+      "sha256": "dfbe9fcc6f2f53d72d62e172379c0b8d3a88e0a1fb59c19ee4786097d3be2c0c"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\11_SQUEEZE_RESEARCH\\README.md",
+      "relative_to_scope": "11_SQUEEZE_RESEARCH/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/11_SQUEEZE_RESEARCH/README.md",
+      "bytes": 526,
+      "line_count": 28,
+      "word_count_approx": 69,
+      "sha256": "14097daf11d86b8936a5dedeb84ca858bb8dae1f5e377d52f11ba1f9dc2e0123"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\99_EXPERIMENTAL\\README.md",
+      "relative_to_scope": "99_EXPERIMENTAL/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/99_EXPERIMENTAL/README.md",
+      "bytes": 445,
+      "line_count": 26,
+      "word_count_approx": 61,
+      "sha256": "403aa54ea4907d1fc7a3e51286d6d594d6dca5906b20772c313674fb19072198"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\Breakout\\execution_model.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/Breakout/execution_model.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/execution_model.md",
+      "bytes": 213,
+      "line_count": 22,
+      "word_count_approx": 27,
+      "sha256": "a5a1b4796f1bb7e1e999b800cb84c8b4bd830bf4cd4cf449fdca7a4a3275d7cb"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\LONG\\Breakout\\ml_features.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/LONG/Breakout/ml_features.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/ml_features.md",
+      "bytes": 156,
+      "line_count": 21,
+      "word_count_approx": 13,
+      "sha256": "78ac797fbbe3e007c437c026b0db1cc336fd24d7aa33f08143be6cafbe667be9"
+    }
+  ],
+  "word_count_approx": 18884
+}

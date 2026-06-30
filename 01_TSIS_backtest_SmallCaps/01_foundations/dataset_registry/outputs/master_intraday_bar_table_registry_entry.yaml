@@ -100,3 +100,28 @@ notes:
   - v0_1 is a governed scoped surface, not a clean universal 1m feed.
   - Use it as evidence that the split-normalization pipeline works on inspected cases.
   - For future split-sensitive event windows, rerun the audited normalization code on the required ticker-months and register the new scope.
+
+candidate_states:
+  - dataset_id: master_intraday_bar_table_v0_2_candidate_quote_guarded
+    promotion_state: candidate_contract_defined_not_materialized
+    materialization_scope: quote_guarded_full_universe_candidate_pending_final_repair
+    full_universe_claim: false
+    official_dataset_created: false
+    safe_to_launch_full_materialization: false
+    target_dataset_path: E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_2_candidate_quote_guarded
+    contract: 01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md
+    config: configs/data_foundation_outputs/master_intraday_bar_table_quote_guarded_candidate_v0_2.json
+    current_bridge_sources:
+      repair_run_root: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838
+      minute_root: E:/TSIS/data/ohlcv_1m
+      quotes_root: D:/quotes
+      quotes_root_state: provisional_d_legacy_recovery_root_pending_e_parity
+      repair_run_state: running_or_not_final_validated
+    future_official_source_root: E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded
+    blockers:
+      - quote_guarded_repair_run_completed
+      - final_validation_report_passed
+      - official_e_root_quote_guarded_manifest_exists
+      - builder_consumes_manifest_not_blind_recursive_scan
+      - candidate_tests_pass_against_final_artifacts
+      - human_review_accepts_candidate_evidence

@@ -1,0 +1,179 @@
+{
+  "chunk_id": 1,
+  "chunk_name": "event_library",
+  "scope_root": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS",
+  "files": [
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\01_MOMENTUM_EXPANSION\\PM_ACCEPTED_EXTENSION_BREAK_EVENT\\EVENT_DEFINITION_DRAFT_v0_1.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "bytes": 16380,
+      "line_count": 650,
+      "word_count_approx": 2288,
+      "sha256": "50380e9db6f1239a2b39e300b036febc36f704d64e50cbd4062509a7fb7f1f2d"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\01_MOMENTUM_EXPANSION\\PM_ACCEPTED_EXTENSION_BREAK_EVENT\\SOURCE_NOTE_RESPONSE_CLONE.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/SOURCE_NOTE_RESPONSE_CLONE.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/SOURCE_NOTE_RESPONSE_CLONE.md",
+      "bytes": 3802,
+      "line_count": 107,
+      "word_count_approx": 553,
+      "sha256": "fd73b7fb8ba5a34dbc10d130f8c1a1b4551476b86f7e92ef9ef653c29620a7a1"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\01_MOMENTUM_EXPANSION\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/README.md",
+      "bytes": 604,
+      "line_count": 31,
+      "word_count_approx": 70,
+      "sha256": "8ed30cecd6dd6a9eb7ee3e9ec930e2314c9cbc9c8d08bfc853e72b6167186563"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\02_VWAP_CONTROL\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/02_VWAP_CONTROL/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/02_VWAP_CONTROL/README.md",
+      "bytes": 581,
+      "line_count": 30,
+      "word_count_approx": 78,
+      "sha256": "4d7f8052a5fbdbf6f056113439e3637a977edfddd2025073ddc9f8cb9b2c58e4"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\03_INTRADAY_REVERSALS\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/03_INTRADAY_REVERSALS/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/03_INTRADAY_REVERSALS/README.md",
+      "bytes": 510,
+      "line_count": 29,
+      "word_count_approx": 63,
+      "sha256": "7382f16a6a47f0608ef2d88477ba7d47c310a53a74ef8dd350297c52238a7876"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\04_MOMENTUM_EXHAUSTION\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/04_MOMENTUM_EXHAUSTION/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/04_MOMENTUM_EXHAUSTION/README.md",
+      "bytes": 599,
+      "line_count": 30,
+      "word_count_approx": 77,
+      "sha256": "74dca3ec2087ee14704dc27c04a4955c30e612e529f1b235200d8f5ef410a609"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\05_RUNNER_LIFECYCLE\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/05_RUNNER_LIFECYCLE/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/05_RUNNER_LIFECYCLE/README.md",
+      "bytes": 625,
+      "line_count": 32,
+      "word_count_approx": 76,
+      "sha256": "795e1e7dc59d7c8b0b60d0148984e10a32bbff2cead058e817d90b3886ba776a"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\06_RESISTANCE_AND_BREAKOUTS\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/06_RESISTANCE_AND_BREAKOUTS/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/06_RESISTANCE_AND_BREAKOUTS/README.md",
+      "bytes": 560,
+      "line_count": 30,
+      "word_count_approx": 65,
+      "sha256": "3646f4251af7175b402da28266252481ed874a03bc0268737cd3214692907b81"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\07_SHORT_SQUEEZE_DYNAMICS\\DAS_EVENT\\EVENT_DEFINITION_DRAFT_v0_1.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/07_SHORT_SQUEEZE_DYNAMICS/DAS_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/07_SHORT_SQUEEZE_DYNAMICS/DAS_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md",
+      "bytes": 19634,
+      "line_count": 938,
+      "word_count_approx": 2611,
+      "sha256": "f37827c7855df7110419d00c770701970c7a44fd2449e81dd9d55c29a396d9fc"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\07_SHORT_SQUEEZE_DYNAMICS\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/07_SHORT_SQUEEZE_DYNAMICS/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/07_SHORT_SQUEEZE_DYNAMICS/README.md",
+      "bytes": 733,
+      "line_count": 36,
+      "word_count_approx": 89,
+      "sha256": "00acd401cf0ec6aeced6a092998667f4688346cc3d092e407b3ab134bcc9f7df"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\99_EXPERIMENTAL\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/99_EXPERIMENTAL/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/99_EXPERIMENTAL/README.md",
+      "bytes": 477,
+      "line_count": 24,
+      "word_count_approx": 66,
+      "sha256": "339dc41f47a5bfa4172b7b0e009f9ae35920ce83be6e7f6fce6d77d168f43ad7"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md",
+      "bytes": 13945,
+      "line_count": 550,
+      "word_count_approx": 1847,
+      "sha256": "0a848e9cf624b69a217f2c4582df89a0a3dc973a5b0514f955f35cf45b575c4a"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md",
+      "bytes": 14159,
+      "line_count": 685,
+      "word_count_approx": 1895,
+      "sha256": "ec5aae17e155d25a23d5719d1ce701603d5b9a0c979b67ac677c2cf8489416eb"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\README.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/README.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/README.md",
+      "bytes": 3003,
+      "line_count": 124,
+      "word_count_approx": 360,
+      "sha256": "7a298cccd8651cf6dd0e6960baa7d3fbb34a5353549fc96efda7f2944faf861b"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\RESEARCH_AND_DEVELOPMENT\\GAME_THEORETIC_PRESSURE_FOR_EVENT_SEARCH_ALPHAEVOLVE_v0_1.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/RESEARCH_AND_DEVELOPMENT/GAME_THEORETIC_PRESSURE_FOR_EVENT_SEARCH_ALPHAEVOLVE_v0_1.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/RESEARCH_AND_DEVELOPMENT/GAME_THEORETIC_PRESSURE_FOR_EVENT_SEARCH_ALPHAEVOLVE_v0_1.md",
+      "bytes": 10252,
+      "line_count": 384,
+      "word_count_approx": 1333,
+      "sha256": "9cf8ffc6fac7d8b0ac702ad42bf7210eb9e3877368bbafdeda94202fa634698a"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\source_assets\\edu_trades\\07_Long_plays.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/source_assets/edu_trades/07_Long_plays.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/source_assets/edu_trades/07_Long_plays.md",
+      "bytes": 15916,
+      "line_count": 295,
+      "word_count_approx": 2497,
+      "sha256": "d3e45852e9021fb92074f62fb6fdc5e36c3ab2dc4bb55870d3800905763ed581"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\source_assets\\mosquito_smallcaps\\La-Formula-Exacta-para-Entrar-en-Trades_Media_4Xh34AFFGJc_001_1080p_pdf.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/source_assets/mosquito_smallcaps/La-Formula-Exacta-para-Entrar-en-Trades_Media_4Xh34AFFGJc_001_1080p_pdf.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/source_assets/mosquito_smallcaps/La-Formula-Exacta-para-Entrar-en-Trades_Media_4Xh34AFFGJc_001_1080p_pdf.md",
+      "bytes": 35059,
+      "line_count": 335,
+      "word_count_approx": 6044,
+      "sha256": "d13c5fd5f3f9ef058392e29d992869ba9e59667059b4e2837f36408fa08b4617"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\traders_strategies\\EDUTRADES_LONG_PLAYS_SOURCE_EVENT_INDEX_v0_1.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/traders_strategies/EDUTRADES_LONG_PLAYS_SOURCE_EVENT_INDEX_v0_1.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/traders_strategies/EDUTRADES_LONG_PLAYS_SOURCE_EVENT_INDEX_v0_1.md",
+      "bytes": 35014,
+      "line_count": 1456,
+      "word_count_approx": 4685,
+      "sha256": "39fb22b6da85647cc1e26c2e2c5ba7089c10483bfcbf1a7c51f711ec916b4a2d"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\00_EVENT_LIBRARY\\traders_strategies\\MOSQUITO_SMALLCAPS_SOURCE_EVENT_INDEX_v0_1.md",
+      "relative_to_scope": "00_EVENT_LIBRARY/traders_strategies/MOSQUITO_SMALLCAPS_SOURCE_EVENT_INDEX_v0_1.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/traders_strategies/MOSQUITO_SMALLCAPS_SOURCE_EVENT_INDEX_v0_1.md",
+      "bytes": 61154,
+      "line_count": 2244,
+      "word_count_approx": 8009,
+      "sha256": "ee4271b26f5d7911698660cc919194b62e0f2477067d356f14c78389051a43da"
+    }
+  ],
+  "word_count_approx": 32706
+}

@@ -42,6 +42,32 @@ Planned role:
 derived quote-guarded one-minute OHLC view
 ```
 
+Core storage model:
+
+```text
+raw ohlcv_1m + repair_manifest = ohlcv_1m_quote_guarded view
+```
+
+This workstream does not duplicate the complete 20-year OHLCV 1m universe into
+a second corrected tree. The first governed artifact is a repair overlay:
+
+- raw bars remain immutable under `E:/TSIS/data/ohlcv_1m`;
+- the repair run reads quotes from `D:/quotes` while E-root quotes parity is
+  still pending;
+- only affected ticker-minutes are written into repair shards/manifests;
+- loaders apply the delta in memory and return a quote-guarded view;
+- no raw parquet is hand-edited or overwritten.
+
+Active v0_2 run shards live under:
+
+```text
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838/repair_shards/
+```
+
+Each shard is a ticker-month repair manifest. A high `repair_rows` count means
+the manifest found many affected rows, including VWAP-invalid rows. It does not
+mean the run created that many full replacement bars.
+
 It is not:
 
 - a replacement for `ohlcv_1m_raw_v0_1`;
@@ -115,6 +141,11 @@ Promoted data-foundation outputs, if created, should live under:
 ```text
 E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/
 ```
+
+The promoted artifact remains a manifest/overlay unless a later contract
+explicitly creates a physical corrected tree. The expected promoted artifact is
+the institutional list of affected minutes and their quote-guarded OHLC
+replacement fields, not a full-market parquet copy.
 
 ## Maintenance Rule
 

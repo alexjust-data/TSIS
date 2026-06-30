@@ -14,6 +14,33 @@ Current status:
 contract_defined_not_materialized
 ```
 
+## 1.1 Provisional Microstructure Source Rule
+
+`event_state_table` inherits the upstream `market_state_table` source-root
+policy. For the next controlled candidate loop, event-state rows may reference
+market-state/microstructure candidates derived from:
+
+```text
+quotes_root_used = D:/quotes
+quotes_root_state = provisional_d_legacy_recovery_root_pending_e_parity
+target_official_quotes_root = E:/TSIS/data/quotes_
+legacy_incomplete_e_quotes_root = E:/TSIS/data/quotes
+```
+
+This only permits controlled candidate samples, builder tests and forensic
+validation. While this root state remains provisional, rows inheriting it must
+not be consumed as:
+
+```text
+valid_for_ml_feature_candidate = true
+valid_for_rl_state_candidate = true
+valid_for_backtest_context_candidate = true
+valid_for_execution_context_candidate = true
+```
+
+unless a later contract proves `E:/TSIS/data/quotes_` parity/audit and the
+affected event-state candidate is recomputed or explicitly promoted.
+
 ## 2. Permitted Meaning
 
 Permitted meaning after materialization:
@@ -38,6 +65,10 @@ state_cutoff_utc <= decision_timestamp_utc
 
 and where all linked component as-of timestamps are legal under the upstream
 `market_state_table` policy.
+
+If an event-state row carries `scanner__*` columns, consumers must treat them as
+candidate-set lineage only. Scanner fields do not prove complete market state,
+complete universe, strategy signal or execution feasibility.
 
 ## 4. State Role Rules
 

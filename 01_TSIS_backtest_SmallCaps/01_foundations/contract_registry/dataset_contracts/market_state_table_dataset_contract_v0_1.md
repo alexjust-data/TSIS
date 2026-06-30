@@ -43,6 +43,7 @@ expected_data_calendar_v0_1
 dataset_certification_matrix_v0_1
 corporate_actions_table_v0_1
 master_daily_table_v0_1
+daily_scanner_candidates_table_v0_1 when used as candidate-set lineage
 master_intraday_bar_table_v0_1
 microstructure_features_table_v0_1
 halts_table_v0_1

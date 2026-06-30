@@ -1,0 +1,72 @@
+{
+  "parent_chunk": "strategy_source_steven_dux",
+  "subchunk": 2,
+  "scope_root": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS",
+  "files": [
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\SHORT\\Double_Layer_Resistance\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Double_Layer_Resistance/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Double_Layer_Resistance/STRATEGY.md",
+      "bytes": 14261,
+      "line_count": 583,
+      "word_count_approx": 1805,
+      "sha256": "31700433eca69042126bb4d4d2f7d7560189b02a3c1d4f19836e7de5b4ad3215"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\FACTORS\\Volume_Prediction\\FACTOR.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Volume_Prediction/FACTOR.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Volume_Prediction/FACTOR.md",
+      "bytes": 12201,
+      "line_count": 545,
+      "word_count_approx": 1563,
+      "sha256": "6adc525219b5724061109d7b0f366b41937cfad38f53308dcb4032aaaea22664"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\SHORT\\First_Red_Day\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/First_Red_Day/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/First_Red_Day/STRATEGY.md",
+      "bytes": 10401,
+      "line_count": 448,
+      "word_count_approx": 1457,
+      "sha256": "f58b8134497c39995677273a687e507dbc5d4811f333edd246a9f08729e546b3"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\SHORT\\Gap_Up_Short\\STRATEGY_old.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Gap_Up_Short/STRATEGY_old.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Gap_Up_Short/STRATEGY_old.md",
+      "bytes": 10358,
+      "line_count": 453,
+      "word_count_approx": 1384,
+      "sha256": "ac02dbee4aacd1da620d655a8787c0ce5737708835787ad4664a7730e097bec3"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\FACTORS\\Liquidity_Gain_Loss\\FACTOR.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Liquidity_Gain_Loss/FACTOR.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Liquidity_Gain_Loss/FACTOR.md",
+      "bytes": 10274,
+      "line_count": 502,
+      "word_count_approx": 1335,
+      "sha256": "91cba32c891c8dadd3ff425a6d044df2382fc7eda70ffd4969f2747c0be36d5e"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\SHORT\\Bounce_Short\\STRATEGY.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Bounce_Short/STRATEGY.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Bounce_Short/STRATEGY.md",
+      "bytes": 9736,
+      "line_count": 424,
+      "word_count_approx": 1236,
+      "sha256": "18e277f67b5eb2bbece43914ee7b5c954ca9a9f0f5cbb4887fd224e9891351aa"
+    },
+    {
+      "path": "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS\\03_STRATEGY_LIBRARY\\01_Steven_Dux\\SHORT\\First_Red_Day\\estrtategia.md",
+      "relative_to_scope": "03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/First_Red_Day/estrtategia.md",
+      "relative_to_repo": "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/First_Red_Day/estrtategia.md",
+      "bytes": 1117,
+      "line_count": 25,
+      "word_count_approx": 181,
+      "sha256": "a618c9c27a7e3b1ec9d309b5fe698ac4d264d87d0579484ccdccc7b6cc7dbfa5"
+    }
+  ],
+  "word_count_approx": 8961,
+  "chunk_id": 6
+}

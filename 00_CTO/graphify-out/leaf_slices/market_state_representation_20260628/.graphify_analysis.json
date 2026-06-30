@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-06-28T16:56:38.623793+00:00",
+  "node_count": 60,
+  "edge_count": 83,
+  "community_count": 7,
+  "communities": {
+    "0": [
+      "contract_anti_leakage_boundary",
+      "contract_canonical_definition",
+      "contract_components_not_market_state_rule",
+      "contract_future_required_components",
+      "contract_labels_features_separation",
+      "contract_market_state",
+      "contract_offline_rl_transition_interface",
+      "contract_quality_state_inheritance",
+      "contract_real_time_state_update_pipeline",
+      "contract_state_vector_minimum_schema",
+      "map_feature_engine_source"
+    ],
+    "1": [
+      "contract_audited_raw_source_truth",
+      "contract_data_foundation_outputs",
+      "contract_derived_state_components",
+      "contract_downloaded_market_data",
+      "contract_event_engine",
+      "contract_event_table",
+      "map_data_foundation_outputs_contract",
+      "map_event_engine_source",
+      "map_event_first_sources",
+      "map_market_state_representation_source_file_map_v0_1",
+      "map_source_file_map"
+    ],
+    "2": [
+      "contract_decision_models",
+      "contract_distribution_shift",
+      "contract_event_state",
+      "contract_execution_models",
+      "contract_live_state_learning_loop",
+      "contract_ml_probability_models",
+      "contract_ml_state_interface",
+      "contract_offline_rl",
+      "contract_outcome_table",
+      "contract_semantic_separation_chain",
+      "map_ml_rl_sources"
+    ],
+    "3": [
+      "contract_calendar_session_domain",
+      "contract_catalyst_external_information_domain",
+      "contract_corporate_actions_price_semantics_domain",
+      "contract_daily_context_domain",
+      "contract_fundamentals_financial_domain",
+      "contract_halts_ssr_borrow_short_pressure_domain",
+      "contract_identity_universe_domain",
+      "contract_intraday_evolution_domain",
+      "contract_regime_domain",
+      "contract_state_domains"
+    ],
+    "4": [
+      "contract_causality_mechanisms",
+      "contract_market_state_representation",
+      "contract_market_state_representation_contract_v0_1",
+      "contract_market_state_signature",
+      "contract_scientific_rationale",
+      "map_detected_gap_market_state_representation",
+      "map_market_science_sources"
+    ],
+    "5": [
+      "contract_institutional_market_state",
+      "contract_maturity_matrix",
+      "contract_microstructure_domain",
+      "contract_microstructure_features_table_v0_1",
+      "contract_promotion_criteria",
+      "contract_scoped_state_sample"
+    ],
+    "6": [
+      "contract_alphaevolve_evaluable_objects",
+      "contract_evolution_systems_alphaevolve",
+      "contract_locked_evaluator_rule",
+      "map_alphaevolve_evaluator_sources"
+    ]
+  },
+  "post_extraction_correction": "Renamed duplicate Source File Map labels to prevent Graphify build_from_json ghost-duplicate collapse into self-loop."
+}

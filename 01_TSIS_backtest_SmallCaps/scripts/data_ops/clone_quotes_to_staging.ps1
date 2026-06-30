@@ -10,6 +10,10 @@ Examples:
 
   powershell -ExecutionPolicy Bypass -File .\scripts\data_ops\clone_quotes_to_staging.ps1 -Run -AllowNonEmptyTarget
 
+  powershell -ExecutionPolicy Bypass -File .\scripts\data_ops\clone_quotes_to_staging.ps1 -Run -AllowNonEmptyTarget -ChunkByTicker -ThreadCount 64 -Retries 2 -WaitSeconds 2 -HeartbeatSeconds 30
+
+  powershell -ExecutionPolicy Bypass -File .\scripts\data_ops\clone_quotes_to_staging.ps1 -Run -AllowNonEmptyTarget -ChunkByTicker -StartAtTicker APEX -ThreadCount 64 -Retries 2 -WaitSeconds 2 -HeartbeatSeconds 30
+
   powershell -ExecutionPolicy Bypass -File .\scripts\data_ops\clone_quotes_to_staging.ps1 -Run -SubPath "SGC\year=2013\month=11\day=04"
 
   powershell -ExecutionPolicy Bypass -File .\scripts\monitor_long_running_operation.ps1 -RunRoot "E:\TSIS\data\data_ops_manifests\quotes_clone" -Watch
@@ -34,6 +38,16 @@ param(
 
     [Parameter()]
     [switch]$AllowNonEmptyTarget,
+
+    [Parameter()]
+    [switch]$ChunkByTicker,
+
+    [Parameter()]
+    [ValidateRange(0, 100000)]
+    [int]$MaxTickerChunks = 0,
+
+    [Parameter()]
+    [string]$StartAtTicker = "",
 
     [Parameter()]
     [switch]$VerboseFileList,
@@ -151,9 +165,32 @@ function Write-JsonAtomic {
     if (-not [string]::IsNullOrWhiteSpace($dir)) {
         New-Item -ItemType Directory -Force -Path $dir | Out-Null
     }
-    $tmp = "$Path.$PID.tmp"
+    $replaceId = [guid]::NewGuid().ToString("N")
+    $tmp = "$Path.$PID.$replaceId.tmp"
+    $backup = "$Path.$PID.$replaceId.bak"
     $Payload | ConvertTo-Json -Depth $Depth | Set-Content -LiteralPath $tmp -Encoding UTF8
-    Move-Item -LiteralPath $tmp -Destination $Path -Force
+    try {
+        if (Test-Path -LiteralPath $Path -PathType Leaf) {
+            [System.IO.File]::Replace($tmp, $Path, $backup, $true)
+        }
+        else {
+            [System.IO.File]::Move($tmp, $Path)
+        }
+    }
+    catch {
+        if (Test-Path -LiteralPath $Path -PathType Leaf) {
+            Remove-Item -LiteralPath $Path -Force
+        }
+        [System.IO.File]::Move($tmp, $Path)
+    }
+    finally {
+        if (Test-Path -LiteralPath $tmp -PathType Leaf) {
+            Remove-Item -LiteralPath $tmp -Force -ErrorAction SilentlyContinue
+        }
+        if (Test-Path -LiteralPath $backup -PathType Leaf) {
+            Remove-Item -LiteralPath $backup -Force -ErrorAction SilentlyContinue
+        }
+    }
 }
 
 function Add-JsonLine {
@@ -310,6 +347,12 @@ $monitorCommand = "powershell -NoProfile -ExecutionPolicy Bypass -File `"$monito
 
 $copyPairs = @()
 if ($SubPath.Count -gt 0) {
+    if ($ChunkByTicker) {
+        throw "-ChunkByTicker cannot be combined with -SubPath. Use one scope mode."
+    }
+    if (-not [string]::IsNullOrWhiteSpace($StartAtTicker)) {
+        throw "-StartAtTicker cannot be combined with -SubPath. Use -ChunkByTicker."
+    }
     foreach ($item in $SubPath) {
         $relative = Resolve-SafeRelativeSubPath -PathValue $item
         $pairSource = Join-Path $script:source $relative
@@ -319,6 +362,32 @@ if ($SubPath.Count -gt 0) {
         $copyPairs += [ordered]@{
             relative_subpath = $relative
             source = (Get-Item -LiteralPath $pairSource).FullName.TrimEnd("\")
+            target = (Join-Path $script:target $relative)
+        }
+    }
+}
+elseif ($ChunkByTicker) {
+    $tickerDirs = @(Get-ChildItem -LiteralPath $script:source -Directory -Force |
+        Sort-Object Name)
+    if (-not [string]::IsNullOrWhiteSpace($StartAtTicker)) {
+        $startTicker = $StartAtTicker.Trim().ToUpperInvariant()
+        $exactStart = @($tickerDirs | Where-Object { $_.Name -ieq $startTicker })
+        if ($exactStart.Count -eq 0) {
+            throw "StartAtTicker was not found under source root: $startTicker"
+        }
+        $tickerDirs = @($tickerDirs | Where-Object { [StringComparer]::OrdinalIgnoreCase.Compare($_.Name, $startTicker) -ge 0 })
+    }
+    if ($MaxTickerChunks -gt 0) {
+        $tickerDirs = @($tickerDirs | Select-Object -First $MaxTickerChunks)
+    }
+    if ($tickerDirs.Count -eq 0) {
+        throw "No ticker directories found under source root: $script:source"
+    }
+    foreach ($tickerDir in $tickerDirs) {
+        $relative = $tickerDir.Name
+        $copyPairs += [ordered]@{
+            relative_subpath = $relative
+            source = $tickerDir.FullName.TrimEnd("\")
             target = (Join-Path $script:target $relative)
         }
     }
@@ -363,6 +432,9 @@ $mode = if ($Run) { "copy" } else { "dry_run" }
 if ($SubPath.Count -gt 0) {
     $mode = "${mode}_scoped"
 }
+elseif ($ChunkByTicker) {
+    $mode = "${mode}_ticker_chunks"
+}
 $startedAtUtc = (Get-Date).ToUniversalTime().ToString("o")
 
 $preManifest = [ordered]@{
@@ -381,6 +453,9 @@ $preManifest = [ordered]@{
     source_root = $script:source
     target_root = $script:target
     scoped_subpaths = @($SubPath)
+    chunk_by_ticker = [bool]$ChunkByTicker
+    max_ticker_chunks = $MaxTickerChunks
+    start_at_ticker = if ([string]::IsNullOrWhiteSpace($StartAtTicker)) { $null } else { $StartAtTicker.Trim().ToUpperInvariant() }
     copy_pairs = @($copyPairs)
     log_root = $logRootItem.FullName
     robocopy_log = $script:robocopyLog
@@ -397,7 +472,7 @@ $preManifest = [ordered]@{
     wait_seconds = $WaitSeconds
     verbose_file_list = [bool]$VerboseFileList
     unbuffered = [bool]$Unbuffered
-    expected_scope = if ($SubPath.Count -gt 0) { "scoped subpaths only" } else { "full source tree clone/update into staging target" }
+    expected_scope = if ($SubPath.Count -gt 0) { "scoped subpaths only" } elseif ($ChunkByTicker) { "top-level ticker chunks under source root" } else { "full source tree clone/update into staging target" }
     resume_policy = "rerun with -Run -AllowNonEmptyTarget against the same target; robocopy skips unchanged files under copy semantics"
     overwrite_policy = "changed files inside target may be overwritten; no /MIRROR or /PURGE is used"
     success_rule = "robocopy exit codes 0-7 are success; >=8 is failure"
@@ -424,6 +499,12 @@ if ($SubPath.Count -gt 0) {
     Write-Host "Scoped subpaths:"
     foreach ($pair in $copyPairs) {
         Write-Host "  - $($pair.relative_subpath)"
+    }
+}
+elseif ($ChunkByTicker) {
+    Write-Host "Ticker chunks: $($copyPairs.Count)"
+    if (-not [string]::IsNullOrWhiteSpace($StartAtTicker)) {
+        Write-Host "Start at ticker: $($StartAtTicker.Trim().ToUpperInvariant())"
     }
 }
 Write-Host "Log: $script:robocopyLog"
@@ -495,6 +576,9 @@ $manifest = [ordered]@{
     source_root = $script:source
     target_root = $script:target
     scoped_subpaths = @($SubPath)
+    chunk_by_ticker = [bool]$ChunkByTicker
+    max_ticker_chunks = $MaxTickerChunks
+    start_at_ticker = if ([string]::IsNullOrWhiteSpace($StartAtTicker)) { $null } else { $StartAtTicker.Trim().ToUpperInvariant() }
     target_was_non_empty = [bool]$targetWasNonEmpty
     allow_non_empty_target = [bool]$AllowNonEmptyTarget
     thread_count = $ThreadCount

@@ -1,0 +1,7 @@
+Validation gates before build:
+- all chunk_XX_extract.json files exist
+- JSON schema has nodes/edges/hyperedges/metadata
+- node ids are unique after prefixing/merge policy
+- every edge endpoint resolves to a node id
+- no self loops unless explicitly justified; default remove/fix
+- source_file paths are relative to 00_CTO/13_TRADING_SYSTEMS

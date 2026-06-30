@@ -29,6 +29,12 @@ No crea un builder.
 No habilita ML/RL directo.
 No convierte context tables en estado por si solas.
 
+Contrato companion obligatorio sobre cobertura, scanner diario y lookbacks:
+
+```text
+01_foundations/module_contracts/outputs/market_state_coverage_and_lookback_policy_v0_1.md
+```
+
 ## Decision Central
 
 TSIS no debe tratar `OHLCV` como el estado completo del mercado.
@@ -63,6 +69,21 @@ state != outcome
 state != reward
 state != execution fill
 ```
+
+Tambien queda fijado:
+
+```text
+daily_in_play != market_state completo
+full_history_context != microstructure full-universe ciega
+event_window_microstructure != universo completo
+```
+
+La politica de cobertura y lookback obliga a combinar:
+
+- contexto full-history compacto;
+- candidatos diarios/en-evento;
+- microestructura pesada solo en ventanas gobernadas;
+- lookback features as-of para estrategias que dependen de memoria historica.
 
 ## Por Que Existe Este Contrato
 
@@ -188,6 +209,7 @@ tienen el mismo nivel de readiness.
 | Expected coverage | `expected_data_calendar_v0_1` | denominator/absence context | allowed as quality context |
 | Dataset gates | `dataset_certification_matrix_v0_1` | family-level quality gate | allowed as quality context |
 | Corporate actions | `corporate_actions_table_v0_1` | split/dividend/ticker-change context | allowed |
+| Scanner candidates | `daily_scanner_candidates_table_v0_1` target | in-play/candidate-set lineage | not materialized; seed only after validator gates |
 | Daily price | `master_daily_table_v0_1` | daily context and price views | allowed with price-view policy |
 | Intraday bars | `master_intraday_bar_table_v0_1` | scoped 1m pilot/event cases | scoped only, not full-universe |
 | Microstructure | `microstructure_features_table_v0_1` | one seed window smoke proof | not trainable, not primary state |
@@ -200,6 +222,47 @@ tienen el mismo nivel de readiness.
 | Regime | `regime_context_table_v0_1` | session-close regime context | allowed only after as-of join |
 | Short constraints | target/runbook only | SSR/borrow/locate/availability | blocked until source exists |
 | Real-time alerts | not materialized | offerings/filings/newswire live alerts | blocked until source/feed/latency contract |
+
+## Microstructure Source Root Policy
+
+As of `2026-06-29`, the next controlled state-table loop may use
+`D:/quotes` as a provisional quote source through the upstream
+`microstructure_features_table` candidate path.
+
+Required lineage:
+
+```text
+quotes_root_used = D:/quotes
+quotes_root_state = provisional_d_legacy_recovery_root_pending_e_parity
+target_official_quotes_root = E:/TSIS/data/quotes_
+legacy_incomplete_e_quotes_root = E:/TSIS/data/quotes
+requires_rebuild_after_e_quotes_parity = true
+```
+
+Allowed use:
+
+```text
+controlled candidate samples
+market-state/event-state builder tests
+forensic/debug readouts
+component integration validation
+```
+
+Prohibited use while this root state remains provisional:
+
+```text
+institutional promotion
+ML/RL primary training
+backtest-core direct source
+execution simulation truth
+claiming official E-root parity
+```
+
+Any `market_state_table` or `event_state_table` candidate that consumes
+microstructure derived from `D:/quotes` must preserve the upstream root state
+in row-level lineage or in the manifest and must be recomputable after
+`E:/TSIS/data/quotes_` parity/audit is complete. `E:/TSIS/data/quotes` is an
+incomplete/legacy E-root for this recovery decision, not the official target.
 
 ## Mandatory As-Of Rules
 
@@ -507,6 +570,8 @@ Current state:
 15 CAPA 1 outputs are materialized for declared v0.1 scopes.
 market_state_table_v0_1 is not materialized.
 event_state_table_v0_1 is not materialized.
+market_state_table_v0_1_candidate_microstructure_halt_controlled is materialized as controlled_candidate_not_promoted.
+event_state_table_v0_1_candidate_microstructure_halt_controlled is materialized as controlled_candidate_not_promoted.
 short_sale_constraints_table_v0_1 is blocked by missing SSR/borrow/locate source.
 real_time_corporate_event_alerts_table_v0_1 is blocked by live/vendor/feed semantics.
 microstructure_features_table_v0_1 is seed-only.
@@ -516,7 +581,8 @@ master_intraday_bar_table_v0_1 is scoped-only.
 Allowed next work:
 
 ```text
-design schemas, builders, validators and deterministic small fixtures
+expand controlled candidates, strengthen as-of joins, add coverage gates,
+rebuild after E:/TSIS/data/quotes_ parity, and only then evaluate promotion.
 ```
 
 Blocked claim:

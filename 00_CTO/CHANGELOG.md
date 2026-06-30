@@ -52,21 +52,79 @@ run summaries, trace logs y, si procede, release log propio.
 
 ### Added
 
+- Added `TSIS_LAB_ARCHITECTURE_v2.md` as the 2026-06-30 CTO architecture
+  candidate. The v2 preserves `TSIS_LAB_ARCHITECTURE.md` as historical v1 and
+  updates the active lab architecture around Data Foundation maturity, Scanner
+  Candidate Selection, Market State Representation, Event State, outcome
+  research, decision models, execution models, evaluation systems, Graphify
+  governance and AlphaEvolve/Evolution Systems. It explicitly separates data,
+  scanner candidates, market states, event states, events, outcomes,
+  strategies, decisions, execution and evolution so future agents do not treat
+  scanner rows or partial state seeds as ML/RL-ready institutional state.
+- Added the CTO Scanner Candidate Selection architecture under
+  `11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/`.
+  The new candidate-policy stack explains why TSIS separates operational
+  visibility (`trade_station_like_scanner_v0_1`) from broad research discovery
+  (`broad_in_play_discovery_scanner_v0_1`), maps all operational contracts in
+  `01_foundations`, and defines the promotion path from scanner candidates to
+  strategy-specific experimental state, `event_state_candidate`,
+  `market_state_candidate` and `institutional_market_state`.
+- Added the `00_CTO` Graphify leaf Git publication rule: root
+  `graphify-out/` remains runtime ignored by default, while promoted
+  `graphify-out/leaf_slices/<leaf_id>/` directories can be versioned when they
+  include build manifest, corpus manifest/equivalent, graph outputs and clean
+  diagnostics. Deterministic topology/provenance leaves must declare their
+  limited semantic coverage.
+- Added the `00_CTO` Graphify no-API/version-alignment rule: future semantic
+  builds must not ask for external API keys when running in Codex without
+  Gemini/Google keys, must use host-agent/subagent extraction for documental
+  corpus, and must record package version, skill/source version, upstream
+  reference and semantic coverage in `BUILD_MANIFEST.md`.
+- Added a Graphify `BUILD_MANIFEST.md` baseline requirement for `00_CTO`
+  leaves/roots: commit, dirty state, exact corpus, queue coverage, diagnostics
+  and next-delta commands must be recorded before a build can serve as the next
+  diff baseline.
+- Built the cross-project `graphify_governance_20260629` Graphify leaf under
+  `00_CTO/graphify-out/leaf_slices/`, covering Graphify protocols, refresh
+  queues, root governance, long-running operation observability and the
+  Data Foundation graph/table methodology. The build aligned `graphifyy` and
+  the Codex Graphify skill to `0.9.1`, used no external API, produced 37 nodes,
+  60 edges and 9 communities, and passed `graphify diagnose multigraph` with
+  0 missing endpoints, 0 dangling endpoints, 0 self-loops and 0 duplicate or
+  collapsed edges. The `00_CTO` root graph was intentionally not merged.
+- Built the official `market_state_representation_20260628` Graphify leaf for
+  `11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION` with Codex subagent
+  semantic extraction and official Graphify build/export/report APIs. The leaf
+  covers the Market State contract and source-file map, has 60 nodes, 83 edges,
+  7 communities and a clean `graphify diagnose multigraph` result. The
+  `00_CTO` root graph was intentionally not merged.
+- Reorganized `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY` so trader-source
+  material lives under trader folders, starting with
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/`; Steven Dux source
+  strategies, source factors, source assets and the source strategy index were
+  moved out of root `LONG/`, `SHORT/`, `FACTORS/` and `source_assets/` so those
+  root folders remain reserved for TSIS-owned consolidated or in-progress
+  strategy/factor research.
+- Updated Steven Dux source references so public-video transcripts now point to
+  per-video folders under
+  `E:\TSIS_YOUTUBE\00_TRADERS\00_Steven_Dux\TRANSCRIPTS\`, and Duxinator
+  references point to the active
+  `E:\00_TRADING\04_Steven_Dux\Duxinator\...` source root.
 - Added
-  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/STEVEN_DUX_SOURCE_STRATEGY_INDEX_v0_1.md`
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/STEVEN_DUX_SOURCE_STRATEGY_INDEX_v0_1.md`
   as a `source_note/draft` mapping Steven Dux source material into TSIS
   strategy-research language: visual examples, strategy candidates, measurable
   variables, crowding/dollar-block contexts and the requirement that future
   Dux-style daily strategy notebooks produce both visual review artifacts and
   statistics ledgers before any promotion.
 - Added
-  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/First_Red_Day/STRATEGY.md`
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/First_Red_Day/STRATEGY.md`
   as the Duxinator-derived `source_note/strategy draft` for First Red Day,
   including pre-red-day semantics, multi-day runner criteria, volume/dollar
   volume requirements, range-damage math, remaining-reward formulas, required
   candidate-table fields and embedded source images from the Duxinator lesson.
 - Added
-  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/Double_Layer_Resistance/STRATEGY.md`
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Double_Layer_Resistance/STRATEGY.md`
   as the Duxinator-derived `source_note/strategy draft` for Double Layer
   Resistance, defining crowded ticker context, historical resistance proximity,
   intraday consolidation failure, double-layer overhead supply semantics,
@@ -74,19 +132,19 @@ run summaries, trace logs y, si procede, release log propio.
   future short-side strategy research.
 - Added the remaining Duxinator strategy/factor drafts under source-scoped
   `stevenDux/` subfolders:
-  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/Bounce_Plus_Gap_Up_Short/STRATEGY.md`,
-  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/stevenDux/Gap_Up_Buying/STRATEGY.md`,
-  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/Double_Intraday_Top/STRATEGY.md`,
-  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/Parabolic_Breakout_Failed_Breakout/STRATEGY.md`,
-  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/stevenDux/Dip_Buying_Multi_Day_Runner/STRATEGY.md`,
-  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/Multi_Day_Top_Risk_Reward/STRATEGY.md`
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Bounce_Plus_Gap_Up_Short/STRATEGY.md`,
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/LONG/Gap_Up_Buying/STRATEGY.md`,
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Double_Intraday_Top/STRATEGY.md`,
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Parabolic_Breakout_Failed_Breakout/STRATEGY.md`,
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/LONG/Dip_Buying_Multi_Day_Runner/STRATEGY.md`,
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Multi_Day_Top_Risk_Reward/STRATEGY.md`
   and
-  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/stevenDux/Float_Rotation/FACTOR.md`;
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Float_Rotation/FACTOR.md`;
   each file preserves strategy/factor semantics as draft research, defines
   measurable candidate fields for future notebooks, lists event-decomposition
   candidates and records desired screenshots from its own source video only.
 - Added
-  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/stevenDux/Pattern_Variation_Acceptable_Range/FACTOR.md`
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Pattern_Variation_Acceptable_Range/FACTOR.md`
   as the Duxinator-derived `source_note/factor draft` for classifying whether a
   pattern variation remains acceptable by comparing breakout volume, projected
   day volume, prior resistance volume, float/float rotation and SSR or
@@ -95,45 +153,45 @@ run summaries, trace logs y, si procede, release log propio.
   Concepts` as pending transcript/source images before documentation.
 - Added separated Steven Dux public-source strategy drafts for
   `Gap Up Short` and `Bounce Short` under
-  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/Gap_Up_Short/STRATEGY.md`
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Gap_Up_Short/STRATEGY.md`
   and
-  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/stevenDux/Bounce_Short/STRATEGY.md`,
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Bounce_Short/STRATEGY.md`,
   preserving the distinction between gap/crowding failure logic and historical
   resistance-volume retest logic while linking both from the Steven Dux source
   strategy index.
 - Added
-  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/stevenDux/Volume_Prediction/FACTOR.md`
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Volume_Prediction/FACTOR.md`
   as the first Duxinator `Advance Concepts` factor draft, covering `Volume
   Prediction Intraday`, `Scenarios of Intraday Volume Prediction` and `Volume
   Prediction Pre-Market`; the factor defines projected day volume, premarket and
   first-hour volume estimators, resistance-volume comparison states, crowding
   buckets and minimum fields for future Dux-style candidate tables.
 - Added
-  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/stevenDux/Liquidity_Gain_Loss/FACTOR.md`
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Liquidity_Gain_Loss/FACTOR.md`
   as the Duxinator `Advance Concepts` factor draft for `The Gain / Loss of
   Liquidity` and `Volume Range and Liquidity Collaboration`, defining liquidity
   state adjustments to volume prediction, morning panic/consolidation breakdown
   volume loss, consolidation/parabolic liquidity gain, gap-through-resistance
   semantics and volume-range buckets for future strategy notebooks.
 - Added
-  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/stevenDux/Neutralized_Area/FACTOR.md`
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Neutralized_Area/FACTOR.md`
   as the Duxinator `Advance Concepts` factor draft for identifying accepted or
   volume-supported zones that cap remaining reward, including multi-day runner
   neutralization, support-volume layers, half-gain neutralized targets and
   clean-air distance fields for future First Red Day, Gap Up Short and Bounce
   Short notebooks.
 - Added
-  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/stevenDux/Short_Seller_Trap_Layers/FACTOR.md`
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Short_Seller_Trap_Layers/FACTOR.md`
   as the Duxinator `Advance Concepts` factor draft for identifying stacked
   short-seller layers, covering-pressure chain reactions, gap-down traps and
   proximity-to-layer risk that can invalidate otherwise plausible short setups.
 - Added
-  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/stevenDux/Crowded_Ticker_Context/FACTOR.md`
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Crowded_Ticker_Context/FACTOR.md`
   as the Duxinator `Advance Concepts` factor draft for identifying intraday
   crowded tickers, no-trade crowded states, future resistance creation and
   later bounce-short source context.
 - Extended
-  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/stevenDux/Float_Rotation/FACTOR.md`
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Float_Rotation/FACTOR.md`
   with the Duxinator `Advance Concepts` warning `The Danger of Float Rotation`,
   documenting why microfloat rotation can degrade individual resistance,
   random consolidation shorts and raw volume-at-level assumptions.
