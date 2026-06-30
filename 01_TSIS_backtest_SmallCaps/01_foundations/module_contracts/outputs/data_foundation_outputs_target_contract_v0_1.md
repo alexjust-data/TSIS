@@ -1093,6 +1093,8 @@ Contrato especifico:
 ```text
 01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_1.md
 01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_1.md
+01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_2.md
+01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_2.md
 configs/data_foundation_outputs/scanner_definitions/
 ```
 
@@ -1118,6 +1120,25 @@ broad_in_play_discovery_scanner_v0_1
      prior-day high reclaim, range expansion, news context o halt/reopen
      context.
 ```
+
+Modelo v0.2 vigente para nuevos builders:
+
+```text
+base_in_play_universe_scanner_v0_2
+  -> common stock, market cap < 100M, 0.5 < last <= 20, quality usable/review
+
+trade_station_like_profile_v0_2
+  -> volume_today >= 500000 + pct_chg_1d top 25
+
+relative_volume_profile_v0_2
+percent_change_profile_v0_2
+dollar_volume_tradability_profile_v0_2
+das_research_profile_v0_2
+  -> profiles inside the same base denominator
+```
+
+En v0.2, `volume_today >= 500000` y `% change 1D top 25` no son filtros
+universales; son perfiles/visibilidades dentro de la base comun.
 
 No debe contener:
 
@@ -3115,6 +3136,8 @@ Politica obligatoria de cobertura, scanner diario y lookbacks:
 Contrato objetivo del scanner diario/candidate set:
 
 ```text
+01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_2.md
+01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_2.md
 01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_1.md
 01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_1.md
 ```

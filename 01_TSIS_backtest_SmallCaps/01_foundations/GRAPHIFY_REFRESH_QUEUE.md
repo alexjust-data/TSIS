@@ -129,6 +129,101 @@ Por ventana dedicada:
 
 ## Entradas activas
 
+### GFQ-20260630-daily-scanner-v0-2-base-universe-profiles
+
+Status: `pending_next_outputs_leaf_refresh`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+data_foundation_outputs_graph
+event_discovery_graph
+market_state_representation_graph
+strategy_research_graph
+ml_feature_governance_graph
+offline_rl_governance_graph
+```
+
+Why:
+
+- Implemented the forward `daily_scanner_candidates_table_v0_2` controlled
+  builder model.
+- Replaced the v0.1 "two scanner universes" interpretation with one governed
+  base denominator plus profile flags:
+  `base_in_play_universe_scanner_v0_2` and profiles for TradeStation-like
+  visibility, relative volume, percent change, dollar-volume tradability and
+  DAS research.
+- Preserved `market_cap_usd < 100M` as the common hard filter.
+- Preserved `volume_today >= 500k` only as the TradeStation-like profile hard
+  filter, not as a universal research filter.
+- Blocked float as a hard filter until a point-in-time float source passes
+  source/coverage/as-of validation.
+- Added a deterministic fixture test proving one base scanner row per
+  instrument/session/as-of, profile flags, alias deduplication, no ML/RL/live
+  authority and no official E-root promotion.
+- Ran controlled replay
+  `daily_scanner_candidates_replay_20250102_20250110_v0_2` under
+  `C:/TSIS_Data/tests/test_runs/2026-06-30/`, producing 15,323 rows, 4,023
+  selected-any-profile rows, 150 TradeStation-like profile rows, 2,472 DAS
+  research profile rows, 3,177 selected rows below 500k volume, zero duplicate
+  logical keys and zero ML/RL/live-authority rows.
+
+Changed paths:
+
+```text
+scripts/materialize_daily_scanner_candidates_table_v0_2.py
+tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder_v0_2.py
+configs/data_foundation_outputs/scanner_definitions/base_in_play_universe_scanner_v0_2.yaml
+configs/data_foundation_outputs/scanner_definitions/trade_station_like_profile_v0_2.yaml
+configs/data_foundation_outputs/scanner_definitions/relative_volume_profile_v0_2.yaml
+configs/data_foundation_outputs/scanner_definitions/percent_change_profile_v0_2.yaml
+configs/data_foundation_outputs/scanner_definitions/dollar_volume_tradability_profile_v0_2.yaml
+configs/data_foundation_outputs/scanner_definitions/das_research_profile_v0_2.yaml
+configs/data_foundation_outputs/scanner_definitions/README.md
+01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_2.md
+01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_2.md
+01_foundations/canonical_schemas/outputs/daily_scanner_candidates_table_schema_contract.md
+01_foundations/contract_registry/dataset_contracts/daily_scanner_candidates_table_dataset_contract_v0_1.md
+01_foundations/data_consumption_policies/daily_scanner_candidates_table_consumption_policy.md
+01_foundations/dataset_registry/outputs/daily_scanner_candidates_table_registry_entry.yaml
+01_foundations/validators/outputs/daily_scanner_candidates_table_validators.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_foundations/module_contracts/README.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Evidence paths:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-30/daily_scanner_candidates_replay_20250102_20250110_v0_2/_daily_scanner_candidates_table_manifest_v0_2_candidate_replay.json
+C:/TSIS_Data/tests/test_runs/2026-06-30/daily_scanner_candidates_replay_20250102_20250110_v0_2/_daily_scanner_candidates_table_summary_v0_2_candidate_replay.csv
+```
+
+Recommended action:
+
+```text
+Refresh the Data Foundation outputs and market-state/event-discovery related
+leaves so graph users know that v0.2 is the forward scanner model, while v0.1
+remains preserved historical controlled replay evidence. Do not mark official
+E-root materialization as complete.
+```
+
+Root action:
+
+```text
+Do not rebuild root graph in this implementation turn. Include this entry in
+the next planned Graphify maintenance window.
+```
+
+Owner:
+
+```text
+Modulo 01 / Data Foundation scanner and candidate-generation governance
+```
+
 ### GFQ-20260629-master-intraday-quote-guarded-candidate
 
 Status: `pending_next_outputs_leaf_refresh`

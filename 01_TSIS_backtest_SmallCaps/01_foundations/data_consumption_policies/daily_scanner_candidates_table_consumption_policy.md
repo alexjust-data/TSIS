@@ -68,6 +68,33 @@ What was becoming in-play before the narrow operational scanner necessarily saw 
 
 No consumer may collapse these into one meaning.
 
+For `scanner_framework_v0_2`, consumers must instead use:
+
+```text
+base_in_play_universe_scanner_v0_2
+  -> common smallcap <100M denominator
+
+trade_station_like_profile_v0_2
+  -> operational visibility replay
+
+relative_volume_profile_v0_2
+percent_change_profile_v0_2
+dollar_volume_tradability_profile_v0_2
+das_research_profile_v0_2
+  -> governed research/tradability profiles inside the same denominator
+```
+
+Rules:
+
+- `volume_today >= 500000` may only be interpreted as the
+  `trade_station_like_profile_v0_2` hard filter.
+- `market_cap_usd < 100000000` is the common base hard filter.
+- `float` must not be used as a filter until a point-in-time source is
+  governed and validated.
+- `selected_broad_discovery` is deprecated for v0.2 consumers; prefer
+  `selected_das_research_profile`.
+- No profile flag is a strategy signal, state label, reward, fill or PnL.
+
 ### Event Discovery
 
 May use validated rows to reconstruct which tickers were in play under a

@@ -37,7 +37,9 @@
   - [`outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md`](#outputsmasterintradaybartablequoteguardedcandidatecontractv01md)
   - [`outputs/microstructure_features_table_multi_window_materialization_plan_v0_1.md`](#outputsmicrostructurefeaturestablemultiwindowmaterializationplanv01md)
   - [`outputs/daily_scanner_candidates_table_target_contract_v0_1.md`](#outputsdailyscannercandidatestabletargetcontractv01md)
+  - [`outputs/daily_scanner_candidates_table_target_contract_v0_2.md`](#outputsdailyscannercandidatestabletargetcontractv02md)
   - [`outputs/scanner_framework_and_definitions_contract_v0_1.md`](#outputsscannerframeworkanddefinitionscontractv01md)
+  - [`outputs/scanner_framework_and_definitions_contract_v0_2.md`](#outputsscannerframeworkanddefinitionscontractv02md)
   - [`outputs/short_sale_constraints_table_target_contract_v0_1.md`](#outputsshortsaleconstraintstabletargetcontractv01md)
   - [`outputs/short_sale_constraints_data_acquisition_runbook_v0_1.md`](#outputsshortsaleconstraintsdataacquisitionrunbookv01md)
   - [`daily_return_labels_consumer_contract_v0_1.md`](#dailyreturnlabelsconsumercontractv01md)
@@ -805,6 +807,44 @@ Las configs versionadas viven en:
 ```text
 configs/data_foundation_outputs/scanner_definitions/
 ```
+
+### `outputs/daily_scanner_candidates_table_target_contract_v0_2.md`
+
+Contrato objetivo para la evolucion `v0.2` de candidatos diarios/in-play.
+
+Define:
+
+- un solo denominador base `base_in_play_universe_scanner_v0_2`;
+- perfiles gobernados encima del denominador;
+- `market_cap < 100M` como filtro comun;
+- `volume_today >= 500k` solo como filtro del perfil tipo TradeStation;
+- `float` bloqueado como filtro hasta tener fuente point-in-time auditada;
+- builder y test controlado:
+
+```text
+scripts/materialize_daily_scanner_candidates_table_v0_2.py
+tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder_v0_2.py
+```
+
+### `outputs/scanner_framework_and_definitions_contract_v0_2.md`
+
+Contrato del framework scanner `v0.2`.
+
+Modelo:
+
+```text
+base_in_play_universe_scanner_v0_2
+  -> trade_station_like_profile_v0_2
+  -> relative_volume_profile_v0_2
+  -> percent_change_profile_v0_2
+  -> dollar_volume_tradability_profile_v0_2
+  -> das_research_profile_v0_2
+```
+
+Regla central:
+
+- el scanner define denominador y perfiles de investigacion/visibilidad;
+- no define estado completo, label, reward, fill, PnL ni senal de estrategia.
 
 ### `outputs/short_sale_constraints_table_target_contract_v0_1.md`
 

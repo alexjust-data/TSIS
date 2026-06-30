@@ -93,6 +93,24 @@ latest_controlled_replay: C:/TSIS_Data/tests/test_runs/2026-06-29/daily_scanner_
 
 The replay is evidence of builder shape and scanner comparison only.
 
+`v0.2` controlled candidate implementation exists as the forward path:
+
+```text
+builder: scripts/materialize_daily_scanner_candidates_table_v0_2.py
+test: tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder_v0_2.py
+framework: 01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_2.md
+target_contract: 01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_2.md
+```
+
+`v0.2` changes the scanner model from two independent scanner definitions to:
+
+```text
+base_in_play_universe_scanner_v0_2 + governed profile flags
+```
+
+This is a candidate replay implementation only. It does not promote an
+official E-root dataset and does not authorize direct ML/RL/live consumption.
+
 ## 6. Required Scanner Definition
 
 Every materialization must include a versioned scanner definition containing:

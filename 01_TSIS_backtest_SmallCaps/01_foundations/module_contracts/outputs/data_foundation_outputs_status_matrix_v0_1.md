@@ -431,7 +431,39 @@ still has no official E-root parquet, official manifest or official summary. It
 is the candidate-generation layer for in-play discovery, not a replacement for
 `market_state_table`.
 
-Governed scanner definitions currently defined:
+The forward `v0.2` scanner model is also implemented as a controlled builder
+and deterministic fixture test. It replaces the idea of two independent scanner
+universes with one base denominator plus profile flags:
+
+```text
+base_in_play_universe_scanner_v0_2
+trade_station_like_profile_v0_2
+relative_volume_profile_v0_2
+percent_change_profile_v0_2
+dollar_volume_tradability_profile_v0_2
+das_research_profile_v0_2
+```
+
+`v0.2` is not an official E-root materialization. It is the current
+implementation path for future wider scanner replays.
+
+Latest controlled replay evidence:
+
+```text
+run_id: daily_scanner_candidates_replay_20250102_20250110_v0_2
+root: C:/TSIS_Data/tests/test_runs/2026-06-30/daily_scanner_candidates_replay_20250102_20250110_v0_2/
+rows: 15323
+selected_any_profile_rows: 4023
+selected_trade_station_like_profile_rows: 150
+selected_das_research_profile_rows: 2472
+selected_below_500k_volume_rows: 3177
+duplicate_key_groups: 0
+float_filter_used_rows: 0
+ml_feature_candidate_rows: 0
+rl_state_candidate_rows: 0
+```
+
+Governed historical v0.1 scanner definitions:
 
 ```text
 trade_station_like_scanner_v0_1
@@ -446,7 +478,7 @@ The following target outputs are still not governed materializations under
 | Target output | Current state | Required before materialization |
 | --- | --- | --- |
 | `data_quality_report` | documentation/evidence exists under `01_foundations/data_quality_report/`, but no governed E-root output table exists | decide if it is a report folder, a table, or both; define schema/manifest if table |
-| `daily_scanner_candidates_table` | builder implemented and controlled replay evidence exists under `C:/TSIS_Data/tests/test_runs/2026-06-29/daily_scanner_candidates_replay_20250102_20250110_v0_1/`; official E-root materialization does not exist | implement full validator suite, decide wider replay/promotion policy, preserve scanner rows as candidate lineage only, obey `market_state_coverage_and_lookback_policy_v0_1`; cannot be treated as complete universe or final market state |
+| `daily_scanner_candidates_table` | v0.1 builder/replay evidence exists under `C:/TSIS_Data/tests/test_runs/2026-06-29/daily_scanner_candidates_replay_20250102_20250110_v0_1/`; v0.2 base-universe-plus-profiles builder and fixture test exist; official E-root materialization does not exist | implement full validator suite, decide wider replay/promotion policy, preserve scanner rows as candidate lineage only, obey `market_state_coverage_and_lookback_policy_v0_1`; cannot be treated as complete universe, final market state, ML/RL feature table or strategy signal |
 | `master_intraday_bar_table_v0_2_candidate_quote_guarded` | candidate contract and config defined; no parquet materialization exists | wait for final `E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/` repair manifest and validation report; storage model is raw `ohlcv_1m` plus repair-manifest overlay, not a full corrected parquet tree; keep `D:/quotes` only as provisional candidate lineage; builder must consume a manifest/partition list, not blind recursive file discovery |
 | `real_time_corporate_event_alerts_table` | not materialized | define vendor/source model, latency semantics, SEC/newswire/DAS/vendor lineage, and live-vs-backfill contract |
 | `short_sale_constraints_table` | target contract and acquisition runbook defined, not materialized | derive/validate SSR proxy or acquire official SSR; connect DAS/SageTrader or broker/vendor feed for forward capture; acquire broker/vendor historical borrow/locate/availability if 20-year historical execution feasibility is required; define account/broker scope and as-of/latency semantics |
@@ -520,15 +552,17 @@ C:/TSIS_Data/RESEARCH_PHILOSOPHY.md
    `01_foundations/module_contracts/outputs/market_state_coverage_and_lookback_policy_v0_1.md`:
    full-history compact context, daily in-play candidates, governed event
    windows and explicit lookback policies.
-7. Use the controlled `daily_scanner_candidates_table` replay as candidate
-   evidence only. It compares `trade_station_like_scanner_v0_1` against
-   `broad_in_play_discovery_scanner_v0_1`, but remains non-official and cannot
-   be treated as live authority or as a direct ML/RL table.
+7. Use `daily_scanner_candidates_table` as candidate evidence only. The v0.1
+   replay compared `trade_station_like_scanner_v0_1` against
+   `broad_in_play_discovery_scanner_v0_1`. The v0.2 implementation replaces
+   that forward model with `base_in_play_universe_scanner_v0_2` plus governed
+   profile flags. Neither version is official E-root materialization, live
+   authority or a direct ML/RL table.
 
 Dependency order:
 
 ```text
-1. daily_scanner_candidates_table wider replay / validator promotion decision
+1. daily_scanner_candidates_table v0.2 wider replay / validator promotion decision
 2. master_intraday_bar_table wider/full-scope materialization plan
    - quote-guarded subpath:
      `01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md`
@@ -542,6 +576,8 @@ Dependency order:
 The executable builder and evidence for item 1 are now:
 
 ```text
+scripts/materialize_daily_scanner_candidates_table_v0_2.py
+tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder_v0_2.py
 scripts/materialize_daily_scanner_candidates_table.py
 tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder.py
 C:/TSIS_Data/tests/test_runs/2026-06-29/daily_scanner_candidates_replay_20250102_20250110_v0_1/

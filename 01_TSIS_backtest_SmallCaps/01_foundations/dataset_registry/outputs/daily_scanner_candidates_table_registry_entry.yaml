@@ -30,9 +30,18 @@ contracts:
   validators: 01_foundations/validators/outputs/daily_scanner_candidates_table_validators.md
   coverage_policy: 01_foundations/module_contracts/outputs/market_state_coverage_and_lookback_policy_v0_1.md
   scanner_framework: 01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_1.md
+  scanner_framework_v0_2: 01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_2.md
+  target_contract_v0_2: 01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_2.md
 scanner_definitions:
   trade_station_like_scanner_v0_1: configs/data_foundation_outputs/scanner_definitions/trade_station_like_scanner_v0_1.yaml
   broad_in_play_discovery_scanner_v0_1: configs/data_foundation_outputs/scanner_definitions/broad_in_play_discovery_scanner_v0_1.yaml
+scanner_definitions_v0_2:
+  base_in_play_universe_scanner_v0_2: configs/data_foundation_outputs/scanner_definitions/base_in_play_universe_scanner_v0_2.yaml
+  trade_station_like_profile_v0_2: configs/data_foundation_outputs/scanner_definitions/trade_station_like_profile_v0_2.yaml
+  relative_volume_profile_v0_2: configs/data_foundation_outputs/scanner_definitions/relative_volume_profile_v0_2.yaml
+  percent_change_profile_v0_2: configs/data_foundation_outputs/scanner_definitions/percent_change_profile_v0_2.yaml
+  dollar_volume_tradability_profile_v0_2: configs/data_foundation_outputs/scanner_definitions/dollar_volume_tradability_profile_v0_2.yaml
+  das_research_profile_v0_2: configs/data_foundation_outputs/scanner_definitions/das_research_profile_v0_2.yaml
 allowed_consumers_when_materialized:
   - event_discovery
   - scanner_replay_audit
@@ -60,4 +69,23 @@ current_state:
     selected_broad_discovery_rows: 3196
     broad_selected_below_500k_volume_rows: 2383
     duplicate_key_groups: 0
+  latest_controlled_replay_v0_2:
+    run_id: daily_scanner_candidates_replay_20250102_20250110_v0_2
+    root: C:/TSIS_Data/tests/test_runs/2026-06-30/daily_scanner_candidates_replay_20250102_20250110_v0_2
+    dataset_id: daily_scanner_candidates_table_v0_2
+    scanner_definition_id: base_in_play_universe_scanner_v0_2
+    model: base_universe_plus_profiles
+    test: tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder_v0_2.py
+    rows: 15323
+    sessions: 6
+    instruments: 2590
+    selected_any_profile_rows: 4023
+    selected_trade_station_like_profile_rows: 150
+    selected_das_research_profile_rows: 2472
+    selected_below_500k_volume_rows: 3177
+    duplicate_key_groups: 0
+    float_filter_used_rows: 0
+    ml_feature_candidate_rows: 0
+    rl_state_candidate_rows: 0
+    live_downstream_candidate_rows: 0
   next_required_step: validator_suite_and_wider_replay_decision_before_official_materialization

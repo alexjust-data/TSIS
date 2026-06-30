@@ -1,0 +1,28 @@
+profile_id: percent_change_profile_v0_2
+profile_version: v0_2
+profile_family: daily_in_play
+profile_name: percent_change_momentum_profile
+profile_role: daily_momentum_research_profile
+status: config_defined_not_officially_materialized
+
+base_dependency:
+  scanner_definition_id: base_in_play_universe_scanner_v0_2
+  rule: may_only_select_rows_that_pass_base_universe
+
+ranking:
+  primary_metric: pct_chg_1d
+  primary_order: desc
+  tie_breakers:
+    - dollar_volume_today_desc
+    - ticker_asc
+  top_n: 25
+
+thresholds:
+  reason_pct_chg_1d_move_min_pct: 3.0
+
+output_flags:
+  - selected_percent_change_profile
+  - selected_by_pct_chg_rank
+
+notes:
+  - "This profile studies daily return visibility without adding the TradeStation 500k volume hard filter."

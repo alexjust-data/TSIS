@@ -1,0 +1,64 @@
+profile_id: das_research_profile_v0_2
+profile_version: v0_2
+profile_family: daily_in_play
+profile_name: das_frontside_research_candidate_profile
+profile_role: strategy_research_denominator_profile
+status: config_defined_not_officially_materialized
+
+base_dependency:
+  scanner_definition_id: base_in_play_universe_scanner_v0_2
+  rule: may_only_select_rows_that_pass_base_universe
+
+in_play_reasons:
+  reason_pct_chg_1d_move:
+    metric: pct_chg_1d
+    threshold_pct: 3.0
+    direction: gte
+  reason_gap_pct_move:
+    metric: gap_pct
+    threshold_pct: 2.0
+    direction: gte
+  reason_volume_acceleration:
+    metric: volume_acceleration
+    threshold_multiple: 2.0
+    direction: gte
+  reason_rvol_to_time:
+    metric: rvol_to_time
+    threshold_multiple: 2.0
+    direction: gte
+  reason_afterhours_breakout:
+    metric: afterhours_breakout
+    threshold_boolean: true
+    current_eod_replay_value: false
+  reason_premarket_new_high:
+    metric: premarket_new_high
+    threshold_boolean: true
+    current_eod_replay_value: false
+  reason_prior_day_high_reclaim:
+    metric: prior_day_high_reclaim
+    threshold_boolean: true
+    current_eod_replay_value: false
+  reason_unusual_range_expansion:
+    metric: range_expansion_vs_recent_context
+    threshold_multiple: 1.5
+    current_eod_replay_value: false
+  reason_news_context:
+    metric: news_context_present_asof
+    threshold_boolean: true
+    current_eod_replay_value: false
+  reason_halt_or_reopen_context:
+    metric: halt_or_reopen_context_present_asof
+    threshold_boolean: true
+    current_eod_replay_value: false
+
+selection_sets:
+  include_all_reason_passed: true
+  top_n_by_composite_in_play_score: 25
+
+output_flags:
+  - selected_das_research_profile
+  - selected_by_composite_in_play_rank
+
+notes:
+  - "This is a research denominator profile for DAS candidate study, not a DAS signal."
+  - "DAS labels, outcomes and frontside states must live outside daily_scanner_candidates_table."

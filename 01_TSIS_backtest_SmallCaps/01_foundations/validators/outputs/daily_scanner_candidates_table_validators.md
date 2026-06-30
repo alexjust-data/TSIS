@@ -89,6 +89,42 @@ configs/data_foundation_outputs/scanner_definitions/trade_station_like_scanner_v
 configs/data_foundation_outputs/scanner_definitions/broad_in_play_discovery_scanner_v0_1.yaml
 ```
 
+For governed v0.2 scanner definitions, validator must also fail when:
+
+- `scanner_definition_id` is not `base_in_play_universe_scanner_v0_2`;
+- v0.2 rows omit any required profile flag:
+
+```text
+selected_trade_station_like_profile
+selected_relative_volume_profile
+selected_percent_change_profile
+selected_dollar_volume_tradability_profile
+selected_das_research_profile
+selected_any_profile
+```
+
+- `market_cap_max_filter` is not `100000000`;
+- a row is marked base eligible while `market_cap_usd >= 100000000`;
+- `selected_trade_station_like_profile = true` while
+  `volume_today < 500000`;
+- `selected_any_profile = true` while all individual profile flags are false;
+- any individual profile flag is true while `all_filters_passed = false`;
+- `float_filter_state` differs from
+  `not_used_until_point_in_time_float_source_exists` before a governed float
+  source contract exists;
+- `selected_broad_discovery` is interpreted as an active v0.2 scanner rather
+  than a deprecated compatibility alias;
+- profile configs are missing from:
+
+```text
+configs/data_foundation_outputs/scanner_definitions/base_in_play_universe_scanner_v0_2.yaml
+configs/data_foundation_outputs/scanner_definitions/trade_station_like_profile_v0_2.yaml
+configs/data_foundation_outputs/scanner_definitions/relative_volume_profile_v0_2.yaml
+configs/data_foundation_outputs/scanner_definitions/percent_change_profile_v0_2.yaml
+configs/data_foundation_outputs/scanner_definitions/dollar_volume_tradability_profile_v0_2.yaml
+configs/data_foundation_outputs/scanner_definitions/das_research_profile_v0_2.yaml
+```
+
 ## 5. Required Quality Checks
 
 Validator must mark rows as blocked or review when:

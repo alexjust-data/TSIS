@@ -39,6 +39,7 @@ Aqui deben validarse, como minimo:
 - `market_state_table`
 - `event_state_table`
 - `data_quality_report`
+- `daily_scanner_candidates_table`
 
 ## Estado actual
 
@@ -64,6 +65,49 @@ Contract/fixture stacks with executable tests but no materialized parquet yet:
 
 - `market_state_table`
 - `event_state_table`
+- `daily_scanner_candidates_table_v0_2`
+
+Ultima evidencia fixture de `daily_scanner_candidates_table_v0_2`:
+
+```text
+tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder_v0_2.py
+tests = 1
+passed = 1
+failed = 0
+skipped = 0
+```
+
+Esta evidencia prueba el modelo:
+
+```text
+base_in_play_universe_scanner_v0_2 + governed profile flags
+```
+
+No materializa parquet oficial ni escribe en `E:/TSIS/data`.
+
+Ultimo replay controlado real de `daily_scanner_candidates_table_v0_2`:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-30/daily_scanner_candidates_replay_20250102_20250110_v0_2/
+rows = 15323
+sessions = 6
+instruments = 2590
+selected_any_profile_rows = 4023
+selected_trade_station_like_profile_rows = 150
+selected_das_research_profile_rows = 2472
+selected_below_500k_volume_rows = 3177
+duplicate_key_groups = 0
+float_filter_used_rows = 0
+ml_feature_candidate_rows = 0
+rl_state_candidate_rows = 0
+live_downstream_candidate_rows = 0
+```
+
+Interpretacion obligatoria:
+
+```text
+controlled_replay_candidate != official promoted dataset
+```
 
 Ultima evidencia integrada:
 

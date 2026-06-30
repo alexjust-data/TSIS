@@ -1,0 +1,62 @@
+scanner_definition_id: base_in_play_universe_scanner_v0_2
+scanner_definition_version: v0_2
+scanner_family: daily_in_play
+scanner_name: smallcap_base_in_play_universe
+scanner_role: base_candidate_denominator
+status: config_defined_not_officially_materialized
+
+purpose:
+  answers: "Which common-stock tickers belong to the governed smallcap candidate denominator for a session/as-of?"
+  does_not_answer:
+    - strategy_signal
+    - final_market_state
+    - event_state
+    - label
+    - reward
+    - outcome
+    - execution_truth
+
+source_semantics:
+  replay_mode: historical_replay
+  requires_asof_policy: true
+  price_view: daily_raw_for_controlled_replay
+  execution_price_view: none
+  live_authority: false
+
+base_universe_eligibility:
+  is_common_stock_required: true
+  market_cap_max_usd: 100000000
+  last_price_min_exclusive: 0.5
+  last_price_max_inclusive: 20.0
+  data_quality_allowed:
+    - usable_for_declared_scope
+    - good
+    - review
+    - review_with_flag
+
+float_policy:
+  use_as_hard_filter: false
+  blocked_reason: no_point_in_time_float_source_has_passed_coverage_audit
+  allowed_future_use: feature_or_profile_only_after_source_contract_and_asof_validation
+
+profile_model:
+  rule: base_universe_first_profiles_second
+  profile_set_id: scanner_profile_set_v0_2
+  active_profiles:
+    - trade_station_like_profile_v0_2
+    - relative_volume_profile_v0_2
+    - percent_change_profile_v0_2
+    - dollar_volume_tradability_profile_v0_2
+    - das_research_profile_v0_2
+
+prohibited_claims:
+  - full_universe_claim
+  - direct_ml_feature
+  - direct_rl_state
+  - strategy_signal
+  - execution_truth
+  - live_trading_authority
+
+notes:
+  - "This replaces the v0.1 idea of two independent scanner universes."
+  - "Every profile must be interpreted inside this common base denominator."

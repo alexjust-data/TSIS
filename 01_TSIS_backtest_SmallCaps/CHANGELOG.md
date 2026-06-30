@@ -7,6 +7,101 @@ Este changelog registra cambios institucionales y semanticamente relevantes para
 No duplica el historial de Git.
 Existe para preservar memoria arquitectonica y metodologica del modulo.
 
+## v0.4.121 - Daily scanner v0.2 base universe plus profiles
+
+### Added
+
+- Added the forward scanner framework contract:
+
+```text
+01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_2.md
+```
+
+- Added the forward target contract:
+
+```text
+01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_2.md
+```
+
+- Added governed v0.2 scanner configs:
+  - `base_in_play_universe_scanner_v0_2.yaml`
+  - `trade_station_like_profile_v0_2.yaml`
+  - `relative_volume_profile_v0_2.yaml`
+  - `percent_change_profile_v0_2.yaml`
+  - `dollar_volume_tradability_profile_v0_2.yaml`
+  - `das_research_profile_v0_2.yaml`
+
+- Added controlled builder and deterministic fixture test:
+
+```text
+scripts/materialize_daily_scanner_candidates_table_v0_2.py
+tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder_v0_2.py
+```
+
+### Changed
+
+- Replaced the forward scanner interpretation from "two independent scanners"
+  to:
+
+```text
+base_in_play_universe_scanner_v0_2 + governed profile flags
+```
+
+- Fixed the common base denominator as:
+
+```text
+common_stock = true
+market_cap_usd < 100000000
+0.5 < last_price <= 20
+data_quality usable/review
+```
+
+- Preserved `volume_today >= 500000` only as the
+  `trade_station_like_profile_v0_2` hard filter.
+- Preserved `% change 1D top 25` as a profile/ranking, not as a universal
+  research filter.
+- Blocked float as a hard filter until a point-in-time float source passes
+  source, coverage and as-of validation.
+- Updated schema/validator/registry/policy/status docs and Graphify refresh
+  queue to reflect v0.2.
+
+### Validation
+
+```text
+python -m pytest C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder_v0_2.py -q
+passed: 1
+failed: 0
+```
+
+Controlled replay:
+
+```text
+run_id: daily_scanner_candidates_replay_20250102_20250110_v0_2
+root: C:/TSIS_Data/tests/test_runs/2026-06-30/daily_scanner_candidates_replay_20250102_20250110_v0_2/
+rows: 15323
+sessions: 6
+instruments: 2590
+selected_any_profile_rows: 4023
+selected_trade_station_like_profile_rows: 150
+selected_relative_volume_profile_rows: 150
+selected_percent_change_profile_rows: 150
+selected_dollar_volume_tradability_profile_rows: 2930
+selected_das_research_profile_rows: 2472
+selected_below_500k_volume_rows: 3177
+duplicate_key_groups: 0
+float_filter_used_rows: 0
+ml_feature_candidate_rows: 0
+rl_state_candidate_rows: 0
+live_downstream_candidate_rows: 0
+```
+
+### Scope Notes
+
+`daily_scanner_candidates_table_v0_2` is not an official E-root
+materialization. It is a controlled replay builder path and candidate
+denominator/profile model. Rows remain prohibited as direct ML/RL state,
+strategy signal, reward, fill, PnL or live trading authority.
+
 ## v0.4.120 - Master intraday quote-guarded candidate route
 
 - Added the candidate contract for:

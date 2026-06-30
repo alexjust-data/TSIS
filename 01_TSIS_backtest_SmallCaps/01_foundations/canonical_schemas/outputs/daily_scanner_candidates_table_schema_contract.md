@@ -263,6 +263,58 @@ Authoritative scanner framework:
 configs/data_foundation_outputs/scanner_definitions/
 ```
 
+## 6.1 v0.2 Base Universe + Profiles Extension
+
+The forward scanner framework is:
+
+```text
+base_in_play_universe_scanner_v0_2
+  -> trade_station_like_profile_v0_2
+  -> relative_volume_profile_v0_2
+  -> percent_change_profile_v0_2
+  -> dollar_volume_tradability_profile_v0_2
+  -> das_research_profile_v0_2
+```
+
+The `v0.2` physical candidate replay may add these columns:
+
+```text
+base_universe_definition_id
+base_universe_definition_version
+scanner_profile_set_id
+scanner_profile_ids
+selected_trade_station_like_profile
+selected_relative_volume_profile
+selected_percent_change_profile
+selected_dollar_volume_tradability_profile
+selected_das_research_profile
+selected_any_profile
+float_filter_state
+float_shares
+float_asof_date
+float_source
+```
+
+Semantics:
+
+- `scanner_definition_id` is the base denominator definition, not each profile.
+- Profile flags are selections inside the same base denominator.
+- `market_cap_usd < 100000000` is a base hard filter.
+- `volume_today >= 500000` is only the TradeStation-like profile hard filter.
+- `float_*` fields must remain null/not-used until a point-in-time float source
+  passes source, coverage and as-of validation.
+- `selected_broad_discovery` is deprecated in `v0.2` and may appear only as a
+  backwards-compatibility alias. Consumers must prefer
+  `selected_das_research_profile`.
+
+Authoritative v0.2 framework:
+
+```text
+01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_2.md
+01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_2.md
+configs/data_foundation_outputs/scanner_definitions/*_v0_2.yaml
+```
+
 ## 7. Required Semantics
 
 Rows must preserve whether they represent:
