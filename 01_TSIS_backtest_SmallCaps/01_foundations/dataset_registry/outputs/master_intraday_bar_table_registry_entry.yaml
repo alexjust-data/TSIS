@@ -1,4 +1,4 @@
-dataset_identity:
+﻿dataset_identity:
   name: master_intraday_bar_table_v0_1
   domain: outputs
   logical_version: v0_1
@@ -104,7 +104,7 @@ notes:
 candidate_states:
   - dataset_id: master_intraday_bar_table_v0_2_candidate_quote_guarded
     promotion_state: candidate_contract_defined_not_materialized
-    materialization_scope: quote_guarded_full_universe_candidate_pending_final_repair
+    materialization_scope: quote_guarded_lt1b_candidate_pending_builder_materialization
     full_universe_claim: false
     official_dataset_created: false
     safe_to_launch_full_materialization: false
@@ -112,16 +112,20 @@ candidate_states:
     contract: 01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md
     config: configs/data_foundation_outputs/master_intraday_bar_table_quote_guarded_candidate_v0_2.json
     current_bridge_sources:
-      repair_run_root: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838
       minute_root: E:/TSIS/data/ohlcv_1m
       quotes_root: D:/quotes
       quotes_root_state: provisional_d_legacy_recovery_root_pending_e_parity
-      repair_run_state: running_or_not_final_validated
-    future_official_source_root: E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded
-    blockers:
+      official_quote_guarded_manifest: E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1.parquet
+      official_quote_guarded_manifest_state: PASS
+      official_quote_guarded_manifest_rows: 301278342
+      consolidation_summary: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_lt1b_consolidation_manual_20260703_094500/consolidation_summary.json
+    official_source_root: E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded
+    completed_upstream_gates:
       - quote_guarded_repair_run_completed
       - final_validation_report_passed
       - official_e_root_quote_guarded_manifest_exists
+    remaining_blockers:
       - builder_consumes_manifest_not_blind_recursive_scan
       - candidate_tests_pass_against_final_artifacts
+      - candidate_materialization_evidence_exists
       - human_review_accepts_candidate_evidence

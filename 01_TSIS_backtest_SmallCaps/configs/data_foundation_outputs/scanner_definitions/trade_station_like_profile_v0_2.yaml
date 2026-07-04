@@ -38,3 +38,4 @@ output_flags:
 notes:
   - "volume_today >= 500k is preserved only for operational visibility replay."
   - "It is not a universal research filter."
+  - "This profile answers what the operator likely saw; it does not define the whole research denominator."

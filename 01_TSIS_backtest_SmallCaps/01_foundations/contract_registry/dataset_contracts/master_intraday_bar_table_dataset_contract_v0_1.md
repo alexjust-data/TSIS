@@ -1,4 +1,4 @@
-# Master Intraday Bar Table Dataset Contract `v0_1`
+﻿# Master Intraday Bar Table Dataset Contract `v0_1`
 
 ## 1. Dataset Identity
 
@@ -237,10 +237,13 @@ Current bridge:
 repair_run_root: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838
 minute_root: E:/TSIS/data/ohlcv_1m
 quotes_root: D:/quotes
-future_official_root: E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded
+official_quote_guarded_root: E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded
+official_quote_guarded_manifest: E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1.parquet
+official_quote_guarded_manifest_rows: 301278342
 ```
 
-The candidate cannot be materialized or promoted until the future official root
-contains the final quote-guarded repair manifest and validation report.
+The upstream quote-guarded manifest gate is satisfied. The candidate still
+cannot be promoted until the master intraday candidate itself is materialized,
+validated and reviewed under its own contract.
 
 `master_intraday_bar_table_v0_1` remains unchanged and scoped.

@@ -1,0 +1,75 @@
+scanner_definition_id: intraday_in_play_momentum_candidate_denominator_v0_1
+scanner_definition_version: v0_1
+scanner_family: intraday_in_play
+scanner_name: intraday_in_play_momentum_candidate_denominator
+scanner_role: governed_intraday_in_play_candidate_selection
+status: config_defined_builder_implemented_controlled_replay_not_official
+
+base_dependency:
+  scanner_definition_id: base_eligible_smallcap_denominator_v0_3
+  rule: may_only_select_rows_that_pass_base_eligibility_plus_intraday_asof_gates
+
+source_semantics:
+  primary_intraday_source: ohlcv_1m
+  daily_context_source: master_daily_table_v0_1
+  instrument_context_source: instrument_master_v0_1
+  replay_mode: historical_intraday_replay
+  live_authority: false
+  extended_session_window_new_york: "04:00-20:00"
+  segments:
+    premarket: "04:00 <= t < 09:30 America/New_York"
+    regular: "09:30 <= t < 16:00 America/New_York"
+    afterhours: "16:00 <= t <= 20:00 America/New_York"
+
+movement_policy:
+  minimum_push_move_pct: 50.0
+  preferred_metric: move_vs_previous_close_pct
+  secondary_metric: move_vs_segment_open_pct
+  first_cross_policy: first_1m_bar_high_crossing_threshold_in_extended_hours
+  required_metrics:
+    - first_cross_50_ts_utc
+    - first_cross_50_ts_et
+    - first_cross_50_segment
+    - first_cross_price
+    - first_cross_move_vs_prev_close_pct
+    - first_cross_move_vs_segment_open_pct
+    - max_move_vs_prev_close_pct
+    - max_move_vs_segment_open_pct
+    - premarket_high_vs_prev_close_pct
+    - regular_high_vs_prev_close_pct
+    - afterhours_high_vs_prev_close_pct
+
+tradability_policy:
+  minimum_volume_to_time: 500000
+  minimum_dollar_volume_to_time: 250000
+  pass_rule: volume_to_time_at_first_cross_gte_min_or_dollar_volume_to_time_at_first_cross_gte_min
+  interpretation: "Minimum activity gate for studyability/tradability, not alpha."
+
+price_policy:
+  price_min_exclusive_at_first_cross: 0.5
+  price_max_inclusive_at_first_cross: 20.0
+  interpretation: "Price range is evaluated at first intraday threshold crossing for selected rows."
+
+float_policy:
+  use_as_hard_filter: false
+  blocked_reason: no_point_in_time_float_source_has_passed_coverage_audit
+  future_dependency: float_context_table
+
+output_flags:
+  - base_eligible_smallcap_denominator_passed
+  - motion_threshold_passed
+  - tradability_threshold_passed
+  - price_filter_passed_at_first_cross
+  - selected_intraday_in_play_candidate
+
+prohibited_claims:
+  - direct_ml_feature
+  - direct_rl_state
+  - strategy_signal
+  - execution_truth
+  - full_universe_claim_without_20y_official_materialization
+
+notes:
+  - "This is the first governed scanner that can detect a premarket, regular, or afterhours frontside from 1m bars."
+  - "It replaces daily EOD proxy logic for intraday strategy denominators, but does not replace market_state/event_state tables."
+  - "Strategy overlays may consume this denominator but must declare their own filters, labels, outcomes and leakage policy."

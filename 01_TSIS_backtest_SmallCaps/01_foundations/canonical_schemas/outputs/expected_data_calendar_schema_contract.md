@@ -140,7 +140,7 @@ Review:
 
 - cambio de hash de `instrument_master` o `market_calendar` sin rematerializar;
 - nueva familia de datos core no incluida;
-- extension de calendario despues de `2025-12-31`;
+- extension de calendario despues de `2026-03-09`;
 - cambio de universe policy.
 
 ## 8. Interpretacion
@@ -160,4 +160,3 @@ No permitido:
 - usar como precio, feature o senal;
 - ocultar gaps de familias con baja presencia fisica;
 - reemplazar validadores especificos de daily, 1m, trades o quotes.
-

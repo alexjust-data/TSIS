@@ -140,8 +140,12 @@ def materialize_master_daily_table(
     created_at_utc = datetime.now(timezone.utc).isoformat()
 
     con = duckdb.connect()
+    temp_dir = Path(r"C:\tmp\duckdb_spill\master_daily_table_v0_1")
+    temp_dir.mkdir(parents=True, exist_ok=True)
     con.execute("set preserve_insertion_order=false")
-    con.execute("set threads=8")
+    con.execute("set threads=4")
+    con.execute(f"set temp_directory='{_sql_path(temp_dir)}'")
+    con.execute("set max_temp_directory_size='300GB'")
 
     expected_glob = _dataset_glob(expected_data_calendar)
     raw_glob = _sql_path(raw_daily_root / "**" / "*.parquet")

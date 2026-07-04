@@ -36,33 +36,33 @@ source_lineage:
     - dataset_certification_matrix_v0_1
     - ohlcv_daily
     - ohlcv_daily_adjusted
-  source_expected_data_calendar_build_run_id: expected_data_calendar_v0_1_20260622T141019Z
+  source_expected_data_calendar_build_run_id: expected_data_calendar_v0_1_20260630T194807Z
   source_corporate_actions_build_run_id: corporate_actions_table_v0_1_20260622T144845Z
   source_dataset_certification_matrix_build_run_id: dataset_certification_matrix_v0_1_20260622T154116Z
 
 current_materialization:
-  build_run_id: master_daily_table_v0_1_20260622T161747Z
-  created_at_utc: 2026-06-22T16:17:47.685277+00:00
-  rows: 21771864
-  expected_daily_rows: 7257288
+  build_run_id: master_daily_table_v0_1_20260630T201044Z
+  created_at_utc: 2026-06-30T20:10:44.783816+00:00
+  rows: 22109097
+  expected_daily_rows: 7369699
   ticker_count: 4824
   price_view_count: 3
   price_views:
     - daily_raw
     - split_normalized
     - adjusted
-  data_present_rows: 19782153
-  missing_expected_data_rows: 1989711
+  data_present_rows: 20106954
+  missing_expected_data_rows: 2002143
   selected_price_hard_invalid_rows: 0
   negative_volume_rows: 0
-  backtest_core_row_candidate_rows: 19782153
-  rows_with_corporate_action: 92979
-  parquet_file_count: 63
-  output_tree_sha256: 1c9c39202514e41a879261a62e0dbcae054bb7e503b40e6e0e44138f38894e9e
+  backtest_core_row_candidate_rows: 20106954
+  rows_with_corporate_action: 94275
+  parquet_file_count: 66
+  output_tree_sha256: 18a9905dc0ad7410fe0265241881019f2ad8f51fb44183f3eb750476720830e8
   hard_fail_count: 0
   manifest: E:/TSIS/data/data_foundation_outputs/master_daily_table/_master_daily_table_manifest_v0_1.json
   summary: E:/TSIS/data/data_foundation_outputs/master_daily_table/_master_daily_table_summary_v0_1.csv
-  test_evidence: C:/TSIS_Data/tests/test_runs/2026-06-22/data_foundation_outputs_six_tables_v0_1/
+  test_evidence: pytest 2026-07-01 targeted market_calendar_expected_data_calendar_master_daily_contracts
 
 allowed_consumers:
   permitted:

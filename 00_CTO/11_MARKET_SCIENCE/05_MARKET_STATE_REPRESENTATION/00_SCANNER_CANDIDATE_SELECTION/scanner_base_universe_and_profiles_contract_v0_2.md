@@ -27,16 +27,48 @@ dos scanners != dos universos cientificos distintos
 La decision v0.2 es:
 
 ```text
-base_in_play_universe
+base_eligible_smallcap_denominator
 -> profiles / views / rankings
 -> candidate state research
 -> event_state / market_state
 ```
 
-El scanner base define la poblacion observable minima.
+El identificador tecnico existente puede seguir siendo
+`base_in_play_universe_scanner_v0_2`, pero la semantica correcta es:
+
+```text
+base_eligible_smallcap_denominator
+```
+
+El scanner base define la poblacion elegible minima para observacion.
 
 Los perfiles responden preguntas operativas o cientificas sobre esa misma
 poblacion.
+
+Los perfiles no son filtros secuenciales.
+
+Ejemplo:
+
+```text
+base_eligible_smallcap_denominator = 100 tickers
+
+percent_change_min_profile = 80
+intraday_volume_acceleration_profile = 79
+dollar_volume_tradability_profile = 40
+gap_or_range_expansion_profile = 50
+```
+
+Lectura correcta:
+
+```text
+100 filas base con flags paralelos
+```
+
+Lectura incorrecta:
+
+```text
+100 -> 80 -> 79 -> 40 -> 50
+```
 
 ## 2. Scanner base
 
@@ -81,7 +113,7 @@ No hard filter universal v0.2:
 ```text
 volume_today >= 500000
 pct_chg_1d top 25
-relative_volume threshold
+relative/intraday volume criterion
 float threshold
 news present
 afterhours breakout present
@@ -97,6 +129,9 @@ Un perfil es una vista reproducible sobre el scanner base.
 
 Un perfil puede seleccionar, ordenar o etiquetar filas, pero no redefine la
 poblacion base.
+
+Los perfiles genericos son de observacion, no de estrategia. Si una estrategia
+necesita filtros propios, debe crear un overlay posterior con contrato propio.
 
 ### 3.1 TradeStation-like profile
 
@@ -149,14 +184,25 @@ Que instrumentos muestran expansion de actividad relativa dentro del universo
 base?
 ```
 
+Semantica requerida:
+
+```text
+actividad relativa intradia / aceleracion de volumen as-of
+```
+
+No basta usar un RVOL diario o `rvol_20d` como sustituto institucional.
+
 Variables candidatas:
 
 ```text
-rvol_to_time
-volume_acceleration
+volume_last_1m
+volume_last_3m
 volume_last_5m
 volume_last_15m
+volume_slope_5m
+volume_acceleration_5m_vs_15m
 volume_since_04_00
+volume_to_time_vs_expected_profile
 dollar_volume_to_time
 volume_tier
 ```
@@ -185,6 +231,15 @@ premarket_gap_pct
 afterhours_gap_pct
 range_expansion_pct
 ```
+
+Regla:
+
+```text
+pct_chg_1d debe superar un minimo declarado antes de usar top-N.
+```
+
+Top-N sin minimo puede crear falsa visibilidad de momentum en dias donde el
+cross-section no tiene movimiento economicamente relevante.
 
 Uso:
 
@@ -246,6 +301,27 @@ frontside_failed_before_trigger
 
 La estrategia DAS vive en strategy research. El scanner solo entrega el
 conjunto donde mirar.
+
+Importante:
+
+```text
+das_research_profile_v0_2 es provisional.
+```
+
+No se obtuvo de una prueba cientifica cerrada ni debe presentarse como scanner
+DAS maduro. Surgio como puente de investigacion para no perder candidatos
+frontside tempranos mientras se disena el overlay real.
+
+Promocion correcta:
+
+```text
+base_eligible_smallcap_denominator
+-> generic observation profiles
+-> das_frontside_scanner / das_candidate_state_table_experimental
+```
+
+El overlay DAS debe poder cambiar filtros propios sin reescribir la definicion
+base de Data Foundation.
 
 ## 4. Float y market cap
 
@@ -332,9 +408,10 @@ Decision TSIS -> Evidencia directa -> Obligacion tecnica -> Limitacion abierta
 
 | Decision TSIS | Evidencia directa | Obligacion tecnica | Limitacion abierta |
 | --- | --- | --- | --- |
-| Usar scanner base + perfiles, no dos universos independientes. | Offline RL formaliza aprendizaje sobre estados/transiciones historicas y advierte que la cobertura del dataset condiciona la politica aprendida. Ver Levine et al. (2020). | Preservar un denominador base amplio y separar perfiles/rankings de estados entrenables. | El replay full historical del scanner base aun debe materializarse y validarse. |
+| Usar denominador elegible + perfiles paralelos, no dos universos independientes ni embudo secuencial. | Offline RL formaliza aprendizaje sobre estados/transiciones historicas y advierte que la cobertura del dataset condiciona la politica aprendida. Ver Levine et al. (2020). | Preservar un denominador base amplio, mantener filas sin perfil activo y separar perfiles/rankings de estados entrenables. | El replay full historical del scanner base aun debe materializarse y validarse. |
 | No usar `volume_today >= 500k` como hard filter universal. | TSIS Market Science define que en microcaps el mercado evoluciona en event time; volumen puede ser consecuencia de attention/order-flow, no causa estable. Causal ML y Causal Factor Investing advierten contra confundir proxy y mecanismo. | Guardar volumen como feature, tier, ranking y razon; medir empiricamente si llega tarde o filtra casos sanos. | Se requiere estudio DAS/frontside con negativos, winners y timing as-of. |
-| No usar `% change 1D` como unica puerta de entrada. | DeepLOB y literatura LOB modelan el mercado como estructura espacio-temporal; una variable diaria no representa el estado microestructural. | `% change 1D` debe ser perfil/ranking, no definicion total del universo investigable. | Necesitamos perfiles after-hours, premarket y event-time mas ricos. |
+| Definir `relative_volume` como aceleracion intradia/as-of. | La literatura LOB y microestructura modela actividad, order flow y liquidez en tiempo/event time, no solo con agregados diarios. | El perfil debe usar ultimas velas/minutos, pendiente/aceleracion y volumen esperado a esa hora. | La implementacion diaria actual solo sirve como proxy de forma, no como semantica final. |
+| No usar `% change 1D` como unica puerta de entrada ni sin minimo. | DeepLOB y literatura LOB modelan el mercado como estructura espacio-temporal; una variable diaria no representa el estado microestructural. | `% change 1D` debe ser perfil/ranking con minimo declarado, no definicion total del universo investigable. | Necesitamos perfiles after-hours, premarket y event-time mas ricos. |
 | Separar scanner de `market_state` y `event_state`. | RL y decision models operan sobre estados; `daily_scanner_candidates_table` solo responde donde mirar. Ver Levine et al. (2020) y contrato Market State v0.1. | Validators deben impedir que scanner rows sean consumidos como estado ML/RL final. | Falta builder real de `market_state`/`event_state`. |
 | Mantener negativos, ambiguos y casos tardios. | Causalidad y factor investing advierten sobre factor mirage, confounders y seleccion retrospectiva. Behavioral cloning/RL desde demostraciones puede aprovechar expertos, pero no elimina necesidad de cobertura y negativos. Ver CFA (2025) y Hester et al. (2017). | El scanner debe crear denominador; las tablas DAS deben registrar no-frontside, dirty-frontside y failures, no solo buenas entradas. | Falta diseno final de labels/outcomes por estrategia. |
 | Medir microestructura despues del scanner, no meterla como requisito universal inicial. | Kyle (1985) conecta order flow, liquidez y price impact; Easley, Lopez de Prado y O'Hara conectan toxicidad/order-flow con riesgo para liquidity providers. | Microestructura debe entrar como estado/event window y execution/risk feature, no como filtro casual sin ventana. | Las ventanas microestructurales gobernadas aun no estan completas. |
@@ -378,11 +455,20 @@ Para que v0.2 gobierne `01_foundations`, hace falta un cambio separado:
    builder, tests y notebook.
 6. Conservar replay v0.1 como evidencia historica, no como arquitectura final.
 
+Revision adicional posterior:
+
+7. Alinear `relative_volume_profile_v0_2` con volumen intradia/as-of, no con
+   proxy daily.
+8. Exigir minimo explicito en `percent_change_profile_v0_2`.
+9. Mantener `dollar_volume_tradability_profile_v0_2` como tradability, no alpha.
+10. Mover filtros de estrategia a overlays posteriores, empezando por DAS.
+
 ## 10. Regla corta para agentes
 
 ```text
-Un scanner base define a quien mirar.
-Un perfil define como ordenar o inspeccionar.
+Un denominador base define a quien podemos mirar.
+Un perfil generico define como ordenar o inspeccionar.
+Un overlay de estrategia define una hipotesis especifica posterior.
 Un estado define que sabia TSIS.
 Una estrategia define que hacer.
 Un outcome/reward se mide despues.

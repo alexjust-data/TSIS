@@ -3,7 +3,8 @@ profile_version: v0_2
 profile_family: daily_in_play
 profile_name: das_frontside_research_candidate_profile
 profile_role: strategy_research_denominator_profile
-status: config_defined_not_officially_materialized
+status: provisional_strategy_overlay_seed_not_final_scanner
+promotion_target: das_frontside_scanner_or_das_candidate_state_table_experimental
 
 base_dependency:
   scanner_definition_id: base_in_play_universe_scanner_v0_2
@@ -62,3 +63,5 @@ output_flags:
 notes:
   - "This is a research denominator profile for DAS candidate study, not a DAS signal."
   - "DAS labels, outcomes and frontside states must live outside daily_scanner_candidates_table."
+  - "This profile came from DAS/frontside research discussion and must not be treated as mature DAS scanner doctrine."
+  - "Strategy-specific filters belong in a separate strategy overlay contract before wide materialization."

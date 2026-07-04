@@ -1,0 +1,53 @@
+profile_id: in_play_momentum_candidate_denominator_v0_3
+profile_version: v0_3
+profile_family: daily_in_play
+profile_name: in_play_momentum_candidate_denominator
+profile_role: governed_in_play_candidate_selection
+status: config_defined_not_officially_materialized
+
+base_dependency:
+  scanner_definition_id: base_eligible_smallcap_denominator_v0_3
+  rule: may_only_select_rows_that_pass_base_eligible_denominator
+
+movement_policy:
+  minimum_push_move_pct: 50.0
+  controlled_daily_replay_proxy:
+    accepted_metrics:
+      - daily_high_vs_prev_close_pct
+      - pct_chg_1d
+      - gap_pct
+    preferred_metric: daily_high_vs_prev_close_pct
+    limitation: "Daily/EOD replay detects that a ticker became strongly in-play during the session, but cannot prove which segment or timestamp produced the first frontside."
+  future_segment_policy:
+    required_for_official_intraday_promotion: true
+    extended_session_window_new_york: "04:00-20:00"
+    segments:
+      - premarket_0400_0930
+      - regular_0930_1600
+      - afterhours_1600_2000
+    required_metrics:
+      - move_vs_previous_close_pct
+      - move_vs_segment_open_pct
+      - first_cross_50_ts
+      - first_push_segment
+      - max_move_segment
+
+tradability_policy:
+  minimum_volume_today: 500000
+  minimum_dollar_volume_today: 250000
+  pass_rule: volume_today_gte_min_or_dollar_volume_today_gte_min
+  interpretation: "Minimum activity gate for studyability/tradability, not alpha."
+
+selection:
+  include_all_threshold_passed: true
+  rank_metric: in_play_momentum_score
+  top_n_for_display: 25
+
+output_flags:
+  - selected_in_play_momentum_candidate
+  - selected_any_profile
+
+notes:
+  - "This is the first governed in-play denominator for event/strategy research."
+  - "Strategy-specific float, structure, frontside, backside, VWAP, borrow, SSR or execution filters must live in overlays."
+  - "For daily controlled replay, segment fields must be marked unavailable until intraday/as-of sources are joined."

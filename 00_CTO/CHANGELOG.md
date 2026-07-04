@@ -1,4 +1,4 @@
-# 00_CTO Changelog
+﻿# 00_CTO Changelog
 
 Este changelog registra cambios institucionales y semanticamente relevantes de
 la capa CTO de TSIS.
@@ -50,8 +50,190 @@ run summaries, trace logs y, si procede, release log propio.
 
 ## Unreleased
 
+### Changed
+
+- `2026-07-04` - Market State Representation v3 registra el contrato `state_canonical_vs_representation_layer_contract_v0_1.md`, separando `Canonical State` de `Representation Layer`: el estado canonico queda como tablero observable estable y las representaciones candidatas quedan como espacio mutable para AlphaEvolve/RL/ML sin contaminar la verdad base.
+- Market State v3 registra el contrato de validators de event candidate tables como cerrado para el scope declarado. El nuevo contrato operativo es:
+
+```text
+01_foundations/module_contracts/outputs/event_candidate_table_validators_contract_v0_1.md
+event_candidate_table_validators_contract_v0_1 = complete_for_contract_defined_scope
+```
+
+  La ruta CTO distingue contrato de validators cerrado de validators ejecutables pendientes. Esto no materializa tablas de eventos daily/1m ni habilita ML/RL/AlphaEvolve directamente.
+- Market State v3 registra los schema contracts de tablas de eventos candidatas daily/1m como cerrados para el scope declarado. Los nuevos contratos de schema canonico son:
+
+```text
+01_foundations/canonical_schemas/outputs/daily_strategy_candidate_events_table_schema_contract.md
+01_foundations/canonical_schemas/outputs/intraday_1m_strategy_candidate_events_table_schema_contract.md
+```
+
+- Market State v3 registra el gate de event candidate tables daily/1m como cerrado a nivel de contrato. El nuevo contrato operativo es:
+
+```text
+01_foundations/module_contracts/outputs/event_candidate_tables_contract_v0_1.md
+event_candidate_tables_contract_v0_1 = complete_for_contract_defined_scope
+```
+
+  La ruta CTO separa explicitamente scanner candidates, event candidate tables, event windows, event_state y outcomes. Esto no materializa tablas de eventos daily/1m ni habilita ML/RL/AlphaEvolve directamente.
+
+- Market State v3 registra el gate de state builder contract como cerrado despues de snapshot roles. El nuevo contrato operativo es:
+
+```text
+01_foundations/module_contracts/outputs/state_builder_contract_v0_1.md
+state_builder_contract_v0_1 = complete_for_contract_defined_scope
+```
+
+  La ruta CTO pasa explicitamente a validators de leakage/formula/timestamp/role/builder, fixtures/samples controlados, materializacion candidate, outcomes, evaluadores, representaciones semanticas y transiciones. Esto no materializa `market_state_table_v0_1` ni `event_state_table_v0_1` oficiales y no habilita ML/RL/AlphaEvolve directamente.
+
+- Market State v3 registra el gate de state snapshot roles como cerrado despues de timestamp policy. El nuevo contrato operativo es:
+
+```text
+01_foundations/module_contracts/outputs/state_snapshot_roles_contract_v0_1.md
+state_snapshot_roles_contract_v0_1 = complete_for_contract_defined_scope
+```
+
+  El builder gate ya queda cerrado por `state_builder_contract_v0_1.md`; la ruta activa pasa a validators de leakage/formula/timestamp/role/builder, fixtures/samples controlados, materializacion candidate, outcomes y evaluadores. Esto no materializa `market_state_table_v0_1` ni `event_state_table_v0_1` oficiales y no habilita ML/RL/AlphaEvolve directamente.
+
+- Market State v3 registra el gate de decision timestamp policy como cerrado despues de formulas. El nuevo contrato operativo es:
+
+```text
+01_foundations/module_contracts/outputs/state_decision_timestamp_policy_v0_1.md
+state_decision_timestamp_policy_v0_1 = complete_for_contract_defined_scope
+```
+
+  El builder gate ya queda cerrado por `state_builder_contract_v0_1.md`; la ruta activa pasa a validators de leakage/formula/timestamp/role/builder, fixtures/samples controlados, materializacion candidate, outcomes y evaluadores. Esto no materializa `market_state_table_v0_1` ni `event_state_table_v0_1` oficiales y no habilita ML/RL/AlphaEvolve directamente.
+
+- Market State v3 registra el gate de formulas de observables derivados como cerrado despues de eligibility. El nuevo contrato operativo es:
+
+```text
+01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md
+state_derived_observables_formula_contract_v0_1 = complete_for_contract_defined_scope
+```
+
+  El builder gate ya queda cerrado por `state_builder_contract_v0_1.md`; la ruta activa pasa a validators de leakage/formula/timestamp/role/builder, fixtures/samples controlados, materializacion candidate, outcomes y evaluadores. Esto no materializa `market_state_table_v0_1` ni `event_state_table_v0_1` oficiales y no habilita ML/RL/AlphaEvolve directamente.
+
+- Market State v3 registra observable eligibility como primer gate cerrado despues del mapa humano. El nuevo contrato operativo es:
+
+```text
+01_foundations/module_contracts/outputs/state_observable_eligibility_contract_v0_1.md
+state_observable_eligibility_contract_v0_1 = complete_for_contract_defined_scope
+```
+
+  Ese gate siguiente anterior ya queda cerrado por `state_derived_observables_formula_contract_v0_1.md`; el builder gate ya queda cerrado por `state_builder_contract_v0_1.md`; la ruta activa es validators de leakage/formula/timestamp/role/builder, fixtures/samples, materializacion candidate, outcomes y evaluadores. Esto no materializa `market_state_table_v0_1` ni `event_state_table_v0_1` oficiales.
+- Se anade el mapa de estado y operacion de Market State Tables del 2026-07-01 bajo
+  `11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/`. El snapshot separa
+  componentes de Data Foundation, denominadores de scanner, candidatos intradia,
+  candidatos de microestructura, `market_state`, `event_state`, outcomes,
+  strategy overlays, ML, imitation learning y offline RL. Registra que muchos
+  componentes estan validados para el scope declarado, pero que las tablas
+  institucionales finales `market_state_table_v0_1` y `event_state_table_v0_1`
+  todavia no son datasets promovidos full-universe. Despues se amplio para que
+  cada bloque de detalle declare scope exacto, universo cubierto, cobertura
+  temporal, si esta completo para ese scope y si es full-universe 2005-2026. El
+  bloque `instrument_master_v0_1` tambien registra su provenance primaria de
+  auditoria `reference`, inputs RAW, metricas de certificacion, output paths y
+  evidencia del rerun de siete tablas requerido para inspeccionar el roster de
+  identidad LT1B de 4,824 instrumentos. El mismo patron legible se generalizo
+  despues en cada bloque "Detalle Por Tabla O Familia": rol tecnico, rol
+  filosofico, asociaciones, limitacion actual, estado declarado y evidencia de
+  auditoria/test.
+
+- Se actualiza el gate de promocion quote-guarded para la arquitectura del
+  scanner intradia despues de que el repair manifest LT1B fuera promovido el
+  2026-07-03. El sucesor requerido queda explicitamente:
+
+```text
+raw ohlcv_1m
++ repair_manifest_lt1b_v0_1.parquet
+= ohlcv_1m_quote_guarded view
+-> intraday_scanner_candidates_table_v0_2_quote_guarded_candidate
+```
+
+  Raw spikes that cross +50% but are not confirmed by the quote-guarded view
+  must be preserved as evidence and rejected from selected in-play candidates
+  with `scanner_quality_state = rejected_raw_spike_not_confirmed_by_quotes`.
+  The upstream LT1B manifest is now available; downstream scanner/master
+  candidate materialization and validation remain the next gates before any
+  canonical scanner candidate is promoted.
+
+- Refined Scanner Candidate Selection again after finding that daily/EOD proxy
+  rows cannot certify intraday first-push timing. For intraday strategies,
+  DAS/frontside, event-state and future ML/RL state preparation, the forward
+  denominator is now:
+
+```text
+base_eligible_smallcap_denominator_v0_3
+-> intraday_in_play_momentum_candidate_denominator_v0_1
+-> strategy-specific overlays
+```
+
+  `daily_scanner_candidates_table_v0_3` remains useful as coarse daily context,
+  but not as authority for `first_cross_ts`, premarket/regular/afterhours
+  segment, volume-to-time or dollar-volume-to-time.
+
+- Refined Scanner Candidate Selection semantics to v0.3. The active model is
+  now:
+
+```text
+base_eligible_smallcap_denominator
+-> in_play_momentum_candidate_denominator
+-> operator visibility profiles
+-> strategy-specific overlays
+```
+
+  `base_eligible_smallcap_denominator` means "who TSIS may inspect", not
+  "in-play". `in_play_momentum_candidate_denominator` means base eligible plus
+  strong move and tradability. The initial strong-move threshold is `50%`.
+  The daily replay uses `daily_high_vs_prev_close_pct`, `pct_chg_1d` and
+  `gap_pct` as an EOD proxy and does not claim premarket/regular/after-hours
+  first-push timing. DAS and future strategy scanners are overlays after the
+  global scanner, not fields that define the global denominator.
+  Added explicit pending dependency `float_context_table`; until it exists with
+  point-in-time source/as-of/cobertura auditados, `float` remains contextual and
+  blocked as a scanner or overlay filter.
+
+- Refined Scanner Candidate Selection semantics. The active model is now
+  explicitly:
+
+```text
+base_eligible_smallcap_denominator
+-> generic observation profiles as parallel flags/ranks
+-> optional strategy overlays
+-> strategy-specific experimental states
+```
+
+  `base_in_play_universe_scanner_v0_2` remains the stable technical identifier,
+  but no longer means that every base row is already in-play. Profile counts are
+  not sequential funnels. `relative_volume_profile_v0_2` must become
+  intraday/as-of acceleration before promotion, `percent_change_profile_v0_2`
+  requires a minimum threshold before top-N, `dollar_volume_tradability_profile`
+  remains tradability not alpha, and `das_research_profile_v0_2` is demoted to
+  provisional strategy-overlay seed rather than final DAS scanner doctrine.
+
 ### Added
 
+- Added `intraday_scanner_candidates_contract_v0_1.md` under
+  `11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/`.
+  The contract explains why `ohlcv_1m` is required to detect frontside timing
+  and why scanner rows remain denominators, not market states, labels, rewards
+  or strategy signals.
+- Added `notebook/intraday_scanner_candidates_v0_1_run_inspection.ipynb` for
+  visual run inspection: daily counts, selected candidates, first-cross
+  segments, movement distribution, volume/dollar-volume gates and top cases.
+- Added `notebook/daily_scanner_candidates_v0_3_run_inspection.ipynb` under
+  `11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/`.
+  The notebook inspects v0.3 scanner runs, loads runner/direct replay layouts,
+  displays manifests and created tables, computes KPIs and plots denominator,
+  in-play selection, TradeStation overlap, movement, volume, tradability,
+  market cap, reason flags, quality gates and edge-case tables.
+- Added `scanner_base_and_in_play_momentum_contract_v0_3.md` under
+  `11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/`.
+  The v0.3 contract supersedes v0.2 for new work. It separates the observable
+  smallcap denominator from the actual in-play momentum candidate denominator,
+  keeps TradeStation-like filtering as operator visibility, blocks strategy
+  filters from the global scanner and records why intraday segment detection
+  remains a future builder requirement.
 - Added `scanner_base_universe_and_profiles_contract_v0_2.md` under
   `11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/`.
   The v0.2 candidate policy replaces the two-independent-scanner mental model
@@ -78,6 +260,17 @@ run summaries, trace logs y, si procede, release log propio.
   work to the v0.2 base universe plus profiles policy before promotion toward
   strategy-specific experimental state, `event_state_candidate`,
   `market_state_candidate` and `institutional_market_state`.
+- Added
+  `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/DAS_SCANNER_USAGE_AND_OVERLAY_RUNBOOK_v0_1.md`
+  as the operational bridge between the governed Data Foundation scanner and
+  DAS strategy research. It defines how DAS should consume
+  `daily_scanner_candidates_table_v0_2`, when a 20-year replay is sufficient,
+  when a new replay/version is required, which denominators must be declared in
+  notebooks, and how strategy overlays must avoid positive-only selection bias.
+- Added
+  `11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/strategy_scanner_overlay_policy_v0_1.md`
+  as the transversal policy for every future strategy. DAS is now documented as
+  the first applied implementation, not as an exception.
 - Added the `00_CTO` Graphify leaf Git publication rule: root
   `graphify-out/` remains runtime ignored by default, while promoted
   `graphify-out/leaf_slices/<leaf_id>/` directories can be versioned when they
@@ -358,7 +551,6 @@ run summaries, trace logs y, si procede, release log propio.
   `00_CTO/graphify-out/leaf_slices/trading_systems_event_first_20260618/`.
 
 ### Changed
-
 - Reframed the active Scanner Candidate Selection architecture from
   `trade_station_like_scanner_v0_1` plus `broad_in_play_discovery_scanner_v0_1`
   to `base_in_play_universe_scanner_v0_2` plus profiles. The v0.1 replay and
@@ -602,7 +794,6 @@ dominating the operational graph used by agents.
 - `12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/historical_audit_preservation_and_promotion_contract.md`
 
 ### Changed
-
 - Updated `10_DATA_QUALITY_HARNESS/README.md` to make historical audit preservation a mandatory v0.3 operating correction.
 - Updated `data_audit_completion_artifact_contract.md` with a historical preflight requirement before any dataset can be promoted to modern dossier status.
 - Updated the overnight runbook and prompt pack so future agents work one folder/dataset at a time and stop for human review.
@@ -624,7 +815,6 @@ Future data-audit agents must not reaudit those datasets from scratch. They must
 ## 2026-06-12 - Data Quality Harness single-agent correction v0.2
 
 ### Changed
-
 - Tightened `10_DATA_QUALITY_HARNESS/README.md` around the real mature dossier standard: notebooks as inspector interfaces, resident builders, manifests, visual casepacks and image-by-image interpretation.
 - Updated `data_audit_completion_artifact_contract.md` to require notebook/visual/casepack discipline comparable to `daily`, `quotes`, `trades`, `minute` and `1m_split_normalized`.
 - Rewrote the overnight runbook as a single-agent execution path for the next run.
@@ -651,7 +841,6 @@ The next overnight data-audit agent now has a stricter contract: it must reprodu
 - `12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/runbooks/2026-06-12_data_audit_agent_prompt_pack.md`
 
 ### Changed
-
 - `12_TSIS_COGNITIVE_ARCHITECTURE/README.md`
 
 ### Notes
@@ -692,7 +881,6 @@ manifests and maturity honesty already present in the mature `daily`, `quotes`,
   `12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/`
 
 ### Changed
-
 - Normalized Sersan lesson-pack artifacts across the full inventoried corpus
   using the existing Sersan lesson-pack contract.
 - Reprocessed the three pilot lesson packs only as needed to align with the
@@ -759,7 +947,6 @@ Future Harness agents should start from `START_HERE.md` before task-specific run
 - `12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_15_revised/run_manifest.json`
 
 ### Changed
-
 - Removed `practica_15_revised.md` from the pending Sersan pilot list.
 
 ### Notes
@@ -803,7 +990,6 @@ doctrine into AlphaEvolve evaluators.
 - `12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_artifacts/sersan_practice_09_revision_apolo/run_manifest.json`
 
 ### Changed
-
 - Updated the Sersan lesson-pack contract to require image-reference extraction
   from both Markdown image syntax and HTML `<img src=...>` tags.
 - Removed `practica_09_revision_apolo.md` from the pending Sersan pilot list.
@@ -839,7 +1025,6 @@ portfolio contribution.
 - `12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/artifacts/`
 
 ### Changed
-
 - Split `12_TSIS_COGNITIVE_ARCHITECTURE` into:
   - `00_SHARED_HARNESS_KERNEL/`
   - `10_DATA_QUALITY_HARNESS/`
@@ -864,7 +1049,6 @@ outputs.
 - `12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/generate_sersan_p02_pilot.py`
 
 ### Changed
-
 - `12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_lesson_pack_contract.md`
 - `12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_pilot_harness_runbook.md`
 - `12_TSIS_COGNITIVE_ARCHITECTURE/README.md`
@@ -1003,7 +1187,6 @@ The next operational step remains the three-lesson pilot:
 - `12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_lesson_pack_contract.md`
 
 ### Changed
-
 - `README.md`
 - `12_TSIS_COGNITIVE_ARCHITECTURE/README.md`
 
@@ -1073,3 +1256,8 @@ The document fixed the initial distinction between:
 
 This moved `00_CTO` away from general research collection and toward a concrete
 architecture workspace for automation, agents and controlled evolution.
+
+
+
+
+

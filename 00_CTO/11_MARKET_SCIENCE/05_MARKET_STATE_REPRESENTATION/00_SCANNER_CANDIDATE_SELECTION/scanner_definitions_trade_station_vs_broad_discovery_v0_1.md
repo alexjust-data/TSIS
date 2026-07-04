@@ -26,10 +26,21 @@ La arquitectura activa es:
 ```text
 base_in_play_universe_scanner_v0_2
 -> profiles / views / rankings
+-> strategy overlays
 ```
 
 No se deben crear dos universos de scanner independientes salvo experimento
 versionado y justificado.
+
+El identificador `base_in_play_universe_scanner_v0_2` se conserva por
+compatibilidad, pero la lectura correcta es:
+
+```text
+base_eligible_smallcap_denominator
+```
+
+Ese denominador no prueba que cada ticker ya este in-play. Solo prueba que el
+ticker pasa la puerta comun de elegibilidad smallcap.
 
 ## 2. Scanner base v0.2
 
@@ -54,7 +65,7 @@ No son hard filters universales:
 ```text
 volume_today >= 500000
 pct_chg_1d top 25
-relative_volume threshold
+relative/intraday volume criterion
 float threshold
 news present
 afterhours breakout present
@@ -66,10 +77,13 @@ premarket new high present
 | Perfil | Pregunta | Seleccion / ranking | Uso |
 | --- | --- | --- | --- |
 | `trade_station_like_profile_v0_2` | Que habria visto el operador? | `volume_today >= 500k`, rank `% change 1D`, top 25 | Visibilidad operativa humana |
-| `relative_volume_profile_v0_2` | Que esta acelerando actividad? | `rvol_to_time`, `volume_acceleration`, volume tiers | Timing, attention proxy, discovery temprano |
-| `percent_change_profile_v0_2` | Que es visible por movimiento porcentual? | `pct_chg_1d`, gap/range expansion | Momentum/hot-list visibility |
-| `dollar_volume_tradability_profile_v0_2` | Que parece operable? | dollar volume, liquidity/tradability tiers | Execution realism y risk gates |
-| `das_research_profile_v0_2` | Que candidatos merecen reconstruccion DAS/frontside? | flags/reasons sobre el base universe | Denominador experimental DAS, no senal |
+| `relative_volume_profile_v0_2` | Que acelera actividad intradia/as-of? | ultimas velas, pendiente/aceleracion, volumen esperado a esa hora | Timing, attention proxy, discovery temprano |
+| `percent_change_profile_v0_2` | Que es visible por movimiento porcentual minimo? | `pct_chg_1d >= minimo declarado`, luego ranking | Momentum/hot-list visibility |
+| `dollar_volume_tradability_profile_v0_2` | Que parece operable? | dollar volume, liquidity/tradability tiers | Execution realism y risk gates, no alpha |
+| `das_research_profile_v0_2` | Que candidatos pueden alimentar un overlay DAS? | flags/reasons provisionales sobre el base universe | Overlay seed provisional, no scanner DAS maduro |
+
+Los perfiles son paralelos sobre el mismo denominador. No son filtros
+secuenciales.
 
 ## 4. TradeStation-like profile
 
@@ -120,6 +134,14 @@ Regla:
 ```text
 Una razon in-play no crea un universo alternativo; etiqueta una fila del
 universo base.
+```
+
+Las razones especificas de una estrategia deben promoverse a overlay de
+estrategia. Por ejemplo, DAS debe terminar en un contrato separado tipo:
+
+```text
+das_frontside_scanner
+das_candidate_state_table_experimental
 ```
 
 ## 6. Columnas que deben sobrevivir

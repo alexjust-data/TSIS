@@ -92,6 +92,8 @@ configs/data_foundation_outputs/scanner_definitions/broad_in_play_discovery_scan
 For governed v0.2 scanner definitions, validator must also fail when:
 
 - `scanner_definition_id` is not `base_in_play_universe_scanner_v0_2`;
+- the run treats `base_in_play_universe_scanner_v0_2` as proof that all rows
+  are already in-play instead of as the `base_eligible_smallcap_denominator`;
 - v0.2 rows omit any required profile flag:
 
 ```text
@@ -101,6 +103,14 @@ selected_percent_change_profile
 selected_dollar_volume_tradability_profile
 selected_das_research_profile
 selected_any_profile
+scanner_semantic_alignment_version
+scanner_profile_semantics
+profiles_are_sequential_funnel
+relative_volume_profile_status
+percent_change_min_threshold_applied
+percent_change_min_threshold_pct
+dollar_volume_profile_semantic_role
+das_research_profile_status
 ```
 
 - `market_cap_max_filter` is not `100000000`;
@@ -109,6 +119,28 @@ selected_any_profile
   `volume_today < 500000`;
 - `selected_any_profile = true` while all individual profile flags are false;
 - any individual profile flag is true while `all_filters_passed = false`;
+- any profile count is documented or emitted as a sequential funnel count
+  unless a separate funnel contract exists;
+- `scanner_profile_semantics` differs from
+  `parallel_flags_not_sequential_filters`;
+- `profiles_are_sequential_funnel` is true without a separate explicit funnel
+  contract;
+- `selected_relative_volume_profile = true` is promoted without intraday/as-of
+  acceleration semantics or an explicit provisional/unavailable marker;
+- `relative_volume_profile_status = unavailable_without_intraday_asof` and
+  `selected_relative_volume_profile = true`;
+- `selected_percent_change_profile = true` is promoted without a declared
+  minimum percent-change threshold before top-N ranking;
+- `percent_change_min_threshold_applied` is false or
+  `percent_change_min_threshold_pct` is null in a v0.2 contract-aligned replay;
+- `selected_dollar_volume_tradability_profile = true` is interpreted as alpha
+  or setup quality rather than tradability/economic activity;
+- `dollar_volume_profile_semantic_role` differs from
+  `tradability_not_alpha`;
+- `selected_das_research_profile = true` is interpreted as a mature DAS
+  scanner rather than provisional strategy-overlay lineage;
+- `das_research_profile_status` differs from
+  `provisional_strategy_overlay_seed_not_final_scanner`;
 - `float_filter_state` differs from
   `not_used_until_point_in_time_float_source_exists` before a governed float
   source contract exists;
@@ -123,6 +155,40 @@ configs/data_foundation_outputs/scanner_definitions/relative_volume_profile_v0_2
 configs/data_foundation_outputs/scanner_definitions/percent_change_profile_v0_2.yaml
 configs/data_foundation_outputs/scanner_definitions/dollar_volume_tradability_profile_v0_2.yaml
 configs/data_foundation_outputs/scanner_definitions/das_research_profile_v0_2.yaml
+```
+
+For governed v0.3 scanner definitions, validator must also fail when:
+
+- `scanner_definition_id` is not `base_eligible_smallcap_denominator_v0_3`;
+- `selected_in_play_momentum_candidate = true` while `all_filters_passed = false`;
+- `selected_in_play_momentum_candidate = true` while all of these are below
+  threshold:
+
+```text
+daily_high_vs_prev_close_pct < 50
+pct_chg_1d < 50
+gap_pct < 50
+```
+
+- `selected_in_play_momentum_candidate = true` while
+  `in_play_volume_tradability_passed = false`;
+- `percent_change_min_threshold_pct` is not `50.0` for the v0.3 controlled
+  replay;
+- `selected_das_research_profile = true`;
+- `das_research_profile_status` differs from
+  `removed_from_global_scanner_strategy_overlay_only`;
+- `selected_any_profile` differs from `selected_in_play_momentum_candidate`;
+- `in_play_detection_scope = daily_eod_proxy` is interpreted as segment-level
+  frontside timing;
+- segment fields are populated without an intraday segment builder manifest;
+- float is used as a hard filter before point-in-time source validation.
+
+Governed config paths:
+
+```text
+configs/data_foundation_outputs/scanner_definitions/base_eligible_smallcap_denominator_v0_3.yaml
+configs/data_foundation_outputs/scanner_definitions/in_play_momentum_candidate_denominator_v0_3.yaml
+configs/data_foundation_outputs/scanner_definitions/trade_station_like_profile_v0_3.yaml
 ```
 
 ## 5. Required Quality Checks

@@ -4,6 +4,7 @@ scanner_family: daily_in_play
 scanner_name: smallcap_base_in_play_universe
 scanner_role: base_candidate_denominator
 status: config_defined_not_officially_materialized
+semantic_alias: base_eligible_smallcap_denominator
 
 purpose:
   answers: "Which common-stock tickers belong to the governed smallcap candidate denominator for a session/as-of?"
@@ -41,6 +42,7 @@ float_policy:
 
 profile_model:
   rule: base_universe_first_profiles_second
+  profile_semantics: parallel_flags_not_sequential_filters
   profile_set_id: scanner_profile_set_v0_2
   active_profiles:
     - trade_station_like_profile_v0_2
@@ -60,3 +62,5 @@ prohibited_claims:
 notes:
   - "This replaces the v0.1 idea of two independent scanner universes."
   - "Every profile must be interpreted inside this common base denominator."
+  - "The base denominator is eligibility for observation, not proof that every row is already in-play."
+  - "Rows with no profile selected must still be preserved to study false negatives and selection bias."

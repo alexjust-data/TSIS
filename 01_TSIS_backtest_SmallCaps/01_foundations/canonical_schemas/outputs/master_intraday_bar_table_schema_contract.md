@@ -1,4 +1,4 @@
-# Master Intraday Bar Table Schema Contract `v0_1`
+﻿# Master Intraday Bar Table Schema Contract `v0_1`
 
 ## 1. Role
 
@@ -282,8 +282,8 @@ This candidate is governed by:
 configs/data_foundation_outputs/master_intraday_bar_table_quote_guarded_candidate_v0_2.json
 ```
 
-It is blocked until the `ohlcv_1m_quote_guarded` repair run is completed and
-validated under:
+The upstream repair-manifest gate is complete. The candidate schema may now be
+used for builder/preflight work against the promoted LT1B manifest under:
 
 ```text
 E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/
@@ -326,12 +326,13 @@ Storage rule:
 
 ```text
 1m_quote_guarded_raw is a view:
-raw ohlcv_1m + repair_manifest_v0_2 = quote-guarded OHLCV view
+raw ohlcv_1m + repair_manifest_lt1b_v0_1 = quote-guarded OHLCV view
 ```
 
 The first candidate must not assume that
 `E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/` contains a full
-replacement tree of corrected monthly OHLCV parquets. The required source is a
+replacement tree of corrected monthly OHLCV parquets; it contains the promoted
+LT1B repair manifest overlay. The required source is a
 repair manifest/overlay plus immutable raw 1m.
 
 Required interpretation:

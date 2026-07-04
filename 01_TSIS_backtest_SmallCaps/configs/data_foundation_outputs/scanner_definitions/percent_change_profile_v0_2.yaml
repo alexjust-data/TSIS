@@ -19,6 +19,7 @@ ranking:
 
 thresholds:
   reason_pct_chg_1d_move_min_pct: 3.0
+  minimum_threshold_required_before_ranking: true
 
 output_flags:
   - selected_percent_change_profile
@@ -26,3 +27,4 @@ output_flags:
 
 notes:
   - "This profile studies daily return visibility without adding the TradeStation 500k volume hard filter."
+  - "Top-N alone is insufficient; pct_chg_1d must pass the declared minimum threshold before selection."

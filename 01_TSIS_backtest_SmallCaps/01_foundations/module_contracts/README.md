@@ -1,4 +1,4 @@
-# Module Contracts
+﻿# Module Contracts
 
 ## Menu
 
@@ -33,13 +33,25 @@
   - [`outputs/market_state_event_state_composition_contract_v0_1.md`](#outputsmarketstateeventstatecompositioncontractv01md)
   - [`outputs/market_state_event_state_build_loop_runbook_v0_1.md`](#outputsmarketstateeventstatebuildlooprunbookv01md)
   - [`outputs/market_state_coverage_and_lookback_policy_v0_1.md`](#outputsmarketstatecoverageandlookbackpolicyv01md)
+  - [`outputs/state_observable_eligibility_contract_v0_1.md`](#outputsstateobservableeligibilitycontractv01md)
+  - [`outputs/state_derived_observables_formula_contract_v0_1.md`](#outputsstatederivedobservablesformulacontractv01md)
+  - [`outputs/state_decision_timestamp_policy_v0_1.md`](#outputsstatedecisiontimestamppolicyv01md)
+  - [`outputs/state_snapshot_roles_contract_v0_1.md`](#outputsstatesnapshotrolescontractv01md)
+  - [`outputs/state_builder_contract_v0_1.md`](#outputsstatebuildercontractv01md)
+  - [`outputs/state_canonical_vs_representation_layer_contract_v0_1.md`](#outputsstatecanonicalvsrepresentationlayercontractv01md)
+  - [`outputs/event_candidate_tables_contract_v0_1.md`](#outputseventcandidatetablescontractv01md)
+  - [`outputs/event_candidate_table_validators_contract_v0_1.md`](#outputseventcandidatetablevalidatorscontractv01md)
   - [`outputs/master_intraday_bar_table_wider_scope_materialization_plan_v0_1.md`](#outputsmasterintradaybartablewiderscopematerializationplanv01md)
   - [`outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md`](#outputsmasterintradaybartablequoteguardedcandidatecontractv01md)
   - [`outputs/microstructure_features_table_multi_window_materialization_plan_v0_1.md`](#outputsmicrostructurefeaturestablemultiwindowmaterializationplanv01md)
   - [`outputs/daily_scanner_candidates_table_target_contract_v0_1.md`](#outputsdailyscannercandidatestabletargetcontractv01md)
   - [`outputs/daily_scanner_candidates_table_target_contract_v0_2.md`](#outputsdailyscannercandidatestabletargetcontractv02md)
+  - [`outputs/daily_scanner_candidates_table_target_contract_v0_3.md`](#outputsdailyscannercandidatestabletargetcontractv03md)
+  - [`outputs/intraday_scanner_candidates_table_target_contract_v0_1.md`](#outputsintradayscannercandidatestabletargetcontractv01md)
   - [`outputs/scanner_framework_and_definitions_contract_v0_1.md`](#outputsscannerframeworkanddefinitionscontractv01md)
   - [`outputs/scanner_framework_and_definitions_contract_v0_2.md`](#outputsscannerframeworkanddefinitionscontractv02md)
+  - [`outputs/scanner_framework_and_definitions_contract_v0_3.md`](#outputsscannerframeworkanddefinitionscontractv03md)
+  - [`outputs/intraday_scanner_framework_and_definitions_contract_v0_1.md`](#outputsintradayscannerframeworkanddefinitionscontractv01md)
   - [`outputs/short_sale_constraints_table_target_contract_v0_1.md`](#outputsshortsaleconstraintstabletargetcontractv01md)
   - [`outputs/short_sale_constraints_data_acquisition_runbook_v0_1.md`](#outputsshortsaleconstraintsdataacquisitionrunbookv01md)
   - [`daily_return_labels_consumer_contract_v0_1.md`](#dailyreturnlabelsconsumercontractv01md)
@@ -749,6 +761,159 @@ Fija que:
 - futuros manifests de `market_state_table` y `event_state_table` deben
   declarar scanner, denominador, scope, lookback policy y root lineage.
 
+### `outputs/state_observable_eligibility_contract_v0_1.md`
+
+Contrato de elegibilidad columna/familia para los observables que podran alimentar futuros builders de `market_state_table` y `event_state_table`.
+
+Fija:
+
+- de que componente/schema sale cada observable o familia;
+- namespace objetivo (`daily__`, `intraday__`, `microstructure__`, etc.);
+- si el observable es literal, derivado, quality, lineage, support o bloqueado;
+- cutoff rule, quality gate y usos permitidos;
+- que no todo lo `derived` es automaticamente variable, y no todo lo literal es automaticamente usable.
+
+Estado:
+
+```text
+state_observable_eligibility_contract_v0_1 = complete_for_contract_defined_scope
+```
+
+### `outputs/state_derived_observables_formula_contract_v0_1.md`
+
+Contrato de formulas, ventanas, cutoffs, missingness, quality gates y lineage para derivadas que podran alimentar futuros state builders.
+
+Fija:
+
+- formulas existentes ya trazadas a builders actuales;
+- familias candidatas que requieren variante versionada antes de entrar;
+- que AlphaEvolve, ML y RL no pueden meter derivadas nuevas sin contrato de formula;
+- que un umbral/ventana descubierto no modifica la verdad observable base hasta ser promocionado.
+
+Estado:
+
+```text
+state_derived_observables_formula_contract_v0_1 = complete_for_contract_defined_scope
+```
+### `outputs/state_decision_timestamp_policy_v0_1.md`
+
+Contrato de politica temporal para futuros builders de `market_state_table` y `event_state_table`.
+
+Fija:
+
+- que `decision_timestamp_utc` es el reloj legal principal;
+- diferencia entre observation time, availability time, received time, cutoff time y build time;
+- tipos de timestamp como premarket snapshot, bar close, event anchor, entry/risk/exit, halt/live y post-analysis;
+- reglas de disponibilidad por componente;
+- leakage gates temporales que deben implementar validators futuros.
+
+Estado:
+
+```text
+state_decision_timestamp_policy_v0_1 = complete_for_contract_defined_scope
+```
+### `outputs/state_snapshot_roles_contract_v0_1.md`
+
+Contrato de roles de snapshot para futuros builders de `market_state_table` y `event_state_table`.
+
+Fija:
+
+- que `state_role` define el uso legal de una fotografia, no la verdad observable;
+- roles canonicos v0.1: discovery, event anchor, entry decision, risk, execution, RL transition y post-event analysis;
+- timestamp types, ventanas y joins permitidos por rol;
+- boundaries para outcomes, labels, rewards y actions;
+- validators minimos para detectar role/timestamp/window leakage.
+
+Estado:
+
+```text
+state_snapshot_roles_contract_v0_1 = complete_for_contract_defined_scope
+```
+
+### `outputs/state_builder_contract_v0_1.md`
+
+Contrato de ensamblaje para futuros builders de `market_state_table` y `event_state_table`.
+
+Fija:
+
+- que el state builder es un ensamblador determinista y auditable, no un scanner ni un evaluador;
+- inputs normativos: eligibility, formulas, timestamp policy, snapshot roles, composition contract, coverage/lookback policy, schemas y validators;
+- config minima del builder: source components, observables, formulas, roles, cutoffs, namespaces, gates y manifest;
+- orden de ensamblaje de `market_state` y `event_state`;
+- compatibilidad entre roles canonicos nuevos y aliases legacy (`pre_event`, `at_event`, `post_event_review`, `research_replay`);
+- validators que deben cerrar el siguiente paso.
+
+Estado:
+
+```text
+state_builder_contract_v0_1 = complete_for_contract_defined_scope
+```
+### `outputs/state_canonical_vs_representation_layer_contract_v0_1.md`
+
+Contrato que separa `Canonical State` de `Representation Layer`.
+
+Fija:
+
+- que `Canonical State` es la fotografia legal, estable y gobernada del mundo observable en `t`;
+- que `Canonical State` no es raw-only, pero tampoco es una feature table experimental;
+- que derivadas mecanicas estables pueden ser canonicas si tienen formula, cutoff, quality y lineage;
+- que parameter grids, scores, embeddings, semantic states y thresholds optimizados deben vivir primero como representation candidates;
+- que AlphaEvolve puede mutar representaciones, detectores, transiciones, politicas y evaluadores, pero no puede mutar silenciosamente la verdad observable canonica;
+- que cualquier promocion desde Representation Layer hacia Canonical State requiere contrato, evidencia, validators y version nueva.
+
+Estado:
+
+```text
+state_canonical_vs_representation_layer_contract_v0_1 = complete_for_contract_defined_scope
+```
+
+Lectura correcta:
+
+- contrato conceptual de frontera: cerrado;
+- schemas oficiales de state tables: sin cambio;
+- representation candidates materializadas: pendientes.
+### `outputs/event_candidate_tables_contract_v0_1.md`
+
+Contrato de tablas candidatas de eventos daily/1m para insertar la capa que faltaba entre scanners y `event_state_table`.
+
+Fija:
+
+- que scanner candidates son denominador/donde mirar, no eventos por si solos;
+- que las tablas candidatas de eventos crean `event_id`, ancla temporal legal, definicion versionada, source lineage y calidad;
+- targets conceptuales: `daily_strategy_candidate_events_table_v0_1` e `intraday_1m_strategy_candidate_events_table_v0_1`;
+- que thresholds como `first_cross_50` pueden vivir en una definicion versionada de evento, no como verdad del estado base;
+- que `event_windows_table` debe expandirse desde halts hacia eventos daily/1m antes de un `event_state` serio de estrategias;
+- que outcomes, labels, rewards, fills, PnL y acciones siguen prohibidos inline.
+
+Estado:
+
+```text
+event_candidate_tables_contract_v0_1 = complete_for_contract_defined_scope
+```
+### `outputs/event_candidate_table_validators_contract_v0_1.md`
+
+Contrato de validators para tablas candidatas de eventos daily/1m.
+
+Fija:
+
+- validators comunes de identidad, grano, definicion de evento, thresholds, tiempo, cutoff y lineage;
+- validators especificos para eventos daily date-level;
+- validators especificos para eventos intradia 1m y ruta quote-guarded;
+- prohibiciones de outcomes, labels, rewards, actions, fills, PnL y futuro inline;
+- consumer gates para ML/RL/AlphaEvolve;
+- bloqueos de full-universe/materializacion oficial sin promotion barrier.
+
+Estado:
+
+```text
+event_candidate_table_validators_contract_v0_1 = complete_for_contract_defined_scope
+```
+
+Lectura correcta:
+
+- contrato de validators: cerrado;
+- validators ejecutables: pendientes;
+- builders/materializacion de eventos daily/1m: pendientes.
 ### `outputs/daily_scanner_candidates_table_target_contract_v0_1.md`
 
 Contrato objetivo para la tabla de candidatos diarios/in-play.
@@ -815,10 +980,16 @@ Contrato objetivo para la evolucion `v0.2` de candidatos diarios/in-play.
 Define:
 
 - un solo denominador base `base_in_play_universe_scanner_v0_2`;
+- significado preciso: `base_eligible_smallcap_denominator`;
 - perfiles gobernados encima del denominador;
+- perfiles como flags/ranks paralelos, no filtros secuenciales;
 - `market_cap < 100M` como filtro comun;
 - `volume_today >= 500k` solo como filtro del perfil tipo TradeStation;
 - `float` bloqueado como filtro hasta tener fuente point-in-time auditada;
+- `relative_volume` pendiente de implementacion intradia/as-of antes de
+  promocion;
+- `% change` pendiente de minimo declarado antes de top-N para promocion;
+- DAS como overlay/seed provisional, no scanner de estrategia maduro;
 - builder y test controlado:
 
 ```text
@@ -844,7 +1015,109 @@ base_in_play_universe_scanner_v0_2
 Regla central:
 
 - el scanner define denominador y perfiles de investigacion/visibilidad;
+- el denominador base conserva filas elegibles aunque no active ningun perfil;
+- los perfiles son paralelos sobre el denominador, no embudo secuencial;
+- los overlays de estrategia se aplican despues y deben tener contrato propio;
 - no define estado completo, label, reward, fill, PnL ni senal de estrategia.
+
+### `outputs/daily_scanner_candidates_table_target_contract_v0_3.md`
+
+Contrato objetivo activo para `daily_scanner_candidates_table_v0_3`.
+
+Corrige la ambiguedad de `v0.2` separando dos capas:
+
+```text
+base_eligible_smallcap_denominator_v0_3
+  -> todo smallcap observable que TSIS puede inspeccionar
+
+in_play_momentum_candidate_denominator_v0_3
+  -> base eligible + movimiento fuerte + volumen/tradability minimo
+```
+
+Regla central:
+
+- `base_eligible_smallcap_denominator` no significa que el ticker este in-play;
+- `in_play_momentum_candidate_denominator` es el denominador para estrategias
+  intradia momentum/pump-dump/frontside;
+- el umbral inicial de movimiento fuerte es `50%`;
+- el movimiento se mide como proxy diario controlado con `daily_high_vs_prev_close_pct`,
+  `pct_chg_1d` y `gap_pct` hasta que exista builder intradia por segmentos
+  04:00-20:00;
+- `volume_today >= 500k` deja de ser filtro universal y pasa a ser parte de
+  `tradability`: `volume_today >= 500k` OR `dollar_volume_today >= 250k`;
+- `float` queda como columna informativa futura, no como filtro global hasta
+  tener fuente point-in-time auditada;
+- `DAS` y cualquier estrategia futura quedan como overlays posteriores, no como
+  perfiles dentro del scanner global.
+
+Builder y test controlado:
+
+```text
+scripts/materialize_daily_scanner_candidates_table_v0_3.py
+tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder_v0_3.py
+scripts/run_daily_scanner_candidates_materialization_v0_3.ps1
+```
+
+### `outputs/scanner_framework_and_definitions_contract_v0_3.md`
+
+Contrato del framework scanner `v0.3`.
+
+Modelo:
+
+```text
+base_eligible_smallcap_denominator_v0_3
+  -> in_play_momentum_candidate_denominator_v0_3
+  -> operator visibility profiles such as trade_station_like_profile_v0_3
+  -> strategy overlays after the global scanner
+```
+
+Regla central:
+
+- el scanner global decide que tickers merecen inspeccion sistematica;
+- perfiles de visibilidad no son estrategias;
+- overlays de estrategia no deben cambiar el denominador historico global;
+- `selected_das_research_profile` permanece `false` en el builder global v0.3;
+- la deteccion por segmento premarket/regular/afterhours queda bloqueada hasta
+  tener builder intradia/as-of.
+
+### `outputs/intraday_scanner_candidates_table_target_contract_v0_1.md`
+
+Contrato objetivo para `intraday_scanner_candidates_table_v0_1`.
+
+Define el denominador intradia de candidatos in-play desde `ohlcv_1m`:
+
+```text
+ticker + session_date
+first_cross_50_ts_utc
+first_cross_50_segment
+volume_to_time_at_first_cross
+dollar_volume_to_time_at_first_cross
+selected_intraday_in_play_candidate
+```
+
+Este contrato corrige la limitacion del scanner diario/EOD: para estrategias
+intradia, DAS/frontside y event-state, el daily scanner v0.3 es contexto coarse,
+no autoridad de primer push.
+
+### `outputs/intraday_scanner_framework_and_definitions_contract_v0_1.md`
+
+Contrato del framework scanner intradia `v0.1`.
+
+Define:
+
+```text
+base_eligible_smallcap_denominator_v0_3
+  -> intraday_in_play_momentum_candidate_denominator_v0_1
+  -> strategy overlays
+```
+
+Builder, runner y test:
+
+```text
+scripts/materialize_intraday_scanner_candidates_table_v0_1.py
+scripts/run_intraday_scanner_candidates_materialization_v0_1.ps1
+tests/data_foundation_outputs/test_intraday_scanner_candidates_table_builder_v0_1.py
+```
 
 ### `outputs/short_sale_constraints_table_target_contract_v0_1.md`
 
@@ -1138,14 +1411,14 @@ Lectura consolidada inicial del workstream.
 
 Define el problema, la terminologia, la estrategia manifest-first, la semantica
 del loader `quote_guarded`, la estrategia de auditoria paralela y los contratos
-pendientes antes de cualquier reparacion promovida.
+pendientes y el estado posterior a la reparacion LT1B promovida.
 
 ### `ohlcv_1m_quote_guarded/ohlcv_1m_quote_guarded_repair_runbook_v0_1.md`
 
 Runbook ejecutable para construir el manifest `ohlcv_1m_quote_guarded_v0_1`.
 
 Incluye comando PowerShell full-universe, smoke test, reanudacion por shards,
-outputs promovidos y semantica exacta de reparacion.
+outputs promovidos, closeout LT1B y semantica exacta de reparacion.
 
 ### `ohlcv_1m_historical_closeout_lt1b_reconciliation_v0_1.md`
 
@@ -1556,3 +1829,5 @@ Cambios menores de enlaces, navegacion o claridad pueden no requerir entrada pro
 Si una regla afecta a varios datasets, consumidores, price views, validacion, evidencia, promocion o interpretacion institucional, debe poder encontrarse aqui o estar enlazada desde aqui.
 
 La carpeta ya tiene mucho contenido. El objetivo ahora no es multiplicar documentos, sino mantener autoridad, navegacion y trazabilidad.
+
+

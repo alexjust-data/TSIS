@@ -1,4 +1,4 @@
-# OHLCV 1m Quote-Guarded Single Reading v0.1
+﻿# OHLCV 1m Quote-Guarded Single Reading v0.1
 
 ## 1. Nature Of This Document
 
@@ -156,6 +156,44 @@ provisional_governance_defined
 The state can only move toward `validated` after pilot evidence, negative
 controls, visual inspector evidence and reproducible manifests exist.
 
+## 6.1 Current Promoted State As Of 2026-07-03
+
+The LT1B-scoped repair overlay has been promoted. The accepted manifest is:
+
+```text
+E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1.parquet
+```
+
+Final closeout:
+
+```text
+status = PASS
+universe_tickers = 4824
+completed_tickers = 4824
+missing_tickers = 0
+selected_repair_shards = 421533
+written_shards = 421533
+manifest_rows = 301278342
+```
+
+Meaning:
+
+- raw `ohlcv_1m` remains immutable forensic source;
+- the promoted manifest is the source of truth for LT1B quote-guarded repairs;
+- consumers must apply the overlay instead of reading raw 1m blindly when the
+  task depends on reliable intraday OHLC;
+- VWAP invalidation is preserved; VWAP is not reconstructed from quotes;
+- downstream candidate tables are not automatically materialized by this
+  promotion.
+
+The next operational gate is consumer adoption: loaders/builders for scanner,
+master intraday and backtest/event workflows must prove that they consume:
+
+```text
+raw ohlcv_1m + repair_manifest_lt1b_v0_1.parquet
+```
+
+and preserve repair flags, VWAP status and lineage.
 ## 7. What This Layer Represents
 
 `ohlcv_1m_quote_guarded_v0_1` represents raw one-minute OHLC bars after applying

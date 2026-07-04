@@ -93,7 +93,8 @@ latest_controlled_replay: C:/TSIS_Data/tests/test_runs/2026-06-29/daily_scanner_
 
 The replay is evidence of builder shape and scanner comparison only.
 
-`v0.2` controlled candidate implementation exists as the forward path:
+`v0.2` controlled candidate implementation exists as historical intermediate
+evidence:
 
 ```text
 builder: scripts/materialize_daily_scanner_candidates_table_v0_2.py
@@ -108,8 +109,47 @@ target_contract: 01_foundations/module_contracts/outputs/daily_scanner_candidate
 base_in_play_universe_scanner_v0_2 + governed profile flags
 ```
 
+The stable identifier remains `base_in_play_universe_scanner_v0_2`, but the
+contractual meaning is:
+
+```text
+base_eligible_smallcap_denominator
+```
+
+It is the denominator of common-stock smallcaps eligible for observation, not
+proof that every row is already in-play. Profile flags are parallel markers over
+that denominator, not sequential filters.
+
 This is a candidate replay implementation only. It does not promote an
 official E-root dataset and does not authorize direct ML/RL/live consumption.
+
+`v0.3` controlled candidate implementation is the active forward path for
+in-play momentum semantics:
+
+```text
+builder: scripts/materialize_daily_scanner_candidates_table_v0_3.py
+test: tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder_v0_3.py
+framework: 01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_3.md
+target_contract: 01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_3.md
+```
+
+`v0.3` changes the scanner model to:
+
+```text
+base_eligible_smallcap_denominator_v0_3
+-> in_play_momentum_candidate_denominator_v0_3
+-> strategy overlays
+```
+
+The key selected field is:
+
+```text
+selected_in_play_momentum_candidate
+```
+
+It requires base eligibility, a >=50% move under the declared daily proxy, and
+minimum volume/tradability. It is still not a market state, label, reward,
+strategy signal or execution truth.
 
 ## 6. Required Scanner Definition
 
@@ -128,6 +168,23 @@ Every materialization must include a versioned scanner definition containing:
 
 Scanner definitions must be stored as governed config or documented in the run
 manifest. They must not live only inside notebook cells or prompts.
+
+For v0.2 and later:
+
+- generic observation profiles may select or rank denominator rows, but must not
+  redefine the denominator;
+- strategy overlays may consume scanner rows, but must write separate lineage
+  and cannot be hidden inside the Data Foundation scanner;
+- `relative_volume` requires intraday/as-of acceleration semantics before
+  promotion;
+- `percent_change` requires a declared minimum move threshold before top-N
+  ranking;
+- `dollar_volume` is tradability/economic activity, not alpha;
+- DAS-specific filters belong in a DAS strategy overlay or experimental state
+  table, not as final Data Foundation scanner doctrine.
+- for v0.3 and later, strategy-specific filters must not be hidden in the
+  global scanner; use `selected_in_play_momentum_candidate` as the common
+  in-play denominator and add strategy overlays downstream.
 
 ## 6.1 Governed Scanner Definitions v0.1
 

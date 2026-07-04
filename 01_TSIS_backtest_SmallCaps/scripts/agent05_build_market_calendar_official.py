@@ -146,7 +146,7 @@ def parse_args() -> argparse.Namespace:
     )
     ap.add_argument("--calendar", default="XNYS", help="Codigo de calendario exchange_calendars (ej: XNYS, XNAS).")
     ap.add_argument("--start", default="2005-01-01", help="Fecha inicio YYYY-MM-DD")
-    ap.add_argument("--end", default="2025-12-31", help="Fecha fin YYYY-MM-DD")
+    ap.add_argument("--end", default="2026-03-09", help="Fecha fin YYYY-MM-DD")
     ap.add_argument("--tz", default="America/New_York", help="Timezone para representacion local")
     ap.add_argument(
         "--out-dir",

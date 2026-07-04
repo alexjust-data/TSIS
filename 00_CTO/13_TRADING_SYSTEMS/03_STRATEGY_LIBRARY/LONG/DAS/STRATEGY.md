@@ -32,21 +32,26 @@ accion dormida
 
 La idea central no es comprar cualquier retroceso.
 
-La idea central es estudiar acciones que despiertan desde un estado apagado,
-hacen un primer push fuerte, no se destruyen en el primer dip y vuelven a
-romper al alza. A partir de esa confirmacion, cada nuevo dip dentro de la misma
-secuencia activa puede clasificarse como un DAS candidato.
+La idea central es estudiar acciones que despiertan desde un estado apagado,  
+hacen un primer push fuerte, no se destruyen en el primer dip y vuelven a  
+romper al alza. A partir de esa confirmacion, cada nuevo dip dentro de la misma  
+secuencia activa puede clasificarse como un DAS candidato.  
 
 En una frase:
 
 ```text
 DAS =
-despertar con squeeze/push inicial +
+despertar inicial +
 primer dip retenido +
 rebreak del primer push +
-momentum reactivado +
+momentum reactivado con squeeze/push +
 dips posteriores dentro de la secuencia activa.
 ```
+
+**Filosofía**
+
+El 75% de las acciones que tiene un gap en Daily se destruyen en market hours, pero el 100% de esas acciones, en su estructura del gap tiene una cara frontside. Ese frontside es más rápido y más volatil, esa es nuestra ventaja.
+
 
 ## 2. Lectura humana inicial
 
@@ -98,6 +103,7 @@ encontrar muestras historicas
 -> clasificar como se supera el primer push
 -> separar fenomenos observables
 -> escribir eventos v0 en Event Library
+-> extraer las mayores estadisticas posibles y estudiar todos lo casos
 ```
 
 ## 4. Fuente visual inicial

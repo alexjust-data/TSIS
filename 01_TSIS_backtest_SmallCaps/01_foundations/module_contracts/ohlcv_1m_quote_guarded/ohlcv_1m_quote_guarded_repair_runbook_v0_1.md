@@ -1,4 +1,4 @@
-# OHLCV 1m Quote-Guarded Repair Runbook v0.1
+﻿# OHLCV 1m Quote-Guarded Repair Runbook v0.1
 
 ## 1. Rol
 
@@ -93,6 +93,34 @@ Para evitar promocion y dejar solo artefactos de run:
 powershell -NoProfile -ExecutionPolicy Bypass -File "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\run_ohlcv_1m_quote_guarded_repair.ps1" -NoPromoteManifest
 ```
 
+## 6.1 LT1B Promoted Manifest Closeout
+
+The 2026-07-03 LT1B closeout promotes the scoped manifest:
+
+```text
+E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1.parquet
+E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1_summary.json
+E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1_sample.csv
+```
+
+Summary gates:
+
+```text
+status = PASS
+universe_dataset = lt1b_universe_v0_1
+universe_tickers = 4824
+completed_tickers = 4824
+missing_tickers = 0
+selected_repair_shards = 421533
+written_shards = 421533
+manifest_rows = 301278342
+```
+
+The promoted filename is `repair_manifest_lt1b_v0_1.parquet`, not the older
+placeholder `repair_manifest_v0_1.parquet` or `repair_manifest_v0_2.parquet`.
+The broad all-directory run is not promoted directly; the accepted manifest was
+consolidated from the broad LT1B subset, the missing-180 supplement and the LICN
+repair supplement.
 ## 7. Semantica de reparacion
 
 Para cada ticker-minute con quotes suficientes:

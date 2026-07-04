@@ -111,11 +111,11 @@ def test_expected_data_calendar_schema_lineage_and_counts() -> None:
         """
     ).fetchdf().iloc[0].to_dict()
 
-    assert row["rows"] == validations["row_count"] == 29_029_152
+    assert row["rows"] == validations["row_count"] == 29_478_796
     assert row["families"] == validations["dataset_family_count"] == 4
     assert row["tickers"] == validations["ticker_count"] == 4824
     assert row["first_session"] == validations["first_session"] == "2005-01-03"
-    assert row["last_session"] == validations["last_session"] == "2025-12-31"
+    assert row["last_session"] == validations["last_session"] == "2026-03-09"
     assert row["schema_versions"] == 1
     assert row["build_run_ids"] == 1
     assert row["policy_versions"] == 1
@@ -181,7 +181,7 @@ def test_expected_data_calendar_reconciles_to_instrument_calendar_intersection(
         """
     )
     validations = manifest["validations"]
-    assert expected_one_family == 7_257_288
+    assert expected_one_family == 7_369_699
     assert validations["row_count"] == expected_one_family * len(EXPECTED_FAMILIES)
     for family in EXPECTED_FAMILIES:
         assert validations["rows_by_family"][family]["rows"] == expected_one_family
@@ -198,4 +198,3 @@ def test_expected_data_calendar_reconciles_to_instrument_calendar_intersection(
             "source_market_calendar": manifest["source_market_calendar"],
         },
     )
-

@@ -1,4 +1,4 @@
-# Master Intraday Bar Table Wider-Scope Materialization Plan `v0_1`
+﻿# Master Intraday Bar Table Wider-Scope Materialization Plan `v0_1`
 
 ## 1. Purpose
 
@@ -132,10 +132,11 @@ Quote-guarded candidate dependency:
 
 ```text
 quote_guarded_repair_run_root = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838
-quote_guarded_future_official_root = E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded
+quote_guarded_official_root = E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded
+quote_guarded_manifest = E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1.parquet
 quote_guarded_current_quotes_root = D:/quotes
 quote_guarded_current_quotes_root_state = provisional_d_legacy_recovery_root_pending_e_parity
-quote_guarded_final_state = pending_final_manifest_and_validation
+quote_guarded_final_state = promoted_lt1b_manifest_available
 ```
 
 The quote-guarded route is governed by:
@@ -145,9 +146,9 @@ The quote-guarded route is governed by:
 configs/data_foundation_outputs/master_intraday_bar_table_quote_guarded_candidate_v0_2.json
 ```
 
-This route is allowed for contract design, builder design and preflight tests.
-It is not allowed for final materialization until the quote-guarded E-root
-output exists with final validation evidence.
+This route is now allowed to proceed to builder preflight and candidate
+materialization attempts against the promoted LT1B manifest. It still cannot be
+promoted until candidate output evidence, tests and review pass.
 
 ## 6. Recommended Path
 
@@ -190,9 +191,10 @@ Meaning:
 - keep `full_universe_claim=false` until the final denominator and validation
   gates pass.
 
-Path B1 is currently blocked on completion and final validation of the
-quote-guarded repair run. The current `D:/quotes` dependency is accepted only
-as provisional candidate lineage and must carry rebuild flags.
+Path B1 is no longer blocked on the quote-guarded repair manifest. It is now
+blocked on builder/preflight/materialization evidence. The current `D:/quotes`
+dependency is accepted only as provisional candidate lineage and must carry
+rebuild flags.
 
 ## 7. Current Builder Gap
 
@@ -422,8 +424,9 @@ heavy_materialization_started: false
 full_universe_claim_granted: false
 quote_guarded_candidate_contract_defined: true
 quote_guarded_candidate_materialized: false
-quote_guarded_final_e_root_ready: false
-next_executable_action: wait for quote-guarded final E-root repair output or continue with preflight/builder tests only
+quote_guarded_final_e_root_ready: true
+quote_guarded_manifest: E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1.parquet
+next_executable_action: run quote-guarded candidate builder preflight against promoted manifest
 ```
 
 Latest smoke evidence:

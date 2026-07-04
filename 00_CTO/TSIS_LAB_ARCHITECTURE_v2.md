@@ -305,6 +305,7 @@ Operativa:
 
 ```text
 base_in_play_universe_scanner_v0_2
+  = base_eligible_smallcap_denominator
 trade_station_like_profile_v0_2
 relative_volume_profile_v0_2
 percent_change_profile_v0_2
@@ -312,7 +313,7 @@ dollar_volume_tradability_profile_v0_2
 das_research_profile_v0_2
 ```
 
-`base_in_play_universe_scanner_v0_2` define la poblacion observable:
+`base_in_play_universe_scanner_v0_2` define la poblacion elegible observable:
 
 ```text
 common_stock = true
@@ -328,11 +329,22 @@ Los perfiles de relative volume, percent change, tradability y DAS research
 permiten estudiar timing, atencion, contrapartida y frontside sin convertir
 esas variables en filtros universales prematuros.
 
+Precision semantica:
+
+- los perfiles son paralelos, no filtros secuenciales;
+- `relative_volume_profile_v0_2` debe significar aceleracion de volumen
+  intradia/as-of antes de promocion;
+- `percent_change_profile_v0_2` debe exigir minimo declarado antes de top-N;
+- `dollar_volume_tradability_profile_v0_2` es tradability, no alpha;
+- `das_research_profile_v0_2` es seed provisional; DAS real debe vivir como
+  overlay de estrategia o tabla experimental propia.
+
 ## Regla
 
 ```text
 daily_scanner_candidates_table
 -> candidate set / denominator
+-> strategy overlays when needed
 -> market_state_table builder
 -> event_state_table builder
 ```

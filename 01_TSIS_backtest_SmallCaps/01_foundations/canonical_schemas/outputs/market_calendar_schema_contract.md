@@ -51,13 +51,13 @@ Builder/materializer:
 Fuente local gobernante para v0.1:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/data/reference/market_calendar_official_XNYS_20050101_20251231.parquet
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/data/reference/market_calendar_official_XNYS_20050101_20260309.parquet
 ```
 
 Artefacto de metadata fuente:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/data/reference/market_calendar_official_XNYS_20050101_20251231.meta.json
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/data/reference/market_calendar_official_XNYS_20050101_20260309.meta.json
 ```
 
 Script historico de generacion:

@@ -1,4 +1,4 @@
-# Master Intraday Bar Table Quote-Guarded Candidate Contract `v0_1`
+﻿# Master Intraday Bar Table Quote-Guarded Candidate Contract `v0_1`
 
 ## 1. Role
 
@@ -13,10 +13,10 @@ It does not modify `master_intraday_bar_table_v0_1`.
 Its purpose is to make the current decision explicit:
 
 ```text
-Build everything that can be built now around the future quote-guarded
-intraday source, but leave final materialization and source-path promotion
-blocked until the quote-guarded repair run is completed and validated under
-the official E-root output.
+Build the candidate route around the promoted LT1B quote-guarded repair
+manifest. Final materialization of this master intraday candidate remains
+blocked until the builder, preflight validators, tests and human review consume
+the promoted manifest and produce candidate evidence.
 ```
 
 ## 2. Candidate Identity
@@ -26,7 +26,7 @@ Planned candidate:
 ```text
 dataset_id: master_intraday_bar_table_v0_2_candidate_quote_guarded
 promotion_state: candidate_contract_defined_not_materialized
-materialization_scope: quote_guarded_full_universe_candidate_pending_final_repair
+materialization_scope: quote_guarded_lt1b_candidate_pending_builder_materialization
 full_universe_claim: false
 ```
 
@@ -62,9 +62,10 @@ claim backtest_core eligibility from v0_1
 mix v0_1 scoped split-normalized pilot rows with quote-guarded candidate rows
 ```
 
-## 4. Current Bridge Source
+## 4. Current Official Quote-Guarded Source
 
-The active bridge source is the live repair run:
+The historical bridge source was the broad repair run. The current accepted
+source is the promoted LT1B overlay manifest plus raw 1m:
 
 ```text
 run_root: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838
@@ -76,38 +77,38 @@ output_root: E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded
 Current bridge state:
 
 ```text
-repair_run_state: running_or_not_final_validated
+repair_run_state: PASS_promoted_lt1b_manifest
 quotes_root_state: provisional_d_legacy_recovery_root_pending_e_parity
 raw_1m_root_state: official_e_raw_root
-official_quote_guarded_root_state: pending_final_manifest_and_validation
+official_quote_guarded_root_state: promoted_manifest_available
+manifest_path: E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1.parquet
+manifest_rows: 301278342
 ```
 
-The bridge source can be used for contract design, builder design, tests over
-small fixtures and preflight checks.
+The promoted manifest can now be used as the official quote-guarded source for
+builder design, preflight checks and candidate materialization attempts. It
+does not itself promote `master_intraday_bar_table_v0_2_candidate`.
 
-It must not be used to promote `master_intraday_bar_table_v0_2_candidate`.
+## 5. Official Source
 
-## 5. Future Official Source
-
-The future official source must live under:
+The official source lives under:
 
 ```text
 E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/
 ```
 
-Required final artifacts before the candidate table may be materialized:
+Quote-guarded artifacts available for candidate materialization attempts:
 
 ```text
-repair_summary_v0_2_or_later.json
-repair_manifest_v0_2_or_later.parquet
-validation_report_final.json
-run_config.json
-source lineage for E:/TSIS/data/ohlcv_1m
-source lineage for quotes root used to build the repair manifest
+E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1.parquet
+E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1_summary.json
+E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1_sample.csv
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_lt1b_consolidation_manual_20260703_094500/consolidation_summary.json
 ```
 
-If the final quote-guarded contract chooses different filenames, this
-candidate contract must be updated before materialization.
+Remaining candidate-table gates are builder preflight, materialization evidence,
+validation reports, and explicit promotion review. Raw-only scanner artifacts remain
+non-canonical for the LT1B quote-guarded route.
 
 ## 6. Required Storage Semantics
 
@@ -174,7 +175,7 @@ C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guar
 If promotion is enabled and validation passes, the promoted artifact should be:
 
 ```text
-E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_v0_2.parquet
+E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1.parquet
 ```
 
 That promoted parquet is the main artifact for this table route. It is not
@@ -314,12 +315,13 @@ After materialization:
 
 ## 11. Promotion Blockers
 
-This route remains blocked until all are true:
+This route has cleared the upstream repair-manifest gate. Candidate table
+materialization remains blocked until all remaining gates are true:
 
 ```text
-quote_guarded repair run completed
-final validation report passed
-official E-root quote-guarded manifest exists
+quote_guarded repair run completed: true
+final LT1B consolidation summary PASS: true
+official E-root quote-guarded manifest exists: true
 source quotes root state is resolved or explicitly accepted for candidate only
 builder consumes manifest rather than blind recursive scan
 tests pass against final artifacts
@@ -335,5 +337,57 @@ status: candidate_contract_defined_not_materialized
 official_dataset_created: false
 safe_to_modify_v0_1: false
 safe_to_launch_full_materialization: false
-next_executable_action: implement config/preflight tests and wait for final quote-guarded E-root repair output
+quote_guarded_manifest_gate: passed
+next_executable_action: implement/execute builder preflight against repair_manifest_lt1b_v0_1.parquet
+```
+
+## 13. Downstream Scanner Dependency
+
+This quote-guarded route is also a prerequisite for the next institutional
+intraday scanner candidate.
+
+Current scanner replay:
+
+```text
+dataset_id: intraday_scanner_candidates_table_v0_1
+source_price_view: raw ohlcv_1m
+status: controlled_replay_candidate_not_official
+```
+
+Required successor:
+
+```text
+dataset_id: intraday_scanner_candidates_table_v0_2_quote_guarded_candidate
+source_price_view: ohlcv_1m_quote_guarded
+storage_model: raw ohlcv_1m + repair_manifest_lt1b_v0_1.parquet overlay
+```
+
+The scanner must not promote a raw-only 20-year candidate as canonical because
+the promoted LT1B quote-guarded overlay is now the required successor input. A
+raw-only scanner run may be useful as a diagnostic denominator, but it must carry
+raw diagnostic scope and must not be used as the official in-play candidate
+surface for ML/RL state preparation.
+
+Required scanner behavior after this manifest exists:
+
+```text
+1. compute raw first-cross evidence;
+2. apply quote-guarded overlay for the same ticker/session/range;
+3. compute quote-guarded first-cross evidence;
+4. select candidates from quote-guarded evidence when repair rows apply;
+5. preserve rejected raw spikes with explicit quality state.
+```
+
+Minimum downstream fields:
+
+```text
+first_cross_price_source
+raw_first_cross_price
+qg_first_cross_price
+raw_move_vs_prev_close_pct
+qg_move_vs_prev_close_pct
+quote_guarded_repair_applied_at_cross
+repair_state_at_cross
+repair_reason_at_cross
+scanner_quality_state
 ```

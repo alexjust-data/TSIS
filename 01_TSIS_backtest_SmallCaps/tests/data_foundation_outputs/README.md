@@ -40,6 +40,7 @@ Aqui deben validarse, como minimo:
 - `event_state_table`
 - `data_quality_report`
 - `daily_scanner_candidates_table`
+- `intraday_scanner_candidates_table`
 
 ## Estado actual
 
@@ -65,7 +66,159 @@ Contract/fixture stacks with executable tests but no materialized parquet yet:
 
 - `market_state_table`
 - `event_state_table`
-- `daily_scanner_candidates_table_v0_2`
+- `daily_scanner_candidates_table_v0_3`
+- `intraday_scanner_candidates_table_v0_1`
+
+Ultima evidencia fixture de `daily_scanner_candidates_table_v0_3`:
+
+```text
+tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder_v0_3.py
+tests = 1
+passed = 1
+failed = 0
+skipped = 0
+```
+
+Esta evidencia prueba el modelo activo:
+
+```text
+base_eligible_smallcap_denominator_v0_3
+  = common stock
+  + market cap < 100M
+  + 0.5 < last_price <= 20
+  + data quality usable/review
+
+in_play_momentum_candidate_denominator_v0_3
+  = base eligible
+  + strong move >= 50%
+  + tradability gate
+```
+
+Regla:
+
+```text
+strategy overlays != global scanner denominator
+```
+
+`DAS` y cualquier estrategia futura deben aplicarse despues del scanner global.
+El builder global v0.3 mantiene `selected_das_research_profile = false`.
+
+Ultimo replay controlado real de `daily_scanner_candidates_table_v0_3`:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-30/daily_scanner_candidates_replay_20250102_20250110_v0_3_0_in_play_momentum/
+rows = 15323
+sessions = 6
+instruments = 2590
+scanner_semantic_alignment_version = v0_3_0_in_play_momentum_denominator
+base_eligible_rows = 6184
+selected_in_play_momentum_candidate_rows = 69
+selected_trade_station_like_profile_rows = 150
+selected_das_research_profile_rows = 0
+selected_without_50_move = 0
+selected_without_tradability = 0
+min_selected_motion_pct = 50.2851
+max_selected_motion_pct = 363.6408
+duplicate_key_groups = 0
+ml_feature_candidate_rows = 0
+rl_state_candidate_rows = 0
+live_downstream_candidate_rows = 0
+in_play_detection_scope = daily_eod_proxy
+in_play_segment_detection_state = available_in_intraday_scanner_candidates_table_v0_1_controlled_replay
+```
+
+Interpretacion obligatoria:
+
+```text
+controlled_replay_candidate != official promoted dataset
+daily_eod_proxy != certified premarket/regular/afterhours segment detection
+```
+
+Ultima evidencia fixture de `intraday_scanner_candidates_table_v0_1`:
+
+```text
+tests/data_foundation_outputs/test_intraday_scanner_candidates_table_builder_v0_1.py
+tests = 1
+passed = 1
+failed = 0
+skipped = 0
+```
+
+Esta evidencia prueba:
+
+```text
+premarket first cross
+regular first cross
+afterhours motion without tradability
+non-common-stock exclusion
+market-cap exclusion
+duplicate ticker-session prevention
+```
+
+Ultimo replay controlado real de `intraday_scanner_candidates_table_v0_1`:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-30/intraday_scanner_candidates_replay_20250102_20250110_v0_1/
+run_id = intraday_scanner_candidates_v0_1_20260630T175311Z
+rows = 33413
+tickers = 5690
+session_dates = 6
+base_eligible_rows = 7498
+motion_threshold_rows = 235
+tradability_pass_rows = 176
+selected_intraday_in_play_candidate_rows = 102
+first_cross_premarket_rows = 114
+first_cross_regular_rows = 82
+first_cross_afterhours_rows = 39
+duplicate_ticker_session_keys = 0
+full_universe_claim = false
+```
+
+Interpretacion obligatoria:
+
+```text
+intraday scanner v0.1 = first-push timing candidate surface
+daily scanner v0.3 = daily/EOD coarse context
+scanner rows != market_state/event_state/label/reward/strategy signal
+```
+
+Runner largo validado para `daily_scanner_candidates_table_v0_3`:
+
+```text
+scripts/run_daily_scanner_candidates_materialization_v0_3.ps1
+```
+
+Smoke runner:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-30/daily_scanner_candidates_v0_3_runner_smoke_20250102_20250110_d/
+status = completed
+year_window_count = 1
+elapsed_seconds = 24
+full_universe_claim = false
+```
+
+Este runner escribe:
+
+```text
+pre_manifest
+heartbeat
+heartbeat.jsonl
+pids
+logs
+_run_summary.json
+```
+
+Regla:
+
+```text
+multi-year / 20-year scanner candidate runs must use the runner, not direct
+python builder execution.
+```
+
+La evidencia v0.2 queda como historica porque documento la etapa intermedia
+con perfiles paralelos y el error de incluir overlays de estrategia dentro del
+builder global.
 
 Ultima evidencia fixture de `daily_scanner_candidates_table_v0_2`:
 
@@ -80,27 +233,40 @@ skipped = 0
 Esta evidencia prueba el modelo:
 
 ```text
-base_in_play_universe_scanner_v0_2 + governed profile flags
+base_in_play_universe_scanner_v0_2
+  = base_eligible_smallcap_denominator
+  + governed parallel profile flags
 ```
+
+Esta evidencia no prueba que los perfiles sean un embudo secuencial ni que
+`das_research_profile_v0_2` sea un scanner DAS final.
 
 No materializa parquet oficial ni escribe en `E:/TSIS/data`.
 
 Ultimo replay controlado real de `daily_scanner_candidates_table_v0_2`:
 
 ```text
-C:/TSIS_Data/tests/test_runs/2026-06-30/daily_scanner_candidates_replay_20250102_20250110_v0_2/
+C:/TSIS_Data/tests/test_runs/2026-06-30/daily_scanner_candidates_replay_20250102_20250110_v0_2_1_contract_aligned/
 rows = 15323
 sessions = 6
 instruments = 2590
-selected_any_profile_rows = 4023
+scanner_semantic_alignment_version = v0_2_1_contract_aligned
+selected_any_profile_rows = 2314
 selected_trade_station_like_profile_rows = 150
-selected_das_research_profile_rows = 2472
-selected_below_500k_volume_rows = 3177
+selected_relative_volume_profile_rows = 0
+selected_percent_change_profile_rows = 150
+selected_dollar_volume_tradability_profile_rows = 150
+selected_das_research_profile_rows = 2261
+selected_below_500k_volume_rows = 1800
 duplicate_key_groups = 0
 float_filter_used_rows = 0
 ml_feature_candidate_rows = 0
 rl_state_candidate_rows = 0
 live_downstream_candidate_rows = 0
+relative_volume_profile_status = unavailable_without_intraday_asof
+percent_change_min_threshold_pct = 3.0
+dollar_volume_profile_semantic_role = tradability_not_alpha
+das_research_profile_status = provisional_strategy_overlay_seed_not_final_scanner
 ```
 
 Interpretacion obligatoria:

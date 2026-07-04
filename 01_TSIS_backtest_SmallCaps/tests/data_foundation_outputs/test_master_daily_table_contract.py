@@ -188,18 +188,18 @@ def test_master_daily_schema_counts_price_views_and_flags() -> None:
         """
     ).fetchdf().iloc[0].to_dict()
 
-    assert row["rows"] == validations["row_count"] == 21_771_864
+    assert row["rows"] == validations["row_count"] == 22_109_097
     assert row["tickers"] == validations["ticker_count"] == 4824
     assert row["instrument_ids"] == validations["instrument_id_count"] == 4626
     assert row["price_views"] == validations["price_view_count"] == 3
     assert row["first_session"] == validations["first_session"] == "2005-01-03"
-    assert row["last_session"] == validations["last_session"] == "2025-12-31"
-    assert row["present_rows"] == validations["data_present_rows"] == 19_782_153
-    assert row["missing_rows"] == validations["missing_expected_data_rows"] == 1_989_711
+    assert row["last_session"] == validations["last_session"] == "2026-03-09"
+    assert row["present_rows"] == validations["data_present_rows"] == 20_106_954
+    assert row["missing_rows"] == validations["missing_expected_data_rows"] == 2_002_143
     assert row["hard_invalid_rows"] == validations["selected_price_hard_invalid_rows"] == 0
     assert row["negative_volume_rows"] == validations["negative_volume_rows"] == 0
-    assert row["candidate_rows"] == validations["backtest_core_row_candidate_rows"] == 19_782_153
-    assert row["corporate_action_rows"] == validations["rows_with_corporate_action"] == 92_979
+    assert row["candidate_rows"] == validations["backtest_core_row_candidate_rows"] == 20_106_954
+    assert row["corporate_action_rows"] == validations["rows_with_corporate_action"] == 94_275
     assert row["duplicate_key_groups"] == validations["duplicate_key_groups"] == 0
     assert row["schema_versions"] == 1
     assert row["build_run_ids"] == 1
@@ -223,7 +223,7 @@ def test_master_daily_reconciles_expected_denominator_and_rows_by_price_view(
         where dataset_family = 'daily_raw'
         """
     ).fetchone()[0]
-    assert expected_daily_rows == validations["expected_daily_rows"] == 7_257_288
+    assert expected_daily_rows == validations["expected_daily_rows"] == 7_369_699
     assert validations["row_count"] == expected_daily_rows * len(EXPECTED_PRICE_VIEWS)
 
     by_view = duckdb.sql(
@@ -253,8 +253,8 @@ def test_master_daily_reconciles_expected_denominator_and_rows_by_price_view(
     assert actual == validations["rows_by_price_view"]
     for payload in actual.values():
         assert payload["rows"] == expected_daily_rows
-        assert payload["present_rows"] == 6_594_051
-        assert payload["missing_rows"] == 663_237
+        assert payload["present_rows"] == 6_702_318
+        assert payload["missing_rows"] == 667_381
         assert payload["hard_invalid_rows"] == 0
 
     write_json_artifact(

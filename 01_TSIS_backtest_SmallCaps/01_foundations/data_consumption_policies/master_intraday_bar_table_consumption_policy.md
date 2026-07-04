@@ -1,4 +1,4 @@
-# Master Intraday Bar Table Consumption Policy `v0_1`
+﻿# Master Intraday Bar Table Consumption Policy `v0_1`
 
 ## Scope
 
@@ -130,15 +130,15 @@ Planned candidate:
 master_intraday_bar_table_v0_2_candidate_quote_guarded
 ```
 
-This candidate route exists only as a contract/config until the
-`ohlcv_1m_quote_guarded` repair workstream finishes and promotes validated
-artifacts under:
+This candidate route has its upstream repair-manifest gate satisfied. The
+`ohlcv_1m_quote_guarded` LT1B manifest is promoted under:
 
 ```text
 E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/
 ```
 
-Until then, consumers must treat the route as:
+Until a master intraday candidate table is actually materialized and validated,
+consumers must still treat the route as:
 
 ```text
 candidate_contract_defined_not_materialized
@@ -159,6 +159,17 @@ it must label them as run artifacts, not governed output tables. The current
 `D:/quotes` lineage is provisional candidate lineage only and must not be
 presented as the final official E-root source.
 
+Promoted quote-guarded source:
+
+```text
+E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1.parquet
+status = PASS
+manifest_rows = 301278342
+```
+
+This permits governed builder/preflight work against the overlay. It does not
+make `master_intraday_bar_table_v0_2_candidate_quote_guarded` an official table
+until that candidate has its own manifest, tests and promotion review.
 ## Required Citations
 
 Any notebook, module or downstream table derived from this output must cite:

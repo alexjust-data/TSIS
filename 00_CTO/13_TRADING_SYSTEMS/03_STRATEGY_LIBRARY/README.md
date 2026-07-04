@@ -102,7 +102,43 @@ El archivo `STRATEGY.md` debe explicar:
 - que notebooks o scripts sirven para buscar muestras;
 - que eventos v0 se derivaron de ella.
 
-## 4.1. Separacion entre traders fuente y estrategias TSIS
+## 4.2. Scanner General Y Overlays De Estrategia
+
+Toda estrategia nueva debe consumir el scanner general como denominador antes
+de crear filtros propios.
+
+Policy transversal:
+
+```text
+C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/strategy_scanner_overlay_policy_v0_1.md
+```
+
+Regla:
+
+```text
+daily_scanner_candidates_table = donde mirar
+strategy overlay = hipotesis especifica de la estrategia
+strategy state table = lectura experimental de esa estrategia
+market_state/event_state = composicion institucional futura
+```
+
+Un notebook de estrategia debe declarar siempre su denominador:
+
+```text
+all_filters_passed
+selected_any_profile
+selected_trade_station_like_profile
+selected_percent_change_profile
+selected_dollar_volume_tradability_profile
+selected_relative_volume_profile
+manual_human_seed
+conditional_on_current_strategy_detector
+```
+
+No se permite reportar estadisticas poblacionales desde una muestra manual o
+desde un detector local sesgado sin declararlo explicitamente.
+
+## 4.3. Separacion entre traders fuente y estrategias TSIS
 
 `03_STRATEGY_LIBRARY` separa dos cosas distintas:
 

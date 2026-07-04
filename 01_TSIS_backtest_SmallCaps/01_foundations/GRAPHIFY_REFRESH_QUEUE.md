@@ -1,4 +1,4 @@
-# Graphify Refresh Queue for 01_foundations
+﻿# Graphify Refresh Queue for 01_foundations
 
 Fecha de creacion: 2026-06-19
 Estado: cola operativa versionada para refrescos Graphify de `01_foundations`.
@@ -129,6 +129,250 @@ Por ventana dedicada:
 
 ## Entradas activas
 
+### GFQ-20260704-minute-data-plane-reading
+
+Status: `pending_next_outputs_leaf_refresh`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+01_foundations/data_plane_physical_authority
+01_foundations/price_views_and_intraday_consumption
+01_TSIS_backtest_SmallCaps/agent_bootstrap
+```
+
+Reason:
+
+```text
+The project now requires all agents to read E:/TSIS/data/README.md as base
+context, and Module 01 agents must read it before data/price work. For
+minute/OHLCV 1m, E:/TSIS/data/ohlcv_1m is the canonical physical root. This must
+be visible in Graphify because it governs scanners, intraday backtests,
+quote-guarded overlays, feature/state builders and any future minute-consuming
+agent workflow.
+```
+
+Changed paths:
+
+```text
+E:/TSIS/data/README.md
+C:/TSIS_Data/README.md
+C:/TSIS_Data/AGENTS.md
+C:/TSIS_Data/START_HERE.md
+C:/TSIS_Data/CHANGELOG.md
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/AGENTS.md
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Recommended action:
+
+```text
+Refresh the foundations outputs/data-plane leaf so graph queries route minute
+work through E:/TSIS/data/README.md and E:/TSIS/data/ohlcv_1m before downstream
+contracts or scripts are interpreted.
+```
+
+Root action:
+
+```text
+No immediate root rebuild. Include in the next official foundations leaf refresh.
+```
+### GFQ-20260701-001 - Market calendar expected calendar master daily 2026 governed range
+
+Status: `pending_next_outputs_leaf_refresh`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+data_foundation_outputs_graph
+market_calendar_governance_graph
+master_daily_table_governance_graph
+event_discovery_graph
+market_state_representation_graph
+```
+
+Why:
+
+- Extended active `market_calendar_v0_1`, `expected_data_calendar_v0_1` and
+  `master_daily_table_v0_1` materializations from the previous `2025-12-31`
+  endpoint to the current governed source limit `2026-03-09`.
+- Updated active build lineage:
+  - `market_calendar_v0_1_20260630T193931Z`
+  - `expected_data_calendar_v0_1_20260630T194807Z`
+  - `master_daily_table_v0_1_20260630T201044Z`
+- Updated row counts:
+  - `market_calendar_v0_1`: 5,328 rows
+  - `expected_data_calendar_v0_1`: 29,478,796 rows
+  - `master_daily_table_v0_1`: 22,109,097 rows
+- Added DuckDB spill/temp-directory execution support to expected-calendar and
+  master-daily materializers so the wider output can complete without OOM.
+- Updated the market-calendar builder/materializer defaults away from the old
+  `20251231` source.
+- Preserved the explicit limitation: this is not coverage through
+  `2026-06-30`; later dates require a new governed source extension.
+
+Changed paths:
+
+```text
+01_TSIS_backtest_SmallCaps/scripts/agent05_build_market_calendar_official.py
+01_TSIS_backtest_SmallCaps/scripts/materialize_market_calendar.py
+01_TSIS_backtest_SmallCaps/scripts/materialize_expected_data_calendar.py
+01_TSIS_backtest_SmallCaps/scripts/materialize_master_daily_table.py
+01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_market_calendar_contract.py
+01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_expected_data_calendar_contract.py
+01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_master_daily_table_contract.py
+01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/market_calendar_registry_entry.yaml
+01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/expected_data_calendar_registry_entry.yaml
+01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/master_daily_table_registry_entry.yaml
+01_TSIS_backtest_SmallCaps/01_foundations/contract_registry/dataset_contracts/market_calendar_dataset_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/contract_registry/dataset_contracts/master_daily_table_dataset_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/market_calendar_schema_contract.md
+01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/expected_data_calendar_schema_contract.md
+01_TSIS_backtest_SmallCaps/01_foundations/data_consumption_policies/market_calendar_consumption_policy.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/01_foundations/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+External/output artifacts:
+
+```text
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/data/reference/market_calendar_official_XNYS_20050101_20260309.parquet
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/data/reference/market_calendar_official_XNYS_20050101_20260309.meta.json
+E:/TSIS/data/data_foundation_outputs/market_calendar/market_calendar_v0_1.parquet
+E:/TSIS/data/data_foundation_outputs/expected_data_calendar/expected_data_calendar_v0_1/
+E:/TSIS/data/data_foundation_outputs/master_daily_table/master_daily_table_v0_1/
+E:/TSIS/data/data_foundation_outputs/_backups/20260630_extend_calendar_daily_to_20260309/
+```
+
+Validation:
+
+```text
+python -m pytest C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_market_calendar_contract.py C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_expected_data_calendar_contract.py C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_master_daily_table_contract.py -q
+result = 12 passed
+```
+
+Recommended action:
+
+```text
+Refresh the Data Foundation outputs leaf so graph users no longer infer the
+older 2025-12-31 endpoint for calendar, expected coverage or master daily.
+```
+
+Root action:
+
+```text
+No immediate root rebuild. Include in the next official foundations leaf refresh
+or root integration batch.
+```
+
+Owner:
+
+```text
+Modulo 01 / Data Foundation output governance
+```
+
+### GFQ-20260630-daily-scanner-v0-3-in-play-momentum
+
+Status: `pending_next_outputs_leaf_refresh`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+data_foundation_outputs_graph
+event_discovery_graph
+market_state_representation_graph
+strategy_research_graph
+ml_feature_governance_graph
+offline_rl_governance_graph
+```
+
+Why:
+
+- Implemented the active `daily_scanner_candidates_table_v0_3` controlled
+  builder model.
+- Replaced the ambiguous v0.2 profile model with two explicit denominators:
+  `base_eligible_smallcap_denominator_v0_3` and
+  `in_play_momentum_candidate_denominator_v0_3`.
+- Clarified that base eligible rows are only observable smallcap rows, not
+  in-play candidates.
+- Clarified that in-play momentum candidates require strong movement and
+  tradability.
+- Set the initial strong-move threshold to `50%`.
+- Kept `trade_station_like_profile_v0_3` as operator visibility only.
+- Removed DAS from the global scanner; DAS and future strategies must consume
+  the scanner output through strategy overlays.
+- Marked the controlled replay as `daily_eod_proxy`; it cannot certify
+  premarket/regular/after-hours first-push timing until an intraday segment
+  builder exists.
+- Ran controlled replay
+  `daily_scanner_candidates_replay_20250102_20250110_v0_3_0_in_play_momentum`
+  under `C:/TSIS_Data/tests/test_runs/2026-06-30/`, producing 15,323 rows,
+  6,184 base eligible rows, 69 selected in-play momentum candidates, 150
+  TradeStation-like profile rows, zero DAS rows, zero selected rows without
+  50% movement and zero selected rows without tradability.
+
+Changed paths:
+
+```text
+01_TSIS_backtest_SmallCaps/scripts/materialize_daily_scanner_candidates_table_v0_3.py
+01_TSIS_backtest_SmallCaps/scripts/run_daily_scanner_candidates_materialization_v0_3.ps1
+01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder_v0_3.py
+01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/README.md
+01_TSIS_backtest_SmallCaps/configs/data_foundation_outputs/scanner_definitions/base_eligible_smallcap_denominator_v0_3.yaml
+01_TSIS_backtest_SmallCaps/configs/data_foundation_outputs/scanner_definitions/in_play_momentum_candidate_denominator_v0_3.yaml
+01_TSIS_backtest_SmallCaps/configs/data_foundation_outputs/scanner_definitions/trade_station_like_profile_v0_3.yaml
+01_TSIS_backtest_SmallCaps/configs/data_foundation_outputs/scanner_definitions/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_3.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_3.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/daily_scanner_candidates_table_schema_contract.md
+01_TSIS_backtest_SmallCaps/01_foundations/contract_registry/dataset_contracts/daily_scanner_candidates_table_dataset_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/data_consumption_policies/daily_scanner_candidates_table_consumption_policy.md
+01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/daily_scanner_candidates_table_registry_entry.yaml
+01_TSIS_backtest_SmallCaps/01_foundations/validators/outputs/daily_scanner_candidates_table_validators.md
+01_TSIS_backtest_SmallCaps/01_research/README.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Recommended action:
+
+```text
+Refresh the Data Foundation outputs/scanner leaf so graph queries distinguish
+v0.3 active scanner semantics from historical v0.1/v0.2 evidence.
+```
+
+Root action:
+
+```text
+No immediate root rebuild. Include in the next official foundations leaf refresh
+or root integration batch.
+```
+
+Owner:
+
+```text
+Modulo 01 / Data Foundation outputs scanner governance
+```
+
+Notes:
+
+```text
+Validation: python -m pytest C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder_v0_3.py -q
+Result: 1 passed.
+Runner smoke: C:/TSIS_Data/tests/test_runs/2026-06-30/daily_scanner_candidates_v0_3_runner_smoke_20250102_20250110_d/
+Runner status: completed.
+```
+
 ### GFQ-20260630-daily-scanner-v0-2-base-universe-profiles
 
 Status: `pending_next_outputs_leaf_refresh`
@@ -151,16 +395,27 @@ Why:
 - Implemented the forward `daily_scanner_candidates_table_v0_2` controlled
   builder model.
 - Replaced the v0.1 "two scanner universes" interpretation with one governed
-  base denominator plus profile flags:
+  base eligible denominator plus parallel profile flags:
   `base_in_play_universe_scanner_v0_2` and profiles for TradeStation-like
   visibility, relative volume, percent change, dollar-volume tradability and
   DAS research.
+- Clarified that `base_in_play_universe_scanner_v0_2` is the stable identifier,
+  while the precise meaning is `base_eligible_smallcap_denominator`.
+- Clarified that profile counts are not a sequential funnel.
+- Clarified that `relative_volume_profile_v0_2` requires intraday/as-of volume
+  acceleration before promotion, not only a daily RVOL proxy.
+- Clarified that `percent_change_profile_v0_2` requires a declared minimum
+  percent-change threshold before top-N ranking.
+- Clarified that `dollar_volume_tradability_profile_v0_2` is tradability, not
+  alpha.
+- Clarified that `das_research_profile_v0_2` is provisional strategy-overlay
+  lineage, not a final DAS scanner.
 - Preserved `market_cap_usd < 100M` as the common hard filter.
 - Preserved `volume_today >= 500k` only as the TradeStation-like profile hard
   filter, not as a universal research filter.
 - Blocked float as a hard filter until a point-in-time float source passes
   source/coverage/as-of validation.
-- Added a deterministic fixture test proving one base scanner row per
+- Added a deterministic fixture test proving one base denominator row per
   instrument/session/as-of, profile flags, alias deduplication, no ML/RL/live
   authority and no official E-root promotion.
 - Ran controlled replay
@@ -192,6 +447,7 @@ configs/data_foundation_outputs/scanner_definitions/README.md
 01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
 01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
 01_foundations/module_contracts/README.md
+tests/data_foundation_outputs/README.md
 01_TSIS_backtest_SmallCaps/CHANGELOG.md
 ```
 
@@ -207,8 +463,9 @@ Recommended action:
 ```text
 Refresh the Data Foundation outputs and market-state/event-discovery related
 leaves so graph users know that v0.2 is the forward scanner model, while v0.1
-remains preserved historical controlled replay evidence. Do not mark official
-E-root materialization as complete.
+remains preserved historical controlled replay evidence. The leaf must include
+the revised base-denominator/profile/strategy-overlay semantics. Do not mark
+official E-root materialization as complete.
 ```
 
 Root action:
@@ -271,6 +528,19 @@ tests/data_foundation_outputs/test_master_intraday_quote_guarded_candidate_contr
 01_foundations/validators/outputs/master_intraday_bar_table_validators.md
 01_foundations/module_contracts/README.md
 ```
+
+
+2026-07-03 update:
+
+```text
+quote_guarded_repair_manifest = E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1.parquet
+quote_guarded_repair_manifest_state = PASS
+manifest_rows = 301278342
+```
+
+The semantic map must now distinguish between "upstream quote-guarded manifest
+promoted" and "downstream master intraday/scanner candidate not yet
+materialized".
 
 ### GFQ-20260629-market-event-state-controlled-candidates
 
@@ -4352,6 +4622,409 @@ Owner:
 Modulo 01 / Graphify governance
 ```
 
+### GFQ-20260630-002 - Daily scanner v0.2 contract-aligned controlled replay
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+01_foundations/module_contracts/outputs/
+01_foundations/canonical_schemas/outputs/
+01_foundations/validators/outputs/
+01_foundations/dataset_registry/outputs/
+configs/data_foundation_outputs/scanner_definitions/
+tests/data_foundation_outputs/
+scripts/
+```
+
+Reason:
+
+```text
+The daily scanner v0.2 builder and controlled replay were aligned with the
+corrected contract semantics. The replay now disables relative-volume selection
+without intraday/as-of acceleration, enforces percent-change minimum threshold
+before top-N selection, treats dollar-volume as tradability not alpha, and keeps
+DAS as provisional strategy-overlay seed lineage. A new controlled replay was
+materialized under tests/test_runs/2026-06-30 with run_id
+daily_scanner_candidates_replay_20250102_20250110_v0_2_1_contract_aligned.
+```
+
+Changed paths:
+
+```text
+01_TSIS_backtest_SmallCaps/scripts/materialize_daily_scanner_candidates_table_v0_2.py
+01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder_v0_2.py
+01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_2.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/daily_scanner_candidates_table_schema_contract.md
+01_TSIS_backtest_SmallCaps/01_foundations/validators/outputs/daily_scanner_candidates_table_validators.md
+01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/daily_scanner_candidates_table_registry_entry.yaml
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Recommended action:
+
+```text
+Refresh the Data Foundation outputs/scanner leaf so graph queries distinguish
+the older v0.2 replay from the v0_2_1 contract-aligned replay and do not infer
+relative-volume semantics from daily RVOL proxy.
+```
+
+Root action:
+
+```text
+No immediate root rebuild. Include in the next official foundations leaf refresh
+or root integration batch.
+```
+
+Owner:
+
+```text
+Modulo 01 / Data Foundation outputs scanner governance
+```
+
+Notes:
+
+```text
+Validation: python -m pytest C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder_v0_2.py -q
+Result: 1 passed.
+```
+
+### GFQ-20260630-003 - Intraday scanner v0.1 first-push denominator
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+01_foundations/module_contracts/outputs/
+configs/data_foundation_outputs/scanner_definitions/
+scripts/
+tests/data_foundation_outputs/
+```
+
+Reason:
+
+```text
+The scanner stack now has an intraday 1m candidate detector. Daily scanner v0.3
+remains a daily/EOD coarse proxy, while intraday_scanner_candidates_table_v0_1
+detects first +50% crosses by premarket/regular/afterhours segment using
+ohlcv_1m, volume-to-time and dollar-volume-to-time. This is semantically
+important for DAS/frontside, event-state and future ML/RL state preparation.
+```
+
+Changed paths:
+
+```text
+01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_scanner_candidates_table_v0_1.py
+01_TSIS_backtest_SmallCaps/scripts/run_intraday_scanner_candidates_materialization_v0_1.ps1
+01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_intraday_scanner_candidates_table_builder_v0_1.py
+01_TSIS_backtest_SmallCaps/configs/data_foundation_outputs/scanner_definitions/intraday_in_play_momentum_candidate_denominator_v0_1.yaml
+01_TSIS_backtest_SmallCaps/configs/data_foundation_outputs/scanner_definitions/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/intraday_scanner_candidates_table_schema_contract.md
+01_TSIS_backtest_SmallCaps/01_foundations/contract_registry/dataset_contracts/intraday_scanner_candidates_table_dataset_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/data_consumption_policies/intraday_scanner_candidates_table_consumption_policy.md
+01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/intraday_scanner_candidates_table_registry_entry.yaml
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/intraday_scanner_framework_and_definitions_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/intraday_scanner_candidates_table_target_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/validators/outputs/intraday_scanner_candidates_table_validators.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Recommended action:
+
+```text
+Refresh the Data Foundation outputs/scanner leaf so graph queries distinguish
+daily coarse scanner v0.3 from intraday first-push scanner v0.1.
+```
+
+Root action:
+
+```text
+No immediate root rebuild. Include in the next official foundations leaf refresh
+or root integration batch.
+```
+
+Owner:
+
+```text
+Modulo 01 / Data Foundation outputs scanner governance
+```
+
+Notes:
+
+```text
+Validation: python -m pytest C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_intraday_scanner_candidates_table_builder_v0_1.py -q
+Result: 1 passed.
+Controlled replay: C:/TSIS_Data/tests/test_runs/2026-06-30/intraday_scanner_candidates_replay_20250102_20250110_v0_1/
+selected_intraday_in_play_candidate_rows = 102
+full_universe_claim = false
+Runner telemetry fix: run_intraday_scanner_candidates_materialization_v0_1.ps1
+now avoids blocking stdout/stderr Peek()/ReadToEnd() while the Python worker is
+alive, so long monthly windows can keep heartbeat updates flowing.
+```
+
+### GFQ-20260630-004 - Intraday scanner quote-guarded successor gate
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+01_foundations/module_contracts/outputs/
+01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md
+```
+
+Reason:
+
+```text
+The intraday scanner now has an explicit quote-guarded successor gate.
+intraday_scanner_candidates_table_v0_1 remains raw ohlcv_1m controlled replay
+evidence only. The next institutional candidate must be
+intraday_scanner_candidates_table_v0_2_quote_guarded_candidate and consume the
+raw ohlcv_1m + repair_manifest_lt1b_v0_1.parquet overlay before any
+20-year canonical scanner promotion.
+```
+
+Changed paths:
+
+```text
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/intraday_scanner_framework_and_definitions_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/intraday_scanner_candidates_table_target_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Recommended action:
+
+```text
+Refresh the Data Foundation outputs/scanner leaf so graph queries show the
+dependency between intraday scanner v0.2 and the ohlcv_1m_quote_guarded repair
+manifest.
+```
+
+Root action:
+
+```text
+No immediate root rebuild. Include in the next official foundations leaf refresh
+or root integration batch.
+```
+
+Owner:
+
+```text
+Modulo 01 / Data Foundation outputs scanner governance
+```
+
+Notes:
+
+```text
+The LT1B quote-guarded manifest is now promoted, but no scanner parquet has
+been promoted. The entry now records that raw +50% spikes not confirmed by
+quote-guarded bars must be preserved as evidence and rejected from selected
+in-play candidates.
+```
+
+### GFQ-20260703-001 - Quotes post-copy parity audit protocol
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+01_foundations/module_contracts/quotes/
+scripts/data_ops/
+data_ops_manifests/quotes_parity_audit
+```
+
+Reason:
+
+```text
+The completed D:/quotes -> E:/TSIS/data/quotes_ recovery clone now has a
+documented post-copy parity audit protocol before any downstream promotion.
+The protocol defines Phase A structural path/size parity and Phase B full
+SHA256 parity, both sharded across the top-level ticker roster with independent
+manifests, heartbeat, PID files, summary CSVs and mismatch evidence.
+```
+
+Changed paths:
+
+```text
+01_TSIS_backtest_SmallCaps/scripts/data_ops/audit_quotes_clone_parity.py
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/quotes/quotes_staging_clone_runbook_v0_1.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Recommended action:
+
+```text
+Refresh the quotes/data-ops recovery leaf so graph queries know that
+E:/TSIS/data/quotes_ is still blocked pending parity audit, and that promotion
+requires the structural audit at minimum plus optional full SHA256 evidence for
+the strongest byte-level parity claim.
+```
+
+Root action:
+
+```text
+No immediate root rebuild. Include in the next official foundations leaf refresh
+or root integration batch after the overnight audit evidence exists.
+```
+
+Owner:
+
+```text
+Modulo 01 / Data Foundation quotes recovery governance
+```
+
+Notes:
+
+```text
+No audit run was launched by this documentation change. The audit is intended
+for overnight terminal execution. Syntax of audit_quotes_clone_parity.py was
+checked with Python AST parsing before documenting the commands.
+```
+
+
+### GFQ-20260704-002 - State observable eligibility contract
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+01_foundations/module_contracts/outputs/
+01_foundations/canonical_schemas/outputs/
+```
+
+Reason:
+
+```text
+A cross-output contract defines which source columns or column groups may feed future market_state/event_state builders, with cutoff, quality gate, allowed usage and status. Formula governance is now also closed for declared derived observables.
+```
+
+Changed paths:
+
+```text
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_observable_eligibility_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+00_CTO/CHANGELOG.md
+```
+
+Recommended action:
+
+```text
+Refresh the Data Foundation outputs/state-composition leaf so future graph queries route agents to state_observable_eligibility_contract_v0_1.md and state_derived_observables_formula_contract_v0_1.md before state builder, ML/RL or AlphaEvolve work.
+```
+
+Root action:
+
+```text
+No immediate root rebuild. Include in the next official foundations leaf refresh or root integration batch.
+```
+
+Owner:
+
+```text
+Modulo 01 / Data Foundation market state governance
+```
+
+Notes:
+
+```text
+Eligibility, formula, timestamp policy and snapshot role gates are complete for declared scope. State builder contract, validators and controlled fixtures remain next gates.
+```
+
+### GFQ-20260704-003 - State derived observable formulas contract
+
+Status: pending
+Severity: HIGH
+Slice: 01_foundations / module_contracts / outputs
+
+Summary:
+
+A new contract closes formula/window/cutoff governance for derived observables feeding future market_state/event_state builders. It complements state_observable_eligibility_contract_v0_1.md and keeps state materialization, ML/RL datasets and AlphaEvolve evaluators disabled until later gates exist.
+
+Changed paths:
+
+```text
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_observable_eligibility_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Expected graph update:
+
+- link derived formula contract to eligibility contract, market_state/event_state composition, coverage/lookback policy and state builder route;
+- mark formula gate complete for declared scope;
+- leave state builder contract and validators as next steps.
+
+### GFQ-20260704-004 - State decision timestamp policy contract
+
+Status: pending
+Severity: HIGH
+Slice: 01_foundations / module_contracts / outputs
+
+Summary:
+
+A new contract closes legal timestamp governance for future market_state/event_state builders. It complements observable eligibility and derived formula contracts by defining decision_timestamp_utc, state_cutoff_utc, availability time, received time, observation time, window legality and temporal leakage gates.
+
+Changed paths:
+
+```text
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_decision_timestamp_policy_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_observable_eligibility_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Expected graph update:
+
+- link timestamp policy to eligibility, formula, market_state/event_state composition and coverage/lookback policy;
+- mark timestamp policy complete for declared scope;
+- leave state builder contract and validators as next steps.
+
+### GFQ-20260704-005 - State snapshot roles contract
+
+Status: pending
+Severity: HIGH
+Slice: 01_foundations / module_contracts / outputs
+
+Summary:
+
+A new contract closes state_role governance for future market_state/event_state builders. It defines canonical snapshot roles, allowed timestamp types/windows, ML/RL/AlphaEvolve usage boundaries and role-specific leakage validators.
+
+Changed paths:
+
+```text
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_snapshot_roles_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_decision_timestamp_policy_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Expected graph update:
+
+- link snapshot roles to timestamp policy, eligibility, formula and market_state/event_state composition;
+- mark snapshot roles complete for declared scope;
+- leave state builder contract and validators as next steps.
 ## Entry template
 
 ```text
@@ -4367,3 +5040,203 @@ Root action:
 Owner:
 Notes:
 ```
+
+### GFQ-20260704-006 - State builder contract
+
+Status: `pending_next_outputs_leaf_refresh`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+01_foundations/module_contracts/outputs
+01_foundations/data_foundation_outputs_state_composition
+01_foundations/market_state_event_state_builder_route
+```
+
+Reason:
+
+```text
+A new contract closes the state builder assembly gate for future market_state/event_state builders. Eligibility, formula, timestamp, role and builder-contract gates are now complete for declared scope. Validators and controlled fixtures are the next gates before candidate materialization.
+```
+
+Changed paths:
+
+```text
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_builder_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Expected graph action:
+
+```text
+- add state_builder_contract_v0_1.md as completed gate after snapshot roles;
+- link it to eligibility, formula, timestamp and roles contracts;
+- link it to existing fixture/candidate builder evidence without promoting official tables;
+- route next work to leakage/formula/timestamp/role/builder validators and controlled fixtures.
+```
+### GFQ-20260704-007 - Event candidate tables contract
+
+Status: `pending_next_outputs_leaf_refresh`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+01_foundations/module_contracts/outputs
+01_foundations/data_foundation_outputs_state_composition
+01_foundations/event_candidate_tables_route
+```
+
+Reason:
+
+```text
+A new contract defines daily/1m candidate event tables as the missing layer between scanner candidates and event_state. It introduces daily_strategy_candidate_events_table_v0_1 and intraday_1m_strategy_candidate_events_table_v0_1 as not-materialized targets.
+```
+
+Changed paths:
+
+```text
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_tables_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Expected graph action:
+
+```text
+- add event_candidate_tables_contract_v0_1.md as completed route contract;
+- link scanners to daily/1m candidate event targets;
+- link candidate events to future event_windows expansion and event_state fixtures;
+- keep event/state/outcome/ML/RL/AlphaEvolve boundaries explicit.
+```
+### GFQ-20260704-008 - Event candidate table schema contracts
+
+Status: `pending_next_outputs_leaf_refresh`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+01_foundations/canonical_schemas/outputs
+01_foundations/event_candidate_tables_route
+01_foundations/data_foundation_outputs_state_composition
+```
+
+Reason:
+
+```text
+Nuevos schema contracts canonicos definen la forma requerida de daily_strategy_candidate_events_table_v0_1 e intraday_1m_strategy_candidate_events_table_v0_1. Cierran el paso de schema, pero no materializan tablas de eventos.
+```
+
+Changed paths:
+
+```text
+01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/daily_strategy_candidate_events_table_schema_contract.md
+01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/intraday_1m_strategy_candidate_events_table_schema_contract.md
+01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_tables_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Expected graph action:
+
+```text
+- anadir nodos de schema para eventos candidatos daily/intradia;
+- conectarlos con event_candidate_tables_contract_v0_1.md y futuros validators/builders;
+- preservar las fronteras scanner/event/event_window/event_state/outcome;
+- mantener materializacion oficial, ML/RL y AlphaEvolve deshabilitados.
+```
+### GFQ-20260704-009 - Event candidate table validators contract
+
+Status: `pending_next_outputs_leaf_refresh`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+01_foundations/module_contracts/outputs
+01_foundations/event_candidate_tables_route
+01_foundations/data_foundation_outputs_state_composition
+```
+
+Reason:
+
+```text
+Nuevo contrato de validators define que debe fallar antes de construir o consumir daily_strategy_candidate_events_table_v0_1 e intraday_1m_strategy_candidate_events_table_v0_1. Cierra el contrato de validators, pero no implementa validators ejecutables.
+```
+
+Changed paths:
+
+```text
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_table_validators_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_tables_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Expected graph action:
+
+```text
+- anadir nodo event_candidate_table_validators_contract_v0_1;
+- conectarlo a schemas daily/intradia y event_candidate_tables_contract_v0_1;
+- enrutar siguiente trabajo a validators ejecutables, fixtures y builders candidate;
+- preservar que no hay materializacion oficial ni ML/RL/AlphaEvolve habilitado.
+```
+### GFQ-20260704-010 - Canonical State vs Representation Layer contract
+
+Status: `pending_next_outputs_leaf_refresh`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+01_foundations/module_contracts/outputs
+01_foundations/data_foundation_outputs_state_composition
+01_foundations/representation_layer_boundary
+```
+
+Reason:
+
+```text
+Nuevo contrato separa Canonical State de Representation Layer. Cierra la frontera conceptual para evitar que scores, embeddings, parameter grids, semantic states o thresholds optimizados entren como verdad base de market_state/event_state.
+```
+
+Changed paths:
+
+```text
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_canonical_vs_representation_layer_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Expected graph action:
+
+```text
+- anadir nodo state_canonical_vs_representation_layer_contract_v0_1;
+- conectarlo despues de state_builder/event_candidate validators y antes de semantic_state_representation_contract futuro;
+- distinguir Canonical State de Representation Candidate;
+- mantener schemas oficiales, materializacion y ML/RL/AlphaEvolve production deshabilitados.
+```
+

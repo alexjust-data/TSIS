@@ -1,3 +1,10 @@
+﻿## 2026-07-04 - Mandatory data plane reading for minute work
+
+- Promoted `E:/TSIS/data/README.md` to mandatory base reading for agents.
+- Declared `E:/TSIS/data/ohlcv_1m` as the canonical physical root for minute/OHLCV 1m work.
+- Reason: prevent future agents from using historical minute roots, treating raw 1m as corrected in place, or bypassing governed repair overlays after the 1m impossible-candle / quote-guarded LT1B incident.
+- Queued the semantic change in `00_CTO/GRAPHIFY_REFRESH_QUEUE.md` and `01_TSIS_backtest_SmallCaps/01_foundations/GRAPHIFY_REFRESH_QUEUE.md` for the next official Graphify refresh.
+
 ## 2026-06-29 - Master intraday quote-guarded candidate route
 
 - Documented the `master_intraday_bar_table_v0_2_candidate_quote_guarded`
@@ -243,51 +250,51 @@ git status --short
 `CHANGELOG.md` es:
 
 ```text id="cl1"
-la memoria histórica oficial del proyecto
+la memoria histÃ³rica oficial del proyecto
 ```
 
-Ahora mismo está vacío (“L”) 
+Ahora mismo estÃ¡ vacÃ­o (â€œLâ€) 
 y eso es normal al empezar.
 
 ---
 
-# Lo MÁS importante
+# Lo MÃS importante
 
 NO es:
 
 ```text id="cl2"
-“un log técnico gigante”
+â€œun log tÃ©cnico giganteâ€
 ```
 
 NO es:
 
 ```text id="cl3"
-“todos los commits pegados”
+â€œtodos los commits pegadosâ€
 ```
 
 NO es:
 
 ```text id="cl4"
-“historial Git duplicado”
+â€œhistorial Git duplicadoâ€
 ```
 
 ---
 
 # Entonces:
 
-# ¿qué es realmente?
+# Â¿quÃ© es realmente?
 
 Es:
 
 ```text id="cl5"
-historia semántica institucional
+historia semÃ¡ntica institucional
 ```
 
 ---
 
 # Git ya guarda:
 
-* líneas cambiadas
+* lÃ­neas cambiadas
 * commits
 * archivos
 
@@ -296,7 +303,7 @@ historia semántica institucional
 # CHANGELOG guarda:
 
 ```text id="cl6"
-qué cambió conceptualmente
+quÃ© cambiÃ³ conceptualmente
 ```
 
 ---
@@ -309,7 +316,7 @@ Git commit:
 feat: add universe active status filters
 ```
 
-Eso está bien para Git.
+Eso estÃ¡ bien para Git.
 
 ---
 
@@ -329,36 +336,36 @@ v0.3.0
 # CHANGELOG responde:
 
 ```text id="cl9"
-cómo evolucionó TSIS
+cÃ³mo evolucionÃ³ TSIS
 ```
 
 NO:
 
 ```text id="cl10"
-qué líneas cambiaron exactamente
+quÃ© lÃ­neas cambiaron exactamente
 ```
 
 ---
 
-# Qué pondría yo en tu caso
+# QuÃ© pondrÃ­a yo en tu caso
 
 Ahora mismo probablemente:
 
 ```md id="cl11"
 # TSIS Changelog
 
-Todos los cambios institucionales relevantes del proyecto se registran aquí.
+Todos los cambios institucionales relevantes del proyecto se registran aquÃ­.
 
 El objetivo NO es duplicar Git commits.
 
 El objetivo es registrar:
 
-- milestones arquitectónicos;
-- cambios semánticos importantes;
+- milestones arquitectÃ³nicos;
+- cambios semÃ¡nticos importantes;
 - promotion states;
 - breaking changes;
 - releases institucionales;
-- evolución conceptual del sistema.
+- evoluciÃ³n conceptual del sistema.
 ```
 
 ---
@@ -370,7 +377,7 @@ El objetivo es registrar:
 # Primera release
 
 ```md id="cl12"
-## v0.1.0 — Initial Institutional Foundation
+## v0.1.0 â€” Initial Institutional Foundation
 
 ### Added
 
@@ -389,10 +396,10 @@ This release establishes the foundational governance and research architecture o
 
 ---
 
-# Luego más adelante:
+# Luego mÃ¡s adelante:
 
 ```md id="cl13"
-## v0.2.0 — Data Governance Layer
+## v0.2.0 â€” Data Governance Layer
 
 ### Added
 
@@ -412,7 +419,7 @@ This release establishes the foundational governance and research architecture o
 # Luego:
 
 ```md id="cl14"
-## v0.3.0 — Universe Builder Institutionalization
+## v0.3.0 â€” Universe Builder Institutionalization
 
 ### Added
 
@@ -433,7 +440,7 @@ This release establishes the foundational governance and research architecture o
 
 ---
 
-# Lo MÁS importante
+# Lo MÃS importante
 
 NO registrar ruido.
 
@@ -448,7 +455,7 @@ NO registrar ruido.
 - changed variable name
 ```
 
-Eso NO pertenece aquí.
+Eso NO pertenece aquÃ­.
 
 Eso pertenece a Git.
 
@@ -462,11 +469,11 @@ cambios con importancia institucional
 
 ---
 
-# Qué tipos de cosas sí van aquí
+# QuÃ© tipos de cosas sÃ­ van aquÃ­
 
 ---
 
-# Sí:
+# SÃ­:
 
 * nueva arquitectura
 * nuevo pipeline
@@ -475,16 +482,16 @@ cambios con importancia institucional
 * breaking changes
 * promotion institutional
 * nuevas policies
-* cambios epistemológicos
+* cambios epistemolÃ³gicos
 * nuevo simulador
-* nueva ontología
-* nueva metodología
+* nueva ontologÃ­a
+* nueva metodologÃ­a
 
 ---
 
 # NO:
 
-* pequeños fixes
+* pequeÃ±os fixes
 * imports
 * cleanup trivial
 * prints
@@ -493,7 +500,7 @@ cambios con importancia institucional
 
 ---
 
-# Lo MÁS importante
+# Lo MÃS importante
 
 Tu proyecto tiene:
 
@@ -513,33 +520,33 @@ historia evolutiva del sistema
 # NO:
 
 ```text id="cl18"
-diario técnico caótico
+diario tÃ©cnico caÃ³tico
 ```
 
 ---
 
-# Cómo lo usarán agentes
+# CÃ³mo lo usarÃ¡n agentes
 
 MUY importante.
 
-Los agentes leerán CHANGELOG para entender:
+Los agentes leerÃ¡n CHANGELOG para entender:
 
-* qué evolucionó
-* qué cambió conceptualmente
-* qué es estable
-* qué se rompió
-* qué fue promocionado
-* qué schemas cambiaron
-* qué releases existen
+* quÃ© evolucionÃ³
+* quÃ© cambiÃ³ conceptualmente
+* quÃ© es estable
+* quÃ© se rompiÃ³
+* quÃ© fue promocionado
+* quÃ© schemas cambiaron
+* quÃ© releases existen
 
 ---
 
-# Mi recomendación REAL
+# Mi recomendaciÃ³n REAL
 
-Tu CHANGELOG debería ser:
+Tu CHANGELOG deberÃ­a ser:
 
 * corto
-* semántico
+* semÃ¡ntico
 * institucional
 * estable
 * limpio
@@ -549,17 +556,17 @@ Tu CHANGELOG debería ser:
 
 # Sinceramente:
 
-# probablemente deberías pensar en él como:
+# probablemente deberÃ­as pensar en Ã©l como:
 
 ```text id="cl19"
 historia constitucional de TSIS
 ```
 
-NO como log técnico.
+NO como log tÃ©cnico.
 
 ---
 
-## v0.2.1 — Project-wide scientific justification standard
+## v0.2.1 â€” Project-wide scientific justification standard
 
 ### Changed
 
@@ -584,7 +591,7 @@ Decision TSIS -> Evidencia directa -> Obligacion tecnica -> Limitacion abierta
 
 ---
 
-## v0.2.0 — Module 01 official Graphify leaf publication
+## v0.2.0 â€” Module 01 official Graphify leaf publication
 
 ### Added
 

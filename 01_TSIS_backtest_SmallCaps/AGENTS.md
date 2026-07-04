@@ -1,4 +1,4 @@
-# Contrato Local de Agentes - Modulo 01
+﻿# Contrato Local de Agentes - Modulo 01
 
 ## 0. Regla inicial obligatoria de comunicacion `English`
 
@@ -188,19 +188,27 @@ Los agentes deben priorizar:
 
 Antes de trabajar con datasets, price views, corporate actions, reconciliacion externa, backtest o ML, los agentes deben leer tambien:
 
-1. `01_foundations/module_contracts/data_storage_topology_and_target_state.md`
-2. `01_foundations/module_contracts/event_families_and_reference_inventory.md`
-3. `01_foundations/module_contracts/price_semantics_and_adjustment_policy.md`
-4. `01_foundations/module_contracts/price_views_registry.md`
-5. `01_foundations/module_contracts/corporate_actions_adjustment_methodology.md`
-6. `01_foundations/module_contracts/external_price_comparison_caveats.md`
-7. `01_foundations/module_contracts/policy_explanation_standard.md`
+1. `E:/TSIS/data/README.md`
+2. `01_foundations/module_contracts/data_storage_topology_and_target_state.md`
+3. `01_foundations/module_contracts/event_families_and_reference_inventory.md`
+4. `01_foundations/module_contracts/price_semantics_and_adjustment_policy.md`
+5. `01_foundations/module_contracts/price_views_registry.md`
+6. `01_foundations/module_contracts/corporate_actions_adjustment_methodology.md`
+7. `01_foundations/module_contracts/external_price_comparison_caveats.md`
+8. `01_foundations/module_contracts/policy_explanation_standard.md`
 
 La razon es institucional:
 
 - el modulo no contiene un unico "precio";
 - no contiene una unica familia de market data;
 - y no permite comparar series externas o internas sin declarar antes su semantica.
+
+La lectura de `E:/TSIS/data/README.md` es obligatoria porque el modulo usa
+precios desde un plano fisico externo al repositorio. Para minutos/1m, ese README
+fija `E:/TSIS/data/ohlcv_1m` como raiz fisica canonica y prohibe inferir que el
+raw esta corregido por el path. El motivo directo es el incidente de velas 1m
+imposibles y la posterior reparacion quote-guarded LT1B: una ruta o price view
+ambigua puede contaminar scanners, backtests, features y estados downstream.
 
 Por tanto, ningun agente debe abrir un trabajo de:
 

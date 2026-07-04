@@ -24,6 +24,7 @@ scanner / ticker in-play
 | `STRATEGY.md` | Definicion humana inicial de la estrategia DAS. |
 | `DAS_FRONTSIDE_STATE_AND_ALPHAEVOLVE_RESEARCH_PLAN_v0_1.md` | Plan de investigacion frontside, estados, after-hours, AlphaEvolve y relacion con Data Foundation. |
 | `DAS_CANDIDATE_STATE_TABLE_EXPERIMENTAL_SPEC_v0_1.md` | Especificacion de la tabla experimental para convertir candidatos DAS en filas medibles. |
+| `DAS_SCANNER_USAGE_AND_OVERLAY_RUNBOOK_v0_1.md` | Runbook operativo para consumir el scanner gobernado, declarar denominadores y evitar sesgo positivo en DAS. |
 
 ## Artefactos de trabajo
 
@@ -92,13 +93,42 @@ El reporte estadistico se escribe bajo:
 
 ## Relacion con el scanner general
 
-Cuando exista `daily_scanner_candidates_table`, DAS debe consumirla como
-denominador general de tickers in-play.
+`daily_scanner_candidates_table_v0_2` existe hoy como builder y replay
+controlado, no como tabla oficial promocionada en `E:/TSIS/data`.
 
-Hasta entonces, las estadisticas DAS deben declararse como:
+DAS debe consumir esa tabla como denominador cuando estudie poblaciones de
+candidatos. El manual operativo vive en:
+
+```text
+DAS_SCANNER_USAGE_AND_OVERLAY_RUNBOOK_v0_1.md
+```
+
+Regla:
+
+```text
+scanner row = donde mirar
+DAS state row = que estructura frontside/DAS aparecio
+```
+
+Si un run DAS no consume `daily_scanner_candidates_table_v0_2` y nace solo del
+detector/notebook DAS actual, sus estadisticas deben declararse como:
 
 ```text
 conditional_on_current_das_detector
 ```
 
 y no como estadisticas poblacionales de todo el mercado.
+
+Una vez exista un replay largo de `daily_scanner_candidates_table_v0_2`, los
+runs DAS deben declarar si usan:
+
+```text
+all_filters_passed
+selected_any_profile
+selected_trade_station_like_profile
+selected_percent_change_profile
+selected_dollar_volume_tradability_profile
+selected_das_research_profile
+manual_human_seed
+conditional_on_current_das_detector
+```

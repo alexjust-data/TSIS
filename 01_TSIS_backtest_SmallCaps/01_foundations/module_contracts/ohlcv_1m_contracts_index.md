@@ -1,4 +1,4 @@
-# OHLCV 1m Contracts Index
+﻿# OHLCV 1m Contracts Index
 
 ## Rol
 
@@ -18,8 +18,8 @@ Indice navegable de documentos especificos de `ohlcv_1m` y de consumidores nacid
 - `ohlcv_1m_quote_guarded/ohlcv_1m_quote_guarded_single_reading_v0_1.md`
 - `ohlcv_1m_quote_guarded/ohlcv_1m_quote_guarded_repair_runbook_v0_1.md`
 
-Estado: contrato inicial de gobernanza y tooling ejecutable manifest-first.
-Todavia no autoriza mutacion de `ohlcv_1m_raw`.
+Estado: manifest LT1B promovido el 2026-07-03 como overlay quote-guarded.
+No autoriza mutacion de `ohlcv_1m_raw` ni crea un arbol fisico completo.
 
 ## `ohlcv_1m_split_normalized`
 

@@ -171,14 +171,18 @@ data_quality_report
 
 - `C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/README.md`
   - Mapa CTO activo de la capa scanner.
-  - Explica que scanner base decide a quien mirar, perfiles deciden como
-    inspeccionar, y ninguno reemplaza estado.
+  - Explica que el denominador base decide a quien se puede mirar, los perfiles
+    genericos deciden como inspeccionar, los overlays de estrategia vienen
+    despues, y ninguno reemplaza estado.
 
 - `C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_base_universe_and_profiles_contract_v0_2.md`
-  - Decision CTO activa: un scanner base con `common_stock`, `market_cap < 100M`,
-    `0.5 < last_price <= 20` y quality `usable/review`, mas perfiles de
-    visibilidad operativa, relative volume, percent change, tradability y DAS
-    research.
+  - Decision CTO activa: `base_in_play_universe_scanner_v0_2` se conserva como
+    identificador, pero significa `base_eligible_smallcap_denominator`:
+    `common_stock`, `market_cap < 100M`, `0.5 < last_price <= 20` y quality
+    `usable/review`.
+  - Los perfiles son paralelos, no filtros secuenciales; `relative_volume`
+    requiere intradia/as-of, `percent_change` requiere minimo, `dollar_volume`
+    es tradability y DAS queda como overlay seed provisional.
   - Incluye justificacion cientifica directa para no convertir volumen,
     pct-change, float o winners historicos en filtros universales sin estudio.
 
@@ -194,10 +198,23 @@ data_quality_report
 - `C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_definitions_trade_station_vs_broad_discovery_v0_1.md`
   - Conserva como referencia historica el modelo v0.1 de
     `trade_station_like_scanner_v0_1` y `broad_in_play_discovery_scanner_v0_1`.
-  - Registra que v0.2 reemplaza esa lectura por scanner base + perfiles.
+  - Registra que v0.2 reemplaza esa lectura por denominador base elegible +
+    perfiles paralelos + overlays posteriores.
 
 - `C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_to_market_state_promotion_path_v0_1.md`
   - Define la ruta desde scanner candidates hasta `institutional_market_state`.
+
+- `C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/strategy_scanner_overlay_policy_v0_1.md`
+  - Policy transversal para que cualquier estrategia consuma
+    `daily_scanner_candidates_table` como denominador, declare su denominador,
+    cree overlays propios sin contaminar Data Foundation y no reporte
+    estadisticas poblacionales desde muestras manuales o detectores sesgados.
+
+- `C:/TSIS_Data/00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/DAS_SCANNER_USAGE_AND_OVERLAY_RUNBOOK_v0_1.md`
+  - Puente operativo para que DAS consuma `daily_scanner_candidates_table_v0_2`
+    como denominador, declare denominadores (`all_filters_passed`,
+    `selected_any_profile`, `selected_trade_station_like_profile`, etc.) y
+    construya overlays experimentales sin sesgo de solo casos positivos.
 
 - `C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_1.md`
   - Autoridad operativa del framework de scanners.

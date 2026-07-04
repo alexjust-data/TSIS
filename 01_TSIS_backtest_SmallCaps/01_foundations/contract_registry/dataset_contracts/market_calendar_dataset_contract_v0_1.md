@@ -39,13 +39,13 @@ E:/TSIS/data/data_foundation_outputs/market_calendar/market_calendar_v0_1.parque
 Fuente local:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/data/reference/market_calendar_official_XNYS_20050101_20251231.parquet
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/data/reference/market_calendar_official_XNYS_20050101_20260309.parquet
 ```
 
 Metadata local:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/data/reference/market_calendar_official_XNYS_20050101_20251231.meta.json
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/data/reference/market_calendar_official_XNYS_20050101_20260309.meta.json
 ```
 
 Generador historico:
@@ -71,10 +71,10 @@ Nasdaq Stock Market Holiday Schedule
 calendar: XNYS
 timezone: America/New_York
 start: 2005-01-01
-end: 2025-12-31
-sessions: 5283
+end: 2026-03-09
+sessions: 5328
 first_session: 2005-01-03
-last_session: 2025-12-31
+last_session: 2026-03-09
 early_close_sessions: 45
 ```
 
@@ -124,4 +124,4 @@ Para promocion institucional completa:
 `market_calendar_v0_1` queda definido como output materializable inicial.
 
 No reemplaza futuros calendarios por venue, ni calendario live extendido mas
-alla de `2025-12-31`.
+alla de `2026-03-09` con las fuentes gobernadas actuales.

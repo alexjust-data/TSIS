@@ -31,33 +31,33 @@ physical_layout:
 
 source_lineage:
   upstream_dataset: local_official_market_calendar_candidate
-  source_parquet: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/data/reference/market_calendar_official_XNYS_20050101_20251231.parquet
-  source_meta_json: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/data/reference/market_calendar_official_XNYS_20050101_20251231.meta.json
+  source_parquet: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/data/reference/market_calendar_official_XNYS_20050101_20260309.parquet
+  source_meta_json: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/data/reference/market_calendar_official_XNYS_20050101_20260309.meta.json
   source_builder: scripts/agent05_build_market_calendar_official.py
   source_calendar: XNYS
   timezone: America/New_York
 
 expected_coverage:
   start: 2005-01-01
-  end: 2025-12-31
-  expected_rows: 5283
+  end: 2026-03-09
+  expected_rows: 5328
   first_session: 2005-01-03
-  last_session: 2025-12-31
+  last_session: 2026-03-09
   early_close_sessions: 45
 
 current_materialization:
-  build_run_id: market_calendar_v0_1_20260622T072422Z
-  created_at_utc: 2026-06-22T07:24:22.347311+00:00
-  rows: 5283
+  build_run_id: market_calendar_v0_1_20260630T193931Z
+  created_at_utc: 2026-06-30T19:39:31.308479+00:00
+  rows: 5328
   calendar: XNYS
   timezone: America/New_York
   first_session: 2005-01-03
-  last_session: 2025-12-31
+  last_session: 2026-03-09
   early_close_sessions: 45
   duplicate_session_count: 0
   hard_fail_count: 0
-  source_parquet_sha256: 8aac3ea4f7fbcaf6c394320f53acc1524bf5e5e3addbcd48ef31718bc0214228
-  output_sha256: 96bd60c124e6552d269f8846205ed28bf6e58881453a5bbb4f73ced0657b56d5
+  source_parquet_sha256: 5e423e444e1228a671a05159eda0a707f9bb2446f5b17860740f3001edbbd954
+  output_sha256: cbf1879261866d980c5a8542fadf683dbc91f96b80b7865055417a16d1e6e87c
   manifest: E:/TSIS/data/data_foundation_outputs/market_calendar/_market_calendar_manifest_v0_1.json
   summary: E:/TSIS/data/data_foundation_outputs/market_calendar/_market_calendar_summary_v0_1.csv
 
@@ -95,7 +95,7 @@ allowed_consumers:
     - venue_specific_execution_behavior
 
 known_limitations:
-  - ends_at_2025_12_31
+  - ends_at_2026_03_09_current_source_limit
   - xnyse_calendar_only
   - no_halt_or_venue_outage_information
   - source_is_local_official_candidate_not_raw_nyse_download

@@ -14,9 +14,17 @@ Para scanner candidate selection, leer:
 05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/README.md
 ```
 
-Esa carpeta explica que el scanner base decide a quien mirar, que los perfiles
-deciden como ordenar o inspeccionar, y que ninguno define estrategia ni
-reemplaza `market_state`/`event_state`.
+Esa carpeta explica que el denominador base decide a quien se puede mirar, que
+los perfiles genericos deciden como ordenar o inspeccionar, que los overlays de
+estrategia vienen despues, y que ninguno define estrategia ni reemplaza
+`market_state`/`event_state`.
+
+Para el snapshot CTO de tablas de estado, readiness, uso operativo y secuencia
+hacia ML/RL, leer:
+
+```text
+05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01.md
+```
 
 ---
 

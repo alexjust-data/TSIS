@@ -1,4 +1,4 @@
-# START_HERE - TSIS
+﻿# START_HERE - TSIS
 
 Fecha de creacion: 2026-06-12
 
@@ -84,6 +84,7 @@ C:\TSIS_Data\VERSIONING_STANDARDS.md
 C:\TSIS_Data\RESEARCH_PHILOSOPHY.md
 C:\TSIS_Data\README.md
 C:\TSIS_Data\LONG_RUNNING_OPERATIONS_CONTRACT.md
+E:\TSIS\data\README.md
 
 Despues lee completos estos contratos del sub-modulos
 
@@ -124,6 +125,7 @@ C:\TSIS_Data\PROJECT_OPERATING_SYSTEM.md
 C:\TSIS_Data\VERSIONING_STANDARDS.md
 C:\TSIS_Data\RESEARCH_PHILOSOPHY.md
 C:\TSIS_Data\README.md
+E:\TSIS\data\README.md
 
 Dentro hemos ido trabajando en la auditoria de la data descargada desde Polygon:
 
@@ -133,6 +135,8 @@ C:\TSIS_Data\01_TSIS_backtest_SmallCaps\CHANGELOG.md
 C:\TSIS_Data\01_TSIS_backtest_SmallCaps\LOCAL_RULES.md
 
 Lee todos esos archivos completos y ponte al dia antes de hacer cualquier otra cosa.
+
+Si el trabajo toca minutos/1m, scanners intradia, backtests intradia o reparaciones de velas, la lectura de E:\TSIS\data\README.md es obligatoria antes de proponer o ejecutar rutas. La raiz fisica canonica de minutos es E:\TSIS\data\ohlcv_1m.
 Cuando los hayas leido y entendido, responde solo:
 
 ok
@@ -316,39 +320,39 @@ Nada importante debe quedar solo en conversaciones. Si una regla, decision, prot
 
 # Sersan Distillation Harness
 
-Cuando termine de ponerse al día, haga primero un readiness gate y después ejecute el Harness solo si el contrato está suficientemente
+Cuando termine de ponerse al dÃ­a, haga primero un readiness gate y despuÃ©s ejecute el Harness solo si el contrato estÃ¡ suficientemente
 cerrado.
 
 Prompt recomendado:
 
-Cuando termines la puesta al día general y la puesta al día CTO completa, no preguntes por el siguiente paso salvo que encuentres un bloqueo real.
+Cuando termines la puesta al dÃ­a general y la puesta al dÃ­a CTO completa, no preguntes por el siguiente paso salvo que encuentres un bloqueo real.
 
 Objetivo:
 
-Ejecutar el Sersan Distillation Harness de forma autónoma sobre el corpus completo, siguiendo los contratos ya existentes.
+Ejecutar el Sersan Distillation Harness de forma autÃ³noma sobre el corpus completo, siguiendo los contratos ya existentes.
 
 Antes de ejecutar:
-1. Confirma qué Harness vas a ejecutar.
-2. Confirma qué contratos mandan.
-3. Confirma qué corpus entra en scope.
-4. Confirma qué artefactos deben generarse.
-5. Confirma qué validaciones deben pasar.
-6. Confirma dónde se escribirán outputs, manifests, reports y changelog.
+1. Confirma quÃ© Harness vas a ejecutar.
+2. Confirma quÃ© contratos mandan.
+3. Confirma quÃ© corpus entra en scope.
+4. Confirma quÃ© artefactos deben generarse.
+5. Confirma quÃ© validaciones deben pasar.
+6. Confirma dÃ³nde se escribirÃ¡n outputs, manifests, reports y changelog.
 
-Si todo está claro, ejecuta.
+Si todo estÃ¡ claro, ejecuta.
 
-Si falta una pieza contractual crítica, no improvises. Detente y entrega:
+Si falta una pieza contractual crÃ­tica, no improvises. Detente y entrega:
 - readiness_report.md;
 - blockers;
 - propuesta concreta de contrato faltante.
 
-Durante la ejecución:
+Durante la ejecuciÃ³n:
 - no trabajes desde C:\Users ni C:\tmp;
 - todo script/generador debe vivir dentro del proyecto;
 - todo output debe tener run_manifest;
 - todo resultado debe tener quality_report;
-- no sobrescribas artefactos institucionales sin versión o justificación;
-- actualiza changelog si hay cambio semántico;
+- no sobrescribas artefactos institucionales sin versiÃ³n o justificaciÃ³n;
+- actualiza changelog si hay cambio semÃ¡ntico;
 - valida rutas, hashes, manifiestos y ausencia de fugas fuera del proyecto.
 
 Al terminar:
@@ -358,7 +362,7 @@ Al terminar:
 - warnings;
 - blockers;
 - estado final: pass, pass_with_warnings o fail;
-- siguiente acción recomendada.
+- siguiente acciÃ³n recomendada.
 
 
 ## prompt 
@@ -386,14 +390,14 @@ Contratos que mandan:
 
 Instrucciones:
 1. Ejecuta un readiness gate final.
-2. Si el readiness gate pasa, no preguntes más y continúa.
+2. Si el readiness gate pasa, no preguntes mÃ¡s y continÃºa.
 3. Usa el inventario de corpus existente.
 4. Procesa todos los lesson packs pendientes.
 5. No rehagas pilotos ya completados salvo que sea necesario para normalizar schema o validar compatibilidad.
 6. Todo generador, validador, config o script debe vivir dentro del proyecto, no en C:\Users ni C:\tmp.
 7. Todo output debe ir bajo:
    C:\TSIS_Data\00_CTO\12_TSIS_COGNITIVE_ARCHITECTURE\20_SERSAN_DISTILLATION_HARNESS\sersan_distillation_artifacts
-8. Cada lesson pack debe producir, como mínimo:
+8. Cada lesson pack debe producir, como mÃ­nimo:
    - lesson_pack_manifest.json
    - lesson_sections.jsonl
    - image_evidence_index.csv
@@ -401,8 +405,8 @@ Instrucciones:
    - tsis_translation_map.csv
    - quality_report.md
    - run_manifest.json
-9. Lee las imágenes referenciadas cuando sean relevantes para entender reglas mecánicas, gráficos, setups, mapas, optimización o evidencia visual.
-10. Si un lesson pack tiene bloqueo crítico, márcalo como blocked con explicación y continúa con el siguiente. No detengas todo el corpus por un bloqueo
+9. Lee las imÃ¡genes referenciadas cuando sean relevantes para entender reglas mecÃ¡nicas, grÃ¡ficos, setups, mapas, optimizaciÃ³n o evidencia visual.
+10. Si un lesson pack tiene bloqueo crÃ­tico, mÃ¡rcalo como blocked con explicaciÃ³n y continÃºa con el siguiente. No detengas todo el corpus por un bloqueo
 local salvo que afecte al contrato global.
 11. Valida rutas, hashes, schemas, manifests y ausencia de fugas fuera del proyecto.
 12. Al final crea un corpus-level report con:
@@ -411,15 +415,15 @@ local salvo que afecte al contrato global.
    - pass_with_warnings;
    - blocked;
    - fail;
-   - reglas mecánicas extraídas;
+   - reglas mecÃ¡nicas extraÃ­das;
    - mapas TSIS creados;
    - warnings repetidos;
    - deuda contractual;
-   - recomendación de promoción o siguiente fase.
+   - recomendaciÃ³n de promociÃ³n o siguiente fase.
 13. Actualiza 00_CTO/CHANGELOG.md si hay cambio institucional.
 
 Modo de trabajo:
-Actúa en fases internas:
+ActÃºa en fases internas:
 - Supervisor: planifica lotes y readiness gate.
 - Worker: procesa lesson packs.
 - Validator: valida contrato y artefactos.
@@ -445,8 +449,8 @@ Humano
       -> fase Validator
       -> fase Auditor
 
-Es decir: hemos construido los contratos, carpetas, artefactos y reglas del Harness, pero todavía no hemos implementado un orquestador real que lance
+Es decir: hemos construido los contratos, carpetas, artefactos y reglas del Harness, pero todavÃ­a no hemos implementado un orquestador real que lance
 varios agentes independientes en paralelo.
 
-Para esta fase Sersan, eso está bien. Primero necesitamos demostrar que el ciclo completo funciona de forma secuencial y trazable. Después, si escala
-mal o tarda demasiado, el siguiente paso sería construir el orquestador multi-agente real.
+Para esta fase Sersan, eso estÃ¡ bien. Primero necesitamos demostrar que el ciclo completo funciona de forma secuencial y trazable. DespuÃ©s, si escala
+mal o tarda demasiado, el siguiente paso serÃ­a construir el orquestador multi-agente real.

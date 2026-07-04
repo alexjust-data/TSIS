@@ -35,7 +35,7 @@ source_lineage:
     - market_calendar_v0_1
   expectation_policy_version: expected_data_calendar_policy_v0_1
   source_instrument_master_build_run_id: instrument_master_v0_1_20260621T145725Z
-  source_market_calendar_build_run_id: market_calendar_v0_1_20260622T072422Z
+  source_market_calendar_build_run_id: market_calendar_v0_1_20260630T193931Z
 
 expected_families:
   - daily_raw
@@ -44,22 +44,22 @@ expected_families:
   - quotes_raw
 
 current_materialization:
-  build_run_id: expected_data_calendar_v0_1_20260622T141019Z
-  created_at_utc: 2026-06-22T14:10:19.761068+00:00
-  rows: 29029152
+  build_run_id: expected_data_calendar_v0_1_20260630T194807Z
+  created_at_utc: 2026-06-30T19:48:07.470685+00:00
+  rows: 29478796
   ticker_count: 4824
   dataset_family_count: 4
   first_session: 2005-01-03
-  last_session: 2025-12-31
-  rows_per_family: 7257288
-  parquet_file_count: 84
-  output_tree_sha256: 1c7571cdcefc1ffd3f0f6cda921d32d64dee33cc41c3676809686c1bc575a57f
+  last_session: 2026-03-09
+  rows_per_family: 7369699
+  parquet_file_count: 88
+  output_tree_sha256: c8ccf548976920ea5e4d6b666ce6f70a009bc98da63e23a2f29a83e7e7cfd500
   duplicate_key_groups: 0
   invalid_window_count: 0
   hard_fail_count: 0
   manifest: E:/TSIS/data/data_foundation_outputs/expected_data_calendar/_expected_data_calendar_manifest_v0_1.json
   summary: E:/TSIS/data/data_foundation_outputs/expected_data_calendar/_expected_data_calendar_summary_v0_1.csv
-  test_evidence: C:/TSIS_Data/tests/test_runs/2026-06-22/data_foundation_outputs_instrument_master_market_calendar_expected_data_calendar_v0_1/
+  test_evidence: pytest 2026-07-01 targeted market_calendar_expected_data_calendar_master_daily_contracts
 
 allowed_consumers:
   permitted:

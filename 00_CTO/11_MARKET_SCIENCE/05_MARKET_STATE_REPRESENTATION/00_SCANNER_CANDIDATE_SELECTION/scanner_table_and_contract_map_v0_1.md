@@ -23,11 +23,19 @@ La decision CTO activa para nuevo trabajo es v0.2:
 
 ```text
 base_in_play_universe_scanner_v0_2
--> profiles / views / rankings
+  = base_eligible_smallcap_denominator
+-> generic profiles / views / rankings
+-> optional strategy overlays
 ```
 
 Por tanto, este mapa describe lo que existe hoy en `01_foundations`, no lo que
 debe quedar como contrato final despues del refactor operativo.
+
+Regla de lectura:
+
+```text
+profiles are parallel flags over the base denominator, not sequential filters.
+```
 
 ## Autoridad operativa
 
@@ -70,6 +78,17 @@ percent_change_profile_v0_2.yaml
 dollar_volume_tradability_profile_v0_2.yaml
 das_research_profile_v0_2.yaml
 ```
+
+Semantica requerida:
+
+- `base_in_play_universe_scanner_v0_2` mantiene el ID, pero significa
+  `base_eligible_smallcap_denominator`.
+- `relative_volume_profile_v0_2` debe ser aceleracion de volumen intradia/as-of
+  antes de promocion.
+- `percent_change_profile_v0_2` debe exigir minimo declarado antes de top-N.
+- `dollar_volume_tradability_profile_v0_2` es tradability, no alpha.
+- `das_research_profile_v0_2` es seed provisional para overlay DAS, no scanner
+  DAS final.
 
 ## Implementacion
 
@@ -170,7 +189,8 @@ Significa:
 - hay notebook de inspeccion;
 - no hay promocion oficial full historical;
 - no debe consumirse como estado ML/RL final.
-- la semantica operativa debe migrar a base scanner + perfiles antes de
+- la semantica operativa debe migrar a denominador base elegible + perfiles
+  paralelos + overlays de estrategia antes de
   promocion amplia.
 
 ## Pendiente antes de promocion
@@ -182,3 +202,6 @@ Significa:
 5. Promocionar solo con manifest, changelog, registry status y consumo downstream claro.
 6. Refactorizar contratos/configs/builders de v0.1 a v0.2 antes de tratar el
    scanner como arquitectura estable.
+7. Alinear la implementacion v0.2 con la semantica revisada:
+   relative-volume intradia/as-of, percent-change con minimo, DAS como overlay
+   provisional y perfiles paralelos no secuenciales.

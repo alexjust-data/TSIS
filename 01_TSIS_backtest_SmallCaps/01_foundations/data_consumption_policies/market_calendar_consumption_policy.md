@@ -76,7 +76,7 @@ No puede inferir:
 
 ### `live_downstream_candidate`
 
-No queda habilitado para fechas posteriores a `2025-12-31` sin extension del
+No queda habilitado para fechas posteriores a `2026-03-09` sin extension del
 calendario y manifest nuevo.
 
 ## 5. Flags obligatorias

@@ -75,7 +75,16 @@ Antes de modificar este repositorio, todo agente debe leer en este orden:
 3. `VERSIONING_STANDARDS.md`
 4. `ARCHITECTURE_OVERVIEW.md`
 5. `RESEARCH_PHILOSOPHY.md`
-6. `LOCAL_RULES.md` de la carpeta o capa que vaya a modificar
+6. `E:/TSIS/data/README.md`
+7. `LOCAL_RULES.md` de la carpeta o capa que vaya a modificar
+
+`E:/TSIS/data/README.md` es lectura base obligatoria porque define el plano
+fisico de datos. Para cualquier trabajo con minutos/1m, scanners intradia,
+backtests intradia, reparaciones de velas o price views derivados de minutos,
+ese README fija que la raiz fisica canonica es `E:/TSIS/data/ohlcv_1m` y que el
+raw no debe tratarse como corregido in place. El motivo es evitar que se repita
+la ambiguedad que llevo al incidente de velas 1m imposibles y a la reparacion
+quote-guarded LT1B.
 
 Si una decisión local contradice un documento de nivel superior, manda el documento de nivel superior salvo que exista una excepción explícita y documentada.
 

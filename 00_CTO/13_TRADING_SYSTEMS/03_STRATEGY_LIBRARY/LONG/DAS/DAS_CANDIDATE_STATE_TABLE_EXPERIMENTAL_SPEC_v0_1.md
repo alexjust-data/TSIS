@@ -8,6 +8,7 @@ Documento relacionado:
 
 - `STRATEGY.md`  
 - `DAS_FRONTSIDE_STATE_AND_ALPHAEVOLVE_RESEARCH_PLAN_v0_1.md`  
+- `DAS_SCANNER_USAGE_AND_OVERLAY_RUNBOOK_v0_1.md`
 
 Run inicial de trabajo:
 
@@ -898,4 +899,3 @@ Este documento no:
 La tabla experimental DAS debe ayudarnos a aprender.
 
 No debe fingir que ya sabemos.
-

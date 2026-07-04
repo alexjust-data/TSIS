@@ -84,13 +84,13 @@ def test_market_calendar_schema_lineage_and_manifest_counts() -> None:
     validations = manifest["validations"]
 
     assert REQUIRED_COLUMNS <= set(df.columns)
-    assert len(df) == validations["row_count"] == 5283
+    assert len(df) == validations["row_count"] == 5328
     assert set(df["schema_version"]) == {"market_calendar_v0_1"}
     assert set(df["build_run_id"]) == {manifest["build_run_id"]}
     assert non_empty_string_mask(df["created_at_utc"]).all()
     assert non_empty_string_mask(df["source_calendar_artifact"]).all()
     assert df["session_date"].astype(str).min() == validations["first_session"] == "2005-01-03"
-    assert df["session_date"].astype(str).max() == validations["last_session"] == "2025-12-31"
+    assert df["session_date"].astype(str).max() == validations["last_session"] == "2026-03-09"
 
 
 def test_market_calendar_session_contract_rules() -> None:
@@ -140,4 +140,3 @@ def test_market_calendar_source_and_known_session_edges(tsis_artifacts_dir: Path
             },
         },
     )
-

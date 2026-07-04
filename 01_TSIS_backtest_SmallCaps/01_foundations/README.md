@@ -3,6 +3,7 @@
 ## Menu
 
 - [Rol de esta carpeta](#rol-de-esta-carpeta)
+- [Gobernanza local](#gobernanza-local)
 - [Como leer los porcentajes](#como-leer-los-porcentajes)
 - [Completitud por familia](#completitud-por-familia)
 - [Resumen ejecutivo](#resumen-ejecutivo)
@@ -75,6 +76,24 @@ conversacion. Vive en:
 - [.graphifyignore](.graphifyignore)
 - [module_contracts/graphify/README.md](module_contracts/graphify/README.md)
 - [module_contracts/graphify/data_foundation_graph_and_table_design_protocol.md](module_contracts/graphify/data_foundation_graph_and_table_design_protocol.md)
+
+## Gobernanza local
+
+`01_foundations` tiene reglas y memoria local propias:
+
+- [LOCAL_RULES.md](LOCAL_RULES.md)
+- [CHANGELOG.md](CHANGELOG.md)
+
+Estas superficies no sustituyen la gobernanza del modulo padre. Refinan como se
+trabaja dentro de `01_foundations`.
+
+Regla practica:
+
+- `01_foundations/CHANGELOG.md` registra el detalle local de contratos,
+  schemas, registries, policies, validators, dossiers, module contracts,
+  protocolos y recovery docs;
+- `../CHANGELOG.md` registra el impacto institucional del modulo cuando el
+  cambio afecta downstream, promocion, operacion o reproducibilidad.
 
 ## Como leer los porcentajes
 

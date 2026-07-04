@@ -1,4 +1,98 @@
-# Changelog del Modulo 01
+﻿# Changelog del Modulo 01
+
+## v0.4.148 - Market State canonical representation boundary
+
+- Se anade `01_foundations/module_contracts/outputs/state_canonical_vs_representation_layer_contract_v0_1.md`.
+- El contrato formaliza la diferencia entre `Canonical State` y `Representation Layer`.
+- Queda explicito que `Canonical State` no es raw-only, pero tampoco una feature table experimental: derivadas estables pueden entrar con formula/cutoff, mientras parameter grids, scores, embeddings y semantic states viven como representation candidates.
+- No se cambia ningun schema oficial ni se habilita materializacion de state tables, representation candidates, ML/RL o AlphaEvolve production.
+## v0.4.147 - Market State event candidate validators contract
+
+- Se anade `01_foundations/module_contracts/outputs/event_candidate_table_validators_contract_v0_1.md`.
+- El contrato convierte los schemas daily/1m de eventos candidatos en gates de validacion: identidad, grano, definicion de evento, thresholds, tiempo/cutoff, lineage, quote-guarded, prohibiciones y consumer gates.
+- Queda explicito que el contrato no implementa codigo ni materializa tablas; validators ejecutables y builders/materializacion candidate siguen pendientes.
+- No se habilita tabla oficial de eventos, tabla de estado, dataset ML/RL ni evaluador AlphaEvolve.
+
+
+## v0.4.146 - Market State event candidate table schemas
+
+- Se anaden contratos de schema canonico para `daily_strategy_candidate_events_table_v0_1` e `intraday_1m_strategy_candidate_events_table_v0_1`.
+- Ambos schema contracts quedan marcados como completos para el scope declarado sin materializar tablas de eventos.
+- Se documentan grano requerido, primary keys, timestamp policies, lineage de fuentes, quality gates, reglas no-outcome y regla de promocion intradia quote-guarded.
+- El siguiente trabajo son validators y builders/materializacion candidate, no promocion oficial de state/event/outcome.
+
+## v0.4.145 - Market State event candidate tables
+
+- Se anade `01_foundations/module_contracts/outputs/event_candidate_tables_contract_v0_1.md` como la capa de anclas de eventos daily/1m que faltaba entre scanner candidates y event_state.
+- Se definen los targets conceptuales `daily_strategy_candidate_events_table_v0_1` e `intraday_1m_strategy_candidate_events_table_v0_1` sin materializarlos.
+- Se documenta la separacion scanner/event/event_window/event_state/outcome y las reglas de versionado de thresholds.
+- Este contrato por si solo no habilita tabla oficial de eventos, tabla de estado, dataset ML-ready, dataset RL ni evaluador AlphaEvolve.
+
+## v0.4.144 - Market State builder contract
+
+- Se anade `01_foundations/module_contracts/outputs/state_builder_contract_v0_1.md` como contrato de ensamblaje para futuros builders de `market_state_table` / `event_state_table`.
+- El gate del builder queda marcado como `complete_for_contract_defined_scope` despues de eligibility, formula derivada, decision timestamp y snapshot roles.
+- Se documentan config, registry de componentes fuente, consumo de observable/formula/timestamp/role, manifests, consumer gates y validators siguientes.
+- Este contrato por si solo no habilita tabla oficial de estado, dataset ML-ready, dataset RL ni evaluador AlphaEvolve.
+
+## v0.4.143 - Market State snapshot roles contract
+
+- Se anade `01_foundations/module_contracts/outputs/state_snapshot_roles_contract_v0_1.md` como gate de rol/uso para futuros builders de `market_state_table` / `event_state_table`.
+- El gate de snapshot roles queda marcado como `complete_for_contract_defined_scope` despues de observable eligibility, formula derivada y decision timestamp.
+- Se documentan fronteras de rol para discovery, event anchor, entry decision, risk, execution, RL transition y post-event analysis.
+- Este contrato por si solo no habilita tabla oficial de estado, dataset ML-ready, dataset RL ni evaluador AlphaEvolve.
+
+## v0.4.142 - Market State decision timestamp policy
+
+- Se anade `01_foundations/module_contracts/outputs/state_decision_timestamp_policy_v0_1.md` como gate de tiempo legal para futuros builders de `market_state_table` / `event_state_table`.
+- El gate de timestamp queda marcado como `complete_for_contract_defined_scope` despues de observable eligibility y formula derivada.
+- Se documenta la diferencia entre observation time, availability time, received time, state cutoff, decision timestamp y build time.
+- Este contrato por si solo no habilita tabla oficial de estado, dataset ML-ready, dataset RL ni evaluador AlphaEvolve.
+
+## v0.4.141 - Market State derived formula contract
+
+- Se anade `01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md` como gate de formula/ventana/cutoff para observables derivados que alimentaran futuros builders de `market_state_table` / `event_state_table`.
+- El gate de formula queda marcado como `complete_for_contract_defined_scope` despues del gate de observable eligibility.
+- Se documenta que AlphaEvolve, ML y RL solo pueden proponer variantes de formula como candidates versionados con source columns, ventanas, cutoffs, quality gates y tests explicitos.
+- Este contrato por si solo no habilita tabla oficial de estado, dataset ML-ready, dataset RL ni evaluador AlphaEvolve.
+
+## v0.4.140 - Market State observable eligibility contract
+
+- Se anade `01_foundations/module_contracts/outputs/state_observable_eligibility_contract_v0_1.md` como gate operativo entre schemas/componentes fuente y futuros builders de `market_state_table` / `event_state_table`.
+- El contrato queda completo para el scope declarado: Daily, Intradia 1m, Microestructura, Contexto As-Of, Short Constraints / Float / Live Alerts, support, quality, lineage y prohibiciones explicitas.
+- Se documenta que los gates de formula, timestamp y roles ya estan cerrados; state builder contract y validators siguen antes de cualquier materializacion controlada de state tables.
+- Este cambio no habilita dataset ML/RL/AlphaEvolve, evaluador, state builder ni materializacion E-root.
+## v0.4.139 - Quotes Phase B SHA256 workers escalation
+
+- Added resume support to the quotes parity auditor and relaunched Phase B SHA256 shards with `workers=2`.
+- Documented reused per-shard result counts and preserved pre-escalation evidence.
+
+## v0.4.138 - Quotes Phase B SHA256 all shards active
+
+- Started Phase B full SHA256 parity shards `s2`, `s3`, and `s4` with `workers=1` each.
+- Documented that all five SHA256 shards `s0..s4` are now active.
+
+## v0.4.138 - Mandatory minute data plane reading
+
+- Added `E:/TSIS/data/README.md` to the mandatory data/price reading path for Module 01 agents.
+- Canonical minute root for new 1m work is `E:/TSIS/data/ohlcv_1m`.
+- Reason: preserve the lesson from the impossible 1m candle / quote-guarded LT1B repair incident; future scanners, backtests, features and state builders must not infer minute authority from historical paths or bypass official overlays/manifests.
+- Queued the semantic change in the CTO and foundations Graphify refresh queues.
+
+## v0.4.137 - Quotes Phase B SHA256 s1 start
+
+- Started full SHA256 parity Phase B for `quotes_parity_sha256_s1_20260704` with `workers=1`.
+- Documented the two-active-shard Phase B state (`s0`, `s1`).
+
+## v0.4.136 - Quotes Phase B SHA256 s0 start
+
+- Started full SHA256 parity Phase B for `quotes_parity_sha256_s0_20260704` with `workers=1`.
+- Documented the conservative hold before launching remaining SHA256 shards.
+
+## v0.4.135 - Quotes parity audit s0 manifest recovery
+
+- Recovered the final manifest for `quotes_parity_struct_rerun_s0_20260703` from complete ticker-level evidence after the PID exited without finalizing.
+- All five Phase A rerun shards now have `completed_pass` manifests; `s0` is explicitly marked as recovered.
 
 Este changelog registra cambios institucionales y semanticamente relevantes para:
 
@@ -6,6 +100,725 @@ Este changelog registra cambios institucionales y semanticamente relevantes para
 
 No duplica el historial de Git.
 Existe para preservar memoria arquitectonica y metodologica del modulo.
+
+## v0.4.136 - Quote-guarded downstream documentation aligned
+
+### Changed
+
+- Updated downstream Data Foundation contracts after the LT1B quote-guarded
+  manifest promotion.
+- Documents now state that
+  `E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1.parquet`
+  is the promoted overlay manifest, while downstream candidate tables remain
+  unmaterialized until builder/preflight/tests/review pass.
+- Updated master intraday, intraday scanner, status matrix, target contract,
+  consumption policy, validators, schema addendum and Graphify refresh queue
+  language away from the obsolete "wait for final manifest" blocker.
+
+### Contract Boundary
+
+The repair layer is promoted. The downstream consumer layer is not yet promoted.
+Consumers must prove they apply:
+
+```text
+raw ohlcv_1m + repair_manifest_lt1b_v0_1.parquet
+```
+
+before any quote-guarded scanner, master intraday or backtest surface can be
+claimed as official.
+## v0.4.135 - OHLCV 1m quote-guarded LT1B manifest promoted
+
+### Completed
+
+- Promoted the LT1B-scoped `ohlcv_1m_quote_guarded` repair manifest after
+  recovery from the broad-run scope incident and the LICN corrupt shard repair.
+- Final consolidation used three run roots:
+  `quote_guarded_v0_2_20260627_091838`,
+  `quote_guarded_v0_2_lt1b_missing180_20260703_092956`, and
+  `quote_guarded_v0_2_lt1b_licn_repair_20260703`.
+- Final gates passed:
+  `universe_tickers = 4824`, `completed_tickers = 4824`,
+  `missing_tickers = 0`, `selected_repair_shards = 421533`,
+  `written_shards = 421533`, `malformed_shard_names = 0`.
+- Final manifest rows: `301278342`.
+- Promoted output:
+  `E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1.parquet`.
+
+### Contract
+
+The promoted layer remains an overlay:
+
+```text
+raw ohlcv_1m + LT1B repair manifest = quote_guarded view
+```
+## v0.4.134 - Quotes parity audit power-loss recovery note
+
+### Changed
+
+- Documented the 2026-07-03 power-loss interruption during Phase A structural
+  parity audit for `D:/quotes -> E:/TSIS/data/quotes_`.
+- The interrupted runs `quotes_parity_struct_s0..s4_20260703` produced partial
+  ticker evidence but no final shard manifests, so they do not satisfy the
+  promotion gate.
+- The quotes runbook now preserves the partial state, classifies the observed
+  mismatch files as worker/resource errors rather than accepted clone mismatch
+  evidence, and provides clean rerun commands using new run ids
+  `quotes_parity_struct_rerun_s0..s4_20260703`.
+
+### Guardrails
+
+- Do not delete the partial interrupted evidence.
+- Do not use `--start-at-ticker` with `--shard-count 5` to resume those exact
+  shards, because the auditor applies `start-at` before shard splitting.
+- `E:/TSIS/data/quotes_` remains blocked until a clean Phase A rerun produces
+  five `completed_pass` manifests.
+## v0.4.133 - Quote-guarded LT1B consolidator schema normalization
+
+### Fixed
+
+- Updated the LT1B quote-guarded consolidator to write the final repair
+  manifest through an explicit canonical Parquet schema.
+- Normalizes per-shard repair manifests before appending them to the single
+  LT1B manifest.
+- Fixes the observed consolidation failure where some shards emitted `v` as
+  `int64` and others emitted `v` as `double`.
+
+### Validation
+
+- The script compiles successfully.
+- A temporary write test over 10,000 real LT1B repair shards completed with:
+
+```text
+written_shards = 10000
+rows = 10864177
+```
+
+### Rationale
+
+The repair shards are durable intermediate artifacts produced across many
+ticker-month workers. The final promoted manifest must expose one stable schema
+regardless of minor pandas/pyarrow inference differences in individual shards.
+
+## v0.4.132 - Foundations local governance surfaces added
+
+### Changed
+
+- Added local governance surfaces for `01_foundations`:
+
+```text
+01_foundations/LOCAL_RULES.md
+01_foundations/CHANGELOG.md
+```
+
+- Updated `01_foundations/README.md` to make both files visible as local
+  mandatory navigation surfaces.
+
+### Rationale
+
+`01_foundations` now contains enough active institutional surfaces to require a
+local operating memory:
+
+- canonical schemas;
+- dataset contracts;
+- dataset registries;
+- consumption policies;
+- validators;
+- inspection dossiers;
+- data quality reports;
+- module contracts;
+- Graphify refresh queue;
+- operational protocols and recovery docs.
+
+The module-level `CHANGELOG.md` remains the authority for module-wide
+institutional impact. The new foundations changelog records local detail and
+links that detail back to parent-level entries when downstream or operational
+impact exists.
+
+## v0.4.131 - Quotes post-copy parity audit protocol
+
+### Added
+
+- Documented the post-copy parity audit protocol for the completed
+  `D:/quotes -> E:/TSIS/data/quotes_` recovery clone.
+- Added the operational audit script reference:
+
+```text
+scripts/data_ops/audit_quotes_clone_parity.py
+```
+
+- Updated the quotes recovery runbook with:
+
+```text
+01_foundations/module_contracts/quotes/quotes_staging_clone_runbook_v0_1.md
+```
+
+- The runbook now defines two audit phases:
+
+```text
+Phase A: structural path/size parity, hash_mode=mismatches-only
+Phase B: full SHA256 parity, hash_mode=full
+```
+
+- The protocol supports deterministic five-shard execution for the roughly
+  five-thousand top-level ticker directories, with independent manifests,
+  heartbeats, PID files, summary CSVs and mismatch evidence per shard.
+
+### Guardrails
+
+- `E:/TSIS/data/quotes_` remains blocked for official downstream consumption
+  until post-copy parity evidence is reviewed.
+- Phase A is the mandatory minimum promotion evidence.
+- Phase B is required for the strongest byte-level parity claim.
+- `D:/quotes` remains recovery/provenance input, not the official downstream
+  root.
+- The pre-existing `E:/TSIS/data/quotes` tree remains legacy/incomplete for
+  this recovery decision unless a later documented migration decision changes
+  that status.
+
+### Validation
+
+```text
+audit_quotes_clone_parity.py syntax OK
+```
+
+## v0.4.130 - OHLCV 1m quote-guarded LT1B scope recovery
+
+### Changed
+
+- Documented and operationalized the correction for the
+  `ohlcv_1m_quote_guarded_v0_2` run that planned all physical OHLCV ticker
+  directories (`12,168`) instead of the governed SmallCaps universe.
+- Fixed the governed scope for SmallCaps quote-guarded consolidation to
+  `lt1b_universe_v0_1`:
+
+```text
+lt1b_universe_tickers = 4824
+lt1b_universe_parquet = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/market_cap_last_observed_cutoff/20260320_market_cap_last_observed_cutoff/market_cap_cutoff_lt_1b_active_inactive.parquet
+```
+
+- Added a scope-safe LT1B consolidator:
+
+```text
+scripts/inspection/minute/consolidate_ohlcv_1m_quote_guarded_lt1b_v0_1.py
+scripts/consolidate_ohlcv_1m_quote_guarded_lt1b_v0_1.ps1
+scripts/monitor_ohlcv_1m_quote_guarded_lt1b_consolidation_v0_1.ps1
+```
+
+- Added the contractual recovery protocol:
+
+```text
+01_foundations/module_contracts/ohlcv_1m_quote_guarded/ohlcv_1m_quote_guarded_lt1b_scope_recovery_protocol_v0_1.md
+```
+
+### Operational Evidence
+
+- Broad run identified as invalid for direct promotion:
+
+```text
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838
+planned_tickers = 12168
+```
+
+- Useful LT1B work inside the broad run was retained:
+
+```text
+lt1b_tickers = 4824
+lt1b_done_inside_broad_run = 4644
+lt1b_missing_after_stop = 180
+```
+
+- A supplement run was started for the 180 missing LT1B tickers only, with
+  `-NoPromoteManifest`:
+
+```text
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_lt1b_missing180_20260703_092956
+```
+
+### Guardrails
+
+- The broad run must not be promoted directly.
+- Final SmallCaps quote-guarded output must pass LT1B consolidation gates:
+  `universe_tickers = 4824`, `completed_tickers = 4824`,
+  `missing_tickers = 0`, and no out-of-scope row-level ticker values.
+- The layer remains an overlay:
+
+```text
+raw ohlcv_1m + LT1B repair manifest = quote_guarded view
+```
+
+## v0.4.129 - Calendar and daily outputs extended to current governed 2026 range
+
+### Changed
+
+- Extended the active `market_calendar_v0_1`,
+  `expected_data_calendar_v0_1` and `master_daily_table_v0_1`
+  materializations from the previous `2025-12-31` endpoint to the current
+  governed source limit `2026-03-09`.
+- Generated the local XNYS calendar source:
+
+```text
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/data/reference/market_calendar_official_XNYS_20050101_20260309.parquet
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/data/reference/market_calendar_official_XNYS_20050101_20260309.meta.json
+```
+
+- Updated `scripts/materialize_market_calendar.py` and
+  `scripts/agent05_build_market_calendar_official.py` defaults so future
+  parameterless calendar rebuilds do not accidentally return to the older
+  `20251231` source.
+- Added DuckDB spill/temp-directory settings to
+  `scripts/materialize_expected_data_calendar.py` and
+  `scripts/materialize_master_daily_table.py` so the wider materializations can
+  complete without in-memory OOM failure.
+
+### Active Output Evidence
+
+```text
+market_calendar_build_run_id = market_calendar_v0_1_20260630T193931Z
+market_calendar_rows = 5328
+market_calendar_last_session = 2026-03-09
+market_calendar_output_sha256 = cbf1879261866d980c5a8542fadf683dbc91f96b80b7865055417a16d1e6e87c
+
+expected_data_calendar_build_run_id = expected_data_calendar_v0_1_20260630T194807Z
+expected_data_calendar_rows = 29478796
+expected_data_calendar_last_session = 2026-03-09
+expected_data_calendar_tree_sha256 = c8ccf548976920ea5e4d6b666ce6f70a009bc98da63e23a2f29a83e7e7cfd500
+
+master_daily_table_build_run_id = master_daily_table_v0_1_20260630T201044Z
+master_daily_table_rows = 22109097
+master_daily_table_last_session = 2026-03-09
+master_daily_table_tree_sha256 = 18a9905dc0ad7410fe0265241881019f2ad8f51fb44183f3eb750476720830e8
+```
+
+### Backup
+
+Previous active outputs were moved before replacement:
+
+```text
+E:/TSIS/data/data_foundation_outputs/_backups/20260630_extend_calendar_daily_to_20260309/
+```
+
+### Validation
+
+```text
+python -m pytest C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_market_calendar_contract.py C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_expected_data_calendar_contract.py C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_master_daily_table_contract.py -q
+```
+
+Result:
+
+```text
+12 passed
+```
+
+### Limit
+
+This is not a claim of coverage through `2026-06-30`. The governed upstream
+inputs currently support the active calendar/daily output range through
+`2026-03-09`; any later range requires a new source extension and manifest.
+
+## v0.4.128 - Intraday scanner runner heartbeat fix
+
+### Fixed
+
+- Fixed `scripts/run_intraday_scanner_candidates_materialization_v0_1.ps1`
+  heartbeat behavior for long monthly windows. The runner no longer calls
+  blocking `Peek()/ReadToEnd()` on redirected stdout/stderr while the Python
+  worker is alive.
+- The Python worker now writes stdout/stderr through `Start-Process`
+  redirection, while the wrapper remains free to emit heartbeat updates every
+  `HeartbeatSeconds`.
+
+### Validation
+
+```text
+powershell -NoProfile -ExecutionPolicy Bypass -File C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/run_intraday_scanner_candidates_materialization_v0_1.ps1 -StartDate 2025-01-02 -EndDate 2025-01-02 -RunId syntax_check_intraday_runner_v0_1 -RunRoot C:/tmp/tsis_intraday_runner_syntax_check -HeartbeatSeconds 5
+```
+
+Result:
+
+```text
+dry_run completed; pre_manifest, heartbeat and pid manifest written.
+```
+
+## v0.4.127 - Intraday scanner quote-guarded successor gate
+
+### Changed
+
+- Documented that `intraday_scanner_candidates_table_v0_1` is a raw
+  `ohlcv_1m` controlled replay and must not be promoted as a canonical 20-year
+  scanner while the quote-guarded repair stream is unresolved.
+- Added the required successor route:
+
+```text
+raw ohlcv_1m
++ repair_manifest_v0_2.parquet
+= ohlcv_1m_quote_guarded view
+-> intraday_scanner_candidates_table_v0_2_quote_guarded_candidate
+```
+
+- Added the raw-vs-quote-guarded first-cross requirement. If a +50% raw spike
+  is not confirmed by the quote-guarded view, the evidence must be preserved
+  but the row must not be selected as an in-play candidate.
+
+### References
+
+```text
+01_foundations/module_contracts/outputs/intraday_scanner_framework_and_definitions_contract_v0_1.md
+01_foundations/module_contracts/outputs/intraday_scanner_candidates_table_target_contract_v0_1.md
+01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+```
+
+### Current Repair Workstream
+
+```text
+script: build_ohlcv_1m_quote_guarded_repairs_v0_2.py
+minute_root: E:/TSIS/data/ohlcv_1m
+quotes_root: D:/quotes
+run_root: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838
+promoted_manifest_target: E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_v0_2.parquet
+```
+
+## v0.4.126 - Intraday scanner v0.1 first-push denominator
+
+### Added
+
+- Added the governed intraday scanner config:
+
+```text
+configs/data_foundation_outputs/scanner_definitions/intraday_in_play_momentum_candidate_denominator_v0_1.yaml
+```
+
+- Added the intraday scanner builder, monthly monitored runner and fixture test:
+
+```text
+scripts/materialize_intraday_scanner_candidates_table_v0_1.py
+scripts/run_intraday_scanner_candidates_materialization_v0_1.ps1
+tests/data_foundation_outputs/test_intraday_scanner_candidates_table_builder_v0_1.py
+```
+
+- Added Data Foundation contracts:
+
+```text
+01_foundations/canonical_schemas/outputs/intraday_scanner_candidates_table_schema_contract.md
+01_foundations/contract_registry/dataset_contracts/intraday_scanner_candidates_table_dataset_contract_v0_1.md
+01_foundations/data_consumption_policies/intraday_scanner_candidates_table_consumption_policy.md
+01_foundations/dataset_registry/outputs/intraday_scanner_candidates_table_registry_entry.yaml
+01_foundations/module_contracts/outputs/intraday_scanner_framework_and_definitions_contract_v0_1.md
+01_foundations/module_contracts/outputs/intraday_scanner_candidates_table_target_contract_v0_1.md
+01_foundations/validators/outputs/intraday_scanner_candidates_table_validators.md
+```
+
+### Changed
+
+- Documented that `daily_scanner_candidates_table_v0_3` is a daily/EOD coarse
+  proxy, not the official detector for first intraday push timing.
+- Moved intraday strategy denominators to the new `ohlcv_1m` scanner path:
+
+```text
+base_eligible_smallcap_denominator_v0_3
+  -> intraday_in_play_momentum_candidate_denominator_v0_1
+  -> strategy overlays
+```
+
+- The intraday scanner records first-cross timing for:
+
+```text
+premarket 04:00-09:30 New York
+regular 09:30-16:00 New York
+afterhours 16:00-20:00 New York
+```
+
+### Controlled Replay
+
+```text
+run_id: intraday_scanner_candidates_v0_1_20260630T175311Z
+root: C:/TSIS_Data/tests/test_runs/2026-06-30/intraday_scanner_candidates_replay_20250102_20250110_v0_1/
+rows: 33413
+tickers: 5690
+session_dates: 6
+base_eligible_rows: 7498
+motion_threshold_rows: 235
+tradability_pass_rows: 176
+selected_intraday_in_play_candidate_rows: 102
+first_cross_premarket_rows: 114
+first_cross_regular_rows: 82
+first_cross_afterhours_rows: 39
+duplicate_ticker_session_keys: 0
+source_ohlcv_1m_file_count: 5775
+full_universe_claim: false
+```
+
+### Validation
+
+```text
+python -m pytest C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_intraday_scanner_candidates_table_builder_v0_1.py -q
+```
+
+Result:
+
+```text
+1 passed
+```
+
+### Scope Notes
+
+This remains `controlled_replay_candidate`, not an official E-root
+materialization. It may seed event discovery, DAS/frontside denominators,
+strategy overlays and future market/event state builders. It is not
+`market_state`, `event_state`, label, reward, execution truth or strategy signal.
+
+## v0.4.125 - Daily scanner v0.3 in-play momentum denominator
+
+### Added
+
+- Added active v0.3 scanner configs:
+
+```text
+configs/data_foundation_outputs/scanner_definitions/base_eligible_smallcap_denominator_v0_3.yaml
+configs/data_foundation_outputs/scanner_definitions/in_play_momentum_candidate_denominator_v0_3.yaml
+configs/data_foundation_outputs/scanner_definitions/trade_station_like_profile_v0_3.yaml
+```
+
+- Added v0.3 builder and deterministic fixture test:
+
+```text
+scripts/materialize_daily_scanner_candidates_table_v0_3.py
+tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder_v0_3.py
+```
+
+- Added the long-run v0.3 PowerShell runner:
+
+```text
+scripts/run_daily_scanner_candidates_materialization_v0_3.ps1
+```
+
+  The runner chunks by year and writes pre-manifest, heartbeat, PID manifest,
+  logs and `_run_summary.json` so multi-year/20-year scanner materializations
+  are monitorable instead of blind Python executions.
+
+- Added v0.3 contracts:
+
+```text
+01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_3.md
+01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_3.md
+```
+
+### Changed
+
+- Updated the scanner semantics from v0.2 profile flags to the v0.3 two-stage
+  denominator model:
+
+```text
+base_eligible_smallcap_denominator_v0_3
+  = common stock + market cap < 100M + 0.5 < last <= 20 + usable/review quality
+
+in_play_momentum_candidate_denominator_v0_3
+  = base eligible + move >= 50% + tradability gate
+```
+
+- Kept `trade_station_like_profile_v0_3` as operator visibility only.
+- Removed DAS from the global scanner. Strategy-specific filters now belong to
+  downstream overlays and strategy state tables.
+- Marked the controlled replay as `daily_eod_proxy`; it can identify that a
+  ticker became strongly in-play during the day, but cannot certify whether the
+  first push occurred in premarket, regular session or after-hours.
+- Declared `float_context_table` as a pending dependency for future float use.
+  Until that table exists with point-in-time source/as-of/coverage validation,
+  `float_shares` must remain unpopulated and `overview_weighted_shares_outstanding`
+  must not be treated as float.
+- Updated schema, dataset contract, consumption policy, registry, validators,
+  status matrix, target contract, module-contract README, research README and
+  Graphify queues to point agents to v0.3 as the active scanner model.
+
+### Controlled Replay
+
+```text
+run_id: daily_scanner_candidates_replay_20250102_20250110_v0_3_0_in_play_momentum
+root: C:/TSIS_Data/tests/test_runs/2026-06-30/daily_scanner_candidates_replay_20250102_20250110_v0_3_0_in_play_momentum/
+rows: 15323
+sessions: 6
+instruments: 2590
+base_eligible_rows: 6184
+selected_in_play_momentum_candidate_rows: 69
+selected_trade_station_like_profile_rows: 150
+selected_das_research_profile_rows: 0
+selected_without_50_move: 0
+selected_without_tradability: 0
+min_selected_motion_pct: 50.2851
+max_selected_motion_pct: 363.6408
+duplicate_key_groups: 0
+scanner_semantic_alignment_version: v0_3_0_in_play_momentum_denominator
+```
+
+### Runner Smoke
+
+```text
+run_id: daily_scanner_candidates_v0_3_runner_smoke_20250102_20250110_d
+root: C:/TSIS_Data/tests/test_runs/2026-06-30/daily_scanner_candidates_v0_3_runner_smoke_20250102_20250110_d/
+status: completed
+year_window_count: 1
+elapsed_seconds: 24
+full_universe_claim: false
+```
+
+### Validation
+
+```text
+python -m pytest C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder_v0_3.py -q
+```
+
+Result:
+
+```text
+1 passed
+```
+
+### Scope Notes
+
+This remains `controlled_replay_candidate`, not an official E-root
+materialization. It may seed event discovery, candidate-denominator analysis and
+future market/event state builders, but it is still blocked for direct ML/RL,
+live trading and strategy-signal consumption.
+
+## v0.4.124 - Scanner lab usage and DAS overlay navigation
+
+### Changed
+
+- Updated `01_research/README.md` so scanner notebook/lab users do not rely
+  only on the historical `v0.1` two-scanner replay. The README now points to
+  the current `materialize_daily_scanner_candidates_table_v0_2.py` builder and
+  the contract-aligned replay:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-30/daily_scanner_candidates_replay_20250102_20250110_v0_2_1_contract_aligned/
+```
+
+- Added the DAS runbook cross-reference:
+
+```text
+C:/TSIS_Data/00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/DAS_SCANNER_USAGE_AND_OVERLAY_RUNBOOK_v0_1.md
+```
+
+### Scope Notes
+
+The module guidance now separates:
+
+```text
+scanner replay/table = denominator and candidate lineage
+strategy notebook = inspection and overlay research
+strategy state table = experimental DAS/frontside state reading
+market_state/event_state = future institutional composition
+```
+
+This does not promote `daily_scanner_candidates_table_v0_2` into an official
+E-root dataset and does not authorize scanner rows as direct ML/RL/live input.
+
+## v0.4.123 - Daily scanner v0.2 contract-aligned replay
+
+### Changed
+
+- Updated `scripts/materialize_daily_scanner_candidates_table_v0_2.py` so the
+  controlled daily/EOD replay follows the corrected scanner semantics:
+  - `relative_volume_profile_v0_2` is marked unavailable and emits
+    `selected_relative_volume_profile = false` until intraday/as-of volume
+    acceleration is joined;
+  - `percent_change_profile_v0_2` applies the configured minimum threshold
+    before top-N/rank selection;
+  - `dollar_volume_tradability_profile_v0_2` requires its configured minimum
+    tradability threshold and remains explicitly non-alpha;
+  - `das_research_profile_v0_2` remains provisional strategy-overlay seed
+    lineage, not a mature DAS scanner.
+- Added output-level semantic guard columns:
+
+```text
+scanner_semantic_alignment_version
+scanner_profile_semantics
+profiles_are_sequential_funnel
+relative_volume_profile_status
+percent_change_min_threshold_applied
+percent_change_min_threshold_pct
+dollar_volume_profile_semantic_role
+das_research_profile_status
+```
+
+- Updated the v0.2 builder test to fail if daily replay reintroduces daily-RVOL
+  as institutional relative-volume selection.
+- Materialized a new controlled replay:
+
+```text
+run_id: daily_scanner_candidates_replay_20250102_20250110_v0_2_1_contract_aligned
+root: C:/TSIS_Data/tests/test_runs/2026-06-30/daily_scanner_candidates_replay_20250102_20250110_v0_2_1_contract_aligned/
+rows: 15323
+sessions: 6
+instruments: 2590
+selected_any_profile_rows: 2314
+selected_trade_station_like_profile_rows: 150
+selected_relative_volume_profile_rows: 0
+selected_percent_change_profile_rows: 150
+selected_dollar_volume_tradability_profile_rows: 150
+selected_das_research_profile_rows: 2261
+selected_below_500k_volume_rows: 1800
+duplicate_key_groups: 0
+float_filter_used_rows: 0
+ml_feature_candidate_rows: 0
+rl_state_candidate_rows: 0
+live_downstream_candidate_rows: 0
+```
+
+### Validation
+
+```text
+python -m pytest C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder_v0_2.py -q
+```
+
+Result:
+
+```text
+1 passed
+```
+
+### Scope Notes
+
+This remains `controlled_replay_candidate`, not an official E-root
+materialization. It may seed event discovery, candidate-denominator analysis and
+future market/event state builders, but it is still blocked for direct ML/RL or
+live trading consumption.
+
+## v0.4.122 - Scanner profile semantics correction
+
+### Changed
+
+- Clarified the `daily_scanner_candidates_table_v0_2` scanner model:
+
+```text
+base_in_play_universe_scanner_v0_2 = stable identifier
+base_eligible_smallcap_denominator = precise meaning
+```
+
+- Clarified that profile flags are parallel row attributes over the same base
+  denominator, not sequential funnel filters.
+- Clarified that rows passing the base denominator but no generic profile must
+  still be preserved to measure false negatives, late arrival and selection
+  bias.
+- Tightened profile semantics before any wide or official materialization:
+  - `relative_volume_profile_v0_2` must use intraday/as-of recent-bar volume
+    acceleration or be marked unavailable/provisional;
+  - `percent_change_profile_v0_2` must require a declared minimum percent move
+    before top-N ranking;
+  - `dollar_volume_tradability_profile_v0_2` remains tradability/economic
+    activity, not alpha;
+  - `das_research_profile_v0_2` is provisional strategy-overlay lineage, not a
+    mature DAS scanner.
+- Updated scanner contracts, schema, consumption policy, dataset registry,
+  validators, config definitions, module-contracts README, Data Foundation
+  target/status docs, tests README and Graphify refresh queue with this
+  corrected semantics.
+
+### Scope Notes
+
+This is a documentation/config semantics correction. It does not promote an
+official E-root scanner materialization and does not authorize direct ML/RL/live
+consumption.
 
 ## v0.4.121 - Daily scanner v0.2 base universe plus profiles
 
@@ -5729,7 +6542,7 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
   - filtrarlos por ticker + ventana PTI del corte canonico `<1B>`;
   - y exportar conteos y porcentajes compatibles ya con el alcance moderno del proyecto.
 
-### 2026-06-03 | 1m | cierre cuantitativo del recálculo raw `1m` sobre universo `<1B>` explicito
+### 2026-06-03 | 1m | cierre cuantitativo del recÃƒÆ’Ã‚Â¡lculo raw `1m` sobre universo `<1B>` explicito
 
 - se actualizan:
   - `scripts/inspection/minute/audit_1m_raw_lt1b_closeout.py`
@@ -5922,7 +6735,7 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
   - `01_foundations/data_consumption_policies/lt1b_universe_consumption_policy.md`
   - `01_foundations/contract_registry/dataset_contracts/lt1b_universe_dataset_contract_v0_1.md`
   - `01_foundations/dataset_registry/universes/lt1b_universe_registry_entry.yaml`
-- artefacto canónico:
+- artefacto canÃƒÆ’Ã‚Â³nico:
   - `runs/backtest/market_cap_last_observed_cutoff/20260320_market_cap_last_observed_cutoff/market_cap_cutoff_lt_1b_active_inactive.parquet`
 - cifras fijadas:
   - `lt1b_tickers = 4824`
@@ -5930,7 +6743,7 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
   - `inactive_died_lt_1b = 2348`
   - `panel_end_date = 2026-03-09`
 - regla institucional:
-  - toda afirmación `<1B>` debe filtrar por `ticker` y por intersección con ventana PTI (`first_seen_date`, `last_observed_date`);
+  - toda afirmaciÃƒÆ’Ã‚Â³n `<1B>` debe filtrar por `ticker` y por intersecciÃƒÆ’Ã‚Â³n con ventana PTI (`first_seen_date`, `last_observed_date`);
   - este corte no es `E:\TSIS\data\reference`;
   - tampoco sustituye un futuro `population_target_pti` diario fully point-in-time.
 
@@ -6028,3 +6841,7 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
   - auditoria de casepacks en `quotes`;
   - family casepacks amplios en `trades`.
 - objetivo: que un inspector no tenga que inferir desde notebooks o assets sueltos que documentos visuales debe revisar.
+
+
+
+

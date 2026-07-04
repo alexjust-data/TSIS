@@ -14,6 +14,25 @@ Status:
 builder_implemented_controlled_replay_not_official
 ```
 
+Critical semantic note:
+
+```text
+v0.2 is a governed candidate-denominator model, not a promoted scanner science
+result.
+```
+
+The identifier `base_in_play_universe_scanner_v0_2` is retained for continuity
+with configs and builder code. Its precise institutional meaning is:
+
+```text
+base_eligible_smallcap_denominator
+```
+
+The base row set says which instruments are eligible to be observed. It does
+not prove that a ticker is already in-play in the trading sense. In-play
+evidence is represented by generic observation profiles and, later, by
+strategy overlays and state/event builders.
+
 ## Cambio Frente A v0.1
 
 `v0.1` separaba dos scanners:
@@ -41,7 +60,28 @@ base_in_play_universe_scanner_v0_2
 Hay un solo denominador base. Los perfiles seleccionan, rankean o etiquetan
 visibilidad dentro de ese denominador.
 
-## Base Universe
+Important:
+
+```text
+Profiles are parallel flags/scores over the same base denominator.
+Profiles are not sequential filters.
+```
+
+Example:
+
+```text
+base denominator = 100 tickers
+
+percent_change_min_profile = 80
+intraday_volume_acceleration_profile = 79
+dollar_volume_tradability_profile = 40
+gap_or_range_expansion_profile = 50
+```
+
+This means each profile marks rows inside the same 100-ticker denominator. It
+does not mean `100 -> 80 -> 79 -> 40 -> 50`.
+
+## Base Eligible Smallcap Denominator
 
 El denominador base es:
 
@@ -60,6 +100,9 @@ Reglas:
 - `float` no se usa como hard filter hasta tener fuente point-in-time auditada;
 - cada fila debe declarar `as_of_utc`, source lineage, price view, quality
   flags y si es replay historico o snapshot/live.
+- the base denominator must preserve rows that pass the common eligibility
+  gate even when no generic observation profile fires, because those rows are
+  needed to study false negatives and selection bias.
 
 ## Perfiles Gobernados
 
@@ -84,13 +127,45 @@ Que habria visto el operador en una hot list tipo TradeStation?
 
 Estudia atencion/participacion relativa dentro de la base.
 
-En replay diario controlado, `rvol_to_time` se aproxima con `rvol_20d` de
-`master_daily_table`. Para intradia real exige cutoff/as-of propio.
+Required institutional meaning:
+
+```text
+intraday volume acceleration / relative activity as-of
+```
+
+This profile must be based on recent intraday bars and legal as-of cutoffs,
+for example:
+
+```text
+volume_last_1m
+volume_last_3m
+volume_last_5m
+volume_last_15m
+volume_slope_5m
+volume_acceleration_5m_vs_15m
+volume_to_time_vs_expected_profile
+```
+
+The controlled daily replay approximation using `rvol_20d` from
+`master_daily_table` is not sufficient for DAS/frontside or live-like research.
+It may remain as engineering evidence of shape, but it must not be promoted as
+the final `relative_volume_profile_v0_2` semantics.
 
 ### `percent_change_profile_v0_2`
 
 Estudia momentum por variacion diaria sin convertir `volume_today >= 500k` en
 filtro universal.
+
+Required institutional meaning:
+
+```text
+pct_chg_1d >= declared minimum threshold
+then rank selected rows by pct_chg_1d desc
+```
+
+Top-N alone is insufficient. A day with weak market movement must not create a
+false momentum profile only because a ticker was relatively high inside a poor
+cross-section.
 
 ### `dollar_volume_tradability_profile_v0_2`
 
@@ -114,6 +189,18 @@ future afterhours/premarket/news/halt reasons when scoped sources exist
 No es una senal DAS.
 No contiene labels, outcomes, rewards, fills ni PnL.
 
+This profile is not a final DAS scanner. It is a provisional bridge created
+from the DAS/frontside research discussion. The promoted architecture is:
+
+```text
+base_eligible_smallcap_denominator
+-> generic observation profiles
+-> strategy overlay: das_frontside_scanner / das_candidate_state_table_experimental
+```
+
+Strategy-specific filters belong to strategy overlays or experimental strategy
+state tables, not to the Data Foundation base scanner.
+
 ## Relacion Con Estados
 
 La ruta correcta sigue siendo:
@@ -129,6 +216,10 @@ daily_scanner_candidates_table
 El scanner dice donde mirar.
 El estado dice que sabia TSIS legalmente en un timestamp.
 La estrategia estudia transiciones y outcomes fuera del scanner.
+
+The generic scanner output is allowed to seed a strategy overlay, but the
+overlay must write its own lineage and cannot silently redefine the base
+denominator.
 
 ## Configs Versionadas
 
@@ -185,6 +276,26 @@ Queda prohibido:
 - mezclar labels/outcomes/rewards/fills/PnL dentro del scanner;
 - esconder seleccion manual como si fuera scanner automatico;
 - afirmar `full_universe_claim=true` sin prueba de denominador.
+- tratar conteos de perfiles como embudo secuencial salvo que exista un
+  contrato separado de funnel;
+- tratar el `das_research_profile_v0_2` actual como scanner maduro de
+  estrategia.
+
+## Required Implementation Alignment Before Wide Materialization
+
+Before any long-range or 20-year materialization is treated as official, the
+implementation must align with this contract:
+
+1. `relative_volume_profile_v0_2` must use intraday/as-of acceleration or be
+   explicitly marked unavailable for runs without intraday cutoff data.
+2. `percent_change_profile_v0_2` must require a declared minimum percentage
+   threshold before top-N ranking.
+3. `dollar_volume_tradability_profile_v0_2` must remain tradability/economic
+   activity, not alpha.
+4. `das_research_profile_v0_2` must be demoted to provisional overlay seed or
+   replaced by a strategy-owned `das_frontside_scanner` contract.
+5. Profile flags must be stored as parallel row attributes over the same base
+   denominator.
 
 ## Final Rule
 

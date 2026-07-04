@@ -303,6 +303,8 @@ def test_daily_scanner_builder_v0_2_uses_one_base_universe_with_profiles(tmp_pat
     assert validations["source_duplicate_alias_excess_rows"] == 1
     assert validations["duplicate_key_groups"] == 0
     assert validations["selected_trade_station_like_profile_rows"] == 2
+    assert validations["selected_relative_volume_profile_rows"] == 0
+    assert validations["selected_percent_change_profile_rows"] == 2
     assert validations["selected_any_profile_rows"] == 3
     assert validations["selected_below_500k_volume_rows"] >= 1
     assert validations["float_filter_used_rows"] == 0
@@ -321,9 +323,18 @@ def test_daily_scanner_builder_v0_2_uses_one_base_universe_with_profiles(tmp_pat
             selected_any_profile,
             selected_trade_station_like_profile,
             selected_relative_volume_profile,
+            selected_percent_change_profile,
             selected_das_research_profile,
             candidate_reasons,
-            float_filter_state
+            float_filter_state,
+            scanner_semantic_alignment_version,
+            scanner_profile_semantics,
+            profiles_are_sequential_funnel,
+            relative_volume_profile_status,
+            percent_change_min_threshold_applied,
+            percent_change_min_threshold_pct,
+            dollar_volume_profile_semantic_role,
+            das_research_profile_status
         from read_parquet('{parquet.as_posix()}')
         where ticker = 'BBB'
         """
@@ -332,10 +343,22 @@ def test_daily_scanner_builder_v0_2_uses_one_base_universe_with_profiles(tmp_pat
     assert below_500k["scanner_definition_id"] == "base_in_play_universe_scanner_v0_2"
     assert bool(below_500k["selected_any_profile"]) is True
     assert bool(below_500k["selected_trade_station_like_profile"]) is False
-    assert bool(below_500k["selected_relative_volume_profile"]) is True
+    assert bool(below_500k["selected_relative_volume_profile"]) is False
+    assert bool(below_500k["selected_percent_change_profile"]) is True
     assert bool(below_500k["selected_das_research_profile"]) is True
-    assert "profile_relative_volume_top_n" in below_500k["candidate_reasons"]
+    assert "profile_relative_volume_top_n" not in below_500k["candidate_reasons"]
+    assert "profile_percent_change_top_n" in below_500k["candidate_reasons"]
     assert below_500k["float_filter_state"] == "not_used_until_point_in_time_float_source_exists"
+    assert below_500k["scanner_semantic_alignment_version"] == "v0_2_1_contract_aligned"
+    assert below_500k["scanner_profile_semantics"] == "parallel_flags_not_sequential_filters"
+    assert bool(below_500k["profiles_are_sequential_funnel"]) is False
+    assert below_500k["relative_volume_profile_status"] == "unavailable_without_intraday_asof"
+    assert bool(below_500k["percent_change_min_threshold_applied"]) is True
+    assert below_500k["percent_change_min_threshold_pct"] == 3.0
+    assert below_500k["dollar_volume_profile_semantic_role"] == "tradability_not_alpha"
+    assert below_500k["das_research_profile_status"] == (
+        "provisional_strategy_overlay_seed_not_final_scanner"
+    )
 
     excluded = con.sql(
         f"""

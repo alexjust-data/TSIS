@@ -68,11 +68,11 @@ What was becoming in-play before the narrow operational scanner necessarily saw 
 
 No consumer may collapse these into one meaning.
 
-For `scanner_framework_v0_2`, consumers must instead use:
+For historical `scanner_framework_v0_2`, consumers must instead use:
 
 ```text
 base_in_play_universe_scanner_v0_2
-  -> common smallcap <100M denominator
+  -> common smallcap <100M eligible denominator
 
 trade_station_like_profile_v0_2
   -> operational visibility replay
@@ -89,11 +89,47 @@ Rules:
 - `volume_today >= 500000` may only be interpreted as the
   `trade_station_like_profile_v0_2` hard filter.
 - `market_cap_usd < 100000000` is the common base hard filter.
+- the base denominator must be preserved even when no profile flag is true.
+- profile flags are parallel markers over the same denominator, not sequential
+  funnel filters.
+- `relative_volume_profile_v0_2` must not be interpreted as institutional
+  intraday relative volume unless built from intraday/as-of recent-bar
+  acceleration or a documented equivalent.
+- `percent_change_profile_v0_2` must not be interpreted as selected by motion
+  unless a declared minimum percent-change threshold was applied before ranking.
+- `dollar_volume_tradability_profile_v0_2` is a tradability marker, not an
+  alpha or setup-quality marker.
 - `float` must not be used as a filter until a point-in-time source is
   governed and validated.
 - `selected_broad_discovery` is deprecated for v0.2 consumers; prefer
-  `selected_das_research_profile`.
+  `selected_das_research_profile` only as provisional DAS overlay lineage.
 - No profile flag is a strategy signal, state label, reward, fill or PnL.
+
+For `scanner_framework_v0_3`, consumers must use:
+
+```text
+base_eligible_smallcap_denominator_v0_3
+  -> who TSIS may inspect
+
+selected_in_play_momentum_candidate
+  -> base eligible + >=50% movement + minimum volume/tradability
+```
+
+Rules:
+
+- `base_eligible` rows are not in-play by themselves.
+- `selected_in_play_momentum_candidate` is the default denominator for
+  event/strategy candidate research in v0.3.
+- `selected_any_profile` is only a compatibility alias for
+  `selected_in_play_momentum_candidate`.
+- `selected_das_research_profile` must be false; DAS belongs to a strategy
+  overlay.
+- `trade_station_like_profile_v0_3` reconstructs operator visibility and does
+  not define in-play by itself.
+- `in_play_detection_scope = daily_eod_proxy` forbids live/intraday decision
+  interpretation without a segment builder.
+- Float columns are informational only until a governed point-in-time float
+  source exists.
 
 ### Event Discovery
 
@@ -116,9 +152,10 @@ DAS state row = what DAS/frontside state appeared inside that candidate
 ```
 
 DAS must preserve whether the candidate came from operational visibility,
-broad discovery or both. A ticker discovered by the broad scanner must not be
-reported as something the human operator necessarily saw in the
-TradeStation-like scanner.
+generic observation profiles or both. A strategy overlay must not redefine the
+base denominator silently, and a ticker selected by a generic profile must not
+be reported as something the human operator necessarily saw in the
+TradeStation-like profile.
 
 ### Market State Builder
 

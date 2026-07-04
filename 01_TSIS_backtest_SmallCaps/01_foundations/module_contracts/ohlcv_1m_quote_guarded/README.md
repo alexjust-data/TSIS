@@ -1,4 +1,4 @@
-# OHLCV 1m Quote-Guarded Governance
+﻿# OHLCV 1m Quote-Guarded Governance
 
 ## Role
 
@@ -13,6 +13,45 @@ This folder is the entry point for the topic. It prevents the decision trail
 from being scattered across generic `module_contracts/`, dataset contracts,
 validators, policies and inspection dossiers without a single map.
 
+## Current Promoted State
+
+As of 2026-07-03, the LT1B-scoped quote-guarded repair manifest is promoted.
+The promoted artifact is:
+
+```text
+E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1.parquet
+```
+
+Closeout gates:
+
+```text
+status = PASS
+universe_tickers = 4824
+completed_tickers = 4824
+missing_tickers = 0
+selected_repair_shards = 421533
+written_shards = 421533
+manifest_rows = 301278342
+malformed_shard_names = 0
+```
+
+Accepted run roots, in precedence order:
+
+```text
+1. quote_guarded_v0_2_20260627_091838
+2. quote_guarded_v0_2_lt1b_missing180_20260703_092956
+3. quote_guarded_v0_2_lt1b_licn_repair_20260703
+```
+
+Operational interpretation:
+
+```text
+raw ohlcv_1m + repair_manifest_lt1b_v0_1.parquet = LT1B quote_guarded view
+```
+
+This promotes the repair overlay. It does not create a full corrected OHLCV
+physical tree, does not mutate raw 1m parquet, and does not declare trade tape
+truth or real VWAP reconstruction.
 ## Current Documents
 
 - `ohlcv_1m_quote_guarded_single_reading_v0_1.md`
@@ -27,6 +66,12 @@ validators, policies and inspection dossiers without a single map.
   - operational protocol for long-running v0_2 full-universe jobs;
   - records the live-run issue, supervisor, validator, terminal layout,
     restart rules and validation invariants.
+- `ohlcv_1m_quote_guarded_lt1b_scope_recovery_protocol_v0_1.md`
+  - recovery protocol for the accidental all-directory `12,168` ticker scope;
+  - fixes the governed scope to `lt1b_universe_v0_1` (`4,824` tickers);
+  - defines how already-written LT1B shards are reused, how the missing
+    LT1B tail is completed, and how final consolidation excludes out-of-scope
+    tickers.
 
 ## Governed Concept
 
@@ -58,7 +103,7 @@ a second corrected tree. The first governed artifact is a repair overlay:
 - loaders apply the delta in memory and return a quote-guarded view;
 - no raw parquet is hand-edited or overwritten.
 
-Active v0_2 run shards live under:
+Historical broad-run v0_2 shards live under:
 
 ```text
 C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838/repair_shards/
@@ -86,6 +131,9 @@ Executable surfaces:
 - `scripts/monitor_ohlcv_1m_quote_guarded_repair_v0_2.ps1`
 - `scripts/supervise_ohlcv_1m_quote_guarded_repair_v0_2.ps1`
 - `scripts/validate_ohlcv_1m_quote_guarded_repair_v0_2.ps1`
+- `scripts/inspection/minute/consolidate_ohlcv_1m_quote_guarded_lt1b_v0_1.py`
+- `scripts/consolidate_ohlcv_1m_quote_guarded_lt1b_v0_1.ps1`
+- `scripts/monitor_ohlcv_1m_quote_guarded_lt1b_consolidation_v0_1.ps1`
 - `src/data/ohlcv_1m_quote_guarded.py`
 
 ## Live Run Supervision And Validation
@@ -136,7 +184,7 @@ Exploratory and audit runs should live under:
 C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/ohlcv_1m_quote_guard_audit/<run_id>/
 ```
 
-Promoted data-foundation outputs, if created, should live under:
+Promoted data-foundation outputs live under:
 
 ```text
 E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/

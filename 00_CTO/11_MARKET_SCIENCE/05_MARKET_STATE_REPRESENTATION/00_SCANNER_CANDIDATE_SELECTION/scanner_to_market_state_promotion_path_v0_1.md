@@ -24,10 +24,11 @@ Por tanto, debe existir una ruta explicita de promocion.
 ## 2. Ruta canonica
 
 ```text
-base_in_play_universe_scanner
+base_eligible_smallcap_denominator
 -> scanner profiles / ranks / candidate reasons
 -> daily_scanner_candidates_table
 -> candidate set / denominator
+-> strategy-specific overlay when needed
 -> strategy-specific experimental state table
 -> event_state_candidate
 -> market_state_candidate
@@ -47,8 +48,16 @@ Lectura vigente:
 ```text
 un scanner base define la poblacion observable;
 los perfiles definen ranking, visibilidad operativa o research;
+los overlays de estrategia definen hipotesis especificas posteriores;
 la tabla persiste ambas cosas como lineage.
 ```
+
+El identificador operativo actual puede seguir siendo
+`base_in_play_universe_scanner_v0_2`, pero el significado correcto es
+`base_eligible_smallcap_denominator`.
+
+Los perfiles son paralelos sobre ese denominador. No deben interpretarse como
+embudo secuencial salvo que una tabla posterior lo declare expresamente.
 
 Debe contener:
 
@@ -62,6 +71,9 @@ Debe contener:
 - source lineage;
 - quality flags;
 - downstream usage flags.
+
+Debe preservar tambien filas del denominador que no activen ningun perfil,
+porque son necesarias para medir falsos negativos y sesgo de seleccion.
 
 No debe contener:
 
@@ -102,6 +114,16 @@ quality__
 human_label__
 outcome__
 ```
+
+Antes de esta tabla puede existir un overlay de estrategia, por ejemplo:
+
+```text
+das_frontside_scanner
+short_into_resistance_scanner
+```
+
+El overlay usa la tabla scanner como denominador/lineage y aplica filtros
+propios. No puede redefinir silenciosamente la base de Data Foundation.
 
 Pero su estado debe ser explicitamente experimental.
 
@@ -169,8 +191,9 @@ Hasta entonces, cualquier estado es candidato o experimental.
 ## 8. Regla de promocion
 
 ```text
-El scanner base abre la puerta.
-Los perfiles explican por que una fila merece inspeccion.
+El denominador base abre la puerta.
+Los perfiles genericos explican por que una fila merece inspeccion.
+El overlay de estrategia formula una hipotesis especifica.
 El estado reconstruye el mundo observable.
 La estrategia interpreta el estado.
 El evaluador juzga decisiones bajo reglas bloqueadas.

@@ -276,6 +276,17 @@ base_in_play_universe_scanner_v0_2
   -> das_research_profile_v0_2
 ```
 
+Naming clarification:
+
+```text
+base_in_play_universe_scanner_v0_2 = stable identifier
+base_eligible_smallcap_denominator = precise meaning
+```
+
+The base denominator is the set of common-stock smallcap rows eligible for
+observation. It is not proof that a ticker was already in-play in the trading
+sense.
+
 The `v0.2` physical candidate replay may add these columns:
 
 ```text
@@ -283,6 +294,15 @@ base_universe_definition_id
 base_universe_definition_version
 scanner_profile_set_id
 scanner_profile_ids
+scanner_semantic_alignment_version
+base_denominator_semantic_id
+scanner_profile_semantics
+profiles_are_sequential_funnel
+relative_volume_profile_status
+percent_change_min_threshold_applied
+percent_change_min_threshold_pct
+dollar_volume_profile_semantic_role
+das_research_profile_status
 selected_trade_station_like_profile
 selected_relative_volume_profile
 selected_percent_change_profile
@@ -299,13 +319,33 @@ Semantics:
 
 - `scanner_definition_id` is the base denominator definition, not each profile.
 - Profile flags are selections inside the same base denominator.
+- Profile flags are parallel row attributes, not sequential filters.
+- `scanner_profile_semantics` must preserve
+  `parallel_flags_not_sequential_filters` for the contract-aligned replay.
+- `profiles_are_sequential_funnel` must remain `false` unless a separate
+  explicit funnel contract exists.
 - `market_cap_usd < 100000000` is a base hard filter.
 - `volume_today >= 500000` is only the TradeStation-like profile hard filter.
 - `float_*` fields must remain null/not-used until a point-in-time float source
   passes source, coverage and as-of validation.
 - `selected_broad_discovery` is deprecated in `v0.2` and may appear only as a
   backwards-compatibility alias. Consumers must prefer
-  `selected_das_research_profile`.
+  `selected_das_research_profile` only as provisional strategy-overlay lineage,
+  not as a mature DAS scanner.
+- `selected_relative_volume_profile` must mean intraday/as-of volume
+  acceleration or relative activity before promotion. A daily `rvol_20d` proxy
+  is insufficient for official scanner semantics.
+- Runs without intraday/as-of support must set
+  `relative_volume_profile_status = unavailable_without_intraday_asof` and
+  must not set `selected_relative_volume_profile = true`.
+- `selected_percent_change_profile` must require a declared minimum percent
+  change threshold before ranking or top-N selection.
+- `percent_change_min_threshold_applied` and
+  `percent_change_min_threshold_pct` must record the threshold guard.
+- `selected_dollar_volume_tradability_profile` is a tradability/economic
+  activity marker, not an alpha marker.
+- `dollar_volume_profile_semantic_role` must preserve
+  `tradability_not_alpha`.
 
 Authoritative v0.2 framework:
 
@@ -313,6 +353,64 @@ Authoritative v0.2 framework:
 01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_2.md
 01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_2.md
 configs/data_foundation_outputs/scanner_definitions/*_v0_2.yaml
+```
+
+## 6.2 v0.3 Base Eligible + In-Play Momentum Extension
+
+The forward scanner framework is:
+
+```text
+base_eligible_smallcap_denominator_v0_3
+  -> in_play_momentum_candidate_denominator_v0_3
+  -> strategy overlays
+```
+
+New or required v0.3 physical replay columns:
+
+```text
+selected_in_play_momentum_candidate
+daily_high_vs_prev_close_pct
+daily_low_vs_prev_close_pct
+in_play_motion_pct
+in_play_motion_threshold_passed
+in_play_volume_tradability_passed
+in_play_momentum_min_push_pct
+in_play_volume_min_shares
+in_play_dollar_volume_min_usd
+in_play_detection_scope
+in_play_segment_detection_state
+in_play_first_push_segment
+in_play_first_cross_50_ts
+in_play_max_move_segment
+reason_daily_high_push_50
+reason_premarket_push_50
+reason_regular_push_50
+reason_afterhours_push_50
+reason_extended_session_push_50
+```
+
+Semantics:
+
+- `base_eligible_smallcap_denominator_v0_3` says who can be inspected.
+- `selected_in_play_momentum_candidate` says the row passed the governed
+  in-play momentum gate.
+- `selected_any_profile` is a compatibility alias for
+  `selected_in_play_momentum_candidate` in v0.3 controlled replay.
+- `selected_das_research_profile` must remain false in the global scanner.
+- `percent_change_min_threshold_pct` is `50.0` for the v0.3 in-play momentum
+  replay.
+- `in_play_detection_scope = daily_eod_proxy` means the row can identify that a
+  ticker became strongly in-play during the day, but cannot certify the first
+  segment/timestamp.
+- Segment fields remain null/unavailable until an intraday segment builder is
+  implemented.
+
+Authoritative v0.3 framework:
+
+```text
+01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_3.md
+01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_3.md
+configs/data_foundation_outputs/scanner_definitions/*_v0_3.yaml
 ```
 
 ## 7. Required Semantics

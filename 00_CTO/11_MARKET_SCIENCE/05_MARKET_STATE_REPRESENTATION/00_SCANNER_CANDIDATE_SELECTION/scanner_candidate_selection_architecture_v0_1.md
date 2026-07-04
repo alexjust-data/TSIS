@@ -23,7 +23,8 @@ dos scanners independientes
 La lectura vigente es:
 
 ```text
-un scanner base + perfiles reproducibles
+un denominador base elegible + perfiles reproducibles + overlays posteriores
+por estrategia
 ```
 
 El replay v0.1 sigue siendo evidencia util de forma, lineage y separacion de
@@ -92,6 +93,16 @@ market_cap_usd < 100000000
 data_quality in usable/review
 ```
 
+Semantica precisa:
+
+```text
+base_in_play_universe_scanner_v0_2 = identificador estable
+base_eligible_smallcap_denominator = significado correcto
+```
+
+Los perfiles son flags/ranks paralelos sobre el mismo denominador. No forman
+un embudo secuencial.
+
 Perfiles derivados:
 
 ```text
@@ -101,6 +112,17 @@ percent_change_profile_v0_2
 dollar_volume_tradability_profile_v0_2
 das_research_profile_v0_2
 ```
+
+Interpretacion actual:
+
+- `relative_volume_profile_v0_2` debe convertirse en aceleracion de volumen
+  intradia/as-of; un proxy daily no basta para promocion.
+- `percent_change_profile_v0_2` debe aplicar un minimo declarado antes de
+  rankear top-N.
+- `dollar_volume_tradability_profile_v0_2` mide operabilidad/tradability, no
+  alpha.
+- `das_research_profile_v0_2` es provisional; el DAS real debe vivir como
+  overlay de estrategia o tabla experimental propia.
 
 La razon es tecnica:
 
@@ -144,6 +166,13 @@ daily_scanner_candidates_table
 
 DAS puede prototipar estados propios, pero no debe escribir directamente
 `market_state_table` ni declarar institucional un estado sin promocion.
+
+Regla:
+
+```text
+Data Foundation define el denominador y perfiles genericos.
+Strategy Research define overlays de estrategia.
+```
 
 ## 6. Relacion con ML/RL
 

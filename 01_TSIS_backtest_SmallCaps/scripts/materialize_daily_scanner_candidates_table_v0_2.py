@@ -65,6 +65,7 @@ DATASET_DIR_NAME = "daily_scanner_candidates_table_v0_2_candidate_replay"
 SCHEMA_VERSION = "daily_scanner_candidates_table_v0_2_candidate_extension"
 QUALITY_POLICY_VERSION = "daily_scanner_candidates_table_policy_v0_2"
 SCANNER_POLICY_VERSION = "scanner_framework_v0_2"
+SCANNER_SEMANTIC_ALIGNMENT_VERSION = "v0_2_1_contract_aligned"
 BASE_SCANNER_ID = "base_in_play_universe_scanner_v0_2"
 
 
@@ -166,7 +167,6 @@ def _build_sql(args: argparse.Namespace, configs: dict[str, dict[str, Any]]) -> 
 
     base_cfg = configs["base_in_play_universe_scanner_v0_2"]
     ts_profile = configs["trade_station_like_profile_v0_2"]
-    rvol_profile = configs["relative_volume_profile_v0_2"]
     pct_profile = configs["percent_change_profile_v0_2"]
     dollar_profile = configs["dollar_volume_tradability_profile_v0_2"]
     das_profile = configs["das_research_profile_v0_2"]
@@ -179,16 +179,11 @@ def _build_sql(args: argparse.Namespace, configs: dict[str, dict[str, Any]]) -> 
     ts_volume_min = float(ts_profile["hard_filters"]["volume_today_min"])
     ts_top_n = int(ts_profile["ranking"]["top_n"])
     pct_top_n = int(pct_profile["ranking"]["top_n"])
-    rvol_top_n = int(rvol_profile["ranking"]["top_n"])
     dollar_top_n = int(dollar_profile["ranking"]["top_n"])
     das_top_n = int(das_profile["selection_sets"]["top_n_by_composite_in_play_score"])
 
-    pct_threshold = float(das_profile["in_play_reasons"]["reason_pct_chg_1d_move"]["threshold_pct"])
+    pct_threshold = float(pct_profile["thresholds"]["reason_pct_chg_1d_move_min_pct"])
     gap_threshold = float(das_profile["in_play_reasons"]["reason_gap_pct_move"]["threshold_pct"])
-    rvol_threshold = float(das_profile["in_play_reasons"]["reason_rvol_to_time"]["threshold_multiple"])
-    volume_accel_threshold = float(
-        das_profile["in_play_reasons"]["reason_volume_acceleration"]["threshold_multiple"]
-    )
     dollar_min = float(dollar_profile["thresholds"]["min_dollar_volume_to_time"])
 
     scanner_run_id = _sql_literal(args.run_id)
@@ -357,8 +352,8 @@ reasoned as (
             and source_quality_allowed as base_all_filters_passed,
         pct_chg_1d >= {pct_threshold} as reason_pct_chg_1d_move,
         gap_pct >= {gap_threshold} as reason_gap_pct_move,
-        volume_acceleration >= {volume_accel_threshold} as reason_volume_acceleration,
-        rvol_to_time >= {rvol_threshold} as reason_rvol_to_time,
+        false as reason_volume_acceleration,
+        false as reason_rvol_to_time,
         false as reason_afterhours_breakout,
         false as reason_premarket_new_high,
         false as reason_prior_day_high_reclaim,
@@ -453,22 +448,18 @@ profiled as (
             and trade_station_rank_pct_chg_1d <= {ts_top_n}
             as selected_trade_station_like_profile,
         base_all_filters_passed
+            and reason_pct_chg_1d_move
             and rank_pct_chg_1d <= {pct_top_n}
             as selected_percent_change_profile,
+        false as selected_relative_volume_profile,
         base_all_filters_passed
-            and rank_rvol_to_time <= {rvol_top_n}
-            as selected_relative_volume_profile,
-        base_all_filters_passed
-            and (
-                rank_dollar_volume_to_time <= {dollar_top_n}
-                or dollar_volume_to_time >= {dollar_min}
-            ) as selected_dollar_volume_tradability_profile,
+            and dollar_volume_to_time >= {dollar_min}
+            and rank_dollar_volume_to_time <= {dollar_top_n}
+            as selected_dollar_volume_tradability_profile,
         base_all_filters_passed
             and (
                 reason_pct_chg_1d_move
                 or reason_gap_pct_move
-                or reason_volume_acceleration
-                or reason_rvol_to_time
                 or rank_composite_in_play <= {das_top_n}
             ) as selected_das_research_profile
     from joined
@@ -551,6 +542,15 @@ select
     'v0_2' as base_universe_definition_version,
     'scanner_profile_set_v0_2' as scanner_profile_set_id,
     '{profile_ids}' as scanner_profile_ids,
+    '{SCANNER_SEMANTIC_ALIGNMENT_VERSION}' as scanner_semantic_alignment_version,
+    'base_eligible_smallcap_denominator' as base_denominator_semantic_id,
+    'parallel_flags_not_sequential_filters' as scanner_profile_semantics,
+    false as profiles_are_sequential_funnel,
+    'unavailable_without_intraday_asof' as relative_volume_profile_status,
+    true as percent_change_min_threshold_applied,
+    {pct_threshold}::double as percent_change_min_threshold_pct,
+    'tradability_not_alpha' as dollar_volume_profile_semantic_role,
+    'provisional_strategy_overlay_seed_not_final_scanner' as das_research_profile_status,
     'controlled_daily_replay' as population_scope,
     population_denominator_count,
     evaluated_candidate_count,
@@ -855,6 +855,7 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
         "schema_version": SCHEMA_VERSION,
         "quality_policy_version": QUALITY_POLICY_VERSION,
         "scanner_policy_version": SCANNER_POLICY_VERSION,
+        "scanner_semantic_alignment_version": SCANNER_SEMANTIC_ALIGNMENT_VERSION,
         "scanner_run_id": args.run_id,
         "build_run_id": args.run_id,
         "created_at_utc": args.created_at_utc,
@@ -870,6 +871,20 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
             "intraday_decision_allowed": False,
             "full_universe_claim": False,
             "population_scope": "controlled_daily_replay",
+        },
+        "contract_alignment": {
+            "base_denominator_semantics": "base_eligible_smallcap_denominator",
+            "profile_semantics": "parallel_flags_not_sequential_filters",
+            "relative_volume_profile_status": "unavailable_without_intraday_asof",
+            "percent_change_min_threshold_applied": True,
+            "percent_change_min_threshold_source": (
+                "configs/data_foundation_outputs/scanner_definitions/"
+                "percent_change_profile_v0_2.yaml"
+            ),
+            "dollar_volume_profile_semantic_role": "tradability_not_alpha",
+            "das_research_profile_status": "provisional_strategy_overlay_seed_not_final_scanner",
+            "strategy_overlays_allowed": True,
+            "strategy_overlay_promotion_required_before_official_strategy_scanner": True,
         },
         "source_inputs": {
             "master_daily_root": str(args.master_daily_root),
@@ -919,6 +934,10 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
         "limitations": [
             "This is a controlled daily EOD replay, not an intraday/live scanner.",
             "Afterhours, premarket, news and halt candidate reasons are false until scoped sources are joined.",
+            "Relative-volume and volume-acceleration profiles require intraday/as-of bars; this replay marks them unavailable rather than using daily RVOL as a substitute.",
+            "Percent-change selection requires the configured minimum threshold before ranking/top-N selection.",
+            "Dollar-volume selection is a tradability/economic-activity profile, not an alpha or setup-quality signal.",
+            "DAS fields are provisional strategy-overlay seed lineage, not a final DAS scanner.",
             "Float is not used as a hard filter because no point-in-time float source has passed coverage audit.",
             "Rows are candidate/evaluation rows only; they are not market states, labels, rewards, signals, orders, fills or PnL.",
             "ML/RL/live downstream flags remain false by contract.",

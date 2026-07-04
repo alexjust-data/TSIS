@@ -6,7 +6,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 
-PROJECT_ROOT = Path(r"C:\TSIS_Data\01_webSocket_SmallCaps")
+PROJECT_ROOT = Path(os.environ.get("TSIS_WS_ROOT", Path(__file__).resolve().parents[2])).resolve()
 NOTEBOOKS_DIR = PROJECT_ROOT / "notebooks"
 CELL_CODE_DIR = NOTEBOOKS_DIR / "cell_code"
 RUNTIME_DIR = PROJECT_ROOT / "runtime"
@@ -73,4 +73,5 @@ def build_subscription(channels: list[str], symbols: list[str]) -> str:
 def dump_json(path: Path, payload: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+
 

@@ -4,6 +4,7 @@ profile_family: daily_in_play
 profile_name: dollar_volume_tradability_profile
 profile_role: tradability_research_profile
 status: config_defined_not_officially_materialized
+semantic_class: tradability_not_alpha
 
 base_dependency:
   scanner_definition_id: base_in_play_universe_scanner_v0_2
@@ -26,3 +27,4 @@ output_flags:
 
 notes:
   - "Dollar volume is treated as a tradability profile, not as proof of a good DAS setup."
+  - "This profile may support execution/risk research, but it must not be interpreted as a strategy signal."

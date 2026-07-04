@@ -1,4 +1,4 @@
-# Data directories (do not commit)
+﻿# Data directories (do not commit)
 /data/
 /**/data/
 /fundamentals/
@@ -160,3 +160,6 @@ tmpclaude-*
 
 # Local browser / scraping artifacts
 .browser_profile*/
+# Local DAS visual/reference payloads not committed by default
+/00_CTO/99_REFERENCE_LIBRARY/DasTrades_API/
+/00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/DAS_VISUAL_CASEBOOK/

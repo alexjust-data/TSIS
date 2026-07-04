@@ -1,4 +1,4 @@
-# Graphify Refresh Queue for 00_CTO
+﻿# Graphify Refresh Queue for 00_CTO
 
 Fecha de creacion: 2026-06-18
 Estado: cola operativa versionada para refrescos Graphify de `00_CTO`.
@@ -118,6 +118,170 @@ Por ventana dedicada:
 
 ## Entradas activas
 
+### GFQ-20260704-001 - Mandatory data plane minute-root reading
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+root_agent_bootstrap
+data_plane_physical_authority
+minute_ohlcv_1m_consumption
+```
+
+Reason:
+
+```text
+Agents must always read E:/TSIS/data/README.md as part of the TSIS base context.
+For minute/OHLCV 1m work, the canonical physical root is now explicitly
+E:/TSIS/data/ohlcv_1m. The rule preserves the lesson from the impossible 1m
+candle / quote-guarded LT1B incident: future agents must not infer minute
+authority from historical paths, treat raw 1m as corrected in place, or bypass
+governed repair overlays/manifests.
+```
+
+Changed paths:
+
+```text
+E:/TSIS/data/README.md
+README.md
+AGENTS.md
+START_HERE.md
+CHANGELOG.md
+01_TSIS_backtest_SmallCaps/AGENTS.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Recommended action:
+
+```text
+Refresh the CTO/root agent-bootstrap semantic slice so graph queries surface the
+mandatory data-plane reading rule and the canonical minute root.
+```
+
+Root action:
+
+```text
+No immediate root rebuild. Include in the next official CTO/root refresh batch.
+```
+### GFQ-20260701-001 - Market State Tables status and operating map
+
+Status: pending
+Severity: HIGH
+
+Slice:
+
+```text
+11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/
+```
+
+Reason:
+
+```text
+Added a dated CTO snapshot explaining expected state tables, component vs
+candidate vs institutional state semantics, operational usage from Data
+Foundation to strategy research, ML, imitation learning and offline RL, and the
+current readiness matrix as of 2026-07-01.
+```
+
+Changed paths:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01.md
+00_CTO/11_MARKET_SCIENCE/README.md
+00_CTO/CHANGELOG.md
+00_CTO/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Recommended action:
+
+```text
+Refresh the Market State Representation leaf so future graph queries can find
+the updated state-table readiness map and do not confuse components/scanners
+with promoted market_state/event_state datasets.
+```
+
+Root action:
+
+```text
+No immediate root rebuild. Include in the next CTO/Market State leaf refresh
+batch.
+```
+
+Owner:
+
+```text
+00_CTO / Market State Representation
+```
+
+Notes:
+
+```text
+No graph rebuild was performed in this change. This entry queues the semantic
+update.
+```
+
+### 2026-06-30 - Scanner base eligible and in-play momentum v0.3
+
+Estado: pending
+Severidad: HIGH
+
+Slice:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/
+```
+
+Motivo:
+
+- la arquitectura activa de Scanner Candidate Selection cambia de `v0.2`
+  base-plus-profiles a `v0.3` con dos denominadores explicitos;
+- `base_eligible_smallcap_denominator` significa quien TSIS puede inspeccionar;
+- `in_play_momentum_candidate_denominator` significa base eligible mas
+  movimiento fuerte y tradability;
+- el umbral inicial de movimiento fuerte es `50%`;
+- el replay diario usa proxy EOD, no segment timing;
+- `trade_station_like_profile` queda como visibilidad operativa humana;
+- DAS y futuras estrategias quedan como overlays posteriores, no como parte del
+  scanner global.
+
+Changed paths:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_base_and_in_play_momentum_contract_v0_3.md
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/notebook/daily_scanner_candidates_v0_3_run_inspection.ipynb
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/README.md
+00_CTO/CHANGELOG.md
+```
+
+Recommended action:
+
+```text
+Refresh the Market State scanner-selection leaf so graph queries route agents
+to v0.3 as the active scanner semantics and preserve v0.1/v0.2 as historical
+evidence only.
+```
+
+Root action:
+
+```text
+No immediate root rebuild. Include in next CTO leaf refresh batch.
+```
+
+Owner:
+
+```text
+00_CTO / Market State Representation
+```
+
+Notes:
+
+```text
+This entry is semantic architecture. It does not promote any E-root dataset.
+```
+
 ### 2026-06-30 - Scanner base universe and profiles v0.2
 
 Estado: pending
@@ -132,9 +296,20 @@ Slice:
 Motivo:
 
 - la arquitectura activa de Scanner Candidate Selection cambia de dos scanners
-  independientes a un scanner base con perfiles reproducibles;
+  independientes a un denominador base elegible con perfiles reproducibles y
+  overlays posteriores por estrategia;
+- `base_in_play_universe_scanner_v0_2` queda como identificador estable, pero
+  su significado correcto es `base_eligible_smallcap_denominator`;
+- los perfiles son flags/ranks paralelos sobre el denominador, no filtros
+  secuenciales;
 - `volume_today >= 500k` y `% change 1D top 25` pasan a ser
   `trade_station_like_profile_v0_2`, no filtros universales;
+- `relative_volume_profile_v0_2` debe significar aceleracion de volumen
+  intradia/as-of antes de promocion;
+- `percent_change_profile_v0_2` debe exigir minimo declarado antes de top-N;
+- `dollar_volume_tradability_profile_v0_2` queda como tradability, no alpha;
+- `das_research_profile_v0_2` queda como seed provisional para overlay DAS, no
+  scanner DAS final;
 - `broad_in_play_discovery_scanner_v0_1` queda descompuesto en perfiles,
   razones y rankings sobre el universo base;
 - se bloquea float como hard filter hasta auditar disponibilidad point-in-time;
@@ -373,7 +548,7 @@ Cambios:
 
 Motivo:
 
-- separa enseñanzas fuente por trader de estrategias/factores TSIS propios;
+- separa enseÃ±anzas fuente por trader de estrategias/factores TSIS propios;
 - mueve documentos, assets e indices de Steven Dux fuera de `LONG/stevenDux`,
   `SHORT/stevenDux`, `FACTORS/stevenDux` y `source_assets/steven_dux`;
 - mantiene `LONG/`, `SHORT/` y `FACTORS/` como espacios TSIS para estrategias
@@ -906,6 +1081,336 @@ Next valid root actions:
 - or use an official Graphify slice-replacement flow if available in a future
   Graphify version.
 
+### GFQ-20260630-002 - Strategy scanner overlay policy and DAS runbook
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/
+13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/
+11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/
+11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/
+```
+
+Reason:
+
+```text
+A transversal strategy scanner overlay policy now governs how every future
+strategy consumes daily_scanner_candidates_table as a denominator, declares
+which candidate denominator a notebook/run used, avoids positive-only selection
+bias, and separates Data Foundation scanner rows from strategy overlays and
+future market_state/event_state tables. DAS is the first applied implementation,
+not an exception.
+```
+
+Changed paths:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/strategy_scanner_overlay_policy_v0_1.md
+00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/DAS_SCANNER_USAGE_AND_OVERLAY_RUNBOOK_v0_1.md
+00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/README.md
+00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/README.md
+00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/DAS_CANDIDATE_STATE_TABLE_EXPERIMENTAL_SPEC_v0_1.md
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/README.md
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/market_state_representation_source_file_map_v0_1.md
+00_CTO/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/01_research/README.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Recommended action:
+
+```text
+Refresh the Trading Systems DAS leaf and the Market State scanner-selection leaf
+so graph queries can route agents from DAS notebooks to the governed scanner
+denominator and overlay rules.
+```
+
+Root action:
+
+```text
+No immediate root rebuild. Include in next CTO leaf refresh batch.
+```
+
+Owner:
+
+```text
+00_CTO / DAS strategy research and scanner candidate selection
+```
+
+Notes:
+
+```text
+This entry documents architecture/navigation only. It does not promote the
+scanner replay to an official E-root dataset and does not make DAS a final
+institutional scanner.
+```
+
+### GFQ-20260630-003 - Intraday scanner first-push architecture
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/
+11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/
+```
+
+Reason:
+
+```text
+Scanner Candidate Selection now distinguishes daily coarse context from
+intraday first-push detection. The architecture contract
+intraday_scanner_candidates_contract_v0_1.md declares that DAS/frontside,
+event-state and future ML/RL state preparation must use an ohlcv_1m-based
+intraday scanner when first_cross_ts, segment, volume-to-time or
+dollar-volume-to-time matter.
+```
+
+Changed paths:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/intraday_scanner_candidates_contract_v0_1.md
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/README.md
+00_CTO/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Recommended action:
+
+```text
+Refresh the Market State scanner-selection leaf so graph queries route future
+agents to intraday scanner v0.1 for first-push timing instead of daily scanner
+v0.3.
+```
+
+Root action:
+
+```text
+No immediate root rebuild. Include in next CTO leaf refresh batch.
+```
+
+Owner:
+
+```text
+00_CTO / Market State Representation scanner candidate selection
+```
+
+Notes:
+
+```text
+This entry documents architecture/navigation. It does not promote the intraday
+scanner replay to an official E-root dataset and does not make scanner rows
+market_state, event_state, labels, rewards or strategy signals.
+```
+
+### GFQ-20260630-004 - Intraday scanner quote-guarded successor architecture
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/
+11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/
+```
+
+Reason:
+
+```text
+The CTO scanner architecture now records that intraday scanner v0.1 is raw
+ohlcv_1m controlled replay evidence only. The next correct path is a
+quote-guarded v0.2 candidate that applies the raw ohlcv_1m +
+repair_manifest_lt1b_v0_1.parquet overlay before any canonical scanner
+promotion for the LT1B universe.
+```
+
+Changed paths:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/intraday_scanner_candidates_contract_v0_1.md
+00_CTO/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/intraday_scanner_framework_and_definitions_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/intraday_scanner_candidates_table_target_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Recommended action:
+
+```text
+Refresh the Market State scanner-selection leaf so graph queries do not route
+future agents from v0.1 raw replay directly to canonical/full-universe scanner
+promotion.
+```
+
+Root action:
+
+```text
+No immediate root rebuild. Include in next CTO leaf refresh batch.
+```
+
+Owner:
+
+```text
+00_CTO / Market State Representation scanner candidate selection
+```
+
+Notes:
+
+```text
+No graph rebuild was performed here. This entry queues the semantic dependency
+for the next official Graphify refresh.
+```
+
+
+### GFQ-20260704-005 - Market State observable eligibility route
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/
+11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/
+```
+
+Reason:
+
+```text
+Market State v3 records that observable eligibility is closed for declared scope through state_observable_eligibility_contract_v0_1.md.
+Formula governance is also closed through state_derived_observables_formula_contract_v0_1.md.
+The next route is state builder contract, leakage/formula/timestamp/role validators and controlled fixtures before any official market_state/event_state materialization.
+```
+
+Changed paths:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+00_CTO/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_observable_eligibility_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Recommended action:
+
+```text
+Refresh the Market State Representation leaf so graph queries understand that observable eligibility, formula governance, timestamp policy and snapshot roles are no longer pending. State builder contract and validators still block state-table materialization.
+```
+
+Root action:
+
+```text
+No immediate root rebuild. Include in next CTO leaf refresh batch.
+```
+
+Owner:
+
+```text
+00_CTO / Market State Representation
+```
+
+Notes:
+
+```text
+No graph rebuild was performed. No market_state/event_state parquet, ML/RL dataset or AlphaEvolve evaluator was enabled by this documentation update.
+```
+
+### GFQ-20260704-006 - Market State derived formula gate
+
+Status: pending
+Severity: HIGH
+Slice: 00_CTO / Market State Representation
+
+Summary:
+
+Market State v3 now records the derived-observable formula gate as complete for declared scope. Eligibility, formula and timestamp policy contracts are closed; next graph route should point to state builder contract and leakage/formula/timestamp/role validators before materialization.
+
+Changed paths:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+00_CTO/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_observable_eligibility_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Expected graph update:
+
+- add formula contract node as completed gate after eligibility;
+- mark formula gate no longer pending;
+- route future agents to state builder contract and validators;
+- preserve no-materialization/no-ML/no-RL/no-AlphaEvolve-enable boundary.
+
+### GFQ-20260704-007 - Market State decision timestamp policy gate
+
+Status: pending
+Severity: HIGH
+Slice: 00_CTO / Market State Representation
+
+Summary:
+
+Market State v3 now records the decision timestamp policy gate as complete for declared scope. Eligibility, formula and timestamp gates are closed; next graph route should point to state builder contract and leakage/formula/timestamp/role validators before materialization.
+
+Changed paths:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+00_CTO/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_decision_timestamp_policy_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_observable_eligibility_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Expected graph update:
+
+- add timestamp policy contract node as completed gate after formula contract;
+- mark timestamp policy no longer pending;
+- route future agents to state builder contract and validators;
+- preserve no-materialization/no-ML/no-RL/no-AlphaEvolve-enable boundary.
+### GFQ-20260704-008 - Market State snapshot roles gate
+
+Status: pending
+Severity: HIGH
+Slice: 00_CTO / Market State Representation
+
+Summary:
+
+Market State v3 now records the state snapshot roles gate as complete for declared scope. Eligibility, formula, timestamp and role gates are closed; next graph route should point to state builder contract and leakage/formula/timestamp/role validators before materialization.
+
+Changed paths:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+00_CTO/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_snapshot_roles_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_decision_timestamp_policy_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Expected graph update:
+
+- add snapshot roles contract node as completed gate after timestamp policy;
+- mark snapshot roles no longer pending;
+- route future agents to state builder contract and validators;
+- preserve no-materialization/no-ML/no-RL/no-AlphaEvolve-enable boundary.
 ## Entry template
 
 ```text
@@ -921,3 +1426,191 @@ Root action:
 Owner:
 Notes:
 ```
+
+### GFQ-20260704-009 - Market State builder contract gate
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION
+01_foundations/module_contracts/outputs
+market_state_event_state_builder_route
+```
+
+Reason:
+
+```text
+Market State v3 now records state_builder_contract_v0_1.md as complete for declared scope after eligibility, formula, timestamp and snapshot role gates. Future graph queries must route agents to validators and controlled fixtures next, not to another conceptual builder contract.
+```
+
+Changed paths:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_builder_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+00_CTO/CHANGELOG.md
+```
+
+Expected graph action:
+
+```text
+- add state builder contract node as completed gate after snapshot roles;
+- link builder contract to eligibility, formulas, timestamp policy, snapshot roles, composition contract and coverage/lookback policy;
+- route future agents to leakage/formula/timestamp/role/builder validators and controlled fixtures;
+- keep official market_state/event_state materialization, ML/RL and AlphaEvolve disabled.
+```
+### GFQ-20260704-010 - Market State event candidate tables gate
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION
+01_foundations/module_contracts/outputs
+market_state_event_candidate_route
+```
+
+Reason:
+
+```text
+Market State v3 now records event_candidate_tables_contract_v0_1.md as complete for declared scope. Future graph queries must show that daily/1m event tables sit between scanner candidates and event_windows/event_state.
+```
+
+Changed paths:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_tables_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+00_CTO/CHANGELOG.md
+```
+
+Expected graph action:
+
+```text
+- add event candidate tables contract node as completed gate after state builder contract;
+- link daily scanner -> daily strategy candidate events -> event windows -> event_state;
+- link intraday scanner -> intraday 1m strategy candidate events -> event windows -> event_state;
+- mantener event tables no materializadas y ML/RL/AlphaEvolve deshabilitados.
+```
+### GFQ-20260704-011 - Market State event candidate table schema contracts
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION
+01_foundations/canonical_schemas/outputs
+market_state_event_candidate_route
+```
+
+Reason:
+
+```text
+Market State v3 registra daily_strategy_candidate_events_table_schema_contract.md e intraday_1m_strategy_candidate_events_table_schema_contract.md como completos para el scope declarado. Las consultas Graphify deben distinguir schema contracts DONE de builders/materializacion PENDING.
+```
+
+Changed paths:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/daily_strategy_candidate_events_table_schema_contract.md
+01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/intraday_1m_strategy_candidate_events_table_schema_contract.md
+01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_tables_contract_v0_1.md
+00_CTO/CHANGELOG.md
+```
+
+Expected graph action:
+
+```text
+- anadir nodos de schema contract para tablas de eventos candidatas daily e intradia;
+- conectarlos despues de event_candidate_tables_contract_v0_1.md;
+- enrutar el siguiente trabajo a validators/builders y expansion de event_windows;
+- mantener event tables no materializadas y ML/RL/AlphaEvolve deshabilitados.
+```
+### GFQ-20260704-012 - Market State event candidate validators contract
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION
+01_foundations/module_contracts/outputs
+market_state_event_candidate_route
+```
+
+Reason:
+
+```text
+Market State v3 registra event_candidate_table_validators_contract_v0_1.md como completo para el scope declarado. Las consultas Graphify deben distinguir validators contract DONE de validators ejecutables PENDING.
+```
+
+Changed paths:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_table_validators_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_tables_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+00_CTO/CHANGELOG.md
+```
+
+Expected graph action:
+
+```text
+- anadir nodo de contrato validators para event candidate tables;
+- conectarlo despues de los schema contracts daily/intradia;
+- enrutar el siguiente trabajo a validators ejecutables y fixtures minimos;
+- mantener builders/materializacion, event_windows expansion y ML/RL/AlphaEvolve pendientes.
+```
+### GFQ-20260704-013 - Market State canonical representation boundary
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION
+01_foundations/module_contracts/outputs
+market_state_representation_layer_boundary
+```
+
+Reason:
+
+```text
+Market State v3 registra state_canonical_vs_representation_layer_contract_v0_1.md como completo para el scope declarado. Las consultas Graphify deben distinguir Canonical State estable de Representation Layer mutable para AlphaEvolve/RL/ML.
+```
+
+Changed paths:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_canonical_vs_representation_layer_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+00_CTO/CHANGELOG.md
+```
+
+Expected graph action:
+
+```text
+- anadir nodo del contrato Canonical State vs Representation Layer;
+- conectarlo a v3, eligibility, formula, builder y semantic_state_representation_contract futuro;
+- preservar que no hay cambio de schema ni materializacion de representation candidates;
+- enrutar trabajo futuro a validators, fixtures y semantic representations separadas del estado canonico.
+```
+

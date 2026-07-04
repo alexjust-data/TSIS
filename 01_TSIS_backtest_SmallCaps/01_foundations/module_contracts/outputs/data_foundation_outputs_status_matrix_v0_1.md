@@ -1,4 +1,4 @@
-# Data Foundation Outputs Status Matrix v0.1
+﻿# Data Foundation Outputs Status Matrix v0.1
 
 Reference date: 2026-06-27
 
@@ -99,6 +99,12 @@ lineage/recompute/missingness diagnostics. It is not an official promoted
 replacement and must not be used as primary ML/RL, execution or core-backtest
 truth.
 
+`controlled_replay_candidate`
+
+The output exists as a controlled replay under `C:/TSIS_Data/tests/test_runs/`
+or an explicit candidate replay root. It validates builder semantics, lineage
+and scoped evidence, but it is not an official promoted E-root table.
+
 `not_materialized`
 
 The target table is conceptually defined or expected, but no governed output
@@ -109,11 +115,11 @@ exists under `E:/TSIS/data/data_foundation_outputs/`.
 | Output | Rows | Parquet files | Scope | Test evidence | Current status | Primary allowed use today | Main blocker |
 | --- | ---: | ---: | --- | --- | --- | --- | --- |
 | `instrument_master_v0_1` | 4,824 | 1 | LT1B universe identity snapshot/window | Seven-table rerun passed | `validated_for_declared_scope` | identity context, event/backtest/materialization scope with flags | not final lifecycle engine; no daily PTI market-cap reconstruction |
-| `market_calendar_v0_1` | 5,283 | 1 | XNYS sessions, 2005-01-03 to 2025-12-31 | Seven-table rerun passed | `validated_for_declared_scope` | session calendar for event/backtest/materialization | not venue-specific liquidity calendar; no live future extension |
-| `expected_data_calendar_v0_1` | 29,029,152 | 84 | expected rows by dataset family/year | Seven-table rerun passed | `validated_for_declared_scope` | coverage denominator and absence diagnostics | not physical presence; must be joined to actual validators |
+| `market_calendar_v0_1` | 5,328 | 1 | XNYS sessions, 2005-01-03 to 2026-03-09 | 2026-07-01 targeted contract rerun passed | `validated_for_declared_scope` | session calendar for event/backtest/materialization | not venue-specific liquidity calendar; no live future extension beyond current source limit |
+| `expected_data_calendar_v0_1` | 29,478,796 | 88 | expected rows by dataset family/year, 2005-01-03 to 2026-03-09 | 2026-07-01 targeted contract rerun passed | `validated_for_declared_scope` | coverage denominator and absence diagnostics | not physical presence; must be joined to actual validators |
 | `corporate_actions_table_v0_1` | 104,757 | 1 | splits/dividends/ticker changes from reference/additional | Seven-table rerun passed | `validated_for_declared_scope` | corporate-action context, price-view support, event context | does not solve full economic continuity across ticker changes |
 | `dataset_certification_matrix_v0_1` | 13 | 1 | family-level quality gates | Seven-table rerun passed | `validated_for_declared_scope` | family gate/mask for consumers | family-level only; not ticker/date row validation |
-| `master_daily_table_v0_1` | 21,771,864 | 63 | daily rows x three price views | Seven-table rerun passed | `validated_for_declared_scope` | daily event context, outcome research, backtest core rows where flags allow | no full row-level audit labels; no execution/microstructure |
+| `master_daily_table_v0_1` | 22,109,097 | 66 | daily rows x three price views, 2005-01-03 to 2026-03-09 | 2026-07-01 targeted contract rerun passed | `validated_for_declared_scope` | daily event context, outcome research, backtest core rows where flags allow | no full row-level audit labels; no execution/microstructure |
 | `master_intraday_bar_table_v0_1` | 175,252 | 14 | `scoped_split_normalized_event_cases`; `full_universe_claim=false` | Seven-table rerun passed | `scoped_pilot` | scoped event research and backtest extended with flags | not full-universe 1m; backtest core rows = 0; not execution truth |
 | `microstructure_features_table_v0_1` | 1 | 1 | `seed_event_window_smoke`; `full_universe_claim=false` | isolated rerun passed; 6-row candidate visual smoke evidence exists | `seed_state_sample` | schema/lineage/recompute proof for one event window | not ML/RL-ready, not core-backtest-ready, not execution-ready |
 | `microstructure_features_table_v0_2_candidate_controlled_25_per_role` | 50 | 1 | halt event-window candidate; 25 rows per selected role; `full_universe_claim=false` | isolated candidate test passed | `controlled_candidate_not_promoted` | controlled candidate diagnostics for quote/trade lineage, missingness, recomputation and market-state design | quotes uses provisional `D:/quotes`; trades present only 24/50; not ML/RL-ready, not core-backtest-ready, not execution-ready |
@@ -137,6 +143,95 @@ status = passed
 tests = 29
 failed = 0
 skipped = 0
+```
+
+Latest targeted extension evidence for `market_calendar_v0_1`,
+`expected_data_calendar_v0_1` and `master_daily_table_v0_1`:
+
+```text
+date = 2026-07-01
+coverage = 2005-01-03 to 2026-03-09
+market_calendar_build_run_id = market_calendar_v0_1_20260630T193931Z
+expected_data_calendar_build_run_id = expected_data_calendar_v0_1_20260630T194807Z
+master_daily_table_build_run_id = master_daily_table_v0_1_20260630T201044Z
+market_calendar_rows = 5328
+expected_data_calendar_rows = 29478796
+master_daily_table_rows = 22109097
+backup_root = E:/TSIS/data/data_foundation_outputs/_backups/20260630_extend_calendar_daily_to_20260309/
+pytest = python -m pytest C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_market_calendar_contract.py C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_expected_data_calendar_contract.py C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_master_daily_table_contract.py -q
+result = 12 passed
+```
+
+Latest controlled replay evidence for `intraday_scanner_candidates_table_v0_1`:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-30/intraday_scanner_candidates_replay_20250102_20250110_v0_1/
+run_id = intraday_scanner_candidates_v0_1_20260630T175311Z
+status = completed
+start_date = 2025-01-02
+end_date = 2025-01-10
+window_count = 1
+materialization_scope = candidate_replay_month_parts
+full_universe_claim = false
+
+part = year=2025/month=01
+rows = 33413
+tickers = 5690
+session_dates = 6
+base_eligible_rows = 7498
+motion_threshold_rows = 235
+tradability_pass_rows = 176
+selected_intraday_in_play_candidate_rows = 102
+first_cross_premarket_rows = 114
+first_cross_regular_rows = 82
+first_cross_afterhours_rows = 39
+duplicate_ticker_session_keys = 0
+source_ohlcv_1m_file_count = 5775
+```
+
+Interpretation:
+
+```text
+intraday_scanner_candidates_table_v0_1 is the forward detector for first-push
+timing from 1m bars. This controlled replay is not an official E-root
+materialization, not market_state, not event_state, not a strategy signal and
+not ML/RL-ready state.
+```
+
+Quote-guarded source state:
+
+```text
+intraday_scanner_candidates_table_v0_1 reads raw E:/TSIS/data/ohlcv_1m.
+It must not be promoted as a canonical/full-universe 20-year scanner because
+the promoted LT1B quote-guarded overlay is now the required successor input.
+```
+
+Required successor:
+
+```text
+intraday_scanner_candidates_table_v0_2_quote_guarded_candidate
+source_price_view = raw ohlcv_1m + repair_manifest_lt1b_v0_1.parquet overlay
+upstream_contract = 01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md
+```
+
+Current repair workstream known to this matrix:
+
+```text
+script = build_ohlcv_1m_quote_guarded_repairs_v0_2.py
+minute_root = E:/TSIS/data/ohlcv_1m
+quotes_root = D:/quotes
+run_root = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838
+promoted_manifest = E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1.parquet
+promoted_manifest_state = PASS
+promoted_manifest_rows = 301278342
+```
+
+Selection rule for the successor:
+
+```text
+If a raw +50% first-cross is not confirmed by the quote-guarded view, preserve
+the evidence but mark the row not selected with:
+scanner_quality_state = rejected_raw_spike_not_confirmed_by_quotes
 ```
 
 Latest successful isolated evidence for `microstructure_features_table_v0_1`:
@@ -431,37 +526,68 @@ still has no official E-root parquet, official manifest or official summary. It
 is the candidate-generation layer for in-play discovery, not a replacement for
 `market_state_table`.
 
-The forward `v0.2` scanner model is also implemented as a controlled builder
-and deterministic fixture test. It replaces the idea of two independent scanner
-universes with one base denominator plus profile flags:
+The forward `v0.3` scanner model is now the active implementation path for
+new builders and wider replays. It replaces the ambiguous `v0.2` profile model
+with two explicit denominators:
 
 ```text
-base_in_play_universe_scanner_v0_2
-trade_station_like_profile_v0_2
-relative_volume_profile_v0_2
-percent_change_profile_v0_2
-dollar_volume_tradability_profile_v0_2
-das_research_profile_v0_2
+base_eligible_smallcap_denominator_v0_3
+  -> common stock, market cap < 100M, 0.5 < last <= 20, quality usable/review
+
+in_play_momentum_candidate_denominator_v0_3
+  -> base eligible + strong move >= 50% + tradability gate
 ```
 
-`v0.2` is not an official E-root materialization. It is the current
-implementation path for future wider scanner replays.
+`v0.3` is not an official E-root materialization. It is the current
+implementation path for future wider scanner replays and for the first
+20-year denominator candidate.
+
+Promotion caution:
+
+- `base_eligible_smallcap_denominator_v0_3` is who TSIS may inspect.
+- `in_play_momentum_candidate_denominator_v0_3` is who enters the momentum/
+  pump-dump/frontside research denominator.
+- `selected_in_play_momentum_candidate` requires a >=50% strong-move proxy and
+  a tradability gate.
+- The current replay uses `daily_eod_proxy`, where the strongest move is
+  inferred from `daily_high_vs_prev_close_pct`, `pct_chg_1d` and `gap_pct`.
+- Certified premarket/regular/afterhours first-push detection is outside the
+  daily proxy. Use `intraday_scanner_candidates_table_v0_1` controlled replay
+  or later intraday materializations when first-push timing matters.
+- `trade_station_like_profile_v0_3` remains a human/operator visibility profile.
+- `DAS` and all future strategy scanners are overlays after the global scanner,
+  not fields that decide the global denominator.
+- `float` is allowed as future informational context only; it is not a global
+  filter until a point-in-time source is audited.
 
 Latest controlled replay evidence:
 
 ```text
-run_id: daily_scanner_candidates_replay_20250102_20250110_v0_2
-root: C:/TSIS_Data/tests/test_runs/2026-06-30/daily_scanner_candidates_replay_20250102_20250110_v0_2/
+run_id: daily_scanner_candidates_replay_20250102_20250110_v0_3_0_in_play_momentum
+root: C:/TSIS_Data/tests/test_runs/2026-06-30/daily_scanner_candidates_replay_20250102_20250110_v0_3_0_in_play_momentum/
 rows: 15323
-selected_any_profile_rows: 4023
+sessions: 6
+instruments: 2590
+base_eligible_rows: 6184
+selected_in_play_momentum_candidate_rows: 69
 selected_trade_station_like_profile_rows: 150
-selected_das_research_profile_rows: 2472
-selected_below_500k_volume_rows: 3177
+selected_das_research_profile_rows: 0
+selected_without_50_move: 0
+selected_without_tradability: 0
+min_selected_motion_pct: 50.2851
+max_selected_motion_pct: 363.6408
 duplicate_key_groups: 0
 float_filter_used_rows: 0
 ml_feature_candidate_rows: 0
 rl_state_candidate_rows: 0
+scanner_semantic_alignment_version: v0_3_0_in_play_momentum_denominator
+in_play_detection_scope: daily_eod_proxy
+in_play_segment_detection_state: available_in_intraday_scanner_candidates_table_v0_1_controlled_replay
 ```
+
+Historical v0.2 evidence remains valid as an intermediate replay, but it is no
+longer the forward scanner semantics because it mixed global profile flags with
+strategy-overlay lineage.
 
 Governed historical v0.1 scanner definitions:
 
@@ -478,11 +604,12 @@ The following target outputs are still not governed materializations under
 | Target output | Current state | Required before materialization |
 | --- | --- | --- |
 | `data_quality_report` | documentation/evidence exists under `01_foundations/data_quality_report/`, but no governed E-root output table exists | decide if it is a report folder, a table, or both; define schema/manifest if table |
-| `daily_scanner_candidates_table` | v0.1 builder/replay evidence exists under `C:/TSIS_Data/tests/test_runs/2026-06-29/daily_scanner_candidates_replay_20250102_20250110_v0_1/`; v0.2 base-universe-plus-profiles builder and fixture test exist; official E-root materialization does not exist | implement full validator suite, decide wider replay/promotion policy, preserve scanner rows as candidate lineage only, obey `market_state_coverage_and_lookback_policy_v0_1`; cannot be treated as complete universe, final market state, ML/RL feature table or strategy signal |
-| `master_intraday_bar_table_v0_2_candidate_quote_guarded` | candidate contract and config defined; no parquet materialization exists | wait for final `E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/` repair manifest and validation report; storage model is raw `ohlcv_1m` plus repair-manifest overlay, not a full corrected parquet tree; keep `D:/quotes` only as provisional candidate lineage; builder must consume a manifest/partition list, not blind recursive file discovery |
+| `daily_scanner_candidates_table` | v0.1 and v0.2 historical replay evidence exists; active v0.3 builder, fixture test and controlled replay exist under `C:/TSIS_Data/tests/test_runs/2026-06-30/daily_scanner_candidates_replay_20250102_20250110_v0_3_0_in_play_momentum/`; official E-root materialization does not exist | implement full validator suite, run wider/20-year candidate with long-running telemetry, preserve scanner rows as candidate lineage only, obey `market_state_coverage_and_lookback_policy_v0_1`; cannot be treated as final market state, ML/RL feature table or strategy signal; daily proxy cannot certify premarket/regular/afterhours first-push segment |
+| `intraday_scanner_candidates_table_v0_2_quote_guarded_candidate` | v0.1 raw controlled replay exists; v0.2 quote-guarded candidate is contract-required but not materialized | consume the promoted `repair_manifest_lt1b_v0_1.parquet`; compare raw vs quote-guarded first-cross evidence; reject raw spikes not confirmed by quotes; do not promote raw-only v0.1 as canonical/full-universe |
+| `master_intraday_bar_table_v0_2_candidate_quote_guarded` | candidate contract and config defined; no parquet materialization exists | upstream LT1B repair manifest is promoted and PASS; storage model is raw `ohlcv_1m` plus repair-manifest overlay, not a full corrected parquet tree; keep `D:/quotes` only as provisional candidate lineage; builder must consume the manifest/partition list, not blind recursive file discovery |
 | `real_time_corporate_event_alerts_table` | not materialized | define vendor/source model, latency semantics, SEC/newswire/DAS/vendor lineage, and live-vs-backfill contract |
 | `short_sale_constraints_table` | target contract and acquisition runbook defined, not materialized | derive/validate SSR proxy or acquire official SSR; connect DAS/SageTrader or broker/vendor feed for forward capture; acquire broker/vendor historical borrow/locate/availability if 20-year historical execution feasibility is required; define account/broker scope and as-of/latency semantics |
-| `market_state_table` / `event_state_table` | contract stack plus deterministic fixture loop passed, not materialized | expand to controlled multi-component sample; obey `market_state_coverage_and_lookback_policy_v0_1`; `D:/quotes` may be used only as provisional candidate lineage with `quotes_root_state=provisional_d_legacy_recovery_root_pending_e_parity`; add recomputation/manifest/coverage/lookback gates; promote only after leakage/adversarial tests and E-root parity/rebuild requirements pass |
+| `market_state_table` / `event_state_table` | stack de contratos mas fixture loop determinista pasado, no materializado; `state_observable_eligibility_contract_v0_1.md`, `state_derived_observables_formula_contract_v0_1.md`, `state_decision_timestamp_policy_v0_1.md`, `state_snapshot_roles_contract_v0_1.md`, `state_builder_contract_v0_1.md`, `event_candidate_tables_contract_v0_1.md`, `event_candidate_table_validators_contract_v0_1.md` y `state_canonical_vs_representation_layer_contract_v0_1.md` estan completos para el scope declarado | siguiente cierre: validators de leakage/formula/timestamp/role/builder parity mas validators ejecutables/builders de event candidate tables antes del sample multi-componente controlado de event_state; los schema contracts daily/1m de eventos candidatos y el validators contract estan completos; obedecer `market_state_coverage_and_lookback_policy_v0_1`; `D:/quotes` solo puede usarse como lineage candidate provisional con `quotes_root_state=provisional_d_legacy_recovery_root_pending_e_parity`; anadir gates de recomputation/manifest/coverage/lookback; promocionar solo despues de leakage/adversarial tests y requisitos de E-root parity/rebuild |
 
 ## 8. Current Readiness By Consumer
 
@@ -524,6 +651,100 @@ C:/TSIS_Data/RESEARCH_PHILOSOPHY.md
 ```
 
 ## 10. Immediate Next Actions
+### 2026-07-04 State Observable Eligibility Update
+
+New completed contract:
+
+```text
+01_foundations/module_contracts/outputs/state_observable_eligibility_contract_v0_1.md
+state_observable_eligibility_contract_v0_1 = complete_for_contract_defined_scope
+```
+
+This contract closes the column/family eligibility gate for future state builders:
+
+```text
+source schemas/components
+-> real source columns or grouped source columns
+-> target observable namespace/name
+-> cutoff rule
+-> quality gate
+-> allowed use
+-> status
+```
+
+It does not materialize data and does not enable ML/RL/AlphaEvolve directly.
+
+Formula gate completed after eligibility:
+
+```text
+01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md
+state_derived_observables_formula_contract_v0_1 = complete_for_contract_defined_scope
+```
+
+Timestamp policy completed after formulas:
+
+```text
+01_foundations/module_contracts/outputs/state_decision_timestamp_policy_v0_1.md
+state_decision_timestamp_policy_v0_1 = complete_for_contract_defined_scope
+```
+
+Snapshot roles completed after timestamp policy:
+
+```text
+01_foundations/module_contracts/outputs/state_snapshot_roles_contract_v0_1.md
+state_snapshot_roles_contract_v0_1 = complete_for_contract_defined_scope
+```
+
+State builder contract completed after snapshot roles:
+
+```text
+01_foundations/module_contracts/outputs/state_builder_contract_v0_1.md
+state_builder_contract_v0_1 = complete_for_contract_defined_scope
+```
+
+Contrato de event candidate tables completado despues del builder contract:
+
+```text
+01_foundations/module_contracts/outputs/event_candidate_tables_contract_v0_1.md
+event_candidate_tables_contract_v0_1 = complete_for_contract_defined_scope
+```
+Schema contracts de event candidate tables completados despues del contrato de ruta de eventos candidatos:
+
+```text
+01_foundations/canonical_schemas/outputs/daily_strategy_candidate_events_table_schema_contract.md
+daily_strategy_candidate_events_table_schema_contract_v0_1 = complete_for_contract_defined_scope
+
+01_foundations/canonical_schemas/outputs/intraday_1m_strategy_candidate_events_table_schema_contract.md
+intraday_1m_strategy_candidate_events_table_schema_contract_v0_1 = complete_for_contract_defined_scope
+```
+Event candidate table validators contract completed after schema contracts:
+
+```text
+01_foundations/module_contracts/outputs/event_candidate_table_validators_contract_v0_1.md
+event_candidate_table_validators_contract_v0_1 = complete_for_contract_defined_scope
+```
+
+Canonical State vs Representation Layer contract completado despues de cerrar los validators contract de eventos candidatos:
+
+```text
+01_foundations/module_contracts/outputs/state_canonical_vs_representation_layer_contract_v0_1.md
+state_canonical_vs_representation_layer_contract_v0_1 = complete_for_contract_defined_scope
+```
+
+En conjunto, esto cierra para el scope declarado los gates de elegibilidad, formulas, tiempo legal, roles de estado, builder contract, ruta de eventos candidatos y frontera Canonical State vs Representation Layer. No materializa datos oficiales ni habilita ML/RL/AlphaEvolve directamente.
+
+El siguiente trabajo inmediato de state tables queda asi:
+
+```text
+1. leakage/formula/timestamp/role/builder validators consuming eligibility + formula + timestamp policy + roles + builder contracts + canonical/representation boundary
+2. validators ejecutables de event candidate tables consumiendo schema contracts y validators contract
+3. builders/materializacion candidate para daily_strategy_candidate_events_table_v0_1 e intraday_1m_strategy_candidate_events_table_v0_1 solo despues de validator pass
+4. event_windows expansion for source_event_table != halts_table_v0_1
+5. controlled market_state/event_state fixture or multi-component sample
+6. candidate materialization only after validators pass
+```
+
+No iniciar materializacion candidate de `market_state_table` ni `event_state_table` antes de que los validators de leakage/formula/timestamp/role/builder esten explicitos y pasen.
 
 1. Rerun or split the fifteen-table test suite so an integrated pass exists for
    all current outputs.
@@ -554,28 +775,36 @@ C:/TSIS_Data/RESEARCH_PHILOSOPHY.md
    windows and explicit lookback policies.
 7. Use `daily_scanner_candidates_table` as candidate evidence only. The v0.1
    replay compared `trade_station_like_scanner_v0_1` against
-   `broad_in_play_discovery_scanner_v0_1`. The v0.2 implementation replaces
-   that forward model with `base_in_play_universe_scanner_v0_2` plus governed
-   profile flags. Neither version is official E-root materialization, live
-   authority or a direct ML/RL table.
+   `broad_in_play_discovery_scanner_v0_1`. The v0.2 implementation tested a
+   base-plus-profile model. The active v0.3 implementation replaces both with
+   `base_eligible_smallcap_denominator_v0_3` plus
+   `in_play_momentum_candidate_denominator_v0_3`, while keeping
+   `trade_station_like_profile_v0_3` as operator visibility only. No version is
+   official E-root materialization, live authority or a direct ML/RL table.
 
 Dependency order:
 
 ```text
-1. daily_scanner_candidates_table v0.2 wider replay / validator promotion decision
+1. daily_scanner_candidates_table v0.3 wider/20-year candidate replay / validator promotion decision
 2. master_intraday_bar_table wider/full-scope materialization plan
    - quote-guarded subpath:
      `01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md`
 3. microstructure_features_table multi-window/multi-event materialization plan
-4. market_state_table controlled real sample
-5. event_state_table controlled real sample
-6. short_sale_constraints_table when SSR/borrow/locate sources exist
-7. real_time_corporate_event_alerts_table when live/vendor latency semantics exist
+4. leakage/formula/timestamp/role/builder validators
+5. market_state_table controlled real sample
+6. event_state_table controlled real sample
+7. short_sale_constraints_table when SSR/borrow/locate sources exist
+8. real_time_corporate_event_alerts_table when live/vendor latency semantics exist
 ```
 
 The executable builder and evidence for item 1 are now:
 
 ```text
+scripts/materialize_daily_scanner_candidates_table_v0_3.py
+tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder_v0_3.py
+scripts/run_daily_scanner_candidates_materialization_v0_3.ps1
+C:/TSIS_Data/tests/test_runs/2026-06-30/daily_scanner_candidates_replay_20250102_20250110_v0_3_0_in_play_momentum/
+C:/TSIS_Data/tests/test_runs/2026-06-30/daily_scanner_candidates_v0_3_runner_smoke_20250102_20250110_d/
 scripts/materialize_daily_scanner_candidates_table_v0_2.py
 tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder_v0_2.py
 scripts/materialize_daily_scanner_candidates_table.py
@@ -657,24 +886,31 @@ Reason:
 
 ## 11. Final Status
 
-Current state:
+Estado actual:
 
 ```text
-15 official v0.1 outputs materialized.
-1 controlled v0.2 candidate microstructure output materialized but not promoted.
-7 outputs have integrated passed evidence as a group.
-8 outputs have isolated passed evidence.
-0 outputs should be called final institutional market_state.
-1 market/event state contract stack plus deterministic fixture loop defines the future boundary.
-2 official outputs are explicitly scoped/seed and must not be overpromoted.
-1 candidate output is explicitly controlled/not-promoted and must not be overpromoted.
-several target context/state outputs remain unmaterialized.
+15 outputs oficiales v0.1 materializados.
+1 output candidate controlado v0.2 de microestructura materializado pero no promovido.
+7 outputs tienen evidencia integrada pasada como grupo.
+8 outputs tienen evidencia aislada pasada.
+0 outputs deben llamarse market_state institucional final.
+1 stack de contratos market/event state mas fixture loop determinista define la frontera futura.
+1 contrato de state observable eligibility esta completo para el scope declarado; formulas/timestamp/roles permanecen antes de materializar estado.
+2 outputs oficiales son explicitamente scoped/seed y no deben sobrepromocionarse.
+1 output candidate es explicitamente controlled/not-promoted y no debe sobrepromocionarse.
+varios outputs target de contexto/estado siguen sin materializar.
 ```
 
-Therefore:
+Por tanto:
 
 ```text
-Data Foundation outputs are progressing correctly,
+Los outputs de Data Foundation avanzan correctamente,
 but the CAPA 1 output layer is not complete and must not be described as fully
 institutionalized end-to-end.
 ```
+
+
+
+
+
+

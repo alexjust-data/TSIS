@@ -29,8 +29,9 @@ Esta carpeta existe para que un humano o agente entienda:
 ## Regla central
 
 ```text
-El scanner base decide a quien mirar.
-Los perfiles deciden como ordenar o inspeccionar.
+El denominador base decide a quien se puede mirar.
+Los perfiles genericos deciden como ordenar o inspeccionar.
+Los overlays de estrategia aplican hipotesis especificas despues.
 El market_state decide que sabia TSIS en ese momento.
 La estrategia decide si ese estado encaja con una hipotesis.
 ML/RL no entrena directamente sobre scanner rows.
@@ -38,11 +39,49 @@ ML/RL no entrena directamente sobre scanner rows.
 
 ## Orden de lectura
 
-1. `scanner_base_universe_and_profiles_contract_v0_2.md`
-2. `scanner_candidate_selection_architecture_v0_1.md`
-3. `scanner_definitions_trade_station_vs_broad_discovery_v0_1.md`
-4. `scanner_table_and_contract_map_v0_1.md`
-5. `scanner_to_market_state_promotion_path_v0_1.md`
+1. `intraday_scanner_candidates_contract_v0_1.md`
+2. `scanner_base_and_in_play_momentum_contract_v0_3.md`
+3. `scanner_base_universe_and_profiles_contract_v0_2.md`
+4. `scanner_candidate_selection_architecture_v0_1.md`
+5. `scanner_definitions_trade_station_vs_broad_discovery_v0_1.md`
+6. `scanner_table_and_contract_map_v0_1.md`
+7. `scanner_to_market_state_promotion_path_v0_1.md`
+8. `strategy_scanner_overlay_policy_v0_1.md`
+
+Notebook de inspeccion:
+
+```text
+notebook/daily_scanner_candidates_v0_3_run_inspection.ipynb
+notebook/intraday_scanner_candidates_v0_1_run_inspection.ipynb
+```
+
+Uso:
+
+- abrir manifests y summaries del run;
+- ver tablas creadas;
+- analizar KPIs, solapes y razones de inclusion;
+- graficar movimiento, volumen, tradability, market cap y calidad;
+- revisar casos frontera antes de usar el run como denominador de research.
+
+Policy transversal para estrategias:
+
+```text
+strategy_scanner_overlay_policy_v0_1.md
+```
+
+Aplica a toda estrategia nueva en `13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/`.
+Define como consumir `daily_scanner_candidates_table`, declarar denominadores,
+crear overlays y evitar sesgo de solo casos positivos.
+
+Primera implementacion especifica:
+
+```text
+C:/TSIS_Data/00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/DAS_SCANNER_USAGE_AND_OVERLAY_RUNBOOK_v0_1.md
+```
+
+Ese documento no reemplaza los contratos de Data Foundation. Explica como una
+estrategia debe consumir el denominador scanner, declarar filtros y construir
+un overlay sin sesgo de solo casos positivos.
 
 ## Decision activa 2026-06-30
 
@@ -52,13 +91,32 @@ La lectura activa ya no es:
 dos scanners independientes
 ```
 
-La lectura activa es:
+Tampoco es:
 
 ```text
-un scanner base + perfiles reproducibles
+base elegible = in-play
 ```
 
-Scanner base:
+La lectura activa `v0.3` es:
+
+```text
+base_eligible_smallcap_denominator
+-> in_play_momentum_candidate_denominator
+-> strategy overlays
+```
+
+Contratos activos:
+
+```text
+intraday_scanner_candidates_contract_v0_1.md
+01_foundations/module_contracts/outputs/intraday_scanner_framework_and_definitions_contract_v0_1.md
+01_foundations/module_contracts/outputs/intraday_scanner_candidates_table_target_contract_v0_1.md
+scanner_base_and_in_play_momentum_contract_v0_3.md
+01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_3.md
+01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_3.md
+```
+
+Denominador base:
 
 ```text
 common_stock = true
@@ -67,26 +125,100 @@ market_cap_usd < 100000000
 data_quality in usable/review
 ```
 
-Perfiles:
+Denominador in-play momentum:
 
 ```text
-trade_station_like_profile_v0_2
-relative_volume_profile_v0_2
-percent_change_profile_v0_2
-dollar_volume_tradability_profile_v0_2
-das_research_profile_v0_2
+base_eligible_smallcap_denominator
++ movement >= 50%
++ volume_today >= 500000 OR dollar_volume_today >= 250000
 ```
 
-El replay v0.1 de `trade_station_like_scanner_v0_1` y
-`broad_in_play_discovery_scanner_v0_1` queda como evidencia historica de forma
-y lineage, no como arquitectura final.
+Reglas:
+
+- `base_eligible` dice a quien mirar, no quien esta in-play;
+- `in_play_momentum` decide que ticker tuvo movimiento explotable;
+- el replay diario usa `daily_high_vs_prev_close_pct`, `pct_chg_1d` y `gap_pct`;
+- el scanner intradia v0.1 segmenta 04:00-20:00 New York desde `ohlcv_1m`;
+- para estrategias intradia, el daily scanner v0.3 es proxy coarse, no detector oficial de primer push;
+- `float` es columna contextual futura, no filtro global;
+- DAS y cualquier estrategia viven como overlays posteriores.
+
+## Decision intradia 2026-06-30
+
+El scanner diario v0.3 no puede certificar:
+
+```text
+first_cross_ts
+premarket vs regular vs afterhours
+volume_to_time_at_first_cross
+dollar_volume_to_time_at_first_cross
+```
+
+Por tanto, para research intradia, DAS/frontside, event-state y futuros estados
+ML/RL, la pieza activa es:
+
+```text
+intraday_scanner_candidates_table_v0_1
+```
+
+Implementacion:
+
+```text
+01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_scanner_candidates_table_v0_1.py
+01_TSIS_backtest_SmallCaps/scripts/run_intraday_scanner_candidates_materialization_v0_1.ps1
+01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_intraday_scanner_candidates_table_builder_v0_1.py
+```
+
+Replay controlado inicial:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-30/intraday_scanner_candidates_replay_20250102_20250110_v0_1/
+rows = 33413
+selected_intraday_in_play_candidate_rows = 102
+first_cross_premarket_rows = 114
+first_cross_regular_rows = 82
+first_cross_afterhours_rows = 39
+full_universe_claim = false
+```
+
+Pendiente explicito:
+
+```text
+float_context_table
+```
+
+Debe crearse antes de usar float en scanner u overlays. Campos minimos:
+
+```text
+ticker
+instrument_id
+as_of_date
+float_shares
+shares_outstanding
+free_float_pct
+source
+source_document
+source_field
+point_in_time_valid
+quality_state
+is_estimated
+```
+
+Hasta entonces, `overview_weighted_shares_outstanding` puede auditarse como
+contexto de shares outstanding, pero no es float institucional y no puede
+poblar `float_shares`.
+
+Los replays `v0.1` y `v0.2` quedan como evidencia historica de forma, lineage y
+aprendizaje semantico, no como arquitectura final para materializacion amplia.
 
 ## Cadena conceptual
 
 ```text
 raw / audited foundation tables
 -> scanner_candidate_selection
--> daily_scanner_candidates_table
+-> intraday_scanner_candidates_table for intraday strategy denominators
+-> daily_scanner_candidates_table only for coarse daily/EOD context
+-> strategy overlays when needed
 -> strategy-specific experimental state tables
 -> event_state_candidate / market_state_candidate
 -> institutional_market_state
@@ -110,6 +242,10 @@ Esta carpeta no debe:
 
 ```text
 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_3.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/intraday_scanner_framework_and_definitions_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/intraday_scanner_candidates_table_target_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_3.md
 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_1.md
 01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/daily_scanner_candidates_table_schema_contract.md
 01_TSIS_backtest_SmallCaps/01_foundations/contract_registry/dataset_contracts/daily_scanner_candidates_table_dataset_contract_v0_1.md
@@ -118,4 +254,11 @@ Esta carpeta no debe:
 01_TSIS_backtest_SmallCaps/01_foundations/validators/outputs/daily_scanner_candidates_table_validators.md
 01_TSIS_backtest_SmallCaps/configs/data_foundation_outputs/scanner_definitions/
 01_TSIS_backtest_SmallCaps/scripts/materialize_daily_scanner_candidates_table.py
+01_TSIS_backtest_SmallCaps/scripts/materialize_daily_scanner_candidates_table_v0_2.py
+01_TSIS_backtest_SmallCaps/scripts/materialize_daily_scanner_candidates_table_v0_3.py
+01_TSIS_backtest_SmallCaps/scripts/run_daily_scanner_candidates_materialization_v0_3.ps1
+01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_scanner_candidates_table_v0_1.py
+01_TSIS_backtest_SmallCaps/scripts/run_intraday_scanner_candidates_materialization_v0_1.ps1
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/strategy_scanner_overlay_policy_v0_1.md
+C:/TSIS_Data/00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/DAS_SCANNER_USAGE_AND_OVERLAY_RUNBOOK_v0_1.md
 ```

@@ -1,0 +1,56 @@
+scanner_definition_id: base_eligible_smallcap_denominator_v0_3
+scanner_definition_version: v0_3
+scanner_family: daily_in_play
+scanner_name: base_eligible_smallcap_denominator
+scanner_role: base_observable_smallcap_denominator
+status: config_defined_not_officially_materialized
+
+purpose:
+  answers: "Which common-stock micro/smallcap rows are eligible for observation before in-play selection?"
+  does_not_answer:
+    - in_play_momentum_candidate
+    - strategy_signal
+    - final_market_state
+    - event_state
+    - label
+    - reward
+    - outcome
+    - execution_truth
+
+source_semantics:
+  replay_mode: historical_replay
+  requires_asof_policy: true
+  price_view: daily_raw_for_controlled_replay
+  execution_price_view: none
+  live_authority: false
+
+base_universe_eligibility:
+  is_common_stock_required: true
+  market_cap_max_usd: 100000000
+  last_price_min_exclusive: 0.5
+  last_price_max_inclusive: 20.0
+  data_quality_allowed:
+    - usable_for_declared_scope
+    - good
+    - review
+    - review_with_flag
+
+float_policy:
+  use_as_hard_filter: false
+  blocked_reason: no_point_in_time_float_source_has_passed_coverage_audit
+  allowed_future_use: contextual_column_or_strategy_overlay_filter_after_source_contract_and_asof_validation
+
+downstream_rule:
+  base_rows_are_not_in_play_by_themselves: true
+  in_play_selection_required_for_event_or_strategy_candidate_work: true
+
+prohibited_claims:
+  - full_universe_claim
+  - direct_ml_feature
+  - direct_rl_state
+  - strategy_signal
+  - execution_truth
+
+notes:
+  - "This denominator says who TSIS may inspect, not who is in-play."
+  - "In-play status is assigned by in_play_momentum_candidate_denominator_v0_3 or later event/state builders."

@@ -15,11 +15,11 @@ SCHEMA_VERSION = "market_calendar_v0_1"
 
 DEFAULT_SOURCE_PARQUET = Path(
     r"C:\TSIS_Data\01_TSIS_backtest_SmallCaps\data\reference"
-    r"\market_calendar_official_XNYS_20050101_20251231.parquet"
+    r"\market_calendar_official_XNYS_20050101_20260309.parquet"
 )
 DEFAULT_SOURCE_META = Path(
     r"C:\TSIS_Data\01_TSIS_backtest_SmallCaps\data\reference"
-    r"\market_calendar_official_XNYS_20050101_20251231.meta.json"
+    r"\market_calendar_official_XNYS_20050101_20260309.meta.json"
 )
 DEFAULT_OUTPUT_ROOT = Path(r"E:\TSIS\data\data_foundation_outputs\market_calendar")
 

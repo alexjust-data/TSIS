@@ -1,4 +1,4 @@
-# Canonical Schemas
+﻿# Canonical Schemas
 
 ## Menu
 
@@ -252,7 +252,9 @@ Schemas de outputs gobernados de CAPA 1:
 - `outputs/dataset_certification_matrix_schema_contract.md`
 - `outputs/master_daily_table_schema_contract.md`
 - `outputs/daily_scanner_candidates_table_schema_contract.md`
+- `outputs/daily_strategy_candidate_events_table_schema_contract.md`
 - `outputs/master_intraday_bar_table_schema_contract.md`
+- `outputs/intraday_1m_strategy_candidate_events_table_schema_contract.md`
 - `outputs/microstructure_features_table_schema_contract.md`
 - `outputs/halts_table_schema_contract.md`
 - `outputs/event_windows_table_schema_contract.md`
@@ -602,3 +604,4 @@ Cambios editoriales menores o enlaces sin impacto operativo pueden no requerir e
 Un schema canonico no dice que el dataset sea bueno.
 
 Dice que forma debe tener para que contratos, validators, policies, registry y dossiers puedan hablar del mismo objeto sin ambiguedad.
+

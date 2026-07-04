@@ -150,6 +150,12 @@ def materialize_expected_data_calendar(
     created_at_utc = datetime.now(timezone.utc).isoformat()
 
     con = duckdb.connect()
+    temp_dir = Path(r"C:\tmp\duckdb_spill\expected_data_calendar_v0_1")
+    temp_dir.mkdir(parents=True, exist_ok=True)
+    con.execute("set preserve_insertion_order=false")
+    con.execute("set threads=4")
+    con.execute(f"set temp_directory='{_sql_path(temp_dir)}'")
+    con.execute("set max_temp_directory_size='200GB'")
     families_sql = _family_values_sql()
     source_query = f"""
     with family_policy(dataset_family, expected_dataset_id, expected_source_root, expectation_scope) as (
@@ -347,4 +353,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

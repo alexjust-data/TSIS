@@ -3,14 +3,14 @@ profile_version: v0_2
 profile_family: daily_in_play
 profile_name: relative_volume_attention_profile
 profile_role: attention_and_momentum_research_profile
-status: config_defined_not_officially_materialized
+status: provisional_semantics_requires_intraday_asof_implementation
 
 base_dependency:
   scanner_definition_id: base_in_play_universe_scanner_v0_2
   rule: may_only_select_rows_that_pass_base_universe
 
 ranking:
-  primary_metric: rvol_to_time
+  primary_metric: intraday_volume_acceleration_asof
   primary_order: desc
   tie_breakers:
     - pct_chg_1d_desc
@@ -19,10 +19,21 @@ ranking:
 
 thresholds:
   reason_rvol_to_time_min_multiple: 2.0
+  required_intraday_recent_bar_acceleration: true
+
+required_metrics_before_promotion:
+  - volume_last_1m
+  - volume_last_3m
+  - volume_last_5m
+  - volume_last_15m
+  - volume_slope_5m
+  - volume_acceleration_5m_vs_15m
+  - volume_to_time_vs_expected_profile
 
 output_flags:
   - selected_relative_volume_profile
 
 notes:
-  - "In the daily EOD replay, rvol_to_time is proxied by master_daily rvol_20d."
-  - "Intraday use requires a later cutoff/as-of implementation."
+  - "The institutional meaning is intraday/as-of recent-bar volume acceleration, not a daily RVOL shortcut."
+  - "In the controlled daily EOD replay, rvol_to_time is proxied by master_daily rvol_20d only as builder-shape evidence."
+  - "Runs without intraday/as-of support must mark this profile unavailable or provisional."

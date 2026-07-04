@@ -234,7 +234,7 @@ senal/research split-aware piloto -> E:\TSIS\data\ohlcv_1m_split_normalized
 ejecucion/fills -> E:\TSIS\data\ohlcv_1m
 ```
 
-## Notebook operativo de Daily Scanner Candidates
+## Notebook / Lab operativo de Daily Scanner Candidates
 
 Para inspeccionar visualmente el primer replay controlado del scanner diario,
 usar:
@@ -243,14 +243,14 @@ usar:
 01_research/notebooks/data_foundation_outputs/daily_scanner_candidates_replay_view_v0_1.ipynb
 ```
 
-Ese notebook permite ver muestras de:
+Ese notebook historico permite ver muestras de v0.1:
 
 - `trade_station_like_scanner_v0_1`;
 - `broad_in_play_discovery_scanner_v0_1`;
 - candidatos broad descubiertos por debajo de `500k` de volumen;
 - summary, manifest, columnas, flags de prohibicion y deduplicacion.
 
-El builder real vive en:
+El builder historico `v0.1` vive en:
 
 ```text
 scripts/materialize_daily_scanner_candidates_table.py
@@ -260,6 +260,42 @@ La evidencia de replay controlado inicial vive en:
 
 ```text
 C:\TSIS_Data\tests\test_runs\2026-06-29\daily_scanner_candidates_replay_20250102_20250110_v0_1
+```
+
+El builder vigente para nuevos labs `v0.3` vive en:
+
+```text
+scripts/materialize_daily_scanner_candidates_table_v0_3.py
+```
+
+El runner obligatorio para ejecuciones largas/multi-year vive en:
+
+```text
+scripts/run_daily_scanner_candidates_materialization_v0_3.ps1
+```
+
+Regla:
+
+```text
+notebook / python builder directo = muestras pequenas y desarrollo
+runner PowerShell v0.3 = ejecuciones largas con pre-manifest, heartbeat, PID,
+logs, summary y monitor compacto
+```
+
+La evidencia controlada vigente alineada con contrato vive en:
+
+```text
+C:\TSIS_Data\tests\test_runs\2026-06-30\daily_scanner_candidates_replay_20250102_20250110_v0_3_0_in_play_momentum
+```
+
+Lectura obligatoria:
+
+```text
+base_eligible_smallcap_denominator_v0_3 = todo smallcap observable que TSIS puede inspeccionar
+in_play_momentum_candidate_denominator_v0_3 = base eligible + move >= 50% + tradability
+trade_station_like_profile_v0_3 = visibilidad operativa humana, no estrategia
+selected_das_research_profile = false en el scanner global
+daily_eod_proxy = no certifica primer segmento premarket/regular/afterhours
 ```
 
 Regla:
@@ -280,12 +316,70 @@ runs largos / multi-year / 20 anos:
   E:\TSIS\data\data_foundation_outputs\daily_scanner_candidates_table\candidate_replays\<run_id>\
 
 root oficial reservado:
-  E:\TSIS\data\data_foundation_outputs\daily_scanner_candidates_table\daily_scanner_candidates_table_v0_1\
+  E:\TSIS\data\data_foundation_outputs\daily_scanner_candidates_table\daily_scanner_candidates_table_v0_3\
 ```
 
 El notebook no es autoridad productiva, no materializa el output oficial en
 `E:\TSIS\data` y no convierte scanner rows en `market_state_table`, labels,
 rewards, senales de estrategia, fills, PnL ni autoridad live.
+
+Para estrategias especificas como DAS, el notebook no debe inventar un scanner
+oculto ni seleccionar solo casos positivos. Debe consumir el parquet de
+`daily_scanner_candidates_table_v0_3` y aplicar un overlay de estrategia
+separado, o declarar explicitamente que el resultado es
+`conditional_on_current_das_detector`.
+
+Runbook DAS:
+
+```text
+C:\TSIS_Data\00_CTO\13_TRADING_SYSTEMS\03_STRATEGY_LIBRARY\LONG\DAS\DAS_SCANNER_USAGE_AND_OVERLAY_RUNBOOK_v0_1.md
+```
+
+## Lab operativo de Intraday Scanner Candidates
+
+Para estrategias intradia, DAS/frontside, event-state y futuros estados ML/RL,
+el scanner diario v0.3 es solo contexto coarse. No certifica:
+
+```text
+first_cross_ts
+premarket / regular / afterhours
+volume_to_time_at_first_cross
+dollar_volume_to_time_at_first_cross
+```
+
+El builder intradia vigente vive en:
+
+```text
+scripts/materialize_intraday_scanner_candidates_table_v0_1.py
+```
+
+El runner obligatorio para ejecuciones largas/multi-month vive en:
+
+```text
+scripts/run_intraday_scanner_candidates_materialization_v0_1.ps1
+```
+
+La evidencia controlada inicial vive en:
+
+```text
+C:\TSIS_Data\tests\test_runs\2026-06-30\intraday_scanner_candidates_replay_20250102_20250110_v0_1
+```
+
+Lectura obligatoria:
+
+```text
+intraday_scanner_candidates_table_v0_1 = detector de primer push desde ohlcv_1m
+selected_intraday_in_play_candidate = +50% vs prior_close + tradability gate
+daily_scanner_candidates_table_v0_3 = proxy daily/EOD, no autoridad de timing intradia
+```
+
+Contratos:
+
+```text
+01_foundations/module_contracts/outputs/intraday_scanner_framework_and_definitions_contract_v0_1.md
+01_foundations/module_contracts/outputs/intraday_scanner_candidates_table_target_contract_v0_1.md
+C:\TSIS_Data\00_CTO\11_MARKET_SCIENCE\05_MARKET_STATE_REPRESENTATION\00_SCANNER_CANDIDATE_SELECTION\intraday_scanner_candidates_contract_v0_1.md
+```
 
 ## Secuencia event-first vigente
 

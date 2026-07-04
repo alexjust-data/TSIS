@@ -1,4 +1,4 @@
-# Master Intraday Bar Table Validators `v0_1`
+﻿# Master Intraday Bar Table Validators `v0_1`
 
 ## Scope
 
@@ -158,8 +158,8 @@ Preflight validators must pass before any materialization attempt:
 - target path is not the v0.1 dataset path;
 - `full_universe_claim=false`;
 - `official_dataset_created=false`;
-- current bridge repair run is marked `running_or_not_final_validated`;
-- final E-root quote-guarded repair manifest is required but not assumed;
+- quote-guarded LT1B manifest exists and summary status is `PASS`;
+- final E-root quote-guarded repair manifest path is explicit;
 - storage model is `raw_ohlcv_1m_plus_repair_manifest_overlay`;
 - `creates_full_corrected_tree=false`;
 - `raw_ohlcv_1m_mutation_allowed=false`;
@@ -171,7 +171,7 @@ Hard fail if:
 ```text
 target_dataset_path == E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_1
 full_universe_claim == true
-safe_to_launch_full_materialization == true before final quote-guarded validation
+safe_to_launch_full_materialization == true before quote-guarded manifest checks and candidate preflight pass
 creates_full_corrected_tree == true without a separate physical-tree contract
 raw_ohlcv_1m_mutation_allowed == true
 ```
