@@ -52,6 +52,7 @@ run summaries, trace logs y, si procede, release log propio.
 
 ### Changed
 
+- `2026-07-04` - Market State event candidate validators avanza a fixture-scope ejecutable: existe `scripts/validate_event_candidate_tables.py`, fixtures minimos y test pytest `7 passed`. La validacion sobre tablas reales queda PENDING porque `daily_strategy_candidate_events_table_v0_1` e `intraday_1m_strategy_candidate_events_table_v0_1` no estan materializadas; ML/RL/AlphaEvolve siguen deshabilitados.
 - `2026-07-04` - Market State Representation v3 registra el contrato `state_canonical_vs_representation_layer_contract_v0_1.md`, separando `Canonical State` de `Representation Layer`: el estado canonico queda como tablero observable estable y las representaciones candidatas quedan como espacio mutable para AlphaEvolve/RL/ML sin contaminar la verdad base.
 - Market State v3 registra el contrato de validators de event candidate tables como cerrado para el scope declarado. El nuevo contrato operativo es:
 

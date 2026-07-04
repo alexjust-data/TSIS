@@ -13,6 +13,7 @@ event_candidate_tables_contract_done +
 event_candidate_table_schema_contracts_done +  
 event_candidate_table_validators_contract_done +  
 canonical_vs_representation_contract_done +  
+event_candidate_executable_validators_fixture_scope_done +  
 ruta_capas_definida  
 ```
 Documento base: `market_state_tables_status_and_operating_map_2026_07_01.md`  
@@ -1057,7 +1058,7 @@ v3 mapa humano
 -> event_candidate_table_validators_contract_v0_1.md          DONE
 -> state_canonical_vs_representation_layer_contract_v0_1.md   DONE
 -> leakage/formula/timestamp/role/builder validators
--> validators ejecutables de event_candidate_table
+-> validators ejecutables de event_candidate_table             DONE fixture-scope
 -> daily_strategy_candidate_events_table builders/materializacion
 -> intraday_1m_strategy_candidate_events_table builders/materializacion
 -> event_windows expansion
@@ -1216,7 +1217,7 @@ v3 mapa humano
 -> event_candidate_table_validators_contract_v0_1.md          DONE
 -> state_canonical_vs_representation_layer_contract_v0_1.md   DONE
 -> leakage/formula/timestamp/role/builder validators
--> validators ejecutables de event_candidate_table
+-> validators ejecutables de event_candidate_table             DONE fixture-scope
 -> daily_strategy_candidate_events_table builders/materializacion
 -> intraday_1m_strategy_candidate_events_table builders/materializacion
 -> event_windows expansion
@@ -1247,7 +1248,7 @@ v3 mapa humano
 | `event_candidate_table_validators_contract_v0_1.md` | DONE | Que debe fallar antes de construir o consumir eventos candidatos? | contrato de validators comunes, daily, intradia, quote-guarded, lineage, prohibiciones y consumer gates | validators ejecutables y fixtures minimos | no implementa codigo ni materializa tablas |
 | `state_canonical_vs_representation_layer_contract_v0_1.md` | DONE | Que vive en Canonical State y que debe pasar a Representation Layer? | frontera formal entre fotografia observable estable y representaciones candidatas mutables | validators de estado/representacion y semantic state contract futuro | no cambia schemas ni materializa representaciones |
 | `leakage/formula/timestamp/role/builder validators` | PENDING | Podemos probar que el estado no usa futuro, respeta formulas/roles y conserva lineage? | tests de cutoff, formula parity, role/window gates, quality gates, manifests y source roots | candidate materialization defensible | no decide valor cientifico de una estrategia |
-| `validators ejecutables de event_candidate_table` | PENDING | Podemos ejecutar esos checks sobre fixtures/tablas candidatas? | validadores ejecutables, summaries y failure tables | builders diarios/1m defensibles | no materializa estados ni outcomes |
+| `validators ejecutables de event_candidate_table` | DONE fixture-scope | Podemos ejecutar esos checks sobre fixtures/tablas candidatas? | CLI `validate_event_candidate_tables.py`, 6 fixtures minimos y 7 tests pass | builders diarios/1m defensibles y validator run sobre tabla real cuando exista | no materializa eventos, estados ni outcomes |
 | `daily_strategy_candidate_events_table builders/materializacion` | PENDING | Que eventos daily quedan anclados por definicion versionada? | `daily_event_id`, event definition, source candidate, session/as_of, quality y lineage | event_windows expansion daily | no es scanner, no es estado y no contiene outcomes |
 | `intraday_1m_strategy_candidate_events_table builders/materializacion` | PENDING | Que eventos 1m quedan anclados con timestamp legal? | `intraday_event_id`, event_ts_utc, event definition, source 1m/QG, quality y lineage | event_windows expansion intradia | no promociona raw-only ni contiene outcomes |
 | `event_windows expansion` | PENDING | Que ventanas se abren alrededor de eventos no-halt? | event windows v0.2/candidate desde daily/1m event tables | controlled event_state fixture | no sustituye event_state ni outcomes |
@@ -1566,7 +1567,7 @@ Lectura correcta:
 
 ```text
 validators contract DONE
-validators ejecutables PENDING
+validators ejecutables DONE fixture-scope; validator run sobre tabla real PENDING
 builders/materializacion PENDING
 ```
 
@@ -1652,5 +1653,60 @@ controlled market_state/event_state fixture
 -> state_transition_contract_v0_1.md
 -> transition datasets / transition evaluators
 -> AlphaEvolve/RL/ML
+```
+## 6.16 Actualizacion Event Candidate Executable Validators Fixture-Scope
+
+Nuevo avance cerrado:
+
+```text
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/validate_event_candidate_tables.py
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_event_candidate_table_validators.py
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/fixtures/data_foundation_outputs/event_candidate_tables_v0_1/
+event_candidate_table_executable_validators_fixture_scope = passed
+```
+
+Tests ejecutados:
+
+```text
+python -m pytest tests/data_foundation_outputs/test_event_candidate_table_validators.py -q
+7 passed
+```
+
+Que resuelve:
+
+```text
+el contrato de validators ya tiene una primera implementacion ejecutable;
+el validator puede leer fixtures JSON/JSONL o parquet;
+el fixture daily bueno pasa;
+el fixture intradia quote-guarded bueno pasa;
+los fixtures malos bloquean outcome inline, claim intradia daily sin fuente,
+raw-only intradia promovido y cutoff/barra futura;
+el output mantiene ML/RL/AlphaEvolve production deshabilitados.
+```
+
+Lectura correcta:
+
+```text
+validator executable + fixtures = DONE
+validator run sobre tabla real = PENDING
+```
+
+Motivo:
+
+```text
+No existe todavia daily_strategy_candidate_events_table_v0_1 materializada.
+No existe todavia intraday_1m_strategy_candidate_events_table_v0_1 materializada.
+Por tanto, el validator no puede certificar una tabla real; solo demuestra que
+el programa de validacion detecta los casos contractuales minimos antes de crear
+los builders.
+```
+
+Siguiente paso inmediato:
+
+```text
+builders/materializacion candidate daily_strategy_candidate_events_table_v0_1
+builders/materializacion candidate intraday_1m_strategy_candidate_events_table_v0_1
+ejecutar validate_event_candidate_tables.py sobre cada tabla candidate real
+event_windows expansion solo despues de validator pass
 ```
 

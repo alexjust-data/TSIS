@@ -912,8 +912,31 @@ event_candidate_table_validators_contract_v0_1 = complete_for_contract_defined_s
 Lectura correcta:
 
 - contrato de validators: cerrado;
-- validators ejecutables: pendientes;
+- validators ejecutables fixture-scope: cerrados;
+- validator run sobre tabla real: pendiente porque las tablas no estan materializadas;
 - builders/materializacion de eventos daily/1m: pendientes.
+
+Implementacion fixture-scope:
+
+```text
+scripts/validate_event_candidate_tables.py
+tests/data_foundation_outputs/test_event_candidate_table_validators.py
+tests/fixtures/data_foundation_outputs/event_candidate_tables_v0_1/
+```
+
+Estado ejecutable:
+
+```text
+python -m pytest tests/data_foundation_outputs/test_event_candidate_table_validators.py -q
+7 passed
+```
+
+Lectura correcta:
+
+- el programa de validacion ya existe y pasa fixtures minimos;
+- todavia no valida una tabla real porque `daily_strategy_candidate_events_table_v0_1` e `intraday_1m_strategy_candidate_events_table_v0_1` no estan materializadas;
+- el siguiente paso son builders/materializacion candidate y validator run real sobre esos outputs.
+
 ### `outputs/daily_scanner_candidates_table_target_contract_v0_1.md`
 
 Contrato objetivo para la tabla de candidatos diarios/in-play.
@@ -1829,5 +1852,7 @@ Cambios menores de enlaces, navegacion o claridad pueden no requerir entrada pro
 Si una regla afecta a varios datasets, consumidores, price views, validacion, evidencia, promocion o interpretacion institucional, debe poder encontrarse aqui o estar enlazada desde aqui.
 
 La carpeta ya tiene mucho contenido. El objetivo ahora no es multiplicar documentos, sino mantener autoridad, navegacion y trazabilidad.
+
+
 
 

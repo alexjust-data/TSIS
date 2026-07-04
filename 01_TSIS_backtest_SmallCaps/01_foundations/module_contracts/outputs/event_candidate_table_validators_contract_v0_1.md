@@ -12,7 +12,9 @@ Status:
 ```text
 contract_defined
 event_candidate_table_validators_contract_complete_for_declared_scope = true
-executable_validators_implemented = false
+executable_validators_implemented = true
+executable_validators_fixture_scope_passed = true
+real_table_validation_run_available = false
 daily_strategy_candidate_events_table_materialized = false
 intraday_1m_strategy_candidate_events_table_materialized = false
 event_windows_expansion_materialized = false
@@ -33,8 +35,14 @@ validators contract = que debe fallar antes de permitir construir/consumir
 builder = produce filas candidate solo si los validators pasan
 ```
 
-Este documento no implementa codigo. Define la obligacion que luego deben cumplir
-los validators ejecutables.
+Este documento no implementa codigo por si mismo. La primera implementacion
+ejecutable fixture-scope ya vive en:
+
+```text
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/validate_event_candidate_tables.py
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_event_candidate_table_validators.py
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/fixtures/data_foundation_outputs/event_candidate_tables_v0_1/
+```
 
 ## 1. Por Que Existe Este Contrato
 
@@ -385,12 +393,11 @@ separados bajo contratos posteriores.
 Despues de este contrato, el siguiente trabajo permitido es:
 
 ```text
-1. implementar validators ejecutables de event candidate tables
-2. crear tests/fixtures minimos daily e intradia para esos validators
-3. construir builder/materializacion candidate daily solo si validators pasan
-4. construir builder/materializacion candidate intradia solo si validators pasan
-5. expandir event_windows para source_event_table != halts_table_v0_1
-6. construir controlled event_state fixture con eventos daily/1m
+1. construir builder/materializacion candidate daily solo si validators pasan
+2. construir builder/materializacion candidate intradia solo si validators pasan
+3. ejecutar este validator sobre las tablas candidate reales despues de cada build
+4. expandir event_windows para source_event_table != halts_table_v0_1
+5. construir controlled event_state fixture con eventos daily/1m
 ```
 
 No queda permitido todavia:
@@ -422,3 +429,43 @@ Status final:
 ```text
 event_candidate_table_validators_contract_v0_1 = complete_for_contract_defined_scope
 ```
+## 19. Actualizacion 2026-07-04 - Validator Ejecutable Fixture-Scope
+
+Implementacion ejecutable creada:
+
+```text
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/validate_event_candidate_tables.py
+```
+
+Fixtures minimos creados:
+
+```text
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/fixtures/data_foundation_outputs/event_candidate_tables_v0_1/daily_good_v0_1.json
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/fixtures/data_foundation_outputs/event_candidate_tables_v0_1/daily_bad_outcome_inline_v0_1.json
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/fixtures/data_foundation_outputs/event_candidate_tables_v0_1/daily_bad_intraday_claim_without_source_v0_1.json
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/fixtures/data_foundation_outputs/event_candidate_tables_v0_1/intraday_good_quote_guarded_v0_1.json
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/fixtures/data_foundation_outputs/event_candidate_tables_v0_1/intraday_bad_raw_only_promoted_v0_1.json
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/fixtures/data_foundation_outputs/event_candidate_tables_v0_1/intraday_bad_future_cutoff_v0_1.json
+```
+
+Tests ejecutados:
+
+```text
+python -m pytest tests/data_foundation_outputs/test_event_candidate_table_validators.py -q
+7 passed
+```
+
+Lectura correcta:
+
+```text
+validator executable + fixtures = DONE
+validator run sobre tabla real = PENDING, porque las tablas daily/1m no estan materializadas
+builders/materializacion candidate daily/1m = NEXT
+```
+
+Este avance no materializa `daily_strategy_candidate_events_table_v0_1` ni
+`intraday_1m_strategy_candidate_events_table_v0_1`. Solo deja preparado el
+programa que debera validar esas tablas cuando existan.
+
+
+

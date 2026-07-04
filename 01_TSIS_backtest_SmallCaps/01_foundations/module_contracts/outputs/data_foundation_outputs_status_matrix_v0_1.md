@@ -609,7 +609,7 @@ The following target outputs are still not governed materializations under
 | `master_intraday_bar_table_v0_2_candidate_quote_guarded` | candidate contract and config defined; no parquet materialization exists | upstream LT1B repair manifest is promoted and PASS; storage model is raw `ohlcv_1m` plus repair-manifest overlay, not a full corrected parquet tree; keep `D:/quotes` only as provisional candidate lineage; builder must consume the manifest/partition list, not blind recursive file discovery |
 | `real_time_corporate_event_alerts_table` | not materialized | define vendor/source model, latency semantics, SEC/newswire/DAS/vendor lineage, and live-vs-backfill contract |
 | `short_sale_constraints_table` | target contract and acquisition runbook defined, not materialized | derive/validate SSR proxy or acquire official SSR; connect DAS/SageTrader or broker/vendor feed for forward capture; acquire broker/vendor historical borrow/locate/availability if 20-year historical execution feasibility is required; define account/broker scope and as-of/latency semantics |
-| `market_state_table` / `event_state_table` | stack de contratos mas fixture loop determinista pasado, no materializado; `state_observable_eligibility_contract_v0_1.md`, `state_derived_observables_formula_contract_v0_1.md`, `state_decision_timestamp_policy_v0_1.md`, `state_snapshot_roles_contract_v0_1.md`, `state_builder_contract_v0_1.md`, `event_candidate_tables_contract_v0_1.md`, `event_candidate_table_validators_contract_v0_1.md` y `state_canonical_vs_representation_layer_contract_v0_1.md` estan completos para el scope declarado | siguiente cierre: validators de leakage/formula/timestamp/role/builder parity mas validators ejecutables/builders de event candidate tables antes del sample multi-componente controlado de event_state; los schema contracts daily/1m de eventos candidatos y el validators contract estan completos; obedecer `market_state_coverage_and_lookback_policy_v0_1`; `D:/quotes` solo puede usarse como lineage candidate provisional con `quotes_root_state=provisional_d_legacy_recovery_root_pending_e_parity`; anadir gates de recomputation/manifest/coverage/lookback; promocionar solo despues de leakage/adversarial tests y requisitos de E-root parity/rebuild |
+| `market_state_table` / `event_state_table` | stack de contratos mas fixture loop determinista pasado, no materializado; `state_observable_eligibility_contract_v0_1.md`, `state_derived_observables_formula_contract_v0_1.md`, `state_decision_timestamp_policy_v0_1.md`, `state_snapshot_roles_contract_v0_1.md`, `state_builder_contract_v0_1.md`, `event_candidate_tables_contract_v0_1.md`, `event_candidate_table_validators_contract_v0_1.md` y `state_canonical_vs_representation_layer_contract_v0_1.md` estan completos para el scope declarado | siguiente cierre: validators de leakage/formula/timestamp/role/builder parity mas builders de event candidate tables y validator run real sobre sus outputs antes del sample multi-componente controlado de event_state; los schema contracts daily/1m de eventos candidatos y el validators contract estan completos; obedecer `market_state_coverage_and_lookback_policy_v0_1`; `D:/quotes` solo puede usarse como lineage candidate provisional con `quotes_root_state=provisional_d_legacy_recovery_root_pending_e_parity`; anadir gates de recomputation/manifest/coverage/lookback; promocionar solo despues de leakage/adversarial tests y requisitos de E-root parity/rebuild |
 
 ## 8. Current Readiness By Consumer
 
@@ -731,14 +731,26 @@ Canonical State vs Representation Layer contract completado despues de cerrar lo
 state_canonical_vs_representation_layer_contract_v0_1 = complete_for_contract_defined_scope
 ```
 
+
+Event candidate executable validators fixture-scope completed:
+
+```text
+scripts/validate_event_candidate_tables.py
+tests/data_foundation_outputs/test_event_candidate_table_validators.py
+tests/fixtures/data_foundation_outputs/event_candidate_tables_v0_1/
+python -m pytest tests/data_foundation_outputs/test_event_candidate_table_validators.py -q
+7 passed
+```
+
+Lectura correcta: el validator ejecutable existe y pasa fixtures minimos. La validacion de tabla real sigue pendiente hasta que existan los builders/materializaciones candidate daily/1m.
 En conjunto, esto cierra para el scope declarado los gates de elegibilidad, formulas, tiempo legal, roles de estado, builder contract, ruta de eventos candidatos y frontera Canonical State vs Representation Layer. No materializa datos oficiales ni habilita ML/RL/AlphaEvolve directamente.
 
 El siguiente trabajo inmediato de state tables queda asi:
 
 ```text
 1. leakage/formula/timestamp/role/builder validators consuming eligibility + formula + timestamp policy + roles + builder contracts + canonical/representation boundary
-2. validators ejecutables de event candidate tables consumiendo schema contracts y validators contract
-3. builders/materializacion candidate para daily_strategy_candidate_events_table_v0_1 e intraday_1m_strategy_candidate_events_table_v0_1 solo despues de validator pass
+2. builders/materializacion candidate para daily_strategy_candidate_events_table_v0_1 e intraday_1m_strategy_candidate_events_table_v0_1
+3. ejecutar scripts/validate_event_candidate_tables.py sobre cada tabla candidate real solo despues de build
 4. event_windows expansion for source_event_table != halts_table_v0_1
 5. controlled market_state/event_state fixture or multi-component sample
 6. candidate materialization only after validators pass
@@ -908,6 +920,7 @@ Los outputs de Data Foundation avanzan correctamente,
 but the CAPA 1 output layer is not complete and must not be described as fully
 institutionalized end-to-end.
 ```
+
 
 
 

@@ -1,5 +1,11 @@
-﻿# Changelog del Modulo 01
+# Changelog del Modulo 01
 
+## v0.4.149 - Market State event candidate executable validators
+
+- Se anade `scripts/validate_event_candidate_tables.py` para validar fixtures/tablas candidatas daily e intradia 1m contra `event_candidate_table_validators_contract_v0_1.md`.
+- Se anaden fixtures buenos y malos para eventos daily e intradia quote-guarded/raw-only.
+- Se anade `tests/data_foundation_outputs/test_event_candidate_table_validators.py`; el scope nuevo pasa con `7 passed`.
+- No se materializan tablas de eventos; el validator run real queda pendiente hasta que existan builders/materializaciones candidate.
 ## v0.4.148 - Market State canonical representation boundary
 
 - Se anade `01_foundations/module_contracts/outputs/state_canonical_vs_representation_layer_contract_v0_1.md`.
@@ -6542,7 +6548,7 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
   - filtrarlos por ticker + ventana PTI del corte canonico `<1B>`;
   - y exportar conteos y porcentajes compatibles ya con el alcance moderno del proyecto.
 
-### 2026-06-03 | 1m | cierre cuantitativo del recÃƒÆ’Ã‚Â¡lculo raw `1m` sobre universo `<1B>` explicito
+### 2026-06-03 | 1m | cierre cuantitativo del recÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡lculo raw `1m` sobre universo `<1B>` explicito
 
 - se actualizan:
   - `scripts/inspection/minute/audit_1m_raw_lt1b_closeout.py`
@@ -6735,7 +6741,7 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
   - `01_foundations/data_consumption_policies/lt1b_universe_consumption_policy.md`
   - `01_foundations/contract_registry/dataset_contracts/lt1b_universe_dataset_contract_v0_1.md`
   - `01_foundations/dataset_registry/universes/lt1b_universe_registry_entry.yaml`
-- artefacto canÃƒÆ’Ã‚Â³nico:
+- artefacto canÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³nico:
   - `runs/backtest/market_cap_last_observed_cutoff/20260320_market_cap_last_observed_cutoff/market_cap_cutoff_lt_1b_active_inactive.parquet`
 - cifras fijadas:
   - `lt1b_tickers = 4824`
@@ -6743,7 +6749,7 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
   - `inactive_died_lt_1b = 2348`
   - `panel_end_date = 2026-03-09`
 - regla institucional:
-  - toda afirmaciÃƒÆ’Ã‚Â³n `<1B>` debe filtrar por `ticker` y por intersecciÃƒÆ’Ã‚Â³n con ventana PTI (`first_seen_date`, `last_observed_date`);
+  - toda afirmaciÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³n `<1B>` debe filtrar por `ticker` y por intersecciÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³n con ventana PTI (`first_seen_date`, `last_observed_date`);
   - este corte no es `E:\TSIS\data\reference`;
   - tampoco sustituye un futuro `population_target_pti` diario fully point-in-time.
 
@@ -6841,6 +6847,7 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
   - auditoria de casepacks en `quotes`;
   - family casepacks amplios en `trades`.
 - objetivo: que un inspector no tenga que inferir desde notebooks o assets sueltos que documentos visuales debe revisar.
+
 
 
 

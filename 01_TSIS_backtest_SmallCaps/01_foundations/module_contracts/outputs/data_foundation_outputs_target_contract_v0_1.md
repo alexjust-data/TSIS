@@ -3402,16 +3402,26 @@ Orden operativo recomendado:
 2. master_intraday_bar_table wider/full-scope materialization plan
 3. microstructure_features_table multi-window/multi-event materialization plan
 4. leakage/formula/timestamp/role/builder validators
-5. validators ejecutables de event candidate tables
-6. builders/materializacion candidate de daily_strategy_candidate_events_table solo despues de validator pass
-7. builders/materializacion candidate de intraday_1m_strategy_candidate_events_table solo despues de validator pass
-8. expansion de event_windows para eventos daily/1m no-halt
-9. sample real controlado de market_state_table
-10. sample real controlado de event_state_table
-11. short_sale_constraints_table despues de adquirir fuentes SSR/borrow/locate
+5. builders/materializacion candidate de daily_strategy_candidate_events_table
+6. ejecutar validate_event_candidate_tables.py sobre daily candidate real
+7. builders/materializacion candidate de intraday_1m_strategy_candidate_events_table
+8. ejecutar validate_event_candidate_tables.py sobre intraday candidate real
+9. expansion de event_windows para eventos daily/1m no-halt
+10. sample real controlado de market_state_table
+11. sample real controlado de event_state_table
+12. short_sale_constraints_table despues de adquirir fuentes SSR/borrow/locate
 12. real_time_corporate_event_alerts_table despues del contrato de latencia live/vendor
 ```
 
+
+Precondicion ejecutable cerrada para event candidate tables:
+
+```text
+scripts/validate_event_candidate_tables.py
+event_candidate_table_executable_validators_fixture_scope = passed
+```
+
+Esto no valida una tabla real todavia. El validator debe ejecutarse sobre los outputs candidate cuando los builders daily/1m existan.
 Precondicion conceptual cerrada para estos pasos:
 
 ```text
@@ -3556,6 +3566,7 @@ raw/audited truth
 
 Si un futuro agente no puede explicar que hace una tabla cuando aparece un
 evento concreto, esa tabla todavia no esta suficientemente bien definida.
+
 
 
 

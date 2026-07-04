@@ -1614,3 +1614,42 @@ Expected graph action:
 - enrutar trabajo futuro a validators, fixtures y semantic representations separadas del estado canonico.
 ```
 
+### GFQ-20260704-014 - Market State event candidate validators executable fixture scope
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION
+01_foundations/module_contracts/outputs
+01_foundations/scripts
+market_state_event_candidate_route
+```
+
+Reason:
+
+```text
+Market State v3 ya puede distinguir contract DONE de validator ejecutable fixture-scope DONE. La validacion sobre tabla real sigue PENDING porque daily_strategy_candidate_events_table_v0_1 e intraday_1m_strategy_candidate_events_table_v0_1 no estan materializadas.
+```
+
+Changed paths:
+
+```text
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_table_validators_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/scripts/validate_event_candidate_tables.py
+01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_event_candidate_table_validators.py
+01_TSIS_backtest_SmallCaps/tests/fixtures/data_foundation_outputs/event_candidate_tables_v0_1/
+01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+00_CTO/CHANGELOG.md
+```
+
+Expected graph action:
+
+```text
+- anadir nodo validator ejecutable fixture-scope;
+- conectarlo con event_candidate_table_validators_contract_v0_1, schemas daily/intradia y event candidate route;
+- marcar validation-on-real-table y builders/materializacion como pendientes;
+- preservar que no hay tablas daily/1m materializadas ni ML/RL/AlphaEvolve habilitado.
+```

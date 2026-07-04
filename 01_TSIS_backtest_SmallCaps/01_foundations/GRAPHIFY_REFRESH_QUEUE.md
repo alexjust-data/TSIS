@@ -5240,3 +5240,44 @@ Expected graph action:
 - mantener schemas oficiales, materializacion y ML/RL/AlphaEvolve production deshabilitados.
 ```
 
+### GFQ-20260704-011 - Event candidate validators executable fixture scope
+
+Status: `pending_next_outputs_leaf_refresh`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+01_foundations/module_contracts/outputs
+01_foundations/scripts
+01_foundations/tests/fixtures/data_foundation_outputs/event_candidate_tables_v0_1
+01_foundations/event_candidate_tables_route
+```
+
+Reason:
+
+```text
+El contrato event_candidate_table_validators_contract_v0_1 ahora referencia un validator ejecutable fixture-scope y fixtures minimos. Esto cierra el primer validator ejecutable, pero no ejecuta validacion sobre tablas reales porque las tablas daily/1m no estan materializadas.
+```
+
+Changed paths:
+
+```text
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_table_validators_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/scripts/validate_event_candidate_tables.py
+01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_event_candidate_table_validators.py
+01_TSIS_backtest_SmallCaps/tests/fixtures/data_foundation_outputs/event_candidate_tables_v0_1/
+01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Expected graph action:
+
+```text
+- anadir nodo del validator ejecutable fixture-scope;
+- conectarlo a event_candidate_table_validators_contract_v0_1 y a los schemas daily/intradia;
+- anadir fixtures minimos como evidence/test nodes;
+- preservar real_table_validation_run_available = false y tablas daily/1m no materializadas;
+- mantener ML/RL/AlphaEvolve production deshabilitados.
+```

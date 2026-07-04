@@ -1,5 +1,12 @@
-﻿# 01 Foundations Changelog
+# 01 Foundations Changelog
 
+## 2026-07-04 | market_state | event candidate executable validators fixture-scope
+
+- Se crea `scripts/validate_event_candidate_tables.py` como primera implementacion ejecutable fixture-scope del contrato `event_candidate_table_validators_contract_v0_1.md`.
+- Se crean fixtures minimos daily/intradia en `tests/fixtures/data_foundation_outputs/event_candidate_tables_v0_1/`.
+- Se crea `tests/data_foundation_outputs/test_event_candidate_table_validators.py`.
+- Evidencia: `python -m pytest tests/data_foundation_outputs/test_event_candidate_table_validators.py -q` => `7 passed`.
+- Lectura correcta: el validator ejecutable existe y pasa fixtures minimos; no valida tabla real todavia porque las tablas daily/1m de eventos candidatos no estan materializadas.
 ## 2026-07-04 | market_state | canonical vs representation layer contract cerrado
 
 - Se crea `module_contracts/outputs/state_canonical_vs_representation_layer_contract_v0_1.md`.
@@ -365,6 +372,7 @@ El resultado sigue siendo overlay:
 ```text
 raw ohlcv_1m + LT1B repair manifest = quote_guarded view
 ```
+
 
 
 
