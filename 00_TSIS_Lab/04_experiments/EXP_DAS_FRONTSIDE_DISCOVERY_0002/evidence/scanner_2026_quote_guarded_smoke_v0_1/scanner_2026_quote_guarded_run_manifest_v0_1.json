@@ -1,0 +1,30 @@
+{
+  "created_utc": "2026-07-06T17:12:51.477416+00:00",
+  "builder_id": "build_2026_scanner_from_quote_guarded_1m_v0_1",
+  "experiment_id": "EXP_DAS_FRONTSIDE_DISCOVERY_0002",
+  "candidate_events_legacy_used": false,
+  "old_das_run_used": false,
+  "raw_root": "E:\\TSIS\\data\\ohlcv_1m",
+  "repair_manifest": "E:\\TSIS\\data\\data_foundation_outputs\\ohlcv_1m_quote_guarded\\repair_manifest_lt1b_v0_1.parquet",
+  "master_daily_root": "E:\\TSIS\\data\\data_foundation_outputs\\master_daily_table\\master_daily_table_v0_1",
+  "reference_overview_root": "E:\\TSIS\\data\\reference\\overview",
+  "output_dir": "C:\\TSIS_Data\\00_TSIS_Lab\\04_experiments\\EXP_DAS_FRONTSIDE_DISCOVERY_0002\\evidence\\scanner_2026_quote_guarded_smoke_v0_1",
+  "config": {
+    "year": 2026,
+    "threshold_pct": 50.0,
+    "min_volume": 500000.0,
+    "min_price": 0.5,
+    "max_price": 20.0,
+    "max_market_cap": 100000000.0,
+    "session_start_et": "04:00",
+    "session_end_et": "09:30",
+    "reference_price": "prior_close",
+    "market_cap_policy": "snapshot_allowed_flagged"
+  },
+  "raw_files_seen": 12,
+  "raw_files_read": 12,
+  "repair_rows_loaded": 6852,
+  "repair_applied_rows_seen": 3308,
+  "candidates_emitted": 4,
+  "skipped_files": []
+}

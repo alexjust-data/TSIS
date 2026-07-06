@@ -1,0 +1,6 @@
+[2026-07-06T17:55:45.664243+00:00] launching C:\Users\AlexJ\AppData\Local\Programs\Python\Python313\python.exe -u C:\TSIS_Data\00_TSIS_Lab\04_experiments\EXP_DAS_FRONTSIDE_DISCOVERY_0002\scripts\build_2026_scanner_from_quote_guarded_1m_v0_1.py --output-dir C:\TSIS_Data\00_TSIS_Lab\04_experiments\EXP_DAS_FRONTSIDE_DISCOVERY_0002\evidence\scanner_2026_quote_guarded_full_monitored_progress_v0_3_20260706T1752Z\outputs --year 2026 --threshold-pct 50.0 --min-volume 500000.0 --min-price 0.5 --max-price 20.0 --max-market-cap 100000000.0 --session-start-et 04:00 --session-end-et 09:30 --market-cap-policy snapshot_allowed_flagged --progress-every 10 --partial-flush-every 1 --verbose
+discovering_files raw_root=E:\TSIS\data\ohlcv_1m year=2026 tickers=all
+files_to_scan=17595
+loading_daily_prior_close root=E:\TSIS\data\data_foundation_outputs\master_daily_table\master_daily_table_v0_1 years=2025,2026
+daily_prior_close_rows=761798
+processing files_scanned=1/17595 raw_candidates=0 current=E:\TSIS\data\ohlcv_1m\ticker=AAA\year=2026\month=01\minute_aggs_AAA_2026_01.parquet

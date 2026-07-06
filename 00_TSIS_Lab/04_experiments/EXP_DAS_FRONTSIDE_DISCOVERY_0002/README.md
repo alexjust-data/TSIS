@@ -92,6 +92,9 @@ visual_audit_protocol.md
 
 data_and_lineage_policy.md
   politica 1m, quote-guard, scale guard y trazabilidad minima
+
+subminute_15s_30s_research_layer.md
+  capa exploratoria para construir barras 15s/30s desde quotes/trades, nunca desde partir velas 1m
 ```
 
 ## Regla De Datos 1m
@@ -108,3 +111,29 @@ Resumen:
 ohlcv_1m raw no es verdad visual ni tabla oficial por si solo.
 Toda vela 1m debe declarar vista, repair/guard state, lineage y scale guard raw/quotes cuando aplique.
 ```
+
+
+## Ruta Oficial Actual De Ejecucion
+
+Para construir el denominador del scanner no se usa `candidate_events.parquet` ni ningun run antiguo del notebook DAS.
+
+La ruta oficial de `EXP_DAS_FRONTSIDE_DISCOVERY_0002` empieza en datos historicos y contratos del laboratorio:
+
+```text
+E:/TSIS/data/ohlcv_1m
++
+repair shards / repair_manifest_lt1b_v0_1
++
+master_daily_table_v0_1 para prior_close
++
+E:/TSIS/data/reference/overview para market_cap declarado
+-> scanner denominator reproducible
+```
+
+Script oficial actual:
+
+```text
+scripts/build_2026_scanner_from_quote_guarded_1m_v0_1.py
+```
+
+Los scripts que consumen outputs antiguos del DAS quedan como referencia historica o visual, no como fuente normativa del denominador cientifico.

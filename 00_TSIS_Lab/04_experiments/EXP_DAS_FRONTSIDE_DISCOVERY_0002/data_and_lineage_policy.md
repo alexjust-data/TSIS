@@ -44,6 +44,49 @@ visual quote guard q01/q99
 scale guard
 ```
 
+
+## Fuente Exacta Del Scanner 2026
+
+Para `EXP_DAS_FRONTSIDE_DISCOVERY_0002`, el denominador nuevo debe construirse desde:
+
+```text
+raw_root = E:/TSIS/data/ohlcv_1m
+repair_manifest = E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1.parquet
+repair_shards = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/*/repair_shards
+master_daily = E:/TSIS/data/data_foundation_outputs/master_daily_table/master_daily_table_v0_1
+reference_overview = E:/TSIS/data/reference/overview
+```
+
+Regla operacional:
+
+```text
+raw 1m + quote-guarded repair shards = vista scanner research
+```
+
+El manifest consolidado `repair_manifest_lt1b_v0_1.parquet` es la prueba institucional de la reparacion, pero para ejecucion se prefieren shards por ticker/mes porque el parquet consolidado es demasiado grande para consultas interactivas por caso.
+
+`candidate_events.parquet` de runs antiguos no es fuente permitida para construir el denominador de este experimento. Puede usarse solo como comparativa historica si se declara como `legacy_reference_only`.
+
+## Market Cap Y Legalidad As-Of
+
+`market_cap < 100M` es un filtro duro de la hipotesis DAS/frontside.
+
+La fuente disponible hoy para este experimento es:
+
+```text
+E:/TSIS/data/reference/overview
+```
+
+Si `overview.request_date <= session_date`, el valor puede marcarse como `asof`.
+
+Si solo existe un snapshot posterior a la sesion, el valor debe marcarse como:
+
+```text
+market_cap_source_state = future_snapshot_review
+```
+
+Ese caso puede servir para screening research si se declara, pero no puede entrar como observable legal de una tabla de estado as-of. Para promocion cientifica fuerte se necesita fuente point-in-time o politica explicita de exclusion/flag.
+
 ## Scale Guard
 
 Antes de usar quotes para corregir visualmente OHLC:

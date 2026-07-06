@@ -1,5 +1,18 @@
-# Changelog - 02_TSIS_webSocket_SmallCaps
+﻿# Changelog - 02_TSIS_webSocket_SmallCaps
 
+## 2026-07-06
+
+### DAS CMD API capture contract baseline
+
+- Added `01_data_ingestion_live/vendor_das/das_cmdapi_capture_contract_v0_1.md`.
+- Added `01_data_ingestion_live/vendor_das/das_cmdapi_data_catalog_v0_1.md` as the DAS read-only data family inventory.
+- Added `01_data_ingestion_live/vendor_das/README.md` and linked the capture contract before the catalog.
+- Added `E:/TSIS/data_DAS_live/README.md` as the physical live data plane README for DAS CMD API payloads.
+- Declared that DAS live payloads must live under `E:/TSIS/data_DAS_live`, not under `data/raw_ws`.
+- Declared DAS v0 as read-only/data-only with hard-blocked execution command prefixes.
+- Declared mandatory long-running run files: `pre_manifest.json`, `pid_manifest.json`, `heartbeat.json`, `command_transcript.jsonl`, `events.jsonl`, `subscription_state.json`, `capture.log`, and `final_summary.json` on clean exit.
+- Updated `README.md`, `AGENTS.md`, `LOCAL_RULES.md`, `manifest.yaml`, and `01_data_ingestion_live/README.md` so future agents inherit the same DAS contract.
+- Updated `manifest.yaml` to point to `TSIS_LAB_ARCHITECTURE_v3.md` and to declare the DAS live physical data root.
 ## 2026-07-03
 
 ### Governance bootstrap
@@ -72,3 +85,5 @@ These paths are not the canonical current module root and must be corrected or t
 ### Remaining legacy evidence
 
 - Prototype notebooks still contain historical output/path references to `C:\TSIS_Data\v1\WebSocket_SmallCaps`. These remain untouched as evidence until a notebook migration is explicitly performed.
+
+

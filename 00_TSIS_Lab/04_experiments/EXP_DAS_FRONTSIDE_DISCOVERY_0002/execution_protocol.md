@@ -70,6 +70,38 @@ visual_price_source
 lineage_manifest
 ```
 
+
+### Implementacion Actual Del Denominador 2026
+
+El primer builder operativo del denominador es:
+
+```text
+scripts/build_2026_scanner_from_quote_guarded_1m_v0_1.py
+```
+
+Principio obligatorio:
+
+```text
+nuevo scanner != candidate_events.parquet antiguo
+nuevo scanner != copiar anchors DAS previos
+nuevo scanner = filtros declarados + raw 1m + quote-guarded + lineage
+```
+
+El builder actual calcula solo `scanner_gate` y columnas de denominador. No calcula `first_push`, `first_dip`, `rebreak`, outcomes ni in-play.
+
+Regla inicial de gate:
+
+```text
+reference_price = prior_close
+scanner_gate_price = close quote-guarded de la vela 1m cerrada
+threshold_pct = scanner_gate_price / prior_close - 1
+volume_gate = volumen acumulado de la sesion premarket hasta el gate
+price_gate = precio quote-guarded dentro del rango declarado
+market_cap_gate = <100M con estado de fuente marcado
+```
+
+Esta separacion evita contaminar el denominador con detecciones estructurales posteriores.
+
 ## Fase 2 - Sweep De Threshold Inicial
 
 Primer sweep obligatorio:

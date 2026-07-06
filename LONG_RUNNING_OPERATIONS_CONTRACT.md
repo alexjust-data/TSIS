@@ -1,4 +1,4 @@
-# TSIS Long-Running Operations Contract
+﻿# TSIS Long-Running Operations Contract
 
 ## 1. Role
 
@@ -34,6 +34,52 @@ This contract applies when any command meets at least one condition:
 - any operation a human may reasonably leave unattended.
 
 Local rules may be stricter. They may not weaken this contract.
+
+
+---
+
+## 2.1. Human-Controlled Launch Rule
+
+Regla obligatoria para agentes TSIS:
+
+```text
+Un agente no debe lanzar por su cuenta un run largo.
+```
+
+Cuando una operacion cumpla las condiciones de este contrato, el agente debe entregar primero al humano:
+
+- el comando exacto que se va a ejecutar;
+- el directorio de salida;
+- el impacto esperado: tiempo, IO, numero aproximado de ficheros o scope;
+- el comando de monitorizacion;
+- como ver la evolucion del run en vivo;
+- como detenerlo de forma segura si el humano decide hacerlo;
+- que artefactos se esperan al terminar.
+
+El humano debe poder ver la evolucion del run. Si no existe monitor formal, heartbeat o log vivo, el agente no debe presentar el run como gobernado.
+
+La secuencia correcta es:
+
+```text
+1. agente prepara comando y monitor
+2. agente muestra comando al humano
+3. humano decide si lo lanza, lo modifica o pide un scope menor
+4. run largo produce evidencia de progreso desde el inicio
+5. agente interpreta resultados solo despues de que existan outputs verificables
+```
+
+Excepcion limitada:
+
+Un agente puede ejecutar un smoke test corto por su cuenta si no cumple los criterios de run largo de este contrato. Si durante el smoke se detecta que el trabajo real sera largo, debe parar la escalada y entregar el comando al humano.
+
+Nunca debe ocurrir:
+
+```text
+agente lanza full run largo sin permiso explicito
+agente lanza full universe sin comando previo
+agente lanza materializacion masiva sin monitor visible
+agente oculta que el run sigue vivo en background
+```
 
 ---
 
@@ -372,3 +418,4 @@ The rule is institutional:
 ```text
 If a human cannot know where a serious command is, the command is not TSIS-grade.
 ```
+
