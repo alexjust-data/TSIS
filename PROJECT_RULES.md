@@ -327,7 +327,6 @@ Esto aplica como minimo a:
 - `PROJECT_OPERATING_SYSTEM.md`;
 - `PROJECT_RULES.md`;
 - `VERSIONING_STANDARDS.md`;
-- `ARCHITECTURE_OVERVIEW.md`;
 - `RESEARCH_PHILOSOPHY.md`;
 - `CHANGELOG.md`.
 
@@ -623,3 +622,4 @@ TSIS debe evolucionar como:
 - y proyecto capaz de crecer durante años sin colapsar estructuralmente.
 
 Toda regla de este documento existe para defender esa dirección.
+

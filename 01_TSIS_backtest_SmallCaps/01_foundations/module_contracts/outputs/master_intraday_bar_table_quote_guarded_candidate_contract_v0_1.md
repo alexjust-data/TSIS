@@ -25,7 +25,7 @@ Planned candidate:
 
 ```text
 dataset_id: master_intraday_bar_table_v0_2_candidate_quote_guarded
-promotion_state: candidate_contract_defined_not_materialized
+promotion_state: scoped_candidate_materialized_not_official
 materialization_scope: quote_guarded_lt1b_candidate_pending_builder_materialization
 full_universe_claim: false
 ```
@@ -36,9 +36,8 @@ Target candidate path:
 E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_2_candidate_quote_guarded/
 ```
 
-The path above must not be created by a smoke run or an incomplete repair run.
-It is reserved for the first governed candidate materialization after the
-quote-guarded source root is complete enough to validate.
+The path above now exists as the first scoped E-root candidate materialization.
+It is not an official/promoted table and does not claim full-universe coverage.
 
 ## 3. Relationship To `v0_1`
 
@@ -106,9 +105,11 @@ E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b
 C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_lt1b_consolidation_manual_20260703_094500/consolidation_summary.json
 ```
 
-Remaining candidate-table gates are builder preflight, materialization evidence,
-validation reports, and explicit promotion review. Raw-only scanner artifacts remain
-non-canonical for the LT1B quote-guarded route.
+Remaining candidate-table gates are small-scope builder/materialization evidence,
+validation reports, and explicit promotion review. The lightweight preflight now
+passes against the promoted LT1B artifacts, but it does not materialize the
+candidate table. Raw-only scanner artifacts remain non-canonical for the LT1B
+quote-guarded route.
 
 ## 6. Required Storage Semantics
 
@@ -333,13 +334,231 @@ human review accepts the candidate evidence
 ## 12. Current Status
 
 ```text
-status: candidate_contract_defined_not_materialized
+status: scoped_candidate_materialized_not_official
 official_dataset_created: false
+e_root_candidate_created: true
 safe_to_modify_v0_1: false
 safe_to_launch_full_materialization: false
 quote_guarded_manifest_gate: passed
-next_executable_action: implement/execute builder preflight against repair_manifest_lt1b_v0_1.parquet
+lightweight_preflight_status: passed
+latest_preflight_report: C:/TSIS_Data/tests/test_runs/2026-07-05/master_intraday_quote_guarded_candidate_preflight_v0_1/master_intraday_quote_guarded_candidate_preflight_v0_1.json
+next_executable_action: decide wider or declared-universe scope after scoped E-root candidate passed
 ```
+
+## 12.1 Latest Lightweight Preflight
+
+Script:
+
+```text
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/preflight_master_intraday_quote_guarded_candidate.py
+```
+
+Report:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-07-05/master_intraday_quote_guarded_candidate_preflight_v0_1/master_intraday_quote_guarded_candidate_preflight_v0_1.json
+```
+
+Resultado:
+
+```text
+validator_status = passed
+validator_hard_fail_count = 0
+validator_warning_count = 0
+minute_root_exists = true
+quotes_root_exists = true
+quote_guarded_root_exists = true
+repair_manifest_exists = true
+repair_summary_exists = true
+repair_sample_exists = true
+consolidation_summary_exists = true
+repair_sample_column_count = 36
+manifest_rows = 301278342
+completed_tickers = 4824
+missing_tickers = 0
+```
+
+Lectura correcta:
+
+```text
+preflight passed = artifacts/config/lineage listos para disenar y probar builder candidate
+preflight passed != master_intraday_bar_table_v0_2 materializada
+preflight passed != full universe state table
+preflight passed != ML/RL/AlphaEvolve habilitado
+```
+
+## 12.2 Controlled Sample Materialization
+
+Script:
+
+```text
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_master_intraday_quote_guarded_candidate_sample.py
+```
+
+Manifest:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-07-05/master_intraday_quote_guarded_candidate_sample_v0_1/_master_intraday_bar_table_v0_2_candidate_quote_guarded_controlled_sample_manifest.json
+```
+
+Output controlado:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-07-05/master_intraday_quote_guarded_candidate_sample_v0_1/master_intraday_bar_table_v0_2_candidate_quote_guarded_controlled_sample/data.parquet
+```
+
+Resultado:
+
+```text
+status = controlled_sample_materialized_not_official
+source_sample_rows = 30
+raw_rows_found = 30
+raw_rows_missing = 0
+raw_ohlc_match_rows = 30
+raw_ohlc_mismatch_rows = 0
+quote_guarded_repair_applied_source_rows = 20
+qg_ohlc_changed_source_rows = 20
+output_rows = 60
+price_view_counts = {1m_raw: 30, 1m_quote_guarded_raw: 30}
+full_universe_claim_rows = 0
+ml_candidate_rows = 0
+rl_candidate_rows = 0
+validator_status = passed
+validator_hard_fail_count = 0
+```
+
+Lectura correcta:
+
+```text
+controlled sample passed = el loader overlay raw + quote-guarded funciona en muestra real
+controlled sample passed != candidate table materializada en E-root
+controlled sample passed != full universe
+controlled sample passed != scanner/eventos 1m
+controlled sample passed != ML/RL/AlphaEvolve
+```
+
+## 12.3 Scoped Candidate Materialization
+
+Script:
+
+```text
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_master_intraday_quote_guarded_candidate_scoped.py
+```
+
+Manifest:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-07-05/master_intraday_quote_guarded_candidate_scoped_v0_1/_master_intraday_bar_table_v0_2_candidate_quote_guarded_scoped_manifest.json
+```
+
+Output scoped:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-07-05/master_intraday_quote_guarded_candidate_scoped_v0_1/master_intraday_bar_table_v0_2_candidate_quote_guarded_scoped/data.parquet
+```
+
+Scope:
+
+```text
+AACT:2025-09
+AAGR:2023-12
+AAMC:2023-12
+```
+
+Resultado:
+
+```text
+status = scoped_candidate_materialized_not_official
+scope_count = 3
+source_raw_file_count = 3
+source_repair_shard_count = 3
+raw_rows = 10835
+repair_manifest_rows_in_scope = 1106
+raw_ohlc_match_rows = 10835
+raw_ohlc_mismatch_rows = 0
+quote_guarded_repair_applied_rows = 96
+qg_ohlc_changed_rows = 96
+manifest_qg_diff_not_applied_rows = 10
+output_rows = 21670
+price_view_counts = {1m_raw: 10835, 1m_quote_guarded_raw: 10835}
+full_universe_claim_rows = 0
+ml_candidate_rows = 0
+rl_candidate_rows = 0
+validator_status = passed
+validator_hard_fail_count = 0
+```
+
+Lectura correcta:
+
+```text
+scoped candidate passed = raw mensual completo + repair shard completo funcionan para scope acotado
+scoped candidate passed != target E-root materializado
+scoped candidate passed != full universe
+scoped candidate passed != scanner/eventos 1m
+scoped candidate passed != ML/RL/AlphaEvolve
+```
+
+Regla de overlay confirmada:
+
+```text
+OHLC quote-guarded efectivo solo cambia si quote_guarded_repair_applied = true.
+Las diferencias de o_qg/h_qg/l_qg/c_qg con repair_applied=false se registran
+como manifest_qg_diff_not_applied_rows, no se aplican al precio efectivo.
+```
+
+## 12.4 E-root Scoped Candidate Materialization
+
+Manifest E-root:
+
+```text
+E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/_master_intraday_bar_table_v0_2_candidate_quote_guarded_manifest.json
+```
+
+Output E-root:
+
+```text
+E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_2_candidate_quote_guarded/data.parquet
+```
+
+Scope:
+
+```text
+AACT:2025-09
+AAGR:2023-12
+AAMC:2023-12
+```
+
+Resultado:
+
+```text
+status = scoped_candidate_materialized_not_official
+writes_e_root_target = true
+official_dataset_created = false
+full_universe_claim = false
+raw_rows = 10835
+repair_manifest_rows_in_scope = 1106
+raw_ohlc_mismatch_rows = 0
+quote_guarded_repair_applied_rows = 96
+qg_ohlc_changed_rows = 96
+manifest_qg_diff_not_applied_rows = 10
+output_rows = 21670
+price_view_counts = {1m_raw: 10835, 1m_quote_guarded_raw: 10835}
+validator_status = passed
+validator_hard_fail_count = 0
+```
+
+Lectura correcta:
+
+```text
+E-root scoped candidate exists = primera candidate institucional acotada escrita
+E-root scoped candidate exists != official/promoted
+E-root scoped candidate exists != full universe
+E-root scoped candidate exists != scanner/eventos 1m
+E-root scoped candidate exists != ML/RL/AlphaEvolve
+```
+
+
+
 
 ## 13. Downstream Scanner Dependency
 

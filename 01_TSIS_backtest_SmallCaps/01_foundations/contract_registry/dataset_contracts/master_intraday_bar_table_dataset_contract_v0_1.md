@@ -224,7 +224,7 @@ The next candidate route is defined separately as:
 dataset_id: master_intraday_bar_table_v0_2_candidate_quote_guarded
 contract: 01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md
 config: configs/data_foundation_outputs/master_intraday_bar_table_quote_guarded_candidate_v0_2.json
-status: candidate_contract_defined_not_materialized
+status: scoped_candidate_materialized_not_official
 ```
 
 This route exists because `ohlcv_1m` contains raw minute bars that may be
@@ -242,8 +242,10 @@ official_quote_guarded_manifest: E:/TSIS/data/data_foundation_outputs/ohlcv_1m_q
 official_quote_guarded_manifest_rows: 301278342
 ```
 
-The upstream quote-guarded manifest gate is satisfied. The candidate still
-cannot be promoted until the master intraday candidate itself is materialized,
-validated and reviewed under its own contract.
+The upstream quote-guarded manifest gate is satisfied. A first scoped E-root
+candidate is materialized for `AACT:2025-09`, `AAGR:2023-12` and
+`AAMC:2023-12` with `validator_status=passed`, `output_rows=21670` and
+`full_universe_claim=false`. The dataset still cannot be promoted until wider
+or declared-universe scope, validators and human review are complete.
 
 `master_intraday_bar_table_v0_1` remains unchanged and scoped.

@@ -1,4 +1,4 @@
-# Institutional Monorepo Tests
+﻿# Institutional Monorepo Tests
 
 Este directorio contiene los tests de gobierno global de TSIS.
 
@@ -12,7 +12,7 @@ Aqui deben vivir pruebas como:
 
 - `test_root_contracts.py`: existencia y consistencia de `AGENTS.md`,
   `PROJECT_OPERATING_SYSTEM.md`, `PROJECT_RULES.md`,
-  `VERSIONING_STANDARDS.md`, `ARCHITECTURE_OVERVIEW.md`,
+  `VERSIONING_STANDARDS.md`, `00_CTO/TSIS_LAB_ARCHITECTURE_v3.md`,
   `RESEARCH_PHILOSOPHY.md` y `CHANGELOG.md`.
 - `test_module_boundaries.py`: los modulos no se contaminan entre si; research,
   live y RL mantienen fronteras explicitas.
@@ -46,4 +46,5 @@ Cada test global debe dejar claro:
 Los tests con fuentes externas no deben depender de internet por defecto. Deben
 usar evidencia cacheada o saltarse explicitamente salvo que una variable de
 entorno habilite la comprobacion en vivo.
+
 

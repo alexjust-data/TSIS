@@ -1,0 +1,35 @@
+﻿experiment_id: EXP_TEMPLATE
+experiment_version: v0_1
+status: draft
+created_by: human_researcher
+generator_type: human_researcher
+
+research_question: ""
+objective: ""
+hypothesis: ""
+target_domain: ""
+
+input_state_versions: []
+input_outcome_versions: []
+source_data_scope: ""
+universe_definition: {}
+
+probe_definition: {}
+parameter_grid: {}
+controlled_variables: {}
+experimental_variables: {}
+windows: {}
+outcome_matrix: {}
+metrics: []
+baselines: []
+
+leakage_gates: []
+quality_gates: []
+lineage_requirements: []
+statistical_validation_plan: {}
+promotion_rules: {}
+mutation_policy:
+  optimizer_mutable: false
+  mutation_scope: []
+
+expected_outputs: []

@@ -1,4 +1,4 @@
-"""DAS exploratory search and notebook widgets.
+﻿"""DAS exploratory search and notebook widgets.
 
 This module is exploratory. It searches for strategy samples, not promoted
 events, trades, edge, entries, stops, targets, or sizing.
@@ -7,17 +7,21 @@ events, trades, edge, entries, stops, targets, or sizing.
 from __future__ import annotations
 
 import argparse
+import hashlib
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 import html as html_lib
 import json
 from pathlib import Path
+import re
 import sys
 from typing import Callable, Iterable
 from urllib.parse import urlencode
 from uuid import uuid4
 
 import pandas as pd
+from PIL import Image, ImageDraw, ImageFont
+
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
@@ -209,12 +213,8 @@ def _classify_rebreak_type(dip_to_break: pd.DataFrame, rebreak_row: pd.Series, v
         high_range_pct = (max(highs) - min(highs)) / max(float(rebreak_row["px_c"]), 0.01) * 100.0
         if close_range_pct <= 6.0 and high_range_pct <= 10.0:
             return "flat_shelf_break"
-    if vwap_at_rebreak is not None and pd.notna(vwap_at_rebreak):
-        below_vwap = (dip_to_break["px_c"].astype(float) < float(vwap_at_rebreak)).any()
-        if below_vwap and float(rebreak_row["px_c"]) >= float(vwap_at_rebreak):
-            return "vwap_reclaim_rebreak"
     if len(dip_to_break) >= 3:
-        return "multi_candle_flag_break"
+        return "multi_candle_rebreak"
     return "unclear"
 
 
@@ -490,8 +490,17 @@ def _find_awakening_start(premarket: pd.DataFrame, pm_open_price: float | None, 
 def _find_first_push(
     premarket: pd.DataFrame, pm_open_price: float | None, config: DasConfig
 ) -> tuple[pd.Series | None, pd.Series | None, pd.Series | None]:
+    """Find first push -> first red pullback using the DAS human sequence.
+
+    Semantics:
+    - first push is the first green expansion sequence after the ticker wakes up;
+    - first push high is the max high through the first red candle that interrupts it;
+    - first dip is the first red/non-green pullback sequence after that push;
+    - first dip low is the lowest low inside that first pullback sequence.
+    """
     if premarket.empty or pm_open_price is None or pm_open_price <= 0:
         return None, None, None
+
     push_threshold = pm_open_price * (1.0 + config.push_label_pct / 100.0)
     threshold_rows = premarket[premarket["px_h"].astype(float) >= push_threshold]
     if threshold_rows.empty:
@@ -500,25 +509,56 @@ def _find_first_push(
     first_threshold_row = threshold_rows.iloc[0]
     threshold_pos = int(first_threshold_row.name)
     awakening_row = _find_awakening_start(premarket, pm_open_price, threshold_pos)
+    awakening_pos = int(awakening_row.name)
 
-    current_high = float(first_threshold_row["px_h"])
-    current_high_row = first_threshold_row
-    first_dip_low_row: pd.Series | None = None
+    first_green_pos: int | None = None
+    for _, row in premarket.iloc[awakening_pos : threshold_pos + 1].iterrows():
+        if _is_green_candle(row):
+            first_green_pos = int(row.name)
+            break
+    if first_green_pos is None:
+        return None, None, None
 
-    for _, row in premarket.iloc[threshold_pos + 1 :].iterrows():
+    threshold_reached = False
+    first_red_pos: int | None = None
+    current_high = float("-inf")
+    current_high_row: pd.Series | None = None
+
+    for _, row in premarket.iloc[first_green_pos:].iterrows():
         high = float(row["px_h"])
-        low = float(row["px_l"])
         if high > current_high:
             current_high = high
             current_high_row = row
-            continue
-        dip_depth_pct = (current_high - low) / current_high * 100.0 if current_high > 0 else 0.0
-        if dip_depth_pct >= config.dip_label_pct:
-            first_dip_low_row = row
+        if high >= push_threshold:
+            threshold_reached = True
+        if _is_red_candle(row) and threshold_reached:
+            first_red_pos = int(row.name)
             break
 
-    return awakening_row, current_high_row, first_dip_low_row
+    if first_red_pos is None or current_high_row is None:
+        return None, None, None
 
+    # The first red candle starts the dip, but its upper wick can still be the true first push high.
+    push_window = premarket.iloc[first_green_pos : first_red_pos + 1]
+    if push_window.empty:
+        return None, None, None
+    high_idx = push_window["px_h"].astype(float).idxmax()
+    first_push_high_row = premarket.loc[high_idx]
+
+    dip_end_pos = len(premarket)
+    for _, row in premarket.iloc[first_red_pos + 1 :].iterrows():
+        if _is_green_candle(row):
+            # The first green recovery candle can still print the true dip low with its wick.
+            dip_end_pos = int(row.name) + 1
+            break
+    dip_window = premarket.iloc[first_red_pos:dip_end_pos]
+    if dip_window.empty:
+        return None, None, None
+    dip_low_idx = dip_window["px_l"].astype(float).idxmin()
+    first_dip_low_row = premarket.loc[dip_low_idx]
+
+    push_start_row = premarket.loc[first_green_pos]
+    return push_start_row, first_push_high_row, first_dip_low_row
 
 def _last_red_high_before_rebreak(
     premarket: pd.DataFrame,
@@ -543,16 +583,24 @@ def _find_structural_rebreak(
     first_push_high_row: pd.Series,
     first_dip_low_row: pd.Series,
 ) -> tuple[pd.Series | None, float | None, str | None, pd.Series | None, list[int]]:
+    """Find the first valid breakout/rebreak of the first push high.
+
+    Valid rebreak v0.2:
+    - at or after the first dip low;
+    - green candle;
+    - high breaks first_push_high;
+    - close confirms above first_push_high;
+    - volume is at least the volume of the dip-low candle.
+    """
     first_dip_pos = int(first_dip_low_row.name)
     first_push_high = float(first_push_high_row["px_h"])
     first_push_ts = first_push_high_row.get("ts_utc_dt")
-    last_red_high, last_red_row = _last_red_high_before_rebreak(premarket, first_push_high_row, first_dip_low_row)
-    active_level = last_red_high if last_red_high is not None else first_push_high
-    active_level_kind = "last_red_pullback_high" if last_red_high is not None else "first_push_high"
+    _, last_red_row = _last_red_high_before_rebreak(premarket, first_push_high_row, first_dip_low_row)
     rows_since_dip: list[int] = []
     max_initial_rebreak_minutes = 45.0
+    dip_volume = _float_or_none(first_dip_low_row.get("v")) or 0.0
 
-    for _, row in premarket.iloc[first_dip_pos + 1 :].iterrows():
+    for _, row in premarket.iloc[first_dip_pos:].iterrows():
         row_ts = row.get("ts_utc_dt")
         if pd.notna(first_push_ts) and pd.notna(row_ts):
             elapsed_minutes = (row_ts - first_push_ts).total_seconds() / 60.0
@@ -562,14 +610,15 @@ def _find_structural_rebreak(
         rows_since_dip.append(int(row.name))
         close_px = float(row["px_c"])
         high_px = float(row["px_h"])
+        volume = _float_or_none(row.get("v")) or 0.0
+        breaks_high = high_px > first_push_high
+        confirms_close = close_px > first_push_high
+        volume_confirms = volume >= dip_volume
 
-        if active_level is not None and _is_green_candle(row) and close_px > active_level and high_px > active_level:
-            return row, active_level, active_level_kind, last_red_row, rows_since_dip
-        if _is_green_candle(row) and close_px > first_push_high and high_px > first_push_high:
+        if _is_green_candle(row) and breaks_high and confirms_close and volume_confirms:
             return row, first_push_high, "first_push_high", last_red_row, rows_since_dip
 
-    return None, active_level, active_level_kind, last_red_row, rows_since_dip
-
+    return None, first_push_high, "first_push_high", last_red_row, rows_since_dip
 
 def _find_momentum_end(
     session_df: pd.DataFrame,
@@ -651,44 +700,33 @@ def _das_rows_for_session_v1(session_df: pd.DataFrame, prior_close: float | None
     rows_since_dip: list[int] = []
     das_state = "scanner_only"
 
-    push_threshold = trigger_price * (1.0 + config.push_label_pct / 100.0)
-    threshold_rows = after_trigger[after_trigger["px_h"].astype(float) >= push_threshold]
-    if not threshold_rows.empty:
+    # Human DAS rule: a dip cannot start from any arbitrary low. It starts only
+    # after the first red pullback candle following the initial push. The first
+    # green recovery candle may still contribute the dip low via its wick.
+    detected_push_start_row, detected_push_high_row, detected_dip_low_row = _find_first_push(
+        work, pm_open_price, config
+    )
+    if detected_push_start_row is not None:
+        push_start_row = detected_push_start_row
+        first_push_start_price = float(_float_or_none(push_start_row.get("px_l")) or push_start_row["px_o"])
+    if detected_push_high_row is not None:
+        first_push_high_row = detected_push_high_row
         das_state = "push_detected"
-        first_push_high_row = threshold_rows.iloc[0]
-        current_high = float(first_push_high_row["px_h"])
-        current_high_row = first_push_high_row
-        first_threshold_pos = int(first_push_high_row.name)
-
-        for _, row in work.iloc[first_threshold_pos + 1 :].iterrows():
-            high = float(row["px_h"])
-            low = float(row["px_l"])
-            if high > current_high:
-                current_high = high
-                current_high_row = row
-            dip_depth_pct = (current_high - low) / current_high * 100.0 if current_high > 0 else 0.0
-            if dip_depth_pct >= config.dip_label_pct:
-                first_push_high_row = current_high_row
-                first_dip_low_row = row
-                das_state = "push_and_dip"
+    if detected_dip_low_row is not None and first_push_high_row is not None:
+        first_dip_low_row = detected_dip_low_row
+        das_state = "push_and_dip"
+        first_push_high = float(first_push_high_row["px_h"])
+        first_dip_pos = int(first_dip_low_row.name)
+        for _, row in work.iloc[first_dip_pos + 1 :].iterrows():
+            rows_since_dip.append(int(row.name))
+            if float(row["px_h"]) >= first_push_high:
+                rebreak_row = row
+                das_state = "rebreak_confirmed"
                 break
-
-        if first_push_high_row is None:
-            first_push_high_row = current_high_row
-
-        if first_dip_low_row is not None:
-            first_push_high = float(first_push_high_row["px_h"])
-            first_dip_pos = int(first_dip_low_row.name)
-            for _, row in work.iloc[first_dip_pos + 1 :].iterrows():
-                rows_since_dip.append(int(row.name))
-                if float(row["px_h"]) >= first_push_high:
-                    rebreak_row = row
-                    das_state = "rebreak_confirmed"
-                    break
-            if rebreak_row is None:
-                post_dip = work.iloc[first_dip_pos + 1 :]
-                if not post_dip.empty and float(post_dip["px_l"].min()) < trigger_price:
-                    das_state = "failed_before_rebreak"
+        if rebreak_row is None:
+            post_dip = work.iloc[first_dip_pos + 1 :]
+            if not post_dip.empty and float(post_dip["px_l"].min()) < trigger_price:
+                das_state = "failed_before_rebreak"
 
     session_for_vwap = work.copy()
     session_for_vwap["vwap"] = _compute_vwap(session_for_vwap)
@@ -2360,6 +2398,836 @@ def _ensure_plotly_png_export_available() -> None:
         ) from exc
 
 
+def _renderer_source_hash() -> str:
+    path = Path(__file__).resolve()
+    digest = hashlib.sha256()
+    with path.open("rb") as fh:
+        for chunk in iter(lambda: fh.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _visual_threshold_label(candidate: dict) -> str:
+    value = _clean_value(candidate.get("momentum_trigger_pct_threshold"))
+    if value is None:
+        value = _clean_value(candidate.get("momentum_trigger_pct")) or 50.0
+    try:
+        numeric = float(value)
+        return f"{numeric:g}"
+    except Exception:
+        return _safe_filename(str(value))
+
+
+def _image_pixel_geometry(
+    chart_df: pd.DataFrame,
+    y_padding_override_pct: float = 0.03,
+    axis_ranges: dict[str, tuple[float, float]] | None = None,
+) -> dict[str, float]:
+    image_width = float(EXPORT_SQUARE_CHART_WIDTH * 2)
+    image_height = float(EXPORT_SQUARE_CHART_HEIGHT * 2)
+    margin_left = 35.0 * 2.0
+    margin_right = 75.0 * 2.0
+    margin_top = 230.0 * 2.0
+    margin_bottom = 35.0 * 2.0
+    plot_width = image_width - margin_left - margin_right
+    plot_height = image_height - margin_top - margin_bottom
+    price_top = margin_top
+    price_bottom = margin_top + (1.0 - PRICE_PANEL_DOMAIN[0]) * plot_height
+    low = float(pd.to_numeric(chart_df["px_l"], errors="coerce").min())
+    high = float(pd.to_numeric(chart_df["px_h"], errors="coerce").max())
+    span = max(high - low, high * 0.05, 0.01)
+    pad = span * y_padding_override_pct
+    x_range = axis_ranges.get("xaxis") if axis_ranges else None
+    y_range = axis_ranges.get("yaxis") if axis_ranges else None
+    x_min, x_max = (float(x_range[0]), float(x_range[1])) if x_range else (0.0, float(max(len(chart_df) - 1, 1)))
+    y_min, y_max = (float(y_range[0]), float(y_range[1])) if y_range else (low - pad, high + pad)
+    return {
+        "image_width": image_width,
+        "image_height": image_height,
+        "plot_left": margin_left,
+        "plot_width": plot_width,
+        "price_top": price_top,
+        "price_bottom": price_bottom,
+        "price_min": y_min,
+        "price_max": y_max,
+        "x_min": x_min,
+        "x_max": x_max,
+        "bar_count": float(max(len(chart_df), 1)),
+    }
+
+
+def _visual_anchor_px(chart_df: pd.DataFrame, geometry: dict[str, float], ts_utc: object, price: object) -> tuple[float, float] | None:
+    x = _bar_x_for_ts(chart_df, str(ts_utc) if _clean_value(ts_utc) is not None else None)
+    clean_price = _clean_value(price)
+    if x is None or clean_price is None:
+        return None
+    x_min = geometry.get("x_min", 0.0)
+    x_max = geometry.get("x_max", max(geometry["bar_count"] - 1.0, 1.0))
+    x_span = max(float(x_max) - float(x_min), 1.0)
+    anchor_x = geometry["plot_left"] + ((float(x) - float(x_min)) / x_span) * geometry["plot_width"]
+    y_min = geometry["price_min"]
+    y_max = geometry["price_max"]
+    if y_max <= y_min:
+        return None
+    anchor_y = geometry["price_bottom"] - ((float(clean_price) - y_min) / (y_max - y_min)) * (
+        geometry["price_bottom"] - geometry["price_top"]
+    )
+    return anchor_x, anchor_y
+
+
+def _estimate_label_size(label_text: str) -> tuple[float, float]:
+    lines = str(label_text).replace("<br>", "\n").splitlines() or [""]
+    max_chars = max(len(line) for line in lines)
+    width = min(max(136.0, max_chars * 8.4 + 24.0), 340.0)
+    height = max(38.0, len(lines) * 20.0 + 16.0)
+    return width, height
+
+
+def _bbox_intersects(left: tuple[float, float, float, float], right: tuple[float, float, float, float]) -> bool:
+    return not (left[2] <= right[0] or right[2] <= left[0] or left[3] <= right[1] or right[3] <= left[1])
+
+
+def _visual_candle_bboxes(chart_df: pd.DataFrame, geometry: dict[str, float]) -> list[tuple[float, float, float, float]]:
+    blocked: list[tuple[float, float, float, float]] = []
+    y_min = geometry["price_min"]
+    y_max = geometry["price_max"]
+    if y_max <= y_min:
+        return blocked
+    bar_denominator = max(geometry["bar_count"] - 1.0, 1.0)
+    price_height = geometry["price_bottom"] - geometry["price_top"]
+    for idx, row in chart_df.reset_index(drop=True).iterrows():
+        high = _clean_value(row.get("px_h"))
+        low = _clean_value(row.get("px_l"))
+        if high is None or low is None:
+            continue
+        x = geometry["plot_left"] + (float(idx) / bar_denominator) * geometry["plot_width"]
+        y_high = geometry["price_bottom"] - ((float(high) - y_min) / (y_max - y_min)) * price_height
+        y_low = geometry["price_bottom"] - ((float(low) - y_min) / (y_max - y_min)) * price_height
+        blocked.append((x - 22.0, min(y_high, y_low) - 16.0, x + 22.0, max(y_high, y_low) + 16.0))
+    return blocked
+
+
+def _visual_premarket_label_bounds(chart_df: pd.DataFrame, geometry: dict[str, float]) -> tuple[float, float, float, float]:
+    working = chart_df.reset_index(drop=True)
+    if "session_segment" in working.columns:
+        mask = working["session_segment"].astype(str).eq("premarket")
+        if mask.any():
+            idxs = list(working.index[mask])
+        else:
+            idxs = list(working.index)
+    else:
+        idxs = list(working.index)
+    if not idxs:
+        idxs = [0]
+    x_min_range = float(geometry.get("x_min", 0.0))
+    x_max_range = float(geometry.get("x_max", max(geometry["bar_count"] - 1.0, 1.0)))
+    x_span = max(x_max_range - x_min_range, 1.0)
+    x_min = geometry["plot_left"] + ((float(min(idxs)) - x_min_range) / x_span) * geometry["plot_width"] + 12.0
+    x_max = geometry["plot_left"] + ((float(max(idxs)) - x_min_range) / x_span) * geometry["plot_width"] - 12.0
+    if x_max <= x_min:
+        x_min = geometry["plot_left"] + 12.0
+        x_max = geometry["plot_left"] + geometry["plot_width"] - 12.0
+    return (
+        max(12.0, x_min),
+        max(12.0, geometry["price_top"] + 14.0),
+        min(geometry["image_width"] - 12.0, x_max),
+        min(geometry["image_height"] - 12.0, geometry["price_bottom"] - 14.0),
+    )
+
+
+def _place_visual_label(
+    anchor_x: float,
+    anchor_y: float,
+    label_text: str,
+    placed: list[tuple[float, float, float, float]],
+    image_width: float,
+    image_height: float,
+    blocked: list[tuple[float, float, float, float]] | None = None,
+    allowed_bounds: tuple[float, float, float, float] | None = None,
+) -> tuple[float, float, float, float]:
+    width, height = _estimate_label_size(label_text)
+    blocked = blocked or []
+    if allowed_bounds is None:
+        allowed_bounds = (12.0, 12.0, image_width - 12.0, image_height - 12.0)
+    min_x, min_y, max_x, max_y = allowed_bounds
+    min_x = max(12.0, min_x)
+    min_y = max(12.0, min_y)
+    max_x = min(image_width - 12.0, max_x)
+    max_y = min(image_height - 12.0, max_y)
+    if max_x - min_x < width:
+        min_x = 12.0
+        max_x = image_width - 12.0
+    if max_y - min_y < height:
+        min_y = 12.0
+        max_y = image_height - 12.0
+
+    def _candidate(dx: float, dy: float) -> tuple[float, float, float, float]:
+        x0 = min(max(anchor_x + dx, min_x), max_x - width)
+        y0 = min(max(anchor_y + dy, min_y), max_y - height)
+        return (x0, y0, x0 + width, y0 + height)
+
+    offsets = [
+        (72.0, -300.0),
+        (-width - 72.0, -300.0),
+        (260.0, -210.0),
+        (-width - 260.0, -210.0),
+        (72.0, 220.0),
+        (-width - 72.0, 220.0),
+        (340.0, 40.0),
+        (-width - 340.0, 40.0),
+        (72.0, -430.0),
+        (-width - 72.0, -430.0),
+        (72.0, 340.0),
+        (-width - 72.0, 340.0),
+    ]
+    occupied = placed + blocked
+    for dx, dy in offsets:
+        bbox = _candidate(dx, dy)
+        if not any(_bbox_intersects(bbox, existing) for existing in occupied):
+            placed.append(bbox)
+            return bbox
+
+    # Grid search inside the premarket price panel. If this fails, do not silently print a bad chart.
+    x_step = 36.0
+    y_step = 28.0
+    y = min_y
+    while y + height <= max_y:
+        x = min_x
+        while x + width <= max_x:
+            bbox = (x, y, x + width, y + height)
+            if not any(_bbox_intersects(bbox, existing) for existing in occupied):
+                placed.append(bbox)
+                return bbox
+            x += x_step
+        y += y_step
+    raise RuntimeError("Could not place visual label inside premarket window without overlapping candles or labels.")
+
+def _format_compact_number(value: object) -> str:
+    clean = _clean_value(value)
+    if clean is None:
+        return "na"
+    try:
+        number = float(clean)
+    except Exception:
+        return "na"
+    if abs(number) >= 1_000_000:
+        return f"{number / 1_000_000:.2f}M"
+    if abs(number) >= 1_000:
+        return f"{number / 1_000:.0f}k"
+    return f"{number:.0f}"
+
+
+
+def _same_timestamp_minute(left: object, right: object) -> bool:
+    left_clean = _clean_value(left)
+    right_clean = _clean_value(right)
+    if left_clean is None or right_clean is None:
+        return False
+    try:
+        left_ts = pd.Timestamp(left_clean)
+        right_ts = pd.Timestamp(right_clean)
+    except Exception:
+        return False
+    if left_ts.tzinfo is None:
+        left_ts = left_ts.tz_localize("UTC")
+    else:
+        left_ts = left_ts.tz_convert("UTC")
+    if right_ts.tzinfo is None:
+        right_ts = right_ts.tz_localize("UTC")
+    else:
+        right_ts = right_ts.tz_convert("UTC")
+    return left_ts.floor("min") == right_ts.floor("min")
+
+
+def _visual_momentum_gate_fields(candidate: dict) -> dict[str, object]:
+    scanner_ts = _clean_value(candidate.get("scanner_trigger_ts_utc"))
+    momentum_ts = _clean_value(candidate.get("momentum_trigger_ts_utc"))
+    scanner_pd = pd.Timestamp(scanner_ts) if scanner_ts is not None else None
+    momentum_pd = pd.Timestamp(momentum_ts) if momentum_ts is not None else None
+    use_scanner_gate = False
+    if scanner_pd is not None and momentum_pd is not None:
+        use_scanner_gate = scanner_pd >= momentum_pd
+    elif scanner_pd is not None:
+        use_scanner_gate = True
+
+    if use_scanner_gate:
+        gate_ts_utc = scanner_ts
+        gate_ts_et = _clean_value(candidate.get("scanner_trigger_ts_et"))
+        if _same_timestamp_minute(candidate.get("scanner_trigger_ts_utc"), candidate.get("first_push_high_ts_utc")):
+            gate_price = _clean_value(candidate.get("first_push_high"))
+        elif _same_timestamp_minute(candidate.get("scanner_trigger_ts_utc"), candidate.get("momentum_trigger_ts_utc")):
+            gate_price = _clean_value(candidate.get("momentum_trigger_price")) or _clean_value(candidate.get("price_at_trigger"))
+        else:
+            gate_price = _clean_value(candidate.get("price_at_trigger"))
+        gate_volume = _clean_value(candidate.get("premarket_volume_at_trigger")) or _clean_value(candidate.get("session_volume_at_trigger"))
+        gate_source = "scanner_volume_gate"
+    else:
+        gate_ts_utc = momentum_ts
+        gate_ts_et = _clean_value(candidate.get("momentum_trigger_ts_et"))
+        gate_price = _clean_value(candidate.get("momentum_trigger_price"))
+        gate_volume = _clean_value(candidate.get("momentum_trigger_volume"))
+        gate_source = "momentum_threshold_gate"
+
+    prior_pct = None
+    prior_close = _clean_value(candidate.get("prior_close"))
+    if prior_close is not None and gate_price is not None:
+        prior_pct = _pct_change(float(prior_close), float(gate_price))
+    prior_close_source = "candidate_prior_close"
+    if prior_close is None:
+        prior_close_source = "unavailable"
+    return {
+        "visual_momentum_gate_ts_utc": gate_ts_utc,
+        "visual_momentum_gate_ts_et": gate_ts_et,
+        "visual_momentum_gate_price": gate_price,
+        "visual_momentum_gate_volume": gate_volume,
+        "visual_momentum_gate_prior_close_pct": prior_pct,
+        "visual_momentum_gate_source": gate_source,
+        "visual_momentum_gate_prior_close_value": prior_close,
+        "visual_momentum_gate_prior_close_source": prior_close_source,
+        "visual_momentum_gate_prior_close_formula": "(visual_momentum_gate_price - prior_close) / prior_close * 100",
+    }
+
+
+
+def _format_visual_label_time(value: object) -> str:
+    clean = _clean_value(value)
+    if clean is None:
+        return "time na"
+    text = str(clean)
+    m = re.search(r"\b(\d{1,2}:\d{2})(?::\d{2})?\b", text)
+    if m:
+        suffix = " EDT" if "EDT" in text else " EST" if "EST" in text else " ET"
+        return m.group(1) + suffix
+    try:
+        ts = pd.Timestamp(text)
+        tz_name = str(ts.tzname() or "ET") if ts.tzinfo is not None else "ET"
+        return f"{ts.strftime('%H:%M')} {tz_name}"
+    except Exception:
+        return "time na"
+
+
+def _scanner_filter_marker_text(candidate: dict) -> str:
+    prior_pct = _clean_value(candidate.get("visual_momentum_gate_prior_close_pct"))
+    price = _clean_value(candidate.get("visual_momentum_gate_price"))
+    volume = _clean_value(candidate.get("visual_momentum_gate_volume"))
+    ts_et = _clean_value(candidate.get("visual_momentum_gate_ts_et")) or _clean_value(candidate.get("visual_momentum_gate_ts_utc"))
+    market_cap = _clean_value(candidate.get("market_cap"))
+    threshold_pct = _clean_value(candidate.get("momentum_trigger_pct_threshold"))
+    title = f"momentum trigger {_format_visual_label_time(ts_et)}"
+    lines = [
+        title,
+        (f"prior close {float(prior_pct):+.1f}%" if prior_pct is not None else "prior close na")
+        + " | "
+        + (f"price ${float(price):.4f}" if price is not None else "price na"),
+        (f"acc vol {_format_compact_number(volume)}" if volume is not None else "acc vol na")
+        + " | "
+        + (f"threshold +{float(threshold_pct):.0f}%" if threshold_pct is not None else "threshold na"),
+        (f"mcap {_format_compact_number(market_cap)} <100M" if market_cap is not None else "mcap na <100M")
+        + " | price $0.50-$20",
+    ]
+    return "\n".join(lines)
+
+
+def _visual_label_specs(candidate: dict) -> list[dict[str, object]]:
+    scanner_text = _scanner_filter_marker_text(candidate)
+    push_pct = _clean_value(candidate.get("pm_open_to_first_push_high_pct"))
+    dip_pct = _clean_value(candidate.get("first_dip_depth_pct"))
+    rebreak_volume = _clean_value(candidate.get("rebreak_volume"))
+    dip_to_high_pct = _clean_value(candidate.get("dip_to_next_structural_high_pct"))
+    dip_to_high_start = _clean_value(candidate.get("dip_to_next_structural_high_start_price"))
+    dip_to_high_end = _clean_value(candidate.get("dip_to_next_structural_high_price"))
+    return [
+        {
+            "signal_name": "scanner_seed",
+            "source_field": "visual_momentum_gate_ts_utc;visual_momentum_gate_price;visual_momentum_gate_volume;visual_momentum_gate_prior_close_value;visual_momentum_gate_prior_close_source;visual_momentum_gate_prior_close_pct;market_cap;momentum_trigger_pct_threshold",
+            "ts_field": "visual_momentum_gate_ts_utc",
+            "price_field": "visual_momentum_gate_price",
+            "label_text": scanner_text,
+            "placement_rule": "above_prior_close_row",
+            "label_order_index": 1,
+        },
+        {
+            "signal_name": "first_push_high",
+            "source_field": "first_push_high_ts_utc;first_push_high;pm_open_to_first_push_high_pct",
+            "ts_field": "first_push_high_ts_utc",
+            "price_field": "first_push_high",
+            "label_text": "first push high\n" + (f"push = {float(push_pct):+.1f}%" if push_pct is not None else "push = na"),
+            "placement_rule": "above_prior_close_row",
+            "label_order_index": 2,
+        },
+        {
+            "signal_name": "first_dip_low",
+            "source_field": "first_dip_low_ts_utc;first_dip_low;first_dip_depth_pct",
+            "ts_field": "first_dip_low_ts_utc",
+            "price_field": "first_dip_low",
+            "label_text": "first dip low\n" + (f"dip = {float(dip_pct):.1f}%" if dip_pct is not None else "dip = na"),
+            "placement_rule": "above_prior_close_row",
+            "label_order_index": 3,
+        },
+        {
+            "signal_name": "rebreak_confirmed",
+            "source_field": "first_rebreak_ts_utc;first_push_high;rebreak_volume",
+            "ts_field": "first_rebreak_ts_utc",
+            "price_field": "first_push_high",
+            "label_text": "rebreak confirmed\n" + f"vol {_format_compact_number(rebreak_volume)}",
+            "placement_rule": "above_prior_close_row",
+            "label_order_index": 4,
+        },
+        {
+            "signal_name": "first_dip_to_next_structural_high",
+            "source_field": "first_dip_low_ts_utc;first_dip_low;dip_to_next_structural_high_ts_utc;dip_to_next_structural_high_price;dip_to_next_structural_high_pct",
+            "ts_field": "dip_to_next_structural_high_ts_utc",
+            "price_field": "dip_to_next_structural_high_price",
+            "secondary_ts_field": "dip_to_next_structural_high_start_ts_utc",
+            "secondary_price_field": "dip_to_next_structural_high_start_price",
+            "label_text": (
+                "dip -> next structural high\n"
+                + (f"{float(dip_to_high_start):.4f} -> {float(dip_to_high_end):.4f}\n" if dip_to_high_start is not None and dip_to_high_end is not None else "price path na\n")
+                + (f"move = {float(dip_to_high_pct):+.1f}%" if dip_to_high_pct is not None else "move = na")
+            ),
+            "placement_rule": "above_prior_close_row",
+            "label_order_index": 5,
+        },
+    ]
+
+
+def _visual_price_to_px(geometry: dict[str, float], price: object) -> float | None:
+    clean_price = _clean_value(price)
+    if clean_price is None:
+        return None
+    y_min = geometry["price_min"]
+    y_max = geometry["price_max"]
+    if y_max <= y_min:
+        return None
+    return geometry["price_bottom"] - ((float(clean_price) - y_min) / (y_max - y_min)) * (
+        geometry["price_bottom"] - geometry["price_top"]
+    )
+
+
+
+
+def _visual_px_to_bar_x(geometry: dict[str, float], x_px: float) -> float:
+    x_min = float(geometry.get("x_min", 0.0))
+    x_max = float(geometry.get("x_max", max(geometry["bar_count"] - 1.0, 1.0)))
+    ratio = (float(x_px) - geometry["plot_left"]) / max(geometry["plot_width"], 1.0)
+    return x_min + max(0.0, min(1.0, ratio)) * (x_max - x_min)
+
+
+def _visual_px_to_price(geometry: dict[str, float], y_px: float) -> float:
+    y_min = geometry["price_min"]
+    y_max = geometry["price_max"]
+    price_height = max(geometry["price_bottom"] - geometry["price_top"], 1.0)
+    ratio = (geometry["price_bottom"] - float(y_px)) / price_height
+    return y_min + ratio * (y_max - y_min)
+
+def _visual_dip_to_next_structural_high_fields(candidate: dict) -> dict[str, object]:
+    dip_low = _clean_value(candidate.get("first_dip_low"))
+    dip_ts = _clean_value(candidate.get("first_dip_low_ts_utc"))
+    next_high = _clean_value(candidate.get("rebreak_high"))
+    next_high_ts = _clean_value(candidate.get("first_rebreak_ts_utc"))
+    if next_high is None:
+        next_high = _clean_value(candidate.get("max_momentum_high")) or _clean_value(candidate.get("first_push_high"))
+        next_high_ts = _clean_value(candidate.get("max_momentum_high_ts_utc")) or _clean_value(candidate.get("first_push_high_ts_utc"))
+    pct = _pct_change(float(dip_low), float(next_high)) if dip_low is not None and next_high is not None else None
+    return {
+        "dip_to_next_structural_high_start_ts_utc": dip_ts,
+        "dip_to_next_structural_high_start_price": dip_low,
+        "dip_to_next_structural_high_ts_utc": next_high_ts,
+        "dip_to_next_structural_high_price": next_high,
+        "dip_to_next_structural_high_pct": pct,
+    }
+
+
+def _visual_label_fixed_bboxes(
+    prepared_rows: list[dict[str, object]],
+    geometry: dict[str, float],
+    allowed_bounds: tuple[float, float, float, float],
+    blocked: list[tuple[float, float, float, float]],
+    prior_close_y_px: float,
+) -> list[tuple[float, float, float, float]]:
+    min_x, min_y, max_x, max_y = allowed_bounds
+    gap = 12.0
+    out: list[tuple[float, float, float, float] | None] = [None] * len(prepared_rows)
+
+    prior_items = [
+        (idx, row)
+        for idx, row in enumerate(prepared_rows)
+        if row.get("placement_rule") == "above_prior_close_row"
+    ]
+    prior_items.sort(key=lambda item: int(item[1].get("label_order_index") or 999))
+    sizes = [_estimate_label_size(str(row.get("label_text", ""))) for _, row in prior_items]
+    total_width = sum(width for width, _ in sizes) + gap * max(0, len(sizes) - 1)
+    available_width = max_x - min_x
+    while total_width > available_width and gap > 4.0:
+        gap -= 2.0
+        total_width = sum(width for width, _ in sizes) + gap * max(0, len(sizes) - 1)
+    if total_width > available_width:
+        raise RuntimeError(f"visual_label_row_too_wide: total={total_width:.1f} available={available_width:.1f}")
+    row_height = max((height for _, height in sizes), default=0.0)
+    start_x = min_x + max(0.0, (available_width - total_width) / 2.0)
+    # Visual contract: every label box sits just above the prior-close dotted line.
+    row_bottom = prior_close_y_px - 8.0
+    if row_bottom - row_height < min_y:
+        row_bottom = min_y + row_height
+    if row_bottom > max_y:
+        row_bottom = max_y
+
+    x = start_x
+    for (idx, _), (width, height) in zip(prior_items, sizes):
+        y0 = row_bottom - height
+        bbox = (x, y0, x + width, row_bottom)
+        out[idx] = bbox
+        x += width + gap
+
+    for idx, row in enumerate(prepared_rows):
+        if out[idx] is not None:
+            continue
+        width, height = _estimate_label_size(str(row.get("label_text", "")))
+        anchor_x = float(row["anchor_x_px"])
+        anchor_y = float(row["anchor_y_px"])
+        x0 = min(max(anchor_x - width / 2.0, min_x), max_x - width)
+        y0c = min(max(anchor_y + 70.0, min_y), max_y - height)
+        out[idx] = (x0, y0c, x0 + width, y0c + height)
+
+    if any(item is None for item in out):
+        missing = [str(prepared_rows[idx].get("signal_name")) for idx, item in enumerate(out) if item is None]
+        raise RuntimeError("visual_label_bbox_missing: " + ",".join(missing))
+    return [item for item in out if item is not None]
+
+
+def _build_visual_inspection_rows(
+    candidate: dict,
+    chart_df: pd.DataFrame,
+    image_path: Path,
+    visual_case_id: str,
+    image_kind: str,
+    axis_ranges: dict[str, tuple[float, float]] | None = None,
+) -> list[dict[str, object]]:
+    if chart_df.empty:
+        return []
+    candidate = dict(candidate)
+    candidate.update(_visual_momentum_gate_fields(candidate))
+    candidate.update(_visual_dip_to_next_structural_high_fields(candidate))
+    working = chart_df.copy().reset_index(drop=True)
+    working["bar_index"] = working.index
+    geometry = _image_pixel_geometry(working, y_padding_override_pct=0.03, axis_ranges=axis_ranges)
+    blocked = _visual_candle_bboxes(working, geometry)
+    allowed_bounds = _visual_premarket_label_bounds(working, geometry)
+    prior_close_value = _clean_value(candidate.get("prior_close"))
+    prior_close_y_px = _visual_price_to_px(geometry, prior_close_value)
+    if prior_close_y_px is None:
+        prior_close_y_px = geometry["price_bottom"] - 18.0
+
+    renderer_path = str(Path(__file__).resolve())
+    renderer_hash = _renderer_source_hash()
+    source_row_id = candidate.get("candidate_id") or f"{candidate.get('ticker')}:{candidate.get('session_date')}"
+
+    prepared: list[dict[str, object]] = []
+    for idx, spec in enumerate(_visual_label_specs(candidate), start=1):
+        ts_value = candidate.get(str(spec["ts_field"]))
+        price_value = candidate.get(str(spec["price_field"]))
+        anchor = _visual_anchor_px(working, geometry, ts_value, price_value)
+        if anchor is None:
+            continue
+        secondary_anchor = None
+        secondary_ts_field = spec.get("secondary_ts_field")
+        secondary_price_field = spec.get("secondary_price_field")
+        if secondary_ts_field and secondary_price_field:
+            secondary_anchor = _visual_anchor_px(
+                working,
+                geometry,
+                candidate.get(str(secondary_ts_field)),
+                candidate.get(str(secondary_price_field)),
+            )
+        label_text = str(spec["label_text"])
+        signal_name = str(spec["signal_name"])
+        prepared.append(
+            {
+                "spec_index": idx,
+                "visual_case_id": visual_case_id,
+                "candidate_id": candidate.get("candidate_id"),
+                "ticker": candidate.get("ticker"),
+                "session_date": candidate.get("session_date"),
+                "image_path": str(image_path),
+                "image_kind": image_kind,
+                "label_id": f"{visual_case_id}:{idx:02d}:{signal_name}",
+                "signal_name": signal_name,
+                "source_field": spec["source_field"],
+                "label_text": label_text,
+                "anchor_x_data": _bar_x_for_ts(working, str(ts_value) if _clean_value(ts_value) is not None else None),
+                "anchor_y_data": float(_clean_value(price_value)) if _clean_value(price_value) is not None else None,
+                "anchor_x_px": round(anchor[0], 3),
+                "anchor_y_px": round(anchor[1], 3),
+                "secondary_anchor_x_data": _bar_x_for_ts(
+                    working,
+                    str(candidate.get(str(secondary_ts_field))) if secondary_ts_field and _clean_value(candidate.get(str(secondary_ts_field))) is not None else None,
+                ) if secondary_ts_field else None,
+                "secondary_anchor_y_data": float(_clean_value(candidate.get(str(secondary_price_field)))) if secondary_price_field and _clean_value(candidate.get(str(secondary_price_field))) is not None else None,
+                "secondary_anchor_x_px": round(secondary_anchor[0], 3) if secondary_anchor else None,
+                "secondary_anchor_y_px": round(secondary_anchor[1], 3) if secondary_anchor else None,
+                "renderer_source_path": renderer_path,
+                "renderer_source_hash": renderer_hash,
+                "visual_evidence_status": "ok",
+                "formula_version": "das_visual_labels_v0_6_plotly_axis_calibrated_overlay",
+                "detector_version": "das_widgets_v0_2",
+                "source_row_id": source_row_id,
+                "threshold_pct": _clean_value(candidate.get("momentum_trigger_pct_threshold")),
+                "prior_close_value": _clean_value(candidate.get("visual_momentum_gate_prior_close_value")) if signal_name == "scanner_seed" else None,
+                "prior_close_source": _clean_value(candidate.get("visual_momentum_gate_prior_close_source")) if signal_name == "scanner_seed" else None,
+                "prior_close_pct_formula": _clean_value(candidate.get("visual_momentum_gate_prior_close_formula")) if signal_name == "scanner_seed" else None,
+                "visual_gate_source": _clean_value(candidate.get("visual_momentum_gate_source")) if signal_name == "scanner_seed" else None,
+                "placement_rule": spec.get("placement_rule"),
+                "label_order_index": spec.get("label_order_index"),
+                "prior_close_y_px": round(float(prior_close_y_px), 3),
+                "measurement_pct": _clean_value(candidate.get("dip_to_next_structural_high_pct")) if signal_name == "first_dip_to_next_structural_high" else None,
+            }
+        )
+
+    bboxes = _visual_label_fixed_bboxes(prepared, geometry, allowed_bounds, blocked, float(prior_close_y_px))
+    rows: list[dict[str, object]] = []
+    for row, bbox in zip(prepared, bboxes):
+        label_x_px = (bbox[0] + bbox[2]) / 2.0
+        label_y_px = bbox[3]
+        row.update(
+            {
+                "bbox_x0_px": round(bbox[0], 3),
+                "bbox_y0_px": round(bbox[1], 3),
+                "bbox_x1_px": round(bbox[2], 3),
+                "bbox_y1_px": round(bbox[3], 3),
+                "label_x_data": round(_visual_px_to_bar_x(geometry, label_x_px), 3),
+                "label_y_data": round(_visual_px_to_price(geometry, label_y_px), 6),
+            }
+        )
+        rows.append(row)
+    return rows
+
+def _legacy_visual_text(value: object) -> bool:
+    if value is None:
+        return False
+    if isinstance(value, (list, tuple)):
+        return any(_legacy_visual_text(item) for item in value)
+    lowered = str(value).lower()
+    return (
+        "<br>" in lowered
+        and (
+            "threshold" in lowered
+            or "momentum trigger" in lowered
+            or "scanner trigger" in lowered
+            or "prior close" in lowered
+            or "pm open" in lowered
+            or "accu" in lowered
+            or "acc vol" in lowered
+        )
+    ) or "threshold +" in lowered or "threshold+" in lowered or "accu" in lowered
+
+
+def _strip_builtin_visual_label_text(fig: go.Figure) -> None:
+    # Visual inspection owns all evidence labels. Remove inherited chart annotations
+    # so legacy HTML/text overlays cannot leak into the PNG.
+    fig.layout.annotations = tuple()
+
+    removed_names = {
+        "scanner trigger",
+        "momentum trigger",
+        "DAS rebreak",
+        "DAS rebreak trigger",
+        "first push high",
+        "first dip low",
+        "PM open to first push",
+        "PM open to PM extension high",
+        "first push high to rebreak",
+        "rebreak cross",
+    }
+    kept_traces = []
+    for trace in fig.data:
+        name = str(getattr(trace, "name", ""))
+        mode = str(getattr(trace, "mode", ""))
+        if name in removed_names:
+            continue
+        if _legacy_visual_text(getattr(trace, "text", None)) or _legacy_visual_text(getattr(trace, "hovertemplate", None)):
+            continue
+        if "text" in mode and name not in {"1m candles", "1m volume"}:
+            continue
+        kept_traces.append(trace)
+    fig.data = tuple(kept_traces)
+
+
+def _assert_no_legacy_visual_text(fig: go.Figure) -> None:
+    offenders: list[str] = []
+    for ann in fig.layout.annotations:
+        text = str(getattr(ann, "text", ""))
+        if _legacy_visual_text(text):
+            offenders.append(f"annotation:{text[:80]}")
+    for trace in fig.data:
+        name = str(getattr(trace, "name", ""))
+        mode = str(getattr(trace, "mode", ""))
+        if "text" in mode and (_legacy_visual_text(getattr(trace, "text", None)) or _legacy_visual_text(getattr(trace, "hovertemplate", None))):
+            offenders.append(f"trace:{name}")
+    if offenders:
+        raise RuntimeError("legacy_visual_text_remaining_before_manifest: " + "; ".join(offenders[:5]))
+
+def _visual_overlay_styles() -> dict[str, dict[str, object]]:
+    return {
+        "scanner_seed": {"rgb": (17, 24, 39), "fill": (255, 255, 255, 235), "marker": "circle"},
+        "first_push_high": {"rgb": (22, 163, 74), "fill": (240, 253, 244, 235), "marker": "circle"},
+        "first_dip_low": {"rgb": (220, 38, 38), "fill": (254, 242, 242, 235), "marker": "circle"},
+        "rebreak_confirmed": {"rgb": (37, 99, 235), "fill": (239, 246, 255, 235), "marker": "x"},
+        "first_dip_to_next_structural_high": {"rgb": (126, 34, 206), "fill": (250, 245, 255, 235), "marker": "diamond"},
+    }
+
+
+def _visual_font(bold: bool = False, size: int = 18) -> ImageFont.ImageFont:
+    font_name = "arialbd.ttf" if bold else "arial.ttf"
+    candidates = [
+        Path(r"C:\Windows\Fonts") / font_name,
+        Path(r"C:\Windows\Fonts\segoeui.ttf"),
+    ]
+    for path in candidates:
+        if path.exists():
+            try:
+                return ImageFont.truetype(str(path), size=size)
+            except Exception:
+                continue
+    return ImageFont.load_default()
+
+
+def _draw_dotted_line(draw: ImageDraw.ImageDraw, xy: tuple[float, float, float, float], color: tuple[int, int, int], width: int = 2, dash: int = 9, gap: int = 7) -> None:
+    x0, y0, x1, y1 = xy
+    if abs(y1 - y0) <= 1e-6:
+        if x1 < x0:
+            x0, x1 = x1, x0
+        x = x0
+        while x < x1:
+            draw.line((x, y0, min(x + dash, x1), y0), fill=color, width=width)
+            x += dash + gap
+        return
+    draw.line(xy, fill=color, width=width)
+
+
+def _draw_visual_marker(draw: ImageDraw.ImageDraw, x: float, y: float, color: tuple[int, int, int], marker: str) -> None:
+    if marker == "x":
+        r = 15
+        draw.line((x - r, y - r, x + r, y + r), fill=color, width=5)
+        draw.line((x - r, y + r, x + r, y - r), fill=color, width=5)
+    elif marker == "diamond":
+        r = 13
+        draw.polygon([(x, y - r), (x + r, y), (x, y + r), (x - r, y)], fill=color, outline=color)
+    else:
+        r = 12
+        draw.ellipse((x - r, y - r, x + r, y + r), fill=color, outline=(255, 255, 255), width=2)
+
+
+def _draw_visual_box(draw: ImageDraw.ImageDraw, row: dict[str, object], style: dict[str, object]) -> None:
+    x0 = int(round(float(row["bbox_x0_px"])))
+    y0 = int(round(float(row["bbox_y0_px"])))
+    x1 = int(round(float(row["bbox_x1_px"])))
+    y1 = int(round(float(row["bbox_y1_px"])))
+    color = tuple(style["rgb"])
+    fill = tuple(style["fill"])
+    draw.rectangle((x0, y0, x1, y1), fill=fill, outline=color, width=2)
+    lines = str(row.get("label_text", "")).splitlines() or [""]
+    font_regular = _visual_font(False, 17)
+    font_bold = _visual_font(True, 17)
+    tx = x0 + 8
+    ty = y0 + 7
+    for idx, line in enumerate(lines):
+        font = font_bold if idx == 0 else font_regular
+        draw.text((tx, ty), line, font=font, fill=color)
+        ty += 20
+
+
+def _draw_visual_manifest_overlay(image_path: Path, rows: list[dict[str, object]]) -> None:
+    if not rows:
+        return
+    styles = _visual_overlay_styles()
+    with Image.open(image_path).convert("RGBA") as base:
+        overlay_img = Image.new("RGBA", base.size, (255, 255, 255, 0))
+        draw = ImageDraw.Draw(overlay_img)
+        by_signal = {str(row.get("signal_name")): row for row in rows}
+        first_push = by_signal.get("first_push_high")
+        rebreak = by_signal.get("rebreak_confirmed")
+        if first_push and rebreak:
+            y = float(first_push["anchor_y_px"])
+            x_push = float(first_push["anchor_x_px"])
+            x_rebreak = float(rebreak["anchor_x_px"])
+            _draw_dotted_line(draw, (70.0, y, x_push, y), tuple(styles["first_push_high"]["rgb"]), width=2, dash=10, gap=8)
+            _draw_dotted_line(draw, (x_push, y, x_rebreak, y), tuple(styles["rebreak_confirmed"]["rgb"]), width=2, dash=10, gap=8)
+        for row in rows:
+            signal = str(row.get("signal_name"))
+            style = styles.get(signal, styles["scanner_seed"])
+            _draw_visual_marker(
+                draw,
+                float(row["anchor_x_px"]),
+                float(row["anchor_y_px"]),
+                tuple(style["rgb"]),
+                str(style.get("marker", "circle")),
+            )
+        for row in rows:
+            signal = str(row.get("signal_name"))
+            style = styles.get(signal, styles["scanner_seed"])
+            _draw_visual_box(draw, row, style)
+        out = Image.alpha_composite(base, overlay_img).convert("RGB")
+        out.save(image_path)
+
+
+def _write_visual_label_sidecar(labels_path: Path, rows: list[dict[str, object]]) -> None:
+    labels_path.parent.mkdir(parents=True, exist_ok=True)
+    labels_path.write_text(json.dumps(rows, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
+
+
+def _visual_axis_ranges_from_plotly(fig: go.Figure) -> dict[str, tuple[float, float]]:
+    full = fig.full_figure_for_development(warn=False)
+    out: dict[str, tuple[float, float]] = {}
+    if full.layout.xaxis.range is not None:
+        out["xaxis"] = (float(full.layout.xaxis.range[0]), float(full.layout.xaxis.range[1]))
+    if full.layout.yaxis.range is not None:
+        out["yaxis"] = (float(full.layout.yaxis.range[0]), float(full.layout.yaxis.range[1]))
+    return out
+
+def _export_visual_inspection_image(
+    row: dict,
+    position: int,
+    run_dir: Path,
+    premarket_df: pd.DataFrame,
+    premarket_candidate: dict,
+    split_events: pd.DataFrame | None,
+    y_padding_pct: float,
+) -> tuple[Path | None, list[dict[str, object]]]:
+    if premarket_df.empty:
+        return None, []
+    threshold_label = _visual_threshold_label(row)
+    visual_case_id = _safe_filename(
+        f"{position:04d}_{row.get('ticker')}_{row.get('session_date')}_threshold{threshold_label}_visual"
+    )
+    visual_root = run_dir / "visual_inspection" / f"threshold={threshold_label}"
+    images_root = visual_root / "images"
+    labels_root = visual_root / "labels"
+    images_root.mkdir(parents=True, exist_ok=True)
+    image_path = images_root / f"{visual_case_id}_03_event_day_premarket_detail.png"
+    fig = make_das_chart(
+        premarket_df,
+        premarket_candidate,
+        y_padding_pct=y_padding_pct,
+        chart_label="visual inspection | event-day 03:30-10:00 NY detail",
+        show_rangeslider=False,
+        height=EXPORT_SQUARE_CHART_HEIGHT,
+        static_axes=True,
+        y_padding_override_pct=0.03,
+        split_events=split_events,
+        show_diagnostic_markers=False,
+        show_legend=True,
+    )
+    _strip_builtin_visual_label_text(fig)
+    _assert_no_legacy_visual_text(fig)
+    axis_ranges = _visual_axis_ranges_from_plotly(fig)
+    rows = _build_visual_inspection_rows(row, premarket_df, image_path, visual_case_id, "event_day_premarket_detail", axis_ranges=axis_ranges)
+    fig.write_image(str(image_path), width=EXPORT_SQUARE_CHART_WIDTH, height=EXPORT_SQUARE_CHART_HEIGHT, scale=2)
+    _draw_visual_manifest_overlay(image_path, rows)
+    _write_visual_label_sidecar(labels_root / f"{visual_case_id}_labels.json", rows)
+    return image_path, rows
+
 def _candidate_detail_image_name(position: int, candidate: dict) -> str:
     push = pd.to_numeric(pd.Series([_visible_maxpush_pct(candidate)]), errors="coerce").iloc[0]
     push_label = f"{push:.2f}" if pd.notna(push) else "na"
@@ -2401,6 +3269,7 @@ def export_run_event_day_detail_images(
     grouped_root.mkdir(parents=True, exist_ok=True)
     paths: list[Path] = []
     manifest_rows: list[dict] = []
+    visual_manifest_rows: list[dict] = []
     error_rows: list[dict] = []
     rows = candidates.to_dict("records")
     total = len(rows)
@@ -2451,6 +3320,19 @@ def export_run_event_day_detail_images(
                 fig.write_image(str(path), width=EXPORT_SQUARE_CHART_WIDTH, height=EXPORT_SQUARE_CHART_HEIGHT, scale=2)
                 paths.append(path)
                 row_paths[f"{dirname}_image_path"] = str(path)
+            visual_image_path, visual_rows = _export_visual_inspection_image(
+                row,
+                position,
+                run_dir,
+                premarket_df,
+                premarket_candidate,
+                split_events,
+                y_padding_pct,
+            )
+            if visual_image_path is not None:
+                paths.append(visual_image_path)
+                row_paths["visual_inspection_image_path"] = str(visual_image_path)
+            visual_manifest_rows.extend(visual_rows)
             daily_path = candidate_export_dir / "05_daily_context.png"
             daily_fig = make_das_daily_context_chart(row, height=EXPORT_SQUARE_CHART_HEIGHT)
             daily_fig.write_image(
@@ -2503,6 +3385,10 @@ def export_run_event_day_detail_images(
             }
         )
     pd.DataFrame(manifest_rows).to_csv(export_root / "EXPORT_MANIFEST.csv", index=False)
+    visual_manifest = pd.DataFrame(visual_manifest_rows)
+    if not visual_manifest.empty:
+        visual_manifest.to_parquet(run_dir / "visual_inspection_manifest.parquet", index=False)
+        visual_manifest.to_csv(run_dir / "visual_inspection_manifest.csv", index=False)
     if error_rows:
         pd.DataFrame(error_rows).to_csv(export_root / "EXPORT_ERRORS.csv", index=False)
     else:
@@ -3244,7 +4130,7 @@ def launch_das_stats_app():
         "ascending_flag_break": "La base previa al rebreak sube gradualmente; hay lows o closes ascendentes antes de romper.",
         "flat_shelf_break": "El precio acepta una zona lateral elevada y rompe una meseta relativamente plana.",
         "last_red_high_break": "El trigger se produce al superar el high de la ultima vela roja defensiva.",
-        "vwap_reclaim_rebreak": "El rebreak se asocia a recuperar VWAP despues del dip.",
+
     }
 
     data_root = widgets.Text(value=str(DEFAULT_DATA_ROOT), description="1m root", layout=widgets.Layout(width="95%"))
@@ -3859,3 +4745,10 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+
+
+
+
+
+

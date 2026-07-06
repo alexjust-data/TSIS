@@ -1,4 +1,4 @@
-# Prompt para agente - Upgrade moderno completo de Reference
+﻿# Prompt para agente - Upgrade moderno completo de Reference
 
 Estado actualizado 2026-06-13:
 
@@ -42,7 +42,7 @@ Lee completos antes de editar:
 
 1. C:\TSIS_Data\PROJECT_RULES.md
 2. C:\TSIS_Data\AGENTS.md
-3. C:\TSIS_Data\ARCHITECTURE_OVERVIEW.md
+3. C:\TSIS_Data\00_CTO\TSIS_LAB_ARCHITECTURE_v3.md
 4. C:\TSIS_Data\CHANGELOG.md
 5. C:\TSIS_Data\PROJECT_OPERATING_SYSTEM.md
 6. C:\TSIS_Data\VERSIONING_STANDARDS.md
@@ -200,3 +200,4 @@ RESULTADO FINAL QUE DEBES REPORTAR:
 - si reference queda o no a paridad con `quotes/trades/daily/1m`;
 - siguiente bloque recomendado despues de reference.
 ```
+

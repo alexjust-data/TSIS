@@ -1,4 +1,4 @@
-# AGENTS - 02_TSIS_webSocket_SmallCaps
+﻿# AGENTS - 02_TSIS_webSocket_SmallCaps
 
 This file gives agent-specific instructions for work inside the live module.
 
@@ -10,7 +10,7 @@ Before making changes in this module, read:
 2. `LOCAL_RULES.md`
 3. `CHANGELOG.md`
 4. `manifest.yaml`
-5. `C:\TSIS_Data\00_CTO\TSIS_LAB_ARCHITECTURE_v2.md`
+5. `C:\TSIS_Data\00_CTO\TSIS_LAB_ARCHITECTURE_v3.md`
 
 If the work touches Data Foundation semantics, also read the relevant contract from:
 
@@ -82,3 +82,4 @@ C:\TSIS_Data\01_webSocket_SmallCaps
 ```
 
 Those references must be audited before any service extraction or replay. Do not mass-edit notebook outputs unless the task is explicitly a notebook migration.
+

@@ -1,0 +1,123 @@
+﻿sweep_id: SWEEP_001_frontside_operability_boundary
+status: draft
+parent_experiment_id: EXP_DAS_FRONTSIDE_DISCOVERY_0001
+parameter_space_id: DAS_FRONTSIDE_PARAMETER_SPACE_v0_1
+
+sweep_question: "Dentro del dominio DAS/frontside small cap, donde empieza la zona minima de operabilidad del frontside para estudiar longs DAS?"
+sweep_objective: "Medir si el +50% humano funciona como frontera minima razonable para que un frontside merezca estudio long, o si la frontera real parece estar por debajo, por encima o condicionada por otros factores."
+scientific_role: frontside_operability_boundary_probe
+
+human_thesis:
+  fifty_pct_role: "El +50% nacio como criba operativa humana: por debajo de ese movimiento, el frontside normalmente no entraba en la posibilidad practica de buscar long DAS."
+  not_an_entry_signal: true
+  not_a_validated_event: true
+  not_an_optimal_threshold: true
+  not_a_base_state_feature: true
+  interpretation: "El +50% no dice que haya edge. Dice que el movimiento empieza a ser suficientemente violento/visible como para justificar estudio del embudo DAS."
+
+why_this_sweep: >
+  El casebook visual DAS fue construido para cazar frontsides fuertes, no para representar una muestra neutral del mercado.
+  Por eso el primer sweep no debe leer el threshold como optimizacion de estrategia, sino como prueba de frontera de operabilidad.
+  Los thresholds por debajo de 50% sirven como grupo de control: ayudan a comprobar si movimientos menores realmente quedan fuera
+  del fenomeno DAS/frontside que el humano queria estudiar. Los thresholds iguales o superiores a 50% miden intensidad creciente
+  y posible sobreextension del frontside.
+
+fixed_scope:
+  strategy_seed: DAS
+  domain: small_micro_caps
+  max_market_cap_usd: 100000000
+  source_domain_note: "Frontera fija para este experimento v0.1. Cambiarla requiere otro experimento o extension versionada."
+
+fixed_variables:
+  reference_price: premarket_open
+  session_scope: premarket
+  min_session_volume: 500000
+  min_price: 0.5
+  max_price: 20.0
+  push_label_pct: 20
+  dip_label_pct: 3
+  pre_event_window: 30m
+  post_event_window: 30m
+  price_view: quote_guarded_or_governed_intraday_view
+
+parameters:
+  momentum_trigger_pct:
+    values: [20, 30, 40, 50, 60, 75, 100, 150]
+    definition: "Primer timestamp donde high 1m >= premarket_open * (1 + threshold_pct / 100)."
+    rationale: "Barrer la frontera minima de operabilidad del frontside sin asumir que 50% es evento validado ni entrada operativa."
+    operability_buckets:
+      control_below_operability: [20, 30, 40]
+      human_operability_floor: [50]
+      high_intensity_frontside: [60, 75, 100, 150]
+    bucket_interpretation:
+      control_below_operability: "No son candidatos long DAS por defecto; sirven para demostrar si la criba humana excluia correctamente ruido/movimientos insuficientes."
+      human_operability_floor: "Frontera historica humana que debe ser auditada, no aceptada como verdad."
+      high_intensity_frontside: "Casos de mayor violencia/atencion; pueden tener mas oportunidad, pero tambien mas riesgo de llegar tarde o estar sobreextendidos."
+
+implementation_requirements:
+  do_not_use_positive_das_run_as_population: true
+  current_das_run_allowed_as_shape_reference: true
+  lab_executor_must_implement_probe_explicitly: true
+  required_denominator: daily_scanner_candidates_table_v0_2_or_successor
+  preferred_intraday_source: master_intraday_bar_table_v0_2_candidate_quote_guarded
+  lineage_required: true
+  below_50_thresholds_are_control_group: true
+  fifty_pct_is_operability_floor_human_seed: true
+
+funnel_metrics:
+  - scanner_seed_count
+  - momentum_trigger_count
+  - first_push_detected_rate
+  - first_dip_detected_rate
+  - rebreak_confirmed_rate
+  - das_sequence_confirmed_rate
+  - attrition_between_momentum_and_rebreak
+  - attrition_between_rebreak_and_continuation
+
+outcome_metrics:
+  - sample_size
+  - coverage_ratio
+  - missing_bar_ratio
+  - structure_destroyed_rate
+  - continuation_rate
+  - failure_rate
+  - MFE
+  - MAE
+  - return_30m
+  - post_rebreak_MFE
+  - post_rebreak_MAE
+  - remaining_upside_after_rebreak
+  - too_late_or_overextended_rate
+
+baseline_definitions:
+  - random_time_same_domain
+  - scanner_seed_without_momentum_probe
+  - gap_only
+  - volume_only
+  - time_of_day_baseline
+
+not_answered_by_this_sweep:
+  - "si DAS tiene edge operable"
+  - "si 50% es el threshold optimo"
+  - "si 50% es una entrada"
+  - "si los thresholds 20/30/40 son candidatos long DAS"
+  - "si la estrategia es valida"
+  - "si el mejor volumen minimo es 500k"
+  - "si el mejor rango de precio es 0.5-20"
+  - "si push_label_pct=20 es correcto"
+  - "si dip_label_pct=3 es correcto"
+  - "si afterhours o regular son mejores que premarket"
+
+interpretation_rules:
+  - do_not_promote_to_validated_event
+  - do_not_select_best_threshold_as_strategy
+  - do_not_read_below_50_as_long_setup
+  - compare_control_below_operability_vs_human_floor_vs_high_intensity
+  - measure_funnel_attrition_not_only_final_return
+  - flag_operability_zones_for_followup
+  - flag_overextension_zones_for_followup
+  - require_followup_sweeps_before_promotion
+  - preserve_X_y_separation
+
+promotion_blocked: true
+validation_notes: "Este sweep genera evidencia exploratoria sobre frontera de operabilidad frontside. No habilita evaluador bloqueado, AlphaEvolve, RL, ML ni estrategia operativa."

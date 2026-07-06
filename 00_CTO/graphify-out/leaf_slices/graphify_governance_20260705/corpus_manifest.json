@@ -1,0 +1,362 @@
+[
+  {
+    "path": "00_CTO/01_RESEARCH_PHILOSOPHY/05_07_2026.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\01_RESEARCH_PHILOSOPHY\\05_07_2026.md",
+    "sha256": "99a1a546ef259c9897bf1d9edc43cc7ab4c90eceb0860e8cc094319a81f7f95b",
+    "line_count": 204,
+    "word_count": 430,
+    "bytes": 5399
+  },
+  {
+    "path": "00_CTO/01_RESEARCH_PHILOSOPHY/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\01_RESEARCH_PHILOSOPHY\\README.md",
+    "sha256": "7215451392061246a2373894da223a9b1aed56f06ca40fd459a64865ff05604e",
+    "line_count": 60,
+    "word_count": 116,
+    "bytes": 1322
+  },
+  {
+    "path": "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\10_AUTONOMOUS_RESEARCH_SYSTEMS\\README.md",
+    "sha256": "6c5fb0e2a87da38f1bac1953576287c2e07a44923cc4c64834ed69e053b8c659",
+    "line_count": 80,
+    "word_count": 141,
+    "bytes": 1735
+  },
+  {
+    "path": "00_CTO/11_MARKET_SCIENCE/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\11_MARKET_SCIENCE\\README.md",
+    "sha256": "3cdd83ae86571dd98f8f31582410104b394bfceb9f9d4e78d7b469f4097eff44",
+    "line_count": 771,
+    "word_count": 1001,
+    "bytes": 9557
+  },
+  {
+    "path": "00_CTO/CHANGELOG.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\CHANGELOG.md",
+    "sha256": "89942df32b4b31e688b0d7bd86afd56d3eb3b80521135f36c89fac9aeb583ac4",
+    "line_count": 1294,
+    "word_count": 6868,
+    "bytes": 71692
+  },
+  {
+    "path": "00_CTO/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+    "sha256": "b733769c0cadfe06e3cb791511b66878664c8b713111d274991d7db842f94040",
+    "line_count": 472,
+    "word_count": 2061,
+    "bytes": 16628
+  },
+  {
+    "path": "00_CTO/GRAPHIFY_REFRESH_QUEUE.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_REFRESH_QUEUE.md",
+    "sha256": "b350e483913b2442233de33cd747d6af5fe9002f11c2509dbb820fa6af246f78",
+    "line_count": 2275,
+    "word_count": 5886,
+    "bytes": 77601
+  },
+  {
+    "path": "00_CTO/LOCAL_RULES.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\LOCAL_RULES.md",
+    "sha256": "e43f85d8642c85ab3f9ea01cacbb967a41d217f40e43ca788af9d40ae9412fed",
+    "line_count": 364,
+    "word_count": 981,
+    "bytes": 8224
+  },
+  {
+    "path": "00_CTO/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\README.md",
+    "sha256": "2a66fb18fc307b5d2eabce2644e9bc25c916aed6039943e5f3899ecbc9fdb5cd",
+    "line_count": 1102,
+    "word_count": 3619,
+    "bytes": 32522
+  },
+  {
+    "path": "00_CTO/TSIS_LAB_ARCHITECTURE_v3.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\TSIS_LAB_ARCHITECTURE_v3.md",
+    "sha256": "d46ad89d7453f03496859f059c29dd05b5d0635615ead6bbddf5eb669445ae27",
+    "line_count": 678,
+    "word_count": 1341,
+    "bytes": 14695
+  },
+  {
+    "path": "00_TSIS_Lab/00_CTO/00_privado.md",
+    "absolute_path": "C:\\TSIS_Data\\00_TSIS_Lab\\00_CTO\\00_privado.md",
+    "sha256": "29596c7c7d59e103447ffb85fab1baec1325f80ad43b53c3026a3eba2d8ba6c0",
+    "line_count": 229,
+    "word_count": 402,
+    "bytes": 3197
+  },
+  {
+    "path": "00_TSIS_Lab/00_CTO/01_privado2.md",
+    "absolute_path": "C:\\TSIS_Data\\00_TSIS_Lab\\00_CTO\\01_privado2.md",
+    "sha256": "006a19e36f40b302860f46bcf08cd93098b28ca8c2e41df2799845d7f32f5391",
+    "line_count": 68,
+    "word_count": 206,
+    "bytes": 4202
+  },
+  {
+    "path": "00_TSIS_Lab/01_contracts/knowledge_object_promotion_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\00_TSIS_Lab\\01_contracts\\knowledge_object_promotion_contract_v0_1.md",
+    "sha256": "81bbee20b3c47da0259528c168c5d896728c6bc88562d3798a9e0b1d4173d3d6",
+    "line_count": 63,
+    "word_count": 104,
+    "bytes": 1075
+  },
+  {
+    "path": "00_TSIS_Lab/01_contracts/parameter_sweep_protocol_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\00_TSIS_Lab\\01_contracts\\parameter_sweep_protocol_v0_1.md",
+    "sha256": "bfe6a0915950d1f5c3bb491cd286954eaae30ed294f4ec987f5e749ad9aa998c",
+    "line_count": 76,
+    "word_count": 217,
+    "bytes": 1634
+  },
+  {
+    "path": "00_TSIS_Lab/01_contracts/research_experiment_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\00_TSIS_Lab\\01_contracts\\research_experiment_contract_v0_1.md",
+    "sha256": "93bb5990ab64399e46947d243e123a613931e7d430cc969fa484d87f0689209b",
+    "line_count": 144,
+    "word_count": 258,
+    "bytes": 2617
+  },
+  {
+    "path": "00_TSIS_Lab/01_contracts/research_experiment_execution_protocol_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\00_TSIS_Lab\\01_contracts\\research_experiment_execution_protocol_v0_1.md",
+    "sha256": "397e997d8b1ffd5bdcd5cc757a9232d05bb3666a30822d524bd694016fbc7c3f",
+    "line_count": 131,
+    "word_count": 314,
+    "bytes": 2667
+  },
+  {
+    "path": "00_TSIS_Lab/01_contracts/scientific_validation_pipeline_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\00_TSIS_Lab\\01_contracts\\scientific_validation_pipeline_contract_v0_1.md",
+    "sha256": "46c38ca4b798107eeea41c1f57ce8ec50dbcffecb951393b3fb0abd365d935e5",
+    "line_count": 70,
+    "word_count": 145,
+    "bytes": 1426
+  },
+  {
+    "path": "00_TSIS_Lab/02_registries/knowledge_object_registry_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\00_TSIS_Lab\\02_registries\\knowledge_object_registry_v0_1.md",
+    "sha256": "375d17dc15069176163002117a1565028da155e781a845d936c41252c3bec88a",
+    "line_count": 13,
+    "word_count": 38,
+    "bytes": 390
+  },
+  {
+    "path": "00_TSIS_Lab/02_registries/research_experiment_registry_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\00_TSIS_Lab\\02_registries\\research_experiment_registry_v0_1.md",
+    "sha256": "85b7d8a49fe489f64049f8c927d942314c9decbe929f52d99ad929b9cff12d8d",
+    "line_count": 12,
+    "word_count": 42,
+    "bytes": 715
+  },
+  {
+    "path": "00_TSIS_Lab/03_templates/evidence_report_template.md",
+    "absolute_path": "C:\\TSIS_Data\\00_TSIS_Lab\\03_templates\\evidence_report_template.md",
+    "sha256": "99da9b3adf089e9e66d5c8ddb40065a86f5afc418e87921331b45c1bfa5d933e",
+    "line_count": 36,
+    "word_count": 28,
+    "bytes": 375
+  },
+  {
+    "path": "00_TSIS_Lab/04_experiments/_archive/superseded_2026_07_05/EXP_INTRADAY_MOMENTUM_EXTENSION_0001/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_TSIS_Lab\\04_experiments\\_archive\\superseded_2026_07_05\\EXP_INTRADAY_MOMENTUM_EXTENSION_0001\\README.md",
+    "sha256": "67fb96aca1f1de55b7e79b17758008a1fb275fe38600b07005c58c989f421d56",
+    "line_count": 71,
+    "word_count": 180,
+    "bytes": 1609
+  },
+  {
+    "path": "00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_TSIS_Lab\\04_experiments\\EXP_DAS_FRONTSIDE_DISCOVERY_0001\\README.md",
+    "sha256": "1b3da571915fbac6cd89ca17b393bfde50d77fa572d2e0e5c518e36d19f04566",
+    "line_count": 81,
+    "word_count": 297,
+    "bytes": 2457
+  },
+  {
+    "path": "00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/research_design.md",
+    "absolute_path": "C:\\TSIS_Data\\00_TSIS_Lab\\04_experiments\\EXP_DAS_FRONTSIDE_DISCOVERY_0001\\research_design.md",
+    "sha256": "4a800e4736b8008a4ec4bf3dbe0d42adcf25f9009d860709f18f7585f5409f77",
+    "line_count": 613,
+    "word_count": 1784,
+    "bytes": 15079
+  },
+  {
+    "path": "00_TSIS_Lab/05_adapters/smallcaps/data_sources.md",
+    "absolute_path": "C:\\TSIS_Data\\00_TSIS_Lab\\05_adapters\\smallcaps\\data_sources.md",
+    "sha256": "dc8d2113aabe632f57e2d7feb55c05625d4749720fa1e86292467bd6842d48d1",
+    "line_count": 16,
+    "word_count": 31,
+    "bytes": 598
+  },
+  {
+    "path": "00_TSIS_Lab/05_adapters/smallcaps/execution_bridge.md",
+    "absolute_path": "C:\\TSIS_Data\\00_TSIS_Lab\\05_adapters\\smallcaps\\execution_bridge.md",
+    "sha256": "2060f54bb9fa6687c1414f28ddc831b104ca045861bcd479a55c788ab8c04bdd",
+    "line_count": 25,
+    "word_count": 53,
+    "bytes": 530
+  },
+  {
+    "path": "00_TSIS_Lab/05_adapters/smallcaps/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_TSIS_Lab\\05_adapters\\smallcaps\\README.md",
+    "sha256": "eb7597220f23fd907c0c962fa23efe6636b580ed43c0866de7ffcc0e1f6acb17",
+    "line_count": 23,
+    "word_count": 86,
+    "bytes": 710
+  },
+  {
+    "path": "00_TSIS_Lab/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_TSIS_Lab\\README.md",
+    "sha256": "89d2f21c8499d8a0a507c0be5f1f76ed25b7346b0f4505b591edb71879d5f868",
+    "line_count": 120,
+    "word_count": 300,
+    "bytes": 2902
+  },
+  {
+    "path": "01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\CHANGELOG.md",
+    "sha256": "941f65e69df01258d6ab80e41f9f5da1c8965791ca8f743163ca16e4457ff467",
+    "line_count": 424,
+    "word_count": 2534,
+    "bytes": 27469
+  },
+  {
+    "path": "01_TSIS_backtest_SmallCaps/01_foundations/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+    "sha256": "0bf911d640c30bd6a0928ef55a4b4959a2212ec21adb85e1f237a05a17985345",
+    "line_count": 512,
+    "word_count": 1721,
+    "bytes": 15405
+  },
+  {
+    "path": "01_TSIS_backtest_SmallCaps/01_foundations/GRAPHIFY_REFRESH_QUEUE.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\GRAPHIFY_REFRESH_QUEUE.md",
+    "sha256": "5cb34ef49646cedba6f3dfa763f928c28622704dfcb2d43ca16ddba7aada46a7",
+    "line_count": 5661,
+    "word_count": 13946,
+    "bytes": 201169
+  },
+  {
+    "path": "01_TSIS_backtest_SmallCaps/01_foundations/LOCAL_RULES.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\LOCAL_RULES.md",
+    "sha256": "52c4b7e0648c41b93aff994de8149837280d8473b629dbbc610d86ce35013f71",
+    "line_count": 179,
+    "word_count": 561,
+    "bytes": 5024
+  },
+  {
+    "path": "01_TSIS_backtest_SmallCaps/01_foundations/README.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_foundations\\README.md",
+    "sha256": "edfc0f5f9e55d4e128df2eb52a8f151ac2e8cbff1d611d865796b6e27b5a935b",
+    "line_count": 834,
+    "word_count": 4668,
+    "bytes": 64586
+  },
+  {
+    "path": "01_TSIS_backtest_SmallCaps/AGENTS.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\AGENTS.md",
+    "sha256": "67e6a6bc28411afba0d9fb26aa906da251f3afd3b057bad0c21e9949b22e564c",
+    "line_count": 340,
+    "word_count": 1265,
+    "bytes": 10573
+  },
+  {
+    "path": "01_TSIS_backtest_SmallCaps/CHANGELOG.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\CHANGELOG.md",
+    "sha256": "30a2af69e5bbfc52a51d787f2f11d7c31b2e88cf16bb27916447b81b859248f6",
+    "line_count": 6895,
+    "word_count": 23678,
+    "bytes": 284766
+  },
+  {
+    "path": "01_TSIS_backtest_SmallCaps/LOCAL_RULES.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\LOCAL_RULES.md",
+    "sha256": "60c324fb8e6a2487ac249012852f2f25ea4e7f81a533ab8e6c231feb875cedec",
+    "line_count": 240,
+    "word_count": 943,
+    "bytes": 7880
+  },
+  {
+    "path": "01_TSIS_backtest_SmallCaps/README.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\README.md",
+    "sha256": "11fa5e305e805244d1f9457bbf239f27031d560d12351ebc72c2832cd5bbb951",
+    "line_count": 248,
+    "word_count": 742,
+    "bytes": 6763
+  },
+  {
+    "path": "AGENTS.md",
+    "absolute_path": "C:\\TSIS_Data\\AGENTS.md",
+    "sha256": "8f224c48e817071284233b67d0606c825f79a5d4cb5c2e34f64e486fa702c02d",
+    "line_count": 424,
+    "word_count": 1768,
+    "bytes": 14237
+  },
+  {
+    "path": "CHANGELOG.md",
+    "absolute_path": "C:\\TSIS_Data\\CHANGELOG.md",
+    "sha256": "0eff16db63f0688f25f33d24120f33f821f7c72c2ee9c54b3361d38a0f80d481",
+    "line_count": 697,
+    "word_count": 2287,
+    "bytes": 23376
+  },
+  {
+    "path": "LONG_RUNNING_OPERATIONS_CONTRACT.md",
+    "absolute_path": "C:\\TSIS_Data\\LONG_RUNNING_OPERATIONS_CONTRACT.md",
+    "sha256": "6d9decd8cbcb794131d1a9970f49d0f58bafbc09923899f875a61f1dd05fcbdb",
+    "line_count": 375,
+    "word_count": 1328,
+    "bytes": 9783
+  },
+  {
+    "path": "PROJECT_OPERATING_SYSTEM.md",
+    "absolute_path": "C:\\TSIS_Data\\PROJECT_OPERATING_SYSTEM.md",
+    "sha256": "8bf36cd68c5fc719a49778986428ffb45de5d8d62e0677c90330f0ccb3dce56f",
+    "line_count": 466,
+    "word_count": 1718,
+    "bytes": 14524
+  },
+  {
+    "path": "PROJECT_RULES.md",
+    "absolute_path": "C:\\TSIS_Data\\PROJECT_RULES.md",
+    "sha256": "d84d307190cc49d39c61a37fb68dd1fcdd551e281bb2f6b2275747c63e418972",
+    "line_count": 626,
+    "word_count": 2556,
+    "bytes": 20765
+  },
+  {
+    "path": "README.md",
+    "absolute_path": "C:\\TSIS_Data\\README.md",
+    "sha256": "58f81dcd2bb11d5a96190156fae3a838d842405c2cc70a68d1695d3404adbe85",
+    "line_count": 86,
+    "word_count": 252,
+    "bytes": 2531
+  },
+  {
+    "path": "RESEARCH_PHILOSOPHY.md",
+    "absolute_path": "C:\\TSIS_Data\\RESEARCH_PHILOSOPHY.md",
+    "sha256": "0f15329e706e500c33ee58a095e75e6e20cd0fc1df1b2b0a90ee2fac17720518",
+    "line_count": 725,
+    "word_count": 2806,
+    "bytes": 21729
+  },
+  {
+    "path": "START_HERE.md",
+    "absolute_path": "C:\\TSIS_Data\\START_HERE.md",
+    "sha256": "20a3b3452e6cfe820292b859b6efdbe2b62612efb90bba3f405fc63d3c5efc43",
+    "line_count": 459,
+    "word_count": 1822,
+    "bytes": 15914
+  },
+  {
+    "path": "VERSIONING_STANDARDS.md",
+    "absolute_path": "C:\\TSIS_Data\\VERSIONING_STANDARDS.md",
+    "sha256": "138937f6bf3f62ef863dbce25a5f79ae630edc56304bffb413369cd3408cfac8",
+    "line_count": 1404,
+    "word_count": 3968,
+    "bytes": 34184
+  }
+]

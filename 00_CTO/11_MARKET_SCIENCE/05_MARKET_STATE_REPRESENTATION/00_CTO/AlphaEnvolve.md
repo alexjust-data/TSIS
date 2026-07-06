@@ -925,3 +925,489 @@ sobre qué hay y qué no:
 
   En el v2 solo dejaría el índice y la relación entre capas. El detalle columna-a-columna debe vivir en contratos, porque ahí sí podemos exigir
   cutoff, fórmula, source path, allowed_for_ml, allowed_for_rl, leakage risk y quality gate.
+
+
+
+
+
+----
+
+
+## agente 1
+
+
+Creo que aquí hay una distinción fundamental.
+
+La pregunta no es:
+
+> **¿Se necesitan tantas variables para encontrar un edge?**
+
+La pregunta correcta es:
+
+> **¿Se necesitan tantas variables para construir un laboratorio científico que pueda descubrir cualquier edge durante los próximos 20 años?**
+
+Y la respuesta cambia completamente.
+
+---
+
+# Si tu objetivo fuera ganar dinero...
+
+La respuesta sería:
+
+**No.**
+
+Conozco estrategias que ganan dinero con:
+
+```text
+Gap
+
+Float
+
+RVOL
+
+Premarket Volume
+
+VWAP
+
+High of Day
+```
+
+6 variables.
+
+Nada más.
+
+Y funcionan.
+
+---
+
+# Pero TSIS no quiere eso
+
+TSIS no intenta responder:
+
+```text
+¿Cómo gano dinero mañana?
+```
+
+TSIS intenta responder:
+
+```text
+¿Qué mecanismos generan alpha
+en las small caps?
+```
+
+Y esa pregunta es muchísimo más difícil.
+
+---
+
+# Piensa en AlphaGo
+
+AlphaGo no necesitaba:
+
+```text
+100 millones de features.
+```
+
+Necesitaba:
+
+```text
+Una representación perfecta del tablero.
+```
+
+---
+
+# En TSIS el tablero no es una tabla OHLCV
+
+El tablero es:
+
+```text
+Mercado
+```
+
+Y el mercado tiene muchísimas dimensiones.
+
+Por ejemplo:
+
+```text
+Precio
+
+Volumen
+
+Liquidez
+
+Microestructura
+
+Noticias
+
+Fundamentales
+
+Short Interest
+
+Regime
+
+Corporate Actions
+
+Halts
+
+Tiempo
+
+Calidad
+
+Lineage
+```
+
+Todo eso forma el "tablero".
+
+---
+
+# Entonces...
+
+¿AlphaEvolve necesita todas?
+
+No.
+
+Pero necesita que existan.
+
+Hay una diferencia enorme.
+
+---
+
+## Caso 1
+
+No tienes:
+
+```text
+Borrow Fee
+```
+
+AlphaEvolve nunca podrá descubrir:
+
+```text
+"El borrow fee explica el 40%
+del edge."
+```
+
+Porque simplemente no existe.
+
+---
+
+## Caso 2
+
+No tienes:
+
+```text
+Liquidity Texture
+```
+
+Nunca podrá descubrir:
+
+```text
+"La textura de liquidez
+es más importante que el spread."
+```
+
+---
+
+## Caso 3
+
+No tienes:
+
+```text
+News Freshness
+```
+
+Nunca descubrirá:
+
+```text
+"Las noticias de menos de 8 minutos
+son especiales."
+```
+
+---
+
+# Esto cambia la filosofía
+
+Tú estás construyendo:
+
+```text
+Espacio de búsqueda
+```
+
+No:
+
+```text
+Modelo
+```
+
+Y eso es enorme.
+
+---
+
+# Mi preocupación es otra
+
+No creo que sobren variables.
+
+Creo que sobran:
+
+## Features manuales.
+
+Por ejemplo.
+
+No me gusta demasiado:
+
+```text
+move_speed_5m
+
+move_speed_7m
+
+move_speed_15m
+
+move_speed_20m
+```
+
+Porque eso genera miles de columnas.
+
+---
+
+Yo preferiría:
+
+```text
+Movimiento observado
+
+↓
+
+Builder parametrizable
+
+↓
+
+AlphaEvolve decide
+```
+
+Es decir.
+
+Guardar:
+
+```text
+Precio
+
+Tiempo
+```
+
+y dejar que AlphaEvolve genere:
+
+```text
+speed
+
+acceleration
+
+curvature
+
+shape
+```
+
+No tener miles de columnas fijas.
+
+---
+
+# Creo que TSIS debería tener dos tipos de estado
+
+## Estado canónico
+
+Muy estable.
+
+```text
+OHLCV
+
+VWAP
+
+Quotes
+
+Trades
+
+News
+
+Fundamentals
+
+Short Context
+
+Regime
+
+...
+```
+
+Muy pocas derivadas.
+
+---
+
+## Estado expandible
+
+Aquí sí.
+
+AlphaEvolve podría crear:
+
+```text
+RVOL_7
+
+RVOL_13
+
+RVOL_29
+
+Speed_3
+
+Speed_8
+
+Speed_17
+
+Liquidity_X
+
+...
+```
+
+Y si funcionan...
+
+Nunca sustituyen al estado.
+
+Simplemente aparecen como:
+
+```text
+Representation Candidate
+```
+
+---
+
+# Creo que aquí está el mayor cambio
+
+Ahora mismo tus contratos mezclan un poco:
+
+```text
+Estado
+```
+
+con
+
+```text
+Representación.
+```
+
+No mucho.
+
+Pero un poco.
+
+---
+
+Yo intentaría que el estado fuese:
+
+```text
+lo más pequeño posible.
+```
+
+Y la representación:
+
+```text
+lo más grande posible.
+```
+
+---
+
+# Mi modelo mental
+
+Yo ya lo dividiría así.
+
+```text
+RAW DATA
+```
+
+↓
+
+```text
+OBSERVABLES
+```
+
+↓
+
+```text
+CANONICAL STATE
+```
+
+↓
+
+```text
+REPRESENTATION BUILDERS
+```
+
+↓
+
+```text
+REPRESENTATION CANDIDATES
+```
+
+↓
+
+```text
+EVENT DETECTORS
+```
+
+↓
+
+```text
+POLICIES
+```
+
+↓
+
+```text
+EVALUATORS
+```
+
+↓
+
+```text
+ALPHAEVOLVE
+```
+
+---
+
+# Hay otra razón por la que me gusta lo que estás haciendo
+
+Porque dentro de cinco años podrías descubrir que:
+
+```text
+El 80%
+de las columnas
+nunca sirven.
+```
+
+Perfecto.
+
+Las eliminarás.
+
+Pero si nunca las capturas, jamás podrás saberlo.
+
+---
+
+# La única advertencia que te haría
+
+Creo que ahora mismo estás optimizando la **arquitectura**, no el **coste experimental**.
+
+Y ahí sí veo un riesgo.
+
+Yo introduciría una regla nueva en TSIS:
+
+```text
+Canonical State
+```
+
+Debe cumplir algo parecido a:
+
+> **"Toda columna del Canonical State debe poder justificarse porque representa un aspecto físico, económico o informacional del mercado, no porque alguna vez fue útil para una estrategia."**
+
+Eso cambia completamente el criterio de inclusión.
+
+Por ejemplo:
+
+* ✔️ `spread_bps`, `quote_depth`, `published_utc`, `short_interest`, `halt_state`: representan fenómenos reales del mercado.
+* ✔️ `gap_pct`, `dollar_volume`, `rvol_20d`: también representan propiedades observables o transformaciones mecánicas bien definidas.
+* ❌ `breakout_score_v7`, `magic_signal`, `setup_quality`: ya son interpretaciones o decisiones, no estado.
+
+Y las representaciones derivadas (embeddings, attention, liquidity stress, crowding, etc.) vivirían en una capa superior, donde AlphaEvolve, ML o RL pueden crear miles de candidatos sin contaminar el estado base.
+
+Esa separación tiene una consecuencia muy importante: **el Canonical State cambia muy poco con los años**, mientras que la Representation Layer puede evolucionar continuamente. Creo que esa estabilidad será uno de los mayores activos de TSIS cuando el proyecto tenga millones de experimentos acumulados.

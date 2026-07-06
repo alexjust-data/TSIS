@@ -18,9 +18,14 @@ Este documento define cómo evita TSIS degradarse estructuralmente a medida que 
 - reproducible;
 - dataset-heavy;
 - architecture-driven.
+- scientific-discovery-driven;
+- experiment-versioned;
+- knowledge-promotion-aware.
 
-Gobierna los tres módulos:
+Gobierna la raíz, el laboratorio transversal y los módulos:
 
+- `00_CTO`
+- `00_TSIS_Lab`
 - `01_TSIS_backtest_SmallCaps`
 - `02_TSIS_webSocket_SmallCaps`
 - `03_TSIS_Offline_RL`
@@ -57,6 +62,8 @@ Los manifests son memoria operativa.
 Los changelogs son memoria histórica.
 Los releases son memoria institucional.
 Los experimentos versionados son memoria científica.
+Los `knowledge_objects` son memoria científica promovible.
+La validación científica es memoria institucional de aceptación o rechazo.
 
 ---
 
@@ -98,6 +105,28 @@ La fuente oficial es `CHANGELOG.md` cuando el cambio tiene relevancia estructura
 Las conversaciones no son source of truth.
 Pueden ayudar a construir conocimiento, pero no sustituyen documentación, manifests ni versionado formal.
 
+### 3.7. Experimentos y conocimiento validado
+
+La fuente oficial para experimentos reproducibles vive en:
+
+```text
+C:/TSIS_Data/00_TSIS_Lab
+```
+
+Un experimento no existe institucionalmente si no tiene:
+
+```text
+experiment_id
+experiment.yaml o contrato equivalente
+input versions
+execution protocol
+validation pipeline
+run/evidence lineage
+status
+```
+
+Un knowledge object no existe institucionalmente si no está ligado a evidencia, validación y reglas de promoción.
+
 ---
 
 ## 4. Forbidden Practices
@@ -123,6 +152,10 @@ Está prohibido:
 - cambiar reglas de construcción de un dataset sin emitir nueva versión lógica;
 - usar el mismo nombre para datasets semánticamente distintos;
 - borrar evidencia relevante de experimentos fallidos para “limpiar” el árbol.
+- borrar `research_experiments`, evidence reports o knowledge objects fallidos sin registrar estado;
+- reutilizar un `experiment_id` para una hipótesis semánticamente distinta;
+- cambiar un parameter grid, probe, window policy o validation pipeline sin nueva versión o nota de migración;
+- tratar un run AlphaEvolve como conocimiento aceptado por haber producido un score alto.
 
 ### 4.3. Notebooks
 
@@ -172,6 +205,18 @@ Estados oficiales:
 - `institutional`: forma parte del stack oficial de TSIS y puede ser usada como referencia interna.
 - `deprecated`: sigue existiendo, pero no debe usarse para nuevo desarrollo salvo necesidad explícita.
 - `archived`: se conserva solo por memoria histórica, auditabilidad o falsificación.
+
+Estados operativos adicionales para experimentos y conocimiento:
+
+- `draft`: diseño incompleto.
+- `designed`: experimento especificado, pendiente de ejecución.
+- `ready_to_execute`: inputs y protocolo validados.
+- `executed`: ejecución completada, evidencia aún no aceptada.
+- `evidence_ready`: evidencia reproducible disponible.
+- `candidate_knowledge`: conclusión candidata, pendiente de validación/promoción.
+- `validated_knowledge`: conocimiento aceptado bajo el pipeline vigente.
+- `falsified`: hipótesis refutada o no soportada.
+- `quarantined`: evidencia o semántica bloqueada hasta revisión.
 
 ### 5.2. Aplicación obligatoria
 
@@ -264,6 +309,11 @@ Cambios como:
 - cambios en reward RL institucional;
 - redefinición de contratos entre módulos;
 - políticas de calidad centrales.
+- redefinición de `Scientific Discovery Engine`;
+- cambios en `research_experiment_contract`;
+- cambios en `scientific_validation_pipeline`;
+- cambios en status/promotion rules para knowledge objects;
+- permitir a AlphaEvolve modificar validadores, holdout o promotion gates.
 
 ### 7.5. Regla de enforcement
 
@@ -333,6 +383,12 @@ Debe vivir en Git todo lo que represente memoria estructural o reproducible:
 - plantillas;
 - reglas locales;
 - documentación arquitectónica y metodológica.
+- contratos de `research_experiment`;
+- plantillas de experimentos y parameter sweeps;
+- evidence report templates;
+- knowledge object registries;
+- validation pipeline contracts;
+- contratos de AlphaEvolve/autonomous generator cuando gobiernan mutaciones.
 
 ### 9.2. No debe versionarse en Git
 
@@ -690,35 +746,66 @@ Cambiar un schema canónico sin gobierno explícito es una violación estructura
 
 ---
 
-## 17. Research Versioning Policy
+## 17. Research Experiment Versioning Policy
 
 ### 17.1. Regla central
 
 El research cambia constantemente.
 Precisamente por eso debe versionarse con dureza.
 
+Desde la arquitectura v3, el objeto central no es una idea suelta ni un notebook.
+El objeto central es:
+
+```text
+research_experiment
+```
+
 ### 17.2. Todo experimento relevante debe tener
 
-- `experiment_id`
-- `run_id`
-- config efectiva
-- dataset version exacta
-- commit hash
-- período analizado
-- outputs
-- estado final
+```text
+experiment_id
+experiment_version
+research_question
+hypothesis
+target_or_domain
+input_state_version
+input_outcome_version
+probe_version
+parameter_grid_version
+window_policy_version
+execution_protocol_version
+validation_pipeline_version
+config_effective
+run_id
+code_commit
+source_data_versions
+evidence_report_id
+status
+```
 
 ### 17.3. Convención recomendada
 
-Formato sugerido:
+Formato sugerido para IDs humanos:
 
-`{date}_{module}_{purpose}_{version}`
+```text
+EXP_{DOMAIN}_{PHENOMENON}_{NNNN}
+```
 
 Ejemplos:
 
-- `20260518_gapgo_triple_barrier_baseline_v01`
-- `20260518_quotes_soft_crossed_review_v02`
-- `20260518_short_flow_context_study_v01`
+```text
+EXP_DAS_FRONTSIDE_DISCOVERY_0001
+EXP_DAILY_GAP_BEHAVIOR_0001
+EXP_SHORT_PRESSURE_TRANSITION_0001
+```
+
+Los run ids deben separar ejecución de definición:
+
+```text
+experiment_id != run_id
+```
+
+Un mismo experimento puede tener múltiples runs, pero cada run debe dejar manifest propio.
 
 ### 17.4. Experimental containment
 
@@ -728,7 +815,10 @@ Los experimentos exploratorios NO deben contaminar:
 - schemas canónicos;
 - datasets institucionales;
 - releases estables;
-- pipelines de producción.
+- pipelines de producción;
+- canonical state;
+- sealed holdout;
+- promotion gates.
 
 La exploración debe estar aislada por naming, rutas, manifests y estado de promoción.
 
@@ -736,16 +826,160 @@ La exploración debe estar aislada por naming, rutas, manifests y estado de prom
 
 Un experimento no debe considerarse institucionalmente válido si no puede responder:
 
-- qué dataset usó;
+- qué pregunta investigaba;
+- qué dataset/state/outcome usó;
 - qué config exacta usó;
 - qué commit lo produjo;
+- qué protocolo de ejecución aplicó;
+- qué validación intentó pasar;
 - qué outputs se derivaron;
-- y cómo se clasifica su resultado: exploratorio, falsado, promocionable o descartado.
+- y cómo se clasifica su resultado: `draft`, `executed`, `evidence_ready`, `candidate_knowledge`, `validated_knowledge`, `falsified`, `quarantined` o `archived`.
 
----
+### 17.6. Sampling Probe Versioning
+
+Un `sampling_probe` es una herramienta de investigación, no un evento validado.
+
+Debe versionarse si cambia:
+
+```text
+threshold
+reference price
+session scope
+universe eligibility
+minimum liquidity
+confirmation rule
+cutoff policy
+```
+
+Ejemplo:
+
+```text
+sampling_probe: intraday_momentum_extension_seed
+threshold_grid: [20, 30, 40, 50, 70, 100]
+reference_price: segment_open | prior_close | vwap | premarket_low
+status: exploratory_probe
+```
+
+### 17.7. Parameter Sweep Versioning
+
+Un `parameter_sweep` debe declarar:
+
+```text
+sweep_id
+changed_parameters
+fixed_parameters
+grid_values
+baseline
+sample period
+minimum sample rules
+multiple testing correction plan
+promotion rule
+```
+
+No se permite seleccionar el mejor parámetro sin registrar el grid completo y la validación posterior.
+
+### 17.8. Evidence Report Versioning
+
+Un `evidence_report` debe quedar ligado a:
+
+```text
+experiment_id
+run_id
+input versions
+metrics
+baselines
+statistical tests
+known limitations
+promotion recommendation
+```
+
+Un report bonito no equivale a conocimiento validado.
+
+### 17.9. Knowledge Object Versioning
+
+Un `knowledge_object` representa una conclusión candidata o validada.
+
+Debe versionarse con:
+
+```text
+knowledge_object_id
+source_experiment_ids
+evidence_report_ids
+validation_pipeline_version
+status
+scope
+limitations
+promotion_decision
+```
+
+Estados mínimos:
+
+```text
+candidate_knowledge
+validated_knowledge
+falsified
+quarantined
+archived
+```
+
+### 17.10. AlphaEvolve / Autonomous Generator Run Versioning
+
+Todo run generado por AlphaEvolve u otro generador autónomo debe registrar:
+
+```text
+generator_id
+generator_version
+model_id_or_version
+prompt_or_context_hash
+parent_candidate_id
+mutation_scope
+candidate_id
+code_hash
+experiment_id
+evaluator_version
+validation_pipeline_version
+sandbox_policy
+budget
+outputs
+status
+```
+
+Regla clave:
+
+```text
+AlphaEvolve propone candidatos.
+Scientific Validation Pipeline decide si existe conocimiento aceptable.
+```
+
+Un run AlphaEvolve no debe modificar silenciosamente:
+
+```text
+raw data
+canonical state truth
+outcome truth
+validators
+quality gates
+leakage gates
+lineage
+sealed holdout
+promotion status
+```
+
+### 17.11. Canonical State vs Representation Candidate Versioning
+
+`canonical_state` y `representation_candidate` no evolucionan al mismo ritmo.
+
+```text
+canonical_state
+= observables legales as-of, versionado lento, alta estabilidad
+
+representation_candidate
+= transformaciones, embeddings, estados semanticos, versionado rapido, experimental
+```
+
+Si una representación funciona, no sustituye automáticamente al estado canónico. Debe promocionarse como componente separado y con lineage propio.
 
 ## 18. Model Versioning Policy
-
 ### 18.1. Regla central
 
 Todo modelo entrenado relevante debe tener identidad persistente.
@@ -1099,6 +1333,10 @@ Los agentes MUST:
 - no sobrescribir outputs importantes sin version bump o nueva identidad lógica;
 - documentar breaking changes;
 - no tratar conversaciones como memoria persistente del sistema.
+- registrar `research_experiments` cuando una hipótesis pase de conversación a ejecución;
+- separar probes/seeds de eventos validados;
+- versionar parameter sweeps completos, no solo el mejor resultado;
+- registrar runs AlphaEvolve/autonomous generator con mutation scope y candidate lineage.
 
 Los agentes MUST NOT:
 
@@ -1121,6 +1359,9 @@ No existe una vía rápida humana que justifique:
 - saltarse versionado lógico de datasets;
 - cambiar semánticas sin changelog;
 - sostener resultados importantes solo con memoria verbal.
+- convertir intuiciones humanas en eventos validados sin experimento;
+- aceptar salidas AlphaEvolve sin evidence report y validation pipeline;
+- cambiar reglas de promoción después de ver resultados.
 
 La autoridad final humana existe, pero no debe ejercerse contra la trazabilidad del sistema.
 
@@ -1148,3 +1389,15 @@ Todo conocimiento importante del sistema debe vivir:
 - y reconstruible por humanos.
 
 Ese es el estándar de versionado de TSIS.
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,67 @@
-﻿## 2026-07-04 - Mandatory data plane reading for minute work
+﻿## 2026-07-06 - DAS first push/dip/rebreak semantics v0.2 smoke
+
+- Updated `das_widgets.py` first push logic to follow the human DAS sequence: first green expansion after awakening, first push high before the first red pullback, first dip low inside the first red/non-green pullback sequence, then rebreak of the first push high.
+- Updated rebreak validity to require a green candle with high and close above `first_push_high`, plus volume at least equal to the dip-low candle volume.
+- Smoke `CYTO 2024-03-25` passed visual manifest validation with 5 labels and generated review image `C:/Users/AlexJ/TSIS_smoke_review/CYTO_2024-03-25_visual_contract_threshold50_v02_semantics.png`.
+- Human review is still required before treating v0.2 semantics as accepted.
+## 2026-07-06 - Validador visual y manifest label-level para experimento DAS
+
+- Creado `00_TSIS_Lab/06_validators/validate_visual_inspection_manifest.py` para validar evidencia visual label-level en runs de experimento.
+- Anotado `06_validators/` en el README del Lab y actualizado `EXP_DAS_FRONTSIDE_DISCOVERY_0001/execution_protocol.md` con el comando de validacion ejecutable.
+- Adaptado `00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/scripts/das_widgets.py` para exportar `visual_inspection_manifest.parquet`, `visual_inspection_manifest.csv`, imagen contractual de inspeccion y sidecar JSON de labels.
+- Smoke `XAGE 2025-04-14`: deteccion DAS passed, PNG export passed, `visual_inspection_manifest` generado, 5 labels, 1 visual case, validador visual `PASS`.
+## 2026-07-05 - execution_protocol.md para EXP_DAS_FRONTSIDE_DISCOVERY_0001
+
+- Creado `00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/execution_protocol.md`.
+- Definida la ejecucion reproducible de `SWEEP_001_frontside_operability_boundary`: inputs, preflight, embudo DAS, metricas, baselines, gates anti-basura, memoria de candidatos, output root y relacion futura con AlphaEvolve.
+- Aclarado que el notebook queda como inspeccion humana y que la verdad reproducible debe venir de executor + manifest + evidence report.
+## 2026-07-05 - SWEEP_001 reformulado como frontera de operabilidad DAS/frontside
+
+- Renombrado `SWEEP_001_momentum_threshold_sensitivity.yaml` a `SWEEP_001_frontside_operability_boundary.yaml`.
+- Aclarado que `+50%` fue una criba humana de operabilidad frontside, no una entrada, evento validado ni threshold optimo.
+- Declarado que valores bajo `50%` son grupo de control, `50%` es suelo humano a auditar y valores superiores miden intensidad/sobreextension posible.
+## 2026-07-05 - EXP_INTRADAY_MOMENTUM_EXTENSION_0001 archivado
+
+- Movido `00_TSIS_Lab/04_experiments/EXP_INTRADAY_MOMENTUM_EXTENSION_0001/` a `00_TSIS_Lab/04_experiments/_archive/superseded_2026_07_05/EXP_INTRADAY_MOMENTUM_EXTENSION_0001/`.
+- Marcado el experimento como `archived_superseded` y `superseded_by: EXP_DAS_FRONTSIDE_DISCOVERY_0001`.
+- Actualizadas las referencias activas para que el experimento inicial operativo sea `EXP_DAS_FRONTSIDE_DISCOVERY_0001`.
+- `intraday_momentum_extension` queda conservado como concepto/familia futura posible, no como experimento activo.
+## 2026-07-05 - EXP_DAS_FRONTSIDE_DISCOVERY_0001 creado en TSIS Lab
+
+- Creado `00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/` como primer experimento `strategy_seeded_event_discovery` para DAS/frontside.
+- Anotados `research_design.md`, `parameter_space.yaml` y `SWEEP_001_frontside_operability_boundary.yaml` con corpus en espanol: origen humano del screener, semillas no validadas, gramatica `scanner seed -> awakening -> first push -> first dip -> rebreak -> DAS sequence -> outcome`, y ruta para descubrir importancia de factores por capas.
+- Actualizado el registro de experimentos y el README del Lab. AlphaEvolve queda deshabilitado hasta que existan executor, validators, evidence reports y promotion gates.
+## 2026-07-05 - Eliminado ARCHITECTURE_OVERVIEW y alineadas lecturas raiz
+
+- Eliminado `ARCHITECTURE_OVERVIEW.md` porque la autoridad arquitectonica vigente vive en `00_CTO/TSIS_LAB_ARCHITECTURE_v3.md`.
+- Actualizados `README.md`, `START_HERE.md`, `AGENTS.md`, `PROJECT_RULES.md`, `00_CTO/README.md`, `00_CTO/LOCAL_RULES.md`, `01_TSIS_backtest_SmallCaps/README.md` y referencias activas relacionadas.
+- La lectura raiz queda alineada con TSIS como `Scientific Discovery Engine`, `00_TSIS_Lab` como laboratorio transversal y `research_experiment` como unidad cientifica central.
+## 2026-07-05 - Root operating documents aligned with TSIS v3
+
+- Updated `PROJECT_OPERATING_SYSTEM.md` to define TSIS as a Scientific Discovery Engine, add `00_TSIS_Lab`, preserve `01_TSIS_backtest_SmallCaps` as the operational SmallCaps research/backtest module, and replace the old linear flow with the v3 experiment/evidence/knowledge pipeline.
+- Updated `RESEARCH_PHILOSOPHY.md` as the root philosophy synthesis while leaving `00_CTO/01_RESEARCH_PHILOSOPHY/` as the deeper CTO library.
+- Updated `VERSIONING_STANDARDS.md` with versioning rules for `research_experiment`, sampling probes, parameter sweeps, evidence reports, knowledge objects, representation candidates, and AlphaEvolve/autonomous generator runs.
+## 2026-07-05 - AlphaEvolve aligned with Scientific Discovery Engine
+
+- Updated CTO AlphaEvolve docs so AlphaEvolve is defined as a generator of candidate research experiments under the Scientific Validation Pipeline.
+- Added `00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/02_ALPHAEVOLVE_AS_RESEARCH_EXPERIMENT_GENERATOR_v0_1.md`.
+- Updated autonomous research system references and `TSIS_LAB_ARCHITECTURE_v3.md` required reads.
+## 2026-07-05 - Superseded CTO architecture archive
+
+- Moved `00_CTO/TSIS_LAB_ARCHITECTURE.md`, `00_CTO/TSIS_LAB_ARCHITECTURE_v2.md`, and `00_CTO/00_CTO_REFACTOR_PLAN.md` to `00_CTO/_archive/superseded_architecture_2026_07_05/`.
+- Updated active references to use `00_CTO/TSIS_LAB_ARCHITECTURE_v3.md` as the current CTO architecture.
+## 2026-07-05 - TSIS Lab Architecture v3
+
+- Created `00_CTO/TSIS_LAB_ARCHITECTURE_v3.md` as the active CTO architecture reading.
+- Reframed TSIS as a Scientific Discovery Engine with `research_experiment` as the central unit of work.
+- Updated the Market State v3 map so market_state/event_state/outcomes are the observable X/Y base for experiments, not the whole discovery architecture.
+## 2026-07-05 - TSIS Scientific Discovery Engine / 00_TSIS_Lab
+
+- Created `00_TSIS_Lab/` as the central operational lab for reproducible TSIS research experiments.
+- Added initial lab contracts, registries, templates, and seed experiment `EXP_INTRADAY_MOMENTUM_EXTENSION_0001`.
+- Added Research Philosophy documents under `00_CTO/01_RESEARCH_PHILOSOPHY/` to define TSIS as a Scientific Discovery Engine.
+- Clarified that AlphaEvolve is a candidate experiment generator, not the authority; scientific validation remains the acceptance layer.
+## 2026-07-04 - Mandatory data plane reading for minute work
 
 - Promoted `E:/TSIS/data/README.md` to mandatory base reading for agents.
 - Declared `E:/TSIS/data/ohlcv_1m` as the canonical physical root for minute/OHLCV 1m work.
@@ -639,3 +702,16 @@ contract + certification + evidence + physical profiling + validator
 - Notebook evidence remains important but is deferred to a separate future
   Graphify leaf instead of being mixed into the first certification decisions
   graph.
+
+
+
+
+
+
+
+
+
+
+
+
+

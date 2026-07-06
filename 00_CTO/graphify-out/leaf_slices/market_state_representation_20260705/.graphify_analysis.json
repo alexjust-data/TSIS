@@ -1,0 +1,259 @@
+{
+  "communities": {
+    "0": [
+      "tsis_document_00_cto_11_market_science_05_market_state_representation_00_scanner_candidate_selection_readme_md",
+      "tsis_document_00_cto_11_market_science_05_market_state_representation_00_scanner_candidate_selection_scanner_table_and_contract_map_v0_1_md",
+      "tsis_document_00_cto_11_market_science_05_market_state_representation_00_scanner_candidate_selection_strategy_scanner_overlay_policy_v0_1_md",
+      "tsis_document_00_cto_graphify_refresh_queue_md",
+      "tsis_document_01_tsis_backtest_smallcaps_01_foundations_canonical_schemas_outputs_intraday_1m_strategy_candidate_events_table_schema_contract_md",
+      "tsis_document_01_tsis_backtest_smallcaps_01_foundations_module_contracts_outputs_state_derived_observables_formula_contract_v0_1_md",
+      "tsis_document_01_tsis_backtest_smallcaps_scripts_materialize_daily_scanner_candidates_table_v0_2_py",
+      "tsis_document_01_tsis_backtest_smallcaps_scripts_materialize_daily_scanner_candidates_table_v0_3_py",
+      "tsis_document_01_tsis_backtest_smallcaps_tests_data_foundation_outputs_test_daily_scanner_candidates_table_builder_py",
+      "tsis_document_01_tsis_backtest_smallcaps_tests_data_foundation_outputs_test_daily_scanner_candidates_table_builder_v0_2_py",
+      "tsis_document_01_tsis_backtest_smallcaps_tests_data_foundation_outputs_test_daily_scanner_candidates_table_builder_v0_3_py",
+      "tsis_document_01_tsis_backtest_smallcaps_tests_data_foundation_outputs_test_daily_strategy_event_windows_candidate_builder_py",
+      "tsis_document_01_tsis_backtest_smallcaps_tests_data_foundation_outputs_test_intraday_scanner_candidates_table_builder_v0_1_py",
+      "tsis_document_01_tsis_backtest_smallcaps_tests_data_foundation_outputs_test_master_intraday_quote_guarded_candidate_contract_py",
+      "tsis_document_01_tsis_backtest_smallcaps_tests_data_foundation_outputs_test_microstructure_candidate_window_manifest_py",
+      "tsis_market_state_concept_canonical_state",
+      "tsis_market_state_concept_market_state_builder"
+    ],
+    "1": [
+      "tsis_document_00_cto_11_market_science_05_market_state_representation_00_cto_05_07_2026_md",
+      "tsis_document_00_cto_11_market_science_05_market_state_representation_market_state_representation_contract_v0_1_md",
+      "tsis_document_01_tsis_backtest_smallcaps_01_foundations_canonical_schemas_outputs_daily_strategy_candidate_events_table_schema_contract_md",
+      "tsis_document_01_tsis_backtest_smallcaps_01_foundations_module_contracts_outputs_state_canonical_vs_representation_layer_contract_v0_1_md",
+      "tsis_document_01_tsis_backtest_smallcaps_01_foundations_module_contracts_outputs_state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1_md",
+      "tsis_document_01_tsis_backtest_smallcaps_scripts_materialize_daily_strategy_event_windows_candidate_py",
+      "tsis_document_01_tsis_backtest_smallcaps_scripts_materialize_intraday_1m_strategy_event_windows_candidate_py",
+      "tsis_document_01_tsis_backtest_smallcaps_scripts_materialize_strategy_candidate_events_table_py",
+      "tsis_document_01_tsis_backtest_smallcaps_scripts_validate_event_candidate_tables_py",
+      "tsis_document_01_tsis_backtest_smallcaps_tests_data_foundation_outputs_test_event_candidate_table_validators_py",
+      "tsis_document_01_tsis_backtest_smallcaps_tests_data_foundation_outputs_test_event_state_intraday_quote_guarded_candidate_builder_py",
+      "tsis_document_01_tsis_backtest_smallcaps_tests_data_foundation_outputs_test_intraday_1m_event_outcomes_candidate_builder_py",
+      "tsis_document_01_tsis_backtest_smallcaps_tests_data_foundation_outputs_test_intraday_1m_strategy_candidate_events_from_master_intraday_qg_py",
+      "tsis_document_01_tsis_backtest_smallcaps_tests_data_foundation_outputs_test_strategy_candidate_events_table_builder_py",
+      "tsis_market_state_concept_event_candidate_tables",
+      "tsis_market_state_concept_outcomes_separated"
+    ],
+    "2": [
+      "tsis_document_00_cto_11_market_science_05_market_state_representation_00_cto_alphaenvolve_md",
+      "tsis_document_00_cto_11_market_science_05_market_state_representation_00_scanner_candidate_selection_intraday_scanner_candidates_contract_v0_1_md",
+      "tsis_document_00_cto_11_market_science_05_market_state_representation_00_scanner_candidate_selection_scanner_base_universe_and_profiles_contract_v0_2_md",
+      "tsis_document_00_cto_11_market_science_05_market_state_representation_00_scanner_candidate_selection_scanner_candidate_selection_architecture_v0_1_md",
+      "tsis_document_00_cto_11_market_science_05_market_state_representation_00_scanner_candidate_selection_scanner_to_market_state_promotion_path_v0_1_md",
+      "tsis_document_00_cto_11_market_science_05_market_state_representation_market_state_representation_source_file_map_v0_1_md",
+      "tsis_document_01_tsis_backtest_smallcaps_01_foundations_module_contracts_outputs_data_foundation_outputs_target_contract_v0_1_md",
+      "tsis_document_01_tsis_backtest_smallcaps_01_foundations_module_contracts_outputs_state_decision_timestamp_policy_v0_1_md",
+      "tsis_document_01_tsis_backtest_smallcaps_01_foundations_module_contracts_outputs_state_observable_eligibility_contract_v0_1_md",
+      "tsis_document_01_tsis_backtest_smallcaps_01_foundations_module_contracts_outputs_state_snapshot_roles_contract_v0_1_md",
+      "tsis_document_01_tsis_backtest_smallcaps_scripts_materialize_intraday_scanner_candidates_table_v0_1_py",
+      "tsis_market_state_concept_ml_rl_alphaevolve_disabled",
+      "tsis_market_state_concept_representation_layer"
+    ],
+    "3": [
+      "tsis_document_00_cto_11_market_science_05_market_state_representation_00_cto_market_state_tables_status_and_operating_map_2026_07_01_v3_md",
+      "tsis_document_00_cto_11_market_science_05_market_state_representation_00_scanner_candidate_selection_scanner_base_and_in_play_momentum_contract_v0_3_md",
+      "tsis_document_01_tsis_backtest_smallcaps_01_foundations_module_contracts_outputs_data_foundation_outputs_status_matrix_v0_1_md",
+      "tsis_document_01_tsis_backtest_smallcaps_01_foundations_module_contracts_outputs_event_candidate_table_validators_contract_v0_1_md",
+      "tsis_document_01_tsis_backtest_smallcaps_01_foundations_module_contracts_outputs_event_candidate_tables_contract_v0_1_md",
+      "tsis_document_01_tsis_backtest_smallcaps_scripts_materialize_daily_scanner_candidates_table_py",
+      "tsis_document_01_tsis_backtest_smallcaps_scripts_materialize_event_state_intraday_quote_guarded_candidate_py",
+      "tsis_document_01_tsis_backtest_smallcaps_scripts_materialize_market_state_intraday_quote_guarded_candidate_py",
+      "tsis_market_state_concept_daily_controlled_path"
+    ],
+    "4": [
+      "tsis_document_00_cto_11_market_science_05_market_state_representation_00_cto_market_state_tables_status_and_operating_map_2026_07_01_md",
+      "tsis_document_00_cto_11_market_science_05_market_state_representation_00_cto_market_state_tables_status_and_operating_map_2026_07_01_v2_md",
+      "tsis_document_01_tsis_backtest_smallcaps_01_foundations_module_contracts_outputs_state_builder_contract_v0_1_md",
+      "tsis_document_01_tsis_backtest_smallcaps_scripts_materialize_master_intraday_quote_guarded_candidate_scoped_py",
+      "tsis_document_01_tsis_backtest_smallcaps_tests_data_foundation_outputs_test_intraday_1m_strategy_event_windows_candidate_builder_py",
+      "tsis_document_01_tsis_backtest_smallcaps_tests_data_foundation_outputs_test_master_intraday_quote_guarded_candidate_sample_builder_py",
+      "tsis_document_01_tsis_backtest_smallcaps_tests_data_foundation_outputs_test_master_intraday_quote_guarded_candidate_scoped_builder_py",
+      "tsis_market_state_concept_quote_guarded_intraday_path"
+    ],
+    "5": [
+      "tsis_document_00_cto_changelog_md",
+      "tsis_document_01_tsis_backtest_smallcaps_01_foundations_module_contracts_outputs_state_raw_to_consumption_lineage_contract_v0_1_md",
+      "tsis_document_01_tsis_backtest_smallcaps_01_foundations_module_contracts_outputs_state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1_md",
+      "tsis_document_01_tsis_backtest_smallcaps_01_foundations_module_contracts_outputs_state_raw_to_consumption_lineage_intraday_1m_event_state_controlled_v0_1_md",
+      "tsis_document_01_tsis_backtest_smallcaps_01_foundations_module_contracts_outputs_state_raw_to_consumption_lineage_intraday_1m_event_windows_controlled_v0_1_md",
+      "tsis_document_01_tsis_backtest_smallcaps_01_foundations_module_contracts_outputs_state_raw_to_consumption_lineage_intraday_1m_outcomes_controlled_v0_1_md",
+      "tsis_document_01_tsis_backtest_smallcaps_changelog_md",
+      "tsis_market_state_concept_raw_to_consumption_lineage"
+    ],
+    "6": [
+      "tsis_document_01_tsis_backtest_smallcaps_01_foundations_graphify_refresh_queue_md",
+      "tsis_document_01_tsis_backtest_smallcaps_01_foundations_module_contracts_outputs_master_intraday_bar_table_quote_guarded_candidate_contract_v0_1_md",
+      "tsis_document_01_tsis_backtest_smallcaps_scripts_materialize_intraday_1m_event_outcomes_candidate_py",
+      "tsis_document_01_tsis_backtest_smallcaps_scripts_materialize_intraday_1m_strategy_candidate_events_from_master_intraday_quote_guarded_py",
+      "tsis_document_01_tsis_backtest_smallcaps_scripts_materialize_master_intraday_quote_guarded_candidate_sample_py",
+      "tsis_document_01_tsis_backtest_smallcaps_tests_data_foundation_outputs_test_market_state_intraday_quote_guarded_candidate_builder_py",
+      "tsis_market_state_concept_intraday_controlled_path"
+    ],
+    "7": [
+      "tsis_document_00_cto_11_market_science_05_market_state_representation_00_scanner_candidate_selection_scanner_definitions_trade_station_vs_broad_discovery_v0_1_md"
+    ],
+    "8": [
+      "tsis_document_01_tsis_backtest_smallcaps_tests_data_foundation_outputs_test_microstructure_features_controlled_candidate_py"
+    ]
+  },
+  "cohesion": {
+    "0": 0.16176470588235295,
+    "1": 0.23333333333333334,
+    "2": 0.2692307692307692,
+    "3": 0.2222222222222222,
+    "4": 0.25,
+    "5": 0.25,
+    "6": 0.2857142857142857,
+    "7": 1.0,
+    "8": 1.0
+  },
+  "gods": [
+    {
+      "id": "tsis_market_state_concept_market_state_builder",
+      "label": "Market State Builder",
+      "degree": 64
+    },
+    {
+      "id": "tsis_market_state_concept_outcomes_separated",
+      "label": "Outcomes Separated From State",
+      "degree": 51
+    },
+    {
+      "id": "tsis_market_state_concept_quote_guarded_intraday_path",
+      "label": "Quote-Guarded Intraday Path",
+      "degree": 44
+    },
+    {
+      "id": "tsis_market_state_concept_representation_layer",
+      "label": "Representation Layer",
+      "degree": 42
+    },
+    {
+      "id": "tsis_market_state_concept_ml_rl_alphaevolve_disabled",
+      "label": "ML/RL/AlphaEvolve Production Disabled",
+      "degree": 40
+    },
+    {
+      "id": "tsis_market_state_concept_intraday_controlled_path",
+      "label": "Intraday Controlled Path",
+      "degree": 33
+    },
+    {
+      "id": "tsis_market_state_concept_event_candidate_tables",
+      "label": "Event Candidate Tables",
+      "degree": 28
+    },
+    {
+      "id": "tsis_market_state_concept_canonical_state",
+      "label": "Canonical State",
+      "degree": 27
+    },
+    {
+      "id": "tsis_market_state_concept_daily_controlled_path",
+      "label": "Daily Controlled Path",
+      "degree": 21
+    },
+    {
+      "id": "tsis_document_00_cto_changelog_md",
+      "label": "CHANGELOG",
+      "degree": 10
+    }
+  ],
+  "surprises": [
+    {
+      "source": "materialize_intraday_scanner_candidates_table_v0_1",
+      "target": "Market State Builder",
+      "source_files": [
+        "01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_scanner_candidates_table_v0_1.py",
+        "00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "defines_or_references",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc ↔ code); connects across different repos/directories; bridges separate communities; peripheral node `materialize_intraday_scanner_candidates_table_v0_1` unexpectedly reaches hub `Market State Builder`"
+    },
+    {
+      "source": "materialize_master_intraday_quote_guarded_candidate_scoped",
+      "target": "Market State Builder",
+      "source_files": [
+        "01_TSIS_backtest_SmallCaps/scripts/materialize_master_intraday_quote_guarded_candidate_scoped.py",
+        "00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "defines_or_references",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc ↔ code); connects across different repos/directories; bridges separate communities; peripheral node `materialize_master_intraday_quote_guarded_candidate_scoped` unexpectedly reaches hub `Market State Builder`"
+    },
+    {
+      "source": "test_master_intraday_quote_guarded_candidate_scoped_builder",
+      "target": "Market State Builder",
+      "source_files": [
+        "01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_master_intraday_quote_guarded_candidate_scoped_builder.py",
+        "00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "defines_or_references",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc ↔ code); connects across different repos/directories; bridges separate communities; peripheral node `test_master_intraday_quote_guarded_candidate_scoped_builder` unexpectedly reaches hub `Market State Builder`"
+    },
+    {
+      "source": "test_daily_strategy_event_windows_candidate_builder",
+      "target": "Outcomes Separated From State",
+      "source_files": [
+        "01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_daily_strategy_event_windows_candidate_builder.py",
+        "00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "defines_or_references",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc ↔ code); connects across different repos/directories; bridges separate communities; peripheral node `test_daily_strategy_event_windows_candidate_builder` unexpectedly reaches hub `Outcomes Separated From State`"
+    },
+    {
+      "source": "materialize_daily_scanner_candidates_table",
+      "target": "Canonical State",
+      "source_files": [
+        "01_TSIS_backtest_SmallCaps/scripts/materialize_daily_scanner_candidates_table.py",
+        "00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "defines_or_references",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc ↔ code); connects across different repos/directories; bridges separate communities"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `Market State Builder` connect `Quote Guarded Intraday` to `Quote Guarded Intraday`, `Quote Guarded Intraday`, `Quote Guarded Intraday`, `Quote Guarded Intraday`, `Quote Guarded Intraday`, `Quote Guarded Intraday`?",
+      "why": "High betweenness centrality (0.364) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Outcomes Separated From State` connect `Quote Guarded Intraday` to `Quote Guarded Intraday`, `Quote Guarded Intraday`, `Quote Guarded Intraday`, `Quote Guarded Intraday`, `Quote Guarded Intraday`, `Quote Guarded Intraday`?",
+      "why": "High betweenness centrality (0.139) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Quote-Guarded Intraday Path` connect `Quote Guarded Intraday` to `Quote Guarded Intraday`, `Quote Guarded Intraday`, `Quote Guarded Intraday`, `Quote Guarded Intraday`, `Quote Guarded Intraday`, `Quote Guarded Intraday`?",
+      "why": "High betweenness centrality (0.095) - this node is a cross-community bridge."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 64 inferred relationships involving `Market State Builder` (e.g. with `05_07_2026` and `AlphaEnvolve`) actually correct?",
+      "why": "`Market State Builder` has 64 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 50 inferred relationships involving `Outcomes Separated From State` (e.g. with `05_07_2026` and `AlphaEnvolve`) actually correct?",
+      "why": "`Outcomes Separated From State` has 50 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 44 inferred relationships involving `Quote-Guarded Intraday Path` (e.g. with `AlphaEnvolve` and `market_state_tables_status_and_operating_map_2026_07_01`) actually correct?",
+      "why": "`Quote-Guarded Intraday Path` has 44 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 40 inferred relationships involving `Representation Layer` (e.g. with `05_07_2026` and `AlphaEnvolve`) actually correct?",
+      "why": "`Representation Layer` has 40 INFERRED edges - model-reasoned connections that need verification."
+    }
+  ]
+}

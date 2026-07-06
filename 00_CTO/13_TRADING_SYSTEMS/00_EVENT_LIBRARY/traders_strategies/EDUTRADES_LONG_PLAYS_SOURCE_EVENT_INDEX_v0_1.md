@@ -1,4 +1,4 @@
-# EduTrades Long Plays Source Event Index v0.1
+﻿# EduTrades Long Plays Source Event Index v0.1
 
 Fecha: 2026-06-21
 Estado: `source_note` estructurado para Event Library.
@@ -69,7 +69,7 @@ La prioridad del documento es doble:
 
 ## 2. Guardrail de Event Library
 
-Segun `TSIS_LAB_ARCHITECTURE.md`, la Event Library responde:
+Segun `TSIS_LAB_ARCHITECTURE_v3.md`, la Event Library se lee ahora dentro del Scientific Discovery Engine y responde:
 
 ```text
 Que eventos existen?
@@ -893,7 +893,7 @@ No dice actuar sobre panicos. Detecta una reversa medible despues de panico.
 
 Despues de una fase previa de debilidad o dormancia, aparece un dia verde con
 volumen excepcional y cierre cerca del maximo del dia. El evento es diario, no
-intradía puro.
+intradÃ­a puro.
 
 ### Imagenes fuente
 
@@ -1453,3 +1453,4 @@ exclusiones
 ```
 
 entonces la seccion aun no esta lista para Event Research operativo.
+

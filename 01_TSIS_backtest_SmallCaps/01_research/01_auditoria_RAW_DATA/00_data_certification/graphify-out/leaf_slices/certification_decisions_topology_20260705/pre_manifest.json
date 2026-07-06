@@ -1,0 +1,10 @@
+{
+  "run_id": "certification_decisions_topology_20260705",
+  "created_at_utc": "2026-07-05T19:40:20.165885+00:00",
+  "repo_root": "C:\\TSIS_Data",
+  "cert_root": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_research\\01_auditoria_RAW_DATA\\00_data_certification",
+  "leaf_dir": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\graphify-out\\leaf_slices\\certification_decisions_topology_20260705",
+  "corpus_file_count": 88,
+  "graphify_package_version": "0.9.1",
+  "semantic_extraction_mode": "deterministic_certification_decision_topology"
+}

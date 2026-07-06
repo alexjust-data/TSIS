@@ -1,4 +1,4 @@
-# 13_TRADING_SYSTEMS
+﻿# 13_TRADING_SYSTEMS
 
 Fecha de actualizacion: 2026-06-18
 Estado: capa CTO en refactor gobernado hacia arquitectura event-first.
@@ -17,8 +17,8 @@ No es el lugar donde se duplican contratos de `01_foundations`.
 Antes de modificar esta carpeta, leer:
 
 - `../LOCAL_RULES.md`
-- `../TSIS_LAB_ARCHITECTURE.md`
-- `../00_CTO_REFACTOR_PLAN.md`
+- `../TSIS_LAB_ARCHITECTURE_v3.md`
+- `C:/TSIS_Data/00_TSIS_Lab/README.md`
 - `00_EVENT_LIBRARY/README.md`
 
 La autoridad de Data Foundation vive fuera de `00_CTO`, en:
@@ -228,7 +228,7 @@ Outputs:
 Organizacion interna:
 
 ```text
-carpetas numeradas por trader/fuente -> enseñanzas, capturas, transcripts y
+carpetas numeradas por trader/fuente -> enseÃ±anzas, capturas, transcripts y
 lecturas fuente
 
 LONG/ SHORT/ FACTORS/ -> estrategias y factores TSIS propios, consolidados o
@@ -365,7 +365,7 @@ Una carpeta de `13_TRADING_SYSTEMS/` solo debe mantenerse si tiene:
 - outputs;
 - no-goals;
 - estado de madurez;
-- relacion con `TSIS_LAB_ARCHITECTURE.md`;
+- relacion con `TSIS_LAB_ARCHITECTURE_v3.md`;
 - relacion con Graphify si debe entrar en el grafo.
 
 Las carpetas vacias sin README funcional deben eliminarse, fusionarse o
@@ -411,3 +411,5 @@ Estado 2026-06-18:
    Research.
 5. Integrar el leaf Graphify event-first en el root sin conservar rutas
    antiguas.
+
+

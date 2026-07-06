@@ -356,3 +356,71 @@ v0.1 intentionally excludes:
 - action/reward definitions;
 - non-halt event families.
 
+
+## 10. Extension Candidate Intradia 1m Quote-Guarded Controlada
+
+Esta extension no cambia el alcance oficial de `outcomes_table_v0_1`, que sigue
+siendo diario y halt-derived para el scope declarado. Documenta un output
+candidate/no promovido usado para cerrar la ruta 1m controlada:
+
+```text
+dataset_id = outcomes_table_v0_1_candidate
+physical_dataset_id = outcomes_table_v0_1_candidate_intraday_1m_quote_guarded_controlled
+schema_version = outcomes_table_v0_1_candidate_intraday_1m_quote_guarded
+outcome_horizon = post_event_30m_intraday_1m
+price_view = 1m_quote_guarded_raw
+materialization_scope = intraday_1m_quote_guarded_post_event_outcomes_controlled_candidate
+```
+
+Fuentes:
+
+```text
+event_state_table_v0_1_candidate_intraday_1m_quote_guarded_controlled
+event_windows_table_v0_1_candidate_intraday_1m_strategy_events
+master_intraday_bar_table_v0_2_candidate_quote_guarded
+```
+
+Grano:
+
+```text
+event_window_id + outcome_horizon + price_view
+```
+
+Regla de referencia:
+
+```text
+reference_price = event_state at_event intraday__last_closed_bar_close
+outcome bars = master_intraday quote-guarded rows where window_start_utc <= ts_utc < window_end_utc
+```
+
+Campos continuos candidate:
+
+```text
+reference_to_outcome_open_return_pct
+reference_to_outcome_high_return_pct
+reference_to_outcome_low_return_pct
+reference_to_outcome_close_return_pct
+mfe_pct
+mae_pct
+outcome_open_to_close_return_pct
+outcome_range_pct
+bars_expected
+bars_observed
+bars_missing
+```
+
+Reglas:
+
+```text
+contains_post_event_information = true
+prohibited_as_pre_event_feature = true
+requires_feature_label_separation = true
+valid_for_ml_label_candidate = false
+valid_for_rl_reward_candidate = false
+full_universe_claim = false
+execution_truth = false
+```
+
+Lectura correcta: este candidate es `y` separado para investigacion/evaluacion.
+No es `market_state_table`, no es `event_state_table`, no es label ML, no es
+reward RL y no es execution truth.

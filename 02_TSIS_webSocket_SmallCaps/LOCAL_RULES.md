@@ -14,7 +14,7 @@ For historical market data, contracts and source-of-truth semantics, defer to:
 
 ```text
 C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations
-C:\TSIS_Data\00_CTO\TSIS_LAB_ARCHITECTURE_v2.md
+C:\TSIS_Data\00_CTO\TSIS_LAB_ARCHITECTURE_v3.md
 ```
 
 ## Path Discipline
@@ -94,3 +94,4 @@ The official place for this audit is:
 ```text
 01_data_ingestion_live/source_parity_audit/
 ```
+

@@ -1,4 +1,4 @@
-Yo **no la pondría dentro de Machine Learning**, ni dentro de Market Science, ni dentro de RL.
+﻿Yo **no la pondrÃ­a dentro de Machine Learning**, ni dentro de Market Science, ni dentro de RL.
 
 Porque las estrategias son el objeto principal que TSIS estudia.
 
@@ -8,35 +8,35 @@ Ahora mismo tienes esto:
 
 ```text
 00_CTO
-├── Research Philosophy
-├── Systems Engineering
-├── Agent Engineering
-├── Memory
-├── Evaluation
-├── MLOps
-├── Distributed Systems
-├── ML
-├── RL
-├── Autonomous Research Systems
-├── Market Science
-├── TSIS Cognitive Architecture
+â”œâ”€â”€ Research Philosophy
+â”œâ”€â”€ Systems Engineering
+â”œâ”€â”€ Agent Engineering
+â”œâ”€â”€ Memory
+â”œâ”€â”€ Evaluation
+â”œâ”€â”€ MLOps
+â”œâ”€â”€ Distributed Systems
+â”œâ”€â”€ ML
+â”œâ”€â”€ RL
+â”œâ”€â”€ Autonomous Research Systems
+â”œâ”€â”€ Market Science
+â”œâ”€â”€ TSIS Cognitive Architecture
 ```
 
 Todo eso responde a:
 
 ```text
-¿Cómo construimos TSIS?
+Â¿CÃ³mo construimos TSIS?
 ```
 
 Pero falta:
 
 ```text
-¿Qué estudia TSIS?
+Â¿QuÃ© estudia TSIS?
 ```
 
 ---
 
-Para mí falta una capa completa:
+Para mÃ­ falta una capa completa:
 
 ```text
 13_TRADING_RESEARCH
@@ -54,24 +54,24 @@ Y dentro:
 
 ```text
 13_TRADING_SYSTEMS
-│
-├── 01_STRATEGY_LIBRARY
-│
-├── 02_SETUP_TAXONOMY
-│
-├── 03_EDGE_HYPOTHESES
-│
-├── 04_PATTERN_CATALOG
-│
-├── 05_EXECUTION_MODELS
-│
-├── 06_DISCRETIONARY_FRAMEWORKS
-│
-├── 07_STRATEGY_EVOLUTION
-│
-├── 08_STRATEGY_CLUSTERS
-│
-└── 09_SQUEEZE_RESEARCH
+â”‚
+â”œâ”€â”€ 01_STRATEGY_LIBRARY
+â”‚
+â”œâ”€â”€ 02_SETUP_TAXONOMY
+â”‚
+â”œâ”€â”€ 03_EDGE_HYPOTHESES
+â”‚
+â”œâ”€â”€ 04_PATTERN_CATALOG
+â”‚
+â”œâ”€â”€ 05_EXECUTION_MODELS
+â”‚
+â”œâ”€â”€ 06_DISCRETIONARY_FRAMEWORKS
+â”‚
+â”œâ”€â”€ 07_STRATEGY_EVOLUTION
+â”‚
+â”œâ”€â”€ 08_STRATEGY_CLUSTERS
+â”‚
+â””â”€â”€ 09_SQUEEZE_RESEARCH
 ```
 
 ---
@@ -87,41 +87,41 @@ No es arquitectura.
 Es:
 
 ```text
-Objeto de investigación.
+Objeto de investigaciÃ³n.
 ```
 
 ---
 
-# Lo que pondría en 01_STRATEGY_LIBRARY
+# Lo que pondrÃ­a en 01_STRATEGY_LIBRARY
 
-Aquí sí irían tus documentos.
+AquÃ­ sÃ­ irÃ­an tus documentos.
 
 Por ejemplo:
 
 ```text
 01_STRATEGY_LIBRARY
-│
-├── PM_Squeeze
-│   ├── README.md
-│   ├── setup_definition.md
-│   ├── execution_rules.md
-│   ├── examples
-│   ├── charts
-│   └── research_notes
-│
-├── First_Green_Day
-│
-├── First_Red_Day
-│
-├── VWAP_Reclaim
-│
-├── Gap_and_Go
-│
-├── ORB
-│
-├── SSR_Squeeze
-│
-└── Parabolic_Reversal
+â”‚
+â”œâ”€â”€ PM_Squeeze
+â”‚   â”œâ”€â”€ README.md
+â”‚   â”œâ”€â”€ setup_definition.md
+â”‚   â”œâ”€â”€ execution_rules.md
+â”‚   â”œâ”€â”€ examples
+â”‚   â”œâ”€â”€ charts
+â”‚   â””â”€â”€ research_notes
+â”‚
+â”œâ”€â”€ First_Green_Day
+â”‚
+â”œâ”€â”€ First_Red_Day
+â”‚
+â”œâ”€â”€ VWAP_Reclaim
+â”‚
+â”œâ”€â”€ Gap_and_Go
+â”‚
+â”œâ”€â”€ ORB
+â”‚
+â”œâ”€â”€ SSR_Squeeze
+â”‚
+â””â”€â”€ Parabolic_Reversal
 ```
 
 ---
@@ -133,14 +133,14 @@ Mucha gente mezcla:
 ```text
 Estrategia
 =
-Código
+CÃ³digo
 ```
 
 Eso es un error.
 
 ---
 
-La estrategia debería existir aunque no exista código.
+La estrategia deberÃ­a existir aunque no exista cÃ³digo.
 
 ---
 
@@ -150,14 +150,14 @@ Por ejemplo:
 PM_Squeeze
 ```
 
-debería contener:
+deberÃ­a contener:
 
 ```text
 Idea
 
 Contexto
 
-Psicología
+PsicologÃ­a
 
 Participantes
 
@@ -167,20 +167,20 @@ Reglas
 
 Variantes
 
-Casos límite
+Casos lÃ­mite
 
 Ejemplos
 ```
 
 ---
 
-Después ya aparece:
+DespuÃ©s ya aparece:
 
 ```text
 TSIS Implementation
 ```
 
-que viviría en:
+que vivirÃ­a en:
 
 ```text
 01_TSIS_Backtest
@@ -196,19 +196,19 @@ Strategy Engine
 
 # Otra carpeta que creo que te falta
 
-Conociéndote, haría:
+ConociÃ©ndote, harÃ­a:
 
 ```text
 13_TRADING_SYSTEMS
-│
-├── 01_STRATEGY_LIBRARY
-│
-├── 02_SETUP_TAXONOMY
+â”‚
+â”œâ”€â”€ 01_STRATEGY_LIBRARY
+â”‚
+â”œâ”€â”€ 02_SETUP_TAXONOMY
 ```
 
 ---
 
-Porque tú continuamente hablas de:
+Porque tÃº continuamente hablas de:
 
 ```text
 Squeeze
@@ -234,37 +234,37 @@ Por ejemplo:
 
 ```text
 02_SETUP_TAXONOMY
-│
-├── Momentum_Setups
-│
-├── Squeeze_Setups
-│
-├── Reversal_Setups
-│
-├── Continuation_Setups
-│
-├── Liquidity_Events
-│
-└── Hybrid_Setups
+â”‚
+â”œâ”€â”€ Momentum_Setups
+â”‚
+â”œâ”€â”€ Squeeze_Setups
+â”‚
+â”œâ”€â”€ Reversal_Setups
+â”‚
+â”œâ”€â”€ Continuation_Setups
+â”‚
+â”œâ”€â”€ Liquidity_Events
+â”‚
+â””â”€â”€ Hybrid_Setups
 ```
 
 ---
 
-# Donde pondría tu PM Squeeze
+# Donde pondrÃ­a tu PM Squeeze
 
-No aquí:
+No aquÃ­:
 
 ```text
 08_MACHINE_LEARNING
 ```
 
-Ni aquí:
+Ni aquÃ­:
 
 ```text
 11_MARKET_SCIENCE
 ```
 
-Ni aquí:
+Ni aquÃ­:
 
 ```text
 09_REINFORCEMENT_LEARNING
@@ -274,10 +274,10 @@ Sino:
 
 ```text
 13_TRADING_SYSTEMS
-│
-└── 01_STRATEGY_LIBRARY
-    │
-    └── PM_Squeeze
+â”‚
+â””â”€â”€ 01_STRATEGY_LIBRARY
+    â”‚
+    â””â”€â”€ PM_Squeeze
 ```
 
 porque el PM Squeeze es:
@@ -286,25 +286,25 @@ porque el PM Squeeze es:
 Conocimiento de dominio.
 ```
 
-Y todo lo demás (Backtesting, Pattern Mining, ML, RL, AlphaEvolve) existe para estudiar, validar, mejorar y evolucionar ese conocimiento.
+Y todo lo demÃ¡s (Backtesting, Pattern Mining, ML, RL, AlphaEvolve) existe para estudiar, validar, mejorar y evolucionar ese conocimiento.
 
-De hecho, si TSIS madura como imagino, **01_STRATEGY_LIBRARY** terminará siendo una de las carpetas más valiosas de todo el proyecto, porque será la traducción formal de 20 años de experiencia discrecional en small caps a conocimiento estructurado y reproducible.
+De hecho, si TSIS madura como imagino, **01_STRATEGY_LIBRARY** terminarÃ¡ siendo una de las carpetas mÃ¡s valiosas de todo el proyecto, porque serÃ¡ la traducciÃ³n formal de 20 aÃ±os de experiencia discrecional en small caps a conocimiento estructurado y reproducible.
 
 
 
 # AlphaEvolve
 
-Sí: **AlphaEvolve encaja**, pero no como “la IA que mira ticks y descubre todo sola”.
+SÃ­: **AlphaEvolve encaja**, pero no como â€œla IA que mira ticks y descubre todo solaâ€.
 
-AlphaEvolve es más bien esto:
+AlphaEvolve es mÃ¡s bien esto:
 
 ```text
-LLM + código + evaluador + evolución
+LLM + cÃ³digo + evaluador + evoluciÃ³n
 ```
 
-Google lo define como un agente que mejora algoritmos modificando código y recibiendo feedback de evaluadores programáticos. ([arXiv][1])
+Google lo define como un agente que mejora algoritmos modificando cÃ³digo y recibiendo feedback de evaluadores programÃ¡ticos. ([arXiv][1])
 
-Para TSIS, la idea correcta sería:
+Para TSIS, la idea correcta serÃ­a:
 
 ```text
 AlphaEvolve no busca directamente el trade.
@@ -329,7 +329,7 @@ AND volume_pullback < 60% of push_volume
 THEN mark PM_Squeeze_Candidate
 ```
 
-Luego tu harness lo evalúa:
+Luego tu harness lo evalÃºa:
 
 ```text
 Walk-forward result
@@ -347,21 +347,21 @@ Si mejora, sobrevive. Si no, muere.
 
 ---
 
-Para trading, yo lo colocaría así:
+Para trading, yo lo colocarÃ­a asÃ­:
 
 ```text
 Setup
-    ↓
+    â†“
 Contexto
-    ↓
+    â†“
 Cluster
-    ↓
+    â†“
 ML supervisado
-    ↓
+    â†“
 AlphaEvolve
 ```
 
-Pero con una corrección importante:
+Pero con una correcciÃ³n importante:
 
 **AlphaEvolve puede intervenir en todas las fases, pero no reemplaza las fases.**
 
@@ -369,7 +369,7 @@ Ejemplo:
 
 ```text
 1. Setup
-AlphaEvolve propone variantes de definición de setup.
+AlphaEvolve propone variantes de definiciÃ³n de setup.
 
 2. Contexto
 AlphaEvolve propone nuevas features.
@@ -380,25 +380,25 @@ AlphaEvolve prueba formas distintas de agrupar eventos.
 4. ML supervisado
 AlphaEvolve busca mejores labels, thresholds y modelos.
 
-5. Ejecución
+5. EjecuciÃ³n
 AlphaEvolve busca mejores reglas de entrada/salida.
 ```
 
 ---
 
-La arquitectura mental sería:
+La arquitectura mental serÃ­a:
 
 ```text
-Tú defines el fenómeno:
+TÃº defines el fenÃ³meno:
 "PM Squeeze"
 
 TSIS crea datasets:
 daily + intraday + events + outcomes
 
-AlphaEvolve propone código:
+AlphaEvolve propone cÃ³digo:
 detectores, reglas, features, estrategias
 
-Harness evalúa:
+Harness evalÃºa:
 si realmente mejora fuera de muestra
 
 Solo sobreviven las variantes robustas.
@@ -406,7 +406,7 @@ Solo sobreviven las variantes robustas.
 
 ---
 
-Entonces sí: **lo que tú imaginabas es correcto**, pero el orden no es:
+Entonces sÃ­: **lo que tÃº imaginabas es correcto**, pero el orden no es:
 
 ```text
 Le doy ticks a AlphaEvolve y descubre el edge.
@@ -416,20 +416,20 @@ El orden correcto es:
 
 ```text
 Construyo el laboratorio evaluable.
-Después AlphaEvolve evoluciona hipótesis dentro del laboratorio.
+DespuÃ©s AlphaEvolve evoluciona hipÃ³tesis dentro del laboratorio.
 ```
 
-Google lo usó precisamente para problemas donde existe una métrica verificable: optimización de algoritmos, problemas matemáticos, infraestructura, kernels, etc. ([Google DeepMind][2])
+Google lo usÃ³ precisamente para problemas donde existe una mÃ©trica verificable: optimizaciÃ³n de algoritmos, problemas matemÃ¡ticos, infraestructura, kernels, etc. ([Google DeepMind][2])
 
-En TSIS, tu métrica verificable sería:
+En TSIS, tu mÃ©trica verificable serÃ­a:
 
 ```text
-¿Esta variante mejora el edge
+Â¿Esta variante mejora el edge
 sin sobreoptimizar
 y sobrevive fuera de muestra?
 ```
 
-Ahí AlphaEvolve tiene muchísimo sentido.
+AhÃ­ AlphaEvolve tiene muchÃ­simo sentido.
 
 [1]: https://arxiv.org/abs/2506.13131?utm_source=chatgpt.com "AlphaEvolve: A coding agent for scientific and algorithmic ..."
 [2]: https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/?utm_source=chatgpt.com "AlphaEvolve: A Gemini-powered coding agent for ..."
@@ -437,8 +437,10 @@ Ahí AlphaEvolve tiene muchísimo sentido.
 >
 > Este archivo conserva una propuesta previa de estructura para
 > `13_TRADING_SYSTEMS/`. No es la arquitectura vigente. La arquitectura activa
-> vive en `README.md`, `../TSIS_LAB_ARCHITECTURE.md` y
-> `../00_CTO_REFACTOR_PLAN.md`.
+> vive en `README.md`, `../TSIS_LAB_ARCHITECTURE_v3.md` y
+> `C:/TSIS_Data/00_TSIS_Lab/README.md`. El plan de refactor anterior esta
+> archivado en `_archive/superseded_architecture_2026_07_05/`.
 >
 > Muchas rutas mencionadas aqui son anteriores al refactor event-first ejecutado
 > el 2026-06-18.
+

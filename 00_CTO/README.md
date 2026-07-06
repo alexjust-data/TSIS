@@ -58,24 +58,21 @@ Los Harness operativos futuros deben dejar `run_manifest`, `run_summary`,
 Antes de modificar `00_CTO/`, todo agente debe leer:
 
 - `LOCAL_RULES.md`
-- `TSIS_LAB_ARCHITECTURE.md`
-- `TSIS_LAB_ARCHITECTURE_v2.md`
-- `00_CTO_REFACTOR_PLAN.md`
+- `TSIS_LAB_ARCHITECTURE_v3.md`
 
 Estos documentos fijan la interpretacion vigente de esta capa:
 
 - `LOCAL_RULES.md` define las reglas locales, estados de conocimiento,
   relacion con `00_private/`, politica Graphify y criterio funcional para
   carpetas activas.
-- `TSIS_LAB_ARCHITECTURE.md` promueve la arquitectura derivada de
-  `00_private/arquitectura.md` a una lectura gobernada.
-- `TSIS_LAB_ARCHITECTURE_v2.md` es la lectura CTO candidata vigente del
-  2026-06-30: incorpora Data Foundation real, Scanner Candidate Selection,
-  Market State Representation, Event State, evaluadores, execution models,
-  Graphify governance y Evolution Systems. La v1 queda como referencia
-  historica, no como imagen completa del estado actual.
-- `00_CTO_REFACTOR_PLAN.md` define como alinear el arbol fisico con esa
-  arquitectura sin destruir memoria historica ni duplicar autoridad operativa.
+- `TSIS_LAB_ARCHITECTURE_v3.md` es la lectura CTO vigente desde 2026-07-05:
+  define TSIS como `Scientific Discovery Engine`, introduce `00_TSIS_Lab`,
+  establece `research_experiment` como unidad central y reclasifica
+  AlphaEvolve como generador de candidate experiments sometido al mismo
+  Scientific Validation Pipeline que el investigador humano.
+- `_archive/superseded_architecture_2026_07_05/README.md` explica por que
+  `TSIS_LAB_ARCHITECTURE.md`, `TSIS_LAB_ARCHITECTURE_v2.md` y
+  `00_CTO_REFACTOR_PLAN.md` ya no son lectura operativa vigente.
 
 Regla practica:
 
@@ -124,7 +121,7 @@ La autoridad activa vive en:
 - `AGENTS.md`
 - `VERSIONING_STANDARDS.md`
 - `RESEARCH_PHILOSOPHY.md`
-- `ARCHITECTURE_OVERVIEW.md`
+- `00_CTO/TSIS_LAB_ARCHITECTURE_v3.md`
 - `01_TSIS_backtest_SmallCaps/README.md`
 - `01_TSIS_backtest_SmallCaps/AGENTS.md`
 - `01_TSIS_backtest_SmallCaps/LOCAL_RULES.md`
@@ -588,30 +585,35 @@ por manifests.
 
 1. `LOCAL_RULES.md`
 
-   Contrato local de `00_CTO/`: autoridad, estados de conocimiento, regla
-   event-first, politica Graphify y criterio funcional para carpetas activas.
+   Contrato local de `00_CTO/`: autoridad, estados de conocimiento, politica
+   Graphify y criterio funcional para carpetas activas.
 
-2. `TSIS_LAB_ARCHITECTURE.md`
+2. `TSIS_LAB_ARCHITECTURE_v3.md`
 
-   Arquitectura promovida del laboratorio TSIS:
+   Arquitectura CTO vigente desde 2026-07-05. Define TSIS como Scientific
+   Discovery Engine y fija la cadena oficial:
 
    ```text
    Data Foundation
-   -> Event Library
-   -> Event Engine
-   -> Outcome Research
-   -> Strategy Research
-   -> Pattern Discovery
-   -> Cluster Research
-   -> Machine Learning
-   -> Decision Models
-   -> Evolution Systems
+   -> Canonical State / Event State / Outcomes
+   -> Research Experiment
+   -> Evidence
+   -> Scientific Validation Pipeline
+   -> Knowledge Object
+   -> Validated Knowledge
+   -> Operational Component
    ```
 
-3. `00_CTO_REFACTOR_PLAN.md`
+3. `C:/TSIS_Data/00_TSIS_Lab/README.md`
 
-   Plan gobernado para decidir que carpetas se conservan, clarifican,
-   refactorizan, mueven, separan o archivan.
+   Espacio operativo transversal para contratos, registros, plantillas y
+   experimentos declarativos ejecutables por humanos o generadores autonomos.
+
+4. `_archive/superseded_architecture_2026_07_05/README.md`
+
+   Archivo historico de `TSIS_LAB_ARCHITECTURE.md`,
+   `TSIS_LAB_ARCHITECTURE_v2.md` y `00_CTO_REFACTOR_PLAN.md`. No gobierna la
+   arquitectura actual; solo conserva trazabilidad.
 
 ### Documento activo creado
 
@@ -659,14 +661,15 @@ despues permitir busqueda evolutiva.
 ## Mapa de carpetas
 
 El mapa siguiente es descriptivo. La decision activa sobre si una carpeta se
-mantiene, se clarifica, se refactoriza, se mueve o se archiva vive en:
+mantiene, se clarifica, se refactoriza, se mueve o se archiva debe leerse desde:
 
 ```text
-00_CTO_REFACTOR_PLAN.md
+TSIS_LAB_ARCHITECTURE_v3.md
+C:/TSIS_Data/00_TSIS_Lab/README.md
 ```
 
 La regla actual es funcional: si una carpeta no tiene proposito, inputs,
-outputs, no-goals, madurez y relacion clara con `TSIS_LAB_ARCHITECTURE.md`, no
+outputs, no-goals, madurez y relacion clara con `TSIS_LAB_ARCHITECTURE_v3.md`, no
 debe tratarse como carpeta estable.
 
 ### `00_private/`
@@ -861,11 +864,28 @@ Sistemas autonomos de descubrimiento e investigacion.
 Incluye AlphaEvolve, FunSearch, OpenEvolve, generacion de hipotesis,
 evolutionary search y autonomous trading research.
 
-Muchos archivos actuales son placeholders o shells tempranos. Es aceptable
-mientras el plan TSIS especifico viva en `12_TSIS_COGNITIVE_ARCHITECTURE/`.
+Desde 2026-07-05, esta capa se lee bajo `TSIS_LAB_ARCHITECTURE_v3.md`:
 
-Esta carpeta trata discovery systems en general. No debe ser autoridad operativa
-directa sobre trading research.
+```text
+AlphaEvolve no es el centro de TSIS.
+AlphaEvolve es un generador posible de candidate research experiments.
+```
+
+La estructura operativa comun vive en:
+
+```text
+C:/TSIS_Data/00_TSIS_Lab
+```
+
+Y la autoridad especifica de AlphaEvolve vive en:
+
+```text
+10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/README.md
+10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/02_ALPHAEVOLVE_AS_RESEARCH_EXPERIMENT_GENERATOR_v0_1.md
+```
+
+Esta carpeta no debe ser autoridad operativa directa sobre trading research,
+market_state, outcomes, evaluators, promotion status ni produccion.
 
 ### `11_MARKET_SCIENCE/`
 
@@ -1072,4 +1092,10 @@ Despues de eso, TSIS podra construir agentes Harness contra trabajo real:
 primero replay offline, despues shadow live, despues gating live. Solo mas
 adelante AlphaEvolve debe buscar dentro de sandboxes con datos gated y
 evaluadores bloqueados.
+
+
+
+
+
+
 

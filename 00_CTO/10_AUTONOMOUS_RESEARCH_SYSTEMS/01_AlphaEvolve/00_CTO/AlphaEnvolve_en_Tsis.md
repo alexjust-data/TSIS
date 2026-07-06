@@ -1,22 +1,37 @@
+﻿# Nota De Autoridad v3
+
+Fecha: 2026-07-05
+Estado: research_notes_subordinadas
+
+Este documento conserva fuentes y notas de aprendizaje sobre AlphaEvolve. No gobierna como se usa AlphaEvolve dentro de TSIS.
+
+La autoridad operativa vive en:
+
+```text
+C:/TSIS_Data/00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/README.md
+C:/TSIS_Data/00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/02_ALPHAEVOLVE_AS_RESEARCH_EXPERIMENT_GENERATOR_v0_1.md
+```
+
+---
 # AlphaEnvelve : Corpus de aprendizaje
 
-Sí. Para aprender **AlphaEvolve con calidad**, yo usaría este corpus, en este orden.
+SÃ­. Para aprender **AlphaEvolve con calidad**, yo usarÃ­a este corpus, en este orden.
 
-## 1. Núcleo obligatorio: AlphaEvolve
+## 1. NÃºcleo obligatorio: AlphaEvolve
 
-Primero leería estos 4:
+Primero leerÃ­a estos 4:
 
-1. **Google DeepMind — AlphaEvolve blog oficial**
-   Visión general, casos de uso y explicación conceptual. ([Google DeepMind][1])
+1. **Google DeepMind â€” AlphaEvolve blog oficial**
+   VisiÃ³n general, casos de uso y explicaciÃ³n conceptual. ([Google DeepMind][1])
 
 2. **AlphaEvolve white paper / technical report**
-   Documento central. Aquí está la arquitectura real: LLMs + evaluadores + búsqueda evolutiva + modificación de código. ([Google Cloud Storage][2])
+   Documento central. AquÃ­ estÃ¡ la arquitectura real: LLMs + evaluadores + bÃºsqueda evolutiva + modificaciÃ³n de cÃ³digo. ([Google Cloud Storage][2])
 
 3. **AlphaEvolve en arXiv**
-   Mismo núcleo académico, útil para citar y seguir referencias. ([arXiv][3])
+   Mismo nÃºcleo acadÃ©mico, Ãºtil para citar y seguir referencias. ([arXiv][3])
 
 4. **Repositorio oficial `google-deepmind/alphaevolve_results`**
-   Código/notebooks para verificar resultados matemáticos publicados. Esto es clave para no quedarte solo en teoría. ([GitHub][4])
+   CÃ³digo/notebooks para verificar resultados matemÃ¡ticos publicados. Esto es clave para no quedarte solo en teorÃ­a. ([GitHub][4])
 
 ---
 
@@ -24,45 +39,45 @@ Primero leería estos 4:
 
 AlphaEvolve no sale de la nada. El predecesor directo es **FunSearch**.
 
-5. **Nature — FunSearch: Mathematical discoveries from program search with large language models**
-   Paper imprescindible. Introduce la idea LLM + evaluator + evolución. ([Nature][5])
+5. **Nature â€” FunSearch: Mathematical discoveries from program search with large language models**
+   Paper imprescindible. Introduce la idea LLM + evaluator + evoluciÃ³n. ([Nature][5])
 
-6. **Google DeepMind blog — FunSearch**
-   Explicación más accesible del sistema: LLM genera código, evaluator filtra, el sistema evoluciona soluciones. ([Google DeepMind][6])
+6. **Google DeepMind blog â€” FunSearch**
+   ExplicaciÃ³n mÃ¡s accesible del sistema: LLM genera cÃ³digo, evaluator filtra, el sistema evoluciona soluciones. ([Google DeepMind][6])
 
 7. **Repositorio oficial FunSearch**
-   Para estudiar cómo estructuran los problemas y resultados. ([GitHub][7])
+   Para estudiar cÃ³mo estructuran los problemas y resultados. ([GitHub][7])
 
 ---
 
-## 3. Familia DeepMind de descubrimiento algorítmico
+## 3. Familia DeepMind de descubrimiento algorÃ­tmico
 
-Estos no son AlphaEvolve, pero explican la genealogía científica.
+Estos no son AlphaEvolve, pero explican la genealogÃ­a cientÃ­fica.
 
-8. **AlphaTensor — Nature**
-   Descubrimiento de algoritmos de multiplicación de matrices usando RL/search. Muy importante para entender “AI como descubridor de algoritmos”. ([Nature][8])
+8. **AlphaTensor â€” Nature**
+   Descubrimiento de algoritmos de multiplicaciÃ³n de matrices usando RL/search. Muy importante para entender â€œAI como descubridor de algoritmosâ€. ([Nature][8])
 
-9. **Google DeepMind blog — AlphaTensor**
-   Explicación conceptual más fácil. ([Google DeepMind][9])
+9. **Google DeepMind blog â€” AlphaTensor**
+   ExplicaciÃ³n conceptual mÃ¡s fÃ¡cil. ([Google DeepMind][9])
 
-10. **AlphaDev — Nature**
-    Descubrimiento de algoritmos de sorting más rápidos usando deep RL. Importante porque conecta búsqueda, código, correctness y performance. ([Nature][10])
+10. **AlphaDev â€” Nature**
+    Descubrimiento de algoritmos de sorting mÃ¡s rÃ¡pidos usando deep RL. Importante porque conecta bÃºsqueda, cÃ³digo, correctness y performance. ([Nature][10])
 
-11. **Google DeepMind blog — AlphaDev**
-    Muy útil para entender el impacto práctico en librerías reales. ([Google DeepMind][11])
+11. **Google DeepMind blog â€” AlphaDev**
+    Muy Ãºtil para entender el impacto prÃ¡ctico en librerÃ­as reales. ([Google DeepMind][11])
 
-12. **AlphaCode — Science / arXiv**
-    No es AlphaEvolve, pero es esencial para entender generación masiva de código + filtrado por comportamiento. ([Science][12])
+12. **AlphaCode â€” Science / arXiv**
+    No es AlphaEvolve, pero es esencial para entender generaciÃ³n masiva de cÃ³digo + filtrado por comportamiento. ([Science][12])
 
 ---
 
 ## 4. Frontera 2026: AlphaEvolve ampliado
 
-13. **DeepMind — AlphaEvolve impact 2026**
-    Reporta aplicaciones posteriores en genómica, química, infraestructura, quantum physics y optimización algorítmica. ([Google DeepMind][13])
+13. **DeepMind â€” AlphaEvolve impact 2026**
+    Reporta aplicaciones posteriores en genÃ³mica, quÃ­mica, infraestructura, quantum physics y optimizaciÃ³n algorÃ­tmica. ([Google DeepMind][13])
 
 14. **Mathematical exploration and discovery at scale**
-    Paper posterior que usa AlphaEvolve en 67 problemas matemáticos y lo conecta con Deep Think y AlphaProof. Muy importante para ver hacia dónde va la frontera. ([arXiv][14])
+    Paper posterior que usa AlphaEvolve en 67 problemas matemÃ¡ticos y lo conecta con Deep Think y AlphaProof. Muy importante para ver hacia dÃ³nde va la frontera. ([arXiv][14])
 
 ---
 
@@ -81,42 +96,42 @@ Estos no son AlphaEvolve, pero explican la genealogía científica.
 10. Mathematical exploration at scale
 ```
 
-## Para TSIS, qué debes extraer
+## Para TSIS, quÃ© debes extraer
 
-No leas AlphaEvolve como “un agente de código”.
+No leas AlphaEvolve como â€œun agente de cÃ³digoâ€.
 
-Léelo buscando estas piezas:
+LÃ©elo buscando estas piezas:
 
 ```text
-1. Cómo representa el problema
-2. Cómo genera candidatos
-3. Cómo evalúa automáticamente
-4. Cómo selecciona ganadores
-5. Cómo muta/mejora variantes
-6. Cómo evita basura/hallucination
-7. Cómo guarda memoria de candidatos
-8. Cómo escala experimentos
+1. CÃ³mo representa el problema
+2. CÃ³mo genera candidatos
+3. CÃ³mo evalÃºa automÃ¡ticamente
+4. CÃ³mo selecciona ganadores
+5. CÃ³mo muta/mejora variantes
+6. CÃ³mo evita basura/hallucination
+7. CÃ³mo guarda memoria de candidatos
+8. CÃ³mo escala experimentos
 ```
 
-La pregunta TSIS sería:
+La pregunta TSIS serÃ­a:
 
 ```text
-¿Puedo construir un AlphaEvolve financiero donde:
+Â¿Puedo construir un AlphaEvolve financiero donde:
 
 LLM / agente
-    ↓
-genera estrategia o hipótesis
-    ↓
+    â†“
+genera estrategia o hipÃ³tesis
+    â†“
 TSIS Backtester / Evaluator
-    ↓
+    â†“
 fitness score
-    ↓
+    â†“
 evolution loop
-    ↓
+    â†“
 mejores estrategias sobreviven?
 ```
 
-Sí: pero antes necesitas evaluadores, backtesting reproducible, fitness robusto y control de overfitting.
+SÃ­: pero antes necesitas evaluadores, backtesting reproducible, fitness robusto y control de overfitting.
 
 [1]: https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/?utm_source=chatgpt.com "AlphaEvolve: A Gemini-powered coding agent for ..."
 [2]: https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/AlphaEvolve.pdf?utm_source=chatgpt.com "AlphaEvolve: A coding agent for scientific and algorithmic ..."
@@ -136,200 +151,200 @@ Sí: pero antes necesitas evaluadores, backtesting reproducible, fitness robusto
 
 #  Aplicando en Tsis
 
-Ahora ya no hablamos de “qué es AlphaEvolve”, sino de:
+Ahora ya no hablamos de â€œquÃ© es AlphaEvolveâ€, sino de:
 
 ```text
-¿Dónde se ha aplicado?
-¿Con qué patrón técnico?
-¿Cómo lo copiaríamos para TSIS?
+Â¿DÃ³nde se ha aplicado?
+Â¿Con quÃ© patrÃ³n tÃ©cnico?
+Â¿CÃ³mo lo copiarÃ­amos para TSIS?
 ```
 
 La clave es esta:
 
-> AlphaEvolve solo funciona bien cuando puedes convertir un problema en **código modificable + evaluador automático + métrica de fitness**.
+> AlphaEvolve solo funciona bien cuando puedes convertir un problema en **cÃ³digo modificable + evaluador automÃ¡tico + mÃ©trica de fitness**.
 
-DeepMind lo define como un agente evolutivo que usa LLMs para modificar código y recibe feedback continuo de uno o más evaluadores automáticos. 
+DeepMind lo define como un agente evolutivo que usa LLMs para modificar cÃ³digo y recibe feedback continuo de uno o mÃ¡s evaluadores automÃ¡ticos. 
 
 ---
 
 ## 1. Aplicaciones reales de AlphaEvolve
 
-### A. Matemáticas y computer science
+### A. MatemÃ¡ticas y computer science
 
-DeepMind lo aplicó a problemas matemáticos donde una solución puede expresarse como programa o construcción verificable. Por ejemplo, reportan nuevos resultados en multiplicación de matrices, packing, kissing numbers y otros problemas combinatorios. El repositorio oficial contiene notebooks para verificar las soluciones matemáticas publicadas, aunque aclara que **no contiene el código para ejecutar AlphaEvolve completo**.  ([GitHub][1])
+DeepMind lo aplicÃ³ a problemas matemÃ¡ticos donde una soluciÃ³n puede expresarse como programa o construcciÃ³n verificable. Por ejemplo, reportan nuevos resultados en multiplicaciÃ³n de matrices, packing, kissing numbers y otros problemas combinatorios. El repositorio oficial contiene notebooks para verificar las soluciones matemÃ¡ticas publicadas, aunque aclara que **no contiene el cÃ³digo para ejecutar AlphaEvolve completo**.  ([GitHub][1])
 
-Patrón técnico:
+PatrÃ³n tÃ©cnico:
 
 ```text
-Problema matemático
-↓
-Código candidato
-↓
+Problema matemÃ¡tico
+â†“
+CÃ³digo candidato
+â†“
 Evaluator verifica validez
-↓
+â†“
 Score mide calidad
-↓
-Evolución mejora candidatos
+â†“
+EvoluciÃ³n mejora candidatos
 ```
 
 Ejemplo TSIS equivalente:
 
 ```text
 Setup de trading
-↓
-Código candidato de estrategia
-↓
+â†“
+CÃ³digo candidato de estrategia
+â†“
 Backtester verifica reglas y costes
-↓
+â†“
 Fitness mide expectancy / robustness
-↓
-Evolución mejora filtros
+â†“
+EvoluciÃ³n mejora filtros
 ```
 
 ---
 
 ### B. Infraestructura de Google
 
-DeepMind reporta que AlphaEvolve optimizó componentes críticos de infraestructura: scheduling de datacenters, simplificación funcionalmente equivalente en diseño de circuitos de aceleradores, y aceleración del entrenamiento del LLM que usa el propio AlphaEvolve. 
+DeepMind reporta que AlphaEvolve optimizÃ³ componentes crÃ­ticos de infraestructura: scheduling de datacenters, simplificaciÃ³n funcionalmente equivalente en diseÃ±o de circuitos de aceleradores, y aceleraciÃ³n del entrenamiento del LLM que usa el propio AlphaEvolve. 
 
-Patrón técnico:
+PatrÃ³n tÃ©cnico:
 
 ```text
 Sistema existente
-↓
-Heurística/código modificable
-↓
-Benchmark automático
-↓
-Métrica: eficiencia, latencia, recursos, coste
-↓
-Nueva versión mejor
+â†“
+HeurÃ­stica/cÃ³digo modificable
+â†“
+Benchmark automÃ¡tico
+â†“
+MÃ©trica: eficiencia, latencia, recursos, coste
+â†“
+Nueva versiÃ³n mejor
 ```
 
 Ejemplo TSIS equivalente:
 
 ```text
 Universe Builder / Backtester existente
-↓
-Código optimizable
-↓
+â†“
+CÃ³digo optimizable
+â†“
 Benchmark reproducible
-↓
-Métrica: velocidad, memoria, exactitud
-↓
-Versión mejorada
+â†“
+MÃ©trica: velocidad, memoria, exactitud
+â†“
+VersiÃ³n mejorada
 ```
 
 ---
 
 ### C. Quantum circuits
 
-En 2026, DeepMind reportó aplicaciones en física cuántica: AlphaEvolve sugirió circuitos cuánticos con 10x menor error frente a baselines optimizados convencionalmente para simulaciones moleculares en Willow. ([Google DeepMind][2])
+En 2026, DeepMind reportÃ³ aplicaciones en fÃ­sica cuÃ¡ntica: AlphaEvolve sugiriÃ³ circuitos cuÃ¡nticos con 10x menor error frente a baselines optimizados convencionalmente para simulaciones moleculares en Willow. ([Google DeepMind][2])
 
-Patrón técnico:
+PatrÃ³n tÃ©cnico:
 
 ```text
 Circuito candidato
-↓
+â†“
 Simulador / hardware evaluator
-↓
-Métrica: error
-↓
-Evolución busca menor error
+â†“
+MÃ©trica: error
+â†“
+EvoluciÃ³n busca menor error
 ```
 
 Ejemplo TSIS equivalente:
 
 ```text
 Execution policy candidata
-↓
+â†“
 Simulador de fills/slippage
-↓
-Métrica: coste de ejecución / slippage / adverse selection
-↓
-Evolución mejora ejecución
+â†“
+MÃ©trica: coste de ejecuciÃ³n / slippage / adverse selection
+â†“
+EvoluciÃ³n mejora ejecuciÃ³n
 ```
 
 ---
 
-### D. Materiales, química y MLFF
+### D. Materiales, quÃ­mica y MLFF
 
-DeepMind reporta que Schrödinger aplicó AlphaEvolve para acelerar entrenamiento e inferencia de Machine Learned Force Fields, con alrededor de 4x speedup. ([Google DeepMind][2])
+DeepMind reporta que SchrÃ¶dinger aplicÃ³ AlphaEvolve para acelerar entrenamiento e inferencia de Machine Learned Force Fields, con alrededor de 4x speedup. ([Google DeepMind][2])
 
-Patrón técnico:
+PatrÃ³n tÃ©cnico:
 
 ```text
-Modelo/código científico
-↓
-Benchmark automático
-↓
-Métrica: velocidad + precisión
-↓
-Evolución de código/modelo
+Modelo/cÃ³digo cientÃ­fico
+â†“
+Benchmark automÃ¡tico
+â†“
+MÃ©trica: velocidad + precisiÃ³n
+â†“
+EvoluciÃ³n de cÃ³digo/modelo
 ```
 
 Ejemplo TSIS equivalente:
 
 ```text
 Feature pipeline / modelo ML
-↓
+â†“
 Benchmark walk-forward
-↓
-Métrica: precisión + estabilidad + coste
-↓
-Evolución de features/modelo
+â†“
+MÃ©trica: precisiÃ³n + estabilidad + coste
+â†“
+EvoluciÃ³n de features/modelo
 ```
 
 ---
 
 ### E. Marketing / modelos predictivos
 
-DeepMind también reporta que WPP usó AlphaEvolve para refinar componentes de modelos de IA en datos de campañas, con ganancias de precisión del 10% frente a optimización manual. ([Google DeepMind][2])
+DeepMind tambiÃ©n reporta que WPP usÃ³ AlphaEvolve para refinar componentes de modelos de IA en datos de campaÃ±as, con ganancias de precisiÃ³n del 10% frente a optimizaciÃ³n manual. ([Google DeepMind][2])
 
-Patrón técnico:
+PatrÃ³n tÃ©cnico:
 
 ```text
 Modelo predictivo
-↓
-Dataset histórico
-↓
+â†“
+Dataset histÃ³rico
+â†“
 Evaluator
-↓
-Métrica: accuracy / business metric
-↓
-Evolución de componentes
+â†“
+MÃ©trica: accuracy / business metric
+â†“
+EvoluciÃ³n de componentes
 ```
 
 Ejemplo TSIS equivalente:
 
 ```text
 Meta-labeling model
-↓
-Dataset histórico de setups
-↓
+â†“
+Dataset histÃ³rico de setups
+â†“
 Evaluator purged/walk-forward
-↓
-Métrica: precision, recall, expectancy, calibration
-↓
-Evolución de features/filtros/modelos
+â†“
+MÃ©trica: precision, recall, expectancy, calibration
+â†“
+EvoluciÃ³n de features/filtros/modelos
 ```
 
 ---
 
-## 2. Técnica paso a paso para aplicar AlphaEvolve
+## 2. TÃ©cnica paso a paso para aplicar AlphaEvolve
 
-### Paso 1 — Elegir un problema “evolucionable”
+### Paso 1 â€” Elegir un problema â€œevolucionableâ€
 
 No vale cualquier problema.
 
 Debe cumplir:
 
 ```text
-1. Se puede expresar en código
+1. Se puede expresar en cÃ³digo
 2. Se puede ejecutar muchas veces
-3. Se puede evaluar automáticamente
-4. Hay una métrica clara
-5. Una pequeña mejora importa
+3. Se puede evaluar automÃ¡ticamente
+4. Hay una mÃ©trica clara
+5. Una pequeÃ±a mejora importa
 ```
 
 Buenos problemas TSIS:
@@ -346,20 +361,20 @@ Buenos problemas TSIS:
 Malos problemas:
 
 ```text
-- “Encontrar el edge definitivo”
-- “Predecir el mercado”
-- “Hacerme rico”
+- â€œEncontrar el edge definitivoâ€
+- â€œPredecir el mercadoâ€
+- â€œHacerme ricoâ€
 ```
 
 ---
 
-### Paso 2 — Definir la representación del candidato
+### Paso 2 â€” Definir la representaciÃ³n del candidato
 
 AlphaEvolve no evoluciona ideas abstractas.
 
-Evoluciona código.
+Evoluciona cÃ³digo.
 
-En TSIS, un candidato podría ser:
+En TSIS, un candidato podrÃ­a ser:
 
 ```python
 def strategy_candidate(state):
@@ -388,9 +403,9 @@ def sizing_policy(state, confidence):
 
 ---
 
-### Paso 3 — Construir el evaluator
+### Paso 3 â€” Construir el evaluator
 
-Ésta es la parte más importante.
+Ã‰sta es la parte mÃ¡s importante.
 
 Sin evaluator no tienes AlphaEvolve.
 
@@ -412,7 +427,7 @@ purged CV
 +
 regime split
 +
-validación anti-overfitting
+validaciÃ³n anti-overfitting
 ```
 
 Debe devolver algo como:
@@ -431,13 +446,13 @@ Debe devolver algo como:
 
 ---
 
-### Paso 4 — Definir fitness function
+### Paso 4 â€” Definir fitness function
 
-Aquí decides qué significa “mejor”.
+AquÃ­ decides quÃ© significa â€œmejorâ€.
 
-No usaría solo PnL.
+No usarÃ­a solo PnL.
 
-Para TSIS usaría algo así:
+Para TSIS usarÃ­a algo asÃ­:
 
 ```text
 fitness =
@@ -451,20 +466,20 @@ expectancy_R
 - complexity_penalty
 ```
 
-La función fitness es tu brújula científica.
+La funciÃ³n fitness es tu brÃºjula cientÃ­fica.
 
-Si está mal, AlphaEvolve optimizará basura.
+Si estÃ¡ mal, AlphaEvolve optimizarÃ¡ basura.
 
 ---
 
-### Paso 5 — Crear el loop evolutivo
+### Paso 5 â€” Crear el loop evolutivo
 
-El ciclo sería:
+El ciclo serÃ­a:
 
 ```text
 1. Tomar mejores candidatos existentes
 2. LLM propone variaciones
-3. Ejecutar tests básicos
+3. Ejecutar tests bÃ¡sicos
 4. Ejecutar backtest
 5. Calcular fitness
 6. Guardar resultados
@@ -473,11 +488,11 @@ El ciclo sería:
 9. Repetir
 ```
 
-AlphaEvolve combina LLMs, evaluación automática y un marco evolutivo para mejorar candidatos prometedores. ([Google DeepMind][3])
+AlphaEvolve combina LLMs, evaluaciÃ³n automÃ¡tica y un marco evolutivo para mejorar candidatos prometedores. ([Google DeepMind][3])
 
 ---
 
-### Paso 6 — Archivo / memoria de candidatos
+### Paso 6 â€” Archivo / memoria de candidatos
 
 Necesitas una base de datos de candidatos:
 
@@ -497,15 +512,15 @@ created_at
 Esto permite saber:
 
 ```text
-de dónde viene cada estrategia
-qué mutación mejoró
-qué familia murió
-qué patrón se repite
+de dÃ³nde viene cada estrategia
+quÃ© mutaciÃ³n mejorÃ³
+quÃ© familia muriÃ³
+quÃ© patrÃ³n se repite
 ```
 
 ---
 
-### Paso 7 — Guardrails
+### Paso 7 â€” Guardrails
 
 Obligatorios en trading:
 
@@ -528,36 +543,36 @@ NO puede modificar el juez.
 
 ---
 
-### Paso 8 — Validación final humana
+### Paso 8 â€” ValidaciÃ³n final humana
 
 AlphaEvolve puede encontrar cosas.
 
 Pero TSIS debe preguntar:
 
 ```text
-¿Tiene sentido causal?
-¿Es robusto?
-¿Funciona fuera de muestra?
-¿Funciona en otro régimen?
-¿Es ejecutable en real?
-¿Sobrevive a costes reales?
+Â¿Tiene sentido causal?
+Â¿Es robusto?
+Â¿Funciona fuera de muestra?
+Â¿Funciona en otro rÃ©gimen?
+Â¿Es ejecutable en real?
+Â¿Sobrevive a costes reales?
 ```
 
-Aquí entran tus libros: microestructura, López de Prado, causalidad e invariantes.
+AquÃ­ entran tus libros: microestructura, LÃ³pez de Prado, causalidad e invariantes.
 
 ---
 
-## 3. Cómo lo aplicaría primero en TSIS
+## 3. CÃ³mo lo aplicarÃ­a primero en TSIS
 
-No empezaría con estrategias completas.
+No empezarÃ­a con estrategias completas.
 
-Empezaría con algo más pequeño.
+EmpezarÃ­a con algo mÃ¡s pequeÃ±o.
 
 ### Experimento 1: optimizar filtros de una estrategia conocida
 
 ```text
 Input:
-Gap&Go básico
+Gap&Go bÃ¡sico
 
 AlphaEvolve task:
 proponer variantes de filtros
@@ -584,7 +599,7 @@ Evaluator:
 modelo simple + purged CV
 
 Fitness:
-mejora de predicción + estabilidad
+mejora de predicciÃ³n + estabilidad
 ```
 
 ---
@@ -593,10 +608,10 @@ mejora de predicción + estabilidad
 
 ```text
 Input:
-señales ya decididas
+seÃ±ales ya decididas
 
 AlphaEvolve task:
-mejorar entrada/salida/tamaño
+mejorar entrada/salida/tamaÃ±o
 
 Evaluator:
 executor simulator
@@ -611,10 +626,10 @@ menor slippage + mejor R neta
 
 ```text
 Input:
-función lenta del backtester
+funciÃ³n lenta del backtester
 
 AlphaEvolve task:
-hacerla más rápida sin cambiar output
+hacerla mÃ¡s rÃ¡pida sin cambiar output
 
 Evaluator:
 unit tests + benchmark
@@ -623,11 +638,11 @@ Fitness:
 speedup manteniendo equivalencia
 ```
 
-Este último es el más seguro para empezar.
+Este Ãºltimo es el mÃ¡s seguro para empezar.
 
 ---
 
-## 4. Plantilla técnica para TSIS
+## 4. Plantilla tÃ©cnica para TSIS
 
 ```text
 ALPHAEVOLVE_TSIS_MINI_PROTOTYPE/
@@ -646,50 +661,51 @@ ALPHAEVOLVE_TSIS_MINI_PROTOTYPE/
 
 ## 5. La idea central
 
-AlphaEvolve no se “aplica” instalándolo.
+AlphaEvolve no se â€œaplicaâ€ instalÃ¡ndolo.
 
-Se aplica construyendo esta máquina:
+Se aplica construyendo esta mÃ¡quina:
 
 ```text
 Generador
-↓
+â†“
 Candidato
-↓
+â†“
 Evaluator
-↓
+â†“
 Fitness
-↓
+â†“
 Archivo
-↓
-Selección
-↓
-Nueva generación
+â†“
+SelecciÃ³n
+â†“
+Nueva generaciÃ³n
 ```
 
-Para TSIS, la versión seria sería:
+Para TSIS, la versiÃ³n seria serÃ­a:
 
 ```text
 LLM / Agent
-↓
+â†“
 Strategy / Feature / Policy Candidate
-↓
+â†“
 TSIS Backtester + Validator
-↓
+â†“
 Scientific Fitness
-↓
+â†“
 Candidate Archive
-↓
+â†“
 Evolution Engine
-↓
+â†“
 Better Hypotheses
 ```
 
-Y la frase clave para tu CTO sería:
+Y la frase clave para tu CTO serÃ­a:
 
 ```text
-AlphaEvolve es aplicable a TSIS solo cuando TSIS puede evaluar automáticamente una hipótesis de trading con suficiente rigor científico.
+AlphaEvolve es aplicable a TSIS solo cuando TSIS puede evaluar automÃ¡ticamente una hipÃ³tesis de trading con suficiente rigor cientÃ­fico.
 ```
 
-[1]: https://github.com/google-deepmind/alphaevolve_results "GitHub - google-deepmind/alphaevolve_results · GitHub"
-[2]: https://deepmind.google/blog/alphaevolve-impact/ "AlphaEvolve: Gemini-powered coding agent scaling impact across fields — Google DeepMind"
+[1]: https://github.com/google-deepmind/alphaevolve_results "GitHub - google-deepmind/alphaevolve_results Â· GitHub"
+[2]: https://deepmind.google/blog/alphaevolve-impact/ "AlphaEvolve: Gemini-powered coding agent scaling impact across fields â€” Google DeepMind"
 [3]: https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/?utm_source=chatgpt.com "AlphaEvolve: A Gemini-powered coding agent for ..."
+

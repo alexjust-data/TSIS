@@ -1,4 +1,4 @@
-# 01_TSIS_backtest_SmallCaps
+﻿# 01_TSIS_backtest_SmallCaps
 
 Modulo de research historico, certificacion de datos, formalizacion de estados de mercado y backtesting con ejecucion realista para TSIS.
 
@@ -155,7 +155,7 @@ Antes de cambiar algo en este modulo, leer en este orden:
 1. `C:\TSIS_Data\PROJECT_OPERATING_SYSTEM.md`
 2. `C:\TSIS_Data\PROJECT_RULES.md`
 3. `C:\TSIS_Data\VERSIONING_STANDARDS.md`
-4. `C:\TSIS_Data\ARCHITECTURE_OVERVIEW.md`
+4. `C:\TSIS_Data\00_CTO\TSIS_LAB_ARCHITECTURE_v3.md`
 5. `C:\TSIS_Data\RESEARCH_PHILOSOPHY.md`
 6. `AGENTS.md` local
 7. `LOCAL_RULES.md` local
@@ -244,3 +244,4 @@ la opcion correcta en esta fase es:
 ## Mandatory certification source reading
 
 - `01_foundations/module_contracts/auditoria_and_certification_source_hierarchy.md` when working any certified block (`daily`, `quotes`, `trades`).
+

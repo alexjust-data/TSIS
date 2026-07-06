@@ -53,6 +53,9 @@ C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/
 C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md
 C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_decision_timestamp_policy_v0_1.md
 C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_snapshot_roles_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
 C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/market_state_table_schema_contract.md
 C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/event_state_table_schema_contract.md
 C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/validators/outputs/market_state_table_validators.md
@@ -65,6 +68,8 @@ Evidencia operativa existente:
 C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/_state_fixture_builder.py
 C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_market_state_table.py
 C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_event_state_table.py
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_market_state_intraday_quote_guarded_candidate.py
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_market_state_intraday_quote_guarded_candidate_builder.py
 C:/TSIS_Data/01_TSIS_backtest_SmallCaps/configs/data_foundation_outputs/market_state_builder_fixture_v0_1.json
 C:/TSIS_Data/01_TSIS_backtest_SmallCaps/configs/data_foundation_outputs/event_state_builder_fixture_v0_1.json
 ```
@@ -76,6 +81,23 @@ los scripts actuales prueban fixture/candidate controlado;
 este contrato gobierna el siguiente builder general;
 ningun script actual convierte el output oficial en materializado/promovido.
 ```
+
+Evidencia ejecutable intradia 1m quote-guarded:
+
+```text
+script = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_market_state_intraday_quote_guarded_candidate.py
+test = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_market_state_intraday_quote_guarded_candidate_builder.py
+manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/market_state_intraday_quote_guarded_candidate_v0_1/_market_state_table_manifest_v0_1_candidate_intraday_quote_guarded_controlled.json
+status = controlled_candidate_not_promoted
+state_rows = 10835
+validator_status = passed
+full_universe_claim = false
+valid_for_ml_feature_candidate = false
+valid_for_rl_state_candidate = false
+execution_truth = false
+```
+
+Lectura correcta: este builder prueba consumo intradia controlado bajo `intraday__*`. No implementa el builder oficial general y no materializa `event_state_table`.
 
 ## 2. Objetivo Del Builder
 
@@ -117,6 +139,7 @@ componentes fuente
 -> contrato de formulas derivadas
 -> politica de decision timestamp
 -> contrato de roles de snapshot
+-> contrato de trazabilidad RAW -> consumo
 -> state builder config
 -> ensamblaje determinista
 -> validators de leakage/calidad/lineage
@@ -138,7 +161,7 @@ fitness/evaluator = capa posterior
 | --- | --- | --- | --- |
 | `contract_check_only` | comprobar que contratos requeridos existen y son coherentes | permitido | no |
 | `deterministic_fixture_only` | fixture pequeno bajo `tests/test_runs` | implementado | no |
-| `controlled_candidate` | muestra candidate controlada con manifest, sin promocion | implementado para microstructure/halt; ampliable | no |
+| `controlled_candidate` | muestra candidate controlada con manifest, sin promocion | implementado para microstructure/halt e intradia 1m quote-guarded | no |
 | `official_candidate` | candidato multi-componente mas rico contra outputs CAPA 1 | futuro | no, salvo path candidate explicito |
 | `official_promoted` | tabla institucional final | bloqueado | solo tras promotion barrier |
 
@@ -171,6 +194,8 @@ Campos minimos:
 | `derived_formula_contract` | si | formulas permitidas para derivadas |
 | `decision_timestamp_policy` | si | tipos de timestamp y cutoff |
 | `snapshot_roles_contract` | si | roles permitidos y reglas por rol |
+| `raw_to_consumption_lineage_contract` | si | contrato obligatorio de trazabilidad RAW -> consumo por componente |
+| `requires_raw_to_consumption_lineage` | si | debe ser `true` salvo fixture sintetico declarado |
 | `component_join_policy` | si | como se elige row as-of por componente |
 | `required_components` | si | componentes que bloquean si faltan |
 | `optional_components` | si | componentes que pueden quedar missing/review |
@@ -197,6 +222,8 @@ source_manifest_path
 source_build_run_id
 source_quality_state
 source_root_state
+raw_or_derived_authority_state
+raw_to_consumption_lineage_path
 as_of_column_or_policy
 join_keys
 required_or_optional
@@ -219,6 +246,32 @@ Componentes base actuales:
 | `short_constraints` | SSR/borrow/locate | blocked hasta fuente materializada |
 | `regime` | contexto regimen/session | optional con cutoff estricto |
 | `quality` | gates, coverage, lineage | required |
+
+
+## 6.1 Gate De Trazabilidad RAW -> Consumo
+
+Antes de ensamblar cualquier componente real, el builder debe comprobar el
+contrato:
+
+```text
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_contract_v0_1.md
+```
+
+Hard fail si un componente real no declara:
+
+```text
+fuente RAW o derivada con autoridad declarada;
+path de manifest/summary o ausencia explicita de manifest;
+builder/script/config que produjo la tabla;
+transformaciones literales y derivadas;
+cutoff/as-of;
+quality gates;
+consumo permitido;
+gaps abiertos.
+```
+
+Excepcion unica: fixtures sinteticos pueden no venir de RAW, pero deben marcarse
+como `fixture_only` y no pueden usarse como evidencia de mercado real.
 
 ## 7. Seleccion De Observables
 
@@ -610,8 +663,8 @@ No queda resuelto por este contrato:
 ```text
 1. implementar el builder general multi-componente
 2. crear market_state/event_state schema candidate nuevos
-3. crear fixtures controlados nuevos para todos los componentes
-4. implementar validators ejecutables de leakage/calidad/lineage
+3. crear fixtures controlados nuevos para todos los componentes; intradia 1m quote-guarded ya tiene fixture `market_state` controlado
+4. ampliar validators ejecutables de leakage/calidad/lineage; la ruta 1m quote-guarded ya tiene preflight, muestra, scoped candidate, E-root scoped candidate y fixture `market_state` intradia passed antes de permitir `intraday__*` en muestras reales
 5. materializar candidate multi-componente rico
 6. promocionar tablas oficiales
 7. construir outcomes separados
@@ -635,6 +688,7 @@ No queda resuelto por este contrato:
 | ensamblaje event_state definido | `done` |
 | manifest obligatorio definido | `done` |
 | validators del siguiente paso definidos | `done` |
+| fixture market_state intradia quote-guarded controlado | `done_controlled_not_official` |
 | relacion con candidatos existentes aclarada | `done` |
 | no materializa oficial ni habilita ML/RL/AlphaEvolve | `done` |
 

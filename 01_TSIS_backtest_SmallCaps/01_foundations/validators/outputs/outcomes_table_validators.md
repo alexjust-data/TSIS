@@ -115,3 +115,39 @@ coherent, source-linked and separated from pre-event features.
 
 It does not prove intraday execution realism, RL reward validity, or final
 market-state readiness.
+
+## 7. Extension Candidate Intradia 1m Quote-Guarded Controlada
+
+Validator scope adicional para el candidate controlado:
+
+```text
+dataset_id = outcomes_table_v0_1_candidate
+physical_dataset_id = outcomes_table_v0_1_candidate_intraday_1m_quote_guarded_controlled
+outcome_horizon = post_event_30m_intraday_1m
+price_view = 1m_quote_guarded_raw
+```
+
+Checks minimos:
+
+- artifact presence: parquet `data.parquet`, manifest y summary;
+- schema/conformidad: `schema_version = outcomes_table_v0_1_candidate_intraday_1m_quote_guarded`;
+- grain: sin duplicados por `event_window_id + outcome_horizon + price_view`;
+- source reconciliation: cada row viene de `post_event_30m` con `valid_for_outcome_window_candidate = true`;
+- reference rule: `reference_price` sale del `event_state` `at_event`;
+- outcome bars: solo barras `1m_quote_guarded_raw` con `window_start_utc <= ts_utc < window_end_utc`;
+- leakage: `contains_post_event_information=true` y `prohibited_as_pre_event_feature=true`;
+- gates: `valid_for_ml_label_candidate=false`, `valid_for_rl_reward_candidate=false`, `full_universe_claim=false`, `execution_truth=false`.
+
+Evidencia controlada 2026-07-05:
+
+```text
+outcome_rows = 5
+quality_counts = good_intraday_1m_outcome: 3, review_intraday_missing_bars: 2
+bars_expected_total = 150
+bars_observed_total = 134
+validator_status = passed
+```
+
+Passing este validator prueba separacion estructural X/y para el scope
+controlado. No prueba full-universe, labels ML, rewards RL, slippage, fills ni
+realismo de ejecucion.

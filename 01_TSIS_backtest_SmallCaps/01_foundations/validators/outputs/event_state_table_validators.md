@@ -140,3 +140,21 @@ label/outcome/reward inline prohibition, state cutoff legality, unique
 `event_state_id`, manifest presence and non-promotion flags. It does not
 promote the official table and does not allow direct ML/RL/backtest/execution
 use.
+
+## Evidencia 2026-07-05 - Event State Intradia Quote-Guarded Controlado
+
+```text
+script = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_event_state_intraday_quote_guarded_candidate.py
+dataset_path = C:/TSIS_Data/tests/test_runs/2026-07-05/event_state_intraday_1m_quote_guarded_controlled/event_state_table_v0_1_candidate_intraday_1m_quote_guarded_controlled/data.parquet
+manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/event_state_intraday_1m_quote_guarded_controlled/_event_state_table_v0_1_candidate_intraday_1m_quote_guarded_controlled_manifest.json
+joined_event_state_rows = 15
+event_count = 5
+state_role_counts = at_event: 5, post_event_review: 5, pre_event: 5
+validator_status = passed
+full_universe_claim_rows = 0
+valid_for_ml_feature_candidate_rows = 0
+valid_for_rl_state_candidate_rows = 0
+execution_truth_rows = 0
+```
+
+Lectura correcta: esta evidencia no promociona `event_state_table_v0_1` oficial. Es un candidato controlado intradia para pattern discovery y para construir outcomes separados.

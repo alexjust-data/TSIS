@@ -1,0 +1,482 @@
+{
+  "communities": {
+    "0": [
+      "tsis_artifact_materialize_event_state_intraday_quote_guarded_candidate",
+      "tsis_artifact_materialize_market_state_intraday_quote_guarded_candidate",
+      "tsis_candidate_dataset_market_state_table_v0_1_candidate_intraday_quote_guarded_controlled",
+      "tsis_candidate_dataset_master_intraday_bar_table_v0_2_candidate_quote_guarded",
+      "tsis_consumption_policy_event_state_table",
+      "tsis_consumption_policy_market_state_table",
+      "tsis_dataset_contract_event_state_table",
+      "tsis_dataset_contract_market_state_table",
+      "tsis_lineage_contract_state_raw_to_consumption_lineage_contract_v0_1",
+      "tsis_lineage_contract_state_raw_to_consumption_lineage_intraday_1m_event_state_controlled_v0_1",
+      "tsis_lineage_contract_state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1",
+      "tsis_module_contract_master_intraday_bar_table_quote_guarded_candidate_contract_v0_1",
+      "tsis_module_contract_state_builder_contract_v0_1",
+      "tsis_module_contract_state_canonical_vs_representation_layer_contract_v0_1",
+      "tsis_module_contract_state_decision_timestamp_policy_v0_1",
+      "tsis_module_contract_state_derived_observables_formula_contract_v0_1",
+      "tsis_module_contract_state_observable_eligibility_contract_v0_1",
+      "tsis_module_contract_state_snapshot_roles_contract_v0_1",
+      "tsis_registry_event_state_table",
+      "tsis_registry_market_state_table",
+      "tsis_schema_event_state_table",
+      "tsis_schema_market_state_table",
+      "tsis_table_event_state_table",
+      "tsis_table_market_state_table",
+      "tsis_validator_event_state_table",
+      "tsis_validator_market_state_table"
+    ],
+    "1": [
+      "tsis_contract_data_foundation_outputs_target",
+      "tsis_module_contract_daily_scanner_candidates_table_target_contract_v0_1",
+      "tsis_module_contract_daily_scanner_candidates_table_target_contract_v0_2",
+      "tsis_module_contract_daily_scanner_candidates_table_target_contract_v0_3",
+      "tsis_module_contract_data_foundation_outputs_status_matrix_v0_1",
+      "tsis_module_contract_data_foundation_outputs_target_contract_v0_1",
+      "tsis_module_contract_event_research_design_contract_v0_1",
+      "tsis_module_contract_intraday_scanner_candidates_table_target_contract_v0_1",
+      "tsis_module_contract_intraday_scanner_framework_and_definitions_contract_v0_1",
+      "tsis_module_contract_market_state_coverage_and_lookback_policy_v0_1",
+      "tsis_module_contract_market_state_event_state_build_loop_runbook_v0_1",
+      "tsis_module_contract_market_state_event_state_composition_contract_v0_1",
+      "tsis_module_contract_master_intraday_bar_table_wider_scope_materialization_plan_v0_1",
+      "tsis_module_contract_microstructure_features_table_multi_window_materialization_plan_v0_1",
+      "tsis_module_contract_scanner_framework_and_definitions_contract_v0_1",
+      "tsis_module_contract_scanner_framework_and_definitions_contract_v0_2",
+      "tsis_module_contract_scanner_framework_and_definitions_contract_v0_3",
+      "tsis_module_contract_short_sale_constraints_data_acquisition_runbook_v0_1",
+      "tsis_module_contract_short_sale_constraints_table_target_contract_v0_1",
+      "tsis_module_contract_state_raw_to_consumption_lineage_contract_v0_1",
+      "tsis_module_contract_state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1",
+      "tsis_module_contract_state_raw_to_consumption_lineage_intraday_1m_event_state_controlled_v0_1",
+      "tsis_module_contract_state_raw_to_consumption_lineage_intraday_1m_event_windows_controlled_v0_1",
+      "tsis_module_contract_state_raw_to_consumption_lineage_intraday_1m_outcomes_controlled_v0_1",
+      "tsis_module_contract_state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1"
+    ],
+    "2": [
+      "tsis_artifact_materialize_intraday_1m_strategy_candidate_events_from_master_intraday_quote_guarded",
+      "tsis_artifact_materialize_strategy_candidate_events_table",
+      "tsis_artifact_validate_event_candidate_tables",
+      "tsis_filesystem_data_foundation_outputs_root",
+      "tsis_module_contract_event_candidate_table_validators_contract_v0_1",
+      "tsis_module_contract_event_candidate_tables_contract_v0_1",
+      "tsis_output_path_daily_strategy_candidate_events_table",
+      "tsis_output_path_event_state_table",
+      "tsis_output_path_event_windows_table",
+      "tsis_output_path_intraday_1m_strategy_candidate_events_table",
+      "tsis_output_path_market_state_table",
+      "tsis_schema_daily_strategy_candidate_events_table",
+      "tsis_schema_intraday_1m_strategy_candidate_events_table",
+      "tsis_table_daily_strategy_candidate_events_table",
+      "tsis_table_intraday_1m_strategy_candidate_events_table"
+    ],
+    "3": [
+      "tsis_artifact_materialize_intraday_1m_event_outcomes_candidate",
+      "tsis_candidate_dataset_event_state_table_v0_1_candidate_intraday_1m_quote_guarded_controlled",
+      "tsis_candidate_dataset_event_windows_table_v0_1_candidate_intraday_1m_quote_guarded",
+      "tsis_candidate_dataset_intraday_1m_strategy_candidate_events_table_v0_1_candidate_quote_guarded",
+      "tsis_candidate_dataset_outcomes_table_v0_1_candidate_intraday_1m_quote_guarded_controlled",
+      "tsis_consumption_policy_outcomes_table",
+      "tsis_dataset_contract_outcomes_table",
+      "tsis_lineage_contract_state_raw_to_consumption_lineage_intraday_1m_outcomes_controlled_v0_1",
+      "tsis_output_path_outcomes_table",
+      "tsis_registry_outcomes_table",
+      "tsis_schema_outcomes_table",
+      "tsis_table_outcomes_table",
+      "tsis_validator_outcomes_table"
+    ],
+    "4": [
+      "tsis_artifact_materialize_daily_strategy_event_windows_candidate",
+      "tsis_artifact_materialize_intraday_1m_strategy_event_windows_candidate",
+      "tsis_candidate_dataset_daily_strategy_candidate_events_table_v0_1_candidate_controlled",
+      "tsis_candidate_dataset_event_windows_table_v0_1_candidate_daily_strategy_events",
+      "tsis_consumption_policy_event_windows_table",
+      "tsis_dataset_contract_event_windows_table",
+      "tsis_lineage_contract_state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1",
+      "tsis_lineage_contract_state_raw_to_consumption_lineage_intraday_1m_event_windows_controlled_v0_1",
+      "tsis_registry_event_windows_table",
+      "tsis_schema_event_windows_table",
+      "tsis_table_event_windows_table",
+      "tsis_validator_event_windows_table"
+    ],
+    "5": [
+      "tsis_artifact_materialize_master_intraday_quote_guarded_candidate_sample",
+      "tsis_artifact_materialize_master_intraday_quote_guarded_candidate_scoped",
+      "tsis_artifact_preflight_master_intraday_quote_guarded_candidate",
+      "tsis_consumption_policy_master_intraday_bar_table",
+      "tsis_dataset_contract_master_intraday_bar_table",
+      "tsis_output_path_master_intraday_bar_table",
+      "tsis_registry_master_intraday_bar_table",
+      "tsis_schema_master_intraday_bar_table",
+      "tsis_table_master_intraday_bar_table",
+      "tsis_validator_master_intraday_bar_table"
+    ],
+    "6": [
+      "tsis_consumption_policy_short_context_table",
+      "tsis_contract_data_foundation_outputs_status",
+      "tsis_dataset_contract_short_context_table",
+      "tsis_output_path_short_context_table",
+      "tsis_output_path_short_sale_constraints_table",
+      "tsis_registry_short_context_table",
+      "tsis_schema_short_context_table",
+      "tsis_table_short_context_table",
+      "tsis_table_short_sale_constraints_table",
+      "tsis_validator_short_context_table"
+    ],
+    "7": [
+      "tsis_consumption_policy_corporate_actions_table",
+      "tsis_dataset_contract_corporate_actions_table",
+      "tsis_output_path_corporate_actions_table",
+      "tsis_registry_corporate_actions_table",
+      "tsis_schema_corporate_actions_table",
+      "tsis_table_corporate_actions_table",
+      "tsis_validator_corporate_actions_table"
+    ],
+    "8": [
+      "tsis_consumption_policy_dataset_certification_matrix",
+      "tsis_dataset_contract_dataset_certification_matrix",
+      "tsis_output_path_dataset_certification_matrix",
+      "tsis_registry_dataset_certification_matrix",
+      "tsis_schema_dataset_certification_matrix",
+      "tsis_table_dataset_certification_matrix",
+      "tsis_validator_dataset_certification_matrix"
+    ],
+    "9": [
+      "tsis_consumption_policy_expected_data_calendar",
+      "tsis_dataset_contract_expected_data_calendar",
+      "tsis_output_path_expected_data_calendar",
+      "tsis_registry_expected_data_calendar",
+      "tsis_schema_expected_data_calendar",
+      "tsis_table_expected_data_calendar",
+      "tsis_validator_expected_data_calendar"
+    ],
+    "10": [
+      "tsis_consumption_policy_fundamentals_asof_table",
+      "tsis_dataset_contract_fundamentals_asof_table",
+      "tsis_output_path_fundamentals_asof_table",
+      "tsis_registry_fundamentals_asof_table",
+      "tsis_schema_fundamentals_asof_table",
+      "tsis_table_fundamentals_asof_table",
+      "tsis_validator_fundamentals_asof_table"
+    ],
+    "11": [
+      "tsis_consumption_policy_halts_table",
+      "tsis_dataset_contract_halts_table",
+      "tsis_output_path_halts_table",
+      "tsis_registry_halts_table",
+      "tsis_schema_halts_table",
+      "tsis_table_halts_table",
+      "tsis_validator_halts_table"
+    ],
+    "12": [
+      "tsis_consumption_policy_instrument_master",
+      "tsis_dataset_contract_instrument_master",
+      "tsis_output_path_instrument_master",
+      "tsis_registry_instrument_master",
+      "tsis_schema_instrument_master",
+      "tsis_table_instrument_master",
+      "tsis_validator_instrument_master"
+    ],
+    "13": [
+      "tsis_consumption_policy_market_calendar",
+      "tsis_dataset_contract_market_calendar",
+      "tsis_output_path_market_calendar",
+      "tsis_registry_market_calendar",
+      "tsis_schema_market_calendar",
+      "tsis_table_market_calendar",
+      "tsis_validator_market_calendar"
+    ],
+    "14": [
+      "tsis_consumption_policy_master_daily_table",
+      "tsis_dataset_contract_master_daily_table",
+      "tsis_output_path_master_daily_table",
+      "tsis_registry_master_daily_table",
+      "tsis_schema_master_daily_table",
+      "tsis_table_master_daily_table",
+      "tsis_validator_master_daily_table"
+    ],
+    "15": [
+      "tsis_consumption_policy_microstructure_features_table",
+      "tsis_dataset_contract_microstructure_features_table",
+      "tsis_output_path_microstructure_features_table",
+      "tsis_registry_microstructure_features_table",
+      "tsis_schema_microstructure_features_table",
+      "tsis_table_microstructure_features_table",
+      "tsis_validator_microstructure_features_table"
+    ],
+    "16": [
+      "tsis_consumption_policy_news_context_table",
+      "tsis_dataset_contract_news_context_table",
+      "tsis_output_path_news_context_table",
+      "tsis_registry_news_context_table",
+      "tsis_schema_news_context_table",
+      "tsis_table_news_context_table",
+      "tsis_validator_news_context_table"
+    ],
+    "17": [
+      "tsis_consumption_policy_regime_context_table",
+      "tsis_dataset_contract_regime_context_table",
+      "tsis_output_path_regime_context_table",
+      "tsis_registry_regime_context_table",
+      "tsis_schema_regime_context_table",
+      "tsis_table_regime_context_table",
+      "tsis_validator_regime_context_table"
+    ],
+    "18": [
+      "tsis_artifact_master_intraday_bar_table_quote_guarded_candidate_v0_2"
+    ],
+    "19": [
+      "tsis_artifact_materialize_daily_scanner_candidates_table"
+    ],
+    "20": [
+      "tsis_artifact_materialize_daily_scanner_candidates_table_v0_2"
+    ],
+    "21": [
+      "tsis_artifact_materialize_daily_scanner_candidates_table_v0_3"
+    ],
+    "22": [
+      "tsis_artifact_materialize_intraday_scanner_candidates_table_v0_1"
+    ],
+    "23": [
+      "tsis_artifact_test_daily_scanner_candidates_table_builder"
+    ],
+    "24": [
+      "tsis_artifact_test_daily_scanner_candidates_table_builder_v0_2"
+    ],
+    "25": [
+      "tsis_artifact_test_daily_scanner_candidates_table_builder_v0_3"
+    ],
+    "26": [
+      "tsis_artifact_test_daily_strategy_event_windows_candidate_builder"
+    ],
+    "27": [
+      "tsis_artifact_test_event_candidate_table_validators"
+    ],
+    "28": [
+      "tsis_artifact_test_event_state_intraday_quote_guarded_candidate_builder"
+    ],
+    "29": [
+      "tsis_artifact_test_intraday_1m_event_outcomes_candidate_builder"
+    ],
+    "30": [
+      "tsis_artifact_test_intraday_1m_strategy_candidate_events_from_master_intraday_qg"
+    ],
+    "31": [
+      "tsis_artifact_test_intraday_1m_strategy_event_windows_candidate_builder"
+    ],
+    "32": [
+      "tsis_artifact_test_intraday_scanner_candidates_table_builder_v0_1"
+    ],
+    "33": [
+      "tsis_artifact_test_market_state_intraday_quote_guarded_candidate_builder"
+    ],
+    "34": [
+      "tsis_artifact_test_master_intraday_quote_guarded_candidate_contract"
+    ],
+    "35": [
+      "tsis_artifact_test_master_intraday_quote_guarded_candidate_sample_builder"
+    ],
+    "36": [
+      "tsis_artifact_test_master_intraday_quote_guarded_candidate_scoped_builder"
+    ],
+    "37": [
+      "tsis_artifact_test_microstructure_candidate_window_manifest"
+    ],
+    "38": [
+      "tsis_artifact_test_microstructure_features_controlled_candidate"
+    ],
+    "39": [
+      "tsis_artifact_test_strategy_candidate_events_table_builder"
+    ]
+  },
+  "cohesion": {
+    "0": 0.10461538461538461,
+    "1": 0.08,
+    "2": 0.1619047619047619,
+    "3": 0.15384615384615385,
+    "4": 0.16666666666666666,
+    "5": 0.2,
+    "6": 0.2,
+    "7": 0.2857142857142857,
+    "8": 0.2857142857142857,
+    "9": 0.2857142857142857,
+    "10": 0.2857142857142857,
+    "11": 0.2857142857142857,
+    "12": 0.2857142857142857,
+    "13": 0.2857142857142857,
+    "14": 0.2857142857142857,
+    "15": 0.2857142857142857,
+    "16": 0.2857142857142857,
+    "17": 0.2857142857142857,
+    "18": 1.0,
+    "19": 1.0,
+    "20": 1.0,
+    "21": 1.0,
+    "22": 1.0,
+    "23": 1.0,
+    "24": 1.0,
+    "25": 1.0,
+    "26": 1.0,
+    "27": 1.0,
+    "28": 1.0,
+    "29": 1.0,
+    "30": 1.0,
+    "31": 1.0,
+    "32": 1.0,
+    "33": 1.0,
+    "34": 1.0,
+    "35": 1.0,
+    "36": 1.0,
+    "37": 1.0,
+    "38": 1.0,
+    "39": 1.0
+  },
+  "gods": [
+    {
+      "id": "tsis_contract_data_foundation_outputs_target",
+      "label": "Data Foundation Outputs Target",
+      "degree": 53
+    },
+    {
+      "id": "tsis_table_event_state_table",
+      "label": "event_state_table",
+      "degree": 22
+    },
+    {
+      "id": "tsis_table_market_state_table",
+      "label": "market_state_table",
+      "degree": 22
+    },
+    {
+      "id": "tsis_contract_data_foundation_outputs_status",
+      "label": "Data Foundation Outputs Status Matrix",
+      "degree": 20
+    },
+    {
+      "id": "tsis_filesystem_data_foundation_outputs_root",
+      "label": "E:/TSIS/data/data_foundation_outputs",
+      "degree": 20
+    },
+    {
+      "id": "tsis_table_event_windows_table",
+      "label": "event_windows_table",
+      "degree": 14
+    },
+    {
+      "id": "tsis_table_master_intraday_bar_table",
+      "label": "master_intraday_bar_table",
+      "degree": 12
+    },
+    {
+      "id": "tsis_table_outcomes_table",
+      "label": "outcomes_table",
+      "degree": 11
+    },
+    {
+      "id": "tsis_table_daily_strategy_candidate_events_table",
+      "label": "daily_strategy_candidate_events_table",
+      "degree": 9
+    },
+    {
+      "id": "tsis_table_intraday_1m_strategy_candidate_events_table",
+      "label": "intraday_1m_strategy_candidate_events_table",
+      "degree": 9
+    }
+  ],
+  "surprises": [
+    {
+      "source": "materialize_master_intraday_quote_guarded_candidate_sample",
+      "target": "master_intraday_bar_table",
+      "source_files": [
+        "01_TSIS_backtest_SmallCaps/scripts/materialize_master_intraday_quote_guarded_candidate_sample.py",
+        "01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "builds_or_validates",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc ↔ code); peripheral node `materialize_master_intraday_quote_guarded_candidate_sample` unexpectedly reaches hub `master_intraday_bar_table`"
+    },
+    {
+      "source": "materialize_master_intraday_quote_guarded_candidate_scoped",
+      "target": "master_intraday_bar_table",
+      "source_files": [
+        "01_TSIS_backtest_SmallCaps/scripts/materialize_master_intraday_quote_guarded_candidate_scoped.py",
+        "01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "builds_or_validates",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc ↔ code); peripheral node `materialize_master_intraday_quote_guarded_candidate_scoped` unexpectedly reaches hub `master_intraday_bar_table`"
+    },
+    {
+      "source": "preflight_master_intraday_quote_guarded_candidate",
+      "target": "master_intraday_bar_table",
+      "source_files": [
+        "01_TSIS_backtest_SmallCaps/scripts/preflight_master_intraday_quote_guarded_candidate.py",
+        "01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "builds_or_validates",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc ↔ code); peripheral node `preflight_master_intraday_quote_guarded_candidate` unexpectedly reaches hub `master_intraday_bar_table`"
+    },
+    {
+      "source": "materialize_strategy_candidate_events_table",
+      "target": "daily_strategy_candidate_events_table",
+      "source_files": [
+        "01_TSIS_backtest_SmallCaps/scripts/materialize_strategy_candidate_events_table.py",
+        "01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "builds_or_validates",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc ↔ code); peripheral node `materialize_strategy_candidate_events_table` unexpectedly reaches hub `daily_strategy_candidate_events_table`"
+    },
+    {
+      "source": "validate_event_candidate_tables",
+      "target": "daily_strategy_candidate_events_table",
+      "source_files": [
+        "01_TSIS_backtest_SmallCaps/scripts/validate_event_candidate_tables.py",
+        "01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "builds_or_validates",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc ↔ code); peripheral node `validate_event_candidate_tables` unexpectedly reaches hub `daily_strategy_candidate_events_table`"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `Data Foundation Outputs Target` connect `Quote Guarded Intraday` to `Quote Guarded Intraday`, `Quote Guarded Intraday`, `Quote Guarded Intraday`, `Quote Guarded Intraday`, `Quote Guarded Intraday`, `Validation Stack`, `Validation Stack`, `Validation Stack`, `Validation Stack`, `Validation Stack`, `Validation Stack`, `Validation Stack`, `Validation Stack`, `Validation Stack`, `Validation Stack`, `Validation Stack`, `Validation Stack`?",
+      "why": "High betweenness centrality (0.465) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Data Foundation Outputs Status Matrix` connect `Validation Stack` to `Quote Guarded Intraday`, `Quote Guarded Intraday`, `Quote Guarded Intraday`, `Quote Guarded Intraday`, `Quote Guarded Intraday`, `Validation Stack`, `Validation Stack`, `Validation Stack`, `Validation Stack`, `Validation Stack`, `Validation Stack`, `Validation Stack`, `Validation Stack`, `Validation Stack`, `Validation Stack`, `Validation Stack`?",
+      "why": "High betweenness centrality (0.216) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `event_windows_table` connect `Quote Guarded Intraday` to `Quote Guarded Intraday`, `Quote Guarded Intraday`, `Quote Guarded Intraday`, `Validation Stack`?",
+      "why": "High betweenness centrality (0.084) - this node is a cross-community bridge."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 14 inferred relationships involving `event_state_table` (e.g. with `materialize_event_state_intraday_quote_guarded_candidate` and `Event State Intraday Quote-Guarded Candidate`) actually correct?",
+      "why": "`event_state_table` has 14 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 14 inferred relationships involving `market_state_table` (e.g. with `materialize_market_state_intraday_quote_guarded_candidate` and `Market State Intraday Quote-Guarded Candidate`) actually correct?",
+      "why": "`market_state_table` has 14 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 20 inferred relationships involving `E:/TSIS/data/data_foundation_outputs` (e.g. with `E:/TSIS/data/data_foundation_outputs/corporate_actions_table` and `E:/TSIS/data/data_foundation_outputs/daily_strategy_candidate_events_table`) actually correct?",
+      "why": "`E:/TSIS/data/data_foundation_outputs` has 20 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `instrument_master schema`, `instrument_master dataset_contract`, `instrument_master registry` to the rest of the system?",
+      "why": "143 weakly-connected nodes found - possible documentation gaps or missing edges."
+    }
+  ]
+}

@@ -68,3 +68,21 @@ candidate_state:
   inherits_quotes_root_state: provisional_d_legacy_recovery_root_pending_e_parity
   requires_rebuild_after_e_quotes_parity: true
   direct_ml_rl_backtest_execution_use_allowed: false
+
+additional_candidate_states:
+  - dataset_id: market_state_table_v0_1_candidate
+    status: controlled_candidate_not_promoted
+    materialization_scope: intraday_quote_guarded_scoped_candidate
+    dataset: C:/TSIS_Data/tests/test_runs/2026-07-05/market_state_intraday_quote_guarded_candidate_v0_1/market_state_table_v0_1_candidate_intraday_quote_guarded_controlled
+    manifest: C:/TSIS_Data/tests/test_runs/2026-07-05/market_state_intraday_quote_guarded_candidate_v0_1/_market_state_table_manifest_v0_1_candidate_intraday_quote_guarded_controlled.json
+    summary: C:/TSIS_Data/tests/test_runs/2026-07-05/market_state_intraday_quote_guarded_candidate_v0_1/_market_state_table_summary_v0_1_candidate_intraday_quote_guarded_controlled.csv
+    build_run_id: market_state_intraday_quote_guarded_candidate_20260705T062442Z
+    rows: 10835
+    tickers: 3
+    full_universe_claim: false
+    valid_for_event_context_candidate_rows: 0
+    valid_for_ml_feature_candidate_rows: 0
+    valid_for_rl_state_candidate_rows: 0
+    execution_truth_rows: 0
+    validator_status: passed
+    direct_ml_rl_backtest_execution_use_allowed: false

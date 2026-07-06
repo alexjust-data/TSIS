@@ -1,24 +1,61 @@
 ﻿# Filosofía de Investigación de TSIS
 
+Fecha de alineacion v3: 2026-07-05
+Estado: sintesis_raiz_alineada_con_scientific_discovery_engine
+
+## Rol De Este Documento Raiz
+
+Este documento es la síntesis raíz de la filosofía de investigación de TSIS.
+
+No sustituye a la biblioteca extendida:
+
+```text
+C:/TSIS_Data/00_CTO/01_RESEARCH_PHILOSOPHY/
+```
+
+La relación correcta es:
+
+```text
+RESEARCH_PHILOSOPHY.md
+= manifiesto raíz, estable, lectura inicial
+
+00_CTO/01_RESEARCH_PHILOSOPHY/
+= desarrollo profundo por temas, contratos filosóficos y notas CTO
+```
+
+La tesis vigente desde 2026-07-05 es:
+
+```text
+TSIS = Scientific Discovery Engine
+```
+
+El objetivo no es automatizar una estrategia discrecional ni buscar una curva bonita. El objetivo es producir conocimiento científico validado sobre fenómenos de mercado y convertirlo, cuando proceda, en componentes operativos.
+
 ## 1. Qué estamos construyendo
 
 TSIS no es un backtester aislado, ni una colección de setups discrecionales convertidos en scripts, ni un experimento de machine learning sobre velas.
 
-TSIS es un sistema propietario de investigación, representación, validación y decisión sobre el mercado de microcaps y small caps, construido para transformar datos históricos y datos live en estados de mercado útiles, explicables y operativamente explotables.
+TSIS es un Scientific Discovery Engine propietario para microcaps y small caps: un sistema de investigación, representación, validación y decisión diseñado para transformar datos históricos y live en experimentos reproducibles, evidencia, conocimiento validado y componentes operativos.
 
 El objetivo no es simplemente encontrar setups que ganen dinero.
 El objetivo es identificar dinámicas reales, invariantes y explotables del mercado, y convertirlas en decisiones robustas bajo incertidumbre.
 
-La ambición del proyecto se despliega en tres capas conectadas:
+La ambición del proyecto se despliega en capas conectadas:
 
-1. `01_TSIS_backtest_SmallCaps`
-   Investigación, auditoría, simulación, edge estadístico y arquitectura de backtesting.
-2. `02_TSIS_webSocket_SmallCaps`
-   Captura live, features en tiempo real, event engine, signal routing, execution bridge y monitorización de riesgo.
-3. `03_TSIS_Offline_RL`
+1. `00_CTO`
+   Filosofía, arquitectura, mapas, autoridad y gobierno.
+2. `00_TSIS_Lab`
+   Laboratorio operativo transversal de `research_experiments`, evidencia, validación y knowledge objects.
+3. `01_TSIS_backtest_SmallCaps`
+   Data Foundation, investigación histórica, event discovery, feature engine, backtest clásico y strategy research.
+4. `02_TSIS_webSocket_SmallCaps`
+   Captura live, event-driven operation, signal routing, execution bridge y monitorización de riesgo.
+5. `03_TSIS_Offline_RL`
    Aprendizaje secuencial, behavioral cloning, offline RL, evaluación de políticas y candidatos de despliegue.
+6. `10_AUTONOMOUS_RESEARCH_SYSTEMS / AlphaEvolve`
+   Generadores de candidate research experiments, nunca autoridad de validación.
 
-TSIS debe entenderse como un stack cuantitativo completo, no como un script de señales.
+TSIS debe entenderse como un laboratorio científico cuantitativo completo, no como un script de señales.
 
 ---
 
@@ -150,6 +187,33 @@ Cada setup debe entenderse como una transición secuencial de estados de mercado
 
 ---
 
+### 4.4. Los eventos se descubren, no se asumen
+
+TSIS no debe confundir una herramienta de muestreo con una verdad de mercado.
+
+Ejemplos como:
+
+```text
+move >= 50%
+pre_event_30m
+post_event_30m
+scanner discrecional diario
+```
+
+pueden ser útiles como seeds, probes o ventanas iniciales, pero no son eventos validados por existir en un notebook o por venir de experiencia humana.
+
+La secuencia científica correcta es:
+
+```text
+sampling_probe
+-> parameter_sweep
+-> evidence
+-> candidate_event_family
+-> validated_event_definition, solo si sobrevive a validacion
+```
+
+Esto permite usar intuición humana sin convertirla en dogma, y permite a AlphaEvolve proponer variantes sin aceptar automáticamente sus resultados.
+
 ## 5. Qué creemos sobre edge
 
 ### 5.1. Edge no es una curva bonita
@@ -250,6 +314,34 @@ No buscamos “muchas features”.
 Buscamos estados con significado operativo.
 
 ---
+
+### 6.3. Canonical state vs representation layer
+
+La arquitectura v3 separa dos capas que no deben mezclarse:
+
+```text
+Canonical State
+= fotografia legal del mundo observable en t
+
+Representation Layer
+= interpretaciones, embeddings, estados semanticos, factores candidatos o transformaciones aprendidas
+```
+
+El `canonical state` debe cambiar lentamente. Debe contener observables legales, trazables y reproducibles.
+
+La `representation layer` puede evolucionar más rápido. Ahí pueden vivir candidatos como:
+
+```text
+attention
+liquidity_stress
+book_fragility
+crowding
+momentum_regime
+state embeddings
+transition candidates
+```
+
+AlphaEvolve, ML o investigación humana pueden proponer representaciones candidatas, pero no deben contaminar la tabla base de estado con semántica no validada.
 
 ## 7. Qué creemos sobre ML y RL
 
@@ -421,6 +513,56 @@ candidate policy, no como verdad institucional.
 
 ---
 
+### 9.5. Research experiment como unidad científica
+
+Desde la arquitectura v3, la unidad mínima de investigación reproducible es:
+
+```text
+research_experiment
+```
+
+Un experimento debe declarar:
+
+```text
+research_question
+hypothesis
+input_state_version
+outcome_version
+probe
+parameter_grid
+windows
+metrics
+baselines
+execution_protocol
+validation_pipeline
+promotion_rules
+lineage
+```
+
+Esto evita que TSIS se convierta en una colección de scripts o notebooks con resultados interesantes pero irreproducibles.
+
+### 9.6. Humano y AlphaEvolve bajo el mismo protocolo
+
+Un humano y AlphaEvolve pueden proponer candidatos.
+
+Ninguno puede aceptar conocimiento por autoridad propia.
+
+```text
+human_researcher -> candidate research experiment
+alphaevolve -> candidate research experiment
+```
+
+Ambos pasan por:
+
+```text
+same experiment object
+same execution protocol
+same evidence format
+same scientific validation pipeline
+```
+
+AlphaEvolve no es la meta final. Es un generador posible dentro del laboratorio.
+
 ## 10. Limitaciones de TSIS
 
 TSIS reconoce explícitamente que:
@@ -522,7 +664,7 @@ Deben recorrer un pipeline de promoción.
 
 La ruta canónica es:
 
-`idea -> exploratory research -> event formalization -> execution-aware simulation -> robustness testing -> walk-forward validation -> promotion candidate -> paper trading -> restricted live deployment -> monitored production`
+`research_question -> research_experiment -> execution -> evidence -> scientific_validation -> knowledge_object -> validated_knowledge -> operational_component_candidate -> backtest/paper/shadow/live segun corresponda`
 
 En cada etapa, una hipótesis debe justificar su continuidad mediante:
 
@@ -538,6 +680,14 @@ No la concede un notebook con buen resultado.
 ---
 
 ## 15. Principios operativos no negociables
+
+Principio v3 adicional:
+
+- No confundir `sampling_probe` con evento validado.
+- No confundir `research_experiment` con estrategia.
+- No confundir `evidence_report` con conocimiento validado.
+- No confundir `representation_candidate` con canonical state.
+- No confundir AlphaEvolve con autoridad científica.
 
 - No confundir datos disponibles con datos utilizables.
 - No confundir correlación con mecanismo.
@@ -564,3 +714,11 @@ La pregunta maestra es:
 TSIS existe para responder esa pregunta mejor que un gráfico, mejor que una intuición aislada y mejor que un backtest ingenuo.
 
 Ese es el estándar.
+
+
+
+
+
+
+
+

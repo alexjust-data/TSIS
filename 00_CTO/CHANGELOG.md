@@ -1,4 +1,24 @@
-﻿# 00_CTO Changelog
+﻿- 2026-07-05: eliminado el overview raiz obsoleto y actualizadas referencias activas para que la arquitectura oficial apunte a `TSIS_LAB_ARCHITECTURE_v3.md`; `00_TSIS_Lab` y `research_experiment` quedan reflejados en los documentos operativos raiz.- 2026-07-05: alineados los documentos raiz `PROJECT_OPERATING_SYSTEM.md`, `RESEARCH_PHILOSOPHY.md` y `VERSIONING_STANDARDS.md` con `TSIS_LAB_ARCHITECTURE_v3.md`; quedan integrados `00_TSIS_Lab`, `research_experiment`, evidence/knowledge promotion y AlphaEvolve como generador subordinado al Scientific Validation Pipeline.
+- 2026-07-05: actualizada la capa `10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve` para subordinar AlphaEvolve a `TSIS_LAB_ARCHITECTURE_v3`: AlphaEvolve queda definido como generador de `candidate research experiments`, no como centro de TSIS ni autoridad de validacion; se crea `02_ALPHAEVOLVE_AS_RESEARCH_EXPERIMENT_GENERATOR_v0_1.md`.
+- 2026-07-05: archivados `TSIS_LAB_ARCHITECTURE.md`, `TSIS_LAB_ARCHITECTURE_v2.md` y `00_CTO_REFACTOR_PLAN.md` en `_archive/superseded_architecture_2026_07_05/`; las lecturas operativas se actualizaron para usar `TSIS_LAB_ARCHITECTURE_v3.md` como unica arquitectura CTO vigente.
+- 2026-07-05: se crea `TSIS_LAB_ARCHITECTURE_v3.md` como lectura CTO vigente; v3 reclasifica `market_state/event_state/outcomes` como base observable X/Y, introduce `research_experiment` como unidad cientifica central, conecta `00_TSIS_Lab` y mueve AlphaEvolve a rol de generador de candidate experiments, no autoridad de validacion.
+- 2026-07-05: se introduce la arquitectura `Scientific Discovery Engine` como principio superior de TSIS; se crea la base de filosofia en `00_CTO/01_RESEARCH_PHILOSOPHY/`, se crea `C:/TSIS_Data/00_TSIS_Lab` como laboratorio operativo transversal de experimentos, y se redefine AlphaEvolve como generador de candidate experiments sometido al mismo Scientific Validation Pipeline que el investigador humano.
+- 2026-07-05: materializado outcomes_table_v0_1_candidate_intraday_1m_quote_guarded_controlled como y separado intradia; 5 filas desde event_state/event_windows/master_intraday quote-guarded, 3 good y 2 review por barras faltantes, validator passed, ML labels/RL rewards/ejecucion/full-universe deshabilitados.
+- 2026-07-05: materializado `event_state_table_v0_1_candidate_intraday_1m_quote_guarded_controlled` como candidato controlado; 15 filas desde market_state intradia quote-guarded + 15 event_windows intradia, roles `pre_event/at_event/post_event_review`, validator passed, sin outcomes inline, ML/RL/AlphaEvolve deshabilitados.
+- 2026-07-05: materializado `event_windows_table_v0_1_candidate_intraday_1m_strategy_events` como candidato controlado desde 5 eventos intradia quote-guarded; 15 ventanas (`pre_event_30m`, `event_anchor_1m`, `post_event_30m`), validator passed, `full_universe_claim=false`, RL/AlphaEvolve deshabilitados.
+- 2026-07-05: materializado `intraday_1m_strategy_candidate_events_table_v0_1` como candidato controlado/no oficial desde `master_intraday_bar_table_v0_2_candidate_quote_guarded`; 58 sesiones fuente, 5 eventos, validator passed, `full_universe_claim=false`, ML/RL/AlphaEvolve deshabilitados.
+- `2026-07-05` | `market_state` | fixture controlado `market_state_table_v0_1_candidate_intraday_quote_guarded_controlled` materializado desde el E-root scoped `master_intraday_bar_table_v0_2_candidate_quote_guarded`: 10.835 filas, 3 tickers, 96 reparaciones OHLC aplicadas, 10 diferencias de manifest no aplicadas, `validator_status=passed`, `full_universe_claim=false`, gates ML/RL/ejecucion falsos; no es oficial/promoted.
+- `2026-07-05` - Market State materializa el primer E-root scoped candidate intradia 1m quote-guarded: `master_intraday_bar_table_v0_2_candidate_quote_guarded` bajo `E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/`, 21.670 filas, 96 reparaciones OHLC efectivas, `full_universe_claim=false`, no oficial/promoted.
+
+- `2026-07-05` - Market State avanza intradia 1m quote-guarded a scoped candidate passed con `scripts/materialize_master_intraday_quote_guarded_candidate_scoped.py`: raw mensual completo + repair shard completo para tres ticker-months, 21.670 filas output, 96 reparaciones OHLC efectivas y cero mismatch raw-vs-manifest. Sigue pendiente E-root candidate, scanner/eventos 1m y ML/RL/AlphaEvolve.
+
+- `2026-07-05` - Market State avanza intradia 1m quote-guarded a muestra controlada passed: `materialize_master_intraday_quote_guarded_candidate_sample.py` valida raw rows + overlay LT1B y genera 60 filas controladas. No materializa master intradia candidate en E-root ni habilita scanner/eventos 1m, ML/RL o AlphaEvolve.
+
+- `2026-07-05` - Market State registra preflight intradia 1m quote-guarded passed: `preflight_master_intraday_quote_guarded_candidate.py` valida el manifest LT1B, summary y sample reales con cero hard fails/warnings. No materializa `master_intraday_bar_table_v0_2_candidate_quote_guarded`; habilita el siguiente paso de builder/materializacion candidate acotada.
+
+- `2026-07-05` - Market State cierra el lineage upstream de intradia 1m quote-guarded con `state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md`: raw `E:/TSIS/data/ohlcv_1m` + `D:/quotes` provisional -> repair shards -> `repair_manifest_lt1b_v0_1.parquet` PASS -> futura `master_intraday_bar_table_v0_2_candidate_quote_guarded`. Sigue pendiente materializar master intradia, scanner/eventos 1m y cualquier consumo ML/RL/AlphaEvolve.
+
+ï»¿# 00_CTO Changelog
 
 Este changelog registra cambios institucionales y semanticamente relevantes de
 la capa CTO de TSIS.
@@ -52,6 +72,10 @@ run summaries, trace logs y, si procede, release log propio.
 
 ### Changed
 
+- `2026-07-05` - Market State cierra el lineage del Camino A daily controlado con `state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md`: master_daily + instrument/calendar + scanner definitions -> daily scanner v0.3 -> 69 daily events -> 207 event_windows. Intradia 1m quote-guarded y E-root official siguen pendientes.
+- `2026-07-05` - Market State fija el contrato `state_raw_to_consumption_lineage_contract_v0_1.md`: toda tabla/componente/derivada que alimente estados debe documentar RAW/staged -> derivadas -> componente gobernado -> state builder -> consumer. Primer ejemplo cerrado: `master_daily_table_v0_1`. No materializa tablas; convierte la trazabilidad RAW -> consumo en gate obligatorio antes de fixtures/candidates de state.
+- `2026-07-05` - Market State Camino A avanza a event windows controladas: se crea `scripts/materialize_daily_strategy_event_windows_candidate.py`, test fixture-scope y materializacion `event_windows_table_v0_1_candidate_daily_strategy_events` desde los `69` eventos daily controlados, generando `207` ventanas con validator `passed`. Sigue siendo candidate controlado: no sustituye `event_windows_table_v0_1` oficial halts-only, no es E-root, no es full-universe y ML/RL/AlphaEvolve siguen deshabilitados.
+- `2026-07-04` - Market State event candidate builders avanza a fixture-scope ejecutable: existe `scripts/materialize_strategy_candidate_events_table.py`, genera parquet/manifest/summary para daily o intradia 1m desde fuentes upstream controladas y pasa junto al validator con `10 passed`. Ademas se genera materializacion controlada daily desde replay scanner v0.3 con `69` filas y validator `passed`. La materializacion wider/E-root daily, intradia quote-guarded y event_windows expansion siguen PENDING; ML/RL/AlphaEvolve siguen deshabilitados.
 - `2026-07-04` - Market State event candidate validators avanza a fixture-scope ejecutable: existe `scripts/validate_event_candidate_tables.py`, fixtures minimos y test pytest `7 passed`. La validacion sobre tablas reales queda PENDING porque `daily_strategy_candidate_events_table_v0_1` e `intraday_1m_strategy_candidate_events_table_v0_1` no estan materializadas; ML/RL/AlphaEvolve siguen deshabilitados.
 - `2026-07-04` - Market State Representation v3 registra el contrato `state_canonical_vs_representation_layer_contract_v0_1.md`, separando `Canonical State` de `Representation Layer`: el estado canonico queda como tablero observable estable y las representaciones candidatas quedan como espacio mutable para AlphaEvolve/RL/ML sin contaminar la verdad base.
 - Market State v3 registra el contrato de validators de event candidate tables como cerrado para el scope declarado. El nuevo contrato operativo es:
@@ -1261,4 +1285,15 @@ architecture workspace for automation, agents and controlled evolution.
 
 
 
+
+
+
+
+- `2026-07-05` - TSIS Lab archiva `EXP_INTRADAY_MOMENTUM_EXTENSION_0001` como semilla generica superseded y deja `EXP_DAS_FRONTSIDE_DISCOVERY_0001` como experimento activo inicial para DAS/frontside; `intraday_momentum_extension` queda como concepto/familia futura posible, no como experimento activo.
+
+
+- `2026-07-05` - TSIS Lab reformula `SWEEP_001` de DAS/frontside como `SWEEP_001_frontside_operability_boundary`: el `+50%` pasa a declararse criba humana de operabilidad frontside, no entrada, evento validado ni threshold optimo; valores inferiores son grupo de control y superiores miden intensidad/sobreextension posible.
+
+
+- `2026-07-05` - TSIS Lab crea `execution_protocol.md` para `EXP_DAS_FRONTSIDE_DISCOVERY_0001`: fija que la ejecucion oficial debe ser executor + manifest + evidence report, no notebook manual, y define metricas/gates/memoria para que humano o AlphaEvolve sepan si una variante evoluciona.
 

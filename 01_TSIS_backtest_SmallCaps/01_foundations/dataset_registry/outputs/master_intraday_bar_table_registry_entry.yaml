@@ -103,10 +103,13 @@ notes:
 
 candidate_states:
   - dataset_id: master_intraday_bar_table_v0_2_candidate_quote_guarded
-    promotion_state: candidate_contract_defined_not_materialized
-    materialization_scope: quote_guarded_lt1b_candidate_pending_builder_materialization
+    promotion_state: scoped_candidate_materialized_not_official
+    materialization_scope: quote_guarded_lt1b_scoped_ticker_month_candidate
     full_universe_claim: false
     official_dataset_created: false
+    e_root_candidate_created: true
+    e_root_candidate_manifest: E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/_master_intraday_bar_table_v0_2_candidate_quote_guarded_manifest.json
+    e_root_candidate_output: E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_2_candidate_quote_guarded/data.parquet
     safe_to_launch_full_materialization: false
     target_dataset_path: E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_2_candidate_quote_guarded
     contract: 01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md
@@ -124,8 +127,20 @@ candidate_states:
       - quote_guarded_repair_run_completed
       - final_validation_report_passed
       - official_e_root_quote_guarded_manifest_exists
-    remaining_blockers:
+    completed_candidate_gates:
       - builder_consumes_manifest_not_blind_recursive_scan
       - candidate_tests_pass_against_final_artifacts
-      - candidate_materialization_evidence_exists
+      - scoped_e_root_candidate_materialization_evidence_exists
+    scoped_candidate_evidence:
+      scope: [AACT:2025-09, AAGR:2023-12, AAMC:2023-12]
+      raw_rows: 10835
+      repair_manifest_rows_in_scope: 1106
+      quote_guarded_repair_applied_rows: 96
+      qg_ohlc_changed_rows: 96
+      manifest_qg_diff_not_applied_rows: 10
+      output_rows: 21670
+      validator_status: passed
+    remaining_blockers:
+      - wider_or_declared_universe_scope_decision
+      - full_universe_claim_remains_false
       - human_review_accepts_candidate_evidence

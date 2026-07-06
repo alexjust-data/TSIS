@@ -1,0 +1,154 @@
+﻿parameter_space_id: DAS_FRONTSIDE_PARAMETER_SPACE_v0_1
+parent_experiment_id: EXP_DAS_FRONTSIDE_DISCOVERY_0001
+status: draft
+created_at: 2026-07-05
+language_note: "El texto descriptivo esta en espanol; las claves YAML se mantienen estables para ejecucion automatica."
+
+principle: "Los valores semilla vienen del screener/notebook humano. No son verdad cientifica ni parametros optimos."
+
+parameters:
+  max_market_cap_usd:
+    seed_value: 100000000
+    role: domain_boundary
+    fixed_for_experiment_v0_1: true
+    mutable_by_human: false
+    mutable_by_alphaevolve: false
+    reason: "Esta linea estudia small/micro caps bajo 100M. Cambiar esta frontera crea otro experimento o una extension versionada."
+
+  min_session_volume:
+    seed_value: 500000
+    role: liquidity_visibility_gate_human_seed
+    fixed_for_first_sweep: true
+    mutable_by_human: true
+    mutable_by_alphaevolve: future_requires_contract
+    allowed_values: [100000, 250000, 500000, 1000000, 2000000, 5000000]
+    reason: "El humano uso 500k como liquidez minima observable, pero no sabemos si es el rango que mejor separa frontsides sanos de fallos."
+    planned_sweep: SWEEP_002_liquidity_gate_sensitivity
+
+  min_price:
+    seed_value: 0.5
+    role: operational_price_floor_human_seed
+    fixed_for_first_sweep: true
+    mutable_by_human: true
+    mutable_by_alphaevolve: future_requires_contract
+    allowed_values: [0.2, 0.5, 1.0, 2.0]
+    reason: "El piso de precio evita zonas demasiado iliquidas o microestructura muy degradada, pero debe estudiarse."
+    planned_sweep: SWEEP_003_price_bucket_sensitivity
+
+  max_price:
+    seed_value: 20.0
+    role: operational_price_ceiling_human_seed
+    fixed_for_first_sweep: true
+    mutable_by_human: true
+    mutable_by_alphaevolve: future_requires_contract
+    allowed_values: [5.0, 10.0, 20.0]
+    hard_note: "La estrategia humana no busca normalmente por encima de 20 USD; estudiar >20 requiere extension explicita."
+    reason: "Dentro de 0.5-20 hay que medir si existen zonas de precio donde DAS/frontside se comporta distinto."
+    planned_sweep: SWEEP_003_price_bucket_sensitivity
+
+  session_scope:
+    seed_value: premarket
+    role: temporal_scope_human_seed
+    fixed_for_first_sweep: true
+    mutable_by_human: true
+    mutable_by_alphaevolve: future_requires_contract
+    allowed_values: [premarket, afterhours, regular, premarket_regular, full_intraday]
+    reason: "DAS nace principalmente en premarket, pero pueden existir estructuras analogas en afterhours o regular."
+    planned_sweep: SWEEP_006_session_scope_sensitivity
+
+  push_label_pct:
+    seed_value: 20
+    role: first_push_detector_human_seed
+    fixed_for_first_sweep: true
+    mutable_by_human: true
+    mutable_by_alphaevolve: future_requires_contract
+    allowed_values: [10, 15, 20, 30, 40, 50]
+    reason: "20% marca un primer push visible en el detector humano; no sabemos si es el mejor umbral para definir awakening/frontside."
+    planned_sweep: SWEEP_004_push_label_sensitivity
+
+  dip_label_pct:
+    seed_value: 3
+    role: first_dip_detector_human_seed
+    fixed_for_first_sweep: true
+    mutable_by_human: true
+    mutable_by_alphaevolve: future_requires_contract
+    allowed_values: [1, 2, 3, 5, 8, 10, 15]
+    reason: "3% marca el primer dip detectable en el widget; la profundidad util puede depender de precio, spread, volumen y tamano del push."
+    planned_sweep: SWEEP_005_dip_depth_sensitivity
+
+  momentum_trigger_pct:
+    seed_value: 50
+    role: frontside_operability_boundary_human_seed
+    fixed_for_first_sweep: false
+    mutable_by_human: true
+    mutable_by_alphaevolve: future_requires_contract
+    allowed_values: [20, 30, 40, 50, 60, 75, 100, 150]
+    operability_buckets:
+      control_below_operability: [20, 30, 40]
+      human_operability_floor: [50]
+      high_intensity_frontside: [60, 75, 100, 150]
+    definition_for_lab_executor: "Primer timestamp donde high 1m >= reference_price * (1 + threshold_pct / 100)."
+    reference_price_seed: premarket_open
+    implementation_caveat: "No asumir que cambiar este parametro en el widget historico cambia el denominador poblacional; el executor del Lab debe implementarlo como probe explicito."
+    reason: "El +50% sirvio como criba operativa humana: por debajo de ese movimiento, el frontside normalmente no entraba en la posibilidad practica de buscar long DAS. El primer sweep audita esa frontera, usando valores inferiores como control y superiores como intensidad creciente/sobreextension posible."
+    planned_sweep: SWEEP_001_frontside_operability_boundary
+
+  reference_price:
+    seed_value: premarket_open
+    role: probe_reference_price
+    fixed_for_first_sweep: true
+    mutable_by_human: true
+    mutable_by_alphaevolve: future_requires_contract
+    allowed_values: [premarket_open, prior_close, segment_open, vwap, premarket_low]
+    reason: "El significado de X% cambia segun la referencia. Se fija en premarket_open para el primer sweep porque coincide con la lectura visual DAS."
+    planned_sweep: future_reference_price_sensitivity
+
+sweep_sequence:
+  - sweep_id: SWEEP_001_frontside_operability_boundary
+    variable_changed: momentum_trigger_pct
+    purpose: "Medir la frontera minima de operabilidad del frontside: control bajo 50%, suelo humano 50% e intensidad/sobreextension por encima."
+  - sweep_id: SWEEP_002_liquidity_gate_sensitivity
+    variable_changed: min_session_volume
+    purpose: "Medir sensibilidad a liquidez/visibilidad."
+  - sweep_id: SWEEP_003_price_bucket_sensitivity
+    variable_changed: min_price/max_price buckets
+    purpose: "Medir sensibilidad a rango de precio dentro de 0.5-20."
+  - sweep_id: SWEEP_004_push_label_sensitivity
+    variable_changed: push_label_pct
+    purpose: "Medir sensibilidad a definicion de primer push."
+  - sweep_id: SWEEP_005_dip_depth_retention_sensitivity
+    variable_changed: dip_label_pct / retention_threshold
+    purpose: "Medir sensibilidad a profundidad del primer dip y retencion del primer push."
+  - sweep_id: SWEEP_006_session_scope_time_of_day_sensitivity
+    variable_changed: session_scope / time_of_day
+    purpose: "Medir si premarket, afterhours, regular u hora del dia cambian la estructura."
+  - sweep_id: SWEEP_007_rebreak_type_timing_sensitivity
+    variable_changed: rebreak_type / minutes_to_rebreak
+    purpose: "Medir sensibilidad a tipo y velocidad del rebreak estructural."
+  - sweep_id: SWEEP_008_push_dip_rebreak_interaction
+    variable_changed: interaction_terms
+    purpose: "Medir interacciones simples entre first push, first dip y structural rebreak."
+  - sweep_id: SWEEP_009_interpretable_factor_ranking
+    variable_changed: no_single_parameter
+    purpose: "Ranking exploratorio de importancia de factores con modelos interpretables; no valida causalidad ni estrategia."
+
+alphaevolve_readiness:
+  alphaevolve_enabled_now: false
+  reason: "Aun no existen executor, validators, evidencia y promotion gates suficientes para permitir mutacion automatica."
+  future_mutable_parameters:
+    - min_session_volume
+    - min_price
+    - max_price
+    - session_scope
+    - push_label_pct
+    - dip_label_pct
+    - momentum_trigger_pct
+    - reference_price
+  never_mutable_without_new_experiment:
+    - max_market_cap_usd
+    - raw_data
+    - outcome_truth
+    - leakage_gates
+    - quality_gates
+
+

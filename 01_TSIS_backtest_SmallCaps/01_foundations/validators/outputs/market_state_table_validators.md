@@ -140,3 +140,34 @@ The candidate validator proves schema gates, prohibited-prefix absence,
 as-of legality, unique `market_state_id`, manifest presence and non-promotion
 flags. It does not promote the official table and does not allow direct
 ML/RL/backtest/execution use.
+
+
+As of `2026-07-05`, an additional intraday controlled candidate exists:
+
+```text
+dataset_id: market_state_table_v0_1_candidate
+status: controlled_candidate_not_promoted
+dataset: C:/TSIS_Data/tests/test_runs/2026-07-05/market_state_intraday_quote_guarded_candidate_v0_1/market_state_table_v0_1_candidate_intraday_quote_guarded_controlled
+manifest: C:/TSIS_Data/tests/test_runs/2026-07-05/market_state_intraday_quote_guarded_candidate_v0_1/_market_state_table_manifest_v0_1_candidate_intraday_quote_guarded_controlled.json
+summary: C:/TSIS_Data/tests/test_runs/2026-07-05/market_state_intraday_quote_guarded_candidate_v0_1/_market_state_table_summary_v0_1_candidate_intraday_quote_guarded_controlled.csv
+rows: 10835
+tickers: 3
+valid_for_event_context_candidate_rows: 0
+valid_for_ml_feature_candidate_rows: 0
+valid_for_rl_state_candidate_rows: 0
+full_universe_claim_rows: 0
+execution_truth_rows: 0
+intraday_as_of_after_decision_rows: 0
+bar_end_decision_timestamp_mismatch_rows: 0
+state_quality_counts: {"state_review_scoped_intraday_component":10835}
+validator_status: passed
+```
+
+Executable evidence:
+
+```text
+tests/data_foundation_outputs/test_market_state_intraday_quote_guarded_candidate_builder.py
+python -m pytest tests/data_foundation_outputs/test_market_state_intraday_quote_guarded_candidate_builder.py -q
+```
+
+This candidate validator proves the closed-1m-bar timestamp rule, prohibited-prefix absence, unique `market_state_id`, no full-universe claim and non-promotion flags for the intraday quote-guarded controlled scope.

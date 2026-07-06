@@ -1,0 +1,297 @@
+{
+  "communities": {
+    "0": [
+      "certification_decisions_decision_excluded",
+      "certification_decisions_decision_exclusion",
+      "certification_decisions_decision_expected",
+      "certification_decisions_decision_healthy",
+      "certification_decisions_decision_present",
+      "certification_decisions_decision_usable_for",
+      "certification_decisions_doc_type_contract",
+      "certification_decisions_doc_type_graphify_governance",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_01_contrato_additional_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_01_contrato_agent02_agent03_daily_04032026_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_04_daily_closeout_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_ohlcv_1m_01_contrato_agent02_agent03_ohlcv_1m_04032026_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_quotes_v1_01_contrato_agent02_agent03_03312026_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_01_contrato_reference_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_trades_v1_01_contrato_agent02_agent03_trades_04012026_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_00_final_certification_process_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_03_daily_closeout_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_01_quotes_certification_contract_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_official_build_protocol_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_graphify_refresh_queue_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_module_contracts_graphify_certification_decisions_graph_protocol_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_module_contracts_graphify_readme_md",
+      "certification_decisions_family_daily",
+      "certification_decisions_protocol_certification_decisions_graph_protocol"
+    ],
+    "1": [
+      "certification_decisions_decision_recoverable",
+      "certification_decisions_decision_recovery",
+      "certification_decisions_doc_type_global_metrics",
+      "certification_decisions_doc_type_recovery",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_01_daily_recovery_and_coverage_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_global_metrics_00_global_metrics_tables_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_global_metrics_01_global_metrics_tables_traceable_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_global_metrics_04_global_metrics_tables_traceable_plain_paths_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_global_metrics_manifest_json",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_halts_01_halts_overlay_and_recovery_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_short_01_short_recovery_and_limits_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_13_trades_recovery_review_no_1m_reference_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_14_trades_recovery_reference_scale_mismatch_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_15_trades_recovery_review_microstructure_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_16_trades_recovery_review_1m_reference_alignment_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_17_trades_recovery_review_generic_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_18_trades_recovery_synthesis_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_20_trades_closeout_md",
+      "certification_decisions_family_global_metrics"
+    ],
+    "2": [
+      "certification_decisions_decision_good",
+      "certification_decisions_doc_type_certification_document",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_global_metrics_02_working_links_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_08_persistent_soft_crossed_mid_large_scale_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_reference_01_reference_causal_value_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_01_trades_label_assessment_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_02_trades_base_certification_decision_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_03_trades_old_vs_new_bucket_bridge_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_05_trades_review_1m_reference_alignment_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_06_trades_review_microstructure_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_07_trades_reference_scale_mismatch_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_08_trades_bad_data_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_09_trades_review_no_1m_reference_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_10_trades_bucket_synthesis_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_11_trades_review_generic_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_12_trades_good_md",
+      "certification_decisions_family_trades"
+    ],
+    "3": [
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_quotes_v2_04_quotes_full_c_d_closeout_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_00_quotes_certification_guide_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_02_quotes_expected_presence_logic_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_05_quotes_artifact_mapping_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_06_quotes_cert_table_spec_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_07_quotes_local_certification_build_plan_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_09_large_file_threshold_edge_hard_many_crosses_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_10_medium_file_threshold_edge_hard_many_crosses_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_11_high_hard_crossed_10_to_20_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_12_quotes_open_buckets_synthesis_md",
+      "certification_decisions_family_quotes",
+      "certification_decisions_protocol_graphify_official_build",
+      "certification_decisions_queue_graphify_refresh_queue",
+      "certification_decisions_root_certification_decisions_topology"
+    ],
+    "4": [
+      "certification_decisions_decision_policy",
+      "certification_decisions_doc_type_policy",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_01_1m_recovery_policy_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_02_1m_quality_policy_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_01_additional_subblock_policy_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_02_daily_quality_policy_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_halts_02_halts_quality_policy_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_03_quotes_quality_policy_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_04_quotes_usage_policy_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_04_trades_provisional_cert_policy_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_19_trades_final_recovery_policy_md"
+    ],
+    "5": [
+      "certification_decisions_decision_bad",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_halts_01_contrato_halts_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_halts_03_halts_root_cause_audit_phase1_closeout_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_halts_04_halts_causal_overlay_closeout_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_halts_04_halts_closeout_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_short_01_contrato_short_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_halts_03_halts_closeout_md",
+      "certification_decisions_family_halts"
+    ],
+    "6": [
+      "certification_decisions_decision_closeout",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_short_03_short_root_cause_audit_phase1_closeout_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_short_04_short_causal_overlay_closeout_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_short_04_short_closeout_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_short_00_short_current_state_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_short_02_short_closeout_md",
+      "certification_decisions_family_short"
+    ],
+    "7": [
+      "certification_decisions_decision_review",
+      "certification_decisions_doc_type_current_state",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_00_additional_current_state_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_00_daily_current_state_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_halts_00_halts_current_state_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_reference_00_reference_current_state_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_00_trades_current_state_md"
+    ],
+    "8": [
+      "certification_decisions_doc_type_closeout",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_03_additional_root_cause_audit_phase1_closeout_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_04_additional_causal_overlay_closeout_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_04_additional_closeout_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_02_additional_closeout_md",
+      "certification_decisions_family_additional"
+    ],
+    "9": [
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_03_reference_root_cause_audit_phase1_closeout_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_04_reference_causal_overlay_closeout_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_04_reference_closeout_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_reference_02_reference_closeout_md",
+      "certification_decisions_family_reference"
+    ],
+    "10": [
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_auditoria_ohlcv_1m_04_ohlcv_1m_closeout_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_00_1m_current_state_md",
+      "certification_decisions_document_01_tsis_backtest_smallcaps_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_03_1m_closeout_md",
+      "certification_decisions_family_ohlcv_1m"
+    ]
+  },
+  "cohesion": {
+    "0": 0.2246376811594203,
+    "1": 0.24561403508771928,
+    "2": 0.25,
+    "3": 0.25274725274725274,
+    "4": 0.32727272727272727,
+    "5": 0.39285714285714285,
+    "6": 0.47619047619047616,
+    "7": 0.47619047619047616,
+    "8": 0.5333333333333333,
+    "9": 0.4,
+    "10": 0.5
+  },
+  "gods": [
+    {
+      "id": "certification_decisions_root_certification_decisions_topology",
+      "label": "Certification Decisions Topology",
+      "degree": 100
+    },
+    {
+      "id": "certification_decisions_decision_review",
+      "label": "Review Bucket",
+      "degree": 72
+    },
+    {
+      "id": "certification_decisions_decision_bad",
+      "label": "Bad Bucket",
+      "degree": 65
+    },
+    {
+      "id": "certification_decisions_decision_good",
+      "label": "Good Bucket",
+      "degree": 61
+    },
+    {
+      "id": "certification_decisions_decision_closeout",
+      "label": "Closeout Decision",
+      "degree": 46
+    },
+    {
+      "id": "certification_decisions_decision_present",
+      "label": "Present State",
+      "degree": 31
+    },
+    {
+      "id": "certification_decisions_doc_type_certification_document",
+      "label": "certification_document",
+      "degree": 25
+    },
+    {
+      "id": "certification_decisions_doc_type_closeout",
+      "label": "closeout",
+      "degree": 23
+    },
+    {
+      "id": "certification_decisions_family_trades",
+      "label": "trades",
+      "degree": 23
+    },
+    {
+      "id": "certification_decisions_protocol_certification_decisions_graph_protocol",
+      "label": "Certification Decisions Graph Protocol",
+      "degree": 22
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Certification Decisions Topology",
+      "target": "Manifest",
+      "source_files": [
+        "01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/module_contracts/graphify/certification_decisions_graph_protocol.md",
+        "01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/global_metrics/manifest.json"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "crosses file types (doc ↔ code); bridges separate communities"
+    },
+    {
+      "source": "00 Data Certification Graphify Official Build Protocol",
+      "target": "Certification Decisions Topology",
+      "source_files": [
+        "01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+        "01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/module_contracts/graphify/certification_decisions_graph_protocol.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "rationale_for",
+      "why": "inferred connection - not explicitly stated in source; peripheral node `00 Data Certification Graphify Official Build Protocol` unexpectedly reaches hub `Certification Decisions Topology`"
+    },
+    {
+      "source": "Manifest",
+      "target": "Recovery Decision",
+      "source_files": [
+        "01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/global_metrics/manifest.json",
+        "01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/module_contracts/graphify/certification_decisions_graph_protocol.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "crosses file types (doc ↔ code)"
+    },
+    {
+      "source": "global_metrics",
+      "target": "Manifest",
+      "source_files": [
+        "01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/module_contracts/graphify/certification_decisions_graph_protocol.md",
+        "01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/global_metrics/manifest.json"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "crosses file types (doc ↔ code)"
+    },
+    {
+      "source": "global_metrics",
+      "target": "Manifest",
+      "source_files": [
+        "01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/module_contracts/graphify/certification_decisions_graph_protocol.md",
+        "01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/global_metrics/manifest.json"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "crosses file types (doc ↔ code)"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `Certification Decisions Topology` connect `Quotes Certification` to `Quotes Certification`, `Trades Certification`, `Trades Certification`, `Quotes Certification`, `Halts Certification`, `Short Certification`, `Trades Certification`, `Additional Certification`, `Reference Certification`, `1m Certification`?",
+      "why": "High betweenness centrality (0.428) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Review Bucket` connect `Trades Certification` to `Quotes Certification`, `Trades Certification`, `Trades Certification`, `Quotes Certification`, `Quotes Certification`, `Halts Certification`, `Short Certification`, `Additional Certification`, `Reference Certification`, `1m Certification`?",
+      "why": "High betweenness centrality (0.119) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Bad Bucket` connect `Halts Certification` to `Quotes Certification`, `Trades Certification`, `Trades Certification`, `Quotes Certification`, `Quotes Certification`, `Short Certification`, `Trades Certification`, `Additional Certification`, `Reference Certification`, `1m Certification`?",
+      "why": "High betweenness centrality (0.090) - this node is a cross-community bridge."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 10 inferred relationships involving `Certification Decisions Topology` (e.g. with `global_metrics` and `00 Data Certification Graphify Official Build Protocol`) actually correct?",
+      "why": "`Certification Decisions Topology` has 10 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `00 Data Certification Graphify Official Build Protocol`, `00 Data Certification Graphify Refresh Queue` to the rest of the system?",
+      "why": "2 weakly-connected nodes found - possible documentation gaps or missing edges."
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-# Market State Representation Source File Map v0.1
+﻿# Market State Representation Source File Map v0.1
 
 Fecha: 2026-06-25
 Estado: reference_map
@@ -29,10 +29,12 @@ Estas representaciones deben alimentar:
 
 ## Lista Nuclear
 
-- `C:/TSIS_Data/00_CTO/TSIS_LAB_ARCHITECTURE.md`
-  - Arquitectura completa.
-  - Define Capa 1 Data Foundation, Event Engine, `event_table`, ML, Decision
-    Models, Offline RL y Evolution Systems.
+- `C:/TSIS_Data/00_CTO/TSIS_LAB_ARCHITECTURE_v3.md`
+  - Arquitectura CTO vigente.
+  - Define TSIS como Scientific Discovery Engine: Data Foundation, estado
+    canonico, event_state, outcomes, research experiments, evidencia,
+    validacion cientifica, knowledge objects, componentes operativos,
+    ML/RL/AlphaEvolve/live segun fase.
 
 - `C:/TSIS_Data/00_CTO/00_private/arquitectura.md`
   - Version privada original del pipeline por capas.
@@ -261,3 +263,4 @@ Sirve para que un humano o agente encuentre rapidamente donde se explica:
 - por que ML/RL dependen de representacion de estado;
 - por que AlphaEvolve no debe empezar por estrategias;
 - por que microestructura y causalidad son parte del estado.
+

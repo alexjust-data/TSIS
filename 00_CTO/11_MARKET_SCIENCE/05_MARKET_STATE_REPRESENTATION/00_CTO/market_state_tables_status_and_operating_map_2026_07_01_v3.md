@@ -1,24 +1,72 @@
 ﻿# Market State Representation - Fotografia Legal Del Mundo Observable En T
 
-Fecha: 2026-07-04  
-Estado:   
+Fecha: 2026-07-04
+Estado:
 ```
-v3_refactor_lectura_humana_parte_0_2_micro_context_examples +   
-avance_2026_07_04 +   
-formulas_done +   
-timestamp_policy_done +   
-roles_done +   
-builder_contract_done +   
-event_candidate_tables_contract_done +  
-event_candidate_table_schema_contracts_done +  
-event_candidate_table_validators_contract_done +  
-canonical_vs_representation_contract_done +  
-event_candidate_executable_validators_fixture_scope_done +  
-ruta_capas_definida  
+v3_refactor_lectura_humana_parte_0_2_micro_context_examples +
+avance_2026_07_04 +
+formulas_done +
+timestamp_policy_done +
+roles_done +
+builder_contract_done +
+event_candidate_tables_contract_done +
+event_candidate_table_schema_contracts_done +
+event_candidate_table_validators_contract_done +
+canonical_vs_representation_contract_done +
+event_candidate_executable_validators_fixture_scope_done +
+event_candidate_builders_fixture_scope_done +
+daily_event_candidate_controlled_materialization_done +
+scientific_discovery_engine_alignment_done +
+research_experiment_pipeline_inserted +
+ruta_capas_definida
 ```
-Documento base: `market_state_tables_status_and_operating_map_2026_07_01.md`  
-Documento anterior: `market_state_tables_status_and_operating_map_2026_07_01_v2.md`  
+Documento base: `market_state_tables_status_and_operating_map_2026_07_01.md`
+Documento anterior: `market_state_tables_status_and_operating_map_2026_07_01_v2.md`
 
+## Lectura Oficial Desde 2026-07-05
+
+Este mapa v3 sigue siendo la lectura humana principal para `market_state` y
+`event_state`, pero ya no debe leerse como la arquitectura completa de TSIS.
+
+La arquitectura superior vigente es:
+
+```text
+C:/TSIS_Data/00_CTO/TSIS_LAB_ARCHITECTURE_v3.md
+```
+
+Nueva lectura:
+
+```text
+market_state / event_state = X legal as-of
+outcomes = Y separado
+research_experiment = unidad cientifica que disena como mirar X e Y
+evidence = resultado reproducible del experimento
+knowledge_object = conclusion candidata promovible
+validated_knowledge = conocimiento que supero validacion
+operational_component = detector, representacion, estrategia, policy o regla usable
+```
+
+Por tanto, este documento gobierna la base observable. No gobierna por si solo
+la ciencia de descubrimiento, la validacion ni AlphaEvolve.
+
+Relacion con la nueva arquitectura:
+
+```text
+state tables / event_state / outcomes controlados
+-> Scientific Discovery Engine
+-> research_experiment_contract
+-> parameter_sweep / exploratory statistics
+-> event family candidates / knowledge objects
+-> evaluator_contract / locked evaluators
+-> AlphaEvolve/RL/ML segun corresponda
+```
+
+Regla:
+
+```text
+las tablas de estado no descubren conocimiento por si solas;
+proporcionan la fotografia legal del mundo observable para que los experimentos puedan ejecutarse.
+```
 ## Alcance De Esta V3
 
 Esta v3 no sustituye al mapa CTO original ni intenta cerrar todos los contratos.
@@ -63,7 +111,10 @@ componentes existentes
 -> contrato de elegibilidad columna-por-columna
 -> state builder
 -> market_state_table / event_state_table
--> outcomes y evaluadores separados
+-> outcomes separados
+-> research_experiment
+-> evidence / knowledge_object
+-> evaluadores exploratorios o bloqueados segun fase
 ```
 
 La separacion mental que evita confusiones es esta:
@@ -1057,14 +1108,28 @@ v3 mapa humano
 -> intraday_1m_strategy_candidate_events_table_schema_contract.md DONE
 -> event_candidate_table_validators_contract_v0_1.md          DONE
 -> state_canonical_vs_representation_layer_contract_v0_1.md   DONE
+-> state_raw_to_consumption_lineage_contract_v0_1.md       DONE
+-> state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md DONE controlled
+-> state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md DONE upstream manifest lineage
+-> preflight_master_intraday_quote_guarded_candidate.py              DONE passed
+-> materialize_master_intraday_quote_guarded_candidate_sample.py      DONE controlled sample
+-> materialize_master_intraday_quote_guarded_candidate_scoped.py      DONE scoped candidate
+-> E-root scoped master_intraday_bar_table_v0_2_candidate_quote_guarded DONE not official
+-> materialize_market_state_intraday_quote_guarded_candidate.py DONE controlled market_state intraday
 -> leakage/formula/timestamp/role/builder validators
 -> validators ejecutables de event_candidate_table             DONE fixture-scope
--> daily_strategy_candidate_events_table builders/materializacion
--> intraday_1m_strategy_candidate_events_table builders/materializacion
--> event_windows expansion
--> controlled market_state/event_state fixture
+-> builders ejecutables de event_candidate_table                DONE fixture-scope
+-> daily_strategy_candidate_events_table controlled materialization DONE
+-> daily_strategy_candidate_events_table wider/E-root materialization PENDING
+-> intraday_1m_strategy_candidate_events_table quote-guarded materialization DONE controlled
+-> event_windows controlled daily expansion                    DONE controlled
+-> event_windows controlled intradia expansion                DONE controlled
+-> event_windows wider daily/1m expansion                       PENDING
+-> controlled market_state intradia fixture                  DONE
+-> controlled event_state intradia fixture                  DONE controlled
+-> controlled outcomes intradia separados                  DONE controlled
+-> controlled multi-component fixture                         PENDING
 -> candidate materialization
--> outcomes separados
 -> evaluadores bloqueados
 -> semantic representations
 -> AlphaEvolve/RL/ML
@@ -1187,7 +1252,7 @@ No queda completado todavia:
 
 ```text
 leakage/formula/timestamp/role/builder validators
-controlled market_state/event_state fixture
+controlled event_state / multi-component fixture
 schema candidate alignment si hace falta
 ```
 
@@ -1216,14 +1281,28 @@ v3 mapa humano
 -> intraday_1m_strategy_candidate_events_table_schema_contract.md DONE
 -> event_candidate_table_validators_contract_v0_1.md          DONE
 -> state_canonical_vs_representation_layer_contract_v0_1.md   DONE
+-> state_raw_to_consumption_lineage_contract_v0_1.md       DONE
+-> state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md DONE controlled
+-> state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md DONE upstream manifest lineage
+-> preflight_master_intraday_quote_guarded_candidate.py              DONE passed
+-> materialize_master_intraday_quote_guarded_candidate_sample.py      DONE controlled sample
+-> materialize_master_intraday_quote_guarded_candidate_scoped.py      DONE scoped candidate
+-> E-root scoped master_intraday_bar_table_v0_2_candidate_quote_guarded DONE not official
+-> materialize_market_state_intraday_quote_guarded_candidate.py DONE controlled market_state intraday
 -> leakage/formula/timestamp/role/builder validators
 -> validators ejecutables de event_candidate_table             DONE fixture-scope
--> daily_strategy_candidate_events_table builders/materializacion
--> intraday_1m_strategy_candidate_events_table builders/materializacion
--> event_windows expansion
--> controlled market_state/event_state fixture
+-> builders ejecutables de event_candidate_table                DONE fixture-scope
+-> daily_strategy_candidate_events_table controlled materialization DONE
+-> daily_strategy_candidate_events_table wider/E-root materialization PENDING
+-> intraday_1m_strategy_candidate_events_table quote-guarded materialization DONE controlled
+-> event_windows controlled daily expansion                    DONE controlled
+-> event_windows controlled intradia expansion                DONE controlled
+-> event_windows wider daily/1m expansion                       PENDING
+-> controlled market_state intradia fixture                  DONE
+-> controlled event_state intradia fixture                  DONE controlled
+-> controlled outcomes intradia separados                  DONE controlled
+-> controlled multi-component fixture                         PENDING
 -> candidate materialization
--> outcomes separados
 -> evaluadores bloqueados
 -> semantic_state_representation_contract_v0_1.md
 -> semantic representations candidates
@@ -1245,16 +1324,26 @@ v3 mapa humano
 | `event_candidate_tables_contract_v0_1.md` | DONE | Donde entran las tablas de eventos daily/1m? | separa scanner candidates, event candidate tables, event windows y event_state | schema contracts daily/1m cerrados; validators/builders despues | no materializa eventos ni convierte scanner en estado |
 | `daily_strategy_candidate_events_table_schema_contract.md` | DONE | Que columnas debe tener la tabla diaria de eventos candidatos? | schema canonico target, grano, columnas, timestamp policies, quality gates y non-goals | validators/builders de daily event candidates | no materializa la tabla ni contiene outcomes |
 | `intraday_1m_strategy_candidate_events_table_schema_contract.md` | DONE | Que columnas debe tener la tabla 1m de eventos candidatos? | schema canonico target, timestamp 1m legal, quote-guarded promotion rule, quality gates y non-goals | validators/builders de intraday event candidates | no promociona raw-only ni contiene outcomes |
-| `event_candidate_table_validators_contract_v0_1.md` | DONE | Que debe fallar antes de construir o consumir eventos candidatos? | contrato de validators comunes, daily, intradia, quote-guarded, lineage, prohibiciones y consumer gates | validators ejecutables y fixtures minimos | no implementa codigo ni materializa tablas |
+| `event_candidate_table_validators_contract_v0_1.md` | DONE | Que debe fallar antes de construir o consumir eventos candidatos? | contrato de validators comunes, daily, intradia, quote-guarded, lineage, prohibiciones y consumer gates | validators ejecutables y fixtures minimos | no materializa tablas ni valida outputs reales hasta que existan |
 | `state_canonical_vs_representation_layer_contract_v0_1.md` | DONE | Que vive en Canonical State y que debe pasar a Representation Layer? | frontera formal entre fotografia observable estable y representaciones candidatas mutables | validators de estado/representacion y semantic state contract futuro | no cambia schemas ni materializa representaciones |
+| `state_raw_to_consumption_lineage_contract_v0_1.md` | DONE | De donde sale cada componente desde RAW hasta consumo de estado? | contrato obligatorio de trazabilidad RAW/staged -> derivadas -> componente -> state builder -> consumer; ejemplo cerrado master_daily | validators de lineage y builders defensibles | no materializa tablas ni sustituye manifests reales |
+| `state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md` | DONE controlled | De donde salen los 69 eventos daily y las 207 event_windows controladas? | lineage Camino A: master_daily -> scanner daily v0.3 -> daily events -> event windows | fixture controlado market_state/event_state | no cubre intradia 1m ni E-root official |
+| `state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md` | DONE controlled consumption | De donde sale el 1m quote-guarded hasta `intraday__*` y eventos 1m controlados? | RAW 1m + repair manifest -> master intraday scoped E-root -> market_state intradia controlado -> intraday events controlados | event_windows intradia y fixture `event_state` | no cubre universo amplio, outcomes ni promocion oficial |
 | `leakage/formula/timestamp/role/builder validators` | PENDING | Podemos probar que el estado no usa futuro, respeta formulas/roles y conserva lineage? | tests de cutoff, formula parity, role/window gates, quality gates, manifests y source roots | candidate materialization defensible | no decide valor cientifico de una estrategia |
-| `validators ejecutables de event_candidate_table` | DONE fixture-scope | Podemos ejecutar esos checks sobre fixtures/tablas candidatas? | CLI `validate_event_candidate_tables.py`, 6 fixtures minimos y 7 tests pass | builders diarios/1m defensibles y validator run sobre tabla real cuando exista | no materializa eventos, estados ni outcomes |
-| `daily_strategy_candidate_events_table builders/materializacion` | PENDING | Que eventos daily quedan anclados por definicion versionada? | `daily_event_id`, event definition, source candidate, session/as_of, quality y lineage | event_windows expansion daily | no es scanner, no es estado y no contiene outcomes |
-| `intraday_1m_strategy_candidate_events_table builders/materializacion` | PENDING | Que eventos 1m quedan anclados con timestamp legal? | `intraday_event_id`, event_ts_utc, event definition, source 1m/QG, quality y lineage | event_windows expansion intradia | no promociona raw-only ni contiene outcomes |
-| `event_windows expansion` | PENDING | Que ventanas se abren alrededor de eventos no-halt? | event windows v0.2/candidate desde daily/1m event tables | controlled event_state fixture | no sustituye event_state ni outcomes |
-| `controlled market_state/event_state fixture` | PENDING | Podemos construir ejemplos pequenos y auditables extremo a extremo? | casos reproducibles con pocos instrumentos/eventos/fechas | candidate materialization | no es universo completo ni dataset ML/RL |
-| `candidate materialization` | PENDING | Podemos producir parquet/manifest candidate bajo contrato? | `market_state_table`/`event_state_table` candidate con manifest | outcomes separados y evaluadores | no es promocion oficial ni ML-ready automatico |
-| `outcomes separados` | PENDING | Que paso despues sin contaminar `X`? | tablas `y`: MFE, MAE, returns, halt, failure, continuation, etc. | evaluadores bloqueados y labels gobernados | nunca deben ir inline dentro del estado base |
+| `validators ejecutables de event_candidate_table` | DONE fixture-scope + controlled tables | Podemos ejecutar esos checks sobre fixtures/tablas candidatas? | CLI `validate_event_candidate_tables.py`, fixtures minimos y runs controlados daily/intradia passed | builders diarios/1m defensibles y validator run sobre wider/full-universe cuando exista | no promociona eventos, estados ni outcomes |
+| `builders ejecutables de event_candidate_table` | DONE fixture-scope | Podemos convertir fuentes upstream en tablas de eventos gobernadas? | CLI `materialize_strategy_candidate_events_table.py`, parquet/manifest/summary para daily o intradia 1m y tests fixture-scope | run sobre daily scanner real y ruta intradia quote-guarded real | no promociona tablas oficiales ni valida universo real |
+| `daily_strategy_candidate_events_table controlled materialization` | DONE controlled | Que eventos daily quedan anclados por definicion versionada en replay controlado? | 69 filas desde `daily_scanner_candidates_table_v0_3` replay 2025-01-02..2025-01-10; validator passed | event_windows expansion daily controlada | no es full-universe, no es E-root oficial, no contiene outcomes |
+| `daily_strategy_candidate_events_table wider/E-root materialization` | PENDING | Que eventos daily quedan anclados para scope mas amplio/gobernado? | rerun del builder sobre fuente daily scanner decidida | event_windows expansion daily amplia | no sustituye state/event/outcomes |
+| `intraday_1m_strategy_candidate_events_table quote-guarded materialization` | DONE controlled | Que eventos 1m quedan anclados con timestamp legal? | 5 eventos desde `master_intraday_bar_table_v0_2_candidate_quote_guarded` scoped E-root; validator passed | event_windows expansion intradia | no es full-universe, no promociona raw-only, no contiene outcomes |
+| `event_windows controlled daily expansion` | DONE controlled | Que ventanas se abren alrededor de los 69 eventos daily controlados? | `event_windows_table_v0_1_candidate_daily_strategy_events`, 207 filas, validator passed | controlled event_state fixture | no es tabla oficial, no es full-universe, no cubre intradia 1m |
+| `event_windows controlled intradia expansion` | DONE controlled | Que ventanas se abren alrededor de los 5 eventos intradia quote-guarded? | 15 ventanas: pre_event_30m, event_anchor_1m, post_event_30m; validator passed | controlled event_state fixture | no es full-universe, no sustituye event_state ni outcomes |
+| `event_windows wider daily/1m expansion` | PENDING | Que ventanas se abren alrededor de eventos daily amplios o intradia 1m no-halt en scope amplio? | event windows candidate desde daily/1m event tables gobernadas | event_state fixture mas amplio | no sustituye event_state ni outcomes |
+| `controlled market_state intradia fixture` | DONE controlled | Podemos consumir `intraday__*` desde el E-root scoped quote-guarded sin leakage? | `market_state_table_v0_1_candidate_intraday_quote_guarded_controlled`, 10.835 filas, validator passed | fixture event_state/multi-componente | no es oficial, no es full-universe, no contiene eventos ni outcomes |
+| `controlled event_state intradia fixture` | DONE controlled | Podemos anclar estado intradia a evento/ventana sin leakage? | 15 filas desde market_state intradia quote-guarded + 15 event_windows intradia; validator passed | outcomes separados | no es universo completo ni dataset ML/RL |
+| `controlled outcomes intradia separados` | DONE controlled | Que paso despues sin contaminar `X`? | 5 filas `outcomes_table_v0_1_candidate_intraday_1m_quote_guarded_controlled`; 3 good, 2 review por barras faltantes; validator passed | evaluadores bloqueados y labels/rewards gobernados | no es full-universe, no es ML label, no es RL reward, no es execution truth |
+| `controlled multi-component fixture` | PENDING | Podemos mezclar componentes adicionales sin leakage? | fixture con micro/contexto/fundamentals/news/short/regime declarados | candidate materialization mas rica | no es universo completo ni dataset ML/RL |
+| `candidate materialization` | PENDING | Podemos producir parquet/manifest candidate bajo contrato? | `market_state_table`/`event_state_table` candidate con manifest | outcomes/evaluadores amplios | no es promocion oficial ni ML-ready automatico |
+| `outcomes separados wider/unified` | PENDING | Que outcomes faltan fuera del scope controlado 1m? | daily/1m unificados, labels gobernados, rewards y execution outcomes bajo contrato | evaluadores bloqueados y datasets ML/RL especificos | nunca deben ir inline dentro del estado base |
 | `evaluadores bloqueados` | PENDING | Como se compara objetivamente una hipotesis/candidato? | fitness, leakage checks, robustness, costs, stability, complexity | AlphaEvolve/ML/RL con feedback reproducible | no puede cambiar la verdad observable base |
 | `semantic_state_representation_contract_v0_1.md` | FUTURE | Como se transforma estado observable en representacion semantica/latente? | contrato para objetos como Attention, Liquidity Stress, Crowding, Fragility | semantic representation candidates | no entra en `market_state_table` base como verdad primaria |
 | `semantic representations candidates` | FUTURE | Que representaciones candidatas se pueden evaluar? | vectores, ontologias o scores semanticos versionados | transition contracts, policies, evaluadores | no son observables base; son interpretaciones derivadas |
@@ -1479,7 +1568,7 @@ controlled event_state fixture con eventos daily/1m
 No desbloquea todavia:
 
 ```text
-event candidate tables materializadas
+event candidate tables oficiales/full-universe
 market_state_table oficial
 event_state_table oficial
 ML/RL training directo
@@ -1515,26 +1604,23 @@ Lectura correcta:
 
 ```text
 schema contract DONE
-builder/materializacion PENDING
-validators PENDING
+builder/materializacion DONE controlled para daily e intradia quote-guarded
+validators DONE fixture-scope y tabla controlada; wider/full-universe PENDING
 ```
 
-Esto significa que ya sabemos como deben verse las tablas si se construyen,
-pero todavia no existen como outputs materializados.
+Esto empezo como cierre de schema. Ahora ya existen outputs controlados/no oficiales para daily e intradia quote-guarded; siguen pendientes los scopes wider/full-universe y la promocion oficial.
 
 Siguiente paso inmediato:
 
 ```text
-event candidate table executable validators
-builders/materializacion candidate daily/1m
-event_windows expansion para eventos no-halt
-controlled event_state fixture con eventos daily/1m
+outcomes separados usando `event_state` intradia controlado y ventanas post-event con eventos daily/1m
+wider/full-universe daily/intradia solo despues de validators/review
 ```
 
 No desbloquea todavia:
 
 ```text
-event candidate tables materializadas
+event candidate tables oficiales/full-universe
 market_state_table oficial
 event_state_table oficial
 ML/RL training directo
@@ -1567,24 +1653,23 @@ Lectura correcta:
 
 ```text
 validators contract DONE
-validators ejecutables DONE fixture-scope; validator run sobre tabla real PENDING
-builders/materializacion PENDING
+validators ejecutables DONE fixture-scope y tabla controlada
+builders/materializacion DONE controlled; wider/full-universe PENDING
 ```
 
 Siguiente paso inmediato:
 
 ```text
-implementar validators ejecutables de event candidate tables
-crear fixtures minimos daily e intradia para esos validators
-builders/materializacion candidate daily/1m solo despues de validator pass
-event_windows expansion para eventos no-halt
+event_windows intradia desde la tabla quote-guarded controlada
+controlled event_state fixture con eventos daily/1m
+wider/full-universe daily/intradia solo despues de validators/review
 controlled event_state fixture con eventos daily/1m
 ```
 
 No desbloquea todavia:
 
 ```text
-event candidate tables materializadas
+event candidate tables oficiales/full-universe
 market_state_table oficial
 event_state_table oficial
 ML/RL training directo
@@ -1630,17 +1715,17 @@ Esto no cambia todavia:
 schemas oficiales de market_state/event_state
 materializacion de state tables
 materializacion de semantic representations
-validators ejecutables
+validacion sobre tablas reales no materializadas
 ML/RL/AlphaEvolve production
 ```
 
 Siguiente paso inmediato sigue siendo:
 
 ```text
-implementar validators ejecutables de event candidate tables;
+construir builders/materializacion candidate daily/1m;
+ejecutar validators de event candidate sobre esos outputs reales;
 implementar leakage/formula/timestamp/role/builder validators;
-crear fixtures minimos y controlados;
-construir builders/materializacion candidate daily/1m solo despues de validator pass.
+crear fixture controlado market_state/event_state despues de event_windows.
 ```
 
 Impacto en la ruta futura:
@@ -1688,25 +1773,725 @@ Lectura correcta:
 
 ```text
 validator executable + fixtures = DONE
-validator run sobre tabla real = PENDING
+validator run sobre tablas controladas daily/intradia = DONE; wider/full-universe = PENDING
 ```
 
 Motivo:
 
 ```text
-No existe todavia daily_strategy_candidate_events_table_v0_1 materializada.
-No existe todavia intraday_1m_strategy_candidate_events_table_v0_1 materializada.
-Por tanto, el validator no puede certificar una tabla real; solo demuestra que
-el programa de validacion detecta los casos contractuales minimos antes de crear
-los builders.
+Ya existen materializaciones controladas/no oficiales de `daily_strategy_candidate_events_table_v0_1` y `intraday_1m_strategy_candidate_events_table_v0_1`, y el validator paso sobre ambas. Lo que sigue pendiente es la certificacion de runs wider/full-universe y cualquier promocion oficial.
 ```
 
 Siguiente paso inmediato:
 
 ```text
-builders/materializacion candidate daily_strategy_candidate_events_table_v0_1
-builders/materializacion candidate intraday_1m_strategy_candidate_events_table_v0_1
-ejecutar validate_event_candidate_tables.py sobre cada tabla candidate real
-event_windows expansion solo despues de validator pass
+outcomes separados usando `event_state` intradia controlado y ventanas post-event con eventos daily/1m
+wider/full-universe daily/intradia solo despues de validators/review
 ```
+## 6.17 Actualizacion Event Candidate Builders Fixture-Scope
+
+Nuevo avance cerrado:
+
+```text
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_strategy_candidate_events_table.py
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_strategy_candidate_events_table_builder.py
+event_candidate_table_builders_fixture_scope = passed
+```
+
+Tests ejecutados:
+
+```text
+python -m pytest tests/data_foundation_outputs/test_strategy_candidate_events_table_builder.py tests/data_foundation_outputs/test_event_candidate_table_validators.py -q
+10 passed
+```
+
+Que resuelve:
+
+```text
+existe un builder ejecutable para daily_strategy_candidate_events_table_v0_1;
+existe un builder ejecutable para intraday_1m_strategy_candidate_events_table_v0_1;
+el builder escribe parquet, manifest, summary y validator summary;
+el builder diario convierte fuentes scanner/directas seleccionadas en eventos gobernados;
+el builder intradia exige ruta quote-guarded confirmada para filas candidatas;
+raw-only intradia no puede promoverse como candidate si no hay confirmacion quote-guarded;
+ML/RL/AlphaEvolve production siguen deshabilitados.
+```
+
+Lectura correcta:
+
+```text
+builder executable + fixtures = DONE
+materializacion controlada daily = DONE
+materializacion controlada sobre fuente intradia quote-guarded = DONE; wider/full-universe intradia = PENDING
+validator run sobre tablas controladas = DONE; wider/full-universe = PENDING
+```
+
+Siguiente paso inmediato:
+
+```text
+expandir event_windows intradia desde la tabla controlada quote-guarded;
+mantener pendiente el scanner intradia v0_2 quote-guarded completo;
+ejecutar wider/full-universe daily/intradia solo despues de validators/review;
+construir controlled event_state fixture despues de tener ventanas intradia.
+```
+## 6.18 Actualizacion Daily Strategy Candidate Events Controlled Materialization
+
+Nuevo avance cerrado:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-07-04/daily_strategy_candidate_events_from_daily_scanner_v0_3_20250102_20250110_controlled/
+daily_strategy_candidate_events_table_v0_1_controlled_candidate = passed
+```
+
+Fuente upstream:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-06-30/daily_scanner_candidates_v0_3_runner_smoke_20250102_20250110_d/parts/year=2025/daily_scanner_candidates_table_v0_3_candidate_replay/data.parquet
+```
+
+Salida:
+
+```text
+dataset_path = C:/TSIS_Data/tests/test_runs/2026-07-04/daily_strategy_candidate_events_from_daily_scanner_v0_3_20250102_20250110_controlled/daily_strategy_candidate_events_table_v0_1_candidate/data.parquet
+manifest = C:/TSIS_Data/tests/test_runs/2026-07-04/daily_strategy_candidate_events_from_daily_scanner_v0_3_20250102_20250110_controlled/_daily_strategy_candidate_events_table_v0_1_manifest_candidate.json
+summary = C:/TSIS_Data/tests/test_runs/2026-07-04/daily_strategy_candidate_events_from_daily_scanner_v0_3_20250102_20250110_controlled/_daily_strategy_candidate_events_table_v0_1_summary_candidate.csv
+```
+
+Evidencia:
+
+```text
+source_rows = 15323
+selected_source_rows = 69
+event_candidate_rows = 69
+validator_status = passed
+validator_hard_fail_count = 0
+validator_review_fail_count = 0
+full_universe_claim_true_rows = 0
+ml_feature_candidate_rows = 0
+rl_state_candidate_rows = 0
+alphaevolve_production_enabled_rows = 0
+```
+
+Lectura correcta:
+
+```text
+daily event candidate controlled materialization = DONE
+wider/E-root daily materialization = PENDING
+intraday quote-guarded event candidate materialization = DONE controlled
+event_windows controlled daily expansion = DONE controlled
+event_windows wider daily/1m expansion = PENDING
+```
+
+No desbloquea todavia:
+
+```text
+market_state_table oficial
+event_state_table oficial
+ML/RL datasets
+AlphaEvolve production evaluator
+outcomes inline
+```
+
+## 6.19 Actualizacion Daily Strategy Event Windows Controlled Candidate
+
+Nuevo avance cerrado:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-07-05/daily_strategy_event_windows_from_69_daily_events_controlled/
+event_windows_table_v0_1_candidate_daily_strategy_events = passed
+```
+
+Builder ejecutable:
+
+```text
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_daily_strategy_event_windows_candidate.py
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_daily_strategy_event_windows_candidate_builder.py
+```
+
+Fuente upstream:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-07-04/daily_strategy_candidate_events_from_daily_scanner_v0_3_20250102_20250110_controlled/daily_strategy_candidate_events_table_v0_1_candidate/data.parquet
+```
+
+Salida:
+
+```text
+dataset_path = C:/TSIS_Data/tests/test_runs/2026-07-05/daily_strategy_event_windows_from_69_daily_events_controlled/event_windows_table_v0_1_candidate_daily_strategy_events/data.parquet
+manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/daily_strategy_event_windows_from_69_daily_events_controlled/_event_windows_table_v0_1_candidate_daily_strategy_events_manifest.json
+summary = C:/TSIS_Data/tests/test_runs/2026-07-05/daily_strategy_event_windows_from_69_daily_events_controlled/_event_windows_table_v0_1_candidate_daily_strategy_events_summary.csv
+```
+
+Evidencia:
+
+```text
+source_event_count = 69
+calendar_covered_event_count = 69
+row_count = 207
+window_role_counts = prior_session_regular: 69, event_session_regular: 69, next_session_regular: 69
+ml_feature_candidate_rows = 69
+outcome_window_candidate_rows = 69
+rl_state_component_candidate_rows = 0
+full_universe_claim_rows = 0
+validator_status = passed
+validator_hard_fail_count = 0
+```
+
+Lectura correcta:
+
+```text
+Camino A queda cerrado en su primera expansion:
+69 eventos daily controlados -> 207 event_windows controladas.
+
+prior_session_regular = ventana pre-evento utilizable como feature candidate controlada
+event_session_regular = ventana de sesion del evento, no ML pre-event
+next_session_regular = ventana candidata de outcome, separada del estado
+```
+
+No es:
+
+```text
+event_windows_table_v0_1 oficial
+materializacion E-root
+full-universe
+intraday 1m quote-guarded
+event_state_table
+outcomes table
+dataset ML/RL/AlphaEvolve listo
+```
+
+Siguiente paso operativo:
+
+```text
+usar este output controlado para construir controlled market_state/event_state fixture
+mantener wider/E-root daily e intradia 1m quote-guarded como carriles pendientes separados
+```
+
+## 6.20 Actualizacion Trazabilidad RAW -> Consumo De Estado
+
+Nueva regla institucional cerrada:
+
+```text
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_contract_v0_1.md
+state_raw_to_consumption_lineage_contract_v0_1 = complete_for_contract_defined_scope
+```
+
+Lectura correcta:
+
+```text
+Toda tabla, componente o derivada que alimente market_state/event_state debe poder explicar su cadena:
+RAW/staged -> derived view -> governed component -> event/scanner/window si aplica -> state builder -> consumer final.
+```
+
+A partir de ahora cada contrato nuevo o revisado debe incluir una seccion:
+
+```text
+## Trazabilidad RAW -> Consumo De Estado
+```
+
+Esa seccion debe mostrar:
+
+```text
+fuentes RAW/staged;
+fuentes derivadas intermedias;
+builders/scripts/configs;
+manifest/summary/hash/build_run_id;
+columnas literales y derivadas;
+cutoff/as-of;
+quality/coverage gates;
+consumo permitido;
+no-goals;
+evidencia de validacion;
+gaps abiertos.
+```
+
+Primer ejemplo cerrado en el contrato:
+
+```text
+master_daily_table_v0_1
+E:/TSIS/data/ohlcv_daily
++ E:/TSIS/data/ohlcv_daily_adjusted
++ expected_data_calendar
++ corporate_actions_table
++ dataset_certification_matrix
+-> scripts/materialize_master_daily_table.py
+-> E:/TSIS/data/data_foundation_outputs/master_daily_table/master_daily_table_v0_1
+-> daily__* para futuros market_state/event_state builders
+```
+
+Regla para AlphaEvolve/RL/ML:
+
+```text
+pueden mutar formulas, representaciones, detectores, transiciones o politicas;
+no pueden mutar silenciosamente la verdad de lineage.
+```
+
+Siguiente trabajo practico:
+
+```text
+la ruta intradia 1m quote-guarded ya llega hasta un fixture controlado de `market_state_table_v0_1_candidate` con `intraday__*`. Para el siguiente salto quedan pendientes microestructura/contexto as-of si entran en un fixture multi-componente, `event_state` anclado a eventos/ventanas y scope wider/declared-universe antes de cualquier promocion oficial.
+```
+
+Actualizacion Camino A controlado:
+
+```text
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md
+state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1 = complete_for_controlled_scope
+```
+
+Cubre:
+
+```text
+master_daily_table_v0_1 + instrument_master + market_calendar + scanner definitions
+-> daily_scanner_candidates_table_v0_3_candidate_replay
+-> daily_strategy_candidate_events_table_v0_1 controlled candidate
+-> event_windows_table_v0_1_candidate_daily_strategy_events
+-> futuro controlled market_state/event_state fixture
+```
+
+Lectura correcta:
+
+```text
+trazabilidad diaria EOD controlada = cerrada;
+intradia 1m quote-guarded upstream manifest lineage = DONE; lightweight preflight = passed; controlled sample materialization = passed_not_official; scoped candidate materialization = passed_not_official; E-root scoped candidate materialization = passed_not_official; controlled market_state intradia fixture = passed_not_official; wider/declared-universe materialization = pendiente;
+E-root official = pendiente;
+ML/RL/AlphaEvolve = pendiente.
+```
+
+
+
+## 6.11 Actualizacion 2026-07-05 - Market State Intradia Controlado
+
+Controlled market_state intradia 1m quote-guarded materializado:
+
+```text
+script = scripts/materialize_market_state_intraday_quote_guarded_candidate.py
+manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/market_state_intraday_quote_guarded_candidate_v0_1/_market_state_table_manifest_v0_1_candidate_intraday_quote_guarded_controlled.json
+output = C:/TSIS_Data/tests/test_runs/2026-07-05/market_state_intraday_quote_guarded_candidate_v0_1/market_state_table_v0_1_candidate_intraday_quote_guarded_controlled
+status = controlled_candidate_not_promoted
+source_quote_guarded_intraday_rows = 10835
+state_rows = 10835
+ticker_count = 3
+quote_guarded_repair_applied_rows = 96
+qg_ohlc_changed_rows = 96
+manifest_qg_diff_not_applied_rows = 10
+full_universe_claim_rows = 0
+ml_candidate_rows = 0
+rl_candidate_rows = 0
+execution_truth_rows = 0
+intraday_as_of_after_decision_rows = 0
+bar_end_decision_timestamp_mismatch_rows = 0
+validator_status = passed
+validator_hard_fail_count = 0
+```
+
+Lectura correcta: este fixture prueba consumo `intraday__*` desde el E-root scoped candidate quote-guarded hacia `market_state_table_v0_1_candidate`. No es tabla oficial, no es full-universe, no tiene evento, no contiene outcomes y no habilita ML/RL/AlphaEvolve.
+
+Siguiente paso optimo:
+
+```text
+1. no ampliar todavia a full/wider 1m sin validar consumo de estado;
+2. usar este fixture intradia como prueba de `intraday__*` legal;
+3. construir despues un fixture `event_state` o multi-componente con ventanas/eventos gobernados;
+4. mantener outcomes/evaluadores/AlphaEvolve separados.
+```
+
+## 6.21 Actualizacion Intraday 1m Strategy Candidate Events Quote-Guarded Controlled
+
+Nuevo avance cerrado:
+
+```text
+script = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_1m_strategy_candidate_events_from_master_intraday_quote_guarded.py
+run_root = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_candidate_events_from_master_intraday_qg_controlled/
+source_candidates = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_candidate_events_from_master_intraday_qg_controlled/_intraday_1m_strategy_candidate_events_source_candidates.parquet
+manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_candidate_events_from_master_intraday_qg_controlled/_intraday_1m_strategy_candidate_events_from_master_intraday_qg_manifest.json
+dataset_path = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_candidate_events_from_master_intraday_qg_controlled/event_candidate_table/intraday_1m_strategy_candidate_events_table_v0_1_candidate/data.parquet
+event_table_manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_candidate_events_from_master_intraday_qg_controlled/event_candidate_table/_intraday_1m_strategy_candidate_events_table_v0_1_manifest_candidate.json
+status = controlled_candidate_not_promoted
+```
+
+Definicion de evento usada en este run controlado:
+
+```text
+event_definition_id = intraday_1m_first_session_open_move_pct_ge_50_candidate_v0_1
+event_definition_version = v0_1
+event_family = intraday_first_motion_threshold_cross_candidate
+event_type = first_motion_threshold_cross
+threshold_pct = 50.0
+```
+
+Evidencia:
+
+```text
+source_quote_guarded_bar_rows = 10835
+source_raw_bar_rows = 10835
+source_session_count = 58
+selected_source_row_count = 5
+event_candidate_rows = 5
+validator_status = passed
+validator_hard_fail_count = 0
+validator_review_fail_count = 0
+full_universe_claim_true_rows = 0
+ml_feature_candidate_rows = 0
+rl_state_candidate_rows = 0
+alphaevolve_production_enabled_rows = 0
+```
+
+Eventos anclados:
+
+```text
+AAGR 2023-12-08 2023-12-08T09:29:00Z premarket trigger_price=12.00 move_vs_segment_open=73.913043
+AAGR 2023-12-14 2023-12-14T11:18:00Z premarket trigger_price=1.14 move_vs_segment_open=53.020134
+AAGR 2023-12-19 2023-12-19T17:30:00Z regular trigger_price=0.75 move_vs_segment_open=59.472677
+AAGR 2023-12-20 2023-12-20T18:15:00Z regular trigger_price=1.12 move_vs_segment_open=51.351351
+AAMC 2023-12-06 2023-12-06T22:59:00Z afterhours trigger_price=5.85 move_vs_segment_open=75.675676
+```
+
+Lectura correcta:
+
+```text
+intraday_1m_strategy_candidate_events_table quote-guarded controlled = DONE
+wider/full-universe intraday materialization = PENDING
+intraday event_windows expansion = DONE controlled
+```
+
+El umbral `+50%` no entra como estado base ni como verdad privilegiada. Aqui vive en una `event_definition_id` versionada para abrir ventanas y estudiar outcomes despues. La tabla resultante es una tabla de eventos candidatos, no `market_state_table`, no `event_state_table`, no full-universe, no ML/RL/AlphaEvolve-ready y no contiene outcomes.
+
+## 6.22 Actualizacion Intraday 1m Strategy Event Windows Controlled
+
+Nuevo avance cerrado:
+
+```text
+script = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_1m_strategy_event_windows_candidate.py
+test = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_intraday_1m_strategy_event_windows_candidate_builder.py
+run_root = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_event_windows_from_5_events_controlled/
+dataset_path = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_event_windows_from_5_events_controlled/event_windows_table_v0_1_candidate_intraday_1m_strategy_events/data.parquet
+manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_event_windows_from_5_events_controlled/_event_windows_table_v0_1_candidate_intraday_1m_strategy_events_manifest.json
+status = controlled_candidate_not_promoted
+```
+
+Evidencia:
+
+```text
+source_event_count = 5
+row_count = 15
+window_role_counts = event_anchor_1m: 5, post_event_30m: 5, pre_event_30m: 5
+validator_status = passed
+validator_hard_fail_count = 0
+full_universe_claim_rows = 0
+ml_feature_candidate_rows = 5
+outcome_window_candidate_rows = 5
+microstructure_feature_candidate_rows = 15
+rl_state_component_candidate_rows = 0
+```
+
+Lectura correcta:
+
+```text
+event_windows intradia controlled = DONE
+event_state fixture = NEXT
+outcomes separados = despues de event_state/ventanas
+wider/full-universe = PENDING
+```
+
+Regla de leakage:
+
+```text
+pre_event_30m = feature-safe, termina en event_timestamp_utc
+event_anchor_1m = ancla/decision, no feature pre-evento
+post_event_30m = frontera de outcome, no X
+```
+
+Esta tabla candidata no es `event_windows_table_v0_1` oficial, no es full-universe, no contiene outcomes y no habilita ML/RL/AlphaEvolve.
+
+## 6.23 Actualizacion Event State Intraday 1m Quote-Guarded Controlled
+
+Nuevo avance cerrado:
+
+```text
+script = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_event_state_intraday_quote_guarded_candidate.py
+test = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_event_state_intraday_quote_guarded_candidate_builder.py
+run_root = C:/TSIS_Data/tests/test_runs/2026-07-05/event_state_intraday_1m_quote_guarded_controlled/
+dataset_path = C:/TSIS_Data/tests/test_runs/2026-07-05/event_state_intraday_1m_quote_guarded_controlled/event_state_table_v0_1_candidate_intraday_1m_quote_guarded_controlled/data.parquet
+manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/event_state_intraday_1m_quote_guarded_controlled/_event_state_table_v0_1_candidate_intraday_1m_quote_guarded_controlled_manifest.json
+status = controlled_candidate_not_promoted
+```
+
+Evidencia:
+
+```text
+source_event_window_rows = 15
+joined_event_state_rows = 15
+missing_market_state_window_rows = 0
+event_count = 5
+event_window_count = 15
+market_state_count = 15
+ticker_count = 2
+state_role_counts = at_event: 5, post_event_review: 5, pre_event: 5
+state_quality_counts = event_state_review_scoped_intraday_component: 15
+valid_for_pattern_discovery_rows = 15
+valid_for_ml_feature_candidate_rows = 0
+valid_for_rl_state_candidate_rows = 0
+valid_for_rl_training_direct_rows = 0
+execution_truth_rows = 0
+full_universe_claim_rows = 0
+contains_future_information_without_event_filter_rows = 5
+validator_status = passed
+validator_hard_fail_count = 0
+```
+
+Lectura correcta:
+
+```text
+controlled event_state intradia = DONE
+outcomes separados intradia controlados = DONE
+event_research_design_contract_v0_1 = DONE; sampling_probe/window/parameter_sweep = NEXT antes de evaluadores bloqueados
+wider/full-universe = PENDING
+```
+
+`post_event_review` queda marcado con informacion posterior y nunca como feature ML. No hay `outcome__*`, `label__*`, `reward__*`, acciones, fills, PnL ni signals inline.
+
+
+
+## 6.24 Actualizacion Outcomes Intraday 1m Quote-Guarded Controlled
+
+Nuevo avance cerrado:
+
+```text
+script = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_1m_event_outcomes_candidate.py
+test = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_intraday_1m_event_outcomes_candidate_builder.py
+run_root = C:/TSIS_Data/tests/test_runs/2026-07-05/outcomes_intraday_1m_quote_guarded_controlled/
+dataset_path = C:/TSIS_Data/tests/test_runs/2026-07-05/outcomes_intraday_1m_quote_guarded_controlled/outcomes_table_v0_1_candidate_intraday_1m_quote_guarded_controlled/data.parquet
+manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/outcomes_intraday_1m_quote_guarded_controlled/_outcomes_table_v0_1_candidate_intraday_1m_quote_guarded_manifest.json
+status = controlled_candidate_not_promoted
+```
+
+Evidencia:
+
+```text
+source_event_state_rows = 15
+source_event_window_rows = 15
+post_event_window_rows = 5
+reference_anchor_event_state_rows = 5
+outcome_rows = 5
+event_count = 5
+ticker_count = 2
+outcome_horizon = post_event_30m_intraday_1m
+price_view = 1m_quote_guarded_raw
+quality_counts = good_intraday_1m_outcome: 3, review_intraday_missing_bars: 2
+good_intraday_1m_outcome_rows = 3
+review_intraday_missing_bars_rows = 2
+valid_for_outcome_research_rows = 5
+valid_for_backtest_outcome_candidate_rows = 3
+valid_for_ml_label_candidate_rows = 0
+valid_for_rl_reward_candidate_rows = 0
+bars_expected_total = 150
+bars_observed_total = 134
+quote_guarded_repair_applied_rows_total = 9
+full_universe_claim_rows = 0
+execution_truth_rows = 0
+validator_status = passed
+validator_hard_fail_count = 0
+```
+
+Regla de referencia:
+
+```text
+reference_price = close quote-guarded del event_state at_event
+outcome_window = post_event_30m
+barras = master_intraday_bar_table_v0_2_candidate_quote_guarded con ts_utc dentro de la ventana
+```
+
+Lectura correcta:
+
+```text
+outcomes intradia controlados = DONE
+labels ML = bloqueados hasta label contract
+rewards RL = bloqueados hasta reward/action contract
+event_research_design_contract_v0_1 = DONE; sampling_probe/window/parameter_sweep = NEXT antes de evaluadores bloqueados
+wider/full-universe = PENDING
+```
+
+Esta tabla candidata es `y`, no `X`. No debe copiarse dentro de `market_state_table` ni `event_state_table`. MFE, MAE y returns son informacion posterior; se unen despues para investigacion/evaluacion, nunca como feature pre-evento.
+
+
+## 6.25 Actualizacion 2026-07-05 - Event Research Design Layer
+
+Nuevo contrato creado:
+
+```text
+contract = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_research_design_contract_v0_1.md
+status = contract_defined
+research_design_layer_defined = true
+```
+
+Correccion conceptual importante:
+
+```text
+la unidad basica del laboratorio no es el evento
+la unidad basica del laboratorio es el experimento
+```
+
+Lectura actualizada:
+
+```text
++50% = sampling_probe_human_seed
+pre_event_30m = sampling_window_controlled_seed
+post_event_30m = sampling_window_controlled_seed
+```
+
+Esto significa que el `+50%` usado en el run intradia controlado no es una
+verdad cientifica, no es edge, no es evento validado y no es estrategia. Es un
+instrumento humano de muestreo para encontrar movimientos historicos grandes y
+estudiar casos.
+
+Del mismo modo, las ventanas de 30 minutos no son ventanas demostradas
+estadisticamente. Son ventanas controladas razonables para empezar a observar
+antes y despues del probe.
+
+Regla de laboratorio:
+
+```text
+sampling_probe
+-> parameter_sweep
+-> exploratory_statistics
+-> event_family_candidate
+-> validation_protocol
+-> validated_event_definition
+-> locked_evaluator
+```
+
+Por tanto, el siguiente paso real ya no es saltar directamente a evaluadores
+bloqueados. Antes hay que disenar y materializar la capa de investigacion de
+eventos.
+
+Ruta corregida:
+
+```text
+controlled outcomes intradia separados = DONE controlled
+controlled multi-component fixture = PENDING
+
+event_research_design_contract_v0_1.md = DONE
+sampling_probe_registry_v0_1 = PENDING
+sampling_window_registry_v0_1 = PENDING
+parameter_sweep_plan_v0_1 = PENDING
+exploratory event statistics = PENDING
+event family candidates = PENDING
+validated event definitions = PENDING
+
+evaluator_contract_v0_1 = PENDING
+locked evaluators = PENDING
+semantic_state_representation_contract_v0_1.md = PENDING
+semantic representations candidates = PENDING
+state_transition_contract_v0_1.md = PENDING
+transition datasets / transition evaluators = PENDING
+AlphaEvolve/RL/ML = PENDING
+```
+
+Limite para AlphaEvolve y optimizadores:
+
+```text
+research_mutable = true
+human_research_mutable = true
+optimizer_mutable = configurable
+production_locked = false
+```
+
+No se usa `mutable_by_alphaevolve = true` como regla global. Cada experimento
+debe declarar si AlphaEvolve u otro optimizador puede modificar probes,
+ventanas, parametros, detectores o representaciones. El laboratorio no queda
+abierto por defecto a modificaciones automaticas.
+
+Consecuencia practica:
+
+```text
+evaluadores exploratorios = permitidos para medir fenomenos
+evaluadores bloqueados = solo despues de event families/definitions candidatas promovidas por evidencia
+```
+
+Criterio filosofico:
+
+```text
+TSIS no busca primero automatizar una estrategia conocida.
+TSIS busca descubrir fenomenos repetibles del mercado.
+```
+
+## 6.26 Actualizacion 2026-07-05 - Alineacion Con TSIS Lab Architecture v3
+
+Nueva lectura oficial:
+
+```text
+C:/TSIS_Data/00_CTO/TSIS_LAB_ARCHITECTURE_v3.md
+status = arquitectura_v3_cto_vigente
+```
+
+Consecuencia para este mapa:
+
+```text
+market_state/event_state ya no son el final conceptual de la ruta.
+Son la base observable X legal as-of.
+```
+
+Los outcomes siguen siendo:
+
+```text
+Y separado
+```
+
+Y la nueva unidad cientifica de trabajo es:
+
+```text
+research_experiment
+```
+
+Rutas nuevas relacionadas:
+
+```text
+C:/TSIS_Data/00_TSIS_Lab/README.md
+C:/TSIS_Data/00_TSIS_Lab/01_contracts/research_experiment_contract_v0_1.md
+C:/TSIS_Data/00_TSIS_Lab/01_contracts/research_experiment_execution_protocol_v0_1.md
+C:/TSIS_Data/00_TSIS_Lab/01_contracts/parameter_sweep_protocol_v0_1.md
+C:/TSIS_Data/00_TSIS_Lab/01_contracts/scientific_validation_pipeline_contract_v0_1.md
+C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/experiment.yaml
+```
+
+Lectura correcta de lo ya construido:
+
+```text
+controlled market_state intradia = base X controlada
+controlled event_state intradia = X anclada a probe/ventana
+controlled outcomes intradia separados = Y controlada
++50% = sampling_probe_human_seed
+30m = sampling_window_controlled_seed
+```
+
+Lo que cambia:
+
+```text
+antes: state -> event -> outcome -> evaluator -> AlphaEvolve
+ahora: state/outcome -> research_experiment -> evidence -> knowledge_object -> validation -> operational component
+```
+
+Por tanto, el siguiente paso no es materializar mas tablas de estado ni saltar a
+evaluadores bloqueados. El siguiente paso es ejecutar el primer experimento
+cientifico declarativo:
+
+```text
+EXP_DAS_FRONTSIDE_DISCOVERY_0001
+```
+
+Ese experimento debe estudiar historicamente movimientos intradia fuertes sin
+asumir que `+50%` es evento validado ni que `30m` es ventana final.
+
+AlphaEvolve queda reclasificado:
+
+```text
+AlphaEvolve = generador posible de candidate experiments
+AlphaEvolve != autoridad de validacion
+AlphaEvolve != destino final del pipeline
+```
+
+La validacion cientifica gobierna tanto al humano como a AlphaEvolve.
+
+
 

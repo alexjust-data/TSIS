@@ -1,0 +1,107 @@
+﻿experiment_id: EXP_INTRADAY_MOMENTUM_EXTENSION_0001
+experiment_version: v0_1
+archived_at: 2026-07-05
+superseded_by: EXP_DAS_FRONTSIDE_DISCOVERY_0001
+archive_reason: "Semilla generica inicial reemplazada por experimento strategy-seeded DAS/frontside como ruta activa."
+status: archived_superseded
+created_by: human_researcher
+generator_type: human_researcher
+
+target_domain: event_discovery
+research_question: "Que condiciones hacen que un push intradia en small caps continue o falle?"
+objective: "Medir la estructura historica de movimientos intradia fuertes sin asumir que +50% es evento validado."
+hypothesis: "Los movimientos intradia fuertes pueden separarse en familias de continuacion/fallo segun contexto as-of, liquidez, hora y referencia de precio."
+
+input_state_versions:
+  - market_state_table_v0_1_candidate_intraday_quote_guarded_controlled
+  - event_state_table_v0_1_candidate_intraday_1m_quote_guarded_controlled
+input_outcome_versions:
+  - outcomes_table_v0_1_candidate_intraday_1m_quote_guarded_controlled
+
+source_data_scope:
+  module: 01_TSIS_backtest_SmallCaps
+  intraday_source: master_intraday_bar_table_v0_2_candidate_quote_guarded
+  status: controlled_seed_to_be_expanded
+
+universe_definition:
+  initial_scope: smallcaps
+  notes: "market_cap/price/float/liquidity gates deben declararse antes de ejecucion amplia."
+
+probe_definition:
+  probe_id: intraday_1m_large_move_pct_human_seed_v0_1
+  status: sampling_probe_human_seed
+  promoted_event_definition: false
+
+parameter_grid:
+  threshold_pct: [20, 30, 40, 50, 70, 100]
+  reference_price: [prior_close, session_open, segment_open, premarket_low, vwap]
+  session_scope: [premarket, regular, afterhours, full_intraday]
+  pre_event_window: [5m, 15m, 30m, 60m, session_so_far]
+  post_event_window: [1m, 5m, 15m, 30m, 60m, end_of_session]
+
+controlled_variables:
+  leakage_policy: "state/event_state only <= decision timestamp"
+  outcome_policy: "outcomes remain separated as y"
+
+experimental_variables:
+  - threshold_pct
+  - reference_price
+  - session_scope
+  - pre_event_window
+  - post_event_window
+
+outcome_matrix:
+  - MFE
+  - MAE
+  - return_final
+  - continuation_rate
+  - failure_rate
+  - halt_rate
+  - coverage_ratio
+  - missing_bar_ratio
+
+metrics:
+  - sample_size
+  - coverage
+  - quality_state
+  - parameter_sensitivity
+  - baseline_comparison
+
+baselines:
+  - random_time_same_universe
+  - gap_only
+  - volume_only
+  - time_of_day_baseline
+
+leakage_gates:
+  - no_future_state_features
+  - no_outcomes_inside_X
+  - no_post_event_window_as_feature
+
+quality_gates:
+  - quote_guarded_lineage_required
+  - coverage_report_required
+  - missingness_report_required
+
+statistical_validation_plan:
+  exploratory_first: true
+  locked_evaluator_enabled: false
+  sealed_holdout_enabled: false
+  notes: "No seleccionar mejor variante sin protocolo de validacion posterior."
+
+promotion_rules:
+  can_promote_to_event_family_candidate: false
+  requires_exploratory_report: true
+  requires_parameter_sensitivity: true
+  requires_baseline_comparison: true
+
+mutation_policy:
+  optimizer_mutable: false
+  alphaevolve_enabled: false
+  mutation_scope: []
+
+expected_outputs:
+  - parameter_sweep_results
+  - exploratory_event_statistics_report
+  - promotion_recommendation
+

@@ -231,9 +231,10 @@ candidate_status = controlled_candidate_not_promoted
 candidate_scope = halt_event_window_microstructure_controlled_candidate
 candidate_rows = 50
 candidate_manifest = E:/TSIS/data/data_foundation_outputs/market_state_table/_market_state_table_manifest_v0_1_candidate_microstructure_halt_controlled.json
+additional_controlled_candidate_scope = intraday_quote_guarded_scoped_candidate
+additional_controlled_candidate_rows = 10835
+additional_controlled_candidate_manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/market_state_intraday_quote_guarded_candidate_v0_1/_market_state_table_manifest_v0_1_candidate_intraday_quote_guarded_controlled.json
 ```
 
 The schema exists so future builders have a strict target. It does not certify
-that the official institutional state dataset exists. The controlled candidate
-is an integration proof only and inherits provisional `D:/quotes` lineage from
-the upstream microstructure component.
+that the official institutional state dataset exists. The controlled candidates are integration proofs only. The microstructure/halt candidate inherits provisional `D:/quotes` lineage from the upstream microstructure component. The intraday quote-guarded candidate proves `intraday__*` consumption from the scoped E-root master intraday candidate under closed-bar timestamps, but it is not official, not full-universe and not ML/RL ready.

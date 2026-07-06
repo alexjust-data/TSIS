@@ -1,4 +1,4 @@
-# 00_CTO Tests
+﻿# 00_CTO Tests
 
 Este directorio contiene los tests propios del area CTO.
 
@@ -23,7 +23,7 @@ operativo correspondiente.
 
 Ejemplo:
 
-- documento de arquitectura: `00_CTO/TSIS_LAB_ARCHITECTURE.md`
+- documento de arquitectura: `00_CTO/TSIS_LAB_ARCHITECTURE_v3.md`
 - contrato operativo de salida: `01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
 - tests ejecutables de tablas: `01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/`
 
@@ -38,4 +38,5 @@ Una prueba CTO debe responder:
 - que contrato operativo debe existir aguas abajo;
 - que actualizacion de changelog o Graphify se espera;
 - que riesgo de desalineacion detecta.
+
 

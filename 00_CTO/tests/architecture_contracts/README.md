@@ -1,4 +1,4 @@
-# CTO Architecture Contract Tests
+﻿# CTO Architecture Contract Tests
 
 Este directorio valida la coherencia de la arquitectura TSIS.
 
@@ -13,7 +13,7 @@ Pruebas candidatas:
 
 - `test_layer_references.py`: cada capa declarada en la arquitectura tiene una
   ruta operativa o contrato aguas abajo.
-- `test_data_foundation_outputs_reference.py`: `TSIS_LAB_ARCHITECTURE.md`
+- `test_data_foundation_outputs_reference.py`: `TSIS_LAB_ARCHITECTURE_v3.md`
   referencia el contrato de outputs de Data Foundation.
 - `test_pipeline_stage_map.py`: las etapas de data, research, eventos,
   estrategia, ejecucion y RL conservan fronteras explicitas.
@@ -33,4 +33,5 @@ que exista:
 - nivel de promocion;
 - ruta de materializacion o razon explicita para no existir todavia;
 - politica de validacion.
+
 

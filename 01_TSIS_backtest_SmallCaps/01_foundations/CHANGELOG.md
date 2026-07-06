@@ -1,5 +1,52 @@
-# 01 Foundations Changelog
+﻿- 2026-07-05: se crea module_contracts/outputs/event_research_design_contract_v0_1.md y se actualiza el mapa v3 para insertar la capa de diseno experimental antes de evaluadores bloqueados; +50% queda clasificado como sampling_probe_human_seed y pre_event_30m/post_event_30m como sampling_window_controlled_seed, no como evento/ventana validada.
+- 2026-07-05: se crea `scripts/materialize_intraday_1m_event_outcomes_candidate.py`, `tests/data_foundation_outputs/test_intraday_1m_event_outcomes_candidate_builder.py` y `module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_outcomes_controlled_v0_1.md`; materializacion controlada de outcomes intradia quote-guarded: 5 filas, validator passed, `valid_for_ml_label_candidate_rows=0`, `valid_for_rl_reward_candidate_rows=0`.
+- 2026-07-05: materializado `event_state_table_v0_1_candidate_intraday_1m_quote_guarded_controlled` como candidato controlado; 15 filas desde market_state intradia quote-guarded + 15 event_windows intradia, roles `pre_event/at_event/post_event_review`, validator passed, sin outcomes inline, ML/RL/AlphaEvolve deshabilitados.
+- 2026-07-05: materializado `event_windows_table_v0_1_candidate_intraday_1m_strategy_events` como candidato controlado desde 5 eventos intradia quote-guarded; 15 ventanas (`pre_event_30m`, `event_anchor_1m`, `post_event_30m`), validator passed, `full_universe_claim=false`, RL/AlphaEvolve deshabilitados.
+- 2026-07-05: materializado `intraday_1m_strategy_candidate_events_table_v0_1` como candidato controlado/no oficial desde `master_intraday_bar_table_v0_2_candidate_quote_guarded`; 58 sesiones fuente, 5 eventos, validator passed, `full_universe_claim=false`, ML/RL/AlphaEvolve deshabilitados.
+- `2026-07-05` | `market_state` | fixture controlado `market_state_table_v0_1_candidate_intraday_quote_guarded_controlled` materializado desde el E-root scoped `master_intraday_bar_table_v0_2_candidate_quote_guarded`: 10.835 filas, 3 tickers, 96 reparaciones OHLC aplicadas, 10 diferencias de manifest no aplicadas, `validator_status=passed`, `full_universe_claim=false`, gates ML/RL/ejecucion falsos; no es oficial/promoted.
+- `2026-07-05` | `market_state` | E-root scoped candidate intradia 1m quote-guarded materializado: `master_intraday_bar_table_v0_2_candidate_quote_guarded` existe en `E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/` con 21.670 filas, scope `AACT:2025-09`, `AAGR:2023-12`, `AAMC:2023-12`, `validator_status=passed`, `full_universe_claim=false` y `official_dataset_created=false`.
 
+- `2026-07-05` | `market_state` | scoped candidate intradia 1m quote-guarded passed: nuevo `scripts/materialize_master_intraday_quote_guarded_candidate_scoped.py` materializa 3 ticker-months desde raw mensual completo + repair shards completos, genera 21.670 filas, 96 reparaciones OHLC efectivas, 10 diferencias de manifest no aplicadas por `repair_applied=false`, y `validator_status=passed`; no escribe E-root ni habilita ML/RL/AlphaEvolve.
+
+- `2026-07-05` | `market_state` | muestra controlada intradia 1m quote-guarded passed: nuevo `scripts/materialize_master_intraday_quote_guarded_candidate_sample.py` lee raw rows referenciadas por el sample LT1B, emite `1m_raw` y `1m_quote_guarded_raw`, genera 60 filas con 20 reparaciones OHLC reales y `validator_status=passed`; no materializa E-root candidate ni habilita ML/RL/AlphaEvolve.
+
+- `2026-07-05` | `market_state` | preflight intradia 1m quote-guarded passed: nuevo `scripts/preflight_master_intraday_quote_guarded_candidate.py` valida config, paths, summary y sample LT1B, genera reporte en `tests/test_runs/2026-07-05/master_intraday_quote_guarded_candidate_preflight_v0_1/` con `validator_status=passed` y no materializa `master_intraday_bar_table_v0_2_candidate_quote_guarded`.
+
+- `2026-07-05` | `market_state` | intradia 1m quote-guarded lineage upstream cerrado: nuevo `state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md` documenta raw `ohlcv_1m` + `D:/quotes` provisional -> repair shards -> `repair_manifest_lt1b_v0_1.parquet` PASS -> futura `master_intraday_bar_table_v0_2_candidate_quote_guarded`. No materializa master intradia, scanner 1m ni eventos 1m.
+
+ï»¿# 01 Foundations Changelog
+
+## 2026-07-05 | market_state | daily event windows lineage cerrado
+
+- Se crea `module_contracts/outputs/state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md`.
+- El documento cierra la trazabilidad del Camino A controlado: `master_daily_table_v0_1` + `instrument_master` + `market_calendar` + scanner definitions -> `daily_scanner_candidates_table_v0_3_candidate_replay` -> `daily_strategy_candidate_events_table_v0_1` (`69` filas) -> `event_windows_table_v0_1_candidate_daily_strategy_events` (`207` filas).
+- Lectura correcta: lineage daily EOD controlado cerrado; intradia 1m quote-guarded, microestructura, contexto as-of amplio, E-root official y ML/RL/AlphaEvolve siguen pendientes.
+
+## 2026-07-05 | market_state | RAW-to-consumption lineage contract
+
+- Se crea `module_contracts/outputs/state_raw_to_consumption_lineage_contract_v0_1.md`.
+- El contrato obliga a que cada tabla/componente/derivada que alimente `market_state_table`, `event_state_table`, strategy event states, ML/RL o AlphaEvolve tenga seccion `Trazabilidad RAW -> Consumo De Estado`.
+- La seccion debe mostrar fuente RAW/staged, derivadas intermedias, builders, contracts, manifests/summaries/hashes, transformaciones, cutoff/as-of, quality gates, consumo permitido, no-goals, evidencia y gaps.
+- Primer ejemplo cerrado: `master_daily_table_v0_1`, trazado desde `E:/TSIS/data/ohlcv_daily` + `E:/TSIS/data/ohlcv_daily_adjusted` + soporte CAPA 1 hasta `daily__*`.
+- Lectura correcta: AlphaEvolve/RL/ML pueden mutar formulas o representaciones, pero no pueden mutar silenciosamente la verdad de lineage.
+
+## 2026-07-05 | market_state | daily strategy event windows controlled candidate
+
+- Se crea `scripts/materialize_daily_strategy_event_windows_candidate.py` como builder ejecutable controlado para abrir ventanas alrededor de eventos daily ya gobernados.
+- Se crea `tests/data_foundation_outputs/test_daily_strategy_event_windows_candidate_builder.py`.
+- Se materializa `event_windows_table_v0_1_candidate_daily_strategy_events` desde los `69` eventos daily controlados: `207` filas, `69` por rol (`prior_session_regular`, `event_session_regular`, `next_session_regular`), validator `passed`, `0` hard fails, `0` full-universe claims y `0` RL state component rows.
+- Evidencia: `python -m pytest tests/data_foundation_outputs/test_daily_strategy_event_windows_candidate_builder.py tests/data_foundation_outputs/test_strategy_candidate_events_table_builder.py tests/data_foundation_outputs/test_event_candidate_table_validators.py -q` => `11 passed`.
+- Lectura correcta: Camino A cerrado en scope controlado; no sustituye `event_windows_table_v0_1` oficial halts-only, no es E-root, no es full-universe y no habilita ML/RL/AlphaEvolve.
+
+## 2026-07-04 | market_state | event candidate builders fixture-scope
+
+- Se crea `scripts/materialize_strategy_candidate_events_table.py` como builder ejecutable fixture-scope para `daily_strategy_candidate_events_table_v0_1` e `intraday_1m_strategy_candidate_events_table_v0_1`.
+- El builder convierte fuentes upstream seleccionadas en eventos gobernados con parquet, manifest, summary y validator summary.
+- La ruta intradia exige confirmacion quote-guarded para filas candidatas; raw-only no puede promoverse como candidate.
+- Se crea `tests/data_foundation_outputs/test_strategy_candidate_events_table_builder.py`.
+- Evidencia: `python -m pytest tests/data_foundation_outputs/test_strategy_candidate_events_table_builder.py tests/data_foundation_outputs/test_event_candidate_table_validators.py -q` => `10 passed`.
+- Se materializa un candidate controlado `daily_strategy_candidate_events_table_v0_1` desde replay `daily_scanner_candidates_table_v0_3` 2025-01-02..2025-01-10: `69` filas, validator `passed`, `0` hard/review fails, ML/RL/AlphaEvolve disabled.
+- Lectura correcta: builder ejecutable + fixtures cerrado; daily controlled materialization cerrada; wider/E-root daily, intradia quote-guarded y event_windows expansion siguen pendientes.
 ## 2026-07-04 | market_state | event candidate executable validators fixture-scope
 
 - Se crea `scripts/validate_event_candidate_tables.py` como primera implementacion ejecutable fixture-scope del contrato `event_candidate_table_validators_contract_v0_1.md`.
@@ -372,8 +419,5 @@ El resultado sigue siendo overlay:
 ```text
 raw ohlcv_1m + LT1B repair manifest = quote_guarded view
 ```
-
-
-
 
 

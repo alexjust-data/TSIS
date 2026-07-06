@@ -5281,3 +5281,380 @@ Expected graph action:
 - preservar real_table_validation_run_available = false y tablas daily/1m no materializadas;
 - mantener ML/RL/AlphaEvolve production deshabilitados.
 ```
+
+### GFQ-20260704-012 - Event candidate builders executable fixture scope
+
+Status: `pending_next_outputs_leaf_refresh`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+01_foundations/module_contracts/outputs
+01_foundations/scripts
+01_foundations/tests/data_foundation_outputs
+01_foundations/event_candidate_tables_route
+```
+
+Reason:
+
+```text
+Se anade materialize_strategy_candidate_events_table.py como builder ejecutable fixture-scope para daily_strategy_candidate_events_table_v0_1 e intraday_1m_strategy_candidate_events_table_v0_1. El builder genera parquet/manifest/summary y ejecuta el validator. Ya existe materializacion controlada daily con 69 filas desde replay scanner v0.3; wider/E-root daily e intradia quote-guarded siguen pendientes.
+```
+
+Changed paths:
+
+```text
+01_TSIS_backtest_SmallCaps/scripts/materialize_strategy_candidate_events_table.py
+01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_strategy_candidate_events_table_builder.py
+tests/test_runs/2026-07-04/daily_strategy_candidate_events_from_daily_scanner_v0_3_20250102_20250110_controlled/
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Expected graph action:
+
+```text
+- anadir nodo del builder ejecutable fixture-scope;
+- conectarlo a event_candidate_table_validators_contract_v0_1 y a los schemas daily/intradia;
+- marcar daily controlled materialization como passed_69_rows y daily wider/E-root/intraday quote-guarded como pendientes;
+- preservar que no hay tablas reales materializadas ni ML/RL/AlphaEvolve habilitado.
+```
+
+### GFQ-20260705-001 - Daily strategy event windows controlled candidate
+
+Status: `pending_next_outputs_leaf_refresh`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+01_foundations/module_contracts/outputs
+01_foundations/scripts
+01_foundations/tests/data_foundation_outputs
+01_foundations/event_windows_route
+```
+
+Reason:
+
+```text
+Se anade materialize_daily_strategy_event_windows_candidate.py como builder controlado para expandir los 69 daily_strategy_candidate_events_table_v0_1 controlados a event_windows_table_v0_1_candidate_daily_strategy_events. La salida tiene 207 filas, tres roles por evento, validator passed y no declara full-universe, RL ni produccion ML/AlphaEvolve.
+```
+
+Changed paths:
+
+```text
+01_TSIS_backtest_SmallCaps/scripts/materialize_daily_strategy_event_windows_candidate.py
+01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_daily_strategy_event_windows_candidate_builder.py
+tests/test_runs/2026-07-05/daily_strategy_event_windows_from_69_daily_events_controlled/
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
+```
+
+Expected graph action:
+
+```text
+- anadir nodo del builder daily strategy event windows controlled candidate;
+- conectarlo a daily_strategy_candidate_events_table_v0_1 controlled materialization y a event_windows route;
+- marcar output controlado passed_207_rows;
+- preservar que no sustituye event_windows_table_v0_1 oficial halts-only;
+- mantener wider/E-root daily, intradia quote-guarded, event_state y ML/RL/AlphaEvolve como pendientes.
+```
+
+### GFQ-20260705-002 - State RAW-to-consumption lineage contract
+
+Status: `pending_next_outputs_leaf_refresh`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+01_foundations/module_contracts/outputs
+01_foundations/module_contracts/README.md
+01_foundations/state_lineage_route
+```
+
+Reason:
+
+```text
+Se anade state_raw_to_consumption_lineage_contract_v0_1.md como gate obligatorio: todo componente que alimente state tables debe documentar RAW/staged -> derived -> governed component -> state builder -> consumer. El primer ejemplo cerrado es master_daily_table_v0_1.
+```
+
+Changed paths:
+
+```text
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_builder_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Expected graph action:
+
+```text
+- anadir nodo State RAW-to-consumption lineage contract;
+- conectarlo con state_builder_contract_v0_1 y el mapa v3;
+- conectar master_daily_table_v0_1 como primer ejemplo cerrado;
+- marcar intradia 1m, microestructura, contexto as-of y event candidate/event_windows como proximos componentes pendientes de lineage completo.
+```
+
+### GFQ-20260705-003 - Daily event windows controlled RAW-to-consumption lineage
+
+Status: `pending_next_outputs_leaf_refresh`
+
+Severity: `HIGH`
+
+Slice:
+
+```text
+01_foundations/module_contracts/outputs
+01_foundations/state_lineage_route
+01_foundations/event_windows_route
+```
+
+Reason:
+
+```text
+Se anade state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md para cerrar la cadena del Camino A daily controlado: master_daily + instrument/calendar + scanner definitions -> daily scanner v0.3 -> daily events -> event_windows controladas.
+```
+
+Changed paths:
+
+```text
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+```
+
+Expected graph action:
+
+```text
+- conectar el nuevo lineage daily controlado con state_raw_to_consumption_lineage_contract_v0_1;
+- conectar master_daily_table_v0_1 -> daily_scanner_candidates_table_v0_3 -> daily_strategy_candidate_events_table_v0_1 -> event_windows_table_v0_1_candidate_daily_strategy_events;
+- preservar intradia 1m quote-guarded, microestructura y E-root official como pendientes.
+```
+
+
+## GFQ-20260705-004 - Intradia 1m quote-guarded RAW-to-consumption lineage
+
+Estado: pending_graph_refresh
+Motivo: nuevo contrato especifico `state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md` y referencias en contratos/matrices.
+Docs:
+
+```text
+01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
+01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_contract_v0_1.md
+01_foundations/module_contracts/README.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+```
+
+## GFQ-20260705-005 - Intradia 1m quote-guarded preflight passed
+
+Estado: pending_graph_refresh
+Motivo: nuevo script/reporte de preflight para `master_intraday_bar_table_v0_2_candidate_quote_guarded`; config candidate actualizada al manifest LT1B promovido.
+Docs/codigo:
+
+```text
+scripts/preflight_master_intraday_quote_guarded_candidate.py
+configs/data_foundation_outputs/master_intraday_bar_table_quote_guarded_candidate_v0_2.json
+tests/data_foundation_outputs/test_master_intraday_quote_guarded_candidate_contract.py
+01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md
+01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
+```
+
+## GFQ-20260705-006 - Intradia 1m quote-guarded controlled sample passed
+
+Estado: pending_graph_refresh
+Motivo: nuevo builder/test/reporte de muestra controlada para `master_intraday_bar_table_v0_2_candidate_quote_guarded`; valida raw rows + overlay LT1B sin materializar E-root candidate.
+Docs/codigo:
+
+```text
+scripts/materialize_master_intraday_quote_guarded_candidate_sample.py
+tests/data_foundation_outputs/test_master_intraday_quote_guarded_candidate_sample_builder.py
+01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md
+01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
+```
+
+## GFQ-20260705-007 - Intradia 1m quote-guarded scoped candidate passed
+
+Estado: pending_graph_refresh
+Motivo: nuevo builder/test/reporte scoped candidate para `master_intraday_bar_table_v0_2_candidate_quote_guarded`; valida raw mensual completo + repair shards completos en tres ticker-months sin escribir E-root target.
+Docs/codigo:
+
+```text
+scripts/materialize_master_intraday_quote_guarded_candidate_scoped.py
+tests/data_foundation_outputs/test_master_intraday_quote_guarded_candidate_scoped_builder.py
+01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md
+01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
+```
+
+## GFQ-20260705-008 - Intradia 1m quote-guarded E-root scoped candidate materialized
+
+Estado: pending_graph_refresh
+Motivo: `master_intraday_bar_table_v0_2_candidate_quote_guarded` ya existe en E-root como scoped candidate not official; actualizar grafo de dataset registry, contratos y state lineage.
+Docs/codigo/data:
+
+```text
+E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/_master_intraday_bar_table_v0_2_candidate_quote_guarded_manifest.json
+E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_2_candidate_quote_guarded/data.parquet
+01_foundations/dataset_registry/outputs/master_intraday_bar_table_registry_entry.yaml
+01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md
+01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
+```
+
+---
+Fecha: 2026-07-05
+Area: market_state_intraday_quote_guarded_consumption
+Motivo: registrar que `master_intraday_bar_table_v0_2_candidate_quote_guarded` scoped E-root ya alimenta un fixture controlado de `market_state_table_v0_1_candidate` con `intraday__*`, sin promocion oficial ni gates ML/RL.
+Archivos:
+- 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+- 01_TSIS_backtest_SmallCaps/scripts/materialize_market_state_intraday_quote_guarded_candidate.py
+- 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_market_state_intraday_quote_guarded_candidate_builder.py
+- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_builder_contract_v0_1.md
+- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
+- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+- 01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/market_state_table_schema_contract.md
+No Graphify rebuild ejecutado en esta iteracion.
+
+## 2026-07-05 - market_state_intraday_event_candidate_route
+
+Estado: pendiente de refresh Graphify.
+Motivo: se anadio materializacion controlada/no oficial de `intraday_1m_strategy_candidate_events_table_v0_1` desde `master_intraday_bar_table_v0_2_candidate_quote_guarded`.
+Archivos principales:
+- `00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md`
+- `01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_tables_contract_v0_1.md`
+- `01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_table_validators_contract_v0_1.md`
+- `01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/intraday_1m_strategy_candidate_events_table_schema_contract.md`
+- `01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md`
+- `01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_1m_strategy_candidate_events_from_master_intraday_quote_guarded.py`
+- `01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_intraday_1m_strategy_candidate_events_from_master_intraday_qg.py`
+Nota: no se ha ejecutado rebuild Graphify en este turno.
+
+## 2026-07-05 - market_state_intraday_event_windows_route
+
+Estado: pendiente de refresh Graphify.
+Motivo: se anadio materializacion controlada/no oficial de `event_windows_table_v0_1_candidate_intraday_1m_strategy_events` desde los 5 eventos intradia quote-guarded.
+Archivos principales:
+- `01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_1m_strategy_event_windows_candidate.py`
+- `01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_intraday_1m_strategy_event_windows_candidate_builder.py`
+- `01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_event_windows_controlled_v0_1.md`
+- `00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md`
+Nota: no se ha ejecutado rebuild Graphify en este turno.
+
+## 2026-07-05 - market_state_intraday_event_state_route
+
+Estado: pendiente de refresh Graphify.
+Motivo: se anadio materializacion controlada/no oficial de `event_state_table_v0_1_candidate_intraday_1m_quote_guarded_controlled`.
+Archivos principales:
+- `01_TSIS_backtest_SmallCaps/scripts/materialize_event_state_intraday_quote_guarded_candidate.py`
+- `01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_event_state_intraday_quote_guarded_candidate_builder.py`
+- `01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_event_state_controlled_v0_1.md`
+- `00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md`
+Nota: no se ha ejecutado rebuild Graphify en este turno.
+
+## Pending - 2026-07-05 - HIGH - Outcomes Intradia 1m Quote-Guarded Candidate
+
+Motivo: se crea builder/test/lineage y se actualizan schema/validators/status/target contracts para `outcomes_table_v0_1_candidate_intraday_1m_quote_guarded_controlled`.
+
+Archivos principales:
+
+```text
+scripts/materialize_intraday_1m_event_outcomes_candidate.py
+tests/data_foundation_outputs/test_intraday_1m_event_outcomes_candidate_builder.py
+01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_outcomes_controlled_v0_1.md
+01_foundations/canonical_schemas/outputs/outcomes_table_schema_contract.md
+01_foundations/validators/outputs/outcomes_table_validators.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+```
+
+No refrescado todavia; pendiente de lote Graphify.
+
+## Pending - 2026-07-05 - HIGH - Event Research Design Contract
+
+Motivo: se crea `event_research_design_contract_v0_1.md`, que inserta la capa de diseno experimental antes de evaluadores bloqueados. Clasifica `+50%` como `sampling_probe_human_seed` y `pre_event_30m/post_event_30m` como `sampling_window_controlled_seed`.
+
+Archivos principales:
+
+```text
+01_foundations/module_contracts/outputs/event_research_design_contract_v0_1.md
+01_foundations/module_contracts/README.md
+01_foundations/CHANGELOG.md
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+```
+
+No refrescado todavia; pendiente de lote Graphify.
+
+## 2026-07-05 - Graphify refresh batch executed
+
+Status: leaf_built_project_root_merged
+Severity: HIGH
+
+Covered slices:
+
+```text
+data_foundation_outputs_topology_20260705
+project_current_20260705 root merge
+```
+
+Build outputs:
+
+```text
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/graphify-out/leaf_slices/data_foundation_outputs_topology_20260705/
+C:/TSIS_Data/graphify-out/leaf_slices/data_foundation_outputs_topology_20260705/
+C:/TSIS_Data/graphify-out/graph.json
+C:/TSIS_Data/graphify-out/project_current_20260705/
+```
+
+Build result:
+
+```text
+Data Foundation Outputs leaf: 210 nodes, 259 edges, 40 communities.
+Diagnostic: clean, no missing endpoints, no dangling edges, no self-loops.
+Project root merge: 464 nodes, 1507 edges, 49 communities after cluster-only.
+```
+
+Coverage notes:
+
+```text
+This batch covers event_candidate_table_validators_contract_v0_1,
+state_canonical_vs_representation_layer_contract_v0_1,
+daily_strategy_candidate_events_table_schema_contract,
+intraday_1m_strategy_candidate_events_table_schema_contract,
+state_raw_to_consumption_lineage_* contracts, quote-guarded intraday candidate
+builders/preflight/tests, market_state/event_state/outcomes controlled candidate
+routes, and the mandatory E:/TSIS minute-data root concept.
+```
+
+Root action:
+
+```text
+C:/TSIS_Data/graphify-out/graph.json was created with official graphify merge-graphs.
+The older 01_foundations root graph was not overwritten; the new official leaf
+is available under 01_foundations/graphify-out/leaf_slices/ for local agents.
+```
+
+Limitations:
+
+```text
+The refresh does not claim official promotion of candidate datasets, production
+ML/RL/AlphaEvolve enablement, or validation against full real tables where the
+source contracts only declare controlled fixtures/candidates.
+```
+

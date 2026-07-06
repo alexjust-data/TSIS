@@ -1,38 +1,54 @@
-Sí. Ahora sí he revisado la estructura real del repo.
+﻿# Nota De Autoridad v3
 
-La raíz de OpenEvolve está organizada así:
+Fecha: 2026-07-05
+Estado: nota_exploratoria_subordinada
+
+Este documento contiene ideas previas sobre OpenEvolve/AlphaEvolve y areas de trabajo. Las rutas tipo `04_EVOLUTION_LAB/` o experimentos directos deben leerse ahora como historicas o conceptuales.
+
+La estructura operativa vigente para experimentos es:
+
+```text
+C:/TSIS_Data/00_TSIS_Lab
+```
+
+AlphaEvolve no crea un laboratorio paralelo. Debe producir `candidate research experiments` compatibles con `00_TSIS_Lab`.
+
+---
+SÃ­. Ahora sÃ­ he revisado la estructura real del repo.
+
+La raÃ­z de OpenEvolve estÃ¡ organizada asÃ­:
 
 ```text
 openevolve/
-├── configs/
-├── examples/
-├── openevolve/        # código fuente del framework
-├── scripts/
-├── tests/
-├── openevolve-run.py
-├── pyproject.toml
-├── setup.py
-├── Dockerfile
-└── README.md
+â”œâ”€â”€ configs/
+â”œâ”€â”€ examples/
+â”œâ”€â”€ openevolve/        # cÃ³digo fuente del framework
+â”œâ”€â”€ scripts/
+â”œâ”€â”€ tests/
+â”œâ”€â”€ openevolve-run.py
+â”œâ”€â”€ pyproject.toml
+â”œâ”€â”€ setup.py
+â”œâ”€â”€ Dockerfile
+â””â”€â”€ README.md
 ```
 
-El uso básico no exige copiar esa estructura dentro de TSIS: puedes instalarlo con `pip install openevolve`, o clonarlo en modo desarrollo con `git clone ...` y `pip install -e ".[dev]"`. Su ejecución típica necesita tres piezas: `initial_program.py`, `evaluator.py` y `config.yaml`. ([GitHub][1])
+El uso bÃ¡sico no exige copiar esa estructura dentro de TSIS: puedes instalarlo con `pip install openevolve`, o clonarlo en modo desarrollo con `git clone ...` y `pip install -e ".[dev]"`. Su ejecuciÃ³n tÃ­pica necesita tres piezas: `initial_program.py`, `evaluator.py` y `config.yaml`. ([GitHub][1])
 
 Para TSIS, por tanto, **no tienes que adaptar tu proyecto a la estructura interna de OpenEvolve**. Tienes que crear experimentos TSIS que le den esas tres piezas:
 
 ```text
 04_EVOLUTION_LAB/
-├── experiments/
-│   └── 001_pm_squeeze_detector/
-│       ├── initial_program.py
-│       ├── evaluator.py
-│       ├── config.yaml
-│       └── output/
+â”œâ”€â”€ experiments/
+â”‚   â””â”€â”€ 001_pm_squeeze_detector/
+â”‚       â”œâ”€â”€ initial_program.py
+â”‚       â”œâ”€â”€ evaluator.py
+â”‚       â”œâ”€â”€ config.yaml
+â”‚       â””â”€â”€ output/
 ```
 
-OpenEvolve modifica el código candidato, lo evalúa con tu `evaluator.py`, guarda poblaciones/resultados y usa mecanismos como MAP-Elites, islands, LLM ensemble y artifact feedback para ir mejorando candidatos. ([GitHub][2])
+OpenEvolve modifica el cÃ³digo candidato, lo evalÃºa con tu `evaluator.py`, guarda poblaciones/resultados y usa mecanismos como MAP-Elites, islands, LLM ensemble y artifact feedback para ir mejorando candidatos. ([GitHub][2])
 
-Mi lectura: **sí parece implementable para TSIS**, pero no todavía como “TSIS Evolve completo”. Primero úsalo en un experimento pequeño:
+Mi lectura: **sÃ­ parece implementable para TSIS**, pero no todavÃ­a como â€œTSIS Evolve completoâ€. Primero Ãºsalo en un experimento pequeÃ±o:
 
 ```text
 001_pm_squeeze_detector
@@ -41,20 +57,20 @@ Mi lectura: **sí parece implementable para TSIS**, pero no todavía como “TSI
 Objetivo:
 
 ```text
-Evolucionar una función que detecte eventos PM_Squeeze
+Evolucionar una funciÃ³n que detecte eventos PM_Squeeze
 sobre una event_table ya creada.
 ```
 
-No empezaría con entradas/salidas/ticks. Empezaría con detectores de eventos o filtros, porque son más fáciles de evaluar y menos peligrosos contra sobreoptimización.
+No empezarÃ­a con entradas/salidas/ticks. EmpezarÃ­a con detectores de eventos o filtros, porque son mÃ¡s fÃ¡ciles de evaluar y menos peligrosos contra sobreoptimizaciÃ³n.
 
-[1]: https://github.com/algorithmicsuperintelligence/openevolve "GitHub - algorithmicsuperintelligence/openevolve: Open-source implementation of AlphaEvolve · GitHub"
-[2]: https://github.com/algorithmicsuperintelligence/openevolve/blob/main/README.md "openevolve/README.md at main · algorithmicsuperintelligence/openevolve · GitHub"
+[1]: https://github.com/algorithmicsuperintelligence/openevolve "GitHub - algorithmicsuperintelligence/openevolve: Open-source implementation of AlphaEvolve Â· GitHub"
+[2]: https://github.com/algorithmicsuperintelligence/openevolve/blob/main/README.md "openevolve/README.md at main Â· algorithmicsuperintelligence/openevolve Â· GitHub"
 
 
 # Pregunta
 
 ```sh
-o sea, que podríamos aplicar alphaevelve a cada evento sobre toda la data? entiendo que antes hay que crear toda la estructura para el evolve , pero la pregunta es que una vez se ha codificado cada uno de los eventos que buscarmos (aunque está más o menos no muy bien codificado) el propio proceso evolve puede encontrar eventos inesperados o mejorados porcada uno de ellos?
+o sea, que podrÃ­amos aplicar alphaevelve a cada evento sobre toda la data? entiendo que antes hay que crear toda la estructura para el evolve , pero la pregunta es que una vez se ha codificado cada uno de los eventos que buscarmos (aunque estÃ¡ mÃ¡s o menos no muy bien codificado) el propio proceso evolve puede encontrar eventos inesperados o mejorados porcada uno de ellos?
 ```
 
 Si. Y de hecho has llegado al punto donde AlphaEvolve/OpenEvolve empieza a ser realmente interesante para TSIS.
@@ -63,11 +79,11 @@ Pero hay dos niveles muy distintos:
 
 ---
 
-# Nivel 1: Evolucionar un evento que tú ya definiste
+# Nivel 1: Evolucionar un evento que tÃº ya definiste
 
 Ejemplo.
 
-Tú defines:
+TÃº defines:
 
 ```python
 def is_pm_squeeze(event):
@@ -92,7 +108,7 @@ OpenEvolve recibe:
 y un evaluador:
 
 ```text
-¿Los eventos detectados
+Â¿Los eventos detectados
 terminan produciendo grandes squeezes?
 ```
 
@@ -104,7 +120,7 @@ Entonces empieza a mutar:
 gap > 20
 ```
 
-↓
+â†“
 
 ```python
 gap > 35
@@ -118,7 +134,7 @@ o
 float < 20M
 ```
 
-↓
+â†“
 
 ```python
 float < 8M
@@ -139,24 +155,24 @@ and float < 5M
 Y descubre:
 
 ```text
-La definición original
+La definiciÃ³n original
 capturaba demasiada basura.
 
-La nueva definición
+La nueva definiciÃ³n
 captura mejor los runners.
 ```
 
 ---
 
-Esto sí.
+Esto sÃ­.
 
-Y es probablemente la primera aplicación real de OpenEvolve en TSIS.
+Y es probablemente la primera aplicaciÃ³n real de OpenEvolve en TSIS.
 
 ---
 
 # Nivel 2: Descubrir variantes inesperadas
 
-Aquí es donde se pone interesante.
+AquÃ­ es donde se pone interesante.
 
 Imagina:
 
@@ -166,7 +182,7 @@ PM_Squeeze_Event
 
 ---
 
-Tú crees que importa:
+TÃº crees que importa:
 
 ```text
 Gap
@@ -181,7 +197,7 @@ Pero OpenEvolve empieza a experimentar.
 Y descubre:
 
 ```text
-La variable más predictiva
+La variable mÃ¡s predictiva
 no es Gap.
 ```
 
@@ -214,20 +230,20 @@ Distancia a VWAP
 o
 
 ```text
-Número de intentos al HOD
+NÃºmero de intentos al HOD
 ```
 
 ---
 
-Aquí ya no está optimizando solamente.
+AquÃ­ ya no estÃ¡ optimizando solamente.
 
-Está generando hipótesis.
+EstÃ¡ generando hipÃ³tesis.
 
 ---
 
 # Nivel 3: Descubrir subfamilias
 
-Esto es lo que más me interesa para TSIS.
+Esto es lo que mÃ¡s me interesa para TSIS.
 
 Supongamos que hoy tienes:
 
@@ -235,11 +251,11 @@ Supongamos que hoy tienes:
 PM_Squeeze
 ```
 
-como un único evento.
+como un Ãºnico evento.
 
 ---
 
-OpenEvolve podría descubrir:
+OpenEvolve podrÃ­a descubrir:
 
 ```text
 PM_Squeeze_A
@@ -247,7 +263,7 @@ PM_Squeeze_A
 
 ---
 
-Características:
+CaracterÃ­sticas:
 
 ```text
 Gap 30-60%
@@ -256,12 +272,12 @@ Float 2-5M
 
 Pullback corto
 
-Rebreak rápido
+Rebreak rÃ¡pido
 ```
 
 ---
 
-Y además:
+Y ademÃ¡s:
 
 ```text
 PM_Squeeze_B
@@ -269,7 +285,7 @@ PM_Squeeze_B
 
 ---
 
-Características:
+CaracterÃ­sticas:
 
 ```text
 Gap >100%
@@ -286,7 +302,7 @@ Spread ancho
 Y descubre:
 
 ```text
-B gana mucho más.
+B gana mucho mÃ¡s.
 ```
 
 ---
@@ -297,12 +313,12 @@ Eso ya es casi clustering guiado por resultados.
 
 # Nivel 4: Descubrir eventos completamente nuevos
 
-Aquí es donde hay que tener cuidado.
+AquÃ­ es donde hay que tener cuidado.
 
 Mucha gente piensa:
 
 ```text
-AlphaEvolve encontrará
+AlphaEvolve encontrarÃ¡
 el Santo Grial.
 ```
 
@@ -317,14 +333,14 @@ Observa:
 ```text
 Datos
 +
-Código
+CÃ³digo
 +
-Métrica
+MÃ©trica
 ```
 
 ---
 
-Por tanto necesita un espacio de búsqueda.
+Por tanto necesita un espacio de bÃºsqueda.
 
 ---
 
@@ -334,17 +350,17 @@ Si solo le das:
 PM_Squeeze
 ```
 
-mutará PM_Squeeze.
+mutarÃ¡ PM_Squeeze.
 
 ---
 
-No inventará mágicamente:
+No inventarÃ¡ mÃ¡gicamente:
 
 ```text
 SSR Liquidity Compression Event
 ```
 
-si jamás le diste variables relacionadas.
+si jamÃ¡s le diste variables relacionadas.
 
 ---
 
@@ -352,7 +368,7 @@ Por eso yo veo:
 
 ```text
 Pattern Mining
-↓
+â†“
 OpenEvolve
 ```
 
@@ -362,15 +378,15 @@ y no:
 
 ```text
 OpenEvolve
-↓
+â†“
 Pattern Mining
 ```
 
 ---
 
-# Lo que realmente podría pasar en TSIS
+# Lo que realmente podrÃ­a pasar en TSIS
 
-Y esto sí creo que es muy potente.
+Y esto sÃ­ creo que es muy potente.
 
 Imagina:
 
@@ -386,7 +402,7 @@ OpenEvolve prueba miles de variantes.
 
 ---
 
-Después de semanas descubre:
+DespuÃ©s de semanas descubre:
 
 ```text
 Los mejores runners
@@ -405,7 +421,7 @@ Primer push > 25%
 
 ---
 
-Tú nunca programaste eso.
+TÃº nunca programaste eso.
 
 ---
 
@@ -418,37 +434,37 @@ capturar runners grandes
 
 ---
 
-Y el sistema evolucionó hacia esa definición.
+Y el sistema evolucionÃ³ hacia esa definiciÃ³n.
 
 ---
 
-# Lo más importante
+# Lo mÃ¡s importante
 
-Tu intuición inicial era:
+Tu intuiciÃ³n inicial era:
 
 ```text
-AlphaEvolve analizará
-20 años de datos
-y encontrará cosas.
+AlphaEvolve analizarÃ¡
+20 aÃ±os de datos
+y encontrarÃ¡ cosas.
 ```
 
 ---
 
-La versión correcta sería:
+La versiÃ³n correcta serÃ­a:
 
 ```text
-AlphaEvolve analizará
-20 años de datos
+AlphaEvolve analizarÃ¡
+20 aÃ±os de datos
 
 dentro de un espacio
-de búsqueda bien definido
+de bÃºsqueda bien definido
 
-y encontrará variantes
+y encontrarÃ¡ variantes
 que un humano
-probablemente no habría probado.
+probablemente no habrÃ­a probado.
 ```
 
-Eso sí lo veo completamente realista para TSIS.
+Eso sÃ­ lo veo completamente realista para TSIS.
 
 De hecho, si consigues construir:
 
@@ -458,4 +474,5 @@ outcome_table
 strategy_evaluator
 ```
 
-yo diría que una de las aplicaciones más valiosas de OpenEvolve no será optimizar entradas o salidas, sino **descubrir mejores definiciones de eventos y mejores filtros contextuales** para los fenómenos que ya conoces (PM Squeeze, Gap & Go, Red to Green, First Green Day, etc.). Ahí es donde tienes una combinación muy rara: 20 años de datos de microcaps + conocimiento discrecional profundo + un motor evolutivo. Esa combinación sí tiene potencial para producir hallazgos interesantes.
+yo dirÃ­a que una de las aplicaciones mÃ¡s valiosas de OpenEvolve no serÃ¡ optimizar entradas o salidas, sino **descubrir mejores definiciones de eventos y mejores filtros contextuales** para los fenÃ³menos que ya conoces (PM Squeeze, Gap & Go, Red to Green, First Green Day, etc.). AhÃ­ es donde tienes una combinaciÃ³n muy rara: 20 aÃ±os de datos de microcaps + conocimiento discrecional profundo + un motor evolutivo. Esa combinaciÃ³n sÃ­ tiene potencial para producir hallazgos interesantes.
+

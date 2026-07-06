@@ -118,6 +118,46 @@ Por ventana dedicada:
 
 ## Entradas activas
 
+### GFQ-20260706-001 - Validador visual de TSIS Lab
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+00_TSIS_Lab
+EXP_DAS_FRONTSIDE_DISCOVERY_0001
+visual_inspection_manifest
+```
+
+Reason:
+
+```text
+Se agrego el primer validador ejecutable del Lab para evidencia visual label-level y se adapto el exporter DAS para emitir visual_inspection_manifest.parquet, sidecars de labels y un PNG contractual de inspeccion visual. El smoke XAGE ahora valida PASS para label_id, cobertura de senales, hash del renderer, checks de imagen y validacion de no solape. El EXPORT_MANIFEST.csv legacy sigue siendo insuficiente por si solo.
+```
+
+Changed paths:
+
+```text
+00_TSIS_Lab/README.md
+00_TSIS_Lab/06_validators/README.md
+00_TSIS_Lab/06_validators/validate_visual_inspection_manifest.py
+00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/execution_protocol.md
+00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/scripts/das_widgets.py
+CHANGELOG.md
+```
+
+Recommended action:
+
+```text
+Refrescar el slice de experimentos/validadores de TSIS Lab para que futuras consultas Graphify muestren que la evidencia visual debe ser label-level y ejecutable, no solo PNGs exportados.
+```
+
+Root action:
+
+```text
+No requiere rebuild inmediato del root. Incluir en el siguiente lote oficial de refresco Lab/CTO.
+```
 ### GFQ-20260704-001 - Mandatory data plane minute-root reading
 
 Status: pending
@@ -329,7 +369,7 @@ Changed paths:
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_to_market_state_promotion_path_v0_1.md
 00_CTO/11_MARKET_SCIENCE/README.md
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/market_state_representation_source_file_map_v0_1.md
-00_CTO/TSIS_LAB_ARCHITECTURE_v2.md
+00_CTO/_archive/superseded_architecture_2026_07_05/TSIS_LAB_ARCHITECTURE_v2.md
 00_CTO/README.md
 00_CTO/CHANGELOG.md
 00_CTO/GRAPHIFY_REFRESH_QUEUE.md
@@ -373,7 +413,7 @@ Motivo:
 Changed paths:
 
 ```text
-00_CTO/TSIS_LAB_ARCHITECTURE_v2.md
+00_CTO/_archive/superseded_architecture_2026_07_05/TSIS_LAB_ARCHITECTURE_v2.md
 00_CTO/README.md
 00_CTO/CHANGELOG.md
 00_CTO/GRAPHIFY_REFRESH_QUEUE.md
@@ -420,7 +460,7 @@ Changed paths:
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/market_state_representation_source_file_map_v0_1.md
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/
 00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/README.md
-00_CTO/TSIS_LAB_ARCHITECTURE.md
+00_CTO/_archive/superseded_architecture_2026_07_05/TSIS_LAB_ARCHITECTURE.md
 00_CTO/README.md
 00_CTO/CHANGELOG.md
 00_CTO/GRAPHIFY_REFRESH_QUEUE.md
@@ -816,7 +856,7 @@ Severity: `HIGH`
 Slice:
 
 ```text
-TSIS_LAB_ARCHITECTURE.md
+_archive/superseded_architecture_2026_07_05/TSIS_LAB_ARCHITECTURE.md
 ```
 
 Reason:
@@ -832,7 +872,7 @@ Reason:
 Changed paths:
 
 ```text
-00_CTO/TSIS_LAB_ARCHITECTURE.md
+00_CTO/_archive/superseded_architecture_2026_07_05/TSIS_LAB_ARCHITECTURE.md
 00_CTO/CHANGELOG.md
 00_CTO/GRAPHIFY_REFRESH_QUEUE.md
 ```
@@ -1653,3 +1693,646 @@ Expected graph action:
 - marcar validation-on-real-table y builders/materializacion como pendientes;
 - preservar que no hay tablas daily/1m materializadas ni ML/RL/AlphaEvolve habilitado.
 ```
+
+### GFQ-20260704-015 - Market State event candidate builders executable fixture scope
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION
+01_foundations/module_contracts/outputs
+01_foundations/scripts
+market_state_event_candidate_route
+```
+
+Reason:
+
+```text
+Market State v3 registra que los builders de event candidate tables pasan a fixture-scope ejecutable. La ruta queda en builder executable DONE, daily controlled materialization DONE_69_rows, daily wider/E-root PENDING, intraday quote-guarded PENDING y validator run sobre tabla real amplia PENDING.
+```
+
+Changed paths:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+01_TSIS_backtest_SmallCaps/scripts/materialize_strategy_candidate_events_table.py
+01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_strategy_candidate_events_table_builder.py
+tests/test_runs/2026-07-04/daily_strategy_candidate_events_from_daily_scanner_v0_3_20250102_20250110_controlled/
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
+01_TSIS_backtest_SmallCaps/CHANGELOG.md
+00_CTO/CHANGELOG.md
+```
+
+Expected graph action:
+
+```text
+- anadir nodo builder ejecutable fixture-scope;
+- conectarlo despues del validator ejecutable y antes de real materialization/event_windows expansion;
+- preservar que daily controlled materialization existe, pero daily wider/E-root e intraday quote-guarded siguen pendientes;
+- mantener ML/RL/AlphaEvolve production deshabilitado.
+```
+
+### GFQ-20260705-001 - Market State daily strategy event windows controlled candidate
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION
+01_foundations/module_contracts/outputs
+01_foundations/scripts
+market_state_event_windows_route
+```
+
+Reason:
+
+```text
+Market State v3 registra que Camino A avanza desde 69 eventos daily controlados hasta 207 event_windows controladas. La ruta queda en event_windows controlled daily expansion DONE controlled, pero wider/E-root daily, intradia quote-guarded, event_state, outcomes, ML/RL y AlphaEvolve siguen pendientes.
+```
+
+Changed paths:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+01_TSIS_backtest_SmallCaps/scripts/materialize_daily_strategy_event_windows_candidate.py
+01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_daily_strategy_event_windows_candidate_builder.py
+tests/test_runs/2026-07-05/daily_strategy_event_windows_from_69_daily_events_controlled/
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
+00_CTO/CHANGELOG.md
+```
+
+Expected graph action:
+
+```text
+- anadir nodo Camino A event_windows controlled daily expansion DONE;
+- conectarlo despues de daily_strategy_candidate_events_table controlled materialization y antes de controlled market_state/event_state fixture;
+- preservar que es candidate controlado, no tabla oficial, no E-root y no full-universe;
+- mantener event_state/outcomes/evaluadores/semantic representations/AlphaEvolve como pendientes.
+```
+
+### GFQ-20260705-002 - Market State RAW-to-consumption lineage gate
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION
+01_foundations/module_contracts/outputs
+market_state_lineage_route
+```
+
+Reason:
+
+```text
+Market State v3 registra state_raw_to_consumption_lineage_contract_v0_1.md como gate DONE. A partir de ahora cada componente de estado debe explicar su trazabilidad RAW/staged -> derivada -> componente gobernado -> state builder -> consumer antes de alimentar fixtures/candidates.
+```
+
+Changed paths:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_builder_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+00_CTO/CHANGELOG.md
+```
+
+Expected graph action:
+
+```text
+- anadir nodo RAW-to-consumption lineage gate en Market State;
+- conectarlo despues de Canonical State vs Representation Layer y antes de validators/builder candidates;
+- preservar que no materializa tablas;
+- mostrar master_daily_table_v0_1 como ejemplo cerrado y los demas componentes como pendientes de trazabilidad completa.
+```
+
+### GFQ-20260705-003 - Market State Camino A daily lineage closed
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION
+01_foundations/module_contracts/outputs
+market_state_lineage_route
+```
+
+Reason:
+
+```text
+Market State v3 registra state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md como DONE controlled. El Camino A daily queda trazado desde master_daily hasta event_windows controladas antes del fixture market_state/event_state.
+```
+
+Changed paths:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_contract_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+00_CTO/CHANGELOG.md
+```
+
+Expected graph action:
+
+```text
+- marcar Camino A daily lineage DONE controlled;
+- mostrar que 69 events y 207 event_windows son daily EOD controlled, no 1m;
+- mantener 1m quote-guarded/micro/contexto/E-root official pendientes.
+```
+
+
+## GFQ-20260705-004 - Market State intradia 1m lineage upstream closed
+
+Estado: pending_graph_refresh
+Motivo: v3 Market State incorpora el lineage upstream de `ohlcv_1m` quote-guarded antes de permitir consumo como `intraday__*`.
+Docs:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
+```
+
+## GFQ-20260705-005 - Market State intradia 1m preflight passed
+
+Estado: pending_graph_refresh
+Motivo: v3 Market State registra que el lineage upstream 1m quote-guarded ya tiene preflight ligero passed; materializacion candidate sigue pendiente.
+Docs/codigo:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+01_TSIS_backtest_SmallCaps/scripts/preflight_master_intraday_quote_guarded_candidate.py
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
+```
+
+## GFQ-20260705-006 - Market State intradia 1m controlled sample passed
+
+Estado: pending_graph_refresh
+Motivo: v3 Market State registra muestra controlada quote-guarded passed: 60 filas, dos price views, 20 reparaciones OHLC reales, sin E-root candidate.
+Docs/codigo:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+01_TSIS_backtest_SmallCaps/scripts/materialize_master_intraday_quote_guarded_candidate_sample.py
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
+```
+
+## GFQ-20260705-007 - Market State intradia 1m scoped candidate passed
+
+Estado: pending_graph_refresh
+Motivo: v3 Market State registra scoped candidate quote-guarded passed: 21.670 filas, dos price views, 96 reparaciones OHLC efectivas, sin E-root candidate.
+Docs/codigo:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+01_TSIS_backtest_SmallCaps/scripts/materialize_master_intraday_quote_guarded_candidate_scoped.py
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
+```
+
+## GFQ-20260705-008 - Market State E-root scoped intradia 1m candidate
+
+Estado: pending_graph_refresh
+Motivo: v3 Market State registra que `master_intraday_bar_table_v0_2_candidate_quote_guarded` ya fue materializada en E-root como scoped candidate not official.
+Docs/data:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/_master_intraday_bar_table_v0_2_candidate_quote_guarded_manifest.json
+E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_2_candidate_quote_guarded/data.parquet
+```
+
+---
+Fecha: 2026-07-05
+Area: market_state_intraday_quote_guarded_consumption
+Motivo: registrar que `master_intraday_bar_table_v0_2_candidate_quote_guarded` scoped E-root ya alimenta un fixture controlado de `market_state_table_v0_1_candidate` con `intraday__*`, sin promocion oficial ni gates ML/RL.
+Archivos:
+- 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+- 01_TSIS_backtest_SmallCaps/scripts/materialize_market_state_intraday_quote_guarded_candidate.py
+- 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_market_state_intraday_quote_guarded_candidate_builder.py
+- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_builder_contract_v0_1.md
+- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
+- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+- 01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/market_state_table_schema_contract.md
+No Graphify rebuild ejecutado en esta iteracion.
+
+## 2026-07-05 - market_state_intraday_event_candidate_route
+
+Estado: pendiente de refresh Graphify.
+Motivo: se anadio materializacion controlada/no oficial de `intraday_1m_strategy_candidate_events_table_v0_1` desde `master_intraday_bar_table_v0_2_candidate_quote_guarded`.
+Archivos principales:
+- `00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md`
+- `01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_tables_contract_v0_1.md`
+- `01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_table_validators_contract_v0_1.md`
+- `01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/intraday_1m_strategy_candidate_events_table_schema_contract.md`
+- `01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md`
+- `01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_1m_strategy_candidate_events_from_master_intraday_quote_guarded.py`
+- `01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_intraday_1m_strategy_candidate_events_from_master_intraday_qg.py`
+Nota: no se ha ejecutado rebuild Graphify en este turno.
+
+## 2026-07-05 - market_state_intraday_event_windows_route
+
+Estado: pendiente de refresh Graphify.
+Motivo: se anadio materializacion controlada/no oficial de `event_windows_table_v0_1_candidate_intraday_1m_strategy_events` desde los 5 eventos intradia quote-guarded.
+Archivos principales:
+- `01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_1m_strategy_event_windows_candidate.py`
+- `01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_intraday_1m_strategy_event_windows_candidate_builder.py`
+- `01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_event_windows_controlled_v0_1.md`
+- `00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md`
+Nota: no se ha ejecutado rebuild Graphify en este turno.
+
+## 2026-07-05 - market_state_intraday_event_state_route
+
+Estado: pendiente de refresh Graphify.
+Motivo: se anadio materializacion controlada/no oficial de `event_state_table_v0_1_candidate_intraday_1m_quote_guarded_controlled`.
+Archivos principales:
+- `01_TSIS_backtest_SmallCaps/scripts/materialize_event_state_intraday_quote_guarded_candidate.py`
+- `01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_event_state_intraday_quote_guarded_candidate_builder.py`
+- `01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_event_state_controlled_v0_1.md`
+- `00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md`
+Nota: no se ha ejecutado rebuild Graphify en este turno.
+
+## Pending - 2026-07-05 - HIGH - Market State Outcomes Intradia Controlado
+
+Motivo: `market_state_tables_status_and_operating_map_2026_07_01_v3.md` registra `outcomes_table_v0_1_candidate_intraday_1m_quote_guarded_controlled` como `y` separado para la ruta intradia 1m quote-guarded, y cambia el siguiente paso vivo a evaluadores bloqueados.
+
+Scope sugerido:
+
+```text
+C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/
+```
+
+No refrescado todavia; pendiente de lote Graphify.
+
+## Pending - 2026-07-05 - HIGH - Market State Event Research Design Layer
+
+Motivo: el mapa v3 cambia el siguiente paso semantico desde evaluadores bloqueados hacia diseno experimental de eventos: sampling probes, sampling windows, parameter sweeps, exploratory statistics y event family candidates.
+
+Archivos principales:
+
+```text
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_research_design_contract_v0_1.md
+```
+
+No refrescado todavia; pendiente de lote Graphify.
+
+## 2026-07-05 - HIGH - Scientific Discovery Engine / 00_TSIS_Lab
+
+Estado: pending.
+
+Motivo:
+
+```text
+Se introduce `Scientific Discovery Engine` como arquitectura superior de TSIS,
+se crea `00_TSIS_Lab` como laboratorio operativo transversal y se redefine
+AlphaEvolve como generador de candidate experiments sometido al mismo
+Scientific Validation Pipeline que el investigador humano.
+```
+
+Leafs afectados:
+
+```text
+00_CTO/01_RESEARCH_PHILOSOPHY
+00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION
+00_TSIS_Lab
+```
+
+Accion requerida:
+
+```text
+Rebuild/refresh Graphify en ventana dedicada; no ejecutar automaticamente en este cambio.
+```
+
+## 2026-07-05 - HIGH - TSIS Lab Architecture v3
+
+Estado: pending.
+
+Motivo:
+
+```text
+Se crea `TSIS_LAB_ARCHITECTURE_v3.md` como lectura CTO vigente y se actualiza
+el mapa `market_state_tables_status_and_operating_map_2026_07_01_v3.md` para
+alinear Market State con `Scientific Discovery Engine` y `00_TSIS_Lab`.
+```
+
+Archivos principales:
+
+```text
+00_CTO/TSIS_LAB_ARCHITECTURE_v3.md
+00_CTO/README.md
+00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+00_TSIS_Lab/README.md
+```
+
+No refrescado todavia; pendiente de lote Graphify.
+
+
+
+### 2026-07-05 - Superseded architecture docs archived after v3 promotion
+
+Estado: pending
+Severidad: LOW
+
+Slice:
+
+```text
+00_CTO/
+```
+
+Motivo:
+
+- se movieron `TSIS_LAB_ARCHITECTURE.md`, `TSIS_LAB_ARCHITECTURE_v2.md` y
+  `00_CTO_REFACTOR_PLAN.md` a `_archive/superseded_architecture_2026_07_05/`;
+- `TSIS_LAB_ARCHITECTURE_v3.md` queda como unica lectura CTO vigente;
+- las referencias operativas se actualizaron para evitar que agentes nuevos
+  arranquen desde doctrina superseded.
+
+Changed paths:
+
+```text
+00_CTO/TSIS_LAB_ARCHITECTURE_v3.md
+00_CTO/_archive/superseded_architecture_2026_07_05/README.md
+00_CTO/_archive/superseded_architecture_2026_07_05/TSIS_LAB_ARCHITECTURE.md
+00_CTO/_archive/superseded_architecture_2026_07_05/TSIS_LAB_ARCHITECTURE_v2.md
+00_CTO/_archive/superseded_architecture_2026_07_05/00_CTO_REFACTOR_PLAN.md
+00_CTO/README.md
+00_CTO/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Required Graphify action:
+
+```text
+Include in the next official 00_CTO governance refresh. Do not manually edit generated Graphify outputs.
+```
+
+### 2026-07-05 - AlphaEvolve subordinated to TSIS Scientific Validation Pipeline
+
+Estado: pending
+Severidad: HIGH
+
+Slice:
+
+```text
+00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/
+00_CTO/TSIS_LAB_ARCHITECTURE_v3.md
+00_CTO/README.md
+```
+
+Motivo:
+
+- AlphaEvolve queda definido como generador de `candidate research experiments`;
+- no es centro de TSIS ni autoridad de validacion;
+- cualquier candidato humano o AlphaEvolve debe pasar por el mismo `Scientific Validation Pipeline`;
+- se crea contrato explicito para inputs, outputs, superficies de mutacion permitidas y superficies prohibidas.
+
+Changed paths:
+
+```text
+00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/README.md
+00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/README.md
+00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/01_ALPHAEVOLVE_TSIS_VISION.md
+00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/02_ALPHAEVOLVE_AS_RESEARCH_EXPERIMENT_GENERATOR_v0_1.md
+00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/00_AlphaEvolve_vs_sobreoptimizacion.md
+00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/areas_de_trabajo.md
+00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/AlphaEnvolve_en_Tsis.md
+00_CTO/TSIS_LAB_ARCHITECTURE_v3.md
+00_CTO/README.md
+00_CTO/CHANGELOG.md
+00_CTO/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Required Graphify action:
+
+```text
+Include in next official 00_CTO autonomous research / architecture refresh. Do not manually edit generated Graphify outputs.
+```
+
+### 2026-07-05 - Root operating documents aligned with TSIS Lab Architecture v3
+
+Estado: pending
+Severidad: HIGH
+
+Slice:
+
+```text
+C:/TSIS_Data root documents
+00_CTO/TSIS_LAB_ARCHITECTURE_v3.md
+00_TSIS_Lab/
+```
+
+Motivo:
+
+- `PROJECT_OPERATING_SYSTEM.md`, `RESEARCH_PHILOSOPHY.md` y `VERSIONING_STANDARDS.md` pasan a leer TSIS como `Scientific Discovery Engine`;
+- la unidad cientifica central queda declarada como `research_experiment`;
+- `RESEARCH_PHILOSOPHY.md` queda como sintesis raiz y `00_CTO/01_RESEARCH_PHILOSOPHY/` como biblioteca extendida;
+- `VERSIONING_STANDARDS.md` incorpora versionado de sampling probes, parameter sweeps, evidence reports, knowledge objects, representation candidates y runs AlphaEvolve/autonomous generator.
+
+Changed paths:
+
+```text
+PROJECT_OPERATING_SYSTEM.md
+RESEARCH_PHILOSOPHY.md
+VERSIONING_STANDARDS.md
+CHANGELOG.md
+00_CTO/CHANGELOG.md
+00_CTO/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Required Graphify action:
+
+```text
+Include these root documents in the next official architecture/operating-system refresh. Do not manually edit generated Graphify outputs.
+```
+
+### 2026-07-05 - Arquitectura raiz v3 como lectura oficial
+
+Severidad: HIGH
+Estado: pending official refresh
+
+Cambio semantico:
+- Se elimina el overview raiz obsoleto.
+- La autoridad de arquitectura pasa a `C:/TSIS_Data/00_CTO/TSIS_LAB_ARCHITECTURE_v3.md`.
+- Los documentos raiz y lecturas operativas quedan alineados con TSIS como Scientific Discovery Engine, `00_TSIS_Lab` y `research_experiment`.
+
+Paths afectados:
+- `C:/TSIS_Data/README.md`
+- `C:/TSIS_Data/START_HERE.md`
+- `C:/TSIS_Data/AGENTS.md`
+- `C:/TSIS_Data/PROJECT_RULES.md`
+- `C:/TSIS_Data/PROJECT_OPERATING_SYSTEM.md`
+- `C:/TSIS_Data/RESEARCH_PHILOSOPHY.md`
+- `C:/TSIS_Data/VERSIONING_STANDARDS.md`
+- `C:/TSIS_Data/00_CTO/TSIS_LAB_ARCHITECTURE_v3.md`
+- `C:/TSIS_Data/00_TSIS_Lab/README.md`
+
+Accion pendiente:
+- Rebuild/refresh Graphify del slice CTO/root en una ventana dedicada.
+- No se ejecuto rebuild en este cambio.
+
+### 2026-07-05 - TSIS Lab DAS/frontside research experiment
+
+Severidad: HIGH
+Estado: pending official refresh
+
+Cambio semantico:
+- Se crea `EXP_DAS_FRONTSIDE_DISCOVERY_0001` como experimento strategy-seeded para convertir DAS/frontside visual en investigacion reproducible.
+- El experimento declara `parameter_space.yaml`, `research_design.md`, gramatica de objetos DAS y primer sweep de sensibilidad de `momentum_trigger_pct`.
+- Queda explicito que `+50%`, `500k`, `20% push`, `3% dip`, rangos de precio y session scope son semillas humanas investigables, no verdades cientificas.
+
+Paths afectados:
+- `C:/TSIS_Data/00_TSIS_Lab/README.md`
+- `C:/TSIS_Data/00_TSIS_Lab/02_registries/research_experiment_registry_v0_1.md`
+- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/README.md`
+- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/experiment.yaml`
+- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/research_design.md`
+- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/parameter_space.yaml`
+- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/sweeps/SWEEP_001_frontside_operability_boundary.yaml`
+
+Accion pendiente:
+- Rebuild/refresh Graphify del slice Lab/CTO en una ventana dedicada.
+- No se ejecuto rebuild en este cambio.
+
+### 2026-07-05 - EXP_INTRADAY_MOMENTUM_EXTENSION_0001 archivado y reemplazado por DAS/frontside activo
+
+Severidad: MEDIUM
+Estado: pending official refresh
+
+Cambio semantico:
+- `EXP_INTRADAY_MOMENTUM_EXTENSION_0001` deja de ser experimento activo y pasa a archivo superseded.
+- `EXP_DAS_FRONTSIDE_DISCOVERY_0001` queda como experimento activo inicial del Lab para investigar DAS/frontside desde una semilla discrecional.
+- El concepto `intraday_momentum_extension` se conserva como posible familia/probe futura, pero no como ruta operativa activa.
+
+Paths afectados:
+- `C:/TSIS_Data/00_TSIS_Lab/README.md`
+- `C:/TSIS_Data/00_TSIS_Lab/02_registries/research_experiment_registry_v0_1.md`
+- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/_archive/superseded_2026_07_05/EXP_INTRADAY_MOMENTUM_EXTENSION_0001/README.md`
+- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/_archive/superseded_2026_07_05/EXP_INTRADAY_MOMENTUM_EXTENSION_0001/experiment.yaml`
+- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/`
+- `C:/TSIS_Data/00_CTO/TSIS_LAB_ARCHITECTURE_v3.md`
+- `C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md`
+
+Accion pendiente:
+- Incluir en el siguiente refresh Graphify del slice Lab/CTO.
+- No se ejecuto rebuild Graphify en este cambio.
+
+## 2026-07-05 - Graphify refresh batch executed
+
+Status: leaf_built_project_root_merged
+Severity: HIGH
+
+Covered slices:
+
+```text
+graphify_governance_20260705
+market_state_representation_20260705
+project_current_20260705 root merge
+```
+
+Build outputs:
+
+```text
+C:/TSIS_Data/00_CTO/graphify-out/leaf_slices/graphify_governance_20260705/
+C:/TSIS_Data/00_CTO/graphify-out/leaf_slices/market_state_representation_20260705/
+C:/TSIS_Data/graphify-out/leaf_slices/graphify_governance_20260705/
+C:/TSIS_Data/graphify-out/leaf_slices/market_state_representation_20260705/
+C:/TSIS_Data/graphify-out/graph.json
+C:/TSIS_Data/graphify-out/project_current_20260705/
+```
+
+Build result:
+
+```text
+Governance leaf: clean diagnostic, no missing endpoints, no dangling edges, no self-loops.
+Market State leaf: clean diagnostic, no missing endpoints, no dangling edges, no self-loops.
+Project root merge: 464 nodes, 1507 edges, 49 communities after cluster-only.
+```
+
+Coverage notes:
+
+```text
+This batch covers the active root/CTO/Market State v3 operating-system refresh,
+Scientific Discovery Engine / TSIS Lab architecture references, Canonical State
+vs Representation Layer, Market State v3, quote-guarded intraday route,
+RAW-to-consumption lineage, event candidate route, event windows, event_state,
+outcomes candidate, and the mandatory E:/TSIS minute-data root rule.
+```
+
+Root action:
+
+```text
+C:/TSIS_Data/graphify-out/graph.json was created with official graphify merge-graphs.
+The older C:/TSIS_Data/00_CTO/graphify-out/graph.json was not overwritten because
+it contains legacy slice coverage and may retain stale nodes until a dedicated
+CTO root replacement window.
+```
+
+Limitations:
+
+```text
+This is a deterministic curated topology refresh, not a full semantic
+re-extraction of every CTO/reference/library document. Legacy pending entries
+for Strategy Library, Sersan/reference-library graphs, and full CTO root cleanup
+remain open unless covered by the slices above.
+```
+
+
+### 2026-07-05 - SWEEP_001 DAS/frontside reformulado como frontera de operabilidad
+
+Severidad: MEDIUM
+Estado: pending official refresh
+
+Cambio semantico:
+- `SWEEP_001` deja de leerse como sensibilidad generica de momentum threshold.
+- Pasa a leerse como auditoria de frontera de operabilidad frontside para DAS.
+- `+50%` queda declarado como criba humana historica; valores inferiores son grupo de control y valores superiores miden intensidad/sobreextension posible.
+
+Paths afectados:
+- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/README.md`
+- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/experiment.yaml`
+- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/research_design.md`
+- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/parameter_space.yaml`
+- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/sweeps/SWEEP_001_frontside_operability_boundary.yaml`
+
+Accion pendiente:
+- Incluir en el siguiente refresh Graphify del slice Lab/CTO.
+- No se ejecuto rebuild Graphify en este cambio.
+
+
+### 2026-07-05 - EXP_DAS execution_protocol definido
+
+Severidad: MEDIUM
+Estado: pending official refresh
+
+Cambio semantico:
+- Se crea `execution_protocol.md` para `EXP_DAS_FRONTSIDE_DISCOVERY_0001`.
+- La ejecucion oficial queda definida como executor reproducible + manifests + evidence reports; notebooks quedan como inspeccion humana.
+- El protocolo declara inputs, preflight, output root, funnel metrics, outcome metrics, baselines, gates anti-basura, memoria de candidatos y relacion futura con AlphaEvolve.
+
+Paths afectados:
+- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/execution_protocol.md`
+- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/README.md`
+- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/experiment.yaml`
+- `C:/TSIS_Data/00_TSIS_Lab/00_CTO/01_privado2.md`
+
+Accion pendiente:
+- Incluir en el siguiente refresh Graphify del slice Lab/CTO.
+- No se ejecuto rebuild Graphify en este cambio.
+
+
+

@@ -1,4 +1,4 @@
-# Data Quality Harness Shutdown Handoff Note
+﻿# Data Quality Harness Shutdown Handoff Note
 
 Fecha: 2026-06-13
 
@@ -137,7 +137,7 @@ Primero leer:
 - `C:\TSIS_Data\START_HERE.md`
 - `C:\TSIS_Data\PROJECT_RULES.md`
 - `C:\TSIS_Data\AGENTS.md`
-- `C:\TSIS_Data\ARCHITECTURE_OVERVIEW.md`
+- `C:\TSIS_Data\00_CTO\TSIS_LAB_ARCHITECTURE_v3.md`
 - `C:\TSIS_Data\PROJECT_OPERATING_SYSTEM.md`
 - `C:\TSIS_Data\VERSIONING_STANDARDS.md`
 - `C:\TSIS_Data\RESEARCH_PHILOSOPHY.md`
@@ -382,3 +382,4 @@ No usar `done`, `clean`, `ok` o `closed` como estado final sin contrato, consumi
 El siguiente agente no debe reempezar desde cero.
 
 Debe asumir que `reference` y `halts` ya estan promovidos, leer sus readouts si necesita entender el patron, y continuar con el siguiente dataset pendiente aplicando la misma calidad, sin tocar data raw y parando al terminar cada bloque.
+

@@ -376,3 +376,41 @@ Root action:
 Owner:
 Notes:
 ```
+
+## 2026-07-05 - Certification topology refresh executed
+
+Status: topology_leaf_built_project_root_merged
+Severity: HIGH
+
+Covered slices:
+
+```text
+certification_decisions_topology_20260705
+project_current_20260705 root merge
+```
+
+Build outputs:
+
+```text
+C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/graphify-out/leaf_slices/certification_decisions_topology_20260705/
+C:/TSIS_Data/graphify-out/graph.json
+C:/TSIS_Data/graphify-out/project_current_20260705/
+```
+
+Build result:
+
+```text
+Certification topology leaf: 122 nodes, 653 edges, 11 communities.
+Diagnostic: clean, no missing endpoints, no dangling edges, no self-loops.
+Project root merge: 464 nodes, 1507 edges, 49 communities after cluster-only.
+```
+
+Limitations:
+
+```text
+This is the same deterministic topology coverage model as the 20260629 leaf,
+rebuilt as a current 20260705 snapshot and merged into the project root. It does
+not replace the older full semantic certification_decisions_20260619 leaf if
+case-level or field-level semantic reasoning is required.
+```
+

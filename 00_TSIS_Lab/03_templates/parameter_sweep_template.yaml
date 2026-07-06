@@ -1,0 +1,15 @@
+﻿sweep_id: SWEEP_TEMPLATE
+status: draft
+parent_experiment_id: EXP_TEMPLATE
+
+sweep_objective: ""
+fixed_scope: {}
+fixed_variables: {}
+parameters:
+  parameter_name:
+    values: []
+    rationale: ""
+
+baseline_definitions: []
+outcome_metrics: []
+validation_notes: ""

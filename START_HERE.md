@@ -77,7 +77,7 @@ Lee completos, antes de hacer cualquier otra cosa:
 
 C:\TSIS_Data\PROJECT_RULES.md
 C:\TSIS_Data\AGENTS.md
-C:\TSIS_Data\ARCHITECTURE_OVERVIEW.md
+C:\TSIS_Data\00_CTO\TSIS_LAB_ARCHITECTURE_v3.md
 C:\TSIS_Data\CHANGELOG.md
 C:\TSIS_Data\PROJECT_OPERATING_SYSTEM.md
 C:\TSIS_Data\VERSIONING_STANDARDS.md
@@ -93,7 +93,7 @@ C:\TSIS_Data\01_TSIS_backtest_SmallCaps\AGENTS.md
 C:\TSIS_Data\01_TSIS_backtest_SmallCaps\CHANGELOG.md
 C:\TSIS_Data\01_TSIS_backtest_SmallCaps\LOCAL_RULES.md
 
-C:\TSIS_Data\00_CTO\TSIS_LAB_ARCHITECTURE.md C:\TSIS_Data\00_CTO\CHANGELOG.md C:\TSIS_Data\00_CTO\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md C:\TSIS_Data\00_CTO\GRAPHIFY_REFRESH_QUEUE.md C:\TSIS_Data\00_CTO\LOCAL_RULES.md C:\TSIS_Data\00_CTO\README.md
+C:\TSIS_Data\00_CTO\TSIS_LAB_ARCHITECTURE_v3.md C:\TSIS_Data\00_CTO\CHANGELOG.md C:\TSIS_Data\00_CTO\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md C:\TSIS_Data\00_CTO\GRAPHIFY_REFRESH_QUEUE.md C:\TSIS_Data\00_CTO\LOCAL_RULES.md C:\TSIS_Data\00_CTO\README.md
 
 
 
@@ -119,7 +119,7 @@ Te tienes que poner al dia con este proyecto:
 
 C:\TSIS_Data\PROJECT_RULES.md
 C:\TSIS_Data\AGENTS.md
-C:\TSIS_Data\ARCHITECTURE_OVERVIEW.md
+C:\TSIS_Data\00_CTO\TSIS_LAB_ARCHITECTURE_v3.md
 C:\TSIS_Data\CHANGELOG.md
 C:\TSIS_Data\PROJECT_OPERATING_SYSTEM.md
 C:\TSIS_Data\VERSIONING_STANDARDS.md
@@ -454,3 +454,5 @@ varios agentes independientes en paralelo.
 
 Para esta fase Sersan, eso estÃ¡ bien. Primero necesitamos demostrar que el ciclo completo funciona de forma secuencial y trazable. DespuÃ©s, si escala
 mal o tarda demasiado, el siguiente paso serÃ­a construir el orquestador multi-agente real.
+
+

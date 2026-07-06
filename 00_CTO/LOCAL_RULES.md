@@ -1,4 +1,4 @@
-# 00_CTO Local Rules
+﻿# 00_CTO Local Rules
 
 Fecha de creacion: 2026-06-18
 Estado: regla local obligatoria para agentes que trabajen en `00_CTO`.
@@ -27,7 +27,7 @@ La autoridad superior sigue viviendo en:
 - `VERSIONING_STANDARDS.md`
 - `AGENTS.md`
 - `RESEARCH_PHILOSOPHY.md`
-- `ARCHITECTURE_OVERVIEW.md`
+- `00_CTO/TSIS_LAB_ARCHITECTURE_v3.md`
 
 Si este documento contradice un documento raiz, manda el documento raiz.
 
@@ -360,3 +360,4 @@ changelog
 ```
 
 No como recuerdo.
+

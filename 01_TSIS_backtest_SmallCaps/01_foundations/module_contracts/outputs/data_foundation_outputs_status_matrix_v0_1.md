@@ -128,6 +128,7 @@ exists under `E:/TSIS/data/data_foundation_outputs/`.
 | `halts_table_v0_1` | 133,116 | 1 | Nasdaq/NYSE halts and SEC suspensions from `halts_v0_1` | isolated rerun passed | `validated_for_declared_scope` | event interruption context, halt masks, date/intraday halt state | no decision-time availability model, no live latency contract, review/bad rows preserved |
 | `event_windows_table_v0_1` | 214,112 | 1 | halt-derived event windows for LT1B/calendar-covered intraday halt events | isolated rerun passed | `validated_for_declared_scope` | event-window boundaries, pre-event feature windows, outcome-window candidates | halts only; not all event families; not primary ML/RL/execution truth |
 | `outcomes_table_v0_1` | 128,388 | 1 | next-session daily outcomes for halt-derived event windows x three daily price views | isolated rerun passed | `validated_for_declared_scope` | daily post-event labels/outcome research with feature/label separation | daily labels only; not intraday execution outcome, not RL reward, not all event families |
+| `outcomes_table_v0_1_candidate_intraday_1m_quote_guarded_controlled` | 5 | 1 | controlled intraday 1m post-event outcomes from 5 quote-guarded strategy events; `full_universe_claim=false` | fixture test passed 2026-07-05; controlled materialization validator passed | `controlled_candidate_not_promoted` | intraday outcome research/y separated from event_state; MFE/MAE/returns for post_event_30m | not full-universe, not ML label, not RL reward, not execution truth, not official outcomes_table |
 | `fundamentals_asof_table_v0_1` | 621,756 | 51 | additional financial statement rows with `filing_date` as `as_of_date`; ratios and standalone `financial_v0_1` excluded | isolated rerun passed | `validated_for_declared_scope` | filing-date-aware fundamental context after explicit as-of join | not a latest-before-event snapshot, not ratios/market-cap/float authority, not direct ML/RL table |
 | `news_context_table_v0_1` | 287,138 | 9 | additional news rows with `published_utc` as `as_of_utc`; ticker attribution preserved | isolated rerun passed | `validated_for_declared_scope` | catalyst/news context after explicit as-of join | not proof of causality, not live received-latency alert stream, not direct ML/RL table |
 | `short_context_table_v0_1` | 7,145,337 | 32 | source-scoped short interest/short volume from `short` and FINRA `short_review`; no borrow/SSR | isolated rerun passed | `validated_for_declared_scope` | short pressure/crowding/squeeze context after explicit source selection and as-of/lag join | not borrow, not SSR, not intraday tape, not direct ML/RL table |
@@ -606,10 +607,10 @@ The following target outputs are still not governed materializations under
 | `data_quality_report` | documentation/evidence exists under `01_foundations/data_quality_report/`, but no governed E-root output table exists | decide if it is a report folder, a table, or both; define schema/manifest if table |
 | `daily_scanner_candidates_table` | v0.1 and v0.2 historical replay evidence exists; active v0.3 builder, fixture test and controlled replay exist under `C:/TSIS_Data/tests/test_runs/2026-06-30/daily_scanner_candidates_replay_20250102_20250110_v0_3_0_in_play_momentum/`; official E-root materialization does not exist | implement full validator suite, run wider/20-year candidate with long-running telemetry, preserve scanner rows as candidate lineage only, obey `market_state_coverage_and_lookback_policy_v0_1`; cannot be treated as final market state, ML/RL feature table or strategy signal; daily proxy cannot certify premarket/regular/afterhours first-push segment |
 | `intraday_scanner_candidates_table_v0_2_quote_guarded_candidate` | v0.1 raw controlled replay exists; v0.2 quote-guarded candidate is contract-required but not materialized | consume the promoted `repair_manifest_lt1b_v0_1.parquet`; compare raw vs quote-guarded first-cross evidence; reject raw spikes not confirmed by quotes; do not promote raw-only v0.1 as canonical/full-universe |
-| `master_intraday_bar_table_v0_2_candidate_quote_guarded` | candidate contract and config defined; no parquet materialization exists | upstream LT1B repair manifest is promoted and PASS; storage model is raw `ohlcv_1m` plus repair-manifest overlay, not a full corrected parquet tree; keep `D:/quotes` only as provisional candidate lineage; builder must consume the manifest/partition list, not blind recursive file discovery |
+| `master_intraday_bar_table_v0_2_candidate_quote_guarded` | scoped E-root candidate materialized, not official/full-universe | upstream LT1B repair manifest is promoted and PASS; storage model is raw `ohlcv_1m` plus repair-manifest overlay; scoped candidate exists for AACT:2025-09, AAGR:2023-12, AAMC:2023-12 with validator passed; wider/full-scope still requires manifest, validators and review |
 | `real_time_corporate_event_alerts_table` | not materialized | define vendor/source model, latency semantics, SEC/newswire/DAS/vendor lineage, and live-vs-backfill contract |
 | `short_sale_constraints_table` | target contract and acquisition runbook defined, not materialized | derive/validate SSR proxy or acquire official SSR; connect DAS/SageTrader or broker/vendor feed for forward capture; acquire broker/vendor historical borrow/locate/availability if 20-year historical execution feasibility is required; define account/broker scope and as-of/latency semantics |
-| `market_state_table` / `event_state_table` | stack de contratos mas fixture loop determinista pasado, no materializado; `state_observable_eligibility_contract_v0_1.md`, `state_derived_observables_formula_contract_v0_1.md`, `state_decision_timestamp_policy_v0_1.md`, `state_snapshot_roles_contract_v0_1.md`, `state_builder_contract_v0_1.md`, `event_candidate_tables_contract_v0_1.md`, `event_candidate_table_validators_contract_v0_1.md` y `state_canonical_vs_representation_layer_contract_v0_1.md` estan completos para el scope declarado | siguiente cierre: validators de leakage/formula/timestamp/role/builder parity mas builders de event candidate tables y validator run real sobre sus outputs antes del sample multi-componente controlado de event_state; los schema contracts daily/1m de eventos candidatos y el validators contract estan completos; obedecer `market_state_coverage_and_lookback_policy_v0_1`; `D:/quotes` solo puede usarse como lineage candidate provisional con `quotes_root_state=provisional_d_legacy_recovery_root_pending_e_parity`; anadir gates de recomputation/manifest/coverage/lookback; promocionar solo despues de leakage/adversarial tests y requisitos de E-root parity/rebuild |
+| `market_state_table` / `event_state_table` | stack de contratos mas fixture loop determinista pasado, no materializado; `state_observable_eligibility_contract_v0_1.md`, `state_derived_observables_formula_contract_v0_1.md`, `state_decision_timestamp_policy_v0_1.md`, `state_snapshot_roles_contract_v0_1.md`, `state_builder_contract_v0_1.md`, `event_candidate_tables_contract_v0_1.md`, `event_candidate_table_validators_contract_v0_1.md`, `state_canonical_vs_representation_layer_contract_v0_1.md` y `state_raw_to_consumption_lineage_contract_v0_1.md`, `state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md` y `state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md` estan completos para el scope declarado/controlado/upstream manifest lineage | siguiente cierre: evaluadores bloqueados desde outcomes intradia controlados; outcomes separados intradia controlados ya estan materializados; multi-component fixture queda pendiente; validators de leakage/formula/timestamp/role/builder parity y RAW-to-consumption lineage parity siguen pendientes; builders de event candidate tables, daily controlled materialization e intraday quote-guarded controlled materialization ya tienen evidencia controlada; los schema contracts daily/1m de eventos candidatos y el validators contract estan completos; obedecer `market_state_coverage_and_lookback_policy_v0_1`; `D:/quotes` solo puede usarse como lineage candidate provisional con `quotes_root_state=provisional_d_legacy_recovery_root_pending_e_parity`; anadir gates de recomputation/manifest/coverage/lookback; promocionar solo despues de leakage/adversarial tests y requisitos de E-root parity/rebuild |
 
 ## 8. Current Readiness By Consumer
 
@@ -731,6 +732,127 @@ Canonical State vs Representation Layer contract completado despues de cerrar lo
 state_canonical_vs_representation_layer_contract_v0_1 = complete_for_contract_defined_scope
 ```
 
+RAW-to-consumption lineage contract completado despues de Canonical State vs Representation Layer:
+
+```text
+01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_contract_v0_1.md
+state_raw_to_consumption_lineage_contract_v0_1 = complete_for_contract_defined_scope
+```
+
+Lectura correcta: toda tabla/componente/derivada que alimente estado debe documentar su cadena RAW/staged -> derivada -> componente gobernado -> state builder -> consumer. Primer ejemplo cerrado: `master_daily_table_v0_1`. No materializa tablas ni sustituye manifests reales.
+
+Daily event windows controlled lineage completado despues del contrato general:
+
+```text
+01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md
+state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1 = complete_for_controlled_scope
+```
+
+Lectura correcta: cierra la cadena master_daily -> daily scanner v0.3 -> 69 daily events -> 207 event windows controladas. No cubre intradia 1m, E-root official ni ML/RL/AlphaEvolve.
+
+Intradia 1m quote-guarded upstream lineage completado despues del lineage daily:
+
+```text
+01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
+state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1 = complete_for_upstream_manifest_lineage_scope
+```
+
+Lectura correcta: cierra la cadena raw `ohlcv_1m` + `D:/quotes` provisional -> repair shards -> `repair_manifest_lt1b_v0_1.parquet` PASS -> vista quote-guarded -> `master_intraday_bar_table_v0_2_candidate_quote_guarded` scoped E-root -> `market_state_table` intradia controlado -> `intraday_1m_strategy_candidate_events_table_v0_1` controlada. No materializa scanner 1m v0_2 completo, event_windows 1m ni outputs oficiales/full-universe.
+
+Preflight ligero intradia 1m quote-guarded ejecutado:
+
+```text
+script = scripts/preflight_master_intraday_quote_guarded_candidate.py
+report = C:/TSIS_Data/tests/test_runs/2026-07-05/master_intraday_quote_guarded_candidate_preflight_v0_1/master_intraday_quote_guarded_candidate_preflight_v0_1.json
+validator_status = passed
+validator_hard_fail_count = 0
+validator_warning_count = 0
+repair_sample_column_count = 36
+```
+
+Lectura correcta: confirma config/artifacts/lineage para el siguiente builder candidate. No materializa `master_intraday_bar_table_v0_2_candidate_quote_guarded`.
+
+Materializacion controlada de muestra intradia 1m quote-guarded ejecutada:
+
+```text
+script = scripts/materialize_master_intraday_quote_guarded_candidate_sample.py
+manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/master_intraday_quote_guarded_candidate_sample_v0_1/_master_intraday_bar_table_v0_2_candidate_quote_guarded_controlled_sample_manifest.json
+status = controlled_sample_materialized_not_official
+source_sample_rows = 30
+raw_rows_found = 30
+raw_ohlc_mismatch_rows = 0
+quote_guarded_repair_applied_source_rows = 20
+qg_ohlc_changed_source_rows = 20
+output_rows = 60
+validator_status = passed
+```
+
+Lectura correcta: prueba el loader overlay en muestra real. No escribe el target E-root candidate ni habilita consumo ML/RL/AlphaEvolve.
+
+Materializacion scoped candidate intradia 1m quote-guarded ejecutada:
+
+```text
+script = scripts/materialize_master_intraday_quote_guarded_candidate_scoped.py
+manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/master_intraday_quote_guarded_candidate_scoped_v0_1/_master_intraday_bar_table_v0_2_candidate_quote_guarded_scoped_manifest.json
+status = scoped_candidate_materialized_not_official
+scope = AACT:2025-09, AAGR:2023-12, AAMC:2023-12
+raw_rows = 10835
+repair_manifest_rows_in_scope = 1106
+raw_ohlc_mismatch_rows = 0
+quote_guarded_repair_applied_rows = 96
+qg_ohlc_changed_rows = 96
+manifest_qg_diff_not_applied_rows = 10
+output_rows = 21670
+validator_status = passed
+```
+
+Lectura correcta: prueba materializacion por ticker/mes con raw mensual completo y repair shard completo.
+
+E-root scoped candidate intradia 1m quote-guarded materializado:
+
+```text
+manifest = E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/_master_intraday_bar_table_v0_2_candidate_quote_guarded_manifest.json
+output = E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_2_candidate_quote_guarded/data.parquet
+status = scoped_candidate_materialized_not_official
+writes_e_root_target = true
+official_dataset_created = false
+full_universe_claim = false
+raw_rows = 10835
+repair_manifest_rows_in_scope = 1106
+quote_guarded_repair_applied_rows = 96
+qg_ohlc_changed_rows = 96
+manifest_qg_diff_not_applied_rows = 10
+output_rows = 21670
+validator_status = passed
+```
+
+Lectura correcta: ya existe un candidate scoped en E-root. No es oficial/promoted, no es full-universe y no habilita ML/RL/AlphaEvolve.
+
+
+Controlled market_state intradia 1m quote-guarded materializado:
+
+```text
+script = scripts/materialize_market_state_intraday_quote_guarded_candidate.py
+manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/market_state_intraday_quote_guarded_candidate_v0_1/_market_state_table_manifest_v0_1_candidate_intraday_quote_guarded_controlled.json
+output = C:/TSIS_Data/tests/test_runs/2026-07-05/market_state_intraday_quote_guarded_candidate_v0_1/market_state_table_v0_1_candidate_intraday_quote_guarded_controlled
+status = controlled_candidate_not_promoted
+source_quote_guarded_intraday_rows = 10835
+state_rows = 10835
+ticker_count = 3
+quote_guarded_repair_applied_rows = 96
+qg_ohlc_changed_rows = 96
+manifest_qg_diff_not_applied_rows = 10
+full_universe_claim_rows = 0
+ml_candidate_rows = 0
+rl_candidate_rows = 0
+execution_truth_rows = 0
+intraday_as_of_after_decision_rows = 0
+bar_end_decision_timestamp_mismatch_rows = 0
+validator_status = passed
+validator_hard_fail_count = 0
+```
+
+Lectura correcta: este fixture prueba consumo `intraday__*` desde el E-root scoped candidate quote-guarded hacia `market_state_table_v0_1_candidate`. No es tabla oficial, no es full-universe, no tiene evento, no contiene outcomes y no habilita ML/RL/AlphaEvolve.
 
 Event candidate executable validators fixture-scope completed:
 
@@ -742,21 +864,69 @@ python -m pytest tests/data_foundation_outputs/test_event_candidate_table_valida
 7 passed
 ```
 
-Lectura correcta: el validator ejecutable existe y pasa fixtures minimos. La validacion de tabla real sigue pendiente hasta que existan los builders/materializaciones candidate daily/1m.
+Lectura correcta: el validator ejecutable existe y pasa fixtures minimos. La validacion de tabla real sigue pendiente hasta que existan outputs candidate daily/1m construidos desde fuentes reales.
+
+Latest controlled materialized candidate evidence for `daily_strategy_candidate_events_table_v0_1`:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-07-04/daily_strategy_candidate_events_from_daily_scanner_v0_3_20250102_20250110_controlled/
+dataset_path = C:/TSIS_Data/tests/test_runs/2026-07-04/daily_strategy_candidate_events_from_daily_scanner_v0_3_20250102_20250110_controlled/daily_strategy_candidate_events_table_v0_1_candidate/data.parquet
+manifest = C:/TSIS_Data/tests/test_runs/2026-07-04/daily_strategy_candidate_events_from_daily_scanner_v0_3_20250102_20250110_controlled/_daily_strategy_candidate_events_table_v0_1_manifest_candidate.json
+source_rows = 15323
+selected_source_rows = 69
+event_candidate_rows = 69
+validator_status = passed
+validator_hard_fail_count = 0
+validator_review_fail_count = 0
+full_universe_claim_true_rows = 0
+ml_feature_candidate_rows = 0
+rl_state_candidate_rows = 0
+alphaevolve_production_enabled_rows = 0
+```
+
+This is controlled candidate evidence only. It is not full-universe, not E-root official, not an event_state table and not an ML/RL/AlphaEvolve-ready dataset.
+
+Latest controlled candidate evidence for daily strategy event windows:
+
+```text
+C:/TSIS_Data/tests/test_runs/2026-07-05/daily_strategy_event_windows_from_69_daily_events_controlled/
+dataset_path = C:/TSIS_Data/tests/test_runs/2026-07-05/daily_strategy_event_windows_from_69_daily_events_controlled/event_windows_table_v0_1_candidate_daily_strategy_events/data.parquet
+manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/daily_strategy_event_windows_from_69_daily_events_controlled/_event_windows_table_v0_1_candidate_daily_strategy_events_manifest.json
+source_event_count = 69
+row_count = 207
+window_role_counts = prior_session_regular: 69, event_session_regular: 69, next_session_regular: 69
+validator_status = passed
+validator_hard_fail_count = 0
+full_universe_claim_rows = 0
+rl_state_component_candidate_rows = 0
+```
+
+Lectura correcta: esto es una extension candidate controlada desde eventos daily, no la tabla oficial `event_windows_table_v0_1` halts-only, no E-root, no full-universe y no dataset ML/RL/AlphaEvolve listo.
+Event candidate table builders fixture-scope completed:
+
+```text
+scripts/materialize_strategy_candidate_events_table.py
+tests/data_foundation_outputs/test_strategy_candidate_events_table_builder.py
+python -m pytest tests/data_foundation_outputs/test_strategy_candidate_events_table_builder.py tests/data_foundation_outputs/test_event_candidate_table_validators.py -q
+10 passed
+```
+
+Lectura correcta: el builder ejecutable puede crear parquets candidate daily/1m desde fuentes upstream controladas y obliga a pasar `validate_event_candidate_tables.py`. La materializacion daily controlada y la materializacion intradia quote-guarded controlada ya tienen evidencia; siguen pendientes los scopes wider/full-universe.
 En conjunto, esto cierra para el scope declarado los gates de elegibilidad, formulas, tiempo legal, roles de estado, builder contract, ruta de eventos candidatos y frontera Canonical State vs Representation Layer. No materializa datos oficiales ni habilita ML/RL/AlphaEvolve directamente.
 
 El siguiente trabajo inmediato de state tables queda asi:
 
 ```text
 1. leakage/formula/timestamp/role/builder validators consuming eligibility + formula + timestamp policy + roles + builder contracts + canonical/representation boundary
-2. builders/materializacion candidate para daily_strategy_candidate_events_table_v0_1 e intraday_1m_strategy_candidate_events_table_v0_1
-3. ejecutar scripts/validate_event_candidate_tables.py sobre cada tabla candidate real solo despues de build
-4. event_windows expansion for source_event_table != halts_table_v0_1
-5. controlled market_state/event_state fixture or multi-component sample
-6. candidate materialization only after validators pass
+2. builders/materializacion candidate para daily_strategy_candidate_events_table_v0_1 e intraday_1m_strategy_candidate_events_table_v0_1 DONE en scope controlado
+3. validate_event_candidate_tables.py pasado sobre daily controlled e intradia quote-guarded controlled
+4. event_windows controlled daily expansion DONE; intraday event_windows controlled DONE; wider daily/1m expansion PENDING
+5. RAW-to-consumption lineage daily event windows controlled DONE; intradia 1m quote-guarded upstream manifest lineage DONE, preflight ligero passed, muestra controlada passed_not_official, scoped candidate passed_not_official, E-root scoped candidate passed_not_official, market_state intradia controlled passed_not_official e intraday event candidates controlled passed_not_official; completar micro/contexto si entran en fixture
+6. controlled market_state intradia quote-guarded fixture DONE; controlled event_state intradia DONE; multi-component sample PENDING
+7. candidate materialization amplia/oficial only after validators pass
 ```
 
-No iniciar materializacion candidate de `market_state_table` ni `event_state_table` antes de que los validators de leakage/formula/timestamp/role/builder esten explicitos y pasen.
+No iniciar materializacion amplia/oficial de `market_state_table` ni `event_state_table` antes de que los validators de leakage/formula/timestamp/role/builder esten explicitos y pasen. La excepcion controlada ya materializada es el fixture intradia quote-guarded bajo `tests/test_runs`, no promovido y con todos los gates ML/RL/ejecucion en falso.
 
 1. Rerun or split the fifteen-table test suite so an integrated pass exists for
    all current outputs.
@@ -803,7 +973,7 @@ Dependency order:
      `01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md`
 3. microstructure_features_table multi-window/multi-event materialization plan
 4. leakage/formula/timestamp/role/builder validators
-5. market_state_table controlled real sample
+5. market_state_table controlled intradia quote-guarded sample DONE
 6. event_state_table controlled real sample
 7. short_sale_constraints_table when SSR/borrow/locate sources exist
 8. real_time_corporate_event_alerts_table when live/vendor latency semantics exist
@@ -921,9 +1091,90 @@ but the CAPA 1 output layer is not complete and must not be described as fully
 institutionalized end-to-end.
 ```
 
+Controlled intraday 1m strategy candidate events quote-guarded materializados:
+
+```text
+script = scripts/materialize_intraday_1m_strategy_candidate_events_from_master_intraday_quote_guarded.py
+run_root = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_candidate_events_from_master_intraday_qg_controlled/
+source = E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_2_candidate_quote_guarded/data.parquet
+dataset_path = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_candidate_events_from_master_intraday_qg_controlled/event_candidate_table/intraday_1m_strategy_candidate_events_table_v0_1_candidate/data.parquet
+manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_candidate_events_from_master_intraday_qg_controlled/_intraday_1m_strategy_candidate_events_from_master_intraday_qg_manifest.json
+event_table_manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_candidate_events_from_master_intraday_qg_controlled/event_candidate_table/_intraday_1m_strategy_candidate_events_table_v0_1_manifest_candidate.json
+status = controlled_candidate_not_promoted
+source_quote_guarded_bar_rows = 10835
+source_session_count = 58
+selected_source_row_count = 5
+event_candidate_rows = 5
+threshold_pct = 50.0
+validator_status = passed
+validator_hard_fail_count = 0
+validator_review_fail_count = 0
+full_universe_claim_true_rows = 0
+ml_feature_candidate_rows = 0
+rl_state_candidate_rows = 0
+alphaevolve_production_enabled_rows = 0
+```
+
+Lectura correcta: la materializacion intradia 1m quote-guarded existe solo como candidato controlado/no oficial. El `+50%` es una definicion de evento versionada para abrir ventanas; no es estado base, no es threshold privilegiado para AlphaEvolve, no contiene outcomes y no habilita ML/RL.
+
+Controlled intraday 1m strategy event windows materializados:
+
+```text
+script = scripts/materialize_intraday_1m_strategy_event_windows_candidate.py
+run_root = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_event_windows_from_5_events_controlled/
+dataset_path = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_event_windows_from_5_events_controlled/event_windows_table_v0_1_candidate_intraday_1m_strategy_events/data.parquet
+manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_event_windows_from_5_events_controlled/_event_windows_table_v0_1_candidate_intraday_1m_strategy_events_manifest.json
+source_event_count = 5
+row_count = 15
+window_role_counts = event_anchor_1m: 5, post_event_30m: 5, pre_event_30m: 5
+validator_status = passed
+full_universe_claim_rows = 0
+ml_feature_candidate_rows = 5
+outcome_window_candidate_rows = 5
+microstructure_feature_candidate_rows = 15
+rl_state_component_candidate_rows = 0
+```
+
+Lectura correcta: estas ventanas abren el siguiente paso `event_state` controlado. No son tabla oficial, no contienen outcomes y no habilitan ML/RL/AlphaEvolve.
+
+Controlled intraday 1m event_state materializado:
+
+```text
+script = scripts/materialize_event_state_intraday_quote_guarded_candidate.py
+run_root = C:/TSIS_Data/tests/test_runs/2026-07-05/event_state_intraday_1m_quote_guarded_controlled/
+dataset_path = C:/TSIS_Data/tests/test_runs/2026-07-05/event_state_intraday_1m_quote_guarded_controlled/event_state_table_v0_1_candidate_intraday_1m_quote_guarded_controlled/data.parquet
+manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/event_state_intraday_1m_quote_guarded_controlled/_event_state_table_v0_1_candidate_intraday_1m_quote_guarded_controlled_manifest.json
+source_event_window_rows = 15
+joined_event_state_rows = 15
+event_count = 5
+state_role_counts = at_event: 5, post_event_review: 5, pre_event: 5
+validator_status = passed
+full_universe_claim_rows = 0
+valid_for_ml_feature_candidate_rows = 0
+valid_for_rl_state_candidate_rows = 0
+execution_truth_rows = 0
+```
+
+Lectura correcta: `event_state` intradia existe como candidato controlado/no oficial. No contiene outcomes ni habilita ML/RL/AlphaEvolve.
 
 
+## 13. Intraday 1m Outcomes Candidate Controlled Evidence 2026-07-05
 
+```text
+dataset_id = outcomes_table_v0_1_candidate
+physical_dataset_id = outcomes_table_v0_1_candidate_intraday_1m_quote_guarded_controlled
+script = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_1m_event_outcomes_candidate.py
+test = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_intraday_1m_event_outcomes_candidate_builder.py
+run_root = C:/TSIS_Data/tests/test_runs/2026-07-05/outcomes_intraday_1m_quote_guarded_controlled/
+dataset_path = C:/TSIS_Data/tests/test_runs/2026-07-05/outcomes_intraday_1m_quote_guarded_controlled/outcomes_table_v0_1_candidate_intraday_1m_quote_guarded_controlled/data.parquet
+manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/outcomes_intraday_1m_quote_guarded_controlled/_outcomes_table_v0_1_candidate_intraday_1m_quote_guarded_manifest.json
+outcome_rows = 5
+quality_counts = good_intraday_1m_outcome: 3, review_intraday_missing_bars: 2
+valid_for_ml_label_candidate_rows = 0
+valid_for_rl_reward_candidate_rows = 0
+full_universe_claim_rows = 0
+execution_truth_rows = 0
+validator_status = passed
+```
 
-
-
+Lectura correcta: este output es `y` separado para investigacion intradia controlada. No sustituye `outcomes_table_v0_1` oficial diario, no contiene labels ML ni rewards RL, y no debe copiarse dentro de `market_state_table` o `event_state_table`.

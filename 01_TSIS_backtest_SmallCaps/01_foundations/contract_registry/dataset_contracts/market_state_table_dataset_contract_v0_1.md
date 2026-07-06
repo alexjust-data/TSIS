@@ -45,6 +45,7 @@ corporate_actions_table_v0_1
 master_daily_table_v0_1
 daily_scanner_candidates_table_v0_1 when used as candidate-set lineage
 master_intraday_bar_table_v0_1
+master_intraday_bar_table_v0_2_candidate_quote_guarded when scoped candidate and not promoted
 microstructure_features_table_v0_1
 halts_table_v0_1
 fundamentals_asof_table_v0_1
@@ -74,8 +75,22 @@ direct_rl_training_allowed: false
 execution_truth: false
 ```
 
-The current contract defines the future dataset. It is not evidence that a
-state table exists.
+The current contract defines the future official dataset. It is not evidence that a promoted institutional state table exists.
+
+## 4.1 Current Controlled Candidate Evidence
+
+```text
+microstructure_halt_controlled_candidate_rows = 50
+intraday_quote_guarded_controlled_candidate_rows = 10835
+intraday_quote_guarded_controlled_manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/market_state_intraday_quote_guarded_candidate_v0_1/_market_state_table_manifest_v0_1_candidate_intraday_quote_guarded_controlled.json
+intraday_quote_guarded_controlled_status = controlled_candidate_not_promoted
+full_universe_claim = false
+ml_ready_dataset_enabled = false
+rl_training_dataset_enabled = false
+alphaevolve_evaluator_enabled = false
+```
+
+These candidates are integration proofs only and do not change `status: contract_defined_not_materialized` for the official dataset.
 
 ## 5. Required Semantics
 

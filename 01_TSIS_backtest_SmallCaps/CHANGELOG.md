@@ -1,5 +1,50 @@
-# Changelog del Modulo 01
+- 2026-07-05: materializado `event_state_table_v0_1_candidate_intraday_1m_quote_guarded_controlled` como candidato controlado; 15 filas desde market_state intradia quote-guarded + 15 event_windows intradia, roles `pre_event/at_event/post_event_review`, validator passed, sin outcomes inline, ML/RL/AlphaEvolve deshabilitados.
+- 2026-07-05: materializado `event_windows_table_v0_1_candidate_intraday_1m_strategy_events` como candidato controlado desde 5 eventos intradia quote-guarded; 15 ventanas (`pre_event_30m`, `event_anchor_1m`, `post_event_30m`), validator passed, `full_universe_claim=false`, RL/AlphaEvolve deshabilitados.
+- 2026-07-05: materializado `intraday_1m_strategy_candidate_events_table_v0_1` como candidato controlado/no oficial desde `master_intraday_bar_table_v0_2_candidate_quote_guarded`; 58 sesiones fuente, 5 eventos, validator passed, `full_universe_claim=false`, ML/RL/AlphaEvolve deshabilitados.
+- `2026-07-05` | `market_state` | fixture controlado `market_state_table_v0_1_candidate_intraday_quote_guarded_controlled` materializado desde el E-root scoped `master_intraday_bar_table_v0_2_candidate_quote_guarded`: 10.835 filas, 3 tickers, 96 reparaciones OHLC aplicadas, 10 diferencias de manifest no aplicadas, `validator_status=passed`, `full_universe_claim=false`, gates ML/RL/ejecucion falsos; no es oficial/promoted.
+- `v0.4.158` - Market State intradia 1m quote-guarded E-root scoped candidate materialized: `master_intraday_bar_table_v0_2_candidate_quote_guarded` escrito en E-root con manifest institucional, 21.670 filas, dos price views y `validator_status=passed`; sigue no oficial, no full-universe y sin ML/RL/AlphaEvolve.
 
+- `v0.4.157` - Market State intradia 1m quote-guarded scoped candidate passed: se agrega `scripts/materialize_master_intraday_quote_guarded_candidate_scoped.py`, test fixture `1 passed`, output scoped de 21.670 filas sobre `AACT:2025-09`, `AAGR:2023-12` y `AAMC:2023-12`; sigue pendiente decidir/materializar el target E-root candidate.
+
+- `v0.4.156` - Market State intradia 1m quote-guarded controlled sample passed: se agrega `scripts/materialize_master_intraday_quote_guarded_candidate_sample.py`, test fixture `1 passed`, output controlado de 60 filas y manifest con raw overlay validation passed. Sigue pendiente la materializacion gobernada de `master_intraday_bar_table_v0_2_candidate_quote_guarded`.
+
+- `v0.4.155` - Market State intradia 1m quote-guarded preflight passed: se actualiza la config candidate al manifest LT1B promovido, se agrega `preflight_master_intraday_quote_guarded_candidate.py`, test fixture `3 passed` y reporte real con `validator_status=passed`. La materializacion candidate sigue pendiente.
+
+- `v0.4.154` - Market State intradia 1m quote-guarded lineage upstream cerrado: se enlaza `state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md` con el contrato general de RAW-to-consumption lineage, README, matriz y target contract. El manifest LT1B PASS queda documentado como gate upstream; la materializacion candidate intradia sigue pendiente.
+
+﻿# Changelog del Modulo 01
+
+## v0.4.153 - Market State daily event windows lineage cerrado
+
+- Se anade `01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md`.
+- El lineage del Camino A daily controlado queda trazado desde `master_daily_table_v0_1` hasta `event_windows_table_v0_1_candidate_daily_strategy_events`.
+- No cambia datos ni builders; documenta la cadena obligatoria antes del fixture controlado `market_state/event_state`.
+
+## v0.4.152 - Market State RAW-to-consumption lineage contract
+
+- Se anade `01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_contract_v0_1.md`.
+- A partir de este gate, todo componente de estado debe documentar su cadena RAW/staged -> derivada -> componente gobernado -> state builder -> consumer.
+- Se enlaza el contrato desde `state_builder_contract_v0_1.md`, `module_contracts/README.md`, la status matrix, el target contract y el mapa v3.
+- Primer ejemplo cerrado: `master_daily_table_v0_1`.
+- No materializa tablas; fija una precondicion de lineage para los futuros fixtures/candidates de `market_state_table` y `event_state_table`.
+
+## v0.4.151 - Market State daily strategy event windows controlled candidate
+
+- Se anade `scripts/materialize_daily_strategy_event_windows_candidate.py` para abrir ventanas controladas alrededor de eventos daily ya gobernados.
+- Se anade `tests/data_foundation_outputs/test_daily_strategy_event_windows_candidate_builder.py`.
+- Se materializa `event_windows_table_v0_1_candidate_daily_strategy_events` desde los `69` eventos daily controlados, con `207` filas y tres roles por evento: `prior_session_regular`, `event_session_regular` y `next_session_regular`.
+- Evidencia: suite relacionada pasa con `11 passed`; validator `passed`, `0` hard fails, `0` full-universe claims y `0` RL state component rows.
+- No sustituye `event_windows_table_v0_1` oficial halts-only, no es E-root, no es full-universe y no habilita ML/RL/AlphaEvolve production.
+
+## v0.4.150 - Market State event candidate builders
+
+- Se anade `scripts/materialize_strategy_candidate_events_table.py` para materializar candidate events daily o intradia 1m desde fuentes upstream seleccionadas.
+- Se anade `tests/data_foundation_outputs/test_strategy_candidate_events_table_builder.py`.
+- El builder escribe parquet, manifest, summary y validator summary; despues ejecuta el validator fixture-scope ya existente.
+- La ruta intradia exige fuente quote-guarded confirmada para candidate rows; raw-only sigue bloqueado.
+- Evidencia: builder + validator tests pasan con `10 passed`.
+- Se genera candidate controlado daily desde replay scanner v0.3 2025-01-02..2025-01-10: `69` filas, validator `passed`, `0` hard/review fails.
+- No se materializan tablas reales ni se habilita ML/RL/AlphaEvolve production.
 ## v0.4.149 - Market State event candidate executable validators
 
 - Se anade `scripts/validate_event_candidate_tables.py` para validar fixtures/tablas candidatas daily e intradia 1m contra `event_candidate_table_validators_contract_v0_1.md`.
@@ -6548,7 +6593,7 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
   - filtrarlos por ticker + ventana PTI del corte canonico `<1B>`;
   - y exportar conteos y porcentajes compatibles ya con el alcance moderno del proyecto.
 
-### 2026-06-03 | 1m | cierre cuantitativo del recÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡lculo raw `1m` sobre universo `<1B>` explicito
+### 2026-06-03 | 1m | cierre cuantitativo del recÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡lculo raw `1m` sobre universo `<1B>` explicito
 
 - se actualizan:
   - `scripts/inspection/minute/audit_1m_raw_lt1b_closeout.py`
@@ -6741,7 +6786,7 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
   - `01_foundations/data_consumption_policies/lt1b_universe_consumption_policy.md`
   - `01_foundations/contract_registry/dataset_contracts/lt1b_universe_dataset_contract_v0_1.md`
   - `01_foundations/dataset_registry/universes/lt1b_universe_registry_entry.yaml`
-- artefacto canÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³nico:
+- artefacto canÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³nico:
   - `runs/backtest/market_cap_last_observed_cutoff/20260320_market_cap_last_observed_cutoff/market_cap_cutoff_lt_1b_active_inactive.parquet`
 - cifras fijadas:
   - `lt1b_tickers = 4824`
@@ -6749,7 +6794,7 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
   - `inactive_died_lt_1b = 2348`
   - `panel_end_date = 2026-03-09`
 - regla institucional:
-  - toda afirmaciÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³n `<1B>` debe filtrar por `ticker` y por intersecciÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³n con ventana PTI (`first_seen_date`, `last_observed_date`);
+  - toda afirmaciÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n `<1B>` debe filtrar por `ticker` y por intersecciÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n con ventana PTI (`first_seen_date`, `last_observed_date`);
   - este corte no es `E:\TSIS\data\reference`;
   - tampoco sustituye un futuro `population_target_pti` diario fully point-in-time.
 
@@ -6847,8 +6892,3 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
   - auditoria de casepacks en `quotes`;
   - family casepacks amplios en `trades`.
 - objetivo: que un inspector no tenga que inferir desde notebooks o assets sueltos que documentos visuales debe revisar.
-
-
-
-
-

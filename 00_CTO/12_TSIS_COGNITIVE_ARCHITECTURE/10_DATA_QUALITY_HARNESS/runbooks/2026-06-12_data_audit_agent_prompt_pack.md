@@ -1,4 +1,4 @@
-# Data Audit Agent Prompt Pack - 2026-06-12
+﻿# Data Audit Agent Prompt Pack - 2026-06-12
 
 Uso: copiar el prompt `SINGLE_AGENT_DATA_AUDIT_COMPLETION` completo en una sesion Codex abierta desde `C:\TSIS_Data` con `START_CODEX_TSIS_AUTONOMOUS.ps1`.
 
@@ -76,7 +76,7 @@ LECTURA OBLIGATORIA RAIZ:
 1. C:\TSIS_Data\START_HERE.md
 2. C:\TSIS_Data\PROJECT_RULES.md
 3. C:\TSIS_Data\AGENTS.md
-4. C:\TSIS_Data\ARCHITECTURE_OVERVIEW.md
+4. C:\TSIS_Data\00_CTO\TSIS_LAB_ARCHITECTURE_v3.md
 5. C:\TSIS_Data\PROJECT_OPERATING_SYSTEM.md
 6. C:\TSIS_Data\VERSIONING_STANDARDS.md
 7. C:\TSIS_Data\RESEARCH_PHILOSOPHY.md
@@ -354,7 +354,7 @@ LECTURA OBLIGATORIA RAIZ:
 1. C:\TSIS_Data\START_HERE.md
 2. C:\TSIS_Data\PROJECT_RULES.md
 3. C:\TSIS_Data\AGENTS.md
-4. C:\TSIS_Data\ARCHITECTURE_OVERVIEW.md
+4. C:\TSIS_Data\00_CTO\TSIS_LAB_ARCHITECTURE_v3.md
 5. C:\TSIS_Data\PROJECT_OPERATING_SYSTEM.md
 6. C:\TSIS_Data\VERSIONING_STANDARDS.md
 7. C:\TSIS_Data\RESEARCH_PHILOSOPHY.md
@@ -564,24 +564,24 @@ Entrega un resumen con:
 
 
 ```
-Estás trabajando en TSIS.
+EstÃ¡s trabajando en TSIS.
 
   DIRECTORIO:
   C:\TSIS_Data
 
   MODO:
-  Un solo agente autónomo.
+  Un solo agente autÃ³nomo.
   No lances ni simules varios agentes.
   No paralelices escrituras.
-  No continúes al siguiente dataset sin revisión humana.
+  No continÃºes al siguiente dataset sin revisiÃ³n humana.
 
   OBJETIVO DE ESTA RONDA:
   Completar SOLO el dataset `reference` con calidad comparable a daily, quotes, trades, minute y 1m_split_normalized.
 
-  NO trabajes Halts, financial, regime_indicators ni integración final en esta ronda.
+  NO trabajes Halts, financial, regime_indicators ni integraciÃ³n final en esta ronda.
   Cuando termines `reference`, haz commit/push de tu rama, reporta y DETENTE.
 
-  PRECONDICIÓN GIT OBLIGATORIA:
+  PRECONDICIÃ“N GIT OBLIGATORIA:
   1. Ejecuta:
      git -C C:\TSIS_Data fetch origin
      git -C C:\TSIS_Data status -sb
@@ -591,7 +591,7 @@ Estás trabajando en TSIS.
   2. Si hay cambios sin commitear, NO los limpies, NO hagas checkout, NO hagas reset.
      Reporta el estado y detente.
 
-  3. Si el working tree está limpio:
+  3. Si el working tree estÃ¡ limpio:
      crea una rama nueva desde origin/main:
      git -C C:\TSIS_Data switch -c data-audit-reference-20260613 origin/main
 
@@ -611,7 +611,7 @@ Estás trabajando en TSIS.
   - C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs
   - C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA
 
-  No modifiques, muevas, renombres ni limpies nada ahí.
+  No modifiques, muevas, renombres ni limpies nada ahÃ­.
   Solo lectura/provenance.
 
   FUERA DE ALCANCE:
@@ -620,21 +620,21 @@ Estás trabajando en TSIS.
   No inventaries ni institucionalices images_Flash_Research.
 
   LECTURA OBLIGATORIA:
-  Lee START_HERE.md, contratos raíz TSIS, README/AGENTS/LOCAL_RULES/CHANGELOG de SmallCaps, contratos de 01_foundations, y documentos Harness de
+  Lee START_HERE.md, contratos raÃ­z TSIS, README/AGENTS/LOCAL_RULES/CHANGELOG de SmallCaps, contratos de 01_foundations, y documentos Harness de
   00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS.
 
   BENCHMARKS OBLIGATORIOS:
-  Antes de crear nada, entiende cómo están hechos:
+  Antes de crear nada, entiende cÃ³mo estÃ¡n hechos:
   - inspection_dossiers/daily
   - inspection_dossiers/quotes
   - inspection_dossiers/trades
   - inspection_dossiers/minute
   - inspection_dossiers/1m_split_normalized
 
-  Incluye notebooks. Los notebooks son interfaces inspectoras, no almacenes de código.
-  La lógica pesada debe vivir en scripts residentes.
+  Incluye notebooks. Los notebooks son interfaces inspectoras, no almacenes de cÃ³digo.
+  La lÃ³gica pesada debe vivir en scripts residentes.
 
-  ESTÁNDAR PARA `reference`:
+  ESTÃNDAR PARA `reference`:
   No basta con markdowns.
   Debes producir o actualizar, solo para reference:
 
@@ -651,11 +651,11 @@ Estás trabajando en TSIS.
   - scripts/inspection/reference/... si generas builders
 
   VISUALES:
-  - Qué muestra
+  - QuÃ© muestra
   - Responde
   - No responde
   - Consecuencia
-  No reemplaces evidencia visual por conteos agregados si la pregunta exige inspección humana.
+  No reemplaces evidencia visual por conteos agregados si la pregunta exige inspecciÃ³n humana.
 
   ESTADOS PERMITIDOS:
   - not_started
@@ -669,25 +669,25 @@ Estás trabajando en TSIS.
 
   Prohibido usar done, clean, ok o closed como estado final.
 
-  VALIDACIÓN FINAL:
+  VALIDACIÃ“N FINAL:
   - YAML parsea.
   - No hay referencias rotas evidentes.
   - No hay TODO/TBD sin bloqueo formal.
   - No hay C:\Users ni C:\tmp en artefactos finales.
-  - No se modificó E:\TSIS\data ni C:\TSIS_Data\data.
-  - Los notebooks no son única fuente de verdad.
+  - No se modificÃ³ E:\TSIS\data ni C:\TSIS_Data\data.
+  - Los notebooks no son Ãºnica fuente de verdad.
   - git status -sb revisado al final.
 
   REPORTE FINAL:
   Resume:
-  - benchmark leído;
-  - qué quedó completo en reference;
-  - qué quedó parcial o bloqueado;
+  - benchmark leÃ­do;
+  - quÃ© quedÃ³ completo en reference;
+  - quÃ© quedÃ³ parcial o bloqueado;
   - archivos creados/modificados;
   - visuales/notebooks/gaps;
   - verificaciones;
   - rutas protegidas confirmadas;
-  - siguiente decisión humana.
+  - siguiente decisiÃ³n humana.
 
   DETENTE AL TERMINAR REFERENCE.
   No empieces Halts.

@@ -25,6 +25,34 @@ Si `RESEARCH_PHILOSOPHY.md` define cómo piensa TSIS, `VERSIONING_STANDARDS.md` 
 
 TSIS es un sistema cuantitativo institucional, agent-first y multi-módulo, diseñado para construir, validar y operar conocimiento reproducible sobre microcaps y small caps.
 
+Desde 2026-07-05, la lectura operativa vigente es más precisa:
+
+```text
+TSIS = Scientific Discovery Engine
+```
+
+Esto significa que TSIS no se organiza alrededor de AlphaEvolve, de un backtester o de una tabla concreta. Se organiza alrededor de un pipeline científico capaz de convertir datos gobernados en experimentos reproducibles, evidencia, conocimiento validado y componentes operativos.
+
+La unidad científica central es:
+
+```text
+research_experiment
+```
+
+Y la cadena operativa superior es:
+
+```text
+Data Foundation
+-> Canonical State / Event State / Outcomes
+-> Research Experiment
+-> Evidence
+-> Scientific Validation Pipeline
+-> Knowledge Object
+-> Validated Knowledge
+-> Operational Component
+-> Backtest / Live / ML / RL / AlphaEvolve, segun corresponda
+```
+
 TSIS no debe entenderse como:
 
 - un conjunto de scripts aislados;
@@ -33,33 +61,65 @@ TSIS no debe entenderse como:
 - un backtester suelto;
 - ni un laboratorio oportunista de experimentos difíciles de reconstruir.
 
-TSIS debe entenderse como un stack completo con tres horizontes coordinados:
+TSIS debe entenderse como un stack completo con horizontes coordinados:
 
-- `research and backtesting`;
+- `scientific discovery and validation`;
+- `research experiments and classic backtesting`;
 - `live event-driven operation`;
-- `offline learning and policy improvement`.
+- `offline learning and policy improvement`;
+- `autonomous candidate generation` bajo contratos, nunca como autoridad final.
 
 ---
 
 ## 3. Módulos del sistema
 
-TSIS está organizado como un monorepo compuesto por tres módulos principales:
+TSIS está organizado como un ecosistema con autoridad raíz, laboratorio transversal, módulos operativos y data roots pesados.
 
+Componentes principales:
+
+- `00_CTO`
+- `00_TSIS_Lab`
 - `01_TSIS_backtest_SmallCaps`
 - `02_TSIS_webSocket_SmallCaps`
 - `03_TSIS_Offline_RL`
+- `E:/TSIS/data`
+
+`00_CTO` gobierna filosofía, arquitectura, mapas y reglas.
+
+`00_TSIS_Lab` organiza contratos operativos, registros, plantillas y experimentos científicos reproducibles.
+
+`E:/TSIS/data` conserva outputs pesados, materializaciones y runs voluminosos fuera de Git.
+
+### 3.0. 00_CTO y 00_TSIS_Lab
+
+`00_CTO` es la capa de autoridad. No ejecuta backtests ni materializaciones pesadas. Define la arquitectura, la filosofía, los mapas y las reglas de gobierno.
+
+`00_TSIS_Lab` es el laboratorio operativo transversal. No sustituye a los módulos. Define cómo un humano, AlphaEvolve u otro generador proponen y ejecutan `research_experiments` bajo la misma estructura.
+
+La regla es:
+
+```text
+00_CTO = autoridad y arquitectura
+00_TSIS_Lab = contrato comun de experimentos
+modulos = implementacion y ejecucion concreta
+E:/TSIS/data = outputs pesados/materializaciones
+```
 
 ### 3.1. 01_TSIS_backtest_SmallCaps
 
-Es la capa de investigación, simulación y validación histórica.
+Es el módulo operativo SmallCaps para investigación histórica, Data Foundation, event discovery, feature engine, backtest clásico, strategy research, builders, validators y datos gobernados.
 
 Su misión es:
 
 - construir datasets y universos defendibles;
-- formalizar eventos y estados de mercado;
+- formalizar estados, eventos candidatos, outcomes y ventanas bajo contrato;
+- ejecutar investigación y backtest clásico de estrategias;
+- materializar fixtures/candidates cuando proceda;
 - simular ejecución con realismo suficiente;
 - evaluar hipótesis, setups y estrategias;
-- producir evidencia reproducible para promoción o descarte.
+- producir evidencia reproducible para promoción, revisión o descarte.
+
+No queda reducido a proveedor/adaptador de `00_TSIS_Lab`. Es el módulo donde se implementa y ejecuta gran parte de la investigación SmallCaps.
 
 ### 3.2. 02_TSIS_webSocket_SmallCaps
 
@@ -108,14 +168,31 @@ Capas conceptuales:
 
 - `raw data`
 - `reference and universe`
-- `features`
-- `events`
-- `states`
+- `canonical observables`
+- `canonical state / event state`
+- `outcomes`
+- `research experiments`
+- `evidence`
+- `knowledge objects`
+- `validated knowledge`
+- `event families / representations / transitions`
 - `strategies or policies`
 - `execution`
 - `risk`
 - `reporting and monitoring`
-- `ML and RL`
+- `ML / RL / AlphaEvolve`
+
+La distinción clave de la arquitectura v3 es:
+
+```text
+market_state/event_state = X legal observable as-of
+outcomes = y separado
+research_experiment = forma cientifica de mirar X e y
+evidence = resultado reproducible
+knowledge_object = conclusion candidata
+validated_knowledge = conocimiento promovido
+operational_component = detector, representacion, policy, estrategia o regla usable
+```
 
 ### 4.1. Regla estructural
 
@@ -150,9 +227,26 @@ Cuando un contrato compartido necesite cambiar:
 
 TSIS opera como una cadena institucional de transformación de información.
 
-Flujo global:
+Flujo global vigente:
 
-`data -> normalization -> reference/universe -> features -> event logic -> state logic -> strategy or policy -> execution or simulation -> evaluation -> promotion or quarantine`
+```text
+data
+-> normalization / certification
+-> reference / universe
+-> canonical observables
+-> canonical state / event state
+-> outcomes separados
+-> research_experiment
+-> execution
+-> evidence
+-> scientific validation
+-> knowledge_object
+-> validated_knowledge
+-> operational_component
+-> backtest / live / ML / RL / AlphaEvolve, segun corresponda
+```
+
+El flujo antiguo `features -> events -> strategies -> evaluation` sigue existiendo como lectura local de algunas implementaciones, pero no es la arquitectura superior vigente.
 
 ### 5.1. Research path
 
@@ -162,6 +256,19 @@ En research, el flujo termina en:
 - análisis de robustez;
 - evidencia reproducible;
 - decisión explícita de promoción, revisión o descarte.
+
+Desde la v3, research no empieza necesariamente con un evento ya definido. Puede empezar con:
+
+```text
+sampling_probe
+parameter_sweep
+research_question
+candidate_event_family
+representation_candidate
+transition_hypothesis
+```
+
+Eso debe convertirse en `research_experiment` antes de producir evidencia institucional.
 
 ### 5.2. Live path
 
@@ -183,6 +290,8 @@ No debe inventar de forma autónoma una semántica paralela del mercado ni una s
 
 `live` y `offline RL` pueden generar evidencia, telemetría o feedback útil para research, pero no deben redefinir silenciosamente la semántica institucional upstream.
 
+AlphaEvolve y otros sistemas autónomos siguen la misma regla. Pueden proponer candidatos o experimentos, pero no pueden redefinir verdad observable, outcomes, validadores, holdouts o promoción institucional.
+
 La dirección institucional correcta es:
 
 - `research` formaliza y valida;
@@ -198,13 +307,15 @@ Todo trabajo serio en TSIS debe recorrer un ciclo de vida reconocible.
 
 ### 6.1. Fases
 
-1. `idea or hypothesis`
-2. `formalization`
-3. `dataset and config definition`
-4. `research or implementation`
-5. `validation`
-6. `reproducibility check`
-7. `promotion, quarantine, deprecation or archive`
+1. `research question or hypothesis`
+2. `research_experiment design`
+3. `dataset/state/outcome/config definition`
+4. `execution`
+5. `evidence report`
+6. `scientific validation`
+7. `knowledge_object candidate`
+8. `validated_knowledge, falsification, quarantine, deprecation or archive`
+9. `operational_component promotion when applicable`
 
 ### 6.2. Regla
 
@@ -245,6 +356,16 @@ Ejemplos:
 
 Son válidos para investigación y diseño, pero no deben tratarse como contratos oficiales sin promoción explícita.
 
+Ejemplos nuevos de la arquitectura v3:
+
+- `research_experiment` en diseño;
+- `sampling_probe` humano o generado;
+- `parameter_sweep` exploratorio;
+- `representation_candidate`;
+- `event_detector_candidate`;
+- `alphaevolve_candidate_run`;
+- `evidence_report` aún no promovido.
+
 ### 7.3. Artefactos runtime
 
 Son temporales, operativos o efímeros.
@@ -263,8 +384,10 @@ TSIS se gobierna mediante documentos raíz con roles distintos.
 - `VERSIONING_STANDARDS.md`: cómo preserva memoria, trazabilidad y semántica histórica.
 - `RESEARCH_PHILOSOPHY.md`: cómo piensa TSIS sobre mercado, datos, edge, causalidad y aprendizaje.
 - `AGENTS.md`: cómo deben actuar agentes y colaboradores dentro del repositorio.
-- `ARCHITECTURE_OVERVIEW.md`: cómo fluye TSIS técnicamente.
 - `LONG_RUNNING_OPERATIONS_CONTRACT.md`: cómo deben instrumentarse operaciones largas, copias, materializaciones, auditorías, entrenamientos y builds para que nunca sean cajas negras.
+- `00_CTO/TSIS_LAB_ARCHITECTURE_v3.md`: arquitectura CTO vigente; define TSIS como Scientific Discovery Engine.
+- `00_TSIS_Lab/README.md`: laboratorio operativo transversal para `research_experiments`.
+- `00_TSIS_Lab/01_contracts/`: contratos comunes de experimentos, ejecución, sweeps, validación y promoción de conocimiento.
 
 ### 8.2. Regla de precedencia
 
@@ -327,3 +450,16 @@ TSIS debe evolucionar como un sistema capaz de:
 - y crecer durante años sin degradarse en un conjunto de scripts, prompts y outputs ambiguos.
 
 Ese es el estándar operativo global del proyecto.
+
+
+
+
+
+
+
+
+
+
+
+
+

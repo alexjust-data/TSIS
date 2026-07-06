@@ -12,9 +12,9 @@ Status:
 ```text
 contract_defined
 event_candidate_tables_contract_complete_for_declared_scope = true
-daily_strategy_candidate_events_table_materialized = false
-intraday_1m_strategy_candidate_events_table_materialized = false
-event_windows_expansion_materialized = false
+daily_strategy_candidate_events_table_materialized = controlled_candidate_not_official
+intraday_1m_strategy_candidate_events_table_materialized = controlled_candidate_not_official
+event_windows_expansion_materialized = controlled_candidates_daily_and_intraday_not_official
 event_state_table_materialized = false
 ml_ready_dataset_enabled = false
 rl_training_dataset_enabled = false
@@ -422,8 +422,8 @@ Con los schema contracts daily/1m ya cerrados, el siguiente trabajo permitido es
 
 ```text
 1. implementar validators ejecutables de event candidate tables
-2. construir builders/materializacion candidate para daily_strategy_candidate_events_table_v0_1
-3. construir builders/materializacion candidate para intraday_1m_strategy_candidate_events_table_v0_1
+2. builders/materializacion candidate para daily_strategy_candidate_events_table_v0_1 DONE controlled
+3. builders/materializacion candidate para intraday_1m_strategy_candidate_events_table_v0_1 DONE controlled
 4. elegir una primera familia de evento daily/1m para fixture controlado
 5. expandir event_windows para source_event_table != halts_table_v0_1
 6. construir event_state fixture anclado a esos eventos
@@ -473,8 +473,8 @@ Lectura actualizada:
 ```text
 schema contracts daily/1m = DONE
 validators contract de event candidate tables = DONE
-validators ejecutables y builders/materializacion candidate daily/1m = NEXT/PENDING
-event_windows expansion = PENDING
+validators ejecutables y builders/materializacion candidate daily/1m = DONE controlled
+event_windows daily controlled = DONE; event_windows intradia controlled = DONE; wider/full-universe = PENDING
 ```
 
 Los schemas no materializan tablas. Solo fijan grano, columnas obligatorias,
@@ -494,11 +494,45 @@ Lectura actualizada:
 ```text
 schema contracts daily/1m = DONE
 validators contract = DONE
-validators ejecutables = NEXT/PENDING
-builders/materializacion candidate daily/1m = NEXT/PENDING
-event_windows expansion = PENDING
+validators ejecutables = DONE fixture-scope y tabla controlada
+builders/materializacion candidate daily/1m = DONE controlled
+event_windows daily controlled = DONE; event_windows intradia controlled = DONE; wider/full-universe = PENDING
 ```
 
 El contrato de validators no implementa codigo. Fija que debe fallar antes de
 permitir builders/materializacion y consumo downstream.
 
+
+## Evidencia 2026-07-05 - Intraday 1m Candidate Quote-Guarded Controlado
+
+```text
+script = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_1m_strategy_candidate_events_from_master_intraday_quote_guarded.py
+source = E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_2_candidate_quote_guarded/data.parquet
+run_root = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_candidate_events_from_master_intraday_qg_controlled/
+dataset_path = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_candidate_events_from_master_intraday_qg_controlled/event_candidate_table/intraday_1m_strategy_candidate_events_table_v0_1_candidate/data.parquet
+manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_candidate_events_from_master_intraday_qg_controlled/_intraday_1m_strategy_candidate_events_from_master_intraday_qg_manifest.json
+validator_status = passed
+source_session_count = 58
+event_candidate_rows = 5
+full_universe_claim_true_rows = 0
+ml_feature_candidate_rows = 0
+rl_state_candidate_rows = 0
+alphaevolve_production_enabled_rows = 0
+```
+
+Lectura correcta: este contrato ya tiene evidencia de materializacion controlada para daily y para intradia 1m quote-guarded. Sigue sin existir promocion oficial/full-universe ni permission para ML/RL/AlphaEvolve.
+
+## Evidencia 2026-07-05 - Intraday 1m Event Windows Controladas
+
+```text
+script = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_1m_strategy_event_windows_candidate.py
+dataset_path = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_event_windows_from_5_events_controlled/event_windows_table_v0_1_candidate_intraday_1m_strategy_events/data.parquet
+manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_event_windows_from_5_events_controlled/_event_windows_table_v0_1_candidate_intraday_1m_strategy_events_manifest.json
+source_event_count = 5
+row_count = 15
+validator_status = passed
+full_universe_claim_rows = 0
+rl_state_component_candidate_rows = 0
+```
+
+Lectura correcta: event_windows intradia existe solo como candidato controlado/no oficial. La ventana `post_event_30m` es frontera de outcome, no feature de estado.

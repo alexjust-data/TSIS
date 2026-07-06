@@ -1,0 +1,273 @@
+# market_state_representation_20260705 Graphify Leaf Manifest
+
+Date: 2026-07-05
+Status: runtime, reconstructible Graphify leaf output.
+
+Scope: Market State Representation v3 route, event candidates, quote-guarded intraday path, lineage and representation boundary
+Leaf output: `C:\TSIS_Data\00_CTO\graphify-out\leaf_slices\market_state_representation_20260705`
+
+## Graph Build Baseline
+
+```yaml
+graph_build_git_branch: integrate/main-data-quality-dossiers-20260613
+graph_build_git_commit: f94bc013059e7c815efa4055c0d26e5c4b1165b9
+graph_build_dirty_state: true
+graph_build_dirty_paths_count: 122
+graph_build_timestamp_utc: 2026-07-05T19:40:41.326152+00:00
+graphify_package_version: 0.9.1
+graphify_skill_path: C:\Users\AlexJ\.codex\skills\graphify\SKILL.md
+graphify_skill_sha256: 671a0c8e70cc7a74621fa072c118068bc428f4c025f254c6465c5034027bb510
+no_api_mode: true
+semantic_extraction_mode: deterministic_curated_topology_extraction
+build_from_json_root_or_equivalent: C:\TSIS_Data
+root_graph_updated: false
+queue_entries_left_pending: pending review after 20260705 leaf refresh
+```
+
+Important limitation:
+
+```text
+This is a deterministic curated route graph. It preserves the production-disabled boundary and does not claim official state/event/outcome materialization unless the source docs do.
+```
+
+### Dirty Paths
+
+```text
+D 00_CTO/00_CTO_REFACTOR_PLAN.md
+ D 00_CTO/00_TSIS_PAPERS/00_private.md
+ M 00_CTO/00_private/notas_agentes_inicio.md
+ M 00_CTO/01_RESEARCH_PHILOSOPHY/README.md
+ D 00_CTO/01_RESEARCH_PHILOSOPHY/alpgaenvolve_vs_statics.md
+ M 00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/AlphaEnvolve_en_Tsis.md
+ M 00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/areas_de_trabajo.md
+ D 00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/ALPHAEVOLVE_ARCHITECTURE.md
+ D 00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/ALPHAEVOLVE_EXPERIMENTS.md
+ D 00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/ALPHAEVOLVE_LEARNING_ROADMAP.md
+ D 00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/ALPHAEVOLVE_OPEN_QUESTIONS.md
+ D 00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/ALPHAEVOLVE_OVERVIEW.md
+ D 00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/ALPHAEVOLVE_RESEARCH_LOG.md
+ D 00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/ALPHAEVOLVE_TSIS_VISION.md
+ M 00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/README.md
+ M 00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/README.md
+ M 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/AlphaEnvolve.md
+ M 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
+ M 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/market_state_representation_source_file_map_v0_1.md
+ M 00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/runbooks/2026-06-12_data_audit_agent_prompt_pack.md
+ M 00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/runbooks/2026-06-13_shutdown_handoff_note.md
+ M 00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/traders_strategies/EDUTRADES_LONG_PLAYS_SOURCE_EVENT_INDEX_v0_1.md
+ M 00_CTO/13_TRADING_SYSTEMS/README.md
+ M 00_CTO/13_TRADING_SYSTEMS/revision.md
+ M 00_CTO/CHANGELOG.md
+ M 00_CTO/GRAPHIFY_REFRESH_QUEUE.md
+ M 00_CTO/LOCAL_RULES.md
+ M 00_CTO/README.md
+ D 00_CTO/TSIS_LAB_ARCHITECTURE.md
+ D 00_CTO/TSIS_LAB_ARCHITECTURE_v2.md
+ M 00_CTO/tests/README.md
+ M 00_CTO/tests/architecture_contracts/README.md
+ M 01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
+ M 01_TSIS_backtest_SmallCaps/01_foundations/GRAPHIFY_REFRESH_QUEUE.md
+ M 01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/event_state_table_schema_contract.md
+ M 01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/intraday_1m_strategy_candidate_events_table_schema_contract.md
+ M 01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/market_state_table_schema_contract.md
+ M 01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/outcomes_table_schema_contract.md
+ M 01_TSIS_backtest_SmallCaps/01_foundations/contract_registry/dataset_contracts/market_state_table_dataset_contract_v0_1.md
+ M 01_TSIS_backtest_SmallCaps/01_foundations/contract_registry/dataset_contracts/master_intraday_bar_table_dataset_contract_v0_1.md
+ M 01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/market_state_table_registry_entry.yaml
+ M 01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/master_intraday_bar_table_registry_entry.yaml
+ M 01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/reference/reference_upgrade_agent_prompt_2026-06-12.md
+ M 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+ M 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+ M 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+ M 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_table_validators_contract_v0_1.md
+ M 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_tables_contract_v0_1.md
+ M 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md
+ M 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_builder_contract_v0_1.md
+ M 01_TSIS_backtest_SmallCaps/01_foundations/validators/outputs/event_state_table_validators.md
+ M 01_TSIS_backtest_SmallCaps/01_foundations/validators/outputs/market_state_table_validators.md
+ M 01_TSIS_backtest_SmallCaps/01_foundations/validators/outputs/outcomes_table_validators.md
+ M 01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/GRAPHIFY_REFRESH_QUEUE.md
+ M 01_TSIS_backtest_SmallCaps/CHANGELOG.md
+ M 01_TSIS_backtest_SmallCaps/README.md
+ M 01_TSIS_backtest_SmallCaps/configs/data_foundation_outputs/master_intraday_bar_table_quote_guarded_candidate_v0_2.json
+ M 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_master_intraday_quote_guarded_candidate_contract.py
+ M 02_TSIS_webSocket_SmallCaps/AGENTS.md
+ M 02_TSIS_webSocket_SmallCaps/LOCAL_RULES.md
+ M AGENTS.md
+ D ARCHITECTURE_OVERVIEW.md
+ M CHANGELOG.md
+ M PROJECT_OPERATING_SYSTEM.md
+ M PROJECT_RULES.md
+ M README.md
+ M RESEARCH_PHILOSOPHY.md
+ M START_HERE.md
+ M VERSIONING_STANDARDS.md
+ M tests/institutional/README.md
+?? 00_CTO/01_RESEARCH_PHILOSOPHY/00_CTO/
+?? 00_CTO/01_RESEARCH_PHILOSOPHY/00_MANIFESTO/
+?? 00_CTO/01_RESEARCH_PHILOSOPHY/01_KNOWLEDGE_MODEL/
+?? 00_CTO/01_RESEARCH_PHILOSOPHY/02_EXPERIMENTAL_METHOD/
+?? 00_CTO/01_RESEARCH_PHILOSOPHY/03_HUMAN_AND_AI_RESEARCHERS/
+?? 00_CTO/01_RESEARCH_PHILOSOPHY/04_MARKET_SCIENCE_PHILOSOPHY/
+?? 00_CTO/01_RESEARCH_PHILOSOPHY/05_07_2026.md
+?? 00_CTO/01_RESEARCH_PHILOSOPHY/05_RESEARCH_GOVERNANCE/
+?? 00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/00_AlphaEvolve_vs_sobreoptimizacion.md
+?? 00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/01_ALPHAEVOLVE_TSIS_VISION.md
+?? 00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/02_ALPHAEVOLVE_AS_RESEARCH_EXPERIMENT_GENERATOR_v0_1.md
+?? 00_CTO/11_MARKET_SCIENCE/010_portfolio/
+?? 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/05_07_2026.md
+?? 00_CTO/11_MARKET_SCIENCE/09_ImitationLearneing/
+?? 00_CTO/98_TSIS_ours_PAPERS/
+?? 00_CTO/TSIS_LAB_ARCHITECTURE_v3.md
+?? 00_CTO/_archive/
+?? 00_CTO/graphify-out/leaf_slices/graphify_governance_20260705/
+?? 00_CTO/graphify-out/leaf_slices/market_state_representation_20260705/
+?? 00_TSIS_Lab/
+?? 01_TSIS_backtest_SmallCaps/01_foundations/graphify-out/leaf_slices/data_foundation_outputs_topology_20260705/
+?? 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_research_design_contract_v0_1.md
+?? 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_contract_v0_1.md
+?? 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md
+?? 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_event_state_controlled_v0_1.md
+?? 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_event_windows_controlled_v0_1.md
+?? 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_outcomes_controlled_v0_1.md
+?? 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
+?? 01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/graphify-out/leaf_slices/certification_decisions_topology_20260705/
+?? 01_TSIS_backtest_SmallCaps/scripts/graphify/build_certification_decisions_topology_leaf_20260705.py
+?? 01_TSIS_backtest_SmallCaps/scripts/graphify/build_graphify_governance_refresh_20260705.py
+?? 01_TSIS_backtest_SmallCaps/scripts/graphify/build_project_graphify_refresh_20260705.py
+?? 01_TSIS_backtest_SmallCaps/scripts/materialize_daily_strategy_event_windows_candidate.py
+?? 01_TSIS_backtest_SmallCaps/scripts/materialize_event_state_intraday_quote_guarded_candidate.py
+?? 01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_1m_event_outcomes_candidate.py
+?? 01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_1m_strategy_candidate_events_from_master_intraday_quote_guarded.py
+?? 01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_1m_strategy_event_windows_candidate.py
+?? 01_TSIS_backtest_SmallCaps/scripts/materialize_market_state_intraday_quote_guarded_candidate.py
+?? 01_TSIS_backtest_SmallCaps/scripts/materialize_master_intraday_quote_guarded_candidate_sample.py
+?? 01_TSIS_backtest_SmallCaps/scripts/materialize_master_intraday_quote_guarded_candidate_scoped.py
+?? 01_TSIS_backtest_SmallCaps/scripts/materialize_strategy_candidate_events_table.py
+?? 01_TSIS_backtest_SmallCaps/scripts/preflight_master_intraday_quote_guarded_candidate.py
+?? 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_daily_strategy_event_windows_candidate_builder.py
+?? 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_event_state_intraday_quote_guarded_candidate_builder.py
+?? 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_intraday_1m_event_outcomes_candidate_builder.py
+?? 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_intraday_1m_strategy_candidate_events_from_master_intraday_qg.py
+?? 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_intraday_1m_strategy_event_windows_candidate_builder.py
+?? 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_market_state_intraday_quote_guarded_candidate_builder.py
+?? 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_master_intraday_quote_guarded_candidate_sample_builder.py
+?? 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_master_intraday_quote_guarded_candidate_scoped_builder.py
+?? 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_strategy_candidate_events_table_builder.py
+?? graphify-out/
+```
+
+## Corpus
+
+```text
+- 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/05_07_2026.md | sha256=99a1a546ef259c9897bf1d9edc43cc7ab4c90eceb0860e8cc094319a81f7f95b | lines=204 | words=430
+- 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/AlphaEnvolve.md | sha256=96304ef40f6f150c7c6afc67892eff65c6e5d4e7c88ad335becb0a3ed0dc0fee | lines=1414 | words=2641
+- 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01.md | sha256=7a752c2c324ba33db137c1ab4ee398815729b4a5c5551ddb85af0a0677970eec | lines=3477 | words=10407
+- 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v2.md | sha256=53b0ed70fa4b5cc728daa92d251cf8a3b8f88bb32d4dc89899588b741fa7ccd7 | lines=871 | words=4010
+- 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md | sha256=03c465f7b26c654f95f3d34ff2518feb53762557ddbcc81c6435bef90ba215be | lines=2498 | words=8303
+- 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/intraday_scanner_candidates_contract_v0_1.md | sha256=f6d87813835a76c8648fb3309757faffbb04b635bb126a2224313de566d45fc8 | lines=224 | words=472
+- 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/README.md | sha256=1f44a85a64f029becb903f5f6be6f65b3c2275260a81aa5c523abef4e4fa969e | lines=265 | words=633
+- 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_base_and_in_play_momentum_contract_v0_3.md | sha256=eaa05b6cc6e78807d34dbd409a071f51ff9e1fb7a67fc1c19c54784c9dce4b02 | lines=216 | words=682
+- 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_base_universe_and_profiles_contract_v0_2.md | sha256=9768073dca3b10c727f50d667c919fd49569e8856dc1ee1bd5354594c7bdc9ee | lines=478 | words=1754
+- 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_candidate_selection_architecture_v0_1.md | sha256=86dfee7242b3bbd269a7808c9639cb10f29ba7e417d4a429362b202cd38a8ff3 | lines=220 | words=858
+- 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_definitions_trade_station_vs_broad_discovery_v0_1.md | sha256=93e27cb94bd9d199473e325b99e9dfb46089d43b82b91f9c4a481f1c253f12da | lines=190 | words=464
+- 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_table_and_contract_map_v0_1.md | sha256=1576f0b65c54b4780d69d757af4456b0d95ab323bbf50d495fe775fbad5bea2a | lines=208 | words=508
+- 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/scanner_to_market_state_promotion_path_v0_1.md | sha256=a22de83db461b6f216670e5752175a610baa49b8e4172c08fe527e2614b091dd | lines=213 | words=526
+- 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/strategy_scanner_overlay_policy_v0_1.md | sha256=f482df1fb783b88e0542a71f8ff0aa638d893d8670b00853c1078fa2aaa093bd | lines=219 | words=545
+- 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/market_state_representation_contract_v0_1.md | sha256=ea0d5bdecd468a45b7587ef76bd940b13ade23964fbd42b58b1fa5fc9c841eba | lines=871 | words=2942
+- 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/market_state_representation_source_file_map_v0_1.md | sha256=f86a12c9b0fd29afc7c14de1c9da9f5c4da7ac4b42888d4c87d953be5de8999e | lines=267 | words=870
+- 00_CTO/CHANGELOG.md | sha256=89942df32b4b31e688b0d7bd86afd56d3eb3b80521135f36c89fac9aeb583ac4 | lines=1294 | words=6868
+- 00_CTO/GRAPHIFY_REFRESH_QUEUE.md | sha256=b350e483913b2442233de33cd747d6af5fe9002f11c2509dbb820fa6af246f78 | lines=2275 | words=5886
+- 01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/daily_strategy_candidate_events_table_schema_contract.md | sha256=8adb11057184a43b9d0ce48aca541fdc4affcbd7218562bb765092dbcb15a04a | lines=327 | words=1301
+- 01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/intraday_1m_strategy_candidate_events_table_schema_contract.md | sha256=35fc0cacea228cfe5cd005f9087bed5123b7d6ca13e962ecf9c763ba3ce5c611 | lines=418 | words=1664
+- 01_TSIS_backtest_SmallCaps/01_foundations/GRAPHIFY_REFRESH_QUEUE.md | sha256=5cb34ef49646cedba6f3dfa763f928c28622704dfcb2d43ca16ddba7aada46a7 | lines=5661 | words=13946
+- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md | sha256=6998b66524c9d3cf679115a6b0dccea84d8d9448d366c3aa4df4dcde825c3e9e | lines=1181 | words=4846
+- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md | sha256=1aefa339b8eab2bf68c33c7178172e011d1ae2f14f291c8d31caf254f8f968b9 | lines=3796 | words=10749
+- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_table_validators_contract_v0_1.md | sha256=9c8f2d58b8a74124e485986375d0ad773e1c1a5f2961d2363d9879fffd1cd217 | lines=510 | words=1734
+- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_tables_contract_v0_1.md | sha256=2f953698c1d728c8838e5cde7214e2b375d663bffc723fb15ae5ba877afb14e9 | lines=539 | words=1359
+- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md | sha256=ee4f9f708ff0916d6e534ddc79eaff081a855cf9363d762ff291151b54496ccb | lines=613 | words=1579
+- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_builder_contract_v0_1.md | sha256=137b34c8d0054c62b475b4dae1e1d54c84a57ef97754342c47088cac6b6df80b | lines=699 | words=2096
+- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_canonical_vs_representation_layer_contract_v0_1.md | sha256=3e025facf0ec64146e194e5a2d840971da315257ac3a644bb738a3075da948c3 | lines=724 | words=1994
+- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_decision_timestamp_policy_v0_1.md | sha256=c40e092ebfb9466b289689a148d9d49ba8c0b75bf8a968d4d23119585d65e14f | lines=531 | words=2515
+- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md | sha256=3eb21a6023c6ee67d71319142f04cadd653eecb1b5416193e21e234710813030 | lines=547 | words=2979
+- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_observable_eligibility_contract_v0_1.md | sha256=4b550d19d8ce125e5943badf2b9c7dc29529b5b89783d2dcc01f2c6e977baff6 | lines=756 | words=4692
+- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_contract_v0_1.md | sha256=4296f764dea1b68d44842a57762ece5df793017741f66725931bdf0419d80034 | lines=461 | words=1273
+- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md | sha256=ca84dd945744965e04c11e860edf368955fa7182cf97b29fef64cdd6ebfad602 | lines=495 | words=1077
+- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_event_state_controlled_v0_1.md | sha256=80c365d256c3cc6dec00c628e647596672238dcbc16d5566543596df702232d6 | lines=197 | words=366
+- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_event_windows_controlled_v0_1.md | sha256=88aa679e82777828262965e7696a9004861b9695e3b63797ef6d0afde7d0d629 | lines=193 | words=438
+- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_outcomes_controlled_v0_1.md | sha256=398342c5b144fd5a56f8f1b4b6efcadd4ed1e86be46167e01ee16baefe07c130 | lines=252 | words=494
+- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md | sha256=df145a7e505d14f3440fac404cab2e31802fcf49b255f1cc1b8d196b1db5dcd4 | lines=689 | words=1759
+- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_snapshot_roles_contract_v0_1.md | sha256=aa803ada38459bff2758aa20fbf7e0b402e7935635f06cecc7345a570091325d | lines=358 | words=1551
+- 01_TSIS_backtest_SmallCaps/CHANGELOG.md | sha256=30a2af69e5bbfc52a51d787f2f11d7c31b2e88cf16bb27916447b81b859248f6 | lines=6895 | words=23678
+- 01_TSIS_backtest_SmallCaps/scripts/materialize_daily_scanner_candidates_table.py | sha256=1405030e65c5934c8867e292efd7238ecb7c905db13cb08d7287a7e8644b70c7 | lines=1141 | words=2941
+- 01_TSIS_backtest_SmallCaps/scripts/materialize_daily_scanner_candidates_table_v0_2.py | sha256=ed655083250d0a1c3cc9de1153da2357447dc4fd80659ced8bb98303d914f0b2 | lines=991 | words=2689
+- 01_TSIS_backtest_SmallCaps/scripts/materialize_daily_scanner_candidates_table_v0_3.py | sha256=e1c68a17652855a8b7480ad09698e623d8ff445d05727dc63c31f0f23cddba4c | lines=1049 | words=2935
+- 01_TSIS_backtest_SmallCaps/scripts/materialize_daily_strategy_event_windows_candidate.py | sha256=6291700b0786224f504aee861966bb454fc005e721cfa820fcbe3d5fdbd9ac69 | lines=416 | words=893
+- 01_TSIS_backtest_SmallCaps/scripts/materialize_event_state_intraday_quote_guarded_candidate.py | sha256=4b7518c2d09a7de8a90691f3f4e9b96de7ea1812a4d055a160b657350736f14e | lines=492 | words=1029
+- 01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_1m_event_outcomes_candidate.py | sha256=fe3920877d37f85aadf53ba498a3dd051adac73199c18742b3020c58181ac71d | lines=600 | words=1325
+- 01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_1m_strategy_candidate_events_from_master_intraday_quote_guarded.py | sha256=9395c2bee9fd31de721126e542d72d9ecfe837d15a354f971f5750817a98b476 | lines=398 | words=922
+- 01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_1m_strategy_event_windows_candidate.py | sha256=dcb5097e05558fa9d57a9e4a39569b1cb245ca626345052973209e94ef4e4e30 | lines=430 | words=1008
+- 01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_scanner_candidates_table_v0_1.py | sha256=903a9efacd349e83dac724e85c9045d4da7040f7ca98b3d638ab1cd69b341ffb | lines=804 | words=1944
+- 01_TSIS_backtest_SmallCaps/scripts/materialize_market_state_intraday_quote_guarded_candidate.py | sha256=210ae7a80bc4e402eb7ca15b9d8eeb7582aff44ee10cf02aa7ebb54a47837f93 | lines=591 | words=1194
+- 01_TSIS_backtest_SmallCaps/scripts/materialize_master_intraday_quote_guarded_candidate_sample.py | sha256=47510846d21d5ea3be9de6b0039c524375bf829042323d28607cda8b2e254d8d | lines=351 | words=809
+- 01_TSIS_backtest_SmallCaps/scripts/materialize_master_intraday_quote_guarded_candidate_scoped.py | sha256=058b171c3039ae8da85312aedc55c1f3208f58a3c3b8c265d37cd5eec35b4c91 | lines=459 | words=1142
+- 01_TSIS_backtest_SmallCaps/scripts/materialize_strategy_candidate_events_table.py | sha256=67210f8294818fa07c374fe02a454a865ca8bfa6c20385a221cdb82522ae2ae4 | lines=568 | words=1411
+- 01_TSIS_backtest_SmallCaps/scripts/validate_event_candidate_tables.py | sha256=7b1a29475f0d5c20d7bd1fedb4027b851e53f0ab8bb0c8f9d5afc79cf195d122 | lines=549 | words=1908
+- 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder.py | sha256=a4068dd6f1fb1369236f4ac3ae0d61bf35a7a760fbf12d4c05f25daf57a68bf1 | lines=325 | words=577
+- 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder_v0_2.py | sha256=cb90f512a5c4178972d76e6110e058267bfe49da4342fc610405f6d2535ae171 | lines=375 | words=679
+- 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder_v0_3.py | sha256=626f31ac4a7954e7d3d06836ad5a328a41ba37e9cef5458eb35913ce18360904 | lines=412 | words=755
+- 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_daily_strategy_event_windows_candidate_builder.py | sha256=7b16699ed6bdcea80f96c18835ab8bebb4ab6e28c6d9653e1c9814e0c8232158 | lines=150 | words=255
+- 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_event_candidate_table_validators.py | sha256=37d1ffb8cd19ae453b1cac29a6f4bb6549bc3ec71370521a1b2d423e2e10e478 | lines=133 | words=290
+- 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_event_state_intraday_quote_guarded_candidate_builder.py | sha256=671bd3d94b1dc73d050bfdddf059baf034d061735d874399d6027f8971ccb393 | lines=209 | words=387
+- 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_intraday_1m_event_outcomes_candidate_builder.py | sha256=b358ee80f79f64ededee688e6e3a6ca0a8442427f51f871bbfc5bbe717974cd2 | lines=180 | words=374
+- 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_intraday_1m_strategy_candidate_events_from_master_intraday_qg.py | sha256=d5057fbdc75e3ad0c80036f41f71666658c2f1ae86221dd12a3fe0aab82b673b | lines=139 | words=332
+- 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_intraday_1m_strategy_event_windows_candidate_builder.py | sha256=f35b40fa93aa97c19bf8d8f238b7b6aa5b861bae7fb518a1cdeac87d24e2d1bf | lines=122 | words=222
+- 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_intraday_scanner_candidates_table_builder_v0_1.py | sha256=f9e7c14193016a348e33808528e367d334ff8f386c9aff77450637969fbe8dbf | lines=260 | words=504
+- 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_market_state_intraday_quote_guarded_candidate_builder.py | sha256=7cdd1544458eae54ea27c7aa513496f80691fd89fe497e4e6102c584b4e47cf5 | lines=181 | words=351
+- 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_master_intraday_quote_guarded_candidate_contract.py | sha256=5cab89172d6c64a6a2223bf68f60ff287b3fa227085ce32878d346b20d320a5d | lines=196 | words=392
+- 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_master_intraday_quote_guarded_candidate_sample_builder.py | sha256=c4cc7c7c69182540452152db222dc1c3aa8378d7ca3aaed981ffce58689cfaf2 | lines=204 | words=365
+- 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_master_intraday_quote_guarded_candidate_scoped_builder.py | sha256=fe5abfaa4f7bc1b92fd19d406e0ab27bc89ec40162946486ada2951f931d7472 | lines=167 | words=421
+- 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_microstructure_candidate_window_manifest.py | sha256=aec6b35c08ac5fed6f5afe23a06eae1467d91036fd3a4c4421bd18a6b3462f00 | lines=297 | words=545
+- 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_microstructure_features_controlled_candidate.py | sha256=d7c69034199ab509743ea68e8c60aeca3e5e65a8981b678c88e94aa10cdff5c1 | lines=319 | words=647
+- 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_strategy_candidate_events_table_builder.py | sha256=b3334148b8b0393ba43f6449784a892786f61e21b3b2e68780bba8160a74fb90 | lines=229 | words=394
+```
+
+## Missing Components
+
+```text
+- none
+```
+
+## Leaf Stats
+
+```yaml
+extraction_nodes: 80
+extraction_edges: 351
+extraction_hyperedges: 1
+nodes: 80
+edges: 351
+communities: 9
+detected_files: 70
+detected_words_approx: 160529
+community_labels:
+  0: Quote Guarded Intraday
+  1: Quote Guarded Intraday
+  2: Quote Guarded Intraday
+  3: Quote Guarded Intraday
+  4: Quote Guarded Intraday
+  5: Quote Guarded Intraday
+  6: Quote Guarded Intraday
+  7: Graph Cluster 7
+  8: Validation Stack
+```
+
+## Diagnostic
+
+```yaml
+missing_endpoint_edges: 0
+dangling_endpoint_edges: 0
+self_loop_edges: 0
+exact_duplicate_edges: 0
+directed_same_endpoint_collapsed_edges: 0
+undirected_same_endpoint_collapsed_edges: 0
+```

@@ -1,6 +1,6 @@
 ﻿# Intraday 1m Strategy Candidate Events Table Schema Contract `v0_1`
 
-Status: `canonical_schema_target_not_materialized`
+Status: `canonical_schema_target_controlled_candidate_materialized_not_official`
 
 Dataset target:
 
@@ -399,3 +399,19 @@ Status final:
 ```text
 intraday_1m_strategy_candidate_events_table_schema_contract_v0_1 = complete_for_contract_defined_scope
 ```
+
+## Evidencia Controlada 2026-07-05
+
+```text
+script = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_1m_strategy_candidate_events_from_master_intraday_quote_guarded.py
+source = E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_2_candidate_quote_guarded/data.parquet
+run_root = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_candidate_events_from_master_intraday_qg_controlled/
+dataset_path = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_candidate_events_from_master_intraday_qg_controlled/event_candidate_table/intraday_1m_strategy_candidate_events_table_v0_1_candidate/data.parquet
+manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_candidate_events_from_master_intraday_qg_controlled/_intraday_1m_strategy_candidate_events_from_master_intraday_qg_manifest.json
+source_session_count = 58
+event_candidate_rows = 5
+validator_status = passed
+status = controlled_candidate_not_promoted
+```
+
+Esta evidencia demuestra que el schema puede materializar un candidato controlado desde la ruta quote-guarded. No cambia el target oficial E-root declarado y no habilita consumo full-universe, ML, RL ni AlphaEvolve.

@@ -15,9 +15,9 @@ event_candidate_table_validators_contract_complete_for_declared_scope = true
 executable_validators_implemented = true
 executable_validators_fixture_scope_passed = true
 real_table_validation_run_available = false
-daily_strategy_candidate_events_table_materialized = false
-intraday_1m_strategy_candidate_events_table_materialized = false
-event_windows_expansion_materialized = false
+daily_strategy_candidate_events_table_materialized = controlled_candidate_not_official
+intraday_1m_strategy_candidate_events_table_materialized = controlled_candidate_not_official
+event_windows_expansion_materialized = controlled_candidates_daily_and_intraday_not_official
 event_state_table_materialized = false
 ml_ready_dataset_enabled = false
 rl_training_dataset_enabled = false
@@ -459,13 +459,51 @@ Lectura correcta:
 
 ```text
 validator executable + fixtures = DONE
-validator run sobre tabla real = PENDING, porque las tablas daily/1m no estan materializadas
-builders/materializacion candidate daily/1m = NEXT
+validator run sobre tablas controladas daily/intradia = DONE
+builders/materializacion candidate daily/intradia = DONE controlled; wider/full-universe = PENDING
 ```
 
-Este avance no materializa `daily_strategy_candidate_events_table_v0_1` ni
-`intraday_1m_strategy_candidate_events_table_v0_1`. Solo deja preparado el
-programa que debera validar esas tablas cuando existan.
+Este avance empezo como validator fixture-scope. Despues ya existen materializaciones controladas/no oficiales de `daily_strategy_candidate_events_table_v0_1` y `intraday_1m_strategy_candidate_events_table_v0_1`; el validator paso sobre ambas. Deja tambien el programa que debera validar runs wider/full-universe cuando existan.
 
 
 
+
+## Evidencia 2026-07-05 - Validator Sobre Intraday Quote-Guarded Controlado
+
+```text
+script = scripts/validate_event_candidate_tables.py
+tabla = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_candidate_events_from_master_intraday_qg_controlled/event_candidate_table/intraday_1m_strategy_candidate_events_table_v0_1_candidate/data.parquet
+manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_candidate_events_from_master_intraday_qg_controlled/event_candidate_table/_intraday_1m_strategy_candidate_events_table_v0_1_manifest_candidate.json
+row_count = 5
+validator_status = passed
+validator_hard_fail_count = 0
+validator_review_fail_count = 0
+full_universe_claim_true_rows = 0
+ml_feature_candidate_rows = 0
+rl_state_candidate_rows = 0
+alphaevolve_production_enabled_rows = 0
+```
+
+Pruebas relacionadas:
+
+```text
+python -m pytest tests/data_foundation_outputs/test_intraday_1m_strategy_candidate_events_from_master_intraday_qg.py tests/data_foundation_outputs/test_strategy_candidate_events_table_builder.py tests/data_foundation_outputs/test_event_candidate_table_validators.py -q
+11 passed
+```
+
+Lectura correcta: el validator ya fue ejecutado sobre una tabla intradia real controlada. No valida universo amplio ni promocion oficial.
+
+## Evidencia 2026-07-05 - Intraday 1m Event Windows Controladas
+
+```text
+script = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_1m_strategy_event_windows_candidate.py
+dataset_path = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_event_windows_from_5_events_controlled/event_windows_table_v0_1_candidate_intraday_1m_strategy_events/data.parquet
+manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_event_windows_from_5_events_controlled/_event_windows_table_v0_1_candidate_intraday_1m_strategy_events_manifest.json
+source_event_count = 5
+row_count = 15
+validator_status = passed
+full_universe_claim_rows = 0
+rl_state_component_candidate_rows = 0
+```
+
+Lectura correcta: event_windows intradia existe solo como candidato controlado/no oficial. La ventana `post_event_30m` es frontera de outcome, no feature de estado.
