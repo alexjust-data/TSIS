@@ -12,23 +12,18 @@ upstream_authority:
   physical_data_plane: E:/TSIS/data/README.md
 
 physical_data_roots:
-  das_cmdapi_live: E:/TSIS/data_DAS_live
   polygon_websocket_prototype_raw: C:/TSIS_Data/02_TSIS_webSocket_SmallCaps/data/raw_ws
   polygon_websocket_prototype_curated: C:/TSIS_Data/02_TSIS_webSocket_SmallCaps/data/curated_ws
 
 active_artifact_paths:
   polygon_raw_websocket_captures: data/raw_ws
   polygon_curated_websocket_outputs: data/curated_ws
-  das_cmdapi_live_captures: E:/TSIS/data_DAS_live
   notebooks: notebooks
   notebook_cell_code: notebooks/cell_code
 
 source_and_docs_paths:
   live_ingestion: 01_data_ingestion_live
   polygon_vendor_notes: 01_data_ingestion_live/vendor_polygon
-  das_vendor_notes: 01_data_ingestion_live/vendor_das
-  das_capture_contract: 01_data_ingestion_live/vendor_das/das_cmdapi_capture_contract_v0_1.md
-  das_data_catalog: 01_data_ingestion_live/vendor_das/das_cmdapi_data_catalog_v0_1.md
   source_parity_audit: 01_data_ingestion_live/source_parity_audit
   docs: docs
   architecture_docs: docs/architecture
@@ -61,10 +56,6 @@ migrated_documents:
     role: polygon_rest_websocket_flat_files_inventory
   - path: 01_data_ingestion_live/vendor_polygon/01_feeds_webSocket.md
     role: polygon_massive_websocket_feed_and_notebook_design
-  - path: 01_data_ingestion_live/vendor_das/das_cmdapi_capture_contract_v0_1.md
-    role: das_cmdapi_readonly_capture_contract
-  - path: 01_data_ingestion_live/vendor_das/das_cmdapi_data_catalog_v0_1.md
-    role: das_cmdapi_data_family_inventory
   - path: docs/architecture/02_pipeline_real_time.md
     role: realtime_pipeline_architecture_note
   - path: docs/capacity_planning/02_1_estudio_arquitectura_realtime_50_tickers.md
@@ -78,50 +69,6 @@ known_legacy_path_references:
   - C:/TSIS_Data/v1/WebSocket_SmallCaps
   - C:/TSIS_Data/01_webSocket_SmallCaps
 
-das_cmdapi_v0_contract:
-  login_mode: manual_operator_login
-  socket_login_default: disabled
-  mode: read_only_data_only
-  physical_data_root: E:/TSIS/data_DAS_live
-  required_run_files:
-    - pre_manifest.json
-    - pid_manifest.json
-    - heartbeat.json
-    - command_transcript.jsonl
-    - events.jsonl
-    - subscription_state.json
-    - capture.log
-    - final_summary.json
-  smoke_test_objective: capture_every_available_readonly_das_cmdapi_data_family
-  screener_initial_denominator:
-    sessions:
-      - premarket
-      - regular_market
-      - afterhours
-    market_cap_usd_lt: 100000000
-    price_usd_min: 0.50
-    price_usd_max: 20.00
-    min_volume_shares: 300000
-    volume_source_priority:
-      - das_lv1_V
-      - das_time_and_sales_sum_if_capture_window_complete
-      - unavailable_record_null
-    market_cap_source: governed_tsis_reference_or_universe_until_das_field_is_proven
-  hard_blocked_prefixes:
-    - NEWORDER
-    - REPLACE
-    - CANCEL
-    - CANCEL ALL
-    - COMPLEXORDER
-    - SLNEWORDER
-    - SLCANCELORDER
-    - SLOFFEROPERATION
 next_workstreams:
-  - das_cmdapi_v0_terminal_capture_app
-  - das_cmdapi_readonly_smoke_test_all_data_families
   - 01_data_ingestion_live/source_parity_audit
-  - field_level_polygon_vs_das_cmdapi_live_parity
   - live_compatible_feature_state_contract
-
-
-

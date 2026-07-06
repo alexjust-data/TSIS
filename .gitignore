@@ -163,3 +163,13 @@ tmpclaude-*
 # Local DAS visual/reference payloads not committed by default
 /00_CTO/99_REFERENCE_LIBRARY/DasTrades_API/
 /00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/DAS_VISUAL_CASEBOOK/
+
+# Local DAS CMD API broker/source integration work not committed by default.
+# Keep DAS contracts, source inventories, code scaffolds, configs and tests local
+# unless a future explicit publication decision whitelists a sanitized subset.
+/02_TSIS_webSocket_SmallCaps/01_data_ingestion_live/vendor_das/
+/02_TSIS_webSocket_SmallCaps/src/das_cmdapi/
+/02_TSIS_webSocket_SmallCaps/configs/das_cmdapi_*.json
+/02_TSIS_webSocket_SmallCaps/tests/test_das_cmdapi_*.py
+/02_TSIS_webSocket_SmallCaps/**/raw_cmdapi/
+/02_TSIS_webSocket_SmallCaps/**/data_DAS_live/
