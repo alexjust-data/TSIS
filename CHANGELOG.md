@@ -1,4 +1,10 @@
-﻿## 2026-07-06 - DAS first push/dip/rebreak semantics v0.2 smoke
+## 2026-07-06 - DAS first push/dip/rebreak semantics v0.2 smoke
+
+## 2026-07-07 - Quotes D-to-E transfer approved
+
+- Approved `E:/TSIS/data/quotes_` as the official E-root quotes dataset for the `D:/quotes` recovery transfer.
+- Evidence basis: Phase A structural parity passed for all `5207` tickers; Phase B full SHA256 original shard hash-read exceptions were resolved by targeted retry `quotes_parity_sha256_hash_error_retry_20260707` with `6/6` parity OK and zero mismatches.
+- Documents with pre-approval `D:/quotes` lineage now require rebuild against the approved E-root before any official downstream promotion.
 
 - Updated `das_widgets.py` first push logic to follow the human DAS sequence: first green expansion after awakening, first push high before the first red pullback, first dip low inside the first red/non-green pullback sequence, then rebreak of the first push high.
 - Updated rebreak validity to require a green candle with high and close above `first_push_high`, plus volume at least equal to the dip-low candle volume.

@@ -1,5 +1,10 @@
 # RAW Storage Parity Audit Requirement v0.1
 
+## 2026-07-07 Quotes Root Supersession
+
+`D:/quotes -> E:/TSIS/data/quotes_` is closed and approved. The official quotes E-root for new downstream work is `E:/TSIS/data/quotes_`, backed by Phase A structural parity and Phase B SHA256 retry evidence. Historical artifacts built from `D:/quotes` remain pre-approval/provenance evidence and must be rebuilt against the approved E-root before promotion to an official downstream table. The legacy `E:/TSIS/data/quotes` tree remains incomplete for this decision.
+
+
 ## Purpose
 
 This contract defines the final Data Foundation audit required to close the
@@ -39,7 +44,7 @@ Initial required family map:
 
 | Legacy/source root | E landing root | Status requirement |
 | --- | --- | --- |
-| `D:/quotes` | `E:/TSIS/data/quotes_` target official E-root pending audit/promotion; `E:/TSIS/data/quotes` is legacy/incomplete | Must be equivalent before official downstream consumption |
+| `D:/quotes` | `E:/TSIS/data/quotes_` approved official E-root after 2026-07-07 audit/promotion; `E:/TSIS/data/quotes` is legacy/incomplete | Must be equivalent before official downstream consumption |
 | `D:/trades_ticks_prod_2005_2026` | `E:/TSIS/data/trades_ticks_prod_2005_2026` | Must be equivalent or explicitly reconciled |
 | `D:/ohlcv_daily` | `E:/TSIS/data/ohlcv_daily` | Must be equivalent or explicitly reconciled |
 | `D:/ohlcv_1m` | `E:/TSIS/data/ohlcv_1m` | Must be equivalent or explicitly reconciled |
@@ -119,7 +124,7 @@ No raw/source-preserved `E:/TSIS/data` family may be represented as fully
 converged from `D:/` until its parity verdict is `parity_pass` or a documented
 exception has been approved in the relevant family contract and changelog.
 
-For `quotes`, the current target official E-root pending parity audit and
+For `quotes`, the official E-root approved by the 2026-07-07 parity audit and
 promotion is:
 
 ```text

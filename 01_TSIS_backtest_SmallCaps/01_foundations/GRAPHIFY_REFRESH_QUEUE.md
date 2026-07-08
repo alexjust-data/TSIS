@@ -1,3 +1,7 @@
+## 2026-07-07 Quotes Root Supersession
+
+`D:/quotes -> E:/TSIS/data/quotes_` is closed and approved. The official quotes E-root for new downstream work is `E:/TSIS/data/quotes_`, backed by Phase A structural parity and Phase B SHA256 retry evidence. Historical artifacts built from `D:/quotes` remain pre-approval/provenance evidence and must be rebuilt against the approved E-root before promotion to an official downstream table. The legacy `E:/TSIS/data/quotes` tree remains incomplete for this decision.
+
 ﻿# Graphify Refresh Queue for 01_foundations
 
 Fecha de creacion: 2026-06-19
@@ -859,7 +863,7 @@ Why:
 - Updated contracts and policies require visible lineage:
   `quotes_root_used`, `quotes_root_state`, `target_official_quotes_root`,
   `legacy_incomplete_e_quotes_root` and
-  `requires_rebuild_after_e_quotes_parity`.
+  `requires_rebuild_after_quotes_root_approval`.
 - The change alters downstream interpretation: candidates inheriting this
   root state remain blocked for ML/RL primary training, backtest core and
   execution simulation until E-root parity/rebuild gates pass.
@@ -2863,7 +2867,7 @@ Recommended action:
 ```text
 Include the runbook and script entry point in the next foundations authority
 leaf rebuild and the next microstructure quotes/trades graph slice.
-Downstream official consumption remains blocked until post-copy audit and
+Downstream official consumption is approved after the 2026-07-07 post-copy audit and
 promotion note exist, but E:/TSIS/data/quotes_ is now the target official
 E-root for the active D:/quotes clone.
 ```
@@ -2884,9 +2888,8 @@ Modulo 01 / Data Foundation output governance
 
 Notes:
 
-Historical correction recorded on `2026-06-29`: the target
-`E:/TSIS/data/quotes_` is no longer described as disposable staging. It is the
-intended E-root produced by the active `D:/quotes` clone, pending final
+Historical correction recorded on `2026-06-29`, superseded by the `2026-07-07` approval decision: the target
+`E:/TSIS/data/quotes_` is no longer described as disposable staging and is now the approved official E-root produced by the recovered `D:/quotes` clone after final
 post-copy audit/promotion. `E:/TSIS/data/quotes` is treated as incomplete/
 legacy E-root for this recovery decision.
 
@@ -4248,7 +4251,7 @@ Reason:
   `execution_sim_candidate_rows=0`,
   `backtest_core_microstructure_candidate_rows=0`.
 - Quotes lineage remains provisional through
-  `quotes_root_state=provisional_d_legacy_recovery_root_pending_e_parity`.
+  `quotes_root_state=pre_approval_d_recovery_lineage_requires_rebuild`.
 - Trades are present for 24/50 rows; 26 rows are explicit
   `review_partial_source` rows and cannot be treated as clean execution/ML
   state.
@@ -4348,9 +4351,9 @@ Recommended action:
 
 ```text
 Include this operation in the next foundations leaf refresh. Preserve that
-quotes_ is the target official E-root pending post-copy parity audit and
+quotes_ is the approved official E-root after the 2026-07-07 post-copy parity audit and
 promotion, that ticker-chunked clone mode is the preferred observable recovery
-path, and that official downstream consumption is blocked until audit/promotion.
+path, and that official downstream consumption is approved after 2026-07-07 audit/promotion.
 Also preserve that E:/TSIS/data/quotes is legacy/incomplete for this decision.
 ```
 
@@ -4864,7 +4867,7 @@ Recommended action:
 
 ```text
 Refresh the quotes/data-ops recovery leaf so graph queries know that
-E:/TSIS/data/quotes_ is still blocked pending parity audit, and that promotion
+E:/TSIS/data/quotes_ was approved on 2026-07-07 after parity audit, and downstream promotion
 requires the structural audit at minimum plus optional full SHA256 evidence for
 the strongest byte-level parity claim.
 ```

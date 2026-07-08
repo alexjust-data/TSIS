@@ -954,10 +954,111 @@ missing_top = 0
 extra_top = 0
 ```
 
+### 2026-07-07 Phase B Hash-Error Retry Resolution
+
+Phase B full SHA256 original shards completed with per-shard `completed_fail` because of six transient `hash_error` ticker results, not because of byte-level hash mismatches.
+
+Original Phase B shard status:
+
+```text
+quotes_parity_sha256_s0_20260704  completed_fail  results=1041  ok=1040  mismatches=1  recovered_manifest=true
+quotes_parity_sha256_s1_20260704  completed_fail  results=1041  ok=1040  mismatches=1
+quotes_parity_sha256_s2_20260704  completed_fail  results=1042  ok=1041  mismatches=1
+quotes_parity_sha256_s3_20260704  completed_fail  results=1041  ok=1040  mismatches=1
+quotes_parity_sha256_s4_20260704  completed_fail  results=1042  ok=1040  mismatches=2
+```
+
+Affected tickers:
+
+```text
+BXC, FPAC, MBRX, RCMT, WVVI, WWR
+```
+
+The six original non-pass results had:
+
+```text
+hash_mismatch_count = 0
+file_count_delta = 0
+bytes_delta = 0
+missing_relative_count = 0
+extra_relative_count = 0
+size_mismatch_count = 0
+```
+
+The only failure mode was `hash_error` during file reads under full SHA256 load. Manual readback of the 34 affected files succeeded afterward, and source/target SHA256 matched for all 34 files.
+
+Formal retry evidence:
+
+```text
+run_id: quotes_parity_sha256_hash_error_retry_20260707
+status: completed_pass
+audit_tickers: 6
+result_count: 6
+parity_ok_count: 6
+mismatch_count: 0
+missing_result_count: 0
+elapsed_seconds: 527.3
+```
+
+Retry command shape:
+
+```powershell
+python "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\data_ops\audit_quotes_clone_parity.py" --source-root "D:\quotes" --target-root "E:\TSIS\data\quotes_" --log-root "E:\TSIS\data\data_ops_manifests\quotes_parity_audit" --workers 1 --hash-mode full --tickers "BXC,FPAC,MBRX,RCMT,WVVI,WWR" --run-id "quotes_parity_sha256_hash_error_retry_20260707" --heartbeat-seconds 10
+```
+
+Operational conclusion:
+
+```text
+Phase B original shard manifests remain completed_fail for audit honesty.
+Phase B evidence is supplemented by retry run quotes_parity_sha256_hash_error_retry_20260707.
+No confirmed SHA256 content mismatch remains after retry.
+```
+### 2026-07-07 Transfer Approval Decision
+
+Decision:
+
+```text
+D:/quotes -> E:/TSIS/data/quotes_ transfer is closed and approved.
+```
+
+Approval basis:
+
+```text
+Phase A structural parity passed for all 5 shards and 5207/5207 tickers.
+No missing or extra top-level ticker directories.
+No missing worker results.
+No structural path, size or byte-total mismatches remain.
+Phase B full SHA256 audit completed for all 5207 tickers.
+The only Phase B non-pass cases were six transient hash-read errors, not content hash mismatches.
+The six affected tickers passed targeted full SHA256 retry in quotes_parity_sha256_hash_error_retry_20260707.
+No confirmed SHA256 content mismatch remains after retry.
+```
+
+Approved parity statement for downstream references:
+
+```text
+quotes_ parity level = full SHA256 parity against D:/quotes, with transient hash-read errors resolved by targeted retry evidence.
+```
+
+Operational status after approval:
+
+```text
+E:/TSIS/data/quotes_ is approved as the official E-root quotes dataset for this recovery transfer.
+D:/quotes remains recovery/provenance evidence, not the official TSIS consumption root.
+E:/TSIS/data/quotes remains legacy/incomplete for this decision.
+```
+
+Audit-honesty note:
+
+```text
+The original Phase B shard manifests remain completed_fail because they recorded the transient hash_error events.
+The approval relies on those original manifests plus the completed_pass targeted retry manifest.
+Do not rewrite original manifests to force completed_pass.
+```
 ### Promotion Gate
 
-`E:/TSIS/data/quotes_` remains blocked for official downstream consumption
-until the post-copy audit evidence is reviewed. Minimum promotion evidence:
+`E:/TSIS/data/quotes_` is approved for official downstream consumption as of the 2026-07-07 approval decision.
+Minimum promotion evidence now on record:
 
 ```text
 Phase A structural parity passed for shards 0..4.
@@ -990,8 +1091,11 @@ quotes_ parity level = full SHA256 parity against D:/quotes
 
 ```text
 artifact: E:/TSIS/data/quotes_
-status: target official E-root pending post-copy parity audit and promotion
-source_of_truth: blocked until audit/promotion
-downstream official consumption: blocked until post-copy audit and promotion
+status: approved official E-root after D:/quotes recovery transfer audit
+approval_date: 2026-07-07
+source_of_truth: approved for downstream official consumption under TSIS data foundation controls
+parity_level: full SHA256 parity against D:/quotes, with transient hash-read errors resolved by targeted retry evidence
+approval_evidence: Phase A structural rerun manifests + Phase B SHA256 shard manifests + quotes_parity_sha256_hash_error_retry_20260707
+recovery_provenance_root: D:/quotes
 legacy_incomplete_e_quotes_root: E:/TSIS/data/quotes
 ```

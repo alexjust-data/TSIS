@@ -1,4 +1,4 @@
-﻿# 00_CTO
+# 00_CTO
 
 Fecha de actualizacion: 2026-06-30
 Estado: CTO workspace activo para arquitectura de automatizaciones TSIS.
@@ -712,11 +712,23 @@ Debe contener notas sobre:
 - interfaces;
 - flujo de datos;
 - diseno event-driven;
+- source adapters;
+- broker/API safety boundaries;
 - decisiones tecnicas;
 - mantenibilidad.
 
-No sustituye `PROJECT_OPERATING_SYSTEM.md` ni los contratos de modulo.
+Se crea la seccion activa:
 
+```text
+02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/
+```
+
+para explicar como TSIS separa referencia externa, adapter, contrato de
+captura, data root fisico, source parity y consumidores downstream. Esta seccion
+incluye el mapa sanitizado de DasTrades/Sage CMD API como API live; no debe
+confundirse con ninguna estrategia de trading llamada DAS.
+
+No sustituye `PROJECT_OPERATING_SYSTEM.md` ni los contratos de modulo.
 ### `03_AGENT_ENGINEERING/`
 
 Material fuente sobre como deben trabajar agentes IA dentro de TSIS.
@@ -1092,10 +1104,3 @@ Despues de eso, TSIS podra construir agentes Harness contra trabajo real:
 primero replay offline, despues shadow live, despues gating live. Solo mas
 adelante AlphaEvolve debe buscar dentro de sandboxes con datos gated y
 evaluadores bloqueados.
-
-
-
-
-
-
-

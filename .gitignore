@@ -1,4 +1,4 @@
-﻿# Data directories (do not commit)
+# Data directories (do not commit)
 /data/
 /**/data/
 /fundamentals/
@@ -173,3 +173,8 @@ tmpclaude-*
 /02_TSIS_webSocket_SmallCaps/tests/test_das_cmdapi_*.py
 /02_TSIS_webSocket_SmallCaps/**/raw_cmdapi/
 /02_TSIS_webSocket_SmallCaps/**/data_DAS_live/
+# Local provider-specific Systems Engineering deep maps not committed by default.
+/00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/das_api/dastrades_cmdapi_system_map_v0_1.md
+# Large generated visual-audit/scanner evidence kept local unless explicitly curated.
+/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0002/evidence/099_exemples_three_points/
+/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0002/evidence/scanner_2026_qg_full_universe_*/

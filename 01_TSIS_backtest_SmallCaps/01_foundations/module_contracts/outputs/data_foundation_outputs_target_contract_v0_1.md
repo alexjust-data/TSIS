@@ -1,3 +1,7 @@
+## 2026-07-07 Quotes Root Supersession
+
+`D:/quotes -> E:/TSIS/data/quotes_` is closed and approved. The official quotes E-root for new downstream work is `E:/TSIS/data/quotes_`, backed by Phase A structural parity and Phase B SHA256 retry evidence. Historical artifacts built from `D:/quotes` remain pre-approval/provenance evidence and must be rebuilt against the approved E-root before promotion to an official downstream table. The legacy `E:/TSIS/data/quotes` tree remains incomplete for this decision.
+
 ﻿# Data Foundation Outputs Target Contract v0.1
 
 ## Estado
@@ -1385,7 +1389,7 @@ Bridge actual:
 repair_run_root: C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838
 minute_root: E:/TSIS/data/ohlcv_1m
 quotes_root: D:/quotes
-quotes_root_state: provisional_d_legacy_recovery_root_pending_e_parity
+quotes_root_state: pre_approval_d_recovery_lineage_requires_rebuild
 official_quote_guarded_root: E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded
 official_quote_guarded_manifest: E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1.parquet
 official_quote_guarded_manifest_rows: 301278342
@@ -1490,7 +1494,7 @@ identity context from governed CAPA 1 outputs.
 
 La raiz `D:/quotes` es provisional para este seed porque la paridad fisica de
 quotes hacia `E:/TSIS/data/quotes_` todavia esta abierta. La tabla conserva
-`quotes_root_state = provisional_d_legacy_recovery_root_pending_e_parity` y debe
+`quotes_root_state = pre_approval_d_recovery_lineage_requires_rebuild` y debe
 reconstruirse/compararse contra el root E gobernado antes de cualquier promocion
 de consumo. `E:/TSIS/data/quotes` queda tratado como raiz E incompleta/legacy,
 no como raiz oficial objetivo.
@@ -1582,7 +1586,7 @@ full_universe_claim: false
 execution_sim_candidate_rows: 0
 backtest_core_microstructure_candidate_rows: 0
 quotes_root: D:/quotes
-quotes_root_state: provisional_d_legacy_recovery_root_pending_e_parity
+quotes_root_state: pre_approval_d_recovery_lineage_requires_rebuild
 target_official_quotes_root: E:/TSIS/data/quotes_
 legacy_incomplete_e_quotes_root: E:/TSIS/data/quotes
 trades_root: E:/TSIS/data/trades_ticks_prod_2005_2026
@@ -3649,8 +3653,8 @@ Lectura por tabla:
   clonacion/auditoria hacia la raiz oficial objetivo `E:/TSIS/data/quotes_`.
   `E:/TSIS/data/quotes` queda como raiz E incompleta/legacy. Cualquier
   candidato que herede esa raiz debe declarar
-  `quotes_root_state=provisional_d_legacy_recovery_root_pending_e_parity` y
-  `requires_rebuild_after_e_quotes_parity=true`.
+  `quotes_root_state=pre_approval_d_recovery_lineage_requires_rebuild` y
+  `requires_rebuild_after_quotes_root_approval=true`.
 - `market_state_table` / `event_state_table`: deben esperar a tener componentes
   intradia/microestructura mas defendibles.
 - `short_sale_constraints_table`: bloqueada por falta de fuente SSR/borrow/

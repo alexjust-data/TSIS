@@ -291,6 +291,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--heartbeat-seconds", type=int, default=30)
     parser.add_argument("--max-tickers", type=int, default=0)
     parser.add_argument("--start-at-ticker", default="")
+    parser.add_argument("--tickers", default="", help="Comma-separated explicit ticker list; bypasses shard/start/max selection.")
     parser.add_argument("--shard-index", type=int, default=0)
     parser.add_argument("--shard-count", type=int, default=1)
     parser.add_argument("--run-id", default="")
@@ -339,16 +340,26 @@ def main() -> int:
     missing_top = [t for t in source_tickers if t.lower() not in target_set]
     extra_top = [t for t in target_tickers if t.lower() not in source_set]
 
-    audit_tickers = list(source_tickers)
-    if args.start_at_ticker:
-        audit_tickers = [t for t in audit_tickers if t.lower() >= args.start_at_ticker.lower()]
-    if args.shard_count > 1:
-        total = len(audit_tickers)
-        start = math.floor(total * (args.shard_index / args.shard_count))
-        end = math.floor(total * ((args.shard_index + 1) / args.shard_count))
-        audit_tickers = audit_tickers[start:end]
-    if args.max_tickers > 0:
-        audit_tickers = audit_tickers[: args.max_tickers]
+    if args.tickers:
+        if args.start_at_ticker or args.max_tickers > 0 or args.shard_count != 1 or args.shard_index != 0:
+            raise SystemExit("--tickers cannot be combined with --start-at-ticker, --max-tickers, or sharding")
+        requested_tickers = [t.strip() for t in args.tickers.split(",") if t.strip()]
+        source_by_lower = {t.lower(): t for t in source_tickers}
+        missing_requested = [t for t in requested_tickers if t.lower() not in source_by_lower]
+        if missing_requested:
+            raise SystemExit(f"Requested tickers not found in source root: {missing_requested}")
+        audit_tickers = [source_by_lower[t.lower()] for t in requested_tickers]
+    else:
+        audit_tickers = list(source_tickers)
+        if args.start_at_ticker:
+            audit_tickers = [t for t in audit_tickers if t.lower() >= args.start_at_ticker.lower()]
+        if args.shard_count > 1:
+            total = len(audit_tickers)
+            start = math.floor(total * (args.shard_index / args.shard_count))
+            end = math.floor(total * ((args.shard_index + 1) / args.shard_count))
+            audit_tickers = audit_tickers[start:end]
+        if args.max_tickers > 0:
+            audit_tickers = audit_tickers[: args.max_tickers]
     if not audit_tickers:
         raise SystemExit("No tickers selected for audit")
 
@@ -401,6 +412,7 @@ def main() -> int:
         "shard_count": args.shard_count,
         "max_tickers": args.max_tickers,
         "start_at_ticker": args.start_at_ticker,
+        "tickers": args.tickers,
         "resume_existing_results": args.resume_existing_results,
         "resume_reused_result_count": len(resumed_results),
         "resume_invalid_result_count": resume_invalid_results,

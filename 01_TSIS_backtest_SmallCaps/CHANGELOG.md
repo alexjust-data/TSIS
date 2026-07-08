@@ -1,4 +1,14 @@
 - 2026-07-05: materializado `event_state_table_v0_1_candidate_intraday_1m_quote_guarded_controlled` como candidato controlado; 15 filas desde market_state intradia quote-guarded + 15 event_windows intradia, roles `pre_event/at_event/post_event_review`, validator passed, sin outcomes inline, ML/RL/AlphaEvolve deshabilitados.
+
+## v0.4.141 - Quotes D-to-E transfer approval
+
+- Approved `E:/TSIS/data/quotes_` as the official E-root quotes dataset for the `D:/quotes` recovery transfer.
+- Documented Phase A + Phase B retry evidence and retained original Phase B fail manifests as audit history.
+
+## v0.4.140 - Quotes Phase B hash-error retry completion
+
+- Completed formal SHA256 retry for the six tickers that had transient `hash_error` results in Phase B.
+- Added targeted ticker selection to the quotes parity auditor and documented the retry evidence.
 - 2026-07-05: materializado `event_windows_table_v0_1_candidate_intraday_1m_strategy_events` como candidato controlado desde 5 eventos intradia quote-guarded; 15 ventanas (`pre_event_30m`, `event_anchor_1m`, `post_event_30m`), validator passed, `full_universe_claim=false`, RL/AlphaEvolve deshabilitados.
 - 2026-07-05: materializado `intraday_1m_strategy_candidate_events_table_v0_1` como candidato controlado/no oficial desde `master_intraday_bar_table_v0_2_candidate_quote_guarded`; 58 sesiones fuente, 5 eventos, validator passed, `full_universe_claim=false`, ML/RL/AlphaEvolve deshabilitados.
 - `2026-07-05` | `market_state` | fixture controlado `market_state_table_v0_1_candidate_intraday_quote_guarded_controlled` materializado desde el E-root scoped `master_intraday_bar_table_v0_2_candidate_quote_guarded`: 10.835 filas, 3 tickers, 96 reparaciones OHLC aplicadas, 10 diferencias de manifest no aplicadas, `validator_status=passed`, `full_universe_claim=false`, gates ML/RL/ejecucion falsos; no es oficial/promoted.

@@ -1,5 +1,10 @@
 # State RAW To Consumption Lineage - Intradia 1m Quote-Guarded v0.1
 
+## 2026-07-07 Quotes Root Supersession
+
+`D:/quotes -> E:/TSIS/data/quotes_` is closed and approved. The official quotes E-root for new downstream work is `E:/TSIS/data/quotes_`, backed by Phase A structural parity and Phase B SHA256 retry evidence. Historical artifacts built from `D:/quotes` remain pre-approval/provenance evidence and must be rebuilt against the approved E-root before promotion to an official downstream table. The legacy `E:/TSIS/data/quotes` tree remains incomplete for this decision.
+
+
 ## Estado
 
 Tipo: lineage especifico ligado a `state_raw_to_consumption_lineage_contract_v0_1.md`.  
@@ -238,7 +243,7 @@ source_quote_guarded_repair_manifest
 source_quote_guarded_run_id
 source_quotes_root
 source_quotes_root_state
-requires_rebuild_after_e_quotes_parity
+requires_rebuild_after_quotes_root_approval
 requires_rebuild_after_quote_guarded_e_promotion
 ```
 

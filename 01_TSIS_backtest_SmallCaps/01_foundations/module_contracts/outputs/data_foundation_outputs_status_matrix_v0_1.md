@@ -1,3 +1,7 @@
+## 2026-07-07 Quotes Root Supersession
+
+`D:/quotes -> E:/TSIS/data/quotes_` is closed and approved. The official quotes E-root for new downstream work is `E:/TSIS/data/quotes_`, backed by Phase A structural parity and Phase B SHA256 retry evidence. Historical artifacts built from `D:/quotes` remain pre-approval/provenance evidence and must be rebuilt against the approved E-root before promotion to an official downstream table. The legacy `E:/TSIS/data/quotes` tree remains incomplete for this decision.
+
 ﻿# Data Foundation Outputs Status Matrix v0.1
 
 Reference date: 2026-06-27
@@ -285,7 +289,7 @@ full_universe_claim_rows = 0
 execution_sim_candidate_rows = 0
 backtest_core_microstructure_candidate_rows = 0
 output_tree_sha256 = a3d418b06d8c4bd200d51d8eb9c6d888664c1af86ab3dd37c80d48ff2397d128
-source_quotes_root_state = provisional_d_legacy_recovery_root_pending_e_parity
+source_quotes_root_state = pre_approval_d_recovery_lineage_requires_rebuild
 source_trades_root_state = official_e_raw_root
 visual_readout = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/microstructure_features/microstructure_candidate_controlled_visual_readout_v0_2.md
 visual_manifest = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/microstructure_features/visual_evidence_v0_2_controlled_25_per_role/microstructure_candidate_controlled_visual_manifest_v0_2.json
@@ -610,7 +614,7 @@ The following target outputs are still not governed materializations under
 | `master_intraday_bar_table_v0_2_candidate_quote_guarded` | scoped E-root candidate materialized, not official/full-universe | upstream LT1B repair manifest is promoted and PASS; storage model is raw `ohlcv_1m` plus repair-manifest overlay; scoped candidate exists for AACT:2025-09, AAGR:2023-12, AAMC:2023-12 with validator passed; wider/full-scope still requires manifest, validators and review |
 | `real_time_corporate_event_alerts_table` | not materialized | define vendor/source model, latency semantics, SEC/newswire/DAS/vendor lineage, and live-vs-backfill contract |
 | `short_sale_constraints_table` | target contract and acquisition runbook defined, not materialized | derive/validate SSR proxy or acquire official SSR; connect DAS/SageTrader or broker/vendor feed for forward capture; acquire broker/vendor historical borrow/locate/availability if 20-year historical execution feasibility is required; define account/broker scope and as-of/latency semantics |
-| `market_state_table` / `event_state_table` | stack de contratos mas fixture loop determinista pasado, no materializado; `state_observable_eligibility_contract_v0_1.md`, `state_derived_observables_formula_contract_v0_1.md`, `state_decision_timestamp_policy_v0_1.md`, `state_snapshot_roles_contract_v0_1.md`, `state_builder_contract_v0_1.md`, `event_candidate_tables_contract_v0_1.md`, `event_candidate_table_validators_contract_v0_1.md`, `state_canonical_vs_representation_layer_contract_v0_1.md` y `state_raw_to_consumption_lineage_contract_v0_1.md`, `state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md` y `state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md` estan completos para el scope declarado/controlado/upstream manifest lineage | siguiente cierre: evaluadores bloqueados desde outcomes intradia controlados; outcomes separados intradia controlados ya estan materializados; multi-component fixture queda pendiente; validators de leakage/formula/timestamp/role/builder parity y RAW-to-consumption lineage parity siguen pendientes; builders de event candidate tables, daily controlled materialization e intraday quote-guarded controlled materialization ya tienen evidencia controlada; los schema contracts daily/1m de eventos candidatos y el validators contract estan completos; obedecer `market_state_coverage_and_lookback_policy_v0_1`; `D:/quotes` solo puede usarse como lineage candidate provisional con `quotes_root_state=provisional_d_legacy_recovery_root_pending_e_parity`; anadir gates de recomputation/manifest/coverage/lookback; promocionar solo despues de leakage/adversarial tests y requisitos de E-root parity/rebuild |
+| `market_state_table` / `event_state_table` | stack de contratos mas fixture loop determinista pasado, no materializado; `state_observable_eligibility_contract_v0_1.md`, `state_derived_observables_formula_contract_v0_1.md`, `state_decision_timestamp_policy_v0_1.md`, `state_snapshot_roles_contract_v0_1.md`, `state_builder_contract_v0_1.md`, `event_candidate_tables_contract_v0_1.md`, `event_candidate_table_validators_contract_v0_1.md`, `state_canonical_vs_representation_layer_contract_v0_1.md` y `state_raw_to_consumption_lineage_contract_v0_1.md`, `state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md` y `state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md` estan completos para el scope declarado/controlado/upstream manifest lineage | siguiente cierre: evaluadores bloqueados desde outcomes intradia controlados; outcomes separados intradia controlados ya estan materializados; multi-component fixture queda pendiente; validators de leakage/formula/timestamp/role/builder parity y RAW-to-consumption lineage parity siguen pendientes; builders de event candidate tables, daily controlled materialization e intraday quote-guarded controlled materialization ya tienen evidencia controlada; los schema contracts daily/1m de eventos candidatos y el validators contract estan completos; obedecer `market_state_coverage_and_lookback_policy_v0_1`; `D:/quotes` solo puede usarse como lineage/provenance pre-aprobacion con `quotes_root_state=pre_approval_d_recovery_lineage_requires_rebuild`; anadir gates de recomputation/manifest/coverage/lookback; promocionar solo despues de leakage/adversarial tests y requisitos de E-root parity/rebuild |
 
 ## 8. Current Readiness By Consumer
 
@@ -945,10 +949,10 @@ No iniciar materializacion amplia/oficial de `market_state_table` ni `event_stat
    `E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/`.
 5. For the controlled state-table loop, `D:/quotes` is accepted only as
    provisional quote lineage while target official
-   `E:/TSIS/data/quotes_` parity/audit remains incomplete.
+   `E:/TSIS/data/quotes_` parity/audit was approved on 2026-07-07.
    `E:/TSIS/data/quotes` is treated as incomplete/legacy E-root, not the
    official target. Any candidate inheriting this source must carry
-   `requires_rebuild_after_e_quotes_parity=true` and must not be marked ready
+   `requires_rebuild_after_quotes_root_approval=true` and must not be marked ready
    for ML/RL primary training, backtest core or execution simulation.
 6. Do not build state tables as ticker-day-only snapshots. Future state-table
    candidates must obey

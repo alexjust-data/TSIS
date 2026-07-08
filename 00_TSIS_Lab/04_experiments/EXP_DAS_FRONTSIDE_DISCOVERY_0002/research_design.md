@@ -291,3 +291,108 @@ que condiciones predicen recuperacion del primer dip
 que condiciones predicen destruccion
 que parte del movimiento ocurre antes y despues del rebreak
 ```
+
+## Estado Ejecutado - Denominador 2026
+
+Fecha: 2026-07-07
+
+Se materializo el primer denominador 2026 del scanner desde:
+
+```text
+C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_1
+```
+
+Output congelado:
+
+```text
+C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0002/evidence/scanner_2026_qg_full_universe_full_v0_2_20260707T164416Z/outputs/scanner_2026_qg_full_universe_denominator_v0_2.parquet
+```
+
+Resultado:
+
+```text
+qg_files_seen = 17595
+qg_files_read = 17427
+skipped_files = 168
+candidates_emitted = 152
+unique_tickers = 130
+unique_sessions = 43
+```
+
+Interpretacion cientifica:
+
+```text
+Estos 152 son la poblacion cazada por el scanner bajo una configuracion concreta.
+No son casos DAS buenos.
+No son casos in-play.
+No son trades.
+No son validacion de edge.
+```
+
+La pregunta ahora pasa a ser:
+
+```text
+De los tickers cazados por este scanner, cuales forman estructura DAS,
+cuales recuperan el primer dip, cuales fallan y que condiciones separan esos grupos?
+```
+
+Limitacion declarada:
+
+```text
+market_cap_source_state:
+  future_snapshot_review = 144
+  asof = 8
+```
+
+Esto permite investigacion exploratoria marcada, pero obliga a conservar el estado de fuente antes de promocionar cualquier conclusion fuerte.
+
+## Estado Actual - Anchor Candidates 2026
+
+Fecha: 2026-07-07
+
+A partir de la `anchor_worklist` de 152 casos se materializo la primera capa de anchors candidatos:
+
+```text
+evidence/scanner_2026_qg_full_universe_full_v0_2_20260707T164416Z/anchor_candidates_v0_1/das_frontside_anchor_candidates_v0_1.parquet
+```
+
+Output largo de eventos/anchors:
+
+```text
+evidence/scanner_2026_qg_full_universe_full_v0_2_20260707T164416Z/anchor_candidates_v0_1/das_frontside_anchor_events_long_v0_1.parquet
+```
+
+Resumen:
+
+```text
+input_rows = 152
+case_rows = 152
+event_rows = 716
+errors = 0
+rebreak_confirmed = 97
+no_rebreak_in_window = 40
+fake_rebreak_no_confirmation = 11
+no_rebreak_search_window = 4
+```
+
+Lectura correcta:
+
+```text
+anchor_candidates = deteccion candidata de estructura desde el denominador scanner
+anchor_candidates != DAS bueno
+anchor_candidates != in-play oficial
+anchor_candidates != trade
+anchor_candidates != edge
+```
+
+Regla candidata v0.1:
+
+```text
+first_push_high = running high del push relevante, congelado solo despues de que el running high sea al menos scanner_gate_price y luego exista un retroceso minimo declarado
+first_dip_low = low minimo despues de first_push_high y antes del primer toque posterior de first_push_high
+rebreak_confirmed = high posterior cruza first_push_high con confirmacion candidata de volumen y vela verde
+fake_rebreak = high posterior cruza first_push_high pero falla la confirmacion candidata
+no_rebreak = no hay toque posterior de first_push_high en la ventana analizada
+```
+
+Todas estas reglas siguen siendo candidatas y deben pasar por auditoria visual. No se promociona ninguna definicion de in-play ni de estrategia desde este output.

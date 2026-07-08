@@ -1,5 +1,10 @@
 # Market State Coverage And Lookback Policy v0.1
 
+## 2026-07-07 Quotes Root Supersession
+
+`D:/quotes -> E:/TSIS/data/quotes_` is closed and approved. The official quotes E-root for new downstream work is `E:/TSIS/data/quotes_`, backed by Phase A structural parity and Phase B SHA256 retry evidence. Historical artifacts built from `D:/quotes` remain pre-approval/provenance evidence and must be rebuilt against the approved E-root before promotion to an official downstream table. The legacy `E:/TSIS/data/quotes` tree remains incomplete for this decision.
+
+
 ## Estado
 
 Tipo: coverage and lookback policy.
@@ -359,7 +364,7 @@ quotes_root_used
 quotes_root_state
 target_official_quotes_root
 legacy_incomplete_e_quotes_root
-requires_rebuild_after_e_quotes_parity
+requires_rebuild_after_quotes_root_approval
 as_of_policy_version
 leakage_guard_version
 quality_policy_version

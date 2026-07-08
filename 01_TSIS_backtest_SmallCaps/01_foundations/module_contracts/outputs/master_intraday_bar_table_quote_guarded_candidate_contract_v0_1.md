@@ -1,3 +1,7 @@
+## 2026-07-07 Quotes Root Supersession
+
+`D:/quotes -> E:/TSIS/data/quotes_` is closed and approved. The official quotes E-root for new downstream work is `E:/TSIS/data/quotes_`, backed by Phase A structural parity and Phase B SHA256 retry evidence. Historical artifacts built from `D:/quotes` remain pre-approval/provenance evidence and must be rebuilt against the approved E-root before promotion to an official downstream table. The legacy `E:/TSIS/data/quotes` tree remains incomplete for this decision.
+
 ﻿# Master Intraday Bar Table Quote-Guarded Candidate Contract `v0_1`
 
 ## 1. Role
@@ -77,7 +81,7 @@ Current bridge state:
 
 ```text
 repair_run_state: PASS_promoted_lt1b_manifest
-quotes_root_state: provisional_d_legacy_recovery_root_pending_e_parity
+quotes_root_state: pre_approval_d_recovery_lineage_requires_rebuild
 raw_1m_root_state: official_e_raw_root
 official_quote_guarded_root_state: promoted_manifest_available
 manifest_path: E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1.parquet
@@ -125,7 +129,7 @@ raw ohlcv_1m + repair_manifest = ohlcv_1m_quote_guarded view
 The repair process:
 
 1. reads raw monthly parquets from `E:/TSIS/data/ohlcv_1m`;
-2. reads quotes from `D:/quotes` while E-root quotes parity is pending;
+2. reads quotes from `D:/quotes` while E-root quotes parity was approved on 2026-07-07; this pre-approval lineage requires rebuild before promotion;
 3. detects minutes where `o/h/l/c` or `vw` are incompatible with the quote
    envelope;
 4. writes only affected rows to repair manifests;
@@ -250,7 +254,7 @@ source_quote_guarded_repair_manifest
 source_quote_guarded_run_id
 source_quotes_root
 source_quotes_root_state
-requires_rebuild_after_e_quotes_parity
+requires_rebuild_after_quotes_root_approval
 requires_rebuild_after_quote_guarded_e_promotion
 ```
 

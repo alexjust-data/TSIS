@@ -279,7 +279,8 @@ def _build_candidates(
             & (pd.to_numeric(group["c_qg"], errors="coerce") <= config.max_price)
         )
         group["volume_gate_pass"] = group["scanner_accumulated_volume"] >= config.min_volume
-        group["threshold_gate_pass"] = group["scanner_gate_prior_close_pct"] >= config.threshold_pct
+        group["threshold_gate_pass"] = True
+        group["momentum_threshold_filter_used"] = False
         group["market_cap_gate_pass"] = bool(market_cap is not None and not pd.isna(market_cap) and market_cap <= config.max_market_cap)
 
         if config.market_cap_policy == "asof_only":
@@ -294,7 +295,6 @@ def _build_candidates(
         gate = group[
             group["price_gate_pass"]
             & group["volume_gate_pass"]
-            & group["threshold_gate_pass"]
             & group["market_cap_inclusion_pass"]
         ]
         if gate.empty:
@@ -304,8 +304,8 @@ def _build_candidates(
         candidates.append(
             {
                 "experiment_id": EXPERIMENT_ID,
-                "sweep_id": f"threshold_{config.threshold_pct:g}_vol_{config.min_volume:g}_{config.market_cap_policy}",
-                "scanner_config_id": f"{BUILDER_ID}__{config.year}__premarket__close_vs_prior_close",
+                "sweep_id": f"denominator_no_momentum_threshold_vol_{config.min_volume:g}_{config.market_cap_policy}",
+                "scanner_config_id": f"{BUILDER_ID}__{config.year}__denominator_price_volume_mcap_no_momentum_threshold",
                 "builder_id": BUILDER_ID,
                 "ticker": ticker,
                 "session_date": session_date,
@@ -317,7 +317,9 @@ def _build_candidates(
                 "scanner_gate_bar_index": int(row["session_bar_index"]),
                 "prior_close": float(prior_close),
                 "reference_price": config.reference_price,
-                "threshold_pct": float(config.threshold_pct),
+                "threshold_pct": None,
+                "momentum_threshold_filter_used": False,
+                "denominator_filter_rule": "price_volume_market_cap_only_no_momentum_threshold_v0_2",
                 "min_volume": float(config.min_volume),
                 "min_price": float(config.min_price),
                 "max_price": float(config.max_price),
@@ -328,7 +330,7 @@ def _build_candidates(
                 "market_cap_gate_state": market_cap_gate_state,
                 "price_gate_state": "pass",
                 "volume_gate_state": "pass",
-                "threshold_gate_state": "pass",
+                "threshold_gate_state": "not_used_denominator_no_momentum_filter",
                 "quote_guarded_join_state": str(row.get("quote_guarded_join_state", "")),
                 "quote_guarded_repair_applied_at_gate": bool(row.get("quote_guarded_repair_applied", False)),
                 "repair_state_at_gate": str(row.get("repair_state", "")),
@@ -604,7 +606,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--min-price", type=float, default=0.5)
     parser.add_argument("--max-price", type=float, default=20.0)
     parser.add_argument("--max-market-cap", type=float, default=100000000.0)
-    parser.add_argument("--session-start-et", default="04:00")
+    parser.add_argument("--session-start-et", default="03:30")
     parser.add_argument("--session-end-et", default="09:30")
     parser.add_argument(
         "--market-cap-policy",

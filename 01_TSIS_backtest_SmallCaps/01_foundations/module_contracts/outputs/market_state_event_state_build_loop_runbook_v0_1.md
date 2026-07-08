@@ -1,5 +1,10 @@
 # Market State / Event State Build Loop Runbook v0.1
 
+## 2026-07-07 Quotes Root Supersession
+
+`D:/quotes -> E:/TSIS/data/quotes_` is closed and approved. The official quotes E-root for new downstream work is `E:/TSIS/data/quotes_`, backed by Phase A structural parity and Phase B SHA256 retry evidence. Historical artifacts built from `D:/quotes` remain pre-approval/provenance evidence and must be rebuilt against the approved E-root before promotion to an official downstream table. The legacy `E:/TSIS/data/quotes` tree remains incomplete for this decision.
+
+
 ## Estado
 
 Tipo: build-loop runbook / continuity note.
@@ -25,7 +30,7 @@ provisionalmente con:
 
 ```text
 quotes_root_used = D:/quotes
-quotes_root_state = provisional_d_legacy_recovery_root_pending_e_parity
+quotes_root_state = pre_approval_d_recovery_lineage_requires_rebuild
 target_official_quotes_root = E:/TSIS/data/quotes_
 legacy_incomplete_e_quotes_root = E:/TSIS/data/quotes
 ```
@@ -48,7 +53,7 @@ target_official_quotes_root
 legacy_incomplete_e_quotes_root
 source_quotes_file
 source_quotes_file_sha256
-requires_rebuild_after_e_quotes_parity = true
+requires_rebuild_after_quotes_root_approval = true
 ```
 
 Cuando termine la clonacion/auditoria de `D:/quotes -> E:/TSIS/data/quotes_` y
@@ -447,7 +452,7 @@ direct_ml_rl_backtest_execution_use_allowed = false
 
 Bloqueos que permanecen:
 
-- hereda `quotes_root_state=provisional_d_legacy_recovery_root_pending_e_parity`;
+- hereda `quotes_root_state=pre_approval_d_recovery_lineage_requires_rebuild`;
 - requiere rebuild despues de la paridad/auditoria de `E:/TSIS/data/quotes_`;
 - no usa short-sale constraints reales porque SSR/borrow/locate siguen sin
   fuente gobernada;

@@ -45,6 +45,25 @@ scale guard
 ```
 
 
+
+## Fuente Materializada Vigente Para Scanner 2026
+
+Desde la materializacion full-universe quote-guarded, el scanner 2026 de este experimento debe leer preferentemente:
+
+```text
+C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_1
+```
+
+Esta base ya incorpora:
+
+```text
+raw ohlcv_1m
++ repair shards/manifests quote-guarded disponibles
++ checkpoints por ticker/anio
++ lineage de reparacion aplicado en materializacion
+```
+
+Por tanto, para `EXP_DAS_FRONTSIDE_DISCOVERY_0002`, `build_2026_scanner_from_qg_full_universe_1m_v0_2.py` es la ruta vigente. El flujo `raw 1m + repair shards durante el scanner` queda como referencia pre-materializacion o fallback declarado, no como ejecucion preferida.
 ## Fuente Exacta Del Scanner 2026
 
 Para `EXP_DAS_FRONTSIDE_DISCOVERY_0002`, el denominador nuevo debe construirse desde:

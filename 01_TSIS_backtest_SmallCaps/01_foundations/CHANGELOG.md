@@ -1,4 +1,17 @@
-﻿- 2026-07-05: se crea module_contracts/outputs/event_research_design_contract_v0_1.md y se actualiza el mapa v3 para insertar la capa de diseno experimental antes de evaluadores bloqueados; +50% queda clasificado como sampling_probe_human_seed y pre_event_30m/post_event_30m como sampling_window_controlled_seed, no como evento/ventana validada.
+- 2026-07-05: se crea module_contracts/outputs/event_research_design_contract_v0_1.md y se actualiza el mapa v3 para insertar la capa de diseno experimental antes de evaluadores bloqueados; +50% queda clasificado como sampling_probe_human_seed y pre_event_30m/post_event_30m como sampling_window_controlled_seed, no como evento/ventana validada.
+
+## 2026-07-07 | quotes | D-to-E transfer approved
+
+- Approved the `D:/quotes -> E:/TSIS/data/quotes_` recovery transfer for official E-root use after Phase A structural parity and Phase B SHA256 retry evidence.
+- Updated the quotes runbook current institutional status from blocked/pending to approved for downstream official consumption under TSIS data foundation controls.
+- Preserved original Phase B `completed_fail` manifests for audit honesty; approval relies on supplemental targeted retry `quotes_parity_sha256_hash_error_retry_20260707`.
+
+## 2026-07-07 | quotes | Phase B hash-error retry completed
+
+- Closed recovered `quotes_parity_sha256_s0_20260704` manifest after all ticker results were present but the original process exited without final manifest.
+- Added explicit `--tickers` selection to the quotes parity auditor for targeted retry evidence.
+- Completed `quotes_parity_sha256_hash_error_retry_20260707` for `BXC, FPAC, MBRX, RCMT, WVVI, WWR` with `completed_pass`, `6/6` parity OK and zero mismatches.
+- Original Phase B shard manifests remain `completed_fail` for audit honesty; retry evidence resolves the transient hash-read errors.
 - 2026-07-05: se crea `scripts/materialize_intraday_1m_event_outcomes_candidate.py`, `tests/data_foundation_outputs/test_intraday_1m_event_outcomes_candidate_builder.py` y `module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_outcomes_controlled_v0_1.md`; materializacion controlada de outcomes intradia quote-guarded: 5 filas, validator passed, `valid_for_ml_label_candidate_rows=0`, `valid_for_rl_reward_candidate_rows=0`.
 - 2026-07-05: materializado `event_state_table_v0_1_candidate_intraday_1m_quote_guarded_controlled` como candidato controlado; 15 filas desde market_state intradia quote-guarded + 15 event_windows intradia, roles `pre_event/at_event/post_event_review`, validator passed, sin outcomes inline, ML/RL/AlphaEvolve deshabilitados.
 - 2026-07-05: materializado `event_windows_table_v0_1_candidate_intraday_1m_strategy_events` como candidato controlado desde 5 eventos intradia quote-guarded; 15 ventanas (`pre_event_30m`, `event_anchor_1m`, `post_event_30m`), validator passed, `full_universe_claim=false`, RL/AlphaEvolve deshabilitados.

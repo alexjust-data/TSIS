@@ -212,3 +212,54 @@ missing_bar_ratio
 anchor_quality_state
 lineage_manifest
 ```
+
+## Estado Actual - Anchor Candidates 2026
+
+Fecha: 2026-07-07
+
+A partir de la `anchor_worklist` de 152 casos se materializo la primera capa de anchors candidatos:
+
+```text
+evidence/scanner_2026_qg_full_universe_full_v0_2_20260707T164416Z/anchor_candidates_v0_1/das_frontside_anchor_candidates_v0_1.parquet
+```
+
+Output largo de eventos/anchors:
+
+```text
+evidence/scanner_2026_qg_full_universe_full_v0_2_20260707T164416Z/anchor_candidates_v0_1/das_frontside_anchor_events_long_v0_1.parquet
+```
+
+Resumen:
+
+```text
+input_rows = 152
+case_rows = 152
+event_rows = 716
+errors = 0
+rebreak_confirmed = 97
+no_rebreak_in_window = 40
+fake_rebreak_no_confirmation = 11
+no_rebreak_search_window = 4
+```
+
+Lectura correcta:
+
+```text
+anchor_candidates = deteccion candidata de estructura desde el denominador scanner
+anchor_candidates != DAS bueno
+anchor_candidates != in-play oficial
+anchor_candidates != trade
+anchor_candidates != edge
+```
+
+Regla candidata v0.1:
+
+```text
+first_push_high = running high del push relevante, congelado solo despues de que el running high sea al menos scanner_gate_price y luego exista un retroceso minimo declarado
+first_dip_low = low minimo despues de first_push_high y antes del primer toque posterior de first_push_high
+rebreak_confirmed = high posterior cruza first_push_high con confirmacion candidata de volumen y vela verde
+fake_rebreak = high posterior cruza first_push_high pero falla la confirmacion candidata
+no_rebreak = no hay toque posterior de first_push_high en la ventana analizada
+```
+
+Todas estas reglas siguen siendo candidatas y deben pasar por auditoria visual. No se promociona ninguna definicion de in-play ni de estrategia desde este output.

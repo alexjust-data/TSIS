@@ -1,4 +1,4 @@
-﻿# Graphify Refresh Queue for 00_CTO
+# Graphify Refresh Queue for 00_CTO
 
 Fecha de creacion: 2026-06-18
 Estado: cola operativa versionada para refrescos Graphify de `00_CTO`.
@@ -118,6 +118,49 @@ Por ventana dedicada:
 
 ## Entradas activas
 
+### GFQ-20260707-001 - Live source adapter interfaces and DasTrades CMD API system map
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/
+live_source_adapter_topology
+broker_api_safety_boundary
+dastrades_cmdapi_system_map_local_ignored
+```
+
+Reason:
+
+```text
+Se crea la seccion de Systems Engineering para explicar como TSIS separa referencia externa, source adapter, contrato de captura, data root fisico, source parity y consumidores downstream. Incluye el boundary read-only/data-only para broker APIs y el mapa local/ignorado de DasTrades/Sage CMD API bajo `das_api/`. DasTrades/Sage CMD API queda explicitamente separado de cualquier estrategia de trading llamada DAS.
+```
+
+Changed paths:
+
+```text
+00_CTO/02_SYSTEMS_ENGINEERING/README.md
+00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/README.md
+00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/live_source_adapter_topology_v0_1.md
+00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/broker_api_safety_boundary_v0_1.md
+00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/das_api/dastrades_cmdapi_system_map_v0_1.md  # local ignored
+00_CTO/README.md
+00_CTO/CHANGELOG.md
+00_CTO/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Recommended action:
+
+```text
+Refrescar el leaf de Systems Engineering / Interfaces and Adapters para que Graphify pueda enrutar consultas sobre APIs live, broker safety boundaries, source adapters y DasTrades/Sage CMD API sin mezclarlo con estrategia DAS.
+```
+
+Root action:
+
+```text
+No requiere rebuild inmediato del root. Incluir en el siguiente lote oficial CTO/Systems Engineering.
+```
 ### GFQ-20260706-001 - Validador visual de TSIS Lab
 
 Status: pending
@@ -2333,6 +2376,3 @@ Paths afectados:
 Accion pendiente:
 - Incluir en el siguiente refresh Graphify del slice Lab/CTO.
 - No se ejecuto rebuild Graphify en este cambio.
-
-
-
