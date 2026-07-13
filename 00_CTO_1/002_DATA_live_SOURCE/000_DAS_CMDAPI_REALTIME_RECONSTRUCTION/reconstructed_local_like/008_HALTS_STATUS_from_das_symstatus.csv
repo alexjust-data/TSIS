@@ -1,0 +1,141 @@
+run_id,market_date,ticker,symbol,status_prefix,ssr,flags_json,loose_fields,observed_at_utc,event_line_index,command,stage,raw_line
+das_cmdapi_live_20260708T193719Z,2026-07-08,EDBL,EDBL,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:37:48+00:00,2,SB EDBL Lv1,screener_lv1,$SymStatus EDBL SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,ONFO,ONFO,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:37:53+00:00,1,SB ONFO Lv1,screener_lv1,$SymStatus ONFO SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,RIVN,RIVN,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:38:00+00:00,2,SB RIVN Lv1,screener_lv1,$SymStatus RIVN SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,INTC,INTC,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:38:03+00:00,2,SB INTC Lv1,screener_lv1,$SymStatus INTC SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,BIYA,BIYA,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:38:08+00:00,2,SB BIYA Lv1,screener_lv1,$SymStatus BIYA SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,CPOP,CPOP,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:38:13+00:00,2,SB CPOP Lv1,screener_lv1,$SymStatus CPOP SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,EOSER,EOSER,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:38:29+00:00,1,SB EOSER Lv1,screener_lv1,$SymStatus EOSER SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,YHC,YHC,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:38:32+00:00,2,SB YHC Lv1,screener_lv1,$SymStatus YHC SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,NVVE,NVVE,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:38:39+00:00,2,SB NVVE Lv1,screener_lv1,$SymStatus NVVE SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,ELTX,ELTX,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:38:49+00:00,2,SB ELTX Lv1,screener_lv1,$SymStatus ELTX SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,PENG,PENG,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:38:51+00:00,2,SB PENG Lv1,screener_lv1,$SymStatus PENG SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,LHAI,LHAI,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:38:56+00:00,2,SB LHAI Lv1,screener_lv1,$SymStatus LHAI SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,ZCMD,ZCMD,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:39:01+00:00,2,SB ZCMD Lv1,screener_lv1,$SymStatus ZCMD SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,NBIL,NBIL,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:39:06+00:00,2,SB NBIL Lv1,screener_lv1,$SymStatus NBIL SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,NBIG,NBIG,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:39:08+00:00,2,SB NBIG Lv1,screener_lv1,$SymStatus NBIG SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,SILO,SILO,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:39:11+00:00,2,SB SILO Lv1,screener_lv1,$SymStatus SILO SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,TC,TC,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:39:13+00:00,2,SB TC Lv1,screener_lv1,$SymStatus TC SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,ANEL,ANEL,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:39:20+00:00,2,SB ANEL Lv1,screener_lv1,$SymStatus ANEL SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,SDOT,SDOT,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:39:23+00:00,2,SB SDOT Lv1,screener_lv1,$SymStatus SDOT SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,CMMB,CMMB,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:39:25+00:00,2,SB CMMB Lv1,screener_lv1,$SymStatus CMMB SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,INLF,INLF,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:39:28+00:00,2,SB INLF Lv1,screener_lv1,$SymStatus INLF SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,CLRO,CLRO,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:39:30+00:00,2,SB CLRO Lv1,screener_lv1,$SymStatus CLRO SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,TDTH,TDTH,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:39:33+00:00,2,SB TDTH Lv1,screener_lv1,$SymStatus TDTH SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,PLBL,PLBL,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:39:35+00:00,2,SB PLBL Lv1,screener_lv1,$SymStatus PLBL SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,BTAI,BTAI,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:39:37+00:00,2,SB BTAI Lv1,screener_lv1,$SymStatus BTAI SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,VEEE,VEEE,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:39:39+00:00,2,SB VEEE Lv1,screener_lv1,$SymStatus VEEE SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,ZSQR,ZSQR,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:39:42+00:00,2,SB ZSQR Lv1,screener_lv1,$SymStatus ZSQR SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,CD,CD,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:39:47+00:00,2,SB CD Lv1,screener_lv1,$SymStatus CD SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,JEM,JEM,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:39:49+00:00,2,SB JEM Lv1,screener_lv1,$SymStatus JEM SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,ECOR,ECOR,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:39:52+00:00,2,SB ECOR Lv1,screener_lv1,$SymStatus ECOR SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,BEG,BEG,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:39:54+00:00,2,SB BEG Lv1,screener_lv1,$SymStatus BEG SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,JLHL,JLHL,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:39:56+00:00,2,SB JLHL Lv1,screener_lv1,$SymStatus JLHL SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,ALHC,ALHC,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:39:59+00:00,2,SB ALHC Lv1,screener_lv1,$SymStatus ALHC SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,BBLG,BBLG,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:40:01+00:00,2,SB BBLG Lv1,screener_lv1,$SymStatus BBLG SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,BJDX,BJDX,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:40:04+00:00,2,SB BJDX Lv1,screener_lv1,$SymStatus BJDX SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,VMAR,VMAR,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:40:06+00:00,2,SB VMAR Lv1,screener_lv1,$SymStatus VMAR SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,BETR,BETR,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:40:08+00:00,2,SB BETR Lv1,screener_lv1,$SymStatus BETR SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,MSTU,MSTU,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:40:25+00:00,2,SB MSTU Lv1,screener_lv1,$SymStatus MSTU SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,SNXX,SNXX,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:40:27+00:00,2,SB SNXX Lv1,screener_lv1,$SymStatus SNXX SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,DRAM,DRAM,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:40:30+00:00,2,SB DRAM Lv1,screener_lv1,$SymStatus DRAM SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,SOXL,SOXL,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:40:32+00:00,2,SB SOXL Lv1,screener_lv1,$SymStatus SOXL SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,BMNU,BMNU,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:40:54+00:00,2,SB BMNU Lv1,screener_lv1,$SymStatus BMNU SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,SNTQ,SNTQ,$SymStatus,,"{""TA"": ""T""}",,2026-07-08T19:40:56+00:00,2,SB SNTQ Lv1,screener_lv1,$SymStatus SNTQ TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,WULX,WULX,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:40:58+00:00,2,SB WULX Lv1,screener_lv1,$SymStatus WULX SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,WYFL,WYFL,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:41:01+00:00,2,SB WYFL Lv1,screener_lv1,$SymStatus WYFL SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,OPTU,OPTU,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:41:04+00:00,2,SB OPTU Lv1,screener_lv1,$SymStatus OPTU SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,NEBX,NEBX,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:41:06+00:00,2,SB NEBX Lv1,screener_lv1,$SymStatus NEBX SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,IRE,IRE,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:41:11+00:00,2,SB IRE Lv1,screener_lv1,$SymStatus IRE SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,IREX,IREX,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:41:13+00:00,2,SB IREX Lv1,screener_lv1,$SymStatus IREX SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,CRWU,CRWU,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:41:16+00:00,2,SB CRWU Lv1,screener_lv1,$SymStatus CRWU SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,CWVX,CWVX,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:41:18+00:00,2,SB CWVX Lv1,screener_lv1,$SymStatus CWVX SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,CIFU,CIFU,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:41:35+00:00,2,SB CIFU Lv1,screener_lv1,$SymStatus CIFU SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,NBIZ,NBIZ,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:41:37+00:00,2,SB NBIZ Lv1,screener_lv1,$SymStatus NBIZ SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,OFRM,OFRM,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:41:40+00:00,2,SB OFRM Lv1,screener_lv1,$SymStatus OFRM SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,SIF,SIF,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:41:42+00:00,2,SB SIF Lv1,screener_lv1,$SymStatus SIF SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,IREZ,IREZ,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:41:45+00:00,1,SB IREZ Lv1,screener_lv1,$SymStatus IREZ SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,SKYQ,SKYQ,$SymStatus,N,"{""SSR"": ""N""}",,2026-07-08T19:42:02+00:00,0,GET SymStatus SKYQ,candidate_static_query,$SymStatus SKYQ SSR:N
+das_cmdapi_live_20260708T193719Z,2026-07-08,NVVE,NVVE,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:42:21+00:00,9,SB NVVE Lv1,candidate_subscribe,$SymStatus NVVE SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,NVVE,NVVE,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T"", ""TAT"": ""14:30:51""}",,2026-07-08T19:42:25+00:00,3,GET SymStatus NVVE,candidate_static_query,$SymStatus NVVE SSR:Y TA:T TAT:14:30:51
+das_cmdapi_live_20260708T193719Z,2026-07-08,TVRD,TVRD,$SymStatus,,"{""TA"": ""P""}",,2026-07-08T19:42:45+00:00,10,SB TVRD Lv1,candidate_subscribe,$SymStatus TVRD TA:P
+das_cmdapi_live_20260708T193719Z,2026-07-08,TVRD,TVRD,$SymStatus,N,"{""SSR"": ""N"", ""TA"": ""P"", ""TAT"": ""15:40:48""}",,2026-07-08T19:42:50+00:00,11,GET SymStatus TVRD,candidate_static_query,$SymStatus TVRD SSR:N TA:P TAT:15:40:48
+das_cmdapi_live_20260708T193719Z,2026-07-08,NVVE,NVVE,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:42:57+00:00,74,SB TVRD Lv2,candidate_subscribe,$SymStatus NVVE SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,LHAI,LHAI,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:43:10+00:00,4,SB LHAI Lv1,candidate_subscribe,$SymStatus LHAI SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,LHAI,LHAI,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:43:13+00:00,0,GET SymStatus LHAI,candidate_static_query,$SymStatus LHAI SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,ZCMD,ZCMD,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:43:36+00:00,9,SB ZCMD Lv1,candidate_subscribe,$SymStatus ZCMD SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,ZCMD,ZCMD,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:43:41+00:00,10,GET SymStatus ZCMD,candidate_static_query,$SymStatus ZCMD SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,NVVE,NVVE,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:44:05+00:00,19,GET LDLU VANI,candidate_static_query,$SymStatus NVVE SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,VANI,VANI,$SymStatus,N,"{""SSR"": ""N""}",,2026-07-08T19:44:06+00:00,14,GET SymStatus VANI,candidate_static_query,$SymStatus VANI SSR:N
+das_cmdapi_live_20260708T193719Z,2026-07-08,SDOT,SDOT,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:44:27+00:00,27,SB SDOT Lv1,candidate_subscribe,$SymStatus SDOT SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,SDOT,SDOT,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T"", ""TAT"": ""11:48:47""}",,2026-07-08T19:44:32+00:00,8,GET SymStatus SDOT,candidate_static_query,$SymStatus SDOT SSR:Y TA:T TAT:11:48:47
+das_cmdapi_live_20260708T193719Z,2026-07-08,SDOT,SDOT,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:44:49+00:00,159,SB SDOT MINCHART 2026/07/08-14:44 2026/07/08-15:44 1,candidate_chart_query,$SymStatus SDOT SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,INLF,INLF,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:44:55+00:00,13,SB INLF Lv1,candidate_subscribe,$SymStatus INLF SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,INLF,INLF,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:44:59+00:00,6,GET SymStatus INLF,candidate_static_query,$SymStatus INLF SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,SDOT,SDOT,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:45:16+00:00,213,SB INLF MINCHART 2026/07/08-14:44 2026/07/08-15:44 1,candidate_chart_query,$SymStatus SDOT SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,CLRO,CLRO,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:45:22+00:00,14,SB CLRO Lv1,candidate_subscribe,$SymStatus CLRO SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,CLRO,CLRO,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:45:26+00:00,8,GET SymStatus CLRO,candidate_static_query,$SymStatus CLRO SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,BTAI,BTAI,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:45:47+00:00,18,SB BTAI Lv1,candidate_subscribe,$SymStatus BTAI SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,NVVE,NVVE,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:45:47+00:00,36,SB BTAI Lv1,candidate_subscribe,$SymStatus NVVE SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,TVRD,TVRD,$SymStatus,,"{""TA"": ""T""}",,2026-07-08T19:45:48+00:00,10,GET SHORTINFO BTAI,candidate_static_query,$SymStatus TVRD TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,TVRD,TVRD,$SymStatus,,"{""TA"": ""T""}",,2026-07-08T19:45:48+00:00,73,GET SHORTINFO BTAI,candidate_static_query,$SymStatus TVRD TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,BTAI,BTAI,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:45:53+00:00,298,GET SymStatus BTAI,candidate_static_query,$SymStatus BTAI SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,CLRO,CLRO,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:46:13+00:00,511,SB BTAI DAYCHART 2026/06/28 2026/07/08,candidate_chart_query,$SymStatus CLRO SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,TVRD,TVRD,$SymStatus,,"{""TA"": ""T""}",,2026-07-08T19:46:19+00:00,513,UNSB BTAI DAYCHART,candidate_chart_query,$SymStatus TVRD TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,VEEE,VEEE,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:46:35+00:00,216,SB VEEE Lv1,candidate_subscribe,$SymStatus VEEE SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,ZCMD,ZCMD,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:46:45+00:00,298,GET SymStatus VEEE,candidate_static_query,$SymStatus ZCMD SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,VEEE,VEEE,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T"", ""TAT"": ""09:49:35""}",,2026-07-08T19:46:45+00:00,442,GET SymStatus VEEE,candidate_static_query,$SymStatus VEEE SSR:Y TA:T TAT:09:49:35
+das_cmdapi_live_20260708T193719Z,2026-07-08,TVRD,TVRD,$SymStatus,,"{""TA"": ""T""}",,2026-07-08T19:46:50+00:00,547,SB VEEE tms,candidate_subscribe,$SymStatus TVRD TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,LUCY,LUCY,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:47:27+00:00,289,GET SymStatus LUCY,candidate_static_query,$SymStatus LUCY SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,ZCMD,ZCMD,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:47:32+00:00,361,SB LUCY tms,candidate_subscribe,$SymStatus ZCMD SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,JEM,JEM,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:47:56+00:00,170,SB JEM Lv1,candidate_subscribe,$SymStatus JEM SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,ZCMD,ZCMD,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:48:03+00:00,65,GET SymStatus JEM,candidate_static_query,$SymStatus ZCMD SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,JEM,JEM,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:48:03+00:00,70,GET SymStatus JEM,candidate_static_query,$SymStatus JEM SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,TVRD,TVRD,$SymStatus,,"{""TA"": ""T""}",,2026-07-08T19:48:07+00:00,334,SB JEM tms,candidate_subscribe,$SymStatus TVRD TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,NVVE,NVVE,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:48:24+00:00,170,SB JEM MINCHART 2026/07/08-14:47 2026/07/08-15:47 1,candidate_chart_query,$SymStatus NVVE SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,BBLG,BBLG,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:48:34+00:00,147,SB BBLG Lv1,candidate_subscribe,$SymStatus BBLG SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,BBLG,BBLG,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:48:41+00:00,61,GET SymStatus BBLG,candidate_static_query,$SymStatus BBLG SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,BJDX,BJDX,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:49:10+00:00,59,SB BJDX Lv1,candidate_subscribe,$SymStatus BJDX SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,BJDX,BJDX,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:49:16+00:00,191,GET SymStatus BJDX,candidate_static_query,$SymStatus BJDX SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,TVRD,TVRD,$SymStatus,,"{""TA"": ""T""}",,2026-07-08T19:49:41+00:00,567,SB BJDX MINCHART 2026/07/08-14:49 2026/07/08-15:49 1,candidate_chart_query,$SymStatus TVRD TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,SDOT,SDOT,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:49:57+00:00,1020,SB VMAR Lv1,candidate_subscribe,$SymStatus SDOT SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,VMAR,VMAR,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:49:57+00:00,1459,SB VMAR Lv1,candidate_subscribe,$SymStatus VMAR SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,TVRD,TVRD,$SymStatus,,"{""TA"": ""P""}",,2026-07-08T19:50:04+00:00,475,GET SHORTINFO VMAR,candidate_static_query,$SymStatus TVRD TA:P
+das_cmdapi_live_20260708T193719Z,2026-07-08,TVRD,TVRD,$SymStatus,,"{""TA"": ""P""}",,2026-07-08T19:50:04+00:00,476,GET SHORTINFO VMAR,candidate_static_query,$SymStatus TVRD TA:P
+das_cmdapi_live_20260708T193719Z,2026-07-08,BBLG,BBLG,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:50:08+00:00,21,GET LDLU VMAR,candidate_static_query,$SymStatus BBLG SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,VMAR,VMAR,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:50:10+00:00,122,GET SymStatus VMAR,candidate_static_query,$SymStatus VMAR SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,ZCMD,ZCMD,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:50:18+00:00,193,SB VMAR Lv2,candidate_subscribe,$SymStatus ZCMD SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,SDOT,SDOT,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:50:24+00:00,6,UNSB VMAR DAYCHART,candidate_chart_query,$SymStatus SDOT SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,VTAK,VTAK,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T"", ""TAT"": ""10:19:02""}",,2026-07-08T19:50:38+00:00,26,GET SymStatus VTAK,candidate_static_query,$SymStatus VTAK SSR:Y TA:T TAT:10:19:02
+das_cmdapi_live_20260708T193719Z,2026-07-08,LHAI,LHAI,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:51:09+00:00,92,GET LDLU SRXH,candidate_static_query,$SymStatus LHAI SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,SRXH,SRXH,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T"", ""TAT"": ""14:20:00""}",,2026-07-08T19:51:11+00:00,55,GET SymStatus SRXH,candidate_static_query,$SymStatus SRXH SSR:Y TA:T TAT:14:20:00
+das_cmdapi_live_20260708T193719Z,2026-07-08,SDOT,SDOT,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:52:08+00:00,27,SUBSCRIPTION_STREAM,streaming,$SymStatus SDOT SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,SRXH,SRXH,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:52:08+00:00,50,SUBSCRIPTION_STREAM,streaming,$SymStatus SRXH SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,JEM,JEM,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:52:15+00:00,40,SUBSCRIPTION_STREAM,streaming,$SymStatus JEM SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,ZCMD,ZCMD,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:52:17+00:00,12,SUBSCRIPTION_STREAM,streaming,$SymStatus ZCMD SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,VTAK,VTAK,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:52:58+00:00,20,SUBSCRIPTION_STREAM,streaming,$SymStatus VTAK SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,CLRO,CLRO,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:53:09+00:00,43,SUBSCRIPTION_STREAM,streaming,$SymStatus CLRO SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,VEEE,VEEE,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:53:21+00:00,12,SUBSCRIPTION_STREAM,streaming,$SymStatus VEEE SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,LUCY,LUCY,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:53:27+00:00,143,SUBSCRIPTION_STREAM,streaming,$SymStatus LUCY SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,ZCMD,ZCMD,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:53:29+00:00,11,SUBSCRIPTION_STREAM,streaming,$SymStatus ZCMD SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,SDOT,SDOT,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:53:36+00:00,75,SUBSCRIPTION_STREAM,streaming,$SymStatus SDOT SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,JEM,JEM,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:53:50+00:00,50,SUBSCRIPTION_STREAM,streaming,$SymStatus JEM SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,NVVE,NVVE,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:53:50+00:00,221,SUBSCRIPTION_STREAM,streaming,$SymStatus NVVE SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,VEEE,VEEE,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:54:41+00:00,23,SUBSCRIPTION_STREAM,streaming,$SymStatus VEEE SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,VEEE,VEEE,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:55:35+00:00,379,SUBSCRIPTION_STREAM,streaming,$SymStatus VEEE SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,LUCY,LUCY,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:56:08+00:00,162,SUBSCRIPTION_STREAM,streaming,$SymStatus LUCY SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,ZCMD,ZCMD,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:57:12+00:00,101,SUBSCRIPTION_STREAM,streaming,$SymStatus ZCMD SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,LHAI,LHAI,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:57:17+00:00,7,SUBSCRIPTION_STREAM,streaming,$SymStatus LHAI SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,CLRO,CLRO,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:57:38+00:00,43,SUBSCRIPTION_STREAM,streaming,$SymStatus CLRO SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,BJDX,BJDX,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:57:53+00:00,68,SUBSCRIPTION_STREAM,streaming,$SymStatus BJDX SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,BJDX,BJDX,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:58:55+00:00,32,SUBSCRIPTION_STREAM,streaming,$SymStatus BJDX SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,LUCY,LUCY,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:58:55+00:00,93,SUBSCRIPTION_STREAM,streaming,$SymStatus LUCY SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,CLRO,CLRO,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:59:01+00:00,15,SUBSCRIPTION_STREAM,streaming,$SymStatus CLRO SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,LHAI,LHAI,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:59:04+00:00,207,SUBSCRIPTION_STREAM,streaming,$SymStatus LHAI SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,VEEE,VEEE,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:59:29+00:00,63,SUBSCRIPTION_STREAM,streaming,$SymStatus VEEE SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,LHAI,LHAI,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:59:36+00:00,78,SUBSCRIPTION_STREAM,streaming,$SymStatus LHAI SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,VTAK,VTAK,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T19:59:57+00:00,100,SUBSCRIPTION_STREAM,streaming,$SymStatus VTAK SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,VMAR,VMAR,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T19:59:57+00:00,498,SUBSCRIPTION_STREAM,streaming,$SymStatus VMAR SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,LUCY,LUCY,$SymStatus,Y,"{""SSR"": ""Y""}",,2026-07-08T20:00:00+00:00,262,SUBSCRIPTION_STREAM,streaming,$SymStatus LUCY SSR:Y
+das_cmdapi_live_20260708T193719Z,2026-07-08,VTAK,VTAK,$SymStatus,Y,"{""SSR"": ""Y"", ""TA"": ""T""}",,2026-07-08T20:00:02+00:00,3,SUBSCRIPTION_STREAM,streaming,$SymStatus VTAK SSR:Y TA:T
+das_cmdapi_live_20260708T193719Z,2026-07-08,TVRD,TVRD,$SymStatus,,"{""TA"": ""T""}",,2026-07-08T20:00:02+00:00,4,SUBSCRIPTION_STREAM,streaming,$SymStatus TVRD TA:T

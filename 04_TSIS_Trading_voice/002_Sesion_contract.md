@@ -1,0 +1,9 @@
+# TDI Session Contract v0.1
+
+**Objetivo:** definir el ciclo de vida completo de una sesión TDI. El contrato establece cómo interactúan el trader y TDI antes, durante y después de cada sesión de trading. 
+**Filosofía:** el objetivo de TDI no es ayudar a operar. El objetivo es registrar, comprender y mejorar el proceso de toma de decisiones. El sistema debe ser prácticamente invisible durante la operativa. Nunca debe aumentar la carga cognitiva del operador. Inicio de la sesión: La sesión comienza cuando el trader activa explícitamente el modo TDI. 
+**Frase de activación recomendada:** "Entramos en modo trading journal". Una vez activado, se inicia el registro estructurado. 
+**Pre-market:** antes de comenzar la operativa se registra información mínima: fecha, hora, estado físico y mental, horas de sueño, nivel de energía, objetivos del día, riesgo máximo diario, contexto general del mercado y watchlist inicial. Durante la sesión, el trader habla cuando lo considera oportuno. No hay obligación de comentar continuamente. Cada intervención puede generar uno o varios eventos. TDI solo interviene cuando falta información clave o al cerrar una operación.   
+**Cierre de operación:** cada trade debe cerrar con resultado, calidad de ejecución, cumplimiento del plan, errores, aciertos y aprendizajes.  
+**Fin de sesión:** el trader indica salimos de modo trading journal. Se generan automáticamente resumen, métricas, lecciones y acciones para la siguiente sesión.  
+**Principios fundamentales:** el trader mantiene siempre el control. ChatGPT nunca toma decisiones de mercado. Los eventos son la fuente de verdad. El markdown es derivado.

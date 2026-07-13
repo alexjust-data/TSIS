@@ -1,8 +1,8 @@
-# EXP_DAS_FIRST_IMPULSE_REALTIME_DETECTION_0003
+﻿# EXP_DAS_FIRST_IMPULSE_REALTIME_DETECTION_0003
 
-Fecha: 2026-07-08
-Estado: draft_operativo
-Tipo: research experiment
+Fecha: 2026-07-08  
+Estado: draft_operativo  
+Tipo: research experiment  
 
 ## Objetivo
 
@@ -10,29 +10,15 @@ Este experimento nace para resolver el primer evento operativo de DAS:
 
 ```text
 Como detectar en tiempo real el primer despertar/impulso limpio de una accion
-muerta, antes de seguir estudiando first dip, rebreak, profit, stop o sizing.
+muerta, antes de seguir estudiando first dip, rebreak.
 ```
-
-El foco cambia respecto a 0001/0002:
-
-```text
-0001 = gramatica visual de first push, first dip, rebreak
-0002 = denominador scanner y recuperacion/destruccion posterior
-0003 = evento real-time de despertar/primer impulso, sin depender de velas como
-       senal primaria
-```
-
-No se debe seguir trabajando en puntos visuales hasta que este experimento fije
-una definicion medible de `DAS_IMPULSE_START` y determine que datos permiten
-detectarlo sin mirar el futuro.
 
 ## Pregunta Central
 
 ```text
-Podemos cazar el primer movimiento DAS de forma limpia usando datos real-time
-sin velas, o solo podemos estudiarlo retrospectivamente con OHLCV 1m?
+Podemos cazar el primer movimiento DAS de forma limpia 
+usando datos real-time sin velas? 
 ```
-
 Subpreguntas:
 
 - Que hacen los profesionales/HFT para detectar ese tipo de transicion?
@@ -41,24 +27,14 @@ Subpreguntas:
 - Si no es suficiente, que parte si se puede demostrar ahora?
 - Que queda bloqueado hasta conseguir mas datos?
 
-## Clon De La Respuesta Operativa Previa
-
-Texto base que motiva este experimento:
+## Texto base que motiva este experimento:
 
 ```text
-Si: ahora el problema real ya no son los puntos. Es definir un evento tradeable
-en tiempo real. Y aqui hay una verdad incomoda: el first_push_high no se puede
-"cazar" exactamente en vivo, porque solo sabes que fue el high del primer push
-cuando ya empieza el dip. Por tanto, hay dos cosas distintas:
-
-- Detectar el arranque del push: posible en tiempo real, pero con incertidumbre.
-- Marcar first_push_high / first_dip_low: util para estudiar, clasificar y
-  operar fases posteriores, pero parcialmente retrospectivo.
-
-Como lo hacen los profesionales:
+Detectar el arranque del push: posible en tiempo real, pero con incertidumbre.
 
 Los mas potentes no cazan esto con EMA8 o Donchian de 1m como senal principal.
-Eso puede servir como vista agregada. En tiempo real usan:
+Eso puede servir como vista agregada.   
+En tiempo real usan:
 
 1. Order flow imbalance / order book imbalance.
    La literatura de microestructura muestra que a horizontes cortos los
@@ -736,6 +712,19 @@ Siguiente trabajo:
 4. Solo despues volver a first dip, rebreak, profit y riesgo.
 ```
 
+
+## Addendum 2026-07-09 - DAS API Descartada Para 0003
+
+Decision vigente:
+
+```text
+DAS CMD API no es una fuente viable para EXP_DAS_FIRST_IMPULSE_REALTIME_DETECTION_0003.
+No se usara SB <SYMBOL> tms, SB <SYMBOL> Lv2 ni events.jsonl DAS como contrato de datos.
+El camino correcto para completar T&S/L2/L3/NBBO live o historico es proveedor externo de market data.
+```
+
+Esta decision corrige y prevalece sobre cualquier texto anterior que tratara DAS CMD API como fuente live disponible para 0003.
+
 ## Addendum 2026-07-08 - Data Exacta Requerida
 
 Esta seccion prevalece sobre cualquier frase anterior demasiado amplia. La
@@ -748,17 +737,17 @@ Historico auditado en E:/TSIS/data:
 - no L3 certificado
 - no full historical L2 certificado en E:/TSIS/data
 
-Live DAS CMD API:
-- Time & Sales disponible con SB <SYMBOL> tms, data_family=tms
-- Level 2 disponible con SB <SYMBOL> Lv2, data_family=lv2
-- L3 no certificado/no soportado en v0 salvo comando explicito en manual
+Proveedor externo de market data (decision 2026-07-09; DAS API descartada):
+- Time & Sales debe venir de proveedor externo; DAS API/tms no se usara
+- Level 2/MBP o L3/MBO debe venir de proveedor externo; DAS Lv2 no se usara
+- L3/MBO queda como dato de proveedor externo/direct feeds; no depender de DAS
 ```
 
 Por tanto, 0003 debe trabajar con dos carriles:
 
 ```text
 carril_historico = replay parcial con quotes/top-of-book y 1m como auditoria
-carril_live = detector real con DAS events.jsonl tms + lv2
+carril_provider = detector/replay con proveedor externo T&S + L2/L3 + NBBO
 ```
 
 ### 1. Datos De Universo, Identidad Y Referencia
@@ -828,15 +817,15 @@ No queremos sesgo visual. Hay que conservar tambien los simbolos malos,
 choppy, sin punch, sin datos o no suscritos.
 ```
 
-### 3. Time And Sales Live DAS (`tms`)
+### 3. Time And Sales De Proveedor Externo
 
 Contrato v0:
 
 ```text
-source = DAS_CMD_API
-command = SB <SYMBOL> tms
-data_family = tms
-sink = events.jsonl
+source = EXTERNAL_MARKET_DATA_PROVIDER
+dataset/channel = trades/time_and_sales
+data_family = trades
+sink = provider_raw_events/parquet/jsonl
 ```
 
 Campos obligatorios por evento:
@@ -874,15 +863,15 @@ No basta con OHLCV ni con barras agregadas. Para cazar el despertar hacen falta
 prints crudos, timestamp de recepcion y raw payload preservado.
 ```
 
-### 4. Level 2 Live DAS (`Lv2`)
+### 4. Level 2 / L3 De Proveedor Externo
 
 Contrato v0:
 
 ```text
-source = DAS_CMD_API
-command = SB <SYMBOL> Lv2
-data_family = lv2
-sink = events.jsonl
+source = EXTERNAL_MARKET_DATA_PROVIDER
+dataset/channel = l2_mbp_or_l3_mbo
+data_family = l2_mbp_or_l3_mbo
+sink = provider_raw_events/parquet/jsonl
 ```
 
 Campos obligatorios por evento:
@@ -922,7 +911,7 @@ liquidity_pull_or_refresh_proxy
 Restriccion practica:
 
 ```text
-DAS suele limitar Lv2 a menos simbolos que Lv1/T&S. 0003 debe priorizar
+El proveedor externo puede limitar cobertura, profundidad, licencias, coste o symbols. 0003 debe priorizar
 simbolos y guardar explicitamente no_response/error/not_entitled/subscription_denied.
 No se puede eliminar silenciosamente un ticker porque fallo la suscripcion.
 ```
@@ -1150,12 +1139,10 @@ completo porque falta full historical L2/L3, prints premarket certificados y
 estado de ejecucion/routing.
 ```
 
-Con live DAS CMD API:
+Con proveedor externo de market data:
 
 ```text
-Tenemos data suficiente para construir el detector real v1 si capturamos tms y
-Lv2 en events.jsonl con raw payload, timestamps, subscription state, errores,
-calidad y clock/latency state.
+Tendremos data suficiente para construir el detector real v1 si contratamos/capturamos T&S + L2/L3/NBBO de proveedor externo con raw payload o schema fiel, timestamps, coverage state, errores, calidad y clock/latency state.
 ```
 
 El minimo viable de 0003 no es otro renderer. Es esta tabla:
@@ -1207,7 +1194,8 @@ leakage_guard_pass
 Decision:
 
 ```text
-0003 puede avanzar si y solo si tratamos tms/Lv2 live como el contrato principal,
+0003 puede avanzar si tratamos T&S/L2/L3/NBBO de proveedor externo como el contrato principal,
 quotes historicas como replay parcial, labels humanos como target, outcomes como
 evaluacion y tablas de estado anteriores como contexto retrospectivo no-feature.
 ```
+

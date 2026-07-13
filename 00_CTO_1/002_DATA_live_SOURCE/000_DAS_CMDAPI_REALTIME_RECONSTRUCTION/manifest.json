@@ -1,0 +1,386 @@
+{
+  "run_id": "das_cmdapi_live_20260708T193719Z",
+  "market_date": "2026-07-08",
+  "raw_run": "E:\\TSIS\\data_DAS_live\\raw_cmdapi\\runs\\das_cmdapi_live_20260708T193719Z",
+  "screener_run": "E:\\TSIS\\data_DAS_live\\screener\\runs\\das_cmdapi_live_20260708T193719Z",
+  "normalized_root": "E:\\TSIS\\data_DAS_live\\normalized",
+  "audit_output": "C:\\TSIS_Data\\00_CTO_1\\001_DATA_local_audit\\011_DAS_CMDAPI_REALTIME_RECONSTRUCTION",
+  "event_counts": {
+    "session": 185,
+    "account_state": 2,
+    "lv1": 35174,
+    "toplist": 13,
+    "ldlu": 179,
+    "symstatus": 140,
+    "shortinfo": 18,
+    "tms": 65590,
+    "lv2": 36327,
+    "daychart": 104,
+    "minchart_1m": 979
+  },
+  "symbol_counts_top20": {
+    "TVRD": 34887,
+    "SKYQ": 23936,
+    "NVVE": 20081,
+    "SRXH": 18278,
+    "SDOT": 12156,
+    "VTAK": 9489,
+    "LHAI": 3725,
+    "LUCY": 3170,
+    "CLRO": 2690,
+    "VANI": 2226,
+    "ZCMD": 1693,
+    "JEM": 1442,
+    "VEEE": 1208,
+    "BTAI": 1031,
+    "BJDX": 816,
+    "INLF": 658,
+    "VMAR": 520,
+    "BBLG": 173,
+    "INTC": 8,
+    "ONFO": 6
+  },
+  "frames": {
+    "toplist": {
+      "rows": 240,
+      "columns": [
+        "run_id",
+        "market_date",
+        "list_name",
+        "rank_in_message",
+        "ticker",
+        "symbol",
+        "observed_at_utc",
+        "event_line_index",
+        "command",
+        "stage",
+        "raw_line"
+      ]
+    },
+    "ldlu": {
+      "rows": 179,
+      "columns": [
+        "run_id",
+        "market_date",
+        "ticker",
+        "symbol",
+        "limit_down",
+        "limit_up",
+        "observed_at_utc",
+        "event_line_index",
+        "command",
+        "stage",
+        "raw_line"
+      ]
+    },
+    "lv1": {
+      "rows": 35081,
+      "columns": [
+        "run_id",
+        "market_date",
+        "ticker",
+        "symbol",
+        "ask_exchange",
+        "ask_price",
+        "ask_size",
+        "bid_exchange",
+        "bid_price",
+        "bid_size",
+        "conditions",
+        "indicators",
+        "participant_timestamp",
+        "sequence_number",
+        "timestamp",
+        "trf_timestamp",
+        "tape",
+        "source_time_et",
+        "observed_at_utc",
+        "last_price",
+        "session_volume",
+        "session_high",
+        "session_low",
+        "session_open",
+        "prev_close",
+        "today_close",
+        "vwap",
+        "trades_all_day",
+        "relative_volume",
+        "year",
+        "month",
+        "day",
+        "event_line_index",
+        "command",
+        "stage",
+        "raw_line"
+      ]
+    },
+    "symstatus": {
+      "rows": 140,
+      "columns": [
+        "run_id",
+        "market_date",
+        "ticker",
+        "symbol",
+        "status_prefix",
+        "ssr",
+        "flags_json",
+        "loose_fields",
+        "observed_at_utc",
+        "event_line_index",
+        "command",
+        "stage",
+        "raw_line"
+      ]
+    },
+    "shortinfo": {
+      "rows": 18,
+      "columns": [
+        "run_id",
+        "market_date",
+        "ticker",
+        "symbol",
+        "prefix",
+        "positional_fields",
+        "field_1",
+        "field_2",
+        "field_3",
+        "field_4",
+        "field_5",
+        "field_6",
+        "field_7",
+        "observed_at_utc",
+        "event_line_index",
+        "command",
+        "stage",
+        "raw_line"
+      ]
+    },
+    "tms": {
+      "rows": 65590,
+      "columns": [
+        "run_id",
+        "market_date",
+        "ticker",
+        "symbol",
+        "date",
+        "timestamp",
+        "ts_utc_inferred",
+        "source_time_et",
+        "observed_at_utc",
+        "price",
+        "size",
+        "exchange",
+        "conditions",
+        "sale_marker",
+        "venue",
+        "flag_1",
+        "flag_2",
+        "year",
+        "month",
+        "day",
+        "event_line_index",
+        "command",
+        "stage",
+        "raw_line"
+      ]
+    },
+    "lv2": {
+      "rows": 36319,
+      "columns": [
+        "run_id",
+        "market_date",
+        "ticker",
+        "symbol",
+        "side",
+        "market_maker_or_venue",
+        "price",
+        "size",
+        "action",
+        "source_time_et",
+        "ts_utc_inferred",
+        "observed_at_utc",
+        "event_line_index",
+        "command",
+        "stage",
+        "raw_line"
+      ]
+    },
+    "daychart": {
+      "rows": 104,
+      "columns": [
+        "run_id",
+        "market_date",
+        "ticker",
+        "symbol",
+        "source_bar_time",
+        "date",
+        "ts_utc",
+        "year",
+        "month",
+        "o",
+        "h",
+        "l",
+        "c",
+        "v",
+        "vw",
+        "n",
+        "t",
+        "status_or_count",
+        "observed_at_utc",
+        "event_line_index",
+        "command",
+        "stage",
+        "raw_line"
+      ]
+    },
+    "minchart_1m": {
+      "rows": 979,
+      "columns": [
+        "run_id",
+        "market_date",
+        "ticker",
+        "symbol",
+        "source_bar_time",
+        "date",
+        "ts_utc",
+        "year",
+        "month",
+        "o",
+        "h",
+        "l",
+        "c",
+        "v",
+        "vw",
+        "n",
+        "t",
+        "status_or_count",
+        "observed_at_utc",
+        "event_line_index",
+        "command",
+        "stage",
+        "raw_line"
+      ]
+    },
+    "ohlcv_1m_from_tms": {
+      "rows": 391,
+      "columns": [
+        "ticker",
+        "ts_utc",
+        "date",
+        "year",
+        "month",
+        "o",
+        "h",
+        "l",
+        "c",
+        "v",
+        "vw",
+        "n",
+        "t",
+        "run_id",
+        "market_date",
+        "source"
+      ]
+    }
+  },
+  "candidate_registry_rows": 136,
+  "written_normalized": {
+    "toplist": {
+      "rows": 240,
+      "path": "E:\\TSIS\\data_DAS_live\\normalized\\toplist\\market_date=2026-07-08\\data.parquet"
+    },
+    "ldlu": {
+      "rows": 179,
+      "path": "E:\\TSIS\\data_DAS_live\\normalized\\ldlu\\market_date=2026-07-08"
+    },
+    "lv1": {
+      "rows": 35081,
+      "path": "E:\\TSIS\\data_DAS_live\\normalized\\lv1\\market_date=2026-07-08"
+    },
+    "symstatus": {
+      "rows": 140,
+      "path": "E:\\TSIS\\data_DAS_live\\normalized\\symstatus\\market_date=2026-07-08"
+    },
+    "shortinfo": {
+      "rows": 18,
+      "path": "E:\\TSIS\\data_DAS_live\\normalized\\shortinfo\\market_date=2026-07-08"
+    },
+    "tms": {
+      "rows": 65590,
+      "path": "E:\\TSIS\\data_DAS_live\\normalized\\tms\\market_date=2026-07-08"
+    },
+    "lv2": {
+      "rows": 36319,
+      "path": "E:\\TSIS\\data_DAS_live\\normalized\\lv2\\market_date=2026-07-08"
+    },
+    "daychart": {
+      "rows": 104,
+      "path": "E:\\TSIS\\data_DAS_live\\normalized\\daychart\\market_date=2026-07-08"
+    },
+    "minchart_1m": {
+      "rows": 979,
+      "path": "E:\\TSIS\\data_DAS_live\\normalized\\minchart_1m\\market_date=2026-07-08"
+    },
+    "ohlcv_1m_from_tms": {
+      "rows": 391,
+      "path": "E:\\TSIS\\data_DAS_live\\normalized\\ohlcv_1m_from_tms\\market_date=2026-07-08"
+    }
+  },
+  "written_indexes": {
+    "candidate_daily_index": {
+      "rows": 136,
+      "path": "E:\\TSIS\\data_DAS_live\\indexes\\candidate_daily_index\\market_date=2026-07-08\\candidates.parquet"
+    },
+    "run_index": {
+      "rows": 1,
+      "path": "E:\\TSIS\\data_DAS_live\\indexes\\run_index.parquet"
+    }
+  },
+  "written_local_like": {
+    "000_TRADES_from_das_tms": {
+      "rows": 65590,
+      "path": "C:\\TSIS_Data\\00_CTO_1\\001_DATA_local_audit\\011_DAS_CMDAPI_REALTIME_RECONSTRUCTION\\reconstructed_local_like\\000_TRADES_from_das_tms.parquet"
+    },
+    "001_QUOTES_from_das_lv1": {
+      "rows": 35081,
+      "path": "C:\\TSIS_Data\\00_CTO_1\\001_DATA_local_audit\\011_DAS_CMDAPI_REALTIME_RECONSTRUCTION\\reconstructed_local_like\\001_QUOTES_from_das_lv1.parquet"
+    },
+    "001_QUOTES_depth_from_das_lv2": {
+      "rows": 36319,
+      "path": "C:\\TSIS_Data\\00_CTO_1\\001_DATA_local_audit\\011_DAS_CMDAPI_REALTIME_RECONSTRUCTION\\reconstructed_local_like\\001_QUOTES_depth_from_das_lv2.parquet"
+    },
+    "002_DAILY_from_das_daychart": {
+      "rows": 104,
+      "path": "C:\\TSIS_Data\\00_CTO_1\\001_DATA_local_audit\\011_DAS_CMDAPI_REALTIME_RECONSTRUCTION\\reconstructed_local_like\\002_DAILY_from_das_daychart.parquet"
+    },
+    "004_1_MINUTE_from_das_tms": {
+      "rows": 391,
+      "path": "C:\\TSIS_Data\\00_CTO_1\\001_DATA_local_audit\\011_DAS_CMDAPI_REALTIME_RECONSTRUCTION\\reconstructed_local_like\\004_1_MINUTE_from_das_tms.parquet"
+    },
+    "004_1_MINUTE_from_das_minchart": {
+      "rows": 979,
+      "path": "C:\\TSIS_Data\\00_CTO_1\\001_DATA_local_audit\\011_DAS_CMDAPI_REALTIME_RECONSTRUCTION\\reconstructed_local_like\\004_1_MINUTE_from_das_minchart.parquet"
+    },
+    "007_REFERENCE_from_das_candidate_registry": {
+      "rows": 136,
+      "path": "C:\\TSIS_Data\\00_CTO_1\\001_DATA_local_audit\\011_DAS_CMDAPI_REALTIME_RECONSTRUCTION\\reconstructed_local_like\\007_REFERENCE_from_das_candidate_registry.parquet"
+    },
+    "008_HALTS_STATUS_from_das_ldlu": {
+      "rows": 179,
+      "path": "C:\\TSIS_Data\\00_CTO_1\\001_DATA_local_audit\\011_DAS_CMDAPI_REALTIME_RECONSTRUCTION\\reconstructed_local_like\\008_HALTS_STATUS_from_das_ldlu.parquet"
+    },
+    "008_HALTS_STATUS_from_das_symstatus": {
+      "rows": 140,
+      "path": "C:\\TSIS_Data\\00_CTO_1\\001_DATA_local_audit\\011_DAS_CMDAPI_REALTIME_RECONSTRUCTION\\reconstructed_local_like\\008_HALTS_STATUS_from_das_symstatus.parquet"
+    },
+    "009_SHORT_from_das_shortinfo": {
+      "rows": 18,
+      "path": "C:\\TSIS_Data\\00_CTO_1\\001_DATA_local_audit\\011_DAS_CMDAPI_REALTIME_RECONSTRUCTION\\reconstructed_local_like\\009_SHORT_from_das_shortinfo.parquet"
+    },
+    "010_SHORT_REVIEW_from_das_shortinfo": {
+      "rows": 18,
+      "path": "C:\\TSIS_Data\\00_CTO_1\\001_DATA_local_audit\\011_DAS_CMDAPI_REALTIME_RECONSTRUCTION\\reconstructed_local_like\\010_SHORT_REVIEW_from_das_shortinfo.parquet"
+    }
+  },
+  "account_state_policy": "not_materialized_to_local_audit_due_to_sensitive_broker_account_context"
+}

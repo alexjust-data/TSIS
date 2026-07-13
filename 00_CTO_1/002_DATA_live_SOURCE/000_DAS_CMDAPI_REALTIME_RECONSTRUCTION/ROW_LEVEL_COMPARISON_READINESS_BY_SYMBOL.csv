@@ -1,0 +1,19 @@
+ticker,trades_exact_day,quotes_exact_day,daily_year_file,daily_has_2026_07_08,daily_range,daily_adjusted_year_file,daily_adjusted_has_2026_07_08,daily_adjusted_range,minute_month_file,minute_split_norm_month_file,short_file
+BBLG,False,False,True,False,2026-01-02..2026-03-06,True,False,2026-01-02 00:00:00..2026-03-06 00:00:00,False,False,True
+BJDX,False,False,True,False,2026-01-02..2026-03-06,True,False,2026-01-02 00:00:00..2026-03-06 00:00:00,False,False,True
+BTAI,False,False,True,False,2026-01-02..2026-03-06,True,False,2026-01-02 00:00:00..2026-03-06 00:00:00,False,False,True
+CLRO,False,False,True,False,2026-01-02..2026-03-06,True,False,2026-01-02 00:00:00..2026-03-06 00:00:00,False,False,True
+INLF,False,False,True,False,2026-01-02..2026-03-06,True,False,2026-01-02 00:00:00..2026-03-06 00:00:00,False,False,True
+JEM,False,False,True,False,2026-01-02..2026-03-06,True,False,2026-01-02 00:00:00..2026-03-06 00:00:00,False,False,True
+LHAI,False,False,True,False,2026-01-02..2026-03-06,True,False,2026-01-02 00:00:00..2026-03-06 00:00:00,False,False,True
+LUCY,False,False,True,False,2026-01-02..2026-03-06,True,False,2026-01-02 00:00:00..2026-03-06 00:00:00,False,False,True
+NVVE,False,False,True,False,2026-01-02..2026-03-06,True,False,2026-01-02 00:00:00..2026-03-06 00:00:00,False,False,True
+SDOT,False,False,True,False,2026-01-02..2026-03-06,True,False,2026-01-02 00:00:00..2026-03-06 00:00:00,False,False,True
+SKYQ,False,False,True,False,2026-01-02..2026-03-06,True,False,2026-01-02 00:00:00..2026-03-06 00:00:00,False,False,True
+SRXH,False,False,True,False,2026-01-02..2026-03-06,True,False,2026-01-02 00:00:00..2026-03-06 00:00:00,False,False,True
+TVRD,False,False,True,False,2026-01-02..2026-03-06,True,False,2026-01-02 00:00:00..2026-03-06 00:00:00,False,False,True
+VANI,False,False,True,False,2026-01-02..2026-03-06,True,False,2026-01-02 00:00:00..2026-03-06 00:00:00,False,False,True
+VEEE,False,False,True,False,2026-01-02..2026-03-06,True,False,2026-01-02 00:00:00..2026-03-06 00:00:00,False,False,True
+VMAR,False,False,True,False,2026-01-02..2026-03-06,True,False,2026-01-02 00:00:00..2026-03-06 00:00:00,False,False,True
+VTAK,False,False,True,False,2026-01-02..2026-03-06,True,False,2026-01-02 00:00:00..2026-03-06 00:00:00,False,False,True
+ZCMD,False,False,True,False,2026-01-02..2026-03-06,True,False,2026-01-02 00:00:00..2026-03-06 00:00:00,False,False,True

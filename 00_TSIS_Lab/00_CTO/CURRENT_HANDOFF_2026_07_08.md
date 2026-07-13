@@ -1,4 +1,4 @@
-﻿# Handoff Actual TSIS Lab - 2026-07-08
+# Handoff Actual TSIS Lab - 2026-07-08
 
 Estado: handoff operativo para continuar el trabajo sin reabrir decisiones ya tomadas.
 Idioma de trabajo: espanol para corpus explicativo. Nombres tecnicos, rutas, campos y ids se mantienen en ingles cuando ya existen asi en el proyecto.
@@ -139,7 +139,7 @@ repairs=322699
 2014 complete
 ```
 
-2015-2019 tuvieron `complete_with_failures` en una ejecucion anterior. No asumirlos cerrados sin revisar el run actual.
+2015-2020 tienen `complete_with_failures` / `failed_tickers > 0` en la metadata local revisada. No asumir cierre limpio full 2005-2026 sin resolver esos failures y validar el run final.
 
 ## 5. Decisiones Del Scanner Denominador
 

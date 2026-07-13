@@ -1,0 +1,197 @@
+﻿# 017 - event_state_table
+
+## Tipo de documento
+
+Ficha de atributos contractuales. No es una muestra de parquet operativo.
+
+## Documentos fuente usados
+
+Solo se usan estos documentos:
+
+- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs\event_state_table_schema_contract.md`
+- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\market_state_event_state_composition_contract_v0_1.md`
+
+## Estado documentado
+
+| item | valor |
+| --- | --- |
+| dataset_id previsto | `event_state_table_v0_1` |
+| unidad | `one event-window decision state` |
+| grano | `event_window_id + decision_timestamp_utc + state_role + state_schema_version` |
+| primary key | `event_state_id` |
+| future root | `E:/TSIS/data/data_foundation_outputs/event_state_table` |
+| future layout | `event_state_table_v0_1/event_family=<event_family>/decision_year=<YYYY>/` |
+| materialized v0.1 | `false` |
+
+`event_state_table_v0_1` es una tabla objetivo. La tabla oficial no esta materializada en v0.1.
+
+## Atributos obligatorios por contrato
+
+### Identidad
+
+```text
+event_state_id
+event_id
+event_window_id
+market_state_id
+instrument_id
+ticker
+event_family
+event_timestamp_utc
+decision_timestamp_utc
+decision_date
+state_role
+state_schema_version
+state_builder_version
+state_quality_state
+```
+
+### Anclaje de evento
+
+```text
+event_window_start_utc
+event_window_end_utc
+pre_event_window_start_utc
+pre_event_window_end_utc
+state_cutoff_utc
+state_cutoff_reason
+event_source_dataset_id
+event_source_quality_state
+```
+
+Valores permitidos para `state_role`:
+
+```text
+pre_event
+at_event
+post_event_review
+research_replay
+```
+
+Solo `pre_event` y `at_event` legal pueden llegar a ser ML feature candidates. `post_event_review` es contexto forense/research, no feature pre-evento.
+
+### Separacion de labels
+
+```text
+outcome_join_key
+label_join_key
+outcome_values_inline_allowed
+label_columns_inline_allowed
+reward_columns_inline_allowed
+```
+
+Valores requeridos:
+
+```text
+outcome_values_inline_allowed = false
+label_columns_inline_allowed = false
+reward_columns_inline_allowed = false
+```
+
+### Gates de consumidor
+
+```text
+valid_for_pattern_discovery
+valid_for_ml_feature_candidate
+valid_for_backtest_context_candidate
+valid_for_rl_state_candidate
+valid_for_rl_training_direct
+valid_for_execution_context_candidate
+valid_for_execution_simulator_direct
+contains_future_information_without_event_filter
+requires_asof_filter
+full_universe_claim
+execution_truth
+```
+
+Valores objetivo por defecto:
+
+```text
+valid_for_rl_training_direct = false
+valid_for_execution_simulator_direct = false
+execution_truth = false
+requires_asof_filter = true
+```
+
+### Linaje
+
+```text
+build_run_id
+created_at_utc
+market_state_build_run_id
+event_windows_build_run_id
+component_manifest_hash_bundle
+source_cutoff_policy_version
+leakage_policy_version
+feature_namespace_version
+```
+
+## Namespaces de features permitidos
+
+```text
+identity__
+calendar__
+scanner__
+daily__
+intraday__
+microstructure__
+halt__
+fundamentals__
+news__
+short_context__
+short_constraints__
+regime__
+quality__
+event__
+```
+
+`event__` solo puede describir metadata conocida antes o en el cutoff de decision. No puede contener labels.
+
+## Columnas prohibidas
+
+```text
+outcome__*
+label__*
+reward__*
+action__*
+policy__*
+fill__*
+pnl__*
+future__*
+strategy__*
+signal__*
+```
+
+Solo se permiten estas llaves de referencia, sin valores inline de outcome/label/reward:
+
+```text
+outcome_join_key
+label_join_key
+```
+
+## Estados de calidad iniciales
+
+```text
+event_state_good_for_declared_cutoff
+event_state_review_missing_optional_component
+event_state_review_scoped_intraday_component
+event_state_review_microstructure_seed_only
+event_state_review_short_constraints_missing
+event_state_blocked_future_information_detected
+event_state_blocked_required_component_missing
+event_state_blocked_invalid_component_quality
+event_state_bad_duplicate_state_id
+event_state_bad_missing_decision_timestamp
+event_state_bad_missing_event_window
+```
+
+## Estado actual documentado
+
+```text
+event_state_table_v0_1 materialized = false
+builder_implemented = false
+schema_status = target_schema_defined
+controlled_candidate_materialized = true
+candidate_dataset_id = event_state_table_v0_1_candidate
+candidate_status = controlled_candidate_not_promoted
+```
