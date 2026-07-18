@@ -30,6 +30,7 @@
   - [`quotes_consumption_policy.md`](#quotesconsumptionpolicymd)
   - [`trades_consumption_policy.md`](#tradesconsumptionpolicymd)
   - [`ohlcv_1m_raw_consumption_policy.md`](#ohlcv1mrawconsumptionpolicymd)
+  - [`ohlcv_1m_quote_guarded_consumption_policy.md`](#ohlcv1mquoteguardedconsumptionpolicymd)
   - [`daily_return_labels_consumption_policy.md`](#dailyreturnlabelsconsumptionpolicymd)
   - [`daily_scanner_candidates_table_consumption_policy.md`](#dailyscannercandidatestableconsumptionpolicymd)
   - [`intraday_regime_features_consumption_policy.md`](#intradayregimefeaturesconsumptionpolicymd)
@@ -372,6 +373,7 @@ data_consumption_policies/
   event_windows_table_consumption_policy.md
   outcomes_table_consumption_policy.md
   ohlcv_1m_raw_consumption_policy.md
+  ohlcv_1m_quote_guarded_consumption_policy.md
   quotes_consumption_policy.md
   reference_consumption_policy.md
   short_consumption_policy.md
@@ -454,6 +456,18 @@ Distingue:
 Regla clave:
 
 - raw 1m puede estar institucionalmente entendido sin estar globalmente limpio para todos los consumidores.
+
+### `ohlcv_1m_quote_guarded_consumption_policy.md`
+
+Gobierna `ohlcv_1m_quote_guarded_v0_2_candidate`.
+
+Lectura correcta:
+
+- permite consumo downstream controlado para builds candidatos intradia;
+- exige declarar `price_view = quote_guarded_1m`;
+- exige registrar dataset id y validation manifest;
+- no autoriza sustitucion silenciosa de raw;
+- no autoriza backtest/ML/RL/ejecucion como uso irrestricto.
 
 ### `daily_return_labels_consumption_policy.md`
 

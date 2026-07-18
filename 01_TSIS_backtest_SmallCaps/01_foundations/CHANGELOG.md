@@ -1,3 +1,12 @@
+## 2026-07-16 | ohlcv_1m_quote_guarded | controlled downstream institutionalization
+
+- Created `contract_registry/dataset_contracts/ohlcv_1m_quote_guarded_dataset_contract_v0_1.md` to define the quote-guarded 1m derived price view, lineage, allowed consumers, restrictions and promotion boundary.
+- Created `data_consumption_policies/ohlcv_1m_quote_guarded_consumption_policy.md` to govern controlled downstream consumption with `price_view = quote_guarded_1m`.
+- Created `dataset_registry/ohlcv_1m/ohlcv_1m_quote_guarded_registry_entry.yaml` to locate `ohlcv_1m_quote_guarded_full_universe_v0_2_candidate` and connect evidence, contract and policy.
+- Updated `module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md`, `module_contracts/ohlcv_1m_contracts_index.md`, dataset contract README, consumption policy README and dataset registry README.
+- Evidence: validation manifest `C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate/_validation_runs/qg_1m_full_universe_v0_2_candidate_validation_20260716T102500Z/final_manifest_validation.json` reports `PASS`, `errors=0`, `schema_mismatches=0`, `candidate_files_seen=1272004`.
+- Boundary: authorized as `validated_candidate_for_controlled_downstream_consumption`; not unrestricted institutional promotion and not a raw/trades/quotes replacement.
+
 - 2026-07-05: se crea module_contracts/outputs/event_research_design_contract_v0_1.md y se actualiza el mapa v3 para insertar la capa de diseno experimental antes de evaluadores bloqueados; +50% queda clasificado como sampling_probe_human_seed y pre_event_30m/post_event_30m como sampling_window_controlled_seed, no como evento/ventana validada.
 
 ## 2026-07-07 | quotes | D-to-E transfer approved

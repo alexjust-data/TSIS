@@ -2376,3 +2376,56 @@ Paths afectados:
 Accion pendiente:
 - Incluir en el siguiente refresh Graphify del slice Lab/CTO.
 - No se ejecuto rebuild Graphify en este cambio.
+
+
+### GFQ-20260716-001 - SersanSistemas revised Markdown image rehome
+
+Status: pending
+Severity: CRITICAL
+Slice:
+
+```text
+00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised/
+```
+
+Reason:
+
+```text
+Se reubican los Markdown revisados de practicas 12 a 27 para que cada practica viva directamente bajo `03_only_md_revised/<practice>/` junto a su carpeta `img/`. El wrapper temporal `03_only_md_revised/02_workshops/` se elimina. Hay un `graphify-out/` local dentro del slice afectado, por lo que las rutas indexadas pueden quedar obsoletas hasta un refresh dedicado.
+```
+
+Changed paths:
+
+```text
+00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised/12-practice-02/
+00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised/13-practice-03/
+00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised/14-practice-04/
+00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised/15-practice-05/
+00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised/16-practice-06/
+00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised/17-practice-07/
+00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised/18-practice-08/
+00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised/19-practice-09/
+00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised/20-practice-10/
+00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised/21-practice-11/
+00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised/22-practice-12/
+00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised/23-practice-13/
+00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised/24-practice-14/
+00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised/25-practice-15/
+00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised/26-practice-16/
+00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised/27-practice-17/
+00_CTO/99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised/_operation_logs/
+00_CTO/CHANGELOG.md
+00_CTO/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Recommended action:
+
+```text
+En una ventana dedicada, refrescar el leaf Graphify de `03_only_md_revised` o reconstruir el slice SersanSistemas afectado para eliminar rutas antiguas indexadas. No hacer merge aditivo al root si conserva nodos de `03_only_md_revised/02_workshops/`.
+```
+
+Root action:
+
+```text
+No se ejecuto rebuild Graphify durante esta reorganizacion. La validacion local de enlaces de imagen quedo en `_operation_logs/sersan_md_flatten_validation_20260716T105934Z/validation_manifest.json`.
+```

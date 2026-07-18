@@ -1,0 +1,68 @@
+dataset_id: ohlcv_1m_quote_guarded_v0_2_candidate
+dataset_family: ohlcv_1m
+dataset_layer: derived_quote_guarded_minute_bars
+canonical_price_view: quote_guarded_1m
+active: true
+
+status:
+  promotion_state: validated_candidate_for_controlled_downstream_consumption
+  institutional_state: controlled_downstream_input
+  unrestricted_institutional_promotion: false
+  full_universe_claim: validated_physical_candidate_2005_2026
+
+physical:
+  storage_root: C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate
+  materialization_mode: hardlink_merge_v0_1_plus_delta
+  raw_mutation: false
+
+lineage:
+  raw_source_dataset_id: ohlcv_1m_raw_v0_1
+  historical_candidate_base: C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_1
+  delta_repair_candidate: C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_failed_2015_2020_rerun_v0_1_candidate
+  merge_run_id: qg_1m_full_universe_v0_2_candidate_merge_20260716T100000Z
+  validation_run_id: qg_1m_full_universe_v0_2_candidate_validation_20260716T102500Z
+
+evidence:
+  merge_manifest: C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate/_build_runs/qg_1m_full_universe_v0_2_candidate_merge_20260716T100000Z/final_manifest_merge.json
+  validation_manifest: C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate/_validation_runs/qg_1m_full_universe_v0_2_candidate_validation_20260716T102500Z/final_manifest_validation.json
+  validation_status: PASS
+  validation_errors: 0
+  validation_warnings: 0
+  candidate_files_seen: 1272004
+  candidate_files_from_original: 1228331
+  candidate_files_from_delta: 43673
+  expected_delta_pairs_observed: 3918
+  schema_checked: 600
+  schema_mismatches: 0
+
+governance:
+  dataset_contract: 01_foundations/contract_registry/dataset_contracts/ohlcv_1m_quote_guarded_dataset_contract_v0_1.md
+  consumption_policy: 01_foundations/data_consumption_policies/ohlcv_1m_quote_guarded_consumption_policy.md
+  status_matrix: 01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+  contracts_index: 01_foundations/module_contracts/ohlcv_1m_contracts_index.md
+
+allowed_consumers:
+  - 014_master_intraday_bar_table_candidate_builds
+  - 018_intraday_scanner_candidates_candidate_builds
+  - intraday_data_quality_diagnostics
+  - forensic_raw_vs_quote_guarded_comparison
+  - controlled_research_with_declared_price_view
+
+restricted_consumers:
+  - production_backtests
+  - model_training_datasets
+  - offline_rl_state_or_reward_construction
+  - execution_simulation
+  - unrestricted_institutional_default_consumption
+
+prohibited_uses:
+  - mutate_raw_ohlcv_1m
+  - replace_quote_or_trade_evidence
+  - silently_substitute_for_raw_ohlcv_1m
+  - remove_required_repair_provenance
+  - claim_unrestricted_promotion
+
+notes:
+  - This registry entry institutionalizes controlled downstream consumption of the validated v0.2 candidate.
+  - It does not promote the dataset as the unrestricted canonical raw 1-minute source.
+  - Downstream tables must record the validation manifest and price_view = quote_guarded_1m.

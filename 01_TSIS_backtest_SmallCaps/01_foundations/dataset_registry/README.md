@@ -324,12 +324,14 @@ Registra el dominio intraday minute.
 Incluye:
 
 - `ohlcv_1m_raw_registry_entry.yaml`
+- `ohlcv_1m_quote_guarded_registry_entry.yaml`
 - `ohlcv_1m_split_normalized_registry_entry.yaml`
 - manifests de piloto de `ohlcv_1m_split_normalized`
 
 Debe distinguirse siempre:
 
 - `ohlcv_1m_raw`;
+- `ohlcv_1m_quote_guarded`;
 - `ohlcv_1m_split_normalized`;
 - piloto;
 - auditoria full-universe;

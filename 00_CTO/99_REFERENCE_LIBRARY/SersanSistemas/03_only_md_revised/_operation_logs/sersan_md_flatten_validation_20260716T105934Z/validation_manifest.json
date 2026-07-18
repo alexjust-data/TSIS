@@ -1,0 +1,115 @@
+{
+  "run_id": "sersan_md_flatten_validation_20260716T105934Z",
+  "pid": 19916,
+  "timestamp_utc": "2026-07-16T10:59:34.406822+00:00",
+  "base_root": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\SersanSistemas\\03_only_md_revised",
+  "validated_markdown_files": 16,
+  "validated_image_links": 2107,
+  "broken_image_links": [],
+  "old_image_refs": [],
+  "missing_expected_items": [],
+  "practice_summaries": [
+    {
+      "practice": "12-practice-02",
+      "markdown": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\SersanSistemas\\03_only_md_revised\\12-practice-02\\practica_02_donchain.md",
+      "img_files": 76,
+      "img_bytes": 28511343
+    },
+    {
+      "practice": "13-practice-03",
+      "markdown": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\SersanSistemas\\03_only_md_revised\\13-practice-03\\practica_03_donchain.md",
+      "img_files": 111,
+      "img_bytes": 37059890
+    },
+    {
+      "practice": "14-practice-04",
+      "markdown": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\SersanSistemas\\03_only_md_revised\\14-practice-04\\practica_04_donchain.md",
+      "img_files": 245,
+      "img_bytes": 103629037
+    },
+    {
+      "practice": "15-practice-05",
+      "markdown": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\SersanSistemas\\03_only_md_revised\\15-practice-05\\practica_05_donchain.md",
+      "img_files": 147,
+      "img_bytes": 67127260
+    },
+    {
+      "practice": "16-practice-06",
+      "markdown": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\SersanSistemas\\03_only_md_revised\\16-practice-06\\practica_06_ORB.md",
+      "img_files": 86,
+      "img_bytes": 27501836
+    },
+    {
+      "practice": "17-practice-07",
+      "markdown": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\SersanSistemas\\03_only_md_revised\\17-practice-07\\practica_07_ORB.md",
+      "img_files": 93,
+      "img_bytes": 32791739
+    },
+    {
+      "practice": "18-practice-08",
+      "markdown": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\SersanSistemas\\03_only_md_revised\\18-practice-08\\practica_08_ORB.md",
+      "img_files": 108,
+      "img_bytes": 28797345
+    },
+    {
+      "practice": "19-practice-09",
+      "markdown": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\SersanSistemas\\03_only_md_revised\\19-practice-09\\practica_09_revision_apolo.md",
+      "img_files": 180,
+      "img_bytes": 93195931
+    },
+    {
+      "practice": "20-practice-10",
+      "markdown": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\SersanSistemas\\03_only_md_revised\\20-practice-10\\practica_10_bollinger_bands.md",
+      "img_files": 194,
+      "img_bytes": 97177096
+    },
+    {
+      "practice": "21-practice-11",
+      "markdown": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\SersanSistemas\\03_only_md_revised\\21-practice-11\\practica_11_bollinger_Aberration.md",
+      "img_files": 73,
+      "img_bytes": 33027564
+    },
+    {
+      "practice": "22-practice-12",
+      "markdown": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\SersanSistemas\\03_only_md_revised\\22-practice-12\\practica_12_revised.md",
+      "img_files": 196,
+      "img_bytes": 82284162
+    },
+    {
+      "practice": "23-practice-13",
+      "markdown": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\SersanSistemas\\03_only_md_revised\\23-practice-13\\practica_13_revised.md",
+      "img_files": 185,
+      "img_bytes": 100579204
+    },
+    {
+      "practice": "24-practice-14",
+      "markdown": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\SersanSistemas\\03_only_md_revised\\24-practice-14\\practica_14_revised.md",
+      "img_files": 154,
+      "img_bytes": 81256256
+    },
+    {
+      "practice": "25-practice-15",
+      "markdown": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\SersanSistemas\\03_only_md_revised\\25-practice-15\\practica_15_revised.md",
+      "img_files": 234,
+      "img_bytes": 110856273
+    },
+    {
+      "practice": "26-practice-16",
+      "markdown": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\SersanSistemas\\03_only_md_revised\\26-practice-16\\practica_16_revised.md",
+      "img_files": 89,
+      "img_bytes": 51863108
+    },
+    {
+      "practice": "27-practice-17",
+      "markdown": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\SersanSistemas\\03_only_md_revised\\27-practice-17\\practica_17_revised.md",
+      "img_files": 176,
+      "img_bytes": 118561148
+    }
+  ],
+  "source_container_exists": false,
+  "root_mapped_markdown_remaining": [],
+  "root_markdown_remaining": [
+    "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\SersanSistemas\\03_only_md_revised\\xxx_revised.md"
+  ],
+  "status": "success"
+}

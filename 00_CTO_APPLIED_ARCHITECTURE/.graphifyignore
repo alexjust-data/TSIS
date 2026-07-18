@@ -1,0 +1,14 @@
+# Keep the 00_CTO_1 graph focused on project knowledge documents.
+# Large evidence/media/data artifacts are intentionally excluded from Graphify.
+
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.zip
+*.parquet
+*.csv
+*.ipynb
+*.json
+

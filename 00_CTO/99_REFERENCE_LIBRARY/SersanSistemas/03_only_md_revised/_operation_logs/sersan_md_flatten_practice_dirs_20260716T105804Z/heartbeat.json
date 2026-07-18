@@ -1,0 +1,9 @@
+{
+  "run_id": "sersan_md_flatten_practice_dirs_20260716T105804Z",
+  "pid": 36592,
+  "timestamp_utc": "2026-07-16T10:58:04.712926+00:00",
+  "stage": "finished",
+  "status": "completed_with_validation_warnings",
+  "broken_image_links": 0,
+  "old_refs": 3
+}

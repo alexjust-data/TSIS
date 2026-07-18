@@ -269,9 +269,41 @@ full_universe_claim = false
 2025..2026: final_status=complete, failed_tickers=0.
 ```
 
-Lectura correcta: existe arbol fisico 1m quote-guarded para 2005..2026, pero no
-se debe registrar como full terminado limpio 2005..2026 ni como promoted global
-mientras 2015..2020 mantengan failures y falten los gates institucionales.
+Historical v0.1 reading: existe arbol fisico 1m quote-guarded para 2005..2026,
+pero no se debe registrar como full terminado limpio 2005..2026 ni como
+promoted global porque 2015..2020 mantenian failures y faltaban gates
+institucionales.
+
+Validated successor candidate:
+
+```text
+dataset_id = ohlcv_1m_quote_guarded_v0_2_candidate
+path = C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate
+materialization_mode = hardlink_merge_v0_1_plus_delta
+status = validated_candidate_for_controlled_downstream_consumption
+promotion_state = validated_candidate_not_unrestricted_institutional
+full_universe_claim = validated_physical_candidate_2005_2026
+
+merge_manifest = C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate/_build_runs/qg_1m_full_universe_v0_2_candidate_merge_20260716T100000Z/final_manifest_merge.json
+validation_manifest = C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate/_validation_runs/qg_1m_full_universe_v0_2_candidate_validation_20260716T102500Z/final_manifest_validation.json
+
+candidate_files_seen = 1272004
+candidate_files_from_original = 1228331
+candidate_files_from_delta = 43673
+candidate_files_bad_source = 0
+source_missing = 0
+expected_delta_pairs_observed = 3918
+schema_checked = 600
+schema_mismatches = 0
+errors = 0
+warnings = 0
+```
+
+Current v0.2 reading: `ohlcv_1m_quote_guarded_v0_2_candidate` is authorized as
+a controlled downstream input for candidate construction when the consumer
+declares `price_view = quote_guarded_1m` and records the validation manifest.
+It does not mutate `ohlcv_1m_raw`, does not replace quote/trade evidence and is
+not an unrestricted institutional default.
 Selection rule for the successor:
 
 ```text

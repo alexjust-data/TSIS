@@ -1,0 +1,51 @@
+2026-07-16T10:53:07.344085+00:00 PRE_MANIFEST C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\03_only_md_revised\_operation_logs\sersan_md_img_rehome_20260716T105307Z\pre_manifest.json
+2026-07-16T10:53:07.345893+00:00 COPY_START practice=12-practice-02 source=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\02_workshops\12-practice-02\img dest=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\03_only_md_revised\02_workshops\12-practice-02\img
+2026-07-16T10:53:07.418312+00:00 COPY_DONE practice=12-practice-02 copied=76 skipped=0
+2026-07-16T10:53:07.419255+00:00 COPY_START practice=13-practice-03 source=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\02_workshops\13-practice-03\img dest=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\03_only_md_revised\02_workshops\13-practice-03\img
+2026-07-16T10:53:07.516568+00:00 COPY_DONE practice=13-practice-03 copied=111 skipped=0
+2026-07-16T10:53:07.517662+00:00 COPY_START practice=14-practice-04 source=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\02_workshops\14-practice-04\img dest=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\03_only_md_revised\02_workshops\14-practice-04\img
+2026-07-16T10:53:07.737915+00:00 COPY_DONE practice=14-practice-04 copied=245 skipped=0
+2026-07-16T10:53:07.738928+00:00 COPY_START practice=15-practice-05 source=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\02_workshops\15-practice-05\img dest=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\03_only_md_revised\02_workshops\15-practice-05\img
+2026-07-16T10:53:07.879314+00:00 COPY_DONE practice=15-practice-05 copied=147 skipped=0
+2026-07-16T10:53:07.880314+00:00 COPY_START practice=16-practice-06 source=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\02_workshops\16-practice-06\img dest=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\03_only_md_revised\02_workshops\16-practice-06\img
+2026-07-16T10:53:07.953276+00:00 COPY_DONE practice=16-practice-06 copied=86 skipped=0
+2026-07-16T10:53:07.954270+00:00 COPY_START practice=17-practice-07 source=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\02_workshops\17-practice-07\img dest=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\03_only_md_revised\02_workshops\17-practice-07\img
+2026-07-16T10:53:08.041975+00:00 COPY_DONE practice=17-practice-07 copied=93 skipped=0
+2026-07-16T10:53:08.043003+00:00 COPY_START practice=18-practice-08 source=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\02_workshops\18-practice-08\img dest=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\03_only_md_revised\02_workshops\18-practice-08\img
+2026-07-16T10:53:08.138817+00:00 COPY_DONE practice=18-practice-08 copied=108 skipped=0
+2026-07-16T10:53:08.139900+00:00 COPY_START practice=19-practice-09 source=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\02_workshops\19-practice-09\img dest=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\03_only_md_revised\02_workshops\19-practice-09\img
+2026-07-16T10:53:08.319617+00:00 COPY_DONE practice=19-practice-09 copied=180 skipped=0
+2026-07-16T10:53:08.320718+00:00 COPY_START practice=20-practice-10 source=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\02_workshops\20-practice-10\img dest=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\03_only_md_revised\02_workshops\20-practice-10\img
+2026-07-16T10:53:08.509479+00:00 COPY_DONE practice=20-practice-10 copied=194 skipped=0
+2026-07-16T10:53:08.510468+00:00 COPY_START practice=21-practice-11 source=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\02_workshops\21-practice-11\img dest=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\03_only_md_revised\02_workshops\21-practice-11\img
+2026-07-16T10:53:08.580519+00:00 COPY_DONE practice=21-practice-11 copied=73 skipped=0
+2026-07-16T10:53:08.581535+00:00 COPY_START practice=22-practice-12 source=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\02_workshops\22-practice-12\img dest=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\03_only_md_revised\02_workshops\22-practice-12\img
+2026-07-16T10:53:08.766492+00:00 COPY_DONE practice=22-practice-12 copied=196 skipped=0
+2026-07-16T10:53:08.767521+00:00 COPY_START practice=23-practice-13 source=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\02_workshops\23-practice-13\img dest=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\03_only_md_revised\02_workshops\23-practice-13\img
+2026-07-16T10:53:08.942138+00:00 COPY_DONE practice=23-practice-13 copied=185 skipped=0
+2026-07-16T10:53:08.943101+00:00 COPY_START practice=24-practice-14 source=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\02_workshops\24-practice-14\img dest=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\03_only_md_revised\02_workshops\24-practice-14\img
+2026-07-16T10:53:09.091693+00:00 COPY_DONE practice=24-practice-14 copied=154 skipped=0
+2026-07-16T10:53:09.092669+00:00 COPY_START practice=25-practice-15 source=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\02_workshops\25-practice-15\img dest=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\03_only_md_revised\02_workshops\25-practice-15\img
+2026-07-16T10:53:09.305491+00:00 COPY_DONE practice=25-practice-15 copied=234 skipped=0
+2026-07-16T10:53:09.306489+00:00 COPY_START practice=26-practice-16 source=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\02_workshops\26-practice-16\img dest=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\03_only_md_revised\02_workshops\26-practice-16\img
+2026-07-16T10:53:09.393264+00:00 COPY_DONE practice=26-practice-16 copied=89 skipped=0
+2026-07-16T10:53:09.394350+00:00 COPY_START practice=27-practice-17 source=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\02_workshops\27-practice-17\img dest=C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\03_only_md_revised\02_workshops\27-practice-17\img
+2026-07-16T10:53:09.662963+00:00 COPY_DONE practice=27-practice-17 copied=176 skipped=0
+2026-07-16T10:53:09.669555+00:00 MD_REHOMED practice=12-practice-02 markdown=practica_02_donchain.md rewrites={'flat_img': 0, 'sibling_02_workshops': 60, 'parent_practice': 0}
+2026-07-16T10:53:09.679164+00:00 MD_REHOMED practice=13-practice-03 markdown=practica_03_donchain.md rewrites={'flat_img': 0, 'sibling_02_workshops': 95, 'parent_practice': 2}
+2026-07-16T10:53:09.693242+00:00 MD_REHOMED practice=14-practice-04 markdown=practica_04_donchain.md rewrites={'flat_img': 90, 'sibling_02_workshops': 106, 'parent_practice': 0}
+2026-07-16T10:53:09.701926+00:00 MD_REHOMED practice=15-practice-05 markdown=practica_05_donchain.md rewrites={'flat_img': 0, 'sibling_02_workshops': 119, 'parent_practice': 0}
+2026-07-16T10:53:09.708772+00:00 MD_REHOMED practice=16-practice-06 markdown=practica_06_ORB.md rewrites={'flat_img': 1, 'sibling_02_workshops': 75, 'parent_practice': 0}
+2026-07-16T10:53:09.715169+00:00 MD_REHOMED practice=17-practice-07 markdown=practica_07_ORB.md rewrites={'flat_img': 0, 'sibling_02_workshops': 85, 'parent_practice': 0}
+2026-07-16T10:53:09.722748+00:00 MD_REHOMED practice=18-practice-08 markdown=practica_08_ORB.md rewrites={'flat_img': 0, 'sibling_02_workshops': 95, 'parent_practice': 0}
+2026-07-16T10:53:09.734753+00:00 MD_REHOMED practice=19-practice-09 markdown=practica_09_revision_apolo.md rewrites={'flat_img': 0, 'sibling_02_workshops': 171, 'parent_practice': 0}
+2026-07-16T10:53:09.746741+00:00 MD_REHOMED practice=20-practice-10 markdown=practica_10_bollinger_bands.md rewrites={'flat_img': 0, 'sibling_02_workshops': 176, 'parent_practice': 0}
+2026-07-16T10:53:09.752609+00:00 MD_REHOMED practice=21-practice-11 markdown=practica_11_bollinger_Aberration.md rewrites={'flat_img': 0, 'sibling_02_workshops': 66, 'parent_practice': 0}
+2026-07-16T10:53:09.764440+00:00 MD_REHOMED practice=22-practice-12 markdown=practica_12_revised.md rewrites={'flat_img': 175, 'sibling_02_workshops': 0, 'parent_practice': 0}
+2026-07-16T10:53:09.778749+00:00 MD_REHOMED practice=23-practice-13 markdown=practica_13_revised.md rewrites={'flat_img': 184, 'sibling_02_workshops': 0, 'parent_practice': 0}
+2026-07-16T10:53:09.790981+00:00 MD_REHOMED practice=24-practice-14 markdown=practica_14_revised.md rewrites={'flat_img': 144, 'sibling_02_workshops': 0, 'parent_practice': 0}
+2026-07-16T10:53:09.804848+00:00 MD_REHOMED practice=25-practice-15 markdown=practica_15_revised.md rewrites={'flat_img': 206, 'sibling_02_workshops': 0, 'parent_practice': 0}
+2026-07-16T10:53:09.812316+00:00 MD_REHOMED practice=26-practice-16 markdown=practica_16_revised.md rewrites={'flat_img': 91, 'sibling_02_workshops': 0, 'parent_practice': 0}
+2026-07-16T10:53:09.823948+00:00 MD_REHOMED practice=27-practice-17 markdown=practica_17_revised.md rewrites={'flat_img': 166, 'sibling_02_workshops': 0, 'parent_practice': 0}
+2026-07-16T10:53:10.366138+00:00 FINAL_MANIFEST C:\TSIS_Data\00_CTO\99_REFERENCE_LIBRARY\SersanSistemas\03_only_md_revised\_operation_logs\sersan_md_img_rehome_20260716T105307Z\final_manifest.json
+2026-07-16T10:53:10.366438+00:00 STATUS completed_with_validation_warnings copied_files=2347 skipped=0 copied_bytes=1094219192 checked_links=2107 broken=2 old_refs=0

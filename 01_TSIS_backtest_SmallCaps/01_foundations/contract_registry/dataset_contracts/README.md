@@ -27,6 +27,7 @@
   - [`trades_dataset_contract_v0_1.md`](#tradesdatasetcontractv01md)
   - [`trades_label_taxonomy_and_cut_policy.md`](#tradeslabeltaxonomyandcutpolicymd)
   - [`ohlcv_1m_raw_dataset_contract_v0_1.md`](#ohlcv1mrawdatasetcontractv01md)
+  - [`ohlcv_1m_quote_guarded_dataset_contract_v0_1.md`](#ohlcv1mquoteguardeddatasetcontractv01md)
   - [`ohlcv_1m_split_normalized_dataset_contract_v0_1.md`](#ohlcv1msplitnormalizeddatasetcontractv01md)
   - [`intraday_regime_features_dataset_contract_v0_1.md`](#intradayregimefeaturesdatasetcontractv01md)
   - [`lt1b_universe_dataset_contract_v0_1.md`](#lt1buniversedatasetcontractv01md)
@@ -199,6 +200,7 @@ Contratos para capas derivadas de precio.
 Ejemplos:
 
 - `daily_adjusted_dataset_contract_v0_1.md`
+- `ohlcv_1m_quote_guarded_dataset_contract_v0_1.md`
 - `ohlcv_1m_split_normalized_dataset_contract_v0_1.md`
 
 Estos contratos deben distinguir:
@@ -366,6 +368,7 @@ contract_registry/dataset_contracts/
   lt1b_universe_dataset_contract_v0_1.md
   market_calendar_dataset_contract_v0_1.md
   ohlcv_1m_raw_dataset_contract_v0_1.md
+  ohlcv_1m_quote_guarded_dataset_contract_v0_1.md
   ohlcv_1m_split_normalized_dataset_contract_v0_1.md
   quotes_dataset_contract_v0_1.md
   quotes_label_taxonomy_and_cut_policy.md
@@ -499,6 +502,18 @@ Fija:
 - relacion con `ohlcv_1m_split_normalized`;
 - limites de raw frente a splits;
 - policy/validators/dossiers asociados.
+
+### `ohlcv_1m_quote_guarded_dataset_contract_v0_1.md`
+
+Contrato de `ohlcv_1m_quote_guarded_v0_2_candidate`.
+
+Define:
+
+- vista derivada `quote_guarded_1m`;
+- lineage raw + repair manifest + delta rerun + merge v0.2;
+- autorizacion como input downstream controlado;
+- prohibicion de mutar raw o sustituir quotes/trades;
+- frontera de no promocion irrestricta.
 
 ### `ohlcv_1m_split_normalized_dataset_contract_v0_1.md`
 
