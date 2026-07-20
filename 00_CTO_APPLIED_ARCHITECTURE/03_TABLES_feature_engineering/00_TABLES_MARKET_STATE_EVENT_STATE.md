@@ -2,11 +2,17 @@
 
 Construir una representación lo más fiel posible del mercado.
 
+Este Explica:
+
+```
+por qué y como construimos variables/tablas
+para alimentar Market State y Event State
+mediante Objetos de Información
+```
+
 ## Dos tablas finales
 
 Estas dos tablas representan **granos semánticos distintos**:
-
-
 
 **Market State** = cómo está el mercado en un timestamp.   
 Describe el estado observable general en `t`, exista o no un evento.
@@ -21,8 +27,6 @@ Describe ese estado anclado a un `evento` concreto **:**  antes, durante, al pro
 Event State
 clave ≈ evento + instrumento + decision_timestamp + state_role
 ```
-
-
 
 Podrían almacenarse físicamente en una sola tabla, pero aparecerían problemas:
 
@@ -143,7 +147,7 @@ Después el builder traduce esas necesidades científicas a variables físicas:
 
 
 ```
-Market State dice:
+Market State Representation Contract dice:
 
 Necesito estos "Objetos":
 
@@ -216,7 +220,7 @@ en qué tabla vive
 
 ---
 
-Market State declara qué debe conocer.
+Market State Representation Contract declara qué debe conocer.
 Los objetos definen el significado.
 Las variables expresan ese significado.
 Las tablas indican dónde obtenerlas.
@@ -286,9 +290,9 @@ Event State - ¿Cuál es el estado observable del mercado respecto a un evento?
 ```
 
 **Market State necesita objetos de información**  
-No dice necesito un fenómeno.   
+No necesita un fenómeno.   
 Porque el fenómeno ya ocurrió.  
-Dice Necesito Objetos de Información.   
+Necesita Objetos de Información.   
 Porque es lo único que puede almacenar es información.
 
 ### El `fenómeno` existe aunque TSIS no exista
@@ -678,7 +682,7 @@ TABLA:
 
 ### Market State `Builder`
 
-*Market State* declara qué Objetos de Información necesita:
+*Market State Representation Contract* declara qué Objetos de Información necesita:
 ```
 - Momentum
 - Liquidity
@@ -735,10 +739,13 @@ No todas las tablas se unen mediante igualdad exacta de timestamp.
 
 ### Market State
 
-¿Quién motiva la necesidad de crear Estados de Mercado?    
-Las ***preguntas científicas*** y los ***consumidores*** (sistemas que utilizan la representación *Market State*).  
+La necesidad de construir una representación del estado del mercado  
+surge de las *PREGUNTAS científicas*.
 
-Ejemplos de ***PREGUNTAS***:
+Una vez construida,  
+los distintos *CONSUMIDORES* reutilizan esa representación. 
+
+Ejemplos de *PREGUNTA CIENTÍFICA*
 
 ```text
 PREGUNTA CIENTÍFICA:
@@ -812,14 +819,7 @@ Market State Builder:
 7. Materializa la fila de Market State.
 ```
 
-Así, la formulación más rigurosa no sería:
-
-```text
-Market State dice:
-“Necesito estos Objetos”.
-```
-
-Sino:
+La distinción exacta es:
 
 ```text
 El contrato de representación de Market State declara
@@ -827,8 +827,6 @@ qué Objetos de Información deben integrarse
 para cumplir sus preguntas científicas,
 sus consumidores y su criterio de suficiencia.
 ```
-
-La distinción exacta es:
 
 ```text
 Gobernanza científica
@@ -844,32 +842,10 @@ Market State
 = resultado materializado.
 ```
 
-Por tanto, el círculo realmente empieza antes de `Market State`:
-
-```text
-PREGUNTAS CIENTÍFICAS
-+
-CONSUMIDORES
-+
-DECISIONES QUE DEBEN PODER TOMARSE
-↓
-REQUISITOS DE INFORMACIÓN
-↓
-OBJETOS DE INFORMACIÓN ADMITIDOS
-↓
-CONTRATO DE REPRESENTACIÓN DE MARKET STATE
-↓
-MARKET STATE BUILDER
-↓
-TABLAS Y VARIABLES
-↓
-MARKET STATE MATERIALIZADO
-```
-
 La fase final que cerraría correctamente el documento sería  
 contestar a la pregunta :   **¿Quién necesita que existan Objetos**
 
-Ejemplo de ***CONSUMIDORES***: 
+Ejemplo de *CONSUMIDORES*: 
 
 ```
 Objeto de Información:
@@ -926,16 +902,54 @@ MARKET STATE
 CONSUMIDORES
 ```
 
-Si Market State es la representación canónica del estado del mercado, entonces solo debería existir una definición canónica.
+**Representaciones de patrones o estrategias**
 
-Lo que sí puede cambiar es la proyección que hace cada consumidor sobre esa representación.
+Por otra parte,   
 
-Por ejemplo:
+si *Market State* es la representación canónica del estado del mercado,   
+entonces solo debería existir una definición canónica.
+
 ```
 Market State
 =
 La mejor representación observable del mercado en t.
 ```
+
+Lo que sí puede cambiar es la proyección que hace cada consumidor sobre esa representación.
+
+Deberías tener:
+
+```
+market_state_table
+```
+
+y después construir datasets derivados:
+
+```
+breakout_research_dataset
+vwap_reclaim_research_dataset
+squeeze_research_dataset
+```
+
+Esos datasets seleccionan las filas de Market State necesarias para estudiar cada patrón.
+
+```
+PM_Squeeze_Event
+↓
+event_timestamp = 09:45
+↓
+se solicitan estados:
+09:35
+09:36
+...
+09:45
+```
+El sistema no crea diez tablas canónicas nuevas.  
+Recupera diez filas o ventanas de la representación canónica.
+
+
+Incluso se podría tener un sistema así:
+
 ```
 Market State
 │
@@ -947,6 +961,7 @@ Market State
 ├── Regime
 ├── ...
 ```
+entonces 
 
 ```
 Offline RL
@@ -977,7 +992,6 @@ lee:
 - secuencias de Market State
 ```
 
-Incluso se podría tener un sistema así:
 
 ```
 Market State
@@ -1001,4 +1015,351 @@ Feature Selector
 Dataset Prediction
 ```
 
-**Event State Builder**
+**¿Se materializa una fila para cada t?**
+
+Depende del grano definido.  
+Si el grano canónico es un minuto:  
+```
+instrument_id + decision_timestamp_minute
+```
+entonces puede existir una fila por minuto válido.
+
+Si el estado necesita resolución de segundos:
+```
+instrument_id + decision_timestamp_second
+```
+el volumen crece muchísimo.  
+Por eso no debes mezclar:
+```
+definición canónica
+```
+con:
+```
+resolución física universal.
+```
+Puede existir una arquitectura multirresolución:
+```
+market_state_1d
+market_state_1m
+market_state_1s
+market_state_microstructure_window
+```
+Pero todas deben respetar la misma semántica:
+```
+estado observable legalmente en t
+```
+No son estados distintos por algoritmo.   
+Son resoluciones físicas distintas del mismo concepto.
+
+
+**La arquitectura práctica recomendable**
+
+```
+CONTRATO CANÓNICO DE MARKET STATE
+↓
+define esquema, semántica y temporalidad
+↓
+MARKET STATE BUILDER
+↓
+consulta tablas fuente
+↓
+construye estados solicitados
+↓
+valida
+↓
+materializa de forma persistente
+↓
+MARKET STATE STORE
+↓
+es reutilizado por Event State y consumidores
+```
+
+**¿Se guardan los Market State ya creados?**
+
+El almacenamiento podría tener tres niveles:
+
+
+```
+1. Core histórico
+   - materializado ampliamente;
+   - datos baratos y frecuentes.
+
+2. Extensiones pesadas
+   - microestructura;
+   - materializadas por universo, evento o ventana autorizada.
+
+3. Datasets derivados
+   - específicos para investigación o algoritmos;
+   - no son Market State canónico.
+```
+
+Ejemplo concreto
+
+Supón que investigas 2.000 squeezes.
+
+```
+NO -> 2.000 tablas Market State.
+```
+```
+SI -> event_registry
+        - contiene los 2.000 eventos
+
+Después solicitas:
+
+por cada evento:
+- 30 minutos pre_event;
+- instante at_event;
+- 20 minutos post_event.
+
+El sistema obtiene:
+- 2.000 × 51 estados
+```
+pero los guarda en un repositorio común:
+```
+market_state_table
+```
+Luego Event State crea las relaciones:
+```
+event_id ↔ market_state_id ↔ state_role
+```
+
+Si dos eventos utilizan el mismo estado de ABCD a las 09:42, ese Market State se reutiliza.
+
+**Lo canónico es, ante todo:**
+
+una definición única y gobernada
+de cómo representar el mercado en t.
+
+```
+- la definición;
+- el contrato;
+- el esquema;
+- las reglas temporales;
+- los Objetos de Información admitidos;
+- las reglas para construir cada estado en t.
+```
+
+La materialización física puede hacerse por capas sin perder la canonicalidad:
+
+```
+- de forma histórica;
+- por particiones;
+- bajo demanda;
+- por ventanas de eventos;
+- en distintas resoluciones;
+- con extensiones opcionales;
+```
+La fórmula
+```
+Canonicalidad = misma definición.
+
+Materialización = cuándo, dónde, con qué cobertura
+y a qué resolución se construye esa definición.
+```
+
+
+### Event State Builder
+
+El `Event State Builder` responde a una pregunta diferente:
+```
+¿Qué información observable estaba disponible
+respecto al evento E
+en el decision_timestamp 09:42:00?
+```
+Event State no reconstruye el mercado desde cero.
+
+Parte de:
+- un `evento` concreto;
+- un `Market State` válido;
+- una `relación temporal` entre el estado y el evento;
+- variables específicas del contexto del evento.
+
+Ejemplo:
+```
+event_id = PM_SQUEEZE_2026_07_18_ABCD_001
+instrument_id = ABCD
+event_timestamp = 09:45:00
+decision_timestamp = 09:42:00
+state_role = pre_event
+```
+El `Event State Builder` realiza dos operaciones.
+
+**1. Recupera el estado base**
+
+Busca el Market State correspondiente a:
+```
+instrument_id = ABCD
+decision_timestamp = 09:42:00
+```
+Ese estado ya contiene:
+```
+- Momentum
+- Liquidity
+- Trading Activity
+- Volatility
+- Intraday Position
+- Buying Pressure
+- News Context
+- Fundamental Context
+- Market Regime
+```
+
+**2. Añade la contextualización respecto al evento**
+
+El builder incorpora información como:
+```
+- event_id
+- event_type
+- event_timestamp
+- state_role
+- time_to_event
+- time_from_event
+- event_phase
+- event_detection_status
+- event_reference_levels
+- event_specific_quality_flags
+```
+
+Por ejemplo:
+```
+event_type = PM_Squeeze_Event
+state_role = pre_event
+time_to_event_seconds = 180
+event_phase = setup_forming
+distance_to_event_reference_hod = -0.012
+event_detection_status = not_yet_confirmed
+```
+---
+La diferencia esencial es:
+```
+Market State:
+- organiza información por instrumento y decision_timestamp.
+
+Event State:
+- organiza esa misma información respecto a un evento concreto.
+```
+
+Por tanto, `Event State` no debería duplicar ni inventar un segundo estado del mercado.
+
+Debe reutilizar o referenciar el Market State base:
+```
+Event State
+↓
+referencia un Market State válido
+↓
+añade identidad del evento
+↓
+añade posición temporal respecto al evento
+↓
+añade contexto específico del evento
+```
+Ejemplo completo:
+```
+MERCADO
+↓
+aparecen fenómenos observables
+↓
+TSIS (investigador) define Objetos de Información
+↓
+los modelos determinan cómo representarlos
+↓
+las variables implementan esos modelos
+↓
+las tablas materializan las variables
+↓
+Market State Builder recupera e integra
+las variables válidas en decision_timestamp
+↓
+MARKET STATE
+↓
+Event State Builder toma ese estado base
+y lo contextualiza respecto al evento E
+↓
+EVENT STATE
+↓
+CONSUMIDORES
+```
+
+**¿Qué ocurre cuando una estrategia solicita una ventana?**
+
+```
+Evento:
+VWAP_Reclaim_Event
+
+event_timestamp:
+10:17:00
+
+ventana solicitada:
+10 minutos antes
+5 minutos después
+```
+El `Event State Builder` realiza algo como:
+
+```
+1. Identifica el evento.
+2. Calcula los decision_timestamp requeridos.
+3. Busca los Market State ya materializados.
+4. Construye los que falten, si están autorizados.
+5. Los referencia mediante market_state_id.
+6. Añade state_role y relación temporal con el evento.
+```
+
+Resultado
+
+```
+event_id
+market_state_id
+decision_timestamp
+state_role
+relative_time_to_event
+```
+
+Ejemplo:
+
+```
+E123 | MS9001 | 10:07 | pre_event
+E123 | MS9002 | 10:08 | pre_event
+...
+E123 | MS9011 | 10:17 | at_event
+E123 | MS9012 | 10:18 | post_event
+```
+
+No se crea una nueva copia completa del mercado para cada estrategia.
+
+### Persistencia
+
+Debes distinguir:
+```
+Memoria temporal
+- RAM;
+- caché;
+- usada durante una ejecución;
+- puede desaparecer.
+```
+de:
+```
+Materialización persistente
+- Parquet;
+- Delta/Iceberg;
+- base de datos;
+- object storage;
+- permanece disponible y versionada.
+```
+Una vez construido y validado un Market State, puedes guardarlo para no recalcularlo cada vez.
+
+Ejemplo:
+```
+market_state/
+    version=v0_1/
+        year=2025/
+            month=01/
+            symbol=ABCD/
+                part-000.parquet
+```
+O particionado por:
+```
+- date;
+- instrument;
+- resolution;
+- representation_version.
+```

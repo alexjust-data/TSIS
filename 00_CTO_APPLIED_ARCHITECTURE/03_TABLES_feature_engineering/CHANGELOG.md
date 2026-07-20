@@ -18,6 +18,57 @@ and important dependency decisions.
 
 ---
 
+## 2026-07-20 | README | operational map aligned with active structure
+
+- Updated `README.md` from `readme_v0_2_current_structure` to `readme_v0_3_operational_map`.
+- Replaced stale paths and names with the active structure:
+  - `01_INFORMATION_OBJECT_ADMISSION_PROCESS.md`
+  - `02_TABLE_REPRESENTATION_REVIEW/`
+  - `03_INFORMATION_OBJECTS/`
+  - `99_archive/`
+- Separated table review from Information Object admission.
+- Corrected the 013-018 relationship from a linear chain to parallel intraday bar and microstructure surfaces feeding Market State.
+- Clarified that `008_outcomes_table` remains a separated label/outcome surface, not an observable Market State input.
+- Updated `02_TABLE_REPRESENTATION_REVIEW\LOCAL_RULES.md` header/path references after folder renaming.
+
+## 2026-07-20 | table review | first architectural question refined
+
+- Refined the first table review question in `01_TABLE_REPRESENTATION_REVIEW\LOCAL_RULES.md` and `TABLE_REPRESENTATION_REVIEW_TEMPLATE.md`.
+- Replaced the overloaded question "what phenomenon or representation does the table materialize?" with:
+  - what entity, representation or institutional function does the table materialize;
+  - whether it represents market information, infrastructure, context, quality, governance, event, state or outcome;
+  - which market phenomena are described when the table actually stores market information.
+- This prevents infrastructure tables such as `001_market_calendar` and governance tables such as `003_dataset_certification_matrix` from being forced into a market-phenomenon frame.
+
+## 2026-07-20 | table review | per-table folder roles specified
+
+- Extended `01_TABLE_REPRESENTATION_REVIEW\LOCAL_RULES.md` with the expected three-file structure for each table review folder:
+  - `<table_name>.md` for current physical/contractual/schema state;
+  - `table_representation_audit_ES.md` for the table-level audit;
+  - `object_candidates.md` as the bridge to Information Object admission.
+- Added `01_TABLE_REPRESENTATION_REVIEW\OBJECT_CANDIDATES_TEMPLATE.md`.
+- Clarified that table audits identify candidate Information Objects, but the scientific object admission must live under `02_INFORMATION_OBJECTS`.
+
+## 2026-07-20 | table review | two-level review standard added
+
+- Updated `01_TABLE_REPRESENTATION_REVIEW\LOCAL_RULES.md` to separate table review into:
+  - Level 1 architectural questions;
+  - Level 2 physical and boundary questions.
+- Added `01_TABLE_REPRESENTATION_REVIEW\TABLE_REPRESENTATION_REVIEW_TEMPLATE.md` so reviews of tables `000-018` can be compared with the same structure.
+- Clarified that the six architectural questions decide whether a table has conceptual reason to exist, while the physical/boundary questions decide whether it is correctly designed, governed and consumable.
+
+## 2026-07-18 | README | active folder map synchronized
+
+- Replaced the outdated `README.md` content with the current working structure.
+- Active root documents are now documented as:
+  - `00_TABLES_MARKET_STATE_EVENT_STATE.md`
+  - `01_FEATURE_ADMISION_PROCESS.md`
+  - `LOCAL_RULES.md`
+  - `CHANGELOG.md`
+- Clarified that `_01_OBJECTS` is the reserved folder for one file per admitted Information Object.
+- Clarified that `archive\` contains historical/superseded/non-active documents, including the previous representation catalog.
+- Preserved the rule that this folder is an applied reading surface, not a source of truth or promotion authority.
+
 ## 2026-07-17 | information model | family catalog refactored to information objects
 
 - Refactored `01_MARKET_REPRESENTATION_ATTRIBUTES_BY_FAMILY_ES.md` from an attribute-by-family inventory into a Market Representation Information Model.
@@ -332,6 +383,11 @@ C:\TSIS_Data\data\data_foundation_outputs\ohlcv_1m_quote_guarded_full_universe_v
 ```
 
 - Boundary: `v0_2_candidate` is now a validated technical candidate tree and is eligible for promotion review. It is not yet promoted.
+
+
+
+
+
 
 
 
