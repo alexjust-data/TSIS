@@ -417,3 +417,321 @@ def check_objects(config: dict[str, Any], registry_doc: dict[str, Any], *, check
             "lineage_status": "doc_lineage_ready_pending_physical_binding",
         })
     return pass_fail, source_rows, blocked_rows, lineage_rows
+
+
+def write_csv(path: Path, rows: list[dict[str, Any]], fieldnames: list[str]) -> None:
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer.writeheader()
+        for row in rows:
+            writer.writerow({field: row.get(field) for field in fieldnames})
+
+
+def write_dry_rows(path: Path, config: dict[str, Any], sample_tickers: list[str], sample_decision_timestamps: list[str]) -> int:
+    count = 0
+    with path.open("w", encoding="utf-8", newline="\n") as handle:
+        for ticker in sample_tickers:
+            for decision_ts in sample_decision_timestamps:
+                for obj in config["objects"]:
+                    payload = {
+                        "experimental_snapshot": True,
+                        "not_state_authority": True,
+                        "object_id": obj["object_id"],
+                        "ticker": ticker,
+                        "decision_timestamp_utc": decision_ts,
+                        "resolution_status": obj.get("validation_status"),
+                        "active_source_aliases": obj.get("active_source_aliases", []),
+                        "required_capabilities": obj.get("required_capabilities", []),
+                        "optional_capabilities": obj.get("optional_capabilities", []),
+                        "blocked_capabilities_masked": True,
+                    }
+                    handle.write(json.dumps(payload, ensure_ascii=False, sort_keys=True))
+                    handle.write("\n")
+                    count += 1
+    return count
+
+
+def alias_metrics(config: dict[str, Any], registry_doc: dict[str, Any], source_rows: list[dict[str, Any]]) -> dict[str, Any]:
+    active_usages: list[str] = []
+    blocked_usages: list[str] = []
+    for obj in config["objects"]:
+        active_usages.extend(obj.get("active_source_aliases", []))
+        blocked_usages.extend(obj.get("blocked_source_aliases", []))
+    active_aliases = sorted(set(active_usages))
+    blocked_aliases = sorted(set(blocked_usages))
+    bindings = registry_doc["bindings"]
+    bound_active = []
+    unbound_active = []
+    for alias in active_aliases:
+        binding = bindings.get(alias)
+        if binding and binding.get("physical_candidate_root") and binding.get("binding_status") != "blocked":
+            bound_active.append(alias)
+        else:
+            unbound_active.append(alias)
+    checked_roots = sorted({str(row.get("physical_candidate_root")) for row in source_rows if row.get("path_check_status") in {"FOUND", "MISSING"} and row.get("physical_candidate_root")})
+    found_roots = sorted({str(row.get("physical_candidate_root")) for row in source_rows if row.get("path_check_status") == "FOUND" and row.get("physical_candidate_root")})
+    missing_roots = sorted({str(row.get("physical_candidate_root")) for row in source_rows if row.get("path_check_status") == "MISSING" and row.get("physical_candidate_root")})
+    return {
+        "active_source_alias_usages": len(active_usages),
+        "unique_active_source_aliases": len(active_aliases),
+        "unique_active_source_alias_names": active_aliases,
+        "bound_unique_source_aliases": len(bound_active),
+        "bound_unique_source_alias_names": bound_active,
+        "unbound_unique_source_aliases": len(unbound_active),
+        "unbound_unique_source_alias_names": unbound_active,
+        "blocked_unique_source_aliases": len(blocked_aliases),
+        "blocked_unique_source_alias_names": blocked_aliases,
+        "physical_paths_checked": len(checked_roots),
+        "physical_paths_found": len(found_roots),
+        "physical_paths_missing": len(missing_roots),
+        "binding_registry_id": registry_doc.get("registry_id"),
+    }
+
+
+def summarize(config: dict[str, Any], registry_doc: dict[str, Any], pass_fail: list[dict[str, Any]], source_rows: list[dict[str, Any]], blocked_rows: list[dict[str, Any]]) -> dict[str, Any]:
+    fail_count = sum(1 for row in pass_fail if row["severity"] == "FAIL")
+    warn_count = sum(1 for row in pass_fail if row["severity"] == "WARN")
+    pass_count = sum(1 for row in pass_fail if row["status"] == "PASS")
+    pass_with_finding_count = sum(1 for row in pass_fail if row["status"] == "PASS_WITH_FINDING")
+    source_warn_count = sum(1 for row in source_rows if row["severity"] == "WARN")
+    source_fail_count = sum(1 for row in source_rows if row["severity"] == "FAIL")
+    blocked_expected = sum(1 for row in pass_fail if row["severity"] == "BLOCKED_EXPECTED")
+    blocked_leaks = sum(1 for row in blocked_rows if row["status"] == "LEAK")
+    metrics = alias_metrics(config, registry_doc, source_rows)
+    if fail_count or source_fail_count or blocked_leaks:
+        status = "failed_contract_check"
+    elif source_warn_count or metrics["unbound_unique_source_aliases"]:
+        status = "passed_contract_check_pending_source_binding"
+    elif warn_count or blocked_expected:
+        status = "passed_with_findings_and_expected_blocks"
+    else:
+        status = "passed"
+    physical_source_binding = "PASS"
+    if metrics["unbound_unique_source_aliases"]:
+        physical_source_binding = "INCOMPLETE"
+    if metrics["physical_paths_missing"] or source_fail_count:
+        physical_source_binding = "FAILED"
+    return {
+        "overall_status": status,
+        "contract_resolution": "PASS" if not fail_count and not source_fail_count else "FAIL",
+        "ontology_to_mapping_resolution": "PASS" if not fail_count else "FAIL",
+        "blocked_capability_masking": "PASS" if blocked_leaks == 0 else "FAIL",
+        "order_flow_expected_block": "PASS" if blocked_expected else "NOT_PRESENT",
+        "physical_source_binding": physical_source_binding,
+        "schema_resolution": "NOT_EXECUTED",
+        "data_resolution": "NOT_AUTHORIZED",
+        "fail_count": fail_count + source_fail_count,
+        "contract_fail_count": fail_count,
+        "source_fail_count": source_fail_count,
+        "warn_count": warn_count,
+        "source_warn_count": source_warn_count,
+        "pass_count": pass_count,
+        "pass_with_finding_count": pass_with_finding_count,
+        "blocked_expected_count": blocked_expected,
+        "blocked_capability_leaks": blocked_leaks,
+        **metrics,
+    }
+
+
+def write_findings(path: Path, *, run_id: str, summary: dict[str, Any], source_rows: list[dict[str, Any]]) -> None:
+    source_findings = [row for row in source_rows if row["role"] == "active" and row["severity"] in {"WARN", "FAIL"}]
+    if summary["fail_count"]:
+        interpretation = "Contract or governance failures were detected."
+    else:
+        interpretation = "No contract or governance failures were detected."
+    lines = [
+        f"# Experimental State Builder Probe Findings - {run_id}",
+        "",
+        f"script_version: `{SCRIPT_VERSION}`",
+        f"overall_status: `{summary['overall_status']}`",
+        "",
+        "## Institutional Status",
+        "",
+        f"contract_resolution = {summary['contract_resolution']}",
+        f"ontology_to_mapping_resolution = {summary['ontology_to_mapping_resolution']}",
+        f"blocked_capability_masking = {summary['blocked_capability_masking']}",
+        f"order_flow_expected_block = {summary['order_flow_expected_block']}",
+        f"physical_source_binding = {summary['physical_source_binding']}",
+        f"schema_resolution = {summary['schema_resolution']}",
+        f"data_resolution = {summary['data_resolution']}",
+        "",
+        "## Summary",
+        "",
+        f"pass_count = {summary['pass_count']}",
+        f"pass_with_finding_count = {summary['pass_with_finding_count']}",
+        f"fail_count = {summary['fail_count']}",
+        f"warn_count = {summary['warn_count']}",
+        f"source_warn_count = {summary['source_warn_count']}",
+        f"blocked_expected_count = {summary['blocked_expected_count']}",
+        f"blocked_capability_leaks = {summary['blocked_capability_leaks']}",
+        f"active_source_alias_usages = {summary['active_source_alias_usages']}",
+        f"unique_active_source_aliases = {summary['unique_active_source_aliases']}",
+        f"bound_unique_source_aliases = {summary['bound_unique_source_aliases']}",
+        f"unbound_unique_source_aliases = {summary['unbound_unique_source_aliases']}",
+        f"blocked_unique_source_aliases = {summary['blocked_unique_source_aliases']}",
+        f"physical_paths_checked = {summary['physical_paths_checked']}",
+        f"physical_paths_found = {summary['physical_paths_found']}",
+        f"physical_paths_missing = {summary['physical_paths_missing']}",
+        "",
+        "## Interpretation",
+        "",
+        interpretation,
+        "",
+        "The run cannot yet evaluate physical resolvability because active source surfaces remain unbound in the experimental registry.",
+    ]
+    if source_findings:
+        lines.extend(["", "## Active Source Binding Findings", ""])
+        for row in source_findings:
+            lines.append(f"- {row['object_id']} -> {row['source_alias']}: {row['finding']} (binding_status={row['binding_status']})")
+    lines.extend([
+        "",
+        "## Next Action",
+        "",
+        "Bind the 10 unique active source aliases to governed experimental physical candidate roots, then rerun the probe in `binding_and_schema_check_only` mode.",
+        "",
+        "Do not enable data reads or materialization from this artifact.",
+    ])
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Experimental State Builder probe")
+    parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
+    parser.add_argument("--output-root", type=Path, default=DEFAULT_RUN_ROOT)
+    parser.add_argument("--run-id")
+    parser.add_argument("--sample-ticker", action="append", dest="sample_tickers")
+    parser.add_argument("--sample-decision-timestamp", action="append", dest="sample_decision_timestamps")
+    parser.add_argument("--emit-dry-run-rows", action="store_true")
+    parser.add_argument("--check-physical-paths", action="store_true")
+    parser.add_argument("--allow-data-read", action="store_true", help="Reserved for later probe versions; v0.2 rejects data reads.")
+    return parser.parse_args()
+
+
+def main() -> int:
+    args = parse_args()
+    if args.allow_data_read:
+        raise ProbeError("v0.2 refuses data reads")
+
+    config_path = args.config.resolve()
+    config = read_json(config_path)
+    validate_config(config)
+    registry_doc, registry_path, registry_sha256 = load_binding_registry(config, config_path)
+    run_id = args.run_id or f"{SCRIPT_VERSION}_{safe_timestamp()}"
+    run_dir = ensure_output_dir(args.output_root, run_id)
+
+    pre_manifest = {
+        "run_id": run_id,
+        "status": "starting",
+        "created_at_utc": utc_now(),
+        "script_path": str(SCRIPT_PATH),
+        "script_version": SCRIPT_VERSION,
+        "probe_id": PROBE_ID,
+        "script_sha256": sha256_file(SCRIPT_PATH),
+        "command_line": " ".join(sys.argv),
+        "cwd": os.getcwd(),
+        "host": platform.node(),
+        "user": os.environ.get("USERNAME") or os.environ.get("USER"),
+        "parent_pid": os.getppid(),
+        "pid": os.getpid(),
+        "mode": config["mode"],
+        "dry_run": True,
+        "allow_data_read": False,
+        "config_path": str(config_path),
+        "config_sha256": sha256_file(config_path),
+        "source_binding_registry_path": str(registry_path) if registry_path else None,
+        "source_binding_registry_sha256": registry_sha256,
+        "source_binding_registry_id": registry_doc.get("registry_id"),
+        "output_root": str(args.output_root.resolve()),
+        "run_dir": str(run_dir),
+        "expected_scope": "12 objects, binding/schema metadata probe only",
+        "overwrite_policy": "refuse_existing_run_dir",
+        **git_info(),
+    }
+    write_json(run_dir / "pre_manifest.json", pre_manifest)
+    write_json(run_dir / "heartbeat.json", {
+        "run_id": run_id,
+        "status": "running",
+        "updated_at_utc": utc_now(),
+        "current_step": "binding_and_schema_contract_check",
+    })
+
+    pass_fail, source_rows, blocked_rows, lineage_rows = check_objects(config, registry_doc, check_physical_paths=args.check_physical_paths)
+    write_csv(run_dir / "pass_fail_matrix.csv", pass_fail, ["object_id", "gate", "status", "severity", "finding", "evidence"])
+    write_csv(run_dir / "source_availability_report.csv", source_rows, [
+        "object_id",
+        "source_alias",
+        "role",
+        "binding_status",
+        "governance_status",
+        "physical_candidate_root",
+        "dataset_format",
+        "expected_grain",
+        "expected_primary_keys",
+        "temporal_fields",
+        "minimum_required_columns",
+        "path_root_status",
+        "path_check_status",
+        "schema_probe_authorized",
+        "read_authorized",
+        "severity",
+        "finding",
+    ])
+    write_csv(run_dir / "blocked_capability_report.csv", blocked_rows, ["object_id", "capability", "status", "severity"])
+    write_json(run_dir / "lineage_report.json", lineage_rows)
+
+    sample_tickers = args.sample_tickers or config.get("sample_tickers", [])
+    sample_decision_timestamps = args.sample_decision_timestamps or config.get("sample_decision_timestamps", [])
+    dry_rows = 0
+    if args.emit_dry_run_rows:
+        dry_rows = write_dry_rows(run_dir / "dry_run_resolution_snapshots.jsonl", config, sample_tickers, sample_decision_timestamps)
+
+    summary = summarize(config, registry_doc, pass_fail, source_rows, blocked_rows)
+    write_findings(run_dir / "experimental_findings.md", run_id=run_id, summary=summary, source_rows=source_rows)
+    artifacts = {
+        "pre_manifest": str(run_dir / "pre_manifest.json"),
+        "heartbeat": str(run_dir / "heartbeat.json"),
+        "pass_fail_matrix": str(run_dir / "pass_fail_matrix.csv"),
+        "source_availability_report": str(run_dir / "source_availability_report.csv"),
+        "blocked_capability_report": str(run_dir / "blocked_capability_report.csv"),
+        "lineage_report": str(run_dir / "lineage_report.json"),
+        "experimental_findings": str(run_dir / "experimental_findings.md"),
+        "final_manifest": str(run_dir / "final_manifest.json"),
+    }
+    if args.emit_dry_run_rows:
+        artifacts["dry_run_resolution_snapshots"] = str(run_dir / "dry_run_resolution_snapshots.jsonl")
+    final_manifest = {
+        **pre_manifest,
+        "status": "complete",
+        "completed_at_utc": utc_now(),
+        "overall_status": summary["overall_status"],
+        "objects_checked": len(config["objects"]),
+        "source_rows": len(source_rows),
+        "pass_fail_rows": len(pass_fail),
+        "blocked_capability_rows": len(blocked_rows),
+        "dry_run_resolution_snapshots": dry_rows,
+        "official_output_allowed": False,
+        "official_output_materialized": False,
+        "state_consumption_authorized": False,
+        "physical_materialization_authorized": False,
+        "dataset_promotion_authorized": False,
+        "artifacts": artifacts,
+        **summary,
+    }
+    write_json(run_dir / "final_manifest.json", final_manifest)
+    write_json(run_dir / "heartbeat.json", {
+        "run_id": run_id,
+        "status": "complete",
+        "updated_at_utc": utc_now(),
+        "current_step": "complete",
+        "overall_status": summary["overall_status"],
+    })
+    print(json.dumps({"run_id": run_id, "run_dir": str(run_dir), **summary}, indent=2))
+    return 0 if summary["overall_status"] != "failed_contract_check" else 2
+
+
+if __name__ == "__main__":
+    try:
+        raise SystemExit(main())
+    except ProbeError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        raise SystemExit(2)
