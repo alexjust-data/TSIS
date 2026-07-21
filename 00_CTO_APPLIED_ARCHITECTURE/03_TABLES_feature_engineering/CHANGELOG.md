@@ -1,4 +1,4 @@
-﻿# 03_TABLES_feature_engineering Changelog
+# 03_TABLES_feature_engineering Changelog
 
 This changelog records table-specific semantic and operational changes inside:
 
@@ -18,6 +18,367 @@ and important dependency decisions.
 
 ---
 
+## 2026-07-21 | phase b | experimental state builder probe scaffolded and smoked
+
+- Added `05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/` with config, script, run root and smoke readout.
+- Executed smoke run `experimental_state_builder_probe_v0_1_20260721T091253Z` in `contract_check_only` mode: 12 objects checked, 48 dry-run resolution snapshots, 0 failures, 21 source-binding warnings, 1 expected block and 0 blocked-capability leaks.
+- Recorded the first engineering finding: source aliases need governed experimental physical bindings before physical path/schema checks.
+- Boundary preserved: no production builder, State consumption, schema change, physical materialization, dataset promotion or Market State Integration was authorized.
+## 2026-07-21 | phase b | builder validation v1 designs completed
+
+- Completed Builder Validation design coverage for all 12 `TSIS Market Ontology v1` Information Objects.
+- Added `liquidity_builder_validation_v0_1.md`, `market_microstructure_state_builder_validation_v0_1.md`, `order_flow_pressure_builder_validation_v0_1.md`, `news_catalyst_context_builder_validation_v0_1.md`, `fundamental_context_builder_validation_v0_1.md`, `short_side_context_builder_validation_v0_1.md`, `broad_market_context_builder_validation_v0_1.md` and `halt_context_builder_validation_v0_1.md`.
+- Recorded `Order Flow Pressure` as blocked pending trade-quote alignment, side classifier and classifier confidence policy.
+- Added `05_STATE_BUILDER_VALIDATION/experimental_state_builder_boundary_v0_1.md` so the next executable is a non-production experimental builder.
+- Boundary preserved: no production builder, State consumption, schema change, physical materialization, dataset promotion or Market State Integration was authorized.
+
+## 2026-07-21 | phase b | builder validation first batch added
+
+- Added Builder Validation design artifacts for `Price Movement`, `Price Location / Structure` and `Volatility / Range State`.
+- Added `05_STATE_BUILDER_VALIDATION/trading_activity_builder_validation_phase_b_ratification_v0_1.md` and aligned the original `Trading Activity` pilot with Phase B.
+- Updated `05_STATE_BUILDER_VALIDATION/README.md` and `AGENT.md` to record the first Builder Validation batch as `design_ready_pending_execution`.
+- Boundary preserved: no production builder, State consumption, schema change, physical materialization, dataset promotion or Market State Integration was authorized.
+
+## 2026-07-21 | phase b | operational mapping v1 batch completed
+
+- Completed governed Operational Mapping coverage for all 12 admitted Information Objects in `TSIS Market Ontology v1`.
+- Added `volatility_range_state_operational_mapping_v0_1.md`, `liquidity_operational_mapping_v0_1.md`, `market_microstructure_state_operational_mapping_v0_1.md`, `order_flow_pressure_operational_mapping_v0_1.md`, `news_catalyst_context_operational_mapping_v0_1.md`, `fundamental_context_operational_mapping_v0_1.md`, `short_side_context_operational_mapping_v0_1.md`, `broad_market_context_operational_mapping_v0_1.md`, `halt_context_operational_mapping_v0_1.md`, and `trading_activity_operational_mapping_phase_b_ratification_v0_1.md`.
+- Updated `04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/README.md` and `AGENT.md` to mark Operational Mapping complete for v1 and set `Builder Validation` as the next gate.
+- Aligned `trading_activity_operational_mapping_v0_1.md` with its Phase B ratification so the pilot no longer carries a stale deferred-phase boundary.
+- Preserved gates: `Order Flow Pressure` remains State-blocked until trade-quote alignment, side classifier and confidence policy are governed; advanced liquidity, VWAP, float PIT, borrow/locate, macro and model-derived context remain behind their declared policies.
+- Boundary preserved: no production builder, State consumption, schema change, physical materialization or dataset promotion was authorized.
+
+## 2026-07-21 | phase b | price location structure operational mapping added
+
+- Added `04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/price_location_structure_operational_mapping_v0_1.md`.
+- Mapped the minimum `Price Location / Structure` profile to `session_anchor_location_model` and `prior_close_location_model`, with prior/after-close daily structure as context only.
+- Kept VWAP distance, HOD/LOD distance, session range position, anchored VWAP and pullback/retrace behind explicit policy, formula or boundary gates.
+- Updated `04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/README.md` and `AGENT.md` so the next recommended Operational Mapping object is `Volatility / Range State`.
+- Boundary preserved: no production builder, State consumption, schema change, physical materialization or dataset promotion was authorized.
+
+## 2026-07-21 | phase b | price movement operational mapping added
+
+- Added `04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/price_movement_operational_mapping_v0_1.md`.
+- Started Phase B with a governed Operational Mapping for `Price Movement`, using `intraday_return_to_reference_model`, `opening_gap_movement_model` and prior/after-close daily movement as the first core profile.
+- Kept `intraday__bar_return`, speed, acceleration, momentum and reversal/fade behind explicit capability, variant or boundary gates.
+- Updated `04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/README.md` and `AGENT.md` so the next recommended Operational Mapping object is `Price Location / Structure`.
+- Boundary preserved: no production builder, State consumption, schema change, physical materialization or dataset promotion was authorized.
+
+## 2026-07-21 | information objects | market ontology v1 freeze act added
+
+- Added `03_INFORMATION_OBJECTS/TSIS_MARKET_ONTOLOGY_V1_FREEZE.md` as the institutional freeze act for `TSIS Market Ontology v1`.
+- Closed Phase A with `ontology_status = FROZEN`, `ontology_lock_status = LOCKED`, `phase_a_status = CLOSED` and `phase_b_status = OPEN`.
+- Authorized Phase B to start as governed engineering through Operational Mapping, followed by Builder Validation, Market State Integration, Event State Integration and Operational Promotion.
+- Preserved hard boundaries: no production builder, State consumption, physical variables as state authority, schema/materialization or dataset promotion is authorized by the freeze alone.
+- Updated `AGENT.md` so the local handoff points to the frozen ontology and Phase B Operational Mapping as the next active work.
+- Aligned `README.md`, `03_INFORMATION_OBJECTS/README.md`, `04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/README.md`, `05_STATE_BUILDER_VALIDATION/README.md` and `06_MARKET_STATE_INTEGRATION/README.md` with the frozen ontology and Phase B gate sequence.
+## 2026-07-21 | information objects | cross-object ontology review added
+
+- Added `03_INFORMATION_OBJECTS/TSIS_MARKET_ONTOLOGY_V1_REVIEW.md`.
+- Reviewed coverage, redundancies, gaps, boundaries, shared evidence, minimal semantic identities and critical pending concepts across all 12 admitted Information Objects.
+- Decision: `passes_with_restrictions`; no Object requires merge/split before freeze and no new Information Object blocks v1 freeze.
+- Updated `AGENT.md` so the next step is `TSIS Market Ontology v1 Freeze`.
+- Boundary unchanged: no README, methodology, Operational Mapping, Builder Validation, Market State Integration, production builder work, schema change or physical variable was authorized.
+
+## 2026-07-21 | information objects | remaining formal admissions completed
+
+- Added Formal Admission artifacts for the 9 remaining main Information Objects: `volatility_range_state`, `liquidity`, `market_microstructure_state`, `order_flow_pressure`, `news_catalyst_context`, `fundamental_context`, `short_side_context`, `broad_market_context` and `halt_context`.
+- Kept `Order Flow Pressure` operationally blocked for State until trade-quote alignment, side classifier and confidence policy are governed.
+- Preserved Phase A boundary across all admissions: ontology authority only; Phase B engineering remains deferred.
+- Updated `03_TABLES_feature_engineering/AGENT.md` so the handoff points to Cross-Object Ontology Review after completing all 12 Formal Admissions.
+- Boundary unchanged: no README, methodology, Operational Mapping, Builder Validation, Market State Integration, production builder work, schema change or physical variable was authorized.
+
+## 2026-07-21 | price location structure | formal admission added
+
+- Added `03_INFORMATION_OBJECTS/ACCEPTED_WITH_RESTRICTIONS/price_location_structure_formal_admission_v0_1.md`.
+- Accepted `Price Location / Structure` as an Information Object with high-confidence scientific identity and restricted operational readiness.
+- Kept VWAP policy, HOD/LOD observed-only handling, range-position formula and pullback/retrace boundary decisions as restrictions for future review or Phase B mapping.
+- Boundary unchanged: no Operational Mapping, Builder Validation, Market State Integration, production builder work, schema change or physical variable was authorized.
+
+## 2026-07-21 | agent handoff | ontology phase continuation prompt added
+
+- Added `AGENT.md` with the exact local reading path for agents entering `03_TABLES_feature_engineering`.
+- Recorded current status: `Trading Activity` and `Price Movement` are formally admitted with restrictions; 10 Formal Admissions remain before Cross-Object Ontology Review.
+- Recorded the expected path to `TSIS_MARKET_ONTOLOGY_V1_REVIEW.md` and the freeze criteria for `TSIS Market Ontology v1`.
+- Boundary unchanged: no README, methodology, Operational Mapping, Builder Validation, Market State Integration or production builder work was changed.
+
+## 2026-07-21 | price movement | formal admission added
+
+- Added `03_INFORMATION_OBJECTS/ACCEPTED_WITH_RESTRICTIONS/price_movement_formal_admission_v0_1.md`.
+- Accepted `Price Movement` as an Information Object with high-confidence scientific identity and restricted operational readiness.
+- Kept Momentum as `representation_model_or_subobject_pending` and kept `intraday__bar_return` pending capability decision.
+- Boundary unchanged: no Operational Mapping, Builder Validation, Market State Integration, production builder work, schema change or physical variable was authorized.
+
+## 2026-07-21 | information objects | phase a/b readme boundary corrected
+
+- Replaced the stale `trabajo activo pasa a validacion vertical` wording in `03_INFORMATION_OBJECTS/README.md`.
+- Clarified that the active phase is Object Admission Review -> Formal Admission -> Cross-Object Ontology Review -> `TSIS Market Ontology v1 Freeze`.
+- Clarified in `README.md` that lifecycle steps 8-12 are Phase B and remain deferred until ontology freeze.
+- Boundary unchanged: no Operational Mapping expansion, Builder Validation expansion, Market State Integration expansion or production builder work was authorized.
+
+## 2026-07-20 | information objects | ontology phase gate activated
+
+- Added `03_INFORMATION_OBJECTS/04_TSIS_MARKET_ONTOLOGY_PHASE_v0_1.md`.
+- Added phase-boundary README files for `04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/`, `05_STATE_BUILDER_VALIDATION/` and `06_MARKET_STATE_INTEGRATION/`.
+- Marked Phase A as active: complete Formal Admission for all main Information Objects before expanding Phase B engineering.
+- Updated feature-engineering `README.md` and `03_INFORMATION_OBJECTS/README.md` with the no-production-builder gate; the detailed rule lives in `03_INFORMATION_OBJECTS/04_TSIS_MARKET_ONTOLOGY_PHASE_v0_1.md`.
+- Boundary unchanged: `Trading Activity` remains a pilot vertical; no operational consumption, schema, builder, dataset or materialization was authorized.
+
+## 2026-07-20 | trading activity | formal admission vertical added
+
+- Added `03_INFORMATION_OBJECTS/ACCEPTED_WITH_RESTRICTIONS/trading_activity_formal_admission_v0_1.md`.
+- Added `04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/trading_activity_operational_mapping_v0_1.md`.
+- Added `05_STATE_BUILDER_VALIDATION/trading_activity_builder_validation_v0_1.md`.
+- Added `06_MARKET_STATE_INTEGRATION/trading_activity_market_state_integration_v0_1.md`.
+- Accepted scientific identity for `Trading Activity` while keeping operational readiness restricted pending builder validation and operational contract promotion.
+- Updated `README.md` and `03_INFORMATION_OBJECTS/README.md` to reflect the new post-review vertical flow.
+- Boundary unchanged: no State variable, schema, builder, contract, dataset or physical materialization was authorized.
+
+
+## 2026-07-20 | information objects | domain-to-candidate-object status correction
+
+- Reclassified the 12 domain outputs from accepted-with-restrictions object artifacts to candidate object definitions under `03_INFORMATION_OBJECTS/CANDIDATES/`.
+- Replaced active landscape decision wording from `ready_for_object_admission` to `ready_to_define_candidate_object`.
+- Clarified that the active scientific unit of work is the Domain; formal Information Object admission has not started for this batch.
+- Updated `03_INFORMATION_OBJECTS/README.md` so active paths point to `CANDIDATES/` and not to `ACCEPTED_WITH_RESTRICTIONS/`.
+- Boundary unchanged: no State variable was authorized, no physical variable was authorized, and no schema, builder, contract or dataset promotion changed.`r`n`r`n## 2026-07-20 | information objects | remaining context domains accepted with restrictions
+
+- Created domain, landscape and accepted-with-restrictions artifacts for `News / Catalyst Context`, `Fundamental Context`, `Short-Side Context`, `Broad Market Context` and `Halt Context`.
+- Classified `Event Window Context` as infrastructure context, not an ordinary market Information Object.
+- Kept all context objects under as-of, lag, source and model restrictions.
+- Boundary unchanged: no variable was authorized for State, no schema, builder, contract or dataset promotion changed.
+
+## 2026-07-20 | information objects | microstructure and order flow accepted with restrictions
+
+- Created `03_INFORMATION_OBJECTS/DOMAIN_DEFINITIONS/market_microstructure_state_domain_definition_v0_1.md`.
+- Created `03_INFORMATION_OBJECTS/DOMAIN_DEFINITIONS/market_microstructure_state_representation_landscape_v0_1.md`.
+- Created `03_INFORMATION_OBJECTS/ACCEPTED_WITH_RESTRICTIONS/market_microstructure_state_information_object_v0_1.md`.
+- Created `03_INFORMATION_OBJECTS/DOMAIN_DEFINITIONS/order_flow_pressure_domain_definition_v0_1.md`.
+- Created `03_INFORMATION_OBJECTS/DOMAIN_DEFINITIONS/order_flow_pressure_representation_landscape_v0_1.md`.
+- Created `03_INFORMATION_OBJECTS/ACCEPTED_WITH_RESTRICTIONS/order_flow_pressure_information_object_v0_1.md`.
+- Accepted `Market Microstructure State` with restrictions as observable top-of-book/tape condition context.
+- Accepted `Order Flow Pressure` with restrictions, blocked for State consumption until trade-quote alignment and side-classifier governance exist.
+- Boundary unchanged: no variable was authorized for State, no schema, builder, contract or dataset promotion changed.
+
+## 2026-07-20 | information objects | liquidity accepted with restrictions
+
+- Created `03_INFORMATION_OBJECTS/DOMAIN_DEFINITIONS/liquidity_domain_definition_v0_1.md`.
+- Created `03_INFORMATION_OBJECTS/DOMAIN_DEFINITIONS/liquidity_representation_landscape_v0_1.md`.
+- Created `03_INFORMATION_OBJECTS/ACCEPTED_WITH_RESTRICTIONS/liquidity_information_object_v0_1.md`.
+- Accepted `Liquidity` with restrictions as the Information Object preserving observable cost, ease and availability of trading.
+- Kept Trading Activity, Market Microstructure, Order Flow, Execution Outcomes and future realized spread outside the admitted core.
+- Boundary unchanged: no variable was authorized for State, no schema, builder, contract or dataset promotion changed.
+
+## 2026-07-20 | information objects | volatility range state accepted with restrictions
+
+- Created `03_INFORMATION_OBJECTS/DOMAIN_DEFINITIONS/volatility_range_state_domain_definition_v0_1.md`.
+- Created `03_INFORMATION_OBJECTS/DOMAIN_DEFINITIONS/volatility_range_state_representation_landscape_v0_1.md`.
+- Created `03_INFORMATION_OBJECTS/ACCEPTED_WITH_RESTRICTIONS/volatility_range_state_information_object_v0_1.md`.
+- Accepted `Volatility / Range State` with restrictions as the Information Object preserving observable amplitude, dispersion and uncertainty.
+- Kept Price Movement, Price Location, Activity, Liquidity and Outcomes outside the admitted object.
+- Boundary unchanged: no variable was authorized for State, no schema, builder, contract or dataset promotion changed.
+
+## 2026-07-20 | information objects | price location structure accepted with restrictions
+
+- Created `03_INFORMATION_OBJECTS/DOMAIN_DEFINITIONS/price_location_structure_domain_definition_v0_1.md`.
+- Created `03_INFORMATION_OBJECTS/DOMAIN_DEFINITIONS/price_location_structure_representation_landscape_v0_1.md`.
+- Created `03_INFORMATION_OBJECTS/ACCEPTED_WITH_RESTRICTIONS/price_location_structure_information_object_v0_1.md`.
+- Accepted `Price Location / Structure` with restrictions as the Information Object preserving contextual price location against legal references in t.
+- Kept Price Movement, Volatility/Range, Activity, Liquidity, Outcomes and Quality outside the admitted object.
+- Boundary unchanged: no variable was authorized for State, no schema, builder, contract or dataset promotion changed.
+
+## 2026-07-20 | information objects | price movement accepted with restrictions
+
+- Created `03_INFORMATION_OBJECTS/ACCEPTED_WITH_RESTRICTIONS/price_movement_information_object_v0_1.md`.
+- Accepted `Price Movement` as an Information Object with restrictions after Domain Definition and Representation Landscape review.
+- Required operational mapping before any State consumption or physical variable authorization.
+- Kept Price Location, Volatility/Range and future Outcome Response outside the admitted object.
+- Noted that `intraday__bar_return` may require an explicit atomic derivable capability before mapping.
+- Boundary unchanged: no variable was authorized for State, no schema, builder, contract or dataset promotion changed.
+
+## 2026-07-20 | information objects | price movement representation landscape v0_1
+
+- Created `03_INFORMATION_OBJECTS/DOMAIN_DEFINITIONS/price_movement_representation_landscape_v0_1.md`.
+- Reviewed daily, intraday, opening gap, speed, acceleration, momentum and reversal/fade representation models before formal Object admission.
+- Kept `Price Movement` as the only candidate to forward by default.
+- Kept `Price Location / Structure`, `Volatility / Range State` and `Outcome Response` outside the domain.
+- Marked `Price Movement` as `ready_for_object_admission`.
+- Boundary unchanged: no Object was admitted, no representation model was selected, no variable was authorized for State, and no schema, builder, contract or dataset promotion changed.
+
+## 2026-07-20 | domain definitions | price movement domain v0_1 created
+
+- Created `03_INFORMATION_OBJECTS/DOMAIN_DEFINITIONS/price_movement_domain_definition_v0_1.md`.
+- Defined `Price Movement` as the domain preserving observable price change, direction, speed and acceleration under legal temporal references.
+- Separated `Price Movement` from `Price Location / Structure`, `Volatility / Range State`, `Trading Activity`, `Liquidity`, `Order Flow Pressure`, `Quality` and `Outcome` layers.
+- Marked `Momentum`, `Opening Gap Movement`, `Speed` and `Acceleration` as model/subobject questions for the upcoming Representation Landscape, not admitted Objects.
+- Boundary unchanged: no Object was admitted, no representation model was selected, no variable was authorized for State, and no schema, builder, contract or dataset promotion changed.
+
+## 2026-07-20 | information objects | trading activity accepted with restrictions
+
+- Created `03_INFORMATION_OBJECTS/ACCEPTED_WITH_RESTRICTIONS/trading_activity_information_object_v0_1.md`.
+- Accepted `Trading Activity` as an Information Object with restrictions after Domain Definition and Representation Landscape review.
+- Required operational mapping before any State consumption or physical variable authorization.
+- Kept scanner selection, signed/aggressor flow, short activity and true float turnover outside the admitted core until their own reviews or sources exist.
+- Boundary unchanged: no variable was authorized for State, no schema, builder, contract or dataset promotion changed.
+
+## 2026-07-20 | information objects | trading activity representation landscape v0_1
+
+- Created `03_INFORMATION_OBJECTS/DOMAIN_DEFINITIONS/trading_activity_representation_landscape_v0_1.md`.
+- Reviewed the scientific representation models for `Trading Activity` before formal Object admission.
+- Classified daily, intraday, relative, trade-window and scanner-adjacent models without admitting them as separate Objects by default.
+- Moved `Short Activity` toward `Short-Side Context`, and signed/aggressor measures toward `Order Flow Pressure`.
+- Marked `Trading Activity` as `ready_for_object_admission`.
+- Boundary unchanged: no Object was admitted, no representation model was selected, no variable was authorized for State, and no schema, builder, contract or dataset promotion changed.
+
+## 2026-07-20 | domain definitions | trading activity scientific review applied
+
+- Renamed the first domain file from `trading_activity_and_participation_domain_definition_v0_1.md` to `trading_activity_domain_definition_v0_1.md`.
+- Canonicalized the domain name as `Trading Activity`; participation is treated as the semantic property preserved by the domain, not a separate domain name.
+- Removed scanner-quality wording from the domain definition and kept scanner material as selection-surface-adjacent.
+- Added an anti-duplication rule: changes in baseline, normalization, window, parameterization or temporal resolution do not automatically create a new Information Object.
+- Split derivable capabilities into indispensable, complementary and boundary/fronteriza groups for later Market State profile work.
+- Added the semantic meaning principle to `03_INFORMATION_OBJECTS/README.md`: variable meaning belongs to Domain -> Object -> Representation Model -> legal use, not to the variable alone.
+- Boundary unchanged: no Object was admitted, no representation model was selected, no variable was authorized for State, and no schema, builder, contract or dataset promotion changed.
+
+## 2026-07-20 | domain definitions | trading activity domain v0_1 created
+
+- Created `03_INFORMATION_OBJECTS/DOMAIN_DEFINITIONS/trading_activity_domain_definition_v0_1.md`.
+- Created active `03_INFORMATION_OBJECTS/DOMAIN_DEFINITIONS/` folder for real domain definitions and representation landscapes before Object admission.
+- Defined `Trading Activity` as the domain preserving intensity of negotiated participation across declared temporal scales.
+- Marked `Daily Trading Activity` and `Intraday Trading Activity` as temporal/model specializations, not separate Objects by default.
+- Kept `Attention Activity Candidate` as selection-surface-adjacent and not admitted.
+- Updated `03_INFORMATION_OBJECTS/02_DOMAIN_DEFINITION_TEMPLATE_v0_1.md` to allow `ready_for_representation_landscape`.
+- Updated `03_INFORMATION_OBJECTS/README.md` with the `DOMAIN_DEFINITIONS/` folder role.
+- Boundary unchanged: no Object was admitted, no representation model was selected, no variable was authorized for State, and no schema, builder, contract or dataset promotion changed.
+
+## 2026-07-20 | information objects | representation landscape gate added
+
+- Added `03_INFORMATION_OBJECTS/03_REPRESENTATION_LANDSCAPE_TEMPLATE_v0_1.md`.
+- Strengthened `03_INFORMATION_OBJECTS/02_DOMAIN_DEFINITION_TEMPLATE_v0_1.md` with two mandatory questions: why the domain deserves to exist, and what TSIS would lose if it disappeared.
+- Updated `03_INFORMATION_OBJECTS/01_SEMANTIC_DOMAIN_CONSOLIDATION_v0_1.md` so the flow is: Semantic Domain Consolidation -> Domain Definition -> Representation Landscape -> Object Admission.
+- Updated `03_INFORMATION_OBJECTS/README.md` with the new order before opening `CANDIDATES/` dossiers.
+- Boundary unchanged: no Object was admitted, no representation model was selected, no variable was authorized for State, and no schema, builder, contract or dataset promotion changed.
+
+## 2026-07-20 | information objects | domain definition gate added
+
+- Created `03_INFORMATION_OBJECTS/02_DOMAIN_DEFINITION_TEMPLATE_v0_1.md`.
+- Inserted a lightweight `Domain Definition` step between `Semantic Domain Consolidation` and formal `Object Admission`.
+- Renamed the nature bucket from `Observable Market Knowledge` to `Market Information Domains` to avoid overloading `Knowledge`, which is reserved for validated scientific knowledge in TSIS.
+- Updated `03_INFORMATION_OBJECTS/01_SEMANTIC_DOMAIN_CONSOLIDATION_v0_1.md` so the next step is `domain_definition_cluster_1_trading_activity`.
+- Updated `03_INFORMATION_OBJECTS/README.md` with the active order: candidate matrix -> semantic consolidation -> domain definition -> candidate dossiers.
+- Boundary unchanged: no Object was admitted, no variable was authorized for State, and no schema, builder, contract or dataset promotion changed.
+
+## 2026-07-20 | information objects | semantic domain consolidation added
+
+- Created `03_INFORMATION_OBJECTS/01_SEMANTIC_DOMAIN_CONSOLIDATION_v0_1.md`.
+- Inserted a pre-admission consolidation phase between the candidate matrix and formal Information Object dossiers.
+- Classified candidates by nature: infrastructure, quality/governance, Market Information Domains, canonical core representations, outcome layer and selection surfaces.
+- Split the broad price area into provisional clusters: `Price Movement`, `Price Location / Structure`, and `Volatility / Range State`.
+- Updated `03_INFORMATION_OBJECTS/00_INFORMATION_OBJECT_CANDIDATE_MATRIX_v0_1.md` so the next step is `semantic_domain_consolidation`, not direct Object admission.
+- Updated `03_INFORMATION_OBJECTS/README.md` with the active order: candidate matrix -> semantic domain consolidation -> candidate dossiers.
+- Boundary unchanged: no Object was admitted, no variable was authorized for State, and no schema, builder, contract or dataset promotion changed.
+
+## 2026-07-20 | information objects | candidate normalization matrix v0_1
+
+- Created `03_INFORMATION_OBJECTS/00_INFORMATION_OBJECT_CANDIDATE_MATRIX_v0_1.md`.
+- Consolidated candidate Information Objects discovered in the `000-018` table discovery pass before formal Object admission.
+- Classified raw candidates as provisional Information Objects, representation models, temporal specializations, context objects, infrastructure objects, quality/governance objects, canonical core representations, outcome-only artifacts or selection surfaces.
+- Clarified that `Daily Trading Activity` and `Intraday Trading Activity` are provisional temporal/model variants under `Trading Activity`, not separate Objects by default.
+- Clarified that `Market State` and `Event State` are canonical core representations, not ordinary Information Objects.
+- Boundary unchanged: no Object was admitted, no variable was authorized for State, and no schema, builder, contract or dataset promotion changed.
+
+
+## 2026-07-20 | table_representation_review | pass_01 discovery 000-018
+
+- Created `02_TABLE_REPRESENTATION_REVIEW/00_DISCOVERY_PASS_000_018_v0_1.md` as the first transversal discovery matrix for tables 000-018.
+- Created normalized `table_representation_audit_ES.md` files in each table folder from `000` through `018`.
+- Scope is discovery only: no Information Object admission, no schema/builder changes, no dataset promotion.
+
+## 2026-07-20 | event state | consumption_legality separated from state_role
+
+- Clarified that `state_role` is not sufficient to authorize Event State consumption.
+- Added `consumption_legality` values: `decision_safe`, `research_only`, `outcome_adjacent`, `prohibited_as_input`.
+- Updated feature-engineering README/explainer, table-review local rules/templates, `017` review and handoff copies.
+- Boundary unchanged: no Event State table, builder, promotion or downstream consumption authorization changed.
+- Regenerated `TABLE_REPRESENTATION_REVIEW_HANDOFF_000_018_v0_1_20260720.zip`.
+- New handoff ZIP SHA256: `95DC0EE26DFE73E3E62B7EA446EF7A010892B0E1E14A4B37CD245F70BE0806C5`.
+
+
+## 2026-07-20 | market state | anti mega-table profile rule added
+
+- Clarified that canonical Market State does not mean one physical row/table containing every attribute any consumer may want.
+- Defined canonicality as common state semantics, stable `market_state_id`, temporal legality rules and compatible physical representation profiles.
+- Added conceptual profile pattern: `market_state_core`, `market_state_daily_context`, `market_state_intraday`, `market_state_microstructure_extension`, and `market_state_news_extension`.
+- Updated local rules, templates, `016` table review, handoff context copies and feature-engineering README/explainer.
+- Boundary unchanged: no schema, builder, dataset promotion or downstream consumption authorization changed.
+- Regenerated `TABLE_REPRESENTATION_REVIEW_HANDOFF_000_018_v0_1_20260720.zip`.
+- New handoff ZIP SHA256: `1C7E26C887343DD6C762AE37D087E3D29D786548C9A44A35CD37CC8D461457F0`.
+
+
+## 2026-07-20 | information objects | taxonomy axes separated
+
+- Clarified that `Information Object Family` is a semantic axis only.
+- Separated four axes that must not share a generic `family` field: `information_object_family`, `source_domain`, `temporal_resolution`, and `institutional_role`.
+- Added starting values for each axis in `README.md`, `01_INFORMATION_OBJECT_ADMISSION_PROCESS.md`, table-review `LOCAL_RULES.md`, `TABLE_REPRESENTATION_REVIEW_TEMPLATE.md`, `OBJECT_CANDIDATES_TEMPLATE.md`, handoff context copies and `03_INFORMATION_OBJECTS/README.md`.
+- Clarified that legacy uses such as `Feature Family`, `dataset_family`, `event_family`, `quality family` or `outcome_family` are not interchangeable with Information Object Family.
+- Boundary unchanged: no Information Object was admitted and no table/state consumption authorization changed.
+- Regenerated `TABLE_REPRESENTATION_REVIEW_HANDOFF_000_018_v0_1_20260720.zip`.
+- New handoff ZIP SHA256: `A8CF8EAF5728A5C17AC09109E120DA4AE84EC36F0C03E3309BCC2F592383F7BE`.
+
+## 2026-07-20 | information objects | definition separated from representation model
+
+- Replaced the ambiguous definition of `Information Object` as a representation of a market property.
+- Canonical local definition is now: an Information Object is a semantic unit of information TSIS decides to preserve about one or more observable phenomena, independent of its Representation Model and physical implementation.
+- Clarified the separation:
+  - `Liquidity` = Information Object.
+  - trading cost + depth + availability = Representation Model.
+  - `spread_bps` + `depth` + `quote_count` = Physical Implementation.
+- Updated `01_INFORMATION_OBJECT_ADMISSION_PROCESS.md`, `00_TABLES_MARKET_STATE_EVENT_STATE.md`, `README.md`, table-review `LOCAL_RULES.md`, `OBJECT_CANDIDATES_TEMPLATE.md`, handoff context copies and `03_INFORMATION_OBJECTS/README.md`.
+- Regenerated `TABLE_REPRESENTATION_REVIEW_HANDOFF_000_018_v0_1_20260720.zip`.
+- New handoff ZIP SHA256: `E093B09524419B399B7952D8F59EA167E8B58830B8D41C521BC630D554910B4F`.
+- Boundary unchanged: no Object was admitted and no table/state consumption was authorized.
+
+## 2026-07-20 | information objects | Discovery vs Admission boundary formalized
+
+- Added explicit distinction between `Object Discovery Process` and `Object Admission Process`.
+- Clarified that table reviews, derivable capabilities and existing variables may discover candidate Information Objects but cannot admit them.
+- Clarified that formal admission must reconstruct the scientific direction: phenomenon/scientific need -> Information Object -> Representation Model -> implementation candidates -> temporal legality -> decision.
+- Updated `README.md`, `01_INFORMATION_OBJECT_ADMISSION_PROCESS.md`, `02_TABLE_REPRESENTATION_REVIEW/LOCAL_RULES.md` and `OBJECT_CANDIDATES_TEMPLATE.md`.
+- Replaced the unsafe variable wording with explicit states: `candidate_variable`, `admitted_variable`, and `state_eligible_variable`.
+- Updated handoff context copies and regenerated `TABLE_REPRESENTATION_REVIEW_HANDOFF_000_018_v0_1_20260720.zip`.
+- New handoff ZIP SHA256: `50ECEBA8A389DC6EF701AA69A53083C85A144ABB8C0B5CAC9467D90888690B9F`.
+
+## 2026-07-20 | table review | Information Objects path corrected
+
+- Replaced stale Information Objects path references with active `03_INFORMATION_OBJECTS` references in table-review local rules and object-candidate templates.
+- Updated handoff context copies so external agents create candidate Object files under the correct active folder.
+- Boundary unchanged: this is a path-authority correction only; no Object admission decision changed.
+- Regenerated `TABLE_REPRESENTATION_REVIEW_HANDOFF_000_018_v0_1_20260720.zip` after the path correction.
+- New handoff ZIP SHA256: `CEBD3A545B21DB9F0C032AC260FA353F39F46F0725F938B8AAE565915E8451CD`.
+
+## 2026-07-20 | table review | canonical 013-018 DAG fixed in LOCAL_RULES
+
+- Replaced the stale linear 013-018 dependency chain in `02_TABLE_REPRESENTATION_REVIEW/LOCAL_RULES.md`.
+- Canonicalized `014_master_intraday_bar_table` and `015_microstructure_features_table` as sibling representation surfaces.
+- Clarified that `015` may have a full/general microstructure profile and selective event-window materialization profiles.
+- Clarified that `018_intraday_scanner_candidates_table` is optional scanner/candidate context for `016_market_state_table`, not a universal upstream prerequisite.
+- Added explicit dependency classes: `semantic_dependency`, `physical_source_dependency`, `eligibility_dependency`, and `materialization_selection_dependency`.
+- Updated the handoff `_context/LOCAL_RULES.md` copy to avoid carrying the old DAG inside the table review package folder.
+- Regenerated `TABLE_REPRESENTATION_REVIEW_HANDOFF_000_018_v0_1_20260720.zip` after the rule correction.
+- New handoff ZIP SHA256: `DC983452A93CC196416AFDC63922270C92489FEC6F1E928E99ED04F8975D3658`.
+## 2026-07-20 | table review | table representation review handoff package 000-018
+
+- Added structured external-agent handoff package under `02_TABLE_REPRESENTATION_REVIEW`:
+
+```text
+TABLE_REPRESENTATION_REVIEW_HANDOFF_000_018_v0_1_20260720/
+TABLE_REPRESENTATION_REVIEW_HANDOFF_000_018_v0_1_20260720.zip
+```
+
+- Included `000-012` table documents plus their Spanish representation audits.
+- Included `013` operational reading and `014-018` current table target documents.
+- Included `LOCAL_RULES.md`, `TABLE_REPRESENTATION_REVIEW_TEMPLATE.md`, `OBJECT_CANDIDATES_TEMPLATE.md`, manifest and README.
+- Boundary: handoff inventory only; no table status, promotion, schema, validator or downstream consumption authorization changed.
 ## 2026-07-20 | README | operational map aligned with active structure
 
 - Updated `README.md` from `readme_v0_2_current_structure` to `readme_v0_3_operational_map`.
@@ -47,7 +408,7 @@ and important dependency decisions.
   - `table_representation_audit_ES.md` for the table-level audit;
   - `object_candidates.md` as the bridge to Information Object admission.
 - Added `01_TABLE_REPRESENTATION_REVIEW\OBJECT_CANDIDATES_TEMPLATE.md`.
-- Clarified that table audits identify candidate Information Objects, but the scientific object admission must live under `02_INFORMATION_OBJECTS`.
+- Clarified that table audits identify candidate Information Objects, but the scientific object admission must live under `03_INFORMATION_OBJECTS`.
 
 ## 2026-07-20 | table review | two-level review standard added
 
@@ -383,13 +744,3 @@ C:\TSIS_Data\data\data_foundation_outputs\ohlcv_1m_quote_guarded_full_universe_v
 ```
 
 - Boundary: `v0_2_candidate` is now a validated technical candidate tree and is eligible for promotion review. It is not yet promoted.
-
-
-
-
-
-
-
-
-
-

@@ -13,6 +13,9 @@ grain:
   - decision_timestamp_utc
   - state_role
   - state_schema_version
+required_classification_columns:
+  - state_role
+  - consumption_legality
 scope:
   materialized: false
   builder_implemented: false
@@ -68,3 +71,5 @@ candidate_state:
   inherits_quotes_root_state: provisional_d_legacy_recovery_root_pending_e_parity
   requires_rebuild_after_e_quotes_parity: true
   direct_ml_rl_backtest_execution_use_allowed: false
+  consumption_legality_column: not_emitted_by_current_controlled_candidate_v0_1
+  consumption_legality_required_for_future_builds: true

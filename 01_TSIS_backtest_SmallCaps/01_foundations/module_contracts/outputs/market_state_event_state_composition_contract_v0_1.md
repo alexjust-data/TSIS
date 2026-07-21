@@ -180,6 +180,7 @@ Debe contener:
 - `event_id` / `event_window_id`;
 - decision timestamp;
 - role de estado, por ejemplo `pre_event`, `at_event`, `post_event_review`;
+- legalidad de consumo independiente mediante `consumption_legality`;
 - foreign keys hacia `market_state_table`;
 - event-window metadata legal;
 - component availability;
@@ -201,6 +202,21 @@ Puede contener una llave de join hacia labels, pero no los valores de label:
 outcome_join_key_allowed = true
 outcome_values_inline_allowed = false
 ```
+
+
+`state_role` describes the event-relative role of the row.
+`consumption_legality` independently describes whether the row may be consumed as predictive/input state.
+
+Allowed `consumption_legality` values:
+
+```text
+decision_safe
+research_only
+outcome_adjacent
+prohibited_as_input
+```
+
+A `post_event_review` row may be valid for research, diagnostics or outcome-adjacent analysis, but it must not be consumed as pre-event/at-event predictive X.
 
 ## Componentes Actuales
 
@@ -393,6 +409,7 @@ event_family
 event_timestamp_utc
 decision_timestamp_utc
 state_role
+consumption_legality
 state_schema_version
 state_builder_version
 ```
@@ -420,6 +437,7 @@ reward_columns_inline_allowed = false
 Required consumer gates:
 
 ```text
+consumption_legality
 valid_for_pattern_discovery
 valid_for_ml_feature_candidate
 valid_for_rl_state_candidate
@@ -514,7 +532,7 @@ Validation must prove:
 - no label/outcome/reward columns inside feature state;
 - manifest/tree hashes;
 - component manifest hashes;
-- row counts by state role/horizon/event family;
+- row counts by state role, consumption_legality, horizon and event family;
 - quality-state distribution;
 - consumer-gate counts;
 - deterministic recomputation for a small fixture;
@@ -525,7 +543,7 @@ Validation must prove:
 For supervised ML:
 
 ```text
-X = event_state_table / market_state_table features under legal cutoff
+X = event_state_table / market_state_table features under legal cutoff and `consumption_legality = decision_safe`
 y = outcomes_table or other label table joined separately
 ```
 

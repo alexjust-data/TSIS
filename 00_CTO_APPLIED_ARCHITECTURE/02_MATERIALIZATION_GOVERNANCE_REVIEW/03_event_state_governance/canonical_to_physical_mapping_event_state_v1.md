@@ -76,6 +76,7 @@ or downstream consumption.
   Market reference        `market_state_id`
   Temporal legality       `decision_timestamp_utc`, `state_cutoff_utc`
   State role              `state_role`
+  Consumption legality    `consumption_legality`
   Versioning              `state_schema_version`, `state_builder_version`
   Label separation        join keys allowed, inline values prohibited
   Consumer semantics      consumer gate columns
@@ -91,6 +92,7 @@ The base physical grain is:
 event_window_id
 + decision_timestamp_utc
 + state_role
++ consumption_legality
 + state_schema_version
 ```
 
@@ -120,6 +122,7 @@ independent of event family.
 -   `decision_timestamp_utc`
 -   `decision_date`
 -   `state_role`
+-   `consumption_legality`
 -   `state_schema_version`
 -   `state_builder_version`
 -   `state_quality_state`
@@ -202,6 +205,29 @@ No family-specific observable column may be treated as required by this
 base mapping.
 
 ------------------------------------------------------------------------
+
+
+## State Role vs Consumption Legality
+
+`state_role` and `consumption_legality` are separate physical classifications.
+
+```text
+state_role
+= pre_event | at_event | post_event_review | research_replay
+
+consumption_legality
+= decision_safe | research_only | outcome_adjacent | prohibited_as_input
+```
+
+A row can be a valid `post_event_review` Event State for research while still being invalid as predictive X for the event timestamp.
+
+Required guardrail:
+
+```text
+post_event_review -> consumption_legality != decision_safe
+ML/backtest feature X -> consumption_legality = decision_safe
+```
+
 
 ## Allowed Inputs
 

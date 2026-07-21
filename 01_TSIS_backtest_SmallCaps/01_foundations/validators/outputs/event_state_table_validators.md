@@ -26,6 +26,7 @@ Before any parquet output is written, validators must confirm that:
 - builder config exists;
 - builder declares event source;
 - builder declares state role rules;
+- builder declares independent consumption legality rules;
 - builder declares label separation policy.
 
 ## 3. Hard Validation Checks
@@ -40,6 +41,8 @@ The build must fail if:
 - any prohibited column family appears;
 - any outcome, label or reward value is inlined;
 - `post_event_review` rows are marked as ML feature candidates;
+- `post_event_review` rows are marked `consumption_legality = decision_safe`;
+- `consumption_legality` is missing or outside the allowed taxonomy;
 - any linked market state fails its own leakage gates.
 
 ## 4. Required Quality Checks
@@ -49,6 +52,7 @@ The validator must emit:
 - row count;
 - event family counts;
 - state role counts;
+- consumption legality counts;
 - decision timestamp range;
 - linked market state count;
 - `state_quality_state` distribution;
@@ -61,6 +65,7 @@ The validator must emit:
 Every v0.1 materialized row must expose:
 
 ```text
+consumption_legality
 valid_for_pattern_discovery
 valid_for_ml_feature_candidate
 valid_for_backtest_context_candidate
@@ -81,6 +86,7 @@ contract explicitly promotes them:
 valid_for_rl_training_direct = false
 valid_for_execution_simulator_direct = false
 execution_truth = false
+post_event_review -> consumption_legality != decision_safe
 ```
 
 ## 6. Required Adversarial Tests
@@ -92,6 +98,8 @@ Future tests must inject or simulate:
 - inline reward column;
 - event cutoff after decision timestamp;
 - `post_event_review` row marked for ML features;
+- `post_event_review` row marked `consumption_legality = decision_safe`;
+- row with `valid_for_ml_feature_candidate = true` and `consumption_legality != decision_safe`;
 - missing event window id;
 - missing linked market state id.
 
@@ -135,11 +143,11 @@ Executable evidence:
 tests/data_foundation_outputs/test_event_state_table_contract.py
 ```
 
-The candidate validator proves linked `market_state_id`, state-role separation,
+The candidate validator proves linked `market_state_id`, state-role separation, current implicit consumption boundary,
 label/outcome/reward inline prohibition, state cutoff legality, unique
 `event_state_id`, manifest presence and non-promotion flags. It does not
 promote the official table and does not allow direct ML/RL/backtest/execution
-use.
+use. Future official/candidate builders must emit `consumption_legality` explicitly.
 
 ## Evidencia 2026-07-05 - Event State Intradia Quote-Guarded Controlado
 
@@ -150,6 +158,7 @@ manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/event_state_intraday_1m_quote
 joined_event_state_rows = 15
 event_count = 5
 state_role_counts = at_event: 5, post_event_review: 5, pre_event: 5
+consumption_legality_counts = not_emitted_by_current_controlled_candidate_v0_1
 validator_status = passed
 full_universe_claim_rows = 0
 valid_for_ml_feature_candidate_rows = 0

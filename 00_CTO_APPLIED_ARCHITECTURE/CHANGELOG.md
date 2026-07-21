@@ -22,6 +22,182 @@ Do not use it for ordinary Git noise or minor typos.
 
 ---
 
+## 2026-07-21 | 03_TABLES_feature_engineering | TSIS Market Ontology v1 review added
+
+- Added `03_INFORMATION_OBJECTS/TSIS_MARKET_ONTOLOGY_V1_REVIEW.md` as the Cross-Object Ontology Review for the 12 formally admitted Information Objects.
+- Decision: cross-object review `passes_with_restrictions`; recommendation is to proceed to a separate `TSIS Market Ontology v1` freeze artifact.
+- Updated `03_TABLES_feature_engineering/AGENT.md` so the next handoff step is ontology freeze, not another cross-object review.
+- Boundary unchanged: no README, methodology, Operational Mapping, builder, schema, State consumption, physical variable or materialization was authorized.
+
+## 2026-07-21 | 03_TABLES_feature_engineering | remaining formal admissions completed
+
+- Added Formal Admissions for the remaining TSIS Market Ontology Phase Information Objects: `Volatility / Range State`, `Liquidity`, `Market Microstructure State`, `Order Flow Pressure`, `News / Catalyst Context`, `Fundamental Context`, `Short-Side Context`, `Broad Market Context` and `Halt Context`.
+- Result: all 12 main Information Objects with Object Admission Reviews now have Formal Admission artifacts.
+- Updated `03_TABLES_feature_engineering/AGENT.md` so the handoff points to Cross-Object Ontology Review after completing all 12 Formal Admissions.
+- Boundary unchanged: no README, methodology, Operational Mapping, builder, schema, State consumption, physical variable or materialization was authorized.
+
+## 2026-07-21 | 03_TABLES_feature_engineering | Price Location formal admission added
+
+- Added `Price Location / Structure` Formal Admission under `03_INFORMATION_OBJECTS/ACCEPTED_WITH_RESTRICTIONS/`.
+- Decision: scientific identity accepted; operational readiness accepted with restrictions.
+- Boundary unchanged: no Operational Mapping expansion, builder change, schema change, State consumption, physical variable or materialization was authorized.
+
+## 2026-07-21 | 03_TABLES_feature_engineering | local agent handoff prompt added
+
+- Added `03_TABLES_feature_engineering/AGENT.md` as a local continuation prompt for the TSIS Market Ontology Phase.
+- Documented required reading order, current Formal Admission status, remaining admission queue, cross-object review path and Phase B deferral.
+- Boundary unchanged: no methodology layer, README, Operational Mapping, builder, schema, State consumption or physical materialization was changed.
+
+## 2026-07-21 | 03_TABLES_feature_engineering | Price Movement formal admission added
+
+- Added `Price Movement` Formal Admission under `03_INFORMATION_OBJECTS/ACCEPTED_WITH_RESTRICTIONS/`.
+- Decision: scientific identity accepted; operational readiness accepted with restrictions.
+- Boundary unchanged: no Operational Mapping expansion, builder change, schema change, State consumption, physical variable or materialization was authorized.
+
+## 2026-07-21 | 03_TABLES_feature_engineering | Phase A/B README boundary corrected
+
+- Corrected `03_INFORMATION_OBJECTS/README.md` so the active work is Formal Admission, Cross-Object Ontology Review and `TSIS Market Ontology v1` freeze, not vertical validation.
+- Added the active Phase A / deferred Phase B boundary to the feature-engineering README before the lifecycle steps.
+- Boundary unchanged: no schema, builder, dataset, State variable or physical materialization was authorized.
+
+## 2026-07-20 | 03_TABLES_feature_engineering | Ontology Phase gate activated
+
+- Activated `TSIS Market Ontology Phase` as the current scientific governance phase.
+- Classified the `Trading Activity` vertical as a pilot/proof-of-process, not Phase B operational authority.
+- Deferred new Operational Mapping, Builder Validation, Market State Integration and production builder development until all main Information Objects pass Formal Admission and cross-object ontology review.
+- Boundary unchanged: no schema, builder, dataset, State variable or physical materialization was authorized.
+
+## 2026-07-20 | 03_TABLES_feature_engineering | Trading Activity formal admission vertical added
+
+- Added the first vertical post-review flow for `Trading Activity`:
+  - formal admission under `03_INFORMATION_OBJECTS/ACCEPTED_WITH_RESTRICTIONS/`;
+  - operational mapping under `04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/`;
+  - builder validation design under `05_STATE_BUILDER_VALIDATION/`;
+  - Market State integration design under `06_MARKET_STATE_INTEGRATION/`.
+- Decision: `Trading Activity` is accepted with restrictions as an Information Object; State consumption, schema changes, builder changes and physical materialization remain unauthorized.
+- Updated local README/index surfaces to point to the new vertical flow.
+- Boundary unchanged: applied architecture only; operational authority remains in `01_foundations` contracts, schemas, validators, manifests and status matrices.
+
+
+## 2026-07-20 | event_state | consumption legality boundary added
+
+- Clarified that Event State needs independent `state_role` and `consumption_legality` classifications.
+- `post_event`/`post_event_review` may be valid for research but not legal predictive X for an event-time decision.
+- Boundary unchanged: no dataset promotion or State consumption authorization changed.
+
+
+## 2026-07-20 | 03_TABLES_feature_engineering | Market State profile boundary added
+
+- Clarified the anti mega-table rule for canonical Market State.
+- Market State canonicality is now documented as shared semantics and identity with compatible physical profiles, not a universal all-column table.
+- Boundary unchanged: no operational schema, builder, dataset or promotion status changed.
+
+
+## 2026-07-20 | 03_TABLES_feature_engineering | taxonomy axes separated
+
+- Clarified that Information Object families are semantic only.
+- Added the four-axis taxonomy rule: `information_object_family`, `source_domain`, `temporal_resolution`, and `institutional_role`.
+- Boundary unchanged: no Information Object admission, table promotion or State consumption authorization changed.
+
+## 2026-07-20 | 03_TABLES_feature_engineering | Information Object definition clarified
+
+- Clarified that an Information Object is not itself a Representation Model or physical representation.
+- Defined Information Object as the semantic unit TSIS decides to preserve about observable phenomena, independent of model and implementation.
+- Boundary unchanged: no Information Object admission, table promotion or State consumption authorization changed.
+
+## 2026-07-20 | 03_TABLES_feature_engineering | Object Discovery vs Admission boundary formalized
+
+- Updated the feature-engineering/table-review process to distinguish bottom-up `Object Discovery Process` from top-down `Object Admission Process`.
+- Clarified that tables and variables can reveal candidate Information Objects, but admission defines scientific meaning and State eligibility.
+- Boundary unchanged: no table, dataset or Information Object was promoted.
+
+## 2026-07-20 | 03_TABLES_feature_engineering | canonical 013-018 DAG fixed
+
+- Updated `03_TABLES_feature_engineering/02_TABLE_REPRESENTATION_REVIEW/LOCAL_RULES.md` to remove the obsolete linear 013-018 dependency chain.
+- Aligned local table-review rules with the README architecture: `014` and `015` are sibling representation surfaces, `018` is optional scanner/candidate context, and `016` consumes governed context/observables under contract.
+- Added dependency-class language to distinguish semantic, physical source, eligibility and materialization-selection dependencies.
+
+## 2026-07-20 | applied architecture | global representation tree added to README
+
+- Added `Arquitectura Global De Representacion` to `README.md`.
+- The new section maps the chain from `Mercado` to `Market State / Event State` and adds one guiding question per layer.
+- Clarified that derivable capability, variable existence and table materialization do not by themselves authorize inclusion in State.
+## 2026-07-20 | applied architecture | root README refreshed for current layer map
+
+- Updated `README.md` to reflect the current top-level folder structure:
+  - `03_TABLES_feature_engineering`
+  - `04_DATA_Raw_audit`
+  - `05_DATA_derivable`
+  - `06_DATA_Live_Source`
+  - `07_NEW_STRATEGIES_by_Experiments`
+  - `08_EXPERIMENTS`
+  - `09_STRATEGIES_know`
+- Clarified the chain from epistemology to governance, RAW audit, derivable capabilities, table feature engineering, Market State/Event State, experiments and strategy knowledge.
+- Added explicit boundaries for `05_DATA_derivable`: calculation capability only; no semantic admission or Market State authorization.
+- Reaffirmed that applied architecture is a secondary map and does not override contracts, schemas, registries, validators, manifests or status matrices.
+
+## 2026-07-20 | 05_DATA_derivable | reading-order filename prefixes
+
+- Renamed active derivable-layer documents to make reading order explicit:
+  - `00_DATA_DERIVABLE_CATALOG_BY_RAW_SOURCE_v0_1.md`
+  - `01_DERIVABLE_CAPABILITY_REGISTER_v0_1.md`
+  - `02_DERIVABLE_CAPABILITY_STATUS_MATRIX_v0_1.md`
+- Updated local references in `05_DATA_derivable/README.md` and the capability status matrix.
+- Boundary unchanged: this is a naming/readability change only; no derivable capability status or operational authority changed.
+
+## 2026-07-20 | 05_DATA_derivable | atomic derivable capability register
+
+- Refactored `DERIVABLE_CAPABILITY_REGISTER_v0_1.md` so each row represents one canonical derivable capability.
+- Split grouped rows such as `daily__return_range_metrics`, `daily__adjustable_Nd_families`, `intraday__shape_pace_W`, trade size distributions, trade quality ratios and quote spread groups into atomic capability rows.
+- Added explicit `variant_required` and `required_variant_fields` columns so parameterized capabilities can stay compact without mixing different capabilities.
+- Updated `DERIVABLE_CAPABILITY_STATUS_MATRIX_v0_1.md` to summarize the atomic register and its status counts.
+- Updated `05_DATA_derivable/README.md` with the atomic register rule.
+- Boundary unchanged: this layer records legal/reproducible calculation capacity only; semantic family assignment and Information Object admission remain downstream.
+## 2026-07-20 | 05_DATA_derivable | compact derivable layer bootstrap
+
+- Added `05_DATA_derivable/README.md` to define the derivable layer as technical calculation capacity, not semantic admission.
+- Added `05_DATA_derivable/DERIVABLE_CAPABILITY_REGISTER_v0_1.md` as a compact register of derivation capabilities by source.
+- Added `05_DATA_derivable/DERIVABLE_CAPABILITY_STATUS_MATRIX_v0_1.md` as a compact state matrix for existing, formula-defined, variant-required, candidate, blocked and prohibited derivation capabilities.
+- Added `05_DATA_derivable/99_archive/` for future superseded derivable-layer documents.
+- Boundary: this layer answers what can be calculated legally from RAW/governed sources; semantic family assignment and Information Object admission remain in `03_TABLES_feature_engineering`.
+
+## 2026-07-20 | 03_TABLES_feature_engineering | table representation review handoff package 000-018
+
+- Added structured external-agent handoff package for `02_TABLE_REPRESENTATION_REVIEW`:
+
+```text
+03_TABLES_feature_engineering/02_TABLE_REPRESENTATION_REVIEW/TABLE_REPRESENTATION_REVIEW_HANDOFF_000_018_v0_1_20260720/
+03_TABLES_feature_engineering/02_TABLE_REPRESENTATION_REVIEW/TABLE_REPRESENTATION_REVIEW_HANDOFF_000_018_v0_1_20260720.zip
+```
+
+- Purpose: package table-level variable/component documentation and Spanish representation audits for tables `000-018`.
+- Boundary: secondary applied-architecture handoff only; operational authority remains in contracts, schemas, registries, validators, manifests and status matrices.
+
+## 2026-07-20 | 04_DATA_Raw_audit | observable RAW parquet content handoff package
+
+- Renamed RAW audit parquet content sample documents from `PARQUET_CONTENT_SAMPLE.md` to source-specific names, for example `PARQUET_CONTENT_TRADES.md` and `PARQUET_CONTENT_QUOTES.md`.
+- Added flat external-agent handoff folder:
+
+```text
+04_DATA_Raw_audit/OBSERVABLE_RAW_PARQUET_CONTENT_INVENTORY_v0_1_20260720/
+```
+
+- Added compressed package:
+
+```text
+04_DATA_Raw_audit/OBSERVABLE_RAW_PARQUET_CONTENT_INVENTORY_v0_1_20260720.zip
+```
+
+- Purpose: provide a clean inventory of observable RAW parquet columns by documented source/family.
+- Boundary: sample-content inventory only; no dataset certification, schema promotion, consumption authorization or physical data claim changed.
+
+## 2026-07-20 | 05_DATA_derivable | raw-source derivable information catalog
+
+- Added `05_DATA_derivable/DATA_DERIVABLE_CATALOG_BY_RAW_SOURCE_v0_1.md`.
+- Purpose: consolidate, by RAW/governed source, the observable measures TSIS can derive before Information Object admission.
+- Sources summarized: `raw_data_authority_and_derivation_map.md`, `family_status_matrix_v0_1.md`, `state_observable_eligibility_contract_v0_1.md`, `state_derived_observables_formula_contract_v0_1.md`, schemas, policies, lineage contracts and RAW audit folders.
+- Boundary: secondary applied-architecture summary only; operational authority remains in `01_foundations` contracts, schemas, registries, validators, manifests and status matrices.
+
 ## 2026-07-17 | 03_TABLES_feature_engineering | information object model alignment
 
 - Refactored the market representation family catalog so it aligns with `00_FEATURE_ADMISION_PROCESS.md`.
@@ -306,8 +482,3 @@ C:\TSIS_Data\data\data_foundation_outputs\ohlcv_1m_quote_guarded_full_universe_v
 ```
 
 - Boundary: `v0_2_candidate` is now a validated technical candidate tree and is eligible for promotion review. It is not yet promoted.
-
-
-
-
-

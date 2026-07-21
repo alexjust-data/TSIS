@@ -1,65 +1,79 @@
-# Premisa
+# Arquitectura de construcciÃ³n de `Market State` y `Event State`
 
-Construir una representación lo más fiel posible del mercado.
+## PropÃ³sito
 
-Este Explica:
+Este documento define cÃ³mo TSIS construye las representaciones canÃ³nicas del estado observable del mercado.  
+
+La informaciÃ³n utilizada para construir esas representaciones procede de las tablas fuente de representaciÃ³n (`000â€“018`),   
+revisadas y gobernadas dentro de:
+
+```text
+02_TABLE_REPRESENTATION_REVIEW/
+```
+A partir de esa informaciÃ³n, los builders construyen dos representaciones del estado:
+```
+Market State
+Event State
+```
+
+Estas representaciones pueden materializarse posteriormente mediante:
 
 ```
-por qué y como construimos variables/tablas
-para alimentar Market State y Event State
-mediante Objetos de Información
+market_state_table
+event_state_table
 ```
 
-## Dos tablas finales
+pero este documento describe su arquitectura conceptual, no su implementaciÃ³n fÃ­sica.
 
-Estas dos tablas representan **granos semánticos distintos**:
+## Market State y Event State
 
-**Market State** = cómo está el mercado en un timestamp.   
+Estas dos representaciones del estado poseen granos semÃ¡nticos distintos.  
+Su materializaciÃ³n fÃ­sica puede realizarse mediante:  
+
+**Market State** = *cÃ³mo estÃ¡ el mercado en un timestamp.*   
 Describe el estado observable general en `t`, exista o no un evento.
 ```text
-Market State
-clave ≈ instrumento + decision_timestamp
+clave â‰ˆ instrumento + decision_timestamp
 ```
 
-**Event State** = cómo está el mercado respecto a un evento.  
-Describe ese estado anclado a un `evento` concreto **:**  antes, durante, al producirse o en otra posición temporal permitida.
+**Event State** = *cÃ³mo estÃ¡ el mercado respecto a un evento.*  
+Describe ese estado anclado a un `evento` concreto **:**  antes, durante, al producirse o en otra posiciÃ³n temporal permitida.
 ```text
-Event State
-clave ≈ evento + instrumento + decision_timestamp + state_role
+clave â‰ˆ evento + instrumento + decision_timestamp + state_role
 ```
 
-Podrían almacenarse físicamente en una sola tabla, pero aparecerían problemas:
+PodrÃ­an almacenarse fÃ­sicamente en una sola tabla, pero aparecerÃ­an problemas:
 
-* repetición del mismo `Market State` para cada evento;
+* repeticiÃ³n del mismo `Market State` para cada evento;
 * filas sin evento mezcladas con filas event-conditioned;
 * claves y granularidades ambiguas;
-* mayor riesgo de introducir información posterior al evento;
-* confusión entre «estado del mercado» y «estado respecto a una hipótesis o evento».
+* mayor riesgo de introducir informaciÃ³n posterior al evento;
+* confusiÃ³n entre Â«estado del mercadoÂ» y Â«estado respecto a una hipÃ³tesis o eventoÂ».
 
 Por tanto:
 
 ```text
-Market State = representación base reutilizable
+Market State = representaciÃ³n base reutilizable
 Event State  = vista contextualizada y gobernada respecto a un evento
 ```
 
-`Event State` debería reutilizar o referenciar el estado base, no inventar un segundo mercado.
+`Event State` deberÃ­a reutilizar o referenciar el estado base, no inventar un segundo mercado.
 
-## ¿Por qué precisamente estas dos?
+## Â¿Por quÃ© precisamente estas dos?
 
-Porque responden a dos preguntas científicas diferentes:
+Porque responden a dos preguntas cientÃ­ficas diferentes:
 
 ```text
-¿Qué sabía el sistema en el instante t?
+Â¿QuÃ© sabÃ­a el sistema en el instante t?
 ```
 
 y:
 
 ```text
-¿Qué sabía el sistema en t respecto al evento E?
+Â¿QuÃ© sabÃ­a el sistema en t respecto al evento E?
 ```
 
-La primera sirve para decisiones generales, scanners, clustering, predicción y políticas.  
+La primera sirve para decisiones generales, scanners, clustering, predicciÃ³n y polÃ­ticas.  
 La segunda sirve para estudiar transiciones alrededor de eventos, comparar casos equivalentes y construir muestras como:
 
 ```text
@@ -70,39 +84,39 @@ post_event
 
 Siempre separando cualquier tramo posterior que no pueda utilizarse como input observable.
 
-La separación no es obligatoria universalmente, pero **sí es razonable y defendible para TSIS** porque evita mezclar el estado canónico con el contexto experimental.
+La separaciÃ³n no es obligatoria universalmente, pero **sÃ­ es razonable y defendible para TSIS** porque evita mezclar el estado canÃ³nico con el contexto experimental.
 
-## ¿Esto reproduce demostrablemente el proceso de DeepMind?
+## Â¿Esto reproduce demostrablemente el proceso de DeepMind?
 
 **No en el sentido literal.**
 
-DeepMind no estableció que un sistema de aprendizaje exitoso deba contener dos tablas llamadas `Market State` y `Event State`. AlphaGo y AlphaGo Zero recibían una representación de la posición —y en algunas versiones información histórica auxiliar— para estimar política y valor. MuZero va más lejos: una función de representación transforma el historial de observaciones en un estado latente desde el que se predicen política, valor, recompensa y dinámica. ([Google DeepMind][1])
+DeepMind no estableciÃ³ que un sistema de aprendizaje exitoso deba contener dos tablas llamadas `Market State` y `Event State`. AlphaGo y AlphaGo Zero recibÃ­an una representaciÃ³n de la posiciÃ³n â€”y en algunas versiones informaciÃ³n histÃ³rica auxiliarâ€” para estimar polÃ­tica y valor. MuZero va mÃ¡s lejos: una funciÃ³n de representaciÃ³n transforma el historial de observaciones en un estado latente desde el que se predicen polÃ­tica, valor, recompensa y dinÃ¡mica. ([Google DeepMind][1])
 
-Por tanto, la conclusión precisa es:
+Por tanto, la conclusiÃ³n precisa es:
 
 ```text
 Las dos tablas NO proceden de DeepMind.
 
-Sí implementan un principio compatible con sus éxitos:
-construir una representación explícita, temporalmente válida
-y suficiente del estado antes de aprender políticas o valores.
+SÃ­ implementan un principio compatible con sus Ã©xitos:
+construir una representaciÃ³n explÃ­cita, temporalmente vÃ¡lida
+y suficiente del estado antes de aprender polÃ­ticas o valores.
 ```
 
 `Market State` se aproxima al **estado observable base**.
 
-`Event State` es una adaptación propia de TSIS para organizar observaciones condicionadas por eventos, algo necesario en tu investigación pero no equivalente a una pieza específica de AlphaGo o MuZero.
+`Event State` es una adaptaciÃ³n propia de TSIS para organizar observaciones condicionadas por eventos, algo necesario en tu investigaciÃ³n pero no equivalente a una pieza especÃ­fica de AlphaGo o MuZero.
 
-**Certificación final:**
+**CertificaciÃ³n final:**
 
 ```text
-Dos tablas = decisión arquitectónica coherente para TSIS.
-Estado explícito antes de política = alineado con DeepMind.
-Garantía de éxito por tenerlas = ninguna.
+Dos tablas = decisiÃ³n arquitectÃ³nica coherente para TSIS.
+Estado explÃ­cito antes de polÃ­tica = alineado con DeepMind.
+GarantÃ­a de Ã©xito por tenerlas = ninguna.
 ```
 
-Lo que determinará su utilidad no será que existan dos tablas, sino que conjuntamente preserven información suficiente, legal en `decision_timestamp`, sin redundancia ni leakage.
+Lo que determinarÃ¡ su utilidad no serÃ¡ que existan dos tablas, sino que conjuntamente preserven informaciÃ³n suficiente, legal en `decision_timestamp`, sin redundancia ni leakage.
 
-[1]: https://deepmind.google/research/alphago/?utm_source=chatgpt.com "AlphaGo — Google DeepMind"
+[1]: https://deepmind.google/research/alphago/?utm_source=chatgpt.com "AlphaGo â€” Google DeepMind"
 
 
 ## Market State y Event State : consumen `Objetos de informacion`
@@ -119,31 +133,31 @@ Para describir ese momento necesita `Objetos` de informacion:
 
 ```
 Momentum
-¿Con qué dirección, intensidad y aceleración se mueve el precio?
+Â¿Con quÃ© direcciÃ³n, intensidad y aceleraciÃ³n se mueve el precio?
 
 Liquidity
-¿Es posible transaccionar ahora sin un coste o impacto excesivo?
+Â¿Es posible transaccionar ahora sin un coste o impacto excesivo?
 
 Volatility
-¿Cuál es la magnitud e inestabilidad actual del movimiento?
+Â¿CuÃ¡l es la magnitud e inestabilidad actual del movimiento?
 
 Participation
-¿Existe actividad real y anómala o el movimiento ocurre sin participación?
+Â¿Existe actividad real y anÃ³mala o el movimiento ocurre sin participaciÃ³n?
 
 Intraday Position
-¿Dónde está el precio respecto a HOD, LOD, VWAP y otras referencias?
+Â¿DÃ³nde estÃ¡ el precio respecto a HOD, LOD, VWAP y otras referencias?
 
 News Context
-¿Existe un catalizador conocido y disponible en ese timestamp?
+Â¿Existe un catalizador conocido y disponible en ese timestamp?
 
 Fundamental Context
-¿Qué características estructurales conocidas tiene la empresa?
+Â¿QuÃ© caracterÃ­sticas estructurales conocidas tiene la empresa?
 
 Market Regime
-¿En qué entorno general ocurre todo esto?
+Â¿En quÃ© entorno general ocurre todo esto?
 ```
 
-Después el builder traduce esas necesidades científicas a variables físicas:
+DespuÃ©s el builder traduce esas necesidades cientÃ­ficas a variables fÃ­sicas:
 
 
 ```
@@ -159,8 +173,8 @@ Necesito estos "Objetos":
 - ...
 
 Builder: 
-- ¿Dónde están las variables que representan Momentum? en 014
-- ¿Dónde está Liquidity? en 015
+- Â¿DÃ³nde estÃ¡n las variables que representan Momentum? en 014
+- Â¿DÃ³nde estÃ¡ Liquidity? en 015
 - ...
 ```
 
@@ -189,41 +203,41 @@ Builder: Busca las columnas aprobadas que representan Liquidity:
 La *_table* es el lugar donde se materializan unas variables.  
 Y esas variables pertenecen conceptualmente a `Objetos` distintos.
 
-Además, varios objetos pueden obtener sus variables de una misma tabla:
+AdemÃ¡s, varios objetos pueden obtener sus variables de una misma tabla:
 
 ```
 014_master_intraday_bar_table
 
-├── Momentum
-├── Participation
-├── Intraday Position
-└── Volatility
+â”œâ”€â”€ Momentum
+â”œâ”€â”€ Participation
+â”œâ”€â”€ Intraday Position
+â””â”€â”€ Volatility
 ```
 
-Eso significa que si mañana decides mover *relative_volume* de la tabla 014  
-a otra tabla porque cambia la arquitectura física, el Objeto de Información *"Trading Activity"* no cambia.   
-El *Market State Builder* seguirá pidiendo "Trading Activity"*;   
-solo cambiará el lugar desde el que obtiene las variables que la representan.
+Eso significa que si maÃ±ana decides mover *relative_volume* de la tabla 014  
+a otra tabla porque cambia la arquitectura fÃ­sica, el Objeto de InformaciÃ³n *"Trading Activity"* no cambia.   
+El *Market State Builder* seguirÃ¡ pidiendo "Trading Activity"*;   
+solo cambiarÃ¡ el lugar desde el que obtiene las variables que la representan.
 
 ```
 Market State Builder
-↓
+â†“
 necesita Objetos
-↓
+â†“
 cada Objeto sabe
-↓
-qué variables necesita
-↓
+â†“
+quÃ© variables necesita
+â†“
 cada variable sabe
-↓
-en qué tabla vive
+â†“
+en quÃ© tabla vive
 
 ---
 
-Market State Representation Contract declara qué debe conocer.
+Market State Representation Contract declara quÃ© debe conocer.
 Los objetos definen el significado.
 Las variables expresan ese significado.
-Las tablas indican dónde obtenerlas.
+Las tablas indican dÃ³nde obtenerlas.
 El builder las integra legalmente en t.
 ```
 
@@ -273,113 +287,162 @@ component_as_of_utc
 
 ```
 MERCADO - simplemente existe
-↓
-FENÓMENOS - ¿Qué fenómenos observables existen?
-↓
-OBJETO DE INFORMACIÓN - ¿Qué información necesitamos conservar sobre esos fenómenos?
-↓
-MODELOS DE REPRESENTACIÓN: - ¿Cómo decidimos representar esa información?
-↓
-IMPLEMENTACIÓN FÍSICA - ¿Qué variables implementan esa representación?
-↓
-TABLAS - ¿Dónde se materializa esa representación?
-↓
-Market State - ¿Cuál es el estado observable del mercado en un decision_timestamp?
-↓
-Event State - ¿Cuál es el estado observable del mercado respecto a un evento?
+â†“
+FENÃ“MENOS - Â¿QuÃ© fenÃ³menos observables existen?
+â†“
+OBJETO DE INFORMACIÃ“N - Â¿QuÃ© informaciÃ³n necesitamos conservar sobre esos fenÃ³menos?
+â†“
+MODELOS DE REPRESENTACIÃ“N: - Â¿CÃ³mo decidimos representar esa informaciÃ³n?
+â†“
+IMPLEMENTACIÃ“N FÃSICA - Â¿QuÃ© variables implementan esa representaciÃ³n?
+â†“
+TABLAS - Â¿DÃ³nde se materializa esa representaciÃ³n?
+â†“
+Market State - Â¿CuÃ¡l es el estado observable del mercado en un decision_timestamp?
+â†“
+Event State - Â¿CuÃ¡l es el estado observable del mercado respecto a un evento?
 ```
 
-**Market State necesita objetos de información**  
-No necesita un fenómeno.   
-Porque el fenómeno ya ocurrió.  
-Necesita Objetos de Información.   
-Porque es lo único que puede almacenar es información.
+**Market State necesita objetos de informaciÃ³n**  
+No necesita un fenÃ³meno.   
+Porque el fenÃ³meno ya ocurriÃ³.  
+Necesita Objetos de InformaciÃ³n.   
+Porque es lo Ãºnico que puede almacenar es informaciÃ³n.
 
-### El `fenómeno` existe aunque TSIS no exista
+### El `fenÃ³meno` existe aunque TSIS no exista
 
 ```
-Hay una fuerte presión compradora.
+Hay una fuerte presiÃ³n compradora.
 ```
 Eso ocurre en el mercado.  
-Da igual que tú tengas datos.  
+Da igual que tÃº tengas datos.  
 Da igual que exista TSIS.   
 Es una propiedad del mercado.  
-Es un fenómeno. 
+Es un fenÃ³meno. 
 
 ```
 Hay poca liquidez.
 El precio acelera.
 ```
 Eso ocurre.  
-No depende de cómo la midamos.  
+No depende de cÃ³mo la midamos.  
 
-### El `Objeto de Información` no existe en el mercado
+### El `Objeto de InformaciÃ³n` no existe en el mercado
 
 Lo construye TSIS.  
-Es una decisión científica.  
+Es una decisiÃ³n cientÃ­fica.  
+
+Definicion operativa del Objeto de Informacion:
+
+```text
+Unidad semantica de informacion que TSIS decide preservar
+sobre uno o varios fenomenos observables, independiente
+de su modelo de representacion y de su implementacion fisica.
+```
+
+El Objeto no es aun la representacion.
+Es lo que debe ser representado.
+
+
+### Taxonomias que no deben mezclarse
+
+```text
+Information Object Family
+= significado semantico del Objeto.
+
+Source Domain
+= fuente observable que aporta evidencia.
+
+Temporal Resolution
+= escala temporal o ventana.
+
+Institutional Role
+= funcion dentro de TSIS.
+```
+
+Ejemplo:
+
+```text
+Liquidity
+= Objeto de Informacion
+
+information_object_family
+= Liquidity
+
+source_domain
+= Quotes + Trades + OHLCV
+
+temporal_resolution
+= intraday_bar / event_window
+
+institutional_role
+= observable
+```
+
+No se debe usar una unica etiqueta `family` para mezclar dominio, fuente, escala temporal y rol institucional.
 
 ```
-FENÓMENO:
+FENÃ“MENO:
 - Hay poca liquidez.
 TSIS:
 - Eso me interesa.
-- Voy a conservar información sobre ese fenómeno.
+- Voy a conservar informaciÃ³n sobre ese fenÃ³meno.
 - Creo un Objeto: 
     - Liquidity
 ```
 
-### Un `modelo de representación` conceptualiza la representación del *Objeto*
+### Un `modelo de representaciÃ³n` conceptualiza la representaciÃ³n del *Objeto*
 
-El papel del modelo de representación es separar el significado (*Objeto de Información*) de la implementación física (*variables*).   
-Si mañana descubres una forma mejor de medir la liquidez, cambias el modelo o su implementación,   pero no cambias el *Objeto "Liquidity"*. Esa separación es precisamente la que hace que la arquitectura sea estable a largo plazo.
+El papel del modelo de representaciÃ³n es separar el significado (*Objeto de InformaciÃ³n*) de la implementaciÃ³n fÃ­sica (*variables*).   
+Si maÃ±ana descubres una forma mejor de medir la liquidez, cambias el modelo o su implementaciÃ³n,   pero no cambias el *Objeto "Liquidity"*. Esa separaciÃ³n es precisamente la que hace que la arquitectura sea estable a largo plazo.
 
 Ejemplo:
 ```
-OBJETO DE INFORMACIÓN:
+OBJETO DE INFORMACIÃ“N:
 - Liquidity
 
-MODELO DE REPRESENTACIÓN A
+MODELO DE REPRESENTACIÃ“N A
 
     Representaremos la liquidez mediante:
 
-    - Coste de ejecución
-    - Facilidad para cruzar órdenes
+    - Coste de ejecuciÃ³n
+    - Facilidad para cruzar Ã³rdenes
     - Profundidad disponible
 
-MODELO DE REPRESENTACIÓN B
+MODELO DE REPRESENTACIÃ“N B
 
     Representaremos la liquidez mediante:
 
-    - Liquidez implícita del order book
+    - Liquidez implÃ­cita del order book
     - Impacto esperado de una orden
     - Elasticidad del precio
 ```
 
-Ambos modelos representan el mismo Objeto de Información: *Liquidity*  
-Pero cada uno propone una representación conceptual distinta.
+Ambos modelos representan el mismo Objeto de InformaciÃ³n: *Liquidity*  
+Pero cada uno propone una representaciÃ³n conceptual distinta.
 
 ```
-Solo después elegimos la implementación física.
+Solo despuÃ©s elegimos la implementaciÃ³n fÃ­sica.
 ```
 
-### La `implementación física` ¿variables implementan esa representación?
+### La `implementaciÃ³n fÃ­sica` Â¿variables implementan esa representaciÃ³n?
 
 Modelo A
 ```
-OBJETO DE INFORMACIÓN:
+OBJETO DE INFORMACIÃ“N:
 - Liquidity
 
-MODELO DE REPRESENTACIÓN A
+MODELO DE REPRESENTACIÃ“N A
 
 Representaremos la liquidez mediante:
 
-- Coste de ejecución
+- Coste de ejecuciÃ³n
 - Disponibilidad de contrapartida
 - Profundidad del mercado
 
-IMPLEMENTACIÓN FÍSICA
+IMPLEMENTACIÃ“N FÃSICA
 
-- Coste de ejecución
+- Coste de ejecuciÃ³n
     - spread
     - spread_pct
 
@@ -396,18 +459,18 @@ IMPLEMENTACIÓN FÍSICA
 Modelo B
 
 ```
-OBJETO DE INFORMACIÓN:
+OBJETO DE INFORMACIÃ“N:
 - Liquidity
 
-MODELO DE REPRESENTACIÓN B
+MODELO DE REPRESENTACIÃ“N B
 
 Representaremos la liquidez mediante:
 
 - Impacto esperado de una orden
 - Sensibilidad del precio al volumen
-- Liquidez implícita
+- Liquidez implÃ­cita
 
-IMPLEMENTACIÓN FÍSICA
+IMPLEMENTACIÃ“N FÃSICA
 
 - Impacto esperado de una orden
     - amihud_illiquidity
@@ -415,34 +478,34 @@ IMPLEMENTACIÓN FÍSICA
 - Sensibilidad del precio al volumen
     - kyle_lambda
 
-- Liquidez implícita
+- Liquidez implÃ­cita
     - roll_spread
 ```
 
-La implementación física puede cambiar con el tiempo.  
-El `Objeto de Información` permanece.  
-El `Modelo de Representación` puede evolucionar.  
-Lo único que cambia son las variables que implementan ese modelo.  
+La implementaciÃ³n fÃ­sica puede cambiar con el tiempo.  
+El `Objeto de InformaciÃ³n` permanece.  
+El `Modelo de RepresentaciÃ³n` puede evolucionar.  
+Lo Ãºnico que cambia son las variables que implementan ese modelo.  
 
-### Materialización en `tablas`
+### MaterializaciÃ³n en `tablas`
 
 La *_table* es el lugar donde se materializan unas variables.  
 Y esas variables pertenecen conceptualmente a `Objetos` distintos.
 
 ```
-FENÓMENO:
-- Hay una fuerte presión compradora.
+FENÃ“MENO:
+- Hay una fuerte presiÃ³n compradora.
 
-OBJETO DE INFORMACIÓN:
+OBJETO DE INFORMACIÃ“N:
 - Buying Pressure
 
-MODELOS DE REPRESENTACIÓN:
+MODELOS DE REPRESENTACIÃ“N:
 - Aggressor Buy Volume
 - Buy/Sell Imbalance
 - Tape Speed
 - Ask Consumption
 
-IMPLEMENTACIÓN FÍSICA:
+IMPLEMENTACIÃ“N FÃSICA:
 - aggressor_buy_volume
 - aggressor_buy_ratio
 - buy_sell_imbalance
@@ -458,18 +521,18 @@ TABLA:
     - ask_consumption_rate
 ```
 ```
-FENÓMENO:
+FENÃ“MENO:
 - Hay muy poca liquidez.
 
-OBJETO DE INFORMACIÓN:
+OBJETO DE INFORMACIÃ“N:
 - Liquidity
 
-MODELOS DE REPRESENTACIÓN:
+MODELOS DE REPRESENTACIÃ“N:
 - Spread
 - Dollar Volume
 - Quoted Depth
 
-IMPLEMENTACIÓN FÍSICA:
+IMPLEMENTACIÃ“N FÃSICA:
 - spread
 - spread_pct
 - dollar_volume
@@ -491,18 +554,18 @@ TABLA:
 ```
 
 ```
-FENÓMENO:
-- El precio está acelerando.
+FENÃ“MENO:
+- El precio estÃ¡ acelerando.
 
-OBJETO DE INFORMACIÓN:
+OBJETO DE INFORMACIÃ“N:
 - Momentum
 
-MODELOS DE REPRESENTACIÓN:
+MODELOS DE REPRESENTACIÃ“N:
 - Returns
 - Slope
 - Price Acceleration
 
-IMPLEMENTACIÓN FÍSICA:
+IMPLEMENTACIÃ“N FÃSICA:
 - return_1m
 - return_5m
 - slope
@@ -519,18 +582,18 @@ TABLA:
 ```
 
 ```
-FENÓMENO:
-- La participación del mercado aumenta de forma anómala.
+FENÃ“MENO:
+- La participaciÃ³n del mercado aumenta de forma anÃ³mala.
 
-OBJETO DE INFORMACIÓN:
+OBJETO DE INFORMACIÃ“N:
 - Trading Activity
 
-MODELOS DE REPRESENTACIÓN:
+MODELOS DE REPRESENTACIÃ“N:
 - Relative Volume
 - Volume Acceleration
 - Trade Count
 
-IMPLEMENTACIÓN FÍSICA:
+IMPLEMENTACIÃ“N FÃSICA:
 - relative_volume
 - volume_zscore
 - volume_acceleration
@@ -548,18 +611,18 @@ TABLA:
 ```
 
 ```
-FENÓMENO:
+FENÃ“MENO:
 - El mercado entra en un entorno de alta incertidumbre.
 
-OBJETO DE INFORMACIÓN:
+OBJETO DE INFORMACIÃ“N:
 - Volatility
 
-MODELOS DE REPRESENTACIÓN:
+MODELOS DE REPRESENTACIÃ“N:
 - Rolling Volatility
 - True Range
 - Expansion Ratio
 
-IMPLEMENTACIÓN FÍSICA:
+IMPLEMENTACIÃ“N FÃSICA:
 - rolling_volatility
 - true_range_proxy
 - rolling_range_5m
@@ -576,18 +639,18 @@ TABLA:
 ```
 
 ```
-FENÓMENO:
+FENÃ“MENO:
 - Existe un catalizador externo que puede alterar el comportamiento del mercado.
 
-OBJETO DE INFORMACIÓN:
+OBJETO DE INFORMACIÃ“N:
 - News Context
 
-MODELOS DE REPRESENTACIÓN:
+MODELOS DE REPRESENTACIÃ“N:
 - News Presence
 - News Age
 - Source Type
 
-IMPLEMENTACIÓN FÍSICA:
+IMPLEMENTACIÃ“N FÃSICA:
 - news_presence
 - news_timestamp
 - news_age
@@ -604,18 +667,18 @@ TABLA:
 ```
 
 ```
-FENÓMENO:
-- La empresa presenta unas características estructurales determinadas.
+FENÃ“MENO:
+- La empresa presenta unas caracterÃ­sticas estructurales determinadas.
 
-OBJETO DE INFORMACIÓN:
+OBJETO DE INFORMACIÃ“N:
 - Fundamental Context
 
-MODELOS DE REPRESENTACIÓN:
+MODELOS DE REPRESENTACIÃ“N:
 - Float
 - Market Cap
 - Shares Outstanding
 
-IMPLEMENTACIÓN FÍSICA:
+IMPLEMENTACIÃ“N FÃSICA:
 - float
 - market_cap
 - shares_outstanding
@@ -626,21 +689,21 @@ TABLA:
     - market_cap
     - shares_outstanding
 ```
-(Si ***market_cap*** o ***shares_outstanding*** todavía no existen en la tabla, quedarían como candidatos futuros.)
+(Si ***market_cap*** o ***shares_outstanding*** todavÃ­a no existen en la tabla, quedarÃ­an como candidatos futuros.)
 
 ```
-FENÓMENO:
-- El mercado global favorece o perjudica la continuación de los movimientos.
+FENÃ“MENO:
+- El mercado global favorece o perjudica la continuaciÃ³n de los movimientos.
 
-OBJETO DE INFORMACIÓN:
+OBJETO DE INFORMACIÃ“N:
 - Market Regime
 
-MODELOS DE REPRESENTACIÓN:
+MODELOS DE REPRESENTACIÃ“N:
 - Index Return
 - Volatility Proxy
 - Risk On/Off
 
-IMPLEMENTACIÓN FÍSICA:
+IMPLEMENTACIÃ“N FÃSICA:
 - index_return
 - volatility_proxy
 - risk_on_off_state
@@ -655,18 +718,18 @@ TABLA:
 ```
 
 ```
-FENÓMENO:
-- El precio se encuentra en una posición concreta dentro de la sesión.
+FENÃ“MENO:
+- El precio se encuentra en una posiciÃ³n concreta dentro de la sesiÃ³n.
 
-OBJETO DE INFORMACIÓN:
+OBJETO DE INFORMACIÃ“N:
 - Intraday Position
 
-MODELOS DE REPRESENTACIÓN:
+MODELOS DE REPRESENTACIÃ“N:
 - Distance to HOD
 - Distance to LOD
 - Distance to VWAP
 
-IMPLEMENTACIÓN FÍSICA:
+IMPLEMENTACIÃ“N FÃSICA:
 - distance_to_session_hod
 - distance_to_session_lod
 - intraday_vwap_distance
@@ -682,7 +745,7 @@ TABLA:
 
 ### Market State `Builder`
 
-*Market State Representation Contract* declara qué Objetos de Información necesita:
+*Market State Representation Contract* declara quÃ© Objetos de InformaciÃ³n necesita:
 ```
 - Momentum
 - Liquidity
@@ -691,21 +754,21 @@ TABLA:
 - Intraday Position
 - ...
 ```
-El *Market State Builder* construye la representación necesaria para responder a esta pregunta.
+El *Market State Builder* construye la representaciÃ³n necesaria para responder a esta pregunta.
 
 ```
-¿Qué información observable estaba disponible
+Â¿QuÃ© informaciÃ³n observable estaba disponible
 para el instrumento ABCD
 en el decision_timestamp 09:42:00?
 ```
 
-El builder consulta el contrato aprobado de cada Objeto de Información.
+El builder consulta el contrato aprobado de cada Objeto de InformaciÃ³n.
 Ejemplo  
 ```
 Market State necesita el Objeto:
 - Liquidity
 
-El contrato de Liquidity indica qué variables aprobadas lo representan y dónde están materializadas:
+El contrato de Liquidity indica quÃ© variables aprobadas lo representan y dÃ³nde estÃ¡n materializadas:
 
 - 004_master_daily_table:
     - dollar_volume
@@ -722,73 +785,73 @@ El contrato de Liquidity indica qué variables aprobadas lo representan y dónde
 ```
 
 Y no copia indiscriminadamente toda la tabla.  
-Selecciona únicamente:  
+Selecciona Ãºnicamente:  
 ```
 - variables admitidas;
 - variables necesarias para los Objetos requeridos;
 - valores observables legalmente en decision_timestamp;
-- versiones válidas según as_of_utc;
+- versiones vÃ¡lidas segÃºn as_of_utc;
 - registros con suficiente calidad y cobertura.
 ```
 
 No todas las tablas se unen mediante igualdad exacta de timestamp.
 
 ```
-014_master_intraday_bar_table - selecciona la barra cerrada o el valor intradía permitido en t. 009_fundamentals_asof_table - selecciona la última observación fundamental conocida antes de t. 010_news_context_table - selecciona noticias publicadas y disponibles antes o en t. 012_regime_context_table - selecciona el régimen vigente y observable en t. 015_microstructure_features_table - selecciona la ventana microestructural cerrada y válida en t.
+014_master_intraday_bar_table - selecciona la barra cerrada o el valor intradÃ­a permitido en t. 009_fundamentals_asof_table - selecciona la Ãºltima observaciÃ³n fundamental conocida antes de t. 010_news_context_table - selecciona noticias publicadas y disponibles antes o en t. 012_regime_context_table - selecciona el rÃ©gimen vigente y observable en t. 015_microstructure_features_table - selecciona la ventana microestructural cerrada y vÃ¡lida en t.
 ```
 
 ### Market State
 
-La necesidad de construir una representación del estado del mercado  
-surge de las *PREGUNTAS científicas*.
+La necesidad de construir una representaciÃ³n del estado del mercado  
+surge de las *PREGUNTAS cientÃ­ficas*.
 
 Una vez construida,  
-los distintos *CONSUMIDORES* reutilizan esa representación. 
+los distintos *CONSUMIDORES* reutilizan esa representaciÃ³n. 
 
-Ejemplos de *PREGUNTA CIENTÍFICA*
+Ejemplos de *PREGUNTA CIENTÃFICA*
 
 ```text
-PREGUNTA CIENTÍFICA:
-- ¿La probabilidad de continuación aumenta cuando el precio acelera?
+PREGUNTA CIENTÃFICA:
+- Â¿La probabilidad de continuaciÃ³n aumenta cuando el precio acelera?
 
-NECESIDAD DE INFORMACIÓN:
-- Conocer dirección, intensidad y aceleración del movimiento.
+NECESIDAD DE INFORMACIÃ“N:
+- Conocer direcciÃ³n, intensidad y aceleraciÃ³n del movimiento.
 
-OBJETO DE INFORMACIÓN REQUERIDO:
+OBJETO DE INFORMACIÃ“N REQUERIDO:
 - Momentum
 ```
 
 ```text
-PREGUNTA CIENTÍFICA:
-- ¿Es ejecutable una oportunidad sin un coste o impacto excesivo?
+PREGUNTA CIENTÃFICA:
+- Â¿Es ejecutable una oportunidad sin un coste o impacto excesivo?
 
-NECESIDAD DE INFORMACIÓN:
-- Conocer las condiciones de negociación disponibles.
+NECESIDAD DE INFORMACIÃ“N:
+- Conocer las condiciones de negociaciÃ³n disponibles.
 
-OBJETO DE INFORMACIÓN REQUERIDO:
+OBJETO DE INFORMACIÃ“N REQUERIDO:
 - Liquidity
 ```
 
 ```text
-PREGUNTA CIENTÍFICA:
-- ¿El movimiento tiene participación anómala?
+PREGUNTA CIENTÃFICA:
+- Â¿El movimiento tiene participaciÃ³n anÃ³mala?
 
-NECESIDAD DE INFORMACIÓN:
+NECESIDAD DE INFORMACIÃ“N:
 - Conocer la intensidad de actividad respecto a su referencia.
 
-OBJETO DE INFORMACIÓN REQUERIDO:
+OBJETO DE INFORMACIÃ“N REQUERIDO:
 - Trading Activity
 ```
 
-Es el diseño científico el que razona:
+Es el diseÃ±o cientÃ­fico el que razona:
 
 ```text
 Para responder estas preguntas
 y servir a estos consumidores,
-el estado debe preservar información sobre Momentum.
+el estado debe preservar informaciÃ³n sobre Momentum.
 ```
 
-Después esa decisión queda formalizada en un contrato:
+DespuÃ©s esa decisiÃ³n queda formalizada en un contrato:
 
 ```text
 MARKET STATE REPRESENTATION CONTRACT
@@ -811,54 +874,54 @@ El builder recibe ese contrato y lo ejecuta:
 Market State Builder:
 
 1. Lee los Objetos requeridos por el contrato.
-2. Consulta la especificación aprobada de cada Objeto.
-3. Resuelve qué variables implementan cada representación.
+2. Consulta la especificaciÃ³n aprobada de cada Objeto.
+3. Resuelve quÃ© variables implementan cada representaciÃ³n.
 4. Localiza las tablas donde viven esas variables.
-5. Recupera únicamente valores legalmente observables en t.
+5. Recupera Ãºnicamente valores legalmente observables en t.
 6. Valida cobertura, calidad y temporalidad.
 7. Materializa la fila de Market State.
 ```
 
-La distinción exacta es:
+La distinciÃ³n exacta es:
 
 ```text
-El contrato de representación de Market State declara
-qué Objetos de Información deben integrarse
-para cumplir sus preguntas científicas,
+El contrato de representaciÃ³n de Market State declara
+quÃ© Objetos de InformaciÃ³n deben integrarse
+para cumplir sus preguntas cientÃ­ficas,
 sus consumidores y su criterio de suficiencia.
 ```
 
 ```text
-Gobernanza científica
-= decide qué información merece preservarse.
+Gobernanza cientÃ­fica
+= decide quÃ© informaciÃ³n merece preservarse.
 
 Contrato de Market State
-= declara qué Objetos son obligatorios u opcionales.
+= declara quÃ© Objetos son obligatorios u opcionales.
 
 Market State Builder
-= ejecuta esa declaración.
+= ejecuta esa declaraciÃ³n.
 
 Market State
 = resultado materializado.
 ```
 
-La fase final que cerraría correctamente el documento sería  
-contestar a la pregunta :   **¿Quién necesita que existan Objetos**
+La fase final que cerrarÃ­a correctamente el documento serÃ­a  
+contestar a la pregunta :   **Â¿QuiÃ©n necesita que existan Objetos**
 
 Ejemplo de *CONSUMIDORES*: 
 
 ```
-Objeto de Información:
+Objeto de InformaciÃ³n:
 Momentum
 
-¿Por qué existe?
+Â¿Por quÃ© existe?
 
 Porque es necesario para:
 
 - representar el estado del mercado;
 - estudiar eventos;
 - agrupar contextos similares;
-- aprender políticas;
+- aprender polÃ­ticas;
 - investigar patrones;
 - evaluar resultados.   
 ```
@@ -878,27 +941,27 @@ Lo necesitan:
 - Policy Learning
 ```
 
-La cadena completa queda cerrada así:
+La cadena completa queda cerrada asÃ­:
 
 ```
-PREGUNTAS CIENTÍFICAS
+PREGUNTAS CIENTÃFICAS
 
 MERCADO
-↓
-FENÓMENOS
-↓
-OBJETOS DE INFORMACIÓN
-↓
-MODELOS DE REPRESENTACIÓN
-↓
+â†“
+FENÃ“MENOS
+â†“
+OBJETOS DE INFORMACIÃ“N
+â†“
+MODELOS DE REPRESENTACIÃ“N
+â†“
 VARIABLES
-↓
+â†“
 TABLAS
-↓
+â†“
 MARKET STATE BUILDER
-↓
+â†“
 MARKET STATE
-↓
+â†“
 CONSUMIDORES
 ```
 
@@ -906,24 +969,24 @@ CONSUMIDORES
 
 Por otra parte,   
 
-si *Market State* es la representación canónica del estado del mercado,   
-entonces solo debería existir una definición canónica.
+si *Market State* es la representaciÃ³n canÃ³nica del estado del mercado,   
+entonces solo deberÃ­a existir una definiciÃ³n canÃ³nica.
 
 ```
 Market State
 =
-La mejor representación observable del mercado en t.
+La mejor representaciÃ³n observable del mercado en t.
 ```
 
-Lo que sí puede cambiar es la proyección que hace cada consumidor sobre esa representación.
+Lo que sÃ­ puede cambiar es la proyecciÃ³n que hace cada consumidor sobre esa representaciÃ³n.
 
-Deberías tener:
+DeberÃ­as tener:
 
 ```
 market_state_table
 ```
 
-y después construir datasets derivados:
+y despuÃ©s construir datasets derivados:
 
 ```
 breakout_research_dataset
@@ -931,35 +994,35 @@ vwap_reclaim_research_dataset
 squeeze_research_dataset
 ```
 
-Esos datasets seleccionan las filas de Market State necesarias para estudiar cada patrón.
+Esos datasets seleccionan las filas de Market State necesarias para estudiar cada patrÃ³n.
 
 ```
 PM_Squeeze_Event
-↓
+â†“
 event_timestamp = 09:45
-↓
+â†“
 se solicitan estados:
 09:35
 09:36
 ...
 09:45
 ```
-El sistema no crea diez tablas canónicas nuevas.  
-Recupera diez filas o ventanas de la representación canónica.
+El sistema no crea diez tablas canÃ³nicas nuevas.  
+Recupera diez filas o ventanas de la representaciÃ³n canÃ³nica.
 
 
-Incluso se podría tener un sistema así:
+Incluso se podrÃ­a tener un sistema asÃ­:
 
 ```
 Market State
-│
-├── 500 Objetos atributos
-│
-├── Momentum
-├── Liquidity
-├── News
-├── Regime
-├── ...
+â”‚
+â”œâ”€â”€ 500 Objetos atributos
+â”‚
+â”œâ”€â”€ Momentum
+â”œâ”€â”€ Liquidity
+â”œâ”€â”€ News
+â”œâ”€â”€ Regime
+â”œâ”€â”€ ...
 ```
 entonces 
 
@@ -981,7 +1044,7 @@ lee:
 CNN
 
 lee:
-- imágenes
+- imÃ¡genes
 (no Market State directamente)
 ```
 
@@ -995,92 +1058,92 @@ lee:
 
 ```
 Market State
-↓
+â†“
 Feature Selector
-↓
+â†“
 Dataset RL
 ---
 
 Market State
-↓
+â†“
 Feature Selector
-↓
+â†“
 Dataset Clustering
 ---
 
 Market State
-↓
+â†“
 Feature Selector
-↓
+â†“
 Dataset Prediction
 ```
 
-**¿Se materializa una fila para cada t?**
+**Â¿Se materializa una fila para cada t?**
 
 Depende del grano definido.  
-Si el grano canónico es un minuto:  
+Si el grano canÃ³nico es un minuto:  
 ```
 instrument_id + decision_timestamp_minute
 ```
-entonces puede existir una fila por minuto válido.
+entonces puede existir una fila por minuto vÃ¡lido.
 
-Si el estado necesita resolución de segundos:
+Si el estado necesita resoluciÃ³n de segundos:
 ```
 instrument_id + decision_timestamp_second
 ```
-el volumen crece muchísimo.  
+el volumen crece muchÃ­simo.  
 Por eso no debes mezclar:
 ```
-definición canónica
+definiciÃ³n canÃ³nica
 ```
 con:
 ```
-resolución física universal.
+resoluciÃ³n fÃ­sica universal.
 ```
-Puede existir una arquitectura multirresolución:
+Puede existir una arquitectura multirresoluciÃ³n:
 ```
 market_state_1d
 market_state_1m
 market_state_1s
 market_state_microstructure_window
 ```
-Pero todas deben respetar la misma semántica:
+Pero todas deben respetar la misma semÃ¡ntica:
 ```
 estado observable legalmente en t
 ```
 No son estados distintos por algoritmo.   
-Son resoluciones físicas distintas del mismo concepto.
+Son resoluciones fÃ­sicas distintas del mismo concepto.
 
 
-**La arquitectura práctica recomendable**
+**La arquitectura prÃ¡ctica recomendable**
 
 ```
-CONTRATO CANÓNICO DE MARKET STATE
-↓
-define esquema, semántica y temporalidad
-↓
+CONTRATO CANÃ“NICO DE MARKET STATE
+â†“
+define esquema, semÃ¡ntica y temporalidad
+â†“
 MARKET STATE BUILDER
-↓
+â†“
 consulta tablas fuente
-↓
+â†“
 construye estados solicitados
-↓
+â†“
 valida
-↓
+â†“
 materializa de forma persistente
-↓
+â†“
 MARKET STATE STORE
-↓
+â†“
 es reutilizado por Event State y consumidores
 ```
 
-**¿Se guardan los Market State ya creados?**
+**Â¿Se guardan los Market State ya creados?**
 
-El almacenamiento podría tener tres niveles:
+El almacenamiento podrÃ­a tener tres niveles:
 
 
 ```
-1. Core histórico
+1. Core histÃ³rico
    - materializado ampliamente;
    - datos baratos y frecuentes.
 
@@ -1089,13 +1152,13 @@ El almacenamiento podría tener tres niveles:
    - materializadas por universo, evento o ventana autorizada.
 
 3. Datasets derivados
-   - específicos para investigación o algoritmos;
-   - no son Market State canónico.
+   - especÃ­ficos para investigaciÃ³n o algoritmos;
+   - no son Market State canÃ³nico.
 ```
 
 Ejemplo concreto
 
-Supón que investigas 2.000 squeezes.
+SupÃ³n que investigas 2.000 squeezes.
 
 ```
 NO -> 2.000 tablas Market State.
@@ -1104,7 +1167,7 @@ NO -> 2.000 tablas Market State.
 SI -> event_registry
         - contiene los 2.000 eventos
 
-Después solicitas:
+DespuÃ©s solicitas:
 
 por cada evento:
 - 30 minutos pre_event;
@@ -1112,57 +1175,139 @@ por cada evento:
 - 20 minutos post_event.
 
 El sistema obtiene:
-- 2.000 × 51 estados
+- 2.000 Ã— 51 estados
 ```
-pero los guarda en un repositorio común:
+pero los guarda en un repositorio comÃºn:
 ```
 market_state_table
 ```
 Luego Event State crea las relaciones:
 ```
-event_id ↔ market_state_id ↔ state_role
+event_id â†” market_state_id â†” state_role
 ```
 
 Si dos eventos utilizan el mismo estado de ABCD a las 09:42, ese Market State se reutiliza.
 
-**Lo canónico es, ante todo:**
+**Lo canÃ³nico es, ante todo:**
 
-una definición única y gobernada
-de cómo representar el mercado en t.
+una definiciÃ³n Ãºnica y gobernada
+de cÃ³mo representar el mercado en t.
 
 ```
-- la definición;
+- la definiciÃ³n;
 - el contrato;
 - el esquema;
 - las reglas temporales;
-- los Objetos de Información admitidos;
+- los Objetos de InformaciÃ³n admitidos;
 - las reglas para construir cada estado en t.
 ```
 
-La materialización física puede hacerse por capas sin perder la canonicalidad:
+La materializaciÃ³n fÃ­sica puede hacerse por capas sin perder la canonicalidad:
 
 ```
-- de forma histórica;
+- de forma histÃ³rica;
 - por particiones;
 - bajo demanda;
 - por ventanas de eventos;
 - en distintas resoluciones;
 - con extensiones opcionales;
 ```
-La fórmula
+La fÃ³rmula
 ```
-Canonicalidad = misma definición.
+Canonicalidad = misma definiciÃ³n.
 
-Materialización = cuándo, dónde, con qué cobertura
-y a qué resolución se construye esa definición.
+MaterializaciÃ³n = cuÃ¡ndo, dÃ³nde, con quÃ© cobertura
+y a quÃ© resoluciÃ³n se construye esa definiciÃ³n.
 ```
+
+
+### Market State no debe convertirse en mega-tabla universal
+
+La canonicidad no significa:
+
+```text
+una unica fila fisica con toda la informacion que algun consumidor pudiera necesitar
+```
+
+Ese criterio convertiria `Market State` en una union ilimitada de necesidades downstream.
+La regla correcta es:
+
+```text
+Canonicalidad
+= una unica semantica de estado
++ un unico identificador logico de estado
++ reglas temporales comunes
++ perfiles de representacion compatibles
+```
+
+La materializacion fisica puede separarse en perfiles:
+
+```text
+market_state_core
+market_state_daily_context
+market_state_intraday
+market_state_microstructure_extension
+market_state_news_extension
+```
+
+Todos los perfiles deben poder vincularse mediante:
+
+```text
+market_state_id
+instrument_id
+decision_timestamp
+representation_profile_version
+```
+
+El `core` debe contener solo lo necesario para identificar y describir el estado minimo gobernado.
+Las extensiones pesadas deben permanecer separadas y consumirse solo cuando el perfil, contrato y politica temporal lo autoricen.
+
+
+
+### Event State: state_role no basta
+
+`Event State` debe separar dos cosas:
+
+```text
+state_role
+= donde esta la fila respecto al evento.
+
+consumption_legality
+= si esa fila puede consumirse como input predictivo, research, outcome-adjacent o no input.
+```
+
+Valores de `state_role`:
+
+```text
+pre_event
+at_event
+post_event
+```
+
+Valores de `consumption_legality`:
+
+```text
+decision_safe
+research_only
+outcome_adjacent
+prohibited_as_input
+```
+
+Regla critica:
+
+```text
+post_event puede ser Event State valido para investigacion,
+pero no puede ser X para una decision tomada antes o en el evento.
+```
+
+Por eso una fila debe evaluarse por ambos ejes, no solo por `state_role`.
 
 
 ### Event State Builder
 
 El `Event State Builder` responde a una pregunta diferente:
 ```
-¿Qué información observable estaba disponible
+Â¿QuÃ© informaciÃ³n observable estaba disponible
 respecto al evento E
 en el decision_timestamp 09:42:00?
 ```
@@ -1170,9 +1315,9 @@ Event State no reconstruye el mercado desde cero.
 
 Parte de:
 - un `evento` concreto;
-- un `Market State` válido;
-- una `relación temporal` entre el estado y el evento;
-- variables específicas del contexto del evento.
+- un `Market State` vÃ¡lido;
+- una `relaciÃ³n temporal` entre el estado y el evento;
+- variables especÃ­ficas del contexto del evento.
 
 Ejemplo:
 ```
@@ -1204,9 +1349,9 @@ Ese estado ya contiene:
 - Market Regime
 ```
 
-**2. Añade la contextualización respecto al evento**
+**2. AÃ±ade la contextualizaciÃ³n respecto al evento**
 
-El builder incorpora información como:
+El builder incorpora informaciÃ³n como:
 ```
 - event_id
 - event_type
@@ -1233,54 +1378,54 @@ event_detection_status = not_yet_confirmed
 La diferencia esencial es:
 ```
 Market State:
-- organiza información por instrumento y decision_timestamp.
+- organiza informaciÃ³n por instrumento y decision_timestamp.
 
 Event State:
-- organiza esa misma información respecto a un evento concreto.
+- organiza esa misma informaciÃ³n respecto a un evento concreto.
 ```
 
-Por tanto, `Event State` no debería duplicar ni inventar un segundo estado del mercado.
+Por tanto, `Event State` no deberÃ­a duplicar ni inventar un segundo estado del mercado.
 
 Debe reutilizar o referenciar el Market State base:
 ```
 Event State
-↓
-referencia un Market State válido
-↓
-añade identidad del evento
-↓
-añade posición temporal respecto al evento
-↓
-añade contexto específico del evento
+â†“
+referencia un Market State vÃ¡lido
+â†“
+aÃ±ade identidad del evento
+â†“
+aÃ±ade posiciÃ³n temporal respecto al evento
+â†“
+aÃ±ade contexto especÃ­fico del evento
 ```
 Ejemplo completo:
 ```
 MERCADO
-↓
-aparecen fenómenos observables
-↓
-TSIS (investigador) define Objetos de Información
-↓
-los modelos determinan cómo representarlos
-↓
+â†“
+aparecen fenÃ³menos observables
+â†“
+TSIS (investigador) define Objetos de InformaciÃ³n
+â†“
+los modelos determinan cÃ³mo representarlos
+â†“
 las variables implementan esos modelos
-↓
+â†“
 las tablas materializan las variables
-↓
+â†“
 Market State Builder recupera e integra
-las variables válidas en decision_timestamp
-↓
+las variables vÃ¡lidas en decision_timestamp
+â†“
 MARKET STATE
-↓
+â†“
 Event State Builder toma ese estado base
 y lo contextualiza respecto al evento E
-↓
+â†“
 EVENT STATE
-↓
+â†“
 CONSUMIDORES
 ```
 
-**¿Qué ocurre cuando una estrategia solicita una ventana?**
+**Â¿QuÃ© ocurre cuando una estrategia solicita una ventana?**
 
 ```
 Evento:
@@ -1291,7 +1436,7 @@ event_timestamp:
 
 ventana solicitada:
 10 minutos antes
-5 minutos después
+5 minutos despuÃ©s
 ```
 El `Event State Builder` realiza algo como:
 
@@ -1299,9 +1444,9 @@ El `Event State Builder` realiza algo como:
 1. Identifica el evento.
 2. Calcula los decision_timestamp requeridos.
 3. Busca los Market State ya materializados.
-4. Construye los que falten, si están autorizados.
+4. Construye los que falten, si estÃ¡n autorizados.
 5. Los referencia mediante market_state_id.
-6. Añade state_role y relación temporal con el evento.
+6. AÃ±ade state_role y relaciÃ³n temporal con el evento.
 ```
 
 Resultado
@@ -1332,13 +1477,13 @@ Debes distinguir:
 ```
 Memoria temporal
 - RAM;
-- caché;
-- usada durante una ejecución;
+- cachÃ©;
+- usada durante una ejecuciÃ³n;
 - puede desaparecer.
 ```
 de:
 ```
-Materialización persistente
+MaterializaciÃ³n persistente
 - Parquet;
 - Delta/Iceberg;
 - base de datos;

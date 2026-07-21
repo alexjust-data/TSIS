@@ -86,7 +86,7 @@ post_event_review
 research_replay
 ```
 
-ML feature consumption may only use:
+ML feature consumption may only use rows where `consumption_legality = decision_safe` and `state_role` is one of:
 
 ```text
 pre_event
@@ -99,14 +99,59 @@ when:
 valid_for_ml_feature_candidate = true
 ```
 
-`post_event_review` rows are forensic/research and must not become pre-event
-features.
+`post_event_review` rows are forensic/research or outcome-adjacent and must not become pre-event or at-event input features.
 
 Plain-language enforcement:
 
 ```text
-post_event_review rows are forensic/research, not pre-event ML features.
+post_event_review rows are forensic/research or outcome-adjacent, not pre-event/at-event ML features.
 ```
+
+
+## 4.1 Consumption Legality Rules
+
+`state_role` is not sufficient to authorize downstream consumption.
+Every future materialized row must expose an independent classification:
+
+```text
+consumption_legality
+```
+
+Allowed values:
+
+```text
+decision_safe
+research_only
+outcome_adjacent
+prohibited_as_input
+```
+
+Meaning:
+
+| consumption_legality | Meaning | Predictive/Input Use |
+| --- | --- | --- |
+| `decision_safe` | all information in the row is observable at the declared `decision_timestamp_utc` and role/window gates pass | may be used as X only if consumer gates also pass |
+| `research_only` | valid for inspection, clustering, audits or exploratory research, but not approved as decision input | not valid as production/predictive X |
+| `outcome_adjacent` | contains or references post-event context useful near outcome analysis without inline labels/rewards | not valid as pre-event/at-event X |
+| `prohibited_as_input` | must not be used as model, policy, strategy or execution input | never valid as X |
+
+State-role default guardrail:
+
+```text
+pre_event + valid gates -> may be decision_safe
+at_event + known-at-cutoff event -> may be decision_safe
+post_event_review -> research_only or outcome_adjacent; never decision_safe for event-time prediction
+research_replay -> research_only unless a later replay contract says otherwise
+```
+
+ML/backtest feature consumption requires both:
+
+```text
+consumption_legality = decision_safe
+valid_for_ml_feature_candidate = true
+```
+
+A row can be a valid Event State research row and still be prohibited as predictive input.
 
 ## 5. Label Separation Rule
 
@@ -132,17 +177,18 @@ label and leakage manifests.
 
 ### Event Engine
 
-May use rows as event context after materialization and validation.
+May use rows as event context after materialization and validation, respecting `consumption_legality`.
 
 ### Pattern Discovery
 
-May use rows for state clustering only if leakage gates pass.
+May use rows for state clustering only if leakage gates pass and `consumption_legality` is not `prohibited_as_input`.
 
 ### ML
 
 May use rows as features only when:
 
 ```text
+consumption_legality = decision_safe
 valid_for_ml_feature_candidate = true
 ```
 

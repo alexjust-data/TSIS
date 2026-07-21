@@ -67,6 +67,7 @@ No v0.1 parquet is allowed until the builder, manifest and tests exist.
 - `decision_timestamp_utc`
 - `decision_date`
 - `state_role`
+- `consumption_legality`
 - `state_schema_version`
 - `state_builder_version`
 - `state_quality_state`
@@ -95,6 +96,37 @@ Only `pre_event` and legal `at_event` rows may become ML feature candidates.
 `post_event_review` is forensic/research context and must not be used as
 pre-event feature state.
 
+
+Required independent consumption legality classification:
+
+```text
+consumption_legality
+```
+
+Allowed `consumption_legality` values:
+
+```text
+decision_safe
+research_only
+outcome_adjacent
+prohibited_as_input
+```
+
+`state_role` and `consumption_legality` are independent classifications.
+`state_role` describes the event-relative snapshot role.
+`consumption_legality` describes whether that row may be consumed as predictive/input state.
+
+Default interpretation:
+
+| state_role | allowed consumption_legality | Predictive X use |
+| --- | --- | --- |
+| `pre_event` | `decision_safe` when all cutoff/gates pass; otherwise `research_only` or `prohibited_as_input` | allowed only when `decision_safe` and consumer gates pass |
+| `at_event` | `decision_safe` only when the event and all fields are known at the decision cutoff; otherwise `research_only` or `prohibited_as_input` | allowed only when `decision_safe` and consumer gates pass |
+| `post_event_review` | `research_only` or `outcome_adjacent` | prohibited as pre-event/at-event input |
+| `research_replay` | `research_only` or `prohibited_as_input` unless a later replay contract authorizes more | not a default predictive input |
+
+A `post_event_review` row can be a valid Event State row for research and still be invalid as X for prediction at the event timestamp.
+
 ## 6. Required Label Separation Columns
 
 - `outcome_join_key`
@@ -113,6 +145,7 @@ reward_columns_inline_allowed = false
 
 ## 7. Required Consumer Gates
 
+- `consumption_legality`
 - `valid_for_pattern_discovery`
 - `valid_for_ml_feature_candidate`
 - `valid_for_backtest_context_candidate`
@@ -130,6 +163,7 @@ Default v0.1 target values before a real builder:
 ```text
 valid_for_rl_training_direct = false
 valid_for_execution_simulator_direct = false
+consumption_legality != decision_safe unless all temporal, role and consumer gates pass
 execution_truth = false
 requires_asof_filter = true
 ```
@@ -244,6 +278,7 @@ manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/event_state_intraday_1m_quote
 joined_event_state_rows = 15
 event_count = 5
 state_role_counts = at_event: 5, post_event_review: 5, pre_event: 5
+consumption_legality_counts = not_emitted_by_current_controlled_candidate_v0_1; future builders must emit it explicitly
 validator_status = passed
 full_universe_claim_rows = 0
 valid_for_ml_feature_candidate_rows = 0

@@ -1,3 +1,11 @@
+## 2026-07-20 | event_state | consumption_legality separated from state_role
+
+- Clarified that `state_role` describes the event-relative snapshot role, but does not by itself authorize predictive/input consumption.
+- Added independent `consumption_legality` taxonomy: `decision_safe`, `research_only`, `outcome_adjacent`, `prohibited_as_input`.
+- Updated Event State schema contract, consumption policy, state snapshot roles contract, composition contract, validators and registry entry.
+- Rule: `post_event_review` may be valid research Event State, but must not be used as pre-event/at-event predictive X.
+- Boundary unchanged: no physical Event State table was promoted and no downstream ML/RL/backtest/execution consumption was authorized.
+
 ## 2026-07-16 | ohlcv_1m_quote_guarded | controlled downstream institutionalization
 
 - Created `contract_registry/dataset_contracts/ohlcv_1m_quote_guarded_dataset_contract_v0_1.md` to define the quote-guarded 1m derived price view, lineage, allowed consumers, restrictions and promotion boundary.

@@ -1,0 +1,387 @@
+{
+    "probe_id":  "experimental_state_builder_probe_v0_1",
+    "mode":  "binding_and_schema_check_only",
+    "official_output_allowed":  false,
+    "production_builder_authorized":  false,
+    "state_consumption_authorized":  false,
+    "physical_materialization_authorized":  false,
+    "dataset_promotion_authorized":  false,
+    "market_state_operational_authority":  false,
+    "sample_tickers":  [
+                           "AAPL",
+                           "BNGO"
+                       ],
+    "sample_decision_timestamps":  [
+                                       "2025-01-15T15:30:00Z",
+                                       "2025-01-15T20:00:00Z"
+                                   ],
+    "prohibited_prefixes":  [
+                                "outcome__",
+                                "label__",
+                                "reward__",
+                                "action__",
+                                "policy__",
+                                "fill__",
+                                "pnl__",
+                                "future__",
+                                "strategy__",
+                                "signal__"
+                            ],
+    "objects":  [
+                    {
+                        "object_id":  "trading_activity",
+                        "display_name":  "Trading Activity",
+                        "state_namespace":  "trading_activity__",
+                        "validation_status":  "design_ready_pending_execution",
+                        "mapping_doc":  "04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/trading_activity_operational_mapping_v0_1.md",
+                        "builder_validation_doc":  "05_STATE_BUILDER_VALIDATION/trading_activity_builder_validation_v0_1.md",
+                        "active_source_aliases":  [
+                                                      "004_master_daily_table",
+                                                      "013_ohlcv_1m_quote_guarded",
+                                                      "014_master_intraday_bar_table_candidate"
+                                                  ],
+                        "blocked_source_aliases":  [
+                                                       "future_trade_quote_aligned_surface"
+                                                   ],
+                        "required_capabilities":  [
+                                                      "daily__volume_20d_avg",
+                                                      "daily__rvol_20d",
+                                                      "intraday__bar_volume",
+                                                      "intraday__session_volume_to_time"
+                                                  ],
+                        "optional_capabilities":  [
+                                                      "daily__dollar_volume",
+                                                      "intraday__bar_transaction_count"
+                                                  ],
+                        "blocked_capabilities":  [
+                                                     "trades__signed_flow_WINDOW",
+                                                     "scanner_threshold",
+                                                     "reference__float_pit_state"
+                                                 ]
+                    },
+                    {
+                        "object_id":  "price_movement",
+                        "display_name":  "Price Movement",
+                        "state_namespace":  "price_movement__",
+                        "validation_status":  "design_ready_pending_execution",
+                        "mapping_doc":  "04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/price_movement_operational_mapping_v0_1.md",
+                        "builder_validation_doc":  "05_STATE_BUILDER_VALIDATION/price_movement_builder_validation_v0_1.md",
+                        "active_source_aliases":  [
+                                                      "004_master_daily_table",
+                                                      "013_ohlcv_1m_quote_guarded",
+                                                      "014_master_intraday_bar_table_candidate"
+                                                  ],
+                        "blocked_source_aliases":  [
+
+                                                   ],
+                        "required_capabilities":  [
+                                                      "daily__prior_close",
+                                                      "daily__gap_pct",
+                                                      "intraday__bar_close_price",
+                                                      "intraday__return_vs_prior_close_ratio",
+                                                      "intraday__return_vs_session_open_ratio"
+                                                  ],
+                        "optional_capabilities":  [
+
+                                                  ],
+                        "blocked_capabilities":  [
+                                                     "future_response",
+                                                     "MFE",
+                                                     "MAE",
+                                                     "momentum",
+                                                     "reversal"
+                                                 ]
+                    },
+                    {
+                        "object_id":  "price_location_structure",
+                        "display_name":  "Price Location / Structure",
+                        "state_namespace":  "price_location_structure__",
+                        "validation_status":  "design_ready_pending_execution",
+                        "mapping_doc":  "04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/price_location_structure_operational_mapping_v0_1.md",
+                        "builder_validation_doc":  "05_STATE_BUILDER_VALIDATION/price_location_structure_builder_validation_v0_1.md",
+                        "active_source_aliases":  [
+                                                      "004_master_daily_table",
+                                                      "013_ohlcv_1m_quote_guarded",
+                                                      "014_master_intraday_bar_table_candidate"
+                                                  ],
+                        "blocked_source_aliases":  [
+
+                                                   ],
+                        "required_capabilities":  [
+                                                      "daily__open_price",
+                                                      "daily__prior_close",
+                                                      "intraday__bar_close_price",
+                                                      "intraday__return_vs_session_open_ratio_as_location",
+                                                      "intraday__return_vs_prior_close_ratio_as_location"
+                                                  ],
+                        "optional_capabilities":  [
+
+                                                  ],
+                        "blocked_capabilities":  [
+                                                     "intraday__vwap_distance_ratio",
+                                                     "distance_to_session_hod",
+                                                     "distance_to_session_lod",
+                                                     "session_range_position",
+                                                     "future_extrema"
+                                                 ]
+                    },
+                    {
+                        "object_id":  "volatility_range_state",
+                        "display_name":  "Volatility / Range State",
+                        "state_namespace":  "volatility_range_state__",
+                        "validation_status":  "design_ready_pending_execution",
+                        "mapping_doc":  "04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/volatility_range_state_operational_mapping_v0_1.md",
+                        "builder_validation_doc":  "05_STATE_BUILDER_VALIDATION/volatility_range_state_builder_validation_v0_1.md",
+                        "active_source_aliases":  [
+                                                      "004_master_daily_table",
+                                                      "013_ohlcv_1m_quote_guarded",
+                                                      "014_master_intraday_bar_table_candidate"
+                                                  ],
+                        "blocked_source_aliases":  [
+
+                                                   ],
+                        "required_capabilities":  [
+                                                      "intraday__high_so_far",
+                                                      "intraday__low_so_far",
+                                                      "intraday__range_so_far_ratio"
+                                                  ],
+                        "optional_capabilities":  [
+                                                      "daily__daily_range_pct_as_prior_history"
+                                                  ],
+                        "blocked_capabilities":  [
+                                                     "future_range_response_model",
+                                                     "future_volatility_response_model",
+                                                     "MFE",
+                                                     "MAE"
+                                                 ]
+                    },
+                    {
+                        "object_id":  "liquidity",
+                        "display_name":  "Liquidity",
+                        "state_namespace":  "liquidity__",
+                        "validation_status":  "design_ready_pending_execution",
+                        "mapping_doc":  "04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/liquidity_operational_mapping_v0_1.md",
+                        "builder_validation_doc":  "05_STATE_BUILDER_VALIDATION/liquidity_builder_validation_v0_1.md",
+                        "active_source_aliases":  [
+                                                      "raw_quotes",
+                                                      "015_microstructure_features_table_candidate"
+                                                  ],
+                        "blocked_source_aliases":  [
+                                                       "future_trade_quote_aligned_surface"
+                                                   ],
+                        "required_capabilities":  [
+                                                      "quotes__bid_price",
+                                                      "quotes__ask_price",
+                                                      "quotes__spread_bps_median_WINDOW",
+                                                      "quotes__top_depth_mean_WINDOW"
+                                                  ],
+                        "optional_capabilities":  [
+                                                      "quotes__spread_bps_p90_WINDOW"
+                                                  ],
+                        "blocked_capabilities":  [
+                                                     "trade_quote__effective_spread_bps_WINDOW",
+                                                     "trade_quote__price_impact_proxy_WINDOW",
+                                                     "realized_spread"
+                                                 ]
+                    },
+                    {
+                        "object_id":  "market_microstructure_state",
+                        "display_name":  "Market Microstructure State",
+                        "state_namespace":  "market_microstructure_state__",
+                        "validation_status":  "design_ready_pending_execution",
+                        "mapping_doc":  "04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/market_microstructure_state_operational_mapping_v0_1.md",
+                        "builder_validation_doc":  "05_STATE_BUILDER_VALIDATION/market_microstructure_state_builder_validation_v0_1.md",
+                        "active_source_aliases":  [
+                                                      "raw_quotes",
+                                                      "015_microstructure_features_table_candidate"
+                                                  ],
+                        "blocked_source_aliases":  [
+
+                                                   ],
+                        "required_capabilities":  [
+                                                      "quotes__two_sided_rows_WINDOW",
+                                                      "quotes__crossed_rows_WINDOW",
+                                                      "quotes__locked_rows_WINDOW",
+                                                      "quotes__crossed_ratio_pct_two_sided_WINDOW",
+                                                      "quotes__locked_ratio_pct_two_sided_WINDOW"
+                                                  ],
+                        "optional_capabilities":  [
+                                                      "quotes__quote_count_WINDOW"
+                                                  ],
+                        "blocked_capabilities":  [
+                                                     "quotes__staleness_WINDOW",
+                                                     "quotes__lifetime_WINDOW",
+                                                     "OFI",
+                                                     "signed_flow"
+                                                 ]
+                    },
+                    {
+                        "object_id":  "order_flow_pressure",
+                        "display_name":  "Order Flow Pressure",
+                        "state_namespace":  "order_flow_pressure__",
+                        "validation_status":  "blocked_pending_state_capability_prerequisites",
+                        "mapping_doc":  "04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/order_flow_pressure_operational_mapping_v0_1.md",
+                        "builder_validation_doc":  "05_STATE_BUILDER_VALIDATION/order_flow_pressure_builder_validation_v0_1.md",
+                        "active_source_aliases":  [
+
+                                                  ],
+                        "blocked_source_aliases":  [
+                                                       "future_trade_quote_aligned_surface"
+                                                   ],
+                        "required_capabilities":  [
+
+                                                  ],
+                        "optional_capabilities":  [
+
+                                                  ],
+                        "blocked_capabilities":  [
+                                                     "trades__bid_hit_ask_lift_WINDOW",
+                                                     "trades__signed_flow_WINDOW",
+                                                     "trades__aggressor_imbalance_WINDOW",
+                                                     "trade_quote__ofi_l1_WINDOW"
+                                                 ],
+                        "unblock_requires":  [
+                                                 "trade_quote_alignment_policy",
+                                                 "side_classifier_policy",
+                                                 "classifier_confidence_policy"
+                                             ]
+                    },
+                    {
+                        "object_id":  "news_catalyst_context",
+                        "display_name":  "News / Catalyst Context",
+                        "state_namespace":  "news_catalyst_context__",
+                        "validation_status":  "design_ready_pending_execution",
+                        "mapping_doc":  "04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/news_catalyst_context_operational_mapping_v0_1.md",
+                        "builder_validation_doc":  "05_STATE_BUILDER_VALIDATION/news_catalyst_context_builder_validation_v0_1.md",
+                        "active_source_aliases":  [
+                                                      "010_news_context_table"
+                                                  ],
+                        "blocked_source_aliases":  [
+
+                                                   ],
+                        "required_capabilities":  [
+                                                      "news__published_utc",
+                                                      "news__as_of_utc",
+                                                      "news__freshness_minutes"
+                                                  ],
+                        "optional_capabilities":  [
+                                                      "news__article_count_WINDOW",
+                                                      "news__keyword_flag"
+                                                  ],
+                        "blocked_capabilities":  [
+                                                     "news__sentiment_score",
+                                                     "news__novelty_score",
+                                                     "catalyst_category_model"
+                                                 ]
+                    },
+                    {
+                        "object_id":  "fundamental_context",
+                        "display_name":  "Fundamental Context",
+                        "state_namespace":  "fundamental_context__",
+                        "validation_status":  "design_ready_pending_execution",
+                        "mapping_doc":  "04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/fundamental_context_operational_mapping_v0_1.md",
+                        "builder_validation_doc":  "05_STATE_BUILDER_VALIDATION/fundamental_context_builder_validation_v0_1.md",
+                        "active_source_aliases":  [
+                                                      "009_fundamentals_asof_table"
+                                                  ],
+                        "blocked_source_aliases":  [
+
+                                                   ],
+                        "required_capabilities":  [
+                                                      "fundamentals__filing_age_days",
+                                                      "fundamentals__statement_recency_days"
+                                                  ],
+                        "optional_capabilities":  [
+                                                      "fundamentals__statement_value_FIELD",
+                                                      "fundamentals__ratio_FORMULA"
+                                                  ],
+                        "blocked_capabilities":  [
+                                                     "reference__float_pit_state",
+                                                     "market_cap_STATE",
+                                                     "post_revision_truth"
+                                                 ]
+                    },
+                    {
+                        "object_id":  "short_side_context",
+                        "display_name":  "Short-Side Context",
+                        "state_namespace":  "short_side_context__",
+                        "validation_status":  "design_ready_pending_execution",
+                        "mapping_doc":  "04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/short_side_context_operational_mapping_v0_1.md",
+                        "builder_validation_doc":  "05_STATE_BUILDER_VALIDATION/short_side_context_builder_validation_v0_1.md",
+                        "active_source_aliases":  [
+                                                      "011_short_context_table"
+                                                  ],
+                        "blocked_source_aliases":  [
+                                                       "future_borrow_locate_ssr_sources"
+                                                   ],
+                        "required_capabilities":  [
+                                                      "short__days_to_cover",
+                                                      "short__short_volume_ratio"
+                                                  ],
+                        "optional_capabilities":  [
+                                                      "short__short_interest_z_WINDOW"
+                                                  ],
+                        "blocked_capabilities":  [
+                                                     "short__borrow_availability_state",
+                                                     "short__locate_state",
+                                                     "short__ssr_state",
+                                                     "short_squeeze_outcome"
+                                                 ]
+                    },
+                    {
+                        "object_id":  "broad_market_context",
+                        "display_name":  "Broad Market Context",
+                        "state_namespace":  "broad_market_context__",
+                        "validation_status":  "design_ready_pending_execution",
+                        "mapping_doc":  "04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/broad_market_context_operational_mapping_v0_1.md",
+                        "builder_validation_doc":  "05_STATE_BUILDER_VALIDATION/broad_market_context_builder_validation_v0_1.md",
+                        "active_source_aliases":  [
+                                                      "012_regime_context_table"
+                                                  ],
+                        "blocked_source_aliases":  [
+                                                       "future_macro_economic_source"
+                                                   ],
+                        "required_capabilities":  [
+                                                      "regime__intraday_return",
+                                                      "regime__close_to_previous_close_return"
+                                                  ],
+                        "optional_capabilities":  [
+                                                      "regime__high_to_open_return",
+                                                      "regime__low_to_open_return",
+                                                      "regime__intraday_range_pct"
+                                                  ],
+                        "blocked_capabilities":  [
+                                                     "macro__event_context",
+                                                     "ungoverned_market_regime_truth",
+                                                     "future_market_response"
+                                                 ]
+                    },
+                    {
+                        "object_id":  "halt_context",
+                        "display_name":  "Halt Context",
+                        "state_namespace":  "halt_context__",
+                        "validation_status":  "design_ready_pending_execution",
+                        "mapping_doc":  "04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/halt_context_operational_mapping_v0_1.md",
+                        "builder_validation_doc":  "05_STATE_BUILDER_VALIDATION/halt_context_builder_validation_v0_1.md",
+                        "active_source_aliases":  [
+                                                      "006_halts_table"
+                                                  ],
+                        "blocked_source_aliases":  [
+
+                                                   ],
+                        "required_capabilities":  [
+                                                      "halts__halt_type",
+                                                      "halts__is_halted_at_t",
+                                                      "halts__minutes_since_halt_start"
+                                                  ],
+                        "optional_capabilities":  [
+                                                      "halts__minutes_since_resume"
+                                                  ],
+                        "blocked_capabilities":  [
+                                                     "halt_clustering_STATE",
+                                                     "post_resumption_outcome_truth"
+                                                 ]
+                    }
+                ],
+    "source_binding_registry":  "configs/experimental_source_binding_registry_v0_1.json"
+}

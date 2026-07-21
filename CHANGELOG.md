@@ -1,3 +1,47 @@
+## 2026-07-21 | 03_TABLES_feature_engineering | Experimental State Builder probe scaffolded and smoked
+
+- Added `05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/` with a non-production `contract_check_only` probe, versioned config, run output root and smoke readout.
+- Executed smoke run `experimental_state_builder_probe_v0_1_20260721T091253Z`: 12 objects checked, 48 dry-run resolution snapshots, 0 failures, 21 source-binding warnings, 1 expected block and 0 blocked-capability leaks.
+- First engineering finding: active source aliases need governed experimental physical bindings before path/schema checks or data-read probes.
+- Preserved hard boundaries: no production builder, State consumption, schema change, physical materialization, dataset promotion or Market State Integration is authorized.
+## 2026-07-21 | 03_TABLES_feature_engineering | Builder Validation v1 designs completed
+
+- Completed Builder Validation design coverage for all 12 `TSIS Market Ontology v1` Information Objects.
+- Added designs for `Liquidity`, `Market Microstructure State`, `Order Flow Pressure`, `News / Catalyst Context`, `Fundamental Context`, `Short-Side Context`, `Broad Market Context` and `Halt Context`.
+- Kept `Order Flow Pressure` blocked pending trade-quote alignment, side classifier and classifier confidence policy.
+- Added `experimental_state_builder_boundary_v0_1.md` to define the next step as a non-production experimental builder, not a production builder.
+- Preserved hard boundaries: no production builder, State consumption, schema change, physical materialization, dataset promotion or Market State Integration is authorized.
+
+## 2026-07-21 | 03_TABLES_feature_engineering | Builder Validation first batch added
+
+- Added Builder Validation designs for `Price Movement`, `Price Location / Structure` and `Volatility / Range State`.
+- Added a Phase B ratification artifact for the existing `Trading Activity` builder validation pilot and aligned the pilot boundary with the frozen ontology / open Phase B state.
+- Updated the Builder Validation inventory and local handoff so the first batch is `design_ready_pending_execution`.
+- Preserved hard boundaries: no production builder, State consumption, schema change, physical materialization, dataset promotion or Market State Integration is authorized by this batch.
+
+## 2026-07-21 | 03_TABLES_feature_engineering | Operational Mapping v1 batch completed
+
+- Completed governed Phase B Operational Mapping coverage for all 12 `TSIS Market Ontology v1` Information Objects.
+- Added mappings for `Volatility / Range State`, `Liquidity`, `Market Microstructure State`, `Order Flow Pressure`, `News / Catalyst Context`, `Fundamental Context`, `Short-Side Context`, `Broad Market Context`, `Halt Context`, and a Phase B ratification artifact for `Trading Activity`.
+- Updated the Operational Mapping inventory and handoff so the next gate is `Builder Validation`; `Order Flow Pressure` remains State-blocked until trade-quote alignment, side classifier and confidence policy are governed.
+- Preserved hard boundaries: no production builder, State consumption, schema change, physical materialization or dataset promotion is authorized by these mappings.
+## 2026-07-21 | 03_TABLES_feature_engineering | Price Location Structure Operational Mapping added
+
+- Added `00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/price_location_structure_operational_mapping_v0_1.md` as the next governed Phase B Operational Mapping.
+- Mapped the core `Price Location / Structure` profile to legal session-open and prior-close anchors while keeping VWAP distance, HOD/LOD proximity, range position, anchored VWAP and pullback/retrace behind later gates.
+- Preserved hard boundaries: no production builder, State consumption, schema change, physical materialization or dataset promotion is authorized by this mapping.
+## 2026-07-21 | 03_TABLES_feature_engineering | Price Movement Operational Mapping added
+
+- Added `00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/price_movement_operational_mapping_v0_1.md` as the first governed Phase B Operational Mapping after the ontology freeze.
+- Mapped the core `Price Movement` profile to legal prior-close, session-open and closed-bar return references while keeping speed, acceleration, momentum and reversal/fade behind later gates.
+- Preserved hard boundaries: no production builder, State consumption, schema change, physical materialization or dataset promotion is authorized by this mapping.
+## 2026-07-21 | 03_TABLES_feature_engineering | TSIS Market Ontology v1 frozen
+
+- Added `00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/03_INFORMATION_OBJECTS/TSIS_MARKET_ONTOLOGY_V1_FREEZE.md` as the institutional freeze act for `TSIS Market Ontology v1`.
+- Decision: `ontology_status = FROZEN`, `ontology_lock_status = LOCKED`, `phase_a_status = CLOSED`, `phase_b_status = OPEN` for governed engineering.
+- Authorized Phase B to start with Operational Mapping while keeping production builders, State consumption, physical variables, schema/materialization and dataset promotion unauthorized until Phase B gates.
+- Updated `00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/AGENT.md` so future agents start from the frozen ontology state.
+- Aligned the feature-engineering and Phase B boundary READMEs so Operational Mapping is active while Builder Validation and Market State Integration remain gated.
 ## 2026-07-06 - DAS first push/dip/rebreak semantics v0.2 smoke
 
 ## 2026-07-07 - Quotes D-to-E transfer approved

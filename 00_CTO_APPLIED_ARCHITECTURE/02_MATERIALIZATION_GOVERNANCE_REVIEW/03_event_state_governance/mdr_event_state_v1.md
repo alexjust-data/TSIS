@@ -202,6 +202,33 @@ It shall not be treated as:
 
 ------------------------------------------------------------------------
 
+
+# Consumption Legality Boundary
+
+Event State materialization planning must keep two classifications separate:
+
+```text
+state_role
+= relation of the row to the event timeline.
+
+consumption_legality
+= whether the row may be consumed as predictive/input state.
+```
+
+Allowed `consumption_legality` values:
+
+```text
+decision_safe
+research_only
+outcome_adjacent
+prohibited_as_input
+```
+
+`post_event_review` rows may be valid research Event State rows, but they are not legal X for prediction at the event timestamp.
+
+------------------------------------------------------------------------
+
+
 # Blocking Preconditions
 
 Physical realization remains blocked until:
@@ -220,8 +247,8 @@ Physical realization remains blocked until:
     fields or execution-truth fields enter Event State.
 7.  Raw-to-consumption lineage is complete for Event Candidates, Event
     Windows, Market State dependencies and any microstructure inputs.
-8.  Coverage denominator, lookback policy, state roles and
-    `decision_timestamp_utc` policy are confirmed.
+8.  Coverage denominator, lookback policy, state roles,
+    `consumption_legality` and `decision_timestamp_utc` policy are confirmed.
 9.  Controlled candidate evidence is reviewed without promoting it to an
     official dataset.
 10. A `physical_realization_authorization_record` is approved.

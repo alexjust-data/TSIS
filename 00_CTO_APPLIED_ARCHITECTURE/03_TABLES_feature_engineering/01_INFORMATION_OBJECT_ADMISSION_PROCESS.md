@@ -1,69 +1,133 @@
 **PLANTILLA**
 
-ESPECIFICACIÓN Y CRITERIOS DE ADMISIÓN  
-DE `OBJETOS DE INFORMACIÓN`  
-PARA LA REPRESENTACIÓN DEL ESTADO
+ESPECIFICACIÃƒâ€œN Y CRITERIOS DE ADMISIÃƒâ€œN  
+DE `OBJETOS DE INFORMACIÃƒâ€œN`  
+PARA LA REPRESENTACIÃƒâ€œN DEL ESTADO
 === 
 
-Status: `template_v0_4_information_driven`  
+Status: `template_v0_7_state_profile_boundary`  
 Date: `2026-07-17`  
 
-Usar una copia de esta plantilla para cada `Objeto de Información` candidato
-a formar parte de la representación del estado.   
-* Este documento ***no diseña tablas***.    
-* Sí decide si una determinada información merece formar parte del estado del mercado.  
+Usar una copia de esta plantilla para cada `Objeto de InformaciÃƒÂ³n` candidato
+a formar parte de la representaciÃƒÂ³n del estado.   
+* Este documento ***no diseÃƒÂ±a tablas***.    
+* SÃƒÂ­ decide si una determinada informaciÃƒÂ³n merece formar parte del estado del mercado.  
 * No debe repetir contratos, schemas ni manifests.  
-* Sí debe referenciar los documentos, contratos, tablas, artefactos y literatura que justifican su existencia.  
+* SÃƒÂ­ debe referenciar los documentos, contratos, tablas, artefactos y literatura que justifican su existencia.  
 
-**Qué es este documento**
+**QuÃƒÂ© es este documento**
 
 Es un proceso reproducible para identificar, justificar y representar  
-`objetos de información` que pueden formar parte del estado del mercado.  
+`objetos de informaciÃƒÂ³n` que pueden formar parte del estado del mercado.  
 
-Las tablas y sus atributos serán una consecuencia de ese proceso.
+Las tablas y sus atributos serÃƒÂ¡n una consecuencia de ese proceso.
 
 Responde:
 
 ```
-¿Qué objeto de información existe?  
-¿Por qué existe?  
-¿Cómo se representa?  
-¿Qué variables lo implementan?  
-¿Dónde vive?  
-¿Quién lo consume?  
-¿Merece formar parte del estado?  
+Ã‚Â¿QuÃƒÂ© objeto de informaciÃƒÂ³n existe?  
+Ã‚Â¿Por quÃƒÂ© existe?  
+Ã‚Â¿CÃƒÂ³mo se representa?  
+Ã‚Â¿QuÃƒÂ© variables lo implementan?  
+Ã‚Â¿DÃƒÂ³nde vive?  
+Ã‚Â¿QuiÃƒÂ©n lo consume?  
+Ã‚Â¿Merece formar parte del estado?  
 ```
 
-## Filosofía
+## Boundary: Object Discovery vs Object Admission
+
+Este documento gobierna el **Object Admission Process**.
+
+No gobierna por si solo el descubrimiento inicial de candidatos.
+
+### Object Discovery Process
+
+Puede empezar desde:
+
+```text
+fenomenos observados
+preguntas cientificas
+RAW observables
+capacidades derivables
+tablas existentes
+variables reales
+```
+
+Su resultado es solamente:
+
+```text
+candidate_information_object
+candidate_variables
+candidate_representation_model
+source_evidence
+```
+
+Discovery no acepta el Objeto.
+Discovery no autoriza variables para State.
+Discovery no convierte una tabla existente en significado cientifico oficial.
+
+### Object Admission Process
+
+La admision formal siempre debe reconstruir la direccion cientifica:
+
+```text
+fenomeno_o_necesidad_cientifica
+    -> Objeto de Informacion
+        -> Modelo de Representacion
+            -> implementacion fisica candidata
+                -> legalidad temporal
+                    -> decision
+```
+
+Las tablas pueden descubrir candidatos.
+La admision define el significado.
+
+---
+## FilosofÃƒÂ­a
 
 Premisa
 
 ```
-¿Qué información debe preservar la representación
+Ã‚Â¿QuÃƒÂ© informaciÃƒÂ³n debe preservar la representaciÃƒÂ³n
 para describir correctamente el estado del mercado?
 
-¿Qué información debe contener el estado
-para que un agente pueda tomar decisiones óptimas?
+Ã‚Â¿QuÃƒÂ© informaciÃƒÂ³n debe contener el estado
+para que un agente pueda tomar decisiones ÃƒÂ³ptimas?
 ```
 
-Diseñamos representaciones físicas de **objetos de información** del mercado.
+Disenamos representaciones fisicas de **objetos de informacion** del mercado.
 
-**Concepto: `Objeto de Información` :** 
-```
-Representación de una propiedad observable del mercado:
-
-- que aporte conocimiento nuevo sobre el estado del mercado
-  en un decision_timestamp.
-
-. que ayude a representar su estado de forma más completa
-  para tomar una decisión óptima.
+**Concepto: `Objeto de Informacion` :**
+```text
+Unidad semantica de informacion que TSIS decide preservar
+sobre uno o varios fenomenos observables, independiente
+de su modelo de representacion y de su implementacion fisica.
 ```
 
-Una variable no tiene valor por sí misma.   
-Una variable no entra en TSIS porque sea un indicador conocido.  
-El objetivo no es construir muchas variables.    
-El objetivo es construir la **representación mínima del mercado** que conserve la máxima información útil.  
-Una variable entra únicamente si implementa una representación física de un Objeto de Información admitido.  
+Un Objeto de Informacion no existe en el mercado como objeto fisico.
+Lo construye TSIS como una decision cientifica sobre que informacion merece conservarse.
+
+El Objeto no es aun la representacion.
+Es lo que debe ser representado.
+
+Separacion obligatoria:
+
+```text
+Liquidity
+= Information Object
+
+coste de negociacion + profundidad + disponibilidad
+= Representation Model
+
+spread_bps + depth + quote_count
+= Physical Implementation
+```
+
+Una variable no tiene valor por si misma.
+Una variable no entra en TSIS porque sea un indicador conocido.
+El objetivo no es construir muchas variables.
+El objetivo es construir la representacion minima del mercado que conserve la maxima informacion util.
+Una variable entra unicamente si implementa fisicamente un Modelo de Representacion aprobado para un Objeto de Informacion admitido.
 
 Ejemplos:
 
@@ -76,7 +140,7 @@ VARIABLES:
 - Microprice
 
 Pero juntas representan un OBJETO DE INFORMACION:
-- Liquidez instantánea.
+- Liquidez instantÃƒÂ¡nea.
 ```
 
 ```
@@ -88,7 +152,7 @@ VARIABLES:
 - News
 
 Pero juntas representan OBJETO DE INFORMACION:
-- Potencial de expansión.
+- Potencial de expansiÃƒÂ³n.
 ```
 
 ```
@@ -102,97 +166,106 @@ Pero juntas representan un OBJETO DE INFORMACION:
 - Momentum.
 ```
 
-Cada vez que alguien quiera añadir una variable, la primera pregunta debería ser:
+Cada vez que alguien quiera aÃƒÂ±adir una variable, la primera pregunta deberÃƒÂ­a ser:
 ```
-¿Esta variable incorpora información nueva sobre el estado del mercado
-o solo es otra forma de representar información que ya tenemos?
-```
-
-**Hay 4 niveles**
-
-Nivel 1
-```
-FAMILAS DE OBJETOS DE INFORMACION
-
-Microstructure
-│
-├── Liquidity
-├── Buying Pressure
-├── Order Flow
-└── Queue Dynamics
-
-Participation
-│
-├── Trading Activity
-├── Participation Rate
-└── Relative Activity
-
-Price Structure
-│
-├── Momentum
-├── Trend
-├── Pullback
-└── Extension
-
-Context
-│
-├── News Context
-├── Fundamental Context
-└── Market Regime
+Ã‚Â¿Esta variable incorpora informaciÃƒÂ³n nueva sobre el estado del mercado
+o solo es otra forma de representar informaciÃƒÂ³n que ya tenemos?
 ```
 
-Nivel 2
+**Hay niveles y ejes separados**
+
+El termino `family` no debe usarse sin calificarlo.
+TSIS separa cuatro taxonomias distintas:
+
+```text
+Information Object Family
+= eje semantico: que tipo de informacion preserva el Objeto.
+
+Source Domain
+= eje de origen: de que fuente observable procede la evidencia.
+
+Temporal Resolution
+= eje temporal: a que granularidad o ventana aplica.
+
+Institutional Role
+= eje institucional: para que sirve dentro del sistema.
 ```
-OBJETOS DE INFORMACIÓN
-(Conceptos científicos)
 
-- Liquidity
-- Trading Activity
-- Momentum
-- Market Regime
-- News Context
-- Buying Pressure
-- Aggressiveness
-```
+Taxonomia semantica inicial para `Information Object Family`:
 
-Nivel 3
-```
-MODELOS DE REPRESENTACIÓN
-
-Cada modelo es un conjunto de variables
-que representa un Objeto de Información.
-
+```text
+Price Dynamics
+Trading Activity
 Liquidity
-↓
-Modelo 1:
-- spread
-- dollar_volume
-- quoted_depth
-
-Modelo 2:
-- kyle_lambda
-- amihud_illiquidity
-- roll_spread
-
-Momentum
-↓
-Modelo 1:
-- return_1m
-- return_5m
-- slope
-- vwap_distance
+Market Microstructure
+Instrument Context
+External Context
+Market Context
 ```
 
+Taxonomias separadas:
 
-Nivel 4 
+```text
+Source Domain:
+- OHLCV
+- Trades
+- Quotes
+- News
+- Fundamentals
+- SEC
+- Short
+- Halts
+- Reference
+- Market / Economic Context
+
+Temporal Resolution:
+- daily
+- intraday_bar
+- second
+- event_window
+- as_of
+
+Institutional Role:
+- observable
+- quality
+- lineage
+- governance
+- outcome
 ```
-ESTADO (Integración de todos los Objetos de Información en un instante t): 
-- Liquidez + 
-- Participación + 
-- Momentum + 
-- Régimen + 
-- Contexto + 
-...
+
+Regla:
+
+```text
+No usar una unica columna llamada family para mezclar
+semantica, fuente, escala temporal y rol institucional.
+```
+
+Ejemplo:
+
+```text
+Liquidity
+= Information Object
+
+Information Object Family
+= Liquidity
+
+Source Domain
+= Quotes + Trades + OHLCV
+
+Temporal Resolution
+= intraday_bar / event_window
+
+Institutional Role
+= observable
+```
+
+Pipeline de significado:
+
+```text
+Information Object
+-> Representation Model
+-> Physical Implementation
+-> State integration
 ```
 
 **Proceso inicial**
@@ -200,16 +273,16 @@ ESTADO (Integración de todos los Objetos de Información en un instante t):
 Te has de preguntar:
 
 ```
-¿Qué "información" del mercado todavía no está representada?
-¿Y cómo podemos representar esa información?
+Ã‚Â¿QuÃƒÂ© "informaciÃƒÂ³n" del mercado todavÃƒÂ­a no estÃƒÂ¡ representada?
+Ã‚Â¿Y cÃƒÂ³mo podemos representar esa informaciÃƒÂ³n?
 ```
 Ejemplo
 
 ```
 ---
-Información : La liquidity
+InformaciÃƒÂ³n : La liquidity
 ---
-Modelo de representación:
+Modelo de representaciÃƒÂ³n:
 - Spread
 - Quoted Depth
 - Dollar Volume
@@ -218,99 +291,172 @@ Modelo de representación:
 - Bid Ask Imbalance
 ```
 
-* Elegimos información.  
-* Después buscamos la representación mínima de esa información con variables.
+* Elegimos informaciÃƒÂ³n.  
+* DespuÃƒÂ©s buscamos la representaciÃƒÂ³n mÃƒÂ­nima de esa informaciÃƒÂ³n con variables.
 
 
 Ejemplos
 
-```
-FAMILIA:
-- Microstructure
-
-OBJETO DE INFORMACION  (Concepto científico): 
+```text
+information_object_family:
 - Liquidity
 
-VARIABLES (Modelo de representación) :
-- Spread
-- Depth
-- Quote Count
-- OFI
-- Microprice
-```
-```
-FAMILIA:
-- Participation
+source_domain:
+- Quotes
+- Trades
+- OHLCV
 
-OBJETO DE INFORMACION  (Concepto científico): 
+temporal_resolution:
+- intraday_bar
+- event_window
+
+institutional_role:
+- observable
+
+OBJETO DE INFORMACION  (Concepto cientifico):
+- Liquidity
+
+MODELO DE REPRESENTACION:
+- trading cost
+- depth
+- availability
+
+IMPLEMENTACION FISICA CANDIDATA:
+- spread
+- depth
+- quote_count
+- OFI
+- microprice
+```
+
+```text
+information_object_family:
 - Trading Activity
 
-VARIABLES (Modelo de representación) :
-- Relative Volume
-- Trade Count
-- Dollar Volume
-- Turnover
-```
-```
-FAMILIA:
-- Price Structure
+source_domain:
+- OHLCV
+- Trades
 
-OBJETO DE INFORMACION  (Concepto científico): 
+temporal_resolution:
+- daily
+- intraday_bar
+- event_window
+
+institutional_role:
+- observable
+
+OBJETO DE INFORMACION  (Concepto cientifico):
+- Trading Activity
+
+MODELO DE REPRESENTACION:
+- participation intensity
+- relative activity
+- turnover
+
+IMPLEMENTACION FISICA CANDIDATA:
+- relative_volume
+- trade_count
+- dollar_volume
+- turnover
+```
+
+```text
+information_object_family:
+- Price Dynamics
+
+source_domain:
+- OHLCV
+
+temporal_resolution:
+- daily
+- intraday_bar
+- event_window
+
+institutional_role:
+- observable
+
+OBJETO DE INFORMACION  (Concepto cientifico):
 - Momentum
 
-VARIABLES (Modelo de representación):
-- Slope
-- Returns
-- VWAP Distance
-- HH HL Structure
+MODELO DE REPRESENTACION:
+- direction
+- intensity
+- persistence
+- location versus references
+
+IMPLEMENTACION FISICA CANDIDATA:
+- slope
+- returns
+- vwap_distance
+- HH_HL_structure
 ```
 
 **Concepto final**
 
 Un `Objeto de informacion` emerge de una o varias variables conjuntamente.   
-El significado no está en una variable aislada, sino en la información conjunta.  
+El significado no estÃƒÂ¡ en una variable aislada, sino en la informaciÃƒÂ³n conjunta.  
 
-Las tablas no deberían preguntarse "¿qué columnas añadimos?", sino "**¿qué información necesitamos preservar?**"   
-y solo después decidir cuál es la representación física mínima y más robusta para conservar esa información.
+Las tablas no deberÃƒÂ­an preguntarse "Ã‚Â¿quÃƒÂ© columnas aÃƒÂ±adimos?", sino "**Ã‚Â¿quÃƒÂ© informaciÃƒÂ³n necesitamos preservar?**"   
+y solo despuÃƒÂ©s decidir cuÃƒÂ¡l es la representaciÃƒÂ³n fÃƒÂ­sica mÃƒÂ­nima y mÃƒÂ¡s robusta para conservar esa informaciÃƒÂ³n.
+
+
+**Regla para State**
+
+Aceptar un Objeto de Informacion no obliga a meter todas sus variables en una mega-tabla de Market State.
+
+La admision del Objeto decide que informacion merece existir.
+El Modelo de Representacion decide como se expresa.
+El perfil fisico decide donde se materializa:
+
+```text
+market_state_core
+market_state_daily_context
+market_state_intraday
+market_state_microstructure_extension
+market_state_news_extension
+```
+
+Una variable solo puede entrar en el core si es necesaria para la semantica minima del estado.
+Las variables pesadas, especializadas o de consumidor deben vivir en perfiles/extensiones gobernadas.
 
 
 ## Arquitectura
 
 ```
 MERCADO - simplemente existe
-↓
-FENÓMENOS - ¿Qué fenómenos observables existen?
-↓
-OBJETO DE INFORMACIÓN - ¿Qué información necesitamos conservar sobre esos fenómenos?
-↓
-MODELOS DE REPRESENTACIÓN: - ¿Mediante qué conjunto de medidas representamos este Objeto?
-↓
-IMPLEMENTACIÓN FÍSICA - ¿Qué columnas, fórmulas, ventanas y parámetros implementan esas medidas?
-↓
-TABLAS - ¿Dónde se materializa esa representación?
-↓
-Market State - ¿Cuál es el estado observable del mercado en un decision_timestamp?
-↓
-Event State - ¿Cuál es el estado observable del mercado respecto a un evento?
+Ã¢â€ â€œ
+FENÃƒâ€œMENOS - Ã‚Â¿QuÃƒÂ© fenÃƒÂ³menos observables existen?
+Ã¢â€ â€œ
+OBJETO DE INFORMACIÃƒâ€œN - Ã‚Â¿QuÃƒÂ© informaciÃƒÂ³n necesitamos conservar sobre esos fenÃƒÂ³menos?
+Ã¢â€ â€œ
+MODELOS DE REPRESENTACIÃƒâ€œN: - Ã‚Â¿Mediante quÃƒÂ© conjunto de medidas representamos este Objeto?
+Ã¢â€ â€œ
+IMPLEMENTACIÃƒâ€œN FÃƒÂSICA - Ã‚Â¿QuÃƒÂ© columnas, fÃƒÂ³rmulas, ventanas y parÃƒÂ¡metros implementan esas medidas?
+Ã¢â€ â€œ
+TABLAS - Ã‚Â¿DÃƒÂ³nde se materializa esa representaciÃƒÂ³n?
+Ã¢â€ â€œ
+Market State - Ã‚Â¿CuÃƒÂ¡l es el estado observable del mercado en un decision_timestamp?
+Ã¢â€ â€œ
+Event State - Ã‚Â¿CuÃƒÂ¡l es el estado observable del mercado respecto a un evento?
 ```
 
 Ejemplos
 
 ```
-FENÓMENO:
-- Hay una fuerte presión compradora.
+FENÃƒâ€œMENO:
+- Hay una fuerte presiÃƒÂ³n compradora.
 
-OBJETO DE INFORMACIÓN:
+OBJETO DE INFORMACIÃƒâ€œN:
 - Buying Pressure
 
-MODELO DE REPRESENTACIÓN:
-- Modelo basado en agresión compradora, desequilibrio y consumo de liquidez:
+MODELO DE REPRESENTACIÃƒâ€œN:
+- Modelo basado en agresiÃƒÂ³n compradora, desequilibrio y consumo de liquidez:
     - Aggressor Buy Volume
     - Buy/Sell Imbalance
     - Tape Speed
     - Ask Consumption
 
-IMPLEMENTACIÓN FÍSICA:
+IMPLEMENTACIÃƒâ€œN FÃƒÂSICA:
 
 - aggressor_buy_volume:
     - aggressor_buy_volume
@@ -329,19 +475,19 @@ TABLAS:
 - 015_microstructure_features_table
 ```
 ```
-FENÓMENO:
+FENÃƒâ€œMENO:
 - Hay muy poca liquidez.
 
-OBJETO DE INFORMACIÓN:
+OBJETO DE INFORMACIÃƒâ€œN:
 - Liquidity
 
-MODELO DE REPRESENTACIÓN:
-- Modelo basado en coste de negociación, actividad y profundidad:
+MODELO DE REPRESENTACIÃƒâ€œN:
+- Modelo basado en coste de negociaciÃƒÂ³n, actividad y profundidad:
     - Spread
     - Dollar Volume
     - Quoted Depth
 
-IMPLEMENTACIÓN FÍSICA:
+IMPLEMENTACIÃƒâ€œN FÃƒÂSICA:
 
 - spread:
     - quotes_spread_bps_median
@@ -362,19 +508,19 @@ TABLAS:
 ```
 
 ```
-FENÓMENO:
-- El precio está acelerando.
+FENÃƒâ€œMENO:
+- El precio estÃƒÂ¡ acelerando.
 
-OBJETO DE INFORMACIÓN:
+OBJETO DE INFORMACIÃƒâ€œN:
 - Momentum
 
-MODELO DE REPRESENTACIÓN:
-- Modelo basado en dirección, pendiente y aceleración:
+MODELO DE REPRESENTACIÃƒâ€œN:
+- Modelo basado en direcciÃƒÂ³n, pendiente y aceleraciÃƒÂ³n:
     - Returns
     - Slope
     - Price Acceleration
 
-IMPLEMENTACIÓN FÍSICA:
+IMPLEMENTACIÃƒâ€œN FÃƒÂSICA:
 
 - returns:
     - return_1m
@@ -392,19 +538,19 @@ TABLAS:
 ```
 
 ```
-FENÓMENO:
-- La participación del mercado aumenta de forma anómala.
+FENÃƒâ€œMENO:
+- La participaciÃƒÂ³n del mercado aumenta de forma anÃƒÂ³mala.
 
-OBJETO DE INFORMACIÓN:
+OBJETO DE INFORMACIÃƒâ€œN:
 - Trading Activity
 
-MODELO DE REPRESENTACIÓN:
-- Modelo basado en intensidad de negociación:
+MODELO DE REPRESENTACIÃƒâ€œN:
+- Modelo basado en intensidad de negociaciÃƒÂ³n:
     - Relative Volume
     - Volume Acceleration
     - Trade Count
 
-IMPLEMENTACIÓN FÍSICA:
+IMPLEMENTACIÃƒâ€œN FÃƒÂSICA:
 
 - relative_volume:
     - relative_volume
@@ -422,19 +568,19 @@ TABLAS:
 ```
 
 ```
-FENÓMENO:
+FENÃƒâ€œMENO:
 - El mercado entra en un entorno de alta incertidumbre.
 
-OBJETO DE INFORMACIÓN:
+OBJETO DE INFORMACIÃƒâ€œN:
 - Volatility
 
-MODELO DE REPRESENTACIÓN:
-- Modelo basado en amplitud y expansión:
+MODELO DE REPRESENTACIÃƒâ€œN:
+- Modelo basado en amplitud y expansiÃƒÂ³n:
     - Rolling Volatility
     - True Range
     - Expansion Ratio
 
-IMPLEMENTACIÓN FÍSICA:
+IMPLEMENTACIÃƒâ€œN FÃƒÂSICA:
 
 - rolling_volatility:
     - rolling_volatility
@@ -452,19 +598,19 @@ TABLAS:
 ```
 
 ```
-FENÓMENO:
+FENÃƒâ€œMENO:
 - Existe un catalizador externo que puede alterar el comportamiento del mercado.
 
-OBJETO DE INFORMACIÓN:
+OBJETO DE INFORMACIÃƒâ€œN:
 - News Context
 
-MODELO DE REPRESENTACIÓN:
-- Modelo basado en existencia, antigüedad y naturaleza del catalizador:
+MODELO DE REPRESENTACIÃƒâ€œN:
+- Modelo basado en existencia, antigÃƒÂ¼edad y naturaleza del catalizador:
     - News Presence
     - News Age
     - Source Type
 
-IMPLEMENTACIÓN FÍSICA:
+IMPLEMENTACIÃƒâ€œN FÃƒÂSICA:
 
 - news_presence:
     - news_presence
@@ -482,19 +628,19 @@ TABLAS:
 ```
 
 ```
-FENÓMENO:
-- La empresa presenta unas características estructurales determinadas.
+FENÃƒâ€œMENO:
+- La empresa presenta unas caracterÃƒÂ­sticas estructurales determinadas.
 
-OBJETO DE INFORMACIÓN:
+OBJETO DE INFORMACIÃƒâ€œN:
 - Fundamental Context
 
-MODELO DE REPRESENTACIÓN:
+MODELO DE REPRESENTACIÃƒâ€œN:
 - Modelo basado en estructura de capital:
     - Float
     - Market Cap
     - Shares Outstanding
 
-IMPLEMENTACIÓN FÍSICA:
+IMPLEMENTACIÃƒâ€œN FÃƒÂSICA:
 
 - float:
     - float
@@ -508,21 +654,21 @@ IMPLEMENTACIÓN FÍSICA:
 TABLAS:
 - 009_fundamentals_asof_table
 ```
-(Si ***market_cap*** o ***shares_outstanding*** todavía no existen en la tabla, quedarían como candidatos futuros.)
+(Si ***market_cap*** o ***shares_outstanding*** todavÃƒÂ­a no existen en la tabla, quedarÃƒÂ­an como candidatos futuros.)
 ```
-FENÓMENO:
-- El mercado global favorece o perjudica la continuación de los movimientos.
+FENÃƒâ€œMENO:
+- El mercado global favorece o perjudica la continuaciÃƒÂ³n de los movimientos.
 
-OBJETO DE INFORMACIÓN:
+OBJETO DE INFORMACIÃƒâ€œN:
 - Market Regime
 
-MODELO DE REPRESENTACIÓN:
+MODELO DE REPRESENTACIÃƒâ€œN:
 - Modelo basado en contexto macro del mercado:
     - Index Return
     - Volatility Proxy
     - Risk On/Off
 
-IMPLEMENTACIÓN FÍSICA:
+IMPLEMENTACIÃƒâ€œN FÃƒÂSICA:
 
 - index_return:
     - index_return
@@ -539,19 +685,19 @@ TABLAS:
 ```
 
 ```
-FENÓMENO:
-- El precio se encuentra en una posición concreta dentro de la sesión.
+FENÃƒâ€œMENO:
+- El precio se encuentra en una posiciÃƒÂ³n concreta dentro de la sesiÃƒÂ³n.
 
-OBJETO DE INFORMACIÓN:
+OBJETO DE INFORMACIÃƒâ€œN:
 - Intraday Position
 
-MODELO DE REPRESENTACIÓN:
-- Modelo basado en referencias intradía:
+MODELO DE REPRESENTACIÃƒâ€œN:
+- Modelo basado en referencias intradÃƒÂ­a:
     - Distance to HOD
     - Distance to LOD
     - Distance to VWAP
 
-IMPLEMENTACIÓN FÍSICA:
+IMPLEMENTACIÃƒâ€œN FÃƒÂSICA:
 
 - distance_to_hod:
     - distance_to_session_hod
@@ -570,59 +716,59 @@ TABLAS:
 
 **Consecuencia 1**
 
-Un mismo Objeto de Información puede tener varios modelos de representación.
+Un mismo Objeto de InformaciÃƒÂ³n puede tener varios modelos de representaciÃƒÂ³n.
 
 ```
 Liquidity
-│
-├── Modelo A
-│     ├── Spread
-│     ├── Depth
-│     └── Dollar Volume
-│
-├── Modelo B
-│     ├── Kyle Lambda
-│     ├── Amihud
-│     └── Roll Spread
-│
-└── Modelo C
-      └── Embedding aprendido
+Ã¢â€â€š
+Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Modelo A
+Ã¢â€â€š     Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Spread
+Ã¢â€â€š     Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Depth
+Ã¢â€â€š     Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ Dollar Volume
+Ã¢â€â€š
+Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Modelo B
+Ã¢â€â€š     Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Kyle Lambda
+Ã¢â€â€š     Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Amihud
+Ã¢â€â€š     Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ Roll Spread
+Ã¢â€â€š
+Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ Modelo C
+      Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ Embedding aprendido
 ```
 
 **Consecuencia 2**
 
-Una misma tabla puede implementar parcialmente varios Objetos de Información.
+Una misma tabla puede implementar parcialmente varios Objetos de InformaciÃƒÂ³n.
 
 ```
 014_master_intraday_bar_table
 
-├── Momentum
-│     ├── return_1m
-│     ├── slope
-│     └── price_acceleration
-│
-├── Trading Activity
-│     ├── relative_volume
-│     ├── volume_acceleration
-│     └── trade_count_proxy
-│
-├── Intraday Position
-│     ├── distance_to_session_hod
-│     ├── distance_to_session_lod
-│     └── intraday_vwap_distance
-│
-└── Volatility
-      └── rolling_range_5m
+Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Momentum
+Ã¢â€â€š     Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ return_1m
+Ã¢â€â€š     Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ slope
+Ã¢â€â€š     Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ price_acceleration
+Ã¢â€â€š
+Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Trading Activity
+Ã¢â€â€š     Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ relative_volume
+Ã¢â€â€š     Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ volume_acceleration
+Ã¢â€â€š     Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ trade_count_proxy
+Ã¢â€â€š
+Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Intraday Position
+Ã¢â€â€š     Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ distance_to_session_hod
+Ã¢â€â€š     Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ distance_to_session_lod
+Ã¢â€â€š     Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ intraday_vwap_distance
+Ã¢â€â€š
+Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ Volatility
+      Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ rolling_range_5m
 ```
 
 **Consecuencia 3**
 
-Un mismo Objeto de Información puede necesitar variables procedentes de varias tablas.
+Un mismo Objeto de InformaciÃƒÂ³n puede necesitar variables procedentes de varias tablas.
 
 ```
 Liquidity
 
-↓
+Ã¢â€ â€œ
 
 004_master_daily_table
     - dollar_volume
@@ -638,121 +784,147 @@ Liquidity
 ```
 
 **Concepto clave**   
-primero defines qué quieres representar, después el modelo conceptual con el que lo representarás, y solo al final eliges las medidas concretas (variables) que implementan ese modelo.
+primero defines quÃƒÂ© quieres representar, despuÃƒÂ©s el modelo conceptual con el que lo representarÃƒÂ¡s, y solo al final eliges las medidas concretas (variables) que implementan ese modelo.
  
-una misma tabla (por ejemplo, 014_master_intraday_bar_table) implementa parcialmente la representación física de varios Objetos de Información (Momentum, Trading Activity, Intraday Position, etc.). 
+una misma tabla (por ejemplo, 014_master_intraday_bar_table) implementa parcialmente la representaciÃƒÂ³n fÃƒÂ­sica de varios Objetos de InformaciÃƒÂ³n (Momentum, Trading Activity, Intraday Position, etc.). 
 
-## Proceso de admisión
+## Proceso de admisiÃƒÂ³n
 
 ```
-Nuevo Objeto de Información candidato
-↓
-¿Qué queremos representar?
-↓
-¿Qué fenómeno del mercado representa?
-↓
-¿Qué significado científico tiene?
-↓
-¿Por qué merece existir?
-↓
-¿Qué preguntas científicas permite responder?
-↓
-¿Qué hipótesis científica representa?
-↓
-¿Existe evidencia científica que lo respalde?
-↓
-¿Quién utilizará esta información?
+Nuevo Objeto de InformaciÃƒÂ³n candidato
+Ã¢â€ â€œ
+Ã‚Â¿QuÃƒÂ© queremos representar?
+Ã¢â€ â€œ
+Ã‚Â¿QuÃƒÂ© fenÃƒÂ³meno del mercado representa?
+Ã¢â€ â€œ
+Ã‚Â¿QuÃƒÂ© significado cientÃƒÂ­fico tiene?
+Ã¢â€ â€œ
+Ã‚Â¿Por quÃƒÂ© merece existir?
+Ã¢â€ â€œ
+Ã‚Â¿QuÃƒÂ© preguntas cientÃƒÂ­ficas permite responder?
+Ã¢â€ â€œ
+Ã‚Â¿QuÃƒÂ© hipÃƒÂ³tesis cientÃƒÂ­fica representa?
+Ã¢â€ â€œ
+Ã‚Â¿Existe evidencia cientÃƒÂ­fica que lo respalde?
+Ã¢â€ â€œ
+Ã‚Â¿QuiÃƒÂ©n utilizarÃƒÂ¡ esta informaciÃƒÂ³n?
 (Market State, Event State, ML, RL...)
-↓
-¿Cómo vamos a representar este Objeto?
-(Modelo(s) de Representación)
-↓
-¿Qué variables implementan ese modelo?
-↓
-¿En qué tablas vivirán esas variables?
-↓
-¿Existe ya otra representación equivalente?
-↓
-¿Puede calcularse legalmente en decision_timestamp?
-↓
-¿Cuál es su coste computacional?
-↓
-¿Cuánto ruido introduce?
-↓
-¿Cuál es su ganancia informativa?
-↓
-¿Debe admitirse dentro de la representación del estado?
+Ã¢â€ â€œ
+Ã‚Â¿CÃƒÂ³mo vamos a representar este Objeto?
+(Modelo(s) de RepresentaciÃƒÂ³n)
+Ã¢â€ â€œ
+Ã‚Â¿QuÃƒÂ© variables implementan ese modelo?
+Ã¢â€ â€œ
+Ã‚Â¿En quÃƒÂ© tablas vivirÃƒÂ¡n esas variables?
+Ã¢â€ â€œ
+Ã‚Â¿Existe ya otra representaciÃƒÂ³n equivalente?
+Ã¢â€ â€œ
+Ã‚Â¿Puede calcularse legalmente en decision_timestamp?
+Ã¢â€ â€œ
+Ã‚Â¿CuÃƒÂ¡l es su coste computacional?
+Ã¢â€ â€œ
+Ã‚Â¿CuÃƒÂ¡nto ruido introduce?
+Ã¢â€ â€œ
+Ã‚Â¿CuÃƒÂ¡l es su ganancia informativa?
+Ã¢â€ â€œ
+Ã‚Â¿Debe admitirse dentro de la representaciÃƒÂ³n del estado?
 ```
 
 
-# PLANTILLA : `Objeto de Información`
+# PLANTILLA : `Objeto de InformaciÃƒÂ³n`
 
 
-## 1. Identificación
+## 1. IdentificaciÃƒÂ³n
 
 ### Nombre
 
 ```text
-<Nombre del Objeto de Información>
+<Nombre del Objeto de InformaciÃƒÂ³n>
 ```
 
-### Familia
+### Taxonomy Axes
+
+Information Object Family:
 
 ```text
-<Microstructure | Participation | Price Structure | Context | ...>
+<Price Dynamics | Trading Activity | Liquidity | Market Microstructure | Instrument Context | External Context | Market Context | ...>
+```
+
+Source Domain:
+
+```text
+<OHLCV | Trades | Quotes | News | Fundamentals | SEC | Short | Halts | Reference | Market / Economic Context | ...>
+```
+
+Temporal Resolution:
+
+```text
+<daily | intraday_bar | second | event_window | as_of | ...>
+```
+
+Institutional Role:
+
+```text
+<observable | quality | lineage | governance | outcome | ...>
+```
+
+Rule:
+
+```text
+Do not collapse these axes into a single generic family field.
 ```
 
 ---
 
-## 2. Significado científico
+## 2. Significado cientÃƒÂ­fico
 
-### Información que se desea preservar
+### InformaciÃƒÂ³n que se desea preservar
 
 ```text
-¿Qué información del mercado queremos preservar?
+Ã‚Â¿QuÃƒÂ© informaciÃƒÂ³n del mercado queremos preservar?
 ```
 
-### Fenómeno del mercado observado
+### FenÃƒÂ³meno del mercado observado
 
 ```text
-¿Qué fenómeno observable representa?
+Ã‚Â¿QuÃƒÂ© fenÃƒÂ³meno observable representa?
 ```
 
-### Significado científico
+### Significado cientÃƒÂ­fico
 
 ```text
-¿Qué conocimiento aporta al estado del mercado?
-```
-
----
-
-## 3. Justificación científica
-
-### Hipótesis científica
-
-```text
-¿Qué hipótesis representa?
-```
-
-### Justificación
-
-```text
-¿Por qué este Objeto de Información merece formar parte del estado?
-```
-
-### Preguntas científicas
-
-```text
-¿Qué preguntas permite responder?
-
-•
-•
-•
+Ã‚Â¿QuÃƒÂ© conocimiento aporta al estado del mercado?
 ```
 
 ---
 
-## 4. Evidencia científica
+## 3. JustificaciÃƒÂ³n cientÃƒÂ­fica
+
+### HipÃƒÂ³tesis cientÃƒÂ­fica
+
+```text
+Ã‚Â¿QuÃƒÂ© hipÃƒÂ³tesis representa?
+```
+
+### JustificaciÃƒÂ³n
+
+```text
+Ã‚Â¿Por quÃƒÂ© este Objeto de InformaciÃƒÂ³n merece formar parte del estado?
+```
+
+### Preguntas cientÃƒÂ­ficas
+
+```text
+Ã‚Â¿QuÃƒÂ© preguntas permite responder?
+
+Ã¢â‚¬Â¢
+Ã¢â‚¬Â¢
+Ã¢â‚¬Â¢
+```
+
+---
+
+## 4. Evidencia cientÃƒÂ­fica
 
 ```text
 Papers
@@ -766,22 +938,22 @@ Referencias
 
 ---
 
-## 5. Modelo(s) de representación
+## 5. Modelo(s) de representaciÃƒÂ³n
 
 ### Modelo A
 
-#### Descripción
+#### DescripciÃƒÂ³n
 
 ```text
-¿Cómo representaremos este Objeto?
+Ã‚Â¿CÃƒÂ³mo representaremos este Objeto?
 ```
 
 #### Medidas utilizadas
 
 ```text
-•
-•
-•
+Ã¢â‚¬Â¢
+Ã¢â‚¬Â¢
+Ã¢â‚¬Â¢
 ```
 
 #### Ventajas
@@ -800,7 +972,7 @@ Referencias
 
 ### Modelo B (opcional)
 
-#### Descripción
+#### DescripciÃƒÂ³n
 
 ```text
 ...
@@ -809,9 +981,9 @@ Referencias
 #### Medidas utilizadas
 
 ```text
-•
-•
-•
+Ã¢â‚¬Â¢
+Ã¢â‚¬Â¢
+Ã¢â‚¬Â¢
 ```
 
 #### Ventajas
@@ -828,7 +1000,7 @@ Referencias
 
 ---
 
-## 6. Implementación física
+## 6. ImplementaciÃƒÂ³n fÃƒÂ­sica
 
 ### Modelo seleccionado
 
@@ -836,7 +1008,7 @@ Referencias
 Modelo A
 ```
 
-### Variables físicas
+### Variables fÃƒÂ­sicas
 
 ```text
 Concepto:
@@ -858,7 +1030,7 @@ Concepto:
 
 ---
 
-## 7. Materialización
+## 7. MaterializaciÃƒÂ³n
 
 ### Tabla principal
 
@@ -902,18 +1074,18 @@ Risk Engine
 ## 9. Legalidad temporal
 
 ```text
-¿Puede calcularse completamente en decision_timestamp?
+Ã‚Â¿Puede calcularse completamente en decision_timestamp?
 
-¿Necesita as-of?
+Ã‚Â¿Necesita as-of?
 
-¿Existe riesgo de leakage?
+Ã‚Â¿Existe riesgo de leakage?
 
-¿Tiene dependencias temporales?
+Ã‚Â¿Tiene dependencias temporales?
 ```
 
 ---
 
-## 10. Evaluación técnica
+## 10. EvaluaciÃƒÂ³n tÃƒÂ©cnica
 
 ### Coste computacional
 
@@ -926,7 +1098,7 @@ Risk Engine
 ```text
 Dimensionalidad
 
-Correlación
+CorrelaciÃƒÂ³n
 
 Overfitting
 ```
@@ -934,19 +1106,19 @@ Overfitting
 ### Estabilidad temporal
 
 ```text
-¿Es estable entre distintos regímenes?
+Ã‚Â¿Es estable entre distintos regÃƒÂ­menes?
 ```
 
 ### Ganancia informativa
 
 ```text
-¿Qué incertidumbre reduce?
+Ã‚Â¿QuÃƒÂ© incertidumbre reduce?
 ```
 
-### Pérdida de información
+### PÃƒÂ©rdida de informaciÃƒÂ³n
 
 ```text
-¿Qué información se perdería si este Objeto desapareciera?
+Ã‚Â¿QuÃƒÂ© informaciÃƒÂ³n se perderÃƒÂ­a si este Objeto desapareciera?
 ```
 
 ---
@@ -954,13 +1126,13 @@ Overfitting
 ## 11. Representaciones equivalentes
 
 ```text
-¿Existe otro Objeto que represente prácticamente la misma información?
+Ã‚Â¿Existe otro Objeto que represente prÃƒÂ¡cticamente la misma informaciÃƒÂ³n?
 
-¿Existe otro modelo equivalente?
+Ã‚Â¿Existe otro modelo equivalente?
 
-¿Debe reutilizarse?
+Ã‚Â¿Debe reutilizarse?
 
-¿Debe fusionarse?
+Ã‚Â¿Debe fusionarse?
 ```
 
 ---
@@ -998,18 +1170,18 @@ L3
 ## 13. Impacto sobre el estado
 
 ```text
-¿Qué aporta este Objeto a Market State?
+Ã‚Â¿QuÃƒÂ© aporta este Objeto a Market State?
 
-¿Es obligatorio?
+Ã‚Â¿Es obligatorio?
 
-¿Es opcional?
+Ã‚Â¿Es opcional?
 
-¿Qué ocurre si se elimina?
+Ã‚Â¿QuÃƒÂ© ocurre si se elimina?
 ```
 
 ---
 
-## 14. Decisión
+## 14. DecisiÃƒÂ³n
 
 ```text
 Aceptado
@@ -1021,13 +1193,13 @@ Pendiente de evidencia
 Rechazado
 ```
 
-### Justificación
+### JustificaciÃƒÂ³n
 
 ```text
 ...
 ```
 
-### Condiciones de revisión futura
+### Condiciones de revisiÃƒÂ³n futura
 
 ```text
 ...
@@ -1056,5 +1228,3 @@ README
 
 Otros documentos relacionados
 ```
-
-

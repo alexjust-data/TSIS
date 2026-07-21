@@ -77,10 +77,14 @@ C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/
 ## Principio Central
 
 ```text
-state_role = por que existe este snapshot y para que uso esta permitido.
+state_role = por que existe este snapshot y que relacion temporal/operativa tiene.
+consumption_legality = si esa fila puede consumirse como input, solo como research, cerca de outcome o nunca como input.
 ```
 
-`state_role` no cambia la verdad observable. Cambia:
+`state_role` no cambia la verdad observable. Describe el rol del snapshot.
+`consumption_legality` separa la legalidad de consumo downstream.
+
+Juntos determinan:
 
 ```text
 el punto de corte temporal
@@ -106,6 +110,7 @@ Todo rol debe declarar como minimo:
 | --- | --- |
 | `state_role` | nombre canonico del rol |
 | `role_family` | discovery, event, decision, risk, execution, rl, post_analysis |
+| `consumption_legality` | decision_safe, research_only, outcome_adjacent, prohibited_as_input |
 | `allowed_timestamp_types` | timestamps permitidos desde `state_decision_timestamp_policy_v0_1.md` |
 | `state_cutoff_rule` | como se fija `state_cutoff_utc` |
 | `allowed_windows` | ventanas que puede mirar |
@@ -133,6 +138,38 @@ Todo rol debe declarar como minimo:
 | `EXECUTION_STATE` | contexto para simulacion o ejecucion, no fill truth | `entry_decision_t`, `risk_decision_t`, `exit_decision_t`, `live_received_t` | microestructura/constraints solo si gobernadas y `<= t` | execution simulator candidate futuro | fill garantizado, slippage real posterior, borrow/locate sin fuente | `restricted_requires_execution_contracts` |
 | `RL_TRANSITION_STATE` | punto de una transicion para RL/offline learning | `bar_close_decision_t`, `entry_decision_t`, `risk_decision_t`, `exit_decision_t` | `state(t)` y `state(t+1)` separados; reward separado | future RL transition/evaluator layer | action/reward/outcome inline dentro de market/event state | `future_requires_transition_contract` |
 | `POST_EVENT_ANALYSIS_STATE` | estudiar lo ocurrido despues del evento | `post_event_analysis_t`, `outcome_evaluation_t` | post-event, response, next-session windows permitidas como analisis | research, diagnostics, outcome/evaluator joins | usar como X pre-decision sin role/cutoff explicito | `complete_for_declared_scope_research_only` |
+
+
+## 2.1 Consumption Legality
+
+`state_role` and `consumption_legality` are independent.
+
+```text
+state_role
+= why the snapshot exists and how it relates to the event/decision timeline.
+
+consumption_legality
+= whether the row may be used as predictive/input state.
+```
+
+Allowed values:
+
+| consumption_legality | Meaning | Use boundary |
+| --- | --- | --- |
+| `decision_safe` | observable at the declared decision timestamp and legal under role/window/cutoff gates | may become X only if consumer gates also pass |
+| `research_only` | valid for research/audit/diagnostics, not for predictive decision input | not X for pre-decision/event-time prediction |
+| `outcome_adjacent` | post-event or response context useful for outcome/evaluator analysis | never X for pre-event/at-event decisions |
+| `prohibited_as_input` | invalid as model/policy/strategy/execution input | blocked |
+
+Default mapping for event-relative rows:
+
+| event-relative state_role | default/legal consumption boundary |
+| --- | --- |
+| `pre_event` | may be `decision_safe` only when all fields satisfy cutoff and consumer gates |
+| `at_event` | may be `decision_safe` only when the event and all fields are known at cutoff |
+| `post_event` / `post_event_review` | `research_only` or `outcome_adjacent`; prohibited as event-time predictive X |
+
+A row can be a valid Event State research row and still be illegal as prediction input.
 
 ## 3. Relacion Con Market State Y Event State
 
@@ -167,15 +204,15 @@ event_state_table
 
 ## 4. Matriz De Uso Permitido
 
-| state_role | market_state | event_state | ML X candidate | RL candidate | AlphaEvolve evaluator input | Outcomes inline |
-| --- | --- | --- | --- | --- | --- | --- |
-| `DISCOVERY_STATE` | si | si, si evento conocido | candidate | no directo | candidate | no |
-| `EVENT_ANCHOR_STATE` | si | si | candidate | no directo | candidate | no |
-| `ENTRY_DECISION_STATE` | si | si | candidate | future via transition layer | candidate | no |
-| `RISK_STATE` | restricted | restricted | restricted | future via decision layer | candidate/restricted | no |
-| `EXECUTION_STATE` | restricted | restricted | no primary | future simulator only | restricted | no |
-| `RL_TRANSITION_STATE` | no directo | no directo | no primary | future only | candidate via transition evaluator | no |
-| `POST_EVENT_ANALYSIS_STATE` | research only | research only | no pre-decision X | no training X | evaluator diagnostics | outcome joins allowed separately |
+| state_role | default consumption_legality | market_state | event_state | ML X candidate | RL candidate | AlphaEvolve evaluator input | Outcomes inline |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `DISCOVERY_STATE` | `research_only` or `decision_safe` if cutoff gates pass | si | si, si evento conocido | candidate only if `decision_safe` | no directo | candidate | no |
+| `EVENT_ANCHOR_STATE` | `decision_safe` if event known at cutoff | si | si | candidate only if `decision_safe` | no directo | candidate | no |
+| `ENTRY_DECISION_STATE` | `decision_safe` if cutoff gates pass | si | si | candidate only if `decision_safe` | future via transition layer | candidate | no |
+| `RISK_STATE` | `decision_safe` or `research_only` depending on decision-layer gates | restricted | restricted | restricted | future via decision layer | candidate/restricted | no |
+| `EXECUTION_STATE` | `decision_safe` only for execution context, never fill truth | restricted | restricted | no primary | future simulator only | restricted | no |
+| `RL_TRANSITION_STATE` | `research_only` until transition contract | no directo | no directo | no primary | future only | candidate via transition evaluator | no |
+| `POST_EVENT_ANALYSIS_STATE` | `research_only` or `outcome_adjacent` | research only | research only | no pre-decision X | no training X | evaluator diagnostics | outcome joins allowed separately |
 
 ## 5. Reglas De Ventana Por Rol
 
@@ -220,10 +257,12 @@ resultado.
 | Validator | Roles obligatorios | Condicion |
 | --- | --- | --- |
 | `state_bad_missing_state_role` | `event_state_table`, role-oriented market samples | `state_role` nulo |
+| `state_bad_missing_consumption_legality` | `event_state_table`, role-oriented market samples | `consumption_legality` nulo |
+| `state_bad_unknown_consumption_legality` | todos | valor no incluido en la taxonomia permitida |
 | `state_bad_unknown_state_role` | todos | rol no incluido en este contrato o version permitida |
 | `state_bad_role_timestamp_mismatch` | todos | timestamp type incompatible con rol |
 | `state_bad_role_window_mismatch` | todos | ventana no permitida por rol |
-| `state_bad_post_event_used_as_pre_decision` | discovery, event_anchor, entry, risk, execution | uso de post-event/response/outcome como X pre-decision |
+| `state_bad_post_event_used_as_pre_decision` | discovery, event_anchor, entry, risk, execution | uso de post-event/response/outcome como X pre-decision o `post_event_review` marcado `decision_safe` |
 | `state_bad_outcome_inline` | todos | outcome/label/reward inline |
 | `state_bad_action_inline_in_state` | todos | accion/politica escrita como mercado observable |
 | `state_bad_execution_without_microstructure_contract` | execution | ejecucion sin microestructura/constraints gobernados |
@@ -237,6 +276,7 @@ El futuro state builder debe consumir este contrato y declarar:
 ```text
 state_roles_contract_id = state_snapshot_roles_contract_v0_1
 state_role
+consumption_legality
 role_family
 allowed_timestamp_type
 state_cutoff_rule
@@ -253,6 +293,7 @@ state_role no permite el timestamp usado
 state_role no permite la ventana usada
 state_role intenta escribir outcome/label/reward inline
 state_role intenta usar post-analysis como X pre-decision
+consumption_legality contradice state_role, ventana o consumer gate
 ```
 
 ## 9. Relacion Con Semantic Representations Y Transitions

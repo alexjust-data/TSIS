@@ -1,6 +1,6 @@
 ﻿# 03_TABLES_feature_engineering
 
-Status: `readme_v0_3_operational_map`
+Status: `readme_v0_6_phase_a_b_boundary`
 Date: `2026-07-20`
 
 Esta seccion conecta tablas existentes, Objetos de Informacion, feature engineering, Market State, Event State, builders, validators y consumo downstream.
@@ -46,6 +46,32 @@ El objetivo es admitir solo variables que representen informacion necesaria.
 
 ---
 
+## TSIS Market Ontology v1 Freeze
+
+```text
+phase = TSIS Market Ontology Phase
+status = CLOSED
+ontology = TSIS Market Ontology v1
+ontology_status = FROZEN
+ontology_lock_status = LOCKED
+phase_b_status = OPEN
+phase_b_scope = governed_engineering
+production_builder_development_authorized = false
+state_consumption_authorized = false
+```
+
+El vertical de `Trading Activity` demostro el lifecycle completo, pero queda
+clasificado como piloto de proceso. La prioridad actual es implementar la
+ontologia congelada mediante Phase B, empezando por Operational Mapping.
+
+Regla:
+
+```text
+No production Market State Builder before governed Operational Mapping,
+Builder Validation, Market State Integration and Operational Promotion gates.
+```
+
+---
 ## Estructura Activa
 
 ```text
@@ -55,6 +81,9 @@ El objetivo es admitir solo variables que representen informacion necesaria.
 |-- 01_INFORMATION_OBJECT_ADMISSION_PROCESS.md
 |-- 02_TABLE_REPRESENTATION_REVIEW/
 |-- 03_INFORMATION_OBJECTS/
+|-- 04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/
+|-- 05_STATE_BUILDER_VALIDATION/
+|-- 06_MARKET_STATE_INTEGRATION/
 |-- 99_archive/
 |-- CHANGELOG.md
 `-- README.md
@@ -69,7 +98,10 @@ El objetivo es admitir solo variables que representen informacion necesaria.
 | `00_TABLES_MARKET_STATE_EVENT_STATE.md` | Explica por que existen Market State y Event State, y como consumen Objetos de Informacion. |
 | `01_INFORMATION_OBJECT_ADMISSION_PROCESS.md` | Gobierna la admision de Objetos de Informacion como `Liquidity`, `Momentum` o `Trading Activity`. No audita tablas completas. |
 | `02_TABLE_REPRESENTATION_REVIEW/` | Audita tablas completas `000-018`: responsabilidad, grano, frontera, atributos, faltantes, solapamientos y estado institucional. |
-| `03_INFORMATION_OBJECTS/` | Guarda expedientes trazables de Objetos evaluados: candidatos, aceptados, aceptados con restricciones o rechazados. |
+| `03_INFORMATION_OBJECTS/` | Guarda expedientes trazables de Objetos evaluados: candidatos, revisados, aceptados, aceptados con restricciones o rechazados. |
+| `04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/` | Phase B activa. Puente gobernado: Objeto admitido -> modelos aprobados -> capacidades -> variables candidatas -> tablas fuente -> perfiles de State. |
+| `05_STATE_BUILDER_VALIDATION/` | Phase B secuencial. Diseno de validacion despues de Operational Mapping aprobado; no autoriza builders de produccion por si mismo. |
+| `06_MARKET_STATE_INTEGRATION/` | Phase B secuencial. Diseno de integracion despues de Builder Validation; no autoriza materializacion ni consumo operativo por si mismo. |
 | `99_archive/` | Documentos historicos, superseded o no activos. No son autoridad operativa. |
 
 ---
@@ -140,20 +172,129 @@ La admision de Objetos decide si esos candidatos existen institucionalmente.
 
 ---
 
+## Definicion De Objeto De Informacion
+
+```text
+Objeto de Informacion
+=
+unidad semantica de informacion que TSIS decide preservar
+sobre uno o varios fenomenos observables,
+independiente de su Modelo de Representacion
+y de su implementacion fisica.
+```
+
+Ejemplo:
+
+```text
+Liquidity
+= Objeto de Informacion
+
+coste de negociacion + profundidad + disponibilidad
+= Modelo de Representacion
+
+spread_bps + depth + quote_count
+= implementacion fisica / variables
+```
+
+Regla:
+
+```text
+El Objeto no es aun la representacion.
+Es lo que debe ser representado.
+```
+
+---
+## Taxonomias Separadas
+
+No usar una unica columna llamada `family` para clasificar todo.
+TSIS separa cuatro ejes:
+
+| Eje | Pregunta | Ejemplos |
+| --- | --- | --- |
+| `information_object_family` | Que significado semantico tiene el Objeto? | `Price Dynamics`, `Trading Activity`, `Liquidity`, `Market Microstructure`, `Instrument Context`, `External Context`, `Market Context` |
+| `source_domain` | De que fuente observable procede la evidencia? | `OHLCV`, `Trades`, `Quotes`, `News`, `Fundamentals`, `SEC`, `Short`, `Halts`, `Reference` |
+| `temporal_resolution` | En que escala o ventana aplica? | `daily`, `intraday_bar`, `second`, `event_window`, `as_of` |
+| `institutional_role` | Que papel cumple dentro de TSIS? | `observable`, `quality`, `lineage`, `governance`, `outcome` |
+
+Regla:
+
+```text
+Information Object Family es solo semantica.
+Feature Family, source family, dataset family, event family,
+quality family u outcome family no deben mezclarse en el mismo campo.
+```
+
+
+## Object Discovery vs Object Admission
+
+Hay dos direcciones validas, pero no tienen la misma autoridad.
+
+### Object Discovery Process
+
+Puede empezar desde abajo o desde cualquier evidencia disponible:
+
+```text
+tablas existentes
+-> variables reales
+-> capacidades derivables
+-> posibles significados
+-> Objeto de Informacion candidato
+```
+
+Sirve para descubrir candidatos.
+No admite Objetos.
+No autoriza variables para Market State.
+No convierte una tabla existente en significado cientifico oficial.
+
+### Object Admission Process
+
+Siempre debe seguir la direccion cientifica:
+
+```text
+fenomeno o necesidad cientifica
+-> Objeto de Informacion
+-> Modelo de Representacion
+-> implementacion fisica candidata
+-> legalidad temporal
+-> decision de admision
+```
+
+Sirve para decidir si el Objeto merece existir institucionalmente.
+Solo despues de esta decision puede cerrarse un mapping operativo hacia variables, tablas fuente y State.
+
+Regla:
+
+```text
+Las tablas pueden descubrir candidatos.
+La admision define el significado.
+```
+
+---
+
 ## Orden De Trabajo
 
+```text
+Phase A cerrada:
+    pasos 1-7 completados para los 12 Information Objects principales,
+    seguidos de revision transversal y ontology freeze.
+
+Phase B abierta:
+    pasos 8-12 se ejecutan ahora como ingenieria gobernada,
+    empezando por Operational Mapping.
+```
 ```text
 1. Revisar tablas existentes como tablas.
 2. Identificar que informacion aportan.
 3. Extraer candidatos a Objetos de Informacion.
 4. Consolidar candidatos repetidos entre tablas.
-5. Evaluar cada Objeto con 01_INFORMATION_OBJECT_ADMISSION_PROCESS.md.
-6. Registrar cada expediente en 03_INFORMATION_OBJECTS.
-7. Mapear Objeto -> variables -> tabla fuente.
-8. Revisar si las tablas actuales bastan.
-9. Modificar contratos, schemas y builders solo si el mapping lo exige.
-10. Construir Market State.
-11. Construir Event State.
+5. Definir dominio, landscape y candidate object.
+6. Revisar adversarialmente el candidato en object_admission_review.
+7. Emitir Formal Admission en ACCEPTED / ACCEPTED_WITH_RESTRICTIONS / REJECTED.
+8. Mapear Objeto -> modelos -> capacidades -> variables -> tablas -> perfiles de State.
+9. Validar que el builder puede resolver el Objeto legalmente.
+10. Disenar integracion en Market State.
+11. Promover contratos, schemas o builders solo desde la autoridad operativa correspondiente.
+12. Construir Event State reutilizando Market State cuando proceda.
 ```
 
 Cadena logica:
@@ -162,15 +303,79 @@ Cadena logica:
 Tablas existentes
 -> variables reales
 -> Objetos de Informacion candidatos
--> Objetos admitidos
--> mapping operativo
--> tablas fuente ajustadas si hace falta
--> Market State
+-> Object Admission Review
+-> Formal Admission
+-> Operational Mapping
+-> Builder Validation
+-> Market State Integration
+-> promocion operativa si procede
 -> Event State
 ```
 
 Market State no debe nacer de meter todas las columnas disponibles.
 Debe nacer de Objetos de Informacion admitidos y legalmente observables en `decision_timestamp`.
+
+## Event State: Rol Temporal Y Legalidad De Consumo
+
+`Event State` usa dos clasificaciones independientes:
+
+```text
+state_role
+= pre_event | at_event | post_event/post_event_review
+
+consumption_legality
+= decision_safe | research_only | outcome_adjacent | prohibited_as_input
+```
+
+`post_event` puede existir para investigacion, pero no puede alimentar X predictivo para una decision anterior o tomada en el evento.
+
+
+## Market State No Es Mega-Tabla
+
+`Market State` debe construirse desde Objetos de Informacion admitidos, pero eso no implica una unica tabla fisica con todos los atributos posibles.
+
+Regla:
+
+```text
+canonicalidad
+= misma semantica de estado
++ mismo identificador logico
++ reglas temporales comunes
++ perfiles fisicos compatibles
+
+materializacion
+= que perfil se construye,
+con que cobertura,
+resolucion y extension.
+```
+
+Perfiles fisicos permitidos conceptualmente:
+
+```text
+market_state_core
+market_state_daily_context
+market_state_intraday
+market_state_microstructure_extension
+market_state_news_extension
+```
+
+Llaves comunes obligatorias entre perfiles:
+
+```text
+market_state_id
+instrument_id
+decision_timestamp
+representation_profile_version
+```
+
+Regla anti-ruido:
+
+```text
+Ningun consumidor justifica por si solo agrandar el Market State canonico.
+Si un consumidor necesita informacion pesada o especializada, debe declararse
+un perfil/extensibilidad gobernada, no inflar el core universal.
+```
+
 
 ---
 
