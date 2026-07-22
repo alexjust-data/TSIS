@@ -500,6 +500,7 @@ def main(argv: list[str] | None = None) -> int:
     git_branch = git_value(["git", "rev-parse", "--abbrev-ref", "HEAD"], workspace_root)
     git_commit = git_value(["git", "rev-parse", "HEAD"], workspace_root)
     git_dirty_state = bool(git_value(["git", "status", "--porcelain"], workspace_root))
+    expected_candidate_records = int(scope["limits"]["maximum_input_candidate_records"])
 
     pre_manifest = {
         "run_id": run_id,
@@ -521,9 +522,9 @@ def main(argv: list[str] | None = None) -> int:
         "input_scope_path": str(scope_path),
         "output_root": str(run_root),
         "run_dir": str(run_dir),
-        "expected_scope": "materialize exactly 8 accepted core-four candidate records; no source market data reads",
+        "expected_scope": f"materialize exactly {expected_candidate_records} accepted core-four candidate records; no source market data reads",
         "overwrite_policy": "refuse_existing_run_dir",
-        "success_criteria": "8 rows, 1 candidate parquet, no schema/grain/lineage/restriction/fingerprint/roundtrip/rebuild failures",
+        "success_criteria": f"{expected_candidate_records} rows, 1 candidate parquet, no schema/grain/lineage/restriction/fingerprint/roundtrip/rebuild failures",
     }
     write_json(run_dir / "pre_manifest.json", pre_manifest)
     write_json(

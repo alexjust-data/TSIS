@@ -1,0 +1,253 @@
+{
+  "scope_id": "experimental_core_four_market_state_scale_a_execution_scope_v0_1",
+  "mode": "experimental_core_four_market_state_scale_a_execution_authorized_not_executed",
+  "scope_status": "authorized_with_restrictions_execution_binding",
+  "created_at_utc": "2026-07-22T00:00:00Z",
+  "authorization_artifact": "../experimental_core_four_market_state_scale_a_execution_authorization_v0_1.md",
+  "base_scale_a_authorization_artifact": "../experimental_core_four_market_state_scale_a_authorization_v0_1.md",
+  "sample_preflight_rerun_authorization_artifact": "../experimental_core_four_market_state_scale_a_sample_preflight_rerun_authorization_v0_1.md",
+  "sample_preflight_rerun_readout_artifact": "../experimental_core_four_market_state_scale_a_sample_preflight_rerun_readout_v0_1.md",
+  "design_artifact": "../core_four_market_state_bounded_scaling_design_v0_1.md",
+  "design_contract_path": "../core_four_market_state_bounded_scaling_design_contract_v0_1.json",
+  "stage_id": "core_four_market_state_scale_a_multi_context_bounded",
+  "logical_profile_id": "core_four_market_state_profile_v0_1",
+  "physical_schema_id": "core_four_market_state_candidate_physical_schema_v0_1",
+  "source_integration_profile_id": "market_state_core_four_intraday_experimental_v0_1",
+  "input_artifacts": {
+    "frozen_sample": {
+      "preflight_run_id": "experimental_core_four_market_state_scale_a_sample_preflight_rerun_v0_1_20260722T194905Z",
+      "sample_manifest_path": "../runs/experimental_core_four_market_state_scale_a_sample_preflight_rerun_v0_1_20260722T194905Z/scale_a_sample_manifest.jsonl",
+      "sample_summary_path": "../runs/experimental_core_four_market_state_scale_a_sample_preflight_rerun_v0_1_20260722T194905Z/scale_a_sample_summary.json",
+      "sample_preflight_status": "PASS_WITH_RESTRICTIONS",
+      "scale_a_sample_fingerprint": "65a05b1c0637a7473380e9a04705a6c5879a921a0196dbad0a1815a19e8edea1",
+      "instrument_selection_fingerprint": "c78243213b3f131ae5c5bc0b63b2f1c8fe617e8945d896f03cef4ed2b01ad6fc",
+      "session_selection_fingerprint": "9df5af273bd9af7845f54b9d1106128ee10072f3f53c3be89656aaf3593293fd",
+      "requested_contexts": 60,
+      "sample_manifest_rows": 60,
+      "selected_instruments": 8,
+      "selected_sessions": 5,
+      "expected_resolution_records": 240,
+      "expected_blocked_contexts": 8,
+      "expected_integrable_contexts": 52,
+      "duplicate_status_diversity_frozen_contexts": 5
+    },
+    "accepted_eligible_surface": {
+      "construction_run_id": "experimental_core_four_scale_a_eligible_representation_surface_construction_v0_1_20260722T184904Z",
+      "eligible_instrument_pool_path": "../runs/experimental_core_four_scale_a_eligible_representation_surface_construction_v0_1_20260722T184904Z/eligible_instrument_pool.json",
+      "eligible_instrument_pool_fingerprint": "57e22e7eb616c0682db1d094e19dff2b31e35ca23320ec1757acf4e19323853d",
+      "bounded_014_candidate_surface_path": "../runs/experimental_core_four_scale_a_eligible_representation_surface_construction_v0_1_20260722T184904Z/014_scale_a_eligible_surface_candidate_v0_1.parquet",
+      "bounded_014_candidate_surface_parquet_sha256": "e729bceab6bd75e891dcac9f6bbf5eefa9ed78c8b6ecb8c6be79f4bc535f955b",
+      "source_alias_semantics": "014_master_intraday_bar_table_candidate_for_scale_a_only"
+    }
+  },
+  "source_overrides": {
+    "014_master_intraday_bar_table_candidate": {
+      "override_kind": "accepted_run_local_014_derived_candidate_surface",
+      "parquet_path": "../runs/experimental_core_four_scale_a_eligible_representation_surface_construction_v0_1_20260722T184904Z/014_scale_a_eligible_surface_candidate_v0_1.parquet",
+      "expected_parquet_sha256": "e729bceab6bd75e891dcac9f6bbf5eefa9ed78c8b6ecb8c6be79f4bc535f955b",
+      "original_014_modified": false,
+      "direct_013_read_allowed": false
+    }
+  },
+  "authority": {
+    "scale_a_execution_authorized": true,
+    "builder_resolution_execution_allowed_for_scale_a": true,
+    "integration_execution_allowed_for_scale_a": true,
+    "candidate_materialization_allowed_for_scale_a": true,
+    "candidate_physical_validation_allowed_for_scale_a": true,
+    "candidate_parquet_output_allowed_for_scale_a": true,
+    "sample_reselection_allowed": false,
+    "sample_manifest_mutation_allowed": false,
+    "013_upstream_read_allowed": false,
+    "raw_quotes_read_allowed": false,
+    "quote_dependent_object_integration_allowed": false,
+    "official_market_state_allowed": false,
+    "official_state_table_write_allowed": false,
+    "production_builder_allowed": false,
+    "state_consumption_allowed": false,
+    "downstream_consumption_allowed": false,
+    "dataset_promotion_allowed": false,
+    "full_history_execution_allowed": false,
+    "full_universe_execution_allowed": false,
+    "scale_b_calendar_aware_execution_allowed": false,
+    "scale_c_historical_bounded_execution_allowed": false
+  },
+  "limits": {
+    "requested_contexts": 60,
+    "maximum_requested_contexts": 80,
+    "required_objects_per_context": 4,
+    "expected_resolution_records": 240,
+    "maximum_resolution_records": 320,
+    "expected_blocked_contexts": 8,
+    "maximum_blocked_contexts": 16,
+    "expected_integrable_contexts": 52,
+    "maximum_integrated_candidate_records": 80,
+    "expected_physical_candidate_rows": 52,
+    "maximum_physical_candidate_rows": 80,
+    "instrument_count": 8,
+    "session_count": 5,
+    "decision_case_family_count": 4,
+    "maximum_source_market_data_rows_read": 250000,
+    "maximum_candidate_parquet_files": 1,
+    "maximum_output_bytes": 5000000
+  },
+  "identity_invariants": {
+    "resolution_records": "requested_contexts * 4",
+    "context_partition": "resolved_contexts + blocked_contexts + failed_contexts = requested_contexts",
+    "integrated_candidate_records": "resolved_contexts",
+    "materialized_candidate_rows": "integrated_candidate_records",
+    "failed_contexts": 0
+  },
+  "source_aliases_allowed": [
+    "004_master_daily_table",
+    "014_master_intraday_bar_table_candidate"
+  ],
+  "source_aliases_forbidden": [
+    "013_ohlcv_1m_quote_guarded",
+    "raw_quotes",
+    "quote_dependent_object_records",
+    "full_history_market_data",
+    "full_universe_market_data",
+    "production_state_tables",
+    "downstream_feature_stores",
+    "00_CTO/99_REFERENCE_LIBRARY"
+  ],
+  "governance_inputs": {
+    "source_binding_registry": "../../05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/configs/experimental_source_binding_registry_v0_1.json",
+    "column_binding_registry": "../../05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/configs/experimental_column_binding_registry_v0_1.json",
+    "core_four_builder_scope_reference": "../../05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/configs/experimental_core_four_builder_validation_scope_v0_1.json",
+    "integration_scope_reference": "core_four_market_state_integration_execution_scope_v0_1.json",
+    "materialization_scope_reference": "experimental_core_four_market_state_materialization_scope_v0_1.json"
+  },
+  "calendar_policy": {
+    "scale_a_calendar_policy": "fixed_utc_probe_calendar_compatibility_guarded",
+    "scale_a_is_calendar_aware_validation": false,
+    "governed_exchange_session_calendar_preferred_if_available": true,
+    "scale_a_calendar_compatibility_report_required": true,
+    "scale_a_session_selection_excludes_calendar_mismatch_dates": true,
+    "required_selected_session_properties": {
+      "regular_open_utc": "13:30:00",
+      "regular_close_utc": "20:00:00",
+      "session_type": "regular",
+      "early_close_indicator": false,
+      "holiday_or_closed_indicator": false
+    },
+    "fail_closed_if_session_compatibility_cannot_be_demonstrated": true,
+    "fixed_utc_probe_calendar_may_not_be_promoted_to_scale_b_temporal_authority": true
+  },
+  "execution_chain": {
+    "execution_style": "bounded_multi_run_chain",
+    "run_order": [
+      "scale_a_builder_resolution_execution",
+      "scale_a_market_state_integration_execution",
+      "scale_a_candidate_materialization_execution",
+      "scale_a_candidate_physical_validation"
+    ],
+    "each_run_must_consume_previous_manifest": true,
+    "first_run_must_consume_frozen_sample_manifest": true,
+    "sample_fingerprint_must_match": "65a05b1c0637a7473380e9a04705a6c5879a921a0196dbad0a1815a19e8edea1",
+    "no_sample_reconstruction_or_reselection": true
+  },
+  "required_outputs_by_stage": {
+    "scale_a_builder_resolution_execution": [
+      "pre_manifest.json",
+      "heartbeat.json",
+      "scale_a_sample_manifest.jsonl",
+      "builder_request_report.csv",
+      "capability_resolution_report.csv",
+      "selected_source_rows_report.csv",
+      "cutoff_enforcement_report.csv",
+      "duplicate_handling_report.csv",
+      "formula_validation_report.csv",
+      "builder_output_contract_report.csv",
+      "determinism_report.csv",
+      "builder_restrictions_report.csv",
+      "core_four_resolution_records.jsonl",
+      "core_four_builder_validation_summary.json",
+      "final_manifest.json",
+      "readout.md"
+    ],
+    "scale_a_market_state_integration_execution": [
+      "market_state_candidate_records.jsonl",
+      "integration_context_report.csv",
+      "rejected_context_report.csv",
+      "integration_value_manifest.csv",
+      "final_manifest.json",
+      "readout.md"
+    ],
+    "scale_a_candidate_materialization_execution": [
+      "core_four_market_state_scale_a_candidate_v0_1.parquet",
+      "materialization_manifest.json",
+      "schema_report.json",
+      "grain_report.csv",
+      "fingerprint_report.csv",
+      "roundtrip_report.csv",
+      "final_manifest.json",
+      "readout.md"
+    ],
+    "scale_a_candidate_physical_validation": [
+      "value_reconciliation_report.csv",
+      "lineage_content_report.json",
+      "restriction_report.csv",
+      "fingerprint_report.csv",
+      "semantic_rebuild_report.json",
+      "authority_report.json",
+      "final_manifest.json",
+      "readout.md"
+    ]
+  },
+  "acceptance_criteria": {
+    "sample_fingerprint_match": true,
+    "requested_contexts": 60,
+    "resolution_records": 240,
+    "failed_contexts": 0,
+    "blocked_contexts_expected": 8,
+    "blocked_contexts_maximum": 16,
+    "integrated_candidate_records_expected": 52,
+    "materialized_candidate_rows_expected": 52,
+    "rejected_contexts_materialized_as_rows": 0,
+    "blocked_required_object_values_admitted": 0,
+    "duplicate_primary_keys": 0,
+    "duplicate_source_candidate_record_ids": 0,
+    "duplicate_materialized_state_candidate_ids": 0,
+    "missing_physical_columns": 0,
+    "extra_physical_columns": 0,
+    "schema_inference_from_sample": false,
+    "source_to_physical_value_mismatches": 0,
+    "lineage_content_mismatches": 0,
+    "restriction_mismatches": 0,
+    "fingerprint_mismatches": 0,
+    "roundtrip_mismatches": 0,
+    "semantic_rebuild_differences": 0,
+    "calendar_compatibility_failures": 0,
+    "authority_failures": 0,
+    "hard_validation_failures": 0
+  },
+  "preserved_restrictions": [
+    "candidate_artifacts_remain_non_canonical",
+    "candidate_artifacts_remain_not_downstream_consumable",
+    "core_four_profile_is_not_complete_tsis_market_state",
+    "quote_dependent_objects_remain_excluded",
+    "scale_a_is_not_calendar_aware_validation",
+    "fixed_utc_probe_calendar_requires_compatibility_guard",
+    "after_last_sampled_bar_is_not_end_of_session",
+    "rvol_semantic_naming_must_remain_explicit",
+    "duplicate_request_impact_must_not_be_confused_with_physical_duplicate_groups"
+  ],
+  "next_boundary": {
+    "allowed_next_gate": "experimental_core_four_market_state_scale_a_builder_resolution_execution",
+    "status": "AUTHORIZED_NOT_EXECUTED",
+    "still_closed": [
+      "official_market_state",
+      "production_builder",
+      "downstream_state_consumption",
+      "dataset_promotion",
+      "full_history_execution",
+      "full_universe_execution",
+      "quote_dependent_object_integration",
+      "operational_promotion",
+      "scale_b_calendar_aware_execution",
+      "scale_c_historical_bounded_execution"
+    ]
+  }
+}

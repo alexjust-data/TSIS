@@ -1,8 +1,8 @@
 # 03_TABLES_feature_engineering - Agent Handoff Prompt
 
-Status: `agent_handoff_prompt_v0_9`
+Status: `agent_handoff_prompt_v0_16`
 Date: `2026-07-22`
-Scope: `tsis_market_ontology_v1_frozen_phase_b_core_four_scale_a_eligible_surface_design_closed`
+Scope: `tsis_market_ontology_v1_frozen_phase_b_core_four_scale_a_physical_validation_closed`
 
 Este documento es el prompt local de continuidad para agentes que trabajen en:
 
@@ -27,12 +27,22 @@ Si hay conflicto, manda la autoridad superior.
 core_four_market_state_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICTIONS
 core_four_market_state_bounded_scaling_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
 experimental_core_four_market_state_scale_a_authorization = AUTHORIZED_WITH_RESTRICTIONS
-experimental_core_four_market_state_scale_a_sample_preflight = BLOCKED_SAMPLE_CARDINALITY
+experimental_core_four_market_state_scale_a_sample_preflight = SUPERSEDED_BLOCKED_SAMPLE_CARDINALITY
 core_four_scale_a_eligible_representation_surface_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
-experimental_core_four_scale_a_eligible_representation_surface_authorization = NOT_OPEN_NEXT
-experimental_core_four_scale_a_eligible_representation_surface_construction = NOT_AUTHORIZED
-eligible_instrument_pool = NOT_CONSTRUCTED
-experimental_core_four_market_state_scale_a_execution = BLOCKED_NOT_STARTED
+experimental_core_four_scale_a_eligible_representation_surface_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_scale_a_eligible_representation_surface_construction = CLOSED_PASS_WITH_RESTRICTIONS
+eligible_instrument_pool = ACCEPTED
+experimental_core_four_market_state_scale_a_sample_preflight_rerun_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_sample_preflight_rerun = CLOSED_PASS_WITH_RESTRICTIONS
+scale_a_sample_manifest = FROZEN
+experimental_core_four_market_state_scale_a_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_builder_resolution_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_market_state_integration_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_candidate_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICTIONS
+governed_exchange_session_calendar_design = NOT_OPEN_NEXT
+experimental_core_four_market_state_scale_b_authorization = BLOCKED_UNTIL_GOVERNED_EXCHANGE_SESSION_CALENDAR
 ```
 
 Run aceptado:
@@ -43,7 +53,17 @@ experimental_core_four_market_state_scale_a_sample_preflight_v0_1_20260722T12385
 
 El preflight comprobo 5 sesiones compatibles con el guard fijo UTC, pero no congelo la muestra de 60 contextos porque la superficie 014 autorizada contiene solo 3 tickers intradia y solo 1 instrumento elegible bajo el guard de calendario. No ejecutar builders, integracion, materializacion ni validacion fisica Scale A hasta ajustar la fuente autorizada o el scope y rerun del preflight.
 
-Se cerro el diseno `core_four_scale_a_eligible_representation_surface_design_v0_1` para modelar esa remediacion como una superficie elegible gobernada. El siguiente gate permitido es `experimental_core_four_scale_a_eligible_representation_surface_authorization_v0_1`; no construir el pool, expandir 014 ni rerunear preflight hasta que exista esa autorizacion.
+Se ejecuto `experimental_core_four_market_state_scale_a_sample_preflight_rerun_v0_1_20260722T194905Z` y el rerun del preflight Scale A cerro `CLOSED_PASS_WITH_RESTRICTIONS`: 60 contextos congelados, 8 instrumentos, 5 sesiones, 240 resolution records esperados, 52 contextos integrables esperados, 8 bloqueados esperados, 0 fallos de calendario/identidad/cobertura/estratificacion y sample fingerprint `65a05b1c0637a7473380e9a04705a6c5879a921a0196dbad0a1815a19e8edea1`. El intento `experimental_core_four_market_state_scale_a_sample_preflight_rerun_v0_1_20260722T194131Z` no es evidencia de cierre porque expuso un bug de estratificacion de duplicados. El siguiente gate permitido es `experimental_core_four_market_state_scale_a_execution_authorization_v0_1`; no ejecutar builders, integrar ni materializar Market State hasta que exista esa autorizacion y nombre el fingerprint exacto.
+
+Se emitio `experimental_core_four_market_state_scale_a_execution_authorization_v0_1` y `configs/experimental_core_four_market_state_scale_a_execution_scope_v0_1.json`. Scale A execution queda `AUTHORIZED_WITH_RESTRICTIONS` contra el sample fingerprint `65a05b1c0637a7473380e9a04705a6c5879a921a0196dbad0a1815a19e8edea1`.
+
+Se ejecuto `experimental_core_four_market_state_scale_a_builder_resolution_execution_v0_1_20260722T202557Z` y cerro `CLOSED_PASS_WITH_RESTRICTIONS`: 60 contextos, 240 Information Object resolution records, 208 PASS/PASS_WITH_RESTRICTIONS, 32 BLOCKED_INPUT_UNAVAILABLE, 52 contextos integrables, 8 bloqueados esperados, 0 leaks futuros, 0 fallos de formula/contrato/determinismo y 5761 source rows read bajo el limite. Los intentos `20260722T202216Z`, `20260722T202243Z` y `20260722T202407Z` no son evidencia de cierre; quedaron superseded por issues de wrapper/reporte de frontera de lectura.
+
+Se ejecuto `experimental_core_four_market_state_scale_a_market_state_integration_execution_v0_1_20260722T204126Z` y cerro `CLOSED_PASS_WITH_RESTRICTIONS`: 240 resolution records consumidos, 60 contextos vistos, 52 Market State candidate records emitidos, 8 contextos bloqueados esperados rechazados, 884 value rows admitidas, 0 source market-data rows read, 0 blocked values admitted y 0 hard validation failures. Los intentos `20260722T203507Z`, `20260722T203635Z` y `20260722T204045Z` no son evidencia de cierre para la cadena Scale A; quedaron superseded por el run que emite `integration_summary.json` compatible con materializacion.
+
+Se ejecuto `experimental_scale_a_ms_candidate_materialization_v0_1_20260722T204356Z` y cerro `CLOSED_PASS_WITH_RESTRICTIONS`: 52 input candidate records, 52 filas fisicas candidatas, 1 parquet candidato no oficial, 40 columnas fisicas, 17 columnas de valores, 0 source market-data rows read, 0 rejected contexts materialized, 0 hard validation failures, 0 roundtrip failures y 0 semantic rebuild differences. El siguiente subgate ejecutable es `experimental_core_four_market_state_scale_a_candidate_physical_validation`; debe validar independientemente el parquet real. No re-seleccionar muestra, leer `013`, integrar objetos quote-dependent, promover datasets, usar produccion ni autorizar downstream.
+
+Se ejecuto `experimental_core_four_market_state_scale_a_candidate_physical_validation_v0_1_20260722T204600Z` y cerro `CLOSED_PASS_WITH_RESTRICTIONS`: 52 input candidate records, 52 physical rows, 884 source-to-physical value mappings checked, 52 RVOL rename checks, 52 state_output_fingerprint matches, 52 materialized_state_candidate_id matches, 1924 semantic rebuild field comparisons, 0 authority failures y 0 hard validation failures. Scale A queda cerrado con restricciones hasta validacion fisica independiente. El siguiente trabajo no es Scale B execution; debe abrirse un gate separado de diseno/review, probablemente `governed_exchange_session_calendar_design`, porque Scale B sigue bloqueado hasta calendario gobernado.
 
 ## 1. Prompt De Arranque Para El Agente
 
@@ -66,11 +86,12 @@ design, integration execution, materialization design, materialization
 authorization y materialization execution ya quedaron cerrados o emitidos con
 restricciones.
 
-El siguiente gate posible es
-`experimental_core_four_scale_a_eligible_representation_surface_authorization_v0_1`,
-como autorizacion acotada para construir y validar el pool elegible de Scale A.
-No implica produccion, Market State oficial, consumo downstream, promocion,
-builders, integracion, materializacion ni full-history/full-universe execution.
+El siguiente subgate posible es
+`governed_exchange_session_calendar_design`,
+como diseno/review previo a cualquier Scale B calendar-aware execution. No implica produccion, Market State oficial, consumo
+downstream, promocion, full-history/full-universe execution ni objetos
+quote-dependent. Integracion, materializacion y validacion fisica deben consumir
+manifests previos de la cadena.
 
 Trabaja como agente de ingenieria ontologica:
 
@@ -79,7 +100,7 @@ Trabaja como agente de ingenieria ontologica:
 3. usa las Formal Admissions y el Freeze Act como autoridad;
 4. usa los Operational Mappings admitidos como autoridad de ingenieria;
 5. conserva production builders, State consumption, schema changes,
-   physical materialization y dataset promotion como false hasta gates
+   official physical materialization y dataset promotion como false hasta gates
    explicitos de Phase B;
 6. actualiza changelogs cuando el cambio sea semantico,
    estructural o de gobernanza;

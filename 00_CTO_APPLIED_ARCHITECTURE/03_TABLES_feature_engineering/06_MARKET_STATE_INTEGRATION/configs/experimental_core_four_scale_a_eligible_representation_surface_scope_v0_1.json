@@ -1,0 +1,346 @@
+{
+  "scope_id": "experimental_core_four_scale_a_eligible_representation_surface_scope_v0_1",
+  "mode": "experimental_core_four_scale_a_eligible_representation_surface_construction",
+  "scope_status": "authorized_bounded_non_production_eligible_surface_construction",
+  "created_at_utc": "2026-07-22T00:00:00Z",
+  "authorization_artifact": "../experimental_core_four_scale_a_eligible_representation_surface_authorization_v0_1.md",
+  "design_artifact": "../core_four_scale_a_eligible_representation_surface_design_v0_1.md",
+  "design_contract_path": "../core_four_scale_a_eligible_representation_surface_design_contract_v0_1.json",
+  "eligible_surface_id": "core_four_scale_a_eligible_representation_surface_v0_1",
+  "eligibility_rule_id": "core_four_scale_a_eligibility_rule_v0_1",
+  "logical_profile_id": "core_four_market_state_profile_v0_1",
+  "scale_stage": "core_four_market_state_scale_a_multi_context_bounded",
+  "reference_blocked_preflight_run_id": "experimental_core_four_market_state_scale_a_sample_preflight_v0_1_20260722T123859Z",
+  "internal_phases": [
+    "authority_and_source_expansion_feasibility",
+    "source_snapshot",
+    "bounded_014_derived_candidate_surface",
+    "eligible_instrument_pool_construction"
+  ],
+  "authority": {
+    "source_snapshot_allowed": true,
+    "bounded_014_derived_candidate_surface_creation_allowed": true,
+    "eligible_pool_construction_allowed": true,
+    "original_014_modification_allowed": false,
+    "official_014_promotion_allowed": false,
+    "scale_a_sample_preflight_rerun_allowed": false,
+    "scale_a_builder_execution_allowed": false,
+    "information_object_resolution_allowed": false,
+    "market_state_integration_allowed": false,
+    "market_state_materialization_allowed": false,
+    "market_state_candidate_parquet_allowed": false,
+    "official_market_state_allowed": false,
+    "production_builder_allowed": false,
+    "state_consumption_allowed": false,
+    "downstream_consumption_allowed": false,
+    "dataset_promotion_allowed": false,
+    "full_history_execution_allowed": false,
+    "full_universe_execution_allowed": false,
+    "quote_dependent_object_integration_allowed": false,
+    "upstream_013_allowed_only_for_bounded_014_derivation": true,
+    "raw_quote_consumption_allowed": false,
+    "microstructure_feature_consumption_allowed": false
+  },
+  "limits": {
+    "maximum_candidate_instruments_discovered": 40,
+    "maximum_instruments_fully_evaluated": 40,
+    "minimum_eligible_instruments": 10,
+    "maximum_eligible_instruments": 20,
+    "maximum_sessions_considered": 10,
+    "target_scale_a_sample_sessions": 5,
+    "minimum_eligible_sessions_per_instrument": 5,
+    "maximum_source_market_data_rows_read": 500000,
+    "maximum_expanded_intraday_rows_written": 200000,
+    "maximum_candidate_surface_files_written": 1,
+    "maximum_output_files": 18,
+    "maximum_output_bytes": 50000000,
+    "required_output_files": 17,
+    "unexpected_output_files": 0,
+    "optional_error_or_supersession_files_maximum": 1
+  },
+  "source_aliases_allowed": [
+    "004_master_daily_table",
+    "014_master_intraday_bar_table_candidate",
+    "013_ohlcv_1m_quote_guarded"
+  ],
+  "source_aliases_forbidden": [
+    "015_microstructure_features_table_candidate",
+    "raw_quotes",
+    "quote_dependent_object_records",
+    "production_state_tables",
+    "official_market_state_tables",
+    "downstream_feature_stores",
+    "full_history_market_data_scans",
+    "full_universe_market_data_scans",
+    "00_CTO/99_REFERENCE_LIBRARY"
+  ],
+  "governance_inputs": {
+    "scale_a_authorization_scope": "experimental_core_four_market_state_scale_a_scope_v0_1.json",
+    "source_binding_registry": "../../05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/configs/experimental_source_binding_registry_v0_1.json",
+    "column_binding_registry": "../../05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/configs/experimental_column_binding_registry_v0_1.json",
+    "daily_price_view_policy": "../../05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/policies/004_price_view_selection_policy_v0_1.md",
+    "intraday_duplicate_policy": "../../05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/policies/014_duplicate_intraday_bar_policy_v0_1.md"
+  },
+  "source_snapshot_policy": {
+    "manifest_name": "eligible_surface_source_snapshot_manifest.json",
+    "resolved_source_paths_required": true,
+    "file_hashes_required": true,
+    "row_counts_required": true,
+    "date_boundaries_required": true,
+    "candidate_instruments_discovered_required": true,
+    "candidate_sessions_discovered_required": true,
+    "source_snapshot_fingerprint_required": true
+  },
+  "bounded_014_candidate_surface": {
+    "output_name": "014_scale_a_eligible_surface_candidate_v0_1.parquet",
+    "manifest_name": "bounded_014_expansion_manifest.json",
+    "created_inside_run_root_only": true,
+    "original_014_modified": false,
+    "original_014_overwritten": false,
+    "official_014_promotion": false,
+    "maximum_files": 1,
+    "maximum_rows": 200000
+  },
+  "calendar_guard": {
+    "policy": "fixed_utc_probe_calendar_compatibility_guarded",
+    "regular_open_utc": "13:30:00",
+    "regular_close_utc": "20:00:00",
+    "session_type": "regular",
+    "early_close_indicator": false,
+    "holiday_or_closed_indicator": false,
+    "calendar_compatibility_failures_allowed": 0,
+    "calendar_aware_validation_claim_allowed": false,
+    "scale_b_requires_governed_exchange_session_calendar": true
+  },
+  "eligible_session_rule": {
+    "all_required": [
+      "calendar_guard_compatible",
+      "daily_linked",
+      "intraday_linked",
+      "prior_20_daily_volume_coverage_available",
+      "required_core_four_source_fields_present",
+      "excluded_context_class_false"
+    ]
+  },
+  "eligible_instrument_rule": {
+    "identity_unit": "instrument_id",
+    "ticker_only_identity_allowed": false,
+    "minimum_eligible_sessions": 5,
+    "manual_ticker_selection_allowed": false
+  },
+  "prior_20_daily_volume_coverage_rule": {
+    "required_prior_sessions": 20,
+    "prior_session_type": "distinct_prior_trading_sessions",
+    "strictly_before_session_date": true,
+    "current_session_excluded": true,
+    "future_sessions_excluded": true,
+    "count_duplicate_daily_rows_as_extra_sessions": false,
+    "repair_missing_daily_volume_allowed": false,
+    "infer_daily_volume_from_intraday_allowed": false
+  },
+  "required_source_fields": {
+    "daily": [
+      "instrument_id",
+      "ticker",
+      "session_date",
+      "open",
+      "prior_close",
+      "volume",
+      "price_view"
+    ],
+    "intraday": [
+      "ticker",
+      "session_date",
+      "bar_end_utc",
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume"
+    ]
+  },
+  "ranking_policy": {
+    "manual_ticker_selection_allowed": false,
+    "deterministic_ranking_required": true,
+    "sort_order": [
+      {
+        "metric": "calendar_compatible_session_coverage_count",
+        "direction": "descending"
+      },
+      {
+        "metric": "identity_completeness_score",
+        "direction": "descending"
+      },
+      {
+        "metric": "daily_linkage_completeness_ratio",
+        "direction": "descending"
+      },
+      {
+        "metric": "intraday_linkage_completeness_ratio",
+        "direction": "descending"
+      },
+      {
+        "metric": "prior_20_daily_volume_complete_session_count",
+        "direction": "descending"
+      },
+      {
+        "metric": "required_field_coverage_ratio",
+        "direction": "descending"
+      },
+      {
+        "metric": "duplicate_risk_rank",
+        "direction": "ascending"
+      },
+      {
+        "metric": "source_rows_per_eligible_session",
+        "direction": "ascending"
+      },
+      {
+        "metric": "instrument_id",
+        "direction": "ascending"
+      },
+      {
+        "metric": "ticker",
+        "direction": "ascending"
+      }
+    ],
+    "metric_definitions": {
+      "calendar_compatible_session_coverage_count": "count of sessions satisfying fixed UTC guard",
+      "identity_completeness_score": "1 if one eligible instrument_id is resolved else 0",
+      "daily_linkage_completeness_ratio": "daily linked sessions / sessions considered",
+      "intraday_linkage_completeness_ratio": "intraday linked sessions / sessions considered",
+      "prior_20_daily_volume_complete_session_count": "count of sessions with 20 distinct prior trading-session volumes",
+      "required_field_coverage_ratio": "present required source cells / expected required source cells",
+      "duplicate_risk_rank": "0 no known duplicate risk; 1 identical duplicate groups only; 2 conflicting duplicate groups",
+      "source_rows_per_eligible_session": "source rows read or written / eligible_session_count"
+    }
+  },
+  "allowed_outputs": [
+    "pre_manifest.json",
+    "heartbeat.json",
+    "eligible_surface_source_snapshot_manifest.json",
+    "014_scale_a_eligible_surface_candidate_v0_1.parquet",
+    "bounded_014_expansion_manifest.json",
+    "eligible_instrument_pool.json",
+    "eligible_instrument_pool_summary.json",
+    "eligible_instrument_pool_report.csv",
+    "eligible_instrument_rejection_report.csv",
+    "eligible_session_coverage_report.csv",
+    "eligible_surface_calendar_guard_report.csv",
+    "eligible_surface_source_coverage_report.csv",
+    "eligible_surface_duplicate_status_report.csv",
+    "eligible_surface_authority_report.json",
+    "eligible_surface_determinism_report.json",
+    "eligible_surface_final_manifest.json",
+    "experimental_core_four_scale_a_eligible_representation_surface_construction_readout_v0_1.md"
+  ],
+  "required_fingerprints": [
+    "source_snapshot_fingerprint",
+    "bounded_014_candidate_surface_fingerprint",
+    "eligibility_rule_fingerprint",
+    "eligible_surface_fingerprint",
+    "eligible_instrument_pool_fingerprint"
+  ],
+  "terminal_statuses": [
+    "PASS_WITH_RESTRICTIONS",
+    "BLOCKED_SOURCE_CARDINALITY",
+    "BLOCKED_ELIGIBLE_POOL_CARDINALITY",
+    "BLOCKED_SESSION_COVERAGE",
+    "BLOCKED_CALENDAR_COMPATIBILITY",
+    "BLOCKED_DAILY_LINKAGE",
+    "BLOCKED_IDENTITY",
+    "BLOCKED_PRIOR_20_COVERAGE",
+    "FAILED_SOURCE_SNAPSHOT",
+    "FAILED_DETERMINISM",
+    "FAILED_AUTHORITY_BOUNDARY",
+    "FAILED_CONTRACT"
+  ],
+  "acceptance_criteria": {
+    "eligible_instruments_minimum": 10,
+    "eligible_instruments_maximum": 20,
+    "candidate_instruments_discovered_maximum": 40,
+    "instruments_fully_evaluated_maximum": 40,
+    "sessions_considered_maximum": 10,
+    "minimum_eligible_sessions_per_instrument": 5,
+    "source_market_data_rows_read_maximum": 500000,
+    "expanded_intraday_rows_written_maximum": 200000,
+    "candidate_surface_files_written": 1,
+    "output_files_maximum": 18,
+    "output_bytes_maximum": 50000000,
+    "calendar_compatibility_failures": 0,
+    "identity_failures_for_eligible_instruments": 0,
+    "daily_linkage_failures_for_eligible_instruments": 0,
+    "intraday_linkage_failures_for_eligible_instruments": 0,
+    "prior_20_daily_volume_coverage_failures_for_eligible_instruments": 0,
+    "required_core_four_input_coverage_failures_for_eligible_instruments": 0,
+    "forbidden_source_reads": 0,
+    "formula_executions": 0,
+    "builder_records_emitted": 0,
+    "integrated_candidate_records_emitted": 0,
+    "market_state_parquet_files_written": 0,
+    "official_outputs_written": 0,
+    "determinism_failures": 0,
+    "authority_failures": 0,
+    "hard_contract_failures": 0,
+    "required_output_files_present": 17,
+    "unexpected_output_files": 0,
+    "resolved_intraday_source_distinct_instruments_minimum": 10,
+    "candidate_instruments_with_daily_linkage_minimum": 10,
+    "candidate_instruments_with_5_compatible_sessions_minimum": 10
+  },
+  "next_boundary": {
+    "allowed_next_gate_after_success": "experimental_core_four_market_state_scale_a_sample_preflight_rerun_authorization_v0_1",
+    "scale_a_execution_authorized_by_this_gate": false,
+    "scale_a_preflight_rerun_authorized_by_this_gate": false
+  },
+  "source_alias_authority": {
+    "004_master_daily_table": {
+      "allowed": true,
+      "purpose": [
+        "identity",
+        "daily_linkage",
+        "prior_20_trading_session_volume_coverage"
+      ]
+    },
+    "014_master_intraday_bar_table_candidate": {
+      "allowed": true,
+      "purpose": [
+        "current_bounded_intraday_candidate_surface_assessment"
+      ],
+      "observed_by_blocked_preflight_distinct_tickers": 3,
+      "derivation_alone_can_increase_instrument_cardinality": false
+    },
+    "013_ohlcv_1m_quote_guarded": {
+      "allowed": true,
+      "purpose": [
+        "bounded_upstream_evidence_for_run_local_014_derived_candidate_surface"
+      ],
+      "market_state_input_allowed": false,
+      "builder_input_allowed": false,
+      "integration_input_allowed": false,
+      "downstream_input_allowed": false,
+      "raw_quote_consumption_allowed": false,
+      "microstructure_feature_consumption_allowed": false
+    }
+  },
+  "authorized_intraday_expansion_origin": {
+    "previous_preflight_014_surface": "G:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_2_candidate_quote_guarded/data.parquet",
+    "previous_preflight_observed_intraday_tickers": 3,
+    "current_014_derivation_alone_can_increase_instrument_cardinality": false,
+    "bounded_upstream_intraday_alias": "013_ohlcv_1m_quote_guarded",
+    "bounded_upstream_intraday_candidate_root": "C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate",
+    "new_instruments_may_come_only_from_registry_resolved_bounded_upstream": true,
+    "fail_if_upstream_root_unresolved": "BLOCKED_SOURCE_CARDINALITY",
+    "fail_if_candidate_potential_below_threshold": "BLOCKED_SOURCE_CARDINALITY"
+  },
+  "source_expansion_feasibility_precheck": {
+    "required_before_writing_bounded_014_candidate_surface": true,
+    "write_bounded_014_candidate_surface_if_failed": false,
+    "minimum_resolved_intraday_source_distinct_instruments": 10,
+    "minimum_candidate_instruments_with_daily_linkage": 10,
+    "minimum_candidate_instruments_with_5_compatible_sessions": 10,
+    "record_in_pre_manifest": true,
+    "record_in_source_snapshot_manifest": true,
+    "terminal_status_if_failed": "BLOCKED_SOURCE_CARDINALITY"
+  }
+}

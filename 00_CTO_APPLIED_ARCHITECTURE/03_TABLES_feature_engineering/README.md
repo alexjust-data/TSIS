@@ -1,6 +1,6 @@
 # 03_TABLES_feature_engineering
 
-Status: `readme_v1_3_phase_b_core_four_materialization_execution`
+Status: `readme_v1_6_phase_b_core_four_scale_a_physical_validation_closed`
 Date: `2026-07-22`
 
 Esta seccion conecta tablas existentes, Objetos de Informacion, feature engineering, Market State, Event State, builders, validators y consumo downstream.
@@ -10,7 +10,7 @@ No es una autoridad operativa independiente.
 La autoridad final vive en:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations
 G:\TSIS\data\data_foundation_outputs
 builders
 validators
@@ -103,6 +103,17 @@ restricciones sobre 8 filas candidatas. El parquet generado sigue siendo
 experimental, candidato y no oficial. Market State parquet oficial, produccion,
 consumo downstream, full-history/full-universe y promocion siguen cerrados.
 
+Scale A ya cerro hasta validacion fisica independiente contra la muestra congelada:
+
+```text
+builder_resolution_run = experimental_core_four_market_state_scale_a_builder_resolution_execution_v0_1_20260722T202557Z
+integration_run = experimental_core_four_market_state_scale_a_market_state_integration_execution_v0_1_20260722T204126Z
+candidate_materialization_run = experimental_scale_a_ms_candidate_materialization_v0_1_20260722T204356Z
+physical_validation_run = experimental_core_four_market_state_scale_a_candidate_physical_validation_v0_1_20260722T204600Z
+```
+
+Resultado vigente: `CLOSED_PASS_WITH_RESTRICTIONS`, 60 contextos congelados, 240 Information Object resolution records, 52 Market State candidate records integrados, 52 filas fisicas candidatas, 1 parquet candidato no oficial, 40 columnas fisicas, 17 columnas de valores, 884 value mappings reconciliados, 52 fingerprints de estado y 52 materialized IDs recalculados, 0 source market-data rows read durante integracion/materializacion/validacion fisica y 0 hard validation failures. El siguiente trabajo debe ser un gate separado de diseno/review, probablemente `governed_exchange_session_calendar_design`, antes de cualquier Scale B.
+
 Regla:
 
 ```text
@@ -140,7 +151,7 @@ Builder Validation, Market State Integration and Operational Promotion gates.
 | `03_INFORMATION_OBJECTS/` | Guarda expedientes trazables de Objetos evaluados: candidatos, revisados, aceptados, aceptados con restricciones o rechazados. |
 | `04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/` | Phase B complete_for_v1. Puente gobernado: Objeto admitido -> modelos aprobados -> capacidades -> variables candidatas -> tablas fuente -> perfiles de State. |
 | `05_STATE_BUILDER_VALIDATION/` | Builder Validation design completo para v1. El builder experimental core-four y la aceptacion de resolution records cerraron con restricciones. No autoriza builders de produccion, materializacion ni consumo State por si mismo. |
-| `06_MARKET_STATE_INTEGRATION/` | Integracion core-four experimental, diseno/autorizacion de materializacion candidata y ejecucion acotada cerrados con restricciones. Mantiene 8 filas parquet candidatas no oficiales como evidencia fisica. No autoriza Market State oficial, consumo operativo ni promocion. |
+| `06_MARKET_STATE_INTEGRATION/` | Integracion core-four experimental, materializacion candidata de 8 filas y Scale A cerrada hasta validacion fisica independiente de 52 filas con restricciones. Mantiene evidencia fisica no oficial y 240 resolution records Scale A. No autoriza Market State oficial, consumo operativo ni promocion. |
 | `99_archive/` | Documentos historicos, superseded o no activos. No son autoridad operativa. |
 
 ---

@@ -1,6 +1,6 @@
 # 06_MARKET_STATE_INTEGRATION
 
-Status: `phase_b_core_four_scale_a_authorization_opened_v0_1`
+Status: `phase_b_core_four_scale_a_physical_validation_closed_v0_1`
 Date: `2026-07-22`
 
 Esta carpeta registra disenos y ejecuciones experimentales no productivas de
@@ -15,7 +15,7 @@ materializaciones ni consumo downstream por si misma.
 TSIS Market Ontology Phase = CLOSED
 TSIS Market Ontology v1 = FROZEN
 Phase B = OPEN
-Market State Integration Expansion = CORE_FOUR_SCALE_A_AUTHORIZATION_BOUNDED
+Market State Integration Expansion = CORE_FOUR_SCALE_A_CLOSED_WITH_RESTRICTIONS
 core_four_builder_validation = CLOSED_PASS_WITH_RESTRICTIONS
 core_four_resolution_record_acceptance_review = CLOSED_PASS_WITH_RESTRICTIONS
 core_four_market_state_integration_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
@@ -26,7 +26,20 @@ experimental_core_four_market_state_materialization_execution = CLOSED_PASS_WITH
 core_four_market_state_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICTIONS
 core_four_market_state_bounded_scaling_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
 experimental_core_four_market_state_scale_a_authorization = AUTHORIZED_WITH_RESTRICTIONS
-experimental_core_four_market_state_scale_a_execution = NOT_EXECUTED
+experimental_core_four_market_state_scale_a_sample_preflight = SUPERSEDED_BLOCKED_SAMPLE_CARDINALITY
+core_four_scale_a_eligible_representation_surface_construction = CLOSED_PASS_WITH_RESTRICTIONS
+eligible_instrument_pool = ACCEPTED
+experimental_core_four_market_state_scale_a_sample_preflight_rerun_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_sample_preflight_rerun = CLOSED_PASS_WITH_RESTRICTIONS
+scale_a_sample_manifest = FROZEN
+experimental_core_four_market_state_scale_a_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_builder_resolution_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_market_state_integration_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_candidate_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICTIONS
+governed_exchange_session_calendar_design = NOT_OPEN_NEXT
+experimental_core_four_market_state_scale_b_authorization = BLOCKED_UNTIL_GOVERNED_EXCHANGE_SESSION_CALENDAR
 experimental_candidate_parquet_output_allowed = true
 production_builder_authorized = false
 state_consumption_authorized = false
@@ -282,7 +295,7 @@ Current boundaries after the follow-on Scale A authorization:
 
 ```text
 Scale A authorization = AUTHORIZED_WITH_RESTRICTIONS
-Scale A execution = NOT_EXECUTED
+Scale A execution = PARTIAL_CHAIN_BUILDER_RESOLUTION_CLOSED
 Scale B execution = BLOCKED_UNTIL_GOVERNED_EXCHANGE_SESSION_CALENDAR
 Scale C execution = NOT_AUTHORIZED
 official Market State = NOT_OPEN
@@ -300,7 +313,7 @@ Scale B requires a governed exchange session calendar before execution. The fixe
 authorization = experimental_core_four_market_state_scale_a_authorization_v0_1.md
 scope = configs/experimental_core_four_market_state_scale_a_scope_v0_1.json
 experimental_core_four_market_state_scale_a_authorization = AUTHORIZED_WITH_RESTRICTIONS
-experimental_core_four_market_state_scale_a_execution = NOT_EXECUTED
+experimental_core_four_market_state_scale_a_execution = CLOSED_PASS_WITH_RESTRICTIONS
 ```
 
 Exact limits:
@@ -348,7 +361,7 @@ reference_run = experimental_core_four_market_state_scale_a_sample_preflight_v0_
 superseded_runs = experimental_core_four_market_state_scale_a_sample_preflight_v0_1_20260722T123132Z, experimental_core_four_market_state_scale_a_sample_preflight_v0_1_20260722T123330Z
 readout = experimental_core_four_market_state_scale_a_sample_preflight_readout_v0_1.md
 experimental_core_four_market_state_scale_a_sample_preflight = BLOCKED_SAMPLE_CARDINALITY
-experimental_core_four_market_state_scale_a_execution = BLOCKED_NOT_STARTED
+experimental_core_four_market_state_scale_a_execution = CLOSED_PASS_WITH_RESTRICTIONS
 ```
 
 Result:
@@ -383,9 +396,9 @@ The preflight attempts at `runs/experimental_core_four_market_state_scale_a_samp
 design = core_four_scale_a_eligible_representation_surface_design_v0_1.md
 contract = core_four_scale_a_eligible_representation_surface_design_contract_v0_1.json
 core_four_scale_a_eligible_representation_surface_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
-experimental_core_four_scale_a_eligible_representation_surface_authorization = NOT_OPEN_NEXT
-experimental_core_four_scale_a_eligible_representation_surface_construction = NOT_AUTHORIZED
-eligible_instrument_pool = NOT_CONSTRUCTED
+experimental_core_four_scale_a_eligible_representation_surface_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_scale_a_eligible_representation_surface_construction = CLOSED_PASS_WITH_RESTRICTIONS
+eligible_instrument_pool = ACCEPTED
 ```
 
 The blocked Scale A preflight revealed a missing governed layer: an eligible
@@ -408,10 +421,344 @@ maximum_sessions_considered = 10
 maximum_source_market_data_rows_read = 500000
 ```
 
-The design remains non-executive. It does not authorize 014 expansion,
-eligible-pool construction, sample preflight rerun, builders, integration,
-materialization, parquet writing, production, promotion or downstream
-consumption.
+The design artifact itself remains non-executive. The follow-on
+authorization below opens only bounded eligible-surface construction with a
+run-local 014-derived candidate surface. It still does not authorize original
+014 modification, sample preflight rerun, builders, integration, Market State
+materialization, Market State parquet writing, production, promotion or
+downstream consumption.
+
+## Experimental Core Four Scale A Eligible Representation Surface Authorization
+
+```text
+authorization = experimental_core_four_scale_a_eligible_representation_surface_authorization_v0_1.md
+scope = configs/experimental_core_four_scale_a_eligible_representation_surface_scope_v0_1.json
+experimental_core_four_scale_a_eligible_representation_surface_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_scale_a_eligible_representation_surface_construction = CLOSED_PASS_WITH_RESTRICTIONS
+eligible_instrument_pool = ACCEPTED
+experimental_core_four_market_state_scale_a_sample_preflight_rerun_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_sample_preflight_rerun = CLOSED_PASS_WITH_RESTRICTIONS
+scale_a_sample_manifest = FROZEN
+experimental_core_four_market_state_scale_a_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_builder_resolution_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_execution = CLOSED_PASS_WITH_RESTRICTIONS
+```
+
+The authorization opens only bounded eligible-surface construction. It permits
+a source snapshot, one bounded 014-derived intraday candidate surface inside
+the construction run, and construction of a policy-selected pool of 10 to 20
+eligible instrument identities.
+
+Exact construction limits:
+
+```text
+maximum_candidate_instruments_discovered = 40
+maximum_instruments_fully_evaluated = 40
+minimum_eligible_instruments = 10
+maximum_eligible_instruments = 20
+maximum_sessions_considered = 10
+minimum_eligible_sessions_per_instrument = 5
+maximum_source_market_data_rows_read = 500000
+maximum_expanded_intraday_rows_written = 200000
+maximum_candidate_surface_files_written = 1
+required_output_files = 17
+maximum_output_files = 18
+unexpected_output_files = 0
+maximum_output_bytes = 50000000
+```
+
+The original `014_master_intraday_bar_table_candidate` must not be modified or
+promoted. The preflight used the registry-resolved 014 `data.parquet` and
+observed only 3 intraday tickers, so deriving from that file alone cannot create
+10 eligible instruments. The construction may use `013_ohlcv_1m_quote_guarded`
+only as bounded upstream evidence for a run-local 014-derived candidate surface,
+with raw quotes and microstructure still forbidden.
+
+Before writing `014_scale_a_eligible_surface_candidate_v0_1.parquet`, the
+constructor must prove source expansion feasibility:
+
+```text
+resolved_intraday_source_distinct_instruments >= 10
+candidate_instruments_with_daily_linkage >= 10
+candidate_instruments_with_5_compatible_sessions >= 10
+```
+
+If that fails, construction must close `BLOCKED_SOURCE_CARDINALITY` and write
+no derived parquet. The only parquet allowed by this authorization is the
+run-local `014_scale_a_eligible_surface_candidate_v0_1.parquet`; no Market State
+parquet is authorized.
+
+## Experimental Core Four Scale A Eligible Representation Surface Construction
+
+```text
+script = scripts/experimental_core_four_scale_a_eligible_representation_surface_construction.py
+reference_run = experimental_core_four_scale_a_eligible_representation_surface_construction_v0_1_20260722T184904Z
+readout = experimental_core_four_scale_a_eligible_representation_surface_construction_readout_v0_1.md
+experimental_core_four_scale_a_eligible_representation_surface_construction = CLOSED_PASS_WITH_RESTRICTIONS
+eligible_instrument_pool = ACCEPTED
+experimental_core_four_market_state_scale_a_sample_preflight_rerun_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_sample_preflight_rerun = CLOSED_PASS_WITH_RESTRICTIONS
+scale_a_sample_manifest = FROZEN
+experimental_core_four_market_state_scale_a_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_builder_resolution_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_execution = CLOSED_PASS_WITH_RESTRICTIONS
+```
+
+Result:
+
+```text
+candidate_instruments_discovered = 40
+resolved_intraday_source_distinct_instruments = 40
+candidate_instruments_with_daily_linkage = 14
+candidate_instruments_with_5_compatible_sessions = 38
+eligible_candidates_before_cap = 13
+eligible_instruments_emitted = 13
+selected_sessions_count = 10
+source_market_data_rows_read = 221183
+derived_014_rows_written = 91830
+candidate_surface_parquet_files_written = 1
+market_state_parquet_files_written = 0
+required_output_files = 17
+final_output_file_count = 17
+unexpected_output_files = 0
+authority_failures = 0
+determinism_failures = 0
+hard_contract_failures = 0
+```
+
+The run-local `014_scale_a_eligible_surface_candidate_v0_1.parquet` is eligible
+surface evidence only. It is not Market State parquet and is not downstream
+consumable. The original 014 candidate file remained unchanged by SHA-256 and
+mtime.
+
+Accepted pool fingerprint:
+
+```text
+eligible_instrument_pool_fingerprint =
+57e22e7eb616c0682db1d094e19dff2b31e35ca23320ec1757acf4e19323853d
+```
+
+Superseded attempts `20260722T184113Z`, `20260722T184220Z` and
+`20260722T184456Z` are not closure evidence; they exposed script/reporting
+defects and are superseded by the accepted run above.
+
+## Experimental Core Four Market State Scale A Sample Preflight Rerun
+
+```text
+authorization = experimental_core_four_market_state_scale_a_sample_preflight_rerun_authorization_v0_1.md
+scope = configs/experimental_core_four_market_state_scale_a_sample_preflight_rerun_scope_v0_1.json
+script = scripts/experimental_core_four_market_state_scale_a_sample_preflight.py
+reference_run = experimental_core_four_market_state_scale_a_sample_preflight_rerun_v0_1_20260722T194905Z
+readout = experimental_core_four_market_state_scale_a_sample_preflight_rerun_readout_v0_1.md
+experimental_core_four_market_state_scale_a_sample_preflight_rerun = CLOSED_PASS_WITH_RESTRICTIONS
+scale_a_sample_manifest = FROZEN
+experimental_core_four_market_state_scale_a_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_builder_resolution_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_execution = CLOSED_PASS_WITH_RESTRICTIONS
+```
+
+Result:
+
+```text
+sample_manifest_rows = 60
+selected_instruments = 8
+selected_sessions = 5
+eligible_instruments = 13
+expected_resolution_records = 240
+expected_blocked_contexts = 8
+expected_integrable_contexts = 52
+calendar_compatibility_failures = 0
+identity_failures = 0
+source_coverage_failures_in_frozen_sample = 0
+stratification_failures = 0
+duplicate_status_diversity_frozen_contexts = 5
+hard_preflight_failures = 0
+builders_executed = false
+resolution_records_emitted = 0
+integration_executed = false
+materialization_executed = false
+candidate_parquet_files_written = 0
+```
+
+Accepted sample fingerprint:
+
+```text
+scale_a_sample_fingerprint =
+65a05b1c0637a7473380e9a04705a6c5879a921a0196dbad0a1815a19e8edea1
+```
+
+The superseded rerun `experimental_core_four_market_state_scale_a_sample_preflight_rerun_v0_1_20260722T194131Z` is not closure evidence. It exposed a
+preflight defect where duplicate-status diversity could remain blocked while
+the summary still closed PASS. The accepted run corrected that issue and froze
+5 duplicate-evidence contexts against a requirement of 4.
+
+## Experimental Core Four Market State Scale A Execution Authorization
+
+```text
+authorization = experimental_core_four_market_state_scale_a_execution_authorization_v0_1.md
+scope = configs/experimental_core_four_market_state_scale_a_execution_scope_v0_1.json
+experimental_core_four_market_state_scale_a_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_builder_resolution_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_execution = CLOSED_PASS_WITH_RESTRICTIONS
+```
+
+The authorization binds the next execution chain to the frozen sample:
+
+```text
+sample_preflight_rerun_run = experimental_core_four_market_state_scale_a_sample_preflight_rerun_v0_1_20260722T194905Z
+scale_a_sample_fingerprint = 65a05b1c0637a7473380e9a04705a6c5879a921a0196dbad0a1815a19e8edea1
+requested_contexts = 60
+expected_resolution_records = 240
+expected_integrable_contexts = 52
+expected_blocked_contexts = 8
+```
+
+Authorized chain:
+
+```text
+builder/resolution
+    -> integration
+    -> candidate materialization
+    -> independent physical validation
+```
+
+The first executable subgate,
+`experimental_core_four_market_state_scale_a_builder_resolution_execution`,
+closed `CLOSED_PASS_WITH_RESTRICTIONS` in accepted run
+`experimental_core_four_market_state_scale_a_builder_resolution_execution_v0_1_20260722T202557Z`.
+It consumed the frozen sample, emitted Information Object resolution records and did not integrate Market State.
+It did not reselect the sample, read `013`, consume raw quotes, write official Market State, promote datasets or authorize downstream consumption.
+
+## Experimental Core Four Market State Scale A Builder/Resolution Execution
+
+```text
+script = scripts/experimental_core_four_market_state_scale_a_builder_resolution_execution.py
+reference_run = experimental_core_four_market_state_scale_a_builder_resolution_execution_v0_1_20260722T202557Z
+readout = experimental_core_four_market_state_scale_a_builder_resolution_execution_readout_v0_1.md
+experimental_core_four_market_state_scale_a_builder_resolution_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_market_state_integration_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_execution = CLOSED_PASS_WITH_RESTRICTIONS
+```
+
+The run consumed frozen sample fingerprint `65a05b1c0637a7473380e9a04705a6c5879a921a0196dbad0a1815a19e8edea1` from `experimental_core_four_market_state_scale_a_sample_preflight_rerun_v0_1_20260722T194905Z` and emitted 240 Information Object resolution records:
+
+```text
+requested_contexts = 60
+resolution_records = 240
+pass_or_pass_with_restrictions_records = 208
+blocked_input_unavailable_records = 32
+integrable_contexts = 52
+blocked_contexts = 8
+failed_contexts = 0
+source_market_data_rows_read = 5761
+formula_rows = 1020
+formula_failures = 0
+future_bar_leaks = 0
+output_contract_failures = 0
+nondeterministic_records = 0
+semantic_equality_failures = 0
+hard_validation_failures = 0
+```
+
+Superseded attempts `experimental_core_four_market_state_scale_a_builder_resolution_execution_v0_1_20260722T202216Z`, `experimental_core_four_market_state_scale_a_builder_resolution_execution_v0_1_20260722T202243Z` and `experimental_core_four_market_state_scale_a_builder_resolution_execution_v0_1_20260722T202407Z` are not accepted closure evidence. They exposed wrapper/output-order and source-read-boundary reporting issues, not candidate-record formula defects.
+
+## Experimental Core Four Market State Scale A Market State Integration Execution
+
+```text
+script = scripts/experimental_core_four_market_state_scale_a_market_state_integration_execution.py
+reference_run = experimental_core_four_market_state_scale_a_market_state_integration_execution_v0_1_20260722T204126Z
+readout = experimental_core_four_market_state_scale_a_market_state_integration_execution_readout_v0_1.md
+experimental_core_four_market_state_scale_a_market_state_integration_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_candidate_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_execution = CLOSED_PASS_WITH_RESTRICTIONS
+```
+
+Result:
+
+```text
+input_resolution_records = 240
+contexts_seen = 60
+candidate_records_emitted = 52
+rejected_contexts = 8
+rejected_required_object_blocked_contexts = 8
+admitted_value_rows = 884
+source_market_data_rows_read = 0
+blocked_values_admitted = 0
+future_bar_leaks = 0
+hard_validation_failures = 0
+candidate_parquet_files_written = 0
+```
+
+Superseded integration attempts `20260722T203507Z`, `20260722T203635Z` and `20260722T204045Z` are not accepted closure evidence for the Scale A chain. The accepted run is `experimental_core_four_market_state_scale_a_market_state_integration_execution_v0_1_20260722T204126Z` because it emits the materialization-compatible `integration_summary.json`.
+
+## Experimental Core Four Market State Scale A Candidate Materialization Execution
+
+```text
+scope = configs/experimental_core_four_market_state_scale_a_candidate_materialization_scope_v0_1.json
+script = scripts/core_four_market_state_materialization_probe.py
+reference_run = experimental_scale_a_ms_candidate_materialization_v0_1_20260722T204356Z
+readout = experimental_core_four_market_state_scale_a_candidate_materialization_execution_readout_v0_1.md
+experimental_core_four_market_state_scale_a_candidate_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_execution = CLOSED_PASS_WITH_RESTRICTIONS
+```
+
+Result:
+
+```text
+input_candidate_records = 52
+output_candidate_rows = 52
+rejected_contexts_materialized_as_rows = 0
+source_market_data_rows_read = 0
+candidate_parquet_files_written = 1
+candidate_parquet_bytes = 66399
+physical_column_count = 40
+physical_value_column_count = 17
+schema_match = true
+hard_validation_failures = 0
+roundtrip_failures = 0
+semantic_rebuild_differences = 0
+```
+
+The emitted `core_four_market_state_scale_a_candidate_v0_1.parquet` is bounded experimental candidate evidence only. It is not an official Market State table and is not downstream-consumable.
+
+## Experimental Core Four Market State Scale A Candidate Physical Validation
+
+```text
+script = scripts/core_four_market_state_candidate_physical_validation.py
+reference_run = experimental_core_four_market_state_scale_a_candidate_physical_validation_v0_1_20260722T204600Z
+readout = experimental_core_four_market_state_scale_a_candidate_physical_validation_readout_v0_1.md
+experimental_core_four_market_state_scale_a_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_execution = CLOSED_PASS_WITH_RESTRICTIONS
+```
+
+Result:
+
+```text
+input_candidate_records = 52
+output_physical_rows = 52
+candidate_parquet_files = 1
+candidate_parquet_bytes = 66399
+physical_column_count = 40
+physical_value_column_count = 17
+parquet_sha256_matches_manifest = true
+schema_match = true
+column_order_exact = true
+value_mappings_checked = 884
+source_to_physical_value_mismatches = 0
+rvol_rename_checks = 52
+rvol_rename_mismatches = 0
+state_output_fingerprint_matches = 52
+materialized_state_candidate_id_matches = 52
+roundtrip_rows_checked = 52
+roundtrip_field_mismatches = 0
+semantic_rebuild_field_comparisons = 1924
+semantic_rebuild_differences = 0
+authority_failures = 0
+hard_validation_failures = 0
+```
+
+The validator rebuilt expected rows independently from the accepted integration JSONL and the closed physical schema, then compared the real parquet artifact. It did not rewrite parquet and did not read source market data.
 
 ## Preserved Restrictions
 
@@ -425,18 +772,19 @@ quote_dependent_objects_remain_blocked
 
 ## Next Gate
 
-Scale A authorization remains open with restrictions, but the sample preflight is blocked until an eligible representation surface is authorized, constructed and accepted:
+Scale A is closed through independent candidate physical validation:
 
 ```text
-core_four_scale_a_eligible_representation_surface_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
-experimental_core_four_scale_a_eligible_representation_surface_authorization = NOT_OPEN_NEXT
-experimental_core_four_scale_a_eligible_representation_surface_construction = NOT_AUTHORIZED
-eligible_instrument_pool = NOT_CONSTRUCTED
-experimental_core_four_market_state_scale_a_sample_preflight = BLOCKED_SAMPLE_CARDINALITY
-experimental_core_four_market_state_scale_a_execution = BLOCKED_NOT_STARTED
+experimental_core_four_market_state_scale_a_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+scale_a_sample_fingerprint = 65a05b1c0637a7473380e9a04705a6c5879a921a0196dbad0a1815a19e8edea1
+experimental_core_four_market_state_scale_a_builder_resolution_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_market_state_integration_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_candidate_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_execution = CLOSED_PASS_WITH_RESTRICTIONS
 ```
 
-The next allowed work is `experimental_core_four_scale_a_eligible_representation_surface_authorization_v0_1`. Do not construct the pool, expand 014, rerun the Scale A sample preflight, start builders, run integration, materialize parquet or open physical validation until that authorization exists.
+The next allowed work is not Scale B execution. It should be a separately authorized design/review gate, most likely `governed_exchange_session_calendar_design`, because Scale B remains blocked until governed calendar evidence replaces the fixed UTC probe guard.
 
 Still closed:
 
@@ -450,4 +798,6 @@ full-universe execution = NOT_AUTHORIZED
 quote-dependent object integration = NOT_AUTHORIZED
 official Market State = NOT_OPEN
 operational promotion = NOT_AUTHORIZED
+Scale B execution = BLOCKED_UNTIL_GOVERNED_EXCHANGE_SESSION_CALENDAR
+Scale C execution = NOT_OPEN
 ```

@@ -1,9 +1,63 @@
+## 2026-07-22 | phase b | Scale A candidate physical validation closed
+
+- Added `06_MARKET_STATE_INTEGRATION/experimental_core_four_market_state_scale_a_candidate_physical_validation_readout_v0_1.md` and executed independent validation run `experimental_core_four_market_state_scale_a_candidate_physical_validation_v0_1_20260722T204600Z` against the Scale A candidate parquet from `experimental_scale_a_ms_candidate_materialization_v0_1_20260722T204356Z`.
+- Validation result: `CLOSED_PASS_WITH_RESTRICTIONS`, 52 input candidate records, 52 physical rows, 1 candidate parquet, 40 physical columns, 17 value columns, 884/884 source-to-physical value mappings reconciled and 52/52 RVOL rename checks passed.
+- Fingerprint and rebuild evidence: 52/52 state output fingerprints matched, 52/52 materialized candidate IDs matched, 52 roundtrip rows checked, 1924 semantic rebuild field comparisons and 0 semantic rebuild differences.
+- Authority boundary preserved: 0 source market-data rows read, 0 authority failures, candidate rows remain non-canonical and non-downstream-consumable.
+- Scale A is closed through independent candidate physical validation. Next work requires a separate design/review gate, likely `governed_exchange_session_calendar_design`; Scale B remains blocked until governed calendar evidence exists.
+
+## 2026-07-22 | phase b | Scale A integration and candidate materialization closed
+
+- Added `06_MARKET_STATE_INTEGRATION/scripts/experimental_core_four_market_state_scale_a_market_state_integration_execution.py`, `configs/experimental_core_four_market_state_scale_a_candidate_materialization_scope_v0_1.json`, `experimental_core_four_market_state_scale_a_market_state_integration_execution_readout_v0_1.md` and `experimental_core_four_market_state_scale_a_candidate_materialization_execution_readout_v0_1.md`.
+- Executed accepted Scale A integration run `experimental_core_four_market_state_scale_a_market_state_integration_execution_v0_1_20260722T204126Z`: 240 input resolution records, 60 contexts, 52 integrated candidate records, 8 expected rejected blocked contexts, 884 admitted value rows, 0 source market-data rows read, 0 blocked values admitted and 0 hard validation failures.
+- Executed accepted Scale A candidate materialization run `experimental_scale_a_ms_candidate_materialization_v0_1_20260722T204356Z`: 52 input candidate records, 52 physical candidate rows, 1 non-official candidate parquet, 66,399 bytes, 40 physical columns, 17 value columns, 0 source market-data rows read and 0 hard validation failures.
+- Validation evidence: 0 duplicate primary keys, 0 lineage/restriction/fingerprint/roundtrip failures and 0 semantic rebuild differences across 37 authorized fields.
+- Next executable subgate: `experimental_core_four_market_state_scale_a_candidate_physical_validation`; official Market State, production, downstream consumption, promotion, full-history/full-universe execution, Scale B and Scale C remain closed.
+
+## 2026-07-22 | phase b | Scale A builder/resolution execution closed
+
+- Added `06_MARKET_STATE_INTEGRATION/scripts/experimental_core_four_market_state_scale_a_builder_resolution_execution.py` and `experimental_core_four_market_state_scale_a_builder_resolution_execution_readout_v0_1.md`.
+- Executed accepted run `experimental_core_four_market_state_scale_a_builder_resolution_execution_v0_1_20260722T202557Z`: `CLOSED_PASS_WITH_RESTRICTIONS`, 60 frozen contexts, 240 Information Object resolution records, 208 pass/pass-with-restrictions records, 32 expected blocked records, 52 integrable contexts, 8 expected blocked contexts and 0 failed contexts.
+- Validation evidence: 5761 bounded source rows read, 1020 formula rows, 0 formula failures, 0 future bar leaks, 0 output contract failures, 0 nondeterministic records, 208 semantic equality checks and 0 hard validation failures.
+- Marked builder/resolution attempts `20260722T202216Z`, `20260722T202243Z` and `20260722T202407Z` as not accepted closure evidence; they exposed wrapper/output-order and source-read-boundary reporting issues, not candidate-record formula defects.
+- Next executable subgate: `experimental_core_four_market_state_scale_a_market_state_integration_execution`; Market State materialization/parquet, production, official State, downstream consumption, full-history/full-universe execution and promotion remain closed.
+
+## 2026-07-22 | phase b | Scale A execution authorized
+
+- Added `06_MARKET_STATE_INTEGRATION/experimental_core_four_market_state_scale_a_execution_authorization_v0_1.md` and `configs/experimental_core_four_market_state_scale_a_execution_scope_v0_1.json`.
+- Bound Scale A execution to frozen sample fingerprint `65a05b1c0637a7473380e9a04705a6c5879a921a0196dbad0a1815a19e8edea1` from `experimental_core_four_market_state_scale_a_sample_preflight_rerun_v0_1_20260722T194905Z`.
+- Authorized the bounded non-production chain: builder/resolution -> integration -> candidate materialization -> independent physical validation.
+- Kept sample reselection, `013`, raw quotes, quote-dependent objects, production, official Market State, downstream consumption, promotion, full-history and full-universe execution closed.
+- Next executable subgate: `experimental_core_four_market_state_scale_a_builder_resolution_execution`.
+
+## 2026-07-22 | phase b | Scale A sample preflight rerun closed
+
+- Added `06_MARKET_STATE_INTEGRATION/experimental_core_four_market_state_scale_a_sample_preflight_rerun_authorization_v0_1.md` and `configs/experimental_core_four_market_state_scale_a_sample_preflight_rerun_scope_v0_1.json`.
+- Updated `scripts/experimental_core_four_market_state_scale_a_sample_preflight.py` to consume the accepted run-local 014-derived surface and eligible pool, preserve duplicate-status evidence and block on required stratification failures.
+- Closed `experimental_core_four_market_state_scale_a_sample_preflight_rerun_v0_1_20260722T194905Z` as `PASS_WITH_RESTRICTIONS`: 60 contexts frozen, 8 instruments, 5 sessions, 240 expected resolution records, 52 expected integrable contexts, 8 expected blocked contexts, 0 hard preflight failures.
+- Marked `experimental_core_four_market_state_scale_a_sample_preflight_rerun_v0_1_20260722T194131Z` as not accepted closure evidence because it exposed the duplicate-status stratification defect.
+- Next allowed gate: `experimental_core_four_market_state_scale_a_execution_authorization_v0_1`; builders/integration/materialization remain closed until separately authorized.
+
+## 2026-07-22 | phase b | Scale A eligible representation surface construction passed
+
+- Added `06_MARKET_STATE_INTEGRATION/scripts/experimental_core_four_scale_a_eligible_representation_surface_construction.py` and `experimental_core_four_scale_a_eligible_representation_surface_construction_readout_v0_1.md`.
+- Executed accepted run `experimental_core_four_scale_a_eligible_representation_surface_construction_v0_1_20260722T184904Z`: `CLOSED_PASS_WITH_RESTRICTIONS`, 40 candidate instruments discovered, 13 eligible instruments emitted, 10 sessions selected, 221183 source rows read, 91830 run-local 014-derived rows written and 1 eligible-surface candidate parquet.
+- Evidence: 17/17 required outputs present, 0 unexpected outputs, 0 authority failures, 0 determinism failures, 0 hard contract failures, original 014 SHA-256/mtime unchanged and 0 Market State parquet files written.
+- Boundary preserved: 013 was used only as bounded upstream evidence for eligible-surface construction; Scale A sample preflight rerun, builders, Information Object resolution, Market State integration/materialization, production, official State, downstream consumption, full-history/full-universe execution and promotion remain closed.
+
+## 2026-07-22 | phase b | Scale A eligible representation surface authorization issued
+
+- Added `06_MARKET_STATE_INTEGRATION/experimental_core_four_scale_a_eligible_representation_surface_authorization_v0_1.md` and `configs/experimental_core_four_scale_a_eligible_representation_surface_scope_v0_1.json`.
+- Authorization status: `experimental_core_four_scale_a_eligible_representation_surface_authorization = AUTHORIZED_WITH_RESTRICTIONS`; construction remains `NOT_EXECUTED`.
+- The scope authorizes a source snapshot, a feasibility precheck, one bounded 014-derived intraday candidate surface inside the construction run, and a policy-selected eligible pool of 10-20 instrument identities with at least five eligible sessions per instrument.
+- Boundary preserved: original 014 modification, Scale A preflight rerun, builders, Information Object resolution, Market State integration/materialization, Market State parquet, production, official State, downstream consumption, full-history/full-universe execution and promotion remain closed.
+
 ## 2026-07-22 | phase b | Scale A eligible representation surface design closed
 
 - Added `06_MARKET_STATE_INTEGRATION/core_four_scale_a_eligible_representation_surface_design_v0_1.md` and `core_four_scale_a_eligible_representation_surface_design_contract_v0_1.json`.
 - Decision: `core_four_scale_a_eligible_representation_surface_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS`; next allowed gate is `experimental_core_four_scale_a_eligible_representation_surface_authorization_v0_1`.
 - The design remediates the accepted `BLOCKED_SAMPLE_CARDINALITY` preflight by defining a governed, policy-selected eligible instrument pool requirement: minimum 10 eligible instruments, target 8 Scale A sample instruments, maximum 20 eligible instruments, maximum 10 sessions considered and a future 500000 source-row cap.
-- Boundary preserved: no 014 expansion, eligible-pool construction, Scale A preflight rerun, builders, integration, materialization, parquet write, production, official Market State, downstream consumption, full-history/full-universe execution or promotion was authorized.
+- Boundary preserved: the original 014 is immutable; 013 is allowed only as bounded upstream evidence for the run-local 014-derived candidate surface, while raw quotes, microstructure, Scale A preflight rerun, builders, integration, Market State materialization/parquet, production, official Market State, downstream consumption, full-history/full-universe execution and promotion remain closed.
 
 ## 2026-07-22 | phase b | Scale A sample preflight blocked by source cardinality
 
@@ -108,8 +162,8 @@ C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering
 It does not replace the operational changelogs in:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations
 ```
 
 Use it to record table reading changes, maturity changes, validation evidence,
@@ -661,9 +715,9 @@ at an instant t?
 - Linked the validated `ohlcv_1m_quote_guarded_full_universe_v0_2_candidate` to foundations governance artifacts:
 
 ```text
-contract = C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\contract_registry\dataset_contracts\ohlcv_1m_quote_guarded_dataset_contract_v0_1.md
-policy = C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\data_consumption_policies\ohlcv_1m_quote_guarded_consumption_policy.md
-registry = C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\dataset_registry\ohlcv_1m\ohlcv_1m_quote_guarded_registry_entry.yaml
+contract = C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\contract_registry\dataset_contracts\ohlcv_1m_quote_guarded_dataset_contract_v0_1.md
+policy = C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\data_consumption_policies\ohlcv_1m_quote_guarded_consumption_policy.md
+registry = C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\dataset_registry\ohlcv_1m\ohlcv_1m_quote_guarded_registry_entry.yaml
 ```
 
 - Operational decision: 013 can now be used as a controlled downstream input for candidate 014/018 work when the consumer records `price_view = quote_guarded_1m` and the validation manifest.
@@ -790,7 +844,7 @@ failed_tickers = 0
 - Added reusable reconciliation script:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\data_foundation\ohlcv_1m_quote_guarded_full_universe\reconcile_ohlcv_1m_qg_failed_delta_v0_1.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\scripts\data_foundation\ohlcv_1m_quote_guarded_full_universe\reconcile_ohlcv_1m_qg_failed_delta_v0_1.py
 ```
 
 - Accepted reconciliation run:

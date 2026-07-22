@@ -201,11 +201,17 @@ def ny_regular_session_utc(session_date: date) -> tuple[datetime, datetime]:
 
 
 def validate_authority(scope: dict[str, Any]) -> None:
-    if scope.get("scope_id") != "experimental_core_four_market_state_scale_a_scope_v0_1":
-        raise PreflightError("Unexpected Scale A scope_id")
+    scope_id = scope.get("scope_id")
+    allowed_scope_ids = {
+        "experimental_core_four_market_state_scale_a_scope_v0_1",
+        "experimental_core_four_market_state_scale_a_sample_preflight_rerun_scope_v0_1",
+    }
+    if scope_id not in allowed_scope_ids:
+        raise PreflightError(f"Unexpected Scale A scope_id: {scope_id}")
     allowed_scope_statuses = {
         "authorized_bounded_non_production_scale_a",
         "authorized_with_restrictions",
+        "authorized_with_restrictions_preflight_rerun",
     }
     if scope.get("scope_status") not in allowed_scope_statuses:
         raise PreflightError(f"Scale A scope status is not authorized: {scope.get('scope_status')}")
@@ -240,6 +246,18 @@ def validate_authority(scope: dict[str, Any]) -> None:
         limits.get("target_integrated_candidate_records", -1)
     ) != target_contexts:
         raise PreflightError("blocked + integrated target contexts does not equal target_requested_contexts")
+    if scope_id == "experimental_core_four_market_state_scale_a_sample_preflight_rerun_scope_v0_1":
+        if authority.get("scale_a_sample_preflight_rerun_allowed") is not True:
+            raise PreflightError("Preflight rerun scope must explicitly allow scale_a_sample_preflight_rerun_allowed")
+        preflight_false = [
+            "builder_execution_allowed_for_scale_a",
+            "integration_execution_allowed_for_scale_a",
+            "candidate_materialization_allowed_for_scale_a",
+            "candidate_parquet_output_allowed_for_scale_a",
+        ]
+        rerun_offenders = [key for key in preflight_false if authority.get(key) is not False]
+        if rerun_offenders:
+            raise PreflightError(f"Preflight rerun scope has execution authority flags not false: {rerun_offenders}")
 
 
 def load_source_roots(scope: dict[str, Any], scope_dir: Path) -> tuple[Path, Path, Path, dict[str, Any]]:
@@ -247,22 +265,27 @@ def load_source_roots(scope: dict[str, Any], scope_dir: Path) -> tuple[Path, Pat
     registry = read_json(registry_path)
     bindings = registry.get("bindings", {})
     roots: dict[str, Path] = {}
+    source_overrides = scope.get("source_overrides", {})
     for alias in ("004_master_daily_table", "014_master_intraday_bar_table_candidate"):
-        binding = bindings.get(alias)
-        if not binding:
-            raise PreflightError(f"Missing source binding for {alias}")
-        root = Path(str(binding.get("physical_candidate_root"))).resolve()
+        override = source_overrides.get(alias, {})
+        if alias == "014_master_intraday_bar_table_candidate" and override.get("parquet_path"):
+            root = resolve_path(str(override["parquet_path"]), scope_dir)
+        else:
+            binding = bindings.get(alias)
+            if not binding:
+                raise PreflightError(f"Missing source binding for {alias}")
+            root = Path(str(binding.get("physical_candidate_root"))).resolve()
         root_text = str(root).replace("\\", "/")
         if "00_CTO/99_REFERENCE_LIBRARY" in root_text:
             raise PreflightError(f"Forbidden reference library path resolved for {alias}: {root}")
         if not root.exists():
-            raise PreflightError(f"Physical source root does not exist for {alias}: {root}")
+            raise PreflightError(f"Physical source path does not exist for {alias}: {root}")
         roots[alias] = root
     return registry_path, roots["004_master_daily_table"], roots["014_master_intraday_bar_table_candidate"], registry
 
 
 def read_intraday_source(root: Path) -> tuple[pd.DataFrame, dict[str, Any]]:
-    data_path = root / "data.parquet"
+    data_path = root if root.is_file() else root / "data.parquet"
     if not data_path.exists():
         raise PreflightError(f"014 data.parquet not found: {data_path}")
     columns = [
@@ -278,13 +301,19 @@ def read_intraday_source(root: Path) -> tuple[pd.DataFrame, dict[str, Any]]:
         "close",
         "volume",
     ]
+    optional_columns = ["duplicate_status"]
     pf = pq.ParquetFile(str(data_path))
     available = set(pf.schema_arrow.names)
     missing = [column for column in columns if column not in available]
     if missing:
         raise PreflightError(f"014 missing required preflight columns: {missing}")
-    df = pd.read_parquet(data_path, columns=columns)
+    read_columns = columns + [column for column in optional_columns if column in available]
+    df = pd.read_parquet(data_path, columns=read_columns)
     df = df.reset_index(drop=True)
+    if "duplicate_status" not in df.columns:
+        df["duplicate_status"] = "unique"
+    else:
+        df["duplicate_status"] = df["duplicate_status"].fillna("unique").astype(str)
     df["source_row_ordinal_in_file"] = df.index
     df["ticker"] = df["ticker"].astype(str).str.strip().str.upper()
     df["session_date_obj"] = df["session_date"].map(parse_session_date)
@@ -293,8 +322,10 @@ def read_intraday_source(root: Path) -> tuple[pd.DataFrame, dict[str, Any]]:
     report = {
         "source_alias": "014_master_intraday_bar_table_candidate",
         "file_path": str(data_path),
+        "physical_candidate_root": str(root if root.is_dir() else root.parent),
         "rows_read": int(len(df)),
-        "columns_read": columns,
+        "columns_read": read_columns,
+        "duplicate_status_counts": {str(k): int(v) for k, v in df["duplicate_status"].value_counts(dropna=False).items()},
         "invalid_timestamp_rows": int(df["ts"].isna().sum()),
         "invalid_session_date_rows": int(df["session_date_obj"].isna().sum()),
         "unique_tickers": int(df["ticker"].nunique(dropna=True)),
@@ -304,6 +335,70 @@ def read_intraday_source(root: Path) -> tuple[pd.DataFrame, dict[str, Any]]:
         "sha256": sha256_file(data_path),
     }
     return df, report
+
+
+def load_authorized_eligible_pool(scope: dict[str, Any], scope_dir: Path) -> tuple[list[str], dict[str, Any]]:
+    pool_cfg = (
+        scope.get("input_artifacts", {})
+        .get("accepted_eligible_surface", {})
+        .get("eligible_instrument_pool", {})
+    )
+    if not pool_cfg:
+        return [], {"pool_required": False}
+    pool_path = resolve_path(str(pool_cfg["path"]), scope_dir)
+    pool = read_json(pool_path)
+    if pool.get("accepted_pool") is not True:
+        raise PreflightError(f"Eligible instrument pool is not accepted: {pool_path}")
+    expected_fingerprint = pool_cfg.get("expected_fingerprint")
+    observed_fingerprint = pool.get("eligible_instrument_pool_fingerprint")
+    if expected_fingerprint and observed_fingerprint != expected_fingerprint:
+        raise PreflightError(
+            "Eligible instrument pool fingerprint mismatch: "
+            f"expected {expected_fingerprint}, observed {observed_fingerprint}"
+        )
+    instruments = pool.get("instruments", [])
+    tickers = [str(item.get("ticker", "")).strip().upper() for item in instruments if item.get("ticker")]
+    tickers = [ticker for ticker in tickers if ticker]
+    if len(tickers) != len(set(tickers)):
+        raise PreflightError("Eligible instrument pool contains duplicate tickers")
+    minimum_pool_size = int(pool_cfg.get("minimum_eligible_instruments", 0))
+    if len(tickers) < minimum_pool_size:
+        raise PreflightError(f"Eligible instrument pool below required minimum: {len(tickers)} < {minimum_pool_size}")
+    return tickers, {
+        "pool_required": True,
+        "pool_path": str(pool_path),
+        "accepted_pool": True,
+        "eligible_surface_run_id": pool.get("run_id"),
+        "eligible_surface_fingerprint": pool.get("eligible_surface_fingerprint"),
+        "eligible_instrument_pool_fingerprint": observed_fingerprint,
+        "eligible_instruments_in_pool": len(tickers),
+        "eligible_pool_tickers": tickers,
+    }
+
+
+def validate_rerun_input_artifacts(scope: dict[str, Any], scope_dir: Path, intraday_report: dict[str, Any]) -> dict[str, Any]:
+    surface_cfg = (
+        scope.get("input_artifacts", {})
+        .get("accepted_eligible_surface", {})
+        .get("bounded_014_candidate_surface", {})
+    )
+    if not surface_cfg:
+        return {"bounded_surface_required": False}
+    surface_path = resolve_path(str(surface_cfg["path"]), scope_dir)
+    expected_sha = surface_cfg.get("expected_parquet_sha256")
+    observed_sha = intraday_report.get("sha256")
+    if expected_sha and observed_sha != expected_sha:
+        raise PreflightError(
+            "Bounded 014 candidate surface SHA-256 mismatch: "
+            f"expected {expected_sha}, observed {observed_sha}"
+        )
+    return {
+        "bounded_surface_required": True,
+        "bounded_surface_path": str(surface_path),
+        "expected_parquet_sha256": expected_sha,
+        "observed_parquet_sha256": observed_sha,
+        "expected_surface_fingerprint": surface_cfg.get("expected_surface_fingerprint"),
+    }
 
 
 def read_daily_source(root: Path, tickers: list[str], years: list[int]) -> tuple[pd.DataFrame, dict[str, Any]]:
@@ -381,16 +476,26 @@ def build_intraday_summaries(intraday: pd.DataFrame, expected_open: str, expecte
     duplicate_map: dict[tuple[str, str, str], dict[str, Any]] = {}
     for (ticker, session_date_iso, ts), group in valid.groupby(["ticker", "session_date_iso", "ts"], sort=True):
         signatures = {state_signature(row) for _, row in group.iterrows()}
+        preserved_statuses = sorted(
+            {
+                str(value)
+                for value in group.get("duplicate_status", pd.Series(dtype=str)).fillna("unique")
+                if str(value) not in {"", "unique", "nan", "None"}
+            }
+        )
         if len(group) > 1 and len(signatures) > 1:
             status = "conflicting_duplicate_rows"
         elif len(group) > 1:
-            status = "identical_duplicate_rows_collapsed"
+            status = "identical_duplicate_rows"
+        elif preserved_statuses:
+            status = preserved_statuses[0]
         else:
             status = "unique"
         duplicate_map[(str(ticker), str(session_date_iso), pd.Timestamp(ts).isoformat().replace("+00:00", "Z"))] = {
             "duplicate_status": status,
             "duplicate_group_row_count": int(len(group)),
             "duplicate_group_distinct_state_count": int(len(signatures)),
+            "source_duplicate_evidence": bool(status != "unique"),
         }
     summaries: dict[tuple[str, str], dict[str, Any]] = {}
     for (ticker, session_date_iso), group in valid.groupby(["ticker", "session_date_iso"], sort=True):
@@ -422,6 +527,12 @@ def build_intraday_summaries(intraday: pd.DataFrame, expected_open: str, expecte
             "duplicate_group_count": int(sum(1 for item in all_duplicate_groups if item["duplicate_group_row_count"] > 1)),
             "regular_duplicate_group_count": int(
                 sum(1 for item in regular_duplicate_groups if item["duplicate_group_row_count"] > 1)
+            ),
+            "source_duplicate_evidence_count": int(
+                sum(1 for item in all_duplicate_groups if item.get("source_duplicate_evidence") is True)
+            ),
+            "regular_source_duplicate_evidence_count": int(
+                sum(1 for item in regular_duplicate_groups if item.get("source_duplicate_evidence") is True)
             ),
             "conflicting_duplicate_group_count": int(
                 sum(1 for item in all_duplicate_groups if item["duplicate_status"] == "conflicting_duplicate_rows")
@@ -654,8 +765,26 @@ def build_sample_manifest(
     target_sessions = int(limits["session_count"])
     if len(eligible_tickers) < target_instruments or len(selected_sessions) < target_sessions:
         return []
-    selected_tickers = eligible_tickers[:target_instruments]
     selected_sessions = selected_sessions[:target_sessions]
+    selected_tickers = eligible_tickers[:target_instruments]
+    duplicate_min = int(
+        scope.get("sample_plan", {})
+        .get("duplicate_status_targets", {})
+        .get("contexts_with_known_duplicate_physical_group_evidence_minimum", 0)
+    )
+    duplicate_evidence_tickers = [
+        ticker
+        for ticker in eligible_tickers
+        if any(
+            (ticker, session_date) in intraday_summaries
+            and int(intraday_summaries[(ticker, session_date)].get("regular_source_duplicate_evidence_count", 0)) > 0
+            for session_date in selected_sessions
+        )
+    ]
+    if duplicate_min > 0 and duplicate_evidence_tickers:
+        selected_set = set(selected_tickers)
+        if not any(ticker in selected_set for ticker in duplicate_evidence_tickers):
+            selected_tickers = selected_tickers[:-1] + [duplicate_evidence_tickers[0]]
     instrument_id_by_ticker = {
         str(row["ticker"]): str(row["daily_instrument_id"])
         for row in identity_rows
@@ -722,6 +851,12 @@ def build_sample_manifest(
                     "expected_context_outcome": expected_outcome,
                     "expected_materialized_as_row": bool(family_doc["materialized_as_rows"]),
                     "source_coverage_status": "PASS",
+                    "known_duplicate_physical_group_evidence": bool(
+                        int(intraday_summary.get("regular_source_duplicate_evidence_count", 0)) > 0
+                    ),
+                    "duplicate_evidence_status": "PRESERVED_SOURCE_DUPLICATE_EVIDENCE"
+                    if int(intraday_summary.get("regular_source_duplicate_evidence_count", 0)) > 0
+                    else "NO_DUPLICATE_EVIDENCE",
                     "after_last_sampled_bar_semantics": "not_session_close"
                     if family == "after_last_sampled_bar_not_session_close"
                     else "",
@@ -791,25 +926,31 @@ def build_stratification_report(
             }
         )
     duplicate_group_available = sum(
-        1 for summary in intraday_summaries.values() if int(summary["regular_duplicate_group_count"]) > 0
+        1
+        for summary in intraday_summaries.values()
+        if int(summary.get("regular_duplicate_group_count", 0)) > 0
+        or int(summary.get("regular_source_duplicate_evidence_count", 0)) > 0
     )
     duplicate_min = int(
         scope["sample_plan"]["duplicate_status_targets"][
             "contexts_with_known_duplicate_physical_group_evidence_minimum"
         ]
     )
+    frozen_duplicate_contexts = sum(
+        1 for row in sample_rows if row.get("known_duplicate_physical_group_evidence") is True
+    )
     rows.append(
         {
             "stratum": "duplicate_status_diversity",
             "required_count": duplicate_min,
             "available_count": duplicate_group_available,
-            "frozen_sample_count": sum(
-                1 for row in sample_rows if row.get("known_duplicate_physical_group_evidence") is True
-            ),
-            "status": "PASS" if sample_rows and duplicate_group_available >= duplicate_min else "BLOCKED_SAMPLE_CARDINALITY",
-            "finding": "duplicate physical groups available for future frozen contexts"
-            if duplicate_group_available >= duplicate_min
-            else "not enough duplicate physical group evidence available",
+            "frozen_sample_count": frozen_duplicate_contexts,
+            "status": "PASS"
+            if sample_rows and duplicate_group_available >= duplicate_min and frozen_duplicate_contexts >= duplicate_min
+            else "BLOCKED_SAMPLE_CARDINALITY",
+            "finding": "duplicate physical-group evidence represented in frozen contexts"
+            if duplicate_group_available >= duplicate_min and frozen_duplicate_contexts >= duplicate_min
+            else "not enough duplicate physical group evidence represented in frozen contexts",
         }
     )
     return rows
@@ -897,6 +1038,8 @@ def decide_status(summary: dict[str, Any]) -> str:
         return "BLOCKED_SOURCE_COVERAGE"
     if summary["duplicate_context_ids"] > 0 or summary["duplicate_semantic_contexts"] > 0:
         return "FAILED_CONTRACT"
+    if summary.get("stratification_failures", 0) > 0:
+        return "BLOCKED_SAMPLE_CARDINALITY"
     if summary["estimated_total_source_rows"] > summary["maximum_source_market_data_rows_read"]:
         return "BLOCKED_SOURCE_COVERAGE"
     return "PASS_WITH_RESTRICTIONS"
@@ -999,7 +1142,8 @@ def main(argv: list[str] | None = None) -> int:
         raise PreflightError(f"Output root must stay inside integration root: {run_root}")
     run_root.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    run_id = f"{RUN_ID_PREFIX}_{timestamp}"
+    run_id_prefix = scope.get("output_policy", {}).get("run_id_prefix", RUN_ID_PREFIX)
+    run_id = f"{run_id_prefix}_{timestamp}"
     run_dir = run_root / run_id
     if run_dir.exists():
         raise PreflightError(f"Run directory already exists: {run_dir}")
@@ -1051,6 +1195,15 @@ def main(argv: list[str] | None = None) -> int:
 
     registry_path, daily_root, intraday_root, registry = load_source_roots(scope, scope_dir)
     intraday, intraday_read_report = read_intraday_source(intraday_root)
+    artifact_validation_report = validate_rerun_input_artifacts(scope, scope_dir, intraday_read_report)
+    authorized_pool_tickers, eligible_pool_report = load_authorized_eligible_pool(scope, scope_dir)
+    if authorized_pool_tickers:
+        before_pool_filter_rows = int(len(intraday))
+        authorized_pool_set = set(authorized_pool_tickers)
+        intraday = intraday[intraday["ticker"].isin(authorized_pool_set)].copy().reset_index(drop=True)
+        intraday_read_report["rows_after_authorized_pool_filter"] = int(len(intraday))
+        intraday_read_report["authorized_pool_filter_removed_rows"] = before_pool_filter_rows - int(len(intraday))
+        intraday_read_report["authorized_pool_tickers"] = authorized_pool_tickers
     intraday_years = sorted({int(value) for value in intraday["ts"].dropna().dt.year.unique()})
     intraday_tickers = sorted(str(ticker) for ticker in intraday["ticker"].dropna().unique())
     daily, daily_read_report = read_daily_source(daily_root, intraday_tickers, intraday_years)
@@ -1082,6 +1235,9 @@ def main(argv: list[str] | None = None) -> int:
         daily_by_ticker=daily_by_ticker,
         selected_sessions=selected_sessions,
     )
+    if authorized_pool_tickers:
+        eligible_set = set(eligible_tickers)
+        eligible_tickers = [ticker for ticker in authorized_pool_tickers if ticker in eligible_set]
     sample_rows = build_sample_manifest(
         scope=scope,
         eligible_tickers=eligible_tickers,
@@ -1100,6 +1256,7 @@ def main(argv: list[str] | None = None) -> int:
         selected_sessions=selected_sessions,
         intraday_summaries=intraday_summaries,
     )
+    stratification_failures = sum(1 for row in stratification_rows if row.get("status") != "PASS")
 
     source_coverage_failures = sum(1 for row in coverage_rows if row["source_coverage_status"] != "PASS")
     source_coverage_failures_in_frozen_sample = 0
@@ -1141,6 +1298,10 @@ def main(argv: list[str] | None = None) -> int:
         "scope_id": scope["scope_id"],
         "source_binding_registry": str(registry_path),
         "source_binding_registry_id": registry.get("registry_id"),
+        "accepted_eligible_pool_required": bool(eligible_pool_report.get("pool_required")),
+        "accepted_eligible_pool_instruments": int(eligible_pool_report.get("eligible_instruments_in_pool", 0)),
+        "accepted_eligible_pool_fingerprint": eligible_pool_report.get("eligible_instrument_pool_fingerprint", ""),
+        "accepted_bounded_014_surface_sha256": artifact_validation_report.get("observed_parquet_sha256", ""),
         "requested_contexts": int(scope["limits"]["target_requested_contexts"]),
         "maximum_requested_contexts_respected": bool(
             len(sample_rows) <= int(scope["limits"]["maximum_requested_contexts"])
@@ -1172,6 +1333,10 @@ def main(argv: list[str] | None = None) -> int:
         "identity_failures": identity_failures,
         "source_coverage_failures": source_coverage_failures,
         "source_coverage_failures_in_frozen_sample": source_coverage_failures_in_frozen_sample,
+        "stratification_failures": stratification_failures,
+        "duplicate_status_diversity_frozen_contexts": sum(
+            1 for row in sample_rows if row.get("known_duplicate_physical_group_evidence") is True
+        ),
         "contract_failures": 0,
         "instrument_selection_fingerprint": instrument_selection_fingerprint,
         "session_selection_fingerprint": session_selection_fingerprint,
@@ -1281,6 +1446,8 @@ def main(argv: list[str] | None = None) -> int:
             "004_master_daily_table_root": str(daily_root),
             "014_master_intraday_bar_table_candidate_root": str(intraday_root),
             "source_binding_registry": str(registry_path),
+            "accepted_eligible_pool": eligible_pool_report,
+            "accepted_bounded_014_surface": artifact_validation_report,
         },
         "source_read_reports": {
             "004_master_daily_table": daily_read_report,
@@ -1337,7 +1504,11 @@ def main(argv: list[str] | None = None) -> int:
             "preflight_status": summary["preflight_status"],
         },
     )
-    readout_path = integration_root / "experimental_core_four_market_state_scale_a_sample_preflight_readout_v0_1.md"
+    readout_filename = scope.get("output_policy", {}).get(
+        "readout_filename",
+        "experimental_core_four_market_state_scale_a_sample_preflight_readout_v0_1.md",
+    )
+    readout_path = integration_root / str(readout_filename)
     write_readout(readout_path, run_id=run_id, summary=summary, run_dir=run_dir)
     return 0
 
