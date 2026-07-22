@@ -1,0 +1,135 @@
+{
+  "scope_id": "experimental_bounded_sample_scope_v0_1",
+  "scope_status": "experimental_non_production",
+  "mode": "bounded_identity_and_temporal_validation",
+  "authorization_artifact": "../experimental_bounded_sample_validation_authorization_v0_1.md",
+  "authority": {
+    "bounded_sample_data_read_allowed": true,
+    "dataset_promotion_authorized": false,
+    "full_data_read_allowed": false,
+    "physical_materialization_authorized": false,
+    "production_builder_authorized": false,
+    "state_consumption_authorized": false,
+    "state_materialization_allowed": false,
+    "writes_to_source_allowed": false
+  },
+  "global_limits": {
+    "full_scan_allowed": false,
+    "maximum_files_per_source": 3,
+    "maximum_rows_per_file": 1000,
+    "maximum_sources": 5,
+    "maximum_total_rows": 10000
+  },
+  "decision_case_policy": "derive_from_sampled_bar_times",
+  "daily_availability_policy": {
+    "policy_id": "daily_row_availability_policy_v0_1",
+    "same_session_fields_available_intraday": false,
+    "derived_legal_availability_time_utc": "13:30:00",
+    "availability_day_offset": 1,
+    "calendar_status": "weekend_and_holiday_calendar_not_validated_in_v0_1"
+  },
+  "sources": {
+    "004_master_daily_table": {
+      "allowed_columns": [
+        "instrument_id",
+        "ticker",
+        "session_date",
+        "open",
+        "prior_close",
+        "volume"
+      ],
+      "identity_fields": [
+        "instrument_id",
+        "ticker"
+      ],
+      "max_files": 2,
+      "max_rows_per_file": 1000,
+      "temporal_fields": [
+        "session_date"
+      ]
+    },
+    "013_ohlcv_1m_quote_guarded": {
+      "allowed_columns": [
+        "ticker",
+        "ts_utc",
+        "o",
+        "h",
+        "l",
+        "c",
+        "v"
+      ],
+      "identity_fields": [
+        "ticker"
+      ],
+      "max_files": 2,
+      "max_rows_per_file": 1000,
+      "partition_identity": {
+        "key": "ticker",
+        "type": "key_value_partition"
+      },
+      "temporal_fields": [
+        "ts_utc"
+      ]
+    },
+    "014_master_intraday_bar_table_candidate": {
+      "allowed_columns": [
+        "ticker",
+        "instrument_id",
+        "ts_utc",
+        "session_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "identity_fields": [
+        "ticker",
+        "instrument_id"
+      ],
+      "max_files": 1,
+      "max_rows_per_file": 1000,
+      "temporal_fields": [
+        "ts_utc"
+      ]
+    },
+    "015_microstructure_features_table_candidate": {
+      "allowed_columns": [
+        "instrument_id",
+        "ticker",
+        "window_start_utc",
+        "window_end_utc",
+        "session_date"
+      ],
+      "identity_fields": [
+        "instrument_id",
+        "ticker"
+      ],
+      "max_files": 2,
+      "max_rows_per_file": 1000,
+      "temporal_fields": [
+        "window_start_utc",
+        "window_end_utc"
+      ]
+    },
+    "raw_quotes": {
+      "allowed_columns": [
+        "timestamp",
+        "bid_price",
+        "ask_price",
+        "bid_size",
+        "ask_size"
+      ],
+      "identity_fields": [],
+      "max_files": 2,
+      "max_rows_per_file": 1000,
+      "partition_identity": {
+        "key": "ticker",
+        "type": "positional_symbol_directory"
+      },
+      "temporal_fields": [
+        "timestamp"
+      ]
+    }
+  }
+}

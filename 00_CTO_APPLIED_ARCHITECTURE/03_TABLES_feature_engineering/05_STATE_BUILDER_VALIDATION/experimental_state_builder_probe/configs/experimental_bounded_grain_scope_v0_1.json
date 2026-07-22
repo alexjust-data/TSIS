@@ -1,0 +1,231 @@
+{
+  "scope_id": "experimental_bounded_grain_scope_v0_1",
+  "scope_status": "experimental_non_production",
+  "mode": "bounded_grain_validation",
+  "authorization_artifact": "../experimental_bounded_grain_validation_authorization_v0_1.md",
+  "authority": {
+    "bounded_sample_data_read_allowed": true,
+    "dataset_promotion_authorized": false,
+    "full_data_read_allowed": false,
+    "physical_materialization_authorized": false,
+    "production_builder_authorized": false,
+    "state_consumption_authorized": false,
+    "state_materialization_allowed": false,
+    "writes_to_source_allowed": false
+  },
+  "global_limits": {
+    "full_scan_allowed": false,
+    "maximum_files_per_source": 3,
+    "maximum_rows_per_file": 2000,
+    "maximum_sources": 5,
+    "maximum_total_rows": 20000
+  },
+  "daily_availability_policy_readiness": {
+    "daily_availability_policy_status": "restricted",
+    "calendar_validation_pending": true,
+    "timezone_session_policy_pending": true
+  },
+  "sources": {
+    "004_master_daily_table": {
+      "allowed_columns": [
+        "instrument_id",
+        "ticker",
+        "session_date",
+        "open",
+        "prior_close",
+        "volume"
+      ],
+      "canonical_key_components": [
+        "instrument_id",
+        "session_date"
+      ],
+      "date_fields": [
+        "session_date"
+      ],
+      "hidden_dimension_candidates": [
+        "price_view"
+      ],
+      "max_files": 3,
+      "max_rows_per_file": 2000,
+      "physical_key_components": [
+        "instrument_id",
+        "session_date"
+      ],
+      "partition_hidden_dimensions": [
+        {
+          "key": "price_view",
+          "type": "key_value_partition"
+        }
+      ],
+      "state_columns_for_conflict_check": [
+        "ticker",
+        "open",
+        "prior_close",
+        "volume"
+      ]
+    },
+    "013_ohlcv_1m_quote_guarded": {
+      "allowed_columns": [
+        "ticker",
+        "ts_utc",
+        "o",
+        "h",
+        "l",
+        "c",
+        "v"
+      ],
+      "canonical_identity_status": "restricted_pending_identity_resolution_policy",
+      "canonical_key_components": [
+        "ticker",
+        "ts_utc"
+      ],
+      "identity_resolution_source": "ticker",
+      "max_files": 3,
+      "max_rows_per_file": 2000,
+      "partition_identity": {
+        "key": "ticker",
+        "type": "key_value_partition"
+      },
+      "physical_key_components": [
+        "ticker",
+        "ts_utc"
+      ],
+      "state_columns_for_conflict_check": [
+        "o",
+        "h",
+        "l",
+        "c",
+        "v"
+      ],
+      "timestamp_fields": [
+        "ts_utc"
+      ]
+    },
+    "014_master_intraday_bar_table_candidate": {
+      "allowed_columns": [
+        "ticker",
+        "instrument_id",
+        "ts_utc",
+        "session_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "canonical_identity_status": "restricted_pending_identity_resolution_policy",
+      "canonical_key_components": [
+        "ticker",
+        "ts_utc"
+      ],
+      "hidden_dimension_candidates": [
+        "dataset_id",
+        "source_table",
+        "profile",
+        "price_view"
+      ],
+      "identity_resolution_source": "ticker",
+      "instrument_id_physical_readiness": "restricted_nulltype_not_used_for_grain",
+      "max_files": 1,
+      "max_rows_per_file": 2000,
+      "physical_key_components": [
+        "ticker",
+        "ts_utc"
+      ],
+      "state_columns_for_conflict_check": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "timestamp_fields": [
+        "ts_utc"
+      ]
+    },
+    "015_microstructure_features_table_candidate": {
+      "allowed_columns": [
+        "event_window_id",
+        "instrument_id",
+        "ticker",
+        "window_start_utc",
+        "window_end_utc",
+        "window_label",
+        "session_date"
+      ],
+      "canonical_key_components": [
+        "event_window_id",
+        "instrument_id",
+        "window_start_utc",
+        "window_end_utc"
+      ],
+      "date_fields": [
+        "session_date"
+      ],
+      "max_files": 2,
+      "max_rows_per_file": 2000,
+      "overlap_check": {
+        "group_by": [
+          "event_window_id",
+          "instrument_id"
+        ],
+        "window_end": "window_end_utc",
+        "window_start": "window_start_utc"
+      },
+      "physical_key_components": [
+        "event_window_id",
+        "instrument_id",
+        "window_start_utc",
+        "window_end_utc"
+      ],
+      "state_columns_for_conflict_check": [
+        "ticker",
+        "window_label"
+      ],
+      "timestamp_fields": [
+        "window_start_utc",
+        "window_end_utc"
+      ]
+    },
+    "raw_quotes": {
+      "allowed_columns": [
+        "timestamp",
+        "bid_price",
+        "ask_price",
+        "bid_size",
+        "ask_size"
+      ],
+      "canonical_identity_status": "restricted_pending_identity_resolution_policy",
+      "canonical_key_components": [
+        "partition:ticker",
+        "timestamp"
+      ],
+      "identity_resolution_source": "partition:ticker",
+      "max_files": 3,
+      "max_rows_per_file": 2000,
+      "partition_identity": {
+        "key": "ticker",
+        "type": "positional_symbol_directory"
+      },
+      "physical_key_components": [
+        "partition:ticker",
+        "timestamp"
+      ],
+      "raw_quote_state_columns": [
+        "bid_price",
+        "ask_price",
+        "bid_size",
+        "ask_size"
+      ],
+      "state_columns_for_conflict_check": [
+        "bid_price",
+        "ask_price",
+        "bid_size",
+        "ask_size"
+      ],
+      "timestamp_fields": [
+        "timestamp"
+      ]
+    }
+  }
+}

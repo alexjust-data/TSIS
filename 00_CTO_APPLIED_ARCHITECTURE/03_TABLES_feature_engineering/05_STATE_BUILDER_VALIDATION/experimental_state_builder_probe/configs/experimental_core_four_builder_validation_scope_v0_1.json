@@ -1,0 +1,274 @@
+{
+  "authority": {
+    "bounded_sample_data_read_allowed": true,
+    "dataset_promotion_authorized": false,
+    "experimental_formula_execution_allowed": true,
+    "experimental_resolution_records_allowed": true,
+    "full_data_read_allowed": false,
+    "market_state_integration_authorized": false,
+    "physical_materialization_authorized": false,
+    "production_builder_authorized": false,
+    "quote_dependent_builder_execution_authorized": false,
+    "state_consumption_authorized": false,
+    "state_materialization_allowed": false,
+    "writes_to_source_allowed": false
+  },
+  "authorization_artifact": "../experimental_core_four_builder_validation_authorization_v0_1.md",
+  "formula_rules": {
+    "daily__gap_pct": {
+      "formula_id": "daily_open_over_prior_close_minus_one_v0_1",
+      "inputs": [
+        "open",
+        "prior_close"
+      ],
+      "rule": "open / prior_close - 1; only after session open",
+      "source_alias": "004_master_daily_table"
+    },
+    "daily__open_price": {
+      "formula_id": "daily_open_price_after_session_open_v0_1",
+      "inputs": [
+        "open"
+      ],
+      "rule": "open from matched daily row; only after session open",
+      "source_alias": "004_master_daily_table"
+    },
+    "daily__prior_close": {
+      "formula_id": "daily_prior_close_value_v0_1",
+      "inputs": [
+        "prior_close"
+      ],
+      "rule": "prior_close from matched daily row",
+      "source_alias": "004_master_daily_table"
+    },
+    "daily__rvol_20d": {
+      "formula_id": "session_volume_to_time_over_prior_20_volume_mean_v0_1",
+      "inputs": [
+        "session_volume_to_time",
+        "volume_20d_avg"
+      ],
+      "rule": "session_volume_to_time / volume_20d_avg; final daily rvol is not consumed intraday",
+      "source_alias": "004_master_daily_table+014_master_intraday_bar_table_candidate"
+    },
+    "daily__volume_20d_avg": {
+      "formula_id": "prior_20_session_volume_mean_v0_1",
+      "inputs": [
+        "volume"
+      ],
+      "rule": "mean(volume) over prior 20 daily rows for ticker",
+      "source_alias": "004_master_daily_table"
+    },
+    "intraday__bar_close_price": {
+      "formula_id": "selected_closed_bar_close_v0_1",
+      "inputs": [
+        "close"
+      ],
+      "rule": "close from max(ts_utc) <= decision_timestamp",
+      "source_alias": "014_master_intraday_bar_table_candidate"
+    },
+    "intraday__bar_volume": {
+      "formula_id": "selected_closed_bar_volume_v0_1",
+      "inputs": [
+        "volume"
+      ],
+      "rule": "volume from max(ts_utc) <= decision_timestamp",
+      "source_alias": "014_master_intraday_bar_table_candidate"
+    },
+    "intraday__high_so_far": {
+      "formula_id": "closed_bar_high_so_far_max_v0_1",
+      "inputs": [
+        "high"
+      ],
+      "rule": "max(high) over closed bars <= decision_timestamp",
+      "source_alias": "014_master_intraday_bar_table_candidate"
+    },
+    "intraday__low_so_far": {
+      "formula_id": "closed_bar_low_so_far_min_v0_1",
+      "inputs": [
+        "low"
+      ],
+      "rule": "min(low) over closed bars <= decision_timestamp",
+      "source_alias": "014_master_intraday_bar_table_candidate"
+    },
+    "intraday__range_so_far_ratio": {
+      "formula_id": "high_so_far_over_low_so_far_minus_one_v0_1",
+      "inputs": [
+        "high_so_far",
+        "low_so_far"
+      ],
+      "rule": "high_so_far / low_so_far - 1; denominator > 0",
+      "source_alias": "014_master_intraday_bar_table_candidate"
+    },
+    "intraday__return_vs_prior_close_ratio": {
+      "formula_id": "closed_bar_close_over_prior_close_minus_one_v0_1",
+      "inputs": [
+        "close",
+        "prior_close"
+      ],
+      "rule": "close / prior_close - 1",
+      "source_alias": "004_master_daily_table+014_master_intraday_bar_table_candidate"
+    },
+    "intraday__return_vs_prior_close_ratio_as_location": {
+      "formula_id": "location_closed_bar_close_over_prior_close_minus_one_v0_1",
+      "inputs": [
+        "close",
+        "prior_close"
+      ],
+      "rule": "same numeric formula as movement; semantic owner is Price Location / Structure",
+      "source_alias": "004_master_daily_table+014_master_intraday_bar_table_candidate"
+    },
+    "intraday__return_vs_session_open_ratio": {
+      "formula_id": "closed_bar_close_over_session_open_minus_one_v0_1",
+      "inputs": [
+        "close",
+        "open"
+      ],
+      "rule": "close / session_open - 1; session open must be known",
+      "source_alias": "004_master_daily_table+014_master_intraday_bar_table_candidate"
+    },
+    "intraday__return_vs_session_open_ratio_as_location": {
+      "formula_id": "location_closed_bar_close_over_session_open_minus_one_v0_1",
+      "inputs": [
+        "close",
+        "open"
+      ],
+      "rule": "same numeric formula as movement; semantic owner is Price Location / Structure",
+      "source_alias": "004_master_daily_table+014_master_intraday_bar_table_candidate"
+    },
+    "intraday__session_volume_to_time": {
+      "formula_id": "closed_bar_session_volume_sum_v0_1",
+      "inputs": [
+        "volume"
+      ],
+      "rule": "sum(volume) over closed bars <= decision_timestamp in session",
+      "source_alias": "014_master_intraday_bar_table_candidate"
+    }
+  },
+  "global_limits": {
+    "full_scan_allowed": false,
+    "maximum_decision_timestamps_per_session": 5,
+    "maximum_instruments": 3,
+    "maximum_objects": 4,
+    "maximum_resolution_requests": 120,
+    "maximum_sessions_per_instrument": 2,
+    "maximum_total_input_rows": 30000
+  },
+  "mode": "experimental_builder_validation_execution_core_four",
+  "objects": {
+    "price_location_structure": {
+      "display_name": "Price Location / Structure",
+      "output_namespace": "price_location_structure__",
+      "profile_id": "price_location_core_anchor_distances_v0_1",
+      "required_capabilities": [
+        "daily__open_price",
+        "daily__prior_close",
+        "intraday__bar_close_price",
+        "intraday__return_vs_session_open_ratio_as_location",
+        "intraday__return_vs_prior_close_ratio_as_location"
+      ]
+    },
+    "price_movement": {
+      "display_name": "Price Movement",
+      "output_namespace": "price_movement__",
+      "profile_id": "price_movement_core_reference_returns_v0_1",
+      "required_capabilities": [
+        "daily__prior_close",
+        "daily__gap_pct",
+        "intraday__bar_close_price",
+        "intraday__return_vs_prior_close_ratio",
+        "intraday__return_vs_session_open_ratio"
+      ]
+    },
+    "trading_activity": {
+      "display_name": "Trading Activity",
+      "output_namespace": "trading_activity__",
+      "profile_id": "trading_activity_first_vertical_v0_1",
+      "required_capabilities": [
+        "daily__volume_20d_avg",
+        "daily__rvol_20d",
+        "intraday__bar_volume",
+        "intraday__session_volume_to_time"
+      ]
+    },
+    "volatility_range_state": {
+      "display_name": "Volatility / Range State",
+      "output_namespace": "volatility_range_state__",
+      "profile_id": "volatility_range_intraday_range_so_far_v0_1",
+      "required_capabilities": [
+        "intraday__high_so_far",
+        "intraday__low_so_far",
+        "intraday__range_so_far_ratio"
+      ]
+    }
+  },
+  "request_generation": {
+    "daily_match_source_alias": "004_master_daily_table",
+    "decision_cases": [
+      "before_first_bar",
+      "exact_first_bar",
+      "between_first_two_bars",
+      "mid_session",
+      "after_last_sampled_bar"
+    ],
+    "include_expected_block_cases": true,
+    "instrument_source_alias": "014_master_intraday_bar_table_candidate",
+    "session_close_time_utc": "20:00:00",
+    "session_open_time_utc": "13:30:00"
+  },
+  "scope_id": "experimental_core_four_builder_validation_scope_v0_1",
+  "scope_status": "experimental_non_production",
+  "source_selection": {
+    "not_selected_sources": {
+      "013_ohlcv_1m_quote_guarded": "not_selected_in_v0_10_core_four_execution; 014 is selected candidate closed-bar state surface"
+    },
+    "primary_intraday_bar_source": "014_master_intraday_bar_table_candidate"
+  },
+  "sources": {
+    "004_master_daily_table": {
+      "allowed_columns": [
+        "instrument_id",
+        "ticker",
+        "session_date",
+        "open",
+        "prior_close",
+        "volume"
+      ],
+      "include_path_contains": [
+        "year=2023",
+        "price_view=split_normalized"
+      ],
+      "max_files": 1,
+      "max_rows_per_file": 5000,
+      "row_filter_tickers": [
+        "AACT",
+        "AAGR",
+        "AAMC"
+      ],
+      "selected_price_view": "split_normalized"
+    },
+    "014_master_intraday_bar_table_candidate": {
+      "allowed_columns": [
+        "ticker",
+        "instrument_id",
+        "ts_utc",
+        "session_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "duplicate_policy": "014_duplicate_intraday_bar_policy_v0_1.md",
+      "include_path_contains": [],
+      "max_files": 1,
+      "max_rows_per_file": 25000,
+      "row_filter_tickers": [
+        "AACT",
+        "AAGR",
+        "AAMC"
+      ],
+      "timestamp_fields": [
+        "ts_utc"
+      ]
+    }
+  }
+}

@@ -10,7 +10,8 @@
     "filesystem_metadata_read_allowed": true,
     "schema_metadata_read_allowed": true,
     "bounded_sample_data_read_allowed": false,
-    "full_data_read_allowed": false
+    "full_data_read_allowed": false,
+    "state_materialization_allowed": false
   },
   "allowed_roots": [
     "C:/TSIS_Data",
@@ -20,293 +21,828 @@
   "bindings": {
     "004_master_daily_table": {
       "source_alias": "004_master_daily_table",
-      "binding_status": "pending_physical_candidate_root",
+      "binding_status": "candidate_bound_for_schema_probe",
       "governance_status": "experimental_non_production",
-      "physical_candidate_root": null,
+      "physical_candidate_root": "G:/TSIS/data/data_foundation_outputs/master_daily_table/master_daily_table_v0_1",
       "physical_candidate_type": "partitioned_dataset_or_manifested_surface",
-      "dataset_format": "parquet_or_manifested_table",
-      "dataset_discovery_rule": "explicit_root_or_manifest_required",
-      "partition_convention": "unknown_pending_binding",
+      "dataset_format": "partitioned_parquet_dataset",
+      "dataset_discovery_rule": "explicit_root_directory_path_check_only",
+      "partition_convention": "year=<YYYY>/price_view=<price_view>/data_*.parquet",
       "manifest_or_contract_reference": "02_TABLE_REPRESENTATION_REVIEW/004_master_daily_table/004_master_daily_table.md",
-      "expected_grain": ["instrument_id", "session_date"],
-      "expected_primary_keys": ["instrument_id", "session_date"],
-      "expected_partition_keys": ["session_date_or_year", "instrument_id_optional"],
+      "expected_grain": [
+        "instrument_id",
+        "session_date"
+      ],
+      "expected_primary_keys": [
+        "instrument_id",
+        "session_date"
+      ],
+      "expected_partition_keys": [
+        "session_date_or_year",
+        "instrument_id_optional"
+      ],
       "event_timestamp_field": null,
       "availability_timestamp_field": "as_of_utc",
       "as_of_field": "as_of_utc",
       "valid_from_field": null,
       "valid_to_field": null,
-      "minimum_required_columns": ["instrument_id", "session_date", "prior_close", "open", "volume"],
-      "quality_fields": ["quality_flag"],
-      "lineage_fields": ["source_dataset_version", "as_of_utc"],
-      "read_scope": "metadata_and_minimum_schema_only_after_binding",
+      "minimum_required_columns": [
+        "instrument_id",
+        "session_date",
+        "prior_close",
+        "open",
+        "volume"
+      ],
+      "quality_fields": [
+        "quality_flag"
+      ],
+      "lineage_fields": [
+        "source_dataset_version",
+        "as_of_utc"
+      ],
+      "read_scope": "filesystem_and_schema_metadata_only",
       "read_authorized": false,
-      "schema_probe_authorized": false,
+      "schema_probe_authorized": true,
       "full_data_read_authorized": false,
-      "binding_evidence": "logical alias used by Operational Mapping; no governed physical root bound yet",
+      "binding_evidence": "documented root is E:/TSIS/data/data_foundation_outputs/master_daily_table/master_daily_table_v0_1; local path-probe candidate exists under G:/TSIS/data/data_foundation_outputs/master_daily_table/master_daily_table_v0_1; path existence only, no schema or grain validation; schema metadata probe authorized for Parquet footer inspection only, with no row reads and no grain or temporal value validation; as_of_utc column remains physically absent and is governed for this metadata-only gate by daily_row_availability_policy_v0_1",
       "binding_version": "v0_1",
-      "review_status": "needs_physical_binding"
+      "review_status": "schema_probe_ready",
+      "minimum_required_type_families": {
+        "instrument_id": [
+          "identifier"
+        ],
+        "session_date": [
+          "date"
+        ],
+        "prior_close": [
+          "numeric"
+        ],
+        "open": [
+          "numeric"
+        ],
+        "volume": [
+          "numeric"
+        ]
+      },
+      "availability_policy_reference": "policies/daily_row_availability_policy_v0_1.md",
+      "availability_policy_status": "experimental_conservative_legal_availability_only"
     },
     "013_ohlcv_1m_quote_guarded": {
       "source_alias": "013_ohlcv_1m_quote_guarded",
-      "binding_status": "pending_physical_candidate_root",
+      "binding_status": "candidate_bound_for_schema_probe",
       "governance_status": "experimental_non_production",
-      "physical_candidate_root": null,
+      "physical_candidate_root": "C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate",
       "physical_candidate_type": "partitioned_intraday_dataset_or_manifested_surface",
-      "dataset_format": "parquet_or_manifested_table",
-      "dataset_discovery_rule": "explicit_root_or_manifest_required",
-      "partition_convention": "unknown_pending_binding",
+      "dataset_format": "partitioned_parquet_dataset",
+      "dataset_discovery_rule": "explicit_validated_candidate_root_path_check_only",
+      "partition_convention": "year=<YYYY>/ticker=<ticker>/month=<MM>/part-*.parquet",
       "manifest_or_contract_reference": "02_TABLE_REPRESENTATION_REVIEW/013_ohlcv_1m_quote_guarded/013_ohlcv_1m_quote_guarded_operational_reading.md",
-      "expected_grain": ["instrument_id", "bar_end"],
-      "expected_primary_keys": ["instrument_id", "bar_end"],
-      "expected_partition_keys": ["date_or_year", "instrument_id_optional"],
+      "expected_grain": [
+        "instrument_id",
+        "bar_end"
+      ],
+      "expected_primary_keys": [
+        "instrument_id",
+        "bar_end"
+      ],
+      "expected_partition_keys": [
+        "date_or_year",
+        "instrument_id_optional"
+      ],
       "event_timestamp_field": "bar_end",
       "availability_timestamp_field": "bar_end",
       "as_of_field": "bar_end",
       "valid_from_field": null,
       "valid_to_field": null,
-      "minimum_required_columns": ["instrument_id", "bar_end", "open", "high", "low", "close", "volume"],
-      "quality_fields": ["quality_flag", "quote_guard_flag"],
-      "lineage_fields": ["source_dataset_version", "repair_policy_version", "quote_guard_version"],
-      "read_scope": "metadata_and_minimum_schema_only_after_binding",
+      "minimum_required_columns": [
+        "instrument_id",
+        "bar_end",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "quality_fields": [
+        "quality_flag",
+        "quote_guard_flag"
+      ],
+      "lineage_fields": [
+        "source_dataset_version",
+        "repair_policy_version",
+        "quote_guard_version"
+      ],
+      "read_scope": "filesystem_and_schema_metadata_only",
       "read_authorized": false,
-      "schema_probe_authorized": false,
+      "schema_probe_authorized": true,
       "full_data_read_authorized": false,
-      "binding_evidence": "logical alias used by Operational Mapping; physical guarded 1m root must be bound explicitly",
+      "binding_evidence": "validated technical candidate root documented by 013 operational reading; local path-probe candidate exists under C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate; path existence only, no schema or grain validation; schema metadata probe authorized for Parquet footer inspection only, with no row reads and no grain or temporal value validation",
       "binding_version": "v0_1",
-      "review_status": "needs_physical_binding"
+      "review_status": "schema_probe_ready",
+      "minimum_required_type_families": {
+        "instrument_id": [
+          "identifier"
+        ],
+        "bar_end": [
+          "timestamp"
+        ],
+        "open": [
+          "numeric"
+        ],
+        "high": [
+          "numeric"
+        ],
+        "low": [
+          "numeric"
+        ],
+        "close": [
+          "numeric"
+        ],
+        "volume": [
+          "numeric"
+        ]
+      }
     },
     "014_master_intraday_bar_table_candidate": {
       "source_alias": "014_master_intraday_bar_table_candidate",
-      "binding_status": "pending_physical_candidate_root",
+      "binding_status": "candidate_bound_for_schema_probe",
       "governance_status": "experimental_non_production",
-      "physical_candidate_root": null,
-      "physical_candidate_type": "candidate_partitioned_dataset_or_manifested_surface",
-      "dataset_format": "parquet_or_manifested_table",
-      "dataset_discovery_rule": "explicit_root_or_manifest_required",
-      "partition_convention": "unknown_pending_binding",
+      "physical_candidate_root": "G:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_2_candidate_quote_guarded",
+      "physical_candidate_type": "candidate_single_parquet_or_manifested_surface",
+      "dataset_format": "single_parquet_candidate_surface",
+      "dataset_discovery_rule": "explicit_candidate_root_path_check_only",
+      "partition_convention": "data.parquet at candidate root",
       "manifest_or_contract_reference": "02_TABLE_REPRESENTATION_REVIEW/014/014.md",
-      "expected_grain": ["instrument_id", "bar_end"],
-      "expected_primary_keys": ["instrument_id", "bar_end"],
-      "expected_partition_keys": ["date_or_year", "instrument_id_optional"],
+      "expected_grain": [
+        "instrument_id",
+        "bar_end"
+      ],
+      "expected_primary_keys": [
+        "instrument_id",
+        "bar_end"
+      ],
+      "expected_partition_keys": [
+        "date_or_year",
+        "instrument_id_optional"
+      ],
       "event_timestamp_field": "bar_end",
       "availability_timestamp_field": "bar_end",
       "as_of_field": "decision_timestamp_or_bar_end",
       "valid_from_field": null,
       "valid_to_field": null,
-      "minimum_required_columns": ["instrument_id", "bar_end", "open", "high", "low", "close", "volume"],
-      "quality_fields": ["component_quality_flag", "temporal_legality_flag"],
-      "lineage_fields": ["source_table_id", "source_dataset_version", "component_as_of_utc"],
-      "read_scope": "metadata_and_minimum_schema_only_after_binding",
+      "minimum_required_columns": [
+        "instrument_id",
+        "bar_end",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "quality_fields": [
+        "component_quality_flag",
+        "temporal_legality_flag"
+      ],
+      "lineage_fields": [
+        "source_table_id",
+        "source_dataset_version",
+        "component_as_of_utc"
+      ],
+      "read_scope": "filesystem_and_schema_metadata_only",
       "read_authorized": false,
-      "schema_probe_authorized": false,
+      "schema_probe_authorized": true,
       "full_data_read_authorized": false,
-      "binding_evidence": "candidate closed-bar state surface; no governed physical root bound yet",
+      "binding_evidence": "014 candidate surface exists under G:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_2_candidate_quote_guarded; path existence only, no schema or grain validation; schema metadata probe authorized for Parquet footer inspection only, with no row reads and no grain or temporal value validation",
       "binding_version": "v0_1",
-      "review_status": "needs_physical_binding"
+      "review_status": "schema_probe_ready",
+      "minimum_required_type_families": {
+        "instrument_id": [
+          "identifier"
+        ],
+        "bar_end": [
+          "timestamp"
+        ],
+        "open": [
+          "numeric"
+        ],
+        "high": [
+          "numeric"
+        ],
+        "low": [
+          "numeric"
+        ],
+        "close": [
+          "numeric"
+        ],
+        "volume": [
+          "numeric"
+        ]
+      },
+      "identity_policy_reference": "policies/intraday_bar_identity_and_cutoff_policy_v0_1.md",
+      "cutoff_policy_reference": "policies/intraday_bar_identity_and_cutoff_policy_v0_1.md",
+      "builder_context_fields": [
+        "decision_timestamp_utc"
+      ],
+      "temporal_cutoff_rule": "bar_end <= decision_timestamp_utc; decision_timestamp_utc is builder invocation context, not a physical source column"
     },
     "015_microstructure_features_table_candidate": {
       "source_alias": "015_microstructure_features_table_candidate",
-      "binding_status": "pending_physical_candidate_root",
+      "binding_status": "candidate_bound_for_schema_probe",
       "governance_status": "experimental_non_production",
-      "physical_candidate_root": null,
+      "physical_candidate_root": "G:/TSIS/data/data_foundation_outputs/microstructure_features_table/microstructure_features_table_v0_2_candidate_controlled_25_per_role",
       "physical_candidate_type": "candidate_windowed_microstructure_surface",
-      "dataset_format": "parquet_or_manifested_table",
-      "dataset_discovery_rule": "explicit_root_or_manifest_required",
-      "partition_convention": "unknown_pending_binding",
-      "manifest_or_contract_reference": "02_TABLE_REPRESENTATION_REVIEW/015/015.md",
-      "expected_grain": ["instrument_id", "window_end", "window_id"],
-      "expected_primary_keys": ["instrument_id", "window_end", "window_id"],
-      "expected_partition_keys": ["date_or_year", "instrument_id_optional"],
-      "event_timestamp_field": "window_end",
-      "availability_timestamp_field": "window_end",
-      "as_of_field": "window_end",
+      "dataset_format": "partitioned_parquet_dataset",
+      "dataset_discovery_rule": "explicit_controlled_candidate_root_path_check_only",
+      "partition_convention": "year=<YYYY>/month=<MM>/part-*.parquet",
+      "manifest_or_contract_reference": "01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md",
+      "expected_grain": [
+        "event_window_id",
+        "instrument_id",
+        "window_start_utc",
+        "window_end_utc"
+      ],
+      "expected_primary_keys": [
+        "event_window_id",
+        "instrument_id",
+        "window_start_utc",
+        "window_end_utc"
+      ],
+      "expected_partition_keys": [
+        "year",
+        "month"
+      ],
+      "event_timestamp_field": "window_end_utc",
+      "availability_timestamp_field": "window_end_utc",
+      "as_of_field": "window_end_utc",
       "valid_from_field": null,
       "valid_to_field": null,
-      "minimum_required_columns": ["instrument_id", "window_end", "window_id"],
-      "quality_fields": ["component_quality_flag", "temporal_legality_flag"],
-      "lineage_fields": ["source_dataset_version", "window_policy_version", "component_as_of_utc"],
-      "read_scope": "metadata_and_minimum_schema_only_after_binding",
+      "minimum_required_columns": [
+        "event_window_id",
+        "instrument_id",
+        "window_start_utc",
+        "window_end_utc",
+        "window_label"
+      ],
+      "quality_fields": [
+        "component_quality_flag",
+        "temporal_legality_flag"
+      ],
+      "lineage_fields": [
+        "source_dataset_version",
+        "window_policy_version",
+        "component_as_of_utc"
+      ],
+      "read_scope": "filesystem_and_schema_metadata_only",
       "read_authorized": false,
-      "schema_probe_authorized": false,
+      "schema_probe_authorized": true,
       "full_data_read_authorized": false,
-      "binding_evidence": "candidate microstructure surface; usable only for mapped L1/trade-window contexts after binding",
+      "binding_evidence": "controlled v0.2 candidate documented as microstructure_features_table_v0_2_candidate_controlled_25_per_role; local path-probe candidate exists under G:/TSIS/data/data_foundation_outputs/microstructure_features_table/microstructure_features_table_v0_2_candidate_controlled_25_per_role; not promoted, not full universe, path existence only, no schema or grain validation; schema metadata probe authorized for Parquet footer inspection only, with no row reads and no grain or temporal value validation",
       "binding_version": "v0_1",
-      "review_status": "needs_physical_binding"
+      "review_status": "schema_probe_ready",
+      "minimum_required_type_families": {
+        "event_window_id": [
+          "identifier"
+        ],
+        "instrument_id": [
+          "identifier"
+        ],
+        "window_start_utc": [
+          "timestamp"
+        ],
+        "window_end_utc": [
+          "timestamp"
+        ],
+        "window_label": [
+          "string"
+        ]
+      }
     },
     "010_news_context_table": {
       "source_alias": "010_news_context_table",
-      "binding_status": "pending_physical_candidate_root",
+      "binding_status": "candidate_bound_for_schema_probe",
       "governance_status": "experimental_non_production",
-      "physical_candidate_root": null,
-      "physical_candidate_type": "asof_news_context_surface",
-      "dataset_format": "parquet_or_manifested_table",
-      "dataset_discovery_rule": "explicit_root_or_manifest_required",
-      "partition_convention": "unknown_pending_binding",
-      "manifest_or_contract_reference": "02_TABLE_REPRESENTATION_REVIEW/010_news_context_table/010_news_context_table.md",
-      "expected_grain": ["instrument_id", "published_utc", "news_id"],
-      "expected_primary_keys": ["instrument_id", "published_utc", "news_id"],
-      "expected_partition_keys": ["published_date_or_year", "instrument_id_optional"],
+      "physical_candidate_root": "G:/TSIS/data/data_foundation_outputs/news_context_table/news_context_table_v0_1",
+      "physical_candidate_type": "partitioned_dataset_or_manifested_surface",
+      "dataset_format": "partitioned_parquet_dataset",
+      "dataset_discovery_rule": "explicit_registry_dataset_path_check_only",
+      "partition_convention": "published_year=<YYYY>/data_*.parquet",
+      "manifest_or_contract_reference": "01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/news_context_table_registry_entry.yaml",
+      "expected_grain": [
+        "source_file_relative_path",
+        "source_file_row_number"
+      ],
+      "expected_primary_keys": [
+        "ticker",
+        "published_utc",
+        "article_id"
+      ],
+      "expected_partition_keys": [
+        "published_year"
+      ],
       "event_timestamp_field": "published_utc",
       "availability_timestamp_field": "as_of_utc",
       "as_of_field": "as_of_utc",
       "valid_from_field": null,
       "valid_to_field": null,
-      "minimum_required_columns": ["instrument_id", "published_utc", "as_of_utc", "news_id"],
-      "quality_fields": ["attribution_quality_flag", "source_quality_flag"],
-      "lineage_fields": ["source_id", "source_dataset_version", "as_of_utc"],
-      "read_scope": "metadata_and_minimum_schema_only_after_binding",
+      "minimum_required_columns": [
+        "news_context_id",
+        "ticker",
+        "instrument_id",
+        "published_utc",
+        "as_of_utc",
+        "article_id",
+        "ticker_attribution_state"
+      ],
+      "quality_fields": [
+        "news_quality_state",
+        "valid_for_event_context_candidate",
+        "valid_for_state_component_candidate",
+        "prohibited_without_asof_filter",
+        "contains_future_information_without_event_filter"
+      ],
+      "lineage_fields": [
+        "source_dataset_id",
+        "source_subblock",
+        "source_file_relative_path",
+        "source_file_row_number",
+        "build_run_id",
+        "schema_version",
+        "quality_policy_version"
+      ],
+      "read_scope": "filesystem_and_schema_metadata_only",
       "read_authorized": false,
-      "schema_probe_authorized": false,
+      "schema_probe_authorized": true,
       "full_data_read_authorized": false,
-      "binding_evidence": "logical source for news/catalyst context; no governed physical root bound yet",
+      "binding_evidence": "official registry entry points to E:/TSIS/data/data_foundation_outputs/news_context_table/news_context_table_v0_1 with manifest _news_context_table_manifest_v0_1.json; local path-probe candidate exists under G:/TSIS/data/data_foundation_outputs/news_context_table/news_context_table_v0_1; path existence only, no schema or grain validation; schema metadata probe authorized for Parquet footer inspection only, with no row reads and no grain or temporal value validation",
       "binding_version": "v0_1",
-      "review_status": "needs_physical_binding"
+      "review_status": "schema_probe_ready",
+      "minimum_required_type_families": {
+        "news_context_id": [
+          "identifier"
+        ],
+        "ticker": [
+          "string"
+        ],
+        "instrument_id": [
+          "identifier"
+        ],
+        "published_utc": [
+          "timestamp"
+        ],
+        "as_of_utc": [
+          "timestamp"
+        ],
+        "article_id": [
+          "identifier"
+        ],
+        "ticker_attribution_state": [
+          "string"
+        ]
+      }
     },
     "009_fundamentals_asof_table": {
       "source_alias": "009_fundamentals_asof_table",
-      "binding_status": "pending_physical_candidate_root",
+      "binding_status": "candidate_bound_for_schema_probe",
       "governance_status": "experimental_non_production",
-      "physical_candidate_root": null,
-      "physical_candidate_type": "point_in_time_fundamental_surface",
-      "dataset_format": "parquet_or_manifested_table",
-      "dataset_discovery_rule": "explicit_root_or_manifest_required",
-      "partition_convention": "unknown_pending_binding",
-      "manifest_or_contract_reference": "02_TABLE_REPRESENTATION_REVIEW/009_fundamentals_asof_table/009_fundamentals_asof_table.md",
-      "expected_grain": ["instrument_id", "statement_period", "as_of_utc"],
-      "expected_primary_keys": ["instrument_id", "statement_period", "as_of_utc"],
-      "expected_partition_keys": ["statement_year_or_asof_year", "instrument_id_optional"],
-      "event_timestamp_field": "filing_utc",
-      "availability_timestamp_field": "as_of_utc",
-      "as_of_field": "as_of_utc",
-      "valid_from_field": "valid_from_utc",
-      "valid_to_field": "valid_to_utc",
-      "minimum_required_columns": ["instrument_id", "as_of_utc", "filing_age_days", "statement_recency_days"],
-      "quality_fields": ["revision_quality_flag", "source_quality_flag"],
-      "lineage_fields": ["filing_id", "source_dataset_version", "revision_policy_version"],
-      "read_scope": "metadata_and_minimum_schema_only_after_binding",
+      "physical_candidate_root": "G:/TSIS/data/data_foundation_outputs/fundamentals_asof_table/fundamentals_asof_table_v0_1",
+      "physical_candidate_type": "partitioned_dataset_or_manifested_surface",
+      "dataset_format": "partitioned_parquet_dataset",
+      "dataset_discovery_rule": "explicit_registry_dataset_path_check_only",
+      "partition_convention": "statement_family=<family>/as_of_year=<YYYY>/data_*.parquet",
+      "manifest_or_contract_reference": "01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/fundamentals_asof_table_registry_entry.yaml",
+      "expected_grain": [
+        "source_file_relative_path",
+        "source_file_row_number",
+        "statement_family"
+      ],
+      "expected_primary_keys": [
+        "ticker",
+        "statement_family",
+        "period_end",
+        "filing_date",
+        "fiscal_year",
+        "fiscal_quarter",
+        "timeframe"
+      ],
+      "expected_partition_keys": [
+        "statement_family",
+        "as_of_year"
+      ],
+      "event_timestamp_field": "filing_date",
+      "availability_timestamp_field": "as_of_date",
+      "as_of_field": "as_of_date",
+      "valid_from_field": null,
+      "valid_to_field": null,
+      "minimum_required_columns": [
+        "fundamental_asof_id",
+        "ticker",
+        "instrument_id",
+        "statement_family",
+        "filing_date",
+        "as_of_date",
+        "period_end",
+        "fundamental_quality_state"
+      ],
+      "quality_fields": [
+        "fundamental_quality_state",
+        "valid_for_event_context_candidate",
+        "valid_for_state_component_candidate",
+        "prohibited_without_asof_filter",
+        "contains_future_information_without_event_filter"
+      ],
+      "lineage_fields": [
+        "source_dataset_id",
+        "source_subblock",
+        "source_file_relative_path",
+        "source_file_row_number",
+        "build_run_id",
+        "schema_version",
+        "quality_policy_version"
+      ],
+      "read_scope": "filesystem_and_schema_metadata_only",
       "read_authorized": false,
-      "schema_probe_authorized": false,
+      "schema_probe_authorized": true,
       "full_data_read_authorized": false,
-      "binding_evidence": "logical PIT fundamentals source; no governed physical root bound yet",
+      "binding_evidence": "official registry entry points to E:/TSIS/data/data_foundation_outputs/fundamentals_asof_table/fundamentals_asof_table_v0_1 with manifest _fundamentals_asof_table_manifest_v0_1.json; local path-probe candidate exists under G:/TSIS/data/data_foundation_outputs/fundamentals_asof_table/fundamentals_asof_table_v0_1; path existence only, no schema or grain validation; schema metadata probe authorized for Parquet footer inspection only, with no row reads and no grain or temporal value validation",
       "binding_version": "v0_1",
-      "review_status": "needs_physical_binding"
+      "review_status": "schema_probe_ready",
+      "minimum_required_type_families": {
+        "fundamental_asof_id": [
+          "identifier"
+        ],
+        "ticker": [
+          "string"
+        ],
+        "instrument_id": [
+          "identifier"
+        ],
+        "statement_family": [
+          "string"
+        ],
+        "filing_date": [
+          "date"
+        ],
+        "as_of_date": [
+          "date"
+        ],
+        "period_end": [
+          "date"
+        ],
+        "fundamental_quality_state": [
+          "string"
+        ]
+      }
     },
     "011_short_context_table": {
       "source_alias": "011_short_context_table",
-      "binding_status": "pending_physical_candidate_root",
+      "binding_status": "candidate_bound_for_schema_probe",
       "governance_status": "experimental_non_production",
-      "physical_candidate_root": null,
-      "physical_candidate_type": "short_context_asof_surface",
-      "dataset_format": "parquet_or_manifested_table",
-      "dataset_discovery_rule": "explicit_root_or_manifest_required",
-      "partition_convention": "unknown_pending_binding",
-      "manifest_or_contract_reference": "02_TABLE_REPRESENTATION_REVIEW/011_short_context_table/011_short_context_table.md",
-      "expected_grain": ["instrument_id", "source_report_date", "as_of_utc"],
-      "expected_primary_keys": ["instrument_id", "source_report_date", "as_of_utc"],
-      "expected_partition_keys": ["report_year_or_asof_year", "instrument_id_optional"],
-      "event_timestamp_field": "source_report_date",
-      "availability_timestamp_field": "as_of_utc",
-      "as_of_field": "as_of_utc",
+      "physical_candidate_root": "G:/TSIS/data/data_foundation_outputs/short_context_table/short_context_table_v0_1",
+      "physical_candidate_type": "partitioned_dataset_or_manifested_surface",
+      "dataset_format": "partitioned_parquet_dataset",
+      "dataset_discovery_rule": "explicit_registry_dataset_path_check_only",
+      "partition_convention": "source_system=<source_system>/observation_family=<short_interest|short_volume>/observation_year=<YYYY>/data_*.parquet",
+      "manifest_or_contract_reference": "01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/short_context_table_registry_entry.yaml",
+      "expected_grain": [
+        "source_system",
+        "observation_family",
+        "ticker",
+        "observation_date",
+        "source_duplicate_key_ordinal"
+      ],
+      "expected_primary_keys": [
+        "source_system",
+        "observation_family",
+        "ticker",
+        "observation_date",
+        "source_duplicate_key_ordinal"
+      ],
+      "expected_partition_keys": [
+        "source_system",
+        "observation_family",
+        "observation_year"
+      ],
+      "event_timestamp_field": "observation_date",
+      "availability_timestamp_field": "as_of_date",
+      "as_of_field": "as_of_date",
       "valid_from_field": null,
       "valid_to_field": null,
-      "minimum_required_columns": ["instrument_id", "as_of_utc", "days_to_cover", "short_volume_ratio"],
-      "quality_fields": ["source_lag_quality_flag", "denominator_quality_flag"],
-      "lineage_fields": ["source_dataset_version", "source_lag_policy_version", "as_of_utc"],
-      "read_scope": "metadata_and_minimum_schema_only_after_binding",
+      "minimum_required_columns": [
+        "short_context_id",
+        "ticker",
+        "instrument_id",
+        "source_system",
+        "observation_family",
+        "observation_date",
+        "as_of_date",
+        "short_quality_state"
+      ],
+      "quality_fields": [
+        "short_quality_state",
+        "valid_for_event_context_candidate",
+        "valid_for_state_component_candidate",
+        "requires_availability_lag_assumption",
+        "prohibited_without_asof_filter",
+        "contains_future_information_without_event_filter",
+        "borrow_data_present"
+      ],
+      "lineage_fields": [
+        "source_dataset_id",
+        "source_family",
+        "source_system",
+        "source_file_relative_path",
+        "source_file_row_number",
+        "build_run_id",
+        "schema_version",
+        "quality_policy_version"
+      ],
+      "read_scope": "filesystem_and_schema_metadata_only",
       "read_authorized": false,
-      "schema_probe_authorized": false,
+      "schema_probe_authorized": true,
       "full_data_read_authorized": false,
-      "binding_evidence": "logical short context source; no governed physical root bound yet",
+      "binding_evidence": "official registry entry points to E:/TSIS/data/data_foundation_outputs/short_context_table/short_context_table_v0_1 with manifest _short_context_table_manifest_v0_1.json; local path-probe candidate exists under G:/TSIS/data/data_foundation_outputs/short_context_table/short_context_table_v0_1; borrow/locate/SSR remain non-source claims; path existence only, no schema or grain validation; schema metadata probe authorized for Parquet footer inspection only, with no row reads and no grain or temporal value validation",
       "binding_version": "v0_1",
-      "review_status": "needs_physical_binding"
+      "review_status": "schema_probe_ready",
+      "minimum_required_type_families": {
+        "short_context_id": [
+          "identifier"
+        ],
+        "ticker": [
+          "string"
+        ],
+        "instrument_id": [
+          "identifier"
+        ],
+        "source_system": [
+          "string"
+        ],
+        "observation_family": [
+          "string"
+        ],
+        "observation_date": [
+          "date"
+        ],
+        "as_of_date": [
+          "date"
+        ],
+        "short_quality_state": [
+          "string"
+        ]
+      }
     },
     "012_regime_context_table": {
       "source_alias": "012_regime_context_table",
-      "binding_status": "pending_physical_candidate_root",
+      "binding_status": "candidate_bound_for_schema_probe",
       "governance_status": "experimental_non_production",
-      "physical_candidate_root": null,
-      "physical_candidate_type": "broad_market_regime_context_surface",
-      "dataset_format": "parquet_or_manifested_table",
-      "dataset_discovery_rule": "explicit_root_or_manifest_required",
-      "partition_convention": "unknown_pending_binding",
-      "manifest_or_contract_reference": "02_TABLE_REPRESENTATION_REVIEW/012_regime_context_table/012_regime_context_table.md",
-      "expected_grain": ["regime_symbol_or_index_id", "decision_timestamp"],
-      "expected_primary_keys": ["regime_symbol_or_index_id", "decision_timestamp"],
-      "expected_partition_keys": ["date_or_year", "regime_symbol_or_index_id_optional"],
-      "event_timestamp_field": "decision_timestamp",
+      "physical_candidate_root": "G:/TSIS/data/data_foundation_outputs/regime_context_table/regime_context_table_v0_1",
+      "physical_candidate_type": "partitioned_dataset_or_manifested_surface",
+      "dataset_format": "partitioned_parquet_dataset",
+      "dataset_discovery_rule": "explicit_registry_dataset_path_check_only",
+      "partition_convention": "source_proxy_family=<etf|index>/observation_year=<YYYY>/data_*.parquet",
+      "manifest_or_contract_reference": "01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/regime_context_table_registry_entry.yaml",
+      "expected_grain": [
+        "regime_symbol",
+        "trading_date",
+        "source_granularity"
+      ],
+      "expected_primary_keys": [
+        "regime_context_id"
+      ],
+      "expected_partition_keys": [
+        "source_proxy_family",
+        "observation_year"
+      ],
+      "event_timestamp_field": "trading_date",
       "availability_timestamp_field": "as_of_utc",
       "as_of_field": "as_of_utc",
       "valid_from_field": null,
       "valid_to_field": null,
-      "minimum_required_columns": ["regime_symbol_or_index_id", "decision_timestamp", "as_of_utc", "regime_intraday_return", "regime_close_to_previous_close_return"],
-      "quality_fields": ["coverage_quality_flag", "source_quality_flag"],
-      "lineage_fields": ["source_dataset_version", "index_source_id", "as_of_utc"],
-      "read_scope": "metadata_and_minimum_schema_only_after_binding",
+      "minimum_required_columns": [
+        "regime_context_id",
+        "regime_symbol",
+        "trading_date",
+        "session_open_utc",
+        "as_of_utc",
+        "intraday_return",
+        "close_to_previous_close_return",
+        "regime_quality_state"
+      ],
+      "quality_fields": [
+        "regime_quality_state",
+        "bar_coverage_state",
+        "valid_for_event_context_candidate",
+        "valid_for_state_component_candidate",
+        "requires_asof_filter",
+        "contains_future_information_without_event_filter"
+      ],
+      "lineage_fields": [
+        "source_dataset_id",
+        "source_granularity",
+        "source_root",
+        "source_file_relative_path",
+        "build_run_id",
+        "schema_version",
+        "quality_policy_version"
+      ],
+      "read_scope": "filesystem_and_schema_metadata_only",
       "read_authorized": false,
-      "schema_probe_authorized": false,
+      "schema_probe_authorized": true,
       "full_data_read_authorized": false,
-      "binding_evidence": "logical broad market/regime source; no governed physical root bound yet",
+      "binding_evidence": "official registry entry points to E:/TSIS/data/data_foundation_outputs/regime_context_table/regime_context_table_v0_1 with manifest _regime_context_table_manifest_v0_1.json; local path-probe candidate exists under G:/TSIS/data/data_foundation_outputs/regime_context_table/regime_context_table_v0_1; daily regime source files remain excluded by contract; path existence only, no schema or grain validation; schema metadata probe authorized for Parquet footer inspection only, with no row reads and no grain or temporal value validation",
       "binding_version": "v0_1",
-      "review_status": "needs_physical_binding"
+      "review_status": "schema_probe_ready",
+      "minimum_required_type_families": {
+        "regime_context_id": [
+          "identifier"
+        ],
+        "regime_symbol": [
+          "string"
+        ],
+        "trading_date": [
+          "date"
+        ],
+        "session_open_utc": [
+          "timestamp"
+        ],
+        "as_of_utc": [
+          "timestamp"
+        ],
+        "intraday_return": [
+          "numeric"
+        ],
+        "close_to_previous_close_return": [
+          "numeric"
+        ],
+        "regime_quality_state": [
+          "string"
+        ]
+      }
     },
     "006_halts_table": {
       "source_alias": "006_halts_table",
-      "binding_status": "pending_physical_candidate_root",
+      "binding_status": "candidate_bound_for_schema_probe",
       "governance_status": "experimental_non_production",
-      "physical_candidate_root": null,
-      "physical_candidate_type": "halt_resume_event_surface",
-      "dataset_format": "parquet_or_manifested_table",
-      "dataset_discovery_rule": "explicit_root_or_manifest_required",
-      "partition_convention": "unknown_pending_binding",
-      "manifest_or_contract_reference": "02_TABLE_REPRESENTATION_REVIEW/006_halts_table/006_halts_table.md",
-      "expected_grain": ["instrument_id", "halt_start", "halt_event_id"],
-      "expected_primary_keys": ["instrument_id", "halt_start", "halt_event_id"],
-      "expected_partition_keys": ["halt_date_or_year", "instrument_id_optional"],
-      "event_timestamp_field": "halt_start",
-      "availability_timestamp_field": "as_of_utc",
-      "as_of_field": "as_of_utc",
-      "valid_from_field": "halt_start",
-      "valid_to_field": "resume_timestamp",
-      "minimum_required_columns": ["instrument_id", "halt_start", "resume_timestamp", "halt_type"],
-      "quality_fields": ["timestamp_quality_flag", "taxonomy_quality_flag"],
-      "lineage_fields": ["source_dataset_version", "source_id", "as_of_utc"],
-      "read_scope": "metadata_and_minimum_schema_only_after_binding",
+      "physical_candidate_root": "G:/TSIS/data/data_foundation_outputs/halts_table/halts_table_v0_1.parquet",
+      "physical_candidate_type": "single_parquet_file",
+      "dataset_format": "single_parquet_file",
+      "dataset_discovery_rule": "explicit_registry_primary_file_path_check_only",
+      "partition_convention": "single_file_halts_table_v0_1.parquet",
+      "manifest_or_contract_reference": "01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/halts_table_registry_entry.yaml",
+      "expected_grain": [
+        "halt_event_id"
+      ],
+      "expected_primary_keys": [
+        "halt_event_id"
+      ],
+      "expected_partition_keys": [],
+      "event_timestamp_field": "halt_start_et",
+      "availability_timestamp_field": null,
+      "as_of_field": null,
+      "valid_from_field": "halt_start_et",
+      "valid_to_field": "resume_trade_et",
+      "minimum_required_columns": [
+        "halt_event_id",
+        "ticker",
+        "halt_date",
+        "halt_start_et",
+        "resume_quote_et",
+        "resume_trade_et",
+        "halt_type",
+        "quality_state",
+        "intraday_consumption_state"
+      ],
+      "quality_fields": [
+        "halt_event_state",
+        "quality_state",
+        "intraday_consumption_state",
+        "valid_for_event_engine",
+        "valid_for_intraday_mask",
+        "requires_decision_time_availability_contract",
+        "prohibited_as_alpha"
+      ],
+      "lineage_fields": [
+        "source_dataset_id",
+        "source",
+        "source_master_path",
+        "source_master_sha256",
+        "build_run_id",
+        "schema_version",
+        "created_at_utc"
+      ],
+      "read_scope": "filesystem_and_schema_metadata_only",
       "read_authorized": false,
-      "schema_probe_authorized": false,
+      "schema_probe_authorized": true,
       "full_data_read_authorized": false,
-      "binding_evidence": "logical halt context source; no governed physical root bound yet",
+      "binding_evidence": "official registry entry points to E:/TSIS/data/data_foundation_outputs/halts_table/halts_table_v0_1.parquet with manifest _halts_table_manifest_v0_1.json; local path-probe candidate exists under G:/TSIS/data/data_foundation_outputs/halts_table/halts_table_v0_1.parquet; availability contract remains required for decision-time use; path existence only, no schema or grain validation; schema metadata probe authorized for Parquet footer inspection only, with no row reads and no grain or temporal value validation",
       "binding_version": "v0_1",
-      "review_status": "needs_physical_binding"
+      "review_status": "schema_probe_ready",
+      "minimum_required_type_families": {
+        "halt_event_id": [
+          "identifier"
+        ],
+        "ticker": [
+          "string"
+        ],
+        "halt_date": [
+          "date"
+        ],
+        "halt_start_et": [
+          "timestamp",
+          "string"
+        ],
+        "resume_quote_et": [
+          "timestamp",
+          "string"
+        ],
+        "resume_trade_et": [
+          "timestamp",
+          "string"
+        ],
+        "halt_type": [
+          "string"
+        ],
+        "quality_state": [
+          "string"
+        ],
+        "intraday_consumption_state": [
+          "string"
+        ]
+      }
     },
     "raw_quotes": {
       "source_alias": "raw_quotes",
-      "binding_status": "pending_physical_candidate_root",
+      "binding_status": "candidate_bound_for_schema_probe",
       "governance_status": "experimental_non_production",
-      "physical_candidate_root": null,
+      "physical_candidate_root": "G:/TSIS/data/quotes_",
       "physical_candidate_type": "raw_l1_quote_surface",
-      "dataset_format": "parquet_or_manifested_table",
-      "dataset_discovery_rule": "explicit_root_or_manifest_required",
-      "partition_convention": "unknown_pending_binding",
-      "manifest_or_contract_reference": "E:/TSIS/data/README.md",
-      "expected_grain": ["instrument_id", "quote_timestamp"],
-      "expected_primary_keys": ["instrument_id", "quote_timestamp", "quote_sequence_optional"],
-      "expected_partition_keys": ["date_or_year", "instrument_id_optional"],
+      "dataset_format": "partitioned_parquet_dataset",
+      "dataset_discovery_rule": "explicit_official_root_path_check_only",
+      "partition_convention": "ticker=<ticker>/year=<YYYY>/month=<MM>/day=<DD>/quotes.parquet",
+      "manifest_or_contract_reference": "01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/transversal/raw_storage_parity_audit_requirement_v0_1.md",
+      "expected_grain": [
+        "instrument_id",
+        "quote_timestamp"
+      ],
+      "expected_primary_keys": [
+        "instrument_id",
+        "quote_timestamp",
+        "quote_sequence_optional"
+      ],
+      "expected_partition_keys": [
+        "ticker",
+        "year",
+        "month",
+        "day"
+      ],
       "event_timestamp_field": "quote_timestamp",
       "availability_timestamp_field": "quote_timestamp",
       "as_of_field": "quote_timestamp",
       "valid_from_field": null,
       "valid_to_field": null,
-      "minimum_required_columns": ["instrument_id", "quote_timestamp", "bid_price", "ask_price", "bid_size", "ask_size"],
-      "quality_fields": ["quote_quality_flag", "two_sided_flag"],
-      "lineage_fields": ["source_dataset_version", "source_feed_id", "as_of_utc"],
-      "read_scope": "metadata_and_minimum_schema_only_after_binding",
+      "minimum_required_columns": [
+        "instrument_id",
+        "quote_timestamp",
+        "bid_price",
+        "ask_price",
+        "bid_size",
+        "ask_size"
+      ],
+      "quality_fields": [
+        "quote_quality_flag",
+        "two_sided_flag"
+      ],
+      "lineage_fields": [
+        "source_dataset_version",
+        "source_feed_id",
+        "as_of_utc"
+      ],
+      "read_scope": "filesystem_and_schema_metadata_only",
       "read_authorized": false,
-      "schema_probe_authorized": false,
+      "schema_probe_authorized": true,
       "full_data_read_authorized": false,
-      "binding_evidence": "logical raw quote source for L1 liquidity/microstructure; no governed physical root bound yet",
+      "binding_evidence": "official E-root is E:/TSIS/data/quotes_ after 2026-07-07 D:/quotes parity approval; local path-probe candidate exists under G:/TSIS/data/quotes_; G:/TSIS/data/quotes is legacy/incomplete for this decision; path existence only, no schema or data validation; schema metadata probe authorized for Parquet footer inspection only, with no row reads and no grain or temporal value validation",
       "binding_version": "v0_1",
-      "review_status": "needs_physical_binding"
+      "review_status": "schema_probe_ready",
+      "minimum_required_type_families": {
+        "instrument_id": [
+          "identifier"
+        ],
+        "quote_timestamp": [
+          "timestamp"
+        ],
+        "bid_price": [
+          "numeric"
+        ],
+        "ask_price": [
+          "numeric"
+        ],
+        "bid_size": [
+          "numeric"
+        ],
+        "ask_size": [
+          "numeric"
+        ]
+      }
     },
     "future_trade_quote_aligned_surface": {
       "source_alias": "future_trade_quote_aligned_surface",
@@ -318,8 +854,16 @@
       "dataset_discovery_rule": "not_applicable_until_alignment_policy",
       "partition_convention": null,
       "manifest_or_contract_reference": null,
-      "expected_grain": ["instrument_id", "window_end", "classifier_version"],
-      "expected_primary_keys": ["instrument_id", "window_end", "classifier_version"],
+      "expected_grain": [
+        "instrument_id",
+        "window_end",
+        "classifier_version"
+      ],
+      "expected_primary_keys": [
+        "instrument_id",
+        "window_end",
+        "classifier_version"
+      ],
       "expected_partition_keys": [],
       "event_timestamp_field": "window_end",
       "availability_timestamp_field": "window_end",
@@ -327,8 +871,14 @@
       "valid_from_field": null,
       "valid_to_field": null,
       "minimum_required_columns": [],
-      "quality_fields": ["alignment_confidence", "classifier_confidence"],
-      "lineage_fields": ["alignment_policy_version", "classifier_version"],
+      "quality_fields": [
+        "alignment_confidence",
+        "classifier_confidence"
+      ],
+      "lineage_fields": [
+        "alignment_policy_version",
+        "classifier_version"
+      ],
       "read_scope": "blocked",
       "read_authorized": false,
       "schema_probe_authorized": false,

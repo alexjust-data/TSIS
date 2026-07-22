@@ -1,0 +1,117 @@
+{
+  "allowed_output_namespaces": [
+    "trading_activity__",
+    "price_movement__",
+    "price_location_structure__",
+    "volatility_range_state__"
+  ],
+  "context_acceptance_rules": [
+    "exactly_four_records_per_context",
+    "exactly_required_core_four_object_ids",
+    "same_ticker",
+    "same_instrument_id",
+    "same_session_date",
+    "same_decision_timestamp_utc",
+    "same_decision_case",
+    "same_004_daily_evidence",
+    "same_014_selected_bar_evidence",
+    "no_future_bar_leak",
+    "all_records_output_contract_pass",
+    "all_records_determinism_pass"
+  ],
+  "context_integration_statuses": {
+    "FAILED_CONTEXT_CONSISTENCY": "identity, time or source evidence differs across object records",
+    "FAILED_CONTRACT_OR_DETERMINISM": "output contract, determinism or cutoff evidence failed",
+    "INTEGRABLE_COMPLETE": "all required object records PASS and no restrictions",
+    "INTEGRABLE_COMPLETE_WITH_RESTRICTIONS": "all required object records PASS/PASS_WITH_RESTRICTIONS and at least one restriction exists",
+    "REJECTED_REQUIRED_OBJECT_BLOCKED": "one or more required object records are BLOCKED; no Market State row may be emitted"
+  },
+  "contract_id": "core_four_market_state_integration_design_contract_v0_1",
+  "input_authority": {
+    "allowed_input_artifacts": [
+      "core_four_resolution_records.jsonl",
+      "builder_request_report.csv",
+      "selected_source_rows_report.csv",
+      "cutoff_enforcement_report.csv",
+      "builder_output_contract_report.csv",
+      "determinism_report.csv",
+      "final_manifest.json",
+      "experimental_core_four_resolution_record_acceptance_context_report_v0_1.csv",
+      "experimental_core_four_resolution_record_acceptance_summary_v0_1.json"
+    ],
+    "downstream_consumption_authorized": false,
+    "parquet_write_allowed": false,
+    "production_builder_authorized": false,
+    "source_row_reads_allowed": false,
+    "state_materialization_allowed": false
+  },
+  "join_keys": {
+    "experimental_join_key": [
+      "context_id"
+    ],
+    "request_id_join_allowed": false,
+    "semantic_join_key": [
+      "instrument_id",
+      "ticker",
+      "session_date",
+      "decision_timestamp_utc",
+      "decision_case"
+    ]
+  },
+  "market_state_candidate_record_fields": [
+    "market_state_candidate_id",
+    "market_state_profile_id",
+    "context_id",
+    "instrument_id",
+    "ticker",
+    "session_date",
+    "decision_timestamp_utc",
+    "decision_case",
+    "context_input_fingerprint",
+    "integration_status",
+    "object_statuses",
+    "object_record_ids",
+    "admitted_namespaces",
+    "values",
+    "shared_source_evidence",
+    "policy_versions",
+    "restrictions"
+  ],
+  "next_gate": "experimental_core_four_market_state_integration_execution_authorization_v0_1_not_open",
+  "object_atomicity": {
+    "blocked_record_values_policy": "diagnostic_only_not_admitted",
+    "blocked_statuses_not_admitted": [
+      "BLOCKED_INPUT_UNAVAILABLE",
+      "BLOCKED_CONFLICTING_SOURCE_ROWS"
+    ],
+    "pass_statuses_admitted": [
+      "PASS",
+      "PASS_WITH_RESTRICTIONS"
+    ],
+    "required": true
+  },
+  "profile_id": "market_state_core_four_intraday_experimental_v0_1",
+  "reference_acceptance_review": "experimental_core_four_resolution_record_acceptance_review_v0_1.md",
+  "reference_run": "experimental_state_builder_probe_v0_10_20260721T193918Z",
+  "reference_sample_expectation": {
+    "contexts_reviewed": 10,
+    "expected_integrable_contexts": 8,
+    "expected_market_state_rows_to_materialize_now": 0,
+    "expected_rejected_required_object_blocked_contexts": 2
+  },
+  "required_object_ids": [
+    "trading_activity",
+    "price_movement",
+    "price_location_structure",
+    "volatility_range_state"
+  ],
+  "restrictions": [
+    "governed_exchange_session_calendar_required_before_operational_integration",
+    "after_last_sampled_bar_is_not_end_of_session",
+    "trading_activity_rvol_20d_name_must_preserve_volume_to_time_over_prior_full_session_mean_semantics",
+    "duplicate_counts_are_request_impact_not_physical_group_counts",
+    "quote_dependent_objects_remain_blocked"
+  ],
+  "scope": "design_only_no_execution",
+  "status": "design_ready_with_restrictions"
+}

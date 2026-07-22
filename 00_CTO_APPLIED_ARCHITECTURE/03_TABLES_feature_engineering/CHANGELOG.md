@@ -1,3 +1,61 @@
+
+## 2026-07-21 | phase b | experimental core-four Market State integration execution passed with restrictions
+
+- Added `06_MARKET_STATE_INTEGRATION/experimental_core_four_market_state_integration_execution_authorization_v0_1.md`, `configs/core_four_market_state_integration_execution_scope_v0_1.json` and `scripts/core_four_market_state_integration_probe.py`.
+- Executed reference run `experimental_core_four_market_state_integration_execution_v0_1_20260721T203448Z` from accepted core-four resolution records: 40 input records, 10 contexts, 8 non-canonical candidate records, 2 expected required-object-blocked rejects, 136 admitted value rows, 0 future leaks and 0 blocked values admitted.
+- Added `experimental_core_four_market_state_integration_execution_readout_v0_1.md` and updated Market State Integration, Builder Validation, experimental probe, feature-engineering README and local AGENT handoff.
+- Boundary preserved: no physical source market data read, parquet materialization, production builder, State consumption, downstream consumption, full-history/full-universe execution or dataset promotion was authorized. Next possible gate is design-only `core_four_market_state_materialization_design`.
+
+## 2026-07-21 | phase b | experimental bounded quality and lineage gate passed with restrictions
+
+- Added `experimental_bounded_quality_lineage_validation_authorization_v0_1.md` and `configs/experimental_bounded_quality_lineage_scope_v0_1.json` for the non-production State Builder probe.
+- Added four bounded policies: `004_price_view_selection_policy_v0_1.md`, `014_duplicate_intraday_bar_policy_v0_1.md`, `raw_quote_ordering_policy_v0_1.md` and `raw_quote_quality_policy_v0_1.md`.
+- Updated `experimental_state_builder_probe.py` to `experimental_state_builder_probe_v0_9` with `bounded_quality_and_lineage_validation`, quality/lineage field classification, policy derivation reports, builder execution blockers and promotion-only restrictions.
+- Executed run `experimental_state_builder_probe_v0_9_20260721T184537Z`: `bounded_quality_lineage_validation = PASS_WITH_RESTRICTIONS`, `rows_read = 12271`, `maximum_rows_authorized = 20000`, `builder_execution_blockers = 2`, `core_four_builder_execution_blockers = 0`, `quote_dependent_builder_execution_blockers = 2` and `promotion_only_restrictions = 8`.
+- Added `experimental_state_builder_probe_bounded_quality_lineage_readout_v0_1.md` and updated probe README, Builder Validation README, feature-engineering README and local AGENT handoff.
+- Boundary preserved: no feature builder execution, production builder, State consumption, full data read, physical materialization, dataset promotion or Market State Integration was authorized. Next allowed gate is `experimental_builder_validation_execution_core_four`.
+
+## 2026-07-21 | phase b | experimental bounded grain gate passed with restrictions
+
+- Added `experimental_bounded_grain_validation_authorization_v0_1.md` and `configs/experimental_bounded_grain_scope_v0_1.json` for the non-production State Builder probe.
+- Updated `experimental_state_builder_probe.py` to `experimental_state_builder_probe_v0_8` with `bounded_grain_validation`, candidate key checks, duplicate classification, null-key reporting, hidden-dimension findings and raw quote same-timestamp reporting.
+- Executed run `experimental_state_builder_probe_v0_8_20260721T171358Z`: `bounded_grain_validation = PASS_WITH_RESTRICTIONS`, `rows_read = 12271`, `maximum_rows_authorized = 20000`, `null_key_rows = 0`, `duplicate_key_groups = 1016`, `identical_duplicate_groups = 1001`, `conflicting_duplicate_groups = 15` and `raw_quotes_same_timestamp_groups = 16`.
+- Added `experimental_state_builder_probe_bounded_grain_readout_v0_1.md` and updated probe README, Builder Validation README, feature-engineering README and local AGENT handoff.
+- Boundary preserved: no feature builder execution, production builder, State consumption, full data read, physical materialization, dataset promotion or Market State Integration was authorized. Next gate is `bounded_quality_and_lineage_validation` design.
+
+## 2026-07-21 | phase b | experimental bounded identity and temporal gate passed with restrictions
+
+- Added `experimental_bounded_sample_validation_authorization_v0_1.md` and `configs/experimental_bounded_sample_scope_v0_1.json` to authorize only bounded row reads for five execution-critical aliases: `004_master_daily_table`, `013_ohlcv_1m_quote_guarded`, `014_master_intraday_bar_table_candidate`, `015_microstructure_features_table_candidate` and `raw_quotes`.
+- Updated `experimental_state_builder_probe.py` to `experimental_state_builder_probe_v0_7` with `bounded_identity_and_temporal_validation`, bounded Parquet batch reads, identity evidence checks, timestamp parsing, raw quote timestamp-unit detection, cutoff legality checks and daily availability policy execution.
+- Executed run `experimental_state_builder_probe_v0_7_20260721T161612Z`: `bounded_sample_validation = PASS_WITH_RESTRICTIONS`, `rows_read = 6271`, `maximum_rows_authorized = 10000`, `identity_failures = 0`, `timestamp_parse_failures = 0`, `cutoff_future_bar_leaks = 0` and `daily_availability_policy_failures = 0`.
+- Added `experimental_state_builder_probe_bounded_identity_temporal_readout_v0_1.md` and updated probe README, Builder Validation README, feature-engineering README and local AGENT handoff.
+- Boundary preserved: no grain validation, feature builder execution, production builder, State consumption, full data read, physical materialization, dataset promotion or Market State Integration was authorized.
+
+## 2026-07-21 | phase b | experimental column binding blockers resolved with restrictions
+
+- Added `experimental_state_builder_probe/policies/daily_row_availability_policy_v0_1.md` and `experimental_state_builder_probe/policies/intraday_bar_identity_and_cutoff_policy_v0_1.md`.
+- Updated `experimental_column_binding_registry_v0_1.json` to resolve the three prior critical blockers as restricted metadata bindings and to correct eight `valid_for_event_context_candidate` / `valid_for_state_component_candidate` expected type families from `date` to `boolean`.
+- Updated `experimental_state_builder_probe.py` to `experimental_state_builder_probe_v0_6`; identity-required physical-column bindings now report `RESOLVED_WITH_RESTRICTIONS`.
+- Executed run `experimental_state_builder_probe_v0_6_20260721T154601Z` in `logical_to_physical_binding_check_only` mode: `logical_column_resolution = PASS_WITH_RESTRICTIONS`, `logical_fields_expected = 154`, `logical_fields_resolved = 125`, `logical_fields_resolved_with_restrictions = 22`, `logical_fields_unresolved = 6`, `critical_state_fields_blocked = 0`, `critical_temporal_fields_unresolved = 0`.
+- Added `experimental_state_builder_probe_column_binding_readout_v0_2.md` and updated probe README, Builder Validation README, feature-engineering README and local AGENT handoff.
+- Boundary preserved: no bounded sample reads, full data reads, grain validation, temporal value validation, State materialization, production builder execution, dataset promotion or Market State Integration is authorized.
+
+## 2026-07-21 | phase b | experimental logical-to-physical column binding gate executed
+
+- Added `experimental_state_builder_probe/configs/experimental_column_binding_registry_v0_1.json` with explicit bindings for all active logical fields, including nominal matches, partition-key bindings, manifest/dataset metadata bindings, unavailable source-fix blockers and cast policy requirements.
+- Updated `experimental_state_builder_probe.py` to `experimental_state_builder_probe_v0_5` with `logical_to_physical_binding_check_only` and column-binding reports.
+- Executed run `experimental_state_builder_probe_v0_5_20260721T144225Z`: `physical_source_binding = PASS`, `path_validation = PASS`, `schema_resolution = REEXECUTED_WITH_COLUMN_BINDINGS`, `logical_column_resolution = BLOCKED`, 154 fields expected, 118 resolved, 27 resolved with restrictions and 9 unresolved.
+- Added `experimental_state_builder_probe_column_binding_readout_v0_1.md`; current critical blockers are `004_master_daily_table.as_of_utc`, `014_master_intraday_bar_table_candidate.instrument_id` and `014_master_intraday_bar_table_candidate.decision_timestamp_or_bar_end`.
+- Boundary preserved: no bounded sample reads, full data reads, grain validation, temporal value validation, State materialization, production builder execution, dataset promotion or Market State Integration is authorized.
+
+## 2026-07-21 | phase b | experimental schema metadata gate failed pending column binding
+
+- Updated `experimental_state_builder_probe.py` to `experimental_state_builder_probe_v0_4`, added `binding_and_schema_check_only`, schema availability reporting, column compatibility reporting and schema fingerprint reporting.
+- Executed run `experimental_state_builder_probe_v0_4_20260721T123345Z`: contract, ontology-to-mapping, blocked-capability, physical source binding and path gates pass; schema metadata gate fails.
+- Result: `unique_sources_schema_checked = 10`, `unique_sources_schema_passed = 3`, `unique_sources_schema_failed = 7`, `minimum_columns_missing = 13`, `temporal_fields_missing = 5`, `quality_fields_missing = 9`, `lineage_fields_missing = 15`.
+- Added `experimental_state_builder_probe_schema_metadata_readout_v0_1.md` and updated probe README, Builder Validation README and local AGENT handoff.
+- Next required artifact is `configs/experimental_column_binding_registry_v0_1.json`; no bounded sample reads, full data reads, grain validation, temporal value validation, State materialization or Market State Integration is authorized.
+
 # 03_TABLES_feature_engineering Changelog
 
 This changelog records table-specific semantic and operational changes inside:
@@ -18,6 +76,40 @@ and important dependency decisions.
 
 ---
 
+## 2026-07-21 | phase b | experimental physical source binding completed
+
+- Bound the final active governed physical candidate root batch in `experimental_source_binding_registry_v0_1.json`: `010_news_context_table`, `009_fundamentals_asof_table`, `011_short_context_table`, `012_regime_context_table` and `006_halts_table`.
+- Executed run `experimental_state_builder_probe_v0_3_20260721T105146Z` in `binding_and_path_check_only` mode: `physical_candidate_roots = BOUND`, `physical_source_binding = PASS`, `path_validation = PASS`, `physical_paths_checked = 10`, `physical_paths_found = 10` and `unbound_unique_source_aliases = 0`.
+- Added `experimental_state_builder_probe_batch3_binding_readout_v0_1.md` and updated the probe README, Builder Validation README and local AGENT handoff.
+- Next recommended gate is an explicit `binding_and_schema_check_only` mode for schema metadata only; grain uniqueness, temporal legality, quality semantics, data reads and State materialization remain later gates.
+- Boundary preserved: no production builder, State consumption, schema metadata discovery, bounded/full data read, physical materialization, dataset promotion or Market State Integration was authorized.
+## 2026-07-21 | phase b | experimental physical source binding batch 2 partial pass
+
+- Bound the second governed physical candidate root batch in `experimental_source_binding_registry_v0_1.json`: `raw_quotes` and `015_microstructure_features_table_candidate`.
+- Verified the quotes clone evidence before binding `raw_quotes`: `G:/TSIS/data/quotes_` is the local path-probe mirror of official `E:/TSIS/data/quotes_`; `G:/TSIS/data/quotes` is not used for this binding decision.
+- Executed run `experimental_state_builder_probe_v0_3_20260721T103259Z` in `binding_and_path_check_only` mode: `physical_source_binding = PARTIAL`, `path_validation = PASS`, `physical_paths_checked = 5`, `physical_paths_found = 5` and `unbound_unique_source_aliases = 5`.
+- Added `experimental_state_builder_probe_batch2_binding_readout_v0_1.md` and updated the probe README, Builder Validation README and local AGENT handoff.
+- Boundary preserved: no production builder, State consumption, schema metadata discovery, bounded/full data read, physical materialization, dataset promotion or Market State Integration was authorized.
+## 2026-07-21 | phase b | experimental physical source binding batch 1 partial pass
+
+- Bound the first governed physical candidate root batch in `experimental_source_binding_registry_v0_1.json`: `004_master_daily_table`, `013_ohlcv_1m_quote_guarded` and `014_master_intraday_bar_table_candidate`.
+- Executed run `experimental_state_builder_probe_v0_3_20260721T102009Z` in `binding_and_path_check_only` mode: `physical_source_binding = PARTIAL`, `path_validation = PASS`, `physical_paths_checked = 3`, `physical_paths_found = 3` and `unbound_unique_source_aliases = 7`.
+- Added `experimental_state_builder_probe_batch1_binding_readout_v0_1.md` and updated the probe README, Builder Validation README and local AGENT handoff.
+- Boundary preserved: no production builder, State consumption, schema metadata discovery, bounded/full data read, physical materialization, dataset promotion or Market State Integration was authorized.
+## 2026-07-21 | phase b | experimental physical source binding gate opened v0_3
+
+- Updated the experimental State Builder probe to `experimental_state_builder_probe_v0_3` with `binding_and_path_check_only` replacing the superseded `binding_and_schema_check_only` mode name.
+- Made source binding registry validation mode-aware: `contract_check_only` no longer requires filesystem/schema metadata authority, while `binding_and_path_check_only` requires only filesystem metadata authority.
+- Replaced textual prefix root checks with `Path.relative_to()` boundary checks for allowed roots.
+- Executed smoke run `experimental_state_builder_probe_v0_3_20260721T095712Z`: `contract_check = CLOSED_PASS`, `experimental_physical_source_binding = OPEN`, `physical_candidate_roots = PENDING`, `path_validation = NOT_EXECUTED`, `schema_validation = NOT_EXECUTED`, `data_validation = NOT_AUTHORIZED`.
+- Boundary preserved: no production builder, State consumption, schema metadata discovery, bounded/full data read, schema change, physical materialization, dataset promotion or Market State Integration was authorized.
+## 2026-07-21 | phase b | experimental source binding registry v0_2 probe passed pending bindings
+
+- Added `experimental_state_builder_probe/configs/experimental_source_binding_registry_v0_1.json` as the governed experimental registry separating logical `source_alias` from physical source surface.
+- Updated `experimental_state_builder_probe/scripts/experimental_state_builder_probe.py` to `experimental_state_builder_probe_v0_2`, accepting `binding_and_schema_check_only`, loading the external registry and making `source_warn_count` affect `overall_status`.
+- Executed smoke run `experimental_state_builder_probe_v0_2_20260721T093704Z`: `contract_resolution = PASS`, `physical_source_binding = INCOMPLETE`, `active_source_alias_usages = 21`, `unique_active_source_aliases = 10`, `unbound_unique_source_aliases = 10` and `physical_paths_checked = 0`.
+- Added `experimental_state_builder_probe_smoke_readout_v0_2.md` and updated the local handoff so the next gate is governed physical binding for the 10 unique active aliases.
+- Boundary preserved: no production builder, State consumption, bounded sample read, full data read, schema change, physical materialization, dataset promotion or Market State Integration was authorized.
 ## 2026-07-21 | phase b | experimental state builder probe scaffolded and smoked
 
 - Added `05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/` with config, script, run root and smoke readout.

@@ -1,8 +1,8 @@
 # 03_TABLES_feature_engineering - Agent Handoff Prompt
 
-Status: `agent_handoff_prompt_v0_1`
+Status: `agent_handoff_prompt_v0_4`
 Date: `2026-07-21`
-Scope: `tsis_market_ontology_v1_frozen_phase_b_continuation`
+Scope: `tsis_market_ontology_v1_frozen_phase_b_core_four_integration_execution`
 
 Este documento es el prompt local de continuidad para agentes que trabajen en:
 
@@ -33,15 +33,22 @@ Tu objetivo no es reabrir la ciencia congelada salvo contradiccion real.
 Tu objetivo no es desarrollar builders de produccion.
 Tu objetivo no es autorizar consumo operativo de State.
 
-Tu objetivo actual es iniciar Phase B como ingenieria gobernada,
-empezando por Operational Mapping de los Information Objects admitidos.
+Tu objetivo actual es continuar Phase B como ingenieria gobernada,
+trabajando en el builder experimental no productivo.
+
+Los gates de builder experimental core-four, acceptance review, integration
+design e integration execution ya cerraron con restricciones.
+
+El siguiente gate posible es `core_four_market_state_materialization_design`,
+solo como diseno condicionado y sin produccion, parquet, consumo downstream ni
+full-history/full-universe execution.
 
 Trabaja como agente de ingenieria ontologica:
 
 1. lee los contratos indicados abajo;
 2. trata `TSIS Market Ontology v1` como dependencia frozen/locked;
 3. usa las Formal Admissions y el Freeze Act como autoridad;
-4. crea Operational Mapping solo para objetos admitidos;
+4. usa los Operational Mappings admitidos como autoridad de ingenieria;
 5. conserva production builders, State consumption, schema changes,
    physical materialization y dataset promotion como false hasta gates
    explicitos de Phase B;
@@ -74,6 +81,34 @@ Leer en este orden:
 16. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\03_INFORMATION_OBJECTS\TSIS_MARKET_ONTOLOGY_V1_REVIEW.md
 17. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\03_INFORMATION_OBJECTS\TSIS_MARKET_ONTOLOGY_V1_FREEZE.md
 18. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\04_INFORMATION_OBJECT_OPERATIONAL_MAPPING\README.md
+19. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\05_STATE_BUILDER_VALIDATION\README.md
+20. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\05_STATE_BUILDER_VALIDATION\experimental_state_builder_probe\README.md
+21. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\05_STATE_BUILDER_VALIDATION\experimental_state_builder_probe\experimental_bounded_sample_validation_authorization_v0_1.md
+22. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\05_STATE_BUILDER_VALIDATION\experimental_state_builder_probe\configs\experimental_bounded_sample_scope_v0_1.json
+23. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\05_STATE_BUILDER_VALIDATION\experimental_state_builder_probe\experimental_state_builder_probe_bounded_identity_temporal_readout_v0_1.md
+24. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\05_STATE_BUILDER_VALIDATION\experimental_state_builder_probe\experimental_bounded_grain_validation_authorization_v0_1.md
+25. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\05_STATE_BUILDER_VALIDATION\experimental_state_builder_probe\configs\experimental_bounded_grain_scope_v0_1.json
+26. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\05_STATE_BUILDER_VALIDATION\experimental_state_builder_probe\experimental_state_builder_probe_bounded_grain_readout_v0_1.md
+27. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\05_STATE_BUILDER_VALIDATION\experimental_state_builder_probe\experimental_bounded_quality_lineage_validation_authorization_v0_1.md
+28. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\05_STATE_BUILDER_VALIDATION\experimental_state_builder_probe\configs\experimental_bounded_quality_lineage_scope_v0_1.json
+29. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\05_STATE_BUILDER_VALIDATION\experimental_state_builder_probe\policies\004_price_view_selection_policy_v0_1.md
+30. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\05_STATE_BUILDER_VALIDATION\experimental_state_builder_probe\policies\014_duplicate_intraday_bar_policy_v0_1.md
+31. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\05_STATE_BUILDER_VALIDATION\experimental_state_builder_probe\policies\raw_quote_ordering_policy_v0_1.md
+32. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\05_STATE_BUILDER_VALIDATION\experimental_state_builder_probe\policies\raw_quote_quality_policy_v0_1.md
+33. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\05_STATE_BUILDER_VALIDATION\experimental_state_builder_probe\experimental_state_builder_probe_bounded_quality_lineage_readout_v0_1.md
+34. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\05_STATE_BUILDER_VALIDATION\experimental_state_builder_probe\runs\experimental_state_builder_probe_v0_9_20260721T184537Z\final_manifest.json
+35. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\05_STATE_BUILDER_VALIDATION\experimental_state_builder_probe\runs\experimental_state_builder_probe_v0_10_20260721T193918Z\final_manifest.json
+36. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\05_STATE_BUILDER_VALIDATION\experimental_state_builder_probe\experimental_state_builder_probe_core_four_builder_validation_readout_v0_1.md
+37. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\05_STATE_BUILDER_VALIDATION\experimental_state_builder_probe\experimental_core_four_resolution_record_acceptance_review_v0_1.md
+38. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\05_STATE_BUILDER_VALIDATION\experimental_state_builder_probe\experimental_core_four_resolution_record_acceptance_summary_v0_1.json
+39. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\05_STATE_BUILDER_VALIDATION\experimental_state_builder_probe\experimental_core_four_resolution_record_acceptance_context_report_v0_1.csv
+40. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\06_MARKET_STATE_INTEGRATION\README.md
+41. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\06_MARKET_STATE_INTEGRATION\core_four_market_state_integration_design_v0_1.md
+42. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\06_MARKET_STATE_INTEGRATION\core_four_market_state_integration_design_contract_v0_1.json
+43. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\06_MARKET_STATE_INTEGRATION\experimental_core_four_market_state_integration_execution_authorization_v0_1.md
+44. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\06_MARKET_STATE_INTEGRATION\configs\core_four_market_state_integration_execution_scope_v0_1.json
+45. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\06_MARKET_STATE_INTEGRATION\experimental_core_four_market_state_integration_execution_readout_v0_1.md
+46. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\06_MARKET_STATE_INTEGRATION\runs\experimental_core_four_market_state_integration_execution_v0_1_20260721T203448Z\final_manifest.json
 ```
 
 Nota:
@@ -145,10 +180,23 @@ Operational Mapping
                 -> Operational Promotion
 ```
 
-La primera unidad activa de trabajo es:
+La unidad activa de trabajo ya no es Operational Mapping. Ese bloque esta
+completo para v1.
+
+La unidad activa vigente es:
 
 ```text
-Operational Mapping
+core_four_market_state_materialization_design
+```
+
+Solo puede abrirse como diseno condicionado. No autoriza parquet, produccion,
+consumo downstream, full-history execution ni full-universe execution.
+
+Estado previo cerrado:
+
+```text
+bounded_identity_and_temporal_validation = CLOSED_PASS_WITH_RESTRICTIONS
+bounded_grain_validation = CLOSED_PASS_WITH_RESTRICTIONS
 ```
 
 ## 5. Estado Real De Admissions
@@ -306,12 +354,11 @@ Builder Validation designs quedan completos para los 12 Objetos de v1.
 Siguiente gate recomendado:
 
 ```text
-Experimental State Builder
+core_four_market_state_materialization_design
 ```
 
-No empezar `Market State Integration` hasta revisar los hallazgos del builder
-experimental y hasta que el Objeto correspondiente supere sus gates de Builder
-Validation.
+No empezar materializacion parquet ni consumo State hasta que exista un diseno
+explicito, una autorizacion separada y una decision de promocion operativa.
 
 ## 6.2 Estado De Builder Validation
 
@@ -381,39 +428,47 @@ Halt Context:
     status = design_ready_pending_execution
 ```
 
-## 6.3 Siguiente Paso: Builder Experimental
+## 6.3 Siguiente Paso: Experimental Builder Validation Execution Core Four
 
-El siguiente builder no es un builder de produccion. Es un builder experimental
-para descubrir problemas que los documentos no revelan completamente.
-
-Artefacto de frontera:
+El builder experimental ya existe y ha cerrado estos gates:
 
 ```text
-05_STATE_BUILDER_VALIDATION/experimental_state_builder_boundary_v0_1.md
+contract_check
+source_binding
+path_validation
+schema_metadata
+logical_to_physical_column_binding
+bounded_identity_and_temporal_validation
+bounded_grain_validation
+bounded_quality_and_lineage_validation
 ```
 
-Objetivo del builder experimental:
+El siguiente builder no es de produccion. El siguiente gate es:
 
 ```text
-source availability gaps
-join-key ambiguity
-timestamp and cutoff ambiguity
-profile resolution failures
-missing lineage
-quality flag propagation failures
-cross-object naming conflicts
-blocked capability leaks
-source/schema mismatch
+experimental_builder_validation_execution_core_four
 ```
 
-Autoridad:
+Objetos autorizados para el siguiente diseno/ejecucion experimental:
 
 ```text
-experimental_builder_allowed = true_as_non_production_resolution_probe
-production_builder_authorized = false
-state_consumption_authorized = false
-physical_materialization_authorized = false
-dataset_promotion_authorized = false
+Trading Activity
+Price Movement
+Price Location / Structure
+Volatility / Range State
+```
+
+No abrir todavia:
+
+```text
+Liquidity builder execution
+Market Microstructure builder execution
+Order Flow Pressure builder execution
+Market State Integration
+State materialization
+production builder development
+unbounded row reads
+full data reads
 ```
 
 Si el builder experimental ejecuta una operacion larga, debe cumplir:
@@ -421,56 +476,196 @@ Si el builder experimental ejecuta una operacion larga, debe cumplir:
 ```text
 C:\TSIS_Data\LONG_RUNNING_OPERATIONS_CONTRACT.md
 ```
-## 6.4 Resultado Del Primer Builder Experimental
+## 6.4 Resultado Del Builder Experimental
 
-Primer smoke ejecutado:
+Smokes y runs ejecutados:
 
 ```text
-run_id = experimental_state_builder_probe_v0_1_20260721T091253Z
-mode = contract_check_only
-allow_data_read = false
-dry_run = true
-objects_checked = 12
-dry_run_resolution_snapshots = 48
-overall_status = passed_with_findings_and_expected_blocks
-fail_count = 0
-warn_count = 21
-source_warn_count = 21
-blocked_expected_count = 1
-blocked_capability_leaks = 0
+v0_1 = initial embedded-registry contract probe
+v0_2 = separated source binding registry probe using superseded binding_and_schema_check_only mode name
+v0_3 = binding_and_path_check_only pre-binding baseline
+batch1_binding_v0_1 = first governed physical candidate root batch
+batch2_binding_v0_1 = second governed physical candidate root batch; raw_quotes and 015 path-probed
+batch3_binding_v0_1 = final governed physical candidate root batch; active binding layer complete
+v0_4_schema_metadata_v0_1 = schema metadata gate executed; 3 pass, 7 fail pending column binding
+v0_5_column_binding_v0_1 = logical-to-physical binding executed; 8 pass with findings, 2 blocked
+v0_6_column_binding_v0_2 = blockers resolved; logical-to-physical binding passes with restrictions
+v0_7_bounded_identity_temporal_v0_1 = bounded identity and temporal validation passes with restrictions
+v0_8_bounded_grain_v0_1 = bounded grain validation passes with restrictions
+v0_9_bounded_quality_lineage_v0_1 = bounded quality and lineage validation passes with restrictions
+```
+
+Reference run vigente:
+
+```text
+run_id = experimental_state_builder_probe_v0_9_20260721T184537Z
+mode = bounded_quality_and_lineage_validation
+overall_status = passed_bounded_quality_lineage_validation_with_restrictions
+contract_resolution = PASS
+ontology_to_mapping_resolution = PASS
+blocked_capability_masking = PASS
+order_flow_expected_block = PASS
+binding_contract_structure = PASS
+physical_candidate_roots = BOUND
+physical_source_binding = PASS
+path_validation = PASS
+schema_resolution = REEXECUTED_WITH_COLUMN_BINDINGS
+schema_validation = PASS_WITH_RESTRICTIONS
+logical_column_resolution = PASS_WITH_RESTRICTIONS
+data_resolution = BOUNDED_QUALITY_LINEAGE_AUTHORIZED_BY_SCOPE
+data_validation = BOUNDED_QUALITY_LINEAGE_EXECUTED_WITH_LIMITS
+grain_validation = CLOSED_PASS_WITH_RESTRICTIONS
+temporal_value_validation = RECHECKED_FOR_QUALITY_LINEAGE_DERIVATION
+quality_semantics_validation = PASS_WITH_RESTRICTIONS
+lineage_validation = PASS_WITH_RESTRICTIONS
+builder_validation_execution = NOT_EXECUTED
+market_state_integration = NOT_OPEN
+
+sources_sampled = 5
+files_sampled = 8
+rows_read = 12271
+maximum_rows_authorized = 20000
+rows_limit_respected = true
+quality_lineage_fields_checked = 10
+quality_lineage_derivations_checked = 8
+builder_execution_blockers = 2
+core_four_builder_execution_blockers = 0
+quote_dependent_builder_execution_blockers = 2
+promotion_only_restrictions = 8
+core_four_builder_execution_readiness = OPEN_FOR_EXPERIMENTAL_BUILDER_VALIDATION_DESIGN
+quote_dependent_builder_execution_readiness = BLOCKED_PENDING_QUOTE_ORDERING_OR_ASOF
 ```
 
 Artefactos:
 
 ```text
 05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/
-05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/experimental_state_builder_probe_smoke_readout_v0_1.md
-05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/runs/experimental_state_builder_probe_v0_1_20260721T091253Z/
+05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/configs/experimental_state_builder_probe_v0_1.json
+05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/configs/experimental_source_binding_registry_v0_1.json
+05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/configs/experimental_column_binding_registry_v0_1.json
+05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/configs/experimental_bounded_sample_scope_v0_1.json
+05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/configs/experimental_bounded_grain_scope_v0_1.json
+05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/experimental_bounded_sample_validation_authorization_v0_1.md
+05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/experimental_bounded_grain_validation_authorization_v0_1.md
+05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/experimental_state_builder_probe_bounded_identity_temporal_readout_v0_1.md
+05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/experimental_state_builder_probe_bounded_grain_readout_v0_1.md
+05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/configs/experimental_bounded_quality_lineage_scope_v0_1.json
+05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/experimental_bounded_quality_lineage_validation_authorization_v0_1.md
+05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/experimental_state_builder_probe_bounded_quality_lineage_readout_v0_1.md
+05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/runs/experimental_state_builder_probe_v0_9_20260721T184537Z/
+```
+
+Estado de gates:
+
+```text
+contract_check = CLOSED_PASS
+experimental_physical_source_binding = CLOSED_PASS
+path_validation = PASS
+experimental_physical_schema_validation = REEXECUTED_WITH_COLUMN_BINDINGS
+logical_to_physical_column_binding = PASS_WITH_RESTRICTIONS
+bounded_identity_and_temporal_validation = CLOSED_PASS_WITH_RESTRICTIONS
+bounded_grain_validation = CLOSED_PASS_WITH_RESTRICTIONS
+bounded_quality_and_lineage_validation = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_builder_validation_execution_core_four = CLOSED_PASS_WITH_RESTRICTIONS
+core_four_resolution_record_acceptance_review = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_integration_execution = CLOSED_PASS_WITH_RESTRICTIONS
+state_materialization = NOT_AUTHORIZED
 ```
 
 Hallazgo principal:
 
 ```text
-El circuito documental de los 12 Objetos resuelve sin fallos ni leaks,
-pero los source aliases activos no tienen todavia binding fisico gobernado
-en la config experimental.
+El circuito documental de los 12 Objetos resuelve sin fallos ni leaks.
+La transicion source_alias logico -> superficie fisica gobernada esta completa.
+La capa logical_field -> physical evidence ya no tiene blockers criticos.
+El primer bounded row-read gate no encontro fallos de identidad, parse temporal,
+cutoff ni politica diaria en muestra acotada. El bounded grain gate no encontro
+claves nulas ni duplicados criticos, pero si restricciones reales: 014 contiene
+duplicados identicos y raw_quotes necesita una clave de orden adicional.
+El resultado correcto es PASS_WITH_RESTRICTIONS, no PASS limpio.
+```
+
+Restricciones vivas:
+
+```text
+canonical identity normalization pending = true
+raw quote timestamp unit policy promotion pending = true
+daily availability calendar-aware policy pending = true
+014 duplicate identical row handling policy pending = true
+raw_quotes additional ordering key pending = true
+quality semantics validation = partial/not executed
+feature formulas = not executed
+```
+
+Decision especial de quotes sigue vigente:
+
+```text
+raw_quotes -> G:/TSIS/data/quotes_
+
+G:/TSIS/data/quotes_ se usa como mirror local path-probe del root oficial:
+E:/TSIS/data/quotes_
+
+G:/TSIS/data/quotes no se usa para este binding.
 ```
 
 Siguiente paso recomendado:
 
 ```text
-crear source binding layer experimental:
-  source_alias
-      -> governed candidate physical path
-      -> expected grain
-      -> expected keys
-      -> timestamp/as_of fields
-      -> minimum schema probe
-      -> quality/lineage fields
+preparar core_four_market_state_materialization_design
 ```
 
-No pasar a `Market State Integration` todavia.
-No convertir el probe en builder productivo.
+Abrir solo el diseno de materializacion core-four cuando exista una necesidad explicita. No escribir parquet, no abrir quote-dependent builders y no autorizar consumo State.
+
+## 6.5 Estado De Core-Four Integration Execution
+
+El primer gate experimental de integracion core-four ya cerro con restricciones:
+
+```text
+run_id = experimental_core_four_market_state_integration_execution_v0_1_20260721T203448Z
+mode = experimental_core_four_market_state_integration_execution
+overall_status = passed_core_four_market_state_integration_execution_with_restrictions
+experimental_core_four_market_state_integration_execution = PASS_WITH_RESTRICTIONS
+contexts_seen = 10
+input_resolution_records = 40
+candidate_records_emitted = 8
+rejected_contexts = 2
+rejected_required_object_blocked_contexts = 2
+failed_context_consistency = 0
+failed_contract_or_determinism = 0
+future_bar_leaks = 0
+blocked_values_admitted = 0
+admitted_value_rows = 136
+source_market_data_rows_read = 0
+parquet_files_written = 0
+```
+
+Artefactos:
+
+```text
+06_MARKET_STATE_INTEGRATION/experimental_core_four_market_state_integration_execution_authorization_v0_1.md
+06_MARKET_STATE_INTEGRATION/configs/core_four_market_state_integration_execution_scope_v0_1.json
+06_MARKET_STATE_INTEGRATION/scripts/core_four_market_state_integration_probe.py
+06_MARKET_STATE_INTEGRATION/experimental_core_four_market_state_integration_execution_readout_v0_1.md
+06_MARKET_STATE_INTEGRATION/runs/experimental_core_four_market_state_integration_execution_v0_1_20260721T203448Z/
+```
+
+Interpretacion:
+
+```text
+8 candidate JSONL records = diagnostic integration evidence
+2 rejected contexts = expected pre-bar object_atomicity rejects
+candidate records != canonical Market State rows
+Market State parquet materialization = NOT_AUTHORIZED
+production builder = NOT_AUTHORIZED
+downstream consumption = NOT_AUTHORIZED
+```
+
+Siguiente gate posible:
+
+```text
+core_four_market_state_materialization_design
+```
+
 ## 7. Estructura Esperada De Cada Operational Mapping
 
 Ubicacion:

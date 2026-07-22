@@ -1,0 +1,30 @@
+{
+  "blocked_record_policy": "values in BLOCKED records are diagnostic_only and must not be admitted into Market State integration",
+  "blocked_records": 8,
+  "blocked_records_with_diagnostic_partial_values": 6,
+  "context_consistency_failures": 0,
+  "contexts_reviewed": 10,
+  "cutoff_future_leaks": 0,
+  "determinism_failures": 0,
+  "duplicate_record_fingerprints": 0,
+  "expected_objects_per_context": [
+    "price_location_structure",
+    "price_movement",
+    "trading_activity",
+    "volatility_range_state"
+  ],
+  "integration_design_readiness": "OPEN_FOR_DESIGN_ONLY",
+  "integration_execution": "NOT_OPEN",
+  "market_state_materialization": "NOT_AUTHORIZED",
+  "output_contract_failures": 0,
+  "pass_or_pass_with_restrictions_records": 32,
+  "pass_records_missing_values": 0,
+  "production_builder": "NOT_AUTHORIZED",
+  "records_reviewed": 40,
+  "reference_run": "experimental_state_builder_probe_v0_10_20260721T193918Z",
+  "review_id": "experimental_core_four_resolution_record_acceptance_review_v0_1",
+  "review_status": "CLOSED_PASS_WITH_RESTRICTIONS",
+  "semantic_equality_checks": 20,
+  "semantic_equality_failures": 0,
+  "unique_record_fingerprints": 40
+}
