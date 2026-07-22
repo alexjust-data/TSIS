@@ -1,0 +1,248 @@
+{
+  "scope_id": "experimental_core_four_market_state_scale_a_scope_v0_1",
+  "mode": "experimental_core_four_market_state_scale_a_execution",
+  "scope_status": "authorized_bounded_non_production_scale_a",
+  "created_at_utc": "2026-07-22T00:00:00Z",
+  "authorization_artifact": "../experimental_core_four_market_state_scale_a_authorization_v0_1.md",
+  "design_artifact": "../core_four_market_state_bounded_scaling_design_v0_1.md",
+  "design_contract_path": "../core_four_market_state_bounded_scaling_design_contract_v0_1.json",
+  "stage_id": "core_four_market_state_scale_a_multi_context_bounded",
+  "logical_profile_id": "core_four_market_state_profile_v0_1",
+  "physical_schema_id": "core_four_market_state_candidate_physical_schema_v0_1",
+  "source_integration_profile_id": "market_state_core_four_intraday_experimental_v0_1",
+  "reference_validated_runs": {
+    "physical_validation_run_id": "core_four_market_state_candidate_physical_validation_v0_1_20260722T093828Z",
+    "materialization_run_id": "experimental_core_four_market_state_materialization_v0_1_20260722T081155Z",
+    "integration_run_id": "experimental_core_four_market_state_integration_execution_v0_1_20260721T203448Z"
+  },
+  "authority": {
+    "builder_execution_allowed_for_scale_a": true,
+    "integration_execution_allowed_for_scale_a": true,
+    "candidate_materialization_allowed_for_scale_a": true,
+    "candidate_parquet_output_allowed_for_scale_a": true,
+    "official_market_state_allowed": false,
+    "official_state_table_write_allowed": false,
+    "production_builder_allowed": false,
+    "state_consumption_allowed": false,
+    "downstream_consumption_allowed": false,
+    "dataset_promotion_allowed": false,
+    "full_history_execution_allowed": false,
+    "full_universe_execution_allowed": false,
+    "quote_dependent_object_integration_allowed": false,
+    "scale_b_calendar_aware_execution_allowed": false,
+    "scale_c_historical_bounded_execution_allowed": false
+  },
+  "limits": {
+    "target_requested_contexts": 60,
+    "maximum_requested_contexts": 80,
+    "required_objects_per_context": 4,
+    "target_resolution_records": 240,
+    "maximum_resolution_records": 320,
+    "target_expected_blocked_contexts": 8,
+    "maximum_blocked_contexts": 16,
+    "target_integrated_candidate_records": 52,
+    "maximum_integrated_candidate_records": 80,
+    "maximum_physical_candidate_rows": 80,
+    "instrument_count": 8,
+    "session_count": 5,
+    "decision_case_family_count": 4,
+    "maximum_source_market_data_rows_read": 250000,
+    "maximum_candidate_parquet_files": 1,
+    "maximum_output_bytes": 5000000
+  },
+  "identity_invariants": {
+    "resolution_records": "requested_contexts * 4",
+    "context_partition": "resolved_contexts + blocked_contexts + failed_contexts = requested_contexts",
+    "integrated_candidate_records": "resolved_contexts",
+    "materialized_candidate_rows": "integrated_candidate_records",
+    "failed_contexts": 0
+  },
+  "source_aliases_allowed": [
+    "004_master_daily_table",
+    "014_master_intraday_bar_table_candidate"
+  ],
+  "source_aliases_forbidden": [
+    "013_ohlcv_1m_quote_guarded",
+    "raw_quotes",
+    "quote_dependent_object_records",
+    "full_history_market_data",
+    "full_universe_market_data",
+    "production_state_tables",
+    "downstream_feature_stores",
+    "00_CTO/99_REFERENCE_LIBRARY"
+  ],
+  "governance_inputs": {
+    "source_binding_registry": "../../05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/configs/experimental_source_binding_registry_v0_1.json",
+    "column_binding_registry": "../../05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/configs/experimental_column_binding_registry_v0_1.json",
+    "core_four_builder_scope_reference": "../../05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/configs/experimental_core_four_builder_validation_scope_v0_1.json",
+    "integration_scope_reference": "core_four_market_state_integration_execution_scope_v0_1.json",
+    "materialization_scope_reference": "experimental_core_four_market_state_materialization_scope_v0_1.json"
+  },
+  "sample_plan": {
+    "selection_mode": "stratified_bounded_architectural_stress_sample",
+    "pure_random_sampling_allowed": false,
+    "instrument_selection": {
+      "instrument_count": 8,
+      "selection_rule": "deterministic_overlap_preflight_between_004_and_014_with_required_prior_daily_history_and_intraday_bars",
+      "ticker_list_freeze_required_before_execution": true,
+      "instrument_replacement_allowed_only_before_run_start": true
+    },
+    "session_selection": {
+      "session_count": 5,
+      "selection_rule": "deterministic_regular_session_preflight_compatible_with_fixed_utc_probe_calendar",
+      "session_date_list_freeze_required_before_execution": true,
+      "session_replacement_allowed_only_before_run_start": true,
+      "scale_a_session_selection_excludes_calendar_mismatch_dates": true
+    },
+    "context_targets": {
+      "target_requested_contexts": 60,
+      "maximum_requested_contexts": 80,
+      "target_expected_blocked_contexts": 8,
+      "target_integrable_contexts": 52
+    },
+    "required_strata": [
+      "instrument_diversity",
+      "session_diversity",
+      "decision_case_diversity",
+      "duplicate_status_diversity",
+      "volume_diversity",
+      "range_diversity",
+      "early_intraday_vs_later_intraday_timestamps",
+      "accepted_contexts_and_expected_rejected_pre_bar_contexts"
+    ],
+    "decision_case_families": [
+      {
+        "decision_case_family": "pre_first_observable_bar_expected_blocked",
+        "target_contexts": 8,
+        "expected_integration_status": "REJECTED_REQUIRED_OBJECT_BLOCKED",
+        "materialized_as_rows": false
+      },
+      {
+        "decision_case_family": "first_closed_bar_or_early_regular_intraday",
+        "target_contexts": 16,
+        "expected_integration_status": "INTEGRABLE_COMPLETE_OR_WITH_RESTRICTIONS",
+        "materialized_as_rows": true
+      },
+      {
+        "decision_case_family": "mid_session_regular_intraday",
+        "target_contexts": 24,
+        "expected_integration_status": "INTEGRABLE_COMPLETE_OR_WITH_RESTRICTIONS",
+        "materialized_as_rows": true
+      },
+      {
+        "decision_case_family": "after_last_sampled_bar_not_session_close",
+        "target_contexts": 12,
+        "expected_integration_status": "INTEGRABLE_COMPLETE_OR_WITH_RESTRICTIONS",
+        "materialized_as_rows": true
+      }
+    ],
+    "duplicate_status_targets": {
+      "contexts_with_known_duplicate_physical_group_evidence_minimum": 4,
+      "contexts_without_known_duplicate_physical_group_evidence_minimum": 16,
+      "physical_duplicate_group_count_must_be_reported_separately_from_request_impact": true
+    }
+  },
+  "calendar_policy": {
+    "scale_a_calendar_policy": "fixed_utc_probe_calendar_compatibility_guarded",
+    "scale_a_is_calendar_aware_validation": false,
+    "governed_exchange_session_calendar_preferred_if_available": true,
+    "scale_a_calendar_compatibility_report_required": true,
+    "scale_a_session_selection_excludes_calendar_mismatch_dates": true,
+    "required_selected_session_properties": {
+      "regular_open_utc": "13:30:00",
+      "regular_close_utc": "20:00:00",
+      "session_type": "regular",
+      "early_close_indicator": false,
+      "holiday_or_closed_indicator": false
+    },
+    "fail_closed_if_session_compatibility_cannot_be_demonstrated": true,
+    "fixed_utc_probe_calendar_may_not_be_promoted_to_scale_b_temporal_authority": true
+  },
+  "output_policy": {
+    "output_root": "../runs",
+    "run_id_prefix": "experimental_core_four_market_state_scale_a_v0_1",
+    "candidate_parquet_filename": "core_four_market_state_scale_a_candidate_v0_1.parquet",
+    "official_dataset_root_allowed": false,
+    "production_dataset_root_allowed": false,
+    "candidate_rows_are_canonical_market_state": false,
+    "candidate_rows_are_downstream_consumable": false
+  },
+  "allowed_outputs": [
+    "pre_manifest.json",
+    "heartbeat.json",
+    "scale_a_sample_manifest.json",
+    "scale_a_calendar_compatibility_report.csv",
+    "builder_request_report.csv",
+    "resolution_record_manifest.json",
+    "integration_context_report.csv",
+    "market_state_candidate_records.jsonl",
+    "rejected_context_report.csv",
+    "materialization_manifest.json",
+    "core_four_market_state_scale_a_candidate_v0_1.parquet",
+    "schema_report.json",
+    "grain_report.csv",
+    "value_reconciliation_report.csv",
+    "lineage_content_report.json",
+    "restriction_report.csv",
+    "fingerprint_report.csv",
+    "roundtrip_report.csv",
+    "semantic_rebuild_report.json",
+    "authority_report.json",
+    "final_manifest.json",
+    "readout.md"
+  ],
+  "acceptance_criteria": {
+    "minimum_requested_contexts": 60,
+    "maximum_requested_contexts": 80,
+    "resolution_records_formula": "requested_contexts * 4",
+    "failed_contexts": 0,
+    "maximum_blocked_contexts": 16,
+    "integrated_candidate_records_formula": "resolved_contexts",
+    "materialized_candidate_rows_formula": "integrated_candidate_records",
+    "maximum_materialized_candidate_rows": 80,
+    "rejected_contexts_materialized_as_rows": 0,
+    "blocked_required_object_values_admitted": 0,
+    "duplicate_primary_keys": 0,
+    "duplicate_source_candidate_record_ids": 0,
+    "duplicate_materialized_state_candidate_ids": 0,
+    "missing_physical_columns": 0,
+    "extra_physical_columns": 0,
+    "schema_inference_from_sample": false,
+    "source_to_physical_value_mismatches": 0,
+    "lineage_content_mismatches": 0,
+    "restriction_mismatches": 0,
+    "fingerprint_mismatches": 0,
+    "roundtrip_mismatches": 0,
+    "semantic_rebuild_differences": 0,
+    "calendar_compatibility_failures": 0,
+    "authority_failures": 0,
+    "hard_validation_failures": 0
+  },
+  "preserved_restrictions": [
+    "candidate_artifacts_remain_non_canonical",
+    "candidate_artifacts_remain_not_downstream_consumable",
+    "core_four_profile_is_not_complete_tsis_market_state",
+    "quote_dependent_objects_remain_excluded",
+    "scale_a_is_not_calendar_aware_validation",
+    "fixed_utc_probe_calendar_requires_compatibility_guard",
+    "after_last_sampled_bar_is_not_end_of_session",
+    "rvol_semantic_naming_must_remain_explicit",
+    "duplicate_request_impact_must_not_be_confused_with_physical_duplicate_groups"
+  ],
+  "next_boundary": {
+    "allowed_next_gate": "experimental_core_four_market_state_scale_a_execution",
+    "status": "AUTHORIZED_NOT_EXECUTED",
+    "still_closed": [
+      "official_market_state",
+      "production_builder",
+      "downstream_state_consumption",
+      "dataset_promotion",
+      "full_history_execution",
+      "full_universe_execution",
+      "quote_dependent_object_integration",
+      "operational_promotion",
+      "scale_b_calendar_aware_execution",
+      "scale_c_historical_bounded_execution"
+    ]
+  }
+}

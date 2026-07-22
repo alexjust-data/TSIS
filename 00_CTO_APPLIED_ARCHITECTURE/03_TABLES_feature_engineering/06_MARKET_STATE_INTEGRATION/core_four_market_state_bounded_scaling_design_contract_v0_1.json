@@ -1,0 +1,206 @@
+{
+  "contract_id": "core_four_market_state_bounded_scaling_design_contract_v0_1",
+  "status": "closed_design_ready_with_restrictions",
+  "date": "2026-07-22",
+  "scope": "design_only_no_execution",
+  "logical_profile_id": "core_four_market_state_profile_v0_1",
+  "physical_schema_id": "core_four_market_state_candidate_physical_schema_v0_1",
+  "reference_evidence": {
+    "accepted_physical_validation_run_id": "core_four_market_state_candidate_physical_validation_v0_1_20260722T093828Z",
+    "superseded_validation_run_id": "core_four_market_state_candidate_physical_validation_v0_1_20260722T093513Z",
+    "source_integration_run_id": "experimental_core_four_market_state_integration_execution_v0_1_20260721T203448Z",
+    "source_materialization_run_id": "experimental_core_four_market_state_materialization_v0_1_20260722T081155Z",
+    "accepted_input_candidate_records": 8,
+    "accepted_physical_rows": 8,
+    "physical_column_count": 40,
+    "physical_value_column_count": 17,
+    "value_mappings_checked": 136,
+    "semantic_rebuild_comparisons": 296,
+    "hard_validation_failures": 0
+  },
+  "closed_gates": {
+    "core_four_builder_validation": "CLOSED_PASS_WITH_RESTRICTIONS",
+    "core_four_resolution_record_acceptance_review": "CLOSED_PASS_WITH_RESTRICTIONS",
+    "core_four_market_state_integration_design": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS",
+    "experimental_core_four_market_state_integration_execution": "CLOSED_PASS_WITH_RESTRICTIONS",
+    "core_four_market_state_materialization_design": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS",
+    "experimental_core_four_market_state_materialization_execution": "CLOSED_PASS_WITH_RESTRICTIONS",
+    "core_four_market_state_candidate_physical_validation": "CLOSED_PASS_WITH_RESTRICTIONS",
+    "core_four_market_state_bounded_scaling_design": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS"
+  },
+  "authority": {
+    "design_only": true,
+    "builder_execution_authorized": false,
+    "integration_execution_authorized": false,
+    "materialization_execution_authorized": false,
+    "parquet_write_authorized": false,
+    "official_market_state_authorized": false,
+    "production_builder_authorized": false,
+    "state_consumption_authorized": false,
+    "downstream_consumption_authorized": false,
+    "dataset_promotion_authorized": false,
+    "full_history_execution_authorized": false,
+    "full_universe_execution_authorized": false,
+    "quote_dependent_object_integration_authorized": false
+  },
+  "stage_model": [
+    {
+      "stage_id": "core_four_market_state_scale_a_multi_context_bounded",
+      "stage_label": "Scale A",
+      "status": "designed_not_authorized",
+      "purpose": [
+        "grain",
+        "identity",
+        "lineage",
+        "schema stability",
+        "deterministic rebuild across more contexts"
+      ],
+      "future_authorization_required": true,
+      "row_cap_guidance": {
+        "minimum_candidate_rows": 50,
+        "maximum_candidate_rows": 250
+      },
+      "calendar_policy": "fixed_utc_probe_calendar_allowed_only_if_preserved_as_restriction_and_not_calendar_aware_evidence",
+      "must_remain_false": [
+        "official_output_root_allowed",
+        "downstream_consumption_allowed",
+        "dataset_promotion_allowed",
+        "full_history_execution_allowed",
+        "full_universe_execution_allowed"
+      ]
+    },
+    {
+      "stage_id": "core_four_market_state_scale_b_multi_session_calendar_aware",
+      "stage_label": "Scale B",
+      "status": "designed_blocked_until_governed_calendar",
+      "purpose": [
+        "temporal legality",
+        "exchange session boundaries",
+        "decision-case semantics across calendar regimes"
+      ],
+      "future_authorization_required": true,
+      "hard_prerequisite": "governed_exchange_session_calendar",
+      "minimum_calendar_fields": [
+        "exchange",
+        "session_date",
+        "regular_open_utc",
+        "regular_close_utc",
+        "session_type",
+        "early_close_indicator",
+        "holiday_or_closed_indicator",
+        "calendar_version",
+        "DST_treatment",
+        "source_authority"
+      ],
+      "coverage_requirements": [
+        "winter_regular_sessions",
+        "summer_regular_sessions",
+        "US_DST_transition_neighborhood",
+        "Europe_US_DST_desynchronization_neighborhood_when_relevant",
+        "early_close_session_if_observable_and_in_scope",
+        "pre_bar_contexts",
+        "regular_intraday_contexts",
+        "after_last_sampled_bar_contexts_not_labeled_market_close"
+      ]
+    },
+    {
+      "stage_id": "core_four_market_state_scale_c_multi_period_historical_bounded",
+      "stage_label": "Scale C",
+      "status": "designed_not_authorized",
+      "purpose": [
+        "schema drift",
+        "identity history",
+        "data coverage",
+        "formula stability",
+        "historical reproducibility"
+      ],
+      "future_authorization_required": true,
+      "not_full_history": true,
+      "requires_prior_calendar_resolution_or_explicit_calendar_limitation": true
+    }
+  ],
+  "future_authorization_required_fields": [
+    "stage_id",
+    "source_builder_scope",
+    "source_integration_profile",
+    "logical_state_profile",
+    "physical_schema_id",
+    "instrument_selection_rule",
+    "session_selection_rule",
+    "decision_timestamp_selection_rule",
+    "maximum_source_rows_read",
+    "maximum_resolution_records",
+    "maximum_integrated_candidate_records",
+    "maximum_physical_candidate_rows",
+    "maximum_parquet_files",
+    "maximum_output_bytes",
+    "allowed_input_artifacts",
+    "allowed_output_artifacts",
+    "calendar_version",
+    "identity_version",
+    "formula_version_policy",
+    "lineage_policy",
+    "restriction_policy",
+    "rebuild_determinism_policy",
+    "authority_false_flags"
+  ],
+  "required_execution_outputs": [
+    "pre_manifest.json",
+    "heartbeat.json",
+    "builder_or_resolution_report",
+    "integration_report",
+    "candidate_record_manifest",
+    "materialization_manifest.json",
+    "schema_report.json",
+    "grain_report.csv",
+    "value_reconciliation_report.csv",
+    "lineage_content_report.json",
+    "restriction_report.csv",
+    "fingerprint_report.csv",
+    "roundtrip_report.csv",
+    "semantic_rebuild_report.json",
+    "calendar_report.json",
+    "authority_report.json",
+    "final_manifest.json",
+    "readout.md"
+  ],
+  "acceptance_criteria": {
+    "hard_failures_required": 0,
+    "rejected_contexts_materialized_as_rows": 0,
+    "blocked_required_object_values_admitted": 0,
+    "duplicate_primary_keys": 0,
+    "duplicate_source_candidate_record_ids": 0,
+    "duplicate_materialized_state_candidate_ids": 0,
+    "missing_physical_columns": 0,
+    "extra_physical_columns": 0,
+    "schema_inference_from_sample": false,
+    "source_to_physical_value_mismatches": 0,
+    "lineage_content_mismatches": 0,
+    "restriction_mismatches": 0,
+    "fingerprint_mismatches": 0,
+    "roundtrip_mismatches": 0,
+    "semantic_rebuild_differences": 0,
+    "authority_failures": 0
+  },
+  "calendar_aware_acceptance_criteria": {
+    "calendar_version_present": true,
+    "calendar_session_boundary_mismatches": 0,
+    "decision_case_semantic_mismatches": 0,
+    "after_last_sampled_bar_not_promoted_to_session_close": true
+  },
+  "preserved_restrictions": [
+    "candidate_artifacts_remain_non_canonical",
+    "candidate_artifacts_remain_not_downstream_consumable",
+    "core_four_profile_is_not_complete_tsis_market_state",
+    "quote_dependent_objects_remain_excluded",
+    "fixed_utc_probe_calendar_blocks_calendar_aware_scaling",
+    "after_last_sampled_bar_is_not_end_of_session",
+    "rvol_semantic_naming_must_remain_explicit",
+    "duplicate_request_impact_must_not_be_confused_with_physical_duplicate_groups"
+  ],
+  "next_allowed_gate": {
+    "gate_id": "experimental_core_four_market_state_scale_a_authorization",
+    "status": "NOT_OPEN_NEXT",
+    "scope": "Scale A multi-context bounded validation only"
+  }
+}

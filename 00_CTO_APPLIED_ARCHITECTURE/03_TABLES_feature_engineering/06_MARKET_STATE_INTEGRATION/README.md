@@ -1,6 +1,6 @@
 # 06_MARKET_STATE_INTEGRATION
 
-Status: `phase_b_core_four_materialization_execution_closed_v0_1`
+Status: `phase_b_core_four_scale_a_authorization_opened_v0_1`
 Date: `2026-07-22`
 
 Esta carpeta registra disenos y ejecuciones experimentales no productivas de
@@ -15,7 +15,7 @@ materializaciones ni consumo downstream por si misma.
 TSIS Market Ontology Phase = CLOSED
 TSIS Market Ontology v1 = FROZEN
 Phase B = OPEN
-Market State Integration Expansion = CORE_FOUR_MATERIALIZATION_EXECUTION_BOUNDED
+Market State Integration Expansion = CORE_FOUR_SCALE_A_AUTHORIZATION_BOUNDED
 core_four_builder_validation = CLOSED_PASS_WITH_RESTRICTIONS
 core_four_resolution_record_acceptance_review = CLOSED_PASS_WITH_RESTRICTIONS
 core_four_market_state_integration_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
@@ -23,6 +23,10 @@ experimental_core_four_market_state_integration_execution = CLOSED_PASS_WITH_RES
 core_four_market_state_materialization_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
 experimental_core_four_market_state_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS
 experimental_core_four_market_state_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
+core_four_market_state_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICTIONS
+core_four_market_state_bounded_scaling_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_execution = NOT_EXECUTED
 experimental_candidate_parquet_output_allowed = true
 production_builder_authorized = false
 state_consumption_authorized = false
@@ -206,6 +210,135 @@ The emitted `core_four_market_state_candidate_v0_1.parquet` file is bounded
 experimental candidate evidence. It is not an official Market State table and
 is not downstream-consumable.
 
+## Core Four Candidate Physical Validation
+
+```text
+script = scripts/core_four_market_state_candidate_physical_validation.py
+reference_run = core_four_market_state_candidate_physical_validation_v0_1_20260722T093828Z
+readout = core_four_market_state_candidate_physical_validation_readout_v0_1.md
+core_four_market_state_candidate_physical_validation = PASS_WITH_RESTRICTIONS
+```
+
+Result:
+
+```text
+input_candidate_records = 8
+output_physical_rows = 8
+candidate_parquet_files = 1
+candidate_parquet_bytes = 34097
+physical_column_count = 40
+physical_value_column_count = 17
+parquet_sha256_matches_manifest = true
+parquet_bytes_match_manifest = true
+schema_match = true
+column_order_exact = true
+timestamp_timezone_utc = true
+value_mappings_checked = 136
+source_to_physical_value_mismatches = 0
+rvol_rename_passed = true
+source_lineage_content_mismatches = 0
+policy_version_mismatches = 0
+formula_version_mismatches = 0
+restriction_mismatches = 0
+context_fingerprint_mismatches = 0
+state_output_fingerprint_mismatches = 0
+materialized_state_candidate_id_mismatches = 0
+roundtrip_row_mismatches = 0
+semantic_rebuild_differences = 0
+authority_failures = 0
+hard_validation_failures = 0
+```
+
+Run artifacts:
+
+```text
+runs/core_four_market_state_candidate_physical_validation_v0_1_20260722T093828Z/
+```
+
+The first validation attempt at `runs/core_four_market_state_candidate_physical_validation_v0_1_20260722T093513Z/` is superseded by the accepted run above. It failed because the validator checked non-existent candidate-record authority keys; it is not accepted closure evidence.
+
+The candidate parquet is independently validated as a faithful bounded physical representation of the eight accepted candidate records. It remains non-official and not downstream-consumable.
+
+
+## Core Four Bounded Scaling Design
+
+```text
+design = core_four_market_state_bounded_scaling_design_v0_1.md
+contract = core_four_market_state_bounded_scaling_design_contract_v0_1.json
+core_four_market_state_bounded_scaling_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
+```
+
+Purpose:
+
+```text
+Scale A = multi-context bounded validation
+Scale B = multi-session calendar-aware validation
+Scale C = multi-period historical bounded validation
+```
+
+The design does not authorize execution. It defines how to move beyond the eight-row proof without promoting the candidate parquet to official Market State.
+
+Current boundaries after the follow-on Scale A authorization:
+
+```text
+Scale A authorization = AUTHORIZED_WITH_RESTRICTIONS
+Scale A execution = NOT_EXECUTED
+Scale B execution = BLOCKED_UNTIL_GOVERNED_EXCHANGE_SESSION_CALENDAR
+Scale C execution = NOT_AUTHORIZED
+official Market State = NOT_OPEN
+production builder = NOT_AUTHORIZED
+downstream consumption = NOT_AUTHORIZED
+full-history execution = NOT_AUTHORIZED
+full-universe execution = NOT_AUTHORIZED
+```
+
+Scale B requires a governed exchange session calendar before execution. The fixed UTC probe calendar remains acceptable only as restricted lineage for the original eight-row proof or explicitly bounded non-calendar-aware Scale A evidence.
+
+## Experimental Core Four Scale A Authorization
+
+```text
+authorization = experimental_core_four_market_state_scale_a_authorization_v0_1.md
+scope = configs/experimental_core_four_market_state_scale_a_scope_v0_1.json
+experimental_core_four_market_state_scale_a_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_execution = NOT_EXECUTED
+```
+
+Exact limits:
+
+```text
+target_requested_contexts = 60
+maximum_requested_contexts = 80
+required_objects_per_context = 4
+target_resolution_records = 240
+maximum_resolution_records = 320
+target_expected_blocked_contexts = 8
+maximum_blocked_contexts = 16
+target_integrated_candidate_records = 52
+maximum_integrated_candidate_records = 80
+maximum_physical_candidate_rows = 80
+instrument_count = 8
+session_count = 5
+decision_case_family_count = 4
+maximum_source_market_data_rows_read = 250000
+maximum_candidate_parquet_files = 1
+maximum_output_bytes = 5000000
+```
+
+Calendar guard:
+
+```text
+scale_a_calendar_policy = fixed_utc_probe_calendar_compatibility_guarded
+scale_a_session_selection_excludes_calendar_mismatch_dates = true
+regular_open_utc = 13:30:00
+regular_close_utc = 20:00:00
+session_type = regular
+early_close_indicator = false
+holiday_or_closed_indicator = false
+calendar_compatibility_failures = 0 required
+```
+
+Scale A is authorized only as a bounded non-production execution. It remains not calendar-aware validation, not full-history, not full-universe and not downstream-consumable.
+
 ## Preserved Restrictions
 
 ```text
@@ -218,11 +351,14 @@ quote_dependent_objects_remain_blocked
 
 ## Next Gate
 
-The next gate is not production execution or promotion. The next possible step is a physical validation review of the bounded candidate artifact:
+Scale A authorization is now open with restrictions:
 
 ```text
-core_four_market_state_candidate_physical_validation = OPEN_NEXT_REVIEW_GATE
+experimental_core_four_market_state_scale_a_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_execution = NOT_EXECUTED
 ```
+
+The next allowed work is bounded Scale A execution planning/implementation under the exact scope above. No production, promotion, full-history, full-universe, Scale B or Scale C authority is opened.
 
 Still closed:
 
