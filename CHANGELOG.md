@@ -1,3 +1,9 @@
+## 2026-07-22 | phase b | experimental core-four Market State materialization execution passed with restrictions
+
+- Updated `00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering` with the bounded core-four materializer, execution run and readout.
+- Run `experimental_core_four_market_state_materialization_v0_1_20260722T081155Z` converted 8 accepted candidate JSONL records into 8 non-official physical candidate rows and 1 candidate parquet with 0 source market-data reads, 0 hard validation failures, 0 roundtrip failures and 0 semantic rebuild differences.
+- Boundary preserved: official Market State, production builder, downstream consumption, full-history/full-universe execution and dataset promotion remain unauthorized; next gate is physical candidate validation.
+
 ## 2026-07-22 | phase b | materialization authorization scope fingerprint rules clarified
 
 - Updated the core-four materialization authorization scope to remove fingerprint circularity and define semantic rebuild determinism.

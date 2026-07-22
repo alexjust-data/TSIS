@@ -1,6 +1,6 @@
 # 03_TABLES_feature_engineering
 
-Status: `readme_v1_2_phase_b_core_four_materialization_authorization`
+Status: `readme_v1_3_phase_b_core_four_materialization_execution`
 Date: `2026-07-22`
 
 Esta seccion conecta tablas existentes, Objetos de Informacion, feature engineering, Market State, Event State, builders, validators y consumo downstream.
@@ -67,8 +67,8 @@ contract, source binding, path, schema metadata, logical-to-physical binding,
 bounded identity/temporal validation, bounded grain validation y bounded
 quality/lineage validation, core-four builder execution, resolution record
 acceptance, core-four integration design, core-four integration execution,
-core-four materialization design y core-four materialization authorization
-quedan cerrados o emitidos con restricciones.
+core-four materialization design, core-four materialization authorization y
+core-four materialization execution quedan cerrados o emitidos con restricciones.
 
 El run vigente de integracion experimental es:
 
@@ -79,6 +79,18 @@ experimental_core_four_market_state_integration_execution_v0_1_20260721T203448Z
 Emitio 8 Market State candidate records no canonicos y rechazo 2 contextos
 pre-bar bajo object atomicity.
 
+El run vigente de materializacion experimental es:
+
+```text
+experimental_core_four_market_state_materialization_v0_1_20260722T081155Z
+```
+
+Convirtio los 8 candidate JSONL records en 8 filas fisicas candidatas y un
+unico parquet candidato no oficial. Resultado: `PASS_WITH_RESTRICTIONS`, 40
+columnas fisicas, 17 columnas de valores, 0 source market-data rows read, 0
+fallos duros, 0 roundtrip failures y 0 semantic rebuild differences sobre 37
+campos comparados.
+
 El diseno vigente de materializacion es:
 
 ```text
@@ -86,10 +98,10 @@ core_four_market_state_materialization_design_v0_1
 core_four_market_state_materialization_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
 ```
 
-La autorizacion experimental de materializacion core-four ya esta emitida con
-restricciones para una futura ejecucion de maximo 8 filas candidatas. La
-ejecucion, Market State parquet oficial, produccion y consumo downstream siguen
-cerrados.
+La autorizacion experimental de materializacion core-four ya fue ejecutada con
+restricciones sobre 8 filas candidatas. El parquet generado sigue siendo
+experimental, candidato y no oficial. Market State parquet oficial, produccion,
+consumo downstream, full-history/full-universe y promocion siguen cerrados.
 
 Regla:
 
@@ -128,7 +140,7 @@ Builder Validation, Market State Integration and Operational Promotion gates.
 | `03_INFORMATION_OBJECTS/` | Guarda expedientes trazables de Objetos evaluados: candidatos, revisados, aceptados, aceptados con restricciones o rechazados. |
 | `04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/` | Phase B complete_for_v1. Puente gobernado: Objeto admitido -> modelos aprobados -> capacidades -> variables candidatas -> tablas fuente -> perfiles de State. |
 | `05_STATE_BUILDER_VALIDATION/` | Builder Validation design completo para v1. El builder experimental core-four y la aceptacion de resolution records cerraron con restricciones. No autoriza builders de produccion, materializacion ni consumo State por si mismo. |
-| `06_MARKET_STATE_INTEGRATION/` | Integracion core-four experimental, diseno de materializacion candidata y autorizacion acotada cerrados/emitidos con restricciones. Mantiene 8 candidatos JSONL no canonicos como input de una futura ejecucion candidata. No autoriza Market State oficial, consumo operativo ni promocion. |
+| `06_MARKET_STATE_INTEGRATION/` | Integracion core-four experimental, diseno/autorizacion de materializacion candidata y ejecucion acotada cerrados con restricciones. Mantiene 8 filas parquet candidatas no oficiales como evidencia fisica. No autoriza Market State oficial, consumo operativo ni promocion. |
 | `99_archive/` | Documentos historicos, superseded o no activos. No son autoridad operativa. |
 
 ---

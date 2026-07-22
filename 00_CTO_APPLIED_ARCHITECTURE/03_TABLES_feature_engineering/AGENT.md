@@ -1,8 +1,8 @@
 # 03_TABLES_feature_engineering - Agent Handoff Prompt
 
-Status: `agent_handoff_prompt_v0_6`
+Status: `agent_handoff_prompt_v0_7`
 Date: `2026-07-22`
-Scope: `tsis_market_ontology_v1_frozen_phase_b_core_four_materialization_authorization`
+Scope: `tsis_market_ontology_v1_frozen_phase_b_core_four_materialization_execution_closed`
 
 Este documento es el prompt local de continuidad para agentes que trabajen en:
 
@@ -37,14 +37,14 @@ Tu objetivo actual es continuar Phase B como ingenieria gobernada,
 trabajando en el builder experimental no productivo.
 
 Los gates de builder experimental core-four, acceptance review, integration
-design, integration execution, materialization design y materialization
-authorization ya quedaron cerrados o emitidos con restricciones.
+design, integration execution, materialization design, materialization
+authorization y materialization execution ya quedaron cerrados o emitidos con
+restricciones.
 
 El siguiente gate posible es
-`experimental_core_four_market_state_materialization_execution`, solo como
-ejecucion acotada contra 8 candidate records ya aceptados, con schema cerrado
-y sin source market-data reread. No implica produccion, Market State oficial,
-consumo downstream ni full-history/full-universe execution.
+`core_four_market_state_candidate_physical_validation`, como revision de la
+evidencia fisica candidata ya generada. No implica produccion, Market State
+oficial, consumo downstream, promocion ni full-history/full-universe execution.
 
 Trabaja como agente de ingenieria ontologica:
 
@@ -116,6 +116,9 @@ Leer en este orden:
 48. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\06_MARKET_STATE_INTEGRATION\core_four_market_state_materialization_design_contract_v0_1.json
 49. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\06_MARKET_STATE_INTEGRATION\experimental_core_four_market_state_materialization_authorization_v0_1.md
 50. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\06_MARKET_STATE_INTEGRATION\configs\experimental_core_four_market_state_materialization_scope_v0_1.json
+51. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\06_MARKET_STATE_INTEGRATION\scripts\core_four_market_state_materialization_probe.py
+52. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\06_MARKET_STATE_INTEGRATION\experimental_core_four_market_state_materialization_execution_readout_v0_1.md
+53. C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\06_MARKET_STATE_INTEGRATION\runs\experimental_core_four_market_state_materialization_v0_1_20260722T081155Z\final_manifest.json
 ```
 
 Nota:
@@ -157,7 +160,8 @@ phase_b_status = OPEN
 phase_b_scope = governed_engineering
 production_builder_development_authorized = false
 state_consumption_authorized = false
-physical_materialization_authorized = false
+official_physical_materialization_authorized = false
+bounded_experimental_candidate_materialization = CLOSED_PASS_WITH_RESTRICTIONS
 ```
 
 El vertical de `Trading Activity` ya demostro el lifecycle completo:
@@ -193,14 +197,13 @@ completo para v1.
 La unidad activa vigente es:
 
 ```text
-experimental_core_four_market_state_materialization_execution
+core_four_market_state_candidate_physical_validation
 ```
 
-Solo puede ejecutarse bajo
-`experimental_core_four_market_state_materialization_authorization_v0_1.md`
-y `configs/experimental_core_four_market_state_materialization_scope_v0_1.json`.
-Debe limitarse a 8 candidate records, schema cerrado, JSON canonico, sin
-source market-data reread, sin produccion, sin consumo downstream y sin
+Debe revisar la evidencia generada por `experimental_core_four_market_state_materialization_v0_1_20260722T081155Z`: 8 candidate rows, un parquet
+candidato no oficial, schema cerrado, JSON canonico, 0 source market-data
+reread, 0 fallos duros, roundtrip limpio y determinismo semantico sobre 37
+campos. No autoriza produccion, consumo downstream, promocion ni
 full-history/full-universe execution.
 
 Estado previo cerrado:
@@ -365,11 +368,11 @@ Builder Validation designs quedan completos para los 12 Objetos de v1.
 Siguiente gate recomendado:
 
 ```text
-core_four_market_state_materialization_design
+core_four_market_state_candidate_physical_validation
 ```
 
-No empezar materializacion parquet ni consumo State hasta que exista un diseno
-explicito, una autorizacion separada y una decision de promocion operativa.
+No empezar promocion, escalado historico, consumo State ni Market State oficial
+hasta que se revise formalmente la evidencia fisica candidata.
 
 ## 6.2 Estado De Builder Validation
 
@@ -582,8 +585,8 @@ core_four_resolution_record_acceptance_review = CLOSED_PASS_WITH_RESTRICTIONS
 experimental_core_four_market_state_integration_execution = CLOSED_PASS_WITH_RESTRICTIONS
 core_four_market_state_materialization_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
 experimental_core_four_market_state_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS
-experimental_core_four_market_state_materialization_execution = NOT_EXECUTED
-state_materialization = NOT_AUTHORIZED
+experimental_core_four_market_state_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
+official_state_materialization = NOT_AUTHORIZED
 ```
 
 Hallazgo principal:
@@ -625,10 +628,11 @@ G:/TSIS/data/quotes no se usa para este binding.
 Siguiente paso recomendado:
 
 ```text
-preparar experimental_core_four_market_state_materialization_execution
+core_four_market_state_candidate_physical_validation
 ```
 
-Ejecutar solo la materializacion candidata core-four si se solicita explicitamente y bajo el scope autorizado. No leer source market data, no abrir quote-dependent builders y no autorizar consumo State.
+Revisar solo la evidencia fisica candidata ya generada. No leer source market
+data, no abrir quote-dependent builders y no autorizar consumo State.
 
 ## 6.5 Estado De Core-Four Integration Execution
 
@@ -674,10 +678,11 @@ production builder = NOT_AUTHORIZED
 downstream consumption = NOT_AUTHORIZED
 ```
 
-Siguiente gate posible:
+Estado posterior:
 
 ```text
-core_four_market_state_materialization_design
+core_four_market_state_materialization_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
+experimental_core_four_market_state_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
 ```
 
 ## 6.6 Estado De Core-Four Materialization Design
@@ -692,7 +697,7 @@ input_candidate_records_expected = 8
 candidate_records_accepted_for_materialization_design = true
 core_four_market_state_materialization_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
 experimental_core_four_market_state_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS
-experimental_core_four_market_state_materialization_execution = NOT_EXECUTED
+experimental_core_four_market_state_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
 experimental_candidate_parquet_output_allowed = true
 official_parquet_write_authorized = false
 production_builder_authorized = false
@@ -711,7 +716,7 @@ Interpretacion:
 
 ```text
 8 candidate records = accepted design inputs only
-candidate parquet execution = AUTHORIZED_NOT_EXECUTED
+candidate parquet execution = CLOSED_PASS_WITH_RESTRICTIONS
 official Market State = NOT_OPEN
 downstream consumption = NOT_AUTHORIZED
 ```
@@ -724,7 +729,7 @@ La autorizacion acotada de materializacion candidata core-four ya fue emitida:
 authorization = experimental_core_four_market_state_materialization_authorization_v0_1.md
 scope = configs/experimental_core_four_market_state_materialization_scope_v0_1.json
 experimental_core_four_market_state_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS
-experimental_core_four_market_state_materialization_execution = NOT_EXECUTED
+experimental_core_four_market_state_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
 input_candidate_records = 8
 max_output_candidate_rows = 8
 schema_inference_from_sample = false
@@ -741,15 +746,64 @@ downstream_consumption_allowed = false
 Siguiente gate posible:
 
 ```text
-experimental_core_four_market_state_materialization_execution
+core_four_market_state_candidate_physical_validation
 ```
 
-Esa ejecucion debe crear un materializer experimental, escribir como maximo un
-parquet candidato no oficial dentro de `06_MARKET_STATE_INTEGRATION/runs/`,
-usar el payload exacto y no circular de `state_output_fingerprint`, validar
-determinismo semantico entre rebuilds, emitir reports de
-schema/grain/lineage/restrictions/fingerprints/roundtrip y cerrar con readout.
-No hay autorizacion para consumo downstream ni promocion.
+La ejecucion ya creo el materializer experimental, escribio un parquet candidato
+no oficial dentro de `06_MARKET_STATE_INTEGRATION/runs/`, uso el payload exacto
+y no circular de `state_output_fingerprint`, valido determinismo semantico entre
+rebuilds, emitio reports de schema/grain/lineage/restrictions/fingerprints/
+roundtrip y cerro con readout. No hay autorizacion para consumo downstream ni
+promocion.
+
+
+## 6.8 Estado De Core-Four Materialization Execution
+
+La ejecucion experimental acotada de materializacion core-four ya cerro con
+restricciones:
+
+```text
+run_id = experimental_core_four_market_state_materialization_v0_1_20260722T081155Z
+mode = experimental_core_four_market_state_materialization_execution
+overall_status = passed_core_four_market_state_materialization_with_restrictions
+experimental_core_four_market_state_materialization_execution = PASS_WITH_RESTRICTIONS
+input_candidate_records = 8
+output_candidate_rows = 8
+candidate_parquet_files_written = 1
+candidate_parquet_bytes = 34097
+source_market_data_rows_read = 0
+physical_column_count = 40
+physical_value_column_count = 17
+schema_match = true
+hard_validation_failures = 0
+roundtrip_failures = 0
+semantic_rebuild_differences = 0
+semantic_rebuild_compare_field_count = 37
+```
+
+Artefactos:
+
+```text
+06_MARKET_STATE_INTEGRATION/scripts/core_four_market_state_materialization_probe.py
+06_MARKET_STATE_INTEGRATION/experimental_core_four_market_state_materialization_execution_readout_v0_1.md
+06_MARKET_STATE_INTEGRATION/runs/experimental_core_four_market_state_materialization_v0_1_20260722T081155Z/
+```
+
+Interpretacion:
+
+```text
+8 physical candidate rows = bounded experimental evidence
+core_four_market_state_candidate_v0_1.parquet != official Market State table
+candidate rows are not downstream consumable
+production builder remains false
+dataset promotion remains false
+```
+
+Siguiente gate posible:
+
+```text
+core_four_market_state_candidate_physical_validation
+```
 
 ## 7. Estructura Esperada De Cada Operational Mapping
 

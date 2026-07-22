@@ -1,6 +1,6 @@
 # 06_MARKET_STATE_INTEGRATION
 
-Status: `phase_b_core_four_materialization_authorization_bounded_v0_1`
+Status: `phase_b_core_four_materialization_execution_closed_v0_1`
 Date: `2026-07-22`
 
 Esta carpeta registra disenos y ejecuciones experimentales no productivas de
@@ -15,14 +15,14 @@ materializaciones ni consumo downstream por si misma.
 TSIS Market Ontology Phase = CLOSED
 TSIS Market Ontology v1 = FROZEN
 Phase B = OPEN
-Market State Integration Expansion = CORE_FOUR_MATERIALIZATION_AUTHORIZATION_BOUNDED
+Market State Integration Expansion = CORE_FOUR_MATERIALIZATION_EXECUTION_BOUNDED
 core_four_builder_validation = CLOSED_PASS_WITH_RESTRICTIONS
 core_four_resolution_record_acceptance_review = CLOSED_PASS_WITH_RESTRICTIONS
 core_four_market_state_integration_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
 experimental_core_four_market_state_integration_execution = CLOSED_PASS_WITH_RESTRICTIONS
 core_four_market_state_materialization_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
 experimental_core_four_market_state_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS
-experimental_core_four_market_state_materialization_execution = NOT_EXECUTED
+experimental_core_four_market_state_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
 experimental_candidate_parquet_output_allowed = true
 production_builder_authorized = false
 state_consumption_authorized = false
@@ -127,7 +127,7 @@ physical_schema_id = core_four_market_state_candidate_physical_schema_v0_1
 core_four_market_state_materialization_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
 candidate_records_accepted_for_materialization_design = true
 experimental_core_four_market_state_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS
-experimental_core_four_market_state_materialization_execution = NOT_EXECUTED
+experimental_core_four_market_state_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
 ```
 
 Artefactos:
@@ -142,9 +142,10 @@ clasifica las restricciones vivas por etapa: blockers de materializacion,
 blockers de promocion, blockers de consumo operativo y restricciones
 semanticas.
 
-No ejecuto escrituras parquet. La autorizacion acotada posterior ya existe y
-permite una futura materializacion candidata no oficial de maximo 8 records,
-siempre bajo scope cerrado y sin consumo downstream.
+El diseno no ejecuto escrituras parquet. La autorizacion acotada posterior ya
+existe y la ejecucion experimental ya cerro con restricciones sobre 8 records
+candidatos. El parquet resultante sigue siendo candidato, no oficial y sin
+consumo downstream.
 
 ## Core Four Materialization Authorization
 
@@ -152,7 +153,7 @@ siempre bajo scope cerrado y sin consumo downstream.
 authorization = experimental_core_four_market_state_materialization_authorization_v0_1.md
 scope = configs/experimental_core_four_market_state_materialization_scope_v0_1.json
 experimental_core_four_market_state_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS
-experimental_core_four_market_state_materialization_execution = NOT_EXECUTED
+experimental_core_four_market_state_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
 experimental_candidate_parquet_output_allowed = true
 candidate_parquet_filename = core_four_market_state_candidate_v0_1.parquet
 schema_inference_from_sample = false
@@ -163,8 +164,47 @@ semantic_rebuild_determinism = required
 byte_identical_parquet_rebuild = not_required
 ```
 
-La autorizacion no crea materializer, no ejecuta nada y no escribe parquet.
-Solo fija la frontera de una futura ejecucion experimental acotada.
+La autorizacion fijo la frontera de ejecucion. La ejecucion experimental
+posterior consumio solo los 8 candidate JSONL records aceptados, genero un
+unico parquet candidato no oficial y emitio evidencia de schema, grain,
+lineage, restrictions, fingerprints, roundtrip y rebuild determinism.
+
+## Core Four Materialization Execution
+
+```text
+script = scripts/core_four_market_state_materialization_probe.py
+reference_run = experimental_core_four_market_state_materialization_v0_1_20260722T081155Z
+readout = experimental_core_four_market_state_materialization_execution_readout_v0_1.md
+experimental_core_four_market_state_materialization_execution = PASS_WITH_RESTRICTIONS
+```
+
+Resultado:
+
+```text
+input_candidate_records = 8
+output_candidate_rows = 8
+rejected_contexts_materialized_as_rows = 0
+source_market_data_rows_read = 0
+candidate_parquet_files_written = 1
+candidate_parquet_bytes = 34097
+physical_column_count = 40
+physical_value_column_count = 17
+schema_match = true
+hard_validation_failures = 0
+roundtrip_failures = 0
+semantic_rebuild_differences = 0
+semantic_rebuild_compare_field_count = 37
+```
+
+Run artifacts:
+
+```text
+runs/experimental_core_four_market_state_materialization_v0_1_20260722T081155Z/
+```
+
+The emitted `core_four_market_state_candidate_v0_1.parquet` file is bounded
+experimental candidate evidence. It is not an official Market State table and
+is not downstream-consumable.
 
 ## Preserved Restrictions
 
@@ -178,10 +218,10 @@ quote_dependent_objects_remain_blocked
 
 ## Next Gate
 
-The next gate is not production execution. The next possible step is the bounded execution already scoped by the materialization authorization:
+The next gate is not production execution or promotion. The next possible step is a physical validation review of the bounded candidate artifact:
 
 ```text
-experimental_core_four_market_state_materialization_execution = AUTHORIZED_NOT_EXECUTED
+core_four_market_state_candidate_physical_validation = OPEN_NEXT_REVIEW_GATE
 ```
 
 Still closed:

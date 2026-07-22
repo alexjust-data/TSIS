@@ -1,3 +1,9 @@
+## 2026-07-22 | phase b | experimental core-four Market State materialization execution passed with restrictions
+
+- Added the bounded non-production materializer and execution readout under `03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/`.
+- Executed `experimental_core_four_market_state_materialization_v0_1_20260722T081155Z`: `PASS_WITH_RESTRICTIONS`, 8 input candidate records, 8 output candidate rows, 1 parquet candidate, 0 source market-data rows read and 0 hard validation failures.
+- Evidence confirms explicit schema, grain, lineage, restriction, fingerprint, roundtrip and semantic rebuild determinism checks; official Market State, downstream consumption, production and promotion remain closed.
+
 ## 2026-07-22 | phase b | materialization authorization scope fingerprint rules clarified
 
 - Tightened the bounded core-four materialization authorization scope with exact fingerprint payload fields, explicit fingerprint exclusions and semantic rebuild determinism rules.

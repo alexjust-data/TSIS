@@ -1,3 +1,10 @@
+## 2026-07-22 | phase b | experimental core-four Market State materialization execution passed with restrictions
+
+- Added `06_MARKET_STATE_INTEGRATION/scripts/core_four_market_state_materialization_probe.py` and `experimental_core_four_market_state_materialization_execution_readout_v0_1.md`.
+- Executed reference run `experimental_core_four_market_state_materialization_v0_1_20260722T081155Z` from the 8 accepted integration candidate JSONL records: 8 physical candidate rows, 1 non-official candidate parquet, 34,097 bytes, 0 source market-data rows read and 0 hard validation failures.
+- Validation passed with restrictions: 40 physical columns, 17 value columns, explicit Arrow schema, 0 duplicate keys, 0 lineage/restriction/fingerprint/roundtrip failures and 0 semantic rebuild differences across 37 authorized fields.
+- Boundary preserved: the parquet is experimental candidate evidence only; official Market State, production builder, downstream consumption, full-history/full-universe execution and dataset promotion remain closed. Next gate is `core_four_market_state_candidate_physical_validation`.
+
 ## 2026-07-22 | phase b | materialization authorization scope fingerprint rules clarified
 
 - Clarified `experimental_core_four_market_state_materialization_scope_v0_1.json` before execution: `state_output_fingerprint` now has an exact non-circular payload and explicit excluded fields.
