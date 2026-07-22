@@ -1,0 +1,57 @@
+query_name: first_day_3bar_push_gt_20pct
+status: exploratory
+created_date: 2026-06-20
+
+data:
+  default_root: E:/TSIS/data/ohlcv_1m
+  price_view: raw
+  session_scope: premarket_regular
+  include_premarket: true
+  include_regular: true
+  include_afterhours: false
+
+universe:
+  enabled_default: true
+  dataset_id: lt1b_universe_v0_1
+  run_id: 20260320_market_cap_last_observed_cutoff
+  filter_policy: ticker_plus_pti_window
+  rows: 4824
+  physical_path: C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/market_cap_last_observed_cutoff/20260320_market_cap_last_observed_cutoff/market_cap_cutoff_lt_1b_active_inactive.parquet
+  rule: "ticker must be in the certified LT1B universe and event date must be within [first_seen_date, last_observed_date]"
+
+condition:
+  bars: 3
+  consecutive_minutes: true
+  selection_mode_default: first_push_of_day
+  min_push_pct_default: 20.0
+  require_rising_highs_default: true
+  require_close_above_previous_high_default: true
+  require_same_session_segment_default: false
+
+user_filters:
+  min_session_volume_default: 500000000
+  min_price_default: 0.5
+  max_market_cap_default: 100000000
+  missing_market_cap_policy_default: exclude
+
+output:
+  default_root: C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/04_event_discovery/runs
+  source_role: event_discovery_runtime_output
+  institutional_status: exploratory_not_source_of_truth
+
+chart:
+  days_before: 3
+  days_after: 3
+  y_padding_pct_default: 0.40
+  mark_push_window: true
+  interactive_scroll_zoom: true
+
+notes:
+  - This query finds candidates, not promoted events.
+  - The physical 1m folder is not the universe; the certified LT1B parquet is the primary universe filter.
+  - Default semantics are first qualifying 3-bar push of the ET day, not any later push.
+  - Detection excludes afterhours by default; the chart may still show afterhours context.
+  - Thresholds are user-adjustable in the notebook launcher.
+  - Do not cap examples by default; use ticker/year filters only for scoped inspection.
+  - ohlcv_1m_split_normalized is currently pilot/validation coverage, not full-universe.
+  - Cross-session signals from raw must carry split-risk flags before promotion.

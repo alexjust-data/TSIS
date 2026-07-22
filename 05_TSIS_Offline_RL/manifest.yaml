@@ -1,0 +1,14 @@
+module_id: 05_TSIS_Offline_RL
+legacy_module_id: 05_TSIS_Offline_RL
+module_name: TSIS Offline RL
+status: scaffold
+canonical_root: C:/TSIS_Data/05_TSIS_Offline_RL
+legacy_root: C:/TSIS_Data/05_TSIS_Offline_RL
+owner_layer: offline_learning_policy_improvement
+last_governance_update: 2026-07-22
+
+upstream_authority:
+  path_migration: C:/TSIS_Data/PATH_MIGRATION_2026_07_22.md
+  cto_architecture: C:/TSIS_Data/00_CTO/TSIS_LAB_ARCHITECTURE_v3.md
+  data_foundation: C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations
+  physical_data_plane: E:/TSIS/data/README.md

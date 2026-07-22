@@ -1,0 +1,74 @@
+module_id: 04_TSIS_webSocket_SmallCaps
+module_name: TSIS WebSocket SmallCaps
+status: bootstrap_recovery
+canonical_root: C:/TSIS_Data/04_TSIS_webSocket_SmallCaps
+owner_layer: live_ingestion_streaming_state_live_operation
+created_from: legacy_polygon_websocket_prototypes
+last_governance_update: 2026-07-06
+
+upstream_authority:
+  cto_architecture: C:/TSIS_Data/00_CTO/TSIS_LAB_ARCHITECTURE_v3.md
+  data_foundation: C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations
+  physical_data_plane: E:/TSIS/data/README.md
+
+physical_data_roots:
+  polygon_websocket_prototype_raw: C:/TSIS_Data/04_TSIS_webSocket_SmallCaps/data/raw_ws
+  polygon_websocket_prototype_curated: C:/TSIS_Data/04_TSIS_webSocket_SmallCaps/data/curated_ws
+
+active_artifact_paths:
+  polygon_raw_websocket_captures: data/raw_ws
+  polygon_curated_websocket_outputs: data/curated_ws
+  notebooks: notebooks
+  notebook_cell_code: notebooks/cell_code
+
+source_and_docs_paths:
+  live_ingestion: 01_data_ingestion_live
+  polygon_vendor_notes: 01_data_ingestion_live/vendor_polygon
+  source_parity_audit: 01_data_ingestion_live/source_parity_audit
+  docs: docs
+  architecture_docs: docs/architecture
+  capacity_planning_docs: docs/capacity_planning
+
+placeholder_service_paths:
+  - 02_realtime_features
+  - 03_realtime_event_engine
+  - 04_signal_router
+  - 05_execution_bridge
+  - 06_risk_monitor
+  - 07_live_logs
+  - 08_live_exports
+  - configs
+  - monitoring
+  - runtime
+  - src
+  - tests
+
+root_governance_files:
+  - README.md
+  - AGENTS.md
+  - LOCAL_RULES.md
+  - CHANGELOG.md
+  - manifest.yaml
+  - requirements-websocket.txt
+
+migrated_documents:
+  - path: 01_data_ingestion_live/vendor_polygon/00_end_points_polygon.md
+    role: polygon_rest_websocket_flat_files_inventory
+  - path: 01_data_ingestion_live/vendor_polygon/01_feeds_webSocket.md
+    role: polygon_massive_websocket_feed_and_notebook_design
+  - path: docs/architecture/02_pipeline_real_time.md
+    role: realtime_pipeline_architecture_note
+  - path: docs/capacity_planning/02_1_estudio_arquitectura_realtime_50_tickers.md
+    role: capacity_study_50_tickers
+  - path: docs/capacity_planning/02_2_estudio_arquitectura_realtime_200_tickers.md
+    role: capacity_study_200_tickers
+  - path: docs/capacity_planning/02_3_estudio_arquitectura_realtime_500_tickers.md
+    role: capacity_study_500_tickers
+
+known_legacy_path_references:
+  - C:/TSIS_Data/v1/WebSocket_SmallCaps
+  - C:/TSIS_Data/01_webSocket_SmallCaps
+
+next_workstreams:
+  - 01_data_ingestion_live/source_parity_audit
+  - live_compatible_feature_state_contract

@@ -1,0 +1,156 @@
+{
+  "dataset_id": "master_intraday_bar_table_v0_2_candidate_quote_guarded",
+  "promotion_state": "scoped_candidate_materialized_not_official",
+  "materialization_scope": "quote_guarded_lt1b_candidate_pending_builder_materialization",
+  "full_universe_claim": false,
+  "official_dataset_created": false,
+  "safe_to_launch_full_materialization": false,
+  "storage_model": "raw_ohlcv_1m_plus_repair_manifest_overlay",
+  "creates_full_corrected_tree": false,
+  "raw_ohlcv_1m_mutation_allowed": false,
+  "primary_promoted_artifact_type": "repair_manifest_overlay",
+  "target_output_root": "E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table",
+  "target_dataset_path": "E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_2_candidate_quote_guarded",
+  "must_not_write_paths": [
+    "E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_1"
+  ],
+  "current_bridge_sources": {
+    "repair_run_root": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838",
+    "minute_root": "E:/TSIS/data/ohlcv_1m",
+    "quotes_root": "D:/quotes",
+    "output_root": "E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded",
+    "active_repair_shards_dir": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838/repair_shards",
+    "active_consolidated_repair_manifest": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838/repair_manifest.parquet",
+    "repair_run_state": "PASS_promoted_lt1b_manifest",
+    "quotes_root_state": "provisional_d_legacy_recovery_root_pending_e_parity",
+    "raw_1m_root_state": "official_e_raw_root",
+    "official_quote_guarded_root_state": "promoted_manifest_available",
+    "official_quote_guarded_manifest": "E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1.parquet",
+    "official_quote_guarded_summary": "E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1_summary.json",
+    "official_quote_guarded_sample": "E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1_sample.csv",
+    "official_quote_guarded_manifest_rows": 301278342,
+    "lt1b_completed_tickers": 4824,
+    "lt1b_missing_tickers": 0
+  },
+  "loader_semantics": [
+    "load_raw_monthly_ohlcv_parquet",
+    "lookup_matching_repair_manifest_rows",
+    "replace_o_h_l_c_in_memory_only_for_affected_minutes",
+    "preserve_raw_storage",
+    "preserve_or_block_vwap_without_quote_reconstruction",
+    "return_quote_guarded_view_with_repair_flags"
+  ],
+  "repair_row_count_interpretation": {
+    "repair_rows": "affected_manifest_rows_not_full_replacement_bars",
+    "ohlc_repair_rows": "rows_where_o_h_l_c_change",
+    "vw_invalid_rows": "rows_where_vwap_is_invalid_or_blocked_without_vwap_rebuild"
+  },
+  "required_price_views": [
+    "1m_raw",
+    "1m_quote_guarded_raw"
+  ],
+  "blocked_price_views_until_proven": [
+    "1m_quote_guarded_split_normalized"
+  ],
+  "required_added_columns": [
+    "quote_guarded_view",
+    "quote_guarded_repair_applied",
+    "repair_state",
+    "repair_reason",
+    "vw_quote_guarded_status",
+    "quote_bid_floor",
+    "quote_ask_cap",
+    "quote_count",
+    "source_quote_guarded_repair_manifest",
+    "source_quote_guarded_run_id",
+    "source_quotes_root",
+    "source_quotes_root_state",
+    "requires_rebuild_after_e_quotes_parity",
+    "requires_rebuild_after_quote_guarded_e_promotion"
+  ],
+  "promotion_blockers": [
+    "quote_guarded_repair_run_completed",
+    "final_validation_report_passed",
+    "official_e_root_quote_guarded_manifest_exists",
+    "source_quotes_root_state_resolved_or_candidate_only",
+    "builder_consumes_manifest_not_blind_recursive_scan",
+    "candidate_tests_pass_against_final_artifacts",
+    "registry_schema_validator_status_matrix_changelog_updated",
+    "graphify_refresh_queue_updated",
+    "human_review_accepts_candidate_evidence"
+  ],
+  "official_quote_guarded_sources": {
+    "quote_guarded_output_root": "E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded",
+    "repair_summary": "E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1_summary.json",
+    "repair_manifest": "E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1.parquet",
+    "repair_sample": "E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1_sample.csv",
+    "consolidation_summary": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_lt1b_consolidation_manual_20260703_094500/consolidation_summary.json",
+    "manifest_state": "PASS_promoted_lt1b_manifest",
+    "manifest_rows": 301278342,
+    "completed_tickers": 4824,
+    "missing_tickers": 0
+  },
+  "preflight": {
+    "script": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/preflight_master_intraday_quote_guarded_candidate.py",
+    "latest_report": "C:/TSIS_Data/tests/test_runs/2026-07-05/master_intraday_quote_guarded_candidate_preflight_v0_1/master_intraday_quote_guarded_candidate_preflight_v0_1.json",
+    "latest_status": "passed",
+    "latest_validator_hard_fail_count": 0,
+    "latest_validator_warning_count": 0,
+    "latest_report_scope": "artifact_path_summary_sample_preflight_no_materialization",
+    "writes_candidate_dataset": false
+  },
+  "controlled_sample_materialization": {
+    "script": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/materialize_master_intraday_quote_guarded_candidate_sample.py",
+    "latest_manifest": "C:/TSIS_Data/tests/test_runs/2026-07-05/master_intraday_quote_guarded_candidate_sample_v0_1/_master_intraday_bar_table_v0_2_candidate_quote_guarded_controlled_sample_manifest.json",
+    "latest_output": "C:/TSIS_Data/tests/test_runs/2026-07-05/master_intraday_quote_guarded_candidate_sample_v0_1/master_intraday_bar_table_v0_2_candidate_quote_guarded_controlled_sample/data.parquet",
+    "latest_status": "passed_controlled_sample_not_official",
+    "source_sample_rows": 30,
+    "output_rows": 60,
+    "raw_rows_missing": 0,
+    "raw_ohlc_mismatch_rows": 0,
+    "quote_guarded_repair_applied_source_rows": 20,
+    "qg_ohlc_changed_source_rows": 20,
+    "writes_official_target": false,
+    "full_universe_claim": false
+  },
+  "scoped_candidate_materialization": {
+    "script": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/materialize_master_intraday_quote_guarded_candidate_scoped.py",
+    "latest_manifest": "C:/TSIS_Data/tests/test_runs/2026-07-05/master_intraday_quote_guarded_candidate_scoped_v0_1/_master_intraday_bar_table_v0_2_candidate_quote_guarded_scoped_manifest.json",
+    "latest_output": "C:/TSIS_Data/tests/test_runs/2026-07-05/master_intraday_quote_guarded_candidate_scoped_v0_1/master_intraday_bar_table_v0_2_candidate_quote_guarded_scoped/data.parquet",
+    "latest_status": "passed_scoped_candidate_not_official",
+    "scope": [
+      "AACT:2025-09",
+      "AAGR:2023-12",
+      "AAMC:2023-12"
+    ],
+    "raw_rows": 10835,
+    "repair_manifest_rows_in_scope": 1106,
+    "quote_guarded_repair_applied_rows": 96,
+    "qg_ohlc_changed_rows": 96,
+    "manifest_qg_diff_not_applied_rows": 10,
+    "output_rows": 21670,
+    "writes_e_root_target": false,
+    "full_universe_claim": false
+  },
+  "e_root_candidate_materialization": {
+    "manifest": "E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/_master_intraday_bar_table_v0_2_candidate_quote_guarded_manifest.json",
+    "output": "E:/TSIS/data/data_foundation_outputs/master_intraday_bar_table/master_intraday_bar_table_v0_2_candidate_quote_guarded/data.parquet",
+    "status": "scoped_candidate_materialized_not_official",
+    "scope": [
+      "AACT:2025-09",
+      "AAGR:2023-12",
+      "AAMC:2023-12"
+    ],
+    "raw_rows": 10835,
+    "repair_manifest_rows_in_scope": 1106,
+    "quote_guarded_repair_applied_rows": 96,
+    "qg_ohlc_changed_rows": 96,
+    "manifest_qg_diff_not_applied_rows": 10,
+    "output_rows": 21670,
+    "writes_e_root_target": true,
+    "official_dataset_created": false,
+    "full_universe_claim": false,
+    "valid_for_ml_feature_candidate": false,
+    "valid_for_rl_state_component_candidate": false
+  }
+}

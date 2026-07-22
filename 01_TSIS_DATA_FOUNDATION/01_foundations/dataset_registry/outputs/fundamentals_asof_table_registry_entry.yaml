@@ -1,0 +1,60 @@
+dataset_id: fundamentals_asof_table_v0_1
+family: data_foundation_outputs
+class: reference_context_state_component_table
+status: materialized_validated_for_declared_scope
+owner: 01_TSIS_DATA_FOUNDATION/01_foundations
+root: E:/TSIS/data/data_foundation_outputs/fundamentals_asof_table
+artifacts:
+  dataset: E:/TSIS/data/data_foundation_outputs/fundamentals_asof_table/fundamentals_asof_table_v0_1
+  manifest: E:/TSIS/data/data_foundation_outputs/fundamentals_asof_table/_fundamentals_asof_table_manifest_v0_1.json
+  summary: E:/TSIS/data/data_foundation_outputs/fundamentals_asof_table/_fundamentals_asof_table_summary_v0_1.csv
+grain:
+  - source_file_relative_path
+  - source_file_row_number
+  - statement_family
+scope:
+  materialization_scope: additional_financials_core_lt1b_statement_asof_v0_1
+  full_universe_claim: false
+  as_of_semantics: filing_date_available_from_date_only
+sources:
+  - dataset_id: additional_v0_1
+    subblock: financials_core
+    role: accepted_auxiliary_statement_source
+  - dataset_id: instrument_master_v0_1
+    role: temporal_identity_context
+excluded_sources:
+  - dataset_id: additional_v0_1
+    subblock: financials_ratios
+    reason: review_sparse_vendor_derived_snapshot_not_statement_asof_core
+  - dataset_id: financial_v0_1
+    root: E:/TSIS/data/financial
+    reason: blocked_by_financial_consumption_policy_audit_status_FAIL
+contracts:
+  schema: 01_foundations/canonical_schemas/outputs/fundamentals_asof_table_schema_contract.md
+  dataset_contract: 01_foundations/contract_registry/dataset_contracts/fundamentals_asof_table_dataset_contract_v0_1.md
+  consumption_policy: 01_foundations/data_consumption_policies/fundamentals_asof_table_consumption_policy.md
+  validators: 01_foundations/validators/outputs/fundamentals_asof_table_validators.md
+  materializer: scripts/materialize_fundamentals_asof_table.py
+allowed_consumers:
+  - event_engine_with_asof_join
+  - backtest_extended_with_asof_join
+  - ml_flagged_with_asof_join
+  - research_only
+  - forensic_only
+restricted_consumers:
+  - backtest_core_direct
+  - ml_primary_direct
+  - execution_simulator
+  - rl_allowed_direct
+  - live_downstream_candidate
+current_materialization:
+  build_run_id: fundamentals_asof_table_v0_1_20260626T101617Z
+  rows: 621756
+  tickers: 4813
+  instruments: 4590
+  parquet_files: 51
+  good_statement_asof_rows: 500530
+  review_rows: 121226
+  bad_rows: 0
+  output_tree_sha256: 07d3d0200e16e020cee79fc2cf6aa873cde0145cf7efa0f07d0e78c8aefe5d58
+  test_evidence: C:/TSIS_Data/tests/test_runs/2026-06-26/data_foundation_outputs_fundamentals_asof_table_v0_1/

@@ -1,0 +1,27 @@
+dataset_id: intraday_scanner_candidates_table_v0_1
+dataset_family: data_foundation_output
+dataset_role: intraday_candidate_denominator
+status: controlled_replay_candidate_not_promoted
+owner_module: 01_TSIS_DATA_FOUNDATION
+owner_layer: 01_foundations
+schema_contract: 01_foundations/canonical_schemas/outputs/intraday_scanner_candidates_table_schema_contract.md
+target_contract: 01_foundations/module_contracts/outputs/intraday_scanner_candidates_table_target_contract_v0_1.md
+framework_contract: 01_foundations/module_contracts/outputs/intraday_scanner_framework_and_definitions_contract_v0_1.md
+dataset_contract: 01_foundations/contract_registry/dataset_contracts/intraday_scanner_candidates_table_dataset_contract_v0_1.md
+consumption_policy: 01_foundations/data_consumption_policies/intraday_scanner_candidates_table_consumption_policy.md
+validator_contract: 01_foundations/validators/outputs/intraday_scanner_candidates_table_validators.md
+builder: scripts/materialize_intraday_scanner_candidates_table_v0_1.py
+runner: scripts/run_intraday_scanner_candidates_materialization_v0_1.ps1
+test: tests/data_foundation_outputs/test_intraday_scanner_candidates_table_builder_v0_1.py
+primary_source_root: E:/TSIS/data/ohlcv_1m
+controlled_replay_root: C:/TSIS_Data/tests/test_runs/2026-06-30/intraday_scanner_candidates_replay_20250102_20250110_v0_1/
+official_output_root_reserved: E:/TSIS/data/data_foundation_outputs/intraday_scanner_candidates_table/
+full_universe_claim: false
+promotion_state: not_promoted
+prohibited_downstream_claims:
+  - market_state
+  - event_state
+  - strategy_signal
+  - direct_ml_feature_table
+  - direct_rl_state_table
+  - execution_truth

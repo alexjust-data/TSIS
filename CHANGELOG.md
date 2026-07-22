@@ -1,3 +1,11 @@
+## 2026-07-22 | root path migration | TSIS top-level module names realigned
+
+- Added `PATH_MIGRATION_2026_07_22.md` as the canonical transition map for top-level path resolution.
+- Current canonical roots: `01_TSIS_DATA_FOUNDATION`, `02_TSIS_BACKTEST_ENGINE`, `03_TSIS_Lab`, `04_TSIS_webSocket_SmallCaps`, `05_TSIS_Offline_RL` and `06_TSIS_Trading_voice`.
+- Legacy resolution map: `00_TSIS_Lab -> 03_TSIS_Lab`, `01_TSIS_backtest_SmallCaps -> 01_TSIS_DATA_FOUNDATION`, `02_TSIS_webSocket_SmallCaps -> 04_TSIS_webSocket_SmallCaps`, `03_TSIS_Offline_RL -> 05_TSIS_Offline_RL` and `04_TSIS_Trading_voice -> 06_TSIS_Trading_voice`.
+- Boundary preserved: `00_CTO/14_BACKTEST_ENGINE` remains the architecture/theory authority for the backtester; `02_TSIS_BACKTEST_ENGINE` is the future implementation area and must consume Data Foundation contracts rather than owning data certification.
+- Audit note: historical changelogs, archives, runtime evidence and Graphify outputs may still contain legacy paths; active code/config/test/governance files should resolve through the migration map until a full refresh/rewrite is explicitly authorized.
+
 ## 2026-07-22 | phase b | experimental core-four Market State materialization execution passed with restrictions
 
 - Updated `00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering` with the bounded core-four materializer, execution run and readout.
@@ -157,13 +165,13 @@
 - Human review is still required before treating v0.2 semantics as accepted.
 ## 2026-07-06 - Validador visual y manifest label-level para experimento DAS
 
-- Creado `00_TSIS_Lab/06_validators/validate_visual_inspection_manifest.py` para validar evidencia visual label-level en runs de experimento.
+- Creado `03_TSIS_Lab/06_validators/validate_visual_inspection_manifest.py` para validar evidencia visual label-level en runs de experimento.
 - Anotado `06_validators/` en el README del Lab y actualizado `EXP_DAS_FRONTSIDE_DISCOVERY_0001/execution_protocol.md` con el comando de validacion ejecutable.
 - Adaptado `00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/scripts/das_widgets.py` para exportar `visual_inspection_manifest.parquet`, `visual_inspection_manifest.csv`, imagen contractual de inspeccion y sidecar JSON de labels.
 - Smoke `XAGE 2025-04-14`: deteccion DAS passed, PNG export passed, `visual_inspection_manifest` generado, 5 labels, 1 visual case, validador visual `PASS`.
 ## 2026-07-05 - execution_protocol.md para EXP_DAS_FRONTSIDE_DISCOVERY_0001
 
-- Creado `00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/execution_protocol.md`.
+- Creado `03_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/execution_protocol.md`.
 - Definida la ejecucion reproducible de `SWEEP_001_frontside_operability_boundary`: inputs, preflight, embudo DAS, metricas, baselines, gates anti-basura, memoria de candidatos, output root y relacion futura con AlphaEvolve.
 - Aclarado que el notebook queda como inspeccion humana y que la verdad reproducible debe venir de executor + manifest + evidence report.
 ## 2026-07-05 - SWEEP_001 reformulado como frontera de operabilidad DAS/frontside
@@ -173,23 +181,23 @@
 - Declarado que valores bajo `50%` son grupo de control, `50%` es suelo humano a auditar y valores superiores miden intensidad/sobreextension posible.
 ## 2026-07-05 - EXP_INTRADAY_MOMENTUM_EXTENSION_0001 archivado
 
-- Movido `00_TSIS_Lab/04_experiments/EXP_INTRADAY_MOMENTUM_EXTENSION_0001/` a `00_TSIS_Lab/04_experiments/_archive/superseded_2026_07_05/EXP_INTRADAY_MOMENTUM_EXTENSION_0001/`.
+- Movido `03_TSIS_Lab/04_experiments/EXP_INTRADAY_MOMENTUM_EXTENSION_0001/` a `03_TSIS_Lab/04_experiments/_archive/superseded_2026_07_05/EXP_INTRADAY_MOMENTUM_EXTENSION_0001/`.
 - Marcado el experimento como `archived_superseded` y `superseded_by: EXP_DAS_FRONTSIDE_DISCOVERY_0001`.
 - Actualizadas las referencias activas para que el experimento inicial operativo sea `EXP_DAS_FRONTSIDE_DISCOVERY_0001`.
 - `intraday_momentum_extension` queda conservado como concepto/familia futura posible, no como experimento activo.
 ## 2026-07-05 - EXP_DAS_FRONTSIDE_DISCOVERY_0001 creado en TSIS Lab
 
-- Creado `00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/` como primer experimento `strategy_seeded_event_discovery` para DAS/frontside.
+- Creado `03_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/` como primer experimento `strategy_seeded_event_discovery` para DAS/frontside.
 - Anotados `research_design.md`, `parameter_space.yaml` y `SWEEP_001_frontside_operability_boundary.yaml` con corpus en espanol: origen humano del screener, semillas no validadas, gramatica `scanner seed -> awakening -> first push -> first dip -> rebreak -> DAS sequence -> outcome`, y ruta para descubrir importancia de factores por capas.
 - Actualizado el registro de experimentos y el README del Lab. AlphaEvolve queda deshabilitado hasta que existan executor, validators, evidence reports y promotion gates.
 ## 2026-07-05 - Eliminado ARCHITECTURE_OVERVIEW y alineadas lecturas raiz
 
 - Eliminado `ARCHITECTURE_OVERVIEW.md` porque la autoridad arquitectonica vigente vive en `00_CTO/TSIS_LAB_ARCHITECTURE_v3.md`.
-- Actualizados `README.md`, `START_HERE.md`, `AGENTS.md`, `PROJECT_RULES.md`, `00_CTO/README.md`, `00_CTO/LOCAL_RULES.md`, `01_TSIS_backtest_SmallCaps/README.md` y referencias activas relacionadas.
-- La lectura raiz queda alineada con TSIS como `Scientific Discovery Engine`, `00_TSIS_Lab` como laboratorio transversal y `research_experiment` como unidad cientifica central.
+- Actualizados `README.md`, `START_HERE.md`, `AGENTS.md`, `PROJECT_RULES.md`, `00_CTO/README.md`, `00_CTO/LOCAL_RULES.md`, `01_TSIS_DATA_FOUNDATION/README.md` y referencias activas relacionadas.
+- La lectura raiz queda alineada con TSIS como `Scientific Discovery Engine`, `03_TSIS_Lab` como laboratorio transversal y `research_experiment` como unidad cientifica central.
 ## 2026-07-05 - Root operating documents aligned with TSIS v3
 
-- Updated `PROJECT_OPERATING_SYSTEM.md` to define TSIS as a Scientific Discovery Engine, add `00_TSIS_Lab`, preserve `01_TSIS_backtest_SmallCaps` as the operational SmallCaps research/backtest module, and replace the old linear flow with the v3 experiment/evidence/knowledge pipeline.
+- Updated `PROJECT_OPERATING_SYSTEM.md` to define TSIS as a Scientific Discovery Engine, add `03_TSIS_Lab`, preserve `01_TSIS_DATA_FOUNDATION` as the operational SmallCaps research/backtest module, and replace the old linear flow with the v3 experiment/evidence/knowledge pipeline.
 - Updated `RESEARCH_PHILOSOPHY.md` as the root philosophy synthesis while leaving `00_CTO/01_RESEARCH_PHILOSOPHY/` as the deeper CTO library.
 - Updated `VERSIONING_STANDARDS.md` with versioning rules for `research_experiment`, sampling probes, parameter sweeps, evidence reports, knowledge objects, representation candidates, and AlphaEvolve/autonomous generator runs.
 ## 2026-07-05 - AlphaEvolve aligned with Scientific Discovery Engine
@@ -206,9 +214,9 @@
 - Created `00_CTO/TSIS_LAB_ARCHITECTURE_v3.md` as the active CTO architecture reading.
 - Reframed TSIS as a Scientific Discovery Engine with `research_experiment` as the central unit of work.
 - Updated the Market State v3 map so market_state/event_state/outcomes are the observable X/Y base for experiments, not the whole discovery architecture.
-## 2026-07-05 - TSIS Scientific Discovery Engine / 00_TSIS_Lab
+## 2026-07-05 - TSIS Scientific Discovery Engine / 03_TSIS_Lab
 
-- Created `00_TSIS_Lab/` as the central operational lab for reproducible TSIS research experiments.
+- Created `03_TSIS_Lab/` as the central operational lab for reproducible TSIS research experiments.
 - Added initial lab contracts, registries, templates, and seed experiment `EXP_INTRADAY_MOMENTUM_EXTENSION_0001`.
 - Added Research Philosophy documents under `00_CTO/01_RESEARCH_PHILOSOPHY/` to define TSIS as a Scientific Discovery Engine.
 - Clarified that AlphaEvolve is a candidate experiment generator, not the authority; scientific validation remains the acceptance layer.
@@ -217,7 +225,7 @@
 - Promoted `E:/TSIS/data/README.md` to mandatory base reading for agents.
 - Declared `E:/TSIS/data/ohlcv_1m` as the canonical physical root for minute/OHLCV 1m work.
 - Reason: prevent future agents from using historical minute roots, treating raw 1m as corrected in place, or bypassing governed repair overlays after the 1m impossible-candle / quote-guarded LT1B incident.
-- Queued the semantic change in `00_CTO/GRAPHIFY_REFRESH_QUEUE.md` and `01_TSIS_backtest_SmallCaps/01_foundations/GRAPHIFY_REFRESH_QUEUE.md` for the next official Graphify refresh.
+- Queued the semantic change in `00_CTO/GRAPHIFY_REFRESH_QUEUE.md` and `01_TSIS_DATA_FOUNDATION/01_foundations/GRAPHIFY_REFRESH_QUEUE.md` for the next official Graphify refresh.
 
 ## 2026-06-29 - Master intraday quote-guarded candidate route
 
@@ -227,7 +235,7 @@
 - Declared the active bridge lineage:
 
 ```text
-repair_run_root = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838
+repair_run_root = C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838
 minute_root = E:/TSIS/data/ohlcv_1m
 quotes_root = D:/quotes
 future_official_root = E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded
@@ -246,8 +254,8 @@ future_official_root = E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guard
 - Added controlled candidate builders for the state-table loop:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_market_state_table.py --materialize-candidate
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_event_state_table.py --materialize-candidate
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/materialize_market_state_table.py --materialize-candidate
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/materialize_event_state_table.py --materialize-candidate
 ```
 
 - Materialized candidate outputs under the governed E-root output area:
@@ -278,13 +286,13 @@ python -m pytest tests/data_foundation_outputs/test_market_state_table_contract.
 - Added the Module 01 builder for controlled daily scanner replay:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_daily_scanner_candidates_table.py
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/materialize_daily_scanner_candidates_table.py
 ```
 
 - Added deterministic builder smoke test:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder.py
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder.py
 ```
 
 - Ran the first controlled replay, not an official E-root materialization:
@@ -304,7 +312,7 @@ C:/TSIS_Data/tests/test_runs/2026-06-29/daily_scanner_candidates_replay_20250102
 - Added the research-only notebook explorer:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/notebooks/data_foundation_outputs/daily_scanner_candidates_replay_view_v0_1.ipynb
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/notebooks/data_foundation_outputs/daily_scanner_candidates_replay_view_v0_1.ipynb
 ```
 
 ## 2026-06-29 - Scanner framework and DAS discovery protection
@@ -312,7 +320,7 @@ C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/notebooks/data_foundation_ou
 - Added the Module 01 Data Foundation scanner framework contract:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_1.md
 ```
 
 - Added two governed scanner-definition configs for
@@ -353,7 +361,7 @@ daily_scanner_candidates_table_v0_1
 - Added the Module 01 Data Foundation policy:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/market_state_coverage_and_lookback_policy_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/market_state_coverage_and_lookback_policy_v0_1.md
 ```
 
 - The policy makes explicit that daily in-play/scanner ticker-days are not
@@ -397,7 +405,7 @@ C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/
 - Built the `00_data_certification` topology refresh leaf at:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/graphify-out/leaf_slices/certification_decisions_topology_20260629/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/graphify-out/leaf_slices/certification_decisions_topology_20260629/
 ```
 
 - Build result: 88 corpus files, 122 nodes, 653 edges, 11 communities, clean
@@ -810,10 +818,10 @@ Decision TSIS -> Evidencia directa -> Obligacion tecnica -> Limitacion abierta
 ### Added
 
 - Published the first official Graphify leaf for `01_foundations`:
-  `01_TSIS_backtest_SmallCaps/01_foundations/graphify-out/leaf_slices/foundations_authority_20260619/`.
+  `01_TSIS_DATA_FOUNDATION/01_foundations/graphify-out/leaf_slices/foundations_authority_20260619/`.
 - Published the first official Graphify leaf for RAW data certification
   decisions:
-  `01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/graphify-out/leaf_slices/certification_decisions_20260619/`.
+  `01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/graphify-out/leaf_slices/certification_decisions_20260619/`.
 - Versioned Graphify governance files for `01_foundations` and
   `00_data_certification`, including build protocols, refresh queues and
   module-local graphify contracts.
