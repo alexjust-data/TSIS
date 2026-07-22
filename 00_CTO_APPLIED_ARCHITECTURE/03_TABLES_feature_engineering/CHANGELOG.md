@@ -1,3 +1,10 @@
+## 2026-07-22 | phase b | Scale A eligible representation surface design closed
+
+- Added `06_MARKET_STATE_INTEGRATION/core_four_scale_a_eligible_representation_surface_design_v0_1.md` and `core_four_scale_a_eligible_representation_surface_design_contract_v0_1.json`.
+- Decision: `core_four_scale_a_eligible_representation_surface_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS`; next allowed gate is `experimental_core_four_scale_a_eligible_representation_surface_authorization_v0_1`.
+- The design remediates the accepted `BLOCKED_SAMPLE_CARDINALITY` preflight by defining a governed, policy-selected eligible instrument pool requirement: minimum 10 eligible instruments, target 8 Scale A sample instruments, maximum 20 eligible instruments, maximum 10 sessions considered and a future 500000 source-row cap.
+- Boundary preserved: no 014 expansion, eligible-pool construction, Scale A preflight rerun, builders, integration, materialization, parquet write, production, official Market State, downstream consumption, full-history/full-universe execution or promotion was authorized.
+
 ## 2026-07-22 | phase b | Scale A sample preflight blocked by source cardinality
 
 - Added `06_MARKET_STATE_INTEGRATION/scripts/experimental_core_four_market_state_scale_a_sample_preflight.py` and `experimental_core_four_market_state_scale_a_sample_preflight_readout_v0_1.md`.

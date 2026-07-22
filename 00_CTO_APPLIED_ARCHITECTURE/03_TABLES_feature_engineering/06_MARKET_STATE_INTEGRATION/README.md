@@ -377,6 +377,42 @@ The preflight did not freeze the 60-context sample because the authorized 014 ca
 
 The preflight attempts at `runs/experimental_core_four_market_state_scale_a_sample_preflight_v0_1_20260722T123132Z/` and `runs/experimental_core_four_market_state_scale_a_sample_preflight_v0_1_20260722T123330Z/` are superseded by the accepted run above. They reached the same cardinality blocker but are not accepted closure evidence because the first used a non-zero process exit for a governed blocked status and the second had an imprecise stratification finding.
 
+## Core Four Scale A Eligible Representation Surface Design
+
+```text
+design = core_four_scale_a_eligible_representation_surface_design_v0_1.md
+contract = core_four_scale_a_eligible_representation_surface_design_contract_v0_1.json
+core_four_scale_a_eligible_representation_surface_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
+experimental_core_four_scale_a_eligible_representation_surface_authorization = NOT_OPEN_NEXT
+experimental_core_four_scale_a_eligible_representation_surface_construction = NOT_AUTHORIZED
+eligible_instrument_pool = NOT_CONSTRUCTED
+```
+
+The blocked Scale A preflight revealed a missing governed layer: an eligible
+representation surface for the experiment. The problem is not merely that more
+tickers are needed; Scale A requires a minimum multi-instrument surface to test
+grain, identity, lineage, schema stability and deterministic rebuild.
+
+The design defines `core_four_scale_a_eligible_representation_surface_v0_1`
+and `core_four_scale_a_eligibility_rule_v0_1`. A future construction run must
+produce a policy-selected eligible pool, not a manually chosen ticker list.
+
+Target future pool limits:
+
+```text
+minimum_eligible_instrument_pool = 10
+target_scale_a_sample_instruments = 8
+maximum_eligible_instrument_pool = 20
+target_scale_a_sample_sessions = 5
+maximum_sessions_considered = 10
+maximum_source_market_data_rows_read = 500000
+```
+
+The design remains non-executive. It does not authorize 014 expansion,
+eligible-pool construction, sample preflight rerun, builders, integration,
+materialization, parquet writing, production, promotion or downstream
+consumption.
+
 ## Preserved Restrictions
 
 ```text
@@ -389,15 +425,18 @@ quote_dependent_objects_remain_blocked
 
 ## Next Gate
 
-Scale A authorization remains open with restrictions, but the sample preflight is blocked:
+Scale A authorization remains open with restrictions, but the sample preflight is blocked until an eligible representation surface is authorized, constructed and accepted:
 
 ```text
-experimental_core_four_market_state_scale_a_authorization = AUTHORIZED_WITH_RESTRICTIONS
+core_four_scale_a_eligible_representation_surface_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
+experimental_core_four_scale_a_eligible_representation_surface_authorization = NOT_OPEN_NEXT
+experimental_core_four_scale_a_eligible_representation_surface_construction = NOT_AUTHORIZED
+eligible_instrument_pool = NOT_CONSTRUCTED
 experimental_core_four_market_state_scale_a_sample_preflight = BLOCKED_SAMPLE_CARDINALITY
 experimental_core_four_market_state_scale_a_execution = BLOCKED_NOT_STARTED
 ```
 
-The next allowed work is to adjust the authorized source surface or amend the Scale A authorization/scope, then rerun `experimental_core_four_market_state_scale_a_sample_preflight_v0_1`. Do not start Scale A builder, integration, materialization or physical validation until a preflight freezes an explicit 60-context sample fingerprint.
+The next allowed work is `experimental_core_four_scale_a_eligible_representation_surface_authorization_v0_1`. Do not construct the pool, expand 014, rerun the Scale A sample preflight, start builders, run integration, materialize parquet or open physical validation until that authorization exists.
 
 Still closed:
 

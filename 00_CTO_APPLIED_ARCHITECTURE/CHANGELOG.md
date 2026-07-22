@@ -1,3 +1,9 @@
+## 2026-07-22 | phase b | Scale A eligible representation surface design closed
+
+- Added the governed eligible representation surface design under `03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/`.
+- The design treats the Scale A cardinality blocker as an experimental-surface eligibility problem rather than a manual ticker-selection problem.
+- Boundary preserved: construction, 014 expansion, Scale A execution, Market State promotion, production and downstream consumption remain closed pending explicit authorization.
+
 ## 2026-07-22 | phase b | Scale A sample preflight blocked by source cardinality
 
 - Added the bounded Scale A sample preflight script and readout under `03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/`.

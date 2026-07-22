@@ -1,8 +1,8 @@
 # 03_TABLES_feature_engineering - Agent Handoff Prompt
 
-Status: `agent_handoff_prompt_v0_8`
+Status: `agent_handoff_prompt_v0_9`
 Date: `2026-07-22`
-Scope: `tsis_market_ontology_v1_frozen_phase_b_core_four_scale_a_sample_preflight_blocked`
+Scope: `tsis_market_ontology_v1_frozen_phase_b_core_four_scale_a_eligible_surface_design_closed`
 
 Este documento es el prompt local de continuidad para agentes que trabajen en:
 
@@ -28,6 +28,10 @@ core_four_market_state_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICT
 core_four_market_state_bounded_scaling_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
 experimental_core_four_market_state_scale_a_authorization = AUTHORIZED_WITH_RESTRICTIONS
 experimental_core_four_market_state_scale_a_sample_preflight = BLOCKED_SAMPLE_CARDINALITY
+core_four_scale_a_eligible_representation_surface_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
+experimental_core_four_scale_a_eligible_representation_surface_authorization = NOT_OPEN_NEXT
+experimental_core_four_scale_a_eligible_representation_surface_construction = NOT_AUTHORIZED
+eligible_instrument_pool = NOT_CONSTRUCTED
 experimental_core_four_market_state_scale_a_execution = BLOCKED_NOT_STARTED
 ```
 
@@ -38,6 +42,8 @@ experimental_core_four_market_state_scale_a_sample_preflight_v0_1_20260722T12385
 ```
 
 El preflight comprobo 5 sesiones compatibles con el guard fijo UTC, pero no congelo la muestra de 60 contextos porque la superficie 014 autorizada contiene solo 3 tickers intradia y solo 1 instrumento elegible bajo el guard de calendario. No ejecutar builders, integracion, materializacion ni validacion fisica Scale A hasta ajustar la fuente autorizada o el scope y rerun del preflight.
+
+Se cerro el diseno `core_four_scale_a_eligible_representation_surface_design_v0_1` para modelar esa remediacion como una superficie elegible gobernada. El siguiente gate permitido es `experimental_core_four_scale_a_eligible_representation_surface_authorization_v0_1`; no construir el pool, expandir 014 ni rerunear preflight hasta que exista esa autorizacion.
 
 ## 1. Prompt De Arranque Para El Agente
 
@@ -61,9 +67,10 @@ authorization y materialization execution ya quedaron cerrados o emitidos con
 restricciones.
 
 El siguiente gate posible es
-`core_four_market_state_candidate_physical_validation`, como revision de la
-evidencia fisica candidata ya generada. No implica produccion, Market State
-oficial, consumo downstream, promocion ni full-history/full-universe execution.
+`experimental_core_four_scale_a_eligible_representation_surface_authorization_v0_1`,
+como autorizacion acotada para construir y validar el pool elegible de Scale A.
+No implica produccion, Market State oficial, consumo downstream, promocion,
+builders, integracion, materializacion ni full-history/full-universe execution.
 
 Trabaja como agente de ingenieria ontologica:
 
