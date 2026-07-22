@@ -339,6 +339,44 @@ calendar_compatibility_failures = 0 required
 
 Scale A is authorized only as a bounded non-production execution. It remains not calendar-aware validation, not full-history, not full-universe and not downstream-consumable.
 
+
+## Experimental Core Four Scale A Sample Preflight
+
+```text
+script = scripts/experimental_core_four_market_state_scale_a_sample_preflight.py
+reference_run = experimental_core_four_market_state_scale_a_sample_preflight_v0_1_20260722T123859Z
+superseded_runs = experimental_core_four_market_state_scale_a_sample_preflight_v0_1_20260722T123132Z, experimental_core_four_market_state_scale_a_sample_preflight_v0_1_20260722T123330Z
+readout = experimental_core_four_market_state_scale_a_sample_preflight_readout_v0_1.md
+experimental_core_four_market_state_scale_a_sample_preflight = BLOCKED_SAMPLE_CARDINALITY
+experimental_core_four_market_state_scale_a_execution = BLOCKED_NOT_STARTED
+```
+
+Result:
+
+```text
+requested_contexts = 60
+sample_manifest_rows = 0
+required_instruments = 8
+available_intraday_tickers = 3
+eligible_instruments = 1
+calendar_sessions_checked = 5
+calendar_compatible_sessions = 5
+calendar_compatibility_failures = 0
+expected_resolution_records = 240
+expected_blocked_contexts = 8
+expected_integrable_contexts = 52
+estimated_daily_rows = 588
+estimated_intraday_rows = 21670
+estimated_total_source_rows = 22258
+maximum_source_market_data_rows_read = 250000
+identity_failures = 0
+hard_preflight_failures = 1
+```
+
+The preflight did not freeze the 60-context sample because the authorized 014 candidate source surface contains only 3 intraday tickers and only 1 eligible instrument under the fixed UTC Scale A calendar guard. No builders were executed, no Information Object resolution records were emitted, no Market State integration ran and no parquet was written.
+
+The preflight attempts at `runs/experimental_core_four_market_state_scale_a_sample_preflight_v0_1_20260722T123132Z/` and `runs/experimental_core_four_market_state_scale_a_sample_preflight_v0_1_20260722T123330Z/` are superseded by the accepted run above. They reached the same cardinality blocker but are not accepted closure evidence because the first used a non-zero process exit for a governed blocked status and the second had an imprecise stratification finding.
+
 ## Preserved Restrictions
 
 ```text
@@ -351,14 +389,15 @@ quote_dependent_objects_remain_blocked
 
 ## Next Gate
 
-Scale A authorization is now open with restrictions:
+Scale A authorization remains open with restrictions, but the sample preflight is blocked:
 
 ```text
 experimental_core_four_market_state_scale_a_authorization = AUTHORIZED_WITH_RESTRICTIONS
-experimental_core_four_market_state_scale_a_execution = NOT_EXECUTED
+experimental_core_four_market_state_scale_a_sample_preflight = BLOCKED_SAMPLE_CARDINALITY
+experimental_core_four_market_state_scale_a_execution = BLOCKED_NOT_STARTED
 ```
 
-The next allowed work is bounded Scale A execution planning/implementation under the exact scope above. No production, promotion, full-history, full-universe, Scale B or Scale C authority is opened.
+The next allowed work is to adjust the authorized source surface or amend the Scale A authorization/scope, then rerun `experimental_core_four_market_state_scale_a_sample_preflight_v0_1`. Do not start Scale A builder, integration, materialization or physical validation until a preflight freezes an explicit 60-context sample fingerprint.
 
 Still closed:
 

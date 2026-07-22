@@ -1,3 +1,10 @@
+## 2026-07-22 | phase b | Scale A sample preflight blocked by source cardinality
+
+- Added `06_MARKET_STATE_INTEGRATION/scripts/experimental_core_four_market_state_scale_a_sample_preflight.py` and `experimental_core_four_market_state_scale_a_sample_preflight_readout_v0_1.md`.
+- Executed accepted run `experimental_core_four_market_state_scale_a_sample_preflight_v0_1_20260722T123859Z`: `BLOCKED_SAMPLE_CARDINALITY`, 60 requested contexts, 0 frozen sample rows, 8 required instruments, 3 available intraday tickers and 1 eligible instrument under the fixed UTC Scale A calendar guard.
+- Evidence: 5/5 selected sessions calendar-compatible, `calendar_compatibility_failures = 0`, `identity_failures = 0`, `estimated_total_source_rows = 22258` under the 250000 row cap and no duplicate frozen contexts.
+- Boundary preserved: no builders, Information Object resolution records, Market State integration, candidate parquet, production, official Market State, downstream consumption, full-history/full-universe execution or promotion were opened. The preflight attempts `20260722T123132Z` and `20260722T123330Z` are superseded and are not closure evidence.
+
 ## 2026-07-22 | phase b | experimental core-four Market State materialization execution passed with restrictions
 
 - Added `06_MARKET_STATE_INTEGRATION/scripts/core_four_market_state_materialization_probe.py` and `experimental_core_four_market_state_materialization_execution_readout_v0_1.md`.

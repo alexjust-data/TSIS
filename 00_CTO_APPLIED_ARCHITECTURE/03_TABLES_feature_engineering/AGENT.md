@@ -1,8 +1,8 @@
 # 03_TABLES_feature_engineering - Agent Handoff Prompt
 
-Status: `agent_handoff_prompt_v0_7`
+Status: `agent_handoff_prompt_v0_8`
 Date: `2026-07-22`
-Scope: `tsis_market_ontology_v1_frozen_phase_b_core_four_materialization_execution_closed`
+Scope: `tsis_market_ontology_v1_frozen_phase_b_core_four_scale_a_sample_preflight_blocked`
 
 Este documento es el prompt local de continuidad para agentes que trabajen en:
 
@@ -19,6 +19,25 @@ C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\LOCAL_RULES.md
 ```
 
 Si hay conflicto, manda la autoridad superior.
+
+
+## 0. Estado Vigente 2026-07-22
+
+```text
+core_four_market_state_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICTIONS
+core_four_market_state_bounded_scaling_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_a_sample_preflight = BLOCKED_SAMPLE_CARDINALITY
+experimental_core_four_market_state_scale_a_execution = BLOCKED_NOT_STARTED
+```
+
+Run aceptado:
+
+```text
+experimental_core_four_market_state_scale_a_sample_preflight_v0_1_20260722T123859Z
+```
+
+El preflight comprobo 5 sesiones compatibles con el guard fijo UTC, pero no congelo la muestra de 60 contextos porque la superficie 014 autorizada contiene solo 3 tickers intradia y solo 1 instrumento elegible bajo el guard de calendario. No ejecutar builders, integracion, materializacion ni validacion fisica Scale A hasta ajustar la fuente autorizada o el scope y rerun del preflight.
 
 ## 1. Prompt De Arranque Para El Agente
 

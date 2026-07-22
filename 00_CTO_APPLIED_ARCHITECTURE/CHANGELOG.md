@@ -1,3 +1,9 @@
+## 2026-07-22 | phase b | Scale A sample preflight blocked by source cardinality
+
+- Added the bounded Scale A sample preflight script and readout under `03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/`.
+- Run `experimental_core_four_market_state_scale_a_sample_preflight_v0_1_20260722T123859Z` closed as `BLOCKED_SAMPLE_CARDINALITY`: the authorized 014 candidate surface exposes only 3 intraday tickers and only 1 eligible instrument under the fixed UTC Scale A calendar guard, so no 60-context sample fingerprint was frozen.
+- Boundary preserved: no builder execution, State integration, parquet materialization, production, downstream consumption, full-history/full-universe execution or promotion was authorized.
+
 ## 2026-07-22 | phase b | experimental core-four Market State materialization execution passed with restrictions
 
 - Added the bounded non-production materializer and execution readout under `03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/`.
