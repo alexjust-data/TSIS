@@ -1,0 +1,603 @@
+{
+  "scope_id": "experimental_core_four_market_state_materialization_scope_v0_1",
+  "mode": "experimental_core_four_market_state_materialization_execution",
+  "scope_status": "authorized_bounded_non_production_candidate_materialization",
+  "created_at_utc": "2026-07-22T00:00:00Z",
+  "authorization_artifact": "../experimental_core_four_market_state_materialization_authorization_v0_1.md",
+  "design_artifact": "../core_four_market_state_materialization_design_v0_1.md",
+  "design_contract_path": "../core_four_market_state_materialization_design_contract_v0_1.json",
+  "logical_profile_id": "core_four_market_state_profile_v0_1",
+  "physical_schema_id": "core_four_market_state_candidate_physical_schema_v0_1",
+  "source_integration_profile_id": "market_state_core_four_intraday_experimental_v0_1",
+  "source_integration_run_id": "experimental_core_four_market_state_integration_execution_v0_1_20260721T203448Z",
+  "input_artifacts": {
+    "market_state_candidate_records": "../runs/experimental_core_four_market_state_integration_execution_v0_1_20260721T203448Z/market_state_candidate_records.jsonl",
+    "integration_context_report": "../runs/experimental_core_four_market_state_integration_execution_v0_1_20260721T203448Z/integration_context_report.csv",
+    "integration_value_manifest": "../runs/experimental_core_four_market_state_integration_execution_v0_1_20260721T203448Z/integration_value_manifest.csv",
+    "rejected_context_report": "../runs/experimental_core_four_market_state_integration_execution_v0_1_20260721T203448Z/rejected_context_report.csv",
+    "integration_summary": "../runs/experimental_core_four_market_state_integration_execution_v0_1_20260721T203448Z/core_four_market_state_integration_execution_summary.json",
+    "integration_final_manifest": "../runs/experimental_core_four_market_state_integration_execution_v0_1_20260721T203448Z/final_manifest.json"
+  },
+  "authority": {
+    "experimental_candidate_parquet_output_allowed": true,
+    "candidate_parquet_filename": "core_four_market_state_candidate_v0_1.parquet",
+    "source_market_data_reread_allowed": false,
+    "filesystem_market_data_reads_allowed": false,
+    "full_history_execution_allowed": false,
+    "full_universe_execution_allowed": false,
+    "production_builder_allowed": false,
+    "state_consumption_allowed": false,
+    "downstream_consumption_allowed": false,
+    "dataset_promotion_allowed": false,
+    "official_market_state_allowed": false,
+    "official_state_table_write_allowed": false
+  },
+  "limits": {
+    "maximum_input_candidate_records": 8,
+    "maximum_output_candidate_rows": 8,
+    "maximum_input_rejected_context_records": 2,
+    "maximum_source_market_data_rows_read": 0,
+    "maximum_candidate_parquet_files": 1,
+    "maximum_output_bytes": 1000000
+  },
+  "output_policy": {
+    "output_root": "../runs",
+    "run_id_prefix": "experimental_core_four_market_state_materialization_v0_1",
+    "allowed_outputs": [
+      "pre_manifest.json",
+      "heartbeat.json",
+      "core_four_market_state_candidate_v0_1.parquet",
+      "materialization_manifest.json",
+      "schema_report.json",
+      "grain_report.csv",
+      "lineage_report.json",
+      "restriction_report.csv",
+      "fingerprint_report.csv",
+      "roundtrip_report.csv",
+      "reconciliation_report.csv",
+      "rebuild_determinism_report.json",
+      "final_manifest.json"
+    ],
+    "official_dataset_root_allowed": false,
+    "production_dataset_root_allowed": false,
+    "candidate_records_are_canonical_market_state": false,
+    "candidate_rows_are_downstream_consumable": false
+  },
+  "json_serialization": {
+    "physical_type": "canonical_utf8_json_string",
+    "sort_keys": true,
+    "ensure_ascii": true,
+    "separators": [
+      ",",
+      ":"
+    ],
+    "insignificant_whitespace_allowed": false,
+    "arrow_struct_map_or_list_allowed_for_this_gate": false,
+    "fields": [
+      "source_lineage_json",
+      "policy_versions_json",
+      "formula_versions_json",
+      "restriction_codes_json"
+    ],
+    "field_rules": {
+      "source_lineage_json": "canonical JSON string over shared_source_evidence and object_record_ids using sorted keys and compact separators",
+      "policy_versions_json": "canonical JSON string copied from accepted candidate record policy_versions using sorted keys and compact separators",
+      "formula_versions_json": "canonical JSON string over closed physical value-column formula_id mapping using sorted keys and compact separators",
+      "restriction_codes_json": "canonical JSON array from accepted candidate record restrictions after lexical sort and deduplication"
+    }
+  },
+  "physical_schema": {
+    "schema_inference_from_sample_allowed": false,
+    "schema_first_records_second": true,
+    "primary_key": [
+      "instrument_id",
+      "decision_timestamp_utc",
+      "state_profile_id",
+      "state_schema_version"
+    ],
+    "column_order": [
+      "materialized_state_candidate_id",
+      "state_profile_id",
+      "state_schema_version",
+      "materialization_run_id",
+      "source_integration_run_id",
+      "source_candidate_record_id",
+      "source_integration_profile_id",
+      "instrument_id",
+      "ticker",
+      "session_date",
+      "decision_timestamp_utc",
+      "decision_case",
+      "context_id",
+      "integration_status",
+      "object_completeness_status",
+      "quality_status",
+      "price_location_structure__daily_open_price",
+      "price_location_structure__daily_prior_close",
+      "price_location_structure__intraday_bar_close_price",
+      "price_location_structure__intraday_return_vs_prior_close_ratio_as_location",
+      "price_location_structure__intraday_return_vs_session_open_ratio_as_location",
+      "price_movement__daily_gap_pct",
+      "price_movement__daily_prior_close",
+      "price_movement__intraday_bar_close_price",
+      "price_movement__intraday_return_vs_prior_close_ratio",
+      "price_movement__intraday_return_vs_session_open_ratio",
+      "trading_activity__session_volume_to_time_over_prior_20_full_session_volume_mean",
+      "trading_activity__daily_volume_20d_avg",
+      "trading_activity__intraday_bar_volume",
+      "trading_activity__intraday_session_volume_to_time",
+      "volatility_range_state__intraday_high_so_far",
+      "volatility_range_state__intraday_low_so_far",
+      "volatility_range_state__intraday_range_so_far_ratio",
+      "calendar_version",
+      "source_lineage_json",
+      "policy_versions_json",
+      "formula_versions_json",
+      "restriction_codes_json",
+      "context_input_fingerprint",
+      "state_output_fingerprint"
+    ],
+    "base_columns": [
+      {
+        "physical_name": "materialized_state_candidate_id",
+        "type": "string",
+        "nullable": false,
+        "source": "derived_stable_hash"
+      },
+      {
+        "physical_name": "state_profile_id",
+        "type": "string",
+        "nullable": false,
+        "source": "constant:core_four_market_state_profile_v0_1"
+      },
+      {
+        "physical_name": "state_schema_version",
+        "type": "string",
+        "nullable": false,
+        "source": "constant:core_four_market_state_candidate_physical_schema_v0_1"
+      },
+      {
+        "physical_name": "materialization_run_id",
+        "type": "string",
+        "nullable": false,
+        "source": "future_execution_run_id"
+      },
+      {
+        "physical_name": "source_integration_run_id",
+        "type": "string",
+        "nullable": false,
+        "source": "constant:experimental_core_four_market_state_integration_execution_v0_1_20260721T203448Z"
+      },
+      {
+        "physical_name": "source_candidate_record_id",
+        "type": "string",
+        "nullable": false,
+        "source": "market_state_candidate_id"
+      },
+      {
+        "physical_name": "source_integration_profile_id",
+        "type": "string",
+        "nullable": false,
+        "source": "market_state_profile_id"
+      },
+      {
+        "physical_name": "instrument_id",
+        "type": "string",
+        "nullable": false,
+        "source": "instrument_id"
+      },
+      {
+        "physical_name": "ticker",
+        "type": "string",
+        "nullable": false,
+        "source": "ticker"
+      },
+      {
+        "physical_name": "session_date",
+        "type": "date32",
+        "nullable": false,
+        "source": "session_date"
+      },
+      {
+        "physical_name": "decision_timestamp_utc",
+        "type": "timestamp[us, UTC]",
+        "nullable": false,
+        "source": "decision_timestamp_utc"
+      },
+      {
+        "physical_name": "decision_case",
+        "type": "string",
+        "nullable": false,
+        "source": "decision_case"
+      },
+      {
+        "physical_name": "context_id",
+        "type": "string",
+        "nullable": false,
+        "source": "context_id"
+      },
+      {
+        "physical_name": "integration_status",
+        "type": "string",
+        "nullable": false,
+        "source": "integration_status"
+      },
+      {
+        "physical_name": "object_completeness_status",
+        "type": "string",
+        "nullable": false,
+        "source": "derived:COMPLETE_REQUIRED_OBJECTS_WITH_RESTRICTIONS"
+      },
+      {
+        "physical_name": "quality_status",
+        "type": "string",
+        "nullable": false,
+        "source": "derived:PASS_WITH_RESTRICTIONS"
+      }
+    ],
+    "value_columns": [
+      {
+        "physical_name": "price_location_structure__daily_open_price",
+        "source_value_field": "price_location_structure__daily_open_price",
+        "object_id": "price_location_structure",
+        "logical_capability": "daily__open_price",
+        "formula_id": "daily_open_price_after_session_open_v0_1",
+        "type": "float64",
+        "nullable": false
+      },
+      {
+        "physical_name": "price_location_structure__daily_prior_close",
+        "source_value_field": "price_location_structure__daily_prior_close",
+        "object_id": "price_location_structure",
+        "logical_capability": "daily__prior_close",
+        "formula_id": "daily_prior_close_value_v0_1",
+        "type": "float64",
+        "nullable": false
+      },
+      {
+        "physical_name": "price_location_structure__intraday_bar_close_price",
+        "source_value_field": "price_location_structure__intraday_bar_close_price",
+        "object_id": "price_location_structure",
+        "logical_capability": "intraday__bar_close_price",
+        "formula_id": "selected_closed_bar_close_v0_1",
+        "type": "float64",
+        "nullable": false
+      },
+      {
+        "physical_name": "price_location_structure__intraday_return_vs_prior_close_ratio_as_location",
+        "source_value_field": "price_location_structure__intraday_return_vs_prior_close_ratio_as_location",
+        "object_id": "price_location_structure",
+        "logical_capability": "intraday__return_vs_prior_close_ratio_as_location",
+        "formula_id": "location_closed_bar_close_over_prior_close_minus_one_v0_1",
+        "type": "float64",
+        "nullable": false
+      },
+      {
+        "physical_name": "price_location_structure__intraday_return_vs_session_open_ratio_as_location",
+        "source_value_field": "price_location_structure__intraday_return_vs_session_open_ratio_as_location",
+        "object_id": "price_location_structure",
+        "logical_capability": "intraday__return_vs_session_open_ratio_as_location",
+        "formula_id": "location_closed_bar_close_over_session_open_minus_one_v0_1",
+        "type": "float64",
+        "nullable": false
+      },
+      {
+        "physical_name": "price_movement__daily_gap_pct",
+        "source_value_field": "price_movement__daily_gap_pct",
+        "object_id": "price_movement",
+        "logical_capability": "daily__gap_pct",
+        "formula_id": "daily_open_over_prior_close_minus_one_v0_1",
+        "type": "float64",
+        "nullable": false
+      },
+      {
+        "physical_name": "price_movement__daily_prior_close",
+        "source_value_field": "price_movement__daily_prior_close",
+        "object_id": "price_movement",
+        "logical_capability": "daily__prior_close",
+        "formula_id": "daily_prior_close_value_v0_1",
+        "type": "float64",
+        "nullable": false
+      },
+      {
+        "physical_name": "price_movement__intraday_bar_close_price",
+        "source_value_field": "price_movement__intraday_bar_close_price",
+        "object_id": "price_movement",
+        "logical_capability": "intraday__bar_close_price",
+        "formula_id": "selected_closed_bar_close_v0_1",
+        "type": "float64",
+        "nullable": false
+      },
+      {
+        "physical_name": "price_movement__intraday_return_vs_prior_close_ratio",
+        "source_value_field": "price_movement__intraday_return_vs_prior_close_ratio",
+        "object_id": "price_movement",
+        "logical_capability": "intraday__return_vs_prior_close_ratio",
+        "formula_id": "closed_bar_close_over_prior_close_minus_one_v0_1",
+        "type": "float64",
+        "nullable": false
+      },
+      {
+        "physical_name": "price_movement__intraday_return_vs_session_open_ratio",
+        "source_value_field": "price_movement__intraday_return_vs_session_open_ratio",
+        "object_id": "price_movement",
+        "logical_capability": "intraday__return_vs_session_open_ratio",
+        "formula_id": "closed_bar_close_over_session_open_minus_one_v0_1",
+        "type": "float64",
+        "nullable": false
+      },
+      {
+        "physical_name": "trading_activity__session_volume_to_time_over_prior_20_full_session_volume_mean",
+        "source_value_field": "trading_activity__daily_rvol_20d",
+        "object_id": "trading_activity",
+        "logical_capability": "daily__rvol_20d",
+        "formula_id": "session_volume_to_time_over_prior_20_volume_mean_v0_1",
+        "type": "float64",
+        "nullable": false,
+        "semantic_note": "Do not expose as generic rvol_20d without this exact formula metadata."
+      },
+      {
+        "physical_name": "trading_activity__daily_volume_20d_avg",
+        "source_value_field": "trading_activity__daily_volume_20d_avg",
+        "object_id": "trading_activity",
+        "logical_capability": "daily__volume_20d_avg",
+        "formula_id": "prior_20_session_volume_mean_v0_1",
+        "type": "float64",
+        "nullable": false
+      },
+      {
+        "physical_name": "trading_activity__intraday_bar_volume",
+        "source_value_field": "trading_activity__intraday_bar_volume",
+        "object_id": "trading_activity",
+        "logical_capability": "intraday__bar_volume",
+        "formula_id": "selected_closed_bar_volume_v0_1",
+        "type": "float64",
+        "nullable": false
+      },
+      {
+        "physical_name": "trading_activity__intraday_session_volume_to_time",
+        "source_value_field": "trading_activity__intraday_session_volume_to_time",
+        "object_id": "trading_activity",
+        "logical_capability": "intraday__session_volume_to_time",
+        "formula_id": "closed_bar_session_volume_sum_v0_1",
+        "type": "float64",
+        "nullable": false
+      },
+      {
+        "physical_name": "volatility_range_state__intraday_high_so_far",
+        "source_value_field": "volatility_range_state__intraday_high_so_far",
+        "object_id": "volatility_range_state",
+        "logical_capability": "intraday__high_so_far",
+        "formula_id": "closed_bar_high_so_far_max_v0_1",
+        "type": "float64",
+        "nullable": false
+      },
+      {
+        "physical_name": "volatility_range_state__intraday_low_so_far",
+        "source_value_field": "volatility_range_state__intraday_low_so_far",
+        "object_id": "volatility_range_state",
+        "logical_capability": "intraday__low_so_far",
+        "formula_id": "closed_bar_low_so_far_min_v0_1",
+        "type": "float64",
+        "nullable": false
+      },
+      {
+        "physical_name": "volatility_range_state__intraday_range_so_far_ratio",
+        "source_value_field": "volatility_range_state__intraday_range_so_far_ratio",
+        "object_id": "volatility_range_state",
+        "logical_capability": "intraday__range_so_far_ratio",
+        "formula_id": "high_so_far_over_low_so_far_minus_one_v0_1",
+        "type": "float64",
+        "nullable": false
+      }
+    ],
+    "lineage_columns": [
+      {
+        "physical_name": "calendar_version",
+        "type": "string",
+        "nullable": false,
+        "source": "constant:fixed_utc_probe_calendar_v0_1"
+      },
+      {
+        "physical_name": "source_lineage_json",
+        "type": "canonical_utf8_json_string",
+        "nullable": false,
+        "source": "canonical_json(shared_source_evidence, object_record_ids)"
+      },
+      {
+        "physical_name": "policy_versions_json",
+        "type": "canonical_utf8_json_string",
+        "nullable": false,
+        "source": "canonical_json(policy_versions)"
+      },
+      {
+        "physical_name": "formula_versions_json",
+        "type": "canonical_utf8_json_string",
+        "nullable": false,
+        "source": "canonical_json(value_columns[].formula_id)"
+      },
+      {
+        "physical_name": "restriction_codes_json",
+        "type": "canonical_utf8_json_string",
+        "nullable": false,
+        "source": "canonical_json(restrictions)"
+      },
+      {
+        "physical_name": "context_input_fingerprint",
+        "type": "sha256_hex_string",
+        "nullable": false,
+        "source": "context_input_fingerprint"
+      },
+      {
+        "physical_name": "state_output_fingerprint",
+        "type": "sha256_hex_string",
+        "nullable": false,
+        "source": "derived_state_output_fingerprint"
+      }
+    ]
+  },
+  "required_object_ids": [
+    "trading_activity",
+    "price_movement",
+    "price_location_structure",
+    "volatility_range_state"
+  ],
+  "required_candidate_input_statuses": [
+    "INTEGRABLE_COMPLETE_WITH_RESTRICTIONS"
+  ],
+  "derived_field_rules": {
+    "state_profile_id": "constant core_four_market_state_profile_v0_1",
+    "source_integration_profile_id": "copy market_state_profile_id from candidate record",
+    "source_candidate_record_id": "copy market_state_candidate_id from candidate record",
+    "object_completeness_status": "derive COMPLETE_REQUIRED_OBJECTS_WITH_RESTRICTIONS only after exactly four required object ids are present",
+    "quality_status": "derive PASS_WITH_RESTRICTIONS for emitted bounded candidate rows",
+    "calendar_version": "constant fixed_utc_probe_calendar_v0_1",
+    "source_lineage_json": "canonical JSON over shared_source_evidence and object_record_ids",
+    "formula_versions_json": "canonical JSON over closed value column formula_id mapping",
+    "state_output_fingerprint": "sha256 over state_output_fingerprint_payload fields only; excludes materialized_state_candidate_id, materialization_run_id, state_output_fingerprint and parquet metadata",
+    "materialized_state_candidate_id": "stable hash over state_profile_id, state_schema_version, instrument_id, decision_timestamp_utc, context_input_fingerprint and state_output_fingerprint",
+    "policy_versions_json": "canonical JSON copied from the accepted candidate record policy_versions",
+    "restriction_codes_json": "canonical JSON array of the accepted restriction-code set, sorted lexicographically and deduplicated"
+  },
+  "validation_requirements": {
+    "input_candidate_records_must_equal": 8,
+    "output_candidate_rows_must_equal": 8,
+    "rejected_contexts_materialized_as_rows_must_equal": 0,
+    "source_market_data_rows_read_must_equal": 0,
+    "candidate_parquet_files_written_must_equal": 1,
+    "duplicate_primary_keys_must_equal": 0,
+    "missing_required_columns_must_equal": 0,
+    "extra_columns_must_equal": 0,
+    "namespace_collisions_must_equal": 0,
+    "non_nullable_nulls_must_equal": 0,
+    "type_coercion_failures_must_equal": 0,
+    "lineage_losses_must_equal": 0,
+    "restriction_losses_must_equal": 0,
+    "fingerprint_mismatches_must_equal": 0,
+    "jsonl_to_candidate_parquet_roundtrip_required": true,
+    "rebuild_determinism_required": false,
+    "semantic_rebuild_differences_must_equal": 0,
+    "byte_identical_parquet_rebuild_required": false,
+    "roundtrip_failures_must_equal": 0,
+    "roundtrip_includes_materialization_run_id_within_same_run": true,
+    "semantic_rebuild_determinism_required": true
+  },
+  "fingerprint_contract": {
+    "state_output_fingerprint_algorithm": "sha256",
+    "state_output_fingerprint_payload_fields_are_exact": true,
+    "state_output_fingerprint_payload_fields": [
+      "state_profile_id",
+      "state_schema_version",
+      "source_integration_profile_id",
+      "instrument_id",
+      "ticker",
+      "session_date",
+      "decision_timestamp_utc",
+      "decision_case",
+      "context_id",
+      "integration_status",
+      "object_completeness_status",
+      "quality_status",
+      "price_location_structure__daily_open_price",
+      "price_location_structure__daily_prior_close",
+      "price_location_structure__intraday_bar_close_price",
+      "price_location_structure__intraday_return_vs_prior_close_ratio_as_location",
+      "price_location_structure__intraday_return_vs_session_open_ratio_as_location",
+      "price_movement__daily_gap_pct",
+      "price_movement__daily_prior_close",
+      "price_movement__intraday_bar_close_price",
+      "price_movement__intraday_return_vs_prior_close_ratio",
+      "price_movement__intraday_return_vs_session_open_ratio",
+      "trading_activity__session_volume_to_time_over_prior_20_full_session_volume_mean",
+      "trading_activity__daily_volume_20d_avg",
+      "trading_activity__intraday_bar_volume",
+      "trading_activity__intraday_session_volume_to_time",
+      "volatility_range_state__intraday_high_so_far",
+      "volatility_range_state__intraday_low_so_far",
+      "volatility_range_state__intraday_range_so_far_ratio",
+      "calendar_version",
+      "source_lineage_json",
+      "policy_versions_json",
+      "formula_versions_json",
+      "restriction_codes_json",
+      "context_input_fingerprint"
+    ],
+    "state_output_fingerprint_excluded_fields": [
+      "materialized_state_candidate_id",
+      "materialization_run_id",
+      "state_output_fingerprint"
+    ],
+    "unlisted_physical_columns_excluded_from_state_output_fingerprint": true,
+    "canonical_payload_serialization": {
+      "format": "json",
+      "encoding": "utf-8",
+      "sort_keys": true,
+      "ensure_ascii": true,
+      "separators": [
+        ",",
+        ":"
+      ],
+      "insignificant_whitespace_allowed": false
+    },
+    "materialized_state_candidate_id_inputs": [
+      "state_profile_id",
+      "state_schema_version",
+      "instrument_id",
+      "decision_timestamp_utc",
+      "context_input_fingerprint",
+      "state_output_fingerprint"
+    ]
+  },
+  "determinism_contract": {
+    "semantic_rebuild_determinism_required": true,
+    "byte_identical_parquet_rebuild_required": false,
+    "semantic_rebuild_compare_fields": [
+      "materialized_state_candidate_id",
+      "state_profile_id",
+      "state_schema_version",
+      "source_integration_profile_id",
+      "instrument_id",
+      "ticker",
+      "session_date",
+      "decision_timestamp_utc",
+      "decision_case",
+      "context_id",
+      "integration_status",
+      "object_completeness_status",
+      "quality_status",
+      "price_location_structure__daily_open_price",
+      "price_location_structure__daily_prior_close",
+      "price_location_structure__intraday_bar_close_price",
+      "price_location_structure__intraday_return_vs_prior_close_ratio_as_location",
+      "price_location_structure__intraday_return_vs_session_open_ratio_as_location",
+      "price_movement__daily_gap_pct",
+      "price_movement__daily_prior_close",
+      "price_movement__intraday_bar_close_price",
+      "price_movement__intraday_return_vs_prior_close_ratio",
+      "price_movement__intraday_return_vs_session_open_ratio",
+      "trading_activity__session_volume_to_time_over_prior_20_full_session_volume_mean",
+      "trading_activity__daily_volume_20d_avg",
+      "trading_activity__intraday_bar_volume",
+      "trading_activity__intraday_session_volume_to_time",
+      "volatility_range_state__intraday_high_so_far",
+      "volatility_range_state__intraday_low_so_far",
+      "volatility_range_state__intraday_range_so_far_ratio",
+      "calendar_version",
+      "source_lineage_json",
+      "policy_versions_json",
+      "formula_versions_json",
+      "restriction_codes_json",
+      "context_input_fingerprint",
+      "state_output_fingerprint"
+    ],
+    "semantic_rebuild_ignored_fields": [
+      "materialization_run_id",
+      "physical_parquet_metadata",
+      "parquet_writer_version",
+      "parquet_encoding_metadata",
+      "file_creation_timestamp"
+    ],
+    "roundtrip_within_single_run_includes_materialization_run_id": true,
+    "roundtrip_scope": "rows_before_parquet_equal_rows_read_back_from_same_parquet_file"
+  }
+}

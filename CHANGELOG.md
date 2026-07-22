@@ -1,3 +1,20 @@
+## 2026-07-22 | phase b | materialization authorization scope fingerprint rules clarified
+
+- Updated the core-four materialization authorization scope to remove fingerprint circularity and define semantic rebuild determinism.
+- Added canonical policy/restriction JSON derivation rules before materializer implementation.
+- Boundary preserved: no materialization execution or parquet output occurred.
+
+## 2026-07-22 | phase b | bounded core-four Market State materialization authorization issued
+
+- Updated `00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering` with a scoped authorization for future experimental core-four candidate materialization.
+- Result: `experimental_core_four_market_state_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS`; execution is still not run.
+- Boundary preserved: no materializer, parquet output, source data reread, production builder, downstream consumption, full-history/full-universe execution or official Market State promotion occurred.
+
+## 2026-07-22 | phase b | core-four Market State materialization design closed with restrictions
+
+- Updated `00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering` with a design-only core-four Market State materialization contract.
+- Result: `core_four_market_state_materialization_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS`; the next possible step is a separate bounded authorization, not execution.
+- Boundary preserved: no parquet materialization, production builder, source data reread, downstream consumption, full-history/full-universe execution or official Market State promotion is authorized.
 
 ## 2026-07-21 | phase b | experimental core-four Market State integration execution passed with restrictions
 

@@ -1,3 +1,23 @@
+## 2026-07-22 | phase b | materialization authorization scope fingerprint rules clarified
+
+- Clarified `experimental_core_four_market_state_materialization_scope_v0_1.json` before execution: `state_output_fingerprint` now has an exact non-circular payload and explicit excluded fields.
+- Added canonical derived rules for `policy_versions_json` and `restriction_codes_json`, including sorted/deduplicated restriction serialization.
+- Split rebuild validation into semantic rebuild determinism versus byte-identical parquet determinism; byte-identical parquet rebuild is not required, while same-run parquet roundtrip remains required.
+- Boundary preserved: no materializer was created, no materialization run was opened and no parquet was written.
+
+## 2026-07-22 | phase b | bounded core-four Market State materialization authorization issued
+
+- Added `06_MARKET_STATE_INTEGRATION/experimental_core_four_market_state_materialization_authorization_v0_1.md` and `configs/experimental_core_four_market_state_materialization_scope_v0_1.json`.
+- Authorization status: `experimental_core_four_market_state_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS`; execution remains `NOT_EXECUTED`.
+- Froze the physical schema before execution: 40 total columns, 17 closed value columns, canonical UTF-8 JSON string lineage fields and no schema inference from the eight-record sample.
+- Boundary preserved: no materializer was created, no parquet was written, no source market data was reread, and production, official Market State, downstream consumption, full-history/full-universe execution and dataset promotion remain closed.
+
+## 2026-07-22 | phase b | core-four Market State materialization design closed with restrictions
+
+- Added `06_MARKET_STATE_INTEGRATION/core_four_market_state_materialization_design_v0_1.md` and `core_four_market_state_materialization_design_contract_v0_1.json`.
+- Decision: `core_four_market_state_materialization_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS`, with 8 non-canonical integration candidate records accepted only as inputs for materialization design.
+- Defined `core_four_market_state_profile_v0_1`, `core_four_market_state_candidate_physical_schema_v0_1`, grain, required namespaces, lineage, fingerprints, status/nullability rules and restriction classes.
+- Boundary preserved: no parquet write, materialization execution, production builder, source market-data reread, downstream consumption, full-history/full-universe execution, official Market State or dataset promotion was authorized. Next possible gate is `experimental_core_four_market_state_materialization_authorization_v0_1`.
 
 ## 2026-07-21 | phase b | experimental core-four Market State integration execution passed with restrictions
 

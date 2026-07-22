@@ -1,3 +1,20 @@
+## 2026-07-22 | phase b | materialization authorization scope fingerprint rules clarified
+
+- Tightened the bounded core-four materialization authorization scope with exact fingerprint payload fields, explicit fingerprint exclusions and semantic rebuild determinism rules.
+- Clarified canonical JSON derivation for policy and restriction payloads before any materializer is implemented.
+- Boundary preserved: no execution, parquet write, source data reread, official State creation, downstream consumption or promotion occurred.
+
+## 2026-07-22 | phase b | bounded core-four Market State materialization authorization issued
+
+- Added the bounded non-production materialization authorization and scope for `core_four_market_state_profile_v0_1`.
+- The scope freezes the exact physical candidate schema, including closed value columns, canonical JSON string serialization and the unambiguous RVOL physical field mapping.
+- Boundary preserved: the future execution may only consume the 8 accepted candidate JSONL records and may not reread source market data, create official State, authorize downstream consumption or promote a dataset.
+
+## 2026-07-22 | phase b | core-four Market State materialization design closed with restrictions
+
+- Added the design-only materialization contract for `core_four_market_state_profile_v0_1` under `03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/`.
+- The contract separates logical profile from physical candidate schema and classifies live restrictions as materialization blockers, promotion blockers, operational-consumption blockers or semantic restrictions.
+- Boundary preserved: the 8 candidate JSONL records from `experimental_core_four_market_state_integration_execution_v0_1_20260721T203448Z` are accepted only as design inputs; parquet writes, materialization execution, production, downstream consumption and official State promotion remain closed.
 
 ## 2026-07-21 | phase b | experimental core-four Market State integration execution passed with restrictions
 

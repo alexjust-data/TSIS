@@ -1,0 +1,242 @@
+{
+  "contract_id": "core_four_market_state_materialization_design_contract_v0_1",
+  "status": "design_ready_with_restrictions",
+  "date": "2026-07-22",
+  "scope": "design_only_no_execution",
+  "logical_profile_id": "core_four_market_state_profile_v0_1",
+  "physical_schema_id": "core_four_market_state_candidate_physical_schema_v0_1",
+  "source_integration_profile_id": "market_state_core_four_intraday_experimental_v0_1",
+  "source_integration_run_id": "experimental_core_four_market_state_integration_execution_v0_1_20260721T203448Z",
+  "source_integration_status": "PASS_WITH_RESTRICTIONS",
+  "input_candidate_records_expected": 8,
+  "rejected_contexts_expected": 2,
+  "candidate_records_accepted_for_materialization_design": true,
+  "candidate_records_are_canonical_market_state": false,
+  "candidate_records_are_downstream_consumable": false,
+  "materialization_authorized": false,
+  "parquet_write_authorized": false,
+  "production_builder_authorized": false,
+  "state_consumption_authorized": false,
+  "downstream_consumption_authorized": false,
+  "dataset_promotion_authorized": false,
+  "full_history_execution_authorized": false,
+  "full_universe_execution_authorized": false,
+  "official_market_state_authorized": false,
+  "source_market_data_reread_authorized": false,
+  "allowed_input_artifacts": [
+    "market_state_candidate_records.jsonl",
+    "integration_context_report.csv",
+    "integration_value_manifest.csv",
+    "rejected_context_report.csv",
+    "core_four_market_state_integration_execution_summary.json",
+    "final_manifest.json"
+  ],
+  "forbidden_input_artifacts": [
+    "004_master_daily_table",
+    "014_master_intraday_bar_table_candidate",
+    "raw_quotes",
+    "full_history_source_market_data",
+    "full_universe_source_market_data"
+  ],
+  "logical_profile": {
+    "profile_id": "core_four_market_state_profile_v0_1",
+    "profile_family": "experimental_market_state_candidate",
+    "profile_authority": "non_canonical_bounded_phase_b_design",
+    "required_information_objects": [
+      "trading_activity",
+      "price_movement",
+      "price_location_structure",
+      "volatility_range_state"
+    ],
+    "excluded_information_objects": [
+      "liquidity",
+      "market_microstructure_state",
+      "order_flow_pressure",
+      "news_catalyst_context",
+      "fundamental_context",
+      "short_side_context",
+      "broad_market_context",
+      "halt_context",
+      "event_window_context"
+    ],
+    "object_atomicity": "required",
+    "context_completeness": "required",
+    "blocked_required_objects_admitted": false,
+    "partial_required_object_payloads_admitted": false,
+    "complete_tsis_market_state_v1": false
+  },
+  "physical_schema": {
+    "schema_id": "core_four_market_state_candidate_physical_schema_v0_1",
+    "physical_artifact_class": "experimental_candidate",
+    "official_table_id": null,
+    "official_table_name": null,
+    "recommended_primary_key": [
+      "instrument_id",
+      "decision_timestamp_utc",
+      "state_profile_id",
+      "state_schema_version"
+    ],
+    "lineage_key_fields": [
+      "context_id",
+      "source_integration_run_id",
+      "source_candidate_record_id",
+      "materialization_run_id"
+    ],
+    "denormalized_readability_fields": [
+      "ticker"
+    ],
+    "recommended_partition_fields_for_bounded_candidate": [
+      "state_profile_id",
+      "state_schema_version",
+      "session_date"
+    ],
+    "required_identity_fields": [
+      "materialized_state_candidate_id",
+      "state_profile_id",
+      "state_schema_version",
+      "materialization_run_id",
+      "source_integration_run_id",
+      "source_candidate_record_id",
+      "instrument_id",
+      "ticker",
+      "session_date",
+      "decision_timestamp_utc",
+      "decision_case",
+      "context_id"
+    ],
+    "required_status_fields": [
+      "integration_status",
+      "object_completeness_status",
+      "quality_status"
+    ],
+    "required_lineage_fields": [
+      "source_lineage_json",
+      "policy_versions_json",
+      "formula_versions_json",
+      "calendar_version",
+      "restriction_codes_json",
+      "context_input_fingerprint",
+      "state_output_fingerprint"
+    ],
+    "value_namespaces": [
+      "trading_activity__",
+      "price_movement__",
+      "price_location_structure__",
+      "volatility_range_state__"
+    ],
+    "unnamespaced_value_columns_allowed": false,
+    "candidate_output_name_recommendation": "core_four_market_state_candidate_v0_1.parquet",
+    "official_016_market_state_table_name_allowed": false
+  },
+  "allowed_candidate_row_statuses": [
+    "INTEGRABLE_COMPLETE_WITH_RESTRICTIONS"
+  ],
+  "rejected_contexts_materialized_as_rows": false,
+  "fingerprint_contract": {
+    "required_fingerprints": [
+      "context_input_fingerprint",
+      "state_output_fingerprint",
+      "materialized_state_candidate_id"
+    ],
+    "state_output_fingerprint_inputs": [
+      "state_profile_id",
+      "state_schema_version",
+      "instrument_id",
+      "decision_timestamp_utc",
+      "context_input_fingerprint",
+      "admitted_value_payload_hash",
+      "policy_versions",
+      "formula_versions",
+      "restriction_codes"
+    ],
+    "rebuild_determinism_required": true,
+    "jsonl_to_parquet_roundtrip_required": true
+  },
+  "restriction_classes": [
+    {
+      "restriction_code": "fixed_utc_session_window_in_probe",
+      "class": [
+        "promotion_blocker",
+        "operational_consumption_blocker"
+      ],
+      "materialization_effect": "allowed_for_eight_record_candidate_only_if_calendar_version_is_explicit"
+    },
+    {
+      "restriction_code": "governed_exchange_session_calendar_missing",
+      "class": [
+        "promotion_blocker",
+        "historical_scaling_blocker",
+        "operational_consumption_blocker"
+      ],
+      "materialization_effect": "does_not_block_bounded_candidate_design"
+    },
+    {
+      "restriction_code": "after_last_sampled_bar_is_not_end_of_session",
+      "class": [
+        "semantic_restriction_only"
+      ],
+      "materialization_effect": "allowed_only_if_not_labeled_as_market_close_or_end_of_session"
+    },
+    {
+      "restriction_code": "rvol_20d_semantics_ambiguous_if_unqualified",
+      "class": [
+        "materialization_blocker_if_ambiguous_name",
+        "semantic_restriction_only_if_exact_formula_preserved"
+      ],
+      "materialization_effect": "physical_field_name_or_metadata_must_preserve_session_volume_to_time_over_prior_20_full_session_volume_mean"
+    },
+    {
+      "restriction_code": "duplicate_counts_are_request_impact_not_physical_group_counts",
+      "class": [
+        "validation_requirement",
+        "promotion_blocker"
+      ],
+      "materialization_effect": "does_not_block_eight_record_candidate_materialization"
+    },
+    {
+      "restriction_code": "quote_dependent_objects_blocked",
+      "class": [
+        "out_of_profile_hard_exclusion"
+      ],
+      "materialization_effect": "quote_dependent_values_must_not_enter_profile"
+    },
+    {
+      "restriction_code": "source_market_data_reread",
+      "class": [
+        "hard_execution_blocker"
+      ],
+      "materialization_effect": "future_bounded_materializer_must_consume_only_accepted_candidate_records"
+    },
+    {
+      "restriction_code": "downstream_consumption",
+      "class": [
+        "hard_authority_blocker"
+      ],
+      "materialization_effect": "no_ml_rl_scanner_backtest_or_event_research_consumption_authorized"
+    },
+    {
+      "restriction_code": "official_market_state_naming",
+      "class": [
+        "hard_authority_blocker"
+      ],
+      "materialization_effect": "do_not_name_or_place_output_as_official_market_state_table"
+    }
+  ],
+  "next_gate": {
+    "gate_id": "experimental_core_four_market_state_materialization_authorization_v0_1",
+    "status": "NOT_OPEN",
+    "must_authorize_explicitly": [
+      "input_run_id",
+      "input_candidate_record_count",
+      "max_output_records",
+      "output_run_directory",
+      "candidate_parquet_filename",
+      "no_source_market_data_reread",
+      "no_downstream_consumption",
+      "no_dataset_promotion",
+      "no_production_builder",
+      "no_full_history_execution",
+      "no_full_universe_execution"
+    ]
+  }
+}

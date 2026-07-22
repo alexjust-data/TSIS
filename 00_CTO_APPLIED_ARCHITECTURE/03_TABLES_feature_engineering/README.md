@@ -1,7 +1,7 @@
 # 03_TABLES_feature_engineering
 
-Status: `readme_v1_0_phase_b_core_four_integration_execution`
-Date: `2026-07-21`
+Status: `readme_v1_2_phase_b_core_four_materialization_authorization`
+Date: `2026-07-22`
 
 Esta seccion conecta tablas existentes, Objetos de Informacion, feature engineering, Market State, Event State, builders, validators y consumo downstream.
 
@@ -66,8 +66,9 @@ design estan completos para los 12 Objetos de v1. Los gates experimentales de
 contract, source binding, path, schema metadata, logical-to-physical binding,
 bounded identity/temporal validation, bounded grain validation y bounded
 quality/lineage validation, core-four builder execution, resolution record
-acceptance, core-four integration design y core-four integration execution
-quedan cerrados hasta `PASS_WITH_RESTRICTIONS`.
+acceptance, core-four integration design, core-four integration execution,
+core-four materialization design y core-four materialization authorization
+quedan cerrados o emitidos con restricciones.
 
 El run vigente de integracion experimental es:
 
@@ -76,8 +77,19 @@ experimental_core_four_market_state_integration_execution_v0_1_20260721T203448Z
 ```
 
 Emitio 8 Market State candidate records no canonicos y rechazo 2 contextos
-pre-bar bajo object atomicity. Market State parquet materialization, produccion
-y consumo downstream siguen cerrados.
+pre-bar bajo object atomicity.
+
+El diseno vigente de materializacion es:
+
+```text
+core_four_market_state_materialization_design_v0_1
+core_four_market_state_materialization_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
+```
+
+La autorizacion experimental de materializacion core-four ya esta emitida con
+restricciones para una futura ejecucion de maximo 8 filas candidatas. La
+ejecucion, Market State parquet oficial, produccion y consumo downstream siguen
+cerrados.
 
 Regla:
 
@@ -116,7 +128,7 @@ Builder Validation, Market State Integration and Operational Promotion gates.
 | `03_INFORMATION_OBJECTS/` | Guarda expedientes trazables de Objetos evaluados: candidatos, revisados, aceptados, aceptados con restricciones o rechazados. |
 | `04_INFORMATION_OBJECT_OPERATIONAL_MAPPING/` | Phase B complete_for_v1. Puente gobernado: Objeto admitido -> modelos aprobados -> capacidades -> variables candidatas -> tablas fuente -> perfiles de State. |
 | `05_STATE_BUILDER_VALIDATION/` | Builder Validation design completo para v1. El builder experimental core-four y la aceptacion de resolution records cerraron con restricciones. No autoriza builders de produccion, materializacion ni consumo State por si mismo. |
-| `06_MARKET_STATE_INTEGRATION/` | Integracion core-four experimental cerrada con restricciones: 8 candidatos JSONL no canonicos y 2 contextos rechazados. No autoriza parquet, consumo operativo ni promocion. |
+| `06_MARKET_STATE_INTEGRATION/` | Integracion core-four experimental, diseno de materializacion candidata y autorizacion acotada cerrados/emitidos con restricciones. Mantiene 8 candidatos JSONL no canonicos como input de una futura ejecucion candidata. No autoriza Market State oficial, consumo operativo ni promocion. |
 | `99_archive/` | Documentos historicos, superseded o no activos. No son autoridad operativa. |
 
 ---

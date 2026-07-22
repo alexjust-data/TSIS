@@ -1,7 +1,7 @@
 # 06_MARKET_STATE_INTEGRATION
 
-Status: `phase_b_core_four_integration_execution_passed_with_restrictions_v0_1`
-Date: `2026-07-21`
+Status: `phase_b_core_four_materialization_authorization_bounded_v0_1`
+Date: `2026-07-22`
 
 Esta carpeta registra disenos y ejecuciones experimentales no productivas de
 integracion de Information Objects admitidos en perfiles de `Market State`.
@@ -15,16 +15,21 @@ materializaciones ni consumo downstream por si misma.
 TSIS Market Ontology Phase = CLOSED
 TSIS Market Ontology v1 = FROZEN
 Phase B = OPEN
-Market State Integration Expansion = CORE_FOUR_EXECUTION_PASSED_WITH_RESTRICTIONS
+Market State Integration Expansion = CORE_FOUR_MATERIALIZATION_AUTHORIZATION_BOUNDED
 core_four_builder_validation = CLOSED_PASS_WITH_RESTRICTIONS
 core_four_resolution_record_acceptance_review = CLOSED_PASS_WITH_RESTRICTIONS
 core_four_market_state_integration_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
 experimental_core_four_market_state_integration_execution = CLOSED_PASS_WITH_RESTRICTIONS
+core_four_market_state_materialization_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
+experimental_core_four_market_state_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_materialization_execution = NOT_EXECUTED
+experimental_candidate_parquet_output_allowed = true
 production_builder_authorized = false
 state_consumption_authorized = false
-physical_materialization_authorized = false
-parquet_materialization_authorized = false
+official_physical_materialization_authorized = false
+official_parquet_materialization_authorized = false
 downstream_consumption_authorized = false
+official_market_state_authorized = false
 ```
 
 Regla:
@@ -114,6 +119,53 @@ runs/experimental_core_four_market_state_integration_execution_v0_1_20260721T203
 The emitted `market_state_candidate_records.jsonl` file is diagnostic and
 non-canonical. It is not a Market State table.
 
+## Core Four Materialization Design
+
+```text
+logical_profile_id = core_four_market_state_profile_v0_1
+physical_schema_id = core_four_market_state_candidate_physical_schema_v0_1
+core_four_market_state_materialization_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
+candidate_records_accepted_for_materialization_design = true
+experimental_core_four_market_state_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_materialization_execution = NOT_EXECUTED
+```
+
+Artefactos:
+
+```text
+core_four_market_state_materialization_design_v0_1.md
+core_four_market_state_materialization_design_contract_v0_1.json
+```
+
+El diseno separa el perfil logico core-four del schema fisico candidato y
+clasifica las restricciones vivas por etapa: blockers de materializacion,
+blockers de promocion, blockers de consumo operativo y restricciones
+semanticas.
+
+No ejecuto escrituras parquet. La autorizacion acotada posterior ya existe y
+permite una futura materializacion candidata no oficial de maximo 8 records,
+siempre bajo scope cerrado y sin consumo downstream.
+
+## Core Four Materialization Authorization
+
+```text
+authorization = experimental_core_four_market_state_materialization_authorization_v0_1.md
+scope = configs/experimental_core_four_market_state_materialization_scope_v0_1.json
+experimental_core_four_market_state_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_materialization_execution = NOT_EXECUTED
+experimental_candidate_parquet_output_allowed = true
+candidate_parquet_filename = core_four_market_state_candidate_v0_1.parquet
+schema_inference_from_sample = false
+physical_value_columns_closed = true
+json_field_serialization = canonical_utf8_json_string
+state_output_fingerprint_payload = exact_non_circular
+semantic_rebuild_determinism = required
+byte_identical_parquet_rebuild = not_required
+```
+
+La autorizacion no crea materializer, no ejecuta nada y no escribe parquet.
+Solo fija la frontera de una futura ejecucion experimental acotada.
+
 ## Preserved Restrictions
 
 ```text
@@ -126,21 +178,22 @@ quote_dependent_objects_remain_blocked
 
 ## Next Gate
 
-The next gate is not production execution. The next possible step is:
+The next gate is not production execution. The next possible step is the bounded execution already scoped by the materialization authorization:
 
 ```text
-core_four_market_state_materialization_design = CONDITIONAL_NEXT_DESIGN_GATE
+experimental_core_four_market_state_materialization_execution = AUTHORIZED_NOT_EXECUTED
 ```
 
 Still closed:
 
 ```text
-Market State parquet materialization = NOT_AUTHORIZED
+official Market State parquet materialization = NOT_AUTHORIZED
 production builder = NOT_AUTHORIZED
 state consumption = NOT_AUTHORIZED
 downstream ML/RL consumption = NOT_AUTHORIZED
 full-history execution = NOT_AUTHORIZED
 full-universe execution = NOT_AUTHORIZED
 quote-dependent object integration = NOT_AUTHORIZED
+official Market State = NOT_OPEN
 operational promotion = NOT_AUTHORIZED
 ```
