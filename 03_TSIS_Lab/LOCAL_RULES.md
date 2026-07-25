@@ -5,7 +5,7 @@ Estado: regla local activa
 
 ## Regla Obligatoria Para Velas 1m
 
-Ningun agente debe asumir que `E:/TSIS/data/ohlcv_1m` es una fuente limpia para investigacion, charts, eventos, estados o validacion visual.
+Ningun agente debe asumir que `G:/TSIS/data/ohlcv_1m` es una fuente limpia para investigacion, charts, eventos, estados o validacion visual.
 
 La lectura correcta es:
 
@@ -33,9 +33,9 @@ Esta es la ruta preferida para estado, eventos, outcomes y estadistica reproduci
 Si la tabla materializada no cubre el caso, usar la combinacion documentada:
 
 ```text
-E:/TSIS/data/ohlcv_1m
+G:/TSIS/data/ohlcv_1m
 +
-E:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1.parquet
+G:/TSIS/data/data_foundation_outputs/ohlcv_1m_quote_guarded/repair_manifest_lt1b_v0_1.parquet
 ```
 
 El agente debe conservar lineage de raw, manifest, run id, repair state y policy.

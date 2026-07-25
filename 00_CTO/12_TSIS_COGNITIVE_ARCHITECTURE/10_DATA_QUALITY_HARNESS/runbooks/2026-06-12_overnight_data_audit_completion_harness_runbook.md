@@ -112,10 +112,10 @@ Prohibido modificar:
 ```text
 E:/TSIS/data/
 C:/TSIS_Data/data/
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/data/
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/run/
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/data/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/run/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/
 ```
 
 Estas rutas son evidencia/provenance read-only.
@@ -123,8 +123,8 @@ Estas rutas son evidencia/provenance read-only.
 Trabajo nuevo permitido:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/inspection/<dataset>/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/inspection/<dataset>/
 ```
 
 ## 6. Benchmark obligatorio antes de producir
@@ -300,7 +300,7 @@ Este runbook no sustituye a los contratos.
 El agente debe obedecer:
 
 - contratos raiz TSIS;
-- `01_TSIS_backtest_SmallCaps/AGENTS.md`;
+- `01_TSIS_DATA_FOUNDATION/AGENTS.md`;
 - `LOCAL_RULES.md`;
 - `inspection_dossier_model.md`;
 - `historical_audit_preservation_and_promotion_contract.md`;

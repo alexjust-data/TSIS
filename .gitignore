@@ -50,31 +50,31 @@ graphify-out/leaf_slices/*
 00_CTO/02_Strategies/
 00_CTO/00_notas_RL.md
 /00_CTO/images_Flash_Research/
-/01_TSIS_backtest_SmallCaps/01_foundations/00_CTO/
-/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/
-!/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/
-/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/*
-!/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/
-/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/*
-!/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/.graphifyignore
-!/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md
-!/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/GRAPHIFY_REFRESH_QUEUE.md
-!/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/
-!/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/**
-!/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/
-!/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/**
-!/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/module_contracts/
-!/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/module_contracts/**
-!/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/graphify-out/
-!/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/graphify-out/leaf_slices/
-!/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/graphify-out/leaf_slices/certification_decisions_20260619/
-!/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/graphify-out/leaf_slices/certification_decisions_20260619/**
-/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/**/cache*/
-/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/**/*.ipynb
-/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/**/*.pyc
-/01_TSIS_backtest_SmallCaps/00_cto/trading_playbooks/
-/01_TSIS_backtest_SmallCaps/00_cto/architecture_blueprints/project_layers.md
-/01_TSIS_backtest_SmallCaps/00_cto/architecture_blueprints/pipeline_app.md
+/01_TSIS_DATA_FOUNDATION/01_foundations/00_CTO/
+/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/
+!/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/
+/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/*
+!/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/
+/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/*
+!/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/.graphifyignore
+!/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md
+!/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/GRAPHIFY_REFRESH_QUEUE.md
+!/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/
+!/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/**
+!/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/
+!/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/**
+!/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/module_contracts/
+!/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/module_contracts/**
+!/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/graphify-out/
+!/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/graphify-out/leaf_slices/
+!/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/graphify-out/leaf_slices/certification_decisions_20260619/
+!/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/graphify-out/leaf_slices/certification_decisions_20260619/**
+/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/**/cache*/
+/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/**/*.ipynb
+/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/**/*.pyc
+/01_TSIS_DATA_FOUNDATION/00_cto/trading_playbooks/
+/01_TSIS_DATA_FOUNDATION/00_cto/architecture_blueprints/project_layers.md
+/01_TSIS_DATA_FOUNDATION/00_cto/architecture_blueprints/pipeline_app.md
 
 # Heavy market-data / generated dataset payloads
 # Keep contracts, readouts, manifests and code in Git. Do not commit raw or
@@ -125,8 +125,8 @@ graphify-out/leaf_slices/*
 /00_CTO/99_REFERENCE_LIBRARY/**/*.GIF
 
 # Small institutional evidence/manifests are allowed explicitly.
-!01_TSIS_backtest_SmallCaps/01_foundations/**/*.csv
-!01_TSIS_backtest_SmallCaps/00_cto/**/*.csv
+!01_TSIS_DATA_FOUNDATION/01_foundations/**/*.csv
+!01_TSIS_DATA_FOUNDATION/00_cto/**/*.csv
 
 # Env files
 .env
@@ -167,14 +167,14 @@ tmpclaude-*
 # Local DAS CMD API broker/source integration work not committed by default.
 # Keep DAS contracts, source inventories, code scaffolds, configs and tests local
 # unless a future explicit publication decision whitelists a sanitized subset.
-/02_TSIS_webSocket_SmallCaps/01_data_ingestion_live/vendor_das/
-/02_TSIS_webSocket_SmallCaps/src/das_cmdapi/
-/02_TSIS_webSocket_SmallCaps/configs/das_cmdapi_*.json
-/02_TSIS_webSocket_SmallCaps/tests/test_das_cmdapi_*.py
-/02_TSIS_webSocket_SmallCaps/**/raw_cmdapi/
-/02_TSIS_webSocket_SmallCaps/**/data_DAS_live/
+/04_TSIS_webSocket_SmallCaps/01_data_ingestion_live/vendor_das/
+/04_TSIS_webSocket_SmallCaps/src/das_cmdapi/
+/04_TSIS_webSocket_SmallCaps/configs/das_cmdapi_*.json
+/04_TSIS_webSocket_SmallCaps/tests/test_das_cmdapi_*.py
+/04_TSIS_webSocket_SmallCaps/**/raw_cmdapi/
+/04_TSIS_webSocket_SmallCaps/**/data_DAS_live/
 # Local provider-specific Systems Engineering deep maps not committed by default.
 /00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/das_api/dastrades_cmdapi_system_map_v0_1.md
 # Large generated visual-audit/scanner evidence kept local unless explicitly curated.
-/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0002/evidence/099_exemples_three_points/
-/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0002/evidence/scanner_2026_qg_full_universe_*/
+/03_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0002/evidence/099_exemples_three_points/
+/03_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0002/evidence/scanner_2026_qg_full_universe_*/

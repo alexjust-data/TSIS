@@ -1,0 +1,18 @@
+{
+  "book_id": "successful_algorithmic_trading",
+  "source_pdf": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Successful Algorithmic Trading.pdf",
+  "processed_source_pdf": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\successful_algorithmic_trading\\source\\original.pdf",
+  "title": "Successful Algorithmic Trading",
+  "author": "Michael Halls-Moore / QuantStart",
+  "producer": "pdfTeX-1.40.13",
+  "creator": "LaTeX with hyperref package",
+  "pages": 208,
+  "file_size_bytes": 2308887,
+  "last_write_time": "2026-07-23T05:50:58.847084+00:00",
+  "processed_at": "2026-07-24T20:39:03.134196+00:00",
+  "requires_ocr": false,
+  "copyright_note": "Derived artifacts should summarize and point to pages. Do not persist or redistribute full extracted text unless explicitly allowed.",
+  "status": "indexed",
+  "working_text_persisted": false,
+  "summary_artifact": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\successful_algorithmic_trading\\summaries\\successful_algorithmic_trading_agent_summary.md"
+}

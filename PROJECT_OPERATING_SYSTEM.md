@@ -1,4 +1,4 @@
-﻿# TSIS Project Operating System
+# TSIS Project Operating System
 
 ## 1. Rol de este documento
 
@@ -71,90 +71,117 @@ TSIS debe entenderse como un stack completo con horizontes coordinados:
 
 ---
 
-## 3. Módulos del sistema
+## 3. Modulos del sistema
 
-TSIS está organizado como un ecosistema con autoridad raíz, laboratorio transversal, módulos operativos y data roots pesados.
+TSIS esta organizado como un ecosistema con autoridad raiz, arquitectura aplicada, Data Foundation, backtest engine, laboratorio transversal, modulos operativos y data roots pesados.
 
 Componentes principales:
 
 - `00_CTO`
-- `00_TSIS_Lab`
-- `01_TSIS_backtest_SmallCaps`
-- `02_TSIS_webSocket_SmallCaps`
-- `03_TSIS_Offline_RL`
-- `E:/TSIS/data`
+- `00_CTO_APPLIED_ARCHITECTURE`
+- `01_TSIS_DATA_FOUNDATION`
+- `02_TSIS_BACKTEST_ENGINE`
+- `03_TSIS_Lab`
+- `04_TSIS_webSocket_SmallCaps`
+- `05_TSIS_Offline_RL`
+- `06_TSIS_Trading_voice`
+- `G:/TSIS/data`
 
-`00_CTO` gobierna filosofía, arquitectura, mapas y reglas.
+`00_CTO` gobierna filosofia, arquitectura, mapas y reglas.
 
-`00_TSIS_Lab` organiza contratos operativos, registros, plantillas y experimentos científicos reproducibles.
+`00_CTO_APPLIED_ARCHITECTURE` conserva arquitectura aplicada, handoffs y gates de ingenieria gobernada.
 
-`E:/TSIS/data` conserva outputs pesados, materializaciones y runs voluminosos fuera de Git.
+`03_TSIS_Lab` organiza contratos operativos, registros, plantillas y experimentos cientificos reproducibles.
 
-### 3.0. 00_CTO y 00_TSIS_Lab
+`G:/TSIS/data` conserva outputs pesados, materializaciones y runs voluminosos fuera de Git.
 
-`00_CTO` es la capa de autoridad. No ejecuta backtests ni materializaciones pesadas. Define la arquitectura, la filosofía, los mapas y las reglas de gobierno.
+Para resolver referencias antiguas a carpetas raiz, leer `PATH_MIGRATION_2026_07_22.md`.
 
-`00_TSIS_Lab` es el laboratorio operativo transversal. No sustituye a los módulos. Define cómo un humano, AlphaEvolve u otro generador proponen y ejecutan `research_experiments` bajo la misma estructura.
+### 3.0. 00_CTO, arquitectura aplicada y Lab
+
+`00_CTO` es la capa de autoridad. No ejecuta backtests ni materializaciones pesadas. Define la arquitectura, la filosofia, los mapas y las reglas de gobierno.
+
+`00_CTO_APPLIED_ARCHITECTURE` traduce arquitectura en gates, handoffs y disenos aplicados, sin sustituir la autoridad CTO ni los contratos de los modulos.
+
+`03_TSIS_Lab` es el laboratorio operativo transversal. No sustituye a los modulos. Define como un humano, AlphaEvolve u otro generador proponen y ejecutan `research_experiments` bajo la misma estructura.
 
 La regla es:
 
 ```text
 00_CTO = autoridad y arquitectura
-00_TSIS_Lab = contrato comun de experimentos
+00_CTO_APPLIED_ARCHITECTURE = arquitectura aplicada y gates
+03_TSIS_Lab = contrato comun de experimentos
 modulos = implementacion y ejecucion concreta
-E:/TSIS/data = outputs pesados/materializaciones
+G:/TSIS/data = outputs pesados/materializaciones
 ```
 
-### 3.1. 01_TSIS_backtest_SmallCaps
+### 3.1. 01_TSIS_DATA_FOUNDATION
 
-Es el módulo operativo SmallCaps para investigación histórica, Data Foundation, event discovery, feature engine, backtest clásico, strategy research, builders, validators y datos gobernados.
+Es el modulo operativo SmallCaps para Data Foundation: auditoria, certificacion, inmutabilidad, contratos, schemas, policies, validators, dossiers, builders de outputs gobernados y memoria cientifica preservada.
 
-Su misión es:
+Su mision es:
 
-- construir datasets y universos defendibles;
-- formalizar estados, eventos candidatos, outcomes y ventanas bajo contrato;
-- ejecutar investigación y backtest clásico de estrategias;
-- materializar fixtures/candidates cuando proceda;
-- simular ejecución con realismo suficiente;
-- evaluar hipótesis, setups y estrategias;
-- producir evidencia reproducible para promoción, revisión o descarte.
+- construir datasets y universos historicos defendibles;
+- auditar y certificar calidad de market data;
+- formalizar contratos de datos, price views, corporate actions, estados candidatos, eventos, outcomes y ventanas;
+- mantener registries, validators, dossiers y lineage;
+- preservar evidencia historica sin reescribirla por estetica;
+- servir outputs gobernados a backtest, live, ML/RL y Lab sin que esas capas redefinan semantica upstream.
 
-No queda reducido a proveedor/adaptador de `00_TSIS_Lab`. Es el módulo donde se implementa y ejecuta gran parte de la investigación SmallCaps.
+No es el motor profesional de backtest. El futuro motor vive en `02_TSIS_BACKTEST_ENGINE` y debe consumir esta Data Foundation por contrato.
 
-### 3.2. 02_TSIS_webSocket_SmallCaps
+### 3.2. 02_TSIS_BACKTEST_ENGINE
 
-Es la capa de operación live y procesamiento en tiempo real.
+Es la futura capa de implementacion del backtester profesional TSIS.
 
-Su misión es:
+Su mision sera:
+
+- adaptar simulation inputs historicos/replay/live;
+- ejecutar clock/event loop determinista;
+- consumir Market State/Event State observables;
+- coordinar decision policy, portfolio, risk, OMS, execution, accounting y ledgers;
+- producir run manifests, reports y validacion reproducible.
+
+La arquitectura/theory authority permanece en `00_CTO/14_BACKTEST_ENGINE` hasta promocion explicita.
+
+### 3.3. 04_TSIS_webSocket_SmallCaps
+
+Es la capa de operacion live y procesamiento en tiempo real.
+
+Su mision es:
 
 - ingerir datos live;
 - construir features y eventos en tiempo real;
-- enrutar señales o decisiones;
-- coordinar ejecución y monitoreo;
+- enrutar senales o decisiones;
+- coordinar ejecucion y monitoreo;
 - registrar evidencia operativa del sistema en vivo.
 
-### 3.3. 03_TSIS_Offline_RL
+### 3.4. 05_TSIS_Offline_RL
 
 Es la capa de aprendizaje secuencial sobre datos ya auditados y estados ya definidos.
 
-Su misión es:
+Su mision es:
 
 - construir datasets de aprendizaje offline;
 - entrenar behavioral cloning y offline RL;
-- evaluar políticas en entornos controlados;
+- evaluar politicas en entornos controlados;
 - comparar candidatos de despliegue;
-- retroalimentar research y ejecución sin romper los contratos del sistema.
+- retroalimentar research y ejecucion sin romper los contratos del sistema.
 
-### 3.4. System Boundaries
+### 3.5. 06_TSIS_Trading_voice
+
+Es la capa Trading Decision Intelligence para voz, transcripcion, diario de decisiones, metricas de proceso y analisis del trader.
+
+### 3.6. System Boundaries
 
 No todos los componentes del ecosistema forman parte del core institucional de TSIS.
 
 Vendors, brokers, APIs externas, servicios auxiliares, herramientas de observabilidad y componentes de soporte deben tratarse como dependencias externas.
 
-Pueden ser críticas para operar el sistema, pero no deben confundirse con:
+Pueden ser criticas para operar el sistema, pero no deben confundirse con:
 
 - source of truth institucional;
-- semántica canónica del repositorio;
+- semantica canonica del repositorio;
 - contratos internos compartidos;
 - ni memoria persistente del sistema.
 
@@ -386,8 +413,8 @@ TSIS se gobierna mediante documentos raíz con roles distintos.
 - `AGENTS.md`: cómo deben actuar agentes y colaboradores dentro del repositorio.
 - `LONG_RUNNING_OPERATIONS_CONTRACT.md`: cómo deben instrumentarse operaciones largas, copias, materializaciones, auditorías, entrenamientos y builds para que nunca sean cajas negras.
 - `00_CTO/TSIS_LAB_ARCHITECTURE_v3.md`: arquitectura CTO vigente; define TSIS como Scientific Discovery Engine.
-- `00_TSIS_Lab/README.md`: laboratorio operativo transversal para `research_experiments`.
-- `00_TSIS_Lab/01_contracts/`: contratos comunes de experimentos, ejecución, sweeps, validación y promoción de conocimiento.
+- `03_TSIS_Lab/README.md`: laboratorio operativo transversal para `research_experiments`.
+- `03_TSIS_Lab/01_contracts/`: contratos comunes de experimentos, ejecución, sweeps, validación y promoción de conocimiento.
 
 ### 8.2. Regla de precedencia
 

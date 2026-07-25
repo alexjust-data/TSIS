@@ -1,0 +1,107 @@
+{
+  "contract_id": "event_state_instrument_session_projection_design_contract_v0_1",
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+  "date": "2026-07-24",
+  "design_run_id": "event_state_instrument_session_projection_design_v0_1_20260724T144500Z",
+  "scope": "session_opened_exchange_session_to_instrument_session_projection_design",
+  "projection_purpose": "bridge_exchange_session_event_window_to_instrument_session_market_state_context",
+  "source_scope": {
+    "event_type_id": "event_type:market_data:session_opened",
+    "event_subject_scope": "exchange_session",
+    "market_state_profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "market_state_grain": [
+      "instrument_id",
+      "session_date",
+      "decision_timestamp_utc"
+    ]
+  },
+  "projection_identity_components": [
+    "event_instance_id",
+    "event_window_binding_id",
+    "instrument_id",
+    "session_date",
+    "instrument_exchange_id",
+    "market_state_profile_id",
+    "projection_policy_version"
+  ],
+  "future_projection_minimum_fields": [
+    "event_state_instrument_session_projection_id",
+    "projection_policy_id",
+    "projection_policy_version",
+    "event_type_id",
+    "event_instance_id",
+    "event_window_binding_id",
+    "exchange_id",
+    "session_date",
+    "event_anchor_timestamp_utc",
+    "window_start_utc",
+    "window_end_utc",
+    "instrument_id",
+    "ticker",
+    "instrument_exchange_id",
+    "instrument_master_version",
+    "instrument_identity_fingerprint",
+    "instrument_lifecycle_status",
+    "listing_status_as_of_session",
+    "instrument_session_eligibility_state",
+    "market_state_profile_id",
+    "market_state_schema_version",
+    "calendar_version",
+    "calendar_row_fingerprint",
+    "projection_quality_state",
+    "projection_created_at_utc",
+    "supersedes_projection_id",
+    "superseded_by_projection_id",
+    "correction_reason"
+  ],
+  "eligibility_policy": {
+    "instrument_id_resolution": "exactly_one_required",
+    "ticker_resolution_when_used": "as_of_session_date_exactly_one_required",
+    "exchange_policy": "primary_or_governed_listing_exchange_match_required",
+    "instrument_lifecycle_policy": "must_permit_association_on_session_date",
+    "missing_or_ambiguous_policy": "blocked"
+  },
+  "identity_boundary": {
+    "projection_must_not_change": [
+      "event_type_id",
+      "event_instance_id",
+      "event_window_binding_id"
+    ],
+    "instrument_halted_at_open": "does_not_invalidate_exchange_session_event",
+    "execution_state_fields_excluded": [
+      "locate_status",
+      "borrow_availability",
+      "broker_routing",
+      "fills",
+      "slippage",
+      "commissions",
+      "api_latency"
+    ]
+  },
+  "future_market_state_join_constraints": [
+    "market_state_profile_id_match",
+    "instrument_id_match",
+    "session_date_match",
+    "decision_timestamp_utc_legally_related_to_window",
+    "state_output_fingerprint_resolves_exactly_once"
+  ],
+  "closed_boundaries": {
+    "instrument_session_projection_execution": false,
+    "instrument_session_projections_created": 0,
+    "instrument_master_rows_read": 0,
+    "market_calendar_rows_read": 0,
+    "event_instances_created": 0,
+    "event_windows_created": 0,
+    "market_state_physical_consumption": false,
+    "event_state_builder_execution": false,
+    "event_state_integration_execution": false,
+    "event_state_materialization": false,
+    "official_event_state_profile_promotion": false,
+    "official_event_state_dataset_promotion": false,
+    "production": false,
+    "downstream_consumption": false
+  },
+  "next_gate": {
+    "immediate_next_gate_if_explicitly_authorized": "event_state_integration_design_authorization_v0_1"
+  }
+}

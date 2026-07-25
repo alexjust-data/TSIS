@@ -483,7 +483,7 @@ para ver si la semántica del contrato y la anomalía estructural salen como esp
 Script
 
 ```
-- C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/050_ohlcv_1m_v2_validate_file.py
+- C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/050_ohlcv_1m_v2_validate_file.py
 ```
 
 Qué hace ya:
@@ -512,7 +512,7 @@ Qué hace ya:
 El siguiente paso correcto es un smoke manual sobre el file que has dado. Lanza esto:
 
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\050_ohlcv_1m_v2_validate_file.py --file E:\TSIS\data\ohlcv_1mZLS\year=2024\month=03\minute_aggs_ZLS_2024_03.parquet --expected-root E:\TSIS\data\ohlcv_1m --run-id ohlcv_1m_manual_smoke --batch-id batch_manual_000001 --scan-reason manual_probe --validation-kind manual_validation
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\050_ohlcv_1m_v2_validate_file.py --file E:\TSIS\data\ohlcv_1mZLS\year=2024\month=03\minute_aggs_ZLS_2024_03.parquet --expected-root E:\TSIS\data\ohlcv_1m --run-id ohlcv_1m_manual_smoke --batch-id batch_manual_000001 --scan-reason manual_probe --validation-kind manual_validation
 ```
 
 ## inventario físico de ohlcv_1m
@@ -583,8 +583,8 @@ enumera jerárquicamente:
 
 Ya queda la línea paralela de inventario por shards:
 ```sh
-- C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/051_ohlcv_1m_v2_inventory.py
-- C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/051b_ohlcv_1m_v2_build_inventory_shards.py
+- C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/051_ohlcv_1m_v2_inventory.py
+- C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/051b_ohlcv_1m_v2_build_inventory_shards.py
 ```
 Qué he dejado:
 ```sh
@@ -600,7 +600,7 @@ Qué he dejado:
 ```
 **Paso 1. Construir shards**
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051b_ohlcv_1m_v2_build_inventory_shards.py --d-root E:\TSIS\data\ohlcv_1m --shards 8 --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_shards\20260403_shard_ohlcv_1m_inventory
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051b_ohlcv_1m_v2_build_inventory_shards.py --d-root E:\TSIS\data\ohlcv_1m --shards 8 --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_shards\20260403_shard_ohlcv_1m_inventory
 ```
 Eso te dejará algo como:
 ```sh
@@ -614,24 +614,24 @@ Eso te dejará algo como:
 Abre 4 u 8 terminales. Ejemplo con 4 primeros shards:
 
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_ohlcv_1m_v2_inventory.py --d-root E:\TSIS\data\ohlcv_1m --tickers-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_shards\20260403_shard_ohlcv_1m_inventory\tasks_ohlcv_1m_inventory.shard_01_of_08.parquet --batch-size 100000 --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_shard_01_of_08 --resume
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_ohlcv_1m_v2_inventory.py --d-root E:\TSIS\data\ohlcv_1m --tickers-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_shards\20260403_shard_ohlcv_1m_inventory\tasks_ohlcv_1m_inventory.shard_01_of_08.parquet --batch-size 100000 --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_shard_01_of_08 --resume
 
 
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_ohlcv_1m_v2_inventory.py --d-root E:\TSIS\data\ohlcv_1m --tickers-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_shards\20260403_shard_ohlcv_1m_inventory\tasks_ohlcv_1m_inventory.shard_02_of_08.parquet --batch-size 100000 --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_shard_02_of_08 --resume
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_ohlcv_1m_v2_inventory.py --d-root E:\TSIS\data\ohlcv_1m --tickers-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_shards\20260403_shard_ohlcv_1m_inventory\tasks_ohlcv_1m_inventory.shard_02_of_08.parquet --batch-size 100000 --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_shard_02_of_08 --resume
 
 
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_ohlcv_1m_v2_inventory.py --d-root E:\TSIS\data\ohlcv_1m --tickers-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_shards\20260403_shard_ohlcv_1m_inventory\tasks_ohlcv_1m_inventory.shard_03_of_08.parquet --batch-size 100000 --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_shard_03_of_08 --resume
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_ohlcv_1m_v2_inventory.py --d-root E:\TSIS\data\ohlcv_1m --tickers-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_shards\20260403_shard_ohlcv_1m_inventory\tasks_ohlcv_1m_inventory.shard_03_of_08.parquet --batch-size 100000 --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_shard_03_of_08 --resume
 
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_ohlcv_1m_v2_inventory.py --d-root E:\TSIS\data\ohlcv_1m --tickers-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_shards\20260403_shard_ohlcv_1m_inventory\tasks_ohlcv_1m_inventory.shard_04_of_08.parquet --batch-size 100000 --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_shard_04_of_08 --resume
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_ohlcv_1m_v2_inventory.py --d-root E:\TSIS\data\ohlcv_1m --tickers-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_shards\20260403_shard_ohlcv_1m_inventory\tasks_ohlcv_1m_inventory.shard_04_of_08.parquet --batch-size 100000 --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_shard_04_of_08 --resume
 
 
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_ohlcv_1m_v2_inventory.py --d-root E:\TSIS\data\ohlcv_1m --tickers-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_shards\20260403_shard_ohlcv_1m_inventory\tasks_ohlcv_1m_inventory.shard_05_of_08.parquet --batch-size 100000 --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_shard_05_of_08 --resume
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_ohlcv_1m_v2_inventory.py --d-root E:\TSIS\data\ohlcv_1m --tickers-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_shards\20260403_shard_ohlcv_1m_inventory\tasks_ohlcv_1m_inventory.shard_05_of_08.parquet --batch-size 100000 --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_shard_05_of_08 --resume
 
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_ohlcv_1m_v2_inventory.py --d-root E:\TSIS\data\ohlcv_1m --tickers-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_shards\20260403_shard_ohlcv_1m_inventory\tasks_ohlcv_1m_inventory.shard_06_of_08.parquet --batch-size 100000 --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_shard_06_of_08 --resume
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_ohlcv_1m_v2_inventory.py --d-root E:\TSIS\data\ohlcv_1m --tickers-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_shards\20260403_shard_ohlcv_1m_inventory\tasks_ohlcv_1m_inventory.shard_06_of_08.parquet --batch-size 100000 --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_shard_06_of_08 --resume
 
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_ohlcv_1m_v2_inventory.py --d-root E:\TSIS\data\ohlcv_1m --tickers-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_shards\20260403_shard_ohlcv_1m_inventory\tasks_ohlcv_1m_inventory.shard_07_of_08.parquet --batch-size 100000 --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_shard_07_of_08 --resume
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_ohlcv_1m_v2_inventory.py --d-root E:\TSIS\data\ohlcv_1m --tickers-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_shards\20260403_shard_ohlcv_1m_inventory\tasks_ohlcv_1m_inventory.shard_07_of_08.parquet --batch-size 100000 --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_shard_07_of_08 --resume
 
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_ohlcv_1m_v2_inventory.py --d-root E:\TSIS\data\ohlcv_1m --tickers-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_shards\20260403_shard_ohlcv_1m_inventory\tasks_ohlcv_1m_inventory.shard_08_of_08.parquet --batch-size 100000 --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_shard_08_of_08 --resume
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_ohlcv_1m_v2_inventory.py --d-root E:\TSIS\data\ohlcv_1m --tickers-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_shards\20260403_shard_ohlcv_1m_inventory\tasks_ohlcv_1m_inventory.shard_08_of_08.parquet --batch-size 100000 --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_shard_08_of_08 --resume
 
 
 
@@ -658,16 +658,16 @@ Si compartieran outdir:
 
 **celda/comando para monitorizar los shards a la vez en una sola tabla**
 
-- C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/cell_code/run_monitor_ohlcv_1m_inventory_shards.ps1
+- C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/cell_code/run_monitor_ohlcv_1m_inventory_shards.ps1
 
 Lanzadera:
 
 ```sh
-powershell -NoProfile -ExecutionPolicy Bypass -File C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\run_monitor_ohlcv_1m_inventory_shards.ps1 -IntervalSec 5
+powershell -NoProfile -ExecutionPolicy Bypass -File C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\run_monitor_ohlcv_1m_inventory_shards.ps1 -IntervalSec 5
 ```
 
 ```sh
-base_dir=C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_inventory
+base_dir=C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_inventory
 pattern=ohlcv_1m_inventory_shard_*_of_*
 run_dirs=8
 interval_sec=5
@@ -694,7 +694,7 @@ Los 8 shards ya están cerrados y el siguiente paso ya está preparado.
 
   He creado:
 
-  - C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/051c_ohlcv_1m_v2_merge_inventory_shards.py
+  - C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/051c_ohlcv_1m_v2_merge_inventory_shards.py
 
   Qué hace:
 
@@ -713,10 +713,10 @@ Los 8 shards ya están cerrados y el siguiente paso ya está preparado.
   Lanzadera
 
 ```sh
-PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051c_ohlcv_1m_v2_merge_inventory_shards.py --base-dir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_inventory --pattern "ohlcv_1m_inventory_shard_*_of_08" --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_full_merged
+PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051c_ohlcv_1m_v2_merge_inventory_shards.py --base-dir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_inventory --pattern "ohlcv_1m_inventory_shard_*_of_08" --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_full_merged
 {
   "merged_at_utc": "2026-04-03T18:34:43.524110+00:00",
-  "base_dir": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\ohlcv_1m_v2_inventory",
+  "base_dir": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\ohlcv_1m_v2_inventory",
   "pattern": "ohlcv_1m_inventory_shard_*_of_08",
   "shards_found": 8,
   "merged_rows": 1272004,
@@ -729,32 +729,32 @@ PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01
   "month_max": 12,
   "total_bytes": 160255317441,
   "outputs": {
-    "ohlcv_1m_inventory_files_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged\\ohlcv_1m_inventory_files.parquet",
-    "ohlcv_1m_inventory_files_csv": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged\\ohlcv_1m_inventory_files.csv",
-    "ohlcv_1m_inventory_by_ticker_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged\\ohlcv_1m_inventory_by_ticker.parquet",
-    "ohlcv_1m_inventory_by_ticker_csv": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged\\ohlcv_1m_inventory_by_ticker.csv",
-    "duplicate_task_keys_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged\\ohlcv_1m_inventory_duplicate_task_keys.parquet",
-    "duplicate_task_keys_csv": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged\\ohlcv_1m_inventory_duplicate_task_keys.csv",
-    "shard_manifest_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged\\ohlcv_1m_inventory_shard_manifest.parquet",
-    "shard_manifest_csv": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged\\ohlcv_1m_inventory_shard_manifest.csv",
-    "summary_json": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged\\ohlcv_1m_inventory_summary.json"
+    "ohlcv_1m_inventory_files_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged\\ohlcv_1m_inventory_files.parquet",
+    "ohlcv_1m_inventory_files_csv": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged\\ohlcv_1m_inventory_files.csv",
+    "ohlcv_1m_inventory_by_ticker_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged\\ohlcv_1m_inventory_by_ticker.parquet",
+    "ohlcv_1m_inventory_by_ticker_csv": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged\\ohlcv_1m_inventory_by_ticker.csv",
+    "duplicate_task_keys_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged\\ohlcv_1m_inventory_duplicate_task_keys.parquet",
+    "duplicate_task_keys_csv": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged\\ohlcv_1m_inventory_duplicate_task_keys.csv",
+    "shard_manifest_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged\\ohlcv_1m_inventory_shard_manifest.parquet",
+    "shard_manifest_csv": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged\\ohlcv_1m_inventory_shard_manifest.csv",
+    "summary_json": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged\\ohlcv_1m_inventory_summary.json"
   },
-  "outdir": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged"
+  "outdir": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged"
 }
 ```
 
 El merge quedó perfecto: *1,272,004 task keys y 0 duplicados*. Voy a clonar ahora la lógica estable de `052_daily_v2_validate_batches.py` hacia ohlcv_1m, manteniendo el mismo backend append-only y el mismo patrón de resume.
 
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_ohlcv_1m_v2_validate_batches.py --inventory-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_full_merged\ohlcv_1m_inventory_files.parquet --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_validation\ohlcv_1m_validate_smoke --run-id ohlcv_1m_validate_smoke --workers 1 --chunk-size 500 --root D --year-from 2024 --year-to 2026 --limit 5000 --scan-reason rescan_all --validation-kind normal_validation --resume
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_ohlcv_1m_v2_validate_batches.py --inventory-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_full_merged\ohlcv_1m_inventory_files.parquet --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_validation\ohlcv_1m_validate_smoke --run-id ohlcv_1m_validate_smoke --workers 1 --chunk-size 500 --root D --year-from 2024 --year-to 2026 --limit 5000 --scan-reason rescan_all --validation-kind normal_validation --resume
 `` 
 
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_ohlcv_1m_v2_validate_batches.py --inventory-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_full_merged\ohlcv_1m_inventory_files.parquet --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_validation\ohlcv_1m_validate_full --run-id ohlcv_1m_validate_full --workers 1 --chunk-size 1000 --root D --scan-reason rescan_all --validation-kind normal_validation --resume
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_ohlcv_1m_v2_validate_batches.py --inventory-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_full_merged\ohlcv_1m_inventory_files.parquet --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_validation\ohlcv_1m_validate_full --run-id ohlcv_1m_validate_full --workers 1 --chunk-size 1000 --root D --scan-reason rescan_all --validation-kind normal_validation --resume
 ```
 
 052 ya está listo:
 
-  - C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/052_ohlcv_1m_v2_validate_batches.py
+  - C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/052_ohlcv_1m_v2_validate_batches.py
 
   Qué hace:
 
@@ -766,7 +766,7 @@ python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA
       - month_from/month_to
       - limit
   - valida cada file mensual con:
-      - C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/050_ohlcv_1m_v2_validate_file.py
+      - C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/050_ohlcv_1m_v2_validate_file.py
   - escribe batches append-only:
       - events_batches\batch_*.parquet
       - validation_checkpoint.json
@@ -777,7 +777,7 @@ python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA
   Smoke recomendado
   Empieza con una muestra controlada. Como en este entorno el multiproceso puede dar guerra, usa --workers 1.
 
-  python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_ohlcv_1m_v2_validate_batches.py --inventory-parquet C:
+  python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_ohlcv_1m_v2_validate_batches.py --inventory-parquet C:
   \TSIS_Data\v1\backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_full_merged\ohlcv_1m_inventory_files.parquet --outdir C:
   \TSIS_Data\v1\backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_validation\ohlcv_1m_validate_smoke --run-id ohlcv_1m_validate_smoke --workers 1
   --chunk-size 500 --root D --year-from 2024 --year-to 2026 --limit 5000 --scan-reason rescan_all --validation-kind normal_validation --resume
@@ -796,7 +796,7 @@ python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA
 
 • Sí. Para todo el universo merged de ohlcv_1m, usa este:
 ```sh
-PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_ohlcv_1m_v2_validate_batches.py --inventory-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_full_merged\ohlcv_1m_inventory_files.parquet --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_validation\ohlcv_1m_validate_full --run-id ohlcv_1m_validate_full --workers 1 --chunk-size 1000 --root D --scan-reason rescan_all --validation-kind normal_validation --resume
+PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_ohlcv_1m_v2_validate_batches.py --inventory-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_full_merged\ohlcv_1m_inventory_files.parquet --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_validation\ohlcv_1m_validate_full --run-id ohlcv_1m_validate_full --workers 1 --chunk-size 1000 --root D --scan-reason rescan_all --validation-kind normal_validation --resume
 [1/1273] batch_000001 files=1000 events=1000 counts={'SOFT_FAIL': 995, 'HARD_FAIL': 5}
 [2/1273] batch_000002 files=1000 events=1000 counts={'SOFT_FAIL': 1000}
 [3/1273] batch_000003 files=1000 events=1000 counts={'SOFT_FAIL': 1000}
@@ -808,8 +808,8 @@ PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01
   "validator_version": "ohlcv_1m_v2_validate_file/0.1.0",
   "started_at_utc": "2026-04-03T18:41:52.737554+00:00",
   "finished_at_utc": "2026-04-04T06:49:35.388279+00:00",
-  "inventory_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged\\ohlcv_1m_inventory_files.parquet",
-  "outdir": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\ohlcv_1m_v2_validation\\ohlcv_1m_validate_full",
+  "inventory_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged\\ohlcv_1m_inventory_files.parquet",
+  "outdir": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\ohlcv_1m_v2_validation\\ohlcv_1m_validate_full",
   "selected_files": 1272004,
   "workers": 1,
   "chunk_size": 1000,
@@ -851,7 +851,7 @@ Podías haberlo hecho cde forma paralela así:
 ```sh
 # Ahora ya puedes reutilizar los shards de 051b y lanzar 8 terminales. Ejemplo del shard 1:
 
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_ohlcv_1m_v2_validate_batches.py --inventory-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_full_merged\ohlcv_1m_inventory_files.parquet --tickers-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_shards\20260403_shard_ohlcv_1m_inventory\tasks_ohlcv_1m_inventory.shard_01_of_08.parquet --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_validation\ohlcv_1m_validate_shard_01_of_08 --run-id ohlcv_1m_validate_shard_01_of_08 --workers 1 --chunk-size 1000 --root D --scan-reason rescan_all --validation-kind normal_validation --resume
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_ohlcv_1m_v2_validate_batches.py --inventory-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_full_merged\ohlcv_1m_inventory_files.parquet --tickers-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_shards\20260403_shard_ohlcv_1m_inventory\tasks_ohlcv_1m_inventory.shard_01_of_08.parquet --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_validation\ohlcv_1m_validate_shard_01_of_08 --run-id ohlcv_1m_validate_shard_01_of_08 --workers 1 --chunk-size 1000 --root D --scan-reason rescan_all --validation-kind normal_validation --resume
 
 # Mi recomendación práctica:
 #
@@ -879,7 +879,7 @@ Esto permite:
 Script
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\053_ohlcv_1m_v2_materialize_current.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\053_ohlcv_1m_v2_materialize_current.py
 
 ### Qué hace
 
@@ -917,10 +917,10 @@ Input
 
 ```
 - validation outdir de 052:
-  - C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_validation\ohlcv_1m_validate_full
+  - C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_validation\ohlcv_1m_validate_full
 
 - inventory parquet merged de 051c:
-  -C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_full_merged\ohlcv_1m_inventory_files.parquet
+  -C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_full_merged\ohlcv_1m_inventory_files.parquet
 ```
 
 Output
@@ -942,7 +942,7 @@ Output
 Lanzadera
 
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\053_ohlcv_1m_v2_materialize_current.py --validation-outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_validation\ohlcv_1m_validate_full --inventory-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_full_merged\ohlcv_1m_inventory_files.parquet --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_materialized\ohlcv_1m_current_full --run-id ohlcv_1m_current_full
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\053_ohlcv_1m_v2_materialize_current.py --validation-outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_validation\ohlcv_1m_validate_full --inventory-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_full_merged\ohlcv_1m_inventory_files.parquet --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_materialized\ohlcv_1m_current_full --run-id ohlcv_1m_current_full
 ```
 
 **¿Es rápido o hace falta paralelizar?**
@@ -978,17 +978,17 @@ Regla operativa:
 
 ```sh
 
-› PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\053_ohlcv_1m_v2_materialize_current.py
-  --validation-outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_validation\ohlcv_1m_validate_full --inventory-parquet C:
+› PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\053_ohlcv_1m_v2_materialize_current.py
+  --validation-outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\ohlcv_1m_v2_validation\ohlcv_1m_validate_full --inventory-parquet C:
   \TSIS_Data\v1\backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_inventory\ohlcv_1m_inventory_full_merged\ohlcv_1m_inventory_files.parquet --outdir C:
   \TSIS_Data\v1\backtest_SmallCaps\runs\backtest\ohlcv_1m_v2_materialized\ohlcv_1m_current_partial --run-id ohlcv_1m_current_partial
   {
     "run_id": "ohlcv_1m_current_partial",
     "materialized_at_utc": "2026-04-04T06:33:49.570721+00:00",
-    "validation_outdir": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\ohlcv_1m_v2_validation\\ohlcv_1m_validate_full",
-    "inventory_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged\
+    "validation_outdir": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\ohlcv_1m_v2_validation\\ohlcv_1m_validate_full",
+    "inventory_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\ohlcv_1m_v2_inventory\\ohlcv_1m_inventory_full_merged\
   \ohlcv_1m_inventory_files.parquet",
-    "outdir": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\ohlcv_1m_v2_materialized\\ohlcv_1m_current_partial",
+    "outdir": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\ohlcv_1m_v2_materialized\\ohlcv_1m_current_partial",
     "events_rows": 1238000,
     "current_rows": 1238000,
     "retry_current_rows": 1238000,
@@ -1008,9 +1008,9 @@ Regla operativa:
     "batches_skipped_names": [],
     "materialization_mode": "partial",
     "validation_completion_status": "partial",
-    "validation_checkpoint_source": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\ohlcv_1m_v2_validation\\ohlcv_1m_validate_full\
+    "validation_checkpoint_source": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\ohlcv_1m_v2_validation\\ohlcv_1m_validate_full\
   \validation_checkpoint.json",
-    "validation_manifest_source": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\ohlcv_1m_v2_validation\\ohlcv_1m_validate_full\
+    "validation_manifest_source": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\ohlcv_1m_v2_validation\\ohlcv_1m_validate_full\
   \validation_run_manifest.json"
   }
 
@@ -1020,7 +1020,7 @@ Regla operativa:
 ## Notebook `03_ohlcv_1m_root_cause_audit_notebook.ipynb`
 
 ```
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/ohlcv_1m/03_ohlcv_1m_root_cause_audit_notebook.ipynb
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/ohlcv_1m/03_ohlcv_1m_root_cause_audit_notebook.ipynb
 ```
 
 1. **Problema estructural universal del universo 1m**
@@ -1173,15 +1173,15 @@ Resultado final:
 Además de explicarlo visualmente en el notebook, dejé exports operativos:
 
 ```sh
-- C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/ohlcv_1m_v2_materialized/ohlcv_1m_current_full/root_cause_operational_outputs/
+- C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/ohlcv_1m_v2_materialized/ohlcv_1m_current_full/root_cause_operational_outputs/
   rescue_soft_all.parquet
-- C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/ohlcv_1m_v2_materialized/ohlcv_1m_current_full/root_cause_operational_outputs/
+- C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/ohlcv_1m_v2_materialized/ohlcv_1m_current_full/root_cause_operational_outputs/
   rescue_schema_only.parquet
-- C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/ohlcv_1m_v2_materialized/ohlcv_1m_current_full/root_cause_operational_outputs/
+- C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/ohlcv_1m_v2_materialized/ohlcv_1m_current_full/root_cause_operational_outputs/
   rescue_schema_plus_vw.parquet
-- C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/ohlcv_1m_v2_materialized/ohlcv_1m_current_full/root_cause_operational_outputs/
+- C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/ohlcv_1m_v2_materialized/ohlcv_1m_current_full/root_cause_operational_outputs/
   hard_quarantine.parquet
-- C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/ohlcv_1m_v2_materialized/ohlcv_1m_current_full/root_cause_operational_outputs/
+- C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/ohlcv_1m_v2_materialized/ohlcv_1m_current_full/root_cause_operational_outputs/
   operational_decision_summary.parquet
 ```
 

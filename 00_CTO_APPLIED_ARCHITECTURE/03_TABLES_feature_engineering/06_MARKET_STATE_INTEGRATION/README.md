@@ -1,7 +1,7 @@
 # 06_MARKET_STATE_INTEGRATION
 
-Status: `phase_b_core_four_scale_a_physical_validation_closed_v0_1`
-Date: `2026-07-22`
+Status: `official_core_four_profile_promoted_validated_event_type_registry_seed_design_recorded_v0_1`
+Date: `2026-07-23`
 
 Esta carpeta registra disenos y ejecuciones experimentales no productivas de
 integracion de Information Objects admitidos en perfiles de `Market State`.
@@ -15,7 +15,7 @@ materializaciones ni consumo downstream por si misma.
 TSIS Market Ontology Phase = CLOSED
 TSIS Market Ontology v1 = FROZEN
 Phase B = OPEN
-Market State Integration Expansion = CORE_FOUR_SCALE_A_CLOSED_WITH_RESTRICTIONS
+Market State Integration Expansion = CORE_FOUR_SCALE_B_CLOSED_SCALE_C_CLOSED_CORE_FOUR_PROFILE_PROMOTED_VALIDATED_WITH_RESTRICTIONS
 core_four_builder_validation = CLOSED_PASS_WITH_RESTRICTIONS
 core_four_resolution_record_acceptance_review = CLOSED_PASS_WITH_RESTRICTIONS
 core_four_market_state_integration_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
@@ -38,8 +38,57 @@ experimental_core_four_market_state_scale_a_execution = CLOSED_PASS_WITH_RESTRIC
 experimental_core_four_market_state_scale_a_market_state_integration_execution = CLOSED_PASS_WITH_RESTRICTIONS
 experimental_core_four_market_state_scale_a_candidate_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
 experimental_core_four_market_state_scale_a_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICTIONS
-governed_exchange_session_calendar_design = NOT_OPEN_NEXT
-experimental_core_four_market_state_scale_b_authorization = BLOCKED_UNTIL_GOVERNED_EXCHANGE_SESSION_CALENDAR
+governed_exchange_session_calendar_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
+governed_exchange_session_calendar_binding_authorization = AUTHORIZED_WITH_RESTRICTIONS
+governed_exchange_session_calendar_binding_validation = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_sample_preflight = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_execution_surface_construction = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_builder_resolution_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_builder_resolution_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_market_state_integration_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_market_state_integration_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_physical_validation_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_b_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_execution = SCALE_B_CLOSED_PASS_WITH_RESTRICTIONS_OFFICIAL_NOT_AUTHORIZED
+experimental_core_four_market_state_scale_c_authorization_v0_1 = SUPERSEDED_BY_V0_2_AFTER_POOL_BLOCK
+experimental_core_four_market_state_scale_c_authorization_v0_2 = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_c_sample_preflight_v0_1 = SUPERSEDED_BLOCKED_INSTRUMENT_HISTORY_COVERAGE
+experimental_core_four_market_state_scale_c_sample_preflight_v0_2 = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_c_sample_preflight = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_c_execution_surface_construction_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_c_execution_surface_construction = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_c_builder_resolution_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_c_builder_resolution_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_c_market_state_integration_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_c_market_state_integration_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_c_candidate_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_c_candidate_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_c_candidate_physical_validation_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_c_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_c_execution = SCALE_C_CLOSED_PASS_WITH_RESTRICTIONS_OFFICIAL_NOT_AUTHORIZED
+official_market_state_candidate_promotion_review_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+official_market_state_candidate_promotion_review = APPROVED_FOR_OFFICIAL_PROFILE_PROMOTION_WITH_RESTRICTIONS
+official_market_state_candidate_promotion_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+official_market_state_candidate_promotion = OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS
+official_market_state_profile_artifact_validation_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+official_market_state_profile_artifact_validation = CLOSED_PASS_WITH_RESTRICTIONS
+market_state_core_four_intraday_profile_v0_1 = OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS
+tsis_market_state_profiles_family_architecture = RECORDED_NO_EXECUTION
+event_state_architecture_from_market_state_profiles = RECORDED_NO_EXECUTION
+event_state_profile_contract_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
+event_policy = RECORDED_NO_EXECUTION
+event_type_or_event_family_contract_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
+event_type_registry_schema = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
+event_type_registry_seed_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
+accepted_event_types = 0
+event_type_registry_population = NOT_AUTHORIZED
+event_state_core_four_intraday_profile_v0_1 = DESIGN_CONTRACT_READY_NOT_AUTHORIZED
+consumption_policy_or_operational_registry_design = NOT_OPEN_NEXT_IF_EXPLICITLY_AUTHORIZED
+event_state_builder_execution = NOT_AUTHORIZED
 experimental_candidate_parquet_output_allowed = true
 production_builder_authorized = false
 state_consumption_authorized = false
@@ -57,6 +106,618 @@ Operational Mapping gobernado, Builder Validation aprobada, aceptacion de
 resolution records, integration execution experimental y autorizacion separada
 de materializacion/promocion.
 ```
+
+## TSIS Market State Profiles Family Architecture
+
+```text
+tsis_market_state_profiles_family_architecture = RECORDED_NO_EXECUTION
+event_state_architecture_from_market_state_profiles = RECORDED_NO_EXECUTION
+current_official_profile = market_state_core_four_intraday_profile_v0_1
+official_dataset_registry_updated = false
+official_market_state_authorized = false
+production_builder_authorized = false
+downstream_consumption_authorized = false
+event_state_builder_execution = NOT_AUTHORIZED
+```
+
+Artifacts:
+
+```text
+tsis_market_state_profiles_family_architecture_v0_1.md
+event_state_architecture_from_market_state_profiles_v0_1.md
+```
+
+These documents record the shift from a single monolithic `Market State` target
+to a governed family of Market State profiles. The first member is the promoted
+and validated `market_state_core_four_intraday_profile_v0_1`. Future profiles
+such as daily, liquidity, news, microstructure or order-flow variants require
+their own lifecycle and cannot mutate the promoted core-four profile in place.
+
+The Event State seed only records the architecture dependency: future Event
+State should reference a valid Market State profile instead of rebuilding Market
+State. It does not authorize event detection, Event State builders, Event State
+materialization, Market State physical consumption, production or downstream
+use.
+
+## Event State Profile Contract Design
+
+```text
+event_state_profile_contract_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
+event_state_profile_id = event_state_core_four_intraday_profile_v0_1
+source_market_state_profile_id = market_state_core_four_intraday_profile_v0_1
+event_state_builder_execution = NOT_AUTHORIZED
+event_state_materialization = NOT_AUTHORIZED
+downstream_consumption = NOT_AUTHORIZED
+```
+
+Artifacts:
+
+```text
+event_state_profile_contract_design_v0_1.md
+event_state_profile_contract_design_contract_v0_1.json
+../07_EVENT_STATE_INTEGRATION/event_state_event_policy_v0_1.md
+
+../07_EVENT_STATE_INTEGRATION/event_type_or_event_family_contract_design_v0_1.md
+../07_EVENT_STATE_INTEGRATION/event_type_or_event_family_contract_design_contract_v0_1.json
+```
+
+This gate defines the first concrete Event State profile contract, tied to the
+promoted core-four intraday Market State profile. It requires event type,
+event instance, event window, join semantics, object atomicity and lineage
+bindings, but does not define or execute those bindings. Specific event families
+and event instances require later design/validation gates.
+
+Next design gates remain explicit:
+
+```text
+event_type_registry_seed_design_v0_1 = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
+event_type_registry_initial_population_authorization_v0_1 = NOT_OPEN_NEXT_IF_EXPLICITLY_AUTHORIZED
+market_state_profile_compatibility_design_v0_1 = NOT_OPEN_NEXT_IF_EXPLICITLY_AUTHORIZED
+event_state_integration_design_v0_1 = NOT_OPEN_NEXT_IF_EXPLICITLY_AUTHORIZED
+event_state_builder_validation_authorization_v0_1 = NOT_AUTHORIZED
+```
+
+## Governed Exchange Session Calendar Design
+
+```text
+governed_exchange_session_calendar_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS
+governed_exchange_session_calendar_binding_authorization = AUTHORIZED_WITH_RESTRICTIONS
+governed_exchange_session_calendar_binding_validation = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_sample_preflight = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_execution_surface_construction = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_builder_resolution_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_builder_resolution_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_market_state_integration_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_market_state_integration_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_physical_validation_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_b_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_execution = SCALE_B_CLOSED_PASS_WITH_RESTRICTIONS_OFFICIAL_NOT_AUTHORIZED
+experimental_core_four_market_state_scale_c_authorization_v0_2 = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_c_sample_preflight_v0_2 = CLOSED_PASS_WITH_RESTRICTIONS
+```
+
+Artifacts:
+
+```text
+governed_exchange_session_calendar_design_v0_1.md
+governed_exchange_session_calendar_design_contract_v0_1.json
+```
+
+This design closes the calendar object, binding boundary and Scale B prerequisites required to replace `fixed_utc_probe_calendar_v0_1` with a governed, versioned exchange-session calendar. Scale B is now closed through candidate physical validation. The calendar remains the required temporal authority for the accepted Scale C chain. Scale C is closed through independent candidate physical validation; it still does not authorize official Market State, production, downstream consumption, full-history/full-universe execution or promotion.
+
+Preferred source candidate for the next binding gate:
+
+```text
+001_market_calendar / market_calendar_v0_1
+calendar = XNYS
+timezone = America/New_York
+scope = 2005-01-03 to 2026-03-09
+```
+
+Binding authorization has now been emitted and executed through validation.
+
+## Governed Exchange Session Calendar Binding Authorization
+
+```text
+governed_exchange_session_calendar_binding_authorization = AUTHORIZED_WITH_RESTRICTIONS
+governed_exchange_session_calendar_binding_validation = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_sample_preflight = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_execution_surface_construction = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_builder_resolution_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_builder_resolution_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_market_state_integration_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_market_state_integration_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_physical_validation_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_b_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_execution = SCALE_B_CLOSED_PASS_WITH_RESTRICTIONS_OFFICIAL_NOT_AUTHORIZED
+```
+
+Artifacts:
+
+```text
+governed_exchange_session_calendar_binding_authorization_v0_1.md
+configs/governed_exchange_session_calendar_binding_scope_v0_1.json
+```
+
+This authorization permits only a bounded binding-validation run against the available official XNYS calendar artifact:
+
+```text
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\data\reference\market_calendar_official_XNYS_20050101_20260309.parquet
+sha256 = 5e423e444e1228a671a05159eda0a707f9bb2446f5b17860740f3001edbbd954
+rows = 5328
+early_close_sessions = 45
+```
+
+The documented processed `E:\TSIS\data\data_foundation_outputs\market_calendar\market_calendar_v0_1.parquet` path is not available in this workspace, and the accepted validation reports that absence while binding by resolved local path plus SHA-256. The run-local governed calendar binding artifact is evidence only; it does not authorize Scale B execution, production, official calendar replacement, Market State parquet, downstream consumption, full-history/full-universe execution or promotion.
+
+Validation status:
+
+```text
+governed_exchange_session_calendar_binding_validation = CLOSED_PASS_WITH_RESTRICTIONS
+accepted_run = governed_exchange_session_calendar_binding_validation_v0_1_20260723T064928Z
+```
+
+## Governed Exchange Session Calendar Binding Validation
+
+```text
+governed_exchange_session_calendar_binding_validation = CLOSED_PASS_WITH_RESTRICTIONS
+accepted_run = governed_exchange_session_calendar_binding_validation_v0_1_20260723T064928Z
+superseded_run = governed_exchange_session_calendar_binding_validation_v0_1_20260723T061003Z
+experimental_core_four_market_state_scale_b_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_sample_preflight = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_execution_surface_construction = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_builder_resolution_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_builder_resolution_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_market_state_integration_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_market_state_integration_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_physical_validation_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_b_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_execution = SCALE_B_CLOSED_PASS_WITH_RESTRICTIONS_OFFICIAL_NOT_AUTHORIZED
+```
+
+Readout:
+
+```text
+governed_exchange_session_calendar_binding_validation_readout_v0_1.md
+```
+
+Accepted evidence:
+
+```text
+source_rows = 5328
+bound_rows = 5328
+early_close_sessions = 45
+calendar_source_sha256_match = true
+source_snapshot_fingerprint = 8b43cda89c1da0dc78e618e46f20697a2832bd13ca7599e60989f01b701ce967
+bound_parquet_sha256 = 79a458a3585011ecec7d8153b78f8564834b24c1fb95d3718c6f4d1fea63bc00
+bound_parquet_bytes = 563799
+total_run_output_bytes = 3395434
+hard_validation_failures = 0
+```
+
+The first binding run `governed_exchange_session_calendar_binding_validation_v0_1_20260723T061003Z` is superseded because the output-byte limit was clarified after execution. The accepted run is `governed_exchange_session_calendar_binding_validation_v0_1_20260723T064928Z`.
+
+Scale B authorization has now been emitted.
+
+## Experimental Core Four Market State Scale B Authorization
+
+```text
+experimental_core_four_market_state_scale_b_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_sample_preflight = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_execution_surface_construction = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_builder_resolution_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_builder_resolution_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_market_state_integration_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_market_state_integration_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_physical_validation_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_b_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_execution = SCALE_B_CLOSED_PASS_WITH_RESTRICTIONS_OFFICIAL_NOT_AUTHORIZED
+```
+
+Artifacts:
+
+```text
+experimental_core_four_market_state_scale_b_authorization_v0_1.md
+configs/experimental_core_four_market_state_scale_b_scope_v0_1.json
+```
+
+This authorization opens only a bounded calendar-aware Scale B sample preflight. It consumes the accepted governed calendar binding run `governed_exchange_session_calendar_binding_validation_v0_1_20260723T064928Z` and requires the preflight to test six explicit XNYS sessions: winter regular, US DST transition, Europe/US DST desynchronization, summer regular and two early-close sessions.
+
+Authorized target shape for the future preflight:
+
+```text
+selected_sessions = 6
+selected_instruments = 8
+target_requested_contexts = 72
+target_resolution_records_if_later_executed = 288
+expected_blocked_contexts = 8
+expected_integrable_contexts = 64
+```
+
+Boundary at the time of this sample authorization, before subsequent gates:
+
+```text
+Scale B execution = not yet authorized at that boundary
+builder/resolution execution = not yet authorized at that boundary
+Market State integration = not yet authorized at that boundary
+Market State materialization = not yet authorized at that boundary
+Market State parquet = not yet authorized at that boundary
+run-local 014 surface construction = not yet authorized at that boundary
+013 as direct builder input = false
+production = false
+downstream consumption = false
+full-history/full-universe execution = false
+promotion = false
+```
+
+Scale B sample preflight closed and subsequent execution authorization plus surface construction gates have also closed. The active next gate is documented in the Scale B Execution Surface Construction section below.
+
+## Experimental Core Four Market State Scale B Sample Preflight
+
+```text
+experimental_core_four_market_state_scale_b_sample_preflight = CLOSED_PASS_WITH_RESTRICTIONS
+accepted_run = experimental_core_four_market_state_scale_b_sample_preflight_v0_1_20260723T094626Z
+superseded_run = experimental_core_four_market_state_scale_b_sample_preflight_v0_1_20260723T073906Z
+experimental_core_four_market_state_scale_b_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_execution_surface_construction = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_builder_resolution_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_builder_resolution_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_market_state_integration_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_market_state_integration_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_physical_validation_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_b_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_execution = SCALE_B_CLOSED_PASS_WITH_RESTRICTIONS_OFFICIAL_NOT_AUTHORIZED
+```
+
+Readout:
+
+```text
+experimental_core_four_market_state_scale_b_sample_preflight_readout_v0_1.md
+```
+
+Accepted evidence:
+
+```text
+requested_contexts = 72
+sample_manifest_rows = 72
+sample_freeze_status = FROZEN
+selected_sessions = 6
+selected_instruments = 8
+eligible_instruments = 9
+expected_resolution_records_if_later_executed = 288
+expected_blocked_contexts = 8
+expected_integrable_contexts = 64
+calendar_session_boundary_mismatches = 0
+fixed_utc_probe_calendar_as_current_authority = 0
+source_coverage_failures = 0
+duplicate_context_ids = 0
+duplicate_semantic_contexts = 0
+identity_failures = 0
+stratification_failures = 0
+hard_preflight_failures = 0
+scale_b_sample_fingerprint = 5866b534b1bd3448375b91b14125721942bc5ec3ed5df9c9df8ebd68d83d5972
+instrument_selection_fingerprint = df5e15c29024345267e867eae76c78764201325c1478791d3b7c30482a93f375
+session_selection_fingerprint = c25cbd5bd9ba683cfe9fa6da028cfa40fe106c6618b66bbbe5302493773a2945
+```
+
+The preflight consumed the accepted governed XNYS calendar binding and the accepted Scale A eligible instrument pool, then froze a bounded calendar-aware Scale B sample. It did not execute builders, emit Information Object resolution records, integrate Market State, materialize Market State, construct a run-local 014 surface, use 013 as builder input, write Market State parquet, authorize production, authorize downstream consumption, run full history, run full universe or promote any dataset.
+
+Continuity note:
+
+```text
+experimental_core_four_market_state_scale_b_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS_SUBSEQUENT_GATE
+experimental_core_four_market_state_scale_b_execution_surface_construction = CLOSED_PASS_WITH_RESTRICTIONS_SUBSEQUENT_GATE
+```
+
+
+## Experimental Core Four Market State Scale B Execution Authorization
+
+```text
+experimental_core_four_market_state_scale_b_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_execution_surface_construction = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_builder_resolution_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_market_state_integration_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_execution = SCALE_B_CLOSED_PASS_WITH_RESTRICTIONS_OFFICIAL_NOT_AUTHORIZED
+```
+
+Artifacts:
+
+```text
+experimental_core_four_market_state_scale_b_execution_authorization_v0_1.md
+configs/experimental_core_four_market_state_scale_b_execution_scope_v0_1.json
+```
+
+This authorization binds the future Scale B execution chain to frozen sample `experimental_core_four_market_state_scale_b_sample_preflight_v0_1_20260723T094626Z` and sample fingerprint `5866b534b1bd3448375b91b14125721942bc5ec3ed5df9c9df8ebd68d83d5972`. It authorizes a bounded non-production chain only:
+
+```text
+run-local Scale B 014-derived execution surface construction
+    -> builder/resolution
+    -> integration
+    -> candidate materialization
+    -> independent physical validation
+```
+
+The first executable subgate was a run-local 014-derived execution surface construction. `013_ohlcv_1m_quote_guarded` is allowed only for that surface construction and remains forbidden as direct builder, Market State, materialization or downstream input. The original 014 must not be modified or promoted.
+
+Surface construction has now closed. Subsequent authorization emitted:
+
+```text
+experimental_core_four_market_state_scale_b_builder_resolution_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+```
+
+
+## Experimental Core Four Market State Scale B Execution Surface Construction
+
+```text
+experimental_core_four_market_state_scale_b_execution_surface_construction = CLOSED_PASS_WITH_RESTRICTIONS
+accepted_run = experimental_core_four_market_state_scale_b_execution_surface_construction_v0_1_20260723T111450Z
+superseded_runs = 20260723T105511Z, 20260723T110307Z, 20260723T110716Z
+experimental_core_four_market_state_scale_b_builder_resolution_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_builder_resolution_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_market_state_integration_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_market_state_integration_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_physical_validation_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_b_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_execution = SCALE_B_CLOSED_PASS_WITH_RESTRICTIONS_OFFICIAL_NOT_AUTHORIZED
+```
+
+Artifacts:
+
+```text
+experimental_core_four_market_state_scale_b_execution_surface_construction_readout_v0_1.md
+configs/experimental_core_four_market_state_scale_b_execution_surface_construction_scope_v0_1.json
+scripts/experimental_core_four_market_state_scale_b_execution_surface_construction.py
+runs/experimental_core_four_market_state_scale_b_execution_surface_construction_v0_1_20260723T111450Z/scale_b_execution_surface_final_manifest.json
+runs/experimental_core_four_market_state_scale_b_execution_surface_construction_v0_1_20260723T111450Z/014_scale_b_execution_surface_candidate_v0_1.parquet
+```
+
+Accepted evidence:
+
+```text
+surface_rows_written = 8112
+source_013_rows_read = 149237
+source_013_files_read = 32
+scale_b_sample_fingerprint = 5866b534b1bd3448375b91b14125721942bc5ec3ed5df9c9df8ebd68d83d5972
+scale_b_execution_surface_fingerprint = dd05b10143b92d20af4b7eb5be470ab1ab8667820b57f1cc4a43bce5b2f218aa
+calendar_source_snapshot_fingerprint = 8b43cda89c1da0dc78e618e46f20697a2832bd13ca7599e60989f01b701ce967
+calendar_binding_failures = 0
+fixed_utc_probe_calendar_as_current_authority = 0
+session_boundary_mismatches = 0
+early_close_boundary_failures = 0
+distinct_governed_open_utc_clocks = 13:30:00, 14:30:00
+distinct_governed_close_utc_clocks = 17:00:00, 18:00:00, 20:00:00, 21:00:00
+builder_records_emitted = 0
+market_state_records_emitted = 0
+market_state_parquet_files_written = 0
+013_direct_builder_input = false
+hard_validation_failures = 0
+```
+
+The accepted parquet is a run-local 014-derived execution surface candidate. It is not official 014, not Market State, not production and not downstream consumable. `013` remains lineage/upstream for the surface only and is still forbidden as direct builder input.
+
+Subsequent authorization emitted after this surface closure:
+
+```text
+experimental_core_four_market_state_scale_b_builder_resolution_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+next_executable_gate = experimental_core_four_market_state_scale_b_builder_resolution_execution_v0_1
+```
+
+
+## Experimental Core Four Market State Scale B Builder Resolution Execution Authorization
+
+```text
+experimental_core_four_market_state_scale_b_builder_resolution_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_builder_resolution_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_market_state_integration_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_market_state_integration_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_execution = SCALE_B_CLOSED_PASS_WITH_RESTRICTIONS_OFFICIAL_NOT_AUTHORIZED
+```
+
+Artifacts:
+
+```text
+experimental_core_four_market_state_scale_b_builder_resolution_execution_authorization_v0_1.md
+configs/experimental_core_four_market_state_scale_b_builder_resolution_execution_scope_v0_1.json
+```
+
+This authorization opens only the bounded non-production Scale B builder/resolution execution subgate. It binds the future execution to:
+
+```text
+sample_run = experimental_core_four_market_state_scale_b_sample_preflight_v0_1_20260723T094626Z
+scale_b_sample_fingerprint = 5866b534b1bd3448375b91b14125721942bc5ec3ed5df9c9df8ebd68d83d5972
+surface_run = experimental_core_four_market_state_scale_b_execution_surface_construction_v0_1_20260723T111450Z
+scale_b_execution_surface_fingerprint = dd05b10143b92d20af4b7eb5be470ab1ab8667820b57f1cc4a43bce5b2f218aa
+calendar_binding_run = governed_exchange_session_calendar_binding_validation_v0_1_20260723T064928Z
+calendar_version = governed_exchange_session_calendar_xnys_v0_1
+required_contexts = 72
+required_objects_per_context = 4
+expected_resolution_records = 288
+expected_blocked_contexts = 8
+expected_integrable_contexts = 64
+```
+
+The future builder must consume the accepted run-local 014-derived Scale B surface and `004_master_daily_table` only. It may not read `013`, rebuild the surface, use fixed UTC fallback, integrate Market State, materialize parquet, authorize production, authorize downstream consumption or promote any dataset.
+
+Next executable subgate:
+
+```text
+experimental_core_four_market_state_scale_b_builder_resolution_execution_v0_1
+```
+
+Still closed:
+
+```text
+experimental_core_four_market_state_scale_b_market_state_integration_execution_authorization
+experimental_core_four_market_state_scale_b_market_state_integration_execution
+Market State materialization
+Market State parquet
+official Market State
+production builder
+downstream consumption
+dataset promotion
+full-history/full-universe execution
+```
+
+
+## Experimental Core Four Market State Scale B Market State Integration Execution
+
+```text
+experimental_core_four_market_state_scale_b_market_state_integration_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_market_state_integration_execution = CLOSED_PASS_WITH_RESTRICTIONS
+accepted_run = experimental_core_four_market_state_scale_b_market_state_integration_execution_v0_1_20260723T144323Z
+superseded_run = experimental_core_four_market_state_scale_b_market_state_integration_execution_v0_1_20260723T144247Z
+experimental_core_four_market_state_scale_b_candidate_materialization_authorization = NOT_OPEN_NEXT
+experimental_core_four_market_state_scale_b_candidate_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_physical_validation_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_b_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_execution = SCALE_B_CLOSED_PASS_WITH_RESTRICTIONS_OFFICIAL_NOT_AUTHORIZED
+```
+
+Artifacts:
+
+```text
+experimental_core_four_market_state_scale_b_market_state_integration_execution_authorization_v0_1.md
+configs/experimental_core_four_market_state_scale_b_market_state_integration_execution_scope_v0_1.json
+scripts/experimental_core_four_market_state_scale_b_market_state_integration_execution.py
+experimental_core_four_market_state_scale_b_market_state_integration_execution_readout_v0_1.md
+runs/experimental_core_four_market_state_scale_b_market_state_integration_execution_v0_1_20260723T144323Z/final_manifest.json
+runs/experimental_core_four_market_state_scale_b_market_state_integration_execution_v0_1_20260723T144323Z/market_state_candidate_records.jsonl
+```
+
+Accepted evidence:
+
+```text
+source_builder_run = experimental_core_four_market_state_scale_b_builder_resolution_execution_v0_1_20260723T142329Z
+input_resolution_records = 288
+contexts_seen = 72
+candidate_records_emitted = 64
+rejected_contexts = 8
+rejected_required_object_blocked_contexts = 8
+blocked_values_admitted = 0
+admitted_value_rows = 1088
+source_market_data_rows_read = 0
+source_013_rows_read = 0
+parquet_files_written = 0
+fixed_utc_fallback_uses = 0
+calendar_binding_mismatches = 0
+surface_fingerprint_mismatches = 0
+sample_fingerprint_mismatches = 0
+hard_validation_failures = 0
+scale_b_sample_fingerprint = 5866b534b1bd3448375b91b14125721942bc5ec3ed5df9c9df8ebd68d83d5972
+scale_b_execution_surface_fingerprint = dd05b10143b92d20af4b7eb5be470ab1ab8667820b57f1cc4a43bce5b2f218aa
+calendar_source_snapshot_fingerprint = 8b43cda89c1da0dc78e618e46f20697a2832bd13ca7599e60989f01b701ce967
+```
+
+The execution consumed only accepted Scale B resolution records and reports from the builder/resolution run. It did not read market source data, rebuild the run-local 014 surface, reselect the sample, write parquet, authorize production, authorize downstream consumption or promote any dataset. The partial attempt `20260723T144247Z` is superseded by the accepted run because a long output filename hit a Windows path-length boundary before summary/final manifest write; it is not closure evidence.
+
+Subsequent gate at that Scale B checkpoint:
+
+```text
+experimental_core_four_market_state_scale_b_candidate_materialization_authorization_v0_1
+```
+
+Still closed:
+
+```text
+candidate parquet materialization
+official Market State
+production builder
+downstream consumption
+dataset promotion
+full-history/full-universe execution
+```
+
+
+## Experimental Core Four Market State Scale B Candidate Materialization And Physical Validation
+
+```text
+experimental_core_four_market_state_scale_b_candidate_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_b_candidate_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
+accepted_materialization_run = experimental_scale_b_ms_candidate_materialization_v0_1_20260723T144955Z
+experimental_core_four_market_state_scale_b_candidate_physical_validation_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_b_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICTIONS
+accepted_physical_validation_run = core_four_market_state_candidate_physical_validation_v0_1_20260723T145049Z
+experimental_core_four_market_state_scale_b_execution = SCALE_B_CLOSED_PASS_WITH_RESTRICTIONS_OFFICIAL_NOT_AUTHORIZED
+```
+
+Artifacts:
+
+```text
+experimental_core_four_market_state_scale_b_candidate_materialization_authorization_v0_1.md
+configs/experimental_core_four_market_state_scale_b_candidate_materialization_scope_v0_1.json
+experimental_core_four_market_state_scale_b_candidate_materialization_execution_readout_v0_1.md
+experimental_core_four_market_state_scale_b_candidate_physical_validation_authorization_v0_1.md
+experimental_core_four_market_state_scale_b_candidate_physical_validation_readout_v0_1.md
+runs/experimental_scale_b_ms_candidate_materialization_v0_1_20260723T144955Z/core_four_market_state_scale_b_candidate_v0_1.parquet
+runs/experimental_scale_b_ms_candidate_materialization_v0_1_20260723T144955Z/materialization_manifest.json
+runs/core_four_market_state_candidate_physical_validation_v0_1_20260723T145049Z/final_manifest.json
+```
+
+Accepted materialization evidence:
+
+```text
+source_integration_run = experimental_core_four_market_state_scale_b_market_state_integration_execution_v0_1_20260723T144323Z
+input_candidate_records = 64
+output_candidate_rows = 64
+rejected_contexts_materialized_as_rows = 0
+candidate_parquet_files_written = 1
+candidate_parquet_bytes = 87241
+physical_column_count = 40
+physical_value_column_count = 17
+source_market_data_rows_read = 0
+schema_match = true
+semantic_equality_failures = 0
+fingerprint_mismatches = 0
+roundtrip_failures = 0
+semantic_rebuild_differences = 0
+hard_validation_failures = 0
+```
+
+Accepted physical validation evidence:
+
+```text
+parquet_sha256 = 33469c968812da7f6459ca2f6e13e973521d5075fe9db0285e1d89d1d80a80c1
+parquet_sha256_matches_manifest = true
+parquet_bytes_match_manifest = true
+input_candidate_records = 64
+output_physical_rows = 64
+value_mappings_checked = 1088
+source_to_physical_value_mismatches = 0
+rvol_rename_mismatches = 0
+source_lineage_content_mismatches = 0
+state_output_fingerprint_mismatches = 0
+materialized_state_candidate_id_mismatches = 0
+roundtrip_field_mismatches = 0
+semantic_rebuild_differences = 0
+source_market_data_rows_read = 0
+authority_failures = 0
+hard_validation_failures = 0
+```
+
+Scale B is closed as a bounded non-production calendar-aware demonstration. The parquet is a candidate artifact only: not official Market State, not production, not downstream consumable and not promoted.
+
+Scale C is now closed with restrictions through candidate physical validation. The next work is a separate official-candidate promotion/review authorization or broader scale planning; official-candidate promotion is not implied by Scale C closure.
 
 ## Pilot Artifact
 
@@ -291,13 +952,25 @@ Scale C = multi-period historical bounded validation
 
 The design does not authorize execution. It defines how to move beyond the eight-row proof without promoting the candidate parquet to official Market State.
 
-Current boundaries after the follow-on Scale A authorization:
+Current boundaries after Scale B closure and Scale C candidate physical validation closure:
 
 ```text
 Scale A authorization = AUTHORIZED_WITH_RESTRICTIONS
-Scale A execution = PARTIAL_CHAIN_BUILDER_RESOLUTION_CLOSED
-Scale B execution = BLOCKED_UNTIL_GOVERNED_EXCHANGE_SESSION_CALENDAR
-Scale C execution = NOT_AUTHORIZED
+Scale A execution = CLOSED_PASS_WITH_RESTRICTIONS
+Governed exchange calendar binding validation = CLOSED_PASS_WITH_RESTRICTIONS
+Scale B authorization = AUTHORIZED_WITH_RESTRICTIONS
+Scale B execution = SCALE_B_CLOSED_PASS_WITH_RESTRICTIONS_OFFICIAL_NOT_AUTHORIZED
+Scale B candidate physical validation = CLOSED_PASS_WITH_RESTRICTIONS
+Scale C authorization v0.2 = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+Scale C sample preflight v0.2 = CLOSED_PASS_WITH_RESTRICTIONS
+Scale C execution surface construction authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+Scale C execution surface construction = CLOSED_PASS_WITH_RESTRICTIONS
+Scale C builder/resolution execution authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+Scale C builder/resolution execution = CLOSED_PASS_WITH_RESTRICTIONS
+Scale C Market State integration = CLOSED_PASS_WITH_RESTRICTIONS
+Scale C candidate materialization = CLOSED_PASS_WITH_RESTRICTIONS
+Scale C candidate physical validation = CLOSED_PASS_WITH_RESTRICTIONS
+Scale C execution = SCALE_C_CLOSED_PASS_WITH_RESTRICTIONS_OFFICIAL_NOT_AUTHORIZED
 official Market State = NOT_OPEN
 production builder = NOT_AUTHORIZED
 downstream consumption = NOT_AUTHORIZED
@@ -305,7 +978,7 @@ full-history execution = NOT_AUTHORIZED
 full-universe execution = NOT_AUTHORIZED
 ```
 
-Scale B requires a governed exchange session calendar before execution. The fixed UTC probe calendar remains acceptable only as restricted lineage for the original eight-row proof or explicitly bounded non-calendar-aware Scale A evidence.
+Scale C now has a frozen bounded multi-period historical sample, run-local 014-derived execution surface, accepted builder/resolution records, integrated JSONL candidates, candidate parquet and independent physical validation. The fixed UTC probe calendar remains acceptable only as restricted lineage for older evidence; it is not a current Scale C temporal authority.
 
 ## Experimental Core Four Scale A Authorization
 
@@ -760,6 +1433,212 @@ hard_validation_failures = 0
 
 The validator rebuilt expected rows independently from the accepted integration JSONL and the closed physical schema, then compared the real parquet artifact. It did not rewrite parquet and did not read source market data.
 
+
+## Experimental Core Four Market State Scale C Sample Preflight
+
+```text
+authorization_v0_1 = experimental_core_four_market_state_scale_c_authorization_v0_1.md
+authorization_v0_2 = experimental_core_four_market_state_scale_c_authorization_v0_2.md
+scope_v0_2 = configs/experimental_core_four_market_state_scale_c_scope_v0_2.json
+accepted_run = experimental_core_four_market_state_scale_c_sample_preflight_v0_2_20260723T164132Z
+experimental_core_four_market_state_scale_c_sample_preflight_v0_1 = SUPERSEDED_BLOCKED_INSTRUMENT_HISTORY_COVERAGE
+experimental_core_four_market_state_scale_c_sample_preflight_v0_2 = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_c_execution_surface_construction_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_c_execution_surface_construction = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_c_builder_resolution_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_c_builder_resolution_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_c_market_state_integration_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_c_market_state_integration_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_c_candidate_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_c_candidate_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_c_candidate_physical_validation_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_c_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_c_execution = SCALE_C_CLOSED_PASS_WITH_RESTRICTIONS_OFFICIAL_NOT_AUTHORIZED
+```
+
+The v0.1 preflight attempt is retained as negative evidence: the Scale A seed pool produced only 3 instruments with complete 2021-2025 history. The v0.2 authorization revised only the sample preflight pool policy, allowing bounded deterministic historical candidate-pool discovery from `004_master_daily_table` and capped 013 feasibility checks. The separate Scale C surface authorization v0.1 later authorized only run-local 014-derived surface construction; it did not authorize builders, Market State integration, materialization, official parquet, production, downstream consumption, full-history/full-universe execution or promotion.
+
+Accepted v0.2 evidence:
+
+```text
+requested_contexts = 120
+sample_manifest_rows = 120
+selected_instruments = 10
+selected_sessions = 8
+selected_period_years = 5
+expected_resolution_records_if_later_executed = 480
+expected_blocked_contexts = 16
+target_integrable_contexts = 104
+calendar_session_boundary_mismatches = 0
+fixed_utc_probe_calendar_as_current_authority = 0
+source_coverage_failures = 0
+historical_source_coverage_failures = 0
+formula_history_coverage_failures = 0
+identity_history_failures = 0
+duplicate_context_ids = 0
+duplicate_semantic_contexts = 0
+stratification_failures = 0
+hard_preflight_failures = 0
+estimated_total_source_rows = 1857881
+```
+
+Frozen fingerprints:
+
+```text
+scale_c_sample_fingerprint = 67d46f6b5f2567b3af82d000bb2a6cb6e05f0546f0be11b1c263586c3bc9515d
+instrument_selection_fingerprint = 7e5cc85288b12e917fd1386a25d939e0be6b27562f38015efc79d0c2fa34ebc3
+session_selection_fingerprint = 21bf9643f6a60baabd7c64b55e812c7c729ba32f601eed96f8e151a4d218192a
+```
+
+Next executable gate required a separate authorization and has now been consumed by the accepted surface construction run.
+
+```text
+experimental_core_four_market_state_scale_c_execution_surface_construction_authorization_v0_1 = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_c_execution_surface_construction = CLOSED_PASS_WITH_RESTRICTIONS
+```
+
+## Experimental Core Four Market State Scale C Execution Surface Construction
+
+```text
+authorization = experimental_core_four_market_state_scale_c_execution_surface_construction_authorization_v0_1.md
+scope = configs/experimental_core_four_market_state_scale_c_execution_surface_construction_scope_v0_1.json
+accepted_run = experimental_core_four_market_state_scale_c_execution_surface_construction_v0_1_20260723T165402Z
+experimental_core_four_market_state_scale_c_execution_surface_construction = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_c_builder_resolution_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+```
+
+Accepted evidence:
+
+```text
+sample_manifest_rows = 120
+scale_c_sample_fingerprint = 67d46f6b5f2567b3af82d000bb2a6cb6e05f0546f0be11b1c263586c3bc9515d
+selected_instruments = 10
+selected_sessions = 8
+selected_instrument_sessions = 80
+source_013_files_read = 80
+source_013_rows_read = 360409
+surface_rows_written = 13969
+candidate_surface_parquet_files_written = 1
+scale_c_execution_surface_fingerprint = 34db7887874a57658bbbec52cc9b3915f86afdc61b7997e6b930056c0a9cf554
+surface_parquet_sha256 = 9eab0eb107db561a6ac6caa80d73de7402ca3ac54a3b4999773b583b3998a846
+calendar_binding_failures = 0
+calendar_version_match = true
+fixed_utc_probe_calendar_as_current_authority = 0
+session_boundary_mismatches = 0
+early_close_boundary_failures = 0
+source_coverage_failures = 0
+conflicting_duplicate_groups = 0
+cutoff_failures = 0
+builder_records_emitted = 0
+information_object_formulas_executed = 0
+market_state_records_emitted = 0
+market_state_parquet_files_written = 0
+original_014_modified = false
+013_direct_builder_input = false
+authority_failures = 0
+determinism_failures = 0
+hard_validation_failures = 0
+```
+
+The surface is a run-local 014-derived candidate only. It is not official 014, not Market State parquet, not promoted, and not authorized for downstream consumption. The subsequent builder/resolution authorization was consumed by the Scale C chain closure recorded below.
+
+## Experimental Core Four Market State Scale C Chain Closure
+
+```text
+experimental_core_four_market_state_scale_c_builder_resolution_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_c_builder_resolution_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_c_market_state_integration_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_c_market_state_integration_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_c_candidate_materialization_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_c_candidate_materialization_execution = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_c_candidate_physical_validation_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+experimental_core_four_market_state_scale_c_candidate_physical_validation = CLOSED_PASS_WITH_RESTRICTIONS
+experimental_core_four_market_state_scale_c_execution = SCALE_C_CLOSED_PASS_WITH_RESTRICTIONS_OFFICIAL_NOT_AUTHORIZED
+```
+
+Accepted Scale C runs:
+
+```text
+sample_preflight_run = experimental_core_four_market_state_scale_c_sample_preflight_v0_2_20260723T164132Z
+execution_surface_run = experimental_core_four_market_state_scale_c_execution_surface_construction_v0_1_20260723T165402Z
+builder_resolution_run = experimental_core_four_market_state_scale_c_builder_resolution_execution_v0_1_20260723T184203Z
+market_state_integration_run = experimental_core_four_market_state_scale_c_market_state_integration_execution_v0_1_20260723T184533Z
+candidate_materialization_run = experimental_scale_c_ms_candidate_materialization_v0_1_20260723T184752Z
+candidate_physical_validation_run = core_four_market_state_scale_c_candidate_physical_validation_v0_1_20260723T184900Z
+```
+
+Closure evidence:
+
+```text
+sample_contexts = 120
+resolution_records = 480
+integrable_contexts = 104
+blocked_contexts = 16
+candidate_jsonl_records = 104
+candidate_physical_rows = 104
+candidate_parquet_files = 1
+candidate_parquet_sha256 = b1841f4897a759de8ec9a317bece888a9ff817da3df2cd0eb477b4ed950775a2
+scale_c_sample_fingerprint = 67d46f6b5f2567b3af82d000bb2a6cb6e05f0546f0be11b1c263586c3bc9515d
+scale_c_execution_surface_fingerprint = 34db7887874a57658bbbec52cc9b3915f86afdc61b7997e6b930056c0a9cf554
+source_013_rows_read_during_builder_integration_materialization_validation = 0
+source_market_data_rows_read_during_integration_materialization_validation = 0
+value_mappings_checked = 1768
+semantic_rebuild_field_comparisons = 3848
+hard_validation_failures = 0
+```
+
+Scale C closes the bounded multi-period, governed-calendar, non-production Market State demonstration. It does not open official Market State, production builders, downstream consumption, dataset promotion, full-history execution or full-universe execution.
+
+## Official Market State Candidate Promotion Review
+
+```text
+official_market_state_candidate_promotion_review_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+official_market_state_candidate_promotion_review = APPROVED_FOR_OFFICIAL_PROFILE_PROMOTION_WITH_RESTRICTIONS
+reviewed_profile_id = market_state_core_four_intraday_profile_v0_1
+accepted_review_run = official_market_state_candidate_promotion_review_v0_1_20260723T192107Z
+evidence_artifacts_checked = 8
+resolution_records = 480
+integrated_candidate_records = 104
+physical_candidate_rows = 104
+value_mappings_checked = 1768
+semantic_rebuild_field_comparisons = 3848
+hash_mismatches = 0
+count_mismatches = 0
+hard_validation_failures = 0
+official_profile_promotion_executed = false
+official_market_state_authorized = false
+official_parquet_files_written = 0
+source_market_data_rows_read = 0
+next_allowed_gate = official_market_state_candidate_promotion_authorization_v0_1
+```
+
+The review approved only a bounded official-profile promotion authorization, which was later consumed by the validated profile promotion recorded below. It did not promote an official table, copy parquet, authorize production, authorize downstream consumption or open full-history/full-universe execution. The reviewed identity is `market_state_core_four_intraday_profile_v0_1`, not complete TSIS Market State.
+
+## Official Core-Four Profile Promotion And Artifact Validation
+
+```text
+official_market_state_candidate_promotion_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+official_market_state_candidate_promotion = OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS
+official_market_state_profile_artifact_validation_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+official_market_state_profile_artifact_validation = CLOSED_PASS_WITH_RESTRICTIONS
+promoted_profile_id = market_state_core_four_intraday_profile_v0_1
+promotion_run = official_market_state_candidate_promotion_v0_1_20260723T193403Z
+profile_artifact_validation_run = official_market_state_profile_artifact_validation_v0_1_20260723T193711Z
+registry_artifacts_written = 4
+registry_artifacts_checked = 4
+registry_sha256_mismatches = 0
+registry_invariant_failures = 0
+hard_validation_failures = 0
+official_market_state_authorized = false
+official_dataset_registry_write_authorized = false
+official_parquet_files_written = 0
+candidate_parquet_copied = false
+source_market_data_rows_read = 0
+next_allowed_gate = consumption_policy_or_operational_registry_design_only_after_explicit_authorization
+```
+
+`market_state_core_four_intraday_profile_v0_1` is now the accepted applied-architecture official profile contract for the bounded core-four intraday Market State profile. This does not promote complete TSIS Market State, does not write or copy official parquet, does not update an operational Data Foundation dataset registry, and does not authorize production, downstream consumption, full-history execution or full-universe execution.
+
 ## Preserved Restrictions
 
 ```text
@@ -784,7 +1663,9 @@ experimental_core_four_market_state_scale_a_candidate_physical_validation = CLOS
 experimental_core_four_market_state_scale_a_execution = CLOSED_PASS_WITH_RESTRICTIONS
 ```
 
-The next allowed work is not Scale B execution. It should be a separately authorized design/review gate, most likely `governed_exchange_session_calendar_design`, because Scale B remains blocked until governed calendar evidence replaces the fixed UTC probe guard.
+Scale B candidate materialization and independent physical validation are closed with restrictions by accepted runs `experimental_scale_b_ms_candidate_materialization_v0_1_20260723T144955Z` and `core_four_market_state_candidate_physical_validation_v0_1_20260723T145049Z`. Scale B is closed as a bounded non-production calendar-aware demonstration.
+
+Scale C is closed with restrictions through independent candidate physical validation by `core_four_market_state_scale_c_candidate_physical_validation_v0_1_20260723T184900Z`: 120 contexts, 480 resolution records, 104 integrated/materialized/validated candidate rows, parquet SHA-256 `b1841f4897a759de8ec9a317bece888a9ff817da3df2cd0eb477b4ed950775a2`, 1768 source-to-physical value mappings checked and 0 hard validation failures. The next gate is not execution by default; it requires a separate official-candidate promotion/review authorization or broader scale-planning authorization.
 
 Still closed:
 
@@ -798,6 +1679,15 @@ full-universe execution = NOT_AUTHORIZED
 quote-dependent object integration = NOT_AUTHORIZED
 official Market State = NOT_OPEN
 operational promotion = NOT_AUTHORIZED
-Scale B execution = BLOCKED_UNTIL_GOVERNED_EXCHANGE_SESSION_CALENDAR
-Scale C execution = NOT_OPEN
+Scale B sample preflight = CLOSED_PASS_WITH_RESTRICTIONS
+Scale B builder/resolution execution = CLOSED_PASS_WITH_RESTRICTIONS
+Scale C sample preflight = CLOSED_PASS_WITH_RESTRICTIONS
+Scale C execution surface construction authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+Scale C execution surface construction = CLOSED_PASS_WITH_RESTRICTIONS
+Scale C builder/resolution execution authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+Scale C builder/resolution execution = CLOSED_PASS_WITH_RESTRICTIONS
+Scale C Market State integration = CLOSED_PASS_WITH_RESTRICTIONS
+Scale C candidate materialization = CLOSED_PASS_WITH_RESTRICTIONS
+Scale C candidate physical validation = CLOSED_PASS_WITH_RESTRICTIONS
+Scale C execution = SCALE_C_CLOSED_PASS_WITH_RESTRICTIONS_OFFICIAL_NOT_AUTHORIZED
 ```

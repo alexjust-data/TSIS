@@ -254,7 +254,7 @@
       "dataset_format": "partitioned_parquet_dataset",
       "dataset_discovery_rule": "explicit_controlled_candidate_root_path_check_only",
       "partition_convention": "year=<YYYY>/month=<MM>/part-*.parquet",
-      "manifest_or_contract_reference": "01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md",
+      "manifest_or_contract_reference": "01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md",
       "expected_grain": [
         "event_window_id",
         "instrument_id",
@@ -326,7 +326,7 @@
       "dataset_format": "partitioned_parquet_dataset",
       "dataset_discovery_rule": "explicit_registry_dataset_path_check_only",
       "partition_convention": "published_year=<YYYY>/data_*.parquet",
-      "manifest_or_contract_reference": "01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/news_context_table_registry_entry.yaml",
+      "manifest_or_contract_reference": "01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/outputs/news_context_table_registry_entry.yaml",
       "expected_grain": [
         "source_file_relative_path",
         "source_file_row_number"
@@ -409,7 +409,7 @@
       "dataset_format": "partitioned_parquet_dataset",
       "dataset_discovery_rule": "explicit_registry_dataset_path_check_only",
       "partition_convention": "statement_family=<family>/as_of_year=<YYYY>/data_*.parquet",
-      "manifest_or_contract_reference": "01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/fundamentals_asof_table_registry_entry.yaml",
+      "manifest_or_contract_reference": "01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/outputs/fundamentals_asof_table_registry_entry.yaml",
       "expected_grain": [
         "source_file_relative_path",
         "source_file_row_number",
@@ -502,7 +502,7 @@
       "dataset_format": "partitioned_parquet_dataset",
       "dataset_discovery_rule": "explicit_registry_dataset_path_check_only",
       "partition_convention": "source_system=<source_system>/observation_family=<short_interest|short_volume>/observation_year=<YYYY>/data_*.parquet",
-      "manifest_or_contract_reference": "01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/short_context_table_registry_entry.yaml",
+      "manifest_or_contract_reference": "01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/outputs/short_context_table_registry_entry.yaml",
       "expected_grain": [
         "source_system",
         "observation_family",
@@ -599,7 +599,7 @@
       "dataset_format": "partitioned_parquet_dataset",
       "dataset_discovery_rule": "explicit_registry_dataset_path_check_only",
       "partition_convention": "source_proxy_family=<etf|index>/observation_year=<YYYY>/data_*.parquet",
-      "manifest_or_contract_reference": "01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/regime_context_table_registry_entry.yaml",
+      "manifest_or_contract_reference": "01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/outputs/regime_context_table_registry_entry.yaml",
       "expected_grain": [
         "regime_symbol",
         "trading_date",
@@ -687,7 +687,7 @@
       "dataset_format": "single_parquet_file",
       "dataset_discovery_rule": "explicit_registry_primary_file_path_check_only",
       "partition_convention": "single_file_halts_table_v0_1.parquet",
-      "manifest_or_contract_reference": "01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/halts_table_registry_entry.yaml",
+      "manifest_or_contract_reference": "01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/outputs/halts_table_registry_entry.yaml",
       "expected_grain": [
         "halt_event_id"
       ],
@@ -778,7 +778,7 @@
       "dataset_format": "partitioned_parquet_dataset",
       "dataset_discovery_rule": "explicit_official_root_path_check_only",
       "partition_convention": "ticker=<ticker>/year=<YYYY>/month=<MM>/day=<DD>/quotes.parquet",
-      "manifest_or_contract_reference": "01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/transversal/raw_storage_parity_audit_requirement_v0_1.md",
+      "manifest_or_contract_reference": "01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/transversal/raw_storage_parity_audit_requirement_v0_1.md",
       "expected_grain": [
         "instrument_id",
         "quote_timestamp"

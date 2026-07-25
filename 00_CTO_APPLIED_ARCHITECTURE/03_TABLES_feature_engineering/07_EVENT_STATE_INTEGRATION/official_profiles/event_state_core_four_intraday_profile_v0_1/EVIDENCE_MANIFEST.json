@@ -1,0 +1,46 @@
+{
+  "candidate_event_state_records_copied": false,
+  "candidate_event_state_records_reference_only": true,
+  "event_state_profile_id": "event_state_core_four_intraday_profile_v0_1",
+  "promotion_run_id": "event_state_profile_promotion_v0_1_20260724T203016Z",
+  "required_prior_review": {
+    "decision": "APPROVED_FOR_EVENT_STATE_PROFILE_PROMOTION_WITH_RESTRICTIONS",
+    "decision_artifact_sha256": "58b6f07d763d286ab3151671db58964064249d17505e17c4ded0778e273a2e56",
+    "evidence_inventory_sha256": "68a4b015f2907e184c6586bd54212b045be7b11751dfab2ad3034fc2e52a2226",
+    "final_manifest_sha256": "fd29bca5c2400820bbba2a776c674d229e5a884a5f09daa6562ddbb28d199dea",
+    "restrictions_report_sha256": "07fe4955b0dba8a8300d6d48c56f83560c213a7af3a07605f72a6e6f0f5f1430",
+    "run_id": "event_state_profile_promotion_review_v0_1_20260724T201046Z"
+  },
+  "required_source_evidence": {
+    "bounded_execution_candidate_records_sha256": "2d5e66c2b36faaa584451b335e3267fe4738f4a2427ef704d05f35497c8b47b6",
+    "bounded_execution_final_manifest_relative_path": "runs/event_state_bounded_execution_chain_execution_v0_1_20260724T185356Z/final_manifest.json",
+    "bounded_execution_final_manifest_sha256": "f403566bd4c41253b1b18a232d94a7694080e04b5dce73c98411291daca59abf",
+    "bounded_execution_run_id": "event_state_bounded_execution_chain_execution_v0_1_20260724T185356Z",
+    "bounded_execution_validation_report_sha256": "f078c7b11e91bbe19067194b49425a295171364c7a57b4073fb7dea07983eec1",
+    "candidate_dataset_review_decision_sha256": "82915f6861d992c81896b7c27def0424d67c19c4fd7ff9b21fbacc14f79e7fda",
+    "candidate_dataset_review_final_manifest_relative_path": "runs/event_state_candidate_dataset_review_v0_1_20260724T194315Z/final_manifest.json",
+    "candidate_dataset_review_final_manifest_sha256": "d81d7755f20e6cb1f66f33c56adbbce3ec2a1d932de158f423cc6761b66a15c2",
+    "candidate_dataset_review_run_id": "event_state_candidate_dataset_review_v0_1_20260724T194315Z",
+    "candidate_event_state_records_relative_path": "runs/event_state_bounded_execution_chain_execution_v0_1_20260724T185356Z/event_state_candidate_records.jsonl",
+    "candidate_records_expected": 8,
+    "event_state_integration_design_contract_sha256": "354aabbee54da03a0987c8b2650867563672a0812111286da22d2ab726cb7342",
+    "physical_validation_final_manifest_relative_path": "runs/event_state_bounded_execution_chain_physical_validation_v0_1_20260724T193214Z/final_manifest.json",
+    "physical_validation_final_manifest_sha256": "742694fa4c298fa8b6c590199b5c7301b0cad660499ba6f3837219795a00bc81",
+    "physical_validation_run_id": "event_state_bounded_execution_chain_physical_validation_v0_1_20260724T193214Z",
+    "physical_validation_schema_report_sha256": "0a92d14a8f7c2981d84df4a43dd58de2b1b6f17355ea0476c53d8b3303d8731e"
+  },
+  "scope_restrictions": {
+    "accepted_event_types": 1,
+    "complete_tsis_event_state": false,
+    "downstream_consumable": false,
+    "event_type_scope": "session_opened_only",
+    "full_history": false,
+    "full_universe": false,
+    "halt_resumed_excluded": true,
+    "official_dataset": false,
+    "official_parquet": false,
+    "production": false,
+    "source_market_state_physical_dataset_official": false
+  },
+  "source_market_data_rows_read_by_promotion": 0
+}

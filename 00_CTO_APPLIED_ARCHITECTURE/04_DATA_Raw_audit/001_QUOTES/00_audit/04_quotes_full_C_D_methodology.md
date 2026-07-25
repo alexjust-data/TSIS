@@ -9,11 +9,11 @@ Su función es dejar trazabilidad paso a paso de la auditoría metodológica de 
 ## Base de datos de referencia
 
 - Dataset base actual:
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\quotes_v2_materialized\quotes_current_cd_merged\quotes_current.parquet`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\quotes_v2_materialized\quotes_current_cd_merged\quotes_current.parquet`
 - Universo canónico `<1B>`:
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\market_cap_last_observed_cutoff\20260320_market_cap_last_observed_cutoff\market_cap_cutoff_lt_1b_active_inactive.parquet`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\market_cap_last_observed_cutoff\20260320_market_cap_last_observed_cutoff\market_cap_cutoff_lt_1b_active_inactive.parquet`
 - Verificación de merge:
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\quotes_v2_materialized\quotes_current_cd_merged\merge_verification_summary.json`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\quotes_v2_materialized\quotes_current_cd_merged\merge_verification_summary.json`
 
 Estado conocido al arrancar `v2`:
 
@@ -126,7 +126,7 @@ Se irán anotando aquí conforme consolidemos el flujo `v2`.
 Builder principal para regenerar los artefactos del notebook `v2` sin tocar la materializaci?n base:
 
 ```sh
-python "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\quotes\v2\cell_code\build_quotes_cd_audit_artifacts_v2.py"
+python "C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\quotes\v2\cell_code\build_quotes_cd_audit_artifacts_v2.py"
 ```
 
 Este builder:
@@ -152,7 +152,7 @@ Esto permite:
 Comando de recomputaci?n parcial:
 
 ```sh
-python "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\quotes\v2\cell_code\build_quotes_cd_audit_artifacts_v2.py" --from-stage taxonomy
+python "C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\quotes\v2\cell_code\build_quotes_cd_audit_artifacts_v2.py" --from-stage taxonomy
 ```
 
 Uso previsto:
@@ -262,7 +262,7 @@ Acci?n tomada:
 - se relanz? otra vez:
 
 ```sh
-python "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\quotes\v2\cell_code\build_quotes_cd_audit_artifacts_v2.py" --from-stage taxonomy
+python "C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\quotes\v2\cell_code\build_quotes_cd_audit_artifacts_v2.py" --from-stage taxonomy
 ```
 
 La lectura buena de esta fase es la ?ltima recomputaci?n, no la intermedia.
@@ -376,7 +376,7 @@ Bug encontrado y corregido:
 - despues de la correccion se relanzo solo:
 
 ```sh
-python "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\quotes\v2\cell_code\build_quotes_cd_audit_artifacts_v2.py" --from-stage crossed_gap_severity
+python "C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\quotes\v2\cell_code\build_quotes_cd_audit_artifacts_v2.py" --from-stage crossed_gap_severity
 ```
 
 Lectura metodologica importante:

@@ -1,0 +1,18 @@
+{
+  "book_id": "trading_systems_methods_kaufman",
+  "title": "Trading Systems and Methods",
+  "author": "Perry J. Kaufman",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Trading_Systems_and_Methods_-_Perry_J_Kaufman.pdf",
+  "source_format_detected": "DjVu document mislabeled with .pdf extension",
+  "status": "indexed",
+  "pages_djvu": 621,
+  "text_chunks_extracted": 600,
+  "total_chars": 1578123,
+  "total_words": 271972,
+  "requires_pdf_conversion": false,
+  "requires_ocr": false,
+  "ocr_quality": "usable_with_noise",
+  "extraction_tool": "DjVuLibre djvutxt.exe extracted locally from Chocolatey package",
+  "working_text_persisted": false,
+  "created_utc": "2026-07-24T22:49:17Z"
+}

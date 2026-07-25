@@ -1,0 +1,35 @@
+{
+  "scope_id": "event_state_instrument_session_projection_design_scope_v0_1",
+  "status": "closed_design_ready_with_restrictions_no_execution",
+  "authorization_document": "C:/TSIS_Data/00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/07_EVENT_STATE_INTEGRATION/event_state_instrument_session_projection_design_authorization_v0_1.md",
+  "design_run_id": "event_state_instrument_session_projection_design_v0_1_20260724T144500Z",
+  "date": "2026-07-24",
+  "scope": "session_opened_exchange_session_to_instrument_session_projection_design",
+  "problem_statement": "bridge_exchange_session_event_window_to_instrument_session_market_state_context",
+  "prior_designs": {
+    "event_instance_binding_design": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+    "event_window_binding_design": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+    "market_state_profile_compatibility_design": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION"
+  },
+  "source_authorities_for_future_execution": {
+    "instrument_identity": "Data Foundation instrument_master or successor governed identity authority",
+    "calendar": "governed exchange session calendar / market_calendar authority",
+    "market_state_profile": "market_state_core_four_intraday_profile_v0_1",
+    "event_type": "event_type:market_data:session_opened"
+  },
+  "closed_actions": {
+    "instrument_session_projection_execution": false,
+    "instrument_session_projections_created": 0,
+    "instrument_master_rows_read": 0,
+    "market_calendar_rows_read": 0,
+    "event_instances_created": 0,
+    "event_windows_created": 0,
+    "market_state_physical_consumption": false,
+    "event_state_builder_execution": false,
+    "event_state_materialization": false,
+    "official_event_state_dataset_promotion": false,
+    "production": false,
+    "downstream_consumption": false
+  },
+  "next_gate_after_design": "event_state_integration_design_authorization_v0_1"
+}

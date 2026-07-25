@@ -114,25 +114,25 @@ promotion or downstream consumption.
 
   `C:\TSIS_Data\00_CTO_1\00_EPISTEMOLOGICAL_architecture\01_TSIS_REPRESENTATION_THEORY\17_Chapter_16_Materialization_Policy_TSIS.md`         `Materialization Policy`                   `primary`         `verified_current`
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\market_state_event_state_composition_contract_v0_1.md`    `Primary key and composition`              `supporting`      `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\market_state_event_state_composition_contract_v0_1.md`    `Primary key and composition`              `supporting`      `verified_current`
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\market_state_coverage_and_lookback_policy_v0_1.md`        `Coverage, lookback and promotion gates`   `supporting`      `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\market_state_coverage_and_lookback_policy_v0_1.md`        `Coverage, lookback and promotion gates`   `supporting`      `verified_current`
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_builder_contract_v0_1.md`                           `Flow and acceptance criteria`             `supporting`      `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_builder_contract_v0_1.md`                           `Flow and acceptance criteria`             `supporting`      `verified_current`
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_observable_eligibility_contract_v0_1.md`            `Observable eligibility`                   `supporting`      `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_observable_eligibility_contract_v0_1.md`            `Observable eligibility`                   `supporting`      `verified_current`
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_decision_timestamp_policy_v0_1.md`                  `Decision timestamp policy`                `supporting`      `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_decision_timestamp_policy_v0_1.md`                  `Decision timestamp policy`                `supporting`      `verified_current`
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_contract_v0_1.md`        `Raw-to-consumption lineage`               `supporting`      `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_contract_v0_1.md`        `Raw-to-consumption lineage`               `supporting`      `verified_current`
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs\market_state_table_schema_contract.md`                   `Current schema contract`                  `supporting`      `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas\outputs\market_state_table_schema_contract.md`                   `Current schema contract`                  `supporting`      `verified_current`
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\contract_registry\dataset_contracts\market_state_table_dataset_contract_v0_1.md`   `v0_1`                                     `supporting`      `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\contract_registry\dataset_contracts\market_state_table_dataset_contract_v0_1.md`   `v0_1`                                     `supporting`      `verified_current`
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\data_consumption_policies\market_state_table_consumption_policy.md`                `Current consumption policy`               `supporting`      `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\data_consumption_policies\market_state_table_consumption_policy.md`                `Current consumption policy`               `supporting`      `verified_current`
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md`            `Market State status rows`                 `supporting`      `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md`            `Market State status rows`                 `supporting`      `verified_current`
   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------

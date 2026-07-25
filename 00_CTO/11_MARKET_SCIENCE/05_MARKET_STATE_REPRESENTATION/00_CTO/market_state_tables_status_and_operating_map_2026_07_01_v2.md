@@ -241,7 +241,7 @@ market_state_event_state_composition_contract_v0_1.md:207-224
 Path base usado en las filas con `.../`:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/
 ```
 
 ### `market_state_table_v0_1` - Componentes Que La Alimentan
@@ -333,7 +333,7 @@ que existen en el schema de la tabla componente.
 Impresion literal usada como evidencia:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/master_daily_table_schema_contract.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/master_daily_table_schema_contract.md
 ```
 
 ### Familias De Observables Desde Daily (No Inventario Cerrado)
@@ -417,7 +417,7 @@ que existen en el schema intradia y en la ruta candidate quote-guarded.
 Impresion literal usada como evidencia:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/master_intraday_bar_table_schema_contract.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/master_intraday_bar_table_schema_contract.md
 ```
 
 ### Familias De Observables Base Desde 1m (No Inventario Cerrado)
@@ -506,7 +506,7 @@ que existen en el schema de microestructura y el plan multi-window.
 Impresion literal usada como evidencia:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/microstructure_features_table_schema_contract.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/microstructure_features_table_schema_contract.md
 ```
 
 ### Familias De Observables Desde Microestructura (No Inventario Cerrado)
@@ -565,12 +565,12 @@ pendientes. No todos tienen el mismo estado operativo.
 Impresion literal usada como evidencia:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/fundamentals_asof_table_schema_contract.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/news_context_table_schema_contract.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/short_context_table_schema_contract.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/regime_context_table_schema_contract.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/halts_table_schema_contract.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/short_sale_constraints_table_target_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/fundamentals_asof_table_schema_contract.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/news_context_table_schema_contract.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/short_context_table_schema_contract.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/regime_context_table_schema_contract.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/halts_table_schema_contract.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/short_sale_constraints_table_target_contract_v0_1.md
 C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01.md
 ```
 
@@ -631,12 +631,12 @@ la fotografia observable en `t`.
 Impresion literal usada como evidencia:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/instrument_master_schema_contract.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/market_calendar_schema_contract.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/expected_data_calendar_schema_contract.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/corporate_actions_table_schema_contract.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/dataset_certification_matrix_schema_contract.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/data_quality_report/README.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/instrument_master_schema_contract.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/market_calendar_schema_contract.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/expected_data_calendar_schema_contract.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/corporate_actions_table_schema_contract.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/dataset_certification_matrix_schema_contract.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/data_quality_report/README.md
 ```
 
 ### Familias / Metadata De Soporte Legal (No Inventario De Features)

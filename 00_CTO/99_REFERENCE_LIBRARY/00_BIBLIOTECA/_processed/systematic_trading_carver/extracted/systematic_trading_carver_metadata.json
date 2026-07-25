@@ -1,0 +1,19 @@
+﻿{
+    "book_id":  "systematic_trading_carver",
+    "title":  "Systematic Trading",
+    "author":  "Robert Carver",
+    "source_pdf":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\systematic_trading_-_robert_carver.pdf",
+    "processed_root":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\systematic_trading_carver",
+    "source_copy":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\systematic_trading_carver\\source\\original.pdf",
+    "pages":  348,
+    "file_size_bytes":  5075317,
+    "sha256":  "d526fe1fc5ac5723dd0cde21009b3e6a985bfaeb84fe3683c12ca20eaf5ce0a3",
+    "created_utc":  "2026-07-25T05:09:01+00:00",
+    "total_words":  100987,
+    "text_pages":  347,
+    "toc_items":  137,
+    "requires_ocr":  false,
+    "status":  "indexed",
+    "working_text_persisted":  false,
+    "ocr_completed":  false
+}

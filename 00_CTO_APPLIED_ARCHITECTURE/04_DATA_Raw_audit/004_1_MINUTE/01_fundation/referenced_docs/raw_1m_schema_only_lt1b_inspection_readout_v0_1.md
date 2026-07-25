@@ -18,11 +18,11 @@ Hace una cosa mucho mas precisa:
 
 Script generador:
 
-- [build_1m_schema_only_lt1b_inspection_notebook.py](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/inspection/minute/build_1m_schema_only_lt1b_inspection_notebook.py)
+- [build_1m_schema_only_lt1b_inspection_notebook.py](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/inspection/minute/build_1m_schema_only_lt1b_inspection_notebook.py)
 
 Notebook inspector:
 
-- [raw_1m_schema_only_lt1b_inspection_notebook_v0_1.ipynb](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/minute/raw_1m_schema_only_lt1b_inspection_notebook_v0_1.ipynb)
+- [raw_1m_schema_only_lt1b_inspection_notebook_v0_1.ipynb](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/minute/raw_1m_schema_only_lt1b_inspection_notebook_v0_1.ipynb)
 
 Base cuantitativa:
 

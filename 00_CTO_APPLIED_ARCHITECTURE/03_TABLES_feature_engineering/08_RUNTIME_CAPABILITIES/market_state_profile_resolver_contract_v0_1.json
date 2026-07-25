@@ -1,0 +1,104 @@
+{
+  "blocking_conditions": [
+    "missing_profile_id",
+    "missing_profile_version",
+    "profile_version_policy_not_exact",
+    "profile_registry_entry_missing",
+    "profile_version_not_found",
+    "multiple_profile_versions_match",
+    "profile_status_not_official_semantic_profile",
+    "profile_artifact_validation_missing",
+    "profile_contract_hash_missing",
+    "schema_contract_missing",
+    "requested_output_mode_incompatible_with_profile_restrictions",
+    "semantic_profile_treated_as_official_physical_dataset",
+    "required_information_objects_missing",
+    "required_state_variables_missing"
+  ],
+  "contract_id": "market_state_profile_resolver_contract_v0_1",
+  "date": "2026-07-25",
+  "fingerprint_contribution": {
+    "exclude_fields": [
+      "resolver_run_time",
+      "machine_name",
+      "temporary_registry_lookup_path",
+      "log_path"
+    ],
+    "include_fields": [
+      "resolved_profile_id",
+      "resolved_profile_version",
+      "profile_contract_hash",
+      "expected_schema_hash",
+      "required_information_object_ids",
+      "required_state_variable_ids",
+      "profile_restriction_ids",
+      "profile_artifact_validation_run"
+    ]
+  },
+  "hard_boundaries": {
+    "dataset_registry_write_allowed": false,
+    "downstream_consumption_allowed": false,
+    "execution_plan_creation_allowed": false,
+    "market_state_builder_execution_allowed": false,
+    "market_state_materializer_execution_allowed": false,
+    "official_market_state_dataset_promotion_allowed": false,
+    "official_market_state_parquet_write_allowed": false,
+    "production_allowed": false,
+    "profile_registry_runtime_read_allowed": false,
+    "profile_resolver_execution_allowed": false,
+    "request_execution_allowed": false,
+    "source_data_reads_allowed": false
+  },
+  "input_fields": [
+    "request_id",
+    "request_fingerprint",
+    "profile_id",
+    "profile_version_policy",
+    "profile_version",
+    "output_mode",
+    "validation_level"
+  ],
+  "next_allowed_gate": "market_state_universe_resolver_design_v0_1",
+  "output_fields": [
+    "resolved_profile_id",
+    "resolved_profile_version",
+    "profile_contract_id",
+    "profile_contract_hash",
+    "profile_artifact_validation_run",
+    "expected_grain",
+    "expected_schema_id",
+    "expected_schema_hash",
+    "required_information_object_ids",
+    "required_state_variable_ids",
+    "profile_restriction_ids",
+    "profile_allowed_output_modes",
+    "profile_forbidden_output_modes",
+    "profile_required_source_aliases",
+    "profile_required_builder_roles",
+    "profile_required_validator_roles"
+  ],
+  "parent_execution_plan_contract": "market_state_execution_plan_contract_v0_1",
+  "parent_request_contract": "market_state_request_contract_v0_1",
+  "profile_resolution_status_model": [
+    "resolved",
+    "blocked",
+    "superseded",
+    "quarantined"
+  ],
+  "restriction_propagation_required": true,
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+  "supported_profile_v0_1": {
+    "official_market_state_dataset_exists": false,
+    "official_market_state_parquet_exists": false,
+    "profile_artifact_validation_required": true,
+    "profile_classification": "official_semantic_profile_not_physical_dataset",
+    "profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "profile_status_required": "OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS"
+  },
+  "v0_1_policies": {
+    "allowed_output_mode": "candidate",
+    "allowed_profile_version_policy": "exact",
+    "latest_or_default_version_resolution_allowed": false,
+    "semantic_profile_implies_physical_dataset": false
+  }
+}

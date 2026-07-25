@@ -1,0 +1,59 @@
+{
+  "review_matrix_id": "event_state_execution_chain_joint_review_matrix_v0_1",
+  "status": "CLOSED_APPROVED_FOR_BOUNDED_EXECUTION_AUTHORIZATION_WITH_RESTRICTIONS_NO_EXECUTION",
+  "review_run_id": "event_state_execution_chain_joint_review_v0_1_20260724T151500Z",
+  "date": "2026-07-24",
+  "review_scope": "session_opened_core_four_event_state_design_chain_joint_review",
+  "checks": [
+    {
+      "check_id": "event_type_admission",
+      "artifact": "event_type_initial_admission_review_readout_v0_1.md",
+      "result": "PASS_WITH_RESTRICTIONS",
+      "finding": "session_opened is accepted_with_restrictions for exchange_session scope; halt_resumed remains out of scope."
+    },
+    {
+      "check_id": "event_instance_identity",
+      "artifact": "event_instance_binding_design_readout_v0_1.md",
+      "result": "PASS_WITH_RESTRICTIONS",
+      "finding": "native Event Instance identity excludes instrument_id and preserves exchange_session grain."
+    },
+    {
+      "check_id": "event_window_binding",
+      "artifact": "event_window_binding_design_readout_v0_1.md",
+      "result": "PASS_WITH_RESTRICTIONS",
+      "finding": "Event Window Binding grammar preserves state_role and consumption_legality separation."
+    },
+    {
+      "check_id": "market_state_compatibility",
+      "artifact": "market_state_profile_compatibility_design_readout_v0_1.md",
+      "result": "PASS_WITH_RESTRICTIONS",
+      "finding": "official Market State profile is semantic parent only; physical consumption remains closed."
+    },
+    {
+      "check_id": "instrument_session_projection",
+      "artifact": "event_state_instrument_session_projection_design_readout_v0_1.md",
+      "result": "PASS_WITH_RESTRICTIONS",
+      "finding": "projection bridge is required before exchange_session events can bind to instrument-session Market State."
+    },
+    {
+      "check_id": "event_state_integration",
+      "artifact": "event_state_integration_design_readout_v0_1.md",
+      "result": "PASS_WITH_RESTRICTIONS",
+      "finding": "future Event State records require atomic exact-one bindings across Market State, event, window, projection, role and legality."
+    },
+    {
+      "check_id": "execution_boundary",
+      "artifact": "all_reviewed_designs",
+      "result": "PASS",
+      "finding": "no market data rows, Market State parquet, Event Instances, Event Windows, projections or Event State records were created."
+    }
+  ],
+  "summary": {
+    "design_artifacts_reviewed": 6,
+    "blocking_design_findings": 0,
+    "approved_for_bounded_execution_chain_authorization": true,
+    "execution_authorized_by_this_review": false,
+    "materialization_authorized_by_this_review": false,
+    "downstream_consumption_authorized_by_this_review": false
+  }
+}

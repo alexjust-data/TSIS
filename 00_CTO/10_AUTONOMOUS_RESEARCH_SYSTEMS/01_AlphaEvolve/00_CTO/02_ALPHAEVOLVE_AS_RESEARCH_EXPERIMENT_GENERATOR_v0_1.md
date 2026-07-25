@@ -1,4 +1,4 @@
-﻿# AlphaEvolve As Research Experiment Generator Contract v0.1
+# AlphaEvolve As Research Experiment Generator Contract v0.1
 
 Fecha: 2026-07-05
 Estado: contract_initial_aligned_with_TSIS_LAB_ARCHITECTURE_v3
@@ -163,22 +163,22 @@ usar selected_by_scanner como feature causal sin contrato
 usar outcome futuro dentro del estado
 ```
 
-## Relacion Con 00_TSIS_Lab
+## Relacion Con 03_TSIS_Lab
 
-`00_TSIS_Lab` define el formato comun.
+`03_TSIS_Lab` define el formato comun.
 
 AlphaEvolve no crea un laboratorio paralelo.
 
 Debe escribir o consumir experimentos en:
 
 ```text
-C:/TSIS_Data/00_TSIS_Lab/04_experiments/
+C:/TSIS_Data/03_TSIS_Lab/04_experiments/
 ```
 
 Y registrar resultados en:
 
 ```text
-C:/TSIS_Data/00_TSIS_Lab/02_registries/
+C:/TSIS_Data/03_TSIS_Lab/02_registries/
 ```
 
 ## Primer Uso Esperado

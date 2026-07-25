@@ -219,8 +219,8 @@ La documentacion CTO activa vive en:
 La autoridad operativa vive en:
 
 ```text
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_1.md
 ```
 
 Regla:
@@ -769,7 +769,7 @@ Este contrato propone crear, en fases posteriores:
 01_foundations/data_consumption_policies/market_state_consumption_policy.md
 01_foundations/validators/outputs/market_state_validators.md
 01_research/event_engine/event_state_builder_contract.md
-03_TSIS_Offline_RL/state_action_reward_dataset_contract.md
+05_TSIS_Offline_RL/state_action_reward_dataset_contract.md
 ```
 
 Este documento no crea esos contratos operativos.

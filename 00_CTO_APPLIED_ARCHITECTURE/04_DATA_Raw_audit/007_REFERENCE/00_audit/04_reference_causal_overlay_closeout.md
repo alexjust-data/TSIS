@@ -16,13 +16,13 @@ La idea es medir si `reference` ya actua como capa explicativa real y no solo co
 
 ## Artefactos causales
 
-- [reference_overview_market_identity_links.parquet](C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\reference\cache_v2\reference_overview_market_identity_links.parquet)
-- [reference_split_market_link_candidates.parquet](C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\reference\cache_v2\reference_split_market_link_candidates.parquet)
-- [reference_split_daily_link_candidates.parquet](C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\reference\cache_v2\reference_split_daily_link_candidates.parquet)
-- [reference_split_1m_link_candidates.parquet](C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\reference\cache_v2\reference_split_1m_link_candidates.parquet)
-- [reference_event_halt_link_candidates.parquet](C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\reference\cache_v2\reference_event_halt_link_candidates.parquet)
-- [reference_event_quotes_link_candidates.parquet](C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\reference\cache_v2\reference_event_quotes_link_candidates.parquet)
-- [reference_causal_alignment_summary.parquet](C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\reference\cache_v2\reference_causal_alignment_summary.parquet)
+- [reference_overview_market_identity_links.parquet](C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\reference\cache_v2\reference_overview_market_identity_links.parquet)
+- [reference_split_market_link_candidates.parquet](C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\reference\cache_v2\reference_split_market_link_candidates.parquet)
+- [reference_split_daily_link_candidates.parquet](C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\reference\cache_v2\reference_split_daily_link_candidates.parquet)
+- [reference_split_1m_link_candidates.parquet](C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\reference\cache_v2\reference_split_1m_link_candidates.parquet)
+- [reference_event_halt_link_candidates.parquet](C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\reference\cache_v2\reference_event_halt_link_candidates.parquet)
+- [reference_event_quotes_link_candidates.parquet](C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\reference\cache_v2\reference_event_quotes_link_candidates.parquet)
+- [reference_causal_alignment_summary.parquet](C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\reference\cache_v2\reference_causal_alignment_summary.parquet)
 
 ## 1. `splits -> trades`
 
@@ -66,8 +66,8 @@ Eso ademas es coherente con lo ya cerrado en `trades`: la hipotesis "todo es spl
 
 Se anadio una segunda comprobacion contra raw market data:
 
-- [reference_split_daily_link_candidates.parquet](C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\reference\cache_v2\reference_split_daily_link_candidates.parquet)
-- [reference_split_1m_link_candidates.parquet](C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\reference\cache_v2\reference_split_1m_link_candidates.parquet)
+- [reference_split_daily_link_candidates.parquet](C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\reference\cache_v2\reference_split_daily_link_candidates.parquet)
+- [reference_split_1m_link_candidates.parquet](C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\reference\cache_v2\reference_split_1m_link_candidates.parquet)
 
 Resultado:
 

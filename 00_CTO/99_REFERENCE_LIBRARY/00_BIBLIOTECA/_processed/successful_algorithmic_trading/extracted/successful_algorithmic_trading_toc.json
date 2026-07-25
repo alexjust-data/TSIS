@@ -1,0 +1,1360 @@
+[
+  {
+    "title": "I Introducing Algorithmic Trading",
+    "level": 0,
+    "page_index": 9,
+    "page": 10,
+    "slug": "i-introducing-algorithmic-trading"
+  },
+  {
+    "title": "Introduction to the Book",
+    "level": 1,
+    "page_index": 11,
+    "page": 12,
+    "slug": "introduction-to-the-book"
+  },
+  {
+    "title": "Introduction to QuantStart",
+    "level": 2,
+    "page_index": 11,
+    "page": 12,
+    "slug": "introduction-to-quantstart"
+  },
+  {
+    "title": "What is this Book?",
+    "level": 2,
+    "page_index": 11,
+    "page": 12,
+    "slug": "what-is-this-book"
+  },
+  {
+    "title": "Who is this Book For?",
+    "level": 2,
+    "page_index": 11,
+    "page": 12,
+    "slug": "who-is-this-book-for"
+  },
+  {
+    "title": "What are the Prerequisites?",
+    "level": 2,
+    "page_index": 11,
+    "page": 12,
+    "slug": "what-are-the-prerequisites"
+  },
+  {
+    "title": "Software/Hardware Requirements",
+    "level": 2,
+    "page_index": 12,
+    "page": 13,
+    "slug": "software-hardware-requirements"
+  },
+  {
+    "title": "Book Structure",
+    "level": 2,
+    "page_index": 12,
+    "page": 13,
+    "slug": "book-structure"
+  },
+  {
+    "title": "What the Book does not Cover",
+    "level": 2,
+    "page_index": 13,
+    "page": 14,
+    "slug": "what-the-book-does-not-cover"
+  },
+  {
+    "title": "Where to Get Help",
+    "level": 2,
+    "page_index": 13,
+    "page": 14,
+    "slug": "where-to-get-help"
+  },
+  {
+    "title": "What Is Algorithmic Trading?",
+    "level": 1,
+    "page_index": 15,
+    "page": 16,
+    "slug": "what-is-algorithmic-trading"
+  },
+  {
+    "title": "Overview",
+    "level": 2,
+    "page_index": 15,
+    "page": 16,
+    "slug": "overview"
+  },
+  {
+    "title": "Advantages",
+    "level": 3,
+    "page_index": 15,
+    "page": 16,
+    "slug": "advantages"
+  },
+  {
+    "title": "Disadvantages",
+    "level": 3,
+    "page_index": 16,
+    "page": 17,
+    "slug": "disadvantages"
+  },
+  {
+    "title": "Scientific Method",
+    "level": 2,
+    "page_index": 17,
+    "page": 18,
+    "slug": "scientific-method"
+  },
+  {
+    "title": "Why Python?",
+    "level": 2,
+    "page_index": 17,
+    "page": 18,
+    "slug": "why-python"
+  },
+  {
+    "title": "Can Retail Traders Still Compete?",
+    "level": 2,
+    "page_index": 18,
+    "page": 19,
+    "slug": "can-retail-traders-still-compete"
+  },
+  {
+    "title": "Trading Advantages",
+    "level": 3,
+    "page_index": 18,
+    "page": 19,
+    "slug": "trading-advantages"
+  },
+  {
+    "title": "Risk Management",
+    "level": 3,
+    "page_index": 19,
+    "page": 20,
+    "slug": "risk-management"
+  },
+  {
+    "title": "Investor Relations",
+    "level": 3,
+    "page_index": 19,
+    "page": 20,
+    "slug": "investor-relations"
+  },
+  {
+    "title": "Technology",
+    "level": 3,
+    "page_index": 19,
+    "page": 20,
+    "slug": "technology"
+  },
+  {
+    "title": "II Trading Systems",
+    "level": 0,
+    "page_index": 21,
+    "page": 22,
+    "slug": "ii-trading-systems"
+  },
+  {
+    "title": "Successful Backtesting",
+    "level": 1,
+    "page_index": 23,
+    "page": 24,
+    "slug": "successful-backtesting"
+  },
+  {
+    "title": "Why Backtest Strategies?",
+    "level": 2,
+    "page_index": 23,
+    "page": 24,
+    "slug": "why-backtest-strategies"
+  },
+  {
+    "title": "Backtesting Biases",
+    "level": 2,
+    "page_index": 24,
+    "page": 25,
+    "slug": "backtesting-biases"
+  },
+  {
+    "title": "Optimisation Bias",
+    "level": 3,
+    "page_index": 24,
+    "page": 25,
+    "slug": "optimisation-bias"
+  },
+  {
+    "title": "Look-Ahead Bias",
+    "level": 3,
+    "page_index": 24,
+    "page": 25,
+    "slug": "look-ahead-bias"
+  },
+  {
+    "title": "Survivorship Bias",
+    "level": 3,
+    "page_index": 25,
+    "page": 26,
+    "slug": "survivorship-bias"
+  },
+  {
+    "title": "Cognitive Bias",
+    "level": 3,
+    "page_index": 25,
+    "page": 26,
+    "slug": "cognitive-bias"
+  },
+  {
+    "title": "Exchange Issues",
+    "level": 2,
+    "page_index": 26,
+    "page": 27,
+    "slug": "exchange-issues"
+  },
+  {
+    "title": "Order Types",
+    "level": 3,
+    "page_index": 26,
+    "page": 27,
+    "slug": "order-types"
+  },
+  {
+    "title": "Price Consolidation",
+    "level": 3,
+    "page_index": 26,
+    "page": 27,
+    "slug": "price-consolidation"
+  },
+  {
+    "title": "Forex Trading and ECNs",
+    "level": 3,
+    "page_index": 27,
+    "page": 28,
+    "slug": "forex-trading-and-ecns"
+  },
+  {
+    "title": "Shorting Constraints",
+    "level": 3,
+    "page_index": 27,
+    "page": 28,
+    "slug": "shorting-constraints"
+  },
+  {
+    "title": "Transaction Costs",
+    "level": 2,
+    "page_index": 27,
+    "page": 28,
+    "slug": "transaction-costs"
+  },
+  {
+    "title": "Commission",
+    "level": 3,
+    "page_index": 27,
+    "page": 28,
+    "slug": "commission"
+  },
+  {
+    "title": "Slippage",
+    "level": 3,
+    "page_index": 27,
+    "page": 28,
+    "slug": "slippage"
+  },
+  {
+    "title": "Market Impact",
+    "level": 3,
+    "page_index": 28,
+    "page": 29,
+    "slug": "market-impact"
+  },
+  {
+    "title": "Backtesting vs Reality",
+    "level": 2,
+    "page_index": 28,
+    "page": 29,
+    "slug": "backtesting-vs-reality"
+  },
+  {
+    "title": "Automated Execution",
+    "level": 1,
+    "page_index": 29,
+    "page": 30,
+    "slug": "automated-execution"
+  },
+  {
+    "title": "Backtesting Platforms",
+    "level": 2,
+    "page_index": 29,
+    "page": 30,
+    "slug": "backtesting-platforms"
+  },
+  {
+    "title": "Programming",
+    "level": 3,
+    "page_index": 30,
+    "page": 31,
+    "slug": "programming"
+  },
+  {
+    "title": "Research Tools",
+    "level": 3,
+    "page_index": 30,
+    "page": 31,
+    "slug": "research-tools"
+  },
+  {
+    "title": "Event-Driven Backtesting",
+    "level": 3,
+    "page_index": 31,
+    "page": 32,
+    "slug": "event-driven-backtesting"
+  },
+  {
+    "title": "Latency",
+    "level": 3,
+    "page_index": 31,
+    "page": 32,
+    "slug": "latency"
+  },
+  {
+    "title": "Language Choices",
+    "level": 3,
+    "page_index": 31,
+    "page": 32,
+    "slug": "language-choices"
+  },
+  {
+    "title": "Integrated Development Environments",
+    "level": 3,
+    "page_index": 32,
+    "page": 33,
+    "slug": "integrated-development-environments"
+  },
+  {
+    "title": "Colocation",
+    "level": 2,
+    "page_index": 34,
+    "page": 35,
+    "slug": "colocation"
+  },
+  {
+    "title": "Home Desktop",
+    "level": 3,
+    "page_index": 34,
+    "page": 35,
+    "slug": "home-desktop"
+  },
+  {
+    "title": "VPS",
+    "level": 3,
+    "page_index": 35,
+    "page": 36,
+    "slug": "vps"
+  },
+  {
+    "title": "Exchange",
+    "level": 3,
+    "page_index": 35,
+    "page": 36,
+    "slug": "exchange"
+  },
+  {
+    "title": "Sourcing Strategy Ideas",
+    "level": 1,
+    "page_index": 37,
+    "page": 38,
+    "slug": "sourcing-strategy-ideas"
+  },
+  {
+    "title": "Identifying Your Own Personal Preferences for Trading",
+    "level": 2,
+    "page_index": 37,
+    "page": 38,
+    "slug": "identifying-your-own-personal-preferences-for-trading"
+  },
+  {
+    "title": "Sourcing Algorithmic Trading Ideas",
+    "level": 2,
+    "page_index": 38,
+    "page": 39,
+    "slug": "sourcing-algorithmic-trading-ideas"
+  },
+  {
+    "title": "Textbooks",
+    "level": 3,
+    "page_index": 38,
+    "page": 39,
+    "slug": "textbooks"
+  },
+  {
+    "title": "The Internet",
+    "level": 3,
+    "page_index": 39,
+    "page": 40,
+    "slug": "the-internet"
+  },
+  {
+    "title": "Journal Literature",
+    "level": 3,
+    "page_index": 41,
+    "page": 42,
+    "slug": "journal-literature"
+  },
+  {
+    "title": "Independent Research",
+    "level": 3,
+    "page_index": 41,
+    "page": 42,
+    "slug": "independent-research"
+  },
+  {
+    "title": "Evaluating Trading Strategies",
+    "level": 2,
+    "page_index": 42,
+    "page": 43,
+    "slug": "evaluating-trading-strategies"
+  },
+  {
+    "title": "Obtaining Historical Data",
+    "level": 2,
+    "page_index": 43,
+    "page": 44,
+    "slug": "obtaining-historical-data"
+  },
+  {
+    "title": "III Data Platform Development",
+    "level": 0,
+    "page_index": 47,
+    "page": 48,
+    "slug": "iii-data-platform-development"
+  },
+  {
+    "title": "Software Installation",
+    "level": 1,
+    "page_index": 49,
+    "page": 50,
+    "slug": "software-installation"
+  },
+  {
+    "title": "Operating System Choice",
+    "level": 2,
+    "page_index": 49,
+    "page": 50,
+    "slug": "operating-system-choice"
+  },
+  {
+    "title": "Microsoft Windows",
+    "level": 3,
+    "page_index": 49,
+    "page": 50,
+    "slug": "microsoft-windows"
+  },
+  {
+    "title": "Mac OSX",
+    "level": 3,
+    "page_index": 49,
+    "page": 50,
+    "slug": "mac-osx"
+  },
+  {
+    "title": "Linux",
+    "level": 3,
+    "page_index": 50,
+    "page": 51,
+    "slug": "linux"
+  },
+  {
+    "title": "Installing a Python Environment on Ubuntu Linux",
+    "level": 2,
+    "page_index": 50,
+    "page": 51,
+    "slug": "installing-a-python-environment-on-ubuntu-linux"
+  },
+  {
+    "title": "Python",
+    "level": 3,
+    "page_index": 51,
+    "page": 52,
+    "slug": "python"
+  },
+  {
+    "title": "NumPy, SciPy and Pandas",
+    "level": 3,
+    "page_index": 51,
+    "page": 52,
+    "slug": "numpy-scipy-and-pandas"
+  },
+  {
+    "title": "Statsmodels and Scikit-Learn",
+    "level": 3,
+    "page_index": 52,
+    "page": 53,
+    "slug": "statsmodels-and-scikit-learn"
+  },
+  {
+    "title": "PyQt, IPython and Matplotlib",
+    "level": 3,
+    "page_index": 52,
+    "page": 53,
+    "slug": "pyqt-ipython-and-matplotlib"
+  },
+  {
+    "title": "IbPy and Trader Workstation",
+    "level": 3,
+    "page_index": 53,
+    "page": 54,
+    "slug": "ibpy-and-trader-workstation"
+  },
+  {
+    "title": "Financial Data Storage",
+    "level": 1,
+    "page_index": 55,
+    "page": 56,
+    "slug": "financial-data-storage"
+  },
+  {
+    "title": "Securities Master Databases",
+    "level": 2,
+    "page_index": 55,
+    "page": 56,
+    "slug": "securities-master-databases"
+  },
+  {
+    "title": "Financial Datasets",
+    "level": 2,
+    "page_index": 56,
+    "page": 57,
+    "slug": "financial-datasets"
+  },
+  {
+    "title": "Storage Formats",
+    "level": 2,
+    "page_index": 56,
+    "page": 57,
+    "slug": "storage-formats"
+  },
+  {
+    "title": "Flat-File Storage",
+    "level": 3,
+    "page_index": 56,
+    "page": 57,
+    "slug": "flat-file-storage"
+  },
+  {
+    "title": "Document Stores/NoSQL",
+    "level": 3,
+    "page_index": 57,
+    "page": 58,
+    "slug": "document-stores-nosql"
+  },
+  {
+    "title": "Relational Database Management Systems",
+    "level": 3,
+    "page_index": 57,
+    "page": 58,
+    "slug": "relational-database-management-systems"
+  },
+  {
+    "title": "Historical Data Structure",
+    "level": 2,
+    "page_index": 57,
+    "page": 58,
+    "slug": "historical-data-structure"
+  },
+  {
+    "title": "Data Accuracy Evaluation",
+    "level": 2,
+    "page_index": 58,
+    "page": 59,
+    "slug": "data-accuracy-evaluation"
+  },
+  {
+    "title": "Automation",
+    "level": 2,
+    "page_index": 59,
+    "page": 60,
+    "slug": "automation"
+  },
+  {
+    "title": "Data Availability",
+    "level": 2,
+    "page_index": 59,
+    "page": 60,
+    "slug": "data-availability"
+  },
+  {
+    "title": "MySQL for Securities Masters",
+    "level": 2,
+    "page_index": 59,
+    "page": 60,
+    "slug": "mysql-for-securities-masters"
+  },
+  {
+    "title": "Installing MySQL",
+    "level": 3,
+    "page_index": 59,
+    "page": 60,
+    "slug": "installing-mysql"
+  },
+  {
+    "title": "Configuring MySQL",
+    "level": 3,
+    "page_index": 59,
+    "page": 60,
+    "slug": "configuring-mysql"
+  },
+  {
+    "title": "Schema Design for EOD Equities",
+    "level": 3,
+    "page_index": 60,
+    "page": 61,
+    "slug": "schema-design-for-eod-equities"
+  },
+  {
+    "title": "Connecting to the Database",
+    "level": 3,
+    "page_index": 62,
+    "page": 63,
+    "slug": "connecting-to-the-database"
+  },
+  {
+    "title": "Using an Object-Relational Mapper",
+    "level": 3,
+    "page_index": 62,
+    "page": 63,
+    "slug": "using-an-object-relational-mapper"
+  },
+  {
+    "title": "Retrieving Data from the Securities Master",
+    "level": 2,
+    "page_index": 67,
+    "page": 68,
+    "slug": "retrieving-data-from-the-securities-master"
+  },
+  {
+    "title": "Processing Financial Data",
+    "level": 1,
+    "page_index": 69,
+    "page": 70,
+    "slug": "processing-financial-data"
+  },
+  {
+    "title": "Market and Instrument Classification",
+    "level": 2,
+    "page_index": 69,
+    "page": 70,
+    "slug": "market-and-instrument-classification"
+  },
+  {
+    "title": "Markets",
+    "level": 3,
+    "page_index": 69,
+    "page": 70,
+    "slug": "markets"
+  },
+  {
+    "title": "Instruments",
+    "level": 3,
+    "page_index": 69,
+    "page": 70,
+    "slug": "instruments"
+  },
+  {
+    "title": "Fundamental Data",
+    "level": 3,
+    "page_index": 70,
+    "page": 71,
+    "slug": "fundamental-data"
+  },
+  {
+    "title": "Unstructured Data",
+    "level": 3,
+    "page_index": 70,
+    "page": 71,
+    "slug": "unstructured-data"
+  },
+  {
+    "title": "Frequency of Data",
+    "level": 2,
+    "page_index": 71,
+    "page": 72,
+    "slug": "frequency-of-data"
+  },
+  {
+    "title": "Weekly and Monthly Data",
+    "level": 3,
+    "page_index": 71,
+    "page": 72,
+    "slug": "weekly-and-monthly-data"
+  },
+  {
+    "title": "Daily Data",
+    "level": 3,
+    "page_index": 71,
+    "page": 72,
+    "slug": "daily-data"
+  },
+  {
+    "title": "Intraday Bars",
+    "level": 3,
+    "page_index": 71,
+    "page": 72,
+    "slug": "intraday-bars"
+  },
+  {
+    "title": "Tick and Order Book Data",
+    "level": 3,
+    "page_index": 71,
+    "page": 72,
+    "slug": "tick-and-order-book-data"
+  },
+  {
+    "title": "Sources of Data",
+    "level": 2,
+    "page_index": 72,
+    "page": 73,
+    "slug": "sources-of-data"
+  },
+  {
+    "title": "Free Sources",
+    "level": 3,
+    "page_index": 72,
+    "page": 73,
+    "slug": "free-sources"
+  },
+  {
+    "title": "Commercial Sources",
+    "level": 3,
+    "page_index": 73,
+    "page": 74,
+    "slug": "commercial-sources"
+  },
+  {
+    "title": "Obtaining Data",
+    "level": 2,
+    "page_index": 74,
+    "page": 75,
+    "slug": "obtaining-data"
+  },
+  {
+    "title": "Yahoo Finance and Pandas",
+    "level": 3,
+    "page_index": 74,
+    "page": 75,
+    "slug": "yahoo-finance-and-pandas"
+  },
+  {
+    "title": "Quandl and Pandas",
+    "level": 3,
+    "page_index": 75,
+    "page": 76,
+    "slug": "quandl-and-pandas"
+  },
+  {
+    "title": "DTN IQFeed",
+    "level": 3,
+    "page_index": 80,
+    "page": 81,
+    "slug": "dtn-iqfeed"
+  },
+  {
+    "title": "Cleaning Financial Data",
+    "level": 2,
+    "page_index": 82,
+    "page": 83,
+    "slug": "cleaning-financial-data"
+  },
+  {
+    "title": "Data Quality",
+    "level": 3,
+    "page_index": 82,
+    "page": 83,
+    "slug": "data-quality"
+  },
+  {
+    "title": "Continuous Futures Contracts",
+    "level": 3,
+    "page_index": 82,
+    "page": 83,
+    "slug": "continuous-futures-contracts"
+  },
+  {
+    "title": "IV Modelling",
+    "level": 0,
+    "page_index": 87,
+    "page": 88,
+    "slug": "iv-modelling"
+  },
+  {
+    "title": "Statistical Learning",
+    "level": 1,
+    "page_index": 89,
+    "page": 90,
+    "slug": "statistical-learning"
+  },
+  {
+    "title": "What is Statistical Learning?",
+    "level": 2,
+    "page_index": 89,
+    "page": 90,
+    "slug": "what-is-statistical-learning"
+  },
+  {
+    "title": "Prediction and Inference",
+    "level": 3,
+    "page_index": 89,
+    "page": 90,
+    "slug": "prediction-and-inference"
+  },
+  {
+    "title": "Parametric and Non-Parametric Models",
+    "level": 3,
+    "page_index": 90,
+    "page": 91,
+    "slug": "parametric-and-non-parametric-models"
+  },
+  {
+    "title": "Supervised and Unsupervised Learning",
+    "level": 3,
+    "page_index": 91,
+    "page": 92,
+    "slug": "supervised-and-unsupervised-learning"
+  },
+  {
+    "title": "Techniques",
+    "level": 2,
+    "page_index": 91,
+    "page": 92,
+    "slug": "techniques"
+  },
+  {
+    "title": "Regression",
+    "level": 3,
+    "page_index": 91,
+    "page": 92,
+    "slug": "regression"
+  },
+  {
+    "title": "Classification",
+    "level": 3,
+    "page_index": 92,
+    "page": 93,
+    "slug": "classification"
+  },
+  {
+    "title": "Time Series Models",
+    "level": 3,
+    "page_index": 92,
+    "page": 93,
+    "slug": "time-series-models"
+  },
+  {
+    "title": "Time Series Analysis",
+    "level": 1,
+    "page_index": 95,
+    "page": 96,
+    "slug": "time-series-analysis"
+  },
+  {
+    "title": "Testing for Mean Reversion",
+    "level": 2,
+    "page_index": 95,
+    "page": 96,
+    "slug": "testing-for-mean-reversion"
+  },
+  {
+    "title": "Augmented Dickey-Fuller (ADF) Test",
+    "level": 3,
+    "page_index": 96,
+    "page": 97,
+    "slug": "augmented-dickey-fuller-adf-test"
+  },
+  {
+    "title": "Testing for Stationarity",
+    "level": 2,
+    "page_index": 97,
+    "page": 98,
+    "slug": "testing-for-stationarity"
+  },
+  {
+    "title": "Hurst Exponent",
+    "level": 3,
+    "page_index": 97,
+    "page": 98,
+    "slug": "hurst-exponent"
+  },
+  {
+    "title": "Cointegration",
+    "level": 2,
+    "page_index": 99,
+    "page": 100,
+    "slug": "cointegration"
+  },
+  {
+    "title": "Cointegrated Augmented Dickey-Fuller Test",
+    "level": 3,
+    "page_index": 99,
+    "page": 100,
+    "slug": "cointegrated-augmented-dickey-fuller-test"
+  },
+  {
+    "title": "Why Statistical Testing?",
+    "level": 2,
+    "page_index": 104,
+    "page": 105,
+    "slug": "why-statistical-testing"
+  },
+  {
+    "title": "Forecasting",
+    "level": 1,
+    "page_index": 105,
+    "page": 106,
+    "slug": "forecasting"
+  },
+  {
+    "title": "Measuring Forecasting Accuracy",
+    "level": 2,
+    "page_index": 105,
+    "page": 106,
+    "slug": "measuring-forecasting-accuracy"
+  },
+  {
+    "title": "Hit Rate",
+    "level": 3,
+    "page_index": 105,
+    "page": 106,
+    "slug": "hit-rate"
+  },
+  {
+    "title": "Confusion Matrix",
+    "level": 3,
+    "page_index": 106,
+    "page": 107,
+    "slug": "confusion-matrix"
+  },
+  {
+    "title": "Factor Choice",
+    "level": 2,
+    "page_index": 106,
+    "page": 107,
+    "slug": "factor-choice"
+  },
+  {
+    "title": "Lagged Price Factors and Volume",
+    "level": 3,
+    "page_index": 106,
+    "page": 107,
+    "slug": "lagged-price-factors-and-volume"
+  },
+  {
+    "title": "External Factors",
+    "level": 3,
+    "page_index": 107,
+    "page": 108,
+    "slug": "external-factors"
+  },
+  {
+    "title": "Classification Models",
+    "level": 2,
+    "page_index": 107,
+    "page": 108,
+    "slug": "classification-models"
+  },
+  {
+    "title": "Logistic Regression",
+    "level": 3,
+    "page_index": 107,
+    "page": 108,
+    "slug": "logistic-regression"
+  },
+  {
+    "title": "Discriminant Analysis",
+    "level": 3,
+    "page_index": 108,
+    "page": 109,
+    "slug": "discriminant-analysis"
+  },
+  {
+    "title": "Support Vector Machines",
+    "level": 3,
+    "page_index": 108,
+    "page": 109,
+    "slug": "support-vector-machines"
+  },
+  {
+    "title": "Decision Trees and Random Forests",
+    "level": 3,
+    "page_index": 109,
+    "page": 110,
+    "slug": "decision-trees-and-random-forests"
+  },
+  {
+    "title": "Principal Components Analysis",
+    "level": 3,
+    "page_index": 109,
+    "page": 110,
+    "slug": "principal-components-analysis"
+  },
+  {
+    "title": "Which Forecaster?",
+    "level": 3,
+    "page_index": 109,
+    "page": 110,
+    "slug": "which-forecaster"
+  },
+  {
+    "title": "Forecasting Stock Index Movement",
+    "level": 2,
+    "page_index": 111,
+    "page": 112,
+    "slug": "forecasting-stock-index-movement"
+  },
+  {
+    "title": "Python Implementations",
+    "level": 3,
+    "page_index": 111,
+    "page": 112,
+    "slug": "python-implementations"
+  },
+  {
+    "title": "Results",
+    "level": 3,
+    "page_index": 114,
+    "page": 115,
+    "slug": "results"
+  },
+  {
+    "title": "V Performance and Risk Management",
+    "level": 0,
+    "page_index": 115,
+    "page": 116,
+    "slug": "v-performance-and-risk-management"
+  },
+  {
+    "title": "Performance Measurement",
+    "level": 1,
+    "page_index": 117,
+    "page": 118,
+    "slug": "performance-measurement"
+  },
+  {
+    "title": "Trade Analysis",
+    "level": 2,
+    "page_index": 118,
+    "page": 119,
+    "slug": "trade-analysis"
+  },
+  {
+    "title": "Summary Statistics",
+    "level": 3,
+    "page_index": 118,
+    "page": 119,
+    "slug": "summary-statistics"
+  },
+  {
+    "title": "Strategy and Portfolio Analysis",
+    "level": 2,
+    "page_index": 119,
+    "page": 120,
+    "slug": "strategy-and-portfolio-analysis"
+  },
+  {
+    "title": "Returns Analysis",
+    "level": 3,
+    "page_index": 119,
+    "page": 120,
+    "slug": "returns-analysis"
+  },
+  {
+    "title": "Risk/Reward Analysis",
+    "level": 3,
+    "page_index": 120,
+    "page": 121,
+    "slug": "risk-reward-analysis"
+  },
+  {
+    "title": "Drawdown Analysis",
+    "level": 3,
+    "page_index": 125,
+    "page": 126,
+    "slug": "drawdown-analysis"
+  },
+  {
+    "title": "Risk and Money Management",
+    "level": 1,
+    "page_index": 127,
+    "page": 128,
+    "slug": "risk-and-money-management"
+  },
+  {
+    "title": "Sources of Risk",
+    "level": 2,
+    "page_index": 127,
+    "page": 128,
+    "slug": "sources-of-risk"
+  },
+  {
+    "title": "Strategy Risk",
+    "level": 3,
+    "page_index": 127,
+    "page": 128,
+    "slug": "strategy-risk"
+  },
+  {
+    "title": "Portfolio Risk",
+    "level": 3,
+    "page_index": 128,
+    "page": 129,
+    "slug": "portfolio-risk"
+  },
+  {
+    "title": "Counterparty Risk",
+    "level": 3,
+    "page_index": 128,
+    "page": 129,
+    "slug": "counterparty-risk"
+  },
+  {
+    "title": "Operational Risk",
+    "level": 3,
+    "page_index": 128,
+    "page": 129,
+    "slug": "operational-risk"
+  },
+  {
+    "title": "Money Management",
+    "level": 2,
+    "page_index": 129,
+    "page": 130,
+    "slug": "money-management"
+  },
+  {
+    "title": "Kelly Criterion",
+    "level": 3,
+    "page_index": 129,
+    "page": 130,
+    "slug": "kelly-criterion"
+  },
+  {
+    "title": "Risk Management",
+    "level": 2,
+    "page_index": 131,
+    "page": 132,
+    "slug": "risk-management"
+  },
+  {
+    "title": "Value-at-Risk",
+    "level": 3,
+    "page_index": 131,
+    "page": 132,
+    "slug": "value-at-risk"
+  },
+  {
+    "title": "Advantages and Disadvantages",
+    "level": 2,
+    "page_index": 132,
+    "page": 133,
+    "slug": "advantages-and-disadvantages"
+  },
+  {
+    "title": "VI Automated Trading",
+    "level": 0,
+    "page_index": 135,
+    "page": 136,
+    "slug": "vi-automated-trading"
+  },
+  {
+    "title": "Event-Driven Trading Engine Implementation",
+    "level": 1,
+    "page_index": 137,
+    "page": 138,
+    "slug": "event-driven-trading-engine-implementation"
+  },
+  {
+    "title": "Event-Driven Software",
+    "level": 2,
+    "page_index": 137,
+    "page": 138,
+    "slug": "event-driven-software"
+  },
+  {
+    "title": "Why An Event-Driven Backtester?",
+    "level": 3,
+    "page_index": 138,
+    "page": 139,
+    "slug": "why-an-event-driven-backtester"
+  },
+  {
+    "title": "Component Objects",
+    "level": 2,
+    "page_index": 138,
+    "page": 139,
+    "slug": "component-objects"
+  },
+  {
+    "title": "Events",
+    "level": 3,
+    "page_index": 139,
+    "page": 140,
+    "slug": "events"
+  },
+  {
+    "title": "Data Handler",
+    "level": 3,
+    "page_index": 142,
+    "page": 143,
+    "slug": "data-handler"
+  },
+  {
+    "title": "Strategy",
+    "level": 3,
+    "page_index": 148,
+    "page": 149,
+    "slug": "strategy"
+  },
+  {
+    "title": "Portfolio",
+    "level": 3,
+    "page_index": 150,
+    "page": 151,
+    "slug": "portfolio"
+  },
+  {
+    "title": "Execution Handler",
+    "level": 3,
+    "page_index": 158,
+    "page": 159,
+    "slug": "execution-handler"
+  },
+  {
+    "title": "Backtest",
+    "level": 3,
+    "page_index": 160,
+    "page": 161,
+    "slug": "backtest"
+  },
+  {
+    "title": "Event-Driven Execution",
+    "level": 2,
+    "page_index": 163,
+    "page": 164,
+    "slug": "event-driven-execution"
+  },
+  {
+    "title": "Trading Strategy Implementation",
+    "level": 1,
+    "page_index": 171,
+    "page": 172,
+    "slug": "trading-strategy-implementation"
+  },
+  {
+    "title": "Moving Average Crossover Strategy",
+    "level": 2,
+    "page_index": 171,
+    "page": 172,
+    "slug": "moving-average-crossover-strategy"
+  },
+  {
+    "title": "S&P500 Forecasting Trade",
+    "level": 2,
+    "page_index": 176,
+    "page": 177,
+    "slug": "s-p500-forecasting-trade"
+  },
+  {
+    "title": "Mean-Reverting Equity Pairs Trade",
+    "level": 2,
+    "page_index": 180,
+    "page": 181,
+    "slug": "mean-reverting-equity-pairs-trade"
+  },
+  {
+    "title": "Plotting Performance",
+    "level": 2,
+    "page_index": 187,
+    "page": 188,
+    "slug": "plotting-performance"
+  },
+  {
+    "title": "Strategy Optimisation",
+    "level": 1,
+    "page_index": 189,
+    "page": 190,
+    "slug": "strategy-optimisation"
+  },
+  {
+    "title": "Parameter Optimisation",
+    "level": 2,
+    "page_index": 189,
+    "page": 190,
+    "slug": "parameter-optimisation"
+  },
+  {
+    "title": "Which Parameters to Optimise?",
+    "level": 3,
+    "page_index": 189,
+    "page": 190,
+    "slug": "which-parameters-to-optimise"
+  },
+  {
+    "title": "Optimisation is Expensive",
+    "level": 3,
+    "page_index": 190,
+    "page": 191,
+    "slug": "optimisation-is-expensive"
+  },
+  {
+    "title": "Overfitting",
+    "level": 3,
+    "page_index": 190,
+    "page": 191,
+    "slug": "overfitting"
+  },
+  {
+    "title": "Model Selection",
+    "level": 2,
+    "page_index": 191,
+    "page": 192,
+    "slug": "model-selection"
+  },
+  {
+    "title": "Cross Validation",
+    "level": 3,
+    "page_index": 191,
+    "page": 192,
+    "slug": "cross-validation"
+  },
+  {
+    "title": "Grid Search",
+    "level": 3,
+    "page_index": 197,
+    "page": 198,
+    "slug": "grid-search"
+  },
+  {
+    "title": "Optimising Strategies",
+    "level": 2,
+    "page_index": 199,
+    "page": 200,
+    "slug": "optimising-strategies"
+  },
+  {
+    "title": "Intraday Mean Reverting Pairs",
+    "level": 3,
+    "page_index": 199,
+    "page": 200,
+    "slug": "intraday-mean-reverting-pairs"
+  },
+  {
+    "title": "Parameter Adjustment",
+    "level": 3,
+    "page_index": 199,
+    "page": 200,
+    "slug": "parameter-adjustment"
+  },
+  {
+    "title": "Visualisation",
+    "level": 3,
+    "page_index": 202,
+    "page": 203,
+    "slug": "visualisation"
+  }
+]

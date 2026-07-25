@@ -1,0 +1,77 @@
+{
+  "accepted_promotion_run_id": "official_market_state_candidate_promotion_v0_1_20260723T193403Z",
+  "accepted_promotion_status": "OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS",
+  "authority_boundary": {
+    "candidate_parquet_copy_allowed": false,
+    "dataset_promotion_allowed": false,
+    "downstream_consumption_allowed": false,
+    "full_history_execution_allowed": false,
+    "full_universe_execution_allowed": false,
+    "official_dataset_registry_write_allowed": false,
+    "official_market_state_allowed": false,
+    "official_parquet_write_allowed": false,
+    "official_profile_registry_write_allowed": true,
+    "production_builder_allowed": false,
+    "source_market_data_reads_allowed": false
+  },
+  "authorized_writes": [
+    "README.md",
+    "PROFILE_MANIFEST.json",
+    "EVIDENCE_MANIFEST.json",
+    "PHYSICAL_SCHEMA_CONTRACT.json"
+  ],
+  "date": "2026-07-23",
+  "evidence_summary": {
+    "hard_validation_failures": 0,
+    "integrated_candidate_records": 104,
+    "physical_candidate_rows": 104,
+    "resolution_records": 480,
+    "sample_contexts": 120,
+    "scale_c_execution_surface_fingerprint": "34db7887874a57658bbbec52cc9b3915f86afdc61b7997e6b930056c0a9cf554",
+    "scale_c_sample_fingerprint": "67d46f6b5f2567b3af82d000bb2a6cb6e05f0546f0be11b1c263586c3bc9515d",
+    "semantic_rebuild_field_comparisons": 3848,
+    "value_mappings_checked": 1768
+  },
+  "gate": "official_market_state_candidate_promotion_v0_1",
+  "next_allowed_gate": "official_market_state_profile_artifact_validation_v0_1",
+  "official_profile_registry_path": "official_profiles/market_state_core_four_intraday_profile_v0_1",
+  "promotion_target": {
+    "complete_tsis_market_state": false,
+    "profile_classification": "official_profile",
+    "profile_scope": "bounded_core_four_intraday_market_state_profile",
+    "promoted_profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "source_physical_profile_id": "core_four_market_state_profile_v0_1",
+    "source_physical_schema_version": "core_four_market_state_candidate_physical_schema_v0_1"
+  },
+  "required_prior_review": {
+    "decision": "APPROVED_FOR_OFFICIAL_PROFILE_PROMOTION_WITH_RESTRICTIONS",
+    "decision_artifact_sha256": "cd0fd76b156f38e0436f8ea125d822bd65788fa3caed94993ae591c0bd3cbff2",
+    "evidence_inventory_sha256": "25c4b496639820f2c5999150fc508f7f6aebe910fb6023ab0389e1d7714b9fd5",
+    "final_manifest_sha256": "bfd5d3e51550bb63d5c653254ab803e0014690e816cb2b9150f52ea4a7da1271",
+    "restrictions_report_sha256": "6ef484cb898085b3631999d97510fc265e8234fcdb3f02d9d2e4cd1e92ff7c7e",
+    "run_id": "official_market_state_candidate_promotion_review_v0_1_20260723T192107Z"
+  },
+  "scale_c_primary_physical_evidence": {
+    "candidate_materialization_run_id": "experimental_scale_c_ms_candidate_materialization_v0_1_20260723T184752Z",
+    "candidate_parquet_relative_path": "runs/experimental_scale_c_ms_candidate_materialization_v0_1_20260723T184752Z/core_four_market_state_scale_c_candidate_v0_1.parquet",
+    "candidate_parquet_rows": 104,
+    "candidate_parquet_sha256": "b1841f4897a759de8ec9a317bece888a9ff817da3df2cd0eb477b4ed950775a2",
+    "candidate_physical_validation_run_id": "core_four_market_state_scale_c_candidate_physical_validation_v0_1_20260723T184900Z",
+    "physical_validation_final_manifest_relative_path": "runs/core_four_market_state_scale_c_candidate_physical_validation_v0_1_20260723T184900Z/final_manifest.json",
+    "physical_validation_final_manifest_sha256": "6d674778b462da0f7e09c9a0c8f85f2a6c9fb50d3713ef68f3eac71872ca2ace",
+    "schema_report_relative_path": "runs/experimental_scale_c_ms_candidate_materialization_v0_1_20260723T184752Z/schema_report.json",
+    "schema_report_sha256": "bcec190b79ff9271d98043fcc7c580a023615ef28f7d60e820f15cc2b934d935"
+  },
+  "scope_id": "official_market_state_candidate_promotion_scope_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_CONSUMED",
+  "still_closed": [
+    "complete_tsis_market_state",
+    "official_market_state_table",
+    "official_dataset_registry",
+    "official_parquet_materialization",
+    "production_builder",
+    "downstream_consumption",
+    "full_history_execution",
+    "full_universe_execution"
+  ]
+}

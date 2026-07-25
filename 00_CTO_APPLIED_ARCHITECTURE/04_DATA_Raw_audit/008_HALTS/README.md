@@ -4,7 +4,7 @@ Carpeta local de auditoria para la familia `halts`.
 
 Origen canonico:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\inspection_dossiers\halts`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\inspection_dossiers\halts`
 
 Contenido local:
 

@@ -1,0 +1,42 @@
+{
+  "scope_id": "event_state_integration_design_scope_v0_1",
+  "status": "closed_design_ready_with_restrictions_no_execution",
+  "authorization_document": "C:/TSIS_Data/00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/07_EVENT_STATE_INTEGRATION/event_state_integration_design_authorization_v0_1.md",
+  "design_run_id": "event_state_integration_design_v0_1_20260724T150000Z",
+  "date": "2026-07-24",
+  "scope": "session_opened_core_four_event_state_integration_design",
+  "event_state_profile_id": "event_state_core_four_intraday_profile_v0_1",
+  "event_type_id": "event_type:market_data:session_opened",
+  "accepted_subject_scope": "exchange_session",
+  "source_market_state_profile_id": "market_state_core_four_intraday_profile_v0_1",
+  "prior_designs": {
+    "event_instance_binding_design": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+    "event_window_binding_design": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+    "market_state_profile_compatibility_design": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+    "instrument_session_projection_design": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION"
+  },
+  "future_integration_inputs": [
+    "accepted_market_state_record_reference",
+    "accepted_event_instance",
+    "accepted_event_window_binding",
+    "accepted_instrument_session_projection",
+    "state_role_classification",
+    "consumption_legality_classification"
+  ],
+  "closed_actions": {
+    "event_state_integration_execution": false,
+    "event_state_records_emitted": 0,
+    "event_state_parquet_files_written": 0,
+    "market_state_records_consumed": 0,
+    "physical_market_state_parquet_reads": 0,
+    "event_instances_created": 0,
+    "event_windows_created": 0,
+    "instrument_session_projections_created": 0,
+    "source_market_data_rows_read": 0,
+    "official_event_state_profile_promotion": false,
+    "official_event_state_dataset_promotion": false,
+    "production": false,
+    "downstream_consumption": false
+  },
+  "next_gate_after_design": "event_state_execution_chain_joint_review_authorization_v0_1"
+}

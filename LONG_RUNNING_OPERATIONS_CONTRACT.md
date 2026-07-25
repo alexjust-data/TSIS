@@ -1,4 +1,4 @@
-﻿# TSIS Long-Running Operations Contract
+# TSIS Long-Running Operations Contract
 
 ## 1. Role
 
@@ -407,10 +407,14 @@ This contract is governed by:
 
 It applies to:
 
-- `01_TSIS_backtest_SmallCaps`
-- `02_TSIS_webSocket_SmallCaps`
-- `03_TSIS_Offline_RL`
 - `00_CTO`
+- `00_CTO_APPLIED_ARCHITECTURE`
+- `01_TSIS_DATA_FOUNDATION`
+- `02_TSIS_BACKTEST_ENGINE`
+- `03_TSIS_Lab`
+- `04_TSIS_webSocket_SmallCaps`
+- `05_TSIS_Offline_RL`
+- `06_TSIS_Trading_voice`
 - any future TSIS module.
 
 The rule is institutional:

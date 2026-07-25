@@ -1,0 +1,91 @@
+{
+  "contract_id": "market_state_bounded_on_demand_idempotency_reuse_test_contract_v0_1",
+  "contract_version": "v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_NO_EXECUTION",
+  "date": "2026-07-25",
+  "purpose": "Authorize one bounded idempotency/reuse test for the first validated Market State on-demand candidate dataset.",
+  "parent_gate": "market_state_bounded_on_demand_determinism_validation_v0_1",
+  "authorized_next_gate": "market_state_bounded_on_demand_idempotency_reuse_test_v0_1",
+  "baseline": {
+    "baseline_run_id": "market_state_bounded_on_demand_execution_v0_1_20260724T232123Z",
+    "baseline_candidate_dataset_id": "market_state_candidate_dataset_v0_1_433288b634924676",
+    "baseline_request_fingerprint": "584d07a1874ceceab077101bbc2de0ec37236db1a1a284956a81cb76674145ec",
+    "baseline_execution_plan_fingerprint": "5555fed758d30b6c8f281517eb747523d3dfaf9bbae1713b4e9f1c28c6fdd733",
+    "baseline_candidate_dataset_fingerprint": "433288b634924676a3c516fac600574ed36237c3c02ca640111f17609b6c235b",
+    "baseline_registry_entry_fingerprint": "82d551c8f8da00bbb3d8f1cb69bc5952fb9dc25fe3e1560bb497d686ffc2611c",
+    "baseline_validation_result_fingerprint": "38064d86af50c4a2df2ec0d2561b25390421df7acad4679e957faceaf1791fdb",
+    "baseline_materialized_rows": 8,
+    "baseline_unavailable_contexts": 1
+  },
+  "determinism_evidence": {
+    "successful_rerun_run_id": "market_state_bounded_on_demand_deterministic_rerun_v0_1_20260725T053434Z",
+    "determinism_validation_id": "market_state_bounded_on_demand_determinism_validation_v0_1_20260725T000000Z",
+    "determinism_validation_status": "CLOSED_APPROVED_DETERMINISM_FOR_BOUNDED_SCOPE_WITH_RESTRICTIONS_NO_REUSE_TRANSITION",
+    "determinism_status": "PROVEN_FOR_BOUNDED_SCOPE",
+    "comparison_fingerprint": "ce87938504dbf8fc4e8e962e294aa81f8bc127cdfce69a7aa48157e655329dfb",
+    "scientific_dataset_fingerprint": "a9182b19e434ea77ca2bf5b3395b84a4592560bbf28e5cb0d80ee5561c5fe1b7",
+    "reuse_transition_ready": true,
+    "reuse_eligibility_after_validation": "pending_idempotency_reuse_test"
+  },
+  "authorized_test_request": {
+    "request_fingerprint_must_equal": "584d07a1874ceceab077101bbc2de0ec37236db1a1a284956a81cb76674145ec",
+    "normalized_request_must_equal_baseline": true,
+    "reuse_policy": "reuse_if_exact_validated_match",
+    "output_mode": "candidate_reuse_lookup_only",
+    "profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "maximum_requested_contexts": 9,
+    "maximum_runs": 1
+  },
+  "expected_reuse_behavior": {
+    "existing_candidate_dataset_must_be_selected": true,
+    "selected_dataset_id_must_equal": "market_state_candidate_dataset_v0_1_433288b634924676",
+    "selected_scientific_dataset_fingerprint_must_equal": "a9182b19e434ea77ca2bf5b3395b84a4592560bbf28e5cb0d80ee5561c5fe1b7",
+    "materializer_executions_expected": 0,
+    "source_market_data_rows_read_expected": 0,
+    "source_candidate_records_read_expected": 0,
+    "new_candidate_parquet_files_expected": 0,
+    "new_candidate_dataset_registry_entries_expected": 0,
+    "idempotency_reuse_evidence_entries_expected_max": 1
+  },
+  "allowed_runtime_reads_in_future_test": {
+    "candidate_dataset_registry_metadata_read": true,
+    "request_record_read": true,
+    "execution_plan_read": true,
+    "candidate_manifest_read": true,
+    "validation_report_read": true,
+    "determinism_validation_read": true,
+    "market_data_parquet_read": false,
+    "source_candidate_parquet_read": false
+  },
+  "blocking_conditions": [
+    "request_fingerprint_mismatch",
+    "normalized_request_mismatch",
+    "baseline_candidate_registry_entry_missing",
+    "determinism_validation_missing_or_not_closed",
+    "selected_dataset_id_mismatch",
+    "selected_scientific_dataset_fingerprint_mismatch",
+    "materializer_executed",
+    "source_market_data_rows_read_gt_zero",
+    "source_candidate_records_read_gt_zero",
+    "new_candidate_parquet_written",
+    "new_candidate_dataset_registry_entry_written",
+    "production_or_downstream_opened"
+  ],
+  "closed_boundaries": {
+    "idempotency_reuse_test_execution": false,
+    "new_market_state_request_execution": false,
+    "source_rows_read": false,
+    "materializer_execution": false,
+    "candidate_parquet_write": false,
+    "candidate_dataset_registry_entry_write": false,
+    "official_dataset_promotion": false,
+    "production": false,
+    "downstream_consumption": false,
+    "registry_reuse_eligibility_mutation_by_authorization": false
+  },
+  "future_test_may_recommend": {
+    "bounded_exact_match_reuse_proven": true,
+    "reuse_eligibility_transition_review": true
+  },
+  "contract_content_sha256_excluding_hash_field": "c836f3ae2d5821a0d2d7b66ee1c2db1c1866fe83b36a2d1fbb27f31bf678b98d"
+}

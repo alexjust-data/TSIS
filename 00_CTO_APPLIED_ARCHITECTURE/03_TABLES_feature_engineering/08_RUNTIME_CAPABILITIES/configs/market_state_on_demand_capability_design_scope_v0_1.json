@@ -1,0 +1,70 @@
+{
+  "authority_boundary": {
+    "cache_write_allowed": false,
+    "candidate_parquet_copy_allowed": false,
+    "capability_design_allowed": true,
+    "dataset_registry_write_allowed": false,
+    "downstream_consumption_allowed": false,
+    "execution_planner_implementation_allowed": false,
+    "market_state_builder_execution_allowed": false,
+    "market_state_materializer_execution_allowed": false,
+    "market_state_validator_execution_allowed": false,
+    "official_market_state_dataset_promotion_allowed": false,
+    "official_market_state_parquet_write_allowed": false,
+    "production_allowed": false,
+    "profile_resolver_implementation_allowed": false,
+    "request_contract_design_allowed": false,
+    "request_execution_allowed": false,
+    "request_resolver_implementation_allowed": false,
+    "source_data_reads_allowed": false,
+    "source_resolver_implementation_allowed": false
+  },
+  "authorization_id": "market_state_on_demand_capability_design_authorization_v0_1",
+  "closure_invariants": {
+    "dataset_registry_entries_written": 0,
+    "downstream_consumption": false,
+    "market_state_parquet_files_written": 0,
+    "market_state_records_emitted": 0,
+    "production": false,
+    "requests_executed": 0,
+    "source_rows_read": 0
+  },
+  "date": "2026-07-24",
+  "design_questions": [
+    "What is a Market State request?",
+    "Which profile authority can a request cite?",
+    "What must be resolved before execution?",
+    "Which outputs can exist before official dataset promotion?",
+    "Which future gates are required before any data build?"
+  ],
+  "designed_components": [
+    "market_state_request_contract",
+    "market_state_profile_resolver",
+    "market_state_source_resolver",
+    "market_state_universe_calendar_resolver",
+    "market_state_execution_planner",
+    "market_state_build_authorization_check",
+    "market_state_materializer",
+    "market_state_validator",
+    "market_state_dataset_registry",
+    "market_state_request_fingerprint_and_idempotency"
+  ],
+  "gate": "market_state_on_demand_capability_design_v0_1",
+  "next_allowed_gate": "market_state_request_contract_design_v0_1",
+  "runtime_parent_architecture": "runtime_capabilities_architecture_v0_1",
+  "scope_id": "market_state_on_demand_capability_design_scope_v0_1",
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+  "target_capability": "market_state_on_demand",
+  "target_profile": {
+    "candidate_parquet_reference_role": "evidence_only_not_operational_dataset",
+    "candidate_parquet_reference_sha256": "b1841f4897a759de8ec9a317bece888a9ff817da3df2cd0eb477b4ed950775a2",
+    "complete_tsis_market_state": false,
+    "official_market_state_authorized": false,
+    "official_market_state_dataset_exists": false,
+    "official_market_state_parquet_exists": false,
+    "profile_artifact_validation_run": "official_market_state_profile_artifact_validation_v0_1_20260723T193711Z",
+    "profile_classification": "official_semantic_profile_not_physical_dataset",
+    "profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "profile_status": "OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS"
+  }
+}

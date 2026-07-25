@@ -1,0 +1,210 @@
+{
+  "scope_id": "experimental_core_four_market_state_scale_b_scope_v0_1",
+  "mode": "experimental_core_four_market_state_scale_b_sample_preflight_authorized_not_executed",
+  "scope_status": "authorized_with_restrictions_sample_preflight_only",
+  "created_at_utc": "2026-07-23T00:00:00Z",
+  "authorization_artifact": "../experimental_core_four_market_state_scale_b_authorization_v0_1.md",
+  "bounded_scaling_design_artifact": "../core_four_market_state_bounded_scaling_design_v0_1.md",
+  "bounded_scaling_design_contract": "../core_four_market_state_bounded_scaling_design_contract_v0_1.json",
+  "calendar_design_artifact": "../governed_exchange_session_calendar_design_v0_1.md",
+  "calendar_binding_authorization_artifact": "../governed_exchange_session_calendar_binding_authorization_v0_1.md",
+  "calendar_binding_readout_artifact": "../governed_exchange_session_calendar_binding_validation_readout_v0_1.md",
+  "stage_id": "core_four_market_state_scale_b_multi_session_calendar_aware",
+  "logical_profile_id": "core_four_market_state_profile_v0_1",
+  "physical_schema_id": "core_four_market_state_candidate_physical_schema_v0_1",
+  "calendar_binding": {
+    "accepted_run_id": "governed_exchange_session_calendar_binding_validation_v0_1_20260723T064928Z",
+    "bound_calendar_path": "../runs/governed_exchange_session_calendar_binding_validation_v0_1_20260723T064928Z/governed_exchange_session_calendar_bound_v0_1.parquet",
+    "calendar_profile_id": "governed_exchange_session_calendar_v0_1",
+    "calendar_version": "governed_exchange_session_calendar_xnys_v0_1",
+    "source_snapshot_fingerprint": "8b43cda89c1da0dc78e618e46f20697a2832bd13ca7599e60989f01b701ce967",
+    "bound_parquet_sha256": "79a458a3585011ecec7d8153b78f8564834b24c1fb95d3718c6f4d1fea63bc00",
+    "hard_validation_failures": 0
+  },
+  "eligible_instrument_seed_pool": {
+    "accepted_pool_run_id": "experimental_core_four_scale_a_eligible_representation_surface_construction_v0_1_20260722T184904Z",
+    "eligible_instrument_pool_path": "../runs/experimental_core_four_scale_a_eligible_representation_surface_construction_v0_1_20260722T184904Z/eligible_instrument_pool.json",
+    "eligible_instrument_pool_fingerprint": "57e22e7eb616c0682db1d094e19dff2b31e35ca23320ec1757acf4e19323853d",
+    "eligible_instruments_available": 13,
+    "selected_instruments_required": 8,
+    "manual_ticker_selection_allowed": false
+  },
+  "calendar_session_plan": [
+    {
+      "session_date": "2025-01-21",
+      "stratum": "winter_regular_standard_time",
+      "expected_open_utc": "14:30:00",
+      "expected_close_utc": "21:00:00",
+      "expected_session_type": "regular",
+      "expected_early_close": false
+    },
+    {
+      "session_date": "2025-03-10",
+      "stratum": "us_dst_transition_neighborhood",
+      "expected_open_utc": "13:30:00",
+      "expected_close_utc": "20:00:00",
+      "expected_session_type": "regular",
+      "expected_early_close": false
+    },
+    {
+      "session_date": "2025-03-24",
+      "stratum": "europe_us_dst_desynchronization",
+      "expected_open_utc": "13:30:00",
+      "expected_close_utc": "20:00:00",
+      "expected_session_type": "regular",
+      "expected_early_close": false
+    },
+    {
+      "session_date": "2025-07-02",
+      "stratum": "summer_regular_dst",
+      "expected_open_utc": "13:30:00",
+      "expected_close_utc": "20:00:00",
+      "expected_session_type": "regular",
+      "expected_early_close": false
+    },
+    {
+      "session_date": "2025-07-03",
+      "stratum": "summer_early_close",
+      "expected_open_utc": "13:30:00",
+      "expected_close_utc": "17:00:00",
+      "expected_session_type": "early_close",
+      "expected_early_close": true
+    },
+    {
+      "session_date": "2025-11-28",
+      "stratum": "winter_early_close",
+      "expected_open_utc": "14:30:00",
+      "expected_close_utc": "18:00:00",
+      "expected_session_type": "early_close",
+      "expected_early_close": true
+    }
+  ],
+  "target_sample_shape": {
+    "target_requested_contexts": 72,
+    "maximum_requested_contexts": 96,
+    "required_objects_per_context": 4,
+    "target_resolution_records_if_later_executed": 288,
+    "maximum_resolution_records_if_later_executed": 384,
+    "selected_instruments": 8,
+    "selected_sessions": 6,
+    "expected_blocked_contexts": 8,
+    "maximum_blocked_contexts": 16,
+    "target_integrable_contexts": 64,
+    "maximum_integrated_candidate_records_if_later_executed": 88,
+    "maximum_physical_candidate_rows_if_later_executed": 88,
+    "context_allocation": {
+      "instrument_session_core_contexts": 48,
+      "pre_bar_expected_blocked_contexts": 8,
+      "after_last_sampled_bar_restricted_contexts": 8,
+      "calendar_boundary_stress_contexts": 8
+    }
+  },
+  "authority": {
+    "scale_b_sample_preflight_authorized": true,
+    "scale_b_execution_authorized": false,
+    "builder_resolution_execution_authorized": false,
+    "information_object_resolution_authorized": false,
+    "market_state_integration_authorized": false,
+    "market_state_materialization_authorized": false,
+    "market_state_parquet_write_authorized": false,
+    "candidate_market_state_parquet_allowed": false,
+    "calendar_binding_read_allowed": true,
+    "eligible_pool_read_allowed": true,
+    "bounded_daily_source_coverage_read_allowed": true,
+    "bounded_intraday_source_coverage_read_allowed": true,
+    "013_coverage_feasibility_read_allowed": true,
+    "013_direct_builder_input_allowed": false,
+    "run_local_014_surface_construction_authorized": false,
+    "raw_quotes_read_allowed": false,
+    "quote_dependent_object_integration_allowed": false,
+    "official_market_state_authorized": false,
+    "production_builder_authorized": false,
+    "state_consumption_authorized": false,
+    "downstream_consumption_authorized": false,
+    "dataset_promotion_authorized": false,
+    "full_history_execution_authorized": false,
+    "full_universe_execution_authorized": false,
+    "reference_library_read_or_stage_allowed": false
+  },
+  "allowed_inputs": {
+    "governed_calendar_binding": "../runs/governed_exchange_session_calendar_binding_validation_v0_1_20260723T064928Z/governed_exchange_session_calendar_bound_v0_1.parquet",
+    "eligible_instrument_pool": "../runs/experimental_core_four_scale_a_eligible_representation_surface_construction_v0_1_20260722T184904Z/eligible_instrument_pool.json",
+    "source_binding_registry": "../../05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/configs/experimental_source_binding_registry_v0_1.json",
+    "column_binding_registry": "../../05_STATE_BUILDER_VALIDATION/experimental_state_builder_probe/configs/experimental_column_binding_registry_v0_1.json"
+  },
+  "source_aliases_allowed_for_preflight": [
+    "004_master_daily_table",
+    "014_master_intraday_bar_table_candidate",
+    "013_ohlcv_1m_quote_guarded"
+  ],
+  "source_alias_semantics": {
+    "004_master_daily_table": "bounded_source_coverage_check_only",
+    "014_master_intraday_bar_table_candidate": "bounded_source_coverage_check_only",
+    "013_ohlcv_1m_quote_guarded": "bounded_source_coverage_feasibility_only_not_builder_input"
+  },
+  "source_aliases_forbidden": [
+    "raw_quotes",
+    "quote_dependent_object_records",
+    "015_microstructure_features_table_candidate",
+    "production_state_tables",
+    "official_market_state_tables",
+    "downstream_feature_stores",
+    "full_history_market_data_scans",
+    "full_universe_market_data_scans",
+    "00_CTO/99_REFERENCE_LIBRARY"
+  ],
+  "limits": {
+    "maximum_calendar_rows_read": 5328,
+    "maximum_daily_rows_read_for_preflight": 50000,
+    "maximum_intraday_rows_read_for_preflight": 500000,
+    "maximum_total_source_rows_read_for_preflight": 550000,
+    "maximum_output_files": 14,
+    "maximum_output_bytes": 5000000,
+    "candidate_market_state_parquet_files_allowed": 0,
+    "required_output_files": 13,
+    "unexpected_output_files": 0
+  },
+  "required_preflight_outputs": [
+    "pre_manifest.json",
+    "heartbeat.json",
+    "scale_b_calendar_session_plan.json",
+    "scale_b_calendar_coverage_report.csv",
+    "scale_b_instrument_selection_report.csv",
+    "scale_b_source_coverage_preflight_report.csv",
+    "scale_b_context_plan_report.csv",
+    "scale_b_duplicate_context_report.csv",
+    "scale_b_sample_manifest.jsonl",
+    "scale_b_sample_summary.json",
+    "scale_b_authority_report.json",
+    "final_manifest.json",
+    "experimental_core_four_market_state_scale_b_sample_preflight_readout_v0_1.md"
+  ],
+  "preflight_acceptance_criteria": {
+    "accepted_calendar_binding_run_consumed": true,
+    "calendar_version": "governed_exchange_session_calendar_xnys_v0_1",
+    "selected_sessions": 6,
+    "calendar_session_boundary_mismatches": 0,
+    "fixed_utc_probe_calendar_as_current_authority": 0,
+    "selected_instruments": 8,
+    "requested_contexts": 72,
+    "expected_resolution_records": 288,
+    "expected_blocked_contexts": 8,
+    "expected_integrable_contexts": 64,
+    "source_coverage_failures": 0,
+    "duplicate_context_ids": 0,
+    "duplicate_semantic_contexts": 0,
+    "identity_failures": 0,
+    "stratification_failures": 0,
+    "hard_preflight_failures": 0,
+    "scale_b_sample_fingerprint_present": true
+  },
+  "blocked_statuses_allowed": [
+    "BLOCKED_SOURCE_SESSION_COVERAGE",
+    "BLOCKED_INSTRUMENT_COVERAGE",
+    "BLOCKED_CALENDAR_SESSION_PLAN",
+    "BLOCKED_SAMPLE_CARDINALITY",
+    "FAILED_AUTHORITY_BOUNDARY",
+    "FAILED_CONTRACT"
+  ],
+  "next_allowed_gate": "experimental_core_four_market_state_scale_b_sample_preflight_v0_1"
+}

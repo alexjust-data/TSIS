@@ -1,8 +1,8 @@
-﻿# TSIS Lab Architecture v3
+# TSIS Lab Architecture v3
 
 Fecha de creacion: 2026-07-05
 Estado: arquitectura_v3_cto_vigente
-Origen: revision conceptual de `_archive/superseded_architecture_2026_07_05/TSIS_LAB_ARCHITECTURE_v2.md` despues de introducir `Scientific Discovery Engine` y `00_TSIS_Lab`
+Origen: revision conceptual de `_archive/superseded_architecture_2026_07_05/TSIS_LAB_ARCHITECTURE_v2.md` despues de introducir `Scientific Discovery Engine` y `03_TSIS_Lab`
 Owner layer: `00_CTO`
 
 ## Proposito
@@ -130,14 +130,14 @@ Filosofia / constitucion epistemologica
 -> C:/TSIS_Data/00_CTO/01_RESEARCH_PHILOSOPHY
 
 Laboratorio operativo transversal
--> C:/TSIS_Data/00_TSIS_Lab
+-> C:/TSIS_Data/03_TSIS_Lab
 
 Data Foundation / outputs gobernados SmallCaps
--> C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations
+-> C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations
 
 Investigacion y backtest clasico SmallCaps
--> C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research
--> C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs
+-> C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research
+-> C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs
 
 Outputs pesados / datasets / materializaciones
 -> E:/TSIS/data
@@ -149,9 +149,9 @@ Trading systems / event library / strategy research
 -> C:/TSIS_Data/00_CTO/13_TRADING_SYSTEMS
 ```
 
-`01_TSIS_backtest_SmallCaps` no queda reducido a proveedor ni a adapter. Es el modulo operativo SmallCaps: foundations, investigacion, event discovery, feature engine, backtests clasicos, strategy research, builders, validators y datos gobernados.
+`01_TSIS_DATA_FOUNDATION` no queda reducido a proveedor ni a adapter. Es el modulo operativo SmallCaps: foundations, investigacion, event discovery, feature engine, backtests clasicos, strategy research, builders, validators y datos gobernados.
 
-`00_TSIS_Lab` define la estructura transversal de experimento que puede usar SmallCaps, otros modulos, humanos o AlphaEvolve.
+`03_TSIS_Lab` define la estructura transversal de experimento que puede usar SmallCaps, otros modulos, humanos o AlphaEvolve.
 
 ---
 
@@ -206,13 +206,13 @@ No busca edge y no decide trades.
 ## Autoridad
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations
 ```
 
 Matriz viva:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
 ```
 
 ## Regla
@@ -241,10 +241,10 @@ C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION
 ## Autoridad operativa
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_observable_eligibility_contract_v0_1.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_builder_contract_v0_1.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_canonical_vs_representation_layer_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_observable_eligibility_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_builder_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_canonical_vs_representation_layer_contract_v0_1.md
 ```
 
 ## Estado alcanzado a 2026-07-05
@@ -257,7 +257,7 @@ event_windows intradia controlled = DONE
 event_state intradia controlled = DONE
 outcomes intradia separados controlled = DONE
 event_research_design_contract_v0_1 = DONE
-00_TSIS_Lab research experiment skeleton = DONE
+03_TSIS_Lab research experiment skeleton = DONE
 ```
 
 ## Regla
@@ -277,7 +277,7 @@ Convertir preguntas cientificas en ejecuciones reproducibles.
 Ruta:
 
 ```text
-C:/TSIS_Data/00_TSIS_Lab
+C:/TSIS_Data/03_TSIS_Lab
 ```
 
 Contratos iniciales:
@@ -304,7 +304,7 @@ Research Question
 ## Primer experimento semilla
 
 ```text
-C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001
+C:/TSIS_Data/03_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001
 ```
 
 Lectura correcta:
@@ -456,7 +456,7 @@ evaluator_contract
 
 Convertir conocimiento validado en componentes operativos.
 
-`01_TSIS_backtest_SmallCaps` sigue siendo el lugar natural para backtest clasico SmallCaps, investigacion operativa y estrategia SmallCaps.
+`01_TSIS_DATA_FOUNDATION` sigue siendo el lugar natural para backtest clasico SmallCaps, investigacion operativa y estrategia SmallCaps.
 
 ```text
 validated event / state representation / policy hypothesis
@@ -562,7 +562,7 @@ No puede redefinir silenciosamente upstream.
 ## Paso 1 - Mantener Data Foundation viva
 
 ```text
-01_TSIS_backtest_SmallCaps/01_foundations
+01_TSIS_DATA_FOUNDATION/01_foundations
 ```
 
 ## Paso 2 - Mantener State/Event/Outcome como base observable
@@ -572,7 +572,7 @@ market_state/event_state = X
 outcomes = Y
 ```
 
-## Paso 3 - Usar 00_TSIS_Lab para experimentos
+## Paso 3 - Usar 03_TSIS_Lab para experimentos
 
 ```text
 research_experiment_contract
@@ -635,16 +635,16 @@ C:/TSIS_Data/00_CTO/01_RESEARCH_PHILOSOPHY/01_KNOWLEDGE_MODEL/scientific_discove
 ## Si toca experimentos
 
 ```text
-C:/TSIS_Data/00_TSIS_Lab/README.md
-C:/TSIS_Data/00_TSIS_Lab/01_contracts/research_experiment_contract_v0_1.md
-C:/TSIS_Data/00_TSIS_Lab/01_contracts/scientific_validation_pipeline_contract_v0_1.md
+C:/TSIS_Data/03_TSIS_Lab/README.md
+C:/TSIS_Data/03_TSIS_Lab/01_contracts/research_experiment_contract_v0_1.md
+C:/TSIS_Data/03_TSIS_Lab/01_contracts/scientific_validation_pipeline_contract_v0_1.md
 ```
 
 ## Si toca market/event state
 
 ```text
 C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_builder_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_builder_contract_v0_1.md
 ```
 
 ## Si toca AlphaEvolve
@@ -653,7 +653,7 @@ C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/
 C:/TSIS_Data/00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/README.md
 C:/TSIS_Data/00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/02_ALPHAEVOLVE_AS_RESEARCH_EXPERIMENT_GENERATOR_v0_1.md
 C:/TSIS_Data/00_CTO/01_RESEARCH_PHILOSOPHY/03_HUMAN_AND_AI_RESEARCHERS/human_and_alphaevolve_common_protocol.md
-C:/TSIS_Data/00_TSIS_Lab/01_contracts/research_experiment_contract_v0_1.md
+C:/TSIS_Data/03_TSIS_Lab/01_contracts/research_experiment_contract_v0_1.md
 ```
 
 # Regla Final

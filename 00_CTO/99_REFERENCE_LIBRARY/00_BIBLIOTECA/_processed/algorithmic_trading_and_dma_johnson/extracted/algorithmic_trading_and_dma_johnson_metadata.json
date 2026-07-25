@@ -1,0 +1,23 @@
+﻿{
+    "book_id":  "algorithmic_trading_and_dma_johnson",
+    "title":  "Algorithmic Trading and DMA",
+    "author":  "Barry Johnson",
+    "source_pdf":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Algorithmic_Trading_and_DMA_-_Johnson.pdf",
+    "processed_root":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\algorithmic_trading_and_dma_johnson",
+    "source_copy":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\algorithmic_trading_and_dma_johnson\\source\\original.pdf",
+    "pages":  595,
+    "file_size_bytes":  19828984,
+    "sha256":  "edf978aaae7a53bb8d2850d2cb1283adc8eb32c477e01bc6fc505fe2fe8a09bb",
+    "created_utc":  "2026-07-25T05:08:50+00:00",
+    "total_words":  263022,
+    "text_pages":  582,
+    "toc_items":  0,
+    "requires_ocr":  false,
+    "status":  "indexed",
+    "working_text_persisted":  false,
+    "source_requires_ocr":  true,
+    "ocr_completed":  true,
+    "ocr_tool":  "Tesseract via pypdfium2 at 150 dpi",
+    "ocr_words":  263022,
+    "ocr_text_pages":  582
+}

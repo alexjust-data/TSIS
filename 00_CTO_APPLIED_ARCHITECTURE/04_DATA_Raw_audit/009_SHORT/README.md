@@ -4,7 +4,7 @@ Carpeta local de auditoria para la familia `short`.
 
 Origen canonico:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\inspection_dossiers\short`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\inspection_dossiers\short`
 
 Contenido local:
 

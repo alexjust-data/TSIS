@@ -1,0 +1,140 @@
+[
+  {
+    "chapter": 1,
+    "title": "Introduction",
+    "printed_page_approx": 1,
+    "text_chunk_start": 6
+  },
+  {
+    "chapter": 2,
+    "title": "Basic Concepts",
+    "printed_page_approx": 9,
+    "text_chunk_start": 13
+  },
+  {
+    "chapter": 3,
+    "title": "Regression Analysis",
+    "printed_page_approx": 30,
+    "text_chunk_start": 35
+  },
+  {
+    "chapter": 4,
+    "title": "Trend Calculations",
+    "printed_page_approx": 62,
+    "text_chunk_start": 54
+  },
+  {
+    "chapter": 5,
+    "title": "Trend Systems",
+    "printed_page_approx": 89,
+    "text_chunk_start": 75
+  },
+  {
+    "chapter": 6,
+    "title": "Momentum and Oscillators",
+    "printed_page_approx": 126,
+    "text_chunk_start": 101
+  },
+  {
+    "chapter": 7,
+    "title": "Seasonality",
+    "printed_page_approx": 160,
+    "text_chunk_start": 131
+  },
+  {
+    "chapter": 8,
+    "title": "Cycle Analysis",
+    "printed_page_approx": 189,
+    "text_chunk_start": 156
+  },
+  {
+    "chapter": 9,
+    "title": "Charting",
+    "printed_page_approx": 213,
+    "text_chunk_start": 177
+  },
+  {
+    "chapter": 10,
+    "title": "Volume, Open Interest, and Breadth",
+    "printed_page_approx": 237,
+    "text_chunk_start": 198
+  },
+  {
+    "chapter": 11,
+    "title": "Point-and-Figure Charting",
+    "printed_page_approx": 256,
+    "text_chunk_start": 217
+  },
+  {
+    "chapter": 12,
+    "title": "Charting Systems",
+    "printed_page_approx": 281,
+    "text_chunk_start": 234
+  },
+  {
+    "chapter": 13,
+    "title": "Spreads and Arbitrage",
+    "printed_page_approx": 305,
+    "text_chunk_start": 256
+  },
+  {
+    "chapter": 14,
+    "title": "Behavioral Techniques",
+    "printed_page_approx": 334,
+    "text_chunk_start": 281
+  },
+  {
+    "chapter": 15,
+    "title": "Pattern Recognition",
+    "printed_page_approx": 382,
+    "text_chunk_start": 325
+  },
+  {
+    "chapter": 16,
+    "title": "Day Trading",
+    "printed_page_approx": 419,
+    "text_chunk_start": 361
+  },
+  {
+    "chapter": 17,
+    "title": "Adaptive Techniques",
+    "printed_page_approx": 436,
+    "text_chunk_start": 376
+  },
+  {
+    "chapter": 18,
+    "title": "Price Distribution Systems",
+    "printed_page_approx": 449,
+    "text_chunk_start": 388
+  },
+  {
+    "chapter": 19,
+    "title": "Multiple Time Frames",
+    "printed_page_approx": 465,
+    "text_chunk_start": 402
+  },
+  {
+    "chapter": 20,
+    "title": "Advanced Techniques",
+    "printed_page_approx": 471,
+    "text_chunk_start": 408
+  },
+  {
+    "chapter": 21,
+    "title": "Testing",
+    "printed_page_approx": 503,
+    "text_chunk_start": 439
+  },
+  {
+    "chapter": 22,
+    "title": "Practical Considerations",
+    "printed_page_approx": 555,
+    "text_chunk_start": 486
+  },
+  {
+    "chapter": 23,
+    "title": "Risk Control",
+    "printed_page_approx": 587,
+    "text_chunk_start": 513
+  }
+]

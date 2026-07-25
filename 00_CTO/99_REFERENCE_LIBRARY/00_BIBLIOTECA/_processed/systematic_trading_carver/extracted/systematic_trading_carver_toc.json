@@ -1,0 +1,687 @@
+[
+  {
+    "title": "Contents",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "About the author",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Preface",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Systematic trading and investing",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Who should read this book",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "The technical stuff",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "What is coming",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Introduction",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "January 2009",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "September 2008",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Why you should start system trading now",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "It’s dangerous out there",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Why you should read this book",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Part One. Theory",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Chapter One. The Flawed Human Brain",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter overview",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Humans should be great traders, but...",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Simple trading rules",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Sticking to the plan",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Good system design",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Chapter Two. Systematic Trading Rules",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter overview",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "What makes a good trading rule",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "When trading rules don’t work",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Why certain rules are profitable",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Classifying trading styles",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Achievable Sharpe ratios",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Conclusion",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Part Two. Toolbox",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Chapter Three. Fitting",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter overview",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "The perils of over-fitting",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Some rules for effective fitting",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How I choose my rules",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Chapter Four. Portfolio Allocation",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter overview",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Optimising gone bad",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Saving optimisation from itself",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Making weights by hand",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Incorporating Sharpe ratios",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Part Three. Framework",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Chapter Five. Framework Overview",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter overview",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "A bad example",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Why a modular framework?",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "The elements of the framework",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Chapter Six. Instruments",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter overview",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Necessities",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Instrument choice and trading style",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Access",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Summary of instrument choice",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Chapter Seven. Forecasts",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter overview",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "What makes a good forecast",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Discretionary trading with stop losses",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "The asset allocating investor’s ‘no-rule’ rule",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Two example systematic rules",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Adapting and creating trading rules",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Selecting trading rules and variations",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Summary of trading rules and forecasts",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Chapter Eight. Combined Forecasts",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter overview",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Combining with forecast weights",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Choosing the forecast weights",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Getting to 10",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Capped at 20",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Summary for combining forecasts",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Chapter Nine. Volatility targeting",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter overview",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "The importance of risk targeting",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Setting a volatility target",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Rolling up profits and losses",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "What percentage of capital per trade?",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Summary of volatility targeting",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Chapter Ten. Position Sizing",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter overview",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How risky is it?",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Volatility target and position risk",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "From forecast to position",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Summary for position sizing",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Chapter Eleven. Portfolios",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter overview",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Portfolios and instrument weights",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Instrument weights – asset allocators and systems traders",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Instrument weights – semi-automatic trading",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Instrument diversification multiplier",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "A portfolio of positions and trades",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Summary for creating a portfolio of trading subsystems",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Chapter Twelve. Speed and Size",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter overview",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Speed of trading",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Calculating the cost of trading",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Using trading costs to make design decisions",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Trading with more or less capital",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Determining overall portfolio size",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Summary of tailoring systems for costs and capital",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Part Four. Practice",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Chapter Thirteen. Semi-automatic Trader",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter overview",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Who are you?",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Using the framework",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Process",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Trading diary",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Chapter Fourteen. Asset Allocating Investor",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter overview",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Who are you?",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Using the framework",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Weekly process",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Trading diary",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Chapter Fifteen. Staunch Systems Trader",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter overview",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Who are you?",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Using the framework",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Daily process",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Trading diary",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Epilogue. What Makes a Good Systematic Trader?",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Glossary",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Appendices",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Appendix A. Resources",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Further reading",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Sources of free data",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Brokers and platforms",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Automation and coding",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Appendix B. Trading Rules",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "The A and B system: Early profit taker and early loss taker",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "The exponentially weighted moving average crossover (EWMAC) rule",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "The carry trading rule",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Appendix C. Portfolio Optimisation",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "More details on bootstrapping",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Rule of thumb correlations",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Appendix D. Framework Details",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Rescaling forecasts",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Calculation of diversification multiplier",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Calculating price volatility from historic data",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Acknowledgements",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Thanks for reading",
+    "depth": 0,
+    "page": null
+  }
+]

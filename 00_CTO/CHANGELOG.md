@@ -1,10 +1,10 @@
 - `2026-07-07` - Quotes D-to-E recovery transfer approved: `E:/TSIS/data/quotes_` is now the official E-root quotes dataset after Phase A structural parity and Phase B SHA256 retry evidence. Pre-approval `D:/quotes` lineage in market-state/microstructure candidates remains provenance only and requires rebuild against the approved E-root before promotion.
-- 2026-07-05: eliminado el overview raiz obsoleto y actualizadas referencias activas para que la arquitectura oficial apunte a `TSIS_LAB_ARCHITECTURE_v3.md`; `00_TSIS_Lab` y `research_experiment` quedan reflejados en los documentos operativos raiz.
-- 2026-07-05: alineados los documentos raiz `PROJECT_OPERATING_SYSTEM.md`, `RESEARCH_PHILOSOPHY.md` y `VERSIONING_STANDARDS.md` con `TSIS_LAB_ARCHITECTURE_v3.md`; quedan integrados `00_TSIS_Lab`, `research_experiment`, evidence/knowledge promotion y AlphaEvolve como generador subordinado al Scientific Validation Pipeline.
+- 2026-07-05: eliminado el overview raiz obsoleto y actualizadas referencias activas para que la arquitectura oficial apunte a `TSIS_LAB_ARCHITECTURE_v3.md`; `03_TSIS_Lab` y `research_experiment` quedan reflejados en los documentos operativos raiz.
+- 2026-07-05: alineados los documentos raiz `PROJECT_OPERATING_SYSTEM.md`, `RESEARCH_PHILOSOPHY.md` y `VERSIONING_STANDARDS.md` con `TSIS_LAB_ARCHITECTURE_v3.md`; quedan integrados `03_TSIS_Lab`, `research_experiment`, evidence/knowledge promotion y AlphaEvolve como generador subordinado al Scientific Validation Pipeline.
 - 2026-07-05: actualizada la capa `10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve` para subordinar AlphaEvolve a `TSIS_LAB_ARCHITECTURE_v3`: AlphaEvolve queda definido como generador de `candidate research experiments`, no como centro de TSIS ni autoridad de validacion; se crea `02_ALPHAEVOLVE_AS_RESEARCH_EXPERIMENT_GENERATOR_v0_1.md`.
 - 2026-07-05: archivados `TSIS_LAB_ARCHITECTURE.md`, `TSIS_LAB_ARCHITECTURE_v2.md` y `00_CTO_REFACTOR_PLAN.md` en `_archive/superseded_architecture_2026_07_05/`; las lecturas operativas se actualizaron para usar `TSIS_LAB_ARCHITECTURE_v3.md` como unica arquitectura CTO vigente.
-- 2026-07-05: se crea `TSIS_LAB_ARCHITECTURE_v3.md` como lectura CTO vigente; v3 reclasifica `market_state/event_state/outcomes` como base observable X/Y, introduce `research_experiment` como unidad cientifica central, conecta `00_TSIS_Lab` y mueve AlphaEvolve a rol de generador de candidate experiments, no autoridad de validacion.
-- 2026-07-05: se introduce la arquitectura `Scientific Discovery Engine` como principio superior de TSIS; se crea la base de filosofia en `00_CTO/01_RESEARCH_PHILOSOPHY/`, se crea `C:/TSIS_Data/00_TSIS_Lab` como laboratorio operativo transversal de experimentos, y se redefine AlphaEvolve como generador de candidate experiments sometido al mismo Scientific Validation Pipeline que el investigador humano.
+- 2026-07-05: se crea `TSIS_LAB_ARCHITECTURE_v3.md` como lectura CTO vigente; v3 reclasifica `market_state/event_state/outcomes` como base observable X/Y, introduce `research_experiment` como unidad cientifica central, conecta `03_TSIS_Lab` y mueve AlphaEvolve a rol de generador de candidate experiments, no autoridad de validacion.
+- 2026-07-05: se introduce la arquitectura `Scientific Discovery Engine` como principio superior de TSIS; se crea la base de filosofia en `00_CTO/01_RESEARCH_PHILOSOPHY/`, se crea `C:/TSIS_Data/03_TSIS_Lab` como laboratorio operativo transversal de experimentos, y se redefine AlphaEvolve como generador de candidate experiments sometido al mismo Scientific Validation Pipeline que el investigador humano.
 - 2026-07-05: materializado outcomes_table_v0_1_candidate_intraday_1m_quote_guarded_controlled como y separado intradia; 5 filas desde event_state/event_windows/master_intraday quote-guarded, 3 good y 2 review por barras faltantes, validator passed, ML labels/RL rewards/ejecucion/full-universe deshabilitados.
 - 2026-07-05: materializado `event_state_table_v0_1_candidate_intraday_1m_quote_guarded_controlled` como candidato controlado; 15 filas desde market_state intradia quote-guarded + 15 event_windows intradia, roles `pre_event/at_event/post_event_review`, validator passed, sin outcomes inline, ML/RL/AlphaEvolve deshabilitados.
 - 2026-07-05: materializado `event_windows_table_v0_1_candidate_intraday_1m_strategy_events` como candidato controlado desde 5 eventos intradia quote-guarded; 15 ventanas (`pre_event_30m`, `event_anchor_1m`, `post_event_30m`), validator passed, `full_universe_claim=false`, RL/AlphaEvolve deshabilitados.
@@ -29,7 +29,7 @@ No duplica Git.
 No lista cambios menores.
 No sustituye a `C:\TSIS_Data\CHANGELOG.md`.
 No sustituye a changelogs de modulos operativos como
-`01_TSIS_backtest_SmallCaps/CHANGELOG.md`.
+`01_TSIS_DATA_FOUNDATION/CHANGELOG.md`.
 
 ## Scope
 
@@ -63,7 +63,7 @@ Usar este archivo cuando cambie la arquitectura conceptual o metodologica de
 
 Usar `C:\TSIS_Data\CHANGELOG.md` solo para hitos globales de TSIS.
 
-Usar `01_TSIS_backtest_SmallCaps/CHANGELOG.md` para cambios institucionales del
+Usar `01_TSIS_DATA_FOUNDATION/CHANGELOG.md` para cambios institucionales del
 modulo de backtest y foundations.
 
 No crear changelogs por Harness mientras los Harness sigan en fase de diseno.
@@ -75,7 +75,7 @@ run summaries, trace logs y, si procede, release log propio.
 ### Changed
 
 - `2026-07-16` - SersanSistemas reorganiza `99_REFERENCE_LIBRARY/SersanSistemas/03_only_md_revised` para que cada practica `12-practice-02` a `27-practice-17` contenga su propio `.md` y carpeta `img/` directamente bajo `03_only_md_revised`, eliminando el wrapper intermedio `02_workshops/`. La validacion local `sersan_md_flatten_validation_20260716T105934Z` comprueba `16` Markdown y `2107` enlaces de imagen con `0` enlaces rotos. Esto no promociona doctrina Sersan; sigue siendo referencia externa sujeta al Harness de destilacion.
-- `2026-07-07` - Systems Engineering crea `02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/` para documentar la topologia de source adapters live, el boundary de seguridad de broker APIs y el mapa local/ignorado `das_api/dastrades_cmdapi_system_map_v0_1.md` para DasTrades/Sage CMD API. La API DasTrades/Sage queda separada de cualquier estrategia de trading llamada DAS; la implementacion y contratos operativos siguen en `02_TSIS_webSocket_SmallCaps`, y los payloads live en `E:/TSIS/data_DAS_live`.
+- `2026-07-07` - Systems Engineering crea `02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/` para documentar la topologia de source adapters live, el boundary de seguridad de broker APIs y el mapa local/ignorado `das_api/dastrades_cmdapi_system_map_v0_1.md` para DasTrades/Sage CMD API. La API DasTrades/Sage queda separada de cualquier estrategia de trading llamada DAS; la implementacion y contratos operativos siguen en `04_TSIS_webSocket_SmallCaps`, y los payloads live en `E:/TSIS/data_DAS_live`.
 - `2026-07-05` - Market State cierra el lineage del Camino A daily controlado con `state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md`: master_daily + instrument/calendar + scanner definitions -> daily scanner v0.3 -> 69 daily events -> 207 event_windows. Intradia 1m quote-guarded y E-root official siguen pendientes.
 - `2026-07-05` - Market State fija el contrato `state_raw_to_consumption_lineage_contract_v0_1.md`: toda tabla/componente/derivada que alimente estados debe documentar RAW/staged -> derivadas -> componente gobernado -> state builder -> consumer. Primer ejemplo cerrado: `master_daily_table_v0_1`. No materializa tablas; convierte la trazabilidad RAW -> consumo en gate obligatorio antes de fixtures/candidates de state.
 - `2026-07-05` - Market State Camino A avanza a event windows controladas: se crea `scripts/materialize_daily_strategy_event_windows_candidate.py`, test fixture-scope y materializacion `event_windows_table_v0_1_candidate_daily_strategy_events` desde los `69` eventos daily controlados, generando `207` ventanas con validator `passed`. Sigue siendo candidate controlado: no sustituye `event_windows_table_v0_1` oficial halts-only, no es E-root, no es full-universe y ML/RL/AlphaEvolve siguen deshabilitados.

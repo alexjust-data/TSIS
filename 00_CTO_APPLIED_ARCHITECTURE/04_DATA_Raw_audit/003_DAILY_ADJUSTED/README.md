@@ -6,9 +6,9 @@ Esta carpeta es una copia local navegable de los documentos de auditoria `daily_
 
 Fuentes canonicas originales:
 
-`C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\inspection_dossiers\daily_adjusted`
+`C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\inspection_dossiers\daily_adjusted`
 
-`C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\inspection_dossiers\daily`
+`C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\inspection_dossiers\daily`
 
 La segunda fuente contiene `daily_adjusted_complex_corporate_actions_tail_audit_v0_1.md`, que fue copiado en esta carpeta junto al visual inspector pack.
 

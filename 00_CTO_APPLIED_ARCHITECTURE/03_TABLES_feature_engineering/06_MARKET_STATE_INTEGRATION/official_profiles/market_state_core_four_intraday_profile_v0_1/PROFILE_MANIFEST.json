@@ -1,0 +1,37 @@
+{
+  "candidate_parquet_sha256_reference": "b1841f4897a759de8ec9a317bece888a9ff817da3df2cd0eb477b4ed950775a2",
+  "complete_tsis_market_state": false,
+  "downstream_consumption_authorized": false,
+  "excluded_information_object_classes": [
+    "quote_dependent_objects",
+    "complete_tsis_market_state_objects_outside_core_four"
+  ],
+  "official_dataset_registry_write_authorized": false,
+  "official_market_state_authorized": false,
+  "primary_evidence": {
+    "hard_validation_failures": 0,
+    "integrated_candidate_records": 104,
+    "physical_candidate_rows": 104,
+    "resolution_records": 480,
+    "sample_contexts": 120,
+    "scale_c_execution_surface_fingerprint": "34db7887874a57658bbbec52cc9b3915f86afdc61b7997e6b930056c0a9cf554",
+    "scale_c_sample_fingerprint": "67d46f6b5f2567b3af82d000bb2a6cb6e05f0546f0be11b1c263586c3bc9515d",
+    "semantic_rebuild_field_comparisons": 3848,
+    "value_mappings_checked": 1768
+  },
+  "production_builder_authorized": false,
+  "profile_classification": "official_profile",
+  "profile_id": "market_state_core_four_intraday_profile_v0_1",
+  "profile_scope": "bounded_core_four_intraday_market_state_profile",
+  "promoted_at_utc": "2026-07-23T19:34:03Z",
+  "promotion_run_id": "official_market_state_candidate_promotion_v0_1_20260723T193403Z",
+  "required_information_objects": [
+    "trading_activity",
+    "price_movement",
+    "price_location_structure",
+    "volatility_range_state"
+  ],
+  "source_physical_profile_id": "core_four_market_state_profile_v0_1",
+  "source_physical_schema_version": "core_four_market_state_candidate_physical_schema_v0_1",
+  "status": "OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS"
+}

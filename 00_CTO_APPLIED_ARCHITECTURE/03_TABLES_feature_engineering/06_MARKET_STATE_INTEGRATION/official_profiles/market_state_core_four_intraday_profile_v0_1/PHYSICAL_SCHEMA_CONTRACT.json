@@ -1,0 +1,213 @@
+{
+  "candidate_parquet_sha256_reference": "b1841f4897a759de8ec9a317bece888a9ff817da3df2cd0eb477b4ed950775a2",
+  "column_count": 40,
+  "columns": [
+    {
+      "name": "materialized_state_candidate_id",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "name": "state_profile_id",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "name": "state_schema_version",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "name": "materialization_run_id",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "name": "source_integration_run_id",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "name": "source_candidate_record_id",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "name": "source_integration_profile_id",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "name": "instrument_id",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "name": "ticker",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "name": "session_date",
+      "nullable": false,
+      "type": "date32[day]"
+    },
+    {
+      "name": "decision_timestamp_utc",
+      "nullable": false,
+      "type": "timestamp[us, tz=UTC]"
+    },
+    {
+      "name": "decision_case",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "name": "context_id",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "name": "integration_status",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "name": "object_completeness_status",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "name": "quality_status",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "name": "price_location_structure__daily_open_price",
+      "nullable": false,
+      "type": "double"
+    },
+    {
+      "name": "price_location_structure__daily_prior_close",
+      "nullable": false,
+      "type": "double"
+    },
+    {
+      "name": "price_location_structure__intraday_bar_close_price",
+      "nullable": false,
+      "type": "double"
+    },
+    {
+      "name": "price_location_structure__intraday_return_vs_prior_close_ratio_as_location",
+      "nullable": false,
+      "type": "double"
+    },
+    {
+      "name": "price_location_structure__intraday_return_vs_session_open_ratio_as_location",
+      "nullable": false,
+      "type": "double"
+    },
+    {
+      "name": "price_movement__daily_gap_pct",
+      "nullable": false,
+      "type": "double"
+    },
+    {
+      "name": "price_movement__daily_prior_close",
+      "nullable": false,
+      "type": "double"
+    },
+    {
+      "name": "price_movement__intraday_bar_close_price",
+      "nullable": false,
+      "type": "double"
+    },
+    {
+      "name": "price_movement__intraday_return_vs_prior_close_ratio",
+      "nullable": false,
+      "type": "double"
+    },
+    {
+      "name": "price_movement__intraday_return_vs_session_open_ratio",
+      "nullable": false,
+      "type": "double"
+    },
+    {
+      "name": "trading_activity__session_volume_to_time_over_prior_20_full_session_volume_mean",
+      "nullable": false,
+      "type": "double"
+    },
+    {
+      "name": "trading_activity__daily_volume_20d_avg",
+      "nullable": false,
+      "type": "double"
+    },
+    {
+      "name": "trading_activity__intraday_bar_volume",
+      "nullable": false,
+      "type": "double"
+    },
+    {
+      "name": "trading_activity__intraday_session_volume_to_time",
+      "nullable": false,
+      "type": "double"
+    },
+    {
+      "name": "volatility_range_state__intraday_high_so_far",
+      "nullable": false,
+      "type": "double"
+    },
+    {
+      "name": "volatility_range_state__intraday_low_so_far",
+      "nullable": false,
+      "type": "double"
+    },
+    {
+      "name": "volatility_range_state__intraday_range_so_far_ratio",
+      "nullable": false,
+      "type": "double"
+    },
+    {
+      "name": "calendar_version",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "name": "source_lineage_json",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "name": "policy_versions_json",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "name": "formula_versions_json",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "name": "restriction_codes_json",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "name": "context_input_fingerprint",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "name": "state_output_fingerprint",
+      "nullable": false,
+      "type": "string"
+    }
+  ],
+  "official_dataset_root": null,
+  "official_parquet_written": false,
+  "official_table_name": null,
+  "profile_id": "market_state_core_four_intraday_profile_v0_1",
+  "schema_authority": "accepted_scale_c_candidate_physical_validation_schema_report",
+  "source_physical_profile_id": "core_four_market_state_profile_v0_1",
+  "state_schema_version": "core_four_market_state_candidate_physical_schema_v0_1"
+}

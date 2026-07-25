@@ -1,0 +1,59 @@
+{
+  "authorization_id": "market_state_profile_resolver_design_authorization_v0_1",
+  "closure_invariants": {
+    "dataset_registry_entries_written": 0,
+    "downstream_consumption": false,
+    "execution_plans_created": 0,
+    "market_state_parquet_files_written": 0,
+    "market_state_records_emitted": 0,
+    "production": false,
+    "profile_registry_runtime_reads": 0,
+    "profile_resolver_executions": 0,
+    "request_records_created": 0,
+    "requests_executed": 0,
+    "source_rows_read": 0
+  },
+  "date": "2026-07-25",
+  "design_allowed": {
+    "profile_resolver_design_allowed": true
+  },
+  "design_questions": [
+    "How does profile_id plus exact profile_version resolve into a profile contract?",
+    "Which profile status is eligible for candidate Market State requests?",
+    "Which restrictions must flow from profile registry into execution plan?",
+    "Which fields populate the resolved_profile execution-plan block?",
+    "Which findings block profile resolution before universe/source resolution?"
+  ],
+  "forbidden_actions": {
+    "dataset_registry_write_allowed": false,
+    "downstream_consumption_allowed": false,
+    "execution_plan_creation_allowed": false,
+    "market_state_builder_execution_allowed": false,
+    "market_state_materializer_execution_allowed": false,
+    "market_state_validator_execution_allowed": false,
+    "official_market_state_dataset_promotion_allowed": false,
+    "official_market_state_parquet_write_allowed": false,
+    "production_allowed": false,
+    "profile_registry_runtime_read_allowed": false,
+    "profile_resolver_execution_allowed": false,
+    "request_execution_allowed": false,
+    "request_records_created_allowed": false,
+    "source_data_reads_allowed": false
+  },
+  "gate": "market_state_profile_resolver_design_v0_1",
+  "next_allowed_gate": "market_state_universe_resolver_design_v0_1",
+  "parent_execution_plan_contract": "market_state_execution_plan_contract_v0_1",
+  "parent_gate": "market_state_execution_plan_contract_design_v0_1",
+  "parent_request_contract": "market_state_request_contract_v0_1",
+  "parent_runtime_architecture": "runtime_capabilities_architecture_v0_1",
+  "scope_id": "market_state_profile_resolver_design_scope_v0_1",
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+  "target_contract": "market_state_profile_resolver_contract_v0_1",
+  "target_profile": {
+    "official_market_state_dataset_exists": false,
+    "official_market_state_parquet_exists": false,
+    "profile_classification": "official_semantic_profile_not_physical_dataset",
+    "profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "profile_status": "OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS"
+  }
+}

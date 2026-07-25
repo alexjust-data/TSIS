@@ -272,7 +272,7 @@ La arquitectura CTO activa del scanner vive en:
 La autoridad operativa del output vive en:
 
 ```text
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_1.md
 ```
 
 Regla:

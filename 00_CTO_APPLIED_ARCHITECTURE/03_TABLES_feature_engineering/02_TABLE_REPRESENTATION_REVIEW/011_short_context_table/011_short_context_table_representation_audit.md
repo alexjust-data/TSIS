@@ -1,4 +1,4 @@
-﻿# 011 short_context_table Representation Audit
+# 011 short_context_table Representation Audit
 
 Status: `technical_audit_v0_1`
 
@@ -30,12 +30,12 @@ auditor: Codex
 Required evidence paths:
 
 ```text
-schema_contract: C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs\short_context_table_schema_contract.md [exists]
-dataset_contract: C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\contract_registry\dataset_contracts\short_context_table_dataset_contract_v0_1.md [exists]
-dataset_registry: C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\dataset_registry\outputs\short_context_table_registry_entry.yaml [exists]
-consumption_policy: C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\data_consumption_policies\short_context_table_consumption_policy.md [exists]
-validators: C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\validators\outputs\short_context_table_validators.md [exists]
-status_matrix: C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md [exists]
+schema_contract: C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas\outputs\short_context_table_schema_contract.md [exists]
+dataset_contract: C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\contract_registry\dataset_contracts\short_context_table_dataset_contract_v0_1.md [exists]
+dataset_registry: C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\dataset_registry\outputs\short_context_table_registry_entry.yaml [exists]
+consumption_policy: C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\data_consumption_policies\short_context_table_consumption_policy.md [exists]
+validators: C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\validators\outputs\short_context_table_validators.md [exists]
+status_matrix: C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md [exists]
 physical_sample: C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\011_short_context_table\011_short_context_table.md [exists]
 builder_or_manifest: C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\011_short_context_table\README.md [not_found_in_local_check]
 ```

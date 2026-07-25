@@ -2,7 +2,7 @@
 
 Este documento deja constancia de la lectura técnica actual del notebook:
 
-- [05_trades_file_acceptance_audit.ipynb](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/trades/v2/05_trades_file_acceptance_audit.ipynb)
+- [05_trades_file_acceptance_audit.ipynb](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/trades/v2/05_trades_file_acceptance_audit.ipynb)
 
 No es un diseño teórico. Es un handoff operativo para que el siguiente agente entienda:
 
@@ -45,16 +45,16 @@ Conclusión:
 
 Builder `<1B>`:
 
-- [57b_build_trades_file_acceptance_artifacts_lt1b.py](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/trades/cell_code/57b_build_trades_file_acceptance_artifacts_lt1b.py)
+- [57b_build_trades_file_acceptance_artifacts_lt1b.py](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/trades/cell_code/57b_build_trades_file_acceptance_artifacts_lt1b.py)
 
 Viewer:
 
-- [58b_trades_file_acceptance_view_lt1b.py](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/trades/cell_code/58b_trades_file_acceptance_view_lt1b.py)
-- [58_trades_file_acceptance_view.py](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/trades/cell_code/58_trades_file_acceptance_view.py)
+- [58b_trades_file_acceptance_view_lt1b.py](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/trades/cell_code/58b_trades_file_acceptance_view_lt1b.py)
+- [58_trades_file_acceptance_view.py](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/trades/cell_code/58_trades_file_acceptance_view.py)
 
 Cache canónico actual:
 
-- [file_acceptance_cache_lt1b](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/trades_v2_materialized/trades_current_cd_merged/root_cause_exports/file_acceptance_cache_lt1b)
+- [file_acceptance_cache_lt1b](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/trades_v2_materialized/trades_current_cd_merged/root_cause_exports/file_acceptance_cache_lt1b)
 
 Artefactos relevantes añadidos en esta fase:
 
@@ -93,7 +93,7 @@ La refactorización de la segunda capa deja un resultado importante:
 
 La discrepancia queda materializada en:
 
-- [layer2_session_mismatch.parquet](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/trades_v2_materialized/trades_current_cd_merged/root_cause_exports/file_acceptance_cache_lt1b/layer2_session_mismatch.parquet)
+- [layer2_session_mismatch.parquet](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/trades_v2_materialized/trades_current_cd_merged/root_cause_exports/file_acceptance_cache_lt1b/layer2_session_mismatch.parquet)
 
 Esto cambia la interpretación:
 
@@ -308,24 +308,24 @@ Es:
 Si se decide promover la logica a full `<1B>` sin depender del notebook, el cierre operativo real ya no debe anclarse en `57e`, sino en el runner posterior `57f`, que conserva el mismo universo e indice de `57e` pero deja cerrado el recompute full:
 
 - runner parcial anterior:
-  - [57e_build_trades_file_acceptance_artifacts_lt1b_full_clean.py](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/trades/cell_code/57e_build_trades_file_acceptance_artifacts_lt1b_full_clean.py)
+  - [57e_build_trades_file_acceptance_artifacts_lt1b_full_clean.py](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/trades/cell_code/57e_build_trades_file_acceptance_artifacts_lt1b_full_clean.py)
 - runner final correcto:
-  - [57f_build_trades_file_acceptance_artifacts_lt1b_full_clean_fast_same_schema.py](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/trades/cell_code/57f_build_trades_file_acceptance_artifacts_lt1b_full_clean_fast_same_schema.py)
+  - [57f_build_trades_file_acceptance_artifacts_lt1b_full_clean_fast_same_schema.py](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/trades/cell_code/57f_build_trades_file_acceptance_artifacts_lt1b_full_clean_fast_same_schema.py)
 
 Launcher PowerShell historico:
 
-- [57e_run_build_trades_file_acceptance_artifacts_lt1b_full_clean.ps1](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/trades/cell_code/57e_run_build_trades_file_acceptance_artifacts_lt1b_full_clean.ps1)
+- [57e_run_build_trades_file_acceptance_artifacts_lt1b_full_clean.ps1](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/trades/cell_code/57e_run_build_trades_file_acceptance_artifacts_lt1b_full_clean.ps1)
 
 Comando historico de prueba sobre `57e`:
 
 ```powershell
-python "C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/trades/cell_code/57e_build_trades_file_acceptance_artifacts_lt1b_full_clean.py" --workers 4 --limit-shards 8
+python "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/trades/cell_code/57e_build_trades_file_acceptance_artifacts_lt1b_full_clean.py" --workers 4 --limit-shards 8
 ```
 
 Comando full posteriormente cerrado con `57f`:
 
 ```powershell
-python "C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/trades/cell_code/57f_build_trades_file_acceptance_artifacts_lt1b_full_clean_fast_same_schema.py" --workers 4
+python "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/trades/cell_code/57f_build_trades_file_acceptance_artifacts_lt1b_full_clean_fast_same_schema.py" --workers 4
 ```
 
 Que hace este runner final:
@@ -366,7 +366,7 @@ Progreso esperado en terminal:
 
 Artefactos de salida que deben usarse como referencia final:
 
-- [file_acceptance_cache_lt1b_full_clean_fast_same_schema](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/trades_v2_materialized/trades_current_cd_merged/root_cause_exports/file_acceptance_cache_lt1b_full_clean_fast_same_schema)
+- [file_acceptance_cache_lt1b_full_clean_fast_same_schema](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/trades_v2_materialized/trades_current_cd_merged/root_cause_exports/file_acceptance_cache_lt1b_full_clean_fast_same_schema)
 
 Dentro de ese directorio:
 
@@ -391,10 +391,10 @@ Objetivo de este paso:
 
 La separacion final queda asi:
 
-- [05_trades_file_acceptance_audit.ipynb](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/trades/v2/05_trades_file_acceptance_audit.ipynb)
+- [05_trades_file_acceptance_audit.ipynb](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/trades/v2/05_trades_file_acceptance_audit.ipynb)
   Notebook metodologico de muestra (`380` files estratificados).
 
-- [06_trades_file_acceptance_full_lt1b_closeout.ipynb](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/trades/v2/06_trades_file_acceptance_full_lt1b_closeout.ipynb)
+- [06_trades_file_acceptance_full_lt1b_closeout.ipynb](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/trades/v2/06_trades_file_acceptance_full_lt1b_closeout.ipynb)
   Notebook de cierre full `<1B>` para ejecutar sobre el cache final ya cerrado por `57f`, dejando `57e` como run parcial previo sobre el mismo indice.
 
 Regla practica:

@@ -1,0 +1,63 @@
+{
+  "scope_id": "event_window_binding_design_scope_v0_1",
+  "status": "closed_design_ready_with_restrictions_no_execution",
+  "authorization_document": "C:/TSIS_Data/00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/07_EVENT_STATE_INTEGRATION/event_window_binding_design_authorization_v0_1.md",
+  "design_run_id": "event_window_binding_design_v0_1_20260724T140500Z",
+  "date": "2026-07-24",
+  "scope": "event_window_binding_design_only_for_session_opened_exchange_session",
+  "authorized_event_type": {
+    "event_type_id": "event_type:market_data:session_opened",
+    "event_family_id": "event_family:market_data:session_lifecycle",
+    "registry_status": "accepted_with_restrictions",
+    "accepted_subject_scope": "exchange_session",
+    "parent_registry_snapshot": "event_type_registry_post_initial_admission_snapshot_v0_1.json",
+    "parent_registry_snapshot_sha256": "f3627c8b44062081c8e2f2775bffbd283bd31f2ca1e876aa7469fd6586425c43"
+  },
+  "required_prior_designs": {
+    "event_instance_binding_design": "event_instance_binding_design_v0_1.md",
+    "event_instance_binding_design_status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION"
+  },
+  "data_foundation_reference_evidence": {
+    "event_windows_table_dataset_contract": "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/event_windows_table_dataset_contract_v0_1.md",
+    "event_windows_table_schema_contract": "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/event_windows_table_schema_contract.md",
+    "event_windows_table_consumption_policy": "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/event_windows_table_consumption_policy.md",
+    "event_windows_table_validators": "01_TSIS_DATA_FOUNDATION/01_foundations/validators/outputs/event_windows_table_validators.md",
+    "role_in_this_gate": "reference_pattern_only_no_physical_consumption"
+  },
+  "authorized_actions": {
+    "write_design_authorization": true,
+    "write_scope": true,
+    "write_design_document": true,
+    "write_machine_readable_contract": true,
+    "write_readout": true,
+    "update_active_docs": true
+  },
+  "closed_actions": {
+    "event_window_binding_execution_authorized": false,
+    "event_windows_created": 0,
+    "event_window_registry_created": false,
+    "event_window_parquet_files_written": 0,
+    "event_instances_created": 0,
+    "historical_calendar_rows_consumed": 0,
+    "event_detection_execution": false,
+    "instrument_projection_execution": false,
+    "market_state_physical_consumption": false,
+    "event_state_builder_execution": false,
+    "event_state_materialization": false,
+    "dataset_promotion": false,
+    "production": false,
+    "downstream_consumption": false
+  },
+  "required_design_topics": [
+    "event_window_definition_identity",
+    "event_window_binding_identity",
+    "state_role",
+    "consumption_legality",
+    "calendar_boundary_policy",
+    "clipping_policy",
+    "lineage_requirements",
+    "supersession_policy",
+    "instrument_projection_boundary"
+  ],
+  "next_gate_after_design": "market_state_profile_compatibility_design_authorization_v0_1"
+}

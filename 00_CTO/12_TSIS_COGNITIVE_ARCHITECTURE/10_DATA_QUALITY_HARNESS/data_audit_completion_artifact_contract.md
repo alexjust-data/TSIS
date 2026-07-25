@@ -2,7 +2,7 @@
 
 Fecha: 2026-06-12
 Estado: contract v0.3
-Ambito: cierre moderno de datasets pendientes en `01_TSIS_backtest_SmallCaps/01_foundations`
+Ambito: cierre moderno de datasets pendientes en `01_TSIS_DATA_FOUNDATION/01_foundations`
 
 ## 1. Proposito
 
@@ -100,16 +100,16 @@ Los agentes no deben modificar:
 
 - `E:/TSIS/data/*`
 - `C:/TSIS_Data/data/*`
-- `C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/`
-- `C:/TSIS_Data/01_TSIS_backtest_SmallCaps/data/`
-- `C:/TSIS_Data/01_TSIS_backtest_SmallCaps/run/`
-- `C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/`
+- `C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/`
+- `C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/data/`
+- `C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/run/`
+- `C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/`
 
 Esas rutas se leen como evidencia y provenance.
 El trabajo nuevo debe vivir en:
 
-- `C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/`
-- `C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/inspection/<dataset>/`
+- `C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/`
+- `C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/inspection/<dataset>/`
 
 ## 4. Paquete minimo por dataset
 
@@ -243,7 +243,7 @@ Una muestra de casos no sustituye mapa poblacional.
 Todo script usado para generar assets aceptados debe vivir dentro del proyecto:
 
 ```text
-01_TSIS_backtest_SmallCaps/scripts/inspection/<dataset>/
+01_TSIS_DATA_FOUNDATION/scripts/inspection/<dataset>/
 ```
 
 Prohibido aceptar como final outputs generados solo desde:

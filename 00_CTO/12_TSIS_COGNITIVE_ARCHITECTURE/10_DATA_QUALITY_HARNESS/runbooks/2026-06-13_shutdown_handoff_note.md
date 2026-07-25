@@ -1,4 +1,4 @@
-﻿# Data Quality Harness Shutdown Handoff Note
+# Data Quality Harness Shutdown Handoff Note
 
 Fecha: 2026-06-13
 
@@ -10,7 +10,7 @@ No sustituye los contratos del proyecto. Es una nota operativa de continuidad pa
 
 Debe leerse antes de continuar cualquier trabajo sobre:
 
-- `01_TSIS_backtest_SmallCaps/01_foundations`;
+- `01_TSIS_DATA_FOUNDATION/01_foundations`;
 - auditoria de data Polygon;
 - modernizacion de dossiers;
 - commits/pushes relacionados con este tramo.
@@ -146,10 +146,10 @@ Primero leer:
 
 Modulo 01:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\README.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\AGENTS.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\LOCAL_RULES.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\CHANGELOG.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\README.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\AGENTS.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\LOCAL_RULES.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\CHANGELOG.md`
 
 CTO / Data Quality Harness:
 
@@ -168,10 +168,10 @@ CTO / Data Quality Harness:
 
 Foundation model:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\inspection_dossier_model.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\auditoria_and_certification_source_hierarchy.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\data_storage_topology_and_target_state.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\event_families_and_reference_inventory.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\inspection_dossier_model.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\auditoria_and_certification_source_hierarchy.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\data_storage_topology_and_target_state.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\event_families_and_reference_inventory.md`
 
 ## 6. Estado de trabajo cerrado
 
@@ -187,15 +187,15 @@ reference = historical_deep_audit_closed + modern_dossier_complete_for_foundatio
 
 Archivos clave:
 
-- `01_TSIS_backtest_SmallCaps/scripts/inspection/reference/build_reference_inspection_pack.py`
-- `01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/reference/reference_inspection_readout_v0_2.md`
-- `01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/reference/build_reference_inspection_pack.md`
-- `01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/reference/reference_casepacks_traceability_audit_v0_1.md`
-- `01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/reference/integration_notes.md`
-- `01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/reference/evidence_assets/run_manifest.json`
-- `01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/reference/reference_registry_entry.yaml`
-- `01_TSIS_backtest_SmallCaps/01_foundations/validators/reference/reference_validators.md`
-- `01_TSIS_backtest_SmallCaps/01_foundations/contract_registry/dataset_contracts/reference_dataset_contract_v0_1.md`
+- `01_TSIS_DATA_FOUNDATION/scripts/inspection/reference/build_reference_inspection_pack.py`
+- `01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/reference/reference_inspection_readout_v0_2.md`
+- `01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/reference/build_reference_inspection_pack.md`
+- `01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/reference/reference_casepacks_traceability_audit_v0_1.md`
+- `01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/reference/integration_notes.md`
+- `01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/reference/evidence_assets/run_manifest.json`
+- `01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/reference/reference_registry_entry.yaml`
+- `01_TSIS_DATA_FOUNDATION/01_foundations/validators/reference/reference_validators.md`
+- `01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/reference_dataset_contract_v0_1.md`
 
 Importante:
 
@@ -215,16 +215,16 @@ halts = historical_deep_audit_closed + modern_dossier_complete_for_foundation_pr
 
 Archivos clave:
 
-- `01_TSIS_backtest_SmallCaps/scripts/inspection/halts/build_halts_inspection_pack.py`
-- `01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/halts/halts_inspection_readout_v0_1.md`
-- `01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/halts/build_halts_inspection_pack.md`
-- `01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/halts/halts_casepacks_traceability_audit_v0_1.md`
-- `01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/halts/integration_notes.md`
-- `01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/halts/evidence_assets/run_manifest.json`
-- `01_TSIS_backtest_SmallCaps/01_foundations/contract_registry/dataset_contracts/halts_dataset_contract_v0_1.md`
-- `01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/halts/halts_registry_entry.yaml`
-- `01_TSIS_backtest_SmallCaps/01_foundations/data_consumption_policies/halts_consumption_policy.md`
-- `01_TSIS_backtest_SmallCaps/01_foundations/validators/halts/halts_validators.md`
+- `01_TSIS_DATA_FOUNDATION/scripts/inspection/halts/build_halts_inspection_pack.py`
+- `01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/halts/halts_inspection_readout_v0_1.md`
+- `01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/halts/build_halts_inspection_pack.md`
+- `01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/halts/halts_casepacks_traceability_audit_v0_1.md`
+- `01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/halts/integration_notes.md`
+- `01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/halts/evidence_assets/run_manifest.json`
+- `01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/halts_dataset_contract_v0_1.md`
+- `01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/halts/halts_registry_entry.yaml`
+- `01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/halts_consumption_policy.md`
+- `01_TSIS_DATA_FOUNDATION/01_foundations/validators/halts/halts_validators.md`
 
 Importante:
 
@@ -256,17 +256,17 @@ No modificar, mover, normalizar ni reorganizar:
 
 - `E:\TSIS\data`
 - `C:\TSIS_Data\data`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\data`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\run`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\data`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\run`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA`
 
 Estas rutas solo pueden leerse como evidencia/provenance.
 
 Los nuevos artefactos aceptados deben vivir en:
 
-- `01_TSIS_backtest_SmallCaps/01_foundations`
-- `01_TSIS_backtest_SmallCaps/scripts/inspection/<dataset>`
+- `01_TSIS_DATA_FOUNDATION/01_foundations`
+- `01_TSIS_DATA_FOUNDATION/scripts/inspection/<dataset>`
 
 ## 9. Que falta por hacer
 

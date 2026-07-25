@@ -1,0 +1,1402 @@
+[
+  {
+    "title": "Preface",
+    "level": 0,
+    "page_index": 15,
+    "page": 16,
+    "slug": "preface"
+  },
+  {
+    "title": "Contents and Structure",
+    "level": 1,
+    "page_index": 18,
+    "page": 19,
+    "slug": "contents-and-structure"
+  },
+  {
+    "title": "Who This Book Is For",
+    "level": 1,
+    "page_index": 22,
+    "page": 23,
+    "slug": "who-this-book-is-for"
+  },
+  {
+    "title": "Conventions Used in This Book",
+    "level": 1,
+    "page_index": 24,
+    "page": 25,
+    "slug": "conventions-used-in-this-book"
+  },
+  {
+    "title": "Using Code Examples",
+    "level": 1,
+    "page_index": 25,
+    "page": 26,
+    "slug": "using-code-examples"
+  },
+  {
+    "title": "O’Reilly Online Learning",
+    "level": 1,
+    "page_index": 26,
+    "page": 27,
+    "slug": "o-reilly-online-learning"
+  },
+  {
+    "title": "How to Contact Us",
+    "level": 1,
+    "page_index": 27,
+    "page": 28,
+    "slug": "how-to-contact-us"
+  },
+  {
+    "title": "Acknowledgments",
+    "level": 1,
+    "page_index": 28,
+    "page": 29,
+    "slug": "acknowledgments"
+  },
+  {
+    "title": "1. Python and Algorithmic Trading",
+    "level": 0,
+    "page_index": 30,
+    "page": 31,
+    "slug": "1-python-and-algorithmic-trading"
+  },
+  {
+    "title": "Python for Finance",
+    "level": 1,
+    "page_index": 30,
+    "page": 31,
+    "slug": "python-for-finance"
+  },
+  {
+    "title": "Python Versus Pseudo-Code",
+    "level": 2,
+    "page_index": 31,
+    "page": 32,
+    "slug": "python-versus-pseudo-code"
+  },
+  {
+    "title": "NumPy and Vectorization",
+    "level": 2,
+    "page_index": 32,
+    "page": 33,
+    "slug": "numpy-and-vectorization"
+  },
+  {
+    "title": "pandas and the DataFrame Class",
+    "level": 2,
+    "page_index": 36,
+    "page": 37,
+    "slug": "pandas-and-the-dataframe-class"
+  },
+  {
+    "title": "Algorithmic Trading",
+    "level": 1,
+    "page_index": 40,
+    "page": 41,
+    "slug": "algorithmic-trading"
+  },
+  {
+    "title": "Python for Algorithmic Trading",
+    "level": 1,
+    "page_index": 47,
+    "page": 48,
+    "slug": "python-for-algorithmic-trading"
+  },
+  {
+    "title": "Focus and Prerequisites",
+    "level": 1,
+    "page_index": 49,
+    "page": 50,
+    "slug": "focus-and-prerequisites"
+  },
+  {
+    "title": "Trading Strategies",
+    "level": 1,
+    "page_index": 50,
+    "page": 51,
+    "slug": "trading-strategies"
+  },
+  {
+    "title": "Simple Moving Averages",
+    "level": 2,
+    "page_index": 51,
+    "page": 52,
+    "slug": "simple-moving-averages"
+  },
+  {
+    "title": "Momentum",
+    "level": 2,
+    "page_index": 51,
+    "page": 52,
+    "slug": "momentum"
+  },
+  {
+    "title": "Mean Reversion",
+    "level": 2,
+    "page_index": 52,
+    "page": 53,
+    "slug": "mean-reversion"
+  },
+  {
+    "title": "Machine and Deep Learning",
+    "level": 2,
+    "page_index": 52,
+    "page": 53,
+    "slug": "machine-and-deep-learning"
+  },
+  {
+    "title": "Conclusions",
+    "level": 1,
+    "page_index": 52,
+    "page": 53,
+    "slug": "conclusions"
+  },
+  {
+    "title": "References and Further Resources",
+    "level": 1,
+    "page_index": 53,
+    "page": 54,
+    "slug": "references-and-further-resources"
+  },
+  {
+    "title": "2. Python Infrastructure",
+    "level": 0,
+    "page_index": 56,
+    "page": 57,
+    "slug": "2-python-infrastructure"
+  },
+  {
+    "title": "Conda as a Package Manager",
+    "level": 1,
+    "page_index": 59,
+    "page": 60,
+    "slug": "conda-as-a-package-manager"
+  },
+  {
+    "title": "Installing Miniconda",
+    "level": 2,
+    "page_index": 59,
+    "page": 60,
+    "slug": "installing-miniconda"
+  },
+  {
+    "title": "Basic Operations with Conda",
+    "level": 2,
+    "page_index": 62,
+    "page": 63,
+    "slug": "basic-operations-with-conda"
+  },
+  {
+    "title": "Conda as a Virtual Environment Manager",
+    "level": 1,
+    "page_index": 68,
+    "page": 69,
+    "slug": "conda-as-a-virtual-environment-manager"
+  },
+  {
+    "title": "Using Docker Containers",
+    "level": 1,
+    "page_index": 73,
+    "page": 74,
+    "slug": "using-docker-containers"
+  },
+  {
+    "title": "Docker Images and Containers",
+    "level": 2,
+    "page_index": 74,
+    "page": 75,
+    "slug": "docker-images-and-containers"
+  },
+  {
+    "title": "Building a Ubuntu and Python Docker Image",
+    "level": 2,
+    "page_index": 75,
+    "page": 76,
+    "slug": "building-a-ubuntu-and-python-docker-image"
+  },
+  {
+    "title": "Using Cloud Instances",
+    "level": 1,
+    "page_index": 81,
+    "page": 82,
+    "slug": "using-cloud-instances"
+  },
+  {
+    "title": "RSA Public and Private Keys",
+    "level": 2,
+    "page_index": 83,
+    "page": 84,
+    "slug": "rsa-public-and-private-keys"
+  },
+  {
+    "title": "Jupyter Notebook Configuration File",
+    "level": 2,
+    "page_index": 85,
+    "page": 86,
+    "slug": "jupyter-notebook-configuration-file"
+  },
+  {
+    "title": "Installation Script for Python and Jupyter Lab",
+    "level": 2,
+    "page_index": 86,
+    "page": 87,
+    "slug": "installation-script-for-python-and-jupyter-lab"
+  },
+  {
+    "title": "Script to Orchestrate the Droplet Set Up",
+    "level": 2,
+    "page_index": 88,
+    "page": 89,
+    "slug": "script-to-orchestrate-the-droplet-set-up"
+  },
+  {
+    "title": "Conclusions",
+    "level": 1,
+    "page_index": 91,
+    "page": 92,
+    "slug": "conclusions"
+  },
+  {
+    "title": "References and Further Resources",
+    "level": 1,
+    "page_index": 92,
+    "page": 93,
+    "slug": "references-and-further-resources"
+  },
+  {
+    "title": "3. Working with Financial Data",
+    "level": 0,
+    "page_index": 94,
+    "page": 95,
+    "slug": "3-working-with-financial-data"
+  },
+  {
+    "title": "Reading Financial Data From Different Sources",
+    "level": 1,
+    "page_index": 95,
+    "page": 96,
+    "slug": "reading-financial-data-from-different-sources"
+  },
+  {
+    "title": "The Data Set",
+    "level": 2,
+    "page_index": 96,
+    "page": 97,
+    "slug": "the-data-set"
+  },
+  {
+    "title": "Reading from a CSV File with Python",
+    "level": 2,
+    "page_index": 97,
+    "page": 98,
+    "slug": "reading-from-a-csv-file-with-python"
+  },
+  {
+    "title": "Reading from a CSV File with pandas",
+    "level": 2,
+    "page_index": 100,
+    "page": 101,
+    "slug": "reading-from-a-csv-file-with-pandas"
+  },
+  {
+    "title": "Exporting to Excel and JSON",
+    "level": 2,
+    "page_index": 102,
+    "page": 103,
+    "slug": "exporting-to-excel-and-json"
+  },
+  {
+    "title": "Reading from Excel and JSON",
+    "level": 2,
+    "page_index": 103,
+    "page": 104,
+    "slug": "reading-from-excel-and-json"
+  },
+  {
+    "title": "Working with Open Data Sources",
+    "level": 1,
+    "page_index": 104,
+    "page": 105,
+    "slug": "working-with-open-data-sources"
+  },
+  {
+    "title": "Eikon Data API",
+    "level": 1,
+    "page_index": 109,
+    "page": 110,
+    "slug": "eikon-data-api"
+  },
+  {
+    "title": "Retrieving Historical Structured Data",
+    "level": 2,
+    "page_index": 115,
+    "page": 116,
+    "slug": "retrieving-historical-structured-data"
+  },
+  {
+    "title": "Retrieving Historical Unstructured Data",
+    "level": 2,
+    "page_index": 121,
+    "page": 122,
+    "slug": "retrieving-historical-unstructured-data"
+  },
+  {
+    "title": "Storing Financial Data Efficiently",
+    "level": 1,
+    "page_index": 125,
+    "page": 126,
+    "slug": "storing-financial-data-efficiently"
+  },
+  {
+    "title": "Storing DataFrame Objects",
+    "level": 2,
+    "page_index": 126,
+    "page": 127,
+    "slug": "storing-dataframe-objects"
+  },
+  {
+    "title": "Using TsTables",
+    "level": 2,
+    "page_index": 132,
+    "page": 133,
+    "slug": "using-tstables"
+  },
+  {
+    "title": "Storing Data with SQLite3",
+    "level": 2,
+    "page_index": 139,
+    "page": 140,
+    "slug": "storing-data-with-sqlite3"
+  },
+  {
+    "title": "Conclusions",
+    "level": 1,
+    "page_index": 142,
+    "page": 143,
+    "slug": "conclusions"
+  },
+  {
+    "title": "References and Further Resources",
+    "level": 1,
+    "page_index": 142,
+    "page": 143,
+    "slug": "references-and-further-resources"
+  },
+  {
+    "title": "Python Scripts",
+    "level": 1,
+    "page_index": 143,
+    "page": 144,
+    "slug": "python-scripts"
+  },
+  {
+    "title": "4. Mastering Vectorized Backtesting",
+    "level": 0,
+    "page_index": 146,
+    "page": 147,
+    "slug": "4-mastering-vectorized-backtesting"
+  },
+  {
+    "title": "Making Use of Vectorization",
+    "level": 1,
+    "page_index": 148,
+    "page": 149,
+    "slug": "making-use-of-vectorization"
+  },
+  {
+    "title": "Vectorization with NumPy",
+    "level": 2,
+    "page_index": 149,
+    "page": 150,
+    "slug": "vectorization-with-numpy"
+  },
+  {
+    "title": "Vectorization with pandas",
+    "level": 2,
+    "page_index": 152,
+    "page": 153,
+    "slug": "vectorization-with-pandas"
+  },
+  {
+    "title": "Strategies Based on Simple Moving Averages",
+    "level": 1,
+    "page_index": 157,
+    "page": 158,
+    "slug": "strategies-based-on-simple-moving-averages"
+  },
+  {
+    "title": "Getting into the Basics",
+    "level": 2,
+    "page_index": 157,
+    "page": 158,
+    "slug": "getting-into-the-basics"
+  },
+  {
+    "title": "Generalizing the Approach",
+    "level": 2,
+    "page_index": 173,
+    "page": 174,
+    "slug": "generalizing-the-approach"
+  },
+  {
+    "title": "Strategies Based on Momentum",
+    "level": 1,
+    "page_index": 177,
+    "page": 178,
+    "slug": "strategies-based-on-momentum"
+  },
+  {
+    "title": "Getting into the Basics",
+    "level": 2,
+    "page_index": 178,
+    "page": 179,
+    "slug": "getting-into-the-basics"
+  },
+  {
+    "title": "Generalizing the Approach",
+    "level": 2,
+    "page_index": 189,
+    "page": 190,
+    "slug": "generalizing-the-approach"
+  },
+  {
+    "title": "Strategies Based on Mean Reversion",
+    "level": 1,
+    "page_index": 195,
+    "page": 196,
+    "slug": "strategies-based-on-mean-reversion"
+  },
+  {
+    "title": "Getting into the Basics",
+    "level": 2,
+    "page_index": 195,
+    "page": 196,
+    "slug": "getting-into-the-basics"
+  },
+  {
+    "title": "Generalizing the Approach",
+    "level": 2,
+    "page_index": 203,
+    "page": 204,
+    "slug": "generalizing-the-approach"
+  },
+  {
+    "title": "Data Snooping and Overfitting",
+    "level": 1,
+    "page_index": 206,
+    "page": 207,
+    "slug": "data-snooping-and-overfitting"
+  },
+  {
+    "title": "Conclusions",
+    "level": 1,
+    "page_index": 209,
+    "page": 210,
+    "slug": "conclusions"
+  },
+  {
+    "title": "References and Further Resources",
+    "level": 1,
+    "page_index": 209,
+    "page": 210,
+    "slug": "references-and-further-resources"
+  },
+  {
+    "title": "Python Scripts",
+    "level": 1,
+    "page_index": 212,
+    "page": 213,
+    "slug": "python-scripts"
+  },
+  {
+    "title": "SMA Backtesting Class",
+    "level": 2,
+    "page_index": 212,
+    "page": 213,
+    "slug": "sma-backtesting-class"
+  },
+  {
+    "title": "Momentum Backtesting Class",
+    "level": 2,
+    "page_index": 216,
+    "page": 217,
+    "slug": "momentum-backtesting-class"
+  },
+  {
+    "title": "Mean Reversion Backtesting Class",
+    "level": 2,
+    "page_index": 218,
+    "page": 219,
+    "slug": "mean-reversion-backtesting-class"
+  },
+  {
+    "title": "5. Predicting Market Movements with Machine Learning",
+    "level": 0,
+    "page_index": 222,
+    "page": 223,
+    "slug": "5-predicting-market-movements-with-machine-learning"
+  },
+  {
+    "title": "Using Linear Regression for Market Movement Prediction",
+    "level": 1,
+    "page_index": 224,
+    "page": 225,
+    "slug": "using-linear-regression-for-market-movement-prediction"
+  },
+  {
+    "title": "A Quick Review of Linear Regression",
+    "level": 2,
+    "page_index": 224,
+    "page": 225,
+    "slug": "a-quick-review-of-linear-regression"
+  },
+  {
+    "title": "The Basic Idea for Price Prediction",
+    "level": 2,
+    "page_index": 230,
+    "page": 231,
+    "slug": "the-basic-idea-for-price-prediction"
+  },
+  {
+    "title": "Predicting Index Levels",
+    "level": 2,
+    "page_index": 232,
+    "page": 233,
+    "slug": "predicting-index-levels"
+  },
+  {
+    "title": "Predicting Future Returns",
+    "level": 2,
+    "page_index": 239,
+    "page": 240,
+    "slug": "predicting-future-returns"
+  },
+  {
+    "title": "Predicting Future Market Direction",
+    "level": 2,
+    "page_index": 243,
+    "page": 244,
+    "slug": "predicting-future-market-direction"
+  },
+  {
+    "title": "Vectorized Backtesting of Regression-Based Strategy",
+    "level": 2,
+    "page_index": 244,
+    "page": 245,
+    "slug": "vectorized-backtesting-of-regression-based-strategy"
+  },
+  {
+    "title": "Generalizing the Approach",
+    "level": 2,
+    "page_index": 247,
+    "page": 248,
+    "slug": "generalizing-the-approach"
+  },
+  {
+    "title": "Using Machine Learning for Market Movement Prediction",
+    "level": 1,
+    "page_index": 252,
+    "page": 253,
+    "slug": "using-machine-learning-for-market-movement-prediction"
+  },
+  {
+    "title": "Linear Regression with scikit-learn",
+    "level": 2,
+    "page_index": 252,
+    "page": 253,
+    "slug": "linear-regression-with-scikit-learn"
+  },
+  {
+    "title": "A Simple Classification Problem",
+    "level": 2,
+    "page_index": 254,
+    "page": 255,
+    "slug": "a-simple-classification-problem"
+  },
+  {
+    "title": "Using Logistic Regression to Predict Market Direction",
+    "level": 2,
+    "page_index": 265,
+    "page": 266,
+    "slug": "using-logistic-regression-to-predict-market-direction"
+  },
+  {
+    "title": "Generalizing the Approach",
+    "level": 2,
+    "page_index": 273,
+    "page": 274,
+    "slug": "generalizing-the-approach"
+  },
+  {
+    "title": "Using Deep Learning for Market Movement Prediction",
+    "level": 1,
+    "page_index": 280,
+    "page": 281,
+    "slug": "using-deep-learning-for-market-movement-prediction"
+  },
+  {
+    "title": "The Simple Classification Problem Revisited",
+    "level": 2,
+    "page_index": 281,
+    "page": 282,
+    "slug": "the-simple-classification-problem-revisited"
+  },
+  {
+    "title": "Using Deep Neural Networks to Predict Market Direction",
+    "level": 2,
+    "page_index": 285,
+    "page": 286,
+    "slug": "using-deep-neural-networks-to-predict-market-direction"
+  },
+  {
+    "title": "Adding Different Types of Features",
+    "level": 2,
+    "page_index": 295,
+    "page": 296,
+    "slug": "adding-different-types-of-features"
+  },
+  {
+    "title": "Conclusions",
+    "level": 1,
+    "page_index": 301,
+    "page": 302,
+    "slug": "conclusions"
+  },
+  {
+    "title": "References and Further Resources",
+    "level": 1,
+    "page_index": 302,
+    "page": 303,
+    "slug": "references-and-further-resources"
+  },
+  {
+    "title": "Python Scripts",
+    "level": 1,
+    "page_index": 303,
+    "page": 304,
+    "slug": "python-scripts"
+  },
+  {
+    "title": "Linear Regression Backtesting Class",
+    "level": 2,
+    "page_index": 304,
+    "page": 305,
+    "slug": "linear-regression-backtesting-class"
+  },
+  {
+    "title": "Classification Algorithm Backtesting Class",
+    "level": 2,
+    "page_index": 307,
+    "page": 308,
+    "slug": "classification-algorithm-backtesting-class"
+  },
+  {
+    "title": "6. Building Classes for Event-Based Backtesting",
+    "level": 0,
+    "page_index": 313,
+    "page": 314,
+    "slug": "6-building-classes-for-event-based-backtesting"
+  },
+  {
+    "title": "Backtesting Base Class",
+    "level": 1,
+    "page_index": 315,
+    "page": 316,
+    "slug": "backtesting-base-class"
+  },
+  {
+    "title": "Long-Only Backtesting Class",
+    "level": 1,
+    "page_index": 324,
+    "page": 325,
+    "slug": "long-only-backtesting-class"
+  },
+  {
+    "title": "Long-Short Backtesting Class",
+    "level": 1,
+    "page_index": 328,
+    "page": 329,
+    "slug": "long-short-backtesting-class"
+  },
+  {
+    "title": "Conclusions",
+    "level": 1,
+    "page_index": 334,
+    "page": 335,
+    "slug": "conclusions"
+  },
+  {
+    "title": "References and Further Resources",
+    "level": 1,
+    "page_index": 334,
+    "page": 335,
+    "slug": "references-and-further-resources"
+  },
+  {
+    "title": "Python Scripts",
+    "level": 1,
+    "page_index": 335,
+    "page": 336,
+    "slug": "python-scripts"
+  },
+  {
+    "title": "Backtesting Base Class",
+    "level": 2,
+    "page_index": 336,
+    "page": 337,
+    "slug": "backtesting-base-class"
+  },
+  {
+    "title": "Long-Only Backtesting Class",
+    "level": 2,
+    "page_index": 339,
+    "page": 340,
+    "slug": "long-only-backtesting-class"
+  },
+  {
+    "title": "Long-Short Backtesting Class",
+    "level": 2,
+    "page_index": 343,
+    "page": 344,
+    "slug": "long-short-backtesting-class"
+  },
+  {
+    "title": "7. Working with Real-Time Data and Sockets",
+    "level": 0,
+    "page_index": 347,
+    "page": 348,
+    "slug": "7-working-with-real-time-data-and-sockets"
+  },
+  {
+    "title": "Running a Simple Tick Data Server",
+    "level": 1,
+    "page_index": 349,
+    "page": 350,
+    "slug": "running-a-simple-tick-data-server"
+  },
+  {
+    "title": "Connecting a Simple Tick Data Client",
+    "level": 1,
+    "page_index": 354,
+    "page": 355,
+    "slug": "connecting-a-simple-tick-data-client"
+  },
+  {
+    "title": "Signal Generation in Real Time",
+    "level": 1,
+    "page_index": 356,
+    "page": 357,
+    "slug": "signal-generation-in-real-time"
+  },
+  {
+    "title": "Visualizing Streaming Data with Plotly",
+    "level": 1,
+    "page_index": 361,
+    "page": 362,
+    "slug": "visualizing-streaming-data-with-plotly"
+  },
+  {
+    "title": "The Basics",
+    "level": 2,
+    "page_index": 361,
+    "page": 362,
+    "slug": "the-basics"
+  },
+  {
+    "title": "Three Real-Time Streams",
+    "level": 2,
+    "page_index": 363,
+    "page": 364,
+    "slug": "three-real-time-streams"
+  },
+  {
+    "title": "Three Sub-Plots for Three Streams",
+    "level": 2,
+    "page_index": 365,
+    "page": 366,
+    "slug": "three-sub-plots-for-three-streams"
+  },
+  {
+    "title": "Streaming Data as Bars",
+    "level": 2,
+    "page_index": 367,
+    "page": 368,
+    "slug": "streaming-data-as-bars"
+  },
+  {
+    "title": "Conclusions",
+    "level": 1,
+    "page_index": 369,
+    "page": 370,
+    "slug": "conclusions"
+  },
+  {
+    "title": "References and Further Resources",
+    "level": 1,
+    "page_index": 370,
+    "page": 371,
+    "slug": "references-and-further-resources"
+  },
+  {
+    "title": "Python Scripts",
+    "level": 1,
+    "page_index": 370,
+    "page": 371,
+    "slug": "python-scripts"
+  },
+  {
+    "title": "Sample Tick Data Server",
+    "level": 2,
+    "page_index": 370,
+    "page": 371,
+    "slug": "sample-tick-data-server"
+  },
+  {
+    "title": "Tick Data Client",
+    "level": 2,
+    "page_index": 372,
+    "page": 373,
+    "slug": "tick-data-client"
+  },
+  {
+    "title": "Momentum Online Algorithm",
+    "level": 2,
+    "page_index": 372,
+    "page": 373,
+    "slug": "momentum-online-algorithm"
+  },
+  {
+    "title": "Sample Data Server for Bar Plot",
+    "level": 2,
+    "page_index": 373,
+    "page": 374,
+    "slug": "sample-data-server-for-bar-plot"
+  },
+  {
+    "title": "8. CFD Trading with Oanda",
+    "level": 0,
+    "page_index": 375,
+    "page": 376,
+    "slug": "8-cfd-trading-with-oanda"
+  },
+  {
+    "title": "Setting Up an Account",
+    "level": 1,
+    "page_index": 381,
+    "page": 382,
+    "slug": "setting-up-an-account"
+  },
+  {
+    "title": "The Oanda API",
+    "level": 1,
+    "page_index": 387,
+    "page": 388,
+    "slug": "the-oanda-api"
+  },
+  {
+    "title": "Retrieving Historical Data",
+    "level": 1,
+    "page_index": 390,
+    "page": 391,
+    "slug": "retrieving-historical-data"
+  },
+  {
+    "title": "Looking Up Instruments Available for Trading",
+    "level": 2,
+    "page_index": 390,
+    "page": 391,
+    "slug": "looking-up-instruments-available-for-trading"
+  },
+  {
+    "title": "Backtesting a Momentum Strategy on Minute Bars",
+    "level": 2,
+    "page_index": 391,
+    "page": 392,
+    "slug": "backtesting-a-momentum-strategy-on-minute-bars"
+  },
+  {
+    "title": "Factoring In Leverage and Margin",
+    "level": 2,
+    "page_index": 397,
+    "page": 398,
+    "slug": "factoring-in-leverage-and-margin"
+  },
+  {
+    "title": "Working with Streaming Data",
+    "level": 1,
+    "page_index": 401,
+    "page": 402,
+    "slug": "working-with-streaming-data"
+  },
+  {
+    "title": "Placing Market Orders",
+    "level": 1,
+    "page_index": 401,
+    "page": 402,
+    "slug": "placing-market-orders"
+  },
+  {
+    "title": "Implementing Trading Strategies in Real Time",
+    "level": 1,
+    "page_index": 405,
+    "page": 406,
+    "slug": "implementing-trading-strategies-in-real-time"
+  },
+  {
+    "title": "Retrieving Account Information",
+    "level": 1,
+    "page_index": 412,
+    "page": 413,
+    "slug": "retrieving-account-information"
+  },
+  {
+    "title": "Conclusions",
+    "level": 1,
+    "page_index": 415,
+    "page": 416,
+    "slug": "conclusions"
+  },
+  {
+    "title": "References and Further Resources",
+    "level": 1,
+    "page_index": 416,
+    "page": 417,
+    "slug": "references-and-further-resources"
+  },
+  {
+    "title": "Python Script",
+    "level": 1,
+    "page_index": 416,
+    "page": 417,
+    "slug": "python-script"
+  },
+  {
+    "title": "9. FX Trading with FXCM",
+    "level": 0,
+    "page_index": 419,
+    "page": 420,
+    "slug": "9-fx-trading-with-fxcm"
+  },
+  {
+    "title": "Getting Started",
+    "level": 1,
+    "page_index": 421,
+    "page": 422,
+    "slug": "getting-started"
+  },
+  {
+    "title": "Retrieving Data",
+    "level": 1,
+    "page_index": 423,
+    "page": 424,
+    "slug": "retrieving-data"
+  },
+  {
+    "title": "Retrieving Tick Data",
+    "level": 2,
+    "page_index": 423,
+    "page": 424,
+    "slug": "retrieving-tick-data"
+  },
+  {
+    "title": "Retrieving Candles Data",
+    "level": 2,
+    "page_index": 428,
+    "page": 429,
+    "slug": "retrieving-candles-data"
+  },
+  {
+    "title": "Working with the API",
+    "level": 1,
+    "page_index": 432,
+    "page": 433,
+    "slug": "working-with-the-api"
+  },
+  {
+    "title": "Retrieving Historical Data",
+    "level": 2,
+    "page_index": 433,
+    "page": 434,
+    "slug": "retrieving-historical-data"
+  },
+  {
+    "title": "Retrieving Streaming Data",
+    "level": 2,
+    "page_index": 437,
+    "page": 438,
+    "slug": "retrieving-streaming-data"
+  },
+  {
+    "title": "Placing Orders",
+    "level": 2,
+    "page_index": 438,
+    "page": 439,
+    "slug": "placing-orders"
+  },
+  {
+    "title": "Account Information",
+    "level": 2,
+    "page_index": 441,
+    "page": 442,
+    "slug": "account-information"
+  },
+  {
+    "title": "Conclusions",
+    "level": 1,
+    "page_index": 442,
+    "page": 443,
+    "slug": "conclusions"
+  },
+  {
+    "title": "References and Further Resources",
+    "level": 1,
+    "page_index": 443,
+    "page": 444,
+    "slug": "references-and-further-resources"
+  },
+  {
+    "title": "10. Automating Trading Operations",
+    "level": 0,
+    "page_index": 444,
+    "page": 445,
+    "slug": "10-automating-trading-operations"
+  },
+  {
+    "title": "Capital Management",
+    "level": 1,
+    "page_index": 445,
+    "page": 446,
+    "slug": "capital-management"
+  },
+  {
+    "title": "Kelly Criterion in Binomial Setting",
+    "level": 2,
+    "page_index": 446,
+    "page": 447,
+    "slug": "kelly-criterion-in-binomial-setting"
+  },
+  {
+    "title": "Kelly Criterion for Stocks and Indices",
+    "level": 2,
+    "page_index": 455,
+    "page": 456,
+    "slug": "kelly-criterion-for-stocks-and-indices"
+  },
+  {
+    "title": "ML-Based Trading Strategy",
+    "level": 1,
+    "page_index": 462,
+    "page": 463,
+    "slug": "ml-based-trading-strategy"
+  },
+  {
+    "title": "Vectorized Backtesting",
+    "level": 2,
+    "page_index": 462,
+    "page": 463,
+    "slug": "vectorized-backtesting"
+  },
+  {
+    "title": "Optimal Leverage",
+    "level": 2,
+    "page_index": 473,
+    "page": 474,
+    "slug": "optimal-leverage"
+  },
+  {
+    "title": "Risk Analysis",
+    "level": 2,
+    "page_index": 477,
+    "page": 478,
+    "slug": "risk-analysis"
+  },
+  {
+    "title": "Persisting the Model Object",
+    "level": 2,
+    "page_index": 482,
+    "page": 483,
+    "slug": "persisting-the-model-object"
+  },
+  {
+    "title": "Online Algorithm",
+    "level": 1,
+    "page_index": 483,
+    "page": 484,
+    "slug": "online-algorithm"
+  },
+  {
+    "title": "Infrastructure and Deployment",
+    "level": 1,
+    "page_index": 490,
+    "page": 491,
+    "slug": "infrastructure-and-deployment"
+  },
+  {
+    "title": "Logging and Monitoring",
+    "level": 1,
+    "page_index": 491,
+    "page": 492,
+    "slug": "logging-and-monitoring"
+  },
+  {
+    "title": "Visual Step-by-Step Overview",
+    "level": 1,
+    "page_index": 495,
+    "page": 496,
+    "slug": "visual-step-by-step-overview"
+  },
+  {
+    "title": "Configuring Oanda Account",
+    "level": 2,
+    "page_index": 495,
+    "page": 496,
+    "slug": "configuring-oanda-account"
+  },
+  {
+    "title": "Setting Up the Hardware",
+    "level": 2,
+    "page_index": 497,
+    "page": 498,
+    "slug": "setting-up-the-hardware"
+  },
+  {
+    "title": "Setting Up the Python Environment",
+    "level": 2,
+    "page_index": 499,
+    "page": 500,
+    "slug": "setting-up-the-python-environment"
+  },
+  {
+    "title": "Uploading the Code",
+    "level": 2,
+    "page_index": 501,
+    "page": 502,
+    "slug": "uploading-the-code"
+  },
+  {
+    "title": "Running the Code",
+    "level": 2,
+    "page_index": 503,
+    "page": 504,
+    "slug": "running-the-code"
+  },
+  {
+    "title": "Real-Time Monitoring",
+    "level": 2,
+    "page_index": 506,
+    "page": 507,
+    "slug": "real-time-monitoring"
+  },
+  {
+    "title": "Conclusions",
+    "level": 1,
+    "page_index": 508,
+    "page": 509,
+    "slug": "conclusions"
+  },
+  {
+    "title": "References and Further Resources",
+    "level": 1,
+    "page_index": 508,
+    "page": 509,
+    "slug": "references-and-further-resources"
+  },
+  {
+    "title": "Python Script",
+    "level": 1,
+    "page_index": 508,
+    "page": 509,
+    "slug": "python-script"
+  },
+  {
+    "title": "Automated Trading Strategy",
+    "level": 2,
+    "page_index": 509,
+    "page": 510,
+    "slug": "automated-trading-strategy"
+  },
+  {
+    "title": "Strategy Monitoring",
+    "level": 2,
+    "page_index": 512,
+    "page": 513,
+    "slug": "strategy-monitoring"
+  },
+  {
+    "title": "Appendix. Python, NumPy, matplotlib, pandas",
+    "level": 0,
+    "page_index": 514,
+    "page": 515,
+    "slug": "appendix-python-numpy-matplotlib-pandas"
+  },
+  {
+    "title": "Python Basics",
+    "level": 1,
+    "page_index": 515,
+    "page": 516,
+    "slug": "python-basics"
+  },
+  {
+    "title": "Data Types",
+    "level": 2,
+    "page_index": 515,
+    "page": 516,
+    "slug": "data-types"
+  },
+  {
+    "title": "Data Structures",
+    "level": 2,
+    "page_index": 519,
+    "page": 520,
+    "slug": "data-structures"
+  },
+  {
+    "title": "Control Structures",
+    "level": 2,
+    "page_index": 523,
+    "page": 524,
+    "slug": "control-structures"
+  },
+  {
+    "title": "Python Idioms",
+    "level": 2,
+    "page_index": 524,
+    "page": 525,
+    "slug": "python-idioms"
+  },
+  {
+    "title": "NumPy",
+    "level": 1,
+    "page_index": 528,
+    "page": 529,
+    "slug": "numpy"
+  },
+  {
+    "title": "Regular ndarray Object",
+    "level": 2,
+    "page_index": 528,
+    "page": 529,
+    "slug": "regular-ndarray-object"
+  },
+  {
+    "title": "Vectorized Operations",
+    "level": 2,
+    "page_index": 530,
+    "page": 531,
+    "slug": "vectorized-operations"
+  },
+  {
+    "title": "Boolean Operations",
+    "level": 2,
+    "page_index": 531,
+    "page": 532,
+    "slug": "boolean-operations"
+  },
+  {
+    "title": "ndarray Methods and NumPy Functions",
+    "level": 2,
+    "page_index": 532,
+    "page": 533,
+    "slug": "ndarray-methods-and-numpy-functions"
+  },
+  {
+    "title": "ndarray Creation",
+    "level": 2,
+    "page_index": 535,
+    "page": 536,
+    "slug": "ndarray-creation"
+  },
+  {
+    "title": "Random Numbers",
+    "level": 2,
+    "page_index": 536,
+    "page": 537,
+    "slug": "random-numbers"
+  },
+  {
+    "title": "matplotlib",
+    "level": 1,
+    "page_index": 538,
+    "page": 539,
+    "slug": "matplotlib"
+  },
+  {
+    "title": "pandas",
+    "level": 1,
+    "page_index": 550,
+    "page": 551,
+    "slug": "pandas"
+  },
+  {
+    "title": "DataFrame Class",
+    "level": 2,
+    "page_index": 550,
+    "page": 551,
+    "slug": "dataframe-class"
+  },
+  {
+    "title": "Numerical Operations",
+    "level": 2,
+    "page_index": 553,
+    "page": 554,
+    "slug": "numerical-operations"
+  },
+  {
+    "title": "Data Selection",
+    "level": 2,
+    "page_index": 555,
+    "page": 556,
+    "slug": "data-selection"
+  },
+  {
+    "title": "Boolean Operations",
+    "level": 2,
+    "page_index": 556,
+    "page": 557,
+    "slug": "boolean-operations"
+  },
+  {
+    "title": "Plotting with pandas",
+    "level": 2,
+    "page_index": 558,
+    "page": 559,
+    "slug": "plotting-with-pandas"
+  },
+  {
+    "title": "Input-Output Operations",
+    "level": 2,
+    "page_index": 563,
+    "page": 564,
+    "slug": "input-output-operations"
+  },
+  {
+    "title": "Case Study",
+    "level": 1,
+    "page_index": 565,
+    "page": 566,
+    "slug": "case-study"
+  },
+  {
+    "title": "Conclusions",
+    "level": 1,
+    "page_index": 577,
+    "page": 578,
+    "slug": "conclusions"
+  },
+  {
+    "title": "Further Resources",
+    "level": 1,
+    "page_index": 577,
+    "page": 578,
+    "slug": "further-resources"
+  },
+  {
+    "title": "Index",
+    "level": 0,
+    "page_index": 579,
+    "page": 580,
+    "slug": "index"
+  }
+]

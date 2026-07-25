@@ -1,0 +1,64 @@
+{
+  "authorization_id": "market_state_on_demand_execution_chain_joint_review_authorization_v0_1",
+  "closure_invariants": {
+    "dataset_registry_entries_written": 0,
+    "datasets_written": 0,
+    "downstream_consumption": false,
+    "execution_authorizations_consumed": 0,
+    "execution_plans_created": 0,
+    "materializer_executions": 0,
+    "production": false,
+    "registry_entries_written": 0,
+    "requests_created": 0,
+    "resolver_executions": 0,
+    "run_records_created": 0,
+    "source_rows_read": 0,
+    "validator_executions": 0
+  },
+  "date": "2026-07-25",
+  "forbidden_actions": {
+    "dataset_write_allowed": false,
+    "downstream_consumption_allowed": false,
+    "execution_authorization_consumption_allowed": false,
+    "execution_plan_creation_allowed": false,
+    "materializer_execution_allowed": false,
+    "official_dataset_promotion_allowed": false,
+    "production_allowed": false,
+    "registry_entry_write_allowed": false,
+    "request_creation_allowed": false,
+    "resolver_execution_allowed": false,
+    "run_record_creation_allowed": false,
+    "source_data_read_allowed": false,
+    "validator_execution_allowed": false
+  },
+  "gate": "market_state_on_demand_execution_chain_joint_review_v0_1",
+  "next_allowed_gate": "market_state_bounded_on_demand_execution_authorization_v0_1",
+  "parent_contracts": [
+    "market_state_request_contract_v0_1",
+    "market_state_execution_plan_contract_v0_1",
+    "market_state_profile_resolver_contract_v0_1",
+    "market_state_universe_resolver_contract_v0_1",
+    "market_state_source_resolver_contract_v0_1",
+    "market_state_partition_and_coverage_resolver_contract_v0_1",
+    "market_state_materializer_contract_v0_1",
+    "market_state_validator_contract_v0_1",
+    "market_state_candidate_dataset_registry_contract_v0_1",
+    "market_state_run_lifecycle_and_manifest_contract_v0_1"
+  ],
+  "parent_gate": "market_state_run_lifecycle_and_manifest_design_v0_1",
+  "review_allowed": {
+    "joint_review_allowed": true
+  },
+  "review_questions": [
+    "Does each runtime responsibility have exactly one owner?",
+    "Does the materializer consume the frozen execution plan without re-resolving?",
+    "Does the validator evaluate without repairing, rebuilding or promoting?",
+    "Does the registry record without materializing, validating, promoting or consuming?",
+    "Does the run lifecycle require explicit authorization, pre-run manifest and terminal manifest evidence?",
+    "Is the fingerprint chain complete and non-overlapping?",
+    "Can a bounded execution authorization be opened without opening execution directly?"
+  ],
+  "scope_id": "market_state_on_demand_execution_chain_joint_review_scope_v0_1",
+  "status": "CLOSED_APPROVED_FOR_BOUNDED_EXECUTION_AUTHORIZATION_WITH_RESTRICTIONS_NO_EXECUTION",
+  "target_matrix": "market_state_on_demand_execution_chain_joint_review_matrix_v0_1"
+}

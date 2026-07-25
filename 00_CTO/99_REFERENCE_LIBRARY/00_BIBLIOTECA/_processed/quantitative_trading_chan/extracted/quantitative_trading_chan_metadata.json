@@ -1,0 +1,23 @@
+﻿{
+    "book_id":  "quantitative_trading_chan",
+    "source_pdf":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Quantitative_Trading_-_Ernest_P_Chan.pdf",
+    "processed_source_pdf":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\quantitative_trading_chan\\source\\original.pdf",
+    "title":  "Quantitative Trading, 2nd Edition",
+    "author":  "Ernest P. Chan",
+    "producer":  "calibre (6.17.0) [http://calibre-ebook.com]",
+    "creator":  "calibre (6.17.0) [http://calibre-ebook.com]",
+    "pages":  299,
+    "file_size_bytes":  2714916,
+    "last_write_time":  "2026-07-21T20:31:30.112147+00:00",
+    "processed_at":  "2026-07-24T21:49:27.632170+00:00",
+    "requires_ocr":  false,
+    "status":  "indexed",
+    "total_words":  69806,
+    "text_pages":  294,
+    "toc_items":  69,
+    "working_text_persisted":  false,
+    "copyright_note":  "Derived artifacts should summarize and point to pages. Do not persist or redistribute full extracted text unless explicitly allowed.",
+    "summary_artifact":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\quantitative_trading_chan\\summaries\\quantitative_trading_chan_agent_summary.md",
+    "concept_index_artifact":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\quantitative_trading_chan\\index\\quantitative_trading_chan_concept_index.md",
+    "source_map_artifact":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\quantitative_trading_chan\\index\\quantitative_trading_chan_source_map.md"
+}

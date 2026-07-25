@@ -1,4 +1,4 @@
-﻿# TSIS
+# TSIS
 
 TSIS is an institutional-grade, agent-first Scientific Discovery Engine focused on:
 
@@ -63,13 +63,16 @@ No sustituye este contrato. Todo agente debe seguir obedeciendo el orden de lect
 TSIS esta organizado como un ecosistema con autoridad raiz, laboratorio transversal, modulos operativos y data roots pesados:
 
 - `00_CTO`: filosofia, arquitectura, mapas y autoridad.
-- `00_TSIS_Lab`: contratos, registros, plantillas y experimentos cientificos reproducibles.
-- `01_TSIS_backtest_SmallCaps`: Data Foundation, event discovery, feature engine, backtest clasico y strategy research SmallCaps.
-- `02_TSIS_webSocket_SmallCaps`: operacion live/shadow y procesamiento event-driven.
-- `03_TSIS_Offline_RL`: aprendizaje secuencial sobre estados/outcomes gobernados.
-- `E:/TSIS/data`: outputs pesados, materializaciones y roots fisicos.
+- `00_CTO_APPLIED_ARCHITECTURE`: arquitectura aplicada y handoffs de ingenieria gobernada.
+- `01_TSIS_DATA_FOUNDATION`: auditoria, certificacion, contratos, policies, validators, dossiers y outputs gobernados de Data Foundation.
+- `02_TSIS_BACKTEST_ENGINE`: futura implementacion del backtester profesional TSIS; consume Data Foundation y arquitectura CTO.
+- `03_TSIS_Lab`: contratos, registros, plantillas y experimentos cientificos reproducibles.
+- `04_TSIS_webSocket_SmallCaps`: operacion live/shadow y procesamiento event-driven.
+- `05_TSIS_Offline_RL`: aprendizaje secuencial sobre estados/outcomes gobernados.
+- `06_TSIS_Trading_voice`: Trading Decision Intelligence / proceso de decision del trader.
+- `G:/TSIS/data`: outputs pesados, materializaciones y roots fisicos.
 
-Los agentes deben respetar los limites entre capas, modulos y contratos institucionales.
+Los agentes deben respetar los limites entre capas, modulos y contratos institucionales. Para resolver rutas antiguas, leer `PATH_MIGRATION_2026_07_22.md`.
 
 ---
 
@@ -77,18 +80,19 @@ Los agentes deben respetar los limites entre capas, modulos y contratos instituc
 
 Antes de modificar este repositorio, todo agente debe leer en este orden:
 
-1. `PROJECT_OPERATING_SYSTEM.md`
-2. `PROJECT_RULES.md`
-3. `VERSIONING_STANDARDS.md`
-4. `RESEARCH_PHILOSOPHY.md`
-5. `00_CTO/TSIS_LAB_ARCHITECTURE_v3.md`
-6. `00_TSIS_Lab/README.md`
-7. `E:/TSIS/data/README.md`
-8. `LOCAL_RULES.md` de la carpeta o capa que vaya a modificar
+1. `PATH_MIGRATION_2026_07_22.md`
+2. `PROJECT_OPERATING_SYSTEM.md`
+3. `PROJECT_RULES.md`
+4. `VERSIONING_STANDARDS.md`
+5. `RESEARCH_PHILOSOPHY.md`
+6. `00_CTO/TSIS_LAB_ARCHITECTURE_v3.md`
+7. `03_TSIS_Lab/README.md`
+8. `G:/TSIS/data/README.md`
+9. `LOCAL_RULES.md` de la carpeta o capa que vaya a modificar
 
 La lectura obligatoria de arquitectura vive en `00_CTO/TSIS_LAB_ARCHITECTURE_v3.md`.
 
-`E:/TSIS/data/README.md` es lectura base obligatoria porque define el plano fisico de datos. Para cualquier trabajo con minutos/1m, scanners intradia, backtests intradia, reparaciones de velas o price views derivados de minutos, ese README fija que la raiz fisica canonica es `E:/TSIS/data/ohlcv_1m` y que el raw no debe tratarse como corregido in place. El motivo es evitar que se repita la ambiguedad que llevo al incidente de velas 1m imposibles y a la reparacion quote-guarded LT1B.
+`G:/TSIS/data/README.md` es lectura base obligatoria porque define el plano fisico de datos. Para cualquier trabajo con minutos/1m, scanners intradia, backtests intradia, reparaciones de velas o price views derivados de minutos, ese README fija que la raiz fisica canonica es `G:/TSIS/data/ohlcv_1m` y que el raw no debe tratarse como corregido in place. El motivo es evitar que se repita la ambiguedad que llevo al incidente de velas 1m imposibles y a la reparacion quote-guarded LT1B.
 
 Si una decision local contradice un documento de nivel superior, manda el documento de nivel superior salvo que exista una excepcion explicita y documentada.
 

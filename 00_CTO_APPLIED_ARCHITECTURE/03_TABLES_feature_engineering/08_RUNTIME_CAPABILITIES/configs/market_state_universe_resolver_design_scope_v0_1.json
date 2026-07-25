@@ -1,0 +1,60 @@
+{
+  "authorization_id": "market_state_universe_resolver_design_authorization_v0_1",
+  "closure_invariants": {
+    "calendar_runtime_reads": 0,
+    "dataset_registry_entries_written": 0,
+    "downstream_consumption": false,
+    "execution_plans_created": 0,
+    "instrument_identity_runtime_reads": 0,
+    "instrument_master_runtime_reads": 0,
+    "instrument_session_contexts_created": 0,
+    "market_state_parquet_files_written": 0,
+    "market_state_records_emitted": 0,
+    "production": false,
+    "request_records_created": 0,
+    "requests_executed": 0,
+    "source_rows_read": 0,
+    "universe_manifests_created": 0,
+    "universe_resolver_executions": 0
+  },
+  "date": "2026-07-25",
+  "design_allowed": {
+    "universe_resolver_design_allowed": true
+  },
+  "design_questions": [
+    "How does request universe intent resolve into point-in-time instrument membership?",
+    "How do date range or session_dates resolve into governed session dates?",
+    "How are exchange scope and calendar authority preserved?",
+    "What must be hashed into a universe manifest before source resolution?",
+    "Which universe findings block before source resolution?"
+  ],
+  "forbidden_actions": {
+    "calendar_runtime_read_allowed": false,
+    "dataset_registry_write_allowed": false,
+    "downstream_consumption_allowed": false,
+    "execution_plan_creation_allowed": false,
+    "instrument_identity_runtime_read_allowed": false,
+    "instrument_master_runtime_read_allowed": false,
+    "instrument_session_context_creation_allowed": false,
+    "market_state_builder_execution_allowed": false,
+    "market_state_materializer_execution_allowed": false,
+    "official_market_state_dataset_promotion_allowed": false,
+    "official_market_state_parquet_write_allowed": false,
+    "production_allowed": false,
+    "request_execution_allowed": false,
+    "request_records_created_allowed": false,
+    "source_data_reads_allowed": false,
+    "universe_manifest_creation_allowed": false,
+    "universe_resolver_execution_allowed": false
+  },
+  "gate": "market_state_universe_resolver_design_v0_1",
+  "next_allowed_gate": "market_state_source_resolver_design_v0_1",
+  "parent_execution_plan_contract": "market_state_execution_plan_contract_v0_1",
+  "parent_gate": "market_state_profile_resolver_design_v0_1",
+  "parent_profile_resolver_contract": "market_state_profile_resolver_contract_v0_1",
+  "parent_request_contract": "market_state_request_contract_v0_1",
+  "parent_runtime_architecture": "runtime_capabilities_architecture_v0_1",
+  "scope_id": "market_state_universe_resolver_design_scope_v0_1",
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+  "target_contract": "market_state_universe_resolver_contract_v0_1"
+}

@@ -1,0 +1,116 @@
+{
+  "contract_id": "market_state_bounded_on_demand_execution_contract_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_NO_EXECUTION",
+  "date": "2026-07-25",
+  "parent_authorization": "market_state_bounded_on_demand_execution_authorization_v0_1",
+  "parent_joint_review": "market_state_on_demand_execution_chain_joint_review_v0_1",
+  "execution_gate": "market_state_bounded_on_demand_execution_v0_1",
+  "allowed_scope": {
+    "request_type": "market_state",
+    "profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "profile_version_policy": "exact",
+    "profile_version": "v0_1",
+    "exchange_scope": [
+      "XNYS"
+    ],
+    "session_dates": [
+      "2021-01-19",
+      "2021-03-15",
+      "2022-11-25"
+    ],
+    "explicit_instrument_ids": [
+      "figi_share_class:BBG001S5N8T1",
+      "figi_share_class:BBG001S8T7K0",
+      "figi_share_class:BBG001S6RSK0"
+    ],
+    "maximum_instruments": 3,
+    "maximum_sessions": 3,
+    "maximum_instrument_session_contexts": 9,
+    "output_mode": "candidate"
+  },
+  "required_runtime_chain": [
+    "Market State Request Contract",
+    "Profile Resolver",
+    "Universe Resolver",
+    "Source Resolver",
+    "Partition / Coverage Resolver",
+    "Execution Plan",
+    "Run Lifecycle",
+    "Materializer",
+    "Validator",
+    "Candidate Dataset Registry"
+  ],
+  "required_partition_disposition_model": [
+    "reusable_validated",
+    "to_build",
+    "to_rebuild",
+    "unavailable",
+    "quarantined",
+    "blocked"
+  ],
+  "required_accounting_invariants": {
+    "requested_logical_partitions_equal_reusable_plus_to_build_plus_to_rebuild_plus_unavailable_plus_quarantined_plus_blocked": true,
+    "requested_contexts_equal_emitted_plus_blocked_plus_quarantined": true,
+    "missing_source_coverage_recorded_as_unavailable_cause": true,
+    "missing_is_not_independent_disposition": true,
+    "partial_execution_requires_explicit_policy": true
+  },
+  "authorized_next_gate_actions": {
+    "request_record_creation": true,
+    "resolver_execution": true,
+    "execution_plan_creation": true,
+    "run_record_creation": true,
+    "run_manifest_creation": true,
+    "source_reads_within_resolved_plan": true,
+    "materializer_execution": true,
+    "candidate_output_write": true,
+    "validator_execution": true,
+    "validation_report_write": true,
+    "candidate_dataset_registry_entry_write": true
+  },
+  "current_gate_counters": {
+    "request_records_created": 0,
+    "execution_plans_created": 0,
+    "resolver_executions": 0,
+    "run_records_created": 0,
+    "source_rows_read": 0,
+    "materializer_executions": 0,
+    "validator_executions": 0,
+    "registry_entries_written": 0,
+    "datasets_written": 0
+  },
+  "prohibited_actions": {
+    "event_state_execution": true,
+    "event_instance_creation": true,
+    "event_window_creation": true,
+    "new_event_type_creation": true,
+    "new_market_state_profile_creation": true,
+    "full_history_execution": true,
+    "full_universe_execution": true,
+    "official_market_state_dataset_promotion": true,
+    "official_parquet_write": true,
+    "production": true,
+    "downstream_consumption": true,
+    "backtesting": true,
+    "ml_or_rl_consumption": true,
+    "strategy_evaluation": true
+  },
+  "blocking_conditions": [
+    "request_scope_differs_from_authorized_scope",
+    "request_output_mode_not_candidate",
+    "profile_version_policy_not_exact",
+    "source_version_policy_not_exact_governed_or_block",
+    "unresolved_profile",
+    "unresolved_universe",
+    "unresolved_source_alias",
+    "partition_disposition_model_uses_missing_as_independent_state",
+    "execution_plan_not_frozen",
+    "execution_plan_not_authorized",
+    "materializer_re_resolves_any_block",
+    "fallback_source_used",
+    "output_not_candidate",
+    "validation_not_executed",
+    "registry_entry_attempts_official_or_downstream_status"
+  ],
+  "next_allowed_gate": "market_state_bounded_on_demand_execution_v0_1"
+}

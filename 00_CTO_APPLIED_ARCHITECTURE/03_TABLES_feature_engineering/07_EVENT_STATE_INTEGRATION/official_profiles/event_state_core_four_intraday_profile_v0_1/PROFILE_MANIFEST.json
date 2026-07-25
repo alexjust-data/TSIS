@@ -1,0 +1,41 @@
+{
+  "accepted_event_type_ids": [
+    "event_type:market_data:session_opened"
+  ],
+  "accepted_subject_scope": "exchange_session",
+  "complete_tsis_event_state": false,
+  "downstream_consumption_authorized": false,
+  "event_detection_authorized": false,
+  "event_family_ids": [
+    "event_family:market_data:session_lifecycle"
+  ],
+  "event_state_materialization_authorized": false,
+  "official_dataset_registry_write_authorized": false,
+  "official_event_state_dataset_promotion": false,
+  "official_event_state_parquet_written": false,
+  "primary_evidence": {
+    "blocked_contexts": 1,
+    "candidate_records_reviewed": 8,
+    "event_instances_created": 3,
+    "event_state_candidate_records_emitted": 8,
+    "event_window_bindings_created": 3,
+    "fallback_uses": 0,
+    "hard_validation_failures": 0,
+    "instrument_session_projections_created": 9,
+    "market_state_bindings_found": 8,
+    "missing_exact_market_state_bindings": 1,
+    "multiple_exact_market_state_bindings": 0,
+    "physical_validation_hard_failures": 0,
+    "requested_contexts": 9
+  },
+  "production_authorized": false,
+  "profile_classification": "official_event_state_semantic_profile",
+  "profile_id": "event_state_core_four_intraday_profile_v0_1",
+  "profile_scope": "bounded_validated_core_four_event_state_profile_for_session_opened",
+  "promoted_at_utc": "2026-07-24T20:30:16Z",
+  "promotion_run_id": "event_state_profile_promotion_v0_1_20260724T203016Z",
+  "source_market_state_physical_dataset_official": false,
+  "source_market_state_profile_id": "market_state_core_four_intraday_profile_v0_1",
+  "source_market_state_schema_version": "core_four_market_state_candidate_physical_schema_v0_1",
+  "status": "OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS"
+}

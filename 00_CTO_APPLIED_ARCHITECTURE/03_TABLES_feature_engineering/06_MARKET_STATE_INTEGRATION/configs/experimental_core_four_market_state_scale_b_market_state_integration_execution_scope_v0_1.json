@@ -1,0 +1,121 @@
+{
+  "scope_id": "experimental_core_four_market_state_scale_b_market_state_integration_execution_scope_v0_1",
+  "mode": "experimental_core_four_market_state_scale_b_market_state_integration_execution",
+  "scope_status": "experimental_non_production",
+  "created_at_utc": "2026-07-23T00:00:00Z",
+  "profile_id": "market_state_core_four_intraday_experimental_v0_1",
+  "base_design_contract_path": "../core_four_market_state_integration_design_contract_v0_1.json",
+  "source_builder_run_id": "experimental_core_four_market_state_scale_b_builder_resolution_execution_v0_1_20260723T142329Z",
+  "source_builder_status": "CLOSED_PASS_WITH_RESTRICTIONS",
+  "input_artifacts": {
+    "resolution_records": "../runs/experimental_core_four_market_state_scale_b_builder_resolution_execution_v0_1_20260723T142329Z/core_four_resolution_records.jsonl",
+    "context_resolution_summary": "../runs/experimental_core_four_market_state_scale_b_builder_resolution_execution_v0_1_20260723T142329Z/context_resolution_summary.csv",
+    "builder_output_contract_report": "../runs/experimental_core_four_market_state_scale_b_builder_resolution_execution_v0_1_20260723T142329Z/builder_output_contract_report.csv",
+    "cutoff_enforcement_report": "../runs/experimental_core_four_market_state_scale_b_builder_resolution_execution_v0_1_20260723T142329Z/cutoff_enforcement_report.csv",
+    "determinism_report": "../runs/experimental_core_four_market_state_scale_b_builder_resolution_execution_v0_1_20260723T142329Z/determinism_report.csv",
+    "selected_source_rows_report": "../runs/experimental_core_four_market_state_scale_b_builder_resolution_execution_v0_1_20260723T142329Z/selected_source_rows_report.csv",
+    "builder_summary": "../runs/experimental_core_four_market_state_scale_b_builder_resolution_execution_v0_1_20260723T142329Z/core_four_builder_validation_summary.json",
+    "builder_final_manifest": "../runs/experimental_core_four_market_state_scale_b_builder_resolution_execution_v0_1_20260723T142329Z/final_manifest.json"
+  },
+  "expected_input_artifact_sha256": {
+    "resolution_records": "506be0957f4a3d3b6b42c9733b95490a14ebcbb1289e806c9f673279f55a4f26",
+    "context_resolution_summary": "953961ce1bf633f686a4ecdfe8123474c8f205930e47c8916791b8a99efc1b26",
+    "builder_output_contract_report": "1395de03d37dac6a28432554ffac4ca0718fade92a5b70270f4c30a9fca1e40f",
+    "cutoff_enforcement_report": "6ee97a29aaf9e9bb36cc7a719b89bcd3e001f3cc7ded58db6e2e717681297eca",
+    "determinism_report": "2137a742e6490887a115b1ac129e648349077ce0ad39d94bba791eab23d25925",
+    "selected_source_rows_report": "d6c8a085799d020f9cf08008b6999421f5175fcd20fad581dea5c8c6628a71ed",
+    "builder_summary": "6a537bd999690483014c9c002593d5c7cfcedbe1370113519ec49e0f1872ad8b",
+    "builder_final_manifest": "08b2d3477295ba7fbf4825b9ebbc017745b6d8509cd718c14f498abb17791d26"
+  },
+  "accepted_bindings": {
+    "scale_b_sample_run_id": "experimental_core_four_market_state_scale_b_sample_preflight_v0_1_20260723T094626Z",
+    "scale_b_sample_fingerprint": "5866b534b1bd3448375b91b14125721942bc5ec3ed5df9c9df8ebd68d83d5972",
+    "scale_b_execution_surface_run_id": "experimental_core_four_market_state_scale_b_execution_surface_construction_v0_1_20260723T111450Z",
+    "scale_b_execution_surface_fingerprint": "dd05b10143b92d20af4b7eb5be470ab1ab8667820b57f1cc4a43bce5b2f218aa",
+    "scale_b_execution_surface_parquet_sha256": "883bc41d089e33671f2d6aac689b79976bd205a0ab979c74ed54bd0856465e7e",
+    "calendar_binding_run_id": "governed_exchange_session_calendar_binding_validation_v0_1_20260723T064928Z",
+    "calendar_version": "governed_exchange_session_calendar_xnys_v0_1",
+    "calendar_source_snapshot_fingerprint": "8b43cda89c1da0dc78e618e46f20697a2832bd13ca7599e60989f01b701ce967"
+  },
+  "authority": {
+    "source_row_reads_allowed": false,
+    "filesystem_market_data_reads_allowed": false,
+    "bounded_sample_market_data_read_allowed": false,
+    "full_data_read_allowed": false,
+    "013_direct_reads_allowed": false,
+    "surface_rebuild_allowed": false,
+    "sample_reselection_allowed": false,
+    "fixed_utc_probe_calendar_fallback_allowed": false,
+    "production_builder_authorized": false,
+    "state_materialization_allowed": false,
+    "parquet_write_allowed": false,
+    "downstream_consumption_authorized": false,
+    "dataset_promotion_authorized": false,
+    "candidate_jsonl_output_allowed": true,
+    "rejected_context_report_allowed": true
+  },
+  "limits": {
+    "maximum_contexts": 72,
+    "maximum_input_resolution_records": 288,
+    "maximum_candidate_records": 64,
+    "maximum_rejected_context_records": 8,
+    "maximum_output_value_rows": 2000
+  },
+  "required_object_ids": [
+    "trading_activity",
+    "price_movement",
+    "price_location_structure",
+    "volatility_range_state"
+  ],
+  "semantic_join_key": [
+    "instrument_id",
+    "ticker",
+    "session_date",
+    "decision_timestamp_utc",
+    "decision_case"
+  ],
+  "allowed_value_namespaces": [
+    "trading_activity__",
+    "price_movement__",
+    "price_location_structure__",
+    "volatility_range_state__"
+  ],
+  "object_atomicity": {
+    "required": true,
+    "pass_statuses_admitted": [
+      "PASS",
+      "PASS_WITH_RESTRICTIONS"
+    ],
+    "blocked_record_values_policy": "diagnostic_only_not_admitted"
+  },
+  "expected_reference_result": {
+    "contexts_seen": 72,
+    "input_resolution_records": 288,
+    "candidate_records_expected": 64,
+    "rejected_required_object_blocked_contexts_expected": 8,
+    "failed_contexts_expected": 0,
+    "blocked_values_admitted_expected": 0,
+    "source_market_data_rows_read_expected": 0,
+    "market_state_rows_materialized": 0,
+    "parquet_files_written_expected": 0
+  },
+  "output_policy": {
+    "output_root": "../runs",
+    "run_id_prefix": "experimental_core_four_market_state_scale_b_market_state_integration_execution_v0_1",
+    "allowed_outputs": [
+      "pre_manifest.json",
+      "heartbeat.json",
+      "market_state_candidate_records.jsonl",
+      "rejected_context_report.csv",
+      "integration_context_report.csv",
+      "integration_value_manifest.csv",
+      "scale_b_integration_summary.json",
+      "scale_b_integration_findings.md",
+      "final_manifest.json",
+      "readout.md"
+    ],
+    "candidate_records_are_canonical_market_state": false,
+    "candidate_records_are_downstream_consumable": false
+  },
+  "next_allowed_gate": "experimental_core_four_market_state_scale_b_market_state_integration_execution_v0_1"
+}

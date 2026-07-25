@@ -1,0 +1,467 @@
+[
+  {
+    "title": "Cover",
+    "page": 1,
+    "depth": 0
+  },
+  {
+    "title": "Title Page",
+    "page": 5,
+    "depth": 0
+  },
+  {
+    "title": "Copyright",
+    "page": 6,
+    "depth": 0
+  },
+  {
+    "title": "Contents",
+    "page": 9,
+    "depth": 0
+  },
+  {
+    "title": "Preface",
+    "page": 11,
+    "depth": 0
+  },
+  {
+    "title": "Chapter 1: The Basics of Algorithmic Trading",
+    "page": 17,
+    "depth": 0
+  },
+  {
+    "title": "Historical Market Data",
+    "page": 18,
+    "depth": 1
+  },
+  {
+    "title": "Live Market Data",
+    "page": 21,
+    "depth": 1
+  },
+  {
+    "title": "Backtesting and Trading Platforms",
+    "page": 22,
+    "depth": 1
+  },
+  {
+    "title": "Brokers",
+    "page": 26,
+    "depth": 1
+  },
+  {
+    "title": "Performance Metrics",
+    "page": 28,
+    "depth": 1
+  },
+  {
+    "title": "Portfolio Optimization",
+    "page": 30,
+    "depth": 1
+  },
+  {
+    "title": "Summary",
+    "page": 39,
+    "depth": 1
+  },
+  {
+    "title": "Exercises",
+    "page": 39,
+    "depth": 1
+  },
+  {
+    "title": "Chapter 2: Factor Models",
+    "page": 43,
+    "depth": 0
+  },
+  {
+    "title": "Time-series Factors",
+    "page": 45,
+    "depth": 1
+  },
+  {
+    "title": "Cross-sectional Factors",
+    "page": 49,
+    "depth": 1
+  },
+  {
+    "title": "A Two-Factor Model",
+    "page": 53,
+    "depth": 1
+  },
+  {
+    "title": "Using Option Prices to Predict Stock Returns",
+    "page": 57,
+    "depth": 1
+  },
+  {
+    "title": "1) Implied Moments",
+    "page": 57,
+    "depth": 2
+  },
+  {
+    "title": "2) Monthly Change in Implied Volatilities",
+    "page": 61,
+    "depth": 2
+  },
+  {
+    "title": "3) Put-call Implied Volatilities",
+    "page": 61,
+    "depth": 2
+  },
+  {
+    "title": "4) OTM Put-ATM Call Implied Volatilities",
+    "page": 62,
+    "depth": 2
+  },
+  {
+    "title": "5) Daily Change in Implied Market Volatility",
+    "page": 63,
+    "depth": 2
+  },
+  {
+    "title": "Short Interest",
+    "page": 63,
+    "depth": 1
+  },
+  {
+    "title": "Liquidity",
+    "page": 64,
+    "depth": 1
+  },
+  {
+    "title": "Statistical Factors",
+    "page": 65,
+    "depth": 1
+  },
+  {
+    "title": "Putting Them All Together",
+    "page": 69,
+    "depth": 1
+  },
+  {
+    "title": "Summary",
+    "page": 71,
+    "depth": 1
+  },
+  {
+    "title": "Exercises",
+    "page": 72,
+    "depth": 1
+  },
+  {
+    "title": "Chapter 3: Time-Series Analysis",
+    "page": 75,
+    "depth": 0
+  },
+  {
+    "title": "AR(p)",
+    "page": 76,
+    "depth": 1
+  },
+  {
+    "title": "ARMA(p, q)",
+    "page": 79,
+    "depth": 1
+  },
+  {
+    "title": "VAR(p)",
+    "page": 83,
+    "depth": 1
+  },
+  {
+    "title": "State Space Models",
+    "page": 87,
+    "depth": 1
+  },
+  {
+    "title": "Summary",
+    "page": 96,
+    "depth": 1
+  },
+  {
+    "title": "Exercises",
+    "page": 96,
+    "depth": 1
+  },
+  {
+    "title": "Chapter 4: Artificial Intelligence Techniques",
+    "page": 99,
+    "depth": 0
+  },
+  {
+    "title": "Stepwise Regression",
+    "page": 102,
+    "depth": 1
+  },
+  {
+    "title": "Regression Tree",
+    "page": 105,
+    "depth": 1
+  },
+  {
+    "title": "Cross Validation",
+    "page": 108,
+    "depth": 1
+  },
+  {
+    "title": "Bagging",
+    "page": 109,
+    "depth": 1
+  },
+  {
+    "title": "Random Subspace and Random Forest",
+    "page": 111,
+    "depth": 1
+  },
+  {
+    "title": "Boosting",
+    "page": 112,
+    "depth": 1
+  },
+  {
+    "title": "Classification Tree",
+    "page": 114,
+    "depth": 1
+  },
+  {
+    "title": "Support Vector Machine",
+    "page": 115,
+    "depth": 1
+  },
+  {
+    "title": "Hidden Markov Model",
+    "page": 117,
+    "depth": 1
+  },
+  {
+    "title": "Neural Network",
+    "page": 121,
+    "depth": 1
+  },
+  {
+    "title": "Data Aggregation and Normalization",
+    "page": 125,
+    "depth": 1
+  },
+  {
+    "title": "Application to Stocks Selection",
+    "page": 127,
+    "depth": 1
+  },
+  {
+    "title": "Summary",
+    "page": 131,
+    "depth": 1
+  },
+  {
+    "title": "Exercises",
+    "page": 132,
+    "depth": 1
+  },
+  {
+    "title": "Chapter 5: Options Strategies",
+    "page": 135,
+    "depth": 0
+  },
+  {
+    "title": "Trading Volatility without Options",
+    "page": 136,
+    "depth": 1
+  },
+  {
+    "title": "Predicting Volatility",
+    "page": 142,
+    "depth": 1
+  },
+  {
+    "title": "Event-Driven Strategies",
+    "page": 149,
+    "depth": 1
+  },
+  {
+    "title": "Gamma Scalping",
+    "page": 153,
+    "depth": 1
+  },
+  {
+    "title": "Dispersion Trading",
+    "page": 158,
+    "depth": 1
+  },
+  {
+    "title": "Cross-Sectional Mean Reversion of Implied Volatility",
+    "page": 168,
+    "depth": 1
+  },
+  {
+    "title": "Summary",
+    "page": 171,
+    "depth": 1
+  },
+  {
+    "title": "Exercises",
+    "page": 172,
+    "depth": 1
+  },
+  {
+    "title": "Chapter 6: Intraday Trading and Market Microstructure",
+    "page": 175,
+    "depth": 0
+  },
+  {
+    "title": "Latency Reduction",
+    "page": 176,
+    "depth": 1
+  },
+  {
+    "title": "Order Type and Routing Optimization",
+    "page": 179,
+    "depth": 1
+  },
+  {
+    "title": "Adding Liquidity",
+    "page": 180,
+    "depth": 2
+  },
+  {
+    "title": "Taking Liquidity",
+    "page": 184,
+    "depth": 2
+  },
+  {
+    "title": "Routing to Dark Pools",
+    "page": 187,
+    "depth": 2
+  },
+  {
+    "title": "Adverse Selection Reduction",
+    "page": 190,
+    "depth": 1
+  },
+  {
+    "title": "Backtesting Intraday Strategies",
+    "page": 193,
+    "depth": 1
+  },
+  {
+    "title": "Order Flow",
+    "page": 202,
+    "depth": 1
+  },
+  {
+    "title": "Order Book Imbalance",
+    "page": 212,
+    "depth": 1
+  },
+  {
+    "title": "Summary",
+    "page": 212,
+    "depth": 1
+  },
+  {
+    "title": "Exercises",
+    "page": 213,
+    "depth": 1
+  },
+  {
+    "title": "Chapter 7: Bitcoins",
+    "page": 217,
+    "depth": 0
+  },
+  {
+    "title": "Bitcoin Facts",
+    "page": 217,
+    "depth": 1
+  },
+  {
+    "title": "Time-Series Techniques",
+    "page": 219,
+    "depth": 1
+  },
+  {
+    "title": "Mean Reversion Strategy",
+    "page": 220,
+    "depth": 1
+  },
+  {
+    "title": "Artificial Intelligence Techniques",
+    "page": 222,
+    "depth": 1
+  },
+  {
+    "title": "Order Flow",
+    "page": 223,
+    "depth": 1
+  },
+  {
+    "title": "Cross-Exchange Arbitrage",
+    "page": 227,
+    "depth": 1
+  },
+  {
+    "title": "Summary",
+    "page": 228,
+    "depth": 1
+  },
+  {
+    "title": "Exercises",
+    "page": 228,
+    "depth": 1
+  },
+  {
+    "title": "Chapter 8: Algorithmic Trading Is Good for Body and Soul",
+    "page": 231,
+    "depth": 0
+  },
+  {
+    "title": "Your Mind and Your Health",
+    "page": 231,
+    "depth": 1
+  },
+  {
+    "title": "Trading as a Service",
+    "page": 234,
+    "depth": 1
+  },
+  {
+    "title": "Does This Stuff Really Work?",
+    "page": 235,
+    "depth": 1
+  },
+  {
+    "title": "Keeping Up with the Latest Trends",
+    "page": 237,
+    "depth": 1
+  },
+  {
+    "title": "Managing Other People's Money",
+    "page": 238,
+    "depth": 1
+  },
+  {
+    "title": "Conclusion",
+    "page": 241,
+    "depth": 1
+  },
+  {
+    "title": "Bibliography",
+    "page": 243,
+    "depth": 0
+  },
+  {
+    "title": "About the Author",
+    "page": 251,
+    "depth": 0
+  },
+  {
+    "title": "Index",
+    "page": 253,
+    "depth": 0
+  },
+  {
+    "title": "EULA",
+    "page": 267,
+    "depth": 0
+  }
+]

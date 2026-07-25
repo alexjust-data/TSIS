@@ -28,7 +28,7 @@ DEFAULT_REFERENCE_OVERVIEW_ROOT = Path(r"E:\TSIS\data\reference\overview")
 DEFAULT_REFERENCE_SPLITS_ROOT = Path(r"E:\TSIS\data\reference\splits")
 DEFAULT_RUNS_ROOT = STRATEGY_ROOT / "runs"
 DEFAULT_LT1B_UNIVERSE_PATH = Path(
-    r"C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest"
+    r"C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest"
     r"\market_cap_last_observed_cutoff\20260320_market_cap_last_observed_cutoff"
     r"\market_cap_cutoff_lt_1b_active_inactive.parquet"
 )

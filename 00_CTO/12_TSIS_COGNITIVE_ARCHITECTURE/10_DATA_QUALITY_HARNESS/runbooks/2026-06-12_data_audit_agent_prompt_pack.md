@@ -1,4 +1,4 @@
-﻿# Data Audit Agent Prompt Pack - 2026-06-12
+# Data Audit Agent Prompt Pack - 2026-06-12
 
 Uso: copiar el prompt `SINGLE_AGENT_DATA_AUDIT_COMPLETION` completo en una sesion Codex abierta desde `C:\TSIS_Data` con `START_CODEX_TSIS_AUTONOMOUS.ps1`.
 
@@ -46,27 +46,27 @@ No inventaries, no muevas, no OCRices, no valides y no institucionalices `images
 RUTAS PROHIBIDAS, READ-ONLY:
 - E:\TSIS\data
 - C:\TSIS_Data\data
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\data
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\run
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\data
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\run
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA
 
 No modifiques, no muevas, no renombres, no limpies, no normalices y no reorganices nada dentro de esas rutas.
 Solo pueden leerse como evidencia/provenance.
 
 AUDITORIA HISTORICA PROTEGIDA:
 Antes de crear nada para el dataset target, lee y reconcilia lo que exista en:
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\additional
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\halts
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\reference
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\short
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\certification
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\additional
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\halts
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\reference
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\short
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\00_data_certification\certification
 
 Para `reference`, esto es obligatorio. No reaudites desde cero. Promociona y completa lo que falta en `01_foundations`.
 
 DONDE SI PUEDE VIVIR TRABAJO NUEVO:
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\inspection\<dataset>
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\scripts\inspection\<dataset>
 
 IMPORTANTE SOBRE ENTORNO:
 Si estas en sesion autonoma YOLO desde C:\TSIS_Data, trabaja normal.
@@ -84,18 +84,18 @@ LECTURA OBLIGATORIA RAIZ:
 9. C:\TSIS_Data\CHANGELOG.md
 
 LECTURA OBLIGATORIA MODULO 01:
-1. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\README.md
-2. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\AGENTS.md
-3. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\LOCAL_RULES.md
-4. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\CHANGELOG.md
-5. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\inspection_dossier_model.md
-6. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\auditoria_and_certification_source_hierarchy.md
-7. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\data_storage_topology_and_target_state.md
-8. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\event_families_and_reference_inventory.md
-9. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\price_semantics_and_adjustment_policy.md
-10. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\price_views_registry.md
-11. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\corporate_actions_adjustment_methodology.md
-12. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\external_price_comparison_caveats.md
+1. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\README.md
+2. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\AGENTS.md
+3. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\LOCAL_RULES.md
+4. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\CHANGELOG.md
+5. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\inspection_dossier_model.md
+6. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\auditoria_and_certification_source_hierarchy.md
+7. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\data_storage_topology_and_target_state.md
+8. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\event_families_and_reference_inventory.md
+9. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\price_semantics_and_adjustment_policy.md
+10. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\price_views_registry.md
+11. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\corporate_actions_adjustment_methodology.md
+12. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\external_price_comparison_caveats.md
 
 LECTURA OBLIGATORIA CTO/HARNESS:
 1. C:\TSIS_Data\00_CTO\README.md
@@ -113,7 +113,7 @@ LECTURA OBLIGATORIA CTO/HARNESS:
 BENCHMARKS MADUROS QUE DEBES ENTENDER ANTES DE CREAR NADA:
 
 1. daily
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\inspection_dossiers\daily\README.md
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\inspection_dossiers\daily\README.md
 - daily_inspection_readout_v0_1.md
 - build_daily_inspection_pack.md
 - daily_adjusted_full_universe_audit_v0_1.md
@@ -121,7 +121,7 @@ BENCHMARKS MADUROS QUE DEBES ENTENDER ANTES DE CREAR NADA:
 - good_justification, flagged_case_evidence_packs, bad_case_evidence_packs, coverage_case_evidence_packs y evidence_assets.
 
 2. quotes
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\inspection_dossiers\quotes\README.md
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\inspection_dossiers\quotes\README.md
 - quotes_inspection_readout_v0_1.md
 - quotes_open_casepacks_audit_v0_1.md
 - build_quotes_inspection_pack.md
@@ -129,7 +129,7 @@ BENCHMARKS MADUROS QUE DEBES ENTENDER ANTES DE CREAR NADA:
 - Manifests e imagenes globales/casepacks.
 
 3. trades
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\inspection_dossiers\trades\README.md
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\inspection_dossiers\trades\README.md
 - build_trades_inspection_pack.md
 - trades_inspection_readout_v0_1.md
 - trades_global_universe_readout_v0_1.md
@@ -140,7 +140,7 @@ BENCHMARKS MADUROS QUE DEBES ENTENDER ANTES DE CREAR NADA:
 - scripts/inspection/trades.
 
 4. minute / ohlcv_1m_raw
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\inspection_dossiers\minute\README.md
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\inspection_dossiers\minute\README.md
 - raw_1m_lt1b_closeout_recalculation_v0_1.md
 - raw_1m_schema_only_lt1b_inspection_readout_v0_1.md
 - raw_1m_schema_only_lt1b_inspection_notebook_v0_1.ipynb, incluyendo celdas y outputs.
@@ -153,7 +153,7 @@ BENCHMARKS MADUROS QUE DEBES ENTENDER ANTES DE CREAR NADA:
 - core_quality_case_evidence_packs/minute_core_quality_visual_cases_v0_1.md: leer primero los 7 mapas poblacionales y despues las 60 imagenes de caso. Cada imagen debe entenderse individualmente.
 
 5. 1m_split_normalized
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\inspection_dossiers\1m_split_normalized\README.md
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\inspection_dossiers\1m_split_normalized\README.md
 - ohlcv_1m_split_normalized_final_readout_v0_1.md
 - ohlcv_1m_split_normalized_full_universe_audit_readout_v0_1.md
 - ohlcv_1m_split_normalized_pilot_readout_v0_1.md
@@ -259,7 +259,7 @@ Solo actualiza indices compartidos si son estrictamente necesarios para el datas
 - canonical_schemas/README.md si aplica.
 
 Actualiza tambien:
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\CHANGELOG.md
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\CHANGELOG.md
 
 No crees `data_audit_completion_final_report_2026-06-13.md` salvo que el humano pida explicitamente integracion final.
 
@@ -334,17 +334,17 @@ No inventaries, no muevas, no OCRices, no valides y no institucionalices `images
 RUTAS PROHIBIDAS, READ-ONLY:
 - E:\TSIS\data
 - C:\TSIS_Data\data
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\data
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\run
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\data
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\run
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA
 
 No modifiques, no muevas, no renombres, no limpies, no normalices y no reorganices nada dentro de esas rutas.
 Solo pueden leerse como evidencia/provenance.
 
 DONDE SI PUEDE VIVIR TRABAJO NUEVO:
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\inspection\<dataset>
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\scripts\inspection\<dataset>
 
 IMPORTANTE SOBRE ENTORNO:
 Si estas en sesion autonoma YOLO desde C:\TSIS_Data, trabaja normal.
@@ -362,18 +362,18 @@ LECTURA OBLIGATORIA RAIZ:
 9. C:\TSIS_Data\CHANGELOG.md
 
 LECTURA OBLIGATORIA MODULO 01:
-1. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\README.md
-2. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\AGENTS.md
-3. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\LOCAL_RULES.md
-4. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\CHANGELOG.md
-5. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\inspection_dossier_model.md
-6. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\auditoria_and_certification_source_hierarchy.md
-7. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\data_storage_topology_and_target_state.md
-8. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\event_families_and_reference_inventory.md
-9. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\price_semantics_and_adjustment_policy.md
-10. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\price_views_registry.md
-11. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\corporate_actions_adjustment_methodology.md
-12. C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\external_price_comparison_caveats.md
+1. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\README.md
+2. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\AGENTS.md
+3. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\LOCAL_RULES.md
+4. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\CHANGELOG.md
+5. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\inspection_dossier_model.md
+6. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\auditoria_and_certification_source_hierarchy.md
+7. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\data_storage_topology_and_target_state.md
+8. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\event_families_and_reference_inventory.md
+9. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\price_semantics_and_adjustment_policy.md
+10. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\price_views_registry.md
+11. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\corporate_actions_adjustment_methodology.md
+12. C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\external_price_comparison_caveats.md
 
 LECTURA OBLIGATORIA CTO/HARNESS:
 1. C:\TSIS_Data\00_CTO\README.md
@@ -390,7 +390,7 @@ LECTURA OBLIGATORIA CTO/HARNESS:
 BENCHMARKS MADUROS QUE DEBES ENTENDER ANTES DE CREAR NADA:
 
 1. daily
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\inspection_dossiers\daily\README.md
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\inspection_dossiers\daily\README.md
 - daily_inspection_readout_v0_1.md
 - build_daily_inspection_pack.md
 - daily_adjusted_full_universe_audit_v0_1.md
@@ -398,7 +398,7 @@ BENCHMARKS MADUROS QUE DEBES ENTENDER ANTES DE CREAR NADA:
 - good_justification, flagged_case_evidence_packs, bad_case_evidence_packs, coverage_case_evidence_packs y evidence_assets.
 
 2. quotes
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\inspection_dossiers\quotes\README.md
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\inspection_dossiers\quotes\README.md
 - quotes_inspection_readout_v0_1.md
 - quotes_open_casepacks_audit_v0_1.md
 - build_quotes_inspection_pack.md
@@ -406,7 +406,7 @@ BENCHMARKS MADUROS QUE DEBES ENTENDER ANTES DE CREAR NADA:
 - Manifests e imagenes globales/casepacks.
 
 3. trades
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\inspection_dossiers\trades\README.md
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\inspection_dossiers\trades\README.md
 - build_trades_inspection_pack.md
 - trades_inspection_readout_v0_1.md
 - trades_global_universe_readout_v0_1.md
@@ -417,7 +417,7 @@ BENCHMARKS MADUROS QUE DEBES ENTENDER ANTES DE CREAR NADA:
 - scripts/inspection/trades.
 
 4. minute / ohlcv_1m_raw
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\inspection_dossiers\minute\README.md
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\inspection_dossiers\minute\README.md
 - raw_1m_lt1b_closeout_recalculation_v0_1.md
 - raw_1m_schema_only_lt1b_inspection_readout_v0_1.md
 - raw_1m_schema_only_lt1b_inspection_notebook_v0_1.ipynb, incluyendo celdas y outputs.
@@ -430,7 +430,7 @@ BENCHMARKS MADUROS QUE DEBES ENTENDER ANTES DE CREAR NADA:
 - core_quality_case_evidence_packs/minute_core_quality_visual_cases_v0_1.md: leer primero los 7 mapas poblacionales y despues las 60 imagenes de caso. Cada imagen debe entenderse individualmente.
 
 5. 1m_split_normalized
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\inspection_dossiers\1m_split_normalized\README.md
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\inspection_dossiers\1m_split_normalized\README.md
 - ohlcv_1m_split_normalized_final_readout_v0_1.md
 - ohlcv_1m_split_normalized_full_universe_audit_readout_v0_1.md
 - ohlcv_1m_split_normalized_pilot_readout_v0_1.md
@@ -533,10 +533,10 @@ Solo al final, actualiza los indices compartidos que realmente procedan:
 - canonical_schemas/README.md si aplica.
 
 Actualiza tambien:
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\CHANGELOG.md
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\CHANGELOG.md
 
 Crea:
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\inspection_dossiers\data_audit_completion_final_report_2026-06-13.md
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\inspection_dossiers\data_audit_completion_final_report_2026-06-13.md
 
 VALIDACIONES FINALES:
 - YAML parsea.
@@ -606,10 +606,10 @@ EstÃ¡s trabajando en TSIS.
   RUTAS PROHIBIDAS READ-ONLY:
   - E:\TSIS\data
   - C:\TSIS_Data\data
-  - C:\TSIS_Data\01_TSIS_backtest_SmallCaps\data
-  - C:\TSIS_Data\01_TSIS_backtest_SmallCaps\run
-  - C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs
-  - C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA
+  - C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\data
+  - C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\run
+  - C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs
+  - C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA
 
   No modifiques, muevas, renombres ni limpies nada ahÃ­.
   Solo lectura/provenance.

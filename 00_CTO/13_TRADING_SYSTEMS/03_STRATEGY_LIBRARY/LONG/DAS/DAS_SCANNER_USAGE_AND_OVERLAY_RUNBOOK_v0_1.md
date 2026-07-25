@@ -25,9 +25,9 @@ experimento si solo buscan casos positivos.
 Autoridad operativa de scanner:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_2.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_2.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_daily_scanner_candidates_table_v0_2.py
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_2.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_2.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/materialize_daily_scanner_candidates_table_v0_2.py
 ```
 
 Autoridad CTO de candidate selection:
@@ -142,7 +142,7 @@ El scanner y DAS no deben saltar directamente a ML/RL sin esa capa.
 Usar `C:/TSIS_Data/tests/test_runs/`:
 
 ```powershell
-python "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\materialize_daily_scanner_candidates_table_v0_2.py" `
+python "C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\scripts\materialize_daily_scanner_candidates_table_v0_2.py" `
   --start-date 2025-01-02 `
   --end-date 2025-01-10 `
   --run-id daily_scanner_candidates_replay_20250102_20250110_v0_2_1_contract_aligned `
@@ -167,7 +167,7 @@ El manifest queda en:
 Usar `E:/TSIS/data`:
 
 ```powershell
-python "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\materialize_daily_scanner_candidates_table_v0_2.py" `
+python "C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\scripts\materialize_daily_scanner_candidates_table_v0_2.py" `
   --start-date 2005-01-03 `
   --end-date 2025-12-31 `
   --run-id daily_scanner_candidates_replay_20050103_20251231_v0_2_1_contract_aligned `

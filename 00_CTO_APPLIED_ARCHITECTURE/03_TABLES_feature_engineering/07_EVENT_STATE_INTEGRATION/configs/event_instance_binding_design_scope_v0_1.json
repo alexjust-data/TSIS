@@ -1,0 +1,63 @@
+{
+  "scope_id": "event_instance_binding_design_scope_v0_1",
+  "authorization_id": "event_instance_binding_design_authorization_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_CONSUMED",
+  "date": "2026-07-24",
+  "scope": "event_instance_binding_design_only_for_session_opened_exchange_session",
+  "design_id": "event_instance_binding_design_v0_1",
+  "authorized_event_type": {
+    "event_type_id": "event_type:market_data:session_opened",
+    "event_family_id": "event_family:market_data:session_lifecycle",
+    "event_type_definition_hash": "be5a176f5047a606bb4dfb75edf740fcc4dadbfa1acc6f4f25a530798bec7d16",
+    "registry_snapshot_id": "tsis_event_type_registry_v0_1_post_initial_admission_001",
+    "registry_snapshot_sha256": "f3627c8b44062081c8e2f2775bffbd283bd31f2ca1e876aa7469fd6586425c43",
+    "registry_status_required": "accepted_with_restrictions",
+    "accepted_subject_scope": "exchange_session"
+  },
+  "governing_inputs": [
+    "../event_state_event_policy_v0_1.md",
+    "../event_type_registry_seed_design_v0_1.md",
+    "../event_type_registry_seed_design_contract_v0_1.json",
+    "../event_type_initial_admission_review_readout_v0_1.md",
+    "../event_type_initial_admission_review_records_v0_1.json",
+    "../event_type_registry_post_initial_admission_snapshot_v0_1.json",
+    "../../04_TSIS_TABLES_000_018_INSTITUTIONAL_STATUS_MATRIX_v0_1.md",
+    "../../06_MARKET_STATE_INTEGRATION/governed_exchange_session_calendar_binding_validation_readout_v0_1.md"
+  ],
+  "design_permissions": {
+    "define_event_instance_identity": true,
+    "define_event_instance_key_material": true,
+    "define_timestamp_policy": true,
+    "define_source_lineage_policy": true,
+    "define_instrument_projection_boundary": true,
+    "define_supersession_policy": true,
+    "non_executable_examples_allowed": true
+  },
+  "execution_boundaries": {
+    "event_instance_binding_execution_authorized": false,
+    "event_instances_created": 0,
+    "historical_calendar_rows_consumed": 0,
+    "physical_parquet_reads_allowed": false,
+    "source_market_data_rows_read_allowed": 0,
+    "detector_execution_authorized": false,
+    "instrument_projection_execution_authorized": false,
+    "event_window_binding_execution_authorized": false,
+    "market_state_physical_consumption_authorized": false,
+    "event_state_builder_execution_authorized": false,
+    "event_state_materialization_authorized": false,
+    "downstream_consumption_authorized": false,
+    "production_authorized": false
+  },
+  "forbidden_identity_fields": [
+    "instrument_id",
+    "ticker",
+    "first_observed_trade_timestamp",
+    "fill_price",
+    "slippage",
+    "locate_status",
+    "strategy_id",
+    "outcome_label"
+  ],
+  "next_gate_after_design": "event_window_binding_design_authorization_v0_1",
+  "next_gate_requires_explicit_authorization": true
+}

@@ -20,11 +20,11 @@ This file tests whether the CRM framework can explain real TSIS outputs without 
 - `C:\TSIS_Data\00_CTO_1\05_TABLES\README.md`
 - `C:\TSIS_Data\00_CTO_1\05_TABLES\paths.md`
 - `C:\TSIS_Data\00_CTO_1\05_TABLES\TABLES_CREATION_process_v0_1.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\data_foundation_outputs_target_contract_v0_1.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\market_state_coverage_and_lookback_policy_v0_1.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\market_state_event_state_composition_contract_v0_1.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_builder_contract_v0_1.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\data_foundation_outputs_target_contract_v0_1.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\market_state_coverage_and_lookback_policy_v0_1.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\market_state_event_state_composition_contract_v0_1.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_builder_contract_v0_1.md`
 - Table-specific schema, dataset contract, registry, policy, validator and sample files cited per case.
 
 ## Case Classification Summary
@@ -45,8 +45,8 @@ This file tests whether the CRM framework can explain real TSIS outputs without 
 
 Authority source:
 
-- `verified_current_state`: `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\data_foundation_outputs_target_contract_v0_1.md`, section `1. instrument_master`.
-- `verified_current_state`: `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md`, output row `instrument_master_v0_1`.
+- `verified_current_state`: `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\data_foundation_outputs_target_contract_v0_1.md`, section `1. instrument_master`.
+- `verified_current_state`: `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md`, output row `instrument_master_v0_1`.
 
 Entity represented:
 
@@ -77,11 +77,11 @@ Materialization strategy:
 
 Institutional contracts:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs\instrument_master_schema_contract.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\contract_registry\dataset_contracts\instrument_master_dataset_contract_v0_1.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\data_consumption_policies\instrument_master_consumption_policy.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\dataset_registry\outputs\instrument_master_registry_entry.yaml`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\validators\outputs\instrument_master_validators.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas\outputs\instrument_master_schema_contract.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\contract_registry\dataset_contracts\instrument_master_dataset_contract_v0_1.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\data_consumption_policies\instrument_master_consumption_policy.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\dataset_registry\outputs\instrument_master_registry_entry.yaml`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\validators\outputs\instrument_master_validators.md`
 
 Physical realization:
 
@@ -138,11 +138,11 @@ Materialization strategy:
 
 Institutional contracts:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs\expected_data_calendar_schema_contract.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\contract_registry\dataset_contracts\expected_data_calendar_dataset_contract_v0_1.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\data_consumption_policies\expected_data_calendar_consumption_policy.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\dataset_registry\outputs\expected_data_calendar_registry_entry.yaml`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\validators\outputs\expected_data_calendar_validators.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas\outputs\expected_data_calendar_schema_contract.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\contract_registry\dataset_contracts\expected_data_calendar_dataset_contract_v0_1.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\data_consumption_policies\expected_data_calendar_consumption_policy.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\dataset_registry\outputs\expected_data_calendar_registry_entry.yaml`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\validators\outputs\expected_data_calendar_validators.md`
 
 Physical realization:
 
@@ -199,11 +199,11 @@ Materialization strategy:
 
 Institutional contracts:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs\dataset_certification_matrix_schema_contract.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\contract_registry\dataset_contracts\dataset_certification_matrix_dataset_contract_v0_1.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\data_consumption_policies\dataset_certification_matrix_consumption_policy.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\dataset_registry\outputs\dataset_certification_matrix_registry_entry.yaml`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\validators\outputs\dataset_certification_matrix_validators.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas\outputs\dataset_certification_matrix_schema_contract.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\contract_registry\dataset_contracts\dataset_certification_matrix_dataset_contract_v0_1.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\data_consumption_policies\dataset_certification_matrix_consumption_policy.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\dataset_registry\outputs\dataset_certification_matrix_registry_entry.yaml`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\validators\outputs\dataset_certification_matrix_validators.md`
 
 Physical realization:
 
@@ -262,11 +262,11 @@ Materialization strategy:
 
 Institutional contracts:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs\event_windows_table_schema_contract.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\contract_registry\dataset_contracts\event_windows_table_dataset_contract_v0_1.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\data_consumption_policies\event_windows_table_consumption_policy.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\dataset_registry\outputs\event_windows_table_registry_entry.yaml`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\validators\outputs\event_windows_table_validators.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas\outputs\event_windows_table_schema_contract.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\contract_registry\dataset_contracts\event_windows_table_dataset_contract_v0_1.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\data_consumption_policies\event_windows_table_consumption_policy.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\dataset_registry\outputs\event_windows_table_registry_entry.yaml`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\validators\outputs\event_windows_table_validators.md`
 
 Physical realization:
 
@@ -326,11 +326,11 @@ Materialization strategy:
 
 Institutional contracts:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs\outcomes_table_schema_contract.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\contract_registry\dataset_contracts\outcomes_table_dataset_contract_v0_1.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\data_consumption_policies\outcomes_table_consumption_policy.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\dataset_registry\outputs\outcomes_table_registry_entry.yaml`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\validators\outputs\outcomes_table_validators.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas\outputs\outcomes_table_schema_contract.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\contract_registry\dataset_contracts\outcomes_table_dataset_contract_v0_1.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\data_consumption_policies\outcomes_table_consumption_policy.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\dataset_registry\outputs\outcomes_table_registry_entry.yaml`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\validators\outputs\outcomes_table_validators.md`
 
 Physical realization:
 
@@ -392,12 +392,12 @@ Materialization strategy:
 
 Institutional contracts:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs\master_intraday_bar_table_schema_contract.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\contract_registry\dataset_contracts\master_intraday_bar_table_dataset_contract_v0_1.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\data_consumption_policies\master_intraday_bar_table_consumption_policy.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\dataset_registry\outputs\master_intraday_bar_table_registry_entry.yaml`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\validators\outputs\master_intraday_bar_table_validators.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\master_intraday_bar_table_wider_scope_materialization_plan_v0_1.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas\outputs\master_intraday_bar_table_schema_contract.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\contract_registry\dataset_contracts\master_intraday_bar_table_dataset_contract_v0_1.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\data_consumption_policies\master_intraday_bar_table_consumption_policy.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\dataset_registry\outputs\master_intraday_bar_table_registry_entry.yaml`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\validators\outputs\master_intraday_bar_table_validators.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\master_intraday_bar_table_wider_scope_materialization_plan_v0_1.md`
 
 Physical realization:
 
@@ -461,12 +461,12 @@ Materialization strategy:
 
 Institutional contracts:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs\microstructure_features_table_schema_contract.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\contract_registry\dataset_contracts\microstructure_features_table_dataset_contract_v0_1.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\data_consumption_policies\microstructure_features_table_consumption_policy.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\dataset_registry\outputs\microstructure_features_table_registry_entry.yaml`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\validators\outputs\microstructure_features_table_validators.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\microstructure_features_table_multi_window_materialization_plan_v0_1.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas\outputs\microstructure_features_table_schema_contract.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\contract_registry\dataset_contracts\microstructure_features_table_dataset_contract_v0_1.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\data_consumption_policies\microstructure_features_table_consumption_policy.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\dataset_registry\outputs\microstructure_features_table_registry_entry.yaml`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\validators\outputs\microstructure_features_table_validators.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\microstructure_features_table_multi_window_materialization_plan_v0_1.md`
 
 Physical realization:
 
@@ -530,13 +530,13 @@ Materialization strategy:
 
 Institutional contracts:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs\market_state_table_schema_contract.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\contract_registry\dataset_contracts\market_state_table_dataset_contract_v0_1.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\data_consumption_policies\market_state_table_consumption_policy.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\dataset_registry\outputs\market_state_table_registry_entry.yaml`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\validators\outputs\market_state_table_validators.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_builder_contract_v0_1.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_contract_v0_1.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas\outputs\market_state_table_schema_contract.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\contract_registry\dataset_contracts\market_state_table_dataset_contract_v0_1.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\data_consumption_policies\market_state_table_consumption_policy.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\dataset_registry\outputs\market_state_table_registry_entry.yaml`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\validators\outputs\market_state_table_validators.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_builder_contract_v0_1.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_contract_v0_1.md`
 
 Physical realization:
 
@@ -599,13 +599,13 @@ Materialization strategy:
 
 Institutional contracts:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs\event_state_table_schema_contract.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\contract_registry\dataset_contracts\event_state_table_dataset_contract_v0_1.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\data_consumption_policies\event_state_table_consumption_policy.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\dataset_registry\outputs\event_state_table_registry_entry.yaml`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\validators\outputs\event_state_table_validators.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\market_state_event_state_composition_contract_v0_1.md`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_builder_contract_v0_1.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas\outputs\event_state_table_schema_contract.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\contract_registry\dataset_contracts\event_state_table_dataset_contract_v0_1.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\data_consumption_policies\event_state_table_consumption_policy.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\dataset_registry\outputs\event_state_table_registry_entry.yaml`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\validators\outputs\event_state_table_validators.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\market_state_event_state_composition_contract_v0_1.md`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_builder_contract_v0_1.md`
 
 Physical realization:
 

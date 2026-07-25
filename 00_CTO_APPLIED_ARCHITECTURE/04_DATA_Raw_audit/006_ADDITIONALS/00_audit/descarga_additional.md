@@ -2,11 +2,11 @@
 Ticker-based completo
 
 ```sh
-PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\066_download_additional_ticker_data_lt1b_from_polygon.py --universe-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\market_cap_last_observed_cutoff\20260320_market_cap_last_observed_cutoff\market_cap_cutoff_lt_1b_active_inactive.parquet --env-file C:\TSIS_Data\02_backtest_SmallCaps\.env --out-root E:\TSIS\data\additional --run-dir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\additional_downloads\20260405_full_refresh_ticker_based  --datasets splits,dividends,ticker_events,news,ipos,income_statements,balance_sheets,cash_flow_statements,ratios --workers 6 --resume
+PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\066_download_additional_ticker_data_lt1b_from_polygon.py --universe-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\market_cap_last_observed_cutoff\20260320_market_cap_last_observed_cutoff\market_cap_cutoff_lt_1b_active_inactive.parquet --env-file C:\TSIS_Data\02_backtest_SmallCaps\.env --out-root E:\TSIS\data\additional --run-dir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\additional_downloads\20260405_full_refresh_ticker_based  --datasets splits,dividends,ticker_events,news,ipos,income_statements,balance_sheets,cash_flow_statements,ratios --workers 6 --resume
 {
   "started_at_utc": "2026-04-05T18:21:08.595064+00:00",
   "finished_at_utc": "2026-04-05T18:39:07.507173+00:00",
-  "universe_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\market_cap_last_observed_cutoff\\20260320_market_cap_last_observed_cutoff\\market_cap_cutoff_lt_1b_active_inactive.parquet",
+  "universe_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\market_cap_last_observed_cutoff\\20260320_market_cap_last_observed_cutoff\\market_cap_cutoff_lt_1b_active_inactive.parquet",
   "universe_tickers": 4824,
   "datasets": [
     "splits",
@@ -20,7 +20,7 @@ PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01
     "ratios"
   ],
   "out_root": "E:\\TSIS\\data\\additional",
-  "run_dir": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\additional_downloads\\20260405_full_refresh_ticker_based",
+  "run_dir": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\additional_downloads\\20260405_full_refresh_ticker_based",
   "workers": 6,
   "resume": true,
   "pause_sec": 0.0,
@@ -57,7 +57,7 @@ PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01
 
   Comando macro:
 ```sh
-PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\067_download_additional_macro_from_polygon.py --env-file C:\TSIS_Data\02_backtest_SmallCaps\.env --out-root E:\TSIS\data\additional --run-dir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\additional_downloads\20260405_full_refresh_macro --datasets inflation,inflation_expectations,treasury_yields
+PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\067_download_additional_macro_from_polygon.py --env-file C:\TSIS_Data\02_backtest_SmallCaps\.env --out-root E:\TSIS\data\additional --run-dir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\additional_downloads\20260405_full_refresh_macro --datasets inflation,inflation_expectations,treasury_yields
 {
   "started_at_utc": "2026-04-05T18:41:55.015359+00:00",
   "finished_at_utc": "2026-04-05T18:41:56.249422+00:00",
@@ -67,7 +67,7 @@ PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01
     "treasury_yields"
   ],
   "out_root": "E:\\TSIS\\data\\additional",
-  "run_dir": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\additional_downloads\\20260405_full_refresh_macro",
+  "run_dir": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\additional_downloads\\20260405_full_refresh_macro",
   "submitted_tasks": 3,
   "ok_tasks": 3,
   "error_tasks": 0,
@@ -126,10 +126,10 @@ La descarga macro también ha salido limpia:
 
   Los manifests fiables ahora son:
 
-  - C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/additional_downloads/20260405_full_refresh_ticker_based/download_manifest.parquet
-  - C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/additional_downloads/20260405_full_refresh_ticker_based/download_summary.json
-  - C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/additional_downloads/20260405_full_refresh_macro/download_manifest.parquet
-  - C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/additional_downloads/20260405_full_refresh_macro/download_summary.json
+  - C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/additional_downloads/20260405_full_refresh_ticker_based/download_manifest.parquet
+  - C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/additional_downloads/20260405_full_refresh_ticker_based/download_summary.json
+  - C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/additional_downloads/20260405_full_refresh_macro/download_manifest.parquet
+  - C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/additional_downloads/20260405_full_refresh_macro/download_summary.json
 
   El siguiente paso correcto ya no es descargar. Es auditar cobertura efectiva y vacíos por dataset, especialmente:
 
@@ -146,13 +146,13 @@ La descarga macro también ha salido limpia:
 primero el ticker-based completo:
 
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\066_download_additional_ticker_data_lt1b_from_polygon.py --universe-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\market_cap_last_observed_cutoff\20260320_market_cap_last_observed_cutoff\market_cap_cutoff_lt_1b_active_inactive.parquet --env-file C:\TSIS_Data\02_backtest_SmallCaps\.env --out-root E:\TSIS\data\additional --run-dir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\additional_downloads\20260405_full_refresh_ticker_based --datasets splits,dividends,ticker_events,news,ipos,income_statements,balance_sheets,cash_flow_statements,ratios --workers 6 --resume
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\066_download_additional_ticker_data_lt1b_from_polygon.py --universe-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\market_cap_last_observed_cutoff\20260320_market_cap_last_observed_cutoff\market_cap_cutoff_lt_1b_active_inactive.parquet --env-file C:\TSIS_Data\02_backtest_SmallCaps\.env --out-root E:\TSIS\data\additional --run-dir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\additional_downloads\20260405_full_refresh_ticker_based --datasets splits,dividends,ticker_events,news,ipos,income_statements,balance_sheets,cash_flow_statements,ratios --workers 6 --resume
 ```
 
 Luego el macro:
 
 ```sh
-PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\067_download_additional_macro_from_polygon.py --env-file C:\TSIS_Data\02_backtest_SmallCaps\.env --out-root E:\TSIS\data\additional --run-dir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\additional_downloads\20260405_full_refresh_macro --datasets inflation,inflation_expectations,treasury_yields
+PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\067_download_additional_macro_from_polygon.py --env-file C:\TSIS_Data\02_backtest_SmallCaps\.env --out-root E:\TSIS\data\additional --run-dir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\additional_downloads\20260405_full_refresh_macro --datasets inflation,inflation_expectations,treasury_yields
 {
   "started_at_utc": "2026-04-05T18:44:24.152663+00:00",
   "finished_at_utc": "2026-04-05T18:44:25.612099+00:00",
@@ -162,7 +162,7 @@ PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01
     "treasury_yields"
   ],
   "out_root": "E:\\TSIS\\data\\additional",
-  "run_dir": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\additional_downloads\\20260405_full_refresh_macro",
+  "run_dir": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\additional_downloads\\20260405_full_refresh_macro",
   "submitted_tasks": 3,
   "ok_tasks": 3,
   "error_tasks": 0,
@@ -206,15 +206,15 @@ PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01
 }
 ```
 
-He creado y ejecutado C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/068_audit_additional_lt1b_coverage.py.
+He creado y ejecutado C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/068_audit_additional_lt1b_coverage.py.
 
 Salida maestra:
 
 ```
-- C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/additional_audit/20260405_additional_lt1b_coverage/additional_lt1b_coverage_audit_summary.json
-- C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/additional_audit/20260405_additional_lt1b_coverage/additional_ticker_datasets_summary.parquet
-- C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/additional_audit/20260405_additional_lt1b_coverage/additional_ticker_datasets_by_file.parquet
-- C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/additional_audit/20260405_additional_lt1b_coverage/additional_macro_datasets_summary.parquet
+- C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/additional_audit/20260405_additional_lt1b_coverage/additional_lt1b_coverage_audit_summary.json
+- C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/additional_audit/20260405_additional_lt1b_coverage/additional_ticker_datasets_summary.parquet
+- C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/additional_audit/20260405_additional_lt1b_coverage/additional_ticker_datasets_by_file.parquet
+- C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/additional_audit/20260405_additional_lt1b_coverage/additional_macro_datasets_summary.parquet
 ```
 
 Lectura final sobre los 4824 tickers:
@@ -380,8 +380,8 @@ Core Usable
 
   Artefacto de auditoría final:
 
-  - C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/additional_audit/20260405_additional_lt1b_coverage/additional_ticker_datasets_summary.parquet
-  - C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/additional_audit/20260405_additional_lt1b_coverage/additional_macro_datasets_summary.parquet
+  - C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/additional_audit/20260405_additional_lt1b_coverage/additional_ticker_datasets_summary.parquet
+  - C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/additional_audit/20260405_additional_lt1b_coverage/additional_macro_datasets_summary.parquet
 
   Si quieres, el siguiente paso te preparo un 069 que materialice un inventory canónico de additional con una columna usage_policy ya asignada por
   dataset.

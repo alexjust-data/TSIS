@@ -1,0 +1,87 @@
+{
+  "accepted_validation": {
+    "candidate_event_state_records_copied": false,
+    "hard_validation_failures": 0,
+    "official_event_state_dataset_promotion": false,
+    "official_event_state_parquet_files_written": 0,
+    "registry_artifacts_checked": 4,
+    "registry_invariant_failures": 0,
+    "registry_sha256_mismatches": 0,
+    "run_id": "event_state_profile_artifact_validation_v0_1_20260724T204410Z",
+    "source_market_data_rows_read": 0,
+    "status": "CLOSED_PASS_WITH_RESTRICTIONS"
+  },
+  "authority_boundary": {
+    "candidate_event_state_records_copy_allowed": false,
+    "downstream_consumption_allowed": false,
+    "event_detection_allowed": false,
+    "event_state_materialization_allowed": false,
+    "full_history_execution_allowed": false,
+    "full_universe_execution_allowed": false,
+    "official_event_state_dataset_promotion_allowed": false,
+    "official_event_state_dataset_registry_write_allowed": false,
+    "official_event_state_parquet_write_allowed": false,
+    "official_event_state_profile_write_allowed": false,
+    "production_allowed": false,
+    "registry_metadata_validation_allowed": true,
+    "source_market_data_reads_allowed": false
+  },
+  "date": "2026-07-24",
+  "expected_registry_invariants": {
+    "accepted_event_type_ids": [
+      "event_type:market_data:session_opened"
+    ],
+    "accepted_event_types": 1,
+    "accepted_subject_scope": "exchange_session",
+    "candidate_event_state_records_copied": false,
+    "candidate_event_state_records_reference_only": true,
+    "candidate_records_checked": 8,
+    "complete_tsis_event_state": false,
+    "downstream_consumption_authorized": false,
+    "event_detection_authorized": false,
+    "event_state_materialization_authorized": false,
+    "field_count": 38,
+    "official_dataset_registry_write_authorized": false,
+    "official_event_state_dataset_promotion": false,
+    "official_event_state_parquet_written": false,
+    "physical_validation_schema_failures": 0,
+    "production_authorized": false,
+    "profile_classification": "official_event_state_semantic_profile",
+    "profile_id": "event_state_core_four_intraday_profile_v0_1",
+    "profile_status": "OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS",
+    "source_market_state_physical_dataset_official": false,
+    "source_market_state_profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "source_market_state_schema_version": "core_four_market_state_candidate_physical_schema_v0_1"
+  },
+  "gate": "event_state_profile_artifact_validation_v0_1",
+  "next_allowed_gate": "event_state_operational_registry_or_consumption_policy_design_only_after_explicit_authorization",
+  "profile_id": "event_state_core_four_intraday_profile_v0_1",
+  "registry_path": "official_profiles/event_state_core_four_intraday_profile_v0_1",
+  "required_prior_promotion": {
+    "final_manifest_sha256": "c074704c66ffc89d5d579317a8a8f74af2efecc6fd1e4b3bf6343adaa85800b7",
+    "promotion_manifest_sha256": "be25f562f924d6ca21e5d2687a21a97be38c3d0def9f8a14014ee94ed1eafb09",
+    "readout_sha256": "679a71a4662a4ae243238cba24f1a39141214cf7ad9a97b0d6b8678fdac1935a",
+    "registry_write_report_sha256": "f3e1fa6c1eafe421bc441afb4947752805cf3872811930a881a9ef77f4b10fa3",
+    "run_id": "event_state_profile_promotion_v0_1_20260724T203016Z"
+  },
+  "required_registry_artifacts": [
+    {
+      "name": "README.md",
+      "sha256": "3dc1cd64ea437fd24f053cd96b961425b6136fe9c4cc521932541f6239d1e40d"
+    },
+    {
+      "name": "PROFILE_MANIFEST.json",
+      "sha256": "77937dca78391d354a3c394c7fc3886c4042209e6a567425a301553b962997e1"
+    },
+    {
+      "name": "EVIDENCE_MANIFEST.json",
+      "sha256": "cb805ae2c3db4ded929a2a3d09fbc425c3a0b53c66ecba1c5f66a41c453717da"
+    },
+    {
+      "name": "EVENT_STATE_SCHEMA_CONTRACT.json",
+      "sha256": "e68be24763c4320419f7f2216a3560dc94ce36f02b293fdf2dad2ea88bba9515"
+    }
+  ],
+  "scope_id": "event_state_profile_artifact_validation_scope_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_CONSUMED"
+}

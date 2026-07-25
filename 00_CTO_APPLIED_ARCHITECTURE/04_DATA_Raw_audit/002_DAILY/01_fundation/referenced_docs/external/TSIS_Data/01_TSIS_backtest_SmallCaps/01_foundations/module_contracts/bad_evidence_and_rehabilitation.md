@@ -11,7 +11,7 @@ Este documento define el protocolo institucional para:
 
 casos clasificados como `bad` dentro del modulo:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION`
 
 Su objetivo es evitar que `bad` se convierta en una etiqueta opaca, automatica o insuficientemente defendida.
 

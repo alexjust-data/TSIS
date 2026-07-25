@@ -24,19 +24,19 @@ para poder citar porcentajes y conteos de `1m raw` con alcance correcto.
 
 Script:
 
-- [audit_1m_raw_lt1b_closeout.py](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/inspection/minute/audit_1m_raw_lt1b_closeout.py)
+- [audit_1m_raw_lt1b_closeout.py](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/inspection/minute/audit_1m_raw_lt1b_closeout.py)
 
 Evidencia:
 
-- [raw_1m_lt1b_exec_summary.csv](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/minute/evidence_assets/raw_1m_lt1b_closeout/raw_1m_lt1b_exec_summary.csv)
-- [raw_1m_lt1b_bucket_summary.csv](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/minute/evidence_assets/raw_1m_lt1b_closeout/raw_1m_lt1b_bucket_summary.csv)
-- [raw_1m_lt1b_ticker_bucket_counts.csv](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/minute/evidence_assets/raw_1m_lt1b_closeout/raw_1m_lt1b_ticker_bucket_counts.csv)
+- [raw_1m_lt1b_exec_summary.csv](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/minute/evidence_assets/raw_1m_lt1b_closeout/raw_1m_lt1b_exec_summary.csv)
+- [raw_1m_lt1b_bucket_summary.csv](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/minute/evidence_assets/raw_1m_lt1b_closeout/raw_1m_lt1b_bucket_summary.csv)
+- [raw_1m_lt1b_ticker_bucket_counts.csv](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/minute/evidence_assets/raw_1m_lt1b_closeout/raw_1m_lt1b_ticker_bucket_counts.csv)
 - `raw_1m_lt1b_filtered_closeout.parquet`
 
 Paquete inspector especifico para el bloque no-`vw`:
 
 - [raw_1m_schema_only_lt1b_inspection_readout_v0_1.md](referenced_docs/raw_1m_schema_only_lt1b_inspection_readout_v0_1.md)
-- [raw_1m_schema_only_lt1b_inspection_notebook_v0_1.ipynb](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/minute/raw_1m_schema_only_lt1b_inspection_notebook_v0_1.ipynb)
+- [raw_1m_schema_only_lt1b_inspection_notebook_v0_1.ipynb](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/minute/raw_1m_schema_only_lt1b_inspection_notebook_v0_1.ipynb)
 
 ## Regla de filtrado
 

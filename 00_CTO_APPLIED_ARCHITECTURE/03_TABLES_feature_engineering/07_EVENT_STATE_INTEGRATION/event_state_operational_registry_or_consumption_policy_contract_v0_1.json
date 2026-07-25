@@ -1,0 +1,122 @@
+{
+  "authority_boundary": {
+    "candidate_event_state_records_consumption_allowed": false,
+    "candidate_event_state_records_copy_allowed": false,
+    "candidate_evidence_reference_allowed": true,
+    "downstream_consumption_allowed": false,
+    "event_detection_allowed": false,
+    "event_instance_execution_allowed": false,
+    "event_state_builder_execution_allowed": false,
+    "event_state_materialization_allowed": false,
+    "event_window_execution_allowed": false,
+    "full_history_execution_allowed": false,
+    "full_universe_execution_allowed": false,
+    "instrument_projection_execution_allowed": false,
+    "market_state_physical_consumption_allowed": false,
+    "official_event_state_dataset_promotion_allowed": false,
+    "official_event_state_dataset_registry_write_allowed": false,
+    "official_event_state_parquet_write_allowed": false,
+    "production_allowed": false,
+    "profile_registry_lookup_allowed_for_planning": true,
+    "request_resolver_design_reference_allowed": true,
+    "semantic_profile_reference_allowed": true,
+    "source_market_data_reads_allowed": false
+  },
+  "closure_criteria": {
+    "candidate_evidence_use_restricted_to_reference": true,
+    "downstream_consumption_blocked": true,
+    "next_gate_identified": "market_state_on_demand_capability_design_authorization_v0_1",
+    "official_dataset_inference_prevented": true,
+    "request_resolver_execution_blocked": true,
+    "semantic_profile_reference_rules_defined": true
+  },
+  "consumption_policy": {
+    "candidate_evidence_consumption": "reference_only_not_dataset_consumption",
+    "downstream_consumption": "not_authorized",
+    "physical_data_consumption": "not_authorized",
+    "production_consumption": "not_authorized",
+    "profile_reference_consumption": "allowed_for_design_and_authorization_planning",
+    "research_backtest_ml_consumption": "not_authorized"
+  },
+  "contract_id": "event_state_operational_registry_or_consumption_policy_contract_v0_1",
+  "contract_status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+  "date": "2026-07-24",
+  "governed_profile": {
+    "accepted_event_type_ids": [
+      "event_type:market_data:session_opened"
+    ],
+    "accepted_subject_scope": "exchange_session",
+    "complete_tsis_event_state": false,
+    "profile_artifact_validation_run": "event_state_profile_artifact_validation_v0_1_20260724T204410Z",
+    "profile_classification": "official_event_state_semantic_profile",
+    "profile_id": "event_state_core_four_intraday_profile_v0_1",
+    "profile_registry_path": "07_EVENT_STATE_INTEGRATION/official_profiles/event_state_core_four_intraday_profile_v0_1",
+    "profile_status": "OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS"
+  },
+  "minimal_future_authorization_inputs": [
+    "profile_id",
+    "profile_artifact_validation_run_id",
+    "source_market_state_profile_or_dataset_authority",
+    "accepted_event_type_ids",
+    "event_instance_policy",
+    "event_window_policy",
+    "instrument_projection_policy",
+    "state_role_policy",
+    "consumption_legality_policy",
+    "output_mode",
+    "validation_policy"
+  ],
+  "registry_layers": {
+    "operational_dataset_registry": {
+      "allowed_operations": [],
+      "forbidden_operations": [
+        "write official dataset registry entry",
+        "promote candidate records",
+        "register parquet as official Event State"
+      ],
+      "status": "not_created_not_authorized"
+    },
+    "request_registry": {
+      "allowed_operations_now": [
+        "design-only references"
+      ],
+      "future_requirements": [
+        "request fingerprint policy",
+        "resolved profile version",
+        "resolved source Market State authority",
+        "resolved event types",
+        "resolved windows",
+        "resolved instrument projections",
+        "execution authorization state",
+        "validation and manifest requirements"
+      ],
+      "status": "future_design_required"
+    },
+    "semantic_profile_registry": {
+      "allowed_operations": [
+        "read profile manifest metadata",
+        "verify profile identity and status",
+        "cite profile as future authorization input",
+        "plan compatibility without data execution"
+      ],
+      "forbidden_operations": [
+        "serve data",
+        "claim official physical dataset",
+        "copy candidate records",
+        "open downstream consumption"
+      ],
+      "status": "available_as_reference"
+    }
+  },
+  "request_resolver_policy": {
+    "may_check_allowed_event_types": true,
+    "may_check_required_parent_market_state_profile": true,
+    "may_check_subject_scope": true,
+    "may_discover_profile": true,
+    "may_execute_build": false,
+    "may_materialize_output": false,
+    "may_return_dataset": false,
+    "may_validate_profile_status": true,
+    "must_block_before_execution_without_future_authorization": true
+  }
+}

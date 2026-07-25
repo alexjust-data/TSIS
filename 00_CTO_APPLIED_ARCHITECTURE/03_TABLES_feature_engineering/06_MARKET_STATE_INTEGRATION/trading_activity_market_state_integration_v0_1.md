@@ -242,7 +242,7 @@ applied_architecture_integration_design
 No sustituye la autoridad operativa de:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations
 ```
 
 Cuando se promueva a ejecucion real, la decision debe reflejarse en

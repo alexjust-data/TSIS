@@ -98,7 +98,7 @@ No-goals:
 Lugar natural para SmallCaps live:
 
 ```text
-C:/TSIS_Data/02_TSIS_webSocket_SmallCaps/01_data_ingestion_live/<vendor_or_broker>/
+C:/TSIS_Data/04_TSIS_webSocket_SmallCaps/01_data_ingestion_live/<vendor_or_broker>/
 ```
 
 Debe declarar como minimo:
@@ -117,7 +117,7 @@ Debe declarar como minimo:
 Lugar natural:
 
 ```text
-C:/TSIS_Data/02_TSIS_webSocket_SmallCaps/src/<adapter_name>/
+C:/TSIS_Data/04_TSIS_webSocket_SmallCaps/src/<adapter_name>/
 ```
 
 Debe seguir el contrato del modulo y escribir evidence/run artifacts de forma
@@ -145,7 +145,7 @@ puede escribir y que artifacts produce.
 Lugar natural para live-compatible features:
 
 ```text
-C:/TSIS_Data/02_TSIS_webSocket_SmallCaps/01_data_ingestion_live/source_parity_audit/
+C:/TSIS_Data/04_TSIS_webSocket_SmallCaps/01_data_ingestion_live/source_parity_audit/
 ```
 
 Debe decidir, campo por campo:
@@ -167,7 +167,7 @@ Debe decidir, campo por campo:
 
 ## Estado Actual
 
-`02_TSIS_webSocket_SmallCaps` es el modulo natural para live ingestion,
+`04_TSIS_webSocket_SmallCaps` es el modulo natural para live ingestion,
 streaming state preparation, event routing, execution bridge, risk monitoring y
 live exports.
 

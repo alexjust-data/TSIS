@@ -1,0 +1,174 @@
+{
+  "review_id": "market_state_bounded_on_demand_determinism_validation_v0_1_20260725T000000Z",
+  "review_gate": "market_state_bounded_on_demand_determinism_validation_v0_1",
+  "status": "CLOSED_APPROVED_DETERMINISM_FOR_BOUNDED_SCOPE_WITH_RESTRICTIONS_NO_REUSE_TRANSITION",
+  "date": "2026-07-25",
+  "baseline_run_id": "market_state_bounded_on_demand_execution_v0_1_20260724T232123Z",
+  "successful_rerun_run_id": "market_state_bounded_on_demand_deterministic_rerun_v0_1_20260725T053434Z",
+  "blocked_prior_attempt_run_id": "market_state_bounded_on_demand_deterministic_rerun_v0_1_20260725T052825Z",
+  "comparison_fingerprint": "ce87938504dbf8fc4e8e962e294aa81f8bc127cdfce69a7aa48157e655329dfb",
+  "scientific_dataset_fingerprint": "a9182b19e434ea77ca2bf5b3395b84a4592560bbf28e5cb0d80ee5561c5fe1b7",
+  "determinism_status": "PROVEN_FOR_BOUNDED_SCOPE",
+  "scope": {
+    "profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "requested_contexts": 9,
+    "materialized_candidate_rows": 8,
+    "unavailable_contexts": 1,
+    "max_contexts": 9
+  },
+  "decision": {
+    "determinism_validation_decision": "APPROVED_AS_BOUNDED_DETERMINISM_EVIDENCE_WITH_RESTRICTIONS_NO_REUSE_TRANSITION",
+    "scientific_determinism_proven_for_bounded_scope": true,
+    "comparison_blocking_failures": 0,
+    "hard_validation_failures": 0,
+    "runtime_only_differences": 2,
+    "reuse_transition_ready": true,
+    "reuse_eligibility_after_validation": "pending_idempotency_reuse_test",
+    "reuse_eligibility_changed_by_this_gate": false,
+    "official_dataset_after_validation": false,
+    "production_after_validation": false,
+    "downstream_after_validation": false
+  },
+  "findings": [
+    {
+      "check_id": "baseline_and_rerun_authority",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "baseline_run_id": "market_state_bounded_on_demand_execution_v0_1_20260724T232123Z",
+        "rerun_run_id": "market_state_bounded_on_demand_deterministic_rerun_v0_1_20260725T053434Z",
+        "request_fingerprint_match": true,
+        "profile_fingerprint_match": true,
+        "universe_fingerprint_match": true,
+        "source_set_fingerprint_match": true,
+        "partition_coverage_fingerprint_match": true
+      },
+      "conclusion": "The rerun used the same governed request, profile, universe, source set and partition coverage authority as the baseline."
+    },
+    {
+      "check_id": "force_rebuild_no_reuse",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "materializer_executed": true,
+        "reuse_existing_candidate_parquet": false,
+        "fresh_materializer_execution_proven": true,
+        "candidate_registry_entries_written": 0,
+        "deterministic_rerun_evidence_entries_written": 1
+      },
+      "conclusion": "The rerun rebuilt the output and did not return the baseline candidate as a cache hit."
+    },
+    {
+      "check_id": "normalized_execution_plan_semantics",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "execution_plan_semantics_fingerprint_match": true,
+        "baseline_execution_plan_semantics_fingerprint": "3eb67a60cec525fd24040d65a1581d6be1502e8480242546a01eace3fccdb175",
+        "rerun_execution_plan_semantics_fingerprint": "3eb67a60cec525fd24040d65a1581d6be1502e8480242546a01eace3fccdb175",
+        "physical_execution_plan_fingerprint_match": false
+      },
+      "conclusion": "Normalized execution-plan semantics match. Physical execution-plan fingerprints differ only because run-local status/path metadata differ."
+    },
+    {
+      "check_id": "scientific_dataset_fingerprint",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "scientific_dataset_fingerprint_match": true,
+        "baseline_scientific_dataset_fingerprint": "a9182b19e434ea77ca2bf5b3395b84a4592560bbf28e5cb0d80ee5561c5fe1b7",
+        "rerun_scientific_dataset_fingerprint": "a9182b19e434ea77ca2bf5b3395b84a4592560bbf28e5cb0d80ee5561c5fe1b7",
+        "physical_candidate_dataset_fingerprint_match": false
+      },
+      "conclusion": "The normalized scientific dataset fingerprint matches. Physical candidate dataset fingerprints differ because run-local fields are intentionally different."
+    },
+    {
+      "check_id": "row_identity_and_content",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "row_count_match": true,
+        "column_count_match": true,
+        "state_id_set_match": true,
+        "state_output_fingerprint_set_match": true,
+        "canonical_context_set_match": true,
+        "row_comparison_count": 8,
+        "normalized_row_content_all_match": true
+      },
+      "conclusion": "All 8 baseline rows are reproduced with matching canonical identity, state output fingerprint and normalized content."
+    },
+    {
+      "check_id": "unavailable_context_preservation",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "unavailable_context_set_match": true,
+        "baseline_unavailable_contexts": 1,
+        "requested_contexts": 9,
+        "materialized_candidate_rows": 8
+      },
+      "conclusion": "The same 1 unavailable context is preserved; it was not silently materialized, substituted or dropped."
+    },
+    {
+      "check_id": "validation_status_and_hard_failures",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "validation_status_match": true,
+        "hard_validation_failures_match": true,
+        "rerun_hard_validation_failures": 0,
+        "comparison_blocking_failures": []
+      },
+      "conclusion": "Validation status and hard failure count are reproduced with 0 comparison blocking failures."
+    },
+    {
+      "check_id": "runtime_only_differences_classification",
+      "status": "PASS_WITH_RESTRICTION",
+      "severity": "RESTRICTION",
+      "evidence": {
+        "runtime_only_differences": [
+          "physical_execution_plan_fingerprint_match",
+          "physical_candidate_dataset_fingerprint_match"
+        ],
+        "runtime_differences_only": true
+      },
+      "conclusion": "Two expected physical runtime differences are present and non-blocking: physical execution-plan fingerprint and physical candidate-dataset fingerprint."
+    },
+    {
+      "check_id": "prior_blocked_attempt_preservation",
+      "status": "PASS_WITH_RESTRICTION",
+      "severity": "RESTRICTION",
+      "evidence": {
+        "blocked_prior_attempt": "market_state_bounded_on_demand_deterministic_rerun_v0_1_20260725T052825Z",
+        "blocked_attempt_status": "CLOSED_BLOCKED_DETERMINISM_FAILURE",
+        "blocked_attempt_classification": "comparison_normalization_too_strict_not_content_mismatch"
+      },
+      "conclusion": "The prior blocked attempt is retained as evidence of an overly strict runtime normalization rule and is not used as the successful determinism proof."
+    },
+    {
+      "check_id": "reuse_and_consumption_boundary",
+      "status": "PASS_WITH_RESTRICTION",
+      "severity": "RESTRICTION",
+      "evidence": {
+        "reuse_transition_ready": true,
+        "reuse_eligibility_after_rerun": "pending_determinism_validation",
+        "reuse_eligibility_changes": 0,
+        "official_dataset": false,
+        "production": false,
+        "downstream": false
+      },
+      "conclusion": "Determinism is proven for the bounded scope, but reuse eligibility is not changed by this gate. Idempotency/reuse still requires a separate authorization."
+    }
+  ],
+  "evidence_refs": {
+    "baseline_final_manifest": "runs/market_state_bounded_on_demand_execution_v0_1_20260724T232123Z/final_manifest.json",
+    "successful_rerun_final_manifest": "runs/market_state_bounded_on_demand_deterministic_rerun_v0_1_20260725T053434Z/final_manifest.json",
+    "successful_rerun_readout": "runs/market_state_bounded_on_demand_deterministic_rerun_v0_1_20260725T053434Z/market_state_bounded_on_demand_deterministic_rerun_readout_v0_1.md",
+    "comparison": "runs/market_state_bounded_on_demand_deterministic_rerun_v0_1_20260725T053434Z/market_state_deterministic_rerun_comparison_v0_1.json",
+    "determinism_report": "runs/market_state_bounded_on_demand_deterministic_rerun_v0_1_20260725T053434Z/determinism_report.json",
+    "evidence_entry": "runs/market_state_bounded_on_demand_deterministic_rerun_v0_1_20260725T053434Z/deterministic_rerun_evidence_entry.json",
+    "blocked_prior_attempt_manifest": "runs/market_state_bounded_on_demand_deterministic_rerun_v0_1_20260725T052825Z/final_manifest.json",
+    "comparison_contract": "market_state_bounded_on_demand_deterministic_rerun_contract_v0_1.json"
+  },
+  "next_gate": "market_state_bounded_on_demand_idempotency_reuse_test_authorization_v0_1"
+}

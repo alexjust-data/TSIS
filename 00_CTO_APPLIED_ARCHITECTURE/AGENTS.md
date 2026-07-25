@@ -1,4 +1,4 @@
-﻿# 00_CTO_APPLIED_ARCHITECTURE Agents
+# 00_CTO_APPLIED_ARCHITECTURE Agents
 
 Status: `local_agent_contract_v0_1`
 Date: `2026-07-16`
@@ -45,9 +45,9 @@ validators or promoted outputs.
 Operational authority lives primarily in:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\tests
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\scripts
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\tests
 G:\TSIS\data
 ```
 
@@ -78,14 +78,14 @@ C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\AGENT_CONTINUATION_GUIDE_013_018_v0_1.m
 Then verify operational authority in:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\contract_registry
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\dataset_registry
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\data_consumption_policies
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\validators
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\tests
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\contract_registry
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\dataset_registry
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\data_consumption_policies
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\validators
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\scripts
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\tests
 ```
 
 ---

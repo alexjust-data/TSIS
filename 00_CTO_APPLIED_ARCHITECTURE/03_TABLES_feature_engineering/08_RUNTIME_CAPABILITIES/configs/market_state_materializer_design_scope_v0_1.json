@@ -1,0 +1,63 @@
+{
+  "authorization_id": "market_state_materializer_design_authorization_v0_1",
+  "closure_invariants": {
+    "builder_executions": 0,
+    "candidate_data_files_written": 0,
+    "candidate_parquet_files_written": 0,
+    "content_hashes_computed": 0,
+    "dataset_registry_entries_written": 0,
+    "downstream_consumption": false,
+    "lineage_manifests_created": 0,
+    "market_state_records_emitted": 0,
+    "materializer_executions": 0,
+    "official_market_state_dataset_promotion": false,
+    "output_manifests_created": 0,
+    "production": false,
+    "source_parquet_files_read": 0,
+    "source_rows_read": 0,
+    "staging_directories_created": 0,
+    "validation_reports_created": 0
+  },
+  "date": "2026-07-25",
+  "design_allowed": {
+    "materializer_design_allowed": true
+  },
+  "design_questions": [
+    "What must a future materializer consume from a frozen execution plan?",
+    "Which partition dispositions are materializable?",
+    "How are staging, atomic output commit, manifests and lineage designed?",
+    "Which actions belong to the validator or registry rather than materializer?",
+    "Which findings block materialization before any source row read?"
+  ],
+  "forbidden_actions": {
+    "builder_execution_allowed": false,
+    "candidate_data_file_write_allowed": false,
+    "candidate_parquet_write_allowed": false,
+    "content_hash_computation_allowed": false,
+    "dataset_registry_write_allowed": false,
+    "downstream_consumption_allowed": false,
+    "lineage_manifest_creation_allowed": false,
+    "market_state_materializer_execution_allowed": false,
+    "official_market_state_dataset_promotion_allowed": false,
+    "official_market_state_parquet_write_allowed": false,
+    "output_manifest_creation_allowed": false,
+    "production_allowed": false,
+    "source_data_reads_allowed": false,
+    "source_parquet_file_read_allowed": false,
+    "staging_directory_creation_allowed": false,
+    "validation_report_creation_allowed": false
+  },
+  "gate": "market_state_materializer_design_v0_1",
+  "next_allowed_gate": "market_state_validator_design_v0_1",
+  "parent_execution_plan_contract": "market_state_execution_plan_contract_v0_1",
+  "parent_gate": "market_state_partition_and_coverage_resolver_design_v0_1",
+  "parent_partition_coverage_resolver_contract": "market_state_partition_and_coverage_resolver_contract_v0_1",
+  "parent_profile_resolver_contract": "market_state_profile_resolver_contract_v0_1",
+  "parent_request_contract": "market_state_request_contract_v0_1",
+  "parent_runtime_architecture": "runtime_capabilities_architecture_v0_1",
+  "parent_source_resolver_contract": "market_state_source_resolver_contract_v0_1",
+  "parent_universe_resolver_contract": "market_state_universe_resolver_contract_v0_1",
+  "scope_id": "market_state_materializer_design_scope_v0_1",
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+  "target_contract": "market_state_materializer_contract_v0_1"
+}

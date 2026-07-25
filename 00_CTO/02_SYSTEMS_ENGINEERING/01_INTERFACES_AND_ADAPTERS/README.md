@@ -58,10 +58,10 @@ escriben los datos y como se conecta con source parity/live state.
 00_CTO/99_REFERENCE_LIBRARY/
   referencia externa cruda, no autoridad directa
 
-02_TSIS_webSocket_SmallCaps/01_data_ingestion_live/
+04_TSIS_webSocket_SmallCaps/01_data_ingestion_live/
   contratos y source inventories de live ingestion
 
-02_TSIS_webSocket_SmallCaps/src/
+04_TSIS_webSocket_SmallCaps/src/
   implementaciones de adapters live cuando existan
 
 E:/TSIS/

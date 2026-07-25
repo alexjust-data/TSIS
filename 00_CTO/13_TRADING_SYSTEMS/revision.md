@@ -1,4 +1,4 @@
-﻿Yo **no la pondrÃ­a dentro de Machine Learning**, ni dentro de Market Science, ni dentro de RL.
+Yo **no la pondrÃ­a dentro de Machine Learning**, ni dentro de Market Science, ni dentro de RL.
 
 Porque las estrategias son el objeto principal que TSIS estudia.
 
@@ -438,7 +438,7 @@ AhÃ­ AlphaEvolve tiene muchÃ­simo sentido.
 > Este archivo conserva una propuesta previa de estructura para
 > `13_TRADING_SYSTEMS/`. No es la arquitectura vigente. La arquitectura activa
 > vive en `README.md`, `../TSIS_LAB_ARCHITECTURE_v3.md` y
-> `C:/TSIS_Data/00_TSIS_Lab/README.md`. El plan de refactor anterior esta
+> `C:/TSIS_Data/03_TSIS_Lab/README.md`. El plan de refactor anterior esta
 > archivado en `_archive/superseded_architecture_2026_07_05/`.
 >
 > Muchas rutas mencionadas aqui son anteriores al refactor event-first ejecutado

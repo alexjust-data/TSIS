@@ -246,7 +246,7 @@ La logica reutilizable vive en scripts.
 Ubicacion probable de scripts:
 
 ```text
-01_TSIS_backtest_SmallCaps/
+01_TSIS_DATA_FOUNDATION/
   01_research/
     04_event_discovery/
       scripts/

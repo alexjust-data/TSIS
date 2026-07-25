@@ -1,0 +1,183 @@
+{
+  "scope_id": "tables_000_018_evidence_reconciliation_scope_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS",
+  "issued_at_utc": "2026-07-24T00:00:00Z",
+  "authorized_gate": "tables_000_018_evidence_reconciliation_against_data_foundation_registry_v0_1",
+  "authorization_document": "C:/TSIS_Data/00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/05_tables_000_018_evidence_reconciliation_authorization_v0_1.md",
+  "applied_architecture_matrix": "C:/TSIS_Data/00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/04_TSIS_TABLES_000_018_INSTITUTIONAL_STATUS_MATRIX_v0_1.md",
+  "readout_output_path": "C:/TSIS_Data/00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_tables_000_018_evidence_reconciliation_readout_v0_1.md",
+  "runs_root": "C:/TSIS_Data/00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/runs",
+  "data_foundation": {
+    "root": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations",
+    "status_matrix": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md",
+    "target_contract": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md",
+    "evidence_roots": {
+      "canonical_schema": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas",
+      "dataset_contract": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts",
+      "registry_entry": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry",
+      "consumption_policy": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies",
+      "validator": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/validators",
+      "module_contract_outputs": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs"
+    }
+  },
+  "forbidden_operations": {
+    "dataset_promotion": true,
+    "official_dataset_registry_write": true,
+    "official_parquet_write": true,
+    "candidate_parquet_copy": true,
+    "production_builder_execution": true,
+    "downstream_consumption": true,
+    "market_state_materialization": true,
+    "event_state_materialization": true,
+    "event_type_registry_population": true,
+    "event_detection_execution": true,
+    "physical_source_market_data_reads": true,
+    "parquet_reads": true,
+    "heavy_recursive_dossier_scan": true
+  },
+  "tables": [
+    {
+      "table_id": "000",
+      "canonical_name": "instrument_master",
+      "priority_group": "phase_3_000_012_remainder",
+      "data_foundation_dataset_ids": ["instrument_master_v0_1"],
+      "search_tokens": ["instrument_master"]
+    },
+    {
+      "table_id": "001",
+      "canonical_name": "market_calendar",
+      "priority_group": "phase_2_core_dependency",
+      "data_foundation_dataset_ids": ["market_calendar_v0_1", "governed_exchange_session_calendar_xnys_v0_1"],
+      "search_tokens": ["market_calendar", "governed_exchange_session_calendar"]
+    },
+    {
+      "table_id": "002",
+      "canonical_name": "expected_data_calendar",
+      "priority_group": "phase_3_000_012_remainder",
+      "data_foundation_dataset_ids": ["expected_data_calendar_v0_1"],
+      "search_tokens": ["expected_data_calendar"]
+    },
+    {
+      "table_id": "003",
+      "canonical_name": "dataset_certification_matrix",
+      "priority_group": "phase_3_000_012_remainder",
+      "data_foundation_dataset_ids": ["dataset_certification_matrix_v0_1"],
+      "search_tokens": ["dataset_certification_matrix"]
+    },
+    {
+      "table_id": "004",
+      "canonical_name": "master_daily_table",
+      "priority_group": "phase_2_core_dependency",
+      "data_foundation_dataset_ids": ["master_daily_table_v0_1"],
+      "search_tokens": ["master_daily_table"]
+    },
+    {
+      "table_id": "005",
+      "canonical_name": "corporate_actions_table",
+      "priority_group": "phase_3_000_012_remainder",
+      "data_foundation_dataset_ids": ["corporate_actions_table_v0_1"],
+      "search_tokens": ["corporate_actions_table"]
+    },
+    {
+      "table_id": "006",
+      "canonical_name": "halts_table",
+      "priority_group": "phase_3_000_012_remainder",
+      "data_foundation_dataset_ids": ["halts_table_v0_1"],
+      "search_tokens": ["halts_table"]
+    },
+    {
+      "table_id": "007",
+      "canonical_name": "event_windows_table",
+      "priority_group": "phase_3_000_012_remainder",
+      "data_foundation_dataset_ids": ["event_windows_table_v0_1"],
+      "search_tokens": ["event_windows_table"]
+    },
+    {
+      "table_id": "008",
+      "canonical_name": "outcomes_table",
+      "priority_group": "phase_3_000_012_remainder",
+      "data_foundation_dataset_ids": ["outcomes_table_v0_1", "outcomes_table_v0_1_candidate_intraday_1m_quote_guarded_controlled"],
+      "search_tokens": ["outcomes_table"]
+    },
+    {
+      "table_id": "009",
+      "canonical_name": "fundamentals_asof_table",
+      "priority_group": "phase_3_000_012_remainder",
+      "data_foundation_dataset_ids": ["fundamentals_asof_table_v0_1"],
+      "search_tokens": ["fundamentals_asof_table"]
+    },
+    {
+      "table_id": "010",
+      "canonical_name": "news_context_table",
+      "priority_group": "phase_3_000_012_remainder",
+      "data_foundation_dataset_ids": ["news_context_table_v0_1"],
+      "search_tokens": ["news_context_table"]
+    },
+    {
+      "table_id": "011",
+      "canonical_name": "short_context_table",
+      "priority_group": "phase_3_000_012_remainder",
+      "data_foundation_dataset_ids": ["short_context_table_v0_1"],
+      "search_tokens": ["short_context_table"]
+    },
+    {
+      "table_id": "012",
+      "canonical_name": "regime_context_table",
+      "priority_group": "phase_3_000_012_remainder",
+      "data_foundation_dataset_ids": ["regime_context_table_v0_1"],
+      "search_tokens": ["regime_context_table"]
+    },
+    {
+      "table_id": "013",
+      "canonical_name": "ohlcv_1m_quote_guarded",
+      "priority_group": "phase_1_high_risk_bridge",
+      "data_foundation_dataset_ids": ["ohlcv_1m_quote_guarded", "ohlcv_1m_quote_guarded_full_universe_v0_1", "repair_manifest_lt1b_v0_1"],
+      "search_tokens": ["ohlcv_1m_quote_guarded", "quote_guarded"]
+    },
+    {
+      "table_id": "014",
+      "canonical_name": "master_intraday_bar_table",
+      "priority_group": "phase_1_high_risk_bridge",
+      "data_foundation_dataset_ids": ["master_intraday_bar_table_v0_1"],
+      "search_tokens": ["master_intraday_bar_table"]
+    },
+    {
+      "table_id": "015",
+      "canonical_name": "microstructure_features_table",
+      "priority_group": "phase_1_high_risk_bridge",
+      "data_foundation_dataset_ids": ["microstructure_features_table_v0_1", "microstructure_features_table_v0_2_candidate_controlled_25_per_role"],
+      "search_tokens": ["microstructure_features_table"]
+    },
+    {
+      "table_id": "016",
+      "canonical_name": "market_state_table",
+      "priority_group": "phase_1_high_risk_bridge",
+      "data_foundation_dataset_ids": ["market_state_table_v0_1", "market_state_table_v0_1_candidate_microstructure_halt_controlled"],
+      "semantic_profile_ids": ["market_state_core_four_intraday_profile_v0_1"],
+      "search_tokens": ["market_state_table", "market_state_core_four_intraday_profile"]
+    },
+    {
+      "table_id": "017",
+      "canonical_name": "event_state_table",
+      "priority_group": "phase_1_high_risk_bridge",
+      "data_foundation_dataset_ids": ["event_state_table_v0_1", "event_state_table_v0_1_candidate_microstructure_halt_controlled"],
+      "semantic_profile_ids": ["event_state_core_four_intraday_profile_v0_1"],
+      "search_tokens": ["event_state_table", "event_state_core_four_intraday_profile"]
+    },
+    {
+      "table_id": "018",
+      "canonical_name": "intraday_scanner_candidates_table",
+      "priority_group": "phase_1_high_risk_bridge",
+      "data_foundation_dataset_ids": ["intraday_scanner_candidates_table_v0_1"],
+      "search_tokens": ["intraday_scanner_candidates_table"]
+    }
+  ],
+  "closure_policy": {
+    "official_dataset_must_not_be_inferred_without_promotion_record": true,
+    "semantic_profile_promotion_does_not_promote_physical_dataset": true,
+    "validated_for_declared_scope_is_restricted_not_unrestricted": true,
+    "controlled_candidate_not_promoted_must_remain_candidate": true,
+    "scanner_candidate_is_not_event_type_authority": true,
+    "missing_evidence_keeps_status_unresolved": true
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "contract_id": "event_state_bounded_execution_chain_contract_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_NOT_EXECUTED",
+  "date": "2026-07-24",
+  "authorization_run_id": "event_state_bounded_execution_chain_authorization_v0_1_20260724T153000Z",
+  "event_type_id": "event_type:market_data:session_opened",
+  "event_subject_scope": "exchange_session",
+  "event_state_profile_id": "event_state_core_four_intraday_profile_v0_1",
+  "source_market_state_profile_id": "market_state_core_four_intraday_profile_v0_1",
+  "bounded_execution_shape": {
+    "exchange_sessions": 3,
+    "instruments": 3,
+    "instrument_session_contexts": 9,
+    "max_event_state_candidate_records": 9
+  },
+  "required_exact_one_bindings": [
+    "event_instance_binding",
+    "event_window_binding",
+    "instrument_session_projection_binding",
+    "market_state_candidate_row_binding",
+    "state_role_classification",
+    "consumption_legality_classification"
+  ],
+  "market_state_physical_source": {
+    "candidate_materialization_run_id": "experimental_scale_c_ms_candidate_materialization_v0_1_20260723T184752Z",
+    "candidate_physical_validation_run_id": "core_four_market_state_scale_c_candidate_physical_validation_v0_1_20260723T184900Z",
+    "candidate_parquet_relative_path": "../06_MARKET_STATE_INTEGRATION/runs/experimental_scale_c_ms_candidate_materialization_v0_1_20260723T184752Z/core_four_market_state_scale_c_candidate_v0_1.parquet",
+    "candidate_parquet_sha256": "b1841f4897a759de8ec9a317bece888a9ff817da3df2cd0eb477b4ed950775a2",
+    "candidate_parquet_rows": 104,
+    "official_dataset": false
+  },
+  "market_state_identity_policy": {
+    "row_identity_field": "materialized_state_candidate_id",
+    "content_integrity_field": "state_output_fingerprint",
+    "both_fields_required": true,
+    "fingerprint_only_identity_allowed": false
+  },
+  "matching_policy": {
+    "market_state_timestamp_policy": "exact_event_anchor_to_market_state_decision_timestamp",
+    "latest_prior_fallback_allowed": false,
+    "next_bar_fallback_allowed": false,
+    "synthetic_market_state_allowed": false
+  },
+  "candidate_output_status": {
+    "candidate_output_allowed": true,
+    "official_profile_promotion_allowed": false,
+    "official_dataset_promotion_allowed": false,
+    "downstream_consumption_allowed": false,
+    "production_allowed": false
+  },
+  "blocked_row_policy": {
+    "missing_binding": "blocked",
+    "multiple_binding": "blocked",
+    "missing_market_state_row_identity": "blocked",
+    "missing_state_output_fingerprint": "blocked",
+    "fingerprint_mismatch": "blocked",
+    "ambiguous_projection": "blocked",
+    "partial_event_state_record": "prohibited"
+  },
+  "required_execution_outputs": [
+    "pre_manifest.json",
+    "heartbeat.json",
+    "event_instance_report.csv",
+    "event_window_binding_report.csv",
+    "instrument_session_projection_report.csv",
+    "market_state_binding_report.csv",
+    "event_state_candidate_records.jsonl",
+    "event_state_candidate_manifest.json",
+    "event_state_validation_report.json",
+    "determinism_report.json",
+    "final_manifest.json",
+    "event_state_bounded_execution_chain_readout_v0_1.md"
+  ],
+  "next_gate": "event_state_bounded_execution_chain_execution_v0_1"
+}

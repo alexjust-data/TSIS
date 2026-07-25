@@ -1,4 +1,4 @@
-﻿# 00_CTO Local Rules
+# 00_CTO Local Rules
 
 Fecha de creacion: 2026-06-18
 Estado: regla local obligatoria para agentes que trabajen en `00_CTO`.
@@ -86,7 +86,7 @@ top-level dentro de `00_CTO`.
 La fuente operativa de Data Foundation vive en:
 
 ```text
-01_TSIS_backtest_SmallCaps/01_foundations
+01_TSIS_DATA_FOUNDATION/01_foundations
 ```
 
 `00_CTO` puede documentar arquitectura, contratos esperados y operating models,

@@ -87,11 +87,11 @@ La conclusión rigurosa no es “daily no tiene ni un solo error”, sino esta:
 
 Queda materializado un exclusion set canónico para consumo directo por backtesting, spine común o ML:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\daily_lt1b_hard_invalid_exclusion_v030\daily_lt1b_hard_invalid_exclusion.parquet`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\daily_lt1b_hard_invalid_exclusion_v030\daily_lt1b_hard_invalid_exclusion.csv`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\daily_lt1b_hard_invalid_exclusion_v030\daily_lt1b_hard_invalid_ticker_year.parquet`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\daily_lt1b_hard_invalid_exclusion_v030\daily_lt1b_hard_invalid_ticker_year.csv`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\daily_lt1b_hard_invalid_exclusion_v030\daily_lt1b_hard_invalid_exclusion_summary.json`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\daily_lt1b_hard_invalid_exclusion_v030\daily_lt1b_hard_invalid_exclusion.parquet`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\daily_lt1b_hard_invalid_exclusion_v030\daily_lt1b_hard_invalid_exclusion.csv`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\daily_lt1b_hard_invalid_exclusion_v030\daily_lt1b_hard_invalid_ticker_year.parquet`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\daily_lt1b_hard_invalid_exclusion_v030\daily_lt1b_hard_invalid_ticker_year.csv`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\daily_lt1b_hard_invalid_exclusion_v030\daily_lt1b_hard_invalid_exclusion_summary.json`
 
 Resumen:
 

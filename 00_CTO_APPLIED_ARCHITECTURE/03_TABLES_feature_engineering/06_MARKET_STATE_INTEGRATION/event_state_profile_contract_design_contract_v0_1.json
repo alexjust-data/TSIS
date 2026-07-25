@@ -1,0 +1,167 @@
+{
+  "contract_id": "event_state_profile_contract_design_contract_v0_1",
+  "design_id": "event_state_profile_contract_design_v0_1",
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS",
+  "date": "2026-07-23",
+  "scope": "event_state_core_four_intraday_profile_contract_design",
+  "event_state_profile": {
+    "profile_id": "event_state_core_four_intraday_profile_v0_1",
+    "profile_classification": "candidate_event_state_profile_contract_design",
+    "profile_execution_authorized": false,
+    "profile_materialization_authorized": false,
+    "profile_promotion_authorized": false
+  },
+  "parent_market_state_profile": {
+    "profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "status": "OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS",
+    "registry_path": "06_MARKET_STATE_INTEGRATION/official_profiles/market_state_core_four_intraday_profile_v0_1",
+    "promotion_run_id": "official_market_state_candidate_promotion_v0_1_20260723T193403Z",
+    "artifact_validation_run_id": "official_market_state_profile_artifact_validation_v0_1_20260723T193711Z"
+  },
+  "required_contract_fields": [
+    "event_state_profile_id",
+    "event_state_profile_version",
+    "source_market_state_profile_id",
+    "source_market_state_profile_version",
+    "event_type_id",
+    "event_instance_id",
+    "event_window_id",
+    "instrument_id",
+    "ticker",
+    "event_anchor_timestamp_utc",
+    "decision_timestamp_utc",
+    "state_role",
+    "consumption_legality",
+    "window_definition_id",
+    "market_state_reference_id_or_fingerprint",
+    "join_policy_id",
+    "object_atomicity_policy_id",
+    "lineage_manifest_id",
+    "quality_state"
+  ],
+  "event_identity_boundary": {
+    "required": [
+      "event_type_id",
+      "event_instance_id",
+      "event_anchor_timestamp_utc",
+      "event_source_dataset_id",
+      "event_source_quality_state"
+    ],
+    "defined_by_this_contract": false,
+    "required_future_gates": [
+      "event_type_or_event_family_contract_design_v0_1",
+      "event_type_registry_seed_design_v0_1",
+      "event_instance_binding_design_v0_1"
+    ],
+    "event_type_authority_required_before_instance_binding": true
+  },
+  "window_definition_boundary": {
+    "required": [
+      "window_definition_id",
+      "event_window_id",
+      "event_window_start_utc",
+      "event_window_end_utc",
+      "pre_event_window_start_utc",
+      "pre_event_window_end_utc",
+      "state_cutoff_utc",
+      "state_cutoff_reason",
+      "relative_time_to_event"
+    ],
+    "defined_by_this_contract": false,
+    "required_future_gate": "event_window_binding_design_v0_1"
+  },
+  "state_role_policy": {
+    "allowed_profile_values": [
+      "pre_event",
+      "at_event",
+      "post_event",
+      "post_event_review"
+    ],
+    "materialization_vocabulary_note": {
+      "research_replay": "allowed only if explicitly mapped by a future physical design; never decision_safe"
+    }
+  },
+  "consumption_legality_policy": {
+    "allowed_values": [
+      "decision_safe",
+      "research_only",
+      "outcome_adjacent",
+      "prohibited_as_input"
+    ],
+    "decision_safe_allowed_only_when": [
+      "as_of_checks_pass",
+      "cutoff_checks_pass",
+      "state_role_is_pre_event_or_legally_at_event",
+      "event_detection_timing_is_legal"
+    ],
+    "post_event_decision_safe_allowed": false,
+    "post_event_review_decision_safe_allowed": false,
+    "outcome_adjacent_as_feature_allowed": false
+  },
+  "join_semantics": {
+    "market_state_profile_plus_event_instance_plus_event_window": true,
+    "instrument_id_match_required": true,
+    "decision_timestamp_at_or_before_state_cutoff_required": true,
+    "market_state_reference_must_resolve_to_accepted_profile_evidence": true,
+    "event_window_binding_cardinality": "exactly_one",
+    "future_outcome_join_as_state_input_allowed": false
+  },
+  "object_atomicity_policy": {
+    "source_market_state_profile_binding": "exactly_one",
+    "event_instance_binding": "exactly_one",
+    "event_window_binding": "exactly_one",
+    "state_role_classification": "exactly_one",
+    "consumption_legality_classification": "exactly_one",
+    "missing_required_binding_policy": "blocked",
+    "ambiguous_required_binding_policy": "blocked",
+    "partial_valid_event_state_rows_allowed": false
+  },
+  "lineage_requirements": [
+    "event_state_profile_id",
+    "event_state_profile_version",
+    "source_market_state_profile_id",
+    "source_market_state_profile_validation_run",
+    "event_instance_binding_run",
+    "event_window_binding_run",
+    "builder_run_id",
+    "integration_run_id",
+    "materialization_run_id",
+    "validation_run_id",
+    "source_manifest_hash_bundle",
+    "restriction_manifest_hash"
+  ],
+  "closed_boundaries": {
+    "event_detection_execution_authorized": false,
+    "event_instance_table_materialization_authorized": false,
+    "event_window_binding_execution_authorized": false,
+    "market_state_physical_consumption_authorized": false,
+    "event_state_builder_execution_authorized": false,
+    "event_state_integration_execution_authorized": false,
+    "event_state_materialization_authorized": false,
+    "event_state_physical_validation_authorized": false,
+    "official_event_state_profile_promotion_authorized": false,
+    "official_event_state_dataset_promotion_authorized": false,
+    "production_authorized": false,
+    "downstream_consumption_authorized": false
+  },
+  "next_allowed_gates": [
+    "event_type_registry_seed_design_v0_1"
+  ],
+  "event_policy_artifact": "../07_EVENT_STATE_INTEGRATION/event_state_event_policy_v0_1.md",
+  "event_registry_state_required_before_concrete_instance_binding": {
+    "event_type_registry_contract_shape": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS",
+    "event_type_registry_schema": "NOT_DESIGNED_NEXT_GATE",
+    "event_type_registry_seed_design": "NOT_OPEN_NEXT_IF_EXPLICITLY_AUTHORIZED",
+    "accepted_event_type_authority_required": true,
+    "current_accepted_event_types": 0,
+    "concrete_event_instance_binding_allowed_now": false,
+    "abstract_instance_binding_design_allowed_after_authorization": true
+  },
+  "subsequent_gates_after_seed_design": [
+    "event_instance_binding_design_v0_1",
+    "event_window_binding_design_v0_1",
+    "market_state_profile_compatibility_design_v0_1",
+    "event_state_integration_design_v0_1",
+    "event_state_builder_validation_authorization_v0_1"
+  ]
+}

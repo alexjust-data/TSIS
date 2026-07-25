@@ -1,0 +1,64 @@
+{
+  "accepted_validation_run_id": "official_market_state_profile_artifact_validation_v0_1_20260723T193711Z",
+  "accepted_validation_status": "CLOSED_PASS_WITH_RESTRICTIONS",
+  "authority_boundary": {
+    "candidate_parquet_copy_allowed": false,
+    "dataset_promotion_allowed": false,
+    "downstream_consumption_allowed": false,
+    "full_history_execution_allowed": false,
+    "full_universe_execution_allowed": false,
+    "official_dataset_registry_write_allowed": false,
+    "official_market_state_allowed": false,
+    "official_parquet_write_allowed": false,
+    "production_builder_allowed": false,
+    "registry_metadata_validation_allowed": true,
+    "source_market_data_reads_allowed": false
+  },
+  "date": "2026-07-23",
+  "expected_registry_invariants": {
+    "candidate_parquet_copied": false,
+    "candidate_parquet_reference_only": true,
+    "complete_tsis_market_state": false,
+    "downstream_consumption_authorized": false,
+    "official_market_state_authorized": false,
+    "official_parquet_written": false,
+    "physical_schema_column_count": 40,
+    "production_builder_authorized": false,
+    "profile_classification": "official_profile",
+    "profile_status": "OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS",
+    "required_information_objects": 4,
+    "source_physical_profile_id": "core_four_market_state_profile_v0_1",
+    "state_schema_version": "core_four_market_state_candidate_physical_schema_v0_1"
+  },
+  "gate": "official_market_state_profile_artifact_validation_v0_1",
+  "next_allowed_gate": "consumption_policy_or_operational_registry_design_only_after_explicit_authorization",
+  "profile_id": "market_state_core_four_intraday_profile_v0_1",
+  "registry_path": "official_profiles/market_state_core_four_intraday_profile_v0_1",
+  "required_prior_promotion": {
+    "final_manifest_sha256": "8c7379bfe0da9082aa137a395a119ea084f0186d2f8ac1cb61bb4aa6ac410693",
+    "promotion_manifest_sha256": "51640f9a6a4cfd41fd13830d36674a423fb05aa6df95ebce9f7de7d736ca09fb",
+    "readout_sha256": "a0093926eb3b546384dbd6007154fbc131b4f16ac663ac051ab9bf78b8c61b3d",
+    "registry_write_report_sha256": "6df65ec8202d3fa94961a35644b3a7829bad1b210d13449f28439ce08126b429",
+    "run_id": "official_market_state_candidate_promotion_v0_1_20260723T193403Z"
+  },
+  "required_registry_artifacts": [
+    {
+      "name": "README.md",
+      "sha256": "29943717545cc182fe30241de358e78191b365aa443c964fabdd66189b70077d"
+    },
+    {
+      "name": "PROFILE_MANIFEST.json",
+      "sha256": "9935cf0491f56f2ee6fcb034d57e3359d1abd267612e24243692e2d98bad0496"
+    },
+    {
+      "name": "EVIDENCE_MANIFEST.json",
+      "sha256": "3583e54ebb3661a7d8a179c52acae05728b61596e1341028872372a0c0d99603"
+    },
+    {
+      "name": "PHYSICAL_SCHEMA_CONTRACT.json",
+      "sha256": "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b"
+    }
+  ],
+  "scope_id": "official_market_state_profile_artifact_validation_scope_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_CONSUMED"
+}

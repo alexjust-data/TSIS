@@ -1,0 +1,427 @@
+[
+  {
+    "title": "ALGORITHMIC TRADING",
+    "page": 3,
+    "depth": 0
+  },
+  {
+    "title": "CONTENTS",
+    "page": 9,
+    "depth": 0
+  },
+  {
+    "title": "PREFACE",
+    "page": 11,
+    "depth": 0
+  },
+  {
+    "title": "CHAPTER 1 Backtesting and Automated Execution",
+    "page": 19,
+    "depth": 0
+  },
+  {
+    "title": "The Importance of Backtesting",
+    "page": 20,
+    "depth": 1
+  },
+  {
+    "title": "Common Pitfalls of Backtesting",
+    "page": 21,
+    "depth": 1
+  },
+  {
+    "title": "Look-ahead Bias",
+    "page": 22,
+    "depth": 2
+  },
+  {
+    "title": "Data-Snooping Bias and the Beauty of Linearity",
+    "page": 22,
+    "depth": 2
+  },
+  {
+    "title": "Stock Splits and Dividend Adjustments",
+    "page": 25,
+    "depth": 2
+  },
+  {
+    "title": "Survivorship Bias in Stock Database",
+    "page": 26,
+    "depth": 2
+  },
+  {
+    "title": "Primary versus Consolidated Stock Prices",
+    "page": 27,
+    "depth": 2
+  },
+  {
+    "title": "Venue Dependence of Currency Quotes",
+    "page": 28,
+    "depth": 2
+  },
+  {
+    "title": "Short-Sale Constraints",
+    "page": 29,
+    "depth": 2
+  },
+  {
+    "title": "Futures Continuous Contracts",
+    "page": 30,
+    "depth": 2
+  },
+  {
+    "title": "Futures Close versus Settlement Prices",
+    "page": 32,
+    "depth": 2
+  },
+  {
+    "title": "Statistical Significance of Backtesting: Hypothesis Testing",
+    "page": 34,
+    "depth": 1
+  },
+  {
+    "title": "When Not to Backtest a Strategy",
+    "page": 40,
+    "depth": 1
+  },
+  {
+    "title": "Will a Backtest Be Predictive of Future Returns?",
+    "page": 42,
+    "depth": 1
+  },
+  {
+    "title": "Choosing a Backtesting and Automated Execution Platform",
+    "page": 43,
+    "depth": 1
+  },
+  {
+    "title": "How Good Is Your Programming Skill?",
+    "page": 43,
+    "depth": 2
+  },
+  {
+    "title": "Can Backtesting and Execution Use the Same Program?",
+    "page": 48,
+    "depth": 2
+  },
+  {
+    "title": "What Type of Asset Classes or Strategies Does the Platform Support?",
+    "page": 49,
+    "depth": 2
+  },
+  {
+    "title": "Does the Platform Have Complex Event Processing?",
+    "page": 54,
+    "depth": 2
+  },
+  {
+    "title": "CHAPTER 2 The Basics of Mean Reversion",
+    "page": 57,
+    "depth": 0
+  },
+  {
+    "title": "Mean Reversion and Stationarity",
+    "page": 59,
+    "depth": 1
+  },
+  {
+    "title": "Augmented Dickey-Fuller Test",
+    "page": 60,
+    "depth": 2
+  },
+  {
+    "title": "Hurst Exponent and Variance Ratio Test",
+    "page": 62,
+    "depth": 2
+  },
+  {
+    "title": "Half-Life of Mean Reversion",
+    "page": 64,
+    "depth": 2
+  },
+  {
+    "title": "A Linear Mean-Reverting Trading Strategy",
+    "page": 66,
+    "depth": 2
+  },
+  {
+    "title": "Cointegration",
+    "page": 68,
+    "depth": 1
+  },
+  {
+    "title": "Cointegrated Augmented Dickey-Fuller Test",
+    "page": 69,
+    "depth": 2
+  },
+  {
+    "title": "Johansen Test",
+    "page": 72,
+    "depth": 2
+  },
+  {
+    "title": "Linear Mean-Reverting Trading on a Portfolio",
+    "page": 76,
+    "depth": 2
+  },
+  {
+    "title": "Pros and Cons of Mean-Reverting Strategies",
+    "page": 78,
+    "depth": 1
+  },
+  {
+    "title": "CHAPTER 3 Implementing Mean Reversion Strategies",
+    "page": 81,
+    "depth": 0
+  },
+  {
+    "title": "Trading Pairs Using Price Spreads, Log Price Spreads, or Ratios",
+    "page": 82,
+    "depth": 1
+  },
+  {
+    "title": "Bollinger Bands",
+    "page": 88,
+    "depth": 1
+  },
+  {
+    "title": "Does Scaling-in Work?",
+    "page": 90,
+    "depth": 1
+  },
+  {
+    "title": "Kalman Filter as Dynamic Linear Regression",
+    "page": 92,
+    "depth": 1
+  },
+  {
+    "title": "Kalman Filter as Market-Making Model",
+    "page": 100,
+    "depth": 1
+  },
+  {
+    "title": "The Danger of Data Errors",
+    "page": 101,
+    "depth": 1
+  },
+  {
+    "title": "CHAPTER 4 Mean Reversion of Stocks and ETFs",
+    "page": 105,
+    "depth": 0
+  },
+  {
+    "title": "The Difficulties of Trading Stock Pairs",
+    "page": 107,
+    "depth": 1
+  },
+  {
+    "title": "Trading ETF Pairs (and Triplets)",
+    "page": 109,
+    "depth": 1
+  },
+  {
+    "title": "Intraday Mean Reversion: Buy-on-Gap Model",
+    "page": 110,
+    "depth": 1
+  },
+  {
+    "title": "Arbitrage between an ETF and Its Component Stocks",
+    "page": 114,
+    "depth": 1
+  },
+  {
+    "title": "Cross-Sectional Mean Reversion: A Linear Long-Short Model",
+    "page": 120,
+    "depth": 1
+  },
+  {
+    "title": "CHAPTER 5 Mean Reversion of Currencies and Futures",
+    "page": 125,
+    "depth": 0
+  },
+  {
+    "title": "Trading Currency Cross-Rates",
+    "page": 126,
+    "depth": 1
+  },
+  {
+    "title": "Rollover Interests in Currency Trading",
+    "page": 131,
+    "depth": 1
+  },
+  {
+    "title": "Trading Futures Calendar Spread",
+    "page": 133,
+    "depth": 1
+  },
+  {
+    "title": "Roll Returns, Backwardation, and Contango",
+    "page": 133,
+    "depth": 2
+  },
+  {
+    "title": "Do Calendar Spreads Mean-Revert?",
+    "page": 141,
+    "depth": 2
+  },
+  {
+    "title": "Futures Intermarket Spreads",
+    "page": 145,
+    "depth": 1
+  },
+  {
+    "title": "Volatility Futures versus Equity Index Futures",
+    "page": 147,
+    "depth": 2
+  },
+  {
+    "title": "CHAPTER 6 Interday Momentum Strategies ",
+    "page": 151,
+    "depth": 0
+  },
+  {
+    "title": "Tests for Time Series Momentum",
+    "page": 152,
+    "depth": 1
+  },
+  {
+    "title": "Time Series Strategies",
+    "page": 155,
+    "depth": 1
+  },
+  {
+    "title": "Extracting Roll Returns through Future versus ETF Arbitrage",
+    "page": 159,
+    "depth": 1
+  },
+  {
+    "title": "Volatility Futures versus Equity Index Futures: Redux",
+    "page": 161,
+    "depth": 2
+  },
+  {
+    "title": "Cross-Sectional Strategies",
+    "page": 162,
+    "depth": 1
+  },
+  {
+    "title": "News Sentiment as a Fundamental Factor",
+    "page": 166,
+    "depth": 2
+  },
+  {
+    "title": "Mutual Funds Asset Fire Sale and Forced Purchases",
+    "page": 167,
+    "depth": 2
+  },
+  {
+    "title": "Pros and Cons of Momentum Strategies",
+    "page": 169,
+    "depth": 1
+  },
+  {
+    "title": "CHAPTER 7 Intraday Momentum Strategies",
+    "page": 173,
+    "depth": 0
+  },
+  {
+    "title": "Opening Gap Strategy",
+    "page": 174,
+    "depth": 1
+  },
+  {
+    "title": "News-Driven Momentum Strategy",
+    "page": 175,
+    "depth": 1
+  },
+  {
+    "title": "Post–Earnings Announcement Drift",
+    "page": 176,
+    "depth": 2
+  },
+  {
+    "title": "Drift Due to Other Events",
+    "page": 180,
+    "depth": 2
+  },
+  {
+    "title": "Leveraged ETF Strategy",
+    "page": 181,
+    "depth": 1
+  },
+  {
+    "title": "High-Frequency Strategies",
+    "page": 182,
+    "depth": 1
+  },
+  {
+    "title": "CHAPTER 8 Risk Management",
+    "page": 187,
+    "depth": 0
+  },
+  {
+    "title": "Optimal Leverage",
+    "page": 188,
+    "depth": 1
+  },
+  {
+    "title": "Kelly Formula",
+    "page": 190,
+    "depth": 2
+  },
+  {
+    "title": "Optimization of Expected Growth Rate Using Simulated Returns",
+    "page": 191,
+    "depth": 2
+  },
+  {
+    "title": "Optimization of Historical Growth Rate",
+    "page": 195,
+    "depth": 2
+  },
+  {
+    "title": "Maximum Drawdown",
+    "page": 197,
+    "depth": 2
+  },
+  {
+    "title": "Constant Proportion Portfolio Insurance",
+    "page": 198,
+    "depth": 1
+  },
+  {
+    "title": "Stop Loss",
+    "page": 200,
+    "depth": 1
+  },
+  {
+    "title": "Risk Indicators",
+    "page": 202,
+    "depth": 1
+  },
+  {
+    "title": "CONCLUSION",
+    "page": 205,
+    "depth": 0
+  },
+  {
+    "title": "BIBLIOGRAPHY",
+    "page": 209,
+    "depth": 0
+  },
+  {
+    "title": "ABOUT THE AUTHOR",
+    "page": 215,
+    "depth": 0
+  },
+  {
+    "title": "ABOUT THE WEBSITE",
+    "page": 217,
+    "depth": 0
+  },
+  {
+    "title": "INDEX",
+    "page": 219,
+    "depth": 0
+  }
+]

@@ -1,0 +1,19 @@
+﻿{
+    "book_id":  "python_for_algorithmic_trading_cookbook_strimpel",
+    "title":  "Python for Algorithmic Trading Cookbook",
+    "author":  "Jason Strimpel",
+    "source_pdf":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Python_for_Algorithmic_Trading_Cookbook_-_Jason_Strimpel.pdf",
+    "processed_root":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\python_for_algorithmic_trading_cookbook_strimpel",
+    "source_copy":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\python_for_algorithmic_trading_cookbook_strimpel\\source\\original.pdf",
+    "pages":  424,
+    "file_size_bytes":  18448854,
+    "sha256":  "6c0fbd1ad468aa9ad904d57b16b6de668c0f9802394520bc0a2b91a2a27fcdfa",
+    "created_utc":  "2026-07-25T05:08:59+00:00",
+    "total_words":  86336,
+    "text_pages":  421,
+    "toc_items":  411,
+    "requires_ocr":  false,
+    "status":  "indexed",
+    "working_text_persisted":  false,
+    "ocr_completed":  false
+}

@@ -56,7 +56,7 @@ La muestra esta transpuesta para lectura humana.
 | `volume_shares` | 797308572 | 459424758 | 159689036 | 135220085 | 109458223 |
 | `market_cap_usd` |  | 32362.496000000003 |  | 2661329.3200000003 |  |
 | `market_cap_asof_date` |  | 2026-03-06 |  | 2026-03-06 |  |
-| `market_cap_source` | unavailable_in_market_cap_reference | C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\market_cap_last_observed_cutoff\20260320_market_cap_last_observ... | unavailable_in_market_cap_reference | C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\market_cap_last_observed_cutoff\20260320_market_cap_last_observ... | unavailable_in_market_cap_reference |
+| `market_cap_source` | unavailable_in_market_cap_reference | C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\market_cap_last_observed_cutoff\20260320_market_cap_last_observ... | unavailable_in_market_cap_reference | C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\market_cap_last_observed_cutoff\20260320_market_cap_last_observ... | unavailable_in_market_cap_reference |
 | `failure_reasons` | market_cap_unavailable | price_outside_range | market_cap_unavailable | price_outside_range | market_cap_unavailable\|price_outside_range |
 | `toplist_seen` | True | True | True | True | True |
 | `capture_status` |  |  |  |  |  |

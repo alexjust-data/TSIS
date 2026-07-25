@@ -5,7 +5,7 @@ Ambas carpetas siguen superando el umbral de seguridad de Graphify por separado.
 • Sí, se puede. La forma correcta es:
 
   graphify extract .\00_CTO
-  graphify extract .\01_TSIS_backtest_SmallCaps
+  graphify extract .\01_TSIS_DATA_FOUNDATION
 
   Pero no conviene lanzarlo entero todavía. Cada carpeta sigue siendo grande:
 
@@ -16,7 +16,7 @@ Ambas carpetas siguen superando el umbral de seguridad de Graphify por separado.
     _images                             73
     10_AUTONOMOUS_RESEARCH_SYSTEMS      21
 
-  01_TSIS_backtest_SmallCaps: 1885 files · ~9.3M words
+  01_TSIS_DATA_FOUNDATION: 1885 files · ~9.3M words
     01_foundations                    1773
     scripts                             77
     01_research                         10
@@ -28,7 +28,7 @@ Ambas carpetas siguen superando el umbral de seguridad de Graphify por separado.
   Para empezar con valor alto:
 
   00_CTO\12_TSIS_COGNITIVE_ARCHITECTURE
-  01_TSIS_backtest_SmallCaps\01_foundations
+  01_TSIS_DATA_FOUNDATION\01_foundations
 
   Después fusionamos esos dos. Eso te da un grafo útil para arquitectura/conocimiento institucional sin arrastrar toda
   la librería de referencia ni miles de imágenes.
@@ -82,9 +82,9 @@ No indexaría todo TSIS de golpe. Haría esto:
 ```text
 C:\TSIS_DATA\
 ├── 00_CTO
-├── 01_TSIS_backtest_SmallCaps
-├── 02_TSIS_webSocket_SmallCaps
-├── 03_TSIS_Offline_RL
+├── 01_TSIS_DATA_FOUNDATION
+├── 04_TSIS_webSocket_SmallCaps
+├── 05_TSIS_Offline_RL
 ├── data
 ├── runs
 └── ...
@@ -114,8 +114,8 @@ Luego indexa por capas:
 
 ```powershell
 graphify .\00_CTO
-graphify .\01_TSIS_backtest_SmallCaps
-graphify .\02_TSIS_webSocket_SmallCaps
+graphify .\01_TSIS_DATA_FOUNDATION
+graphify .\04_TSIS_webSocket_SmallCaps
 ```
 
 Y cuando cambies cosas:
@@ -391,11 +391,11 @@ Tu proyecto ya tiene una separación natural:
 ```text
 00_CTO
 
-01_TSIS_backtest_SmallCaps
+01_TSIS_DATA_FOUNDATION
 
-02_TSIS_webSocket_SmallCaps
+04_TSIS_webSocket_SmallCaps
 
-03_TSIS_Offline_RL
+05_TSIS_Offline_RL
 ````
 
 Yo construiría:

@@ -1,0 +1,23 @@
+﻿{
+    "book_id":  "machine_trading_chan",
+    "source_pdf":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Machine_Trading_-_Ernest_P_Chan.pdf",
+    "processed_source_pdf":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\machine_trading_chan\\source\\original.pdf",
+    "title":  "Machine Trading",
+    "author":  "Ernest P. Chan",
+    "producer":  "iTextSharpâ„¢ 5.5.5 Â©2000-2014 iText Group NV (AGPL-version); modified using iTextSharpâ„¢ 5.5.5 Â©2000-2014 iText Group NV (AGPL-version)",
+    "creator":  "",
+    "pages":  267,
+    "file_size_bytes":  1463189,
+    "last_write_time":  "2026-07-24T21:56:05.729094+00:00",
+    "processed_at":  "2026-07-24T22:00:12.177302+00:00",
+    "requires_ocr":  false,
+    "status":  "indexed",
+    "total_words":  63660,
+    "text_pages":  265,
+    "toc_items":  93,
+    "working_text_persisted":  false,
+    "copyright_note":  "Derived artifacts should summarize and point to pages. Do not persist or redistribute full extracted text unless explicitly allowed.",
+    "summary_artifact":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\machine_trading_chan\\summaries\\machine_trading_chan_agent_summary.md",
+    "concept_index_artifact":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\machine_trading_chan\\index\\machine_trading_chan_concept_index.md",
+    "source_map_artifact":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\machine_trading_chan\\index\\machine_trading_chan_source_map.md"
+}

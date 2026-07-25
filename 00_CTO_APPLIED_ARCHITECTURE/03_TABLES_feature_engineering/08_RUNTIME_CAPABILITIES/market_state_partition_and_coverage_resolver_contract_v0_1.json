@@ -1,0 +1,143 @@
+{
+  "blocking_conditions": [
+    "logical_partition_grain_missing",
+    "resolved_universe_fingerprint_missing",
+    "resolved_source_set_fingerprint_missing",
+    "required_source_alias_coverage_missing",
+    "source_availability_ambiguous",
+    "existing_output_reuse_identity_ambiguous",
+    "existing_output_validation_status_missing",
+    "existing_output_lineage_incomplete",
+    "partition_disposition_invariant_failure",
+    "coverage_policy_missing",
+    "partial_session_coverage_policy_missing",
+    "quarantined_source_required",
+    "unauthorized_source_required",
+    "schema_contract_incompatible",
+    "partial_execution_requested_without_authorization"
+  ],
+  "contract_id": "market_state_partition_and_coverage_resolver_contract_v0_1",
+  "coverage_status_model": [
+    "FULLY_REUSABLE",
+    "FULLY_BUILDABLE",
+    "PARTIALLY_BUILDABLE",
+    "BLOCKED"
+  ],
+  "date": "2026-07-25",
+  "disposition_model": [
+    "reusable_validated",
+    "to_build",
+    "to_rebuild",
+    "unavailable",
+    "quarantined",
+    "blocked"
+  ],
+  "fingerprint_contribution": {
+    "exclude_fields": [
+      "resolver_run_time",
+      "machine_name",
+      "temporary_manifest_path",
+      "log_path"
+    ],
+    "include_fields": [
+      "request_fingerprint",
+      "resolved_profile_fingerprint",
+      "resolved_universe_fingerprint",
+      "resolved_source_set_fingerprint",
+      "coverage_policy_id",
+      "logical_partition_grain",
+      "sorted_partition_dispositions",
+      "source_availability_evidence_hashes",
+      "partition_coverage_resolution_fingerprint"
+    ]
+  },
+  "hard_boundaries": {
+    "coverage_manifest_creation_allowed": false,
+    "dataset_registry_write_allowed": false,
+    "downstream_consumption_allowed": false,
+    "execution_plan_creation_allowed": false,
+    "execution_plan_instance_creation_allowed": false,
+    "existing_dataset_registry_runtime_read_allowed": false,
+    "market_state_builder_execution_allowed": false,
+    "market_state_materializer_execution_allowed": false,
+    "official_market_state_dataset_promotion_allowed": false,
+    "official_market_state_parquet_write_allowed": false,
+    "partition_coverage_resolver_execution_allowed": false,
+    "partition_manifest_creation_allowed": false,
+    "partition_status_transition_allowed": false,
+    "production_allowed": false,
+    "source_data_reads_allowed": false,
+    "source_manifest_runtime_read_allowed": false,
+    "source_parquet_file_read_allowed": false
+  },
+  "input_fields": [
+    "request_id",
+    "request_fingerprint",
+    "resolved_profile_id",
+    "resolved_profile_version",
+    "resolved_profile_fingerprint",
+    "resolved_universe_fingerprint",
+    "resolved_source_set_fingerprint",
+    "resolved_instrument_session_contexts",
+    "resolved_source_authorities",
+    "reuse_policy",
+    "validation_level",
+    "output_mode",
+    "coverage_policy_id"
+  ],
+  "invariants": {
+    "available_source_partitions_not_final_output_disposition": true,
+    "logical_partition_distinct_from_physical_storage_partition": true,
+    "partial_execution_requires_separate_authorization_v0_1": true,
+    "requested_logical_partitions_equal_reusable_plus_to_build_plus_to_rebuild_plus_unavailable_plus_quarantined_plus_blocked": true,
+    "source_availability_distinct_from_output_disposition": true
+  },
+  "logical_partition_grain_default_v0_1": [
+    "profile_id",
+    "profile_version",
+    "instrument_id",
+    "exchange_id",
+    "session_date"
+  ],
+  "next_allowed_gate": "market_state_materializer_design_v0_1",
+  "output_fields": [
+    "requested_partitions",
+    "reusable_validated_partitions",
+    "partitions_to_build",
+    "partitions_to_rebuild",
+    "blocked_partitions",
+    "missing_partitions",
+    "quarantined_partitions",
+    "partition_policy_id",
+    "logical_partition_grain",
+    "requested_partition_count",
+    "reusable_validated_partition_count",
+    "to_build_partition_count",
+    "to_rebuild_partition_count",
+    "unavailable_partition_count",
+    "blocked_partition_count",
+    "quarantined_partition_count",
+    "coverage_status",
+    "partition_coverage_resolution_fingerprint",
+    "requested_partition_manifest_ref",
+    "reusable_partition_manifest_ref",
+    "build_partition_manifest_ref",
+    "rebuild_partition_manifest_ref",
+    "unavailable_partition_manifest_ref",
+    "blocked_partition_manifest_ref",
+    "quarantined_partition_manifest_ref",
+    "source_availability_manifest_ref"
+  ],
+  "parent_execution_plan_contract": "market_state_execution_plan_contract_v0_1",
+  "parent_profile_resolver_contract": "market_state_profile_resolver_contract_v0_1",
+  "parent_request_contract": "market_state_request_contract_v0_1",
+  "parent_source_resolver_contract": "market_state_source_resolver_contract_v0_1",
+  "parent_universe_resolver_contract": "market_state_universe_resolver_contract_v0_1",
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+  "v0_1_policies": {
+    "partial_execution_automatically_authorized": false,
+    "partition_coverage_resolver_reads_market_rows": false,
+    "partition_coverage_resolver_reads_parquet_content": false,
+    "physical_storage_partition_decided_by_materializer": true
+  }
+}

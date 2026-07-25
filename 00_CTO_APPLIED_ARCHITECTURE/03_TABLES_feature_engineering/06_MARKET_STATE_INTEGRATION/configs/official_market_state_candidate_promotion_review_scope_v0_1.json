@@ -1,0 +1,150 @@
+{
+  "accepted_review_decision": "APPROVED_FOR_OFFICIAL_PROFILE_PROMOTION_WITH_RESTRICTIONS",
+  "accepted_review_run_id": "official_market_state_candidate_promotion_review_v0_1_20260723T192107Z",
+  "allowed_outputs": [
+    "pre_manifest.json",
+    "heartbeat.json",
+    "evidence_inventory_report.csv",
+    "promotion_review_restrictions_report.csv",
+    "promotion_review_decision.json",
+    "final_manifest.json",
+    "readout.md"
+  ],
+  "authority_boundary": {
+    "candidate_parquet_copy_allowed": false,
+    "dataset_promotion_allowed": false,
+    "downstream_consumption_allowed": false,
+    "full_history_execution_allowed": false,
+    "full_universe_execution_allowed": false,
+    "official_market_state_allowed": false,
+    "official_parquet_write_allowed": false,
+    "official_profile_promotion_allowed": false,
+    "production_builder_allowed": false,
+    "source_market_data_reads_allowed": false
+  },
+  "authorized_actions": [
+    "evidence_inventory",
+    "restriction_classification",
+    "sufficiency_review",
+    "promotion_review_decision"
+  ],
+  "authorized_decision_values": [
+    "APPROVED_FOR_OFFICIAL_PROFILE_PROMOTION_WITH_RESTRICTIONS",
+    "BLOCKED_PENDING_EVIDENCE",
+    "REJECTED_FOR_OFFICIAL_PROFILE_PROMOTION"
+  ],
+  "blocking_criteria": [
+    "schema_contract_mismatch",
+    "unresolved_source_to_physical_mismatch",
+    "fingerprint_mismatch",
+    "temporal_leakage",
+    "calendar_authority_mismatch",
+    "nondeterministic_semantic_rebuild",
+    "unclassified_breaking_change_in_common_materializer_or_validator",
+    "missing_accepted_run_artifact",
+    "unclear_canonical_grain_or_primary_key"
+  ],
+  "date": "2026-07-23",
+  "gate": "official_market_state_candidate_promotion_review_v0_1",
+  "next_allowed_gate_if_approved": "official_market_state_candidate_promotion_authorization_v0_1",
+  "next_allowed_gate_if_blocked": "evidence_completion_or_review_scope_revision_only",
+  "required_artifacts": [
+    {
+      "artifact_id": "scale_c_builder_resolution_records",
+      "expected_records": 480,
+      "path": "runs/experimental_core_four_market_state_scale_c_builder_resolution_execution_v0_1_20260723T184203Z/core_four_resolution_records.jsonl",
+      "sha256": "ba120dac1d9462cf223cb86ba232edbc51a08c0238e5fc45ac9dfaf3e3842a8c"
+    },
+    {
+      "artifact_id": "scale_c_builder_final_manifest",
+      "path": "runs/experimental_core_four_market_state_scale_c_builder_resolution_execution_v0_1_20260723T184203Z/final_manifest.json",
+      "sha256": "8b82b1b570e819547f0c86a86705c839c5e0362792bd17c9bf3eaa4cbc797ca0"
+    },
+    {
+      "artifact_id": "scale_c_integration_candidate_records",
+      "expected_records": 104,
+      "path": "runs/experimental_core_four_market_state_scale_c_market_state_integration_execution_v0_1_20260723T184533Z/market_state_candidate_records.jsonl",
+      "sha256": "e166ad63a571327455047ed166e347e0c9c4d18dd233bf0986bc6980b1f1d7f6"
+    },
+    {
+      "artifact_id": "scale_c_integration_final_manifest",
+      "path": "runs/experimental_core_four_market_state_scale_c_market_state_integration_execution_v0_1_20260723T184533Z/final_manifest.json",
+      "sha256": "3f7cf1297ed348b6b9042e5ab631dffb20e623ca514d2825f9189162138671c8"
+    },
+    {
+      "artifact_id": "scale_c_candidate_parquet",
+      "expected_rows": 104,
+      "path": "runs/experimental_scale_c_ms_candidate_materialization_v0_1_20260723T184752Z/core_four_market_state_scale_c_candidate_v0_1.parquet",
+      "sha256": "b1841f4897a759de8ec9a317bece888a9ff817da3df2cd0eb477b4ed950775a2"
+    },
+    {
+      "artifact_id": "scale_c_materialization_final_manifest",
+      "path": "runs/experimental_scale_c_ms_candidate_materialization_v0_1_20260723T184752Z/final_manifest.json",
+      "sha256": "2f768216736c6e89abaa3937e20d3d9324d9c645a2a5651c8be23ad220024445"
+    },
+    {
+      "artifact_id": "scale_c_physical_validation_final_manifest",
+      "path": "runs/core_four_market_state_scale_c_candidate_physical_validation_v0_1_20260723T184900Z/final_manifest.json",
+      "sha256": "6d674778b462da0f7e09c9a0c8f85f2a6c9fb50d3713ef68f3eac71872ca2ace"
+    },
+    {
+      "artifact_id": "scale_c_physical_value_reconciliation_report",
+      "expected_value_mappings": 1768,
+      "path": "runs/core_four_market_state_scale_c_candidate_physical_validation_v0_1_20260723T184900Z/value_reconciliation_report.csv",
+      "sha256": "ac67065764fe53f6e271f8dcc8cdfc08e54038fcb8507d28e6a199af6e435b6a"
+    }
+  ],
+  "required_invariants": {
+    "dataset_promotion_executed": false,
+    "hard_validation_failures": 0,
+    "integrated_candidate_records": 104,
+    "official_parquet_files_written": 0,
+    "physical_candidate_rows": 104,
+    "resolution_records": 480,
+    "semantic_rebuild_field_comparisons": 3848,
+    "source_market_data_rows_read_during_review": 0,
+    "value_mappings_checked": 1768
+  },
+  "reviewed_object": {
+    "complete_tsis_market_state": false,
+    "profile_classification": "official_profile_candidate",
+    "profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "profile_scope": "bounded_validated_core_four_intraday_market_state_profile"
+  },
+  "scale_c_closure": {
+    "builder_resolution_run_id": "experimental_core_four_market_state_scale_c_builder_resolution_execution_v0_1_20260723T184203Z",
+    "candidate_materialization_run_id": "experimental_scale_c_ms_candidate_materialization_v0_1_20260723T184752Z",
+    "candidate_parquet_sha256": "b1841f4897a759de8ec9a317bece888a9ff817da3df2cd0eb477b4ed950775a2",
+    "candidate_physical_validation_run_id": "core_four_market_state_scale_c_candidate_physical_validation_v0_1_20260723T184900Z",
+    "execution_surface_run_id": "experimental_core_four_market_state_scale_c_execution_surface_construction_v0_1_20260723T165402Z",
+    "hard_validation_failures": 0,
+    "integrated_candidate_records": 104,
+    "market_state_integration_run_id": "experimental_core_four_market_state_scale_c_market_state_integration_execution_v0_1_20260723T184533Z",
+    "physical_candidate_rows": 104,
+    "resolution_records": 480,
+    "sample_preflight_run_id": "experimental_core_four_market_state_scale_c_sample_preflight_v0_2_20260723T164132Z",
+    "scale_c_execution_surface_fingerprint": "34db7887874a57658bbbec52cc9b3915f86afdc61b7997e6b930056c0a9cf554",
+    "scale_c_sample_fingerprint": "67d46f6b5f2567b3af82d000bb2a6cb6e05f0546f0be11b1c263586c3bc9515d",
+    "semantic_rebuild_field_comparisons": 3848,
+    "value_mappings_checked": 1768
+  },
+  "scope_id": "official_market_state_candidate_promotion_review_scope_v0_1",
+  "scope_restrictions": {
+    "complete_tsis_market_state": false,
+    "downstream_consumable": false,
+    "full_history": false,
+    "full_universe": false,
+    "production": false,
+    "quote_dependent_objects_excluded": true,
+    "required_information_objects": 4
+  },
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_CONSUMED",
+  "still_closed": [
+    "official_market_state_promotion",
+    "official_parquet_materialization",
+    "production_builder",
+    "downstream_consumption",
+    "full_history_execution",
+    "full_universe_execution"
+  ]
+}

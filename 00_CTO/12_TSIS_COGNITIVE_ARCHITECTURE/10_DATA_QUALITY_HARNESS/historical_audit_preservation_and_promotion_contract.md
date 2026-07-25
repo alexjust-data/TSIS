@@ -11,14 +11,14 @@ Este contrato impide que un agente vuelva a auditar desde cero datasets que ya t
 Antes de crear, reescribir o completar artefactos en:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/
 ```
 
 el agente debe leer, inventariar y reconciliar la auditoria historica preservada en:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/
 ```
 
 La pregunta correcta no es:
@@ -38,11 +38,11 @@ Que verdad historica ya existe, que parte esta promovida a 01_foundations, que p
 Estas rutas son evidencia historica y provenance. Son read-only:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/additional/
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/halts/
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/short/
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/additional/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/halts/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/short/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/
 ```
 
 Prohibido:
@@ -564,9 +564,9 @@ Ademas de las rutas historicas protegidas, se mantienen como read-only:
 ```text
 E:/TSIS/data/
 C:/TSIS_Data/data/
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/data/
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/run/
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/data/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/run/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/
 ```
 
 `E:/TSIS/data/images_Flash_Research` queda fuera de alcance del Data Quality Harness.

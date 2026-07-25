@@ -1,0 +1,307 @@
+{
+  "contract_id": "event_type_registry_seed_design_contract_v0_1",
+  "design_id": "event_type_registry_seed_design_v0_1",
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS",
+  "date": "2026-07-24",
+  "scope": "empty_event_type_registry_schema_status_model_and_admission_workflow",
+  "design_decision": {
+    "event_type_registry_seed_design": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS",
+    "event_type_registry_schema": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS",
+    "event_type_registry_population": "NOT_AUTHORIZED",
+    "accepted_event_families": 0,
+    "accepted_event_types": 0,
+    "event_detection_execution_authorized": false,
+    "event_instance_binding_execution_authorized": false,
+    "event_state_builder_execution_authorized": false
+  },
+  "governing_inputs": [
+    "event_state_event_policy_v0_1.md",
+    "event_type_or_event_family_contract_design_v0_1.md",
+    "event_type_or_event_family_contract_design_contract_v0_1.json",
+    "../06_MARKET_STATE_INTEGRATION/event_state_profile_contract_design_v0_1.md",
+    "../06_MARKET_STATE_INTEGRATION/event_state_profile_contract_design_contract_v0_1.json"
+  ],
+  "parent_market_state_profile": {
+    "profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "semantic_parent_only": true,
+    "physical_market_state_consumption_authorized": false
+  },
+  "registry_identity": {
+    "event_type_registry_id": "tsis_event_type_registry",
+    "event_type_registry_version": "v0_1",
+    "registry_population_state": "empty",
+    "registry_population_authorized": false,
+    "accepted_event_type_count": 0
+  },
+  "top_level_sections": [
+    "registry_metadata",
+    "family_entries",
+    "type_entries",
+    "variant_entries",
+    "composition_entries",
+    "admission_review_records",
+    "supersession_records",
+    "closed_boundary_attestation"
+  ],
+  "status_model": {
+    "allowed_entry_statuses": [
+      "investigational_candidate",
+      "contract_draft",
+      "accepted_with_restrictions",
+      "accepted",
+      "rejected",
+      "quarantined",
+      "superseded"
+    ],
+    "event_instance_binding_allowed_statuses": [
+      "accepted_with_restrictions",
+      "accepted"
+    ],
+    "non_binding_statuses": [
+      "investigational_candidate",
+      "contract_draft",
+      "rejected",
+      "quarantined",
+      "superseded"
+    ]
+  },
+  "namespace_rules": {
+    "allowed_candidate_family_namespaces": [
+      "market_data",
+      "regulatory",
+      "market_structure",
+      "information",
+      "scanner",
+      "geometry",
+      "microstructure",
+      "research"
+    ],
+    "allowed_event_domains": [
+      "market",
+      "information",
+      "microstructure",
+      "regulatory",
+      "system",
+      "research",
+      "scanner"
+    ],
+    "allowed_event_epistemic_roles": [
+      "observed_phenomenon",
+      "system_generated_candidate",
+      "research_annotation",
+      "governance_state_change"
+    ],
+    "allowed_namespaces_are_accepted_registry_entries": false
+  },
+  "family_entry_schema": {
+    "required_fields": [
+      "event_family_id",
+      "event_family_version",
+      "event_family_namespace",
+      "canonical_name",
+      "semantic_definition",
+      "observable_origin",
+      "anchor_definition_policy",
+      "eligible_event_domain_values",
+      "eligible_event_epistemic_role_values",
+      "allowed_event_type_namespace",
+      "forbidden_strategy_labels",
+      "status",
+      "definition_hash",
+      "admission_review_record_id",
+      "created_at_utc",
+      "supersedes_family_id",
+      "superseded_by_family_id"
+    ],
+    "validation_requirements": [
+      "event_family_id is unique within registry version",
+      "status is one of the allowed status values",
+      "definition_hash is present for non-draft entries",
+      "accepted family entries require admission_review_record_id",
+      "strategy, outcome and profitability labels are forbidden in identity"
+    ]
+  },
+  "type_entry_schema": {
+    "required_fields": [
+      "event_type_id",
+      "event_type_version",
+      "event_family_id",
+      "event_domain",
+      "event_epistemic_role",
+      "canonical_name",
+      "semantic_definition",
+      "observable_origin",
+      "source_dataset_authority",
+      "source_quality_requirements",
+      "event_anchor_timestamp_policy",
+      "first_observable_timestamp_policy",
+      "detection_timestamp_policy",
+      "confirmation_timestamp_policy",
+      "invalidation_timestamp_policy",
+      "end_timestamp_policy",
+      "eligibility_policy_id",
+      "population_policy_id",
+      "window_policy_id",
+      "allowed_state_roles",
+      "allowed_consumption_legality",
+      "detector_contract_id",
+      "detector_version",
+      "detector_required",
+      "event_variant_policy",
+      "composition_allowed",
+      "status",
+      "definition_hash",
+      "admission_review_record_id",
+      "created_at_utc",
+      "supersedes_event_type_id",
+      "superseded_by_event_type_id"
+    ],
+    "validation_requirements": [
+      "event_type_id is unique within registry version",
+      "event_family_id resolves to exactly one family entry",
+      "event_domain is explicit",
+      "event_epistemic_role is explicit",
+      "timestamp policies are explicit",
+      "source_dataset_authority is explicit",
+      "accepted entries require definition_hash",
+      "accepted entries require admission_review_record_id",
+      "accepted entries require detector_contract_id unless detector_required = false",
+      "strategy, trade action, outcome, profitability and reward labels are forbidden"
+    ]
+  },
+  "variant_entry_schema": {
+    "required_fields": [
+      "event_variant_id",
+      "event_variant_version",
+      "parent_event_type_id",
+      "implementation_parameters",
+      "threshold_policy",
+      "detector_variant_version",
+      "status",
+      "variant_hash",
+      "admission_review_record_id"
+    ],
+    "variants_may_change_scientific_meaning": false,
+    "variants_may_encode_strategy_rules": false
+  },
+  "composition_entry_schema": {
+    "required_fields": [
+      "event_composition_id",
+      "event_composition_version",
+      "component_event_type_ids",
+      "composition_semantics",
+      "temporal_order_policy",
+      "overlap_policy",
+      "status",
+      "definition_hash",
+      "admission_review_record_id"
+    ],
+    "compositions_replace_elemental_types": false
+  },
+  "admission_review_record_schema": {
+    "required_fields": [
+      "admission_review_record_id",
+      "reviewed_entry_id",
+      "reviewed_entry_kind",
+      "reviewed_entry_version",
+      "review_decision",
+      "reviewed_at_utc",
+      "reviewer_authority",
+      "evidence_bundle_id",
+      "source_authority_check",
+      "temporal_legality_check",
+      "leakage_check",
+      "strategy_outcome_boundary_check",
+      "detector_contract_check",
+      "market_state_compatibility_check",
+      "known_restrictions",
+      "blocking_findings"
+    ],
+    "allowed_review_decisions": [
+      "approve_with_restrictions",
+      "approve",
+      "reject",
+      "quarantine",
+      "request_revision"
+    ],
+    "accepted_event_type_required_review_decisions": [
+      "approve_with_restrictions",
+      "approve"
+    ]
+  },
+  "identity_rules": {
+    "event_family_id_pattern": "event_family:<namespace>:<slug>",
+    "event_type_id_pattern": "event_type:<namespace>:<slug>",
+    "event_variant_id_pattern": "event_variant:<event_type_slug>:<variant_slug>",
+    "event_composition_id_pattern": "event_composition:<slug>",
+    "forbidden_identity_tokens": [
+      "long",
+      "short",
+      "buy",
+      "sell",
+      "profit",
+      "winner",
+      "edge",
+      "alpha",
+      "reward",
+      "best",
+      "high_probability"
+    ]
+  },
+  "future_instance_binding_requirements": [
+    "event_type_id resolves to exactly one registry entry",
+    "entry status is accepted_with_restrictions or accepted",
+    "event_family_id resolves to exactly one registry entry",
+    "definition_hash matches the registry entry",
+    "source_dataset_authority is satisfied",
+    "timestamp policies are satisfied",
+    "detector authority is satisfied when detector_required = true"
+  ],
+  "closed_boundaries": {
+    "event_type_registry_population_authorized": false,
+    "event_type_admission_execution_authorized": false,
+    "event_detection_execution_authorized": false,
+    "event_instance_binding_execution_authorized": false,
+    "event_window_binding_execution_authorized": false,
+    "market_state_physical_consumption_authorized": false,
+    "event_state_builder_execution_authorized": false,
+    "event_state_integration_execution_authorized": false,
+    "event_state_materialization_authorized": false,
+    "event_state_physical_validation_authorized": false,
+    "official_event_state_profile_promotion_authorized": false,
+    "official_event_state_dataset_promotion_authorized": false,
+    "production_authorized": false,
+    "downstream_consumption_authorized": false
+  },
+  "empty_registry_invariants": {
+    "family_entries": 0,
+    "type_entries": 0,
+    "variant_entries": 0,
+    "composition_entries": 0,
+    "accepted_event_families": 0,
+    "accepted_event_types": 0
+  },
+  "next_allowed_gate": "event_type_registry_initial_population_authorization_v0_1",
+  "next_gate_requires_explicit_authorization": true,
+  "namespace_extension_note": {
+    "regulatory": "candidate namespace allowed for regulatory event types such as halt_resumed; this does not create accepted family entries."
+  },
+  "candidate_population_current_state_note": {
+    "pending_admission_review_marker": "investigational_candidate entries may carry pending_admission_review_not_authorized after initial population; this is not an admission review and blocks Event Instance binding."
+  },
+  "future_schema_considerations": {
+    "event_identity_stability": {
+      "status": "FUTURE_V0_2_CONSIDERATION_NOT_REQUIRED_BY_V0_1",
+      "candidate_values": [
+        "immutable",
+        "conditionally_stable",
+        "source_dependent",
+        "experimental"
+      ],
+      "purpose": "Separate administrative status from epistemic stability before the registry grows materially.",
+      "current_snapshot_impact": "none",
+      "candidate_population_reopened": false,
+      "accepted_event_types_changed": false
+    }
+  }
+}

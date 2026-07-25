@@ -1,0 +1,157 @@
+[
+  {
+    "title": "Empirical Market Microstructure",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Preface",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Contents",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Part I: Univariate models of security prices",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Chapter 1. Market microstructure: an overview",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter 2. The long-term dynamics of security prices",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter 3.\rA dealer market with fixed transaction costs: the Roll\rmodel",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter 4.\rMoving average and autoregressive representations of\rprice changes",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter 5. Sequential trade models of asymmetric information",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter 6. Strategic trade models of asymmetric information",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter 7. The generalized Roll model",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter 8. Univariate random-walk decompositions",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter 9. Estimation of time series models",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Part II: Multivariate models of trades and prices",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Chapter 10. The trade process and inventory control",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter 11. Random walks, etc.",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter 12. Multivariate time series",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter 13. Prices and trades: statistical models",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter 14. Prices and trades: structural models",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter 15. The probability of informed trading (PIN)",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter 16. What do measures of information asymmetry tell us?",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter 17. Linked prices: cointegration and price discovery",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Part III: Limit orders",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Chapter 18. Limit orders and dealer quotes",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter 19. Bidding and offering with uncertain execution",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter 20. Limit order submission strategies",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter 21. Dynamic equilibrium models",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Part IV: Microstructure and asset pricing",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Chapter 22. Trading and asset pricing with fixed transaction costs",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Appendix: US equity markets: overview and\rrecent history",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Bibliography",
+    "depth": 0,
+    "page": null
+  }
+]

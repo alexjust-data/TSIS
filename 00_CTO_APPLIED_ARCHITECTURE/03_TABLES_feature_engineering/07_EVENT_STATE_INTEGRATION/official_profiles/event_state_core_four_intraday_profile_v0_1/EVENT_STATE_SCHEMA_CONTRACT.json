@@ -1,0 +1,206 @@
+{
+  "candidate_records_checked": 8,
+  "candidate_schema_version_reference": "event_state_candidate_schema_v0_1",
+  "event_state_profile_id": "event_state_core_four_intraday_profile_v0_1",
+  "field_contract": [
+    {
+      "field_name": "event_state_record_id",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "event_state_profile_id",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "event_state_schema_version",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "integration_policy_id",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "integration_policy_version",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "event_type_id",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "event_family_id",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "event_instance_id",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "event_instance_version",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "event_window_definition_id",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "event_window_binding_id",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "event_state_instrument_session_projection_id",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "source_market_state_profile_id",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "source_market_state_schema_version",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "market_state_record_id",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "state_output_fingerprint",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "instrument_id",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "ticker",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "exchange_id",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "session_date",
+      "logical_type": "date_string",
+      "required": "true"
+    },
+    {
+      "field_name": "decision_timestamp_utc",
+      "logical_type": "timestamp_utc_string",
+      "required": "true"
+    },
+    {
+      "field_name": "event_anchor_timestamp_utc",
+      "logical_type": "timestamp_utc_string",
+      "required": "true"
+    },
+    {
+      "field_name": "window_start_utc",
+      "logical_type": "timestamp_utc_string",
+      "required": "true"
+    },
+    {
+      "field_name": "window_end_utc",
+      "logical_type": "timestamp_utc_string",
+      "required": "true"
+    },
+    {
+      "field_name": "relative_time_to_event",
+      "logical_type": "iso8601_duration_string",
+      "required": "true"
+    },
+    {
+      "field_name": "state_role",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "consumption_legality",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "object_completeness_status",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "integration_status",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "quality_status",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "calendar_version",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "calendar_row_fingerprint",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "source_lineage_json",
+      "logical_type": "json_string",
+      "required": "true"
+    },
+    {
+      "field_name": "policy_versions_json",
+      "logical_type": "json_string",
+      "required": "true"
+    },
+    {
+      "field_name": "restriction_codes_json",
+      "logical_type": "json_string",
+      "required": "true"
+    },
+    {
+      "field_name": "created_at_utc",
+      "logical_type": "timestamp_utc_string",
+      "required": "true"
+    },
+    {
+      "field_name": "supersedes_event_state_record_id",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    },
+    {
+      "field_name": "superseded_by_event_state_record_id",
+      "logical_type": "string_or_profile_defined_scalar",
+      "required": "true"
+    }
+  ],
+  "field_count": 38,
+  "physical_validation_schema_failures": 0,
+  "profile_schema_contract_id": "event_state_core_four_intraday_profile_schema_contract_v0_1",
+  "schema_authority": [
+    "event_state_integration_design_contract_v0_1",
+    "event_state_bounded_execution_chain_physical_validation_v0_1_20260724T193214Z"
+  ],
+  "schema_scope": "official_semantic_profile_schema_not_official_physical_dataset_schema",
+  "source_market_state_schema_version": "core_four_market_state_candidate_physical_schema_v0_1"
+}

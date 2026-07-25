@@ -134,7 +134,7 @@ No unresolved `authority_conflict` has been identified.
                                                                                                                                                                             information from                       
                                                                                                                                                                             entering state.                        
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\market_state_event_state_composition_contract_v0_1.md`   `Primary key and composition`   Defines the             `supporting`   `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\market_state_event_state_composition_contract_v0_1.md`   `Primary key and composition`   Defines the             `supporting`   `verified_current`
                                                                                                                                                                             relationship between                   
                                                                                                                                                                             Market State and Event                 
                                                                                                                                                                             State and the                          
@@ -142,18 +142,18 @@ No unresolved `authority_conflict` has been identified.
                                                                                                                                                                             identity of a state                    
                                                                                                                                                                             row.                                   
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_builder_contract_v0_1.md`                          `Flujo Correcto`;               Defines the controlled  `supporting`   `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_builder_contract_v0_1.md`                          `Flujo Correcto`;               Defines the controlled  `supporting`   `verified_current`
                                                                                                                                             `Acceptance Criteria`           engineering path that                  
                                                                                                                                                                             may realize the                        
                                                                                                                                                                             representation after                   
                                                                                                                                                                             governance approval.                   
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_decision_timestamp_policy_v0_1.md`                 `Decision Timestamp Policy`     Defines the             `supporting`   `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_decision_timestamp_policy_v0_1.md`                 `Decision Timestamp Policy`     Defines the             `supporting`   `verified_current`
                                                                                                                                                                             implementation-facing                  
                                                                                                                                                                             timestamp policy for                   
                                                                                                                                                                             state rows.                            
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_observable_eligibility_contract_v0_1.md`           `Observable Eligibility`        Defines which           `supporting`   `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_observable_eligibility_contract_v0_1.md`           `Observable Eligibility`        Defines which           `supporting`   `verified_current`
                                                                                                                                                                             components may be                      
                                                                                                                                                                             eligible for state                     
                                                                                                                                                                             construction.                          

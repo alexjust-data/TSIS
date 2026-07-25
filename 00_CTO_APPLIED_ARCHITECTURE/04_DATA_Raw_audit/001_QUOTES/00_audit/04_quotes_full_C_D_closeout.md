@@ -9,9 +9,9 @@ Aqui queda la lectura ejecutiva y defendible de la auditoria de `quotes`, apoyad
 ## Base actual
 
 - Dataset source:
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\quotes_v2_materialized\quotes_current_cd_merged\quotes_current.parquet`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\quotes_v2_materialized\quotes_current_cd_merged\quotes_current.parquet`
 - Universo operativo `<1B>`:
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\market_cap_last_observed_cutoff\20260320_market_cap_last_observed_cutoff\market_cap_cutoff_lt_1b_active_inactive.parquet`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\market_cap_last_observed_cutoff\20260320_market_cap_last_observed_cutoff\market_cap_cutoff_lt_1b_active_inactive.parquet`
 - Merge verificado:
   `verification_passed = true`
 - Filas merged source actuales:
@@ -47,7 +47,7 @@ Capas incluidas:
 Este cierre `v2` depende de los artefactos generados por:
 
 ```sh
-python "C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\quotes\v2\cell_code\build_quotes_cd_audit_artifacts_v2.py"
+python "C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\quotes\v2\cell_code\build_quotes_cd_audit_artifacts_v2.py"
 ```
 
 ## Narrativa de cierre fijada

@@ -2,7 +2,7 @@
 
 Fecha: 2026-06-11
 Estado: snapshot auditor y mapa operativo v0.1
-Ambito: `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations`
+Ambito: `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations`
 Destino: diseno de Harness agentic para auditoria de data en tiempo real
 
 ## 0. Proposito ejecutivo
@@ -35,7 +35,7 @@ CSV, Parquet, PNG, notebooks y referencias cruzadas.
 
 ### 1.1 Corpus leido
 
-- Ruta leida: `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations`
+- Ruta leida: `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations`
 - Archivos totales leidos: 1,961
 - Bytes leidos: 540,904,131
 - Errores de lectura: 0

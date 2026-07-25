@@ -1,0 +1,54 @@
+{
+  "authorization_id": "market_state_candidate_dataset_registry_design_authorization_v0_1",
+  "closure_invariants": {
+    "dataset_registry_entries_written": 0,
+    "datasets_promoted": 0,
+    "datasets_registered": 0,
+    "datasets_superseded": 0,
+    "downstream_consumption": false,
+    "official_market_state_dataset": false,
+    "production": false,
+    "quarantine_transitions": 0,
+    "registry_entries_written": 0,
+    "registry_runtime_reads": 0
+  },
+  "date": "2026-07-25",
+  "design_allowed": {
+    "candidate_dataset_registry_design_allowed": true
+  },
+  "design_questions": [
+    "How is one candidate Market State dataset identified in the registry?",
+    "Which fingerprints and manifests must be referenced by a registry entry?",
+    "How are registry status, validation status, reuse eligibility, promotion review eligibility and downstream eligibility separated?",
+    "How are requested and effective coverage recorded without relying only on date ranges?",
+    "How are supersession and quarantine represented without deleting prior evidence?",
+    "Which actions remain outside candidate registry authority?"
+  ],
+  "forbidden_actions": {
+    "candidate_file_read_allowed": false,
+    "dataset_promotion_allowed": false,
+    "dataset_registration_allowed": false,
+    "dataset_supersession_allowed": false,
+    "downstream_consumption_allowed": false,
+    "market_state_materialization_allowed": false,
+    "official_dataset_write_allowed": false,
+    "production_allowed": false,
+    "quarantine_transition_allowed": false,
+    "registry_entry_write_allowed": false,
+    "registry_runtime_read_allowed": false,
+    "source_data_read_allowed": false,
+    "validation_execution_allowed": false
+  },
+  "gate": "market_state_candidate_dataset_registry_design_v0_1",
+  "next_allowed_gate": "market_state_run_lifecycle_and_manifest_design_v0_1",
+  "parent_execution_plan_contract": "market_state_execution_plan_contract_v0_1",
+  "parent_gate": "market_state_validator_design_v0_1",
+  "parent_materializer_contract": "market_state_materializer_contract_v0_1",
+  "parent_profile_resolver_contract": "market_state_profile_resolver_contract_v0_1",
+  "parent_request_contract": "market_state_request_contract_v0_1",
+  "parent_runtime_architecture": "runtime_capabilities_architecture_v0_1",
+  "parent_validator_contract": "market_state_validator_contract_v0_1",
+  "scope_id": "market_state_candidate_dataset_registry_design_scope_v0_1",
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+  "target_contract": "market_state_candidate_dataset_registry_contract_v0_1"
+}

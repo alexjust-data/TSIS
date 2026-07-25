@@ -18,7 +18,7 @@ Companions explicativos:
 
 - `promotion_state`: `institutional`
 - `contract_version`: `v0_1`
-- `owner`: `01_TSIS_backtest_SmallCaps`
+- `owner`: `01_TSIS_DATA_FOUNDATION`
 - `active`: `true`
 
 ## 3. purpose

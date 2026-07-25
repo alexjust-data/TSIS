@@ -1,6 +1,6 @@
 
 Este documento surge por la inquietud de obtener toda la data posible del mercado de SmallCaps.  
-En el documento [DAS_0003_DATA_DESEADA_EN_LIVE](C:\TSIS_Data\00_TSIS_Lab\04_experiments\EXP_DAS_FIRST_IMPULSE_REALTIME_DETECTION_0003\DAS_0003_DATA_DESEADA_EN_LIVE.md) detalla las definiciones de:
+En el documento [DAS_0003_DATA_DESEADA_EN_LIVE](C:\TSIS_Data\03_TSIS_Lab\04_experiments\EXP_DAS_FIRST_IMPULSE_REALTIME_DETECTION_0003\DAS_0003_DATA_DESEADA_EN_LIVE.md) detalla las definiciones de:
 
 - L3 / Market-By-Order / Order Lifecycle
 - L2 / Market-By-Price Depth

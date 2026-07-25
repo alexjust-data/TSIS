@@ -1,0 +1,219 @@
+{
+  "date": "2026-07-25",
+  "fingerprint_chain": [
+    {
+      "fingerprint": "request_fingerprint",
+      "owner": "market_state_request_contract_v0_1",
+      "purpose": "normalized request intent"
+    },
+    {
+      "fingerprint": "resolved_profile_fingerprint",
+      "owner": "market_state_profile_resolver_contract_v0_1",
+      "purpose": "resolved semantic profile and restrictions"
+    },
+    {
+      "fingerprint": "resolved_universe_fingerprint",
+      "owner": "market_state_universe_resolver_contract_v0_1",
+      "purpose": "point-in-time legal instrument-session scope"
+    },
+    {
+      "fingerprint": "resolved_source_set_fingerprint",
+      "owner": "market_state_source_resolver_contract_v0_1",
+      "purpose": "governed source alias resolution"
+    },
+    {
+      "fingerprint": "partition_coverage_resolution_fingerprint",
+      "owner": "market_state_partition_and_coverage_resolver_contract_v0_1",
+      "purpose": "logical partition disposition and coverage"
+    },
+    {
+      "fingerprint": "execution_plan_fingerprint",
+      "owner": "market_state_execution_plan_contract_v0_1",
+      "purpose": "complete frozen resolution of one valid request"
+    },
+    {
+      "fingerprint": "candidate_dataset_fingerprint",
+      "owner": "market_state_materializer_contract_v0_1",
+      "purpose": "candidate output content and construction context"
+    },
+    {
+      "fingerprint": "validation_result_fingerprint",
+      "owner": "market_state_validator_contract_v0_1",
+      "purpose": "normalized validation result over candidate output"
+    },
+    {
+      "fingerprint": "registry_entry_fingerprint",
+      "owner": "market_state_candidate_dataset_registry_contract_v0_1",
+      "purpose": "registry statement about candidate dataset status and eligibility"
+    }
+  ],
+  "gate": "market_state_on_demand_execution_chain_joint_review_v0_1",
+  "hard_findings": [],
+  "invariant_review": [
+    {
+      "invariant": "Request declares intent; Execution Plan declares resolved construction.",
+      "status": "PASS",
+      "evidence": [
+        "market_state_request_contract_v0_1",
+        "market_state_execution_plan_contract_v0_1"
+      ]
+    },
+    {
+      "invariant": "Materializer consumes a frozen authorized plan and may not re-resolve profile, universe, sources or coverage.",
+      "status": "PASS",
+      "evidence": [
+        "market_state_materializer_contract_v0_1"
+      ]
+    },
+    {
+      "invariant": "Each required profile, universe, source and partition/coverage responsibility has exactly one owner.",
+      "status": "PASS",
+      "evidence": [
+        "ownership_matrix"
+      ]
+    },
+    {
+      "invariant": "Validator evaluates candidate output without repairing, rebuilding, re-resolving, registering or promoting.",
+      "status": "PASS",
+      "evidence": [
+        "market_state_validator_contract_v0_1"
+      ]
+    },
+    {
+      "invariant": "Candidate Dataset Registry records identity, evidence, status and eligibility without materializing, validating, promoting or consuming.",
+      "status": "PASS",
+      "evidence": [
+        "market_state_candidate_dataset_registry_contract_v0_1"
+      ]
+    },
+    {
+      "invariant": "Run Lifecycle records run identity, status, heartbeat and manifests without executing by itself.",
+      "status": "PASS",
+      "evidence": [
+        "market_state_run_lifecycle_and_manifest_contract_v0_1"
+      ]
+    },
+    {
+      "invariant": "Downstream consumption and official dataset promotion remain closed.",
+      "status": "PASS",
+      "evidence": [
+        "hard_boundaries"
+      ]
+    }
+  ],
+  "next_allowed_gate": "market_state_bounded_on_demand_execution_authorization_v0_1",
+  "non_blocking_restrictions": [
+    {
+      "restriction_id": "partition_disposition_name_reconciliation",
+      "severity": "RESTRICTION",
+      "description": "Execution Plan v0.1 contains legacy missing_partitions wording. Partition/Coverage Resolver v0.1 refines the final disposition model to reusable_validated, to_build, to_rebuild, unavailable, quarantined and blocked. Future bounded execution authorization must freeze the refined Partition/Coverage Resolver disposition model and not reintroduce overlapping missing vs blocked semantics.",
+      "blocking": false
+    },
+    {
+      "restriction_id": "bounded_execution_scope_required",
+      "severity": "RESTRICTION",
+      "description": "Joint review approval allows opening a bounded execution authorization only. It does not authorize request creation, resolver execution, materialization, validation, registry writes, production or downstream use.",
+      "blocking": false
+    }
+  ],
+  "ownership_matrix": [
+    {
+      "responsibility": "request field ownership",
+      "owner": "Market State Request Contract",
+      "supporting_components": [],
+      "ownership_status": "one_owner"
+    },
+    {
+      "responsibility": "profile resolution ownership",
+      "owner": "Profile Resolver",
+      "supporting_components": [
+        "Execution Plan"
+      ],
+      "ownership_status": "one_owner"
+    },
+    {
+      "responsibility": "universe resolution ownership",
+      "owner": "Universe Resolver",
+      "supporting_components": [
+        "Execution Plan"
+      ],
+      "ownership_status": "one_owner"
+    },
+    {
+      "responsibility": "source resolution ownership",
+      "owner": "Source Resolver",
+      "supporting_components": [
+        "Execution Plan"
+      ],
+      "ownership_status": "one_owner"
+    },
+    {
+      "responsibility": "coverage classification ownership",
+      "owner": "Partition and Coverage Resolver",
+      "supporting_components": [
+        "Execution Plan"
+      ],
+      "ownership_status": "one_owner"
+    },
+    {
+      "responsibility": "plan freezing ownership",
+      "owner": "Execution Plan",
+      "supporting_components": [
+        "Request Contract",
+        "Profile Resolver",
+        "Universe Resolver",
+        "Source Resolver",
+        "Partition and Coverage Resolver"
+      ],
+      "ownership_status": "one_owner"
+    },
+    {
+      "responsibility": "run state ownership",
+      "owner": "Run Lifecycle",
+      "supporting_components": [],
+      "ownership_status": "one_owner"
+    },
+    {
+      "responsibility": "output writing ownership",
+      "owner": "Materializer",
+      "supporting_components": [
+        "Run Lifecycle"
+      ],
+      "ownership_status": "one_owner"
+    },
+    {
+      "responsibility": "validation ownership",
+      "owner": "Validator",
+      "supporting_components": [],
+      "ownership_status": "one_owner"
+    },
+    {
+      "responsibility": "candidate registry ownership",
+      "owner": "Candidate Dataset Registry",
+      "supporting_components": [
+        "Validator"
+      ],
+      "ownership_status": "one_owner"
+    },
+    {
+      "responsibility": "promotion ownership",
+      "owner": "future promotion gate, not current runtime chain",
+      "supporting_components": [],
+      "ownership_status": "closed_future_gate_required"
+    },
+    {
+      "responsibility": "downstream ownership",
+      "owner": "future consumption policy gate, not current runtime chain",
+      "supporting_components": [],
+      "ownership_status": "closed_future_gate_required"
+    }
+  ],
+  "review_decision": "APPROVED_FOR_BOUNDED_EXECUTION_AUTHORIZATION_WITH_RESTRICTIONS",
+  "status": "CLOSED_APPROVED_FOR_BOUNDED_EXECUTION_AUTHORIZATION_WITH_RESTRICTIONS_NO_EXECUTION",
+  "summary_counts": {
+    "hard_findings": 0,
+    "ownership_rows": 12,
+    "restriction_findings": 2,
+    "reviewed_contracts": 10
+  }
+}

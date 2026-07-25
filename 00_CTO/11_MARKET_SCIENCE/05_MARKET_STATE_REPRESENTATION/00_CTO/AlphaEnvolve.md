@@ -896,7 +896,7 @@ sobre qué hay y qué no:
 
   Y los contratos reales los plantaría así:
 
-  C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\
+  C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\
     state_observable_eligibility_contract_v0_1.md
     state_decision_timestamp_policy_v0_1.md
     state_snapshot_roles_contract_v0_1.md

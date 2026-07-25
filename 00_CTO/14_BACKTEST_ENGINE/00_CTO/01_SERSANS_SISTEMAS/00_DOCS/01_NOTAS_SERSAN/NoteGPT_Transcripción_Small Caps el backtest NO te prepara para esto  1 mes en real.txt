@@ -1,0 +1,50 @@
+00:00:00 - 00:01:09
+Hemos cumplido nuestro primer mes operando small caps con algoritmos y la conclusión más importante no es lo que hemos ganado o perdido, que también te lo voy a decir, ¿eh? No te creas. La conclusión es que operar smallcaps de verdad no se parece casi nada a un back test. En este vídeo te voy a contar nuestras primeras impresiones. ¿Qué nos ha sorprendido? ¿Qué problemas han aparecido? Y porque ahora todavía tengo más claro que para operar esto con sentido necesitas una base seria de trading algorítmico. Empezamos
+
+00:00:37 - 00:01:47
+de las small caps. Desde fuera parece que las small caps son el paraíso del trader. Volatilidad, movimientos rápidos, acciones que se disparan o se hunden oportunidades todos los días. Pero esa es la parte bonita, la parte más estética. La parte fea es que todo lo que en otros mercados puedes ignorarlo aquí se vuelve crítico. Si tuviera que resumirlo, lo haría con estos ocho conceptos. Liquidez, que haya precio no significa que haya contrapartida. Premarket, la película empieza antes de la apertura. Halts, el
+
+00:01:12 - 00:02:34
+mercado puede apagarte la salida. Spreads, la horquilla también cobra comisión. Look at querer ponerse corto no significa poder hacerlo. Slipage en backtest entras donde quieres, en reales. Datos sucios. Si el dato miente, la curva y los resultados también. Ejecución de bacteria real. Como sabes, llevamos muchos años en esto del trading algorítmico y no nos planteábamos operar sin hacer el trabajo que siempre defendemos. datos, back testing, validación, sesgos, robustez y cómo evitar trampas. Porque antes de operar
+
+00:01:53 - 00:03:03
+algo en realidad, esto es clave en trading algorímico y eso conecta directamente con lo que enseñamos en el curso de algorímico, no buscar trucos, sino construir sistemas que no se caigan al primer contacto con la realidad. Y en Small Caps esto es lo más delicado y complicado. Ciertamente operar no es fácil tampoco, no te digo eso, pero hacer un back serio en Small Caps es una odisea. De hecho, en algunos momentos del proceso, te lo confieso, hemos dudado de si sería posible hacer un back test realmente serio. Puedes
+
+00:02:30 - 00:03:41
+tener una curva preciosa simplemente porque tus datos están mal, porque tu universo está sesgado o porque asumes ejecuciones que jamás habrías conseguido. Simular la realidad es muy complicado en Small Caps. Ya publicamos un par de artículos en en nuestra web sobre ello, eh, back testing en small caps, cuando los datos te engañan sin avisar y la operativa algorímica en small caps empieza con los datos. Esto lo tienes publicado en nuestra web, en nuestro blog, y eh pues explicamos un poquito todos estos problemas que te
+
+00:03:06 - 00:04:18
+comento. Primer operando automáticamente. Hemos terminado nuestro primer mes con operativa automática registrada. Ha habido operaciones, métricas, informes, errores, ajustes y mucho aprendizaje. Los números iniciales son positivos, pero quiero ser muy prudente. Un mes no demuestra nada. Lo importante no es decir, "Ya está, ya funciona, ya lo tenemos." Lo importante es que ahora estamos en la fase en que cada trade, cada operación nos da información real. ¿Estás viendo el informe de operativa de este mes que
+
+00:03:42 - 00:04:55
+hemos creado para monitorizar el sistema? 48 trades, que son muy pocos, obviamente, resultado neto positivo. Bueno, está bien. De hecho, si lo anualizamos daría aproximadamente un 80% de down controlado. Y un Sharp muy alto, Shar7, pero cuidado, esto es solo un mes. Si anualizas un mes bueno, salen números espectaculares. Precisamente por eso no quiero venderlo como una conclusión. No quiero que te quedes con estos números, ¿vale? Quiero que te quedes con el salto. Ya no estamos interpretando una
+
+00:04:19 - 00:05:26
+simulación, un back test. Estos son datos de comportamiento real. Las cinco primeras impresiones. Venga, ahí van mis primeras impresiones tras un mes de operativas real. No te voy a enseñar la estrategia, te voy a enseñar lo que hemos aprendido al operarla de verdad. Impresión uno, la estrategia es solo una parte. Antes de operar el real piensas mucho en la estrategia de señal. Cuando llegas a mercado real, pues te das cuenta que la señal es solo una pequeña pieza de todo el puzzle. Necesitas datos, horarios, control de ejecución,
+
+00:04:52 - 00:06:00
+gestión de órdenes, control de riesgos, registro y capacidad de revisar qué ha pasado. Impresión dos, el premarket cambia todo. En Small Caps, muchas veces la historia empieza antes de la apertura. Si miras el mercado solo a las 9:30, llegas tarde o llegas ciego. Impresión tres, abrir shorts no es solo darle al botón de vender. En Small Camps, encontrar una señal bajista no significa que puedas operar. Tienes que poder localizar acciones, asumir costes, controlar disponibilidad y decidir si el trade sigue teniendo sentido. Impresión
+
+00:05:26 - 00:06:35
+4, el sleepage es una verdad incómoda. En backd parece que entras donde quieres, en reales, y esa diferencia puede cambiar totalmente la estrategia. Impresión cinco, automatizar no elimina problemas, los hace visibles. Mucha gente cree que automatizar es para no tener que mirar el mercado y no, automatizar bien es para poder medir, repetir, registrar y detectar problemas que manualmente ni siquiera verías. Esto es para todo el mundo. La operativa en Small Caps es atractiva, sí, pero no es para todo el
+
+00:06:01 - 00:07:10
+mundo. Es un mercado de volatilidad extrema, donde las trampas son constantes y la espada de Damocles está siempre al acecho. Si le pierdes el respeto, el día menos pensada te barre del mapa. Si las operas algorímicamente, muchas cosas mejoran, sí, pero sigue sin ser fácil. De hecho, aparece una nueva capa de dificultad, la capa técnica. ¿Cómo que no estás apuntado a mi newsletter? Sersansistemas. Vete ahora. Te apuntas y te he preparado una hoja de ruta donde he puesto mis 25 años de experiencia en el trading.
+
+00:06:36 - 00:08:10
+Apúntate para que te hagas una idea rápida, solo en el repositorio principal que estamos usando para controlar la operativa hay más de 200 archivos entre Python y configuración. y más de 107,000 líneas de código. Repito, 107,000 líneas de código, además 2687 funciones y 253 clases. Esto no lo digo para presumir de código ni tampoco para mare, lo digo para que se entienda una cosa. Superar small caps automáticamente no es poner una orden con un bot, no es solo eso, es controlar datos, horarios, ejecución, loces, el riesgo, registros,
+
+00:07:23 - 00:08:41
+errores, informes, alertas y recuperación cuando algo falla. Obviamente automatizar mejora muchas cosas. Sabes mejor qué puedes esperar en cuanto a riesgo y expectativas. Puedes operar más estrategias, sufres menos desgaste porque no estás tomando decisiones durante la sesión. Puedes corregir basándote en datos, no solo en sensaciones. Puedes escalar el proceso sin depender de tu estado mental y tienes más control sobre imprevistos, errores y eventos raros, incluidos cisnes grises o incluso cisnes negros.
+
+00:08:01 - 00:09:12
+Pero aquí viene una parte importante. Esto no es para alguien que quiere copiar una señal. Si alguien no entiende de datos, de back testing, validación, riesgo, ejecución y automatización, small caps puede para ser una oportunidad, pero en realidad es una trituradora. Por eso no vamos a enseñar Small Caps como una formación aislada para cualquiera. No tendría sentido. Sería peligroso y sería inútil para ti. Siempre nos hemos caracterizado por lanzar formaciones basadas en cosas que hacemos de verdad, cosas que nosotros
+
+00:08:37 - 00:09:56
+operamos, no en teoría vacía, no en ideas eh simplemente estéticas, el trabajo real que creemos que pueda ayudarte. A conclusión, por tanto, sí me lo habéis preguntado muchas veces, vamos a preparar una formación específica sobre cómo operar small caps automáticamente, pero será solo para alumnos del curso de trading algorítmico. ¿Por qué? Porque Small Caps es una capa avanzada, una capa que va encima de todo lo que explicamos en el curso. Antes de eso, antes de llegar a las small caps, necesitas la base.
+
+00:09:17 - 00:10:32
+Consuir estrategias, validarlas, entender los sesgos, trabajar con datos, interpretar resultados, automatizar procesos y saber cuando un backest te está engañando. Por tanto, si este vídeo te ha despertado interés, mi recomendación es sencilla. Empieza por el curso de trading algorímico, porque cuando abramos esta formación nueva de small caps, la gente que ya tenga esa base será la que podrá aprovecharla. De verdad, las small caps no perdonan improvisaciones y precisamente por eso es un mercado tan interesante para quien
+
+00:09:54 - 00:09:58
+se lo toma en serio. Yeah.

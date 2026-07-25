@@ -1,4 +1,4 @@
-﻿# Nota De Autoridad v3
+# Nota De Autoridad v3
 
 Fecha: 2026-07-05
 Estado: nota_exploratoria_subordinada
@@ -8,10 +8,10 @@ Este documento contiene ideas previas sobre OpenEvolve/AlphaEvolve y areas de tr
 La estructura operativa vigente para experimentos es:
 
 ```text
-C:/TSIS_Data/00_TSIS_Lab
+C:/TSIS_Data/03_TSIS_Lab
 ```
 
-AlphaEvolve no crea un laboratorio paralelo. Debe producir `candidate research experiments` compatibles con `00_TSIS_Lab`.
+AlphaEvolve no crea un laboratorio paralelo. Debe producir `candidate research experiments` compatibles con `03_TSIS_Lab`.
 
 ---
 SÃ­. Ahora sÃ­ he revisado la estructura real del repo.

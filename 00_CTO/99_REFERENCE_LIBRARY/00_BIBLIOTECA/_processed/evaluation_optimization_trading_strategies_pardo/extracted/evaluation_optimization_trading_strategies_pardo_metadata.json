@@ -1,0 +1,20 @@
+﻿{
+    "book_id":  "evaluation_optimization_trading_strategies_pardo",
+    "source_pdf":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\The_Evaluation_and_Optimization_of_Trading_Strategies_-_Robert_Pardo.pdf",
+    "processed_source_pdf":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\evaluation_optimization_trading_strategies_pardo\\source\\original.pdf",
+    "title":  "The Evaluation and Optimization of Trading Strategies",
+    "author":  "Robert Pardo",
+    "producer":  "calibre 7.4.0",
+    "creator":  "calibre 7.4.0",
+    "pages":  450,
+    "file_size_bytes":  8294881,
+    "last_write_time":  "2026-07-24T07:59:45.539745+00:00",
+    "processed_at":  "2026-07-24T21:35:08.204167+00:00",
+    "requires_ocr":  false,
+    "status":  "indexed",
+    "working_text_persisted":  false,
+    "copyright_note":  "Derived artifacts should summarize and point to pages. Do not persist or redistribute full extracted text unless explicitly allowed.",
+    "summary_artifact":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\evaluation_optimization_trading_strategies_pardo\\summaries\\evaluation_optimization_trading_strategies_pardo_agent_summary.md",
+    "concept_index_artifact":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\evaluation_optimization_trading_strategies_pardo\\index\\evaluation_optimization_trading_strategies_pardo_concept_index.md",
+    "source_map_artifact":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\evaluation_optimization_trading_strategies_pardo\\index\\evaluation_optimization_trading_strategies_pardo_source_map.md"
+}

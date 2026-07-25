@@ -1,4 +1,4 @@
-﻿# Market State Representation Source File Map v0.1
+# Market State Representation Source File Map v0.1
 
 Fecha: 2026-06-25
 Estado: reference_map
@@ -41,15 +41,15 @@ Estas representaciones deben alimentar:
   - Usa eventos como unidad central.
   - No gobierna directamente; gobierna solo cuando se promueve.
 
-- `C:/TSIS_Data/01_TSIS_backtest_SmallCaps/README.md`
+- `C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/README.md`
   - El modulo SmallCaps existe para certificacion de datos, formalizacion de
     estados de mercado y backtesting.
 
-- `C:/TSIS_Data/01_TSIS_backtest_SmallCaps/AGENTS.md`
+- `C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/AGENTS.md`
   - Contrato local.
   - Exige formalizar estados de mercado y objetos de research.
 
-- `C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/README.md`
+- `C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/README.md`
   - Secuencia vigente:
 
 ```text
@@ -61,19 +61,19 @@ event_discovery
 
 ## Estado / Evento
 
-- `C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/04_feature_engine/04_feature_engine.md`
+- `C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/04_feature_engine/04_feature_engine.md`
   - Dice explicitamente que convierte el mercado en una secuencia de
     estados/eventos.
   - Declara que eso es compatible con ML/RL.
   - Establece que el Feature Engine no toma decisiones, solo representa estado
     observable del mercado.
 
-- `C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/05_event_engine/05_event_engine.md`
+- `C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/05_event_engine/05_event_engine.md`
   - El Event Engine convierte mercado en secuencia interpretable de
     estados/eventos.
   - Introduce state machines como parte del modelo conceptual.
 
-- `C:/TSIS_Data/01_TSIS_backtest_SmallCaps/00_cto/roadmap/module_roadmap_initial_vision.md`
+- `C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/00_cto/roadmap/module_roadmap_initial_vision.md`
   - Roadmap antiguo con la misma idea:
 
 ```text
@@ -82,11 +82,11 @@ mercado -> secuencia de estados/eventos -> ML/RL
 
 ## ML / RL
 
-- `C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/11_ml_preparation/11_ml_offline_rl.md`
+- `C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/11_ml_preparation/11_ml_offline_rl.md`
   - Menciona `event states`, `state representations` y politicas condicionadas
     al estado del mercado.
 
-- `C:/TSIS_Data/03_TSIS_Offline_RL/00_CTO/00_notas_RL.md`
+- `C:/TSIS_Data/05_TSIS_Offline_RL/00_CTO/00_notas_RL.md`
   - Desarrolla estado, accion, reward, embeddings, estado latente y Offline RL
     sobre estados ricos.
 
@@ -142,7 +142,7 @@ Strategy / Feature / Policy Candidate
 
 ## Data Foundation Outputs
 
-- `C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+- `C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
   - Documento clave actual.
   - Dice que Data Foundation no produce el evento.
   - Data Foundation produce el estado defendible que permite detectar el evento.
@@ -161,11 +161,11 @@ dataset_certification_matrix
 data_quality_report
 ```
 
-- `C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/contract_registry/dataset_contracts/microstructure_features_table_dataset_contract_v0_1.md`
+- `C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/microstructure_features_table_dataset_contract_v0_1.md`
   - Microstructure features por ventana explicita de evento.
   - v0.1 es `seed_event_window_smoke`, no full-universe.
 
-- `C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/data_consumption_policies/microstructure_features_table_consumption_policy.md`
+- `C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/microstructure_features_table_consumption_policy.md`
   - Aclara que v0.1 no es feature store productivo.
   - No debe usarse como entrenamiento ML/RL full-universe.
 
@@ -218,10 +218,10 @@ data_quality_report
     `selected_any_profile`, `selected_trade_station_like_profile`, etc.) y
     construya overlays experimentales sin sesgo de solo casos positivos.
 
-- `C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_1.md`
+- `C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_1.md`
   - Autoridad operativa del framework de scanners.
 
-- `C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_1.md`
+- `C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/daily_scanner_candidates_table_target_contract_v0_1.md`
   - Autoridad operativa de la tabla objetivo `daily_scanner_candidates_table`.
 
 ## Estado Del Hueco Cerrado Parcialmente

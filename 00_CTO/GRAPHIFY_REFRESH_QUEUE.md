@@ -118,6 +118,49 @@ Por ventana dedicada:
 
 ## Entradas activas
 
+### GFQ-20260722-001 - TSIS root path migration
+
+Status: pending
+Severity: CRITICAL
+Slice:
+
+```text
+root_path_migration_20260722
+00_CTO_root_architecture_paths
+TSIS_root_module_map
+```
+
+Reason:
+
+```text
+Top-level indexed roots were renamed/reordered: 00_TSIS_Lab -> 03_TSIS_Lab, 01_TSIS_backtest_SmallCaps -> 01_TSIS_DATA_FOUNDATION, 02_TSIS_webSocket_SmallCaps -> 04_TSIS_webSocket_SmallCaps, 03_TSIS_Offline_RL -> 05_TSIS_Offline_RL, 04_TSIS_Trading_voice -> 06_TSIS_Trading_voice, and 02_TSIS_BACKTEST_ENGINE was introduced as the future backtest implementation shell. Existing root graph/source locations may still contain legacy paths until a controlled rebuild.
+```
+
+Changed paths:
+
+```text
+PATH_MIGRATION_2026_07_22.md
+README.md
+AGENTS.md
+PROJECT_OPERATING_SYSTEM.md
+PROJECT_RULES.md
+VERSIONING_STANDARDS.md
+RESEARCH_PHILOSOPHY.md
+LONG_RUNNING_OPERATIONS_CONTRACT.md
+01_TSIS_DATA_FOUNDATION/
+02_TSIS_BACKTEST_ENGINE/
+03_TSIS_Lab/
+04_TSIS_webSocket_SmallCaps/
+05_TSIS_Offline_RL/
+06_TSIS_Trading_voice/
+```
+
+Next action:
+
+```text
+Do not merge additively into a stale root graph. Rebuild affected leaves/root in a dedicated Graphify refresh window after Git state is clean enough to distinguish rename from content edits.
+```
+
 ### GFQ-20260707-001 - Live source adapter interfaces and DasTrades CMD API system map
 
 Status: pending
@@ -168,7 +211,7 @@ Severity: HIGH
 Slice:
 
 ```text
-00_TSIS_Lab
+03_TSIS_Lab
 EXP_DAS_FRONTSIDE_DISCOVERY_0001
 visual_inspection_manifest
 ```
@@ -182,10 +225,10 @@ Se agrego el primer validador ejecutable del Lab para evidencia visual label-lev
 Changed paths:
 
 ```text
-00_TSIS_Lab/README.md
-00_TSIS_Lab/06_validators/README.md
-00_TSIS_Lab/06_validators/validate_visual_inspection_manifest.py
-00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/execution_protocol.md
+03_TSIS_Lab/README.md
+03_TSIS_Lab/06_validators/README.md
+03_TSIS_Lab/06_validators/validate_visual_inspection_manifest.py
+03_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/execution_protocol.md
 00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/scripts/das_widgets.py
 CHANGELOG.md
 ```
@@ -232,8 +275,8 @@ README.md
 AGENTS.md
 START_HERE.md
 CHANGELOG.md
-01_TSIS_backtest_SmallCaps/AGENTS.md
-01_TSIS_backtest_SmallCaps/CHANGELOG.md
+01_TSIS_DATA_FOUNDATION/AGENTS.md
+01_TSIS_DATA_FOUNDATION/CHANGELOG.md
 ```
 
 Recommended action:
@@ -910,7 +953,7 @@ Reason:
   that documents the missing governed low-latency alerts stream for offerings,
   SEC filings, warrants, reverse splits and comparable smallcap catalysts.
 - The operational contract remains under
-  `01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/`.
+  `01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/`.
 
 Changed paths:
 
@@ -1199,8 +1242,8 @@ Changed paths:
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/README.md
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/market_state_representation_source_file_map_v0_1.md
 00_CTO/CHANGELOG.md
-01_TSIS_backtest_SmallCaps/01_research/README.md
-01_TSIS_backtest_SmallCaps/CHANGELOG.md
+01_TSIS_DATA_FOUNDATION/01_research/README.md
+01_TSIS_DATA_FOUNDATION/CHANGELOG.md
 ```
 
 Recommended action:
@@ -1259,7 +1302,7 @@ Changed paths:
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/intraday_scanner_candidates_contract_v0_1.md
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/README.md
 00_CTO/CHANGELOG.md
-01_TSIS_backtest_SmallCaps/CHANGELOG.md
+01_TSIS_DATA_FOUNDATION/CHANGELOG.md
 ```
 
 Recommended action:
@@ -1316,10 +1359,10 @@ Changed paths:
 ```text
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/intraday_scanner_candidates_contract_v0_1.md
 00_CTO/CHANGELOG.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/intraday_scanner_framework_and_definitions_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/intraday_scanner_candidates_table_target_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/CHANGELOG.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/intraday_scanner_framework_and_definitions_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/intraday_scanner_candidates_table_target_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/master_intraday_bar_table_quote_guarded_candidate_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/CHANGELOG.md
 ```
 
 Recommended action:
@@ -1374,11 +1417,11 @@ Changed paths:
 ```text
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
 00_CTO/CHANGELOG.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_observable_eligibility_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
-01_TSIS_backtest_SmallCaps/CHANGELOG.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_observable_eligibility_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/CHANGELOG.md
+01_TSIS_DATA_FOUNDATION/CHANGELOG.md
 ```
 
 Recommended action:
@@ -1420,12 +1463,12 @@ Changed paths:
 ```text
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
 00_CTO/CHANGELOG.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_observable_eligibility_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
-01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
-01_TSIS_backtest_SmallCaps/CHANGELOG.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_observable_eligibility_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/README.md
+01_TSIS_DATA_FOUNDATION/01_foundations/CHANGELOG.md
+01_TSIS_DATA_FOUNDATION/CHANGELOG.md
 ```
 
 Expected graph update:
@@ -1450,13 +1493,13 @@ Changed paths:
 ```text
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
 00_CTO/CHANGELOG.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_decision_timestamp_policy_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_observable_eligibility_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
-01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
-01_TSIS_backtest_SmallCaps/CHANGELOG.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_decision_timestamp_policy_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_observable_eligibility_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/README.md
+01_TSIS_DATA_FOUNDATION/01_foundations/CHANGELOG.md
+01_TSIS_DATA_FOUNDATION/CHANGELOG.md
 ```
 
 Expected graph update:
@@ -1480,12 +1523,12 @@ Changed paths:
 ```text
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
 00_CTO/CHANGELOG.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_snapshot_roles_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_decision_timestamp_policy_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
-01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
-01_TSIS_backtest_SmallCaps/CHANGELOG.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_snapshot_roles_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_decision_timestamp_policy_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/README.md
+01_TSIS_DATA_FOUNDATION/01_foundations/CHANGELOG.md
+01_TSIS_DATA_FOUNDATION/CHANGELOG.md
 ```
 
 Expected graph update:
@@ -1532,10 +1575,10 @@ Changed paths:
 
 ```text
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_builder_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_builder_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/README.md
 00_CTO/CHANGELOG.md
 ```
 
@@ -1569,10 +1612,10 @@ Changed paths:
 
 ```text
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_tables_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/event_candidate_tables_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/README.md
 00_CTO/CHANGELOG.md
 ```
 
@@ -1606,10 +1649,10 @@ Changed paths:
 
 ```text
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
-01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/daily_strategy_candidate_events_table_schema_contract.md
-01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/intraday_1m_strategy_candidate_events_table_schema_contract.md
-01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/README.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_tables_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/daily_strategy_candidate_events_table_schema_contract.md
+01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/intraday_1m_strategy_candidate_events_table_schema_contract.md
+01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/README.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/event_candidate_tables_contract_v0_1.md
 00_CTO/CHANGELOG.md
 ```
 
@@ -1643,11 +1686,11 @@ Changed paths:
 
 ```text
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_table_validators_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_tables_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/event_candidate_table_validators_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/event_candidate_tables_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/README.md
 00_CTO/CHANGELOG.md
 ```
 
@@ -1681,10 +1724,10 @@ Changed paths:
 
 ```text
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_canonical_vs_representation_layer_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_canonical_vs_representation_layer_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/README.md
 00_CTO/CHANGELOG.md
 ```
 
@@ -1719,12 +1762,12 @@ Market State v3 ya puede distinguir contract DONE de validator ejecutable fixtur
 Changed paths:
 
 ```text
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_table_validators_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/scripts/validate_event_candidate_tables.py
-01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_event_candidate_table_validators.py
-01_TSIS_backtest_SmallCaps/tests/fixtures/data_foundation_outputs/event_candidate_tables_v0_1/
-01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
-01_TSIS_backtest_SmallCaps/CHANGELOG.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/event_candidate_table_validators_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/scripts/validate_event_candidate_tables.py
+01_TSIS_DATA_FOUNDATION/tests/data_foundation_outputs/test_event_candidate_table_validators.py
+01_TSIS_DATA_FOUNDATION/tests/fixtures/data_foundation_outputs/event_candidate_tables_v0_1/
+01_TSIS_DATA_FOUNDATION/01_foundations/CHANGELOG.md
+01_TSIS_DATA_FOUNDATION/CHANGELOG.md
 00_CTO/CHANGELOG.md
 ```
 
@@ -1760,14 +1803,14 @@ Changed paths:
 
 ```text
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
-01_TSIS_backtest_SmallCaps/scripts/materialize_strategy_candidate_events_table.py
-01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_strategy_candidate_events_table_builder.py
+01_TSIS_DATA_FOUNDATION/scripts/materialize_strategy_candidate_events_table.py
+01_TSIS_DATA_FOUNDATION/tests/data_foundation_outputs/test_strategy_candidate_events_table_builder.py
 tests/test_runs/2026-07-04/daily_strategy_candidate_events_from_daily_scanner_v0_3_20250102_20250110_controlled/
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
-01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
-01_TSIS_backtest_SmallCaps/CHANGELOG.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/README.md
+01_TSIS_DATA_FOUNDATION/01_foundations/CHANGELOG.md
+01_TSIS_DATA_FOUNDATION/CHANGELOG.md
 00_CTO/CHANGELOG.md
 ```
 
@@ -1803,13 +1846,13 @@ Changed paths:
 
 ```text
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
-01_TSIS_backtest_SmallCaps/scripts/materialize_daily_strategy_event_windows_candidate.py
-01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_daily_strategy_event_windows_candidate_builder.py
+01_TSIS_DATA_FOUNDATION/scripts/materialize_daily_strategy_event_windows_candidate.py
+01_TSIS_DATA_FOUNDATION/tests/data_foundation_outputs/test_daily_strategy_event_windows_candidate_builder.py
 tests/test_runs/2026-07-05/daily_strategy_event_windows_from_69_daily_events_controlled/
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
-01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/README.md
+01_TSIS_DATA_FOUNDATION/01_foundations/CHANGELOG.md
 00_CTO/CHANGELOG.md
 ```
 
@@ -1844,11 +1887,11 @@ Changed paths:
 
 ```text
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_builder_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_builder_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/README.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
 00_CTO/CHANGELOG.md
 ```
 
@@ -1883,11 +1926,11 @@ Changed paths:
 
 ```text
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_contract_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/README.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/README.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
 00_CTO/CHANGELOG.md
 ```
 
@@ -1908,7 +1951,7 @@ Docs:
 
 ```text
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
 ```
 
 ## GFQ-20260705-005 - Market State intradia 1m preflight passed
@@ -1919,8 +1962,8 @@ Docs/codigo:
 
 ```text
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
-01_TSIS_backtest_SmallCaps/scripts/preflight_master_intraday_quote_guarded_candidate.py
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
+01_TSIS_DATA_FOUNDATION/scripts/preflight_master_intraday_quote_guarded_candidate.py
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
 ```
 
 ## GFQ-20260705-006 - Market State intradia 1m controlled sample passed
@@ -1931,8 +1974,8 @@ Docs/codigo:
 
 ```text
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
-01_TSIS_backtest_SmallCaps/scripts/materialize_master_intraday_quote_guarded_candidate_sample.py
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
+01_TSIS_DATA_FOUNDATION/scripts/materialize_master_intraday_quote_guarded_candidate_sample.py
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
 ```
 
 ## GFQ-20260705-007 - Market State intradia 1m scoped candidate passed
@@ -1943,8 +1986,8 @@ Docs/codigo:
 
 ```text
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
-01_TSIS_backtest_SmallCaps/scripts/materialize_master_intraday_quote_guarded_candidate_scoped.py
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
+01_TSIS_DATA_FOUNDATION/scripts/materialize_master_intraday_quote_guarded_candidate_scoped.py
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
 ```
 
 ## GFQ-20260705-008 - Market State E-root scoped intradia 1m candidate
@@ -1965,12 +2008,12 @@ Area: market_state_intraday_quote_guarded_consumption
 Motivo: registrar que `master_intraday_bar_table_v0_2_candidate_quote_guarded` scoped E-root ya alimenta un fixture controlado de `market_state_table_v0_1_candidate` con `intraday__*`, sin promocion oficial ni gates ML/RL.
 Archivos:
 - 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
-- 01_TSIS_backtest_SmallCaps/scripts/materialize_market_state_intraday_quote_guarded_candidate.py
-- 01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_market_state_intraday_quote_guarded_candidate_builder.py
-- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_builder_contract_v0_1.md
-- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
-- 01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
-- 01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/market_state_table_schema_contract.md
+- 01_TSIS_DATA_FOUNDATION/scripts/materialize_market_state_intraday_quote_guarded_candidate.py
+- 01_TSIS_DATA_FOUNDATION/tests/data_foundation_outputs/test_market_state_intraday_quote_guarded_candidate_builder.py
+- 01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_builder_contract_v0_1.md
+- 01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
+- 01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+- 01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/market_state_table_schema_contract.md
 No Graphify rebuild ejecutado en esta iteracion.
 
 ## 2026-07-05 - market_state_intraday_event_candidate_route
@@ -1979,12 +2022,12 @@ Estado: pendiente de refresh Graphify.
 Motivo: se anadio materializacion controlada/no oficial de `intraday_1m_strategy_candidate_events_table_v0_1` desde `master_intraday_bar_table_v0_2_candidate_quote_guarded`.
 Archivos principales:
 - `00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md`
-- `01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_tables_contract_v0_1.md`
-- `01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_table_validators_contract_v0_1.md`
-- `01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/intraday_1m_strategy_candidate_events_table_schema_contract.md`
-- `01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md`
-- `01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_1m_strategy_candidate_events_from_master_intraday_quote_guarded.py`
-- `01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_intraday_1m_strategy_candidate_events_from_master_intraday_qg.py`
+- `01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/event_candidate_tables_contract_v0_1.md`
+- `01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/event_candidate_table_validators_contract_v0_1.md`
+- `01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/intraday_1m_strategy_candidate_events_table_schema_contract.md`
+- `01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md`
+- `01_TSIS_DATA_FOUNDATION/scripts/materialize_intraday_1m_strategy_candidate_events_from_master_intraday_quote_guarded.py`
+- `01_TSIS_DATA_FOUNDATION/tests/data_foundation_outputs/test_intraday_1m_strategy_candidate_events_from_master_intraday_qg.py`
 Nota: no se ha ejecutado rebuild Graphify en este turno.
 
 ## 2026-07-05 - market_state_intraday_event_windows_route
@@ -1992,9 +2035,9 @@ Nota: no se ha ejecutado rebuild Graphify en este turno.
 Estado: pendiente de refresh Graphify.
 Motivo: se anadio materializacion controlada/no oficial de `event_windows_table_v0_1_candidate_intraday_1m_strategy_events` desde los 5 eventos intradia quote-guarded.
 Archivos principales:
-- `01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_1m_strategy_event_windows_candidate.py`
-- `01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_intraday_1m_strategy_event_windows_candidate_builder.py`
-- `01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_event_windows_controlled_v0_1.md`
+- `01_TSIS_DATA_FOUNDATION/scripts/materialize_intraday_1m_strategy_event_windows_candidate.py`
+- `01_TSIS_DATA_FOUNDATION/tests/data_foundation_outputs/test_intraday_1m_strategy_event_windows_candidate_builder.py`
+- `01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_event_windows_controlled_v0_1.md`
 - `00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md`
 Nota: no se ha ejecutado rebuild Graphify en este turno.
 
@@ -2003,9 +2046,9 @@ Nota: no se ha ejecutado rebuild Graphify en este turno.
 Estado: pendiente de refresh Graphify.
 Motivo: se anadio materializacion controlada/no oficial de `event_state_table_v0_1_candidate_intraday_1m_quote_guarded_controlled`.
 Archivos principales:
-- `01_TSIS_backtest_SmallCaps/scripts/materialize_event_state_intraday_quote_guarded_candidate.py`
-- `01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_event_state_intraday_quote_guarded_candidate_builder.py`
-- `01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_event_state_controlled_v0_1.md`
+- `01_TSIS_DATA_FOUNDATION/scripts/materialize_event_state_intraday_quote_guarded_candidate.py`
+- `01_TSIS_DATA_FOUNDATION/tests/data_foundation_outputs/test_event_state_intraday_quote_guarded_candidate_builder.py`
+- `01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_event_state_controlled_v0_1.md`
 - `00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md`
 Nota: no se ha ejecutado rebuild Graphify en este turno.
 
@@ -2029,12 +2072,12 @@ Archivos principales:
 
 ```text
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
-01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_research_design_contract_v0_1.md
+01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/event_research_design_contract_v0_1.md
 ```
 
 No refrescado todavia; pendiente de lote Graphify.
 
-## 2026-07-05 - HIGH - Scientific Discovery Engine / 00_TSIS_Lab
+## 2026-07-05 - HIGH - Scientific Discovery Engine / 03_TSIS_Lab
 
 Estado: pending.
 
@@ -2042,7 +2085,7 @@ Motivo:
 
 ```text
 Se introduce `Scientific Discovery Engine` como arquitectura superior de TSIS,
-se crea `00_TSIS_Lab` como laboratorio operativo transversal y se redefine
+se crea `03_TSIS_Lab` como laboratorio operativo transversal y se redefine
 AlphaEvolve como generador de candidate experiments sometido al mismo
 Scientific Validation Pipeline que el investigador humano.
 ```
@@ -2053,7 +2096,7 @@ Leafs afectados:
 00_CTO/01_RESEARCH_PHILOSOPHY
 00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION
-00_TSIS_Lab
+03_TSIS_Lab
 ```
 
 Accion requerida:
@@ -2071,7 +2114,7 @@ Motivo:
 ```text
 Se crea `TSIS_LAB_ARCHITECTURE_v3.md` como lectura CTO vigente y se actualiza
 el mapa `market_state_tables_status_and_operating_map_2026_07_01_v3.md` para
-alinear Market State con `Scientific Discovery Engine` y `00_TSIS_Lab`.
+alinear Market State con `Scientific Discovery Engine` y `03_TSIS_Lab`.
 ```
 
 Archivos principales:
@@ -2080,7 +2123,7 @@ Archivos principales:
 00_CTO/TSIS_LAB_ARCHITECTURE_v3.md
 00_CTO/README.md
 00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
-00_TSIS_Lab/README.md
+03_TSIS_Lab/README.md
 ```
 
 No refrescado todavia; pendiente de lote Graphify.
@@ -2176,7 +2219,7 @@ Slice:
 ```text
 C:/TSIS_Data root documents
 00_CTO/TSIS_LAB_ARCHITECTURE_v3.md
-00_TSIS_Lab/
+03_TSIS_Lab/
 ```
 
 Motivo:
@@ -2211,7 +2254,7 @@ Estado: pending official refresh
 Cambio semantico:
 - Se elimina el overview raiz obsoleto.
 - La autoridad de arquitectura pasa a `C:/TSIS_Data/00_CTO/TSIS_LAB_ARCHITECTURE_v3.md`.
-- Los documentos raiz y lecturas operativas quedan alineados con TSIS como Scientific Discovery Engine, `00_TSIS_Lab` y `research_experiment`.
+- Los documentos raiz y lecturas operativas quedan alineados con TSIS como Scientific Discovery Engine, `03_TSIS_Lab` y `research_experiment`.
 
 Paths afectados:
 - `C:/TSIS_Data/README.md`
@@ -2222,7 +2265,7 @@ Paths afectados:
 - `C:/TSIS_Data/RESEARCH_PHILOSOPHY.md`
 - `C:/TSIS_Data/VERSIONING_STANDARDS.md`
 - `C:/TSIS_Data/00_CTO/TSIS_LAB_ARCHITECTURE_v3.md`
-- `C:/TSIS_Data/00_TSIS_Lab/README.md`
+- `C:/TSIS_Data/03_TSIS_Lab/README.md`
 
 Accion pendiente:
 - Rebuild/refresh Graphify del slice CTO/root en una ventana dedicada.
@@ -2239,13 +2282,13 @@ Cambio semantico:
 - Queda explicito que `+50%`, `500k`, `20% push`, `3% dip`, rangos de precio y session scope son semillas humanas investigables, no verdades cientificas.
 
 Paths afectados:
-- `C:/TSIS_Data/00_TSIS_Lab/README.md`
-- `C:/TSIS_Data/00_TSIS_Lab/02_registries/research_experiment_registry_v0_1.md`
-- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/README.md`
-- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/experiment.yaml`
-- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/research_design.md`
-- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/parameter_space.yaml`
-- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/sweeps/SWEEP_001_frontside_operability_boundary.yaml`
+- `C:/TSIS_Data/03_TSIS_Lab/README.md`
+- `C:/TSIS_Data/03_TSIS_Lab/02_registries/research_experiment_registry_v0_1.md`
+- `C:/TSIS_Data/03_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/README.md`
+- `C:/TSIS_Data/03_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/experiment.yaml`
+- `C:/TSIS_Data/03_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/research_design.md`
+- `C:/TSIS_Data/03_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/parameter_space.yaml`
+- `C:/TSIS_Data/03_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/sweeps/SWEEP_001_frontside_operability_boundary.yaml`
 
 Accion pendiente:
 - Rebuild/refresh Graphify del slice Lab/CTO en una ventana dedicada.
@@ -2262,11 +2305,11 @@ Cambio semantico:
 - El concepto `intraday_momentum_extension` se conserva como posible familia/probe futura, pero no como ruta operativa activa.
 
 Paths afectados:
-- `C:/TSIS_Data/00_TSIS_Lab/README.md`
-- `C:/TSIS_Data/00_TSIS_Lab/02_registries/research_experiment_registry_v0_1.md`
-- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/_archive/superseded_2026_07_05/EXP_INTRADAY_MOMENTUM_EXTENSION_0001/README.md`
-- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/_archive/superseded_2026_07_05/EXP_INTRADAY_MOMENTUM_EXTENSION_0001/experiment.yaml`
-- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/`
+- `C:/TSIS_Data/03_TSIS_Lab/README.md`
+- `C:/TSIS_Data/03_TSIS_Lab/02_registries/research_experiment_registry_v0_1.md`
+- `C:/TSIS_Data/03_TSIS_Lab/04_experiments/_archive/superseded_2026_07_05/EXP_INTRADAY_MOMENTUM_EXTENSION_0001/README.md`
+- `C:/TSIS_Data/03_TSIS_Lab/04_experiments/_archive/superseded_2026_07_05/EXP_INTRADAY_MOMENTUM_EXTENSION_0001/experiment.yaml`
+- `C:/TSIS_Data/03_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/`
 - `C:/TSIS_Data/00_CTO/TSIS_LAB_ARCHITECTURE_v3.md`
 - `C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md`
 
@@ -2346,11 +2389,11 @@ Cambio semantico:
 - `+50%` queda declarado como criba humana historica; valores inferiores son grupo de control y valores superiores miden intensidad/sobreextension posible.
 
 Paths afectados:
-- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/README.md`
-- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/experiment.yaml`
-- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/research_design.md`
-- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/parameter_space.yaml`
-- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/sweeps/SWEEP_001_frontside_operability_boundary.yaml`
+- `C:/TSIS_Data/03_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/README.md`
+- `C:/TSIS_Data/03_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/experiment.yaml`
+- `C:/TSIS_Data/03_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/research_design.md`
+- `C:/TSIS_Data/03_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/parameter_space.yaml`
+- `C:/TSIS_Data/03_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/sweeps/SWEEP_001_frontside_operability_boundary.yaml`
 
 Accion pendiente:
 - Incluir en el siguiente refresh Graphify del slice Lab/CTO.
@@ -2368,10 +2411,10 @@ Cambio semantico:
 - El protocolo declara inputs, preflight, output root, funnel metrics, outcome metrics, baselines, gates anti-basura, memoria de candidatos y relacion futura con AlphaEvolve.
 
 Paths afectados:
-- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/execution_protocol.md`
-- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/README.md`
-- `C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/experiment.yaml`
-- `C:/TSIS_Data/00_TSIS_Lab/00_CTO/01_privado2.md`
+- `C:/TSIS_Data/03_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/execution_protocol.md`
+- `C:/TSIS_Data/03_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/README.md`
+- `C:/TSIS_Data/03_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/experiment.yaml`
+- `C:/TSIS_Data/03_TSIS_Lab/00_CTO/01_privado2.md`
 
 Accion pendiente:
 - Incluir en el siguiente refresh Graphify del slice Lab/CTO.

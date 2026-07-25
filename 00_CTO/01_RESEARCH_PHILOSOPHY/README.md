@@ -1,4 +1,4 @@
-﻿# 01_RESEARCH_PHILOSOPHY
+# 01_RESEARCH_PHILOSOPHY
 
 Fecha: 2026-07-05
 Estado: research_philosophy_index_updated
@@ -39,13 +39,13 @@ Scientific Validation Pipeline
 05_RESEARCH_GOVERNANCE/anti_overfitting_and_validation_principles.md
 ```
 
-## Relacion Con 00_TSIS_Lab
+## Relacion Con 03_TSIS_Lab
 
 ```text
 00_CTO/01_RESEARCH_PHILOSOPHY
 = principios estables
 
-C:/TSIS_Data/00_TSIS_Lab
+C:/TSIS_Data/03_TSIS_Lab
 = operacion de experimentos reproducibles
 ```
 

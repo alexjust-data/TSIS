@@ -1,4 +1,4 @@
-﻿# DasTrades CMD API System Map v0.1
+# DasTrades CMD API System Map v0.1
 
 > STATUS 2026-07-09: DEPRECATED / NOT ACTIVE FOR EXP_DAS_FIRST_IMPULSE_REALTIME_DETECTION_0003.  
 > Project decision: DAS CMD API will not be used as market-data source for DAS 0003 because it is not useful/available for the current work.  
@@ -66,9 +66,9 @@ reference library != contrato operativo
 ### Contratos operativos del modulo live
 
 ```text
-C:/TSIS_Data/02_TSIS_webSocket_SmallCaps/01_data_ingestion_live/vendor_das/README.md
-C:/TSIS_Data/02_TSIS_webSocket_SmallCaps/01_data_ingestion_live/vendor_das/das_cmdapi_capture_contract_v0_1.md
-C:/TSIS_Data/02_TSIS_webSocket_SmallCaps/01_data_ingestion_live/vendor_das/das_cmdapi_data_catalog_v0_1.md
+C:/TSIS_Data/04_TSIS_webSocket_SmallCaps/01_data_ingestion_live/vendor_das/README.md
+C:/TSIS_Data/04_TSIS_webSocket_SmallCaps/01_data_ingestion_live/vendor_das/das_cmdapi_capture_contract_v0_1.md
+C:/TSIS_Data/04_TSIS_webSocket_SmallCaps/01_data_ingestion_live/vendor_das/das_cmdapi_data_catalog_v0_1.md
 ```
 
 Uso:
@@ -84,9 +84,9 @@ Uso:
 ### Implementacion local de la app terminal
 
 ```text
-C:/TSIS_Data/02_TSIS_webSocket_SmallCaps/src/das_cmdapi/
-C:/TSIS_Data/02_TSIS_webSocket_SmallCaps/configs/das_cmdapi_capture_v0_1.example.json
-C:/TSIS_Data/02_TSIS_webSocket_SmallCaps/tests/test_das_cmdapi_contract.py
+C:/TSIS_Data/04_TSIS_webSocket_SmallCaps/src/das_cmdapi/
+C:/TSIS_Data/04_TSIS_webSocket_SmallCaps/configs/das_cmdapi_capture_v0_1.example.json
+C:/TSIS_Data/04_TSIS_webSocket_SmallCaps/tests/test_das_cmdapi_contract.py
 ```
 
 Uso:
@@ -129,23 +129,23 @@ CTO detailed system map
 -> 00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/das_api/
 
 Module-owned capture contract and data catalog
--> 02_TSIS_webSocket_SmallCaps/01_data_ingestion_live/vendor_das/
+-> 04_TSIS_webSocket_SmallCaps/01_data_ingestion_live/vendor_das/
 
 Terminal app / adapter implementation
--> 02_TSIS_webSocket_SmallCaps/src/das_cmdapi/
+-> 04_TSIS_webSocket_SmallCaps/src/das_cmdapi/
 
 Local config
--> 02_TSIS_webSocket_SmallCaps/configs/das_cmdapi_capture_v0_1.example.json
+-> 04_TSIS_webSocket_SmallCaps/configs/das_cmdapi_capture_v0_1.example.json
 
 Physical live data root
 -> E:/TSIS/data_DAS_live/
 
 Field parity and model-facing gate
--> 02_TSIS_webSocket_SmallCaps/01_data_ingestion_live/source_parity_audit/
+-> 04_TSIS_webSocket_SmallCaps/01_data_ingestion_live/source_parity_audit/
 
 Future execution bridge, if ever approved
--> 02_TSIS_webSocket_SmallCaps/05_execution_bridge/
--> 02_TSIS_webSocket_SmallCaps/06_risk_monitor/
+-> 04_TSIS_webSocket_SmallCaps/05_execution_bridge/
+-> 04_TSIS_webSocket_SmallCaps/06_risk_monitor/
 ```
 
 ## Estado Actual De La App
@@ -222,22 +222,22 @@ Responsabilidades actuales:
 Comando live normal:
 
 ```powershell
-$env:PYTHONPATH = "C:\TSIS_Data\02_TSIS_webSocket_SmallCaps\src"
-python -m das_cmdapi.capture --config "C:\TSIS_Data\02_TSIS_webSocket_SmallCaps\configs\das_cmdapi_capture_v0_1.example.json"
+$env:PYTHONPATH = "C:\TSIS_Data\04_TSIS_webSocket_SmallCaps\src"
+python -m das_cmdapi.capture --config "C:\TSIS_Data\04_TSIS_webSocket_SmallCaps\configs\das_cmdapi_capture_v0_1.example.json"
 ```
 
 Comando dry-run:
 
 ```powershell
-$env:PYTHONPATH = "C:\TSIS_Data\02_TSIS_webSocket_SmallCaps\src"
-python -m das_cmdapi.capture --dry-run --config "C:\TSIS_Data\02_TSIS_webSocket_SmallCaps\configs\das_cmdapi_capture_v0_1.example.json"
+$env:PYTHONPATH = "C:\TSIS_Data\04_TSIS_webSocket_SmallCaps\src"
+python -m das_cmdapi.capture --dry-run --config "C:\TSIS_Data\04_TSIS_webSocket_SmallCaps\configs\das_cmdapi_capture_v0_1.example.json"
 ```
 
 Comando con run id explicito:
 
 ```powershell
-$env:PYTHONPATH = "C:\TSIS_Data\02_TSIS_webSocket_SmallCaps\src"
-python -m das_cmdapi.capture --run-id "das_cmdapi_live_<timestamp>" --config "C:\TSIS_Data\02_TSIS_webSocket_SmallCaps\configs\das_cmdapi_capture_v0_1.example.json"
+$env:PYTHONPATH = "C:\TSIS_Data\04_TSIS_webSocket_SmallCaps\src"
+python -m das_cmdapi.capture --run-id "das_cmdapi_live_<timestamp>" --config "C:\TSIS_Data\04_TSIS_webSocket_SmallCaps\configs\das_cmdapi_capture_v0_1.example.json"
 ```
 ### `config.py`
 
@@ -314,7 +314,7 @@ terminal run monitor
 Comando esperado:
 
 ```powershell
-$env:PYTHONPATH = "C:\TSIS_Data\02_TSIS_webSocket_SmallCaps\src"
+$env:PYTHONPATH = "C:\TSIS_Data\04_TSIS_webSocket_SmallCaps\src"
 python -m das_cmdapi.monitor "E:\TSIS\data_DAS_live\raw_cmdapi\runs\<run_id>"
 ```
 
@@ -881,7 +881,7 @@ Cada campo debe clasificarse como:
 Lugar del trabajo:
 
 ```text
-C:/TSIS_Data/02_TSIS_webSocket_SmallCaps/01_data_ingestion_live/source_parity_audit/
+C:/TSIS_Data/04_TSIS_webSocket_SmallCaps/01_data_ingestion_live/source_parity_audit/
 ```
 
 ## Seguridad Operativa
@@ -933,21 +933,21 @@ PENDING antes de declarar smoke PASS productivo:
 Live actual:
 
 ```powershell
-$env:PYTHONPATH = "C:\TSIS_Data\02_TSIS_webSocket_SmallCaps\src"
-python -m das_cmdapi.capture --config "C:\TSIS_Data\02_TSIS_webSocket_SmallCaps\configs\das_cmdapi_capture_v0_1.example.json"
+$env:PYTHONPATH = "C:\TSIS_Data\04_TSIS_webSocket_SmallCaps\src"
+python -m das_cmdapi.capture --config "C:\TSIS_Data\04_TSIS_webSocket_SmallCaps\configs\das_cmdapi_capture_v0_1.example.json"
 ```
 
 Dry-run:
 
 ```powershell
-$env:PYTHONPATH = "C:\TSIS_Data\02_TSIS_webSocket_SmallCaps\src"
-python -m das_cmdapi.capture --dry-run --config "C:\TSIS_Data\02_TSIS_webSocket_SmallCaps\configs\das_cmdapi_capture_v0_1.example.json"
+$env:PYTHONPATH = "C:\TSIS_Data\04_TSIS_webSocket_SmallCaps\src"
+python -m das_cmdapi.capture --dry-run --config "C:\TSIS_Data\04_TSIS_webSocket_SmallCaps\configs\das_cmdapi_capture_v0_1.example.json"
 ```
 
 Monitor:
 
 ```powershell
-$env:PYTHONPATH = "C:\TSIS_Data\02_TSIS_webSocket_SmallCaps\src"
+$env:PYTHONPATH = "C:\TSIS_Data\04_TSIS_webSocket_SmallCaps\src"
 python -m das_cmdapi.monitor "E:\TSIS\data_DAS_live\raw_cmdapi\runs\<run_id>"
 ```
 

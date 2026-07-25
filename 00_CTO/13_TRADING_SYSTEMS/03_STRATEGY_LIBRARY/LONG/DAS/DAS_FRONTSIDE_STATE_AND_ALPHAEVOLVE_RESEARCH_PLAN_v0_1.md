@@ -213,9 +213,9 @@ Casos a medir:
 Lectura realizada sobre:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\data_foundation_outputs_target_contract_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\graphify-out\leaf_slices\data_foundation_outputs_topology_20260629\
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\data_foundation_outputs_target_contract_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\graphify-out\leaf_slices\data_foundation_outputs_topology_20260629\
 E:\TSIS\data\data_foundation_outputs\
 C:\TSIS_Data\tests\test_runs\
 ```

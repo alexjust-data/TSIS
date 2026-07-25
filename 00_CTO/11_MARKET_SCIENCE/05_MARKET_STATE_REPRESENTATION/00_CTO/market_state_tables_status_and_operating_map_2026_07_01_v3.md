@@ -1,4 +1,4 @@
-﻿# Market State Representation - Fotografia Legal Del Mundo Observable En T
+# Market State Representation - Fotografia Legal Del Mundo Observable En T
 
 Fecha: 2026-07-04
 Estado:
@@ -334,7 +334,7 @@ state_observable_eligibility_contract_v0_1.md
 Ruta propuesta:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_observable_eligibility_contract_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_observable_eligibility_contract_v0_1.md
 ```
 
 # 3. Contrato De Elegibilidad De Observables
@@ -575,7 +575,7 @@ microstructure_features_table
 Evidencia fuente:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/microstructure_features_table_schema_contract.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/microstructure_features_table_schema_contract.md
 ```
 
 ### Familias De Observables Desde Microestructura
@@ -651,12 +651,12 @@ contexto as-of = informacion o restriccion conocida legalmente en t
 Evidencia fuente:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/fundamentals_asof_table_schema_contract.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/news_context_table_schema_contract.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/short_context_table_schema_contract.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/regime_context_table_schema_contract.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/halts_table_schema_contract.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/short_sale_constraints_table_target_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/fundamentals_asof_table_schema_contract.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/news_context_table_schema_contract.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/short_context_table_schema_contract.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/regime_context_table_schema_contract.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/halts_table_schema_contract.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/short_sale_constraints_table_target_contract_v0_1.md
 C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01.md
 ```
 
@@ -753,7 +753,7 @@ semantic representations / AlphaEvolve / RL / ML
    Ruta:
 
    ```text
-   C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\
+   C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\
    ```
 
 3. Rellenar elegibilidad `Daily`
@@ -1036,7 +1036,7 @@ Esta seccion actualiza la parte final del v3 despues de cerrar el primer contrat
 Se creo y cerro el contrato:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_observable_eligibility_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_observable_eligibility_contract_v0_1.md
 ```
 
 Estado del contrato:
@@ -1140,7 +1140,7 @@ v3 mapa humano
 El contrato practico ya fue creado y cerrado:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md
 state_derived_observables_formula_contract_v0_1 = complete_for_contract_defined_scope
 ```
 
@@ -1194,14 +1194,14 @@ Este avance queda anotado en:
 
 ```text
 C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_CTO/market_state_tables_status_and_operating_map_2026_07_01_v3.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_observable_eligibility_contract_v0_1.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/CHANGELOG.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_observable_eligibility_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/CHANGELOG.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/CHANGELOG.md
 C:/TSIS_Data/00_CTO/CHANGELOG.md
 C:/TSIS_Data/00_CTO/GRAPHIFY_REFRESH_QUEUE.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/GRAPHIFY_REFRESH_QUEUE.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/GRAPHIFY_REFRESH_QUEUE.md
 ```
 
 ## 6.6 No Cambia Todavia
@@ -1230,7 +1230,7 @@ Ahora toca implementar validators de leakage/formula/timestamp/role/builder y de
 Nuevo contrato cerrado:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_derived_observables_formula_contract_v0_1.md
 state_derived_observables_formula_contract_v0_1 = complete_for_contract_defined_scope
 ```
 
@@ -1395,7 +1395,7 @@ promocion separada.
 Nuevo contrato cerrado:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_decision_timestamp_policy_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_decision_timestamp_policy_v0_1.md
 state_decision_timestamp_policy_v0_1 = complete_for_contract_defined_scope
 ```
 
@@ -1429,7 +1429,7 @@ joins quedan permitidos por rol.
 Nuevo contrato cerrado:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_snapshot_roles_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_snapshot_roles_contract_v0_1.md
 state_snapshot_roles_contract_v0_1 = complete_for_contract_defined_scope
 ```
 
@@ -1466,7 +1466,7 @@ ensambla filas reales y como se validan leakage, calidad, lineage y roles.
 Nuevo contrato cerrado:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_builder_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_builder_contract_v0_1.md
 state_builder_contract_v0_1 = complete_for_contract_defined_scope
 ```
 
@@ -1514,7 +1514,7 @@ state transition dataset
 Nuevo contrato cerrado:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_tables_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/event_candidate_tables_contract_v0_1.md
 event_candidate_tables_contract_v0_1 = complete_for_contract_defined_scope
 ```
 
@@ -1580,10 +1580,10 @@ outcomes inline
 Nuevos schema contracts cerrados:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/daily_strategy_candidate_events_table_schema_contract.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/daily_strategy_candidate_events_table_schema_contract.md
 daily_strategy_candidate_events_table_schema_contract_v0_1 = complete_for_contract_defined_scope
 
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/intraday_1m_strategy_candidate_events_table_schema_contract.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/intraday_1m_strategy_candidate_events_table_schema_contract.md
 intraday_1m_strategy_candidate_events_table_schema_contract_v0_1 = complete_for_contract_defined_scope
 ```
 
@@ -1632,7 +1632,7 @@ outcomes inline
 Nuevo contrato cerrado:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_candidate_table_validators_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/event_candidate_table_validators_contract_v0_1.md
 event_candidate_table_validators_contract_v0_1 = complete_for_contract_defined_scope
 ```
 
@@ -1681,7 +1681,7 @@ outcomes inline
 Nuevo contrato cerrado:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_canonical_vs_representation_layer_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_canonical_vs_representation_layer_contract_v0_1.md
 state_canonical_vs_representation_layer_contract_v0_1 = complete_for_contract_defined_scope
 ```
 
@@ -1744,9 +1744,9 @@ controlled market_state/event_state fixture
 Nuevo avance cerrado:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/validate_event_candidate_tables.py
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_event_candidate_table_validators.py
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/fixtures/data_foundation_outputs/event_candidate_tables_v0_1/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/validate_event_candidate_tables.py
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/tests/data_foundation_outputs/test_event_candidate_table_validators.py
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/tests/fixtures/data_foundation_outputs/event_candidate_tables_v0_1/
 event_candidate_table_executable_validators_fixture_scope = passed
 ```
 
@@ -1793,8 +1793,8 @@ wider/full-universe daily/intradia solo despues de validators/review
 Nuevo avance cerrado:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_strategy_candidate_events_table.py
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_strategy_candidate_events_table_builder.py
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/materialize_strategy_candidate_events_table.py
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/tests/data_foundation_outputs/test_strategy_candidate_events_table_builder.py
 event_candidate_table_builders_fixture_scope = passed
 ```
 
@@ -1904,8 +1904,8 @@ event_windows_table_v0_1_candidate_daily_strategy_events = passed
 Builder ejecutable:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_daily_strategy_event_windows_candidate.py
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_daily_strategy_event_windows_candidate_builder.py
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/materialize_daily_strategy_event_windows_candidate.py
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/tests/data_foundation_outputs/test_daily_strategy_event_windows_candidate_builder.py
 ```
 
 Fuente upstream:
@@ -1972,7 +1972,7 @@ mantener wider/E-root daily e intradia 1m quote-guarded como carriles pendientes
 Nueva regla institucional cerrada:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_contract_v0_1.md
 state_raw_to_consumption_lineage_contract_v0_1 = complete_for_contract_defined_scope
 ```
 
@@ -2035,7 +2035,7 @@ la ruta intradia 1m quote-guarded ya llega hasta un fixture controlado de `marke
 Actualizacion Camino A controlado:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md
 state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1 = complete_for_controlled_scope
 ```
 
@@ -2101,7 +2101,7 @@ Siguiente paso optimo:
 Nuevo avance cerrado:
 
 ```text
-script = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_1m_strategy_candidate_events_from_master_intraday_quote_guarded.py
+script = C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/materialize_intraday_1m_strategy_candidate_events_from_master_intraday_quote_guarded.py
 run_root = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_candidate_events_from_master_intraday_qg_controlled/
 source_candidates = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_candidate_events_from_master_intraday_qg_controlled/_intraday_1m_strategy_candidate_events_source_candidates.parquet
 manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_candidate_events_from_master_intraday_qg_controlled/_intraday_1m_strategy_candidate_events_from_master_intraday_qg_manifest.json
@@ -2162,8 +2162,8 @@ El umbral `+50%` no entra como estado base ni como verdad privilegiada. Aqui viv
 Nuevo avance cerrado:
 
 ```text
-script = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_1m_strategy_event_windows_candidate.py
-test = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_intraday_1m_strategy_event_windows_candidate_builder.py
+script = C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/materialize_intraday_1m_strategy_event_windows_candidate.py
+test = C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/tests/data_foundation_outputs/test_intraday_1m_strategy_event_windows_candidate_builder.py
 run_root = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_event_windows_from_5_events_controlled/
 dataset_path = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_event_windows_from_5_events_controlled/event_windows_table_v0_1_candidate_intraday_1m_strategy_events/data.parquet
 manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/intraday_1m_strategy_event_windows_from_5_events_controlled/_event_windows_table_v0_1_candidate_intraday_1m_strategy_events_manifest.json
@@ -2209,8 +2209,8 @@ Esta tabla candidata no es `event_windows_table_v0_1` oficial, no es full-univer
 Nuevo avance cerrado:
 
 ```text
-script = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_event_state_intraday_quote_guarded_candidate.py
-test = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_event_state_intraday_quote_guarded_candidate_builder.py
+script = C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/materialize_event_state_intraday_quote_guarded_candidate.py
+test = C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/tests/data_foundation_outputs/test_event_state_intraday_quote_guarded_candidate_builder.py
 run_root = C:/TSIS_Data/tests/test_runs/2026-07-05/event_state_intraday_1m_quote_guarded_controlled/
 dataset_path = C:/TSIS_Data/tests/test_runs/2026-07-05/event_state_intraday_1m_quote_guarded_controlled/event_state_table_v0_1_candidate_intraday_1m_quote_guarded_controlled/data.parquet
 manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/event_state_intraday_1m_quote_guarded_controlled/_event_state_table_v0_1_candidate_intraday_1m_quote_guarded_controlled_manifest.json
@@ -2258,8 +2258,8 @@ wider/full-universe = PENDING
 Nuevo avance cerrado:
 
 ```text
-script = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_intraday_1m_event_outcomes_candidate.py
-test = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_intraday_1m_event_outcomes_candidate_builder.py
+script = C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/materialize_intraday_1m_event_outcomes_candidate.py
+test = C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/tests/data_foundation_outputs/test_intraday_1m_event_outcomes_candidate_builder.py
 run_root = C:/TSIS_Data/tests/test_runs/2026-07-05/outcomes_intraday_1m_quote_guarded_controlled/
 dataset_path = C:/TSIS_Data/tests/test_runs/2026-07-05/outcomes_intraday_1m_quote_guarded_controlled/outcomes_table_v0_1_candidate_intraday_1m_quote_guarded_controlled/data.parquet
 manifest = C:/TSIS_Data/tests/test_runs/2026-07-05/outcomes_intraday_1m_quote_guarded_controlled/_outcomes_table_v0_1_candidate_intraday_1m_quote_guarded_manifest.json
@@ -2320,7 +2320,7 @@ Esta tabla candidata es `y`, no `X`. No debe copiarse dentro de `market_state_ta
 Nuevo contrato creado:
 
 ```text
-contract = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/event_research_design_contract_v0_1.md
+contract = C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/event_research_design_contract_v0_1.md
 status = contract_defined
 research_design_layer_defined = true
 ```
@@ -2447,12 +2447,12 @@ research_experiment
 Rutas nuevas relacionadas:
 
 ```text
-C:/TSIS_Data/00_TSIS_Lab/README.md
-C:/TSIS_Data/00_TSIS_Lab/01_contracts/research_experiment_contract_v0_1.md
-C:/TSIS_Data/00_TSIS_Lab/01_contracts/research_experiment_execution_protocol_v0_1.md
-C:/TSIS_Data/00_TSIS_Lab/01_contracts/parameter_sweep_protocol_v0_1.md
-C:/TSIS_Data/00_TSIS_Lab/01_contracts/scientific_validation_pipeline_contract_v0_1.md
-C:/TSIS_Data/00_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/experiment.yaml
+C:/TSIS_Data/03_TSIS_Lab/README.md
+C:/TSIS_Data/03_TSIS_Lab/01_contracts/research_experiment_contract_v0_1.md
+C:/TSIS_Data/03_TSIS_Lab/01_contracts/research_experiment_execution_protocol_v0_1.md
+C:/TSIS_Data/03_TSIS_Lab/01_contracts/parameter_sweep_protocol_v0_1.md
+C:/TSIS_Data/03_TSIS_Lab/01_contracts/scientific_validation_pipeline_contract_v0_1.md
+C:/TSIS_Data/03_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0001/experiment.yaml
 ```
 
 Lectura correcta de lo ya construido:

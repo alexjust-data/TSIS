@@ -6,7 +6,7 @@ Ambito: auditoria historica de data y futura vigilancia live de TSIS.
 
 ## Rol
 
-Este Harness convierte la auditoria historica de `01_TSIS_backtest_SmallCaps/01_foundations` en un sistema operativo agentico.
+Este Harness convierte la auditoria historica de `01_TSIS_DATA_FOUNDATION/01_foundations` en un sistema operativo agentico.
 
 No existe para inventar una auditoria paralela.
 Existe para que un agente pueda:
@@ -37,7 +37,7 @@ Antes de completar datasets pendientes, el Harness debe preservar y promocionar 
 La auditoria historica bajo:
 
 ```text
-01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/
+01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/
 ```
 
 contiene trabajo profundo para `additional`, `halts`, `reference` y `short`: contratos, notebooks, builders, caches, closeouts, causal overlays y certificaciones.
@@ -122,7 +122,7 @@ En este proyecto cumplen roles inspectores:
 La logica pesada y estable debe vivir, cuando el formato este claro, en scripts o builders residentes bajo:
 
 ```text
-01_TSIS_backtest_SmallCaps/scripts/inspection/<dataset>/
+01_TSIS_DATA_FOUNDATION/scripts/inspection/<dataset>/
 ```
 
 Si un notebook demuestra una conclusion estable, esa conclusion debe quedar encapsulada en markdown institucional, manifest, visual pack o asset persistido. No debe quedar solo dentro del notebook.
@@ -177,10 +177,10 @@ Prohibido modificar, mover, limpiar, normalizar o reorganizar:
 ```text
 E:/TSIS/data/
 C:/TSIS_Data/data/
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/data/
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/run/
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/data/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/run/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/
 ```
 
 Esas rutas solo se leen como evidencia y provenance.
@@ -188,8 +188,8 @@ Esas rutas solo se leen como evidencia y provenance.
 El trabajo nuevo vive en:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/inspection/<dataset>/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/inspection/<dataset>/
 ```
 
 ## Regla de ejecucion recomendada

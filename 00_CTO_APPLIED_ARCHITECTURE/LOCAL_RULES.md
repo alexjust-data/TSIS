@@ -1,4 +1,4 @@
-﻿# 00_CTO_APPLIED_ARCHITECTURE Local Rules
+# 00_CTO_APPLIED_ARCHITECTURE Local Rules
 
 Status: `local_rules_v0_1`
 Date: `2026-07-16`
@@ -79,7 +79,7 @@ manifests and status matrices.
 The active source of truth remains in the operational module, especially:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations
 ```
 
 ---

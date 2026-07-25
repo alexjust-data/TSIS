@@ -1,0 +1,63 @@
+{
+  "authorization_id": "market_state_source_resolver_design_authorization_v0_1",
+  "closure_invariants": {
+    "dataset_registry_entries_written": 0,
+    "downstream_consumption": false,
+    "execution_plans_created": 0,
+    "market_state_parquet_files_written": 0,
+    "market_state_records_emitted": 0,
+    "production": false,
+    "request_records_created": 0,
+    "requests_executed": 0,
+    "resolved_source_sets_created": 0,
+    "source_consumption_policy_runtime_reads": 0,
+    "source_contract_runtime_reads": 0,
+    "source_parquet_files_read": 0,
+    "source_registry_runtime_reads": 0,
+    "source_resolver_executions": 0,
+    "source_rows_read": 0,
+    "source_schema_runtime_reads": 0
+  },
+  "date": "2026-07-25",
+  "design_allowed": {
+    "source_resolver_design_allowed": true
+  },
+  "design_questions": [
+    "How does each profile-required source alias resolve into exactly one governed source?",
+    "Which Data Foundation contracts, schemas, registries and policies must be referenced?",
+    "Which source authority statuses are acceptable for candidate output mode?",
+    "What belongs to source resolution rather than partition coverage resolution?",
+    "Which source findings block before partition and coverage resolution?"
+  ],
+  "forbidden_actions": {
+    "dataset_registry_write_allowed": false,
+    "downstream_consumption_allowed": false,
+    "execution_plan_creation_allowed": false,
+    "market_state_builder_execution_allowed": false,
+    "market_state_materializer_execution_allowed": false,
+    "official_market_state_dataset_promotion_allowed": false,
+    "official_market_state_parquet_write_allowed": false,
+    "production_allowed": false,
+    "request_execution_allowed": false,
+    "request_records_created_allowed": false,
+    "resolved_source_set_creation_allowed": false,
+    "source_consumption_policy_runtime_read_allowed": false,
+    "source_contract_runtime_read_allowed": false,
+    "source_data_reads_allowed": false,
+    "source_parquet_file_read_allowed": false,
+    "source_registry_runtime_read_allowed": false,
+    "source_resolver_execution_allowed": false,
+    "source_schema_runtime_read_allowed": false
+  },
+  "gate": "market_state_source_resolver_design_v0_1",
+  "next_allowed_gate": "market_state_partition_and_coverage_resolver_design_v0_1",
+  "parent_execution_plan_contract": "market_state_execution_plan_contract_v0_1",
+  "parent_gate": "market_state_universe_resolver_design_v0_1",
+  "parent_profile_resolver_contract": "market_state_profile_resolver_contract_v0_1",
+  "parent_request_contract": "market_state_request_contract_v0_1",
+  "parent_runtime_architecture": "runtime_capabilities_architecture_v0_1",
+  "parent_universe_resolver_contract": "market_state_universe_resolver_contract_v0_1",
+  "scope_id": "market_state_source_resolver_design_scope_v0_1",
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+  "target_contract": "market_state_source_resolver_contract_v0_1"
+}

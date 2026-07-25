@@ -79,9 +79,9 @@ Evidence:
 - Market Representation materialization authority: `C:\TSIS_Data\00_CTO_1\00_EPISTEMOLOGICAL_architecture\01_TSIS_REPRESENTATION_THEORY\17_Chapter_16_Materialization_Policy_TSIS.md`.
 - Market Representation governance authority: `C:\TSIS_Data\00_CTO_1\00_EPISTEMOLOGICAL_architecture\01_TSIS_REPRESENTATION_THEORY\19_Chapter_18_Representation_Governance_TSIS.md`.
 - Constitutional authority: `C:\TSIS_Data\00_CTO_1\00_EPISTEMOLOGICAL_architecture\01_TSIS_REPRESENTATION_THEORY\22_Chapter_21_Constitutional_Principles_TSIS.md`; `C:\TSIS_Data\AGENTS.md`.
-- Physical/table authority: `C:\TSIS_Data\00_CTO_1\05_TABLES\TABLES_CREATION_process_v0_1.md`; `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations`.
-- Current status authority: `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md`.
-- Target-contract authority: `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\data_foundation_outputs_target_contract_v0_1.md`.
+- Physical/table authority: `C:\TSIS_Data\00_CTO_1\05_TABLES\TABLES_CREATION_process_v0_1.md`; `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations`.
+- Current status authority: `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md`.
+- Target-contract authority: `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\data_foundation_outputs_target_contract_v0_1.md`.
 
 ## Chapter Decisions
 
@@ -122,8 +122,8 @@ Delete:
 Move or reference from CRM into existing authorities:
 
 1. Detailed build/process steps -> `C:\TSIS_Data\00_CTO_1\05_TABLES\TABLES_CREATION_process_v0_1.md`.
-2. State builder rules -> `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_builder_contract_v0_1.md`.
-3. Coverage/lookback rules -> `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\market_state_coverage_and_lookback_policy_v0_1.md`.
+2. State builder rules -> `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_builder_contract_v0_1.md`.
+3. Coverage/lookback rules -> `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\market_state_coverage_and_lookback_policy_v0_1.md`.
 4. Schema/dataset/policy/registry/validator lists -> existing `01_foundations` directories.
 5. Certification status -> `data_foundation_outputs_status_matrix_v0_1.md`.
 6. Promotion rules -> `VERSIONING_STANDARDS.md`, governance chapters, changelog and status matrix.
@@ -167,9 +167,9 @@ The framework fits real TSIS cases only if it recognizes different artifact role
 
 Evidence:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md`, output table rows for `000`, `002`, `003`, `007`, `008`, `014`, `015`, `016`, `017`.
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\market_state_event_state_composition_contract_v0_1.md`, sections `Decision Central`, `Current Readiness`, `Promotion Barrier`.
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_builder_contract_v0_1.md`, sections `Flujo Correcto`, `Modos Permitidos`, `Manifest Obligatorio`, `Acceptance Criteria`.
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md`, output table rows for `000`, `002`, `003`, `007`, `008`, `014`, `015`, `016`, `017`.
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\market_state_event_state_composition_contract_v0_1.md`, sections `Decision Central`, `Current Readiness`, `Promotion Barrier`.
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_builder_contract_v0_1.md`, sections `Flujo Correcto`, `Modos Permitidos`, `Manifest Obligatorio`, `Acceptance Criteria`.
 
 ## Proposed Final Index
 

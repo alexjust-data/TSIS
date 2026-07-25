@@ -1,0 +1,58 @@
+{
+  "authorization_id": "market_state_validator_design_authorization_v0_1",
+  "closure_invariants": {
+    "candidate_files_read": 0,
+    "dataset_registry_entries_written": 0,
+    "datasets_written": 0,
+    "downstream_consumption": false,
+    "market_state_records_emitted": 0,
+    "official_market_state_dataset_promotion": false,
+    "parquet_files_read": 0,
+    "partition_status_changes": 0,
+    "production": false,
+    "quarantine_actions": 0,
+    "validation_reports_created": 0,
+    "validator_executions": 0
+  },
+  "date": "2026-07-25",
+  "design_allowed": {
+    "validator_design_allowed": true
+  },
+  "design_questions": [
+    "Which candidate materializer outputs may a future validator consume?",
+    "Which validation blocks must be applied to scope, schema, grain, identity, temporal legality, lineage, completeness, content and fingerprints?",
+    "How are severities and final validation statuses represented without free-text ambiguity?",
+    "Which eligibility recommendations can validation emit without writing the Dataset Registry?",
+    "Which findings require quarantine, blocking or restriction?",
+    "Which actions remain outside validator authority?"
+  ],
+  "forbidden_actions": {
+    "candidate_file_read_allowed": false,
+    "dataset_registry_write_allowed": false,
+    "downstream_consumption_allowed": false,
+    "market_state_record_emission_allowed": false,
+    "official_market_state_dataset_promotion_allowed": false,
+    "parquet_file_read_allowed": false,
+    "partition_status_change_allowed": false,
+    "production_allowed": false,
+    "quarantine_action_allowed": false,
+    "row_repair_allowed": false,
+    "source_resolution_allowed": false,
+    "validation_report_creation_allowed": false,
+    "validator_execution_allowed": false
+  },
+  "gate": "market_state_validator_design_v0_1",
+  "next_allowed_gate": "market_state_candidate_dataset_registry_design_v0_1",
+  "parent_execution_plan_contract": "market_state_execution_plan_contract_v0_1",
+  "parent_gate": "market_state_materializer_design_v0_1",
+  "parent_materializer_contract": "market_state_materializer_contract_v0_1",
+  "parent_partition_coverage_resolver_contract": "market_state_partition_and_coverage_resolver_contract_v0_1",
+  "parent_profile_resolver_contract": "market_state_profile_resolver_contract_v0_1",
+  "parent_request_contract": "market_state_request_contract_v0_1",
+  "parent_runtime_architecture": "runtime_capabilities_architecture_v0_1",
+  "parent_source_resolver_contract": "market_state_source_resolver_contract_v0_1",
+  "parent_universe_resolver_contract": "market_state_universe_resolver_contract_v0_1",
+  "scope_id": "market_state_validator_design_scope_v0_1",
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+  "target_contract": "market_state_validator_contract_v0_1"
+}

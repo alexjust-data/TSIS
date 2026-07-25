@@ -1,4 +1,4 @@
-﻿# State Table Creation Process v0.1
+# State Table Creation Process v0.1
 
 ## Proposito
 
@@ -143,8 +143,8 @@ La tabla se declara primero como salida objetivo de Data Foundation.
 Documentos principales:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\data_foundation_outputs_target_contract_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\data_foundation_outputs_target_contract_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md
 ```
 
 En esta fase la lectura correcta es:
@@ -184,15 +184,15 @@ Antes de materializar cualquier candidato real, deben existir contratos que gobi
 Paths:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_builder_contract_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\market_state_event_state_composition_contract_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\market_state_event_state_build_loop_runbook_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\market_state_coverage_and_lookback_policy_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_observable_eligibility_contract_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_derived_observables_formula_contract_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_decision_timestamp_policy_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_snapshot_roles_contract_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_canonical_vs_representation_layer_contract_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_builder_contract_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\market_state_event_state_composition_contract_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\market_state_event_state_build_loop_runbook_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\market_state_coverage_and_lookback_policy_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_observable_eligibility_contract_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_derived_observables_formula_contract_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_decision_timestamp_policy_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_snapshot_roles_contract_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_canonical_vs_representation_layer_contract_v0_1.md
 ```
 
 ### 4. Declarar linaje RAW -> consumo de estado
@@ -223,11 +223,11 @@ Debe documentar:
 Paths:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_contract_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_intraday_1m_event_windows_controlled_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_intraday_1m_event_state_controlled_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_intraday_1m_outcomes_controlled_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_contract_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_intraday_1m_event_windows_controlled_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_intraday_1m_event_state_controlled_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_intraday_1m_outcomes_controlled_v0_1.md
 ```
 
 Para 1m quote-guarded, la ruta controlada actual es:
@@ -260,14 +260,14 @@ Se fijan:
 Paths:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs\market_state_table_schema_contract.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs\event_state_table_schema_contract.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\contract_registry\dataset_contracts\market_state_table_dataset_contract_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\contract_registry\dataset_contracts\event_state_table_dataset_contract_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\dataset_registry\outputs\market_state_table_registry_entry.yaml
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\dataset_registry\outputs\event_state_table_registry_entry.yaml
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\data_consumption_policies\market_state_table_consumption_policy.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\data_consumption_policies\event_state_table_consumption_policy.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas\outputs\market_state_table_schema_contract.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas\outputs\event_state_table_schema_contract.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\contract_registry\dataset_contracts\market_state_table_dataset_contract_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\contract_registry\dataset_contracts\event_state_table_dataset_contract_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\dataset_registry\outputs\market_state_table_registry_entry.yaml
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\dataset_registry\outputs\event_state_table_registry_entry.yaml
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\data_consumption_policies\market_state_table_consumption_policy.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\data_consumption_policies\event_state_table_consumption_policy.md
 ```
 
 ### 6. Crear builder controlado
@@ -289,18 +289,18 @@ Primero debe poder producir:
 Scripts:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\_state_fixture_builder.py
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\materialize_market_state_table.py
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\materialize_event_state_table.py
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\materialize_market_state_intraday_quote_guarded_candidate.py
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\materialize_event_state_intraday_quote_guarded_candidate.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\scripts\_state_fixture_builder.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\scripts\materialize_market_state_table.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\scripts\materialize_event_state_table.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\scripts\materialize_market_state_intraday_quote_guarded_candidate.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\scripts\materialize_event_state_intraday_quote_guarded_candidate.py
 ```
 
 Configs/fixtures:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\configs\data_foundation_outputs\market_state_builder_fixture_v0_1.json
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\configs\data_foundation_outputs\event_state_builder_fixture_v0_1.json
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\configs\data_foundation_outputs\market_state_builder_fixture_v0_1.json
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\configs\data_foundation_outputs\event_state_builder_fixture_v0_1.json
 C:\TSIS_Data\tests\fixtures\data_foundation_outputs\market_event_state_v0_1\
 ```
 
@@ -369,12 +369,12 @@ Los validators deben comprobar:
 Paths:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\validators\outputs\market_state_table_validators.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\validators\outputs\event_state_table_validators.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\tests\data_foundation_outputs\test_market_state_table_contract.py
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\tests\data_foundation_outputs\test_event_state_table_contract.py
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\tests\data_foundation_outputs\test_market_state_intraday_quote_guarded_candidate_builder.py
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\tests\data_foundation_outputs\test_event_state_intraday_quote_guarded_candidate_builder.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\validators\outputs\market_state_table_validators.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\validators\outputs\event_state_table_validators.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\tests\data_foundation_outputs\test_market_state_table_contract.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\tests\data_foundation_outputs\test_event_state_table_contract.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\tests\data_foundation_outputs\test_market_state_intraday_quote_guarded_candidate_builder.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\tests\data_foundation_outputs\test_event_state_intraday_quote_guarded_candidate_builder.py
 ```
 
 ### 9. Registrar candidato

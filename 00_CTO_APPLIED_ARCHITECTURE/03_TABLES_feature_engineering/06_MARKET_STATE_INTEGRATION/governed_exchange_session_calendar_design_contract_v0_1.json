@@ -1,0 +1,150 @@
+{
+  "contract_id": "governed_exchange_session_calendar_design_contract_v0_1",
+  "status": "closed_design_ready_with_restrictions",
+  "date": "2026-07-23",
+  "scope": "design_only_no_execution",
+  "closed_prerequisites": {
+    "experimental_core_four_market_state_scale_a_execution": "CLOSED_PASS_WITH_RESTRICTIONS",
+    "experimental_core_four_market_state_scale_a_candidate_physical_validation": "CLOSED_PASS_WITH_RESTRICTIONS"
+  },
+  "decision": {
+    "governed_exchange_session_calendar_design": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS",
+    "governed_exchange_session_calendar_binding_authorization": "NOT_OPEN_NEXT",
+    "governed_exchange_session_calendar_binding_validation": "NOT_AUTHORIZED",
+    "experimental_core_four_market_state_scale_b_authorization": "BLOCKED_UNTIL_GOVERNED_EXCHANGE_SESSION_CALENDAR",
+    "experimental_core_four_market_state_scale_b_execution": "NOT_AUTHORIZED"
+  },
+  "authority": {
+    "design_only": true,
+    "calendar_source_read_authorized": false,
+    "calendar_construction_authorized": false,
+    "builder_execution_authorized": false,
+    "information_object_resolution_authorized": false,
+    "market_state_integration_authorized": false,
+    "market_state_materialization_authorized": false,
+    "candidate_parquet_write_authorized": false,
+    "official_market_state_authorized": false,
+    "production_builder_authorized": false,
+    "state_consumption_authorized": false,
+    "downstream_consumption_authorized": false,
+    "dataset_promotion_authorized": false,
+    "full_history_execution_authorized": false,
+    "full_universe_execution_authorized": false,
+    "scale_b_execution_authorized": false
+  },
+  "preferred_source_candidate": {
+    "table_id": "001_market_calendar",
+    "dataset_id": "market_calendar_v0_1",
+    "declared_scope": "XNYS sessions, 2005-01-03 to 2026-03-09",
+    "documented_source": "E:\\TSIS\\data\\data_foundation_outputs\\market_calendar\\market_calendar_v0_1.parquet",
+    "documented_rows": 5328,
+    "documented_calendar": "XNYS",
+    "documented_timezone": "America/New_York",
+    "source_binding_required_before_use": true
+  },
+  "observed_source_fields": [
+    "session_date",
+    "open_utc",
+    "close_utc",
+    "open_et",
+    "close_et",
+    "session_minutes",
+    "is_early_close",
+    "year",
+    "month",
+    "dow",
+    "calendar",
+    "timezone",
+    "source_calendar_artifact",
+    "build_run_id",
+    "schema_version",
+    "created_at_utc"
+  ],
+  "required_logical_fields": [
+    "calendar_id",
+    "exchange_calendar_code",
+    "mic_or_exchange_code",
+    "session_date",
+    "session_open_utc",
+    "session_close_utc",
+    "session_open_local",
+    "session_close_local",
+    "timezone",
+    "session_minutes",
+    "session_type",
+    "is_regular_session",
+    "is_early_close",
+    "is_closed_or_holiday",
+    "calendar_version",
+    "source_calendar_artifact",
+    "source_snapshot_fingerprint",
+    "calendar_row_fingerprint"
+  ],
+  "field_mapping_policy": {
+    "calendar": [
+      "exchange_calendar_code",
+      "mic_or_exchange_code"
+    ],
+    "session_date": "session_date",
+    "open_utc": "session_open_utc",
+    "close_utc": "session_close_utc",
+    "open_et": "session_open_local",
+    "close_et": "session_close_local",
+    "timezone": "timezone",
+    "session_minutes": "session_minutes",
+    "is_early_close": "is_early_close",
+    "schema_version": "calendar_version",
+    "source_calendar_artifact": "source_calendar_artifact"
+  },
+  "closed_day_policy": {
+    "observed_001_shape": "trading_sessions_only",
+    "is_closed_or_holiday_for_emitted_session_rows": false,
+    "absence_based_closed_day_inference_allowed_without_authorization": false,
+    "separate_expected_date_universe_required_for_closed_day_rows": true
+  },
+  "binding_validation_requirements": {
+    "physical_source_exists": true,
+    "schema_fields_present": true,
+    "calendar_all_rows_expected_value": "XNYS",
+    "timezone_all_rows_expected_value": "America/New_York",
+    "session_date_unique": true,
+    "open_utc_before_close_utc": true,
+    "open_local_before_close_local": true,
+    "utc_local_instant_equivalence_required": true,
+    "session_minutes_duration_consistency_required": true,
+    "early_close_consistency_required": true,
+    "calendar_version_present": true,
+    "source_calendar_artifact_present": true,
+    "source_snapshot_fingerprint_required": true,
+    "row_fingerprint_required": true,
+    "hard_failures_must_equal": 0
+  },
+  "scale_b_prerequisites": {
+    "accepted_calendar_binding_validation_required": true,
+    "scale_a_must_remain_fixed_utc_guard_evidence": true,
+    "fixed_utc_probe_calendar_allowed_as_current_scale_b_authority": false
+  },
+  "scale_b_required_coverage": [
+    "winter_regular_session",
+    "summer_regular_session",
+    "US_DST_transition_neighborhood",
+    "Europe_US_DST_desynchronization_neighborhood_when_relevant",
+    "early_close_session_if_observable_in_scope",
+    "pre_bar_context",
+    "regular_intraday_context",
+    "after_last_sampled_bar_context_with_restricted_semantics"
+  ],
+  "scale_b_calendar_acceptance_criteria": {
+    "calendar_boundary_mismatches": 0,
+    "unexpected_decision_timestamp_outside_session": 0,
+    "future_leaks": 0,
+    "decision_case_semantic_mismatches": 0,
+    "after_last_sampled_bar_promoted_to_session_close": 0,
+    "fixed_utc_probe_calendar_references_as_current_authority": 0
+  },
+  "next_allowed_gate": {
+    "gate_id": "governed_exchange_session_calendar_binding_authorization_v0_1",
+    "status": "NOT_OPEN_NEXT",
+    "scope": "authorize binding and validation of existing 001_market_calendar evidence only"
+  }
+}

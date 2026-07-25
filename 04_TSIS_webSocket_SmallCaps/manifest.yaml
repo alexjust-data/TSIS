@@ -4,7 +4,7 @@ status: bootstrap_recovery
 canonical_root: C:/TSIS_Data/04_TSIS_webSocket_SmallCaps
 owner_layer: live_ingestion_streaming_state_live_operation
 created_from: legacy_polygon_websocket_prototypes
-last_governance_update: 2026-07-06
+last_governance_update: 2026-07-24
 
 upstream_authority:
   cto_architecture: C:/TSIS_Data/00_CTO/TSIS_LAB_ARCHITECTURE_v3.md
@@ -14,6 +14,10 @@ upstream_authority:
 physical_data_roots:
   polygon_websocket_prototype_raw: C:/TSIS_Data/04_TSIS_webSocket_SmallCaps/data/raw_ws
   polygon_websocket_prototype_curated: C:/TSIS_Data/04_TSIS_webSocket_SmallCaps/data/curated_ws
+  das_cmdapi_default_contract_root: E:/TSIS/data_DAS_live
+  das_cmdapi_operator_root_20260724: C:/TSIS_Data/data
+  das_cmdapi_operator_raw_runs_20260724: C:/TSIS_Data/data/raw_cmdapi/runs
+  das_cmdapi_operator_screener_runs_20260724: C:/TSIS_Data/data/screener/runs
 
 active_artifact_paths:
   polygon_raw_websocket_captures: data/raw_ws

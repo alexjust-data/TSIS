@@ -1,0 +1,19 @@
+﻿{
+    "book_id":  "empirical_market_microstructure_hasbrouck",
+    "title":  "Empirical Market Microstructure",
+    "author":  "Joel Hasbrouck",
+    "source_pdf":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Empirical Market Microstructure â€” Joel Hasbrouck.pdf",
+    "processed_root":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\empirical_market_microstructure_hasbrouck",
+    "source_copy":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\empirical_market_microstructure_hasbrouck\\source\\original.pdf",
+    "pages":  203,
+    "file_size_bytes":  2536023,
+    "sha256":  "2b5937a214f26f665365c4ededbec08f540585ea765948a6244560efec685a0f",
+    "created_utc":  "2026-07-25T05:08:52+00:00",
+    "total_words":  68019,
+    "text_pages":  203,
+    "toc_items":  31,
+    "requires_ocr":  false,
+    "status":  "indexed",
+    "working_text_persisted":  false,
+    "ocr_completed":  false
+}

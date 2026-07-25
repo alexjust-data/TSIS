@@ -1,4 +1,4 @@
-﻿# TSIS Versioning Standards
+# TSIS Versioning Standards
 
 ## 1. Naturaleza del documento
 
@@ -25,10 +25,13 @@ Este documento define cómo evita TSIS degradarse estructuralmente a medida que 
 Gobierna la raíz, el laboratorio transversal y los módulos:
 
 - `00_CTO`
-- `00_TSIS_Lab`
-- `01_TSIS_backtest_SmallCaps`
-- `02_TSIS_webSocket_SmallCaps`
-- `03_TSIS_Offline_RL`
+- `00_CTO_APPLIED_ARCHITECTURE`
+- `01_TSIS_DATA_FOUNDATION`
+- `02_TSIS_BACKTEST_ENGINE`
+- `03_TSIS_Lab`
+- `04_TSIS_webSocket_SmallCaps`
+- `05_TSIS_Offline_RL`
+- `06_TSIS_Trading_voice`
 
 Su objetivo es impedir:
 
@@ -110,7 +113,7 @@ Pueden ayudar a construir conocimiento, pero no sustituyen documentación, manif
 La fuente oficial para experimentos reproducibles vive en:
 
 ```text
-C:/TSIS_Data/00_TSIS_Lab
+C:/TSIS_Data/03_TSIS_Lab
 ```
 
 Un experimento no existe institucionalmente si no tiene:
@@ -707,9 +710,12 @@ Todo contrato compartido entre módulos debe:
 
 Esto es especialmente crítico entre:
 
-- `01_TSIS_backtest_SmallCaps`
-- `02_TSIS_webSocket_SmallCaps`
-- `03_TSIS_Offline_RL`
+- `01_TSIS_DATA_FOUNDATION`
+- `02_TSIS_BACKTEST_ENGINE`
+- `03_TSIS_Lab`
+- `04_TSIS_webSocket_SmallCaps`
+- `05_TSIS_Offline_RL`
+- `06_TSIS_Trading_voice`
 
 La compatibilidad cross-module no puede depender de suposiciones implícitas.
 
@@ -984,7 +990,7 @@ Si una representación funciona, no sustituye automáticamente al estado canóni
 
 Todo modelo entrenado relevante debe tener identidad persistente.
 
-Esto es especialmente crítico para `03_TSIS_Offline_RL`, pero aplica también a clasificadores, meta-labelers y modelos auxiliares del módulo de backtesting.
+Esto es especialmente crítico para `05_TSIS_Offline_RL`, pero aplica también a clasificadores, meta-labelers y modelos auxiliares del módulo de backtesting.
 
 ### 18.2. Convención de nombres
 

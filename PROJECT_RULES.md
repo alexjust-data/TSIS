@@ -1,4 +1,4 @@
-﻿# TSIS Project Rules
+# TSIS Project Rules
 
 ## 0. Regla inicial obligatoria de comunicacion `English`
 
@@ -258,9 +258,9 @@ según corresponda.
 Esta exigencia no es local de una carpeta ni de una fase.
 Aplica con la misma dureza a todos los módulos de TSIS:
 
-- `01_TSIS_backtest_SmallCaps`;
-- `02_TSIS_webSocket_SmallCaps`;
-- `03_TSIS_Offline_RL`;
+- `01_TSIS_DATA_FOUNDATION`;
+- `04_TSIS_webSocket_SmallCaps`;
+- `05_TSIS_Offline_RL`;
 - `00_CTO`;
 - y cualquier capa futura.
 

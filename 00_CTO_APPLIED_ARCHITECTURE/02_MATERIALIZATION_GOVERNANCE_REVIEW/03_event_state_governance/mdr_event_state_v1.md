@@ -1,4 +1,4 @@
-﻿# mdr_event_state_v1
+# mdr_event_state_v1
 
 Status: `candidate_record_v1`
 
@@ -173,31 +173,31 @@ It shall not be treated as:
 
   `C:\TSIS_Data\00_CTO_1\00_EPISTEMOLOGICAL_architecture\01_TSIS_REPRESENTATION_THEORY\17_Chapter_16_Materialization_Policy_TSIS.md`       `Materialization Policy`                   `primary`         `verified_current`
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\market_state_event_state_composition_contract_v0_1.md`  `event_state_table`                        `supporting`      `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\market_state_event_state_composition_contract_v0_1.md`  `event_state_table`                        `supporting`      `verified_current`
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs\event_state_table_schema_contract.md`                 `event_state_table_v0_1`                   `supporting`      `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas\outputs\event_state_table_schema_contract.md`                 `event_state_table_v0_1`                   `supporting`      `verified_current`
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\contract_registry\dataset_contracts\event_state_table_dataset_contract_v0_1.md`  `dataset contract`                         `supporting`      `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\contract_registry\dataset_contracts\event_state_table_dataset_contract_v0_1.md`  `dataset contract`                         `supporting`      `verified_current`
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\data_consumption_policies\event_state_table_consumption_policy.md`               `consumption policy`                       `supporting`      `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\data_consumption_policies\event_state_table_consumption_policy.md`               `consumption policy`                       `supporting`      `verified_current`
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\dataset_registry\outputs\event_state_table_registry_entry.yaml`                 `registry entry`                           `supporting`      `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\dataset_registry\outputs\event_state_table_registry_entry.yaml`                 `registry entry`                           `supporting`      `verified_current`
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\validators\outputs\event_state_table_validators.md`                             `validators`                               `supporting`      `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\validators\outputs\event_state_table_validators.md`                             `validators`                               `supporting`      `verified_current`
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md`          `event_state controlled candidate status`  `supporting`      `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md`          `event_state controlled candidate status`  `supporting`      `verified_current`
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\data_foundation_outputs_target_contract_v0_1.md`        `event_state controlled candidate evidence` `supporting`     `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\data_foundation_outputs_target_contract_v0_1.md`        `event_state controlled candidate evidence` `supporting`     `verified_current`
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_builder_contract_v0_1.md`                         `state builder flow`                       `supporting`      `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_builder_contract_v0_1.md`                         `state builder flow`                       `supporting`      `verified_current`
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_observable_eligibility_contract_v0_1.md`          `observable eligibility`                   `supporting`      `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_observable_eligibility_contract_v0_1.md`          `observable eligibility`                   `supporting`      `verified_current`
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_decision_timestamp_policy_v0_1.md`                `decision timestamp policy`                `supporting`      `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_decision_timestamp_policy_v0_1.md`                `decision timestamp policy`                `supporting`      `verified_current`
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_snapshot_roles_contract_v0_1.md`                  `state roles`                              `supporting`      `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_snapshot_roles_contract_v0_1.md`                  `state roles`                              `supporting`      `verified_current`
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_derived_observables_formula_contract_v0_1.md`     `derived observables`                      `supporting`      `verified_current`
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_derived_observables_formula_contract_v0_1.md`     `derived observables`                      `supporting`      `verified_current`
   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------

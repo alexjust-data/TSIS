@@ -1,4 +1,4 @@
-﻿# Filosofía de Investigación de TSIS
+# Filosofía de Investigación de TSIS
 
 Fecha de alineacion v3: 2026-07-05
 Estado: sintesis_raiz_alineada_con_scientific_discovery_engine
@@ -40,22 +40,28 @@ TSIS es un Scientific Discovery Engine propietario para microcaps y small caps: 
 El objetivo no es simplemente encontrar setups que ganen dinero.
 El objetivo es identificar dinámicas reales, invariantes y explotables del mercado, y convertirlas en decisiones robustas bajo incertidumbre.
 
-La ambición del proyecto se despliega en capas conectadas:
+La ambicion del proyecto se despliega en capas conectadas:
 
 1. `00_CTO`
-   Filosofía, arquitectura, mapas, autoridad y gobierno.
-2. `00_TSIS_Lab`
-   Laboratorio operativo transversal de `research_experiments`, evidencia, validación y knowledge objects.
-3. `01_TSIS_backtest_SmallCaps`
-   Data Foundation, investigación histórica, event discovery, feature engine, backtest clásico y strategy research.
-4. `02_TSIS_webSocket_SmallCaps`
-   Captura live, event-driven operation, signal routing, execution bridge y monitorización de riesgo.
-5. `03_TSIS_Offline_RL`
-   Aprendizaje secuencial, behavioral cloning, offline RL, evaluación de políticas y candidatos de despliegue.
-6. `10_AUTONOMOUS_RESEARCH_SYSTEMS / AlphaEvolve`
-   Generadores de candidate research experiments, nunca autoridad de validación.
+   Filosofia, arquitectura, mapas, autoridad y gobierno.
+2. `00_CTO_APPLIED_ARCHITECTURE`
+   Arquitectura aplicada, handoffs y gates de ingenieria gobernada.
+3. `01_TSIS_DATA_FOUNDATION`
+   Data Foundation, auditoria, certificacion, contratos, policies, validators, dossiers y outputs gobernados.
+4. `02_TSIS_BACKTEST_ENGINE`
+   Futuro backtester profesional: event loop, simulation input, OMS, execution, accounting, ledgers y validation.
+5. `03_TSIS_Lab`
+   Laboratorio operativo transversal de `research_experiments`, evidencia, validacion y knowledge objects.
+6. `04_TSIS_webSocket_SmallCaps`
+   Captura live, event-driven operation, signal routing, execution bridge y monitorizacion de riesgo.
+7. `05_TSIS_Offline_RL`
+   Aprendizaje secuencial, behavioral cloning, offline RL, evaluacion de politicas y candidatos de despliegue.
+8. `06_TSIS_Trading_voice`
+   Trading Decision Intelligence: voz, decision process, diarios, metricas y reportes.
+9. `10_AUTONOMOUS_RESEARCH_SYSTEMS / AlphaEvolve`
+   Generadores de candidate research experiments, nunca autoridad de validacion.
 
-TSIS debe entenderse como un laboratorio científico cuantitativo completo, no como un script de señales.
+TSIS debe entenderse como un laboratorio cientifico cuantitativo completo, no como un script de senales.
 
 ---
 

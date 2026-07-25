@@ -120,7 +120,7 @@ que demostró que:
 
 El inspector puede navegar cualquier caso del universo auditado en:
 
-- [ohlcv_1m_split_normalized_full_universe_audit_notebook_v0_1.ipynb](<C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/1m_split_normalized/ohlcv_1m_split_normalized_full_universe_audit_notebook_v0_1.ipynb>)
+- [ohlcv_1m_split_normalized_full_universe_audit_notebook_v0_1.ipynb](<C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/1m_split_normalized/ohlcv_1m_split_normalized_full_universe_audit_notebook_v0_1.ipynb>)
 
 Ese notebook permite:
 

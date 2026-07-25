@@ -462,7 +462,7 @@ Donde inspeccionar el detalle:
 - tests/data_foundation_outputs/README.md  
 
 AuditorÃ­a/certificaciÃ³n primaria:
-- C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/00_data_certification/
+- C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/
 
 Inputs RAW auditados para reference/identity:
   D:/reference/overview/...
@@ -1107,7 +1107,7 @@ Donde inspeccionar el detalle:
 - 01_foundations/GRAPHIFY_REFRESH_QUEUE.md
 
 Run materializado:
-  C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/1m_split_normalized_full_universe_candidate/split_affected_20260627_192314/
+  C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/data_foundation/1m_split_normalized_full_universe_candidate/split_affected_20260627_192314/
 
 Output candidate:
   E:/TSIS/data/ohlcv_1m_split_normalized_full_universe_candidate/
@@ -1240,7 +1240,7 @@ Run en progreso:
   script = build_ohlcv_1m_quote_guarded_repairs_v0_2.py
   minute_root = E:/TSIS/data/ohlcv_1m
   quotes_root = D:/quotes
-  run_root = C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838
+  run_root = C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/data_foundation/ohlcv_1m_quote_guarded/quote_guarded_v0_2_20260627_091838
 
 Artefactos del run:
   month_summaries/*.json
@@ -1445,7 +1445,7 @@ Donde inspeccionar el detalle:
 - 01_foundations/module_contracts/outputs/scanner_framework_and_definitions_contract_v0_3.md
 - 01_foundations/canonical_schemas/outputs/daily_scanner_candidates_table_schema_contract.md
 - 01_foundations/validators/outputs/daily_scanner_candidates_table_validators.md
-- 01_TSIS_backtest_SmallCaps/configs/data_foundation_outputs/scanner_definitions/
+- 01_TSIS_DATA_FOUNDATION/configs/data_foundation_outputs/scanner_definitions/
 - tests/data_foundation_outputs/README.md
 
 Replay controlado v0.3:
@@ -1583,7 +1583,7 @@ Donde inspeccionar el detalle:
 - 01_foundations/module_contracts/outputs/intraday_scanner_framework_and_definitions_contract_v0_1.md
 - 01_foundations/canonical_schemas/outputs/intraday_scanner_candidates_table_schema_contract.md
 - 01_foundations/validators/outputs/intraday_scanner_candidates_table_validators.md
-- 01_TSIS_backtest_SmallCaps/configs/data_foundation_outputs/scanner_definitions/intraday_in_play_momentum_candidate_denominator_v0_1.yaml
+- 01_TSIS_DATA_FOUNDATION/configs/data_foundation_outputs/scanner_definitions/intraday_in_play_momentum_candidate_denominator_v0_1.yaml
 - tests/data_foundation_outputs/README.md
 
 Replay controlado:
@@ -3435,13 +3435,13 @@ C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/market_stat
 C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/market_state_representation_source_file_map_v0_1.md
 C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/README.md
 C:/TSIS_Data/00_CTO/11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/00_SCANNER_CANDIDATE_SELECTION/intraday_scanner_candidates_contract_v0_1.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/market_state_event_state_composition_contract_v0_1.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/market_state_event_state_build_loop_runbook_v0_1.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/market_state_coverage_and_lookback_policy_v0_1.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/ohlcv_1m_split_normalized_split_affected_materialization_results_v0_1.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/ohlcv_1m_quote_guarded_repair_manifest_policy_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_status_matrix_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/market_state_event_state_composition_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/market_state_event_state_build_loop_runbook_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/market_state_coverage_and_lookback_policy_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/ohlcv_1m_split_normalized_split_affected_materialization_results_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/ohlcv_1m_quote_guarded_repair_manifest_policy_v0_1.md
 ```
 
 ## Regla Final

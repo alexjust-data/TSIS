@@ -136,7 +136,7 @@ Objetivos mayo-junio:
 TODO lo relacionado con:
 
 ```text
-01_TSIS_backtest_SmallCaps
+01_TSIS_DATA_FOUNDATION
 ```
 
 ---
@@ -146,7 +146,7 @@ TODO lo relacionado con:
 TODO lo relacionado con:
 
 ```text
-02_TSIS_webSocket_SmallCaps
+04_TSIS_webSocket_SmallCaps
 ```
 
 ---
@@ -156,7 +156,7 @@ TODO lo relacionado con:
 TODO lo relacionado con:
 
 ```text
-03_TSIS_Offline_RL
+05_TSIS_Offline_RL
 ```
 
 ---

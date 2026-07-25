@@ -35,13 +35,13 @@ Subroots:
 
 ### Universo
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\market_cap_last_observed_cutoff\20260320_market_cap_last_observed_cutoff\market_cap_cutoff_lt_1b_active_inactive.parquet`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\market_cap_last_observed_cutoff\20260320_market_cap_last_observed_cutoff\market_cap_cutoff_lt_1b_active_inactive.parquet`
 
 ### Artefactos previos reutilizables
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\additional_audit\20260405_additional_lt1b_coverage\additional_ticker_datasets_summary.parquet`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\additional_audit\20260405_additional_lt1b_coverage\additional_ticker_datasets_by_file.parquet`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\additional_audit\20260405_additional_lt1b_coverage\additional_macro_datasets_summary.parquet`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\additional_audit\20260405_additional_lt1b_coverage\additional_ticker_datasets_summary.parquet`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\additional_audit\20260405_additional_lt1b_coverage\additional_ticker_datasets_by_file.parquet`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\additional_audit\20260405_additional_lt1b_coverage\additional_macro_datasets_summary.parquet`
 
 ### Cruces posteriores
 

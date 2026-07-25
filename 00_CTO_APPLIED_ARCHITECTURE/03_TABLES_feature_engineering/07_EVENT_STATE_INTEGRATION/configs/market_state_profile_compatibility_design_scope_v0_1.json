@@ -1,0 +1,45 @@
+{
+  "scope_id": "market_state_profile_compatibility_design_scope_v0_1",
+  "status": "closed_design_ready_with_restrictions_no_execution",
+  "authorization_document": "C:/TSIS_Data/00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/07_EVENT_STATE_INTEGRATION/market_state_profile_compatibility_design_authorization_v0_1.md",
+  "design_run_id": "market_state_profile_compatibility_design_v0_1_20260724T142500Z",
+  "date": "2026-07-24",
+  "scope": "event_state_core_four_session_opened_market_state_profile_compatibility_design",
+  "market_state_profile_authority": {
+    "profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "status": "OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS",
+    "profile_manifest": "06_MARKET_STATE_INTEGRATION/official_profiles/market_state_core_four_intraday_profile_v0_1/PROFILE_MANIFEST.json",
+    "physical_schema_contract": "06_MARKET_STATE_INTEGRATION/official_profiles/market_state_core_four_intraday_profile_v0_1/PHYSICAL_SCHEMA_CONTRACT.json",
+    "evidence_manifest": "06_MARKET_STATE_INTEGRATION/official_profiles/market_state_core_four_intraday_profile_v0_1/EVIDENCE_MANIFEST.json",
+    "official_dataset_authorized": false,
+    "official_parquet_written": false,
+    "downstream_consumption_authorized": false
+  },
+  "event_state_authority": {
+    "event_state_profile_id": "event_state_core_four_intraday_profile_v0_1",
+    "event_type_id": "event_type:market_data:session_opened",
+    "event_subject_scope": "exchange_session",
+    "event_instance_binding_design": "event_instance_binding_design_v0_1",
+    "event_window_binding_design": "event_window_binding_design_v0_1"
+  },
+  "compatibility_result": {
+    "semantic_profile_compatibility": "SEMANTICALLY_COMPATIBLE_WITH_RESTRICTIONS",
+    "physical_consumption_authority": "NOT_AUTHORIZED",
+    "execution_readiness": "NOT_READY_REQUIRES_INSTRUMENT_SESSION_PROJECTION_DESIGN",
+    "direct_exchange_session_to_instrument_market_state_join": "NOT_ALLOWED_WITHOUT_PROJECTION"
+  },
+  "closed_actions": {
+    "market_state_physical_consumption": false,
+    "candidate_market_state_parquet_read": false,
+    "event_instance_binding_execution": false,
+    "event_window_binding_execution": false,
+    "instrument_session_projection_execution": false,
+    "event_state_builder_execution": false,
+    "event_state_materialization": false,
+    "official_event_state_profile_promotion": false,
+    "official_event_state_dataset_promotion": false,
+    "production": false,
+    "downstream_consumption": false
+  },
+  "next_gate_after_design": "event_state_instrument_session_projection_design_authorization_v0_1"
+}

@@ -1,0 +1,193 @@
+{
+  "contract_id": "event_type_or_event_family_contract_design_contract_v0_1",
+  "design_id": "event_type_or_event_family_contract_design_v0_1",
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS",
+  "date": "2026-07-23",
+  "scope": "event_type_family_authority_before_event_instance_binding",
+  "design_decision": {
+    "event_type_or_event_family_contract_design": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS",
+    "event_type_registry_status": "DESIGN_CONTRACT_READY_NOT_POPULATED",
+    "event_instance_binding_design": "NOT_OPEN_NEXT_IF_EXPLICITLY_AUTHORIZED",
+    "event_detection_execution_authorized": false,
+    "event_state_builder_execution_authorized": false
+  },
+  "conceptual_authorities": [
+    "00_EPISTEMOLOGICAL_architecture/03_TSIS_EVENTS/02_Chapter_2_Event_Taxonomy_TSIS_Event_Research_Architecture.md",
+    "00_EPISTEMOLOGICAL_architecture/03_TSIS_EVENTS/03_Chapter_3_Event_Families_TSIS_Event_Research_Architecture.md",
+    "02_MATERIALIZATION_GOVERNANCE_REVIEW/03_event_state_governance/canonical_to_physical_mapping_event_state_v1.md",
+    "06_MARKET_STATE_INTEGRATION/event_state_profile_contract_design_v0_1.md"
+  ],
+  "taxonomy_principle": {
+    "taxonomy_defines_meaning": true,
+    "implementation_defines_detection": true,
+    "strategy_labels_allowed_as_event_types": false,
+    "outcome_labels_allowed_as_event_types": false
+  },
+  "required_event_family_contract_fields": [
+    "event_family_id",
+    "event_family_version",
+    "canonical_name",
+    "semantic_definition",
+    "observable_origin",
+    "anchor_definition_policy",
+    "eligibility_policy_id",
+    "population_policy_id",
+    "window_policy_id",
+    "outcome_policy_id",
+    "allowed_event_type_namespace",
+    "forbidden_strategy_labels",
+    "governance_status",
+    "definition_hash"
+  ],
+  "required_event_type_contract_fields": [
+    "event_type_id",
+    "event_type_version",
+    "event_family_id",
+    "event_domain",
+    "event_epistemic_role",
+    "canonical_name",
+    "semantic_definition",
+    "observable_origin",
+    "anchor_timestamp_policy",
+    "first_observable_timestamp_policy",
+    "detection_timestamp_policy",
+    "eligibility_policy_id",
+    "population_policy_id",
+    "window_policy_id",
+    "detector_contract_id",
+    "detector_version",
+    "source_dataset_authority",
+    "source_quality_requirements",
+    "event_variant_policy",
+    "promotion_status",
+    "definition_hash"
+  ],
+  "required_event_variant_fields_when_applicable": [
+    "event_variant_id",
+    "event_variant_version",
+    "parent_event_type_id",
+    "implementation_parameters",
+    "threshold_policy",
+    "detector_variant_version",
+    "variant_hash"
+  ],
+  "timestamp_policy": {
+    "must_distinguish_event_anchor_timestamp_utc": true,
+    "must_distinguish_first_observable_timestamp_utc": true,
+    "must_distinguish_detection_timestamp_utc": true,
+    "at_event_decision_safe_requires_detection_timing_proof": true
+  },
+  "forbidden_classes": [
+    "winning_trades",
+    "best_entries",
+    "high_probability_longs",
+    "alpha_signals",
+    "profitable_setups",
+    "good_entries"
+  ],
+  "registry_boundary": {
+    "defines_registry_contract_shape": true,
+    "populates_registry": false,
+    "promotes_registry": false,
+    "future_instance_binding_requires_accepted_event_type_contract_entry": true
+  },
+  "future_gate_validation_requirements": [
+    "event_type_id resolves to exactly one contract entry",
+    "event_family_id resolves to exactly one family entry",
+    "event_type belongs to exactly one primary family",
+    "definition_hash matches referenced contract",
+    "detector_contract_id is present or explicitly not_applicable for non-detector events",
+    "anchor_timestamp_policy is explicit",
+    "first_observable_timestamp_policy is explicit",
+    "detection_timestamp_policy is explicit",
+    "source_dataset_authority is explicit",
+    "outcome labels are not part of event identity",
+    "strategy labels are not part of event identity"
+  ],
+  "closed_boundaries": {
+    "event_type_registry_population_authorized": false,
+    "event_detection_execution_authorized": false,
+    "event_instance_binding_execution_authorized": false,
+    "event_window_binding_execution_authorized": false,
+    "event_state_builder_execution_authorized": false,
+    "event_state_integration_execution_authorized": false,
+    "event_state_materialization_authorized": false,
+    "official_event_state_profile_promotion_authorized": false,
+    "official_event_state_dataset_promotion_authorized": false,
+    "production_authorized": false,
+    "downstream_consumption_authorized": false
+  },
+  "next_allowed_gates": [
+    "event_type_registry_seed_design_v0_1"
+  ],
+  "event_policy_artifact": "event_state_event_policy_v0_1.md",
+  "event_registry_state": {
+    "event_type_registry_contract_shape": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS",
+    "event_type_registry_schema": "NOT_DESIGNED_NEXT_GATE",
+    "event_type_registry_seed_design": "NOT_OPEN_NEXT_IF_EXPLICITLY_AUTHORIZED",
+    "event_type_registry_population": "NOT_AUTHORIZED",
+    "accepted_event_families": 0,
+    "accepted_event_types": 0,
+    "candidate_event_types": "future_gate_only"
+  },
+  "event_policy_principles": [
+    "event architecture is not event catalog",
+    "event grammar is not populated dictionary",
+    "event type is not strategy response",
+    "event type is not outcome label",
+    "event type is not detector implementation",
+    "discovered candidate is not accepted event type"
+  ],
+  "allowed_candidate_event_family_namespaces": [
+    "market_data",
+    "regulatory",
+    "market_structure",
+    "information",
+    "scanner",
+    "geometry",
+    "microstructure",
+    "research"
+  ],
+  "family_namespace_boundary": {
+    "conceptually_recognized_namespaces_are_accepted_registry_entries": false,
+    "accepted_event_families": 0
+  },
+  "allowed_event_domains": [
+    "market",
+    "information",
+    "microstructure",
+    "regulatory",
+    "system",
+    "research",
+    "scanner"
+  ],
+  "allowed_event_epistemic_roles": [
+    "observed_phenomenon",
+    "system_generated_candidate",
+    "research_annotation",
+    "governance_state_change"
+  ],
+  "subsequent_gates_after_seed_design": [
+    "event_type_registry_initial_population_authorization_v0_1",
+    "event_type_admission_review_design_v0_1",
+    "event_instance_binding_design_v0_1",
+    "event_window_binding_design_v0_1",
+    "market_state_profile_compatibility_design_v0_1"
+  ],
+  "current_state_note": {
+    "date": "2026-07-24",
+    "this_contract_remains_prior_contract_shape_gate": true,
+    "event_type_registry_seed_design": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS",
+    "event_type_registry_schema": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS",
+    "event_type_registry_population": "CANDIDATE_POPULATION_RECORDED_WITH_RESTRICTIONS",
+    "accepted_event_types": 0,
+    "current_next_allowed_gate": "event_type_initial_admission_review_authorization_v0_1",
+    "current_next_gate_requires_explicit_authorization": true,
+    "event_detection_execution_authorized": false,
+    "event_instance_binding_execution_authorized": false,
+    "event_state_builder_execution_authorized": false,
+    "regulatory_namespace_note": "regulatory added as a candidate namespace to align with allowed event_domain=regulatory; accepted_event_families remains 0.",
+    "event_type_registry_initial_population": "CANDIDATE_POPULATION_RECORDED_WITH_RESTRICTIONS",
+    "candidate_event_types": 2
+  }
+}

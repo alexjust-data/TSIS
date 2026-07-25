@@ -209,7 +209,7 @@ def build_expected_rows(records: list[dict[str, Any]], scope: dict[str, Any], ru
             "source_integration_profile_id": record["market_state_profile_id"],
             "object_completeness_status": "COMPLETE_REQUIRED_OBJECTS_WITH_RESTRICTIONS",
             "quality_status": "PASS_WITH_RESTRICTIONS",
-            "calendar_version": "fixed_utc_probe_calendar_v0_1",
+            "calendar_version": record.get("calendar_version") or "fixed_utc_probe_calendar_v0_1",
         }
         for field in [
             "instrument_id",

@@ -1,0 +1,204 @@
+{
+  "review_metadata": {
+    "review_id": "event_type_initial_admission_review_v0_1_20260724T111500Z",
+    "authorization_id": "event_type_initial_admission_review_authorization_v0_1",
+    "scope_id": "event_type_initial_admission_review_scope_v0_1",
+    "status": "CLOSED_WITH_MIXED_DECISIONS_NO_EXECUTION",
+    "date": "2026-07-24",
+    "reviewed_at_utc": "2026-07-24T11:15:00Z",
+    "parent_registry_snapshot_id": "tsis_event_type_registry_v0_1_candidate_population_001",
+    "parent_registry_snapshot_file": "event_type_registry_initial_population_snapshot_v0_1.json",
+    "parent_registry_snapshot_sha256": "10613b9b4139b9184ccf5a2f515d23ba0563a973cb50262647ee7ae8ea457537",
+    "successor_registry_snapshot_id": "tsis_event_type_registry_v0_1_post_initial_admission_001",
+    "successor_registry_snapshot_file": "event_type_registry_post_initial_admission_snapshot_v0_1.json",
+    "event_type_records_reviewed": 2,
+    "event_family_support_records_reviewed": 1,
+    "event_types_admitted_with_restrictions": 1,
+    "event_types_not_admitted": 1,
+    "event_instances_created": 0,
+    "detectors_executed": 0,
+    "source_market_data_rows_read": 0,
+    "parquet_files_read": 0,
+    "parquet_files_written": 0,
+    "downstream_consumption_authorized": false
+  },
+  "admission_review_status_model": {
+    "registry_status_values_used": [
+      "investigational_candidate",
+      "accepted_with_restrictions"
+    ],
+    "admission_decision_values_used": [
+      "admitted_with_restrictions",
+      "not_admitted"
+    ],
+    "review_status_values_used": [
+      "closed_pass_with_restrictions",
+      "closed_blocked"
+    ],
+    "blocking_findings_remain_separate_from_registry_status": true,
+    "contract_draft_used_as_review_result": false,
+    "future_identity_stability_assessment_is_informative_only": true,
+    "event_identity_stability_mandatory_v0_1_field": false
+  },
+  "family_support_review_records": [
+    {
+      "review_record_id": "event_family_initial_admission_review:market_data:session_lifecycle:v0_1",
+      "event_family_id": "event_family:market_data:session_lifecycle",
+      "review_status": "closed_pass_with_restrictions",
+      "admission_decision": "admitted_with_restrictions",
+      "resulting_registry_status": "accepted_with_restrictions",
+      "semantic_identity_assessment": "PASS: session_lifecycle is a governed calendar/session transition family, not a strategy or outcome family.",
+      "source_authority_assessment": "PASS_WITH_RESTRICTIONS: authority is market_calendar_v0_1 plus governed_exchange_session_calendar_xnys_v0_1 binding evidence.",
+      "blocking_findings": [],
+      "non_blocking_restrictions": [
+        "Family acceptance is limited to session lifecycle grammar needed by event_type:market_data:session_opened.",
+        "No other session lifecycle Event Type is admitted by this support decision.",
+        "No instances, windows, builders, materialization or downstream consumption are authorized."
+      ],
+      "future_identity_stability_assessment": {
+        "value": "conditionally_stable",
+        "status": "informative_only_not_v0_1_contract_field"
+      },
+      "reviewed_at_utc": "2026-07-24T11:15:00Z"
+    }
+  ],
+  "event_type_review_records": [
+    {
+      "review_record_id": "event_type_initial_admission_review:market_data:session_opened:v0_1",
+      "event_type_id": "event_type:market_data:session_opened",
+      "reviewed_event_type_version": "v0_1_candidate",
+      "reviewed_definition_hash": "be5a176f5047a606bb4dfb75edf740fcc4dadbfa1acc6f4f25a530798bec7d16",
+      "parent_registry_snapshot_id": "tsis_event_type_registry_v0_1_candidate_population_001",
+      "parent_registry_snapshot_sha256": "10613b9b4139b9184ccf5a2f515d23ba0563a973cb50262647ee7ae8ea457537",
+      "review_status": "closed_pass_with_restrictions",
+      "admission_decision": "admitted_with_restrictions",
+      "resulting_registry_status": "accepted_with_restrictions",
+      "semantic_identity_assessment": "PASS: governed regular-session open occurrence; no strategy, outcome, alpha or execution-capacity semantics.",
+      "source_authority_assessment": "PASS_WITH_RESTRICTIONS: 001 market_calendar is PROVEN_RESTRICTED_DATASET; governed XNYS calendar binding closed with zero hard failures.",
+      "source_binding_assessment": "PASS_WITH_RESTRICTIONS: binding authority is exchange + session_date against governed calendar rows; no instance binding is executed here.",
+      "subject_scope_assessment": {
+        "event_subject_scope": "exchange_session",
+        "decision": "The admitted v0.1 Event Type is an exchange-session lifecycle occurrence. Future instrument-level use must project/bind that exchange-session event to an instrument/session under a separate design gate."
+      },
+      "timestamp_assessments": {
+        "event_anchor_timestamp": "governed regular_session_open_timestamp for exchange/session_date, resolved as session_open_utc under governed_exchange_session_calendar_xnys_v0_1",
+        "first_observable_timestamp": "calendar may be known before open, but event occurrence cannot be true before the governed open timestamp",
+        "registry_or_detection_timestamp": "registry review timestamp only; no detector execution and no historical Event Instance timestamp"
+      },
+      "temporal_legality_assessment": "PASS_WITH_RESTRICTIONS: calendar knowledge timestamp remains distinct from event occurrence timestamp; session_opened is not first_observed_trade_timestamp.",
+      "strategy_boundary_assessment": "PASS",
+      "outcome_boundary_assessment": "PASS",
+      "execution_state_boundary_assessment": "PASS: locates, slippage, routing, fills, broker/API state, tradability and costs are outside Event Type identity.",
+      "known_ambiguities_assessment": [
+        "Instrument-session projection remains future binding design.",
+        "Non-XNYS exchange support is not admitted.",
+        "Exceptional closures and listing-status interaction must be handled before instance creation."
+      ],
+      "blocking_findings": [],
+      "non_blocking_restrictions": [
+        "Accepted only for governed XNYS regular-session open semantics tied to accepted calendar binding evidence.",
+        "No event instances, detector, window binding, Event State builder, materialization, production or downstream consumption is authorized.",
+        "Instrument-specific Event State usage requires later Event Instance Binding Design."
+      ],
+      "required_changes": [],
+      "future_identity_stability_assessment": {
+        "value": "conditionally_stable",
+        "status": "informative_only_not_v0_1_contract_field"
+      },
+      "evidence_refs": [
+        "04_TSIS_TABLES_000_018_INSTITUTIONAL_STATUS_MATRIX_v0_1.md#001",
+        "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/market_calendar_dataset_contract_v0_1.md",
+        "01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/outputs/market_calendar_registry_entry.yaml",
+        "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/market_calendar_schema_contract.md",
+        "01_TSIS_DATA_FOUNDATION/01_foundations/validators/outputs/market_calendar_validators.md",
+        "06_MARKET_STATE_INTEGRATION/governed_exchange_session_calendar_binding_validation_readout_v0_1.md"
+      ],
+      "reviewed_at_utc": "2026-07-24T11:15:00Z"
+    },
+    {
+      "review_record_id": "event_type_initial_admission_review:regulatory:halt_resumed:v0_1",
+      "event_type_id": "event_type:regulatory:halt_resumed",
+      "reviewed_event_type_version": "v0_1_candidate",
+      "reviewed_definition_hash": "fa677970d9575c0b726add47336fbd24169b090f02091cc3e47ae468fe2b4b09",
+      "parent_registry_snapshot_id": "tsis_event_type_registry_v0_1_candidate_population_001",
+      "parent_registry_snapshot_sha256": "10613b9b4139b9184ccf5a2f515d23ba0563a973cb50262647ee7ae8ea457537",
+      "review_status": "closed_blocked",
+      "admission_decision": "not_admitted",
+      "resulting_registry_status": "investigational_candidate",
+      "semantic_identity_assessment": "SUPPORTED: halt_resumed is a valid candidate phenomenon and remains separate from strategy, outcome and execution capacity.",
+      "source_authority_assessment": "PARTIAL: Data Foundation has halts_table_v0_1 contract, schema, registry, policy and validator evidence, but timestamp and decision-time limitations block admission.",
+      "source_binding_assessment": "BLOCKED: the review did not prove the field that represents official resume effective, published, received or inferred timestamp for Event Type identity.",
+      "subject_scope_assessment": {
+        "event_subject_scope": "instrument_or_security_halt_lifecycle_candidate",
+        "decision": "Candidate subject scope is plausible but cannot be accepted until halt/resume pairing, venue coverage and timestamp semantics are reconciled."
+      },
+      "timestamp_assessments": {
+        "event_anchor_timestamp": "blocked_pending_resume_effective_timestamp_policy",
+        "first_observable_timestamp": "blocked_pending_point_in_time_availability_policy",
+        "registry_or_detection_timestamp": "registry review timestamp only; no detector execution and no historical Event Instance timestamp",
+        "first_post_halt_trade_timestamp": "distinct later market observation; not accepted as halt_resumed identity"
+      },
+      "temporal_legality_assessment": "BLOCKED: halts_table_v0_1 does not materialize UTC-normalized event timestamps and does not establish decision-time availability.",
+      "strategy_boundary_assessment": "PASS",
+      "outcome_boundary_assessment": "PASS",
+      "execution_state_boundary_assessment": "PASS",
+      "known_ambiguities_assessment": [
+        "resume effective timestamp versus source published timestamp versus TSIS received timestamp",
+        "halt/resume pairing policy",
+        "multiple halts in one session",
+        "halt codes without resumption",
+        "venue and period coverage",
+        "point-in-time availability"
+      ],
+      "blocking_findings": [
+        "source_timestamp_policy_unresolved",
+        "utc_normalized_event_timestamp_not_materialized_in_v0_1",
+        "decision_time_availability_not_established",
+        "halt_resume_pairing_policy_unresolved",
+        "multi_halt_session_policy_unresolved",
+        "venue_coverage_policy_unresolved"
+      ],
+      "non_blocking_restrictions": [
+        "Candidate remains useful for future admission once timestamp and availability policies are reconciled.",
+        "No event instances, detector, window binding, Event State builder, materialization, production or downstream consumption is authorized."
+      ],
+      "required_changes": [
+        "Reconcile resume effective, published and received timestamp semantics for 006_halts_table or successor authority.",
+        "Define point-in-time first-observable policy for halt resume information.",
+        "Define halt/resume pairing and multiple-halts-per-session policy.",
+        "Define venue and period coverage restrictions."
+      ],
+      "future_identity_stability_assessment": {
+        "value": "source_dependent",
+        "status": "informative_only_not_v0_1_contract_field"
+      },
+      "evidence_refs": [
+        "04_TSIS_TABLES_000_018_INSTITUTIONAL_STATUS_MATRIX_v0_1.md#006",
+        "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/halts_table_dataset_contract_v0_1.md",
+        "01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/outputs/halts_table_registry_entry.yaml",
+        "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/halts_table_schema_contract.md",
+        "01_TSIS_DATA_FOUNDATION/01_foundations/validators/outputs/halts_table_validators.md",
+        "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/halts_table_consumption_policy.md"
+      ],
+      "reviewed_at_utc": "2026-07-24T11:15:00Z"
+    }
+  ],
+  "closed_boundary_attestation": {
+    "event_detection_execution_authorized": false,
+    "event_instances_created": 0,
+    "event_window_binding_authorized": false,
+    "market_state_physical_consumption_authorized": false,
+    "event_state_builder_execution_authorized": false,
+    "event_state_integration_execution_authorized": false,
+    "event_state_materialization_authorized": false,
+    "event_state_physical_validation_authorized": false,
+    "official_event_state_profile_promotion_authorized": false,
+    "official_event_state_dataset_promotion_authorized": false,
+    "production_authorized": false,
+    "downstream_consumption_authorized": false
+  },
+  "next_gate_recommendation": {
+    "next_allowed_gate_if_explicitly_authorized": "event_instance_binding_design_authorization_v0_1",
+    "scope_restriction": "design_only_for_event_type:market_data:session_opened_under_exchange_session_subject_scope"
+  }
+}

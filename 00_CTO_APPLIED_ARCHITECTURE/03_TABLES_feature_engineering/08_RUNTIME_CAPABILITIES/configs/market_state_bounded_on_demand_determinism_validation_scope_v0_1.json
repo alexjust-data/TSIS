@@ -1,0 +1,39 @@
+{
+  "gate": "market_state_bounded_on_demand_determinism_validation_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_CONSUMED",
+  "date": "2026-07-25",
+  "review_id": "market_state_bounded_on_demand_determinism_validation_v0_1_20260725T000000Z",
+  "parent_gate": "market_state_bounded_on_demand_deterministic_rerun_v0_1",
+  "baseline_run_id": "market_state_bounded_on_demand_execution_v0_1_20260724T232123Z",
+  "successful_rerun_run_id": "market_state_bounded_on_demand_deterministic_rerun_v0_1_20260725T053434Z",
+  "blocked_prior_attempt_run_id": "market_state_bounded_on_demand_deterministic_rerun_v0_1_20260725T052825Z",
+  "comparison_fingerprint": "ce87938504dbf8fc4e8e962e294aa81f8bc127cdfce69a7aa48157e655329dfb",
+  "scientific_dataset_fingerprint": "a9182b19e434ea77ca2bf5b3395b84a4592560bbf28e5cb0d80ee5561c5fe1b7",
+  "determinism_status_required": "PROVEN_FOR_BOUNDED_SCOPE",
+  "authorized_inspection_only": true,
+  "authorized_artifacts": [
+    "runs/market_state_bounded_on_demand_execution_v0_1_20260724T232123Z/final_manifest.json",
+    "runs/market_state_bounded_on_demand_deterministic_rerun_v0_1_20260725T053434Z/final_manifest.json",
+    "runs/market_state_bounded_on_demand_deterministic_rerun_v0_1_20260725T053434Z/market_state_bounded_on_demand_deterministic_rerun_readout_v0_1.md",
+    "runs/market_state_bounded_on_demand_deterministic_rerun_v0_1_20260725T053434Z/market_state_deterministic_rerun_comparison_v0_1.json",
+    "runs/market_state_bounded_on_demand_deterministic_rerun_v0_1_20260725T053434Z/determinism_report.json",
+    "runs/market_state_bounded_on_demand_deterministic_rerun_v0_1_20260725T053434Z/deterministic_rerun_evidence_entry.json",
+    "runs/market_state_bounded_on_demand_deterministic_rerun_v0_1_20260725T052825Z/final_manifest.json",
+    "market_state_bounded_on_demand_deterministic_rerun_contract_v0_1.json"
+  ],
+  "closed_boundaries": {
+    "new_request_created": false,
+    "rerun_execution": false,
+    "source_rows_read": false,
+    "materializer_execution": false,
+    "candidate_parquet_written": false,
+    "candidate_registry_entry_written": false,
+    "reuse_eligibility_upgrade": false,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false
+  },
+  "consumed_by_review": "market_state_bounded_on_demand_determinism_validation_v0_1_20260725T000000Z",
+  "review_status": "CLOSED_APPROVED_DETERMINISM_FOR_BOUNDED_SCOPE_WITH_RESTRICTIONS_NO_REUSE_TRANSITION",
+  "next_gate_after_success": "market_state_bounded_on_demand_idempotency_reuse_test_authorization_v0_1"
+}

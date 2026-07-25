@@ -1,0 +1,2057 @@
+[
+  {
+    "title": "Python for Algorithmic Trading Cookbook",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Contributors",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "About the author",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "About the reviewers",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Preface",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Who this book is for",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "What this book covers",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "To get the most out of this book",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Download the example code files",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Conventions used",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Get in touch",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Share Your Thoughts",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Download a free PDF copy of this book",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Chapter 1: Acquire Free Financial Market Data with Cutting-Edge Python Libraries",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Technical requirements",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Diving into continuous futures data with Nasdaq Data Link",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Exploring S&P 500 ratios data with Nasdaq Data Link",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Working with stock market data with the OpenBB Platform",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Fetching historic futures data with the OpenBB Platform",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Navigating options market data with the OpenBB Platform",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Harnessing factor data using pandas_datareader",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Chapter 2: Analyze and Transform Financial Market Data with pandas",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Diving into pandas index types",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Building pandas Series and DataFrames",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Manipulating and transforming DataFrames",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Examining and selecting data from DataFrames",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Calculating asset returns using pandas",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Measuring the volatility of a return series",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Generating a cumulative return series",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Resampling data for different time frames",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Addressing missing data issues",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Applying custom functions to analyze time series data",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Chapter 3: Visualize Financial Market Data with Matplotlib, Seaborn, and Plotly Dash",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Quickly visualizing data using pandas",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Animating the evolution of the yield curve with Matplotlib",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Plotting options implied volatility surfaces with Matplotlib",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Visualizing statistical relationships with Seaborn",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Creating an interactive PCA analytics dashboard with Plotly Dash",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Chapter 4: Store Financial Market Data on Your Computer",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Storing data on disk in CSV format",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Storing data on disk with SQLite",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Storing data in a PostgreSQL database server",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Storing data in ultra-fast HDF5 format",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Chapter 5: Build Alpha Factors for Stock Portfolios",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Identifying latent return drivers using principal component analysis",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Finding and hedging portfolio beta using linear regression",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Analyzing portfolio sensitivities to the Fama-French factors",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Assessing market inefficiency based on volatility",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Preparing a factor ranking model using Zipline Pipelines",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Chapter 6: Vector-Based Backtesting with VectorBT",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Building technical strategies with VectorBT",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Conducting walk-forward optimization with VectorBT",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Optimizing the SuperTrend strategy with VectorBT Pro",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Chapter 7: Event-Based Backtesting Factor Portfolios with Zipline Reloaded",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Technical Requirements",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "For Windows, Unix/Linux, and Mac Intel users",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "For Mac M1/M2 users",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Backtesting a momentum factor strategy with Zipline Reloaded",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Exploring a mean reversion strategy with Zipline Reloaded",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Chapter 8: Evaluate Factor Risk and Performance with Alphalens Reloaded",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Preparing backtest results",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Evaluating the information coefficient",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Examining factor return performance",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Evaluating factor turnover",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Chapter 9: Assess Backtest Risk and Performance Metrics with Pyfolio",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Preparing Zipline backtest results for Pyfolio Reloaded",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Generating strategy performance and return analytics",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Building a drawdown and rolling risk analysis",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Analyzing strategy holdings, leverage, exposure, and sector allocations",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Breaking Down Strategy Performance to Trade Level",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Chapter 10: Set Up the Interactive Brokers Python API",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Building an algorithmic trading app",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Creating a Contract object with the IB API",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Creating an Order object with the IB API",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Fetching historical market data",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Getting a market data snapshot",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Streaming live market data",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Storing live tick data in a local SQL database",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Chapter 11: Manage Orders, Positions, and Portfolios with the IB API",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Executing orders with the IB API",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Managing orders once they’re placed",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Getting details about your portfolio",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Inspecting positions and position details",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Computing portfolio profit and loss",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Chapter 12: Deploy Strategies to a Live Environment",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Calculating real-time key performance and risk indicators",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Sending orders based on portfolio targets",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Deploying a monthly factor portfolio strategy",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Deploying an options combo strategy",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Deploying an intraday multi-asset mean reversion strategy",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Chapter 13: Advanced Recipes for Market Data and Strategy Management",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Streaming real-time options data with ThetaData",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Using the ArcticDB DataFrame database for tick storage",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Triggering real-time risk limit alerts",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Storing trade execution details in a SQL database",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Getting ready",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to do it…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How it works…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "There’s more…",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "See also",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Index",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Why subscribe?",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Other Books You May Enjoy",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Packt is searching for authors like you",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Share Your Thoughts",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Download a free PDF copy of this book",
+    "depth": 1,
+    "page": null
+  }
+]

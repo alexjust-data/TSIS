@@ -1,0 +1,86 @@
+{
+  "authority_boundary": {
+    "architecture_recording_allowed": true,
+    "cache_write_allowed": false,
+    "dataset_registry_write_allowed": false,
+    "downstream_consumption_allowed": false,
+    "event_state_dataset_materialization_allowed": false,
+    "event_state_materializer_execution_allowed": false,
+    "execution_planner_implementation_allowed": false,
+    "market_state_dataset_materialization_allowed": false,
+    "market_state_materializer_execution_allowed": false,
+    "official_dataset_promotion_allowed": false,
+    "production_allowed": false,
+    "request_contract_design_allowed": false,
+    "request_resolver_implementation_allowed": false,
+    "source_data_reads_allowed": false
+  },
+  "canonical_flow": [
+    "request_contract",
+    "profile_resolution",
+    "source_resolution",
+    "universe_and_calendar_resolution",
+    "execution_plan",
+    "authorization_check",
+    "deterministic_build",
+    "validation",
+    "dataset_registry_or_candidate_registry",
+    "manifest_lineage_hashes",
+    "delivery_or_blocked_result"
+  ],
+  "closure": {
+    "dataset_registry_write_opened": false,
+    "downstream_consumption_opened": false,
+    "execution_opened": false,
+    "materialization_opened": false,
+    "next_allowed_gate": "market_state_on_demand_capability_design_authorization_v0_1",
+    "runtime_capabilities_architecture": "RECORDED_ARCHITECTURE_NO_EXECUTION"
+  },
+  "component_roles": {
+    "cache_or_idempotency_index": "Reuses or proves equality for identical requests under identical authorities.",
+    "dataset_registry": "Registers generated outputs by request fingerprint, status, coverage, hashes and restrictions.",
+    "execution_planner": "Produces a plan with partitions, estimated rows, validators, limits and output mode before build.",
+    "materializer": "Builds requested data only after separate execution authorization.",
+    "profile_resolver": "Verifies official semantic profile status and compatible versions.",
+    "request_contract": "Defines what is being asked, under which profile, universe, dates, output mode and authority.",
+    "source_resolver": "Resolves governed physical source authority and coverage, without inventing data truth.",
+    "validator": "Checks schema, lineage, temporal legality, determinism and scope compliance."
+  },
+  "contract_id": "runtime_capabilities_architecture_contract_v0_1",
+  "date": "2026-07-24",
+  "definition": {
+    "capability_not_dataset": "A capability may exist before any official physical dataset exists; it defines how one may be generated under authorization.",
+    "request": "The primary runtime object. Market State and Event State become request types, not ad hoc parquet-building tasks.",
+    "runtime_capability": "A governed TSIS ability to resolve a request into sources, profiles, execution plan, deterministic build, validation evidence, registry entry and reproducible output when separately authorized."
+  },
+  "layer": "08_RUNTIME_CAPABILITIES",
+  "request_types": {
+    "event_state": {
+      "depends_on": [
+        "Event State semantic profile",
+        "accepted Event Types",
+        "Market State on-demand capability"
+      ],
+      "first_design_gate": "event_state_on_demand_capability_design_authorization_v0_1_after_market_state_on_demand_readiness",
+      "may_execute_now": false
+    },
+    "market_state": {
+      "depends_on": [
+        "Market State profile registry",
+        "Data Foundation source authority",
+        "calendar/universe policy"
+      ],
+      "first_design_gate": "market_state_on_demand_capability_design_authorization_v0_1",
+      "may_execute_now": false
+    }
+  },
+  "state_boundaries": {
+    "event_state_official_physical_dataset_exists": false,
+    "event_state_official_semantic_profile_exists": true,
+    "market_state_official_physical_dataset_exists": false,
+    "market_state_official_semantic_profile_exists": true,
+    "request_resolver_exists": false,
+    "runtime_materializer_exists": false
+  },
+  "status": "RECORDED_ARCHITECTURE_NO_EXECUTION"
+}

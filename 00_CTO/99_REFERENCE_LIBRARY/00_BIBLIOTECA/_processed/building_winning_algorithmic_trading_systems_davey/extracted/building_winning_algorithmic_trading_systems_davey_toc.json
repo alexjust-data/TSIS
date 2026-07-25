@@ -1,0 +1,1152 @@
+[
+  {
+    "title": "BUILDING WINNING ALGORITHMIC TRADING SYSTEMS",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "CONTENTS",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "ACKNOWLEDGMENTS",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "ABOUT THE AUTHOR",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "INTRODUCTION",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Who Can Benefit from This Book?",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "PART I A Trader’s Journey",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 1 The Birth of a Trader",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "My Moving Average Debacle",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 2 Enough Is Enough",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Research",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "You Can’t Lose—Or Can You?",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Averaging Down—Adding to Losers",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "The Wild Man Emerges",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Time to Evaluate",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 3 World Cup Championship of Futures Trading® Triumph",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "2005",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "2006",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "2007",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Reflections on the Contest",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 4 Making the Leap—Transitioning to Full Time",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Confidence",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "What I Did Right",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "What I Did Wrong",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Capital",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "What I Did Right",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "What I Did Wrong",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Living Expenses",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "What I Did Right",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "What I Did Wrong",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Family Support",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "What I Did Right",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "What I Did Wrong",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Home Office Setup",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "What I Did Right",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "What I Did Wrong",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Trading Strategies",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "What I Did Right",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "What I Did Wrong",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Brokers",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "What I Did Right",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "What I Did Wrong",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Free Time",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "What I Did Right",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "What I Did Wrong",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Taking the Plunge",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "PART II Your Trading System",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 5 Testing and Evaluating a Trading System",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Historical Back Testing",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Out-of-Sample Testing",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Walk-Forward Analysis",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Real-Time Analysis",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 6 Preliminary Analysis",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 7 Detailed Analysis",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "What Is Monte Carlo Analysis?",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Inputs to Monte Carlo Simulator",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Limitations of the Simulator",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Simulator Output",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Starting Equity",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Risk of Ruin",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Median Drawdown",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Median $ Profit, Median Return",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Return/Drawdown",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Prob > 0",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Summary",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 8 Designing and Developing Systems",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Isn’t It All Just Optimizing?",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "PART III Developing a Strategy",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 9 Strategy Development–Goals and Objectives",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 10 Trading Idea",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "How Will You Enter a Market?",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How Will You Exit a Market?",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "What Markets Will You Trade?",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "What Type of System Do You Want?",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "What Time Frame/Bar Size Will You Trade?",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How Will You Program the Strategy?",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 11 Let’s Talk about Data",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "How Much?",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Pit or Electronic Data?",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Continuous Contracts",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "The Impact of Electronic Markets",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Testing with Forex Data",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Summary",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 12 Limited Testing",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Entry Testing",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Fixed-Stop and Target Exit",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Fixed-Bar Exit",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Random Exit",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Entry Evaluation Criteria",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Exit Testing",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Similar-Approach Entry",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Random Entry",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Exit Evaluation Criteria",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Core System Testing",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Monkey See, Monkey Do",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Test 1: “Monkey Entry”",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Test 2: “Monkey Exit”",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Test 3: “Monkey Entry, Monkey Exit”",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Time Frames",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Monkey Testing—Example",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 13 In-Depth Testing/Walk-Forward Analysis",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "No Parameters",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "A Walk-Forward Primer",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Walk-Forward Inputs",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "In Period",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Out Period",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Fitness Function",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Net Profit",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Linearity of Equity Curve",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Return on Account",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Anchored/Unanchored",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Running the Analysis",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Put the Walk-Forward Strategy Together",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 14 Monte Carlo Analysis and Incubation",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Incubation",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Evaluating Incubation",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 15 Diversification",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Designing with Diversification in Mind",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Measuring Diversification",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Daily Return Correlation",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Linearity of Equity Curve",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Maximum Drawdown",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Monte Carlo, Return/Drawdown",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 16 Position Sizing and Money Management",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "No Optimum Position Sizing",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Risk and Reward Are a Team",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Position Sizing Can Be Optimized",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Losing Systems Cannot Become Winners",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Winning Systems Can Become Losers",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "The Fantasy of Size",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Short Term—Go for Broke",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "No Position Sizing = No Good!",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Strategy, Then Position Size, or Strategy and Position Size Together?",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Positioning Size—Single System",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Positioning Size—Multiple Systems",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 17 Documenting the Process",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Trading Goals",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Trading Idea",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Limited Testing",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Walk-Forward Testing",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Monte Carlo Testing",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Incubation Testing",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Diversification Check",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Position-Sizing Check",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Final Notes",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "One Final List",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "PART IV Creating a System",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 18 Goals, Initial and Walk-Forward Testing",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Developing a New Strategy",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Limited Testing",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Walk-Forward Testing",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 19 Monte Carlo Testing and Incubation",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Euro Day Strategy",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Euro Night Strategy",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Euro Day and Night Strategy",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Incubation",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Are Results Similar?",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Final Information",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Position Sizing",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Correlation with Other Strategies",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Monte Carlo—Consistency",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Eliminating Big Days",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Outlier Days",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "PART V Considerations before Going Live",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 20 Account and Position Sizing",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "When to Quit",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Minimum Funding Size",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Position Sizing",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Unequal Position Sizing",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 21 Trading Psychology",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "When to Begin Trading",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "When to Quit",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 22 Other Considerations before Going Live",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Accounting, Trading Brokers",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Automation, Unattended, VPS, Where Are Orders Kept?",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Backup Plans",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "To Automate or Not to Automate?",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Attended, Unattended?",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "VPS",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Where Orders Are Kept",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Rollover Considerations",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Real World—What Your Actual Trading Account Sees",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Strategy World—What Your Strategy, Acting on a Back-Adjusted Continuous Contract, Thinks Is Happening",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Method 1: Quick Roll (Most Expensive Typically)",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Method 2: Leg in Roll (Cheapest Method Typically if Done Correctly)",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Method 3: Exchange Supported Spread Roll (Cost Usually between Methods 1 and 2)",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "PART VI Monitoring a Live Strategy",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 23 The Ins and Outs of Monitoring a Live Strategy",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "How to Build an Equity Curve (and a Drawdown Curve, Too!)",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Equity Curve",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Drawdown Curve",
+    "depth": 3,
+    "page": null
+  },
+  {
+    "title": "Monthly Summary Chart",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "How to Use This Graph",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Tracking Expected and Actual Performance",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 24 Real Time",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Four-Week Review—September 13, 2013, End Date",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Update after Week 7",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Week 8 Review",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Week 9—Automated Trading Issues",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Week 9—Limit Order Fills (October 28, 2013)",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Week 12 Review",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Week 13—Time Limit Review",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Week 15 Review",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Future Reviews",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "PART VII Cautionary Tales",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "CHAPTER 25 Delusions of Grandeur",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Don Demo",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Gus the Guru",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Paul the Predictor",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Cal the Complication King",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Pay Me Peter",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Frank Five Hundred",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Billy the Boaster",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Connie the Compounder",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Ian versus the Illuminati",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Suki the Spinner",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Paolo the Plagiarizer",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "Slick Sam",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "The Delusion Conclusion",
+    "depth": 2,
+    "page": null
+  },
+  {
+    "title": "CONCLUSION",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "APPENDIX A Monkey Trading Example, TradeStation Easy Language Code",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "Strategy 1: Baseline Strategy (No Randomness)",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Strategy 2: Random Entry, Baseline Exit Strategy",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Strategy 3: Baseline Entry, Random Exit Strategy",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "Strategy 4: Random Entry, Random Exit Strategy",
+    "depth": 1,
+    "page": null
+  },
+  {
+    "title": "APPENDIX B Euro Night Strategy, TradeStation Easy Language Format",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "APPENDIX C Euro Day Strategy, TradeStation Easy Language Format",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "ABOUT THE COMPANION WEBSITE",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "INDEX",
+    "depth": 0,
+    "page": null
+  },
+  {
+    "title": "EULA",
+    "depth": 0,
+    "page": null
+  }
+]

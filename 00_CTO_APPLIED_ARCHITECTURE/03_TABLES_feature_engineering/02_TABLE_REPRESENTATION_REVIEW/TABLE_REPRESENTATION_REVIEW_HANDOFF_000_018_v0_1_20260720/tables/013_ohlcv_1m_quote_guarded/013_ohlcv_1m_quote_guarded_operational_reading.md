@@ -1,4 +1,4 @@
-﻿# 013 OHLCV 1m Quote-Guarded Operational Reading
+# 013 OHLCV 1m Quote-Guarded Operational Reading
 
 Status: `operational_reading_v0_9`
 
@@ -88,9 +88,9 @@ v0_2_candidate does not replace trade or quote evidence.
 Governance links:
 
 ```text
-contract = C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\contract_registry\dataset_contracts\ohlcv_1m_quote_guarded_dataset_contract_v0_1.md
-policy = C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\data_consumption_policies\ohlcv_1m_quote_guarded_consumption_policy.md
-registry = C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\dataset_registry\ohlcv_1m\ohlcv_1m_quote_guarded_registry_entry.yaml
+contract = C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\contract_registry\dataset_contracts\ohlcv_1m_quote_guarded_dataset_contract_v0_1.md
+policy = C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\data_consumption_policies\ohlcv_1m_quote_guarded_consumption_policy.md
+registry = C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\dataset_registry\ohlcv_1m\ohlcv_1m_quote_guarded_registry_entry.yaml
 ```
 
 ---
@@ -347,7 +347,7 @@ The next work is to use `013` correctly in downstream consumers:
 Command executed from:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION
 ```
 
 Test command:
@@ -747,7 +747,7 @@ A non-destructive reconciliation test was executed after the failed 2015..2020 d
 Test script:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\data_foundation\ohlcv_1m_quote_guarded_full_universe\reconcile_ohlcv_1m_qg_failed_delta_v0_1.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\scripts\data_foundation\ohlcv_1m_quote_guarded_full_universe\reconcile_ohlcv_1m_qg_failed_delta_v0_1.py
 ```
 
 Validated inputs:
@@ -815,13 +815,13 @@ C:\TSIS_Data\data\data_foundation_outputs\ohlcv_1m_quote_guarded_full_universe_v
 Merge script:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\data_foundation\ohlcv_1m_quote_guarded_full_universe\merge_ohlcv_1m_qg_full_universe_v0_2_candidate.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\scripts\data_foundation\ohlcv_1m_quote_guarded_full_universe\merge_ohlcv_1m_qg_full_universe_v0_2_candidate.py
 ```
 
 Monitor script:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\data_foundation\ohlcv_1m_quote_guarded_full_universe\monitor_ohlcv_1m_qg_merge_v0_1.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\scripts\data_foundation\ohlcv_1m_quote_guarded_full_universe\monitor_ohlcv_1m_qg_merge_v0_1.py
 ```
 
 Accepted merge run:
@@ -873,13 +873,13 @@ C:\TSIS_Data\data\data_foundation_outputs\ohlcv_1m_quote_guarded_full_universe_v
 Validation script:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\data_foundation\ohlcv_1m_quote_guarded_full_universe\validate_ohlcv_1m_qg_v0_2_candidate.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\scripts\data_foundation\ohlcv_1m_quote_guarded_full_universe\validate_ohlcv_1m_qg_v0_2_candidate.py
 ```
 
 Monitor script:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts\data_foundation\ohlcv_1m_quote_guarded_full_universe\monitor_ohlcv_1m_qg_validation_v0_1.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\scripts\data_foundation\ohlcv_1m_quote_guarded_full_universe\monitor_ohlcv_1m_qg_validation_v0_1.py
 ```
 
 Accepted validation run:

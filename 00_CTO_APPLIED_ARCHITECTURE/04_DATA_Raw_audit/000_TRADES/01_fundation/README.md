@@ -6,7 +6,7 @@ Esta carpeta es una copia local navegable del dossier de auditoria `trades`.
 
 Fuente canonica original:
 
-`C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\inspection_dossiers\trades`
+`C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\inspection_dossiers\trades`
 
 La copia se preparo en:
 

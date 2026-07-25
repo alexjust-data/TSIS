@@ -1,4 +1,4 @@
-﻿# 00_CTO Tests
+# 00_CTO Tests
 
 Este directorio contiene los tests propios del area CTO.
 
@@ -24,8 +24,8 @@ operativo correspondiente.
 Ejemplo:
 
 - documento de arquitectura: `00_CTO/TSIS_LAB_ARCHITECTURE_v3.md`
-- contrato operativo de salida: `01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
-- tests ejecutables de tablas: `01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/`
+- contrato operativo de salida: `01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md`
+- tests ejecutables de tablas: `01_TSIS_DATA_FOUNDATION/tests/data_foundation_outputs/`
 
 La regla es: CTO define el mapa; el modulo implementa y valida.
 

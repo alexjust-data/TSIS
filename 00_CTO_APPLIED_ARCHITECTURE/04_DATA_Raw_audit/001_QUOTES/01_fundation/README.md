@@ -6,7 +6,7 @@ Esta carpeta es una copia local navegable del dossier de auditoria `quotes`.
 
 Fuente canonica original:
 
-`C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\inspection_dossiers\quotes`
+`C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\inspection_dossiers\quotes`
 
 La copia se preparo en:
 

@@ -1,4 +1,4 @@
-﻿# Agent Continuation Guide 013-018 v0.1
+# Agent Continuation Guide 013-018 v0.1
 
 Status: `working_guide`
 
@@ -243,15 +243,15 @@ C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\README.md
 Then the agent must read the operational authorities:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\data_foundation_outputs_target_contract_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\contract_registry\dataset_contracts
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\dataset_registry
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\data_consumption_policies
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\validators
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\tests\data_foundation_outputs
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\data_foundation_outputs_target_contract_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas\outputs
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\contract_registry\dataset_contracts
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\dataset_registry
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\data_consumption_policies
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\validators
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\scripts
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\tests\data_foundation_outputs
 ```
 
 Rule:

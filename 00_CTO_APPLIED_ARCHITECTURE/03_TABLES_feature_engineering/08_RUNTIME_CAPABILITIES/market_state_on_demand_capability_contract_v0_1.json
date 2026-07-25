@@ -1,0 +1,102 @@
+{
+  "capability_definition": "Governed ability to accept a Market State request and, after later authorizations, resolve profiles, sources, universe, dates, execution plan, deterministic build, validation and registry output.",
+  "capability_id": "market_state_on_demand_capability_v0_1",
+  "component_contracts_to_design_next": {
+    "market_state_dataset_registry_design_v0_1": "Defines candidate/official output registry semantics.",
+    "market_state_execution_planner_design_v0_1": "Builds deterministic plan before execution.",
+    "market_state_materializer_design_v0_1": "Defines build output behavior, still without execution.",
+    "market_state_profile_resolver_design_v0_1": "Resolves official semantic profile and restrictions.",
+    "market_state_request_contract_design_v0_1": "Defines canonical request schema and fingerprint inputs.",
+    "market_state_source_resolver_design_v0_1": "Resolves physical source authorities and coverage.",
+    "market_state_validator_design_v0_1": "Defines validation gates for generated outputs."
+  },
+  "contract_id": "market_state_on_demand_capability_contract_v0_1",
+  "date": "2026-07-24",
+  "hard_boundaries": {
+    "cache_write_allowed": false,
+    "candidate_parquet_copy_allowed": false,
+    "capability_design_allowed": true,
+    "dataset_registry_write_allowed": false,
+    "downstream_consumption_allowed": false,
+    "execution_planner_implementation_allowed": false,
+    "market_state_builder_execution_allowed": false,
+    "market_state_materializer_execution_allowed": false,
+    "market_state_validator_execution_allowed": false,
+    "official_market_state_dataset_promotion_allowed": false,
+    "official_market_state_parquet_write_allowed": false,
+    "production_allowed": false,
+    "profile_resolver_implementation_allowed": false,
+    "request_contract_design_allowed": false,
+    "request_execution_allowed": false,
+    "request_resolver_implementation_allowed": false,
+    "source_data_reads_allowed": false,
+    "source_resolver_implementation_allowed": false
+  },
+  "next_allowed_gate": "market_state_request_contract_design_v0_1",
+  "non_goals_v0_1": [
+    "No request execution.",
+    "No source data reads.",
+    "No builder implementation.",
+    "No official Market State dataset promotion.",
+    "No parquet creation or copy.",
+    "No downstream consumption."
+  ],
+  "output_status_model": [
+    "no_output",
+    "candidate_output",
+    "validated_candidate_output",
+    "official_dataset_only_after_promotion",
+    "quarantined_output",
+    "superseded_output"
+  ],
+  "request_shape_preview": {
+    "end_date": "required_future_field",
+    "execution_authorization_id": "required_before_build",
+    "output_mode": "candidate_or_official_when_authorized",
+    "profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "profile_version": "v0_1",
+    "request_type": "market_state",
+    "resolution": "required_future_field",
+    "start_date": "required_future_field",
+    "universe_definition_id": "required_future_field"
+  },
+  "request_status_model": [
+    "DRAFT_REQUEST",
+    "RESOLVED_NO_EXECUTION",
+    "AUTHORIZED_FOR_BOUNDED_EXECUTION",
+    "RUNNING",
+    "VALIDATING",
+    "CLOSED_PASS_WITH_RESTRICTIONS",
+    "BLOCKED_BEFORE_EXECUTION",
+    "FAILED",
+    "QUARANTINED"
+  ],
+  "required_resolution_chain": [
+    "request_contract_validation",
+    "profile_registry_resolution",
+    "profile_artifact_validation_reference_check",
+    "source_dataset_authority_resolution",
+    "universe_definition_resolution",
+    "calendar_session_resolution",
+    "temporal_asof_policy_resolution",
+    "byte_row_partition_estimation",
+    "execution_authorization_check",
+    "build_plan_creation",
+    "validator_plan_creation",
+    "output_registry_policy_resolution"
+  ],
+  "runtime_parent_architecture": "runtime_capabilities_architecture_v0_1",
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+  "target_profile": {
+    "candidate_parquet_reference_role": "evidence_only_not_operational_dataset",
+    "candidate_parquet_reference_sha256": "b1841f4897a759de8ec9a317bece888a9ff817da3df2cd0eb477b4ed950775a2",
+    "complete_tsis_market_state": false,
+    "official_market_state_authorized": false,
+    "official_market_state_dataset_exists": false,
+    "official_market_state_parquet_exists": false,
+    "profile_artifact_validation_run": "official_market_state_profile_artifact_validation_v0_1_20260723T193711Z",
+    "profile_classification": "official_semantic_profile_not_physical_dataset",
+    "profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "profile_status": "OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS"
+  }
+}

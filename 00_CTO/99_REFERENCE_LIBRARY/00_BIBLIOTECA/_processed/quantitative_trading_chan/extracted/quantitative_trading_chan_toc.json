@@ -1,0 +1,347 @@
+[
+  {
+    "title": "Title Page",
+    "page": 7,
+    "depth": 0
+  },
+  {
+    "title": "Copyright",
+    "page": 8,
+    "depth": 0
+  },
+  {
+    "title": "Dedication",
+    "page": 9,
+    "depth": 0
+  },
+  {
+    "title": "Preface to the 2nd Edition",
+    "page": 10,
+    "depth": 0
+  },
+  {
+    "title": "REFERENCES",
+    "page": 13,
+    "depth": 1
+  },
+  {
+    "title": "Preface",
+    "page": 14,
+    "depth": 0
+  },
+  {
+    "title": "WHO IS THIS BOOK FOR?",
+    "page": 15,
+    "depth": 1
+  },
+  {
+    "title": "WHAT KIND OF BACKGROUND DO YOU NEED?",
+    "page": 16,
+    "depth": 1
+  },
+  {
+    "title": "WHAT WILL YOU FIND IN THIS BOOK?",
+    "page": 17,
+    "depth": 1
+  },
+  {
+    "title": "REFERENCES",
+    "page": 18,
+    "depth": 1
+  },
+  {
+    "title": "Acknowledgments",
+    "page": 19,
+    "depth": 0
+  },
+  {
+    "title": "CHAPTER 1: The Whats, Whos, and Whys of Quantitative Trading",
+    "page": 20,
+    "depth": 0
+  },
+  {
+    "title": "WHO CAN BECOME A QUANTITATIVE TRADER?",
+    "page": 21,
+    "depth": 1
+  },
+  {
+    "title": "THE BUSINESS CASE FOR QUANTITATIVE TRADING",
+    "page": 23,
+    "depth": 1
+  },
+  {
+    "title": "THE WAY FORWARD",
+    "page": 26,
+    "depth": 1
+  },
+  {
+    "title": "CHAPTER 2: Fishing for Ideas",
+    "page": 28,
+    "depth": 0
+  },
+  {
+    "title": "HOW TO IDENTIFY A STRATEGY THAT SUITS YOU",
+    "page": 32,
+    "depth": 1
+  },
+  {
+    "title": "A TASTE FOR PLAUSIBLE STRATEGIES AND THEIR PITFALLS",
+    "page": 37,
+    "depth": 1
+  },
+  {
+    "title": "SUMMARY",
+    "page": 49,
+    "depth": 1
+  },
+  {
+    "title": "REFERENCES",
+    "page": 50,
+    "depth": 1
+  },
+  {
+    "title": "CHAPTER 3: Backtesting",
+    "page": 51,
+    "depth": 0
+  },
+  {
+    "title": "COMMON BACKTESTING PLATFORMS",
+    "page": 51,
+    "depth": 1
+  },
+  {
+    "title": "FINDING AND USING HISTORICAL DATABASES",
+    "page": 59,
+    "depth": 1
+  },
+  {
+    "title": "PERFORMANCE MEASUREMENT",
+    "page": 68,
+    "depth": 1
+  },
+  {
+    "title": "COMMON BACKTESTING PITFALLS TO AVOID",
+    "page": 82,
+    "depth": 1
+  },
+  {
+    "title": "TRANSACTION COSTS",
+    "page": 98,
+    "depth": 1
+  },
+  {
+    "title": "STRATEGY REFINEMENT",
+    "page": 103,
+    "depth": 1
+  },
+  {
+    "title": "SUMMARY",
+    "page": 105,
+    "depth": 1
+  },
+  {
+    "title": "REFERENCES",
+    "page": 106,
+    "depth": 1
+  },
+  {
+    "title": "NOTE",
+    "page": 107,
+    "depth": 1
+  },
+  {
+    "title": "CHAPTER 4: Setting Up Your Business",
+    "page": 108,
+    "depth": 0
+  },
+  {
+    "title": "BUSINESS STRUCTURE: RETAIL OR PROPRIETARY?",
+    "page": 108,
+    "depth": 1
+  },
+  {
+    "title": "CHOOSING A BROKERAGE OR PROPRIETARY TRADING FIRM",
+    "page": 113,
+    "depth": 1
+  },
+  {
+    "title": "PHYSICAL INFRASTRUCTURE",
+    "page": 116,
+    "depth": 1
+  },
+  {
+    "title": "SUMMARY",
+    "page": 117,
+    "depth": 1
+  },
+  {
+    "title": "REFERENCES",
+    "page": 119,
+    "depth": 1
+  },
+  {
+    "title": "CHAPTER 5: Execution Systems",
+    "page": 120,
+    "depth": 0
+  },
+  {
+    "title": "WHAT AN AUTOMATED TRADING SYSTEM CAN DO FOR YOU",
+    "page": 120,
+    "depth": 1
+  },
+  {
+    "title": "MINIMIZING TRANSACTION COSTS",
+    "page": 130,
+    "depth": 1
+  },
+  {
+    "title": "TESTING YOUR SYSTEM BY PAPER TRADING",
+    "page": 132,
+    "depth": 1
+  },
+  {
+    "title": "WHY DOES ACTUAL PERFORMANCE DIVERGE FROM EXPECTATIONS?",
+    "page": 133,
+    "depth": 1
+  },
+  {
+    "title": "SUMMARY",
+    "page": 135,
+    "depth": 1
+  },
+  {
+    "title": "CHAPTER 6: Money and Risk Management",
+    "page": 138,
+    "depth": 0
+  },
+  {
+    "title": "OPTIMAL CAPITAL ALLOCATION AND LEVERAGE",
+    "page": 138,
+    "depth": 1
+  },
+  {
+    "title": "RISK MANAGEMENT",
+    "page": 151,
+    "depth": 1
+  },
+  {
+    "title": "PSYCHOLOGICAL PREPAREDNESS",
+    "page": 157,
+    "depth": 1
+  },
+  {
+    "title": "SUMMARY",
+    "page": 162,
+    "depth": 1
+  },
+  {
+    "title": "APPENDIX: A SIMPLE DERIVATION OF THE KELLY FORMULA WHEN RETURN DISTRIBUTION IS GAUSSIAN",
+    "page": 163,
+    "depth": 1
+  },
+  {
+    "title": "REFERENCES",
+    "page": 164,
+    "depth": 1
+  },
+  {
+    "title": "NOTES",
+    "page": 165,
+    "depth": 1
+  },
+  {
+    "title": "CHAPTER 7: Special Topics in Quantitative Trading",
+    "page": 166,
+    "depth": 0
+  },
+  {
+    "title": "MEAN-REVERTING VERSUS MOMENTUM STRATEGIES",
+    "page": 166,
+    "depth": 1
+  },
+  {
+    "title": "REGIME CHANGE AND CONDITIONAL PARAMETER OPTIMIZATION",
+    "page": 170,
+    "depth": 1
+  },
+  {
+    "title": "STATIONARITY AND COINTEGRATION",
+    "page": 182,
+    "depth": 1
+  },
+  {
+    "title": "FACTOR MODELS",
+    "page": 200,
+    "depth": 1
+  },
+  {
+    "title": "WHAT IS YOUR EXIT STRATEGY?",
+    "page": 210,
+    "depth": 1
+  },
+  {
+    "title": "SEASONAL TRADING STRATEGIES",
+    "page": 215,
+    "depth": 1
+  },
+  {
+    "title": "HIGH-FREQUENCY TRADING STRATEGIES",
+    "page": 230,
+    "depth": 1
+  },
+  {
+    "title": "IS IT BETTER TO HAVE A HIGH-LEVERAGE VERSUS A HIGH-BETA PORTFOLIO?",
+    "page": 232,
+    "depth": 1
+  },
+  {
+    "title": "SUMMARY",
+    "page": 233,
+    "depth": 1
+  },
+  {
+    "title": "REFERENCES",
+    "page": 235,
+    "depth": 1
+  },
+  {
+    "title": "CHAPTER 8: Conclusion",
+    "page": 238,
+    "depth": 0
+  },
+  {
+    "title": "NEXT STEPS",
+    "page": 241,
+    "depth": 1
+  },
+  {
+    "title": "REFERENCES",
+    "page": 243,
+    "depth": 1
+  },
+  {
+    "title": "APPENDIX: A Quick Survey of MATLAB",
+    "page": 244,
+    "depth": 0
+  },
+  {
+    "title": "Bibliography",
+    "page": 250,
+    "depth": 0
+  },
+  {
+    "title": "About the Author",
+    "page": 254,
+    "depth": 0
+  },
+  {
+    "title": "Index",
+    "page": 255,
+    "depth": 0
+  },
+  {
+    "title": "End User License Agreement",
+    "page": 299,
+    "depth": 0
+  }
+]

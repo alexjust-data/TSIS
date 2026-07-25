@@ -140,9 +140,9 @@ Evidence basis:
 
 ```text
 C:/TSIS_Data/CHANGELOG.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/CHANGELOG.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/CHANGELOG.md
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/transversal/raw_storage_parity_audit_requirement_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/CHANGELOG.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/CHANGELOG.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/transversal/raw_storage_parity_audit_requirement_v0_1.md
 ```
 
 Those documents record the `2026-07-07` `D:/quotes -> E:/TSIS/data/quotes_`

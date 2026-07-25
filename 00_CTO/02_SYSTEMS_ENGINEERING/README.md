@@ -64,7 +64,7 @@ La seccion no implementa adapters. La implementacion vive en el modulo que
 opera la fuente. Para live ingestion SmallCaps, la autoridad operativa vive en:
 
 ```text
-C:/TSIS_Data/02_TSIS_webSocket_SmallCaps
+C:/TSIS_Data/04_TSIS_webSocket_SmallCaps
 ```
 
 ## No-goals

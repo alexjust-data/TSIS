@@ -1,0 +1,32 @@
+{
+  "gate": "market_state_bounded_on_demand_candidate_dataset_review_v0_1",
+  "scope_status": "AUTHORIZED_WITH_RESTRICTIONS_CONSUMED",
+  "date": "2026-07-25",
+  "review_id": "market_state_bounded_on_demand_candidate_dataset_review_v0_1_20260725T000000Z",
+  "reviewed_execution_run": "market_state_bounded_on_demand_execution_v0_1_20260724T232123Z",
+  "reviewed_candidate_dataset_id": "market_state_candidate_dataset_v0_1_433288b634924676",
+  "reviewed_candidate_dataset_fingerprint": "433288b634924676a3c516fac600574ed36237c3c02ca640111f17609b6c235b",
+  "authorized_review_objects": [
+    "request_record.json",
+    "execution_plan.json",
+    "partition_coverage_resolution_report.json",
+    "candidate_output_manifest.json",
+    "lineage_manifest.json",
+    "market_state_validation_report.json",
+    "market_state_temporal_legality_report.json",
+    "candidate_registry_entry.json",
+    "market_state_bounded_on_demand_candidate_v0_1.parquet"
+  ],
+  "authorized_decision": "candidate_evidence_review_only",
+  "forbidden_actions": {
+    "parquet_mutation": false,
+    "candidate_registry_entry_mutation": false,
+    "reuse_eligibility_upgrade": false,
+    "official_dataset_promotion": false,
+    "production": false,
+    "downstream_consumption": false,
+    "new_materialization": false,
+    "deterministic_rerun": false
+  },
+  "next_allowed_gate_if_approved": "market_state_bounded_on_demand_deterministic_rerun_authorization_v0_1"
+}

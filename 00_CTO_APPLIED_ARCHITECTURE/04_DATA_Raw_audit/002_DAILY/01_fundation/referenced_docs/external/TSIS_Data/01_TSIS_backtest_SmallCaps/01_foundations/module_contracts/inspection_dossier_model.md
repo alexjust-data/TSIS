@@ -4,7 +4,7 @@
 
 Este documento define el modelo canonico de inspeccion institucional para el modulo:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION`
 
 Su funcion es establecer como debe presentarse la evidencia de un dataset o bloque auditado para que:
 

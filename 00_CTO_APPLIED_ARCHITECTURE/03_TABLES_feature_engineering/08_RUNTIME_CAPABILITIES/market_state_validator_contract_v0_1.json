@@ -1,0 +1,135 @@
+{
+  "blocking_conditions": [
+    "execution_plan_missing",
+    "execution_plan_fingerprint_missing",
+    "materializer_run_manifest_missing",
+    "candidate_output_manifest_missing",
+    "lineage_manifest_missing",
+    "profile_contract_missing",
+    "expected_schema_missing",
+    "validation_policy_missing",
+    "out_of_scope_output_detected",
+    "schema_contract_violation",
+    "duplicate_canonical_identity",
+    "missing_required_identity",
+    "state_output_fingerprint_missing",
+    "state_output_fingerprint_mismatch",
+    "temporal_leakage_detected",
+    "source_lineage_incomplete",
+    "partition_reconciliation_failure",
+    "critical_content_rule_failure",
+    "file_hash_mismatch",
+    "manifest_hash_mismatch"
+  ],
+  "candidate_eligibility_recommendations": [
+    "eligible_for_candidate_registry",
+    "eligible_for_reuse",
+    "eligible_for_promotion_review",
+    "reuse_eligibility_reason",
+    "promotion_review_eligibility_reason"
+  ],
+  "contract_id": "market_state_validator_contract_v0_1",
+  "date": "2026-07-25",
+  "final_validation_status_model": [
+    "PASS",
+    "PASS_WITH_RESTRICTIONS",
+    "BLOCKED",
+    "QUARANTINED",
+    "FAIL"
+  ],
+  "future_reports": [
+    "market_state_validation_report.json",
+    "market_state_partition_validation_report.json",
+    "market_state_lineage_validation_report.json",
+    "market_state_temporal_legality_report.json",
+    "validation_evidence_manifest.json",
+    "market_state_validation_readout.md"
+  ],
+  "hard_boundaries": {
+    "candidate_file_read_allowed": false,
+    "dataset_registry_write_allowed": false,
+    "downstream_consumption_allowed": false,
+    "market_state_record_emission_allowed": false,
+    "official_market_state_dataset_promotion_allowed": false,
+    "parquet_file_read_allowed": false,
+    "partition_status_change_allowed": false,
+    "production_allowed": false,
+    "quarantine_action_allowed": false,
+    "row_repair_allowed": false,
+    "source_resolution_allowed": false,
+    "validation_report_creation_allowed": false,
+    "validator_execution_allowed": false
+  },
+  "input_artifacts": [
+    "frozen_execution_plan",
+    "execution_plan_fingerprint",
+    "materializer_run_manifest",
+    "candidate_output_manifest",
+    "candidate_output_files",
+    "lineage_manifest",
+    "partition_manifest",
+    "builder_execution_report",
+    "source_fingerprints",
+    "profile_contract",
+    "expected_schema",
+    "grain_policy",
+    "identity_policy",
+    "temporal_legality_policy",
+    "validation_policy"
+  ],
+  "next_allowed_gate": "market_state_candidate_dataset_registry_design_v0_1",
+  "non_responsibilities": [
+    "profitability_validation",
+    "edge_validation",
+    "strategy_performance_validation",
+    "outcome_validation",
+    "ml_usefulness_validation",
+    "backtest_quality_validation",
+    "execution_realism_validation"
+  ],
+  "parent_execution_plan_contract": "market_state_execution_plan_contract_v0_1",
+  "parent_materializer_contract": "market_state_materializer_contract_v0_1",
+  "parent_request_contract": "market_state_request_contract_v0_1",
+  "quarantine_recommendation_conditions": [
+    "hash_mismatch",
+    "corrupt_candidate_file",
+    "lineage_inconsistency",
+    "temporal_leakage_detected",
+    "duplicate_canonical_identities",
+    "schema_contract_violation"
+  ],
+  "severity_model": [
+    "INFO",
+    "WARNING",
+    "RESTRICTION",
+    "BLOCKING",
+    "CRITICAL"
+  ],
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+  "validation_blocks": [
+    "scope_compliance",
+    "schema_validation",
+    "grain_validation",
+    "identity_validation",
+    "temporal_legality",
+    "source_lineage",
+    "partition_completeness",
+    "content_validation",
+    "fingerprint_validation",
+    "determinism_readiness"
+  ],
+  "validation_fingerprint_inputs": [
+    "execution_plan_fingerprint",
+    "candidate_dataset_fingerprint",
+    "validator_versions",
+    "validation_policy_version",
+    "normalized_findings"
+  ],
+  "v0_1_policies": {
+    "determinism_full_test_executed_by_validator_design_gate": false,
+    "validator_may_promote_dataset": false,
+    "validator_may_re_resolve": false,
+    "validator_may_repair_rows": false,
+    "validator_may_write_dataset_registry": false
+  }
+}

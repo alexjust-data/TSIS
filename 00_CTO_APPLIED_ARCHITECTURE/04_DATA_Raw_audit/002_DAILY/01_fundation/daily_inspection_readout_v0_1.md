@@ -1,8 +1,8 @@
-﻿# Daily Inspection Readout v0.1
+# Daily Inspection Readout v0.1
 
 ## 1. Proposito y alcance
 
-Este documento es el cierre institucional de inspeccion para `daily` en el modulo `01_TSIS_backtest_SmallCaps`.
+Este documento es el cierre institucional de inspeccion para `daily` en el modulo `01_TSIS_DATA_FOUNDATION`.
 
 Su funcion no es rehacer la auditoria historica ni repetir los dossiers caso a caso. Su funcion es:
 
@@ -32,13 +32,13 @@ Este readout no redefine la politica. La resume y la operacionaliza para inspecc
   - `01_research/01_auditoria_RAW_DATA/00_data_certification/certification/daily/02_daily_quality_policy.md`
   - `01_research/01_auditoria_RAW_DATA/00_data_certification/certification/daily/03_daily_closeout.md`
 - contrato y politica institucional:
-  - [daily_dataset_contract_v0_1.md](referenced_docs/external/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/contract_registry/dataset_contracts/daily_dataset_contract_v0_1.md)
-  - [daily_label_taxonomy_and_cut_policy.md](referenced_docs/external/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/contract_registry/dataset_contracts/daily_label_taxonomy_and_cut_policy.md)
-  - [daily_consumption_policy.md](referenced_docs/external/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/data_consumption_policies/daily_consumption_policy.md)
-  - [daily_validators.md](referenced_docs/external/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/validators/daily/daily_validators.md)
+  - [daily_dataset_contract_v0_1.md](referenced_docs/external/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/daily_dataset_contract_v0_1.md)
+  - [daily_label_taxonomy_and_cut_policy.md](referenced_docs/external/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/daily_label_taxonomy_and_cut_policy.md)
+  - [daily_consumption_policy.md](referenced_docs/external/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/daily_consumption_policy.md)
+  - [daily_validators.md](referenced_docs/external/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/validators/daily/daily_validators.md)
 - protocolo de evidencia:
-  - [inspection_dossier_model.md](referenced_docs/external/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/inspection_dossier_model.md)
-  - [bad_evidence_and_rehabilitation.md](referenced_docs/external/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/bad_evidence_and_rehabilitation.md)
+  - [inspection_dossier_model.md](referenced_docs/external/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/inspection_dossier_model.md)
+  - [bad_evidence_and_rehabilitation.md](referenced_docs/external/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/bad_evidence_and_rehabilitation.md)
 
 ## 3. Regla central: inspeccion visual no equivale a estado final de certificacion
 

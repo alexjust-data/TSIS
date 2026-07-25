@@ -1,3 +1,311 @@
+## 2026-07-25 | Market State on-demand execution-chain joint review closed
+
+- Recorded `market_state_on_demand_execution_chain_joint_review_v0_1` under `08_RUNTIME_CAPABILITIES`.
+- Reviewed Request, Profile Resolver, Universe Resolver, Source Resolver, Partition/Coverage Resolver, Execution Plan, Run Lifecycle, Materializer, Validator and Candidate Dataset Registry contracts as one chain.
+- Closed with 0 hard findings and 2 restrictions: bounded execution authorization only, and future execution must use the refined Partition/Coverage disposition model.
+- Preserved the boundary: no requests, execution plans, resolver executions, run records, source reads, materializer executions, validator executions, registry writes, datasets, production or downstream consumption.
+- Next gate is `market_state_bounded_on_demand_execution_authorization_v0_1`.
+
+## 2026-07-25 | Market State run lifecycle and manifest design closed
+
+- Recorded `market_state_run_lifecycle_and_manifest_design_v0_1` and `market_state_run_lifecycle_and_manifest_contract_v0_1.json` under `08_RUNTIME_CAPABILITIES`.
+- Defined future run identity, run statuses, allowed transitions, pre-run manifest, heartbeat, final manifest, failure manifest, recovery manifest, idempotency and authorization-consumption semantics.
+- Preserved the boundary: no run records, manifests, heartbeats, state transitions, recovery actions, execution authorization consumption, execution plan consumption, materializer execution, validator execution, registry writes, datasets, production or downstream consumption.
+- Next gate is `market_state_on_demand_execution_chain_joint_review_v0_1`.
+
+## 2026-07-25 | Market State candidate dataset registry design closed
+
+- Recorded `market_state_candidate_dataset_registry_design_v0_1` and `market_state_candidate_dataset_registry_contract_v0_1.json` under `08_RUNTIME_CAPABILITIES`.
+- Defined registry identity, dataset fingerprints, validation state, reuse eligibility, promotion review eligibility, downstream boundary, coverage reconciliation, supersession and quarantine references for future candidate Market State outputs.
+- Preserved the boundary: no registry entries written, registry runtime reads, dataset registrations, promotions, supersessions, quarantine transitions, official dataset, production or downstream consumption.
+- Next gate is `market_state_run_lifecycle_and_manifest_design_v0_1`.
+
+## 2026-07-25 | Market State validator design closed
+
+- Recorded `market_state_validator_design_v0_1` and `market_state_validator_contract_v0_1.json` under `08_RUNTIME_CAPABILITIES`.
+- Defined validation blocks for candidate Market State materializer outputs: scope, schema, grain, identity, temporal legality, lineage, partition completeness, content, fingerprints and determinism readiness.
+- Preserved the boundary: no validator execution, candidate file reads, parquet reads, validation reports, partition status changes, quarantine actions, registry writes, production or downstream consumption.
+- Next gate is `market_state_candidate_dataset_registry_design_v0_1`.
+
+## 2026-07-25 | Market State materializer design closed
+
+- Recorded `market_state_materializer_design_v0_1` and `market_state_materializer_contract_v0_1.json` under `08_RUNTIME_CAPABILITIES`.
+- The design defines how a future materializer consumes one authorized frozen execution plan and emits candidate unvalidated Market State outputs.
+- Boundary preserved: 0 materializer executions, 0 builder executions, 0 source rows read, 0 staging directories, 0 candidate files, 0 manifests, 0 validation reports and 0 dataset registry entries written.
+
+## 2026-07-25 | Market State partition and coverage resolver design closed
+
+- Recorded `market_state_partition_and_coverage_resolver_design_v0_1` and `market_state_partition_and_coverage_resolver_contract_v0_1.json` under `08_RUNTIME_CAPABILITIES`.
+- The design defines mutually exclusive logical partition dispositions and separates source availability evidence from output partition disposition.
+- Boundary preserved: 0 partition/coverage resolver executions, 0 partition manifests, 0 coverage manifests, 0 registry runtime reads, 0 source rows read, 0 execution plans created and 0 dataset registry entries written.
+
+## 2026-07-25 | Market State source resolver design closed
+
+- Recorded `market_state_source_resolver_design_v0_1` and `market_state_source_resolver_contract_v0_1.json` under `08_RUNTIME_CAPABILITIES`.
+- The design defines how future runtime resolution will populate the `resolved_sources` block of a Market State execution plan from profile-required source aliases.
+- Boundary preserved: 0 source resolver executions, 0 source registry/contract/schema/policy runtime reads, 0 source parquet files read, 0 source rows read, 0 execution plans created and 0 dataset registry entries written.
+
+## 2026-07-25 | Market State universe resolver design refined
+
+- Refined `market_state_universe_resolver_design_v0_1` to make `resolved_universe_fingerprint`, `coverage_status`, `blocking_findings` and resolved/blocked/excluded context accounting explicit.
+- Added zero-execution counters for `instrument_session_contexts_created` and `instrument_master_runtime_reads`.
+- Boundary preserved: still 0 universe resolver executions, 0 manifests, 0 source rows, 0 execution plans, 0 datasets and 0 registry writes.
+
+## 2026-07-25 | Market State universe resolver design closed
+
+- Recorded `market_state_universe_resolver_design_v0_1` and `market_state_universe_resolver_contract_v0_1.json` under `08_RUNTIME_CAPABILITIES`.
+- The design defines how future runtime resolution will populate the `resolved_universe_and_scope` block of a Market State execution plan from point-in-time universe and session intent.
+- Boundary preserved: 0 universe resolver executions, 0 universe manifests created, 0 calendar runtime reads, 0 instrument identity runtime reads, 0 execution plans created, 0 source rows read and 0 dataset registry entries written.
+
+## 2026-07-25 | Market State profile resolver design closed
+
+- Recorded `market_state_profile_resolver_design_v0_1` and `market_state_profile_resolver_contract_v0_1.json` under `08_RUNTIME_CAPABILITIES`.
+- The design defines how future runtime resolution will populate the `resolved_profile` block of a Market State execution plan from exact profile intent.
+- Boundary preserved: 0 profile resolver executions, 0 profile registry runtime reads, 0 execution plans created, 0 source rows read, 0 Market State records emitted, 0 parquet files and 0 dataset registry entries written.
+
+## 2026-07-24 | Market State execution plan contract design closed
+
+- Recorded `market_state_execution_plan_contract_design_v0_1` and `market_state_execution_plan_contract_v0_1.json` under `08_RUNTIME_CAPABILITIES`.
+- The contract defines the immutable resolution artifact that a future materializer must consume after request validation and resolver execution.
+- Boundary preserved: 0 execution plans created, 0 resolver executions, 0 source rows read, 0 Market State records emitted, 0 parquet files and 0 dataset registry entries written.
+
+## 2026-07-24 | Market State request contract design closed
+
+- Recorded `market_state_request_contract_design_v0_1` and `market_state_request_contract_v0_1.json` under `08_RUNTIME_CAPABILITIES`.
+- The contract defines normalized Market State request intent, fingerprint inputs and blocking rules before resolver or execution-plan work.
+- Boundary preserved: 0 request records created, 0 execution plans, 0 source rows read, 0 Market State records emitted, 0 parquet files and 0 dataset registry entries written.
+
+## 2026-07-24 | Market State on-demand capability design closed
+
+- Recorded `market_state_on_demand_capability_design_v0_1` under `08_RUNTIME_CAPABILITIES`.
+- The design defines Market State as a future request-resolved runtime capability over `market_state_core_four_intraday_profile_v0_1`.
+- Boundary preserved: 0 requests executed, 0 source rows read, 0 Market State records emitted, 0 parquet files and 0 dataset registry entries written.
+
+## 2026-07-24 | Runtime capabilities architecture recorded
+
+- Added `08_RUNTIME_CAPABILITIES` under Applied Architecture as the bridge from representation/profile governance to repeatable request-driven generation.
+- Recorded `runtime_capabilities_architecture_v0_1` with Request, Resolver, Execution Plan, Materializer, Validator, Dataset Registry and idempotency roles.
+- Boundary preserved: no request resolver, materializer execution, source reads, dataset writes, production or downstream consumption were opened.
+
+## 2026-07-24 | Event State operational registry policy design recorded
+
+- Recorded design-only operational registry / consumption policy for `event_state_core_four_intraday_profile_v0_1`.
+- The design allows semantic profile reference for planning and future authorization inputs only; it does not create or authorize an Event State dataset.
+- Boundary preserved: no Event State physical consumption, materialization, official parquet, production, downstream use, event detection or source market-data reads were opened.
+
+## 2026-07-24 | Event State profile artifact validation closed
+
+- Validated the official semantic Event State profile registry package for `event_state_core_four_intraday_profile_v0_1`.
+- Accepted run `event_state_profile_artifact_validation_v0_1_20260724T204410Z` checked 4 registry artifacts with 0 SHA-256 mismatches, 0 invariant failures and 0 hard validation failures.
+- Boundary preserved: no Event State dataset promotion, official parquet, materialization, production, downstream consumption, source market-data reads or unbounded execution were opened.
+
+## 2026-07-24 | Event State semantic profile promoted
+
+- Promoted `event_state_core_four_intraday_profile_v0_1` as an official semantic Event State profile with restrictions under `03_TABLES_feature_engineering/07_EVENT_STATE_INTEGRATION`.
+- Accepted run `event_state_profile_promotion_v0_1_20260724T203016Z` wrote 4 official profile registry artifacts and preserved the accepted bounded `session_opened` evidence lineage.
+- Boundary preserved: no Event State dataset promotion, official parquet, materialization, production, downstream consumption, new Event Types or unbounded execution were opened.
+
+## 2026-07-24 | Event State profile promotion review closed
+
+- Reviewed bounded Event State profile evidence under `03_TABLES_feature_engineering/07_EVENT_STATE_INTEGRATION`.
+- Accepted run `event_state_profile_promotion_review_v0_1_20260724T201046Z` approved a separate semantic Event State profile promotion authorization with restrictions; 15 evidence artifacts checked, 0 hash/count mismatches and 0 hard review failures.
+- Boundary preserved: no Event State profile promotion was executed, no dataset promotion, official parquet, materialization, production, downstream consumption, new Event Types or unbounded execution were opened.
+
+## 2026-07-24 | DAS CMDAPI PASS-candidate max read-only capture corrected
+
+- Corrected the live DAS evidence capture orientation: for the operator request "use our screener/filter", the canonical ticker source is the TSIS screener candidate file `C:/TSIS_Data/data/screener/runs/das_cmdapi_live_20260724T165627Z/candidates.csv` filtered to `filter_status=PASS`.
+- The replay/capture command must use `--candidate-file ... --candidate-file-status PASS --skip-screener --max-readonly`; it intentionally does not use DAS `TOPLIST` as a filter and does not use an external/governed TSIS universe.
+- `--scan-tsis-universe` remains an opt-in diagnostic/recovery mechanism for a different question; it is not the operator flow for replaying today's TSIS screener PASS list.
+- Run `C:/TSIS_Data/data/raw_cmdapi/runs/das_cmdapi_live_candidate_file_pass_max_readonly_20260724T195551Z/` loaded 17/17 PASS candidates and produced structured locate evidence under `derived/` with 34/34 `%SLRET` price rows (`SAGE` and `TESTSL`) and 0 missing price rows. The raw capture later closed with DAS socket `ConnectionResetError(10054)`, so the run-level `final_summary.json` status is `FAIL`; this is a connection-close status, not a locate extraction failure.
+- Broker safety boundary unchanged: order, cancel, replace, complex-order and locate-order commands remain blocked; invalid account/password now aborts by default when account-state or locate inquiry capture is enabled.
+
+## 2026-07-24 | Event State candidate dataset review closed
+
+- Reviewed bounded Event State candidate output `event_state_candidate_dataset_review_v0_1_20260724T194315Z` under `03_TABLES_feature_engineering/07_EVENT_STATE_INTEGRATION`.
+- Decision: approved 8 non-official candidate records as bounded Event State evidence with restrictions and no promotion; 1 exact-binding blocked context remains blocked.
+- Boundary preserved: no Event State profile/dataset promotion, official parquet, materialization, production, downstream consumption, new Event Types or unbounded execution were opened.
+
+## 2026-07-24 | Live DAS CMDAPI read-only universe scan and data-root override recorded
+
+- Updated `04_TSIS_webSocket_SmallCaps` so DAS CMDAPI capture preserves prior seed/TOPLIST behavior and adds opt-in TSIS universe scanning from the governed Data Foundation market-cap reference.
+- Recorded the current operator-directed DAS CMDAPI data root as `C:/TSIS_Data/data` for this read-only capture path; raw run evidence is under `C:/TSIS_Data/data/raw_cmdapi/runs/<run_id>` and screener evidence under `C:/TSIS_Data/data/screener/runs/<run_id>`.
+- Large scanner evaluations above 100 symbols now require explicit `--allow-large-scan`; active full-capture subscriptions and broker safety limits remain separate.
+- Broker command boundary unchanged: order/cancel/replace/complex-order/locate-order command prefixes remain blocked, while read-only market, account-state and locate inquiry commands can be requested by `--max-readonly`.
+- Future-agent orientation: if a DAS run evaluates only `SOXS` after `TOPLIST: parsed 0 symbols`, check that the launch used `--scan-tsis-universe --allow-large-scan --max-screener-symbols <N>` and that the market-cap reference at `C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/market_cap_last_observed_cutoff/20260320_market_cap_last_observed_cutoff/market_cap_cutoff_lt_1b_active_inactive.csv` loaded.
+
+## 2026-07-24 | Event State bounded execution-chain physical validation closed
+
+- Added bounded physical validation artifacts under `03_TABLES_feature_engineering/07_EVENT_STATE_INTEGRATION`.
+- Accepted run `event_state_bounded_execution_chain_physical_validation_v0_1_20260724T193214Z` validated the accepted bounded execution output: 8 candidate records checked, 0 schema/hash/fingerprint/binding/lineage/authority/determinism failures and 0 hard validation failures.
+- Boundary preserved: the 1 exact-binding blocked context remains blocked; no Event State parquet, official profile/dataset promotion, production, downstream consumption, new Event Types or unbounded execution were opened.
+
+## 2026-07-24 | Event State bounded execution-chain candidate output closed
+
+- Executed accepted bounded run `event_state_bounded_execution_chain_execution_v0_1_20260724T185356Z` under `03_TABLES_feature_engineering/07_EVENT_STATE_INTEGRATION`.
+- Result: 3 Event Instances, 3 Event Window Bindings, 9 instrument-session projections, 8 non-official Event State candidate JSONL records, 1 policy-blocked context, 0 fallback uses and 0 hard validation failures.
+- Boundary preserved: no Event State parquet, official dataset/profile promotion, production, downstream consumption, event detection outside `session_opened` or Market State rebuild was opened.
+
+## 2026-07-24 | Applied Architecture Event State bounded authorization issued
+
+- Issued the first bounded Event State execution-chain authorization for the `session_opened`/core-four path.
+- The future run is limited to 3 XNYS sessions, 3 instruments and the validated non-official Scale C Market State candidate parquet.
+- No Event State rows, parquet, materialization, production or downstream consumption were created or authorized for use.
+
+## 2026-07-24 | Applied Architecture Event State design-chain review closed
+
+- Closed the Event State design-chain joint review for the first `session_opened`/core-four path.
+- The chain is approved for a future bounded execution authorization with restrictions.
+- No Event State rows, Market State parquet consumption, materialization, production or downstream consumption were authorized.
+
+## 2026-07-24 | Applied Architecture Event State integration design recorded
+
+- Closed the design-only Event State integration gate for the first `session_opened`/core-four path.
+- The design preserves Market State as a referenced parent profile and requires exact-one event, window, projection, role and legality bindings.
+- No Event State rows, Market State parquet consumption, materialization, production or downstream consumption were authorized.
+
+## 2026-07-24 | Applied Architecture Event State projection design recorded
+
+- Closed the design-only instrument-session projection gate for Event State.
+- The projection will bridge exchange-session `session_opened` events/windows to instrument-session Market State context in a future execution gate.
+- No projections, Event State rows, materialization, production or downstream consumption were authorized.
+
+## 2026-07-24 | Applied Architecture Market State/Event State compatibility recorded
+
+- Closed the design-only Market State Profile Compatibility gate for `event_state_core_four_intraday_profile_v0_1`.
+- The official `market_state_core_four_intraday_profile_v0_1` is semantically compatible as parent profile, but future Event State execution requires instrument-session projection.
+- No physical Market State consumption, Event State materialization, production or downstream consumption was authorized.
+
+## 2026-07-24 | Applied Architecture Event Window Binding Design recorded
+
+- Closed the design-only Event Window Binding gate for `event_type:market_data:session_opened`.
+- The design separates Event Window Definition from future Event Window Binding and preserves `state_role` versus `consumption_legality`.
+- No windows, instances, detectors, parquet, production or downstream consumption were authorized.
+
+## 2026-07-24 | Applied Architecture Event Instance Binding Design recorded
+
+- Recorded the design-only Event Instance Binding contract for `event_type:market_data:session_opened`.
+- Native identity is exchange-session scoped; instrument association remains a future projection, not part of the Event Type or Event Instance identity.
+- No Event Instances, detectors, Event State materialization, production or downstream consumption were authorized.
+
+## 2026-07-24 | Applied Architecture Event Type admission review recorded
+
+- Closed the initial Event Type admission review under `00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/07_EVENT_STATE_INTEGRATION`.
+- `session_opened` is accepted with restrictions for exchange-session design only; `halt_resumed` remains investigational pending timestamp/source availability reconciliation.
+- No event detection, Event Instances, Event State materialization, production or downstream consumption was authorized.
+
+## 2026-07-24 - Event identity stability future field queued
+
+- Recorded `event_identity_stability` as a future Event Type Registry v0.2 consideration with candidate values `immutable`, `conditionally_stable`, `source_dependent` and `experimental`.
+- Preserved v0.1 boundaries: no registry schema field was added to the current snapshot, no candidate was admitted, no detector/instance/window/builder/materialization gate was opened and the snapshot hash remains unchanged.
+
+## 2026-07-24 - Event Type Registry initial candidate population recorded
+
+- Added `07_EVENT_STATE_INTEGRATION/event_type_registry_initial_population_authorization_v0_1.md`, `configs/event_type_registry_initial_population_scope_v0_1.json`, `event_type_registry_initial_population_snapshot_v0_1.json` and `event_type_registry_initial_population_readout_v0_1.md`.
+- Recorded two candidate families and two candidate Event Types as `investigational_candidate`: `event_type:regulatory:halt_resumed` and `event_type:market_data:session_opened`; accepted Event Types remain 0.
+- Boundary preserved: no event admission, detector execution, instances, windows, Event State builder/materialization, parquet, production, downstream consumption or Execution State design was authorized.
+
+## 2026-07-24 - Variable Attribute Admission record template recorded
+
+- Added `03_VARIABLE_ATTRIBUTE_ADMISSION_RECORD_TEMPLATE_v0_1.md` as the standard review form for proposals such as ATR, RVOL, VWAP, spread fields, Event variables and outcome labels.
+- Renumbered the table-status documents so the matrix is now `04_TSIS_TABLES_000_018_INSTITUTIONAL_STATUS_MATRIX_v0_1.md`, reconciliation authorization is `05_tables_000_018_evidence_reconciliation_authorization_v0_1.md`, and reconciliation readout is `06_tables_000_018_evidence_reconciliation_readout_v0_1.md`.
+- Boundary preserved: the template does not admit variables, modify schemas, authorize builders/materializations, promote datasets or open downstream consumption.
+
+## 2026-07-24 - Variable and Attribute Admission Policy recorded
+
+- Added `02_VARIABLE_AND_ATTRIBUTE_ADMISSION_POLICY_v0_1.md` as the bridge policy explaining why raw source attributes, derived features, State variables, Event variables, outcome labels and quality/lineage/governance attributes may be discovered, mapped, admitted, blocked or rejected.
+- Consolidated the existing distributed policy from Information Object admission, Operational Mapping, Builder Validation and Market State/Event State profile gates.
+- Boundary preserved: no new variables admitted, no schemas changed, no builders/materializations authorized, no datasets promoted and no downstream consumption opened.
+
+## 2026-07-24 - Event Type Registry seed schema designed
+
+- Closed `event_type_registry_seed_design_v0_1` under Applied Architecture as an empty registry schema design.
+- Recorded namespaces, status model, identity rules, admission review requirements and future binding guards while keeping `accepted_event_types = 0`.
+- Boundary preserved: no event registry population, detection, instance binding, Event State materialization, production or downstream consumption is authorized.
+
+## 2026-07-24 - Tables 000-018 evidence reconciled against Data Foundation
+
+- Executed `tables_000_018_evidence_reconciliation_against_data_foundation_registry_v0_1` and accepted run `tables_000_018_evidence_reconciliation_v0_1_20260724T081044Z`.
+- Reconciled 19/19 representation table rows against Data Foundation schemas, dataset contracts, registry entries, consumption policies, validators and status matrix evidence: 13 restricted datasets, 2 validated candidates with restrictions, 3 partial semantic/physical reconciliations and 0 unresolved rows.
+- Boundary preserved: `official_datasets_inferred = 0`, no official dataset registry write, no official parquet, no production, no downstream consumption, no Event State materialization and no event detection.
+
+## 2026-07-24 - Tables 000-018 authority axes normalized
+
+- Refined the applied-architecture `000-018` institutional status matrix to separate `physical_authority`, `semantic_authority` and `execution_authority`.
+- Clarified the Event State row: Event Type contract shape is ready, while registry schema remains pending seed design and accepted event types remain 0.
+- Boundary preserved: no official dataset registry update, official parquet, production, downstream consumption, event detection or Event State materialization is authorized.
+
+## 2026-07-24 - Tables 000-018 institutional status matrix recorded
+
+- Added the applied-architecture institutional status matrix for representation tables `000-018`.
+- Clarified that the 2026-07-20 Discovery Pass remains historical discovery evidence, not the current authority matrix.
+- Boundary preserved: no official dataset registry update, no official parquet, no production, no downstream consumption, no Event State execution and no dataset promotion is authorized.
+
+## 2026-07-23 - Event policy state normalized
+
+- Normalized the Event State policy boundary: Event Type registry contract shape is ready, but registry schema and population remain closed.
+- Restricted the immediate next gate to `event_type_registry_seed_design_v0_1`.
+- Added event-domain and epistemic-role separation to avoid conflating market phenomena with scanner, research, system or governance events.
+
+## 2026-07-23 - Event policy recorded
+
+- Recorded the standing Event State event policy under applied architecture before populating any Event Type registry.
+- Clarified that event grammar can be designed while the event dictionary remains empty: `accepted_event_types = 0`.
+- Boundary preserved: no event admission, event detection, Event State builder, materialization, parquet, production or downstream consumption is authorized.
+
+## 2026-07-23 - Event type/family contract design recorded
+
+- Added the Event State integration design area and an operational contract design for Event Family/Event Type authority before event instance binding.
+- Preserved the distinction between conceptual event taxonomy and populated `event_type_id` registry entries.
+- Boundary preserved: no event detection, Event State builder, materialization, parquet, production or downstream consumption is authorized.
+
+## 2026-07-23 - Event State profile contract design recorded
+
+- Added the first Event State profile contract design, `event_state_core_four_intraday_profile_v0_1`, under applied architecture.
+- Bound it to the official `market_state_core_four_intraday_profile_v0_1` parent profile while leaving event instance binding, event window binding, builders, materialization and consumption closed.
+- Preserved boundaries: no Event State execution, parquet, production or downstream consumption is authorized.
+## 2026-07-23 - Physical data plane root aligned to G
+
+- Updated active root/module documentation to reference `G:/TSIS/data` as the physical data plane now used for TSIS heavy outputs, materializations and data-provider roots, including `PATH_MIGRATION_2026_07_22.md`, Lab local rules and the mounted `G:/TSIS/data/README.md` physical-plane note.
+- Boundary preserved: physical path location does not define dataset semantics; Data Foundation contracts remain the authority for data meaning, quality gates, price views and consumption policy.
+- Backtest Engine decision recorded separately in `02_TSIS_BACKTEST_ENGINE/docs/00_system/backtest_engine_boundary_and_data_plane_v0_1.md`.
+## 2026-07-23 - Market State profile family architecture recorded
+
+- Recorded `market_state_core_four_intraday_profile_v0_1` as the first member of a governed TSIS Market State profile family, with future profiles required to follow independent lifecycle gates.
+- Added an Event State architecture seed under applied architecture that references valid Market State profiles instead of redefining Market State.
+- Preserved boundaries: no official dataset registry update, no official parquet, no production, no downstream consumption, no Event State execution and no full-history/full-universe execution.
+## 2026-07-23 - Market State core-four official profile promoted
+
+- Registered `market_state_core_four_intraday_profile_v0_1` as an applied-architecture official profile with restrictions and validated the registry package.
+- Accepted promotion run `official_market_state_candidate_promotion_v0_1_20260723T193403Z` and artifact validation run `official_market_state_profile_artifact_validation_v0_1_20260723T193711Z`; registry artifacts checked = 4, hash mismatches = 0, invariant failures = 0, hard failures = 0.
+- This is not complete TSIS Market State and does not authorize operational dataset registry updates, official parquet, production, downstream consumption or full-history/full-universe execution.
+
+## 2026-07-23 - Market State core-four official-profile review approved
+
+- Review-only gate `official_market_state_candidate_promotion_review_v0_1_20260723T192107Z` approved `market_state_core_four_intraday_profile_v0_1` for a separate official-profile promotion authorization with restrictions.
+- Evidence checked: 8 artifacts, 480 resolution records, 104 integrated candidate records, 104 physical candidate rows, parquet SHA-256 `b1841f4897a759de8ec9a317bece888a9ff817da3df2cd0eb477b4ed950775a2`, 1768 value mappings, 3848 semantic rebuild field comparisons and 0 hard failures.
+- No official Market State promotion, official parquet write, production builder, downstream consumption or full-history/full-universe execution was authorized.
+
+## 2026-07-23 - Scale C Market State validation chain closed
+
+- Scale C Market State closed with restrictions through candidate physical validation: 120 contexts, 480 resolution records, 104 candidate physical rows and 0 hard validation failures.
+- Candidate parquet SHA-256: `b1841f4897a759de8ec9a317bece888a9ff817da3df2cd0eb477b4ed950775a2`. Official Market State remains not authorized.
+
+## 2026-07-23 - Scale C Market State surface gate closed
+
+- Market State Scale C advanced from frozen sample to closed run-local execution surface construction: accepted run `experimental_core_four_market_state_scale_c_execution_surface_construction_v0_1_20260723T165402Z`.
+- Frozen surface fingerprint `34db7887874a57658bbbec52cc9b3915f86afdc61b7997e6b930056c0a9cf554`; next step is a separate builder/resolution authorization.
+
+## 2026-07-23 | phase c | Scale C sample preflight v0.2 closed
+
+- Updated `00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION` with the accepted Scale C sample preflight v0.2 run and readout.
+- Run `experimental_core_four_market_state_scale_c_sample_preflight_v0_2_20260723T164132Z` closed `PASS_WITH_RESTRICTIONS`: 120 frozen contexts, 10 selected instruments, 8 governed historical XNYS sessions, 480 expected resolution records and sample fingerprint `67d46f6b5f2567b3af82d000bb2a6cb6e05f0546f0be11b1c263586c3bc9515d`.
+- Boundary preserved: no Scale C execution surface, builders, Market State integration/materialization/parquet, official State, downstream consumption, promotion or full-history/full-universe execution is authorized.
+
+## 2026-07-23 | phase c | Scale C sample preflight authorization issued
+
+- Updated `00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION` with a bounded Scale C sample preflight authorization and scope.
+- Scale C is authorized only for historical sample preflight across finite governed XNYS sessions; Scale C execution, builders, Market State materialization, official State, downstream consumption, promotion and full-history/full-universe execution remain closed.
+
 ## 2026-07-22 | root path migration | TSIS top-level module names realigned
 
 - Added `PATH_MIGRATION_2026_07_22.md` as the canonical transition map for top-level path resolution.
@@ -472,51 +780,51 @@ git status --short
 `CHANGELOG.md` es:
 
 ```text id="cl1"
-la memoria histÃ³rica oficial del proyecto
+la memoria histÃƒÆ’Ã‚Â³rica oficial del proyecto
 ```
 
-Ahora mismo estÃ¡ vacÃ­o (â€œLâ€)
+Ahora mismo estÃƒÆ’Ã‚Â¡ vacÃƒÆ’Ã‚Â­o (ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œLÃƒÂ¢Ã¢â€šÂ¬Ã‚Â)
 y eso es normal al empezar.
 
 ---
 
-# Lo MÃS importante
+# Lo MÃƒÆ’Ã‚ÂS importante
 
 NO es:
 
 ```text id="cl2"
-â€œun log tÃ©cnico giganteâ€
+ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œun log tÃƒÆ’Ã‚Â©cnico giganteÃƒÂ¢Ã¢â€šÂ¬Ã‚Â
 ```
 
 NO es:
 
 ```text id="cl3"
-â€œtodos los commits pegadosâ€
+ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œtodos los commits pegadosÃƒÂ¢Ã¢â€šÂ¬Ã‚Â
 ```
 
 NO es:
 
 ```text id="cl4"
-â€œhistorial Git duplicadoâ€
+ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œhistorial Git duplicadoÃƒÂ¢Ã¢â€šÂ¬Ã‚Â
 ```
 
 ---
 
 # Entonces:
 
-# Â¿quÃ© es realmente?
+# Ãƒâ€šÃ‚Â¿quÃƒÆ’Ã‚Â© es realmente?
 
 Es:
 
 ```text id="cl5"
-historia semÃ¡ntica institucional
+historia semÃƒÆ’Ã‚Â¡ntica institucional
 ```
 
 ---
 
 # Git ya guarda:
 
-* lÃ­neas cambiadas
+* lÃƒÆ’Ã‚Â­neas cambiadas
 * commits
 * archivos
 
@@ -525,7 +833,7 @@ historia semÃ¡ntica institucional
 # CHANGELOG guarda:
 
 ```text id="cl6"
-quÃ© cambiÃ³ conceptualmente
+quÃƒÆ’Ã‚Â© cambiÃƒÆ’Ã‚Â³ conceptualmente
 ```
 
 ---
@@ -538,7 +846,7 @@ Git commit:
 feat: add universe active status filters
 ```
 
-Eso estÃ¡ bien para Git.
+Eso estÃƒÆ’Ã‚Â¡ bien para Git.
 
 ---
 
@@ -558,36 +866,36 @@ v0.3.0
 # CHANGELOG responde:
 
 ```text id="cl9"
-cÃ³mo evolucionÃ³ TSIS
+cÃƒÆ’Ã‚Â³mo evolucionÃƒÆ’Ã‚Â³ TSIS
 ```
 
 NO:
 
 ```text id="cl10"
-quÃ© lÃ­neas cambiaron exactamente
+quÃƒÆ’Ã‚Â© lÃƒÆ’Ã‚Â­neas cambiaron exactamente
 ```
 
 ---
 
-# QuÃ© pondrÃ­a yo en tu caso
+# QuÃƒÆ’Ã‚Â© pondrÃƒÆ’Ã‚Â­a yo en tu caso
 
 Ahora mismo probablemente:
 
 ```md id="cl11"
 # TSIS Changelog
 
-Todos los cambios institucionales relevantes del proyecto se registran aquÃ­.
+Todos los cambios institucionales relevantes del proyecto se registran aquÃƒÆ’Ã‚Â­.
 
 El objetivo NO es duplicar Git commits.
 
 El objetivo es registrar:
 
-- milestones arquitectÃ³nicos;
-- cambios semÃ¡nticos importantes;
+- milestones arquitectÃƒÆ’Ã‚Â³nicos;
+- cambios semÃƒÆ’Ã‚Â¡nticos importantes;
 - promotion states;
 - breaking changes;
 - releases institucionales;
-- evoluciÃ³n conceptual del sistema.
+- evoluciÃƒÆ’Ã‚Â³n conceptual del sistema.
 ```
 
 ---
@@ -599,7 +907,7 @@ El objetivo es registrar:
 # Primera release
 
 ```md id="cl12"
-## v0.1.0 â€” Initial Institutional Foundation
+## v0.1.0 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Initial Institutional Foundation
 
 ### Added
 
@@ -618,10 +926,10 @@ This release establishes the foundational governance and research architecture o
 
 ---
 
-# Luego mÃ¡s adelante:
+# Luego mÃƒÆ’Ã‚Â¡s adelante:
 
 ```md id="cl13"
-## v0.2.0 â€” Data Governance Layer
+## v0.2.0 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Data Governance Layer
 
 ### Added
 
@@ -641,7 +949,7 @@ This release establishes the foundational governance and research architecture o
 # Luego:
 
 ```md id="cl14"
-## v0.3.0 â€” Universe Builder Institutionalization
+## v0.3.0 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Universe Builder Institutionalization
 
 ### Added
 
@@ -662,7 +970,7 @@ This release establishes the foundational governance and research architecture o
 
 ---
 
-# Lo MÃS importante
+# Lo MÃƒÆ’Ã‚ÂS importante
 
 NO registrar ruido.
 
@@ -677,7 +985,7 @@ NO registrar ruido.
 - changed variable name
 ```
 
-Eso NO pertenece aquÃ­.
+Eso NO pertenece aquÃƒÆ’Ã‚Â­.
 
 Eso pertenece a Git.
 
@@ -691,11 +999,11 @@ cambios con importancia institucional
 
 ---
 
-# QuÃ© tipos de cosas sÃ­ van aquÃ­
+# QuÃƒÆ’Ã‚Â© tipos de cosas sÃƒÆ’Ã‚Â­ van aquÃƒÆ’Ã‚Â­
 
 ---
 
-# SÃ­:
+# SÃƒÆ’Ã‚Â­:
 
 * nueva arquitectura
 * nuevo pipeline
@@ -704,16 +1012,16 @@ cambios con importancia institucional
 * breaking changes
 * promotion institutional
 * nuevas policies
-* cambios epistemolÃ³gicos
+* cambios epistemolÃƒÆ’Ã‚Â³gicos
 * nuevo simulador
-* nueva ontologÃ­a
-* nueva metodologÃ­a
+* nueva ontologÃƒÆ’Ã‚Â­a
+* nueva metodologÃƒÆ’Ã‚Â­a
 
 ---
 
 # NO:
 
-* pequeÃ±os fixes
+* pequeÃƒÆ’Ã‚Â±os fixes
 * imports
 * cleanup trivial
 * prints
@@ -722,7 +1030,7 @@ cambios con importancia institucional
 
 ---
 
-# Lo MÃS importante
+# Lo MÃƒÆ’Ã‚ÂS importante
 
 Tu proyecto tiene:
 
@@ -742,33 +1050,33 @@ historia evolutiva del sistema
 # NO:
 
 ```text id="cl18"
-diario tÃ©cnico caÃ³tico
+diario tÃƒÆ’Ã‚Â©cnico caÃƒÆ’Ã‚Â³tico
 ```
 
 ---
 
-# CÃ³mo lo usarÃ¡n agentes
+# CÃƒÆ’Ã‚Â³mo lo usarÃƒÆ’Ã‚Â¡n agentes
 
 MUY importante.
 
-Los agentes leerÃ¡n CHANGELOG para entender:
+Los agentes leerÃƒÆ’Ã‚Â¡n CHANGELOG para entender:
 
-* quÃ© evolucionÃ³
-* quÃ© cambiÃ³ conceptualmente
-* quÃ© es estable
-* quÃ© se rompiÃ³
-* quÃ© fue promocionado
-* quÃ© schemas cambiaron
-* quÃ© releases existen
+* quÃƒÆ’Ã‚Â© evolucionÃƒÆ’Ã‚Â³
+* quÃƒÆ’Ã‚Â© cambiÃƒÆ’Ã‚Â³ conceptualmente
+* quÃƒÆ’Ã‚Â© es estable
+* quÃƒÆ’Ã‚Â© se rompiÃƒÆ’Ã‚Â³
+* quÃƒÆ’Ã‚Â© fue promocionado
+* quÃƒÆ’Ã‚Â© schemas cambiaron
+* quÃƒÆ’Ã‚Â© releases existen
 
 ---
 
-# Mi recomendaciÃ³n REAL
+# Mi recomendaciÃƒÆ’Ã‚Â³n REAL
 
-Tu CHANGELOG deberÃ­a ser:
+Tu CHANGELOG deberÃƒÆ’Ã‚Â­a ser:
 
 * corto
-* semÃ¡ntico
+* semÃƒÆ’Ã‚Â¡ntico
 * institucional
 * estable
 * limpio
@@ -778,17 +1086,17 @@ Tu CHANGELOG deberÃ­a ser:
 
 # Sinceramente:
 
-# probablemente deberÃ­as pensar en Ã©l como:
+# probablemente deberÃƒÆ’Ã‚Â­as pensar en ÃƒÆ’Ã‚Â©l como:
 
 ```text id="cl19"
 historia constitucional de TSIS
 ```
 
-NO como log tÃ©cnico.
+NO como log tÃƒÆ’Ã‚Â©cnico.
 
 ---
 
-## v0.2.1 â€” Project-wide scientific justification standard
+## v0.2.1 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Project-wide scientific justification standard
 
 ### Changed
 
@@ -813,7 +1121,7 @@ Decision TSIS -> Evidencia directa -> Obligacion tecnica -> Limitacion abierta
 
 ---
 
-## v0.2.0 â€” Module 01 official Graphify leaf publication
+## v0.2.0 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Module 01 official Graphify leaf publication
 
 ### Added
 
@@ -861,16 +1169,3 @@ contract + certification + evidence + physical profiling + validator
 - Notebook evidence remains important but is deferred to a separate future
   Graphify leaf instead of being mixed into the first certification decisions
   graph.
-
-
-
-
-
-
-
-
-
-
-
-
-

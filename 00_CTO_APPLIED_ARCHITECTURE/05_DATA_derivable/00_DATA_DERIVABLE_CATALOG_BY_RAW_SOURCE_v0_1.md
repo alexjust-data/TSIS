@@ -1,4 +1,4 @@
-﻿# Data Derivable Catalog By RAW Source v0.1
+# Data Derivable Catalog By RAW Source v0.1
 
 Status: `secondary_summary_v0_1`
 Date: `2026-07-20`
@@ -8,7 +8,7 @@ Authoritative source: `no`
 Operational authority remains in:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations
 ```
 
 ---
@@ -53,7 +53,7 @@ Este documento es una sintesis aplicada. No reemplaza contratos, schemas, regist
 ### Autoridad RAW / derivacion
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\raw_data_authority_and_derivation_map.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\raw_data_authority_and_derivation_map.md
 ```
 
 Define `RAW_VENDOR_ORIGINAL`, `RAW_STAGED`, `RAW_AUDITED`, `REFERENCE_DATA`, `CONTEXT_DATA`, `DERIVED_ETL_VIEW`, `FEATURE_LAYER` y `LABEL_TARGET_LAYER`.
@@ -61,7 +61,7 @@ Define `RAW_VENDOR_ORIGINAL`, `RAW_STAGED`, `RAW_AUDITED`, `REFERENCE_DATA`, `CO
 ### Estado de familias de datos
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\data_quality_report\family_status_matrix_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\data_quality_report\family_status_matrix_v0_1.md
 ```
 
 Cubre `daily`, `quotes`, `trades`, `ohlcv_1m_raw`, `ohlcv_1m_split_normalized`, `ohlcv_daily_adjusted`, `reference`, `Halts`, `short`, `short_review`, `financial`, `additional` e `intraday_regime_features`.
@@ -69,13 +69,13 @@ Cubre `daily`, `quotes`, `trades`, `ohlcv_1m_raw`, `ohlcv_1m_split_normalized`, 
 ### Elegibilidad de observables
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_observable_eligibility_contract_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_observable_eligibility_contract_v0_1.md
 ```
 
 ### Formulas de derivadas
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_derived_observables_formula_contract_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_derived_observables_formula_contract_v0_1.md
 ```
 
 Estado declarado:
@@ -87,26 +87,26 @@ state_derived_observables_formula_contract_v0_1 = complete_for_contract_defined_
 ### Lineage RAW a consumo
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_contract_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_contract_v0_1.md
 ```
 
 ### Intradia y microestructura
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\intraday_regime_features_variable_taxonomy_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\master_intraday_bar_table_wider_scope_materialization_plan_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\microstructure_features_table_multi_window_materialization_plan_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs\master_intraday_bar_table_schema_contract.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs\microstructure_features_table_schema_contract.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\intraday_regime_features_variable_taxonomy_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\master_intraday_bar_table_wider_scope_materialization_plan_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\microstructure_features_table_multi_window_materialization_plan_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas\outputs\master_intraday_bar_table_schema_contract.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas\outputs\microstructure_features_table_schema_contract.md
 ```
 
 ### Contexto as-of
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs\news_context_table_schema_contract.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs\fundamentals_asof_table_schema_contract.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs\short_context_table_schema_contract.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs\halts_table_schema_contract.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas\outputs\news_context_table_schema_contract.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas\outputs\fundamentals_asof_table_schema_contract.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas\outputs\short_context_table_schema_contract.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas\outputs\halts_table_schema_contract.md
 ```
 
 ### Auditoria RAW aplicada

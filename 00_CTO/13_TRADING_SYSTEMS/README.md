@@ -1,4 +1,4 @@
-﻿# 13_TRADING_SYSTEMS
+# 13_TRADING_SYSTEMS
 
 Fecha de actualizacion: 2026-06-18
 Estado: capa CTO en refactor gobernado hacia arquitectura event-first.
@@ -18,13 +18,13 @@ Antes de modificar esta carpeta, leer:
 
 - `../LOCAL_RULES.md`
 - `../TSIS_LAB_ARCHITECTURE_v3.md`
-- `C:/TSIS_Data/00_TSIS_Lab/README.md`
+- `C:/TSIS_Data/03_TSIS_Lab/README.md`
 - `00_EVENT_LIBRARY/README.md`
 
 La autoridad de Data Foundation vive fuera de `00_CTO`, en:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations
 ```
 
 `13_TRADING_SYSTEMS/` consume esa base auditada como dependencia conceptual,

@@ -1,0 +1,1122 @@
+[
+  {
+    "title": "Praise",
+    "level": 0,
+    "page_index": 8,
+    "page": 9,
+    "slug": "praise"
+  },
+  {
+    "title": "Title Page",
+    "level": 0,
+    "page_index": 11,
+    "page": 12,
+    "slug": "title-page"
+  },
+  {
+    "title": "Copyright Page",
+    "level": 0,
+    "page_index": 14,
+    "page": 15,
+    "slug": "copyright-page"
+  },
+  {
+    "title": "Foreword",
+    "level": 0,
+    "page_index": 16,
+    "page": 17,
+    "slug": "foreword"
+  },
+  {
+    "title": "Preface",
+    "level": 0,
+    "page_index": 18,
+    "page": 19,
+    "slug": "preface"
+  },
+  {
+    "title": "THERE AND BACK AGAIN",
+    "level": 1,
+    "page_index": 18,
+    "page": 19,
+    "slug": "there-and-back-again"
+  },
+  {
+    "title": "COMPUTING",
+    "level": 1,
+    "page_index": 20,
+    "page": 21,
+    "slug": "computing"
+  },
+  {
+    "title": "THE INVESTMENT INDUSTRY",
+    "level": 1,
+    "page_index": 22,
+    "page": 23,
+    "slug": "the-investment-industry"
+  },
+  {
+    "title": "TRADING STRATEGY DEVELOPMENT TOOLS",
+    "level": 1,
+    "page_index": 24,
+    "page": 25,
+    "slug": "trading-strategy-development-tools"
+  },
+  {
+    "title": "THE RISE OF ADVANCED MATHEMATICAL CONCEPTS IN TRADING",
+    "level": 1,
+    "page_index": 26,
+    "page": 27,
+    "slug": "the-rise-of-advanced-mathematical-concepts-in-trading"
+  },
+  {
+    "title": "TRADING MEETS HIGHER EDUCATION",
+    "level": 1,
+    "page_index": 29,
+    "page": 30,
+    "slug": "trading-meets-higher-education"
+  },
+  {
+    "title": "Acknowledgments",
+    "level": 0,
+    "page_index": 32,
+    "page": 33,
+    "slug": "acknowledgments"
+  },
+  {
+    "title": "Introduction",
+    "level": 0,
+    "page_index": 34,
+    "page": 35,
+    "slug": "introduction"
+  },
+  {
+    "title": "CHAPTER 1 - On Trading Strategies",
+    "level": 0,
+    "page_index": 38,
+    "page": 39,
+    "slug": "chapter-1-on-trading-strategies"
+  },
+  {
+    "title": "WHY THIS BOOK WAS WRITTEN",
+    "level": 1,
+    "page_index": 40,
+    "page": 41,
+    "slug": "why-this-book-was-written"
+  },
+  {
+    "title": "WHO WILL BENEFIT FROM THIS BOOK?",
+    "level": 1,
+    "page_index": 42,
+    "page": 43,
+    "slug": "who-will-benefit-from-this-book"
+  },
+  {
+    "title": "THE GOALS OF THIS BOOK",
+    "level": 1,
+    "page_index": 44,
+    "page": 45,
+    "slug": "the-goals-of-this-book"
+  },
+  {
+    "title": "THE LAY OF THE LAND",
+    "level": 1,
+    "page_index": 45,
+    "page": 46,
+    "slug": "the-lay-of-the-land"
+  },
+  {
+    "title": "CHAPTER 2 - The Systematic Trading Edge",
+    "level": 0,
+    "page_index": 52,
+    "page": 53,
+    "slug": "chapter-2-the-systematic-trading-edge"
+  },
+  {
+    "title": "DISCRETIONARY TRADING",
+    "level": 1,
+    "page_index": 53,
+    "page": 54,
+    "slug": "discretionary-trading"
+  },
+  {
+    "title": "RAISING THE BAR",
+    "level": 1,
+    "page_index": 55,
+    "page": 56,
+    "slug": "raising-the-bar"
+  },
+  {
+    "title": "VERIFICATION",
+    "level": 1,
+    "page_index": 58,
+    "page": 59,
+    "slug": "verification"
+  },
+  {
+    "title": "QUANTIFICATION",
+    "level": 1,
+    "page_index": 61,
+    "page": 62,
+    "slug": "quantification"
+  },
+  {
+    "title": "RISK AND REWARD",
+    "level": 1,
+    "page_index": 61,
+    "page": 62,
+    "slug": "risk-and-reward"
+  },
+  {
+    "title": "THE PERFORMANCE PROFILE",
+    "level": 1,
+    "page_index": 64,
+    "page": 65,
+    "slug": "the-performance-profile"
+  },
+  {
+    "title": "OBJECTIVITY",
+    "level": 1,
+    "page_index": 66,
+    "page": 67,
+    "slug": "objectivity"
+  },
+  {
+    "title": "CONSISTENCY",
+    "level": 1,
+    "page_index": 68,
+    "page": 69,
+    "slug": "consistency"
+  },
+  {
+    "title": "EXTENSIBILITY",
+    "level": 1,
+    "page_index": 71,
+    "page": 72,
+    "slug": "extensibility"
+  },
+  {
+    "title": "THE BENEFITS OF THE HISTORICAL SIMULATION",
+    "level": 1,
+    "page_index": 73,
+    "page": 74,
+    "slug": "the-benefits-of-the-historical-simulation"
+  },
+  {
+    "title": "POSITIVE EXPECTANCY",
+    "level": 1,
+    "page_index": 74,
+    "page": 75,
+    "slug": "positive-expectancy"
+  },
+  {
+    "title": "THE LIKELIHOOD OF FUTURE PROFIT",
+    "level": 1,
+    "page_index": 74,
+    "page": 75,
+    "slug": "the-likelihood-of-future-profit"
+  },
+  {
+    "title": "THE PERFORMANCE PROFILE",
+    "level": 1,
+    "page_index": 75,
+    "page": 76,
+    "slug": "the-performance-profile"
+  },
+  {
+    "title": "PROPER CAPITALIZATION",
+    "level": 1,
+    "page_index": 76,
+    "page": 77,
+    "slug": "proper-capitalization"
+  },
+  {
+    "title": "A MEASURE OF REAL-TIME TRADING PERFORMANCE",
+    "level": 1,
+    "page_index": 76,
+    "page": 77,
+    "slug": "a-measure-of-real-time-trading-performance"
+  },
+  {
+    "title": "THE BENEFITS OF OPTIMIZATION",
+    "level": 1,
+    "page_index": 77,
+    "page": 78,
+    "slug": "the-benefits-of-optimization"
+  },
+  {
+    "title": "THE BENEFITS OF THE WALK-FORWARD ANALYSIS",
+    "level": 1,
+    "page_index": 79,
+    "page": 80,
+    "slug": "the-benefits-of-the-walk-forward-analysis"
+  },
+  {
+    "title": "THE ADVANTAGES OF A THOROUGH UNDERSTANDING",
+    "level": 1,
+    "page_index": 80,
+    "page": 81,
+    "slug": "the-advantages-of-a-thorough-understanding"
+  },
+  {
+    "title": "CONFIDENCE",
+    "level": 1,
+    "page_index": 81,
+    "page": 82,
+    "slug": "confidence"
+  },
+  {
+    "title": "STRATEGY REFINEMENT",
+    "level": 1,
+    "page_index": 82,
+    "page": 83,
+    "slug": "strategy-refinement"
+  },
+  {
+    "title": "CHAPTER 3 - The Trading Strategy Development Process",
+    "level": 0,
+    "page_index": 84,
+    "page": 85,
+    "slug": "chapter-3-the-trading-strategy-development-process"
+  },
+  {
+    "title": "TWO PHILOSOPHICAL APPROACHES TO STRATEGY DEVELOPMENT",
+    "level": 1,
+    "page_index": 84,
+    "page": 85,
+    "slug": "two-philosophical-approaches-to-strategy-development"
+  },
+  {
+    "title": "AN OVERVIEW OF THE TRADING STRATEGY DESIGN PROCESS",
+    "level": 1,
+    "page_index": 89,
+    "page": 90,
+    "slug": "an-overview-of-the-trading-strategy-design-process"
+  },
+  {
+    "title": "CHAPTER 4 - The Strategy Development Platform",
+    "level": 0,
+    "page_index": 100,
+    "page": 101,
+    "slug": "chapter-4-the-strategy-development-platform"
+  },
+  {
+    "title": "THE SCRIPTING LANGUAGE",
+    "level": 1,
+    "page_index": 100,
+    "page": 101,
+    "slug": "the-scripting-language"
+  },
+  {
+    "title": "DIAGNOSTICS",
+    "level": 1,
+    "page_index": 102,
+    "page": 103,
+    "slug": "diagnostics"
+  },
+  {
+    "title": "REPORTING",
+    "level": 1,
+    "page_index": 105,
+    "page": 106,
+    "slug": "reporting"
+  },
+  {
+    "title": "OPTIMIZATION",
+    "level": 1,
+    "page_index": 112,
+    "page": 113,
+    "slug": "optimization"
+  },
+  {
+    "title": "THE OBJECTIVE FUNCTION",
+    "level": 1,
+    "page_index": 112,
+    "page": 113,
+    "slug": "the-objective-function"
+  },
+  {
+    "title": "SPEED",
+    "level": 1,
+    "page_index": 112,
+    "page": 113,
+    "slug": "speed"
+  },
+  {
+    "title": "AUTOMATION",
+    "level": 1,
+    "page_index": 113,
+    "page": 114,
+    "slug": "automation"
+  },
+  {
+    "title": "WALK-FORWARD ANALYSIS",
+    "level": 1,
+    "page_index": 114,
+    "page": 115,
+    "slug": "walk-forward-analysis"
+  },
+  {
+    "title": "PORTFOLIO ANALYSIS",
+    "level": 1,
+    "page_index": 115,
+    "page": 116,
+    "slug": "portfolio-analysis"
+  },
+  {
+    "title": "IN CONCLUSION",
+    "level": 1,
+    "page_index": 115,
+    "page": 116,
+    "slug": "in-conclusion"
+  },
+  {
+    "title": "CHAPTER 5 - The Elements of Strategy Design",
+    "level": 0,
+    "page_index": 117,
+    "page": 118,
+    "slug": "chapter-5-the-elements-of-strategy-design"
+  },
+  {
+    "title": "THE THREE PRINCIPAL COMPONENTS OF A STRATEGY",
+    "level": 1,
+    "page_index": 118,
+    "page": 119,
+    "slug": "the-three-principal-components-of-a-strategy"
+  },
+  {
+    "title": "AN OVERVIEW OF A TYPICAL TRADING STRATEGY",
+    "level": 1,
+    "page_index": 119,
+    "page": 120,
+    "slug": "an-overview-of-a-typical-trading-strategy"
+  },
+  {
+    "title": "A TRADE EQUALS AN ENTRY AND AN EXIT",
+    "level": 1,
+    "page_index": 121,
+    "page": 122,
+    "slug": "a-trade-equals-an-entry-and-an-exit"
+  },
+  {
+    "title": "THE MANAGEMENT OF RISK",
+    "level": 1,
+    "page_index": 124,
+    "page": 125,
+    "slug": "the-management-of-risk"
+  },
+  {
+    "title": "THE MANAGEMENT OF PROFIT",
+    "level": 1,
+    "page_index": 132,
+    "page": 133,
+    "slug": "the-management-of-profit"
+  },
+  {
+    "title": "POSITION SIZING",
+    "level": 1,
+    "page_index": 137,
+    "page": 138,
+    "slug": "position-sizing"
+  },
+  {
+    "title": "ADVANCED STRATEGIES",
+    "level": 1,
+    "page_index": 140,
+    "page": 141,
+    "slug": "advanced-strategies"
+  },
+  {
+    "title": "SUMMARY",
+    "level": 1,
+    "page_index": 141,
+    "page": 142,
+    "slug": "summary"
+  },
+  {
+    "title": "CHAPTER 6 - The Historical Simulation",
+    "level": 0,
+    "page_index": 142,
+    "page": 143,
+    "slug": "chapter-6-the-historical-simulation"
+  },
+  {
+    "title": "THE ESSENTIAL REPORTS",
+    "level": 1,
+    "page_index": 142,
+    "page": 143,
+    "slug": "the-essential-reports"
+  },
+  {
+    "title": "THE IMPORTANCE OF ACCURACY",
+    "level": 1,
+    "page_index": 158,
+    "page": 159,
+    "slug": "the-importance-of-accuracy"
+  },
+  {
+    "title": "SOFTWARE LIMITATIONS",
+    "level": 1,
+    "page_index": 159,
+    "page": 160,
+    "slug": "software-limitations"
+  },
+  {
+    "title": "REALISTIC ASSUMPTIONS",
+    "level": 1,
+    "page_index": 164,
+    "page": 165,
+    "slug": "realistic-assumptions"
+  },
+  {
+    "title": "LIMIT MOVES",
+    "level": 1,
+    "page_index": 170,
+    "page": 171,
+    "slug": "limit-moves"
+  },
+  {
+    "title": "MAJOR EVENTS AND DATES",
+    "level": 1,
+    "page_index": 171,
+    "page": 172,
+    "slug": "major-events-and-dates"
+  },
+  {
+    "title": "HISTORICAL DATA",
+    "level": 1,
+    "page_index": 173,
+    "page": 174,
+    "slug": "historical-data"
+  },
+  {
+    "title": "STOCK PRICES",
+    "level": 1,
+    "page_index": 173,
+    "page": 174,
+    "slug": "stock-prices"
+  },
+  {
+    "title": "CASH MARKETS",
+    "level": 1,
+    "page_index": 173,
+    "page": 174,
+    "slug": "cash-markets"
+  },
+  {
+    "title": "FUTURES MARKETS",
+    "level": 1,
+    "page_index": 174,
+    "page": 175,
+    "slug": "futures-markets"
+  },
+  {
+    "title": "THE CONTINUOUS CONTRACT",
+    "level": 1,
+    "page_index": 178,
+    "page": 179,
+    "slug": "the-continuous-contract"
+  },
+  {
+    "title": "THE PERPETUAL CONTRACT",
+    "level": 1,
+    "page_index": 179,
+    "page": 180,
+    "slug": "the-perpetual-contract"
+  },
+  {
+    "title": "ADJUSTED CONTINUOUS CONTRACTS",
+    "level": 1,
+    "page_index": 180,
+    "page": 181,
+    "slug": "adjusted-continuous-contracts"
+  },
+  {
+    "title": "THE SIZE OF THE TEST WINDOW",
+    "level": 1,
+    "page_index": 181,
+    "page": 182,
+    "slug": "the-size-of-the-test-window"
+  },
+  {
+    "title": "HOW MANY TRADES?",
+    "level": 1,
+    "page_index": 184,
+    "page": 185,
+    "slug": "how-many-trades"
+  },
+  {
+    "title": "STABILITY",
+    "level": 1,
+    "page_index": 185,
+    "page": 186,
+    "slug": "stability"
+  },
+  {
+    "title": "DEGREES OF FREEDOM",
+    "level": 1,
+    "page_index": 185,
+    "page": 186,
+    "slug": "degrees-of-freedom"
+  },
+  {
+    "title": "FREQUENCY OF TRADING",
+    "level": 1,
+    "page_index": 187,
+    "page": 188,
+    "slug": "frequency-of-trading"
+  },
+  {
+    "title": "TYPES OF MARKETS",
+    "level": 1,
+    "page_index": 187,
+    "page": 188,
+    "slug": "types-of-markets"
+  },
+  {
+    "title": "EFFICIENT MARKETS",
+    "level": 1,
+    "page_index": 193,
+    "page": 194,
+    "slug": "efficient-markets"
+  },
+  {
+    "title": "THE LIFE CYCLE OF A TRADING STRATEGY",
+    "level": 1,
+    "page_index": 196,
+    "page": 197,
+    "slug": "the-life-cycle-of-a-trading-strategy"
+  },
+  {
+    "title": "WINDOW SIZE AND MODEL LIFE",
+    "level": 1,
+    "page_index": 198,
+    "page": 199,
+    "slug": "window-size-and-model-life"
+  },
+  {
+    "title": "CHAPTER 7 - Formulation and Specification",
+    "level": 0,
+    "page_index": 203,
+    "page": 204,
+    "slug": "chapter-7-formulation-and-specification"
+  },
+  {
+    "title": "FORMULATE THE TRADING STRATEGY",
+    "level": 1,
+    "page_index": 203,
+    "page": 204,
+    "slug": "formulate-the-trading-strategy"
+  },
+  {
+    "title": "SPECIFICATION—TRANSLATE THE IDEA INTO A TESTABLE STRATEGY",
+    "level": 1,
+    "page_index": 205,
+    "page": 206,
+    "slug": "specification-translate-the-idea-into-a-testable-strategy"
+  },
+  {
+    "title": "MAKE A VAGUE IDEA PRECISE",
+    "level": 1,
+    "page_index": 210,
+    "page": 211,
+    "slug": "make-a-vague-idea-precise"
+  },
+  {
+    "title": "CHAPTER 8 - Preliminary Testing",
+    "level": 0,
+    "page_index": 216,
+    "page": 217,
+    "slug": "chapter-8-preliminary-testing"
+  },
+  {
+    "title": "VERIFICATION OF CALCULATIONS AND TRADES",
+    "level": 1,
+    "page_index": 217,
+    "page": 218,
+    "slug": "verification-of-calculations-and-trades"
+  },
+  {
+    "title": "THEORETICAL EXPECTATIONS",
+    "level": 1,
+    "page_index": 225,
+    "page": 226,
+    "slug": "theoretical-expectations"
+  },
+  {
+    "title": "PRELIMINARY PROFITABILITY",
+    "level": 1,
+    "page_index": 228,
+    "page": 229,
+    "slug": "preliminary-profitability"
+  },
+  {
+    "title": "THE MULTIMARKET AND MULTIPERIOD TEST",
+    "level": 1,
+    "page_index": 231,
+    "page": 232,
+    "slug": "the-multimarket-and-multiperiod-test"
+  },
+  {
+    "title": "CHAPTER 9 - Search and Judgment",
+    "level": 0,
+    "page_index": 242,
+    "page": 243,
+    "slug": "chapter-9-search-and-judgment"
+  },
+  {
+    "title": "SEARCH METHODS",
+    "level": 1,
+    "page_index": 243,
+    "page": 244,
+    "slug": "search-methods"
+  },
+  {
+    "title": "ADVANCED SEARCH METHODS",
+    "level": 1,
+    "page_index": 258,
+    "page": 259,
+    "slug": "advanced-search-methods"
+  },
+  {
+    "title": "GENERAL PROBLEMS WITH SEARCH METHODS",
+    "level": 1,
+    "page_index": 267,
+    "page": 268,
+    "slug": "general-problems-with-search-methods"
+  },
+  {
+    "title": "THE OBJECTIVE FUNCTION",
+    "level": 1,
+    "page_index": 269,
+    "page": 270,
+    "slug": "the-objective-function"
+  },
+  {
+    "title": "A REVIEW OF A VARIETY OF EVALUATION METHODS",
+    "level": 1,
+    "page_index": 272,
+    "page": 273,
+    "slug": "a-review-of-a-variety-of-evaluation-methods"
+  },
+  {
+    "title": "MULTIPLE EVALUATION TYPES",
+    "level": 1,
+    "page_index": 279,
+    "page": 280,
+    "slug": "multiple-evaluation-types"
+  },
+  {
+    "title": "CHAPTER 10 - Optimization",
+    "level": 0,
+    "page_index": 281,
+    "page": 282,
+    "slug": "chapter-10-optimization"
+  },
+  {
+    "title": "OPTIMIZATION CONTRA OVERFITTING",
+    "level": 1,
+    "page_index": 283,
+    "page": 284,
+    "slug": "optimization-contra-overfitting"
+  },
+  {
+    "title": "A SIMPLE OPTIMIZATION",
+    "level": 1,
+    "page_index": 285,
+    "page": 286,
+    "slug": "a-simple-optimization"
+  },
+  {
+    "title": "THE OPTIMIZATION FRAMEWORK",
+    "level": 1,
+    "page_index": 287,
+    "page": 288,
+    "slug": "the-optimization-framework"
+  },
+  {
+    "title": "A MULTIMARKET AND MULTIPERIOD OPTIMIZATION",
+    "level": 1,
+    "page_index": 296,
+    "page": 297,
+    "slug": "a-multimarket-and-multiperiod-optimization"
+  },
+  {
+    "title": "THE EVALUATION OF THE OPTIMIZATION",
+    "level": 1,
+    "page_index": 298,
+    "page": 299,
+    "slug": "the-evaluation-of-the-optimization"
+  },
+  {
+    "title": "THE ROBUST TRADING STRATEGY",
+    "level": 1,
+    "page_index": 299,
+    "page": 300,
+    "slug": "the-robust-trading-strategy"
+  },
+  {
+    "title": "THE STATISTICALLY SIGNIFICANT OPTIMIZATION PROFILE",
+    "level": 1,
+    "page_index": 301,
+    "page": 302,
+    "slug": "the-statistically-significant-optimization-profile"
+  },
+  {
+    "title": "THE DISTRIBUTION OF THE OPTIMIZATION PROFILE",
+    "level": 1,
+    "page_index": 304,
+    "page": 305,
+    "slug": "the-distribution-of-the-optimization-profile"
+  },
+  {
+    "title": "THE SHAPE OF THE OPTIMIZATION PROFILE",
+    "level": 1,
+    "page_index": 305,
+    "page": 306,
+    "slug": "the-shape-of-the-optimization-profile"
+  },
+  {
+    "title": "HOW DOES THE STRATEGY RESPOND TO OPTIMIZATION?",
+    "level": 1,
+    "page_index": 311,
+    "page": 312,
+    "slug": "how-does-the-strategy-respond-to-optimization"
+  },
+  {
+    "title": "DOES THE STRATEGY DESERVE FURTHER DEVELOPMENT?",
+    "level": 1,
+    "page_index": 312,
+    "page": 313,
+    "slug": "does-the-strategy-deserve-further-development"
+  },
+  {
+    "title": "CHAPTER 11 - Walk-Forward Analysis",
+    "level": 0,
+    "page_index": 313,
+    "page": 314,
+    "slug": "chapter-11-walk-forward-analysis"
+  },
+  {
+    "title": "IS THE TRADING STRATEGY ROBUST?",
+    "level": 1,
+    "page_index": 314,
+    "page": 315,
+    "slug": "is-the-trading-strategy-robust"
+  },
+  {
+    "title": "ROBUSTNESS AND WALK-FORWARD EFFICIENCY",
+    "level": 1,
+    "page_index": 314,
+    "page": 315,
+    "slug": "robustness-and-walk-forward-efficiency"
+  },
+  {
+    "title": "THE CURE FOR OVERFITTING",
+    "level": 1,
+    "page_index": 316,
+    "page": 317,
+    "slug": "the-cure-for-overfitting"
+  },
+  {
+    "title": "A MORE RELIABLE MEASURE OF RISK AND RETURN",
+    "level": 1,
+    "page_index": 317,
+    "page": 318,
+    "slug": "a-more-reliable-measure-of-risk-and-return"
+  },
+  {
+    "title": "ASSESSING THE IMPACT OF MARKET CHANGES",
+    "level": 1,
+    "page_index": 318,
+    "page": 319,
+    "slug": "assessing-the-impact-of-market-changes"
+  },
+  {
+    "title": "THE BEST PARAMETER SET FOR TRADING",
+    "level": 1,
+    "page_index": 319,
+    "page": 320,
+    "slug": "the-best-parameter-set-for-trading"
+  },
+  {
+    "title": "THE THEORY OF RELEVANT DATA",
+    "level": 1,
+    "page_index": 320,
+    "page": 321,
+    "slug": "the-theory-of-relevant-data"
+  },
+  {
+    "title": "SHIFTING MARKETS",
+    "level": 1,
+    "page_index": 322,
+    "page": 323,
+    "slug": "shifting-markets"
+  },
+  {
+    "title": "THE VARIETIES OF MARKET CONDITIONS",
+    "level": 1,
+    "page_index": 323,
+    "page": 324,
+    "slug": "the-varieties-of-market-conditions"
+  },
+  {
+    "title": "THE WALK-FORWARD",
+    "level": 1,
+    "page_index": 325,
+    "page": 326,
+    "slug": "the-walk-forward"
+  },
+  {
+    "title": "THE ROLE OF THE WALK-FORWARD",
+    "level": 1,
+    "page_index": 326,
+    "page": 327,
+    "slug": "the-role-of-the-walk-forward"
+  },
+  {
+    "title": "SETTING UP A WALK-FORWARD",
+    "level": 1,
+    "page_index": 327,
+    "page": 328,
+    "slug": "setting-up-a-walk-forward"
+  },
+  {
+    "title": "AN EXAMPLE OF A WALK-FORWARD TEST",
+    "level": 1,
+    "page_index": 328,
+    "page": 329,
+    "slug": "an-example-of-a-walk-forward-test"
+  },
+  {
+    "title": "THE WALK-FORWARD ANALYSIS",
+    "level": 1,
+    "page_index": 330,
+    "page": 331,
+    "slug": "the-walk-forward-analysis"
+  },
+  {
+    "title": "IS THE STRATEGY ROBUST?",
+    "level": 1,
+    "page_index": 337,
+    "page": 338,
+    "slug": "is-the-strategy-robust"
+  },
+  {
+    "title": "WHAT RATE OF PROFIT SHOULD WE EXPECT?",
+    "level": 1,
+    "page_index": 342,
+    "page": 343,
+    "slug": "what-rate-of-profit-should-we-expect"
+  },
+  {
+    "title": "WHAT IS THE RISK?",
+    "level": 1,
+    "page_index": 343,
+    "page": 344,
+    "slug": "what-is-the-risk"
+  },
+  {
+    "title": "WALK-FORWARD ANALYSIS AND THE PORTFOLIO",
+    "level": 1,
+    "page_index": 343,
+    "page": 344,
+    "slug": "walk-forward-analysis-and-the-portfolio"
+  },
+  {
+    "title": "CHAPTER 12 - The Evaluation of Performance",
+    "level": 0,
+    "page_index": 345,
+    "page": 346,
+    "slug": "chapter-12-the-evaluation-of-performance"
+  },
+  {
+    "title": "THE TRADING STRATEGY AS AN INVESTMENT",
+    "level": 1,
+    "page_index": 345,
+    "page": 346,
+    "slug": "the-trading-strategy-as-an-investment"
+  },
+  {
+    "title": "THE DIMENSION OF RISK",
+    "level": 1,
+    "page_index": 345,
+    "page": 346,
+    "slug": "the-dimension-of-risk"
+  },
+  {
+    "title": "COMPARE THE STRATEGY TO THE ALTERNATIVES",
+    "level": 1,
+    "page_index": 346,
+    "page": 347,
+    "slug": "compare-the-strategy-to-the-alternatives"
+  },
+  {
+    "title": "MAXIMUM DRAWDOWN AND TRADING RISK",
+    "level": 1,
+    "page_index": 347,
+    "page": 348,
+    "slug": "maximum-drawdown-and-trading-risk"
+  },
+  {
+    "title": "RISK ADJUSTED RETURN",
+    "level": 1,
+    "page_index": 356,
+    "page": 357,
+    "slug": "risk-adjusted-return"
+  },
+  {
+    "title": "REWARD TO RISK RATIO",
+    "level": 1,
+    "page_index": 357,
+    "page": 358,
+    "slug": "reward-to-risk-ratio"
+  },
+  {
+    "title": "MODEL EFFICIENCY",
+    "level": 1,
+    "page_index": 358,
+    "page": 359,
+    "slug": "model-efficiency"
+  },
+  {
+    "title": "CONSISTENCY",
+    "level": 1,
+    "page_index": 360,
+    "page": 361,
+    "slug": "consistency"
+  },
+  {
+    "title": "PATTERNS OF PROFIT AND LOSS",
+    "level": 1,
+    "page_index": 362,
+    "page": 363,
+    "slug": "patterns-of-profit-and-loss"
+  },
+  {
+    "title": "CHAPTER 13 - The Many Faces of Overfitting",
+    "level": 0,
+    "page_index": 368,
+    "page": 369,
+    "slug": "chapter-13-the-many-faces-of-overfitting"
+  },
+  {
+    "title": "WHAT IS OVERFITTING?",
+    "level": 1,
+    "page_index": 369,
+    "page": 370,
+    "slug": "what-is-overfitting"
+  },
+  {
+    "title": "THE ABUSE OF HINDSIGHT",
+    "level": 1,
+    "page_index": 371,
+    "page": 372,
+    "slug": "the-abuse-of-hindsight"
+  },
+  {
+    "title": "THE CASE OF THE OVERFIT FORECASTING MODEL",
+    "level": 1,
+    "page_index": 374,
+    "page": 375,
+    "slug": "the-case-of-the-overfit-forecasting-model"
+  },
+  {
+    "title": "THE CASE OF THE OVERFIT TRADING MODEL",
+    "level": 1,
+    "page_index": 378,
+    "page": 379,
+    "slug": "the-case-of-the-overfit-trading-model"
+  },
+  {
+    "title": "THE SYMPTOMS OF AN OVERFIT TRADING MODEL",
+    "level": 1,
+    "page_index": 379,
+    "page": 380,
+    "slug": "the-symptoms-of-an-overfit-trading-model"
+  },
+  {
+    "title": "THE CAUSES OF OVERFITTING",
+    "level": 1,
+    "page_index": 381,
+    "page": 382,
+    "slug": "the-causes-of-overfitting"
+  },
+  {
+    "title": "CHAPTER 14 - Trading the Strategy",
+    "level": 0,
+    "page_index": 393,
+    "page": 394,
+    "slug": "chapter-14-trading-the-strategy"
+  },
+  {
+    "title": "THE MENTAL ASPECTS OF TRADING",
+    "level": 1,
+    "page_index": 394,
+    "page": 395,
+    "slug": "the-mental-aspects-of-trading"
+  },
+  {
+    "title": "RETURN ON INVESTMENT",
+    "level": 1,
+    "page_index": 395,
+    "page": 396,
+    "slug": "return-on-investment"
+  },
+  {
+    "title": "MAXIMUM RISK",
+    "level": 1,
+    "page_index": 397,
+    "page": 398,
+    "slug": "maximum-risk"
+  },
+  {
+    "title": "REAL-TIME AND EVALUATION PERFORMANCE",
+    "level": 1,
+    "page_index": 402,
+    "page": 403,
+    "slug": "real-time-and-evaluation-performance"
+  },
+  {
+    "title": "COMPARING THE EVALUATION AND TRADE PROFILE",
+    "level": 1,
+    "page_index": 404,
+    "page": 405,
+    "slug": "comparing-the-evaluation-and-trade-profile"
+  },
+  {
+    "title": "UNDERSTANDING THE TEST PROFILE",
+    "level": 1,
+    "page_index": 405,
+    "page": 406,
+    "slug": "understanding-the-test-profile"
+  },
+  {
+    "title": "PERFORMANCE QUIRKS",
+    "level": 1,
+    "page_index": 408,
+    "page": 409,
+    "slug": "performance-quirks"
+  },
+  {
+    "title": "IN CONCLUSION",
+    "level": 1,
+    "page_index": 412,
+    "page": 413,
+    "slug": "in-conclusion"
+  },
+  {
+    "title": "Notes",
+    "level": 0,
+    "page_index": 414,
+    "page": 415,
+    "slug": "notes"
+  },
+  {
+    "title": "Index",
+    "level": 0,
+    "page_index": 424,
+    "page": 425,
+    "slug": "index"
+  }
+]

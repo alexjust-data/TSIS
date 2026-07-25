@@ -489,7 +489,7 @@ Construir el inventario fisico completo del universo `daily`, una fila por file 
 
 Script:
 ```sh
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_daily_v2_inventory.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_daily_v2_inventory.py
 ```
 
 Que hace
@@ -520,7 +520,7 @@ Output
 
 Lanzadera
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_daily_v2_inventory.py --d-root E:\TSIS\data\ohlcv_daily --c-root E:\TSIS\data\ohlcv_daily --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_inventory\daily_inventory_full --resume
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_daily_v2_inventory.py --d-root E:\TSIS\data\ohlcv_daily --c-root E:\TSIS\data\ohlcv_daily --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_inventory\daily_inventory_full --resume
 ```
 
 ### 11.2. Verificacion del inventario baseline
@@ -530,7 +530,7 @@ Verificar que el inventario construido es consistente antes de validar el univer
 
 Script:
 ```sh
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\054_daily_v2_verify_inventory.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\054_daily_v2_verify_inventory.py
 ```
 
 Que hace
@@ -556,7 +556,7 @@ Output
 
 Lanzadera
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\054_daily_v2_verify_inventory.py --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_inventory\daily_inventory_full
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\054_daily_v2_verify_inventory.py --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_inventory\daily_inventory_full
 ```
 
 ### 11.3. Smoke de validacion baseline
@@ -566,7 +566,7 @@ Validar una muestra controlada del universo `daily` para entender la distribucio
 
 Script:
 ```sh
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_daily_v2_validate_batches.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_daily_v2_validate_batches.py
 ```
 
 Que hace
@@ -601,7 +601,7 @@ Output
 
 Lanzadera
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_daily_v2_validate_batches.py --inventory-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_inventory\daily_inventory_full\daily_inventory_files.parquet --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_validation\daily_validate_smoke --run-id daily_validate_smoke --workers 1 --chunk-size 500 --root D --year-from 2024 --year-to 2026 --limit 5000 --scan-reason rescan_all --validation-kind normal_validation --resume
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_daily_v2_validate_batches.py --inventory-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_inventory\daily_inventory_full\daily_inventory_files.parquet --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_validation\daily_validate_smoke --run-id daily_validate_smoke --workers 1 --chunk-size 500 --root D --year-from 2024 --year-to 2026 --limit 5000 --scan-reason rescan_all --validation-kind normal_validation --resume
 ```
 
 ### 11.4. Materializacion baseline
@@ -611,7 +611,7 @@ Materializar el snapshot actual del smoke baseline para poder auditarlo en noteb
 
 Script:
 ```sh
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\053_daily_v2_materialize_current.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\053_daily_v2_materialize_current.py
 ```
 
 Que hace
@@ -646,7 +646,7 @@ Output
 
 Lanzadera
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\053_daily_v2_materialize_current.py --validation-outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_validation\daily_validate_smoke --inventory-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_inventory\daily_inventory_full\daily_inventory_files.parquet --run-id daily_validate_smoke
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\053_daily_v2_materialize_current.py --validation-outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_validation\daily_validate_smoke --inventory-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_inventory\daily_inventory_full\daily_inventory_files.parquet --run-id daily_validate_smoke
 ```
 
 ### 11.5. Smoke de validacion v020
@@ -656,7 +656,7 @@ Repetir exactamente el mismo smoke, pero usando el validador `v020` instrumentad
 
 Script:
 ```sh
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_daily_v2_validate_batches_v020.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_daily_v2_validate_batches_v020.py
 ```
 
 Que hace
@@ -693,7 +693,7 @@ Output
 
 Lanzadera
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_daily_v2_validate_batches_v020.py --inventory-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_inventory\daily_inventory_full\daily_inventory_files.parquet --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_validation\daily_validate_smoke_v020 --run-id daily_validate_smoke_v020 --workers 1 --chunk-size 500 --root D --year-from 2024 --year-to 2026 --limit 5000 --scan-reason rescan_all --validation-kind normal_validation --resume
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_daily_v2_validate_batches_v020.py --inventory-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_inventory\daily_inventory_full\daily_inventory_files.parquet --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_validation\daily_validate_smoke_v020 --run-id daily_validate_smoke_v020 --workers 1 --chunk-size 500 --root D --year-from 2024 --year-to 2026 --limit 5000 --scan-reason rescan_all --validation-kind normal_validation --resume
 ```
 
 ### Conclusiones que motivan `v020`
@@ -775,7 +775,7 @@ Materializar el smoke `v020` para explotar en el notebook las metricas nuevas de
 
 Script:
 ```sh
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\053_daily_v2_materialize_current_v020.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\053_daily_v2_materialize_current_v020.py
 ```
 
 Que hace
@@ -809,7 +809,7 @@ Output
 
 Lanzadera
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\053_daily_v2_materialize_current_v020.py --validation-outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_validation\daily_validate_smoke_v020 --inventory-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_inventory\daily_inventory_full\daily_inventory_files.parquet --run-id daily_validate_smoke_v020
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\053_daily_v2_materialize_current_v020.py --validation-outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_validation\daily_validate_smoke_v020 --inventory-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_inventory\daily_inventory_full\daily_inventory_files.parquet --run-id daily_validate_smoke_v020
 ```
 
 ### 11.7. Ejecucion del notebook de auditoria
@@ -819,7 +819,7 @@ Ejecutar el notebook unico de auditoria `daily` contra los runs baseline y `v020
 
 Script:
 ```sh
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\daily\03_daily_root_cause_audit_notebook.ipynb
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\daily\03_daily_root_cause_audit_notebook.ipynb
 ```
 
 Que hace
@@ -834,11 +834,11 @@ Que hace
 Input
 ```text
 - run baseline:
-  C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_validation\daily_validate_smoke
+  C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_validation\daily_validate_smoke
 - run v020:
-  C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_validation\daily_validate_smoke_v020
+  C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_validation\daily_validate_smoke_v020
 - inventory baseline:
-  C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_inventory\daily_inventory_full\daily_inventory_files.parquet
+  C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_inventory\daily_inventory_full\daily_inventory_files.parquet
 ```
 
 Output
@@ -858,7 +858,7 @@ import nbformat
 from pathlib import Path
 from nbclient import NotebookClient
 
-p = Path(r"C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\daily\03_daily_root_cause_audit_notebook.ipynb")
+p = Path(r"C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\daily\03_daily_root_cause_audit_notebook.ipynb")
 nb = nbformat.read(p, as_version=4)
 client = NotebookClient(nb, timeout=1200, kernel_name="python3", resources={"metadata": {"path": str(p.parent)}})
 client.execute()
@@ -874,7 +874,7 @@ Comprobar rapidamente que `051_daily_v2_inventory.py` genera estructura correcta
 
 Script:
 ```sh
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_daily_v2_inventory.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_daily_v2_inventory.py
 ```
 
 Que hace
@@ -899,7 +899,7 @@ Output
 
 Lanzadera
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_daily_v2_inventory.py --d-root E:\TSIS\data\ohlcv_daily --c-root C:\__missing_daily_root__ --limit-per-root 3 --outdir C:\Users\AlexJ\daily_v2_inventory_smoke
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_daily_v2_inventory.py --d-root E:\TSIS\data\ohlcv_daily --c-root C:\__missing_daily_root__ --limit-per-root 3 --outdir C:\Users\AlexJ\daily_v2_inventory_smoke
 ```
 
 ### 11.9. Smoke minimo tecnico de 052
@@ -909,7 +909,7 @@ Comprobar que `052_daily_v2_validate_batches.py` escribe batches, manifest y sum
 
 Script:
 ```sh
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_daily_v2_validate_batches.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_daily_v2_validate_batches.py
 ```
 
 Que hace
@@ -933,7 +933,7 @@ Output
 
 Lanzadera
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_daily_v2_validate_batches.py --inventory-parquet C:\Users\AlexJ\daily_v2_inventory_smoke\daily_inventory_files.parquet --outdir C:\Users\AlexJ\daily_v2_validation_smoke --run-id daily_v2_smoke --workers 1 --chunk-size 2 --root D --year-from 2005 --year-to 2007 --limit 3
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_daily_v2_validate_batches.py --inventory-parquet C:\Users\AlexJ\daily_v2_inventory_smoke\daily_inventory_files.parquet --outdir C:\Users\AlexJ\daily_v2_validation_smoke --run-id daily_v2_smoke --workers 1 --chunk-size 2 --root D --year-from 2005 --year-to 2007 --limit 3
 ```
 
 ### 11.10. Smoke minimo tecnico de 053
@@ -943,7 +943,7 @@ Comprobar que `053_daily_v2_materialize_current.py` reconstruye current/retry/li
 
 Script:
 ```sh
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\053_daily_v2_materialize_current.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\053_daily_v2_materialize_current.py
 ```
 
 Que hace
@@ -966,7 +966,7 @@ Output
 
 Lanzadera
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\053_daily_v2_materialize_current.py --validation-outdir C:\Users\AlexJ\daily_v2_validation_smoke --inventory-parquet C:\Users\AlexJ\daily_v2_inventory_smoke\daily_inventory_files.parquet --run-id daily_v2_smoke
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\053_daily_v2_materialize_current.py --validation-outdir C:\Users\AlexJ\daily_v2_validation_smoke --inventory-parquet C:\Users\AlexJ\daily_v2_inventory_smoke\daily_inventory_files.parquet --run-id daily_v2_smoke
 ```
 
 ### 11.11. Verify del inventario smoke minimo
@@ -976,7 +976,7 @@ Validar que el mini inventario smoke tambien es consistente.
 
 Script:
 ```sh
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\054_daily_v2_verify_inventory.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\054_daily_v2_verify_inventory.py
 ```
 
 Que hace
@@ -996,7 +996,7 @@ Output
 
 Lanzadera
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\054_daily_v2_verify_inventory.py --outdir C:\Users\AlexJ\daily_v2_inventory_smoke
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\054_daily_v2_verify_inventory.py --outdir C:\Users\AlexJ\daily_v2_inventory_smoke
 ```
 
 
@@ -1009,7 +1009,7 @@ Ejecutar el smoke de validación daily v030 sobre la misma muestra 2024-2026 par
 
 Script:
 ```
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_daily_v2_validate_batches_v030.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_daily_v2_validate_batches_v030.py
 ```
 Qué hace
 ```
@@ -1025,7 +1025,7 @@ Qué hace
 Input
 ```
 - inventory_parquet:
-  C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_inventory\daily_inventory_full\daily_inventory_files.parquet
+  C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_inventory\daily_inventory_full\daily_inventory_files.parquet
 - filtros:
   - root = D
   - year_from = 2024
@@ -1034,7 +1034,7 @@ Input
 ```
 Output
 ```
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_validation\daily_validate_smoke_v030\events_batches*.parquet
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_validation\daily_validate_smoke_v030\events_batches*.parquet
 - validation_checkpoint.json
 - validation_run_manifest.json
 - batch_manifest_daily_v2.csv
@@ -1043,7 +1043,7 @@ Output
 ```
 Lanzadera
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_daily_v2_validate_batches_v030.py --inventory-parquet C:
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\052_daily_v2_validate_batches_v030.py --inventory-parquet C:
 \TSIS_Data\v1\backtest_SmallCaps\runs\backtest\daily_v2_inventory\daily_inventory_full\daily_inventory_files.parquet --outdir C:
 \TSIS_Data\v1\backtest_SmallCaps\runs\backtest\daily_v2_validation\daily_validate_smoke_v030 --run-id daily_validate_smoke_v030 --workers 1
 --chunk-size 500 --root D --year-from 2024 --year-to 2026 --limit 5000 --scan-reason rescan_all --validation-kind normal_validation --resume
@@ -1055,7 +1055,7 @@ Materializar el snapshot current de daily v030 para auditarlo en el notebook ún
 
 Script:
 ```
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\053_daily_v2_materialize_current_v030.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\053_daily_v2_materialize_current_v030.py
 ```
 Qué hace
 ```
@@ -1067,9 +1067,9 @@ Qué hace
 Input
 
 - validation_outdir:
-  C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_validation\daily_validate_smoke_v030
+  C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_validation\daily_validate_smoke_v030
 - inventory_parquet:
-  C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_inventory\daily_inventory_full\daily_inventory_files.parquet
+  C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_inventory\daily_inventory_full\daily_inventory_files.parquet
 - run_id:
   daily_validate_smoke_v030
 ```
@@ -1089,8 +1089,8 @@ Output
 ```
 Lanzadera
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\053_daily_v2_materialize_current_v030.py --validation-outdir
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_validation\daily_validate_smoke_v030 --inventory-parquet C:
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\053_daily_v2_materialize_current_v030.py --validation-outdir
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_validation\daily_validate_smoke_v030 --inventory-parquet C:
 \TSIS_Data\v1\backtest_SmallCaps\runs\backtest\daily_v2_inventory\daily_inventory_full\daily_inventory_files.parquet --run-id
 daily_validate_smoke_v030
 ```
@@ -1102,7 +1102,7 @@ Ejecutar el notebook único daily para comparar baseline vs v020 vs v030 y abrir
 
 Script:
 ```
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\daily\03_daily_root_cause_audit_notebook.ipynb
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\daily\03_daily_root_cause_audit_notebook.ipynb
 ```
 Qué hace
 ```
@@ -1115,9 +1115,9 @@ Qué hace
 ```
 Input
 ```
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_validation\daily_validate_smoke
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_validation\daily_validate_smoke_v020
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_validation\daily_validate_smoke_v030
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_validation\daily_validate_smoke
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_validation\daily_validate_smoke_v020
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_validation\daily_validate_smoke_v030
 ```
 Output
 ```
@@ -1128,11 +1128,11 @@ Output
 ## v030 ya está hecha y ejecutada.
 
 ```sh
-- C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/050_daily_v2_validate_file_v030.py
-- C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/051_daily_v2_inventory_v030.py
-- C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/052_daily_v2_validate_batches_v030.py
-- C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/053_daily_v2_materialize_current_v030.py
-- C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/054_daily_v2_verify_inventory_v030.py
+- C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/050_daily_v2_validate_file_v030.py
+- C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/051_daily_v2_inventory_v030.py
+- C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/052_daily_v2_validate_batches_v030.py
+- C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/053_daily_v2_materialize_current_v030.py
+- C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/054_daily_v2_verify_inventory_v030.py
 ```
 
 Qué cambia en v030:`
@@ -1570,7 +1570,7 @@ Qué hace:
 ´´´
 
 ```sh
-PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\055_daily_v2_audit_file_span_contiguity.py --inventory-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_inventory\daily_inventory_full\daily_inventory_files.parquet --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\daily_file_span_audit_full
+PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\055_daily_v2_audit_file_span_contiguity.py --inventory-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_inventory\daily_inventory_full\daily_inventory_files.parquet --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\daily_file_span_audit_full
 {
   "audited_at_utc": "2026-04-03T14:23:12.364339+00:00",
   "tickers_total": 12230,
@@ -1582,8 +1582,8 @@ PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01
   "max_missing_years_for_one_ticker": 19,
   "year_min_global": 2005,
   "year_max_global": 2026,
-  "inventory_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_inventory\\daily_inventory_full\\daily_inventory_files.parquet",
-  "outdir": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\daily_file_span_audit_full"
+  "inventory_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_inventory\\daily_inventory_full\\daily_inventory_files.parquet",
+  "outdir": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\daily_file_span_audit_full"
 }
 ```
 
@@ -1630,7 +1630,7 @@ para reconstruir sus `day_aggs_{ticker}_{year}.parquet` bajo `E:\TSIS\data\ohlcv
 Script
 
 ```sh
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\download_ohlcv_daily_v1.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\download_ohlcv_daily_v1.py
 
 Qué hace
 
@@ -1646,7 +1646,7 @@ Qué hace
 Input
 
 - parquet de faltantes estructurales:
-  C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\daily_file_span_audit_full\daily_file_span_audit_missing_years.parquet
+  C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\daily_file_span_audit_full\daily_file_span_audit_missing_years.parquet
 
 - output root:
   E:\TSIS\data\ohlcv_daily
@@ -1665,7 +1665,7 @@ Output
 Lanzadera
 
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\download_ohlcv_daily_v1.py --input C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\daily_file_span_audit_full\daily_file_span_audit_missing_years.parquet --outdir E:\TSIS\data\ohlcv_daily --start 2005-01-01 --end 2026-12-31 --source rest --workers 24 --batch-size 200 --limit 50000 --max-pages 1000 --timeout 40 --max-retries 6 --backoff-base 1.0 --backoff-max 30.0 --resume
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\download_ohlcv_daily_v1.py --input C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\daily_file_span_audit_full\daily_file_span_audit_missing_years.parquet --outdir E:\TSIS\data\ohlcv_daily --start 2005-01-01 --end 2026-12-31 --source rest --workers 24 --batch-size 200 --limit 50000 --max-pages 1000 --timeout 40 --max-retries 6 --backoff-base 1.0 --backoff-max 30.0 --resume
 ```
 
 Nota operativa
@@ -1685,7 +1685,7 @@ Mi recomendación práctica:
 
 
 ```sh
-PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\download_ohlcv_daily_v1.py --input C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\daily_file_span_audit_full\daily_file_span_audit_missing_years.parquet --outdir E:\TSIS\data\ohlcv_daily --start 2005-01-01 --end 2026-12-31 --source rest --workers 24 --batch-size 200 --limit 50000 --max-pages 1000 --timeout 40 --max-retries 6 --backoff-base 1.0 --backoff-max 30.0 --resume
+PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\download_ohlcv_daily_v1.py --input C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\daily_file_span_audit_full\daily_file_span_audit_missing_years.parquet --outdir E:\TSIS\data\ohlcv_daily --start 2005-01-01 --end 2026-12-31 --source rest --workers 24 --batch-size 200 --limit 50000 --max-pages 1000 --timeout 40 --max-retries 6 --backoff-base 1.0 --backoff-max 30.0 --resume
 ticker 25/1575 (1.59%) last=AFCO rows=705 status=200 eta=5s
 ticker 50/1575 (3.17%) last=ALAB rows=1282 status=200 eta=25s
 ticker 1550/1575 (98.41%) last=WINS rows=1976 status=200 eta=0s
@@ -1711,7 +1711,7 @@ huecos desaparecieron.
 Script
 
 ```sh
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_daily_v2_inventory.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_daily_v2_inventory.py
 ```
 
 Qué hace
@@ -1726,18 +1726,18 @@ Input
 ```
 Output
 ```
-- C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_inventory\daily_inventory_full_post_recovery\...
+- C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_inventory\daily_inventory_full_post_recovery\...
 ```
 Lanzadera
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_daily_v2_inventory.py --d-root E:\TSIS\data\ohlcv_daily --c-root E:\TSIS\data\ohlcv_daily --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_inventory\daily_inventory_full_post_recovery --resume
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_daily_v2_inventory.py --d-root E:\TSIS\data\ohlcv_daily --c-root E:\TSIS\data\ohlcv_daily --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_inventory\daily_inventory_full_post_recovery --resume
 ```
 ### Paso 2. Verificar el inventario reconstruido
 
 Script
 
 ```
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\054_daily_v2_verify_inventory.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\054_daily_v2_verify_inventory.py
 ```
 Qué hace
 ```
@@ -1755,13 +1755,13 @@ Output
 Lanzadera
 
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\054_daily_v2_verify_inventory.py --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_inventory\daily_inventory_full_post_recovery
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\054_daily_v2_verify_inventory.py --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_inventory\daily_inventory_full_post_recovery
 ```
 ### Paso 3. Re-auditar continuidad estructural por ticker
 
 Script
 
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\055_daily_v2_audit_file_span_contiguity.py
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\055_daily_v2_audit_file_span_contiguity.py
 
 Qué hace
 
@@ -1786,7 +1786,7 @@ Output
 Lanzadera
 
 ```sh
-PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\055_daily_v2_audit_file_span_contiguity.py --inventory-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_inventory\daily_inventory_full_post_recovery\daily_inventory_files.parquet --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\daily_file_span_audit_full_post_recovery
+PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\055_daily_v2_audit_file_span_contiguity.py --inventory-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_inventory\daily_inventory_full_post_recovery\daily_inventory_files.parquet --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\daily_file_span_audit_full_post_recovery
 {
   "audited_at_utc": "2026-04-03T14:38:57.565447+00:00",
   "tickers_total": 12230,
@@ -1798,8 +1798,8 @@ PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01
   "max_missing_years_for_one_ticker": 19,
   "year_min_global": 2005,
   "year_max_global": 2026,
-  "inventory_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_inventory\\daily_inventory_full_post_recovery\\daily_inventory_files.parquet",
-  "outdir": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\daily_file_span_audit_full_post_recovery"
+  "inventory_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_inventory\\daily_inventory_full_post_recovery\\daily_inventory_files.parquet",
+  "outdir": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\daily_file_span_audit_full_post_recovery"
 }
 ```
 
@@ -1877,7 +1877,7 @@ Es decir:
 #### comparamos universo calendario 
 
 
- - C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/056_daily_v2_audit_missing_years_vs_universe_calendar.py
+ - C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/056_daily_v2_audit_missing_years_vs_universe_calendar.py
 
   Qué hace:
 
@@ -1901,7 +1901,7 @@ Es decir:
 
 
 ```sh
-PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\056_daily_v2_audit_missing_years_vs_universe_calendar.py --missing-years-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\daily_file_span_audit_full_post_recovery\daily_file_span_audit_missing_years.parquet --universe-parquet C:\TSIS_Data\02_backtest_SmallCaps\data\reference\universe_pti_rebuild_compare\tickers_2005_2026.parquet --calendar-parquet C:\TSIS_Data\02_backtest_SmallCaps\data\reference\market_calendar_official_XNYS_20050101_20251231.parquet --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\daily_missing_years_vs_universe_calendar_full
+PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\056_daily_v2_audit_missing_years_vs_universe_calendar.py --missing-years-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\daily_file_span_audit_full_post_recovery\daily_file_span_audit_missing_years.parquet --universe-parquet C:\TSIS_Data\02_backtest_SmallCaps\data\reference\universe_pti_rebuild_compare\tickers_2005_2026.parquet --calendar-parquet C:\TSIS_Data\02_backtest_SmallCaps\data\reference\market_calendar_official_XNYS_20050101_20251231.parquet --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\daily_missing_years_vs_universe_calendar_full
 {
   "audited_at_utc": "2026-04-03T14:46:46.385408+00:00",
   "missing_rows_input": 10063,
@@ -1917,20 +1917,20 @@ PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01
   "inventory_missing_unique_tickers": 1575,
   "unexpected_unique_tickers": 663,
   "inputs": {
-    "missing_years_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\daily_file_span_audit_full_post_recovery\\daily_file_span_audit_missing_years.parquet",
-    "universe_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\data\\reference\\universe_pti_rebuild_compare\\tickers_2005_2026.parquet",
-    "calendar_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\data\\reference\\market_calendar_official_XNYS_20050101_20251231.parquet"
+    "missing_years_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\daily_file_span_audit_full_post_recovery\\daily_file_span_audit_missing_years.parquet",
+    "universe_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\data\\reference\\universe_pti_rebuild_compare\\tickers_2005_2026.parquet",
+    "calendar_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\data\\reference\\market_calendar_official_XNYS_20050101_20251231.parquet"
   },
   "outputs": {
-    "audited_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\daily_missing_years_vs_universe_calendar_full\\daily_missing_years_vs_universe_calendar.parquet",
-    "audited_csv": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\daily_missing_years_vs_universe_calendar_full\\daily_missing_years_vs_universe_calendar.csv",
-    "by_class_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\daily_missing_years_vs_universe_calendar_full\\daily_missing_years_vs_universe_calendar_by_class.parquet",
-    "by_class_csv": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\daily_missing_years_vs_universe_calendar_full\\daily_missing_years_vs_universe_calendar_by_class.csv",
-    "unexpected_only_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\daily_missing_years_vs_universe_calendar_full\\daily_missing_years_unexpected_only.parquet",
-    "unexpected_only_csv": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\daily_missing_years_vs_universe_calendar_full\\daily_missing_years_unexpected_only.csv",
-    "summary_json": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\daily_missing_years_vs_universe_calendar_full\\daily_missing_years_vs_universe_calendar_summary.json"
+    "audited_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\daily_missing_years_vs_universe_calendar_full\\daily_missing_years_vs_universe_calendar.parquet",
+    "audited_csv": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\daily_missing_years_vs_universe_calendar_full\\daily_missing_years_vs_universe_calendar.csv",
+    "by_class_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\daily_missing_years_vs_universe_calendar_full\\daily_missing_years_vs_universe_calendar_by_class.parquet",
+    "by_class_csv": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\daily_missing_years_vs_universe_calendar_full\\daily_missing_years_vs_universe_calendar_by_class.csv",
+    "unexpected_only_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\daily_missing_years_vs_universe_calendar_full\\daily_missing_years_unexpected_only.parquet",
+    "unexpected_only_csv": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\daily_missing_years_vs_universe_calendar_full\\daily_missing_years_unexpected_only.csv",
+    "summary_json": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\daily_missing_years_vs_universe_calendar_full\\daily_missing_years_vs_universe_calendar_summary.json"
   },
-  "outdir": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\daily_missing_years_vs_universe_calendar_full"
+  "outdir": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\daily_missing_years_vs_universe_calendar_full"
 }
 ```
 
@@ -1994,7 +1994,7 @@ Eso ya es un artefacto serio de auditoría.
 Siguiente paso recomendado
 Crear dos colas separadas desde:
 
-- C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/daily_v2_audit/daily_missing_years_vs_universe_calendar_full/
+- C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/daily_v2_audit/daily_missing_years_vs_universe_calendar_full/
   daily_missing_years_vs_universe_calendar.parquet
 
 1. unexpected_missing_only
@@ -2013,7 +2013,7 @@ Si quieres, te doy ahora:
 
  script:
 
-  - C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/057_daily_v2_cross_lt1b_vs_complete_daily.py
+  - C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/057_daily_v2_cross_lt1b_vs_complete_daily.py
 
   No lo he lanzado.
 
@@ -2045,8 +2045,8 @@ Y la métrica clave será:
 Si sale 0, paramos ahí como dices.
 
 ```sh
-PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\057_daily_v2_cross_lt1b_vs_complete_daily.py --lt1b-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\market_cap_last_observed_cutoff\20260320_market_cap_last_observed_cutoff\market_cap_cutoff_lt_1b_active_inactive.parquet --daily-span-by-ticker-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\daily_file_span_audit_full_post_recovery\daily_file_span_audit_by_ticker.parquet --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\lt1b_vs_complete_daily_full
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\057_daily_v2_cross_lt1b_vs_complete_daily.py:81: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\057_daily_v2_cross_lt1b_vs_complete_daily.py --lt1b-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\market_cap_last_observed_cutoff\20260320_market_cap_last_observed_cutoff\market_cap_cutoff_lt_1b_active_inactive.parquet --daily-span-by-ticker-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\daily_file_span_audit_full_post_recovery\daily_file_span_audit_by_ticker.parquet --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\lt1b_vs_complete_daily_full
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\057_daily_v2_cross_lt1b_vs_complete_daily.py:81: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
   compare["has_complete_daily"] = compare["is_contiguous_span"].fillna(False).astype(bool)
 {
   "audited_at_utc": "2026-04-03T14:54:08.623333+00:00",
@@ -2057,15 +2057,15 @@ C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_c
   "pct_lt1b_with_complete_daily": 86.4635,
   "pct_lt1b_missing_complete_daily": 13.5365,
   "inputs": {
-    "lt1b_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\market_cap_last_observed_cutoff\\20260320_market_cap_last_observed_cutoff\\market_cap_cutoff_lt_1b_active_inactive.parquet",
-    "daily_span_by_ticker_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\daily_file_span_audit_full_post_recovery\\daily_file_span_audit_by_ticker.parquet"
+    "lt1b_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\market_cap_last_observed_cutoff\\20260320_market_cap_last_observed_cutoff\\market_cap_cutoff_lt_1b_active_inactive.parquet",
+    "daily_span_by_ticker_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\daily_file_span_audit_full_post_recovery\\daily_file_span_audit_by_ticker.parquet"
   },
-  "outdir": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\lt1b_vs_complete_daily_full",
+  "outdir": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\lt1b_vs_complete_daily_full",
   "outputs": {
-    "compare_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\lt1b_vs_complete_daily_full\\lt1b_vs_complete_daily.parquet",
-    "missing_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\lt1b_vs_complete_daily_full\\lt1b_missing_complete_daily.parquet",
-    "covered_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\lt1b_vs_complete_daily_full\\lt1b_with_complete_daily.parquet",
-    "summary_json": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\lt1b_vs_complete_daily_full\\lt1b_vs_complete_daily_summary.json"
+    "compare_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\lt1b_vs_complete_daily_full\\lt1b_vs_complete_daily.parquet",
+    "missing_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\lt1b_vs_complete_daily_full\\lt1b_missing_complete_daily.parquet",
+    "covered_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\lt1b_vs_complete_daily_full\\lt1b_with_complete_daily.parquet",
+    "summary_json": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\lt1b_vs_complete_daily_full\\lt1b_vs_complete_daily_summary.json"
   }
 }
 ```
@@ -2091,8 +2091,8 @@ Conclusión:
 Lo bueno:
 
 - ese subconjunto ya está aislado en:
-    - C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/daily_v2_audit/lt1b_vs_complete_daily_full/lt1b_missing_complete_daily.parquet
-    - C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/daily_v2_audit/lt1b_vs_complete_daily_full/lt1b_missing_complete_daily.csv
+    - C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/daily_v2_audit/lt1b_vs_complete_daily_full/lt1b_missing_complete_daily.parquet
+    - C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/daily_v2_audit/lt1b_vs_complete_daily_full/lt1b_missing_complete_daily.csv
 
 Siguiente paso correcto:
 
@@ -2146,7 +2146,7 @@ Después de correrlo, la decisión queda muy clara:
 Cuando lo lances, pégame el summary y te digo si paramos o si queda trabajo real.
 
 ```sh
-PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\058_daily_v2_cross_lt1b_missing_vs_universe_audit.py --lt1b-missing-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\lt1b_vs_complete_daily_full\lt1b_missing_complete_daily.parquet --missing-audit-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\daily_missing_years_vs_universe_calendar_full\daily_missing_years_vs_universe_calendar.parquet --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\lt1b_missing_vs_universe_audit_full
+PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\058_daily_v2_cross_lt1b_missing_vs_universe_audit.py --lt1b-missing-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\lt1b_vs_complete_daily_full\lt1b_missing_complete_daily.parquet --missing-audit-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\daily_missing_years_vs_universe_calendar_full\daily_missing_years_vs_universe_calendar.parquet --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\lt1b_missing_vs_universe_audit_full
 {
   "audited_at_utc": "2026-04-03T14:58:18.583176+00:00",
   "lt1b_missing_tickers_input": 653,
@@ -2159,15 +2159,15 @@ PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01
     "REALLY_PROBLEMATIC_UNEXPECTED": 57
   },
   "inputs": {
-    "lt1b_missing_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\lt1b_vs_complete_daily_full\\lt1b_missing_complete_daily.parquet",
-    "missing_audit_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\daily_missing_years_vs_universe_calendar_full\\daily_missing_years_vs_universe_calendar.parquet"
+    "lt1b_missing_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\lt1b_vs_complete_daily_full\\lt1b_missing_complete_daily.parquet",
+    "missing_audit_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\daily_missing_years_vs_universe_calendar_full\\daily_missing_years_vs_universe_calendar.parquet"
   },
-  "outdir": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\lt1b_missing_vs_universe_audit_full",
+  "outdir": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\lt1b_missing_vs_universe_audit_full",
   "outputs": {
-    "problematic_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\lt1b_missing_vs_universe_audit_full\\lt1b_really_problematic_unexpected.parquet",
-    "ambiguous_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\lt1b_missing_vs_universe_audit_full\\lt1b_ambiguous_review.parquet",
-    "likely_valid_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\lt1b_missing_vs_universe_audit_full\\lt1b_likely_valid_gap_only.parquet",
-    "summary_json": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\lt1b_missing_vs_universe_audit_full\\lt1b_missing_vs_universe_audit_summary.json"
+    "problematic_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\lt1b_missing_vs_universe_audit_full\\lt1b_really_problematic_unexpected.parquet",
+    "ambiguous_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\lt1b_missing_vs_universe_audit_full\\lt1b_ambiguous_review.parquet",
+    "likely_valid_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\lt1b_missing_vs_universe_audit_full\\lt1b_likely_valid_gap_only.parquet",
+    "summary_json": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\lt1b_missing_vs_universe_audit_full\\lt1b_missing_vs_universe_audit_summary.json"
   }
 }
 ```
@@ -2208,7 +2208,7 @@ Tampoco descargaría en bloque los 222 ambiguos:
 
 El frente real es:
 
-- C:/TSIS_Data/01_TSIS_backtest_SmallCaps/runs/backtest/daily_v2_audit/lt1b_missing_vs_universe_audit_full/lt1b_really_problematic_unexpected.parquet
+- C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/daily_v2_audit/lt1b_missing_vs_universe_audit_full/lt1b_really_problematic_unexpected.parquet
 
 Ese es el artefacto que ya justifica acción.
 
@@ -2230,7 +2230,7 @@ y comprobar si esos 57 bajan
 
 Ya está creado:
 
-- C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/059_daily_v2_build_lt1b_really_problematic_download_tasks.py
+- C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/059_daily_v2_build_lt1b_really_problematic_download_tasks.py
 
 No lo he lanzado.
 
@@ -2249,7 +2249,7 @@ Artefactos que genera:
 - lt1b_really_problematic_daily_download_tasks_summary.json
 
 ```sh
-PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\059_daily_v2_build_lt1b_really_problematic_download_tasks.py --problematic-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\lt1b_missing_vs_universe_audit_full\lt1b_really_problematic_unexpected.parquet --missing-audit-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\daily_missing_years_vs_universe_calendar_full\daily_missing_years_vs_universe_calendar.parquet --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\lt1b_really_problematic_download_tasks_full
+PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\059_daily_v2_build_lt1b_really_problematic_download_tasks.py --problematic-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\lt1b_missing_vs_universe_audit_full\lt1b_really_problematic_unexpected.parquet --missing-audit-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\daily_missing_years_vs_universe_calendar_full\daily_missing_years_vs_universe_calendar.parquet --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\lt1b_really_problematic_download_tasks_full
 {
   "built_at_utc": "2026-04-03T15:02:21.019833+00:00",
   "problematic_tickers_input": 57,
@@ -2259,17 +2259,17 @@ PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01
     "unexpected_missing": 187
   },
   "inputs": {
-    "problematic_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\lt1b_missing_vs_universe_audit_full\\lt1b_really_problematic_unexpected.parquet",
-    "missing_audit_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\daily_missing_years_vs_universe_calendar_full\\daily_missing_years_vs_universe_calendar.parquet"
+    "problematic_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\lt1b_missing_vs_universe_audit_full\\lt1b_really_problematic_unexpected.parquet",
+    "missing_audit_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\daily_missing_years_vs_universe_calendar_full\\daily_missing_years_vs_universe_calendar.parquet"
   },
   "outputs": {
-    "tasks_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\lt1b_really_problematic_download_tasks_full\\lt1b_really_problematic_daily_download_tasks.parquet",
-    "tasks_csv": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\lt1b_really_problematic_download_tasks_full\\lt1b_really_problematic_daily_download_tasks.csv",
-    "tickers_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\lt1b_really_problematic_download_tasks_full\\lt1b_really_problematic_daily_download_tickers.parquet",
-    "tickers_csv": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\lt1b_really_problematic_download_tasks_full\\lt1b_really_problematic_daily_download_tickers.csv",
-    "summary_json": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\lt1b_really_problematic_download_tasks_full\\lt1b_really_problematic_daily_download_tasks_summary.json"
+    "tasks_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\lt1b_really_problematic_download_tasks_full\\lt1b_really_problematic_daily_download_tasks.parquet",
+    "tasks_csv": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\lt1b_really_problematic_download_tasks_full\\lt1b_really_problematic_daily_download_tasks.csv",
+    "tickers_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\lt1b_really_problematic_download_tasks_full\\lt1b_really_problematic_daily_download_tickers.parquet",
+    "tickers_csv": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\lt1b_really_problematic_download_tasks_full\\lt1b_really_problematic_daily_download_tickers.csv",
+    "summary_json": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\lt1b_really_problematic_download_tasks_full\\lt1b_really_problematic_daily_download_tasks_summary.json"
   },
-  "outdir": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\lt1b_really_problematic_download_tasks_full"
+  "outdir": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\lt1b_really_problematic_download_tasks_full"
 }
 ```
 
@@ -2280,7 +2280,7 @@ Como el downloader actual trabaja por ticker, la lanzadera operativa usaría:
 - lt1b_really_problematic_daily_download_tickers.parquet
 
 ```sh
-PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\download_ohlcv_daily_v1.py --input C:
+PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\download_ohlcv_daily_v1.py --input C:
   \TSIS_Data\v1\backtest_SmallCaps\runs\backtest\daily_v2_audit\lt1b_really_problematic_download_tasks_full\lt1b_really_problematic_daily_download
   _tickers.parquet --outdir E:\TSIS\data\ohlcv_daily --start 2005-01-01 --end 2026-12-31 --source rest --workers 24 --batch-size 200 --limit 50000 --max-
   pages 1000 --timeout 40 --max-retries 6 --backoff-base 1.0 --backoff-max 30.0 --resume
@@ -2301,27 +2301,27 @@ Ahora toca medir si realmente desaparecieron del problema. Esta es la secuencia 
 1. Rehacer inventario
 
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_daily_v2_inventory.py --d-root E:\TSIS\data\ohlcv_daily --c-root E:\TSIS\data\ohlcv_daily --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_inventory\daily_inventory_full_post_57_recovery --resume
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\051_daily_v2_inventory.py --d-root E:\TSIS\data\ohlcv_daily --c-root E:\TSIS\data\ohlcv_daily --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_inventory\daily_inventory_full_post_57_recovery --resume
 ```
 
 2. Verificar inventario
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\054_daily_v2_verify_inventory.py --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_inventory\daily_inventory_full_post_57_recovery
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\054_daily_v2_verify_inventory.py --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_inventory\daily_inventory_full_post_57_recovery
 ```
 
 3. Reauditar continuidad estructural
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\055_daily_v2_audit_file_span_contiguity.py --inventory-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_inventory\daily_inventory_full_post_57_recovery\daily_inventory_files.parquet --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\daily_file_span_audit_full_post_57_recovery
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\055_daily_v2_audit_file_span_contiguity.py --inventory-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_inventory\daily_inventory_full_post_57_recovery\daily_inventory_files.parquet --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\daily_file_span_audit_full_post_57_recovery
 ```
 
 4. Volver a cruzar <1B vs daily completo
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\057_daily_v2_cross_lt1b_vs_complete_daily.py --lt1b-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\market_cap_last_observed_cutoff\20260320_market_cap_last_observed_cutoff\market_cap_cutoff_lt_1b_active_inactive.parquet --daily-span-by-ticker-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\daily_file_span_audit_full_post_57_recovery\daily_file_span_audit_by_ticker.parquet --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\lt1b_vs_complete_daily_post_57_recovery
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\057_daily_v2_cross_lt1b_vs_complete_daily.py --lt1b-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\market_cap_last_observed_cutoff\20260320_market_cap_last_observed_cutoff\market_cap_cutoff_lt_1b_active_inactive.parquet --daily-span-by-ticker-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\daily_file_span_audit_full_post_57_recovery\daily_file_span_audit_by_ticker.parquet --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\lt1b_vs_complete_daily_post_57_recovery
 ```
 
 5. Volver a cruzar los <1B incompletos contra universo+calendario
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\058_daily_v2_cross_lt1b_missing_vs_universe_audit.py --lt1b-missing-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\lt1b_vs_complete_daily_post_57_recovery\lt1b_missing_complete_daily.parquet --missing-audit-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\daily_missing_years_vs_universe_calendar_full\daily_missing_years_vs_universe_calendar.parquet --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\lt1b_missing_vs_universe_audit_post_57_recovery
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\058_daily_v2_cross_lt1b_missing_vs_universe_audit.py --lt1b-missing-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\lt1b_vs_complete_daily_post_57_recovery\lt1b_missing_complete_daily.parquet --missing-audit-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\daily_missing_years_vs_universe_calendar_full\daily_missing_years_vs_universe_calendar.parquet --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\lt1b_missing_vs_universe_audit_post_57_recovery
 ```
 
 **Sí, confirma lo mismo: no se movió nada tras la redescarga de los 57.**
@@ -2360,7 +2360,7 @@ Si seguimos, el paso lógico es crear 060 para autopsia de esos 57.
 
 #### Comparativa 
 
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/061_compare_problematic57_daily_vs_1m_quotes_trades.py
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/061_compare_problematic57_daily_vs_1m_quotes_trades.py
 
 Hace esto, solo para los 57:
 
@@ -2376,13 +2376,13 @@ Hace esto, solo para los 57:
     - etc.
 
 ```sh
-python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\061_compare_problematic57_daily_vs_1m_quotes_trades.py --problematic-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\lt1b_missing_vs_universe_audit_full\lt1b_really_problematic_unexpected.parquet --tasks-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\lt1b_really_problematic_download_tasks_full\lt1b_really_problematic_daily_download_tasks.parquet --daily-span-by-ticker-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\daily_file_span_audit_full_post_57_recovery\daily_file_span_audit_by_ticker.parquet --minute-root D:\ohlcv_1m --quotes-by-ticker-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\quotes_v2_inventory\quotes_inventory_2005_2026\quotes_inventory_by_ticker.parquet --trades-by-ticker-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\trades_v2_inventory\trades_inventory_2005_2026\trades_inventory_by_ticker.parquet --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\problematic57_cross_1m_quotes_trades_full
+python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\061_compare_problematic57_daily_vs_1m_quotes_trades.py --problematic-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\lt1b_missing_vs_universe_audit_full\lt1b_really_problematic_unexpected.parquet --tasks-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\lt1b_really_problematic_download_tasks_full\lt1b_really_problematic_daily_download_tasks.parquet --daily-span-by-ticker-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\daily_file_span_audit_full_post_57_recovery\daily_file_span_audit_by_ticker.parquet --minute-root D:\ohlcv_1m --quotes-by-ticker-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\quotes_v2_inventory\quotes_inventory_2005_2026\quotes_inventory_by_ticker.parquet --trades-by-ticker-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\trades_v2_inventory\trades_inventory_2005_2026\trades_inventory_by_ticker.parquet --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\problematic57_cross_1m_quotes_trades_full
 ```
 
 
 Para lo que quieres, la comparación correcta es diaria y no solo por ticker. He dejado el script en:
 ```sh
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/062_compare_problematic57_per_day_across_daily_1m_quotes_trades.py
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/cell_code/00_data_certification/062_compare_problematic57_per_day_across_daily_1m_quotes_trades.py
 ```
 
 No lo he lanzado.
@@ -2409,14 +2409,14 @@ Qué hace:
 Lanzadera por terminal
 
 ```sh
-PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\062_compare_problematic57_per_day_across_daily_1m_quotes_trades.py --problematic-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\lt1b_missing_vs_universe_audit_full\lt1b_really_problematic_unexpected.parquet --daily-root E:\TSIS\data\ohlcv_daily --minute-root D:\ohlcv_1m --quotes-files-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\quotes_v2_inventory\quotes_inventory_2005_2026\quotes_inventory_files.parquet --trades-files-parquet C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\trades_v2_inventory\trades_inventory_2005_2026\trades_inventory_files.parquet --outdir C:\TSIS_Data\01_TSIS_backtest_SmallCaps\runs\backtest\daily_v2_audit\problematic57_per_day_cross_full
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\062_compare_problematic57_per_day_across_daily_1m_quotes_trades.py:198: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+PS C:\Users\AlexJ> python C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\062_compare_problematic57_per_day_across_daily_1m_quotes_trades.py --problematic-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\lt1b_missing_vs_universe_audit_full\lt1b_really_problematic_unexpected.parquet --daily-root E:\TSIS\data\ohlcv_daily --minute-root D:\ohlcv_1m --quotes-files-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\quotes_v2_inventory\quotes_inventory_2005_2026\quotes_inventory_files.parquet --trades-files-parquet C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\trades_v2_inventory\trades_inventory_2005_2026\trades_inventory_files.parquet --outdir C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\runs\backtest\daily_v2_audit\problematic57_per_day_cross_full
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\062_compare_problematic57_per_day_across_daily_1m_quotes_trades.py:198: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
   panel[c] = panel[c].fillna(False).astype(bool)
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\062_compare_problematic57_per_day_across_daily_1m_quotes_trades.py:198: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\062_compare_problematic57_per_day_across_daily_1m_quotes_trades.py:198: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
   panel[c] = panel[c].fillna(False).astype(bool)
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\062_compare_problematic57_per_day_across_daily_1m_quotes_trades.py:198: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\062_compare_problematic57_per_day_across_daily_1m_quotes_trades.py:198: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
   panel[c] = panel[c].fillna(False).astype(bool)
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\062_compare_problematic57_per_day_across_daily_1m_quotes_trades.py:198: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\cell_code\00_data_certification\062_compare_problematic57_per_day_across_daily_1m_quotes_trades.py:198: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
   panel[c] = panel[c].fillna(False).astype(bool)
 {
   "audited_at_utc": "2026-04-03T15:34:38.240780+00:00",
@@ -2427,22 +2427,22 @@ C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\cell_c
   "tickers_with_daily_missing_vs_trades": 39,
   "tickers_last_dates_match_all": 22,
   "inputs": {
-    "problematic_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\lt1b_missing_vs_universe_audit_full\\lt1b_really_problematic_unexpected.parquet",
+    "problematic_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\lt1b_missing_vs_universe_audit_full\\lt1b_really_problematic_unexpected.parquet",
     "daily_root": "D:\\ohlcv_daily",
     "minute_root": "D:\\ohlcv_1m",
-    "quotes_files_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\quotes_v2_inventory\\quotes_inventory_2005_2026\\quotes_inventory_files.parquet",
-    "trades_files_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\trades_v2_inventory\\trades_inventory_2005_2026\\trades_inventory_files.parquet"
+    "quotes_files_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\quotes_v2_inventory\\quotes_inventory_2005_2026\\quotes_inventory_files.parquet",
+    "trades_files_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\trades_v2_inventory\\trades_inventory_2005_2026\\trades_inventory_files.parquet"
   },
   "outputs": {
-    "panel_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\problematic57_per_day_cross_full\\problematic57_per_day_panel.parquet",
-    "panel_csv": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\problematic57_per_day_cross_full\\problematic57_per_day_panel.csv",
-    "ticker_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\problematic57_per_day_cross_full\\problematic57_per_ticker_summary.parquet",
-    "ticker_csv": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\problematic57_per_day_cross_full\\problematic57_per_ticker_summary.csv",
-    "ticker_year_parquet": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\problematic57_per_day_cross_full\\problematic57_per_ticker_year_summary.parquet",
-    "ticker_year_csv": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\problematic57_per_day_cross_full\\problematic57_per_ticker_year_summary.csv",
-    "summary_json": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\problematic57_per_day_cross_full\\problematic57_per_day_cross_summary.json"
+    "panel_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\problematic57_per_day_cross_full\\problematic57_per_day_panel.parquet",
+    "panel_csv": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\problematic57_per_day_cross_full\\problematic57_per_day_panel.csv",
+    "ticker_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\problematic57_per_day_cross_full\\problematic57_per_ticker_summary.parquet",
+    "ticker_csv": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\problematic57_per_day_cross_full\\problematic57_per_ticker_summary.csv",
+    "ticker_year_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\problematic57_per_day_cross_full\\problematic57_per_ticker_year_summary.parquet",
+    "ticker_year_csv": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\problematic57_per_day_cross_full\\problematic57_per_ticker_year_summary.csv",
+    "summary_json": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\problematic57_per_day_cross_full\\problematic57_per_day_cross_summary.json"
   },
-  "outdir": "C:\\TSIS_Data\\01_TSIS_backtest_SmallCaps\\runs\\backtest\\daily_v2_audit\\problematic57_per_day_cross_full"
+  "outdir": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\daily_v2_audit\\problematic57_per_day_cross_full"
 }
 ```
 

@@ -1,4 +1,4 @@
-﻿**prompt de inicio:**
+**prompt de inicio:**
 
 
 Te tienes que poner al dÃ­a con este proyecto:
@@ -14,10 +14,10 @@ C:\TSIS_Data\README.md
 
 Dentro hemos ido trabajando en la auditorÃ­a de la data descargada desde Polygon:
 
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\README.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\AGENTS.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\CHANGELOG.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\LOCAL_RULES.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\README.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\AGENTS.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\CHANGELOG.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\LOCAL_RULES.md
 
 Lee todos esos archivos completos y ponte al dÃ­a antes de hacer cualquier otra cosa. Cuando los hayas leÃ­do y entendido, responde solo: ok.
 

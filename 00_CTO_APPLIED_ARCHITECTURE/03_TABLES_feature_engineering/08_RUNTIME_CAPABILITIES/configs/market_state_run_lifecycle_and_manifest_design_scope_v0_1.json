@@ -1,0 +1,63 @@
+{
+  "authorization_id": "market_state_run_lifecycle_and_manifest_design_authorization_v0_1",
+  "closure_invariants": {
+    "dataset_registry_entries_written": 0,
+    "datasets_written": 0,
+    "downstream_consumption": false,
+    "execution_authorizations_consumed": 0,
+    "execution_plans_consumed": 0,
+    "final_manifests_created": 0,
+    "heartbeat_records_written": 0,
+    "materializer_executions": 0,
+    "official_market_state_dataset": false,
+    "production": false,
+    "recovery_actions": 0,
+    "registry_entries_written": 0,
+    "run_manifests_created": 0,
+    "run_records_created": 0,
+    "run_state_transitions": 0,
+    "validator_executions": 0
+  },
+  "date": "2026-07-25",
+  "design_allowed": {
+    "run_lifecycle_design_allowed": true
+  },
+  "design_questions": [
+    "How is a future on-demand Market State run identified?",
+    "Which run states and transitions are allowed?",
+    "Which manifests are immutable and when are they produced?",
+    "How are heartbeat, failure, recovery and closure represented?",
+    "How does a run reference request, execution plan, materializer, validator and registry evidence without replacing those authorities?",
+    "Which actions remain outside run lifecycle authority?"
+  ],
+  "forbidden_actions": {
+    "dataset_write_allowed": false,
+    "downstream_consumption_allowed": false,
+    "execution_authorization_consumption_allowed": false,
+    "execution_plan_consumption_allowed": false,
+    "final_manifest_creation_allowed": false,
+    "heartbeat_write_allowed": false,
+    "materializer_execution_allowed": false,
+    "official_dataset_write_allowed": false,
+    "production_allowed": false,
+    "recovery_action_allowed": false,
+    "registry_entry_write_allowed": false,
+    "run_manifest_creation_allowed": false,
+    "run_record_creation_allowed": false,
+    "run_state_transition_allowed": false,
+    "source_data_read_allowed": false,
+    "validator_execution_allowed": false
+  },
+  "gate": "market_state_run_lifecycle_and_manifest_design_v0_1",
+  "next_allowed_gate": "market_state_on_demand_execution_chain_joint_review_v0_1",
+  "parent_candidate_dataset_registry_contract": "market_state_candidate_dataset_registry_contract_v0_1",
+  "parent_execution_plan_contract": "market_state_execution_plan_contract_v0_1",
+  "parent_gate": "market_state_candidate_dataset_registry_design_v0_1",
+  "parent_materializer_contract": "market_state_materializer_contract_v0_1",
+  "parent_request_contract": "market_state_request_contract_v0_1",
+  "parent_runtime_architecture": "runtime_capabilities_architecture_v0_1",
+  "parent_validator_contract": "market_state_validator_contract_v0_1",
+  "scope_id": "market_state_run_lifecycle_and_manifest_design_scope_v0_1",
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+  "target_contract": "market_state_run_lifecycle_and_manifest_contract_v0_1"
+}

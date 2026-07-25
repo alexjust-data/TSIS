@@ -1,0 +1,18 @@
+{
+  "book_id": "python_for_algorithmic_trading_hilpisch",
+  "source_pdf": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Python_for_Algorithmic_Trading_-_Yves_Hilpisch.pdf",
+  "processed_source_pdf": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\python_for_algorithmic_trading_hilpisch\\source\\original.pdf",
+  "title": "Python for Algorithmic Trading",
+  "author": "Yves Hilpisch",
+  "producer": "calibre (4.22.0) [http://calibre-ebook.com]",
+  "creator": "calibre (4.22.0) [http://calibre-ebook.com]",
+  "pages": 616,
+  "file_size_bytes": 22684270,
+  "last_write_time": "2026-07-21T19:42:49.165503+00:00",
+  "processed_at": "2026-07-24T21:10:54.833525+00:00",
+  "requires_ocr": false,
+  "status": "indexed",
+  "working_text_persisted": false,
+  "copyright_note": "Derived artifacts should summarize and point to pages. Do not persist or redistribute full extracted text unless explicitly allowed.",
+  "summary_artifact": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\python_for_algorithmic_trading_hilpisch\\summaries\\python_for_algorithmic_trading_hilpisch_agent_summary.md"
+}

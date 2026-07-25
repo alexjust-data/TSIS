@@ -1,0 +1,94 @@
+{
+  "scope_id": "event_type_initial_admission_review_scope_v0_1",
+  "authorization_id": "event_type_initial_admission_review_authorization_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_CONSUMED",
+  "date": "2026-07-24",
+  "scope": "initial_candidate_event_type_admission_review_only",
+  "review_id": "event_type_initial_admission_review_v0_1_20260724T111500Z",
+  "governing_inputs": [
+    "../event_state_event_policy_v0_1.md",
+    "../event_type_or_event_family_contract_design_v0_1.md",
+    "../event_type_or_event_family_contract_design_contract_v0_1.json",
+    "../event_type_registry_seed_design_v0_1.md",
+    "../event_type_registry_seed_design_contract_v0_1.json",
+    "../event_type_registry_initial_population_snapshot_v0_1.json",
+    "../event_type_registry_initial_population_readout_v0_1.md",
+    "../../04_TSIS_TABLES_000_018_INSTITUTIONAL_STATUS_MATRIX_v0_1.md"
+  ],
+  "parent_registry_snapshot": {
+    "snapshot_id": "tsis_event_type_registry_v0_1_candidate_population_001",
+    "snapshot_file": "../event_type_registry_initial_population_snapshot_v0_1.json",
+    "snapshot_sha256": "10613b9b4139b9184ccf5a2f515d23ba0563a973cb50262647ee7ae8ea457537"
+  },
+  "reviewed_entries": {
+    "event_type_entries": [
+      "event_type:regulatory:halt_resumed",
+      "event_type:market_data:session_opened"
+    ],
+    "supporting_family_entries_allowed_if_required_for_type_acceptance": [
+      "event_family:market_data:session_lifecycle"
+    ],
+    "new_registry_entries_allowed": false,
+    "maximum_event_type_review_records": 2,
+    "maximum_family_support_review_records": 1
+  },
+  "allowed_review_outputs": {
+    "records_file": "../event_type_initial_admission_review_records_v0_1.json",
+    "readout_file": "../event_type_initial_admission_review_readout_v0_1.md",
+    "successor_snapshot_file_if_status_changes": "../event_type_registry_post_initial_admission_snapshot_v0_1.json"
+  },
+  "allowed_registry_status_results": [
+    "investigational_candidate",
+    "accepted_with_restrictions",
+    "accepted",
+    "rejected"
+  ],
+  "allowed_admission_decisions": [
+    "admitted_with_restrictions",
+    "admitted",
+    "not_admitted",
+    "rejected"
+  ],
+  "allowed_review_statuses": [
+    "closed_pass_with_restrictions",
+    "closed_blocked",
+    "closed_rejected"
+  ],
+  "source_inspection_policy": {
+    "documentary_source_authority_inspection_allowed": true,
+    "schema_contract_inspection_allowed": true,
+    "registry_entry_inspection_allowed": true,
+    "validator_readout_inspection_allowed": true,
+    "physical_parquet_reads_allowed": false,
+    "source_market_data_rows_read_allowed": 0,
+    "detector_execution_allowed": false
+  },
+  "disallowed_review_behavior": {
+    "contract_draft_as_review_result": true,
+    "blocked_reason_as_registry_status": true,
+    "event_identity_stability_as_mandatory_v0_1_field": true,
+    "mutating_parent_snapshot_in_place": true,
+    "creating_event_instances": true,
+    "executing_detectors": true,
+    "binding_event_windows": true,
+    "running_event_state_builder": true,
+    "materializing_event_state": true,
+    "downstream_consumption": true
+  },
+  "closed_boundaries": {
+    "event_detection_execution_authorized": false,
+    "event_instances_created": 0,
+    "event_window_binding_authorized": false,
+    "market_state_physical_consumption_authorized": false,
+    "event_state_builder_execution_authorized": false,
+    "event_state_integration_execution_authorized": false,
+    "event_state_materialization_authorized": false,
+    "event_state_physical_validation_authorized": false,
+    "official_event_state_profile_promotion_authorized": false,
+    "official_event_state_dataset_promotion_authorized": false,
+    "production_authorized": false,
+    "downstream_consumption_authorized": false
+  },
+  "next_gate_if_pass_with_accepted_entry": "event_instance_binding_design_authorization_v0_1",
+  "next_gate_requires_explicit_authorization": true
+}

@@ -1,0 +1,265 @@
+{
+  "review_id": "market_state_bounded_on_demand_candidate_dataset_review_v0_1_20260725T000000Z",
+  "review_gate": "market_state_bounded_on_demand_candidate_dataset_review_v0_1",
+  "status": "CLOSED_APPROVED_AS_BOUNDED_CANDIDATE_EVIDENCE_WITH_RESTRICTIONS_NO_PROMOTION",
+  "date": "2026-07-25",
+  "reviewed_execution_run": "market_state_bounded_on_demand_execution_v0_1_20260724T232123Z",
+  "reviewed_candidate_dataset_id": "market_state_candidate_dataset_v0_1_433288b634924676",
+  "reviewed_candidate_dataset_fingerprint": "433288b634924676a3c516fac600574ed36237c3c02ca640111f17609b6c235b",
+  "reviewed_validation_result_fingerprint": "38064d86af50c4a2df2ec0d2561b25390421df7acad4679e957faceaf1791fdb",
+  "reviewed_registry_entry_fingerprint": "82d551c8f8da00bbb3d8f1cb69bc5952fb9dc25fe3e1560bb497d686ffc2611c",
+  "scope": {
+    "profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "exchange_scope": [
+      "XNYS"
+    ],
+    "session_dates": [
+      "2021-01-19",
+      "2021-03-15",
+      "2022-11-25"
+    ],
+    "instrument_ids": [
+      "figi_share_class:BBG001S5N8T1",
+      "figi_share_class:BBG001S8T7K0",
+      "figi_share_class:BBG001S6RSK0"
+    ],
+    "requested_contexts": 9,
+    "materialized_candidate_rows": 8,
+    "unavailable_contexts": 1
+  },
+  "decision": {
+    "review_decision": "APPROVED_AS_BOUNDED_CANDIDATE_DATASET_EVIDENCE_WITH_RESTRICTIONS_NO_PROMOTION",
+    "accepted_as_candidate_dataset_review_evidence": true,
+    "candidate_records_reviewed": 8,
+    "candidate_parquet_files_reviewed": 1,
+    "registry_entries_reviewed": 1,
+    "review_failures": 0,
+    "hard_review_failures": 0,
+    "reuse_eligibility_after_review": "pending_determinism_validation",
+    "official_dataset_after_review": false,
+    "production_after_review": false,
+    "downstream_after_review": false
+  },
+  "findings": [
+    {
+      "check_id": "scope_accounting",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "requested_contexts": 9,
+        "materialized_candidate_rows": 8,
+        "unavailable_contexts": 1,
+        "identity": "9 = 8 + 1"
+      },
+      "conclusion": "All requested contexts are reconciled as materialized or unavailable."
+    },
+    {
+      "check_id": "unavailable_context_preservation",
+      "status": "PASS_WITH_RESTRICTION",
+      "severity": "RESTRICTION",
+      "evidence": {
+        "unavailable_contexts": [
+          {
+            "instrument_id": "figi_share_class:BBG001S5N8T1",
+            "ticker_label_non_authoritative": "AAME",
+            "session_date": "2022-11-25",
+            "exchange_id": "XNYS",
+            "decision_timestamp_utc": "2022-11-25T14:30:00Z",
+            "calendar_authority_id": "governed_exchange_session_calendar_xnys_v0_1",
+            "membership_status": "AUTHORIZED_EXPLICIT_SCOPE",
+            "point_in_time_eligibility": "not_revalidated_in_bounded_run",
+            "logical_partition_id": "f4bb0e7d7a45b3bdd3ea51743d68e656163224fb0f37e2b9aa77a472a1a8c970",
+            "partition_disposition": "unavailable",
+            "disposition_cause": "missing_exact_decision_timestamp_source_candidate_record",
+            "available_same_instrument_session_timestamps": [
+              "2022-11-25T16:58:00Z"
+            ]
+          }
+        ],
+        "partial_rows_emitted_for_unavailable_context": false,
+        "fallback_used": false
+      },
+      "conclusion": "The unavailable AAME 2022-11-25 context is preserved with explicit cause and no fallback."
+    },
+    {
+      "check_id": "request_output_scope",
+      "status": "PASS_WITH_RESTRICTION",
+      "severity": "RESTRICTION",
+      "evidence": {
+        "profile_values_in_output": [
+          "market_state_core_four_intraday_profile_v0_1"
+        ],
+        "expected_profile": "market_state_core_four_intraday_profile_v0_1",
+        "instrument_values_in_output": [
+          "figi_share_class:BBG001S5N8T1",
+          "figi_share_class:BBG001S6RSK0",
+          "figi_share_class:BBG001S8T7K0"
+        ],
+        "expected_instruments": [
+          "figi_share_class:BBG001S5N8T1",
+          "figi_share_class:BBG001S6RSK0",
+          "figi_share_class:BBG001S8T7K0"
+        ],
+        "session_values_in_output": [
+          "2021-01-19",
+          "2021-03-15",
+          "2022-11-25"
+        ],
+        "expected_sessions": [
+          "2021-01-19",
+          "2021-03-15",
+          "2022-11-25"
+        ],
+        "exchange_scope_authority": "XNYS",
+        "exchange_column_present_in_output": false
+      },
+      "conclusion": "Rows are inside the requested profile/instrument/session scope. Exchange scope is proven by execution plan and universe lineage, not by a physical exchange_id column."
+    },
+    {
+      "check_id": "grain_and_identity",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "parquet_rows": 8,
+        "unique_materialized_state_candidate_ids": 8,
+        "unique_state_output_fingerprints": 8,
+        "duplicate_primary_keys": 0
+      },
+      "conclusion": "One emitted context maps to one unique candidate Market State record in this bounded request."
+    },
+    {
+      "check_id": "temporal_legality_evidence",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "temporal_report_rows": [
+          {
+            "source_candidate_record_id": "8f4605029fc66d5cf0e9e34f71e3be1c6eac0820ad0b11f394421093387f618e",
+            "session_date": "2021-01-19",
+            "decision_timestamp_utc": "2021-01-19T14:30:00Z",
+            "expected_session_open_utc": "2021-01-19T14:30:00Z",
+            "temporal_legality_pass": true
+          },
+          {
+            "source_candidate_record_id": "c702e035902eb5ab1fb96a912e0cd1302a9fa71a8f132f222f3314aab4d296d2",
+            "session_date": "2021-01-19",
+            "decision_timestamp_utc": "2021-01-19T14:30:00Z",
+            "expected_session_open_utc": "2021-01-19T14:30:00Z",
+            "temporal_legality_pass": true
+          },
+          {
+            "source_candidate_record_id": "d7168c424323a9b5923d29dbd9cc73f3f5a503908a774202d72f5afc83704cfe",
+            "session_date": "2021-01-19",
+            "decision_timestamp_utc": "2021-01-19T14:30:00Z",
+            "expected_session_open_utc": "2021-01-19T14:30:00Z",
+            "temporal_legality_pass": true
+          },
+          {
+            "source_candidate_record_id": "e8bb628339f2b8fec82972de5b62c5d19d4a001555e3fa9322eecf5e89ae110c",
+            "session_date": "2021-03-15",
+            "decision_timestamp_utc": "2021-03-15T13:30:00Z",
+            "expected_session_open_utc": "2021-03-15T13:30:00Z",
+            "temporal_legality_pass": true
+          },
+          {
+            "source_candidate_record_id": "8627ccfeb6d14f2f8991785a197e744434e43fa2aa34aa5003dc9dd24168b957",
+            "session_date": "2021-03-15",
+            "decision_timestamp_utc": "2021-03-15T13:30:00Z",
+            "expected_session_open_utc": "2021-03-15T13:30:00Z",
+            "temporal_legality_pass": true
+          },
+          {
+            "source_candidate_record_id": "ed169d56f3efaa586197d1f34117c75b64c24974a719ff365c78fec9123af0b1",
+            "session_date": "2021-03-15",
+            "decision_timestamp_utc": "2021-03-15T13:30:00Z",
+            "expected_session_open_utc": "2021-03-15T13:30:00Z",
+            "temporal_legality_pass": true
+          },
+          {
+            "source_candidate_record_id": "79d2e5777955566deee676e739e7c10d5a7f3c91eda314a675722b6ec6f7c15e",
+            "session_date": "2022-11-25",
+            "decision_timestamp_utc": "2022-11-25T14:30:00Z",
+            "expected_session_open_utc": "2022-11-25T14:30:00Z",
+            "temporal_legality_pass": true
+          },
+          {
+            "source_candidate_record_id": "8e33f41c9ee0adb490d3aa4945e8bbb68c8a490bbe62db66c66de1ae502b228b",
+            "session_date": "2022-11-25",
+            "decision_timestamp_utc": "2022-11-25T14:30:00Z",
+            "expected_session_open_utc": "2022-11-25T14:30:00Z",
+            "temporal_legality_pass": true
+          }
+        ],
+        "temporal_failures": 0,
+        "validation_temporal_failures": 0
+      },
+      "conclusion": "Temporal legality checks executed for all emitted rows and passed."
+    },
+    {
+      "check_id": "lineage_completeness",
+      "status": "PASS_WITH_RESTRICTION",
+      "severity": "RESTRICTION",
+      "evidence": {
+        "source_candidate_records_used": 8,
+        "source_sha256": "e166ad63a571327455047ed166e347e0c9c4d18dd233bf0986bc6980b1f1d7f6",
+        "source_scope_contract_sha256": "e4223c64c030c2ac240763d7397362a0fe8faf91761ac7b94ca0f69d6f3d1913",
+        "source_market_data_rows_read": 0,
+        "lineage_failures": 0
+      },
+      "conclusion": "Lineage links each emitted row to a source candidate record and governed source fingerprint. This remains bounded candidate evidence, not fresh source-market-data revalidation."
+    },
+    {
+      "check_id": "registry_entry_consistency",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "candidate_registry_entries_written": 1,
+        "dataset_id": "market_state_candidate_dataset_v0_1_433288b634924676",
+        "registry_status": "validated_candidate",
+        "validation_status": "pass_with_restrictions",
+        "request_fingerprint_matches": true,
+        "execution_plan_fingerprint_matches": true,
+        "candidate_dataset_fingerprint_matches": true,
+        "validation_result_fingerprint_matches": true
+      },
+      "conclusion": "Exactly one candidate registry entry exists and matches the run fingerprints."
+    },
+    {
+      "check_id": "validation_result_consistency",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "validation_status": "PASS_WITH_RESTRICTIONS",
+        "hard_validation_failures": 0,
+        "eligible_for_candidate_registry": true,
+        "partition_accounting_pass": true
+      },
+      "conclusion": "Validator result supports candidate registry evidence with restrictions."
+    },
+    {
+      "check_id": "reuse_boundary",
+      "status": "PASS_WITH_RESTRICTION",
+      "severity": "RESTRICTION",
+      "evidence": {
+        "reuse_eligibility": "pending_determinism_validation",
+        "deterministic_rerun_exists": false
+      },
+      "conclusion": "Reuse remains pending deterministic rerun validation and is not upgraded by this review."
+    },
+    {
+      "check_id": "promotion_and_consumption_boundary",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "official_dataset": false,
+        "production": false,
+        "downstream": false,
+        "promotion_review_eligibility": "not_eligible_pending_determinism_and_scope_review",
+        "downstream_eligibility": false
+      },
+      "conclusion": "No official dataset, production, promotion or downstream consumption authority is opened."
+    }
+  ],
+  "next_allowed_gate": "market_state_bounded_on_demand_deterministic_rerun_authorization_v0_1",
+  "review_matrix_sha256": "626da7598af53b7d0311dc1831b48f3f66c72e90f6d14ebc9c602b7b21d9d292"
+}

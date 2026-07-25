@@ -1,0 +1,74 @@
+{
+  "gate": "market_state_bounded_on_demand_idempotency_reuse_test_authorization_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_CONSUMED_BY_REUSE_TEST",
+  "date": "2026-07-25",
+  "authorized_next_gate": "market_state_bounded_on_demand_idempotency_reuse_test_v0_1",
+  "parent_gate": "market_state_bounded_on_demand_determinism_validation_v0_1",
+  "parent_review_id": "market_state_bounded_on_demand_determinism_validation_v0_1_20260725T000000Z",
+  "contract_id": "market_state_bounded_on_demand_idempotency_reuse_test_contract_v0_1",
+  "contract_content_sha256_excluding_hash_field": "c836f3ae2d5821a0d2d7b66ee1c2db1c1866fe83b36a2d1fbb27f31bf678b98d",
+  "baseline_run_id": "market_state_bounded_on_demand_execution_v0_1_20260724T232123Z",
+  "baseline_candidate_dataset_id": "market_state_candidate_dataset_v0_1_433288b634924676",
+  "baseline_request_fingerprint": "584d07a1874ceceab077101bbc2de0ec37236db1a1a284956a81cb76674145ec",
+  "determinism_validation_status": "CLOSED_APPROVED_DETERMINISM_FOR_BOUNDED_SCOPE_WITH_RESTRICTIONS_NO_REUSE_TRANSITION",
+  "comparison_fingerprint": "ce87938504dbf8fc4e8e962e294aa81f8bc127cdfce69a7aa48157e655329dfb",
+  "scientific_dataset_fingerprint": "a9182b19e434ea77ca2bf5b3395b84a4592560bbf28e5cb0d80ee5561c5fe1b7",
+  "authorized_scope": {
+    "profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "exchange_scope": [
+      "XNYS"
+    ],
+    "session_dates": [
+      "2021-01-19",
+      "2021-03-15",
+      "2022-11-25"
+    ],
+    "instrument_ids": [
+      "figi_share_class:BBG001S5N8T1",
+      "figi_share_class:BBG001S8T7K0",
+      "figi_share_class:BBG001S6RSK0"
+    ],
+    "maximum_instrument_session_contexts": 9
+  },
+  "authorized_reuse_policy": "reuse_if_exact_validated_match",
+  "authorized_execution_limits_for_next_gate": {
+    "maximum_reuse_test_runs": 1,
+    "maximum_candidate_registry_metadata_reads": 1,
+    "maximum_candidate_parquet_files_read": 0,
+    "maximum_source_market_data_rows_read": 0,
+    "maximum_source_candidate_records_read": 0,
+    "maximum_materializer_executions": 0,
+    "maximum_new_candidate_parquet_files": 0,
+    "maximum_new_candidate_dataset_registry_entries": 0,
+    "maximum_idempotency_reuse_evidence_entries": 1
+  },
+  "closed_by_this_authorization": {
+    "idempotency_reuse_test_execution": false,
+    "new_market_state_request_execution": false,
+    "source_rows_read": false,
+    "materializer_execution": false,
+    "candidate_parquet_write": false,
+    "candidate_dataset_registry_entry_write": false,
+    "official_dataset_promotion": false,
+    "production": false,
+    "downstream_consumption": false,
+    "registry_reuse_eligibility_mutation_by_authorization": false
+  },
+  "consumed_by_run_id": "market_state_bounded_on_demand_idempotency_reuse_test_v0_1_20260725T060318Z",
+  "consumed_at_utc": "2026-07-25T06:03:18Z",
+  "closed_status": "CLOSED_PASS_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS",
+  "next_institutional_gate": "market_state_bounded_on_demand_reuse_eligibility_transition_review_v0_1",
+  "reuse_eligibility_after_test": "pending_reuse_eligibility_transition_review",
+  "reuse_eligibility_changes": 0,
+  "observed_execution_counts": {
+    "reuse_test_runs": 1,
+    "candidate_registry_metadata_reads": 1,
+    "candidate_parquet_files_read": 0,
+    "source_market_data_rows_read": 0,
+    "source_candidate_records_read": 0,
+    "materializer_executions": 0,
+    "new_candidate_parquet_files": 0,
+    "new_candidate_dataset_registry_entries": 0,
+    "idempotency_reuse_evidence_entries": 1
+  }
+}

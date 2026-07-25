@@ -1,0 +1,104 @@
+{
+  "scope_id": "event_state_bounded_execution_chain_scope_v0_1",
+  "status": "authorized_with_restrictions_not_executed",
+  "authorization_document": "C:/TSIS_Data/00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/07_EVENT_STATE_INTEGRATION/event_state_bounded_execution_chain_authorization_v0_1.md",
+  "date": "2026-07-24",
+  "authorization_run_id": "event_state_bounded_execution_chain_authorization_v0_1_20260724T153000Z",
+  "execution_status": "NOT_EXECUTED",
+  "scope": "session_opened_core_four_bounded_execution_chain_v0_1",
+  "event_type_id": "event_type:market_data:session_opened",
+  "event_subject_scope": "exchange_session",
+  "event_state_profile_id": "event_state_core_four_intraday_profile_v0_1",
+  "source_market_state_profile_id": "market_state_core_four_intraday_profile_v0_1",
+  "exchange_id": "XNYS",
+  "calendar_version": "governed_exchange_session_calendar_xnys_v0_1",
+  "authorized_sessions": [
+    {
+      "session_date": "2021-01-19",
+      "stratum": "winter_regular_standard_time",
+      "expected_open_utc": "14:30:00",
+      "session_type": "regular",
+      "early_close": false
+    },
+    {
+      "session_date": "2021-03-15",
+      "stratum": "us_dst_transition_neighborhood",
+      "expected_open_utc": "13:30:00",
+      "session_type": "regular",
+      "early_close": false
+    },
+    {
+      "session_date": "2022-11-25",
+      "stratum": "winter_early_close",
+      "expected_open_utc": "14:30:00",
+      "session_type": "early_close",
+      "early_close": true
+    }
+  ],
+  "authorized_instruments": [
+    {
+      "ticker": "AAME",
+      "instrument_id": "figi_share_class:BBG001S5N8T1"
+    },
+    {
+      "ticker": "ABEO",
+      "instrument_id": "figi_share_class:BBG001S8T7K0"
+    },
+    {
+      "ticker": "ABUS",
+      "instrument_id": "figi_share_class:BBG001S6RSK0"
+    }
+  ],
+  "market_state_physical_evidence": {
+    "source_kind": "candidate_market_state_physical_evidence",
+    "source_status": "non_official_candidate_reference_only",
+    "candidate_materialization_run_id": "experimental_scale_c_ms_candidate_materialization_v0_1_20260723T184752Z",
+    "candidate_physical_validation_run_id": "core_four_market_state_scale_c_candidate_physical_validation_v0_1_20260723T184900Z",
+    "candidate_parquet_relative_path": "../06_MARKET_STATE_INTEGRATION/runs/experimental_scale_c_ms_candidate_materialization_v0_1_20260723T184752Z/core_four_market_state_scale_c_candidate_v0_1.parquet",
+    "candidate_parquet_rows": 104,
+    "candidate_parquet_sha256": "b1841f4897a759de8ec9a317bece888a9ff817da3df2cd0eb477b4ed950775a2",
+    "official_dataset": false,
+    "downstream_consumable": false
+  },
+  "market_state_identity_policy": {
+    "row_identity_field": "materialized_state_candidate_id",
+    "content_integrity_field": "state_output_fingerprint",
+    "both_fields_required": true,
+    "exactly_one_market_state_binding_required": true,
+    "fallback_to_fingerprint_only_allowed": false,
+    "fallback_to_unprofiled_market_state_allowed": false
+  },
+  "event_window_definition": {
+    "event_window_definition_id": "event_window_definition:market_data:session_opened:at_open_v0_1",
+    "window_subject_scope": "exchange_session",
+    "state_role": "at_event",
+    "consumption_legality": "decision_safe_only_if_market_state_cutoff_proves_as_of_legality",
+    "anchor": "governed_session_open_utc",
+    "window_start": "event_anchor_timestamp_utc",
+    "window_end": "event_anchor_timestamp_utc",
+    "matching_policy": "exact_event_anchor_to_market_state_decision_timestamp",
+    "latest_prior_fallback_allowed": false
+  },
+  "limits": {
+    "max_exchange_sessions": 3,
+    "max_instruments": 3,
+    "max_instrument_session_projections": 9,
+    "max_event_instances": 3,
+    "max_event_window_bindings": 3,
+    "max_market_state_rows_consumed": 9,
+    "max_event_state_candidate_records": 9,
+    "max_event_state_parquet_files": 1,
+    "max_output_files": 16,
+    "max_output_bytes": 5000000
+  },
+  "closed_until_execution": {
+    "event_state_bounded_execution_chain_execution": false,
+    "event_state_records_emitted": 0,
+    "event_state_parquet_files_written": 0,
+    "official_event_state_profile_promotion": false,
+    "official_event_state_dataset_promotion": false,
+    "production": false,
+    "downstream_consumption": false
+  },
+  "next_gate_after_authorization": "event_state_bounded_execution_chain_execution_v0_1"
+}

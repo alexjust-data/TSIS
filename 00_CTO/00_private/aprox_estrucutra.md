@@ -16,7 +16,7 @@ agentes deberan trabajar sobre él para deslitar y extraer las clabes de la part
 Harnees agentic: tener la capacidad de estilizar el curso hasta su optima expresion para sintetizar una ruta válidad a la hora de hacer backtest
 con los 20 años de datos que tenemos.
 
-Otro hito para los Harness agentics es  la parte ya casi terminada de la auditoria de datos C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations
+Otro hito para los Harness agentics es  la parte ya casi terminada de la auditoria de datos C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations
 Aquí hay mucho trabajo ya hecho y adelantado. Se ha hecho de tal forma que cuando tengamos data en tiempo real, la misma forma de analizar lo que
 ya hemos hecho serán los estandares minímos que exigiremos en el dia a dia para reportar la calidad de la data. Entonces la arquitectura de agentes
 para esa parte ha de , primero, trabajar sobre la base que ya existe y cuando validemos que los agentes trabajan bien... entonces podemos pasar

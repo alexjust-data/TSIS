@@ -367,7 +367,7 @@ def build_rows(records: list[dict[str, Any]], scope: dict[str, Any], run_id: str
         for col in scope["physical_schema"]["value_columns"]:
             row[col["physical_name"]] = values[col["source_value_field"]]
 
-        row["calendar_version"] = "fixed_utc_probe_calendar_v0_1"
+        row["calendar_version"] = record.get("calendar_version") or "fixed_utc_probe_calendar_v0_1"
         row["source_lineage_json"] = compact_json_from_scope(
             scope,
             {

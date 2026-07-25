@@ -42,7 +42,7 @@ C:/TSIS_Data/03_TSIS_Lab
 C:/TSIS_Data/01_TSIS_DATA_FOUNDATION
 = modulo operativo SmallCaps: foundations, builders, investigacion, event discovery, feature engine, backtests clasicos, strategy research y datos gobernados
 
-E:/TSIS/data
+G:/TSIS/data
 = outputs pesados, materializaciones y runs voluminosos
 ```
 

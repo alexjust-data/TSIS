@@ -1,4 +1,4 @@
-﻿# AlphaEvolve En TSIS - Generador De Candidate Research Experiments
+# AlphaEvolve En TSIS - Generador De Candidate Research Experiments
 
 Fecha de revision: 2026-07-05
 Estado: lectura_operativa_alineada_con_TSIS_LAB_ARCHITECTURE_v3
@@ -68,9 +68,9 @@ Si AlphaEvolve modifica el evaluador, eso no es una ejecucion normal de discover
 
 ```text
 C:/TSIS_Data/00_CTO/TSIS_LAB_ARCHITECTURE_v3.md
-C:/TSIS_Data/00_TSIS_Lab/README.md
-C:/TSIS_Data/00_TSIS_Lab/01_contracts/research_experiment_contract_v0_1.md
-C:/TSIS_Data/00_TSIS_Lab/01_contracts/scientific_validation_pipeline_contract_v0_1.md
+C:/TSIS_Data/03_TSIS_Lab/README.md
+C:/TSIS_Data/03_TSIS_Lab/01_contracts/research_experiment_contract_v0_1.md
+C:/TSIS_Data/03_TSIS_Lab/01_contracts/scientific_validation_pipeline_contract_v0_1.md
 C:/TSIS_Data/00_CTO/01_RESEARCH_PHILOSOPHY/03_HUMAN_AND_AI_RESEARCHERS/human_and_alphaevolve_common_protocol.md
 C:/TSIS_Data/00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/02_ALPHAEVOLVE_AS_RESEARCH_EXPERIMENT_GENERATOR_v0_1.md
 ```

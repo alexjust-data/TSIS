@@ -1,4 +1,4 @@
-﻿# 05_DATA_derivable
+# 05_DATA_derivable
 
 Status: `derivable_layer_v0_3_atomic_capability_boundary`
 Date: `2026-07-20`
@@ -148,12 +148,12 @@ no_future_or_prohibited
 ## Autoridades De Referencia
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\raw_data_authority_and_derivation_map.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\data_quality_report\family_status_matrix_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_observable_eligibility_contract_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_derived_observables_formula_contract_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_decision_timestamp_policy_v0_1.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_contract_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\raw_data_authority_and_derivation_map.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\data_quality_report\family_status_matrix_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_observable_eligibility_contract_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_derived_observables_formula_contract_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_decision_timestamp_policy_v0_1.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_contract_v0_1.md
 ```
 
 ## Regla Final

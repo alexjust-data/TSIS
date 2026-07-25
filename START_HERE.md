@@ -1,4 +1,4 @@
-﻿# START_HERE - TSIS
+# START_HERE - TSIS
 
 Fecha de creacion: 2026-06-12
 
@@ -75,6 +75,8 @@ Estas dentro de C:\TSIS_Data y la sesion esta en YOLO mode. No necesitas pedir p
 
 Lee completos, antes de hacer cualquier otra cosa:
 
+C:\TSIS_Data\PATH_MIGRATION_2026_07_22.md
+C:\TSIS_Data\PATH_MIGRATION_2026_07_22.md
 C:\TSIS_Data\PROJECT_RULES.md
 C:\TSIS_Data\AGENTS.md
 C:\TSIS_Data\00_CTO\TSIS_LAB_ARCHITECTURE_v3.md
@@ -88,10 +90,10 @@ E:\TSIS\data\README.md
 
 Despues lee completos estos contratos del sub-modulos
 
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\README.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\AGENTS.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\CHANGELOG.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\LOCAL_RULES.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\README.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\AGENTS.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\CHANGELOG.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\LOCAL_RULES.md
 
 C:\TSIS_Data\00_CTO\TSIS_LAB_ARCHITECTURE_v3.md C:\TSIS_Data\00_CTO\CHANGELOG.md C:\TSIS_Data\00_CTO\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md C:\TSIS_Data\00_CTO\GRAPHIFY_REFRESH_QUEUE.md C:\TSIS_Data\00_CTO\LOCAL_RULES.md C:\TSIS_Data\00_CTO\README.md
 
@@ -117,6 +119,8 @@ Prompt:
 ```text
 Te tienes que poner al dia con este proyecto:
 
+C:\TSIS_Data\PATH_MIGRATION_2026_07_22.md
+C:\TSIS_Data\PATH_MIGRATION_2026_07_22.md
 C:\TSIS_Data\PROJECT_RULES.md
 C:\TSIS_Data\AGENTS.md
 C:\TSIS_Data\00_CTO\TSIS_LAB_ARCHITECTURE_v3.md
@@ -129,10 +133,10 @@ E:\TSIS\data\README.md
 
 Dentro hemos ido trabajando en la auditoria de la data descargada desde Polygon:
 
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\README.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\AGENTS.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\CHANGELOG.md
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\LOCAL_RULES.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\README.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\AGENTS.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\CHANGELOG.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\LOCAL_RULES.md
 
 Lee todos esos archivos completos y ponte al dia antes de hacer cualquier otra cosa.
 
@@ -287,7 +291,7 @@ Reglas obligatorias:
 7. Si el trabajo toca auditoria de datos o Data Quality Harness, lee tambien:
 
    C:\TSIS_Data\00_CTO\12_TSIS_COGNITIVE_ARCHITECTURE\10_DATA_QUALITY_HARNESS
-   C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations
+   C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations
 
    No te fies solo de documentos resumen. Verifica contra la auditoria real.
 

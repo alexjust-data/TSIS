@@ -34,11 +34,19 @@ Use the canonical module root:
 C:/TSIS_Data/04_TSIS_webSocket_SmallCaps
 ```
 
-Use the official DAS live physical root:
+Default/legacy DAS live physical root:
 
 ```text
 E:/TSIS/data_DAS_live
 ```
+
+Current operator-directed DAS CMDAPI read-only capture root:
+
+```text
+C:/TSIS_Data/data
+```
+
+When `--data-root C:/TSIS_Data/data` is supplied, raw CMDAPI run evidence belongs under `C:/TSIS_Data/data/raw_cmdapi/runs/<run_id>` and screener evidence under `C:/TSIS_Data/data/screener/runs/<run_id>`. This is a physical capture-root override, not a Data Foundation promotion.
 
 Do not create new artifacts under legacy paths such as:
 
@@ -53,7 +61,8 @@ Existing notebook output references to those legacy paths must be treated as his
 
 - `data/raw_ws` is Polygon/Massive raw capture evidence. Do not rewrite it destructively.
 - `data/curated_ws` is Polygon/Massive derived prototype output. It can be regenerated, but any regeneration must preserve run labels or write a new run label.
-- `E:/TSIS/data_DAS_live` is the official physical root for DAS CMD API live capture payloads.
+- `E:/TSIS/data_DAS_live` is the default/legacy DAS CMD API live root referenced by the draft contract.
+- `C:/TSIS_Data/data` is the current operator-directed DAS CMDAPI read-only capture root when explicitly supplied through `--data-root`; do not confuse this with Data Foundation promotion or model-facing dataset authority.
 - Notebook outputs are evidence, not institutional datasets.
 - Large capture files should not be committed or moved casually.
 - Secrets and API keys must never be written into notebooks, markdown, JSONL, parquet metadata, logs or screenshots.
@@ -146,3 +155,20 @@ DAS v0 uses manual operator login by default: the human logs into DAS Trader / P
 The initial DAS screener denominator covers `premarket`, `regular_market` and `afterhours`, with `market_cap < 100,000,000 USD`, `0.50 <= price <= 20.00 USD`, and minimum volume `>= 300,000 shares` using DAS Lv1 `V` as the preferred source unless revised by contract.
 
 
+
+## DAS TSIS Screener Candidate Replay Rule
+
+When the operator says to use "our screener/filter", do not infer DAS `TOPLIST`, a seed ticker, or the governed TSIS reference universe as the candidate source.
+
+The canonical replay source is the TSIS screener `candidates.csv` produced by the earlier screener run, filtered to `filter_status=PASS`, launched with:
+
+```text
+--candidate-file <C:/TSIS_Data/data/screener/runs/<screener_run_id>/candidates.csv>
+--candidate-file-status PASS
+--skip-screener
+--max-readonly
+```
+
+`--scan-tsis-universe` is only an opt-in diagnostic/recovery tool for universe coverage. It is not the operator flow for replaying a known TSIS screener PASS set.
+
+Locate prices from DAS CMDAPI are raw broker evidence. Raw truth stays in `command_transcript.jsonl`; structured, sanitized extraction belongs under the same run's `derived/` folder. Derived locate tables must exclude account ids, auth data and locate/order tokens, and must label test routes such as `TESTSL` separately from live broker routes such as `SAGE`.

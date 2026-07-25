@@ -1,4 +1,4 @@
-﻿# Representacion Del Mercado En Las Tablas
+# Representacion Del Mercado En Las Tablas
 
 Status: `feature_engineering_guardrails_v0_1`
 
@@ -45,7 +45,7 @@ C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\02_MATERIALIZATION_GOVERNANCE_REVIEW
 La autoridad operativa sigue viviendo en:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations
 ```
 
 Por tanto:

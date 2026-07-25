@@ -1,0 +1,18 @@
+﻿{
+    "book_id":  "algorithmic_trading_chan",
+    "title":  "Algorithmic Trading",
+    "author":  "Ernest P. Chan",
+    "source_pdf":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Algorithmic_Trading_-_Ernest_P_Chan.pdf",
+    "processed_root":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\algorithmic_trading_chan",
+    "source_copy":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\algorithmic_trading_chan\\source\\original.pdf",
+    "pages":  225,
+    "file_size_bytes":  9243351,
+    "created_utc":  "2026-07-24T22:21:32.852058+00:00",
+    "total_words":  71497,
+    "text_pages":  214,
+    "toc_items":  85,
+    "requires_ocr":  false,
+    "status":  "indexed",
+    "working_text_persisted":  false,
+    "working_text_path":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\algorithmic_trading_chan\\extracted\\algorithmic_trading_chan_working_pages.jsonl"
+}

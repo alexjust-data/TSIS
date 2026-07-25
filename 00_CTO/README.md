@@ -66,7 +66,7 @@ Estos documentos fijan la interpretacion vigente de esta capa:
   relacion con `00_private/`, politica Graphify y criterio funcional para
   carpetas activas.
 - `TSIS_LAB_ARCHITECTURE_v3.md` es la lectura CTO vigente desde 2026-07-05:
-  define TSIS como `Scientific Discovery Engine`, introduce `00_TSIS_Lab`,
+  define TSIS como `Scientific Discovery Engine`, introduce `03_TSIS_Lab`,
   establece `research_experiment` como unidad central y reclasifica
   AlphaEvolve como generador de candidate experiments sometido al mismo
   Scientific Validation Pipeline que el investigador humano.
@@ -122,11 +122,11 @@ La autoridad activa vive en:
 - `VERSIONING_STANDARDS.md`
 - `RESEARCH_PHILOSOPHY.md`
 - `00_CTO/TSIS_LAB_ARCHITECTURE_v3.md`
-- `01_TSIS_backtest_SmallCaps/README.md`
-- `01_TSIS_backtest_SmallCaps/AGENTS.md`
-- `01_TSIS_backtest_SmallCaps/LOCAL_RULES.md`
+- `01_TSIS_DATA_FOUNDATION/README.md`
+- `01_TSIS_DATA_FOUNDATION/AGENTS.md`
+- `01_TSIS_DATA_FOUNDATION/LOCAL_RULES.md`
 - contratos, registries, schemas, policies y validators bajo
-  `01_TSIS_backtest_SmallCaps/01_foundations/`
+  `01_TSIS_DATA_FOUNDATION/01_foundations/`
 
 Regla:
 
@@ -181,7 +181,7 @@ auditoria historica verificada
 El frente activo es Data Quality Harness sobre:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations
 ```
 
 El primer documento de trabajo ya fue creado en:
@@ -202,7 +202,7 @@ conocimiento ya existentes.
 
 Fuente:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations`
 
 Documento CTO vigente:
 
@@ -262,7 +262,7 @@ SersanSistemas es fuente experta; solo gobierna TSIS despues de destilacion y pr
 
 Fuente operativa:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations`
 
 Documento CTO vigente:
 
@@ -446,10 +446,10 @@ El grafo operativo inicial debe priorizar:
 Ese scope conecta direccion CTO, Harness y contratos de artefactos dentro de
 `00_CTO`.
 
-`C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations` es dependencia
+`C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations` es dependencia
 operativa externa referenciada por `00_CTO`, pero no forma parte del grafo
 `00_CTO` por defecto. Si se necesita, debe construirse como grafo separado del
-modulo `01_TSIS_backtest_SmallCaps` y fusionarse solo mediante una decision de
+modulo `01_TSIS_DATA_FOUNDATION` y fusionarse solo mediante una decision de
 scope explicita.
 
 ### Subgrafos y merges
@@ -604,7 +604,7 @@ por manifests.
    -> Operational Component
    ```
 
-3. `C:/TSIS_Data/00_TSIS_Lab/README.md`
+3. `C:/TSIS_Data/03_TSIS_Lab/README.md`
 
    Espacio operativo transversal para contratos, registros, plantillas y
    experimentos declarativos ejecutables por humanos o generadores autonomos.
@@ -665,7 +665,7 @@ mantiene, se clarifica, se refactoriza, se mueve o se archiva debe leerse desde:
 
 ```text
 TSIS_LAB_ARCHITECTURE_v3.md
-C:/TSIS_Data/00_TSIS_Lab/README.md
+C:/TSIS_Data/03_TSIS_Lab/README.md
 ```
 
 La regla actual es funcional: si una carpeta no tiene proposito, inputs,
@@ -886,7 +886,7 @@ AlphaEvolve es un generador posible de candidate research experiments.
 La estructura operativa comun vive en:
 
 ```text
-C:/TSIS_Data/00_TSIS_Lab
+C:/TSIS_Data/03_TSIS_Lab
 ```
 
 Y la autoridad especifica de AlphaEvolve vive en:

@@ -4,8 +4,8 @@ Carpeta local de auditoria para la familia `additional`.
 
 Origen canonico:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\inspection_dossiers\additional`
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\additional`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\inspection_dossiers\additional`
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_research\01_auditoria_RAW_DATA\00_data_certification\auditoria\additional`
 
 Contenido local:
 

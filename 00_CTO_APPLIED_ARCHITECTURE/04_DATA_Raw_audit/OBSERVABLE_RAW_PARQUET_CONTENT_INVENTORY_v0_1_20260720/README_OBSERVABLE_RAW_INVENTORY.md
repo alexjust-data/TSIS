@@ -1,4 +1,4 @@
-﻿# Observable RAW Parquet Content Inventory v0.1
+# Observable RAW Parquet Content Inventory v0.1
 
 Status: `external_agent_handoff_package`
 Date: `2026-07-20`
@@ -20,7 +20,7 @@ No sustituye schemas, contracts, registries, manifests ni validators.
 La autoridad operativa permanece en:
 
 ```text
-C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations
 ```
 
 ## Contenido Incluido

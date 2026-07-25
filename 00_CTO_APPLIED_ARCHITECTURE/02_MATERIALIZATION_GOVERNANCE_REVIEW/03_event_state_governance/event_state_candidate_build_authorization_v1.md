@@ -107,19 +107,19 @@ closed.
 Builder:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/materialize_event_state_intraday_quote_guarded_candidate.py
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/materialize_event_state_intraday_quote_guarded_candidate.py
 ```
 
 Candidate builder test:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_event_state_intraday_quote_guarded_candidate_builder.py
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/tests/data_foundation_outputs/test_event_state_intraday_quote_guarded_candidate_builder.py
 ```
 
 Contract stack test:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_event_state_table_contract.py
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/tests/data_foundation_outputs/test_event_state_table_contract.py
 ```
 
 Existing controlled evidence dataset:
@@ -137,7 +137,7 @@ C:/TSIS_Data/tests/test_runs/2026-07-05/event_state_intraday_1m_quote_guarded_co
 Lineage contract:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_event_state_controlled_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/state_raw_to_consumption_lineage_intraday_1m_event_state_controlled_v0_1.md
 ```
 
 ------------------------------------------------------------------------

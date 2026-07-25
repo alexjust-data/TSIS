@@ -5,6 +5,20 @@ Date: `2026-07-20`
 
 Primera pasada transversal. Descubre responsabilidades, candidatos y riesgos; no corrige ni promueve.
 
+## Current-State Note
+
+Status: `historical_discovery_valid_not_current_authority`
+Date: `2026-07-24`
+
+This document remains the accepted first discovery pass.
+It is not the current institutional authority matrix.
+
+Current table-level institutional state is maintained in:
+
+```text
+../04_TSIS_TABLES_000_018_INSTITUTIONAL_STATUS_MATRIX_v0_1.md
+```
+
 ## Regla
 
 ```text

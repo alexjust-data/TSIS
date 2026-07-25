@@ -107,31 +107,31 @@ future_trade_quote_aligned_surface
 010_news_context_table
     physical_candidate_root = G:/TSIS/data/data_foundation_outputs/news_context_table/news_context_table_v0_1
     official_root = E:/TSIS/data/data_foundation_outputs/news_context_table/news_context_table_v0_1
-    registry = 01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/news_context_table_registry_entry.yaml
+    registry = 01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/outputs/news_context_table_registry_entry.yaml
     partition_convention = published_year=<YYYY>/data_*.parquet
 
 009_fundamentals_asof_table
     physical_candidate_root = G:/TSIS/data/data_foundation_outputs/fundamentals_asof_table/fundamentals_asof_table_v0_1
     official_root = E:/TSIS/data/data_foundation_outputs/fundamentals_asof_table/fundamentals_asof_table_v0_1
-    registry = 01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/fundamentals_asof_table_registry_entry.yaml
+    registry = 01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/outputs/fundamentals_asof_table_registry_entry.yaml
     partition_convention = statement_family=<family>/as_of_year=<YYYY>/data_*.parquet
 
 011_short_context_table
     physical_candidate_root = G:/TSIS/data/data_foundation_outputs/short_context_table/short_context_table_v0_1
     official_root = E:/TSIS/data/data_foundation_outputs/short_context_table/short_context_table_v0_1
-    registry = 01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/short_context_table_registry_entry.yaml
+    registry = 01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/outputs/short_context_table_registry_entry.yaml
     partition_convention = source_system=<source_system>/observation_family=<short_interest|short_volume>/observation_year=<YYYY>/data_*.parquet
 
 012_regime_context_table
     physical_candidate_root = G:/TSIS/data/data_foundation_outputs/regime_context_table/regime_context_table_v0_1
     official_root = E:/TSIS/data/data_foundation_outputs/regime_context_table/regime_context_table_v0_1
-    registry = 01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/regime_context_table_registry_entry.yaml
+    registry = 01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/outputs/regime_context_table_registry_entry.yaml
     partition_convention = source_proxy_family=<etf|index>/observation_year=<YYYY>/data_*.parquet
 
 006_halts_table
     physical_candidate_root = G:/TSIS/data/data_foundation_outputs/halts_table/halts_table_v0_1.parquet
     official_primary_file = E:/TSIS/data/data_foundation_outputs/halts_table/halts_table_v0_1.parquet
-    registry = 01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/halts_table_registry_entry.yaml
+    registry = 01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/outputs/halts_table_registry_entry.yaml
     partition_convention = single_file_halts_table_v0_1.parquet
 ```
 

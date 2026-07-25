@@ -1,0 +1,70 @@
+{
+  "accepted_event_type_ids": [
+    "event_type:market_data:session_opened"
+  ],
+  "accepted_profile_artifact_validation_run": "event_state_profile_artifact_validation_v0_1_20260724T204410Z",
+  "accepted_subject_scope": "exchange_session",
+  "allowed_reference_modes": [
+    "architecture_citation",
+    "profile_discovery_for_planning",
+    "request_resolver_preflight_reference",
+    "compatibility_check_reference",
+    "future_authorization_input_reference"
+  ],
+  "authority_boundary": {
+    "candidate_event_state_records_consumption_allowed": false,
+    "candidate_event_state_records_copy_allowed": false,
+    "candidate_evidence_reference_allowed": true,
+    "downstream_consumption_allowed": false,
+    "event_detection_allowed": false,
+    "event_instance_execution_allowed": false,
+    "event_state_builder_execution_allowed": false,
+    "event_state_materialization_allowed": false,
+    "event_window_execution_allowed": false,
+    "full_history_execution_allowed": false,
+    "full_universe_execution_allowed": false,
+    "instrument_projection_execution_allowed": false,
+    "market_state_physical_consumption_allowed": false,
+    "official_event_state_dataset_promotion_allowed": false,
+    "official_event_state_dataset_registry_write_allowed": false,
+    "official_event_state_parquet_write_allowed": false,
+    "production_allowed": false,
+    "profile_registry_lookup_allowed_for_planning": true,
+    "request_resolver_design_reference_allowed": true,
+    "semantic_profile_reference_allowed": true,
+    "source_market_data_reads_allowed": false
+  },
+  "date": "2026-07-24",
+  "design_class": "operational_registry_and_consumption_policy_design_only",
+  "gate": "event_state_operational_registry_or_consumption_policy_design_v0_1",
+  "next_allowed_gate": "market_state_on_demand_capability_design_authorization_v0_1",
+  "policy_invariants": {
+    "candidate_bounded_records_are_downstream_consumable": false,
+    "candidate_bounded_records_are_evidence_only": true,
+    "consumption_policy_status": "design_recorded_no_consumption",
+    "official_event_state_dataset_exists": false,
+    "official_event_state_dataset_registry_entry_exists": false,
+    "official_event_state_parquet_exists": false,
+    "official_semantic_profile_reference_allowed": true,
+    "operational_registry_status": "semantic_profile_reference_design_only",
+    "request_resolver_execution_requires_future_authorization": true,
+    "request_resolver_may_use_profile_for_planning_only": true
+  },
+  "profile_id": "event_state_core_four_intraday_profile_v0_1",
+  "profile_status": "OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS",
+  "prohibited_use_modes": [
+    "official_dataset_consumption",
+    "candidate_output_consumption_as_dataset",
+    "event_state_materialization",
+    "event_state_builder_execution",
+    "event_detection",
+    "model_training_input",
+    "backtest_input",
+    "production_input",
+    "downstream_delivery"
+  ],
+  "scope_id": "event_state_operational_registry_or_consumption_policy_design_scope_v0_1",
+  "source_market_state_profile_id": "market_state_core_four_intraday_profile_v0_1",
+  "source_profile_registry_path": "official_profiles/event_state_core_four_intraday_profile_v0_1",
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION"
+}

@@ -60,7 +60,7 @@ Authority documented before this book:
 - `C:\TSIS_Data\00_CTO_1\00_EPISTEMOLOGICAL_architecture\01_TSIS_REPRESENTATION_THEORY\17_Chapter_16_Materialization_Policy_TSIS.md`, sections `16.2 Semantic Existence vs Physical Materialization`, `16.3 Materialization Modes`.
 - `C:\TSIS_Data\00_CTO_1\00_EPISTEMOLOGICAL_architecture\01_TSIS_REPRESENTATION_THEORY\19_Chapter_18_Representation_Governance_TSIS.md`, sections `Governance Hierarchy`, `Change Classes`, `Promotion Path`.
 - `C:\TSIS_Data\00_CTO_1\00_EPISTEMOLOGICAL_architecture\01_TSIS_REPRESENTATION_THEORY\22_Chapter_21_Constitutional_Principles_TSIS.md`.
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_canonical_vs_representation_layer_contract_v0_1.md`.
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_canonical_vs_representation_layer_contract_v0_1.md`.
 
 Content that already exists:
 
@@ -89,7 +89,7 @@ Authority documented before this book:
 
 - `C:\TSIS_Data\VERSIONING_STANDARDS.md`, sections `Institutional maturity status model`, `Promotion barrier`, `Required Versioning Practices`.
 - `C:\TSIS_Data\00_CTO_1\00_EPISTEMOLOGICAL_architecture\01_TSIS_REPRESENTATION_THEORY\19_Chapter_18_Representation_Governance_TSIS.md`.
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\data_foundation_outputs_target_contract_v0_1.md`, section `target_contract = que debe existir y por que`.
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\data_foundation_outputs_target_contract_v0_1.md`, section `target_contract = que debe existir y por que`.
 
 Content that already exists:
 
@@ -118,7 +118,7 @@ Authority documented before this book:
 
 - `C:\TSIS_Data\00_CTO_1\00_EPISTEMOLOGICAL_architecture\01_TSIS_REPRESENTATION_THEORY\17_Chapter_16_Materialization_Policy_TSIS.md`, sections `16.2`, `16.3`, `16.12`, `16.13`.
 - `C:\TSIS_Data\00_CTO_1\05_TABLES\_00_CTO\politica_cobertura_full_history_tsis.md`, sections on full-history meanings and microstructure selectivity.
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\market_state_coverage_and_lookback_policy_v0_1.md`, sections `Coberturas Permitidas`, `Campos Obligatorios En Futuros Manifests`, `Promotion Gate`.
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\market_state_coverage_and_lookback_policy_v0_1.md`, sections `Coberturas Permitidas`, `Campos Obligatorios En Futuros Manifests`, `Promotion Gate`.
 
 Content that already exists:
 
@@ -146,8 +146,8 @@ Overlap classification: `complementary`
 
 Authority documented before this book:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\dataset_registry\README.md`.
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\data_foundation_outputs_target_contract_v0_1.md`.
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\dataset_registry\README.md`.
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\data_foundation_outputs_target_contract_v0_1.md`.
 - `C:\TSIS_Data\00_CTO_1\05_TABLES\README.md`.
 
 Content that already exists:
@@ -175,8 +175,8 @@ Overlap classification: `partial_duplicate`
 Authority documented before this book:
 
 - Market Representation Chapter 16 materialization modes.
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\master_intraday_bar_table_wider_scope_materialization_plan_v0_1.md`.
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\microstructure_features_table_multi_window_materialization_plan_v0_1.md`.
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\master_intraday_bar_table_wider_scope_materialization_plan_v0_1.md`.
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\microstructure_features_table_multi_window_materialization_plan_v0_1.md`.
 
 Content that already exists:
 
@@ -203,11 +203,11 @@ Overlap classification: `strong_duplicate` unless reduced to a crosswalk.
 
 Authority documented before this book:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs\*.md`.
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\contract_registry\dataset_contracts\*.md`.
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\dataset_registry\outputs\*.yaml`.
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\data_consumption_policies\*.md`.
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\validators\outputs\*.md`.
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas\outputs\*.md`.
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\contract_registry\dataset_contracts\*.md`.
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\dataset_registry\outputs\*.yaml`.
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\data_consumption_policies\*.md`.
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\validators\outputs\*.md`.
 
 Content that already exists:
 
@@ -233,9 +233,9 @@ Overlap classification: `strong_duplicate`
 Authority documented before this book:
 
 - `C:\TSIS_Data\00_CTO_1\05_TABLES\TABLES_CREATION_process_v0_1.md`.
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_builder_contract_v0_1.md`.
-- Builders under `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\scripts`.
-- Tests under `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\tests\data_foundation_outputs`.
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_builder_contract_v0_1.md`.
+- Builders under `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\scripts`.
+- Tests under `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\tests\data_foundation_outputs`.
 
 Content that already exists:
 
@@ -261,7 +261,7 @@ Overlap classification: `partial_duplicate`
 
 Authority documented before this book:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md`.
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md`.
 - `C:\TSIS_Data\VERSIONING_STANDARDS.md`.
 - Validators and test-run evidence under `C:\TSIS_Data\tests\test_runs`.
 
@@ -344,9 +344,9 @@ Overlap classification: `complementary`
 
 Authority documented before this book:
 
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_contract_v0_1.md`.
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md`.
-- `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md`.
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_contract_v0_1.md`.
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_daily_event_windows_controlled_v0_1.md`.
+- `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md`.
 - Dataset registry README authority-chain concepts.
 
 Content that already exists:

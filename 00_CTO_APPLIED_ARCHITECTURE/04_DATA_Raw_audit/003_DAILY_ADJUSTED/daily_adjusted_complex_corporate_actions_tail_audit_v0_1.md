@@ -27,14 +27,14 @@ La pregunta es otra:
 
 Script:
 
-- [audit_daily_adjusted_complex_actions_tail.py](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/scripts/inspection/daily/audit_daily_adjusted_complex_actions_tail.py)
+- [audit_daily_adjusted_complex_actions_tail.py](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/inspection/daily/audit_daily_adjusted_complex_actions_tail.py)
 
 Evidencia:
 
-- [daily_adjusted_complex_actions_tail_summary.csv](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/daily/evidence_assets/daily_adjusted_complex_actions_tail_audit/daily_adjusted_complex_actions_tail_summary.csv)
-- [daily_adjusted_ticker_change_tail.csv](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/daily/evidence_assets/daily_adjusted_complex_actions_tail_audit/daily_adjusted_ticker_change_tail.csv)
-- [daily_adjusted_non_cd_dividend_tail.csv](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/daily/evidence_assets/daily_adjusted_complex_actions_tail_audit/daily_adjusted_non_cd_dividend_tail.csv)
-- [daily_adjusted_complex_actions_type_summary.csv](C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/daily/evidence_assets/daily_adjusted_complex_actions_tail_audit/daily_adjusted_complex_actions_type_summary.csv)
+- [daily_adjusted_complex_actions_tail_summary.csv](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/daily/evidence_assets/daily_adjusted_complex_actions_tail_audit/daily_adjusted_complex_actions_tail_summary.csv)
+- [daily_adjusted_ticker_change_tail.csv](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/daily/evidence_assets/daily_adjusted_complex_actions_tail_audit/daily_adjusted_ticker_change_tail.csv)
+- [daily_adjusted_non_cd_dividend_tail.csv](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/daily/evidence_assets/daily_adjusted_complex_actions_tail_audit/daily_adjusted_non_cd_dividend_tail.csv)
+- [daily_adjusted_complex_actions_type_summary.csv](C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/daily/evidence_assets/daily_adjusted_complex_actions_tail_audit/daily_adjusted_complex_actions_type_summary.csv)
 
 ## Hallazgo central
 

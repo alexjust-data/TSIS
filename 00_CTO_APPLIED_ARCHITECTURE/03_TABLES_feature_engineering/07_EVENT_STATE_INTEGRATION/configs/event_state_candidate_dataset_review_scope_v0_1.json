@@ -1,0 +1,88 @@
+{
+  "scope_id": "event_state_candidate_dataset_review_scope_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS",
+  "date": "2026-07-24",
+  "review_target": {
+    "execution_run_id": "event_state_bounded_execution_chain_execution_v0_1_20260724T185356Z",
+    "execution_final_manifest": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\07_EVENT_STATE_INTEGRATION\\runs\\event_state_bounded_execution_chain_execution_v0_1_20260724T185356Z\\final_manifest.json",
+    "physical_validation_run_id": "event_state_bounded_execution_chain_physical_validation_v0_1_20260724T193214Z",
+    "physical_validation_final_manifest": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\07_EVENT_STATE_INTEGRATION\\runs\\event_state_bounded_execution_chain_physical_validation_v0_1_20260724T193214Z\\final_manifest.json"
+  },
+  "expected_status": {
+    "execution_status": "CLOSED_PASS_WITH_RESTRICTIONS_CANDIDATE_OUTPUT",
+    "physical_validation_status": "CLOSED_PASS_WITH_RESTRICTIONS",
+    "physical_validation_hard_failures": 0
+  },
+  "expected_counts": {
+    "requested_contexts": 9,
+    "event_instances_created": 3,
+    "event_window_bindings_created": 3,
+    "instrument_session_projections_created": 9,
+    "market_state_bindings_found": 8,
+    "event_state_candidate_records_emitted": 8,
+    "blocked_contexts": 1,
+    "missing_exact_market_state_bindings": 1,
+    "multiple_exact_market_state_bindings": 0,
+    "fallback_uses": 0,
+    "hard_validation_failures": 0
+  },
+  "identity_authority": {
+    "event_type_id": "event_type:market_data:session_opened",
+    "event_family_id": "event_family:market_data:session_lifecycle",
+    "event_subject_scope": "exchange_session",
+    "event_state_profile_id": "event_state_core_four_intraday_profile_v0_1",
+    "source_market_state_profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "source_market_state_physical_profile_id": "core_four_market_state_profile_v0_1",
+    "event_window_definition_id": "event_window_definition:market_data:session_opened:at_open_v0_1",
+    "state_role": "at_event",
+    "consumption_legality": "decision_safe",
+    "integration_status": "EVENT_STATE_INTEGRATED_WITH_RESTRICTIONS",
+    "quality_status": "PASS_WITH_RESTRICTIONS"
+  },
+  "required_review_findings": [
+    "event_state_atomicity_preserved",
+    "native_event_instance_identity_is_exchange_session",
+    "instrument_projection_separate_from_event_instance_identity",
+    "market_state_exact_binding_policy_preserved",
+    "blocked_context_preserved",
+    "state_role_and_consumption_legality_separate",
+    "lineage_and_restrictions_preserved",
+    "non_official_candidate_only_status_preserved"
+  ],
+  "required_restriction_codes": [
+    "bounded_execution_chain_candidate_output_only",
+    "non_official_scale_c_market_state_candidate_source",
+    "source_market_state_physical_profile_alias_preserved",
+    "instrument_projection_from_authorized_scope_not_master_lifecycle_revalidated",
+    "event_state_downstream_consumption_prohibited",
+    "source_market_state_restrictions_preserved"
+  ],
+  "allowed_decisions": [
+    "APPROVED_AS_BOUNDED_CANDIDATE_DATASET_EVIDENCE_WITH_RESTRICTIONS_NO_PROMOTION",
+    "BLOCKED_PENDING_CANDIDATE_DATASET_FINDINGS",
+    "REJECTED_AS_EVENT_STATE_CANDIDATE_DATASET_EVIDENCE"
+  ],
+  "closed_boundaries": {
+    "event_type_registry_population": false,
+    "event_detection_execution": false,
+    "unbounded_event_instance_execution": false,
+    "unbounded_event_window_execution": false,
+    "unbounded_market_state_consumption": false,
+    "event_state_materialization": false,
+    "official_event_state_profile_promotion": false,
+    "official_event_state_dataset_promotion": false,
+    "official_parquet_write": false,
+    "production": false,
+    "downstream_consumption": false
+  },
+  "allowed_outputs": [
+    "pre_manifest.json",
+    "heartbeat.json",
+    "candidate_dataset_review_matrix.json",
+    "candidate_dataset_review_report.json",
+    "candidate_dataset_review_decision.json",
+    "final_manifest.json",
+    "event_state_candidate_dataset_review_readout_v0_1.md"
+  ],
+  "next_gate_after_approval": "event_state_profile_promotion_review_authorization_v0_1"
+}

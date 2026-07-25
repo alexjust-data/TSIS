@@ -1,0 +1,187 @@
+{
+  "blocking_conditions": [
+    "invalid_parent_request",
+    "missing_request_fingerprint",
+    "ambiguous_profile_version",
+    "missing_profile_contract_hash",
+    "missing_universe_manifest_hash",
+    "ambiguous_source_resolution",
+    "missing_source_resolution",
+    "missing_source_fingerprint",
+    "missing_consumption_policy",
+    "partition_coverage_invariant_failure",
+    "builder_contract_missing",
+    "validator_contract_missing",
+    "quantitative_limits_exceeded",
+    "official_output_mode_requested_without_authority",
+    "physical_output_policy_missing",
+    "plan_contains_runtime_path_or_machine_state"
+  ],
+  "contract_id": "market_state_execution_plan_contract_v0_1",
+  "date": "2026-07-24",
+  "execution_plan_fingerprint_policy": {
+    "algorithm_family": "sha256_over_canonical_json",
+    "exclude_fields": [
+      "created_at_utc",
+      "run_start_time",
+      "machine_name",
+      "temporary_output_paths",
+      "heartbeat_state",
+      "log_paths",
+      "wall_clock_runtime_values"
+    ],
+    "include_blocks": [
+      "request_fingerprint",
+      "resolved_profile",
+      "resolved_universe_and_scope",
+      "resolved_calendar",
+      "resolved_sources",
+      "partition_and_coverage",
+      "resolved_builders",
+      "resolved_validators",
+      "output_plan",
+      "quantitative_limits"
+    ],
+    "same_request_same_resolved_authorities_same_plan_fingerprint": true
+  },
+  "field_blocks": {
+    "genealogy": [
+      "execution_plan_id",
+      "execution_plan_contract_version",
+      "request_id",
+      "request_fingerprint",
+      "created_at_utc",
+      "planner_id",
+      "planner_version",
+      "planner_contract_hash"
+    ],
+    "output_plan": [
+      "output_mode",
+      "output_format",
+      "output_schema_id",
+      "output_schema_hash",
+      "partition_policy_id",
+      "candidate_output_root_authority",
+      "maximum_files",
+      "maximum_rows",
+      "maximum_bytes",
+      "manifest_requirements",
+      "lineage_requirements",
+      "hash_requirements"
+    ],
+    "partition_and_coverage": [
+      "requested_partitions",
+      "reusable_validated_partitions",
+      "partitions_to_build",
+      "blocked_partitions",
+      "missing_partitions",
+      "quarantined_partitions"
+    ],
+    "quantitative_limits": [
+      "maximum_instruments",
+      "maximum_sessions",
+      "maximum_contexts",
+      "maximum_source_rows",
+      "maximum_output_rows",
+      "maximum_output_bytes",
+      "maximum_partitions"
+    ],
+    "resolved_builders": [
+      "builder_id",
+      "builder_version",
+      "builder_contract_id",
+      "builder_contract_hash",
+      "input_source_aliases",
+      "output_variable_ids",
+      "temporal_cutoff_policy_id",
+      "temporal_cutoff_policy_hash"
+    ],
+    "resolved_profile": [
+      "resolved_profile_id",
+      "resolved_profile_version",
+      "profile_contract_id",
+      "profile_contract_hash",
+      "profile_artifact_validation_run",
+      "expected_grain",
+      "expected_schema_id",
+      "expected_schema_hash",
+      "required_information_object_ids",
+      "required_state_variable_ids"
+    ],
+    "resolved_sources": [
+      "source_alias",
+      "dataset_id",
+      "dataset_version",
+      "view_id",
+      "contract_id",
+      "contract_hash",
+      "schema_id",
+      "schema_hash",
+      "physical_location_authority",
+      "content_fingerprint",
+      "coverage_manifest_hash",
+      "consumption_policy_id",
+      "consumption_policy_hash"
+    ],
+    "resolved_universe_and_scope": [
+      "resolved_universe_definition_id",
+      "resolved_universe_version",
+      "universe_manifest_path",
+      "universe_manifest_hash",
+      "instrument_count",
+      "resolved_instrument_ids_or_manifest_ref",
+      "resolved_session_dates_or_manifest_ref",
+      "resolved_exchange_scope",
+      "resolved_calendar_authority_id",
+      "resolved_calendar_version",
+      "instrument_session_context_count"
+    ],
+    "resolved_validators": [
+      "validator_id",
+      "validator_version",
+      "validator_contract_hash",
+      "validation_scope",
+      "blocking_severity",
+      "expected_validation_reports"
+    ]
+  },
+  "hard_boundaries": {
+    "dataset_registry_write_allowed": false,
+    "downstream_consumption_allowed": false,
+    "execution_plan_creation_allowed": false,
+    "market_state_builder_execution_allowed": false,
+    "market_state_materializer_execution_allowed": false,
+    "market_state_validator_execution_allowed": false,
+    "official_market_state_dataset_promotion_allowed": false,
+    "official_market_state_parquet_write_allowed": false,
+    "production_allowed": false,
+    "resolver_execution_allowed": false,
+    "source_data_reads_allowed": false
+  },
+  "invariants": {
+    "execution_plan_derives_from_exactly_one_request": true,
+    "materializer_may_not_re_resolve": true,
+    "one_required_source_alias_exactly_one_authorized_resolution": true,
+    "partial_execution_not_automatically_authorized_v0_1": true,
+    "plan_status_separate_from_blocking_findings": true,
+    "requested_partitions_equal_reusable_plus_to_build_plus_blocked_plus_missing_plus_quarantined": true
+  },
+  "next_allowed_gate": "market_state_profile_resolver_design_v0_1",
+  "parent_request_contract": "market_state_request_contract_v0_1",
+  "plan_status_model": [
+    "draft",
+    "resolved",
+    "blocked",
+    "authorized_for_execution",
+    "consumed",
+    "superseded",
+    "quarantined"
+  ],
+  "resolution_classes": [
+    "invalid_request",
+    "unresolvable_request",
+    "partially_resolvable_request",
+    "fully_resolved_request"
+  ],
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION"
+}

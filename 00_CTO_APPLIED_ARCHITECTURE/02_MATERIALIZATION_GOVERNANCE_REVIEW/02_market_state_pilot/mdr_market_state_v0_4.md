@@ -196,49 +196,49 @@ This means:
                                                                                                                                              modes                                           existence and physical
                                                                                                                                                                                              materialization.
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\market_state_event_state_composition_contract_v0_1.md`    `v0_1`; primary key  `documented_target`        Defines the
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\market_state_event_state_composition_contract_v0_1.md`    `v0_1`; primary key  `documented_target`        Defines the
                                                                                                                                              and composition                                 implementation-facing
                                                                                                                                                                                              composition and
                                                                                                                                                                                              identity of Market
                                                                                                                                                                                              State.
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\market_state_coverage_and_lookback_policy_v0_1.md`        `v0_1`; coverage,    `documented_target`        Governs scope,
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\market_state_coverage_and_lookback_policy_v0_1.md`        `v0_1`; coverage,    `documented_target`        Governs scope,
                                                                                                                                              lookback and                                    denominator, lookback
                                                                                                                                              promotion gates                                 and promotion
                                                                                                                                                                                              restrictions.
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_builder_contract_v0_1.md`                           `v0_1`; flow,        `documented_target`        Governs future
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_builder_contract_v0_1.md`                           `v0_1`; flow,        `documented_target`        Governs future
                                                                                                                                              manifest and                                    controlled realization
                                                                                                                                              acceptance criteria                             once authorization
                                                                                                                                                                                              exists.
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_observable_eligibility_contract_v0_1.md`            `v0_1`               `documented_target`        Governs component
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_observable_eligibility_contract_v0_1.md`            `v0_1`               `documented_target`        Governs component
                                                                                                                                                                                              eligibility for Market
                                                                                                                                                                                              State.
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_decision_timestamp_policy_v0_1.md`                  `v0_1`               `documented_target`        Governs decision-time
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_decision_timestamp_policy_v0_1.md`                  `v0_1`               `documented_target`        Governs decision-time
                                                                                                                                                                                              legality.
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_snapshot_roles_contract_v0_1.md`                    `v0_1`               `documented_target`        Governs permitted state
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_snapshot_roles_contract_v0_1.md`                    `v0_1`               `documented_target`        Governs permitted state
                                                                                                                                                                                              roles where applicable.
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_contract_v0_1.md`        `v0_1`               `documented_target`        Governs lineage from
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\state_raw_to_consumption_lineage_contract_v0_1.md`        `v0_1`               `documented_target`        Governs lineage from
                                                                                                                                                                                              sources to state
                                                                                                                                                                                              consumption.
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\canonical_schemas\outputs\market_state_table_schema_contract.md`                   current candidate    `documented_target`        Defines expected
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\canonical_schemas\outputs\market_state_table_schema_contract.md`                   current candidate    `documented_target`        Defines expected
                                                                                                                                              schema contract                                 physical structure
                                                                                                                                                                                              without implying
                                                                                                                                                                                              materialization.
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\contract_registry\dataset_contracts\market_state_table_dataset_contract_v0_1.md`   `v0_1`               `documented_target`        Defines dataset
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\contract_registry\dataset_contracts\market_state_table_dataset_contract_v0_1.md`   `v0_1`               `documented_target`        Defines dataset
                                                                                                                                                                                              identity, grain,
                                                                                                                                                                                              version and scope.
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\data_consumption_policies\market_state_table_consumption_policy.md`                current policy       `documented_target`        Governs permitted and
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\data_consumption_policies\market_state_table_consumption_policy.md`                current policy       `documented_target`        Governs permitted and
                                                                                                                                                                                              blocked consumers.
 
-  `C:\TSIS_Data\01_TSIS_backtest_SmallCaps\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md`            current status rows  `verified_current_state`   Confirms official
+  `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\outputs\data_foundation_outputs_status_matrix_v0_1.md`            current status rows  `verified_current_state`   Confirms official
                                                                                                                                              for Market State                                target not materialized
                                                                                                                                                                                              and controlled
                                                                                                                                                                                              candidates existing but

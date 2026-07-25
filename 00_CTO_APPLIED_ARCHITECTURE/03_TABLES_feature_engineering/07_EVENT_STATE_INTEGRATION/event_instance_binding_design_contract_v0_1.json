@@ -1,0 +1,155 @@
+{
+  "contract_id": "event_instance_binding_design_contract_v0_1",
+  "design_id": "event_instance_binding_design_v0_1",
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+  "date": "2026-07-24",
+  "scope": "session_opened_exchange_session_event_instance_identity_design",
+  "authority_binding": {
+    "event_type_id": "event_type:market_data:session_opened",
+    "event_family_id": "event_family:market_data:session_lifecycle",
+    "event_type_definition_hash": "be5a176f5047a606bb4dfb75edf740fcc4dadbfa1acc6f4f25a530798bec7d16",
+    "registry_snapshot_id": "tsis_event_type_registry_v0_1_post_initial_admission_001",
+    "registry_snapshot_sha256": "f3627c8b44062081c8e2f2775bffbd283bd31f2ca1e876aa7469fd6586425c43",
+    "admission_review_id": "event_type_initial_admission_review_v0_1_20260724T111500Z",
+    "admission_status": "accepted_with_restrictions",
+    "accepted_subject_scope": "exchange_session"
+  },
+  "calendar_authority": {
+    "source_table_id": "001",
+    "source_table_name": "market_calendar",
+    "data_foundation_conclusion": "PROVEN_RESTRICTED_DATASET",
+    "calendar_version": "governed_exchange_session_calendar_xnys_v0_1",
+    "calendar_binding_run_id": "governed_exchange_session_calendar_binding_validation_v0_1_20260723T064928Z",
+    "calendar_source_snapshot_fingerprint": "8b43cda89c1da0dc78e618e46f20697a2832bd13ca7599e60989f01b701ce967",
+    "bound_parquet_sha256": "79a458a3585011ecec7d8153b78f8564834b24c1fb95d3718c6f4d1fea63bc00",
+    "exchange_id_scope": [
+      "XNYS"
+    ],
+    "timezone_authority": "America/New_York"
+  },
+  "canonical_event_instance_grain": {
+    "native_subject_scope": "exchange_session",
+    "grain_statement": "one native session_opened Event Instance per event_type_id + exchange_id + session_date + calendar_version + governed open timestamp",
+    "required_key_fields": [
+      "event_type_id",
+      "exchange_id",
+      "session_date",
+      "calendar_version",
+      "event_anchor_timestamp_utc"
+    ],
+    "required_lineage_fields": [
+      "event_type_definition_hash",
+      "registry_snapshot_id",
+      "registry_snapshot_sha256",
+      "calendar_source_snapshot_fingerprint",
+      "calendar_row_fingerprint"
+    ],
+    "forbidden_native_key_fields": [
+      "instrument_id",
+      "ticker",
+      "first_observed_trade_timestamp",
+      "strategy_id",
+      "outcome_label",
+      "execution_state"
+    ]
+  },
+  "event_instance_id_policy": {
+    "algorithm": "sha256",
+    "namespace": "tsis_event_instance_v0_1",
+    "canonical_string_delimiter": "|",
+    "canonical_string_fields": [
+      "namespace",
+      "event_type_id",
+      "event_type_definition_hash",
+      "event_subject_scope",
+      "exchange_id",
+      "session_date",
+      "event_anchor_timestamp_utc",
+      "calendar_version",
+      "calendar_row_fingerprint"
+    ],
+    "determinism_rule": "same governed exchange-session occurrence under same registry and calendar authority yields same event_instance_id",
+    "correction_rule": "changed calendar authority, corrected open timestamp or changed calendar_row_fingerprint requires versioning or supersession, not silent overwrite"
+  },
+  "timestamp_policy": {
+    "event_anchor_timestamp_utc": "session_open_utc from governed calendar row",
+    "first_observable_timestamp_utc": "calendar authority may make the scheduled open knowable before the occurrence; the event occurrence cannot be true before event_anchor_timestamp_utc",
+    "detection_timestamp_utc": "not_applicable_for_calendar_authority_v0_1",
+    "binding_created_at_utc": "required only when a future execution creates a registry or dataset row",
+    "source_record_effective_from": "optional lineage field if the calendar source exposes an effective-from timestamp",
+    "forbidden_timestamp_equivalence": [
+      "event_anchor_timestamp_utc == first_observed_trade_timestamp",
+      "calendar knowledge timestamp == event occurrence timestamp"
+    ]
+  },
+  "detector_policy": {
+    "detector_required": false,
+    "rationale": "session_opened is sourced from governed calendar authority, not inferred from price or trade observations",
+    "future_detector_id_allowed": false
+  },
+  "instrument_projection_policy": {
+    "instrument_id_in_native_event_instance_identity": false,
+    "projection_required_for_instrument_contexts": true,
+    "projection_kind": "future_instrument_session_association",
+    "projection_statement": "one exchange-session Event Instance may be associated with many instrument-session contexts under a future design; that association cannot alter the native event_instance_id",
+    "future_projection_must_resolve": [
+      "instrument_id",
+      "instrument_exchange_id",
+      "session_date",
+      "listing_status",
+      "instrument_lifecycle_status",
+      "association_policy_id",
+      "association_fingerprint"
+    ],
+    "instrument_halted_at_open_policy": "does_not_invalidate_exchange_session_event; belongs to future instrument projection, Market State, Event State or Execution State policy"
+  },
+  "exception_policy": {
+    "weekends": "no instance when no governed trading session row exists",
+    "holidays": "no instance when no governed trading session row exists; holiday absence inference is not an Event Instance",
+    "exceptional_closures": "follow governed calendar authority; corrections require supersession/version policy",
+    "delayed_exchange_openings": "not admitted unless encoded by governed calendar authority or future event type",
+    "early_closes": "do not change session_opened anchor but must be preserved as calendar lineage where available",
+    "dst_transitions": "resolved only through governed calendar timestamps and timezone authority",
+    "non_xnys_sessions": "not authorized by v0.1 design"
+  },
+  "supersession_policy": {
+    "required_fields_for_future_execution": [
+      "event_instance_version",
+      "supersedes_event_instance_id",
+      "superseded_by_event_instance_id",
+      "correction_reason",
+      "authority_snapshot_hash",
+      "supersession_created_at_utc"
+    ],
+    "silent_timestamp_overwrite_allowed": false
+  },
+  "non_executable_example": {
+    "status": "illustrative_only_not_registered_instance",
+    "event_type_id": "event_type:market_data:session_opened",
+    "exchange_id": "XNYS",
+    "session_date": "2026-07-24",
+    "calendar_version": "governed_exchange_session_calendar_xnys_v0_1",
+    "event_anchor_timestamp_utc": "<session_open_utc_from_governed_calendar>",
+    "event_instance_id": "sha256(tsis_event_instance_v0_1|...canonical fields...)"
+  },
+  "execution_boundaries": {
+    "event_instance_binding_execution_authorized": false,
+    "event_instances_created": 0,
+    "historical_calendar_rows_consumed": 0,
+    "physical_parquet_reads_allowed": false,
+    "source_market_data_rows_read_allowed": 0,
+    "detector_execution_authorized": false,
+    "instrument_projection_execution_authorized": false,
+    "event_window_binding_execution_authorized": false,
+    "market_state_physical_consumption_authorized": false,
+    "event_state_builder_execution_authorized": false,
+    "event_state_materialization_authorized": false,
+    "downstream_consumption_authorized": false,
+    "production_authorized": false
+  },
+  "next_gate_recommendation": {
+    "immediate_next_gate_if_explicitly_authorized": "event_window_binding_design_authorization_v0_1",
+    "subsequent_gate": "market_state_profile_compatibility_design_authorization_v0_1",
+    "event_instance_binding_execution_authorization": "not_recommended_until_window_and_compatibility_designs_are closed"
+  }
+}

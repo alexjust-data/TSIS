@@ -40,7 +40,7 @@ profiles are parallel flags over the base denominator, not sequential filters.
 ## Autoridad operativa
 
 ```text
-01_TSIS_backtest_SmallCaps/01_foundations
+01_TSIS_DATA_FOUNDATION/01_foundations
 ```
 
 ## Contratos principales
@@ -58,8 +58,8 @@ profiles are parallel flags over the base denominator, not sequential filters.
 ## Configs versionadas
 
 ```text
-01_TSIS_backtest_SmallCaps/configs/data_foundation_outputs/scanner_definitions/trade_station_like_scanner_v0_1.yaml
-01_TSIS_backtest_SmallCaps/configs/data_foundation_outputs/scanner_definitions/broad_in_play_discovery_scanner_v0_1.yaml
+01_TSIS_DATA_FOUNDATION/configs/data_foundation_outputs/scanner_definitions/trade_station_like_scanner_v0_1.yaml
+01_TSIS_DATA_FOUNDATION/configs/data_foundation_outputs/scanner_definitions/broad_in_play_discovery_scanner_v0_1.yaml
 ```
 
 Regla:
@@ -95,19 +95,19 @@ Semantica requerida:
 Builder:
 
 ```text
-01_TSIS_backtest_SmallCaps/scripts/materialize_daily_scanner_candidates_table.py
+01_TSIS_DATA_FOUNDATION/scripts/materialize_daily_scanner_candidates_table.py
 ```
 
 Test:
 
 ```text
-01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder.py
+01_TSIS_DATA_FOUNDATION/tests/data_foundation_outputs/test_daily_scanner_candidates_table_builder.py
 ```
 
 Notebook de inspeccion:
 
 ```text
-01_TSIS_backtest_SmallCaps/01_research/notebooks/data_foundation_outputs/daily_scanner_candidates_replay_view_v0_1.ipynb
+01_TSIS_DATA_FOUNDATION/01_research/notebooks/data_foundation_outputs/daily_scanner_candidates_replay_view_v0_1.ipynb
 ```
 
 ## Primer replay controlado

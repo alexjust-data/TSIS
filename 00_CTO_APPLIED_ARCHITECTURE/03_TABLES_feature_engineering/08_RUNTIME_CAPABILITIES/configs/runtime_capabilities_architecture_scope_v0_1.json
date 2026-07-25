@@ -1,0 +1,46 @@
+{
+  "architecture_layer": "runtime_capabilities",
+  "authority_boundary": {
+    "architecture_recording_allowed": true,
+    "cache_write_allowed": false,
+    "dataset_registry_write_allowed": false,
+    "downstream_consumption_allowed": false,
+    "event_state_dataset_materialization_allowed": false,
+    "event_state_materializer_execution_allowed": false,
+    "execution_planner_implementation_allowed": false,
+    "market_state_dataset_materialization_allowed": false,
+    "market_state_materializer_execution_allowed": false,
+    "official_dataset_promotion_allowed": false,
+    "production_allowed": false,
+    "request_contract_design_allowed": false,
+    "request_resolver_implementation_allowed": false,
+    "source_data_reads_allowed": false
+  },
+  "covered_capability_classes": [
+    "request_contract",
+    "profile_resolver",
+    "source_resolver",
+    "execution_planner",
+    "materializer",
+    "validator",
+    "dataset_registry",
+    "cache_or_idempotency_index",
+    "run_lifecycle"
+  ],
+  "current_trigger": "Event State semantic/profile chain is closed, but operational generation requires a reusable runtime capabilities layer.",
+  "date": "2026-07-24",
+  "first_target_capability_after_this_gate": "market_state_on_demand",
+  "gate": "runtime_capabilities_architecture_v0_1",
+  "next_allowed_gate": "market_state_on_demand_capability_design_authorization_v0_1",
+  "purpose": "Define TSIS request-execution capability grammar before Market State on-demand design.",
+  "required_separations": {
+    "candidate_evidence_vs_consumable_dataset": true,
+    "capability_architecture_vs_materializer_implementation": true,
+    "dataset_registry_vs_profile_registry": true,
+    "request_design_vs_request_execution": true,
+    "semantic_profile_vs_physical_dataset": true
+  },
+  "scope_id": "runtime_capabilities_architecture_scope_v0_1",
+  "status": "RECORDED_ARCHITECTURE_NO_EXECUTION",
+  "subsequent_target_capability": "event_state_on_demand"
+}

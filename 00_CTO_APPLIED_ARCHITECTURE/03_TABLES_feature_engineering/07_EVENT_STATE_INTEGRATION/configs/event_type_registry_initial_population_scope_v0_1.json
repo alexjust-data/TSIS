@@ -1,0 +1,66 @@
+{
+  "scope_id": "event_type_registry_initial_population_scope_v0_1",
+  "authorization_id": "event_type_registry_initial_population_authorization_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_CONSUMED",
+  "date": "2026-07-24",
+  "scope": "initial_candidate_event_family_and_type_population_only",
+  "governing_inputs": [
+    "../event_state_event_policy_v0_1.md",
+    "../event_type_or_event_family_contract_design_v0_1.md",
+    "../event_type_or_event_family_contract_design_contract_v0_1.json",
+    "../event_type_registry_seed_design_v0_1.md",
+    "../event_type_registry_seed_design_contract_v0_1.json"
+  ],
+  "registry_snapshot": {
+    "registry_id": "tsis_event_type_registry",
+    "base_registry_version": "v0_1",
+    "snapshot_id": "tsis_event_type_registry_v0_1_candidate_population_001",
+    "snapshot_file": "../event_type_registry_initial_population_snapshot_v0_1.json",
+    "readout_file": "../event_type_registry_initial_population_readout_v0_1.md"
+  },
+  "authorized_entries": {
+    "maximum_family_entries": 2,
+    "maximum_type_entries": 2,
+    "allowed_initial_status": "investigational_candidate",
+    "contract_draft_status_allowed": false,
+    "accepted_status_allowed": false,
+    "accepted_with_restrictions_status_allowed": false,
+    "family_entries": [
+      "event_family:regulatory:trading_halt",
+      "event_family:market_data:session_lifecycle"
+    ],
+    "type_entries": [
+      "event_type:regulatory:halt_resumed",
+      "event_type:market_data:session_opened"
+    ]
+  },
+  "namespace_extension": {
+    "regulatory_candidate_namespace_allowed": true,
+    "reason": "The seed design already recognizes regulatory as an event_domain; halt_resumed requires a regulatory namespace for candidate identity.",
+    "accepted_regulatory_family_created": false
+  },
+  "required_boundaries": {
+    "accepted_event_families": 0,
+    "accepted_event_types": 0,
+    "event_detection_execution_authorized": false,
+    "event_instances_created": 0,
+    "event_window_binding_authorized": false,
+    "market_state_physical_consumption_authorized": false,
+    "event_state_builder_execution_authorized": false,
+    "event_state_integration_execution_authorized": false,
+    "event_state_materialization_authorized": false,
+    "event_state_physical_validation_authorized": false,
+    "official_event_state_profile_promotion_authorized": false,
+    "official_event_state_dataset_promotion_authorized": false,
+    "production_authorized": false,
+    "downstream_consumption_authorized": false
+  },
+  "specific_policy_requirements": [
+    "event_type:regulatory:halt_resumed remains distinct from first post-halt trade unless future admission proves equality",
+    "event_type:market_data:session_opened uses governed regular_session_open_timestamp, not first_observed_trade_timestamp",
+    "candidate entries do not encode strategy, outcome, profitability, tradability or execution capacity",
+    "Execution State concepts such as locates, slippage, broker availability, routing, fills and costs remain outside Event Type identity"
+  ],
+  "next_allowed_gate_after_population": "event_type_initial_admission_review_authorization_v0_1",
+  "next_gate_requires_explicit_authorization": true
+}

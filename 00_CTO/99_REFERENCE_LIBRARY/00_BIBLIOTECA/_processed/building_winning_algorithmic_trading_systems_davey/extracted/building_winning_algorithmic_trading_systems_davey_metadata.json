@@ -1,0 +1,19 @@
+﻿{
+    "book_id":  "building_winning_algorithmic_trading_systems_davey",
+    "title":  "Building Winning Algorithmic Trading Systems",
+    "author":  "Kevin J. Davey",
+    "source_pdf":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Building_Winning_Algorithmic_Trading_Systems_-_Kevin_J_Davey.pdf",
+    "processed_root":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\building_winning_algorithmic_trading_systems_davey",
+    "source_copy":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_processed\\building_winning_algorithmic_trading_systems_davey\\source\\original.pdf",
+    "pages":  284,
+    "file_size_bytes":  6309632,
+    "sha256":  "ccf1c0548049b9646a5fadd6ceed5be397f98129982b9e32d5d1b9961a02f8b8",
+    "created_utc":  "2026-07-25T05:08:55+00:00",
+    "total_words":  88495,
+    "text_pages":  253,
+    "toc_items":  230,
+    "requires_ocr":  false,
+    "status":  "indexed",
+    "working_text_persisted":  false,
+    "ocr_completed":  false
+}

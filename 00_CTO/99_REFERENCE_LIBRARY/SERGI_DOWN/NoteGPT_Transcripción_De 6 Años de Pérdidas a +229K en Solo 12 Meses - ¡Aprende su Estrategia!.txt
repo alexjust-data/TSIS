@@ -1,0 +1,275 @@
+00:00:00 - 00:00:59
+Bienvenidos traders a este nuevo vídeo en el día de hoy nos encontramos en el primer vídeo en el primer episodio de una serie de charlas que vamos a estar realizando en el canal una serie de charlas con traders rentables y hoy para iniciar venimos aquí con sergi un Trader de small caps cuantitativo que es muy pero que muy rentable Y es que tan solo en el último mes en este mes de octubre de 2024 ha ganado más de 80,000 operando Este mercado Así que si te interesa saber cómo lo ha hecho y algún que otro
+
+00:00:30 - 00:01:31
+truco Quédate viendo toda esta charla porque se aporta un valor impresionante y para aquellos que por cierto queráis ver toda la charla pero también queráis comprobar que esto es real tenéis en la descripción de este vídeo uno sus redes sociales y dos su Track record verificado por Kino para que lo podáis chequear y podáis ver que esto es real así que dicho esto Dejad un like y vamos con el vídeo hay muchos ejemplos por ahí de gente que empezó con cuentas eso de 2000 3000 y ahora está ganando Eh pues
+
+00:01:00 - 00:01:57
+cinco cifras seis cifras al mes porque han ido creciendo la cuenta no no es porque retiren todo lo que sacan y con 2000 generan 100000 son naciones pequeñas y todo lo que quieras pero poca liquidez relativa poca liquidez para que se meta un institucional pero no para que te metas tú yo y mil pringos más como nosotros Claro Bienvenido sergi a esta primera charla que estamos realizando en mi canal primero de todo Quién es sergi bueno Coméntame tú un poco más vas a saberlo mejor que yo eh Bueno nada antes de nada Muchas gracias
+
+00:01:29 - 00:02:47
+Alex por por invitarme aquí a tu canal es un placer Eh bueno como como has dicho yo soy Trader de de smaps eh digamos soy un Trader cuantitativo desarrollo mis estrategias mediante métodos anál cuantitativo y test Entonces aunque aunque hago mi operativa de manera manual eh podría ser automatizable lo que pasa que bueno de momento es algo que está ahí pendiente a futuro de momento lo hago todo de manera manual y pues eh si hago rasgo exp de mi operativa un poco modo introducción Supongo que lo sabes mi operativa es eminentemente en
+
+00:02:06 - 00:03:14
+corto eso lo hao operaciones short y me limito únicamente a acciones de pequeña capitalización del mercado est de acuerdo Entonces entiendo que quizás haces operativa únicamente en short por algo en específico es decir Puede que haya algún tipo de que tú hayas detectado que hay alguna ventaja que est tipo de acciones pues son acciones que al final acaban destruyéndose o yéndose a cero con facilidad algo del estilo puede serí es exactamente eso básicamente operamos este tipo de de acciones porque
+
+00:02:43 - 00:03:50
+son acciones que tienen unos fundamentales deficientes entonces son acciones que mayor en la mayoría de casos pierden dinero acciones que están condenadas a desaparecer Entonces el motivo por el cual ellos están en bolsa es precisamente para recaudar dinero de los mercados entonces entonces eh están en bolsa para recaudar dinero no tienen dinero Qué hacen Pues no sé si se puede decir así tan alegremente porque supone que no se podría hacer no pero es lo que sucede digamos inflan artificialmente el
+
+00:03:16 - 00:04:21
+precio esto sucede Pues a raíz de una noticia que a veces pues es es real otras veces no es tan real otras veces es interpretable a veces ni se molestan lanzan noticias repetidas que salieron ya pues hace año o hace dos años la gente no se da cuenta ve una noticia y se lanza a comprarla no entonces Esto hace que los precios suban muchísimo es un digamos es una sobrevaloración puntual artificial muchas veces en base a noticias que no sustentan ese incremento en el en la valoración de la empresa Entonces eso lo que hace es que
+
+00:03:48 - 00:04:54
+Eh pues tienda a corregir el precio porque no es el valor real no de la empresa realmente eso es Entonces esto lo que hace es que final Bueno al principio puede haber muchos traders que se lancen a comprar porque ven la noticia yo que sé esta empresa eh que es una farmacéutica acaba de sacar una noticia de que tienen la cura el cáncer de pancrea se lanzan a comprarlo comprarlo comprarlo suben el precio luego miras en la noticia y pues a lo mejor lo que dicen es que acaban de iniciar un experimento que con suerte dentro de 10
+
+00:04:22 - 00:05:30
+años pues les dará resultados claro no es lo mismo Pues poco a poco eso se va poniendo en precio también hay mucha gente que se dedica a ponerse en cor como yo Eh entonces pues van haciendo que el precio revierta hacia la media y la estadística que esto deja porque esto no deja de ser un un ejemplo así global de lo que sucede Pero esto pasa todos los días con muchos nombres distintos eso Deja digamos una una una marea una estadística yacente común a todo este tipo de acciones tiende a forcer a los
+
+00:04:55 - 00:05:58
+cortos por eso es por lo que yo hago solamente corto de acuerdo entiendo que tú en tu en tu tipo de trading tienes algún tipo de de metodología desarrollada donde ya cazas más o menos este tipo de empresas e puedes observar según el tipo de noticia según el tipo de patrón del precio Cómo se ha estado comportando anteriormente no y ya pues te puedes hacer un poco medianamente una idea sobre si es bastante probable que que sea el caso no y las empiezas a shortear en cierto punto básicamente Bueno una parte dentro
+
+00:05:27 - 00:06:34
+de mi operativa está la parte de la Selección del activo que realmente no es no es excesivamente complejo Pero bueno eh Buscamos un tipo de cosas en esas acciones no nos ponemos a buscar una acción cualquiera que tenga una noticia lo que esperamos Más bien a que se produzca ese movimiento al Alfa explosivo no esperamos a que a que el precio se hinche realmente explote por por algún tipo de quizás de noticia como las que tú estás hablando o algún tipo de fundamento muchas veces no tienen ni noticia se disparan porque sí eh bueno
+
+00:06:00 - 00:07:01
+el porque sí no se sabe por es algún motivo tendrá pero no es por una noticia que s Yo igual es pues yo que se alguien que la está pompeando por detrás o de repente en un chat room de estos que tienen 1000 seguidores alguien se le ocurrió la idea de comprar eso y se lanzaron todos a comprarlo y hace que suba No el precio un poco como lo que pasó con GameStop no pero mucha menor escala otra escala bastante menos Sí pero pero con mucha más frecuencia Claro pues eso Por una parte está esa esa etapa en la cual seleccionamos las
+
+00:06:30 - 00:07:29
+acciones que operamos cada día y por otro estaría lo que es la operativa que en mi caso pues como es una operativa cuantitativa tengo mis estrategias Back testeadas eh y y y probadas a lo largo de años de histórico entonces lo que me limito es a buscar esos patrones que yo tengo identificados que funcionan cuando se dan en una de esas acciones que he preseleccionado pues tomo el Trade y y Meño lasas básicamente entonces de acuerdo para la gente que por ejemplo no sabe exactamente que sería un un tipo de
+
+00:07:00 - 00:08:06
+trading cuantitativo cómo cómo lo explicarías de una forma simple para para que cualquier persona lo entienda bueno en principio la principal característica del trading cuantitativo es que es un trading objetivo es decir en contraposición con el trading discrecional que que es un poco más subjetivo estás interpretando Pues aquí me parece queo una búsqueda de liquidez o un St o yo que sé Aquí hay una resistencia un soporte son cosas que a veces son muchas veces son subjetivas están abiertas a interpretación Entonces
+
+00:07:32 - 00:09:01
+el trading cuantitativo es es 100% objetivo tú buscas mediante métodos matemáticos digamos quantificar la ventaja estadística que te da un determinado patrón o un determinado que puede ser un patrón gráfico horario o lo que sea vaya Eh entonces es es es muy sencillo o sea muchas ventajas respecto al tring descricion tanto cuo eliminas toda la componente emocional y solamente te tienes que limitar a ejecutar lo que tu sistema 100% objetivo te dice vale en otros cons quizás pues la falta de adaptabilidad un trer discrecional Bueno
+
+00:08:17 - 00:09:18
+adaptar mejor a los cambios de Mercado que un Trader cuantitativo que al final está ejecutando en base a un p test es rígido no es un histórico de lo que pasó entonces bueno yo lo definir de de esa manera contraposición un poco con el PR excepcional Claro entiendo que una de las ventajas que como has comentado Tú realmente para mí que creo que es muy importante que que lo favorece mucho es el hecho de que al basarte sobre unas estadísticas no tienes el factor quizás de emociones de que te emocionas porque
+
+00:08:47 - 00:09:45
+crees que es una super buena oportunidad o o al final te puedes no puedes estar del todo seguro porque al ser subjetivo a veces como lo que viene siendo el trading e el trading discrecional pues no sabes del todo hasta que qué punto eso puede ser así en el caso el cuantitativo al final tú simplemente miras los datos y en cuanto eso se alínea con lo que tú estás buscando al final no hay más no digámoslo Así es mucho más fácil quizás en el aspecto psicológico o de gestión de emociones Exacto es esa esa es una
+
+00:09:15 - 00:10:17
+ventaja la mayor quizás de que tiene además también pues añadiría a la par con con esa la ventaja de que elimina cualquier atismo de duda digamos esta típica interpretación de esto Me parece que podría ser un largo o un corto yo que sé aquí me parece que sí pero me falla Esto entonces hay veces que uno se pierde en la duda y de esta manera con con un trading cuantitativo pues nunca hay duda porque todos los parámetros están considerados De antemano no no Por supuesto eso es algo que por ejemplo yo
+
+00:09:47 - 00:10:41
+Considero que a mí me pasa mucho y a mucha gente que hace mi tipo de trading de que te fijas en que hay cuat cco en confluencias o catalizadores como le quieras llamar para hacer una compra pero también en por el otro lado ves quizás dos o tres también para hacer una venta y al final tienes esa posible duda de si deberías entrar en compra o en venta en este caso Pues digamos lo que que quizás con el método cuantitativo lo tienes más sencillo por esa parte Exacto perfecto estupendo y digo tú por qué
+
+00:10:14 - 00:11:21
+motivo por ejemplo te de cantaste iniciarte en el método cuantitativo exactamente por esto que nos estás comentando o hay algo detrás empezaste quizás haciéndolo discrecionalmente Cómo fue un poco tus inicios Y por qué decidiste entrar a lo que viene siendo el trading small caps y hacerlo cuantitativo Eh vale bueno por orden yo llevo yo llevo ya 9 años en esto vale 9 años haciendo trading nunca O sea no siempre fui o tuve el mismo estilo que que tengo ahora no Empecé con small cap desde el principio Entonces ha sido
+
+00:10:47 - 00:12:07
+un camino de evolución desde desde que empezase en 2015 operando en forex que fue con lo que me inicié un poco como la mayoría al principio al más principio de todo pues era Era bastante discrecional discrecional cuando no tienes idea Pues solo puedes salir de una manera mal como salió también por otro lado mi cabeza digamos tiende hacia el análisis cuantitativo porque yo soy ingeniero de profesión entonces me encuentro cómodo entre certezas me encuentro cómodo entre números claro y enseguida cuando vi que
+
+00:11:28 - 00:12:37
+que no bueno que conseguía dar con la tecla yendo por el por la vía discrecional emp a intentar buscarme un poco las abichuelas por el lado cuantitativo eh Estuvo una fase de programación de algoritmos con con con metatrader 4 que era lo que usaba por entonces y Bueno luego la verdad que hubo un montón de fases estuve tuve una fase muy larga de operar futuros e tuve una fase algorítmica ya de programación de algoritmos un poco más más complejos esta parte digamos me moldeó un poco la manera de entender el trading
+
+00:12:02 - 00:13:21
+que tengo a día de hoy porque realmente es una operativa muy algorítmica la que yo tengo que como decía antes pues no no es automática las operaciones las meto manualmente entonces bueno el camino fue un poco ese desde desde lo más discrecional poco a poco evolucionando hacia lo cuantitativo a lo más objetivo cada vez utilizo más datos más estadísticas más e no solamente digamos me ciño cuantificar las métricas de un patrón que observo en el mercado sino que lo compagino con estadísticas del mercado
+
+00:12:41 - 00:13:43
+entonces una un estudio por un lado contextual de lo que estadísticamente tiene más probabilidad de pasar y por otro hago un estudio de mis patrones aplicados a ese grupo No ya preseleccionado de accioneso entonces entiendo Pues sí la verdad Entonces con al final yo creo que como bien has mencionado todo el mundo iniciamos Pues a través del forex que puede ser que es lo que más se veen las redes sociales lo que más llama la atención y lo que más vende desde afuera ya que pues bueno al final si no conoces
+
+00:13:14 - 00:14:25
+otra cosa es difícil empezar por otra cosa e por lo que entiendo y por como me has mencionado iniciaste por forex discrecionalmente no te iba muy bien luego cambiaste futuros y a otros mercados a partir de qué momento sentiste que lo que estabas haciendo empezaba a dar resultados Bueno yo llevo claro no lo dije antes llevo en small caps mercado de acciones de pequeña capitalización llevo desde agosto de 2023 desde el año pasado realmente agosto fue cuando me abrí mi primera cuenta y empecé a operar Bueno me inicié en mayo me
+
+00:13:53 - 00:15:06
+acerqué por primera vez Este mercado y empecé a aprender de ello noo del año pasado entonces llegué realmente llegué a small caps un poco eh atraído por por el ejemplo de muchos traders que hay en este mercado que obtiene muy buenos resultados ya desde hace muchos años y les seguía por por Twitter y un poco también o o negándome más bien a resignarme De no ser capaz de De lograr algo en el trading porque no había conseguido hacerlo con éxito en otros mercados no entonces en qué momento empeza a ver resultados pues
+
+00:14:32 - 00:15:52
+prácticamente no te voy a decir desde el día 1 eh que que llega smc porque no fue así pero desde más o menos noviembre diciembre del año pasado fue cuando las cosas empezaron a encajar a partir de ahí eh o sea claro yo como trabajo mucho con Back test y y hago mis análisis una hoja de Excel no y construyo ahí pues la curva de equity que debería reflejar a futuro Eh mi mi cuenta no a través de mi operativa Pues a pesar de no estar viendo resultados en octubre noviembre yo ya tenía un p test eh lo suficientemente robusto y
+
+00:15:12 - 00:16:22
+fiable a pesar de no tener resultados insisto vería la Luz entonces Si ves mis resultados de octubre noviembre del año pasado Pues no sé si bueno no s perdí poco gané poco o más o menos algo así Creo que creo que gané muy poco no sé $ o algo así mes y el otro igual gané 300 400 o algo así eh pero a pesar de que eran cantidades muy pequeñas porque también eh mi tamaño por posición era muy reducido tenía la confianza de ir desarrollando esta operativa y de ir creciendo cada vez más el tamaño eh porque tenía un claro al final tenías
+
+00:15:48 - 00:16:43
+unos datos que te avalaba que lo que estabas haciendo ibas por el camino correcto y que simplemente es cuestión de tiempo que que al final Pues vayan surgiendo esos resultados no es como al final pues como cualquier otro modelo matemático que Cuántas más veces sucede pues al final más se acerca a a la media no Por así decirlo no sé si lo estoy explicando del todo bien pero creo que se me comprende sí perfectamente s Vale pues Oye Entonces digamos lo que que para ti la tecla que que hizo ese click fue
+
+00:16:15 - 00:17:32
+realmente cambiar de de Mercado no lo que te permitió quizás seguir avanzando y seguir evolucionando hasta llegar al al lugar donde donde Pues bueno querías estar fue fue cambiar de Mercado sí totalmente totalmente porque Este mercado tiene unas condiciones muy únicas En comparación con con con todos los demás no por lo menos todos los demás me refiero los forex futuros incluso opciones tiene unas condiciones que lo hacen a la hora deamos recoger ineficiencias final es lo que el Trader que buscar
+
+00:16:54 - 00:18:01
+para poder sacarle provecho no porque realmente Cuanto más eficiente es un mercado menos oportunidad hay por definición eh Este mercado el mercado de las sm caps es muy ineficiente Entonces está plagado de oportunidad y ya te digo Pues sí en el último año he trabajado mucho sobre esta metodología porque eh llevo llevo 2 años dedicado única y exclusivamente al trading antes no era así entonces he invertido mucho más tiempo en estos últimos dos años de los que había invertido en los pues siete anteriores pero aún así también te digo
+
+00:17:27 - 00:18:36
+que eh los conocimientos técnicos que aplico y la metodología que aplico no es distinta ahora de la que aplicaba en futuros o de la que apliqué en mis últimos años en forex en estos otros mercados no lo no conseguí sacarle nada de provecho y sin embargo aquí pues de acuerdo es decir realmente los otros mercados pudiste desarrollar quizás ciertos conocimientos que no te servían en ese momento pero que a día de hoy en este otro mercado sí te está sí te está funcionando eso de acuerdo e en tu caso
+
+00:18:01 - 00:19:13
+tú por ejemplo tienes un un modelo de estrategia predefinida siempre buscas el mismo tipo de movimiento y el mismo tipo de de estrategia o tienes varias varios tipos de gatillos para entrar varios tipos de operaciones distintas o siempre te sueles basar siempre buscas lo mismo en cada operación eh yo tengo yo tengo distintos setups vale a día de hoy tengo Siete activos e setups que buscan sacar el movimiento de la acción en distintos puntos en distintos momentos no todos atacan el mismo grupo digamos contextual de
+
+00:18:37 - 00:19:44
+acciones un son específicos de un tipo de acción otras son de otro tipo de de acción Entonces está están digamos eh Son setups que están diseñados un poco para que no conflu nunca la entrada eh de dos setups distintos en el mismo momento en la misma acción lo que más bien lo que busco es repartir el el el riesgo dentro de distintos momentos que cada uno de esos setups va a tener también su propio stop asociado entonces pues de esta manera en vez de cargar la posición desde un inicio Pues yo que s ve una
+
+00:19:11 - 00:20:23
+acción que por contexto me gusta me encaja sé que las estadísticas son favorables al short y digo Pues yo que s me meto con el 100% de mi posición ahora no en lugar de lo que digo tengo voy a diseñar un abanico de de setups de de drones que a veces se dan todos muy pocas veces se dan todos veces se dan dos o tres y a lo mejor solamente se da uno no Pero a cada uno le asocio un peso relativo una un tamaño de posición y cada a medida que se va desarrollando la acción del precio y se van dando estos
+
+00:19:47 - 00:20:43
+patrones que soy capaz de reconocer Pues que coinciden con los que tengo bcos pues voy eh asignando nuevas entradas nuevas entradas a lo mejor Hay alguno que entro me saca Pero en otra entrada que me dio pues no me sacó entonces un poco es así como como no de acuerdo eso La verdad es que me parece Me parece muy top por el hecho de que al final no estarías poniendo todos los huevos en la misma cesta sino que al final pues lo estarías diversificando un poco y y me Mola un montón No es aspecto porque
+
+00:20:15 - 00:21:27
+sobre todo algo que te quería preguntar y es que yo claro yo estoy acostumbrado a operar en forex y algo que me surge que me viene en la cabeza con el tema de las acciones es por ejemplo tú cómo gestionas tu riesgo eh Para empezar voy a contar cómo lo hago yo porque en small gaps cada uno lo hace a su manera no a su manera pero hay hay muchos estilos diferentes de operativa entonces claro cada operativa tiene un enfoque óptimo Y entonces lo que yo te cuente del mío A lo mejor para otro Trader no tiene sentido no e y y lo
+
+00:20:55 - 00:22:16
+de otro Trader para mí pues tampoco tiene sentido y por eso lo hago de la manera que lo hago dicho esto primer lugar tener un Back test hecho de cada uno de estos setups da un montón de información me da información pues del rendimiento pasado no solo en el sentido positivo sino me da Pues la mayor serie de pérdidas que ha habido me da el máximo drown que ha habido me da porcentaje de acierto me da un montón de de métricas no que luego Setup por Setup me ayuda van a normalizar esa curva y poder compararla con los otros
+
+00:21:35 - 00:22:59
+Setup vale eh en función de la calidad del Setup yo pondero el riesgo básicamente la calidad del Setup depende de dos cosas de cuánto genera y con qué riesgo es decir el Setup el mejor Setup que tengo es el que más me genera con menos volatilidad de acuerdo e a partir de ahí va peor Entonces tú ponte un Setup que yo pienso siempre en en riesgos No si cada vez que hago una operación a riesgo ponte 100 es una imate que tengo un Setup que tiene que me da 1000 r en el Back test el máximo Dr fueron 100
+
+00:22:18 - 00:23:50
+pues este Setup En comparación con otro me de 500 riesgos de retorno pero solamente 10 máximo Dr para m el Setup bueno el mejor es el de 500 entonces Ese lo voy a sobreponderar con respecto al otro de acuerdo tienes metiendo más setups como tengo yo ahora siete al final se interrelaciona no Y entonces simplemente ponderas el riesgo en función de de estos parámetros cuando tienes toda la ensalada Setup metida en el mismo b e yo lo junto en un portfolio no entonces construyo lo que sería el equivalente de mi curva de equity
+
+00:23:07 - 00:24:22
+operando todos los setups Eh simultáneamente Esto me da a su vez el máximo draw down histórico del portfolio en su conjunto no coincide con la suma de los máximos drawdowns de Setup a Setup porque cada uno tiene la curva y cada uno se adapta mejor a unas fases del mercado entonces Esto hace que digamos la volatilidad del portfolio sea mucho mejor mucho menor la de Setup por Setup cada uno no cuando tengo ya todo esto sé cuál es el máximo drw down que que he tenido en el histórico digamos el máximo drw down histórico Y entonces a
+
+00:23:45 - 00:25:10
+partir de ahí es cuando empiezo a dimensionar la posición el tamaño de mi posición y el máximo draud histórico de mi portfolio han sido ponte riesgos pulo digo vale eh Cuál es el Dónde está mi mi mi límite mental de máxima pérdida acumulada que yo creo que puedo tolerar eh actualmente lo tengo puesto en un 20% no Entonces yo no quiero perder más de un 20% de mi cuenta si bien una mala racha que ha habido en el pasado de hecho lo lo un coeficiente de pesimismo no que multiplico por 1,33 el el máximo draud
+
+00:24:27 - 00:25:48
+down por si acaso el drón futuro fuese peor que el máximo que tengo entonces un poco pormenorizado la exposición no pero bueno cuando hago esto e dimension Entonces el tamaño de mi r de mi riesgo para que en el caso de que se de esa peor serí histórica a nivel de Máximo do down no suponga más de un 20% de mi cuenta de acuerdo de esta manera ya saco el riesgo porcentual ahora mismo para que te hagas una idea el riesgo porcentual operación que utilizo es de un 049 por no llega al 0,5 de acuerdo esto pues es el riesgo base porcentual
+
+00:25:08 - 00:26:40
+porque luego hay setups que le asigno más peso si son mejores hay setups que son peores y la aso menos peso e ya se trata de ir midiendo un poco la calidad del Setup Entiendo entonces día a día yo no pienso en una porcentaje máximo de pérdida o en una un número de r máximo yo no tengo un límite máximo de pérdidas diario por ejemplo porque ya lo tengo digamos limitado por ese histórico y por el dimensionamiento de mi posición [Música] no en small caps que utilizan una pérdida máxima diaria eh o utilizan distintos métodos la manera de
+
+00:25:54 - 00:27:13
+la que en la que lo hago yo hace que todos los que se den en un día los voy a tomar si se da un día muy muy malo voy a tener una pérdida muy grande porque no voy a cortar Antes de yo que sé no no tengo un Max los diario como tal eh yo sé que está acotado por la serie histórica que puede cambiar que puede llegar a ser peor Sí pero e ya entraríamos entonces en el ajuste de que habría que ir haciendo de los setups en este caso lo hago semana tras semana quea Estamos infraponderar cada vez más eh los setups que más riesgo
+
+00:26:34 - 00:27:31
+estén aportando al portfolio pero ya un poco no sé si verdad sí sí yo creo que se ha entendido y me parece algo muy muy top porque en este aspecto realmente eres la primera persona que conozco que lo hace así y me parece muy muy interesante No si lo he entendido bien corrígeme si me equivoco porque ya te digo no estoy para nada familiarizado en eso al final tú tienes gracias a todo el backes y gracias a todas las métricas toda la estadística todo lo que tienes e eh los cálculos de que realmente en tu
+
+00:27:03 - 00:27:56
+peor drawdown tú podrías perder como Bueno siempre en bolsa al final las cosas siempre obviamente pueden nunca puedes decir siempre o nunca puedes decir 100% pero un 20% no digámoslo así Por lo cual eso eso te permite como tú bien estabas diciendo antes poder eh tomar todas las operaciones que quieras en un día no tienes por qué rechazar ciertas oportunidades que tuvas por el hecho de que ya has pasado del máximo de operaciones diarias o de las pérdidas y puedes aprovechar incluso oportunidades
+
+00:27:29 - 00:28:38
+que otra forma no no estarías aprovechando Es que de hecho a ver si lo hago así tampoco es por capricho es porque he comprobado que pasaría si me pongo un Max do diario no me mejora la curva de hecho me la empeora ha muchos días claro hay muchos días que que sí estás Yo que sé empieza a operar y y empieza una mala otra mala otra mala otra mala de repente miro el pnl y digo [ __ ] qué estoy haciendo hoy o o diría Digamos si fuese más discrecional me daría que pensar qué estoy haciendo hoy pero realmente H no es que se me pase
+
+00:28:03 - 00:29:21
+por la cabeza porque sé que Eh Esto llega yo que sé e 13 del día eh Hay un cambio de sentimiento empieza a encajar empieza a entrar empieza a entrar todo bien final termino en verz de ese día si hubiese puesto un máximo de pérdida el que fuera pues ese día hubiese terminado habías perdido lo que tenías que perder y listo claro Eh Al final yo lo que miro no solamente es ganaría haciendo una cosa a la otra sino más bien Qué bonita está la curva No qué tan bonita está si digamos el retorno ajustado a la volatilidad y
+
+00:28:45 - 00:29:55
+mirando esta esta métrica en concreto forma que la que yo opero no es beneficioso utilizar un límite de pérdidas Claro entiendo no no la verdad es que tiene todo el sentido del mundo o sea es es s super super interesante y entiendo que como me has dicho antes todo este tipo de métricas las haces a través de algún software de Excel puede ser que que hayas comentado Sí todo lo hago a través de Excel o casi todo es es la piedra angular realmente de mi trading Ahí es donde tengo todos los setups es lo que utilizo para no
+
+00:29:21 - 00:30:24
+solamente B testear y y sacar todas estas métricas que te digo sino también para calcular el tamaño de las posiciones día a día eh Pues para calcular el el coste de de de los locat que son es una prima digamos que hay que pagar por tener el derecho de ponerse corto en una acción es donde voy recogiendo todas estas estadísticas y todas todas las Med Claro tú crees que por ejemplo claro esto imagino que varia mucho según el Trader según la persona pero según sobre todo el estilo que tengas pero es necesario tener ciertas
+
+00:29:52 - 00:31:00
+herramientas a tu alcance a tu disposición sobre todo para poder realizar un buen trading no sí sí totalmente vamos yo todas las herramientas que que tengo actualmente todas aquellas por las que pago pago felizmente por ellas quiero decir eh son todas me aportan algo que necesito Entonces si a lo largo de del día utilizo tres cuatro herramientas tampoco muchas más e las utilizo porque es que de otra manera pues o bien no podría conseguir los resultados que que consigo o bien se se convertiría en un proceso mucho más
+
+00:30:26 - 00:31:42
+tedioso Y yo que sé lo que fuera pero evidentemente sí hay que tener esto es no sé es como si uno se plantea eh yo que sé jugar un partido de Champions en chanclas pu no Claro J tienes que utilizar las zillas adado para poder sacar el máximo rendimiento posible evidentemente tú cuando estás ahí sentado delante de la pantalla estás compitiendo contra otros si tienen estas herramientas entonces eh eh yo creo que es es es Es necesario es imperativo va claro e después de haber comentado esto me pregunto para mucha gente que por
+
+00:31:04 - 00:32:24
+ejemplo te nos esté viendo ahora mismo y le interese el tema de del mundo del trading qué les recomendarías que si se quieren iniciar qué les recomendarías y después si crees que esto es para todo el mundo este tipo de trabajo TR en general habl Sí sí si lo luego lo quieres encarar quizás con en el mercado en el que tú te dedicas pero pero en general Yo creo que el trading puede ser para todo el mundo es decir no creo que haya que ser ni muy listo ni tener unas cualidades muy exóticas para conseguir vivir de esto pero por
+
+00:31:44 - 00:33:00
+las misma sí que creo que tiene que atraer mucho te tiene que encantar est dispuesto a poner todo el trabajo que hay que poner sobre la mesa porque realmente miles de horas las que hay que echar delante de las pantallas hasta resultados y y poder plantearse vivir de esto el el mensaje digamos que más vende que es el de yo que sé operar ahora y vivir de ello y ganar yo que sé 10,000 eur al mes eso no es así eh Esta no es la realidad por lo menos que yo he visto y que yo he experimentado en mis propias carnes e y
+
+00:32:22 - 00:33:31
+y no es la realidad que veo de traders que sé que son rentables que que pongo la mano de fuego por sus resultados y y que ademá No solamente pong la de fuego que son transparentes con sus resultados y cualquiera lo puede ver no entonces la realidad del Trader es una realidad de alguien que que muchas veces borda la obsesión con esto con eso del trading echa más horas que el reloj e digamos está dispuesto a llevar palos porque no va a ser llegar y besar el santo y que y que tiene una resiliencia
+
+00:32:56 - 00:34:04
+que que le hace levantarse y levantarse y levantarse todas las veces porque que tengas la suerte de caer en el lugar correcto en el momento correcto al lado de la gente correcta desde la primera desde el primer momento que piensas en trading ainos se piensa digamos se expresa en años no se expresa en mes claro no es algo rápido que que te digas me pongo a estudiar en tres meses y estoy sacando dinero al al mercado Es realmente algo costoso por ejemplo en tu caso claro me has comentado que has empezado
+
+00:33:30 - 00:34:46
+a tener resultados Desde que te has empezado a poner en serio con el tema de los smalls desde que has podido pues comprobar todo todo lo que es tu modelo cuantitativo y esto ha llevado años Bueno realmente hasta hasta el octavo año no empecé a ver resultados eh cuando me metí en small caps los empecé a ver bastante rápido pero tenía estos o años ant ya de trabajo no estoy explicando llego porque no no no no Claro eso pues claro uno uno se empieza a dar me empieza a dar a conocer un poco a raíz de Pues que me
+
+00:34:10 - 00:35:19
+empez ir bien con small caps llega a mi perfil y ve la curva de mi Kino la dejaré por aquí en pantalla ahora mismo para que la gente la pueda chequear sabes bueno es una página que se conecta con tu broker verifica tus resultados Entonces no hay manera era de de alterar esos resultados que se publican ahí no es como una forma de auditar entre comillas porque no son auditoría Pero bueno de verificar resultados no el que llega perfil de Twitter y a lo mejor ve mis resultados en Kino y ve que empiezan en agosto de
+
+00:34:44 - 00:35:46
+del año pasado y y y claro ven que yo hablo de acciones desde agosto del año pasado ha habido casos de gente que me ha dicho pero si en un año estás Ya ganando no sé cuánto buen claro lo que hay detrás Claro claro claro un más o no es lo mismo No es lo mismo es que sí sí realmente es eso al final hay mucho trabajo y mucho esfuerzo detrás que mucha gente no no lo ve hasta que no hay esos resultados qué consejo le darías tú a una persona que que está intentando hacer trading está en ello y no acaba de
+
+00:35:16 - 00:36:21
+verlo del todo claro no acaba de ver todos los resultados que él esperaría porque Claro entiendo que hay muchas personas que que inician en esto esperan ciertos resultados ven que no los tienen que dedican mucho tiempo y no nada o que incluso pierden dinero y y se frustran normal todos nos frustramos eso a ver lo primero es que todos hemos estado frustrados en el trading en algún momento o en varios o muchos o continuamente es el estado natural del trading en formación consejo que le podría dar uno
+
+00:35:47 - 00:36:56
+no desesper que tenga paciencia el premio llega al Que persevera obviamente tampoco es que le llegue a todo el mundo no las estadísticas de traders que consiguen llegar a vivir de esto hablan por s solas y son bajas en general entonces tampoco hay que engañarse tampoco hay que pensar que vamos a ser Nosotros siempre los que lo vamos a lograr pero si no desde luego si no le echas ganas tiempo y esfuerzo no vas a llegar nunca Y esto también lo relaciono un poco en paralelo la segunda parte del Consejo
+
+00:36:24 - 00:37:34
+sería el lugar incorrecto durante más tiempo de Ne ario yo estuve yo creo que demasiado tiempo en concretamente que fue un mercado en el que estuve 5 años peleándome con ellos y ciertamente ahora lo veo en retrospectiva y pienso Por qué no si ya no me estaban funcionando las cosas por qué no intenté algo diferente claro Hay una cosa que es el seeso del cundido todo esto no que básicamente te hace que no quieras echar por la borda años de esfuerzo Porque te da la sensación de que pues Estás a punto de llegar y si si
+
+00:37:00 - 00:38:00
+no Es como empezar otra vez de Cero y tal y cual e sí y no quiero decir eh Por defecto Yo diría que no que no es así si no te está funcionando algo cámbialo esto cualquier cosa en la vida e una pareja yo que sé si las cosas van mal yo que sé chicos a lo mejor no sois la pareja ideal no entonces el Trader con un Mercado o El Trader con una metodología que no que no se case sobre todo al principio cuando llega es que no funcionan las cosas que busque que hay muchas metodologías hay muchos mercados
+
+00:37:30 - 00:38:29
+hay muchas maneras de hacer las cosas mucha gente Eh transparente abierta después a explicar un poco lo que hace no y y entonces yo creo que el error que yo cometí por tanto el principal consejo que puedo dar desde mi experiencia es ese no quedarse en el sitio incorrecto más tiempo necesario Claro entiendo que realmente es lo que tú dices Sí que es necesario pues al final no no querer Buscar todo el rato resultados inmediatos pero si llevas ya un tiempo y te notas estancado y ves que la cosa no
+
+00:38:00 - 00:39:08
+cambia pues quizás Oye Quizás es que no estás en el lugar en el lugar idóneo que no tiene porque se el mismo para todos eh ojo lo digo cada uno tiene su forma de entender el trading de de hay cosas que le funcionan mejor que que encaja mejor con su personalidad que s el típico ejemplo de trer que es scalper porque es incapaz de dejar correr las posiciones mientras el Trader que hace swing porque eso que en segundos un stop no lo lleva bien claro Hay que buscar encaja con nuestra personalidad en en todo el rango de lo
+
+00:38:33 - 00:39:42
+que son las posibilidades que ofrece el trading desde la estrategia la psicología que lleve asociada el mercado todo la metodología que utilices todo hay hay Yo soy de de la opinión de que hay una cosa que funciona para cada uno una combinación de todas estas piezas para para cada uno Tienes que encontrar Qué combinación funciona para ti por supuesto mira ahora que justo has mencionado lo de traders scalpers traders swings y todo hay he escuchado ciertas opiniones generalizadas no sobre que por
+
+00:39:07 - 00:40:23
+ejemplo el trading intradía no sirve que por ejemplo que no funciona tú qué opinas sobre ello por ejemplo tu estilo de trading cuál sería Lu entr día entonces mis posiciones duran Bueno si son si son perdedoras durar minutos vez duran segundos Bueno lo mínimo Yo diría que son minutos y las posiciones ganadoras duran horas per todas mis posiciones las cierro al final del día entonces yo hago trading ent día me busco posicionarme y dejar correr las ganancias no soy escalpe es decir no busco recorridos
+
+00:39:45 - 00:41:03
+pequeños de hecho bueno Esto es algo que en el mundo de las small caps por este sesgo estadístico que te decía hacia la baja e corto la forma de sacar rentabilidad es dejando las posiciones correr quieres ir en largo tienes que ser escal porque precisamente por esa esa tendencia que hay a que las cosas caan o recoges benes demasiado rápido que se vaya todo Exacto Entonces eh s yo soy yo hago trading entra día me gano la vida con ello los resultados están ahí en Kino se pueden ver entonces qui quien dude de eso pues no puedo no
+
+00:40:24 - 00:41:15
+hay más argumento que la transparencia exacto y no me parece me parece genial la verdad y no Simplemente es algún debate que por ejemplo no sé si tú lo habrás visto o no pero en las redes sociales últimamente Pues se ve como ciertos inversores o ciertas personas también de del gremio pueden llegar pues a incluso a dudar mucho Sobre si el trading intradía sirve o no en este caso Yo por ejemplo a mí no me cabe duda por lo que tú estás diciendo por la porque al final se ve como hay personas que lo
+
+00:40:50 - 00:42:03
+hacen día a día y que que son transparentes entonces para mí no hay más no obviamente lo que le funciona a una persona no tiene por qué funcionar a otra Pero al final los resultados Son son los que son y eso prevalece Sí sí totalmente a ver yo es que yo entiendo que según como tenga uno la cabeza mueblada o lo que conozca o o el tipo de operativa que haga más inversión de largo plazo lo que Decimos lo que hacemos Es tan bonito suena tan bonito que parece imposible encima esto súmale la horda de
+
+00:41:24 - 00:42:26
+vendehumos que inundan el todo YouTube Instagram y que precisamente venden esta idea El problema es que la venden como si fuese muy fácil y muchas veces sin un fundamento detrás porque la mayoría de veces son vende humos por algo no y es decir no ellos no consiguen vivir de ello que viven de vender la idea es más fácil vender la idea y vender el s la esta gente pues obviamente porque paga por estas campañas de publicidad tiene mucha más visibilidad que la gente que sí de verdad vive de esto Entonces
+
+00:42:00 - 00:43:03
+es fácil que alguien que no esté metido de verdad en el mundo Yo pé que que simplemente le interesa la inversión a nivel largo plazo de indexación o yo que sé vali o tal lo que vea va a ser esto es precisamente primero que aflora sí los primeros vende humos lo que más sale lo que más brilla porque es lo que más llama la atención los que más pagan por publicidad porque al final es lo que les interesa Y es eso lo que quizás mancha un poco la imagen del del day Trader puede ser es que [ __ ] si yo si yo fuese ellos y y
+
+00:42:31 - 00:43:35
+viese vamos a ver yo siendo yo veo esto y y me da un coraje porque sé lo que hay sé que está mintiendo sé que lo que promete no es así claro si no sabes que existe eso en versión real no es como te lo cuentan y no es lo que ellos te venden que si no sabes que eso existe de verdad es muy fácil rápidamente identificar que esto no puede ser verdad esto es mentira y encima mira que pinta y mira que tal y este ya vi por ahí que es un vende humo si este luego vende un curso y no gana dinero es muy fácil
+
+00:43:03 - 00:44:19
+pensar que que es todo así pero no el el Day Trader rentable existe está ahí Tenemos muchos en España no no solamente en el mundo en España Tenemos muchos cada vez más y y bu eh herramientas como esta de Kino que te digo que que son un portal a la transparencia vienen precisamente a luchar contra contra esas ideas no el dices que el Day trading no no no puede ser o nadie vive de esto bueno vete allí y velo no estoy yo sí sí que hay much Hay un montón por supuesto y mira y ahora que que has dicho esto
+
+00:43:41 - 00:44:41
+unos claro es que es muy difícil decirlo yo yo a mí me resultaría también muy difícil decirlo pero para personas que que por ejemplo se quieren iniciar a este mundo y y hacen todo el recorrido necesario como para formarse y dar con con algo un tipo de ventaja positiva de Esperanza matemática positiva cuánto pueden esperar ganar siendo traders por ejemplo de small caps o o con cuánto podrían iniciar y Y cuánto podrían llegar a ganar si es posible hacerse un sobresueldo o si te tienes que dedicar a
+
+00:44:12 - 00:45:23
+ello tiempo completo Si tienes que empezar con mucho dinero con poco cómo lo ves tú creo que eh Hay opciones existen opciones a día de hoy que permiten empezar pues no quiero ti una mentira pero diría que desde 00 eh hay un tipo de cuenta que es Pues eso la más pequeña creo que te la permiten abrir con $500 eh Otras un poco ya cl son cuentas que tienen muchas limitaciones vale por ejemplo no te podrías poner corto ha largo eh cuentas para hacer ya más cosas pues van un poco en función del capital
+
+00:44:47 - 00:45:57
+con 2000 3000 ya se puede hacer prácticamente cualquier cosa prácticamente eh cualquier cosa tal cual con 10,000 la haces V eh con con tamaño ajustado a tu cuenta y todo lo que quieras pero a partir de 10,000 H hay Brokers que no tienen ninguna limitación hay limitaciones por ejemplo me refiero a al precio de las acciones que puedes operar no entonces eh Por ejemplo hay un broker que si no tienes más de 0,000 en la cuenta no puedes hacer operaciones en Penny stocks son acciones que tienen eh un valor de cotización inferior al Dólar
+
+00:45:22 - 00:46:33
+acciones puedes hacer trading sin operar esas acciones sí puedes ganar y ser rentable Sí mucha gente es más las ignora porque tien Más comisiones por demás Pero y eh quieres hacer quieres incluirlas también en tu en tu operativa y no tener ninguna restricción el límite inferior que yo conozco son 0,000 vale tanto para Long como para sh eem entonces cuánto se puede llegar a ganar con el trading o cuánto hace falta se puede sacar un sobresueldo lo que sea obviamente pues depende de eso yo ni lo debería decir pero de la
+
+00:45:58 - 00:47:08
+habilidad de tu conocimiento bien dicho esto tamaño de la cuenta con una cuenta de $2,000 no vas a ganar 10,000 al mes Pues sí pues ganar unas rentabilidades muy altas Pero en proporción no quiero decir eh Y hay muchos ejemplos por ahí de gente que empezó con cuentas eso de 2000 3,000 1000 y ahora está ganando Eh pues cinco cifras seis cifras al mes porque han ido creciendo la cuenta No no es porque retiren todo lo que sacan y con 2000 generan 100000 Eso no eso no existe sino que al final han ido
+
+00:46:33 - 00:48:01
+realizando un crecimiento exponencial gracias a sus resultados e Entonces cuánto se puede llegar a ganar yo siempre me fijo pues obviamente en los top de de esta industria y muchos de Ellos están en Kino puedes ver sus resultados semales mensuales eh anuales son gente que te está haciendo pues los el top 10 ponte llevan en lo que va de año más de un millón de dólares Yo creo que buo lo puedo mirar ahora para tengo por aquí la página web en el top 10 en lo que va de año solo hay dos que llevan más de un
+
+00:47:16 - 00:48:14
+millón el tercero lleva 935000 y el décimo para hacernos una idea lleva medio millón de dólares de de beneficios Claro que realmente tienes un techo muy alto que esta es otra mucha gente asocia small caps con baja liquidez que sí que tiene muy poca liquidez porque son acciones pequeñas y todo lo que quieras pero poca liquidez relativa poca liquidez para que se meta un institucional pero no para que te metas tú yo y 1 pringados más como nosotros Claro que en ese aspecto puede llegar a ser incluso hasta una ventaja el hecho
+
+00:47:46 - 00:48:53
+de que no se puedan meter institucionales y estés compitiendo más con gente un poco de de tu tamaño para así decirlo lo es totalmente Es que es que es es precisamente lo que permite que que siga habiendo unas ineficiencias tan grandes que no ellos no pueden entrar o no les interesa porque simplemente para ellos son cajas pero para nosotros al final claro Hay mucha diferencia Exacto Bueno pues pues la verdad Me parece increíble Mira ya para para despedir esta esta última bueno esta entrevista como última pregunta es por
+
+00:48:19 - 00:49:37
+ejemplo Cuánto dinero recomendarías a alguien que para iniciarse en este mundo Cuánto por ejemplo que alguien que lo esté pensando A cuánto depósito eh Eh bueno para empezar para iniciarse en este mundo o quizás empezar en demo o formarse claro formarme Sí o sea yo creo que antes de depositar yy poner No yo casi que me metería con alguien que sepa Me pegaría él yo que sé mucha gente a día de hoy que lo hace entonces parte de ese capital que quieras destinar al trading smalls estaría bien invertido Exacto exacto partir de ahí Yo
+
+00:48:58 - 00:50:15
+creo que con una cuenta de 2000 para empezar está más que bien e bien asumiendo que la probabilidad es está en que lo pierdas entonces Procura perderlo poco a poco porque qu s yo que te dure un año dos años también depende de las capacidades de cada uno que no todos tenemos las mismas no pero eh yo Bueno siempre digo lo mismo Bueno empec yo abrí mi cuenta hace un año mi riesgo inicial por operación eran $ Tena una cuenta de de 30,000 porque hay una cuestión Por cierto que no no hemos mencionado antes el pdt rule s no una
+
+00:49:37 - 00:50:41
+especie de regulación de de Estados Unidos Puede ser Es una es una regulación que lo que hace es que te obliga a tener como mínimo un balance de 000 en tu cuenta para poder hacer intradía para hacer Bueno más de tres operaciones a la semana o algo así intradía entonces e esto Solo aplica si abres una cuenta en un broker con base en Estados Unidos pero hay Brokers offshore que por eso existe la posibilidad de abrir cuentas desde 500 2,000 o lo que sea no e entonces de estos 30.000 que yo tenía en
+
+00:50:09 - 00:51:26
+mi cuenta inicial que era 25000 para cumplir con pvt más 5000 que era realmente lo que yo consideraba mi Bank roll eh claro yo digamos tenía 5000 para operar y rieso por operación mi riesgo por operación eran 15 regaba 15 en cada operación y fui hao que creciese de manera orgánica mi riesgo en proporción con mis resultados no Entonces tampoco abrir una cuenta de lo que sea de dos tres cuatro poco les diría que quisieran arriesgar encima de de su conocimiento o de lo que su curva les avale sino que más bien la curva sea
+
+00:50:47 - 00:52:00
+lo que les vaya indicando Cuánto tiene quear dependiendo si los resultados que tengan es decir que realmente empezar de una forma conservadora y dependiendo de los resultados que vas viendo y tú tu curva ya ibas mezcal olo o no Exacto eso es que sea que sea progresivo vamos simplemente aunque sea gente que venga con con experiencia de otros mercados caps tien bueno el mercado de equities y en concreto small caps tiene particularidades tiene tiene sus cosas que solo pasan aquí movimientos muy explosivos también o sea que nadie se le
+
+00:51:23 - 00:52:38
+ocurra llegar y ponerse short de esto eh yo que sé con toda la cuenta porque aquí hay 2000 y 3000 por en un día no en 5 minutos Entonces Claro si te metes si tienes la mala suerte de que pillas una de estas corto en el punto equivocado y no no te sales o no te puede salir antes el destrozo puede ser importante Entonces avón cuando uno se acerque se acerca a este mercado hasta que no tengas un poco la temperatura [ __ ] de cómo se mueven las cosas y demás yo comentaría ir con el mínimo tamaño posible y y que la cuenta sea la
+
+00:52:01 - 00:52:58
+mínima posible para que el broker te permita operar claro simplemente pues para aprender claro esto asumiendo ya que que te tires a la piscina de primeras con con una cuenta real Pero obviamente pasar por demo es mucho más recomendable Antes que nada nada pues estupendo creo que esto sería todo hemos tocado un poquitín todos los temas y la verdad es que a mí me ha parecido algo super interesante una conversación muy muy muy muy top y decir si tienes alguna red social en la que la gente te pueda
+
+00:52:29 - 00:53:22
+seguir para echarle un ojo lo que haces qué es lo que compartes la dejaremos por aquí en la descripción perfecto yo bueno como sabes Estoy en Twitter que es la única red social en la que en la que estoy es mi ventana al mundo y nada te la lo puedes poner por ahí si alguien me quiere escribir tengo los mensajes abiertos para cualquier tuilla puntual o algo así estoy siempre dispon perfecto seri Pues un placer Muchísimas gracias como bien acaba de comentar seri tendréis su Twitter en la descripción por si os
+
+00:52:56 - 00:53:34
+interesa este mundo os interesa la forma en la que él hace pues lo que hace pues le podáis echar un vistazo también tendréis su enlace a K info no al final Pues el Track récord y los resultados que al final él tiene públicos para que todo el mundo les pueda echar un vistazo y nada más si os ha gustado este vídeo no olvidéis dejar un like suscribiros y nos vemos adiós

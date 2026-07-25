@@ -3,8 +3,8 @@
 Este directorio reserva los tests institucionales del monorepo completo.
 
 No sustituye los tests locales de cada modulo. Su funcion es comprobar reglas que
-cruzan fronteras entre `00_CTO`, `01_TSIS_backtest_SmallCaps`,
-`02_TSIS_webSocket_SmallCaps` y `03_TSIS_Offline_RL`.
+cruzan fronteras entre `00_CTO`, `01_TSIS_DATA_FOUNDATION`,
+`04_TSIS_webSocket_SmallCaps` y `05_TSIS_Offline_RL`.
 
 ## Si no recuerdas nada, empieza aqui
 
@@ -38,7 +38,7 @@ alineados.
 4. Si la pregunta es del modulo SmallCaps, ir a:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/README.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/tests/README.md
 ```
 
 Usar esta ruta para tests ejecutables del modulo: Data Foundation, research,
@@ -48,7 +48,7 @@ eventos, estrategias, ejecucion y offline RL.
 directamente a:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/README.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/tests/data_foundation_outputs/README.md
 ```
 
 Ese README define el estandar minimo para cada tabla: schema contract,
@@ -59,7 +59,7 @@ adversarial/mutation tests.
 leer:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md
 ```
 
 Ese contrato explica que tablas existen, para que sirven, de donde sale su
@@ -68,8 +68,8 @@ informacion y como deben ser consumidas.
 7. Si lo que quieres es validar evidencia humana o auditoria visual, ir a:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/data_quality_report/
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/inspection_dossiers/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/data_quality_report/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/
 ```
 
 Los tests ejecutables no sustituyen esta evidencia. Deben comprobar que existe,
@@ -111,7 +111,7 @@ adversarial leakage tests. This is not an official materialization.
 Ruta de tests:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/tests/data_foundation_outputs/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/tests/data_foundation_outputs/
 ```
 
 Rutas de outputs:
@@ -174,11 +174,11 @@ features bajo `artifacts/`. No crea parquet oficial ni modifica
 Rutas de contratos relacionados:
 
 ```text
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/canonical_schemas/outputs/
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/contract_registry/dataset_contracts/
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/dataset_registry/outputs/
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/data_consumption_policies/
-C:/TSIS_Data/01_TSIS_backtest_SmallCaps/01_foundations/validators/outputs/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/outputs/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/outputs/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/
+C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/validators/outputs/
 ```
 
 Orden recomendado:
@@ -282,7 +282,7 @@ de evidencia de forma compatible con el sistema TSIS.
 ## Relacion con otros arboles de tests
 
 - `00_CTO/tests/`: tests de arquitectura, gobierno y consistencia CTO.
-- `01_TSIS_backtest_SmallCaps/tests/`: tests ejecutables del modulo SmallCaps.
+- `01_TSIS_DATA_FOUNDATION/tests/`: tests ejecutables del modulo SmallCaps.
 
 Cuando se anada un nuevo modulo, debe crear su propio `tests/` local y este
 directorio raiz solo debe validar que ese modulo cumple las reglas comunes.

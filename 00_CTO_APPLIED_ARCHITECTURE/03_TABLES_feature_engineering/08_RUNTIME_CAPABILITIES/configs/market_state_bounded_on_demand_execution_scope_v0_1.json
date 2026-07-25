@@ -1,0 +1,110 @@
+{
+  "authorization_id": "market_state_bounded_on_demand_execution_authorization_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_CONSUMED",
+  "date": "2026-07-25",
+  "parent_gate": "market_state_on_demand_execution_chain_joint_review_v0_1",
+  "authorized_next_gate": "market_state_bounded_on_demand_execution_v0_1",
+  "authorization_scope": "bounded_market_state_on_demand_execution_only",
+  "scope_reference_evidence": {
+    "event_state_reference_run": "event_state_bounded_execution_chain_execution_v0_1_20260724T185356Z",
+    "reference_purpose": "scope_selection_only",
+    "reference_output_reuse_allowed": false
+  },
+  "authorized_request_template": {
+    "request_type": "market_state",
+    "request_contract_version": "market_state_request_contract_v0_1",
+    "profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "profile_version_policy": "exact",
+    "profile_version": "v0_1",
+    "resolution": "1m",
+    "grain": "instrument_decision_timestamp",
+    "universe_selection_mode": "explicit_instrument_ids",
+    "instrument_filter_mode": "none",
+    "explicit_instrument_ids": [
+      "figi_share_class:BBG001S5N8T1",
+      "figi_share_class:BBG001S8T7K0",
+      "figi_share_class:BBG001S6RSK0"
+    ],
+    "instrument_labels_non_authoritative": {
+      "figi_share_class:BBG001S5N8T1": "AAME",
+      "figi_share_class:BBG001S8T7K0": "ABEO",
+      "figi_share_class:BBG001S6RSK0": "ABUS"
+    },
+    "session_dates": [
+      "2021-01-19",
+      "2021-03-15",
+      "2022-11-25"
+    ],
+    "exchange_scope": [
+      "XNYS"
+    ],
+    "calendar_authority_id": "governed_exchange_session_calendar_xnys_v0_1",
+    "point_in_time_policy_id": "market_state_core_four_intraday_point_in_time_policy_v0_1",
+    "as_of_policy_id": "market_state_core_four_intraday_as_of_policy_v0_1",
+    "source_version_policy": "exact_governed_or_block",
+    "output_mode": "candidate",
+    "output_format": "parquet_or_jsonl_candidate_as_execution_contract_allows",
+    "partition_policy": "bounded_logical_partition_by_profile_instrument_session_v0_1",
+    "validation_level": "bounded_chain_validation_v0_1",
+    "reuse_policy": "force_rebuild_only_when_authorized"
+  },
+  "quantitative_limits": {
+    "maximum_requests": 1,
+    "maximum_execution_plans": 1,
+    "maximum_runs": 1,
+    "maximum_instruments": 3,
+    "maximum_sessions": 3,
+    "maximum_instrument_session_contexts": 9,
+    "maximum_candidate_dataset_registry_entries": 1,
+    "maximum_official_dataset_registry_entries": 0
+  },
+  "authorized_future_actions": {
+    "request_record_creation_allowed_in_next_gate": true,
+    "profile_resolver_execution_allowed_in_next_gate": true,
+    "universe_resolver_execution_allowed_in_next_gate": true,
+    "source_resolver_execution_allowed_in_next_gate": true,
+    "partition_coverage_resolver_execution_allowed_in_next_gate": true,
+    "execution_plan_creation_allowed_in_next_gate": true,
+    "run_record_creation_allowed_in_next_gate": true,
+    "run_manifest_creation_allowed_in_next_gate": true,
+    "materializer_execution_allowed_in_next_gate": true,
+    "candidate_output_write_allowed_in_next_gate": true,
+    "validator_execution_allowed_in_next_gate": true,
+    "validation_report_write_allowed_in_next_gate": true,
+    "candidate_dataset_registry_entry_write_allowed_in_next_gate": true
+  },
+  "hard_boundaries_current_gate": {
+    "request_records_created": 0,
+    "execution_plans_created": 0,
+    "resolver_executions": 0,
+    "run_records_created": 0,
+    "source_rows_read": 0,
+    "materializer_executions": 0,
+    "validator_executions": 0,
+    "registry_entries_written": 0,
+    "datasets_written": 0,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false
+  },
+  "refined_partition_dispositions_required": [
+    "reusable_validated",
+    "to_build",
+    "to_rebuild",
+    "unavailable",
+    "quarantined",
+    "blocked"
+  ],
+  "missing_disposition_policy": "missing_source_coverage_is_a_cause_of_unavailable_not_an_independent_disposition",
+  "next_gate_must_block_if": [
+    "scope_exceeds_quantitative_limits",
+    "profile_version_policy_not_exact",
+    "source_version_policy_allows_fallback",
+    "request_names_physical_source_path",
+    "execution_plan_leaves_unresolved_authorities",
+    "materializer_attempts_to_re_resolve",
+    "validator_attempts_to_repair",
+    "registry_attempts_official_promotion",
+    "production_or_downstream_requested"
+  ]
+}
