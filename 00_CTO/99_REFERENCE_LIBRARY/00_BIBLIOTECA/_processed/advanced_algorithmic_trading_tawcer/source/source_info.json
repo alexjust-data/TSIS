@@ -1,0 +1,28 @@
+{
+  "book_id": "advanced_algorithmic_trading_tawcer",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\84-advanced-algorithmic-trading-(www.tawcer.com).pdf",
+  "file_name": "84-advanced-algorithmic-trading-(www.tawcer.com).pdf",
+  "sha256": "e42f5e30fbfb74e228277d711839be00455225c7286f33d3e8a23334bbf22f77",
+  "file_size_bytes": 14505898,
+  "extraction_method": "pypdf",
+  "unit_label": "page",
+  "sample_text": [
+    {
+      "unit": 2,
+      "snippet": "Contents I Introduction 1 1 Introduction To Advanced Algorithmic Trading . . . . . . . . . . . . . . . . . 3 1.1 The Hunt for Alpha . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3 1.2 Why Time Series Analysis, Bayesian Statistics and Machine Learning? . . . . . . 3 1.2.1 Bayesian Statistics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4 1.2.2 Time Series Analysis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4 1.2.3 Machine Learning . . . . ."
+    },
+    {
+      "unit": 3,
+      "snippet": "2 3.5.1 Beta Distribution . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27 3.5.2 Why Is A Beta Prior Conjugate to the Bernoulli Likelihood? . . . . . . . 30 3.5.3 Multiple Ways to Specify a Beta Prior . . . . . . . . . . . . . . . . . . . . 30 3.6 Using Bayes’ Rule to Calculate a Posterior . . . . . . . . . . . . . . . . . . . . . . 31 4 Markov Chain Monte Carlo . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35 4.1 Bayesian Inference Goals . . . . . . . . . . . . ."
+    },
+    {
+      "unit": 4,
+      "snippet": "3 8.2 Correlation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 80 8.2.1 Example: Sample Correlation in R . . . . . . . . . . . . . . . . . . . . . . 80 8.3 Stationarity in Time Series . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 80 8.4 Serial Correlation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 82 8.5 The Correlogram . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 83 8.5.1 Example 1 - Fixed Lin"
+    },
+    {
+      "unit": 5,
+      "snippet": "4 10.7 Next Steps . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 134 11 Autoregressive Integrated Moving Average and Conditional Heteroskedastic Models . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 135 11.1 Quick Recap . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 135 11.2 Autoregressive Integrated Moving Average (ARIMA) Models of order p, d, q . . 136 11.2.1 Rationale . . . . . . . . . . . . . . ."
+    }
+  ],
+  "notes": "No se persiste texto bruto; solo metadatos, TOC, stats, resumen e indices."
+}

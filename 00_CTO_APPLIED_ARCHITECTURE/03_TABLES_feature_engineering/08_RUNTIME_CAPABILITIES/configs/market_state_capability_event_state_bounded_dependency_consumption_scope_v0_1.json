@@ -1,0 +1,81 @@
+{
+  "authorization_id": "market_state_capability_event_state_bounded_dependency_consumption_authorization_v0_1",
+  "date": "2026-07-27",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_NO_EXECUTION",
+  "purpose": "bounded_market_state_candidate_dependency_consumption_for_first_event_state_on_demand_execution",
+  "parent_policy_id": "market_state_capability_consumption_policy_v0_1",
+  "parent_policy_contract_id": "market_state_capability_consumption_policy_contract_v0_1",
+  "parent_policy_contract_sha256": "66dbda4f673166317415bc5e3451aa8fba39abfba5b163f51b46a5ec7dac2369",
+  "consumer_gate": "event_state_on_demand_bounded_execution_v0_1",
+  "consumer_profile_id": "event_state_core_four_intraday_profile_v0_1",
+  "consumer_event_type_id": "event_type:market_data:session_opened",
+  "consumer_subject_scope": "exchange_session",
+  "market_state_runtime_capability_id": "market_state_on_demand_runtime_capability_v0_1",
+  "market_state_profile_id": "market_state_core_four_intraday_profile_v0_1",
+  "market_state_profile_version": "v0_1",
+  "authorized_scope": {
+    "exchange_scope": [
+      "XNYS"
+    ],
+    "session_dates": [
+      "2021-01-19",
+      "2021-03-15",
+      "2022-11-25"
+    ],
+    "instrument_ids": [
+      "figi_share_class:BBG001S5N8T1",
+      "figi_share_class:BBG001S8T7K0",
+      "figi_share_class:BBG001S6RSK0"
+    ],
+    "maximum_market_state_dependency_contexts": 9
+  },
+  "authorized_operations_for_next_gate_only": {
+    "resolve_market_state_dependency_request_through_runtime_capability": true,
+    "lookup_candidate_registry_metadata": true,
+    "reuse_exact_validated_candidate_for_matching_dependency_request": true,
+    "read_fingerprint_matched_candidate_records_for_event_state_materializer": true,
+    "read_unmatched_candidate_records": false,
+    "read_direct_market_state_path_named_by_event_state_request": false,
+    "open_new_market_state_candidate_execution_without_separate_authorization": false,
+    "serve_as_official_market_state_dataset": false,
+    "serve_to_production": false,
+    "serve_to_downstream_research_or_backtest": false,
+    "serve_to_ml_or_rl_training": false
+  },
+  "required_conditions": [
+    "market_state_dependency_request_fingerprint_present",
+    "market_state_dependency_execution_plan_fingerprint_or_ref_present",
+    "market_state_candidate_dataset_fingerprint_or_ref_present",
+    "candidate_registry_entry_status_allows_bounded_candidate_dependency_reuse",
+    "determinism_evidence_present_for_candidate_dependency",
+    "artifact_availability_available",
+    "source_fingerprints_match_registry_evidence",
+    "schema_hash_match",
+    "restriction_set_propagated_to_event_state_output",
+    "no_quarantine",
+    "no_unresolved_blocking_findings"
+  ],
+  "blocking_conditions": [
+    "scope_exceeds_9_dependency_contexts",
+    "consumer_gate_not_event_state_on_demand_bounded_execution_v0_1",
+    "event_type_not_session_opened",
+    "subject_scope_not_exchange_session",
+    "market_state_profile_not_core_four_intraday_v0_1",
+    "dependency_request_fingerprint_missing",
+    "candidate_dataset_fingerprint_missing_or_mismatch",
+    "candidate_artifact_unavailable",
+    "direct_market_state_path_requested",
+    "official_or_production_or_downstream_consumption_requested"
+  ],
+  "hard_boundaries_current_gate": {
+    "market_state_dependency_requests_executed": 0,
+    "market_state_candidate_files_read": 0,
+    "source_market_data_rows_read": 0,
+    "event_state_records_emitted": 0,
+    "datasets_written": 0,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false
+  },
+  "next_allowed_gate": "event_state_on_demand_bounded_execution_v0_1"
+}

@@ -1,0 +1,216 @@
+{
+  "package": "SERSAN_FINAL_02_17",
+  "created_at_utc": "2026-07-27T17:58:50.586444+00:00",
+  "status": "CLOSED_WITH_EXPLICIT_OPEN_FINDINGS",
+  "practice_range": "02-17",
+  "practices": 16,
+  "evidence": 350,
+  "topics": 97,
+  "knowledge_records": 33,
+  "assets": 170,
+  "asset_dispositions": {
+    "ADMITTED": 101,
+    "MERGED": 1,
+    "DEFERRED": 68
+  },
+  "decisions": 62,
+  "decision_dispositions": {
+    "ADMITTED": 62
+  },
+  "open_findings": 16,
+  "source_inventories": [
+    {
+      "practice": "02",
+      "source_package": "01_SOURCE.zip",
+      "file_count": 77,
+      "markdown_count": 1,
+      "image_count": 76,
+      "uncompressed_bytes": 28614910,
+      "markdown_files": [
+        "practica_02_donchain.md"
+      ],
+      "status": "SOURCE_PRESENT_AND_INVENTORIED"
+    },
+    {
+      "practice": "03",
+      "source_package": "01_SOURCE.zip",
+      "file_count": 112,
+      "markdown_count": 1,
+      "image_count": 111,
+      "uncompressed_bytes": 37180272,
+      "markdown_files": [
+        "practica_03_donchain.md"
+      ],
+      "status": "SOURCE_PRESENT_AND_INVENTORIED"
+    },
+    {
+      "practice": "04",
+      "source_package": "01_SOURCE.zip",
+      "file_count": 246,
+      "markdown_count": 1,
+      "image_count": 245,
+      "uncompressed_bytes": 103783815,
+      "markdown_files": [
+        "practica_04_donchain.md"
+      ],
+      "status": "SOURCE_PRESENT_AND_INVENTORIED"
+    },
+    {
+      "practice": "05",
+      "source_package": "01_SOURCE.zip",
+      "file_count": 148,
+      "markdown_count": 1,
+      "image_count": 147,
+      "uncompressed_bytes": 67241483,
+      "markdown_files": [
+        "practica_05_donchain.md"
+      ],
+      "status": "SOURCE_PRESENT_AND_INVENTORIED"
+    },
+    {
+      "practice": "06",
+      "source_package": "20-practice-10(1).zip",
+      "file_count": 87,
+      "markdown_count": 1,
+      "image_count": 86,
+      "uncompressed_bytes": 27631666,
+      "markdown_files": [
+        "practica_06_ORB.md"
+      ],
+      "status": "SOURCE_PRESENT_AND_INVENTORIED"
+    },
+    {
+      "practice": "07",
+      "source_package": "20-practice-10(1).zip",
+      "file_count": 94,
+      "markdown_count": 1,
+      "image_count": 93,
+      "uncompressed_bytes": 32881929,
+      "markdown_files": [
+        "practica_07_ORB.md"
+      ],
+      "status": "SOURCE_PRESENT_AND_INVENTORIED"
+    },
+    {
+      "practice": "08",
+      "source_package": "20-practice-10(1).zip",
+      "file_count": 109,
+      "markdown_count": 1,
+      "image_count": 108,
+      "uncompressed_bytes": 28921628,
+      "markdown_files": [
+        "practica_08_ORB.md"
+      ],
+      "status": "SOURCE_PRESENT_AND_INVENTORIED"
+    },
+    {
+      "practice": "09",
+      "source_package": "20-practice-10(1).zip",
+      "file_count": 181,
+      "markdown_count": 1,
+      "image_count": 180,
+      "uncompressed_bytes": 93335816,
+      "markdown_files": [
+        "practica_09_revision_apolo.md"
+      ],
+      "status": "SOURCE_PRESENT_AND_INVENTORIED"
+    },
+    {
+      "practice": "10",
+      "source_package": "20-practice-10(1).zip",
+      "file_count": 195,
+      "markdown_count": 1,
+      "image_count": 194,
+      "uncompressed_bytes": 97320616,
+      "markdown_files": [
+        "practica_10_bollinger_bands.md"
+      ],
+      "status": "SOURCE_PRESENT_AND_INVENTORIED"
+    },
+    {
+      "practice": "11",
+      "source_package": "25-practice-15(2).zip",
+      "file_count": 74,
+      "markdown_count": 1,
+      "image_count": 73,
+      "uncompressed_bytes": 33135036,
+      "markdown_files": [
+        "practica_11_bollinger_Aberration.md"
+      ],
+      "status": "SOURCE_PRESENT_AND_INVENTORIED"
+    },
+    {
+      "practice": "12",
+      "source_package": "25-practice-15(2).zip",
+      "file_count": 197,
+      "markdown_count": 1,
+      "image_count": 196,
+      "uncompressed_bytes": 82451349,
+      "markdown_files": [
+        "practica_12_revised.md"
+      ],
+      "status": "SOURCE_PRESENT_AND_INVENTORIED"
+    },
+    {
+      "practice": "13",
+      "source_package": "25-practice-15(2).zip",
+      "file_count": 186,
+      "markdown_count": 1,
+      "image_count": 185,
+      "uncompressed_bytes": 100733878,
+      "markdown_files": [
+        "practica_13_revised.md"
+      ],
+      "status": "SOURCE_PRESENT_AND_INVENTORIED"
+    },
+    {
+      "practice": "14",
+      "source_package": "25-practice-15(2).zip",
+      "file_count": 155,
+      "markdown_count": 1,
+      "image_count": 154,
+      "uncompressed_bytes": 81403383,
+      "markdown_files": [
+        "practica_14_revised.md"
+      ],
+      "status": "SOURCE_PRESENT_AND_INVENTORIED"
+    },
+    {
+      "practice": "15",
+      "source_package": "25-practice-15(2).zip",
+      "file_count": 235,
+      "markdown_count": 1,
+      "image_count": 234,
+      "uncompressed_bytes": 111050368,
+      "markdown_files": [
+        "practica_15_revised.md"
+      ],
+      "status": "SOURCE_PRESENT_AND_INVENTORIED"
+    },
+    {
+      "practice": "16",
+      "source_package": "27-practice-17(2).zip",
+      "file_count": 90,
+      "markdown_count": 1,
+      "image_count": 89,
+      "uncompressed_bytes": 52000989,
+      "markdown_files": [
+        "practica_16_revised.md"
+      ],
+      "status": "SOURCE_PRESENT_AND_INVENTORIED"
+    },
+    {
+      "practice": "17",
+      "source_package": "27-practice-17(2).zip",
+      "file_count": 177,
+      "markdown_count": 1,
+      "image_count": 176,
+      "uncompressed_bytes": 118751168,
+      "markdown_files": [
+        "practica_17_revised.md"
+      ],
+      "status": "SOURCE_PRESENT_AND_INVENTORIED"
+    }
+  ],
+  "tsis_reconciliation": "DEFERRED"
+}

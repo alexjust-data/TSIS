@@ -1,0 +1,24 @@
+{
+  "source_id": "SERSAN-P02",
+  "practice": "12-practice-02",
+  "audit_status": "COMPLETE_WITH_OPEN_FINDINGS",
+  "source_file": {
+    "name": "practica_02_donchain.md",
+    "lines": 1154,
+    "bytes": 103567,
+    "sha256": "8de4e112f7c48ffcc7683c3715857bc22ce9a9653a9b06c39f7abaa8d67e2cc5"
+  },
+  "figures": {
+    "count": 76,
+    "linked": 59,
+    "orphan_unlinked": 17
+  },
+  "coverage": {
+    "markdown_lines_reviewed": 1154,
+    "figures_reviewed": 76,
+    "evidence_items": 42,
+    "topics": 15,
+    "open_findings": 9
+  },
+  "canonicality_warning": "La fuente mezcla transcripción, imágenes y ampliaciones editoriales; conservar epistemic_status."
+}

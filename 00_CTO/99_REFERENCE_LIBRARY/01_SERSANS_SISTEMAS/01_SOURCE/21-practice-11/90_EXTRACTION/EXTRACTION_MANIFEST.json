@@ -1,0 +1,21 @@
+{
+  "schema": "SERSAN_PRACTICE_EXTRACTION_V1",
+  "practice": "11",
+  "source_inventory": {
+    "practice": "11",
+    "source_package": "25-practice-15(2).zip",
+    "file_count": 74,
+    "markdown_count": 1,
+    "image_count": 73,
+    "uncompressed_bytes": 33135036,
+    "markdown_files": [
+      "practica_11_bollinger_Aberration.md"
+    ],
+    "status": "SOURCE_PRESENT_AND_INVENTORIED"
+  },
+  "evidence_count": 13,
+  "topic_links_count": 23,
+  "figure_manifest_rows": 73,
+  "visual_review_status": "REVIEWED_IN_INCREMENTAL_AUDIT",
+  "integration_target": "07_INTEGRATION/FINAL"
+}

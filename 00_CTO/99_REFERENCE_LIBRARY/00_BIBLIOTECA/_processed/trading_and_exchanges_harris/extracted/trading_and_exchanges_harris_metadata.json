@@ -1,0 +1,19 @@
+{
+  "book_id": "trading_and_exchanges_harris",
+  "title": "Trading and Exchanges: Market Microstructure for Practitioners",
+  "authors": "Larry Harris",
+  "source_type": "Libro PDF",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\kupdf.net_harris-trading-and-exchanges-market-microstructure-for-practitioners-2003.pdf",
+  "file_name": "kupdf.net_harris-trading-and-exchanges-market-microstructure-for-practitioners-2003.pdf",
+  "sha256": "1f9555a808bd6285733290b67dedf1bfe0cd6064db4433c8818d0444ad303422",
+  "status": "indexed",
+  "processed_date": "2026-07-27",
+  "page_count": 656,
+  "unit_label": "page",
+  "text_chars": 2073313,
+  "text_pages": 654,
+  "requires_ocr_review": false,
+  "working_text_persisted": false,
+  "themes": "market microstructure, order types, liquidity, spread, price discovery, transaction costs, market impact, execution, dealers, limit order markets",
+  "utility_tsis": "referencia principal para Order Model, Fill Model, slippage, liquidity gates, TCA y realismo small caps"
+}

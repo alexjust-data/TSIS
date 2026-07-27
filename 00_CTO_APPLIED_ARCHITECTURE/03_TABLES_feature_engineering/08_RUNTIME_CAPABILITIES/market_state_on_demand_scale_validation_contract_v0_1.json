@@ -1,0 +1,24 @@
+{
+  "contract_id": "market_state_on_demand_scale_validation_contract_v0_1",
+  "gate": "market_state_on_demand_scale_validation_v0_1",
+  "contract_status": "accepted_for_bounded_scale_validation_run",
+  "consumed_by_run_id": "market_state_on_demand_scale_validation_v0_1_20260727T133641Z",
+  "required_invariants": {
+    "requested_contexts": 120,
+    "represented_contexts": 104,
+    "reusable_validated_contexts": 14,
+    "scale_delta_materialized_contexts": 90,
+    "unavailable_contexts": 16,
+    "unaccounted_contexts": 0,
+    "source_market_data_rows_read": 0,
+    "candidate_parquet_files_written": 1,
+    "candidate_registry_entries_written": 1,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false
+  },
+  "partition_accounting": "requested = reusable_validated + to_build_scale_delta + unavailable",
+  "reuse_policy": "reuse_incremental_lineage_chain_validated_contexts_and_build_scale_delta_only",
+  "next_gate_on_pass": "market_state_on_demand_capability_promotion_review_v0_1",
+  "contract_content_sha256_excluding_hash_field": "b33223e2cc4ebead950dae5add56696666dc1ab896fe9eb83db9aa71b0675f8b"
+}

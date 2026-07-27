@@ -1,0 +1,57 @@
+[
+  {
+    "title": "Front Matter",
+    "page": 2,
+    "level": 0
+  },
+  {
+    "title": "1. Popular Approaches to Developing Trading Systems",
+    "page": 16,
+    "level": 0
+  },
+  {
+    "title": "2. Introduction to Developing Trading Systems",
+    "page": 29,
+    "level": 0
+  },
+  {
+    "title": "3. Architectural Solution Part 1: Identifying the Requirements",
+    "page": 69,
+    "level": 0
+  },
+  {
+    "title": "4. Architectural Solution Part 2: Services and Subsystems",
+    "page": 110,
+    "level": 0
+  },
+  {
+    "title": "5. Technology Stack and Libraries",
+    "page": 157,
+    "level": 0
+  },
+  {
+    "title": "6. Optimization Algorithms",
+    "page": 179,
+    "level": 0
+  },
+  {
+    "title": "7. Implementation of Optimization Algorithms",
+    "page": 221,
+    "level": 0
+  },
+  {
+    "title": "8. Implementation of the Core Module",
+    "page": 263,
+    "level": 0
+  },
+  {
+    "title": "9. Approaches to Final Implementation",
+    "page": 297,
+    "level": 0
+  },
+  {
+    "title": "Back Matter",
+    "page": 313,
+    "level": 0
+  }
+]

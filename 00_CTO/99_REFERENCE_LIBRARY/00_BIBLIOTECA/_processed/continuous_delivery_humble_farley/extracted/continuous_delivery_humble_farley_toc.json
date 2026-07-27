@@ -1,0 +1,837 @@
+[
+  {
+    "level": 1,
+    "title": "Contents",
+    "page": 9
+  },
+  {
+    "level": 1,
+    "title": "Foreword",
+    "page": 21
+  },
+  {
+    "level": 1,
+    "title": "Preface",
+    "page": 23
+  },
+  {
+    "level": 1,
+    "title": "Acknowledgments",
+    "page": 31
+  },
+  {
+    "level": 1,
+    "title": "About the Authors",
+    "page": 33
+  },
+  {
+    "level": 1,
+    "title": "Part I: Foundations",
+    "page": 35
+  },
+  {
+    "level": 2,
+    "title": "Chapter 1: The Problem of Delivering Software",
+    "page": 37
+  },
+  {
+    "level": 3,
+    "title": "Introduction",
+    "page": 37
+  },
+  {
+    "level": 3,
+    "title": "Some Common Release Antipatterns",
+    "page": 38
+  },
+  {
+    "level": 3,
+    "title": "How Do We Achieve Our Goal?",
+    "page": 45
+  },
+  {
+    "level": 3,
+    "title": "What Are the Benefits?",
+    "page": 51
+  },
+  {
+    "level": 3,
+    "title": "The Release Candidate",
+    "page": 56
+  },
+  {
+    "level": 3,
+    "title": "Principles of Software Delivery",
+    "page": 58
+  },
+  {
+    "level": 3,
+    "title": "Summary",
+    "page": 63
+  },
+  {
+    "level": 2,
+    "title": "Chapter 2: Configuration Management",
+    "page": 65
+  },
+  {
+    "level": 3,
+    "title": "Introduction",
+    "page": 65
+  },
+  {
+    "level": 3,
+    "title": "Using Version Control",
+    "page": 66
+  },
+  {
+    "level": 3,
+    "title": "Managing Dependencies",
+    "page": 72
+  },
+  {
+    "level": 3,
+    "title": "Managing Software Configuration",
+    "page": 73
+  },
+  {
+    "level": 3,
+    "title": "Managing Your Environments",
+    "page": 83
+  },
+  {
+    "level": 3,
+    "title": "Summary",
+    "page": 88
+  },
+  {
+    "level": 2,
+    "title": "Chapter 3: Continuous Integration",
+    "page": 89
+  },
+  {
+    "level": 3,
+    "title": "Introduction",
+    "page": 89
+  },
+  {
+    "level": 3,
+    "title": "Implementing Continuous Integration",
+    "page": 90
+  },
+  {
+    "level": 3,
+    "title": "Prerequisites for Continuous Integration",
+    "page": 93
+  },
+  {
+    "level": 3,
+    "title": "Using Continuous Integration Software",
+    "page": 97
+  },
+  {
+    "level": 3,
+    "title": "Essential Practices",
+    "page": 100
+  },
+  {
+    "level": 3,
+    "title": "Suggested Practices",
+    "page": 105
+  },
+  {
+    "level": 3,
+    "title": "Distributed Teams",
+    "page": 109
+  },
+  {
+    "level": 3,
+    "title": "Distributed Version Control Systems",
+    "page": 113
+  },
+  {
+    "level": 3,
+    "title": "Summary",
+    "page": 116
+  },
+  {
+    "level": 2,
+    "title": "Chapter 4: Implementing a Testing Strategy",
+    "page": 117
+  },
+  {
+    "level": 3,
+    "title": "Introduction",
+    "page": 117
+  },
+  {
+    "level": 3,
+    "title": "Types of Tests",
+    "page": 118
+  },
+  {
+    "level": 3,
+    "title": "Real-Life Situations and Strategies",
+    "page": 126
+  },
+  {
+    "level": 3,
+    "title": "Process",
+    "page": 133
+  },
+  {
+    "level": 3,
+    "title": "Summary",
+    "page": 135
+  },
+  {
+    "level": 1,
+    "title": "Part II: The Deployment Pipeline",
+    "page": 137
+  },
+  {
+    "level": 2,
+    "title": "Chapter 5: Anatomy of the Deployment Pipeline",
+    "page": 139
+  },
+  {
+    "level": 3,
+    "title": "Introduction",
+    "page": 139
+  },
+  {
+    "level": 3,
+    "title": "What Is a Deployment Pipeline?",
+    "page": 140
+  },
+  {
+    "level": 3,
+    "title": "Deployment Pipeline Practices",
+    "page": 147
+  },
+  {
+    "level": 3,
+    "title": "The Commit Stage",
+    "page": 154
+  },
+  {
+    "level": 3,
+    "title": "The Automated Acceptance Test Gate",
+    "page": 156
+  },
+  {
+    "level": 3,
+    "title": "Subsequent Test Stages",
+    "page": 160
+  },
+  {
+    "level": 3,
+    "title": "Preparing to Release",
+    "page": 162
+  },
+  {
+    "level": 3,
+    "title": "Implementing a Deployment Pipeline",
+    "page": 167
+  },
+  {
+    "level": 3,
+    "title": "Metrics",
+    "page": 171
+  },
+  {
+    "level": 3,
+    "title": "Summary",
+    "page": 174
+  },
+  {
+    "level": 2,
+    "title": "Chapter 6: Build and Deployment Scripting",
+    "page": 177
+  },
+  {
+    "level": 3,
+    "title": "Introduction",
+    "page": 177
+  },
+  {
+    "level": 3,
+    "title": "An Overview of Build Tools",
+    "page": 178
+  },
+  {
+    "level": 3,
+    "title": "Principles and Practices of Build and Deployment Scripting",
+    "page": 186
+  },
+  {
+    "level": 3,
+    "title": "Project Structure for Applications That Target the JVM",
+    "page": 191
+  },
+  {
+    "level": 3,
+    "title": "Deployment Scripting",
+    "page": 194
+  },
+  {
+    "level": 3,
+    "title": "Tips and Tricks",
+    "page": 198
+  },
+  {
+    "level": 3,
+    "title": "Summary",
+    "page": 202
+  },
+  {
+    "level": 2,
+    "title": "Chapter 7: The Commit Stage",
+    "page": 203
+  },
+  {
+    "level": 3,
+    "title": "Introduction",
+    "page": 203
+  },
+  {
+    "level": 3,
+    "title": "Commit Stage Principles and Practices",
+    "page": 204
+  },
+  {
+    "level": 3,
+    "title": "The Results of the Commit Stage",
+    "page": 208
+  },
+  {
+    "level": 3,
+    "title": "Commit Test Suite Principles and Practices",
+    "page": 211
+  },
+  {
+    "level": 3,
+    "title": "Summary",
+    "page": 219
+  },
+  {
+    "level": 2,
+    "title": "Chapter 8: Automated Acceptance Testing",
+    "page": 221
+  },
+  {
+    "level": 3,
+    "title": "Introduction",
+    "page": 221
+  },
+  {
+    "level": 3,
+    "title": "Why Is Automated Acceptance Testing Essential?",
+    "page": 222
+  },
+  {
+    "level": 3,
+    "title": "Creating Acceptance Tests",
+    "page": 227
+  },
+  {
+    "level": 3,
+    "title": "The Application Driver Layer",
+    "page": 232
+  },
+  {
+    "level": 3,
+    "title": "Implementing Acceptance Tests",
+    "page": 238
+  },
+  {
+    "level": 3,
+    "title": "The Acceptance Test Stage",
+    "page": 247
+  },
+  {
+    "level": 3,
+    "title": "Acceptance Test Performance",
+    "page": 252
+  },
+  {
+    "level": 3,
+    "title": "Summary",
+    "page": 256
+  },
+  {
+    "level": 2,
+    "title": "Chapter 9: Testing Nonfunctional Requirements",
+    "page": 259
+  },
+  {
+    "level": 3,
+    "title": "Introduction",
+    "page": 259
+  },
+  {
+    "level": 3,
+    "title": "Managing Nonfunctional Requirements",
+    "page": 260
+  },
+  {
+    "level": 3,
+    "title": "Programming for Capacity",
+    "page": 262
+  },
+  {
+    "level": 3,
+    "title": "Measuring Capacity",
+    "page": 265
+  },
+  {
+    "level": 3,
+    "title": "The Capacity-Testing Environment",
+    "page": 268
+  },
+  {
+    "level": 3,
+    "title": "Automating Capacity Testing",
+    "page": 272
+  },
+  {
+    "level": 3,
+    "title": "Adding Capacity Tests to the Deployment Pipeline",
+    "page": 278
+  },
+  {
+    "level": 3,
+    "title": "Additional Benefits of a Capacity Test System",
+    "page": 281
+  },
+  {
+    "level": 3,
+    "title": "Summary",
+    "page": 282
+  },
+  {
+    "level": 2,
+    "title": "Chapter 10: Deploying and Releasing Applications",
+    "page": 283
+  },
+  {
+    "level": 3,
+    "title": "Introduction",
+    "page": 283
+  },
+  {
+    "level": 3,
+    "title": "Creating a Release Strategy",
+    "page": 284
+  },
+  {
+    "level": 3,
+    "title": "Deploying and Promoting Your Application",
+    "page": 287
+  },
+  {
+    "level": 3,
+    "title": "Rolling Back Deployments and Zero-Downtime Releases",
+    "page": 293
+  },
+  {
+    "level": 3,
+    "title": "Emergency Fixes",
+    "page": 299
+  },
+  {
+    "level": 3,
+    "title": "Continuous Deployment",
+    "page": 300
+  },
+  {
+    "level": 3,
+    "title": "Tips and Tricks",
+    "page": 304
+  },
+  {
+    "level": 3,
+    "title": "Summary",
+    "page": 307
+  },
+  {
+    "level": 1,
+    "title": "Part III: The Delivery Ecosystem",
+    "page": 309
+  },
+  {
+    "level": 2,
+    "title": "Chapter 11: Managing Infrastructure and Environments",
+    "page": 311
+  },
+  {
+    "level": 3,
+    "title": "Introduction",
+    "page": 311
+  },
+  {
+    "level": 3,
+    "title": "Understanding the Needs of the Operations Team",
+    "page": 313
+  },
+  {
+    "level": 3,
+    "title": "Modeling and Managing Infrastructure",
+    "page": 317
+  },
+  {
+    "level": 3,
+    "title": "Managing Server Provisioning and Configuration",
+    "page": 322
+  },
+  {
+    "level": 3,
+    "title": "Managing the Configuration of Middleware",
+    "page": 329
+  },
+  {
+    "level": 3,
+    "title": "Managing Infrastructure Services",
+    "page": 334
+  },
+  {
+    "level": 3,
+    "title": "Virtualization",
+    "page": 337
+  },
+  {
+    "level": 3,
+    "title": "Cloud Computing",
+    "page": 346
+  },
+  {
+    "level": 3,
+    "title": "Monitoring Infrastructure and Applications",
+    "page": 351
+  },
+  {
+    "level": 3,
+    "title": "Summary",
+    "page": 357
+  },
+  {
+    "level": 2,
+    "title": "Chapter 12: Managing Data",
+    "page": 359
+  },
+  {
+    "level": 3,
+    "title": "Introduction",
+    "page": 359
+  },
+  {
+    "level": 3,
+    "title": "Database Scripting",
+    "page": 360
+  },
+  {
+    "level": 3,
+    "title": "Incremental Change",
+    "page": 361
+  },
+  {
+    "level": 3,
+    "title": "Rolling Back Databases and Zero-Downtime Releases",
+    "page": 365
+  },
+  {
+    "level": 3,
+    "title": "Managing Test Data",
+    "page": 368
+  },
+  {
+    "level": 3,
+    "title": "Data Management and the Deployment Pipeline",
+    "page": 372
+  },
+  {
+    "level": 3,
+    "title": "Summary",
+    "page": 377
+  },
+  {
+    "level": 2,
+    "title": "Chapter 13: Managing Components and Dependencies",
+    "page": 379
+  },
+  {
+    "level": 3,
+    "title": "Introduction",
+    "page": 379
+  },
+  {
+    "level": 3,
+    "title": "Keeping Your Application Releasable",
+    "page": 380
+  },
+  {
+    "level": 3,
+    "title": "Dependencies",
+    "page": 385
+  },
+  {
+    "level": 3,
+    "title": "Components",
+    "page": 390
+  },
+  {
+    "level": 3,
+    "title": "Managing Dependency Graphs",
+    "page": 397
+  },
+  {
+    "level": 3,
+    "title": "Managing Binaries",
+    "page": 407
+  },
+  {
+    "level": 3,
+    "title": "Managing Dependencies with Maven",
+    "page": 409
+  },
+  {
+    "level": 3,
+    "title": "Summary",
+    "page": 413
+  },
+  {
+    "level": 2,
+    "title": "Chapter 14: Advanced Version Control",
+    "page": 415
+  },
+  {
+    "level": 3,
+    "title": "Introduction",
+    "page": 415
+  },
+  {
+    "level": 3,
+    "title": "A Brief History of Revision Control",
+    "page": 416
+  },
+  {
+    "level": 3,
+    "title": "Branching and Merging",
+    "page": 422
+  },
+  {
+    "level": 3,
+    "title": "Distributed Version Control Systems",
+    "page": 427
+  },
+  {
+    "level": 3,
+    "title": "Stream-Based Version Control Systems",
+    "page": 433
+  },
+  {
+    "level": 3,
+    "title": "Develop on Mainline",
+    "page": 439
+  },
+  {
+    "level": 3,
+    "title": "Branch for Release",
+    "page": 442
+  },
+  {
+    "level": 3,
+    "title": "Branch by Feature",
+    "page": 444
+  },
+  {
+    "level": 3,
+    "title": "Branch by Team",
+    "page": 446
+  },
+  {
+    "level": 3,
+    "title": "Summary",
+    "page": 449
+  },
+  {
+    "level": 2,
+    "title": "Chapter 15: Managing Continuous Delivery",
+    "page": 451
+  },
+  {
+    "level": 3,
+    "title": "Introduction",
+    "page": 451
+  },
+  {
+    "level": 3,
+    "title": "A Maturity Model for Configuration and Release Management",
+    "page": 453
+  },
+  {
+    "level": 3,
+    "title": "Project Lifecycle",
+    "page": 455
+  },
+  {
+    "level": 3,
+    "title": "A Risk Management Process",
+    "page": 463
+  },
+  {
+    "level": 3,
+    "title": "Common Delivery Problems—Their Symptoms and Causes",
+    "page": 466
+  },
+  {
+    "level": 3,
+    "title": "Compliance and Auditing",
+    "page": 470
+  },
+  {
+    "level": 3,
+    "title": "Summary",
+    "page": 476
+  },
+  {
+    "level": 1,
+    "title": "Bibliography",
+    "page": 477
+  },
+  {
+    "level": 1,
+    "title": "Index",
+    "page": 479
+  },
+  {
+    "level": 2,
+    "title": "A",
+    "page": 479
+  },
+  {
+    "level": 2,
+    "title": "B",
+    "page": 481
+  },
+  {
+    "level": 2,
+    "title": "C",
+    "page": 482
+  },
+  {
+    "level": 2,
+    "title": "D",
+    "page": 484
+  },
+  {
+    "level": 2,
+    "title": "E",
+    "page": 486
+  },
+  {
+    "level": 2,
+    "title": "F",
+    "page": 487
+  },
+  {
+    "level": 2,
+    "title": "G",
+    "page": 487
+  },
+  {
+    "level": 2,
+    "title": "H",
+    "page": 488
+  },
+  {
+    "level": 2,
+    "title": "I",
+    "page": 488
+  },
+  {
+    "level": 2,
+    "title": "J",
+    "page": 489
+  },
+  {
+    "level": 2,
+    "title": "K",
+    "page": 489
+  },
+  {
+    "level": 2,
+    "title": "L",
+    "page": 489
+  },
+  {
+    "level": 2,
+    "title": "M",
+    "page": 490
+  },
+  {
+    "level": 2,
+    "title": "N",
+    "page": 490
+  },
+  {
+    "level": 2,
+    "title": "O",
+    "page": 491
+  },
+  {
+    "level": 2,
+    "title": "P",
+    "page": 491
+  },
+  {
+    "level": 2,
+    "title": "Q",
+    "page": 492
+  },
+  {
+    "level": 2,
+    "title": "R",
+    "page": 492
+  },
+  {
+    "level": 2,
+    "title": "S",
+    "page": 493
+  },
+  {
+    "level": 2,
+    "title": "T",
+    "page": 495
+  },
+  {
+    "level": 2,
+    "title": "U",
+    "page": 496
+  },
+  {
+    "level": 2,
+    "title": "V",
+    "page": 496
+  },
+  {
+    "level": 2,
+    "title": "W",
+    "page": 497
+  },
+  {
+    "level": 2,
+    "title": "X",
+    "page": 497
+  },
+  {
+    "level": 2,
+    "title": "Y",
+    "page": 497
+  },
+  {
+    "level": 2,
+    "title": "Z",
+    "page": 497
+  }
+]

@@ -1,0 +1,194 @@
+{
+  "review_id": "event_state_on_demand_bounded_candidate_dataset_review_v0_1_20260727T000000Z",
+  "review_run_id": "event_state_on_demand_bounded_candidate_dataset_review_v0_1_20260727T202013Z",
+  "review_gate": "event_state_on_demand_bounded_candidate_dataset_review_v0_1",
+  "status": "CLOSED_APPROVED_AS_EVENT_STATE_ON_DEMAND_BOUNDED_CANDIDATE_EVIDENCE_WITH_RESTRICTIONS_NO_PROMOTION",
+  "reviewed_run": "event_state_on_demand_bounded_execution_v0_1_20260727T200322Z",
+  "reviewed_candidate_dataset_id": "event_state_candidate_dataset_v0_1_d5662103e1c45f90",
+  "reviewed_candidate_dataset_fingerprint": "d5662103e1c45f90847b51e69b0e698243bde231758fa3c864e24c4a6839be33",
+  "reviewed_logical_dataset_fingerprint": "1b981958488e69f8f553c9197861bbffeed2d5388437c1113f9e21422b9cf970",
+  "decision": {
+    "review_decision": "approved_as_event_state_on_demand_bounded_candidate_evidence_with_restrictions",
+    "requested_contexts": 9,
+    "represented_contexts": 8,
+    "unavailable_contexts": 1,
+    "unaccounted_contexts": 0,
+    "event_state_candidate_records": 8,
+    "hard_review_failures": 0,
+    "candidate_dataset_review_approved": true,
+    "dataset_completeness": "partial",
+    "reuse_eligibility_after_review": "pending_deterministic_rerun",
+    "official_dataset_after_review": false,
+    "production_after_review": false,
+    "downstream_after_review": false
+  },
+  "checks": [
+    {
+      "check_id": "source_run_closed_pass",
+      "status": "PASS"
+    },
+    {
+      "check_id": "requested_contexts_is_9",
+      "status": "PASS"
+    },
+    {
+      "check_id": "represented_contexts_is_8",
+      "status": "PASS"
+    },
+    {
+      "check_id": "unavailable_contexts_is_1",
+      "status": "PASS"
+    },
+    {
+      "check_id": "candidate_jsonl_records_is_8",
+      "status": "PASS"
+    },
+    {
+      "check_id": "candidate_file_hash_match",
+      "status": "PASS"
+    },
+    {
+      "check_id": "validation_pass_with_restrictions",
+      "status": "PASS"
+    },
+    {
+      "check_id": "hard_validation_failures_zero",
+      "status": "PASS"
+    },
+    {
+      "check_id": "fallback_uses_zero",
+      "status": "PASS"
+    },
+    {
+      "check_id": "duplicate_event_state_record_ids_zero",
+      "status": "PASS"
+    },
+    {
+      "check_id": "native_event_instance_identity_excludes_instrument",
+      "status": "PASS"
+    },
+    {
+      "check_id": "partial_event_state_records_zero",
+      "status": "PASS"
+    },
+    {
+      "check_id": "record_keys_equal_represented_ledger_keys",
+      "status": "PASS"
+    },
+    {
+      "check_id": "unavailable_context_expected",
+      "status": "PASS"
+    },
+    {
+      "check_id": "unavailable_reason_expected",
+      "status": "PASS"
+    },
+    {
+      "check_id": "event_state_record_ids_unique",
+      "status": "PASS"
+    },
+    {
+      "check_id": "event_state_record_fingerprints_unique",
+      "status": "PASS"
+    },
+    {
+      "check_id": "event_type_scope_session_opened_only",
+      "status": "PASS"
+    },
+    {
+      "check_id": "event_state_profile_scope_match",
+      "status": "PASS"
+    },
+    {
+      "check_id": "event_window_scope_match",
+      "status": "PASS"
+    },
+    {
+      "check_id": "state_role_at_event",
+      "status": "PASS"
+    },
+    {
+      "check_id": "consumption_legality_research_only",
+      "status": "PASS"
+    },
+    {
+      "check_id": "at_event_timestamp_alignment",
+      "status": "PASS"
+    },
+    {
+      "check_id": "one_native_event_instance_per_session",
+      "status": "PASS"
+    },
+    {
+      "check_id": "event_instance_manifest_count_3",
+      "status": "PASS"
+    },
+    {
+      "check_id": "event_window_manifest_count_3",
+      "status": "PASS"
+    },
+    {
+      "check_id": "instrument_projection_manifest_count_9",
+      "status": "PASS"
+    },
+    {
+      "check_id": "market_state_dependency_binding_8_bound_1_blocked",
+      "status": "PASS"
+    },
+    {
+      "check_id": "bound_market_state_rows_exactly_one",
+      "status": "PASS"
+    },
+    {
+      "check_id": "dependency_fallbacks_zero",
+      "status": "PASS"
+    },
+    {
+      "check_id": "row_lineage_parse_and_dependency_match",
+      "status": "PASS"
+    },
+    {
+      "check_id": "registry_status_validated_candidate",
+      "status": "PASS"
+    },
+    {
+      "check_id": "reuse_pending_determinism",
+      "status": "PASS"
+    },
+    {
+      "check_id": "promotion_review_pending_before_review",
+      "status": "PASS"
+    },
+    {
+      "check_id": "registry_downstream_false",
+      "status": "PASS"
+    },
+    {
+      "check_id": "official_production_downstream_closed",
+      "status": "PASS"
+    },
+    {
+      "check_id": "failed_attempt_preserved_as_invalid",
+      "status": "PASS"
+    }
+  ],
+  "evidence": {
+    "source_final_manifest": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_execution_v0_1_20260727T200322Z\\final_manifest.json",
+    "candidate_manifest": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_execution_v0_1_20260727T200322Z\\event_state_candidate_output_manifest.json",
+    "candidate_registry_entry": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_execution_v0_1_20260727T200322Z\\candidate_registry_entry.json",
+    "validation_report": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_execution_v0_1_20260727T200322Z\\event_state_validation_report.json",
+    "logical_context_ledger": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_execution_v0_1_20260727T200322Z\\event_state_logical_context_ledger.json",
+    "context_ledger_sha256": "f3be8d23bd30398c8721f45aa07a4ff181059adbec0b2c624038747357da4064",
+    "fingerprint_comparison_sha256": "c5a972a47df54d185ec1c5febb783e70d0ea611523052f6fc8947f582dd78374"
+  },
+  "registry_entry_mutations": 0,
+  "materializer_executions": 0,
+  "market_state_candidate_files_read_by_review": 0,
+  "event_state_records_emitted_by_review": 0,
+  "candidate_dataset_registry_entries_written_by_review": 0,
+  "next_allowed_gate": "event_state_on_demand_bounded_deterministic_rerun_authorization_v0_1",
+  "official_dataset": false,
+  "production": false,
+  "downstream": false,
+  "review_matrix_sha256": "926f90110e463441e35307b82add2bdada4371c19ca0f048a50a2783243585a6"
+}

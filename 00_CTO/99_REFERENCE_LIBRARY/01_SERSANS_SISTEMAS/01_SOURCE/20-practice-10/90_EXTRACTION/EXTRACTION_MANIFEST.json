@@ -1,0 +1,21 @@
+{
+  "schema": "SERSAN_PRACTICE_EXTRACTION_V1",
+  "practice": "10",
+  "source_inventory": {
+    "practice": "10",
+    "source_package": "20-practice-10(1).zip",
+    "file_count": 195,
+    "markdown_count": 1,
+    "image_count": 194,
+    "uncompressed_bytes": 97320616,
+    "markdown_files": [
+      "practica_10_bollinger_bands.md"
+    ],
+    "status": "SOURCE_PRESENT_AND_INVENTORIED"
+  },
+  "evidence_count": 20,
+  "topic_links_count": 40,
+  "figure_manifest_rows": 194,
+  "visual_review_status": "REVIEWED_IN_INCREMENTAL_AUDIT",
+  "integration_target": "07_INTEGRATION/FINAL"
+}

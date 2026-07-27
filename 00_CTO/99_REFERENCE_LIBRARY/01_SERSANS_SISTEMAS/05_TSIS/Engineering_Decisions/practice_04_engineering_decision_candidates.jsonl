@@ -1,0 +1,8 @@
+{"decision_candidate_id": "EDC-P04-001", "statement": "Separar validación de idea, selección paramétrica y simulación operable.", "status": "CANDIDATE_NOT_APPROVED", "source_practice": "14-practice-04"}
+{"decision_candidate_id": "EDC-P04-002", "statement": "Exigir universe point-in-time para cualquier afirmación de rendimiento histórico operable.", "status": "CANDIDATE_NOT_APPROVED", "source_practice": "14-practice-04"}
+{"decision_candidate_id": "EDC-P04-003", "statement": "Guardar superficies y todas las combinaciones, no solo el óptimo.", "status": "CANDIDATE_NOT_APPROVED", "source_practice": "14-practice-04"}
+{"decision_candidate_id": "EDC-P04-004", "statement": "Declarar función objetivo y restricciones antes de seleccionar configuración.", "status": "CANDIDATE_NOT_APPROVED", "source_practice": "14-practice-04"}
+{"decision_candidate_id": "EDC-P04-005", "statement": "Modelar costes, slippage, exposición y gaps como contratos explícitos.", "status": "CANDIDATE_NOT_APPROVED", "source_practice": "14-practice-04"}
+{"decision_candidate_id": "EDC-P04-006", "statement": "Validar largos y cortos como hipótesis separadas.", "status": "CANDIDATE_NOT_APPROVED", "source_practice": "14-practice-04"}
+{"decision_candidate_id": "EDC-P04-007", "statement": "Imponer presupuesto de grados de libertad y registro de cambios.", "status": "CANDIDATE_NOT_APPROVED", "source_practice": "14-practice-04"}
+{"decision_candidate_id": "EDC-P04-008", "statement": "Exigir atribución por activo y concentración junto al resultado agregado.", "status": "CANDIDATE_NOT_APPROVED", "source_practice": "14-practice-04"}

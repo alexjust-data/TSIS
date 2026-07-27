@@ -1,0 +1,21 @@
+{
+  "schema": "SERSAN_PRACTICE_EXTRACTION_V1",
+  "practice": "13",
+  "source_inventory": {
+    "practice": "13",
+    "source_package": "25-practice-15(2).zip",
+    "file_count": 186,
+    "markdown_count": 1,
+    "image_count": 185,
+    "uncompressed_bytes": 100733878,
+    "markdown_files": [
+      "practica_13_revised.md"
+    ],
+    "status": "SOURCE_PRESENT_AND_INVENTORIED"
+  },
+  "evidence_count": 12,
+  "topic_links_count": 19,
+  "figure_manifest_rows": 185,
+  "visual_review_status": "REVIEWED_IN_INCREMENTAL_AUDIT",
+  "integration_target": "07_INTEGRATION/FINAL"
+}

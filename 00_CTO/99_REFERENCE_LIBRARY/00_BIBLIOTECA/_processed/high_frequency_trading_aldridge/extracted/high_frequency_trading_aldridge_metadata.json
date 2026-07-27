@@ -1,0 +1,15 @@
+﻿{
+    "book_id":  "high_frequency_trading_aldridge",
+    "source_pdf":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\High_Frequency_Trading_-_Irene_Aldridge.pdf",
+    "processed_at_utc":  "2026-07-27T14:21:43.120960+00:00",
+    "pages":  456,
+    "file_size_bytes":  6260422,
+    "sha256":  "6d951af00db25d80cd7b89dce7930c5567618b8907e64b31f58049a66a52af66",
+    "total_words":  105114,
+    "text_pages":  448,
+    "toc_items":  139,
+    "requires_ocr":  false,
+    "status":  "indexed",
+    "working_text_persisted":  false,
+    "ocr_completed":  false
+}

@@ -1,0 +1,136 @@
+{
+  "policy_id": "market_state_capability_consumption_policy_v0_1_20260727T142133Z",
+  "gate": "market_state_capability_consumption_policy_v0_1",
+  "status": "CLOSED_PASS_CAPABILITY_CONSUMPTION_POLICY_ESTABLISHED_WITH_RESTRICTIONS_NO_DATASET_PROMOTION",
+  "decision": {
+    "consumption_policy_decision": "establish_with_restrictions_candidate_runtime_only",
+    "consumption_policy_status": "ESTABLISHED_WITH_RESTRICTIONS_CANDIDATE_RUNTIME_ONLY",
+    "hard_policy_failures": 0
+  },
+  "checks": [
+    {
+      "check_id": "required_evidence_files_present",
+      "status": "PASS",
+      "observed": ""
+    },
+    {
+      "check_id": "capability_promotion_review_passed",
+      "status": "PASS",
+      "observed": "CLOSED_PASS_CAPABILITY_PROMOTED_WITH_RESTRICTIONS_NO_DATASET_PROMOTION"
+    },
+    {
+      "check_id": "capability_status_is_restricted_candidate_generation",
+      "status": "PASS",
+      "observed": "PROMOTED_WITH_RESTRICTIONS_CANDIDATE_GENERATION_ONLY"
+    },
+    {
+      "check_id": "promotion_matrix_official_dataset_false",
+      "status": "PASS",
+      "observed": "False"
+    },
+    {
+      "check_id": "promotion_matrix_production_false",
+      "status": "PASS",
+      "observed": "False"
+    },
+    {
+      "check_id": "promotion_matrix_downstream_false",
+      "status": "PASS",
+      "observed": "False"
+    },
+    {
+      "check_id": "target_profile_official_dataset_absent",
+      "status": "PASS",
+      "observed": "False"
+    },
+    {
+      "check_id": "candidate_registry_downstream_eligibility_false",
+      "status": "PASS",
+      "observed": "False"
+    }
+  ],
+  "allowed_operations": {
+    "inspect_capability_metadata": true,
+    "inspect_request_contracts": true,
+    "inspect_registry_metadata": true,
+    "serve_candidate_metadata": true,
+    "serve_candidate_files_to_runtime_internal_validation": true,
+    "reuse_exact_validated_candidate_for_matching_candidate_request": true,
+    "reuse_incremental_validated_candidate_for_matching_candidate_request": true,
+    "open_new_candidate_execution_without_separate_authorization": false,
+    "serve_as_official_market_state_dataset": false,
+    "serve_to_production": false,
+    "serve_to_downstream_research_or_backtest": false,
+    "serve_to_ml_or_rl_training": false,
+    "serve_to_event_state_physical_materialization": false
+  },
+  "allowed_consumer_classes": [
+    "runtime_internal_request_resolver",
+    "runtime_internal_execution_planner",
+    "runtime_internal_candidate_reuse_resolver",
+    "runtime_validator",
+    "applied_architecture_review",
+    "event_state_design_planning_metadata_only",
+    "human_audit_metadata_review"
+  ],
+  "prohibited_consumer_classes_v0_1": [
+    "production_trading",
+    "live_execution",
+    "downstream_backtest",
+    "downstream_ml",
+    "downstream_rl",
+    "unbounded_event_state_builder",
+    "official_dataset_resolver"
+  ],
+  "reuse_required_conditions": [
+    "request_fingerprint_match",
+    "execution_plan_fingerprint_match",
+    "profile_contract_hash_match",
+    "source_fingerprint_match",
+    "builder_version_match",
+    "schema_hash_match",
+    "validation_status_allows_candidate_reuse",
+    "determinism_evidence_present",
+    "artifact_availability_available",
+    "no_quarantine",
+    "no_unresolved_blocking_findings",
+    "restriction_set_propagated"
+  ],
+  "evidence": {
+    "capability_promotion_matrix": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\market_state_on_demand_capability_promotion_review_matrix_v0_1.json",
+      "sha256": "5b6867e5d13996d8ec316085747b4525835a8daef443bf7141f3584bc8b93213",
+      "status": "CLOSED_PASS_CAPABILITY_PROMOTED_WITH_RESTRICTIONS_NO_DATASET_PROMOTION"
+    },
+    "capability_promotion_final_manifest": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\market_state_on_demand_capability_promotion_review_v0_1_20260727T140338Z\\final_manifest.json",
+      "sha256": "8adb8c5599ae2036a3d879c2c17264d840692e4787b8c7d1cc0f357153f12109",
+      "status": "CLOSED_PASS_CAPABILITY_PROMOTED_WITH_RESTRICTIONS_NO_DATASET_PROMOTION"
+    },
+    "market_state_on_demand_capability_contract": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\market_state_on_demand_capability_contract_v0_1.json",
+      "sha256": "2d44cb58800a6d85523c5d310d94e05666cab62f6db007952597fdaa8640b304",
+      "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION"
+    },
+    "candidate_dataset_registry_contract": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\market_state_candidate_dataset_registry_contract_v0_1.json",
+      "sha256": "97240ed7cd9ada2c5095f3dff53ff7a015582863c4e5222e32080799ee3f3101",
+      "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION"
+    }
+  },
+  "counters": {
+    "source_market_data_rows_read": 0,
+    "parquet_content_rows_read": 0,
+    "materializer_executions": 0,
+    "validator_executions": 0,
+    "new_candidate_registry_entries_written": 0,
+    "datasets_written": 0,
+    "registry_entry_mutations": 0
+  },
+  "official_dataset": false,
+  "production": false,
+  "downstream": false,
+  "event_state_on_demand_execution": false,
+  "next_allowed_gate": "event_state_on_demand_capability_design_authorization_v0_1",
+  "matrix_sha256": "f2e243fead43d02ddec7b1c6fb9ff286cdf47f04823e1d9a92d0ea80dadc285b"
+}

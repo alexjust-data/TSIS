@@ -1,0 +1,626 @@
+[
+  {
+    "level": 0,
+    "title": "Cover @page {padding: 0pt; margin:0pt} body { text-align: center; p...",
+    "unit": 1,
+    "href": "titlepage.xhtml"
+  },
+  {
+    "level": 0,
+    "title": "About This E-Book About This E-Book EPUB is an open, industry-stand...",
+    "unit": 2,
+    "href": "text/part0000.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture OceanofPDF.com",
+    "unit": 3,
+    "href": "text/part0001.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture Clean Architecture A C RAFTSMAN’S G UIDE TO S OF...",
+    "unit": 4,
+    "href": "text/part0002.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture Many of the designations used by manufacturers a...",
+    "unit": 5,
+    "href": "text/part0003.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture This book is dedicated to my lovely wife, my fou...",
+    "unit": 6,
+    "href": "text/part0004.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture C ONTENTS Foreword Preface Acknowledgments About...",
+    "unit": 7,
+    "href": "text/part0005.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture F OREWORD What do we talk about when we talk abo...",
+    "unit": 8,
+    "href": "text/part0006.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture P REFACE The title of this book is Clean Archite...",
+    "unit": 9,
+    "href": "text/part0007.html"
+  },
+  {
+    "level": 0,
+    "title": "Acknowledgments A CKNOWLEDGMENTS The people who played a part in th...",
+    "unit": 10,
+    "href": "text/part0008.html"
+  },
+  {
+    "level": 0,
+    "title": "About the Author A BOUT THE A UTHOR Robert C. Martin (Uncle Bob) ha...",
+    "unit": 11,
+    "href": "text/part0009.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture I I NTRODUCTION It doesn’t take a huge amount of...",
+    "unit": 12,
+    "href": "text/part0010.html"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 1 What Is Design and Architecture? 1 W HAT I S D ESIGN AND ...",
+    "unit": 13,
+    "href": "text/part0011.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 2 A T ALE OF T WO V ALUES Every software system ...",
+    "unit": 14,
+    "href": "text/part0012.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture II S TARTING WITH THE B RICKS : P ROGRAMMING P A...",
+    "unit": 15,
+    "href": "text/part0013.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 3 P ARADIGM O VERVIEW The three paradigms includ...",
+    "unit": 16,
+    "href": "text/part0014.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 4 S TRUCTURED P ROGRAMMING Edsger Wybe Dijkstra ...",
+    "unit": 17,
+    "href": "text/part0015.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 5 O BJECT-ORIENTED P ROGRAMMING As we will see, ...",
+    "unit": 18,
+    "href": "text/part0016.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 6 F UNCTIONAL P ROGRAMMING In many ways, the con...",
+    "unit": 19,
+    "href": "text/part0017.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture III D ESIGN P RINCIPLES Good software systems be...",
+    "unit": 20,
+    "href": "text/part0018.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 7 SRP: T HE S INGLE R ESPONSIBILITY P RINCIPLE O...",
+    "unit": 21,
+    "href": "text/part0019.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 8 OCP: T HE O PEN -C LOSED P RINCIPLE The Open-C...",
+    "unit": 22,
+    "href": "text/part0020.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 9 LSP: T HE L ISKOV S UBSTITUTION P RINCIPLE In ...",
+    "unit": 23,
+    "href": "text/part0021.html"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 10 ISP: The Interface Segregation Principle 10 ISP: T HE I ...",
+    "unit": 24,
+    "href": "text/part0022.html"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 11 DIP: The Dependency Inversion Principle 11 DIP: T HE D E...",
+    "unit": 25,
+    "href": "text/part0023.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture IV C OMPONENT P RINCIPLES If the SOLID principle...",
+    "unit": 26,
+    "href": "text/part0024.html"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 12 Components 12 C OMPONENTS Components are the units of de...",
+    "unit": 27,
+    "href": "text/part0025.html"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 13 Component Cohesion 13 C OMPONENT C OHESION Which classes...",
+    "unit": 28,
+    "href": "text/part0026.html"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 14 Component Coupling 14 C OMPONENT C OUPLING The next thre...",
+    "unit": 29,
+    "href": "text/part0027.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture V A RCHITECTURE OceanofPDF.com",
+    "unit": 30,
+    "href": "text/part0028.html"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 15 What Is Architecture? 15 W HAT I S A RCHITECTURE ? The w...",
+    "unit": 31,
+    "href": "text/part0029.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 16 I NDEPENDENCE As we previously stated, a good...",
+    "unit": 32,
+    "href": "text/part0030.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 17 B OUNDARIES : D RAWING L INES Software archit...",
+    "unit": 33,
+    "href": "text/part0031.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 18 B OUNDARY A NATOMY The architecture of a syst...",
+    "unit": 34,
+    "href": "text/part0032.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 19 P OLICY AND L EVEL Software systems are state...",
+    "unit": 35,
+    "href": "text/part0033.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 20 B USINESS R ULES If we are going to divide ou...",
+    "unit": 36,
+    "href": "text/part0034.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 21 S CREAMING A RCHITECTURE Imagine that you are...",
+    "unit": 37,
+    "href": "text/part0035.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 22 T HE C LEAN A RCHITECTURE Over the last sever...",
+    "unit": 38,
+    "href": "text/part0036.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 23 P RESENTERS AND H UMBLE O BJECTS In Chapter 2...",
+    "unit": 39,
+    "href": "text/part0037.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 24 P ARTIAL B OUNDARIES Full-fledged architectur...",
+    "unit": 40,
+    "href": "text/part0038.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 25 L AYERS AND B OUNDARIES It is easy to think o...",
+    "unit": 41,
+    "href": "text/part0039.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 26 T HE M AIN C OMPONENT In every system, there ...",
+    "unit": 42,
+    "href": "text/part0040.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 27 S ERVICES: G REAT AND S MALL Service-oriented...",
+    "unit": 43,
+    "href": "text/part0041.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 28 T HE T EST B OUNDARY Yes, that’s right: The t...",
+    "unit": 44,
+    "href": "text/part0042.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 29 C LEAN E MBEDDED A RCHITECTURE By James Grenn...",
+    "unit": 45,
+    "href": "text/part0043.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture VI D ETAILS OceanofPDF.com",
+    "unit": 46,
+    "href": "text/part0044.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 30 T HE D ATABASE I S A D ETAIL From an architec...",
+    "unit": 47,
+    "href": "text/part0045.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 31 T HE W EB I S A D ETAIL Were you a developer ...",
+    "unit": 48,
+    "href": "text/part0046.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 32 F RAMEWORKS A RE D ETAILS Frameworks have bec...",
+    "unit": 49,
+    "href": "text/part0047.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 33 C ASE S TUDY : V IDEO S ALES Now it’s time to...",
+    "unit": 50,
+    "href": "text/part0048.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture 34 T HE M ISSING C HAPTER By Simon Brown All of ...",
+    "unit": 51,
+    "href": "text/part0049.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture VII Appendix OceanofPDF.com",
+    "unit": 52,
+    "href": "text/part0050.html"
+  },
+  {
+    "level": 0,
+    "title": "Appendix A Architecture Archaeology A A RCHITECTURE A RCHAEOLOGY To...",
+    "unit": 53,
+    "href": "text/part0051.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture I NDEX Numbers 3DBB shared memory system, Craft ...",
+    "unit": 54,
+    "href": "text/part0052.html"
+  },
+  {
+    "level": 0,
+    "title": "Clean Architecture OceanofPDF.com",
+    "unit": 55,
+    "href": "text/part0053.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets Code Snippets OceanofPDF.com",
+    "unit": 56,
+    "href": "text/part0054_split_000.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 57,
+    "href": "text/part0054_split_001.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 58,
+    "href": "text/part0054_split_002.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 59,
+    "href": "text/part0054_split_003.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 60,
+    "href": "text/part0054_split_004.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 61,
+    "href": "text/part0054_split_005.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 62,
+    "href": "text/part0054_split_006.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 63,
+    "href": "text/part0054_split_007.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 64,
+    "href": "text/part0054_split_008.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 65,
+    "href": "text/part0054_split_009.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 66,
+    "href": "text/part0054_split_010.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 67,
+    "href": "text/part0054_split_011.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets Code Snippets OceanofPDF.com",
+    "unit": 68,
+    "href": "text/part0055_split_000.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 69,
+    "href": "text/part0055_split_001.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 70,
+    "href": "text/part0055_split_002.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 71,
+    "href": "text/part0055_split_003.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 72,
+    "href": "text/part0055_split_004.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets Code Snippets OceanofPDF.com",
+    "unit": 73,
+    "href": "text/part0056_split_000.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 74,
+    "href": "text/part0056_split_001.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 75,
+    "href": "text/part0056_split_002.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 76,
+    "href": "text/part0056_split_003.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 77,
+    "href": "text/part0056_split_004.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 78,
+    "href": "text/part0056_split_005.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets Code Snippets OceanofPDF.com",
+    "unit": 79,
+    "href": "text/part0057_split_000.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 80,
+    "href": "text/part0057_split_001.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets Code Snippets OceanofPDF.com",
+    "unit": 81,
+    "href": "text/part0058_split_000.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 82,
+    "href": "text/part0058_split_001.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets Code Snippets OceanofPDF.com",
+    "unit": 83,
+    "href": "text/part0059_split_000.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 84,
+    "href": "text/part0059_split_001.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets Code Snippets OceanofPDF.com",
+    "unit": 85,
+    "href": "text/part0060_split_000.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 86,
+    "href": "text/part0060_split_001.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 87,
+    "href": "text/part0060_split_002.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 88,
+    "href": "text/part0060_split_003.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 89,
+    "href": "text/part0060_split_004.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 90,
+    "href": "text/part0060_split_005.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 91,
+    "href": "text/part0060_split_006.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 92,
+    "href": "text/part0060_split_007.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets Code Snippets OceanofPDF.com",
+    "unit": 93,
+    "href": "text/part0061_split_000.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 94,
+    "href": "text/part0061_split_001.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 95,
+    "href": "text/part0061_split_002.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 96,
+    "href": "text/part0061_split_003.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 97,
+    "href": "text/part0061_split_004.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 98,
+    "href": "text/part0061_split_005.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 99,
+    "href": "text/part0061_split_006.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 100,
+    "href": "text/part0061_split_007.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 101,
+    "href": "text/part0061_split_008.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 102,
+    "href": "text/part0061_split_009.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets Code Snippets OceanofPDF.com",
+    "unit": 103,
+    "href": "text/part0062_split_000.html"
+  },
+  {
+    "level": 0,
+    "title": "Code Snippets OceanofPDF.com",
+    "unit": 104,
+    "href": "text/part0062_split_001.html"
+  }
+]

@@ -1,0 +1,582 @@
+[
+  {
+    "level": 0,
+    "title": "Domain-Driven Design: Tackling Complexity in the Heart of Software"
+  },
+  {
+    "level": 1,
+    "title": "Table of Contents"
+  },
+  {
+    "level": 1,
+    "title": "Copyright"
+  },
+  {
+    "level": 1,
+    "title": "Praise for Domain-Driven Design"
+  },
+  {
+    "level": 1,
+    "title": "Foreword"
+  },
+  {
+    "level": 1,
+    "title": "Preface"
+  },
+  {
+    "level": 2,
+    "title": "Contrasting Three Projects"
+  },
+  {
+    "level": 2,
+    "title": "The Challenge of Complexity"
+  },
+  {
+    "level": 2,
+    "title": "Design Versus Development Process"
+  },
+  {
+    "level": 2,
+    "title": "The Structure of This Book"
+  },
+  {
+    "level": 2,
+    "title": "Who Should Read This Book"
+  },
+  {
+    "level": 2,
+    "title": "A Domain-Driven Team"
+  },
+  {
+    "level": 1,
+    "title": "Acknowledgments"
+  },
+  {
+    "level": 1,
+    "title": "Part I: Putting the Domain Model to Work"
+  },
+  {
+    "level": 2,
+    "title": "Chapter One. Crunching Knowledge"
+  },
+  {
+    "level": 3,
+    "title": "Ingredients of Effective Modeling"
+  },
+  {
+    "level": 3,
+    "title": "Knowledge Crunching"
+  },
+  {
+    "level": 3,
+    "title": "Continuous Learning"
+  },
+  {
+    "level": 3,
+    "title": "Knowledge-Rich Design"
+  },
+  {
+    "level": 3,
+    "title": "Deep Models"
+  },
+  {
+    "level": 2,
+    "title": "Chapter Two. Communication and the Use of Language"
+  },
+  {
+    "level": 3,
+    "title": "Ubiquitous Language"
+  },
+  {
+    "level": 3,
+    "title": "Modeling Out Loud"
+  },
+  {
+    "level": 3,
+    "title": "One Team, One Language"
+  },
+  {
+    "level": 3,
+    "title": "Documents and Diagrams"
+  },
+  {
+    "level": 3,
+    "title": "Explanatory Models"
+  },
+  {
+    "level": 2,
+    "title": "Chapter Three. Binding Model and Implementation"
+  },
+  {
+    "level": 3,
+    "title": "Model-Driven Design"
+  },
+  {
+    "level": 3,
+    "title": "Modeling Paradigms and Tool Support"
+  },
+  {
+    "level": 3,
+    "title": "Letting the Bones Show: Why Models Matter to Users"
+  },
+  {
+    "level": 3,
+    "title": "Hands-On Modelers"
+  },
+  {
+    "level": 1,
+    "title": "Part II: The Building Blocks of a Model-Driven Design"
+  },
+  {
+    "level": 2,
+    "title": "Chapter Four. Isolating the Domain"
+  },
+  {
+    "level": 3,
+    "title": "Layered Architecture"
+  },
+  {
+    "level": 3,
+    "title": "The Domain Layer Is Where the Model Lives"
+  },
+  {
+    "level": 3,
+    "title": "The Smart UI \"Anti-Pattern\""
+  },
+  {
+    "level": 3,
+    "title": "Other Kinds of Isolation"
+  },
+  {
+    "level": 2,
+    "title": "Chapter Five. A Model Expressed in Software"
+  },
+  {
+    "level": 3,
+    "title": "Associations"
+  },
+  {
+    "level": 3,
+    "title": "Entities (a.k.a. Reference Objects)"
+  },
+  {
+    "level": 3,
+    "title": "Value Objects"
+  },
+  {
+    "level": 3,
+    "title": "Services"
+  },
+  {
+    "level": 3,
+    "title": "Modules (a.k.a. Packages)"
+  },
+  {
+    "level": 3,
+    "title": "Modeling Paradigms"
+  },
+  {
+    "level": 2,
+    "title": "Chapter Six. The Life Cycle of a Domain Object"
+  },
+  {
+    "level": 3,
+    "title": "Aggregates"
+  },
+  {
+    "level": 3,
+    "title": "Factories"
+  },
+  {
+    "level": 3,
+    "title": "Repositories"
+  },
+  {
+    "level": 3,
+    "title": "Designing Objects for Relational Databases"
+  },
+  {
+    "level": 2,
+    "title": "Chapter Seven. Using the Language: An Extended Example"
+  },
+  {
+    "level": 3,
+    "title": "Introducing the Cargo Shipping System"
+  },
+  {
+    "level": 3,
+    "title": "Isolating the Domain: Introducing the Applications"
+  },
+  {
+    "level": 3,
+    "title": "Distinguishing E NTITIES and V ALUE Objects"
+  },
+  {
+    "level": 3,
+    "title": "Designing Associations in the Shipping Domain"
+  },
+  {
+    "level": 3,
+    "title": "A GGREGATE Boundaries"
+  },
+  {
+    "level": 3,
+    "title": "Selecting R EPOSITORIES"
+  },
+  {
+    "level": 3,
+    "title": "Walking Through Scenarios"
+  },
+  {
+    "level": 3,
+    "title": "Object Creation"
+  },
+  {
+    "level": 3,
+    "title": "Pause for Refactoring: An Alternative Design of the Cargo A GGREGATE"
+  },
+  {
+    "level": 3,
+    "title": "M ODULES in the Shipping Model"
+  },
+  {
+    "level": 3,
+    "title": "Introducing a New Feature: Allocation Checking"
+  },
+  {
+    "level": 3,
+    "title": "A Final Look"
+  },
+  {
+    "level": 1,
+    "title": "Part III: Refactoring Toward Deeper Insight"
+  },
+  {
+    "level": 2,
+    "title": "Chapter Eight. Breakthrough"
+  },
+  {
+    "level": 3,
+    "title": "Story of a Breakthrough"
+  },
+  {
+    "level": 3,
+    "title": "Opportunities"
+  },
+  {
+    "level": 3,
+    "title": "Focus on Basics"
+  },
+  {
+    "level": 3,
+    "title": "Epilogue: A Cascade of New Insights"
+  },
+  {
+    "level": 2,
+    "title": "Chapter Nine. Making Implicit Concepts Explicit"
+  },
+  {
+    "level": 3,
+    "title": "Digging Out Concepts"
+  },
+  {
+    "level": 3,
+    "title": "How to Model Less Obvious Kinds of Concepts"
+  },
+  {
+    "level": 2,
+    "title": "Chapter Ten. Supple Design"
+  },
+  {
+    "level": 3,
+    "title": "Intention-Revealing Interfaces"
+  },
+  {
+    "level": 3,
+    "title": "Side -Effect-Free Functions"
+  },
+  {
+    "level": 3,
+    "title": "Assertions"
+  },
+  {
+    "level": 3,
+    "title": "Conceptual Contours"
+  },
+  {
+    "level": 3,
+    "title": "Standalone Classes"
+  },
+  {
+    "level": 3,
+    "title": "Closure of Operations"
+  },
+  {
+    "level": 3,
+    "title": "Declarative Design"
+  },
+  {
+    "level": 3,
+    "title": "A Declarative Style of Design"
+  },
+  {
+    "level": 3,
+    "title": "Angles of Attack"
+  },
+  {
+    "level": 2,
+    "title": "Chapter Eleven. Applying Analysis Patterns"
+  },
+  {
+    "level": 3,
+    "title": "Example Earning Interest with Accounts"
+  },
+  {
+    "level": 3,
+    "title": "Example Insight into the Nightly Batch"
+  },
+  {
+    "level": 3,
+    "title": "Analysis Patterns Are Knowledge to Draw On"
+  },
+  {
+    "level": 2,
+    "title": "Chapter Twelve. Relating Design Patterns to the Model"
+  },
+  {
+    "level": 3,
+    "title": "Strategy (A.K.A.Policy)"
+  },
+  {
+    "level": 3,
+    "title": "Composite"
+  },
+  {
+    "level": 3,
+    "title": "Why Not F LYWEIGHT?"
+  },
+  {
+    "level": 2,
+    "title": "Chapter Thirteen. Refactoring Toward Deeper"
+  },
+  {
+    "level": 3,
+    "title": "Initiation"
+  },
+  {
+    "level": 3,
+    "title": "Exploration Teams"
+  },
+  {
+    "level": 3,
+    "title": "Prior Art"
+  },
+  {
+    "level": 3,
+    "title": "A Design for Developers"
+  },
+  {
+    "level": 3,
+    "title": "Timing"
+  },
+  {
+    "level": 3,
+    "title": "Crisis as Opportunity"
+  },
+  {
+    "level": 1,
+    "title": "Part IV: Strategic Design"
+  },
+  {
+    "level": 2,
+    "title": "Chapter Fourteen. Maintaining Model Integrity"
+  },
+  {
+    "level": 3,
+    "title": "Bounded Context"
+  },
+  {
+    "level": 3,
+    "title": "Continuous Integration"
+  },
+  {
+    "level": 3,
+    "title": "Context Map"
+  },
+  {
+    "level": 3,
+    "title": "Relationships Between B OUNDED C ONTEXTS"
+  },
+  {
+    "level": 3,
+    "title": "Shared Kernel"
+  },
+  {
+    "level": 3,
+    "title": "Customer/Supplier Development Teams"
+  },
+  {
+    "level": 3,
+    "title": "Conformist"
+  },
+  {
+    "level": 3,
+    "title": "Anticorruption Layer"
+  },
+  {
+    "level": 3,
+    "title": "Separate Ways"
+  },
+  {
+    "level": 3,
+    "title": "Open Host Service"
+  },
+  {
+    "level": 3,
+    "title": "Published Language"
+  },
+  {
+    "level": 3,
+    "title": "Unifying an Elephant"
+  },
+  {
+    "level": 3,
+    "title": "Choosing Your Model Context Strategy"
+  },
+  {
+    "level": 3,
+    "title": "Transformations"
+  },
+  {
+    "level": 2,
+    "title": "Chapter Fifteen. Distillation"
+  },
+  {
+    "level": 3,
+    "title": "Core Domain"
+  },
+  {
+    "level": 3,
+    "title": "Distillations"
+  },
+  {
+    "level": 3,
+    "title": "Generic Subdomains"
+  },
+  {
+    "level": 3,
+    "title": "Domain Vision Statement"
+  },
+  {
+    "level": 3,
+    "title": "Highlighted Core"
+  },
+  {
+    "level": 3,
+    "title": "Cohesive Mechanisms"
+  },
+  {
+    "level": 3,
+    "title": "Segregated Core"
+  },
+  {
+    "level": 3,
+    "title": "Abstract Core"
+  },
+  {
+    "level": 3,
+    "title": "Deep Models Distill"
+  },
+  {
+    "level": 3,
+    "title": "Choosing Refactoring Targets"
+  },
+  {
+    "level": 2,
+    "title": "Chapter Sixteen. Large-Scale Structure"
+  },
+  {
+    "level": 3,
+    "title": "Evolving Order"
+  },
+  {
+    "level": 3,
+    "title": "System Metaphor"
+  },
+  {
+    "level": 3,
+    "title": "Responsibility Layers"
+  },
+  {
+    "level": 3,
+    "title": "Knowledge Level"
+  },
+  {
+    "level": 3,
+    "title": "Pluggable Component Framework"
+  },
+  {
+    "level": 3,
+    "title": "How Restrictive Should a Structure Be?"
+  },
+  {
+    "level": 3,
+    "title": "Refactoring Toward a Fitting Structure"
+  },
+  {
+    "level": 2,
+    "title": "Chapter Seventeen. Bringing the Strategy Together"
+  },
+  {
+    "level": 3,
+    "title": "Combining Large-Scale Structures and B OUNDED C ONTEXTS"
+  },
+  {
+    "level": 3,
+    "title": "Combining Large-Scale Structures and Distillation"
+  },
+  {
+    "level": 3,
+    "title": "Assessment First"
+  },
+  {
+    "level": 3,
+    "title": "Who Sets the Strategy?"
+  },
+  {
+    "level": 3,
+    "title": "Six Essentials for Strategic Design Decision Making"
+  },
+  {
+    "level": 1,
+    "title": "Conclusion"
+  },
+  {
+    "level": 2,
+    "title": "Epilogues"
+  },
+  {
+    "level": 2,
+    "title": "Looking Forward"
+  },
+  {
+    "level": 1,
+    "title": "Appendix The Use of Patterns in This Book"
+  },
+  {
+    "level": 2,
+    "title": "Pattern Name"
+  },
+  {
+    "level": 1,
+    "title": "GLOSSARY"
+  },
+  {
+    "level": 1,
+    "title": "References"
+  },
+  {
+    "level": 1,
+    "title": "PHOTO CREDITS"
+  }
+]

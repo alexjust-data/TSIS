@@ -1,0 +1,28 @@
+{
+  "book_id": "trading_and_exchanges_harris",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\kupdf.net_harris-trading-and-exchanges-market-microstructure-for-practitioners-2003.pdf",
+  "file_name": "kupdf.net_harris-trading-and-exchanges-market-microstructure-for-practitioners-2003.pdf",
+  "sha256": "1f9555a808bd6285733290b67dedf1bfe0cd6064db4433c8818d0444ad303422",
+  "file_size_bytes": 15573761,
+  "extraction_method": "pypdf",
+  "unit_label": "page",
+  "sample_text": [
+    {
+      "unit": 3,
+      "snippet": "FINANCIAL MANAGEMENT ASSOCIATION Survey and Synthesis Series The Search for Value: Measuring the Company's Cost of Capital Michael C. Ehrhardt Managing Pension Plans: A Comprehensive Guide to Improving Plan Performance Dennis E. Logue and Jack S. Rader Efficient Asset Management: A Practical Guide to Stock Portfolio Optimization and Asset Allocation Richard O. Michaud Real Options: Managing Strategic Investment in an Uncertain World Martha Amram and Nalin Kulatilaka Beyond Greed and Fear: Unders"
+    },
+    {
+      "unit": 5,
+      "snippet": "OXPORDUNIVERSITY PRESS Oxford New York Auckland Bangkok Buenos Aires Cape Town Chennai Dar es Salaam Delhi Hong Kong Istanbul Karachi Kolkata Kuala Lumpur Madrid Melbourne Mexico City Mumbai Nairobi Sao Paulo Shanghai Singapore Taipei Tokyo Toronto Copyright © 2003 by Oxford University Press, Inc. Published by Oxford University Press, Inc. 198 Madison Avenue, New York, New York, 10016 www.oup.com Oxford is a registered trademark of Oxford University Press All rights reserved. No part of this pub"
+    },
+    {
+      "unit": 6,
+      "snippet": "This book is dedicated to the memory of the victims of the September 1 1, 2001, terrorist acts in New York, Virginia, and Pennsylvania and to the honor of those people whose heroic actions on that day saved so many lives. Trading_and_Exchanges.Larry_Harris.2003.pdf"
+    },
+    {
+      "unit": 8,
+      "snippet": "Acknowledgments Many people contributed to the success of this project with their encour- agement, advice, knowledge, and expertise. I would not have started this project without their interest, and I would not have completed it without their support. The book is much better for their contributions. I received my first encouragement as a graduate student at the Univer- sity of Chicago, long before I knew anything about market microstructure. Professor Arnold Zellner advised me to publish a book"
+    }
+  ],
+  "notes": "No se persiste texto bruto; solo metadatos, TOC, stats, resumen e indices."
+}

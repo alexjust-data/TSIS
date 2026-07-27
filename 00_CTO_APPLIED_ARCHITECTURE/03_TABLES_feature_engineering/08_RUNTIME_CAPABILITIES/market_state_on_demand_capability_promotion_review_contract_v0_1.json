@@ -1,0 +1,32 @@
+{
+  "contract_id": "market_state_on_demand_capability_promotion_review_contract_v0_1",
+  "gate": "market_state_on_demand_capability_promotion_review_v0_1",
+  "contract_status": "accepted_for_metadata_only_capability_promotion_review",
+  "consumed_by_review_id": "market_state_on_demand_capability_promotion_review_v0_1_20260727T140338Z",
+  "promotion_target": "market_state_on_demand_runtime_capability_v0_1",
+  "promotion_decision_values": [
+    "promote_with_restrictions_candidate_generation_only",
+    "block_capability_promotion"
+  ],
+  "required_evidence": [
+    "bounded_execution",
+    "deterministic_rerun",
+    "exact_reuse",
+    "incremental_overlap_execution",
+    "incremental_overlap_reuse",
+    "second_generation_incremental",
+    "lineage_chain_validation",
+    "scale_validation",
+    "scale_validation_matrix"
+  ],
+  "required_boundary_invariants": {
+    "new_materialization_authorized": false,
+    "source_market_data_rows_read": 0,
+    "new_candidate_registry_entries_written": 0,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false
+  },
+  "next_gate_on_pass": "market_state_capability_consumption_policy_v0_1",
+  "contract_content_sha256_excluding_hash_field": "01762b84fc578275b42262640f8e2fd4a6cdbaa8cf38c5b0dd72c3b3833feb9b"
+}

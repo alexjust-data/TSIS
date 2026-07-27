@@ -1,0 +1,64 @@
+{
+  "authorization_id": "event_state_validator_design_authorization_v0_1",
+  "authorized_outputs": [
+    "event_state_validator_design_authorization_v0_1.md",
+    "configs/event_state_validator_design_scope_v0_1.json",
+    "event_state_validator_design_v0_1.md",
+    "event_state_validator_contract_v0_1.json",
+    "event_state_validator_design_readout_v0_1.md"
+  ],
+  "closure_invariants": {
+    "downstream_consumption": false,
+    "event_state_candidate_files_read": 0,
+    "event_state_datasets_written": 0,
+    "event_state_partition_status_changes": 0,
+    "event_state_quarantine_actions": 0,
+    "event_state_records_emitted": 0,
+    "event_state_registry_entries_written": 0,
+    "event_state_validation_reports_created": 0,
+    "event_state_validator_executions": 0,
+    "market_state_candidate_files_read": 0,
+    "production": false,
+    "source_market_data_rows_read": 0
+  },
+  "date": "2026-07-27",
+  "design_scope": {
+    "accepted_subject_scope": "exchange_session",
+    "direct_market_state_path_consumption": false,
+    "event_detection_allowed": false,
+    "event_state_profile_id": "event_state_core_four_intraday_profile_v0_1",
+    "event_type_ids_allowed_for_v0_1": [
+      "event_type:market_data:session_opened"
+    ],
+    "halt_resumed_allowed": false,
+    "input": "candidate_unvalidated_event_state_output_design_only",
+    "market_state_dependency_mode": "runtime_capability_subrequest_only",
+    "output": "event_state_validator_contract_design",
+    "validator_execution_allowed_by_this_gate": false
+  },
+  "hard_boundaries": {
+    "dependency_re_resolution_allowed": false,
+    "downstream_consumption_allowed": false,
+    "event_state_candidate_file_read_allowed": false,
+    "event_state_dataset_write_allowed": false,
+    "event_state_partition_status_change_allowed": false,
+    "event_state_quarantine_action_allowed": false,
+    "event_state_record_emission_allowed": false,
+    "event_state_registry_write_allowed": false,
+    "event_state_validation_report_creation_allowed": false,
+    "event_state_validator_execution_allowed": false,
+    "market_state_candidate_file_read_allowed": false,
+    "official_event_state_dataset_promotion_allowed": false,
+    "production_allowed": false,
+    "row_repair_allowed": false,
+    "source_market_data_rows_read_allowed": false
+  },
+  "next_allowed_gate": "event_state_candidate_dataset_registry_design_v0_1",
+  "parent_contract": "event_state_materializer_contract_v0_1",
+  "parent_gate": "event_state_materializer_design_v0_1",
+  "scope_content_sha256_excluding_hash_field": "c46d427cdfed982d959344eade2e084465eea6d78e8342901d67cfdf78a99599",
+  "scope_id": "event_state_validator_design_scope_v0_1",
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+  "target_contract": "event_state_validator_contract_v0_1",
+  "target_design_gate": "event_state_validator_design_v0_1"
+}

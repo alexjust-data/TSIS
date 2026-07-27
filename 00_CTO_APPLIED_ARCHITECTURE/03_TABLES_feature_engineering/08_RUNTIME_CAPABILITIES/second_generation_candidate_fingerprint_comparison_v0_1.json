@@ -1,0 +1,22 @@
+{
+  "review_id": "market_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260727T000000Z",
+  "review_gate": "market_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1",
+  "candidate_dataset_fingerprint": "5e8da235219628220bac462f342cab469fbd2a48d047eef0772cb5a2cffe893f",
+  "scientific_dataset_fingerprint": "55658a2dc000af1464f3bdb7231c3dcaca5e8aae8623f621f170083c5a20accc",
+  "base_combined_candidate_fingerprint": "f2cfd5cf55d0c1be1722693cc0216ffd425bbb869e19c17745976c030f2c7a2a",
+  "base_combined_scientific_fingerprint": "7103e4fdbae205e4bccbeb0c436508f62b016107b4b2756c549073dae971bb5f",
+  "delta2_physical_artifact": {
+    "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\market_state_on_demand_second_generation_incremental_extension_v0_1_20260727T103901Z\\market_state_second_generation_delta_candidate_v0_1.parquet",
+    "recorded_sha256": "3b9a0a6480a859266becc5846dcd2a91bb7159be8078033a84895153385b3bec",
+    "current_sha256": "3b9a0a6480a859266becc5846dcd2a91bb7159be8078033a84895153385b3bec",
+    "hash_match": true,
+    "rows": 3,
+    "columns": 40
+  },
+  "parent_base_artifacts": {
+    "baseline_hash_match": true,
+    "delta1_hash_match": true,
+    "parent_context_ledger_sha256": "9e117ea5a82bbeeba0e36f24e13d2db124c260aabac1a5bc088a61cdcdb8a9b1"
+  },
+  "fingerprint_comparison_sha256": "8881526722819672ce35d9e279b1024122a28ceba784c6d2d62df6427ab81507"
+}

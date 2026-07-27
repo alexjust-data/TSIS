@@ -1,0 +1,18 @@
+{
+  "review_id": "event_state_on_demand_bounded_candidate_dataset_review_v0_1_20260727T000000Z",
+  "review_run_id": "event_state_on_demand_bounded_candidate_dataset_review_v0_1_20260727T202013Z",
+  "review_gate": "event_state_on_demand_bounded_candidate_dataset_review_v0_1",
+  "source_run_id": "event_state_on_demand_bounded_execution_v0_1_20260727T200322Z",
+  "candidate_dataset_fingerprint": "d5662103e1c45f90847b51e69b0e698243bde231758fa3c864e24c4a6839be33",
+  "logical_dataset_fingerprint": "1b981958488e69f8f553c9197861bbffeed2d5388437c1113f9e21422b9cf970",
+  "registry_entry_fingerprint": "5a78f487ee549ff38e13547bf0324add50556e9aed054a536017b6a4f111fa4b",
+  "validation_result_fingerprint": "2f4797da1a74c06a7061fe1e597299d0d1e9f5d55c82ec147ff66b5891550361",
+  "candidate_file_recorded_sha256": "ed975ad7d7a3e0ac68bd7dfe2c91743c86931a545162a4440d270cbb689477dd",
+  "candidate_file_current_sha256": "ed975ad7d7a3e0ac68bd7dfe2c91743c86931a545162a4440d270cbb689477dd",
+  "candidate_file_hash_match": true,
+  "request_fingerprint_match": true,
+  "dependency_resolution_fingerprint_match": true,
+  "execution_plan_fingerprint_match": true,
+  "market_state_candidate_dataset_fingerprint_match": true,
+  "fingerprint_comparison_sha256": "c5a972a47df54d185ec1c5febb783e70d0ea611523052f6fc8947f582dd78374"
+}

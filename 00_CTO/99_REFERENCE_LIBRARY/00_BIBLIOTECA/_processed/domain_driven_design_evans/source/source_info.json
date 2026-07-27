@@ -1,0 +1,28 @@
+{
+  "book_id": "domain_driven_design_evans",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_OceanofPDF.com_Domain-Driven_Design_-_Eric_Evans.pdf",
+  "file_name": "_OceanofPDF.com_Domain-Driven_Design_-_Eric_Evans.pdf",
+  "sha256": "4716369baf34659124b263e25e996cdcc29115fb14df5bd768d792f33d22a2e0",
+  "file_size_bytes": 7028392,
+  "extraction_method": "pypdf",
+  "unit_label": "page",
+  "sample_text": [
+    {
+      "unit": 1,
+      "snippet": "• Table of Contents Domain-Driven Design: Tackling Complexity in the Heart of Software By Eric Evans ISBN: 0-321-12521-5 Pages: 560 Copyright Praise for Domain-Driven Design Foreword Preface Contrasting Three Projects The Challenge of Complexity Design Versus Development Process The Structure of This Book Who Should Read This Book A Domain-Driven Team Acknowledgments Part I: Putting the Domain Model to Work Chapter One. Crunching Knowledge Ingredients of Effective Modeling Know"
+    },
+    {
+      "unit": 2,
+      "snippet": "Chapter Four. Isolating the Domain Layered Architecture The Domain Layer Is Where the Model Lives The Smart UI \"Anti-Pattern\" Other Kinds of Isolation Chapter Five. A Model Expressed in Software Associations Entities (a.k.a. Reference Objects) Value Objects Services Modules (a.k.a. Packages) Modeling Paradigms Chapter Six. The Life Cycle of a Domain Object Aggregates Factories Repositories Designing Objects for Relational Databases Chapter Seven. Using the Language: An Extended"
+    },
+    {
+      "unit": 3,
+      "snippet": "Side -Effect-Free Functions Assertions Conceptual Contours Standalone Classes Closure of Operations Declarative Design A Declarative Style of Design Angles of Attack Chapter Eleven. Applying Analysis Patterns Example Earning Interest with Accounts Example Insight into the Nightly Batch Analysis Patterns Are Knowledge to Draw On Chapter Twelve. Relating Design Patterns to the Model Strategy (A.K.A.Policy) Composite Why Not FLYWEIGHT? Chapter Thirteen. Refactoring Toward Deeper"
+    },
+    {
+      "unit": 4,
+      "snippet": "Chapter Fifteen. Distillation Core Domain An Escalation of Distillations Generic Subdomains Domain Vision Statement Highlighted Core Cohesive Mechanisms Segregated Core Abstract Core Deep Models Distill Choosing Refactoring Targets Chapter Sixteen. Large-Scale Structure Evolving Order System Metaphor Responsibility Layers Knowledge Level Pluggable Component Framework How Restrictive Should a Structure Be? Refactoring Toward a Fitting Structure Chapter Seventeen. Bringing the S"
+    }
+  ],
+  "notes": "No se persiste texto bruto; solo metadatos, TOC, stats, resumen e indices."
+}

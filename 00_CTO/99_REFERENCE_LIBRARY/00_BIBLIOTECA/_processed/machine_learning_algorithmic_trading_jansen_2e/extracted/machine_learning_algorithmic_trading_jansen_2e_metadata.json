@@ -1,0 +1,19 @@
+{
+  "book_id": "machine_learning_algorithmic_trading_jansen_2e",
+  "title": "Machine Learning for Algorithmic Trading, 2nd Edition",
+  "authors": "Stefan Jansen",
+  "source_type": "Libro PDF",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Machine_Learning_for_Algorithmic_Trading_2nd_-_Stefan_Jansen.pdf",
+  "file_name": "Machine_Learning_for_Algorithmic_Trading_2nd_-_Stefan_Jansen.pdf",
+  "sha256": "d5d2eb2e0094e66fb94f301e7aa88e2657d77029e997b98dc263c3f8d53214d8",
+  "status": "indexed",
+  "processed_date": "2026-07-27",
+  "page_count": 1172,
+  "unit_label": "page",
+  "text_chars": 1597486,
+  "text_pages": 1164,
+  "requires_ocr_review": false,
+  "working_text_persisted": false,
+  "themes": "financial ML, alpha factors, data engineering, feature engineering, model selection, tree models, deep learning, NLP, reinforcement learning, backtesting, portfolio",
+  "utility_tsis": "referencia ML posterior al core: feature store point-in-time, model registry, alpha research y validacion"
+}

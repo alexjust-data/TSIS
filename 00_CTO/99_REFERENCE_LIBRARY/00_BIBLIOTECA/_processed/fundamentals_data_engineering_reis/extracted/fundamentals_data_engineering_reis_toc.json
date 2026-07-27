@@ -1,0 +1,1847 @@
+[
+  {
+    "level": 1,
+    "title": "Preface",
+    "page": 5
+  },
+  {
+    "level": 2,
+    "title": "What This Book Isn’t",
+    "page": 5
+  },
+  {
+    "level": 2,
+    "title": "What This Book Is About",
+    "page": 6
+  },
+  {
+    "level": 2,
+    "title": "Who Should Read This Book",
+    "page": 8
+  },
+  {
+    "level": 2,
+    "title": "Prerequisites",
+    "page": 8
+  },
+  {
+    "level": 2,
+    "title": "What You’ll Learn and How It Will Improve Your Abilities",
+    "page": 9
+  },
+  {
+    "level": 2,
+    "title": "The Book Outline",
+    "page": 10
+  },
+  {
+    "level": 2,
+    "title": "Conventions Used in This Book",
+    "page": 12
+  },
+  {
+    "level": 2,
+    "title": "How to Contact Us",
+    "page": 13
+  },
+  {
+    "level": 2,
+    "title": "Acknowledgments",
+    "page": 14
+  },
+  {
+    "level": 1,
+    "title": "I. Foundation and Building Blocks",
+    "page": 17
+  },
+  {
+    "level": 1,
+    "title": "1. Data Engineering Described",
+    "page": 18
+  },
+  {
+    "level": 2,
+    "title": "What Is Data Engineering?",
+    "page": 18
+  },
+  {
+    "level": 3,
+    "title": "Data Engineering Defined",
+    "page": 20
+  },
+  {
+    "level": 3,
+    "title": "The Data Engineering Lifecycle",
+    "page": 20
+  },
+  {
+    "level": 3,
+    "title": "Evolution of the Data Engineer",
+    "page": 21
+  },
+  {
+    "level": 3,
+    "title": "Data Engineering and Data Science",
+    "page": 28
+  },
+  {
+    "level": 2,
+    "title": "Data Engineering Skills and Activities",
+    "page": 30
+  },
+  {
+    "level": 3,
+    "title": "Data Maturity and the Data Engineer",
+    "page": 31
+  },
+  {
+    "level": 3,
+    "title": "The Background and Skills of a Data Engineer",
+    "page": 36
+  },
+  {
+    "level": 3,
+    "title": "Business Responsibilities",
+    "page": 37
+  },
+  {
+    "level": 3,
+    "title": "Technical Responsibilities",
+    "page": 39
+  },
+  {
+    "level": 3,
+    "title": "The Continuum of Data Engineering Roles, from A to B",
+    "page": 43
+  },
+  {
+    "level": 2,
+    "title": "Data Engineers Inside an Organization",
+    "page": 44
+  },
+  {
+    "level": 3,
+    "title": "Internal-Facing Versus External-Facing Data Engineers",
+    "page": 45
+  },
+  {
+    "level": 3,
+    "title": "Data Engineers and Other Technical Roles",
+    "page": 47
+  },
+  {
+    "level": 3,
+    "title": "Data Engineers and Business Leadership",
+    "page": 52
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 56
+  },
+  {
+    "level": 2,
+    "title": "Additional Resources",
+    "page": 57
+  },
+  {
+    "level": 1,
+    "title": "2. The Data Engineering Lifecycle",
+    "page": 60
+  },
+  {
+    "level": 2,
+    "title": "What Is the Data Engineering Lifecycle?",
+    "page": 60
+  },
+  {
+    "level": 3,
+    "title": "The Data Lifecycle Versus the Data Engineering Lifecycle",
+    "page": 62
+  },
+  {
+    "level": 3,
+    "title": "Generation: Source Systems",
+    "page": 62
+  },
+  {
+    "level": 3,
+    "title": "Storage",
+    "page": 66
+  },
+  {
+    "level": 3,
+    "title": "Ingestion",
+    "page": 69
+  },
+  {
+    "level": 3,
+    "title": "Transformation",
+    "page": 73
+  },
+  {
+    "level": 3,
+    "title": "Serving Data",
+    "page": 75
+  },
+  {
+    "level": 2,
+    "title": "Major Undercurrents Across the Data Engineering Lifecycle",
+    "page": 82
+  },
+  {
+    "level": 3,
+    "title": "Security",
+    "page": 82
+  },
+  {
+    "level": 3,
+    "title": "Data Management",
+    "page": 84
+  },
+  {
+    "level": 3,
+    "title": "Orchestration",
+    "page": 96
+  },
+  {
+    "level": 3,
+    "title": "DataOps",
+    "page": 98
+  },
+  {
+    "level": 3,
+    "title": "Data Architecture",
+    "page": 104
+  },
+  {
+    "level": 3,
+    "title": "Software Engineering",
+    "page": 104
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 107
+  },
+  {
+    "level": 2,
+    "title": "Additional Resources",
+    "page": 108
+  },
+  {
+    "level": 1,
+    "title": "3. Designing Good Data Architecture",
+    "page": 111
+  },
+  {
+    "level": 2,
+    "title": "What Is Data Architecture?",
+    "page": 111
+  },
+  {
+    "level": 3,
+    "title": "Enterprise Architecture, Defined",
+    "page": 112
+  },
+  {
+    "level": 3,
+    "title": "Data Architecture Defined",
+    "page": 116
+  },
+  {
+    "level": 3,
+    "title": "“Good” Data Architecture",
+    "page": 117
+  },
+  {
+    "level": 2,
+    "title": "Principles of Good Data Architecture",
+    "page": 119
+  },
+  {
+    "level": 3,
+    "title": "Principle 1: Choose Common Components Wisely",
+    "page": 120
+  },
+  {
+    "level": 3,
+    "title": "Principle 2: Plan for Failure",
+    "page": 121
+  },
+  {
+    "level": 3,
+    "title": "Principle 3: Architect for Scalability",
+    "page": 122
+  },
+  {
+    "level": 3,
+    "title": "Principle 4: Architecture Is Leadership",
+    "page": 123
+  },
+  {
+    "level": 3,
+    "title": "Principle 5: Always Be Architecting",
+    "page": 124
+  },
+  {
+    "level": 3,
+    "title": "Principle 6: Build Loosely Coupled Systems",
+    "page": 124
+  },
+  {
+    "level": 3,
+    "title": "Principle 7: Make Reversible Decisions",
+    "page": 126
+  },
+  {
+    "level": 3,
+    "title": "Principle 8: Prioritize Security",
+    "page": 127
+  },
+  {
+    "level": 3,
+    "title": "Principle 9: Embrace FinOps",
+    "page": 129
+  },
+  {
+    "level": 2,
+    "title": "Major Architecture Concepts",
+    "page": 131
+  },
+  {
+    "level": 3,
+    "title": "Domains and Services",
+    "page": 131
+  },
+  {
+    "level": 3,
+    "title": "Distributed Systems, Scalability, and Designing for Failure",
+    "page": 133
+  },
+  {
+    "level": 3,
+    "title": "Tight Versus Loose Coupling: Tiers, Monoliths, and Microservices",
+    "page": 135
+  },
+  {
+    "level": 3,
+    "title": "User Access: Single Versus Multitenant",
+    "page": 142
+  },
+  {
+    "level": 3,
+    "title": "Event-Driven Architecture",
+    "page": 143
+  },
+  {
+    "level": 3,
+    "title": "Brownfield Versus Greenfield Projects",
+    "page": 144
+  },
+  {
+    "level": 2,
+    "title": "Examples and Types of Data Architecture",
+    "page": 146
+  },
+  {
+    "level": 3,
+    "title": "Data Warehouse",
+    "page": 146
+  },
+  {
+    "level": 3,
+    "title": "Data Lake",
+    "page": 151
+  },
+  {
+    "level": 3,
+    "title": "Convergence, Next-Generation Data Lakes, and the Data Platform",
+    "page": 152
+  },
+  {
+    "level": 3,
+    "title": "Modern Data Stack",
+    "page": 153
+  },
+  {
+    "level": 3,
+    "title": "Lambda Architecture",
+    "page": 155
+  },
+  {
+    "level": 3,
+    "title": "Kappa Architecture",
+    "page": 156
+  },
+  {
+    "level": 3,
+    "title": "The Dataflow Model and Unified Batch and Streaming",
+    "page": 156
+  },
+  {
+    "level": 3,
+    "title": "Architecture for IoT",
+    "page": 157
+  },
+  {
+    "level": 3,
+    "title": "Data Mesh",
+    "page": 161
+  },
+  {
+    "level": 3,
+    "title": "Other Data Architecture Examples",
+    "page": 163
+  },
+  {
+    "level": 2,
+    "title": "Who’s Involved with Designing a Data Architecture?",
+    "page": 164
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 165
+  },
+  {
+    "level": 2,
+    "title": "Additional Resources",
+    "page": 165
+  },
+  {
+    "level": 1,
+    "title": "4. Choosing Technologies Across the Data Engineering Lifecycle",
+    "page": 171
+  },
+  {
+    "level": 2,
+    "title": "Team Size and Capabilities",
+    "page": 172
+  },
+  {
+    "level": 2,
+    "title": "Speed to Market",
+    "page": 173
+  },
+  {
+    "level": 2,
+    "title": "Interoperability",
+    "page": 174
+  },
+  {
+    "level": 2,
+    "title": "Cost Optimization and Business Value",
+    "page": 175
+  },
+  {
+    "level": 3,
+    "title": "Total Cost of Ownership",
+    "page": 175
+  },
+  {
+    "level": 3,
+    "title": "Total Opportunity Cost of Ownership",
+    "page": 176
+  },
+  {
+    "level": 3,
+    "title": "FinOps",
+    "page": 177
+  },
+  {
+    "level": 2,
+    "title": "Today Versus the Future: Immutable Versus Transitory Technologies",
+    "page": 178
+  },
+  {
+    "level": 3,
+    "title": "Our Advice",
+    "page": 180
+  },
+  {
+    "level": 2,
+    "title": "Location",
+    "page": 181
+  },
+  {
+    "level": 3,
+    "title": "On Premises",
+    "page": 182
+  },
+  {
+    "level": 3,
+    "title": "Cloud",
+    "page": 183
+  },
+  {
+    "level": 3,
+    "title": "Hybrid Cloud",
+    "page": 188
+  },
+  {
+    "level": 3,
+    "title": "Multicloud",
+    "page": 189
+  },
+  {
+    "level": 3,
+    "title": "Decentralized: Blockchain and the Edge",
+    "page": 191
+  },
+  {
+    "level": 3,
+    "title": "Our Advice",
+    "page": 191
+  },
+  {
+    "level": 3,
+    "title": "Cloud Repatriation Arguments",
+    "page": 192
+  },
+  {
+    "level": 2,
+    "title": "Build Versus Buy",
+    "page": 195
+  },
+  {
+    "level": 3,
+    "title": "Open Source Software",
+    "page": 196
+  },
+  {
+    "level": 3,
+    "title": "Proprietary Walled Gardens",
+    "page": 202
+  },
+  {
+    "level": 3,
+    "title": "Our Advice",
+    "page": 204
+  },
+  {
+    "level": 2,
+    "title": "Monolith Versus Modular",
+    "page": 205
+  },
+  {
+    "level": 3,
+    "title": "Monolith",
+    "page": 205
+  },
+  {
+    "level": 3,
+    "title": "Modularity",
+    "page": 207
+  },
+  {
+    "level": 3,
+    "title": "The Distributed Monolith Pattern",
+    "page": 208
+  },
+  {
+    "level": 3,
+    "title": "Our Advice",
+    "page": 210
+  },
+  {
+    "level": 2,
+    "title": "Serverless Versus Servers",
+    "page": 210
+  },
+  {
+    "level": 3,
+    "title": "Serverless",
+    "page": 210
+  },
+  {
+    "level": 3,
+    "title": "Containers",
+    "page": 211
+  },
+  {
+    "level": 3,
+    "title": "When Infrastructure Makes Sense",
+    "page": 213
+  },
+  {
+    "level": 3,
+    "title": "Our Advice",
+    "page": 215
+  },
+  {
+    "level": 2,
+    "title": "Optimization, Performance, and the Benchmark Wars",
+    "page": 216
+  },
+  {
+    "level": 3,
+    "title": "Big Data...for the 1990s",
+    "page": 217
+  },
+  {
+    "level": 3,
+    "title": "Nonsensical Cost Comparisons",
+    "page": 218
+  },
+  {
+    "level": 3,
+    "title": "Asymmetric Optimization",
+    "page": 218
+  },
+  {
+    "level": 3,
+    "title": "Caveat Emptor",
+    "page": 218
+  },
+  {
+    "level": 2,
+    "title": "Undercurrents and Their Impacts on Choosing Technologies",
+    "page": 219
+  },
+  {
+    "level": 3,
+    "title": "Data Management",
+    "page": 219
+  },
+  {
+    "level": 3,
+    "title": "DataOps",
+    "page": 220
+  },
+  {
+    "level": 3,
+    "title": "Data Architecture",
+    "page": 220
+  },
+  {
+    "level": 3,
+    "title": "Orchestration Example: Airflow",
+    "page": 220
+  },
+  {
+    "level": 3,
+    "title": "Software Engineering",
+    "page": 222
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 222
+  },
+  {
+    "level": 1,
+    "title": "II. The Data Engineering Lifecycle in Depth",
+    "page": 224
+  },
+  {
+    "level": 1,
+    "title": "5. Data Generation in Source Systems",
+    "page": 225
+  },
+  {
+    "level": 2,
+    "title": "Sources of Data: How Is Data Created?",
+    "page": 226
+  },
+  {
+    "level": 2,
+    "title": "Source Systems: Main Ideas",
+    "page": 227
+  },
+  {
+    "level": 3,
+    "title": "Files and Unstructured Data",
+    "page": 227
+  },
+  {
+    "level": 3,
+    "title": "APIs",
+    "page": 227
+  },
+  {
+    "level": 3,
+    "title": "Application Databases (OLTP systems)",
+    "page": 228
+  },
+  {
+    "level": 3,
+    "title": "Online Analytical Processing System",
+    "page": 230
+  },
+  {
+    "level": 3,
+    "title": "Change Data Capture",
+    "page": 231
+  },
+  {
+    "level": 3,
+    "title": "Logs",
+    "page": 231
+  },
+  {
+    "level": 3,
+    "title": "Database Logs",
+    "page": 234
+  },
+  {
+    "level": 3,
+    "title": "CRUD",
+    "page": 234
+  },
+  {
+    "level": 3,
+    "title": "Insert-Only",
+    "page": 235
+  },
+  {
+    "level": 3,
+    "title": "Messages and Streams",
+    "page": 238
+  },
+  {
+    "level": 3,
+    "title": "Types of Time",
+    "page": 240
+  },
+  {
+    "level": 2,
+    "title": "Source System Practical Details",
+    "page": 241
+  },
+  {
+    "level": 3,
+    "title": "Databases",
+    "page": 241
+  },
+  {
+    "level": 3,
+    "title": "APIs",
+    "page": 254
+  },
+  {
+    "level": 3,
+    "title": "Data Sharing",
+    "page": 256
+  },
+  {
+    "level": 3,
+    "title": "Third-Party Data Sources",
+    "page": 257
+  },
+  {
+    "level": 3,
+    "title": "Message Queues and Event-Streaming Platforms",
+    "page": 258
+  },
+  {
+    "level": 2,
+    "title": "Whom You’ll Work With",
+    "page": 263
+  },
+  {
+    "level": 2,
+    "title": "Undercurrents and Their Impact on Source Systems",
+    "page": 265
+  },
+  {
+    "level": 3,
+    "title": "Security",
+    "page": 265
+  },
+  {
+    "level": 3,
+    "title": "Data Management",
+    "page": 266
+  },
+  {
+    "level": 3,
+    "title": "DataOps",
+    "page": 267
+  },
+  {
+    "level": 3,
+    "title": "Data Architecture",
+    "page": 269
+  },
+  {
+    "level": 3,
+    "title": "Orchestration",
+    "page": 270
+  },
+  {
+    "level": 3,
+    "title": "Software Engineering",
+    "page": 271
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 272
+  },
+  {
+    "level": 2,
+    "title": "Additional Resources",
+    "page": 273
+  },
+  {
+    "level": 1,
+    "title": "6. Storage",
+    "page": 275
+  },
+  {
+    "level": 2,
+    "title": "Raw Ingredients of Data Storage",
+    "page": 278
+  },
+  {
+    "level": 3,
+    "title": "Magnetic Disk Drive",
+    "page": 278
+  },
+  {
+    "level": 3,
+    "title": "Solid-State Drive",
+    "page": 282
+  },
+  {
+    "level": 3,
+    "title": "Random Access Memory",
+    "page": 283
+  },
+  {
+    "level": 3,
+    "title": "Networking and CPU",
+    "page": 285
+  },
+  {
+    "level": 3,
+    "title": "Serialization",
+    "page": 285
+  },
+  {
+    "level": 3,
+    "title": "Compression",
+    "page": 286
+  },
+  {
+    "level": 3,
+    "title": "Caching",
+    "page": 287
+  },
+  {
+    "level": 2,
+    "title": "Data Storage Systems",
+    "page": 291
+  },
+  {
+    "level": 3,
+    "title": "Single Machine Versus Distributed Storage",
+    "page": 291
+  },
+  {
+    "level": 3,
+    "title": "Eventual Versus Strong Consistency",
+    "page": 292
+  },
+  {
+    "level": 3,
+    "title": "File Storage",
+    "page": 293
+  },
+  {
+    "level": 3,
+    "title": "Block Storage",
+    "page": 296
+  },
+  {
+    "level": 3,
+    "title": "Object Storage",
+    "page": 301
+  },
+  {
+    "level": 3,
+    "title": "Cache and Memory-Based Storage Systems",
+    "page": 309
+  },
+  {
+    "level": 3,
+    "title": "The Hadoop Distributed File System",
+    "page": 310
+  },
+  {
+    "level": 3,
+    "title": "Streaming Storage",
+    "page": 311
+  },
+  {
+    "level": 3,
+    "title": "Indexes, Partitioning, and Clustering",
+    "page": 312
+  },
+  {
+    "level": 2,
+    "title": "Data Engineering Storage Abstractions",
+    "page": 314
+  },
+  {
+    "level": 3,
+    "title": "The Data Warehouse",
+    "page": 316
+  },
+  {
+    "level": 3,
+    "title": "The Data Lake",
+    "page": 316
+  },
+  {
+    "level": 3,
+    "title": "The Data Lakehouse",
+    "page": 317
+  },
+  {
+    "level": 3,
+    "title": "Data Platforms",
+    "page": 318
+  },
+  {
+    "level": 3,
+    "title": "Stream-to-Batch Storage Architecture",
+    "page": 318
+  },
+  {
+    "level": 2,
+    "title": "Big Ideas and Trends in Storage",
+    "page": 319
+  },
+  {
+    "level": 3,
+    "title": "Data Catalog",
+    "page": 319
+  },
+  {
+    "level": 3,
+    "title": "Data Sharing",
+    "page": 320
+  },
+  {
+    "level": 3,
+    "title": "Schema",
+    "page": 321
+  },
+  {
+    "level": 3,
+    "title": "Separation of Compute from Storage",
+    "page": 321
+  },
+  {
+    "level": 3,
+    "title": "Data Storage Lifecycle and Data Retention",
+    "page": 326
+  },
+  {
+    "level": 3,
+    "title": "Single-Tenant Versus Multitenant Storage",
+    "page": 330
+  },
+  {
+    "level": 2,
+    "title": "Whom You’ll Work With",
+    "page": 332
+  },
+  {
+    "level": 2,
+    "title": "Undercurrents",
+    "page": 333
+  },
+  {
+    "level": 3,
+    "title": "Security",
+    "page": 333
+  },
+  {
+    "level": 3,
+    "title": "Data Management",
+    "page": 333
+  },
+  {
+    "level": 3,
+    "title": "DataOps",
+    "page": 334
+  },
+  {
+    "level": 3,
+    "title": "Data Architecture",
+    "page": 335
+  },
+  {
+    "level": 3,
+    "title": "Orchestration",
+    "page": 336
+  },
+  {
+    "level": 3,
+    "title": "Software Engineering",
+    "page": 336
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 336
+  },
+  {
+    "level": 2,
+    "title": "Additional Resources",
+    "page": 336
+  },
+  {
+    "level": 1,
+    "title": "7. Ingestion",
+    "page": 338
+  },
+  {
+    "level": 2,
+    "title": "What Is Data Ingestion?",
+    "page": 338
+  },
+  {
+    "level": 2,
+    "title": "Key Engineering Considerations for the Ingestion Phase",
+    "page": 341
+  },
+  {
+    "level": 3,
+    "title": "Bounded Versus Unbounded",
+    "page": 342
+  },
+  {
+    "level": 3,
+    "title": "Frequency",
+    "page": 344
+  },
+  {
+    "level": 3,
+    "title": "Synchronous Versus Asynchronous Ingestion",
+    "page": 345
+  },
+  {
+    "level": 3,
+    "title": "Serialization and Deserialization",
+    "page": 347
+  },
+  {
+    "level": 3,
+    "title": "Throughput and Scalability",
+    "page": 347
+  },
+  {
+    "level": 3,
+    "title": "Reliability and Durability",
+    "page": 348
+  },
+  {
+    "level": 3,
+    "title": "Payload",
+    "page": 349
+  },
+  {
+    "level": 3,
+    "title": "Push Versus Pull Versus Poll Patterns",
+    "page": 353
+  },
+  {
+    "level": 2,
+    "title": "Batch Ingestion Considerations",
+    "page": 354
+  },
+  {
+    "level": 3,
+    "title": "Snapshot or Differential Extraction",
+    "page": 355
+  },
+  {
+    "level": 3,
+    "title": "File-Based Export and Ingestion",
+    "page": 356
+  },
+  {
+    "level": 3,
+    "title": "ETL Versus ELT",
+    "page": 356
+  },
+  {
+    "level": 3,
+    "title": "Inserts, Updates, and Batch Size",
+    "page": 357
+  },
+  {
+    "level": 3,
+    "title": "Data Migration",
+    "page": 357
+  },
+  {
+    "level": 2,
+    "title": "Message and Stream Ingestion Considerations",
+    "page": 358
+  },
+  {
+    "level": 3,
+    "title": "Schema Evolution",
+    "page": 358
+  },
+  {
+    "level": 3,
+    "title": "Late-Arriving Data",
+    "page": 359
+  },
+  {
+    "level": 3,
+    "title": "Ordering and Multiple Delivery",
+    "page": 359
+  },
+  {
+    "level": 3,
+    "title": "Replay",
+    "page": 360
+  },
+  {
+    "level": 3,
+    "title": "Time to Live",
+    "page": 360
+  },
+  {
+    "level": 3,
+    "title": "Message Size",
+    "page": 361
+  },
+  {
+    "level": 3,
+    "title": "Error Handling and Dead-Letter Queues",
+    "page": 361
+  },
+  {
+    "level": 3,
+    "title": "Consumer Pull and Push",
+    "page": 362
+  },
+  {
+    "level": 3,
+    "title": "Location",
+    "page": 362
+  },
+  {
+    "level": 2,
+    "title": "Ways to Ingest Data",
+    "page": 362
+  },
+  {
+    "level": 3,
+    "title": "Direct Database Connection",
+    "page": 362
+  },
+  {
+    "level": 3,
+    "title": "Change Data Capture",
+    "page": 364
+  },
+  {
+    "level": 3,
+    "title": "APIs",
+    "page": 367
+  },
+  {
+    "level": 3,
+    "title": "Message Queues and Event-Streaming Platforms",
+    "page": 368
+  },
+  {
+    "level": 3,
+    "title": "Managed Data Connectors",
+    "page": 370
+  },
+  {
+    "level": 3,
+    "title": "Moving Data with Object Storage",
+    "page": 370
+  },
+  {
+    "level": 3,
+    "title": "EDI",
+    "page": 371
+  },
+  {
+    "level": 3,
+    "title": "Databases and File Export",
+    "page": 371
+  },
+  {
+    "level": 3,
+    "title": "Practical Issues with Common File Formats",
+    "page": 372
+  },
+  {
+    "level": 3,
+    "title": "Shell",
+    "page": 373
+  },
+  {
+    "level": 3,
+    "title": "SSH",
+    "page": 373
+  },
+  {
+    "level": 3,
+    "title": "SFTP and SCP",
+    "page": 374
+  },
+  {
+    "level": 3,
+    "title": "Webhooks",
+    "page": 374
+  },
+  {
+    "level": 3,
+    "title": "Web Interface",
+    "page": 375
+  },
+  {
+    "level": 3,
+    "title": "Web Scraping",
+    "page": 376
+  },
+  {
+    "level": 3,
+    "title": "Transfer Appliances for Data Migration",
+    "page": 377
+  },
+  {
+    "level": 3,
+    "title": "Data Sharing",
+    "page": 377
+  },
+  {
+    "level": 2,
+    "title": "Whom You’ll Work With",
+    "page": 378
+  },
+  {
+    "level": 3,
+    "title": "Upstream Stakeholders",
+    "page": 378
+  },
+  {
+    "level": 3,
+    "title": "Downstream Stakeholders",
+    "page": 379
+  },
+  {
+    "level": 2,
+    "title": "Undercurrents",
+    "page": 380
+  },
+  {
+    "level": 3,
+    "title": "Security",
+    "page": 380
+  },
+  {
+    "level": 3,
+    "title": "Data Management",
+    "page": 380
+  },
+  {
+    "level": 3,
+    "title": "DataOps",
+    "page": 383
+  },
+  {
+    "level": 3,
+    "title": "Orchestration",
+    "page": 385
+  },
+  {
+    "level": 3,
+    "title": "Software Engineering",
+    "page": 386
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 387
+  },
+  {
+    "level": 2,
+    "title": "Additional Resources",
+    "page": 387
+  },
+  {
+    "level": 1,
+    "title": "8. Queries, Modeling, and Transformation",
+    "page": 388
+  },
+  {
+    "level": 2,
+    "title": "Queries",
+    "page": 389
+  },
+  {
+    "level": 3,
+    "title": "What Is a Query?",
+    "page": 389
+  },
+  {
+    "level": 3,
+    "title": "The Life of a Query",
+    "page": 390
+  },
+  {
+    "level": 3,
+    "title": "The Query Optimizer",
+    "page": 390
+  },
+  {
+    "level": 3,
+    "title": "Improving Query Performance",
+    "page": 391
+  },
+  {
+    "level": 3,
+    "title": "Queries on Streaming Data",
+    "page": 394
+  },
+  {
+    "level": 2,
+    "title": "Data Modeling",
+    "page": 398
+  },
+  {
+    "level": 3,
+    "title": "What Is a Data Model?",
+    "page": 399
+  },
+  {
+    "level": 3,
+    "title": "Conceptual, Logical, and Physical Data Models",
+    "page": 399
+  },
+  {
+    "level": 3,
+    "title": "Normalization",
+    "page": 400
+  },
+  {
+    "level": 3,
+    "title": "Techniques for Modeling Batch Analytical Data",
+    "page": 409
+  },
+  {
+    "level": 3,
+    "title": "Modeling Streaming Data",
+    "page": 432
+  },
+  {
+    "level": 2,
+    "title": "Transformations",
+    "page": 433
+  },
+  {
+    "level": 3,
+    "title": "Batch Transformations",
+    "page": 433
+  },
+  {
+    "level": 3,
+    "title": "Materialized Views, Federation, and Query Virtualization",
+    "page": 443
+  },
+  {
+    "level": 3,
+    "title": "Streaming Transformations and Processing",
+    "page": 445
+  },
+  {
+    "level": 2,
+    "title": "Whom You’ll Work With",
+    "page": 447
+  },
+  {
+    "level": 3,
+    "title": "Upstream Stakeholders",
+    "page": 447
+  },
+  {
+    "level": 3,
+    "title": "Downstream Stakeholders",
+    "page": 447
+  },
+  {
+    "level": 2,
+    "title": "Undercurrents",
+    "page": 447
+  },
+  {
+    "level": 3,
+    "title": "Security",
+    "page": 447
+  },
+  {
+    "level": 3,
+    "title": "Data Management",
+    "page": 448
+  },
+  {
+    "level": 3,
+    "title": "DataOps",
+    "page": 448
+  },
+  {
+    "level": 3,
+    "title": "Data Architecture",
+    "page": 449
+  },
+  {
+    "level": 3,
+    "title": "Orchestration",
+    "page": 449
+  },
+  {
+    "level": 3,
+    "title": "Software Engineering",
+    "page": 449
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 450
+  },
+  {
+    "level": 2,
+    "title": "Additional Resources",
+    "page": 450
+  },
+  {
+    "level": 1,
+    "title": "9. Serving Data for Analytics, Machine Learning, and Reverse ETL",
+    "page": 453
+  },
+  {
+    "level": 2,
+    "title": "General Considerations for Serving Data",
+    "page": 454
+  },
+  {
+    "level": 3,
+    "title": "Trust",
+    "page": 454
+  },
+  {
+    "level": 3,
+    "title": "What’s the Use Case, and Who’s the User?",
+    "page": 456
+  },
+  {
+    "level": 3,
+    "title": "Data Products",
+    "page": 457
+  },
+  {
+    "level": 3,
+    "title": "Self-Service or Not?",
+    "page": 458
+  },
+  {
+    "level": 3,
+    "title": "Data Definitions and Logic",
+    "page": 460
+  },
+  {
+    "level": 3,
+    "title": "Data Mesh",
+    "page": 461
+  },
+  {
+    "level": 2,
+    "title": "Analytics",
+    "page": 461
+  },
+  {
+    "level": 3,
+    "title": "Business Analytics",
+    "page": 462
+  },
+  {
+    "level": 3,
+    "title": "Operational Analytics",
+    "page": 464
+  },
+  {
+    "level": 3,
+    "title": "Embedded Analytics",
+    "page": 467
+  },
+  {
+    "level": 2,
+    "title": "Machine Learning",
+    "page": 468
+  },
+  {
+    "level": 3,
+    "title": "What a Data Engineer Should Know About ML",
+    "page": 469
+  },
+  {
+    "level": 2,
+    "title": "Ways to Serve Data for Analytics and ML",
+    "page": 471
+  },
+  {
+    "level": 3,
+    "title": "File Exchange",
+    "page": 471
+  },
+  {
+    "level": 3,
+    "title": "Databases",
+    "page": 473
+  },
+  {
+    "level": 3,
+    "title": "Streaming Systems",
+    "page": 474
+  },
+  {
+    "level": 3,
+    "title": "Query Federation",
+    "page": 475
+  },
+  {
+    "level": 3,
+    "title": "Data Sharing",
+    "page": 476
+  },
+  {
+    "level": 3,
+    "title": "Semantic and Metrics Layers",
+    "page": 477
+  },
+  {
+    "level": 3,
+    "title": "Serving Data in Notebooks",
+    "page": 478
+  },
+  {
+    "level": 2,
+    "title": "Reverse ETL",
+    "page": 481
+  },
+  {
+    "level": 3,
+    "title": "Ways to Serve Data with Reverse ETL",
+    "page": 483
+  },
+  {
+    "level": 2,
+    "title": "Whom You’ll Work With",
+    "page": 483
+  },
+  {
+    "level": 2,
+    "title": "Undercurrents",
+    "page": 484
+  },
+  {
+    "level": 3,
+    "title": "Security",
+    "page": 485
+  },
+  {
+    "level": 3,
+    "title": "Data Management",
+    "page": 486
+  },
+  {
+    "level": 3,
+    "title": "DataOps",
+    "page": 487
+  },
+  {
+    "level": 3,
+    "title": "Data Architecture",
+    "page": 488
+  },
+  {
+    "level": 3,
+    "title": "Orchestration",
+    "page": 488
+  },
+  {
+    "level": 3,
+    "title": "Software Engineering",
+    "page": 489
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 490
+  },
+  {
+    "level": 2,
+    "title": "Additional Resources",
+    "page": 491
+  },
+  {
+    "level": 1,
+    "title": "III. Security, Privacy, and the Future of Data Engineering",
+    "page": 493
+  },
+  {
+    "level": 1,
+    "title": "10. Security and Privacy",
+    "page": 494
+  },
+  {
+    "level": 2,
+    "title": "People",
+    "page": 495
+  },
+  {
+    "level": 3,
+    "title": "The Power of Negative Thinking",
+    "page": 495
+  },
+  {
+    "level": 3,
+    "title": "Always Be Paranoid",
+    "page": 496
+  },
+  {
+    "level": 2,
+    "title": "Processes",
+    "page": 496
+  },
+  {
+    "level": 3,
+    "title": "Security Theater Versus Security Habit",
+    "page": 496
+  },
+  {
+    "level": 3,
+    "title": "Active Security",
+    "page": 497
+  },
+  {
+    "level": 3,
+    "title": "The Principle of Least Privilege",
+    "page": 497
+  },
+  {
+    "level": 3,
+    "title": "Shared Responsibility in the Cloud",
+    "page": 498
+  },
+  {
+    "level": 3,
+    "title": "Always Back Up Your Data",
+    "page": 499
+  },
+  {
+    "level": 3,
+    "title": "An Example Security Policy",
+    "page": 499
+  },
+  {
+    "level": 2,
+    "title": "Technology",
+    "page": 501
+  },
+  {
+    "level": 3,
+    "title": "Patch and Update Systems",
+    "page": 502
+  },
+  {
+    "level": 3,
+    "title": "Encryption",
+    "page": 502
+  },
+  {
+    "level": 3,
+    "title": "Logging, Monitoring, and Alerting",
+    "page": 503
+  },
+  {
+    "level": 3,
+    "title": "Network Access",
+    "page": 504
+  },
+  {
+    "level": 3,
+    "title": "Security for Low-Level Data Engineering",
+    "page": 505
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 506
+  },
+  {
+    "level": 2,
+    "title": "Additional Resources",
+    "page": 507
+  },
+  {
+    "level": 1,
+    "title": "11. The Future of Data Engineering",
+    "page": 508
+  },
+  {
+    "level": 2,
+    "title": "The Data Engineering Lifecycle Isn’t Going Away",
+    "page": 509
+  },
+  {
+    "level": 2,
+    "title": "The Decline of Complexity and the Rise of Easy-to-Use Data Tools",
+    "page": 509
+  },
+  {
+    "level": 2,
+    "title": "The Cloud-Scale Data OS and Improved Interoperability",
+    "page": 511
+  },
+  {
+    "level": 2,
+    "title": "“Enterprisey” Data Engineering",
+    "page": 513
+  },
+  {
+    "level": 2,
+    "title": "Titles and Responsibilities Will Morph...",
+    "page": 514
+  },
+  {
+    "level": 2,
+    "title": "Moving Beyond the Modern Data Stack, Toward the Live Data Stack",
+    "page": 515
+  },
+  {
+    "level": 3,
+    "title": "The Live Data Stack",
+    "page": 517
+  },
+  {
+    "level": 3,
+    "title": "Streaming Pipelines and Real-Time Analytical Databases",
+    "page": 517
+  },
+  {
+    "level": 3,
+    "title": "The Fusion of Data with Applications",
+    "page": 519
+  },
+  {
+    "level": 3,
+    "title": "The Tight Feedback Between Applications and ML",
+    "page": 520
+  },
+  {
+    "level": 3,
+    "title": "Dark Matter Data and the Rise of...Spreadsheets?!",
+    "page": 520
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 521
+  },
+  {
+    "level": 1,
+    "title": "A. Serialization and Compression Technical Details",
+    "page": 524
+  },
+  {
+    "level": 2,
+    "title": "Serialization Formats",
+    "page": 524
+  },
+  {
+    "level": 3,
+    "title": "Row-Based Serialization",
+    "page": 524
+  },
+  {
+    "level": 3,
+    "title": "Columnar Serialization",
+    "page": 526
+  },
+  {
+    "level": 3,
+    "title": "Hybrid Serialization",
+    "page": 529
+  },
+  {
+    "level": 2,
+    "title": "Database Storage Engines",
+    "page": 530
+  },
+  {
+    "level": 2,
+    "title": "Compression: gzip, bzip2, Snappy, etc.",
+    "page": 530
+  },
+  {
+    "level": 1,
+    "title": "B. Cloud Networking",
+    "page": 532
+  },
+  {
+    "level": 2,
+    "title": "Cloud Network Topology",
+    "page": 532
+  },
+  {
+    "level": 3,
+    "title": "Data Egress Charges",
+    "page": 532
+  },
+  {
+    "level": 3,
+    "title": "Availability Zones",
+    "page": 533
+  },
+  {
+    "level": 3,
+    "title": "Regions",
+    "page": 534
+  },
+  {
+    "level": 3,
+    "title": "GCP-Specific Networking and Multiregional Redundancy",
+    "page": 535
+  },
+  {
+    "level": 3,
+    "title": "Direct Network Connections to the Clouds",
+    "page": 535
+  },
+  {
+    "level": 2,
+    "title": "CDNs",
+    "page": 536
+  },
+  {
+    "level": 2,
+    "title": "The Future of Data Egress Fees",
+    "page": 536
+  },
+  {
+    "level": 1,
+    "title": "Index",
+    "page": 538
+  },
+  {
+    "level": 1,
+    "title": "About the Authors",
+    "page": 539
+  }
+]

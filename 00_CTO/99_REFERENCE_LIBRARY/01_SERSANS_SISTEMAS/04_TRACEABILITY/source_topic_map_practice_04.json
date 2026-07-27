@@ -1,0 +1,268 @@
+{
+  "TOPIC-P04-001": {
+    "source_ranges": [
+      [
+        1,
+        37
+      ],
+      [
+        22,
+        39
+      ]
+    ],
+    "evidence_ids": [
+      "EI-SERSAN-P04-0001",
+      "EI-SERSAN-P04-0002"
+    ]
+  },
+  "TOPIC-P04-002": {
+    "source_ranges": [
+      [
+        41,
+        67
+      ]
+    ],
+    "evidence_ids": [
+      "EI-SERSAN-P04-0003",
+      "EI-SERSAN-P04-0004",
+      "EI-SERSAN-P04-0005"
+    ]
+  },
+  "TOPIC-P04-003": {
+    "source_ranges": [
+      [
+        69,
+        96
+      ],
+      [
+        1788,
+        1843
+      ]
+    ],
+    "evidence_ids": [
+      "EI-SERSAN-P04-0006",
+      "EI-SERSAN-P04-0007",
+      "EI-SERSAN-P04-0008"
+    ]
+  },
+  "TOPIC-P04-004": {
+    "source_ranges": [
+      [
+        69,
+        96
+      ],
+      [
+        1788,
+        1843
+      ]
+    ],
+    "evidence_ids": [
+      "EI-SERSAN-P04-0009",
+      "EI-SERSAN-P04-0010",
+      "EI-SERSAN-P04-0011"
+    ]
+  },
+  "TOPIC-P04-005": {
+    "source_ranges": [
+      [
+        88,
+        96
+      ],
+      [
+        88,
+        154
+      ]
+    ],
+    "evidence_ids": [
+      "EI-SERSAN-P04-0012",
+      "EI-SERSAN-P04-0013"
+    ]
+  },
+  "TOPIC-P04-006": {
+    "source_ranges": [
+      [
+        155,
+        346
+      ]
+    ],
+    "evidence_ids": [
+      "EI-SERSAN-P04-0014",
+      "EI-SERSAN-P04-0015"
+    ]
+  },
+  "TOPIC-P04-007": {
+    "source_ranges": [
+      [
+        155,
+        346
+      ],
+      [
+        155,
+        973
+      ]
+    ],
+    "evidence_ids": [
+      "EI-SERSAN-P04-0016",
+      "EI-SERSAN-P04-0017"
+    ]
+  },
+  "TOPIC-P04-008": {
+    "source_ranges": [
+      [
+        347,
+        973
+      ],
+      [
+        570,
+        972
+      ]
+    ],
+    "evidence_ids": [
+      "EI-SERSAN-P04-0018",
+      "EI-SERSAN-P04-0019",
+      "EI-SERSAN-P04-0020"
+    ]
+  },
+  "TOPIC-P04-009": {
+    "source_ranges": [
+      [
+        973,
+        1394
+      ]
+    ],
+    "evidence_ids": [
+      "EI-SERSAN-P04-0021",
+      "EI-SERSAN-P04-0022"
+    ]
+  },
+  "TOPIC-P04-010": {
+    "source_ranges": [
+      [
+        996,
+        1691
+      ]
+    ],
+    "evidence_ids": [
+      "EI-SERSAN-P04-0023",
+      "EI-SERSAN-P04-0024"
+    ]
+  },
+  "TOPIC-P04-011": {
+    "source_ranges": [
+      [
+        97,
+        154
+      ]
+    ],
+    "evidence_ids": [
+      "EI-SERSAN-P04-0025",
+      "EI-SERSAN-P04-0026"
+    ]
+  },
+  "TOPIC-P04-012": {
+    "source_ranges": [
+      [
+        155,
+        346
+      ]
+    ],
+    "evidence_ids": [
+      "EI-SERSAN-P04-0027",
+      "EI-SERSAN-P04-0028"
+    ]
+  },
+  "TOPIC-P04-013": {
+    "source_ranges": [
+      [
+        155,
+        346
+      ]
+    ],
+    "evidence_ids": [
+      "EI-SERSAN-P04-0029",
+      "EI-SERSAN-P04-0030"
+    ]
+  },
+  "TOPIC-P04-014": {
+    "source_ranges": [
+      [
+        1880,
+        1996
+      ]
+    ],
+    "evidence_ids": [
+      "EI-SERSAN-P04-0031",
+      "EI-SERSAN-P04-0032",
+      "EI-SERSAN-P04-0033"
+    ]
+  },
+  "TOPIC-P04-015": {
+    "source_ranges": [
+      [
+        1844,
+        1996
+      ],
+      [
+        1892,
+        1996
+      ]
+    ],
+    "evidence_ids": [
+      "EI-SERSAN-P04-0034",
+      "EI-SERSAN-P04-0035",
+      "EI-SERSAN-P04-0036",
+      "EI-SERSAN-P04-0037",
+      "EI-SERSAN-P04-0038",
+      "EI-SERSAN-P04-0046"
+    ]
+  },
+  "TOPIC-P04-016": {
+    "source_ranges": [
+      [
+        1844,
+        1891
+      ]
+    ],
+    "evidence_ids": [
+      "EI-SERSAN-P04-0039",
+      "EI-SERSAN-P04-0040"
+    ]
+  },
+  "TOPIC-P04-017": {
+    "source_ranges": [
+      [
+        97,
+        1787
+      ],
+      [
+        1305,
+        1787
+      ],
+      [
+        1692,
+        1787
+      ]
+    ],
+    "evidence_ids": [
+      "EI-SERSAN-P04-0041",
+      "EI-SERSAN-P04-0042",
+      "EI-SERSAN-P04-0043"
+    ]
+  },
+  "TOPIC-P04-018": {
+    "source_ranges": [
+      [
+        97,
+        154
+      ],
+      [
+        1892,
+        1996
+      ]
+    ],
+    "evidence_ids": [
+      "EI-SERSAN-P04-0044",
+      "EI-SERSAN-P04-0045"
+    ]
+  }
+}

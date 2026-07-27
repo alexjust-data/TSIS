@@ -1,0 +1,902 @@
+[
+  {
+    "level": 1,
+    "title": "Brief Table of Contents (Not Yet Final)",
+    "page": 6
+  },
+  {
+    "level": 1,
+    "title": "Preface",
+    "page": 10
+  },
+  {
+    "level": 2,
+    "title": "Why I Wrote a Book About Test-Driven Development",
+    "page": 11
+  },
+  {
+    "level": 2,
+    "title": "Aims of This Book",
+    "page": 15
+  },
+  {
+    "level": 2,
+    "title": "Outline",
+    "page": 16
+  },
+  {
+    "level": 2,
+    "title": "Conventions Used in This Book",
+    "page": 17
+  },
+  {
+    "level": 2,
+    "title": "Submitting Errata",
+    "page": 18
+  },
+  {
+    "level": 2,
+    "title": "Using Code Examples",
+    "page": 18
+  },
+  {
+    "level": 2,
+    "title": "O’Reilly Online Learning",
+    "page": 20
+  },
+  {
+    "level": 2,
+    "title": "How to Contact Us",
+    "page": 20
+  },
+  {
+    "level": 2,
+    "title": "License for the free edition",
+    "page": 21
+  },
+  {
+    "level": 1,
+    "title": "Prerequisites and Assumptions",
+    "page": 23
+  },
+  {
+    "level": 2,
+    "title": "Python 3 and Programming",
+    "page": 23
+  },
+  {
+    "level": 2,
+    "title": "How HTML Works",
+    "page": 24
+  },
+  {
+    "level": 2,
+    "title": "Django",
+    "page": 25
+  },
+  {
+    "level": 2,
+    "title": "JavaScript",
+    "page": 25
+  },
+  {
+    "level": 2,
+    "title": "Required Software Installations",
+    "page": 25
+  },
+  {
+    "level": 3,
+    "title": "Installing Firefox",
+    "page": 31
+  },
+  {
+    "level": 2,
+    "title": "Setting Up Your Virtualenv",
+    "page": 32
+  },
+  {
+    "level": 3,
+    "title": "Activating and Deactivating the Virtualenv",
+    "page": 33
+  },
+  {
+    "level": 3,
+    "title": "Installing Django and Selenium",
+    "page": 35
+  },
+  {
+    "level": 3,
+    "title": "Some Error Messages You’re Likely to See When You Inevitably Fail to Activate Your Virtualenv",
+    "page": 37
+  },
+  {
+    "level": 1,
+    "title": "Companion Video",
+    "page": 41
+  },
+  {
+    "level": 1,
+    "title": "I. The Basics of TDD and Django",
+    "page": 43
+  },
+  {
+    "level": 1,
+    "title": "1. Getting Django Set Up Using a Functional Test",
+    "page": 45
+  },
+  {
+    "level": 2,
+    "title": "Obey the Testing Goat! Do Nothing Until You Have a Test",
+    "page": 45
+  },
+  {
+    "level": 2,
+    "title": "Getting Django Up and Running",
+    "page": 51
+  },
+  {
+    "level": 2,
+    "title": "Starting a Git Repository",
+    "page": 55
+  },
+  {
+    "level": 1,
+    "title": "2. Extending Our Functional Test Using the unittest Module",
+    "page": 63
+  },
+  {
+    "level": 2,
+    "title": "Using a Functional Test to Scope Out a Minimum Viable App",
+    "page": 64
+  },
+  {
+    "level": 2,
+    "title": "The Python Standard Library’s unittest Module",
+    "page": 70
+  },
+  {
+    "level": 2,
+    "title": "Commit",
+    "page": 76
+  },
+  {
+    "level": 1,
+    "title": "3. Testing a Simple Home Page with Unit Tests",
+    "page": 80
+  },
+  {
+    "level": 2,
+    "title": "Our First Django App, and Our First Unit Test",
+    "page": 82
+  },
+  {
+    "level": 2,
+    "title": "Unit Tests, and How They Differ from Functional Tests",
+    "page": 83
+  },
+  {
+    "level": 2,
+    "title": "Unit Testing in Django",
+    "page": 86
+  },
+  {
+    "level": 2,
+    "title": "Django’s MVC, URLs, and View Functions",
+    "page": 88
+  },
+  {
+    "level": 2,
+    "title": "Unit Testing a View",
+    "page": 90
+  },
+  {
+    "level": 3,
+    "title": "At Last! We Actually Write Some Application Code!",
+    "page": 92
+  },
+  {
+    "level": 3,
+    "title": "The Unit-Test/Code Cycle",
+    "page": 95
+  },
+  {
+    "level": 2,
+    "title": "Our functional tests tell us we’re not quite done yet.",
+    "page": 99
+  },
+  {
+    "level": 2,
+    "title": "Reading Tracebacks",
+    "page": 103
+  },
+  {
+    "level": 2,
+    "title": "urls.py",
+    "page": 105
+  },
+  {
+    "level": 1,
+    "title": "4. What Are We Doing with All These Tests? (And, Refactoring)",
+    "page": 113
+  },
+  {
+    "level": 2,
+    "title": "Programming Is Like Pulling a Bucket of Water Up from a Well",
+    "page": 114
+  },
+  {
+    "level": 2,
+    "title": "Using Selenium to Test User Interactions",
+    "page": 117
+  },
+  {
+    "level": 2,
+    "title": "The “Don’t Test Constants” Rule, and Templates to the Rescue",
+    "page": 123
+  },
+  {
+    "level": 3,
+    "title": "Refactoring to Use a Template",
+    "page": 124
+  },
+  {
+    "level": 3,
+    "title": "Checking template rendering",
+    "page": 129
+  },
+  {
+    "level": 2,
+    "title": "On Refactoring",
+    "page": 132
+  },
+  {
+    "level": 2,
+    "title": "A Little More of Our Front Page",
+    "page": 134
+  },
+  {
+    "level": 2,
+    "title": "Recap: The TDD Process",
+    "page": 138
+  },
+  {
+    "level": 3,
+    "title": "Double-loop TDD",
+    "page": 141
+  },
+  {
+    "level": 1,
+    "title": "5. Saving User Input: Testing the Database",
+    "page": 145
+  },
+  {
+    "level": 2,
+    "title": "Wiring Up Our Form to Send a POST Request",
+    "page": 146
+  },
+  {
+    "level": 2,
+    "title": "Debugging functional tests",
+    "page": 149
+  },
+  {
+    "level": 2,
+    "title": "Processing a POST Request on the Server",
+    "page": 154
+  },
+  {
+    "level": 2,
+    "title": "Passing Python Variables to Be Rendered in the Template",
+    "page": 156
+  },
+  {
+    "level": 3,
+    "title": "An Unexpected Failure",
+    "page": 159
+  },
+  {
+    "level": 2,
+    "title": "Three Strikes and Refactor",
+    "page": 166
+  },
+  {
+    "level": 2,
+    "title": "The Django ORM and Our First Model",
+    "page": 169
+  },
+  {
+    "level": 3,
+    "title": "Our First Database Migration",
+    "page": 174
+  },
+  {
+    "level": 3,
+    "title": "The Test Gets Surprisingly Far",
+    "page": 175
+  },
+  {
+    "level": 3,
+    "title": "A New Field Means a New Migration",
+    "page": 176
+  },
+  {
+    "level": 2,
+    "title": "Saving the POST to the Database",
+    "page": 179
+  },
+  {
+    "level": 2,
+    "title": "Redirect After a POST",
+    "page": 184
+  },
+  {
+    "level": 2,
+    "title": "Better Unit Testing Practice: Each Test Should Test One Thing",
+    "page": 189
+  },
+  {
+    "level": 2,
+    "title": "Rendering Items in the Template",
+    "page": 190
+  },
+  {
+    "level": 2,
+    "title": "Creating Our Production Database with migrate",
+    "page": 194
+  },
+  {
+    "level": 2,
+    "title": "Recap",
+    "page": 200
+  },
+  {
+    "level": 1,
+    "title": "6. Improving Functional Tests: Ensuring Isolation and Removing Voodoo Sleeps",
+    "page": 205
+  },
+  {
+    "level": 2,
+    "title": "Ensuring Test Isolation in Functional Tests",
+    "page": 206
+  },
+  {
+    "level": 3,
+    "title": "Running Just the Unit Tests",
+    "page": 211
+  },
+  {
+    "level": 2,
+    "title": "Aside: Upgrading Selenium and Geckodriver",
+    "page": 213
+  },
+  {
+    "level": 2,
+    "title": "On Implicit and Explicit Waits, and Voodoo time.sleeps",
+    "page": 215
+  },
+  {
+    "level": 1,
+    "title": "7. Working Incrementally",
+    "page": 225
+  },
+  {
+    "level": 2,
+    "title": "Small Design When Necessary",
+    "page": 225
+  },
+  {
+    "level": 3,
+    "title": "Not Big Design Up Front",
+    "page": 226
+  },
+  {
+    "level": 3,
+    "title": "YAGNI!",
+    "page": 227
+  },
+  {
+    "level": 3,
+    "title": "REST (ish)",
+    "page": 228
+  },
+  {
+    "level": 2,
+    "title": "Implementing the New Design Incrementally Using TDD",
+    "page": 230
+  },
+  {
+    "level": 2,
+    "title": "Ensuring We Have a Regression Test",
+    "page": 231
+  },
+  {
+    "level": 2,
+    "title": "Iterating Towards the New Design",
+    "page": 236
+  },
+  {
+    "level": 2,
+    "title": "Taking a First, Self-Contained Step: One New URL",
+    "page": 238
+  },
+  {
+    "level": 3,
+    "title": "Separating out our home page and list view functionality",
+    "page": 240
+  },
+  {
+    "level": 3,
+    "title": "The FTs detect a regression",
+    "page": 244
+  },
+  {
+    "level": 3,
+    "title": "Getting Back to a Working State as Quickly as Possible",
+    "page": 247
+  },
+  {
+    "level": 3,
+    "title": "Green? Refactor",
+    "page": 248
+  },
+  {
+    "level": 2,
+    "title": "Another Small Step: A Separate Template for Viewing Lists",
+    "page": 249
+  },
+  {
+    "level": 2,
+    "title": "A Third Small Step: A New URL for Adding List Items",
+    "page": 254
+  },
+  {
+    "level": 3,
+    "title": "A Test Class for New List Creation",
+    "page": 255
+  },
+  {
+    "level": 3,
+    "title": "A URL and View for New List Creation",
+    "page": 257
+  },
+  {
+    "level": 3,
+    "title": "Removing Now-Redundant Code and Tests",
+    "page": 259
+  },
+  {
+    "level": 3,
+    "title": "A Regression! Pointing Our Forms at the New URL",
+    "page": 261
+  },
+  {
+    "level": 2,
+    "title": "Biting the Bullet: Adjusting Our Models",
+    "page": 263
+  },
+  {
+    "level": 3,
+    "title": "A Foreign Key Relationship",
+    "page": 267
+  },
+  {
+    "level": 3,
+    "title": "Adjusting the Rest of the World to Our New Models",
+    "page": 269
+  },
+  {
+    "level": 2,
+    "title": "Each List Should Have Its Own URL",
+    "page": 274
+  },
+  {
+    "level": 3,
+    "title": "Capturing Parameters from URLs",
+    "page": 276
+  },
+  {
+    "level": 3,
+    "title": "Adjusting new_list to the New World",
+    "page": 278
+  },
+  {
+    "level": 2,
+    "title": "The Functional Tests Detect Another Regression",
+    "page": 280
+  },
+  {
+    "level": 2,
+    "title": "One More View to Handle Adding Items to an Existing List",
+    "page": 282
+  },
+  {
+    "level": 3,
+    "title": "The Last New URL",
+    "page": 284
+  },
+  {
+    "level": 3,
+    "title": "The Last New View",
+    "page": 285
+  },
+  {
+    "level": 3,
+    "title": "Testing Template Context Directly",
+    "page": 287
+  },
+  {
+    "level": 2,
+    "title": "A Final Refactor Using URL includes",
+    "page": 292
+  },
+  {
+    "level": 1,
+    "title": "II. Web Development Sine Qua Nons",
+    "page": 298
+  },
+  {
+    "level": 1,
+    "title": "8. Prettification: Layout and Styling, and What to Test About It",
+    "page": 300
+  },
+  {
+    "level": 2,
+    "title": "Testing Layout and Style",
+    "page": 301
+  },
+  {
+    "level": 2,
+    "title": "Prettification: Using a CSS Framework",
+    "page": 307
+  },
+  {
+    "level": 2,
+    "title": "Django Template Inheritance",
+    "page": 310
+  },
+  {
+    "level": 2,
+    "title": "Integrating Bootstrap",
+    "page": 314
+  },
+  {
+    "level": 3,
+    "title": "Rows and Columns",
+    "page": 314
+  },
+  {
+    "level": 2,
+    "title": "Static Files in Django",
+    "page": 316
+  },
+  {
+    "level": 3,
+    "title": "Switching to StaticLiveServerTestCase",
+    "page": 319
+  },
+  {
+    "level": 2,
+    "title": "Using Bootstrap Components to Improve the Look of the Site",
+    "page": 321
+  },
+  {
+    "level": 3,
+    "title": "Jumbotron!",
+    "page": 321
+  },
+  {
+    "level": 3,
+    "title": "Large Inputs",
+    "page": 323
+  },
+  {
+    "level": 3,
+    "title": "Table Styling",
+    "page": 323
+  },
+  {
+    "level": 3,
+    "title": "Dark Modeeeeeee",
+    "page": 324
+  },
+  {
+    "level": 3,
+    "title": "A semi-decent page",
+    "page": 325
+  },
+  {
+    "level": 2,
+    "title": "What We Glossed Over: collectstatic and Other Static Directories",
+    "page": 327
+  },
+  {
+    "level": 2,
+    "title": "A Few Things That Didn’t Make It",
+    "page": 331
+  },
+  {
+    "level": 1,
+    "title": "9. Containerization aka Docker",
+    "page": 335
+  },
+  {
+    "level": 2,
+    "title": "TDD and the Danger Areas of Deployment",
+    "page": 337
+  },
+  {
+    "level": 2,
+    "title": "Docker, Containers and Virtualization",
+    "page": 339
+  },
+  {
+    "level": 3,
+    "title": "Docker and your CV",
+    "page": 341
+  },
+  {
+    "level": 2,
+    "title": "Docker and the Danger Areas of Deployment",
+    "page": 341
+  },
+  {
+    "level": 2,
+    "title": "An Overview of Our Deployment Procedure",
+    "page": 342
+  },
+  {
+    "level": 2,
+    "title": "As Always, Start with a Test",
+    "page": 344
+  },
+  {
+    "level": 3,
+    "title": "Making an src Folder",
+    "page": 348
+  },
+  {
+    "level": 2,
+    "title": "Installing Docker",
+    "page": 348
+  },
+  {
+    "level": 2,
+    "title": "Building a Docker Image and Running a Docker Container",
+    "page": 350
+  },
+  {
+    "level": 3,
+    "title": "A First Cut of a Dockerfile",
+    "page": 351
+  },
+  {
+    "level": 3,
+    "title": "Docker Build",
+    "page": 354
+  },
+  {
+    "level": 3,
+    "title": "Docker Run",
+    "page": 355
+  },
+  {
+    "level": 2,
+    "title": "Installing Django into our Virtualenv",
+    "page": 356
+  },
+  {
+    "level": 3,
+    "title": "Successful Run",
+    "page": 357
+  },
+  {
+    "level": 2,
+    "title": "Using the FT to Check That Our Container Works",
+    "page": 361
+  },
+  {
+    "level": 2,
+    "title": "Debugging a Container Networking Problems",
+    "page": 361
+  },
+  {
+    "level": 3,
+    "title": "Debugging Web Server Connectivity With “curl”",
+    "page": 363
+  },
+  {
+    "level": 2,
+    "title": "Running code “inside” the container with docker exec",
+    "page": 364
+  },
+  {
+    "level": 3,
+    "title": "Docker Port Mapping",
+    "page": 367
+  },
+  {
+    "level": 3,
+    "title": "Essential Googling the Error Message",
+    "page": 369
+  },
+  {
+    "level": 2,
+    "title": "Database migrations",
+    "page": 374
+  },
+  {
+    "level": 3,
+    "title": "Should we run “migrate” inside the Dockerfile? No. // JAN: Not sure I understand this line. You’re saying that we shouldn’t run migrate inside our Dockerfile, but then in the next line you do exactly that",
+    "page": 377
+  },
+  {
+    "level": 2,
+    "title": "Mounting files inside the container.",
+    "page": 378
+  },
+  {
+    "level": 1,
+    "title": "10. Making Our App Production-Ready",
+    "page": 385
+  },
+  {
+    "level": 2,
+    "title": "What We Need to Do",
+    "page": 387
+  },
+  {
+    "level": 2,
+    "title": "Switching to Gunicorn",
+    "page": 388
+  },
+  {
+    "level": 3,
+    "title": "The FTs catch a problem with static files",
+    "page": 391
+  },
+  {
+    "level": 2,
+    "title": "Serving Static Files with Whitenoise",
+    "page": 392
+  },
+  {
+    "level": 2,
+    "title": "Using requirements.txt",
+    "page": 394
+  },
+  {
+    "level": 2,
+    "title": "Using Environment Variables to Adjust Settings for Production",
+    "page": 399
+  },
+  {
+    "level": 3,
+    "title": "Setting DEBUG=True and SECRET_KEY",
+    "page": 400
+  },
+  {
+    "level": 3,
+    "title": "Setting environment variables inside the Dockerfile",
+    "page": 401
+  },
+  {
+    "level": 3,
+    "title": "Setting Environment Variables at the Docker Command Line",
+    "page": 402
+  },
+  {
+    "level": 3,
+    "title": "ALLOWED_HOSTS is Required When Debug Mode is Turned Off",
+    "page": 403
+  },
+  {
+    "level": 3,
+    "title": "Collectstatic is Required when Debug is Turned Off",
+    "page": 407
+  },
+  {
+    "level": 2,
+    "title": "Switching to a nonroot user",
+    "page": 408
+  },
+  {
+    "level": 2,
+    "title": "Configuring logging",
+    "page": 409
+  },
+  {
+    "level": 3,
+    "title": "Provoking a deliberate error",
+    "page": 409
+  },
+  {
+    "level": 1,
+    "title": "11. Infrastructure As Code: Automated Deployments With Ansible",
+    "page": 417
+  },
+  {
+    "level": 2,
+    "title": "Getting a Domain Name",
+    "page": 419
+  },
+  {
+    "level": 2,
+    "title": "Manually Provisioning a Server to Host Our Site",
+    "page": 419
+  },
+  {
+    "level": 3,
+    "title": "Choosing Where to Host Our Site",
+    "page": 420
+  },
+  {
+    "level": 3,
+    "title": "Spinning Up a Server",
+    "page": 421
+  },
+  {
+    "level": 3,
+    "title": "User Accounts, SSH, and Privileges",
+    "page": 422
+  },
+  {
+    "level": 2,
+    "title": "Configuring Domains for Staging and Live",
+    "page": 423
+  },
+  {
+    "level": 2,
+    "title": "Ansible",
+    "page": 425
+  },
+  {
+    "level": 3,
+    "title": "Installing Ansible",
+    "page": 426
+  },
+  {
+    "level": 3,
+    "title": "A First Cut of an Ansible Playbook",
+    "page": 427
+  },
+  {
+    "level": 2,
+    "title": "SSHing Into the Server and Viewing Container Logs",
+    "page": 431
+  },
+  {
+    "level": 2,
+    "title": "Getting our image onto the server",
+    "page": 432
+  },
+  {
+    "level": 2,
+    "title": "Using an env File to Store Our Environment Variables",
+    "page": 439
+  },
+  {
+    "level": 3,
+    "title": "More debugging",
+    "page": 445
+  },
+  {
+    "level": 2,
+    "title": "Mounting the database on the server and running migrations",
+    "page": 448
+  },
+  {
+    "level": 2,
+    "title": "It workssss",
+    "page": 451
+  },
+  {
+    "level": 2,
+    "title": "Further Reading",
+    "page": 452
+  },
+  {
+    "level": 1,
+    "title": "About the Author",
+    "page": 457
+  }
+]

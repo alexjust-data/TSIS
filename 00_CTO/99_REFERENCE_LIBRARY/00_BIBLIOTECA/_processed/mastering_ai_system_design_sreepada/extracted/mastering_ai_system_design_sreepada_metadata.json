@@ -1,0 +1,19 @@
+{
+  "book_id": "mastering_ai_system_design_sreepada",
+  "title": "Mastering AI System Design",
+  "authors": "Soudamini Sreepada",
+  "source_type": "Libro EPUB",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_OceanofPDF.com_Mastering_AI_System_Design_-_Soudamini_Sreepada.epub",
+  "file_name": "_OceanofPDF.com_Mastering_AI_System_Design_-_Soudamini_Sreepada.epub",
+  "sha256": "3a8e58fb8a286bc671939e3afeb08a3f6a69eb319bd2c259296e2bfd22559d58",
+  "status": "indexed",
+  "processed_date": "2026-07-27",
+  "page_count": 506,
+  "unit_label": "epub_section",
+  "text_chars": 592157,
+  "text_pages": 502,
+  "requires_ocr_review": false,
+  "working_text_persisted": false,
+  "themes": "AI system design, ML architecture, data pipelines, model serving, RAG, LLM systems, MLOps, monitoring, scalability",
+  "utility_tsis": "arquitectura futura para agentes, ML, model registry, evaluacion y serving en TSIS"
+}

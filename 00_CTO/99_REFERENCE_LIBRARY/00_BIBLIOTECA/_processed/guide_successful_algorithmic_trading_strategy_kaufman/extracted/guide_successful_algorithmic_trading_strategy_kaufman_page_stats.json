@@ -1,0 +1,171 @@
+{
+  "unit_label": "epub_section",
+  "page_count": 27,
+  "total_chars": 214756,
+  "text_pages": 27,
+  "requires_ocr_review": false,
+  "per_page": [
+    {
+      "section": 1,
+      "href": "OPS/fcover.xhtml",
+      "chars": 76,
+      "words": 10
+    },
+    {
+      "section": 2,
+      "href": "OPS/f03.xhtml",
+      "chars": 833,
+      "words": 123
+    },
+    {
+      "section": 3,
+      "href": "OPS/ftitlepage.xhtml",
+      "chars": 155,
+      "words": 22
+    },
+    {
+      "section": 4,
+      "href": "OPS/f04.xhtml",
+      "chars": 2658,
+      "words": 398
+    },
+    {
+      "section": 5,
+      "href": "OPS/ftoc.xhtml",
+      "chars": 6839,
+      "words": 1157
+    },
+    {
+      "section": 6,
+      "href": "OPS/fack.xhtml",
+      "chars": 953,
+      "words": 148
+    },
+    {
+      "section": 7,
+      "href": "OPS/c01.xhtml",
+      "chars": 6854,
+      "words": 1169
+    },
+    {
+      "section": 8,
+      "href": "OPS/c02.xhtml",
+      "chars": 7717,
+      "words": 1351
+    },
+    {
+      "section": 9,
+      "href": "OPS/c03.xhtml",
+      "chars": 8989,
+      "words": 1594
+    },
+    {
+      "section": 10,
+      "href": "OPS/c04.xhtml",
+      "chars": 12787,
+      "words": 2271
+    },
+    {
+      "section": 11,
+      "href": "OPS/c05.xhtml",
+      "chars": 6793,
+      "words": 1199
+    },
+    {
+      "section": 12,
+      "href": "OPS/c06.xhtml",
+      "chars": 14088,
+      "words": 2504
+    },
+    {
+      "section": 13,
+      "href": "OPS/c07.xhtml",
+      "chars": 7687,
+      "words": 1413
+    },
+    {
+      "section": 14,
+      "href": "OPS/c08.xhtml",
+      "chars": 7663,
+      "words": 1368
+    },
+    {
+      "section": 15,
+      "href": "OPS/c09.xhtml",
+      "chars": 15150,
+      "words": 2672
+    },
+    {
+      "section": 16,
+      "href": "OPS/c10.xhtml",
+      "chars": 24475,
+      "words": 4285
+    },
+    {
+      "section": 17,
+      "href": "OPS/c11.xhtml",
+      "chars": 12949,
+      "words": 2306
+    },
+    {
+      "section": 18,
+      "href": "OPS/c12.xhtml",
+      "chars": 13319,
+      "words": 2350
+    },
+    {
+      "section": 19,
+      "href": "OPS/c13.xhtml",
+      "chars": 12266,
+      "words": 2208
+    },
+    {
+      "section": 20,
+      "href": "OPS/c14.xhtml",
+      "chars": 7676,
+      "words": 1355
+    },
+    {
+      "section": 21,
+      "href": "OPS/c15.xhtml",
+      "chars": 4266,
+      "words": 725
+    },
+    {
+      "section": 22,
+      "href": "OPS/c16.xhtml",
+      "chars": 19573,
+      "words": 3436
+    },
+    {
+      "section": 23,
+      "href": "OPS/c17.xhtml",
+      "chars": 13429,
+      "words": 2332
+    },
+    {
+      "section": 24,
+      "href": "OPS/c18.xhtml",
+      "chars": 1906,
+      "words": 326
+    },
+    {
+      "section": 25,
+      "href": "OPS/b01.xhtml",
+      "chars": 1924,
+      "words": 172
+    },
+    {
+      "section": 26,
+      "href": "OPS/bindex.xhtml",
+      "chars": 3606,
+      "words": 465
+    },
+    {
+      "section": 27,
+      "href": "OPS/eula.xhtml",
+      "chars": 125,
+      "words": 17
+    }
+  ]
+}

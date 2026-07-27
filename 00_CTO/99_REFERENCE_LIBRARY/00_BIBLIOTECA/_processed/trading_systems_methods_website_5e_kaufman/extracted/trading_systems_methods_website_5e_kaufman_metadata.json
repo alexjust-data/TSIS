@@ -1,0 +1,23 @@
+﻿{
+    "book_id":  "trading_systems_methods_website_5e_kaufman",
+    "title":  "Trading Systems and Methods, 5th Edition + Website",
+    "author":  "Perry J. Kaufman",
+    "pdf_path":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Trading_Systems_n_Methods__Website_5th_Ed_-_Perry_J_Kaufman.pdf",
+    "file_name":  "Trading_Systems_n_Methods__Website_5th_Ed_-_Perry_J_Kaufman.pdf",
+    "file_size_bytes":  26731738,
+    "sha256":  "355ec7c138c6d3e03aa5704999b0ff78b8ff7116cc249a551120c4c014695010",
+    "pages":  1232,
+    "toc_items":  883,
+    "total_words":  486719,
+    "text_pages":  1231,
+    "requires_ocr":  false,
+    "ocr_completed":  false,
+    "working_text_persisted":  false,
+    "status":  "indexed",
+    "artifact_contract":  [
+                              "summaries/\u003cbook_id\u003e_agent_summary.md",
+                              "index/\u003cbook_id\u003e_concept_index.md",
+                              "index/\u003cbook_id\u003e_source_map.md"
+                          ],
+    "note":  "Procesado como fuente separada porque ya existia una entrada Kaufman antigua sin hash verificable."
+}

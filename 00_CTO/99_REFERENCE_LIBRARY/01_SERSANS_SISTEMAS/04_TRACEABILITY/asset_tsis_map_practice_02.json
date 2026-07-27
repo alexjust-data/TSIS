@@ -1,0 +1,137 @@
+[
+  {
+    "asset_id": "ALG-0001",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": false
+  },
+  {
+    "asset_id": "ALG-0002",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": false
+  },
+  {
+    "asset_id": "PAR-0001",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": false
+  },
+  {
+    "asset_id": "PAR-0002",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": false
+  },
+  {
+    "asset_id": "PAR-0003",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": false
+  },
+  {
+    "asset_id": "PAR-0004",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": false
+  },
+  {
+    "asset_id": "PAR-0005",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": false
+  },
+  {
+    "asset_id": "PAR-0006",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": false
+  },
+  {
+    "asset_id": "MET-0001",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": false
+  },
+  {
+    "asset_id": "MET-0002",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": false
+  },
+  {
+    "asset_id": "MET-0003",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": false
+  },
+  {
+    "asset_id": "MET-0004",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": false
+  },
+  {
+    "asset_id": "MET-0005",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": false
+  },
+  {
+    "asset_id": "MET-0006",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": false
+  },
+  {
+    "asset_id": "CMP-0001",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": false
+  },
+  {
+    "asset_id": "CMP-0002",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": false
+  },
+  {
+    "asset_id": "CMP-0003",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": false
+  },
+  {
+    "asset_id": "CMP-0004",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": false
+  },
+  {
+    "asset_id": "CMP-0005",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": false
+  },
+  {
+    "asset_id": "CMP-0006",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": false
+  },
+  {
+    "asset_id": "RPT-0001",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": false
+  },
+  {
+    "asset_id": "RPT-0002",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": false
+  },
+  {
+    "asset_id": "DEC-0001",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": true
+  },
+  {
+    "asset_id": "DEC-0002",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": true
+  },
+  {
+    "asset_id": "DEC-0003",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": true
+  },
+  {
+    "asset_id": "DEC-0004",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": true
+  },
+  {
+    "asset_id": "DEC-0005",
+    "tsis_status": "REVIEW_REQUIRED",
+    "decision_candidate": true
+  }
+]

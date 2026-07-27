@@ -1,0 +1,31 @@
+{
+  "validation_id": "market_state_on_demand_scale_validation_v0_1_20260727T133641Z",
+  "gate": "market_state_on_demand_scale_validation_v0_1",
+  "status": "CLOSED_PASS_SCALE_VALIDATION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED",
+  "decision": {
+    "requested_contexts": 120,
+    "represented_contexts": 104,
+    "reusable_validated_contexts": 14,
+    "scale_delta_materialized_contexts": 90,
+    "unavailable_contexts": 16,
+    "unaccounted_contexts": 0,
+    "hard_validation_failures": 0
+  },
+  "fingerprints": {
+    "request_fingerprint": "aae5caa757ee29faeb50bc782948f26e9b17df52643c459b3d7a023435aea88d",
+    "resolved_profile_fingerprint": "683c954f4013346f37716d447df1825547d8c06e63422399b29092b1ce8ae5f6",
+    "resolved_universe_fingerprint": "ae896f38234df109a1c58ef3afd5f9f53af38117c86aee0959f0ce559f72b5f0",
+    "resolved_source_set_fingerprint": "4d04f05b0b80e5f7b0ac2755532c6b145f7305f2bd99501039fb6356e4de23d3",
+    "partition_coverage_resolution_fingerprint": "0840eeeb762951ad9a419eff13c2b3b4094e68f541511fa3116b740488a1311f",
+    "execution_plan_fingerprint": "48157b00db928ad30089cb6e6a9a230c239099897bbaad7becfdbe949779c725",
+    "candidate_dataset_fingerprint": "516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416",
+    "scientific_dataset_fingerprint": "0cc901750cabe9fef67a2ee3ebcd6a30c4a807a7b35cda8d29dbd8baa9ddad6e",
+    "validation_result_fingerprint": "737f71a2aea2fc227dfa151708a1feec3399120c31fd93021de87b95edb556f2",
+    "registry_entry_fingerprint": "1e4a4370dc66b90d70eef08624fc47c90758567a20aa92df312630da76524b7b"
+  },
+  "next_allowed_gate": "market_state_on_demand_capability_promotion_review_v0_1",
+  "official_dataset": false,
+  "production": false,
+  "downstream": false,
+  "scale_validation_matrix_sha256": "d67a584762e7308cf2ac42541c07009316b7ca00f8634a0fae80ae66d5f6bb81"
+}

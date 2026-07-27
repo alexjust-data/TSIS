@@ -1,0 +1,4417 @@
+[
+  {
+    "level": 1,
+    "title": "Trading Systems and Methods",
+    "page": 3
+  },
+  {
+    "level": 1,
+    "title": "Contents",
+    "page": 9
+  },
+  {
+    "level": 1,
+    "title": "Preface to the Fifth Edition",
+    "page": 17
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 1 Introduction",
+    "page": 21
+  },
+  {
+    "level": 2,
+    "title": "THE EXPANDING ROLE OF TECHNICAL ANALYSIS",
+    "page": 21
+  },
+  {
+    "level": 2,
+    "title": "CONVERGENCE OF TRADING STYLES IN STOCKS AND FUTURES",
+    "page": 22
+  },
+  {
+    "level": 2,
+    "title": "A LINE IN THE SAND BETWEEN FUNDAMENTALS AND TECHNICAL ANALYSIS",
+    "page": 24
+  },
+  {
+    "level": 2,
+    "title": "PROFESSIONAL AND AMATEUR",
+    "page": 25
+  },
+  {
+    "level": 2,
+    "title": "RANDOM WALK",
+    "page": 26
+  },
+  {
+    "level": 2,
+    "title": "DECIDING ON A TRADING STYLE",
+    "page": 28
+  },
+  {
+    "level": 2,
+    "title": "MEASURING NOISE",
+    "page": 30
+  },
+  {
+    "level": 3,
+    "title": "Other Measurements of Noise",
+    "page": 31
+  },
+  {
+    "level": 3,
+    "title": "Impact on Trading",
+    "page": 33
+  },
+  {
+    "level": 2,
+    "title": "MATURING MARKETS AND GLOBALIZATION",
+    "page": 34
+  },
+  {
+    "level": 2,
+    "title": "BACKGROUND MATERIAL",
+    "page": 36
+  },
+  {
+    "level": 2,
+    "title": "RESEARCH GUIDELINES",
+    "page": 38
+  },
+  {
+    "level": 2,
+    "title": "OBJECTIVES OF THIS BOOK",
+    "page": 39
+  },
+  {
+    "level": 2,
+    "title": "PROFILE OF A TRADING SYSTEM",
+    "page": 40
+  },
+  {
+    "level": 3,
+    "title": "Changing Markets and System Longevity",
+    "page": 40
+  },
+  {
+    "level": 3,
+    "title": "The Choice of Data",
+    "page": 41
+  },
+  {
+    "level": 3,
+    "title": "Diversifi cation",
+    "page": 41
+  },
+  {
+    "level": 3,
+    "title": "Trade Selection",
+    "page": 41
+  },
+  {
+    "level": 3,
+    "title": "Testing",
+    "page": 42
+  },
+  {
+    "level": 3,
+    "title": "Risk Control",
+    "page": 42
+  },
+  {
+    "level": 3,
+    "title": "Transaction Costs",
+    "page": 42
+  },
+  {
+    "level": 3,
+    "title": "Performance Monitoring and Feedback",
+    "page": 42
+  },
+  {
+    "level": 2,
+    "title": "A WORD ABOUT THE NOTATION USED IN THIS BOOK",
+    "page": 43
+  },
+  {
+    "level": 2,
+    "title": "AND FINALLY . . .",
+    "page": 43
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 2 Basic Concepts and Calculations",
+    "page": 45
+  },
+  {
+    "level": 2,
+    "title": "Helpful Software",
+    "page": 46
+  },
+  {
+    "level": 2,
+    "title": "ABOUT DATA AND AVERAGING",
+    "page": 46
+  },
+  {
+    "level": 3,
+    "title": "The Law of Averages",
+    "page": 46
+  },
+  {
+    "level": 3,
+    "title": "In-Sample and Out-of-Sample Data",
+    "page": 47
+  },
+  {
+    "level": 3,
+    "title": "How Much Data Is Enough?",
+    "page": 47
+  },
+  {
+    "level": 2,
+    "title": "ON AVERAGE",
+    "page": 50
+  },
+  {
+    "level": 3,
+    "title": "Geometric Mean",
+    "page": 51
+  },
+  {
+    "level": 3,
+    "title": "Quadratic Mean",
+    "page": 52
+  },
+  {
+    "level": 3,
+    "title": "Harmonic Mean",
+    "page": 52
+  },
+  {
+    "level": 2,
+    "title": "PRICE DISTRIBUTION",
+    "page": 53
+  },
+  {
+    "level": 3,
+    "title": "Frequency Distributions",
+    "page": 53
+  },
+  {
+    "level": 3,
+    "title": "Median and Mode",
+    "page": 56
+  },
+  {
+    "level": 3,
+    "title": "Characteristics of the Principal Averages",
+    "page": 57
+  },
+  {
+    "level": 2,
+    "title": "MOMENTS OF THE DISTRIBUTION: VARIANCE, SKEWNESS, AND KURTOSIS",
+    "page": 57
+  },
+  {
+    "level": 3,
+    "title": "Variance (2nd Moment)",
+    "page": 58
+  },
+  {
+    "level": 3,
+    "title": "Skewness (3rd moment",
+    "page": 59
+  },
+  {
+    "level": 3,
+    "title": "Kurtosis (4th Moment)",
+    "page": 62
+  },
+  {
+    "level": 3,
+    "title": "Choosing between Frequency Distribution and Standard Deviation",
+    "page": 63
+  },
+  {
+    "level": 3,
+    "title": "Probability of Achieving a Return",
+    "page": 64
+  },
+  {
+    "level": 3,
+    "title": "Standard Error",
+    "page": 66
+  },
+  {
+    "level": 3,
+    "title": "t-Statistic and Degrees of Freedom",
+    "page": 67
+  },
+  {
+    "level": 2,
+    "title": "STANDARDIZING RISK AND RETURN",
+    "page": 68
+  },
+  {
+    "level": 3,
+    "title": "Calculating Returns",
+    "page": 69
+  },
+  {
+    "level": 3,
+    "title": "Risk and Volatility",
+    "page": 71
+  },
+  {
+    "level": 2,
+    "title": "THE INDEX",
+    "page": 74
+  },
+  {
+    "level": 3,
+    "title": "Constructing an Index",
+    "page": 75
+  },
+  {
+    "level": 3,
+    "title": "Calculating the Net Asset Value—Indexing Returns",
+    "page": 75
+  },
+  {
+    "level": 3,
+    "title": "Leveraged Long or Short Index Funds",
+    "page": 76
+  },
+  {
+    "level": 3,
+    "title": "Cross-Market and Weighted Index",
+    "page": 77
+  },
+  {
+    "level": 3,
+    "title": "U.S. Dollar Index",
+    "page": 77
+  },
+  {
+    "level": 2,
+    "title": "STANDARD MEASUREMENTS OF PERFORMANCE",
+    "page": 78
+  },
+  {
+    "level": 2,
+    "title": "PROBABILITY",
+    "page": 79
+  },
+  {
+    "level": 3,
+    "title": "Laws of Probability",
+    "page": 80
+  },
+  {
+    "level": 3,
+    "title": "Joint and Marginal Probability",
+    "page": 81
+  },
+  {
+    "level": 3,
+    "title": "Contingent Probability",
+    "page": 81
+  },
+  {
+    "level": 3,
+    "title": "Markov Chains",
+    "page": 82
+  },
+  {
+    "level": 3,
+    "title": "Bayes’ Theorem",
+    "page": 85
+  },
+  {
+    "level": 2,
+    "title": "SUPPLY AND DEMAND",
+    "page": 86
+  },
+  {
+    "level": 3,
+    "title": "Demand",
+    "page": 86
+  },
+  {
+    "level": 3,
+    "title": "Supply",
+    "page": 88
+  },
+  {
+    "level": 3,
+    "title": "Equilibrium",
+    "page": 89
+  },
+  {
+    "level": 3,
+    "title": "Cobweb Charts",
+    "page": 90
+  },
+  {
+    "level": 3,
+    "title": "Building a Model",
+    "page": 91
+  },
+  {
+    "level": 3,
+    "title": "Changing Factors",
+    "page": 94
+  },
+  {
+    "level": 3,
+    "title": "Economic Reports",
+    "page": 96
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 3 Charting",
+    "page": 99
+  },
+  {
+    "level": 2,
+    "title": "FINDING CONSISTENT PATTERNS",
+    "page": 100
+  },
+  {
+    "level": 3,
+    "title": "What Causes Chart Patterns?",
+    "page": 101
+  },
+  {
+    "level": 2,
+    "title": "WHAT CAUSES THE MAJOR PRICE MOVES AND TRENDS?",
+    "page": 102
+  },
+  {
+    "level": 2,
+    "title": "THE BAR CHART AND ITS INTERPRETATION BY CHARLES DOW",
+    "page": 103
+  },
+  {
+    "level": 3,
+    "title": "The Dow Theory",
+    "page": 104
+  },
+  {
+    "level": 3,
+    "title": "The Basic Tenets of the Dow Theory",
+    "page": 105
+  },
+  {
+    "level": 3,
+    "title": "Interpreting Today’s S&P Using Dow Theory",
+    "page": 110
+  },
+  {
+    "level": 3,
+    "title": "Dow Theory and Futures Markets",
+    "page": 112
+  },
+  {
+    "level": 2,
+    "title": "CHART FORMATIONS",
+    "page": 112
+  },
+  {
+    "level": 3,
+    "title": "The Trend in Retrospect",
+    "page": 113
+  },
+  {
+    "level": 2,
+    "title": "TRENDLINES",
+    "page": 114
+  },
+  {
+    "level": 3,
+    "title": "Redrawing Trendlines",
+    "page": 114
+  },
+  {
+    "level": 3,
+    "title": "Support and Resistance Lines",
+    "page": 115
+  },
+  {
+    "level": 3,
+    "title": "Rules for Trading Using Trendlines",
+    "page": 117
+  },
+  {
+    "level": 3,
+    "title": "Trading Rules for Horizontal Support and Resistance Levels",
+    "page": 118
+  },
+  {
+    "level": 3,
+    "title": "Creating a Channel with Trendlines",
+    "page": 120
+  },
+  {
+    "level": 2,
+    "title": "ONE-DAY PATTERNS",
+    "page": 122
+  },
+  {
+    "level": 3,
+    "title": "Gaps",
+    "page": 122
+  },
+  {
+    "level": 3,
+    "title": "Trading Rules for Gaps",
+    "page": 125
+  },
+  {
+    "level": 3,
+    "title": "Spikes",
+    "page": 125
+  },
+  {
+    "level": 3,
+    "title": "Island Reversals",
+    "page": 127
+  },
+  {
+    "level": 3,
+    "title": "Reversal Days and Key Reversal Days",
+    "page": 129
+  },
+  {
+    "level": 3,
+    "title": "Wide-Ranging Days, Inside Days, and Outside Days",
+    "page": 132
+  },
+  {
+    "level": 2,
+    "title": "CONTINUATION PATTERNS",
+    "page": 133
+  },
+  {
+    "level": 3,
+    "title": "Symmetric, Descending, and Ascending Triangles",
+    "page": 134
+  },
+  {
+    "level": 3,
+    "title": "Formation of a Descending Triangle",
+    "page": 134
+  },
+  {
+    "level": 3,
+    "title": "Flags",
+    "page": 135
+  },
+  {
+    "level": 3,
+    "title": "Pennants",
+    "page": 135
+  },
+  {
+    "level": 3,
+    "title": "Wedges",
+    "page": 135
+  },
+  {
+    "level": 2,
+    "title": "BASIC CONCEPTS IN CHART TRADING",
+    "page": 137
+  },
+  {
+    "level": 3,
+    "title": "Major and Minor Formations",
+    "page": 137
+  },
+  {
+    "level": 3,
+    "title": "Market Noise",
+    "page": 138
+  },
+  {
+    "level": 2,
+    "title": "ACCUMULATION AND DISTRIBUTION—BOTTOMS AND TOPS",
+    "page": 138
+  },
+  {
+    "level": 3,
+    "title": "V-Tops and V-Bottoms",
+    "page": 139
+  },
+  {
+    "level": 3,
+    "title": "Double and Triple Tops and Bottoms",
+    "page": 142
+  },
+  {
+    "level": 3,
+    "title": "Extended Rectangle Bottom",
+    "page": 146
+  },
+  {
+    "level": 3,
+    "title": "Rounded Tops and Bottoms",
+    "page": 148
+  },
+  {
+    "level": 3,
+    "title": "Wedge Top and Bottom Patterns",
+    "page": 149
+  },
+  {
+    "level": 3,
+    "title": "Head-and-Shoulders Formation",
+    "page": 149
+  },
+  {
+    "level": 2,
+    "title": "EPISODIC PATTERNS",
+    "page": 152
+  },
+  {
+    "level": 2,
+    "title": "PRICE OBJECTIVES FOR BAR CHARTING",
+    "page": 153
+  },
+  {
+    "level": 3,
+    "title": "Common Elements of Profit Objectives",
+    "page": 154
+  },
+  {
+    "level": 3,
+    "title": "Profit Targets for Consolidation Areas and Channels",
+    "page": 154
+  },
+  {
+    "level": 3,
+    "title": "Targeting Profits after Tops and Bottoms",
+    "page": 156
+  },
+  {
+    "level": 2,
+    "title": "IMPLIED STRATEGIES IN CANDLESTICK CHARTS",
+    "page": 159
+  },
+  {
+    "level": 3,
+    "title": "Quantifying Candle Formations",
+    "page": 162
+  },
+  {
+    "level": 3,
+    "title": "Qstick",
+    "page": 163
+  },
+  {
+    "level": 3,
+    "title": "Pivot Points and Candle Charts",
+    "page": 163
+  },
+  {
+    "level": 3,
+    "title": "The Best of the Candles",
+    "page": 164
+  },
+  {
+    "level": 2,
+    "title": "PRACTICAL USE OF THE BAR CHART",
+    "page": 164
+  },
+  {
+    "level": 3,
+    "title": "Trends Are Easier to See in Retrospect",
+    "page": 164
+  },
+  {
+    "level": 3,
+    "title": "Long-Term Trends Are More Reliable than Short-Term Trends",
+    "page": 164
+  },
+  {
+    "level": 3,
+    "title": "Multiple Signals",
+    "page": 165
+  },
+  {
+    "level": 3,
+    "title": "Pattern Failures",
+    "page": 166
+  },
+  {
+    "level": 3,
+    "title": "Testing Your Skill",
+    "page": 167
+  },
+  {
+    "level": 2,
+    "title": "EVOLUTION IN PRICE PATTERNS",
+    "page": 168
+  },
+  {
+    "level": 3,
+    "title": "Globalization: The Similarity of Asian Markets",
+    "page": 169
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 4 Charting Systems and Techniques",
+    "page": 171
+  },
+  {
+    "level": 2,
+    "title": "DUNNIGAN AND THE THRUST METHOD",
+    "page": 172
+  },
+  {
+    "level": 3,
+    "title": "The Thrust Method",
+    "page": 172
+  },
+  {
+    "level": 3,
+    "title": "One-Way Formula",
+    "page": 174
+  },
+  {
+    "level": 3,
+    "title": "The Square Root Theory",
+    "page": 175
+  },
+  {
+    "level": 2,
+    "title": "NOFRI’S CONGESTION-PHASE SYSTEM",
+    "page": 175
+  },
+  {
+    "level": 3,
+    "title": "Implementing the Congestion-Phase System",
+    "page": 176
+  },
+  {
+    "level": 2,
+    "title": "OUTSIDE DAYS WITH AN OUTSIDE CLOSE",
+    "page": 177
+  },
+  {
+    "level": 2,
+    "title": "INSIDE DAYS",
+    "page": 178
+  },
+  {
+    "level": 2,
+    "title": "PIVOT POINTS",
+    "page": 178
+  },
+  {
+    "level": 2,
+    "title": "ACTION AND REACTION",
+    "page": 179
+  },
+  {
+    "level": 3,
+    "title": "Fibonacci Ratios",
+    "page": 180
+  },
+  {
+    "level": 3,
+    "title": "Tubbs’ Law of Proportion",
+    "page": 180
+  },
+  {
+    "level": 3,
+    "title": "Trident",
+    "page": 182
+  },
+  {
+    "level": 3,
+    "title": "An Overview of Percentage Retracements",
+    "page": 183
+  },
+  {
+    "level": 3,
+    "title": "Clustering",
+    "page": 186
+  },
+  {
+    "level": 2,
+    "title": "CHANNEL BREAKOUT",
+    "page": 187
+  },
+  {
+    "level": 2,
+    "title": "MOVING CHANNELS",
+    "page": 190
+  },
+  {
+    "level": 2,
+    "title": "COMMODITY CHANNEL INDEX",
+    "page": 191
+  },
+  {
+    "level": 2,
+    "title": "WYCKOFF’S COMBINED TECHNIQUES",
+    "page": 192
+  },
+  {
+    "level": 2,
+    "title": "COMPLEX PATTERNS",
+    "page": 193
+  },
+  {
+    "level": 3,
+    "title": "DeMark’s Sequential™",
+    "page": 193
+  },
+  {
+    "level": 3,
+    "title": "Thinking about Complex Patterns",
+    "page": 195
+  },
+  {
+    "level": 2,
+    "title": "A STUDY OF CHARTING PATTERNS",
+    "page": 196
+  },
+  {
+    "level": 3,
+    "title": "Computer Recognition of Chart Patterns",
+    "page": 196
+  },
+  {
+    "level": 3,
+    "title": "Results of the Study",
+    "page": 197
+  },
+  {
+    "level": 2,
+    "title": "BULKOWSKI’S CHART PATTERN RANKINGS",
+    "page": 198
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 5 Event-DrivenT rends",
+    "page": 201
+  },
+  {
+    "level": 2,
+    "title": "SWING TRADING",
+    "page": 202
+  },
+  {
+    "level": 3,
+    "title": "Constructing a Classic Swing Chart",
+    "page": 202
+  },
+  {
+    "level": 2,
+    "title": "CONSTRUCTING A SWING CHART USING A SWING FILTER",
+    "page": 204
+  },
+  {
+    "level": 3,
+    "title": "S&P Example",
+    "page": 205
+  },
+  {
+    "level": 3,
+    "title": "Percentage Swings",
+    "page": 207
+  },
+  {
+    "level": 3,
+    "title": "Rules for Swing Trading",
+    "page": 208
+  },
+  {
+    "level": 3,
+    "title": "The Swing Philosophy",
+    "page": 209
+  },
+  {
+    "level": 3,
+    "title": "The Livermore System",
+    "page": 209
+  },
+  {
+    "level": 3,
+    "title": "Programming the Swing High and Low Points",
+    "page": 211
+  },
+  {
+    "level": 3,
+    "title": "Keltner’s Minor Trend Rule",
+    "page": 211
+  },
+  {
+    "level": 3,
+    "title": "Pivot Points",
+    "page": 212
+  },
+  {
+    "level": 3,
+    "title": "Wilder’s Swing Index",
+    "page": 212
+  },
+  {
+    "level": 2,
+    "title": "POINT-AND-FIGURE CHARTING",
+    "page": 215
+  },
+  {
+    "level": 3,
+    "title": "Plotting Prices Using the Point-and-Figure Method",
+    "page": 217
+  },
+  {
+    "level": 3,
+    "title": "Point-and-Figure Chart Formations",
+    "page": 219
+  },
+  {
+    "level": 3,
+    "title": "Point-and-Figure Trendlines",
+    "page": 221
+  },
+  {
+    "level": 3,
+    "title": "Point-and-Figure Trading Techniques",
+    "page": 227
+  },
+  {
+    "level": 3,
+    "title": "Selecting Trades",
+    "page": 233
+  },
+  {
+    "level": 3,
+    "title": "Price Objectives",
+    "page": 233
+  },
+  {
+    "level": 3,
+    "title": "Point-and-Figure with Variable Box Sizes",
+    "page": 238
+  },
+  {
+    "level": 3,
+    "title": "Recent Applications of Point-and-Figure",
+    "page": 241
+  },
+  {
+    "level": 2,
+    "title": "THE N-DAY BREAKOUT",
+    "page": 242
+  },
+  {
+    "level": 3,
+    "title": "Donchian’s 4-Week Rule",
+    "page": 243
+  },
+  {
+    "level": 3,
+    "title": "Modifying the N-Day Rule",
+    "page": 244
+  },
+  {
+    "level": 3,
+    "title": "Testing the N-Day Rule",
+    "page": 245
+  },
+  {
+    "level": 3,
+    "title": "The N-Day Breakout Applied to Stocks",
+    "page": 248
+  },
+  {
+    "level": 3,
+    "title": "The Turtles",
+    "page": 249
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 6 Regression Analysis",
+    "page": 255
+  },
+  {
+    "level": 2,
+    "title": "COMPONENTS OF A TIME SERIES",
+    "page": 255
+  },
+  {
+    "level": 2,
+    "title": "CHARACTERISTICS OF THE PRICE DATA",
+    "page": 256
+  },
+  {
+    "level": 3,
+    "title": "Selection of the Calculation Period",
+    "page": 257
+  },
+  {
+    "level": 2,
+    "title": "LINEAR REGRESSION",
+    "page": 258
+  },
+  {
+    "level": 3,
+    "title": "Explaining, Not Predicting",
+    "page": 258
+  },
+  {
+    "level": 3,
+    "title": "Calculating the Best Straight-Line Fit",
+    "page": 259
+  },
+  {
+    "level": 3,
+    "title": "Excel Regression",
+    "page": 262
+  },
+  {
+    "level": 3,
+    "title": "Corn Explained by Soybeans",
+    "page": 262
+  },
+  {
+    "level": 3,
+    "title": "Gold Bullion and Barrick Gold Corporation",
+    "page": 264
+  },
+  {
+    "level": 2,
+    "title": "LINEAR CORRELATION",
+    "page": 268
+  },
+  {
+    "level": 3,
+    "title": "Correlation Adjustments When Using a Time Series",
+    "page": 269
+  },
+  {
+    "level": 3,
+    "title": "Forecasting Using Regression",
+    "page": 270
+  },
+  {
+    "level": 2,
+    "title": "NONLINEAR APPROXIMATIONS FOR TWO VARIABLES",
+    "page": 272
+  },
+  {
+    "level": 3,
+    "title": "Second-Order Least-Squares Solution",
+    "page": 273
+  },
+  {
+    "level": 2,
+    "title": "TRANSFORMING NONLINEAR TO LINEAR",
+    "page": 276
+  },
+  {
+    "level": 2,
+    "title": "EVALUATION OF TWO-VARIABLE TECHNIQUES",
+    "page": 277
+  },
+  {
+    "level": 3,
+    "title": "Direct Relationships",
+    "page": 278
+  },
+  {
+    "level": 2,
+    "title": "MULTIVARIATE APPROXIMATIONS",
+    "page": 279
+  },
+  {
+    "level": 3,
+    "title": "Selecting Data for an S&P Model",
+    "page": 283
+  },
+  {
+    "level": 3,
+    "title": "Generalized Multivariate Solution",
+    "page": 285
+  },
+  {
+    "level": 3,
+    "title": "Least-Squares Sinusoidal",
+    "page": 286
+  },
+  {
+    "level": 2,
+    "title": "ARIMA",
+    "page": 287
+  },
+  {
+    "level": 3,
+    "title": "Forecast Results",
+    "page": 290
+  },
+  {
+    "level": 3,
+    "title": "ARIMA Trading Strategies",
+    "page": 291
+  },
+  {
+    "level": 3,
+    "title": "Kalman Filters",
+    "page": 292
+  },
+  {
+    "level": 2,
+    "title": "BASIC TRADING SIGNALS USING A LINEAR REGRESSION MODEL",
+    "page": 293
+  },
+  {
+    "level": 3,
+    "title": "Adding Confidence Bands",
+    "page": 293
+  },
+  {
+    "level": 3,
+    "title": "Using the Linear Regression Slope",
+    "page": 295
+  },
+  {
+    "level": 3,
+    "title": "Adding Correlations",
+    "page": 295
+  },
+  {
+    "level": 3,
+    "title": "Forecast Oscillator",
+    "page": 296
+  },
+  {
+    "level": 2,
+    "title": "MEASURING MARKET STRENGTH",
+    "page": 296
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 7 Time-Based Trend Calculations",
+    "page": 299
+  },
+  {
+    "level": 2,
+    "title": "FORECASTING AND FOLLOWING",
+    "page": 299
+  },
+  {
+    "level": 3,
+    "title": "Least-Squares Model",
+    "page": 301
+  },
+  {
+    "level": 3,
+    "title": "Error Analysis",
+    "page": 301
+  },
+  {
+    "level": 3,
+    "title": "Limiting the Forecast to Direction",
+    "page": 303
+  },
+  {
+    "level": 2,
+    "title": "PRICE CHANGE OVER TIME",
+    "page": 304
+  },
+  {
+    "level": 2,
+    "title": "THE MOVING AVERAGE",
+    "page": 304
+  },
+  {
+    "level": 3,
+    "title": "User-Friendly Software",
+    "page": 306
+  },
+  {
+    "level": 3,
+    "title": "What Do You Average?",
+    "page": 306
+  },
+  {
+    "level": 3,
+    "title": "Types of Moving Averages",
+    "page": 307
+  },
+  {
+    "level": 3,
+    "title": "Triangular Weighting",
+    "page": 309
+  },
+  {
+    "level": 3,
+    "title": "Pivot-Point Weighting",
+    "page": 310
+  },
+  {
+    "level": 3,
+    "title": "Standard Deviation Moving Average",
+    "page": 311
+  },
+  {
+    "level": 2,
+    "title": "GEOMETRIC MOVING AVERAGE",
+    "page": 312
+  },
+  {
+    "level": 2,
+    "title": "ACCUMULATIVE AVERAGE",
+    "page": 313
+  },
+  {
+    "level": 2,
+    "title": "RESET ACCUMULATIVE AVERAGE",
+    "page": 313
+  },
+  {
+    "level": 2,
+    "title": "DROP-OFF EFFECT",
+    "page": 313
+  },
+  {
+    "level": 2,
+    "title": "EXPONENTIAL SMOOTHING",
+    "page": 313
+  },
+  {
+    "level": 3,
+    "title": "The Common Form of Exponential Smoothing",
+    "page": 314
+  },
+  {
+    "level": 3,
+    "title": "The Smoothing Constant Expressed in Days",
+    "page": 315
+  },
+  {
+    "level": 3,
+    "title": "Estimating Residual Impact",
+    "page": 316
+  },
+  {
+    "level": 3,
+    "title": "Relating Exponential and Standard Averages",
+    "page": 318
+  },
+  {
+    "level": 3,
+    "title": "Correcting for the Lag",
+    "page": 321
+  },
+  {
+    "level": 3,
+    "title": "Double Smoothing",
+    "page": 321
+  },
+  {
+    "level": 3,
+    "title": "Double Smoothing of Price Changes",
+    "page": 323
+  },
+  {
+    "level": 3,
+    "title": "Comparison of Exponential Smoothing Methods",
+    "page": 324
+  },
+  {
+    "level": 3,
+    "title": "Regularization",
+    "page": 325
+  },
+  {
+    "level": 3,
+    "title": "Hull Moving Average",
+    "page": 326
+  },
+  {
+    "level": 2,
+    "title": "PLOTTING LAGS AND LEADS",
+    "page": 327
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 8 Trend Systems",
+    "page": 329
+  },
+  {
+    "level": 2,
+    "title": "WHY TREND SYSTEMS WORK",
+    "page": 329
+  },
+  {
+    "level": 3,
+    "title": "How Often Do Markets Trend?",
+    "page": 330
+  },
+  {
+    "level": 3,
+    "title": "The Fat Tail",
+    "page": 330
+  },
+  {
+    "level": 3,
+    "title": "Distribution of Profits and Losses",
+    "page": 331
+  },
+  {
+    "level": 3,
+    "title": "Time Intervals, Market Maturity, and Trends",
+    "page": 333
+  },
+  {
+    "level": 2,
+    "title": "BASIC BUY AND SELL SIGNALS",
+    "page": 334
+  },
+  {
+    "level": 3,
+    "title": "Using the Trendline for Signals",
+    "page": 335
+  },
+  {
+    "level": 3,
+    "title": "Comparing Basic Trading Signals",
+    "page": 335
+  },
+  {
+    "level": 3,
+    "title": "Anticipating the Trend Signal",
+    "page": 336
+  },
+  {
+    "level": 3,
+    "title": "Profile of a Simple Moving Average System",
+    "page": 337
+  },
+  {
+    "level": 2,
+    "title": "BANDS AND CHANNELS",
+    "page": 340
+  },
+  {
+    "level": 3,
+    "title": "Bands Formed by Highs and Lows",
+    "page": 340
+  },
+  {
+    "level": 3,
+    "title": "Keltner Channels",
+    "page": 341
+  },
+  {
+    "level": 3,
+    "title": "Percentage Bands",
+    "page": 341
+  },
+  {
+    "level": 3,
+    "title": "Volatility Bands",
+    "page": 342
+  },
+  {
+    "level": 3,
+    "title": "Bollinger Bands",
+    "page": 343
+  },
+  {
+    "level": 3,
+    "title": "Rules for Using Bands",
+    "page": 346
+  },
+  {
+    "level": 3,
+    "title": "Timing the Order",
+    "page": 348
+  },
+  {
+    "level": 3,
+    "title": "The Compromise between Reliability and Delay",
+    "page": 349
+  },
+  {
+    "level": 3,
+    "title": "Bollinger on Bollinger Bands",
+    "page": 349
+  },
+  {
+    "level": 3,
+    "title": "Combining Bollinger with Other Indicators",
+    "page": 350
+  },
+  {
+    "level": 2,
+    "title": "APPLICATIONS OF A SINGLE TREND",
+    "page": 350
+  },
+  {
+    "level": 3,
+    "title": "A Simple Momentum System",
+    "page": 351
+  },
+  {
+    "level": 3,
+    "title": "A Step-Weighted Moving Average",
+    "page": 351
+  },
+  {
+    "level": 3,
+    "title": "The Volatility System",
+    "page": 353
+  },
+  {
+    "level": 3,
+    "title": "The 10-Day Moving Average Rule",
+    "page": 353
+  },
+  {
+    "level": 3,
+    "title": "TRIX, Triple Exponential Smoothing",
+    "page": 354
+  },
+  {
+    "level": 3,
+    "title": "Raschke’s First Cross",
+    "page": 355
+  },
+  {
+    "level": 2,
+    "title": "COMPARISON OF MAJOR TREND SYSTEMS",
+    "page": 356
+  },
+  {
+    "level": 3,
+    "title": "Trading Rules",
+    "page": 357
+  },
+  {
+    "level": 3,
+    "title": "Spreadsheet Example",
+    "page": 358
+  },
+  {
+    "level": 3,
+    "title": "Comparative Results",
+    "page": 360
+  },
+  {
+    "level": 3,
+    "title": "Different Trend Philosophies",
+    "page": 362
+  },
+  {
+    "level": 3,
+    "title": "Different Risk Profiles",
+    "page": 362
+  },
+  {
+    "level": 3,
+    "title": "Expectations",
+    "page": 366
+  },
+  {
+    "level": 3,
+    "title": "Robust Testing",
+    "page": 368
+  },
+  {
+    "level": 3,
+    "title": "Which System Is Best?",
+    "page": 369
+  },
+  {
+    "level": 3,
+    "title": "Programs for the Six Systems",
+    "page": 369
+  },
+  {
+    "level": 2,
+    "title": "TECHNIQUES USING TWO TRENDLINES",
+    "page": 370
+  },
+  {
+    "level": 3,
+    "title": "Donchian’s 5- and 20-Day Moving Average System",
+    "page": 372
+  },
+  {
+    "level": 3,
+    "title": "Donchian’s 20- and 40-Day Breakout",
+    "page": 373
+  },
+  {
+    "level": 3,
+    "title": "The Golden Cross and the Death Cross",
+    "page": 374
+  },
+  {
+    "level": 3,
+    "title": "Staying Ahead of the Crowd",
+    "page": 375
+  },
+  {
+    "level": 2,
+    "title": "MULTIPLE TRENDS AND COMMON SENSE",
+    "page": 376
+  },
+  {
+    "level": 3,
+    "title": "Three Trends",
+    "page": 377
+  },
+  {
+    "level": 3,
+    "title": "Modified 3-Crossover Model",
+    "page": 378
+  },
+  {
+    "level": 3,
+    "title": "4-9-18 Crossover Model",
+    "page": 378
+  },
+  {
+    "level": 2,
+    "title": "COMPREHENSIVE STUDIES",
+    "page": 379
+  },
+  {
+    "level": 2,
+    "title": "SELECTING THE RIGHT TREND METHOD AND SPEED",
+    "page": 379
+  },
+  {
+    "level": 3,
+    "title": "Selecting the Trend Speed",
+    "page": 380
+  },
+  {
+    "level": 2,
+    "title": "MOVING AVERAGE SEQUENCES: SIGNAL PROGRESSION",
+    "page": 383
+  },
+  {
+    "level": 3,
+    "title": "Averaging the Sequences",
+    "page": 384
+  },
+  {
+    "level": 2,
+    "title": "EARLY EXITS FROM A TREND",
+    "page": 386
+  },
+  {
+    "level": 2,
+    "title": "MOVING AVERAGE PROJECTED CROSSOVERS",
+    "page": 386
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 9 Momentum and Oscillators",
+    "page": 389
+  },
+  {
+    "level": 2,
+    "title": "MOMENTUM",
+    "page": 390
+  },
+  {
+    "level": 3,
+    "title": "Characteristics of Momentum",
+    "page": 392
+  },
+  {
+    "level": 3,
+    "title": "Momentum as a Percentage",
+    "page": 393
+  },
+  {
+    "level": 3,
+    "title": "Momentum as the Difference between Price and Trend",
+    "page": 394
+  },
+  {
+    "level": 3,
+    "title": "Momentum as a Trend Indicator",
+    "page": 394
+  },
+  {
+    "level": 3,
+    "title": "Timing an Entry",
+    "page": 396
+  },
+  {
+    "level": 3,
+    "title": "Identifying and Fading Price Extremes",
+    "page": 397
+  },
+  {
+    "level": 3,
+    "title": "High-Momentum Trading",
+    "page": 401
+  },
+  {
+    "level": 3,
+    "title": "Moving Average Convergence/Divergence (MACD)",
+    "page": 402
+  },
+  {
+    "level": 2,
+    "title": "DIVERGENCE INDEX",
+    "page": 404
+  },
+  {
+    "level": 2,
+    "title": "OSCILLATORS",
+    "page": 405
+  },
+  {
+    "level": 3,
+    "title": "Relative Strength Index",
+    "page": 406
+  },
+  {
+    "level": 3,
+    "title": "Stochastics",
+    "page": 412
+  },
+  {
+    "level": 3,
+    "title": "Left and Right Crossovers",
+    "page": 415
+  },
+  {
+    "level": 3,
+    "title": "Creating a Stochastic from the RSI",
+    "page": 416
+  },
+  {
+    "level": 3,
+    "title": "Williams’s Oscillators",
+    "page": 417
+  },
+  {
+    "level": 3,
+    "title": "Relative Vigor Index",
+    "page": 423
+  },
+  {
+    "level": 2,
+    "title": "DOUBLE-SMOOTHED MOMENTUM",
+    "page": 424
+  },
+  {
+    "level": 3,
+    "title": "True Strength Index",
+    "page": 424
+  },
+  {
+    "level": 3,
+    "title": "Double-Smoothed Stochastics",
+    "page": 426
+  },
+  {
+    "level": 3,
+    "title": "TRIX",
+    "page": 426
+  },
+  {
+    "level": 3,
+    "title": "Changing the Divisor",
+    "page": 428
+  },
+  {
+    "level": 3,
+    "title": "An Oscillator to Distinguish between Trending and Sideways Markets",
+    "page": 428
+  },
+  {
+    "level": 3,
+    "title": "Adding Volume to Momentum",
+    "page": 428
+  },
+  {
+    "level": 3,
+    "title": "Scaling by a Percentage or Volatility",
+    "page": 429
+  },
+  {
+    "level": 3,
+    "title": "Volume-Weighted RSI",
+    "page": 429
+  },
+  {
+    "level": 3,
+    "title": "Herrick Payoff Index",
+    "page": 430
+  },
+  {
+    "level": 3,
+    "title": "Comments on the Use of Volume",
+    "page": 431
+  },
+  {
+    "level": 2,
+    "title": "VELOCITY AND ACCELERATION",
+    "page": 432
+  },
+  {
+    "level": 3,
+    "title": "Finding the Velocity and Acceleration of Different Techniques",
+    "page": 434
+  },
+  {
+    "level": 3,
+    "title": "Using Velocity and Acceleration to Identify a Sideways Market",
+    "page": 435
+  },
+  {
+    "level": 3,
+    "title": "Quick Calculation of Velocity and Acceleration",
+    "page": 435
+  },
+  {
+    "level": 2,
+    "title": "HYBRID MOMENTUM TECHNIQUES",
+    "page": 436
+  },
+  {
+    "level": 3,
+    "title": "Combining a Trend and an Oscillator",
+    "page": 436
+  },
+  {
+    "level": 3,
+    "title": "Cambridge Hook",
+    "page": 438
+  },
+  {
+    "level": 2,
+    "title": "MOMENTUM DIVERGENCE",
+    "page": 438
+  },
+  {
+    "level": 3,
+    "title": "An Amazon.com Example Using Momentum Peaks",
+    "page": 440
+  },
+  {
+    "level": 3,
+    "title": "Trading Rules for Divergence",
+    "page": 441
+  },
+  {
+    "level": 3,
+    "title": "Programming Divergence",
+    "page": 443
+  },
+  {
+    "level": 3,
+    "title": "Slope Divergence",
+    "page": 444
+  },
+  {
+    "level": 2,
+    "title": "SOME FINAL COMMENTS ON MOMENTUM",
+    "page": 446
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 10 Seasonality and Calendar Patterns",
+    "page": 447
+  },
+  {
+    "level": 2,
+    "title": "A CONSISTENT FACTOR",
+    "page": 448
+  },
+  {
+    "level": 2,
+    "title": "THE SEASONAL PATTERN",
+    "page": 449
+  },
+  {
+    "level": 2,
+    "title": "POPULAR METHODS FOR CALCULATING SEASONALITY",
+    "page": 450
+  },
+  {
+    "level": 3,
+    "title": "An Important Note about the Data",
+    "page": 450
+  },
+  {
+    "level": 3,
+    "title": "Seasonal Decomposition",
+    "page": 450
+  },
+  {
+    "level": 3,
+    "title": "Detrending",
+    "page": 451
+  },
+  {
+    "level": 3,
+    "title": "Basic Calculation Components",
+    "page": 451
+  },
+  {
+    "level": 3,
+    "title": "A Program to Create a Table of Monthly Price Changes",
+    "page": 453
+  },
+  {
+    "level": 3,
+    "title": "Removing the Trend with First Differences",
+    "page": 458
+  },
+  {
+    "level": 3,
+    "title": "Effects of a Few Volatile Years",
+    "page": 460
+  },
+  {
+    "level": 3,
+    "title": "Method of Yearly Averages",
+    "page": 461
+  },
+  {
+    "level": 3,
+    "title": "The Method of Link Relatives",
+    "page": 464
+  },
+  {
+    "level": 3,
+    "title": "The Moving Average Method",
+    "page": 467
+  },
+  {
+    "level": 3,
+    "title": "X-11 and X-12 ARIMA Methods",
+    "page": 467
+  },
+  {
+    "level": 3,
+    "title": "Winter’s Method",
+    "page": 471
+  },
+  {
+    "level": 3,
+    "title": "Changes in Seasonal Patterns",
+    "page": 472
+  },
+  {
+    "level": 3,
+    "title": "Seasonal Volatility",
+    "page": 473
+  },
+  {
+    "level": 3,
+    "title": "Weather Sensitivity",
+    "page": 474
+  },
+  {
+    "level": 3,
+    "title": "Measuring Weather Sensitivity",
+    "page": 475
+  },
+  {
+    "level": 2,
+    "title": "SEASONAL FILTERS",
+    "page": 476
+  },
+  {
+    "level": 3,
+    "title": "Years with Similar Characteristics",
+    "page": 479
+  },
+  {
+    "level": 3,
+    "title": "Seasonal and Nonseasonal Market Patterns",
+    "page": 480
+  },
+  {
+    "level": 3,
+    "title": "Seasonal Patterns in Stocks",
+    "page": 489
+  },
+  {
+    "level": 3,
+    "title": "Seasonality for Trading",
+    "page": 490
+  },
+  {
+    "level": 3,
+    "title": "Seasonal Studies and Key Dates",
+    "page": 491
+  },
+  {
+    "level": 2,
+    "title": "SEASONALITY AND THE STOCK MARKET",
+    "page": 498
+  },
+  {
+    "level": 3,
+    "title": "The Holiday Effect for Stocks",
+    "page": 499
+  },
+  {
+    "level": 3,
+    "title": "The Month-End Effect",
+    "page": 500
+  },
+  {
+    "level": 3,
+    "title": "The Hirsch Strategy",
+    "page": 500
+  },
+  {
+    "level": 3,
+    "title": "The January Effect",
+    "page": 501
+  },
+  {
+    "level": 3,
+    "title": "Risks of September and October",
+    "page": 503
+  },
+  {
+    "level": 2,
+    "title": "COMMON SENSE AND SEASONALITY",
+    "page": 503
+  },
+  {
+    "level": 3,
+    "title": "Being Too Specific about Targets",
+    "page": 504
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 11 Cycle Analysis",
+    "page": 505
+  },
+  {
+    "level": 2,
+    "title": "CYCLE BASICS",
+    "page": 505
+  },
+  {
+    "level": 3,
+    "title": "Observing the Cycle",
+    "page": 506
+  },
+  {
+    "level": 3,
+    "title": "Basic Cycle Identification",
+    "page": 507
+  },
+  {
+    "level": 3,
+    "title": "The Business Cycle",
+    "page": 510
+  },
+  {
+    "level": 3,
+    "title": "The Kondratieff Wave",
+    "page": 510
+  },
+  {
+    "level": 3,
+    "title": "Presidential Election Cycle",
+    "page": 512
+  },
+  {
+    "level": 2,
+    "title": "UNCOVERING THE CYCLE",
+    "page": 514
+  },
+  {
+    "level": 3,
+    "title": "Removing the Trend",
+    "page": 514
+  },
+  {
+    "level": 3,
+    "title": "Terminology",
+    "page": 516
+  },
+  {
+    "level": 3,
+    "title": "Trigonometric Price Analysis",
+    "page": 517
+  },
+  {
+    "level": 3,
+    "title": "2-Frequency Trigonometric Regression",
+    "page": 522
+  },
+  {
+    "level": 3,
+    "title": "Fourier Analysis: Complex Trigonometric Regression",
+    "page": 525
+  },
+  {
+    "level": 3,
+    "title": "Using Excel’s Fourier Analysis",
+    "page": 531
+  },
+  {
+    "level": 2,
+    "title": "MAXIMUM ENTROPY",
+    "page": 534
+  },
+  {
+    "level": 3,
+    "title": "Using the Phase Angle",
+    "page": 534
+  },
+  {
+    "level": 3,
+    "title": "Finding the Cycle Using the Hilbert Transform",
+    "page": 536
+  },
+  {
+    "level": 3,
+    "title": "The Fisher Transform",
+    "page": 538
+  },
+  {
+    "level": 2,
+    "title": "CYCLE CHANNEL INDEX",
+    "page": 540
+  },
+  {
+    "level": 2,
+    "title": "SHORT CYCLE INDICATOR",
+    "page": 541
+  },
+  {
+    "level": 2,
+    "title": "PHASING",
+    "page": 543
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 12 Volume, Open Interest, and Breadth",
+    "page": 547
+  },
+  {
+    "level": 2,
+    "title": "A SPECIAL CASE FOR FUTURES VOLUME",
+    "page": 547
+  },
+  {
+    "level": 3,
+    "title": "Tick Volume",
+    "page": 548
+  },
+  {
+    "level": 2,
+    "title": "VARIATIONS FROM THE NORMAL PATTERNS",
+    "page": 549
+  },
+  {
+    "level": 3,
+    "title": "The W Intraday Pattern",
+    "page": 549
+  },
+  {
+    "level": 3,
+    "title": "Variance in Volume",
+    "page": 549
+  },
+  {
+    "level": 3,
+    "title": "Volume Spikes",
+    "page": 550
+  },
+  {
+    "level": 3,
+    "title": "Drop in Volume",
+    "page": 550
+  },
+  {
+    "level": 2,
+    "title": "STANDARD INTERPRETATION",
+    "page": 551
+  },
+  {
+    "level": 3,
+    "title": "Volume and Open Interest",
+    "page": 552
+  },
+  {
+    "level": 3,
+    "title": "Exceptions",
+    "page": 553
+  },
+  {
+    "level": 3,
+    "title": "Richard Arms’ Equivolume",
+    "page": 554
+  },
+  {
+    "level": 3,
+    "title": "Herrick Payoff Index",
+    "page": 554
+  },
+  {
+    "level": 3,
+    "title": "Volume Is a Predictor of Volatility",
+    "page": 554
+  },
+  {
+    "level": 2,
+    "title": "VOLUME INDICATORS",
+    "page": 555
+  },
+  {
+    "level": 3,
+    "title": "Average Volume",
+    "page": 555
+  },
+  {
+    "level": 3,
+    "title": "Normalizing the Volume",
+    "page": 555
+  },
+  {
+    "level": 3,
+    "title": "Volume Momentum and Percentage Change",
+    "page": 555
+  },
+  {
+    "level": 3,
+    "title": "Force Index",
+    "page": 556
+  },
+  {
+    "level": 3,
+    "title": "Volume Oscillator",
+    "page": 556
+  },
+  {
+    "level": 3,
+    "title": "On-Balance Volume",
+    "page": 557
+  },
+  {
+    "level": 3,
+    "title": "Volume Accumulator",
+    "page": 560
+  },
+  {
+    "level": 3,
+    "title": "Accumulation Distribution",
+    "page": 561
+  },
+  {
+    "level": 3,
+    "title": "Intraday Intensity",
+    "page": 561
+  },
+  {
+    "level": 3,
+    "title": "Price and Volume Trend, the Positive Volume Index, and the Negative Volume Index",
+    "page": 561
+  },
+  {
+    "level": 3,
+    "title": "Aspray’s Demand Oscillator",
+    "page": 562
+  },
+  {
+    "level": 3,
+    "title": "Tick Volume Indicator",
+    "page": 563
+  },
+  {
+    "level": 3,
+    "title": "Volume-Weighted MACD",
+    "page": 563
+  },
+  {
+    "level": 3,
+    "title": "Variably Weighted Moving Average Using Volume",
+    "page": 564
+  },
+  {
+    "level": 3,
+    "title": "Substituting Open Interest for Volume Using Futures",
+    "page": 565
+  },
+  {
+    "level": 3,
+    "title": "VWAP",
+    "page": 566
+  },
+  {
+    "level": 2,
+    "title": "BREADTH INDICATORS",
+    "page": 566
+  },
+  {
+    "level": 3,
+    "title": "Separating Advancing from Declining Volume",
+    "page": 567
+  },
+  {
+    "level": 3,
+    "title": "Sibbett’s Demand Index",
+    "page": 568
+  },
+  {
+    "level": 3,
+    "title": "Bolton-Tremblay",
+    "page": 568
+  },
+  {
+    "level": 3,
+    "title": "Schultz",
+    "page": 568
+  },
+  {
+    "level": 3,
+    "title": "McClellan Oscillator",
+    "page": 569
+  },
+  {
+    "level": 3,
+    "title": "Upside/Downside Ratio",
+    "page": 570
+  },
+  {
+    "level": 3,
+    "title": "Arms Index (TRIN)",
+    "page": 570
+  },
+  {
+    "level": 3,
+    "title": "Thrust Oscillator",
+    "page": 570
+  },
+  {
+    "level": 3,
+    "title": "New Highs and Lows",
+    "page": 571
+  },
+  {
+    "level": 3,
+    "title": "Baskets of New Highs and Lows",
+    "page": 572
+  },
+  {
+    "level": 3,
+    "title": "Is One Volume or Breadth Indicator Better than Another?",
+    "page": 572
+  },
+  {
+    "level": 3,
+    "title": "Breadth as a Countertrend Indicator",
+    "page": 573
+  },
+  {
+    "level": 2,
+    "title": "INTERPRETING VOLUME AND BREADTH SYSTEMATICALLY",
+    "page": 574
+  },
+  {
+    "level": 3,
+    "title": "Identifying a Volume Spike",
+    "page": 574
+  },
+  {
+    "level": 3,
+    "title": "Moving Average Approaches",
+    "page": 576
+  },
+  {
+    "level": 3,
+    "title": "Advance-Decline System",
+    "page": 577
+  },
+  {
+    "level": 3,
+    "title": "Breadth as a Counter-Trend Indicator",
+    "page": 578
+  },
+  {
+    "level": 2,
+    "title": "AN INTEGRATED PROBABILITY MODEL",
+    "page": 578
+  },
+  {
+    "level": 2,
+    "title": "INTRADAY VOLUME PATTERNS",
+    "page": 579
+  },
+  {
+    "level": 3,
+    "title": "Time Stamps",
+    "page": 580
+  },
+  {
+    "level": 3,
+    "title": "Intraday Patterns",
+    "page": 580
+  },
+  {
+    "level": 3,
+    "title": "Relative Changes in Volume",
+    "page": 582
+  },
+  {
+    "level": 2,
+    "title": "FILTERING LOW VOLUME",
+    "page": 582
+  },
+  {
+    "level": 3,
+    "title": "Removing Low-Volume Periods",
+    "page": 583
+  },
+  {
+    "level": 3,
+    "title": "Removing Volume Associated with Small Price Moves",
+    "page": 583
+  },
+  {
+    "level": 2,
+    "title": "MARKET FACILITATION INDEX",
+    "page": 584
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 13 Spreads and Arbitrage",
+    "page": 585
+  },
+  {
+    "level": 2,
+    "title": "DYNAMICS OF FUTURES INTRAMARKET SPREADS",
+    "page": 586
+  },
+  {
+    "level": 2,
+    "title": "CARRYING CHARGES",
+    "page": 587
+  },
+  {
+    "level": 2,
+    "title": "SPREADS IN STOCKS",
+    "page": 589
+  },
+  {
+    "level": 3,
+    "title": "Globalization",
+    "page": 590
+  },
+  {
+    "level": 2,
+    "title": "SPREAD AND ARBITRAGE RELATIONSHIPS",
+    "page": 590
+  },
+  {
+    "level": 2,
+    "title": "RISK REDUCTION IN SPREADS",
+    "page": 591
+  },
+  {
+    "level": 2,
+    "title": "ARBITRAGE",
+    "page": 592
+  },
+  {
+    "level": 3,
+    "title": "Pricing of Futures Contracts",
+    "page": 592
+  },
+  {
+    "level": 3,
+    "title": "Interest Rate Parity",
+    "page": 594
+  },
+  {
+    "level": 3,
+    "title": "Program Trading",
+    "page": 596
+  },
+  {
+    "level": 3,
+    "title": "Merger Arbitrage",
+    "page": 599
+  },
+  {
+    "level": 3,
+    "title": "Single Stock Futures and the Underlying Stock",
+    "page": 600
+  },
+  {
+    "level": 3,
+    "title": "Intermarket Index Spreads",
+    "page": 601
+  },
+  {
+    "level": 3,
+    "title": "Pairs Trading",
+    "page": 603
+  },
+  {
+    "level": 3,
+    "title": "Stock and Futures Relationships",
+    "page": 606
+  },
+  {
+    "level": 3,
+    "title": "Product Spreads",
+    "page": 607
+  },
+  {
+    "level": 3,
+    "title": "Intercrop Spreads",
+    "page": 609
+  },
+  {
+    "level": 3,
+    "title": "Butterfly Spreads",
+    "page": 611
+  },
+  {
+    "level": 3,
+    "title": "The Yield Curve",
+    "page": 612
+  },
+  {
+    "level": 3,
+    "title": "Implied Interest Rates",
+    "page": 615
+  },
+  {
+    "level": 2,
+    "title": "THE CARRY TRADE",
+    "page": 616
+  },
+  {
+    "level": 3,
+    "title": "The Basic Carry Trade",
+    "page": 617
+  },
+  {
+    "level": 2,
+    "title": "CHANGING SPREAD RELATIONSHIPS",
+    "page": 620
+  },
+  {
+    "level": 3,
+    "title": "Gold/Silver and Platinum/Gold Ratios",
+    "page": 620
+  },
+  {
+    "level": 2,
+    "title": "INTERMARKET SPREADS",
+    "page": 622
+  },
+  {
+    "level": 3,
+    "title": "Increased Spread Risk",
+    "page": 624
+  },
+  {
+    "level": 3,
+    "title": "Creating New Markets to Trade",
+    "page": 624
+  },
+  {
+    "level": 3,
+    "title": "Trending or Mean Reverting?",
+    "page": 628
+  },
+  {
+    "level": 3,
+    "title": "Timing the Relative-Value Trade",
+    "page": 632
+  },
+  {
+    "level": 3,
+    "title": "Rating Services",
+    "page": 632
+  },
+  {
+    "level": 3,
+    "title": "Generalized Market Neutral Strategies",
+    "page": 633
+  },
+  {
+    "level": 3,
+    "title": "Other Spread Issues",
+    "page": 634
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 14 Behavioral Techniques",
+    "page": 637
+  },
+  {
+    "level": 2,
+    "title": "MEASURING THE NEWS",
+    "page": 638
+  },
+  {
+    "level": 3,
+    "title": "Ranking and Measuring",
+    "page": 640
+  },
+  {
+    "level": 3,
+    "title": "Trading on the News",
+    "page": 641
+  },
+  {
+    "level": 3,
+    "title": "Market Selectivity",
+    "page": 642
+  },
+  {
+    "level": 3,
+    "title": "Media Indicators",
+    "page": 642
+  },
+  {
+    "level": 2,
+    "title": "EVENT TRADING",
+    "page": 643
+  },
+  {
+    "level": 3,
+    "title": "Market Reactions to Reports",
+    "page": 644
+  },
+  {
+    "level": 3,
+    "title": "Measuring an Event",
+    "page": 646
+  },
+  {
+    "level": 3,
+    "title": "Trading the Event Lag",
+    "page": 646
+  },
+  {
+    "level": 3,
+    "title": "Results of Event Studies",
+    "page": 647
+  },
+  {
+    "level": 3,
+    "title": "Raschke Trades the News",
+    "page": 650
+  },
+  {
+    "level": 3,
+    "title": "Finding Recent Patterns",
+    "page": 650
+  },
+  {
+    "level": 3,
+    "title": "Conditional Analysis of Shocks",
+    "page": 654
+  },
+  {
+    "level": 2,
+    "title": "COMMITMENT OF TRADERS REPORT",
+    "page": 655
+  },
+  {
+    "level": 3,
+    "title": "Creating an Oscillator for the COT Numbers",
+    "page": 659
+  },
+  {
+    "level": 2,
+    "title": "OPINION AND CONTRARY OPINION",
+    "page": 661
+  },
+  {
+    "level": 3,
+    "title": "Contrary Opinion",
+    "page": 661
+  },
+  {
+    "level": 3,
+    "title": "Commitment of Traders Sentiment Index",
+    "page": 665
+  },
+  {
+    "level": 3,
+    "title": "A Lesson from Put-Call Ratios",
+    "page": 666
+  },
+  {
+    "level": 3,
+    "title": "Dogs of the Dow and the Small Dogs",
+    "page": 666
+  },
+  {
+    "level": 3,
+    "title": "Watching the Big Block Transactions",
+    "page": 667
+  },
+  {
+    "level": 2,
+    "title": "FIBONACCI AND HUMAN BEHAVIOR",
+    "page": 668
+  },
+  {
+    "level": 3,
+    "title": "Application of Fibonacci Ratios",
+    "page": 671
+  },
+  {
+    "level": 2,
+    "title": "ELLIOTT’S WAVE PRINCIPLE",
+    "page": 671
+  },
+  {
+    "level": 3,
+    "title": "Elliott’s Sideways Markets",
+    "page": 674
+  },
+  {
+    "level": 3,
+    "title": "Fitting the Market to the Patterns",
+    "page": 674
+  },
+  {
+    "level": 3,
+    "title": "Elliott’s Use of the Fibonacci Series",
+    "page": 674
+  },
+  {
+    "level": 3,
+    "title": "Trading Elliott",
+    "page": 676
+  },
+  {
+    "level": 3,
+    "title": "The Super Cycle",
+    "page": 676
+  },
+  {
+    "level": 3,
+    "title": "Automating Elliott’s Wave Analysis",
+    "page": 678
+  },
+  {
+    "level": 3,
+    "title": "A Comment on Elliott Wave Theory",
+    "page": 679
+  },
+  {
+    "level": 2,
+    "title": "PRICE TARGET CONSTRUCTIONS USING THE FIBONACCI RATIO",
+    "page": 680
+  },
+  {
+    "level": 3,
+    "title": "Alternate Arc Measurement",
+    "page": 682
+  },
+  {
+    "level": 2,
+    "title": "FISCHER’S GOLDEN SECTION COMPASS SYSTEM",
+    "page": 682
+  },
+  {
+    "level": 3,
+    "title": "Price Goals",
+    "page": 684
+  },
+  {
+    "level": 3,
+    "title": "Filtering Highs and Lows",
+    "page": 685
+  },
+  {
+    "level": 2,
+    "title": "W. D. GANN—TIME AND SPACE",
+    "page": 686
+  },
+  {
+    "level": 3,
+    "title": "Time and Price",
+    "page": 686
+  },
+  {
+    "level": 3,
+    "title": "Geometric Angles",
+    "page": 687
+  },
+  {
+    "level": 3,
+    "title": "The Hexagon Chart",
+    "page": 689
+  },
+  {
+    "level": 3,
+    "title": "Gann Software",
+    "page": 691
+  },
+  {
+    "level": 2,
+    "title": "FINANCIAL ASTROLOGY",
+    "page": 691
+  },
+  {
+    "level": 3,
+    "title": "The Jupiter-Saturn Cycle",
+    "page": 692
+  },
+  {
+    "level": 3,
+    "title": "Major Physical Events",
+    "page": 694
+  },
+  {
+    "level": 3,
+    "title": "The Moon: Buy Full, Sell New",
+    "page": 697
+  },
+  {
+    "level": 3,
+    "title": "Calculation of a New Moon, Full Moon, Solar and Lunar Eclipse",
+    "page": 697
+  },
+  {
+    "level": 3,
+    "title": "Example: Solar Eclipse of May 21, 1993",
+    "page": 702
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 15 Pattern Recognition",
+    "page": 705
+  },
+  {
+    "level": 2,
+    "title": "PROJECTING DAILY HIGHS AND LOWS",
+    "page": 707
+  },
+  {
+    "level": 3,
+    "title": "Pivot Points",
+    "page": 707
+  },
+  {
+    "level": 3,
+    "title": "DeMark’s Projected Ranges",
+    "page": 708
+  },
+  {
+    "level": 3,
+    "title": "Comparing the Two Ranges",
+    "page": 708
+  },
+  {
+    "level": 2,
+    "title": "TIME OF DAY",
+    "page": 709
+  },
+  {
+    "level": 3,
+    "title": "Trading Habits Form Lasting Patterns",
+    "page": 709
+  },
+  {
+    "level": 3,
+    "title": "Tubbs’ Intraday Patterns",
+    "page": 710
+  },
+  {
+    "level": 3,
+    "title": "Merrill’s Intraday Patterns",
+    "page": 711
+  },
+  {
+    "level": 3,
+    "title": "Updating Intraday Time Patterns, 2000–2011",
+    "page": 711
+  },
+  {
+    "level": 3,
+    "title": "Intraday Highs and Lows",
+    "page": 716
+  },
+  {
+    "level": 2,
+    "title": "OPENING GAPS",
+    "page": 719
+  },
+  {
+    "level": 3,
+    "title": "Gaps in Futures Markets",
+    "page": 720
+  },
+  {
+    "level": 3,
+    "title": "Do Individual Stocks Show Unique Gap Patterns?",
+    "page": 727
+  },
+  {
+    "level": 3,
+    "title": "A Simple Gap Trading Method for Stocks",
+    "page": 727
+  },
+  {
+    "level": 2,
+    "title": "WEEKDAY, WEEKEND, AND REVERSAL PATTERNS",
+    "page": 731
+  },
+  {
+    "level": 3,
+    "title": "Weekday Patterns",
+    "page": 731
+  },
+  {
+    "level": 3,
+    "title": "emini S&P",
+    "page": 733
+  },
+  {
+    "level": 3,
+    "title": "Bank of America and Intel",
+    "page": 733
+  },
+  {
+    "level": 3,
+    "title": "Weekend Patterns",
+    "page": 743
+  },
+  {
+    "level": 3,
+    "title": "Combining Weekend and Weekday Patterns",
+    "page": 745
+  },
+  {
+    "level": 3,
+    "title": "A Comment on Testing and Holidays",
+    "page": 745
+  },
+  {
+    "level": 3,
+    "title": "Day of the Month",
+    "page": 746
+  },
+  {
+    "level": 3,
+    "title": "Days-of-the-Month Summary",
+    "page": 749
+  },
+  {
+    "level": 3,
+    "title": "Reversal Patterns",
+    "page": 749
+  },
+  {
+    "level": 2,
+    "title": "COMPUTER-BASED PATTERN RECOGNITION",
+    "page": 752
+  },
+  {
+    "level": 3,
+    "title": "Repeated Patterns",
+    "page": 754
+  },
+  {
+    "level": 2,
+    "title": "ARTIFICIAL INTELLIGENCE METHODS",
+    "page": 755
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 16 Day Trading",
+    "page": 757
+  },
+  {
+    "level": 2,
+    "title": "IMPACT OF TRANSACTION COSTS",
+    "page": 758
+  },
+  {
+    "level": 3,
+    "title": "Costs and Volatility",
+    "page": 758
+  },
+  {
+    "level": 3,
+    "title": "Costs and Trading Strategy",
+    "page": 760
+  },
+  {
+    "level": 3,
+    "title": "Liquidity",
+    "page": 761
+  },
+  {
+    "level": 3,
+    "title": "Estimating Slippage Costs",
+    "page": 763
+  },
+  {
+    "level": 3,
+    "title": "Volatility-Adjusted Slippage",
+    "page": 764
+  },
+  {
+    "level": 2,
+    "title": "KEY ELEMENTS OF DAY TRADING",
+    "page": 764
+  },
+  {
+    "level": 3,
+    "title": "Migration of Trading Techniques",
+    "page": 765
+  },
+  {
+    "level": 3,
+    "title": "Point-and-Figure for Short-Term Trading",
+    "page": 765
+  },
+  {
+    "level": 3,
+    "title": "Moving Averages",
+    "page": 766
+  },
+  {
+    "level": 3,
+    "title": "Choosing the Intraday Bar Size",
+    "page": 767
+  },
+  {
+    "level": 3,
+    "title": "Time-of-Day Patterns",
+    "page": 768
+  },
+  {
+    "level": 3,
+    "title": "Trading in the Wrong Time Zone",
+    "page": 769
+  },
+  {
+    "level": 2,
+    "title": "TRADING USING PRICE PATTERNS",
+    "page": 773
+  },
+  {
+    "level": 3,
+    "title": "Variations on Support and Resistance",
+    "page": 773
+  },
+  {
+    "level": 3,
+    "title": "The Taylor Trading Technique",
+    "page": 775
+  },
+  {
+    "level": 2,
+    "title": "INTRADAY BREAKOUT SYSTEMS",
+    "page": 779
+  },
+  {
+    "level": 3,
+    "title": "Opening Range Breakout",
+    "page": 779
+  },
+  {
+    "level": 3,
+    "title": "Fading the Opening Range",
+    "page": 792
+  },
+  {
+    "level": 2,
+    "title": "INTRADAY VOLUME PATTERNS",
+    "page": 794
+  },
+  {
+    "level": 2,
+    "title": "INTRADAY PRICE SHOCKS",
+    "page": 795
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 17 Adaptive Techniques",
+    "page": 799
+  },
+  {
+    "level": 2,
+    "title": "ADAPTIVE TREND CALCULATIONS",
+    "page": 799
+  },
+  {
+    "level": 3,
+    "title": "Kaufman’s Adaptive Moving Average",
+    "page": 799
+  },
+  {
+    "level": 3,
+    "title": "Chande’s Variable Index Dynamic Average (VIDYA)",
+    "page": 804
+  },
+  {
+    "level": 3,
+    "title": "MESA Adaptive Moving Average",
+    "page": 806
+  },
+  {
+    "level": 3,
+    "title": "Comparison of Adaptive Methods",
+    "page": 806
+  },
+  {
+    "level": 2,
+    "title": "ADAPTIVE VARIATIONS",
+    "page": 808
+  },
+  {
+    "level": 3,
+    "title": "Making Momentum Calculations Adaptive",
+    "page": 808
+  },
+  {
+    "level": 3,
+    "title": "McGinley Dynamics",
+    "page": 810
+  },
+  {
+    "level": 3,
+    "title": "The Parabolic Time/Price System",
+    "page": 810
+  },
+  {
+    "level": 3,
+    "title": "The Master Trading Formula",
+    "page": 812
+  },
+  {
+    "level": 2,
+    "title": "OTHER ADAPTIVE MOMENTUM CALCULATIONS",
+    "page": 813
+  },
+  {
+    "level": 3,
+    "title": "Trend-Adjusted Oscillator",
+    "page": 813
+  },
+  {
+    "level": 3,
+    "title": "Dynamic Momentum Index",
+    "page": 815
+  },
+  {
+    "level": 2,
+    "title": "ADAPTIVE INTRADAY BREAKOUT SYSTEM",
+    "page": 816
+  },
+  {
+    "level": 2,
+    "title": "AN ADAPTIVE PROCESS",
+    "page": 817
+  },
+  {
+    "level": 3,
+    "title": "A Development Example",
+    "page": 817
+  },
+  {
+    "level": 2,
+    "title": "CONSIDERING ADAPTIVE METHODS",
+    "page": 818
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 18 Price Distribution Systems",
+    "page": 821
+  },
+  {
+    "level": 2,
+    "title": "MEASURING DISTRIBUTION",
+    "page": 821
+  },
+  {
+    "level": 3,
+    "title": "Standard Deviation Bands",
+    "page": 822
+  },
+  {
+    "level": 3,
+    "title": "Avoiding the Lag Problem",
+    "page": 823
+  },
+  {
+    "level": 2,
+    "title": "USE OF PRICE DISTRIBUTIONS AND PATTERNSTO ANTICIPATE MOVES",
+    "page": 825
+  },
+  {
+    "level": 3,
+    "title": "Analysis of Zones",
+    "page": 825
+  },
+  {
+    "level": 3,
+    "title": "Zones for Forecasting Range and Controlling Risk",
+    "page": 827
+  },
+  {
+    "level": 3,
+    "title": "Zones Based on Daily Price Levels",
+    "page": 828
+  },
+  {
+    "level": 2,
+    "title": "DISTRIBUTION OF PRICES",
+    "page": 831
+  },
+  {
+    "level": 3,
+    "title": "Long-Term Price Distributions",
+    "page": 831
+  },
+  {
+    "level": 3,
+    "title": "Short-Term Distributions",
+    "page": 836
+  },
+  {
+    "level": 3,
+    "title": "Identifying Potential Price Moves",
+    "page": 838
+  },
+  {
+    "level": 3,
+    "title": "Using Skewness to Identify a Trend",
+    "page": 838
+  },
+  {
+    "level": 3,
+    "title": "Trading Using Kurtosis and Skew",
+    "page": 839
+  },
+  {
+    "level": 2,
+    "title": "STEIDLMAYER’S MARKET PROFILE",
+    "page": 842
+  },
+  {
+    "level": 3,
+    "title": "Construction of Market Profile",
+    "page": 844
+  },
+  {
+    "level": 3,
+    "title": "Time/Price Opportunities",
+    "page": 845
+  },
+  {
+    "level": 3,
+    "title": "Typical Patterns",
+    "page": 846
+  },
+  {
+    "level": 3,
+    "title": "What Are the Buyers and Sellers Doing?",
+    "page": 847
+  },
+  {
+    "level": 3,
+    "title": "Quantifying the Value Area",
+    "page": 848
+  },
+  {
+    "level": 3,
+    "title": "Trending Markets",
+    "page": 848
+  },
+  {
+    "level": 3,
+    "title": "Some Points to Remember about Market Profile",
+    "page": 850
+  },
+  {
+    "level": 3,
+    "title": "Other Trading Platforms",
+    "page": 850
+  },
+  {
+    "level": 2,
+    "title": "USING DAILY DISTRIBUTIONS TO IDENTIFY SUPPORT AND RESISTANCE",
+    "page": 850
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 19 Multiple Time Frames",
+    "page": 853
+  },
+  {
+    "level": 2,
+    "title": "TUNING TWO TIME FRAMES TO WORK TOGETHER",
+    "page": 853
+  },
+  {
+    "level": 2,
+    "title": "ELDER’S TRIPLE-SCREEN TRADING SYSTEM",
+    "page": 855
+  },
+  {
+    "level": 3,
+    "title": "Screen 1: The Major Move (Lowest Frequency Data)",
+    "page": 856
+  },
+  {
+    "level": 3,
+    "title": "Screen 2: The Intermediate Move (Middle Frequency Data)",
+    "page": 856
+  },
+  {
+    "level": 3,
+    "title": "Screen 3: Timing (High Frequency Data)",
+    "page": 857
+  },
+  {
+    "level": 3,
+    "title": "Stop-Loss",
+    "page": 858
+  },
+  {
+    "level": 2,
+    "title": "ROBERT KRAUSZ’S MULTIPLE TIME FRAMES",
+    "page": 858
+  },
+  {
+    "level": 3,
+    "title": "Laws of Multiple Time Frames",
+    "page": 859
+  },
+  {
+    "level": 3,
+    "title": "More on Selecting the Three Time Frames",
+    "page": 861
+  },
+  {
+    "level": 2,
+    "title": "MARTIN PRING’S KST SYSTEM",
+    "page": 862
+  },
+  {
+    "level": 3,
+    "title": "Creating a Composite Indicator",
+    "page": 863
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 20 Advanced Techniques",
+    "page": 865
+  },
+  {
+    "level": 2,
+    "title": "MEASURING VOLATILITY",
+    "page": 865
+  },
+  {
+    "level": 3,
+    "title": "The Price-Volatility Relationship",
+    "page": 866
+  },
+  {
+    "level": 3,
+    "title": "Adjusting for a Base Price",
+    "page": 867
+  },
+  {
+    "level": 3,
+    "title": "Exceptions",
+    "page": 867
+  },
+  {
+    "level": 3,
+    "title": "Determining the Base Price",
+    "page": 867
+  },
+  {
+    "level": 3,
+    "title": "The Time Interval",
+    "page": 869
+  },
+  {
+    "level": 3,
+    "title": "Volatility Measures",
+    "page": 870
+  },
+  {
+    "level": 3,
+    "title": "Ratio Measurements",
+    "page": 873
+  },
+  {
+    "level": 3,
+    "title": "Relative Volatility",
+    "page": 874
+  },
+  {
+    "level": 3,
+    "title": "Implied Volatility, VIX",
+    "page": 875
+  },
+  {
+    "level": 2,
+    "title": "USING VOLATILITY FOR TRADING",
+    "page": 876
+  },
+  {
+    "level": 3,
+    "title": "Intraday Volatility and Volume",
+    "page": 876
+  },
+  {
+    "level": 3,
+    "title": "Predicting Volatility with Trading Ranges",
+    "page": 877
+  },
+  {
+    "level": 3,
+    "title": "Thomas Bierovic—On-Balance True Range",
+    "page": 878
+  },
+  {
+    "level": 3,
+    "title": "VIX Trading Systems",
+    "page": 878
+  },
+  {
+    "level": 3,
+    "title": "Volatility System",
+    "page": 880
+  },
+  {
+    "level": 3,
+    "title": "Profit Targets and Stop-Loss Orders",
+    "page": 881
+  },
+  {
+    "level": 2,
+    "title": "TRADE SELECTION USING VOLATILITY",
+    "page": 881
+  },
+  {
+    "level": 3,
+    "title": "Eliminate or Delay?",
+    "page": 882
+  },
+  {
+    "level": 3,
+    "title": "Trade Selection Summary",
+    "page": 886
+  },
+  {
+    "level": 2,
+    "title": "LIQUIDITY",
+    "page": 887
+  },
+  {
+    "level": 2,
+    "title": "TRENDS AND PRICE NOISE",
+    "page": 888
+  },
+  {
+    "level": 2,
+    "title": "TRENDS AND INTEREST RATE CARRY",
+    "page": 891
+  },
+  {
+    "level": 2,
+    "title": "EXPERT SYSTEMS",
+    "page": 891
+  },
+  {
+    "level": 3,
+    "title": "Forward Chaining",
+    "page": 893
+  },
+  {
+    "level": 3,
+    "title": "A Technical Expert System",
+    "page": 893
+  },
+  {
+    "level": 2,
+    "title": "FUZZY LOGIC",
+    "page": 895
+  },
+  {
+    "level": 3,
+    "title": "Fuzzy Reasoning",
+    "page": 896
+  },
+  {
+    "level": 3,
+    "title": "Common Approach to Fuzzy Solutions",
+    "page": 896
+  },
+  {
+    "level": 3,
+    "title": "A Candlestick Example",
+    "page": 898
+  },
+  {
+    "level": 2,
+    "title": "FRACTALS, CHAOS, AND ENTROPY",
+    "page": 900
+  },
+  {
+    "level": 3,
+    "title": "Fractal Dimension",
+    "page": 900
+  },
+  {
+    "level": 3,
+    "title": "Using Fractal Efficiency",
+    "page": 901
+  },
+  {
+    "level": 3,
+    "title": "Chaotic Patterns and Market Behavior",
+    "page": 902
+  },
+  {
+    "level": 3,
+    "title": "Entropy—Predicting by Similar Situations",
+    "page": 903
+  },
+  {
+    "level": 2,
+    "title": "NEURAL NETWORKS",
+    "page": 906
+  },
+  {
+    "level": 3,
+    "title": "Terminology of Neural Networks",
+    "page": 906
+  },
+  {
+    "level": 3,
+    "title": "Artificial Neural Networks",
+    "page": 907
+  },
+  {
+    "level": 3,
+    "title": "Selecting and Preprocessing the Inputs",
+    "page": 910
+  },
+  {
+    "level": 3,
+    "title": "Selecting the Success Criteria",
+    "page": 910
+  },
+  {
+    "level": 3,
+    "title": "The Training Process",
+    "page": 911
+  },
+  {
+    "level": 3,
+    "title": "A Training Example",
+    "page": 911
+  },
+  {
+    "level": 3,
+    "title": "Success Criteria",
+    "page": 913
+  },
+  {
+    "level": 3,
+    "title": "Reducing the Number of Decision Levels and Neurons",
+    "page": 914
+  },
+  {
+    "level": 3,
+    "title": "Modeling Human Behavior",
+    "page": 914
+  },
+  {
+    "level": 3,
+    "title": "A Final Comment about Neural Networks",
+    "page": 915
+  },
+  {
+    "level": 2,
+    "title": "GENETIC ALGORITHMS",
+    "page": 915
+  },
+  {
+    "level": 3,
+    "title": "Representation of a Genetic Algorithm",
+    "page": 916
+  },
+  {
+    "level": 3,
+    "title": "Initial Chromosome Pool",
+    "page": 917
+  },
+  {
+    "level": 3,
+    "title": "Fitness",
+    "page": 918
+  },
+  {
+    "level": 3,
+    "title": "Propagation",
+    "page": 919
+  },
+  {
+    "level": 3,
+    "title": "Mating",
+    "page": 920
+  },
+  {
+    "level": 3,
+    "title": "Mutation",
+    "page": 920
+  },
+  {
+    "level": 3,
+    "title": "Converging on a Solution",
+    "page": 921
+  },
+  {
+    "level": 3,
+    "title": "Putting It into Practice: Simulated Performance",
+    "page": 921
+  },
+  {
+    "level": 3,
+    "title": "Multiple Seeding",
+    "page": 922
+  },
+  {
+    "level": 2,
+    "title": "REPLICATION OF HEDGE FUNDS",
+    "page": 922
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 21 System Testing",
+    "page": 925
+  },
+  {
+    "level": 2,
+    "title": "EXPECTATIONS",
+    "page": 927
+  },
+  {
+    "level": 3,
+    "title": "Setting Your Objective and Measuring Success",
+    "page": 927
+  },
+  {
+    "level": 2,
+    "title": "IDENTIFYING THE PARAMETERS",
+    "page": 928
+  },
+  {
+    "level": 3,
+    "title": "Range of Parameter Settings",
+    "page": 928
+  },
+  {
+    "level": 3,
+    "title": "Distribution of Values to Be Tested",
+    "page": 929
+  },
+  {
+    "level": 3,
+    "title": "Types of Test Variables",
+    "page": 930
+  },
+  {
+    "level": 2,
+    "title": "SELECTING THE TEST DATA",
+    "page": 930
+  },
+  {
+    "level": 3,
+    "title": "Cash Data",
+    "page": 933
+  },
+  {
+    "level": 3,
+    "title": "Problems with Adjusted Data Series",
+    "page": 934
+  },
+  {
+    "level": 3,
+    "title": "Which Data Series Is Best?",
+    "page": 934
+  },
+  {
+    "level": 3,
+    "title": "Synthetic Data",
+    "page": 935
+  },
+  {
+    "level": 2,
+    "title": "TESTING INTEGRITY",
+    "page": 936
+  },
+  {
+    "level": 3,
+    "title": "In-Sample and Out-of-Sample Data",
+    "page": 936
+  },
+  {
+    "level": 3,
+    "title": "Out-of-Sample Testing",
+    "page": 937
+  },
+  {
+    "level": 3,
+    "title": "Step-Forward Testing",
+    "page": 938
+  },
+  {
+    "level": 2,
+    "title": "SEARCHING FOR THE BEST RESULT",
+    "page": 939
+  },
+  {
+    "level": 3,
+    "title": "Mathematical Optimization",
+    "page": 940
+  },
+  {
+    "level": 3,
+    "title": "More on Test Continuity",
+    "page": 941
+  },
+  {
+    "level": 2,
+    "title": "VISUALIZING AND INTERPRETING TEST RESULTS",
+    "page": 942
+  },
+  {
+    "level": 3,
+    "title": "Seeing Continuity in Test Results",
+    "page": 944
+  },
+  {
+    "level": 3,
+    "title": "Two-Parameter Tests",
+    "page": 945
+  },
+  {
+    "level": 3,
+    "title": "Alternate Ways of Visualizing Results",
+    "page": 948
+  },
+  {
+    "level": 3,
+    "title": "Standardizing Test Results",
+    "page": 950
+  },
+  {
+    "level": 2,
+    "title": "LARGE-SCALE TESTING",
+    "page": 952
+  },
+  {
+    "level": 3,
+    "title": "Genetic Algorithms",
+    "page": 952
+  },
+  {
+    "level": 3,
+    "title": "Monte Carlo Sampling",
+    "page": 955
+  },
+  {
+    "level": 2,
+    "title": "REFINING THE STRATEGY RULES",
+    "page": 957
+  },
+  {
+    "level": 2,
+    "title": "ARRIVING AT VALID TEST RESULTS",
+    "page": 958
+  },
+  {
+    "level": 3,
+    "title": "Common Sense versus Statistics",
+    "page": 958
+  },
+  {
+    "level": 3,
+    "title": "Searching for Robustness",
+    "page": 959
+  },
+  {
+    "level": 3,
+    "title": "Performance Criteria",
+    "page": 960
+  },
+  {
+    "level": 3,
+    "title": "Sensitivity Testing",
+    "page": 963
+  },
+  {
+    "level": 3,
+    "title": "Reading between the Lines",
+    "page": 964
+  },
+  {
+    "level": 3,
+    "title": "The Signifi cance of “Signifi cant”",
+    "page": 965
+  },
+  {
+    "level": 3,
+    "title": "Systems That Work in Only One Market",
+    "page": 965
+  },
+  {
+    "level": 2,
+    "title": "COMPARING THE RESULTS OF TWO SYSTEMS",
+    "page": 966
+  },
+  {
+    "level": 3,
+    "title": "Which System Is Better?",
+    "page": 966
+  },
+  {
+    "level": 2,
+    "title": "PROFITING FROM THE WORST RESULTS",
+    "page": 970
+  },
+  {
+    "level": 2,
+    "title": "RETESTING FOR CHANGING PARAMETERS",
+    "page": 971
+  },
+  {
+    "level": 2,
+    "title": "TESTING ACROSS A WIDE RANGE OF MARKETS",
+    "page": 974
+  },
+  {
+    "level": 3,
+    "title": "Classic Tests by Davis and Thiel, Maxwell, and Hochheimer",
+    "page": 974
+  },
+  {
+    "level": 3,
+    "title": "Davis and Thiel",
+    "page": 974
+  },
+  {
+    "level": 3,
+    "title": "Maxwell",
+    "page": 975
+  },
+  {
+    "level": 3,
+    "title": "Comparing Methods of Calculation across Selected Markets",
+    "page": 976
+  },
+  {
+    "level": 3,
+    "title": "Comparing the Five Strategies",
+    "page": 983
+  },
+  {
+    "level": 3,
+    "title": "Crossover Strategy",
+    "page": 984
+  },
+  {
+    "level": 3,
+    "title": "More on Comparing Strategies and Markets",
+    "page": 987
+  },
+  {
+    "level": 2,
+    "title": "PRICE SHOCKS",
+    "page": 990
+  },
+  {
+    "level": 3,
+    "title": "Misinterpreting the Past",
+    "page": 990
+  },
+  {
+    "level": 2,
+    "title": "ANATOMY OF AN OPTIMIZATION",
+    "page": 992
+  },
+  {
+    "level": 2,
+    "title": "SUMMARIZING ROBUSTNESS",
+    "page": 996
+  },
+  {
+    "level": 3,
+    "title": "A Final Comment on Testing",
+    "page": 1001
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 22 Practical Considerations",
+    "page": 1003
+  },
+  {
+    "level": 2,
+    "title": "USE AND ABUSE OF THE COMPUTER",
+    "page": 1004
+  },
+  {
+    "level": 3,
+    "title": "Acquiring Data",
+    "page": 1005
+  },
+  {
+    "level": 3,
+    "title": "Combining Standard Techniques into a System",
+    "page": 1006
+  },
+  {
+    "level": 3,
+    "title": "Programming a New Idea",
+    "page": 1007
+  },
+  {
+    "level": 3,
+    "title": "Too Much Power",
+    "page": 1007
+  },
+  {
+    "level": 3,
+    "title": "Looking into the Past",
+    "page": 1008
+  },
+  {
+    "level": 3,
+    "title": "Paper Trading",
+    "page": 1008
+  },
+  {
+    "level": 3,
+    "title": "It Should Work, but It Doesn’t",
+    "page": 1008
+  },
+  {
+    "level": 3,
+    "title": "Vertical or Integrated Solutions",
+    "page": 1009
+  },
+  {
+    "level": 3,
+    "title": "Taking Control",
+    "page": 1012
+  },
+  {
+    "level": 2,
+    "title": "EXTREME EVENTS",
+    "page": 1012
+  },
+  {
+    "level": 3,
+    "title": "Money Moves the Markets",
+    "page": 1012
+  },
+  {
+    "level": 3,
+    "title": "Fooling Yourself with Hindsight",
+    "page": 1013
+  },
+  {
+    "level": 3,
+    "title": "Identifying Price Shocks",
+    "page": 1017
+  },
+  {
+    "level": 3,
+    "title": "Crisis Management",
+    "page": 1017
+  },
+  {
+    "level": 2,
+    "title": "GAMBLING TECHNIQUES—THE THEORY OF RUNS",
+    "page": 1020
+  },
+  {
+    "level": 3,
+    "title": "Martingales and Anti-Martingales",
+    "page": 1021
+  },
+  {
+    "level": 3,
+    "title": "Anti-Martingales",
+    "page": 1023
+  },
+  {
+    "level": 3,
+    "title": "The Theory of Runs Applied to Trading",
+    "page": 1024
+  },
+  {
+    "level": 3,
+    "title": "Fractional Martingales",
+    "page": 1030
+  },
+  {
+    "level": 2,
+    "title": "SELECTIVE TRADING",
+    "page": 1031
+  },
+  {
+    "level": 3,
+    "title": "Filtering Out the Losing Trades",
+    "page": 1031
+  },
+  {
+    "level": 2,
+    "title": "SYSTEM TRADE-OFFS",
+    "page": 1032
+  },
+  {
+    "level": 3,
+    "title": "Trend-Following Systems",
+    "page": 1032
+  },
+  {
+    "level": 3,
+    "title": "Mean-Reverting Systems",
+    "page": 1033
+  },
+  {
+    "level": 3,
+    "title": "Trade-Offs",
+    "page": 1034
+  },
+  {
+    "level": 3,
+    "title": "The Commodex Method of Combining Elements",
+    "page": 1035
+  },
+  {
+    "level": 3,
+    "title": "Combining Trends and Trading Ranges",
+    "page": 1036
+  },
+  {
+    "level": 2,
+    "title": "TRADING LIMITS AND DISCONNECTED MARKETS",
+    "page": 1038
+  },
+  {
+    "level": 3,
+    "title": "Effects of Limits on Trading Systems",
+    "page": 1038
+  },
+  {
+    "level": 3,
+    "title": "Similar to Price Shocks",
+    "page": 1040
+  },
+  {
+    "level": 2,
+    "title": "SILVER AND NASDAQ—TOO GOOD TO BE TRUE",
+    "page": 1040
+  },
+  {
+    "level": 2,
+    "title": "SIMILARITY OF SYSTEMATIC TRADING SIGNALS",
+    "page": 1041
+  },
+  {
+    "level": 3,
+    "title": "Comparison of Moving Average Systems",
+    "page": 1043
+  },
+  {
+    "level": 3,
+    "title": "Similarity of Long-Term Performance",
+    "page": 1045
+  },
+  {
+    "level": 3,
+    "title": "High Correlation at the Best and Worst Times",
+    "page": 1046
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 23 Risk Control",
+    "page": 1047
+  },
+  {
+    "level": 2,
+    "title": "MISTAKING LUCK FOR SKILL",
+    "page": 1047
+  },
+  {
+    "level": 2,
+    "title": "RISK AVERSION",
+    "page": 1048
+  },
+  {
+    "level": 3,
+    "title": "Risk Preference",
+    "page": 1050
+  },
+  {
+    "level": 3,
+    "title": "The Efficient Frontier",
+    "page": 1050
+  },
+  {
+    "level": 3,
+    "title": "Common Sense Management of Risk",
+    "page": 1052
+  },
+  {
+    "level": 2,
+    "title": "LIQUIDITY",
+    "page": 1053
+  },
+  {
+    "level": 2,
+    "title": "MEASURING RETURN AND RISK",
+    "page": 1054
+  },
+  {
+    "level": 3,
+    "title": "Risk Characteristics of a Trading Model",
+    "page": 1054
+  },
+  {
+    "level": 3,
+    "title": "The Sharpe Ratio and Information Ratio",
+    "page": 1055
+  },
+  {
+    "level": 3,
+    "title": "Average Maximum Retracement",
+    "page": 1056
+  },
+  {
+    "level": 3,
+    "title": "Largest Loss and the Calmar Ratio",
+    "page": 1057
+  },
+  {
+    "level": 3,
+    "title": "Sortino Ratio",
+    "page": 1058
+  },
+  {
+    "level": 3,
+    "title": "Ulcer Index",
+    "page": 1058
+  },
+  {
+    "level": 3,
+    "title": "Potential Risk",
+    "page": 1059
+  },
+  {
+    "level": 3,
+    "title": "Risk Characteristics of Systems",
+    "page": 1065
+  },
+  {
+    "level": 3,
+    "title": "It’s Not the Markets, It’s the Money",
+    "page": 1066
+  },
+  {
+    "level": 2,
+    "title": "LEVERAGE",
+    "page": 1066
+  },
+  {
+    "level": 3,
+    "title": "Reserves and Targeted Risk Levels",
+    "page": 1068
+  },
+  {
+    "level": 2,
+    "title": "LEVERAGE BASED ON EXPOSURE",
+    "page": 1069
+  },
+  {
+    "level": 2,
+    "title": "INDIVIDUAL TRADE RISK",
+    "page": 1070
+  },
+  {
+    "level": 3,
+    "title": "Position Sizing",
+    "page": 1070
+  },
+  {
+    "level": 3,
+    "title": "Initial Position Risk",
+    "page": 1074
+  },
+  {
+    "level": 3,
+    "title": "Stop-Losses",
+    "page": 1074
+  },
+  {
+    "level": 2,
+    "title": "KAUFMAN ON STOPS AND PROFIT-TAKING",
+    "page": 1079
+  },
+  {
+    "level": 3,
+    "title": "Managing Risk without Stops",
+    "page": 1081
+  },
+  {
+    "level": 2,
+    "title": "RANKING OF MARKETS FOR SELECTION",
+    "page": 1082
+  },
+  {
+    "level": 3,
+    "title": "Commodity Selection Index",
+    "page": 1083
+  },
+  {
+    "level": 3,
+    "title": "Directional Movement",
+    "page": 1083
+  },
+  {
+    "level": 3,
+    "title": "Retesting Directional Movement",
+    "page": 1087
+  },
+  {
+    "level": 3,
+    "title": "Ranking Trends Using Prices",
+    "page": 1089
+  },
+  {
+    "level": 3,
+    "title": "Kaufman’s Strategy Selection Indicator",
+    "page": 1090
+  },
+  {
+    "level": 2,
+    "title": "PROBABILITY OF SUCCESS AND RUIN",
+    "page": 1092
+  },
+  {
+    "level": 3,
+    "title": "Wins Not Equal to Losses",
+    "page": 1093
+  },
+  {
+    "level": 2,
+    "title": "ENTERING A POSITION",
+    "page": 1096
+  },
+  {
+    "level": 3,
+    "title": "Averaging into a Position",
+    "page": 1096
+  },
+  {
+    "level": 3,
+    "title": "Waiting for a Better Price",
+    "page": 1098
+  },
+  {
+    "level": 3,
+    "title": "Using Timing for a Better Price",
+    "page": 1100
+  },
+  {
+    "level": 2,
+    "title": "COMPOUNDING A POSITION",
+    "page": 1100
+  },
+  {
+    "level": 3,
+    "title": "Adding on Profits",
+    "page": 1102
+  },
+  {
+    "level": 3,
+    "title": "Averaging Down",
+    "page": 1104
+  },
+  {
+    "level": 2,
+    "title": "EQUITY TRENDS",
+    "page": 1105
+  },
+  {
+    "level": 3,
+    "title": "Trading on Equity Trends",
+    "page": 1106
+  },
+  {
+    "level": 2,
+    "title": "INVESTING AND REINVESTING: OPTIMAL f",
+    "page": 1108
+  },
+  {
+    "level": 3,
+    "title": "Risk Assessment",
+    "page": 1108
+  },
+  {
+    "level": 3,
+    "title": "Finding Optimal f",
+    "page": 1109
+  },
+  {
+    "level": 3,
+    "title": "Observations of Optimal f",
+    "page": 1111
+  },
+  {
+    "level": 2,
+    "title": "COMPARING EXPECTED AND ACTUAL RESULTS",
+    "page": 1112
+  },
+  {
+    "level": 3,
+    "title": "Binomial Probability",
+    "page": 1112
+  },
+  {
+    "level": 3,
+    "title": "χ2—Chi-Square Test",
+    "page": 1114
+  },
+  {
+    "level": 1,
+    "title": "CHAPTER 24 Diversification and Portfolio Allocation",
+    "page": 1119
+  },
+  {
+    "level": 2,
+    "title": "DIVERSIFICATION",
+    "page": 1120
+  },
+  {
+    "level": 3,
+    "title": "Selecting Individual Assets from Unrelated Groups",
+    "page": 1121
+  },
+  {
+    "level": 2,
+    "title": "CHANGING CORRELATIONS",
+    "page": 1125
+  },
+  {
+    "level": 2,
+    "title": "TYPES OF PORTFOLIO MODELS",
+    "page": 1125
+  },
+  {
+    "level": 3,
+    "title": "Equal-Dollar Weighting",
+    "page": 1127
+  },
+  {
+    "level": 3,
+    "title": "Equal-Risk Weighting",
+    "page": 1127
+  },
+  {
+    "level": 3,
+    "title": "Alpha-Driven Weighting",
+    "page": 1127
+  },
+  {
+    "level": 3,
+    "title": "Decision-Tree Models",
+    "page": 1127
+  },
+  {
+    "level": 2,
+    "title": "CLASSIC PORTFOLIO ALLOCATION CALCULATIONS",
+    "page": 1127
+  },
+  {
+    "level": 3,
+    "title": "Spreadsheet Approach",
+    "page": 1129
+  },
+  {
+    "level": 2,
+    "title": "FINDING OPTIMAL PORTFOLIO ALLOCATION USING EXCEL’S SOLVER",
+    "page": 1129
+  },
+  {
+    "level": 3,
+    "title": "Solver Settings",
+    "page": 1131
+  },
+  {
+    "level": 2,
+    "title": "KAUFMAN’S GENETIC ALGORITHM SOLUTION TO PORTFOLIO ALLOCATION (GASP)",
+    "page": 1134
+  },
+  {
+    "level": 3,
+    "title": "Modern Portfolio Theory",
+    "page": 1135
+  },
+  {
+    "level": 3,
+    "title": "A Special Case for Active Trading",
+    "page": 1135
+  },
+  {
+    "level": 3,
+    "title": "The Objective Function and Target Risk Level",
+    "page": 1137
+  },
+  {
+    "level": 3,
+    "title": "The Optimal Portfolio",
+    "page": 1139
+  },
+  {
+    "level": 3,
+    "title": "Portfolio Constraints",
+    "page": 1140
+  },
+  {
+    "level": 3,
+    "title": "Constraining Diversification",
+    "page": 1140
+  },
+  {
+    "level": 3,
+    "title": "The Genetic Algorithm Solution",
+    "page": 1141
+  },
+  {
+    "level": 3,
+    "title": "Initializing the Pool",
+    "page": 1142
+  },
+  {
+    "level": 3,
+    "title": "Evaluating Each String in the Pool",
+    "page": 1145
+  },
+  {
+    "level": 3,
+    "title": "Test for Completion",
+    "page": 1146
+  },
+  {
+    "level": 3,
+    "title": "Propagation",
+    "page": 1147
+  },
+  {
+    "level": 3,
+    "title": "Propagation of the Best Results",
+    "page": 1148
+  },
+  {
+    "level": 3,
+    "title": "Mating Parents to Create Offspring",
+    "page": 1149
+  },
+  {
+    "level": 3,
+    "title": "Mutating: Introducing New Genes into the Pool",
+    "page": 1151
+  },
+  {
+    "level": 3,
+    "title": "Continue with the Evaluation Step",
+    "page": 1151
+  },
+  {
+    "level": 3,
+    "title": "Optimal Subsets",
+    "page": 1151
+  },
+  {
+    "level": 3,
+    "title": "Is It the Best Portfolio?",
+    "page": 1153
+  },
+  {
+    "level": 3,
+    "title": "An Example of a GASP Solution",
+    "page": 1154
+  },
+  {
+    "level": 3,
+    "title": "Test Interval for Portfolio Allocation",
+    "page": 1161
+  },
+  {
+    "level": 3,
+    "title": "VOLATILITY STABILIZATION",
+    "page": 1162
+  },
+  {
+    "level": 3,
+    "title": "Switching Costs",
+    "page": 1164
+  },
+  {
+    "level": 3,
+    "title": "Capping Exposure",
+    "page": 1164
+  },
+  {
+    "level": 1,
+    "title": "APPENDIX 1 Statistical Tables",
+    "page": 1167
+  },
+  {
+    "level": 1,
+    "title": "APPENDIX 2 Matrix Solution to",
+    "page": 1171
+  },
+  {
+    "level": 1,
+    "title": "APPENDIX 3 Trigonometric",
+    "page": 1181
+  },
+  {
+    "level": 1,
+    "title": "Bibliography",
+    "page": 1195
+  },
+  {
+    "level": 1,
+    "title": "About the Companion Website",
+    "page": 1211
+  },
+  {
+    "level": 1,
+    "title": "Index",
+    "page": 1213
+  }
+]

@@ -1,3 +1,110 @@
+## 2026-07-27 - Event State on-demand bounded candidate dataset review closed
+
+- Added `08_RUNTIME_CAPABILITIES/scripts/event_state_on_demand_bounded_candidate_dataset_review_runner_v0_1.py` and closed `event_state_on_demand_bounded_candidate_dataset_review_v0_1_20260727T202013Z` as `CLOSED_APPROVED_AS_EVENT_STATE_ON_DEMAND_BOUNDED_CANDIDATE_EVIDENCE_WITH_RESTRICTIONS_NO_PROMOTION`.
+- Approved the first bounded Event State on-demand candidate only as candidate evidence with restrictions: 9 requested contexts, 8 represented contexts, 1 unavailable context and 0 unaccounted contexts.
+- Verified 8 Event State candidate records, exact represented-context reconciliation, expected unavailable context, exact-one Market State dependency bindings for represented rows, row lineage, fingerprints, registry evidence and validator evidence.
+- Preserved 0 registry mutations, 0 materializer executions, 0 additional Market State reads, 0 Event State rows emitted by review, official dataset false, production false and downstream false.
+- Recorded two reviewer technical failures as invalid attempts before the successful review run.
+- Next gate: `event_state_on_demand_bounded_deterministic_rerun_authorization_v0_1`.
+
+## 2026-07-27 - Event State on-demand bounded execution closed
+
+- Added `08_RUNTIME_CAPABILITIES/scripts/event_state_on_demand_bounded_execution_runner_v0_1.py` and executed the first bounded Event State on-demand run.
+- Closed `event_state_on_demand_bounded_execution_v0_1_20260727T200322Z` as `CLOSED_PASS_EVENT_STATE_ON_DEMAND_BOUNDED_EXECUTION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED`.
+- Reconciled 9 requested contexts as 8 represented Event State candidate records plus 1 unavailable context, with 0 fallbacks and 0 hard validation failures.
+- Recorded 3 native Event Instances, 3 Event Window Bindings, 9 Instrument Session Projections, 1 fingerprint-matched Market State candidate file read, 8 Market State candidate records read and 0 source market data rows read.
+- Registered exactly 1 candidate Event State dataset entry with candidate fingerprint `d5662103e1c45f90847b51e69b0e698243bde231758fa3c864e24c4a6839be33` and logical fingerprint `1b981958488e69f8f553c9197861bbffeed2d5388437c1113f9e21422b9cf970`.
+- Preserved official Event State dataset, production and downstream as false.
+- Next gate: `event_state_on_demand_bounded_candidate_dataset_review_v0_1`.
+
+## 2026-07-27 - Event State on-demand bounded execution preflight correction recorded
+
+- Recorded `event_state_on_demand_bounded_execution_preflight_correction_v0_1` as `CLOSED_PASS_PREFLIGHT_BLOCKERS_RESOLVED_NO_EXECUTION`.
+- Added bounded Market State dependency consumption authorization for the next Event State bounded run only.
+- Added Event State bounded run lifecycle binding and `event_state_on_demand_bounded_execution_authority_bundle_v0_1.json` with contract/file hashes for runner preflight verification.
+- Normalized effective Market State dependency mode to `emit_or_resolve_market_state_subrequest_through_runtime_capability` and reuse policy to `reuse_if_exact_validated_dependency_match_or_block`.
+- Corrected the effective Event Window identifier to `session_opened_at_anchor_context_v0_1` and froze bounded output as jsonl with maximum 1 file, 9 records and 1048576 bytes.
+- Preserved 0 requests, 0 execution plans, 0 Event Instances, 0 windows, 0 projections, 0 Market State reads, 0 materializer executions, 0 validator executions, 0 registry entries, 0 records and 0 datasets.
+- Kept official Market State dataset, official Event State dataset, production and downstream closed.
+- Next gate: `event_state_on_demand_bounded_execution_v0_1`.
+
+## 2026-07-27 - Event State on-demand execution-chain joint review closed
+
+## 2026-07-27 - Event State on-demand bounded execution authorization recorded
+
+- Recorded `event_state_on_demand_bounded_execution_authorization_v0_1` and its scope/readout under Runtime Capabilities.
+- Froze the first bounded Event State on-demand execution scope for `event_type:market_data:session_opened`, `exchange_session`, XNYS, 3 sessions, 3 instrument projections and at most 9 contexts.
+- Required Market State dependency through runtime capability/fingerprint authority and prohibited direct Market State path consumption.
+- Preserved 0 requests, 0 execution plans, 0 Event Instances, 0 windows, 0 projections, 0 Market State reads, 0 materializer executions, 0 validator executions, 0 registry entries, 0 records and 0 datasets in this authorization gate.
+- Kept official dataset promotion, production and downstream closed.
+- Next gate: `event_state_on_demand_bounded_execution_v0_1`.
+- Recorded `event_state_on_demand_execution_chain_joint_review_v0_1` and closed it as `CLOSED_APPROVED_FOR_BOUNDED_EXECUTION_AUTHORIZATION_WITH_RESTRICTIONS_NO_EXECUTION`.
+- Reviewed the Event State on-demand chain from request through dependency resolution, frozen execution plan, materializer, validator and candidate registry.
+- Recorded 9 reviewed contracts, 15 ownership rows, 0 hard findings and 3 live restrictions: explicit run lifecycle binding, Market State runtime dependency authority, and v0.1 scope limited to `event_type:market_data:session_opened` / `exchange_session`.
+- Preserved 0 Event State requests, 0 execution plans, 0 Event Instances, 0 Event Window Bindings, 0 Instrument Projections, 0 Market State candidate file reads, 0 materializer executions, 0 validator executions, 0 registry entries, 0 records and 0 datasets.
+- Kept official Event State dataset promotion, production and downstream closed.
+- Next gate: `event_state_on_demand_bounded_execution_authorization_v0_1`.
+
+## 2026-07-27 - Event State candidate dataset registry design closed
+
+- Recorded `event_state_candidate_dataset_registry_design_v0_1` and closed it as `CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION`.
+- Defined `event_state_candidate_dataset_registry_contract_v0_1` as the future Event State candidate dataset registry contract for identity, request/dependency/plan fingerprints, Event Type Registry authority, Market State dependency refs, exact-one binding evidence, coverage ledgers, lineage, validation status and eligibility.
+- Preserved 0 registry entries, 0 registry runtime reads, 0 datasets registered, 0 datasets promoted, 0 datasets superseded, 0 quarantine transitions, 0 candidate file reads, 0 Market State reads, 0 Event State records and 0 Event State datasets.
+- Kept official Event State dataset promotion, production and downstream closed.
+- Next gate: `event_state_on_demand_execution_chain_joint_review_v0_1`.
+
+## 2026-07-27 - Event State validator design closed
+
+- Recorded `event_state_validator_design_v0_1` and closed it as `CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION`.
+- Defined `event_state_validator_contract_v0_1` as the future independent evaluator of candidate Event State outputs against frozen plan, Event Type Registry authority, exact-one bindings, Market State dependency lineage, temporal legality and fingerprints.
+- Preserved 0 validator executions, 0 Event State candidate file reads, 0 Market State candidate file reads, 0 validation reports, 0 quarantine actions, 0 Event State records, 0 datasets and 0 registry entries.
+- Kept repair, rebuild, registry write, official Event State dataset promotion, production and downstream closed.
+- Next gate: `event_state_candidate_dataset_registry_design_v0_1`.
+
+## 2026-07-27 - Event State materializer design closed
+
+- Recorded `event_state_materializer_design_v0_1` and closed it as `CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION`.
+- Defined `event_state_materializer_contract_v0_1` as the future materializer contract consuming one authorized frozen Event State execution plan.
+- Required exact-one binding over Event Instance, Event Window, Instrument Projection, Market State reference, state_role and consumption_legality before any future row emission.
+- Preserved 0 materializer executions, 0 builder executions, 0 Event Instances, 0 Event Window Bindings, 0 instrument projections, 0 Market State dependency requests, 0 Market State candidate file reads, 0 Event State records, 0 candidate files and 0 registry entries.
+- Kept official Event State dataset promotion, production and downstream closed.
+- Next gate: `event_state_validator_design_v0_1`.
+
+## 2026-07-27 - Event State execution plan contract design closed
+
+- Recorded `event_state_execution_plan_contract_design_v0_1` and closed it as `CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION`.
+- Defined `event_state_execution_plan_contract_v0_1` as the frozen plan contract consuming one Event State request fingerprint and one dependency-resolution fingerprint.
+- Froze the required plan blocks for Event Type Registry snapshot, Event Instance policy, Event Window policy, Instrument Projection policy, Market State dependency subrequest, logical context bindings, partitions, builders, validators, output policy and quantitative limits.
+- Preserved 0 execution plans, 0 Event Instances, 0 Event Window Bindings, 0 instrument projections, 0 Market State dependency requests, 0 Market State candidate file reads, 0 Event State records, 0 datasets and 0 registry entries.
+- Kept official Event State dataset promotion, production and downstream closed.
+- Next gate: `event_state_materializer_design_v0_1`.
+
+## 2026-07-27 - Event State dependency resolution design closed
+
+- Recorded `event_state_dependency_resolution_design_v0_1` and closed it as `CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION`.
+- Defined the future `resolved_event_state_dependencies_v0_1` block over Event State profile, Event Type Registry snapshot, Event Instance policy, Event Window policy, Instrument Projection policy and Market State dependency subrequest semantics.
+- Required exact-one resolution for each dependency and blocking before execution planning when a dependency is missing, ambiguous, outside v0.1 scope or attempts direct Market State path consumption.
+- Preserved 0 dependency resolution records, 0 execution plans, 0 Event Instances, 0 Event Window Bindings, 0 instrument projections, 0 Market State dependency requests, 0 Market State candidate file reads, 0 Event State records, 0 datasets and 0 registry entries.
+- Kept official Event State dataset promotion, production and downstream closed.
+- Next gate: `event_state_execution_plan_contract_design_v0_1`.
+
+## 2026-07-27 - Event State request contract design closed
+
+- Recorded `event_state_request_contract_design_v0_1` and closed it as `CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION`.
+- Defined normalized Event State request intent for `event_state_core_four_intraday_profile_v0_1`, restricted to `event_type:market_data:session_opened` and `accepted_subject_scope = exchange_session`.
+- Required Market State dependency to be declared through `market_state_on_demand_runtime_capability_v0_1`, not through direct Market State parquet or candidate file paths.
+- Preserved 0 request records, 0 dependency resolutions, 0 Event Instances, 0 Event Window Bindings, 0 instrument projections, 0 Market State candidate file reads, 0 Event State records, 0 datasets and 0 registry entries.
+- Kept official Event State dataset promotion, production and downstream closed.
+- Next gate: `event_state_dependency_resolution_design_v0_1`.
+
+## 2026-07-27 - Event State on-demand capability design closed
+
+- Recorded `event_state_on_demand_capability_design_v0_1` and closed it as `CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION`.
+- Consumed `event_state_on_demand_capability_design_authorization_v0_1` for design only; no Event State requests, Market State dependency requests, Event Instances, windows, projections, records, datasets or registry entries were created.
+- Defined the Market State Dependency Resolver principle: Event State on-demand must depend on `market_state_on_demand_runtime_capability_v0_1` through governed metadata/candidate capability policy, not by direct Market State parquet path consumption.
+- Preserved `official_event_state_dataset = false`, `production = false` and `downstream = false`.
+- Next gate: `event_state_request_contract_design_v0_1`.
+
 ## 2026-07-25 - Market State bounded exact-match reuse eligibility transition approved
 
 - Executed `market_state_bounded_on_demand_reuse_eligibility_transition_review_v0_1_20260725T061233Z` and closed it as `CLOSED_APPROVED_REUSE_ELIGIBILITY_TRANSITION_FOR_BOUNDED_EXACT_MATCH_WITH_RESTRICTIONS_NO_PROMOTION`.

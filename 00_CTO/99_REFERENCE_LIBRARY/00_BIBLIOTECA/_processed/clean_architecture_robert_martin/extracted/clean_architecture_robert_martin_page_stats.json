@@ -1,0 +1,633 @@
+{
+  "unit_label": "epub_section",
+  "page_count": 104,
+  "total_chars": 530028,
+  "text_pages": 50,
+  "requires_ocr_review": false,
+  "per_page": [
+    {
+      "section": 1,
+      "href": "titlepage.xhtml",
+      "chars": 109,
+      "words": 14
+    },
+    {
+      "section": 2,
+      "href": "text/part0000.html",
+      "chars": 1241,
+      "words": 198
+    },
+    {
+      "section": 3,
+      "href": "text/part0001.html",
+      "chars": 33,
+      "words": 3
+    },
+    {
+      "section": 4,
+      "href": "text/part0002.html",
+      "chars": 370,
+      "words": 71
+    },
+    {
+      "section": 5,
+      "href": "text/part0003.html",
+      "chars": 1882,
+      "words": 266
+    },
+    {
+      "section": 6,
+      "href": "text/part0004.html",
+      "chars": 204,
+      "words": 31
+    },
+    {
+      "section": 7,
+      "href": "text/part0005.html",
+      "chars": 4894,
+      "words": 638
+    },
+    {
+      "section": 8,
+      "href": "text/part0006.html",
+      "chars": 6814,
+      "words": 1098
+    },
+    {
+      "section": 9,
+      "href": "text/part0007.html",
+      "chars": 6390,
+      "words": 1095
+    },
+    {
+      "section": 10,
+      "href": "text/part0008.html",
+      "chars": 720,
+      "words": 113
+    },
+    {
+      "section": 11,
+      "href": "text/part0009.html",
+      "chars": 1021,
+      "words": 165
+    },
+    {
+      "section": 12,
+      "href": "text/part0010.html",
+      "chars": 2850,
+      "words": 483
+    },
+    {
+      "section": 13,
+      "href": "text/part0011.html",
+      "chars": 10896,
+      "words": 1902
+    },
+    {
+      "section": 14,
+      "href": "text/part0012.html",
+      "chars": 7944,
+      "words": 1343
+    },
+    {
+      "section": 15,
+      "href": "text/part0013.html",
+      "chars": 1643,
+      "words": 261
+    },
+    {
+      "section": 16,
+      "href": "text/part0014.html",
+      "chars": 3819,
+      "words": 594
+    },
+    {
+      "section": 17,
+      "href": "text/part0015.html",
+      "chars": 11328,
+      "words": 1815
+    },
+    {
+      "section": 18,
+      "href": "text/part0016.html",
+      "chars": 17899,
+      "words": 2979
+    },
+    {
+      "section": 19,
+      "href": "text/part0017.html",
+      "chars": 10405,
+      "words": 1721
+    },
+    {
+      "section": 20,
+      "href": "text/part0018.html",
+      "chars": 4114,
+      "words": 648
+    },
+    {
+      "section": 21,
+      "href": "text/part0019.html",
+      "chars": 7657,
+      "words": 1300
+    },
+    {
+      "section": 22,
+      "href": "text/part0020.html",
+      "chars": 7456,
+      "words": 1187
+    },
+    {
+      "section": 23,
+      "href": "text/part0021.html",
+      "chars": 6299,
+      "words": 1061
+    },
+    {
+      "section": 24,
+      "href": "text/part0022.html",
+      "chars": 3341,
+      "words": 576
+    },
+    {
+      "section": 25,
+      "href": "text/part0023.html",
+      "chars": 6663,
+      "words": 1043
+    },
+    {
+      "section": 26,
+      "href": "text/part0024.html",
+      "chars": 451,
+      "words": 73
+    },
+    {
+      "section": 27,
+      "href": "text/part0025.html",
+      "chars": 9790,
+      "words": 1663
+    },
+    {
+      "section": 28,
+      "href": "text/part0026.html",
+      "chars": 10962,
+      "words": 1848
+    },
+    {
+      "section": 29,
+      "href": "text/part0027.html",
+      "chars": 31391,
+      "words": 5434
+    },
+    {
+      "section": 30,
+      "href": "text/part0028.html",
+      "chars": 49,
+      "words": 6
+    },
+    {
+      "section": 31,
+      "href": "text/part0029.html",
+      "chars": 20269,
+      "words": 3431
+    },
+    {
+      "section": 32,
+      "href": "text/part0030.html",
+      "chars": 18378,
+      "words": 3047
+    },
+    {
+      "section": 33,
+      "href": "text/part0031.html",
+      "chars": 21162,
+      "words": 3588
+    },
+    {
+      "section": 34,
+      "href": "text/part0032.html",
+      "chars": 9299,
+      "words": 1454
+    },
+    {
+      "section": 35,
+      "href": "text/part0033.html",
+      "chars": 5960,
+      "words": 941
+    },
+    {
+      "section": 36,
+      "href": "text/part0034.html",
+      "chars": 8196,
+      "words": 1402
+    },
+    {
+      "section": 37,
+      "href": "text/part0035.html",
+      "chars": 6157,
+      "words": 1044
+    },
+    {
+      "section": 38,
+      "href": "text/part0036.html",
+      "chars": 11229,
+      "words": 1902
+    },
+    {
+      "section": 39,
+      "href": "text/part0037.html",
+      "chars": 6800,
+      "words": 1159
+    },
+    {
+      "section": 40,
+      "href": "text/part0038.html",
+      "chars": 4678,
+      "words": 771
+    },
+    {
+      "section": 41,
+      "href": "text/part0039.html",
+      "chars": 10950,
+      "words": 1833
+    },
+    {
+      "section": 42,
+      "href": "text/part0040.html",
+      "chars": 5429,
+      "words": 719
+    },
+    {
+      "section": 43,
+      "href": "text/part0041.html",
+      "chars": 11749,
+      "words": 1882
+    },
+    {
+      "section": 44,
+      "href": "text/part0042.html",
+      "chars": 6304,
+      "words": 1068
+    },
+    {
+      "section": 45,
+      "href": "text/part0043.html",
+      "chars": 25665,
+      "words": 4247
+    },
+    {
+      "section": 46,
+      "href": "text/part0044.html",
+      "chars": 45,
+      "words": 6
+    },
+    {
+      "section": 47,
+      "href": "text/part0045.html",
+      "chars": 11108,
+      "words": 1958
+    },
+    {
+      "section": 48,
+      "href": "text/part0046.html",
+      "chars": 6702,
+      "words": 1193
+    },
+    {
+      "section": 49,
+      "href": "text/part0047.html",
+      "chars": 5666,
+      "words": 964
+    },
+    {
+      "section": 50,
+      "href": "text/part0048.html",
+      "chars": 6953,
+      "words": 1181
+    },
+    {
+      "section": 51,
+      "href": "text/part0049.html",
+      "chars": 24395,
+      "words": 3943
+    },
+    {
+      "section": 52,
+      "href": "text/part0050.html",
+      "chars": 46,
+      "words": 5
+    },
+    {
+      "section": 53,
+      "href": "text/part0051.html",
+      "chars": 78097,
+      "words": 13473
+    },
+    {
+      "section": 54,
+      "href": "text/part0052.html",
+      "chars": 44625,
+      "words": 6942
+    },
+    {
+      "section": 55,
+      "href": "text/part0053.html",
+      "chars": 33,
+      "words": 3
+    },
+    {
+      "section": 56,
+      "href": "text/part0054_split_000.html",
+      "chars": 42,
+      "words": 5
+    },
+    {
+      "section": 57,
+      "href": "text/part0054_split_001.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 58,
+      "href": "text/part0054_split_002.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 59,
+      "href": "text/part0054_split_003.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 60,
+      "href": "text/part0054_split_004.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 61,
+      "href": "text/part0054_split_005.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 62,
+      "href": "text/part0054_split_006.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 63,
+      "href": "text/part0054_split_007.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 64,
+      "href": "text/part0054_split_008.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 65,
+      "href": "text/part0054_split_009.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 66,
+      "href": "text/part0054_split_010.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 67,
+      "href": "text/part0054_split_011.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 68,
+      "href": "text/part0055_split_000.html",
+      "chars": 42,
+      "words": 5
+    },
+    {
+      "section": 69,
+      "href": "text/part0055_split_001.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 70,
+      "href": "text/part0055_split_002.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 71,
+      "href": "text/part0055_split_003.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 72,
+      "href": "text/part0055_split_004.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 73,
+      "href": "text/part0056_split_000.html",
+      "chars": 42,
+      "words": 5
+    },
+    {
+      "section": 74,
+      "href": "text/part0056_split_001.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 75,
+      "href": "text/part0056_split_002.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 76,
+      "href": "text/part0056_split_003.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 77,
+      "href": "text/part0056_split_004.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 78,
+      "href": "text/part0056_split_005.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 79,
+      "href": "text/part0057_split_000.html",
+      "chars": 42,
+      "words": 5
+    },
+    {
+      "section": 80,
+      "href": "text/part0057_split_001.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 81,
+      "href": "text/part0058_split_000.html",
+      "chars": 42,
+      "words": 5
+    },
+    {
+      "section": 82,
+      "href": "text/part0058_split_001.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 83,
+      "href": "text/part0059_split_000.html",
+      "chars": 42,
+      "words": 5
+    },
+    {
+      "section": 84,
+      "href": "text/part0059_split_001.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 85,
+      "href": "text/part0060_split_000.html",
+      "chars": 42,
+      "words": 5
+    },
+    {
+      "section": 86,
+      "href": "text/part0060_split_001.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 87,
+      "href": "text/part0060_split_002.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 88,
+      "href": "text/part0060_split_003.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 89,
+      "href": "text/part0060_split_004.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 90,
+      "href": "text/part0060_split_005.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 91,
+      "href": "text/part0060_split_006.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 92,
+      "href": "text/part0060_split_007.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 93,
+      "href": "text/part0061_split_000.html",
+      "chars": 42,
+      "words": 5
+    },
+    {
+      "section": 94,
+      "href": "text/part0061_split_001.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 95,
+      "href": "text/part0061_split_002.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 96,
+      "href": "text/part0061_split_003.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 97,
+      "href": "text/part0061_split_004.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 98,
+      "href": "text/part0061_split_005.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 99,
+      "href": "text/part0061_split_006.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 100,
+      "href": "text/part0061_split_007.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 101,
+      "href": "text/part0061_split_008.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 102,
+      "href": "text/part0061_split_009.html",
+      "chars": 28,
+      "words": 3
+    },
+    {
+      "section": 103,
+      "href": "text/part0062_split_000.html",
+      "chars": 42,
+      "words": 5
+    },
+    {
+      "section": 104,
+      "href": "text/part0062_split_001.html",
+      "chars": 28,
+      "words": 3
+    }
+  ]
+}

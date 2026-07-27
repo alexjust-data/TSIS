@@ -1,0 +1,19 @@
+{
+  "book_id": "advanced_algorithmic_trading_tawcer",
+  "title": "Advanced Algorithmic Trading",
+  "authors": "QuantStart / Michael Halls-Moore",
+  "source_type": "Libro PDF",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\84-advanced-algorithmic-trading-(www.tawcer.com).pdf",
+  "file_name": "84-advanced-algorithmic-trading-(www.tawcer.com).pdf",
+  "sha256": "e42f5e30fbfb74e228277d711839be00455225c7286f33d3e8a23334bbf22f77",
+  "status": "indexed",
+  "processed_date": "2026-07-27",
+  "page_count": 517,
+  "unit_label": "page",
+  "text_chars": 854989,
+  "text_pages": 491,
+  "requires_ocr_review": false,
+  "working_text_persisted": false,
+  "themes": "advanced systematic trading, time series, statistical models, portfolio, execution, risk, Python research",
+  "utility_tsis": "continuacion avanzada de QuantStart para research, modelos y componentes cuantitativos posteriores al vertical slice"
+}

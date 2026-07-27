@@ -1,0 +1,230 @@
+{
+  "review_id": "market_state_on_demand_incremental_overlap_candidate_dataset_review_v0_1_20260725T000000Z",
+  "review_gate": "market_state_on_demand_incremental_overlap_candidate_dataset_review_v0_1",
+  "status": "CLOSED_PASS_INCREMENTAL_OVERLAP_CANDIDATE_DATASET_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION",
+  "date": "2026-07-25",
+  "reviewed_incremental_run": "market_state_on_demand_incremental_overlap_execution_v0_1_20260725T064143Z",
+  "reviewed_candidate_dataset_id": "market_state_candidate_dataset_incremental_v0_1_f2cfd5cf55d0c1be",
+  "reviewed_candidate_dataset_fingerprint": "f2cfd5cf55d0c1be1722693cc0216ffd425bbb869e19c17745976c030f2c7a2a",
+  "reviewed_scientific_dataset_fingerprint": "7103e4fdbae205e4bccbeb0c436508f62b016107b4b2756c549073dae971bb5f",
+  "reviewed_validation_result_fingerprint": "9aafd142203872647a8be3668d0aca7c4f95630be4a405e00fd64f5cd111f336",
+  "reviewed_registry_entry_fingerprint": "9d39bfd88a752d99afc7709950a0ea8c1116d7a2c79daef8bd4c79a993637376",
+  "baseline_dataset": {
+    "run_id": "market_state_bounded_on_demand_execution_v0_1_20260724T232123Z",
+    "dataset_id": "market_state_candidate_dataset_v0_1_433288b634924676",
+    "candidate_dataset_fingerprint": "433288b634924676a3c516fac600574ed36237c3c02ca640111f17609b6c235b",
+    "scientific_dataset_fingerprint": "a9182b19e434ea77ca2bf5b3395b84a4592560bbf28e5cb0d80ee5561c5fe1b7",
+    "candidate_output_manifest": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\market_state_bounded_on_demand_execution_v0_1_20260724T232123Z\\candidate_output_manifest.json",
+    "physical_artifact_availability_status": "available"
+  },
+  "scope": {
+    "profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "exchange_scope": [
+      "XNYS"
+    ],
+    "session_dates": [
+      "2021-01-19",
+      "2021-03-15",
+      "2022-11-25",
+      "2023-03-20"
+    ],
+    "instrument_ids": [
+      "figi_share_class:BBG001S5N8T1",
+      "figi_share_class:BBG001S8T7K0",
+      "figi_share_class:BBG001S6RSK0"
+    ],
+    "requested_contexts": 12,
+    "reused_validated": 8,
+    "delta_materialized": 3,
+    "unavailable": 1,
+    "represented_contexts": 11,
+    "unaccounted_contexts": 0
+  },
+  "decision": {
+    "review_decision": "APPROVED_INCREMENTAL_OVERLAP_CANDIDATE_DATASET_EVIDENCE_WITH_RESTRICTIONS_NO_PROMOTION",
+    "accepted_as_incremental_candidate_dataset_review_evidence": true,
+    "requested_contexts": 12,
+    "represented_contexts": 11,
+    "baseline_reused_rows": 8,
+    "delta_materialized_rows": 3,
+    "unavailable_contexts": 1,
+    "unaccounted_contexts": 0,
+    "duplicate_canonical_contexts": 0,
+    "state_identity_failures": 0,
+    "schema_mismatches": 0,
+    "semantic_contract_mismatches": 0,
+    "lineage_gaps": 0,
+    "unexpected_baseline_mutations": 0,
+    "hard_review_failures": 0,
+    "dataset_completeness": "partial",
+    "candidate_dataset_validated": true,
+    "registry_reuse_eligibility_after_review": "pending_incremental_determinism_validation",
+    "review_recommendation": "approved_for_incremental_overlap_idempotency_reuse_test_authorization",
+    "official_dataset_after_review": false,
+    "production_after_review": false,
+    "downstream_after_review": false
+  },
+  "fingerprints": {
+    "request_fingerprint": "884830b081a2e9b8e5ea5130262600a20b01385a019a66ce3ad2240aac5b9b08",
+    "execution_plan_fingerprint": "c9ee1a63f9dd8780f16193adf43d35bb8db2271778a64afae2132e052931e746",
+    "resolved_profile_fingerprint": "bf2b6ff3eb7e4d09a0ee55a7acec214c19f4a3a05111bb9916b19ef930ce4ac7",
+    "resolved_universe_fingerprint": "2d557ddc26ee65dfbf83671be02fa33324b2b4c40a11f3c1a43d5e8ec512012d",
+    "resolved_source_set_fingerprint": "3393e2eeaca1ce261e3e936fc35355c61cb664477ff79200ce5b99cf2ebddaaa",
+    "partition_coverage_resolution_fingerprint": "4befc05e6817394c4f4b28ff2c26c9cc971bd7b6a4a78917fb8cb1963236d285",
+    "candidate_dataset_fingerprint": "f2cfd5cf55d0c1be1722693cc0216ffd425bbb869e19c17745976c030f2c7a2a",
+    "scientific_dataset_fingerprint": "7103e4fdbae205e4bccbeb0c436508f62b016107b4b2756c549073dae971bb5f",
+    "validation_result_fingerprint": "9aafd142203872647a8be3668d0aca7c4f95630be4a405e00fd64f5cd111f336",
+    "registry_entry_fingerprint": "9d39bfd88a752d99afc7709950a0ea8c1116d7a2c79daef8bd4c79a993637376",
+    "combined_context_ledger_sha256": "9e117ea5a82bbeeba0e36f24e13d2db124c260aabac1a5bc088a61cdcdb8a9b1",
+    "fingerprint_comparison_sha256": "e8f30356dcf648343cc9e6097fe5b9231a62b86580757022e5f1d3f459a8271d"
+  },
+  "findings": [
+    {
+      "check_id": "request_scope_ledger",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "requested_contexts": 12,
+        "reused_validated": 8,
+        "delta_materialized": 3,
+        "unavailable": 1,
+        "represented_contexts": 11,
+        "unaccounted_contexts": 0
+      },
+      "conclusion": "All requested contexts are accounted for as reused, delta materialized or unavailable."
+    },
+    {
+      "check_id": "baseline_delta_contract_compatibility",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "profile_id": "market_state_core_four_intraday_profile_v0_1",
+        "baseline_columns": 40,
+        "delta_columns": 40,
+        "schema_contract_sha256_baseline": "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b",
+        "schema_contract_sha256_delta": "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b",
+        "builder_id": "scale_c_integrated_candidate_record_to_market_state_physical_row_v0_1",
+        "builder_contract_hash": "e4223c64c030c2ac240763d7397362a0fe8faf91761ac7b94ca0f69d6f3d1913"
+      },
+      "conclusion": "Baseline and delta share the same physical schema contract and builder contract in this v0.1 review."
+    },
+    {
+      "check_id": "canonical_identity_uniqueness",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "combined_rows": 11,
+        "duplicate_canonical_contexts": 0,
+        "duplicate_materialized_state_candidate_ids": 0,
+        "missing_state_output_fingerprints": 0
+      },
+      "conclusion": "The logical combined candidate has unique canonical contexts and unique state ids."
+    },
+    {
+      "check_id": "row_origin_lineage",
+      "status": "PASS_WITH_RESTRICTION",
+      "severity": "RESTRICTION",
+      "evidence": {
+        "reused_rows_reference_baseline": 8,
+        "delta_rows_reference_incremental_run": 3,
+        "lineage_json_parse_failures": 0
+      },
+      "conclusion": "The incremental run is a composer for reused rows and producer for delta rows; baseline rows are not re-originated."
+    },
+    {
+      "check_id": "baseline_immutability",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "baseline_registry_entry_mutated": false,
+        "baseline_registry_entry_mutations": 0,
+        "baseline_file_hash_match": true,
+        "baseline_manifest_reference": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\market_state_bounded_on_demand_execution_v0_1_20260724T232123Z\\candidate_output_manifest.json"
+      },
+      "conclusion": "Baseline registry and physical artifact hash remain unchanged by the incremental run."
+    },
+    {
+      "check_id": "fingerprint_separation",
+      "status": "PASS_WITH_RESTRICTION",
+      "severity": "RESTRICTION",
+      "evidence": {
+        "candidate_dataset_fingerprint": "f2cfd5cf55d0c1be1722693cc0216ffd425bbb869e19c17745976c030f2c7a2a",
+        "scientific_dataset_fingerprint": "7103e4fdbae205e4bccbeb0c436508f62b016107b4b2756c549073dae971bb5f",
+        "fingerprints_distinct": true,
+        "fingerprint_comparison_sha256": "e8f30356dcf648343cc9e6097fe5b9231a62b86580757022e5f1d3f459a8271d"
+      },
+      "conclusion": "Physical/evolution and logical/scientific fingerprints are recorded separately."
+    },
+    {
+      "check_id": "logical_order_independence",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "canonical_sort_policy": "compare after canonical sorting by instrument_id, session_date, decision_timestamp_utc, materialized_state_candidate_id",
+        "combined_context_ledger_sha256": "9e117ea5a82bbeeba0e36f24e13d2db124c260aabac1a5bc088a61cdcdb8a9b1"
+      },
+      "conclusion": "Logical equality is defined after canonical sorting, not by physical row order."
+    },
+    {
+      "check_id": "restriction_propagation",
+      "status": "PASS_WITH_RESTRICTION",
+      "severity": "RESTRICTION",
+      "evidence": {
+        "dataset_completeness": "partial",
+        "unavailable_contexts": 1,
+        "registry_reuse_eligibility": "pending_incremental_determinism_validation",
+        "promotion_review_eligibility": "not_eligible_pending_incremental_review_and_scale_validation",
+        "downstream_eligibility": false
+      },
+      "conclusion": "The combined candidate preserves partial coverage and non-consumption restrictions."
+    },
+    {
+      "check_id": "validation_result_consistency",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "validation_status": "PASS_WITH_RESTRICTIONS",
+        "schema_match": true,
+        "delta_row_count": 3,
+        "combined_candidate_contexts_represented": 11,
+        "duplicate_primary_keys": 0,
+        "delta_overlaps_reusable_baseline": 0,
+        "non_nullable_null_failures": 0,
+        "fingerprint_failures": 0,
+        "temporal_failures": 0,
+        "lineage_failures": 0,
+        "partition_accounting_pass": true,
+        "disposition_expectation_pass": true,
+        "materializer_delta_only_pass": true,
+        "hard_validation_failures": 0,
+        "eligible_for_candidate_registry": true,
+        "reuse_eligibility": "pending_incremental_determinism_validation",
+        "promotion_review_eligibility": "not_eligible_pending_incremental_review_and_scale_validation",
+        "validation_result_fingerprint": "9aafd142203872647a8be3668d0aca7c4f95630be4a405e00fd64f5cd111f336"
+      },
+      "conclusion": "The validator result supports candidate registry evidence with restrictions."
+    },
+    {
+      "check_id": "promotion_and_consumption_boundary",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "official_dataset": false,
+        "production": false,
+        "downstream": false,
+        "registry_entry_mutations": 0
+      },
+      "conclusion": "No official dataset, production or downstream authority is opened."
+    }
+  ],
+  "evidence_refs": {
+    "combined_candidate_context_ledger": "combined_candidate_context_ledger_v0_1.json",
+    "combined_candidate_fingerprint_comparison": "combined_candidate_fingerprint_comparison_v0_1.json",
+    "incremental_run_final_manifest": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\market_state_on_demand_incremental_overlap_execution_v0_1_20260725T064143Z\\final_manifest.json",
+    "incremental_candidate_registry_entry": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\market_state_on_demand_incremental_overlap_execution_v0_1_20260725T064143Z\\candidate_registry_entry.json",
+    "incremental_candidate_output_manifest": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\market_state_on_demand_incremental_overlap_execution_v0_1_20260725T064143Z\\candidate_output_manifest.json",
+    "baseline_candidate_output_manifest": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\market_state_bounded_on_demand_execution_v0_1_20260724T232123Z\\candidate_output_manifest.json"
+  },
+  "next_allowed_gate": "market_state_on_demand_incremental_overlap_idempotency_reuse_test_authorization_v0_1",
+  "review_matrix_sha256": "7d2ca11f7e429f35518f15aa0ab70cd54f2a60cb80e66a7a6520ca11eb6e13fc"
+}

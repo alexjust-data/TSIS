@@ -1,0 +1,21 @@
+{
+  "schema": "SERSAN_PRACTICE_EXTRACTION_V1",
+  "practice": "02",
+  "source_inventory": {
+    "practice": "02",
+    "source_package": "01_SOURCE.zip",
+    "file_count": 77,
+    "markdown_count": 1,
+    "image_count": 76,
+    "uncompressed_bytes": 28614910,
+    "markdown_files": [
+      "practica_02_donchain.md"
+    ],
+    "status": "SOURCE_PRESENT_AND_INVENTORIED"
+  },
+  "evidence_count": 42,
+  "topic_links_count": 36,
+  "figure_manifest_rows": 0,
+  "visual_review_status": "REVIEWED_IN_INCREMENTAL_AUDIT",
+  "integration_target": "07_INTEGRATION/FINAL"
+}

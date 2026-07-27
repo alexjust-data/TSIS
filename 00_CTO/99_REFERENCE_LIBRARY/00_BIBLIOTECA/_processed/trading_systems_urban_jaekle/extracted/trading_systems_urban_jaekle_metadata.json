@@ -1,0 +1,15 @@
+﻿{
+    "book_id":  "trading_systems_urban_jaekle",
+    "source_pdf":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Trading_Systems_2nd_edition_-_Urban_Jaekle.pdf",
+    "processed_at_utc":  "2026-07-27T14:21:35.131753+00:00",
+    "pages":  363,
+    "file_size_bytes":  25652911,
+    "sha256":  "ed8a692b845c663e193ed2b2f49ecefba39e0efe634754a9a0524761fac3d8e6",
+    "total_words":  81622,
+    "text_pages":  345,
+    "toc_items":  199,
+    "requires_ocr":  false,
+    "status":  "indexed",
+    "working_text_persisted":  false,
+    "ocr_completed":  false
+}

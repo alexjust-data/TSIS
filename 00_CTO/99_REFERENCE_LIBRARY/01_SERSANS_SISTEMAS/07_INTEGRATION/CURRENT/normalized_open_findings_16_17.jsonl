@@ -1,0 +1,8 @@
+{"finding_id": "OF-16_17-001", "finding": "No queda admitido un método universal de asignación inicial de pesos.", "status": "OPEN", "source_block": "practices_16_17"}
+{"finding_id": "OF-16_17-002", "finding": "La frecuencia óptima de rebalanceo permanece dependiente del portfolio.", "status": "OPEN", "source_block": "practices_16_17"}
+{"finding_id": "OF-16_17-003", "finding": "La estabilidad fuera de muestra de la frontera eficiente no se demuestra en el curso.", "status": "OPEN", "source_block": "practices_16_17"}
+{"finding_id": "OF-16_17-004", "finding": "El umbral IVTS exacto y su vigencia histórica requieren validación externa.", "status": "OPEN", "source_block": "practices_16_17"}
+{"finding_id": "OF-16_17-005", "finding": "La fuente y latencia exactas de los datos COT deben formalizarse.", "status": "OPEN", "source_block": "practices_16_17"}
+{"finding_id": "OF-16_17-006", "finding": "Los tres sistemas COT permanecen incompletos o en preproducción.", "status": "OPEN", "source_block": "practices_16_17"}
+{"finding_id": "OF-16_17-007", "finding": "La fuerza predictiva de COT no queda demostrada con muestra suficiente.", "status": "OPEN", "source_block": "practices_16_17"}
+{"finding_id": "OF-16_17-008", "finding": "La duración mínima de incubación no se define universalmente.", "status": "OPEN", "source_block": "practices_16_17"}

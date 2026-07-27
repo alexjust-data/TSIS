@@ -1,0 +1,11 @@
+{
+  "book_id": "clean_architecture_anderson_rogerio",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_OceanofPDF.com_Clean_Architecture_-_Anderson_Rogerio.pdf",
+  "file_name": "_OceanofPDF.com_Clean_Architecture_-_Anderson_Rogerio.pdf",
+  "sha256": "da631b3ab756254c89fcc1d68ca813dd4cace06c0dad7bd55c0152ce591e31ae",
+  "file_size_bytes": 7628600,
+  "extraction_method": "pypdf",
+  "unit_label": "page",
+  "sample_text": [],
+  "notes": "No usable text layer was available. pypdf and pdftotext recovered only trivial text. Requires OCR before agents rely on content-specific extraction."
+}

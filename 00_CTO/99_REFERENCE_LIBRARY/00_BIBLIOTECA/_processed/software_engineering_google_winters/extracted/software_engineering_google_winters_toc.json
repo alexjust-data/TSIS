@@ -1,0 +1,2542 @@
+[
+  {
+    "level": 1,
+    "title": "Foreword",
+    "page": 5
+  },
+  {
+    "level": 1,
+    "title": "Preface",
+    "page": 7
+  },
+  {
+    "level": 2,
+    "title": "Programming Over Time",
+    "page": 8
+  },
+  {
+    "level": 2,
+    "title": "Google’s Perspective",
+    "page": 9
+  },
+  {
+    "level": 2,
+    "title": "What This Book Isn’t",
+    "page": 10
+  },
+  {
+    "level": 2,
+    "title": "Parting Remarks",
+    "page": 11
+  },
+  {
+    "level": 2,
+    "title": "Conventions Used in This Book",
+    "page": 11
+  },
+  {
+    "level": 2,
+    "title": "O’Reilly Online Learning",
+    "page": 12
+  },
+  {
+    "level": 2,
+    "title": "How to Contact Us",
+    "page": 13
+  },
+  {
+    "level": 2,
+    "title": "Acknowledgments",
+    "page": 14
+  },
+  {
+    "level": 1,
+    "title": "I. Thesis",
+    "page": 18
+  },
+  {
+    "level": 1,
+    "title": "1. What Is Software Engineering?",
+    "page": 19
+  },
+  {
+    "level": 2,
+    "title": "Time and Change",
+    "page": 22
+  },
+  {
+    "level": 3,
+    "title": "Hyrum’s Law",
+    "page": 26
+  },
+  {
+    "level": 3,
+    "title": "Example: Hash Ordering",
+    "page": 27
+  },
+  {
+    "level": 3,
+    "title": "Why Not Just Aim for “Nothing Changes”?",
+    "page": 29
+  },
+  {
+    "level": 2,
+    "title": "Scale and Efficiency",
+    "page": 31
+  },
+  {
+    "level": 3,
+    "title": "Policies That Don’t Scale",
+    "page": 33
+  },
+  {
+    "level": 3,
+    "title": "Policies That Scale Well",
+    "page": 35
+  },
+  {
+    "level": 3,
+    "title": "Example: Compiler Upgrade",
+    "page": 36
+  },
+  {
+    "level": 3,
+    "title": "Shifting Left",
+    "page": 39
+  },
+  {
+    "level": 2,
+    "title": "Trade-offs and Costs",
+    "page": 40
+  },
+  {
+    "level": 3,
+    "title": "Example: Markers",
+    "page": 42
+  },
+  {
+    "level": 3,
+    "title": "Inputs to Decision Making",
+    "page": 44
+  },
+  {
+    "level": 3,
+    "title": "Example: Distributed Builds",
+    "page": 45
+  },
+  {
+    "level": 3,
+    "title": "Example: Deciding Between Time and Scale",
+    "page": 47
+  },
+  {
+    "level": 3,
+    "title": "Revisiting Decisions, Making Mistakes",
+    "page": 48
+  },
+  {
+    "level": 2,
+    "title": "Software Engineering Versus Programming",
+    "page": 49
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 51
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 51
+  },
+  {
+    "level": 1,
+    "title": "II. Culture",
+    "page": 55
+  },
+  {
+    "level": 1,
+    "title": "2. How to Work Well on Teams",
+    "page": 56
+  },
+  {
+    "level": 2,
+    "title": "Help Me Hide My Code",
+    "page": 56
+  },
+  {
+    "level": 2,
+    "title": "The Genius Myth",
+    "page": 57
+  },
+  {
+    "level": 2,
+    "title": "Hiding Considered Harmful",
+    "page": 61
+  },
+  {
+    "level": 3,
+    "title": "Early Detection",
+    "page": 62
+  },
+  {
+    "level": 3,
+    "title": "The Bus Factor",
+    "page": 62
+  },
+  {
+    "level": 3,
+    "title": "Pace of Progress",
+    "page": 63
+  },
+  {
+    "level": 3,
+    "title": "In Short, Don’t Hide",
+    "page": 67
+  },
+  {
+    "level": 2,
+    "title": "It’s All About the Team",
+    "page": 67
+  },
+  {
+    "level": 3,
+    "title": "The Three Pillars of Social Interaction",
+    "page": 68
+  },
+  {
+    "level": 3,
+    "title": "Why Do These Pillars Matter?",
+    "page": 69
+  },
+  {
+    "level": 3,
+    "title": "Humility, Respect, and Trust in Practice",
+    "page": 70
+  },
+  {
+    "level": 3,
+    "title": "Blameless Post-Mortem Culture",
+    "page": 75
+  },
+  {
+    "level": 3,
+    "title": "Being Googley",
+    "page": 78
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 80
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 80
+  },
+  {
+    "level": 1,
+    "title": "3. Knowledge Sharing",
+    "page": 82
+  },
+  {
+    "level": 2,
+    "title": "Challenges to Learning",
+    "page": 82
+  },
+  {
+    "level": 2,
+    "title": "Philosophy",
+    "page": 84
+  },
+  {
+    "level": 2,
+    "title": "Setting the Stage: Psychological Safety",
+    "page": 86
+  },
+  {
+    "level": 3,
+    "title": "Mentorship",
+    "page": 87
+  },
+  {
+    "level": 3,
+    "title": "Psychological Safety in Large Groups",
+    "page": 87
+  },
+  {
+    "level": 2,
+    "title": "Growing Your Knowledge",
+    "page": 89
+  },
+  {
+    "level": 3,
+    "title": "Ask Questions",
+    "page": 89
+  },
+  {
+    "level": 3,
+    "title": "Understand Context",
+    "page": 91
+  },
+  {
+    "level": 2,
+    "title": "Scaling Your Questions: Ask the Community",
+    "page": 92
+  },
+  {
+    "level": 3,
+    "title": "Group Chats",
+    "page": 93
+  },
+  {
+    "level": 3,
+    "title": "Mailing Lists",
+    "page": 94
+  },
+  {
+    "level": 3,
+    "title": "YAQS: Question-and-Answer Platform",
+    "page": 96
+  },
+  {
+    "level": 2,
+    "title": "Scaling Your Knowledge: You Always Have Something to Teach",
+    "page": 97
+  },
+  {
+    "level": 3,
+    "title": "Office Hours",
+    "page": 97
+  },
+  {
+    "level": 3,
+    "title": "Tech Talks and Classes",
+    "page": 98
+  },
+  {
+    "level": 3,
+    "title": "Documentation",
+    "page": 99
+  },
+  {
+    "level": 3,
+    "title": "Code",
+    "page": 102
+  },
+  {
+    "level": 2,
+    "title": "Scaling Your Organization’s Knowledge",
+    "page": 103
+  },
+  {
+    "level": 3,
+    "title": "Cultivating a Knowledge-Sharing Culture",
+    "page": 103
+  },
+  {
+    "level": 3,
+    "title": "Establishing Canonical Sources of Information",
+    "page": 106
+  },
+  {
+    "level": 3,
+    "title": "Staying in the Loop",
+    "page": 110
+  },
+  {
+    "level": 2,
+    "title": "Readability: Standardized Mentorship Through Code Review",
+    "page": 112
+  },
+  {
+    "level": 3,
+    "title": "What Is the Readability Process?",
+    "page": 113
+  },
+  {
+    "level": 3,
+    "title": "Why Have This Process?",
+    "page": 114
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 118
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 118
+  },
+  {
+    "level": 1,
+    "title": "4. Engineering for Equity",
+    "page": 121
+  },
+  {
+    "level": 2,
+    "title": "Bias Is the Default",
+    "page": 122
+  },
+  {
+    "level": 2,
+    "title": "Understanding the Need for Diversity",
+    "page": 125
+  },
+  {
+    "level": 2,
+    "title": "Building Multicultural Capacity",
+    "page": 127
+  },
+  {
+    "level": 2,
+    "title": "Making Diversity Actionable",
+    "page": 130
+  },
+  {
+    "level": 2,
+    "title": "Reject Singular Approaches",
+    "page": 131
+  },
+  {
+    "level": 2,
+    "title": "Challenge Established Processes",
+    "page": 133
+  },
+  {
+    "level": 2,
+    "title": "Values Versus Outcomes",
+    "page": 135
+  },
+  {
+    "level": 2,
+    "title": "Stay Curious, Push Forward",
+    "page": 137
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 137
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 138
+  },
+  {
+    "level": 1,
+    "title": "5. How to Lead a Team",
+    "page": 140
+  },
+  {
+    "level": 2,
+    "title": "Managers and Tech Leads (and Both)",
+    "page": 140
+  },
+  {
+    "level": 3,
+    "title": "The Engineering Manager",
+    "page": 141
+  },
+  {
+    "level": 3,
+    "title": "The Tech Lead",
+    "page": 142
+  },
+  {
+    "level": 3,
+    "title": "The Tech Lead Manager",
+    "page": 142
+  },
+  {
+    "level": 2,
+    "title": "Moving from an Individual Contributor Role to a Leadership Role",
+    "page": 145
+  },
+  {
+    "level": 3,
+    "title": "The Only Thing to Fear Is…Well, Everything",
+    "page": 145
+  },
+  {
+    "level": 3,
+    "title": "Servant Leadership",
+    "page": 147
+  },
+  {
+    "level": 2,
+    "title": "The Engineering Manager",
+    "page": 148
+  },
+  {
+    "level": 3,
+    "title": "Manager Is a Four-Letter Word",
+    "page": 148
+  },
+  {
+    "level": 3,
+    "title": "Today’s Engineering Manager",
+    "page": 149
+  },
+  {
+    "level": 2,
+    "title": "Antipatterns",
+    "page": 152
+  },
+  {
+    "level": 3,
+    "title": "Antipattern: Hire Pushovers",
+    "page": 152
+  },
+  {
+    "level": 3,
+    "title": "Antipattern: Ignore Low Performers",
+    "page": 153
+  },
+  {
+    "level": 3,
+    "title": "Antipattern: Ignore Human Issues",
+    "page": 156
+  },
+  {
+    "level": 3,
+    "title": "Antipattern: Be Everyone’s Friend",
+    "page": 157
+  },
+  {
+    "level": 3,
+    "title": "Antipattern: Compromise the Hiring Bar",
+    "page": 158
+  },
+  {
+    "level": 3,
+    "title": "Antipattern: Treat Your Team Like Children",
+    "page": 159
+  },
+  {
+    "level": 2,
+    "title": "Positive Patterns",
+    "page": 160
+  },
+  {
+    "level": 3,
+    "title": "Lose the Ego",
+    "page": 160
+  },
+  {
+    "level": 3,
+    "title": "Be a Zen Master",
+    "page": 162
+  },
+  {
+    "level": 3,
+    "title": "Be a Catalyst",
+    "page": 165
+  },
+  {
+    "level": 3,
+    "title": "Remove Roadblocks",
+    "page": 165
+  },
+  {
+    "level": 3,
+    "title": "Be a Teacher and a Mentor",
+    "page": 166
+  },
+  {
+    "level": 3,
+    "title": "Set Clear Goals",
+    "page": 167
+  },
+  {
+    "level": 3,
+    "title": "Be Honest",
+    "page": 168
+  },
+  {
+    "level": 3,
+    "title": "Track Happiness",
+    "page": 171
+  },
+  {
+    "level": 2,
+    "title": "The Unexpected Question",
+    "page": 172
+  },
+  {
+    "level": 2,
+    "title": "Other Tips and Tricks",
+    "page": 174
+  },
+  {
+    "level": 2,
+    "title": "People Are Like Plants",
+    "page": 177
+  },
+  {
+    "level": 3,
+    "title": "Intrinsic Versus Extrinsic Motivation",
+    "page": 178
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 180
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 180
+  },
+  {
+    "level": 1,
+    "title": "6. Leading at Scale",
+    "page": 182
+  },
+  {
+    "level": 2,
+    "title": "Always Be Deciding",
+    "page": 183
+  },
+  {
+    "level": 3,
+    "title": "The Parable of the Airplane",
+    "page": 183
+  },
+  {
+    "level": 3,
+    "title": "Identify the Blinders",
+    "page": 186
+  },
+  {
+    "level": 3,
+    "title": "Identify the Key Trade-Offs",
+    "page": 186
+  },
+  {
+    "level": 3,
+    "title": "Decide, Then Iterate",
+    "page": 187
+  },
+  {
+    "level": 2,
+    "title": "Always Be Leaving",
+    "page": 191
+  },
+  {
+    "level": 3,
+    "title": "Your Mission: Build a “Self-Driving” Team",
+    "page": 192
+  },
+  {
+    "level": 3,
+    "title": "Dividing the Problem Space",
+    "page": 192
+  },
+  {
+    "level": 2,
+    "title": "Always Be Scaling",
+    "page": 197
+  },
+  {
+    "level": 3,
+    "title": "The Cycle of Success",
+    "page": 198
+  },
+  {
+    "level": 3,
+    "title": "Important Versus Urgent",
+    "page": 200
+  },
+  {
+    "level": 3,
+    "title": "Learn to Drop Balls",
+    "page": 203
+  },
+  {
+    "level": 3,
+    "title": "Protecting Your Energy",
+    "page": 205
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 207
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 207
+  },
+  {
+    "level": 1,
+    "title": "7. Measuring Engineering Productivity",
+    "page": 209
+  },
+  {
+    "level": 2,
+    "title": "Why Should We Measure Engineering Productivity?",
+    "page": 209
+  },
+  {
+    "level": 2,
+    "title": "Triage: Is It Even Worth Measuring?",
+    "page": 212
+  },
+  {
+    "level": 2,
+    "title": "Selecting Meaningful Metrics with Goals and Signals",
+    "page": 218
+  },
+  {
+    "level": 2,
+    "title": "Goals",
+    "page": 219
+  },
+  {
+    "level": 2,
+    "title": "Signals",
+    "page": 222
+  },
+  {
+    "level": 2,
+    "title": "Metrics",
+    "page": 223
+  },
+  {
+    "level": 2,
+    "title": "Using Data to Validate Metrics",
+    "page": 224
+  },
+  {
+    "level": 2,
+    "title": "Taking Action and Tracking Results",
+    "page": 232
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 232
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 233
+  },
+  {
+    "level": 1,
+    "title": "III. Processes",
+    "page": 236
+  },
+  {
+    "level": 1,
+    "title": "8. Style Guides and Rules",
+    "page": 237
+  },
+  {
+    "level": 2,
+    "title": "Why Have Rules?",
+    "page": 239
+  },
+  {
+    "level": 2,
+    "title": "Creating the Rules",
+    "page": 240
+  },
+  {
+    "level": 3,
+    "title": "Guiding Principles",
+    "page": 240
+  },
+  {
+    "level": 3,
+    "title": "The Style Guide",
+    "page": 253
+  },
+  {
+    "level": 2,
+    "title": "Changing the Rules",
+    "page": 258
+  },
+  {
+    "level": 3,
+    "title": "The Process",
+    "page": 261
+  },
+  {
+    "level": 3,
+    "title": "The Style Arbiters",
+    "page": 262
+  },
+  {
+    "level": 3,
+    "title": "Exceptions",
+    "page": 263
+  },
+  {
+    "level": 2,
+    "title": "Guidance",
+    "page": 264
+  },
+  {
+    "level": 2,
+    "title": "Applying the Rules",
+    "page": 266
+  },
+  {
+    "level": 3,
+    "title": "Error Checkers",
+    "page": 270
+  },
+  {
+    "level": 3,
+    "title": "Code Formatters",
+    "page": 270
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 273
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 274
+  },
+  {
+    "level": 1,
+    "title": "9. Code Review",
+    "page": 276
+  },
+  {
+    "level": 2,
+    "title": "Code Review Flow",
+    "page": 277
+  },
+  {
+    "level": 2,
+    "title": "How Code Review Works at Google",
+    "page": 280
+  },
+  {
+    "level": 2,
+    "title": "Code Review Benefits",
+    "page": 284
+  },
+  {
+    "level": 3,
+    "title": "Code Correctness",
+    "page": 286
+  },
+  {
+    "level": 3,
+    "title": "Comprehension of Code",
+    "page": 288
+  },
+  {
+    "level": 3,
+    "title": "Code Consistency",
+    "page": 289
+  },
+  {
+    "level": 3,
+    "title": "Psychological and Cultural Benefits",
+    "page": 290
+  },
+  {
+    "level": 3,
+    "title": "Knowledge Sharing",
+    "page": 292
+  },
+  {
+    "level": 2,
+    "title": "Code Review Best Practices",
+    "page": 294
+  },
+  {
+    "level": 3,
+    "title": "Be Polite and Professional",
+    "page": 294
+  },
+  {
+    "level": 3,
+    "title": "Write Small Changes",
+    "page": 296
+  },
+  {
+    "level": 3,
+    "title": "Write Good Change Descriptions",
+    "page": 298
+  },
+  {
+    "level": 3,
+    "title": "Keep Reviewers to a Minimum",
+    "page": 299
+  },
+  {
+    "level": 3,
+    "title": "Automate Where Possible",
+    "page": 300
+  },
+  {
+    "level": 2,
+    "title": "Types of Code Reviews",
+    "page": 300
+  },
+  {
+    "level": 3,
+    "title": "Greenfield Code Reviews",
+    "page": 301
+  },
+  {
+    "level": 3,
+    "title": "Behavioral Changes, Improvements, and Optimizations",
+    "page": 302
+  },
+  {
+    "level": 3,
+    "title": "Bug Fixes and Rollbacks",
+    "page": 302
+  },
+  {
+    "level": 3,
+    "title": "Refactorings and Large-Scale Changes",
+    "page": 304
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 305
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 305
+  },
+  {
+    "level": 1,
+    "title": "10. Documentation",
+    "page": 307
+  },
+  {
+    "level": 2,
+    "title": "What Qualifies as Documentation?",
+    "page": 308
+  },
+  {
+    "level": 2,
+    "title": "Why Is Documentation Needed?",
+    "page": 308
+  },
+  {
+    "level": 2,
+    "title": "Documentation Is Like Code",
+    "page": 311
+  },
+  {
+    "level": 2,
+    "title": "Know Your Audience",
+    "page": 316
+  },
+  {
+    "level": 3,
+    "title": "Types of Audiences",
+    "page": 317
+  },
+  {
+    "level": 2,
+    "title": "Documentation Types",
+    "page": 319
+  },
+  {
+    "level": 3,
+    "title": "Reference Documentation",
+    "page": 320
+  },
+  {
+    "level": 3,
+    "title": "Design Docs",
+    "page": 325
+  },
+  {
+    "level": 3,
+    "title": "Tutorials",
+    "page": 326
+  },
+  {
+    "level": 3,
+    "title": "Conceptual Documentation",
+    "page": 329
+  },
+  {
+    "level": 3,
+    "title": "Landing Pages",
+    "page": 330
+  },
+  {
+    "level": 2,
+    "title": "Documentation Reviews",
+    "page": 331
+  },
+  {
+    "level": 2,
+    "title": "Documentation Philosophy",
+    "page": 335
+  },
+  {
+    "level": 3,
+    "title": "WHO, WHAT, WHEN, WHERE, and WHY",
+    "page": 335
+  },
+  {
+    "level": 3,
+    "title": "The Beginning, Middle, and End",
+    "page": 336
+  },
+  {
+    "level": 3,
+    "title": "The Parameters of Good Documentation",
+    "page": 337
+  },
+  {
+    "level": 3,
+    "title": "Deprecating Documents",
+    "page": 339
+  },
+  {
+    "level": 2,
+    "title": "When Do You Need Technical Writers?",
+    "page": 340
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 341
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 342
+  },
+  {
+    "level": 1,
+    "title": "11. Testing Overview",
+    "page": 343
+  },
+  {
+    "level": 2,
+    "title": "Why Do We Write Tests?",
+    "page": 344
+  },
+  {
+    "level": 3,
+    "title": "The Story of Google Web Server",
+    "page": 345
+  },
+  {
+    "level": 3,
+    "title": "Testing at the Speed of Modern Development",
+    "page": 347
+  },
+  {
+    "level": 3,
+    "title": "Write, Run, React",
+    "page": 350
+  },
+  {
+    "level": 3,
+    "title": "Benefits of Testing Code",
+    "page": 352
+  },
+  {
+    "level": 2,
+    "title": "Designing a Test Suite",
+    "page": 354
+  },
+  {
+    "level": 3,
+    "title": "Test Size",
+    "page": 355
+  },
+  {
+    "level": 3,
+    "title": "Test Scope",
+    "page": 362
+  },
+  {
+    "level": 3,
+    "title": "The Beyoncé Rule",
+    "page": 366
+  },
+  {
+    "level": 3,
+    "title": "A Note on Code Coverage",
+    "page": 367
+  },
+  {
+    "level": 2,
+    "title": "Testing at Google Scale",
+    "page": 368
+  },
+  {
+    "level": 3,
+    "title": "The Pitfalls of a Large Test Suite",
+    "page": 370
+  },
+  {
+    "level": 2,
+    "title": "History of Testing at Google",
+    "page": 372
+  },
+  {
+    "level": 3,
+    "title": "Orientation Classes",
+    "page": 373
+  },
+  {
+    "level": 3,
+    "title": "Test Certified",
+    "page": 374
+  },
+  {
+    "level": 3,
+    "title": "Testing on the Toilet",
+    "page": 375
+  },
+  {
+    "level": 3,
+    "title": "Testing Culture Today",
+    "page": 377
+  },
+  {
+    "level": 2,
+    "title": "The Limits of Automated Testing",
+    "page": 378
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 379
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 380
+  },
+  {
+    "level": 1,
+    "title": "12. Unit Testing",
+    "page": 382
+  },
+  {
+    "level": 2,
+    "title": "The Importance of Maintainability",
+    "page": 383
+  },
+  {
+    "level": 2,
+    "title": "Preventing Brittle Tests",
+    "page": 385
+  },
+  {
+    "level": 3,
+    "title": "Strive for Unchanging Tests",
+    "page": 385
+  },
+  {
+    "level": 3,
+    "title": "Test via Public APIs",
+    "page": 387
+  },
+  {
+    "level": 3,
+    "title": "Test State, Not Interactions",
+    "page": 392
+  },
+  {
+    "level": 2,
+    "title": "Writing Clear Tests",
+    "page": 394
+  },
+  {
+    "level": 3,
+    "title": "Make Your Tests Complete and Concise",
+    "page": 395
+  },
+  {
+    "level": 3,
+    "title": "Test Behaviors, Not Methods",
+    "page": 397
+  },
+  {
+    "level": 3,
+    "title": "Don’t Put Logic in Tests",
+    "page": 403
+  },
+  {
+    "level": 3,
+    "title": "Write Clear Failure Messages",
+    "page": 405
+  },
+  {
+    "level": 2,
+    "title": "Tests and Code Sharing: DAMP, Not DRY",
+    "page": 407
+  },
+  {
+    "level": 3,
+    "title": "Shared Values",
+    "page": 410
+  },
+  {
+    "level": 3,
+    "title": "Shared Setup",
+    "page": 412
+  },
+  {
+    "level": 3,
+    "title": "Shared Helpers and Validation",
+    "page": 414
+  },
+  {
+    "level": 3,
+    "title": "Defining Test Infrastructure",
+    "page": 415
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 416
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 417
+  },
+  {
+    "level": 1,
+    "title": "13. Test Doubles",
+    "page": 419
+  },
+  {
+    "level": 2,
+    "title": "The Impact of Test Doubles on Software Development",
+    "page": 420
+  },
+  {
+    "level": 2,
+    "title": "Test Doubles at Google",
+    "page": 421
+  },
+  {
+    "level": 2,
+    "title": "Basic Concepts",
+    "page": 422
+  },
+  {
+    "level": 3,
+    "title": "An Example Test Double",
+    "page": 422
+  },
+  {
+    "level": 3,
+    "title": "Seams",
+    "page": 424
+  },
+  {
+    "level": 3,
+    "title": "Mocking Frameworks",
+    "page": 425
+  },
+  {
+    "level": 2,
+    "title": "Techniques for Using Test Doubles",
+    "page": 427
+  },
+  {
+    "level": 3,
+    "title": "Faking",
+    "page": 427
+  },
+  {
+    "level": 3,
+    "title": "Stubbing",
+    "page": 428
+  },
+  {
+    "level": 3,
+    "title": "Interaction Testing",
+    "page": 429
+  },
+  {
+    "level": 2,
+    "title": "Real Implementations",
+    "page": 430
+  },
+  {
+    "level": 3,
+    "title": "Prefer Realism Over Isolation",
+    "page": 430
+  },
+  {
+    "level": 3,
+    "title": "How to Decide When to Use a Real Implementation",
+    "page": 433
+  },
+  {
+    "level": 2,
+    "title": "Faking",
+    "page": 437
+  },
+  {
+    "level": 3,
+    "title": "Why Are Fakes Important?",
+    "page": 438
+  },
+  {
+    "level": 3,
+    "title": "When Should Fakes Be Written?",
+    "page": 438
+  },
+  {
+    "level": 3,
+    "title": "The Fidelity of Fakes",
+    "page": 439
+  },
+  {
+    "level": 3,
+    "title": "Fakes Should Be Tested",
+    "page": 441
+  },
+  {
+    "level": 3,
+    "title": "What to Do If a Fake Is Not Available",
+    "page": 441
+  },
+  {
+    "level": 2,
+    "title": "Stubbing",
+    "page": 442
+  },
+  {
+    "level": 3,
+    "title": "The Dangers of Overusing Stubbing",
+    "page": 443
+  },
+  {
+    "level": 3,
+    "title": "When Is Stubbing Appropriate?",
+    "page": 445
+  },
+  {
+    "level": 2,
+    "title": "Interaction Testing",
+    "page": 446
+  },
+  {
+    "level": 3,
+    "title": "Prefer State Testing Over Interaction Testing",
+    "page": 446
+  },
+  {
+    "level": 3,
+    "title": "When Is Interaction Testing Appropriate?",
+    "page": 448
+  },
+  {
+    "level": 3,
+    "title": "Best Practices for Interaction Testing",
+    "page": 449
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 452
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 453
+  },
+  {
+    "level": 1,
+    "title": "14. Larger Testing",
+    "page": 454
+  },
+  {
+    "level": 2,
+    "title": "What Are Larger Tests?",
+    "page": 454
+  },
+  {
+    "level": 3,
+    "title": "Fidelity",
+    "page": 455
+  },
+  {
+    "level": 3,
+    "title": "Common Gaps in Unit Tests",
+    "page": 456
+  },
+  {
+    "level": 3,
+    "title": "Why Not Have Larger Tests?",
+    "page": 460
+  },
+  {
+    "level": 2,
+    "title": "Larger Tests at Google",
+    "page": 461
+  },
+  {
+    "level": 3,
+    "title": "Larger Tests and Time",
+    "page": 462
+  },
+  {
+    "level": 3,
+    "title": "Larger Tests at Google Scale",
+    "page": 465
+  },
+  {
+    "level": 2,
+    "title": "Structure of a Large Test",
+    "page": 468
+  },
+  {
+    "level": 3,
+    "title": "The System Under Test",
+    "page": 469
+  },
+  {
+    "level": 3,
+    "title": "Test Data",
+    "page": 477
+  },
+  {
+    "level": 3,
+    "title": "Verification",
+    "page": 478
+  },
+  {
+    "level": 2,
+    "title": "Types of Larger Tests",
+    "page": 479
+  },
+  {
+    "level": 3,
+    "title": "Functional Testing of One or More Interacting Binaries",
+    "page": 480
+  },
+  {
+    "level": 3,
+    "title": "Browser and Device Testing",
+    "page": 481
+  },
+  {
+    "level": 3,
+    "title": "Performance, Load, and Stress testing",
+    "page": 481
+  },
+  {
+    "level": 3,
+    "title": "Deployment Configuration Testing",
+    "page": 483
+  },
+  {
+    "level": 3,
+    "title": "Exploratory Testing",
+    "page": 483
+  },
+  {
+    "level": 3,
+    "title": "A/B Diff Regression Testing",
+    "page": 484
+  },
+  {
+    "level": 3,
+    "title": "UAT",
+    "page": 486
+  },
+  {
+    "level": 3,
+    "title": "Probers and Canary Analysis",
+    "page": 487
+  },
+  {
+    "level": 3,
+    "title": "Disaster Recovery and Chaos Engineering",
+    "page": 489
+  },
+  {
+    "level": 3,
+    "title": "User Evaluation",
+    "page": 490
+  },
+  {
+    "level": 2,
+    "title": "Large Tests and the Developer Workflow",
+    "page": 492
+  },
+  {
+    "level": 3,
+    "title": "Authoring Large Tests",
+    "page": 493
+  },
+  {
+    "level": 3,
+    "title": "Running Large Tests",
+    "page": 494
+  },
+  {
+    "level": 3,
+    "title": "Owning Large Tests",
+    "page": 498
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 499
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 500
+  },
+  {
+    "level": 1,
+    "title": "15. Deprecation",
+    "page": 501
+  },
+  {
+    "level": 2,
+    "title": "Why Deprecate?",
+    "page": 502
+  },
+  {
+    "level": 2,
+    "title": "Why Is Deprecation So Hard?",
+    "page": 505
+  },
+  {
+    "level": 3,
+    "title": "Deprecation During Design",
+    "page": 507
+  },
+  {
+    "level": 2,
+    "title": "Types of Deprecation",
+    "page": 509
+  },
+  {
+    "level": 3,
+    "title": "Advisory Deprecation",
+    "page": 509
+  },
+  {
+    "level": 3,
+    "title": "Compulsory Deprecation",
+    "page": 511
+  },
+  {
+    "level": 3,
+    "title": "Deprecation Warnings",
+    "page": 513
+  },
+  {
+    "level": 2,
+    "title": "Managing the Deprecation Process",
+    "page": 515
+  },
+  {
+    "level": 3,
+    "title": "Process Owners",
+    "page": 515
+  },
+  {
+    "level": 3,
+    "title": "Milestones",
+    "page": 516
+  },
+  {
+    "level": 3,
+    "title": "Deprecation Tooling",
+    "page": 517
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 519
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 520
+  },
+  {
+    "level": 1,
+    "title": "IV. Tools",
+    "page": 522
+  },
+  {
+    "level": 1,
+    "title": "16. Version Control and Branch Management",
+    "page": 523
+  },
+  {
+    "level": 2,
+    "title": "What Is Version Control?",
+    "page": 523
+  },
+  {
+    "level": 3,
+    "title": "Why Is Version Control Important?",
+    "page": 526
+  },
+  {
+    "level": 3,
+    "title": "Centralized VCS Versus Distributed VCS",
+    "page": 530
+  },
+  {
+    "level": 3,
+    "title": "Source of Truth",
+    "page": 534
+  },
+  {
+    "level": 3,
+    "title": "Version Control Versus Dependency Management",
+    "page": 537
+  },
+  {
+    "level": 2,
+    "title": "Branch Management",
+    "page": 537
+  },
+  {
+    "level": 3,
+    "title": "Work in Progress Is Akin to a Branch",
+    "page": 537
+  },
+  {
+    "level": 3,
+    "title": "Dev Branches",
+    "page": 539
+  },
+  {
+    "level": 3,
+    "title": "Release Branches",
+    "page": 541
+  },
+  {
+    "level": 2,
+    "title": "Version Control at Google",
+    "page": 543
+  },
+  {
+    "level": 3,
+    "title": "One Version",
+    "page": 544
+  },
+  {
+    "level": 3,
+    "title": "Scenario: Multiple Available Versions",
+    "page": 545
+  },
+  {
+    "level": 3,
+    "title": "The “One-Version” Rule",
+    "page": 547
+  },
+  {
+    "level": 3,
+    "title": "(Nearly) No Long-Lived Branches",
+    "page": 547
+  },
+  {
+    "level": 3,
+    "title": "What About Release Branches?",
+    "page": 550
+  },
+  {
+    "level": 2,
+    "title": "Monorepos",
+    "page": 551
+  },
+  {
+    "level": 2,
+    "title": "Future of Version Control",
+    "page": 553
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 556
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 557
+  },
+  {
+    "level": 1,
+    "title": "17. Code Search",
+    "page": 561
+  },
+  {
+    "level": 2,
+    "title": "The Code Search UI",
+    "page": 562
+  },
+  {
+    "level": 2,
+    "title": "How Do Googlers Use Code Search?",
+    "page": 564
+  },
+  {
+    "level": 3,
+    "title": "Where?",
+    "page": 564
+  },
+  {
+    "level": 3,
+    "title": "What?",
+    "page": 565
+  },
+  {
+    "level": 3,
+    "title": "How?",
+    "page": 565
+  },
+  {
+    "level": 3,
+    "title": "Why?",
+    "page": 566
+  },
+  {
+    "level": 3,
+    "title": "Who and When?",
+    "page": 566
+  },
+  {
+    "level": 2,
+    "title": "Why a Separate Web Tool?",
+    "page": 566
+  },
+  {
+    "level": 3,
+    "title": "Scale",
+    "page": 566
+  },
+  {
+    "level": 3,
+    "title": "Zero Setup Global Code View",
+    "page": 568
+  },
+  {
+    "level": 3,
+    "title": "Specialization",
+    "page": 568
+  },
+  {
+    "level": 3,
+    "title": "Integration with Other Developer Tools",
+    "page": 568
+  },
+  {
+    "level": 3,
+    "title": "API Exposure",
+    "page": 571
+  },
+  {
+    "level": 2,
+    "title": "Impact of Scale on Design",
+    "page": 571
+  },
+  {
+    "level": 3,
+    "title": "Search Query Latency",
+    "page": 572
+  },
+  {
+    "level": 3,
+    "title": "Index Latency",
+    "page": 574
+  },
+  {
+    "level": 2,
+    "title": "Google’s Implementation",
+    "page": 575
+  },
+  {
+    "level": 3,
+    "title": "Search Index",
+    "page": 575
+  },
+  {
+    "level": 3,
+    "title": "Ranking",
+    "page": 577
+  },
+  {
+    "level": 2,
+    "title": "Selected Trade-Offs",
+    "page": 582
+  },
+  {
+    "level": 3,
+    "title": "Completeness: Repository at Head",
+    "page": 582
+  },
+  {
+    "level": 3,
+    "title": "Completeness: All Versus Most-Relevant Results",
+    "page": 583
+  },
+  {
+    "level": 3,
+    "title": "Completeness: Head Versus Branches Versus All History Versus Workspaces",
+    "page": 585
+  },
+  {
+    "level": 3,
+    "title": "Expressiveness: Token Versus Substring Versus Regex",
+    "page": 586
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 588
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 589
+  },
+  {
+    "level": 1,
+    "title": "18. Build Systems and Build Philosophy",
+    "page": 592
+  },
+  {
+    "level": 2,
+    "title": "Purpose of a Build System",
+    "page": 592
+  },
+  {
+    "level": 2,
+    "title": "What Happens Without a Build System?",
+    "page": 594
+  },
+  {
+    "level": 3,
+    "title": "But All I Need Is a Compiler!",
+    "page": 594
+  },
+  {
+    "level": 3,
+    "title": "Shell Scripts to the Rescue?",
+    "page": 596
+  },
+  {
+    "level": 2,
+    "title": "Modern Build Systems",
+    "page": 598
+  },
+  {
+    "level": 3,
+    "title": "It’s All About Dependencies",
+    "page": 599
+  },
+  {
+    "level": 3,
+    "title": "Task-Based Build Systems",
+    "page": 599
+  },
+  {
+    "level": 3,
+    "title": "Artifact-Based Build Systems",
+    "page": 606
+  },
+  {
+    "level": 3,
+    "title": "Distributed Builds",
+    "page": 617
+  },
+  {
+    "level": 3,
+    "title": "Time, Scale, Trade-Offs",
+    "page": 623
+  },
+  {
+    "level": 2,
+    "title": "Dealing with Modules and Dependencies",
+    "page": 625
+  },
+  {
+    "level": 3,
+    "title": "Using Fine-Grained Modules and the 1:1:1 Rule",
+    "page": 625
+  },
+  {
+    "level": 3,
+    "title": "Minimizing Module Visibility",
+    "page": 626
+  },
+  {
+    "level": 3,
+    "title": "Managing Dependencies",
+    "page": 627
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 635
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 636
+  },
+  {
+    "level": 1,
+    "title": "19. Critique: Google’s Code Review Tool",
+    "page": 638
+  },
+  {
+    "level": 2,
+    "title": "Code Review Tooling Principles",
+    "page": 638
+  },
+  {
+    "level": 2,
+    "title": "Code Review Flow",
+    "page": 640
+  },
+  {
+    "level": 3,
+    "title": "Notifications",
+    "page": 643
+  },
+  {
+    "level": 2,
+    "title": "Stage 1: Create a Change",
+    "page": 643
+  },
+  {
+    "level": 3,
+    "title": "Diffing",
+    "page": 644
+  },
+  {
+    "level": 3,
+    "title": "Analysis Results",
+    "page": 646
+  },
+  {
+    "level": 3,
+    "title": "Tight Tool Integration",
+    "page": 648
+  },
+  {
+    "level": 2,
+    "title": "Stage 2: Request Review",
+    "page": 649
+  },
+  {
+    "level": 2,
+    "title": "Stages 3 and 4: Understanding and Commenting on a Change",
+    "page": 652
+  },
+  {
+    "level": 3,
+    "title": "Commenting",
+    "page": 652
+  },
+  {
+    "level": 3,
+    "title": "Understanding the State of a Change",
+    "page": 654
+  },
+  {
+    "level": 2,
+    "title": "Stage 5: Change Approvals (Scoring a Change)",
+    "page": 657
+  },
+  {
+    "level": 2,
+    "title": "Stage 6: Commiting a Change",
+    "page": 659
+  },
+  {
+    "level": 3,
+    "title": "After Commit: Tracking History",
+    "page": 659
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 662
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 663
+  },
+  {
+    "level": 1,
+    "title": "20. Static Analysis",
+    "page": 665
+  },
+  {
+    "level": 2,
+    "title": "Characteristics of Effective Static Analysis",
+    "page": 666
+  },
+  {
+    "level": 3,
+    "title": "Scalability",
+    "page": 666
+  },
+  {
+    "level": 3,
+    "title": "Usability",
+    "page": 667
+  },
+  {
+    "level": 2,
+    "title": "Key Lessons in Making Static Analysis Work",
+    "page": 668
+  },
+  {
+    "level": 3,
+    "title": "Focus on Developer Happiness",
+    "page": 668
+  },
+  {
+    "level": 3,
+    "title": "Make Static Analysis a Part of the Core Developer Workflow",
+    "page": 669
+  },
+  {
+    "level": 3,
+    "title": "Empower Users to Contribute",
+    "page": 670
+  },
+  {
+    "level": 2,
+    "title": "Tricorder: Google’s Static Analysis Platform",
+    "page": 671
+  },
+  {
+    "level": 3,
+    "title": "Integrated Tools",
+    "page": 673
+  },
+  {
+    "level": 3,
+    "title": "Integrated Feedback Channels",
+    "page": 674
+  },
+  {
+    "level": 3,
+    "title": "Suggested Fixes",
+    "page": 675
+  },
+  {
+    "level": 3,
+    "title": "Per-Project Customization",
+    "page": 676
+  },
+  {
+    "level": 3,
+    "title": "Presubmits",
+    "page": 678
+  },
+  {
+    "level": 3,
+    "title": "Compiler Integration",
+    "page": 679
+  },
+  {
+    "level": 3,
+    "title": "Analysis While Editing and Browsing Code",
+    "page": 680
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 681
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 682
+  },
+  {
+    "level": 1,
+    "title": "21. Dependency Management",
+    "page": 684
+  },
+  {
+    "level": 2,
+    "title": "Why Is Dependency Management So Difficult?",
+    "page": 687
+  },
+  {
+    "level": 3,
+    "title": "Conflicting Requirements and Diamond Dependencies",
+    "page": 687
+  },
+  {
+    "level": 2,
+    "title": "Importing Dependencies",
+    "page": 691
+  },
+  {
+    "level": 3,
+    "title": "Compatibility Promises",
+    "page": 691
+  },
+  {
+    "level": 3,
+    "title": "Considerations When Importing",
+    "page": 695
+  },
+  {
+    "level": 3,
+    "title": "How Google Handles Importing Dependendencies",
+    "page": 697
+  },
+  {
+    "level": 2,
+    "title": "Dependency Management, In Theory",
+    "page": 700
+  },
+  {
+    "level": 3,
+    "title": "Nothing Changes (aka The Static Dependency Model)",
+    "page": 702
+  },
+  {
+    "level": 3,
+    "title": "Semantic Versioning",
+    "page": 703
+  },
+  {
+    "level": 3,
+    "title": "Bundled Distribution Models",
+    "page": 705
+  },
+  {
+    "level": 3,
+    "title": "Live at Head",
+    "page": 706
+  },
+  {
+    "level": 2,
+    "title": "The Limitations of SemVer",
+    "page": 708
+  },
+  {
+    "level": 3,
+    "title": "SemVer Might Overconstrain",
+    "page": 710
+  },
+  {
+    "level": 3,
+    "title": "SemVer Might Overpromise",
+    "page": 710
+  },
+  {
+    "level": 3,
+    "title": "Motivations",
+    "page": 712
+  },
+  {
+    "level": 3,
+    "title": "Minimum Version Selection",
+    "page": 714
+  },
+  {
+    "level": 3,
+    "title": "So, Does SemVer Work?",
+    "page": 716
+  },
+  {
+    "level": 2,
+    "title": "Dependency Management with Infinite Resources",
+    "page": 717
+  },
+  {
+    "level": 3,
+    "title": "Exporting Dependencies",
+    "page": 721
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 728
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 729
+  },
+  {
+    "level": 1,
+    "title": "22. Large-Scale Changes",
+    "page": 733
+  },
+  {
+    "level": 2,
+    "title": "What Is a Large-Scale Change?",
+    "page": 734
+  },
+  {
+    "level": 2,
+    "title": "Who Deals with LSCs?",
+    "page": 736
+  },
+  {
+    "level": 2,
+    "title": "Barriers to Atomic Changes",
+    "page": 739
+  },
+  {
+    "level": 3,
+    "title": "Technical Limitations",
+    "page": 739
+  },
+  {
+    "level": 3,
+    "title": "Merge Conflicts",
+    "page": 740
+  },
+  {
+    "level": 3,
+    "title": "No Haunted Graveyards",
+    "page": 740
+  },
+  {
+    "level": 3,
+    "title": "Heterogeneity",
+    "page": 742
+  },
+  {
+    "level": 3,
+    "title": "Testing",
+    "page": 743
+  },
+  {
+    "level": 3,
+    "title": "Code Review",
+    "page": 746
+  },
+  {
+    "level": 2,
+    "title": "LSC Infrastructure",
+    "page": 748
+  },
+  {
+    "level": 3,
+    "title": "Policies and Culture",
+    "page": 749
+  },
+  {
+    "level": 3,
+    "title": "Codebase Insight",
+    "page": 750
+  },
+  {
+    "level": 3,
+    "title": "Change Management",
+    "page": 751
+  },
+  {
+    "level": 3,
+    "title": "Testing",
+    "page": 752
+  },
+  {
+    "level": 3,
+    "title": "Language Support",
+    "page": 752
+  },
+  {
+    "level": 2,
+    "title": "The LSC Process",
+    "page": 755
+  },
+  {
+    "level": 3,
+    "title": "Authorization",
+    "page": 755
+  },
+  {
+    "level": 3,
+    "title": "Change Creation",
+    "page": 756
+  },
+  {
+    "level": 3,
+    "title": "Sharding and Submitting",
+    "page": 757
+  },
+  {
+    "level": 3,
+    "title": "Cleanup",
+    "page": 762
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 763
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 763
+  },
+  {
+    "level": 1,
+    "title": "23. Continuous Integration",
+    "page": 766
+  },
+  {
+    "level": 2,
+    "title": "CI Concepts",
+    "page": 768
+  },
+  {
+    "level": 3,
+    "title": "Fast Feedback Loops",
+    "page": 768
+  },
+  {
+    "level": 3,
+    "title": "Automation",
+    "page": 771
+  },
+  {
+    "level": 3,
+    "title": "Continuous Testing",
+    "page": 774
+  },
+  {
+    "level": 3,
+    "title": "CI Challenges",
+    "page": 782
+  },
+  {
+    "level": 3,
+    "title": "Hermetic Testing",
+    "page": 785
+  },
+  {
+    "level": 2,
+    "title": "CI at Google",
+    "page": 789
+  },
+  {
+    "level": 3,
+    "title": "CI Case Study: Google Takeout",
+    "page": 795
+  },
+  {
+    "level": 3,
+    "title": "But I Can’t Afford CI",
+    "page": 804
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 805
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 805
+  },
+  {
+    "level": 1,
+    "title": "24. Continuous Delivery",
+    "page": 808
+  },
+  {
+    "level": 2,
+    "title": "Idioms of Continuous Delivery at Google",
+    "page": 809
+  },
+  {
+    "level": 2,
+    "title": "Velocity Is a Team Sport: How to Break Up a Deployment into Manageable Pieces",
+    "page": 811
+  },
+  {
+    "level": 2,
+    "title": "Evaluating Changes in Isolation: Flag-Guarding Features",
+    "page": 813
+  },
+  {
+    "level": 2,
+    "title": "Striving for Agility: Setting Up a Release Train",
+    "page": 814
+  },
+  {
+    "level": 3,
+    "title": "No Binary Is Perfect",
+    "page": 815
+  },
+  {
+    "level": 3,
+    "title": "Meet Your Release Deadline",
+    "page": 816
+  },
+  {
+    "level": 2,
+    "title": "Quality and User-Focus: Ship Only What Gets Used",
+    "page": 817
+  },
+  {
+    "level": 2,
+    "title": "Shifting Left: Making Data-Driven Decisions Earlier",
+    "page": 819
+  },
+  {
+    "level": 2,
+    "title": "Changing Team Culture: Building Discipline into Deployment",
+    "page": 821
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 822
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 823
+  },
+  {
+    "level": 1,
+    "title": "25. Compute as a Service",
+    "page": 825
+  },
+  {
+    "level": 2,
+    "title": "Taming the Compute Environment",
+    "page": 826
+  },
+  {
+    "level": 3,
+    "title": "Automation of Toil",
+    "page": 826
+  },
+  {
+    "level": 3,
+    "title": "Containerization and Multitenancy",
+    "page": 830
+  },
+  {
+    "level": 3,
+    "title": "Summary",
+    "page": 833
+  },
+  {
+    "level": 2,
+    "title": "Writing Software for Managed Compute",
+    "page": 834
+  },
+  {
+    "level": 3,
+    "title": "Architecting for Failure",
+    "page": 834
+  },
+  {
+    "level": 3,
+    "title": "Batch Versus Serving",
+    "page": 837
+  },
+  {
+    "level": 3,
+    "title": "Managing State",
+    "page": 839
+  },
+  {
+    "level": 3,
+    "title": "Connecting to a Service",
+    "page": 841
+  },
+  {
+    "level": 3,
+    "title": "One-Off Code",
+    "page": 842
+  },
+  {
+    "level": 2,
+    "title": "CaaS Over Time and Scale",
+    "page": 844
+  },
+  {
+    "level": 3,
+    "title": "Containers as an Abstraction",
+    "page": 844
+  },
+  {
+    "level": 3,
+    "title": "One Service to Rule Them All",
+    "page": 848
+  },
+  {
+    "level": 3,
+    "title": "Submitted Configuration",
+    "page": 852
+  },
+  {
+    "level": 2,
+    "title": "Choosing a Compute Service",
+    "page": 853
+  },
+  {
+    "level": 3,
+    "title": "Centralization Versus Customization",
+    "page": 855
+  },
+  {
+    "level": 3,
+    "title": "Level of Abstraction: Serverless",
+    "page": 858
+  },
+  {
+    "level": 3,
+    "title": "Public Versus Private",
+    "page": 864
+  },
+  {
+    "level": 2,
+    "title": "Conclusion",
+    "page": 867
+  },
+  {
+    "level": 2,
+    "title": "TL;DRs",
+    "page": 868
+  },
+  {
+    "level": 1,
+    "title": "V. Conclusion",
+    "page": 871
+  },
+  {
+    "level": 1,
+    "title": "Afterword",
+    "page": 872
+  },
+  {
+    "level": 1,
+    "title": "Index",
+    "page": 874
+  }
+]

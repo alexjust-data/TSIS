@@ -1,0 +1,69 @@
+{
+  "scope_id": "event_state_request_contract_design_scope_v0_1",
+  "authorization_id": "event_state_request_contract_design_authorization_v0_1",
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+  "date": "2026-07-27",
+  "parent_gate": "event_state_on_demand_capability_design_v0_1",
+  "target_design_gate": "event_state_request_contract_design_v0_1",
+  "target_contract": "event_state_request_contract_v0_1",
+  "design_scope": {
+    "request_type": "event_state",
+    "event_state_profile_id": "event_state_core_four_intraday_profile_v0_1",
+    "event_state_profile_status_required": "OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS",
+    "accepted_event_type_ids_allowed_for_v0_1": [
+      "event_type:market_data:session_opened"
+    ],
+    "accepted_subject_scope": "exchange_session",
+    "halt_resumed_allowed": false,
+    "event_detection_allowed": false,
+    "market_state_dependency_mode_required": "emit_or_resolve_market_state_subrequest_through_runtime_capability",
+    "source_market_state_runtime_capability_id": "market_state_on_demand_runtime_capability_v0_1",
+    "source_market_state_consumption_policy_required": "market_state_capability_consumption_policy_v0_1",
+    "official_market_state_dataset_required": false
+  },
+  "authorized_outputs": [
+    "event_state_request_contract_design_authorization_v0_1.md",
+    "configs/event_state_request_contract_design_scope_v0_1.json",
+    "event_state_request_contract_design_v0_1.md",
+    "event_state_request_contract_v0_1.json",
+    "event_state_request_contract_design_readout_v0_1.md"
+  ],
+  "hard_boundaries": {
+    "event_state_request_records_created_allowed": false,
+    "event_state_request_execution_allowed": false,
+    "event_state_dependency_resolution_execution_allowed": false,
+    "event_detection_allowed": false,
+    "event_instance_generation_allowed": false,
+    "event_window_generation_allowed": false,
+    "instrument_projection_execution_allowed": false,
+    "market_state_dependency_request_execution_allowed": false,
+    "market_state_physical_consumption_allowed": false,
+    "market_state_candidate_file_read_allowed": false,
+    "event_state_execution_plan_creation_allowed": false,
+    "event_state_materializer_execution_allowed": false,
+    "event_state_validator_execution_allowed": false,
+    "event_state_dataset_write_allowed": false,
+    "event_state_registry_write_allowed": false,
+    "official_event_state_dataset_promotion_allowed": false,
+    "production_allowed": false,
+    "downstream_consumption_allowed": false
+  },
+  "closure_invariants": {
+    "event_state_request_records_created": 0,
+    "event_state_requests_executed": 0,
+    "market_state_dependency_requests_created": 0,
+    "event_instances_created": 0,
+    "event_window_bindings_created": 0,
+    "instrument_projections_created": 0,
+    "market_state_candidate_files_read": 0,
+    "source_market_data_rows_read": 0,
+    "event_state_execution_plans_created": 0,
+    "event_state_records_emitted": 0,
+    "event_state_datasets_written": 0,
+    "event_state_registry_entries_written": 0,
+    "production": false,
+    "downstream_consumption": false
+  },
+  "next_allowed_gate": "event_state_dependency_resolution_design_v0_1",
+  "scope_content_sha256_excluding_hash_field": "e1d7440aa49d65db7765165bf795d55f7ef4e5c42674f8714bc9a525e5ea383a"
+}

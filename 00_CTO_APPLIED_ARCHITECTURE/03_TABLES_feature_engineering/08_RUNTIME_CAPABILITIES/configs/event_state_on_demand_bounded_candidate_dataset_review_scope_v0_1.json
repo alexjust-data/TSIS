@@ -1,0 +1,29 @@
+{
+  "scope_id": "event_state_on_demand_bounded_candidate_dataset_review_scope_v0_1",
+  "gate": "event_state_on_demand_bounded_candidate_dataset_review_v0_1",
+  "review_id": "event_state_on_demand_bounded_candidate_dataset_review_v0_1_20260727T000000Z",
+  "review_run_id": "event_state_on_demand_bounded_candidate_dataset_review_v0_1_20260727T202013Z",
+  "reviewed_run": "event_state_on_demand_bounded_execution_v0_1_20260727T200322Z",
+  "reviewed_candidate_dataset_fingerprint": "d5662103e1c45f90847b51e69b0e698243bde231758fa3c864e24c4a6839be33",
+  "allowed_inputs": [
+    "final_manifest.json",
+    "event_state_candidate_output_manifest.json",
+    "candidate_registry_entry.json",
+    "event_state_validation_report.json",
+    "event_state_logical_context_ledger.json",
+    "market_state_dependency_binding_report.json",
+    "event_instance_manifest.json",
+    "event_window_binding_manifest.json",
+    "instrument_session_projection_manifest.json",
+    "event_state_candidate_records.jsonl"
+  ],
+  "execution_authorized": false,
+  "market_state_read_authorized": false,
+  "event_state_materialization_authorized": false,
+  "registry_mutation_authorized": false,
+  "official_dataset_promotion_authorized": false,
+  "production_authorized": false,
+  "downstream_authorized": false,
+  "next_allowed_gate": "event_state_on_demand_bounded_deterministic_rerun_authorization_v0_1",
+  "scope_sha256": "d70670a2081a2763d46c80e99f01f550948c27e8374b0b894a3e73e91fda56e2"
+}

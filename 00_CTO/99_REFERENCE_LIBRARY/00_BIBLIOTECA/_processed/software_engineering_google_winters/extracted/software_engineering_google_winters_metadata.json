@@ -1,0 +1,22 @@
+﻿{
+    "book_id":  "software_engineering_google_winters",
+    "title":  "Software Engineering at Google",
+    "author":  "Titus Winters / Tom Manshreck / Hyrum Wright",
+    "pdf_path":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Software_Engineering_at_Google_-_Titus_Winters_Tom_Manshreck_and_Hyrum_Wright.pdf",
+    "file_name":  "Software_Engineering_at_Google_-_Titus_Winters_Tom_Manshreck_and_Hyrum_Wright.pdf",
+    "file_size_bytes":  8639452,
+    "sha256":  "9cf80af98eb8afa1c2100ad3f5aabce76e304891129b710a7ca1d376eb6ce0eb",
+    "pages":  981,
+    "toc_items":  508,
+    "total_words":  226287,
+    "text_pages":  979,
+    "requires_ocr":  false,
+    "ocr_completed":  false,
+    "working_text_persisted":  false,
+    "status":  "indexed",
+    "artifact_contract":  [
+                              "summaries/\u003cbook_id\u003e_agent_summary.md",
+                              "index/\u003cbook_id\u003e_concept_index.md",
+                              "index/\u003cbook_id\u003e_source_map.md"
+                          ]
+}

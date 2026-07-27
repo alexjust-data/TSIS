@@ -1,0 +1,267 @@
+{
+  "contract_id": "event_state_request_contract_v0_1",
+  "date": "2026-07-27",
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+  "parent_capability_contract": "event_state_on_demand_capability_contract_v0_1",
+  "request_type": "event_state",
+  "supported_target_profile_v0_1": {
+    "profile_id": "event_state_core_four_intraday_profile_v0_1",
+    "profile_status_required": "OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS",
+    "semantic_profile_reference_only": true,
+    "official_physical_dataset_required": false,
+    "official_event_state_dataset_exists": false,
+    "official_event_state_parquet_exists": false
+  },
+  "supported_event_scope_v0_1": {
+    "allowed_event_type_ids": [
+      "event_type:market_data:session_opened"
+    ],
+    "allowed_subject_scope": "exchange_session",
+    "event_type_registry_snapshot_policy": "exact",
+    "halt_resumed_allowed": false,
+    "detector_event_types_allowed": false,
+    "event_detection_request_allowed": false,
+    "event_instance_id_request_allowed": false
+  },
+  "source_market_state_dependency_v0_1": {
+    "source_market_state_profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "source_market_state_capability_design_id": "market_state_on_demand_capability_v0_1",
+    "source_market_state_runtime_capability_id": "market_state_on_demand_runtime_capability_v0_1",
+    "identity_relation": "promoted_runtime_identity_of",
+    "source_market_state_consumption_policy": "market_state_capability_consumption_policy_v0_1",
+    "dependency_request_mode": "emit_or_resolve_market_state_subrequest_through_runtime_capability",
+    "direct_market_state_candidate_path_allowed": false,
+    "direct_market_state_parquet_path_allowed": false,
+    "market_state_physical_consumption_authorized_by_request": false
+  },
+  "allowed_profile_version_policies_v0_1": [
+    "exact"
+  ],
+  "allowed_event_type_registry_snapshot_policies_v0_1": [
+    "exact"
+  ],
+  "allowed_market_state_dependency_version_policies_v0_1": [
+    "exact_governed_or_block"
+  ],
+  "allowed_source_version_policies_v0_1": [
+    "exact_governed_or_block"
+  ],
+  "allowed_output_modes_v0_1": [
+    "candidate"
+  ],
+  "allowed_reuse_policies_v0_1": [
+    "reuse_if_exact_validated_dependency_match",
+    "force_rebuild_only_when_authorized"
+  ],
+  "field_blocks": {
+    "request_identity": [
+      "request_type",
+      "request_contract_version",
+      "request_id",
+      "requested_at_utc",
+      "requested_by",
+      "request_purpose"
+    ],
+    "event_state_representation_intent": [
+      "event_state_profile_id",
+      "event_state_profile_version_policy",
+      "event_state_profile_version",
+      "resolution",
+      "grain"
+    ],
+    "event_type_intent": [
+      "event_type_ids",
+      "event_type_registry_snapshot_policy",
+      "event_type_registry_snapshot_id",
+      "event_subject_scope"
+    ],
+    "event_occurrence_and_window_intent": [
+      "event_instance_policy_id",
+      "event_anchor_policy_id",
+      "event_window_policy_id",
+      "event_window_definition_ids"
+    ],
+    "instrument_scope_and_projection_intent": [
+      "instrument_projection_policy_id",
+      "universe_definition_id",
+      "explicit_instrument_ids",
+      "universe_selection_mode",
+      "instrument_filter_mode",
+      "exchange_scope",
+      "start_date",
+      "end_date",
+      "session_dates"
+    ],
+    "market_state_dependency_intent": [
+      "market_state_dependency_mode",
+      "market_state_profile_id",
+      "market_state_profile_version_policy",
+      "market_state_profile_version",
+      "market_state_capability_policy_id",
+      "market_state_dependency_reuse_policy"
+    ],
+    "temporal_and_source_policy": [
+      "calendar_authority_id",
+      "point_in_time_policy_id",
+      "as_of_policy_id",
+      "source_version_policy"
+    ],
+    "output_intent": [
+      "output_mode",
+      "output_format",
+      "partition_policy",
+      "validation_level",
+      "reuse_policy"
+    ]
+  },
+  "fingerprint_policy": {
+    "algorithm_family": "sha256_over_canonical_json",
+    "include_fields": [
+      "request_type",
+      "request_contract_version",
+      "event_state_profile_id",
+      "event_state_profile_version_policy",
+      "event_state_profile_version",
+      "resolution",
+      "grain",
+      "event_type_ids",
+      "event_type_registry_snapshot_policy",
+      "event_type_registry_snapshot_id",
+      "event_subject_scope",
+      "event_instance_policy_id",
+      "event_anchor_policy_id",
+      "event_window_policy_id",
+      "event_window_definition_ids",
+      "instrument_projection_policy_id",
+      "universe_definition_id",
+      "explicit_instrument_ids",
+      "universe_selection_mode",
+      "instrument_filter_mode",
+      "exchange_scope",
+      "start_date",
+      "end_date",
+      "session_dates",
+      "calendar_authority_id",
+      "point_in_time_policy_id",
+      "as_of_policy_id",
+      "source_version_policy",
+      "market_state_dependency_mode",
+      "market_state_profile_id",
+      "market_state_profile_version_policy",
+      "market_state_profile_version",
+      "market_state_capability_policy_id",
+      "market_state_dependency_reuse_policy",
+      "output_mode",
+      "output_format",
+      "partition_policy",
+      "validation_level",
+      "reuse_policy"
+    ],
+    "exclude_fields": [
+      "request_id",
+      "requested_at_utc",
+      "requested_by",
+      "run_id",
+      "output_path",
+      "temporary_path",
+      "machine_id",
+      "wall_clock_runtime_values",
+      "physical_market_state_path",
+      "runtime_heartbeat"
+    ],
+    "normalization_requirements": [
+      "canonical_json_key_order",
+      "utc_timestamps_when_present",
+      "sorted_event_type_ids",
+      "sorted_event_window_definition_ids",
+      "sorted_explicit_instrument_ids",
+      "sorted_session_dates",
+      "normalized_identifier_case_as_contract_defined"
+    ],
+    "same_normalized_request_intent_same_request_fingerprint": true,
+    "same_request_fingerprint_guarantees_same_dataset": false,
+    "same_event_state_request_fingerprint_guarantees_same_market_state_dependency_dataset": false
+  },
+  "forbidden_request_fields_or_semantics": [
+    "physical_market_state_path",
+    "market_state_candidate_parquet_path",
+    "event_state_output_path",
+    "source_parquet_file",
+    "temporary_output_directory",
+    "resolved_partition_path",
+    "builder_implementation",
+    "materializer_implementation",
+    "validator_implementation",
+    "dataset_registry_id",
+    "event_detection_parameters",
+    "broker_or_execution_state_fields",
+    "outcome_or_profit_fields",
+    "machine_specific_state"
+  ],
+  "blocking_conditions": [
+    "request_type_not_event_state",
+    "missing_event_state_profile_id",
+    "event_state_profile_version_policy_not_exact",
+    "missing_event_state_profile_version",
+    "event_type_not_accepted_or_outside_v0_1_scope",
+    "event_subject_scope_not_exchange_session",
+    "halt_resumed_requested",
+    "event_detection_requested",
+    "event_instance_id_requested_in_v0_1",
+    "missing_event_type_registry_snapshot_id",
+    "event_type_registry_snapshot_policy_not_exact",
+    "missing_event_instance_policy_id",
+    "missing_event_window_policy_id",
+    "missing_instrument_projection_policy_id",
+    "missing_temporal_scope",
+    "conflicting_date_range_and_session_dates",
+    "missing_universe_selection",
+    "ambiguous_universe_and_instrument_filter",
+    "missing_calendar_authority_id",
+    "missing_point_in_time_policy_id",
+    "missing_as_of_policy_id",
+    "source_version_policy_allows_fallback",
+    "market_state_dependency_mode_not_runtime_capability_subrequest",
+    "market_state_dependency_direct_path_requested",
+    "market_state_profile_version_policy_not_exact",
+    "official_or_production_output_mode_requested",
+    "missing_validation_level",
+    "physical_path_named_in_request",
+    "builder_or_materializer_named_in_request",
+    "execution_state_or_outcome_requested_as_event_state"
+  ],
+  "request_status_model_future_records": [
+    "DRAFT_REQUEST",
+    "VALIDATED_INTENT_NO_EXECUTION",
+    "BLOCKED_BEFORE_DEPENDENCY_RESOLUTION",
+    "RESOLVED_NO_EXECUTION",
+    "AUTHORIZED_FOR_BOUNDED_EXECUTION",
+    "RUNNING",
+    "VALIDATING",
+    "CLOSED_PASS_WITH_RESTRICTIONS",
+    "FAILED",
+    "QUARANTINED"
+  ],
+  "hard_boundaries": {
+    "request_creation_allowed": false,
+    "request_execution_allowed": false,
+    "event_state_dependency_resolution_execution_allowed": false,
+    "event_detection_allowed": false,
+    "event_instance_generation_allowed": false,
+    "event_window_generation_allowed": false,
+    "instrument_projection_execution_allowed": false,
+    "market_state_dependency_request_execution_allowed": false,
+    "market_state_physical_consumption_allowed": false,
+    "market_state_candidate_file_read_allowed": false,
+    "event_state_execution_plan_creation_allowed": false,
+    "event_state_materializer_execution_allowed": false,
+    "event_state_validator_execution_allowed": false,
+    "event_state_dataset_write_allowed": false,
+    "event_state_registry_write_allowed": false,
+    "official_event_state_dataset_promotion_allowed": false,
+    "production_allowed": false,
+    "downstream_consumption_allowed": false
+  },
+  "next_allowed_gate": "event_state_dependency_resolution_design_v0_1",
+  "contract_content_sha256_excluding_hash_field": "221cc672f7be6de34652b9e4512421e845296e3309294a60c73ac538a9e16ad0"
+}

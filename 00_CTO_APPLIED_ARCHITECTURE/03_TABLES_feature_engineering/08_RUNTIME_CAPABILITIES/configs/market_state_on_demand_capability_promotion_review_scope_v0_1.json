@@ -1,0 +1,30 @@
+{
+  "scope_id": "market_state_on_demand_capability_promotion_review_scope_v0_1",
+  "gate": "market_state_on_demand_capability_promotion_review_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_CONSUMED_BY_REVIEW",
+  "consumed_by_review_id": "market_state_on_demand_capability_promotion_review_v0_1_20260727T140338Z",
+  "consumed_at_utc": "2026-07-27T14:03:38Z",
+  "authority": {
+    "metadata_evidence_read_allowed": true,
+    "source_market_data_reads_allowed": false,
+    "parquet_content_reads_allowed": false,
+    "new_materialization_allowed": false,
+    "candidate_registry_mutation_allowed": false,
+    "official_dataset_promotion_allowed": false,
+    "production_allowed": false,
+    "downstream_consumption_allowed": false
+  },
+  "reviewed_gate_chain": [
+    "bounded_execution",
+    "deterministic_rerun",
+    "exact_reuse",
+    "incremental_overlap_execution",
+    "incremental_overlap_reuse",
+    "second_generation_incremental",
+    "lineage_chain_validation",
+    "scale_validation",
+    "scale_validation_matrix"
+  ],
+  "next_allowed_gate_on_pass": "market_state_capability_consumption_policy_v0_1",
+  "scope_content_sha256_excluding_hash_field": "d6e93e43f93f65409e940386a6b863a31762dd91859e6ef343a94bdef28418ae"
+}

@@ -1,0 +1,2022 @@
+[
+  {
+    "level": 1,
+    "title": "Preface",
+    "page": 9
+  },
+  {
+    "level": 2,
+    "title": "Preface to the Second Edition",
+    "page": 9
+  },
+  {
+    "level": 2,
+    "title": "Preface to the First Edition",
+    "page": 10
+  },
+  {
+    "level": 2,
+    "title": "Conventions Used in This Book",
+    "page": 13
+  },
+  {
+    "level": 2,
+    "title": "Supplemental Material",
+    "page": 14
+  },
+  {
+    "level": 2,
+    "title": "O’Reilly Online Learning",
+    "page": 15
+  },
+  {
+    "level": 2,
+    "title": "How to Contact Us",
+    "page": 15
+  },
+  {
+    "level": 2,
+    "title": "Acknowledgments",
+    "page": 16
+  },
+  {
+    "level": 3,
+    "title": "Acknowledgments from Mark Richards",
+    "page": 17
+  },
+  {
+    "level": 3,
+    "title": "Acknowledgments from Neal Ford",
+    "page": 17
+  },
+  {
+    "level": 1,
+    "title": "1. Introduction",
+    "page": 19
+  },
+  {
+    "level": 2,
+    "title": "Defining Software Architecture",
+    "page": 20
+  },
+  {
+    "level": 2,
+    "title": "Laws of Software Architecture",
+    "page": 25
+  },
+  {
+    "level": 2,
+    "title": "Expectations of an Architect",
+    "page": 28
+  },
+  {
+    "level": 3,
+    "title": "Make Architecture Decisions",
+    "page": 29
+  },
+  {
+    "level": 3,
+    "title": "Continually Analyze the Architecture",
+    "page": 30
+  },
+  {
+    "level": 3,
+    "title": "Keep Current with Latest Trends",
+    "page": 31
+  },
+  {
+    "level": 3,
+    "title": "Ensure Compliance with Decisions",
+    "page": 32
+  },
+  {
+    "level": 3,
+    "title": "Understand Diverse Technologies",
+    "page": 33
+  },
+  {
+    "level": 3,
+    "title": "Know the Business Domain",
+    "page": 34
+  },
+  {
+    "level": 3,
+    "title": "Possess Interpersonal Skills",
+    "page": 34
+  },
+  {
+    "level": 3,
+    "title": "Understand and Navigate Politics",
+    "page": 35
+  },
+  {
+    "level": 2,
+    "title": "Roadmap",
+    "page": 37
+  },
+  {
+    "level": 1,
+    "title": "I. Foundations",
+    "page": 39
+  },
+  {
+    "level": 1,
+    "title": "2. Architectural Thinking",
+    "page": 40
+  },
+  {
+    "level": 2,
+    "title": "Architecture Versus Design",
+    "page": 40
+  },
+  {
+    "level": 3,
+    "title": "Strategic Versus Tactical Decisions",
+    "page": 42
+  },
+  {
+    "level": 3,
+    "title": "Level of Effort",
+    "page": 44
+  },
+  {
+    "level": 3,
+    "title": "The Significance of Trade-Offs",
+    "page": 44
+  },
+  {
+    "level": 2,
+    "title": "Technical Breadth",
+    "page": 45
+  },
+  {
+    "level": 3,
+    "title": "The 20-Minute Rule",
+    "page": 53
+  },
+  {
+    "level": 3,
+    "title": "Developing a Personal Radar",
+    "page": 55
+  },
+  {
+    "level": 2,
+    "title": "Analyzing Trade-Offs",
+    "page": 62
+  },
+  {
+    "level": 2,
+    "title": "Understanding Business Drivers",
+    "page": 69
+  },
+  {
+    "level": 2,
+    "title": "Balancing Architecture and Hands-On Coding",
+    "page": 69
+  },
+  {
+    "level": 2,
+    "title": "There’s More to Architectural Thinking",
+    "page": 73
+  },
+  {
+    "level": 1,
+    "title": "3. Modularity",
+    "page": 75
+  },
+  {
+    "level": 2,
+    "title": "Modularity Versus Granularity",
+    "page": 76
+  },
+  {
+    "level": 2,
+    "title": "Defining Modularity",
+    "page": 77
+  },
+  {
+    "level": 2,
+    "title": "Measuring Modularity",
+    "page": 83
+  },
+  {
+    "level": 3,
+    "title": "Cohesion",
+    "page": 83
+  },
+  {
+    "level": 3,
+    "title": "Coupling",
+    "page": 90
+  },
+  {
+    "level": 3,
+    "title": "Core Metrics",
+    "page": 91
+  },
+  {
+    "level": 3,
+    "title": "Distance from the Main Sequence",
+    "page": 93
+  },
+  {
+    "level": 3,
+    "title": "Connascence",
+    "page": 98
+  },
+  {
+    "level": 2,
+    "title": "From Modules to Components",
+    "page": 107
+  },
+  {
+    "level": 1,
+    "title": "4. Architectural Characteristics Defined",
+    "page": 109
+  },
+  {
+    "level": 2,
+    "title": "Architectural Characteristics and System Design",
+    "page": 112
+  },
+  {
+    "level": 2,
+    "title": "Architectural Characteristics (Partially) Listed",
+    "page": 117
+  },
+  {
+    "level": 3,
+    "title": "Operational Architectural Characteristics",
+    "page": 117
+  },
+  {
+    "level": 3,
+    "title": "Structural Architectural Characteristics",
+    "page": 119
+  },
+  {
+    "level": 3,
+    "title": "Cloud Characteristics",
+    "page": 121
+  },
+  {
+    "level": 3,
+    "title": "Cross-Cutting Architectural Characteristics",
+    "page": 122
+  },
+  {
+    "level": 2,
+    "title": "Trade-Offs and Least Worst Architecture",
+    "page": 130
+  },
+  {
+    "level": 1,
+    "title": "5. Identifying Architectural Characteristics",
+    "page": 134
+  },
+  {
+    "level": 2,
+    "title": "Extracting Architectural Characteristics from Domain Concerns",
+    "page": 135
+  },
+  {
+    "level": 2,
+    "title": "Composite Architectural Characteristics",
+    "page": 136
+  },
+  {
+    "level": 2,
+    "title": "Extracting Architectural Characteristics",
+    "page": 138
+  },
+  {
+    "level": 3,
+    "title": "Working with Katas",
+    "page": 140
+  },
+  {
+    "level": 2,
+    "title": "Kata: Silicon Sandwiches",
+    "page": 141
+  },
+  {
+    "level": 3,
+    "title": "Explicit Characteristics",
+    "page": 143
+  },
+  {
+    "level": 3,
+    "title": "Implicit Characteristics",
+    "page": 149
+  },
+  {
+    "level": 2,
+    "title": "Limiting and Prioritizing Architectural Characteristics",
+    "page": 154
+  },
+  {
+    "level": 1,
+    "title": "6. Measuring and Governing Architecture Characteristics",
+    "page": 159
+  },
+  {
+    "level": 2,
+    "title": "Measuring Architecture Characteristics",
+    "page": 159
+  },
+  {
+    "level": 3,
+    "title": "Operational Measures",
+    "page": 161
+  },
+  {
+    "level": 3,
+    "title": "Structural Measures",
+    "page": 164
+  },
+  {
+    "level": 3,
+    "title": "Process Measures",
+    "page": 169
+  },
+  {
+    "level": 2,
+    "title": "Governance and Fitness Functions",
+    "page": 170
+  },
+  {
+    "level": 3,
+    "title": "Governing Architecture Characteristics",
+    "page": 170
+  },
+  {
+    "level": 3,
+    "title": "Fitness Functions",
+    "page": 171
+  },
+  {
+    "level": 1,
+    "title": "7. The Scope of Architectural Characteristics",
+    "page": 185
+  },
+  {
+    "level": 2,
+    "title": "Architectural Quanta and Granularity",
+    "page": 186
+  },
+  {
+    "level": 2,
+    "title": "Synchronous Communication",
+    "page": 193
+  },
+  {
+    "level": 2,
+    "title": "The Impact of Scoping",
+    "page": 194
+  },
+  {
+    "level": 3,
+    "title": "Scoping and Architectural Style",
+    "page": 196
+  },
+  {
+    "level": 3,
+    "title": "Kata: Going Green",
+    "page": 198
+  },
+  {
+    "level": 2,
+    "title": "Scoping and the Cloud",
+    "page": 201
+  },
+  {
+    "level": 1,
+    "title": "8. Component-Based Thinking",
+    "page": 204
+  },
+  {
+    "level": 2,
+    "title": "Defining Logical Components",
+    "page": 204
+  },
+  {
+    "level": 2,
+    "title": "Logical Versus Physical Architecture",
+    "page": 207
+  },
+  {
+    "level": 2,
+    "title": "Creating a Logical Architecture",
+    "page": 211
+  },
+  {
+    "level": 3,
+    "title": "Identifying Core Components",
+    "page": 213
+  },
+  {
+    "level": 3,
+    "title": "Assigning User Stories to Components",
+    "page": 220
+  },
+  {
+    "level": 3,
+    "title": "Analyzing Roles and Responsibilities",
+    "page": 224
+  },
+  {
+    "level": 3,
+    "title": "Analyzing Architectural Characteristics",
+    "page": 227
+  },
+  {
+    "level": 3,
+    "title": "Restructuring Components",
+    "page": 228
+  },
+  {
+    "level": 2,
+    "title": "Component Coupling",
+    "page": 229
+  },
+  {
+    "level": 3,
+    "title": "Static Coupling",
+    "page": 230
+  },
+  {
+    "level": 3,
+    "title": "Temporal Coupling",
+    "page": 232
+  },
+  {
+    "level": 3,
+    "title": "The Law of Demeter",
+    "page": 233
+  },
+  {
+    "level": 2,
+    "title": "Case Study: Going, Going, Gone—Discovering Components",
+    "page": 236
+  },
+  {
+    "level": 1,
+    "title": "II. Architecture Styles",
+    "page": 243
+  },
+  {
+    "level": 1,
+    "title": "9. Foundations",
+    "page": 244
+  },
+  {
+    "level": 2,
+    "title": "Styles Versus Patterns",
+    "page": 244
+  },
+  {
+    "level": 2,
+    "title": "Fundamental Patterns",
+    "page": 248
+  },
+  {
+    "level": 3,
+    "title": "Big Ball of Mud",
+    "page": 248
+  },
+  {
+    "level": 3,
+    "title": "Unitary Architecture",
+    "page": 252
+  },
+  {
+    "level": 3,
+    "title": "Client/Server",
+    "page": 252
+  },
+  {
+    "level": 2,
+    "title": "Architecture Partitioning",
+    "page": 257
+  },
+  {
+    "level": 3,
+    "title": "Kata: Silicon Sandwiches—Partitioning",
+    "page": 264
+  },
+  {
+    "level": 2,
+    "title": "Monolithic Versus Distributed Architectures",
+    "page": 267
+  },
+  {
+    "level": 3,
+    "title": "Fallacy #1: The Network Is Reliable",
+    "page": 269
+  },
+  {
+    "level": 3,
+    "title": "Fallacy #2: Latency Is Zero",
+    "page": 270
+  },
+  {
+    "level": 3,
+    "title": "Fallacy #3: Bandwidth Is Infinite",
+    "page": 271
+  },
+  {
+    "level": 3,
+    "title": "Fallacy #4: The Network Is Secure",
+    "page": 273
+  },
+  {
+    "level": 3,
+    "title": "Fallacy #5: The Topology Never Changes",
+    "page": 274
+  },
+  {
+    "level": 3,
+    "title": "Fallacy #6: There Is Only One Administrator",
+    "page": 276
+  },
+  {
+    "level": 3,
+    "title": "Fallacy #7: Transport Cost Is Zero",
+    "page": 277
+  },
+  {
+    "level": 3,
+    "title": "Fallacy #8: The Network Is Homogeneous",
+    "page": 278
+  },
+  {
+    "level": 3,
+    "title": "The Other Fallacies",
+    "page": 279
+  },
+  {
+    "level": 2,
+    "title": "Team Topologies and Architecture",
+    "page": 281
+  },
+  {
+    "level": 2,
+    "title": "On to Specific Styles",
+    "page": 283
+  },
+  {
+    "level": 1,
+    "title": "10. Layered Architecture Style",
+    "page": 284
+  },
+  {
+    "level": 2,
+    "title": "Topology",
+    "page": 284
+  },
+  {
+    "level": 2,
+    "title": "Style Specifics",
+    "page": 288
+  },
+  {
+    "level": 3,
+    "title": "Layers of Isolation",
+    "page": 288
+  },
+  {
+    "level": 3,
+    "title": "Adding Layers",
+    "page": 290
+  },
+  {
+    "level": 2,
+    "title": "Data Topologies",
+    "page": 294
+  },
+  {
+    "level": 2,
+    "title": "Cloud Considerations",
+    "page": 294
+  },
+  {
+    "level": 2,
+    "title": "Common Risks",
+    "page": 294
+  },
+  {
+    "level": 2,
+    "title": "Governance",
+    "page": 295
+  },
+  {
+    "level": 2,
+    "title": "Team Topology Considerations",
+    "page": 296
+  },
+  {
+    "level": 2,
+    "title": "Style Characteristics",
+    "page": 298
+  },
+  {
+    "level": 3,
+    "title": "When to Use",
+    "page": 301
+  },
+  {
+    "level": 3,
+    "title": "When Not to Use",
+    "page": 302
+  },
+  {
+    "level": 2,
+    "title": "Examples and Use Cases",
+    "page": 302
+  },
+  {
+    "level": 1,
+    "title": "11. The Modular Monolith Architecture Style",
+    "page": 305
+  },
+  {
+    "level": 2,
+    "title": "Topology",
+    "page": 305
+  },
+  {
+    "level": 2,
+    "title": "Style Specifics",
+    "page": 307
+  },
+  {
+    "level": 3,
+    "title": "Monolithic Structure",
+    "page": 307
+  },
+  {
+    "level": 3,
+    "title": "Modular Structure",
+    "page": 309
+  },
+  {
+    "level": 3,
+    "title": "Module Communication",
+    "page": 310
+  },
+  {
+    "level": 2,
+    "title": "Data Topologies",
+    "page": 313
+  },
+  {
+    "level": 2,
+    "title": "Cloud Considerations",
+    "page": 314
+  },
+  {
+    "level": 2,
+    "title": "Common Risks",
+    "page": 315
+  },
+  {
+    "level": 2,
+    "title": "Governance",
+    "page": 316
+  },
+  {
+    "level": 2,
+    "title": "Team Topology Considerations",
+    "page": 321
+  },
+  {
+    "level": 2,
+    "title": "Style Characteristics",
+    "page": 322
+  },
+  {
+    "level": 3,
+    "title": "When to Use",
+    "page": 325
+  },
+  {
+    "level": 3,
+    "title": "When Not to Use",
+    "page": 326
+  },
+  {
+    "level": 2,
+    "title": "Examples and Use Cases",
+    "page": 326
+  },
+  {
+    "level": 1,
+    "title": "12. Pipeline Architecture Style",
+    "page": 333
+  },
+  {
+    "level": 2,
+    "title": "Topology",
+    "page": 333
+  },
+  {
+    "level": 2,
+    "title": "Style Specifics",
+    "page": 334
+  },
+  {
+    "level": 3,
+    "title": "Filters",
+    "page": 334
+  },
+  {
+    "level": 3,
+    "title": "Pipes",
+    "page": 337
+  },
+  {
+    "level": 2,
+    "title": "Data Topologies",
+    "page": 338
+  },
+  {
+    "level": 2,
+    "title": "Cloud Considerations",
+    "page": 339
+  },
+  {
+    "level": 2,
+    "title": "Common Risks",
+    "page": 341
+  },
+  {
+    "level": 2,
+    "title": "Governance",
+    "page": 342
+  },
+  {
+    "level": 2,
+    "title": "Team Topology Considerations",
+    "page": 346
+  },
+  {
+    "level": 2,
+    "title": "Style Characteristics",
+    "page": 348
+  },
+  {
+    "level": 3,
+    "title": "When to Use",
+    "page": 351
+  },
+  {
+    "level": 3,
+    "title": "When Not to Use",
+    "page": 351
+  },
+  {
+    "level": 2,
+    "title": "Examples and Use Cases",
+    "page": 353
+  },
+  {
+    "level": 1,
+    "title": "13. Microkernel Architecture Style",
+    "page": 356
+  },
+  {
+    "level": 2,
+    "title": "Topology",
+    "page": 356
+  },
+  {
+    "level": 2,
+    "title": "Style Specifics",
+    "page": 357
+  },
+  {
+    "level": 3,
+    "title": "Core System",
+    "page": 357
+  },
+  {
+    "level": 3,
+    "title": "Plug-In Components",
+    "page": 364
+  },
+  {
+    "level": 3,
+    "title": "The Spectrum of “Microkern-ality”",
+    "page": 368
+  },
+  {
+    "level": 3,
+    "title": "Registry",
+    "page": 369
+  },
+  {
+    "level": 3,
+    "title": "Contracts",
+    "page": 370
+  },
+  {
+    "level": 2,
+    "title": "Data Topologies",
+    "page": 372
+  },
+  {
+    "level": 2,
+    "title": "Cloud Considerations",
+    "page": 373
+  },
+  {
+    "level": 2,
+    "title": "Common Risks",
+    "page": 374
+  },
+  {
+    "level": 3,
+    "title": "Volatile Core",
+    "page": 374
+  },
+  {
+    "level": 3,
+    "title": "Plug-In Dependencies",
+    "page": 375
+  },
+  {
+    "level": 2,
+    "title": "Governance",
+    "page": 376
+  },
+  {
+    "level": 2,
+    "title": "Team Topology Considerations",
+    "page": 376
+  },
+  {
+    "level": 2,
+    "title": "Architecture Characteristics Ratings",
+    "page": 377
+  },
+  {
+    "level": 2,
+    "title": "Examples and Use Cases",
+    "page": 381
+  },
+  {
+    "level": 1,
+    "title": "14. Service-Based Architecture Style",
+    "page": 384
+  },
+  {
+    "level": 2,
+    "title": "Topology",
+    "page": 384
+  },
+  {
+    "level": 2,
+    "title": "Style Specifics",
+    "page": 386
+  },
+  {
+    "level": 3,
+    "title": "Service Design and Granularity",
+    "page": 390
+  },
+  {
+    "level": 3,
+    "title": "User Interface Options",
+    "page": 390
+  },
+  {
+    "level": 3,
+    "title": "API Gateway Options",
+    "page": 392
+  },
+  {
+    "level": 2,
+    "title": "Data Topologies",
+    "page": 393
+  },
+  {
+    "level": 2,
+    "title": "Cloud Considerations",
+    "page": 399
+  },
+  {
+    "level": 2,
+    "title": "Common Risks",
+    "page": 399
+  },
+  {
+    "level": 2,
+    "title": "Governance",
+    "page": 400
+  },
+  {
+    "level": 2,
+    "title": "Team Topology Considerations",
+    "page": 401
+  },
+  {
+    "level": 2,
+    "title": "Style Characteristics",
+    "page": 403
+  },
+  {
+    "level": 2,
+    "title": "Examples and Use Cases",
+    "page": 409
+  },
+  {
+    "level": 1,
+    "title": "15. Event-Driven Architecture Style",
+    "page": 414
+  },
+  {
+    "level": 2,
+    "title": "Topology",
+    "page": 416
+  },
+  {
+    "level": 2,
+    "title": "Style Specifics",
+    "page": 422
+  },
+  {
+    "level": 3,
+    "title": "Events Versus Messages",
+    "page": 422
+  },
+  {
+    "level": 3,
+    "title": "Derived Events",
+    "page": 425
+  },
+  {
+    "level": 3,
+    "title": "Triggering Extensible Events",
+    "page": 427
+  },
+  {
+    "level": 3,
+    "title": "Asynchronous Capabilities",
+    "page": 429
+  },
+  {
+    "level": 3,
+    "title": "Broadcast Capabilities",
+    "page": 435
+  },
+  {
+    "level": 3,
+    "title": "Event Payload",
+    "page": 436
+  },
+  {
+    "level": 3,
+    "title": "The Swarm of Gnats Antipattern",
+    "page": 449
+  },
+  {
+    "level": 3,
+    "title": "Error Handling",
+    "page": 454
+  },
+  {
+    "level": 3,
+    "title": "Preventing Data Loss",
+    "page": 461
+  },
+  {
+    "level": 3,
+    "title": "Request-Reply Processing",
+    "page": 465
+  },
+  {
+    "level": 3,
+    "title": "Mediated Event-Driven Architecture",
+    "page": 470
+  },
+  {
+    "level": 2,
+    "title": "Data Topologies",
+    "page": 488
+  },
+  {
+    "level": 3,
+    "title": "Monolithic Database Topology",
+    "page": 490
+  },
+  {
+    "level": 3,
+    "title": "Domain Database Topology",
+    "page": 492
+  },
+  {
+    "level": 3,
+    "title": "Dedicated Data Topology",
+    "page": 496
+  },
+  {
+    "level": 2,
+    "title": "Cloud Considerations",
+    "page": 499
+  },
+  {
+    "level": 2,
+    "title": "Common Risks",
+    "page": 499
+  },
+  {
+    "level": 2,
+    "title": "Governance",
+    "page": 501
+  },
+  {
+    "level": 2,
+    "title": "Team Topology Considerations",
+    "page": 502
+  },
+  {
+    "level": 2,
+    "title": "Style Characteristics",
+    "page": 504
+  },
+  {
+    "level": 3,
+    "title": "Choosing Between Request-Based and Event-Based Models",
+    "page": 510
+  },
+  {
+    "level": 2,
+    "title": "Examples and Use Cases",
+    "page": 511
+  },
+  {
+    "level": 1,
+    "title": "16. Space-Based Architecture Style",
+    "page": 515
+  },
+  {
+    "level": 2,
+    "title": "Topology",
+    "page": 517
+  },
+  {
+    "level": 2,
+    "title": "Style Specifics",
+    "page": 520
+  },
+  {
+    "level": 3,
+    "title": "Processing Unit",
+    "page": 520
+  },
+  {
+    "level": 3,
+    "title": "Virtualized Middleware",
+    "page": 521
+  },
+  {
+    "level": 3,
+    "title": "Messaging Grid",
+    "page": 522
+  },
+  {
+    "level": 3,
+    "title": "Data Grid",
+    "page": 523
+  },
+  {
+    "level": 3,
+    "title": "Processing Grid",
+    "page": 536
+  },
+  {
+    "level": 3,
+    "title": "Deployment Manager",
+    "page": 538
+  },
+  {
+    "level": 3,
+    "title": "Data Pumps",
+    "page": 539
+  },
+  {
+    "level": 3,
+    "title": "Data Writers",
+    "page": 541
+  },
+  {
+    "level": 3,
+    "title": "Data Readers",
+    "page": 545
+  },
+  {
+    "level": 2,
+    "title": "Data Topologies",
+    "page": 547
+  },
+  {
+    "level": 2,
+    "title": "Cloud Considerations",
+    "page": 548
+  },
+  {
+    "level": 2,
+    "title": "Common Risks",
+    "page": 550
+  },
+  {
+    "level": 3,
+    "title": "Frequent Reads from the Database",
+    "page": 550
+  },
+  {
+    "level": 3,
+    "title": "Data Synchronization and Consistency",
+    "page": 551
+  },
+  {
+    "level": 3,
+    "title": "High Data Volumes",
+    "page": 552
+  },
+  {
+    "level": 3,
+    "title": "Data Collisions",
+    "page": 552
+  },
+  {
+    "level": 2,
+    "title": "Governance",
+    "page": 557
+  },
+  {
+    "level": 2,
+    "title": "Team Topology Considerations",
+    "page": 562
+  },
+  {
+    "level": 2,
+    "title": "Style Characteristics",
+    "page": 564
+  },
+  {
+    "level": 2,
+    "title": "Examples and Use Cases",
+    "page": 567
+  },
+  {
+    "level": 3,
+    "title": "Concert Ticketing System",
+    "page": 568
+  },
+  {
+    "level": 3,
+    "title": "Online Auction System",
+    "page": 569
+  },
+  {
+    "level": 1,
+    "title": "17. Orchestration-Driven Service-Oriented Architecture",
+    "page": 571
+  },
+  {
+    "level": 2,
+    "title": "Topology",
+    "page": 571
+  },
+  {
+    "level": 2,
+    "title": "Style Specifics",
+    "page": 572
+  },
+  {
+    "level": 3,
+    "title": "Taxonomy",
+    "page": 574
+  },
+  {
+    "level": 3,
+    "title": "Reuse…and Coupling",
+    "page": 581
+  },
+  {
+    "level": 2,
+    "title": "Data Topologies",
+    "page": 584
+  },
+  {
+    "level": 2,
+    "title": "Cloud Considerations",
+    "page": 586
+  },
+  {
+    "level": 2,
+    "title": "Common Risks",
+    "page": 586
+  },
+  {
+    "level": 2,
+    "title": "Governance",
+    "page": 587
+  },
+  {
+    "level": 2,
+    "title": "Team Topology Considerations",
+    "page": 589
+  },
+  {
+    "level": 2,
+    "title": "Style Characteristics",
+    "page": 590
+  },
+  {
+    "level": 2,
+    "title": "Examples and Use Cases",
+    "page": 593
+  },
+  {
+    "level": 1,
+    "title": "18. Microservices Architecture",
+    "page": 598
+  },
+  {
+    "level": 2,
+    "title": "Topology",
+    "page": 600
+  },
+  {
+    "level": 2,
+    "title": "Style Specifics",
+    "page": 602
+  },
+  {
+    "level": 3,
+    "title": "Bounded Context",
+    "page": 602
+  },
+  {
+    "level": 3,
+    "title": "Granularity",
+    "page": 603
+  },
+  {
+    "level": 3,
+    "title": "Data Isolation",
+    "page": 605
+  },
+  {
+    "level": 3,
+    "title": "API Layer",
+    "page": 606
+  },
+  {
+    "level": 3,
+    "title": "Operational Reuse",
+    "page": 607
+  },
+  {
+    "level": 3,
+    "title": "Frontends",
+    "page": 611
+  },
+  {
+    "level": 3,
+    "title": "Communication",
+    "page": 614
+  },
+  {
+    "level": 3,
+    "title": "Choreography and Orchestration",
+    "page": 617
+  },
+  {
+    "level": 3,
+    "title": "Transactions and Sagas",
+    "page": 622
+  },
+  {
+    "level": 2,
+    "title": "Data Topologies",
+    "page": 626
+  },
+  {
+    "level": 2,
+    "title": "Cloud Considerations",
+    "page": 632
+  },
+  {
+    "level": 2,
+    "title": "Common Risks",
+    "page": 634
+  },
+  {
+    "level": 2,
+    "title": "Governance",
+    "page": 635
+  },
+  {
+    "level": 2,
+    "title": "Team Topology Considerations",
+    "page": 637
+  },
+  {
+    "level": 2,
+    "title": "Style Characteristics",
+    "page": 640
+  },
+  {
+    "level": 2,
+    "title": "Examples and Use Cases",
+    "page": 643
+  },
+  {
+    "level": 1,
+    "title": "19. Choosing the Appropriate Architecture Style",
+    "page": 647
+  },
+  {
+    "level": 2,
+    "title": "Shifting “Fashion” in Architecture",
+    "page": 647
+  },
+  {
+    "level": 2,
+    "title": "Decision Criteria",
+    "page": 650
+  },
+  {
+    "level": 2,
+    "title": "Monolith Case Study: Silicon Sandwiches",
+    "page": 657
+  },
+  {
+    "level": 3,
+    "title": "Modular Monolith",
+    "page": 658
+  },
+  {
+    "level": 3,
+    "title": "Microkernel",
+    "page": 660
+  },
+  {
+    "level": 2,
+    "title": "Distributed Case Study: Going, Going, Gone",
+    "page": 663
+  },
+  {
+    "level": 1,
+    "title": "20. Architectural Patterns",
+    "page": 670
+  },
+  {
+    "level": 2,
+    "title": "Reuse",
+    "page": 671
+  },
+  {
+    "level": 3,
+    "title": "Separating Domain and Operational Coupling",
+    "page": 671
+  },
+  {
+    "level": 2,
+    "title": "Communication",
+    "page": 677
+  },
+  {
+    "level": 3,
+    "title": "Orchestration Versus Choreography",
+    "page": 677
+  },
+  {
+    "level": 2,
+    "title": "CQRS",
+    "page": 683
+  },
+  {
+    "level": 2,
+    "title": "Infrastructure",
+    "page": 684
+  },
+  {
+    "level": 3,
+    "title": "Broker-Domain Pattern",
+    "page": 685
+  },
+  {
+    "level": 1,
+    "title": "III. Techniques and Soft Skills",
+    "page": 691
+  },
+  {
+    "level": 1,
+    "title": "21. Architectural Decisions",
+    "page": 692
+  },
+  {
+    "level": 2,
+    "title": "Architectural Decision Antipatterns",
+    "page": 692
+  },
+  {
+    "level": 3,
+    "title": "The Covering Your Assets Antipattern",
+    "page": 693
+  },
+  {
+    "level": 3,
+    "title": "Groundhog Day Antipattern",
+    "page": 695
+  },
+  {
+    "level": 3,
+    "title": "Email-Driven Architecture Antipattern",
+    "page": 697
+  },
+  {
+    "level": 2,
+    "title": "Architectural Significance",
+    "page": 698
+  },
+  {
+    "level": 2,
+    "title": "Architectural Decision Records",
+    "page": 700
+  },
+  {
+    "level": 3,
+    "title": "Basic Structure",
+    "page": 701
+  },
+  {
+    "level": 3,
+    "title": "Example",
+    "page": 712
+  },
+  {
+    "level": 3,
+    "title": "Storing ADRs",
+    "page": 716
+  },
+  {
+    "level": 3,
+    "title": "ADRs as Documentation",
+    "page": 720
+  },
+  {
+    "level": 3,
+    "title": "Using ADRs for Standards",
+    "page": 721
+  },
+  {
+    "level": 3,
+    "title": "Using ADRs with Existing Systems",
+    "page": 722
+  },
+  {
+    "level": 3,
+    "title": "Leveraging Generative AI and LLMs in Architectural Decisions",
+    "page": 723
+  },
+  {
+    "level": 1,
+    "title": "22. Analyzing Architecture Risk",
+    "page": 726
+  },
+  {
+    "level": 2,
+    "title": "Risk Matrix",
+    "page": 726
+  },
+  {
+    "level": 2,
+    "title": "Risk Assessments",
+    "page": 728
+  },
+  {
+    "level": 2,
+    "title": "Risk Storming",
+    "page": 734
+  },
+  {
+    "level": 3,
+    "title": "Phase 1: Identification",
+    "page": 736
+  },
+  {
+    "level": 3,
+    "title": "Phase 2: Consensus",
+    "page": 738
+  },
+  {
+    "level": 3,
+    "title": "Phase 3: Risk Mitigation",
+    "page": 742
+  },
+  {
+    "level": 2,
+    "title": "User-Story Risk Analysis",
+    "page": 744
+  },
+  {
+    "level": 2,
+    "title": "Risk-Storming Use Case",
+    "page": 744
+  },
+  {
+    "level": 3,
+    "title": "Availability",
+    "page": 747
+  },
+  {
+    "level": 3,
+    "title": "Elasticity",
+    "page": 750
+  },
+  {
+    "level": 3,
+    "title": "Security",
+    "page": 752
+  },
+  {
+    "level": 2,
+    "title": "Summary",
+    "page": 754
+  },
+  {
+    "level": 1,
+    "title": "23. Diagramming Architecture",
+    "page": 755
+  },
+  {
+    "level": 2,
+    "title": "Diagramming",
+    "page": 757
+  },
+  {
+    "level": 3,
+    "title": "Tools",
+    "page": 757
+  },
+  {
+    "level": 3,
+    "title": "Diagramming Standards: UML, C4, and ArchiMate",
+    "page": 761
+  },
+  {
+    "level": 3,
+    "title": "Diagram Guidelines",
+    "page": 765
+  },
+  {
+    "level": 2,
+    "title": "Summary",
+    "page": 768
+  },
+  {
+    "level": 1,
+    "title": "24. Making Teams Effective",
+    "page": 769
+  },
+  {
+    "level": 2,
+    "title": "Collaboration",
+    "page": 769
+  },
+  {
+    "level": 2,
+    "title": "Constraints and Boundaries",
+    "page": 772
+  },
+  {
+    "level": 2,
+    "title": "Architect Personalities",
+    "page": 774
+  },
+  {
+    "level": 3,
+    "title": "The Control-Freak Architect",
+    "page": 774
+  },
+  {
+    "level": 3,
+    "title": "The Armchair Architect",
+    "page": 776
+  },
+  {
+    "level": 3,
+    "title": "The Effective Architect",
+    "page": 778
+  },
+  {
+    "level": 2,
+    "title": "How Much Involvement?",
+    "page": 779
+  },
+  {
+    "level": 2,
+    "title": "Team Warning Signs",
+    "page": 787
+  },
+  {
+    "level": 3,
+    "title": "Process Loss",
+    "page": 787
+  },
+  {
+    "level": 3,
+    "title": "Pluralistic Ignorance",
+    "page": 789
+  },
+  {
+    "level": 2,
+    "title": "Leveraging Checklists",
+    "page": 792
+  },
+  {
+    "level": 3,
+    "title": "Developer Code-Completion Checklist",
+    "page": 796
+  },
+  {
+    "level": 3,
+    "title": "Unit and Functional Testing Checklist",
+    "page": 798
+  },
+  {
+    "level": 3,
+    "title": "Software-Release Checklist",
+    "page": 799
+  },
+  {
+    "level": 2,
+    "title": "Providing Guidance",
+    "page": 800
+  },
+  {
+    "level": 2,
+    "title": "Summary",
+    "page": 805
+  },
+  {
+    "level": 1,
+    "title": "25. Negotiation and Leadership Skills",
+    "page": 806
+  },
+  {
+    "level": 2,
+    "title": "Negotiation and Facilitation",
+    "page": 806
+  },
+  {
+    "level": 3,
+    "title": "Negotiating with Business Stakeholders",
+    "page": 807
+  },
+  {
+    "level": 3,
+    "title": "Negotiating with Other Architects",
+    "page": 811
+  },
+  {
+    "level": 3,
+    "title": "Negotiating with Developers",
+    "page": 813
+  },
+  {
+    "level": 2,
+    "title": "The Software Architect as a Leader",
+    "page": 817
+  },
+  {
+    "level": 3,
+    "title": "The 4 Cs of Architecture",
+    "page": 817
+  },
+  {
+    "level": 3,
+    "title": "Be Pragmatic, Yet Visionary",
+    "page": 820
+  },
+  {
+    "level": 3,
+    "title": "Leading Teams by Example",
+    "page": 824
+  },
+  {
+    "level": 2,
+    "title": "Integrating with the Development Team",
+    "page": 831
+  },
+  {
+    "level": 2,
+    "title": "Summary",
+    "page": 836
+  },
+  {
+    "level": 1,
+    "title": "26. Architectural Intersections",
+    "page": 837
+  },
+  {
+    "level": 2,
+    "title": "Architecture and Implementation",
+    "page": 839
+  },
+  {
+    "level": 3,
+    "title": "Operational Concerns",
+    "page": 840
+  },
+  {
+    "level": 3,
+    "title": "Structural Integrity",
+    "page": 843
+  },
+  {
+    "level": 3,
+    "title": "Architectural Constraints",
+    "page": 846
+  },
+  {
+    "level": 2,
+    "title": "Architecture and Infrastructure",
+    "page": 848
+  },
+  {
+    "level": 2,
+    "title": "Architecture and Data Topologies",
+    "page": 852
+  },
+  {
+    "level": 3,
+    "title": "Database Topology",
+    "page": 852
+  },
+  {
+    "level": 3,
+    "title": "Architectural Characteristics",
+    "page": 854
+  },
+  {
+    "level": 3,
+    "title": "Data Structure",
+    "page": 855
+  },
+  {
+    "level": 3,
+    "title": "Read/Write Priority",
+    "page": 855
+  },
+  {
+    "level": 2,
+    "title": "Architecture and Engineering Practices",
+    "page": 856
+  },
+  {
+    "level": 2,
+    "title": "Architecture and Team Topologies",
+    "page": 859
+  },
+  {
+    "level": 2,
+    "title": "Architecture and Systems Integration",
+    "page": 860
+  },
+  {
+    "level": 2,
+    "title": "Architecture and the Enterprise",
+    "page": 861
+  },
+  {
+    "level": 2,
+    "title": "Architecture and the Business Environment",
+    "page": 862
+  },
+  {
+    "level": 2,
+    "title": "Architecture and Generative AI",
+    "page": 864
+  },
+  {
+    "level": 3,
+    "title": "Incorporating Generative AI into Architecture",
+    "page": 865
+  },
+  {
+    "level": 3,
+    "title": "Generative AI as an Architect Assistant",
+    "page": 865
+  },
+  {
+    "level": 2,
+    "title": "Summary",
+    "page": 867
+  },
+  {
+    "level": 1,
+    "title": "27. The Laws of Software Architecture, Revisited",
+    "page": 868
+  },
+  {
+    "level": 2,
+    "title": "First Law: Everything in Software Architecture Is a Trade-Off",
+    "page": 869
+  },
+  {
+    "level": 3,
+    "title": "Shared Library Versus Shared Service",
+    "page": 870
+  },
+  {
+    "level": 3,
+    "title": "Synchronous Versus Asynchronous Messaging",
+    "page": 875
+  },
+  {
+    "level": 3,
+    "title": "First Corollary: Missing Trade-Offs",
+    "page": 879
+  },
+  {
+    "level": 3,
+    "title": "Second Corollary: You Can’t Do It Just Once",
+    "page": 882
+  },
+  {
+    "level": 2,
+    "title": "Second Law: Why Is More Important Than How",
+    "page": 882
+  },
+  {
+    "level": 3,
+    "title": "Out of Context Antipattern",
+    "page": 883
+  },
+  {
+    "level": 2,
+    "title": "The Spectrum Between Extremes",
+    "page": 884
+  },
+  {
+    "level": 2,
+    "title": "Parting Words of Advice",
+    "page": 886
+  },
+  {
+    "level": 1,
+    "title": "Discussion Questions",
+    "page": 888
+  },
+  {
+    "level": 2,
+    "title": "Chapter 1: Introduction",
+    "page": 888
+  },
+  {
+    "level": 2,
+    "title": "Chapter 2: Architectural Thinking",
+    "page": 889
+  },
+  {
+    "level": 2,
+    "title": "Chapter 3: Modularity",
+    "page": 890
+  },
+  {
+    "level": 2,
+    "title": "Chapter 4: Architecture Characteristics Defined",
+    "page": 891
+  },
+  {
+    "level": 2,
+    "title": "Chapter 5: Identifying Architectural Characteristics",
+    "page": 892
+  },
+  {
+    "level": 2,
+    "title": "Chapter 6: Measuring and Governing Architecture Characteristics",
+    "page": 893
+  },
+  {
+    "level": 2,
+    "title": "Chapter 7: The Scope of Architectural Characteristics",
+    "page": 894
+  },
+  {
+    "level": 2,
+    "title": "Chapter 8: Component-Based Thinking",
+    "page": 895
+  },
+  {
+    "level": 2,
+    "title": "Chapter 9: Foundations",
+    "page": 896
+  },
+  {
+    "level": 2,
+    "title": "Chapter 10: Layered Architecture Style",
+    "page": 897
+  },
+  {
+    "level": 2,
+    "title": "Chapter 11: Modular Monolith Architecture Style",
+    "page": 898
+  },
+  {
+    "level": 2,
+    "title": "Chapter 12: Pipeline Architecture Style",
+    "page": 899
+  },
+  {
+    "level": 2,
+    "title": "Chapter 13: Microkernel Architecture Style",
+    "page": 900
+  },
+  {
+    "level": 2,
+    "title": "Chapter 14: Service-Based Architecture Style",
+    "page": 901
+  },
+  {
+    "level": 2,
+    "title": "Chapter 15: Event-Driven Architecture Style",
+    "page": 902
+  },
+  {
+    "level": 2,
+    "title": "Chapter 16: Space-Based Architecture Style",
+    "page": 903
+  },
+  {
+    "level": 2,
+    "title": "Chapter 17: Orchestration-Driven Service-Oriented Architecture",
+    "page": 904
+  },
+  {
+    "level": 2,
+    "title": "Chapter 18: Microservices Architecture",
+    "page": 905
+  },
+  {
+    "level": 2,
+    "title": "Chapter 19: Choosing the Appropriate Architecture Style",
+    "page": 906
+  },
+  {
+    "level": 2,
+    "title": "Chapter 20: Architectural Patterns",
+    "page": 907
+  },
+  {
+    "level": 2,
+    "title": "Chapter 21: Architectural Decisions",
+    "page": 908
+  },
+  {
+    "level": 2,
+    "title": "Chapter 22: Analyzing Architecture Risk",
+    "page": 909
+  },
+  {
+    "level": 2,
+    "title": "Chapter 23: Diagramming Architecture",
+    "page": 910
+  },
+  {
+    "level": 2,
+    "title": "Chapter 24: Making Teams Effective",
+    "page": 911
+  },
+  {
+    "level": 2,
+    "title": "Chapter 25: Negotiation and Leadership Skills",
+    "page": 912
+  },
+  {
+    "level": 2,
+    "title": "Chapter 26: Architectural Intersections",
+    "page": 913
+  },
+  {
+    "level": 2,
+    "title": "Chapter 27: The Laws of Software Architecture, Revisited",
+    "page": 914
+  },
+  {
+    "level": 1,
+    "title": "Index",
+    "page": 916
+  },
+  {
+    "level": 1,
+    "title": "About the Authors",
+    "page": 979
+  }
+]

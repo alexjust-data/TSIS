@@ -1,0 +1,47 @@
+[
+  {
+    "level": 1,
+    "title": "Front Matter",
+    "page": 2
+  },
+  {
+    "level": 1,
+    "title": "1. Introduction",
+    "page": 12
+  },
+  {
+    "level": 1,
+    "title": "2. Pre-optimization Issues",
+    "page": 21
+  },
+  {
+    "level": 1,
+    "title": "3. Optimization Issues",
+    "page": 46
+  },
+  {
+    "level": 1,
+    "title": "4. Post-optimization Issues",
+    "page": 115
+  },
+  {
+    "level": 1,
+    "title": "5. Estimating Future Performance I: Unbiased Trade Simulation",
+    "page": 153
+  },
+  {
+    "level": 1,
+    "title": "6. Estimating Future Performance II: Trade Analysis",
+    "page": 235
+  },
+  {
+    "level": 1,
+    "title": "7. Permutation Tests",
+    "page": 338
+  },
+  {
+    "level": 1,
+    "title": "Back Matter",
+    "page": 380
+  }
+]

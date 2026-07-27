@@ -1,0 +1,8 @@
+{"finding_id": "OF-0047", "finding": "Vigencia actual de la pauta overnight no validada externamente.", "source_block": "practices_11_15", "status": "OPEN"}
+{"finding_id": "OF-0048", "finding": "Umbral y condicionamiento óptimos de salida temporal no admitidos.", "source_block": "practices_11_15", "status": "OPEN"}
+{"finding_id": "OF-0049", "finding": "Transferibilidad de Aberration a otros activos pendiente.", "source_block": "practices_11_15", "status": "OPEN"}
+{"finding_id": "OF-0050", "finding": "Taxonomía completa de 32/35 salidas pendiente de reconciliación final del corpus.", "source_block": "practices_11_15", "status": "OPEN"}
+{"finding_id": "OF-0051", "finding": "Parámetros de Parabolic SAR no admitidos.", "source_block": "practices_11_15", "status": "OPEN"}
+{"finding_id": "OF-0052", "finding": "Tomorrow's Trend conserva procedencia externa pendiente de verificación bibliográfica.", "source_block": "practices_11_15", "status": "OPEN"}
+{"finding_id": "OF-0053", "finding": "Definición de trade risk sin stop permanece dependiente del sistema.", "source_block": "practices_11_15", "status": "OPEN"}
+{"finding_id": "OF-0054", "finding": "Elección Fixed Fractional frente a Fixed Ratio no resuelta universalmente.", "source_block": "practices_11_15", "status": "OPEN"}

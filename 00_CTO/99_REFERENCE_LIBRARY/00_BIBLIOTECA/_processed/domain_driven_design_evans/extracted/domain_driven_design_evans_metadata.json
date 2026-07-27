@@ -1,0 +1,19 @@
+{
+  "book_id": "domain_driven_design_evans",
+  "title": "Domain-Driven Design",
+  "authors": "Eric Evans",
+  "source_type": "Libro PDF",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_OceanofPDF.com_Domain-Driven_Design_-_Eric_Evans.pdf",
+  "file_name": "_OceanofPDF.com_Domain-Driven_Design_-_Eric_Evans.pdf",
+  "sha256": "4716369baf34659124b263e25e996cdcc29115fb14df5bd768d792f33d22a2e0",
+  "status": "indexed",
+  "processed_date": "2026-07-27",
+  "page_count": 572,
+  "unit_label": "page",
+  "text_chars": 888663,
+  "text_pages": 546,
+  "requires_ocr_review": false,
+  "working_text_persisted": false,
+  "themes": "ubiquitous language, model-driven design, entities, value objects, services, modules, aggregates, repositories, factories, bounded contexts, context maps",
+  "utility_tsis": "base de modelado de dominio para Strategy, Order, Fill, Position, Portfolio, Ledger y bounded contexts TSIS"
+}

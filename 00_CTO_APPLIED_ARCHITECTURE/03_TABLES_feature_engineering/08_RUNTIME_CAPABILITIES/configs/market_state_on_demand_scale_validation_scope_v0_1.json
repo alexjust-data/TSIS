@@ -1,0 +1,45 @@
+{
+  "scope_id": "market_state_on_demand_scale_validation_scope_v0_1",
+  "gate": "market_state_on_demand_scale_validation_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_CONSUMED_BY_RUN",
+  "consumed_by_run_id": "market_state_on_demand_scale_validation_v0_1_20260727T133641Z",
+  "consumed_at_utc": "2026-07-27T13:36:41Z",
+  "source_authority": {
+    "candidate_source_scope": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\06_MARKET_STATE_INTEGRATION\\configs\\experimental_core_four_market_state_scale_c_candidate_materialization_scope_v0_1.json",
+    "lineage_chain_validation": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\market_state_on_demand_incremental_lineage_chain_validation_matrix_v0_1.json",
+    "lineage_chain_ledger": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\incremental_lineage_chain_ledger_v0_1.json"
+  },
+  "bounded_scale": {
+    "source_surface": "Scale C integrated Market State candidate context surface",
+    "requested_contexts": 120,
+    "expected_reusable_validated_contexts": 14,
+    "expected_to_build_scale_delta_contexts": 90,
+    "expected_unavailable_contexts": 16,
+    "expected_represented_contexts": 104,
+    "expected_instruments": 10,
+    "expected_sessions": 8
+  },
+  "authority": {
+    "source_market_data_reads_allowed": false,
+    "candidate_record_reads_allowed": true,
+    "prior_candidate_parquet_reads_allowed": true,
+    "scale_candidate_parquet_write_allowed": true,
+    "candidate_registry_entry_write_allowed": true,
+    "full_universe_execution_allowed": false,
+    "official_dataset_promotion_allowed": false,
+    "production_allowed": false,
+    "downstream_consumption_allowed": false,
+    "event_state_on_demand_allowed": false
+  },
+  "limits": {
+    "maximum_requested_contexts": 120,
+    "maximum_reusable_validated_contexts": 14,
+    "maximum_delta_to_build_contexts": 90,
+    "maximum_unavailable_contexts": 16,
+    "maximum_source_candidate_records_read": 104,
+    "maximum_source_market_data_rows_read": 0,
+    "maximum_candidate_parquet_files_written": 1,
+    "maximum_candidate_rows_written": 104,
+    "maximum_output_bytes": 16000000
+  }
+}

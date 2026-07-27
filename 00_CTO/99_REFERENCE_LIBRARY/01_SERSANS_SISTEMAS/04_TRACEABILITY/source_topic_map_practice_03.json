@@ -1,0 +1,61 @@
+{
+  "source_id": "SERSAN-P03",
+  "mappings": [
+    {
+      "topic_id": "TOPIC-P03-001",
+      "source_ranges": "18-123"
+    },
+    {
+      "topic_id": "TOPIC-P03-002",
+      "source_ranges": "124-208"
+    },
+    {
+      "topic_id": "TOPIC-P03-003",
+      "source_ranges": "156-208"
+    },
+    {
+      "topic_id": "TOPIC-P03-004",
+      "source_ranges": "209-386"
+    },
+    {
+      "topic_id": "TOPIC-P03-005",
+      "source_ranges": "387-495"
+    },
+    {
+      "topic_id": "TOPIC-P03-006",
+      "source_ranges": "496-587"
+    },
+    {
+      "topic_id": "TOPIC-P03-007",
+      "source_ranges": "588-694"
+    },
+    {
+      "topic_id": "TOPIC-P03-008",
+      "source_ranges": "695-1187"
+    },
+    {
+      "topic_id": "TOPIC-P03-009",
+      "source_ranges": "209-1675"
+    },
+    {
+      "topic_id": "TOPIC-P03-010",
+      "source_ranges": "1188-1226"
+    },
+    {
+      "topic_id": "TOPIC-P03-011",
+      "source_ranges": "1227-1675"
+    },
+    {
+      "topic_id": "TOPIC-P03-012",
+      "source_ranges": "296-386;1393-1411"
+    },
+    {
+      "topic_id": "TOPIC-P03-013",
+      "source_ranges": "1676-1768"
+    },
+    {
+      "topic_id": "TOPIC-P03-014",
+      "source_ranges": "296-386;880-974"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+﻿{
+    "book_id":  "continuous_delivery_humble_farley",
+    "title":  "Continuous Delivery",
+    "author":  "Jez Humble / David Farley",
+    "pdf_path":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Continuous_Delivery_-_Jez_Humble_David_Farley.pdf",
+    "file_name":  "Continuous_Delivery_-_Jez_Humble_David_Farley.pdf",
+    "file_size_bytes":  12485739,
+    "sha256":  "d3d14477eb237feba010e7786a9ca6aa0c36f7645d049e5b5d03b89021300535",
+    "pages":  497,
+    "toc_items":  167,
+    "total_words":  197436,
+    "text_pages":  497,
+    "requires_ocr":  false,
+    "ocr_completed":  false,
+    "working_text_persisted":  false,
+    "status":  "indexed",
+    "artifact_contract":  [
+                              "summaries/\u003cbook_id\u003e_agent_summary.md",
+                              "index/\u003cbook_id\u003e_concept_index.md",
+                              "index/\u003cbook_id\u003e_source_map.md"
+                          ]
+}

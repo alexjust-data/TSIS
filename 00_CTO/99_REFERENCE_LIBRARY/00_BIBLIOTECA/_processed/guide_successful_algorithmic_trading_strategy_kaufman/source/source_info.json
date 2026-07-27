@@ -1,0 +1,28 @@
+{
+  "book_id": "guide_successful_algorithmic_trading_strategy_kaufman",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\A_Guide_to_Creating_a_Successful_Algorithmic_Trading_Strategy_-_Perry_J_Kaufman.epub",
+  "file_name": "A_Guide_to_Creating_a_Successful_Algorithmic_Trading_Strategy_-_Perry_J_Kaufman.epub",
+  "sha256": "cfbca16318131ec428e7f5b1768902f2a36781fb84c47ac7e2098848d59316c3",
+  "file_size_bytes": 2684680,
+  "extraction_method": "stdlib epub zip/html",
+  "unit_label": "epub_section",
+  "sample_text": [
+    {
+      "unit": 2,
+      "snippet": "A Guide to Creating a Successful Algorithmic Trading Strategy The Wiley Trading series features books by traders who have survived the market's ever changing temperament and have prospered—some by reinventing systems, others by getting back to basics. Whether a novice trader, professional or somewhere in-between, these books will provide the advice and strategies needed to prosper today and well into the future. For more on this series, visit our website at www.WileyTrading.com . Founded in 1807"
+    },
+    {
+      "unit": 4,
+      "snippet": "A Guide to Creating a Successful Algorithmic Trading Strategy Cover image: Top: © Raimundas/Shutterstock; Bottom: © argus /Shutterstock Cover design: Wiley Copyright © 2016 by Perry J Kaufman. All rights reserved. Published by John Wiley & Sons, Inc., Hoboken, New Jersey. Published simultaneously in Canada. No part of this publication may be reproduced, stored in a retrieval system, or transmitted in any form or by any means, electronic, mechanical, photocopying, recording, scanning, or otherwis"
+    },
+    {
+      "unit": 5,
+      "snippet": "A Guide to Creating a Successful Algorithmic Trading Strategy CONTENTS Acknowledgments Chapter 1: A Brief Introduction: The Ground Rules My Objective The Ground Rules The Process Basic Trading Systems Chapter 2: The Idea Begin at the Beginning The Idea Must Match Your Trading Personality I Need a Fast Payout Withstanding the Test of Time Chapter 3: Don’t Make It Complex A Word About Noise Integrated Solutions Versus Building Blocks More Rules, Fewer Opportunities, Less Success Chapter 4: Why Sho"
+    },
+    {
+      "unit": 6,
+      "snippet": "A Guide to Creating a Successful Algorithmic Trading Strategy Acknowledgments My special thanks to three people with incredible knowledge in this area, and who could have easily written this themselves, John Kowalik, John Ehlers, and Linda Raschke. They generously provided very extensive and insightful comments that resulted in numerous changes and hopefully, considerably more clarity. My appreciation also goes to Mark Rzepczynski, who tenaciously questioned some of my conclusions and to Ernie V"
+    }
+  ],
+  "notes": "No se persiste texto bruto; solo metadatos, TOC, stats, resumen e indices."
+}

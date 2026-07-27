@@ -20,7 +20,9 @@
 ## cuestiones
 
 
-***Como se ve en la imagen, tiene un Profit Factor de 1.09 y un 66.0% Percent Profitable... Eso da a entender que el sistema puede tener opciones de valorarlo metiéndole más variables. Lo tengo en el E-mini S&P 500.***
+***Como se ve en la imagen, tiene un Profit Factor de 1.09 y un 66.0% Percent Profitable...***   
+***Eso da a entender que el sistema puede tener opciones de valorarlo metiéndole más variables.***  
+***Lo tengo en el E-mini S&P 500.***  
 
 <figure>
   <img src="img/000.png" width="500">

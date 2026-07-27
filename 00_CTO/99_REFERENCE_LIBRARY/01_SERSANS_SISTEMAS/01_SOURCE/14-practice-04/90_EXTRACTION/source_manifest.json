@@ -1,0 +1,19 @@
+{
+  "practice": "14-practice-04",
+  "source_file": "practica_04_donchain.md",
+  "source_lines": 1997,
+  "image_files": 245,
+  "image_reference_occurrences": 196,
+  "unique_referenced_images": 190,
+  "orphan_images": 55,
+  "missing_referenced_images": [],
+  "repeated_references": {
+    "004.png": 2,
+    "037.png": 2,
+    "213.png": 2,
+    "065.png": 2,
+    "226.png": 2,
+    "161.png": 2
+  },
+  "status": "PASS_WITH_ANOMALIES"
+}

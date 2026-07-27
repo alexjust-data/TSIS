@@ -1,0 +1,126 @@
+{
+  "contract_id": "market_state_on_demand_second_generation_incremental_extension_contract_v0_1",
+  "contract_version": "v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_NO_EXECUTION",
+  "date": "2026-07-27",
+  "purpose": "Authorize one future bounded second-generation incremental Market State on-demand execution over the validated combined candidate.",
+  "governing_authorization": "market_state_on_demand_second_generation_incremental_extension_authorization_v0_1",
+  "authorized_next_gate": "market_state_on_demand_second_generation_incremental_extension_v0_1",
+  "parent_reuse_test": {
+    "run_id": "market_state_on_demand_incremental_overlap_idempotency_reuse_test_v0_1_20260727T094006Z",
+    "status": "CLOSED_PASS_INCREMENTAL_OVERLAP_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS",
+    "idempotency_status": "PROVEN_FOR_INCREMENTAL_OVERLAP_REUSE",
+    "report_fingerprint": "9949c5a8ec304e1776a300267c63b90b6c513c540b49ef26cb7831309d088ef3",
+    "evidence_entry_fingerprint": "db645e1a35ef3db22c4cfe927ca0d68791389d110473dc2a688279ae9ae11603",
+    "blocking_failures": []
+  },
+  "base_combined_candidate": {
+    "dataset_id": "market_state_candidate_dataset_incremental_v0_1_f2cfd5cf55d0c1be",
+    "candidate_dataset_fingerprint": "f2cfd5cf55d0c1be1722693cc0216ffd425bbb869e19c17745976c030f2c7a2a",
+    "scientific_dataset_fingerprint": "7103e4fdbae205e4bccbeb0c436508f62b016107b4b2756c549073dae971bb5f",
+    "combined_context_ledger_sha256": "9e117ea5a82bbeeba0e36f24e13d2db124c260aabac1a5bc088a61cdcdb8a9b1",
+    "requested_contexts": 12,
+    "represented_contexts": 11,
+    "unavailable_contexts": 1,
+    "idempotency_status": "PROVEN_FOR_INCREMENTAL_OVERLAP_REUSE",
+    "reuse_hit_run_id": "market_state_on_demand_incremental_overlap_idempotency_reuse_test_v0_1_20260727T094006Z"
+  },
+  "request_c_scope": {
+    "profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "exchange_scope": "XNYS",
+    "instrument_ids": [
+      "figi_share_class:BBG001S5N8T1",
+      "figi_share_class:BBG001S8T7K0",
+      "figi_share_class:BBG001S6RSK0"
+    ],
+    "base_sessions": [
+      "2021-01-19",
+      "2021-03-15",
+      "2022-11-25",
+      "2023-03-20"
+    ],
+    "second_delta_sessions": [
+      "2024-03-11"
+    ],
+    "requested_context_count": 15
+  },
+  "required_execution_plan_dispositions": {
+    "classification_must_be_mutually_exclusive": true,
+    "requested_logical_partitions": 15,
+    "expected_reusable_validated": 11,
+    "expected_known_unavailable": 1,
+    "expected_to_build_second_delta": 3,
+    "allowed_dispositions": [
+      "reusable_validated",
+      "to_build",
+      "to_rebuild",
+      "unavailable",
+      "quarantined",
+      "blocked"
+    ]
+  },
+  "materializer_rules": {
+    "may_build_second_delta_partitions": true,
+    "must_skip_reusable_validated_partitions": true,
+    "must_not_rebuild_base_combined_candidate_records": true,
+    "must_not_materialize_known_unavailable_context_without_governed_source_or_policy_change": true,
+    "fallbacks_allowed": false
+  },
+  "lineage_chain_requirements": {
+    "must_preserve_baseline_origin_rows": 8,
+    "must_preserve_first_delta_origin_rows": 3,
+    "must_preserve_unavailable_contexts": 1,
+    "must_record_second_delta_origin_rows": 3,
+    "combined_dataset_evolution_chain": [
+      "baseline",
+      "delta1",
+      "delta2"
+    ]
+  },
+  "registry_rules": {
+    "base_combined_candidate_registry_entry_mutation_allowed": false,
+    "dataset_evolution_evidence_required": true,
+    "maximum_new_candidate_dataset_registry_entries": 1,
+    "official_dataset_promotion_allowed": false,
+    "production_allowed": false,
+    "downstream_consumption_allowed": false
+  },
+  "success_criteria": {
+    "request_c_created": true,
+    "request_c_fingerprint_differs_from_base_combined_request": true,
+    "execution_plan_c_fingerprint_differs_from_base_combined_plan": true,
+    "base_combined_reusable_contexts_selected": 11,
+    "second_delta_contexts_built": 3,
+    "known_unavailable_context_preserved": 1,
+    "materializer_build_scope_equals_second_delta_only": true,
+    "validation_completes_without_hard_failures": true,
+    "candidate_dataset_evolution_registered_or_evidenced": true,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false
+  },
+  "blocking_conditions": [
+    "base_combined_candidate_not_reuse_proven",
+    "base_combined_candidate_fingerprint_mismatch",
+    "request_c_scope_exceeds_authorized_contexts",
+    "second_delta_session_source_records_missing_for_authorized_instruments",
+    "execution_plan_does_not_classify_reusable_unavailable_and_second_delta_partitions_separately",
+    "materializer_rebuilds_reusable_validated_partitions",
+    "known_unavailable_context_materialized_without_governed_source_or_policy_change",
+    "fallback_source_used",
+    "base_combined_registry_entry_mutated_in_place",
+    "official_dataset_or_downstream_authority_opened"
+  ],
+  "authorization_gate_counters": {
+    "second_generation_incremental_extension_execution": "NOT_EXECUTED",
+    "new_requests_created": 0,
+    "execution_plans_created": 0,
+    "resolver_executions": 0,
+    "materializer_executions": 0,
+    "validator_executions": 0,
+    "candidate_files_written": 0,
+    "candidate_dataset_registry_entries_written": 0,
+    "registry_entry_mutations": 0
+  },
+  "contract_content_sha256_excluding_hash_field": "159a42f05f68208c062c51bbc6e18138a394793cacff17de7aa90d5e6a83d41d"
+}

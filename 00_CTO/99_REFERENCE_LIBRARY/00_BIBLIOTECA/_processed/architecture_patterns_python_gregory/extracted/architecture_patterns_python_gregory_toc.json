@@ -1,0 +1,1082 @@
+[
+  {
+    "level": 1,
+    "title": "Preface",
+    "page": 16
+  },
+  {
+    "level": 2,
+    "title": "Managing Complexity, Solving Business Problems",
+    "page": 16
+  },
+  {
+    "level": 2,
+    "title": "Why Python?",
+    "page": 17
+  },
+  {
+    "level": 2,
+    "title": "TDD, DDD, and Event-Driven Architecture",
+    "page": 18
+  },
+  {
+    "level": 2,
+    "title": "Who Should Read This Book",
+    "page": 20
+  },
+  {
+    "level": 2,
+    "title": "A Brief Overview of What You’ll Learn",
+    "page": 20
+  },
+  {
+    "level": 3,
+    "title": "Part I, Building an Architecture to Support Domain Modeling",
+    "page": 20
+  },
+  {
+    "level": 3,
+    "title": "Part II, Event-Driven Architecture",
+    "page": 21
+  },
+  {
+    "level": 3,
+    "title": "Addtional Content",
+    "page": 22
+  },
+  {
+    "level": 2,
+    "title": "Example Code and Coding Along",
+    "page": 22
+  },
+  {
+    "level": 2,
+    "title": "License",
+    "page": 24
+  },
+  {
+    "level": 2,
+    "title": "Conventions Used in This Book",
+    "page": 24
+  },
+  {
+    "level": 2,
+    "title": "O’Reilly Online Learning",
+    "page": 25
+  },
+  {
+    "level": 2,
+    "title": "How to Contact O’Reilly",
+    "page": 26
+  },
+  {
+    "level": 2,
+    "title": "Acknowledgments",
+    "page": 27
+  },
+  {
+    "level": 1,
+    "title": "Introduction",
+    "page": 29
+  },
+  {
+    "level": 2,
+    "title": "Why Do Our Designs Go Wrong?",
+    "page": 29
+  },
+  {
+    "level": 2,
+    "title": "Encapsulation and Abstractions",
+    "page": 31
+  },
+  {
+    "level": 2,
+    "title": "Layering",
+    "page": 33
+  },
+  {
+    "level": 2,
+    "title": "The Dependency Inversion Principle",
+    "page": 35
+  },
+  {
+    "level": 2,
+    "title": "A Place for All Our Business Logic: The Domain Model",
+    "page": 37
+  },
+  {
+    "level": 1,
+    "title": "I. Building an Architecture to Support Domain Modeling",
+    "page": 39
+  },
+  {
+    "level": 1,
+    "title": "1. Domain Modeling",
+    "page": 43
+  },
+  {
+    "level": 2,
+    "title": "What Is a Domain Model?",
+    "page": 45
+  },
+  {
+    "level": 2,
+    "title": "Exploring the Domain Language",
+    "page": 50
+  },
+  {
+    "level": 2,
+    "title": "Unit Testing Domain Models",
+    "page": 51
+  },
+  {
+    "level": 3,
+    "title": "Dataclasses Are Great for Value Objects",
+    "page": 58
+  },
+  {
+    "level": 3,
+    "title": "Value Objects and Entities",
+    "page": 60
+  },
+  {
+    "level": 2,
+    "title": "Not Everything Has to Be an Object: A Domain Service Function",
+    "page": 63
+  },
+  {
+    "level": 3,
+    "title": "Python’s Magic Methods Let Us Use Our Models with Idiomatic Python",
+    "page": 65
+  },
+  {
+    "level": 3,
+    "title": "Exceptions Can Express Domain Concepts Too",
+    "page": 65
+  },
+  {
+    "level": 1,
+    "title": "2. Repository Pattern",
+    "page": 70
+  },
+  {
+    "level": 2,
+    "title": "Persisting Our Domain Model",
+    "page": 72
+  },
+  {
+    "level": 2,
+    "title": "Some Pseudocode: What Are We Going to Need?",
+    "page": 73
+  },
+  {
+    "level": 2,
+    "title": "Applying the DIP to Data Access",
+    "page": 74
+  },
+  {
+    "level": 2,
+    "title": "Reminder: Our Model",
+    "page": 76
+  },
+  {
+    "level": 3,
+    "title": "The “Normal” ORM Way: Model Depends on ORM",
+    "page": 76
+  },
+  {
+    "level": 3,
+    "title": "Inverting the Dependency: ORM Depends on Model",
+    "page": 78
+  },
+  {
+    "level": 2,
+    "title": "Introducing the Repository Pattern",
+    "page": 82
+  },
+  {
+    "level": 3,
+    "title": "The Repository in the Abstract",
+    "page": 82
+  },
+  {
+    "level": 3,
+    "title": "What Is the Trade-Off?",
+    "page": 84
+  },
+  {
+    "level": 2,
+    "title": "Building a Fake Repository for Tests Is Now Trivial!",
+    "page": 89
+  },
+  {
+    "level": 2,
+    "title": "What Is a Port and What Is an Adapter, in Python?",
+    "page": 90
+  },
+  {
+    "level": 2,
+    "title": "Wrap-Up",
+    "page": 91
+  },
+  {
+    "level": 1,
+    "title": "3. A Brief Interlude: On Coupling and Abstractions",
+    "page": 97
+  },
+  {
+    "level": 2,
+    "title": "Abstracting State Aids Testability",
+    "page": 99
+  },
+  {
+    "level": 2,
+    "title": "Choosing the Right Abstraction(s)",
+    "page": 103
+  },
+  {
+    "level": 2,
+    "title": "Implementing Our Chosen Abstractions",
+    "page": 105
+  },
+  {
+    "level": 3,
+    "title": "Testing Edge to Edge with Fakes and Dependency Injection",
+    "page": 108
+  },
+  {
+    "level": 3,
+    "title": "Why Not Just Patch It Out?",
+    "page": 111
+  },
+  {
+    "level": 2,
+    "title": "Wrap-Up",
+    "page": 114
+  },
+  {
+    "level": 1,
+    "title": "4. Our First Use Case: Flask API and Service Layer",
+    "page": 116
+  },
+  {
+    "level": 2,
+    "title": "Connecting Our Application to the Real World",
+    "page": 120
+  },
+  {
+    "level": 2,
+    "title": "A First End-to-End Test",
+    "page": 121
+  },
+  {
+    "level": 2,
+    "title": "The Straightforward Implementation",
+    "page": 122
+  },
+  {
+    "level": 2,
+    "title": "Error Conditions That Require Database Checks",
+    "page": 124
+  },
+  {
+    "level": 2,
+    "title": "Introducing a Service Layer, and Using FakeRepository to Unit Test It",
+    "page": 126
+  },
+  {
+    "level": 3,
+    "title": "A Typical Service Function",
+    "page": 129
+  },
+  {
+    "level": 2,
+    "title": "Why Is Everything Called a Service?",
+    "page": 132
+  },
+  {
+    "level": 2,
+    "title": "Putting Things in Folders to See Where It All Belongs",
+    "page": 133
+  },
+  {
+    "level": 2,
+    "title": "Wrap-Up",
+    "page": 135
+  },
+  {
+    "level": 3,
+    "title": "The DIP in Action",
+    "page": 136
+  },
+  {
+    "level": 1,
+    "title": "5. TDD in High Gear and Low Gear",
+    "page": 142
+  },
+  {
+    "level": 2,
+    "title": "How Is Our Test Pyramid Looking?",
+    "page": 142
+  },
+  {
+    "level": 2,
+    "title": "Should Domain Layer Tests Move to the Service Layer?",
+    "page": 143
+  },
+  {
+    "level": 2,
+    "title": "On Deciding What Kind of Tests to Write",
+    "page": 145
+  },
+  {
+    "level": 2,
+    "title": "High and Low Gear",
+    "page": 147
+  },
+  {
+    "level": 2,
+    "title": "Fully Decoupling the Service-Layer Tests from the Domain",
+    "page": 148
+  },
+  {
+    "level": 3,
+    "title": "Mitigation: Keep All Domain Dependencies in Fixture Functions",
+    "page": 149
+  },
+  {
+    "level": 3,
+    "title": "Adding a Missing Service",
+    "page": 150
+  },
+  {
+    "level": 2,
+    "title": "Carrying the Improvement Through to the E2E Tests",
+    "page": 152
+  },
+  {
+    "level": 2,
+    "title": "Wrap-Up",
+    "page": 154
+  },
+  {
+    "level": 1,
+    "title": "6. Unit of Work Pattern",
+    "page": 156
+  },
+  {
+    "level": 2,
+    "title": "The Unit of Work Collaborates with the Repository",
+    "page": 160
+  },
+  {
+    "level": 2,
+    "title": "Test-Driving a UoW with Integration Tests",
+    "page": 161
+  },
+  {
+    "level": 2,
+    "title": "Unit of Work and Its Context Manager",
+    "page": 162
+  },
+  {
+    "level": 3,
+    "title": "The Real Unit of Work Uses SQLAlchemy Sessions",
+    "page": 163
+  },
+  {
+    "level": 3,
+    "title": "Fake Unit of Work for Testing",
+    "page": 164
+  },
+  {
+    "level": 2,
+    "title": "Using the UoW in the Service Layer",
+    "page": 166
+  },
+  {
+    "level": 2,
+    "title": "Explicit Tests for Commit/Rollback Behavior",
+    "page": 167
+  },
+  {
+    "level": 2,
+    "title": "Explicit Versus Implicit Commits",
+    "page": 168
+  },
+  {
+    "level": 2,
+    "title": "Examples: Using UoW to Group Multiple Operations into an Atomic Unit",
+    "page": 169
+  },
+  {
+    "level": 3,
+    "title": "Example 1: Reallocate",
+    "page": 170
+  },
+  {
+    "level": 3,
+    "title": "Example 2: Change Batch Quantity",
+    "page": 170
+  },
+  {
+    "level": 2,
+    "title": "Tidying Up the Integration Tests",
+    "page": 171
+  },
+  {
+    "level": 2,
+    "title": "Wrap-Up",
+    "page": 172
+  },
+  {
+    "level": 1,
+    "title": "7. Aggregates and Consistency Boundaries",
+    "page": 177
+  },
+  {
+    "level": 2,
+    "title": "Why Not Just Run Everything in a Spreadsheet?",
+    "page": 179
+  },
+  {
+    "level": 2,
+    "title": "Invariants, Constraints, and Consistency",
+    "page": 180
+  },
+  {
+    "level": 3,
+    "title": "Invariants, Concurrency, and Locks",
+    "page": 181
+  },
+  {
+    "level": 2,
+    "title": "What Is an Aggregate?",
+    "page": 182
+  },
+  {
+    "level": 2,
+    "title": "Choosing an Aggregate",
+    "page": 184
+  },
+  {
+    "level": 2,
+    "title": "One Aggregate = One Repository",
+    "page": 188
+  },
+  {
+    "level": 2,
+    "title": "What About Performance?",
+    "page": 190
+  },
+  {
+    "level": 2,
+    "title": "Optimistic Concurrency with Version Numbers",
+    "page": 192
+  },
+  {
+    "level": 3,
+    "title": "Implementation Options for Version Numbers",
+    "page": 195
+  },
+  {
+    "level": 2,
+    "title": "Testing for Our Data Integrity Rules",
+    "page": 197
+  },
+  {
+    "level": 3,
+    "title": "Enforcing Concurrency Rules by Using Database Transaction Isolation Levels",
+    "page": 199
+  },
+  {
+    "level": 3,
+    "title": "Pessimistic Concurrency Control Example: SELECT FOR UPDATE",
+    "page": 200
+  },
+  {
+    "level": 2,
+    "title": "Wrap-Up",
+    "page": 201
+  },
+  {
+    "level": 2,
+    "title": "Part I Recap",
+    "page": 203
+  },
+  {
+    "level": 1,
+    "title": "II. Event-Driven Architecture",
+    "page": 208
+  },
+  {
+    "level": 1,
+    "title": "8. Events and the Message Bus",
+    "page": 212
+  },
+  {
+    "level": 2,
+    "title": "Avoiding Making a Mess",
+    "page": 215
+  },
+  {
+    "level": 3,
+    "title": "First, Let’s Avoid Making a Mess of Our Web Controllers",
+    "page": 215
+  },
+  {
+    "level": 3,
+    "title": "And Let’s Not Make a Mess of Our Model Either",
+    "page": 216
+  },
+  {
+    "level": 3,
+    "title": "Or the Service Layer!",
+    "page": 217
+  },
+  {
+    "level": 2,
+    "title": "Single Responsibility Principle",
+    "page": 218
+  },
+  {
+    "level": 2,
+    "title": "All Aboard the Message Bus!",
+    "page": 219
+  },
+  {
+    "level": 3,
+    "title": "The Model Records Events",
+    "page": 219
+  },
+  {
+    "level": 3,
+    "title": "Events Are Simple Dataclasses",
+    "page": 219
+  },
+  {
+    "level": 3,
+    "title": "The Model Raises Events",
+    "page": 220
+  },
+  {
+    "level": 3,
+    "title": "The Message Bus Maps Events to Handlers",
+    "page": 221
+  },
+  {
+    "level": 2,
+    "title": "Option 1: The Service Layer Takes Events from the Model and Puts Them on the Message Bus",
+    "page": 223
+  },
+  {
+    "level": 2,
+    "title": "Option 2: The Service Layer Raises Its Own Events",
+    "page": 224
+  },
+  {
+    "level": 2,
+    "title": "Option 3: The UoW Publishes Events to the Message Bus",
+    "page": 225
+  },
+  {
+    "level": 2,
+    "title": "Wrap-Up",
+    "page": 230
+  },
+  {
+    "level": 1,
+    "title": "9. Going to Town on the Message Bus",
+    "page": 235
+  },
+  {
+    "level": 2,
+    "title": "A New Requirement Leads Us to a New Architecture",
+    "page": 239
+  },
+  {
+    "level": 3,
+    "title": "Imagining an Architecture Change: Everything Will Be an Event Handler",
+    "page": 241
+  },
+  {
+    "level": 2,
+    "title": "Refactoring Service Functions to Message Handlers",
+    "page": 242
+  },
+  {
+    "level": 3,
+    "title": "The Message Bus Now Collects Events from the UoW",
+    "page": 245
+  },
+  {
+    "level": 3,
+    "title": "Our Tests Are All Written in Terms of Events Too",
+    "page": 247
+  },
+  {
+    "level": 3,
+    "title": "A Temporary Ugly Hack: The Message Bus Has to Return Results",
+    "page": 248
+  },
+  {
+    "level": 3,
+    "title": "Modifying Our API to Work with Events",
+    "page": 248
+  },
+  {
+    "level": 2,
+    "title": "Implementing Our New Requirement",
+    "page": 249
+  },
+  {
+    "level": 3,
+    "title": "Our New Event",
+    "page": 252
+  },
+  {
+    "level": 2,
+    "title": "Test-Driving a New Handler",
+    "page": 252
+  },
+  {
+    "level": 3,
+    "title": "Implementation",
+    "page": 254
+  },
+  {
+    "level": 3,
+    "title": "A New Method on the Domain Model",
+    "page": 256
+  },
+  {
+    "level": 2,
+    "title": "Optionally: Unit Testing Event Handlers in Isolation with a Fake Message Bus",
+    "page": 257
+  },
+  {
+    "level": 2,
+    "title": "Wrap-Up",
+    "page": 260
+  },
+  {
+    "level": 3,
+    "title": "What Have We Achieved?",
+    "page": 260
+  },
+  {
+    "level": 3,
+    "title": "Why Have We Achieved?",
+    "page": 260
+  },
+  {
+    "level": 1,
+    "title": "10. Commands and Command Handler",
+    "page": 263
+  },
+  {
+    "level": 2,
+    "title": "Commands and Events",
+    "page": 263
+  },
+  {
+    "level": 2,
+    "title": "Differences in Exception Handling",
+    "page": 266
+  },
+  {
+    "level": 2,
+    "title": "Discussion: Events, Commands, and Error Handling",
+    "page": 268
+  },
+  {
+    "level": 2,
+    "title": "Recovering from Errors Synchronously",
+    "page": 273
+  },
+  {
+    "level": 2,
+    "title": "Wrap-Up",
+    "page": 276
+  },
+  {
+    "level": 1,
+    "title": "11. Event-Driven Architecture: Using Events to Integrate Microservices",
+    "page": 278
+  },
+  {
+    "level": 2,
+    "title": "Distributed Ball of Mud, and Thinking in Nouns",
+    "page": 280
+  },
+  {
+    "level": 2,
+    "title": "Error Handling in Distributed Systems",
+    "page": 284
+  },
+  {
+    "level": 2,
+    "title": "The Alternative: Temporal Decoupling Using Asynchronous Messaging",
+    "page": 285
+  },
+  {
+    "level": 2,
+    "title": "Using a Redis Pub/Sub Channel for Integration",
+    "page": 287
+  },
+  {
+    "level": 2,
+    "title": "Test-Driving It All Using an End-to-End Test",
+    "page": 290
+  },
+  {
+    "level": 3,
+    "title": "Redis Is Another Thin Adapter Around Our Message Bus",
+    "page": 291
+  },
+  {
+    "level": 3,
+    "title": "Our New Outgoing Event",
+    "page": 293
+  },
+  {
+    "level": 2,
+    "title": "Internal Versus External Events",
+    "page": 294
+  },
+  {
+    "level": 2,
+    "title": "Wrap-Up",
+    "page": 295
+  },
+  {
+    "level": 1,
+    "title": "12. Command-Query Responsibility Segregation (CQRS)",
+    "page": 297
+  },
+  {
+    "level": 2,
+    "title": "Domain Models Are for Writing",
+    "page": 299
+  },
+  {
+    "level": 2,
+    "title": "Most Users Aren’t Going to Buy Your Furniture",
+    "page": 300
+  },
+  {
+    "level": 2,
+    "title": "Post/Redirect/Get and CQS",
+    "page": 302
+  },
+  {
+    "level": 2,
+    "title": "Hold On to Your Lunch, Folks",
+    "page": 305
+  },
+  {
+    "level": 2,
+    "title": "Testing CQRS Views",
+    "page": 306
+  },
+  {
+    "level": 2,
+    "title": "“Obvious” Alternative 1: Using the Existing Repository",
+    "page": 307
+  },
+  {
+    "level": 2,
+    "title": "Your Domain Model Is Not Optimized for Read Operations",
+    "page": 308
+  },
+  {
+    "level": 2,
+    "title": "“Obvious” Alternative 2: Using the ORM",
+    "page": 309
+  },
+  {
+    "level": 2,
+    "title": "SELECT N+1 and Other Performance Considerations",
+    "page": 310
+  },
+  {
+    "level": 2,
+    "title": "Time to Completely Jump the Shark",
+    "page": 311
+  },
+  {
+    "level": 3,
+    "title": "Updating a Read Model Table Using an Event Handler",
+    "page": 313
+  },
+  {
+    "level": 2,
+    "title": "Changing Our Read Model Implementation Is Easy",
+    "page": 316
+  },
+  {
+    "level": 2,
+    "title": "Wrap-Up",
+    "page": 318
+  },
+  {
+    "level": 1,
+    "title": "13. Dependency Injection (and Bootstrapping)",
+    "page": 321
+  },
+  {
+    "level": 2,
+    "title": "Implicit Versus Explicit Dependencies",
+    "page": 326
+  },
+  {
+    "level": 2,
+    "title": "Aren’t Explicit Dependencies Totally Weird and Java-y?",
+    "page": 327
+  },
+  {
+    "level": 2,
+    "title": "Preparing Handlers: Manual DI with Closures and Partials",
+    "page": 332
+  },
+  {
+    "level": 2,
+    "title": "An Alternative Using Classes",
+    "page": 333
+  },
+  {
+    "level": 2,
+    "title": "A Bootstrap Script",
+    "page": 334
+  },
+  {
+    "level": 2,
+    "title": "Message Bus Is Given Handlers at Runtime",
+    "page": 338
+  },
+  {
+    "level": 2,
+    "title": "Using Bootstrap in Our Entrypoints",
+    "page": 340
+  },
+  {
+    "level": 2,
+    "title": "Initializing DI in Our Tests",
+    "page": 340
+  },
+  {
+    "level": 2,
+    "title": "Building an Adapter “Properly”: A Worked Example",
+    "page": 342
+  },
+  {
+    "level": 3,
+    "title": "Define the Abstract and Concrete Implementations",
+    "page": 343
+  },
+  {
+    "level": 3,
+    "title": "Make a Fake Version for Your Tests",
+    "page": 344
+  },
+  {
+    "level": 3,
+    "title": "Figure Out How to Integration Test the Real Thing",
+    "page": 345
+  },
+  {
+    "level": 2,
+    "title": "Wrap-Up",
+    "page": 347
+  },
+  {
+    "level": 1,
+    "title": "Epilogue",
+    "page": 350
+  },
+  {
+    "level": 2,
+    "title": "What Now?",
+    "page": 350
+  },
+  {
+    "level": 2,
+    "title": "How Do I Get There from Here?",
+    "page": 350
+  },
+  {
+    "level": 2,
+    "title": "Separating Entangled Responsibilities",
+    "page": 351
+  },
+  {
+    "level": 2,
+    "title": "Identifying Aggregates and Bounded Contexts",
+    "page": 355
+  },
+  {
+    "level": 2,
+    "title": "An Event-Driven Approach to Go to Microservices via Strangler Pattern",
+    "page": 360
+  },
+  {
+    "level": 2,
+    "title": "Convincing Your Stakeholders to Try Something New",
+    "page": 363
+  },
+  {
+    "level": 2,
+    "title": "Questions Our Tech Reviewers Asked That We Couldn’t Work into Prose",
+    "page": 366
+  },
+  {
+    "level": 2,
+    "title": "Footguns",
+    "page": 370
+  },
+  {
+    "level": 2,
+    "title": "More Required Reading",
+    "page": 372
+  },
+  {
+    "level": 2,
+    "title": "Wrap-Up",
+    "page": 372
+  },
+  {
+    "level": 1,
+    "title": "A. Summary Diagram and Table",
+    "page": 373
+  },
+  {
+    "level": 1,
+    "title": "B. A Template Project Structure",
+    "page": 378
+  },
+  {
+    "level": 2,
+    "title": "Env Vars, 12-Factor, and Config, Inside and Outside Containers",
+    "page": 380
+  },
+  {
+    "level": 2,
+    "title": "Config.py",
+    "page": 381
+  },
+  {
+    "level": 2,
+    "title": "Docker-Compose and Containers Config",
+    "page": 382
+  },
+  {
+    "level": 2,
+    "title": "Installing Your Source as a Package",
+    "page": 384
+  },
+  {
+    "level": 2,
+    "title": "Dockerfile",
+    "page": 385
+  },
+  {
+    "level": 2,
+    "title": "Tests",
+    "page": 386
+  },
+  {
+    "level": 2,
+    "title": "Wrap-Up",
+    "page": 387
+  },
+  {
+    "level": 1,
+    "title": "C. Swapping Out the Infrastructure: Do Everything with CSVs",
+    "page": 389
+  },
+  {
+    "level": 2,
+    "title": "Implementing a Repository and Unit of Work for CSVs",
+    "page": 393
+  },
+  {
+    "level": 1,
+    "title": "D. Repository and Unit of Work Patterns with Django",
+    "page": 396
+  },
+  {
+    "level": 2,
+    "title": "Repository Pattern with Django",
+    "page": 397
+  },
+  {
+    "level": 3,
+    "title": "Custom Methods on Django ORM Classes to Translate to/from Our Domain Model",
+    "page": 399
+  },
+  {
+    "level": 2,
+    "title": "Unit of Work Pattern with Django",
+    "page": 400
+  },
+  {
+    "level": 2,
+    "title": "API: Django Views Are Adapters",
+    "page": 403
+  },
+  {
+    "level": 2,
+    "title": "Why Was This All So Hard?",
+    "page": 404
+  },
+  {
+    "level": 2,
+    "title": "What to Do If You Already Have Django",
+    "page": 404
+  },
+  {
+    "level": 2,
+    "title": "Steps Along the Way",
+    "page": 405
+  },
+  {
+    "level": 1,
+    "title": "E. Validation",
+    "page": 408
+  },
+  {
+    "level": 2,
+    "title": "What Is Validation, Anyway?",
+    "page": 408
+  },
+  {
+    "level": 2,
+    "title": "Validating Syntax",
+    "page": 408
+  },
+  {
+    "level": 2,
+    "title": "Postel’s Law and the Tolerant Reader Pattern",
+    "page": 411
+  },
+  {
+    "level": 2,
+    "title": "Validating at the Edge",
+    "page": 413
+  },
+  {
+    "level": 2,
+    "title": "Validating Semantics",
+    "page": 416
+  },
+  {
+    "level": 2,
+    "title": "Validating Pragmatics",
+    "page": 419
+  },
+  {
+    "level": 1,
+    "title": "Index",
+    "page": 421
+  }
+]

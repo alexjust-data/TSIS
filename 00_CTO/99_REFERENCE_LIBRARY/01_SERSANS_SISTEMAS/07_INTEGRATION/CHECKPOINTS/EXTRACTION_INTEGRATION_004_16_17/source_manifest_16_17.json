@@ -1,0 +1,20 @@
+[
+  {
+    "practice": "26-practice-16",
+    "markdown": "practica_16_revised.md",
+    "markdown_sha256": "fc433d9f8890b145b70f740fb3627282cba95b941ae1290f61dff361a6d99ac7",
+    "line_count": 3524,
+    "image_count": 89,
+    "linked_images": 85,
+    "unlinked_images": 4
+  },
+  {
+    "practice": "27-practice-17",
+    "markdown": "practica_17_revised.md",
+    "markdown_sha256": "35856972005d0ca22f209715c8957e12f651442b1604fca06bf6439e42a56d62",
+    "line_count": 5223,
+    "image_count": 176,
+    "linked_images": 164,
+    "unlinked_images": 12
+  }
+]

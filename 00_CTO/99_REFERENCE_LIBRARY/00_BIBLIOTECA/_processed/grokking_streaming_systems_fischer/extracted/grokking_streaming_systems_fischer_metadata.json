@@ -1,0 +1,22 @@
+﻿{
+    "book_id":  "grokking_streaming_systems_fischer",
+    "title":  "Grokking Streaming Systems",
+    "author":  "Josh Fischer",
+    "pdf_path":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Grokking_Streaming_Systems_-_Josh_Fischer.pdf",
+    "file_name":  "Grokking_Streaming_Systems_-_Josh_Fischer.pdf",
+    "file_size_bytes":  17611157,
+    "sha256":  "5ea64708f8570334a3007880c40ed3e86448012c5a951316cb37667ba3b29d31",
+    "pages":  402,
+    "toc_items":  50,
+    "total_words":  44652,
+    "text_pages":  384,
+    "requires_ocr":  false,
+    "ocr_completed":  false,
+    "working_text_persisted":  false,
+    "status":  "indexed",
+    "artifact_contract":  [
+                              "summaries/\u003cbook_id\u003e_agent_summary.md",
+                              "index/\u003cbook_id\u003e_concept_index.md",
+                              "index/\u003cbook_id\u003e_source_map.md"
+                          ]
+}

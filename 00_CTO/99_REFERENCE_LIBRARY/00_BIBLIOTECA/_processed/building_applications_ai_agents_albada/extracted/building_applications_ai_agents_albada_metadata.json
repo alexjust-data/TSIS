@@ -1,0 +1,19 @@
+{
+  "book_id": "building_applications_ai_agents_albada",
+  "title": "Building Applications with AI Agents",
+  "authors": "Michael Albada",
+  "source_type": "Libro PDF",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_OceanofPDF.com_Building_Applications_with_AI_Agents_-_Michael_Albada.pdf",
+  "file_name": "_OceanofPDF.com_Building_Applications_with_AI_Agents_-_Michael_Albada.pdf",
+  "sha256": "26ea61635b5d84096ba099a971f37aa4a4156bae076825ad35e78ca9daafb396",
+  "status": "indexed",
+  "processed_date": "2026-07-27",
+  "page_count": 253,
+  "unit_label": "page",
+  "text_chars": 303646,
+  "text_pages": 251,
+  "requires_ocr_review": false,
+  "working_text_persisted": false,
+  "themes": "AI agents, tool use, planning, memory, RAG, multi-agent systems, evaluation, deployment, observability, guardrails",
+  "utility_tsis": "patrones para agentes que consultan biblioteca, graphify, knowledge assets y tareas TSIS"
+}

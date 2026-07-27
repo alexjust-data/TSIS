@@ -1,0 +1,19 @@
+{
+  "book_id": "designing_data_intensive_applications_kleppmann",
+  "title": "Designing Data-Intensive Applications",
+  "authors": "Martin Kleppmann",
+  "source_type": "Libro PDF",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Martin-Kleppmann---Designing-Data-Intensive-Applications_-O’Reilly-Media-(2017).pdf",
+  "file_name": "Martin-Kleppmann---Designing-Data-Intensive-Applications_-O’Reilly-Media-(2017).pdf",
+  "sha256": "905e1348c2b7955a3e799998ce9b45993b5c8cfa9ef6b93931af7a780b71ac02",
+  "status": "indexed",
+  "processed_date": "2026-07-27",
+  "page_count": 491,
+  "unit_label": "page",
+  "text_chars": 1129830,
+  "text_pages": 478,
+  "requires_ocr_review": false,
+  "working_text_persisted": false,
+  "themes": "data systems, reliability, scalability, maintainability, encoding, storage, indexing, replication, partitioning, transactions, batch, stream processing, consistency",
+  "utility_tsis": "base de arquitectura de datos para datasets, ledgers, replay, event logs y evolucion de esquemas TSIS"
+}

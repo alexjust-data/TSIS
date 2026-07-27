@@ -1,0 +1,24 @@
+{
+  "source_id": "SERSAN-P03",
+  "practice": "13-practice-03",
+  "primary_file": "practica_03_donchain.md",
+  "line_count": 1861,
+  "image_file_count": 111,
+  "image_references_total": 97,
+  "unique_local_images_referenced": 95,
+  "orphan_images": 16,
+  "missing_or_external_image_references": [
+    "../12-practice-02/img/002.png"
+  ],
+  "duplicate_reference_counts": {
+    "img/20.png": 2
+  },
+  "byte_duplicate_groups": [
+    [
+      "img/95.png",
+      "img/96.png"
+    ]
+  ],
+  "source_sha256": "db47d13eae7fbc6fe1cb3f197b45b85aecd8a96ec1ca0bcc693c3037c36531e6",
+  "audit_status": "PASS_WITH_ANOMALIES"
+}

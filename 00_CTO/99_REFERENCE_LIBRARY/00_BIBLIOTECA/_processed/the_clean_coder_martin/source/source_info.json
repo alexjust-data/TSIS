@@ -1,0 +1,28 @@
+{
+  "book_id": "the_clean_coder_martin",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_OceanofPDF.com_The_Clean_Coder_-_Robert_C_Martin.pdf",
+  "file_name": "_OceanofPDF.com_The_Clean_Coder_-_Robert_C_Martin.pdf",
+  "sha256": "73f64ac2e6f2bb18f0cbc2879b636c031ee3fe98eba0cc0a04ce8203d7aec90b",
+  "file_size_bytes": 6349234,
+  "extraction_method": "pypdf",
+  "unit_label": "page",
+  "sample_text": [
+    {
+      "unit": 2,
+      "snippet": "ptg Praise for The Clean Coder “‘Uncle Bob’ Martin definitely raises the bar with his latest book. He explains his expectation for a professional programmer on management interactions, time management, pressure, on collaboration, and on the choice of tools to use. Beyond TDD and ATDD, Martin explains what every programmer who considers him- or herself a professional not only needs to know, but also needs to follow in order to make the young profession of software development grow.” —Markus"
+    },
+    {
+      "unit": 5,
+      "snippet": "ptg T he Robert C. Martin Series is directed at software developers, team- leaders, business analysts, and managers who want to increase their skills and proficiency to the level of a Master Craftsman. The series contains books that guide software professionals in the principles, patterns, and practices of programming, software project management, requirements gathering, design, analysis, testing and others. Visit informit.com/martinseries for a complete list of available publications. The R"
+    },
+    {
+      "unit": 6,
+      "snippet": "ptg The Clean Coder A C ODE OF CONDUCT FOR PROFESSIONAL PROGRAMMERS Robert C. Martin Upper Saddle River, NJ • Boston • Indianapolis • San Francisco New York • Toronto • Montreal • London • Munich • Paris • Madrid Capetown • Sydney • T okyo • Singapore • Mexico City"
+    },
+    {
+      "unit": 7,
+      "snippet": "ptg Many of the designations used by manufacturers and sellers to distinguish their products are claimed as trademarks. Where those designations appear in this book, and the publisher was aware of a trademark claim, the designations have been printed with initial capital letters or in all capitals. The author and publisher have taken care in the preparation of this book, but make no expressed or implied warranty of any kind and assume no responsibility for errors or omissions. No liability is"
+    }
+  ],
+  "notes": "No se persiste texto bruto; solo metadatos, TOC, stats, resumen e indices."
+}

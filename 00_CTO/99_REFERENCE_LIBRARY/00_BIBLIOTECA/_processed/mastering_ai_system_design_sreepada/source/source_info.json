@@ -1,0 +1,28 @@
+{
+  "book_id": "mastering_ai_system_design_sreepada",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_OceanofPDF.com_Mastering_AI_System_Design_-_Soudamini_Sreepada.epub",
+  "file_name": "_OceanofPDF.com_Mastering_AI_System_Design_-_Soudamini_Sreepada.epub",
+  "sha256": "3a8e58fb8a286bc671939e3afeb08a3f6a69eb319bd2c259296e2bfd22559d58",
+  "file_size_bytes": 12389842,
+  "extraction_method": "stdlib epub zip/html",
+  "unit_label": "epub_section",
+  "sample_text": [
+    {
+      "unit": 3,
+      "snippet": "Unknown Copyright © 2025 Orange Education Pvt Ltd, All rights reserved. No part of this book may be reproduced, stored in a retrieval system, or transmitted in any form or by any means, without the prior written permission of the publisher, except in the case of brief quotations embedded in critical articles or reviews. Every effort has been made in the preparation of this book to ensure the accuracy of the information presented. However, the information contained in this book is sold without wa"
+    },
+    {
+      "unit": 5,
+      "snippet": "Unknown About the Author Soudamini Sreepada is a distinguished leader in Artificial Intelligence, education, and research, with over 18 years of experience in the technology industry. She teaches AI system design through DesignYourAI - Her projects and resources are available on GitHub at https://github.com/soudaminigit/ After earning her M.Tech. in Computer Science from IIT Bombay in 2003, she built a remarkable career at Microsoft India Pvt. Ltd., where she held roles such as Software Engineer"
+    },
+    {
+      "unit": 6,
+      "snippet": "Unknown About the Technical Reviewer Amanpreet Singh Bhogal is an AI Engineer specializing in Machine Learning (ML), Deep Learning (DL), and Model Context Protocol (MCP). His work focuses on designing and deploying scalable AI systems that bridge the gap between research and real-world applications. With expertise in building ML pipelines, fine-tuning models, and orchestrating AI workloads on modern infrastructure, Amanpreet ensures that all his solutions are both technically robust and business"
+    },
+    {
+      "unit": 7,
+      "snippet": "Unknown Acknowledgements Firstly, I would like to express my deepest gratitude to my parents, Sripada Peri Sastry and Sripada Syamala, whose unwavering encouragement and passion for learning instilled in me a lifelong curiosity and drive to think beyond boundaries. I am equally thankful to my brother, Sripada Balamukund, for his constant support and guidance throughout my professional journey. I owe immense gratitude to my husband, Venkata Ramgopal Sahasranamamula, for his steadfast encouragemen"
+    }
+  ],
+  "notes": "No se persiste texto bruto; solo metadatos, TOC, stats, resumen e indices."
+}

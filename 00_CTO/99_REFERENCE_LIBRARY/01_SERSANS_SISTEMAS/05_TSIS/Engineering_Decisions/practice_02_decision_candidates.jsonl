@@ -1,0 +1,5 @@
+{"asset_id": "DEC-0001", "asset_type": "DecisionCandidate", "canonical_name": "RawVsAdjustedExecutionSeparation", "definition": "Separar precios de investigación y ejecución.", "status": "CANDIDATE_NOT_ADMITTED", "source_evidence_ids": []}
+{"asset_id": "DEC-0002", "asset_type": "DecisionCandidate", "canonical_name": "BenchmarkMandatory", "definition": "Todo estudio declara benchmarks y sizing comparable.", "status": "CANDIDATE_NOT_ADMITTED", "source_evidence_ids": []}
+{"asset_id": "DEC-0003", "asset_type": "DecisionCandidate", "canonical_name": "RuleActivationGate", "definition": "No validar reglas sin actuación suficiente.", "status": "CANDIDATE_NOT_ADMITTED", "source_evidence_ids": []}
+{"asset_id": "DEC-0004", "asset_type": "DecisionCandidate", "canonical_name": "FiltersAsHypotheses", "definition": "Tratar filtros como grados de libertad sujetos a validación.", "status": "CANDIDATE_NOT_ADMITTED", "source_evidence_ids": []}
+{"asset_id": "DEC-0005", "asset_type": "DecisionCandidate", "canonical_name": "RiskOverlaySeparation", "definition": "Separar reglas de edge y límites de riesgo/gestión.", "status": "CANDIDATE_NOT_ADMITTED", "source_evidence_ids": []}

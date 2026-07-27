@@ -1,0 +1,486 @@
+[
+  {
+    "level": 0,
+    "title": "Contents"
+  },
+  {
+    "level": 0,
+    "title": "Foreword"
+  },
+  {
+    "level": 0,
+    "title": "Preface"
+  },
+  {
+    "level": 0,
+    "title": "Acknowledgments"
+  },
+  {
+    "level": 0,
+    "title": "About the Author"
+  },
+  {
+    "level": 0,
+    "title": "On the Cover"
+  },
+  {
+    "level": 0,
+    "title": "Pre-Requisite Introduction"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 1 Professionalism"
+  },
+  {
+    "level": 1,
+    "title": "Be Careful What You Ask For"
+  },
+  {
+    "level": 1,
+    "title": "Taking Responsibility"
+  },
+  {
+    "level": 1,
+    "title": "First, Do No Harm"
+  },
+  {
+    "level": 1,
+    "title": "Work Ethic"
+  },
+  {
+    "level": 1,
+    "title": "Bibliography"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 2 Saying No"
+  },
+  {
+    "level": 1,
+    "title": "Adversarial Roles"
+  },
+  {
+    "level": 1,
+    "title": "High Stakes"
+  },
+  {
+    "level": 1,
+    "title": "Being a “Team Player”"
+  },
+  {
+    "level": 1,
+    "title": "The Cost of Saying Yes"
+  },
+  {
+    "level": 1,
+    "title": "Code Impossible"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 3 Saying Yes"
+  },
+  {
+    "level": 1,
+    "title": "A Language of Commitment"
+  },
+  {
+    "level": 1,
+    "title": "Learning How to Say “Yes”"
+  },
+  {
+    "level": 1,
+    "title": "Conclusion"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 4 Coding"
+  },
+  {
+    "level": 1,
+    "title": "Preparedness"
+  },
+  {
+    "level": 1,
+    "title": "The Flow Zone"
+  },
+  {
+    "level": 1,
+    "title": "Writer’s Block"
+  },
+  {
+    "level": 1,
+    "title": "Debugging"
+  },
+  {
+    "level": 1,
+    "title": "Pacing Yourself"
+  },
+  {
+    "level": 1,
+    "title": "Being Late"
+  },
+  {
+    "level": 1,
+    "title": "Help"
+  },
+  {
+    "level": 1,
+    "title": "Bibliography"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 5 Test Driven Development"
+  },
+  {
+    "level": 1,
+    "title": "The Jury Is In"
+  },
+  {
+    "level": 1,
+    "title": "The Three Laws of TDD"
+  },
+  {
+    "level": 1,
+    "title": "What TDD Is Not"
+  },
+  {
+    "level": 1,
+    "title": "Bibliography"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 6 Practicing"
+  },
+  {
+    "level": 1,
+    "title": "Some Background on Practicing"
+  },
+  {
+    "level": 1,
+    "title": "The Coding Dojo"
+  },
+  {
+    "level": 1,
+    "title": "Broadening Your Experience"
+  },
+  {
+    "level": 1,
+    "title": "Conclusion"
+  },
+  {
+    "level": 1,
+    "title": "Bibliography"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 7 Acceptance Testing"
+  },
+  {
+    "level": 1,
+    "title": "Communicating Requirements"
+  },
+  {
+    "level": 1,
+    "title": "Acceptance Tests"
+  },
+  {
+    "level": 1,
+    "title": "Conclusion"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 8 Testing Strategies"
+  },
+  {
+    "level": 1,
+    "title": "QA Should Find Nothing"
+  },
+  {
+    "level": 1,
+    "title": "The Test Automation Pyramid"
+  },
+  {
+    "level": 1,
+    "title": "Conclusion"
+  },
+  {
+    "level": 1,
+    "title": "Bibliography"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 9 Time Management"
+  },
+  {
+    "level": 1,
+    "title": "Meetings"
+  },
+  {
+    "level": 1,
+    "title": "Focus-Manna"
+  },
+  {
+    "level": 1,
+    "title": "Time Boxing and Tomatoes"
+  },
+  {
+    "level": 1,
+    "title": "Avoidance"
+  },
+  {
+    "level": 1,
+    "title": "Blind Alleys"
+  },
+  {
+    "level": 1,
+    "title": "Marshes, Bogs, Swamps, and Other Messes"
+  },
+  {
+    "level": 1,
+    "title": "Conclusion"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 10 Estimation"
+  },
+  {
+    "level": 1,
+    "title": "What Is an Estimate?"
+  },
+  {
+    "level": 1,
+    "title": "PERT"
+  },
+  {
+    "level": 1,
+    "title": "Estimating Tasks"
+  },
+  {
+    "level": 1,
+    "title": "The Law of Large Numbers"
+  },
+  {
+    "level": 1,
+    "title": "Conclusion"
+  },
+  {
+    "level": 1,
+    "title": "Bibliography"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 11 Pressure"
+  },
+  {
+    "level": 1,
+    "title": "Avoiding Pressure"
+  },
+  {
+    "level": 1,
+    "title": "Handling Pressure"
+  },
+  {
+    "level": 1,
+    "title": "Conclusion"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 12 Collaboration"
+  },
+  {
+    "level": 1,
+    "title": "Programmers versus People"
+  },
+  {
+    "level": 1,
+    "title": "Cerebellums"
+  },
+  {
+    "level": 1,
+    "title": "Conclusion"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 13 Teams and Projects"
+  },
+  {
+    "level": 1,
+    "title": "Does It Blend?"
+  },
+  {
+    "level": 1,
+    "title": "Conclusion"
+  },
+  {
+    "level": 1,
+    "title": "Bibliography"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 14 Mentoring, Apprenticeship, and Craftsmanship"
+  },
+  {
+    "level": 1,
+    "title": "Degrees of Failure"
+  },
+  {
+    "level": 1,
+    "title": "Mentoring"
+  },
+  {
+    "level": 1,
+    "title": "Apprenticeship"
+  },
+  {
+    "level": 1,
+    "title": "Craftsmanship"
+  },
+  {
+    "level": 1,
+    "title": "Conclusion"
+  },
+  {
+    "level": 0,
+    "title": "Appendix A: Tooling"
+  },
+  {
+    "level": 1,
+    "title": "Tools"
+  },
+  {
+    "level": 1,
+    "title": "Source Code Control"
+  },
+  {
+    "level": 1,
+    "title": "IDE/Editor"
+  },
+  {
+    "level": 1,
+    "title": "Issue Tracking"
+  },
+  {
+    "level": 1,
+    "title": "Continuous Build"
+  },
+  {
+    "level": 1,
+    "title": "Unit Testing Tools"
+  },
+  {
+    "level": 1,
+    "title": "Component Testing Tools"
+  },
+  {
+    "level": 1,
+    "title": "Integration Testing Tools"
+  },
+  {
+    "level": 1,
+    "title": "UML/MDA"
+  },
+  {
+    "level": 1,
+    "title": "Conclusion"
+  },
+  {
+    "level": 0,
+    "title": "Index"
+  },
+  {
+    "level": 1,
+    "title": "A"
+  },
+  {
+    "level": 1,
+    "title": "B"
+  },
+  {
+    "level": 1,
+    "title": "C"
+  },
+  {
+    "level": 1,
+    "title": "D"
+  },
+  {
+    "level": 1,
+    "title": "E"
+  },
+  {
+    "level": 1,
+    "title": "F"
+  },
+  {
+    "level": 1,
+    "title": "G"
+  },
+  {
+    "level": 1,
+    "title": "H"
+  },
+  {
+    "level": 1,
+    "title": "I"
+  },
+  {
+    "level": 1,
+    "title": "J"
+  },
+  {
+    "level": 1,
+    "title": "K"
+  },
+  {
+    "level": 1,
+    "title": "L"
+  },
+  {
+    "level": 1,
+    "title": "M"
+  },
+  {
+    "level": 1,
+    "title": "N"
+  },
+  {
+    "level": 1,
+    "title": "O"
+  },
+  {
+    "level": 1,
+    "title": "P"
+  },
+  {
+    "level": 1,
+    "title": "Q"
+  },
+  {
+    "level": 1,
+    "title": "R"
+  },
+  {
+    "level": 1,
+    "title": "S"
+  },
+  {
+    "level": 1,
+    "title": "T"
+  },
+  {
+    "level": 1,
+    "title": "U"
+  },
+  {
+    "level": 1,
+    "title": "V"
+  },
+  {
+    "level": 1,
+    "title": "W"
+  },
+  {
+    "level": 1,
+    "title": "Y"
+  }
+]

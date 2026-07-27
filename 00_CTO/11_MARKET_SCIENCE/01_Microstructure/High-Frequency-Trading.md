@@ -552,3 +552,522 @@ cómo pensar el mercado como un sistema dinámico secuencial microestructural
 Y sinceramente:
 
 eso encaja PERFECTAMENTE con el tipo de proyecto que estás intentando construir.
+
+
+
+#################################################
+
+
+
+
+Sí he analizado el planteamiento y, precisamente por eso, creo que **el otro agente todavía está pensando en "documentación"**, mientras que yo creo que el proyecto necesita pensar en **ingeniería de conocimiento**.
+
+El problema de su propuesta es muy sutil.
+
+Todo gira alrededor de un `Knowledge Item`.
+
+Yo creo que **eso es demasiado pequeño**.
+
+Porque cuando abras `practica_02_donchain.md` no vas a encontrar cientos de conocimientos independientes.
+
+Encontrarás algo mucho más importante.
+
+Encontrarás una **unidad de aprendizaje**.
+
+Y esa unidad mezcla continuamente:
+
+* teoría
+* código
+* imágenes
+* parámetros
+* preguntas de alumnos
+* buenas prácticas
+* arquitectura
+* decisiones
+* errores
+
+No deberíamos romper eso desde el principio.
+
+---
+
+# Lo que yo haría después de leer el primer capítulo
+
+El capítulo NO sería la unidad final.
+
+Pero tampoco un Knowledge Item.
+
+Yo introduciría un nivel intermedio.
+
+```text
+Curso
+
+↓
+
+Práctica
+
+↓
+
+Tema
+
+↓
+
+Knowledge Item
+```
+
+Ese **Tema** es el que falta.
+
+---
+
+## En la práctica 02, por ejemplo
+
+No procesaría línea a línea.
+
+Lo primero sería descubrir los temas reales.
+
+Por ejemplo (solo leyendo el índice ya aparecen varios):
+
+```text
+Construcción de gráficos continuos
+
+Sistema Donchian
+
+Evaluación preliminar
+
+Datos Forex
+
+BRaC
+
+Portfolio
+
+Regímenes
+
+Multidata
+```
+
+Eso no son capítulos.
+
+Son **dominios de conocimiento**.
+
+Y cada uno genera conocimiento diferente.
+
+---
+
+# Entonces el flujo cambia
+
+En vez de
+
+```text
+Imagen
+
+↓
+
+Knowledge Item
+```
+
+haría
+
+```text
+Práctica
+
+↓
+
+Tema
+
+↓
+
+Extracción
+
+↓
+
+Knowledge Items
+```
+
+Ese pequeño cambio cambia todo.
+
+---
+
+# Luego haría algo todavía más importante
+
+Cada tema tendría una ficha.
+
+Ejemplo.
+
+```text
+Topic
+
+TOPIC-0007
+
+Nombre
+
+Performance Evaluation
+
+Objetivo
+
+Aprender cómo evaluar un sistema.
+
+Fuente
+
+Practice 02
+
+Estado
+
+En proceso
+```
+
+Y entonces TODO lo que encontres se cuelga de ese Topic.
+
+---
+
+# Ejemplo real
+
+Supongamos que dentro de una imagen aparece
+
+```text
+Performance Summary
+```
+
+No generaría inmediatamente un KI.
+
+Primero preguntaría
+
+```text
+¿Pertenece a qué Topic?
+```
+
+Respuesta
+
+```text
+Performance Evaluation
+```
+
+Entonces queda así
+
+```text
+TOPIC
+
+Performance Evaluation
+
+↓
+
+Knowledge Item
+
+Performance Summary
+
+↓
+
+Metric
+
+Net Profit
+
+↓
+
+Metric
+
+Drawdown
+
+↓
+
+Metric
+
+Profit Factor
+
+↓
+
+UI
+
+Performance Summary
+
+↓
+
+Engineering Decision
+
+Crear módulo Performance
+```
+
+Ahora sí tiene sentido.
+
+---
+
+# Pero aún iría un paso más allá
+
+Creo que el verdadero activo del proyecto no serán los Knowledge Items.
+
+Serán los **Assets**.
+
+Porque TSIS necesita cosas reutilizables.
+
+Por ejemplo.
+
+De una sola práctica puedes extraer:
+
+---
+
+## Asset tipo Métrica
+
+```text
+Profit Factor
+```
+
+---
+
+## Asset tipo Clase Python
+
+```text
+PerformanceReport
+```
+
+---
+
+## Asset tipo Algoritmo
+
+```text
+Canal Donchian
+```
+
+---
+
+## Asset tipo Patrón
+
+```text
+Breakout
+```
+
+---
+
+## Asset tipo Configuración
+
+```text
+ATR Length
+```
+
+---
+
+## Asset tipo Arquitectura
+
+```text
+Trade Ledger
+```
+
+---
+
+## Asset tipo Decisión
+
+```text
+No optimizar sin Walk Forward
+```
+
+Todos esos Assets vivirán durante años.
+
+Los Knowledge Items son solo el camino para descubrirlos.
+
+---
+
+# Entonces aterrizaría el proyecto así
+
+Yo no crearía `01_BOOK` todavía.
+
+Crearía algo mucho más parecido a esto.
+
+```text
+SersanSistemas/
+
+00_GOVERNANCE/
+
+knowledge_protocol.md
+
+extraction_protocol.md
+
+taxonomy.md
+
+────────────────────────
+
+01_SOURCE/
+
+12-practice-02/
+
+13-practice-03/
+
+────────────────────────
+
+02_TOPIC_LIBRARY/
+
+TOPIC-0001_Continuous_Charts/
+
+TOPIC-0002_Donchian/
+
+TOPIC-0003_Performance_Evaluation/
+
+TOPIC-0004_Regimes/
+
+...
+
+────────────────────────
+
+03_ASSET_LIBRARY/
+
+Metrics/
+
+Algorithms/
+
+Components/
+
+Parameters/
+
+UI/
+
+Reports/
+
+Classes/
+
+Decisions/
+
+────────────────────────
+
+04_TRACEABILITY/
+
+source_topic_map.json
+
+topic_asset_map.json
+
+asset_tsis_map.json
+
+────────────────────────
+
+05_TSIS/
+
+Engineering Decisions
+
+Tasks
+
+Components
+
+────────────────────────
+
+06_BOOK/
+
+generado automáticamente
+```
+
+---
+
+# ¿Cómo procesaría exactamente la Práctica 02?
+
+No haría una única pasada.
+
+Haría un pipeline fijo.
+
+## Paso 1
+
+Identificar Topics.
+
+No extraer nada todavía.
+
+---
+
+## Paso 2
+
+Dentro de cada Topic.
+
+Extraer únicamente Assets.
+
+No escribir texto.
+
+---
+
+## Paso 3
+
+Cada Asset recibe una categoría.
+
+```text
+Metric
+
+Algorithm
+
+Class
+
+Pattern
+
+Parameter
+
+Decision
+
+Warning
+
+UI
+
+Component
+```
+
+---
+
+## Paso 4
+
+Cada Asset debe responder.
+
+```text
+¿Existe ya?
+
+Sí
+
+↓
+
+Se enriquece.
+
+No
+
+↓
+
+Se crea.
+```
+
+Eso evita duplicados.
+
+---
+
+## Paso 5
+
+Solo cuando toda la práctica termina...
+
+...se escribe un resumen.
+
+No antes.
+
+---
+
+# Lo que más me gusta de este enfoque
+
+La práctica deja de ser "algo que resumimos".
+
+Se convierte en un **proceso ETL de conocimiento**.
+
+Igual que TSIS hace ETL sobre datos de mercado, aquí hacemos ETL sobre conocimiento:
+
+```text
+Práctica (RAW)
+
+↓
+
+Topics (segmentación)
+
+↓
+
+Assets (extracción)
+
+↓
+
+Catálogos (normalización)
+
+↓
+
+Decisiones (integración)
+
+↓
+
+Libro (vista derivada)
+```
+
+Y aquí está el punto que, para mí, marca la diferencia respecto a la propuesta del otro agente:
+
+> **No extraemos conocimiento para escribir un libro. Extraemos activos reutilizables de ingeniería. El libro es simplemente una representación de esos activos.**
+
+Eso encaja mucho mejor con la filosofía de TSIS, porque es exactamente el mismo patrón que ya has seguido con la ontología, los Information Objects y los Data Derivables: primero modelar el conocimiento de forma canónica y gobernada; después generar las vistas que necesites (documentación, arquitectura, tareas o implementación).

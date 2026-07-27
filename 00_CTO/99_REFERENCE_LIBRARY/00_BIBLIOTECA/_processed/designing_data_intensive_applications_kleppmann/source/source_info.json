@@ -1,0 +1,28 @@
+{
+  "book_id": "designing_data_intensive_applications_kleppmann",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Martin-Kleppmann---Designing-Data-Intensive-Applications_-O’Reilly-Media-(2017).pdf",
+  "file_name": "Martin-Kleppmann---Designing-Data-Intensive-Applications_-O’Reilly-Media-(2017).pdf",
+  "sha256": "905e1348c2b7955a3e799998ce9b45993b5c8cfa9ef6b93931af7a780b71ac02",
+  "file_size_bytes": 4377248,
+  "extraction_method": "pypdf",
+  "unit_label": "page",
+  "sample_text": [
+    {
+      "unit": 3,
+      "snippet": "978-1-491-90309-4 [FILL IN] Designing Data-Intensive Applications by Martin Kleppmann Copyright © 2016 Martin Kleppmann. All rights reserved. Printed in the United States of America. Published by O’Reilly Media, Inc. , 1005 Gravenstein Highway North, Sebastopol, CA 95472. O’Reilly books may be purchased for educational, business, or sales promotional use. Online editions are also available for most titles ( http://safaribooksonline.com ). For more information, contact our corpo‐ rate/institution"
+    },
+    {
+      "unit": 7,
+      "snippet": "Table of Contents About this Book. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xiii Part I. Foundations of Data Systems 1. Reliable, Scalable and Maintainable Applications. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1 Thinking About Data Systems 2 Reliability 4 Hardware faults 5 Software errors 6 Human errors 7 How important is reliability? 8 Scalability 8 Describing load 9 Describing performance 1"
+    },
+    {
+      "unit": 8,
+      "snippet": "Relational vs. document databases today 38 Query Languages for Data 42 Declarative queries on the web 43 MapReduce querying 45 Graph-like Data Models 48 Property graphs 49 The Cypher query language 51 Graph queries in SQL 52 Triple-stores and SPARQL 55 The foundation: Datalog 59 Summary 62 3. Storage and Retrieval. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 67 Data Structures that Power Your Database 68 Hash indexes 70 SSTables and"
+    },
+    {
+      "unit": 9,
+      "snippet": "Part II. Distributed Data 5. Replication. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 145 Leaders and Followers 146 Synchronous vs. asynchronous replication 147 Setting up new followers 149 Handling node outages 150 Implementation of replication logs 152 Problems With Replication Lag 155 Reading your own writes 156 Monotonic reads 158 Consistent prefix reads 159 Solutions for replication lag 160 Multi-leader replicat"
+    }
+  ],
+  "notes": "No se persiste texto bruto; solo metadatos, TOC, stats, resumen e indices."
+}

@@ -1,0 +1,1812 @@
+[
+  {
+    "level": 1,
+    "title": "Preface",
+    "page": 6
+  },
+  {
+    "level": 2,
+    "title": "Motivation of This Book",
+    "page": 6
+  },
+  {
+    "level": 2,
+    "title": "Quest for the Knowledge of Financial Prediction",
+    "page": 6
+  },
+  {
+    "level": 2,
+    "title": "Organization of This Book",
+    "page": 9
+  },
+  {
+    "level": 2,
+    "title": "Readers of This Book",
+    "page": 11
+  },
+  {
+    "level": 2,
+    "title": "How to Use This Book?",
+    "page": 12
+  },
+  {
+    "level": 2,
+    "title": "Companion Website—Quantum Finance Forecast Center (QFFC.org)",
+    "page": 12
+  },
+  {
+    "level": 1,
+    "title": "Acknowledgements",
+    "page": 14
+  },
+  {
+    "level": 1,
+    "title": "Contents",
+    "page": 15
+  },
+  {
+    "level": 1,
+    "title": "About the Author",
+    "page": 27
+  },
+  {
+    "level": 1,
+    "title": "Abbreviations",
+    "page": 29
+  },
+  {
+    "level": 1,
+    "title": "Quantum Finance Theory",
+    "page": 31
+  },
+  {
+    "level": 1,
+    "title": "1 Introduction to Quantum Finance",
+    "page": 32
+  },
+  {
+    "level": 2,
+    "title": "1.1 A Tale of Two Worlds—From the World of General Relativity to the World of Quantum Mechanics",
+    "page": 33
+  },
+  {
+    "level": 3,
+    "title": "1.1.1 Newton’s Physical World of Classical Mechanics",
+    "page": 34
+  },
+  {
+    "level": 3,
+    "title": "1.1.2 Einstein’s Cosmic World of General Relativity",
+    "page": 34
+  },
+  {
+    "level": 3,
+    "title": "1.1.3 Heisenberg’s Subatomic World of Quantum Mechanics",
+    "page": 35
+  },
+  {
+    "level": 2,
+    "title": "1.2 Two Sides of the Same Coin—Wave–Particle Duality in Quantum Finance",
+    "page": 36
+  },
+  {
+    "level": 3,
+    "title": "1.2.1 Wave–Particle Duality and Double-Slit Experiment",
+    "page": 36
+  },
+  {
+    "level": 3,
+    "title": "1.2.2 Wave–Particle Duality in Finance",
+    "page": 38
+  },
+  {
+    "level": 2,
+    "title": "1.3 Quantum Field Theory and the Birth of Quantum Finance",
+    "page": 39
+  },
+  {
+    "level": 2,
+    "title": "1.4 Heisenberg’s Uncertainty Principle in Finance and Modern AI Technology",
+    "page": 40
+  },
+  {
+    "level": 3,
+    "title": "1.4.1 Schrödinger’s Cat Paradox",
+    "page": 40
+  },
+  {
+    "level": 3,
+    "title": "1.4.2 Uncertainty Principle in Finance",
+    "page": 41
+  },
+  {
+    "level": 2,
+    "title": "1.5 Basic Components of Quantum Finance",
+    "page": 42
+  },
+  {
+    "level": 2,
+    "title": "1.6 Conclusion",
+    "page": 43
+  },
+  {
+    "level": 2,
+    "title": "References",
+    "page": 45
+  },
+  {
+    "level": 1,
+    "title": "2 Quantum Field Theory for Quantum Finance",
+    "page": 46
+  },
+  {
+    "level": 2,
+    "title": "2.1 Quantum Mechanics—The Basics",
+    "page": 47
+  },
+  {
+    "level": 3,
+    "title": "2.1.1 A Brief History Quantum Mechanics",
+    "page": 48
+  },
+  {
+    "level": 3,
+    "title": "2.1.2 Quantum Mechanics—Wave–Particle Duality Phenomena",
+    "page": 48
+  },
+  {
+    "level": 3,
+    "title": "2.1.3 Heisenberg’s Uncertainty Principle",
+    "page": 52
+  },
+  {
+    "level": 3,
+    "title": "2.1.4 Quantization of Energy",
+    "page": 53
+  },
+  {
+    "level": 3,
+    "title": "2.1.5 Quantum Entanglement",
+    "page": 54
+  },
+  {
+    "level": 2,
+    "title": "2.2 From Quantum Mechanics to Quantum Field Theory",
+    "page": 56
+  },
+  {
+    "level": 2,
+    "title": "2.3 Classical Field Versus Quantum Field",
+    "page": 56
+  },
+  {
+    "level": 2,
+    "title": "2.4 Feynman’s Path Integral",
+    "page": 58
+  },
+  {
+    "level": 3,
+    "title": "2.4.1 A Thought Experiment",
+    "page": 58
+  },
+  {
+    "level": 3,
+    "title": "2.4.2 Feynman’s Path Integral Formulation",
+    "page": 61
+  },
+  {
+    "level": 3,
+    "title": "2.4.3 Path Integral Formulation in Quantum Finance",
+    "page": 61
+  },
+  {
+    "level": 2,
+    "title": "2.5 Quantum Oscillators",
+    "page": 62
+  },
+  {
+    "level": 3,
+    "title": "2.5.1 Quantum Harmonic Oscillator—The Basics",
+    "page": 62
+  },
+  {
+    "level": 3,
+    "title": "2.5.2 N-Dimensional Quantum Harmonic Oscillators",
+    "page": 63
+  },
+  {
+    "level": 3,
+    "title": "2.5.3 Quantum Anharmonic Oscillators",
+    "page": 65
+  },
+  {
+    "level": 2,
+    "title": "2.6 Conclusion",
+    "page": 67
+  },
+  {
+    "level": 2,
+    "title": "References",
+    "page": 68
+  },
+  {
+    "level": 1,
+    "title": "3 An Overview of Quantum Finance Models",
+    "page": 69
+  },
+  {
+    "level": 2,
+    "title": "3.1 A Brief History of Quantum Finance",
+    "page": 70
+  },
+  {
+    "level": 2,
+    "title": "3.2 Major Works and R&D in Quantum Finance",
+    "page": 71
+  },
+  {
+    "level": 2,
+    "title": "3.3 Two Pillars of Quantum Finance Models",
+    "page": 71
+  },
+  {
+    "level": 2,
+    "title": "3.4 Feynman’s Path Integral Approach in Quantum Finance",
+    "page": 72
+  },
+  {
+    "level": 3,
+    "title": "3.4.1 Forward Interest Rate in a Nutshell",
+    "page": 72
+  },
+  {
+    "level": 3,
+    "title": "3.4.2 Zero Coupon Bond (Treasury Bond)",
+    "page": 74
+  },
+  {
+    "level": 3,
+    "title": "3.4.3 Quantum Field Theory of Interest Rate Model",
+    "page": 74
+  },
+  {
+    "level": 3,
+    "title": "3.4.4 Feynman’s Path Integral Formulation of Forward Interest Rate",
+    "page": 76
+  },
+  {
+    "level": 2,
+    "title": "3.5 Quantum Anharmonic Oscillator Approach in Quantum Finance",
+    "page": 77
+  },
+  {
+    "level": 3,
+    "title": "3.5.1 Motivation",
+    "page": 77
+  },
+  {
+    "level": 3,
+    "title": "3.5.2 QAHO Modeling—Prices Versus Returns",
+    "page": 77
+  },
+  {
+    "level": 3,
+    "title": "3.5.3 Quantum Anharmonic Oscillations of Returns",
+    "page": 78
+  },
+  {
+    "level": 3,
+    "title": "3.5.4 A Quantum Anharmonic Oscillator Model of Financial Markets",
+    "page": 80
+  },
+  {
+    "level": 3,
+    "title": "3.5.5 Physical Meaning of Hamiltonian in Quantum Finance",
+    "page": 80
+  },
+  {
+    "level": 3,
+    "title": "3.5.6 Probability Density Function in Quantum Finance",
+    "page": 81
+  },
+  {
+    "level": 3,
+    "title": "3.5.7 Quantum Anharmonic Oscillator Formulation",
+    "page": 82
+  },
+  {
+    "level": 3,
+    "title": "3.5.8 Quantum Finance Schrödinger Equation—QFSE",
+    "page": 83
+  },
+  {
+    "level": 3,
+    "title": "3.5.9 Significance of QFSE in Quantum Finance",
+    "page": 84
+  },
+  {
+    "level": 2,
+    "title": "3.6 Quantum Finance—Which Way to Go",
+    "page": 84
+  },
+  {
+    "level": 3,
+    "title": "3.6.1 Feynman Feynman’s Path Integral Approach Versus Quantum Anharmonic Oscillator Approach",
+    "page": 84
+  },
+  {
+    "level": 3,
+    "title": "3.6.2 Quantum Finance—Which Way to Go",
+    "page": 86
+  },
+  {
+    "level": 2,
+    "title": "3.7 Conclusion",
+    "page": 87
+  },
+  {
+    "level": 2,
+    "title": "References",
+    "page": 90
+  },
+  {
+    "level": 1,
+    "title": "4 Quantum Finance Theory",
+    "page": 92
+  },
+  {
+    "level": 2,
+    "title": "4.1 Quantum Finance Theory",
+    "page": 93
+  },
+  {
+    "level": 3,
+    "title": "4.1.1 The Concept",
+    "page": 93
+  },
+  {
+    "level": 3,
+    "title": "4.1.2 The Notion of Quantum Price",
+    "page": 94
+  },
+  {
+    "level": 3,
+    "title": "4.1.3 Revisit of Schrödinger Equation",
+    "page": 96
+  },
+  {
+    "level": 2,
+    "title": "4.2 Quantum Finance Model",
+    "page": 97
+  },
+  {
+    "level": 3,
+    "title": "4.2.1 The Mathematical Model",
+    "page": 97
+  },
+  {
+    "level": 3,
+    "title": "4.2.2 Physical Meaning of Wave Function ψ",
+    "page": 98
+  },
+  {
+    "level": 2,
+    "title": "4.3 Financial Dynamics",
+    "page": 99
+  },
+  {
+    "level": 3,
+    "title": "4.3.1 Key Players in Secondary Financial Markets",
+    "page": 99
+  },
+  {
+    "level": 3,
+    "title": "4.3.2 Market Maker (MM)",
+    "page": 99
+  },
+  {
+    "level": 3,
+    "title": "4.3.3 Arbitrageurs (ARs)",
+    "page": 100
+  },
+  {
+    "level": 3,
+    "title": "4.3.4 Speculators (SPs)",
+    "page": 101
+  },
+  {
+    "level": 3,
+    "title": "4.3.5 Hedgers (HGs)",
+    "page": 102
+  },
+  {
+    "level": 3,
+    "title": "4.3.6 Investors (IVs)",
+    "page": 103
+  },
+  {
+    "level": 2,
+    "title": "4.4 Financial Dynamics and the Notion of Excess Demand",
+    "page": 104
+  },
+  {
+    "level": 2,
+    "title": "4.5 Quantum Dynamics in Financial Markets",
+    "page": 106
+  },
+  {
+    "level": 3,
+    "title": "4.5.1 Market Makers (MMs)",
+    "page": 106
+  },
+  {
+    "level": 3,
+    "title": "4.5.2 Arbitrageurs (ARs)",
+    "page": 107
+  },
+  {
+    "level": 3,
+    "title": "4.5.3 Speculators (SPs)",
+    "page": 108
+  },
+  {
+    "level": 3,
+    "title": "4.5.4 Hedgers (HGs)",
+    "page": 108
+  },
+  {
+    "level": 3,
+    "title": "4.5.5 Investors (IVs)",
+    "page": 109
+  },
+  {
+    "level": 3,
+    "title": "4.5.6 Overall Dynamics for All Different Parties",
+    "page": 109
+  },
+  {
+    "level": 2,
+    "title": "4.6 Conclusion",
+    "page": 111
+  },
+  {
+    "level": 2,
+    "title": "References",
+    "page": 114
+  },
+  {
+    "level": 1,
+    "title": "5 Quantum Price Levels—Basic Theory and Numerical Computation Technique",
+    "page": 116
+  },
+  {
+    "level": 2,
+    "title": "5.1 Quantum Price Levels (QPLs)",
+    "page": 117
+  },
+  {
+    "level": 3,
+    "title": "5.1.1 The Concept",
+    "page": 117
+  },
+  {
+    "level": 3,
+    "title": "5.1.2 The Quantum Dynamics",
+    "page": 118
+  },
+  {
+    "level": 3,
+    "title": "5.1.3 QPLs Versus S & R Levels",
+    "page": 119
+  },
+  {
+    "level": 2,
+    "title": "5.2 Schrödinger Equation Revisit",
+    "page": 120
+  },
+  {
+    "level": 2,
+    "title": "5.3 Quantum Finance Model",
+    "page": 121
+  },
+  {
+    "level": 2,
+    "title": "5.4 Physical Meaning of Wave Function ",
+    "page": 122
+  },
+  {
+    "level": 2,
+    "title": "5.5 Solving Quantum Finance Schrödinger Equation",
+    "page": 124
+  },
+  {
+    "level": 2,
+    "title": "5.6 Numerical Computation of Quantum Anharmonic Oscillators",
+    "page": 124
+  },
+  {
+    "level": 2,
+    "title": "5.7 Evaluate Quantum Price Levels Using Numerical Computation Technique",
+    "page": 126
+  },
+  {
+    "level": 2,
+    "title": "5.8 Finite Difference Method (FDM)",
+    "page": 127
+  },
+  {
+    "level": 2,
+    "title": "5.9 Finite Difference Method (FDM) to Evaluate QF Wave Function",
+    "page": 128
+  },
+  {
+    "level": 2,
+    "title": "5.10 Numerical Evaluation of λ| XAUUSD  . Using FDM",
+    "page": 129
+  },
+  {
+    "level": 2,
+    "title": "5.11 Numerical Computation of Quantum Energy  Levels En",
+    "page": 131
+  },
+  {
+    "level": 2,
+    "title": "5.12 Numerical Computation of Quantum Finance Energy Levels (MATLAB Version)",
+    "page": 131
+  },
+  {
+    "level": 2,
+    "title": "5.13 Depressed Cubic Equation Solver—Gerolamo Cardano",
+    "page": 134
+  },
+  {
+    "level": 2,
+    "title": "5.14 Cardano’s Method for Calculating QFEL",
+    "page": 135
+  },
+  {
+    "level": 2,
+    "title": "5.15 Numerical Computation of Quantum Energy Levels (MQL Version)",
+    "page": 136
+  },
+  {
+    "level": 2,
+    "title": "5.16 Numerical Algorithm to Calculate QPL Using MQL",
+    "page": 137
+  },
+  {
+    "level": 2,
+    "title": "5.17 QPLs for XAUUSD",
+    "page": 139
+  },
+  {
+    "level": 2,
+    "title": "5.18 Conclusion",
+    "page": 140
+  },
+  {
+    "level": 2,
+    "title": "References",
+    "page": 144
+  },
+  {
+    "level": 1,
+    "title": "6 Quantum Trading and Hedging Strategy",
+    "page": 146
+  },
+  {
+    "level": 2,
+    "title": "6.1 Financial Trading and Hedging Strategies in a Nutshell",
+    "page": 147
+  },
+  {
+    "level": 2,
+    "title": "6.2 Traditional Trading and Hedging Strategies",
+    "page": 148
+  },
+  {
+    "level": 2,
+    "title": "6.3 Latest R&D on Trading and Hedging Strategies",
+    "page": 149
+  },
+  {
+    "level": 2,
+    "title": "6.4 Technical Analysis and Program Trading",
+    "page": 150
+  },
+  {
+    "level": 2,
+    "title": "6.5 Technical Analytical Tools and Indicators",
+    "page": 151
+  },
+  {
+    "level": 2,
+    "title": "6.6 Seven Major Financial Trading and Hedging Algorithms",
+    "page": 152
+  },
+  {
+    "level": 3,
+    "title": "6.6.1 M1.1 Trend Trading Strategy—Key Patterns",
+    "page": 153
+  },
+  {
+    "level": 3,
+    "title": "6.6.2 M1.2 Trend Trading Strategy—MA Crossing",
+    "page": 154
+  },
+  {
+    "level": 3,
+    "title": "6.6.3 M1.3 Trend Trading Strategy—Signal Lines Crossing",
+    "page": 155
+  },
+  {
+    "level": 3,
+    "title": "6.6.4 M2.1 Breakout Trading Strategy—Key Patterns",
+    "page": 156
+  },
+  {
+    "level": 3,
+    "title": "6.6.5 M2.2 Breakout Trading Strategy—S & R Lines",
+    "page": 157
+  },
+  {
+    "level": 3,
+    "title": "6.6.6 M3.1 Reversal Trading Strategy—Key Reversal Patterns",
+    "page": 158
+  },
+  {
+    "level": 3,
+    "title": "6.6.7 M3.2 Reversal Trading Strategy—S & R Lines",
+    "page": 159
+  },
+  {
+    "level": 3,
+    "title": "6.6.8 M3.3 Reversal Trading Strategy—Technical Indicator RSI",
+    "page": 160
+  },
+  {
+    "level": 3,
+    "title": "6.6.9 M4.1 Channel Trading Strategy—Trend Channel Trading",
+    "page": 161
+  },
+  {
+    "level": 3,
+    "title": "6.6.10 M4.2 Channel Trading Strategy—S & R Channel Trading",
+    "page": 162
+  },
+  {
+    "level": 3,
+    "title": "6.6.11 M4.3 Channel Trading Strategy—Bollinger Bands",
+    "page": 163
+  },
+  {
+    "level": 3,
+    "title": "6.6.12 M5 Averaging Trading Strategy",
+    "page": 164
+  },
+  {
+    "level": 3,
+    "title": "6.6.13 M6 Stop-Loss Trading Strategy",
+    "page": 166
+  },
+  {
+    "level": 3,
+    "title": "6.6.14 M7.1 Hedge Trading Strategy—Single-Market Single-Product (SM-SP) Hedge",
+    "page": 167
+  },
+  {
+    "level": 3,
+    "title": "6.6.15 M7.2 Hedge Trading Strategy—Single-Platform Multi-product (SP-MP) Hedge",
+    "page": 167
+  },
+  {
+    "level": 3,
+    "title": "6.6.16 M7.3 Hedge Trading Strategy—Multi-platform Multi-product (MP-MP) Hedge",
+    "page": 169
+  },
+  {
+    "level": 2,
+    "title": "6.7 Quantum Trading and Hedging Strategy",
+    "page": 170
+  },
+  {
+    "level": 3,
+    "title": "6.7.1 Basic Concept",
+    "page": 170
+  },
+  {
+    "level": 3,
+    "title": "6.7.2 Quantum Price Levels Versus S & R Analysis",
+    "page": 171
+  },
+  {
+    "level": 3,
+    "title": "6.7.3 Quantum Finance Forecast Center—Daily Forecast and QPLs",
+    "page": 171
+  },
+  {
+    "level": 3,
+    "title": "6.7.4 Basic Quantum Trading and Hedging Strategies",
+    "page": 174
+  },
+  {
+    "level": 3,
+    "title": "6.7.5 QT#1.1 Inexperienced Investors—Quantum Forecast Oscillation Trading Strategy (QFOTS)",
+    "page": 174
+  },
+  {
+    "level": 3,
+    "title": "6.7.6 QT#1.2 Inexperienced Investors—Quantum Forecast Oscillation Trading with Averaging Strategy (QFOTAS)",
+    "page": 175
+  },
+  {
+    "level": 3,
+    "title": "6.7.7 QT#2.1 Experienced Traders—Quantum Forecast Breakout Trading Strategy (QFBTS)",
+    "page": 177
+  },
+  {
+    "level": 3,
+    "title": "6.7.8 QT#2.2 Experienced Traders—Quantum Forecast Breakout Trading with Averaging Strategy (QFBTAS)",
+    "page": 177
+  },
+  {
+    "level": 3,
+    "title": "6.7.9 QT#3.1 Experienced Traders—Quantum Forecast Single-Product Hedging Strategy (QFSPHS)",
+    "page": 179
+  },
+  {
+    "level": 2,
+    "title": "6.8 Conclusion",
+    "page": 181
+  },
+  {
+    "level": 2,
+    "title": "References",
+    "page": 184
+  },
+  {
+    "level": 1,
+    "title": "7 AI Powerful Tools in Quantum Finance",
+    "page": 186
+  },
+  {
+    "level": 2,
+    "title": "7.1 An Overview of Artificial Intelligence",
+    "page": 187
+  },
+  {
+    "level": 3,
+    "title": "7.1.1 From Greek Mythology to Turing Test",
+    "page": 187
+  },
+  {
+    "level": 3,
+    "title": "7.1.2 Definition of AI",
+    "page": 188
+  },
+  {
+    "level": 3,
+    "title": "7.1.3 Strong Versus Weak AI",
+    "page": 189
+  },
+  {
+    "level": 3,
+    "title": "7.1.4 Strong (Hard) AI",
+    "page": 190
+  },
+  {
+    "level": 3,
+    "title": "7.1.5 Weak (Soft) AI",
+    "page": 191
+  },
+  {
+    "level": 3,
+    "title": "7.1.6 Classification of Artificial Intelligence",
+    "page": 192
+  },
+  {
+    "level": 2,
+    "title": "7.2 Neural Networks—The Brain of AI",
+    "page": 193
+  },
+  {
+    "level": 3,
+    "title": "7.2.1 Biological Neural Network—Our Brain",
+    "page": 193
+  },
+  {
+    "level": 3,
+    "title": "7.2.2 Integrate-and-Fire Operations in Biological Neural Network",
+    "page": 194
+  },
+  {
+    "level": 3,
+    "title": "7.2.3 A Neuron Model",
+    "page": 195
+  },
+  {
+    "level": 3,
+    "title": "7.2.4 Single Hidden Layer Artificial Neural Network Model",
+    "page": 196
+  },
+  {
+    "level": 3,
+    "title": "7.2.5 Classification of ANNs by Machine Learning Technique",
+    "page": 198
+  },
+  {
+    "level": 3,
+    "title": "7.2.6 Classification of ANNs by Areas of Application",
+    "page": 199
+  },
+  {
+    "level": 3,
+    "title": "7.2.7 Auto-associative Network—Network Architecture",
+    "page": 200
+  },
+  {
+    "level": 3,
+    "title": "7.2.8 Auto-associative Network—Network Training Algorithm",
+    "page": 201
+  },
+  {
+    "level": 3,
+    "title": "7.2.9 Hopfield Network—Network Training Algorithm",
+    "page": 202
+  },
+  {
+    "level": 3,
+    "title": "7.2.10 Hopfield Network—Network Training Algorithm",
+    "page": 202
+  },
+  {
+    "level": 3,
+    "title": "7.2.11 Feedforward Backpropagation Network (FFBPN)—Network Architecture",
+    "page": 204
+  },
+  {
+    "level": 3,
+    "title": "7.2.12 Feedforward Backpropagation Network (FFBPN)—Training Algorithm",
+    "page": 205
+  },
+  {
+    "level": 3,
+    "title": "7.2.13 Neural Network—Where to Go?",
+    "page": 206
+  },
+  {
+    "level": 2,
+    "title": "7.3 Genetic Algorithms—The Optimization Engine",
+    "page": 207
+  },
+  {
+    "level": 3,
+    "title": "7.3.1 Nature of Evolution—Genetic Algorithms",
+    "page": 207
+  },
+  {
+    "level": 3,
+    "title": "7.3.2 Nature of Evolution—Genetic Algorithms",
+    "page": 208
+  },
+  {
+    "level": 3,
+    "title": "7.3.3 GA—Population Initialization",
+    "page": 209
+  },
+  {
+    "level": 3,
+    "title": "7.3.4 GA—Fitness Evaluation Function",
+    "page": 209
+  },
+  {
+    "level": 3,
+    "title": "7.3.5 GA—Parents Selection Scheme",
+    "page": 210
+  },
+  {
+    "level": 3,
+    "title": "7.3.6 GA—Crossover Operations",
+    "page": 210
+  },
+  {
+    "level": 3,
+    "title": "7.3.7 GA—Mutation Operations",
+    "page": 211
+  },
+  {
+    "level": 3,
+    "title": "7.3.8 GA—Implementation",
+    "page": 212
+  },
+  {
+    "level": 3,
+    "title": "7.3.9 GA—Applications",
+    "page": 213
+  },
+  {
+    "level": 2,
+    "title": "7.4 Fuzzy Logic—The Fuzzification Engine",
+    "page": 214
+  },
+  {
+    "level": 3,
+    "title": "7.4.1 The World of Fuzziness, Chaos, and Uncertainty",
+    "page": 214
+  },
+  {
+    "level": 3,
+    "title": "7.4.2 The Birth of Fuzzy Logic",
+    "page": 215
+  },
+  {
+    "level": 3,
+    "title": "7.4.3 Fuzzy Theory and the Uncertainty Principle",
+    "page": 216
+  },
+  {
+    "level": 3,
+    "title": "7.4.4 ICMR Model—Fuzzy Identification Module",
+    "page": 217
+  },
+  {
+    "level": 3,
+    "title": "7.4.5 ICMR Model—Fuzzy Categorization Module",
+    "page": 218
+  },
+  {
+    "level": 3,
+    "title": "7.4.6 ICMR Model—Fuzzy Modeling Module",
+    "page": 219
+  },
+  {
+    "level": 3,
+    "title": "7.4.7 ICMR Model—Fuzzification Versus Defuzzification",
+    "page": 220
+  },
+  {
+    "level": 3,
+    "title": "7.4.8 ICMR Model—Fuzzy Reasoning Module",
+    "page": 220
+  },
+  {
+    "level": 3,
+    "title": "7.4.9 Case Study—Fuzzy Air-Conditioning Control Systems, FACS",
+    "page": 223
+  },
+  {
+    "level": 3,
+    "title": "7.4.10 Applications of Fuzzy Logic in Daily Life",
+    "page": 226
+  },
+  {
+    "level": 3,
+    "title": "7.4.11 Fuzzy Expert Systems on Financial Trading",
+    "page": 228
+  },
+  {
+    "level": 3,
+    "title": "7.4.12 Fuzzy-neuro System in Quantum Finance",
+    "page": 228
+  },
+  {
+    "level": 2,
+    "title": "7.5 Conclusion",
+    "page": 230
+  },
+  {
+    "level": 2,
+    "title": "References",
+    "page": 234
+  },
+  {
+    "level": 1,
+    "title": "8 Chaos and Fractals in Quantum Finance",
+    "page": 236
+  },
+  {
+    "level": 2,
+    "title": "8.1 Basic Concepts and Formulation on Chaos Theory",
+    "page": 237
+  },
+  {
+    "level": 3,
+    "title": "8.1.1 The World of Nonlinear Dynamics",
+    "page": 237
+  },
+  {
+    "level": 3,
+    "title": "8.1.2 Deterministic World Versus Probabilistic World",
+    "page": 238
+  },
+  {
+    "level": 3,
+    "title": "8.1.3 Chaotic Flow Versus Chaotic Maps",
+    "page": 239
+  },
+  {
+    "level": 3,
+    "title": "8.1.4 Origin of Chaos Theory—Lorenz Attractor",
+    "page": 240
+  },
+  {
+    "level": 2,
+    "title": "8.2 Characteristics of Chaotic Systems",
+    "page": 242
+  },
+  {
+    "level": 3,
+    "title": "8.2.1 Sensitive Dependence on Initial Conditions",
+    "page": 243
+  },
+  {
+    "level": 3,
+    "title": "8.2.2 Highly Nonlinear but Deterministic in Nature",
+    "page": 244
+  },
+  {
+    "level": 3,
+    "title": "8.2.3 Bifurcation Phenomenon",
+    "page": 245
+  },
+  {
+    "level": 3,
+    "title": "8.2.4 Applications of Chaos Theory",
+    "page": 245
+  },
+  {
+    "level": 3,
+    "title": "8.2.5 Chaos Theory Versus Uncertainty Principle",
+    "page": 246
+  },
+  {
+    "level": 2,
+    "title": "8.3 Fractals in Quantum Finance",
+    "page": 248
+  },
+  {
+    "level": 3,
+    "title": "8.3.1 Fractal Versus Chaos—Two Sides of a Coin",
+    "page": 248
+  },
+  {
+    "level": 3,
+    "title": "8.3.2 A Brief History of Fractals",
+    "page": 249
+  },
+  {
+    "level": 3,
+    "title": "8.3.3 Self-similarity in Mandelbrot Set Fractals",
+    "page": 250
+  },
+  {
+    "level": 3,
+    "title": "8.3.4 Fractal Dimension",
+    "page": 250
+  },
+  {
+    "level": 3,
+    "title": "8.3.5 Natural Phenomena with Fractal Features",
+    "page": 252
+  },
+  {
+    "level": 2,
+    "title": "8.4 Applications of Chaos Theory and Fractals in Quantum Finance",
+    "page": 254
+  },
+  {
+    "level": 3,
+    "title": "8.4.1 Chaos Theory in Quantum Finance",
+    "page": 254
+  },
+  {
+    "level": 3,
+    "title": "8.4.2 Fractal Finance",
+    "page": 254
+  },
+  {
+    "level": 2,
+    "title": "8.5 Conclusion",
+    "page": 256
+  },
+  {
+    "level": 2,
+    "title": "References",
+    "page": 259
+  },
+  {
+    "level": 1,
+    "title": "9 Chaotic Neural Networks in Quantum Finance",
+    "page": 261
+  },
+  {
+    "level": 2,
+    "title": "9.1 Quantum World of Chaotic Oscillation",
+    "page": 262
+  },
+  {
+    "level": 3,
+    "title": "9.1.1 Multiverse and Quantum Theory",
+    "page": 262
+  },
+  {
+    "level": 3,
+    "title": "9.1.2 Chaos in Brain—Brainwave",
+    "page": 263
+  },
+  {
+    "level": 2,
+    "title": "9.2 Chaotic Neural Oscillators",
+    "page": 264
+  },
+  {
+    "level": 3,
+    "title": "9.2.1 An Introduction",
+    "page": 264
+  },
+  {
+    "level": 3,
+    "title": "9.2.2 Wang-Oscillator—The Structure",
+    "page": 266
+  },
+  {
+    "level": 3,
+    "title": "9.2.3 Wang-Oscillator—Bifurcation Diagram",
+    "page": 267
+  },
+  {
+    "level": 3,
+    "title": "9.2.4 Wang-Oscillator—Major Contributions and Limitations",
+    "page": 268
+  },
+  {
+    "level": 2,
+    "title": "9.3 Lee-Oscillator",
+    "page": 269
+  },
+  {
+    "level": 3,
+    "title": "9.3.1 The Motivation",
+    "page": 269
+  },
+  {
+    "level": 3,
+    "title": "9.3.2 Lee-Oscillator—Bifurcation Diagram",
+    "page": 270
+  },
+  {
+    "level": 3,
+    "title": "9.3.3 Lee-Oscillator—Potential Applications",
+    "page": 271
+  },
+  {
+    "level": 2,
+    "title": "9.4 Quantum Finance Oscillators (QFO)",
+    "page": 272
+  },
+  {
+    "level": 3,
+    "title": "9.4.1 The Concept",
+    "page": 272
+  },
+  {
+    "level": 3,
+    "title": "9.4.2 The Model",
+    "page": 272
+  },
+  {
+    "level": 2,
+    "title": "9.5 Applications of QFO in Quantum Finance",
+    "page": 274
+  },
+  {
+    "level": 3,
+    "title": "9.5.1 The Concept",
+    "page": 274
+  },
+  {
+    "level": 3,
+    "title": "9.5.2 QFO for Real-Time Financial Prediction Using Chaotic Neural Networks",
+    "page": 276
+  },
+  {
+    "level": 3,
+    "title": "9.5.3 Chaotic Fuzzy-neuro Oscillators—Quantum Finance Signals (QFS)",
+    "page": 277
+  },
+  {
+    "level": 3,
+    "title": "9.5.4 Chaotic Deep Neural Networks in Quantum Finance",
+    "page": 278
+  },
+  {
+    "level": 3,
+    "title": "9.5.5 Chaotic Multiagent Trading System",
+    "page": 278
+  },
+  {
+    "level": 2,
+    "title": "9.6 Conclusion",
+    "page": 280
+  },
+  {
+    "level": 2,
+    "title": "References",
+    "page": 285
+  },
+  {
+    "level": 1,
+    "title": "Quantum Finance Applications",
+    "page": 286
+  },
+  {
+    "level": 1,
+    "title": "10 Quantum Price Levels for Worldwide Financial Products",
+    "page": 287
+  },
+  {
+    "level": 2,
+    "title": "10.1 Financial Markets",
+    "page": 288
+  },
+  {
+    "level": 3,
+    "title": "10.1.1 An Overview",
+    "page": 288
+  },
+  {
+    "level": 3,
+    "title": "10.1.2 Primary Versus Secondary Market",
+    "page": 289
+  },
+  {
+    "level": 3,
+    "title": "10.1.3 Types of Financial Markets",
+    "page": 290
+  },
+  {
+    "level": 3,
+    "title": "10.1.4 OTC Market and Market Makers",
+    "page": 290
+  },
+  {
+    "level": 3,
+    "title": "10.1.5 Forex, OTC, and Market Maker",
+    "page": 291
+  },
+  {
+    "level": 3,
+    "title": "10.1.6 Forex Trading Characteristics",
+    "page": 292
+  },
+  {
+    "level": 3,
+    "title": "10.1.7 Retail Forex Trading Platforms",
+    "page": 295
+  },
+  {
+    "level": 2,
+    "title": "10.2 Supports and Resistances",
+    "page": 296
+  },
+  {
+    "level": 3,
+    "title": "10.2.1 Introduction",
+    "page": 296
+  },
+  {
+    "level": 3,
+    "title": "10.2.2 Rising and Declining Supports and Resistances",
+    "page": 297
+  },
+  {
+    "level": 3,
+    "title": "10.2.3 Role Reversal on Support and Resistance",
+    "page": 297
+  },
+  {
+    "level": 3,
+    "title": "10.2.4 Trend Reversal on Support and Resistance",
+    "page": 298
+  },
+  {
+    "level": 3,
+    "title": "10.2.5 Support and Resistance Versus QPLs",
+    "page": 298
+  },
+  {
+    "level": 2,
+    "title": "10.3 The MetaTrader (MT) Platform and MQL",
+    "page": 300
+  },
+  {
+    "level": 3,
+    "title": "10.3.1 An Introduction",
+    "page": 300
+  },
+  {
+    "level": 3,
+    "title": "10.3.2 MQL—MetaQuotes Language",
+    "page": 301
+  },
+  {
+    "level": 3,
+    "title": "10.3.3 MQL—A Brief Overview",
+    "page": 301
+  },
+  {
+    "level": 3,
+    "title": "10.3.4 MQL—Time Series and Indicators Access Functions",
+    "page": 302
+  },
+  {
+    "level": 3,
+    "title": "10.3.5 MQL—Trade Functions",
+    "page": 303
+  },
+  {
+    "level": 3,
+    "title": "10.3.6 MQL—Technical Indicators",
+    "page": 304
+  },
+  {
+    "level": 3,
+    "title": "10.3.7 MQL Programming Tips",
+    "page": 305
+  },
+  {
+    "level": 2,
+    "title": "10.4 System Implementation—QPL Evaluation for Worldwide Financial Products",
+    "page": 306
+  },
+  {
+    "level": 2,
+    "title": "10.5 MQL Program for QPLs Evaluation of Worldwide Financial Products (QPL2019.mq4)",
+    "page": 307
+  },
+  {
+    "level": 3,
+    "title": "10.5.1 System Flowchart and Main Program Logic",
+    "page": 307
+  },
+  {
+    "level": 3,
+    "title": "10.5.2 Program Declaration",
+    "page": 310
+  },
+  {
+    "level": 3,
+    "title": "10.5.3 Program Initialization: init()",
+    "page": 310
+  },
+  {
+    "level": 3,
+    "title": "10.5.4 Process 1: Calculate All K Values",
+    "page": 310
+  },
+  {
+    "level": 3,
+    "title": "10.5.5 Process 2: READ ALL Daily Time Series",
+    "page": 313
+  },
+  {
+    "level": 3,
+    "title": "10.5.6 Process 3: Calculate Mean (mu) and Standard Deviation (sigma) of Return Array",
+    "page": 314
+  },
+  {
+    "level": 3,
+    "title": "10.5.7 Process 4: Generate the Returns Wavefunction Distribution",
+    "page": 315
+  },
+  {
+    "level": 3,
+    "title": "10.5.8 Process 5: Evaluate Lambda Value for the Returns Wavefunction",
+    "page": 316
+  },
+  {
+    "level": 3,
+    "title": "10.5.9 Process 6: Using QP Schrodinger Equation to FIND the First 21 Energy Levels",
+    "page": 319
+  },
+  {
+    "level": 3,
+    "title": "10.5.10 Process 7: Program End",
+    "page": 319
+  },
+  {
+    "level": 3,
+    "title": "10.5.11 Implementation Results",
+    "page": 319
+  },
+  {
+    "level": 2,
+    "title": "10.6 Conclusion",
+    "page": 322
+  },
+  {
+    "level": 2,
+    "title": "References",
+    "page": 323
+  },
+  {
+    "level": 1,
+    "title": "11 Time Series Chaotic Neural Oscillatory Networks for Financial Prediction",
+    "page": 325
+  },
+  {
+    "level": 2,
+    "title": "11.1 Introduction",
+    "page": 325
+  },
+  {
+    "level": 2,
+    "title": "11.2 TSCNON—System Architecture",
+    "page": 326
+  },
+  {
+    "level": 2,
+    "title": "11.3 TSCNON—System Implementation Framework",
+    "page": 328
+  },
+  {
+    "level": 2,
+    "title": "11.4 Workshop #2—Quantum Finance Forecast System (TSCNON.Mq4)",
+    "page": 331
+  },
+  {
+    "level": 3,
+    "title": "11.4.1 Introduction",
+    "page": 331
+  },
+  {
+    "level": 3,
+    "title": "11.4.2 Main Program Logic",
+    "page": 331
+  },
+  {
+    "level": 3,
+    "title": "11.4.3 Process #1—Program Initialization",
+    "page": 333
+  },
+  {
+    "level": 3,
+    "title": "11.4.4 Process #2—Check for Forecast Day",
+    "page": 339
+  },
+  {
+    "level": 3,
+    "title": "11.4.5 Process #3—Loop over ALL Trading Products",
+    "page": 339
+  },
+  {
+    "level": 3,
+    "title": "11.4.6 Process #4—Read FCDT/HL/PF Data Files",
+    "page": 339
+  },
+  {
+    "level": 3,
+    "title": "11.4.7 Process #5—Create TSCNON and Initialize ALL LEE-Oscillators",
+    "page": 345
+  },
+  {
+    "level": 3,
+    "title": "11.4.8 Process #6—Register Time Series Data",
+    "page": 345
+  },
+  {
+    "level": 3,
+    "title": "11.4.9 Process #7—TSCNON Training",
+    "page": 345
+  },
+  {
+    "level": 3,
+    "title": "11.4.10 Process #8—TSCNON Forecast",
+    "page": 346
+  },
+  {
+    "level": 3,
+    "title": "11.4.11 Process #9—Check Forecast Within Range or NOT",
+    "page": 349
+  },
+  {
+    "level": 3,
+    "title": "11.4.12 Process #10.1—Forecast Completed, Store Forecast Results and Total Time Taken",
+    "page": 349
+  },
+  {
+    "level": 3,
+    "title": "11.4.13 Process #10.2—Write FCHL Data File and Close All Files",
+    "page": 349
+  },
+  {
+    "level": 2,
+    "title": "11.5 TSCNON—Implementation Results",
+    "page": 350
+  },
+  {
+    "level": 2,
+    "title": "11.6 TSCNON—System Performance",
+    "page": 353
+  },
+  {
+    "level": 2,
+    "title": "11.7 Conclusion",
+    "page": 355
+  },
+  {
+    "level": 2,
+    "title": "References",
+    "page": 360
+  },
+  {
+    "level": 1,
+    "title": "12 Chaotic Type-2 Transient-Fuzzy Deep Neuro-Oscillatory Network (CT2TFDNN) for Worldwide Financial Prediction",
+    "page": 362
+  },
+  {
+    "level": 2,
+    "title": "12.1 Introduction",
+    "page": 363
+  },
+  {
+    "level": 2,
+    "title": "12.2 Literature Review",
+    "page": 365
+  },
+  {
+    "level": 3,
+    "title": "12.2.1 An Overview on Type-1 and Interval Type-2 Fuzzy Logic Systems on Financial Prediction",
+    "page": 365
+  },
+  {
+    "level": 3,
+    "title": "12.2.2 Lee-Oscillators with Retrograde Signaling (LORS)",
+    "page": 368
+  },
+  {
+    "level": 2,
+    "title": "12.3 CT2TFDNN—The System",
+    "page": 369
+  },
+  {
+    "level": 3,
+    "title": "12.3.1 CT2TFDNN—System Framework",
+    "page": 369
+  },
+  {
+    "level": 3,
+    "title": "12.3.2 Financial Signal Generator Module (FSGM)",
+    "page": 373
+  },
+  {
+    "level": 3,
+    "title": "12.3.3 Chaotic Type-2 Transient-Fuzzification Module (CT2TFM)",
+    "page": 373
+  },
+  {
+    "level": 3,
+    "title": "12.3.4 GA-Based TOP-10 Financial Signals Selection Module (GAT10FSSM)",
+    "page": 376
+  },
+  {
+    "level": 3,
+    "title": "12.3.5 Chaotic T2 Transient-Fuzzy Deep Neural Network Module (CT2TFDNNM)",
+    "page": 379
+  },
+  {
+    "level": 2,
+    "title": "12.4 CT2TFDNN—System Implementation",
+    "page": 382
+  },
+  {
+    "level": 3,
+    "title": "12.4.1 Quantum Finance Forecast Center",
+    "page": 382
+  },
+  {
+    "level": 3,
+    "title": "12.4.2 129 Worldwide Financial Products",
+    "page": 382
+  },
+  {
+    "level": 3,
+    "title": "12.4.3 CT2TFDNN Network Parameter Settings",
+    "page": 383
+  },
+  {
+    "level": 3,
+    "title": "12.4.4 System Implementation and Pilot Run",
+    "page": 384
+  },
+  {
+    "level": 2,
+    "title": "12.5 CT2TFDNN—Performance Analysis",
+    "page": 384
+  },
+  {
+    "level": 3,
+    "title": "12.5.1 Introduction",
+    "page": 384
+  },
+  {
+    "level": 3,
+    "title": "12.5.2 System Training Performance Analysis",
+    "page": 385
+  },
+  {
+    "level": 3,
+    "title": "12.5.3 System Forecast Simulation Performance Analysis",
+    "page": 386
+  },
+  {
+    "level": 3,
+    "title": "12.5.4 Actual Daily Forecast Performance Analysis",
+    "page": 389
+  },
+  {
+    "level": 2,
+    "title": "12.6 Conclusion",
+    "page": 392
+  },
+  {
+    "level": 2,
+    "title": "References",
+    "page": 396
+  },
+  {
+    "level": 1,
+    "title": "13 Quantum Trader—A Multiagent-Based Quantum Financial Forecast and Trading System",
+    "page": 398
+  },
+  {
+    "level": 2,
+    "title": "13.1 Introduction",
+    "page": 399
+  },
+  {
+    "level": 2,
+    "title": "13.2 Quantum Forecaster—Chaotic FFBP-Based Time Series Supervised-Learning Neural Networks for Financial Prediction",
+    "page": 400
+  },
+  {
+    "level": 3,
+    "title": "13.2.1 Time Series Prediction Using Supervised-Learning-Based Artificial Neural Networks",
+    "page": 400
+  },
+  {
+    "level": 3,
+    "title": "13.2.2 Quantum Finance CSL Network—Chaotic FFBP-Based SL Network for Time Series Financial Prediction with Quantum Field Signals (QFF)",
+    "page": 400
+  },
+  {
+    "level": 2,
+    "title": "13.3 Quantum Trader—Chaotic RBF-Based Actor-Critic Reinforcement-Learning Networks—Optimization of Trading Strategy",
+    "page": 401
+  },
+  {
+    "level": 3,
+    "title": "13.3.1 An Overview of Reinforcement Learning (RL)",
+    "page": 401
+  },
+  {
+    "level": 3,
+    "title": "13.3.2 Discrete-Time Actor-Critic RL Model",
+    "page": 403
+  },
+  {
+    "level": 3,
+    "title": "13.3.3 Radial Basis Function Neural Network (RBFN) for RL",
+    "page": 404
+  },
+  {
+    "level": 3,
+    "title": "13.3.4 Quantum Finance CRL Network—Chaotic RBF-Based Actor-Critic RL Network for the Optimization of Trading Strategy",
+    "page": 405
+  },
+  {
+    "level": 3,
+    "title": "13.3.5 Quantum Finance CRL Network System Architecture for the Optimization of Trading Strategy",
+    "page": 406
+  },
+  {
+    "level": 3,
+    "title": "13.3.6 Quantum Finance CRL Network Learning Algorithm",
+    "page": 407
+  },
+  {
+    "level": 2,
+    "title": "13.4 System Implementation",
+    "page": 408
+  },
+  {
+    "level": 3,
+    "title": "13.4.1 Quantum Finance—TEQNA 5-Tier Architecture",
+    "page": 408
+  },
+  {
+    "level": 3,
+    "title": "13.4.2 Quantum Trader System Implementation Using 129 Worldwide Financial Products",
+    "page": 409
+  },
+  {
+    "level": 3,
+    "title": "13.4.3 Quantum Trader—System Implementation",
+    "page": 410
+  },
+  {
+    "level": 3,
+    "title": "13.4.4 Quantum Finance Daily Forecast at QFFC",
+    "page": 412
+  },
+  {
+    "level": 3,
+    "title": "13.4.5 Quantum Forecaster Performance Test",
+    "page": 413
+  },
+  {
+    "level": 3,
+    "title": "13.4.6 Quantum Trader Trading Strategy Performance Test",
+    "page": 415
+  },
+  {
+    "level": 3,
+    "title": "13.4.7 Quantum Trader Worldwide Trading Strategy Evaluation",
+    "page": 417
+  },
+  {
+    "level": 2,
+    "title": "13.5 Conclusion",
+    "page": 418
+  },
+  {
+    "level": 2,
+    "title": "References",
+    "page": 419
+  },
+  {
+    "level": 1,
+    "title": "14 Future Trends in Quantum Finance",
+    "page": 422
+  },
+  {
+    "level": 2,
+    "title": "14.1 Introduction—The Dawn of Quantum Computing",
+    "page": 423
+  },
+  {
+    "level": 2,
+    "title": "14.2 Two Sides of the Same Coin—Hard Quantum Computing Versus Soft Quantum Computing",
+    "page": 423
+  },
+  {
+    "level": 2,
+    "title": "14.3 From Quantum Finance to AI Fintech",
+    "page": 424
+  },
+  {
+    "level": 2,
+    "title": "14.4 Quantum Finance System Development Platform",
+    "page": 425
+  },
+  {
+    "level": 2,
+    "title": "14.5 Conclusion",
+    "page": 426
+  },
+  {
+    "level": 2,
+    "title": "References",
+    "page": 428
+  },
+  {
+    "level": 1,
+    "title": "Appendix A List of 139 Financial Products",
+    "page": 429
+  },
+  {
+    "level": 1,
+    "title": "Appendix B List of 39 Financial Indicators",
+    "page": 432
+  }
+]

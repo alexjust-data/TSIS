@@ -1,0 +1,146 @@
+{
+  "contract_id": "event_state_on_demand_capability_contract_v0_1",
+  "date": "2026-07-27",
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+  "runtime_parent_architecture": "runtime_capabilities_architecture_v0_1",
+  "authorization": "event_state_on_demand_capability_design_authorization_v0_1",
+  "capability_id": "event_state_on_demand_capability_v0_1",
+  "capability_definition": "Governed ability to accept an Event State request and, only after later authorizations, resolve Event State profile, accepted Event Types, Event Instance policy, Event Window policy, Instrument Projection policy, Market State dependency, execution plan, materializer, validation and candidate dataset registry output.",
+  "target_event_state_profile": {
+    "profile_id": "event_state_core_four_intraday_profile_v0_1",
+    "profile_status": "OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS",
+    "profile_classification": "official_semantic_profile_not_physical_dataset",
+    "accepted_event_type_ids": [
+      "event_type:market_data:session_opened"
+    ],
+    "accepted_subject_scope": "exchange_session",
+    "halt_resumed_allowed": false,
+    "official_event_state_dataset_exists": false,
+    "official_event_state_parquet_exists": false,
+    "event_state_materialization_authorized": false,
+    "downstream_consumption_authorized": false
+  },
+  "source_market_state_dependency": {
+    "source_market_state_profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "source_market_state_capability_design_id": "market_state_on_demand_capability_v0_1",
+    "source_market_state_runtime_capability_id": "market_state_on_demand_runtime_capability_v0_1",
+    "identity_relation": "promoted_runtime_identity_of",
+    "source_market_state_consumption_policy": "market_state_capability_consumption_policy_v0_1",
+    "source_market_state_consumption_policy_status_required": "ESTABLISHED_WITH_RESTRICTIONS_CANDIDATE_RUNTIME_ONLY",
+    "official_market_state_dataset_required": false,
+    "direct_candidate_path_consumption_allowed": false
+  },
+  "permission_model": {
+    "policy_permission_under_separate_authorization": {
+      "market_state_metadata_inspection": true,
+      "market_state_candidate_reuse_resolution": true,
+      "market_state_candidate_file_service_to_runtime_validation": "conditionally_allowed_by_market_state_policy_under_future_authorization",
+      "event_state_candidate_generation": "requires_future_bounded_execution_authorization"
+    },
+    "current_gate_execution_permission": {
+      "event_state_requests_created": 0,
+      "market_state_dependency_requests_created": 0,
+      "event_instances_created": 0,
+      "event_window_bindings_created": 0,
+      "instrument_projections_created": 0,
+      "market_state_candidate_files_read": 0,
+      "event_state_records_emitted": 0,
+      "datasets_written": 0,
+      "registry_entries_written": 0
+    },
+    "design_time_market_state_access": "metadata_only",
+    "execution_time_market_state_access": "requires_separate_dependency_execution_authorization",
+    "direct_candidate_path_consumption": false
+  },
+  "historical_policy_reference_model": {
+    "do_not_rewrite_historical_event_state_operational_policy": true,
+    "historical_next_gate_at_event_state_operational_policy_closure": "market_state_on_demand_capability_design_authorization_v0_1",
+    "current_next_gate_authority": [
+      "99_ruta_de_trabajo.md",
+      "AGENT.md",
+      "08_RUNTIME_CAPABILITIES/README.md"
+    ]
+  },
+  "request_centered_flow": [
+    "Event State Request",
+    "Event State Request Contract Validation",
+    "Event State Profile Resolver",
+    "Event Type Registry Resolver",
+    "Event Instance Policy Resolver",
+    "Event Window Policy Resolver",
+    "Instrument Projection Policy Resolver",
+    "Market State Dependency Resolver",
+    "Event State Execution Plan",
+    "Event State Materializer",
+    "Event State Validator",
+    "Candidate Dataset Registry"
+  ],
+  "market_state_dependency_resolver_principle": {
+    "must_emit_or_resolve_market_state_subrequest": true,
+    "must_use_promoted_market_state_runtime_capability": true,
+    "must_not_search_parquet_paths_directly": true,
+    "must_not_read_market_state_candidate_files_in_design_gate": true,
+    "physical_consumption_requires_later_authorization": true
+  },
+  "identity_and_fingerprint_requirements": [
+    "event_state_request_fingerprint",
+    "market_state_dependency_request_fingerprint",
+    "market_state_candidate_dataset_fingerprint",
+    "event_type_registry_snapshot_id",
+    "event_instance_policy_version",
+    "event_window_policy_version",
+    "instrument_projection_policy_version",
+    "event_state_execution_plan_fingerprint"
+  ],
+  "component_contracts_to_design_next": {
+    "event_state_request_contract_design_v0_1": "Defines canonical Event State request semantics and fingerprint inputs.",
+    "event_state_dependency_resolution_design_v0_1": "Defines profile, Event Type, Event Instance, Event Window, Instrument Projection and Market State dependency resolution blocks.",
+    "event_state_execution_plan_contract_design_v0_1": "Freezes all resolved dependencies before any future execution.",
+    "event_state_materializer_design_v0_1": "Defines build behavior from a frozen plan, still without execution.",
+    "event_state_validator_design_v0_1": "Defines validation of candidate Event State outputs.",
+    "event_state_candidate_dataset_registry_design_v0_1": "Defines registry semantics for candidate Event State outputs."
+  },
+  "blocking_rules_for_future_requests": [
+    "event_state_profile_not_official_semantic_profile",
+    "event_type_not_accepted_or_outside_scope",
+    "subject_scope_not_exchange_session_for_session_opened_v0_1",
+    "market_state_consumption_policy_missing_or_not_restricted_candidate_runtime",
+    "market_state_dependency_resolution_ambiguous",
+    "attempted_direct_market_state_parquet_path_consumption",
+    "event_instance_policy_missing",
+    "event_window_policy_missing",
+    "instrument_projection_policy_missing",
+    "execution_authorization_missing"
+  ],
+  "hard_boundaries": {
+    "event_state_request_execution_allowed": false,
+    "market_state_dependency_request_execution_allowed": false,
+    "event_detection_allowed": false,
+    "event_instance_generation_allowed": false,
+    "event_window_generation_allowed": false,
+    "instrument_projection_execution_allowed": false,
+    "market_state_physical_consumption_allowed": false,
+    "market_state_candidate_file_read_allowed": false,
+    "event_state_materializer_execution_allowed": false,
+    "event_state_validator_execution_allowed": false,
+    "event_state_dataset_write_allowed": false,
+    "event_state_registry_write_allowed": false,
+    "official_event_state_dataset_promotion_allowed": false,
+    "production_allowed": false,
+    "downstream_consumption_allowed": false
+  },
+  "closure_counters": {
+    "event_state_requests_created": 0,
+    "market_state_dependency_requests_created": 0,
+    "event_instances_created": 0,
+    "event_window_bindings_created": 0,
+    "instrument_projections_created": 0,
+    "market_state_candidate_files_read": 0,
+    "source_market_data_rows_read": 0,
+    "event_state_records_emitted": 0,
+    "datasets_written": 0,
+    "registry_entries_written": 0
+  },
+  "next_allowed_gate": "event_state_request_contract_design_v0_1",
+  "contract_content_sha256_excluding_hash_field": "1819212a739d41b4aaf15fe5da043b0a0ae06b56ee3840d49320f218b4d9474f"
+}

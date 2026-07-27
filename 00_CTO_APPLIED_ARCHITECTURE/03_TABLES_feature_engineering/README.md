@@ -1,9 +1,11 @@
 # 03_TABLES_feature_engineering
 
-Status: `readme_v3_45_market_state_bounded_on_demand_idempotency_reuse_authorized`
-Date: `2026-07-25`
+> Current runtime note (2026-07-27): `event_state_on_demand_bounded_candidate_dataset_review_v0_1` is closed; next gate is `event_state_on_demand_bounded_deterministic_rerun_authorization_v0_1`. The candidate was approved only as bounded Event State on-demand evidence with restrictions: 9 requested = 8 represented + 1 unavailable, 0 hard review failures, no registry mutation, no official dataset, no production and no downstream.
 
-Current runtime update: `market_state_bounded_on_demand_idempotency_reuse_test_authorization_v0_1` is recorded as `AUTHORIZED_WITH_RESTRICTIONS_NO_EXECUTION`. It authorizes one future bounded idempotency/reuse test for the same normalized Market State request and the validated candidate dataset from `market_state_bounded_on_demand_execution_v0_1_20260724T232123Z`. The future test must return the existing governed candidate dataset without materializer execution, source row reads or new candidate parquet. Reuse eligibility is still not upgraded by this authorization; official dataset promotion, production and downstream remain closed. Next gate: `market_state_bounded_on_demand_idempotency_reuse_test_v0_1`.
+Status: `readme_v3_57_event_state_on_demand_bounded_candidate_dataset_review_closed`
+Date: `2026-07-27`
+
+Current runtime update: `event_state_on_demand_bounded_candidate_dataset_review_v0_1` closed under `08_RUNTIME_CAPABILITIES` as `CLOSED_APPROVED_AS_EVENT_STATE_ON_DEMAND_BOUNDED_CANDIDATE_EVIDENCE_WITH_RESTRICTIONS_NO_PROMOTION`. It reviewed the first bounded Event State on-demand candidate from `event_state_on_demand_bounded_execution_v0_1_20260727T200322Z`: 9 requested contexts = 8 represented + 1 unavailable, 8 Event State candidate records, 0 unaccounted contexts, 0 hard review failures, 0 registry mutations and 0 additional Market State reads. The output remains candidate evidence only. Next gate: `event_state_on_demand_bounded_deterministic_rerun_authorization_v0_1`.
 
 Esta seccion conecta tablas existentes, Objetos de Informacion, feature engineering, Market State, Event State, builders, validators y consumo downstream.
 

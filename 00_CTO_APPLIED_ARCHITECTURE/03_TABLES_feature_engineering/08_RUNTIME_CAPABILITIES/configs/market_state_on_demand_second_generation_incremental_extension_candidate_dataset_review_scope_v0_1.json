@@ -1,0 +1,19 @@
+{
+  "scope_id": "market_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_scope_v0_1",
+  "gate": "market_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1",
+  "review_id": "market_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260727T000000Z",
+  "reviewed_run": "market_state_on_demand_second_generation_incremental_extension_v0_1_20260727T103901Z",
+  "allowed_inputs": [
+    "final_manifest.json",
+    "candidate_output_manifest.json",
+    "candidate_registry_entry.json",
+    "market_state_validation_report.json",
+    "partition_coverage_resolution_report.json",
+    "market_state_second_generation_incremental_extension_report.json"
+  ],
+  "execution_authorized": false,
+  "dataset_mutation_authorized": false,
+  "official_dataset_promotion_authorized": false,
+  "downstream_consumption_authorized": false,
+  "next_allowed_gate": "market_state_on_demand_incremental_lineage_chain_validation_v0_1"
+}

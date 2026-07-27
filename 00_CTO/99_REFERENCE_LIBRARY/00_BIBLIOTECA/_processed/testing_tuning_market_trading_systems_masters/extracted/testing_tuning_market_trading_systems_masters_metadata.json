@@ -1,0 +1,22 @@
+﻿{
+    "book_id":  "testing_tuning_market_trading_systems_masters",
+    "title":  "Testing and Tuning Market Trading Systems",
+    "author":  "Timothy Masters",
+    "pdf_path":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Testing_and_Tuning_market_trading_systems_-_Timothy_Masters.pdf",
+    "file_name":  "Testing_and_Tuning_market_trading_systems_-_Timothy_Masters.pdf",
+    "file_size_bytes":  9391009,
+    "sha256":  "c48f331566ffd704e9da6c307ce68926454b1a41525fc46bcc667253f70d92d8",
+    "pages":  384,
+    "toc_items":  9,
+    "total_words":  105480,
+    "text_pages":  383,
+    "requires_ocr":  false,
+    "ocr_completed":  false,
+    "working_text_persisted":  false,
+    "status":  "indexed",
+    "artifact_contract":  [
+                              "summaries/\u003cbook_id\u003e_agent_summary.md",
+                              "index/\u003cbook_id\u003e_concept_index.md",
+                              "index/\u003cbook_id\u003e_source_map.md"
+                          ]
+}

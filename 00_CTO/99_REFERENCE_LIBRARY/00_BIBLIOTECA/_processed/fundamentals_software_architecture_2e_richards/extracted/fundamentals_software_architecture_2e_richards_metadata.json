@@ -1,0 +1,22 @@
+﻿{
+    "book_id":  "fundamentals_software_architecture_2e_richards",
+    "title":  "Fundamentals of Software Architecture, 2nd Edition",
+    "author":  "Mark Richards / Neal Ford",
+    "pdf_path":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Fundamentals_of_Software_Architecture_2E_-_Mark_Richards.pdf",
+    "file_name":  "Fundamentals_of_Software_Architecture_2E_-_Mark_Richards.pdf",
+    "file_size_bytes":  21641510,
+    "sha256":  "c57a6d8c9bb6d02fc817ad846ccb9cf8057a64041c8db904d4c985ca0fd1a9d2",
+    "pages":  981,
+    "toc_items":  404,
+    "total_words":  140260,
+    "text_pages":  978,
+    "requires_ocr":  false,
+    "ocr_completed":  false,
+    "working_text_persisted":  false,
+    "status":  "indexed",
+    "artifact_contract":  [
+                              "summaries/\u003cbook_id\u003e_agent_summary.md",
+                              "index/\u003cbook_id\u003e_concept_index.md",
+                              "index/\u003cbook_id\u003e_source_map.md"
+                          ]
+}

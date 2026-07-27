@@ -1,0 +1,159 @@
+{
+  "bundle_id": "event_state_on_demand_bounded_execution_authority_bundle_v0_1",
+  "date": "2026-07-27",
+  "status": "CLOSED_PASS_PREFLIGHT_AUTHORITY_BUNDLE_READY_NO_EXECUTION",
+  "consumer_gate": "event_state_on_demand_bounded_execution_v0_1",
+  "parent_authorization_id": "event_state_on_demand_bounded_execution_authorization_v0_1",
+  "preflight_correction_gate": "event_state_on_demand_bounded_execution_preflight_correction_v0_1",
+  "effective_scope": {
+    "event_type_id": "event_type:market_data:session_opened",
+    "subject_scope": "exchange_session",
+    "exchange_scope": [
+      "XNYS"
+    ],
+    "session_dates": [
+      "2021-01-19",
+      "2021-03-15",
+      "2022-11-25"
+    ],
+    "instrument_ids": [
+      "figi_share_class:BBG001S5N8T1",
+      "figi_share_class:BBG001S8T7K0",
+      "figi_share_class:BBG001S6RSK0"
+    ],
+    "maximum_event_state_contexts": 9,
+    "maximum_market_state_dependency_contexts": 9
+  },
+  "effective_request_policy": {
+    "market_state_dependency_mode": "emit_or_resolve_market_state_subrequest_through_runtime_capability",
+    "market_state_dependency_reuse_policy": "reuse_if_exact_validated_dependency_match_or_block",
+    "direct_market_state_path_allowed": false,
+    "event_window_definition_ids": [
+      "session_opened_at_anchor_context_v0_1"
+    ],
+    "output_format": "jsonl",
+    "maximum_output_files": 1,
+    "maximum_output_records": 9,
+    "maximum_output_bytes": 1048576
+  },
+  "authority_files": [
+    {
+      "label": "event_state_profile_manifest",
+      "path": "07_EVENT_STATE_INTEGRATION/official_profiles/event_state_core_four_intraday_profile_v0_1/PROFILE_MANIFEST.json",
+      "sha256": "77937dca78391d354a3c394c7fc3886c4042209e6a567425a301553b962997e1"
+    },
+    {
+      "label": "event_type_registry_snapshot",
+      "path": "07_EVENT_STATE_INTEGRATION/event_type_registry_post_initial_admission_snapshot_v0_1.json",
+      "sha256": "f3627c8b44062081c8e2f2775bffbd283bd31f2ca1e876aa7469fd6586425c43"
+    },
+    {
+      "label": "event_state_request_contract",
+      "path": "08_RUNTIME_CAPABILITIES/event_state_request_contract_v0_1.json",
+      "sha256": "eda7d722a468a0fdaedff80a96226e223f99a0d83a4e965827d0e7a99bf8fdec"
+    },
+    {
+      "label": "event_state_dependency_resolution_contract",
+      "path": "08_RUNTIME_CAPABILITIES/event_state_dependency_resolution_contract_v0_1.json",
+      "sha256": "4a34523b5a5a50c92fdc357d05885cb99e66d99bcc6ac5eb760cd42a441b9c38"
+    },
+    {
+      "label": "event_state_execution_plan_contract",
+      "path": "08_RUNTIME_CAPABILITIES/event_state_execution_plan_contract_v0_1.json",
+      "sha256": "898df2cbcc7180afc8ef2844bb5847dde92cc1260aa347aa0fd9deb259f2ac55"
+    },
+    {
+      "label": "event_instance_policy_contract",
+      "path": "07_EVENT_STATE_INTEGRATION/event_instance_binding_design_contract_v0_1.json",
+      "sha256": "e2f1e31e41c5ff9a904627e9680307645b4fa223743fe167abe6723022c10eed"
+    },
+    {
+      "label": "event_window_policy_contract",
+      "path": "07_EVENT_STATE_INTEGRATION/event_window_binding_design_contract_v0_1.json",
+      "sha256": "4efb9867e96765df9bbdf98f813736e7dd29453d2b3a3466da51115d8871bf68"
+    },
+    {
+      "label": "instrument_projection_policy_contract",
+      "path": "07_EVENT_STATE_INTEGRATION/event_state_instrument_session_projection_design_contract_v0_1.json",
+      "sha256": "a02d59b6b6d4eb93bae2a021de41306a7b9d3a32bd6fe0d1f94b802211599f15"
+    },
+    {
+      "label": "market_state_consumption_policy_contract",
+      "path": "08_RUNTIME_CAPABILITIES/market_state_capability_consumption_policy_contract_v0_1.json",
+      "sha256": "66dbda4f673166317415bc5e3451aa8fba39abfba5b163f51b46a5ec7dac2369"
+    },
+    {
+      "label": "market_state_bounded_dependency_consumption_authorization",
+      "path": "08_RUNTIME_CAPABILITIES/market_state_capability_event_state_bounded_dependency_consumption_authorization_v0_1.md",
+      "sha256": "f9df051056f3289861f48c5807a608fa5f55e8757b5d305ea04a4b243398b670"
+    },
+    {
+      "label": "market_state_bounded_dependency_consumption_scope",
+      "path": "08_RUNTIME_CAPABILITIES/configs/market_state_capability_event_state_bounded_dependency_consumption_scope_v0_1.json",
+      "sha256": "03bc33d31c368e93ef891e5c98ade64dd8fd8c64bcb6445f23fe01ee4f5eed91"
+    },
+    {
+      "label": "event_state_run_lifecycle_binding_contract",
+      "path": "08_RUNTIME_CAPABILITIES/event_state_on_demand_bounded_run_lifecycle_binding_contract_v0_1.json",
+      "sha256": "76ec1af5c957c5ed4e6e48bf5d201cea95a6582eee0c3549f2043fbb81b5dc32"
+    },
+    {
+      "label": "event_state_materializer_contract",
+      "path": "08_RUNTIME_CAPABILITIES/event_state_materializer_contract_v0_1.json",
+      "sha256": "bbc1d51c794ae0d08a012ed4628e0840efeebdc7cbe14ade4fb3cca032f82cfb"
+    },
+    {
+      "label": "event_state_validator_contract",
+      "path": "08_RUNTIME_CAPABILITIES/event_state_validator_contract_v0_1.json",
+      "sha256": "1d2f4515db60835b3ae9530fc0e47acd077b5c847f67b3b7a7a6a1d6b9cb1718"
+    },
+    {
+      "label": "event_state_candidate_registry_contract",
+      "path": "08_RUNTIME_CAPABILITIES/event_state_candidate_dataset_registry_contract_v0_1.json",
+      "sha256": "4251e0baf57159c8a1f74a6067f8a3db385ef1eda4f3d6dc11540cfb8ea4b7e8"
+    },
+    {
+      "label": "parent_bounded_execution_authorization",
+      "path": "08_RUNTIME_CAPABILITIES/event_state_on_demand_bounded_execution_authorization_v0_1.md",
+      "sha256": "832bc3be5746404e6a573e1ba1c8d8a58cfce749ca90887948e11a7985a01b38"
+    },
+    {
+      "label": "parent_bounded_execution_scope",
+      "path": "08_RUNTIME_CAPABILITIES/configs/event_state_on_demand_bounded_execution_scope_v0_1.json",
+      "sha256": "bdcbf104760062346051cf6375b43c8e6eac75756f83a2679d5fe512d2122933"
+    },
+    {
+      "label": "preflight_correction_scope",
+      "path": "08_RUNTIME_CAPABILITIES/configs/event_state_on_demand_bounded_execution_preflight_correction_scope_v0_1.json",
+      "sha256": "97506435e0cc06d912d265028334c93b09f6fd84767e5965de43eb84ed97ae30"
+    }
+  ],
+  "runner_preflight_required_checks": [
+    "all_authority_file_sha256_match",
+    "market_state_dependency_consumption_authorization_status_allows_next_gate",
+    "request_contract_dependency_mode_matches_effective_policy",
+    "event_window_definition_id_matches_event_window_contract_template",
+    "run_lifecycle_binding_contract_present",
+    "output_format_and_limits_present",
+    "official_dataset_false",
+    "production_false",
+    "downstream_false"
+  ],
+  "hard_boundaries_current_gate": {
+    "event_state_requests_created": 0,
+    "dependency_resolver_executions": 0,
+    "execution_plans_created": 0,
+    "run_records_created": 0,
+    "market_state_dependency_requests_executed": 0,
+    "market_state_candidate_files_read": 0,
+    "event_state_materializer_executions": 0,
+    "event_state_validator_executions": 0,
+    "registry_entries_written": 0,
+    "event_state_records_emitted": 0,
+    "datasets_written": 0,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false
+  },
+  "authorized_next_gate": "event_state_on_demand_bounded_execution_v0_1"
+}

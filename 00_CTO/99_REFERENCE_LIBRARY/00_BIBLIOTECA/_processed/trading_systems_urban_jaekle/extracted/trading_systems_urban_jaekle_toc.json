@@ -1,0 +1,997 @@
+[
+  {
+    "title": "Disclaimer",
+    "page": 6,
+    "level": 0
+  },
+  {
+    "title": "Acknowledgements",
+    "page": 12,
+    "level": 1
+  },
+  {
+    "title": "Preface",
+    "page": 14,
+    "level": 2
+  },
+  {
+    "title": "Preface to the Second Edition",
+    "page": 16,
+    "level": 2
+  },
+  {
+    "title": "What has happened since 2008?",
+    "page": 16,
+    "level": 3
+  },
+  {
+    "title": "How this book is presented",
+    "page": 16,
+    "level": 3
+  },
+  {
+    "title": "The LUXOR system – when performance decays",
+    "page": 17,
+    "level": 3
+  },
+  {
+    "title": "The importance of controlling losses",
+    "page": 17,
+    "level": 3
+  },
+  {
+    "title": "Examples of working trading systems",
+    "page": 18,
+    "level": 3
+  },
+  {
+    "title": "Software and data",
+    "page": 20,
+    "level": 3
+  },
+  {
+    "title": "Part I",
+    "page": 21,
+    "level": 0
+  },
+  {
+    "title": "A Short Practical Guide to Trading System Development and Evaluation",
+    "page": 21,
+    "level": 0
+  },
+  {
+    "title": "1",
+    "page": 22,
+    "level": 1
+  },
+  {
+    "title": "What is a Trading System?",
+    "page": 22,
+    "level": 1
+  },
+  {
+    "title": "1.1 An easy example of a trading system",
+    "page": 23,
+    "level": 2
+  },
+  {
+    "title": "1.2 Why you need a trading system",
+    "page": 24,
+    "level": 3
+  },
+  {
+    "title": "1.3 The science of trading systems",
+    "page": 26,
+    "level": 3
+  },
+  {
+    "title": "2",
+    "page": 29,
+    "level": 4
+  },
+  {
+    "title": "Design, Test, Optimisation and Evaluation of a Trading System",
+    "page": 29,
+    "level": 1
+  },
+  {
+    "title": "2.1 Design",
+    "page": 29,
+    "level": 2
+  },
+  {
+    "title": "Getting started",
+    "page": 29,
+    "level": 3
+  },
+  {
+    "title": "The programming task",
+    "page": 29,
+    "level": 4
+  },
+  {
+    "title": "Which timeframe to trade?",
+    "page": 30,
+    "level": 4
+  },
+  {
+    "title": "2.2 Test",
+    "page": 31,
+    "level": 3
+  },
+  {
+    "title": "The importance of the market data",
+    "page": 32,
+    "level": 4
+  },
+  {
+    "title": "The length of your back-testing period",
+    "page": 34,
+    "level": 4
+  },
+  {
+    "title": "Rule complexity and degrees of freedom",
+    "page": 36,
+    "level": 4
+  },
+  {
+    "title": "2.3 The forecasting power of a trading system",
+    "page": 39,
+    "level": 3
+  },
+  {
+    "title": "Optimisation",
+    "page": 39,
+    "level": 4
+  },
+  {
+    "title": "Walk-forward analysis",
+    "page": 41,
+    "level": 4
+  },
+  {
+    "title": "Robustness",
+    "page": 44,
+    "level": 4
+  },
+  {
+    "title": "2.4 Evaluation of a trading system",
+    "page": 46,
+    "level": 3
+  },
+  {
+    "title": "What to look for in an indicator",
+    "page": 47,
+    "level": 4
+  },
+  {
+    "title": "Average trade",
+    "page": 48,
+    "level": 4
+  },
+  {
+    "title": "Percentage of profitable trades",
+    "page": 48,
+    "level": 4
+  },
+  {
+    "title": "Profit factor",
+    "page": 50,
+    "level": 4
+  },
+  {
+    "title": "Drawdown",
+    "page": 50,
+    "level": 4
+  },
+  {
+    "title": "Time averages",
+    "page": 52,
+    "level": 4
+  },
+  {
+    "title": "2.5 Conclusion",
+    "page": 53,
+    "level": 3
+  },
+  {
+    "title": "Part II",
+    "page": 54,
+    "level": 0
+  },
+  {
+    "title": "Trading System Development and Evaluation of a Real Case",
+    "page": 54,
+    "level": 0
+  },
+  {
+    "title": "3",
+    "page": 55,
+    "level": 1
+  },
+  {
+    "title": "How to Develop a Trading System Step-By-Step – Using the Example of the British Pound/US Dollar Pair",
+    "page": 55,
+    "level": 1
+  },
+  {
+    "title": "Introduction",
+    "page": 55,
+    "level": 2
+  },
+  {
+    "title": "3.1 The birth of a trading system",
+    "page": 56,
+    "level": 3
+  },
+  {
+    "title": "The free LUXOR system code",
+    "page": 56,
+    "level": 4
+  },
+  {
+    "title": "The entry logic",
+    "page": 58,
+    "level": 4
+  },
+  {
+    "title": "3.2 First evaluation of the trading system",
+    "page": 59,
+    "level": 3
+  },
+  {
+    "title": "Calculation without slippage and commissions",
+    "page": 59,
+    "level": 4
+  },
+  {
+    "title": "Calculation after adding slippage and commissions",
+    "page": 62,
+    "level": 4
+  },
+  {
+    "title": "3.3 Variation of the input parameters: optimisation and stability diagrams",
+    "page": 64,
+    "level": 3
+  },
+  {
+    "title": "What does stability of a system’s input parameter mean? A short theoretical excursion",
+    "page": 64,
+    "level": 4
+  },
+  {
+    "title": "Dependency of main system figures on the two moving averages",
+    "page": 66,
+    "level": 4
+  },
+  {
+    "title": "Result with optimised input values",
+    "page": 71,
+    "level": 4
+  },
+  {
+    "title": "3.4 Inserting an intraday time filter",
+    "page": 73,
+    "level": 3
+  },
+  {
+    "title": "Finding the best entry time",
+    "page": 74,
+    "level": 4
+  },
+  {
+    "title": "Result with added time filter",
+    "page": 75,
+    "level": 4
+  },
+  {
+    "title": "3.5 Determination of appropriate exits – risk management",
+    "page": 78,
+    "level": 3
+  },
+  {
+    "title": "The concept of Maximum Adverse Excursion (MAE)",
+    "page": 79,
+    "level": 4
+  },
+  {
+    "title": "Inserting a risk stop loss",
+    "page": 83,
+    "level": 4
+  },
+  {
+    "title": "Adding a trailing stop",
+    "page": 86,
+    "level": 4
+  },
+  {
+    "title": "Looking for profit targets: Maximum Favourable Excursion (MFE)",
+    "page": 88,
+    "level": 4
+  },
+  {
+    "title": "Summary: Result of the entry logic with the three added exits",
+    "page": 91,
+    "level": 4
+  },
+  {
+    "title": "How exits are affected by money management",
+    "page": 94,
+    "level": 4
+  },
+  {
+    "title": "3.6 Summary: Step-by-step development of a trading system",
+    "page": 98,
+    "level": 3
+  },
+  {
+    "title": "4",
+    "page": 100,
+    "level": 4
+  },
+  {
+    "title": "Two Methods for Evaluating the System’s Predictive Power",
+    "page": 100,
+    "level": 1
+  },
+  {
+    "title": "4.1 Timescale analysis",
+    "page": 100,
+    "level": 2
+  },
+  {
+    "title": "Changing the compression of the price data",
+    "page": 100,
+    "level": 3
+  },
+  {
+    "title": "LUXOR tested on different bar compressions",
+    "page": 102,
+    "level": 4
+  },
+  {
+    "title": "Net profit and maximum drawdown dependent on the traded bar length",
+    "page": 106,
+    "level": 4
+  },
+  {
+    "title": "Explanation for the time dependency of the system",
+    "page": 107,
+    "level": 4
+  },
+  {
+    "title": "4.2 Monte Carlo analysis",
+    "page": 110,
+    "level": 3
+  },
+  {
+    "title": "The principle of Monte Carlo analysis",
+    "page": 111,
+    "level": 4
+  },
+  {
+    "title": "Exchanging the order of the performed trades",
+    "page": 112,
+    "level": 4
+  },
+  {
+    "title": "Probabilities and confidence levels",
+    "page": 113,
+    "level": 4
+  },
+  {
+    "title": "Performing a Monte Carlo analysis with the LUXOR trading system",
+    "page": 115,
+    "level": 4
+  },
+  {
+    "title": "Limitations of the Monte Carlo method",
+    "page": 116,
+    "level": 4
+  },
+  {
+    "title": "5",
+    "page": 119,
+    "level": 5
+  },
+  {
+    "title": "The Factors Around Your System",
+    "page": 119,
+    "level": 1
+  },
+  {
+    "title": "5.1 The market’s long/short bias",
+    "page": 120,
+    "level": 2
+  },
+  {
+    "title": "The trend is your friend?",
+    "page": 120,
+    "level": 3
+  },
+  {
+    "title": "Consequences for system development",
+    "page": 122,
+    "level": 4
+  },
+  {
+    "title": "5.2 Out-of-sample deterioration",
+    "page": 122,
+    "level": 3
+  },
+  {
+    "title": "A Bollinger Band system with logic and code",
+    "page": 123,
+    "level": 4
+  },
+  {
+    "title": "Entry logic: Bollinger Band system",
+    "page": 124,
+    "level": 4
+  },
+  {
+    "title": "Optimising the Bollinger Band system",
+    "page": 124,
+    "level": 4
+  },
+  {
+    "title": "Out-of-sample result",
+    "page": 125,
+    "level": 4
+  },
+  {
+    "title": "Reasons for the out-of-sample deterioration",
+    "page": 127,
+    "level": 4
+  },
+  {
+    "title": "5.3 The market data bias",
+    "page": 129,
+    "level": 3
+  },
+  {
+    "title": "Expanding the training period",
+    "page": 129,
+    "level": 4
+  },
+  {
+    "title": "Conclusion: How to choose your training data",
+    "page": 133,
+    "level": 4
+  },
+  {
+    "title": "5.4 Optimisation and over-fitting",
+    "page": 134,
+    "level": 3
+  },
+  {
+    "title": "Step-by-step optimisation of the LUXOR system",
+    "page": 134,
+    "level": 4
+  },
+  {
+    "title": "Results depending on the number of optimised parameters",
+    "page": 135,
+    "level": 4
+  },
+  {
+    "title": "The meaning of the trading system’s complexity",
+    "page": 141,
+    "level": 4
+  },
+  {
+    "title": "5.5 Rule complexity explained with polynomial curve fitting",
+    "page": 142,
+    "level": 3
+  },
+  {
+    "title": "Interpolating data points with polynomial functions",
+    "page": 142,
+    "level": 4
+  },
+  {
+    "title": "Predictive power of the different polynomials",
+    "page": 149,
+    "level": 4
+  },
+  {
+    "title": "Conclusions for trading system development",
+    "page": 151,
+    "level": 4
+  },
+  {
+    "title": "5.6 Example of a simple, robust trading system",
+    "page": 152,
+    "level": 3
+  },
+  {
+    "title": "Idea",
+    "page": 152,
+    "level": 4
+  },
+  {
+    "title": "Trading rules",
+    "page": 153,
+    "level": 4
+  },
+  {
+    "title": "Optimisation of the main parameter of the system",
+    "page": 158,
+    "level": 4
+  },
+  {
+    "title": "Results",
+    "page": 158,
+    "level": 4
+  },
+  {
+    "title": "Strategy evaluation",
+    "page": 179,
+    "level": 4
+  },
+  {
+    "title": "6",
+    "page": 180,
+    "level": 5
+  },
+  {
+    "title": "Periodic Reoptimisation and Walk-forward Analysis",
+    "page": 180,
+    "level": 1
+  },
+  {
+    "title": "6.1 Short repetition: normal, static optimisation",
+    "page": 180,
+    "level": 2
+  },
+  {
+    "title": "6.2 Anchored vs. rolling walk-forward analysis (WFA)",
+    "page": 181,
+    "level": 3
+  },
+  {
+    "title": "6.3 Rolling WFA on the LUXOR system",
+    "page": 182,
+    "level": 3
+  },
+  {
+    "title": "Periodic optimisation of the two main system parameters",
+    "page": 182,
+    "level": 4
+  },
+  {
+    "title": "Out-of-sample test result",
+    "page": 185,
+    "level": 4
+  },
+  {
+    "title": "Conclusion",
+    "page": 186,
+    "level": 4
+  },
+  {
+    "title": "6.4 The meaning of sample size and market structure",
+    "page": 187,
+    "level": 3
+  },
+  {
+    "title": "7",
+    "page": 190,
+    "level": 4
+  },
+  {
+    "title": "Position Sizing Example, Using the LUXOR System",
+    "page": 190,
+    "level": 1
+  },
+  {
+    "title": "7.1 Definitions: money management vs. risk management",
+    "page": 190,
+    "level": 2
+  },
+  {
+    "title": "Risk management (RM)",
+    "page": 190,
+    "level": 3
+  },
+  {
+    "title": "Money management (MM)",
+    "page": 190,
+    "level": 4
+  },
+  {
+    "title": "7.2 Application of different MM schemes",
+    "page": 191,
+    "level": 3
+  },
+  {
+    "title": "Reference: The system traded with one lot",
+    "page": 192,
+    "level": 4
+  },
+  {
+    "title": "Maximum drawdown MM",
+    "page": 193,
+    "level": 4
+  },
+  {
+    "title": "Fixed fractional MM",
+    "page": 194,
+    "level": 4
+  },
+  {
+    "title": "Fixed ratio MM",
+    "page": 197,
+    "level": 4
+  },
+  {
+    "title": "7.3 Monte Carlo analysis of the position sized system",
+    "page": 201,
+    "level": 3
+  },
+  {
+    "title": "7.4 Conclusion",
+    "page": 203,
+    "level": 3
+  },
+  {
+    "title": "Part III",
+    "page": 204,
+    "level": 0
+  },
+  {
+    "title": "Systematic Portfolio Trading",
+    "page": 204,
+    "level": 0
+  },
+  {
+    "title": "8",
+    "page": 205,
+    "level": 1
+  },
+  {
+    "title": "Dynamic Portfolio Construction",
+    "page": 205,
+    "level": 1
+  },
+  {
+    "title": "8.1 Introduction to portfolio construction",
+    "page": 205,
+    "level": 2
+  },
+  {
+    "title": "A list of the main available software for portfolio trading",
+    "page": 205,
+    "level": 3
+  },
+  {
+    "title": "The role of correlations",
+    "page": 206,
+    "level": 4
+  },
+  {
+    "title": "Publications and theoretical tools",
+    "page": 207,
+    "level": 4
+  },
+  {
+    "title": "Portfolio trading in practice",
+    "page": 208,
+    "level": 4
+  },
+  {
+    "title": "Total vs. partial equity contribution",
+    "page": 210,
+    "level": 4
+  },
+  {
+    "title": "8.2 Correlation among equity lines",
+    "page": 211,
+    "level": 3
+  },
+  {
+    "title": "8.3 A dynamic approach: equity line crossover",
+    "page": 212,
+    "level": 3
+  },
+  {
+    "title": "8.4 How to transform an average system portfolio into a profitable one: the case of LUXOR",
+    "page": 214,
+    "level": 3
+  },
+  {
+    "title": "8.5 Dynamic portfolio composition: the walk-forward analysis activator",
+    "page": 216,
+    "level": 3
+  },
+  {
+    "title": "8.6 Largest losing trade/largest losing streak/largest drawdown",
+    "page": 216,
+    "level": 3
+  },
+  {
+    "title": "9",
+    "page": 218,
+    "level": 4
+  },
+  {
+    "title": "Trading a Portfolio of Stocks",
+    "page": 218,
+    "level": 1
+  },
+  {
+    "title": "9.1 Modifications when applying a Bollinger Band system to stocks",
+    "page": 219,
+    "level": 2
+  },
+  {
+    "title": "The Bollinger Band system – trading logic for stocks",
+    "page": 222,
+    "level": 3
+  },
+  {
+    "title": "9.2 Examples: Results on single stocks",
+    "page": 225,
+    "level": 3
+  },
+  {
+    "title": "9.3 Survivorship bias in portfolio back-tests",
+    "page": 231,
+    "level": 3
+  },
+  {
+    "title": "9.4 Application of the strategy to a portfolio of S&P 500 stocks",
+    "page": 237,
+    "level": 3
+  },
+  {
+    "title": "9.4.1 The S&P 500 index",
+    "page": 238,
+    "level": 4
+  },
+  {
+    "title": "9.4.2 Testing a portfolio of S&P 500 stocks",
+    "page": 239,
+    "level": 4
+  },
+  {
+    "title": "9.4.3 Introducing a market filter",
+    "page": 245,
+    "level": 4
+  },
+  {
+    "title": "9.4.4 Optimising two parameters together: index filter and Bollinger Band length",
+    "page": 251,
+    "level": 4
+  },
+  {
+    "title": "9.4.5 Variation of the entry and exit point = upper and lower band distance",
+    "page": 256,
+    "level": 4
+  },
+  {
+    "title": "9.4.6 Ranking methods in case multiple signals occur on the same day",
+    "page": 260,
+    "level": 4
+  },
+  {
+    "title": "9.4.7 Conclusion: Development of a trading system on the S&P 500 stocks",
+    "page": 265,
+    "level": 4
+  },
+  {
+    "title": "9.5 Monte Carlo analysis of the Bollinger Band system",
+    "page": 272,
+    "level": 3
+  },
+  {
+    "title": "9.6 Periodic reoptimisation/walk-forward analysis (WFA)",
+    "page": 276,
+    "level": 3
+  },
+  {
+    "title": "Conclusion",
+    "page": 284,
+    "level": 4
+  },
+  {
+    "title": "9.7 Results on other portfolios of stocks",
+    "page": 284,
+    "level": 3
+  },
+  {
+    "title": "9.7.1 Nasdaq 100 – technology at work",
+    "page": 284,
+    "level": 4
+  },
+  {
+    "title": "9.7.2 The S&P 1500 – a large index",
+    "page": 294,
+    "level": 4
+  },
+  {
+    "title": "9.7.3 Overview: Bollinger Band System vs. buy and hold",
+    "page": 299,
+    "level": 4
+  },
+  {
+    "title": "9.8 Position management with five stocks on the Nasdaq 100 – practical example",
+    "page": 301,
+    "level": 3
+  },
+  {
+    "title": "9.9 The psychological phenomenon of loss aversion",
+    "page": 312,
+    "level": 3
+  },
+  {
+    "title": "9.10 Different ways of daily execution",
+    "page": 314,
+    "level": 3
+  },
+  {
+    "title": "a) Professional back-testing and daily implementation, all in one",
+    "page": 315,
+    "level": 4
+  },
+  {
+    "title": "b) Professional back-testing and daily implementation, separated",
+    "page": 315,
+    "level": 4
+  },
+  {
+    "title": "c) Daily implementation without back-testing",
+    "page": 315,
+    "level": 4
+  },
+  {
+    "title": "Conclusion",
+    "page": 316,
+    "level": 1
+  },
+  {
+    "title": "Rule complexity",
+    "page": 319,
+    "level": 2
+  },
+  {
+    "title": "Testing",
+    "page": 319,
+    "level": 3
+  },
+  {
+    "title": "Optimisation",
+    "page": 320,
+    "level": 4
+  },
+  {
+    "title": "Monte Carlo analysis",
+    "page": 320,
+    "level": 4
+  },
+  {
+    "title": "Portfolio building",
+    "page": 320,
+    "level": 4
+  },
+  {
+    "title": "Dynamic risk management",
+    "page": 320,
+    "level": 4
+  },
+  {
+    "title": "Money management",
+    "page": 320,
+    "level": 4
+  },
+  {
+    "title": "Appendices",
+    "page": 321,
+    "level": 0
+  },
+  {
+    "title": "Systems and Ideas",
+    "page": 321,
+    "level": 0
+  },
+  {
+    "title": "1.1 Idea",
+    "page": 322,
+    "level": 1
+  },
+  {
+    "title": "1.2 Entry logic and EasyLanguage code",
+    "page": 323,
+    "level": 2
+  },
+  {
+    "title": "1.3 Application of the strategy to seven markets with same parameters",
+    "page": 324,
+    "level": 3
+  },
+  {
+    "title": "1.4 Results and conclusions",
+    "page": 324,
+    "level": 3
+  },
+  {
+    "title": "2.1 Idea",
+    "page": 327,
+    "level": 3
+  },
+  {
+    "title": "2.2 Programming and coding",
+    "page": 327,
+    "level": 3
+  },
+  {
+    "title": "2.3 Application to different liquid futures markets with same parameters",
+    "page": 328,
+    "level": 3
+  },
+  {
+    "title": "2.4 Advantages in building a portfolio",
+    "page": 329,
+    "level": 3
+  },
+  {
+    "title": "2.5 Conclusion",
+    "page": 330,
+    "level": 3
+  },
+  {
+    "title": "3.1 Idea",
+    "page": 335,
+    "level": 3
+  },
+  {
+    "title": "3.2 The trading logic",
+    "page": 336,
+    "level": 3
+  },
+  {
+    "title": "3.3 Results in the bond markets",
+    "page": 336,
+    "level": 3
+  },
+  {
+    "title": "3.4 Diversification with other market groups",
+    "page": 338,
+    "level": 3
+  },
+  {
+    "title": "3.5 Conclusion",
+    "page": 339,
+    "level": 3
+  },
+  {
+    "title": "4.1 Beginning of Month (chapter 5.6)",
+    "page": 346,
+    "level": 3
+  },
+  {
+    "title": "4.2 Bollinger Band System (chapter 9)",
+    "page": 347,
+    "level": 3
+  },
+  {
+    "title": "5.1 Beginning of Month",
+    "page": 349,
+    "level": 3
+  },
+  {
+    "title": "5.2 Bollinger Band System (chapter 9)",
+    "page": 350,
+    "level": 3
+  },
+  {
+    "title": "Bibliography",
+    "page": 354,
+    "level": 2
+  },
+  {
+    "title": "Index",
+    "page": 356,
+    "level": 2
+  }
+]

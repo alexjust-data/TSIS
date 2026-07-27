@@ -1,0 +1,77 @@
+{
+  "contract_id": "market_state_capability_consumption_policy_contract_v0_1",
+  "gate": "market_state_capability_consumption_policy_v0_1",
+  "status": "accepted_consumption_policy_with_restrictions_no_execution",
+  "created_by_run_id": "market_state_capability_consumption_policy_v0_1_20260727T142133Z",
+  "capability_id": "market_state_on_demand_runtime_capability_v0_1",
+  "capability_status_required": "PROMOTED_WITH_RESTRICTIONS_CANDIDATE_GENERATION_ONLY",
+  "policy_scope": {
+    "candidate_generation": "allowed_only_under_separate_bounded_or_scale_authorization",
+    "exact_match_reuse": "allowed_only_for_validated_candidate_evidence_with_matching_fingerprints",
+    "incremental_reuse": "allowed_only_for_validated_candidate_compositions_with_lineage_chain_evidence",
+    "registry_visibility": "metadata_and_governed_evidence_refs_allowed",
+    "event_state_dependency_planning": "metadata_only_allowed"
+  },
+  "allowed_consumer_classes": [
+    "runtime_internal_request_resolver",
+    "runtime_internal_execution_planner",
+    "runtime_internal_candidate_reuse_resolver",
+    "runtime_validator",
+    "applied_architecture_review",
+    "event_state_design_planning_metadata_only",
+    "human_audit_metadata_review"
+  ],
+  "prohibited_consumer_classes_v0_1": [
+    "production_trading",
+    "live_execution",
+    "downstream_backtest",
+    "downstream_ml",
+    "downstream_rl",
+    "unbounded_event_state_builder",
+    "official_dataset_resolver"
+  ],
+  "allowed_operations_v0_1": {
+    "inspect_capability_metadata": true,
+    "inspect_request_contracts": true,
+    "inspect_registry_metadata": true,
+    "serve_candidate_metadata": true,
+    "serve_candidate_files_to_runtime_internal_validation": true,
+    "reuse_exact_validated_candidate_for_matching_candidate_request": true,
+    "reuse_incremental_validated_candidate_for_matching_candidate_request": true,
+    "open_new_candidate_execution_without_separate_authorization": false,
+    "serve_as_official_market_state_dataset": false,
+    "serve_to_production": false,
+    "serve_to_downstream_research_or_backtest": false,
+    "serve_to_ml_or_rl_training": false,
+    "serve_to_event_state_physical_materialization": false
+  },
+  "reuse_required_conditions": [
+    "request_fingerprint_match",
+    "execution_plan_fingerprint_match",
+    "profile_contract_hash_match",
+    "source_fingerprint_match",
+    "builder_version_match",
+    "schema_hash_match",
+    "validation_status_allows_candidate_reuse",
+    "determinism_evidence_present",
+    "artifact_availability_available",
+    "no_quarantine",
+    "no_unresolved_blocking_findings",
+    "restriction_set_propagated"
+  ],
+  "hard_boundaries": {
+    "source_market_data_reads_allowed": false,
+    "parquet_content_reads_allowed": false,
+    "materializer_execution_allowed": false,
+    "validator_execution_allowed": false,
+    "new_candidate_registry_entries_allowed": false,
+    "registry_entry_mutation_allowed": false,
+    "official_dataset_promotion_allowed": false,
+    "production_allowed": false,
+    "downstream_consumption_allowed": false,
+    "event_state_on_demand_execution_allowed": false,
+    "full_universe_build_allowed": false
+  },
+  "next_allowed_gate": "event_state_on_demand_capability_design_authorization_v0_1",
+  "contract_content_sha256_excluding_hash_field": "cf3aadb40c5d9f2408a04ce17cf8964d4315cd031c83ff383ed7cfe079ea2a47"
+}

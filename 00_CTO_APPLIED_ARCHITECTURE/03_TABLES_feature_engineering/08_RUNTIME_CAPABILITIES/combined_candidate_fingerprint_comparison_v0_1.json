@@ -1,0 +1,49 @@
+{
+  "review_id": "market_state_on_demand_incremental_overlap_candidate_dataset_review_v0_1_20260725T000000Z",
+  "review_gate": "market_state_on_demand_incremental_overlap_candidate_dataset_review_v0_1",
+  "normalization_policy": {
+    "logical_dataset_fingerprint_excludes": [
+      "run_id",
+      "created_at_utc",
+      "completed_at_utc",
+      "heartbeat timestamps",
+      "run-local output paths",
+      "physical file names"
+    ],
+    "logical_dataset_fingerprint_includes": [
+      "profile identity",
+      "schema scientific identity",
+      "sorted canonical context keys",
+      "normalized scientific row content",
+      "row-level state_output_fingerprints",
+      "coverage ledger",
+      "source scientific fingerprints",
+      "builder contract fingerprints",
+      "profile contract fingerprint",
+      "restrictions"
+    ],
+    "physical_artifact_fingerprint_depends_on": [
+      "file bytes",
+      "serialization",
+      "compression",
+      "row order"
+    ]
+  },
+  "baseline_physical_artifact": {
+    "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\market_state_bounded_on_demand_execution_v0_1_20260724T232123Z\\market_state_bounded_on_demand_candidate_v0_1.parquet",
+    "recorded_sha256": "fa474f3bddc2c0c34f8ef84ab531a1662901bba9e995c1224deb7a90c48d2a44",
+    "current_sha256": "fa474f3bddc2c0c34f8ef84ab531a1662901bba9e995c1224deb7a90c48d2a44",
+    "hash_match": true
+  },
+  "delta_physical_artifact": {
+    "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\market_state_on_demand_incremental_overlap_execution_v0_1_20260725T064143Z\\market_state_incremental_delta_candidate_v0_1.parquet",
+    "recorded_sha256": "8b2ed5f0866dab33908827026ef6e2d53c8b6986cb302f412ca0e7999720b082",
+    "current_sha256": "8b2ed5f0866dab33908827026ef6e2d53c8b6986cb302f412ca0e7999720b082",
+    "hash_match": true
+  },
+  "candidate_dataset_fingerprint": "f2cfd5cf55d0c1be1722693cc0216ffd425bbb869e19c17745976c030f2c7a2a",
+  "scientific_dataset_fingerprint": "7103e4fdbae205e4bccbeb0c436508f62b016107b4b2756c549073dae971bb5f",
+  "candidate_and_scientific_fingerprints_are_distinct": true,
+  "logical_order_independence_policy": "compare after canonical sorting by instrument_id, session_date, decision_timestamp_utc, materialized_state_candidate_id",
+  "fingerprint_comparison_sha256": "e8f30356dcf648343cc9e6097fe5b9231a62b86580757022e5f1d3f459a8271d"
+}

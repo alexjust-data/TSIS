@@ -1,0 +1,574 @@
+[
+  {
+    "level": 0,
+    "title": "Brief Table of Contents (Not Yet Final)"
+  },
+  {
+    "level": 0,
+    "title": "1. Introduction to Agents"
+  },
+  {
+    "level": 1,
+    "title": "What are Agents?"
+  },
+  {
+    "level": 1,
+    "title": "Similarities and Differences from Traditional Machine Learning"
+  },
+  {
+    "level": 1,
+    "title": "Recent Advancements"
+  },
+  {
+    "level": 1,
+    "title": "From Synchronous to Asynchronous"
+  },
+  {
+    "level": 1,
+    "title": "When Are Agents Useful?"
+  },
+  {
+    "level": 1,
+    "title": "Managing Expectations"
+  },
+  {
+    "level": 1,
+    "title": "Use Cases for Agents"
+  },
+  {
+    "level": 2,
+    "title": "Customer Support Agent"
+  },
+  {
+    "level": 2,
+    "title": "Personal Assistant Agent"
+  },
+  {
+    "level": 2,
+    "title": "Legal Agent"
+  },
+  {
+    "level": 2,
+    "title": "Advertising Agent"
+  },
+  {
+    "level": 1,
+    "title": "Building with Change in Mind"
+  },
+  {
+    "level": 2,
+    "title": "Scalability"
+  },
+  {
+    "level": 2,
+    "title": "Modularity"
+  },
+  {
+    "level": 2,
+    "title": "Continuous Learning"
+  },
+  {
+    "level": 2,
+    "title": "Resilience"
+  },
+  {
+    "level": 2,
+    "title": "Future-Proofing"
+  },
+  {
+    "level": 2,
+    "title": "Towards Multi-Agent Systems"
+  },
+  {
+    "level": 2,
+    "title": "Foundation Models and Autonomous Agents"
+  },
+  {
+    "level": 1,
+    "title": "Conclusion"
+  },
+  {
+    "level": 0,
+    "title": "2. Overview of Designing Agent Systems"
+  },
+  {
+    "level": 1,
+    "title": "Scenario Selection and Task Definition"
+  },
+  {
+    "level": 2,
+    "title": "Defining the Problem: Scoping Tasks for Agents"
+  },
+  {
+    "level": 2,
+    "title": "Avoiding Common Pitfalls in Task Definition"
+  },
+  {
+    "level": 2,
+    "title": "Great Example Scenarios"
+  },
+  {
+    "level": 1,
+    "title": "Core Components of Agent Systems"
+  },
+  {
+    "level": 2,
+    "title": "Model Selection"
+  },
+  {
+    "level": 2,
+    "title": "Skills"
+  },
+  {
+    "level": 2,
+    "title": "Memory"
+  },
+  {
+    "level": 2,
+    "title": "Planning"
+  },
+  {
+    "level": 1,
+    "title": "Design Tradeoffs"
+  },
+  {
+    "level": 2,
+    "title": "Performance: Speed vs. Accuracy Tradeoffs"
+  },
+  {
+    "level": 2,
+    "title": "Scalability: Engineering Scalability for Agent Systems"
+  },
+  {
+    "level": 2,
+    "title": "Reliability: Ensuring Robust and Consistent Agent Behavior"
+  },
+  {
+    "level": 2,
+    "title": "Balancing Costs and Returns"
+  },
+  {
+    "level": 1,
+    "title": "Architecture Design Patterns"
+  },
+  {
+    "level": 2,
+    "title": "Single-Agent Architectures"
+  },
+  {
+    "level": 2,
+    "title": "2.4.2 Multi-Agent Architectures: Collaboration, Parallelism, and Coordination"
+  },
+  {
+    "level": 1,
+    "title": "Best Practices"
+  },
+  {
+    "level": 2,
+    "title": "Iterative Design with Continuous Feedback"
+  },
+  {
+    "level": 2,
+    "title": "Robust Evaluation"
+  },
+  {
+    "level": 2,
+    "title": "Real-World Testing: Validating Agents in Production Environments"
+  },
+  {
+    "level": 1,
+    "title": "Conclusion"
+  },
+  {
+    "level": 0,
+    "title": "3. User Experience Design for Agentic Systems"
+  },
+  {
+    "level": 1,
+    "title": "Interaction Modalities"
+  },
+  {
+    "level": 2,
+    "title": "Text-Based"
+  },
+  {
+    "level": 2,
+    "title": "Graphical Interfaces"
+  },
+  {
+    "level": 2,
+    "title": "Speech and Voice Interfaces"
+  },
+  {
+    "level": 2,
+    "title": "Video Based Interfaces"
+  },
+  {
+    "level": 1,
+    "title": "Synchronous vs Asynchronous Agent Experiences"
+  },
+  {
+    "level": 2,
+    "title": "Design Principles for Synchronous Experiences"
+  },
+  {
+    "level": 2,
+    "title": "Design Principles for Async Experiences"
+  },
+  {
+    "level": 2,
+    "title": "Finding the balance between proactive and intrusive agent behavior"
+  },
+  {
+    "level": 1,
+    "title": "Context Retention and Continuity"
+  },
+  {
+    "level": 2,
+    "title": "Maintaining State Across Interactions"
+  },
+  {
+    "level": 2,
+    "title": "Personalization and Adaptability"
+  },
+  {
+    "level": 1,
+    "title": "Communicating Agent Capabilities"
+  },
+  {
+    "level": 2,
+    "title": "Setting Realistic Expectations"
+  },
+  {
+    "level": 2,
+    "title": "Communicating Confidence and Uncertainty"
+  },
+  {
+    "level": 2,
+    "title": "Asking for Guidance and Input from Users"
+  },
+  {
+    "level": 2,
+    "title": "Failing Gracefully"
+  },
+  {
+    "level": 1,
+    "title": "Trust and Transparency"
+  },
+  {
+    "level": 2,
+    "title": "Building Predictable and Reliable Agents"
+  },
+  {
+    "level": 2,
+    "title": "Preventing Automation Bias"
+  },
+  {
+    "level": 1,
+    "title": "Conclusion"
+  },
+  {
+    "level": 0,
+    "title": "4. Skills"
+  },
+  {
+    "level": 1,
+    "title": "Local Skills"
+  },
+  {
+    "level": 1,
+    "title": "Skill Design Considerations"
+  },
+  {
+    "level": 2,
+    "title": "API-Based Skills"
+  },
+  {
+    "level": 2,
+    "title": "Plug-in Skills"
+  },
+  {
+    "level": 2,
+    "title": "Skill Hierarchies"
+  },
+  {
+    "level": 1,
+    "title": "Automated Skill Development"
+  },
+  {
+    "level": 2,
+    "title": "Real-Time Code Generation"
+  },
+  {
+    "level": 2,
+    "title": "Imitation Learning"
+  },
+  {
+    "level": 2,
+    "title": "Skill Learning from Rewards"
+  },
+  {
+    "level": 1,
+    "title": "Conclusion"
+  },
+  {
+    "level": 0,
+    "title": "5. Orchestration"
+  },
+  {
+    "level": 1,
+    "title": "Skill Selection"
+  },
+  {
+    "level": 2,
+    "title": "Generative Skill Selection"
+  },
+  {
+    "level": 2,
+    "title": "Semantic Skill Selection"
+  },
+  {
+    "level": 2,
+    "title": "Machine Learned Skill Selection"
+  },
+  {
+    "level": 1,
+    "title": "Skill Execution"
+  },
+  {
+    "level": 1,
+    "title": "Skill Topologies"
+  },
+  {
+    "level": 2,
+    "title": "Single Skill Execution"
+  },
+  {
+    "level": 2,
+    "title": "Parallel Skill Execution"
+  },
+  {
+    "level": 2,
+    "title": "Chains"
+  },
+  {
+    "level": 2,
+    "title": "Trees"
+  },
+  {
+    "level": 2,
+    "title": "Graphs"
+  },
+  {
+    "level": 2,
+    "title": "Choosing a Topology"
+  },
+  {
+    "level": 1,
+    "title": "Planning"
+  },
+  {
+    "level": 2,
+    "title": "Iterative Planning"
+  },
+  {
+    "level": 2,
+    "title": "Zero-Shot Planning"
+  },
+  {
+    "level": 2,
+    "title": "In-Context Learning with Hand-Crafted Examples"
+  },
+  {
+    "level": 2,
+    "title": "Plan Adaptation"
+  },
+  {
+    "level": 1,
+    "title": "Summary"
+  },
+  {
+    "level": 0,
+    "title": "6. Knowledge and Memory"
+  },
+  {
+    "level": 1,
+    "title": "Foundational Approaches to Memory"
+  },
+  {
+    "level": 2,
+    "title": "Managing Context Windows"
+  },
+  {
+    "level": 2,
+    "title": "Keyword-Based Memory"
+  },
+  {
+    "level": 2,
+    "title": "Integrating Keyword-Based Memory with Rolling Context Windows"
+  },
+  {
+    "level": 1,
+    "title": "Semantic Memory and Vector Stores"
+  },
+  {
+    "level": 2,
+    "title": "Introduction to Semantic Search"
+  },
+  {
+    "level": 2,
+    "title": "Implementing Semantic Memory with Vector Stores"
+  },
+  {
+    "level": 2,
+    "title": "Retrieval Augmented Generation"
+  },
+  {
+    "level": 2,
+    "title": "Semantic Experience Memory"
+  },
+  {
+    "level": 1,
+    "title": "Graph RAG"
+  },
+  {
+    "level": 2,
+    "title": "Using Knowledge Graphs"
+  },
+  {
+    "level": 2,
+    "title": "Building Knowledge Graphs"
+  },
+  {
+    "level": 2,
+    "title": "Promise and Peril of Dynamic Knowledge Graphs"
+  },
+  {
+    "level": 1,
+    "title": "Working Memory"
+  },
+  {
+    "level": 2,
+    "title": "Whiteboards"
+  },
+  {
+    "level": 2,
+    "title": "Note Taking"
+  },
+  {
+    "level": 1,
+    "title": "Conclusion"
+  },
+  {
+    "level": 0,
+    "title": "7. Learning in Agentic Systems"
+  },
+  {
+    "level": 1,
+    "title": "Nonparametric Learning"
+  },
+  {
+    "level": 2,
+    "title": "Non-Parametric Exemplar Learning"
+  },
+  {
+    "level": 2,
+    "title": "Reflextion"
+  },
+  {
+    "level": 2,
+    "title": "Experiential Learning"
+  },
+  {
+    "level": 1,
+    "title": "Parametric Learning: Fine Tuning"
+  },
+  {
+    "level": 2,
+    "title": "Fine Tuning Large Foundation Models"
+  },
+  {
+    "level": 2,
+    "title": "The Promise of Small Models"
+  },
+  {
+    "level": 2,
+    "title": "Function Calling Fine Tuning"
+  },
+  {
+    "level": 1,
+    "title": "Conclusion"
+  },
+  {
+    "level": 0,
+    "title": "8. From One Agent to Many"
+  },
+  {
+    "level": 1,
+    "title": "How Many Agents Do I Need?"
+  },
+  {
+    "level": 2,
+    "title": "Single-Agent Scenarios"
+  },
+  {
+    "level": 2,
+    "title": "Multi-Agent Scenarios"
+  },
+  {
+    "level": 2,
+    "title": "Principles for Adding Agents"
+  },
+  {
+    "level": 1,
+    "title": "Multi-Agent Coordination"
+  },
+  {
+    "level": 2,
+    "title": "Democratic Coordination"
+  },
+  {
+    "level": 2,
+    "title": "Manager Coordination"
+  },
+  {
+    "level": 2,
+    "title": "Hierarchical Coordination"
+  },
+  {
+    "level": 2,
+    "title": "Actor-Critic Approaches"
+  },
+  {
+    "level": 2,
+    "title": "Automated Design of Agent Systems"
+  },
+  {
+    "level": 1,
+    "title": "Multi-Agent Frameworks"
+  },
+  {
+    "level": 2,
+    "title": "Do-It-Yourself (DIY)"
+  },
+  {
+    "level": 2,
+    "title": "LangGraph"
+  },
+  {
+    "level": 2,
+    "title": "Autogen"
+  },
+  {
+    "level": 2,
+    "title": "Crew AI"
+  },
+  {
+    "level": 2,
+    "title": "Swarm"
+  },
+  {
+    "level": 1,
+    "title": "Conclusion"
+  }
+]

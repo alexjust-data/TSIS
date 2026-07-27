@@ -1,0 +1,750 @@
+[
+  {
+    "level": 0,
+    "title": "Cover"
+  },
+  {
+    "level": 0,
+    "title": "Copyright"
+  },
+  {
+    "level": 0,
+    "title": "Table of Contents"
+  },
+  {
+    "level": 0,
+    "title": "About this Book"
+  },
+  {
+    "level": 1,
+    "title": "Who Should Read this Book?"
+  },
+  {
+    "level": 1,
+    "title": "Scope of this Book"
+  },
+  {
+    "level": 1,
+    "title": "Outline of this Book"
+  },
+  {
+    "level": 1,
+    "title": "Early Release Status and Feedback"
+  },
+  {
+    "level": 0,
+    "title": "Part I. Foundations of Data Systems"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 1. Reliable, Scalable and Maintainable Applications"
+  },
+  {
+    "level": 1,
+    "title": "Thinking About Data Systems"
+  },
+  {
+    "level": 1,
+    "title": "Reliability"
+  },
+  {
+    "level": 2,
+    "title": "Hardware faults"
+  },
+  {
+    "level": 2,
+    "title": "Software errors"
+  },
+  {
+    "level": 2,
+    "title": "Human errors"
+  },
+  {
+    "level": 2,
+    "title": "How important is reliability?"
+  },
+  {
+    "level": 1,
+    "title": "Scalability"
+  },
+  {
+    "level": 2,
+    "title": "Describing load"
+  },
+  {
+    "level": 2,
+    "title": "Describing performance"
+  },
+  {
+    "level": 2,
+    "title": "Approaches for coping with load"
+  },
+  {
+    "level": 1,
+    "title": "Maintainability"
+  },
+  {
+    "level": 2,
+    "title": "Operability: making life easy for operations"
+  },
+  {
+    "level": 2,
+    "title": "Simplicity: managing complexity"
+  },
+  {
+    "level": 2,
+    "title": "Evolvability: making change easy"
+  },
+  {
+    "level": 1,
+    "title": "Summary"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 2. Data Models and Query Languages"
+  },
+  {
+    "level": 1,
+    "title": "Relational Model vs. Document Model"
+  },
+  {
+    "level": 2,
+    "title": "The birth of NoSQL"
+  },
+  {
+    "level": 2,
+    "title": "The object-relational mismatch"
+  },
+  {
+    "level": 2,
+    "title": "Many-to-one and many-to-many relationships"
+  },
+  {
+    "level": 2,
+    "title": "Are document databases repeating history?"
+  },
+  {
+    "level": 2,
+    "title": "Relational vs. document databases today"
+  },
+  {
+    "level": 1,
+    "title": "Query Languages for Data"
+  },
+  {
+    "level": 2,
+    "title": "Declarative queries on the web"
+  },
+  {
+    "level": 2,
+    "title": "MapReduce querying"
+  },
+  {
+    "level": 1,
+    "title": "Graph-like Data Models"
+  },
+  {
+    "level": 2,
+    "title": "Property graphs"
+  },
+  {
+    "level": 2,
+    "title": "The Cypher query language"
+  },
+  {
+    "level": 2,
+    "title": "Graph queries in SQL"
+  },
+  {
+    "level": 2,
+    "title": "Triple-stores and SPARQL"
+  },
+  {
+    "level": 2,
+    "title": "The foundation: Datalog"
+  },
+  {
+    "level": 1,
+    "title": "Summary"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 3. Storage and Retrieval"
+  },
+  {
+    "level": 1,
+    "title": "Data Structures that Power Your Database"
+  },
+  {
+    "level": 2,
+    "title": "Hash indexes"
+  },
+  {
+    "level": 2,
+    "title": "SSTables and LSM-trees"
+  },
+  {
+    "level": 2,
+    "title": "B-trees"
+  },
+  {
+    "level": 2,
+    "title": "Other indexing structures"
+  },
+  {
+    "level": 2,
+    "title": "Keeping everything in memory"
+  },
+  {
+    "level": 1,
+    "title": "Transaction Processing or Analytics?"
+  },
+  {
+    "level": 2,
+    "title": "Data warehousing"
+  },
+  {
+    "level": 2,
+    "title": "Stars and snowflakes: schemas for analytics"
+  },
+  {
+    "level": 1,
+    "title": "Column-oriented storage"
+  },
+  {
+    "level": 2,
+    "title": "Column compression"
+  },
+  {
+    "level": 2,
+    "title": "Sort order in column storage"
+  },
+  {
+    "level": 2,
+    "title": "Writing to column-oriented storage"
+  },
+  {
+    "level": 2,
+    "title": "Aggregation: Data cubes and materialized views"
+  },
+  {
+    "level": 1,
+    "title": "Summary"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 4. Encoding and Evolution"
+  },
+  {
+    "level": 1,
+    "title": "Formats for Encoding Data"
+  },
+  {
+    "level": 2,
+    "title": "Language-specific formats"
+  },
+  {
+    "level": 2,
+    "title": "JSON, XML and binary variants"
+  },
+  {
+    "level": 2,
+    "title": "Thrift and Protocol Buffers"
+  },
+  {
+    "level": 2,
+    "title": "Avro"
+  },
+  {
+    "level": 2,
+    "title": "The merits of schemas"
+  },
+  {
+    "level": 1,
+    "title": "Modes of Data Flow"
+  },
+  {
+    "level": 2,
+    "title": "Data flow through databases"
+  },
+  {
+    "level": 2,
+    "title": "Data flow through services: REST and RPC"
+  },
+  {
+    "level": 2,
+    "title": "Message passing data flow"
+  },
+  {
+    "level": 1,
+    "title": "Summary"
+  },
+  {
+    "level": 0,
+    "title": "Part II. Distributed Data"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 5. Replication"
+  },
+  {
+    "level": 1,
+    "title": "Leaders and Followers"
+  },
+  {
+    "level": 2,
+    "title": "Synchronous vs. asynchronous replication"
+  },
+  {
+    "level": 2,
+    "title": "Setting up new followers"
+  },
+  {
+    "level": 2,
+    "title": "Handling node outages"
+  },
+  {
+    "level": 2,
+    "title": "Implementation of replication logs"
+  },
+  {
+    "level": 1,
+    "title": "Problems With Replication Lag"
+  },
+  {
+    "level": 2,
+    "title": "Reading your own writes"
+  },
+  {
+    "level": 2,
+    "title": "Monotonic reads"
+  },
+  {
+    "level": 2,
+    "title": "Consistent prefix reads"
+  },
+  {
+    "level": 2,
+    "title": "Solutions for replication lag"
+  },
+  {
+    "level": 1,
+    "title": "Multi-leader replication"
+  },
+  {
+    "level": 2,
+    "title": "Use cases for multi-leader replication"
+  },
+  {
+    "level": 2,
+    "title": "Handling write conflicts"
+  },
+  {
+    "level": 2,
+    "title": "Multi-leader replication topologies"
+  },
+  {
+    "level": 1,
+    "title": "Leaderless replication"
+  },
+  {
+    "level": 2,
+    "title": "Writing to the database when a node is down"
+  },
+  {
+    "level": 2,
+    "title": "Limitations of quorum consistency"
+  },
+  {
+    "level": 2,
+    "title": "Sloppy quorums and hinted handoff"
+  },
+  {
+    "level": 2,
+    "title": "Detecting concurrent writes"
+  },
+  {
+    "level": 1,
+    "title": "Summary"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 6. Partitioning"
+  },
+  {
+    "level": 1,
+    "title": "Partitioning and replication"
+  },
+  {
+    "level": 1,
+    "title": "Partitioning of key-value data"
+  },
+  {
+    "level": 2,
+    "title": "Partitioning by key range"
+  },
+  {
+    "level": 2,
+    "title": "Partitioning by hash of key"
+  },
+  {
+    "level": 2,
+    "title": "Skewed workloads and relieving hot spots"
+  },
+  {
+    "level": 1,
+    "title": "Partitioning and secondary indexes"
+  },
+  {
+    "level": 2,
+    "title": "Partitioning secondary indexes by document"
+  },
+  {
+    "level": 2,
+    "title": "Partitioning secondary indexes by term"
+  },
+  {
+    "level": 1,
+    "title": "Rebalancing partitions"
+  },
+  {
+    "level": 2,
+    "title": "Strategies for rebalancing"
+  },
+  {
+    "level": 2,
+    "title": "Operations: automatic or manual rebalancing"
+  },
+  {
+    "level": 1,
+    "title": "Request routing"
+  },
+  {
+    "level": 2,
+    "title": "Parallel query execution"
+  },
+  {
+    "level": 1,
+    "title": "Summary"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 7. Transactions"
+  },
+  {
+    "level": 1,
+    "title": "The slippery concept of a transaction"
+  },
+  {
+    "level": 2,
+    "title": "The meaning of ACID"
+  },
+  {
+    "level": 2,
+    "title": "Single-object and multi-object operations"
+  },
+  {
+    "level": 1,
+    "title": "Weak isolation levels"
+  },
+  {
+    "level": 2,
+    "title": "Read committed"
+  },
+  {
+    "level": 2,
+    "title": "Snapshot isolation and repeatable read"
+  },
+  {
+    "level": 2,
+    "title": "Preventing lost updates"
+  },
+  {
+    "level": 2,
+    "title": "Preventing write skew and phantoms"
+  },
+  {
+    "level": 1,
+    "title": "Serializability"
+  },
+  {
+    "level": 2,
+    "title": "Actual serial execution"
+  },
+  {
+    "level": 2,
+    "title": "Two-phase locking (2PL)"
+  },
+  {
+    "level": 2,
+    "title": "Serializable snapshot isolation (SSI)"
+  },
+  {
+    "level": 1,
+    "title": "Summary"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 8. The Trouble with Distributed Systems"
+  },
+  {
+    "level": 1,
+    "title": "Faults and Partial Failures"
+  },
+  {
+    "level": 2,
+    "title": "Cloud computing and supercomputing"
+  },
+  {
+    "level": 1,
+    "title": "Unreliable Networks"
+  },
+  {
+    "level": 2,
+    "title": "Network faults in practice"
+  },
+  {
+    "level": 2,
+    "title": "Detecting faults"
+  },
+  {
+    "level": 2,
+    "title": "Timeouts and unbounded delays"
+  },
+  {
+    "level": 2,
+    "title": "Synchronous vs. asynchronous networks"
+  },
+  {
+    "level": 1,
+    "title": "Unreliable Clocks"
+  },
+  {
+    "level": 2,
+    "title": "Monotonic vs. time-of-day clocks"
+  },
+  {
+    "level": 2,
+    "title": "Clock synchronization and accuracy"
+  },
+  {
+    "level": 2,
+    "title": "Relying on synchronized clocks"
+  },
+  {
+    "level": 2,
+    "title": "Process pauses"
+  },
+  {
+    "level": 1,
+    "title": "Knowledge, Truth and Lies"
+  },
+  {
+    "level": 2,
+    "title": "The truth is defined by the majority"
+  },
+  {
+    "level": 2,
+    "title": "Byzantine faults"
+  },
+  {
+    "level": 2,
+    "title": "System model and reality"
+  },
+  {
+    "level": 1,
+    "title": "Summary"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 9. Consistency and Consensus"
+  },
+  {
+    "level": 1,
+    "title": "Consistency Guarantees"
+  },
+  {
+    "level": 1,
+    "title": "Linearizability"
+  },
+  {
+    "level": 2,
+    "title": "What makes a system linearizable?"
+  },
+  {
+    "level": 2,
+    "title": "Relying on linearizability"
+  },
+  {
+    "level": 2,
+    "title": "Implementing linearizable systems"
+  },
+  {
+    "level": 2,
+    "title": "The cost of linearizability"
+  },
+  {
+    "level": 1,
+    "title": "Ordering Guarantees"
+  },
+  {
+    "level": 2,
+    "title": "Ordering and causality"
+  },
+  {
+    "level": 2,
+    "title": "Sequence number ordering"
+  },
+  {
+    "level": 2,
+    "title": "Total order broadcast"
+  },
+  {
+    "level": 1,
+    "title": "Distributed Transactions and Consensus"
+  },
+  {
+    "level": 2,
+    "title": "Atomic commit and two-phase commit (2PC)"
+  },
+  {
+    "level": 2,
+    "title": "Distributed transactions in practice"
+  },
+  {
+    "level": 2,
+    "title": "Fault-tolerant consensus"
+  },
+  {
+    "level": 2,
+    "title": "Membership and coordination services"
+  },
+  {
+    "level": 1,
+    "title": "Summary"
+  },
+  {
+    "level": 0,
+    "title": "Part III. Derived Data"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 10. Batch Processing"
+  },
+  {
+    "level": 1,
+    "title": "Batch Processing with Unix Tools"
+  },
+  {
+    "level": 2,
+    "title": "Simple log analysis"
+  },
+  {
+    "level": 2,
+    "title": "The Unix philosophy"
+  },
+  {
+    "level": 1,
+    "title": "MapReduce and Distributed Filesystems"
+  },
+  {
+    "level": 2,
+    "title": "MapReduce job execution"
+  },
+  {
+    "level": 2,
+    "title": "Reduce-side joins and grouping"
+  },
+  {
+    "level": 2,
+    "title": "Map-side joins"
+  },
+  {
+    "level": 2,
+    "title": "The output of batch workflows"
+  },
+  {
+    "level": 2,
+    "title": "Comparing MapReduce to distributed databases"
+  },
+  {
+    "level": 1,
+    "title": "Beyond MapReduce"
+  },
+  {
+    "level": 2,
+    "title": "Materialization of intermediate state"
+  },
+  {
+    "level": 2,
+    "title": "Graphs and iterative processing"
+  },
+  {
+    "level": 2,
+    "title": "High-level APIs and languages"
+  },
+  {
+    "level": 1,
+    "title": "Summary"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 11. Stream Processing"
+  },
+  {
+    "level": 1,
+    "title": "Transmitting Event Streams"
+  },
+  {
+    "level": 2,
+    "title": "Messaging systems"
+  },
+  {
+    "level": 2,
+    "title": "Partitioned logs"
+  },
+  {
+    "level": 1,
+    "title": "Databases and streams"
+  },
+  {
+    "level": 2,
+    "title": "Keeping systems in sync"
+  },
+  {
+    "level": 2,
+    "title": "Change data capture"
+  },
+  {
+    "level": 2,
+    "title": "Event sourcing"
+  },
+  {
+    "level": 2,
+    "title": "State, streams, and immutability"
+  },
+  {
+    "level": 1,
+    "title": "Processing Streams"
+  },
+  {
+    "level": 2,
+    "title": "Uses of stream processing"
+  },
+  {
+    "level": 2,
+    "title": "Reasoning about time"
+  },
+  {
+    "level": 2,
+    "title": "Stream joins"
+  },
+  {
+    "level": 2,
+    "title": "Fault tolerance"
+  },
+  {
+    "level": 1,
+    "title": "Summary"
+  }
+]

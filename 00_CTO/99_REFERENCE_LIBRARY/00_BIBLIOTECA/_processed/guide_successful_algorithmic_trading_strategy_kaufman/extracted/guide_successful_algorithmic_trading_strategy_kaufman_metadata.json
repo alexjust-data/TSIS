@@ -1,0 +1,19 @@
+{
+  "book_id": "guide_successful_algorithmic_trading_strategy_kaufman",
+  "title": "A Guide to Creating a Successful Algorithmic Trading Strategy",
+  "authors": "Perry J. Kaufman",
+  "source_type": "Libro EPUB",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\A_Guide_to_Creating_a_Successful_Algorithmic_Trading_Strategy_-_Perry_J_Kaufman.epub",
+  "file_name": "A_Guide_to_Creating_a_Successful_Algorithmic_Trading_Strategy_-_Perry_J_Kaufman.epub",
+  "sha256": "cfbca16318131ec428e7f5b1768902f2a36781fb84c47ac7e2098848d59316c3",
+  "status": "indexed",
+  "processed_date": "2026-07-27",
+  "page_count": 27,
+  "unit_label": "epub_section",
+  "text_chars": 214756,
+  "text_pages": 27,
+  "requires_ocr_review": false,
+  "working_text_persisted": false,
+  "themes": "strategy design, market selection, rules, testing, robustness, risk control, practical development",
+  "utility_tsis": "guia corta de Kaufman para convertir ideas en especificaciones comprobables"
+}

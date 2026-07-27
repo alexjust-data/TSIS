@@ -1,0 +1,85 @@
+{
+  "review_id": "market_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260727T000000Z",
+  "review_gate": "market_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1",
+  "status": "CLOSED_PASS_SECOND_GENERATION_INCREMENTAL_CANDIDATE_DATASET_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION",
+  "reviewed_run": "market_state_on_demand_second_generation_incremental_extension_v0_1_20260727T103901Z",
+  "reviewed_candidate_dataset_id": "market_state_candidate_dataset_incremental_gen2_v0_1_5e8da23521962822",
+  "reviewed_candidate_dataset_fingerprint": "5e8da235219628220bac462f342cab469fbd2a48d047eef0772cb5a2cffe893f",
+  "base_combined_candidate": {
+    "dataset_id": "market_state_candidate_dataset_incremental_v0_1_f2cfd5cf55d0c1be",
+    "candidate_dataset_fingerprint": "f2cfd5cf55d0c1be1722693cc0216ffd425bbb869e19c17745976c030f2c7a2a",
+    "scientific_dataset_fingerprint": "7103e4fdbae205e4bccbeb0c436508f62b016107b4b2756c549073dae971bb5f",
+    "candidate_output_manifest": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\market_state_on_demand_incremental_overlap_execution_v0_1_20260725T064143Z\\candidate_output_manifest.json"
+  },
+  "decision": {
+    "review_decision": "approved_as_second_generation_incremental_candidate_evidence_with_restrictions",
+    "requested_contexts": 15,
+    "represented_contexts": 14,
+    "base_combined_reused_contexts": 11,
+    "second_delta_materialized_rows": 3,
+    "unavailable_contexts": 1,
+    "unaccounted_contexts": 0,
+    "hard_review_failures": 0,
+    "dataset_completeness": "partial",
+    "candidate_dataset_validated": true,
+    "official_dataset_after_review": false,
+    "production_after_review": false,
+    "downstream_after_review": false
+  },
+  "checks": [
+    {
+      "check_id": "run_closed_pass",
+      "status": "PASS"
+    },
+    {
+      "check_id": "validator_hard_failures_zero",
+      "status": "PASS"
+    },
+    {
+      "check_id": "registry_validated_candidate",
+      "status": "PASS"
+    },
+    {
+      "check_id": "downstream_closed",
+      "status": "PASS"
+    },
+    {
+      "check_id": "ledger_counts_match",
+      "status": "PASS"
+    },
+    {
+      "check_id": "duplicate_contexts_zero",
+      "status": "PASS"
+    },
+    {
+      "check_id": "schema_contract_match",
+      "status": "PASS"
+    },
+    {
+      "check_id": "physical_artifact_hashes_match",
+      "status": "PASS"
+    },
+    {
+      "check_id": "base_combined_registry_unchanged",
+      "status": "PASS"
+    },
+    {
+      "check_id": "materializer_second_delta_only",
+      "status": "PASS"
+    },
+    {
+      "check_id": "invalid_attempt_marked",
+      "status": "PASS"
+    }
+  ],
+  "evidence": {
+    "context_ledger_sha256": "550f088f5899fd06a2ee251db4d89b2184799622cb014710defaf9b7e1699288",
+    "fingerprint_comparison_sha256": "8881526722819672ce35d9e279b1024122a28ceba784c6d2d62df6427ab81507",
+    "validation_result_fingerprint": "c6457fdc96bc53ea418a57ee35c76612b9a17557b30250fcf1ac6400738f6a21",
+    "registry_entry_fingerprint": "261d40a56a1a79c3a2f48d9ac16f6f5388fa08cae9e72fb40cbeeb850a1c4ddd"
+  },
+  "next_allowed_gate": "market_state_on_demand_incremental_lineage_chain_validation_v0_1",
+  "official_dataset": false,
+  "production": false,
+  "downstream": false
+}

@@ -1,0 +1,28 @@
+{
+  "book_id": "clean_architecture_robert_martin",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_OceanofPDF.com_Clean_Architecture_-_Robert_C_Marti.epub",
+  "file_name": "_OceanofPDF.com_Clean_Architecture_-_Robert_C_Marti.epub",
+  "sha256": "6a51b6ba3e6a5d100d58d64992f2e44911afb2ecfa1323f6290a6805d78923e9",
+  "file_size_bytes": 8259477,
+  "extraction_method": "stdlib epub zip/html",
+  "unit_label": "epub_section",
+  "sample_text": [
+    {
+      "unit": 2,
+      "snippet": "About This E-Book About This E-Book EPUB is an open, industry-standard format for e-books. However, support for EPUB and its many features varies across reading devices and applications. Use your device or app settings to customize the presentation to your liking. Settings that you can customize often include font, font size, single or double column, landscape or portrait mode, and figures that you can click or tap to enlarge. For additional information about the settings and features on your re"
+    },
+    {
+      "unit": 4,
+      "snippet": "Clean Architecture Clean Architecture A C RAFTSMAN’S G UIDE TO S OFTWARE S TRUCTURE AND DESIGN Robert C. Martin Boston • Columbus • Indianapolis • New York • San Francisco • Amsterdam • Cape Town Dubai • London • Madrid • Milan • Munich • Paris • Montreal • Toronto • Delhi • Mexico City São Paulo • Sydney • Hong Kong • Seoul • Singapore • Taipei • Tokyo OceanofPDF.com"
+    },
+    {
+      "unit": 5,
+      "snippet": "Clean Architecture Many of the designations used by manufacturers and sellers to distinguish their products are claimed as trademarks. Where those designations appear in this book, and the publisher was aware of a trademark claim, the designations have been printed with initial capital letters or in all capitals. The author and publisher have taken care in the preparation of this book, but make no expressed or implied warranty of any kind and assume no responsibility for errors or omissions. No"
+    },
+    {
+      "unit": 6,
+      "snippet": "Clean Architecture This book is dedicated to my lovely wife, my four spectacular children, and their families, including my quiver full of five grandchildren—who are the dessert of my life. OceanofPDF.com"
+    }
+  ],
+  "notes": "No se persiste texto bruto; solo metadatos, TOC, stats, resumen e indices."
+}

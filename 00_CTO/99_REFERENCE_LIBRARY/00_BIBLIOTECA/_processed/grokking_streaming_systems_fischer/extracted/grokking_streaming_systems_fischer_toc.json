@@ -1,0 +1,252 @@
+[
+  {
+    "level": 1,
+    "title": "Getting started with streaming",
+    "page": 27
+  },
+  {
+    "level": 1,
+    "title": "Welcome to Grokking Streaming Systems",
+    "page": 28
+  },
+  {
+    "level": 1,
+    "title": "Hello, streaming systems!",
+    "page": 46
+  },
+  {
+    "level": 1,
+    "title": "Parallelization and data grouping",
+    "page": 85
+  },
+  {
+    "level": 1,
+    "title": "Stream graph",
+    "page": 123
+  },
+  {
+    "level": 1,
+    "title": "Delivery semantics",
+    "page": 162
+  },
+  {
+    "level": 1,
+    "title": "Streaming systems review and a glimpse ahead",
+    "page": 208
+  },
+  {
+    "level": 1,
+    "title": "Stepping up",
+    "page": 222
+  },
+  {
+    "level": 1,
+    "title": "Windowed computations",
+    "page": 223
+  },
+  {
+    "level": 1,
+    "title": "Join operations",
+    "page": 264
+  },
+  {
+    "level": 1,
+    "title": "Backpressure",
+    "page": 297
+  },
+  {
+    "level": 1,
+    "title": "Stateful computation",
+    "page": 329
+  },
+  {
+    "level": 1,
+    "title": "Wrap-up: Advanced concepts",
+    "page": 362
+  },
+  {
+    "level": 1,
+    "title": "Key concepts covered in this book",
+    "page": 380
+  },
+  {
+    "level": 1,
+    "title": "Front matter",
+    "page": 18
+  },
+  {
+    "level": 1,
+    "title": "preface",
+    "page": 18
+  },
+  {
+    "level": 1,
+    "title": "acknowledgments",
+    "page": 21
+  },
+  {
+    "level": 1,
+    "title": "about this book",
+    "page": 23
+  },
+  {
+    "level": 1,
+    "title": "about the authors",
+    "page": 25
+  },
+  {
+    "level": 1,
+    "title": "What is stream processing?",
+    "page": 28
+  },
+  {
+    "level": 1,
+    "title": "Streaming system examples",
+    "page": 29
+  },
+  {
+    "level": 1,
+    "title": "Streaming systems and real time",
+    "page": 30
+  },
+  {
+    "level": 1,
+    "title": "How a streaming system works",
+    "page": 31
+  },
+  {
+    "level": 1,
+    "title": "Applications",
+    "page": 32
+  },
+  {
+    "level": 1,
+    "title": "Backend services",
+    "page": 33
+  },
+  {
+    "level": 1,
+    "title": "Inside a backend service",
+    "page": 34
+  },
+  {
+    "level": 1,
+    "title": "Batch processing systems",
+    "page": 36
+  },
+  {
+    "level": 1,
+    "title": "Inside a batch processing system",
+    "page": 36
+  },
+  {
+    "level": 1,
+    "title": "Stream processing systems",
+    "page": 38
+  },
+  {
+    "level": 1,
+    "title": "Inside a stream processing system",
+    "page": 38
+  },
+  {
+    "level": 1,
+    "title": "The advantages of multi-stage architecture",
+    "page": 40
+  },
+  {
+    "level": 1,
+    "title": "The multi-stage architecture in batch and stream processing systems",
+    "page": 41
+  },
+  {
+    "level": 1,
+    "title": "Compare the systems",
+    "page": 42
+  },
+  {
+    "level": 1,
+    "title": "A model stream processing system",
+    "page": 43
+  },
+  {
+    "level": 1,
+    "title": "The chief needs a fancy tollbooth",
+    "page": 46
+  },
+  {
+    "level": 1,
+    "title": "It started as HTTP requests, and it failed",
+    "page": 48
+  },
+  {
+    "level": 1,
+    "title": "AJ and Miranda take time to reflect",
+    "page": 50
+  },
+  {
+    "level": 1,
+    "title": "AJ ponders about streaming systems",
+    "page": 52
+  },
+  {
+    "level": 1,
+    "title": "Comparing backend service and streaming",
+    "page": 53
+  },
+  {
+    "level": 1,
+    "title": "How a streaming system could fit",
+    "page": 54
+  },
+  {
+    "level": 1,
+    "title": "Queues: A foundational concept",
+    "page": 55
+  },
+  {
+    "level": 1,
+    "title": "Data transfer via queues",
+    "page": 57
+  },
+  {
+    "level": 1,
+    "title": "Our streaming framework (the start of it)",
+    "page": 58
+  },
+  {
+    "level": 1,
+    "title": "The Streamwork framework overview",
+    "page": 59
+  },
+  {
+    "level": 1,
+    "title": "Zooming in on the Streamwork engine",
+    "page": 60
+  },
+  {
+    "level": 1,
+    "title": "Core streaming concepts",
+    "page": 62
+  },
+  {
+    "level": 1,
+    "title": "More details of the concepts",
+    "page": 63
+  },
+  {
+    "level": 1,
+    "title": "The streaming job execution flow",
+    "page": 64
+  },
+  {
+    "level": 1,
+    "title": "Your first streaming job",
+    "page": 65
+  },
+  {
+    "level": 1,
+    "title": "Executing the job",
+    "page": 72
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "book_id": "building_applications_ai_agents_albada",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_OceanofPDF.com_Building_Applications_with_AI_Agents_-_Michael_Albada.pdf",
+  "file_name": "_OceanofPDF.com_Building_Applications_with_AI_Agents_-_Michael_Albada.pdf",
+  "sha256": "26ea61635b5d84096ba099a971f37aa4a4156bae076825ad35e78ca9daafb396",
+  "file_size_bytes": 1765234,
+  "extraction_method": "pypdf",
+  "unit_label": "page",
+  "sample_text": [
+    {
+      "unit": 2,
+      "snippet": "Building Applications with AI Agents Designing and Implementing Multi-Agent Systems With Early Release ebooks, you get books in their earliest form—the author’s raw and unedited content as they write—so you can take advantage of these technologies long before the official release of these titles. Michael Albada OceanofPDF .com"
+    },
+    {
+      "unit": 3,
+      "snippet": "Building Applications with AI Agents by Michael Albada Copyright © 2026 Advance AI LLC. All rights reserved. Printed in the United States of America. Published by O’Reilly Media, Inc., 1005 Gravenstein Highway North, Sebastopol, CA 95472. O’Reilly books may be purchased for educational, business, or sales promotional use. Online editions are also available for most titles (http://oreilly.com). For more information, contact our corporate/institutional sales department: 800-998-9938 or corporate@o"
+    },
+    {
+      "unit": 4,
+      "snippet": "October 2025: First Edition Revision History for the Early Release 2024-10-18: First Release 2024-11-05: Second Release 2024-12-13: Third Release 2025-01-30: Fourth Release 2025-04-11: Fifth Release See http://oreilly.com/catalog/errata.csp?isbn=9781098176501 for release details. The O’Reilly logo is a registered trademark of O’Reilly Media, Inc. Building Applications with AI Agents, the cover image, and related trade dress are trademarks of O’Reilly Media, Inc. The views expressed in this work"
+    },
+    {
+      "unit": 5,
+      "snippet": "or describes is subject to open source licenses or the intellectual property rights of others, it is your responsibility to ensure that your use thereof complies with such licenses and/or rights. 978-1-098-17650-1 OceanofPDF.com"
+    }
+  ],
+  "notes": "No se persiste texto bruto; solo metadatos, TOC, stats, resumen e indices."
+}

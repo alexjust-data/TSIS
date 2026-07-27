@@ -1,0 +1,22 @@
+﻿{
+    "book_id":  "streaming_systems_akidau",
+    "title":  "Streaming Systems",
+    "author":  "Tyler Akidau / Slava Chernyak / Reuven Lax",
+    "pdf_path":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Streaming Systems The What, Where, When, and How of Large-Scale Data Processing. (Akidau, Tyler Chernyak, Slava Lax, Reuven) (z-lib.org).pdf",
+    "file_name":  "Streaming Systems The What, Where, When, and How of Large-Scale Data Processing. (Akidau, Tyler Chernyak, Slava Lax, Reuven) (z-lib.org).pdf",
+    "file_size_bytes":  8670650,
+    "sha256":  "66a9cc7dbbe46cdbdfc99020373827f17e484fcb5adc1425a58eefa700fce506",
+    "pages":  456,
+    "toc_items":  144,
+    "total_words":  106934,
+    "text_pages":  455,
+    "requires_ocr":  false,
+    "ocr_completed":  false,
+    "working_text_persisted":  false,
+    "status":  "indexed",
+    "artifact_contract":  [
+                              "summaries/\u003cbook_id\u003e_agent_summary.md",
+                              "index/\u003cbook_id\u003e_concept_index.md",
+                              "index/\u003cbook_id\u003e_source_map.md"
+                          ]
+}

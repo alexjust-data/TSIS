@@ -1,0 +1,90 @@
+{
+  "validation_id": "market_state_on_demand_incremental_lineage_chain_validation_v0_1_20260727T000000Z",
+  "validation_gate": "market_state_on_demand_incremental_lineage_chain_validation_v0_1",
+  "status": "CLOSED_PASS_INCREMENTAL_LINEAGE_CHAIN_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION",
+  "source_review": "market_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260727T000000Z",
+  "decision": {
+    "validation_decision": "lineage_chain_validated_with_restrictions",
+    "requested_contexts": 15,
+    "represented_contexts": 14,
+    "baseline_origin_rows": 8,
+    "delta1_origin_rows": 3,
+    "delta2_origin_rows": 3,
+    "unavailable_contexts": 1,
+    "unaccounted_contexts": 0,
+    "hard_validation_failures": 0
+  },
+  "checks": [
+    {
+      "check_id": "source_review_closed_pass",
+      "status": "PASS"
+    },
+    {
+      "check_id": "second_generation_ledger_hash_match",
+      "status": "PASS"
+    },
+    {
+      "check_id": "parent_ledger_hash_match",
+      "status": "PASS"
+    },
+    {
+      "check_id": "second_generation_fingerprint_comparison_hash_match",
+      "status": "PASS"
+    },
+    {
+      "check_id": "parent_fingerprint_comparison_hash_match",
+      "status": "PASS"
+    },
+    {
+      "check_id": "requested_contexts_15",
+      "status": "PASS"
+    },
+    {
+      "check_id": "represented_contexts_14",
+      "status": "PASS"
+    },
+    {
+      "check_id": "baseline_origin_rows_8",
+      "status": "PASS"
+    },
+    {
+      "check_id": "delta1_origin_rows_3",
+      "status": "PASS"
+    },
+    {
+      "check_id": "delta2_origin_rows_3",
+      "status": "PASS"
+    },
+    {
+      "check_id": "unavailable_contexts_1",
+      "status": "PASS"
+    },
+    {
+      "check_id": "unaccounted_contexts_zero",
+      "status": "PASS"
+    },
+    {
+      "check_id": "duplicate_contexts_zero",
+      "status": "PASS"
+    },
+    {
+      "check_id": "missing_parent_refs_zero",
+      "status": "PASS"
+    },
+    {
+      "check_id": "authority_boundaries_closed",
+      "status": "PASS"
+    }
+  ],
+  "evidence": {
+    "lineage_chain_ledger_sha256": "659dfa22320a77fd832deaa816e7d08f38a1a0d76197b49aca7a2f7d04804e2b",
+    "second_generation_context_ledger_sha256": "550f088f5899fd06a2ee251db4d89b2184799622cb014710defaf9b7e1699288",
+    "parent_context_ledger_sha256": "9e117ea5a82bbeeba0e36f24e13d2db124c260aabac1a5bc088a61cdcdb8a9b1",
+    "second_generation_fingerprint_comparison_sha256": "8881526722819672ce35d9e279b1024122a28ceba784c6d2d62df6427ab81507",
+    "parent_fingerprint_comparison_sha256": "e8f30356dcf648343cc9e6097fe5b9231a62b86580757022e5f1d3f459a8271d"
+  },
+  "next_allowed_gate": "market_state_on_demand_scale_validation_v0_1",
+  "official_dataset": false,
+  "production": false,
+  "downstream": false
+}

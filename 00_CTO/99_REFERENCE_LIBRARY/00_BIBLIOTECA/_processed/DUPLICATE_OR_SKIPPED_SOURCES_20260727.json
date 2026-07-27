@@ -1,0 +1,32 @@
+[
+  {
+    "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_OceanofPDF.com_Building_Winning_Algorithmic_Trading_Systems_-_Kevin_J_Davey.pdf",
+    "reason": "Duplicado por titulo de building_winning_algorithmic_trading_systems_davey.",
+    "canonical_book_id": "building_winning_algorithmic_trading_systems_davey",
+    "status": "skipped_duplicate_or_secondary_source",
+    "checked_date": "2026-07-27",
+    "exists": true,
+    "sha256": "ccf1c0548049b9646a5fadd6ceed5be397f98129982b9e32d5d1b9961a02f8b8",
+    "file_size_bytes": 6309632
+  },
+  {
+    "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_OceanofPDF.com_Trading_Systems_2nd_edition_-_Urban_Jaekle.pdf",
+    "reason": "Duplicado por titulo de trading_systems_urban_jaekle.",
+    "canonical_book_id": "trading_systems_urban_jaekle",
+    "status": "skipped_duplicate_or_secondary_source",
+    "checked_date": "2026-07-27",
+    "exists": true,
+    "sha256": "ed8a692b845c663e193ed2b2f49ecefba39e0efe634754a9a0524761fac3d8e6",
+    "file_size_bytes": 25652911
+  },
+  {
+    "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Trading_and_Exchanges_-_Larry_Harris.pdf",
+    "reason": "Borrador corto de 113 paginas; se usa el PDF completo de 656 paginas como canonico.",
+    "canonical_book_id": "trading_and_exchanges_harris",
+    "status": "skipped_duplicate_or_secondary_source",
+    "checked_date": "2026-07-27",
+    "exists": true,
+    "sha256": "634ae031ffa3ae2fea70e7e3b561daf7186cc8152fbc35f6c6f43361977b01eb",
+    "file_size_bytes": 665789
+  }
+]

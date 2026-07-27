@@ -1,0 +1,51 @@
+{
+  "gate_id": "event_state_on_demand_bounded_execution_preflight_correction_v0_1",
+  "date": "2026-07-27",
+  "status": "CLOSED_PASS_PREFLIGHT_BLOCKERS_RESOLVED_NO_EXECUTION",
+  "parent_authorization_id": "event_state_on_demand_bounded_execution_authorization_v0_1",
+  "corrects_without_mutating_parent_authorization": true,
+  "resolved_blockers": {
+    "market_state_physical_dependency_authority": "resolved_by_bounded_dependency_consumption_authorization",
+    "market_state_dependency_mode_consistency": "resolved_by_effective_request_mode_and_reuse_policy_split",
+    "run_lifecycle_binding": "resolved_by_event_state_on_demand_bounded_run_lifecycle_binding_contract_v0_1",
+    "event_window_identifier_consistency": "resolved_by_using_contractual_template_id_session_opened_at_anchor_context_v0_1",
+    "output_format_and_limits": "resolved_by_effective_jsonl_candidate_output_policy"
+  },
+  "effective_request_overrides_for_next_gate": {
+    "market_state_dependency_mode": "emit_or_resolve_market_state_subrequest_through_runtime_capability",
+    "market_state_dependency_reuse_policy": "reuse_if_exact_validated_dependency_match_or_block",
+    "event_window_definition_ids": [
+      "session_opened_at_anchor_context_v0_1"
+    ],
+    "superseded_event_window_definition_ids_from_parent_scope": [
+      "event_window:session_opened:at_event_v0_1"
+    ],
+    "output_format": "jsonl",
+    "maximum_output_files": 1,
+    "maximum_output_records": 9,
+    "maximum_output_bytes": 1048576
+  },
+  "new_authority_artifacts": {
+    "market_state_dependency_consumption_authorization": "08_RUNTIME_CAPABILITIES/market_state_capability_event_state_bounded_dependency_consumption_authorization_v0_1.md",
+    "market_state_dependency_consumption_scope": "08_RUNTIME_CAPABILITIES/configs/market_state_capability_event_state_bounded_dependency_consumption_scope_v0_1.json",
+    "event_state_run_lifecycle_binding_contract": "08_RUNTIME_CAPABILITIES/event_state_on_demand_bounded_run_lifecycle_binding_contract_v0_1.json",
+    "authority_bundle": "08_RUNTIME_CAPABILITIES/event_state_on_demand_bounded_execution_authority_bundle_v0_1.json"
+  },
+  "hard_boundaries_current_gate": {
+    "event_state_requests_created": 0,
+    "dependency_resolver_executions": 0,
+    "execution_plans_created": 0,
+    "run_records_created": 0,
+    "market_state_dependency_requests_executed": 0,
+    "market_state_candidate_files_read": 0,
+    "event_state_materializer_executions": 0,
+    "event_state_validator_executions": 0,
+    "registry_entries_written": 0,
+    "event_state_records_emitted": 0,
+    "datasets_written": 0,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false
+  },
+  "authorized_next_gate": "event_state_on_demand_bounded_execution_v0_1"
+}

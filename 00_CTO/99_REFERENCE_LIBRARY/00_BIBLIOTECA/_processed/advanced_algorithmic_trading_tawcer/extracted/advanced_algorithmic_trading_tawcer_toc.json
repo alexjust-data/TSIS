@@ -1,0 +1,1502 @@
+[
+  {
+    "level": 0,
+    "title": "I Introduction"
+  },
+  {
+    "level": 1,
+    "title": "Introduction To Advanced Algorithmic Trading"
+  },
+  {
+    "level": 2,
+    "title": "The Hunt for Alpha"
+  },
+  {
+    "level": 2,
+    "title": "Why Time Series Analysis, Bayesian Statistics and Machine Learning?"
+  },
+  {
+    "level": 3,
+    "title": "Bayesian Statistics"
+  },
+  {
+    "level": 3,
+    "title": "Time Series Analysis"
+  },
+  {
+    "level": 3,
+    "title": "Machine Learning"
+  },
+  {
+    "level": 2,
+    "title": "How Is The Book Laid Out?"
+  },
+  {
+    "level": 2,
+    "title": "Required Technical Background"
+  },
+  {
+    "level": 3,
+    "title": "Mathematics"
+  },
+  {
+    "level": 3,
+    "title": "Programming"
+  },
+  {
+    "level": 2,
+    "title": "How Does This Book Differ From \"Successful Algorithmic Trading\"?"
+  },
+  {
+    "level": 2,
+    "title": "Software Installation"
+  },
+  {
+    "level": 3,
+    "title": "Installing Python"
+  },
+  {
+    "level": 3,
+    "title": "Installing R"
+  },
+  {
+    "level": 2,
+    "title": "QSTrader Backtesting Simulation Software"
+  },
+  {
+    "level": 3,
+    "title": "Alternatives"
+  },
+  {
+    "level": 2,
+    "title": "Where to Get Help"
+  },
+  {
+    "level": 0,
+    "title": "II Bayesian Statistics"
+  },
+  {
+    "level": 1,
+    "title": "Introduction to Bayesian Statistics"
+  },
+  {
+    "level": 2,
+    "title": "What is Bayesian Statistics?"
+  },
+  {
+    "level": 3,
+    "title": "Frequentist vs Bayesian Examples"
+  },
+  {
+    "level": 2,
+    "title": "Applying Bayes' Rule for Bayesian Inference"
+  },
+  {
+    "level": 2,
+    "title": "Coin-Flipping Example"
+  },
+  {
+    "level": 1,
+    "title": "Bayesian Inference of a Binomial Proportion"
+  },
+  {
+    "level": 2,
+    "title": "The Bayesian Approach"
+  },
+  {
+    "level": 2,
+    "title": "Assumptions of the Approach"
+  },
+  {
+    "level": 2,
+    "title": "Recalling Bayes' Rule"
+  },
+  {
+    "level": 2,
+    "title": "The Likelihood Function"
+  },
+  {
+    "level": 3,
+    "title": "Bernoulli Distribution"
+  },
+  {
+    "level": 3,
+    "title": "Bernoulli Likelihood Function"
+  },
+  {
+    "level": 3,
+    "title": "Multiple Flips of the Coin"
+  },
+  {
+    "level": 2,
+    "title": "Quantifying our Prior Beliefs"
+  },
+  {
+    "level": 3,
+    "title": "Beta Distribution"
+  },
+  {
+    "level": 3,
+    "title": "Why Is A Beta Prior Conjugate to the Bernoulli Likelihood?"
+  },
+  {
+    "level": 3,
+    "title": "Multiple Ways to Specify a Beta Prior"
+  },
+  {
+    "level": 2,
+    "title": "Using Bayes' Rule to Calculate a Posterior"
+  },
+  {
+    "level": 1,
+    "title": "Markov Chain Monte Carlo"
+  },
+  {
+    "level": 2,
+    "title": "Bayesian Inference Goals"
+  },
+  {
+    "level": 2,
+    "title": "Why Markov Chain Monte Carlo?"
+  },
+  {
+    "level": 3,
+    "title": "Markov Chain Monte Carlo Algorithms"
+  },
+  {
+    "level": 2,
+    "title": "The Metropolis Algorithm"
+  },
+  {
+    "level": 2,
+    "title": "Introducing PyMC3"
+  },
+  {
+    "level": 2,
+    "title": "Inferring a Binomial Proportion with Markov Chain Monte Carlo"
+  },
+  {
+    "level": 3,
+    "title": "Inferring a Binonial Proportion with Conjugate Priors Recap"
+  },
+  {
+    "level": 3,
+    "title": "Inferring a Binomial Proportion with PyMC3"
+  },
+  {
+    "level": 2,
+    "title": "Bibliographic Note"
+  },
+  {
+    "level": 1,
+    "title": "Bayesian Linear Regression"
+  },
+  {
+    "level": 2,
+    "title": "Frequentist Linear Regression"
+  },
+  {
+    "level": 2,
+    "title": "Bayesian Linear Regression"
+  },
+  {
+    "level": 2,
+    "title": "Bayesian Linear Regression with PyMC3"
+  },
+  {
+    "level": 3,
+    "title": "What are Generalised Linear Models?"
+  },
+  {
+    "level": 3,
+    "title": "Simulating Data and Fitting the Model with PyMC3"
+  },
+  {
+    "level": 2,
+    "title": "Bibliographic Note"
+  },
+  {
+    "level": 2,
+    "title": "Full Code"
+  },
+  {
+    "level": 1,
+    "title": "Bayesian Stochastic Volatility Model"
+  },
+  {
+    "level": 2,
+    "title": "Stochastic Volatility"
+  },
+  {
+    "level": 2,
+    "title": "Bayesian Stochastic Volatility"
+  },
+  {
+    "level": 2,
+    "title": "PyMC3 Implementation"
+  },
+  {
+    "level": 3,
+    "title": "Obtaining the Price History"
+  },
+  {
+    "level": 3,
+    "title": "Model Specification in PyMC3"
+  },
+  {
+    "level": 3,
+    "title": "Fitting the Model with NUTS"
+  },
+  {
+    "level": 2,
+    "title": "Full Code"
+  },
+  {
+    "level": 0,
+    "title": "III Time Series Analysis"
+  },
+  {
+    "level": 1,
+    "title": "Introduction to Time Series Analysis"
+  },
+  {
+    "level": 2,
+    "title": "What is Time Series Analysis?"
+  },
+  {
+    "level": 2,
+    "title": "How Can We Apply Time Series Analysis in Quantitative Finance?"
+  },
+  {
+    "level": 2,
+    "title": "Time Series Analysis Software"
+  },
+  {
+    "level": 2,
+    "title": "Time Series Analysis Roadmap"
+  },
+  {
+    "level": 2,
+    "title": "How Does This Relate to Other Statistical Tools?"
+  },
+  {
+    "level": 1,
+    "title": "Serial Correlation"
+  },
+  {
+    "level": 2,
+    "title": "Expectation, Variance and Covariance"
+  },
+  {
+    "level": 3,
+    "title": "Example: Sample Covariance in R"
+  },
+  {
+    "level": 2,
+    "title": "Correlation"
+  },
+  {
+    "level": 3,
+    "title": "Example: Sample Correlation in R"
+  },
+  {
+    "level": 2,
+    "title": "Stationarity in Time Series"
+  },
+  {
+    "level": 2,
+    "title": "Serial Correlation"
+  },
+  {
+    "level": 2,
+    "title": "The Correlogram"
+  },
+  {
+    "level": 3,
+    "title": "Example 1 - Fixed Linear Trend"
+  },
+  {
+    "level": 3,
+    "title": "Example 2 - Repeated Sequence"
+  },
+  {
+    "level": 2,
+    "title": "Next Steps"
+  },
+  {
+    "level": 1,
+    "title": "Random Walks and White Noise Models"
+  },
+  {
+    "level": 2,
+    "title": "Time Series Modelling Process"
+  },
+  {
+    "level": 2,
+    "title": "Backward Shift and Difference Operators"
+  },
+  {
+    "level": 2,
+    "title": "White Noise"
+  },
+  {
+    "level": 3,
+    "title": "Second-Order Properties"
+  },
+  {
+    "level": 3,
+    "title": "Correlogram"
+  },
+  {
+    "level": 2,
+    "title": "Random Walk"
+  },
+  {
+    "level": 3,
+    "title": "Second-Order Properties"
+  },
+  {
+    "level": 3,
+    "title": "Correlogram"
+  },
+  {
+    "level": 3,
+    "title": "Fitting Random Walk Models to Financial Data"
+  },
+  {
+    "level": 1,
+    "title": "Autoregressive Moving Average Models"
+  },
+  {
+    "level": 2,
+    "title": "How Will We Proceed?"
+  },
+  {
+    "level": 2,
+    "title": "Strictly Stationary"
+  },
+  {
+    "level": 2,
+    "title": "Akaike Information Criterion"
+  },
+  {
+    "level": 2,
+    "title": "Autoregressive (AR) Models of order p"
+  },
+  {
+    "level": 3,
+    "title": "Rationale"
+  },
+  {
+    "level": 3,
+    "title": "Stationarity for Autoregressive Processes"
+  },
+  {
+    "level": 3,
+    "title": "Second Order Properties"
+  },
+  {
+    "level": 3,
+    "title": "Simulations and Correlograms"
+  },
+  {
+    "level": 3,
+    "title": "Financial Data"
+  },
+  {
+    "level": 2,
+    "title": "Moving Average (MA) Models of order q"
+  },
+  {
+    "level": 3,
+    "title": "Rationale"
+  },
+  {
+    "level": 3,
+    "title": "Definition"
+  },
+  {
+    "level": 3,
+    "title": "Second Order Properties"
+  },
+  {
+    "level": 3,
+    "title": "Simulations and Correlograms"
+  },
+  {
+    "level": 3,
+    "title": "Financial Data"
+  },
+  {
+    "level": 3,
+    "title": "Next Steps"
+  },
+  {
+    "level": 2,
+    "title": "Autogressive Moving Average (ARMA) Models of order p, q"
+  },
+  {
+    "level": 3,
+    "title": "Bayesian Information Criterion"
+  },
+  {
+    "level": 3,
+    "title": "Ljung-Box Test"
+  },
+  {
+    "level": 3,
+    "title": "Rationale"
+  },
+  {
+    "level": 3,
+    "title": "Definition"
+  },
+  {
+    "level": 3,
+    "title": "Simulations and Correlograms"
+  },
+  {
+    "level": 3,
+    "title": "Choosing the Best ARMA(p,q) Model"
+  },
+  {
+    "level": 3,
+    "title": "Financial Data"
+  },
+  {
+    "level": 2,
+    "title": "Next Steps"
+  },
+  {
+    "level": 1,
+    "title": "Autoregressive Integrated Moving Average and Conditional Heteroskedastic Models"
+  },
+  {
+    "level": 2,
+    "title": "Quick Recap"
+  },
+  {
+    "level": 2,
+    "title": "Autoregressive Integrated Moving Average (ARIMA) Models of order p, d, q"
+  },
+  {
+    "level": 3,
+    "title": "Rationale"
+  },
+  {
+    "level": 3,
+    "title": "Definitions"
+  },
+  {
+    "level": 3,
+    "title": "Simulation, Correlogram and Model Fitting"
+  },
+  {
+    "level": 3,
+    "title": "Financial Data and Prediction"
+  },
+  {
+    "level": 3,
+    "title": "Next Steps"
+  },
+  {
+    "level": 2,
+    "title": "Volatility"
+  },
+  {
+    "level": 2,
+    "title": "Conditional Heteroskedasticity"
+  },
+  {
+    "level": 2,
+    "title": "Autoregressive Conditional Heteroskedastic Models"
+  },
+  {
+    "level": 3,
+    "title": "ARCH Definition"
+  },
+  {
+    "level": 3,
+    "title": "Why Does This Model Volatility?"
+  },
+  {
+    "level": 3,
+    "title": "When Is It Appropriate To Apply ARCH(1)?"
+  },
+  {
+    "level": 3,
+    "title": "ARCH(p) Models"
+  },
+  {
+    "level": 2,
+    "title": "Generalised Autoregressive Conditional Heteroskedastic Models"
+  },
+  {
+    "level": 3,
+    "title": "GARCH Definition"
+  },
+  {
+    "level": 3,
+    "title": "Simulations, Correlograms and Model Fittings"
+  },
+  {
+    "level": 3,
+    "title": "Financial Data"
+  },
+  {
+    "level": 2,
+    "title": "Next Steps"
+  },
+  {
+    "level": 1,
+    "title": "Cointegrated Time Series"
+  },
+  {
+    "level": 2,
+    "title": "Mean Reversion Trading Strategies"
+  },
+  {
+    "level": 2,
+    "title": "Cointegration"
+  },
+  {
+    "level": 2,
+    "title": "Unit Root Tests"
+  },
+  {
+    "level": 3,
+    "title": "Augmented Dickey-Fuller Test"
+  },
+  {
+    "level": 3,
+    "title": "Phillips-Perron Test"
+  },
+  {
+    "level": 3,
+    "title": "Phillips-Ouliaris Test"
+  },
+  {
+    "level": 3,
+    "title": "Difficulties with Unit Root Tests"
+  },
+  {
+    "level": 2,
+    "title": "Simulated Cointegrated Time Series with R"
+  },
+  {
+    "level": 2,
+    "title": "Cointegrated Augmented Dickey Fuller Test"
+  },
+  {
+    "level": 2,
+    "title": "CADF on Simulated Data"
+  },
+  {
+    "level": 2,
+    "title": "CADF on Financial Data"
+  },
+  {
+    "level": 3,
+    "title": "EWA and EWC"
+  },
+  {
+    "level": 3,
+    "title": "RDS-A and RDS-B"
+  },
+  {
+    "level": 2,
+    "title": "Full Code"
+  },
+  {
+    "level": 2,
+    "title": "Johansen Test"
+  },
+  {
+    "level": 3,
+    "title": "Johansen Test on Simulated Data"
+  },
+  {
+    "level": 3,
+    "title": "Johansen Test on Financial Data"
+  },
+  {
+    "level": 3,
+    "title": "Full Code"
+  },
+  {
+    "level": 1,
+    "title": "State Space Models and the Kalman Filter"
+  },
+  {
+    "level": 2,
+    "title": "Linear State-Space Model"
+  },
+  {
+    "level": 2,
+    "title": "The Kalman Filter"
+  },
+  {
+    "level": 3,
+    "title": "A Bayesian Approach"
+  },
+  {
+    "level": 3,
+    "title": "Prediction"
+  },
+  {
+    "level": 2,
+    "title": "Dynamic Hedge Ratio Between ETF Pairs Using the Kalman Filter"
+  },
+  {
+    "level": 3,
+    "title": "Linear Regression via the Kalman Filter"
+  },
+  {
+    "level": 3,
+    "title": "Applying the Kalman Filter to a Pair of ETFs"
+  },
+  {
+    "level": 3,
+    "title": "TLT and ETF"
+  },
+  {
+    "level": 3,
+    "title": "Scatterplot of ETF Prices"
+  },
+  {
+    "level": 3,
+    "title": "Time-Varying Slope and Intercept"
+  },
+  {
+    "level": 2,
+    "title": "Next Steps"
+  },
+  {
+    "level": 2,
+    "title": "Bibliographic Note"
+  },
+  {
+    "level": 2,
+    "title": "Full Code"
+  },
+  {
+    "level": 1,
+    "title": "Hidden Markov Models"
+  },
+  {
+    "level": 2,
+    "title": "Markov Models"
+  },
+  {
+    "level": 3,
+    "title": "Markov Model Mathematical Specification"
+  },
+  {
+    "level": 2,
+    "title": "Hidden Markov Models"
+  },
+  {
+    "level": 3,
+    "title": "Hidden Markov Model Mathematical Specification"
+  },
+  {
+    "level": 3,
+    "title": "Filtering of Hidden Markov Models"
+  },
+  {
+    "level": 2,
+    "title": "Regime Detection with Hidden Markov Models"
+  },
+  {
+    "level": 3,
+    "title": "Market Regimes"
+  },
+  {
+    "level": 3,
+    "title": "Simulated Data"
+  },
+  {
+    "level": 3,
+    "title": "Financial Data"
+  },
+  {
+    "level": 2,
+    "title": "Next Steps"
+  },
+  {
+    "level": 2,
+    "title": "Bibliographic Note"
+  },
+  {
+    "level": 2,
+    "title": "Full Code"
+  },
+  {
+    "level": 0,
+    "title": "IV Statistical Machine Learning"
+  },
+  {
+    "level": 1,
+    "title": "Introduction to Machine Learning"
+  },
+  {
+    "level": 2,
+    "title": "What is Machine Learning?"
+  },
+  {
+    "level": 2,
+    "title": "Machine Learning Domains"
+  },
+  {
+    "level": 3,
+    "title": "Supervised Learning"
+  },
+  {
+    "level": 3,
+    "title": "Unsupervised Learning"
+  },
+  {
+    "level": 3,
+    "title": "Reinforcement Learning"
+  },
+  {
+    "level": 2,
+    "title": "Machine Learning Techniques"
+  },
+  {
+    "level": 3,
+    "title": "Linear Regression"
+  },
+  {
+    "level": 3,
+    "title": "Linear Classification"
+  },
+  {
+    "level": 3,
+    "title": "Tree-Based Methods"
+  },
+  {
+    "level": 3,
+    "title": "Support Vector Machines"
+  },
+  {
+    "level": 3,
+    "title": "Artificial Neural Networks and Deep Learning"
+  },
+  {
+    "level": 3,
+    "title": "Bayesian Networks"
+  },
+  {
+    "level": 3,
+    "title": "Clustering"
+  },
+  {
+    "level": 3,
+    "title": "Dimensionality Reduction"
+  },
+  {
+    "level": 2,
+    "title": "Machine Learning Applications"
+  },
+  {
+    "level": 3,
+    "title": "Forecasting and Prediction"
+  },
+  {
+    "level": 3,
+    "title": "Natural Language Processing"
+  },
+  {
+    "level": 3,
+    "title": "Factor Models"
+  },
+  {
+    "level": 3,
+    "title": "Image Classification"
+  },
+  {
+    "level": 3,
+    "title": "Model Accuracy"
+  },
+  {
+    "level": 3,
+    "title": "Parametric and Non-Parametric Models"
+  },
+  {
+    "level": 3,
+    "title": "Statistical Framework for Machine Learning Domains"
+  },
+  {
+    "level": 1,
+    "title": "Supervised Learning"
+  },
+  {
+    "level": 2,
+    "title": "Mathematical Framework"
+  },
+  {
+    "level": 2,
+    "title": "Classification"
+  },
+  {
+    "level": 2,
+    "title": "Regression"
+  },
+  {
+    "level": 3,
+    "title": "Financial Example"
+  },
+  {
+    "level": 2,
+    "title": "Training"
+  },
+  {
+    "level": 1,
+    "title": "Linear Regression"
+  },
+  {
+    "level": 2,
+    "title": "Linear Regression"
+  },
+  {
+    "level": 2,
+    "title": "Probabilistic Interpretation"
+  },
+  {
+    "level": 3,
+    "title": "Basis Function Expansion"
+  },
+  {
+    "level": 2,
+    "title": "Maximum Likelihood Estimation"
+  },
+  {
+    "level": 3,
+    "title": "Likelihood and Negative Log Likelihood"
+  },
+  {
+    "level": 3,
+    "title": "Ordinary Least Squares"
+  },
+  {
+    "level": 2,
+    "title": "Simulated Data Example with Scikit-Learn"
+  },
+  {
+    "level": 2,
+    "title": "Full Code"
+  },
+  {
+    "level": 2,
+    "title": "Bibliographic Note"
+  },
+  {
+    "level": 1,
+    "title": "Tree-Based Methods"
+  },
+  {
+    "level": 2,
+    "title": "Decision Trees - Mathematical Overview"
+  },
+  {
+    "level": 2,
+    "title": "Decision Trees for Regression"
+  },
+  {
+    "level": 3,
+    "title": "Creating a Regression Tree and Making Predictions"
+  },
+  {
+    "level": 3,
+    "title": "Pruning The Tree"
+  },
+  {
+    "level": 2,
+    "title": "Decision Trees for Classification"
+  },
+  {
+    "level": 3,
+    "title": "Classification Error Rate/Hit Rate"
+  },
+  {
+    "level": 3,
+    "title": "Gini Index"
+  },
+  {
+    "level": 3,
+    "title": "Cross-Entropy/Deviance"
+  },
+  {
+    "level": 2,
+    "title": "Advantages and Disadvantages of Decision Trees"
+  },
+  {
+    "level": 3,
+    "title": "Advantages"
+  },
+  {
+    "level": 3,
+    "title": "Disadvantages"
+  },
+  {
+    "level": 2,
+    "title": "Ensemble Methods"
+  },
+  {
+    "level": 3,
+    "title": "The Bootstrap"
+  },
+  {
+    "level": 3,
+    "title": "Bootstrap Aggregation"
+  },
+  {
+    "level": 3,
+    "title": "Random Forests"
+  },
+  {
+    "level": 3,
+    "title": "Boosting"
+  },
+  {
+    "level": 3,
+    "title": "Python Scikit-Learn Implementation"
+  },
+  {
+    "level": 2,
+    "title": "Bibliographic Note"
+  },
+  {
+    "level": 2,
+    "title": "Full Code"
+  },
+  {
+    "level": 1,
+    "title": "Support Vector Machines"
+  },
+  {
+    "level": 2,
+    "title": "Motivation for Support Vector Machines"
+  },
+  {
+    "level": 2,
+    "title": "Advantages and Disadvantages of SVMs"
+  },
+  {
+    "level": 3,
+    "title": "Advantages"
+  },
+  {
+    "level": 3,
+    "title": "Disadvantages"
+  },
+  {
+    "level": 2,
+    "title": "Linear Separating Hyperplanes"
+  },
+  {
+    "level": 2,
+    "title": "Classification"
+  },
+  {
+    "level": 2,
+    "title": "Deriving the Classifier"
+  },
+  {
+    "level": 2,
+    "title": "Constructing the Maximal Margin Classifier"
+  },
+  {
+    "level": 2,
+    "title": "Support Vector Classifiers"
+  },
+  {
+    "level": 2,
+    "title": "Support Vector Machines"
+  },
+  {
+    "level": 3,
+    "title": "Biblographic Notes"
+  },
+  {
+    "level": 1,
+    "title": "Model Selection and Cross-Validation"
+  },
+  {
+    "level": 2,
+    "title": "Bias-Variance Trade-Off"
+  },
+  {
+    "level": 3,
+    "title": "Machine Learning Models"
+  },
+  {
+    "level": 3,
+    "title": "Model Selection"
+  },
+  {
+    "level": 3,
+    "title": "The Bias-Variance Tradeoff"
+  },
+  {
+    "level": 2,
+    "title": "Cross-Validation"
+  },
+  {
+    "level": 3,
+    "title": "Overview of Cross-Validation"
+  },
+  {
+    "level": 3,
+    "title": "Forecasting Example"
+  },
+  {
+    "level": 3,
+    "title": "Validation Set Approach"
+  },
+  {
+    "level": 3,
+    "title": "k-Fold Cross Validation"
+  },
+  {
+    "level": 3,
+    "title": "Python Implementation"
+  },
+  {
+    "level": 3,
+    "title": "k-Fold Cross Validation"
+  },
+  {
+    "level": 3,
+    "title": "Full Python Code"
+  },
+  {
+    "level": 1,
+    "title": "Unsupervised Learning"
+  },
+  {
+    "level": 2,
+    "title": "High Dimensional Data"
+  },
+  {
+    "level": 2,
+    "title": "Mathematical Overview of Unsupervised Learning"
+  },
+  {
+    "level": 2,
+    "title": "Unsupervised Learning Algorithms"
+  },
+  {
+    "level": 3,
+    "title": "Dimensionality Reduction"
+  },
+  {
+    "level": 3,
+    "title": "Clustering"
+  },
+  {
+    "level": 2,
+    "title": "Bibliographic Note"
+  },
+  {
+    "level": 1,
+    "title": "Clustering Methods"
+  },
+  {
+    "level": 2,
+    "title": "K-Means Clustering"
+  },
+  {
+    "level": 3,
+    "title": "The Algorithm"
+  },
+  {
+    "level": 3,
+    "title": "Issues"
+  },
+  {
+    "level": 3,
+    "title": "Simulated Data"
+  },
+  {
+    "level": 3,
+    "title": "OHLC Clustering"
+  },
+  {
+    "level": 2,
+    "title": "Bibliographic Note"
+  },
+  {
+    "level": 2,
+    "title": "Full Code"
+  },
+  {
+    "level": 1,
+    "title": "Natural Language Processing"
+  },
+  {
+    "level": 2,
+    "title": "Overview"
+  },
+  {
+    "level": 2,
+    "title": "Supervised Document Classification"
+  },
+  {
+    "level": 2,
+    "title": "Preparing a Dataset for Classification"
+  },
+  {
+    "level": 2,
+    "title": "Vectorisation"
+  },
+  {
+    "level": 2,
+    "title": "Term-Frequency Inverse Document-Frequency"
+  },
+  {
+    "level": 2,
+    "title": "Training the Support Vector Machine"
+  },
+  {
+    "level": 2,
+    "title": "Performance Metrics"
+  },
+  {
+    "level": 2,
+    "title": "Full Code"
+  },
+  {
+    "level": 0,
+    "title": "V Quantitative Trading Techniques"
+  },
+  {
+    "level": 1,
+    "title": "Introduction to QSTrader"
+  },
+  {
+    "level": 2,
+    "title": "Motivation for QSTrader"
+  },
+  {
+    "level": 2,
+    "title": "Design Considerations"
+  },
+  {
+    "level": 2,
+    "title": "Installation"
+  },
+  {
+    "level": 1,
+    "title": "Introductory Portfolio Strategies"
+  },
+  {
+    "level": 2,
+    "title": "Motivation"
+  },
+  {
+    "level": 2,
+    "title": "The Trading Strategies"
+  },
+  {
+    "level": 2,
+    "title": "Data"
+  },
+  {
+    "level": 2,
+    "title": "Python QSTrader Implementation"
+  },
+  {
+    "level": 3,
+    "title": "MonthlyLiquidateRebalanceStrategy"
+  },
+  {
+    "level": 3,
+    "title": "LiquidateRebalancePositionSizer"
+  },
+  {
+    "level": 3,
+    "title": "Backtest Interface"
+  },
+  {
+    "level": 2,
+    "title": "Strategy Results"
+  },
+  {
+    "level": 3,
+    "title": "Transaction Costs"
+  },
+  {
+    "level": 3,
+    "title": "US Equities/Bonds 60/40 ETF Portfolio"
+  },
+  {
+    "level": 3,
+    "title": "\"Strategic\" Weight ETF Portfolio"
+  },
+  {
+    "level": 3,
+    "title": "Equal Weight ETF Portfolio"
+  },
+  {
+    "level": 2,
+    "title": "Full Code"
+  },
+  {
+    "level": 1,
+    "title": "ARIMA+GARCH Trading Strategy on Stock Market Indexes Using R"
+  },
+  {
+    "level": 2,
+    "title": "Strategy Overview"
+  },
+  {
+    "level": 2,
+    "title": "Strategy Implementation"
+  },
+  {
+    "level": 2,
+    "title": "Strategy Results"
+  },
+  {
+    "level": 2,
+    "title": "Full Code"
+  },
+  {
+    "level": 1,
+    "title": "Cointegration-Based Pairs Trading using QSTrader"
+  },
+  {
+    "level": 2,
+    "title": "The Hypothesis"
+  },
+  {
+    "level": 2,
+    "title": "Cointegration Tests in R"
+  },
+  {
+    "level": 2,
+    "title": "The Trading Strategy"
+  },
+  {
+    "level": 2,
+    "title": "Data"
+  },
+  {
+    "level": 2,
+    "title": "Python QSTrader Implementation"
+  },
+  {
+    "level": 2,
+    "title": "Strategy Results"
+  },
+  {
+    "level": 3,
+    "title": "Transaction Costs"
+  },
+  {
+    "level": 3,
+    "title": "Tearsheet"
+  },
+  {
+    "level": 2,
+    "title": "Full Code"
+  },
+  {
+    "level": 1,
+    "title": "Kalman Filter-Based Pairs Trading using QSTrader"
+  },
+  {
+    "level": 2,
+    "title": "The Trading Strategy"
+  },
+  {
+    "level": 3,
+    "title": "Data"
+  },
+  {
+    "level": 2,
+    "title": "Python QSTrader Implementation"
+  },
+  {
+    "level": 2,
+    "title": "Strategy Results"
+  },
+  {
+    "level": 2,
+    "title": "Next Steps"
+  },
+  {
+    "level": 2,
+    "title": "Full Code"
+  },
+  {
+    "level": 1,
+    "title": "Supervised Learning for Intraday Returns Prediction using QSTrader"
+  },
+  {
+    "level": 2,
+    "title": "Prediction Goals with Machine Learning"
+  },
+  {
+    "level": 3,
+    "title": "Class Imbalance"
+  },
+  {
+    "level": 2,
+    "title": "Building a Prediction Model on Historical Data"
+  },
+  {
+    "level": 2,
+    "title": "QSTrader Strategy Object"
+  },
+  {
+    "level": 2,
+    "title": "QSTrader Backtest Script"
+  },
+  {
+    "level": 2,
+    "title": "Results"
+  },
+  {
+    "level": 2,
+    "title": "Next Steps"
+  },
+  {
+    "level": 2,
+    "title": "Full Code"
+  },
+  {
+    "level": 1,
+    "title": "Sentiment Analysis via Sentdex Vendor Sentiment Data with QSTrader"
+  },
+  {
+    "level": 2,
+    "title": "Sentiment Analysis"
+  },
+  {
+    "level": 3,
+    "title": "Sentdex API and Sample File"
+  },
+  {
+    "level": 2,
+    "title": "The Trading Strategy"
+  },
+  {
+    "level": 2,
+    "title": "Data"
+  },
+  {
+    "level": 2,
+    "title": "Python Implementation"
+  },
+  {
+    "level": 3,
+    "title": "Sentiment Handling with QSTrader"
+  },
+  {
+    "level": 3,
+    "title": "Sentiment Analysis Strategy Code"
+  },
+  {
+    "level": 2,
+    "title": "Strategy Results"
+  },
+  {
+    "level": 3,
+    "title": "Transaction Costs"
+  },
+  {
+    "level": 3,
+    "title": "Sentiment on S&P500 Tech Stocks"
+  },
+  {
+    "level": 3,
+    "title": "Sentiment on S&P500 Energy Stocks"
+  },
+  {
+    "level": 3,
+    "title": "Sentiment on S&P500 Defence Stocks"
+  },
+  {
+    "level": 2,
+    "title": "Full Code"
+  },
+  {
+    "level": 1,
+    "title": "Market Regime Detection with Hidden Markov Models using QSTrader"
+  },
+  {
+    "level": 2,
+    "title": "Regime Detection with Hidden Markov Models"
+  },
+  {
+    "level": 2,
+    "title": "The Trading Strategy"
+  },
+  {
+    "level": 2,
+    "title": "Data"
+  },
+  {
+    "level": 2,
+    "title": "Python Implementation"
+  },
+  {
+    "level": 3,
+    "title": "Returns Calculation with QSTrader"
+  },
+  {
+    "level": 3,
+    "title": "Regime Detection Implementation"
+  },
+  {
+    "level": 2,
+    "title": "Strategy Results"
+  },
+  {
+    "level": 3,
+    "title": "Transaction Costs"
+  },
+  {
+    "level": 3,
+    "title": "No Regime Detection Filter"
+  },
+  {
+    "level": 3,
+    "title": "HMM Regime Detection Filter"
+  },
+  {
+    "level": 2,
+    "title": "Full Code"
+  },
+  {
+    "level": 1,
+    "title": "Strategy Decay"
+  },
+  {
+    "level": 2,
+    "title": "Calculating the Annualised Rolling Sharpe Ratio"
+  },
+  {
+    "level": 2,
+    "title": "Python QSTrader Implementation"
+  },
+  {
+    "level": 2,
+    "title": "Strategy Results"
+  },
+  {
+    "level": 3,
+    "title": "Kalman Filter Pairs Trade"
+  },
+  {
+    "level": 3,
+    "title": "Aluminum Smelting Cointegration Strategy"
+  },
+  {
+    "level": 3,
+    "title": "Sentdex Sentiment Analysis Strategy"
+  }
+]

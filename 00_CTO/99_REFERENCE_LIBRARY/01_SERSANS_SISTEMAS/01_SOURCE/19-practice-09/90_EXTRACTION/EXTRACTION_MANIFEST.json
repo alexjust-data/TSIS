@@ -1,0 +1,21 @@
+{
+  "schema": "SERSAN_PRACTICE_EXTRACTION_V1",
+  "practice": "09",
+  "source_inventory": {
+    "practice": "09",
+    "source_package": "20-practice-10(1).zip",
+    "file_count": 181,
+    "markdown_count": 1,
+    "image_count": 180,
+    "uncompressed_bytes": 93335816,
+    "markdown_files": [
+      "practica_09_revision_apolo.md"
+    ],
+    "status": "SOURCE_PRESENT_AND_INVENTORIED"
+  },
+  "evidence_count": 14,
+  "topic_links_count": 22,
+  "figure_manifest_rows": 180,
+  "visual_review_status": "REVIEWED_IN_INCREMENTAL_AUDIT",
+  "integration_target": "07_INTEGRATION/FINAL"
+}

@@ -1,0 +1,22 @@
+﻿{
+    "book_id":  "test_driven_development_python_3e_percival",
+    "title":  "Test-Driven Development with Python, 3rd Edition",
+    "author":  "Harry J. W. Percival",
+    "pdf_path":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Test-Driven_Development_with_Python_3Ed_-_Harry_JW_Percival.pdf",
+    "file_name":  "Test-Driven_Development_with_Python_3Ed_-_Harry_JW_Percival.pdf",
+    "file_size_bytes":  8046150,
+    "sha256":  "2fea91d1bab58b01c6484528f1cbc7c305f022bd72dab25cf0e9b3b11615df3c",
+    "pages":  457,
+    "toc_items":  180,
+    "total_words":  55412,
+    "text_pages":  454,
+    "requires_ocr":  false,
+    "ocr_completed":  false,
+    "working_text_persisted":  false,
+    "status":  "indexed",
+    "artifact_contract":  [
+                              "summaries/\u003cbook_id\u003e_agent_summary.md",
+                              "index/\u003cbook_id\u003e_concept_index.md",
+                              "index/\u003cbook_id\u003e_source_map.md"
+                          ]
+}

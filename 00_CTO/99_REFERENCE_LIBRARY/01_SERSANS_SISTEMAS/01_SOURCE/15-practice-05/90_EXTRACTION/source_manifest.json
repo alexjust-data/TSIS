@@ -1,0 +1,23 @@
+{
+  "source_id": "SERSAN-P05",
+  "practice": "15-practice-05",
+  "primary_document": "practica_05_donchain.md",
+  "markdown_lines": 1475,
+  "png_files": 147,
+  "image_references": 119,
+  "unique_linked_images": 116,
+  "orphan_images": 31,
+  "missing_referenced_images": [],
+  "repeated_references": {
+    "img/066.png": 2,
+    "img/081.png": 2,
+    "img/133.png": 2
+  },
+  "binary_duplicate_groups": [
+    [
+      "095.png",
+      "104.png"
+    ]
+  ],
+  "audit_status": "PASS_WITH_ANOMALIES"
+}

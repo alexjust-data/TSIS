@@ -1,0 +1,167 @@
+{
+  "review_id": "market_state_on_demand_capability_promotion_review_v0_1_20260727T140338Z",
+  "gate": "market_state_on_demand_capability_promotion_review_v0_1",
+  "status": "CLOSED_PASS_CAPABILITY_PROMOTED_WITH_RESTRICTIONS_NO_DATASET_PROMOTION",
+  "decision": {
+    "capability_id": "market_state_on_demand_runtime_capability_v0_1",
+    "capability_promotion_decision": "promote_with_restrictions_candidate_generation_only",
+    "capability_status_after_review": "PROMOTED_WITH_RESTRICTIONS_CANDIDATE_GENERATION_ONLY",
+    "reviewed_evidence_items": 9,
+    "scale_requested_contexts": 120,
+    "scale_represented_contexts": 104,
+    "scale_unavailable_contexts": 16,
+    "hard_review_failures": 0
+  },
+  "checks": [
+    {
+      "check_id": "required_evidence_files_present",
+      "status": "PASS",
+      "observed": ""
+    },
+    {
+      "check_id": "bounded_build_closed",
+      "status": "PASS",
+      "observed": "CLOSED_PASS_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+    },
+    {
+      "check_id": "deterministic_rerun_closed",
+      "status": "PASS",
+      "observed": "CLOSED_PASS_DETERMINISTIC_RERUN_MATCH_WITH_RESTRICTIONS"
+    },
+    {
+      "check_id": "exact_reuse_closed",
+      "status": "PASS",
+      "observed": "CLOSED_PASS_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS"
+    },
+    {
+      "check_id": "incremental_overlap_closed",
+      "status": "PASS",
+      "observed": "CLOSED_PASS_INCREMENTAL_OVERLAP_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+    },
+    {
+      "check_id": "incremental_overlap_reuse_closed",
+      "status": "PASS",
+      "observed": "CLOSED_PASS_INCREMENTAL_OVERLAP_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS"
+    },
+    {
+      "check_id": "second_generation_incremental_closed",
+      "status": "PASS",
+      "observed": "CLOSED_PASS_SECOND_GENERATION_INCREMENTAL_EXTENSION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+    },
+    {
+      "check_id": "lineage_chain_validation_closed",
+      "status": "PASS",
+      "observed": "CLOSED_PASS_INCREMENTAL_LINEAGE_CHAIN_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION"
+    },
+    {
+      "check_id": "scale_validation_closed",
+      "status": "PASS",
+      "observed": "CLOSED_PASS_SCALE_VALIDATION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+    },
+    {
+      "check_id": "scale_requested_contexts_120",
+      "status": "PASS",
+      "observed": "120"
+    },
+    {
+      "check_id": "scale_represented_contexts_104",
+      "status": "PASS",
+      "observed": "104"
+    },
+    {
+      "check_id": "scale_unavailable_contexts_16",
+      "status": "PASS",
+      "observed": "16"
+    },
+    {
+      "check_id": "no_source_market_data_rows_read_for_scale_validation",
+      "status": "PASS",
+      "observed": "0"
+    },
+    {
+      "check_id": "official_dataset_boundaries_closed",
+      "status": "PASS",
+      "observed": "checked final manifests"
+    },
+    {
+      "check_id": "production_boundaries_closed",
+      "status": "PASS",
+      "observed": "checked final manifests"
+    },
+    {
+      "check_id": "downstream_boundaries_closed",
+      "status": "PASS",
+      "observed": "checked final manifests"
+    }
+  ],
+  "evidence": {
+    "bounded_execution": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\market_state_bounded_on_demand_execution_v0_1_20260724T232123Z\\final_manifest.json",
+      "sha256": "56d47767bf267857224dd14641371e69442ec5cd448bae765e4f7dbf831093f7",
+      "status": "CLOSED_PASS_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+    },
+    "deterministic_rerun": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\market_state_bounded_on_demand_deterministic_rerun_v0_1_20260725T053434Z\\final_manifest.json",
+      "sha256": "9e2853ffd92c07b359e8e6182e8cfae112ad368dfc4aa78fead19a4ad954da1e",
+      "status": "CLOSED_PASS_DETERMINISTIC_RERUN_MATCH_WITH_RESTRICTIONS"
+    },
+    "exact_reuse": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\market_state_bounded_on_demand_idempotency_reuse_test_v0_1_20260725T060318Z\\final_manifest.json",
+      "sha256": "49d5c36c05f1cee13aa0ca51b6091e36d8c38d9cec4e1b8ef94e4f95e6dfbf97",
+      "status": "CLOSED_PASS_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS"
+    },
+    "incremental_overlap_execution": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\market_state_on_demand_incremental_overlap_execution_v0_1_20260725T064143Z\\final_manifest.json",
+      "sha256": "532ab8d49efe132cfd8f52c2fa9bc213cfb5387e631186506c592612d285ac70",
+      "status": "CLOSED_PASS_INCREMENTAL_OVERLAP_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+    },
+    "incremental_overlap_reuse": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\market_state_on_demand_incremental_overlap_idempotency_reuse_test_v0_1_20260727T094006Z\\final_manifest.json",
+      "sha256": "6d516f18dd6c1303260141976f5a00d5bad578fa8938542a5e2caa0ba5859b61",
+      "status": "CLOSED_PASS_INCREMENTAL_OVERLAP_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS"
+    },
+    "second_generation_incremental": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\market_state_on_demand_second_generation_incremental_extension_v0_1_20260727T103901Z\\final_manifest.json",
+      "sha256": "940cb6c740d31fcbd2d029965c29a58ab18cde71d71d2e73b2b2b2d6faefbc79",
+      "status": "CLOSED_PASS_SECOND_GENERATION_INCREMENTAL_EXTENSION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+    },
+    "lineage_chain_validation": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\market_state_on_demand_incremental_lineage_chain_validation_matrix_v0_1.json",
+      "sha256": "50126ad64439b4b659f733a18c73e9d81a8ebfe8d0ff453c9b1640481ecc4e85",
+      "status": "CLOSED_PASS_INCREMENTAL_LINEAGE_CHAIN_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION"
+    },
+    "scale_validation": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\market_state_on_demand_scale_validation_v0_1_20260727T133641Z\\final_manifest.json",
+      "sha256": "00b69f8445d8a8d1c8be1a5ab17648d0e7d6be289dccd70fc2c9c90524fdfd9c",
+      "status": "CLOSED_PASS_SCALE_VALIDATION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+    },
+    "scale_validation_matrix": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\market_state_on_demand_scale_validation_matrix_v0_1.json",
+      "sha256": "2773fcbf5fa28b17bd55c75bf0052bdfd69da000fd67b89b6b9e100408ce4cc5",
+      "status": "CLOSED_PASS_SCALE_VALIDATION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+    }
+  },
+  "restrictions": {
+    "official_dataset": false,
+    "production": false,
+    "downstream": false,
+    "full_universe_build": false,
+    "unbounded_generation": false,
+    "ml_rl_backtest_consumption": false,
+    "event_state_on_demand": false,
+    "consumption_policy_required_before_any_downstream_use": true
+  },
+  "counters": {
+    "source_market_data_rows_read": 0,
+    "parquet_content_rows_read": 0,
+    "materializer_executions": 0,
+    "validator_executions": 0,
+    "new_candidate_registry_entries_written": 0,
+    "datasets_written": 0
+  },
+  "next_allowed_gate": "market_state_capability_consumption_policy_v0_1",
+  "official_dataset": false,
+  "production": false,
+  "downstream": false,
+  "matrix_sha256": "4af0f4deeab6ee08c9cf309963b956f24393133c7550cb75b9ae3a6e827fcbcb"
+}

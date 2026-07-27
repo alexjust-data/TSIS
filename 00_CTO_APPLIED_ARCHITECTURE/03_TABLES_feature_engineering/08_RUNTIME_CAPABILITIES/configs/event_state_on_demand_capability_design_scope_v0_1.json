@@ -1,0 +1,73 @@
+{
+  "scope_id": "event_state_on_demand_capability_design_scope_v0_1",
+  "authorization_id": "event_state_on_demand_capability_design_authorization_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_NO_EXECUTION",
+  "authorized_at_utc": "2026-07-27T14:28:58Z",
+  "parent_market_state_consumption_policy": "market_state_capability_consumption_policy_v0_1",
+  "target_design_gate": "event_state_on_demand_capability_design_v0_1",
+  "design_scope": {
+    "runtime_layer": "08_RUNTIME_CAPABILITIES",
+    "event_state_profile_id": "event_state_core_four_intraday_profile_v0_1",
+    "event_state_profile_status_required": "OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS",
+    "accepted_event_type_ids_allowed_for_design": [
+      "event_type:market_data:session_opened"
+    ],
+    "accepted_subject_scope": "exchange_session",
+    "halt_resumed_allowed": false,
+    "source_market_state_capability_policy_required": "ESTABLISHED_WITH_RESTRICTIONS_CANDIDATE_RUNTIME_ONLY",
+    "official_market_state_dataset_required": false
+  },
+  "authorized_outputs": [
+    "event_state_on_demand_capability_design_v0_1.md",
+    "event_state_on_demand_capability_contract_v0_1.json",
+    "event_state_on_demand_capability_design_readout_v0_1.md"
+  ],
+  "hard_boundaries": {
+    "event_state_request_execution_allowed": false,
+    "event_detection_allowed": false,
+    "event_instance_generation_allowed": false,
+    "event_window_generation_allowed": false,
+    "instrument_projection_execution_allowed": false,
+    "market_state_physical_consumption_allowed": false,
+    "event_state_materializer_execution_allowed": false,
+    "event_state_validator_execution_allowed": false,
+    "event_state_dataset_write_allowed": false,
+    "event_state_registry_write_allowed": false,
+    "official_event_state_dataset_promotion_allowed": false,
+    "production_allowed": false,
+    "downstream_consumption_allowed": false
+  },
+  "counters_required_zero": {
+    "source_market_data_rows_read": 0,
+    "event_instances_created": 0,
+    "event_window_bindings_created": 0,
+    "instrument_session_projections_created": 0,
+    "event_state_records_emitted": 0,
+    "datasets_written": 0,
+    "registry_entries_written": 0
+  },
+  "evidence": {
+    "market_state_capability_consumption_policy_contract": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\market_state_capability_consumption_policy_contract_v0_1.json",
+      "sha256": "66dbda4f673166317415bc5e3451aa8fba39abfba5b163f51b46a5ec7dac2369"
+    },
+    "market_state_capability_consumption_policy_readout": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\market_state_capability_consumption_policy_readout_v0_1.md",
+      "sha256": "084e858ae62ec40cccb17827c6a3935c368e001d876f3e1322955feee8b7bf26"
+    },
+    "event_state_profile_manifest": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\07_EVENT_STATE_INTEGRATION\\official_profiles\\event_state_core_four_intraday_profile_v0_1\\PROFILE_MANIFEST.json",
+      "sha256": "77937dca78391d354a3c394c7fc3886c4042209e6a567425a301553b962997e1"
+    },
+    "event_state_operational_policy_readout": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\07_EVENT_STATE_INTEGRATION\\event_state_operational_registry_or_consumption_policy_readout_v0_1.md",
+      "sha256": "460b956741313b0fa27769fd81ca5da9c869d25f5971a04c0fac5aed5db23e55"
+    },
+    "event_type_registry_post_initial_admission_snapshot": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\07_EVENT_STATE_INTEGRATION\\event_type_registry_post_initial_admission_snapshot_v0_1.json",
+      "sha256": "f3627c8b44062081c8e2f2775bffbd283bd31f2ca1e876aa7469fd6586425c43"
+    }
+  },
+  "next_allowed_gate": "event_state_on_demand_capability_design_v0_1",
+  "scope_content_sha256_excluding_hash_field": "49ff8ca13f2857d8d01440f0bf3a5d0e99939597ea2c1fae5cd2fd018f4ecbf0"
+}

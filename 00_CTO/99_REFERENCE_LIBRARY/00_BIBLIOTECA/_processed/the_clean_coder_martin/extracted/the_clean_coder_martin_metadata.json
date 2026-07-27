@@ -1,0 +1,19 @@
+{
+  "book_id": "the_clean_coder_martin",
+  "title": "The Clean Coder",
+  "authors": "Robert C. Martin",
+  "source_type": "Libro PDF",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_OceanofPDF.com_The_Clean_Coder_-_Robert_C_Martin.pdf",
+  "file_name": "_OceanofPDF.com_The_Clean_Coder_-_Robert_C_Martin.pdf",
+  "sha256": "73f64ac2e6f2bb18f0cbc2879b636c031ee3fe98eba0cc0a04ce8203d7aec90b",
+  "status": "indexed",
+  "processed_date": "2026-07-27",
+  "page_count": 244,
+  "unit_label": "page",
+  "text_chars": 388044,
+  "text_pages": 231,
+  "requires_ocr_review": false,
+  "working_text_persisted": false,
+  "themes": "professionalism, commitments, TDD, estimation, pressure, collaboration, coding discipline, acceptance tests",
+  "utility_tsis": "normas operativas para trabajo largo con agentes, compromisos, tests y calidad de TSIS"
+}

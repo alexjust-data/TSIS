@@ -1,0 +1,22 @@
+﻿{
+    "book_id":  "fundamentals_data_engineering_reis",
+    "title":  "Fundamentals of Data Engineering",
+    "author":  "Joe Reis / Matt Housley",
+    "pdf_path":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Fundamentals_of_Data_Engineering_-_Joe_Reis.pdf",
+    "file_name":  "Fundamentals_of_Data_Engineering_-_Joe_Reis.pdf",
+    "file_size_bytes":  6476653,
+    "sha256":  "0189abd30d24db8faf9be5d195f7a9da60973a5f38f95497fbede80562c96eaf",
+    "pages":  540,
+    "toc_items":  369,
+    "total_words":  141036,
+    "text_pages":  539,
+    "requires_ocr":  false,
+    "ocr_completed":  false,
+    "working_text_persisted":  false,
+    "status":  "indexed",
+    "artifact_contract":  [
+                              "summaries/\u003cbook_id\u003e_agent_summary.md",
+                              "index/\u003cbook_id\u003e_concept_index.md",
+                              "index/\u003cbook_id\u003e_source_map.md"
+                          ]
+}

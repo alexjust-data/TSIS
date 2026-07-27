@@ -1,0 +1,15 @@
+﻿{
+    "book_id":  "algorithmic_trading_systems_strategies_dolzhenko",
+    "source_pdf":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Algorithmic_Trading_Systems_n_Strategies_-_Viktoria_Dolzhenko.pdf",
+    "processed_at_utc":  "2026-07-27T14:21:38.168899+00:00",
+    "pages":  326,
+    "file_size_bytes":  5495472,
+    "sha256":  "ad93c51395d4cde4ee4a1de93b3539e244a4aeb901002757960d82059477106d",
+    "total_words":  85895,
+    "text_pages":  325,
+    "toc_items":  11,
+    "requires_ocr":  false,
+    "status":  "indexed",
+    "working_text_persisted":  false,
+    "ocr_completed":  false
+}

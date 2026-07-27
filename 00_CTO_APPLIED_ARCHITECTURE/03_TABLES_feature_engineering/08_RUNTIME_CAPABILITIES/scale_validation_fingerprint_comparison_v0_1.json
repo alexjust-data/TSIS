@@ -1,0 +1,11 @@
+{
+  "validation_id": "market_state_on_demand_scale_validation_v0_1_20260727T133641Z",
+  "physical_artifact_fingerprint": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68",
+  "logical_scientific_dataset_fingerprint": "0cc901750cabe9fef67a2ee3ebcd6a30c4a807a7b35cda8d29dbd8baa9ddad6e",
+  "candidate_dataset_fingerprint": "516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416",
+  "normalization_policy": "exclude runtime ids and paths from scientific fingerprint; include governed row content, row fingerprints, coverage ledger and lineage policy",
+  "reused_contexts": 14,
+  "scale_delta_contexts": 90,
+  "unavailable_contexts": 16,
+  "fingerprint_comparison_sha256": "5411fd84d58f1a406cb8ed3692db3c149c5321c6bf90edcb631677555010138f"
+}

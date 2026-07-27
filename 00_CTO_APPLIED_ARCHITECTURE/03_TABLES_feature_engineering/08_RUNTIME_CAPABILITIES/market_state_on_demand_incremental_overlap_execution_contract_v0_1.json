@@ -1,0 +1,100 @@
+{
+  "contract_id": "market_state_on_demand_incremental_overlap_execution_contract_v0_1",
+  "contract_status": "AUTHORIZED_WITH_RESTRICTIONS_NO_EXECUTION",
+  "created_at_utc": "2026-07-25T00:00:00Z",
+  "governing_authorization": "market_state_on_demand_incremental_overlap_execution_authorization_v0_1",
+  "authorized_next_gate": "market_state_on_demand_incremental_overlap_execution_v0_1",
+  "purpose": "Authorize one future bounded incremental overlap Market State on-demand execution that reuses eligible baseline exact-match partitions and builds only a one-session delta.",
+  "baseline": {
+    "run_id": "market_state_bounded_on_demand_execution_v0_1_20260724T232123Z",
+    "candidate_dataset_id": "market_state_candidate_dataset_v0_1_433288b634924676",
+    "candidate_dataset_fingerprint": "433288b634924676a3c516fac600574ed36237c3c02ca640111f17609b6c235b",
+    "scientific_dataset_fingerprint": "a9182b19e434ea77ca2bf5b3395b84a4592560bbf28e5cb0d80ee5561c5fe1b7",
+    "reuse_status": "eligible_for_bounded_exact_match_reuse"
+  },
+  "request_b_scope": {
+    "profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "exchange_scope": "XNYS",
+    "instrument_ids": [
+      "figi_share_class:BBG001S5N8T1",
+      "figi_share_class:BBG001S8T7K0",
+      "figi_share_class:BBG001S6RSK0"
+    ],
+    "baseline_sessions": [
+      "2021-01-19",
+      "2021-03-15",
+      "2022-11-25"
+    ],
+    "delta_sessions": [
+      "2023-03-20"
+    ],
+    "requested_context_count": 12
+  },
+  "required_execution_plan_dispositions": {
+    "classification_must_be_mutually_exclusive": true,
+    "requested_logical_partitions": 12,
+    "expected_reusable_validated": 8,
+    "expected_known_unavailable": 1,
+    "expected_to_build_delta": 3,
+    "allowed_dispositions": [
+      "reusable_validated",
+      "to_build",
+      "to_rebuild",
+      "unavailable",
+      "quarantined",
+      "blocked"
+    ]
+  },
+  "materializer_rules": {
+    "may_build_delta_partitions": true,
+    "must_skip_reusable_validated_partitions": true,
+    "must_not_rebuild_baseline_reusable_records": true,
+    "must_not_materialize_known_unavailable_context_without_governed_source_or_policy_change": true,
+    "fallbacks_allowed": false
+  },
+  "registry_rules": {
+    "baseline_registry_entry_mutation_allowed": false,
+    "dataset_evolution_evidence_required": true,
+    "maximum_new_candidate_dataset_registry_entries": 1,
+    "official_dataset_promotion_allowed": false,
+    "production_allowed": false,
+    "downstream_consumption_allowed": false
+  },
+  "success_criteria": {
+    "request_b_created": true,
+    "request_b_fingerprint_differs_from_baseline_request": true,
+    "execution_plan_b_fingerprint_differs_from_baseline_plan": true,
+    "baseline_reusable_contexts_selected": 8,
+    "delta_contexts_built": 3,
+    "known_unavailable_context_preserved": 1,
+    "materializer_build_scope_equals_delta_only": true,
+    "validation_completes_without_hard_failures": true,
+    "candidate_dataset_evolution_registered_or_evidenced": true,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false
+  },
+  "blocking_conditions": [
+    "baseline_reuse_eligibility_not_found",
+    "baseline_candidate_dataset_fingerprint_mismatch",
+    "request_b_scope_exceeds_authorized_contexts",
+    "delta_session_source_records_missing_for_all_authorized_instruments",
+    "execution_plan_does_not_classify_reusable_and_delta_partitions_separately",
+    "materializer_rebuilds_reusable_validated_partitions",
+    "known_unavailable_context_materialized_without_governed_source_or_policy_change",
+    "fallback_source_used",
+    "baseline_registry_entry_mutated_in_place",
+    "official_dataset_or_downstream_authority_opened"
+  ],
+  "authorization_gate_counters": {
+    "incremental_overlap_execution": "NOT_EXECUTED",
+    "new_requests_created": 0,
+    "execution_plans_created": 0,
+    "resolver_executions": 0,
+    "materializer_executions": 0,
+    "validator_executions": 0,
+    "candidate_files_written": 0,
+    "candidate_dataset_registry_entries_written": 0,
+    "registry_entry_mutations": 0
+  }
+}

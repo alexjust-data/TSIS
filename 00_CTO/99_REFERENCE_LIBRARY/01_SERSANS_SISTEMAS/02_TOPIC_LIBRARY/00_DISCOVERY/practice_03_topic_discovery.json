@@ -1,0 +1,100 @@
+[
+  {
+    "topic_id": "TOPIC-P03-001",
+    "canonical_name": "Daily Bars from Intraday Data",
+    "scope": "Sesiones, settle y construcción de barras de 1.440 minutos",
+    "source_ranges": "18-123",
+    "status": "DISCOVERED_NON_FROZEN"
+  },
+  {
+    "topic_id": "TOPIC-P03-002",
+    "canonical_name": "Donchian Foundations and Source Discipline",
+    "scope": "Regla de cuatro semanas, fuentes originales y significado del canal",
+    "source_ranges": "124-208",
+    "status": "DISCOVERED_NON_FROZEN"
+  },
+  {
+    "topic_id": "TOPIC-P03-003",
+    "canonical_name": "Trend-Following versus Counter-Trend Character",
+    "scope": "Psicología, exposición overnight y diversificación por tipo de estrategia",
+    "source_ranges": "156-208",
+    "status": "DISCOVERED_NON_FROZEN"
+  },
+  {
+    "topic_id": "TOPIC-P03-004",
+    "canonical_name": "Controlled Strategy Inputs",
+    "scope": "Inputs de configuración, análisis y optimización",
+    "source_ranges": "209-386",
+    "status": "DISCOVERED_NON_FROZEN"
+  },
+  {
+    "topic_id": "TOPIC-P03-005",
+    "canonical_name": "Breakout Entry Semantics",
+    "scope": "Close/High/Low, barra anterior, orden siguiente y variantes de ruptura",
+    "source_ranges": "387-495",
+    "status": "DISCOVERED_NON_FROZEN"
+  },
+  {
+    "topic_id": "TOPIC-P03-006",
+    "canonical_name": "Entry Setup Evaluation",
+    "scope": "Evaluación aislada con salidas simétricas y límites de la inferencia",
+    "source_ranges": "496-587",
+    "status": "DISCOVERED_NON_FROZEN"
+  },
+  {
+    "topic_id": "TOPIC-P03-007",
+    "canonical_name": "Exposure Normalization and Position Sizing",
+    "scope": "Tamaño fijo frente a exposición nominal dinámica",
+    "source_ranges": "588-694",
+    "status": "DISCOVERED_NON_FROZEN"
+  },
+  {
+    "topic_id": "TOPIC-P03-008",
+    "canonical_name": "Trend Exit Families",
+    "scope": "Media, canal opuesto, stop, profit target, trailing y tiempo",
+    "source_ranges": "695-1187",
+    "status": "DISCOVERED_NON_FROZEN"
+  },
+  {
+    "topic_id": "TOPIC-P03-009",
+    "canonical_name": "Cross-Asset Generalization",
+    "scope": "Pruebas AAPL, XLK, XLF, META y QQQ",
+    "source_ranges": "209-1675",
+    "status": "DISCOVERED_NON_FROZEN"
+  },
+  {
+    "topic_id": "TOPIC-P03-010",
+    "canonical_name": "Re-entry Control",
+    "scope": "BarsSinceExit y separación mínima entre operaciones",
+    "source_ranges": "1188-1226",
+    "status": "DISCOVERED_NON_FROZEN"
+  },
+  {
+    "topic_id": "TOPIC-P03-011",
+    "canonical_name": "Volatility Filtering",
+    "scope": "ATR normalizado, contracción previa y sensibilidad por activo/lado",
+    "source_ranges": "1227-1675",
+    "status": "DISCOVERED_NON_FROZEN"
+  },
+  {
+    "topic_id": "TOPIC-P03-012",
+    "canonical_name": "Instrumental Optimization",
+    "scope": "Optimización para mapas de sensibilidad, no solo selección del óptimo",
+    "source_ranges": "296-386;1393-1411",
+    "status": "DISCOVERED_NON_FROZEN"
+  },
+  {
+    "topic_id": "TOPIC-P03-013",
+    "canonical_name": "Market Regime Framing",
+    "scope": "Dirección × volatilidad, ADX/ATR/VIX y límites de identificación",
+    "source_ranges": "1676-1768",
+    "status": "DISCOVERED_NON_FROZEN"
+  },
+  {
+    "topic_id": "TOPIC-P03-014",
+    "canonical_name": "Strategy Simplicity and Degrees of Freedom",
+    "scope": "Concepto previo, búsqueda dirigida y control de complejidad",
+    "source_ranges": "296-386;880-974",
+    "status": "DISCOVERED_NON_FROZEN"
+  }
+]

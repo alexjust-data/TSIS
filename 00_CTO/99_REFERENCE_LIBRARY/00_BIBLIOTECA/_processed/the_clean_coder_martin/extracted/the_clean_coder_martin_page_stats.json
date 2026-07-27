@@ -1,0 +1,1229 @@
+{
+  "unit_label": "page",
+  "page_count": 244,
+  "total_chars": 388044,
+  "text_pages": 231,
+  "requires_ocr_review": false,
+  "per_page": [
+    {
+      "page": 1,
+      "chars": 3,
+      "words": 1
+    },
+    {
+      "page": 2,
+      "chars": 1834,
+      "words": 296
+    },
+    {
+      "page": 3,
+      "chars": 38,
+      "words": 6
+    },
+    {
+      "page": 4,
+      "chars": 19,
+      "words": 4
+    },
+    {
+      "page": 5,
+      "chars": 522,
+      "words": 73
+    },
+    {
+      "page": 6,
+      "chars": 265,
+      "words": 51
+    },
+    {
+      "page": 7,
+      "chars": 2475,
+      "words": 491
+    },
+    {
+      "page": 8,
+      "chars": 675,
+      "words": 150
+    },
+    {
+      "page": 9,
+      "chars": 38,
+      "words": 6
+    },
+    {
+      "page": 10,
+      "chars": 398,
+      "words": 73
+    },
+    {
+      "page": 11,
+      "chars": 663,
+      "words": 118
+    },
+    {
+      "page": 12,
+      "chars": 659,
+      "words": 104
+    },
+    {
+      "page": 13,
+      "chars": 403,
+      "words": 66
+    },
+    {
+      "page": 14,
+      "chars": 996,
+      "words": 221
+    },
+    {
+      "page": 15,
+      "chars": 1988,
+      "words": 347
+    },
+    {
+      "page": 16,
+      "chars": 1582,
+      "words": 305
+    },
+    {
+      "page": 17,
+      "chars": 1476,
+      "words": 306
+    },
+    {
+      "page": 18,
+      "chars": 1540,
+      "words": 284
+    },
+    {
+      "page": 19,
+      "chars": 1547,
+      "words": 266
+    },
+    {
+      "page": 20,
+      "chars": 611,
+      "words": 103
+    },
+    {
+      "page": 21,
+      "chars": 2152,
+      "words": 353
+    },
+    {
+      "page": 22,
+      "chars": 1944,
+      "words": 317
+    },
+    {
+      "page": 23,
+      "chars": 1384,
+      "words": 221
+    },
+    {
+      "page": 24,
+      "chars": 1456,
+      "words": 307
+    },
+    {
+      "page": 25,
+      "chars": 2232,
+      "words": 434
+    },
+    {
+      "page": 26,
+      "chars": 1950,
+      "words": 363
+    },
+    {
+      "page": 27,
+      "chars": 2106,
+      "words": 402
+    },
+    {
+      "page": 28,
+      "chars": 1151,
+      "words": 201
+    },
+    {
+      "page": 29,
+      "chars": 38,
+      "words": 6
+    },
+    {
+      "page": 30,
+      "chars": 754,
+      "words": 110
+    },
+    {
+      "page": 31,
+      "chars": 482,
+      "words": 82
+    },
+    {
+      "page": 32,
+      "chars": 435,
+      "words": 88
+    },
+    {
+      "page": 33,
+      "chars": 1474,
+      "words": 265
+    },
+    {
+      "page": 34,
+      "chars": 547,
+      "words": 99
+    },
+    {
+      "page": 35,
+      "chars": 2064,
+      "words": 364
+    },
+    {
+      "page": 36,
+      "chars": 2150,
+      "words": 386
+    },
+    {
+      "page": 37,
+      "chars": 1957,
+      "words": 368
+    },
+    {
+      "page": 38,
+      "chars": 2029,
+      "words": 369
+    },
+    {
+      "page": 39,
+      "chars": 2042,
+      "words": 428
+    },
+    {
+      "page": 40,
+      "chars": 252,
+      "words": 47
+    },
+    {
+      "page": 41,
+      "chars": 1857,
+      "words": 396
+    },
+    {
+      "page": 42,
+      "chars": 2203,
+      "words": 355
+    },
+    {
+      "page": 43,
+      "chars": 2174,
+      "words": 417
+    },
+    {
+      "page": 44,
+      "chars": 1889,
+      "words": 352
+    },
+    {
+      "page": 45,
+      "chars": 2025,
+      "words": 349
+    },
+    {
+      "page": 46,
+      "chars": 1913,
+      "words": 383
+    },
+    {
+      "page": 47,
+      "chars": 1888,
+      "words": 326
+    },
+    {
+      "page": 48,
+      "chars": 2118,
+      "words": 380
+    },
+    {
+      "page": 49,
+      "chars": 1955,
+      "words": 400
+    },
+    {
+      "page": 50,
+      "chars": 1989,
+      "words": 356
+    },
+    {
+      "page": 51,
+      "chars": 2081,
+      "words": 357
+    },
+    {
+      "page": 52,
+      "chars": 2191,
+      "words": 362
+    },
+    {
+      "page": 53,
+      "chars": 1922,
+      "words": 349
+    },
+    {
+      "page": 54,
+      "chars": 1712,
+      "words": 307
+    },
+    {
+      "page": 55,
+      "chars": 1477,
+      "words": 247
+    },
+    {
+      "page": 56,
+      "chars": 528,
+      "words": 106
+    },
+    {
+      "page": 57,
+      "chars": 2144,
+      "words": 435
+    },
+    {
+      "page": 58,
+      "chars": 1824,
+      "words": 340
+    },
+    {
+      "page": 59,
+      "chars": 1961,
+      "words": 374
+    },
+    {
+      "page": 60,
+      "chars": 1657,
+      "words": 290
+    },
+    {
+      "page": 61,
+      "chars": 1879,
+      "words": 337
+    },
+    {
+      "page": 62,
+      "chars": 1915,
+      "words": 334
+    },
+    {
+      "page": 63,
+      "chars": 2099,
+      "words": 392
+    },
+    {
+      "page": 64,
+      "chars": 1853,
+      "words": 352
+    },
+    {
+      "page": 65,
+      "chars": 1973,
+      "words": 366
+    },
+    {
+      "page": 66,
+      "chars": 2076,
+      "words": 375
+    },
+    {
+      "page": 67,
+      "chars": 1887,
+      "words": 350
+    },
+    {
+      "page": 68,
+      "chars": 1954,
+      "words": 379
+    },
+    {
+      "page": 69,
+      "chars": 1809,
+      "words": 320
+    },
+    {
+      "page": 70,
+      "chars": 2582,
+      "words": 552
+    },
+    {
+      "page": 71,
+      "chars": 2828,
+      "words": 562
+    },
+    {
+      "page": 72,
+      "chars": 2594,
+      "words": 519
+    },
+    {
+      "page": 73,
+      "chars": 2540,
+      "words": 492
+    },
+    {
+      "page": 74,
+      "chars": 2166,
+      "words": 382
+    },
+    {
+      "page": 75,
+      "chars": 2359,
+      "words": 462
+    },
+    {
+      "page": 76,
+      "chars": 1758,
+      "words": 313
+    },
+    {
+      "page": 77,
+      "chars": 38,
+      "words": 6
+    },
+    {
+      "page": 78,
+      "chars": 392,
+      "words": 79
+    },
+    {
+      "page": 79,
+      "chars": 2217,
+      "words": 509
+    },
+    {
+      "page": 80,
+      "chars": 1412,
+      "words": 307
+    },
+    {
+      "page": 81,
+      "chars": 1955,
+      "words": 377
+    },
+    {
+      "page": 82,
+      "chars": 1886,
+      "words": 396
+    },
+    {
+      "page": 83,
+      "chars": 1653,
+      "words": 387
+    },
+    {
+      "page": 84,
+      "chars": 1714,
+      "words": 325
+    },
+    {
+      "page": 85,
+      "chars": 1607,
+      "words": 285
+    },
+    {
+      "page": 86,
+      "chars": 1522,
+      "words": 270
+    },
+    {
+      "page": 87,
+      "chars": 1684,
+      "words": 317
+    },
+    {
+      "page": 88,
+      "chars": 1919,
+      "words": 352
+    },
+    {
+      "page": 89,
+      "chars": 1076,
+      "words": 192
+    },
+    {
+      "page": 90,
+      "chars": 543,
+      "words": 107
+    },
+    {
+      "page": 91,
+      "chars": 2230,
+      "words": 430
+    },
+    {
+      "page": 92,
+      "chars": 2173,
+      "words": 475
+    },
+    {
+      "page": 93,
+      "chars": 2214,
+      "words": 404
+    },
+    {
+      "page": 94,
+      "chars": 2236,
+      "words": 407
+    },
+    {
+      "page": 95,
+      "chars": 2055,
+      "words": 373
+    },
+    {
+      "page": 96,
+      "chars": 1893,
+      "words": 352
+    },
+    {
+      "page": 97,
+      "chars": 1860,
+      "words": 338
+    },
+    {
+      "page": 98,
+      "chars": 1978,
+      "words": 351
+    },
+    {
+      "page": 99,
+      "chars": 2084,
+      "words": 372
+    },
+    {
+      "page": 100,
+      "chars": 2180,
+      "words": 381
+    },
+    {
+      "page": 101,
+      "chars": 2402,
+      "words": 422
+    },
+    {
+      "page": 102,
+      "chars": 1834,
+      "words": 327
+    },
+    {
+      "page": 103,
+      "chars": 1824,
+      "words": 337
+    },
+    {
+      "page": 104,
+      "chars": 1762,
+      "words": 358
+    },
+    {
+      "page": 105,
+      "chars": 1847,
+      "words": 341
+    },
+    {
+      "page": 106,
+      "chars": 2002,
+      "words": 395
+    },
+    {
+      "page": 107,
+      "chars": 2000,
+      "words": 410
+    },
+    {
+      "page": 108,
+      "chars": 2409,
+      "words": 464
+    },
+    {
+      "page": 109,
+      "chars": 609,
+      "words": 92
+    },
+    {
+      "page": 110,
+      "chars": 465,
+      "words": 84
+    },
+    {
+      "page": 111,
+      "chars": 2385,
+      "words": 473
+    },
+    {
+      "page": 112,
+      "chars": 1663,
+      "words": 418
+    },
+    {
+      "page": 113,
+      "chars": 2116,
+      "words": 418
+    },
+    {
+      "page": 114,
+      "chars": 1930,
+      "words": 336
+    },
+    {
+      "page": 115,
+      "chars": 2122,
+      "words": 372
+    },
+    {
+      "page": 116,
+      "chars": 2038,
+      "words": 374
+    },
+    {
+      "page": 117,
+      "chars": 1148,
+      "words": 140
+    },
+    {
+      "page": 118,
+      "chars": 402,
+      "words": 53
+    },
+    {
+      "page": 119,
+      "chars": 1854,
+      "words": 332
+    },
+    {
+      "page": 120,
+      "chars": 2017,
+      "words": 372
+    },
+    {
+      "page": 121,
+      "chars": 2067,
+      "words": 348
+    },
+    {
+      "page": 122,
+      "chars": 2029,
+      "words": 343
+    },
+    {
+      "page": 123,
+      "chars": 1913,
+      "words": 317
+    },
+    {
+      "page": 124,
+      "chars": 1679,
+      "words": 258
+    },
+    {
+      "page": 125,
+      "chars": 2012,
+      "words": 353
+    },
+    {
+      "page": 126,
+      "chars": 1957,
+      "words": 342
+    },
+    {
+      "page": 127,
+      "chars": 705,
+      "words": 113
+    },
+    {
+      "page": 128,
+      "chars": 755,
+      "words": 114
+    },
+    {
+      "page": 129,
+      "chars": 2283,
+      "words": 510
+    },
+    {
+      "page": 130,
+      "chars": 2050,
+      "words": 375
+    },
+    {
+      "page": 131,
+      "chars": 1986,
+      "words": 303
+    },
+    {
+      "page": 132,
+      "chars": 1224,
+      "words": 215
+    },
+    {
+      "page": 133,
+      "chars": 1792,
+      "words": 322
+    },
+    {
+      "page": 134,
+      "chars": 1514,
+      "words": 295
+    },
+    {
+      "page": 135,
+      "chars": 1809,
+      "words": 321
+    },
+    {
+      "page": 136,
+      "chars": 1609,
+      "words": 267
+    },
+    {
+      "page": 137,
+      "chars": 1108,
+      "words": 234
+    },
+    {
+      "page": 138,
+      "chars": 2296,
+      "words": 389
+    },
+    {
+      "page": 139,
+      "chars": 1711,
+      "words": 291
+    },
+    {
+      "page": 140,
+      "chars": 1942,
+      "words": 389
+    },
+    {
+      "page": 141,
+      "chars": 1709,
+      "words": 319
+    },
+    {
+      "page": 142,
+      "chars": 2123,
+      "words": 357
+    },
+    {
+      "page": 143,
+      "chars": 2119,
+      "words": 414
+    },
+    {
+      "page": 144,
+      "chars": 1721,
+      "words": 294
+    },
+    {
+      "page": 145,
+      "chars": 38,
+      "words": 6
+    },
+    {
+      "page": 146,
+      "chars": 622,
+      "words": 110
+    },
+    {
+      "page": 147,
+      "chars": 1917,
+      "words": 330
+    },
+    {
+      "page": 148,
+      "chars": 961,
+      "words": 157
+    },
+    {
+      "page": 149,
+      "chars": 1388,
+      "words": 227
+    },
+    {
+      "page": 150,
+      "chars": 1362,
+      "words": 210
+    },
+    {
+      "page": 151,
+      "chars": 1996,
+      "words": 316
+    },
+    {
+      "page": 152,
+      "chars": 1169,
+      "words": 193
+    },
+    {
+      "page": 153,
+      "chars": 38,
+      "words": 6
+    },
+    {
+      "page": 154,
+      "chars": 515,
+      "words": 88
+    },
+    {
+      "page": 155,
+      "chars": 1759,
+      "words": 319
+    },
+    {
+      "page": 156,
+      "chars": 2106,
+      "words": 399
+    },
+    {
+      "page": 157,
+      "chars": 1980,
+      "words": 362
+    },
+    {
+      "page": 158,
+      "chars": 1619,
+      "words": 289
+    },
+    {
+      "page": 159,
+      "chars": 2090,
+      "words": 406
+    },
+    {
+      "page": 160,
+      "chars": 2079,
+      "words": 376
+    },
+    {
+      "page": 161,
+      "chars": 1614,
+      "words": 288
+    },
+    {
+      "page": 162,
+      "chars": 1735,
+      "words": 299
+    },
+    {
+      "page": 163,
+      "chars": 2236,
+      "words": 431
+    },
+    {
+      "page": 164,
+      "chars": 1837,
+      "words": 329
+    },
+    {
+      "page": 165,
+      "chars": 1832,
+      "words": 337
+    },
+    {
+      "page": 166,
+      "chars": 1126,
+      "words": 194
+    },
+    {
+      "page": 167,
+      "chars": 38,
+      "words": 6
+    },
+    {
+      "page": 168,
+      "chars": 413,
+      "words": 71
+    },
+    {
+      "page": 169,
+      "chars": 2021,
+      "words": 375
+    },
+    {
+      "page": 170,
+      "chars": 2046,
+      "words": 423
+    },
+    {
+      "page": 171,
+      "chars": 1832,
+      "words": 320
+    },
+    {
+      "page": 172,
+      "chars": 1775,
+      "words": 371
+    },
+    {
+      "page": 173,
+      "chars": 945,
+      "words": 186
+    },
+    {
+      "page": 174,
+      "chars": 1881,
+      "words": 324
+    },
+    {
+      "page": 175,
+      "chars": 1886,
+      "words": 345
+    },
+    {
+      "page": 176,
+      "chars": 1471,
+      "words": 294
+    },
+    {
+      "page": 177,
+      "chars": 1876,
+      "words": 327
+    },
+    {
+      "page": 178,
+      "chars": 1942,
+      "words": 321
+    },
+    {
+      "page": 179,
+      "chars": 1966,
+      "words": 348
+    },
+    {
+      "page": 180,
+      "chars": 2033,
+      "words": 340
+    },
+    {
+      "page": 181,
+      "chars": 1161,
+      "words": 160
+    },
+    {
+      "page": 182,
+      "chars": 288,
+      "words": 48
+    },
+    {
+      "page": 183,
+      "chars": 2300,
+      "words": 384
+    },
+    {
+      "page": 184,
+      "chars": 1986,
+      "words": 378
+    },
+    {
+      "page": 185,
+      "chars": 2016,
+      "words": 360
+    },
+    {
+      "page": 186,
+      "chars": 1791,
+      "words": 339
+    },
+    {
+      "page": 187,
+      "chars": 1598,
+      "words": 275
+    },
+    {
+      "page": 188,
+      "chars": 434,
+      "words": 74
+    },
+    {
+      "page": 189,
+      "chars": 38,
+      "words": 6
+    },
+    {
+      "page": 190,
+      "chars": 418,
+      "words": 76
+    },
+    {
+      "page": 191,
+      "chars": 2083,
+      "words": 374
+    },
+    {
+      "page": 192,
+      "chars": 1784,
+      "words": 306
+    },
+    {
+      "page": 193,
+      "chars": 2105,
+      "words": 404
+    },
+    {
+      "page": 194,
+      "chars": 2006,
+      "words": 382
+    },
+    {
+      "page": 195,
+      "chars": 1788,
+      "words": 332
+    },
+    {
+      "page": 196,
+      "chars": 1898,
+      "words": 314
+    },
+    {
+      "page": 197,
+      "chars": 2056,
+      "words": 366
+    },
+    {
+      "page": 198,
+      "chars": 2132,
+      "words": 366
+    },
+    {
+      "page": 199,
+      "chars": 664,
+      "words": 125
+    },
+    {
+      "page": 200,
+      "chars": 199,
+      "words": 38
+    },
+    {
+      "page": 201,
+      "chars": 1934,
+      "words": 349
+    },
+    {
+      "page": 202,
+      "chars": 1796,
+      "words": 301
+    },
+    {
+      "page": 203,
+      "chars": 2030,
+      "words": 415
+    },
+    {
+      "page": 204,
+      "chars": 1535,
+      "words": 294
+    },
+    {
+      "page": 205,
+      "chars": 38,
+      "words": 6
+    },
+    {
+      "page": 206,
+      "chars": 263,
+      "words": 42
+    },
+    {
+      "page": 207,
+      "chars": 1909,
+      "words": 338
+    },
+    {
+      "page": 208,
+      "chars": 2210,
+      "words": 410
+    },
+    {
+      "page": 209,
+      "chars": 2240,
+      "words": 409
+    },
+    {
+      "page": 210,
+      "chars": 2284,
+      "words": 475
+    },
+    {
+      "page": 211,
+      "chars": 2403,
+      "words": 439
+    },
+    {
+      "page": 212,
+      "chars": 2122,
+      "words": 381
+    },
+    {
+      "page": 213,
+      "chars": 2123,
+      "words": 371
+    },
+    {
+      "page": 214,
+      "chars": 2029,
+      "words": 321
+    },
+    {
+      "page": 215,
+      "chars": 2086,
+      "words": 331
+    },
+    {
+      "page": 216,
+      "chars": 2110,
+      "words": 357
+    },
+    {
+      "page": 217,
+      "chars": 1994,
+      "words": 413
+    },
+    {
+      "page": 218,
+      "chars": 525,
+      "words": 86
+    },
+    {
+      "page": 219,
+      "chars": 38,
+      "words": 6
+    },
+    {
+      "page": 220,
+      "chars": 1309,
+      "words": 253
+    },
+    {
+      "page": 221,
+      "chars": 2209,
+      "words": 442
+    },
+    {
+      "page": 222,
+      "chars": 1953,
+      "words": 409
+    },
+    {
+      "page": 223,
+      "chars": 1911,
+      "words": 347
+    },
+    {
+      "page": 224,
+      "chars": 1781,
+      "words": 327
+    },
+    {
+      "page": 225,
+      "chars": 294,
+      "words": 52
+    },
+    {
+      "page": 226,
+      "chars": 215,
+      "words": 36
+    },
+    {
+      "page": 227,
+      "chars": 1966,
+      "words": 409
+    },
+    {
+      "page": 228,
+      "chars": 1925,
+      "words": 324
+    },
+    {
+      "page": 229,
+      "chars": 1909,
+      "words": 380
+    },
+    {
+      "page": 230,
+      "chars": 1912,
+      "words": 372
+    },
+    {
+      "page": 231,
+      "chars": 2050,
+      "words": 368
+    },
+    {
+      "page": 232,
+      "chars": 1952,
+      "words": 333
+    },
+    {
+      "page": 233,
+      "chars": 1763,
+      "words": 306
+    },
+    {
+      "page": 234,
+      "chars": 1844,
+      "words": 312
+    },
+    {
+      "page": 235,
+      "chars": 2351,
+      "words": 414
+    },
+    {
+      "page": 236,
+      "chars": 1944,
+      "words": 341
+    },
+    {
+      "page": 237,
+      "chars": 484,
+      "words": 80
+    },
+    {
+      "page": 238,
+      "chars": 858,
+      "words": 120
+    },
+    {
+      "page": 239,
+      "chars": 1545,
+      "words": 217
+    },
+    {
+      "page": 240,
+      "chars": 1331,
+      "words": 192
+    },
+    {
+      "page": 241,
+      "chars": 1532,
+      "words": 210
+    },
+    {
+      "page": 242,
+      "chars": 1588,
+      "words": 264
+    },
+    {
+      "page": 243,
+      "chars": 1248,
+      "words": 192
+    },
+    {
+      "page": 244,
+      "chars": 38,
+      "words": 6
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "book_id": "introduction_to_algorithms_cormen_4e",
+  "title": "Introduction to Algorithms, 4th Edition",
+  "authors": "Thomas H. Cormen / Charles E. Leiserson / Ronald L. Rivest / Clifford Stein",
+  "source_type": "Libro PDF",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_OceanofPDF.com_Introduction_to_Algorithms_fourth_edition_-_Thomas_H_Cormen.pdf",
+  "file_name": "_OceanofPDF.com_Introduction_to_Algorithms_fourth_edition_-_Thomas_H_Cormen.pdf",
+  "sha256": "ae5237c0dae8e0de3f39c7af7164e58f7dd5a351bad7b22e4dffa290472b5935",
+  "status": "indexed",
+  "processed_date": "2026-07-27",
+  "page_count": 1677,
+  "unit_label": "page",
+  "text_chars": 2520134,
+  "text_pages": 1668,
+  "requires_ocr_review": false,
+  "working_text_persisted": false,
+  "themes": "algorithm analysis, data structures, sorting, graph algorithms, dynamic programming, greedy algorithms, amortized analysis, randomized algorithms",
+  "utility_tsis": "referencia de algoritmos y estructuras de datos para performance, scheduling, joins, indexing y optimizacion interna TSIS"
+}

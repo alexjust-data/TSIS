@@ -1,0 +1,50 @@
+{
+  "authorization_id": "event_state_candidate_dataset_registry_design_authorization_v0_1",
+  "closure_invariants": {
+    "candidate_file_reads": 0,
+    "dataset_registry_entries_written": 0,
+    "datasets_promoted": 0,
+    "datasets_registered": 0,
+    "datasets_superseded": 0,
+    "downstream_consumption": false,
+    "event_state_datasets_written": 0,
+    "event_state_records_emitted": 0,
+    "market_state_candidate_file_reads": 0,
+    "official_event_state_dataset": false,
+    "production": false,
+    "quarantine_transitions": 0,
+    "registry_entries_written": 0,
+    "registry_runtime_reads": 0,
+    "source_market_data_rows_read": 0,
+    "validation_executions": 0
+  },
+  "date": "2026-07-27",
+  "design_allowed": {"event_state_candidate_dataset_registry_design_allowed": true},
+  "event_state_scope_v0_1": {
+    "accepted_subject_scope": "exchange_session",
+    "allowed_event_type_ids": ["event_type:market_data:session_opened"],
+    "event_state_profile_id": "event_state_core_four_intraday_profile_v0_1",
+    "halt_resumed_allowed": false
+  },
+  "forbidden_actions": {
+    "candidate_file_read_allowed": false,
+    "dataset_promotion_allowed": false,
+    "dataset_registration_allowed": false,
+    "downstream_consumption_allowed": false,
+    "event_state_materialization_allowed": false,
+    "event_state_record_emission_allowed": false,
+    "market_state_candidate_file_read_allowed": false,
+    "production_allowed": false,
+    "registry_entry_write_allowed": false,
+    "registry_runtime_read_allowed": false,
+    "source_market_data_read_allowed": false,
+    "validation_execution_allowed": false
+  },
+  "gate": "event_state_candidate_dataset_registry_design_v0_1",
+  "next_allowed_gate": "event_state_on_demand_execution_chain_joint_review_v0_1",
+  "parent_gate": "event_state_validator_design_v0_1",
+  "parent_validator_contract": "event_state_validator_contract_v0_1",
+  "scope_id": "event_state_candidate_dataset_registry_design_scope_v0_1",
+  "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+  "target_contract": "event_state_candidate_dataset_registry_contract_v0_1"
+}

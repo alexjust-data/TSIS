@@ -1,0 +1,40 @@
+{
+  "gate": "market_state_on_demand_incremental_overlap_candidate_dataset_review_v0_1",
+  "scope_id": "market_state_on_demand_incremental_overlap_candidate_dataset_review_scope_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_CONSUMED",
+  "date": "2026-07-25",
+  "review_id": "market_state_on_demand_incremental_overlap_candidate_dataset_review_v0_1_20260725T000000Z",
+  "authorized_evidence": {
+    "incremental_run_id": "market_state_on_demand_incremental_overlap_execution_v0_1_20260725T064143Z",
+    "baseline_run_id": "market_state_bounded_on_demand_execution_v0_1_20260724T232123Z",
+    "candidate_dataset_id": "market_state_candidate_dataset_incremental_v0_1_f2cfd5cf55d0c1be",
+    "candidate_dataset_fingerprint": "f2cfd5cf55d0c1be1722693cc0216ffd425bbb869e19c17745976c030f2c7a2a",
+    "scientific_dataset_fingerprint": "7103e4fdbae205e4bccbeb0c436508f62b016107b4b2756c549073dae971bb5f",
+    "validation_result_fingerprint": "9aafd142203872647a8be3668d0aca7c4f95630be4a405e00fd64f5cd111f336"
+  },
+  "allowed_inspection": [
+    "request_record",
+    "resolver_reports",
+    "execution_plan",
+    "candidate_output_manifest",
+    "lineage_manifest",
+    "validation_reports",
+    "candidate_registry_entry",
+    "baseline_candidate_output_manifest",
+    "baseline_candidate_parquet_hash",
+    "delta_candidate_parquet_metadata"
+  ],
+  "prohibited_actions": {
+    "new_market_state_materialization": false,
+    "baseline_registry_mutation": false,
+    "candidate_registry_mutation": false,
+    "official_dataset_promotion": false,
+    "reuse_eligibility_transition": false,
+    "production": false,
+    "downstream_consumption": false,
+    "event_state_execution": false
+  },
+  "accepted_review": "market_state_on_demand_incremental_overlap_candidate_dataset_review_v0_1_20260725T000000Z",
+  "accepted_review_status": "CLOSED_PASS_INCREMENTAL_OVERLAP_CANDIDATE_DATASET_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION",
+  "next_allowed_gate": "market_state_on_demand_incremental_overlap_idempotency_reuse_test_authorization_v0_1"
+}

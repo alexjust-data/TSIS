@@ -1,0 +1,22 @@
+{
+  "scope_id": "market_state_capability_consumption_policy_scope_v0_1",
+  "gate": "market_state_capability_consumption_policy_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_CONSUMED_BY_POLICY",
+  "consumed_by_policy_id": "market_state_capability_consumption_policy_v0_1_20260727T142133Z",
+  "consumed_at_utc": "2026-07-27T14:21:33Z",
+  "authority": {
+    "metadata_evidence_read_allowed": true,
+    "source_market_data_reads_allowed": false,
+    "parquet_content_reads_allowed": false,
+    "materializer_execution_allowed": false,
+    "validator_execution_allowed": false,
+    "new_candidate_registry_entries_allowed": false,
+    "registry_entry_mutation_allowed": false,
+    "official_dataset_promotion_allowed": false,
+    "production_allowed": false,
+    "downstream_consumption_allowed": false,
+    "event_state_on_demand_execution_allowed": false
+  },
+  "next_allowed_gate_on_pass": "event_state_on_demand_capability_design_authorization_v0_1",
+  "scope_content_sha256_excluding_hash_field": "73cdb150b4e23c7671b65096a90b3b74549ca887051d06350abaa43c92280b4e"
+}

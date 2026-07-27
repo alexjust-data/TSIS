@@ -1,0 +1,21 @@
+{
+  "schema": "SERSAN_PRACTICE_EXTRACTION_V1",
+  "practice": "07",
+  "source_inventory": {
+    "practice": "07",
+    "source_package": "20-practice-10(1).zip",
+    "file_count": 94,
+    "markdown_count": 1,
+    "image_count": 93,
+    "uncompressed_bytes": 32881929,
+    "markdown_files": [
+      "practica_07_ORB.md"
+    ],
+    "status": "SOURCE_PRESENT_AND_INVENTORIED"
+  },
+  "evidence_count": 10,
+  "topic_links_count": 44,
+  "figure_manifest_rows": 93,
+  "visual_review_status": "REVIEWED_IN_INCREMENTAL_AUDIT",
+  "integration_target": "07_INTEGRATION/FINAL"
+}

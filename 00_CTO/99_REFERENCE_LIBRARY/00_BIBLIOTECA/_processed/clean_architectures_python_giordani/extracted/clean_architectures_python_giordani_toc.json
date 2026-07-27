@@ -1,0 +1,278 @@
+[
+  {
+    "level": 0,
+    "title": "Clean Architectures in Python"
+  },
+  {
+    "level": 0,
+    "title": "Table of Contents"
+  },
+  {
+    "level": 0,
+    "title": "Dedication"
+  },
+  {
+    "level": 0,
+    "title": "Introduction"
+  },
+  {
+    "level": 1,
+    "title": "What is a software architecture?"
+  },
+  {
+    "level": 1,
+    "title": "Why is it called \"clean\"?"
+  },
+  {
+    "level": 1,
+    "title": "Why \"architectures\"?"
+  },
+  {
+    "level": 1,
+    "title": "Why Python?"
+  },
+  {
+    "level": 1,
+    "title": "Acknowledgments"
+  },
+  {
+    "level": 0,
+    "title": "About the book"
+  },
+  {
+    "level": 1,
+    "title": "Prerequisites and structure of the book"
+  },
+  {
+    "level": 1,
+    "title": "Typographic conventions"
+  },
+  {
+    "level": 1,
+    "title": "Why this book comes for free"
+  },
+  {
+    "level": 1,
+    "title": "Submitting issues or patches"
+  },
+  {
+    "level": 1,
+    "title": "About the author"
+  },
+  {
+    "level": 1,
+    "title": "Changes in the second edition"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 1. A day in the life of a clean system"
+  },
+  {
+    "level": 1,
+    "title": "1.1. The data flow"
+  },
+  {
+    "level": 1,
+    "title": "1.2. Advantages of a layered architecture"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 2. Components of a clean architecture"
+  },
+  {
+    "level": 1,
+    "title": "2.1. Divide et impera"
+  },
+  {
+    "level": 1,
+    "title": "2.2. Data types"
+  },
+  {
+    "level": 1,
+    "title": "2.3. The main four layers"
+  },
+  {
+    "level": 1,
+    "title": "2.4. Communication between layers"
+  },
+  {
+    "level": 1,
+    "title": "2.5. APIs and shades of grey"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 3. A basic example"
+  },
+  {
+    "level": 1,
+    "title": "3.1. Project setup"
+  },
+  {
+    "level": 1,
+    "title": "3.2. Domain models"
+  },
+  {
+    "level": 1,
+    "title": "3.3. Serializers"
+  },
+  {
+    "level": 1,
+    "title": "3.4. Use cases"
+  },
+  {
+    "level": 1,
+    "title": "3.5. The storage system"
+  },
+  {
+    "level": 1,
+    "title": "3.6. A command-line interface"
+  },
+  {
+    "level": 1,
+    "title": "3.7. Conclusions"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 4. Add a Web application"
+  },
+  {
+    "level": 1,
+    "title": "4.1. Flask setup"
+  },
+  {
+    "level": 1,
+    "title": "4.2. Test and create an HTTP endpoint"
+  },
+  {
+    "level": 1,
+    "title": "4.3. WSGI"
+  },
+  {
+    "level": 1,
+    "title": "4.4. Conclusions"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 5. Error management"
+  },
+  {
+    "level": 1,
+    "title": "5.1. Request and responses"
+  },
+  {
+    "level": 1,
+    "title": "5.2. Basic structure"
+  },
+  {
+    "level": 1,
+    "title": "5.3. Requests and responses in a use case"
+  },
+  {
+    "level": 1,
+    "title": "5.4. Request validation"
+  },
+  {
+    "level": 1,
+    "title": "5.5. Responses and failures"
+  },
+  {
+    "level": 1,
+    "title": "5.6. Error management in a use case"
+  },
+  {
+    "level": 1,
+    "title": "5.7. Integrating external systems"
+  },
+  {
+    "level": 1,
+    "title": "5.8. Conclusions"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 6. Integration with a real external system - PostgreSQL"
+  },
+  {
+    "level": 1,
+    "title": "6.1. Decoupling with interfaces"
+  },
+  {
+    "level": 1,
+    "title": "6.2. A repository based on PostgreSQL"
+  },
+  {
+    "level": 1,
+    "title": "6.3. Label integration tests"
+  },
+  {
+    "level": 1,
+    "title": "6.4. Create SQLAlchemy classes"
+  },
+  {
+    "level": 1,
+    "title": "6.5. Orchestration management"
+  },
+  {
+    "level": 1,
+    "title": "6.6. Database fixtures"
+  },
+  {
+    "level": 1,
+    "title": "6.7. Integration tests"
+  },
+  {
+    "level": 1,
+    "title": "6.8. Conclusions"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 7. Integration with a real external system - MongoDB"
+  },
+  {
+    "level": 1,
+    "title": "7.1. Fixtures"
+  },
+  {
+    "level": 1,
+    "title": "7.2. Docker Compose configuration"
+  },
+  {
+    "level": 1,
+    "title": "7.3. Application configuration"
+  },
+  {
+    "level": 1,
+    "title": "7.4. Integration tests"
+  },
+  {
+    "level": 1,
+    "title": "7.5. The MongoDB repository"
+  },
+  {
+    "level": 1,
+    "title": "7.6. Conclusions"
+  },
+  {
+    "level": 0,
+    "title": "Chapter 8. Run a production-ready system"
+  },
+  {
+    "level": 1,
+    "title": "8.1. Build a web stack"
+  },
+  {
+    "level": 1,
+    "title": "8.2. Connect to a production-ready database"
+  },
+  {
+    "level": 1,
+    "title": "8.3. Conclusions"
+  },
+  {
+    "level": 0,
+    "title": "Appendix A: Changelog"
+  },
+  {
+    "level": 0,
+    "title": "Postface"
+  }
+]

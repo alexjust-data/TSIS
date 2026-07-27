@@ -1,0 +1,22 @@
+﻿{
+    "book_id":  "database_internals_petrov",
+    "title":  "Database Internals",
+    "author":  "Alex Petrov",
+    "pdf_path":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Database_Internals_-_Alex_Petrov.pdf",
+    "file_name":  "Database_Internals_-_Alex_Petrov.pdf",
+    "file_size_bytes":  9189523,
+    "sha256":  "0f23c5ecaffde9fdbc6e69f315c48f943429b0aa7e3ec2e92955f18ad353829f",
+    "pages":  463,
+    "toc_items":  241,
+    "total_words":  114549,
+    "text_pages":  462,
+    "requires_ocr":  false,
+    "ocr_completed":  false,
+    "working_text_persisted":  false,
+    "status":  "indexed",
+    "artifact_contract":  [
+                              "summaries/\u003cbook_id\u003e_agent_summary.md",
+                              "index/\u003cbook_id\u003e_concept_index.md",
+                              "index/\u003cbook_id\u003e_source_map.md"
+                          ]
+}

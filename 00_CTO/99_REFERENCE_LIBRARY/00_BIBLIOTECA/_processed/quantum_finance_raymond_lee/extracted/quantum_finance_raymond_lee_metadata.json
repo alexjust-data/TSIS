@@ -1,0 +1,22 @@
+﻿{
+    "book_id":  "quantum_finance_raymond_lee",
+    "title":  "Quantum Finance",
+    "author":  "Raymond S. T. Lee",
+    "pdf_path":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Quantum_Finance_-_Raymond_S_T_Lee.pdf",
+    "file_name":  "Quantum_Finance_-_Raymond_S_T_Lee.pdf",
+    "file_size_bytes":  32932363,
+    "sha256":  "be0883624e73ed291ba63f52447790f65b02be2e57a7c289b3707f6333126116",
+    "pages":  433,
+    "toc_items":  362,
+    "total_words":  105021,
+    "text_pages":  433,
+    "requires_ocr":  false,
+    "ocr_completed":  false,
+    "working_text_persisted":  false,
+    "status":  "indexed",
+    "artifact_contract":  [
+                              "summaries/\u003cbook_id\u003e_agent_summary.md",
+                              "index/\u003cbook_id\u003e_concept_index.md",
+                              "index/\u003cbook_id\u003e_source_map.md"
+                          ]
+}

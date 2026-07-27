@@ -1,0 +1,11 @@
+{
+  "scope_id": "market_state_on_demand_incremental_lineage_chain_validation_scope_v0_1",
+  "gate": "market_state_on_demand_incremental_lineage_chain_validation_v0_1",
+  "validation_id": "market_state_on_demand_incremental_lineage_chain_validation_v0_1_20260727T000000Z",
+  "source_review": "market_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260727T000000Z",
+  "execution_authorized": false,
+  "dataset_mutation_authorized": false,
+  "official_dataset_promotion_authorized": false,
+  "downstream_consumption_authorized": false,
+  "next_allowed_gate": "market_state_on_demand_scale_validation_v0_1"
+}

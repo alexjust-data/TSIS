@@ -1,0 +1,22 @@
+﻿{
+    "book_id":  "architecture_patterns_python_gregory",
+    "title":  "Architecture Patterns with Python",
+    "author":  "Harry Percival / Bob Gregory",
+    "pdf_path":  "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\Architecture_Patterns_with_Python_-_Bob_Gregory.pdf",
+    "file_name":  "Architecture_Patterns_with_Python_-_Bob_Gregory.pdf",
+    "file_size_bytes":  10413445,
+    "sha256":  "2297f29f483d8b392f81153df7e8cc8309fac286ebc3da7f16fdf28317057a61",
+    "pages":  475,
+    "toc_items":  216,
+    "total_words":  74648,
+    "text_pages":  454,
+    "requires_ocr":  false,
+    "ocr_completed":  false,
+    "working_text_persisted":  false,
+    "status":  "indexed",
+    "artifact_contract":  [
+                              "summaries/\u003cbook_id\u003e_agent_summary.md",
+                              "index/\u003cbook_id\u003e_concept_index.md",
+                              "index/\u003cbook_id\u003e_source_map.md"
+                          ]
+}

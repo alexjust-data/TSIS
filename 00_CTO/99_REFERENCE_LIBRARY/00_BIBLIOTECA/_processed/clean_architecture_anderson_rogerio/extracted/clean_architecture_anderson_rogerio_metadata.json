@@ -1,0 +1,21 @@
+{
+  "book_id": "clean_architecture_anderson_rogerio",
+  "title": "Clean Architecture",
+  "authors": "Rogerio Anderson",
+  "source_type": "Libro PDF",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_OceanofPDF.com_Clean_Architecture_-_Anderson_Rogerio.pdf",
+  "file_name": "_OceanofPDF.com_Clean_Architecture_-_Anderson_Rogerio.pdf",
+  "sha256": "da631b3ab756254c89fcc1d68ca813dd4cace06c0dad7bd55c0152ce591e31ae",
+  "status": "needs_ocr",
+  "processed_date": "2026-07-27",
+  "page_count": 157,
+  "unit_label": "page",
+  "text_chars": 15,
+  "text_pages": 0,
+  "requires_ocr_review": true,
+  "working_text_persisted": false,
+  "themes": "clean architecture, SOLID, dependency inversion, layers, boundaries, use cases, testing, maintainability",
+  "utility_tsis": "refuerzo pragmatico para separar dominio TSIS de infraestructura y frameworks",
+  "extraction_quality": "no_text_layer_detected",
+  "ocr_note": "pypdf and pdftotext recovered only trivial text; OCR tool not available in this session."
+}

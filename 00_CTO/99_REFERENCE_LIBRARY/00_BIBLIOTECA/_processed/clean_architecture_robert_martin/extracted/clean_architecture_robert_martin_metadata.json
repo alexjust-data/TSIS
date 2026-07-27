@@ -1,0 +1,19 @@
+{
+  "book_id": "clean_architecture_robert_martin",
+  "title": "Clean Architecture",
+  "authors": "Robert C. Martin",
+  "source_type": "Libro EPUB",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_OceanofPDF.com_Clean_Architecture_-_Robert_C_Marti.epub",
+  "file_name": "_OceanofPDF.com_Clean_Architecture_-_Robert_C_Marti.epub",
+  "sha256": "6a51b6ba3e6a5d100d58d64992f2e44911afb2ecfa1323f6290a6805d78923e9",
+  "status": "indexed",
+  "processed_date": "2026-07-27",
+  "page_count": 104,
+  "unit_label": "epub_section",
+  "text_chars": 530028,
+  "text_pages": 50,
+  "requires_ocr_review": false,
+  "working_text_persisted": false,
+  "themes": "clean architecture, SOLID, components, dependency rule, boundaries, policy/detail, testing, architecture governance",
+  "utility_tsis": "fuente canonica para definir la regla de dependencias del core TSIS"
+}

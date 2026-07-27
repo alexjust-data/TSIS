@@ -1,2936 +1,1282 @@
-## 24/07/2026
+<!-- TSIS_ROUTE_CURRENT_STATE_V1_16_START -->
+# 99 Ruta De Trabajo - Estado Operativo Vigente
 
+Status: `route_v1_16_event_state_on_demand_bounded_candidate_dataset_review_closed`
+Date: `2026-07-27`
+Current gate: `event_state_on_demand_bounded_deterministic_rerun_authorization_v0_1`
 
+## Regla De Lectura
 
-Sí. El objetivo final no es simplemente “tener unas tablas”, sino llegar a esto:
+Este documento es la ruta operativa vigente para convertir TSIS en una capacidad repetible de generacion de Market State y Event State.
 
-```text
-Solicitud reproducible
-↓
-Contrato de generación
-↓
-Resolución de fuentes y perfiles
-↓
-Construcción determinista
-↓
-Validación automática
-↓
-Market State Tables
-+
-Event State Tables
-↓
-Manifest + lineage + hashes
-```
+Los detalles historicos completos viven en los readouts, manifests, ledgers, registry entries y contratos de cada gate. Este archivo no sustituye esa evidencia; resume que esta cerrado, que queda pendiente y cual es el siguiente gate.
 
-Actualmente estáis aquí:
+La pregunta que gobierna la ruta es:
 
 ```text
-MARKET STATE
-=
-perfil semántico y evidencia física candidata disponibles
-
-EVENT STATE
-=
-bounded execution-chain cerrada
-+
-candidate output validado y revisado
-+
-semantic profile promovido y artifact validation cerrada
-+
-operational registry / consumption policy design cerrado como referencia semantica
-+
-runtime capabilities architecture registrado sin ejecucion
-+
-market_state_on_demand_capability_design cerrado sin ejecucion
-+
-market_state_request_contract_design cerrado sin ejecucion
-+
-market_state_execution_plan_contract_design cerrado sin ejecucion
-+
-market_state_profile_resolver_design cerrado sin ejecucion
-+
-market_state_universe_resolver_design cerrado sin ejecucion
-+
-market_state_source_resolver_design cerrado sin ejecucion
-+
-market_state_partition_and_coverage_resolver_design cerrado sin ejecucion
-+
-market_state_materializer_design cerrado sin ejecucion
-+
-market_state_validator_design cerrado sin ejecucion
-+
-market_state_candidate_dataset_registry_design cerrado sin ejecucion
-+
-market_state_run_lifecycle_and_manifest_design cerrado sin ejecucion
-+
-market_state_on_demand_execution_chain_joint_review cerrado y aprobado para bounded execution authorization
-+
-market_state_bounded_on_demand_execution_authorization registrada
-+
-market_state_bounded_on_demand_execution cerrado como candidate parcial validado y registrado
-+
-sin official dataset/produccion/downstream
+Puedo pedir Market State / Event State
+-> TSIS resuelve perfiles, fuentes, universo y fechas
+-> construye o reutiliza
+-> valida
+-> registra
+-> entrega tablas reproducibles
 ```
 
-La ejecucion acotada de `session_opened`, XNYS, tres sesiones, tres instrumentos y nueve contextos ya cerro con 8 registros candidatos no oficiales y 1 contexto bloqueado. Esas filas son evidencia candidata validada; no son un dataset oficial de Event State.
+## Punto Actual
 
-# Mapa general
+Estamos en la fase de preparar el rerun determinista bounded de Event State on-demand. Market State on-demand ya esta promovido como runtime candidato con restricciones; Event State on-demand ya produjo su primer candidato bounded y ese candidato fue revisado como evidencia valida con restricciones.
+
+El ultimo gate cerrado fue:
 
 ```text
-PUNTO ACTUAL
-│
-├── A. Demostrar físicamente Event State
-│
-├── B. Promover Market State físico
-│
-├── C. Promover Event State físico
-│
-├── D. Construir materializadores parametrizados
-│
-├── E. Construir el Request Resolver
-│
-├── F. Construir validación y catálogo de resultados
-│
-└── G. Abrir generación bajo demanda
+event_state_on_demand_bounded_candidate_dataset_review_v0_1
 ```
 
----
-
-# FASE A — Demostrar la cadena física de Event State (TERMINADO)
-
-## A1. Ejecutar el bounded run autorizado (TERMINADO)
-
-Siguiente gate inmediato:
+Estado del ultimo cierre:
 
 ```text
-event_state_bounded_execution_chain_execution_v0_1
-```
-
-Debe ejecutar exclusivamente:
-
-```text
-event_type =
-session_opened
-
-exchange =
-XNYS
-
-sessions =
-3
-
-instruments =
-3
-
-maximum contexts =
-9
-```
-
-Debe producir:
-
-```text
-Event Instances
-Event Window Bindings
-Instrument Session Projections
-Market State Bindings
-Event State candidate records
-Blocked-binding reports
-Validation reports
-Determinism report
-Final manifest
-```
-
-No necesita producir nueve filas válidas.
-
-Necesita demostrar:
-
-```text
-9 requested contexts
-=
-emitted contexts
-+
-blocked contexts
-```
-
-La autorización ya ha congelado la fuente física de Market State, la política `exactly_one`, la ausencia de fallbacks y los límites cuantitativos.
-
-**TERMINADO**
-
-A1 ya está hecho.
-
-Estado real ahora:
-```
-Event State bounded execution
-    = CLOSED_PASS_WITH_RESTRICTIONS_CANDIDATE_OUTPUT
-
-accepted_run =
-event_state_bounded_execution_chain_execution_v0_1_20260724T185356Z
-
-candidate_records_jsonl = 8
-blocked_contexts = 1
-hard_validation_failures = 0
-event_state_parquet = 0
-official_dataset = false
-downstream = false
-```
-
-## A2. Validación física del bounded run (TERMINADO)
-
-Gate:
-
-```text
-event_state_bounded_execution_chain_physical_validation_v0_1
-```
-
-Comprobará:
-
-```text
-schema
-types
-identificadores
-unicidad
-exact-one bindings
-lineage
-hashes
-temporal legality
-state_role
-consumption_legality
-determinismo
-scope compliance
-```
-
-Resultado posible:
-
-```text
-CLOSED_PASS_WITH_RESTRICTIONS
-```
-
-o:
-
-```text
-CLOSED_BLOCKED_NO_PROMOTION
-```
-
-## A3. Revisión del dataset candidato (TERMINADO)
-
-Gate:
-
-```text
-event_state_candidate_dataset_review_v0_1
-```
-
-Aquí ya no se revisa solo si el software “funcionó”.
-
-Se revisa si el output representa correctamente:
-
-```text
-Event State
-=
-Market State
-+
-Event Instance
-+
-Event Window
-+
-Instrument Projection
-+
-State Role
-+
-Consumption Legality
-```
-
-## A4. Correcciones y segunda ejecución controlada (NO REQUERIDO POR AHORA)
-
-Es probable que el primer run encuentre:
-
-```text
-Market State rows inexistentes exactamente en el anchor
-problemas de projection as-of
-insuficiente prueba de decision_safe
-campos de lineage incompletos
-```
-
-Eso no sería un fracaso.
-
-La secuencia sería:
-
-```text
-finding
-↓
-contract correction
-↓
-new authorization/version
-↓
-bounded rerun
-↓
-physical validation
-```
-
-No deberíais ampliar el scope hasta conseguir una ejecución determinista y completamente reconciliada.
-
----
-
-# FASE B — Convertir Market State en una capacidad física oficial
-
-Ahora mismo Event State puede consumir solamente un parquet candidato no oficial:
-
-```text
-source_status =
-non_official_candidate_reference_only
-```
-
-Esto sirve para demostrar la arquitectura, pero no para ofrecer tablas bajo demanda.
-
-## B1. Cerrar el contrato físico de cada perfil de Market State
-
-Debéis definir qué perfiles podrán solicitarse.
-
-Por ejemplo:
-
-```text
-market_state_core
-market_state_daily_context
-market_state_intraday_core
-market_state_microstructure
-market_state_research
-```
-
-No todos tienen que existir inicialmente.
-
-Primera versión recomendable:
-
-```text
-market_state_core_four_intraday_profile_v0_1
-```
-
-Cada perfil debe declarar:
-
-```text
-profile_id
-profile_version
-grain
-required Information Objects
-required Representation Models
-required variables
-source tables/views
-temporal cutoff policy
-point-in-time rules
-quality gates
-physical schema
-partitioning
-identity policy
-fingerprint policy
-```
-
-## B2. Promoción física del primer perfil
-
-Secuencia:
-
-```text
-candidate materialization
-↓
-physical validation
-↓
-candidate dataset review
-↓
-profile promotion review
-↓
-official profile contract
-↓
-official physical dataset authority
-```
-
-Resultado:
-
-```text
-market_state_core_four_intraday_profile_v0_1
-=
-OFFICIAL_PHYSICAL_PROFILE
-```
-
-Solo entonces dejará de dependerse del parquet experimental Scale C.
-
-## B3. Construir el Market State Materializer
-
-Este será el componente que pueda recibir:
-
-```text
-profile_id
-universe
-date range
-resolution
-source view versions
-output destination
-```
-
-y producir:
-
-```text
-Market State table
-manifest
-validation report
-lineage
-hashes
-```
-
-La cadena será:
-
-```text
-Request
-↓
-Market State Profile Resolver
-↓
-Source Dataset/View Resolver
-↓
-Point-in-Time Universe Resolver
-↓
-Market State Builder
-↓
-Physical Materializer
-↓
-Validators
-↓
-Official or Candidate Output
-```
-
-## B4. Pruebas de escala
-
-No pasar directamente de 104 filas a todo 2005–2026.
-
-Escalas recomendadas:
-
-```text
-Scale A
-=
-pocos instrumentos, pocos días
-
-Scale B
-=
-decenas de instrumentos, varias semanas
-
-Scale C
-=
-muestra representativa amplia
-
-Scale D
-=
-un año o segmento completo
-
-Scale E
-=
-universo y rango completo
-```
-
-Cada escala debe probar:
-
-```text
-determinismo
-memoria
-tiempo
-particiones
-idempotencia
-restartability
-incremental builds
-duplicate prevention
-```
-
----
-
-# FASE C — Convertir Event State en capacidad física oficial
-
-Event State no puede oficializarse antes de disponer de una autoridad física estable de Market State.
-
-## C1. Promover el primer Event State Profile (TERMINADO)
-
-Primer perfil:
-
-```text
-event_state_core_four_intraday_profile_v0_1
-```
-
-**TERMINADO**
-
-```text
-promotion_run = event_state_profile_promotion_v0_1_20260724T203016Z
-promotion_status = OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS
+gate = event_state_on_demand_bounded_candidate_dataset_review_v0_1
+review_id = event_state_on_demand_bounded_candidate_dataset_review_v0_1_20260727T000000Z
+review_run_id = event_state_on_demand_bounded_candidate_dataset_review_v0_1_20260727T202013Z
+status = CLOSED_APPROVED_AS_EVENT_STATE_ON_DEMAND_BOUNDED_CANDIDATE_EVIDENCE_WITH_RESTRICTIONS_NO_PROMOTION
+reviewed_run = event_state_on_demand_bounded_execution_v0_1_20260727T200322Z
+reviewed_candidate_dataset_fingerprint = d5662103e1c45f90847b51e69b0e698243bde231758fa3c864e24c4a6839be33
+reviewed_logical_dataset_fingerprint = 1b981958488e69f8f553c9197861bbffeed2d5388437c1113f9e21422b9cf970
+requested_contexts = 9
+represented_contexts = 8
+unavailable_contexts = 1
+unaccounted_contexts = 0
+event_state_candidate_records = 8
+hard_review_failures = 0
+candidate_dataset_review_approved = true
+reuse_eligibility_after_review = pending_deterministic_rerun
+registry_entry_mutations = 0
+materializer_executions = 0
+market_state_candidate_files_read_by_review = 0
+event_state_records_emitted_by_review = 0
+review_matrix_sha256 = 926f90110e463441e35307b82add2bdada4371c19ca0f048a50a2783243585a6
+context_ledger_sha256 = f3be8d23bd30398c8721f45aa07a4ff181059adbec0b2c624038747357da4064
+fingerprint_comparison_sha256 = c5a972a47df54d185ec1c5febb783e70d0ea611523052f6fc8947f582dd78374
+final_manifest_sha256 = 9219790bfdec5bea4035c87ab16fa59a070bb2a81cf5a3cb08242c29aa3ed0df
 official_event_state_dataset = false
-official_parquet = false
-downstream_consumption = false
-artifact_validation_run = event_state_profile_artifact_validation_v0_1_20260724T204410Z
-artifact_validation_status = CLOSED_PASS_WITH_RESTRICTIONS
-artifact_validation_registry_artifacts_checked = 4
-artifact_validation_hash_mismatches = 0
-artifact_validation_invariant_failures = 0
-operational_registry_or_consumption_policy_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION
-operational_registry_or_consumption_policy_design_profile_reference_allowed = true
-operational_registry_or_consumption_policy_design_physical_consumption_allowed = false
-runtime_capabilities_architecture = RECORDED_ARCHITECTURE_NO_EXECUTION
-runtime_capabilities_layer = 08_RUNTIME_CAPABILITIES
-market_state_on_demand_capability_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION
-market_state_request_contract_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION
-market_state_execution_plan_contract_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION
-market_state_profile_resolver_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION
-market_state_universe_resolver_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION
-market_state_source_resolver_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION
-market_state_partition_and_coverage_resolver_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION
-market_state_materializer_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION
-market_state_validator_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION
-market_state_candidate_dataset_registry_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION
-market_state_run_lifecycle_and_manifest_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION
-market_state_on_demand_execution_chain_joint_review = CLOSED_APPROVED_FOR_BOUNDED_EXECUTION_AUTHORIZATION_WITH_RESTRICTIONS_NO_EXECUTION
-market_state_bounded_on_demand_execution_authorization = CONSUMED_BY_RUN
-market_state_bounded_on_demand_execution = CLOSED_PASS_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED
-market_state_bounded_on_demand_execution_run = market_state_bounded_on_demand_execution_v0_1_20260724T232123Z
-market_state_request_records_created = 1
-market_state_execution_plans_created = 1
-market_state_profile_resolver_executions = 1
-market_state_profile_registry_runtime_reads = 0
-market_state_universe_resolver_executions = 1
-market_state_universe_manifests_created = 0
-market_state_instrument_session_contexts_created = 9
-market_state_calendar_runtime_reads = 0
-market_state_instrument_master_runtime_reads = 0
-market_state_instrument_identity_runtime_reads = 0
-market_state_source_resolver_executions = 1
-market_state_source_registry_runtime_reads = 0
-market_state_source_contract_runtime_reads = 0
-market_state_source_schema_runtime_reads = 0
-market_state_source_consumption_policy_runtime_reads = 0
-market_state_source_parquet_files_read = 0
-market_state_resolved_source_sets_created = 0
-market_state_partition_coverage_resolver_executions = 1
-market_state_partition_manifests_created = 0
-market_state_coverage_manifests_created = 0
-market_state_existing_dataset_registry_runtime_reads = 0
-market_state_source_manifest_runtime_reads = 0
-market_state_partition_status_transitions = 0
-market_state_execution_plan_instances_created = 1
-market_state_materializer_executions = 1
-market_state_builder_executions = 1
-market_state_staging_directories_created = 0
-market_state_candidate_data_files_written = 2
-market_state_candidate_parquet_files_written = 1
-market_state_output_manifests_created = 0
-market_state_lineage_manifests_created = 0
-market_state_content_hashes_computed = 0
-market_state_validation_reports_created = 5
-market_state_validator_executions = 1
-market_state_candidate_files_read = 0
-market_state_parquet_files_read = 0
-market_state_partition_status_changes = 0
-market_state_quarantine_actions = 0
-market_state_dataset_registry_entries_written = 1
-market_state_registry_runtime_reads = 0
-market_state_datasets_registered = 1
-market_state_datasets_promoted = 0
-market_state_datasets_superseded = 0
-market_state_quarantine_transitions = 0
-market_state_official_dataset = false
-market_state_run_records_created = 1
-market_state_run_manifests_created = 3
-market_state_final_manifests_created = 1
-market_state_heartbeat_records_written = 1
-market_state_run_state_transitions = 4
-market_state_recovery_actions = 0
-market_state_execution_authorizations_consumed = 1
-market_state_execution_plans_consumed = 1
-market_state_joint_reviews_closed = 1
-market_state_joint_review_hard_findings = 0
-market_state_joint_review_restriction_findings = 2
-market_state_bounded_on_demand_execution_authorizations_recorded = 1
-market_state_bounded_on_demand_execution_authorized_max_contexts = 9
-market_state_bounded_on_demand_execution_runs = 1
-market_state_bounded_on_demand_execution_requested_contexts = 9
-market_state_bounded_on_demand_execution_materialized_rows = 8
-market_state_bounded_on_demand_execution_unavailable_contexts = 1
-market_state_bounded_on_demand_execution_hard_validation_failures = 0
-market_state_bounded_on_demand_execution_reuse_eligibility = pending_determinism_validation
-market_state_bounded_on_demand_candidate_dataset_review = CLOSED_APPROVED_AS_BOUNDED_CANDIDATE_EVIDENCE_WITH_RESTRICTIONS_NO_PROMOTION
-market_state_bounded_on_demand_candidate_dataset_review_id = market_state_bounded_on_demand_candidate_dataset_review_v0_1_20260725T000000Z
-market_state_bounded_on_demand_candidate_dataset_review_failures = 0
-market_state_bounded_on_demand_candidate_dataset_review_hard_failures = 0
-market_state_bounded_on_demand_deterministic_rerun_authorization = CONSUMED_BY_RERUN
-market_state_bounded_on_demand_deterministic_rerun_authorization_baseline_run = market_state_bounded_on_demand_execution_v0_1_20260724T232123Z
-market_state_bounded_on_demand_deterministic_rerun_contract_content_sha256_excluding_hash_field = b3bc623ca83885f8773d8bd95f48418e1fa15c6038840d35da7cad860595f231
-market_state_bounded_on_demand_deterministic_rerun_execution = CLOSED_PASS_DETERMINISTIC_RERUN_MATCH_WITH_RESTRICTIONS
-market_state_bounded_on_demand_deterministic_rerun_run = market_state_bounded_on_demand_deterministic_rerun_v0_1_20260725T053434Z
-market_state_bounded_on_demand_deterministic_rerun_blocked_attempt = market_state_bounded_on_demand_deterministic_rerun_v0_1_20260725T052825Z
-market_state_bounded_on_demand_deterministic_rerun_attempts = 2
-market_state_bounded_on_demand_deterministic_rerun_successful_runs = 1
-market_state_bounded_on_demand_deterministic_rerun_blocked_comparison_normalization_attempts = 1
-market_state_bounded_on_demand_determinism_comparisons_created = 2
-market_state_bounded_on_demand_determinism_successful_comparisons_created = 1
-market_state_bounded_on_demand_determinism_status = PROVEN_FOR_BOUNDED_SCOPE
-market_state_bounded_on_demand_determinism_blocking_failures = 0
-market_state_bounded_on_demand_determinism_runtime_only_differences = 2
-market_state_bounded_on_demand_determinism_comparison_fingerprint = ce87938504dbf8fc4e8e962e294aa81f8bc127cdfce69a7aa48157e655329dfb
-market_state_bounded_on_demand_determinism_scientific_dataset_fingerprint = a9182b19e434ea77ca2bf5b3395b84a4592560bbf28e5cb0d80ee5561c5fe1b7
-market_state_bounded_on_demand_reuse_transition_ready = true
-market_state_bounded_on_demand_reuse_eligibility_changes = 0
-market_state_bounded_on_demand_determinism_validation = CLOSED_APPROVED_DETERMINISM_FOR_BOUNDED_SCOPE_WITH_RESTRICTIONS_NO_REUSE_TRANSITION
-market_state_bounded_on_demand_determinism_validation_id = market_state_bounded_on_demand_determinism_validation_v0_1_20260725T000000Z
-market_state_bounded_on_demand_determinism_validation_failures = 0
-market_state_bounded_on_demand_determinism_validation_hard_failures = 0
-market_state_bounded_on_demand_determinism_validation_reuse_eligibility_after_validation = pending_idempotency_reuse_test
-market_state_bounded_on_demand_determinism_validation_reuse_eligibility_changes = 0
-market_state_bounded_on_demand_idempotency_reuse_test_authorization = CONSUMED_BY_REUSE_TEST
-market_state_bounded_on_demand_idempotency_reuse_test_authorization_baseline_run = market_state_bounded_on_demand_execution_v0_1_20260724T232123Z
-market_state_bounded_on_demand_idempotency_reuse_test_authorization_scientific_dataset_fingerprint = a9182b19e434ea77ca2bf5b3395b84a4592560bbf28e5cb0d80ee5561c5fe1b7
-market_state_bounded_on_demand_idempotency_reuse_test_contract_content_sha256_excluding_hash_field = c836f3ae2d5821a0d2d7b66ee1c2db1c1866fe83b36a2d1fbb27f31bf678b98d
-market_state_bounded_on_demand_idempotency_reuse_test_execution = CLOSED_PASS_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS
-market_state_bounded_on_demand_idempotency_reuse_test_run = market_state_bounded_on_demand_idempotency_reuse_test_v0_1_20260725T060318Z
-market_state_bounded_on_demand_idempotency_status = PROVEN_FOR_BOUNDED_EXACT_MATCH_REUSE
-market_state_bounded_on_demand_idempotency_reuse_test_runs = 1
-market_state_bounded_on_demand_idempotency_reuse_test_candidate_registry_metadata_reads = 1
-market_state_bounded_on_demand_idempotency_reuse_test_materializer_executions = 0
-market_state_bounded_on_demand_idempotency_reuse_test_source_market_data_rows_read = 0
-market_state_bounded_on_demand_idempotency_reuse_test_source_candidate_records_read = 0
-market_state_bounded_on_demand_idempotency_reuse_test_candidate_parquet_files_read = 0
-market_state_bounded_on_demand_idempotency_reuse_test_new_candidate_parquet_files = 0
-market_state_bounded_on_demand_idempotency_reuse_test_new_candidate_dataset_registry_entries = 0
-market_state_bounded_on_demand_idempotency_reuse_test_evidence_entries_written = 1
-market_state_bounded_on_demand_idempotency_reuse_test_reuse_eligibility_after_test = pending_reuse_eligibility_transition_review
-market_state_bounded_on_demand_idempotency_reuse_test_reuse_eligibility_changes = 0
-market_state_bounded_on_demand_idempotency_reuse_test_report_fingerprint = 2fe42810eff703a99aa64ebc67dda9126567c7548b6f99fbe589664490c6f537
-market_state_bounded_on_demand_idempotency_reuse_test_evidence_entry_fingerprint = 97f3f0cb5bde4cac4a666f95f16fee2ee71eea821701355d7e8495963aff92b4
-market_state_bounded_on_demand_reuse_eligibility_transition_review = CLOSED_APPROVED_REUSE_ELIGIBILITY_TRANSITION_FOR_BOUNDED_EXACT_MATCH_WITH_RESTRICTIONS_NO_PROMOTION
-market_state_bounded_on_demand_reuse_eligibility_transition_review_run = market_state_bounded_on_demand_reuse_eligibility_transition_review_v0_1_20260725T061233Z
-market_state_bounded_on_demand_reuse_eligibility_transition_review_blocked_attempt = market_state_bounded_on_demand_reuse_eligibility_transition_review_v0_1_20260725T061154Z
-market_state_bounded_on_demand_reuse_eligibility_transition_review_technical_write_failure_attempt = market_state_bounded_on_demand_reuse_eligibility_transition_review_v0_1_20260725T061119Z
-market_state_bounded_on_demand_reuse_eligibility_after_review = eligible_for_bounded_exact_match_reuse
-market_state_bounded_on_demand_reuse_eligibility_transition_scope = bounded_exact_match_only
-market_state_bounded_on_demand_reuse_eligibility_transition_registry_entry_mutations = 0
-market_state_bounded_on_demand_reuse_eligibility_transition_official_dataset = false
-market_state_bounded_on_demand_reuse_eligibility_transition_production = false
-market_state_bounded_on_demand_reuse_eligibility_transition_downstream = false
-market_state_bounded_on_demand_reuse_eligibility_transition_matrix_fingerprint = e8f1010c078a7ab9e68fa8ef072d7d9fb212f8623341617254e550aa26924f9a
-market_state_bounded_on_demand_reuse_eligibility_transition_record_fingerprint = a1ea1e56d7f1b44cd0c91a37e0f6ecc2f4cbbbb16fd6be247f4e4e8959d8d845
-market_state_requests_executed = 1
-market_state_datasets_written = 1
-next_gate = market_state_on_demand_incremental_overlap_execution_authorization_v0_1
+production = false
+downstream = false
+next_gate = event_state_on_demand_bounded_deterministic_rerun_authorization_v0_1
 ```
 
-Inicialmente podría admitir únicamente:
+Intentos invalidos previos conservados como evidencia:
 
 ```text
-event_type:market_data:session_opened
+attempt_run_id = market_state_on_demand_scale_validation_v0_1_20260727T133242Z
+status = CLOSED_FAILED_PRE_MATERIALIZATION_SCHEMA_CONTRACT_FIELD_MISMATCH
+valid_gate_closure = false
+retry = succeeded_by_20260727T133641Z
+
+attempt_run_id = event_state_on_demand_bounded_execution_v0_1_20260727T200207Z
+status = FAILED_TECHNICAL_RUNNER_BUG_BEFORE_FINAL_MANIFEST
+valid_gate_closure = false
+retry = succeeded_by_20260727T200322Z
+
+attempt_run_id = event_state_on_demand_bounded_candidate_dataset_review_v0_1_20260727T201823Z
+status = FAILED_TECHNICAL_REVIEWER_MANIFEST_SHAPE_BUG_BEFORE_REVIEW_CLOSURE
+valid_gate_closure = false
+retry = succeeded_by_20260727T202013Z
+
+attempt_run_id = event_state_on_demand_bounded_candidate_dataset_review_v0_1_20260727T201924Z
+status = FAILED_TECHNICAL_REVIEWER_FAILURE_MANIFEST_FIELD_BUG_BEFORE_REVIEW_CLOSURE
+valid_gate_closure = false
+retry = succeeded_by_20260727T202013Z
 ```
 
-Eso está bien.
-
-Un perfil oficial no necesita contener todos los eventos futuros.
-
-Debe declarar:
-
-```text
-accepted Event Types
-compatible Market State profiles
-Event Instance policies
-Window Definitions
-Projection policies
-state_role rules
-consumption_legality rules
-physical schema
-identity and fingerprint rules
-```
-
-## C2. Crear el Event State Materializer
-
-Cadena:
+## Que Ya Demostro TSIS
 
 ```text
-Event State Request
-↓
-Event Type Registry Resolver
-↓
-Event Instance Resolver
-↓
-Event Window Resolver
-↓
-Instrument Projection Resolver
-↓
-Market State Profile Resolver
-↓
-Exact Binding Engine
-↓
-Event State Builder
-↓
-Validators
-↓
-Materializer
+1. Request real -> resolvers -> execution plan -> materializer -> validator -> registry.
+2. Primer bounded run: 9 contextos solicitados = 8 materializados + 1 unavailable.
+3. Candidate dataset review del primer bounded run.
+4. Deterministic rerun exact-match con reconstruccion fresca.
+5. Exact-match reuse sin reconstruir.
+6. Incremental overlap: reutilizar baseline + construir solo delta.
+7. Review del candidato incremental compuesto: 8 baseline + 3 delta + 1 unavailable.
+8. Reuse/idempotency test del overlap: hit sin reconstruccion.
+9. Segunda extension incremental: 11 reutilizados + 3 delta2 + 1 unavailable.
+10. Review del candidato de segunda generacion: 14 representados + 1 unavailable.
+11. Lineage-chain validation: 8 baseline + 3 delta1 + 3 delta2 + 1 unavailable, sin gaps.
+12. Scale validation: 120 contextos solicitados = 104 representados + 16 unavailable, con 14 reutilizados, 90 delta materializados y 0 hard failures.
+13. Capability promotion review: capacidad runtime promovida con restricciones para candidate generation, sin dataset oficial ni downstream.
+14. Capability consumption policy: consumo restringido establecido para metadata, candidate-runtime reuse y candidate generation bajo autorizacion separada.
+15. Event State on-demand capability design authorization: autorizacion design-only registrada, sin ejecucion ni materializacion.
+16. Event State on-demand capability design: capacidad runtime Event State disenada con Market State Dependency Resolver y fronteras fisicas cerradas.
+17. Event State request contract design: solicitud Event State normalizada para session_opened / exchange_session, sin resolver dependencias ni ejecutar.
+18. Event State dependency resolution design: bloque resolved_event_state_dependencies definido para perfil, registry, instancia, ventana, proyeccion y subrequest Market State, sin ejecucion.
+19. Event State execution plan contract design: contrato congelado del plan Event State definido para que el futuro materializer no re-resuelva request, dependencias, Market State, bindings, builders, validators ni outputs.
+20. Event State materializer design: futuro materializer definido como consumidor estricto de un plan congelado, con candidate output, exact-one binding, lineage y manifests, pero sin ejecucion.
+21. Event State validator design: futuro validator definido como evaluador independiente de candidate Event State outputs contra plan congelado, bindings, lineage, temporal legality y Market State dependency evidence, sin lectura ni validacion ejecutada.
+22. Event State candidate dataset registry design: futuro registry definido para registrar identidad, fingerprints, context ledger, binding evidence, Market State dependency refs, lineage, validation status y elegibilidades de candidate Event State datasets, sin escribir entradas reales.
+23. Event State on-demand execution-chain joint review: cadena Request -> Dependencies -> Plan -> Materializer -> Validator -> Registry aprobada para abrir bounded execution authorization, con 0 hard findings, 3 restricciones y sin ejecucion.
+24. Event State on-demand bounded execution authorization: primera ejecucion bounded congelada para session_opened / XNYS / 3 sesiones / 3 instrumentos-proyeccion / max 9 contextos, sin ejecucion todavia.
+25. Event State on-demand bounded execution preflight correction: consumo bounded de Market State, dependency mode, lifecycle binding, window id y output limits resueltos por authority bundle, sin ejecucion.
+26. Event State on-demand bounded execution: primera request runtime real cerrada con 9 contextos solicitados = 8 Event State candidate records + 1 unavailable, 0 source market rows, 0 fallbacks, 0 hard failures y 1 candidate registry entry.
+27. Event State on-demand bounded candidate dataset review: candidato aprobado como evidencia bounded con restricciones, 9 = 8 represented + 1 unavailable, 0 hard review failures, sin mutar registry y sin promocion.
 ```
 
-## C3. Ampliar Event Types de forma controlada
-
-No se debe añadir cada nuevo evento directamente al builder.
-
-Cada uno debe pasar:
-
-```text
-Candidate Event Type
-↓
-Admission Review
-↓
-Accepted / Accepted With Restrictions
-↓
-Instance Binding Design
-↓
-Window Binding Design
-↓
-Market State Compatibility
-↓
-Bounded Execution
-↓
-Validation
-↓
-Profile inclusion review
-```
-
-Ejemplos futuros:
+## Que Todavia No Demostro
 
 ```text
-halt_resumed
-vwap_cross_from_below
-high_of_day_break
-first_pullback_after_expansion
+full/unbounded Market State request execution
+Event State on-demand bounded deterministic rerun
+Event State on-demand reuse, incrementalidad y scale validation
+Event State on-demand generalizado
+official physical Market State dataset
+production
+downstream consumption
 ```
 
-Pero cada uno evoluciona independientemente.
-
-## C4. Resolver `halt_resumed`
-
-Antes de admitirlo:
+## Siguiente Gate
 
 ```text
-resume effective timestamp
-published timestamp
-received timestamp
-point-in-time availability
-halt/resume pairing
-multiple halts per session
-venue coverage
-UTC normalization
+event_state_on_demand_bounded_deterministic_rerun_authorization_v0_1
 ```
-
-Hasta entonces no debe aparecer en Event State oficial.
-
----
-
-# FASE D — Construir el sistema de solicitudes
-
-Aquí empieza realmente la capacidad “a demanda”.
-
-## D1. Canonical Request Contract
-
-Necesitáis un contrato único de solicitud.
-
-Ejemplo conceptual para Market State:
-
-```json
-{
-  "request_type": "market_state",
-  "profile_id": "market_state_core_four_intraday_profile_v0_1",
-  "start_date": "2021-01-01",
-  "end_date": "2021-01-31",
-  "universe_definition": "daily_in_play_universe_v0_1",
-  "resolution": "1m",
-  "output_mode": "candidate"
-}
-```
-
-Para Event State:
-
-```json
-{
-  "request_type": "event_state",
-  "profile_id": "event_state_core_four_intraday_profile_v0_1",
-  "event_type_ids": [
-    "event_type:market_data:session_opened"
-  ],
-  "start_date": "2021-01-01",
-  "end_date": "2021-01-31",
-  "universe_definition": "daily_in_play_universe_v0_1",
-  "output_mode": "candidate"
-}
-```
-
-## D2. Request Resolver
-
-Debe resolver:
-
-```text
-¿Existe el perfil?
-¿Está aceptado?
-¿Qué versión debe utilizarse?
-¿Qué datos físicos necesita?
-¿Qué Event Types están permitidos?
-¿Qué rango temporal tiene cobertura?
-¿Qué universe definition es legal?
-¿Qué output status puede producir?
-```
-
-Si algo no está autorizado:
-
-```text
-request =
-BLOCKED_BEFORE_EXECUTION
-```
-
-## D3. Plan de ejecución
-
-Antes de construir datos, el sistema produce:
-
-```text
-execution_plan.json
-```
-
-Con:
-
-```text
-resolved profile
-resolved sources
-partitions
-estimated rows
-estimated bytes
-calendar sessions
-instrument universe
-Event Types
-Window Definitions
-output location
-validators
-quantitative limits
-```
-
-## D4. Identificador determinista de request
-
-Cada solicitud debe producir:
-
-```text
-request_fingerprint
-```
-
-basado en:
-
-```text
-profile version
-source versions
-universe definition
-date range
-resolution
-event types
-window definitions
-builder version
-```
-
-Así:
-
-```text
-misma solicitud
-+
-mismas autoridades
-=
-mismo request fingerprint
-```
-
-Esto permite detectar si el resultado ya existe.
-
----
-
-# FASE E — Ejecución reproducible bajo demanda
-
-## E1. Run lifecycle
-
-Cada petición debe recorrer:
-
-```text
-REQUESTED
-↓
-RESOLVED
-↓
-AUTHORIZED
-↓
-RUNNING
-↓
-VALIDATING
-↓
-CLOSED_PASS
-```
-
-o:
-
-```text
-BLOCKED
-FAILED
-QUARANTINED
-```
-
-## E2. Idempotencia
-
-Si solicitas dos veces exactamente lo mismo:
-
-```text
-same request fingerprint
-```
-
-el sistema debe:
-
-```text
-devolver el output existente
-```
-
-o:
-
-```text
-reconstruirlo y demostrar igualdad
-```
-
-Nunca generar dos datasets aparentemente distintos sin razón.
-
-## E3. Incrementalidad
-
-Solicitar:
-
-```text
-2021-01-01 → 2021-12-31
-```
-
-y posteriormente:
-
-```text
-2022-01-01 → 2022-12-31
-```
-
-no debería exigir reconstruir 2021.
-
-Necesitáis:
-
-```text
-partition-aware materialization
-incremental manifests
-partition hashes
-partition validation
-```
-
-## E4. Restartability
-
-Un run interrumpido debe poder continuar desde:
-
-```text
-last certified partition
-```
-
-No desde cero.
-
-## E5. Outputs estándar
-
-Cada solicitud debe devolver:
-
-```text
-data files
-final_manifest.json
-validation_report.json
-lineage_manifest.json
-request_contract.json
-execution_plan.json
-run_readout.md
-```
-
-Y para Event State:
-
-```text
-blocked_bindings_report
-Event Instance manifest
-Window Binding manifest
-Projection manifest
-```
-
----
-
-# FASE F — Catálogo y registro de datasets generados
-
-Necesitáis un catálogo local para responder:
-
-```text
-¿Qué tablas existen?
-¿Con qué perfil?
-¿Para qué fechas?
-¿Con qué universe?
-¿Con qué fuentes?
-¿Pasaron validación?
-¿Están obsoletas?
-```
-
-## Dataset Registry
-
-Cada resultado debería registrar:
-
-```text
-dataset_id
-request_fingerprint
-dataset_kind
-profile_id
-profile_version
-coverage
-universe
-row count
-file paths
-file hashes
-source lineage
-builder version
-validation status
-promotion status
-created_at
-supersession status
-```
-
-Estados:
-
-```text
-candidate
-validated_candidate
-official
-quarantined
-superseded
-deprecated
-```
-
-Este catálogo es imprescindible para que “a demanda” no signifique construir ciegamente cada vez.
-
----
-
-# FASE G — Interfaz operativa
-
-No necesitáis una GUI.
-
-La primera interfaz puede ser CLI o Python.
-
-## CLI conceptual
-
-```text
-tsis build market-state \
-  --profile market_state_core_four_intraday_profile_v0_1 \
-  --from 2021-01-01 \
-  --to 2021-01-31 \
-  --universe daily_in_play_universe_v0_1
-```
-
-```text
-tsis build event-state \
-  --profile event_state_core_four_intraday_profile_v0_1 \
-  --events session_opened \
-  --from 2021-01-01 \
-  --to 2021-01-31 \
-  --universe daily_in_play_universe_v0_1
-```
-
-## Python API conceptual
-
-```python
-result = tsis.build_market_state(
-    profile_id="market_state_core_four_intraday_profile_v0_1",
-    start_date="2021-01-01",
-    end_date="2021-01-31",
-    universe_id="daily_in_play_universe_v0_1",
-)
-```
-
-```python
-result = tsis.build_event_state(
-    profile_id="event_state_core_four_intraday_profile_v0_1",
-    event_type_ids=["event_type:market_data:session_opened"],
-    start_date="2021-01-01",
-    end_date="2021-01-31",
-    universe_id="daily_in_play_universe_v0_1",
-)
-```
-
-La CLI y la API deben llamar al mismo núcleo.
-
-No deben contener lógica científica propia.
-
----
-
-# Roadmap concreto desde hoy
-
-## Tramo 1 — Cerrar la prueba Event State (TERMINADO)
-
-```text
-1. Execute bounded Event State chain (TERMINADO)
-2. Physical validation (TERMINADO)
-3. Candidate dataset review (TERMINADO)
-4. Fix findings (NO REQUERIDO POR AHORA)
-5. Deterministic bounded rerun (NO REQUERIDO POR AHORA)
-```
-
-**Resultado:**
-
-```text
-Event State physical chain proven
-```
-
-## Tramo 2 — Oficializar Market State
-
-```text
-6. Freeze first official Market State physical profile
-7. Promote physical Market State source
-8. Build parameterized Market State materializer
-9. Validate at progressively larger scales
-10. Certify incremental and deterministic builds
-```
-
-**Resultado:**
-
-```text
-Market State can be requested on demand
-```
-
-## Tramo 3 — Oficializar Event State
-
-```text
-11. Promote first Event State profile (TERMINADO)
-12. Build parameterized Event State materializer
-13. Run candidate scale tests
-14. Validate exact bindings and temporal legality
-15. Certify incremental and deterministic builds
-```
-
-**Resultado:**
-
-```text
-Event State can be requested on demand
-for accepted Event Types
-```
-
-## Tramo 4 — Request and Registry Layer
-
-```text
-16. Define canonical request contract
-17. Build request resolver
-18. Build execution planner
-19. Build run lifecycle
-20. Build dataset registry
-21. Build cache/idempotency logic
-22. Build partition and restart logic
-```
-
-**Resultado:**
-
-```text
-same request
-=
-same governed result
-```
-
-## Tramo 5 — User-facing invocation
-
-```text
-23. CLI
-24. Python API
-25. notebooks as client
-26. operational documentation
-27. end-to-end acceptance tests
-```
-
-**Resultado final:**
-
-```text
-Solicito Market State o Event State
-↓
-TSIS resuelve el contrato
-↓
-construye o reutiliza el dataset
-↓
-valida
-↓
-registra
-↓
-entrega tablas reproducibles
-```
-
----
-
-# Cuándo podremos decir que está “terminado”
-
-## Market State on demand estará terminado cuando
-
-```text
-un perfil oficial pueda solicitarse
-para un rango y universo arbitrarios autorizados;
-```
-
-```text
-las fuentes se resuelvan automáticamente;
-```
-
-```text
-la construcción sea point-in-time;
-```
-
-```text
-los outputs sean deterministas;
-```
-
-```text
-el resultado tenga manifest, lineage y hashes;
-```
-
-```text
-pueda construirse incrementalmente;
-```
-
-```text
-una solicitud repetida reutilice o reproduzca el mismo resultado.
-```
-
-## Event State on demand estará terminado cuando, además
-
-```text
-solo acepte Event Types admitidos;
-```
-
-```text
-genere Event Instances deterministas;
-```
-
-```text
-resuelva ventanas, proyecciones y Market State exactamente una vez;
-```
-
-```text
-bloquee ambigüedades;
-```
-
-```text
-preserve state_role y consumption_legality;
-```
-
-```text
-no permita leakage;
-```
-
-```text
-registre todos los bindings y bloqueos.
-```
-
-# La idea central
-
-No faltan cientos de documentos conceptuales.
-
-Lo que falta desde este punto es transformar la arquitectura gobernada en tres capacidades operativas:
-
-```text
-1. Materialize Market State
-```
-
-```text
-2. Materialize Event State
-```
-
-```text
-3. Resolve and execute requests
-```
-
-El orden correcto es:
-
-```text
-probar una ejecución mínima
-↓
-promover los perfiles físicos
-↓
-generalizar los builders
-↓
-añadir request resolver
-↓
-añadir registry e incrementalidad
-↓
-abrir consumo bajo demanda
-```
-
-El próximo paso inmediato no cambia:
-
-```text
-event_state_bounded_execution_chain_execution_v0_1
-```
-
-Pero el verdadero hito posterior será:
-
-```text
-market_state_on_demand_materialization_v0_1
-```
-
-porque Event State dependerá siempre de que Market State pueda resolverse y materializarse de forma estable.
-
-
-
-
-#######
-
-
-
-## Mi ajuste a la ruta sería este:
-
-1. Validar físicamente el bounded Event State output
-2. Revisar el candidate Event State dataset
-3. Si pasa, cerrar “Event State physical chain proven”
-4. Volver a Market State on-demand/materializer
-5. Solo después generalizar Event State on-demand
-
-Estoy de acuerdo con la idea central:
-
-Solicitud reproducible
-↓
-Contrato
-↓
-Resolver
-↓
-Build determinista
-↓
-Validación
-↓
-Manifest + lineage + hashes
-
-Pero no saltaría demasiado rápido a “promoción física oficial”. Primero demostraría la capacidad operativa parametrizada:
-
-profile resolver
-source resolver
-execution planner
-materializer
-validator
-dataset registry
-idempotency/cache
-
-Para Market State, el hito real no es copiar el parquet Scale C ni llamarlo oficial. Es crear:
-
-market_state_on_demand_materialization_v0_1
-
-capaz de construir un perfil autorizado para un scope solicitado, con manifests y validación.
-
-Para Event State, haría lo mismo después, porque siempre dependerá de Market State.
-
-Ruta corregida:
-
-A. Event State bounded physical validation
-B. Event State candidate dataset review
-C. Market State materializer/request capability
-D. Market State scale/idempotency validation
-E. Event State materializer/request capability
-F. Dataset registry + request resolver común
-G. CLI/API
-
-La frase clave: no promover primero tablas; primero promover capacidades reproducibles de generación y validación. Luego las tablas oficiales salen como
-consecuencia gobernada de esas capacidades.
-
-
-
-Sí. **Tu corrección es mejor que mi formulación anterior.**
-
-La diferencia central es esta:
-
-```text
-promover tablas
-```
-
-no debe ser el objetivo inmediato.
-
-El objetivo inmediato debe ser:
-
-```text
-promover una capacidad reproducible
-de generación, validación y registro
-```
-
-Y solo después:
-
-```text
-las tablas oficiales
-=
-outputs gobernados de esa capacidad
-```
-
-# Ruta corregida y definitiva
-
-```text
-A. Event State bounded physical validation
-↓
-B. Event State candidate dataset review
-↓
-C. Market State on-demand materialization capability
-↓
-D. Market State scale, determinism and idempotency validation
-↓
-E. Event State on-demand materialization capability
-↓
-F. Common request resolver and dataset registry
-↓
-G. CLI / Python API
-```
-
-Esta ruta es más sólida porque evita convertir un artefacto físico puntual en “producto oficial” antes de haber demostrado que puede reconstruirse.
-
----
-
-# A. Event State bounded physical validation
-
-El bounded run autorizado debe ejecutarse y validarse físicamente.
 
 Objetivo:
 
 ```text
-demostrar que la cadena diseñada
-puede producir Event State real
-sin romper sus contratos
+Autorizar un rerun determinista bounded que reconstruya, no reutilice, el candidato Event State on-demand desde la misma request, dependencias, fingerprints, policies y builders.
 ```
 
-Debe comprobarse:
+Debe congelar:
 
 ```text
-Event Instance determinista
-Event Window determinista
-Instrument Projection válida
-Market State binding exactly-one
-state_role correcto
-consumption_legality correcta
-lineage completa
-hashes reproducibles
-blocked contexts reconciliados
+baseline_review_id = event_state_on_demand_bounded_candidate_dataset_review_v0_1_20260727T000000Z
+baseline_execution_run = event_state_on_demand_bounded_execution_v0_1_20260727T200322Z
+baseline_candidate_dataset_fingerprint = d5662103e1c45f90847b51e69b0e698243bde231758fa3c864e24c4a6839be33
+baseline_logical_dataset_fingerprint = 1b981958488e69f8f553c9197861bbffeed2d5388437c1113f9e21422b9cf970
+requested_contexts = 9
+represented_contexts = 8
+unavailable_contexts = 1
+reuse_policy = force_rebuild_for_determinism_test
 ```
 
-El resultado no es todavía una capacidad on-demand.
+Fronteras:
 
-Es:
-
-```text
-Event State physical chain proven
-```
-
----
-
-# B. Event State candidate dataset review
-
-Después de la validación física:
-
-```text
-candidate output
-↓
-scientific and architectural review
-```
-
-Aquí se decide si el output representa realmente Event State y no solo si el script terminó.
-
-Debe responder:
-
-```text
-¿La identidad es correcta?
-¿Los timestamps son legales?
-¿Los bindings son exactos?
-¿Existe leakage?
-¿La projection conserva la identidad exchange-session?
-¿Los bloqueos son correctos?
-¿El dataset es reproducible?
-```
-
-Si pasa:
-
-```text
-event_state_physical_chain
-=
-PROVEN_WITH_RESTRICTIONS
-```
-
-Después se detiene Event State temporalmente.
-
-No se generaliza todavía.
-
----
-
-# C. Market State on-demand materialization capability
-
-Este es el siguiente gran bloque real.
-
-No consiste en promocionar el parquet Scale C.
-
-Consiste en crear:
-
-```text
-market_state_on_demand_materialization_v0_1
-```
-
-La capacidad debe aceptar una solicitud como:
-
-```text
-profile_id
-date range
-universe
-resolution
-source versions
-output mode
-```
-
-y producir:
-
-```text
-Market State dataset
-manifest
-lineage
-validation report
-hashes
-registry entry
-```
-
-## Componentes mínimos
-
-```text
-Market State Request Contract
-↓
-Profile Resolver
-↓
-Source Resolver
-↓
-Execution Planner
-↓
-Market State Builder
-↓
-Materializer
-↓
-Validator
-↓
-Dataset Registry
-```
-
-## Principio importante
-
-El `profile resolver` decide:
-
-```text
-qué representación se solicita
-```
-
-El `source resolver` decide:
-
-```text
-qué fuentes físicas autorizadas
-pueden construirla
-```
-
-El `execution planner` decide:
-
-```text
-cómo se divide y ejecuta el trabajo
-```
-
-El `materializer` construye:
-
-```text
-las tablas
-```
-
-El `validator` determina:
-
-```text
-si son utilizables
-```
-
-El `dataset registry` conserva:
-
-```text
-qué se construyó
-con qué inputs
-y con qué resultado
-```
-
----
-
-# D. Market State scale, determinism and idempotency validation
-
-Una vez exista el materializer, no se declara terminado inmediatamente.
-
-Debe probarse por escalas.
-
-```text
-Scale A
-pocos instrumentos y pocos días
-```
-
-```text
-Scale B
-decenas de instrumentos y semanas
-```
-
-```text
-Scale C
-muestra representativa
-```
-
-```text
-Scale D
-periodo amplio
-```
-
-```text
-Scale E
-universo completo autorizado
-```
-
-## Pruebas obligatorias
-
-### Determinismo
-
-```text
-same request
-+
-same source versions
-+
-same builder version
-=
-same dataset hashes
-```
-
-### Idempotencia
-
-```text
-same request fingerprint
-=
-reuse existing validated output
-or prove equivalent rebuild
-```
-
-### Incrementalidad
-
-```text
-existing partitions
-+
-new requested period
-=
-build only missing partitions
-```
-
-### Restartability
-
-```text
-interrupted run
-=
-resume from last certified partition
-```
-
-### Scope compliance
-
-El sistema no puede leer:
-
-```text
-otras fechas
-otros instrumentos
-otras vistas
-otras versiones
-```
-
-fuera del plan resuelto.
-
-### Reconciliation
-
-```text
-requested contexts
-=
-emitted
-+
-blocked
-+
-quarantined
-```
-
-Siempre.
-
-## Hito de cierre
-
-```text
-market_state_on_demand_materialization_v0_1
-=
-PROVEN_OPERATIONAL_CAPABILITY
-```
-
-En ese momento ya puede decirse:
-
-```text
-TSIS puede construir Market State bajo demanda
-```
-
-aunque todavía solo para perfiles y scopes autorizados.
-
----
-
-# E. Event State on-demand materialization capability
-
-Solo después se generaliza Event State.
-
-Debe reutilizar Market State como servicio interno gobernado.
-
-```text
-Event State Request
-↓
-Event Type Registry Resolver
-↓
-Event Instance Resolver
-↓
-Window Resolver
-↓
-Instrument Projection Resolver
-↓
-Market State Request/Resolver
-↓
-Exact Binding Engine
-↓
-Event State Builder
-↓
-Validator
-↓
-Dataset Registry
-```
-
-## Diferencia fundamental
-
-Event State no debería reconstruir Market State por su cuenta.
-
-Debe solicitarlo mediante la capacidad ya probada:
-
-```text
-Event State Materializer
-↓
-Market State Request Contract
-↓
-Market State On-Demand Capability
-```
-
-Así se evita tener dos formas distintas de construir Market State.
-
-## Primer alcance
-
-Inicialmente:
-
-```text
-event_type =
-session_opened
-```
-
-Posteriormente, cada Event Type nuevo deberá incorporarse mediante:
-
-```text
-admission
-binding design
-bounded execution
-validation
-profile inclusion
-```
-
-## Hito de cierre
-
-```text
-event_state_on_demand_materialization_v0_1
-=
-PROVEN_OPERATIONAL_CAPABILITY
-```
-
----
-
-# F. Common request resolver and dataset registry
-
-Aquí matizaría ligeramente tu orden.
-
-Los componentes pueden existir inicialmente dentro de Market State, pero después deben extraerse y convertirse en infraestructura común.
-
-```text
-Common Request Layer
-├── Request Contract
-├── Request Fingerprint
-├── Profile Resolver
-├── Execution Planner
-├── Run Lifecycle
-├── Dataset Registry
-├── Cache / Idempotency
-└── Output Resolver
-```
-
-Market State y Event State utilizarán la misma infraestructura, con resolvers especializados.
-
-## Request Resolver común
-
-Recibe:
-
-```text
-request_type =
-market_state | event_state
-```
-
-y resuelve:
-
-```text
-perfil
-versiones
-fuentes
-rango
-universo
-dependencias
-particiones
-outputs existentes
-permisos
-```
-
-## Dataset Registry común
-
-Debe poder responder:
-
-```text
-¿Existe ya esta solicitud?
-¿Está validada?
-¿Está completa?
-¿Qué particiones faltan?
-¿Qué versión la construyó?
-¿Está superseded?
-¿Puede consumirse downstream?
-```
-
-Estados posibles:
-
-```text
-planned
-running
-candidate
-validated_candidate
-official
-quarantined
-failed
-superseded
-deprecated
-```
-
-## Cache
-
-No debería ser una cache opaca.
-
-Debe ser:
-
-```text
-content-addressed governed reuse
-```
-
-Basada en:
-
-```text
-request_fingerprint
-source fingerprints
-builder version
-profile version
-```
-
----
-
-# G. CLI y API
-
-La CLI y la API son la última capa, no la arquitectura principal.
-
-## CLI
-
-```text
-tsis build market-state \
-  --profile market_state_core_four_intraday_profile_v0_1 \
-  --from 2021-01-01 \
-  --to 2021-01-31 \
-  --universe scale_c_sample_v0_1
-```
-
-```text
-tsis build event-state \
-  --profile event_state_core_four_intraday_profile_v0_1 \
-  --event-type event_type:market_data:session_opened \
-  --from 2021-01-01 \
-  --to 2021-01-31 \
-  --universe scale_c_sample_v0_1
-```
-
-## Python API
-
-```python
-market_state_result = tsis.build_market_state(
-    profile_id="market_state_core_four_intraday_profile_v0_1",
-    start_date="2021-01-01",
-    end_date="2021-01-31",
-    universe_id="scale_c_sample_v0_1",
-)
-```
-
-```python
-event_state_result = tsis.build_event_state(
-    profile_id="event_state_core_four_intraday_profile_v0_1",
-    event_type_ids=["event_type:market_data:session_opened"],
-    start_date="2021-01-01",
-    end_date="2021-01-31",
-    universe_id="scale_c_sample_v0_1",
-)
-```
-
-Ambas interfaces deben invocar exactamente el mismo request resolver.
-
----
-
-# Roadmap de gates recomendado
-
-## Tramo inmediato: Event State bounded proof y perfil semantico (TERMINADO)
-
-```text
-1. event_state_bounded_execution_chain_execution_v0_1 (TERMINADO)
-->
-2. event_state_bounded_execution_chain_physical_validation_v0_1 (TERMINADO)
-->
-3. event_state_candidate_dataset_review_v0_1 (TERMINADO)
-->
-4. event_state_profile_promotion_review_v0_1 (TERMINADO)
-->
-5. event_state_profile_promotion_v0_1 (TERMINADO)
-->
-6. event_state_profile_artifact_validation_v0_1 (TERMINADO)
-->
-7. event_state_operational_registry_or_consumption_policy_design_v0_1 (TERMINADO)
-->
-8. runtime_capabilities_architecture_v0_1 (TERMINADO)
-->
-9. market_state_on_demand_capability_design_v0_1 (TERMINADO)
-->
-10. market_state_request_contract_design_v0_1 (TERMINADO)
-
-11. market_state_execution_plan_contract_design_v0_1 (TERMINADO)
-
-12. market_state_profile_resolver_design_v0_1 (TERMINADO)
-
-13. market_state_universe_resolver_design_v0_1 (TERMINADO)
-
-14. market_state_source_resolver_design_v0_1 (TERMINADO)
-
-15. market_state_partition_and_coverage_resolver_design_v0_1 (TERMINADO)
-
-16. market_state_materializer_design_v0_1 (TERMINADO)
-
-17. market_state_validator_design_v0_1 (TERMINADO)
-```
-
-Resultado:
-
-```text
-Event State physical chain proven
-```
-
----
-
-## Tramo Market State on-demand
-
-`	ext
-9. market_state_on_demand_capability_design_v0_1 (TERMINADO)
-->
-10. market_state_request_contract_design_v0_1 (TERMINADO)
-->
-11. market_state_execution_plan_contract_design_v0_1 (TERMINADO)
-->
-12. market_state_profile_resolver_design_v0_1 (TERMINADO)
-->
-13. market_state_universe_resolver_design_v0_1 (TERMINADO)
-->
-14. market_state_source_resolver_design_v0_1 (TERMINADO)
-->
-15. market_state_partition_and_coverage_resolver_design_v0_1 (TERMINADO)
-->
-16. market_state_materializer_design_v0_1 (TERMINADO)
-->
-17. market_state_validator_design_v0_1 (TERMINADO)
-->
-18. market_state_candidate_dataset_registry_design_v0_1 (TERMINADO)
-->
-19. market_state_run_lifecycle_and_manifest_design_v0_1 (TERMINADO)
-->
-20. market_state_on_demand_execution_chain_joint_review_v0_1 (TERMINADO)
-->
-21. market_state_bounded_on_demand_execution_authorization_v0_1 (TERMINADO)
-->
-22. market_state_bounded_on_demand_execution_v0_1 (TERMINADO)
-->
-23. market_state_bounded_on_demand_candidate_dataset_review_v0_1 (TERMINADO)
-->
-24. market_state_bounded_on_demand_deterministic_rerun_authorization_v0_1 (TERMINADO)
-->
-25. market_state_bounded_on_demand_deterministic_rerun_v0_1 (TERMINADO)
-->
-26. market_state_bounded_on_demand_determinism_validation_v0_1 (TERMINADO)
-->
-27. market_state_bounded_on_demand_idempotency_reuse_test_authorization_v0_1 (TERMINADO)
-->
-28. market_state_bounded_on_demand_idempotency_reuse_test_v0_1 (TERMINADO)
-->
-29. market_state_bounded_on_demand_reuse_eligibility_transition_review_v0_1 (TERMINADO)
-->
-30. market_state_on_demand_incremental_overlap_execution_authorization_v0_1 (SIGUIENTE, NO ABIERTO)
-->
-31. market_state_on_demand_incremental_overlap_execution_v0_1
-->
-32. market_state_on_demand_scale_validation_v0_1
-->
-33. market_state_on_demand_capability_promotion_v0_1
-`
-
-No necesariamente cada punto necesita un documento enorme.
-
-Algunos pueden agruparse en un único gate si el alcance queda bien controlado.
-
-Resultado:
-
-```text
-Market State under request
-=
-operational and governed
-```
-
----
-
-## Tramo Event State on-demand
-
-```text
-22. event_state_on_demand_capability_design_authorization_v0_1
-↓
-23. event_state_request_contract_design_v0_1
-↓
-24. event_state_dependency_resolution_design_v0_1
-↓
-25. event_state_materializer_design_v0_1
-↓
-26. event_state_validator_design_v0_1
-↓
-27. event_state_on_demand_joint_review_v0_1
-↓
-28. event_state_on_demand_bounded_execution_v0_1
-↓
-29. event_state_on_demand_scale_validation_v0_1
-↓
-30. event_state_on_demand_idempotency_validation_v0_1
-↓
-31. event_state_on_demand_capability_promotion_v0_1
-```
-
-Resultado:
-
-```text
-Event State under request
-=
-operational for accepted Event Types
-```
-
----
-
-## Infraestructura común
-
-```text
-28. common_request_resolver_v0_1
-↓
-29. common_dataset_registry_v0_1
-↓
-30. common_run_lifecycle_v0_1
-↓
-31. common_cache_and_idempotency_v0_1
-↓
-32. common_partition_and_restart_v0_1
-```
-
-Parte de esta infraestructura habrá nacido durante Market State.
-
-En esta fase se generaliza y elimina duplicación.
-
----
-
-## Interfaces
-
-```text
-33. TSIS CLI v0.1
-↓
-34. TSIS Python API v0.1
-↓
-35. notebook client examples
-↓
-36. end-to-end acceptance suite
-```
-
----
-
-# Qué significa “promover capacidades”
-
-Una capacidad se promueve cuando puede demostrar:
-
-```text
-valid request
-↓
-resolved plan
-↓
-authorized sources
-↓
-deterministic build
-↓
-validated result
-↓
-registered output
-```
-
-y también:
-
-```text
-invalid or ambiguous request
-↓
-blocked before unsafe execution
-```
-
-Una tabla individual no demuestra eso.
-
-Puede ser correcta por casualidad o por ejecución manual.
-
-La capacidad promovida demuestra que puede producirla de nuevo.
-
----
-
-# Cuándo aparecen las tablas oficiales
-
-Después de promover la capacidad, una solicitud puede indicar:
-
-```text
-output_mode =
-official_candidate
-```
-
-El resultado pasa por:
-
-```text
-materialization
-↓
-validation
-↓
-dataset review
-↓
-promotion decision
-```
-
-Entonces:
-
-```text
-official table
-=
-validated output
-of a promoted generation capability
-```
-
-No:
-
-```text
-official table
-=
-file manually selected and renamed
-```
-
-# Formulación final
-
-Tu frase debería convertirse en el principio rector de esta fase:
-
-```text
-TSIS no promoverá primero tablas físicas aisladas.
-
-TSIS promoverá capacidades reproducibles
-de resolución, generación, validación y registro.
-
-Las tablas oficiales serán resultados gobernados
-de esas capacidades promovidas.
-```
-
-Y la ruta actual queda:
-
-```text
-Event State bounded proof
-↓
-Market State on-demand capability
-↓
-Market State operational validation
-↓
-Event State on-demand capability
-↓
-Common request and registry infrastructure
-↓
-CLI / API
-↓
-official datasets generated on demand
-```
-
-Ese es el roadmap que seguiría.
-
-
-
-
-
-# oooooooooooooooooooooooooo
-
-
-
-
-Sí. La dirección es correcta, pero haría un ajuste importante: **antes de diseñar resolvers separados, congelaría primero el contrato de solicitud y el contrato del plan de ejecución**. Así evitáis que cada resolver invente su propia semántica.
-
-La secuencia que seguiría es esta:
-
-```text
-1. Market State Request Contract
-↓
-2. Market State Execution Plan Contract
-↓
-3. Profile Resolver Design
-↓
-4. Universe Resolver Design
-↓
-5. Source Resolver Design
-↓
-6. Partition / Coverage Resolver Design
-↓
-7. Materializer Design
-↓
-8. Validator Design
-↓
-9. Candidate Dataset Registry Design
-↓
-10. Joint Design Review
-↓
-11. Bounded On-Demand Execution Authorization
-↓
-12. Bounded On-Demand Execution
-```
-
-# 1. Siguiente gate inmediato
-
-```text
-market_state_request_contract_design_v0_1
-```
-
-Correcto.
-
-Este gate debe responder exclusivamente:
-
-```text
-¿Qué ha solicitado el usuario o consumidor?
-```
-
-No:
-
-```text
-¿Cómo lo vamos a construir?
-```
-
-No:
-
-```text
-¿Qué archivos vamos a leer?
-```
-
-No:
-
-```text
-¿Dónde vamos a escribir?
-```
-
-Eso pertenece al futuro `Execution Plan`.
-
-## Campos que debe contener la solicitud
-
-Separaría los campos en cinco bloques.
-
-### Identidad de la solicitud
-
-```text
-request_id
-request_type
-request_contract_version
-requested_at_utc
-requested_by
-```
-
-### Representación solicitada
-
-```text
-profile_id
-profile_version_policy
-resolution
-grain
-```
-
-`profile_version_policy` debería permitir algo parecido a:
-
-```text
-exact
-latest_accepted
-latest_compatible
-```
-
-Para v0.1 probablemente solo autorizaría:
-
-```text
-exact
-```
-
-Así se evita que la misma solicitud cambie de significado en el futuro.
-
-### Scope científico
-
-```text
-universe_definition_id
-instrument_ids
-start_date
-end_date
-session_dates
-calendar_id
-exchange_scope
-```
-
-Aquí debe existir una regla clara:
-
-```text
-universe_definition_id
-```
-
-o:
-
-```text
-explicit instrument_ids
-```
-
-pero no ambos, salvo que uno se utilice explícitamente como filtro del otro.
-
-### Política temporal y de fuentes
-
-```text
-point_in_time_policy_id
-source_version_policy
-calendar_authority_id
-as_of_policy_id
-```
-
-La solicitud no debería nombrar paths físicos.
-
-Puede decir:
-
-```text
-source_version_policy = exact_governed
-```
-
-pero el Source Resolver decide qué artefactos cumplen esa política.
-
-### Resultado solicitado
-
-```text
-output_mode
-output_format
-partition_policy
-validation_level
-reuse_policy
-```
-
-Por ejemplo:
-
-```text
-output_mode =
-candidate
-```
-
-```text
-reuse_policy =
-reuse_if_exact_validated_match
-```
-
-# 2. El `request_fingerprint`
-
-Es uno de los elementos más importantes.
-
-Debe representar el significado completo de la solicitud, no detalles de ejecución.
-
-Conceptualmente:
-
-```text
-request_fingerprint =
-hash(
-    normalized_request_contract
-)
-```
-
-Debe incluir:
-
-```text
-request_type
-profile_id
-exact profile version
-universe definition or instruments
-date/session scope
-resolution
-calendar authority
-point-in-time policy
-source version policy
-output mode
-validation level
-```
-
-No debería incluir:
-
-```text
-requested_at_utc
-run_id
-output path
-machine
-temporary folder
-```
-
-Porque dos solicitudes semánticamente idénticas deben producir el mismo fingerprint aunque se realicen en días distintos.
-
-## Regla
-
-```text
-same normalized request
-=
-same request_fingerprint
-```
-
-Pero:
-
-```text
-same request_fingerprint
-```
-
-no garantiza todavía:
-
-```text
-same dataset
-```
-
-Eso dependerá posteriormente de las fuentes y versiones resueltas.
-
-Por eso necesitáis también:
-
-```text
-execution_plan_fingerprint
-```
-
-# 3. Diseñaría inmediatamente después el Execution Plan Contract
-
-Yo movería:
-
-```text
-market_state_execution_plan_contract_v0_1
-```
-
-antes de los resolvers.
-
-Porque el Request Contract representa:
-
-```text
-qué se pide
-```
-
-y el Execution Plan representa:
-
-```text
-cómo se ha resuelto
-```
-
-La relación será:
-
-```text
-Request
-↓
-Resolvers
-↓
-Execution Plan
-```
-
-Pero debéis definir previamente qué forma debe tener el resultado de los resolvers.
-
-## Execution Plan mínimo
-
-```text
-execution_plan_id
-request_id
-request_fingerprint
-resolved_profile_id
-resolved_profile_version
-resolved_universe
-resolved_sessions
-resolved_instruments
-resolved_sources
-resolved_source_versions
-resolved_partitions
-resolved_calendar
-builder_version
-validator_versions
-expected_output_schema
-expected_output_partitions
-quantitative_limits
-estimated_work
-execution_plan_fingerprint
-```
-
-El plan debe ser completamente explícito.
-
-Nada debería resolverse de nuevo durante el materializado.
-
-```text
-Materializer
-=
-consume plan
-```
-
-No:
-
-```text
-Materializer
-=
-vuelve a buscar fuentes
-y decide qué construir
-```
-
-# 4. Profile Resolver
-
-Después:
-
-```text
-market_state_profile_resolver_design_v0_1
-```
-
-Debe resolver:
-
-```text
-profile_id
-+
-version policy
-```
-
-en:
-
-```text
-exact profile contract
-exact schema
-required Information Objects
-required variables
-required source aliases
-required builders
-quality rules
-```
-
-Debe bloquear si:
-
-```text
-profile does not exist
-profile is not authorized
-version is ambiguous
-required contract is missing
-profile status is incompatible with output_mode
-```
-
-# 5. Añadiría un Universe Resolver explícito
-
-En tu lista no aparece, pero es necesario:
-
-```text
-market_state_universe_resolver_design_v0_1
-```
-
-Porque el universo point-in-time es una de las partes más delicadas del backtest.
-
-Debe resolver:
-
-```text
-universe_definition
-+
-date/session scope
-```
-
-en:
-
-```text
-instrument-session membership
-```
-
-Y debe preservar:
-
-```text
-symbol history
-listing lifecycle
-exchange membership
-delistings
-corporate identity
-point-in-time eligibility
-```
-
-No debe confundirse con Source Resolver.
-
-```text
-Universe Resolver
-=
-qué instrumentos pertenecen al scope
-```
-
-```text
-Source Resolver
-=
-qué datasets y vistas construyen las variables
-```
-
-# 6. Source Resolver
-
-```text
-market_state_source_resolver_design_v0_1
-```
-
-Debe consumir:
-
-```text
-profile requirements
-+
-resolved scope
-+
-source version policy
-```
-
-y producir:
-
-```text
-exact dataset contracts
-exact view contracts
-exact physical paths or dataset IDs
-exact versions
-exact fingerprints
-coverage assessment
-```
-
-Debe bloquear ante:
-
-```text
-missing source
-ambiguous version
-coverage gap
-unauthorized physical source
-schema incompatibility
-```
-
-No debería hacer fallback silencioso.
-
-Por ejemplo:
-
-```text
-quote_guarded_1m unavailable
-```
-
-no puede transformarse automáticamente en:
-
-```text
-raw ohlcv_1m
-```
-
-sin una política explícita del perfil.
-
-# 7. Partition / Coverage Resolver
-
-También lo haría explícito:
-
-```text
-market_state_partition_and_coverage_resolver_design_v0_1
-```
-
-Porque una fuente puede existir, pero no cubrir:
-
-```text
-todo el rango
-todos los instrumentos
-todas las sesiones
-```
-
-Debe producir:
-
-```text
-requested partitions
-available partitions
-missing partitions
-blocked partitions
-already materialized partitions
-```
-
-Este componente será fundamental para:
-
-```text
-incremental builds
-restartability
-cache reuse
-```
-
-# 8. Materializer
-
-Solo entonces:
-
-```text
-market_state_materializer_design_v0_1
-```
-
-El materializer no interpreta la solicitud original.
-
-Consume exclusivamente:
-
-```text
-frozen execution plan
-```
-
-Su responsabilidad:
-
-```text
-read authorized inputs
-apply authorized builders
-construct canonical records
-write candidate partitions
-emit lineage
-```
-
-No debe:
-
-```text
-select profile
-choose sources
-change universe
-invent fallbacks
-promote datasets
-```
-
-# 9. Validator
-
-Debe existir como componente independiente:
-
-```text
-market_state_validator_design_v0_1
-```
-
-Validaciones mínimas:
-
-```text
-schema
-grain
-identity uniqueness
-temporal cutoff
-point-in-time legality
-required fields
-source lineage
-content fingerprints
-partition completeness
-request reconciliation
-determinism
-```
-
-Regla de reconciliación:
-
-```text
-requested contexts
-=
-emitted
-+
-blocked
-+
-quarantined
-```
-
-# 10. Dataset Registry
-
-Yo lo incluiría antes de la primera ejecución bounded, aunque sea una versión mínima:
-
-```text
-market_state_candidate_dataset_registry_design_v0_1
-```
-
-Porque la primera ejecución on-demand ya debería registrar:
-
-```text
-request fingerprint
-execution plan fingerprint
-dataset fingerprint
-coverage
-files
-hashes
-validation status
-```
-
-De lo contrario, ejecutaréis primero y diseñaréis después cómo reconocer el resultado.
-
-## Estados iniciales
-
-```text
-planned
-running
-candidate
-validated_candidate
-blocked
-failed
-quarantined
-```
-
-Todavía no hace falta:
-
-```text
-official
-production
-downstream_enabled
-```
-
-# 11. Joint Review
-
-Antes de autorizar ejecución:
-
-```text
-market_state_on_demand_execution_chain_joint_review_v0_1
-```
-
-Debe verificar la coherencia completa:
-
-```text
-Request Contract
-↓
-Profile Resolver
-↓
-Universe Resolver
-↓
-Source Resolver
-↓
-Coverage Resolver
-↓
-Execution Plan
-↓
-Materializer
-↓
-Validator
-↓
-Dataset Registry
-```
-
-# 12. Primera bounded execution
-
-Después:
-
-```text
-market_state_bounded_on_demand_execution_authorization_v0_1
-```
-
-La primera solicitud debería reutilizar, en la medida de lo posible, el scope Scale C ya conocido, pero no copiar el parquet anterior.
-
-El objetivo sería demostrar:
-
-```text
-request
-↓
-resolution
-↓
-plan
-↓
-fresh materialization
-↓
-validation
-↓
-registry
-```
-
-Luego repetir exactamente la misma solicitud para probar:
-
 ```text
-idempotency
+no reuse del candidato existente
+no promocion de dataset
+no produccion
+no downstream
 ```
-
-Y una solicitud parcialmente solapada para probar:
 
-```text
-incrementality
-```
+## Ruta Maestra Hasta Capacidad Operativa Repetible
 
-# Ruta inmediata que recomiendo
+### 0. Reconciliacion Institucional (TERMINADO)
 
 ```text
-1. market_state_request_contract_design_v0_1
-↓
-2. market_state_execution_plan_contract_design_v0_1
-↓
-3. market_state_profile_resolver_design_v0_1
-↓
-4. market_state_universe_resolver_design_v0_1
-↓
-5. market_state_source_resolver_design_v0_1
-↓
-6. market_state_partition_and_coverage_resolver_design_v0_1
-↓
-7. market_state_materializer_design_v0_1
-↓
-8. market_state_validator_design_v0_1
-↓
-9. market_state_candidate_dataset_registry_design_v0_1
-↓
-10. market_state_on_demand_execution_chain_joint_review_v0_1
-↓
-11. market_state_bounded_on_demand_execution_authorization_v0_1
-↓
-12. bounded execution
-↓
-13. deterministic rerun
-↓
-14. overlapping incremental request
+tables_000_018_evidence_reconciliation = CLOSED_WITH_FINDINGS_NO_PROMOTION
+official_datasets_inferred = 0
+Data Foundation <-> Applied Architecture reconciled
 ```
-
-# Qué haría ahora mismo
 
-Abriría:
+### 1. Admission Y Gobernanza De Variables (TERMINADO)
 
 ```text
-market_state_request_contract_design_v0_1
+variable_attribute_admission_policy = CLOSED
+variable_attribute_admission_record_template = CLOSED
+new_variables_admitted = 0
+schema_changes_authorized = false
+builder_execution_authorized = false
+materialization_authorized = false
 ```
 
-con estas fronteras:
+### 2. Market State Semantico (TERMINADO)
 
 ```text
-request records created = 0
-resolvers executed = 0
-sources read = 0
-execution plans created = 0
-Market State records emitted = 0
-datasets written = 0
-registry writes = 0
+market_state_core_four_intraday_profile_v0_1 = OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS
+official_physical_dataset = false
 production = false
 downstream = false
 ```
 
-Y con un output principal:
+### 3. Event State Semantico Y Gramatica (TERMINADO PARA `session_opened`)
 
 ```text
-market_state_request_contract_v0_1.json
+event_type:market_data:session_opened = ACCEPTED_WITH_RESTRICTIONS
+event_type:regulatory:halt_resumed = INVESTIGATIONAL_CANDIDATE_NOT_ADMITTED
+Event Instance Binding Design = CLOSED
+Event Window Binding Design = CLOSED
+Market State Compatibility Design = CLOSED
+Instrument Session Projection Design = CLOSED
+Event State Integration Design = CLOSED
+event_state_core_four_intraday_profile_v0_1 = OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS
+physical Event State dataset = false
 ```
 
-acompañado por:
+### 4. Runtime Architecture De Market State (TERMINADO)
 
 ```text
-authorization
-scope
-design document
-readout
+Runtime Capabilities Architecture = CLOSED
+Market State Request Contract = CLOSED
+Execution Plan Contract = CLOSED
+Profile Resolver Design = CLOSED
+Universe Resolver Design = CLOSED
+Source Resolver Design = CLOSED
+Partition/Coverage Resolver Design = CLOSED
+Materializer Design = CLOSED
+Validator Design = CLOSED
+Candidate Dataset Registry Design = CLOSED
+Run Lifecycle And Manifest Design = CLOSED
+Joint Review = CLOSED
 ```
 
-La frase rectora de este gate debería ser:
+### 5. Market State Bounded On-Demand Proof (TERMINADO)
 
 ```text
-A Market State Request declares
-what representation is required.
-
-It does not decide
-how that representation will be built.
+run_id = market_state_bounded_on_demand_execution_v0_1_20260724T232123Z
+status = CLOSED_PASS_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED
+requested_contexts = 9
+materialized_candidate_rows = 8
+unavailable_contexts = 1
+candidate_registry_entries = 1
+hard_validation_failures = 0
 ```
 
-Eso preservará la separación entre:
+### 6. Candidate Dataset Review Del Bounded Proof (TERMINADO)
 
 ```text
-intent
+status = CLOSED_APPROVED_AS_BOUNDED_CANDIDATE_EVIDENCE_WITH_RESTRICTIONS
+candidate_dataset_accepted_as_evidence = true
+reuse_eligibility = pending_determinism_validation
+official_dataset = false
+production = false
+downstream = false
 ```
 
-y:
+### 7. Determinism Exact-Match (TERMINADO)
 
 ```text
-execution
+status = CLOSED_PASS_DETERMINISTIC_RERUN_MATCH_WITH_RESTRICTIONS
+scientific_determinism = PROVEN_FOR_BOUNDED_SCOPE
+reuse_transition_ready = true
+official_dataset = false
+production = false
+downstream = false
 ```
 
-que será la base de toda la capacidad on-demand.
+### 8. Idempotency / Exact-Match Reuse (TERMINADO)
+
+```text
+status = CLOSED_PASS_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS
+materializer_executions = 0
+source_market_data_rows_read = 0
+new_candidate_dataset_registry_entries = 0
+reuse_eligibility = eligible_for_bounded_exact_match_reuse
+official_dataset = false
+production = false
+downstream = false
+```
+
+### 9. Incremental Overlap Execution (TERMINADO)
+
+```text
+status = CLOSED_PASS_INCREMENTAL_OVERLAP_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED
+requested_contexts = 12
+reusable_validated_contexts = 8
+delta_materialized_candidate_rows = 3
+unavailable_contexts = 1
+combined_candidate_contexts_represented = 11
+candidate_registry_entries_written = 1
+official_dataset = false
+production = false
+downstream = false
+```
+
+### 10. Incremental Overlap Candidate Dataset Review (TERMINADO)
+
+```text
+status = CLOSED_PASS_INCREMENTAL_OVERLAP_CANDIDATE_DATASET_VALIDATED_WITH_RESTRICTIONS
+requested_contexts = 12
+represented_contexts = 11
+baseline_rows = 8
+delta_rows = 3
+unavailable_contexts = 1
+unaccounted_contexts = 0
+hard_review_failures = 0
+official_dataset = false
+production = false
+downstream = false
+```
+
+### 11. Incremental Overlap Idempotency / Reuse (TERMINADO)
+
+```text
+status = CLOSED_PASS_INCREMENTAL_OVERLAP_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS
+materializer_executions = 0
+delta_materializer_executions = 0
+source_market_data_rows_read = 0
+new_candidate_dataset_registry_entries = 0
+baseline_registry_entry_mutations = 0
+combined_candidate_registry_entry_mutations = 0
+official_dataset = false
+production = false
+downstream = false
+```
+
+### 12. Second-Generation Incremental Extension Authorization (TERMINADO)
+
+```text
+status = AUTHORIZED_WITH_RESTRICTIONS_NO_EXECUTION
+contract_hash = 159a42f05f68208c062c51bbc6e18138a394793cacff17de7aa90d5e6a83d41d
+base_combined_candidate = market_state_candidate_dataset_incremental_v0_1_f2cfd5cf55d0c1be
+delta2_session = 2024-03-11
+requested_contexts = 15
+expected_reusable_contexts = 11
+expected_delta2_to_build_contexts = 3
+expected_unavailable_contexts = 1
+official_dataset = false
+production = false
+downstream = false
+```
+
+### 13. Second-Generation Incremental Extension Execution (TERMINADO)
+
+```text
+accepted_run_id = market_state_on_demand_second_generation_incremental_extension_v0_1_20260727T103901Z
+status = CLOSED_PASS_SECOND_GENERATION_INCREMENTAL_EXTENSION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED
+requested_contexts = 15
+reusable_validated_contexts = 11
+second_delta_materialized_candidate_rows = 3
+combined_candidate_contexts_represented = 14
+unavailable_contexts = 1
+candidate_dataset_fingerprint = 5e8da235219628220bac462f342cab469fbd2a48d047eef0772cb5a2cffe893f
+scientific_dataset_fingerprint = 55658a2dc000af1464f3bdb7231c3dcaca5e8aae8623f621f170083c5a20accc
+hard_validation_failures = 0
+official_dataset = false
+production = false
+downstream = false
+```
+
+### 14. Second-Generation Candidate Dataset Review (TERMINADO)
+
+```text
+review_id = market_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260727T000000Z
+status = CLOSED_PASS_SECOND_GENERATION_INCREMENTAL_CANDIDATE_DATASET_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION
+requested_contexts = 15
+represented_contexts = 14
+base_combined_reused_contexts = 11
+second_delta_materialized_rows = 3
+unavailable_contexts = 1
+unaccounted_contexts = 0
+hard_review_failures = 0
+candidate_dataset_validated = true
+official_dataset = false
+production = false
+downstream = false
+```
+
+### 15. Incremental Lineage-Chain Validation (TERMINADO)
+
+```text
+validation_id = market_state_on_demand_incremental_lineage_chain_validation_v0_1_20260727T000000Z
+status = CLOSED_PASS_INCREMENTAL_LINEAGE_CHAIN_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION
+requested_contexts = 15
+represented_contexts = 14
+baseline_origin_rows = 8
+delta1_origin_rows = 3
+delta2_origin_rows = 3
+unavailable_contexts = 1
+unaccounted_contexts = 0
+hard_validation_failures = 0
+official_dataset = false
+production = false
+downstream = false
+```
+
+### 16. Scale Validation De Market State On-Demand (TERMINADO)
+
+```text
+run_id = market_state_on_demand_scale_validation_v0_1_20260727T133641Z
+status = CLOSED_PASS_SCALE_VALIDATION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED
+requested_contexts = 120
+represented_contexts = 104
+reusable_validated_contexts = 14
+scale_delta_materialized_contexts = 90
+unavailable_contexts = 16
+unaccounted_contexts = 0
+hard_validation_failures = 0
+full_universe_build = false
+official_dataset = false
+production = false
+downstream = false
+```
+
+### 17. Market State Capability Promotion Review (TERMINADO)
+
+```text
+run_id = market_state_on_demand_capability_promotion_review_v0_1_20260727T140338Z
+status = CLOSED_PASS_CAPABILITY_PROMOTED_WITH_RESTRICTIONS_NO_DATASET_PROMOTION
+capability_status_after_review = PROMOTED_WITH_RESTRICTIONS_CANDIDATE_GENERATION_ONLY
+hard_review_failures = 0
+official_dataset = false
+production = false
+downstream = false
+```
+
+No promociona automaticamente un dataset fisico. Promueve la capacidad runtime con restricciones.
+
+### 18. Market State Capability Consumption Policy (TERMINADO)
+
+```text
+run_id = market_state_capability_consumption_policy_v0_1_20260727T142133Z
+status = CLOSED_PASS_CAPABILITY_CONSUMPTION_POLICY_ESTABLISHED_WITH_RESTRICTIONS_NO_DATASET_PROMOTION
+consumption_policy_status = ESTABLISHED_WITH_RESTRICTIONS_CANDIDATE_RUNTIME_ONLY
+allowed_exact_reuse = conditional_candidate_runtime_only
+allowed_incremental_reuse = conditional_candidate_runtime_only
+new_candidate_generation = separate_authorization_required
+official_dataset = false
+production = false
+downstream = false
+```
+
+La capacidad Market State on-demand queda consumible solo como capacidad runtime candidata, con metadata, registry lookup y reutilizacion condicionada. No abre consumo downstream ni dataset oficial.
+
+### 19. Event State On-Demand Capability Design Authorization (TERMINADO)
+
+```text
+authorization_id = event_state_on_demand_capability_design_authorization_v0_1
+status = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+target_design_gate = event_state_on_demand_capability_design_v0_1
+consumed_by_design = event_state_on_demand_capability_design_v0_1
+event_state_profile_id = event_state_core_four_intraday_profile_v0_1
+accepted_event_type_ids_allowed_for_design = event_type:market_data:session_opened
+accepted_subject_scope = exchange_session
+Event State execution = false
+Event State materialization = false
+downstream = false
+```
+
+### 20. Event State On-Demand Capability Design (TERMINADO)
+
+```text
+gate = event_state_on_demand_capability_design_v0_1
+status = CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION
+capability_id = event_state_on_demand_capability_v0_1
+Market State Dependency Resolver = design principle recorded
+requests_created = 0
+event_instances_created = 0
+event_state_records_emitted = 0
+official_dataset = false
+production = false
+downstream = false
+```
+
+### 21. Event State Request Contract Design (TERMINADO)
+
+```text
+gate = event_state_request_contract_design_v0_1
+status = CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION
+contract = event_state_request_contract_v0_1
+request_type = event_state
+event_type_scope = event_type:market_data:session_opened
+accepted_subject_scope = exchange_session
+Market State dependency declared = runtime capability subrequest only
+requests_created = 0
+event_instances_created = 0
+event_state_records_emitted = 0
+official_dataset = false
+production = false
+downstream = false
+```
+
+### 22. Event State Dependency Resolution Design (TERMINADO)
+
+```text
+gate = event_state_dependency_resolution_design_v0_1
+status = CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION
+contract = event_state_dependency_resolution_contract_v0_1
+output_block = resolved_event_state_dependencies_v0_1
+Event Type registry = exact snapshot
+Event Instance policy = design contract only
+Event Window policy = design contract only
+Instrument Projection policy = design contract only
+Market State dependency = runtime capability subrequest only
+dependency_resolution_records_created = 0
+event_state_execution_plans_created = 0
+event_instances_created = 0
+event_state_records_emitted = 0
+official_dataset = false
+production = false
+downstream = false
+```
+
+### 23. Event State Execution Plan Contract Design (TERMINADO)
+
+```text
+gate = event_state_execution_plan_contract_design_v0_1
+status = CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION
+contract = event_state_execution_plan_contract_v0_1
+input_block = resolved_event_state_dependencies_v0_1
+output_contract = frozen_event_state_execution_plan_contract
+Event Type scope = event_type:market_data:session_opened
+accepted_subject_scope = exchange_session
+Market State dependency = runtime capability subrequest only
+direct_market_state_path_consumption = false
+execution_plans_created = 0
+event_instances_created = 0
+event_state_records_emitted = 0
+official_dataset = false
+production = false
+downstream = false
+```
+
+### 24. Event State Materializer Design (TERMINADO)
+
+```text
+gate = event_state_materializer_design_v0_1
+status = CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION
+contract = event_state_materializer_contract_v0_1
+required_input = authorized_frozen_event_state_execution_plan
+Event Type scope = event_type:market_data:session_opened
+accepted_subject_scope = exchange_session
+Market State dependency = runtime capability subrequest only
+direct_market_state_path_consumption = false
+materializer_executions = 0
+event_state_builder_executions = 0
+event_instances_created = 0
+event_state_records_emitted = 0
+event_state_candidate_files_written = 0
+event_state_registry_entries_written = 0
+official_dataset = false
+production = false
+downstream = false
+```
+
+### 25. Event State Validator Design (TERMINADO)
+
+```text
+gate = event_state_validator_design_v0_1
+status = CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION
+contract = event_state_validator_contract_v0_1
+required_input = candidate_unvalidated_event_state_output_under_future_authorization
+Event Type scope = event_type:market_data:session_opened
+accepted_subject_scope = exchange_session
+Market State dependency = runtime capability subrequest only
+direct_market_state_path_consumption = false
+validator_executions = 0
+event_state_candidate_files_read = 0
+event_state_validation_reports_created = 0
+event_state_registry_entries_written = 0
+event_state_records_emitted = 0
+event_state_datasets_written = 0
+official_dataset = false
+production = false
+downstream = false
+```
+
+### 26. Event State Candidate Dataset Registry Design (TERMINADO)
+
+```text
+gate = event_state_candidate_dataset_registry_design_v0_1
+status = CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION
+contract = event_state_candidate_dataset_registry_contract_v0_1
+registry_entries_written = 0
+registry_runtime_reads = 0
+datasets_registered = 0
+datasets_promoted = 0
+datasets_superseded = 0
+quarantine_transitions = 0
+event_state_records_emitted = 0
+event_state_datasets_written = 0
+event_state_candidate_files_read = 0
+market_state_candidate_files_read = 0
+source_market_data_rows_read = 0
+validation_executions = 0
+official_dataset = false
+production = false
+downstream = false
+```
+
+### 27. Event State On-Demand Execution Chain Joint Review (TERMINADO)
+
+```text
+gate = event_state_on_demand_execution_chain_joint_review_v0_1
+status = CLOSED_APPROVED_FOR_BOUNDED_EXECUTION_AUTHORIZATION_WITH_RESTRICTIONS_NO_EXECUTION
+matrix = event_state_on_demand_execution_chain_joint_review_matrix_v0_1.json
+reviewed_contracts = 9
+hard_findings = 0
+restriction_findings = 3
+ownership_rows_reviewed = 15
+event_state_requests_created = 0
+dependency_resolver_executions = 0
+execution_plans_created = 0
+run_records_created = 0
+event_instances_created = 0
+event_window_bindings_created = 0
+instrument_projections_created = 0
+market_state_dependency_requests_executed = 0
+market_state_candidate_files_read = 0
+event_state_materializer_executions = 0
+event_state_validator_executions = 0
+registry_entries_written = 0
+event_state_records_emitted = 0
+datasets_written = 0
+official_dataset = false
+production = false
+downstream = false
+```
+
+### 28. Event State On-Demand Bounded Execution Authorization (TERMINADO)
+
+```text
+gate = event_state_on_demand_bounded_execution_authorization_v0_1
+status = AUTHORIZED_WITH_RESTRICTIONS_NO_EXECUTION
+authorized_next_gate = event_state_on_demand_bounded_execution_v0_1
+event_type_scope_v0_1 = event_type:market_data:session_opened
+accepted_subject_scope_v0_1 = exchange_session
+exchange_scope = XNYS
+session_dates = 2021-01-19, 2021-03-15, 2022-11-25
+instrument_projection_scope = AAME, ABEO, ABUS stable FIGI share-class identifiers
+maximum_native_event_instances = 3
+maximum_instrument_session_projections = 9
+maximum_market_state_dependency_contexts = 9
+maximum_event_state_candidate_records = 9
+market_state_dependency_mode = runtime_capability_subrequest_or_exact_validated_candidate_reference
+direct_market_state_path_consumption = false
+event_state_requests_created = 0
+execution_plans_created = 0
+event_state_records_emitted = 0
+datasets_written = 0
+official_dataset = false
+production = false
+downstream = false
+```
+
+### 29. Event State On-Demand Bounded Execution Preflight Correction (TERMINADO)
+
+```text
+gate = event_state_on_demand_bounded_execution_preflight_correction_v0_1
+status = CLOSED_PASS_PREFLIGHT_BLOCKERS_RESOLVED_NO_EXECUTION
+parent_authorization = event_state_on_demand_bounded_execution_authorization_v0_1
+market_state_dependency_consumption_authorization = market_state_capability_event_state_bounded_dependency_consumption_authorization_v0_1
+authority_bundle = event_state_on_demand_bounded_execution_authority_bundle_v0_1.json
+authority_bundle_sha256 = 71e25390273f46110aab92376ab87341a6a43a1589f6510a518c1402235aca4c
+effective_market_state_dependency_mode = emit_or_resolve_market_state_subrequest_through_runtime_capability
+effective_market_state_dependency_reuse_policy = reuse_if_exact_validated_dependency_match_or_block
+effective_event_window_definition_id = session_opened_at_anchor_context_v0_1
+effective_output_format = jsonl
+maximum_output_files = 1
+maximum_output_records = 9
+maximum_output_bytes = 1048576
+execution = false
+official_dataset = false
+production = false
+downstream = false
+```
+
+### 30. Event State On-Demand Bounded Execution (TERMINADO)
+
+```text
+gate = event_state_on_demand_bounded_execution_v0_1
+run_id = event_state_on_demand_bounded_execution_v0_1_20260727T200322Z
+status = CLOSED_PASS_EVENT_STATE_ON_DEMAND_BOUNDED_EXECUTION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED
+requested_contexts = 9
+represented_contexts = 8
+event_state_records_emitted = 8
+unavailable_contexts = 1
+event_instances_created = 3
+event_window_bindings_created = 3
+instrument_session_projections_created = 9
+market_state_candidate_files_read = 1
+market_state_candidate_records_read = 8
+source_market_data_rows_read = 0
+fallback_uses = 0
+hard_validation_failures = 0
+candidate_dataset_registry_entries_written = 1
+candidate_dataset_fingerprint = d5662103e1c45f90847b51e69b0e698243bde231758fa3c864e24c4a6839be33
+logical_dataset_fingerprint = 1b981958488e69f8f553c9197861bbffeed2d5388437c1113f9e21422b9cf970
+validation_result_fingerprint = 2f4797da1a74c06a7061fe1e597299d0d1e9f5d55c82ec147ff66b5891550361
+registry_entry_fingerprint = 5a78f487ee549ff38e13547bf0324add50556e9aed054a536017b6a4f111fa4b
+official_dataset = false
+production = false
+downstream = false
+```
+
+### 31. Event State On-Demand Bounded Candidate Dataset Review (TERMINADO)
+
+```text
+gate = event_state_on_demand_bounded_candidate_dataset_review_v0_1
+review_run_id = event_state_on_demand_bounded_candidate_dataset_review_v0_1_20260727T202013Z
+status = CLOSED_APPROVED_AS_EVENT_STATE_ON_DEMAND_BOUNDED_CANDIDATE_EVIDENCE_WITH_RESTRICTIONS_NO_PROMOTION
+requested_contexts = 9
+represented_contexts = 8
+unavailable_contexts = 1
+unaccounted_contexts = 0
+event_state_candidate_records = 8
+hard_review_failures = 0
+candidate_dataset_review_approved = true
+reuse_eligibility_after_review = pending_deterministic_rerun
+registry_entry_mutations = 0
+materializer_executions = 0
+market_state_candidate_files_read_by_review = 0
+official_dataset = false
+production = false
+downstream = false
+```
+
+### 32. Event State On-Demand Bounded Deterministic Rerun Authorization (SIGUIENTE, NO ABIERTO)
+
+Debe autorizar un rerun bounded de reconstruccion fresca contra la misma request y las mismas autoridades. No prueba cache; prueba que el resultado cientifico normalizado se reproduce.
+
+### 33. Interfaz De Solicitud (PENDIENTE)
+
+Primera interfaz esperada:
+
+```text
+CLI o Python API minima
+sin logica cientifica propia
+usando el mismo core runtime
+```
+
+### 34. Promocion Operativa / Produccion / Downstream (PENDIENTE Y SEPARADO)
+
+Solo despues de:
+
+```text
+bounded proof
+candidate dataset review
+exact-match determinism
+exact-match idempotency
+incremental proof
+incremental candidate review
+incremental idempotency/reuse
+second-generation incremental extension
+lineage-chain validation
+scale validation
+registry integrity
+explicit consumption policy
+```
+
+## Secuencia De Gates Desde Ahora
+
+```text
+39. market_state_on_demand_scale_validation_v0_1 (TERMINADO)
+->
+40. market_state_on_demand_capability_promotion_review_v0_1 (TERMINADO)
+->
+41. market_state_capability_consumption_policy_v0_1 (TERMINADO)
+->
+42. event_state_on_demand_capability_design_authorization_v0_1 (TERMINADO)
+->
+43. event_state_on_demand_capability_design_v0_1 (TERMINADO)
+->
+44. event_state_request_contract_design_v0_1 (TERMINADO)
+->
+45. event_state_dependency_resolution_design_v0_1 (TERMINADO)
+->
+46. event_state_execution_plan_contract_design_v0_1 (TERMINADO)
+->
+47. event_state_materializer_design_v0_1 (TERMINADO)
+->
+48. event_state_validator_design_v0_1 (TERMINADO)
+->
+49. event_state_candidate_dataset_registry_design_v0_1 (TERMINADO)
+->
+50. event_state_on_demand_execution_chain_joint_review_v0_1 (TERMINADO)
+->
+51. event_state_on_demand_bounded_execution_authorization_v0_1 (TERMINADO)
+->
+52. event_state_on_demand_bounded_execution_preflight_correction_v0_1 (TERMINADO)
+->
+53. event_state_on_demand_bounded_execution_v0_1 (TERMINADO)
+->
+54. event_state_on_demand_bounded_candidate_dataset_review_v0_1 (TERMINADO)
+->
+55. event_state_on_demand_bounded_deterministic_rerun_authorization_v0_1 (SIGUIENTE, NO ABIERTO)
+->
+56. event_state_on_demand_bounded_deterministic_rerun_v0_1
+->
+57. event_state_on_demand_bounded_idempotency_reuse_test_v0_1
+->
+58. event_state_on_demand_bounded_incremental_overlap_execution_v0_1
+->
+59. event_state_on_demand_scale_validation_v0_1
+->
+60. runtime_user_invocation_interface_v0_1
+->
+61. production_and_downstream_consumption_authorization_v0_1
+```
+
+## Estado De Autoridad Actual
+
+Permitido ahora:
+
+```text
+abrir event_state_on_demand_bounded_deterministic_rerun_authorization_v0_1
+leer el review cerrado y los manifests/fingerprints del baseline
+congelar una autorizacion force-rebuild para comprobar determinismo bounded
+mantener official dataset, production y downstream cerrados
+```
+
+No permitido ahora:
+
+```text
+ejecutar rerun antes de su autorizacion
+usar reuse/cache en el rerun determinista
+promocionar official Market State dataset
+promocionar official Event State dataset
+declarar production
+autorizar downstream consumption
+ejecutar Event State on-demand generalizado
+abrir ML/RL/backtest consumption
+hacer un full-universe build
+mutar registry entries historicas in-place
+tratar candidate evidence como dataset oficial
+```
+
+## Criterio De Terminado Para Capacidad Operativa Repetible
+
+Market State on-demand podra considerarse capacidad operativa repetible cuando exista evidencia de:
+
+```text
+valid request contract
+deterministic profile/universe/source/coverage resolution
+frozen execution plan
+authorized run lifecycle
+bounded and scaled materialization
+validation reports
+candidate dataset registry entries
+exact-match reuse
+incremental reuse and delta-only build
+lineage-chain validation
+scale validation
+capability promotion review
+explicit consumption policy
+```
+
+Event State on-demand ya tiene capability design, request contract, dependency resolution design, execution plan contract design, materializer design y validator design cerrados. Sigue pendiente registry, joint review, bounded execution y scale validation bajo autorizaciones separadas. Market State on-demand ya puede actuar como dependencia runtime restringida para planificacion, no como dataset oficial ni consumo downstream.
+
+## Resumen Ejecutivo
+
+```text
+La arquitectura conceptual principal esta cerrada para el tramo actual.
+Market State on-demand ya demostro build, determinismo, reuse exacto, incrementalidad, reuse incremental, segunda extension incremental, lineage-chain, scale validation, capability promotion review y consumption policy explicita con restricciones.
+El diseno de capacidad Event State on-demand, el request contract, la dependency resolution, el execution plan contract, el materializer design y el validator design ya estan cerrados. El siguiente salto es disenar el Event State Candidate Dataset Registry, manteniendo ejecucion, dataset oficial, produccion y downstream cerrados.
+Nada de lo anterior promociona dataset oficial, produccion ni downstream.
+```
+<!-- TSIS_ROUTE_CURRENT_STATE_V1_10_END -->
+
+
+
+
+# Â¿cuando se termina esto?
+
+
+SÃ­. **Esta lectura es mucho mÃ¡s equilibrada y operativa.** La ruta ya no debe abrir mÃ¡s filosofÃ­a general; debe terminar una capacidad candidata v0.1 claramente acotada.
+
+El documento fundacional ya distingue correctamente entre:
+
+```text
+Canonicalidad
+=
+misma definiciÃ³n
+
+MaterializaciÃ³n
+=
+cuÃ¡ndo, dÃ³nde, con quÃ© cobertura
+y a quÃ© resoluciÃ³n
+```
+
+y establece que `Event State` debe reutilizar o solicitar `Market State`, no reconstruir un segundo mercado. Por tanto, terminar los runtimes on-demand es la consecuencia natural de esa arquitectura, no una desviaciÃ³n.
+
+## Estado exacto
+
+```text
+Market State on-demand
+=
+capacidad candidata gobernada muy avanzada
+```
+
+Ya ha demostrado, en scopes acotados:
+
+```text
+request resolution
+materializaciÃ³n
+validaciÃ³n
+registro
+determinismo
+reuse exacto
+incrementalidad
+scale validation
+consumption policy restringida
+```
+
+TodavÃ­a no significa:
+
+```text
+full history
+full universe
+producciÃ³n
+downstream
+```
+
+```text
+Event State on-demand
+=
+capacidad diseÃ±ada
+pero runtime operativo todavÃ­a pendiente
+```
+
+Event State ya tiene semÃ¡ntica, perfil, Event Type aceptado, bindings, bounded proof fÃ­sico y polÃ­ticas. Ahora debe repetir la disciplina runtime que ya superÃ³ Market State.
+
+# Una correcciÃ³n importante
+
+No dirÃ­a:
+
+```text
+la parte conceptual de TSIS estÃ¡ casi cerrada
+```
+
+sin aÃ±adir una precisiÃ³n.
+
+DirÃ­a:
+
+```text
+la arquitectura conceptual necesaria
+para Market State core-four
+y Event State session_opened
+estÃ¡ casi cerrada.
+```
+
+No estÃ¡ cerrada todavÃ­a toda la ciencia de representaciÃ³n de TSIS.
+
+ContinÃºan abiertas preguntas como:
+
+```text
+Â¿Son suficientes los Information Objects actuales?
+Â¿QuÃ© modelos representan mejor Liquidity?
+Â¿QuÃ© parte de Microstructure entra?
+Â¿CÃ³mo se representa Order Flow legalmente?
+Â¿QuÃ© variables son redundantes?
+Â¿QuÃ© extensiones necesita el perfil core-four?
+Â¿QuÃ© nuevos Event Types merecen admisiÃ³n?
+```
+
+Esto no bloquea la v0.1 operativa candidata. Pero sÃ­ bloquea afirmar:
+
+```text
+TSIS Market State completo
+```
+
+La v0.1 puede y debe terminar con un alcance explÃ­cito:
+
+```text
+Market State:
+core-four intraday
+
+Event State:
+session_opened
+exchange_session
+```
+
+# Ruta restante para la v0.1 operativa candidata
+
+Tu lista es correcta. Yo la compactarÃ­a en seis bloques.
+
+## A. Contrato de solicitud Event State
+
+```text
+event_state_request_contract_design_v0_1
+```
+
+Debe definir quÃ© se solicita:
+
+```text
+event_state_profile_id
+event_type_ids
+subject scope
+universe/session scope
+window policy
+Market State dependency policy
+output mode
+validation level
+reuse policy
+request fingerprint
+```
+
+No debe resolver ni ejecutar nada.
+
+## B. Dependency Resolution y Execution Plan
+
+AquÃ­ estÃ¡ la parte especÃ­fica de Event State:
+
+```text
+Event State Request
+â†“
+Event State Profile Resolver
+â†“
+Event Type Registry Resolver
+â†“
+Event Instance Policy Resolver
+â†“
+Event Window Resolver
+â†“
+Instrument Projection Resolver
+â†“
+Market State Dependency Resolver
+â†“
+Frozen Event State Execution Plan
+```
+
+La dependencia Market State deberÃ­a convertirse en una subrequest gobernada:
+
+```text
+Event State Request
+â†“
+Market State dependency request
+â†“
+Market State runtime capability
+```
+
+No en una bÃºsqueda directa de parquet.
+
+## C. Materializer, Validator y Registry
+
+```text
+Event State Materializer
+=
+consume el plan congelado
+```
+
+```text
+Event State Validator
+=
+comprueba bindings, identidad,
+temporalidad, legality y lineage
+```
+
+```text
+Candidate Dataset Registry
+=
+registra candidato y evidencia
+```
+
+## D. Prueba bounded de extremo a extremo
+
+Inicialmente solo:
+
+```text
+event_type:market_data:session_opened
+exchange_session
+scope pequeÃ±o
+candidate output
+```
+
+Debe probar:
+
+```text
+request
+resolution
+Market State dependency
+Event Instances
+windows
+instrument projections
+Event State materialization
+validation
+registry
+```
+
+## E. Reproducibilidad operativa
+
+DespuÃ©s:
+
+```text
+deterministic rerun
+â†“
+exact reuse
+â†“
+incremental overlap
+â†“
+small scale validation
+```
+
+No hace falta repetir cada documento de Market State literalmente. Puede reutilizarse la infraestructura comÃºn, documentando Ãºnicamente las diferencias de Event State.
+
+## F. PolÃ­tica e interfaz comÃºn
+
+Cerrar:
+
+```text
+Event State consumption policy restringida
+```
+
+y crear una interfaz mÃ­nima compartida:
+
+```text
+Python API
+o
+CLI
+```
+
+Ejemplos conceptuales:
+
+```text
+build_market_state(request)
+```
+
+```text
+build_event_state(request)
+```
+
+Ambas deben usar el mismo nÃºcleo de:
+
+```text
+request lifecycle
+execution plan
+run lifecycle
+validator
+registry
+reuse
+```
+
+# Criterio concreto para decir â€œv0.1 terminadaâ€
+
+Yo congelarÃ­a ahora esta definiciÃ³n de terminado:
+
+```text
+TSIS Runtime v0.1 Candidate
+```
+
+estÃ¡ terminado cuando:
+
+```text
+1. Puede recibir una solicitud vÃ¡lida de Market State.
+
+2. Puede recibir una solicitud vÃ¡lida de Event State
+   para session_opened.
+
+3. Resuelve todas sus dependencias gobernadas.
+
+4. Construye o reutiliza candidatos.
+
+5. Valida identidad, schema, temporalidad y lineage.
+
+6. Registra resultados y bloqueos.
+
+7. Reconstruye determinÃ­sticamente.
+
+8. Reutiliza sin reconstrucciÃ³n cuando existe match exacto.
+
+9. Construye solo el delta ante overlap parcial.
+
+10. Puede invocarse mediante una API o CLI mÃ­nima.
+```
+
+Y sigue siendo explÃ­citamente:
+
+```text
+candidate runtime
+not official dataset
+not production
+not downstream
+not full history
+not full universe
+```
+
+# Sobre las estimaciones
+
+Tus porcentajes son razonables como orientaciÃ³n, no como mÃ©trica verificable:
+
+```text
+v0.1 operativa candidata
+â‰ˆ 20â€“30% del runtime pendiente
+```
+
+Lo veo plausible porque Market State ya ha pagado casi todo el coste arquitectÃ³nico y Event State puede reutilizar mucha infraestructura.
+
+Para producciÃ³n masiva:
+
+```text
+â‰ˆ 60â€“70% pendiente
+```
+
+tambiÃ©n es defendible, porque ahÃ­ entran problemas nuevos:
+
+```text
+full-universe coverage
+full-history
+concurrencia
+scheduler
+recovery real
+observabilidad
+SLA/SLO
+cost control
+registry durable
+artifact archival
+seguridad
+autorizaciones downstream
+operaciÃ³n continua
+```
+
+No son simplemente â€œmÃ¡s filasâ€.
+
+# Regla de trabajo desde ahora
+
+Estoy completamente de acuerdo con:
+
+```text
+Cada documento nuevo debe acercarnos
+a una ejecuciÃ³n real.
+```
+
+AplicarÃ­a un test muy simple antes de abrir cualquier gate:
+
+```text
+Â¿Este documento elimina un bloqueo concreto
+para ejecutar, validar, reutilizar o entregar?
+```
+
+Si la respuesta es no:
+
+```text
+no abrirlo ahora
+```
+
+Y evitarÃ­a crear diez documentos cuando uno pueda cerrar un bloque completo. Por ejemplo, Event State podrÃ­a agrupar:
+
+```text
+profile resolution
+event registry resolution
+instance/window/projection resolution
+Market State dependency resolution
+```
+
+dentro de un Ãºnico:
+
+```text
+event_state_dependency_resolution_design_v0_1
+```
+
+Ese bloque, el execution plan, el materializer, el validator, el candidate registry, el joint review y la autorizacion bounded ya estan cerrados; el siguiente paso es ejecutar una primera request bounded.
+
+## Proximo Paso Narrativo
+
+```text
+event_state_on_demand_bounded_deterministic_rerun_authorization_v0_1
+```
+
+Ese es el siguiente gate correcto.
+
+Meta inmediata:
+
+```text
+autorizar un rerun determinista bounded
+-> congelar baseline candidate dataset + review
+-> exigir force rebuild, no reuse
+-> comprobar que las mismas autoridades siguen disponibles
+-> preparar comparacion posterior de request, plan, rows, unavailable context, lineage y fingerprints
+```
+
+Regla de contencion:
+
+```text
+si un nuevo documento no acerca a determinismo, reuse, lineage, escala o entrega,
+no abrirlo ahora
+```

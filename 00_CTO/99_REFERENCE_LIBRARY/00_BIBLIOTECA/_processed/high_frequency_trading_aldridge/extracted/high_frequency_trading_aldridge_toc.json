@@ -1,0 +1,697 @@
+[
+  {
+    "title": "Series",
+    "page": 9,
+    "level": 0
+  },
+  {
+    "title": "Title Page",
+    "page": 10,
+    "level": 0
+  },
+  {
+    "title": "Copyright",
+    "page": 11,
+    "level": 0
+  },
+  {
+    "title": "Dedication",
+    "page": 13,
+    "level": 0
+  },
+  {
+    "title": "Preface",
+    "page": 14,
+    "level": 0
+  },
+  {
+    "title": "Acknowledgments",
+    "page": 17,
+    "level": 0
+  },
+  {
+    "title": "Chapter 1: How Modern Markets Differ from Those Past",
+    "page": 18,
+    "level": 0
+  },
+  {
+    "title": "Media, Modern Markets, and HFT",
+    "page": 27,
+    "level": 1
+  },
+  {
+    "title": "HFT as Evolution of Trading Methodology",
+    "page": 28,
+    "level": 1
+  },
+  {
+    "title": "What Is High-Frequency Trading?",
+    "page": 37,
+    "level": 1
+  },
+  {
+    "title": "What Do High-Frequency Traders Do?",
+    "page": 40,
+    "level": 1
+  },
+  {
+    "title": "How Many High-Frequency Traders Are There?",
+    "page": 42,
+    "level": 1
+  },
+  {
+    "title": "Major Players in the HFT Space",
+    "page": 43,
+    "level": 1
+  },
+  {
+    "title": "Organization of This Book",
+    "page": 43,
+    "level": 1
+  },
+  {
+    "title": "Summary",
+    "page": 44,
+    "level": 1
+  },
+  {
+    "title": "End-of-Chapter Questions",
+    "page": 45,
+    "level": 1
+  },
+  {
+    "title": "Chapter 2: Technological Innovations, Systems, and HFT",
+    "page": 46,
+    "level": 0
+  },
+  {
+    "title": "A Brief History of Hardware",
+    "page": 46,
+    "level": 1
+  },
+  {
+    "title": "Messaging",
+    "page": 52,
+    "level": 1
+  },
+  {
+    "title": "Software",
+    "page": 64,
+    "level": 1
+  },
+  {
+    "title": "Summary",
+    "page": 67,
+    "level": 1
+  },
+  {
+    "title": "End-of-Chapter Questions",
+    "page": 68,
+    "level": 1
+  },
+  {
+    "title": "Chapter 3: Market Microstructure, Orders, and Limit Order Books",
+    "page": 69,
+    "level": 0
+  },
+  {
+    "title": "Types of Markets",
+    "page": 69,
+    "level": 1
+  },
+  {
+    "title": "Limit Order Books",
+    "page": 72,
+    "level": 1
+  },
+  {
+    "title": "Aggressive versus Passive Execution",
+    "page": 77,
+    "level": 1
+  },
+  {
+    "title": "Complex Orders",
+    "page": 79,
+    "level": 1
+  },
+  {
+    "title": "Trading Hours",
+    "page": 80,
+    "level": 1
+  },
+  {
+    "title": "Modern Microstructure: Market Convergence and Divergence",
+    "page": 81,
+    "level": 1
+  },
+  {
+    "title": "Fragmentation in Equities",
+    "page": 82,
+    "level": 1
+  },
+  {
+    "title": "Fragmentation in Futures",
+    "page": 87,
+    "level": 1
+  },
+  {
+    "title": "Fragmentation in Options",
+    "page": 88,
+    "level": 1
+  },
+  {
+    "title": "Fragmentation in Forex",
+    "page": 88,
+    "level": 1
+  },
+  {
+    "title": "Fragmentation in Fixed Income",
+    "page": 88,
+    "level": 1
+  },
+  {
+    "title": "Fragmentation in Swaps",
+    "page": 89,
+    "level": 1
+  },
+  {
+    "title": "Summary",
+    "page": 89,
+    "level": 1
+  },
+  {
+    "title": "End-of-Chapter Questions",
+    "page": 89,
+    "level": 1
+  },
+  {
+    "title": "Chapter 4: High-Frequency Data1",
+    "page": 91,
+    "level": 0
+  },
+  {
+    "title": "What Is High-Frequency Data?",
+    "page": 91,
+    "level": 1
+  },
+  {
+    "title": "How Is High-Frequency Data Recorded?",
+    "page": 93,
+    "level": 1
+  },
+  {
+    "title": "Properties of High-Frequency Data",
+    "page": 95,
+    "level": 1
+  },
+  {
+    "title": "High-Frequency Data Are Voluminous",
+    "page": 96,
+    "level": 1
+  },
+  {
+    "title": "High-Frequency Data Are Subject to the Bid-Ask Bounce",
+    "page": 98,
+    "level": 1
+  },
+  {
+    "title": "High-Frequency Data Are Not Normal or Lognormal",
+    "page": 102,
+    "level": 1
+  },
+  {
+    "title": "High-Frequency Data Are Irregularly Spaced in Time",
+    "page": 109,
+    "level": 1
+  },
+  {
+    "title": "Most High-Frequency Data Do Not Contain Buy-and-Sell Identifiers",
+    "page": 116,
+    "level": 1
+  },
+  {
+    "title": "Summary",
+    "page": 121,
+    "level": 1
+  },
+  {
+    "title": "End-of-Chapter Questions",
+    "page": 122,
+    "level": 1
+  },
+  {
+    "title": "Chapter 5: Trading Costs",
+    "page": 123,
+    "level": 0
+  },
+  {
+    "title": "Overview of Execution Costs",
+    "page": 123,
+    "level": 1
+  },
+  {
+    "title": "Transparent Execution Costs",
+    "page": 124,
+    "level": 1
+  },
+  {
+    "title": "Implicit Execution Costs",
+    "page": 127,
+    "level": 1
+  },
+  {
+    "title": "Background and Definitions",
+    "page": 132,
+    "level": 1
+  },
+  {
+    "title": "Estimation of Market Impact",
+    "page": 137,
+    "level": 1
+  },
+  {
+    "title": "Empirical Estimation of Permanent Market Impact",
+    "page": 143,
+    "level": 1
+  },
+  {
+    "title": "Summary",
+    "page": 153,
+    "level": 1
+  },
+  {
+    "title": "End-of-Chapter Questions",
+    "page": 153,
+    "level": 1
+  },
+  {
+    "title": "Chapter 6: Performance and Capacity of High-Frequency Trading Strategies",
+    "page": 155,
+    "level": 0
+  },
+  {
+    "title": "Principles of Performance Measurement",
+    "page": 155,
+    "level": 1
+  },
+  {
+    "title": "Basic Performance Measures",
+    "page": 156,
+    "level": 1
+  },
+  {
+    "title": "Comparative Ratios",
+    "page": 169,
+    "level": 1
+  },
+  {
+    "title": "Performance Attribution",
+    "page": 176,
+    "level": 1
+  },
+  {
+    "title": "Capacity Evaluation",
+    "page": 178,
+    "level": 1
+  },
+  {
+    "title": "Alpha Decay",
+    "page": 183,
+    "level": 1
+  },
+  {
+    "title": "Summary",
+    "page": 183,
+    "level": 1
+  },
+  {
+    "title": "End-of-Chapter Questions",
+    "page": 183,
+    "level": 1
+  },
+  {
+    "title": "Chapter 7: The Business of High-Frequency Trading",
+    "page": 185,
+    "level": 0
+  },
+  {
+    "title": "Key Processes of HFT",
+    "page": 185,
+    "level": 1
+  },
+  {
+    "title": "Financial Markets Suitable for HFT",
+    "page": 191,
+    "level": 1
+  },
+  {
+    "title": "Economics of HFT",
+    "page": 193,
+    "level": 1
+  },
+  {
+    "title": "Market Participants",
+    "page": 203,
+    "level": 1
+  },
+  {
+    "title": "Summary",
+    "page": 204,
+    "level": 1
+  },
+  {
+    "title": "End-of-Chapter Questions",
+    "page": 204,
+    "level": 1
+  },
+  {
+    "title": "Chapter 8: Statistical Arbitrage Strategies",
+    "page": 206,
+    "level": 0
+  },
+  {
+    "title": "Practical Applications of Statistical Arbitrage",
+    "page": 208,
+    "level": 1
+  },
+  {
+    "title": "Summary",
+    "page": 224,
+    "level": 1
+  },
+  {
+    "title": "End-of-Chapter Questions",
+    "page": 224,
+    "level": 1
+  },
+  {
+    "title": "Chapter 9: Directional Trading Around Events",
+    "page": 225,
+    "level": 0
+  },
+  {
+    "title": "Developing Directional Event-Based Strategies",
+    "page": 226,
+    "level": 1
+  },
+  {
+    "title": "What Constitutes an Event?",
+    "page": 227,
+    "level": 1
+  },
+  {
+    "title": "Forecasting Methodologies",
+    "page": 229,
+    "level": 1
+  },
+  {
+    "title": "Tradable News",
+    "page": 233,
+    "level": 1
+  },
+  {
+    "title": "Application of Event Arbitrage",
+    "page": 237,
+    "level": 1
+  },
+  {
+    "title": "Summary",
+    "page": 246,
+    "level": 1
+  },
+  {
+    "title": "End-of-Chapter Questions",
+    "page": 247,
+    "level": 1
+  },
+  {
+    "title": "Chapter 10: Automated Market Making—Naïve Inventory Models",
+    "page": 248,
+    "level": 0
+  },
+  {
+    "title": "Introduction",
+    "page": 248,
+    "level": 1
+  },
+  {
+    "title": "Market Making: Key Principles",
+    "page": 250,
+    "level": 1
+  },
+  {
+    "title": "Simulating a Market-Making Strategy",
+    "page": 251,
+    "level": 1
+  },
+  {
+    "title": "Naïve Market-Making Strategies",
+    "page": 252,
+    "level": 1
+  },
+  {
+    "title": "Market Making as a Service",
+    "page": 258,
+    "level": 1
+  },
+  {
+    "title": "Profitable Market Making",
+    "page": 263,
+    "level": 1
+  },
+  {
+    "title": "Summary",
+    "page": 266,
+    "level": 1
+  },
+  {
+    "title": "End-of-Chapter Questions",
+    "page": 266,
+    "level": 1
+  },
+  {
+    "title": "Chapter 11: Automated Market Making II",
+    "page": 267,
+    "level": 0
+  },
+  {
+    "title": "What's in the Data?",
+    "page": 267,
+    "level": 1
+  },
+  {
+    "title": "Modeling Information in Order Flow",
+    "page": 272,
+    "level": 1
+  },
+  {
+    "title": "Summary",
+    "page": 286,
+    "level": 1
+  },
+  {
+    "title": "End of Chapter Questions",
+    "page": 286,
+    "level": 1
+  },
+  {
+    "title": "Chapter 12: Additional HFT Strategies, Market Manipulation, and Market Crashes",
+    "page": 288,
+    "level": 0
+  },
+  {
+    "title": "Latency Arbitrage",
+    "page": 290,
+    "level": 1
+  },
+  {
+    "title": "Spread Scalping",
+    "page": 291,
+    "level": 1
+  },
+  {
+    "title": "Rebate Capture",
+    "page": 292,
+    "level": 1
+  },
+  {
+    "title": "Quote Matching",
+    "page": 294,
+    "level": 1
+  },
+  {
+    "title": "Layering",
+    "page": 294,
+    "level": 1
+  },
+  {
+    "title": "Ignition",
+    "page": 296,
+    "level": 1
+  },
+  {
+    "title": "Pinging/Sniping/Sniffing/Phishing",
+    "page": 296,
+    "level": 1
+  },
+  {
+    "title": "Quote Stuffing",
+    "page": 297,
+    "level": 1
+  },
+  {
+    "title": "Spoofing",
+    "page": 298,
+    "level": 1
+  },
+  {
+    "title": "Pump-and-Dump",
+    "page": 298,
+    "level": 1
+  },
+  {
+    "title": "Machine Learning",
+    "page": 305,
+    "level": 1
+  },
+  {
+    "title": "Summary",
+    "page": 307,
+    "level": 1
+  },
+  {
+    "title": "End-of-Chapter Questions",
+    "page": 307,
+    "level": 1
+  },
+  {
+    "title": "Chapter 13: Regulation",
+    "page": 308,
+    "level": 0
+  },
+  {
+    "title": "Key Initiatives of Regulators Worldwide",
+    "page": 308,
+    "level": 1
+  },
+  {
+    "title": "Summary",
+    "page": 329,
+    "level": 1
+  },
+  {
+    "title": "End-of-Chapter Questions",
+    "page": 329,
+    "level": 1
+  },
+  {
+    "title": "Chapter 14: Risk Management of HFT",
+    "page": 331,
+    "level": 0
+  },
+  {
+    "title": "Measuring HFT Risk",
+    "page": 331,
+    "level": 1
+  },
+  {
+    "title": "Summary",
+    "page": 358,
+    "level": 1
+  },
+  {
+    "title": "End-of-Chapter Questions",
+    "page": 358,
+    "level": 1
+  },
+  {
+    "title": "Chapter 15: Minimizing Market Impact",
+    "page": 360,
+    "level": 0
+  },
+  {
+    "title": "Why Execution Algorithms?",
+    "page": 361,
+    "level": 1
+  },
+  {
+    "title": "Order-Routing Algorithms",
+    "page": 362,
+    "level": 1
+  },
+  {
+    "title": "Issues with Basic Models",
+    "page": 378,
+    "level": 1
+  },
+  {
+    "title": "Advanced Models",
+    "page": 386,
+    "level": 1
+  },
+  {
+    "title": "Practical Implementation of Optimal Execution Strategies",
+    "page": 395,
+    "level": 1
+  },
+  {
+    "title": "Summary",
+    "page": 396,
+    "level": 1
+  },
+  {
+    "title": "End-of-Chapter Questions",
+    "page": 396,
+    "level": 1
+  },
+  {
+    "title": "Chapter 16: Implementation of HFT Systems",
+    "page": 397,
+    "level": 0
+  },
+  {
+    "title": "Model Development Life Cycle",
+    "page": 397,
+    "level": 1
+  },
+  {
+    "title": "System Implementation",
+    "page": 400,
+    "level": 1
+  },
+  {
+    "title": "Testing Trading Systems",
+    "page": 415,
+    "level": 1
+  },
+  {
+    "title": "Summary",
+    "page": 419,
+    "level": 1
+  },
+  {
+    "title": "End-of-Chapter Questions",
+    "page": 420,
+    "level": 1
+  },
+  {
+    "title": "About the Author",
+    "page": 421,
+    "level": 0
+  },
+  {
+    "title": "About the Web Site",
+    "page": 423,
+    "level": 0
+  },
+  {
+    "title": "References",
+    "page": 424,
+    "level": 0
+  },
+  {
+    "title": "Index",
+    "page": 442,
+    "level": 0
+  }
+]

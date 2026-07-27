@@ -1,0 +1,299 @@
+{
+  "closure_counters": {
+    "datasets_written": 0,
+    "dependency_resolver_executions": 0,
+    "downstream": false,
+    "event_instances_created": 0,
+    "event_state_materializer_executions": 0,
+    "event_state_records_emitted": 0,
+    "event_state_requests_created": 0,
+    "event_state_validator_executions": 0,
+    "event_window_bindings_created": 0,
+    "execution_plans_created": 0,
+    "instrument_projections_created": 0,
+    "market_state_candidate_files_read": 0,
+    "market_state_dependency_requests_executed": 0,
+    "production": false,
+    "registry_entries_written": 0,
+    "run_records_created": 0
+  },
+  "date": "2026-07-27",
+  "fingerprint_chain": [
+    {
+      "fingerprint": "event_state_request_fingerprint",
+      "owner": "event_state_request_contract_v0_1",
+      "purpose": "normalized Event State request intent"
+    },
+    {
+      "fingerprint": "event_state_dependency_resolution_fingerprint",
+      "owner": "event_state_dependency_resolution_contract_v0_1",
+      "purpose": "resolved profile, Event Type Registry, event policies, projection policy and Market State dependency semantics"
+    },
+    {
+      "fingerprint": "event_type_registry_snapshot_sha256",
+      "owner": "event_type_registry_post_initial_admission_snapshot_v0_1",
+      "purpose": "accepted Event Type authority for session_opened / exchange_session"
+    },
+    {
+      "fingerprint": "market_state_dependency_request_fingerprint",
+      "owner": "event_state_dependency_resolution_contract_v0_1 plus market_state_on_demand_runtime_capability_v0_1",
+      "purpose": "governed Market State dependency request identity"
+    },
+    {
+      "fingerprint": "market_state_candidate_dataset_fingerprint_or_ref",
+      "owner": "market_state_on_demand_runtime_capability_v0_1 under consumption policy",
+      "purpose": "validated candidate Market State dependency identity under future authorization"
+    },
+    {
+      "fingerprint": "event_state_execution_plan_fingerprint",
+      "owner": "event_state_execution_plan_contract_v0_1",
+      "purpose": "complete frozen resolution of one valid Event State request"
+    },
+    {
+      "fingerprint": "event_state_candidate_dataset_fingerprint",
+      "owner": "event_state_materializer_contract_v0_1",
+      "purpose": "candidate Event State output content and construction context"
+    },
+    {
+      "fingerprint": "event_state_validation_result_fingerprint",
+      "owner": "event_state_validator_contract_v0_1",
+      "purpose": "normalized validation result over candidate Event State output"
+    },
+    {
+      "fingerprint": "event_state_registry_entry_fingerprint",
+      "owner": "event_state_candidate_dataset_registry_contract_v0_1",
+      "purpose": "registry statement about candidate Event State dataset status and eligibility"
+    }
+  ],
+  "gate": "event_state_on_demand_execution_chain_joint_review_v0_1",
+  "hard_findings": [],
+  "invariant_review": [
+    {
+      "evidence": [
+        "event_state_request_contract_v0_1"
+      ],
+      "invariant": "Event State Request declares intent and cannot name direct Market State physical paths.",
+      "status": "PASS"
+    },
+    {
+      "evidence": [
+        "event_state_dependency_resolution_contract_v0_1"
+      ],
+      "invariant": "Dependency Resolution owns Event State profile, Event Type Registry, Event Instance policy, Event Window policy, Instrument Projection policy and Market State dependency resolution semantics.",
+      "status": "PASS"
+    },
+    {
+      "evidence": [
+        "event_state_dependency_resolution_contract_v0_1",
+        "event_state_execution_plan_contract_v0_1",
+        "event_state_materializer_contract_v0_1",
+        "event_state_candidate_dataset_registry_contract_v0_1",
+        "market_state_capability_consumption_policy_contract_v0_1"
+      ],
+      "invariant": "Market State dependency remains a runtime capability subrequest/reference, not implicit physical consumption.",
+      "status": "PASS"
+    },
+    {
+      "evidence": [
+        "event_state_execution_plan_contract_v0_1"
+      ],
+      "invariant": "Execution Plan freezes every Event State dependency, binding plan, builder, validator, output policy and limit before materialization.",
+      "status": "PASS"
+    },
+    {
+      "evidence": [
+        "event_state_materializer_contract_v0_1"
+      ],
+      "invariant": "Materializer consumes a frozen authorized Event State execution plan and may not re-resolve request, dependencies or Market State sources.",
+      "status": "PASS"
+    },
+    {
+      "evidence": [
+        "event_state_validator_contract_v0_1"
+      ],
+      "invariant": "Validator evaluates candidate output without repairing, rebuilding, re-resolving, registering or promoting.",
+      "status": "PASS"
+    },
+    {
+      "evidence": [
+        "event_state_candidate_dataset_registry_contract_v0_1"
+      ],
+      "invariant": "Candidate Dataset Registry records identity, evidence, status and eligibility without materializing, validating, promoting or consuming.",
+      "status": "PASS"
+    },
+    {
+      "evidence": [
+        "event_state_on_demand_capability_contract_v0_1",
+        "event_state_request_contract_v0_1",
+        "event_state_candidate_dataset_registry_contract_v0_1"
+      ],
+      "invariant": "Event scope remains limited to session_opened with accepted subject scope exchange_session; halt_resumed remains excluded.",
+      "status": "PASS"
+    },
+    {
+      "evidence": [
+        "hard_boundaries"
+      ],
+      "invariant": "Downstream consumption, production and official Event State dataset promotion remain closed.",
+      "status": "PASS"
+    }
+  ],
+  "next_allowed_gate": "event_state_on_demand_bounded_execution_authorization_v0_1",
+  "non_blocking_restrictions": [
+    {
+      "blocking": false,
+      "description": "Future Event State bounded execution authorization must explicitly bind the run to a governed runtime lifecycle/manifest contract, either the existing common runtime pattern or a separately authorized Event State-specific lifecycle contract. This review creates no run records.",
+      "restriction_id": "event_state_bounded_run_lifecycle_binding_required",
+      "severity": "RESTRICTION"
+    },
+    {
+      "blocking": false,
+      "description": "Future Event State execution may not consume Market State files directly. It must resolve Market State dependency through the promoted Market State runtime capability and a separate bounded dependency lookup/generation authority.",
+      "restriction_id": "market_state_dependency_execution_authority_required",
+      "severity": "RESTRICTION"
+    },
+    {
+      "blocking": false,
+      "description": "Approval is limited to event_type:market_data:session_opened with subject_scope=exchange_session. halt_resumed and detector-driven Event Types remain excluded.",
+      "restriction_id": "single_event_type_scope_v0_1",
+      "severity": "RESTRICTION"
+    }
+  ],
+  "ownership_matrix": [
+    {
+      "owner": "Event State Request Contract",
+      "ownership_status": "one_owner",
+      "responsibility": "Event State request field ownership",
+      "supporting_components": []
+    },
+    {
+      "owner": "Event State Dependency Resolution",
+      "ownership_status": "one_owner",
+      "responsibility": "Event State profile resolution ownership",
+      "supporting_components": [
+        "Execution Plan"
+      ]
+    },
+    {
+      "owner": "Event State Dependency Resolution",
+      "ownership_status": "one_owner",
+      "responsibility": "Event Type Registry resolution ownership",
+      "supporting_components": [
+        "Execution Plan"
+      ]
+    },
+    {
+      "owner": "Event State Dependency Resolution",
+      "ownership_status": "one_owner",
+      "responsibility": "Event Instance policy ownership",
+      "supporting_components": [
+        "Execution Plan",
+        "Materializer"
+      ]
+    },
+    {
+      "owner": "Event State Dependency Resolution",
+      "ownership_status": "one_owner",
+      "responsibility": "Event Window policy ownership",
+      "supporting_components": [
+        "Execution Plan",
+        "Materializer"
+      ]
+    },
+    {
+      "owner": "Event State Dependency Resolution",
+      "ownership_status": "one_owner",
+      "responsibility": "Instrument Projection policy ownership",
+      "supporting_components": [
+        "Execution Plan",
+        "Materializer"
+      ]
+    },
+    {
+      "owner": "Event State Dependency Resolution via Market State runtime capability",
+      "ownership_status": "one_owner_with_external_runtime_dependency",
+      "responsibility": "Market State dependency resolution ownership",
+      "supporting_components": [
+        "Execution Plan",
+        "Materializer",
+        "Validator",
+        "Candidate Dataset Registry"
+      ]
+    },
+    {
+      "owner": "Event State Execution Plan",
+      "ownership_status": "one_owner",
+      "responsibility": "logical context and exact-one binding plan ownership",
+      "supporting_components": [
+        "Dependency Resolution"
+      ]
+    },
+    {
+      "owner": "Event State Execution Plan",
+      "ownership_status": "one_owner",
+      "responsibility": "plan freezing ownership",
+      "supporting_components": [
+        "Request Contract",
+        "Dependency Resolution"
+      ]
+    },
+    {
+      "owner": "Runtime Run Lifecycle under future bounded authorization",
+      "ownership_status": "one_owner_required_before_execution",
+      "responsibility": "run state ownership",
+      "supporting_components": []
+    },
+    {
+      "owner": "Event State Materializer",
+      "ownership_status": "one_owner",
+      "responsibility": "candidate output writing ownership",
+      "supporting_components": [
+        "Run Lifecycle"
+      ]
+    },
+    {
+      "owner": "Event State Validator",
+      "ownership_status": "one_owner",
+      "responsibility": "validation ownership",
+      "supporting_components": []
+    },
+    {
+      "owner": "Event State Candidate Dataset Registry",
+      "ownership_status": "one_owner",
+      "responsibility": "candidate registry ownership",
+      "supporting_components": [
+        "Validator"
+      ]
+    },
+    {
+      "owner": "future promotion gate, not current runtime chain",
+      "ownership_status": "closed_future_gate_required",
+      "responsibility": "official dataset promotion ownership",
+      "supporting_components": []
+    },
+    {
+      "owner": "future consumption policy gate, not current runtime chain",
+      "ownership_status": "closed_future_gate_required",
+      "responsibility": "downstream consumption ownership",
+      "supporting_components": []
+    }
+  ],
+  "review_decision": "APPROVED_FOR_BOUNDED_EXECUTION_AUTHORIZATION_WITH_RESTRICTIONS",
+  "reviewed_chain": [
+    "Event State On-Demand Capability",
+    "Event State Request Contract",
+    "Event State Dependency Resolution",
+    "Event State Execution Plan",
+    "Runtime Run Lifecycle Reference",
+    "Event State Materializer",
+    "Event State Validator",
+    "Event State Candidate Dataset Registry"
+  ],
+  "status": "CLOSED_APPROVED_FOR_BOUNDED_EXECUTION_AUTHORIZATION_WITH_RESTRICTIONS_NO_EXECUTION",
+  "summary_counts": {
+    "hard_findings": 0,
+    "ownership_rows": 15,
+    "restriction_findings": 3,
+    "reviewed_contracts": 9
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "book_id": "clean_architectures_python_giordani",
+  "title": "Clean Architectures in Python",
+  "authors": "Leonardo Giordani",
+  "source_type": "Libro PDF",
+  "source_path": "C:\\TSIS_Data\\00_CTO\\99_REFERENCE_LIBRARY\\00_BIBLIOTECA\\_OceanofPDF.com_Clean_Architectures_in_Python_-_Leonardo_Giordani.pdf",
+  "file_name": "_OceanofPDF.com_Clean_Architectures_in_Python_-_Leonardo_Giordani.pdf",
+  "sha256": "76acd42dc1982909b1ae3cef1e6674d3a1ae0d51ab9cea561f15b0193175d61b",
+  "status": "indexed",
+  "processed_date": "2026-07-27",
+  "page_count": 200,
+  "unit_label": "page",
+  "text_chars": 205873,
+  "text_pages": 197,
+  "requires_ocr_review": false,
+  "working_text_persisted": false,
+  "themes": "clean architecture in Python, domain model, use cases, repositories, web adapters, tests, dependency injection",
+  "utility_tsis": "puente directo para implementar Clean Architecture en el backtester propio Python"
+}
