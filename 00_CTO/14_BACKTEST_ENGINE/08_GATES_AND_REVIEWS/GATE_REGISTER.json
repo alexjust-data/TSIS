@@ -320,7 +320,7 @@
       "gate_id": "BT-GATE-013",
       "title": "Physical historical replay slice V0.1",
       "name": "PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1",
-      "status": "CONTRACT_DRAFT_PENDING_OWNER_REVIEW",
+      "status": "CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW",
       "code_implementation": "NOT_AUTHORIZED",
       "authorized_scope": "contract definition not opened by BT-GATE-012 closure",
       "new_boundary": "PHYSICAL_013_ROWS_TO_ACCEPTED_REPLAY_ENGINE",
@@ -334,12 +334,19 @@
   "next_gate": {
     "gate_id": "BT-GATE-013",
     "name": "PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1",
-    "status": "CONTRACT_DRAFT_PENDING_OWNER_REVIEW",
+    "status": "CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW",
     "code_implementation": "NOT_AUTHORIZED",
     "authorized_scope": "contract definition not opened by BT-GATE-012 closure",
     "new_boundary": "PHYSICAL_013_ROWS_TO_ACCEPTED_REPLAY_ENGINE",
     "future_capability_not_this_gate": "SMALL_CAPS_RIGOROUS_RESEARCH_RUNNER",
     "contract_artifact": "docs/00_system/14_BT_GATE_013_PHYSICAL_HISTORICAL_REPLAY_SLICE_CONTRACT_V0_1.md"
   },
-  "register_id": "TSIS_BACKTEST_GATE_REGISTER_V0_1"
+  "register_id": "TSIS_BACKTEST_GATE_REGISTER_V0_1",
+  "bt_gate_013_contract_correction_sync": {
+    "status": "CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW",
+    "read_only_review": "ACCEPTED",
+    "implementation": "NOT_AUTHORIZED",
+    "provider_evidence_required": false,
+    "updated_at_utc": "2026-07-29T19:40:00Z"
+  }
 }

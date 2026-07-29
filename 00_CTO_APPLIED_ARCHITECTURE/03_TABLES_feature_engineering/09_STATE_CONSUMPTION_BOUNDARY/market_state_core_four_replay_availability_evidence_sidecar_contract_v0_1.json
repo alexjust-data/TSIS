@@ -1,0 +1,304 @@
+{
+  "contract_id": "market_state_core_four_replay_availability_evidence_sidecar_contract_v0_1",
+  "contract_version": "0.1",
+  "status": "ACTIVE_SCHEMA_SCALE_SAFE_WITH_VALIDATION_HARDENED_RESTRICTIONS_NO_PHYSICAL_READ",
+  "owner_layer": "09_STATE_CONSUMPTION_BOUNDARY",
+  "json_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://tsis.local/schemas/market_state_core_four_replay_availability_evidence_sidecar_contract_v0_1.json",
+    "title": "Market State Core Four Replay Availability Evidence Sidecar v0.1",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "sidecar_id",
+      "sidecar_schema_id",
+      "created_at_utc",
+      "state_kind",
+      "profile_id",
+      "physical_profile_id",
+      "candidate_dataset_id",
+      "candidate_dataset_fingerprint",
+      "candidate_output_manifest_sha256",
+      "candidate_parquet_sha256",
+      "physical_schema_sha256",
+      "source_lineage_manifest_sha256",
+      "row_count",
+      "records",
+      "official_dataset",
+      "production",
+      "downstream",
+      "backtest_consumption_authorized"
+    ],
+    "properties": {
+      "sidecar_id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "sidecar_schema_id": {
+        "const": "market_state_core_four_replay_availability_evidence_sidecar_contract_v0_1"
+      },
+      "created_at_utc": {
+        "type": "string",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?Z$"
+      },
+      "state_kind": {
+        "const": "market_state"
+      },
+      "profile_id": {
+        "const": "market_state_core_four_intraday_profile_v0_1"
+      },
+      "physical_profile_id": {
+        "const": "core_four_market_state_profile_v0_1"
+      },
+      "candidate_dataset_id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "candidate_dataset_fingerprint": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      "candidate_output_manifest_sha256": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      "candidate_parquet_sha256": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      "physical_schema_sha256": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      "source_lineage_manifest_sha256": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      "row_count": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 120
+      },
+      "records": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 120,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "materialized_state_candidate_id",
+            "source_candidate_record_id",
+            "state_output_fingerprint",
+            "candidate_dataset_id",
+            "candidate_dataset_fingerprint",
+            "instrument_id",
+            "ticker",
+            "session_date",
+            "context_id",
+            "profile_id",
+            "physical_profile_id",
+            "decision_timestamp_utc",
+            "state_as_of_utc",
+            "state_available_at_utc",
+            "state_availability_policy_id",
+            "state_publication_latency_policy_id",
+            "state_publication_latency",
+            "component_availability_evidence",
+            "state_replay_consumption_legality",
+            "restriction_codes"
+          ],
+          "properties": {
+            "materialized_state_candidate_id": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "source_candidate_record_id": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "state_output_fingerprint": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "candidate_dataset_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "candidate_dataset_fingerprint": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "instrument_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "ticker": {
+              "type": "string",
+              "minLength": 1
+            },
+            "session_date": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "context_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "profile_id": {
+              "const": "market_state_core_four_intraday_profile_v0_1"
+            },
+            "physical_profile_id": {
+              "const": "core_four_market_state_profile_v0_1"
+            },
+            "decision_timestamp_utc": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?Z$"
+            },
+            "state_as_of_utc": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?Z$"
+            },
+            "state_available_at_utc": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?Z$"
+            },
+            "state_availability_policy_id": {
+              "const": "market_state_core_four_replay_availability_policy_v0_1"
+            },
+            "state_publication_latency_policy_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "state_publication_latency": {
+              "type": "string",
+              "pattern": "^P(?:(\\d+)D)?(?:T(?:(\\d+)H)?(?:(\\d+)M)?(?:(\\d+(?:\\.\\d+)?)S)?)?$"
+            },
+            "component_availability_evidence": {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "component_id",
+                  "information_object_id",
+                  "source_timestamp_utc",
+                  "component_as_of_utc",
+                  "component_available_at_utc",
+                  "availability_status",
+                  "restriction_codes"
+                ],
+                "properties": {
+                  "component_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "information_object_id": {
+                    "type": "string",
+                    "enum": [
+                      "trading_activity",
+                      "price_movement",
+                      "price_location_structure",
+                      "volatility_range_state"
+                    ]
+                  },
+                  "source_timestamp_utc": {
+                    "type": "string",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?Z$"
+                  },
+                  "component_as_of_utc": {
+                    "type": "string",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?Z$"
+                  },
+                  "component_available_at_utc": {
+                    "type": "string",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?Z$"
+                  },
+                  "availability_status": {
+                    "type": "string",
+                    "enum": [
+                      "available",
+                      "research_only",
+                      "blocked"
+                    ]
+                  },
+                  "restriction_codes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "uniqueItems": true
+                  }
+                }
+              }
+            },
+            "state_replay_consumption_legality": {
+              "type": "string",
+              "enum": [
+                "decision_safe",
+                "research_only",
+                "blocked_temporal_legality"
+              ]
+            },
+            "restriction_codes": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            }
+          }
+        }
+      },
+      "official_dataset": {
+        "const": false
+      },
+      "production": {
+        "const": false
+      },
+      "downstream": {
+        "const": false
+      },
+      "backtest_consumption_authorized": {
+        "const": false
+      }
+    }
+  },
+  "semantic_validation_requirements": [
+    "records.length == row_count",
+    "row_count can represent bounded legacy candidates and scale-validation candidates up to 120 records",
+    "record candidate_dataset_id and candidate_dataset_fingerprint equal top-level sidecar identity",
+    "materialized_state_candidate_id unique",
+    "state_output_fingerprint unique",
+    "component_id unique inside each row",
+    "component information_object_id set equals core four required objects",
+    "source_timestamp_utc <= component_as_of_utc <= decision_timestamp_utc <= state_available_at_utc",
+    "component_as_of_utc <= component_available_at_utc <= state_available_at_utc",
+    "state_as_of_utc = max(component_as_of_utc)",
+    "state_available_at_utc = max(decision_timestamp_utc, component_available_at_utc) + state_publication_latency",
+    "PT0S latency requires zero_latency_candidate_replay_publication_policy_v0_1",
+    "component restriction_codes subset of row restriction_codes",
+    "component blocked or research_only prevents row decision_safe"
+  ],
+  "execution_boundaries": {
+    "sidecar_materialized_by_this_contract": false,
+    "parquet_modified": false,
+    "market_state_recalculated": false,
+    "StateReplayFeed_authorized": false,
+    "backtest_authorized": false,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false
+  }
+}

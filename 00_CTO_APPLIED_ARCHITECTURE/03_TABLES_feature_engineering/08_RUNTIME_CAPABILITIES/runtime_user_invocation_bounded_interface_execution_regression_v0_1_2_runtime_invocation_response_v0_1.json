@@ -1,0 +1,89 @@
+{
+  "invocation_id": "runtime_invocation_scale_validation_reissue_v0_1_2_20260729",
+  "request_type": "market_state",
+  "state_kind": "market_state",
+  "request_fingerprint": "a2387169fefec56703c5f6dc5dfb2ee1567e9ce313c4519128cfb931d99fe821",
+  "invocation_status": "reuse_hit",
+  "resolution_decision": "VALID_REQUEST_REUSE_HIT",
+  "capability_id": "market_state_on_demand_runtime_capability_v0_1",
+  "profile_id": "market_state_core_four_intraday_profile_v0_1",
+  "run_id": "market_state_on_demand_scale_validation_v0_1_20260727T133641Z",
+  "dataset_id": "market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762",
+  "dataset_status": "validated_candidate",
+  "validation_status": "PASS_WITH_RESTRICTIONS",
+  "coverage": {
+    "requested_contexts": 120,
+    "represented_contexts": 104,
+    "unavailable_contexts": 16,
+    "blocked_contexts": 0,
+    "quarantined_contexts": 0,
+    "unaccounted_contexts": 0
+  },
+  "restrictions": [
+    "candidate_runtime_only",
+    "not_official_dataset",
+    "no_downstream",
+    "no_production"
+  ],
+  "artifact_references": [
+    {
+      "ref_id": "candidate_output_manifest",
+      "ref_type": "runtime_artifact",
+      "sha256": "dd3037aa3a3226b7ac308dcc909575344de38202cbe59c25483259a4c07f0e78",
+      "availability": "available"
+    },
+    {
+      "ref_id": "candidate_parquet",
+      "ref_type": "runtime_artifact",
+      "sha256": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68",
+      "availability": "available"
+    },
+    {
+      "ref_id": "physical_schema_contract",
+      "ref_type": "runtime_artifact",
+      "sha256": "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b",
+      "availability": "available"
+    },
+    {
+      "ref_id": "lineage_manifest",
+      "ref_type": "runtime_artifact",
+      "sha256": "85e7331b1b022d4075608bc4b8663de53dcb6234f21215ff232ad84c85cd4c52",
+      "availability": "available"
+    },
+    {
+      "ref_id": "replay_availability_sidecar",
+      "ref_type": "runtime_artifact",
+      "sha256": "d9407202d9f795bd8547e17bb19debb81daca706a06ef6bd6439d0db2d16b28b",
+      "availability": "available"
+    }
+  ],
+  "official_dataset": false,
+  "production": false,
+  "downstream": false,
+  "market_state_details": {
+    "state_kind": "market_state",
+    "materializer_executions": 0,
+    "source_market_data_rows_read": 0,
+    "registry_mutations": 0,
+    "physical_rows_delivered": 0
+  },
+  "event_state_details": null,
+  "response_ref": {
+    "ref_id": "runtime_invocation_response_scale_validation_reissue_v0_1_2_20260729",
+    "ref_type": "runtime_invocation_response",
+    "sha256": "80bebe47b4106f5e20ad1bff274c4d383c08c6a40f2bad6e69162289d99a11d2",
+    "availability": "available"
+  },
+  "request_ref": {
+    "ref_id": "state_resolution_request_scale_validation_reissue_v0_1_2_20260729",
+    "ref_type": "state_resolution_request",
+    "sha256": "a2387169fefec56703c5f6dc5dfb2ee1567e9ce313c4519128cfb931d99fe821",
+    "availability": "available"
+  },
+  "state_bundle_manifest_ref": {
+    "ref_id": "state_bundle_manifest_scale_validation_reissue_v0_1_2_20260729",
+    "ref_type": "state_bundle_manifest",
+    "availability": "available"
+  },
+  "authorization_ref": null
+}

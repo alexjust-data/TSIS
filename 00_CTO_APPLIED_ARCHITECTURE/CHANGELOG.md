@@ -1,3 +1,38 @@
+## 2026-07-29 - Scale-validation replay sidecar and runtime v0.1.2 reissue readiness
+
+- Replaced the active replay availability sidecar target with the exact Market State scale-validation candidate `market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762`.
+- Closed `market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_v0_1` as `CLOSED_PASS_SCALE_VALIDATION_REPLAY_AVAILABILITY_EVIDENCE_SIDECAR_CREATED_AND_VALIDATED_WITH_RESTRICTIONS_NO_PHYSICAL_READ` with `104` row-addressable records and no parquet read.
+- Closed `runtime_user_invocation_bounded_interface_execution_regression_v0_1_2` as `FAILED_V0_1_2_CONTROL_PLANE_REISSUE_REGRESSION` and emitted control-plane v0.1.2 request/response/bundle instances.
+- Preserved physical reads = 0, state rows read = 0, `StateReplayFeed = NOT_AUTHORIZED`, production = false and downstream = false.
+
+## 2026-07-29 - Runtime user invocation bounded interface regression v0.1.2 closed
+
+- Closed `runtime_user_invocation_bounded_interface_execution_regression_v0_1_2` as `CLOSED_PASS_V0_1_2_BOUNDED_INTERFACE_EXECUTION_REGRESSION_WITH_RESTRICTIONS_NO_CONSUMPTION`.
+- Case count: `10`; blocking findings: `0`; restricted findings: `2`.
+- Preserved runtime requests = 0, runtime builds = 0, physical reads = 0, state rows read = 0, `StateReplayFeed = NOT_AUTHORIZED`, production = false and downstream = false.
+- Set next gate to `state_bundle_manifest_physical_evidence_alignment_v0_1`.
+
+## 2026-07-29 - Replay availability sidecar created and validated
+
+- Closed `market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_v0_1` as `CLOSED_PASS_REPLAY_AVAILABILITY_EVIDENCE_SIDECAR_CREATED_AND_VALIDATED_WITH_RESTRICTIONS_NO_PHYSICAL_READ`.
+- Created `market_state_core_four_replay_availability_evidence_sidecar_manifest_v0_1.json` with `8` row-addressable records.
+- Used only candidate records, manifests and validation reports; preserved parquet opened = false, state rows read = 0 and `StateReplayFeed = NOT_AUTHORIZED`.
+- Next gate is `runtime_user_invocation_bounded_interface_execution_regression_v0_1_2`.
+
+## 2026-07-29 - Replay availability sidecar authorization closed
+
+- Closed `market_state_core_four_replay_availability_evidence_sidecar_authorization_v0_1` as `CLOSED_AUTHORIZED_REPLAY_AVAILABILITY_EVIDENCE_SIDECAR_EXECUTION_AND_VALIDATION_WITH_RESTRICTIONS_NO_PHYSICAL_READ`.
+- Authorized the next bounded sidecar execution-and-validation gate for row-addressable Market State core-four replay availability evidence.
+- Preserved sidecar records written = 0, parquet opened = false, state rows read = 0, `StateReplayFeed = NOT_AUTHORIZED`, production = false and downstream = false.
+- Next gate is `market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_v0_1`.
+
+## 2026-07-29 - Runtime user invocation bounded interface regression v0.1.2 blocked
+
+- Closed `runtime_user_invocation_bounded_interface_execution_regression_v0_1_2` as `CLOSED_BLOCKED_REQUIRES_ROW_ADDRESSABLE_REPLAY_AVAILABILITY_EVIDENCE_NO_PHYSICAL_READ`.
+- Confirmed provider v0.1.2 and the hardened replay timestamp contract are ready, but no row-addressable replay availability sidecar exists for the validated Market State core-four physical candidate.
+- Preserved runtime requests = 0, runtime builds = 0, physical reads = 0, state rows read = 0, `StateReplayFeed = NOT_AUTHORIZED`, production = false and downstream = false.
+- Set next gate to `market_state_core_four_replay_availability_evidence_sidecar_authorization_v0_1`.
+
 ## 2026-07-29 - Market State core-four replay availability timestamp contract validation hardened
 
 - Hardened `market_state_core_four_replay_availability_timestamp_contract_v0_1` after external semantic-enforcement review.

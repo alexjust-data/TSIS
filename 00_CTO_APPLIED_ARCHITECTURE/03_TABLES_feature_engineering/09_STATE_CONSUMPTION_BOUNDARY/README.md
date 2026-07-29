@@ -1,4 +1,65 @@
-# Market State Core Four Replay Availability Timestamp Contract Validation Hardened
+## Scale Validation Replay Availability Sidecar Active
+
+```text
+market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_v0_1 = CLOSED_PASS_SCALE_VALIDATION_REPLAY_AVAILABILITY_EVIDENCE_SIDECAR_CREATED_AND_VALIDATED_WITH_RESTRICTIONS_NO_PHYSICAL_READ
+sidecar_candidate_dataset_id = market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762
+sidecar_records = 104
+parquet_opened = false
+state_rows_read = 0
+StateReplayFeed = NOT_AUTHORIZED
+```
+
+## Runtime Interface Regression Closed With Replay Availability Evidence
+
+```text
+upstream_gate = runtime_user_invocation_bounded_interface_execution_regression_v0_1_2
+upstream_status = CLOSED_PASS_V0_1_2_BOUNDED_INTERFACE_EXECUTION_REGRESSION_WITH_RESTRICTIONS_NO_CONSUMPTION
+current_boundary_gate = state_bundle_manifest_physical_evidence_alignment_v0_1_pending
+physical_read_authorization_ready = false
+StateReplayFeed = NOT_AUTHORIZED
+```
+
+The row-addressable replay availability sidecar is now available. Physical evidence alignment is the next gate and still must not open StateReplayFeed or backtest consumption.
+
+## Market State Core Four Replay Availability Evidence Sidecar Execution v0.1
+
+```text
+market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_v0_1 = CLOSED_PASS_REPLAY_AVAILABILITY_EVIDENCE_SIDECAR_CREATED_AND_VALIDATED_WITH_RESTRICTIONS_NO_PHYSICAL_READ
+current_gate = runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_pending
+sidecar_records_written = 8
+parquet_opened = false
+state_rows_read = 0
+StateReplayFeed = NOT_AUTHORIZED
+```
+
+The sidecar binds each validated core-four physical candidate row to replay availability timestamps and restrictions. It is not downstream authorization.
+
+## Market State Core Four Replay Availability Evidence Sidecar Authorization v0.1
+
+```text
+market_state_core_four_replay_availability_evidence_sidecar_authorization_v0_1 = CLOSED_AUTHORIZED_REPLAY_AVAILABILITY_EVIDENCE_SIDECAR_EXECUTION_AND_VALIDATION_WITH_RESTRICTIONS_NO_PHYSICAL_READ
+current_gate = market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_v0_1_pending
+sidecar_records_written = 0
+parquet_opened = false
+state_rows_read = 0
+StateReplayFeed = NOT_AUTHORIZED
+```
+
+The next execution-and-validation gate must produce the row-addressable replay availability sidecar or block fail-closed.
+
+## Runtime Interface Regression Blocked On Replay Availability Evidence
+
+```text
+upstream_gate = runtime_user_invocation_bounded_interface_execution_regression_v0_1_2
+upstream_status = CLOSED_BLOCKED_REQUIRES_ROW_ADDRESSABLE_REPLAY_AVAILABILITY_EVIDENCE_NO_PHYSICAL_READ
+current_boundary_gate = market_state_core_four_replay_availability_evidence_sidecar_authorization_v0_1_pending
+physical_read_authorization_ready = false
+StateReplayFeed = NOT_AUTHORIZED
+```
+
+Before repeating physical evidence alignment, TSIS must create or authorize a sidecar/envelope that binds each physical Market State core-four row identity to `state_as_of_utc`, `state_available_at_utc`, component availability evidence and restrictions.
+
+## Historical Snapshot - Market State Core Four Replay Availability Timestamp Contract Validation Hardened
 
 ```text
 market_state_core_four_replay_availability_timestamp_contract_v0_1
@@ -10,7 +71,7 @@ failed_cases = 0
 physical_read_authorization_ready = false
 StateReplayFeed = NOT_AUTHORIZED
 
-Current gate = runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_pending
+Current gate at timestamp contract closure = runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_pending
 ```
 
 The contract now closes the semantic-enforcement gap found by external review. It remains a contract-only gate and does not authorize physical StateBundle reads.
@@ -23,7 +84,7 @@ physical_read_authorization_ready = false
 StateReplayFeed = NOT_AUTHORIZED
 ```
 
-Current required next gate:
+Required next gate at timestamp contract closure:
 
 ```text
 runtime_user_invocation_bounded_interface_execution_regression_v0_1_2
@@ -48,10 +109,10 @@ runtime_user_invocation_bounded_interface_execution_regression_v0_1_2
 
 # 09_STATE_CONSUMPTION_BOUNDARY
 
-Status: `market_state_core_four_replay_availability_timestamp_contract_v0_1_closed_no_physical_read`
+Status: `runtime_interface_regression_blocked_on_replay_availability_evidence`
 Date: `2026-07-29`
-Current gate: `runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_pending`
-Last closed gate: `market_state_core_four_replay_availability_timestamp_contract_v0_1`
+Current gate: `market_state_core_four_replay_availability_evidence_sidecar_authorization_v0_1_pending`
+Last closed gate: `runtime_user_invocation_bounded_interface_execution_regression_v0_1_2`
 
 This folder records the shared boundary between the TSIS State Provider control-plane and future state consumers.
 

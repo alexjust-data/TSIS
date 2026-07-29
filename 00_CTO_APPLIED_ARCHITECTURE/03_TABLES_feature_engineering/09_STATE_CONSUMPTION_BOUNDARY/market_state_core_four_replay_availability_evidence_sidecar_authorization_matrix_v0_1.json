@@ -1,0 +1,148 @@
+{
+  "gate": "market_state_core_four_replay_availability_evidence_sidecar_authorization_v0_1",
+  "created_at_utc": "2026-07-29T19:23:11Z",
+  "status": "CLOSED_AUTHORIZED_REPLAY_AVAILABILITY_EVIDENCE_SIDECAR_EXECUTION_AND_VALIDATION_WITH_RESTRICTIONS_NO_PHYSICAL_READ",
+  "case_count": 12,
+  "failed_cases": 0,
+  "missing_required_case_ids": [],
+  "duplicate_case_ids": [],
+  "unexpected_case_ids": [],
+  "sidecar_records_written": 0,
+  "parquet_opened": false,
+  "state_rows_read": 0,
+  "StateReplayFeed_records_emitted": 0,
+  "runtime_requests_executed": 0,
+  "runtime_builds_executed": 0,
+  "datasets_written": 0,
+  "registry_mutations": 0,
+  "official_dataset": false,
+  "production": false,
+  "downstream": false,
+  "backtest_consumption": false,
+  "next_gate": "market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_v0_1",
+  "rows": [
+    {
+      "case_id": "SIDE_AUTH_INPUTS_001",
+      "area": "input_inventory",
+      "expected": "Required prior evidence is present.",
+      "observed": "missing=[]",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_readout_v0_1.md",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_matrix_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_timestamp_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_timestamp_contract_matrix_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/core_four_market_state_materialization_design_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/core_four_market_state_candidate_physical_validation_readout_v0_1.md"
+      ]
+    },
+    {
+      "case_id": "SIDE_AUTH_PREVIOUS_BLOCK_001",
+      "area": "previous_block",
+      "expected": "Previous gate blocked exactly on missing row-addressable replay evidence.",
+      "observed": "previous_block=True",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_readout_v0_1.md"
+      ]
+    },
+    {
+      "case_id": "SIDE_AUTH_TIMESTAMP_CONTRACT_001",
+      "area": "timestamp_contract",
+      "expected": "Timestamp contract is closed and validation hardened.",
+      "observed": "case_count=30; failed_cases=0",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_timestamp_contract_matrix_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_timestamp_contract_v0_1.json"
+      ]
+    },
+    {
+      "case_id": "SIDE_AUTH_PHYSICAL_IDENTITY_001",
+      "area": "physical_identity",
+      "expected": "Validated core-four physical candidate has row identity and fingerprint evidence.",
+      "observed": "identity_ok=True; validation_ok=True",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/core_four_market_state_materialization_design_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/core_four_market_state_candidate_physical_validation_readout_v0_1.md"
+      ]
+    },
+    {
+      "case_id": "SIDE_AUTH_CONTRACT_SCHEMA_COMPILE_001",
+      "area": "contract_schema",
+      "expected": "Sidecar JSON Schema compiles under Draft 2020-12.",
+      "observed": "compiled",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_contract_v0_1.json"
+      ]
+    },
+    {
+      "case_id": "SIDE_AUTH_CONTRACT_GOOD_FIXTURE_001",
+      "area": "contract_schema",
+      "expected": "Positive sidecar fixture validates.",
+      "observed": "errors=[]",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_contract_v0_1.json"
+      ]
+    },
+    {
+      "case_id": "SIDE_AUTH_CONTRACT_MISSING_ROW_ID_BLOCKS_001",
+      "area": "contract_schema",
+      "expected": "Missing physical row id is blocked.",
+      "observed": "errors=[\"'materialized_state_candidate_id' is a required property\"]",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_contract_v0_1.json"
+      ]
+    },
+    {
+      "case_id": "SIDE_AUTH_CONTRACT_MISSING_AVAILABLE_AT_BLOCKS_001",
+      "area": "contract_schema",
+      "expected": "Missing available-at timestamp is blocked.",
+      "observed": "errors=[\"'state_available_at_utc' is a required property\"]",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_contract_v0_1.json"
+      ]
+    },
+    {
+      "case_id": "SIDE_AUTH_CONTRACT_CORE_FOUR_COMPONENTS_REQUIRED_001",
+      "area": "contract_schema",
+      "expected": "Exactly four component availability records are required.",
+      "observed": "errors=[\"[{'component_id': 'component_trading_activity_v0_1', 'information_object_id': 'trading_activity', 'source_timestamp_utc': '2026-01-05T14:42:00Z', 'component_as_of_utc': '2026-01-05T14:42:00Z', 'component_available_at_utc': '2026-01-05T14:42:00Z', 'availability_status': 'available', 'restriction_codes': ['candidate_runtime_only']}, {'component_id': 'component_price_movement_v0_1', 'information_object_id': 'price_movement', 'source_timestamp_utc': '2026-01-05T14:42:00Z', 'component_as_of_utc': '2026-01-05T14:42:00Z', 'component_available_at_utc': '2026-01-05T14:42:00Z', 'availability_status': 'available', 'restriction_codes': ['candidate_runtime_only']}, {'component_id': 'component_price_location_structure_v0_1', 'information_object_id': 'price_location_structure', 'source_timestamp_utc': '2026-01-05T14:42:00Z', 'component_as_of_utc': '2026-01-05T14:42:00Z', 'component_available_at_utc': '2026-01-05T14:42:00Z', 'availability_status': 'available', 'restriction_codes': ['candidate_runtime_only']}] is too short\"]",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_contract_v0_1.json"
+      ]
+    },
+    {
+      "case_id": "SIDE_AUTH_CONTRACT_NO_PRODUCTION_DOWNSTREAM_001",
+      "area": "contract_schema",
+      "expected": "Sidecar cannot authorize production or downstream.",
+      "observed": "errors=['False was expected', 'False was expected']",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_contract_v0_1.json"
+      ]
+    },
+    {
+      "case_id": "SIDE_AUTH_NEXT_EXECUTION_SCOPE_001",
+      "area": "next_execution_scope",
+      "expected": "Next execution-and-validation scope is bounded and exact-candidate only.",
+      "observed": "{\"allowed\": true, \"allowed_column_classes\": [\"row identity\", \"state output fingerprint\", \"decision timestamp\", \"restriction lineage JSON\", \"source lineage JSON\", \"policy/formula lineage JSON\"], \"exact_candidate_only\": true, \"forbidden_column_classes\": [\"scientific value columns used as strategy inputs\", \"future outcomes\", \"execution prices\", \"fills\", \"PnL\", \"downstream projections\"], \"max_parquet_files\": 1, \"max_rows\": 8, \"only_if_metadata_inputs_do_not_expose_required_row_identity_fields\": true}",
+      "result": "PASS",
+      "evidence_refs": []
+    },
+    {
+      "case_id": "SIDE_AUTH_BOUNDARIES_001",
+      "area": "hard_boundaries",
+      "expected": "This authorization gate writes no sidecar records and opens no physical data.",
+      "observed": "sidecar_records_written=0; parquet_opened=false; state_rows_read=0; StateReplayFeed=0; backtest=false",
+      "result": "PASS",
+      "evidence_refs": []
+    }
+  ]
+}

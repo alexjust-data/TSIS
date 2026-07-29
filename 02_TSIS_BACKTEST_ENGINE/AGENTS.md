@@ -152,14 +152,23 @@ BT-GATE-013
 PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1
 
 Incluye:
+- puente desde filas fisicas 013 a ReplayBarEvent / ReplayGapEvent
+- binding fisico exacto de schema y timestamp
+- disponibilidad legal available_at = bar_end
+- linaje fila a evento
+- hashes de inputs fisicos
+- gaps como UNKNOWN_SOURCE_GAP sin forward-fill
+- replay multi-symbol/multi-session con motor aceptado BT-GATE-012
+- reconciliacion contable y determinismo
+
+No incluye:
 - halts
 - SSR
 - borrow/locates
-- liquidez y capacidad
-- batch control
-- validación temporal
-- control de múltiples pruebas
-- DSR y PBO/CSCV cuando resulten aplicables
+- liquidez/capacidad
+- batch research
+- DSR/PBO/CSCV
+- edge evidence
 ```
 
 Esta agrupación es la orientación vigente. Un agente no debe volver a separar
@@ -533,7 +542,6 @@ DONE: 10 synthetic tests passing
 NEXT: select and configure TSIS_REAL_DATA_FIXTURE
 ```
 
-
 ## 11. Update 2026-07-28 - RunPreflight Hardening
 
 ```text
@@ -677,7 +685,6 @@ Live log entry:
 2026-07-28 - DONE - Implemented RealDataInspector and executed bounded real fixture preflight - real_data_inspector.py, contracts.py, manifests.py, run_preflight.py, tests/unit/test_real_data_inspector.py, fixture/discovery docs, pyproject.toml, runs/run_preflight_real_fixture_2026_01_05_qg5_v0_2 - next action: minimum REPLAY/event-loop increment
 ```
 
-
 ## 15. Update 2026-07-28 - Minimum Replay
 
 ```text
@@ -728,7 +735,6 @@ Live log entry:
 ```text
 2026-07-28 - DONE - Implemented minimum REPLAY/event-loop and real fixture smoke - replay/contracts.py, replay/historical_feed.py, tests/unit/test_historical_replay_feed.py, docs/00_system/03_REPLAY_IMPLEMENTATION_PLAN_V0_1.md, runs/replay_real_fixture_2026_01_05_qg5_v0_1 - next action: mechanical Decision/Order/Fill/Position path
 ```
-
 
 ## 16. Update 2026-07-28 - Mechanical ABAT Round Trip
 
@@ -889,9 +895,6 @@ Live log entry:
 2026-07-29 - DONE - Created execution semantics and cost-model contract draft - docs/00_system/07_EXECUTION_SEMANTICS_AND_COST_MODEL_CONTRACT_V0_1.md, AGENTS.md, CHANGELOG.md - next action: review contract; code implementation remains NOT_AUTHORIZED
 ```
 
-
-
-
 ## 19. Update 2026-07-29 - Deterministic Fill Simulator V0.1
 
 ```text
@@ -910,7 +913,6 @@ Do not start full 2005-2026 backtest.
 Do not activate StateReplayFeed, Market State or Event State.
 ```
 
-
 ## Current Gate Override - 2026-07-29
 
 ```text
@@ -918,16 +920,18 @@ BT-GATE-011 = CLOSED_PASS_IMPLEMENTATION_ACCEPTED
 SINGLE_STRATEGY_END_TO_END_BACKTEST = IMPLEMENTED_AND_ACCEPTED
 FINAL_OWNER_REVIEW = ACCEPTED
 
-CURRENT_GATE = BT-GATE-012 / MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE
 BT-GATE-012 = CLOSED_PASS_IMPLEMENTATION_ACCEPTED
 BT-GATE-012_IMPLEMENTATION = IMPLEMENTED_AND_ACCEPTED
 IMPLEMENTATION_ACCEPTANCE = ACCEPTED
-EXECUTION_MODE = CLOSED_ACCEPTED
-NO_INTERMEDIATE_MICROGATES = PRESERVED
-NEXT_GATE = BT-GATE-013 / PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1_CONTRACT_DRAFT_PENDING_OWNER_REVIEW
+
+CURRENT_GATE = BT-GATE-013 / PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1
+BT-GATE-013_CONTRACT = CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW
+BT-GATE-013_IMPLEMENTATION = NOT_AUTHORIZED
+PHYSICAL_RUN = NOT_AUTHORIZED
+CODE_IMPLEMENTATION = NOT_AUTHORIZED
 ```
 
-BT-GATE-012 implementation evidence has been produced and is pending final acceptance review. StateReplayFeed, Market State, Event State and provider integration remain closed.
+BT-GATE-012 is closed and accepted. BT-GATE-013 has a corrected contract pending final owner review; implementation and physical execution remain not authorized. StateReplayFeed, Market State, Event State and provider integration remain closed.
 
 ## 2026-07-29 | BT-GATE-011 single-strategy end-to-end implementation
 
@@ -948,8 +952,6 @@ StrategySpec -> HistoricalReplayFeed -> point-in-time decisions -> ExecutionOrde
 
 The run remains `ENGINE_VALIDATION_RUN`, `EDGE_EVIDENCE = NOT_AUTHORIZED`, `ECONOMIC_REALISM = INCOMPLETE`.
 
-
-
 ## BT-GATE-011 corrective acceptance evidence
 
 ```text
@@ -962,7 +964,6 @@ ENGINE_TEST_SUITE = 99 tests OK
 
 No StateReplayFeed, Market State, Event State or State Provider integration is authorized by this correction.
 
-
 ## 2026-07-29 | BT-GATE-011 accepted and BT-GATE-012 contract draft opened
 
 ```text
@@ -970,7 +971,7 @@ BT-GATE-011 = CLOSED_PASS_IMPLEMENTATION_ACCEPTED
 SINGLE_STRATEGY_END_TO_END_BACKTEST = IMPLEMENTED_AND_ACCEPTED
 FINAL_OWNER_REVIEW = ACCEPTED
 
-CURRENT_GATE = BT-GATE-012 / MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE
+HISTORICAL_CURRENT_GATE_AT_TIME = BT-GATE-012 / MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE
 BT-GATE-012 = AUTHORIZED_FOR_CONTINUOUS_IMPLEMENTATION
 BT-GATE-012_IMPLEMENTATION = AUTHORIZED
 ```
@@ -988,13 +989,12 @@ BT-GATE-012_OWNER_CONTRACT_REVIEW = PASS
 BT-GATE-012 = AUTHORIZED_FOR_CONTINUOUS_IMPLEMENTATION
 BT-GATE-012_IMPLEMENTATION = AUTHORIZED
 EXECUTION_MODE = CONTINUOUS_UNTIL_FINAL_ACCEPTANCE_PACKET
-NEXT_GATE = BT-GATE-013 / PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1_CONTRACT_DRAFT_PENDING_OWNER_REVIEW
+NEXT_GATE = BT-GATE-013 / PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1_CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW
 ```
 
 Proceed with BT-GATE-012 implementation continuously until the final acceptance packet unless a material scope or semantic stop condition appears.
 
-
-## 2026-07-29 | BT-GATE-012 implemented pending final acceptance review
+## 2026-07-29 | Historical BT-GATE-012 implementation acceptance evidence
 
 ```text
 BT-GATE-012 = CLOSED_PASS_IMPLEMENTATION_ACCEPTED
@@ -1005,11 +1005,10 @@ BT-GATE-012_FOCUSED_TESTS = 7 portfolio tests OK
 BT-GATE-012_VALIDATION_STATUS = PASS
 BT-GATE-012_DETERMINISM_STATUS = PASS
 BT-GATE-012_DETERMINISTIC_OUTPUT_HASH = 414aceb2bc80836f8fa821cd4d14071e54c86f3c7855c0a34c82ffd8b1c79182
-NEXT_GATE = BT-GATE-013 / PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1_CONTRACT_DRAFT_PENDING_OWNER_REVIEW
+NEXT_GATE = BT-GATE-013 / PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1_CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW
 ```
 
-Proceed only to final acceptance review packaging/corrections inside BT-GATE-012. Do not close BT-GATE-012 without final owner/external acceptance. StateReplayFeed, Market State, Event State and provider integration remain closed.
-
+BT-GATE-012 later closed as accepted. StateReplayFeed, Market State, Event State and provider integration remain closed.
 
 ## 2026-07-29 | BT-GATE-013 boundary corrected
 
@@ -1032,18 +1031,34 @@ The next work is contract definition only:
 
 ```text
 docs/00_system/14_BT_GATE_013_PHYSICAL_HISTORICAL_REPLAY_SLICE_CONTRACT_V0_1.md
-Status = CONTRACT_DRAFT_PENDING_OWNER_REVIEW
+Status = CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW
 Implementation = NOT_AUTHORIZED
 ```
-
 
 ## 2026-07-29 | BT-GATE-013 contract draft placed in canonical backtester docs
 
 ```text
 BT-GATE-013 = PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1
-BT-GATE-013_CONTRACT = CONTRACT_DRAFT_PENDING_OWNER_REVIEW
+BT-GATE-013_CONTRACT = HISTORICAL_CONTRACT_DRAFT_PENDING_OWNER_REVIEW_SUPERSEDED_BY_CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW
 BT-GATE-013_IMPLEMENTATION = NOT_AUTHORIZED
 CONTRACT_ARTIFACT = docs/00_system/14_BT_GATE_013_PHYSICAL_HISTORICAL_REPLAY_SLICE_CONTRACT_V0_1.md
 ```
 
 The contract draft was copied into the canonical backtester document location. This does not authorize implementation, Market State consumption, Event State consumption, StateReplayFeed, provider modification or full 2005-2026 execution.
+
+## 2026-07-29 | BT-GATE-013 contract corrected after read-only review
+
+```text
+READ_ONLY_REVIEW = ACCEPTED
+BT-GATE-013 = PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1
+BT-GATE-013_CONTRACT = CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW
+BT-GATE-013_IMPLEMENTATION = NOT_AUTHORIZED
+PROVIDER_EVIDENCE_REQUIRED = false
+```
+
+The corrected contract freezes source identity layering, exact physical schema binding,
+derived timestamp semantics, source row locator policy, portable relative paths and
+repair-field restrictions. This does not authorize implementation, physical execution,
+StateReplayFeed, Market State, Event State, provider modification, full 2005-2026 execution
+or edge claims.
+

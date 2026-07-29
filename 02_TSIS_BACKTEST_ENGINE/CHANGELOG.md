@@ -22,7 +22,6 @@ No production engine code, real-data consumption, backtest run or dataset promot
 
 No real TSIS data was consumed in this increment.
 
-
 ## 2026-07-28 | RunPreflight hardening before real fixture
 
 - Added missing fail-closed tests for `DATASET_ROOT_NOT_FOUND`, `INVALID_DATE_RANGE`, `CANDIDATE_RUN_PURPOSE_NOT_PERMITTED` and `SYMBOL_NOT_IN_UNIVERSE`.
@@ -89,7 +88,6 @@ REAL_DATA_PREFLIGHT = PASS
 BACKTEST_VERTICAL_SLICE = NOT_STARTED
 ```
 
-
 ## 2026-07-28 | RealDataInspector auditability sealing before replay
 
 - Added `RunDataRequest.fixture_id` for real-fixture binding.
@@ -111,7 +109,6 @@ VALIDATION_MANIFEST_HASH = VERIFIED
 FIXTURE_REQUEST_BINDING = ENFORCED
 NEXT_INCREMENT = REPLAY_MINIMUM
 ```
-
 
 ## 2026-07-28 | Minimum replay/event-loop increment
 
@@ -144,7 +141,6 @@ ENGINE_TEST_SUITE = PASS, 43 tests
 REAL_FIXTURE_REPLAY_SMOKE = PASS
 NEXT_INCREMENT = MECHANICAL_DECISION_ORDER_FILL_POSITION
 ```
-
 
 ## 2026-07-28 | Mechanical ABAT round trip
 
@@ -242,8 +238,6 @@ No code implementation, provider edit, state consumption, physical StateBundle r
 
 No code implementation, provider edit, state consumption, physical StateBundle read, StateReplayFeed, production, downstream, full 2005-2026 backtest or execution-realism claim was introduced.
 
-
-
 ## 2026-07-29 | Deterministic fill simulator V0.1 implementation
 
 - Added `src/tsis_backtest/execution/` with deterministic fill simulator contracts and engine.
@@ -315,8 +309,6 @@ StrategySpec -> HistoricalReplayFeed -> point-in-time decisions -> ExecutionOrde
 
 The run remains `ENGINE_VALIDATION_RUN`, `EDGE_EVIDENCE = NOT_AUTHORIZED`, `ECONOMIC_REALISM = INCOMPLETE`.
 
-
-
 ## 2026-07-29 | BT-GATE-011 Corrections For Final Acceptance Review
 
 ```text
@@ -333,7 +325,6 @@ ENGINE_TEST_SUITE = 99 tests OK
 - Added tests for no future event access and truncated datasets not redefining close.
 - Preserved StateReplayFeed, Market State, Event State and provider restrictions.
 
-
 ## 2026-07-29 | BT-GATE-011 causal EventLoop correction
 
 ```text
@@ -346,7 +337,6 @@ ENGINE_TEST_SUITE = 99 tests OK
 ```
 
 The gate remains open only for final owner acceptance review.
-
 
 ## 2026-07-29 | BT-GATE-011 closed and BT-GATE-012 contract draft opened
 
@@ -418,7 +408,6 @@ AUTHORIZATION_PACKET_SHA256 = b8bb2e5641db2cd3aee8ede94d571a1176479e27cbdf5a0560
 
 StateReplayFeed, StateBundle physical reads, Market State, Event State and provider modification remain `NOT_AUTHORIZED`.
 
-
 ## 2026-07-29 | BT-GATE-012 implementation evidence prepared
 
 - Implemented the multi-symbol, multi-session portfolio slice under the accepted BT-GATE-012 contract.
@@ -428,7 +417,6 @@ StateReplayFeed, StateBundle physical reads, Market State, Event State and provi
 - Recorded `BT-GATE-012_VALIDATION_STATUS = PASS`, `BT-GATE-012_DETERMINISM_STATUS = PASS`, and `BT-GATE-012_DETERMINISTIC_OUTPUT_HASH = 414aceb2bc80836f8fa821cd4d14071e54c86f3c7855c0a34c82ffd8b1c79182`.
 - Set `BT-GATE-012 = IMPLEMENTED_PENDING_FINAL_ACCEPTANCE_REVIEW` and `IMPLEMENTATION_ACCEPTANCE = PENDING_FINAL_OWNER_REVIEW` pending final owner/external review.
 - Preserved StateReplayFeed, StateBundle physical reads, Market State, Event State and provider modification as `NOT_AUTHORIZED`.
-
 
 ## 2026-07-29 | BT-GATE-012 final acceptance closed
 
@@ -441,7 +429,6 @@ StateReplayFeed, StateBundle physical reads, Market State, Event State and provi
 - Engine suite: 106 tests OK.
 - End-to-end validation, accounting reconciliation, determinism and boundary preservation: PASS.
 - `BT-GATE-013` remains not opened; StateReplayFeed, StateBundle physical reads, Market State, Event State and provider modification remain `NOT_AUTHORIZED`.
-
 
 ## 2026-07-29 | BT-GATE-013 boundary corrected
 
@@ -464,18 +451,47 @@ The next work is contract definition only:
 
 ```text
 docs/00_system/14_BT_GATE_013_PHYSICAL_HISTORICAL_REPLAY_SLICE_CONTRACT_V0_1.md
-Status = CONTRACT_DRAFT_PENDING_OWNER_REVIEW
+Status = HISTORICAL_CONTRACT_DRAFT_PENDING_OWNER_REVIEW_SUPERSEDED_BY_CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW
 Implementation = NOT_AUTHORIZED
 ```
-
 
 ## 2026-07-29 | BT-GATE-013 contract draft placed in canonical backtester docs
 
 ```text
 BT-GATE-013 = PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1
-BT-GATE-013_CONTRACT = CONTRACT_DRAFT_PENDING_OWNER_REVIEW
+BT-GATE-013_CONTRACT = HISTORICAL_CONTRACT_DRAFT_PENDING_OWNER_REVIEW_SUPERSEDED_BY_CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW
 BT-GATE-013_IMPLEMENTATION = NOT_AUTHORIZED
 CONTRACT_ARTIFACT = docs/00_system/14_BT_GATE_013_PHYSICAL_HISTORICAL_REPLAY_SLICE_CONTRACT_V0_1.md
 ```
 
 The contract draft was copied into the canonical backtester document location. This does not authorize implementation, Market State consumption, Event State consumption, StateReplayFeed, provider modification or full 2005-2026 execution.
+
+## 2026-07-29 | BT-GATE-013 corrected contract after read-only review
+
+```text
+READ_ONLY_REVIEW = ACCEPTED
+REVIEW_RESULT = CONTRACT_CORRECTIONS_REQUIRED
+BT-GATE-013_CONTRACT = CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW
+BT-GATE-013_IMPLEMENTATION = NOT_AUTHORIZED
+PROVIDER_EVIDENCE_REQUIRED = false
+```
+
+Applied contractual corrections only: source identity layering, exact physical binding,
+derived time-field semantics without native `source_as_of_utc`, stable source row locator,
+portable relative paths, repair/provenance field restrictions and living-surface cleanup.
+No code, tests, configs, scripts, runs, data, provider, Market State, Event State or StateReplayFeed were modified.
+
+## 2026-07-29 | BT-GATE-013 corrected contract after read-only review
+
+```text
+READ_ONLY_REVIEW = ACCEPTED
+REVIEW_RESULT = CONTRACT_CORRECTIONS_REQUIRED
+BT-GATE-013_CONTRACT = CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW
+BT-GATE-013_IMPLEMENTATION = NOT_AUTHORIZED
+PROVIDER_EVIDENCE_REQUIRED = false
+```
+
+Applied contractual corrections only: source identity layering, exact physical binding,
+derived time-field semantics without native `source_as_of_utc`, stable source row locator,
+portable relative paths, repair/provenance field restrictions and living-surface cleanup.
+No code, tests, configs, scripts, runs, data, provider, Market State, Event State or StateReplayFeed were modified.

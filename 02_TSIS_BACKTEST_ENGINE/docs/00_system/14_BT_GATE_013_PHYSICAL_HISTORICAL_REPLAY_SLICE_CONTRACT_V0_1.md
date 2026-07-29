@@ -1,6 +1,6 @@
-# BT-GATE-013 — Physical Historical Replay Slice Contract V0.1
+# BT-GATE-013 - Physical Historical Replay Slice Contract V0.1
 
-## 0. Control del documento
+## 0. Document Control
 
 ```text
 DOCUMENT_ID =
@@ -16,7 +16,7 @@ CONTRACT_VERSION =
 V0.1
 
 STATUS =
-CONTRACT_DRAFT_PENDING_OWNER_REVIEW
+CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW
 
 BT-GATE-013 =
 NOT_OPEN
@@ -26,459 +26,346 @@ NOT_AUTHORIZED
 
 CODE_IMPLEMENTATION =
 NOT_AUTHORIZED
+
+READ_ONLY_REVIEW =
+ACCEPTED
+
+CONTRACT_REVIEW_RESULT =
+CONTRACT_CORRECTIONS_REQUIRED_APPLIED
 ```
 
-Este documento define el contrato propuesto para `BT-GATE-013`. No autoriza código, modificación del provider, reconstrucción upstream, consumo de `Market State` o `Event State`, ni ejecución del backtest completo 2005–2026.
+This corrected contract does not authorize code, tests, configs, scripts, runs,
+provider modification, upstream rebuild, Market State consumption, Event State
+consumption, StateReplayFeed, StateBundle reads, the full 2005-2026 backtest or
+edge claims.
 
 ---
 
-## 1. Antecedentes y punto de partida aceptado
-
-`BT-GATE-012` se encuentra cerrado:
+## 1. Accepted Starting Point
 
 ```text
-BT-GATE-012 =
-CLOSED_PASS_IMPLEMENTATION_ACCEPTED
-
-IMPLEMENTATION_ACCEPTANCE =
-ACCEPTED
-
-FINAL_OWNER_REVIEW =
-PASS
+BT-GATE-012 = CLOSED_PASS_IMPLEMENTATION_ACCEPTED
+BT-GATE-012_IMPLEMENTATION = IMPLEMENTED_AND_ACCEPTED
+IMPLEMENTATION_ACCEPTANCE = ACCEPTED
 ```
 
-`BT-GATE-012` ya demostró, sobre fixtures controlados:
+BT-GATE-012 demonstrated multi-symbol and multi-session replay, a single global
+replay order, shared cash, positions, equity accounting, session enforcement,
+orders, fills, trades, deterministic execution and manifests over controlled
+fixtures.
 
-```text
-multi-symbol replay
-multi-session replay
-single global replay order
-portfolio cash continuity
-positions and equity accounting
-session enforcement
-orders, fills and trades
-deterministic execution
-artifact and manifest production
-```
-
-La incertidumbre principal siguiente no es construir todavía un runner completo de investigación small caps. Es demostrar que el motor aceptado puede cruzar de forma causal, trazable y determinista la frontera:
+BT-GATE-013 crosses one new boundary only:
 
 ```text
 physical historical rows
-        ↓
+        ->
 canonical physical-bar adaptation
-        ↓
+        ->
 ReplayBarEvent / ReplayGapEvent
-        ↓
+        ->
 BT-GATE-012 accepted portfolio replay engine
 ```
 
 ---
 
-## 2. Pregunta contractual del gate
-
-`BT-GATE-013` debe responder exclusivamente:
+## 2. Gate Question
 
 ```text
-¿Puede el motor aceptado en BT-GATE-012 ejecutar un slice histórico
-físico pequeño procedente de 013_ohlcv_1m_quote_guarded,
-respetando disponibilidad temporal, sesiones, orden global,
-linaje físico, integridad de inputs, contabilidad y determinismo,
-sin modificar la semántica aceptada del motor?
+Can the accepted BT-GATE-012 engine consume a small physical historical slice
+from 013_ohlcv_1m_quote_guarded and reproduce the result causally and
+deterministically while preserving temporal availability, row lineage, session
+legality, accounting and execution semantics?
 ```
 
-El gate no pregunta:
+The gate does not ask whether there is edge, economic realism, borrow
+availability, locates, SSR, halts, liquidity/capacity, batch validity or
+full-history scalability.
 
 ```text
-¿Existe edge?
-¿Es realista económicamente un short?
-¿Había borrow o locate?
-¿Puede escalarse a todo 2005–2026?
-¿Está listo el runner científico completo?
+ONE_GATE = ONE_PRIMARY_UNCERTAINTY
+NEW_BOUNDARY = PHYSICAL_013_ROWS_TO_ACCEPTED_REPLAY_ENGINE
 ```
 
 ---
 
-## 3. Principio de una sola frontera nueva
+## 3. Source Identity Layering
 
-`BT-GATE-013` autorizará, si el contrato es aprobado, una sola capacidad nueva:
+The source identity is layered. The implementation must record every layer and
+must not collapse them into one ambiguous id.
 
 ```text
-NEW_AUTHORIZED_BOUNDARY =
-PHYSICAL_013_ROWS_TO_ACCEPTED_REPLAY_EVENTS
+SOURCE_TABLE_ID = 013_ohlcv_1m_quote_guarded
+SOURCE_LOGICAL_DATASET_ID = ohlcv_1m_quote_guarded_v0_2_candidate
+SOURCE_PHYSICAL_DATASET_ID = ohlcv_1m_quote_guarded_full_universe_v0_2_candidate
+SOURCE_ROOT_ID = ohlcv_1m_quote_guarded_full_universe_v0_2_candidate
+SOURCE_ROOT_RELATIVE = data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate
+SOURCE_VALIDATION_RUN_ID = qg_1m_full_universe_v0_2_candidate_validation_20260716T102500Z
+SOURCE_VALIDATION_MANIFEST_RELATIVE = _validation_runs/qg_1m_full_universe_v0_2_candidate_validation_20260716T102500Z/final_manifest_validation.json
+SOURCE_CONSUMPTION_POLICY = ohlcv_1m_quote_guarded_consumption_policy.md
+AUTHORIZED_ACCESS = READ_ONLY
+UPSTREAM_REBUILD = PROHIBITED
+PROVIDER_CODE_MODIFICATION = PROHIBITED
 ```
 
-No se autoriza introducir simultáneamente:
+For the proposed acceptance slice, inspected rows show:
 
 ```text
-point-in-time universe construction
-stocks-in-play eligibility
-Market State consumption
-Event State consumption
-borrow or locate evidence
-SSR semantics
-halt semantics
-liquidity or capacity modeling
-research batch families
-parameter search
-statistical edge validation
+ROW_DATASET_ID_ALLOWED_VALUES_OBSERVED = ohlcv_1m_quote_guarded_full_universe_v0_1
+ROW_BUILD_RUN_ID_ALLOWED_VALUES_OBSERVED = qg_1m_full_2025_2026_v0_1_20260707T095701Z
 ```
 
-Regla de diagnóstico:
+These row-level values are lineage evidence, not the source root identity.
+
+Absolute paths may appear only as inspection locations. They are prohibited as
+scientific input identity and must be excluded from the scientific hash.
 
 ```text
-ONE_GATE =
-ONE_PRIMARY_UNCERTAINTY
-```
-
-Si el gate falla, la causa debe poder localizarse en la frontera física, temporal, de adaptación, de replay, de contabilidad o de reproducibilidad definida aquí.
-
----
-
-## 4. Objetivo positivo
-
-El gate deberá demostrar:
-
-1. Resolución explícita de un slice físico pequeño de `013_ohlcv_1m_quote_guarded`.
-2. Validación de integridad y esquema antes del replay.
-3. Adaptación determinista de filas físicas a eventos canónicos.
-4. Entrega de cada barra solamente cuando su información completa sea legalmente observable.
-5. Detección explícita de minutos contractualmente esperados pero ausentes.
-6. Ejecución multi-symbol y multi-session mediante el runner aceptado en `BT-GATE-012`.
-7. Linaje verificable desde cada `ReplayBarEvent` hasta una fila física exacta.
-8. Reconciliación de órdenes, fills, trades, cash, posiciones, costes y equity.
-9. Reproducción equivalente desde extracciones limpias.
-10. Conservación de todas las fronteras no autorizadas.
-
----
-
-## 5. Fuente física autorizada
-
-```text
-AUTHORIZED_SOURCE_TABLE_ID =
-013_ohlcv_1m_quote_guarded
-
-AUTHORIZED_DATA_PRODUCT =
-RAW_1_MINUTE_EXECUTION_BARS_ONLY
-
-AUTHORIZED_ACCESS =
-READ_ONLY
-
-UPSTREAM_REBUILD =
-PROHIBITED
-
-PROVIDER_CODE_MODIFICATION =
-PROHIBITED
-```
-
-El uso de `013_ohlcv_1m_quote_guarded` no autoriza automáticamente otras tablas, derivados, features o productos del provider.
-
-Antes de ejecutar el gate, la evidencia de implementación deberá congelar:
-
-```text
-source_table_id
-source_contract_version
-source_schema_version
-source_dataset_version
-source_root_identity
-source_relative_paths
-source_file_sha256
-source_file_size_bytes
-source_file_row_count
-```
-
-No se permiten rutas absolutas como identidad científica portable.
-
-```text
-ABSOLUTE_PATH_IN_SCIENTIFIC_IDENTITY =
-PROHIBITED
+ABSOLUTE_PATH_IN_SCIENTIFIC_IDENTITY = PROHIBITED
+ABSOLUTE_PATH_IN_INSPECTION_LOCATION = ALLOWED_WITH_EXCLUSION_FROM_SCIENTIFIC_HASH
 ```
 
 ---
 
-## 6. Binding físico y esquema
+## 4. Authorized Physical Data Product
 
-El adapter deberá declarar, mediante configuración versionada y hasheada, el binding exacto entre el esquema físico y los campos canónicos requeridos:
+BT-GATE-013 may consume only the physical bar product identified above. It may
+not consume other provider tables, feature tables, StateBundles, Market State or
+Event State.
 
-```text
-source symbol field
-source bar timestamp field
-source open field
-source high field
-source low field
-source close field
-source volume field
-source transaction-count field, if contractually present
-source provenance or row locator fields
-source repair/quality fields required by table 013
-```
+The source is a quote-guarded derived 1-minute OHLCV price view. It is not raw
+trade evidence, not quote evidence, not execution truth, not split-normalized or
+dividend-adjusted data, and not an unrestricted institutional source of truth.
 
-El contrato no permite adivinar nombres de columnas ni semánticas a partir de convenciones.
+The run must classify itself as:
 
 ```text
-UNDECLARED_SCHEMA_INFERENCE =
-PROHIBITED
-
-IMPLICIT_COLUMN_FALLBACK =
-PROHIBITED
-
-SILENT_TYPE_COERCION =
-PROHIBITED
-```
-
-La implementación deberá fallar antes del replay si:
-
-- falta un campo obligatorio;
-- el tipo físico no es compatible con el binding congelado;
-- existen valores nulos en campos contractualmente no nulos;
-- `high < max(open, close)`;
-- `low > min(open, close)`;
-- `high < low`;
-- el volumen es negativo;
-- el símbolo no puede normalizarse sin ambigüedad;
-- el timestamp no puede interpretarse de manera inequívoca;
-- una regla de calidad obligatoria de la tabla `013` no se cumple.
-
-No se autoriza reparar datos dentro del adapter:
-
-```text
-ADAPTER_DATA_REPAIR =
-PROHIBITED
+RUN_PURPOSE = ENGINE_VALIDATION_RUN
+EDGE_EVIDENCE = NOT_AUTHORIZED
+ECONOMIC_REALISM = INCOMPLETE
+STRATEGY_OPTIMIZATION = NOT_AUTHORIZED
 ```
 
 ---
 
-## 7. Componente autorizado
+## 5. Exact Physical Binding V0.1
 
-El componente propuesto es:
+The adapter must declare this binding in versioned, hashed configuration before
+reading rows for replay:
+
+```text
+source_symbol_field = ticker
+source_timestamp_field = ts_utc
+source_epoch_ms_confirmation_field = t
+source_date_field = date
+source_year_field = year
+source_month_field = month
+source_open_field = o
+source_high_field = h
+source_low_field = l
+source_close_field = c
+source_volume_field = v
+source_transaction_count_field = n
+source_price_view_field = quote_guarded_view
+source_repair_applied_field = quote_guarded_repair_applied
+source_repair_lookup_state_field = repair_lookup_state
+source_repair_state_field = repair_state
+source_repair_reason_field = repair_reason
+source_repair_manifest_field = source_quote_guarded_repair_manifest
+source_dataset_id_field = dataset_id
+source_build_run_id_field = build_run_id
+source_created_utc_field = created_utc
+source_raw_path_field = source_raw_path
+```
+
+Observed physical types for the selected files include:
+
+```text
+ticker:string
+ts_utc:string
+date:string
+year:int64
+month:int64
+o/h/l/c:double
+v:double
+n:int64
+t:int64
+quote_guarded_repair_applied:bool
+quote_guarded_view:string
+repair_lookup_state:string
+repair_state:string or null
+repair_reason:string or null
+dataset_id:string
+build_run_id:string
+created_utc:string
+source_raw_path:string
+```
+
+`v` is physically `double`. Before conversion to the engine integer volume, it
+must be finite, non-negative and integer-valued. Silent coercion is prohibited.
+
+```text
+VOLUME_DOUBLE_TO_INT_POLICY_V0_1 = REQUIRE_FINITE_NON_NEGATIVE_INTEGER_VALUED
+SILENT_TYPE_COERCION = PROHIBITED
+```
+
+`vw` is a vendor-derived field. It must not be requested, propagated or used by
+strategy, replay, execution, valuation, accounting or metrics.
+
+```text
+VW_POLICY = PRESENT_BUT_NON_CONSUMABLE_VENDOR_DERIVED_FIELD
+```
+
+---
+
+## 6. Repair and Provenance Fields
+
+Repair and provenance fields are admitted only for lineage and restriction
+validation:
+
+```text
+repair_fields_consumption = LINEAGE_AND_RESTRICTION_VALIDATION_ONLY
+repair_fields_strategy_input = PROHIBITED
+repair_fields_execution_input = PROHIBITED
+repair_fields_valuation_input = PROHIBITED
+repair_fields_decision_input = PROHIBITED
+```
+
+These fields may be recorded in manifests and row lineage:
+
+```text
+quote_guarded_repair_applied
+quote_guarded_view
+repair_lookup_state
+repair_state
+repair_reason
+source_quote_guarded_repair_manifest
+dataset_id
+build_run_id
+created_utc
+source_raw_path
+```
+
+`dataset_id`, `build_run_id`, `created_utc` and `source_raw_path` are provenance
+fields. They are not market observations.
+
+---
+
+## 7. Component Boundary
+
+The future component authorized only after owner approval is:
 
 ```text
 PhysicalBarReplayAdapterV0_1
 ```
 
-Responsabilidad única:
+Responsibility:
 
 ```text
-validated physical 013 row
-        ↓
-canonical ReplayBarEvent
+validated physical 013 row -> canonical ReplayBarEvent
+missing contractually expected minute -> ReplayGapEvent
 ```
 
-y, cuando corresponda:
+The adapter does not calculate features, Market State, Event State, signals,
+orders, fills, accounting or repairs. It does not infer halts and does not alter
+BT-GATE-012 execution or accounting semantics.
 
 ```text
-missing contractually expected minute
-        ↓
-ReplayGapEvent
+StateReplayFeed = NOT_AUTHORIZED
 ```
-
-El adapter:
-
-- no calcula features;
-- no calcula `Market State`;
-- no calcula `Event State`;
-- no consulta `StateBundle`;
-- no decide el universo;
-- no selecciona oportunidades;
-- no genera señales;
-- no modifica órdenes;
-- no ejecuta fills;
-- no repara datos;
-- no infiere halts;
-- no cambia accounting.
-
-```text
-StateReplayFeed =
-NOT_AUTHORIZED
-```
-
-El nombre `StateReplayFeed` queda reservado para una futura frontera de consumo de estados.
 
 ---
 
-## 8. Perfil físico mínimo de aceptación
+## 8. Acceptance Slice Profile
 
-El slice deberá ser pequeño, congelado y suficiente para probar estructura, no rentabilidad:
+The accepted candidate slice for final contract review is:
 
 ```text
-PHYSICAL_REPLAY_ACCEPTANCE_PROFILE_V0_1
+SLICE_ID = BT_GATE_013_QG5_2026_01_05_2026_01_06_V0_1_CANDIDATE
+SESSIONS = 2026-01-05, 2026-01-06
+SYMBOLS = ABAT, ABEO, ABSI, ABTC, ACB
+SYMBOL_SESSIONS = 10
+SELECTION_POLICY = OPERATIONAL_COVERAGE_ONLY
+PROFITABILITY_BASED_SELECTION = PROHIBITED
+OUTCOME_BASED_SELECTION = PROHIBITED
+```
 
+The slice must satisfy:
+
+```text
 distinct_sessions >= 2
 distinct_symbols_per_session >= 3
 symbol_sessions >= 6
-
-same_timestamp_cross_symbol_bars =
-REQUIRED
-
-at_least_one_detectable_missing_expected_minute =
-REQUIRED
-
-contractual_session_open_coverage =
-REQUIRED
-
-contractual_session_close_coverage =
-REQUIRED
-
-physical_source_rows =
-REQUIRED
-
-portable_relative_paths =
-REQUIRED
-
-all_input_files_hashed =
-REQUIRED
+same_timestamp_cross_symbol_bars = REQUIRED
+at_least_one_detectable_missing_expected_minute = REQUIRED
+contractual_session_open_coverage = REQUIRED
+contractual_session_close_coverage = REQUIRED
+physical_source_rows = REQUIRED
+portable_relative_paths = REQUIRED
+all_input_files_hashed = REQUIRED
 ```
 
-La selección deberá congelarse antes de inspeccionar PnL agregado.
+Observed inspection evidence for this slice:
 
 ```text
-SLICE_SELECTION_POLICY =
-OPERATIONAL_COVERAGE_ONLY
-
-PROFITABILITY_BASED_SELECTION =
-PROHIBITED
-
-OUTCOME_BASED_SELECTION =
-PROHIBITED
-```
-
-La evidencia deberá explicar por qué cada sesión y símbolo fue incluido en términos de cobertura operacional:
-
-```text
-session boundary
-cross-symbol timestamp tie
-physical gap
-multi-session cash continuity
-source partition coverage
+2026-01-05: ABAT 390 rows / 0 gaps; ABEO 338 / 52 gaps; ABSI 384 / 6 gaps; ABTC 390 / 0 gaps; ACB 326 / 64 gaps
+2026-01-06: ABAT 390 rows / 0 gaps; ABEO 365 / 25 gaps; ABSI 385 / 5 gaps; ABTC 389 / 1 gap; ACB 343 / 47 gaps
+open 14:30Z present for all selected symbol-sessions = true
+close 20:59Z present for all selected symbol-sessions = true
+duplicate timestamps observed in selected regular sessions = 0
+invalid OHLC rows observed in selected regular sessions = 0
 ```
 
 ---
 
-## 9. Contrato temporal
+## 9. Temporal Contract
 
-### 9.1 Instantes distintos
-
-Cada barra física adaptada deberá distinguir, como mínimo:
-
-```text
-market_timestamp_utc
-bar_start_timestamp_utc
-bar_end_timestamp_utc
-source_as_of_utc
-available_at_utc
-replay_delivery_timestamp_utc
-```
-
-Definiciones:
-
-- `market_timestamp_utc`: timestamp de mercado representado por la fila según el contrato de `013`.
-- `bar_start_timestamp_utc`: inicio inclusivo del intervalo representado.
-- `bar_end_timestamp_utc`: final exclusivo del intervalo representado.
-- `source_as_of_utc`: máximo instante fuente utilizado para producir la fila física.
-- `available_at_utc`: primer instante en que todos los campos entregados por la barra pueden ser consumidos legalmente.
-- `replay_delivery_timestamp_utc`: instante del reloj del replay en el que el evento se entrega realmente.
-
-No se permite colapsar estas semánticas en un único campo ambiguo:
+The source files do not expose native `bar_start_timestamp_utc`,
+`bar_end_timestamp_utc`, `available_at_utc` or `source_as_of_utc` columns. These
+are canonical derived fields and must be labeled as such.
 
 ```text
-SINGLE_AMBIGUOUS_TIMESTAMP =
-PROHIBITED
+SOURCE_TIMESTAMP_FIELD = ts_utc
+SOURCE_TIMESTAMP_SEMANTICS = BAR_START_UTC
+EPOCH_MS_CONFIRMATION_FIELD = t
+bar_start_timestamp_utc = parse_utc(ts_utc)
+bar_end_timestamp_utc = bar_start_timestamp_utc + 1 minute
+available_at_utc = bar_end_timestamp_utc
+REPLAY_EVENT_AVAILABLE_AT = available_at_utc
 ```
 
-### 9.2 Disponibilidad de una barra OHLCV
-
-Para una barra que representa:
+`source_as_of_utc` must not be invented as physical evidence.
 
 ```text
-[bar_start_timestamp_utc, bar_end_timestamp_utc)
+SOURCE_AS_OF_NATIVE_FIELD = NONE
+SOURCE_AS_OF_POLICY_V0_1 = NOT_APPLICABLE_FOR_STATIC_HASH_PINNED_PHYSICAL_FILE
 ```
 
-sus valores completos:
+`created_utc` is build/provenance time only. It is not market availability and
+must not be used to delay or advance replay delivery.
+
+A bar representing `[bar_start_timestamp_utc, bar_end_timestamp_utc)` may not
+make high, low, close, volume or transaction count observable at the start of
+the interval.
 
 ```text
-high
-low
-close
-volume
-transaction_count, if present
+NO_BAR_LOOKAHEAD = REQUIRED
+EVENT_DELIVERY_CONDITION = event_loop.clock >= available_at_utc
 ```
-
-no pueden entregarse al comienzo del intervalo.
-
-Regla base:
-
-```text
-BAR_AVAILABLE_AT_UTC =
-max(
-  bar_end_timestamp_utc,
-  source_as_of_utc,
-  contractually_declared_source_availability
-)
-```
-
-Si `013` documenta una disponibilidad más tardía, prevalece la más tardía. Nunca se permite adelantar la disponibilidad por conveniencia del replay.
-
-### 9.3 Condición legal de entrega
-
-```text
-EVENT_DELIVERY_CONDITION =
-event_loop.clock >= available_at_utc
-```
-
-Invariantes:
-
-```text
-bar_end_timestamp_utc > bar_start_timestamp_utc
-
-source_as_of_utc <= available_at_utc
-
-market_timestamp_utc <= available_at_utc
-
-replay_delivery_timestamp_utc >= available_at_utc
-
-consumer_observation_timestamp_utc >= available_at_utc
-```
-
-Una violación debe detener el run:
-
-```text
-FAIL_TEMPORAL_AVAILABILITY_VIOLATION
-```
-
-### 9.4 Zona horaria y DST
-
-```text
-INTERNAL_TIME_STANDARD =
-UTC
-
-SESSION_CALENDAR_TIMEZONE =
-America/New_York
-
-NAIVE_TIMESTAMPS =
-PROHIBITED
-
-HOST_LOCAL_TIME_DEPENDENCE =
-PROHIBITED
-```
-
-La conversión deberá usar un snapshot de calendario congelado y versionado. Los cambios DST no pueden resolverse mediante offsets fijos.
 
 ---
 
-## 10. Calendario y sesiones
+## 10. Calendar and Sessions
 
 ```text
-SESSION_POLICY =
-REGULAR_ONLY_XNYS_V0_1
-
-CALENDAR_AUTHORITY =
-FROZEN_HASHED_SNAPSHOT
-
-OVERNIGHT_POSITIONS =
-PROHIBITED
+SESSION_POLICY = REGULAR_ONLY_XNYS_V0_1
+CALENDAR_AUTHORITY = FROZEN_HASHED_SNAPSHOT
+SESSION_CALENDAR_TIMEZONE = America/New_York
+INTERNAL_TIME_STANDARD = UTC
+OVERNIGHT_POSITIONS = PROHIBITED
+SOURCE_ROWS_AS_CALENDAR_AUTHORITY = PROHIBITED
 ```
 
-El snapshot deberá declarar, para cada sesión seleccionada:
+For each selected session the calendar snapshot must declare:
 
 ```text
 session_date
@@ -489,126 +376,84 @@ calendar_source_identity
 calendar_snapshot_sha256
 ```
 
-No se autoriza inferir el calendario a partir de la presencia o ausencia de barras.
-
-```text
-SOURCE_ROWS_AS_CALENDAR_AUTHORITY =
-PROHIBITED
-```
-
-Una sesión seleccionada truncada o sin el cierre contractual requerido debe fallar, salvo que la ausencia sea precisamente el derivado negativo bajo prueba:
-
-```text
-FAIL_TRUNCATED_PHYSICAL_SESSION
-FAIL_MISSING_CONTRACTUAL_CLOSE
-```
-
 ---
 
-## 11. Duplicados, orden y normalización
+## 11. Row Key, Ordering and Locator
 
-La clave física canónica mínima será:
+Canonical physical key:
 
 ```text
 (session_date, canonical_symbol, bar_start_timestamp_utc)
 ```
 
-Política:
+Duplicate policy:
 
 ```text
-EXACT_DUPLICATE_PHYSICAL_ROW =
-FAIL_DUPLICATE_PHYSICAL_BAR
-
-CONFLICTING_DUPLICATE_PHYSICAL_ROW =
-FAIL_CONFLICTING_PHYSICAL_BAR
+EXACT_DUPLICATE_PHYSICAL_ROW = FAIL_DUPLICATE_PHYSICAL_BAR
+CONFLICTING_DUPLICATE_PHYSICAL_ROW = FAIL_CONFLICTING_PHYSICAL_BAR
+SILENT_DEDUPLICATION = PROHIBITED
 ```
 
-No se permite deduplicación silenciosa.
-
-Los archivos físicos pueden no venir ordenados. El adapter deberá aplicar un orden canónico determinista antes de producir eventos, sin alterar valores:
+The row locator is frozen as:
 
 ```text
-PHYSICAL_CANONICAL_ORDER =
-(
-  available_at_utc,
-  market_timestamp_utc,
-  canonical_symbol,
+SOURCE_ROW_LOCATOR_POLICY_V0_1 = SOURCE_FILE_SHA256_PLUS_PARQUET_ROW_GROUP_AND_ROW_INDEX
+source_row_locator = {
   source_file_sha256,
-  source_row_locator
-)
+  parquet_row_group_index,
+  row_index_within_row_group
+}
+zero_based = true
+computed_from_physical_parquet_order = true
+dataframe_order = prohibited
+filesystem_enumeration_order = prohibited
 ```
 
-La entrega al motor deberá conservar:
-
-```text
-GLOBAL_REPLAY_ORDER =
-GLOBAL_REPLAY_ORDER_V0_1
-```
-
-Si el orden físico original es relevante para detectar corrupción, deberá registrarse como evidencia, pero no podrá introducir no determinismo.
+If this locator cannot be reproduced from identical bytes, implementation must
+fail closed and return to owner review.
 
 ---
 
-## 12. Linaje fila a evento
+## 12. Row-to-Event Lineage
 
-Cada `ReplayBarEvent` deberá ser trazable a una única fila física exacta.
+Every `ReplayBarEvent` must be traceable to exactly one physical source row.
 
-Identidad mínima:
+Minimum lineage:
 
 ```text
 source_table_id
-source_dataset_version
+source_logical_dataset_id
+source_physical_dataset_id
+source_root_id
 source_relative_path
 source_file_sha256
+source_file_size_bytes
+source_file_row_count
 source_row_locator
 source_symbol
 source_timestamp_raw
 canonical_symbol
 bar_start_timestamp_utc
+bar_end_timestamp_utc
+available_at_utc
 ```
 
-El `source_row_locator` debe ser estable para los mismos bytes y no depender del orden de ejecución, número de threads, rutas absolutas o motor de lectura.
-
-```text
-EVERY_REPLAY_BAR_EVENT =
-TRACEABLE_TO_EXACTLY_ONE_PHYSICAL_SOURCE_ROW
-
-ONE_PHYSICAL_SOURCE_ROW =
-AT_MOST_ONE_REPLAY_BAR_EVENT
-```
-
-Los `ReplayGapEvent` no tienen una fila física causante. Su linaje deberá referenciar:
-
-```text
-calendar_snapshot
-symbol_session
-expected_minute
-left_physical_neighbor, if present
-right_physical_neighbor, if present
-gap_detection_rule_version
-```
+`ReplayGapEvent` has no physical source row. Its lineage must reference the
+calendar snapshot, symbol-session, expected minute, neighbors if present and
+gap detection rule version.
 
 ---
 
-## 13. Política de gaps
-
-Un minuto contractualmente esperado pero ausente no puede rellenarse silenciosamente.
+## 13. Gap Policy
 
 ```text
-MISSING_EXPECTED_MINUTE =
-ReplayGapEvent
-
-SYNTHETIC_FORWARD_FILL =
-PROHIBITED
-
-SYNTHETIC_ZERO_VOLUME_BAR =
-PROHIBITED
-
-INTERPOLATED_BAR =
-PROHIBITED
+MISSING_EXPECTED_MINUTE = ReplayGapEvent
+SYNTHETIC_FORWARD_FILL = PROHIBITED
+SYNTHETIC_ZERO_VOLUME_BAR = PROHIBITED
+INTERPOLATED_BAR = PROHIBITED
 ```
 
-Semántica de `ReplayGapEvent`:
+`ReplayGapEvent` semantics:
 
 ```text
 supplies_execution_price = false
@@ -616,161 +461,50 @@ triggers_fill = false
 updates_valuation_price = false
 creates_trade = false
 infers_halt = false
-```
-
-El gate deberá distinguir:
-
-```text
-session closed
-expected minute missing from selected physical source
-source truncation
-unauthorized symbol/session
-```
-
-No deberá afirmar, sin evidencia adicional:
-
-```text
-no trading activity
-market halt
-provider outage
-regulatory interruption
-```
-
-Por tanto:
-
-```text
-GAP_CAUSE_V0_1 =
-UNKNOWN_SOURCE_GAP
-
-HALT_INFERENCE =
-NOT_AUTHORIZED
+GAP_CAUSE_V0_1 = UNKNOWN_SOURCE_GAP
+HALT_INFERENCE = NOT_AUTHORIZED
 ```
 
 ---
 
-## 14. Estrategia y órdenes de aceptación
-
-El gate deberá reutilizar una lógica determinista ya aceptada o una política mecánica congelada antes de observar resultados.
+## 14. Strategy and Execution Semantics
 
 ```text
-STRATEGY_PURPOSE =
-INFRASTRUCTURE_ACCEPTANCE_ONLY
-
-STRATEGY_LOGIC =
-FROZEN_BEFORE_RESULT_INSPECTION
-
-PARAMETER_SEARCH =
-PROHIBITED
-
-OPTIMIZATION =
-PROHIBITED
-
-OUTCOME_DRIVEN_ADJUSTMENT =
-PROHIBITED
-
-EDGE_INTERPRETATION =
-PROHIBITED
+STRATEGY_PURPOSE = INFRASTRUCTURE_ACCEPTANCE_ONLY
+STRATEGY_LOGIC = FROZEN_BEFORE_RESULT_INSPECTION
+PARAMETER_SEARCH = PROHIBITED
+OPTIMIZATION = PROHIBITED
+OUTCOME_DRIVEN_ADJUSTMENT = PROHIBITED
+EDGE_INTERPRETATION = PROHIBITED
+EXECUTION_SEMANTICS = UNCHANGED_FROM_BT_GATE_012
+COST_MODEL = UNCHANGED_FROM_BT_GATE_012
+ACCOUNTING_MODEL = UNCHANGED_FROM_BT_GATE_012
+PORTFOLIO_VALUATION_PRICE_FIELD = close
 ```
 
-Si la estrategia de `BT-GATE-012` no puede aplicarse sin cambio semántico a barras físicas, el gate deberá detenerse y solicitar revisión del contrato. No se autoriza adaptar oportunistamente la estrategia para conseguir fills o PnL.
+If physical data exposes a need to change fills, costs, accounting or strategy
+semantics, the gate must stop and return to owner review.
 
 ---
 
-## 15. Semántica de ejecución heredada
-
-Salvo las nuevas reglas de adaptación física y disponibilidad, las semánticas aceptadas permanecen congeladas:
+## 15. Physical Integrity and Mutability Protection
 
 ```text
-EXECUTION_SEMANTICS =
-UNCHANGED_FROM_BT_GATE_012
-
-GLOBAL_REPLAY_ORDER =
-GLOBAL_REPLAY_ORDER_V0_1
-
-ACTIVE_ORDER_EVALUATION_ORDER =
-ACTIVE_ORDER_EVALUATION_ORDER_V0_1
-
-PORTFOLIO_VALUATION_PRICE_FIELD =
-close
-
-COST_MODEL =
-UNCHANGED_FROM_BT_GATE_012
-
-ACCOUNTING_MODEL =
-UNCHANGED_FROM_BT_GATE_012
-```
-
-Invariantes:
-
-```text
-position_zero_before_session_transition = required
-cash_continuity_across_sessions = required
-orders_reconciled = required
-fills_reconciled = required
-trades_reconciled = required
-costs_reconciled = required
-cash_reconciled = required
-positions_reconciled = required
-equity_reconciled = required
-final_positions_zero = required
-```
-
-Condiciones de fallo:
-
-```text
-FAIL_MISSING_CONTRACTUAL_CLOSE
-FAIL_TRUNCATED_PHYSICAL_SESSION
-FAIL_UNEXECUTED_REQUIRED_EXIT
-FAIL_UNEXPLAINED_OPEN_ORDER_AT_SESSION_END
-FAIL_UNEXPLAINED_POSITION_AT_SESSION_END
-FAIL_ACCOUNTING_RECONCILIATION
-```
-
-`BT-GATE-013` no autoriza cambiar fills, costes o accounting para acomodar los resultados físicos.
-
----
-
-## 16. Integridad física y protección frente a mutación
-
-Los inputs deberán resolverse y hashearse antes de leer las filas que alimentan el replay.
-
-Regla:
-
-```text
-HASH_BEFORE_READ =
-REQUIRED
-
-HASH_AFTER_READ =
-REQUIRED
-
-HASH_BEFORE_READ =
-HASH_AFTER_READ
-```
-
-Si los bytes cambian entre resolución y consumo:
-
-```text
+HASH_BEFORE_READ = REQUIRED
+HASH_AFTER_READ = REQUIRED
+HASH_BEFORE_READ = HASH_AFTER_READ
+UNDECLARED_PHYSICAL_READ = PROHIBITED
 FAIL_SOURCE_MUTATION
-```
-
-Si el hash real no coincide con el declarado:
-
-```text
 FAIL_SOURCE_HASH_MISMATCH
 ```
 
-El manifest deberá registrar todos los archivos físicamente leídos, incluidos metadatos auxiliares que afecten selección, esquema, calendario o adaptación.
-
-```text
-UNDECLARED_PHYSICAL_READ =
-PROHIBITED
-```
+All physically read files, including calendar and metadata files that affect
+selection, schema or adaptation, must be listed with relative path, size and
+SHA-256.
 
 ---
 
-## 17. Artefactos obligatorios del run
-
-El run aceptable deberá producir, como mínimo:
+## 16. Required Run Artifacts
 
 ```text
 resolved_input_manifest
@@ -793,211 +527,60 @@ negative_derivative_report
 final_manifest
 ```
 
-Los artefactos deberán usar formatos deterministas y esquemas versionados.
+The final manifest must declare source identities, validation manifest hash,
+relative paths, source file hashes and sizes, selected rows, sessions, symbols,
+timestamp ranges, available_at ranges, calendar hash, adapter/engine/strategy
+versions, output hashes, deterministic output hash, validation status and
+boundary preservation status.
 
-El `final_manifest` deberá declarar:
+---
+
+## 17. Scientific Hash and Volatile Fields
+
+The scientific hash must cover all causally relevant inputs, configuration and
+outputs. It must not include package creation timestamp, wall-clock duration,
+host name, user name, process id, temporary directory, absolute path,
+installation path or log rendering timestamp.
 
 ```text
-gate_id
-gate_contract_version
-source_table_id
-source_contract_version
-source_schema_version
-source_dataset_version
-source_relative_paths
-source_file_sha256
-source_file_size_bytes
-source_file_row_count
-selected_row_count
-selected_symbols
-selected_sessions
-selected_symbol_sessions
-minimum_source_timestamp
-maximum_source_timestamp
-minimum_available_at_utc
-maximum_available_at_utc
-calendar_snapshot_sha256
-adapter_version
-engine_version
-strategy_version
-cost_model_version
-accounting_model_version
-run_configuration_sha256
-artifact_schema_versions
-output_artifact_hashes
-deterministic_output_hash
-validation_status
-boundary_preservation_status
+VOLATILE_FIELD_EXCLUSION_POLICY = FROZEN_CLOSED_LIST
 ```
 
 ---
 
-## 18. Hash científico y campos volátiles
+## 18. Determinism
 
-El hash científico deberá cubrir todos los inputs, configuraciones y outputs con relevancia causal.
-
-No deberán formar parte del hash científico:
-
-```text
-package_creation_timestamp
-wall_clock_duration
-host_name
-user_name
-process_id
-temporary_directory
-absolute_path
-installation_path
-log_rendering_timestamp
-```
-
-La exclusión deberá ser explícita, cerrada y versionada:
-
-```text
-VOLATILE_FIELD_EXCLUSION_POLICY =
-FROZEN_CLOSED_LIST
-```
-
-No se permite excluir un campo después de observar que rompe determinismo.
+At least two clean extractions must reproduce identical canonical hashes for
+resolved inputs, selected rows, replay events, orders, fills, trades, ledger,
+equity curve, scientific manifest and deterministic output.
 
 ---
 
-## 19. Determinismo exigido
-
-Se requieren al menos dos reproducciones desde extracciones limpias e independientes:
+## 19. Negative Derivatives
 
 ```text
-CLEAN_EXTRACTION_RUN_1
-CLEAN_EXTRACTION_RUN_2
-```
-
-Deberá cumplirse:
-
-```text
-resolved_input_hash_1 = resolved_input_hash_2
-selected_rows_hash_1 = selected_rows_hash_2
-replay_event_sequence_hash_1 = replay_event_sequence_hash_2
-order_sequence_hash_1 = order_sequence_hash_2
-fill_sequence_hash_1 = fill_sequence_hash_2
-trade_sequence_hash_1 = trade_sequence_hash_2
-ledger_hash_1 = ledger_hash_2
-equity_curve_hash_1 = equity_curve_hash_2
-scientific_manifest_hash_1 = scientific_manifest_hash_2
-deterministic_output_hash_1 = deterministic_output_hash_2
-```
-
-La reproducción deberá ser independiente de:
-
-```text
-absolute extraction directory
-host local timezone
-filesystem enumeration order
-thread scheduling
-temporary filenames
+NEGATIVE_01 source file byte changed -> FAIL_SOURCE_HASH_MISMATCH
+NEGATIVE_02 source changed between resolution and completed read -> FAIL_SOURCE_MUTATION
+NEGATIVE_03 required physical field missing -> FAIL_SOURCE_SCHEMA_MISMATCH
+NEGATIVE_04 exact physical row duplicated -> FAIL_DUPLICATE_PHYSICAL_BAR
+NEGATIVE_05 duplicate symbol/timestamp with conflicting values -> FAIL_CONFLICTING_PHYSICAL_BAR
+NEGATIVE_06 invalid OHLC or negative volume -> FAIL_INVALID_PHYSICAL_BAR
+NEGATIVE_07 bar delivered before available_at_utc -> FAIL_TEMPORAL_AVAILABILITY_VIOLATION
+NEGATIVE_08 naive or ambiguous timestamp -> FAIL_AMBIGUOUS_SOURCE_TIMESTAMP
+NEGATIVE_09 fixed-offset DST handling -> FAIL_CALENDAR_TIMEZONE_CONTRACT
+NEGATIVE_10 missing contractual session close -> FAIL_MISSING_CONTRACTUAL_CLOSE
+NEGATIVE_11 truncated selected session -> FAIL_TRUNCATED_PHYSICAL_SESSION
+NEGATIVE_12 symbol or session outside frozen selection enters replay -> FAIL_SCOPE_LEAKAGE
+NEGATIVE_13 same bytes moved to a different absolute path -> PASS_WITH_IDENTICAL_SCIENTIFIC_HASH
+NEGATIVE_14 physical rows enumerated in different input order -> PASS_WITH_IDENTICAL_CANONICAL_EVENT_SEQUENCE
+NEGATIVE_15 expected minute removed -> ReplayGapEvent with no price, fill or valuation update
 ```
 
 ---
 
-## 20. Pruebas negativas obligatorias
-
-El gate no podrá cerrarse únicamente con el happy path.
-
-### 20.1 Integridad
+## 20. Acceptance Criteria
 
 ```text
-NEGATIVE_01:
-source file byte changed
--> FAIL_SOURCE_HASH_MISMATCH
-
-NEGATIVE_02:
-source changed between resolution and completed read
--> FAIL_SOURCE_MUTATION
-```
-
-### 20.2 Filas y esquema
-
-```text
-NEGATIVE_03:
-required physical field missing
--> FAIL_SOURCE_SCHEMA_MISMATCH
-
-NEGATIVE_04:
-exact physical row duplicated
--> FAIL_DUPLICATE_PHYSICAL_BAR
-
-NEGATIVE_05:
-duplicate symbol/timestamp with conflicting values
--> FAIL_CONFLICTING_PHYSICAL_BAR
-
-NEGATIVE_06:
-invalid OHLC or negative volume
--> FAIL_INVALID_PHYSICAL_BAR
-```
-
-### 20.3 Tiempo
-
-```text
-NEGATIVE_07:
-bar delivered before available_at_utc
--> FAIL_TEMPORAL_AVAILABILITY_VIOLATION
-
-NEGATIVE_08:
-naive or ambiguous timestamp
--> FAIL_AMBIGUOUS_SOURCE_TIMESTAMP
-
-NEGATIVE_09:
-fixed-offset DST handling
--> FAIL_CALENDAR_TIMEZONE_CONTRACT
-```
-
-### 20.4 Sesión y scope
-
-```text
-NEGATIVE_10:
-missing contractual session close
--> FAIL_MISSING_CONTRACTUAL_CLOSE
-
-NEGATIVE_11:
-truncated selected session
--> FAIL_TRUNCATED_PHYSICAL_SESSION
-
-NEGATIVE_12:
-symbol or session outside frozen selection enters replay
--> FAIL_SCOPE_LEAKAGE
-```
-
-### 20.5 Portabilidad y orden
-
-```text
-NEGATIVE_13:
-same bytes moved to a different absolute extraction path
--> PASS_WITH_IDENTICAL_SCIENTIFIC_HASH
-
-NEGATIVE_14:
-physical rows enumerated in a different input order
--> PASS_WITH_IDENTICAL_CANONICAL_EVENT_SEQUENCE
-```
-
-### 20.6 Gaps
-
-```text
-NEGATIVE_15:
-expected minute removed from an otherwise complete symbol-session
--> ReplayGapEvent
-
-ReplayGapEvent supplies price = false
-ReplayGapEvent triggers fill = false
-ReplayGapEvent updates valuation = false
-```
-
-Cada derivado negativo deberá demostrar el error o comportamiento contractual exacto, no solo una excepción genérica.
-
----
-
-## 21. Validación y criterios de aceptación
-
-```text
-BT-GATE-013_ACCEPTANCE_V0_1
-
 contract_conformance = PASS
 physical_input_integrity = PASS
 source_schema_validation = PASS
@@ -1018,33 +601,21 @@ deterministic_output = PASS
 boundary_preservation = PASS
 ```
 
-Todos los criterios son obligatorios. No se permite compensar un fallo con el éxito de otros.
-
-Estado final permitido si todos pasan:
+Permitted final state if all pass:
 
 ```text
-BT-GATE-013 =
-CLOSED_PASS_PHYSICAL_HISTORICAL_REPLAY_ACCEPTED
+BT-GATE-013 = CLOSED_PASS_PHYSICAL_HISTORICAL_REPLAY_ACCEPTED
 ```
 
-Estados no autorizados como consecuencia del cierre:
-
-```text
-BACKTEST_ENGINE_READY
-RESEARCH_RUNNER_READY
-FULL_HISTORY_READY
-PRODUCTION_READY
-ECONOMIC_REALISM_VALIDATED
-EDGE_PROVEN
-```
+This does not authorize `BACKTEST_ENGINE_READY`, `RESEARCH_RUNNER_READY`,
+`FULL_HISTORY_READY`, `PRODUCTION_READY`, `ECONOMIC_REALISM_VALIDATED` or
+`EDGE_PROVEN`.
 
 ---
 
-## 22. Exclusiones expresas
+## 21. Explicit Exclusions
 
 ```text
-BT-GATE-013_NOT_IN_SCOPE
-
 Market State consumption
 Event State consumption
 StateBundle physical reads
@@ -1088,270 +659,92 @@ upstream data rebuild
 live trading
 ```
 
-Regla preservada para gates posteriores:
-
 ```text
-mechanically executable order
-≠
-actually shortable action
-≠
-economically valid trade
-≠
-demonstrated edge
-```
-
-`BT-GATE-013` solo prueba la primera frontera física y mecánica bajo las semánticas heredadas; no demuestra las tres restantes.
-
----
-
-## 23. Condiciones de stop y revisión material
-
-La implementación futura deberá detenerse y volver a revisión del owner si aparece cualquiera de estas condiciones:
-
-```text
-source timestamp semantics cannot be proven
-source availability semantics cannot be proven
-table 013 schema requires an undeclared interpretation
-BT-GATE-012 execution semantics must change
-BT-GATE-012 accounting semantics must change
-calendar authority must change
-data repair becomes necessary
-another physical source table becomes necessary
-Market State or Event State becomes necessary
-provider modification becomes necessary
-scope must expand beyond the frozen acceptance slice
-```
-
-Estas condiciones constituyen cambio material. No pueden resolverse como detalle interno de implementación.
-
----
-
-## 24. Evidencia necesaria antes de autorizar implementación
-
-La aprobación del contrato no deberá basarse solo en una declaración documental. El paquete de autorización deberá incluir:
-
-1. Este contrato.
-2. Snapshot o inventario verificable de las superficies relevantes del motor aceptado.
-3. Contrato físico vigente de `013_ohlcv_1m_quote_guarded`.
-4. Esquema físico real y binding canónico propuesto.
-5. Semántica documentada del timestamp fuente.
-6. Evidencia de disponibilidad de la barra o política conservadora propuesta.
-7. Inventario del slice candidato sin resultados económicos.
-8. Snapshot de calendario candidato.
-9. Declaración reproducible de ausencia de implementación anticipada de `BT-GATE-013`.
-10. Escaneo reproducible de preservación de fronteras no autorizadas.
-
-Si la semántica temporal física no puede demostrarse, la implementación no debe autorizarse.
-
----
-
-## 25. Flujo de autorización propuesto
-
-Estado actual:
-
-```text
-BT-GATE-013 =
-NOT_OPEN
-
-CONTRACT =
-CONTRACT_DRAFT_PENDING_OWNER_REVIEW
-
-IMPLEMENTATION =
-NOT_AUTHORIZED
-```
-
-Tras revisión y aprobación expresa del contrato:
-
-```text
-BT-GATE-013 =
-AUTHORIZED_FOR_CONTINUOUS_IMPLEMENTATION
-
-BT-GATE-013_IMPLEMENTATION =
-AUTHORIZED
-
-EXECUTION_MODE =
-CONTINUOUS_UNTIL_FINAL_ACCEPTANCE_PACKET
-
-NO_INTERMEDIATE_MICROGATES =
-AUTHORIZED
-
-NEXT_OWNER_REVIEW =
-FINAL_GATE_ACCEPTANCE_ONLY,
-UNLESS MATERIAL SCOPE OR SEMANTIC CHANGE
-```
-
-La aprobación deberá ser explícita. La existencia de este documento no equivale a autorización.
-
----
-
-## 26. Paquete final de aceptación
-
-La implementación futura deberá entregar un paquete autocontenido que permita, desde una extracción limpia:
-
-```text
-install
-validate package integrity
-run included tests
-run positive physical replay
-run all required negative derivatives
-reproduce the deterministic hashes
-inspect all manifests and lineage artifacts
-verify unauthorized-boundary absence
-```
-
-El paquete deberá incluir:
-
-```text
-exact reproduction commands
-package manifest
-per-file SHA-256 and size
-source subset or an authorized immutable resolution mechanism
-all required configuration
-calendar snapshot
-tests
-positive run evidence
-negative derivative evidence
-governance snapshot
-```
-
-No se aceptará evidencia que dependa de archivos externos no declarados o de rutas exclusivas del host de construcción.
-
----
-
-## 27. Relación con la futura arquitectura small caps
-
-Este gate no sustituye el futuro `SMALL_CAPS_RIGOROUS_RESEARCH_RUNNER`. Lo precede.
-
-Secuencia conceptual no congelada:
-
-```text
-BT-GATE-013
-Physical Historical Replay Slice
-        ↓
-future gate
-Point-in-Time Market State Consumption
-        ↓
-future gate
-Event State Consumption
-        ↓
-future gate
-Historical Coverage and Batch Scaling
-        ↓
-future gate
-Small-Caps Tradability and Execution Realism
-        ↓
-future gate
-Rigorous Research Runner
-        ↓
-future gate
-Statistical Research Validation
-        ↓
-future gate
-Frozen Strategy Research Backtest
-```
-
-Los números y nombres posteriores no quedan autorizados ni congelados por este documento.
-
----
-
-## 28. Invariantes finales
-
-```text
-BT-GATE-012_ACCEPTED_SEMANTICS =
-PRESERVED
-
-ONE_NEW_BOUNDARY =
-PHYSICAL_013_ROWS_TO_ACCEPTED_REPLAY_EVENTS
-
-NO_BAR_LOOKAHEAD =
-REQUIRED
-
-ROW_LEVEL_LINEAGE =
-REQUIRED
-
-PHYSICAL_INPUT_HASHING =
-REQUIRED
-
-GAP_FORWARD_FILL =
-PROHIBITED
-
-DETERMINISTIC_CLEAN_REPRODUCTION =
-REQUIRED
-
-MARKET_STATE =
-NOT_AUTHORIZED
-
-EVENT_STATE =
-NOT_AUTHORIZED
-
-STATE_REPLAY_FEED =
-NOT_AUTHORIZED
-
-PROVIDER_MODIFICATION =
-NOT_AUTHORIZED
-
-FULL_2005_2026_BACKTEST =
-NOT_AUTHORIZED
-
-EDGE_CLAIMS =
-NOT_AUTHORIZED
+mechanically executable order != actually shortable action != economically valid trade != demonstrated edge
 ```
 
 ---
 
-## 29. Decisión solicitada al owner
+## 22. Material Stop Conditions
 
-Este draft solicita únicamente una decisión contractual:
+Future implementation must stop and return to owner review if source timestamp
+or availability semantics cannot be proven, table 013 schema requires an
+undeclared interpretation, BT-GATE-012 execution/accounting semantics must
+change, calendar authority must change, data repair becomes necessary, another
+physical source table becomes necessary, Market/Event State becomes necessary,
+provider modification becomes necessary, scope expands beyond the frozen slice,
+`source_as_of` becomes materially required, or the row locator cannot be
+reproduced from identical bytes.
+
+---
+
+## 23. Evidence Required Before Implementation Authorization
+
+The final authorization review package must include corrected full contract,
+contractual diff, modified governance surfaces, clause-to-evidence matrix,
+hashes of normative evidence, final acceptance slice proposal, package manifest
+and reproducible no-implementation evidence.
 
 ```text
-OPTION_A =
-RETURN_WITH_REQUIRED_CONTRACT_CORRECTIONS
-
-OPTION_B =
-ACCEPT_CONTRACT_AND_REQUEST_AUTHORIZATION_EVIDENCE_PACKET
+PROVIDER_EVIDENCE_REQUIRED = false
 ```
 
-No solicita todavía:
+If later review finds an unresolved contradiction in source timestamp or
+availability semantics, this must become `true`.
+
+---
+
+## 24. Authorization Flow
+
+Current state:
 
 ```text
-IMPLEMENTATION_AUTHORIZATION
-CODE_CHANGES
-PHYSICAL_RUN_EXECUTION
-GATE_CLOSURE
+BT-GATE-013 = NOT_OPEN
+CONTRACT = CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW
+IMPLEMENTATION = NOT_AUTHORIZED
+```
+
+Only after explicit owner approval may the state become:
+
+```text
+BT-GATE-013 = AUTHORIZED_FOR_CONTINUOUS_IMPLEMENTATION
+BT-GATE-013_IMPLEMENTATION = AUTHORIZED
+EXECUTION_MODE = CONTINUOUS_UNTIL_FINAL_ACCEPTANCE_PACKET
+NO_INTERMEDIATE_MICROGATES = AUTHORIZED
+NEXT_OWNER_REVIEW = FINAL_GATE_ACCEPTANCE_ONLY_UNLESS_MATERIAL_SCOPE_OR_SEMANTIC_CHANGE
+```
+
+This document does not itself grant that authorization.
+
+---
+
+## 25. Final Invariants
+
+```text
+BT-GATE-012_ACCEPTED_SEMANTICS = PRESERVED
+ONE_NEW_BOUNDARY = PHYSICAL_013_ROWS_TO_ACCEPTED_REPLAY_EVENTS
+NO_BAR_LOOKAHEAD = REQUIRED
+ROW_LEVEL_LINEAGE = REQUIRED
+PHYSICAL_INPUT_HASHING = REQUIRED
+GAP_FORWARD_FILL = PROHIBITED
+DETERMINISTIC_CLEAN_REPRODUCTION = REQUIRED
+BT-GATE-013_IMPLEMENTATION = NOT_AUTHORIZED
+MARKET_STATE = NOT_AUTHORIZED
+EVENT_STATE = NOT_AUTHORIZED
+STATE_REPLAY_FEED = NOT_AUTHORIZED
+PROVIDER_MODIFICATION = NOT_AUTHORIZED
+FULL_2005_2026_BACKTEST = NOT_AUTHORIZED
+EDGE_CLAIMS = NOT_AUTHORIZED
 ```
 
 ---
 
-## 30. Estado al emitir V0.1
+## 26. Decision Requested
 
 ```text
-BT-GATE-013_NAME =
-PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1
-
-BT-GATE-013_OBJECTIVE =
-PROVE_CAUSAL_DETERMINISTIC_REPLAY_FROM_PHYSICAL_013_DATA
-
-CONTRACT_STATUS =
-CONTRACT_DRAFT_PENDING_OWNER_REVIEW
-
-BT-GATE-013 =
-NOT_OPEN
-
-CODE_IMPLEMENTATION =
-NOT_AUTHORIZED
-
-PHYSICAL_RUN =
-NOT_AUTHORIZED
-
-MARKET_STATE =
-NOT_AUTHORIZED
-
-EVENT_STATE =
-NOT_AUTHORIZED
-
-STATE_REPLAY_FEED =
-NOT_AUTHORIZED
-
-FULL_2005_2026_BACKTEST =
-NOT_AUTHORIZED
+OPTION_A = CONTRACT_ACCEPTED_READY_FOR_IMPLEMENTATION_AUTHORIZATION_DECISION
+OPTION_B = RETURN_WITH_REQUIRED_CONTRACT_CORRECTIONS
 ```
+
+This document does not request code changes, physical run execution or gate
+closure.

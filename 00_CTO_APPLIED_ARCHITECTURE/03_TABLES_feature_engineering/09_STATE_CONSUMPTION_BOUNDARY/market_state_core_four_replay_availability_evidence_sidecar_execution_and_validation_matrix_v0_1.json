@@ -1,0 +1,167 @@
+{
+  "gate": "market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_v0_1",
+  "created_at_utc": "2026-07-29T19:59:52Z",
+  "status": "CLOSED_PASS_SCALE_VALIDATION_REPLAY_AVAILABILITY_EVIDENCE_SIDECAR_CREATED_AND_VALIDATED_WITH_RESTRICTIONS_NO_PHYSICAL_READ",
+  "case_count": 12,
+  "failed_cases": 0,
+  "required_case_ids": [
+    "SIDE_SCALE_TARGET_DATASET_IDENTITY_001",
+    "SIDE_SCALE_ROW_COUNT_001",
+    "SIDE_SCALE_SCHEMA_VALIDATION_001",
+    "SIDE_SCALE_SEMANTIC_VALIDATION_001",
+    "SIDE_SCALE_SOURCE_VALIDATION_REPORT_001",
+    "SIDE_SCALE_NO_PHYSICAL_READ_001",
+    "SIDE_SCALE_NEG_component_blocked_decision_safe",
+    "SIDE_SCALE_NEG_source_after_as_of",
+    "SIDE_SCALE_NEG_component_available_before_as_of",
+    "SIDE_SCALE_NEG_row_dataset_mismatch",
+    "SIDE_SCALE_NEG_duplicate_component_id",
+    "SIDE_SCALE_NEG_missing_core_object"
+  ],
+  "missing_required_case_ids": [],
+  "duplicate_case_ids": [],
+  "unexpected_case_ids": [],
+  "sidecar_records_written": 104,
+  "candidate_dataset_id": "market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762",
+  "candidate_dataset_fingerprint": "516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416",
+  "candidate_parquet_sha256": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68",
+  "parquet_opened": false,
+  "physical_file_reads": 0,
+  "state_rows_read": 0,
+  "StateReplayFeed_records_emitted": 0,
+  "runtime_requests_executed": 0,
+  "runtime_builds_executed": 0,
+  "datasets_written": 0,
+  "registry_mutations": 0,
+  "official_dataset": false,
+  "production": false,
+  "downstream": false,
+  "backtest_consumption": false,
+  "next_gate": "runtime_user_invocation_bounded_interface_execution_regression_v0_1_2",
+  "rows": [
+    {
+      "case_id": "SIDE_SCALE_TARGET_DATASET_IDENTITY_001",
+      "area": "target_identity",
+      "expected": "Sidecar target equals scale-validation candidate.",
+      "observed": {
+        "dataset_id": "market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762",
+        "fingerprint": "516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416",
+        "parquet_sha256": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68"
+      },
+      "result": "PASS"
+    },
+    {
+      "case_id": "SIDE_SCALE_ROW_COUNT_001",
+      "area": "row_count",
+      "expected": "104 sidecar records for 104 represented physical candidate rows.",
+      "observed": {
+        "row_count": 104,
+        "represented_contexts": 104
+      },
+      "result": "PASS"
+    },
+    {
+      "case_id": "SIDE_SCALE_SCHEMA_VALIDATION_001",
+      "area": "schema_validation",
+      "expected": "Generated sidecar validates against the active sidecar schema.",
+      "observed": [],
+      "result": "PASS"
+    },
+    {
+      "case_id": "SIDE_SCALE_SEMANTIC_VALIDATION_001",
+      "area": "semantic_validation",
+      "expected": "Strict row-addressable semantics pass.",
+      "observed": [],
+      "result": "PASS"
+    },
+    {
+      "case_id": "SIDE_SCALE_SOURCE_VALIDATION_REPORT_001",
+      "area": "source_validation_report",
+      "expected": "Source candidate validation is PASS_WITH_RESTRICTIONS with zero hard failures.",
+      "observed": {
+        "validation_status": "PASS_WITH_RESTRICTIONS",
+        "schema_match": true,
+        "row_count": 104,
+        "duplicate_primary_keys": 0,
+        "non_nullable_null_failures": 0,
+        "fingerprint_failures": 0,
+        "temporal_failures": 0,
+        "lineage_failures": 0,
+        "partition_accounting_pass": true,
+        "represented_accounting_pass": true,
+        "hard_validation_failures": 0,
+        "eligible_for_candidate_registry": true,
+        "reuse_eligibility": "pending_scale_validation_review",
+        "promotion_review_eligibility": "not_eligible_pending_scale_validation_review"
+      },
+      "result": "PASS"
+    },
+    {
+      "case_id": "SIDE_SCALE_NO_PHYSICAL_READ_001",
+      "area": "hard_boundaries",
+      "expected": "No parquet, state rows, StateReplayFeed or backtest opened.",
+      "observed": "parquet_opened=false; state_rows_read=0; StateReplayFeed=0; backtest=false",
+      "result": "PASS"
+    },
+    {
+      "case_id": "SIDE_SCALE_NEG_component_blocked_decision_safe",
+      "area": "negative_adversarial_regression",
+      "expected": "BLOCK",
+      "observed": {
+        "schema_ok": true,
+        "semantic_ok": false
+      },
+      "result": "PASS"
+    },
+    {
+      "case_id": "SIDE_SCALE_NEG_source_after_as_of",
+      "area": "negative_adversarial_regression",
+      "expected": "BLOCK",
+      "observed": {
+        "schema_ok": true,
+        "semantic_ok": false
+      },
+      "result": "PASS"
+    },
+    {
+      "case_id": "SIDE_SCALE_NEG_component_available_before_as_of",
+      "area": "negative_adversarial_regression",
+      "expected": "BLOCK",
+      "observed": {
+        "schema_ok": true,
+        "semantic_ok": false
+      },
+      "result": "PASS"
+    },
+    {
+      "case_id": "SIDE_SCALE_NEG_row_dataset_mismatch",
+      "area": "negative_adversarial_regression",
+      "expected": "BLOCK",
+      "observed": {
+        "schema_ok": true,
+        "semantic_ok": false
+      },
+      "result": "PASS"
+    },
+    {
+      "case_id": "SIDE_SCALE_NEG_duplicate_component_id",
+      "area": "negative_adversarial_regression",
+      "expected": "BLOCK",
+      "observed": {
+        "schema_ok": true,
+        "semantic_ok": false
+      },
+      "result": "PASS"
+    },
+    {
+      "case_id": "SIDE_SCALE_NEG_missing_core_object",
+      "area": "negative_adversarial_regression",
+      "expected": "BLOCK",
+      "observed": {
+        "schema_ok": true,
+        "semantic_ok": false
+      },
+      "result": "PASS"
+    }
+  ]
+}

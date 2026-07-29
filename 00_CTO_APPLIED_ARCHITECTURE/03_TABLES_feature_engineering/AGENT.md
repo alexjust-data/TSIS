@@ -1,4 +1,106 @@
-# Current Runtime Handoff Override - Replay Availability Timestamp Contract Validation Hardened
+# Current Runtime Handoff Override - Scale Validation Sidecar and Reissue Ready
+
+Status: `agent_handoff_prompt_v0_150`
+Layer: `03_TABLES_feature_engineering`
+Boundary layers: `08_RUNTIME_CAPABILITIES`, `09_STATE_CONSUMPTION_BOUNDARY`
+Date: `2026-07-29`
+
+```text
+last_closed_sidecar_gate = market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_v0_1
+last_closed_sidecar_status = CLOSED_PASS_SCALE_VALIDATION_REPLAY_AVAILABILITY_EVIDENCE_SIDECAR_CREATED_AND_VALIDATED_WITH_RESTRICTIONS_NO_PHYSICAL_READ
+last_closed_runtime_regression = runtime_user_invocation_bounded_interface_execution_regression_v0_1_2
+last_closed_runtime_regression_status = FAILED_V0_1_2_CONTROL_PLANE_REISSUE_REGRESSION
+current_gate = state_bundle_manifest_physical_evidence_alignment_v0_2_pending
+scale_validation_sidecar_records = 104
+StateReplayFeed = NOT_AUTHORIZED
+backtest_consumption = false
+```
+
+Do not touch `02_TSIS_BACKTEST_ENGINE`. The next work is physical evidence alignment against the new v0.1.2 response/bundle and the scale-validation replay sidecar.
+
+# Current Runtime Handoff Override - Bounded Interface Regression v0.1.2 Closed
+
+Status: `agent_handoff_prompt_v0_149`
+Layer: `03_TABLES_feature_engineering`
+Boundary layer: `08_RUNTIME_CAPABILITIES`
+Date: `2026-07-29`
+
+```text
+last_closed_gate = runtime_user_invocation_bounded_interface_execution_regression_v0_1_2
+last_closed_status = CLOSED_PASS_V0_1_2_BOUNDED_INTERFACE_EXECUTION_REGRESSION_WITH_RESTRICTIONS_NO_CONSUMPTION
+current_gate = state_bundle_manifest_physical_evidence_alignment_v0_1_pending
+physical_read_authorization_ready = false
+StateReplayFeed = NOT_AUTHORIZED
+backtest_consumption = false
+runtime_requests_executed = 0
+runtime_builds_executed = 0
+state_rows_read = 0
+```
+
+Do not touch `02_TSIS_BACKTEST_ENGINE`. The next gate is physical evidence alignment; do not open physical reads unless that gate passes.
+
+# Historical Runtime Handoff Override - Replay Availability Sidecar Created
+
+Status: `agent_handoff_prompt_v0_148`
+Layer: `03_TABLES_feature_engineering`
+Boundary layer: `09_STATE_CONSUMPTION_BOUNDARY`
+Date: `2026-07-29`
+
+```text
+last_closed_gate = market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_v0_1
+last_closed_status = CLOSED_PASS_REPLAY_AVAILABILITY_EVIDENCE_SIDECAR_CREATED_AND_VALIDATED_WITH_RESTRICTIONS_NO_PHYSICAL_READ
+current_gate = runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_pending
+sidecar_records_written = 8
+parquet_opened = false
+state_rows_read = 0
+StateReplayFeed = NOT_AUTHORIZED
+backtest_consumption = false
+```
+
+Do not touch `02_TSIS_BACKTEST_ENGINE`. The next gate is the runtime bounded interface regression v0.1.2, now with sidecar evidence available.
+
+# Historical Runtime Handoff Override - Replay Availability Sidecar Authorization Closed
+
+Status: `agent_handoff_prompt_v0_147`
+Layer: `03_TABLES_feature_engineering`
+Boundary layer: `09_STATE_CONSUMPTION_BOUNDARY`
+Date: `2026-07-29`
+
+```text
+last_closed_gate = market_state_core_four_replay_availability_evidence_sidecar_authorization_v0_1
+last_closed_status = CLOSED_AUTHORIZED_REPLAY_AVAILABILITY_EVIDENCE_SIDECAR_EXECUTION_AND_VALIDATION_WITH_RESTRICTIONS_NO_PHYSICAL_READ
+current_gate = market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_v0_1_pending
+sidecar_records_written = 0
+parquet_opened = false
+state_rows_read = 0
+StateReplayFeed = NOT_AUTHORIZED
+backtest_consumption = false
+```
+
+Do not touch `02_TSIS_BACKTEST_ENGINE`. The next gate must create and validate the sidecar/envelope before any physical evidence alignment retry.
+
+# Historical Runtime Handoff Override - Bounded Interface Regression v0.1.2 Blocked
+
+Status: `agent_handoff_prompt_v0_146`
+Layer: `03_TABLES_feature_engineering`
+Boundary layer: `08_RUNTIME_CAPABILITIES`
+Date: `2026-07-29`
+
+```text
+last_closed_gate = runtime_user_invocation_bounded_interface_execution_regression_v0_1_2
+last_closed_status = CLOSED_BLOCKED_REQUIRES_ROW_ADDRESSABLE_REPLAY_AVAILABILITY_EVIDENCE_NO_PHYSICAL_READ
+current_gate = market_state_core_four_replay_availability_evidence_sidecar_authorization_v0_1_pending
+physical_read_authorization_ready = false
+StateReplayFeed = NOT_AUTHORIZED
+backtest_consumption = false
+runtime_requests_executed = 0
+runtime_builds_executed = 0
+state_rows_read = 0
+```
+
+Do not touch `02_TSIS_BACKTEST_ENGINE`. The next provider/shared-boundary work is to authorize a row-addressable replay availability sidecar or envelope for the already validated Market State core-four physical candidate. Do not infer `state_available_at_utc` from `decision_timestamp_utc` or parquet creation time.
+
+# Historical Runtime Handoff Override - Replay Availability Timestamp Contract Validation Hardened
 
 Status: `agent_handoff_prompt_v0_145`
 Layer: `03_TABLES_feature_engineering`
@@ -16,7 +118,7 @@ backtest_consumption = false
 
 The timestamp contract validator is hardened after external review: every fixture is schema-validated and semantically validated; core-four object coverage, component/row legality, latency inclusion, timestamp ordering and restriction propagation are fail-closed. Do not open physical reads or StateReplayFeed from this gate.
 
-## Current Runtime Handoff Override - Replay Availability Timestamp Contract Closed
+## Historical Runtime Handoff Override - Replay Availability Timestamp Contract Closed
 
 Status: `agent_handoff_prompt_v0_144`
 Date: `2026-07-29`

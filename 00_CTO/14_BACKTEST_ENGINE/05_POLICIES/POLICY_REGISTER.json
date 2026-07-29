@@ -310,11 +310,18 @@
       "title": "BT-GATE-013 physical replay boundary policy",
       "domain": "portfolio_backtest",
       "decision_id": "BT-PORT-002",
-      "status": "CONTRACT_DRAFT_PENDING_OWNER_REVIEW",
+      "status": "CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW",
       "requirement": "BT-GATE-013 must prove the physical 013_ohlcv_1m_quote_guarded row to accepted replay engine boundary, including row lineage, source hashes, timestamp semantics, legal available_at, gaps, calendar/session enforcement and deterministic replay. It must not introduce Market State, Event State, StateReplayFeed, borrow/locates, SSR, halts, liquidity/capacity, batch research, DSR/PBO/CSCV, optimization or edge claims.",
       "contract_artifact": "docs/00_system/14_BT_GATE_013_PHYSICAL_HISTORICAL_REPLAY_SLICE_CONTRACT_V0_1.md",
       "implementation_status": "NOT_AUTHORIZED"
     }
   ],
-  "register_id": "TSIS_BACKTEST_POLICY_REGISTER_V0_1"
+  "register_id": "TSIS_BACKTEST_POLICY_REGISTER_V0_1",
+  "bt_gate_013_contract_correction_sync": {
+    "status": "CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW",
+    "read_only_review": "ACCEPTED",
+    "implementation": "NOT_AUTHORIZED",
+    "provider_evidence_required": false,
+    "updated_at_utc": "2026-07-29T19:40:00Z"
+  }
 }

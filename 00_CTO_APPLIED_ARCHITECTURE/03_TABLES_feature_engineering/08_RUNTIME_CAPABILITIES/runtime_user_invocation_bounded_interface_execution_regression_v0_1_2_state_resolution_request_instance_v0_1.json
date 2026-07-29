@@ -1,0 +1,62 @@
+{
+  "request_id": "state_resolution_request_scale_validation_reissue_v0_1_2_20260729",
+  "request_type": "market_state",
+  "state_kind": "market_state",
+  "request_contract_version": "0.1.2",
+  "consumer_id": "bounded_backtest_state_integration_probe_v0_1",
+  "consumption_purpose": "backtest",
+  "operation": "resolve",
+  "resolution_policy": {
+    "mode": "resolve_reuse_or_authorization",
+    "reuse_policy": "reuse_if_exact_validated_match",
+    "allow_new_candidate_execution": false,
+    "allow_physical_path_input": false,
+    "requested_output_mode": "candidate_reference_only",
+    "production": false,
+    "downstream": false
+  },
+  "payload": {
+    "market_state_request": {
+      "request_type": "market_state",
+      "profile_id": "market_state_core_four_intraday_profile_v0_1",
+      "profile_version_policy": "exact",
+      "profile_version": "v0_1",
+      "exchange_scope": "XNYS",
+      "explicit_instrument_ids": [
+        "cik_ticker:0001651625:ACIU",
+        "figi_share_class:BBG001S5N8T1",
+        "figi_share_class:BBG001S6CVZ3",
+        "figi_share_class:BBG001S6RSK0",
+        "figi_share_class:BBG001S8JF14",
+        "figi_share_class:BBG001S8T7K0",
+        "figi_share_class:BBG001SPBTK3",
+        "figi_share_class:BBG001SV77D1",
+        "figi_share_class:BBG0022MMR46",
+        "figi_share_class:BBG00JCXSJQ2"
+      ],
+      "session_dates": [
+        "2021-01-19",
+        "2021-03-15",
+        "2022-07-05",
+        "2022-11-25",
+        "2023-03-20",
+        "2023-07-03",
+        "2024-03-11",
+        "2025-07-03"
+      ],
+      "resolution": "intraday",
+      "calendar_authority_id": "governed_exchange_session_calendar_v0_1",
+      "point_in_time_policy_id": "market_state_core_four_replay_availability_policy_v0_1",
+      "source_version_policy": "exact_governed_or_block",
+      "output_mode": "candidate",
+      "reuse_policy": "reuse_if_exact_validated_match"
+    }
+  },
+  "request_ref": {
+    "ref_id": "state_resolution_request_scale_validation_reissue_v0_1_2_20260729",
+    "ref_type": "state_resolution_request",
+    "sha256": "a2387169fefec56703c5f6dc5dfb2ee1567e9ce313c4519128cfb931d99fe821",
+    "availability": "available"
+  },
+  "request_fingerprint": "a2387169fefec56703c5f6dc5dfb2ee1567e9ce313c4519128cfb931d99fe821"
+}

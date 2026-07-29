@@ -14,16 +14,18 @@ fragmentar el desarrollo en microgates.
 BT-GATE-011 = CLOSED_PASS_IMPLEMENTATION_ACCEPTED
 SINGLE_STRATEGY_END_TO_END_BACKTEST = IMPLEMENTED_AND_ACCEPTED
 
-CURRENT_GATE = BT-GATE-012 / MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE
 BT-GATE-012 = CLOSED_PASS_IMPLEMENTATION_ACCEPTED
 BT-GATE-012_IMPLEMENTATION = IMPLEMENTED_AND_ACCEPTED
 IMPLEMENTATION_ACCEPTANCE = ACCEPTED
-EXECUTION_MODE = CLOSED_ACCEPTED
-NO_INTERMEDIATE_MICROGATES = PRESERVED
-NEXT_GATE = BT-GATE-013 / PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1_CONTRACT_DRAFT_PENDING_OWNER_REVIEW
+
+CURRENT_GATE = BT-GATE-013 / PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1
+BT-GATE-013_CONTRACT = CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW
+BT-GATE-013_IMPLEMENTATION = NOT_AUTHORIZED
+PHYSICAL_RUN = NOT_AUTHORIZED
+CODE_IMPLEMENTATION = NOT_AUTHORIZED
 ```
 
-`BT-GATE-012` has produced its implementation, tests, portable rerun and acceptance packet. Final implementation acceptance is still pending final owner/external review.
+`BT-GATE-012` is closed and accepted. The next work is final owner contract review of the corrected `BT-GATE-013` physical historical replay slice contract; implementation remains not authorized.
 
 ## Macrogates Vigentes
 
@@ -73,14 +75,15 @@ PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1
 
 Incluye:
 
-- Halts.
-- SSR.
-- Borrow/locates.
-- Liquidez y capacidad.
-- Batch control.
-- Validación temporal.
-- Control de múltiples pruebas.
-- DSR y PBO/CSCV cuando resulten aplicables.
+- Filas fisicas `013_ohlcv_1m_quote_guarded` hacia `ReplayBarEvent` / `ReplayGapEvent`.
+- Binding exacto de schema fisico y timestamp.
+- Disponibilidad legal `available_at = bar_end`.
+- Linaje reproducible fila a evento.
+- Rutas relativas portables y hashes de inputs.
+- Gaps como `UNKNOWN_SOURCE_GAP`, sin forward-fill ni inferencia de halts.
+- Ejecucion con el motor aceptado de `BT-GATE-012`, sin cambiar fills, costes ni accounting.
+
+No incluye halts, SSR, borrow/locates, liquidez/capacidad, batch research, DSR/PBO/CSCV ni edge evidence.
 
 ## Regla De Agrupación
 
@@ -117,8 +120,6 @@ StrategySpec -> HistoricalReplayFeed -> point-in-time decisions -> ExecutionOrde
 
 The run remains `ENGINE_VALIDATION_RUN`, `EDGE_EVIDENCE = NOT_AUTHORIZED`, `ECONOMIC_REALISM = INCOMPLETE`.
 
-
-
 ## 2026-07-29 | BT-GATE-011 corrective acceptance evidence
 
 ```text
@@ -131,7 +132,6 @@ engine_suite = 99 tests OK
 
 The gate is closed after final owner acceptance review.
 
-
 ## 2026-07-29 | BT-GATE-011 accepted and BT-GATE-012 contract draft opened
 
 ```text
@@ -139,7 +139,7 @@ BT-GATE-011 = CLOSED_PASS_IMPLEMENTATION_ACCEPTED
 SINGLE_STRATEGY_END_TO_END_BACKTEST = IMPLEMENTED_AND_ACCEPTED
 FINAL_OWNER_REVIEW = ACCEPTED
 
-CURRENT_GATE = BT-GATE-012 / MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE
+HISTORICAL_CURRENT_GATE_AT_TIME = BT-GATE-012 / MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE
 BT-GATE-012 = AUTHORIZED_FOR_CONTINUOUS_IMPLEMENTATION
 BT-GATE-012_IMPLEMENTATION = AUTHORIZED
 ```
@@ -149,7 +149,6 @@ Contract draft:
 ```text
 docs/00_system/12_BT_GATE_012_MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE_CONTRACT_V0_1.md
 ```
-
 
 ## 2026-07-29 | BT-GATE-013 boundary corrected
 
@@ -172,6 +171,19 @@ The next work is contract definition only:
 
 ```text
 docs/00_system/14_BT_GATE_013_PHYSICAL_HISTORICAL_REPLAY_SLICE_CONTRACT_V0_1.md
-Status = CONTRACT_DRAFT_PENDING_OWNER_REVIEW
+Status = CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW
 Implementation = NOT_AUTHORIZED
 ```
+
+## 2026-07-29 | BT-GATE-013 contract corrected after read-only review
+
+```text
+READ_ONLY_REVIEW = ACCEPTED
+BT-GATE-013_CONTRACT = CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW
+BT-GATE-013_IMPLEMENTATION = NOT_AUTHORIZED
+PROVIDER_EVIDENCE_REQUIRED = false
+ACCEPTANCE_SLICE = ABAT, ABEO, ABSI, ABTC, ACB / 2026-01-05, 2026-01-06
+```
+
+The corrected scope keeps `SMALL_CAPS_RIGOROUS_RESEARCH_RUNNER` as a future gate family.
+

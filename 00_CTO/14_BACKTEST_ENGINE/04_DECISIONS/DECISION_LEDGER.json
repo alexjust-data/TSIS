@@ -643,7 +643,7 @@
       "authorized_at": "2026-07-29T17:40:31Z",
       "decision": "Define BT-GATE-013 as PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1, crossing only the boundary from accepted fixture replay to reproducible physical 013_ohlcv_1m_quote_guarded rows. Defer SMALL_CAPS_RIGOROUS_RESEARCH_RUNNER as a future gate family, not BT-GATE-013.",
       "rationale": "A broad small-caps research runner would mix physical ingestion, PIT universe, short tradability, SSR, halts, liquidity/capacity, batch research and statistical validation. BT-GATE-013 must isolate physical row lineage, timestamp availability and deterministic replay first.",
-      "status": "CONTRACT_DRAFT_PENDING_OWNER_REVIEW",
+      "status": "CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW",
       "evidence_class": [
         "OWNER_DIRECTION",
         "GATE_BOUNDARY_CLARIFICATION",
@@ -660,5 +660,12 @@
     }
   ],
   "register_id": "TSIS_BACKTEST_DECISION_LEDGER_V0_1",
-  "scope": "02_TSIS_BACKTEST_ENGINE"
+  "scope": "02_TSIS_BACKTEST_ENGINE",
+  "bt_gate_013_contract_correction_sync": {
+    "status": "CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW",
+    "read_only_review": "ACCEPTED",
+    "implementation": "NOT_AUTHORIZED",
+    "provider_evidence_required": false,
+    "updated_at_utc": "2026-07-29T19:40:00Z"
+  }
 }

@@ -1,0 +1,61 @@
+{
+  "gate": "market_state_core_four_replay_availability_evidence_sidecar_authorization_v0_1",
+  "created_at_utc": "2026-07-29T19:23:11Z",
+  "status": "AUTHORIZED_NEXT_EXECUTION_SCOPE_NO_PHYSICAL_READ_IN_THIS_GATE",
+  "owner_layer": "09_STATE_CONSUMPTION_BOUNDARY",
+  "purpose": "Authorize the next bounded execution-and-validation gate that will create a row-addressable replay availability evidence sidecar for the validated Market State core-four physical candidate.",
+  "authorized_next_gate": "market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_v0_1",
+  "allowed_primary_inputs_for_next_gate": [
+    "core-four source candidate records JSONL",
+    "core-four materialization manifest",
+    "core-four final manifest",
+    "core-four physical validation evidence",
+    "market_state_core_four_replay_availability_timestamp_contract_v0_1",
+    "closed physical schema contract"
+  ],
+  "conditional_next_gate_physical_read_allowance": {
+    "allowed": true,
+    "only_if_metadata_inputs_do_not_expose_required_row_identity_fields": true,
+    "exact_candidate_only": true,
+    "max_parquet_files": 1,
+    "max_rows": 8,
+    "allowed_column_classes": [
+      "row identity",
+      "state output fingerprint",
+      "decision timestamp",
+      "restriction lineage JSON",
+      "source lineage JSON",
+      "policy/formula lineage JSON"
+    ],
+    "forbidden_column_classes": [
+      "scientific value columns used as strategy inputs",
+      "future outcomes",
+      "execution prices",
+      "fills",
+      "PnL",
+      "downstream projections"
+    ]
+  },
+  "hard_boundaries_this_gate": {
+    "sidecar_records_written": 0,
+    "parquet_opened": false,
+    "state_rows_read": 0,
+    "StateReplayFeed_records_emitted": 0,
+    "runtime_requests_executed": 0,
+    "runtime_builds_executed": 0,
+    "datasets_written": 0,
+    "registry_mutations": 0,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false,
+    "backtest_consumption": false
+  },
+  "authorized_outputs": {
+    "authorization": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_authorization_v0_1.md",
+    "scope": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/configs/market_state_core_four_replay_availability_evidence_sidecar_authorization_scope_v0_1.json",
+    "contract": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_contract_v0_1.json",
+    "matrix": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_authorization_matrix_v0_1.json",
+    "readout": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_authorization_readout_v0_1.md",
+    "runner": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/scripts/market_state_core_four_replay_availability_evidence_sidecar_authorization_runner_v0_1.py"
+  }
+}

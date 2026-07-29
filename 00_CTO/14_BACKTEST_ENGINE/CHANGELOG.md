@@ -64,7 +64,6 @@ No code implementation, executable tests, runs, State Provider changes, Market/E
 
 No code implementation, executable tests, runs, State Provider changes, Market/Event State consumption, StateReplayFeed, production, downstream or realism claim was introduced.
 
-
 ## 2026-07-29 - Ambiguous-Bar Semantic Contradiction Corrected
 
 - Corrected the final residual contradiction in `07_EXECUTION_SEMANTICS_AND_COST_MODEL_CONTRACT_V0_1.md`.
@@ -74,7 +73,6 @@ No code implementation, executable tests, runs, State Provider changes, Market/E
 - Kept `BT-EXC-009` open pending final focused semantic review.
 - Kept `BT-GATE-006 = OPEN_REVIEW_REQUIRED` and `CODE_IMPLEMENTATION = NOT_AUTHORIZED`.
 
-
 ## 2026-07-29 - Supported Outcome Enumeration Corrected
 
 - Replaced the generic `Supported V0.1 outcomes` list with separate `EVALUATION_OUTCOME` and `TERMINAL_ORDER_OUTCOME` enumerations.
@@ -82,7 +80,6 @@ No code implementation, executable tests, runs, State Provider changes, Market/E
 - Preserved `FAIL_AMBIGUOUS_BAR -> TERMINAL_ORDER_OUTCOME = REJECTED_BY_CONTRACT`.
 - Kept `BT-EXC-009 = CORRECTED_PENDING_FINAL_ENUMERATION_REVIEW`.
 - Kept `BT-GATE-006 = OPEN_REVIEW_REQUIRED` and `CODE_IMPLEMENTATION = NOT_AUTHORIZED`.
-
 
 ## 2026-07-29 - BT-GATE-006 Closed Pass
 
@@ -93,7 +90,6 @@ No code implementation, executable tests, runs, State Provider changes, Market/E
 - Kept `CODE_IMPLEMENTATION = NOT_AUTHORIZED`.
 - Preserved all State Provider, Market State, Event State and StateReplayFeed restrictions.
 
-
 ## 2026-07-29 - BT-GATE-009 Authorization Granted
 
 - Registered external final review PASS for `08_DETERMINISTIC_FILL_SIMULATOR_V0_1_AUTHORIZATION.md`.
@@ -101,7 +97,6 @@ No code implementation, executable tests, runs, State Provider changes, Market/E
 - Set `CODE_IMPLEMENTATION = AUTHORIZED_FOR_DETERMINISTIC_FILL_SIMULATOR_V0_1_ONLY`.
 - Opened `BT-GATE-010 = DETERMINISTIC_FILL_SIMULATOR_V0_1_IMPLEMENTATION_AND_ACCEPTANCE`.
 - Preserved all prohibitions on StateReplayFeed, StateBundle physical reads, Market State, Event State, partial fills, quote-aware fills, borrow/locates and edge claims.
-
 
 ## 2026-07-29 - BT-GATE-010 Implementation Pending Acceptance Review
 
@@ -162,8 +157,6 @@ ECONOMIC_REALISM = INCOMPLETE
 
 State Provider, Market State, Event State and StateReplayFeed restrictions remain closed.
 
-
-
 ## 2026-07-29 | BT-GATE-011 Corrective Acceptance Evidence
 
 ```text
@@ -177,7 +170,6 @@ HISTORICAL_FINAL_OWNER_REVIEW_STATE = AWAITING_REVIEW_AT_TIME_OF_ENTRY_SUPERSEDE
 
 State Provider, Market State, Event State and StateReplayFeed restrictions remain closed.
 
-
 ## 2026-07-29 | BT-GATE-011 causal EventLoop correction
 
 ```text
@@ -190,7 +182,6 @@ ENGINE_TEST_SUITE = 99 tests OK
 ```
 
 The gate is closed after final owner acceptance review.
-
 
 ## 2026-07-29 | BT-GATE-011 closed and BT-GATE-012 contract draft opened
 
@@ -262,7 +253,6 @@ AUTHORIZATION_PACKET_SHA256 = b8bb2e5641db2cd3aee8ede94d571a1176479e27cbdf5a0560
 
 StateReplayFeed, StateBundle physical reads, Market State, Event State and provider modification remain `NOT_AUTHORIZED`.
 
-
 ## 2026-07-29 | BT-GATE-012 implementation evidence prepared
 
 - Implemented the multi-symbol, multi-session portfolio slice under the accepted BT-GATE-012 contract.
@@ -272,7 +262,6 @@ StateReplayFeed, StateBundle physical reads, Market State, Event State and provi
 - Recorded `BT-GATE-012_VALIDATION_STATUS = PASS`, `BT-GATE-012_DETERMINISM_STATUS = PASS`, and `BT-GATE-012_DETERMINISTIC_OUTPUT_HASH = 414aceb2bc80836f8fa821cd4d14071e54c86f3c7855c0a34c82ffd8b1c79182`.
 - Set `BT-GATE-012 = IMPLEMENTED_PENDING_FINAL_ACCEPTANCE_REVIEW` and `IMPLEMENTATION_ACCEPTANCE = PENDING_FINAL_OWNER_REVIEW` pending final owner/external review.
 - Preserved StateReplayFeed, StateBundle physical reads, Market State, Event State and provider modification as `NOT_AUTHORIZED`.
-
 
 ## 2026-07-29 | BT-GATE-012 final acceptance closed
 
@@ -286,7 +275,6 @@ StateReplayFeed, StateBundle physical reads, Market State, Event State and provi
 - End-to-end validation, accounting reconciliation, determinism and boundary preservation: PASS.
 - `BT-GATE-013` remains not opened; StateReplayFeed, StateBundle physical reads, Market State, Event State and provider modification remain `NOT_AUTHORIZED`.
 
-
 ## 2026-07-29 | BT-GATE-013 boundary corrected
 
 ```text
@@ -298,14 +286,43 @@ SMALL_CAPS_RIGOROUS_RESEARCH_RUNNER = FUTURE_GATE_FAMILY_NOT_YET_OPEN
 
 `BT-GATE-013` is not a small-caps research runner. It is the physical historical replay bridge from `013_ohlcv_1m_quote_guarded` rows into the accepted replay/portfolio engine. Future small-caps rigorous research capability remains deferred until the physical bar boundary, Market/Event State consumption gates, scaling/batch gates, tradability/execution-realism gates and statistical validation gates are separately authorized.
 
-
 ## 2026-07-29 | BT-GATE-013 contract draft placed in canonical backtester docs
 
 ```text
 BT-GATE-013 = PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1
-BT-GATE-013_CONTRACT = CONTRACT_DRAFT_PENDING_OWNER_REVIEW
+BT-GATE-013_CONTRACT = HISTORICAL_CONTRACT_DRAFT_PENDING_OWNER_REVIEW_SUPERSEDED_BY_CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW
 BT-GATE-013_IMPLEMENTATION = NOT_AUTHORIZED
 CONTRACT_ARTIFACT = docs/00_system/14_BT_GATE_013_PHYSICAL_HISTORICAL_REPLAY_SLICE_CONTRACT_V0_1.md
 ```
 
 The contract draft was copied into the canonical backtester document location. This does not authorize implementation, Market State consumption, Event State consumption, StateReplayFeed, provider modification or full 2005-2026 execution.
+
+## 2026-07-29 | BT-GATE-013 corrected contract after read-only review
+
+```text
+READ_ONLY_REVIEW = ACCEPTED
+REVIEW_RESULT = CONTRACT_CORRECTIONS_REQUIRED
+BT-GATE-013_CONTRACT = CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW
+BT-GATE-013_IMPLEMENTATION = NOT_AUTHORIZED
+PROVIDER_EVIDENCE_REQUIRED = false
+```
+
+Applied contractual corrections only: source identity layering, exact physical binding,
+derived time-field semantics without native `source_as_of_utc`, stable source row locator,
+portable relative paths, repair/provenance field restrictions and living-surface cleanup.
+No code, tests, configs, scripts, runs, data, provider, Market State, Event State or StateReplayFeed were modified.
+
+## 2026-07-29 | BT-GATE-013 corrected contract after read-only review
+
+```text
+READ_ONLY_REVIEW = ACCEPTED
+REVIEW_RESULT = CONTRACT_CORRECTIONS_REQUIRED
+BT-GATE-013_CONTRACT = CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW
+BT-GATE-013_IMPLEMENTATION = NOT_AUTHORIZED
+PROVIDER_EVIDENCE_REQUIRED = false
+```
+
+Applied contractual corrections only: source identity layering, exact physical binding,
+derived time-field semantics without native `source_as_of_utc`, stable source row locator,
+portable relative paths, repair/provenance field restrictions and living-surface cleanup.
+No code, tests, configs, scripts, runs, data, provider, Market State, Event State or StateReplayFeed were modified.

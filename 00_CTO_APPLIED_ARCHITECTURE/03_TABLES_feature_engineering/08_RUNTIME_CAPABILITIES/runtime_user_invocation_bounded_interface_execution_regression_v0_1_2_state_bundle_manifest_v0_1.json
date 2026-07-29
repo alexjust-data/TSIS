@@ -1,0 +1,301 @@
+{
+  "bundle_ref": {
+    "ref_id": "state_bundle_manifest_scale_validation_reissue_v0_1_2_20260729",
+    "ref_type": "state_bundle_manifest",
+    "sha256": "2a6bb5c904685b6fd9766b2f55d86db13596388c5230e28ca89a80a3c7379813",
+    "availability": "available"
+  },
+  "state_bundle_manifest_id": "state_bundle_manifest_scale_validation_reissue_v0_1_2_20260729",
+  "bundle_state_mode": "market_state_only",
+  "state_kinds": [
+    "market_state"
+  ],
+  "request_response_bindings": [
+    {
+      "request_ref": {
+        "ref_id": "state_resolution_request_scale_validation_reissue_v0_1_2_20260729",
+        "ref_type": "state_resolution_request",
+        "sha256": "a2387169fefec56703c5f6dc5dfb2ee1567e9ce313c4519128cfb931d99fe821",
+        "availability": "available"
+      },
+      "request_fingerprint": "a2387169fefec56703c5f6dc5dfb2ee1567e9ce313c4519128cfb931d99fe821",
+      "response_ref": {
+        "ref_id": "runtime_invocation_response_scale_validation_reissue_v0_1_2_20260729",
+        "ref_type": "runtime_invocation_response",
+        "sha256": "80bebe47b4106f5e20ad1bff274c4d383c08c6a40f2bad6e69162289d99a11d2",
+        "availability": "available"
+      },
+      "state_kind": "market_state"
+    }
+  ],
+  "request_artifacts": [
+    {
+      "artifact_ref_id": "state_resolution_request_scale_validation_reissue_v0_1_2_20260729",
+      "artifact_ref_sha256": "a2387169fefec56703c5f6dc5dfb2ee1567e9ce313c4519128cfb931d99fe821",
+      "content_fingerprint": "a2387169fefec56703c5f6dc5dfb2ee1567e9ce313c4519128cfb931d99fe821",
+      "request_fingerprint": "a2387169fefec56703c5f6dc5dfb2ee1567e9ce313c4519128cfb931d99fe821",
+      "state_kind": "market_state",
+      "canonicalization_algorithm": "json_sort_keys_compact_utf8_sha256",
+      "canonical_content": {
+        "request_id": "state_resolution_request_scale_validation_reissue_v0_1_2_20260729",
+        "request_type": "market_state",
+        "state_kind": "market_state",
+        "request_contract_version": "0.1.2",
+        "consumer_id": "bounded_backtest_state_integration_probe_v0_1",
+        "consumption_purpose": "backtest",
+        "operation": "resolve",
+        "resolution_policy": {
+          "mode": "resolve_reuse_or_authorization",
+          "reuse_policy": "reuse_if_exact_validated_match",
+          "allow_new_candidate_execution": false,
+          "allow_physical_path_input": false,
+          "requested_output_mode": "candidate_reference_only",
+          "production": false,
+          "downstream": false
+        },
+        "payload": {
+          "market_state_request": {
+            "request_type": "market_state",
+            "profile_id": "market_state_core_four_intraday_profile_v0_1",
+            "profile_version_policy": "exact",
+            "profile_version": "v0_1",
+            "exchange_scope": "XNYS",
+            "explicit_instrument_ids": [
+              "cik_ticker:0001651625:ACIU",
+              "figi_share_class:BBG001S5N8T1",
+              "figi_share_class:BBG001S6CVZ3",
+              "figi_share_class:BBG001S6RSK0",
+              "figi_share_class:BBG001S8JF14",
+              "figi_share_class:BBG001S8T7K0",
+              "figi_share_class:BBG001SPBTK3",
+              "figi_share_class:BBG001SV77D1",
+              "figi_share_class:BBG0022MMR46",
+              "figi_share_class:BBG00JCXSJQ2"
+            ],
+            "session_dates": [
+              "2021-01-19",
+              "2021-03-15",
+              "2022-07-05",
+              "2022-11-25",
+              "2023-03-20",
+              "2023-07-03",
+              "2024-03-11",
+              "2025-07-03"
+            ],
+            "resolution": "intraday",
+            "calendar_authority_id": "governed_exchange_session_calendar_v0_1",
+            "point_in_time_policy_id": "market_state_core_four_replay_availability_policy_v0_1",
+            "source_version_policy": "exact_governed_or_block",
+            "output_mode": "candidate",
+            "reuse_policy": "reuse_if_exact_validated_match"
+          }
+        }
+      },
+      "availability": "available"
+    }
+  ],
+  "runtime_invocation_response_artifacts": [
+    {
+      "artifact_ref_id": "runtime_invocation_response_scale_validation_reissue_v0_1_2_20260729",
+      "artifact_ref_sha256": "80bebe47b4106f5e20ad1bff274c4d383c08c6a40f2bad6e69162289d99a11d2",
+      "content_fingerprint": "80bebe47b4106f5e20ad1bff274c4d383c08c6a40f2bad6e69162289d99a11d2",
+      "request_fingerprint": "a2387169fefec56703c5f6dc5dfb2ee1567e9ce313c4519128cfb931d99fe821",
+      "response_fingerprint": "80bebe47b4106f5e20ad1bff274c4d383c08c6a40f2bad6e69162289d99a11d2",
+      "state_kind": "market_state",
+      "canonicalization_algorithm": "json_sort_keys_compact_utf8_sha256",
+      "canonical_content": {
+        "invocation_id": "runtime_invocation_scale_validation_reissue_v0_1_2_20260729",
+        "request_type": "market_state",
+        "state_kind": "market_state",
+        "request_fingerprint": "a2387169fefec56703c5f6dc5dfb2ee1567e9ce313c4519128cfb931d99fe821",
+        "invocation_status": "reuse_hit",
+        "resolution_decision": "VALID_REQUEST_REUSE_HIT",
+        "capability_id": "market_state_on_demand_runtime_capability_v0_1",
+        "profile_id": "market_state_core_four_intraday_profile_v0_1",
+        "run_id": "market_state_on_demand_scale_validation_v0_1_20260727T133641Z",
+        "dataset_id": "market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762",
+        "dataset_status": "validated_candidate",
+        "validation_status": "PASS_WITH_RESTRICTIONS",
+        "coverage": {
+          "requested_contexts": 120,
+          "represented_contexts": 104,
+          "unavailable_contexts": 16,
+          "blocked_contexts": 0,
+          "quarantined_contexts": 0,
+          "unaccounted_contexts": 0
+        },
+        "restrictions": [
+          "candidate_runtime_only",
+          "not_official_dataset",
+          "no_downstream",
+          "no_production"
+        ],
+        "artifact_references": [
+          {
+            "ref_id": "candidate_output_manifest",
+            "ref_type": "runtime_artifact",
+            "sha256": "dd3037aa3a3226b7ac308dcc909575344de38202cbe59c25483259a4c07f0e78",
+            "availability": "available"
+          },
+          {
+            "ref_id": "candidate_parquet",
+            "ref_type": "runtime_artifact",
+            "sha256": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68",
+            "availability": "available"
+          },
+          {
+            "ref_id": "physical_schema_contract",
+            "ref_type": "runtime_artifact",
+            "sha256": "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b",
+            "availability": "available"
+          },
+          {
+            "ref_id": "lineage_manifest",
+            "ref_type": "runtime_artifact",
+            "sha256": "85e7331b1b022d4075608bc4b8663de53dcb6234f21215ff232ad84c85cd4c52",
+            "availability": "available"
+          },
+          {
+            "ref_id": "replay_availability_sidecar",
+            "ref_type": "runtime_artifact",
+            "sha256": "d9407202d9f795bd8547e17bb19debb81daca706a06ef6bd6439d0db2d16b28b",
+            "availability": "available"
+          }
+        ],
+        "official_dataset": false,
+        "production": false,
+        "downstream": false,
+        "market_state_details": {
+          "state_kind": "market_state",
+          "materializer_executions": 0,
+          "source_market_data_rows_read": 0,
+          "registry_mutations": 0,
+          "physical_rows_delivered": 0
+        },
+        "event_state_details": null,
+        "request_ref_id": "state_resolution_request_scale_validation_reissue_v0_1_2_20260729",
+        "request_ref_sha256": "a2387169fefec56703c5f6dc5dfb2ee1567e9ce313c4519128cfb931d99fe821",
+        "state_bundle_manifest_ref_id": "state_bundle_manifest_scale_validation_reissue_v0_1_2_20260729",
+        "authorization_ref_id": null,
+        "authorization_ref_sha256": null
+      },
+      "availability": "available"
+    }
+  ],
+  "capability_refs": [
+    {
+      "ref_id": "market_state_on_demand_runtime_capability_v0_1",
+      "ref_type": "runtime_capability",
+      "sha256": "41a31d118e6799d6fc4b267e520a2ccf7e3b078e0bd0d6a72c5c32694454bed2",
+      "availability": "available"
+    }
+  ],
+  "dataset_refs": {
+    "market_state_dataset_ref": {
+      "dataset_id": "market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762",
+      "dataset_kind": "market_state",
+      "candidate_dataset_fingerprint": "516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416",
+      "validation_status": "PASS_WITH_RESTRICTIONS",
+      "reuse_eligibility": "eligible_with_restrictions",
+      "artifact_availability": "available"
+    },
+    "event_state_dataset_ref": null
+  },
+  "coverage": {
+    "requested_contexts": 120,
+    "represented_contexts": 104,
+    "unavailable_contexts": 16,
+    "blocked_contexts": 0,
+    "quarantined_contexts": 0,
+    "unaccounted_contexts": 0
+  },
+  "validation_status": "PASS_WITH_RESTRICTIONS",
+  "restrictions": [
+    "candidate_runtime_only",
+    "not_official_dataset",
+    "no_downstream",
+    "no_production"
+  ],
+  "representation_profile_versions": [
+    {
+      "state_kind": "market_state",
+      "profile_id": "market_state_core_four_intraday_profile_v0_1",
+      "profile_version": "v0_1",
+      "profile_fingerprint": "afa44f42164f9be6830740d9d48b09f727a41b8a2f6847e12bf0bd2293de7cd9"
+    }
+  ],
+  "schema_fingerprints": [
+    "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b"
+  ],
+  "source_dataset_ids": [
+    "market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762"
+  ],
+  "source_content_hashes": [
+    "516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416"
+  ],
+  "artifact_hashes": [
+    {
+      "artifact_id": "candidate_output_manifest",
+      "artifact_type": "manifest",
+      "sha256": "dd3037aa3a3226b7ac308dcc909575344de38202cbe59c25483259a4c07f0e78",
+      "availability": "available"
+    },
+    {
+      "artifact_id": "candidate_parquet",
+      "artifact_type": "parquet",
+      "sha256": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68",
+      "availability": "available"
+    },
+    {
+      "artifact_id": "physical_schema_contract",
+      "artifact_type": "schema",
+      "sha256": "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b",
+      "availability": "available"
+    },
+    {
+      "artifact_id": "lineage_manifest",
+      "artifact_type": "manifest",
+      "sha256": "85e7331b1b022d4075608bc4b8663de53dcb6234f21215ff232ad84c85cd4c52",
+      "availability": "available"
+    },
+    {
+      "artifact_id": "replay_availability_sidecar",
+      "artifact_type": "manifest",
+      "sha256": "d9407202d9f795bd8547e17bb19debb81daca706a06ef6bd6439d0db2d16b28b",
+      "availability": "available"
+    }
+  ],
+  "field_lineage": [
+    {
+      "field_id": "market_state_core_four_replay_availability_sidecar",
+      "builder_id": "market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_v0_1",
+      "input_refs": [
+        "candidate_output_manifest",
+        "lineage_manifest",
+        "market_state_temporal_legality_report"
+      ]
+    }
+  ],
+  "temporal_policy": {
+    "point_in_time_policy_id": "market_state_core_four_replay_availability_policy_v0_1",
+    "available_at_policy_id": "zero_latency_candidate_replay_publication_policy_v0_1",
+    "future_information_exclusion": true
+  },
+  "materialization_status": "reference_only",
+  "reuse_certification": {
+    "reuse_eligible": true,
+    "reuse_decision": "eligible_with_restrictions",
+    "reusable_dataset_refs": [
+      "market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762"
+    ]
+  },
+  "consumption_authorization": {
+    "backtest_consumption_authorized": false,
+    "downstream_authorized": false,
+    "consumption_purposes": []
+  },
+  "official_dataset": false,
+  "production": false,
+  "downstream": false,
+  "physical_rows_delivered": false
+}

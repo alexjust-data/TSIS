@@ -1,3 +1,57 @@
+## Runtime v0.1.2 Control-Plane Reissue Ready With Scale Sidecar
+
+```text
+runtime_user_invocation_bounded_interface_execution_regression_v0_1_2 = FAILED_V0_1_2_CONTROL_PLANE_REISSUE_REGRESSION
+StateResolutionRequest v0.1.2 instance = present
+RuntimeInvocationResponse v0.1.2 = present
+StateBundleManifest v0.1.2 = present
+next_gate = state_bundle_manifest_physical_evidence_alignment_v0_2
+physical_reads = 0
+StateReplayFeed = NOT_AUTHORIZED
+```
+
+## Runtime User Invocation Bounded Interface Execution Regression v0.1.2
+
+```text
+runtime_user_invocation_bounded_interface_execution_regression_v0_1_2 = CLOSED_PASS_V0_1_2_BOUNDED_INTERFACE_EXECUTION_REGRESSION_WITH_RESTRICTIONS_NO_CONSUMPTION
+next_gate = state_bundle_manifest_physical_evidence_alignment_v0_1
+physical_read_authorization_ready = false
+StateReplayFeed = NOT_AUTHORIZED
+backtest_consumption = false
+```
+
+The regression checks the accepted provider v0.1.2 contracts against the available row-addressable replay evidence sidecar. It opens no runtime request, build, physical read or downstream consumption.
+
+## Replay Availability Evidence Sidecar Available
+
+```text
+market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_v0_1 = CLOSED_PASS_REPLAY_AVAILABILITY_EVIDENCE_SIDECAR_CREATED_AND_VALIDATED_WITH_RESTRICTIONS_NO_PHYSICAL_READ
+next_gate = runtime_user_invocation_bounded_interface_execution_regression_v0_1_2
+```
+
+The runtime interface regression may now check v0.1.2 response/bundle reissue with the sidecar reference. Runtime builds, StateReplayFeed, backtest and downstream remain closed.
+
+## Replay Availability Evidence Sidecar Authorization v0.1
+
+```text
+market_state_core_four_replay_availability_evidence_sidecar_authorization_v0_1 = CLOSED_AUTHORIZED_REPLAY_AVAILABILITY_EVIDENCE_SIDECAR_EXECUTION_AND_VALIDATION_WITH_RESTRICTIONS_NO_PHYSICAL_READ
+next_gate = market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_v0_1
+```
+
+Runtime provider v0.1.2 remains frozen. The next work is a shared-boundary sidecar execution-and-validation gate; no runtime build, StateReplayFeed, backtest or downstream consumption is authorized.
+
+## Runtime User Invocation Bounded Interface Execution Regression v0.1.2
+
+```text
+runtime_user_invocation_bounded_interface_execution_regression_v0_1_2 = CLOSED_BLOCKED_REQUIRES_ROW_ADDRESSABLE_REPLAY_AVAILABILITY_EVIDENCE_NO_PHYSICAL_READ
+next_gate = market_state_core_four_replay_availability_evidence_sidecar_authorization_v0_1
+physical_read_authorization_ready = false
+StateReplayFeed = NOT_AUTHORIZED
+backtest_consumption = false
+```
+
+The regression is blocked because the repository has no governed row-addressable replay availability evidence sidecar for the validated Market State core-four candidate. Provider v0.1.2 remains accepted; no runtime request, build, physical read or downstream consumption was opened.
+
 ## Provider-Consumer Contract Compatibility Regression v0.1.2
 
 ```text
@@ -14,10 +68,10 @@ Next provider/shared-boundary gate at regression closure:
 state_bundle_manifest_physical_evidence_alignment_v0_1
 ```
 
-Alignment has since closed blocked, and the replay availability timestamp contract has since closed with validation hardening. Required next provider-owned gate is:
+Alignment has since closed blocked, the replay availability timestamp contract has since closed with validation hardening, and the bounded interface regression has since closed blocked. Current next gate is:
 
 ```text
-runtime_user_invocation_bounded_interface_execution_regression_v0_1_2
+market_state_core_four_replay_availability_evidence_sidecar_authorization_v0_1
 ```
 
 ## Provider Contract Schema Hardening v0.1.2 External Audit Accepted
@@ -57,11 +111,10 @@ CLOSED_READY_WITH_RESTRICTIONS_NO_CONSUMPTION
 
 The provider-side control-plane can validate, resolve, reuse/reference and block governed Market State and Event State requests. It does not authorize physical row delivery, StateReplayFeed, backtest consumption, official datasets, production or downstream.
 
-Next shared-boundary gates after alignment block:
+Current shared-boundary gate after bounded interface regression block:
 
 ```text
-market_state_core_four_replay_availability_timestamp_contract_v0_1
-runtime_user_invocation_bounded_interface_execution_regression_v0_1_2
+market_state_core_four_replay_availability_evidence_sidecar_authorization_v0_1
 ```
 
 ## Historical Snapshot - Provider Hardening v0.1.2 Authorization Issued

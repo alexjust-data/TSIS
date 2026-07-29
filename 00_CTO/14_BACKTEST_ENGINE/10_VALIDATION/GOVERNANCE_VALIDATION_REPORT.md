@@ -139,9 +139,71 @@ SMALL_CAPS_RIGOROUS_RESEARCH_RUNNER = FUTURE_GATE_FAMILY_NOT_YET_OPEN
 
 ```text
 BT-GATE-013 = PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1
-BT-GATE-013_CONTRACT = CONTRACT_DRAFT_PENDING_OWNER_REVIEW
+BT-GATE-013_CONTRACT = HISTORICAL_CONTRACT_DRAFT_PENDING_OWNER_REVIEW_SUPERSEDED_BY_CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW
 BT-GATE-013_IMPLEMENTATION = NOT_AUTHORIZED
 CONTRACT_ARTIFACT = docs/00_system/14_BT_GATE_013_PHYSICAL_HISTORICAL_REPLAY_SLICE_CONTRACT_V0_1.md
 ```
 
 The contract draft was copied into the canonical backtester document location. This does not authorize implementation, Market State consumption, Event State consumption, StateReplayFeed, provider modification or full 2005-2026 execution.
+
+
+## 2026-07-29 | BT-GATE-013 Corrected Contract Governance Sync
+
+```json
+{
+  "bt_gate_013_contract": "CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW",
+  "bt_gate_013_implementation": "NOT_AUTHORIZED",
+  "provider_evidence_required": false,
+  "read_only_review": "ACCEPTED",
+  "register_sha256": {
+    "decisions": "3f2244dbfe4af39ff3ef5202c26a2fda6592a5ceb381a9a550b4fefc538c3d16",
+    "exceptions": "72d121c1a549759fd37a5ef3a474394a9e25984403835019bacfe72d3dd477d4",
+    "gates": "1ac0f73637d8f7b2f40564dd428710a668fdcf1f73bdbf5e1ec75d9abfca3c0a",
+    "policies": "bd82c296f20982ce5c681c2dd0ecf2eb27a93eec89fd44fbd6943c29f3eacd0e",
+    "traceability": "94199d48eb18417b5e9c0ae1fd6ff483328b2719c91a089e2dcb790635c11468"
+  },
+  "status": "PASS"
+}
+```
+
+Preserved restrictions:
+
+```text
+StateReplayFeed = NOT_AUTHORIZED
+state_bundle_physical_read = NOT_AUTHORIZED
+Market State consumption = NOT_AUTHORIZED
+Event State consumption = NOT_AUTHORIZED
+provider modification = NOT_AUTHORIZED
+full 2005-2026 backtest = NOT_AUTHORIZED
+```
+
+
+## 2026-07-29 | BT-GATE-013 Corrected Contract Governance Sync
+
+```json
+{
+  "bt_gate_013_contract": "CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW",
+  "bt_gate_013_implementation": "NOT_AUTHORIZED",
+  "provider_evidence_required": false,
+  "read_only_review": "ACCEPTED",
+  "register_sha256": {
+    "decisions": "3f2244dbfe4af39ff3ef5202c26a2fda6592a5ceb381a9a550b4fefc538c3d16",
+    "exceptions": "72d121c1a549759fd37a5ef3a474394a9e25984403835019bacfe72d3dd477d4",
+    "gates": "1ac0f73637d8f7b2f40564dd428710a668fdcf1f73bdbf5e1ec75d9abfca3c0a",
+    "policies": "bd82c296f20982ce5c681c2dd0ecf2eb27a93eec89fd44fbd6943c29f3eacd0e",
+    "traceability": "94199d48eb18417b5e9c0ae1fd6ff483328b2719c91a089e2dcb790635c11468"
+  },
+  "status": "PASS"
+}
+```
+
+Preserved restrictions:
+
+```text
+StateReplayFeed = NOT_AUTHORIZED
+state_bundle_physical_read = NOT_AUTHORIZED
+Market State consumption = NOT_AUTHORIZED
+Event State consumption = NOT_AUTHORIZED
+provider modification = NOT_AUTHORIZED
+full 2005-2026 backtest = NOT_AUTHORIZED
+```

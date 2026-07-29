@@ -1,0 +1,90 @@
+{
+  "gate": "runtime_user_invocation_bounded_interface_execution_regression_v0_1_2",
+  "created_at_utc": "2026-07-29T19:59:52Z",
+  "status": "CLOSED_PASS_V0_1_2_CONTROL_PLANE_REISSUE_READY_WITH_SCALE_VALIDATION_REPLAY_EVIDENCE_NO_CONSUMPTION",
+  "case_count": 6,
+  "blocking_findings": 0,
+  "restricted_findings": 2,
+  "failed_cases": 0,
+  "required_case_ids": [
+    "RUI_REG_SCALE_SIDECAR_IDENTITY_001",
+    "RUI_REG_REISSUE_REQUEST_SCHEMA_001",
+    "RUI_REG_REISSUE_RESPONSE_SCHEMA_001",
+    "RUI_REG_REISSUE_BUNDLE_SCHEMA_001",
+    "RUI_REG_REISSUE_CROSS_ARTIFACT_001",
+    "RUI_REG_BOUNDARIES_001"
+  ],
+  "missing_required_case_ids": [],
+  "duplicate_case_ids": [],
+  "unexpected_case_ids": [],
+  "runtime_requests_executed": 0,
+  "interface_invocations": 0,
+  "runtime_resolutions_executed": 0,
+  "runtime_builds_executed": 0,
+  "materializer_executions": 0,
+  "source_market_data_rows_read": 0,
+  "physical_file_reads": 0,
+  "parquet_opened": false,
+  "state_rows_read": 0,
+  "physical_state_rows_delivered": 0,
+  "StateReplayFeed_records_emitted": 0,
+  "backtest_runs_started": 0,
+  "datasets_written": 0,
+  "registry_mutations": 0,
+  "official_dataset": false,
+  "production": false,
+  "downstream": false,
+  "backtest_consumption": false,
+  "physical_read_authorization_ready": false,
+  "authorization_to_read_issued": false,
+  "next_gate": "state_bundle_manifest_physical_evidence_alignment_v0_2",
+  "rows": [
+    {
+      "case_id": "RUI_REG_SCALE_SIDECAR_IDENTITY_001",
+      "area": "sidecar_identity",
+      "expected": "Sidecar target equals scale-validation candidate.",
+      "observed": {
+        "dataset_id": "market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762",
+        "fingerprint": "516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416",
+        "parquet_sha256": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68",
+        "row_count": 104
+      },
+      "result": "PASS"
+    },
+    {
+      "case_id": "RUI_REG_REISSUE_REQUEST_SCHEMA_001",
+      "area": "schema",
+      "expected": "StateResolutionRequest instance validates against v0.1.2 schema.",
+      "observed": [],
+      "result": "PASS"
+    },
+    {
+      "case_id": "RUI_REG_REISSUE_RESPONSE_SCHEMA_001",
+      "area": "schema",
+      "expected": "RuntimeInvocationResponse validates against v0.1.2 schema.",
+      "observed": [],
+      "result": "PASS"
+    },
+    {
+      "case_id": "RUI_REG_REISSUE_BUNDLE_SCHEMA_001",
+      "area": "schema",
+      "expected": "StateBundleManifest validates against v0.1.2 schema.",
+      "observed": [],
+      "result": "PASS"
+    },
+    {
+      "case_id": "RUI_REG_REISSUE_CROSS_ARTIFACT_001",
+      "area": "cross_artifact",
+      "expected": "Request, response, bundle, dataset, coverage and restrictions correlate.",
+      "observed": [],
+      "result": "PASS"
+    },
+    {
+      "case_id": "RUI_REG_BOUNDARIES_001",
+      "area": "hard_boundaries",
+      "expected": "No runtime requests, builds, physical reads, rows, StateReplayFeed or backtest.",
+      "observed": "runtime_requests=0; builds=0; physical_reads=0; state_rows=0; StateReplayFeed=0; backtest=false",
+      "result": "PASS"
+    }
+  ]
+}

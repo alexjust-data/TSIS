@@ -1,4 +1,154 @@
-# Replay Availability Timestamp Contract Validation Hardened - 2026-07-29
+## Scale Validation Replay Availability Sidecar and v0.1.2 Reissue Ready - 2026-07-29
+
+```text
+market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_v0_1
+=
+CLOSED_PASS_SCALE_VALIDATION_REPLAY_AVAILABILITY_EVIDENCE_SIDECAR_CREATED_AND_VALIDATED_WITH_RESTRICTIONS_NO_PHYSICAL_READ
+
+runtime_user_invocation_bounded_interface_execution_regression_v0_1_2
+=
+FAILED_V0_1_2_CONTROL_PLANE_REISSUE_REGRESSION
+
+current_gate
+=
+state_bundle_manifest_physical_evidence_alignment_v0_2_pending
+
+scale_validation_sidecar_records
+=
+104
+
+StateReplayFeed
+=
+NOT_AUTHORIZED
+```
+
+The active replay availability sidecar now targets the exact Market State scale-validation candidate required by physical evidence alignment. Runtime v0.1.2 reissue artifacts are present as control-plane references only; no runtime request, physical read, StateReplayFeed or backtest was executed.
+
+## Runtime User Invocation Bounded Interface Execution Regression v0.1.2 Closed - 2026-07-29
+
+```text
+runtime_user_invocation_bounded_interface_execution_regression_v0_1_2
+=
+CLOSED_PASS_V0_1_2_BOUNDED_INTERFACE_EXECUTION_REGRESSION_WITH_RESTRICTIONS_NO_CONSUMPTION
+
+current_gate
+=
+state_bundle_manifest_physical_evidence_alignment_v0_1_pending
+
+physical_read_authorization_ready
+=
+false
+
+StateReplayFeed
+=
+NOT_AUTHORIZED
+```
+
+The sidecar evidence is now available and the bounded runtime interface regression passes with restrictions.
+
+Still closed:
+
+```text
+runtime_requests_executed = 0
+runtime_builds_executed = 0
+physical_file_reads = 0
+state_rows_read = 0
+StateReplayFeed_records_emitted = 0
+backtest_consumption = false
+production = false
+downstream = false
+official_dataset = false
+```
+
+## Historical Snapshot - Market State Core Four Replay Availability Evidence Sidecar Execution v0.1 Closed - 2026-07-29
+
+```text
+market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_v0_1
+=
+CLOSED_PASS_REPLAY_AVAILABILITY_EVIDENCE_SIDECAR_CREATED_AND_VALIDATED_WITH_RESTRICTIONS_NO_PHYSICAL_READ
+
+current_gate
+=
+runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_pending
+
+sidecar_records_written
+=
+8
+
+parquet_opened
+=
+false
+
+StateReplayFeed
+=
+NOT_AUTHORIZED
+```
+
+The row-addressable replay availability evidence sidecar now exists and validates without opening parquet. The next step is to repeat the runtime user invocation bounded interface execution regression against this sidecar evidence.
+
+## Historical Snapshot - Market State Core Four Replay Availability Evidence Sidecar Authorization v0.1 Closed - 2026-07-29
+
+```text
+market_state_core_four_replay_availability_evidence_sidecar_authorization_v0_1
+=
+CLOSED_AUTHORIZED_REPLAY_AVAILABILITY_EVIDENCE_SIDECAR_EXECUTION_AND_VALIDATION_WITH_RESTRICTIONS_NO_PHYSICAL_READ
+
+current_gate
+=
+market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_v0_1_pending
+
+sidecar_records_written
+=
+0
+
+physical_read_authorization_ready
+=
+false
+
+StateReplayFeed
+=
+NOT_AUTHORIZED
+```
+
+The next gate may create and validate a row-addressable replay availability sidecar for the exact validated Market State core-four candidate. This gate does not create the sidecar and does not open physical replay.
+
+## Historical Snapshot - Runtime User Invocation Bounded Interface Execution Regression v0.1.2 Blocked - 2026-07-29
+
+```text
+runtime_user_invocation_bounded_interface_execution_regression_v0_1_2
+=
+CLOSED_BLOCKED_REQUIRES_ROW_ADDRESSABLE_REPLAY_AVAILABILITY_EVIDENCE_NO_PHYSICAL_READ
+
+current_gate
+=
+market_state_core_four_replay_availability_evidence_sidecar_authorization_v0_1_pending
+
+physical_read_authorization_ready
+=
+false
+
+StateReplayFeed
+=
+NOT_AUTHORIZED
+```
+
+The provider v0.1.2 authority and replay timestamp contract are ready, but the bounded interface cannot reissue a physical-alignment-ready bundle until row-addressable replay availability evidence exists for the core-four physical candidate.
+
+Still closed:
+
+```text
+runtime_requests_executed = 0
+runtime_builds_executed = 0
+physical_file_reads = 0
+state_rows_read = 0
+StateReplayFeed_records_emitted = 0
+backtest_consumption = false
+production = false
+downstream = false
+official_dataset = false
+```
+
+# Historical Snapshot - Replay Availability Timestamp Contract Validation Hardened - 2026-07-29
 
 ```text
 market_state_core_four_replay_availability_timestamp_contract_v0_1
@@ -17,7 +167,7 @@ failed_cases
 =
 0
 
-current_gate
+current_gate_at_closure
 =
 runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_pending
 
@@ -43,7 +193,7 @@ last_blocker_addressed
 =
 ALIGN_REPLAY_TIMESTAMPS_SCHEMA_001
 
-current_gate
+current_gate_at_closure
 =
 runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_pending
 ```

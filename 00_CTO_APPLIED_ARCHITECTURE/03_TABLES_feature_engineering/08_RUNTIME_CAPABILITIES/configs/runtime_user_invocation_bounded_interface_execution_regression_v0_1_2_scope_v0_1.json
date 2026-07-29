@@ -1,0 +1,27 @@
+{
+  "gate": "runtime_user_invocation_bounded_interface_execution_regression_v0_1_2",
+  "created_at_utc": "2026-07-29T19:59:52Z",
+  "status": "AUTHORIZED_CONTROL_PLANE_REISSUE_REGRESSION_NO_PHYSICAL_READ",
+  "target_candidate_dataset_id": "market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762",
+  "target_candidate_dataset_fingerprint": "516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416",
+  "target_candidate_parquet_sha256": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68",
+  "authorized_outputs": [
+    "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_resolution_request_instance_v0_1.json",
+    "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_runtime_invocation_response_v0_1.json",
+    "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_bundle_manifest_v0_1.json",
+    "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_matrix_v0_1.json",
+    "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_readout_v0_1.md",
+    "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/scripts/market_state_core_four_scale_validation_replay_sidecar_and_reissue_runner_v0_1.py"
+  ],
+  "hard_boundaries": {
+    "runtime_requests_executed": 0,
+    "runtime_builds_executed": 0,
+    "physical_file_reads": 0,
+    "parquet_opened": false,
+    "state_rows_read": 0,
+    "StateReplayFeed_records_emitted": 0,
+    "backtest_consumption": false,
+    "production": false,
+    "downstream": false
+  }
+}
