@@ -1,0 +1,188 @@
+{
+  "gate": "state_bundle_manifest_physical_evidence_alignment_v0_1",
+  "status": "CLOSED_BLOCKED_REQUIRES_V0_1_2_BUNDLE_REISSUE_AND_REPLAY_TIMESTAMP_EVIDENCE_NO_PHYSICAL_READ",
+  "created_at_utc": "2026-07-29T16:48:35Z",
+  "case_count": 13,
+  "blocking_findings": 5,
+  "restricted_findings": 3,
+  "authorization_to_read_issued": false,
+  "physical_read_authorization_ready": false,
+  "parquet_opened": false,
+  "parquet_hash_recomputed": false,
+  "state_rows_read": 0,
+  "physical_artifacts_opened": 0,
+  "StateReplayFeed_records_emitted": 0,
+  "EventLoop_ticks": 0,
+  "strategy_callbacks": 0,
+  "orders_emitted": 0,
+  "fills_emitted": 0,
+  "PnL_calculated": false,
+  "runtime_requests_executed": 0,
+  "runtime_builds_executed": 0,
+  "datasets_written": 0,
+  "registry_mutations": 0,
+  "official_dataset": false,
+  "production": false,
+  "downstream": false,
+  "next_required_gates": [
+    "market_state_core_four_replay_availability_timestamp_contract_v0_1",
+    "runtime_user_invocation_bounded_interface_execution_regression_v0_1_2"
+  ],
+  "rows": [
+    {
+      "case_id": "ALIGN_INPUTS_001",
+      "area": "input_inventory",
+      "expected": "All metadata inputs exist; parquet may exist but must not be opened.",
+      "observed": "missing=[]; parquet_exists=True",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/configs/bounded_state_bundle_read_and_replay_authorization_scope_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/runtime_user_invocation_bounded_interface_execution_v0_1_20260728T1731090000/case_01_bundle.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/runtime_user_invocation_bounded_interface_execution_v0_1_20260728T1731090000/case_01_response.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/final_manifest.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/official_profiles/market_state_core_four_intraday_profile_v0_1/PHYSICAL_SCHEMA_CONTRACT.json"
+      ],
+      "notes": ""
+    },
+    {
+      "case_id": "ALIGN_PROVIDER_AUTHORITY_001",
+      "area": "provider_authority",
+      "expected": "Provider v0.1.2 must be externally accepted before revisiting physical evidence.",
+      "observed": "provider_v0_1_2_external_acceptance=True",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_provider_contract_schema_hardening_v0_1_2_external_audit_acceptance_readout_v0_1.md"
+      ],
+      "notes": ""
+    },
+    {
+      "case_id": "ALIGN_CONTROL_PLANE_ARTIFACT_VERSION_001",
+      "area": "control_plane_artifact_version",
+      "expected": "Candidate read authorization must use v0.1.2-shaped RuntimeInvocationResponse and StateBundleManifest artifacts.",
+      "observed": "old_case_01_bundle_has_v0_1_2_shape=False",
+      "result": "BLOCK",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/runtime_user_invocation_bounded_interface_execution_v0_1_20260728T1731090000/case_01_bundle.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1_2.json"
+      ],
+      "notes": "The existing case_01 bundle predates v0.1.2 hardening and cannot be promoted to physical authority."
+    },
+    {
+      "case_id": "ALIGN_RESPONSE_HASH_001",
+      "area": "bundle_to_response_hash",
+      "expected": "Bundle must freeze the observed RuntimeInvocationResponse hash.",
+      "observed": "declared=cdfd7d2acdb3c5e0885a0a96b1add49b49c990846fb02c9618869f9155baafd8; observed=0985e2b97a44e45eb4d05777406f0615f44fb1c80f463a7f2989bdcb9d06bab4",
+      "result": "BLOCK",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/runtime_user_invocation_bounded_interface_execution_v0_1_20260728T1731090000/case_01_bundle.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/runtime_user_invocation_bounded_interface_execution_v0_1_20260728T1731090000/case_01_response.json"
+      ],
+      "notes": ""
+    },
+    {
+      "case_id": "ALIGN_BUNDLE_HASH_001",
+      "area": "response_to_bundle_hash",
+      "expected": "Response must point to the observed StateBundleManifest hash.",
+      "observed": "declared=34182601597cc409555cfca8fa5946bef2b6630a63fcf5532b34f9fb16163b05; observed=34182601597cc409555cfca8fa5946bef2b6630a63fcf5532b34f9fb16163b05",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/runtime_user_invocation_bounded_interface_execution_v0_1_20260728T1731090000/case_01_response.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/runtime_user_invocation_bounded_interface_execution_v0_1_20260728T1731090000/case_01_bundle.json"
+      ],
+      "notes": ""
+    },
+    {
+      "case_id": "ALIGN_DATASET_IDENTITY_001",
+      "area": "dataset_identity",
+      "expected": "Bundle dataset identity and candidate fingerprint must match the physical candidate output manifest.",
+      "observed": "bundle_dataset_id=market_state_candidate_scale_validation_reference_v0_1; physical_dataset_id=market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762; bundle_fingerprint=8563b1307af126bcf1cd4ec473bb710dbce9a38aa26f64aab2f080dfb31caea0; physical_fingerprint=516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416",
+      "result": "BLOCK",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/runtime_user_invocation_bounded_interface_execution_v0_1_20260728T1731090000/case_01_bundle.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/candidate_output_manifest.json"
+      ],
+      "notes": ""
+    },
+    {
+      "case_id": "ALIGN_ARTIFACT_HASH_CHAIN_001",
+      "area": "artifact_hash_chain",
+      "expected": "Bundle must directly freeze candidate_output_manifest, state record artifact hashes and schema contract hash before physical read authorization.",
+      "observed": "bundle_artifact_hashes=['00b69f8445d8a8d1c8be1a5ab17648d0e7d6be289dccd70fc2c9c90524fdfd9c']; candidate_output_manifest_sha256=dd3037aa3a3226b7ac308dcc909575344de38202cbe59c25483259a4c07f0e78; parquet_hashes_declared_in_output_manifest=['bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68']; schema_hash=595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b",
+      "result": "BLOCK",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/runtime_user_invocation_bounded_interface_execution_v0_1_20260728T1731090000/case_01_bundle.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/candidate_output_manifest.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/official_profiles/market_state_core_four_intraday_profile_v0_1/PHYSICAL_SCHEMA_CONTRACT.json"
+      ],
+      "notes": ""
+    },
+    {
+      "case_id": "ALIGN_COVERAGE_001",
+      "area": "coverage",
+      "expected": "Partial coverage must reconcile and remain explicit.",
+      "observed": "bundle_coverage={'requested_contexts': 120, 'represented_contexts': 104, 'unavailable_contexts': 16, 'blocked_contexts': 0, 'quarantined_contexts': 0, 'unaccounted_contexts': 0}; final_manifest=(120,104,16)",
+      "result": "PASS_WITH_RESTRICTIONS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/runtime_user_invocation_bounded_interface_execution_v0_1_20260728T1731090000/case_01_bundle.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/final_manifest.json"
+      ],
+      "notes": "Partial coverage is preserved, so any future authorization must carry the restriction forward."
+    },
+    {
+      "case_id": "ALIGN_REPLAY_TIMESTAMPS_SCHEMA_001",
+      "area": "replay_timestamp_contract",
+      "expected": "Physical schema and row lineage evidence must prove decision_timestamp_utc, state_as_of_utc and state_available_at_utc before replay-safe delivery.",
+      "observed": "schema_missing=['state_as_of_utc', 'state_available_at_utc']; lineage_missing=['state_as_of_utc', 'state_available_at_utc']",
+      "result": "BLOCK",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/official_profiles/market_state_core_four_intraday_profile_v0_1/PHYSICAL_SCHEMA_CONTRACT.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/lineage_manifest.json"
+      ],
+      "notes": ""
+    },
+    {
+      "case_id": "ALIGN_VALIDATION_REPORT_001",
+      "area": "candidate_validation",
+      "expected": "Candidate validation status and row count must reconcile with final manifest represented contexts.",
+      "observed": "validation_status=PASS_WITH_RESTRICTIONS; row_count=104; represented_contexts=104",
+      "result": "PASS_WITH_RESTRICTIONS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/market_state_validation_report.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/final_manifest.json"
+      ],
+      "notes": ""
+    },
+    {
+      "case_id": "ALIGN_REGISTRY_001",
+      "area": "candidate_registry",
+      "expected": "Candidate registry identity must match output manifest and preserve restricted validation status.",
+      "observed": "registry_dataset_id=market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762; registry_fingerprint=516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416; validation_status=pass_with_restrictions",
+      "result": "PASS_WITH_RESTRICTIONS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/candidate_registry_entry.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/candidate_output_manifest.json"
+      ],
+      "notes": ""
+    },
+    {
+      "case_id": "ALIGN_V0_1_2_CONTRACT_CAPACITY_001",
+      "area": "v0_1_2_contract_capacity",
+      "expected": "Provider v0.1.2 contract must be able to represent the missing alignment evidence in a future reissued bundle.",
+      "observed": "v0_1_2_contract_can_represent_required_fields=True",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1_2.json"
+      ],
+      "notes": ""
+    },
+    {
+      "case_id": "ALIGN_BOUNDARIES_001",
+      "area": "hard_boundaries",
+      "expected": "No physical rows, no parquet bytes, no StateReplayFeed and no backtest execution are allowed in this gate.",
+      "observed": "parquet_opened=false; parquet_hash_recomputed=false; state_rows_read=0; StateReplayFeed_records_emitted=0; backtest_runs_started=0",
+      "result": "PASS",
+      "evidence_refs": [],
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,613 @@
+{
+  "gate": "runtime_provider_contract_schema_hardening_v0_1_2",
+  "created_at_utc": "2026-07-28T19:21:45+00:00",
+  "status": "CLOSED_PROVIDER_CONTRACT_SCHEMA_HARDENED_V0_1_2_WITH_RESTRICTIONS_NO_EXECUTION",
+  "case_count": 55,
+  "minimum_case_count": 44,
+  "original_internal_cases_declared": 31,
+  "external_audit_cases_promoted_to_regression": 13,
+  "additional_finding_regression_cases": 6,
+  "failed_cases": 0,
+  "jsonschema_compile": "PASS",
+  "ajv_strict_runtime": "PASS",
+  "ajv_runtime_available": true,
+  "ajv_version": "8.17.1",
+  "ajv_error": null,
+  "semantic_validator_execution": "PASS",
+  "runtime_requests_executed": 0,
+  "datasets_written": 0,
+  "builds_materializations": 0,
+  "registry_mutations": 0,
+  "StateReplayFeed": "NOT_AUTHORIZED",
+  "backtest_consumption_authority": false,
+  "production": false,
+  "downstream": false,
+  "rows": [
+    {
+      "case_id": "jsonschema_compile_state_resolution_request_contract_v0_1_2.json",
+      "case_group": "original_internal_schema_compile",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "ajv_strict_static_lint_state_resolution_request_contract_v0_1_2.json",
+      "case_group": "original_internal_static_lint",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "jsonschema_compile_runtime_user_invocation_interface_contract_v0_1_2.json",
+      "case_group": "original_internal_schema_compile",
+      "schema": "runtime_user_invocation_interface_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "ajv_strict_static_lint_runtime_user_invocation_interface_contract_v0_1_2.json",
+      "case_group": "original_internal_static_lint",
+      "schema": "runtime_user_invocation_interface_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "jsonschema_compile_runtime_user_invocation_response_contract_v0_1_2.json",
+      "case_group": "original_internal_schema_compile",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "ajv_strict_static_lint_runtime_user_invocation_response_contract_v0_1_2.json",
+      "case_group": "original_internal_static_lint",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "jsonschema_compile_state_bundle_manifest_contract_v0_1_2.json",
+      "case_group": "original_internal_schema_compile",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "ajv_strict_static_lint_state_bundle_manifest_contract_v0_1_2.json",
+      "case_group": "original_internal_static_lint",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "jsonschema_compile_runtime_capability_effective_view_contract_v0_1_2.json",
+      "case_group": "original_internal_schema_compile",
+      "schema": "runtime_capability_effective_view_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "ajv_strict_static_lint_runtime_capability_effective_view_contract_v0_1_2.json",
+      "case_group": "original_internal_static_lint",
+      "schema": "runtime_capability_effective_view_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "ajv_strict_runtime_compile_state_resolution_request_contract_v0_1_2.json",
+      "case_group": "ajv_draft_2020_12_strict_runtime",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "ajv_strict_runtime_compile_runtime_user_invocation_interface_contract_v0_1_2.json",
+      "case_group": "ajv_draft_2020_12_strict_runtime",
+      "schema": "runtime_user_invocation_interface_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "ajv_strict_runtime_compile_runtime_user_invocation_response_contract_v0_1_2.json",
+      "case_group": "ajv_draft_2020_12_strict_runtime",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "ajv_strict_runtime_compile_state_bundle_manifest_contract_v0_1_2.json",
+      "case_group": "ajv_draft_2020_12_strict_runtime",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "ajv_strict_runtime_compile_runtime_capability_effective_view_contract_v0_1_2.json",
+      "case_group": "ajv_draft_2020_12_strict_runtime",
+      "schema": "runtime_capability_effective_view_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "positive_market_state_request",
+      "case_group": "original_internal_31",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "positive_event_state_request",
+      "case_group": "original_internal_31",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "negative_request_type_payload_mismatch",
+      "case_group": "original_internal_31",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "Additional properties are not allowed ('event_state_request' was unexpected)",
+        "'market_state_request' is a required property",
+        "{'event_state_request': {'request_type': 'event_state', 'event_state_profile_id': 'event_state_core_four_intraday_profile_v0_1', 'event_state_profile_version_policy': 'exact', 'event_state_profile_version': 'v0_1', 'event_type_ids': ['event_type:market_data:session_opened'], 'event_subject_scope': 'exchange_session', 'event_type_registry_snapshot_id': 'event_type_registry:v0_1', 'event_instance_policy_id': 'event_instance:session_opened:v0_1', 'event_window_policy_id': 'event_window:at_event:v0_1', 'event_window_definition_ids': ['event_window:session_opened:at_event_v0_1'], 'instrument_projection_policy_id': 'projection:exchange_session_to_instrument:v0_1', 'market_state_dependency_mode': 'emit_or_resolve_market_state_subrequest_through_runtime_capability', 'market_state_profile_id': 'market_state_core_four_intraday_profile_v0_1', 'market_state_dependency_reuse_policy': 'reuse_if_exact_validated_dependency_match', 'exchange_scope': 'XNYS', 'explicit_instrument_ids': ['AAME'], 'session_dates': ['2021-01-19'], 'resolution': 'intraday', 'calendar_authority_id': 'calendar:xnys:v0_1', 'point_in_time_policy_id': 'pit:v0_1', 'source_version_policy': 'exact_governed_or_block', 'output_mode': 'candidate', 'reuse_policy': 'reuse_if_exact_validated_dependency_match'}} should not be valid under {'type': 'object', 'additionalProperties': True, 'properties': {'event_state_request': {}}, 'required': ['event_state_request']}"
+      ]
+    },
+    {
+      "case_id": "negative_physical_path_payload",
+      "case_group": "original_internal_31",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "Additional properties are not allowed ('physical_path' was unexpected)",
+        "Additional properties are not allowed ('physical_path' was unexpected)",
+        "$.payload.market_state_request.physical_path"
+      ]
+    },
+    {
+      "case_id": "negative_unsupported_event_type",
+      "case_group": "original_internal_31",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'event_type:market_data:session_opened' was expected",
+        "'event_type:market_data:session_opened' was expected"
+      ]
+    },
+    {
+      "case_id": "positive_reuse_hit_market_response",
+      "case_group": "original_internal_31",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "negative_reuse_hit_missing_bundle",
+      "case_group": "original_internal_31",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'available' was expected"
+      ]
+    },
+    {
+      "case_id": "negative_cross_details",
+      "case_group": "original_internal_31",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "{'materializer_executions': 0, 'source_market_data_rows_read': 0, 'registry_mutations': 0, 'physical_rows_delivered': 0} is not of type 'null'",
+        "SEM_RESPONSE_OPPOSITE_DETAILS_PRESENT"
+      ]
+    },
+    {
+      "case_id": "negative_blocked_with_dataset",
+      "case_group": "original_internal_31",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'dataset_001' is not of type 'null'",
+        "'validated_candidate' is not of type 'null'",
+        "'PASS_WITH_RESTRICTIONS' is not of type 'null'",
+        "{'ref_id': 'bundle_001', 'ref_type': 'state_bundle_manifest', 'sha256': '1e6ed65d77d6364eeaed5a745ba5c4985ae2b700dd85d7cf7f027bdf294a33fc', 'availability': 'available'} is not of type 'null'",
+        "[{'ref_id': 'artifact_001', 'ref_type': 'runtime_artifact', 'sha256': 'c7c5c1d70c5dec4416ab6158afd0b223ef40c29b1dc1f97ed9428b94d4cadb1c', 'availability': 'available'}] is expected to be empty",
+        "SEM_BLOCKED_WITH_AVAILABLE_OUTPUTS"
+      ]
+    },
+    {
+      "case_id": "positive_authorized_reference",
+      "case_group": "original_internal_31",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "negative_authorized_reference_missing_auth",
+      "case_group": "original_internal_31",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "None is not of type 'object'",
+        "SEM_AUTHORIZED_REFERENCE_FIELD_INCOMPATIBILITY"
+      ]
+    },
+    {
+      "case_id": "positive_market_bundle",
+      "case_group": "original_internal_31",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "positive_event_bundle",
+      "case_group": "original_internal_31",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "negative_pass_empty_capability_refs",
+      "case_group": "original_internal_31",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "[] should be non-empty",
+        "SEM_BUNDLE_CARDINALITY_CAPABILITY_REFS",
+        "SEM_BUNDLE_CAPABILITY_KIND_MISMATCH"
+      ]
+    },
+    {
+      "case_id": "negative_coverage_arithmetic",
+      "case_group": "original_internal_31",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "SEM_COVERAGE_ARITHMETIC"
+      ]
+    },
+    {
+      "case_id": "negative_missing_required_request_ref",
+      "case_group": "original_internal_31",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'available' was expected"
+      ]
+    },
+    {
+      "case_id": "negative_empty_source_hashes",
+      "case_group": "original_internal_31",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "[] should be non-empty"
+      ]
+    },
+    {
+      "case_id": "negative_invalid_schema_hash",
+      "case_group": "original_internal_31",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'not_hash' does not match '^[a-f0-9]{64}$'"
+      ]
+    },
+    {
+      "case_id": "negative_dataset_kind_mismatch",
+      "case_group": "original_internal_31",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'event_state' was expected",
+        "{'dataset_id': 'market_state_dataset_001', 'dataset_kind': 'market_state', 'candidate_dataset_fingerprint': 'edcf78ec85efb6a3c04f527723c83f5088240d0d245d34aae7965a9604e58576', 'validation_status': 'PASS_WITH_RESTRICTIONS', 'reuse_eligibility': 'eligible_with_restrictions', 'artifact_availability': 'available'} is not of type 'null'",
+        "None is not of type 'object'",
+        "SEM_BUNDLE_STATE_KIND_MODE_MISMATCH",
+        "SEM_BUNDLE_CAPABILITY_KIND_MISMATCH",
+        "SEM_BUNDLE_PROFILE_KIND_MISMATCH"
+      ]
+    },
+    {
+      "case_id": "negative_duplicate_fingerprints",
+      "case_group": "original_internal_31",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "['2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881', '2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881'] has non-unique elements",
+        "SEM_BUNDLE_CARDINALITY_REQUEST_FINGERPRINTS",
+        "SEM_BUNDLE_CARDINALITY_STATE_RESOLUTION_REQUEST_REFS"
+      ]
+    },
+    {
+      "case_id": "negative_request_ref_fingerprint_mismatch",
+      "case_group": "original_internal_31",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "SEM_REQUEST_FINGERPRINT_REF_HASH_MISMATCH"
+      ]
+    },
+    {
+      "case_id": "external_positive_market_and_event_bundle",
+      "case_group": "external_13_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "external_negative_aggregated_bundle_missing_response_ref",
+      "case_group": "external_13_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "SEM_BUNDLE_CARDINALITY_RUNTIME_INVOCATION_RESPONSE_REFS"
+      ]
+    },
+    {
+      "case_id": "external_negative_duplicate_state_request_ref_id",
+      "case_group": "external_13_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "SEM_DUPLICATE_REF_ID_STATE_RESOLUTION_REQUEST_REFS",
+        "SEM_REQUEST_FINGERPRINT_REF_HASH_MISMATCH"
+      ]
+    },
+    {
+      "case_id": "external_negative_duplicate_runtime_response_ref_id",
+      "case_group": "external_13_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "SEM_DUPLICATE_REF_ID_RUNTIME_INVOCATION_RESPONSE_REFS"
+      ]
+    },
+    {
+      "case_id": "external_negative_market_response_event_capability",
+      "case_group": "external_13_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "SEM_RESPONSE_CAPABILITY_REQUEST_TYPE_MISMATCH"
+      ]
+    },
+    {
+      "case_id": "external_negative_market_response_event_profile",
+      "case_group": "external_13_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "SEM_RESPONSE_PROFILE_REQUEST_TYPE_MISMATCH"
+      ]
+    },
+    {
+      "case_id": "external_negative_effective_view_event_capability_market_type",
+      "case_group": "external_13_regression",
+      "schema": "runtime_capability_effective_view_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "SEM_EFFECTIVE_VIEW_REQUIRES_ONE_MARKET_AND_ONE_EVENT_CAPABILITY",
+        "SEM_EFFECTIVE_VIEW_CAPABILITY_REQUEST_TYPE_MISMATCH",
+        "SEM_EFFECTIVE_VIEW_PROFILE_MISMATCH",
+        "SEM_EFFECTIVE_VIEW_EVENT_TYPE_SCOPE_MISMATCH"
+      ]
+    },
+    {
+      "case_id": "external_negative_effective_view_two_market_semantics",
+      "case_group": "external_13_regression",
+      "schema": "runtime_capability_effective_view_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "SEM_EFFECTIVE_VIEW_REQUIRES_ONE_MARKET_AND_ONE_EVENT_CAPABILITY"
+      ]
+    },
+    {
+      "case_id": "external_negative_fail_manifest_with_reusable_dataset",
+      "case_group": "external_13_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "SEM_BUNDLE_FAIL_OR_BLOCKED_WITH_REUSABLE_DATASET"
+      ]
+    },
+    {
+      "case_id": "external_negative_invoke_without_authorization",
+      "case_group": "external_13_regression",
+      "schema": "runtime_user_invocation_interface_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "SEM_INTERFACE_AUTHORIZATION_REQUIRED_FOR_INVOKE"
+      ]
+    },
+    {
+      "case_id": "external_negative_validate_with_authorization",
+      "case_group": "external_13_regression",
+      "schema": "runtime_user_invocation_interface_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "SEM_INTERFACE_AUTHORIZATION_NOT_ALLOWED_FOR_OPERATION"
+      ]
+    },
+    {
+      "case_id": "external_negative_reuse_hit_with_authorization",
+      "case_group": "external_13_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "SEM_REUSE_HIT_FIELD_INCOMPATIBILITY"
+      ]
+    },
+    {
+      "case_id": "external_negative_authorization_required_with_artifacts",
+      "case_group": "external_13_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "SEM_AUTHORIZATION_REQUIRED_WITH_OUTPUTS"
+      ]
+    },
+    {
+      "case_id": "finding_negative_bundle_wrong_capability_ref",
+      "case_group": "additional_finding_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "SEM_BUNDLE_CAPABILITY_KIND_MISMATCH"
+      ]
+    },
+    {
+      "case_id": "finding_negative_bundle_wrong_profile_record",
+      "case_group": "additional_finding_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "SEM_BUNDLE_PROFILE_KIND_MISMATCH"
+      ]
+    },
+    {
+      "case_id": "finding_negative_event_response_missing_details",
+      "case_group": "additional_finding_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "SEM_RESPONSE_EXPECTED_DETAILS_MISSING"
+      ]
+    },
+    {
+      "case_id": "finding_negative_authorized_reference_with_artifacts",
+      "case_group": "additional_finding_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "SEM_AUTHORIZED_REFERENCE_FIELD_INCOMPATIBILITY"
+      ]
+    },
+    {
+      "case_id": "finding_negative_resolve_with_invoke_mode",
+      "case_group": "additional_finding_regression",
+      "schema": "runtime_user_invocation_interface_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "SEM_INTERFACE_OPERATION_MODE_MISMATCH"
+      ]
+    },
+    {
+      "case_id": "finding_negative_market_capability_event_type_scope",
+      "case_group": "additional_finding_regression",
+      "schema": "runtime_capability_effective_view_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "SEM_EFFECTIVE_VIEW_EVENT_TYPE_SCOPE_MISMATCH"
+      ]
+    }
+  ]
+}

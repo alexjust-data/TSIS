@@ -1,0 +1,19 @@
+{
+  "backtest_run_request.json": "eb57afaf0eb346243f866913d6be88ce2cee672820ff09c8899ed530731c81f1",
+  "cash_ledger.json": "48aa9361601d4ddcde9a98427027104edfa38ba9099d46abe4da9b6f33ae1a18",
+  "cost_breakdowns.json": "29e9c0714649c7e828cb06959232ae367d6045f22d6ee069100431ffdc932922",
+  "decisions.json": "e5b2dcd9166ce3dc233708b03ceb63434d91367e4ed547a0b1ff19eb2effe9e2",
+  "determinism_report.json": "4d33319cc936071afe5bea69411c3cb38dfddf9b6ad5357e9f34da824a910cb7",
+  "equity_curve.json": "46cc85cbf35c39ef04a064cd8554abf60c046b10bf998462d7da5f7dec0e6532",
+  "event_loop_trace.json": "316f9581907b6a83a98d1e3e4bd37383367c8642eac64966632f54c7608dccc9",
+  "fills.json": "85cd7d90a70e2b67c7744e50d1a4108b9d27ead8fa040126e6e1d40111f58607",
+  "metrics_summary.json": "2b1934302774b4c3cb3f3937805ca429af2ca547e85c52953813f4a08ef24d4b",
+  "order_intents.json": "dfc1e2b84456d69c90c1e58c3c29ffb54de70642e04975a4589a6c60a2961160",
+  "order_simulation_results.json": "27c98d97d47bfd4137f3f5d33d6e3e2fe68396d684f09dbda98a8139a3ec4a9e",
+  "orders.json": "a514743efa445a0eb4d706a46bf396435e6f4899b4caed55dea6e96be19a8c46",
+  "run_summary.json": "7dfe260c6108eff386e6f15c431da53ccb49600eb055a1c04bbcd11556b3ba7c",
+  "strategy_spec.json": "d6a7a7f658957c474eff89fabed3fa4c2e651fc18ba3a0772f813d01276682db",
+  "trade_ledger.json": "e94d68eff93f599e34fec69dde8100891681a97e7c2ea90ca31ad83470571067",
+  "unified_run_manifest.json": "ebbac4a6601b8196c5ce8f1a56ba4b483dd6892c08dbe850e7973fe03199ccfa",
+  "validation_report.json": "686ad70f8ea3e397185b7dfadd90b87e18efd910d0c2e562f76b234ad608de45"
+}

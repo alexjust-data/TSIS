@@ -1,0 +1,342 @@
+{
+  "review_id": "event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260728T000000Z",
+  "review_run_id": "event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260728T110845Z",
+  "reviewed_run_id": "event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z",
+  "requested_contexts": 15,
+  "represented_contexts": 14,
+  "reused_prior_generation_contexts": 11,
+  "delta_2_materialized_contexts": 3,
+  "unavailable_contexts": 1,
+  "context_status_counts": {
+    "represented": 14,
+    "unavailable": 1
+  },
+  "representation_source_counts": {
+    "delta_2_materialized_event_state": 3,
+    "none": 1,
+    "reused_validated_event_state": 11
+  },
+  "unavailable_contexts_detail": [
+    {
+      "event_type_id": "event_type:market_data:session_opened",
+      "exchange_id": "XNYS",
+      "session_date": "2022-11-25",
+      "instrument_id": "figi_share_class:BBG001S5N8T1",
+      "event_anchor_timestamp_utc": "2022-11-25T14:30:00Z",
+      "event_window_definition_id": "session_opened_at_anchor_context_v0_1",
+      "context_status": "unavailable",
+      "representation_source": "none",
+      "blocking_reason": "missing_exact_market_state_binding",
+      "market_state_record_id": "",
+      "state_output_fingerprint": "",
+      "available_same_instrument_session_timestamps": [],
+      "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+      "origin_dataset_id": null,
+      "origin_candidate_dataset_fingerprint": null,
+      "origin_generation": "inherited_unavailable"
+    }
+  ],
+  "context_rows": [
+    {
+      "event_type_id": "event_type:market_data:session_opened",
+      "exchange_id": "XNYS",
+      "session_date": "2021-01-19",
+      "instrument_id": "figi_share_class:BBG001S5N8T1",
+      "event_anchor_timestamp_utc": "2021-01-19T14:30:00Z",
+      "event_window_definition_id": "session_opened_at_anchor_context_v0_1",
+      "context_status": "represented",
+      "representation_source": "reused_validated_event_state",
+      "blocking_reason": "",
+      "market_state_record_id": "ba92895493bdc05e2ad07b78b1491f1b62d74d1079869b58c3df95cefdc622ee",
+      "state_output_fingerprint": "9430c9903b6172c9183e8cce264bfdfcb0da83d391becc05eb7ef56f11509685",
+      "available_same_instrument_session_timestamps": [
+        "2021-01-19T14:30:00Z"
+      ],
+      "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+      "origin_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+      "origin_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+      "origin_generation": 1
+    },
+    {
+      "event_type_id": "event_type:market_data:session_opened",
+      "exchange_id": "XNYS",
+      "session_date": "2021-01-19",
+      "instrument_id": "figi_share_class:BBG001S6RSK0",
+      "event_anchor_timestamp_utc": "2021-01-19T14:30:00Z",
+      "event_window_definition_id": "session_opened_at_anchor_context_v0_1",
+      "context_status": "represented",
+      "representation_source": "reused_validated_event_state",
+      "blocking_reason": "",
+      "market_state_record_id": "18142819c1e711abefbc54b15b91ff2b7920f8b331b1a270cc6c1a4638aec3cd",
+      "state_output_fingerprint": "40cdb39fbb761ef12ed9079506952bec603eaf4c2cd521bd53c4169b3a590374",
+      "available_same_instrument_session_timestamps": [
+        "2021-01-19T14:30:00Z"
+      ],
+      "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+      "origin_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+      "origin_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+      "origin_generation": 1
+    },
+    {
+      "event_type_id": "event_type:market_data:session_opened",
+      "exchange_id": "XNYS",
+      "session_date": "2021-01-19",
+      "instrument_id": "figi_share_class:BBG001S8T7K0",
+      "event_anchor_timestamp_utc": "2021-01-19T14:30:00Z",
+      "event_window_definition_id": "session_opened_at_anchor_context_v0_1",
+      "context_status": "represented",
+      "representation_source": "reused_validated_event_state",
+      "blocking_reason": "",
+      "market_state_record_id": "796b491e39d06337c194936c163f56fd91766cc3c322f3ad1ac85f71eb2be03f",
+      "state_output_fingerprint": "0d5be1a733bd364a1f11a9b20973c07e61c26cbbdbf51be6fda3208be3038bec",
+      "available_same_instrument_session_timestamps": [
+        "2021-01-19T14:30:00Z"
+      ],
+      "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+      "origin_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+      "origin_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+      "origin_generation": 1
+    },
+    {
+      "event_type_id": "event_type:market_data:session_opened",
+      "exchange_id": "XNYS",
+      "session_date": "2021-03-15",
+      "instrument_id": "figi_share_class:BBG001S5N8T1",
+      "event_anchor_timestamp_utc": "2021-03-15T13:30:00Z",
+      "event_window_definition_id": "session_opened_at_anchor_context_v0_1",
+      "context_status": "represented",
+      "representation_source": "reused_validated_event_state",
+      "blocking_reason": "",
+      "market_state_record_id": "e50fe23c4eb880aebb6687624577c10c601043978fbc29bef47a65b4645bd658",
+      "state_output_fingerprint": "4e8c62037f72a77bd325926683846ccaa5732d26338026bbd48a090b23de63de",
+      "available_same_instrument_session_timestamps": [
+        "2021-03-15T13:30:00Z"
+      ],
+      "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+      "origin_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+      "origin_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+      "origin_generation": 1
+    },
+    {
+      "event_type_id": "event_type:market_data:session_opened",
+      "exchange_id": "XNYS",
+      "session_date": "2021-03-15",
+      "instrument_id": "figi_share_class:BBG001S6RSK0",
+      "event_anchor_timestamp_utc": "2021-03-15T13:30:00Z",
+      "event_window_definition_id": "session_opened_at_anchor_context_v0_1",
+      "context_status": "represented",
+      "representation_source": "reused_validated_event_state",
+      "blocking_reason": "",
+      "market_state_record_id": "178e76246a7ae653b38e31e6930f9ca73ad348f92dfce0a73304c51f04d7e310",
+      "state_output_fingerprint": "11e4f86247b2db53cd2f28ca91bf2be9bf6e745eabf898bedbe8909f6cf1686c",
+      "available_same_instrument_session_timestamps": [
+        "2021-03-15T13:30:00Z"
+      ],
+      "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+      "origin_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+      "origin_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+      "origin_generation": 1
+    },
+    {
+      "event_type_id": "event_type:market_data:session_opened",
+      "exchange_id": "XNYS",
+      "session_date": "2021-03-15",
+      "instrument_id": "figi_share_class:BBG001S8T7K0",
+      "event_anchor_timestamp_utc": "2021-03-15T13:30:00Z",
+      "event_window_definition_id": "session_opened_at_anchor_context_v0_1",
+      "context_status": "represented",
+      "representation_source": "reused_validated_event_state",
+      "blocking_reason": "",
+      "market_state_record_id": "a6884d5c69e61c90989f9fa9f17cb14cb0c527182eba9955d6c4e02797112277",
+      "state_output_fingerprint": "4ea976c812732b12f6e46b9b5b8c1a63e2e082af4729869e0167c76e556d8fe0",
+      "available_same_instrument_session_timestamps": [
+        "2021-03-15T13:30:00Z"
+      ],
+      "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+      "origin_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+      "origin_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+      "origin_generation": 1
+    },
+    {
+      "event_type_id": "event_type:market_data:session_opened",
+      "exchange_id": "XNYS",
+      "session_date": "2022-11-25",
+      "instrument_id": "figi_share_class:BBG001S5N8T1",
+      "event_anchor_timestamp_utc": "2022-11-25T14:30:00Z",
+      "event_window_definition_id": "session_opened_at_anchor_context_v0_1",
+      "context_status": "unavailable",
+      "representation_source": "none",
+      "blocking_reason": "missing_exact_market_state_binding",
+      "market_state_record_id": "",
+      "state_output_fingerprint": "",
+      "available_same_instrument_session_timestamps": [],
+      "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+      "origin_dataset_id": null,
+      "origin_candidate_dataset_fingerprint": null,
+      "origin_generation": "inherited_unavailable"
+    },
+    {
+      "event_type_id": "event_type:market_data:session_opened",
+      "exchange_id": "XNYS",
+      "session_date": "2022-11-25",
+      "instrument_id": "figi_share_class:BBG001S6RSK0",
+      "event_anchor_timestamp_utc": "2022-11-25T14:30:00Z",
+      "event_window_definition_id": "session_opened_at_anchor_context_v0_1",
+      "context_status": "represented",
+      "representation_source": "reused_validated_event_state",
+      "blocking_reason": "",
+      "market_state_record_id": "0a422fe423462e9c961f5d5e1d24e0654b04447071c91a838c20a4888a5b9de1",
+      "state_output_fingerprint": "58d681e94d6a48adb440f0b759a5b8b213b0fad36004fed56578e16831f92c99",
+      "available_same_instrument_session_timestamps": [
+        "2022-11-25T14:30:00Z"
+      ],
+      "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+      "origin_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+      "origin_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+      "origin_generation": 1
+    },
+    {
+      "event_type_id": "event_type:market_data:session_opened",
+      "exchange_id": "XNYS",
+      "session_date": "2022-11-25",
+      "instrument_id": "figi_share_class:BBG001S8T7K0",
+      "event_anchor_timestamp_utc": "2022-11-25T14:30:00Z",
+      "event_window_definition_id": "session_opened_at_anchor_context_v0_1",
+      "context_status": "represented",
+      "representation_source": "reused_validated_event_state",
+      "blocking_reason": "",
+      "market_state_record_id": "040155ab7fe0bde51356e56044eb4dcfe3274b5838929ab84a14a0054b1058fd",
+      "state_output_fingerprint": "b0029d6656c59cbf4de8fa941d1a286bef91f10a75e534990a6a61fc2b40a21c",
+      "available_same_instrument_session_timestamps": [
+        "2022-11-25T14:30:00Z"
+      ],
+      "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+      "origin_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+      "origin_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+      "origin_generation": 1
+    },
+    {
+      "event_type_id": "event_type:market_data:session_opened",
+      "exchange_id": "XNYS",
+      "session_date": "2023-03-20",
+      "instrument_id": "figi_share_class:BBG001S5N8T1",
+      "event_anchor_timestamp_utc": "2023-03-20T13:30:00Z",
+      "event_window_definition_id": "session_opened_at_anchor_context_v0_1",
+      "context_status": "represented",
+      "representation_source": "delta_2_materialized_event_state",
+      "blocking_reason": null,
+      "market_state_record_id": "a49c0fff75098896ded98b690f17b54502baa1d9c7969d5b1380e80112e877aa",
+      "state_output_fingerprint": "8da06f9804150e3e11fdf474073e9cb602185a740ae5dc4039cdf75164dfd6b9",
+      "origin_run_id": "event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z",
+      "origin_dataset_id": null,
+      "origin_candidate_dataset_fingerprint": null,
+      "source_market_state_candidate_dataset_fingerprint": "f2cfd5cf55d0c1be1722693cc0216ffd425bbb869e19c17745976c030f2c7a2a",
+      "available_same_instrument_session_timestamps": [
+        "2023-03-20T13:30:00Z"
+      ]
+    },
+    {
+      "event_type_id": "event_type:market_data:session_opened",
+      "exchange_id": "XNYS",
+      "session_date": "2023-03-20",
+      "instrument_id": "figi_share_class:BBG001S6RSK0",
+      "event_anchor_timestamp_utc": "2023-03-20T13:30:00Z",
+      "event_window_definition_id": "session_opened_at_anchor_context_v0_1",
+      "context_status": "represented",
+      "representation_source": "delta_2_materialized_event_state",
+      "blocking_reason": null,
+      "market_state_record_id": "cd787c0528f0940d311188c1c839ee5e4360a430e123d07183c2ea63a72c4d55",
+      "state_output_fingerprint": "3838a66f7d5a0716b5af857a5aca2217893d2091294df8a4ba8ea2b1b30777d3",
+      "origin_run_id": "event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z",
+      "origin_dataset_id": null,
+      "origin_candidate_dataset_fingerprint": null,
+      "source_market_state_candidate_dataset_fingerprint": "f2cfd5cf55d0c1be1722693cc0216ffd425bbb869e19c17745976c030f2c7a2a",
+      "available_same_instrument_session_timestamps": [
+        "2023-03-20T13:30:00Z"
+      ]
+    },
+    {
+      "event_type_id": "event_type:market_data:session_opened",
+      "exchange_id": "XNYS",
+      "session_date": "2023-03-20",
+      "instrument_id": "figi_share_class:BBG001S8T7K0",
+      "event_anchor_timestamp_utc": "2023-03-20T13:30:00Z",
+      "event_window_definition_id": "session_opened_at_anchor_context_v0_1",
+      "context_status": "represented",
+      "representation_source": "delta_2_materialized_event_state",
+      "blocking_reason": null,
+      "market_state_record_id": "8fbacec13fcb1a267edb7827d7498fefa09b9c31534f85687d6202110b8127ad",
+      "state_output_fingerprint": "68d285b58f0b584a76e468d8ca36981df7abafc19276f19d7decbe2a242db866",
+      "origin_run_id": "event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z",
+      "origin_dataset_id": null,
+      "origin_candidate_dataset_fingerprint": null,
+      "source_market_state_candidate_dataset_fingerprint": "f2cfd5cf55d0c1be1722693cc0216ffd425bbb869e19c17745976c030f2c7a2a",
+      "available_same_instrument_session_timestamps": [
+        "2023-03-20T13:30:00Z"
+      ]
+    },
+    {
+      "event_type_id": "event_type:market_data:session_opened",
+      "exchange_id": "XNYS",
+      "session_date": "2024-03-11",
+      "instrument_id": "figi_share_class:BBG001S5N8T1",
+      "event_anchor_timestamp_utc": "2024-03-11T13:30:00Z",
+      "event_window_definition_id": "session_opened_at_anchor_context_v0_1",
+      "context_status": "represented",
+      "representation_source": "reused_validated_event_state",
+      "blocking_reason": null,
+      "market_state_record_id": "0cef4843778f8bb5ecbf3d4dd94a16cc82d23fe7885c533769b720a3f3bad171",
+      "state_output_fingerprint": "75a23b16c4ff1a453b718f774ea87b02b36f4e0e0cf108a28774be37cc13dce8",
+      "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+      "origin_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+      "origin_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+      "source_market_state_candidate_dataset_fingerprint": "5e8da235219628220bac462f342cab469fbd2a48d047eef0772cb5a2cffe893f",
+      "available_same_instrument_session_timestamps": [
+        "2024-03-11T13:30:00Z"
+      ],
+      "origin_generation": 1
+    },
+    {
+      "event_type_id": "event_type:market_data:session_opened",
+      "exchange_id": "XNYS",
+      "session_date": "2024-03-11",
+      "instrument_id": "figi_share_class:BBG001S6RSK0",
+      "event_anchor_timestamp_utc": "2024-03-11T13:30:00Z",
+      "event_window_definition_id": "session_opened_at_anchor_context_v0_1",
+      "context_status": "represented",
+      "representation_source": "reused_validated_event_state",
+      "blocking_reason": null,
+      "market_state_record_id": "329dae11f6460862a4bb7f65d644b9b0abf01baad54f7d50735dc685fe5c39d0",
+      "state_output_fingerprint": "fac39e0442a61fb50f69d18a7701e4d4ce3081c8443d2d446d5539018075a016",
+      "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+      "origin_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+      "origin_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+      "source_market_state_candidate_dataset_fingerprint": "5e8da235219628220bac462f342cab469fbd2a48d047eef0772cb5a2cffe893f",
+      "available_same_instrument_session_timestamps": [
+        "2024-03-11T13:30:00Z"
+      ],
+      "origin_generation": 1
+    },
+    {
+      "event_type_id": "event_type:market_data:session_opened",
+      "exchange_id": "XNYS",
+      "session_date": "2024-03-11",
+      "instrument_id": "figi_share_class:BBG001S8T7K0",
+      "event_anchor_timestamp_utc": "2024-03-11T13:30:00Z",
+      "event_window_definition_id": "session_opened_at_anchor_context_v0_1",
+      "context_status": "represented",
+      "representation_source": "reused_validated_event_state",
+      "blocking_reason": null,
+      "market_state_record_id": "99c2c1bdf86148515df2e4daf6a4978df629c1fc13949168b1297d82c1450de5",
+      "state_output_fingerprint": "89c8ba54a9d6c8d5cb795f3700a0f9a823c5b7111112d54133341c52ce690023",
+      "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+      "origin_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+      "origin_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+      "source_market_state_candidate_dataset_fingerprint": "5e8da235219628220bac462f342cab469fbd2a48d047eef0772cb5a2cffe893f",
+      "available_same_instrument_session_timestamps": [
+        "2024-03-11T13:30:00Z"
+      ],
+      "origin_generation": 1
+    }
+  ]
+}

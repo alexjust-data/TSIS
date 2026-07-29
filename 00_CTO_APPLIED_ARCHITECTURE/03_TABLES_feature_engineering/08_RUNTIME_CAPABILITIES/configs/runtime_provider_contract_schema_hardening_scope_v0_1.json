@@ -1,0 +1,30 @@
+{
+  "scope_id": "runtime_provider_contract_schema_hardening_scope_v0_1",
+  "gate": "runtime_provider_contract_schema_hardening_v0_1",
+  "status": "HARDENING_SCOPE_CLOSED_NO_EXECUTION",
+  "created_at_utc": "2026-07-28T00:00:00Z",
+  "owner_layer": "08_RUNTIME_CAPABILITIES",
+  "hardened_contracts": [
+    "state_resolution_request_contract_v0_1.json",
+    "runtime_user_invocation_response_contract_v0_1.json",
+    "state_bundle_manifest_contract_v0_1.json"
+  ],
+  "included_specialized_contract_authorities": [
+    "market_state_request_contract_v0_1.json",
+    "event_state_request_contract_v0_1.json"
+  ],
+  "hard_boundaries": {
+    "runtime_executions": 0,
+    "market_state_requests_created": 0,
+    "event_state_requests_created": 0,
+    "state_bundle_manifests_created": 0,
+    "datasets_written": 0,
+    "registry_mutations": 0,
+    "backtest_runs_created": 0,
+    "state_replay_feed_opened": false,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false
+  },
+  "contract_content_sha256_excluding_hash_field": "ac023d593ea1cc3fb5c802deb3c58e74d2f912fd5efba2be2e8f516b03d6ea64"
+}

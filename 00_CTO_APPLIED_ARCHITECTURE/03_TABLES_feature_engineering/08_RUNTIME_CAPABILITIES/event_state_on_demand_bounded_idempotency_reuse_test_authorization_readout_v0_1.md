@@ -1,0 +1,74 @@
+# Event State On-Demand Bounded Idempotency Reuse Test Authorization Readout v0.1
+
+Status: `AUTHORIZED_WITH_RESTRICTIONS_CONSUMED_BY_REUSE_TEST`
+Date: `2026-07-28`
+
+```text
+gate = event_state_on_demand_bounded_idempotency_reuse_test_authorization_v0_1
+parent_gate = event_state_on_demand_bounded_determinism_validation_v0_1
+authorized_next_gate = event_state_on_demand_bounded_idempotency_reuse_test_v0_1
+consumed_by_run_id = event_state_on_demand_bounded_idempotency_reuse_test_v0_1_20260728T074624Z
+consumed_at_utc = 2026-07-28T07:46:24Z
+closure_status = CLOSED_PASS_EVENT_STATE_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS
+baseline_run_id = event_state_on_demand_bounded_execution_v0_1_20260727T200322Z
+baseline_candidate_dataset_id = event_state_candidate_dataset_v0_1_d5662103e1c45f90
+baseline_event_state_request_fingerprint = f82e424b60a69e2e9edec00e3dcf456c2042d18b334366dab76622286fac6ade
+baseline_candidate_dataset_fingerprint = d5662103e1c45f90847b51e69b0e698243bde231758fa3c864e24c4a6839be33
+normalized_logical_dataset_fingerprint = e2c47083b8dd560e67bcda32b0063cf9f468754e34f76b82e9f839046d375699
+comparison_fingerprint = 9580cc5f747ef6c6fd3ec2b3c92460a7ce0eba6e9164248e636ab241dcf55c55
+contract_content_sha256_excluding_hash_field = 50ede549474d286c3e1e0f71ff270e3e2baadebd57f328cc9919a9c8b73ab4f6
+```
+
+The authorization was intentionally narrow. The consumed test proved a
+registry/cache hit for the same normalized request and the same bounded
+9-context Event State scope, without Event State materializer execution,
+Market State rematerialization, source row reads, candidate record reads or a
+new candidate dataset identity.
+
+## Observed Test Result
+
+```text
+existing_event_state_candidate_dataset_returned = true
+selected_candidate_dataset_id = event_state_candidate_dataset_v0_1_d5662103e1c45f90
+selected_candidate_dataset_fingerprint = d5662103e1c45f90847b51e69b0e698243bde231758fa3c864e24c4a6839be33
+selected_normalized_logical_dataset_fingerprint = e2c47083b8dd560e67bcda32b0063cf9f468754e34f76b82e9f839046d375699
+market_state_dependency_fingerprint = 433288b634924676a3c516fac600574ed36237c3c02ca640111f17609b6c235b
+event_state_materializer_executions = 0
+market_state_materializer_executions = 0
+event_instances_created = 0
+event_window_bindings_created = 0
+instrument_session_projections_created = 0
+event_state_candidate_records_read = 0
+market_state_candidate_records_read = 0
+source_market_data_rows_read = 0
+new_candidate_dataset_registry_entries = 0
+idempotency_reuse_evidence_entries_written = 1
+report_fingerprint = e52e92da85feb259a93616d9fd8340d0b874d563355b9b3373ca7d61710a358d
+evidence_entry_fingerprint = 237f359d69fbc78fb1b00557a5096584ef1d32d8c4a11227f7190684eb4f312e
+blocking_failures = 0
+```
+
+## Boundary
+
+```text
+idempotency_reuse_test_execution = true
+reuse_eligibility_after_test = pending_reuse_eligibility_transition_review
+reuse_eligibility_changes = 0
+official_event_state_dataset = false
+production = false
+downstream = false
+```
+
+Invalid technical attempt preserved as non-closing evidence:
+
+```text
+failed_run_id = event_state_on_demand_bounded_idempotency_reuse_test_v0_1_20260728T074430Z
+failure_status = FAILED_TECHNICAL_RUNNER_REQUEST_FIELD_BUG_BEFORE_FINAL_MANIFEST
+valid_gate_closure = false
+```
+
+## Next Gate
+
+```text
+event_state_on_demand_bounded_reuse_eligibility_transition_review_v0_1
+```

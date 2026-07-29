@@ -1,0 +1,181 @@
+{
+  "review_id": "runtime_provider_consumer_contract_compatibility_review_v0_1",
+  "review_version": "0.1",
+  "created_at_utc": "2026-07-28T16:56:17+00:00",
+  "review_status": "CLOSED_APPROVED_FOR_BOUNDED_INTERFACE_EXECUTION_AUTHORIZATION_WITH_RESTRICTIONS_NO_EXECUTION",
+  "result_summary": {
+    "package_integrity": "PASS",
+    "provider_boundary": "PASS",
+    "provider_interface_documentation": "CLOSED",
+    "provider_schema_strict_validation": "PASS",
+    "fail_closed_semantics": "PASS_WITH_CODE_VALIDATION_REQUIRED",
+    "provider_consumer_compatibility": "PASS_WITH_RESTRICTIONS",
+    "consumer_contract_status": "PROPOSED_CONSUMER_CONTRACT_NOT_INTEGRATION_VALIDATED",
+    "backtest_state_consumption": "NOT_AUTHORIZED",
+    "state_replay_feed": "NOT_AUTHORIZED",
+    "bounded_interface_execution_authorization": "READY_FOR_NEXT_GATE"
+  },
+  "matrix": [
+    {
+      "area": "package_inputs",
+      "consumer_expectation": "All provider and consumer contracts needed for compatibility review are available.",
+      "provider_guarantee": "Review runner found required provider contracts, specialized payload contracts and consumer draft contracts.",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_resolution_request_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_interface_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_response_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_capability_effective_view_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_capability_registry_snapshot_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/market_state_request_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/event_state_request_contract_v0_1.json",
+        "02_TSIS_BACKTEST_ENGINE/contracts/backtest/backtest_run_spec_contract_v0_1.json",
+        "02_TSIS_BACKTEST_ENGINE/contracts/backtest/backtest_input_manifest_contract_v0_1.json"
+      ],
+      "notes": "missing_provider=[]; missing_consumer=[]"
+    },
+    {
+      "area": "strict_schema_validation",
+      "consumer_expectation": "Provider and consumer schemas compile before compatibility is asserted.",
+      "provider_guarantee": "Hardened provider contracts and consumer draft schemas compile under Draft 2020-12.",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_resolution_request_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_interface_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_response_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_capability_effective_view_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_capability_registry_snapshot_v0_1.json",
+        "02_TSIS_BACKTEST_ENGINE/contracts/backtest/backtest_run_spec_contract_v0_1.json",
+        "02_TSIS_BACKTEST_ENGINE/contracts/backtest/backtest_input_manifest_contract_v0_1.json"
+      ],
+      "notes": "compile_failures=[]"
+    },
+    {
+      "area": "state_resolution_request_hierarchy",
+      "consumer_expectation": "StateResolutionRequest is a common provider envelope with one specialized payload.",
+      "provider_guarantee": "Provider contract declares common envelope plus market_state_request/event_state_request specialized payloads and if/then coupling.",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_resolution_request_contract_v0_1.json"
+      ],
+      "notes": "StateResolutionRequest is not an alternative third scientific request authority."
+    },
+    {
+      "area": "capability_resolution",
+      "consumer_expectation": "Each state request type resolves exactly one promoted runtime capability.",
+      "provider_guarantee": "Runtime capability registry snapshot provides symmetric Market State and Event State capability identities.",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_capability_registry_snapshot_v0_1.json"
+      ],
+      "notes": "capability_ids=['event_state_on_demand_runtime_capability_v0_1', 'market_state_on_demand_runtime_capability_v0_1']"
+    },
+    {
+      "area": "event_state_scope",
+      "consumer_expectation": "Event State v0.1 admits only session_opened with exchange_session subject scope.",
+      "provider_guarantee": "Provider payload schema constrains event_type_ids to session_opened and event_subject_scope to exchange_session.",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_resolution_request_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/event_state_request_contract_v0_1.json"
+      ],
+      "notes": "halt_resumed remains unsupported and must be blocked by the interface."
+    },
+    {
+      "area": "path_controls",
+      "consumer_expectation": "Consumer cannot submit source, parquet, registry or output paths.",
+      "provider_guarantee": "StateResolutionRequest requires allow_physical_path_input=false and bans known path/implementation keys in specialized payloads.",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_resolution_request_contract_v0_1.json"
+      ],
+      "notes": "Recursive forbidden-key scan remains a required non-schema runtime validator."
+    },
+    {
+      "area": "runtime_response_taxonomy",
+      "consumer_expectation": "Market State and Event State expose common resolution decisions.",
+      "provider_guarantee": "RuntimeInvocationResponse hardens shared invocation_status/resolution_decision combinations.",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_response_contract_v0_1.json"
+      ],
+      "notes": "No free-form accepted status remains in the hardened response contract."
+    },
+    {
+      "area": "bundle_cardinality",
+      "consumer_expectation": "Backtest may request Market State, Event State, or both without ambiguous bundle semantics.",
+      "provider_guarantee": "StateBundleManifest supports market_state_only, event_state_only and market_and_event with one aggregate bundle sealing multiple request fingerprints.",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1.json"
+      ],
+      "notes": "Consumer may still also process one bundle per state kind; aggregate mode is the provider canonical option."
+    },
+    {
+      "area": "coverage_reconciliation",
+      "consumer_expectation": "Consumer can distinguish partial validated candidate evidence from full request satisfaction.",
+      "provider_guarantee": "StateBundleManifest requires requested/represented/unavailable/blocked/quarantined/unaccounted counts and declares code validation for arithmetic equality.",
+      "result": "PASS_WITH_CODE_VALIDATION_REQUIRED",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1.json"
+      ],
+      "notes": "JSON Schema enforces shape; runtime validator must enforce requested = represented + unavailable + blocked + quarantined + unaccounted."
+    },
+    {
+      "area": "consumption_authority_alignment",
+      "consumer_expectation": "Backtest StateReplayFeed opens only for official/downstream-authorized state datasets.",
+      "provider_guarantee": "Provider continues to return candidate references only: official_dataset=false, downstream=false, physical_rows_delivered=false.",
+      "result": "PASS_BLOCKED_AS_DESIGNED",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_response_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1.json",
+        "02_TSIS_BACKTEST_ENGINE/contracts/backtest/backtest_input_manifest_contract_v0_1.json"
+      ],
+      "notes": "This is a compatibility finding, not a consumption authorization. Consumer DRAFT status remains."
+    },
+    {
+      "area": "consumer_provider_boundary",
+      "consumer_expectation": "Backtest declares state needs and references provider contracts without rebuilding states.",
+      "provider_guarantee": "BacktestRunSpec references provider-owned StateResolutionRequest and StateBundleManifest and keeps state consumption optional.",
+      "result": "PASS_WITH_RESTRICTIONS",
+      "evidence_refs": [
+        "02_TSIS_BACKTEST_ENGINE/contracts/backtest/backtest_run_spec_contract_v0_1.json"
+      ],
+      "notes": "Consumer must be revised later to include RuntimeInvocationResponse and EffectiveCapabilityView hashes before DRAFT can be removed."
+    },
+    {
+      "area": "operation_separation",
+      "consumer_expectation": "Valid request does not imply execution or row delivery.",
+      "provider_guarantee": "StateResolutionRequest separates validate, resolve and invoke modes and requires allow_new_candidate_execution=false in v0.1.",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_resolution_request_contract_v0_1.json"
+      ],
+      "notes": "A future bounded interface execution authorization is still required before invoking runtime behavior."
+    }
+  ],
+  "required_future_consumer_updates_before_draft_removal": [
+    "Reference runtime_user_invocation_response_contract_v0_1 with version and SHA-256.",
+    "Reference runtime_capability_effective_view_contract_v0_1 with version and SHA-256.",
+    "Seal provider contract hashes in BacktestInputManifest, not only contract IDs and versions.",
+    "Add separate evidence of backtest consumption authorization before StateReplayFeed can open.",
+    "Map StateBundleManifest aggregate cardinality explicitly in RunPreflight implementation."
+  ],
+  "hard_boundaries": {
+    "interface_invocations": 0,
+    "requests_created": 0,
+    "runtime_resolutions_executed": 0,
+    "runtime_builds_executed": 0,
+    "physical_state_rows_read": 0,
+    "datasets_written": 0,
+    "registry_mutations": 0,
+    "state_replay_feed_records_emitted": 0,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false,
+    "backtest_consumption": false
+  },
+  "next_gate": "runtime_user_invocation_bounded_interface_execution_authorization_v0_1"
+}

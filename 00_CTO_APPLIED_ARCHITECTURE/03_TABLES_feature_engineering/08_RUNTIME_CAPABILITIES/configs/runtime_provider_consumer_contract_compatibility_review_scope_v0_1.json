@@ -1,0 +1,57 @@
+{
+  "scope_id": "runtime_provider_consumer_contract_compatibility_review_scope_v0_1",
+  "scope_version": "0.1",
+  "gate": "runtime_provider_consumer_contract_compatibility_review_v0_1",
+  "authorized_at_utc": "2026-07-28T16:56:17+00:00",
+  "review_inputs": {
+    "provider_contracts": [
+      "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_resolution_request_contract_v0_1.json",
+      "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_interface_contract_v0_1.json",
+      "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_response_contract_v0_1.json",
+      "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_capability_effective_view_contract_v0_1.json",
+      "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1.json",
+      "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_capability_registry_snapshot_v0_1.json"
+    ],
+    "specialized_payload_contracts": [
+      "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/market_state_request_contract_v0_1.json",
+      "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/event_state_request_contract_v0_1.json"
+    ],
+    "consumer_draft_contracts": [
+      "02_TSIS_BACKTEST_ENGINE/contracts/backtest/backtest_run_spec_contract_v0_1.json",
+      "02_TSIS_BACKTEST_ENGINE/contracts/backtest/backtest_input_manifest_contract_v0_1.json"
+    ]
+  },
+  "review_questions": [
+    "Does each request type resolve exactly one provider runtime capability?",
+    "Does StateResolutionRequest unambiguously couple envelope and specialized payload?",
+    "Does RuntimeInvocationResponse expose shared fail-closed decisions?",
+    "Does StateBundleManifest support market_state_only, event_state_only and aggregate market_and_event bundles?",
+    "Do provider restrictions remain visible and block backtest/downstream consumption?",
+    "Can BacktestRunSpec and BacktestInputManifest reference provider artifacts without redefining them?"
+  ],
+  "hard_boundaries": {
+    "interface_invocations": 0,
+    "requests_created": 0,
+    "runtime_resolutions_executed": 0,
+    "runtime_builds_executed": 0,
+    "physical_state_rows_read": 0,
+    "datasets_written": 0,
+    "registry_mutations": 0,
+    "state_replay_feed_records_emitted": 0,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false,
+    "backtest_consumption": false
+  },
+  "not_in_scope": [
+    "interface invocation",
+    "request creation",
+    "runtime resolution execution",
+    "Market State build",
+    "Event State build",
+    "backtest execution",
+    "StateReplayFeed execution",
+    "official dataset promotion",
+    "downstream consumption authorization"
+  ]
+}

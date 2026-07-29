@@ -1,0 +1,81 @@
+﻿{
+    "quarantine_id":  "v0_1_2_boundary_quarantine_20260728",
+    "created_at_utc":  "2026-07-28T20:04:32.4827459Z",
+    "reason":  "Boundary quarantine: runtime_provider_contract_schema_hardening_v0_1_2 artifacts were created from a backtester-scoped agent context and must not remain active in State Provider routes.",
+    "action":  "Moved from active paths to 99_archive quarantine; no semantic validation or approval implied.",
+    "source_snapshot":  "C:\\tmp\\tsis_boundary_revert_snapshot_20260728T200205Z",
+    "files":  [
+                  {
+                      "original_rel":  "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/runtime_provider_contract_schema_hardening_v0_1_2_provider_only_20260728T192048+0000.zip",
+                      "quarantine_file":  "runtime_provider_contract_schema_hardening_v0_1_2_provider_only_20260728T192048+0000.zip",
+                      "bytes":  105945,
+                      "sha256":  "8a9ec7d27c80123ea7d886ae50e75e80979c07b4b631aa0e554faacfb8394dc7"
+                  },
+                  {
+                      "original_rel":  "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/runtime_provider_contract_schema_hardening_v0_1_2_provider_only_20260728T192145+0000.zip",
+                      "quarantine_file":  "runtime_provider_contract_schema_hardening_v0_1_2_provider_only_20260728T192145+0000.zip",
+                      "bytes":  104457,
+                      "sha256":  "ba553a50d629980f9c980c401bb8fea351c28bca37cf2111a1edfb9d0be0623b"
+                  },
+                  {
+                      "original_rel":  "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_resolution_request_contract_v0_1_2.json",
+                      "quarantine_file":  "state_resolution_request_contract_v0_1_2.json",
+                      "bytes":  21476,
+                      "sha256":  "b053233af595dbf4401d1bf3b12e3f53a9a6a03a7d29e03e1aafb17f9f8adde4"
+                  },
+                  {
+                      "original_rel":  "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_interface_contract_v0_1_2.json",
+                      "quarantine_file":  "runtime_user_invocation_interface_contract_v0_1_2.json",
+                      "bytes":  25377,
+                      "sha256":  "a29f7566c01d5967c25823073a904d6071f24c1c259b3d8ae20627821a2b42c7"
+                  },
+                  {
+                      "original_rel":  "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_response_contract_v0_1_2.json",
+                      "quarantine_file":  "runtime_user_invocation_response_contract_v0_1_2.json",
+                      "bytes":  18047,
+                      "sha256":  "19067944bccf705785be4f300931c28cac129ce7a9a9e23b4061ab28bc2131b3"
+                  },
+                  {
+                      "original_rel":  "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1_2.json",
+                      "quarantine_file":  "state_bundle_manifest_contract_v0_1_2.json",
+                      "bytes":  24920,
+                      "sha256":  "ceb8dfe710efa5efcc9840f11d3b1309bab5a1046e2fed5b2e2ba5e0ec9428cf"
+                  },
+                  {
+                      "original_rel":  "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_capability_effective_view_contract_v0_1_2.json",
+                      "quarantine_file":  "runtime_capability_effective_view_contract_v0_1_2.json",
+                      "bytes":  4195,
+                      "sha256":  "b7d8636f850af75ab4b1e28b5743afb07afd77ea13310092574536ce3bdaf9c4"
+                  },
+                  {
+                      "original_rel":  "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_provider_contract_schema_hardening_v0_1_2_authorization.md",
+                      "quarantine_file":  "runtime_provider_contract_schema_hardening_v0_1_2_authorization.md",
+                      "bytes":  454,
+                      "sha256":  "805071bcddeca5f66fc2a46885ce06e81fea6bebaecd097a1fdd113a5b1eda87"
+                  },
+                  {
+                      "original_rel":  "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_provider_contract_schema_hardening_v0_1_2_readout.md",
+                      "quarantine_file":  "runtime_provider_contract_schema_hardening_v0_1_2_readout.md",
+                      "bytes":  1299,
+                      "sha256":  "813c371cf16a9c5b3da6cfbbe19fd735d56058afa1bd19ec9942282dad21967f"
+                  },
+                  {
+                      "original_rel":  "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_provider_contract_schema_hardening_v0_1_2_validation_matrix.json",
+                      "quarantine_file":  "runtime_provider_contract_schema_hardening_v0_1_2_validation_matrix.json",
+                      "bytes":  22969,
+                      "sha256":  "aa661d1f3bfac9d1bef119fe2588cb4f3755093403c49e83d9a076d19e4e320b"
+                  },
+                  {
+                      "original_rel":  "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/configs/runtime_provider_contract_schema_hardening_v0_1_2_scope.json",
+                      "quarantine_file":  "runtime_provider_contract_schema_hardening_v0_1_2_scope.json",
+                      "bytes":  927,
+                      "sha256":  "455d77791396edeec30526e3619252930807621836a457a4c2a46c19e78dce29"
+                  },
+                  {
+                      "original_rel":  "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/scripts/runtime_provider_contract_schema_hardening_v0_1_2_runner.py",
+                      "quarantine_file":  "runtime_provider_contract_schema_hardening_v0_1_2_runner.py",
+                      "bytes":  43338,
+                      "sha256":  "c49bcb170ae08009610ffd1009169352eb7809944a4f70ff6e65f87b5a1d319f"
+                  }
+              ]
+}

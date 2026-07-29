@@ -1,73 +1,19 @@
-# LOCAL_RULES - 02_TSIS_BACKTEST_ENGINE
+﻿# LOCAL_RULES - TSIS Backtest Engine
 
-This module owns future backtest engine implementation, not Data Foundation governance and not CTO architecture authority.
+Status: ACTIVE_IMPLEMENTATION_RULES
+Reset: 2026-07-28
 
-## Layer Boundary
-
-```text
-00_CTO/14_BACKTEST_ENGINE
-= architecture, decisions, scope, construction phases, authorizations, reviews and reference designs
-
-02_TSIS_BACKTEST_ENGINE
-= source code, configs, tests, executable experiments, notebooks, schemas, runtime manifests, ledgers, metrics and reports
-```
-
-Rule:
-
-```text
-00_CTO defines what must exist and why.
-02_TSIS_BACKTEST_ENGINE implements and executes.
-```
-
-Do not duplicate architecture/governance documents from `00_CTO/14_BACKTEST_ENGINE` into this module. If a design decision must govern implementation, reference the CTO decision and create a local executable contract/config only when needed.
-
-## Data Plane Boundary
-
-The current physical data provider root for backtest-engine work is:
-
-```text
-G:/TSIS/data
-```
-
-This module must:
-
-- consume certified or explicitly restricted Data Foundation outputs;
-- resolve physical data through authorized manifests and contracts;
-- never bypass `01_TSIS_DATA_FOUNDATION/01_foundations` contracts;
-- never treat `G:/TSIS/data` as semantic authority by itself;
-- never assume raw 1m bars are corrected in place;
-- declare price view, corporate-action semantics and fill model in every run;
-- preserve deterministic event ordering and run manifests;
-- keep architecture/theory decisions in `00_CTO/14_BACKTEST_ENGINE` until promoted.
-
-Do not store ambiguous raw market data under `02_TSIS_BACKTEST_ENGINE`.
-
-Allowed data-adjacent local artifacts:
-
-```text
-dataset manifests
-resolution manifests
-run-local extracts
-temporary caches
-experiment-derived outputs
-```
-
-Each one must declare source dataset, logical version, physical source path, quality policy, price view, generated time and retention policy.
-
-## Experiment Boundary
-
-```text
-02_TSIS_BACKTEST_ENGINE/experiments
-= executable engine experiments
-
-03_TSIS_Lab/04_experiments
-= scientific governance of experiments
-```
-
-An engine experiment may execute only within a declared scope and must link back to its Lab experiment, authorization, or explicit engineering preflight when applicable.
-
-## Scaffold Policy
-
-The current scaffold is intentionally minimal. Do not materialize the larger future target tree until a concrete implementation task or promoted construction phase requires it.
-
-Future additions such as `orders`, `engines/vectorized`, `engines/event_driven`, `configs/portfolios`, `configs/validation`, richer docs, richer tests and `scripts/` are allowed, but only with a clear reason and changelog entry.
+1. `02_TSIS_BACKTEST_ENGINE` is the implementation root, not the architecture authority.
+2. `00_CTO/14_BACKTEST_ENGINE` owns guide, decisions, architecture notes and construction log.
+3. `01_TSIS_DATA_FOUNDATION` owns governed data semantics, certification and dataset contracts.
+4. Do not copy ambiguous RAW market data into this folder.
+5. Do not consume market data before `RunPreflight` resolves the run context.
+6. Every run must declare dataset, universe, signal price view, execution price view, valuation price view, date range, session policy, timezone, missing-data policy, corporate-action policy, fill/cost assumptions and limitations.
+7. `quote_guarded_1m` may be used in V0.1 only as controlled candidate input and execution proxy for engine mechanics, not as proof of executable fill realism.
+8. Use synthetic fixtures first; use real TSIS data fixtures only after synthetic tests pass.
+9. Keep code small and test-driven. Do not materialize future modules until a concrete vertical-slice need exists.
+10. Use `REGULAR_ONLY`, `09:30-16:00`, `America/New_York` for the first data/replay smoke path unless the CTO guide changes.
+11. Use SHA-256 only for files or partitions consumed by a run; do not hash the full 1.27M-file universe for a smoke test.
+12. Every completed operational step must update `AGENTS.md` and `CHANGELOG.md`.
+13. If an implementation step changes a TSIS decision or contract, update the corresponding document under `00_CTO/14_BACKTEST_ENGINE`.
+14. Do not claim `TSIS_VALIDATED_CONTRACT` until code, tests and evidence exist.

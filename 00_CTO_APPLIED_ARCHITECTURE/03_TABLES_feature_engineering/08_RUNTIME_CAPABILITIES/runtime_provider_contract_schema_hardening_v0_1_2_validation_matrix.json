@@ -1,0 +1,1993 @@
+{
+  "gate": "runtime_provider_contract_schema_hardening_v0_1_2",
+  "status": "CLOSED_INTERNAL_PASS_PENDING_EXTERNAL_AUDIT",
+  "created_at_utc": "2026-07-29T14:18:11Z",
+  "case_count": 133,
+  "original_case_count": 31,
+  "external_regression_case_count": 84,
+  "external_followup_case_count": 71,
+  "required_case_ids": [
+    "schema_compile_jsonschema_state_resolution_request_contract_v0_1_2.json",
+    "ajv_8_17_1_strict_runtime_compile_state_resolution_request_contract_v0_1_2.json",
+    "schema_compile_jsonschema_runtime_user_invocation_interface_contract_v0_1_2.json",
+    "ajv_8_17_1_strict_runtime_compile_runtime_user_invocation_interface_contract_v0_1_2.json",
+    "schema_compile_jsonschema_runtime_user_invocation_response_contract_v0_1_2.json",
+    "ajv_8_17_1_strict_runtime_compile_runtime_user_invocation_response_contract_v0_1_2.json",
+    "schema_compile_jsonschema_state_bundle_manifest_contract_v0_1_2.json",
+    "ajv_8_17_1_strict_runtime_compile_state_bundle_manifest_contract_v0_1_2.json",
+    "schema_compile_jsonschema_runtime_capability_effective_view_contract_v0_1_2.json",
+    "ajv_8_17_1_strict_runtime_compile_runtime_capability_effective_view_contract_v0_1_2.json",
+    "positive_market_state_request",
+    "positive_event_state_request",
+    "negative_request_type_payload_mismatch",
+    "negative_physical_path_payload",
+    "negative_unsupported_event_type",
+    "positive_reuse_hit_market_response",
+    "negative_reuse_hit_missing_bundle",
+    "negative_cross_details",
+    "negative_blocked_with_dataset",
+    "positive_authorized_reference",
+    "negative_authorized_reference_missing_auth",
+    "positive_market_bundle",
+    "positive_event_bundle",
+    "negative_pass_empty_capability_refs",
+    "negative_coverage_arithmetic",
+    "negative_missing_required_request_ref",
+    "negative_empty_source_hashes",
+    "negative_invalid_schema_hash",
+    "negative_dataset_kind_mismatch",
+    "negative_duplicate_fingerprints",
+    "negative_request_ref_fingerprint_mismatch",
+    "F01_cardinality_extra_response_ref_without_request",
+    "F01_response_ref_absent_for_request",
+    "F02_duplicate_ref_id_cross_arrays",
+    "F03_market_response_event_capability",
+    "F03_event_response_market_profile",
+    "F04_effective_view_downstream_true",
+    "F04_effective_view_duplicate_capability",
+    "F05_fail_manifest_reuse_eligible",
+    "F06_validate_operation_resolve_mode",
+    "F06_invoke_missing_authorization",
+    "F07_authorization_required_with_dataset",
+    "F09_market_request_event_state_binding",
+    "F09_request_fingerprint_mismatch_in_binding",
+    "F01_market_and_event_duplicate_market_binding_no_event_binding",
+    "F01_market_and_event_third_extra_binding",
+    "F01_market_state_only_two_bindings",
+    "F01_market_and_event_single_capability_ref",
+    "F01_market_and_event_single_profile_version",
+    "F04_market_capability_advertises_event_profile",
+    "F04_event_capability_advertises_market_profile",
+    "F05_fail_manifest_dataset_ref_pass_reusable",
+    "F05_blocked_manifest_dataset_ref_pass_reusable",
+    "F09_response_ref_arbitrary_valid_ref",
+    "F09_response_ref_sha256_unrelated_valid_hash",
+    "F09_market_event_response_refs_swapped",
+    "F09_response_ref_arbitrary_with_self_declared_metadata",
+    "F09_response_ref_sha256_not_content_hash",
+    "F09_request_content_changed_without_fingerprint",
+    "F09_response_content_dataset_changed_without_sha",
+    "F09_swapped_response_refs_with_rewritten_metadata",
+    "F05_pass_with_failed_materialization",
+    "F05_pass_with_blocked_materialization",
+    "F08_patch_module_authorized_in_scope",
+    "F08_living_document_update_idempotence_guard",
+    "F09_top_level_request_content_changed_without_fingerprint",
+    "F09_top_level_response_dataset_changed_without_fingerprint",
+    "F09_interface_embedded_request_changed_without_fingerprint",
+    "F09_bundle_request_payload_market_with_event_profile",
+    "F09_bundle_request_payload_output_mode_production",
+    "F09_bundle_request_payload_missing_instrument_scope",
+    "F09_bundle_response_payload_wrong_capability",
+    "F09_bundle_response_payload_wrong_profile",
+    "F09_bundle_response_payload_official_dataset_true",
+    "F09_bundle_response_payload_production_true",
+    "F09_bundle_response_payload_downstream_true",
+    "F09_bundle_response_payload_validation_fail_inside_pass_bundle",
+    "F09_bundle_response_payload_blocked_with_dataset",
+    "F09_bundle_response_payload_minimal_missing_fields",
+    "F05_reusable_dataset_refs_unrelated",
+    "F08_route_authorization_section_historical_snapshot",
+    "F08_living_document_idempotence_actual_bytes",
+    "AJV_reproducibility_lock_declared",
+    "F09_STRICT_request_payload_production_true",
+    "F09_STRICT_request_payload_physical_path_allowed",
+    "F09_STRICT_request_operation_mode_mismatch",
+    "F09_STRICT_market_request_missing_calendar_authority",
+    "F09_STRICT_market_request_missing_session_dates",
+    "F09_STRICT_market_request_source_version_policy_wrong",
+    "F09_STRICT_event_subject_scope_wrong",
+    "F09_STRICT_event_direct_market_state_dependency",
+    "F09_STRICT_event_missing_window_policy",
+    "F09_STRICT_response_coverage_arithmetic_invalid",
+    "F09_STRICT_response_reuse_hit_missing_bundle_ref",
+    "F09_STRICT_response_market_with_event_details",
+    "F09_STRICT_response_market_missing_market_details",
+    "F09_STRICT_response_request_ref_id_mismatch",
+    "F09_STRICT_response_request_ref_sha_mismatch",
+    "F09_STRICT_response_authorized_reference_missing_auth",
+    "F09_STRICT_response_dataset_status_arbitrary",
+    "F09_STRICT_bundle_response_coverage_mismatch",
+    "F09_STRICT_bundle_response_points_other_bundle",
+    "F09_STRICT_bundle_restriction_changed_without_bundle_hash",
+    "F09_STRICT_bundle_reusable_dataset_refs_unrelated",
+    "positive_market_and_event_bundle_unique_refs",
+    "F09_CYCLE_response_hash_change_requires_bundle_hash_change",
+    "F09_CYCLE_request_artifact_outer_state_kind_mismatch",
+    "F09_CYCLE_response_artifact_outer_state_kind_mismatch",
+    "F09_CYCLE_response_artifact_outer_request_fingerprint_mismatch",
+    "F09_CYCLE_response_restriction_not_propagated",
+    "F09_CYCLE_bundle_validation_less_restrictive_than_response",
+    "F09_CYCLE_reuse_ineligible_with_refs",
+    "F09_CYCLE_reuse_eligible_with_not_eligible_decision",
+    "F09_CYCLE_top_level_request_fingerprint_payload_schema_strict",
+    "F09_CYCLE_top_level_response_fingerprint_payload_schema_cyclefree",
+    "F08_audit_genealogy_includes_075406_083304_092039",
+    "F09_100143_response_bundle_ref_sha_disallowed",
+    "F09_100143_response_artifact_missing_from_bundle_artifacts",
+    "F09_100143_source_ids_hashes_cardinality_mismatch",
+    "F09_100143_duplicate_artifact_id_conflicting_hash",
+    "F09_100143_duplicate_field_lineage_id_conflicting_builder",
+    "F09_100143_shared_ajv_registry_compile_no_duplicate_ids",
+    "F05_dataset_validation_restriction_not_weakened_by_response",
+    "F05_dataset_validation_restriction_not_weakened_by_bundle",
+    "F05_dataset_reuse_restriction_not_weakened_by_bundle",
+    "F05_combined_bundle_max_validation_severity_propagation",
+    "F05_combined_bundle_max_reuse_restriction_propagation",
+    "F08_active_genealogy_marker_matches_latest_external_audit",
+    "F08_active_current_package_label_matches_corrective_iteration",
+    "F08_changelog_audit_genealogy_entries_are_unique",
+    "F08_gate_readout_genealogy_marker_matches_latest_external_audit",
+    "F08_gate_readout_current_package_label_matches_corrective_iteration",
+    "F08_changelog_summary_matches_genealogy_block"
+  ],
+  "missing_required_case_ids": [],
+  "duplicate_case_ids": [],
+  "unexpected_silent_skips": 0,
+  "unexpected_case_ids": [],
+  "failed_cases": 0,
+  "jsonschema_draft_2020_12_compile": "PASS",
+  "ajv_8_17_1_strict_runtime": "PASS",
+  "semantic_validator_execution": "PASS",
+  "expanded_adversarial_matrix": "PASS",
+  "runtime_requests_executed": 0,
+  "datasets_written": 0,
+  "registry_mutations": 0,
+  "physical_state_rows_delivered": 0,
+  "state_replay_feed_records_emitted": 0,
+  "backtest_consumption_authority": false,
+  "production": false,
+  "downstream": false,
+  "rows": [
+    {
+      "case_id": "schema_compile_jsonschema_state_resolution_request_contract_v0_1_2.json",
+      "case_origin": "original_31_regression",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "ajv_8_17_1_strict_runtime_compile_state_resolution_request_contract_v0_1_2.json",
+      "case_origin": "original_31_regression",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "schema_compile_jsonschema_runtime_user_invocation_interface_contract_v0_1_2.json",
+      "case_origin": "original_31_regression",
+      "schema": "runtime_user_invocation_interface_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "ajv_8_17_1_strict_runtime_compile_runtime_user_invocation_interface_contract_v0_1_2.json",
+      "case_origin": "original_31_regression",
+      "schema": "runtime_user_invocation_interface_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "schema_compile_jsonschema_runtime_user_invocation_response_contract_v0_1_2.json",
+      "case_origin": "original_31_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "ajv_8_17_1_strict_runtime_compile_runtime_user_invocation_response_contract_v0_1_2.json",
+      "case_origin": "original_31_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "schema_compile_jsonschema_state_bundle_manifest_contract_v0_1_2.json",
+      "case_origin": "original_31_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "ajv_8_17_1_strict_runtime_compile_state_bundle_manifest_contract_v0_1_2.json",
+      "case_origin": "original_31_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "schema_compile_jsonschema_runtime_capability_effective_view_contract_v0_1_2.json",
+      "case_origin": "original_31_regression",
+      "schema": "runtime_capability_effective_view_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "ajv_8_17_1_strict_runtime_compile_runtime_capability_effective_view_contract_v0_1_2.json",
+      "case_origin": "original_31_regression",
+      "schema": "runtime_capability_effective_view_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "negative_request_type_payload_mismatch",
+      "case_origin": "original_31_regression",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "Additional properties are not allowed ('event_state_request' was unexpected)",
+        "'market_state_request' is a required property",
+        "market_state request must carry exactly market_state_request",
+        "request fingerprint payload profile mismatch",
+        "request fingerprint payload output_mode must be candidate",
+        "request fingerprint payload requires explicit instrument scope",
+        "request fingerprint payload violates closed provider schema",
+        "request_fingerprint is not canonical request payload hash"
+      ]
+    },
+    {
+      "case_id": "negative_physical_path_payload",
+      "case_origin": "original_31_regression",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "Additional properties are not allowed ('physical_path' was unexpected)",
+        "Additional properties are not allowed ('physical_path' was unexpected)",
+        "forbidden physical/path-like key present",
+        "request fingerprint payload violates closed provider schema",
+        "request_fingerprint is not canonical request payload hash"
+      ]
+    },
+    {
+      "case_id": "negative_unsupported_event_type",
+      "case_origin": "original_31_regression",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'event_type:market_data:session_opened' was expected",
+        "'event_type:market_data:session_opened' was expected",
+        "event request fingerprint payload unsupported event type",
+        "request fingerprint payload violates closed provider schema",
+        "request_fingerprint is not canonical request payload hash"
+      ]
+    },
+    {
+      "case_id": "negative_reuse_hit_missing_bundle",
+      "case_origin": "original_31_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "{'ref_id': 'bundle_001', 'ref_type': 'state_bundle_manifest', 'availability': 'missing'} is not valid under any of the given schemas",
+        "'available' was expected"
+      ]
+    },
+    {
+      "case_id": "negative_cross_details",
+      "case_origin": "original_31_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "{'state_kind': 'event_state', 'materializer_executions': 0, 'source_market_data_rows_read': 0, 'registry_mutations': 0, 'physical_rows_delivered': 0} is not of type 'null'",
+        "market_state response includes event_state_details",
+        "response fingerprint payload violates closed provider schema",
+        "response_ref sha256 is not canonical response payload hash",
+        "response cycle-free fingerprint payload violates closed provider schema",
+        "response_ref sha256 is not canonical cycle-free response payload hash"
+      ]
+    },
+    {
+      "case_id": "negative_blocked_with_dataset",
+      "case_origin": "original_31_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'bad' is not of type 'null'",
+        "blocked response carries forbidden fields",
+        "blocked/authorization_required response fingerprint payload carries dataset/validation",
+        "response fingerprint payload violates closed provider schema",
+        "response_ref sha256 is not canonical response payload hash",
+        "response cycle-free fingerprint payload violates closed provider schema",
+        "response_ref sha256 is not canonical cycle-free response payload hash"
+      ]
+    },
+    {
+      "case_id": "negative_authorized_reference_missing_auth",
+      "case_origin": "original_31_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "None is not of type 'object'",
+        "authorized_reference lacks authorization_ref",
+        "response fingerprint payload violates closed provider schema",
+        "response_ref sha256 is not canonical response payload hash",
+        "response cycle-free fingerprint payload violates closed provider schema",
+        "response_ref sha256 is not canonical cycle-free response payload hash"
+      ]
+    },
+    {
+      "case_id": "negative_pass_empty_capability_refs",
+      "case_origin": "original_31_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "[] should be non-empty",
+        "[] should be non-empty",
+        "capability_refs must match expected state_kind capabilities exactly",
+        "bundle fingerprint payload violates closed provider schema",
+        "bundle_ref sha256 is not canonical bundle payload hash",
+        "bundle cycle-free fingerprint payload violates closed provider schema",
+        "bundle_ref sha256 is not canonical cycle-free bundle payload hash"
+      ]
+    },
+    {
+      "case_id": "negative_coverage_arithmetic",
+      "case_origin": "original_31_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "coverage arithmetic mismatch",
+        "bundle_ref sha256 is not canonical bundle payload hash",
+        "embedded response coverage does not match bundle coverage",
+        "bundle_ref sha256 is not canonical cycle-free bundle payload hash"
+      ]
+    },
+    {
+      "case_id": "negative_missing_required_request_ref",
+      "case_origin": "original_31_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'available' was expected",
+        "'available' was expected"
+      ]
+    },
+    {
+      "case_id": "negative_empty_source_hashes",
+      "case_origin": "original_31_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "[] should be non-empty",
+        "bundle fingerprint payload violates closed provider schema",
+        "bundle_ref sha256 is not canonical bundle payload hash",
+        "bundle cycle-free fingerprint payload violates closed provider schema",
+        "bundle_ref sha256 is not canonical cycle-free bundle payload hash",
+        "source_dataset_ids and source_content_hashes cardinality mismatch"
+      ]
+    },
+    {
+      "case_id": "negative_invalid_schema_hash",
+      "case_origin": "original_31_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'not_hash' does not match '^[a-f0-9]{64}$'",
+        "bundle fingerprint payload violates closed provider schema",
+        "bundle_ref sha256 is not canonical bundle payload hash",
+        "bundle cycle-free fingerprint payload violates closed provider schema",
+        "bundle_ref sha256 is not canonical cycle-free bundle payload hash"
+      ]
+    },
+    {
+      "case_id": "negative_dataset_kind_mismatch",
+      "case_origin": "original_31_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "{'dataset_id': 'bad', 'dataset_kind': 'event_state', 'candidate_dataset_fingerprint': '2f05d4b689d270cafb02285f35f44866f7dc8a2d368a3f9d1124373eeab31fb1', 'validation_status': 'PASS', 'reuse_eligibility': 'eligible', 'artifact_availability': 'available'} is not valid under any of the given schemas",
+        "'market_state' was expected",
+        "response artifact content dataset_id does not match dataset_ref",
+        "reusable_dataset_refs must equal non-null reusable dataset_refs",
+        "bundle fingerprint payload violates closed provider schema",
+        "bundle_ref sha256 is not canonical bundle payload hash",
+        "embedded response dataset_id does not match dataset_ref",
+        "reuse_certification reusable_dataset_refs must match non-null dataset_refs"
+      ]
+    },
+    {
+      "case_id": "negative_duplicate_fingerprints",
+      "case_origin": "original_31_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "[{'request_ref': {'ref_id': 'req_ref_market_state', 'ref_type': 'state_resolution_request', 'sha256': '07c288fcfef102c34efe1fde9b468de5e4922652f8dff3434aa619ed536d4e89', 'availability': 'available'}, 'request_fingerprint': '07c288fcfef102c34efe1fde9b468de5e4922652f8dff3434aa619ed536d4e89', 'response_ref': {'ref_id': 'market_state_response_ref', 'ref_type': 'runtime_invocation_response', 'sha256': 'a6761e4896f23975cc7d32cccc914be3ac40c409a7ed0405021bf2dd24de9c4e', 'availability': 'available'}, 'state_kind': 'market_state'}, {'request_ref': {'ref_id': 'req_ref_market_state', 'ref_type': 'state_resolution_request', 'sha256': '07c288fcfef102c34efe1fde9b468de5e4922652f8dff3434aa619ed536d4e89', 'availability': 'available'}, 'request_fingerprint': '07c288fcfef102c34efe1fde9b468de5e4922652f8dff3434aa619ed536d4e89', 'response_ref': {'ref_id': 'market_state_response_ref', 'ref_type': 'runtime_invocation_response', 'sha256': 'a6761e4896f23975cc7d32cccc914be3ac40c409a7ed0405021bf2dd24de9c4e', 'availability': 'available'}, 'state_kind': 'market_state'}] has non-unique elements",
+        "[{'request_ref': {'ref_id': 'req_ref_market_state', 'ref_type': 'state_resolution_request', 'sha256': '07c288fcfef102c34efe1fde9b468de5e4922652f8dff3434aa619ed536d4e89', 'availability': 'available'}, 'request_fingerprint': '07c288fcfef102c34efe1fde9b468de5e4922652f8dff3434aa619ed536d4e89', 'response_ref': {'ref_id': 'market_state_response_ref', 'ref_type': 'runtime_invocation_response', 'sha256': 'a6761e4896f23975cc7d32cccc914be3ac40c409a7ed0405021bf2dd24de9c4e', 'availability': 'available'}, 'state_kind': 'market_state'}, {'request_ref': {'ref_id': 'req_ref_market_state', 'ref_type': 'state_resolution_request', 'sha256': '07c288fcfef102c34efe1fde9b468de5e4922652f8dff3434aa619ed536d4e89', 'availability': 'available'}, 'request_fingerprint': '07c288fcfef102c34efe1fde9b468de5e4922652f8dff3434aa619ed536d4e89', 'response_ref': {'ref_id': 'market_state_response_ref', 'ref_type': 'runtime_invocation_response', 'sha256': 'a6761e4896f23975cc7d32cccc914be3ac40c409a7ed0405021bf2dd24de9c4e', 'availability': 'available'}, 'state_kind': 'market_state'}] has non-unique elements",
+        "[{'request_ref': {'ref_id': 'req_ref_market_state', 'ref_type': 'state_resolution_request', 'sha256': '07c288fcfef102c34efe1fde9b468de5e4922652f8dff3434aa619ed536d4e89', 'availability': 'available'}, 'request_fingerprint': '07c288fcfef102c34efe1fde9b468de5e4922652f8dff3434aa619ed536d4e89', 'response_ref': {'ref_id': 'market_state_response_ref', 'ref_type': 'runtime_invocation_response', 'sha256': 'a6761e4896f23975cc7d32cccc914be3ac40c409a7ed0405021bf2dd24de9c4e', 'availability': 'available'}, 'state_kind': 'market_state'}, {'request_ref': {'ref_id': 'req_ref_market_state', 'ref_type': 'state_resolution_request', 'sha256': '07c288fcfef102c34efe1fde9b468de5e4922652f8dff3434aa619ed536d4e89', 'availability': 'available'}, 'request_fingerprint': '07c288fcfef102c34efe1fde9b468de5e4922652f8dff3434aa619ed536d4e89', 'response_ref': {'ref_id': 'market_state_response_ref', 'ref_type': 'runtime_invocation_response', 'sha256': 'a6761e4896f23975cc7d32cccc914be3ac40c409a7ed0405021bf2dd24de9c4e', 'availability': 'available'}, 'state_kind': 'market_state'}] is too long",
+        "duplicate semantic ref_id: market_state_response_ref,req_ref_market_state",
+        "duplicate or ambiguous response/request/state_kind binding",
+        "duplicate response_ref in bindings",
+        "request_response_bindings must contain exactly one binding per expected state_kind",
+        "bundle fingerprint payload violates closed provider schema"
+      ]
+    },
+    {
+      "case_id": "negative_request_ref_fingerprint_mismatch",
+      "case_origin": "original_31_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "request_ref sha256 does not match binding request_fingerprint",
+        "binding request_ref has no matching request artifact",
+        "bundle_ref sha256 is not canonical bundle payload hash",
+        "binding request_ref has no matching canonical request artifact",
+        "bundle_ref sha256 is not canonical cycle-free bundle payload hash"
+      ]
+    },
+    {
+      "case_id": "F01_cardinality_extra_response_ref_without_request",
+      "case_origin": "external_adversarial_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)",
+        "'artifact_ref_id' is a required property",
+        "'artifact_ref_sha256' is a required property",
+        "'content_fingerprint' is a required property",
+        "'canonicalization_algorithm' is a required property",
+        "'canonical_content' is a required property",
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)",
+        "'artifact_ref_id' is a required property"
+      ]
+    },
+    {
+      "case_id": "F01_response_ref_absent_for_request",
+      "case_origin": "external_adversarial_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "None is not of type 'object'",
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)",
+        "'artifact_ref_id' is a required property",
+        "'artifact_ref_sha256' is a required property",
+        "'content_fingerprint' is a required property",
+        "'canonicalization_algorithm' is a required property",
+        "'canonical_content' is a required property",
+        "'request_artifacts' is a required property"
+      ]
+    },
+    {
+      "case_id": "F02_duplicate_ref_id_cross_arrays",
+      "case_origin": "external_adversarial_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)",
+        "'artifact_ref_id' is a required property",
+        "'artifact_ref_sha256' is a required property",
+        "'content_fingerprint' is a required property",
+        "'canonicalization_algorithm' is a required property",
+        "'canonical_content' is a required property",
+        "'request_artifacts' is a required property",
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)"
+      ]
+    },
+    {
+      "case_id": "F03_market_response_event_capability",
+      "case_origin": "external_adversarial_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "{'ref_id': 'bundle_001', 'ref_type': 'state_bundle_manifest', 'sha256': '5e01f6239725d51dc0bc7eafca599a4fd376c8201bb7e9cd07b4c146f1c8757b', 'availability': 'available'} is not valid under any of the given schemas",
+        "'market_state_on_demand_runtime_capability_v0_1' was expected",
+        "Additional properties are not allowed ('sha256' was unexpected)",
+        "request_type/capability_id mismatch",
+        "response fingerprint payload capability mismatch",
+        "response fingerprint payload violates closed provider schema",
+        "response_ref sha256 is not canonical response payload hash",
+        "response cycle-free fingerprint payload violates closed provider schema"
+      ]
+    },
+    {
+      "case_id": "F03_event_response_market_profile",
+      "case_origin": "external_adversarial_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "{'ref_id': 'bundle_001', 'ref_type': 'state_bundle_manifest', 'sha256': '5e01f6239725d51dc0bc7eafca599a4fd376c8201bb7e9cd07b4c146f1c8757b', 'availability': 'available'} is not valid under any of the given schemas",
+        "'event_state_core_four_intraday_profile_v0_1' was expected",
+        "Additional properties are not allowed ('sha256' was unexpected)",
+        "response fingerprint payload profile mismatch",
+        "response fingerprint payload violates closed provider schema",
+        "response_ref sha256 is not canonical response payload hash",
+        "response cycle-free fingerprint payload violates closed provider schema",
+        "response_ref sha256 is not canonical cycle-free response payload hash"
+      ]
+    },
+    {
+      "case_id": "F04_effective_view_downstream_true",
+      "case_origin": "external_adversarial_regression",
+      "schema": "runtime_capability_effective_view_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "False was expected",
+        "effective permission downstream contradiction"
+      ]
+    },
+    {
+      "case_id": "F04_effective_view_duplicate_capability",
+      "case_origin": "external_adversarial_regression",
+      "schema": "runtime_capability_effective_view_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'market_state_core_four_intraday_profile_v0_1' was expected",
+        "'exchange_session' is not of type 'null'",
+        "effective view must expose exactly one Market State and one Event State capability",
+        "market capability must advertise only Market State profile",
+        "market capability subject_scope must be null"
+      ]
+    },
+    {
+      "case_id": "F05_fail_manifest_reuse_eligible",
+      "case_origin": "external_adversarial_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)",
+        "'artifact_ref_id' is a required property",
+        "'artifact_ref_sha256' is a required property",
+        "'content_fingerprint' is a required property",
+        "'canonicalization_algorithm' is a required property",
+        "'canonical_content' is a required property",
+        "'request_artifacts' is a required property",
+        "{'dataset_id': 'market_state_dataset_001', 'dataset_kind': 'market_state', 'candidate_dataset_fingerprint': '137962c6f62efb61cf673f0da0f3d1d62a9dc41014d5e374bf0af09cb035b537', 'validation_status': 'PASS_WITH_RESTRICTIONS', 'reuse_eligibility': 'eligible_with_restrictions', 'artifact_availability': 'available'} is not of type 'null'"
+      ]
+    },
+    {
+      "case_id": "F06_validate_operation_resolve_mode",
+      "case_origin": "external_adversarial_regression",
+      "schema": "runtime_user_invocation_interface_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'validate_only' was expected",
+        "embedded operation/resolution mode mismatch",
+        "embedded request fingerprint payload violates closed provider schema",
+        "embedded request_fingerprint is not canonical request payload hash",
+        "embedded request: operation/resolution mode mismatch",
+        "embedded request: StateResolutionRequest fingerprint does not match canonical payload",
+        "embedded request: request fingerprint payload violates closed provider schema",
+        "embedded request: request_fingerprint is not canonical request payload hash"
+      ]
+    },
+    {
+      "case_id": "F06_invoke_missing_authorization",
+      "case_origin": "external_adversarial_regression",
+      "schema": "runtime_user_invocation_interface_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "None is not of type 'object'",
+        "invoke requires execution_authorization_ref"
+      ]
+    },
+    {
+      "case_id": "F07_authorization_required_with_dataset",
+      "case_origin": "external_adversarial_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'dataset_should_not_exist' is not of type 'null'",
+        "authorization_required response carries forbidden fields",
+        "blocked/authorization_required response fingerprint payload carries dataset/validation",
+        "response fingerprint payload violates closed provider schema",
+        "response_ref sha256 is not canonical response payload hash",
+        "response cycle-free fingerprint payload violates closed provider schema",
+        "response_ref sha256 is not canonical cycle-free response payload hash"
+      ]
+    },
+    {
+      "case_id": "F09_market_request_event_state_binding",
+      "case_origin": "external_adversarial_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)",
+        "'artifact_ref_id' is a required property",
+        "'artifact_ref_sha256' is a required property",
+        "'content_fingerprint' is a required property",
+        "'canonicalization_algorithm' is a required property",
+        "'canonical_content' is a required property",
+        "'request_artifacts' is a required property",
+        "'market_state' was expected"
+      ]
+    },
+    {
+      "case_id": "F09_request_fingerprint_mismatch_in_binding",
+      "case_origin": "external_adversarial_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)",
+        "'artifact_ref_id' is a required property",
+        "'artifact_ref_sha256' is a required property",
+        "'content_fingerprint' is a required property",
+        "'canonicalization_algorithm' is a required property",
+        "'canonical_content' is a required property",
+        "'request_artifacts' is a required property",
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)"
+      ]
+    },
+    {
+      "case_id": "F01_market_and_event_duplicate_market_binding_no_event_binding",
+      "case_origin": "external_audit_followup_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)",
+        "'artifact_ref_id' is a required property",
+        "'artifact_ref_sha256' is a required property",
+        "'content_fingerprint' is a required property",
+        "'canonicalization_algorithm' is a required property",
+        "'canonical_content' is a required property",
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)",
+        "'artifact_ref_id' is a required property"
+      ]
+    },
+    {
+      "case_id": "F01_market_and_event_third_extra_binding",
+      "case_origin": "external_audit_followup_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "[{'request_ref': {'ref_id': 'req_ref_market_state', 'ref_type': 'state_resolution_request', 'sha256': '192500a846313fbdc05c8d68c8c379a56686c62c57eddc1d8aaeaf8305a087be', 'availability': 'available'}, 'request_fingerprint': '192500a846313fbdc05c8d68c8c379a56686c62c57eddc1d8aaeaf8305a087be', 'response_ref': {'ref_id': 'market_state_response_ref', 'ref_type': 'runtime_invocation_response', 'sha256': '12a8019b34db967d177a9679db14f317c55b1a09a7ef32d63cc2975bdccdbf9f', 'availability': 'available'}, 'state_kind': 'market_state'}, {'request_ref': {'ref_id': 'req_ref_event_state', 'ref_type': 'state_resolution_request', 'sha256': 'a37ce2fa2fcd7ca8520c65fc27586c353a84cb5cb82ffc58de12797b4b5a75cb', 'availability': 'available'}, 'request_fingerprint': 'a37ce2fa2fcd7ca8520c65fc27586c353a84cb5cb82ffc58de12797b4b5a75cb', 'response_ref': {'ref_id': 'event_state_response_ref', 'ref_type': 'runtime_invocation_response', 'sha256': '375e4795710175f9d01989bafed3c25dd2452a65160d93b0f6b57bc6d6d4571e', 'availability': 'available'}, 'state_kind': 'event_state'}, {'request_ref': {'ref_id': 'req_ref_market_state', 'ref_type': 'state_resolution_request', 'sha256': '192500a846313fbdc05c8d68c8c379a56686c62c57eddc1d8aaeaf8305a087be', 'availability': 'available'}, 'request_fingerprint': '192500a846313fbdc05c8d68c8c379a56686c62c57eddc1d8aaeaf8305a087be', 'response_ref': {'ref_id': 'market_state_response_ref', 'ref_type': 'runtime_invocation_response', 'sha256': '12a8019b34db967d177a9679db14f317c55b1a09a7ef32d63cc2975bdccdbf9f', 'availability': 'available'}, 'state_kind': 'market_state'}] has non-unique elements",
+        "[{'request_ref': {'ref_id': 'req_ref_market_state', 'ref_type': 'state_resolution_request', 'sha256': '192500a846313fbdc05c8d68c8c379a56686c62c57eddc1d8aaeaf8305a087be', 'availability': 'available'}, 'request_fingerprint': '192500a846313fbdc05c8d68c8c379a56686c62c57eddc1d8aaeaf8305a087be', 'response_ref': {'ref_id': 'market_state_response_ref', 'ref_type': 'runtime_invocation_response', 'sha256': '12a8019b34db967d177a9679db14f317c55b1a09a7ef32d63cc2975bdccdbf9f', 'availability': 'available'}, 'state_kind': 'market_state'}, {'request_ref': {'ref_id': 'req_ref_event_state', 'ref_type': 'state_resolution_request', 'sha256': 'a37ce2fa2fcd7ca8520c65fc27586c353a84cb5cb82ffc58de12797b4b5a75cb', 'availability': 'available'}, 'request_fingerprint': 'a37ce2fa2fcd7ca8520c65fc27586c353a84cb5cb82ffc58de12797b4b5a75cb', 'response_ref': {'ref_id': 'event_state_response_ref', 'ref_type': 'runtime_invocation_response', 'sha256': '375e4795710175f9d01989bafed3c25dd2452a65160d93b0f6b57bc6d6d4571e', 'availability': 'available'}, 'state_kind': 'event_state'}, {'request_ref': {'ref_id': 'req_ref_market_state', 'ref_type': 'state_resolution_request', 'sha256': '192500a846313fbdc05c8d68c8c379a56686c62c57eddc1d8aaeaf8305a087be', 'availability': 'available'}, 'request_fingerprint': '192500a846313fbdc05c8d68c8c379a56686c62c57eddc1d8aaeaf8305a087be', 'response_ref': {'ref_id': 'market_state_response_ref', 'ref_type': 'runtime_invocation_response', 'sha256': '12a8019b34db967d177a9679db14f317c55b1a09a7ef32d63cc2975bdccdbf9f', 'availability': 'available'}, 'state_kind': 'market_state'}] is too long",
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)",
+        "'artifact_ref_id' is a required property",
+        "'artifact_ref_sha256' is a required property",
+        "'content_fingerprint' is a required property",
+        "'canonicalization_algorithm' is a required property",
+        "'canonical_content' is a required property"
+      ]
+    },
+    {
+      "case_id": "F01_market_state_only_two_bindings",
+      "case_origin": "external_audit_followup_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "[{'request_ref': {'ref_id': 'req_ref_market_state', 'ref_type': 'state_resolution_request', 'sha256': '192500a846313fbdc05c8d68c8c379a56686c62c57eddc1d8aaeaf8305a087be', 'availability': 'available'}, 'request_fingerprint': '192500a846313fbdc05c8d68c8c379a56686c62c57eddc1d8aaeaf8305a087be', 'response_ref': {'ref_id': 'market_state_response_ref', 'ref_type': 'runtime_invocation_response', 'sha256': '12a8019b34db967d177a9679db14f317c55b1a09a7ef32d63cc2975bdccdbf9f', 'availability': 'available'}, 'state_kind': 'market_state'}, {'request_ref': {'ref_id': 'req_ref_market_state', 'ref_type': 'state_resolution_request', 'sha256': '192500a846313fbdc05c8d68c8c379a56686c62c57eddc1d8aaeaf8305a087be', 'availability': 'available'}, 'request_fingerprint': '192500a846313fbdc05c8d68c8c379a56686c62c57eddc1d8aaeaf8305a087be', 'response_ref': {'ref_id': 'market_state_response_ref', 'ref_type': 'runtime_invocation_response', 'sha256': '12a8019b34db967d177a9679db14f317c55b1a09a7ef32d63cc2975bdccdbf9f', 'availability': 'available'}, 'state_kind': 'market_state'}] has non-unique elements",
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)",
+        "'artifact_ref_id' is a required property",
+        "'artifact_ref_sha256' is a required property",
+        "'content_fingerprint' is a required property",
+        "'canonicalization_algorithm' is a required property",
+        "'canonical_content' is a required property",
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)"
+      ]
+    },
+    {
+      "case_id": "F01_market_and_event_single_capability_ref",
+      "case_origin": "external_audit_followup_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)",
+        "'artifact_ref_id' is a required property",
+        "'artifact_ref_sha256' is a required property",
+        "'content_fingerprint' is a required property",
+        "'canonicalization_algorithm' is a required property",
+        "'canonical_content' is a required property",
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)",
+        "'artifact_ref_id' is a required property"
+      ]
+    },
+    {
+      "case_id": "F01_market_and_event_single_profile_version",
+      "case_origin": "external_audit_followup_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)",
+        "'artifact_ref_id' is a required property",
+        "'artifact_ref_sha256' is a required property",
+        "'content_fingerprint' is a required property",
+        "'canonicalization_algorithm' is a required property",
+        "'canonical_content' is a required property",
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)",
+        "'artifact_ref_id' is a required property"
+      ]
+    },
+    {
+      "case_id": "F04_market_capability_advertises_event_profile",
+      "case_origin": "external_audit_followup_regression",
+      "schema": "runtime_capability_effective_view_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'market_state_core_four_intraday_profile_v0_1' was expected",
+        "market capability must advertise only Market State profile"
+      ]
+    },
+    {
+      "case_id": "F04_event_capability_advertises_market_profile",
+      "case_origin": "external_audit_followup_regression",
+      "schema": "runtime_capability_effective_view_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'event_state_core_four_intraday_profile_v0_1' was expected",
+        "event capability must advertise only Event State profile"
+      ]
+    },
+    {
+      "case_id": "F05_fail_manifest_dataset_ref_pass_reusable",
+      "case_origin": "external_audit_followup_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)",
+        "'artifact_ref_id' is a required property",
+        "'artifact_ref_sha256' is a required property",
+        "'content_fingerprint' is a required property",
+        "'canonicalization_algorithm' is a required property",
+        "'canonical_content' is a required property",
+        "'request_artifacts' is a required property",
+        "{'dataset_id': 'market_state_dataset_001', 'dataset_kind': 'market_state', 'candidate_dataset_fingerprint': '137962c6f62efb61cf673f0da0f3d1d62a9dc41014d5e374bf0af09cb035b537', 'validation_status': 'PASS_WITH_RESTRICTIONS', 'reuse_eligibility': 'eligible_with_restrictions', 'artifact_availability': 'available'} is not of type 'null'"
+      ]
+    },
+    {
+      "case_id": "F05_blocked_manifest_dataset_ref_pass_reusable",
+      "case_origin": "external_audit_followup_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)",
+        "'artifact_ref_id' is a required property",
+        "'artifact_ref_sha256' is a required property",
+        "'content_fingerprint' is a required property",
+        "'canonicalization_algorithm' is a required property",
+        "'canonical_content' is a required property",
+        "'request_artifacts' is a required property",
+        "{'dataset_id': 'market_state_dataset_001', 'dataset_kind': 'market_state', 'candidate_dataset_fingerprint': '137962c6f62efb61cf673f0da0f3d1d62a9dc41014d5e374bf0af09cb035b537', 'validation_status': 'PASS_WITH_RESTRICTIONS', 'reuse_eligibility': 'eligible_with_restrictions', 'artifact_availability': 'available'} is not of type 'null'"
+      ]
+    },
+    {
+      "case_id": "F09_response_ref_arbitrary_valid_ref",
+      "case_origin": "external_audit_followup_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)",
+        "'artifact_ref_id' is a required property",
+        "'artifact_ref_sha256' is a required property",
+        "'content_fingerprint' is a required property",
+        "'canonicalization_algorithm' is a required property",
+        "'canonical_content' is a required property",
+        "'request_artifacts' is a required property",
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)"
+      ]
+    },
+    {
+      "case_id": "F09_response_ref_sha256_unrelated_valid_hash",
+      "case_origin": "external_audit_followup_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)",
+        "'artifact_ref_id' is a required property",
+        "'artifact_ref_sha256' is a required property",
+        "'content_fingerprint' is a required property",
+        "'canonicalization_algorithm' is a required property",
+        "'canonical_content' is a required property",
+        "'request_artifacts' is a required property",
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)"
+      ]
+    },
+    {
+      "case_id": "F09_market_event_response_refs_swapped",
+      "case_origin": "external_audit_followup_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)",
+        "'artifact_ref_id' is a required property",
+        "'artifact_ref_sha256' is a required property",
+        "'content_fingerprint' is a required property",
+        "'canonicalization_algorithm' is a required property",
+        "'canonical_content' is a required property",
+        "Additional properties are not allowed ('response_ref_id', 'response_ref_sha256' were unexpected)",
+        "'artifact_ref_id' is a required property"
+      ]
+    },
+    {
+      "case_id": "F09_response_ref_arbitrary_with_self_declared_metadata",
+      "case_origin": "external_reaudit_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'invocation_id' is a required property",
+        "'run_id' is a required property",
+        "'coverage' is a required property",
+        "'restrictions' is a required property",
+        "'artifact_references' is a required property",
+        "'official_dataset' is a required property",
+        "'production' is a required property",
+        "'downstream' is a required property"
+      ]
+    },
+    {
+      "case_id": "F09_response_ref_sha256_not_content_hash",
+      "case_origin": "external_reaudit_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'invocation_id' is a required property",
+        "'run_id' is a required property",
+        "'coverage' is a required property",
+        "'restrictions' is a required property",
+        "'artifact_references' is a required property",
+        "'official_dataset' is a required property",
+        "'production' is a required property",
+        "'downstream' is a required property"
+      ]
+    },
+    {
+      "case_id": "F09_request_content_changed_without_fingerprint",
+      "case_origin": "external_reaudit_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'invocation_id' is a required property",
+        "'run_id' is a required property",
+        "'coverage' is a required property",
+        "'restrictions' is a required property",
+        "'artifact_references' is a required property",
+        "'official_dataset' is a required property",
+        "'production' is a required property",
+        "'downstream' is a required property"
+      ]
+    },
+    {
+      "case_id": "F09_response_content_dataset_changed_without_sha",
+      "case_origin": "external_reaudit_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'invocation_id' is a required property",
+        "'run_id' is a required property",
+        "'coverage' is a required property",
+        "'restrictions' is a required property",
+        "'artifact_references' is a required property",
+        "'official_dataset' is a required property",
+        "'production' is a required property",
+        "'downstream' is a required property"
+      ]
+    },
+    {
+      "case_id": "F09_swapped_response_refs_with_rewritten_metadata",
+      "case_origin": "external_reaudit_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'invocation_id' is a required property",
+        "'run_id' is a required property",
+        "'coverage' is a required property",
+        "'restrictions' is a required property",
+        "'artifact_references' is a required property",
+        "'official_dataset' is a required property",
+        "'production' is a required property",
+        "'downstream' is a required property"
+      ]
+    },
+    {
+      "case_id": "F05_pass_with_failed_materialization",
+      "case_origin": "external_reaudit_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'invocation_id' is a required property",
+        "'run_id' is a required property",
+        "'coverage' is a required property",
+        "'restrictions' is a required property",
+        "'artifact_references' is a required property",
+        "'official_dataset' is a required property",
+        "'production' is a required property",
+        "'downstream' is a required property"
+      ]
+    },
+    {
+      "case_id": "F05_pass_with_blocked_materialization",
+      "case_origin": "external_reaudit_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'invocation_id' is a required property",
+        "'run_id' is a required property",
+        "'coverage' is a required property",
+        "'restrictions' is a required property",
+        "'artifact_references' is a required property",
+        "'official_dataset' is a required property",
+        "'production' is a required property",
+        "'downstream' is a required property"
+      ]
+    },
+    {
+      "case_id": "F08_patch_module_authorized_in_scope",
+      "case_origin": "external_reaudit_regression",
+      "schema": "authorization_scope",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "F08_living_document_update_idempotence_guard",
+      "case_origin": "external_reaudit_regression",
+      "schema": "living_documents",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "positive_market_state_request",
+      "case_origin": "original_31_regression",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "positive_event_state_request",
+      "case_origin": "original_31_regression",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "F09_top_level_request_content_changed_without_fingerprint",
+      "case_origin": "external_audit_combined_regression",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "request_fingerprint is not canonical request payload hash"
+      ]
+    },
+    {
+      "case_id": "F09_top_level_response_dataset_changed_without_fingerprint",
+      "case_origin": "external_audit_combined_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "response_ref sha256 is not canonical response payload hash",
+        "response_ref sha256 is not canonical cycle-free response payload hash"
+      ]
+    },
+    {
+      "case_id": "F09_interface_embedded_request_changed_without_fingerprint",
+      "case_origin": "external_audit_combined_regression",
+      "schema": "runtime_user_invocation_interface_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "embedded request_fingerprint is not canonical request payload hash",
+        "embedded request: StateResolutionRequest fingerprint does not match canonical payload",
+        "embedded request: request_fingerprint is not canonical request payload hash"
+      ]
+    },
+    {
+      "case_id": "F09_bundle_request_payload_market_with_event_profile",
+      "case_origin": "external_audit_combined_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'market_state_core_four_intraday_profile_v0_1' was expected",
+        "'market_state_core_four_intraday_profile_v0_1' was expected",
+        "'market_state_core_four_intraday_profile_v0_1' was expected",
+        "'market_state_core_four_intraday_profile_v0_1' was expected",
+        "request artifact fingerprint is not canonical content hash",
+        "binding request fingerprint is not canonical request hash",
+        "request fingerprint payload profile mismatch",
+        "embedded request artifact violates closed provider schema"
+      ]
+    },
+    {
+      "case_id": "F09_bundle_request_payload_output_mode_production",
+      "case_origin": "external_audit_combined_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'candidate' was expected",
+        "'candidate' was expected",
+        "'candidate' was expected",
+        "'candidate' was expected",
+        "request artifact fingerprint is not canonical content hash",
+        "binding request fingerprint is not canonical request hash",
+        "request fingerprint payload output_mode must be candidate",
+        "embedded request artifact violates closed provider schema"
+      ]
+    },
+    {
+      "case_id": "F09_bundle_request_payload_missing_instrument_scope",
+      "case_origin": "external_audit_combined_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "[] should be non-empty",
+        "[] should be non-empty",
+        "[] should be non-empty",
+        "[] should be non-empty",
+        "request artifact fingerprint is not canonical content hash",
+        "binding request fingerprint is not canonical request hash",
+        "request fingerprint payload requires explicit instrument scope",
+        "embedded request artifact violates closed provider schema"
+      ]
+    },
+    {
+      "case_id": "F09_bundle_response_payload_wrong_capability",
+      "case_origin": "external_audit_combined_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'market_state_on_demand_runtime_capability_v0_1' was expected",
+        "'market_state_on_demand_runtime_capability_v0_1' was expected",
+        "response artifact fingerprint is not canonical content hash",
+        "binding response_ref sha256 is not canonical response hash",
+        "response fingerprint payload capability mismatch",
+        "embedded response artifact violates closed provider schema",
+        "embedded response artifact fingerprint mismatch",
+        "binding response_ref sha256 does not match response content"
+      ]
+    },
+    {
+      "case_id": "F09_bundle_response_payload_wrong_profile",
+      "case_origin": "external_audit_combined_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'event_state_core_four_intraday_profile_v0_1' is not valid under any of the given schemas",
+        "'event_state_core_four_intraday_profile_v0_1' is not valid under any of the given schemas",
+        "response artifact fingerprint is not canonical content hash",
+        "binding response_ref sha256 is not canonical response hash",
+        "response fingerprint payload profile mismatch",
+        "embedded response artifact violates closed provider schema",
+        "embedded response artifact fingerprint mismatch",
+        "binding response_ref sha256 does not match response content"
+      ]
+    },
+    {
+      "case_id": "F09_bundle_response_payload_official_dataset_true",
+      "case_origin": "external_audit_combined_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "False was expected",
+        "False was expected",
+        "response artifact fingerprint is not canonical content hash",
+        "binding response_ref sha256 is not canonical response hash",
+        "response fingerprint payload forbidden authority flag",
+        "embedded response artifact violates closed provider schema",
+        "embedded response artifact fingerprint mismatch",
+        "binding response_ref sha256 does not match response content"
+      ]
+    },
+    {
+      "case_id": "F09_bundle_response_payload_production_true",
+      "case_origin": "external_audit_combined_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "False was expected",
+        "False was expected",
+        "response artifact fingerprint is not canonical content hash",
+        "binding response_ref sha256 is not canonical response hash",
+        "response fingerprint payload forbidden authority flag",
+        "embedded response artifact violates closed provider schema",
+        "embedded response artifact fingerprint mismatch",
+        "binding response_ref sha256 does not match response content"
+      ]
+    },
+    {
+      "case_id": "F09_bundle_response_payload_downstream_true",
+      "case_origin": "external_audit_combined_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "False was expected",
+        "False was expected",
+        "response artifact fingerprint is not canonical content hash",
+        "binding response_ref sha256 is not canonical response hash",
+        "response fingerprint payload forbidden authority flag",
+        "embedded response artifact violates closed provider schema",
+        "embedded response artifact fingerprint mismatch",
+        "binding response_ref sha256 does not match response content"
+      ]
+    },
+    {
+      "case_id": "F09_bundle_response_payload_validation_fail_inside_pass_bundle",
+      "case_origin": "external_audit_combined_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'FAIL' is not valid under any of the given schemas",
+        "'FAIL' is not one of ['PASS', 'PASS_WITH_RESTRICTIONS']",
+        "'FAIL' is not valid under any of the given schemas",
+        "'FAIL' is not one of ['PASS', 'PASS_WITH_RESTRICTIONS']",
+        "response artifact fingerprint is not canonical content hash",
+        "binding response_ref sha256 is not canonical response hash",
+        "reuse_hit response fingerprint payload lacks valid dataset/pass status",
+        "embedded response artifact violates closed provider schema"
+      ]
+    },
+    {
+      "case_id": "F09_bundle_response_payload_blocked_with_dataset",
+      "case_origin": "external_audit_combined_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'VALID_REQUEST_REUSE_HIT' is not one of ['BLOCKED_INVALID_REQUEST', 'BLOCKED_UNSUPPORTED_CAPABILITY', 'BLOCKED_UNSUPPORTED_PROFILE', 'BLOCKED_UNSUPPORTED_EVENT_TYPE', 'BLOCKED_CONSUMPTION_NOT_AUTHORIZED', 'BLOCKED_PRODUCTION_OR_DOWNSTREAM_NOT_AUTHORIZED', 'BLOCKED_PHYSICAL_PATH_NOT_ALLOWED', 'BLOCKED_PROVIDER_CONTRACT_MISMATCH']",
+        "'bad_dataset' is not of type 'null'",
+        "'validated_candidate' is not of type 'null'",
+        "'PASS_WITH_RESTRICTIONS' is not of type 'null'",
+        "'bundle_ref_market_state_only_001' is not of type 'null'",
+        "[{'ref_id': 'artifact_market_state_001', 'ref_type': 'runtime_artifact', 'sha256': 'a0688dd25944aa483342925e8d4c082f337a990a3e3b30c042e9f849794af452', 'availability': 'available'}] is expected to be empty",
+        "{'state_kind': 'market_state', 'materializer_executions': 0, 'source_market_data_rows_read': 0, 'registry_mutations': 0, 'physical_rows_delivered': 0} is not of type 'null'",
+        "'VALID_REQUEST_REUSE_HIT' is not one of ['BLOCKED_INVALID_REQUEST', 'BLOCKED_UNSUPPORTED_CAPABILITY', 'BLOCKED_UNSUPPORTED_PROFILE', 'BLOCKED_UNSUPPORTED_EVENT_TYPE', 'BLOCKED_CONSUMPTION_NOT_AUTHORIZED', 'BLOCKED_PRODUCTION_OR_DOWNSTREAM_NOT_AUTHORIZED', 'BLOCKED_PHYSICAL_PATH_NOT_ALLOWED', 'BLOCKED_PROVIDER_CONTRACT_MISMATCH']"
+      ]
+    },
+    {
+      "case_id": "F09_bundle_response_payload_minimal_missing_fields",
+      "case_origin": "external_audit_combined_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'invocation_id' is a required property",
+        "'request_fingerprint' is a required property",
+        "'invocation_status' is a required property",
+        "'resolution_decision' is a required property",
+        "'capability_id' is a required property",
+        "'profile_id' is a required property",
+        "'run_id' is a required property",
+        "'dataset_id' is a required property"
+      ]
+    },
+    {
+      "case_id": "F05_reusable_dataset_refs_unrelated",
+      "case_origin": "external_audit_combined_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "reusable_dataset_refs must equal non-null reusable dataset_refs",
+        "bundle_ref sha256 is not canonical bundle payload hash",
+        "reuse_certification reusable_dataset_refs must match non-null dataset_refs",
+        "bundle_ref sha256 is not canonical cycle-free bundle payload hash",
+        "reuse_certification reusable_dataset_refs must exactly match reusable dataset refs"
+      ]
+    },
+    {
+      "case_id": "F08_route_authorization_section_historical_snapshot",
+      "case_origin": "external_audit_combined_regression",
+      "schema": "living_documents",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "F08_living_document_idempotence_actual_bytes",
+      "case_origin": "external_audit_combined_regression",
+      "schema": "living_documents",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "AJV_reproducibility_lock_declared",
+      "case_origin": "external_audit_combined_regression",
+      "schema": "ajv_lock",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "F09_STRICT_request_payload_production_true",
+      "case_origin": "external_083304_regression",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "False was expected",
+        "request fingerprint payload violates closed provider schema",
+        "request_fingerprint is not canonical request payload hash"
+      ]
+    },
+    {
+      "case_id": "F09_STRICT_request_payload_physical_path_allowed",
+      "case_origin": "external_083304_regression",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "False was expected",
+        "request fingerprint payload violates closed provider schema",
+        "request_fingerprint is not canonical request payload hash"
+      ]
+    },
+    {
+      "case_id": "F09_STRICT_request_operation_mode_mismatch",
+      "case_origin": "external_083304_regression",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'invoke_with_authorization' was expected",
+        "operation/resolution mode mismatch",
+        "request fingerprint payload violates closed provider schema",
+        "request_fingerprint is not canonical request payload hash"
+      ]
+    },
+    {
+      "case_id": "F09_STRICT_market_request_missing_calendar_authority",
+      "case_origin": "external_083304_regression",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'calendar_authority_id' is a required property",
+        "'calendar_authority_id' is a required property",
+        "request fingerprint payload violates closed provider schema",
+        "request_fingerprint is not canonical request payload hash"
+      ]
+    },
+    {
+      "case_id": "F09_STRICT_market_request_missing_session_dates",
+      "case_origin": "external_083304_regression",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'session_dates' is a required property",
+        "'session_dates' is a required property",
+        "request fingerprint payload violates closed provider schema",
+        "request_fingerprint is not canonical request payload hash"
+      ]
+    },
+    {
+      "case_id": "F09_STRICT_market_request_source_version_policy_wrong",
+      "case_origin": "external_083304_regression",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'exact_governed_or_block' was expected",
+        "'exact_governed_or_block' was expected",
+        "request fingerprint payload violates closed provider schema",
+        "request_fingerprint is not canonical request payload hash"
+      ]
+    },
+    {
+      "case_id": "F09_STRICT_event_subject_scope_wrong",
+      "case_origin": "external_083304_regression",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'exchange_session' was expected",
+        "'exchange_session' was expected",
+        "request fingerprint payload violates closed provider schema",
+        "request_fingerprint is not canonical request payload hash"
+      ]
+    },
+    {
+      "case_id": "F09_STRICT_event_direct_market_state_dependency",
+      "case_origin": "external_083304_regression",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'emit_or_resolve_market_state_subrequest_through_runtime_capability' was expected",
+        "'emit_or_resolve_market_state_subrequest_through_runtime_capability' was expected",
+        "request fingerprint payload violates closed provider schema",
+        "request_fingerprint is not canonical request payload hash"
+      ]
+    },
+    {
+      "case_id": "F09_STRICT_event_missing_window_policy",
+      "case_origin": "external_083304_regression",
+      "schema": "state_resolution_request_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'event_window_policy_id' is a required property",
+        "'event_window_policy_id' is a required property",
+        "request fingerprint payload violates closed provider schema",
+        "request_fingerprint is not canonical request payload hash"
+      ]
+    },
+    {
+      "case_id": "F09_STRICT_response_coverage_arithmetic_invalid",
+      "case_origin": "external_083304_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "coverage arithmetic mismatch",
+        "response_ref sha256 is not canonical response payload hash",
+        "response_ref sha256 is not canonical cycle-free response payload hash"
+      ]
+    },
+    {
+      "case_id": "F09_STRICT_response_reuse_hit_missing_bundle_ref",
+      "case_origin": "external_083304_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "None is not of type 'object'",
+        "reuse_hit lacks required governed dataset/bundle references",
+        "response fingerprint payload violates closed provider schema",
+        "response_ref sha256 is not canonical response payload hash",
+        "response cycle-free fingerprint payload violates closed provider schema",
+        "response_ref sha256 is not canonical cycle-free response payload hash"
+      ]
+    },
+    {
+      "case_id": "F09_STRICT_response_market_with_event_details",
+      "case_origin": "external_083304_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "{'state_kind': 'event_state', 'materializer_executions': 0, 'source_market_data_rows_read': 0, 'registry_mutations': 0, 'physical_rows_delivered': 0} is not of type 'null'",
+        "market_state response includes event_state_details",
+        "response fingerprint payload violates closed provider schema",
+        "response_ref sha256 is not canonical response payload hash",
+        "response cycle-free fingerprint payload violates closed provider schema",
+        "response_ref sha256 is not canonical cycle-free response payload hash"
+      ]
+    },
+    {
+      "case_id": "F09_STRICT_response_market_missing_market_details",
+      "case_origin": "external_083304_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "response fingerprint payload violates closed provider schema",
+        "response_ref sha256 is not canonical response payload hash",
+        "response cycle-free fingerprint payload violates closed provider schema",
+        "response_ref sha256 is not canonical cycle-free response payload hash"
+      ]
+    },
+    {
+      "case_id": "F09_STRICT_response_authorized_reference_missing_auth",
+      "case_origin": "external_083304_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "None is not of type 'object'",
+        "authorized_reference lacks authorization_ref",
+        "response fingerprint payload violates closed provider schema",
+        "response_ref sha256 is not canonical response payload hash",
+        "response cycle-free fingerprint payload violates closed provider schema",
+        "response_ref sha256 is not canonical cycle-free response payload hash"
+      ]
+    },
+    {
+      "case_id": "F09_STRICT_response_dataset_status_arbitrary",
+      "case_origin": "external_083304_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'validated_candidate' was expected",
+        "response fingerprint payload violates closed provider schema",
+        "response_ref sha256 is not canonical response payload hash",
+        "response cycle-free fingerprint payload violates closed provider schema",
+        "response_ref sha256 is not canonical cycle-free response payload hash"
+      ]
+    },
+    {
+      "case_id": "F09_STRICT_response_request_ref_id_mismatch",
+      "case_origin": "external_083304_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "response artifact fingerprint is not canonical content hash",
+        "binding response_ref sha256 is not canonical response hash",
+        "embedded response artifact fingerprint mismatch",
+        "embedded response request_ref does not match binding request_ref",
+        "binding response_ref sha256 does not match response content"
+      ]
+    },
+    {
+      "case_id": "F09_STRICT_response_request_ref_sha_mismatch",
+      "case_origin": "external_083304_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "response artifact fingerprint is not canonical content hash",
+        "binding response_ref sha256 is not canonical response hash",
+        "embedded response artifact fingerprint mismatch",
+        "embedded response request_ref does not match binding request_ref",
+        "binding response_ref sha256 does not match response content"
+      ]
+    },
+    {
+      "case_id": "F09_STRICT_bundle_response_coverage_mismatch",
+      "case_origin": "external_083304_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "response artifact fingerprint is not canonical content hash",
+        "binding response_ref sha256 is not canonical response hash",
+        "embedded response artifact fingerprint mismatch",
+        "embedded response coverage does not match bundle coverage",
+        "binding response_ref sha256 does not match response content"
+      ]
+    },
+    {
+      "case_id": "F09_STRICT_bundle_response_points_other_bundle",
+      "case_origin": "external_083304_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "response artifact fingerprint is not canonical content hash",
+        "binding response_ref sha256 is not canonical response hash",
+        "embedded response artifact fingerprint mismatch",
+        "binding response_ref sha256 does not match response content",
+        "embedded response state_bundle_manifest_ref_id does not match bundle_ref"
+      ]
+    },
+    {
+      "case_id": "F09_STRICT_bundle_restriction_changed_without_bundle_hash",
+      "case_origin": "external_083304_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "bundle_ref sha256 is not canonical bundle payload hash",
+        "bundle_ref sha256 is not canonical cycle-free bundle payload hash"
+      ]
+    },
+    {
+      "case_id": "F09_STRICT_bundle_reusable_dataset_refs_unrelated",
+      "case_origin": "external_083304_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "reusable_dataset_refs must equal non-null reusable dataset_refs",
+        "bundle_ref sha256 is not canonical bundle payload hash",
+        "reuse_certification reusable_dataset_refs must match non-null dataset_refs",
+        "bundle_ref sha256 is not canonical cycle-free bundle payload hash",
+        "reuse_certification reusable_dataset_refs must exactly match reusable dataset refs"
+      ]
+    },
+    {
+      "case_id": "F09_CYCLE_response_hash_change_requires_bundle_hash_change",
+      "case_origin": "external_092039_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "bundle_ref sha256 is not canonical bundle payload hash",
+        "bundle_ref sha256 is not canonical cycle-free bundle payload hash",
+        "embedded response artifact_reference missing from bundle artifact_hashes"
+      ]
+    },
+    {
+      "case_id": "F09_CYCLE_request_artifact_outer_state_kind_mismatch",
+      "case_origin": "external_092039_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "request artifact outer state_kind does not match content and binding"
+      ]
+    },
+    {
+      "case_id": "F09_CYCLE_response_artifact_outer_state_kind_mismatch",
+      "case_origin": "external_092039_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "response artifact outer state_kind does not match content and binding"
+      ]
+    },
+    {
+      "case_id": "F09_CYCLE_response_artifact_outer_request_fingerprint_mismatch",
+      "case_origin": "external_092039_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "response artifact outer request_fingerprint does not match content and binding"
+      ]
+    },
+    {
+      "case_id": "F09_CYCLE_response_restriction_not_propagated",
+      "case_origin": "external_092039_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "bundle restrictions do not include response restrictions"
+      ]
+    },
+    {
+      "case_id": "F09_CYCLE_bundle_validation_less_restrictive_than_response",
+      "case_origin": "external_092039_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "bundle validation_status is less restrictive than response validation_status",
+        "bundle validation_status weakens component validation_status"
+      ]
+    },
+    {
+      "case_id": "F09_CYCLE_reuse_ineligible_with_refs",
+      "case_origin": "external_092039_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "reuse_certification ineligible requires no reusable refs",
+        "reuse_certification not_eligible decision requires eligible=false and empty refs"
+      ]
+    },
+    {
+      "case_id": "F09_CYCLE_reuse_eligible_with_not_eligible_decision",
+      "case_origin": "external_092039_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "reuse_certification eligible=true requires eligible decision",
+        "reuse_certification not_eligible decision requires eligible=false and empty refs"
+      ]
+    },
+    {
+      "case_id": "F09_CYCLE_top_level_request_fingerprint_payload_schema_strict",
+      "case_origin": "external_092039_regression",
+      "schema": "state_resolution_request_contract_v0_1_2.json::fingerprint_payload_schema",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "False was expected"
+      ]
+    },
+    {
+      "case_id": "F09_CYCLE_top_level_response_fingerprint_payload_schema_cyclefree",
+      "case_origin": "external_092039_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json::fingerprint_payload_schema",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "F08_audit_genealogy_includes_075406_083304_092039",
+      "case_origin": "external_092039_regression",
+      "schema": "runtime_provider_contract_schema_hardening_v0_1_2_scope.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "positive_reuse_hit_market_response",
+      "case_origin": "original_31_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "positive_authorized_reference",
+      "case_origin": "original_31_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "positive_market_bundle",
+      "case_origin": "original_31_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "positive_event_bundle",
+      "case_origin": "original_31_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "positive_market_and_event_bundle_unique_refs",
+      "case_origin": "external_083304_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "F09_100143_response_bundle_ref_sha_disallowed",
+      "case_origin": "external_100143_regression",
+      "schema": "runtime_user_invocation_response_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "{'ref_id': 'bundle_001', 'ref_type': 'state_bundle_manifest', 'availability': 'available', 'sha256': '50bcd8456ee0b733b54165a0638105169d5440c33896c88b76a050fbfde6186e'} is not valid under any of the given schemas",
+        "Additional properties are not allowed ('sha256' was unexpected)",
+        "response state_bundle_manifest_ref must be id-only to avoid mutable bundle sha"
+      ]
+    },
+    {
+      "case_id": "F09_100143_response_artifact_missing_from_bundle_artifacts",
+      "case_origin": "external_100143_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "embedded response artifact_reference missing from bundle artifact_hashes"
+      ]
+    },
+    {
+      "case_id": "F09_100143_source_ids_hashes_cardinality_mismatch",
+      "case_origin": "external_100143_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "source_dataset_ids and source_content_hashes cardinality mismatch"
+      ]
+    },
+    {
+      "case_id": "F09_100143_duplicate_artifact_id_conflicting_hash",
+      "case_origin": "external_100143_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "duplicate artifact_id with conflicting sha256"
+      ]
+    },
+    {
+      "case_id": "F09_100143_duplicate_field_lineage_id_conflicting_builder",
+      "case_origin": "external_100143_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "duplicate field_id with conflicting builder_id"
+      ]
+    },
+    {
+      "case_id": "F09_100143_shared_ajv_registry_compile_no_duplicate_ids",
+      "case_origin": "external_100143_regression",
+      "schema": "all_provider_contracts_shared_ajv_registry",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "F05_dataset_validation_restriction_not_weakened_by_response",
+      "case_origin": "external_105019_f05_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "response validation_status weakens dataset_ref validation_status for market_state"
+      ]
+    },
+    {
+      "case_id": "F05_dataset_validation_restriction_not_weakened_by_bundle",
+      "case_origin": "external_105019_f05_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "bundle validation_status is less restrictive than response validation_status",
+        "bundle validation_status weakens component validation_status"
+      ]
+    },
+    {
+      "case_id": "F05_dataset_reuse_restriction_not_weakened_by_bundle",
+      "case_origin": "external_105019_f05_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "bundle reuse_certification weakens dataset reuse_eligibility"
+      ]
+    },
+    {
+      "case_id": "F05_combined_bundle_max_validation_severity_propagation",
+      "case_origin": "external_105019_f05_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "bundle validation_status is less restrictive than response validation_status",
+        "bundle validation_status weakens component validation_status"
+      ]
+    },
+    {
+      "case_id": "F05_combined_bundle_max_reuse_restriction_propagation",
+      "case_origin": "external_105019_f05_regression",
+      "schema": "state_bundle_manifest_contract_v0_1_2.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "bundle reuse_certification weakens dataset reuse_eligibility"
+      ]
+    },
+    {
+      "case_id": "F08_active_genealogy_marker_matches_latest_external_audit",
+      "case_origin": "external_131106_f08_regression",
+      "schema": "living_documents",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "F08_active_current_package_label_matches_corrective_iteration",
+      "case_origin": "external_131106_f08_regression",
+      "schema": "living_documents",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "F08_changelog_audit_genealogy_entries_are_unique",
+      "case_origin": "external_131106_f08_regression",
+      "schema": "living_documents",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "F08_gate_readout_genealogy_marker_matches_latest_external_audit",
+      "case_origin": "external_131106_f08_regression",
+      "schema": "living_documents",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "F08_gate_readout_current_package_label_matches_corrective_iteration",
+      "case_origin": "external_131106_f08_regression",
+      "schema": "living_documents",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "F08_changelog_summary_matches_genealogy_block",
+      "case_origin": "external_131106_f08_regression",
+      "schema": "living_documents",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    }
+  ],
+  "external_105019_f05_regressions": "PASS"
+}

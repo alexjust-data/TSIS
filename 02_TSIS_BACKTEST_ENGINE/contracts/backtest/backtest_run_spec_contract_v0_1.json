@@ -1,0 +1,726 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tsis.local/contracts/backtest/backtest_run_spec_contract_v0_1.json",
+  "title": "TSIS BacktestRunSpec Contract v0.1",
+  "description": "Consumer-owned specification for one governed TSIS backtest run. It declares requirements but never accepts physical market-data or state-dataset paths.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_type",
+    "contract_version",
+    "run_id",
+    "backtest_id",
+    "run_purpose",
+    "data_request",
+    "replay_policy",
+    "decision_policy",
+    "execution_policy",
+    "accounting_policy",
+    "claims"
+  ],
+  "properties": {
+    "contract_type": {
+      "const": "BACKTEST_RUN_SPEC"
+    },
+    "contract_version": {
+      "const": "0.1"
+    },
+    "run_id": {
+      "$ref": "#/$defs/safe_id"
+    },
+    "backtest_id": {
+      "$ref": "#/$defs/safe_id"
+    },
+    "run_purpose": {
+      "type": "string",
+      "enum": [
+        "mechanical_validation",
+        "research_backtest",
+        "strategy_evaluation"
+      ]
+    },
+    "created_at_utc": {
+      "$ref": "#/$defs/date_time"
+    },
+    "data_request": {
+      "$ref": "#/$defs/data_request"
+    },
+    "state_consumption": {
+      "$ref": "#/$defs/state_consumption"
+    },
+    "replay_policy": {
+      "$ref": "#/$defs/replay_policy"
+    },
+    "decision_policy": {
+      "$ref": "#/$defs/decision_policy"
+    },
+    "strategy": {
+      "$ref": "#/$defs/strategy"
+    },
+    "execution_policy": {
+      "$ref": "#/$defs/execution_policy"
+    },
+    "accounting_policy": {
+      "$ref": "#/$defs/accounting_policy"
+    },
+    "claims": {
+      "$ref": "#/$defs/claims"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true,
+      "default": []
+    }
+  },
+  "$defs": {
+    "safe_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "date_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "artifact_contract_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_id",
+        "contract_version",
+        "contract_sha256"
+      ],
+      "properties": {
+        "contract_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contract_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contract_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "data_request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dataset_id",
+        "universe_id",
+        "date_range",
+        "price_views",
+        "session_policy",
+        "timezone",
+        "calendar_id",
+        "missing_data_policy_id",
+        "corporate_action_policy_id"
+      ],
+      "properties": {
+        "dataset_id": {
+          "$ref": "#/$defs/safe_id"
+        },
+        "universe_id": {
+          "$ref": "#/$defs/safe_id"
+        },
+        "date_range": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "date_start",
+            "date_end"
+          ],
+          "properties": {
+            "date_start": {
+              "$ref": "#/$defs/date"
+            },
+            "date_end": {
+              "$ref": "#/$defs/date"
+            }
+          }
+        },
+        "price_views": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "signal",
+            "execution",
+            "valuation"
+          ],
+          "properties": {
+            "signal": {
+              "$ref": "#/$defs/safe_id"
+            },
+            "execution": {
+              "$ref": "#/$defs/safe_id"
+            },
+            "valuation": {
+              "$ref": "#/$defs/safe_id"
+            }
+          }
+        },
+        "session_policy": {
+          "$ref": "#/$defs/safe_id"
+        },
+        "timezone": {
+          "type": "string",
+          "minLength": 1
+        },
+        "calendar_id": {
+          "$ref": "#/$defs/safe_id"
+        },
+        "missing_data_policy_id": {
+          "$ref": "#/$defs/safe_id"
+        },
+        "corporate_action_policy_id": {
+          "$ref": "#/$defs/safe_id"
+        },
+        "symbols_optional": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9.-]{0,15}$"
+          },
+          "uniqueItems": true,
+          "default": []
+        },
+        "candidate_consumption_policy_id": {
+          "$ref": "#/$defs/safe_id"
+        },
+        "fixture_kind": {
+          "type": "string",
+          "enum": [
+            "NON_EMPIRICAL_TEST_FIXTURE",
+            "TSIS_REAL_DATA_FIXTURE",
+            "GOVERNED_HISTORICAL_DATASET"
+          ]
+        },
+        "fixture_id": {
+          "$ref": "#/$defs/safe_id"
+        }
+      }
+    },
+    "state_consumption": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "consumption_purpose",
+        "provider_contracts",
+        "resolution_policy",
+        "requests"
+      ],
+      "properties": {
+        "consumption_purpose": {
+          "const": "backtest"
+        },
+        "provider_contracts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "state_resolution_request",
+            "runtime_user_invocation_interface",
+            "runtime_user_invocation_response",
+            "state_bundle_manifest",
+            "runtime_capability_effective_view"
+          ],
+          "properties": {
+            "state_resolution_request": {
+              "$ref": "#/$defs/artifact_contract_ref"
+            },
+            "market_state_request": {
+              "$ref": "#/$defs/artifact_contract_ref"
+            },
+            "event_state_request": {
+              "$ref": "#/$defs/artifact_contract_ref"
+            },
+            "runtime_user_invocation_interface": {
+              "$ref": "#/$defs/artifact_contract_ref"
+            },
+            "runtime_user_invocation_response": {
+              "$ref": "#/$defs/artifact_contract_ref"
+            },
+            "state_bundle_manifest": {
+              "$ref": "#/$defs/artifact_contract_ref"
+            },
+            "runtime_capability_effective_view": {
+              "$ref": "#/$defs/artifact_contract_ref"
+            }
+          }
+        },
+        "resolution_policy": {
+          "$ref": "#/$defs/state_resolution_policy"
+        },
+        "requests": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/state_profile_request"
+          },
+          "allOf": [
+            {
+              "contains": {
+                "type": "object",
+                "properties": {
+                  "state_kind": {
+                    "const": "market_state"
+                  }
+                },
+                "required": [
+                  "state_kind"
+                ]
+              },
+              "minContains": 0,
+              "maxContains": 1
+            },
+            {
+              "contains": {
+                "type": "object",
+                "properties": {
+                  "state_kind": {
+                    "const": "event_state"
+                  }
+                },
+                "required": [
+                  "state_kind"
+                ]
+              },
+              "minContains": 0,
+              "maxContains": 1
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "requests": {
+                "type": "array",
+                "contains": {
+                  "type": "object",
+                  "properties": {
+                    "state_kind": {
+                      "const": "market_state"
+                    }
+                  },
+                  "required": [
+                    "state_kind"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "requests"
+            ]
+          },
+          "then": {
+            "properties": {
+              "provider_contracts": {
+                "type": "object",
+                "required": [
+                  "market_state_request"
+                ],
+                "properties": {
+                  "market_state_request": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "requests": {
+                "type": "array",
+                "contains": {
+                  "type": "object",
+                  "properties": {
+                    "state_kind": {
+                      "const": "event_state"
+                    }
+                  },
+                  "required": [
+                    "state_kind"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "requests"
+            ]
+          },
+          "then": {
+            "properties": {
+              "provider_contracts": {
+                "type": "object",
+                "required": [
+                  "event_state_request"
+                ],
+                "properties": {
+                  "event_state_request": true
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "state_resolution_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy_id",
+        "provider_request_cardinality",
+        "provider_response_cardinality",
+        "bundle_cardinality",
+        "partial_success_allowed",
+        "require_single_bundle_covers_all_requests",
+        "capability_view_mode"
+      ],
+      "properties": {
+        "policy_id": {
+          "$ref": "#/$defs/safe_id"
+        },
+        "provider_request_cardinality": {
+          "const": "ONE_PER_STATE_KIND"
+        },
+        "provider_response_cardinality": {
+          "const": "ONE_PER_STATE_RESOLUTION_REQUEST"
+        },
+        "bundle_cardinality": {
+          "const": "ONE_AGGREGATED_BUNDLE_PER_BACKTEST_PREFLIGHT"
+        },
+        "partial_success_allowed": {
+          "const": false
+        },
+        "require_single_bundle_covers_all_requests": {
+          "const": true
+        },
+        "capability_view_mode": {
+          "const": "CURRENT_EFFECTIVE_VIEW"
+        }
+      }
+    },
+    "state_profile_request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "consumer_request_id",
+        "state_kind",
+        "profile_id",
+        "representation_version",
+        "resolution",
+        "required_information_objects",
+        "required_fields",
+        "coverage_policy",
+        "temporal_policy"
+      ],
+      "properties": {
+        "consumer_request_id": {
+          "$ref": "#/$defs/safe_id"
+        },
+        "state_kind": {
+          "type": "string",
+          "enum": [
+            "market_state",
+            "event_state"
+          ]
+        },
+        "profile_id": {
+          "$ref": "#/$defs/safe_id"
+        },
+        "representation_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resolution": {
+          "$ref": "#/$defs/safe_id"
+        },
+        "required_information_objects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/safe_id"
+          },
+          "uniqueItems": true,
+          "default": []
+        },
+        "required_fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/safe_id"
+          },
+          "uniqueItems": true,
+          "default": []
+        },
+        "coverage_policy": {
+          "type": "string",
+          "enum": [
+            "REQUIRE_COMPLETE",
+            "ALLOW_DECLARED_UNAVAILABLE_CONTEXTS"
+          ]
+        },
+        "temporal_policy": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "decision_clock_basis",
+            "require_available_at",
+            "future_window_allowed",
+            "outcome_dependency_allowed"
+          ],
+          "properties": {
+            "decision_clock_basis": {
+              "const": "event_loop_clock"
+            },
+            "require_available_at": {
+              "const": true
+            },
+            "future_window_allowed": {
+              "const": false
+            },
+            "outcome_dependency_allowed": {
+              "const": false
+            },
+            "event_state_consumption_legality": {
+              "type": "array",
+              "items": {
+                "const": "decision_safe"
+              },
+              "maxItems": 1,
+              "uniqueItems": true
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state_kind": {
+                "const": "event_state"
+              }
+            },
+            "required": [
+              "state_kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "temporal_policy": {
+                "type": "object",
+                "required": [
+                  "event_state_consumption_legality"
+                ],
+                "properties": {
+                  "event_state_consumption_legality": {
+                    "type": "array",
+                    "minItems": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "replay_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy_id",
+        "market_data_feed",
+        "state_feed",
+        "event_ordering_policy_id",
+        "hash_verification_required"
+      ],
+      "properties": {
+        "policy_id": {
+          "$ref": "#/$defs/safe_id"
+        },
+        "market_data_feed": {
+          "const": "HistoricalReplayFeed"
+        },
+        "state_feed": {
+          "type": "string",
+          "enum": [
+            "NONE",
+            "StateReplayFeed"
+          ]
+        },
+        "event_ordering_policy_id": {
+          "$ref": "#/$defs/safe_id"
+        },
+        "hash_verification_required": {
+          "const": true
+        }
+      }
+    },
+    "decision_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision_resolution",
+        "decision_clock",
+        "state_visibility_rule"
+      ],
+      "properties": {
+        "decision_resolution": {
+          "$ref": "#/$defs/safe_id"
+        },
+        "decision_clock": {
+          "const": "event_loop_clock"
+        },
+        "state_visibility_rule": {
+          "const": "state_available_at_lte_decision_clock"
+        }
+      }
+    },
+    "strategy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "strategy_id",
+        "strategy_version"
+      ],
+      "properties": {
+        "strategy_id": {
+          "$ref": "#/$defs/safe_id"
+        },
+        "strategy_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "parameters_artifact_id": {
+          "$ref": "#/$defs/safe_id"
+        },
+        "parameters_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "dependentRequired": {
+        "parameters_artifact_id": [
+          "parameters_sha256"
+        ],
+        "parameters_sha256": [
+          "parameters_artifact_id"
+        ]
+      }
+    },
+    "execution_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy_id",
+        "fill_model_id",
+        "execution_price_source"
+      ],
+      "properties": {
+        "policy_id": {
+          "$ref": "#/$defs/safe_id"
+        },
+        "fill_model_id": {
+          "$ref": "#/$defs/safe_id"
+        },
+        "execution_price_source": {
+          "const": "HistoricalReplayFeed_via_ExecutionModel"
+        }
+      }
+    },
+    "accounting_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy_id",
+        "cost_model_id",
+        "starting_equity"
+      ],
+      "properties": {
+        "policy_id": {
+          "$ref": "#/$defs/safe_id"
+        },
+        "cost_model_id": {
+          "$ref": "#/$defs/safe_id"
+        },
+        "starting_equity": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    },
+    "claims": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "broker_cost_realism_claimed",
+        "fill_realism_claimed",
+        "short_tradability_evaluated",
+        "edge_evaluated"
+      ],
+      "properties": {
+        "broker_cost_realism_claimed": {
+          "type": "boolean"
+        },
+        "fill_realism_claimed": {
+          "type": "boolean"
+        },
+        "short_tradability_evaluated": {
+          "type": "boolean"
+        },
+        "edge_evaluated": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "state_consumption": true
+        },
+        "required": [
+          "state_consumption"
+        ]
+      },
+      "then": {
+        "properties": {
+          "replay_policy": {
+            "type": "object",
+            "properties": {
+              "state_feed": {
+                "const": "StateReplayFeed"
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "replay_policy": {
+            "type": "object",
+            "properties": {
+              "state_feed": {
+                "const": "NONE"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

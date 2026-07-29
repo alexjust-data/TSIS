@@ -1,0 +1,129 @@
+{
+  "accounting_policy": {
+    "cost_source": "DeterministicFillSimulator.CostBreakdownV0",
+    "costs_counted_exactly_once": true,
+    "policy_id": "BT011_FILL_RECORD_ACCOUNTING_V0_1",
+    "rounding_policy_id": "ROUND_HALF_EVEN_CENTS"
+  },
+  "capability": "SINGLE_STRATEGY_END_TO_END_BACKTEST",
+  "cost_model": {
+    "authorized_borrow_model": false,
+    "borrow_fee_per_order": "0",
+    "borrow_fee_policy": "ZERO_ONLY",
+    "commission_per_share": "0.005",
+    "cost_model_id": "bt_gate_011_commission_minimum_v0_1",
+    "cost_model_version": "0.1",
+    "currency": "USD",
+    "fixed_fee_per_order": "0",
+    "locate_fee_per_share": "0",
+    "minimum_commission_per_order": "1.00",
+    "other_fixed_fee_per_filled_order": "0",
+    "regulatory_fee_bps": "0",
+    "regulatory_fee_per_share": "0",
+    "rounding_policy_id": "ROUND_HALF_EVEN_CENTS",
+    "routing_or_ecn_fee_per_share": "0"
+  },
+  "execution_profile": {
+    "ambiguous_bar_policy": "FAIL_AMBIGUOUS_BAR_ONLY",
+    "broker_cost_realism_claimed": false,
+    "cost_model_id": "bt_gate_011_commission_minimum_v0_1",
+    "cost_model_version": "0.1",
+    "edge_evaluated": false,
+    "execution_profile_id": "bar_based_execution_profile_v0_1",
+    "execution_profile_version": "0.1",
+    "fill_model_id": "DETERMINISTIC_FILL_SIMULATOR_V0_1",
+    "fill_model_version": "0.1",
+    "fill_realism_claimed": false,
+    "missing_execution_price_policy": "NO_FILL_MISSING_PRICE_OR_NO_FILL_GAP",
+    "rounding_policy_id": "ROUND_HALF_EVEN_CENTS",
+    "short_execution_mechanics_state": "ALLOWED_FOR_ENGINE_VALIDATION",
+    "short_tradability_state": "NOT_EVALUATED",
+    "slippage_model_id": "zero_slippage_v0_1",
+    "slippage_model_version": "0.1",
+    "slippage_unit": "ZERO_SLIPPAGE",
+    "slippage_value": "0",
+    "terminal_order_outcome_policy_id": "EVALUATION_OUTCOME_THEN_DAY_TERMINAL_V0_1",
+    "tick_size_policy_id": "PASSTHROUGH_SOURCE_PRICE_WITH_DECLARED_DECIMAL_PRECISION"
+  },
+  "fixture_id": "TSIS_REAL_DATA_FIXTURE_2026_01_05_LT1B_QG5_V0_1",
+  "gate_id": "BT-GATE-011",
+  "initial_cash": "10000.00",
+  "input_identities": {
+    "dataset_id": "ohlcv_1m_quote_guarded_full_universe_v0_2_candidate",
+    "fixture_kind": "TSIS_REAL_DATA_FIXTURE",
+    "preflight_report_path": "C:/TSIS_Data/02_TSIS_BACKTEST_ENGINE/runs/run_preflight_real_fixture_2026_01_05_qg5_v0_2/data_preflight_report.json",
+    "preflight_report_sha256": "5c0cf5fcefa9d0f85625e5725aa332c61b546a716f556c2da25208cd7570d663",
+    "replay_event_sequence_sha256": "04f1ef31a3e6a93f71cc6d5cd517a8d98d5cd955a2e59bc0bcf788c99745b16f"
+  },
+  "manifest_schema_version": "bt_end_to_end_run_manifest_v0_1",
+  "output_artifacts": {
+    "backtest_run_request.json": "0f6174edf0f0402c0b88adf75a448ea45d8021cd7a00b8dfbdec48517a96f881",
+    "cash_ledger.json": "48aa9361601d4ddcde9a98427027104edfa38ba9099d46abe4da9b6f33ae1a18",
+    "cost_breakdowns.json": "94995221e68ef0363b46a40e774fefbed617056c99d40b800746ace4d0663940",
+    "decisions.json": "330f2a35a774445f0ef4665b677ecca41bde8c8899d35a9885bd508746e17403",
+    "determinism_report.json": "99a7cc8fe13754b69fb1ee43b40b6552cd5060b4c09b6c4c49689a50ca261cb8",
+    "equity_curve.json": "46cc85cbf35c39ef04a064cd8554abf60c046b10bf998462d7da5f7dec0e6532",
+    "fills.json": "9bb2737ad953df210c9fda2a1e98f0955010e877288948826d1d9eb5ba1de856",
+    "metrics_summary.json": "2b1934302774b4c3cb3f3937805ca429af2ca547e85c52953813f4a08ef24d4b",
+    "order_intents.json": "d89251a20e45ae5ae25e48527506f15b6cd8d45da4261852a08f59be92a7f678",
+    "order_simulation_results.json": "087f637e6927bbdb61695ced5fadc5b2fee5a9278fbdf6d638d0eb63fa7f0999",
+    "orders.json": "e3d20a6996509fcc7f1c02298922da7a60acfa1cac4e237152fbbc272ce93a21",
+    "run_summary.json": "fcc71e720ff9cb54f7412383e18728ff3a84972cf99a6ca0db0462890156d415",
+    "strategy_spec.json": "d6a7a7f658957c474eff89fabed3fa4c2e651fc18ba3a0772f813d01276682db",
+    "trade_ledger.json": "5881b14d56b74d96cb6b1c68efc516f80994161fe670ebe9854778c60ab50b14",
+    "validation_report.json": "b41fb1637ab8b143cc242928e731daa49ebc1d56163cb02a04496379ce01f526"
+  },
+  "quantity_policy": {
+    "policy_id": "FIXED_QUANTITY_PER_SYMBOL_V0_1",
+    "quantity_per_symbol": 100
+  },
+  "reconciliation_status": "PASS",
+  "run_classifications": {
+    "ECONOMIC_REALISM": "INCOMPLETE",
+    "EDGE_EVIDENCE": "NOT_AUTHORIZED",
+    "NOT_ECONOMICALLY_REALISTIC": true,
+    "NOT_EDGE_EVIDENCE": true,
+    "RUN_PURPOSE": "ENGINE_VALIDATION_RUN",
+    "STRATEGY_OPTIMIZATION": "NOT_AUTHORIZED"
+  },
+  "run_id": "bt_gate_011_open_short_close_qg5_v0_1",
+  "session": {
+    "calendar_id": "XNYS",
+    "date_range": {
+      "date_end": "2026-01-05",
+      "date_start": "2026-01-05"
+    },
+    "session_date": "2026-01-05",
+    "session_policy": "REGULAR_ONLY",
+    "timezone": "America/New_York"
+  },
+  "slippage_model": {
+    "side_adjustment_rule": "ADVERSE_BY_SIDE",
+    "slippage_model_id": "zero_slippage_v0_1",
+    "slippage_model_version": "0.1",
+    "slippage_unit": "ZERO_SLIPPAGE",
+    "slippage_value": "0"
+  },
+  "software_identity": {
+    "package": "tsis-backtest-engine",
+    "package_version": "0.1.0",
+    "python_module": "tsis_backtest.backtest.runner"
+  },
+  "state_provider_restrictions": {
+    "Event State consumption": "NOT_AUTHORIZED",
+    "Market State consumption": "NOT_AUTHORIZED",
+    "StateReplayFeed": "NOT_AUTHORIZED",
+    "provider modification": "NOT_AUTHORIZED",
+    "state_bundle_physical_read": "NOT_AUTHORIZED"
+  },
+  "strategy_id": "open_short_close_cover_v0_1",
+  "strategy_spec_version": "0.1",
+  "symbol_set": [
+    "ABAT",
+    "ABEO",
+    "ABSI",
+    "ABTC",
+    "ACB"
+  ],
+  "validation_status": "PASS"
+}

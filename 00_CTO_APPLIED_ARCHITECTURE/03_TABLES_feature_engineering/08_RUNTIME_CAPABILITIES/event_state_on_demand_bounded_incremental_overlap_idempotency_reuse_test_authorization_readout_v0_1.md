@@ -1,0 +1,29 @@
+# Event State On-Demand Bounded Incremental Overlap Idempotency Reuse Test Authorization Readout v0.1
+
+Status: `AUTHORIZED_WITH_RESTRICTIONS_CONSUMED_BY_REUSE_TEST`
+Date: `2026-07-28`
+
+```text
+gate = event_state_on_demand_bounded_incremental_overlap_idempotency_reuse_test_authorization_v0_1
+authorized_next_gate = event_state_on_demand_bounded_incremental_overlap_idempotency_reuse_test_v0_1
+combined_candidate_dataset_id = event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3
+combined_candidate_dataset_fingerprint = f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f
+combined_logical_event_state_dataset_fingerprint = 73b2f81b76697eb67b55faffecd36c8e77ecf926c1c1f9e56cf6ee0e0ecb10f6
+review_matrix_sha256 = 7155da65ce890d3699d1d40bdbea31e6eaa388ab2a27888e389472d17551a39c
+scope_sha256 = 8422857060ff21f4593622a0c5fa29e43e80b9d9c6e792f8f77a6a51f60df2aa
+contract_sha256 = 655fcef263b444552cdda7cf36cc698634a6856b44eadd051e6c4866c0985808
+```
+
+The authorization is reuse-test only. It creates no Event State rows, reads no source market data, writes no dataset registry entry and opens no official dataset, production or downstream authority.
+
+Consumed by:
+
+```text
+event_state_on_demand_bounded_incremental_overlap_idempotency_reuse_test_v0_1_20260728T091759Z
+```
+
+Next gate:
+
+```text
+event_state_on_demand_second_generation_incremental_extension_authorization_v0_1
+```

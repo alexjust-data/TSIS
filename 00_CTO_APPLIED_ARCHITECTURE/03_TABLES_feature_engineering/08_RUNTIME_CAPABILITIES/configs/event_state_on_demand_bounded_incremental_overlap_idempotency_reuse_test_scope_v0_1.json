@@ -1,0 +1,73 @@
+{
+  "scope_id": "event_state_on_demand_bounded_incremental_overlap_idempotency_reuse_test_scope_v0_1",
+  "gate": "event_state_on_demand_bounded_incremental_overlap_idempotency_reuse_test_authorization_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_CONSUMED_BY_REUSE_TEST",
+  "date": "2026-07-28",
+  "parent_gate": "event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_v0_1",
+  "authorized_next_gate": "event_state_on_demand_bounded_incremental_overlap_idempotency_reuse_test_v0_1",
+  "reviewed_incremental_execution_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+  "reviewed_incremental_candidate_review_run_id": "event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_v0_1_20260728T091026Z",
+  "combined_candidate_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+  "combined_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+  "combined_logical_event_state_dataset_fingerprint": "73b2f81b76697eb67b55faffecd36c8e77ecf926c1c1f9e56cf6ee0e0ecb10f6",
+  "combined_physical_artifact_fingerprint": "dd78476d760b3bea2bad4fe78d89add430eec3d9f0ba9650261f07304998cc82",
+  "combined_validation_result_fingerprint": "8bb08f0f2afdff138064758bda45f21ca55ac415f760ce54816f070bb958a37b",
+  "combined_registry_entry_fingerprint": "0de76e5d0366d792f2210cb98aa49286681c44deab50860d0f5cacf8f0426d30",
+  "review_matrix_sha256": "7155da65ce890d3699d1d40bdbea31e6eaa388ab2a27888e389472d17551a39c",
+  "context_ledger_sha256": "d3936b560cd0fb1f28079dc3d0d951c474d9f235cdd5170a3872909f1071e4e9",
+  "fingerprint_comparison_sha256": "84f46ae49bc45c624ea980ede226f22dce7482c1be300f78cedf83ff90e7c8f7",
+  "event_state_profile_id": "event_state_core_four_intraday_profile_v0_1",
+  "event_type_id": "event_type:market_data:session_opened",
+  "subject_scope": "exchange_session",
+  "exchange_scope": [
+    "XNYS"
+  ],
+  "session_dates": [
+    "2021-01-19",
+    "2021-03-15",
+    "2022-11-25",
+    "2024-03-11"
+  ],
+  "instrument_ids": [
+    "figi_share_class:BBG001S5N8T1",
+    "figi_share_class:BBG001S8T7K0",
+    "figi_share_class:BBG001S6RSK0"
+  ],
+  "expected_requested_contexts": 12,
+  "expected_represented_contexts": 11,
+  "expected_unavailable_contexts": 1,
+  "expected_reuse_hit_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+  "expected_reuse_hit_candidate_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+  "reuse_policy": "reuse_if_exact_validated_incremental_overlap_match_or_block",
+  "authorized_operations_for_next_gate_only": {
+    "registry_metadata_lookup": true,
+    "candidate_artifact_availability_check": true,
+    "candidate_record_content_read": false,
+    "event_state_materializer_execution": false,
+    "market_state_materializer_execution": false,
+    "source_market_data_rows_read": false,
+    "new_candidate_dataset_registry_entries": false,
+    "registry_entry_mutation": false
+  },
+  "expected_zero_counters_for_next_gate": {
+    "event_state_materializer_executions": 0,
+    "market_state_materializer_executions": 0,
+    "source_market_data_rows_read": 0,
+    "event_state_candidate_records_read": 0,
+    "market_state_candidate_records_read": 0,
+    "new_candidate_dataset_registry_entries": 0,
+    "baseline_registry_entry_mutations": 0,
+    "combined_registry_entry_mutations": 0,
+    "official_dataset_promotions": 0,
+    "production_authorizations": 0,
+    "downstream_authorizations": 0
+  },
+  "official_event_state_dataset": false,
+  "official_dataset": false,
+  "production": false,
+  "downstream": false,
+  "consumed_by_run_id": "event_state_on_demand_bounded_incremental_overlap_idempotency_reuse_test_v0_1_20260728T091759Z",
+  "consumed_at_utc": "2026-07-28T09:17:59Z",
+  "next_institutional_gate_after_success": "event_state_on_demand_second_generation_incremental_extension_authorization_v0_1",
+  "scope_sha256": "8422857060ff21f4593622a0c5fa29e43e80b9d9c6e792f8f77a6a51f60df2aa"
+}

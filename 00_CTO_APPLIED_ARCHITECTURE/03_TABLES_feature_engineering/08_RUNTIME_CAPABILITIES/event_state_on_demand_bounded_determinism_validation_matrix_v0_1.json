@@ -1,0 +1,199 @@
+{
+  "review_id": "event_state_on_demand_bounded_determinism_validation_v0_1_20260728T000000Z",
+  "review_gate": "event_state_on_demand_bounded_determinism_validation_v0_1",
+  "status": "CLOSED_APPROVED_DETERMINISM_FOR_BOUNDED_SCOPE_WITH_RESTRICTIONS_NO_REUSE_TRANSITION",
+  "date": "2026-07-28",
+  "baseline_run_id": "event_state_on_demand_bounded_execution_v0_1_20260727T200322Z",
+  "successful_rerun_run_id": "event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070338Z",
+  "invalid_partial_attempt_run_id": "event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T065658Z",
+  "blocked_prior_attempt_run_id": "event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070142Z",
+  "comparison_fingerprint": "9580cc5f747ef6c6fd3ec2b3c92460a7ce0eba6e9164248e636ab241dcf55c55",
+  "normalized_logical_dataset_fingerprint": "e2c47083b8dd560e67bcda32b0063cf9f468754e34f76b82e9f839046d375699",
+  "determinism_status": "PROVEN_FOR_BOUNDED_SCOPE",
+  "scope": {
+    "profile_id": "event_state_core_four_intraday_profile_v0_1",
+    "event_type_id": "event_type:market_data:session_opened",
+    "subject_scope": "exchange_session",
+    "requested_contexts": 9,
+    "represented_contexts": 8,
+    "unavailable_contexts": 1,
+    "max_contexts": 9
+  },
+  "decision": {
+    "determinism_validation_decision": "APPROVED_AS_BOUNDED_DETERMINISM_EVIDENCE_WITH_RESTRICTIONS_NO_REUSE_TRANSITION",
+    "scientific_determinism_proven_for_bounded_scope": true,
+    "comparison_blocking_failures": 0,
+    "hard_validation_failures": 0,
+    "runtime_only_differences": 4,
+    "reuse_transition_ready": true,
+    "reuse_eligibility_after_validation": "pending_idempotency_reuse_test",
+    "reuse_eligibility_changed_by_this_gate": false,
+    "official_event_state_dataset_after_validation": false,
+    "production_after_validation": false,
+    "downstream_after_validation": false
+  },
+  "findings": [
+    {
+      "check_id": "baseline_and_rerun_authority",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "baseline_run_id": "event_state_on_demand_bounded_execution_v0_1_20260727T200322Z",
+        "rerun_run_id": "event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070338Z",
+        "request_fingerprint_match": true,
+        "dependency_resolution_fingerprint_match": true,
+        "event_type_registry_snapshot_match": true,
+        "event_state_execution_plan_semantics_fingerprint_match": true
+      },
+      "conclusion": "The rerun used the same governed Event State request, dependency resolution, Event Type registry snapshot and normalized execution-plan semantics as the baseline."
+    },
+    {
+      "check_id": "fresh_event_state_rebuild_no_event_state_reuse",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "fresh_event_state_materializer_execution_proven": true,
+        "reuse_existing_event_state_candidate_output": false,
+        "event_state_candidate_records_emitted": 8,
+        "candidate_dataset_registry_entries_written": 0,
+        "deterministic_rerun_evidence_entries_written": 1
+      },
+      "conclusion": "The rerun rebuilt Event State and did not return the baseline Event State candidate as a cache hit."
+    },
+    {
+      "check_id": "market_state_dependency_preserved_not_rematerialized",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "market_state_dependency_request_fingerprint_match": true,
+        "market_state_dependency_execution_plan_fingerprint_match": true,
+        "market_state_candidate_dataset_fingerprint_match": true,
+        "market_state_binding_set_match": true,
+        "market_state_not_rematerialized_by_this_gate": true,
+        "source_market_data_rows_read": 0
+      },
+      "conclusion": "The Event State rerun resolved the same governed Market State dependency and did not rematerialize Market State."
+    },
+    {
+      "check_id": "event_structural_bindings",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "event_instance_set_match": true,
+        "event_window_binding_set_match": true,
+        "instrument_projection_set_match": true,
+        "event_instances_created": 3,
+        "event_window_bindings_created": 3,
+        "instrument_session_projections_created": 9
+      },
+      "conclusion": "Event Instances, Window Bindings and Instrument Session Projections are reproduced with the same governed identities."
+    },
+    {
+      "check_id": "event_state_record_identity_and_content",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "event_state_record_id_set_match": true,
+        "normalized_event_state_content_fingerprint_set_match": true,
+        "normalized_record_content_match": true,
+        "state_output_fingerprint_set_match": true,
+        "canonical_context_set_match": true,
+        "row_comparison_count": 8
+      },
+      "conclusion": "All 8 baseline Event State records are reproduced with matching canonical identity, normalized content and Market State output fingerprints."
+    },
+    {
+      "check_id": "unavailable_context_preservation",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "unavailable_context_set_match": true,
+        "requested_contexts": 9,
+        "represented_contexts": 8,
+        "unavailable_contexts": 1,
+        "missing_exact_market_state_bindings": 1,
+        "fallback_uses": 0
+      },
+      "conclusion": "The same 1 unavailable context is preserved and was not silently materialized, substituted or dropped."
+    },
+    {
+      "check_id": "state_role_and_consumption_legality",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "state_role_set_match": true,
+        "consumption_legality_set_match": true,
+        "restriction_set_match": true
+      },
+      "conclusion": "State role, consumption legality and restrictions are reproduced independently and consistently."
+    },
+    {
+      "check_id": "validation_status_and_hard_failures",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "validation_status_match": true,
+        "hard_validation_failures_match": true,
+        "rerun_hard_validation_failures": 0,
+        "comparison_blocking_failures": []
+      },
+      "conclusion": "Validation status and hard failure count are reproduced with 0 comparison blocking failures."
+    },
+    {
+      "check_id": "runtime_only_differences_classification",
+      "status": "PASS_WITH_RESTRICTION",
+      "severity": "RESTRICTION",
+      "evidence": {
+        "runtime_only_differences": [
+          "execution_plan_fingerprint_match",
+          "raw_event_state_record_fingerprint_set_match",
+          "event_state_candidate_dataset_fingerprint_match",
+          "legacy_logical_dataset_fingerprint_match"
+        ],
+        "runtime_differences_only": true,
+        "normalized_execution_plan_semantics_match": true,
+        "normalized_logical_dataset_fingerprint_match": true
+      },
+      "conclusion": "Four expected runtime or legacy physical differences are present and non-blocking after applying the predeclared normalization policy."
+    },
+    {
+      "check_id": "prior_attempt_preservation",
+      "status": "PASS_WITH_RESTRICTION",
+      "severity": "RESTRICTION",
+      "evidence": {
+        "invalid_partial_attempt": "event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T065658Z",
+        "invalid_partial_attempt_classification": "invalid_partial_attempt_no_materialization_no_authority_consumed",
+        "blocked_prior_attempt": "event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070142Z",
+        "blocked_prior_attempt_classification": "comparison_normalization_too_strict_not_content_mismatch"
+      },
+      "conclusion": "Prior invalid or blocked attempts are retained as evidence and are not used as the successful determinism proof."
+    },
+    {
+      "check_id": "reuse_and_consumption_boundary",
+      "status": "PASS_WITH_RESTRICTION",
+      "severity": "RESTRICTION",
+      "evidence": {
+        "reuse_transition_ready": true,
+        "reuse_eligibility_after_rerun": "pending_determinism_validation",
+        "reuse_eligibility_after_validation": "pending_idempotency_reuse_test",
+        "reuse_eligibility_changes": 0,
+        "official_event_state_dataset": false,
+        "production": false,
+        "downstream": false
+      },
+      "conclusion": "Determinism is proven for the bounded scope, but reuse eligibility is not changed by this gate. Idempotency/reuse still requires a separate authorization."
+    }
+  ],
+  "evidence_refs": {
+    "baseline_final_manifest": "runs/event_state_on_demand_bounded_execution_v0_1_20260727T200322Z/final_manifest.json",
+    "successful_rerun_final_manifest": "runs/event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070338Z/final_manifest.json",
+    "successful_rerun_readout": "runs/event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070338Z/event_state_on_demand_bounded_deterministic_rerun_readout_v0_1.md",
+    "comparison": "runs/event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070338Z/event_state_bounded_deterministic_rerun_comparison_v0_1.json",
+    "determinism_report": "runs/event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070338Z/determinism_report.json",
+    "evidence_entry": "runs/event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070338Z/deterministic_rerun_evidence_entry.json",
+    "invalid_partial_attempt_manifest": "runs/event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T065658Z/final_manifest.json",
+    "blocked_prior_attempt_manifest": "runs/event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070142Z/final_manifest.json",
+    "comparison_contract": "event_state_on_demand_bounded_deterministic_rerun_contract_v0_1.json"
+  },
+  "next_gate": "event_state_on_demand_bounded_idempotency_reuse_test_authorization_v0_1"
+}

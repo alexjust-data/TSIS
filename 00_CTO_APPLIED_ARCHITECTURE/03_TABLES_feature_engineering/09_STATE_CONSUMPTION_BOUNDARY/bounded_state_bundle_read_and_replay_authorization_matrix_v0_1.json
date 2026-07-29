@@ -1,0 +1,59 @@
+{
+  "review_id": "bounded_state_bundle_read_and_replay_authorization_matrix_v0_1",
+  "created_at_utc": "2026-07-28T00:00:00Z",
+  "gate": "bounded_state_bundle_read_and_replay_authorization_v0_1",
+  "status": "CLOSED_BLOCKED_BEFORE_PHYSICAL_READ",
+  "rows": [
+    {
+      "area": "provider_control_plane_reference",
+      "expected": "available RuntimeInvocationResponse and StateBundleManifest",
+      "observed": "case_01_response.json and case_01_bundle.json available",
+      "result": "PASS"
+    },
+    {
+      "area": "response_to_bundle_hash",
+      "expected": "RuntimeInvocationResponse state_bundle_manifest_ref sha256 matches observed bundle file hash",
+      "observed": "34182601597cc409555cfca8fa5946bef2b6630a63fcf5532b34f9fb16163b05",
+      "result": "PASS"
+    },
+    {
+      "area": "bundle_to_response_hash",
+      "expected": "StateBundleManifest runtime_invocation_response_ref sha256 matches observed response file hash",
+      "observed": "declared cdfd7d2acdb3c5e0885a0a96b1add49b49c990846fb02c9618869f9155baafd8; observed 0985e2b97a44e45eb4d05777406f0615f44fb1c80f463a7f2989bdcb9d06bab4",
+      "result": "BLOCK"
+    },
+    {
+      "area": "dataset_identity",
+      "expected": "bundle dataset_id and candidate_dataset_fingerprint match physical candidate registry/final manifest",
+      "observed": "bundle market_state_candidate_scale_validation_reference_v0_1 / 8563b1307af126bcf1cd4ec473bb710dbce9a38aa26f64aab2f080dfb31caea0; physical market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762 / 516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416",
+      "result": "BLOCK"
+    },
+    {
+      "area": "physical_artifact_hash_chain",
+      "expected": "candidate output manifest and state records file hashes are directly frozen for read authorization",
+      "observed": "final_manifest hash available; candidate_output_manifest and parquet hashes discovered through final manifest but not directly frozen by StateBundleManifest",
+      "result": "BLOCK"
+    },
+    {
+      "area": "coverage",
+      "expected": "partial coverage preserved and unaccounted_contexts = 0",
+      "observed": "120 requested, 104 represented, 16 unavailable, 0 unaccounted",
+      "result": "PASS_WITH_RESTRICTIONS"
+    },
+    {
+      "area": "replay_timestamp_contract",
+      "expected": "decision_timestamp_utc, state_as_of_utc and state_available_at_utc are explicit before replay authorization",
+      "observed": "physical schema search found decision_timestamp_utc but not state_as_of_utc or state_available_at_utc",
+      "result": "BLOCK"
+    },
+    {
+      "area": "execution_boundaries",
+      "expected": "no rows read, no StateReplayFeed, no EventLoop, no strategy/orders/fills/PnL",
+      "observed": "all counters remain zero/false",
+      "result": "PASS"
+    }
+  ],
+  "blocking_findings": 4,
+  "authorization_issued": false,
+  "next_required_gate": "state_bundle_manifest_physical_evidence_alignment_v0_1"
+}

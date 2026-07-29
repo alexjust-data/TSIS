@@ -1,0 +1,53 @@
+{
+  "scope_id": "event_state_on_demand_scale_validation_scope_v0_1",
+  "gate": "event_state_on_demand_scale_validation_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_CONSUMED_BY_RUN",
+  "consumed_by_run_id": "event_state_on_demand_scale_validation_v0_1_20260728T120123Z",
+  "consumed_at_utc": "2026-07-28T12:01:23Z",
+  "event_state_profile_id": "event_state_core_four_intraday_profile_v0_1",
+  "event_type_id": "event_type:market_data:session_opened",
+  "subject_scope": "exchange_session",
+  "exchange_id": "XNYS",
+  "source_market_state_dependency": {
+    "runtime_capability_id": "market_state_on_demand_runtime_capability_v0_1",
+    "source_run_id": "market_state_on_demand_scale_validation_v0_1_20260727T133641Z",
+    "candidate_dataset_fingerprint": "516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416",
+    "direct_market_state_path_allowed": false,
+    "market_state_materializer_execution_allowed": false,
+    "source_market_data_reads_allowed": false
+  },
+  "bounded_scale": {
+    "requested_event_state_contexts": 80,
+    "expected_reused_lineage_chain_contexts": 14,
+    "expected_scale_delta_materialized_contexts": 60,
+    "expected_unavailable_contexts": 6,
+    "expected_represented_contexts": 74,
+    "expected_instruments": 10,
+    "expected_sessions": 8
+  },
+  "authority": {
+    "event_state_materializer_execution_allowed": true,
+    "event_state_materializer_scope": "scale_delta_only",
+    "market_state_candidate_file_reads_allowed": true,
+    "event_state_prior_candidate_record_reads_allowed": true,
+    "source_market_data_reads_allowed": false,
+    "market_state_materializer_execution_allowed": false,
+    "official_dataset_promotion_allowed": false,
+    "production_allowed": false,
+    "downstream_consumption_allowed": false,
+    "additional_event_types_allowed": false,
+    "halt_resumed_allowed": false
+  },
+  "limits": {
+    "maximum_requested_event_state_contexts": 80,
+    "maximum_reused_lineage_chain_contexts": 14,
+    "maximum_scale_delta_materialized_contexts": 60,
+    "maximum_unavailable_contexts": 6,
+    "maximum_event_state_candidate_records": 74,
+    "maximum_event_state_candidate_files_written": 1,
+    "maximum_market_state_candidate_records_read": 104,
+    "maximum_source_market_data_rows_read": 0,
+    "maximum_output_bytes": 8000000
+  },
+  "scope_sha256": "f2eef0f07be22e8f6c8a9993dac9dfff4a56daaadf7d982dd591e6a9bd32a90c"
+}

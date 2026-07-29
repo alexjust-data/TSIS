@@ -1,0 +1,633 @@
+{
+  "contract_id": "state_resolution_request_contract_v0_1",
+  "contract_version": "0.1.1",
+  "status": "PROVIDER_CONTRACT_SCHEMA_HARDENED_V0_1_1_NO_EXECUTION",
+  "owner_layer": "08_RUNTIME_CAPABILITIES",
+  "schema_hardening_gate": "runtime_provider_contract_schema_hardening_v0_1_1",
+  "purpose": "Executable provider envelope for Market State and Event State resolution requests.",
+  "contract_hash_policy": {
+    "hash_authority": "PACKAGE_MANIFEST.full_file_sha256",
+    "embedded_contract_hash": "not_used_in_v0_1_1"
+  },
+  "json_schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "request_id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "request_type": {
+        "enum": [
+          "market_state",
+          "event_state"
+        ]
+      },
+      "request_contract_version": {
+        "const": "0.1.1"
+      },
+      "consumer": {
+        "type": "string",
+        "minLength": 1
+      },
+      "consumption_purpose": {
+        "enum": [
+          "planning",
+          "research",
+          "validation",
+          "backtest"
+        ]
+      },
+      "resolution_policy": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "mode": {
+            "enum": [
+              "validate_only",
+              "resolve_reuse_or_authorization",
+              "invoke_with_authorization"
+            ]
+          },
+          "reuse_policy": {
+            "enum": [
+              "metadata_only",
+              "reuse_if_exact_validated_match",
+              "reuse_if_exact_validated_match_or_authorization_required"
+            ]
+          },
+          "allow_new_candidate_execution": {
+            "const": false
+          },
+          "allow_physical_path_input": {
+            "const": false
+          },
+          "requested_output_mode": {
+            "enum": [
+              "metadata_only",
+              "candidate_reference_only"
+            ]
+          },
+          "production": {
+            "const": false
+          },
+          "downstream": {
+            "const": false
+          }
+        },
+        "required": [
+          "mode",
+          "reuse_policy",
+          "allow_new_candidate_execution",
+          "allow_physical_path_input",
+          "requested_output_mode",
+          "production",
+          "downstream"
+        ]
+      },
+      "payload": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "market_state_request": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "request_type": {
+                "const": "market_state"
+              },
+              "profile_id": {
+                "const": "market_state_core_four_intraday_profile_v0_1"
+              },
+              "profile_version_policy": {
+                "const": "exact"
+              },
+              "profile_version": {
+                "type": "string",
+                "minLength": 1
+              },
+              "exchange_scope": {
+                "type": "string",
+                "minLength": 1
+              },
+              "explicit_instrument_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "session_dates": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "resolution": {
+                "type": "string",
+                "minLength": 1
+              },
+              "calendar_authority_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "point_in_time_policy_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_version_policy": {
+                "const": "exact_governed_or_block"
+              },
+              "output_mode": {
+                "const": "candidate"
+              },
+              "reuse_policy": {
+                "enum": [
+                  "reuse_if_exact_validated_match",
+                  "metadata_only"
+                ]
+              }
+            },
+            "required": [
+              "request_type",
+              "profile_id",
+              "profile_version_policy",
+              "profile_version",
+              "exchange_scope",
+              "explicit_instrument_ids",
+              "session_dates",
+              "resolution",
+              "calendar_authority_id",
+              "point_in_time_policy_id",
+              "source_version_policy",
+              "output_mode",
+              "reuse_policy"
+            ]
+          },
+          "event_state_request": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "request_type": {
+                "const": "event_state"
+              },
+              "event_state_profile_id": {
+                "const": "event_state_core_four_intraday_profile_v0_1"
+              },
+              "event_state_profile_version_policy": {
+                "const": "exact"
+              },
+              "event_state_profile_version": {
+                "type": "string",
+                "minLength": 1
+              },
+              "event_type_ids": {
+                "type": "array",
+                "items": {
+                  "const": "event_type:market_data:session_opened"
+                },
+                "minItems": 1,
+                "uniqueItems": true,
+                "maxItems": 1
+              },
+              "event_subject_scope": {
+                "const": "exchange_session"
+              },
+              "event_type_registry_snapshot_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "event_instance_policy_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "event_window_policy_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "event_window_definition_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "instrument_projection_policy_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "market_state_dependency_mode": {
+                "const": "emit_or_resolve_market_state_subrequest_through_runtime_capability"
+              },
+              "market_state_profile_id": {
+                "const": "market_state_core_four_intraday_profile_v0_1"
+              },
+              "market_state_dependency_reuse_policy": {
+                "enum": [
+                  "reuse_if_exact_validated_dependency_match",
+                  "metadata_only"
+                ]
+              },
+              "exchange_scope": {
+                "type": "string",
+                "minLength": 1
+              },
+              "explicit_instrument_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "session_dates": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "resolution": {
+                "type": "string",
+                "minLength": 1
+              },
+              "calendar_authority_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "point_in_time_policy_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_version_policy": {
+                "const": "exact_governed_or_block"
+              },
+              "output_mode": {
+                "const": "candidate"
+              },
+              "reuse_policy": {
+                "enum": [
+                  "reuse_if_exact_validated_dependency_match",
+                  "metadata_only"
+                ]
+              }
+            },
+            "required": [
+              "request_type",
+              "event_state_profile_id",
+              "event_state_profile_version_policy",
+              "event_state_profile_version",
+              "event_type_ids",
+              "event_subject_scope",
+              "event_type_registry_snapshot_id",
+              "event_instance_policy_id",
+              "event_window_policy_id",
+              "event_window_definition_ids",
+              "instrument_projection_policy_id",
+              "market_state_dependency_mode",
+              "market_state_profile_id",
+              "market_state_dependency_reuse_policy",
+              "exchange_scope",
+              "explicit_instrument_ids",
+              "session_dates",
+              "resolution",
+              "calendar_authority_id",
+              "point_in_time_policy_id",
+              "source_version_policy",
+              "output_mode",
+              "reuse_policy"
+            ]
+          }
+        }
+      }
+    },
+    "required": [
+      "request_id",
+      "request_type",
+      "request_contract_version",
+      "consumer",
+      "consumption_purpose",
+      "resolution_policy",
+      "payload"
+    ],
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://tsis.local/contracts/state_resolution_request_contract_v0_1_1.schema.json",
+    "title": "TSIS StateResolutionRequest v0.1.1",
+    "allOf": [
+      {
+        "if": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "request_type": {
+              "const": "market_state"
+            }
+          },
+          "required": [
+            "request_type"
+          ]
+        },
+        "then": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "market_state_request": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "request_type": {
+                      "const": "market_state"
+                    },
+                    "profile_id": {
+                      "const": "market_state_core_four_intraday_profile_v0_1"
+                    },
+                    "profile_version_policy": {
+                      "const": "exact"
+                    },
+                    "profile_version": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "exchange_scope": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "explicit_instrument_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "minItems": 1,
+                      "uniqueItems": true
+                    },
+                    "session_dates": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      "minItems": 1,
+                      "uniqueItems": true
+                    },
+                    "resolution": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "calendar_authority_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "point_in_time_policy_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "source_version_policy": {
+                      "const": "exact_governed_or_block"
+                    },
+                    "output_mode": {
+                      "const": "candidate"
+                    },
+                    "reuse_policy": {
+                      "enum": [
+                        "reuse_if_exact_validated_match",
+                        "metadata_only"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "request_type",
+                    "profile_id",
+                    "profile_version_policy",
+                    "profile_version",
+                    "exchange_scope",
+                    "explicit_instrument_ids",
+                    "session_dates",
+                    "resolution",
+                    "calendar_authority_id",
+                    "point_in_time_policy_id",
+                    "source_version_policy",
+                    "output_mode",
+                    "reuse_policy"
+                  ]
+                }
+              },
+              "required": [
+                "market_state_request"
+              ],
+              "not": {
+                "type": "object",
+                "additionalProperties": true,
+                "properties": {
+                  "event_state_request": {}
+                },
+                "required": [
+                  "event_state_request"
+                ]
+              }
+            }
+          },
+          "required": [
+            "payload"
+          ]
+        }
+      },
+      {
+        "if": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "request_type": {
+              "const": "event_state"
+            }
+          },
+          "required": [
+            "request_type"
+          ]
+        },
+        "then": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "event_state_request": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "request_type": {
+                      "const": "event_state"
+                    },
+                    "event_state_profile_id": {
+                      "const": "event_state_core_four_intraday_profile_v0_1"
+                    },
+                    "event_state_profile_version_policy": {
+                      "const": "exact"
+                    },
+                    "event_state_profile_version": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "event_type_ids": {
+                      "type": "array",
+                      "items": {
+                        "const": "event_type:market_data:session_opened"
+                      },
+                      "minItems": 1,
+                      "uniqueItems": true,
+                      "maxItems": 1
+                    },
+                    "event_subject_scope": {
+                      "const": "exchange_session"
+                    },
+                    "event_type_registry_snapshot_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "event_instance_policy_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "event_window_policy_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "event_window_definition_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "minItems": 1,
+                      "uniqueItems": true
+                    },
+                    "instrument_projection_policy_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "market_state_dependency_mode": {
+                      "const": "emit_or_resolve_market_state_subrequest_through_runtime_capability"
+                    },
+                    "market_state_profile_id": {
+                      "const": "market_state_core_four_intraday_profile_v0_1"
+                    },
+                    "market_state_dependency_reuse_policy": {
+                      "enum": [
+                        "reuse_if_exact_validated_dependency_match",
+                        "metadata_only"
+                      ]
+                    },
+                    "exchange_scope": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "explicit_instrument_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "minItems": 1,
+                      "uniqueItems": true
+                    },
+                    "session_dates": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      "minItems": 1,
+                      "uniqueItems": true
+                    },
+                    "resolution": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "calendar_authority_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "point_in_time_policy_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "source_version_policy": {
+                      "const": "exact_governed_or_block"
+                    },
+                    "output_mode": {
+                      "const": "candidate"
+                    },
+                    "reuse_policy": {
+                      "enum": [
+                        "reuse_if_exact_validated_dependency_match",
+                        "metadata_only"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "request_type",
+                    "event_state_profile_id",
+                    "event_state_profile_version_policy",
+                    "event_state_profile_version",
+                    "event_type_ids",
+                    "event_subject_scope",
+                    "event_type_registry_snapshot_id",
+                    "event_instance_policy_id",
+                    "event_window_policy_id",
+                    "event_window_definition_ids",
+                    "instrument_projection_policy_id",
+                    "market_state_dependency_mode",
+                    "market_state_profile_id",
+                    "market_state_dependency_reuse_policy",
+                    "exchange_scope",
+                    "explicit_instrument_ids",
+                    "session_dates",
+                    "resolution",
+                    "calendar_authority_id",
+                    "point_in_time_policy_id",
+                    "source_version_policy",
+                    "output_mode",
+                    "reuse_policy"
+                  ]
+                }
+              },
+              "required": [
+                "event_state_request"
+              ],
+              "not": {
+                "type": "object",
+                "additionalProperties": true,
+                "properties": {
+                  "market_state_request": {}
+                },
+                "required": [
+                  "market_state_request"
+                ]
+              }
+            }
+          },
+          "required": [
+            "payload"
+          ]
+        }
+      }
+    ]
+  },
+  "payload_authority_decision": "StateResolutionRequest is the only executable schema authority; specialized contracts are normative auxiliary documentation."
+}

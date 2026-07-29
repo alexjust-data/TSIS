@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tsis.local/schemas/backtest-governance-v0.1.json",
+  "title": "TSIS Backtest Governance Register",
+  "type": "object",
+  "required": ["register_id", "as_of"],
+  "properties": {
+    "register_id": {"type": "string", "minLength": 1},
+    "matrix_id": {"type": "string", "minLength": 1},
+    "as_of": {"type": "string", "format": "date"},
+    "scope": {"type": "string"},
+    "source_root": {"type": "string"},
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "minProperties": 4,
+        "anyOf": [
+          {"required": ["decision_id", "domain", "title", "status"]},
+          {"required": ["policy_id", "domain", "title", "status"]},
+          {"required": ["capability_id", "status", "decision_ids", "policy_ids"]},
+          {"required": ["exception_id", "type", "status", "scope"]}
+        ]
+      }
+    },
+    "gates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["gate_id", "title", "status", "authorized_scope", "evidence", "non_claims"],
+        "properties": {
+          "gate_id": {"type": "string", "minLength": 1},
+          "title": {"type": "string", "minLength": 1},
+          "status": {"type": "string", "minLength": 1},
+          "authorized_scope": {"type": ["string", "null"]},
+          "evidence": {"type": "array", "items": {"type": "string"}},
+          "non_claims": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": true
+      }
+    },
+    "next_gate": {"type": "object"},
+    "files": {"type": "array"}
+  },
+  "anyOf": [
+    {"required": ["entries"]},
+    {"required": ["gates"]}
+  ],
+  "additionalProperties": true
+}

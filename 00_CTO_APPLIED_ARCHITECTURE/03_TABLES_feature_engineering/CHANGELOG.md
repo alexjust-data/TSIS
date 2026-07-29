@@ -1,3 +1,114 @@
+﻿
+## 2026-07-28 - Runtime provider contract schema hardening closed
+
+- Added runtime_provider_contract_schema_hardening_authorization_v0_1.md, configs/runtime_provider_contract_schema_hardening_scope_v0_1.json, runtime_provider_contract_schema_hardening_validation_matrix_v0_1.json and runtime_provider_contract_schema_hardening_readout_v0_1.md.
+- Hardened StateResolutionRequest so request_type and payload kind must match, payload is object/additionalProperties=false, and specialized payload authorities are included in the provider package.
+- Hardened RuntimeInvocationResponse so invocation_status, resolution_decision, dataset refs, authorization refs and StateBundleManifest refs are mutually consistent.
+- Hardened StateBundleManifest with explicit cardinality modes, required capability refs, dataset refs, artifact hashes, consumption authorization fields and mandatory code validation for coverage arithmetic.
+- Declared canonicalization policy for contract_content_sha256_excluding_hash_field and kept backtest consumption, StateReplayFeed, production, downstream and official datasets unauthorized.
+
+## 2026-07-28 - Runtime user invocation interface provider contracts closed
+
+- Closed runtime_user_invocation_interface_v0_1 as provider-side design only.
+- Added provider contracts for StateResolutionRequest, runtime invocation interface, invocation response, effective capability view and StateBundleManifest.
+- Added runtime_user_invocation_interface_design_v0_1.md and runtime_capability_registry_snapshot_v0_1.json to close the two review gaps: narrative design and symmetric effective capability descriptor.
+- Updated route, runtime README, conceptual consumption architecture and agent handoff to mark provider interface contracts as closed while keeping provider-consumer compatibility, backtest consumption, production and downstream unauthorized.
+
+## 2026-07-28 - Event State incremental lineage-chain validation closed
+
+- Added `08_RUNTIME_CAPABILITIES/scripts/event_state_on_demand_incremental_lineage_chain_validation_runner_v0_1.py` and closed `event_state_on_demand_incremental_lineage_chain_validation_v0_1_20260728T112448Z` as `CLOSED_PASS_EVENT_STATE_INCREMENTAL_LINEAGE_CHAIN_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION`.
+- Expanded the second-generation Event State candidate into 8 baseline origin rows, 3 delta1 origin rows, 3 delta2 origin rows and 1 preserved unavailable context.
+- Verified generation fingerprints, parent references, row identity preservation, required lineage fields, Market State dependency fingerprints by generation, unavailable preservation and closed authority boundaries with 0 hard validation failures.
+- Kept this gate review-only: 0 Event State records emitted, 0 Event State materializer executions, 0 Market State materializer executions, 0 source market-data rows read, 0 registry mutations, no official dataset, no production and no downstream.
+- Next gate: `event_state_on_demand_scale_validation_v0_1`.
+
+## 2026-07-28 - Event State second-generation incremental candidate review closed
+
+- Added `08_RUNTIME_CAPABILITIES/scripts/event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_runner_v0_1.py` and closed `event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260728T110845Z` as `CLOSED_PASS_EVENT_STATE_SECOND_GENERATION_INCREMENTAL_CANDIDATE_DATASET_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION`.
+- Reviewed `event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z` as bounded candidate evidence only: 15 requested contexts, 14 represented, 11 reused prior-generation Event State contexts, 3 delta2 materialized contexts, 1 unavailable and 0 unaccounted contexts.
+- Verified candidate, logical, physical and validation fingerprints; confirmed context ledger reconciliation, row identity uniqueness, unavailable preservation, parent-generation immutability and Market State dependency lineage.
+- Preserved failed review attempts `event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260728T110643Z` and `event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260728T110740Z` as non-closing evidence before the successful review run.
+- Kept review boundary counters at 0: no Event State materialization, no Market State materialization, no source market-data reads, no registry mutations, no official dataset, no production and no downstream.
+- Next gate: `event_state_on_demand_incremental_lineage_chain_validation_v0_1`.
+
+## 2026-07-28 - Event State second-generation incremental extension execution closed
+
+- Added `08_RUNTIME_CAPABILITIES/scripts/event_state_on_demand_second_generation_incremental_extension_runner_v0_1.py` and closed `event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z` as `CLOSED_PASS_EVENT_STATE_SECOND_GENERATION_INCREMENTAL_EXTENSION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED`.
+- Reconciled 15 requested contexts as 11 reused prior-generation Event State contexts, 3 delta2 materialized contexts for `2023-03-20` and 1 preserved unavailable context, with 14 represented contexts and 0 unaccounted contexts.
+- Produced 14 combined Event State candidate records, 3 new delta2 records, 1 new native Event Instance, 1 new Event Window Binding, 3 new Instrument Session Projections and 1 new candidate registry entry.
+- Preserved parent generation-1 immutability with 0 registry mutations and 0 artifact hash changes; Market State materializer executions remained 0 and source market-data rows read remained 0.
+- Recorded candidate fingerprint `9a31d9b8bf3af01c1c4a5cd18a37309eec7b3cb41011501ab85e0ef4a4831746`, logical Event State fingerprint `b4774100b8ab27794e8d9a9205227c6e694442e8287b92bf5d899ec3a0b66f33` and validation fingerprint `32045d40dc84df3900e1037adb7062bf42e147233e261037f0d9923d18c0e229`.
+- Preserved technical incomplete attempt `event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T102842Z` as `CLOSED_FAILED_RUNTIME_READOUT_PATH_LENGTH_NO_VALID_CLOSURE` and superseded it with the accepted run.
+- Kept official Event State dataset, production and downstream false.
+- Next gate: `event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1`.
+
+## 2026-07-28 - Event State second-generation incremental extension authorization issued
+
+- Added `event_state_on_demand_second_generation_incremental_extension_authorization_v0_1.md`, `configs/event_state_on_demand_second_generation_incremental_extension_scope_v0_1.json`, `event_state_on_demand_second_generation_incremental_extension_contract_v0_1.json` and `event_state_on_demand_second_generation_incremental_extension_authorization_readout_v0_1.md`.
+- Authorized one future bounded second-generation Event State incremental extension for `event_type:market_data:session_opened`, XNYS, the same three instrument projections and delta2 session `2023-03-20`.
+- Froze expected reconciliation as 15 requested contexts = 11 reused prior-generation Event State contexts + 3 delta2 contexts to build + 1 preserved unavailable context, with 14 represented contexts expected.
+- Required Market State dependency through runtime capability subrequest/reuse policy, with no Market State materializer execution, no source market-data reads and no direct Market State path consumption.
+- Preserved this authorization gate as no execution: 0 Event State materializer executions, 0 Market State materializer executions, 0 candidate record reads, 0 registry writes, no official dataset, no production and no downstream.
+- Next gate: `event_state_on_demand_second_generation_incremental_extension_v0_1`.
+
+## 2026-07-28 - Event State incremental overlap idempotency reuse test closed
+
+- Added `event_state_on_demand_bounded_incremental_overlap_idempotency_reuse_test_authorization_v0_1.md`, its scope/contract/readout and `08_RUNTIME_CAPABILITIES/scripts/event_state_on_demand_bounded_incremental_overlap_idempotency_reuse_test_runner_v0_1.py`.
+- Closed `event_state_on_demand_bounded_incremental_overlap_idempotency_reuse_test_v0_1_20260728T091759Z` as `CLOSED_PASS_EVENT_STATE_INCREMENTAL_OVERLAP_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS`.
+- Proved exact reuse for the reviewed incremental combined candidate `event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3` with candidate fingerprint `f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f`.
+- Verified 0 Event State materializer executions, 0 Market State materializer executions, 0 source market-data rows read, 0 Event State candidate records read, 0 Market State candidate records read and 0 new candidate dataset registry entries.
+- Kept official Event State dataset, production and downstream false; marked `reuse_eligibility_transition_ready = true` but did not mutate registry entries.
+- Next gate: `event_state_on_demand_second_generation_incremental_extension_authorization_v0_1`.
+
+## 2026-07-28 - Event State bounded incremental overlap candidate dataset review closed
+
+- Added `08_RUNTIME_CAPABILITIES/scripts/event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_runner_v0_1.py` and closed `event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_v0_1_20260728T091026Z` as `CLOSED_PASS_EVENT_STATE_INCREMENTAL_OVERLAP_CANDIDATE_DATASET_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION`.
+- Approved the corrected incremental candidate `event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3` as bounded candidate evidence only: 12 requested contexts, 11 represented, 8 reused validated Event State contexts, 3 delta materialized contexts, 1 unavailable and 0 unaccounted contexts.
+- Verified homogeneous Event Window Definition ID `session_opened_at_anchor_context_v0_1`, schema compatibility, exact-one bindings for represented contexts, unavailable preservation, lineage, fingerprints and baseline immutability.
+- Preserved failed technical review attempt `event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_v0_1_20260728T085326Z` as non-closing path-length evidence before the successful review run.
+- Kept registry entry mutations, materializer executions, Market State materializer executions, source market-data reads, official dataset, production and downstream at 0/false.
+- Next gate: `event_state_on_demand_bounded_incremental_overlap_idempotency_reuse_test_authorization_v0_1`.
+
+## 2026-07-28 - Event State bounded incremental overlap execution closed
+
+- Added `08_RUNTIME_CAPABILITIES/scripts/event_state_on_demand_bounded_incremental_overlap_execution_runner_v0_1.py` and closed `event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z` as `CLOSED_PASS_EVENT_STATE_INCREMENTAL_OVERLAP_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED`.
+- Reconciled 12 requested contexts as 8 reused validated Event State contexts, 3 delta materialized Event State contexts and 1 unavailable context, with 0 unaccounted contexts.
+- Produced 11 combined Event State candidate records, 3 new delta records, 1 new native Event Instance, 1 new Event Window Binding, 3 new Instrument Session Projections and 1 new candidate registry entry.
+- Preserved baseline immutability with 0 baseline registry entry mutations and 0 baseline artifact hash changes.
+- Kept the Event State materializer scoped to delta-only; Market State materializer executions remained 0, source market-data rows read remained 0 and no direct Market State path consumption was opened.
+- Recorded combined candidate fingerprint `f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f`, logical Event State fingerprint `73b2f81b76697eb67b55faffecd36c8e77ecf926c1c1f9e56cf6ee0e0ecb10f6` and validation fingerprint `8bb08f0f2afdff138064758bda45f21ca55ac415f760ce54816f070bb958a37b`.
+- Preserved technical invalid attempt `event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T083159Z` as `CLOSED_FAILED_PRE_REVIEW_SEMANTIC_CONTRACT_MISMATCH`; it mixed the baseline and delta Event Window definition IDs and is superseded by the successful `20260728T084733Z` run.
+- Kept official Event State dataset, production and downstream false.
+- Next gate: `event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_v0_1`.
+
+## 2026-07-28 - Event State bounded incremental overlap execution authorization issued
+
+- Added `event_state_on_demand_bounded_incremental_overlap_execution_authorization_v0_1.md`, `configs/event_state_on_demand_bounded_incremental_overlap_execution_scope_v0_1.json` and `event_state_on_demand_bounded_incremental_overlap_execution_authorization_readout_v0_1.md`.
+- Authorized one future bounded Event State incremental overlap execution for `event_type:market_data:session_opened`, XNYS, the same three instrument projections and delta session `2024-03-11`.
+- Froze expected reconciliation as 12 requested contexts = 8 reusable Event State contexts + 3 delta contexts to build + 1 unavailable, with 11 combined represented contexts expected.
+- Required Market State dependency through runtime capability subrequest/reuse policy and blocked direct Market State path consumption.
+- Preserved this authorization gate as no execution: 0 Event State materializer executions, 0 Market State materializer executions, 0 candidate record reads, 0 registry writes, no official dataset, no production and no downstream.
+- Next gate: `event_state_on_demand_bounded_incremental_overlap_execution_v0_1`.
+
+## 2026-07-28 - Event State bounded reuse eligibility transition review closed
+
+- Added `08_RUNTIME_CAPABILITIES/scripts/event_state_on_demand_bounded_reuse_eligibility_transition_review_runner_v0_1.py` and closed `event_state_on_demand_bounded_reuse_eligibility_transition_review_v0_1_20260728T080426Z` as `CLOSED_APPROVED_EVENT_STATE_REUSE_ELIGIBILITY_TRANSITION_FOR_BOUNDED_EXACT_MATCH_WITH_RESTRICTIONS_NO_PROMOTION`.
+- Approved `eligible_for_bounded_event_state_exact_match_reuse` only for the bounded exact-match Event State candidate scope.
+- Wrote a separate transition record with fingerprint `51d6a516c320ca154794e06b34d8d135996fe4e29fb030b1cd7bb09c81a7d623`; baseline registry entry mutations remained 0.
+- Verified 0 Event State candidate record reads, 0 Market State candidate record reads, 0 source market-data rows, 0 Event State materializer executions and 0 Market State materializer executions.
+- Kept official Event State dataset, production and downstream false.
+- Next gate: `event_state_on_demand_bounded_incremental_overlap_execution_authorization_v0_1`.
+
+## 2026-07-28 - Event State on-demand bounded idempotency reuse test closed
+
+- Added `08_RUNTIME_CAPABILITIES/scripts/event_state_on_demand_bounded_idempotency_reuse_test_runner_v0_1.py` and closed `event_state_on_demand_bounded_idempotency_reuse_test_v0_1_20260728T074624Z` as `CLOSED_PASS_EVENT_STATE_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS`.
+- Proved bounded Event State exact-match reuse for `event_state_candidate_dataset_v0_1_d5662103e1c45f90`: selected candidate fingerprint `d5662103e1c45f90847b51e69b0e698243bde231758fa3c864e24c4a6839be33` and normalized logical fingerprint `e2c47083b8dd560e67bcda32b0063cf9f468754e34f76b82e9f839046d375699`.
+- Verified 1 metadata lookup, 0 Event State materializer executions, 0 Market State materializer executions, 0 Event State candidate record reads, 0 Market State candidate record reads, 0 source market-data row reads and 0 new candidate dataset registry entries.
+- Preserved failed technical attempt `event_state_on_demand_bounded_idempotency_reuse_test_v0_1_20260728T074430Z` as non-closing evidence before the successful run.
+- Updated the authorization/scope/readout as consumed by the successful reuse test while keeping reuse eligibility pending a separate transition review.
+- Kept official Event State dataset, production and downstream false.
+- Next gate: `event_state_on_demand_bounded_reuse_eligibility_transition_review_v0_1`.
+
 ## 2026-07-27 - Event State on-demand bounded candidate dataset review closed
 
 - Added `08_RUNTIME_CAPABILITIES/scripts/event_state_on_demand_bounded_candidate_dataset_review_runner_v0_1.py` and closed `event_state_on_demand_bounded_candidate_dataset_review_v0_1_20260727T202013Z` as `CLOSED_APPROVED_AS_EVENT_STATE_ON_DEMAND_BOUNDED_CANDIDATE_EVIDENCE_WITH_RESTRICTIONS_NO_PROMOTION`.
@@ -1487,3 +1598,69 @@ C:\TSIS_Data\data\data_foundation_outputs\ohlcv_1m_quote_guarded_full_universe_v
 ```
 
 - Boundary: `v0_2_candidate` is now a validated technical candidate tree and is eligible for promotion review. It is not yet promoted.
+
+## 2026-07-28 - Runtime Provider Consumer Compatibility Review
+
+- Closed `runtime_provider_consumer_contract_compatibility_review_v0_1` as `CLOSED_APPROVED_FOR_BOUNDED_INTERFACE_EXECUTION_AUTHORIZATION_WITH_RESTRICTIONS_NO_EXECUTION`.
+- Confirmed hardened provider contracts are compatible with backtest consumer draft contracts for control-plane resolution only.
+- Preserved `PROPOSED_CONSUMER_CONTRACT_NOT_INTEGRATION_VALIDATED`, `BACKTEST_STATE_CONSUMPTION = NOT_AUTHORIZED` and `STATE_REPLAY_FEED = NOT_AUTHORIZED`.
+- Set next gate to `runtime_user_invocation_bounded_interface_execution_authorization_v0_1`.
+
+## 2026-07-28 - Runtime User Invocation Bounded Interface Execution Authorization
+
+- Closed `runtime_user_invocation_bounded_interface_execution_authorization_v0_1` as `CLOSED_AUTHORIZED_BOUNDED_INTERFACE_EXECUTION_WITH_RESTRICTIONS_NO_EXECUTION`.
+- Authorized bounded provider-side interface behavior tests for reuse hits, blocked unsupported requests, authorization-required requests, physical-path rejection and partial coverage preservation.
+- Kept `StateReplayFeed`, backtest state consumption, physical row delivery, production, downstream and official dataset delivery closed.
+- Set next gate to `runtime_user_invocation_bounded_interface_execution_v0_1`.
+
+## 2026-07-28 - Runtime User Invocation Bounded Interface Execution Review
+
+- Closed `runtime_user_invocation_bounded_interface_execution_review_v0_1` as `CLOSED_PASS_STATE_PROVIDER_CONTROL_PLANE_READY_WITH_RESTRICTIONS_NO_CONSUMPTION`.
+- Marked State Provider control-plane v0.1 as `READY_WITH_RESTRICTIONS`.
+- Kept physical row delivery, `StateReplayFeed`, backtest state consumption, production, downstream and official dataset delivery closed.
+
+## 2026-07-28 - Provider Contract Schema Hardening v0.1.1
+
+- Closed `runtime_provider_contract_schema_hardening_v0_1_1` as `CLOSED_PROVIDER_CONTRACT_SCHEMA_HARDENED_V0_1_1_WITH_RESTRICTIONS_NO_EXECUTION`.
+- Replaced provider executable schemas with stricter Draft 2020-12 schemas designed for AJV strict compatibility.
+- Chose one executable payload authority: `StateResolutionRequest`; specialized Market/Event request contracts are normative auxiliary references.
+- Marked previous provider-consumer compatibility and bounded interface readiness conclusions as superseded pending v0.1.1 external audit.
+- Kept requests, datasets, builds, registry mutations, StateReplayFeed, backtest consumption, production and downstream closed.
+## 2026-07-28 - State Provider Control-Plane v0.1 frozen
+
+- Froze `STATE_PROVIDER_CONTROL_PLANE` as `CLOSED_READY_WITH_RESTRICTIONS_NO_CONSUMPTION` after provider contract hardening v0.1.1 and bounded interface execution review.
+- Updated route, runtime README and handoff to remove `external_audit_pending` as active state and mark provider-owned next gate as `none_active`.
+- Labeled historical `Next gate` entries in the route as `Next gate at closure` to avoid confusing historical sequence with current authority.
+- Kept physical row delivery, StateReplayFeed, backtest state consumption, official datasets, production and downstream closed.
+## 2026-07-28 - StateBundle physical consumption authorization design closed
+
+- Added `09_STATE_CONSUMPTION_BOUNDARY/` as the shared boundary between State Provider references and future consumer physical reads.
+- Closed `state_bundle_physical_consumption_authorization_design_v0_1` as `CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_PHYSICAL_READ`.
+- Defined first vertical slice scope as Market State core-four, one bounded consumer probe, no Event State, no strategy, no orders, no fills and no PnL.
+- Preserved provider control-plane freeze and kept physical reads, StateReplayFeed, backtest consumption, production, downstream and official dataset promotion closed.
+- Set next gate to `state_bundle_reader_contract_design_v0_1`.
+## 2026-07-28 - StateBundle reader and replay contract design closed
+
+- Added `state_bundle_reader_and_replay_contract_design_v0_1` under `09_STATE_CONSUMPTION_BOUNDARY` as a design-only gate.
+- Added `state_bundle_reader_contract_v0_1.json` and `state_replay_feed_contract_v0_1.json`.
+- Defined required typed state record fields and `StateAvailable` event fields.
+- Froze delivery eligibility as `event_loop.clock >= state_available_at_utc` and kept EventLoop as clock authority.
+- Kept physical row reads, StateReplayFeed execution, EventLoop execution, strategy callbacks, orders, fills, PnL, production and downstream closed.
+- Set next gate to `provider_consumer_data_plane_joint_review_v0_1`.
+## 2026-07-28 - Provider-consumer data-plane joint review closed
+
+- Added `provider_consumer_data_plane_joint_review_v0_1` under `09_STATE_CONSUMPTION_BOUNDARY`.
+- Reviewed provider control-plane, physical consumption authorization, StateBundleReader and StateReplayFeed contracts as one bounded data-plane boundary.
+- Closed with 0 blocking findings and preserved 0 row reads, 0 replay events, 0 EventLoop ticks, 0 strategy callbacks, 0 orders and 0 fills.
+- Set next gate to `bounded_state_bundle_read_and_replay_authorization_v0_1`.
+
+## 2026-07-28 - Provider Contract Schema Hardening v0.1.2
+
+- Preserved `runtime_provider_contract_schema_hardening_v0_1_1` as `CLOSED_PROVIDER_CONTRACT_SCHEMA_HARDENED_V0_1_1_WITH_RESTRICTIONS_NO_EXECUTION` while recording external audit status `FAIL_EXECUTABLE_SEMANTIC_GAPS`.
+- Closed `runtime_provider_contract_schema_hardening_v0_1_2` as `CLOSED_PROVIDER_CONTRACT_SCHEMA_HARDENED_V0_1_2_WITH_RESTRICTIONS_NO_EXECUTION`.
+- Added v0.1.2 provider-only contracts without overwriting v0.1.1 contract artifacts.
+- Promoted 13 external adversarial cases into permanent regression coverage and added 6 additional finding regression cases.
+- Added executable semantic validation for the eight external findings.
+- Verification: case_count=55, minimum_case_count=44, failed_cases=0, AJV 8.17.1 Draft 2020-12 strict runtime=PASS, semantic validator=PASS.
+- Kept provider-consumer compatibility, StateReplayFeed, physical state consumption, production and downstream closed.
+

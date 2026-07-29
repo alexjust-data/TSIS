@@ -1,0 +1,164 @@
+00:00:00 - 00:00:52
+Hola, traders, ¿qué tal? Bienvenidos de nuevo a la serie de vídeos en las que junto a ser andan sistemas estamos intentando crear estrategias adaptadas a las smallcups para intentar ser un trader de smallcups de cero a 100. Este es el tercer capítulo. Eh, por lo tanto ya han pasado algún tiempo, creo que si no me equivoco, Sergi, un mesecito, dos meses más o menos desde el primer vídeo y queremos actualizarnos, ¿no?, un poco de cómo cómo lo lleváis. Mucha gente dice que el trading es un arte y que por
+
+00:00:26 - 00:01:10
+ello es imposible ganar dinero en los mercados utilizando robots de trading, especialmente en las small caps. Por ello, en esta serie de vídeos le he pedido a Sersan Sistemas, un grupo de traders algorítmicos profesionales que gestionan 10 millones de euros a través de sus robots de trading en el track récord auditado que estáis viendo ahora mismo aquí en pantalla, que nos ayuden a crear una estrategia de small caps desde cero para ver si realmente se puede ganar dinero en las small caps a través
+
+00:00:48 - 00:01:37
+de hacer trading algorítmico y que a su vez todo el proceso que realizan traders profesionales de verdad y que comprobemos cómo se enfrentan ellos a crear estrategias ganadoras desde cero en un mercado que nunca han tocado antes. Y sobre todo, no os olvidéis de que si queréis aprender a hacer trading de verdad, de manera profesional, es importantísimo que siempre os forméis con personas, con traders que tengan track récord auditado. Os aseguro que si pedís track récord auditado a vuestros formadores, os eliminaréis el 99,9% de
+
+00:01:13 - 00:01:56
+los vendehumos que hay por internet. Personalmente os invito a que si queréis aprender trading de verdad, a luchar por vivir de esta profesión, os forméis con Sersan Sistemas en el link que os dejo aquí abajo en la descripción de este vídeo. Os aseguro que su curso de trading, que estáis viendo aquí en pantalla, es el más completo que podáis encontrar a día de hoy en internet. Os dejo aquí abajo el link hacia el curso de sistemas traders. Pues bien, va bien, vamos avanzando. Es verdad que estamos
+
+00:01:34 - 00:02:34
+encontrando encontrando problemas que ahora pues los comentaremos, pero pero bueno, sí que hemos avanzado mucho desde la primera hemos avanzado muchísimo en conocimiento, podemos decir, de del sector de este micro nicho de del trading en en small caps, que bueno, la verdad que no me gusta mucho small caps porque eh como ya digamos llevo muchos años, históricamente las small caps son otra cosa, ¿no? O sea, son acciones mucho más grandes que estas. Estas son, no sé, microcaps o o o super small caps,
+
+00:02:05 - 00:03:00
+no sé cómo llamarlas, porque son realmente muy muy pequeñas, ¿no? Pero pero bueno, hemos avanzado muchísimo en conocimiento, hemos hecho muchísimo código ya. De hecho, tenemos un alumno que nos está que nos está ayudando, un alumno del curso que que también está y más de uno. La verdad que en el en el curso hay bastante eh revolución de todo esto, ¿no? Como gracias un poco a los vídeos que estás haciendo, pues eh llegan las mentorías, prácticamente todas las mentorías que hacemos cada mes. ¿Hay
+
+00:02:32 - 00:03:27
+alguna pregunta relacionado cómo va lo de las small caps? No, porque realmente genera genera interés, ¿no? por por esta explosión que tien esta volatilidad y que que al final es verdad que que es oportunidad de negocio. ¿En qué punto estamos entonces? Bueno, eh tenemos ya alguna estrategia hecha. De momento hemos trabajado bastante lado largo por no abordar el problema que creemos que tiene solución, pero es verdad que es un problema el tema de los tema de pedir las acciones que que tú no puedes abrir
+
+00:03:00 - 00:03:59
+cortos directamente igual que largos. Para abrir largos pues no hay no hay tanto problema. para abrir cortos, sí, porque hay que pedir permiso para hacerlo, ¿no? Y esto implica una gestión dentro de la con el broker, ¿no?, que que digamos ya las plataformas tienen implementado, ¿no?, en el software, pero claro, eh si lo quieres hacer automático, pues es una una capa más de de problemática, ¿no? Entonces, bueno, como todavía no hemos abordado eso, pues estamos trabajando el lado el lado largo. eh te hablaba de los problemas,
+
+00:03:29 - 00:04:32
+estamosendo muchos problemas para eh digamos back testearlo dentro de nuestro ecosistema de trabajo, que no está pensado para este tipo de operativas. Aquí, por ejemplo, ahora ahora luego os lo muestro, tengo un backdest con casi 900 acciones. Claro, eh cuando tú analizas 900 acciones a la vez encima en un time frame de un minuto, porque son activos tan volátiles que no permiten, pues a lo mejor operarlos en diario, ¿sabes? Claro, claro, una vela diaria pues pues puedes perder, o sea, es complicado de gestionar, ¿no? En velas
+
+00:04:01 - 00:05:03
+en velas de tamaño mayor. Entonces, eh claro, imagínate 1000 acciones en un minuto, yo que sé, 5 años. Sí, sí, sí, sí. Es una cantidad de información. La cantidad de datos que eso supone son tremendas y la verdad que la mayoría de plataformas eh pues que nosotros más usamos, Multiarge, Trad Station, bueno, no están tan preparadas para ese tipo de de análisis, ¿no? Están más pensadas para operar en un gráfico, para operar una cesta de acciones, ¿no? Pero bueno, no no una cesta de 1000, ¿no? Un análisis de 1000 acciones, que además
+
+00:04:31 - 00:05:34
+implica muchas condiciones. Entonces, bueno, nos estamos eh encontrando problemas técnicos, ¿de acuerdo? Es decir, de conseguir la data, que no se cuelgue, que informáticamente el ordenador lo soporte. Hay veces que hemos hecho un proceso y después de estar unas horas descargando se cuelga porque no tiene memoria. Bueno, problemas problemas eh técnicos que vienen originados por esta gran cantidad de información que supone tratar de hacer un back test, un back test bien hecho, ¿de acuerdo? Porque nosotros pues
+
+00:05:03 - 00:06:01
+somos eh cuantitativos y lo que queremos es comprobar que esto eh que eso funciona. Ya ya ya nos lo creemos que funciona, ¿no? Porque tenemos incluso colegas y algún amigo, ¿no?, que lo hace y por lo tanto sabemos que esto es así y lo hemos visto y de hecho alguno pues nos ayuda cuando les preguntamos y demás, pero eh bueno, queremos tratar de obtener un un back test, como por ejemplo tenemos ya alguno, eh tenemos alguno ocho. También hay que decir que lo digo por el paso, el tiempo que llevamos que puede habrá gente que le
+
+00:05:32 - 00:06:46
+parecerá mucho y claro, nosotros pues también lo compaginamos con no estamos solo dedicados a a esto. Entonces, eh si solo estuviéramos dedicados a esto o si incluso eh no no partiéramos del ecosistema actual que tenemos, pues a lo mejor lo hubiéramos eh enfocado desde otro punto de vista, porque ya hubiéramos entrado a lo mejor en en otro tipo de de framework, ¿no? De hecho, insisto, ya tenemos, a menos que recuerde ahora mismo, dos alumnos que yo sepa que han conseguido hacer back test, dos alumnos de nuestro curso que han
+
+00:06:09 - 00:07:08
+hecho ya back test en Smoke Apps con obteniendo un un buen resultado. Vale, pues eh si quieres enseñaros un poco eh a nivel de trabajo en qué punto estáis. Nos quedamos otra vez con el tema de los screeners, vimos como segregabais un poco las acciones que habéis seleccionado, en qué punto estamos. Bueno, nosotros ahora ya te digo, tenemos muchísimo muchísimo código hecho en en los códigos. Hay hemos tratado de implementar un poco las dos cosas, ¿de acuerdo? Es decir, este proceso previo eh que ellos hacen en un
+
+00:06:38 - 00:07:47
+screener, ¿de acuerdo? De una búsqueda de de acciones, una selección. Nosotros lo que hemos hecho es tratar de un universo de acciones lo más grande posible. De ahí el problema que te decía de de esta gestión de datos y en toda esa cesta, vamos a poner de 1000 acciones, ¿vale? evaluar cuáles cumplen las condiciones, pues que ya habíamos hablado, pues por ejemplo, típicas de marketcap, eh típicas de que el precio esté entre un precio u otro, que el volumen sea elevado, ¿no? Porque eh estos bacteres, bueno, ahora ya no
+
+00:07:13 - 00:08:04
+resulta curioso, pero al principio sí que resulta en la mayoría de o en muchos casos al final pues hay un trade, dos trades, ¿sabes? en la acción tuvieras a lo mejor todos los años que has mirado y hay dos operaciones, una operación, ¿no? Claro, sí, sí, sí, sí. ¿En qué se diferencia, por ejemplo, para porque esto se me ocurre entre lo que hacéis habitualmente vosotros en un índice, por ejemplo, o en el Nasdaq, lo que sea, ¿cómo cómo se el BES en qué se diferencia? Bueno, se se diferencia porque mira, por ejemplo, si si estamos
+
+00:07:38 - 00:08:43
+viendo ahora aquí este este histórico, eso es una acción que que por ejemplo un sistema que que hemos probado usando el el BWP que aquí tiene un tr y aquí por ejemplo veis que hay muchísimo volumen y cuando digo muchísimo volumen estamos hablando de 1,illón y medio de de acciones en un minuto, ¿eh? En un minuto, ¿vale? Y luego, pero justo el día anterior, o sea, no hace falta ni irse ni irse muy atrás. El día anterior, el día anterior estaba haciendo eh 400 acciones en un Vale, o sea, de 400 a 1,illón y medio. Sí, sí,
+
+00:08:11 - 00:09:13
+sí, sí. En un entiendo. O sea, claro, esto no pasa en el mercado normal. Claro, en el resto de mercado no hay claro que hay momentos de más volumen, pero pero el pasar de poco volumen a a mucho volumen no es de 400 a 1,illón y medio. Entonces, o sea, es una auténtico, es otra cosa. Sí, sí, sí. Entonces, claro, este tipo de acciones, digamos, no existen. ¿Ves? Fíjate que en un minuto se ven velas como de un tic, ¿ves? Se ve un dibujo como como de algo que no es operable. Sí, sí, sí, sí. Pero un día de pronto lo ves. Un día de
+
+00:08:42 - 00:09:41
+pronto lo ves. Y ellos ellos trabajan de de esta manera. Claro. Luego habrá siempre hay acciones que que que aparecen más que otras, ¿no? Eh, porque yo que sé, porque se están de moda y que a lo mejor están de moda unos días, ¿vale? Pero pero es bastante habitual. es bastante habitual este este manera de trabajar, es decir, una acción que no hay nada, que no es operable, que no tiene volumen, que es que prácticamente no se puede ni graficar porque porque ves, tiene ticonexos de un minuto hasta que un día
+
+00:09:11 - 00:10:09
+pues porque hay una noticia, porque se calienta por algo del sector, por lo que sea, ¿de acuerdo? Siempre siempre lógicamente hay un motivo, ¿no?, que provoca este calentamiento y y de pronto aparecen los traders de small Cups como Leones. Ya, ya, ya. y hacen un volumen, como ya te digo, o sea, absolutamente alucinante, o sea, un volumen alucinante ese día, ¿no? O sea, pero que dices, pero una locura. La diferencia entonces está en que la dificultad, entiendo del tema del bacter es que cuando vosotros
+
+00:09:40 - 00:10:33
+hacéis bacter en un único activo, podéis acceder a esos datos pasados en diferentes temporalidades hasta donde la data os dé. Pero aquí la dificultad es que cada una de estas acciones se activa en momentos distintos. Claro, donde tú no tienes un activo, yo que sé, nosotros operamos como he sabido el NASDAQ, ¿de acuerdo? Yo tengo el Nasdaq y yo pues puedo analizar todo el Nasdaq. Es igual si lo quiero hacer en un minuto, en un diario, lo que me dé la gana. Y puedo encontrar un montón de años de análisis
+
+00:10:06 - 00:11:00
+con muchas operaciones. Puedo hacer 500 trades, 1000 trades, 2000 trades, no sé, depende del sistema, ¿no? Aquí en cada activo pues puedo hacer uno. Y a lo mejor, yo que sé, a lo mejor hay una que tiene cinco, eh, ¿me entiendes? Pero pero normalmente no puedes bactestearlo en un activo, tienes que bactestearlo en muchos y además como hay muchas condiciones de filtrado que ellos por experiencia eh pues han ido usando y que nosotros lógicamente pues también aprovechamos esa información para investigar, como te decía, pues yo que
+
+00:10:34 - 00:11:46
+sé, market cap, también el tema del float en en algún tipo de de estrategia también que haya un un crecimiento del precio determinado, es decir, que haya subido pues eh 100% 50%, no sé que el volumen haya aumentado, bueno, distintas condiciones de de de este tipo, pues todo eso al final lo tenemos que meter en un código y lo tenemos que evaluar en todas las las acciones. Si hiciéramos un método que al inicio de los vídeos lo comentamos, eh, que existía una opción, podemos llamarla semiautomática,
+
+00:11:09 - 00:12:16
+¿vale? Semutomática, sería más fácil. sería más fácil, pero bueno, no digo que sería fácil, pero sería más fácil porque entonces esa esa opción semiautomática partiría de eh bueno, de hacer el screener, hacer el screener, ¿vale? Y una vez se hace el screener eh con con un software que se dedica solo a hacer eso, configurando, a mí me da las acciones del día, vamos a suponer, eh, supone que sean cinco y yo automáticamente activo el No, no. o inclusivo o incluso automáticamente o incluso automáticamente activo el
+
+00:11:43 - 00:12:41
+sistema en ese día, ese momento, ¿me entiendes? Pero no incluyo todo el punk, ¿no? Es decir, seleccionar la acción y meterlo, que eso es lo automático total, ¿no? El automático total, como estamos de momento abordando ese ese camino, pues eh plantea toda esa complicación porque entonces la única manera de hacerlo es es meter todas las acciones para testear los bienes porque tiene que evaluar las condiciones de de filtrado. y una vez la le toca, como este ejemplo que veis aquí, este trade, este día esta
+
+00:12:12 - 00:13:13
+acción entra en las condiciones, pues porque tiene un market cap x, porque pam, pa pa pam pam, y automáticamente pues supera las condiciones que tiene, que en este caso ya os digo, se basa en el en el BW y compra, ¿vale? Bueno, este sale bien, el otro saldrá mal, eh, por supuesto. Pero eh bueno, pero esta acción pues en todo el histórico no tiene más operaciones, ya. H es la única que hay en ese Sí, sí, total, total tiene esa tiene esa en 5 años. ¿Por qué? Bueno, porque el resto no ha cumplido las conexiones ahora mismo no sé cuál
+
+00:12:43 - 00:13:46
+es, pero pero seguramente la del volumen, eh, porque la la si hay una condición eh vital clave y que todas las estrategias mantienen y que es inevitable es el volumen porque bueno, ya lo esa comparación que te he dicho, ¿no? De 400 acciones en un minuto a 1 millón, ¿no? De pronto, es decir, ahí pasa algo, ahí está pasando algo, ¿entiendes? Entonces, a la que tú detectas ese volumen, dices, pum, automáticamente la la acción entra en entra al radar, eh, pum, y está el sistema actúa. Si no hay volumen no
+
+00:13:15 - 00:14:11
+interesa. Y eso es lo que hablamos siempre, que ese volumen es lo que hace interesante ese tipo de operativa porque genera movimientos eh, que que son brutales. Claro que es claro. Fíjate este ejemplo, por hablar uno que tenemos aquí comprado por debajo de siete y al final la CTP en 15. Bueno, tampoco ha doblado. Sí, sí, sí, sí, ha doblado, pero bueno, tampoco es tanto en este tipo de de operativa, pero simplemente ha doblado. Es un 100% de movimiento. Sí, sí, hecho hecho un 100%. Ha hecho un 100%, pero no unos minutos, o sea, no,
+
+00:13:42 - 00:14:38
+esto es un minuto, eh, o sea, no os menes que son días, esto es un minuto, o sea, es el mismo día, eh, pues bueno, abre la operación aquí a las 9:30 más o menos, en medio de la mañana, que es poco de abril, ¿vale? poco de iniciar la la jornada y la cierra pues a las 10 nada media horita, media horita un 100% de subirá. Sí, totalmente amigos y ya pues vamos a tomar ya a desayunar. Son las 10 ya nos vamos a desayunar y y a ver qué tal sigue el día. Claro. Y a disfrutar, ¿no? Yo yo entiendo eso que
+
+00:14:10 - 00:14:58
+mucha gente la clave de hacer manualmente y por eso la dificultad es que claro, tú manualmente, como tú dices, puedes escanear cómo están las acciones, escoges la que tú quieres que cumple los criterios y entonces lo operas. Aquí automáticamente dices que estás encontrando con un poco ese ese esa losa, ¿no? De decir, "Ostras, ¿cómo hacemos esto?" Sí, sí, sí. Esto ahora sí, como lo ves, está pensado de esta manera, se ha pensado en que todo lo todo lo implementa la estrategia, o sea, la estrategia lo decide todo. Y el par
+
+00:14:34 - 00:15:47
+que tenéis ahora, ¿cuál es? que habéis hecho. Bueno, hay alguno, por ejemplo, eh, pero bueno, igual es es anecdótico, eh, porque eh nosotros esperábamos esperábamos eh, o sea, nosotros queríamos montar todo nuestro marco de diseño y ahí es donde te decía que nos hemos encontrado los problemas con la expectativa de una vez construido todo, construido esta base de datos enorme de más de 1000 acciones, poder ir probando muchas estrategias Vale, tenemos incluso constructor, tenemos, yo que sé, eh eh
+
+00:15:10 - 00:16:00
+algún código de de 800 líneas, o sea, tenemos códigos realmente bestiales desarrollados, eso es lo que nosotros llamamos constructores, ¿vale? Que que simplemente te permite probar distintas setups. Ahora entras así, ahora entras asar, ahora sales así. los que los los alumnos del curso, que sé que hay muchos que siguen estos vídeos, ya saben de de lo que les hablo, porque en el curso enseñamos alguno y de hecho entregamos con el curso algún algún consultor bastante potente, pero este digamos es
+
+00:15:35 - 00:16:29
+específico de de de Smokeups, ¿vale? Es específico y están todas estas condiciones que te hablaba, que si market cap, que si volumen y todo es configurable en este código. V haciendo iteraciones, ¿no? Vas haciendo cambios, ¿sí? o o manualmente, pero es para probar. Bueno, pues yo voy a probar, por ejemplo, es muy típico, ellos tienen un nivel en menos de 300 millones de de marketc, pero bueno, yo si quiero probar pues menos de 2 millones, pues probo. O o de 2 billions, o sea, puedo puedo probar. Vale, una vez tienes este el
+
+00:16:02 - 00:17:08
+torno de trabajo es muy sencillo. Nosotros el código lo tenemos, está muy muy bien trabajado, pero eh el problema que tenemos es que no no conseguimos ser fluidos eh técnicamente de acuerdo en esta prueba porque por lo que te decía, por ese impedimento técnico donde tú tienes, yo que sé, por ejemplo, eh para que veáis, aquí tenemos un un software que es eh portfolio trader de multichard, o sea, que tienes una lista, ¿ves? Bueno, es igual simplemente para que veáis la lista, eh, vale, la lista de de acciones, o sea, está todo
+
+00:16:35 - 00:17:38
+incluido ahora mismo en el Todo eso en un minuto, eh, todo eso en un minuto, ahí pues hay creo que hay casi 1000 acciones, ¿entiendes? Entonces, claro, esto ahora si lo doy a bactés, pues igual está eh pues horas trabajando para tratar de analizarlo y si tengo suerte y no se cuelga, pues pues entonces al final obtené un un dato, ¿vale? Entonces, claro, para cada prueba debería de hacer eso, ¿entiendes? Entonces, realmente este entorno de trabajo pues no se está adaptando bien. La verdad que esperábamos ya ya pensábamos que no nos
+
+00:17:07 - 00:18:12
+llevaría a operar o que sería muy difícil que eh lo pudiéramos operar en este entorno, pero sí que pensábamos que a nivel de bacteria análisis nos permitía llegar más lejos y estamos viendo estamos viendo que que que probablemente tenemos que cambiar de de este entorno a otro entorno que nos permita mejorar la velocidad de análisis, ¿no? Porque si no pues no hay manera de avanzar. estas pruebas que te digo que es interesante. O sea, una de las ventajas del del algorítmico Víctor es es este, que yo hay eh una
+
+00:17:39 - 00:18:28
+estrategia, pero yo puedo analizarla, puedo cambiarla, puedo ver cómo evoluciona. Esa es la potencia. Claro. Entonces, si no podemos aprovechar esa potencia, pues bueno, pierde parte de la de la de la gracia, ¿no? Total, pero cuando dices enorno, ¿te refieres a station en concreto? Multiarr Multicharge es eso. Sí, sí, sí. O sea, digamos que hay ahora mismo ves que hay limitaciones y a otros. ¿Tenéis idea a cuáles? Sí, probablemente un entorno. Bueno, tenemos que tenemos que explorar eh que hace tiempo que lo tenemos
+
+00:18:04 - 00:19:07
+pendiente, ya lo habíamos eh eh comentando, explorar el tema de flash res, que es verdad que como no automatiza pues también sería solo a nivel de análisis, pero sí que lo queremos probar por ver si nos permite a lo mejor obtener algunas conclusiones adicionales, pero aún así tampoco será definitivo porque no nos permite operar ahí. Entonces, casi seguro que habrá que ir a un entorno en Python, donde ahí tienes la libertad absoluta y de hecho recientemente pues ya es público que hemos incorporado Isaac, Isaac Turias,
+
+00:18:35 - 00:19:27
+que es especialista en en Python, ir un poco a a un entorno más de código y más flexible. Perfecto. Más flexible. ¿Y tienes algún ejemplo, por ejemplo, para que la redundancia para que la gente vea, yo que sé, entradas como lo que has mostrado. ¿Tienes alguna más por ahí que creas que puedes enseñar algo interesante? Sí. Bueno, esta esta estrategia que te ensaba, que es la que tenemos un poquito más más desapoyada, estaba aquí tratando de abrir otra otra acción. No sé si veréis en directo un poco lo que os comentaba de lo que
+
+00:19:01 - 00:19:58
+hablando de la dificultad de bajar los eh los datos. Mira, de momento, si te parece, hablamos un poquito del del back test. Es un back test que no importa la no importa el el beneficio que veis eh que son 62 porque al final hemos puesto una una exposición eh que era un 1% por probar, ¿sabes? No importa, no. Los ratios están los ratos están muy bien. Lo que importa es la relación retorno riesgo y por ejemplo las curvas, ¿no? Que podéis ver aquí, mira, sean esta que se ve con el con el drawdown aquí abajo.
+
+00:19:29 - 00:20:31
+Espérate, por ejemplo, ves una curva. Esto esto está bien, son cinco 5 años 200 y pico trades que son uno por acción, eh, vale, aquí la lista, si os fijáis aquí, pues eh no sé si ve muy claro, ¿ves aquí Blin o XBR? Son acciones distintas, ¿ves? Todos son acciones distintos, tres distintos. O sea, en en esa curva están incluidas todas una entrada por cada una de este tipo de acciones. Todas, sí, una, pero bueno, porque se da, eh, puede ser que hayan dos, eh, es porque no cumple no cumple la conección. Normalmente hay una
+
+00:20:00 - 00:21:01
+normalmente hay una, pero simplemente es eh en estos 5 años que que se cumpla eh que se cumpla las reglas que ya te digo están basadas en las que hemos hablado a nivel de filtrado típicas y a nivel de operativo usa el el el Bwap que que los que no sepáis el volumen medio ponderado, ¿vale? Por el precio, ¿vale? Entonces, al final eh que es bastante, bueno, es bastante utilizado, no solo en smallcrafts, eh, también en otros se usa, pero en smallcraft pues se usa mucho. Si os fijáis muchas veces en veis
+
+00:20:31 - 00:21:31
+gráficos, veéis esa línea puesta pues y es eso, claro, es una referencia clave es el es el bigap, ¿no? Porque acostumbra a actuar un poco de de de imán, ¿no?, del precio, es decir, es como un soporte, ¿no? Cuando lo supera y también hay acto de resistencia. Entonces es bastante útil en este tipo de trading lo usan mucho de referencia para definir un poco la la tendencia del activo, mientras está por encima, pues alcista mientras está por debajo bajista y esta estrategia aún todavía quizás pronto para asegurarlo de manera
+
+00:21:01 - 00:22:03
+rotunda, pero yo casi me atrevo a decir que es probablemente probablemente válido y robusto. Claro. Y además tiene dos muy pequeños. Sí, sí, sí, sí. opera, opera poco y y demás, pero pero bueno, y tiene campo de mejora, eh, ya te digo, porque es lo que te hablaba al final al final esta es una idea, esta es una idea eh que que de hecho ya digo la la bien original de este alumno que que está colaborando, que nos lo nos lo dijo y estamos eh digamos haciendo una colaboración, podemos decir, técnica con
+
+00:21:31 - 00:22:33
+con él y esta en concreto, evidentemente está basada en toda la experiencia que hemos acumulado, pero ya está creada O sea, esta no es ninguna que hayamos visto igual en en otro curso o en redes o en un vídeo, ¿no?, de alguien que hayas entrevistado tú, por ejemplo, que has entrevistado varios, sino esta es ideada y al final un poco apunta en la dirección de algo que ya hemos ido diciendo y que el otro día, por ejemplo, una persona me preguntaba en en X y le decía lo mismo. Para mí la la gran ventaja de todo este negocio es el
+
+00:22:03 - 00:23:04
+mercado. Entonces, entonces la estrategia no digo que no tenga importancia porque sería sería un poco excesivo decir que no tenga importancia, pero no es lo más importante. O sea, digamos que para encontrar eficiencias en el NASAC, la estrategia lo es todo. Para encontrar ineficiencias en Small Caps hay muchas más estrategias. Claro. Y de hecho otra prueba que hay es que algún algún trader, algún trader de Small Caps que de hecho que yo recuerde ahora mismo dos, seguramente tú conocerás más que ya operaban antes, o
+
+00:22:33 - 00:23:45
+sea, que vienen de la operativa, podemos decir más más clásica y o les iba regular o los iba incluso mal, correcto. Y ahora les va muy bien SM, ¿no? y y y vienen de de esta operativa, microsas, microsconocimientos, pero que en este caso el mercado favorece el mercado es más ineficiente y por lo tanto da más eh es más fácil encontrar estrategias, que no quiere decir que sea fácil, pero es más es más fácil, es más fácil. Por lo tanto, hay muchas estrategias que pueden funcionar en en este tipo de de entorno,
+
+00:23:09 - 00:24:00
+que bueno, eso es seguro. Eso le he puesto casualmente, es decir, que no es que no es que no sabía ni dónde estaba el tradeo ahora mismo, ¿vale? Porque es una es una de estas listas, ¿vale? Aquí y es una es una de estas, ¿vale? Pero pero ahora mismo no sabía exactamente dónde está, ¿vale? Bueno, pues ves aquí, veis el el lo que decíamos el BW, ¿eh? Pero no es que entres solo por el WA, porque antes de eso es lo que te decía, ¿ves? Es el volumen. ¿Ves? Aquí día previo no hay nada, está muerta, no
+
+00:23:35 - 00:24:35
+interesa nadie, incluso tiene velas de un minuto, veis esos tics ahí sueltos que quiere decir que ha habido un cruce solo. Fíjate el gráfico, eso es inoperable. Dices, "Pero eso, ¿qué vi es? Esto esto no se puede operar, esto no interesa." Y de pronto aquí empieza y milagro. Sí, sí, sí, sí. Aquí empieza el premarket, ¿ves? Y ya tiene mucho volumen, o sea, en prebar tiene mucho más volumen que tenía antes. Aquí estamos hablando 600 acciones, 300, 3000. Aquí ya salta a 150.000. Claro, hay mucha gente que ya premarket. Sí,
+
+00:24:05 - 00:25:02
+sí, sí. Ves aquí que parece que no hay nada, dices, mira, no hay nada. No hay nada porque el gráfico se autoescala. Parece que no hay nada, pero aquí ya está haciendo, ¿veis? 5000, 100,000, cuando ahí estaba haciendo 200, ¿sabes? Entonces ya multiplica por mucho el volumen de cualquier día y aquí ya absolutamente el despelote, ¿no? O perdón. esillón 100 de acciones en un minuto. Eh, esto es un gráfico un minuto millón 100 cuando venía haciendo 100 200 acciones. Entonces al final es esto lo que lo que te decía que es la clave, o
+
+00:24:33 - 00:25:33
+sea, la mayor clave de todas es el volumen sin ninguna duda. Esta estrategia tiene un trading también, pero bueno, en este caso no salta, salta el profit. tiene TP, creo que es el 100% y luego tiene un trailing que lo va acompañando pues pues si aquí imagínate que se hubiera girado antes de llegar al 100% pues las saques. Y el stop original está por debajo de Biga, lo sabes. El stop es un trailing. Ahora mismo no creo que era de un 15 así que teníamos, pero bueno, eso se puede cambiar, ¿eh? Esto al final es un código
+
+00:25:02 - 00:26:03
+y lógicamente pues tiene sus torebas. Otra cosa es que sea fácil por lo que te decía de los recursos, pero esto esto viene de un constructor y aquí podemos eh modificar cualquier cualquier parámetro. Por supuesto, si la tecnología nos lo permitiera, que eso es inabordable hoy en día, hasta optimizarlo. Es decir, imagínate que yo pudiera cargar, imagínate que en vez de cinco pudiera haber cargado 15 años de todas acciones actuales y las anteriores, las deslistadas, que porque esas acciones muchas se se listan, ¿no?,
+
+00:25:33 - 00:26:29
+de los últimos años procesando todas las reglas y a lo mejor pues en vez de conseguir 200 trades, ese entorno que te digo, a lo mejor conseguiría 3,000 trades. Bueno, yo ahí podría estar alún proceso de optimización sin ningún tipo de problema, ¿vale? Por temas de robustez, pero técnicamente hoy en este momento no podemos hacerlos y laíamos te digo, te entiendo, eh, que que a lo mejor no exactamente eso que te he dicho, pero sí que queremos hacer algo de ese estilo. Podemos poder hacer pruebas cambiando
+
+00:26:01 - 00:27:00
+cosas. Hoy en día, eh, es muy complicado porque cada pequeña prueba, cada pequeño análisis, simplemente que yo cambie, ¿no? En esta acción, en esta acción lo puedo hacer, pero lo tengo que hacer en 1000, ¿me entiendes? lo tengo que hacer en 1000 y técnicamente pues eh ya digo, no no se está nos estás resultando un cuello de botella que ya hemos visto que que ya está, que hay que saltarlo, hay que decir, hay que cambiar porque esto ha dado de sí, nos ha permitido estudiarlo, analizarlo, incluso hacer
+
+00:26:31 - 00:26:48
+algún back test, pero nos nos está frenando. Hay que hay que cambiar hay que cambiar y evolucionar a otro entorno que nos permita ganar velocidad. M.

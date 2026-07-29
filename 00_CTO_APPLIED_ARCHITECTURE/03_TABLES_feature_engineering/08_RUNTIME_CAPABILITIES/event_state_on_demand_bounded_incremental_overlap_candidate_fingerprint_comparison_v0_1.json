@@ -1,0 +1,21 @@
+{
+  "review_id": "event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_v0_1_20260728T000000Z",
+  "review_run_id": "event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_v0_1_20260728T091026Z",
+  "review_gate": "event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_v0_1",
+  "source_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+  "candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+  "logical_event_state_dataset_fingerprint": "73b2f81b76697eb67b55faffecd36c8e77ecf926c1c1f9e56cf6ee0e0ecb10f6",
+  "physical_artifact_fingerprint": "dd78476d760b3bea2bad4fe78d89add430eec3d9f0ba9650261f07304998cc82",
+  "registry_entry_fingerprint": "0de76e5d0366d792f2210cb98aa49286681c44deab50860d0f5cacf8f0426d30",
+  "validation_result_fingerprint": "8bb08f0f2afdff138064758bda45f21ca55ac415f760ce54816f070bb958a37b",
+  "combined_file_recorded_sha256": "5262c5f8583de10b5535d24414036296f6746dbede0f18152fadaa786fc1b02e",
+  "combined_file_current_sha256": "5262c5f8583de10b5535d24414036296f6746dbede0f18152fadaa786fc1b02e",
+  "combined_file_hash_match": true,
+  "delta_file_hash_match": true,
+  "request_fingerprint_match": true,
+  "dependency_resolution_fingerprint_match": true,
+  "execution_plan_fingerprint_match": true,
+  "candidate_dataset_fingerprint_match": true,
+  "logical_dataset_fingerprint_match": true,
+  "fingerprint_comparison_sha256": "84f46ae49bc45c624ea980ede226f22dce7482c1be300f78cedf83ff90e7c8f7"
+}

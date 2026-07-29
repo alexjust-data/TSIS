@@ -1,8 +1,0 @@
-{"finding_id": "OF-0039", "finding": "Determinar si la referencia 30–50 trades por grado de libertad tiene soporte externo aplicable por diseño de estudio.", "status": "OPEN"}
-{"finding_id": "OF-0040", "finding": "Separar qué notas verdes son transcripción del docente y cuáles son enriquecimiento editorial posterior.", "status": "OPEN"}
-{"finding_id": "OF-0041", "finding": "Las imágenes locales no enlazadas fueron auditadas mediante láminas de contacto; refuerzan gráficos, configuraciones, tablas y mapas ya descritos, sin justificar por sí solas nuevas afirmaciones textuales.", "status": "CLOSED_VISUAL_AUDIT_COMPLETE"}
-{"finding_id": "OF-0042", "finding": "Resolver el enlace externo de apariencia gráfica en practice-07 sin confundirlo con una imagen local ausente.", "status": "OPEN"}
-{"finding_id": "OF-0043", "finding": "Verificar si el código ORB usa cuerpos o extremos completos de vela en cada versión.", "status": "OPEN"}
-{"finding_id": "OF-0044", "finding": "Determinar qué filtros ORB son originales del curso y cuáles proceden de artículos externos.", "status": "OPEN"}
-{"finding_id": "OF-0045", "finding": "Conservar la selección final de Apolo como provisional hasta recuperar parámetros y tablas fuente completos.", "status": "OPEN"}
-{"finding_id": "OF-0046", "finding": "La exploración Bollinger intradía no concluye en una configuración admitida.", "status": "OPEN"}

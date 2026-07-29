@@ -1,0 +1,126 @@
+{
+  "contract_id": "runtime_capability_effective_view_contract_v0_1_2",
+  "contract_version": "0.1.2",
+  "status": "PROVIDER_CONTRACT_SCHEMA_HARDENED_V0_1_2_NO_EXECUTION",
+  "owner_layer": "08_RUNTIME_CAPABILITIES",
+  "schema_hardening_gate": "runtime_provider_contract_schema_hardening_v0_1_2",
+  "previous_internal_gate": "runtime_provider_contract_schema_hardening_v0_1_1",
+  "previous_internal_status": "CLOSED_PROVIDER_CONTRACT_SCHEMA_HARDENED_V0_1_1_WITH_RESTRICTIONS_NO_EXECUTION",
+  "previous_external_audit_status": "FAIL_EXECUTABLE_SEMANTIC_GAPS",
+  "purpose": "Executable effective capability view.",
+  "contract_hash_policy": {
+    "hash_authority": "PACKAGE_MANIFEST.full_file_sha256",
+    "embedded_contract_hash": "not_used_in_v0_1_2"
+  },
+  "semantic_validator_required": true,
+  "semantic_rules": [
+    "bundle cardinality binds state kinds, request fingerprints, request refs and response refs",
+    "ref_id uniqueness is semantic per reference array",
+    "request_type binds capability_id, profile_id and detail branch",
+    "effective capability view contains exactly one market capability and one event capability",
+    "FAIL or BLOCKED manifests cannot certify reusable datasets",
+    "operation governs resolution mode and execution authorization semantics",
+    "invocation_status governs required and prohibited fields",
+    "superseded compatibility snapshots remain historical and do not authorize consumption"
+  ],
+  "json_schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "view_id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "view_version": {
+        "const": "0.1.2"
+      },
+      "capabilities": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "capability_id": {
+              "enum": [
+                "market_state_on_demand_runtime_capability_v0_1",
+                "event_state_on_demand_runtime_capability_v0_1"
+              ]
+            },
+            "request_type": {
+              "enum": [
+                "market_state",
+                "event_state"
+              ]
+            },
+            "capability_status": {
+              "enum": [
+                "promoted_with_restrictions",
+                "available_with_restrictions"
+              ]
+            },
+            "supported_profile_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "supported_event_type_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "candidate_generation_authority": {
+              "const": true
+            },
+            "reuse_authority": {
+              "const": true
+            },
+            "official_dataset": {
+              "const": false
+            },
+            "production": {
+              "const": false
+            },
+            "downstream": {
+              "const": false
+            },
+            "backtest_consumption": {
+              "const": false
+            }
+          },
+          "required": [
+            "capability_id",
+            "request_type",
+            "capability_status",
+            "supported_profile_ids",
+            "supported_event_type_ids",
+            "candidate_generation_authority",
+            "reuse_authority",
+            "official_dataset",
+            "production",
+            "downstream",
+            "backtest_consumption"
+          ]
+        },
+        "minItems": 2,
+        "uniqueItems": true,
+        "maxItems": 2
+      }
+    },
+    "required": [
+      "view_id",
+      "view_version",
+      "capabilities"
+    ],
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://tsis.local/contracts/runtime_capability_effective_view_contract_v0_1_2.schema.json",
+    "title": "TSIS RuntimeCapabilityEffectiveView v0.1.2"
+  }
+}

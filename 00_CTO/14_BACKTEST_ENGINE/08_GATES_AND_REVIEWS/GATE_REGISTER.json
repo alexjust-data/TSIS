@@ -1,0 +1,345 @@
+{
+  "as_of": "2026-07-29",
+  "gates": [
+    {
+      "authorized_scope": "registered request resolution and manifest outputs",
+      "evidence": [
+        "run_preflight_real_fixture_2026_01_05_qg5_v0_1"
+      ],
+      "gate_id": "BT-GATE-001",
+      "non_claims": [
+        "physical fixture not yet generalized",
+        "edge"
+      ],
+      "status": "CLOSED_PASS",
+      "test_count_at_close": 21,
+      "title": "RunPreflight contract resolution"
+    },
+    {
+      "authorized_scope": "bounded QG5/LT1B real-data validation",
+      "evidence": [
+        "run_preflight_real_fixture_2026_01_05_qg5_v0_2"
+      ],
+      "gate_id": "BT-GATE-002",
+      "non_claims": [
+        "all-symbol coverage",
+        "execution realism"
+      ],
+      "status": "CLOSED_PASS",
+      "test_count_at_close": 34,
+      "title": "Physical fixture inspection"
+    },
+    {
+      "authorized_scope": "deterministic bar/gap replay from passed preflight",
+      "evidence": [
+        "replay_real_fixture_2026_01_05_qg5_v0_1"
+      ],
+      "gate_id": "BT-GATE-003",
+      "non_claims": [
+        "fill realism",
+        "strategy logic"
+      ],
+      "status": "CLOSED_PASS",
+      "test_count_at_close": 43,
+      "title": "Historical replay minimum"
+    },
+    {
+      "authorized_scope": "scheduled decision/order/fill/position/gross-PnL proxy",
+      "evidence": [
+        "mechanical_abat_short_open_close_v0_1"
+      ],
+      "gate_id": "BT-GATE-004",
+      "non_claims": [
+        "short tradability",
+        "fill realism",
+        "edge"
+      ],
+      "status": "CLOSED_PASS",
+      "test_count_at_close": 51,
+      "title": "Mechanical trade path"
+    },
+    {
+      "authorized_scope": "cost components, cash, net PnL, equity and reconciliation",
+      "evidence": [
+        "accounting_abat_short_open_close_v0_1"
+      ],
+      "gate_id": "BT-GATE-005",
+      "non_claims": [
+        "broker cost realism",
+        "fill realism",
+        "short tradability",
+        "edge"
+      ],
+      "status": "CLOSED_PASS",
+      "test_count_at_close": 61,
+      "title": "Accounting minimum"
+    },
+    {
+      "authorized_scope": "contract definition and review only",
+      "blockers": [],
+      "closed_at": "2026-07-29T08:34:00Z",
+      "correction_status": "CLOSED_CORRECTED_AND_FINAL_REVIEW_ACCEPTED",
+      "evidence": [
+        "docs/00_system/07_EXECUTION_SEMANTICS_AND_COST_MODEL_CONTRACT_V0_1.md",
+        "execution_semantics_governance_review_packet_20260729T082900Z.zip",
+        "FINAL_ENUMERATION_REVIEW=PASS"
+      ],
+      "gate_id": "BT-GATE-006",
+      "non_claims": [
+        "broker realism",
+        "code implementation",
+        "edge",
+        "fill realism",
+        "short tradability"
+      ],
+      "review_result": "FINAL_ENUMERATION_REVIEW_PASS",
+      "status": "CLOSED_PASS",
+      "test_count_at_close": null,
+      "title": "Execution semantics and cost-model contract review"
+    },
+    {
+      "authorized_scope": "external architectural context and future compatibility planning only",
+      "evidence": [
+        "docs/00_system/STATE_PROVIDER_CONSUMER_HOLD_HANDOFF_V0_1.md",
+        "00_CTO_APPLIED_ARCHITECTURE/AGENTS.md",
+        "00_CTO_APPLIED_ARCHITECTURE/README.md",
+        "00_CTO_APPLIED_ARCHITECTURE/CHANGELOG.md",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/README.md"
+      ],
+      "gate_id": "BT-GATE-007",
+      "non_claims": [
+        "FUTURE_PROVIDER_REGISTRY_INTEGRATION",
+        "StateReplayFeed",
+        "physical StateBundle reads",
+        "Market State consumption",
+        "Event State consumption",
+        "state-driven decisions"
+      ],
+      "status": "HOLD_NOT_AUTHORIZED",
+      "test_count_at_close": null,
+      "title": "State provider-consumer hold"
+    },
+    {
+      "authorized_scope": "create CTO authority records from implementation evidence and integrate prior local documentation without modifying engine",
+      "evidence": [
+        "00_CTO/14_BACKTEST_ENGINE"
+      ],
+      "gate_id": "BT-GATE-008",
+      "non_claims": [
+        "historical completeness outside preserved snapshot",
+        "cross-system TSIS governance"
+      ],
+      "status": "CLOSED_BASELINE_CREATED_PENDING_LOCAL_ADOPTION",
+      "test_count_at_close": null,
+      "title": "Integrated backtest governance baseline"
+    },
+    {
+      "authorized_scope": "bounded implementation of DETERMINISTIC_FILL_SIMULATOR_V0_1 only",
+      "blockers": [],
+      "closed_at": "2026-07-29T09:01:45Z",
+      "code_implementation": "AUTHORIZED_FOR_DETERMINISTIC_FILL_SIMULATOR_V0_1_ONLY",
+      "evidence": [
+        "BT-GATE-006=CLOSED_PASS",
+        "docs/00_system/07_EXECUTION_SEMANTICS_AND_COST_MODEL_CONTRACT_V0_1.md",
+        "docs/00_system/08_DETERMINISTIC_FILL_SIMULATOR_V0_1_AUTHORIZATION.md",
+        "bt_gate_009_authorization_review_packet_20260729T085644Z.zip",
+        "BT-GATE-009_DOCUMENT_REVIEW=PASS"
+      ],
+      "gate_id": "BT-GATE-009",
+      "non_claims": [
+        "code implementation",
+        "broker realism",
+        "fill realism",
+        "short tradability",
+        "edge"
+      ],
+      "review_result": "BT_GATE_009_DOCUMENT_REVIEW_PASS",
+      "status": "CLOSED_PASS_AUTHORIZATION_GRANTED",
+      "test_count_at_close": null,
+      "title": "Deterministic fill simulator V0.1 authorization"
+    },
+    {
+      "authorized_scope": "implement, test and evidence DETERMINISTIC_FILL_SIMULATOR_V0_1 according to document 08 and contract 07",
+      "blockers": [],
+      "closed_at": "2026-07-29T10:26:52Z",
+      "code_implementation": "IMPLEMENTED_AND_ACCEPTED_FOR_DETERMINISTIC_FILL_SIMULATOR_V0_1_ONLY",
+      "evidence": [
+        "BT-GATE-009=CLOSED_PASS_AUTHORIZATION_GRANTED",
+        "docs/00_system/08_DETERMINISTIC_FILL_SIMULATOR_V0_1_AUTHORIZATION.md",
+        "runs/deterministic_fill_simulator_v0_1_acceptance_v0_3",
+        "tests/unit/test_deterministic_fill_simulator.py",
+        "docs/00_system/09_DETERMINISTIC_FILL_SIMULATOR_IMPLEMENTATION_AND_ACCEPTANCE_V0_1.md",
+        "ENGINE_TEST_SUITE=91_OK",
+        "INCLUDED_SIMULATOR_TESTS=30_OK",
+        "ACCEPTANCE_RUN_REQUIRED_OUTCOMES=PASS",
+        "PACKAGE_REPRODUCIBILITY_WITHOUT_PYARROW=PASS",
+        "bt_gate_010_implementation_review_packet_20260729T095411Z.zip",
+        "ZIP_SHA256=964e99c98eb005000c447367d3c8b6d4c7701f8b2811970c3066bb5e29a21df5",
+        "BT-GATE-010_EXTERNAL_ACCEPTANCE_REVIEW=PASS"
+      ],
+      "gate_id": "BT-GATE-010",
+      "included_simulator_test_count": 30,
+      "non_claims": [
+        "broker realism",
+        "fill realism beyond V0.1 deterministic contract",
+        "partial fills",
+        "bid/ask or quote-aware fills",
+        "borrow/locates",
+        "StateReplayFeed",
+        "Market State consumption",
+        "Event State consumption",
+        "edge"
+      ],
+      "review_result": "BT_GATE_010_EXTERNAL_ACCEPTANCE_REVIEW_PASS",
+      "status": "CLOSED_PASS_IMPLEMENTATION_ACCEPTED",
+      "test_count_at_close": 91,
+      "title": "Deterministic fill simulator V0.1 implementation and acceptance"
+    },
+    {
+      "authorized_scope": "owner-approved continuous implementation of SINGLE_STRATEGY_END_TO_END_BACKTEST as one capability gate",
+      "blockers": [],
+      "closed_at": "2026-07-29T14:30:50Z",
+      "code_implementation": "IMPLEMENTED_AND_ACCEPTED_FOR_SINGLE_STRATEGY_END_TO_END_BACKTEST_ONLY",
+      "evidence": [
+        "docs/00_system/10_BT_GATE_011_SINGLE_STRATEGY_END_TO_END_BACKTEST_CONTRACT_V0_1.md",
+        "docs/00_system/11_BT_GATE_011_SINGLE_STRATEGY_END_TO_END_ACCEPTANCE_PACKET_V0_1.md",
+        "src/tsis_backtest/backtest/",
+        "tests/unit/test_single_strategy_end_to_end_backtest.py",
+        "configs/runs/bt_gate_011_open_short_close_qg5_v0_1.json",
+        "scripts/run_bt_gate_011_end_to_end.py",
+        "runs/bt_gate_011_open_short_close_qg5_v0_1",
+        "ENGINE_TEST_SUITE=95_OK",
+        "BT-GATE-011_VALIDATION_STATUS=PASS",
+        "BT-GATE-011_DETERMINISM_STATUS=PASS",
+        "ENGINE_TEST_SUITE=99_OK",
+        "BT-GATE-011_EVENT_LOOP_INTEGRATION=PASS",
+        "BT-GATE-011_PACKAGE_TEST_REPRODUCIBILITY=PASS",
+        "BT-GATE-011_END_TO_END_RERUN_REPRODUCIBILITY=PASS",
+        "tests/fixtures/bt_gate_011_qg5_portable/data_preflight_report.json",
+        "runs/bt_gate_011_open_short_close_qg5_v0_1/event_loop_trace.json",
+        "BT-GATE-011_ONLINE_EVENT_DRIVEN_CAUSALITY=PASS",
+        "BT-GATE-011_ORDERS_PRE_REGISTERED_BEFORE_REPLAY=PASS",
+        "BT-GATE-011_ACCOUNTING_APPLIED_INSIDE_EVENT_LOOP=PASS",
+        "BT-GATE-011_DETERMINISTIC_OUTPUT_HASH=f5bccea7d6f5f6eff0647a66d4827a011e5854af9644a8854b10135da883cc2b",
+        "BT-GATE-011_FINAL_ACCEPTANCE_REVIEW=PASS",
+        "bt_gate_011_end_to_end_acceptance_packet_20260729T141445Z.zip",
+        "ZIP_SHA256=33376d73eeba6963d63bffbbf782c2a08e67ed741f6d16675fe6cc4cc44e8dfa"
+      ],
+      "final_owner_review": "ACCEPTED",
+      "gate_id": "BT-GATE-011",
+      "non_claims": [
+        "edge",
+        "economic realism",
+        "borrow/locates",
+        "SSR",
+        "halts",
+        "liquidity/capacity",
+        "partial fills",
+        "bid/ask execution",
+        "StateReplayFeed",
+        "Market State consumption",
+        "Event State consumption"
+      ],
+      "review_result": "BT_GATE_011_FINAL_ACCEPTANCE_REVIEW_PASS",
+      "status": "CLOSED_PASS_IMPLEMENTATION_ACCEPTED",
+      "test_count_at_close": 99,
+      "test_count_current": 99,
+      "title": "Single-strategy end-to-end backtest"
+    },
+    {
+      "authorized_at": "2026-07-29T16:47:47Z",
+      "authorized_scope": "owner-approved continuous implementation of MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE under the corrected integral BT-GATE-012 contract",
+      "blockers": [],
+      "code_implementation": "IMPLEMENTED_AND_ACCEPTED_FOR_MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE_ONLY",
+      "evidence": [
+        "docs/00_system/12_BT_GATE_012_MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE_CONTRACT_V0_1.md",
+        "BT-GATE-012_CONTRACT_REVIEW_FINDINGS_CORRECTED",
+        "PORTFOLIO_VALUATION_PRICE_FIELD=close",
+        "CALENDAR_AUTHORITY=TSIS_PORTABLE_SESSION_CALENDAR_SNAPSHOT_V0_1",
+        "bt_gate_012_contract_review_packet_20260729T164056Z.zip",
+        "ZIP_SHA256=b8bb2e5641db2cd3aee8ede94d571a1176479e27cbdf5a05602e1111163b6f40",
+        "BT-GATE-012_OWNER_CONTRACT_REVIEW=PASS",
+        "NO_IMPLEMENTATION_CONTENT_SCAN=PASS",
+        "implementation_inventory_file_count=161",
+        "src/tsis_backtest/portfolio/",
+        "tests/unit/test_portfolio_slice_runner.py",
+        "configs/runs/bt_gate_012_multi_symbol_multi_session_qg5_v0_1.json",
+        "scripts/run_bt_gate_012_portfolio_slice.py",
+        "scripts/package_bt_gate_012_acceptance.py",
+        "docs/00_system/13_BT_GATE_012_MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE_ACCEPTANCE_PACKET_V0_1.md",
+        "runs/bt_gate_012_multi_symbol_multi_session_qg5_v0_1",
+        "ENGINE_TEST_SUITE=106_OK",
+        "BT-GATE-012_FOCUSED_TESTS=7_OK",
+        "BT-GATE-012_VALIDATION_STATUS=PASS",
+        "BT-GATE-012_DETERMINISM_STATUS=PASS",
+        "BT-GATE-012_DETERMINISTIC_OUTPUT_HASH=414aceb2bc80836f8fa821cd4d14071e54c86f3c7855c0a34c82ffd8b1c79182",
+        "BT-GATE-012_FINAL_OWNER_REVIEW=PASS",
+        "BT-GATE-012_FINAL_PACKET=bt_gate_012_portfolio_slice_acceptance_packet_20260729T172450Z.zip",
+        "ZIP_SHA256=4181d42a61a66ce8f71b7ce3156bff586c756154a2b86c95676bc9efe8c87975",
+        "BT-GATE-012_SCOPE_CONFORMANCE=PASS",
+        "BT-GATE-012_IMPLEMENTATION=PASS",
+        "BT-GATE-012_END_TO_END_VALIDATION=PASS",
+        "BT-GATE-012_ACCOUNTING_RECONCILIATION=PASS",
+        "BT-GATE-012_BOUNDARY_PRESERVATION=PASS"
+      ],
+      "execution_mode": "CONTINUOUS_UNTIL_FINAL_ACCEPTANCE_PACKET",
+      "gate_id": "BT-GATE-012",
+      "implementation_acceptance": "ACCEPTED",
+      "next_owner_review": "FINAL_GATE_ACCEPTANCE_ONLY",
+      "no_intermediate_microgates": "AUTHORIZED",
+      "non_claims": [
+        "edge",
+        "economic realism",
+        "borrow/locates",
+        "SSR",
+        "halts",
+        "liquidity/capacity",
+        "partial fills",
+        "bid/ask execution",
+        "StateReplayFeed",
+        "Market State consumption",
+        "Event State consumption"
+      ],
+      "owner_contract_review": "PASS",
+      "review_result": "BT_GATE_012_FINAL_OWNER_REVIEW_PASS",
+      "status": "CLOSED_PASS_IMPLEMENTATION_ACCEPTED",
+      "test_count_at_close": 106,
+      "title": "Multi-symbol multi-session portfolio slice",
+      "test_count_current": 106,
+      "focused_test_count_current": 7,
+      "validation_status": "PASS",
+      "determinism_status": "PASS",
+      "deterministic_output_hash": "414aceb2bc80836f8fa821cd4d14071e54c86f3c7855c0a34c82ffd8b1c79182",
+      "closed_at": "2026-07-29T17:29:41Z",
+      "final_owner_review": "PASS",
+      "final_packet": "bt_gate_012_portfolio_slice_acceptance_packet_20260729T172450Z.zip",
+      "final_packet_sha256": "4181d42a61a66ce8f71b7ce3156bff586c756154a2b86c95676bc9efe8c87975",
+      "focused_test_count_at_close": 7
+    },
+    {
+      "gate_id": "BT-GATE-013",
+      "title": "Physical historical replay slice V0.1",
+      "name": "PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1",
+      "status": "CONTRACT_DRAFT_PENDING_OWNER_REVIEW",
+      "code_implementation": "NOT_AUTHORIZED",
+      "authorized_scope": "contract definition not opened by BT-GATE-012 closure",
+      "new_boundary": "PHYSICAL_013_ROWS_TO_ACCEPTED_REPLAY_ENGINE",
+      "future_capability_not_this_gate": "SMALL_CAPS_RIGOROUS_RESEARCH_RUNNER",
+      "rationale": "Cross only the physical data boundary before opening small-caps tradability, batch research or statistical validation gates.",
+      "contract_artifact": "docs/00_system/14_BT_GATE_013_PHYSICAL_HISTORICAL_REPLAY_SLICE_CONTRACT_V0_1.md",
+      "contract_review": "PENDING_OWNER_REVIEW",
+      "updated_at": "2026-07-29T18:09:29Z"
+    }
+  ],
+  "next_gate": {
+    "gate_id": "BT-GATE-013",
+    "name": "PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1",
+    "status": "CONTRACT_DRAFT_PENDING_OWNER_REVIEW",
+    "code_implementation": "NOT_AUTHORIZED",
+    "authorized_scope": "contract definition not opened by BT-GATE-012 closure",
+    "new_boundary": "PHYSICAL_013_ROWS_TO_ACCEPTED_REPLAY_ENGINE",
+    "future_capability_not_this_gate": "SMALL_CAPS_RIGOROUS_RESEARCH_RUNNER",
+    "contract_artifact": "docs/00_system/14_BT_GATE_013_PHYSICAL_HISTORICAL_REPLAY_SLICE_CONTRACT_V0_1.md"
+  },
+  "register_id": "TSIS_BACKTEST_GATE_REGISTER_V0_1"
+}

@@ -1,0 +1,212 @@
+{
+  "review_id": "event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_v0_1_20260728T000000Z",
+  "review_run_id": "event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_v0_1_20260728T091026Z",
+  "review_gate": "event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_v0_1",
+  "status": "CLOSED_PASS_EVENT_STATE_INCREMENTAL_OVERLAP_CANDIDATE_DATASET_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION",
+  "reviewed_run": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+  "reviewed_candidate_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+  "reviewed_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+  "reviewed_logical_event_state_dataset_fingerprint": "73b2f81b76697eb67b55faffecd36c8e77ecf926c1c1f9e56cf6ee0e0ecb10f6",
+  "reviewed_physical_artifact_fingerprint": "dd78476d760b3bea2bad4fe78d89add430eec3d9f0ba9650261f07304998cc82",
+  "decision": {
+    "review_decision": "approved_as_event_state_incremental_overlap_candidate_evidence_with_restrictions",
+    "requested_contexts": 12,
+    "represented_contexts": 11,
+    "reused_validated_event_state_contexts": 8,
+    "delta_materialized_event_state_contexts": 3,
+    "unavailable_contexts": 1,
+    "unaccounted_contexts": 0,
+    "combined_event_state_records": 11,
+    "hard_review_failures": 0,
+    "candidate_dataset_review_approved": true,
+    "dataset_completeness": "partial",
+    "reuse_eligibility_after_review": "pending_incremental_overlap_idempotency_reuse_test",
+    "official_dataset_after_review": false,
+    "production_after_review": false,
+    "downstream_after_review": false
+  },
+  "checks": [
+    {
+      "check_id": "source_run_closed_pass",
+      "status": "PASS"
+    },
+    {
+      "check_id": "requested_contexts_is_12",
+      "status": "PASS"
+    },
+    {
+      "check_id": "represented_contexts_is_11",
+      "status": "PASS"
+    },
+    {
+      "check_id": "reused_validated_contexts_is_8",
+      "status": "PASS"
+    },
+    {
+      "check_id": "delta_materialized_contexts_is_3",
+      "status": "PASS"
+    },
+    {
+      "check_id": "unavailable_contexts_is_1",
+      "status": "PASS"
+    },
+    {
+      "check_id": "unaccounted_contexts_zero",
+      "status": "PASS"
+    },
+    {
+      "check_id": "combined_jsonl_records_is_11",
+      "status": "PASS"
+    },
+    {
+      "check_id": "delta_jsonl_records_is_3",
+      "status": "PASS"
+    },
+    {
+      "check_id": "combined_file_hash_match",
+      "status": "PASS"
+    },
+    {
+      "check_id": "delta_file_hash_match",
+      "status": "PASS"
+    },
+    {
+      "check_id": "validation_pass_with_restrictions",
+      "status": "PASS"
+    },
+    {
+      "check_id": "hard_validation_failures_zero",
+      "status": "PASS"
+    },
+    {
+      "check_id": "record_keys_equal_represented_ledger_keys",
+      "status": "PASS"
+    },
+    {
+      "check_id": "unavailable_context_expected_and_preserved",
+      "status": "PASS"
+    },
+    {
+      "check_id": "unavailable_reason_expected",
+      "status": "PASS"
+    },
+    {
+      "check_id": "combined_record_schema_keys_homogeneous",
+      "status": "PASS"
+    },
+    {
+      "check_id": "event_state_profile_scope_match",
+      "status": "PASS"
+    },
+    {
+      "check_id": "event_state_schema_homogeneous",
+      "status": "PASS"
+    },
+    {
+      "check_id": "event_type_scope_session_opened_only",
+      "status": "PASS"
+    },
+    {
+      "check_id": "single_event_window_definition_id",
+      "status": "PASS"
+    },
+    {
+      "check_id": "state_role_at_event",
+      "status": "PASS"
+    },
+    {
+      "check_id": "consumption_legality_research_only",
+      "status": "PASS"
+    },
+    {
+      "check_id": "at_event_timestamp_alignment",
+      "status": "PASS"
+    },
+    {
+      "check_id": "event_instance_manifest_count_4",
+      "status": "PASS"
+    },
+    {
+      "check_id": "event_window_manifest_count_4",
+      "status": "PASS"
+    },
+    {
+      "check_id": "instrument_projection_manifest_count_12",
+      "status": "PASS"
+    },
+    {
+      "check_id": "market_state_dependency_binding_11_bound_1_blocked",
+      "status": "PASS"
+    },
+    {
+      "check_id": "bound_market_state_rows_exactly_one",
+      "status": "PASS"
+    },
+    {
+      "check_id": "dependency_fallbacks_zero",
+      "status": "PASS"
+    },
+    {
+      "check_id": "row_lineage_parse_and_delta_origin_match",
+      "status": "PASS"
+    },
+    {
+      "check_id": "baseline_and_delta_market_state_dependencies_declared",
+      "status": "PASS"
+    },
+    {
+      "check_id": "baseline_registry_not_mutated_by_execution",
+      "status": "PASS"
+    },
+    {
+      "check_id": "baseline_artifacts_not_mutated",
+      "status": "PASS"
+    },
+    {
+      "check_id": "registry_status_validated_candidate",
+      "status": "PASS"
+    },
+    {
+      "check_id": "reuse_pending_incremental_review",
+      "status": "PASS"
+    },
+    {
+      "check_id": "registry_downstream_false",
+      "status": "PASS"
+    },
+    {
+      "check_id": "official_production_downstream_closed",
+      "status": "PASS"
+    },
+    {
+      "check_id": "invalid_attempt_preserved_and_superseded",
+      "status": "PASS"
+    },
+    {
+      "check_id": "invalid_failure_manifest_present",
+      "status": "PASS"
+    }
+  ],
+  "evidence": {
+    "source_final_manifest": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z\\final_manifest.json",
+    "candidate_manifest": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z\\event_state_incremental_overlap_candidate_output_manifest.json",
+    "candidate_registry_entry": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z\\candidate_registry_entry.json",
+    "validation_report": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z\\event_state_incremental_overlap_validation_report.json",
+    "combined_logical_context_ledger": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z\\combined_event_state_context_ledger_v0_1.json",
+    "fingerprint_comparison": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z\\combined_event_state_candidate_fingerprint_comparison_v0_1.json",
+    "invalid_attempt_failure_manifest": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T083159Z\\failure_manifest.json",
+    "context_ledger_sha256": "d3936b560cd0fb1f28079dc3d0d951c474d9f235cdd5170a3872909f1071e4e9",
+    "fingerprint_comparison_sha256": "84f46ae49bc45c624ea980ede226f22dce7482c1be300f78cedf83ff90e7c8f7"
+  },
+  "registry_entry_mutations": 0,
+  "materializer_executions": 0,
+  "market_state_materializer_executions": 0,
+  "source_market_data_rows_read_by_review": 0,
+  "event_state_records_emitted_by_review": 0,
+  "candidate_dataset_registry_entries_written_by_review": 0,
+  "next_allowed_gate": "event_state_on_demand_bounded_incremental_overlap_idempotency_reuse_test_authorization_v0_1",
+  "official_dataset": false,
+  "production": false,
+  "downstream": false,
+  "review_matrix_sha256": "7155da65ce890d3699d1d40bdbea31e6eaa388ab2a27888e389472d17551a39c"
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "decision_id": "decision-open_short_close_cover_v0_1-ABAT-entry-open",
+    "decision_timestamp": "2026-01-05T14:29:59.999999+00:00",
+    "information_cutoff": "2026-01-05T14:29:59.999999+00:00",
+    "quantity": 100,
+    "reason": "preprogrammed engine-validation entry before first regular bar",
+    "side": "SELL_SHORT",
+    "strategy_id": "open_short_close_cover_v0_1",
+    "strategy_spec_version": "0.1",
+    "target_label": "ENTRY_OPEN_LABEL",
+    "ticker": "ABAT"
+  },
+  {
+    "decision_id": "decision-open_short_close_cover_v0_1-ABAT-exit-close",
+    "decision_timestamp": "2026-01-05T20:58:59.999999+00:00",
+    "information_cutoff": "2026-01-05T20:58:59.999999+00:00",
+    "quantity": 100,
+    "reason": "preprogrammed engine-validation exit before last regular bar",
+    "side": "BUY_TO_COVER",
+    "strategy_id": "open_short_close_cover_v0_1",
+    "strategy_spec_version": "0.1",
+    "target_label": "EXIT_CLOSE_LABEL",
+    "ticker": "ABAT"
+  },
+  {
+    "decision_id": "decision-open_short_close_cover_v0_1-ABEO-entry-open",
+    "decision_timestamp": "2026-01-05T14:29:59.999999+00:00",
+    "information_cutoff": "2026-01-05T14:29:59.999999+00:00",
+    "quantity": 100,
+    "reason": "preprogrammed engine-validation entry before first regular bar",
+    "side": "SELL_SHORT",
+    "strategy_id": "open_short_close_cover_v0_1",
+    "strategy_spec_version": "0.1",
+    "target_label": "ENTRY_OPEN_LABEL",
+    "ticker": "ABEO"
+  },
+  {
+    "decision_id": "decision-open_short_close_cover_v0_1-ABEO-exit-close",
+    "decision_timestamp": "2026-01-05T20:58:59.999999+00:00",
+    "information_cutoff": "2026-01-05T20:58:59.999999+00:00",
+    "quantity": 100,
+    "reason": "preprogrammed engine-validation exit before last regular bar",
+    "side": "BUY_TO_COVER",
+    "strategy_id": "open_short_close_cover_v0_1",
+    "strategy_spec_version": "0.1",
+    "target_label": "EXIT_CLOSE_LABEL",
+    "ticker": "ABEO"
+  },
+  {
+    "decision_id": "decision-open_short_close_cover_v0_1-ABSI-entry-open",
+    "decision_timestamp": "2026-01-05T14:29:59.999999+00:00",
+    "information_cutoff": "2026-01-05T14:29:59.999999+00:00",
+    "quantity": 100,
+    "reason": "preprogrammed engine-validation entry before first regular bar",
+    "side": "SELL_SHORT",
+    "strategy_id": "open_short_close_cover_v0_1",
+    "strategy_spec_version": "0.1",
+    "target_label": "ENTRY_OPEN_LABEL",
+    "ticker": "ABSI"
+  },
+  {
+    "decision_id": "decision-open_short_close_cover_v0_1-ABSI-exit-close",
+    "decision_timestamp": "2026-01-05T20:58:59.999999+00:00",
+    "information_cutoff": "2026-01-05T20:58:59.999999+00:00",
+    "quantity": 100,
+    "reason": "preprogrammed engine-validation exit before last regular bar",
+    "side": "BUY_TO_COVER",
+    "strategy_id": "open_short_close_cover_v0_1",
+    "strategy_spec_version": "0.1",
+    "target_label": "EXIT_CLOSE_LABEL",
+    "ticker": "ABSI"
+  },
+  {
+    "decision_id": "decision-open_short_close_cover_v0_1-ABTC-entry-open",
+    "decision_timestamp": "2026-01-05T14:29:59.999999+00:00",
+    "information_cutoff": "2026-01-05T14:29:59.999999+00:00",
+    "quantity": 100,
+    "reason": "preprogrammed engine-validation entry before first regular bar",
+    "side": "SELL_SHORT",
+    "strategy_id": "open_short_close_cover_v0_1",
+    "strategy_spec_version": "0.1",
+    "target_label": "ENTRY_OPEN_LABEL",
+    "ticker": "ABTC"
+  },
+  {
+    "decision_id": "decision-open_short_close_cover_v0_1-ABTC-exit-close",
+    "decision_timestamp": "2026-01-05T20:58:59.999999+00:00",
+    "information_cutoff": "2026-01-05T20:58:59.999999+00:00",
+    "quantity": 100,
+    "reason": "preprogrammed engine-validation exit before last regular bar",
+    "side": "BUY_TO_COVER",
+    "strategy_id": "open_short_close_cover_v0_1",
+    "strategy_spec_version": "0.1",
+    "target_label": "EXIT_CLOSE_LABEL",
+    "ticker": "ABTC"
+  },
+  {
+    "decision_id": "decision-open_short_close_cover_v0_1-ACB-entry-open",
+    "decision_timestamp": "2026-01-05T14:29:59.999999+00:00",
+    "information_cutoff": "2026-01-05T14:29:59.999999+00:00",
+    "quantity": 100,
+    "reason": "preprogrammed engine-validation entry before first regular bar",
+    "side": "SELL_SHORT",
+    "strategy_id": "open_short_close_cover_v0_1",
+    "strategy_spec_version": "0.1",
+    "target_label": "ENTRY_OPEN_LABEL",
+    "ticker": "ACB"
+  },
+  {
+    "decision_id": "decision-open_short_close_cover_v0_1-ACB-exit-close",
+    "decision_timestamp": "2026-01-05T20:58:59.999999+00:00",
+    "information_cutoff": "2026-01-05T20:58:59.999999+00:00",
+    "quantity": 100,
+    "reason": "preprogrammed engine-validation exit before last regular bar",
+    "side": "BUY_TO_COVER",
+    "strategy_id": "open_short_close_cover_v0_1",
+    "strategy_spec_version": "0.1",
+    "target_label": "EXIT_CLOSE_LABEL",
+    "ticker": "ACB"
+  }
+]

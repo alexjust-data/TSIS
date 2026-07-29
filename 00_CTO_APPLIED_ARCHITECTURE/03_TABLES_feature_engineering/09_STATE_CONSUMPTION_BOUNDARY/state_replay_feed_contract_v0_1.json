@@ -1,0 +1,64 @@
+{
+  "contract_id": "state_replay_feed_contract_v0_1",
+  "contract_version": "0.1.0",
+  "contract_status": "design_ready_no_execution",
+  "owner_layer": "09_STATE_CONSUMPTION_BOUNDARY",
+  "purpose": "Defines temporal replay semantics for typed state records delivered by a bounded StateBundleReader.",
+  "execution_authority": {
+    "state_replay_feed_execution_authorized_by_this_contract": false,
+    "event_loop_execution_authorized": false,
+    "strategy_execution_authorized": false,
+    "orders_authorized": false,
+    "fills_authorized": false,
+    "production": false,
+    "downstream": false
+  },
+  "clock_authority": "EventLoop",
+  "delivery_rule": "event_loop_clock_gte_state_available_at_utc",
+  "canonical_order": [
+    "state_available_at_utc",
+    "state_kind_priority",
+    "instrument_id_or_subject_id",
+    "session_date",
+    "state_record_id"
+  ],
+  "json_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "state_replay_feed_contract_v0_1.schema.json",
+    "title": "StateAvailable Event v0.1",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "state_event_id",
+      "state_kind",
+      "state_record_id",
+      "profile_id",
+      "decision_timestamp",
+      "state_as_of_utc",
+      "state_available_at_utc",
+      "bundle_id",
+      "dataset_id",
+      "consumption_legality",
+      "restriction_codes",
+      "payload_delivery_mode"
+    ],
+    "properties": {
+      "state_event_id": { "type": "string", "minLength": 1 },
+      "state_kind": { "enum": ["market_state", "event_state"] },
+      "state_record_id": { "type": "string", "minLength": 1 },
+      "profile_id": { "type": "string", "minLength": 1 },
+      "instrument_id": { "type": ["string", "null"] },
+      "subject_id": { "type": ["string", "null"] },
+      "session_date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+      "decision_timestamp": { "type": "string", "format": "date-time" },
+      "state_as_of_utc": { "type": "string", "format": "date-time" },
+      "state_available_at_utc": { "type": "string", "format": "date-time" },
+      "bundle_id": { "type": "string", "minLength": 1 },
+      "dataset_id": { "type": "string", "minLength": 1 },
+      "consumption_legality": { "enum": ["decision_safe", "research_only", "blocked"] },
+      "restriction_codes": { "type": "array", "items": { "type": "string" } },
+      "payload_delivery_mode": { "enum": ["typed_payload", "payload_reference"] },
+      "payload_ref": { "type": ["string", "null"] }
+    }
+  }
+}

@@ -1,0 +1,505 @@
+{
+  "review_id": "event_state_on_demand_capability_promotion_review_v0_1_20260728T135003Z",
+  "gate": "event_state_on_demand_capability_promotion_review_v0_1",
+  "status": "CLOSED_PASS_EVENT_STATE_CAPABILITY_PROMOTED_WITH_RESTRICTIONS_NO_DATASET_PROMOTION",
+  "decision": {
+    "capability_id": "event_state_on_demand_runtime_capability_v0_1",
+    "capability_promotion_decision": "promote_with_restrictions_candidate_runtime_only",
+    "capability_status_after_review": "PROMOTED_WITH_RESTRICTIONS_CANDIDATE_RUNTIME_ONLY",
+    "reviewed_evidence_items": 14,
+    "scale_requested_contexts": 80,
+    "scale_represented_contexts": 74,
+    "scale_unavailable_contexts": 6,
+    "hard_review_failures": 0
+  },
+  "checks": [
+    {
+      "check": "required_evidence_files_present",
+      "passed": true,
+      "observed": []
+    },
+    {
+      "check": "bounded_execution_status",
+      "passed": true,
+      "observed": "CLOSED_PASS_EVENT_STATE_ON_DEMAND_BOUNDED_EXECUTION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+    },
+    {
+      "check": "bounded_candidate_review_status",
+      "passed": true,
+      "observed": "CLOSED_APPROVED_AS_EVENT_STATE_ON_DEMAND_BOUNDED_CANDIDATE_EVIDENCE_WITH_RESTRICTIONS_NO_PROMOTION"
+    },
+    {
+      "check": "deterministic_rerun_status",
+      "passed": true,
+      "observed": "CLOSED_PASS_DETERMINISTIC_RERUN_MATCH_WITH_RESTRICTIONS"
+    },
+    {
+      "check": "determinism_validation_status",
+      "passed": true,
+      "observed": "CLOSED_APPROVED_DETERMINISM_FOR_BOUNDED_SCOPE_WITH_RESTRICTIONS_NO_REUSE_TRANSITION"
+    },
+    {
+      "check": "exact_reuse_status",
+      "passed": true,
+      "observed": "CLOSED_PASS_EVENT_STATE_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS"
+    },
+    {
+      "check": "reuse_transition_status",
+      "passed": true,
+      "observed": "CLOSED_APPROVED_EVENT_STATE_REUSE_ELIGIBILITY_TRANSITION_FOR_BOUNDED_EXACT_MATCH_WITH_RESTRICTIONS_NO_PROMOTION"
+    },
+    {
+      "check": "incremental_execution_status",
+      "passed": true,
+      "observed": "CLOSED_PASS_EVENT_STATE_INCREMENTAL_OVERLAP_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+    },
+    {
+      "check": "incremental_candidate_review_status",
+      "passed": true,
+      "observed": "CLOSED_PASS_EVENT_STATE_INCREMENTAL_OVERLAP_CANDIDATE_DATASET_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION"
+    },
+    {
+      "check": "incremental_reuse_status",
+      "passed": true,
+      "observed": "CLOSED_PASS_EVENT_STATE_INCREMENTAL_OVERLAP_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS"
+    },
+    {
+      "check": "second_generation_incremental_status",
+      "passed": true,
+      "observed": "CLOSED_PASS_EVENT_STATE_SECOND_GENERATION_INCREMENTAL_EXTENSION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+    },
+    {
+      "check": "second_generation_candidate_review_status",
+      "passed": true,
+      "observed": "CLOSED_PASS_EVENT_STATE_SECOND_GENERATION_INCREMENTAL_CANDIDATE_DATASET_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION"
+    },
+    {
+      "check": "scale_validation_status",
+      "passed": true,
+      "observed": "CLOSED_PASS_EVENT_STATE_SCALE_VALIDATION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+    },
+    {
+      "check": "scale_validation_matrix_status",
+      "passed": true,
+      "observed": "CLOSED_PASS_EVENT_STATE_SCALE_VALIDATION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+    },
+    {
+      "check": "lineage_chain_hard_failures_zero",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "check": "lineage_chain_represented_contexts_14",
+      "passed": true,
+      "observed": 14
+    },
+    {
+      "check": "scale_requested_contexts_80",
+      "passed": true,
+      "observed": 80
+    },
+    {
+      "check": "scale_represented_contexts_74",
+      "passed": true,
+      "observed": 74
+    },
+    {
+      "check": "scale_unavailable_contexts_6",
+      "passed": true,
+      "observed": 6
+    },
+    {
+      "check": "scale_hard_failures_zero",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "check": "scale_market_state_materializer_zero",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "check": "scale_source_market_rows_zero",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "check": "scale_event_type_session_opened",
+      "passed": true,
+      "observed": "event_type:market_data:session_opened"
+    },
+    {
+      "check": "scale_subject_scope_exchange_session",
+      "passed": true,
+      "observed": "exchange_session"
+    },
+    {
+      "check": "bounded_execution_hard_failures_zero",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "check": "bounded_execution_official_dataset_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "bounded_execution_production_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "bounded_execution_downstream_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "bounded_candidate_review_hard_failures_zero",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "check": "bounded_candidate_review_official_dataset_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "bounded_candidate_review_production_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "bounded_candidate_review_downstream_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "deterministic_rerun_hard_failures_zero",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "check": "deterministic_rerun_official_dataset_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "deterministic_rerun_production_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "deterministic_rerun_downstream_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "determinism_validation_hard_failures_zero",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "check": "determinism_validation_official_dataset_closed",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "check": "determinism_validation_production_closed",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "check": "determinism_validation_downstream_closed",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "check": "exact_reuse_hard_failures_zero",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "check": "exact_reuse_official_dataset_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "exact_reuse_production_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "exact_reuse_downstream_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "reuse_transition_hard_failures_zero",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "check": "reuse_transition_official_dataset_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "reuse_transition_production_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "reuse_transition_downstream_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "incremental_execution_hard_failures_zero",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "check": "incremental_execution_official_dataset_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "incremental_execution_production_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "incremental_execution_downstream_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "incremental_candidate_review_hard_failures_zero",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "check": "incremental_candidate_review_official_dataset_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "incremental_candidate_review_production_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "incremental_candidate_review_downstream_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "incremental_reuse_hard_failures_zero",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "check": "incremental_reuse_official_dataset_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "incremental_reuse_production_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "incremental_reuse_downstream_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "second_generation_incremental_hard_failures_zero",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "check": "second_generation_incremental_official_dataset_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "second_generation_incremental_production_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "second_generation_incremental_downstream_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "second_generation_candidate_review_hard_failures_zero",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "check": "second_generation_candidate_review_official_dataset_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "second_generation_candidate_review_production_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "second_generation_candidate_review_downstream_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "lineage_chain_validation_hard_failures_zero",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "check": "lineage_chain_validation_official_dataset_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "lineage_chain_validation_production_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "lineage_chain_validation_downstream_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "scale_validation_hard_failures_zero",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "check": "scale_validation_official_dataset_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "scale_validation_production_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "scale_validation_downstream_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "scale_validation_matrix_hard_failures_zero",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "check": "scale_validation_matrix_official_dataset_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "scale_validation_matrix_production_closed",
+      "passed": true,
+      "observed": false
+    },
+    {
+      "check": "scale_validation_matrix_downstream_closed",
+      "passed": true,
+      "observed": false
+    }
+  ],
+  "evidence_index": {
+    "bounded_execution": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_execution_v0_1_20260727T200322Z\\final_manifest.json",
+      "sha256": "ea306ac436b6fbbe88cd318ee349cc15a8cc1570b2e913416b80269f31443125",
+      "status": "CLOSED_PASS_EVENT_STATE_ON_DEMAND_BOUNDED_EXECUTION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+    },
+    "bounded_candidate_review": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_candidate_dataset_review_v0_1_20260727T202013Z\\final_manifest.json",
+      "sha256": "38a06268c9ce78d99ae78ff73263c57d3f34ec647b34b48aa6defcd4c1367017",
+      "status": "CLOSED_APPROVED_AS_EVENT_STATE_ON_DEMAND_BOUNDED_CANDIDATE_EVIDENCE_WITH_RESTRICTIONS_NO_PROMOTION"
+    },
+    "deterministic_rerun": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070338Z\\final_manifest.json",
+      "sha256": "23699393edb8bf7ca16f108102519c811f1d680affef8e2ac7a82a96e89c63b9",
+      "status": "CLOSED_PASS_DETERMINISTIC_RERUN_MATCH_WITH_RESTRICTIONS"
+    },
+    "determinism_validation": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\event_state_on_demand_bounded_determinism_validation_matrix_v0_1.json",
+      "sha256": "b358b82ec121110f10ace0b91ed68384a3358fbbf07d5ab18c2bca69c354f302",
+      "status": "CLOSED_APPROVED_DETERMINISM_FOR_BOUNDED_SCOPE_WITH_RESTRICTIONS_NO_REUSE_TRANSITION"
+    },
+    "exact_reuse": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_idempotency_reuse_test_v0_1_20260728T074624Z\\final_manifest.json",
+      "sha256": "b0ed685c7d53e43e6b105c7c0fc211f8f3a9ff0ef69e3cfe74dd4e3be98a7339",
+      "status": "CLOSED_PASS_EVENT_STATE_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS"
+    },
+    "reuse_transition": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_reuse_eligibility_transition_review_v0_1_20260728T080426Z\\final_manifest.json",
+      "sha256": "9d379536da2bb1157d53a2ea9a38daf73d323c347d3c30855314cc7b8c5dc9c1",
+      "status": "CLOSED_APPROVED_EVENT_STATE_REUSE_ELIGIBILITY_TRANSITION_FOR_BOUNDED_EXACT_MATCH_WITH_RESTRICTIONS_NO_PROMOTION"
+    },
+    "incremental_execution": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z\\final_manifest.json",
+      "sha256": "830187958dcec0e1adc96f0662947213d8810baafb9f9a4a6f1eb7a495cc59d3",
+      "status": "CLOSED_PASS_EVENT_STATE_INCREMENTAL_OVERLAP_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+    },
+    "incremental_candidate_review": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_v0_1_20260728T091026Z\\final_manifest.json",
+      "sha256": "272e741049dae0e06ca35144ee9d256d386a52005ba5b99f0bb32dfa275cb774",
+      "status": "CLOSED_PASS_EVENT_STATE_INCREMENTAL_OVERLAP_CANDIDATE_DATASET_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION"
+    },
+    "incremental_reuse": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_incremental_overlap_idempotency_reuse_test_v0_1_20260728T091759Z\\final_manifest.json",
+      "sha256": "cce51890b46021795e4770cdbe26d9b35d41431895f902fb3b987a14d98a4e8f",
+      "status": "CLOSED_PASS_EVENT_STATE_INCREMENTAL_OVERLAP_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS"
+    },
+    "second_generation_incremental": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z\\final_manifest.json",
+      "sha256": "fa2aad84d0471f55c1910db2e93d14d7c2731f77408e4587b00ef5f1338b36a8",
+      "status": "CLOSED_PASS_EVENT_STATE_SECOND_GENERATION_INCREMENTAL_EXTENSION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+    },
+    "second_generation_candidate_review": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260728T110845Z\\final_manifest.json",
+      "sha256": "cc7cd25ecf6a6aa5eacf5ca63b4ab71d02ee5ee0384ae0423445415c095018b8",
+      "status": "CLOSED_PASS_EVENT_STATE_SECOND_GENERATION_INCREMENTAL_CANDIDATE_DATASET_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION"
+    },
+    "lineage_chain_validation": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\event_state_on_demand_incremental_lineage_chain_validation_matrix_v0_1.json",
+      "sha256": "4b18caa94a93d27db161ec3931971973fa9dd10d1c0e9f59f6459ca239c788e9",
+      "status": null
+    },
+    "scale_validation": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_scale_validation_v0_1_20260728T120123Z\\final_manifest.json",
+      "sha256": "6d848381e8a5a24f08d3b03f266a7108e6485987e15a07b8c5255a6d71d5b0a1",
+      "status": "CLOSED_PASS_EVENT_STATE_SCALE_VALIDATION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+    },
+    "scale_validation_matrix": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\event_state_on_demand_scale_validation_matrix_v0_1.json",
+      "sha256": "bdc99491056c22dc448c401ed9fa64b4c05c29079c4c19c513f7725060499389",
+      "status": "CLOSED_PASS_EVENT_STATE_SCALE_VALIDATION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+    }
+  },
+  "boundary_counters": {
+    "source_market_data_rows_read": 0,
+    "new_event_state_materializer_executions": 0,
+    "new_market_state_materializer_executions": 0,
+    "new_candidate_dataset_registry_entries_written": 0,
+    "official_event_state_dataset": false,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false
+  },
+  "next_allowed_gate": "event_state_capability_consumption_policy_v0_1",
+  "official_event_state_dataset": false,
+  "official_dataset": false,
+  "production": false,
+  "downstream": false,
+  "review_matrix_sha256": "d78e3d3d90dcff0cee139d0a0f39b89f6065747ab414134276f8e266738d4ce7"
+}

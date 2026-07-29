@@ -1,0 +1,81 @@
+{
+  "scope_id": "bounded_state_bundle_read_and_replay_authorization_scope_v0_1",
+  "gate": "bounded_state_bundle_read_and_replay_authorization_v0_1",
+  "created_at_utc": "2026-07-28T00:00:00Z",
+  "status": "CLOSED_BLOCKED_BEFORE_PHYSICAL_READ",
+  "physical_read_authorization_issued": false,
+  "bounded_read_and_replay_execution_authorized": false,
+  "intended_probe": {
+    "consumer_id": "bounded_backtest_state_integration_probe_v0_1",
+    "consumer_type": "state_consumer_validation_probe",
+    "consumption_purpose": "bounded_provider_consumer_integration_validation",
+    "state_kind": "market_state",
+    "profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "event_state_requested": false,
+    "strategy_execution": false,
+    "orders": 0,
+    "fills": 0,
+    "pnl": false
+  },
+  "attempted_control_plane_evidence": {
+    "runtime_invocation_execution_id": "runtime_user_invocation_bounded_interface_execution_v0_1_20260728T1731090000",
+    "case_id": "case_01_market_state_exact_reuse_hit_reference_only",
+    "runtime_invocation_response_path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/runtime_user_invocation_bounded_interface_execution_v0_1_20260728T1731090000/case_01_response.json",
+    "runtime_invocation_response_sha256_observed": "0985e2b97a44e45eb4d05777406f0615f44fb1c80f463a7f2989bdcb9d06bab4",
+    "state_bundle_manifest_path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/runtime_user_invocation_bounded_interface_execution_v0_1_20260728T1731090000/case_01_bundle.json",
+    "state_bundle_manifest_sha256_observed": "34182601597cc409555cfca8fa5946bef2b6630a63fcf5532b34f9fb16163b05",
+    "state_bundle_declared_dataset_id": "market_state_candidate_scale_validation_reference_v0_1",
+    "state_bundle_declared_candidate_dataset_fingerprint": "8563b1307af126bcf1cd4ec473bb710dbce9a38aa26f64aab2f080dfb31caea0",
+    "state_bundle_declared_runtime_response_sha256": "cdfd7d2acdb3c5e0885a0a96b1add49b49c990846fb02c9618869f9155baafd8"
+  },
+  "observed_physical_candidate_evidence": {
+    "run_id": "market_state_on_demand_scale_validation_v0_1_20260727T133641Z",
+    "final_manifest_path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/final_manifest.json",
+    "final_manifest_sha256": "00b69f8445d8a8d1c8be1a5ab17648d0e7d6be289dccd70fc2c9c90524fdfd9c",
+    "candidate_dataset_id": "market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762",
+    "candidate_dataset_fingerprint": "516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416",
+    "scientific_dataset_fingerprint": "0cc901750cabe9fef67a2ee3ebcd6a30c4a807a7b35cda8d29dbd8baa9ddad6e",
+    "candidate_output_manifest_sha256": "dd3037aa3a3226b7ac308dcc909575344de38202cbe59c25483259a4c07f0e78",
+    "candidate_parquet_sha256": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68",
+    "schema_contract_sha256": "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b",
+    "requested_contexts": 120,
+    "represented_contexts": 104,
+    "unavailable_contexts": 16
+  },
+  "blocking_findings": [
+    {
+      "finding_id": "BUNDLE_DATASET_FINGERPRINT_MISMATCH",
+      "severity": "BLOCKING",
+      "description": "StateBundleManifest dataset fingerprint does not match the physical Market State scale-validation candidate fingerprint."
+    },
+    {
+      "finding_id": "BUNDLE_RESPONSE_HASH_MISMATCH",
+      "severity": "BLOCKING",
+      "description": "StateBundleManifest internal runtime response hash does not match the observed runtime invocation response file hash."
+    },
+    {
+      "finding_id": "PHYSICAL_ARTIFACT_CHAIN_NOT_DIRECTLY_FROZEN_BY_BUNDLE",
+      "severity": "BLOCKING",
+      "description": "The bundle references the final manifest but does not directly freeze candidate_output_manifest and state-record artifact hashes for consumption."
+    },
+    {
+      "finding_id": "REPLAY_AVAILABILITY_TIMESTAMPS_NOT_EXPLICITLY_PROVEN",
+      "severity": "BLOCKING",
+      "description": "The preflight found decision_timestamp_utc but did not find explicit state_as_of_utc and state_available_at_utc in the physical schema contract."
+    }
+  ],
+  "next_required_gate": "state_bundle_manifest_physical_evidence_alignment_v0_1",
+  "counters": {
+    "state_bundle_rows_read": 0,
+    "physical_artifacts_opened": 0,
+    "state_replay_feed_records_emitted": 0,
+    "event_loop_ticks": 0,
+    "strategy_callbacks": 0,
+    "orders_emitted": 0,
+    "fills_emitted": 0,
+    "provider_registry_mutations": 0,
+    "production": false,
+    "downstream": false,
+    "official_dataset": false
+  }
+}

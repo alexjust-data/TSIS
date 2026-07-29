@@ -1,15 +1,512 @@
+# Current Runtime Handoff Override - Replay Availability Timestamp Contract Validation Hardened
+
+Status: `agent_handoff_prompt_v0_145`
+Layer: `03_TABLES_feature_engineering`
+Boundary layer: `09_STATE_CONSUMPTION_BOUNDARY`
+Date: `2026-07-29`
+
+```text
+last_closed_gate = market_state_core_four_replay_availability_timestamp_contract_v0_1
+last_closed_status = CLOSED_CONTRACT_READY_WITH_VALIDATION_HARDENED_RESTRICTIONS_NO_PHYSICAL_READ
+current_gate = runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_pending
+physical_read_authorization_ready = false
+StateReplayFeed = NOT_AUTHORIZED
+backtest_consumption = false
+```
+
+The timestamp contract validator is hardened after external review: every fixture is schema-validated and semantically validated; core-four object coverage, component/row legality, latency inclusion, timestamp ordering and restriction propagation are fail-closed. Do not open physical reads or StateReplayFeed from this gate.
+
+## Current Runtime Handoff Override - Replay Availability Timestamp Contract Closed
+
+Status: `agent_handoff_prompt_v0_144`
+Date: `2026-07-29`
+
+```text
+current_gate = runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_pending
+boundary_layer = 08_RUNTIME_CAPABILITIES
+last_closed_gate = market_state_core_four_replay_availability_timestamp_contract_v0_1
+last_closed_status = CLOSED_CONTRACT_READY_WITH_VALIDATION_HARDENED_RESTRICTIONS_NO_PHYSICAL_READ
+previous_blocker_addressed = ALIGN_REPLAY_TIMESTAMPS_SCHEMA_001
+StateReplayFeed = NOT_AUTHORIZED
+backtest_state_consumption_authority = false
+state_rows_read = 0
+physical_artifacts_opened = 0
+runtime_requests_executed = 0
+runtime_builds_executed = 0
+datasets_written = 0
+registry_mutations = 0
+official_dataset = false
+production = false
+downstream_state_consumption = NOT_AUTHORIZED
+```
+
+Do not open physical reads. The next work is a provider/runtime control-plane regression that must reissue a v0.1.2 response and StateBundleManifest with the timestamp evidence required by the replay availability contract. Do not modify `02_TSIS_BACKTEST_ENGINE` from this handoff.
+
+## Historical Runtime Handoff Override - StateBundle Physical Evidence Alignment Blocked
+
+Status: `agent_handoff_prompt_v0_143`
+Date: `2026-07-29`
+
+```text
+current_gate = market_state_core_four_replay_availability_timestamp_contract_v0_1_pending
+also_required_gate = runtime_user_invocation_bounded_interface_execution_regression_v0_1_2
+boundary_layer = 09_STATE_CONSUMPTION_BOUNDARY
+last_closed_gate = state_bundle_manifest_physical_evidence_alignment_v0_1
+last_closed_status = CLOSED_BLOCKED_REQUIRES_V0_1_2_BUNDLE_REISSUE_AND_REPLAY_TIMESTAMP_EVIDENCE_NO_PHYSICAL_READ
+StateReplayFeed = NOT_AUTHORIZED
+backtest_state_consumption_authority = false
+state_rows_read = 0
+physical_artifacts_opened = 0
+runtime_requests_executed = 0
+runtime_builds_executed = 0
+datasets_written = 0
+registry_mutations = 0
+official_dataset = false
+production = false
+downstream_state_consumption = NOT_AUTHORIZED
+```
+
+Do not open physical reads. The next work must prove replay-safe timestamps and reissue the control-plane response/bundle under provider v0.1.2 before bounded read authorization can reopen.
+
+## Historical Runtime Handoff Override - Provider-Consumer Compatibility Regression v0.1.2 Closed
+
+Status: `agent_handoff_prompt_v0_142`
+Date: `2026-07-29`
+
+```text
+current_gate = state_bundle_manifest_physical_evidence_alignment_v0_1
+boundary_layer = 09_STATE_CONSUMPTION_BOUNDARY
+last_closed_gate = runtime_provider_consumer_contract_compatibility_regression_v0_1_2
+last_closed_status = CLOSED_PASS_PROVIDER_CONSUMER_CONTROL_PLANE_COMPATIBLE_WITH_RESTRICTIONS_NO_CONSUMPTION
+active_provider_authority = runtime_provider_contract_schema_hardening_v0_1_2
+provider_control_plane = REFROZEN_AT_V0_1_2_WITH_RESTRICTIONS
+provider_consumer_control_plane_compatibility = PASS_WITH_RESTRICTIONS
+consumer_contract_status = DRAFT_NOT_INTEGRATION_VALIDATED
+state_replay_feed_authority = false
+StateReplayFeed = NOT_AUTHORIZED
+backtest_state_consumption_authority = false
+physical_rows_delivered = 0
+runtime_requests_executed = 0
+runtime_builds_executed = 0
+datasets_written = 0
+registry_mutations = 0
+official_dataset = false
+production = false
+downstream_state_consumption = NOT_AUTHORIZED
+```
+
+Do not modify `02_TSIS_BACKTEST_ENGINE` from this provider handoff. The next permitted shared-boundary work is state_bundle_manifest_physical_evidence_alignment_v0_1; it still must not open StateReplayFeed or backtest rows.
+
 # 03_TABLES_feature_engineering - Agent Handoff Prompt
 
+## Historical Runtime Handoff Override - Provider Hardening v0.1.2 External Audit Accepted
+
+Status: `agent_handoff_prompt_v0_141`
+Date: `2026-07-29`
+
+```text
+current_gate = runtime_provider_consumer_contract_compatibility_regression_v0_1_2
+boundary_layer = 08_RUNTIME_CAPABILITIES
+last_closed_gate = runtime_provider_contract_schema_hardening_v0_1_2
+last_closed_status = CLOSED_EXTERNAL_AUDIT_PASS_ACCEPTABLE_AS_PROVIDER_AUTHORITY_WITH_RESTRICTIONS
+active_provider_authority = runtime_provider_contract_schema_hardening_v0_1_2
+ACTIVE_PROVIDER_AUTHORITY = runtime_provider_contract_schema_hardening_v0_1_2
+provider_control_plane = REFROZEN_AT_V0_1_2_WITH_RESTRICTIONS
+provider_v0_1_2_external_audit = PASS
+provider_v0_1_2_external_audit_genealogy = RECORDED_THROUGH_105019Z
+provider_consumer_compatibility = READY_FOR_REGRESSION_NOT_OPENED
+case_count = 133
+failed_cases = 0
+missing_required_case_ids = 0
+unexpected_case_ids = 0
+provider_only_zip = C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\runtime_provider_contract_schema_hardening_v0_1_2_provider_only_20260729T141808Z.zip
+provider_only_zip_sha256 = 191f40e40f2cfe374ce2f493fb9dd3e2509e33f64b9ed8f3969c9c8b0badf759
+state_replay_feed_authority = false
+StateReplayFeed = NOT_AUTHORIZED
+backtest_state_consumption_authority = false
+physical_rows_delivered = 0
+runtime_requests_executed = 0
+runtime_builds_executed = 0
+datasets_written = 0
+registry_mutations = 0
+official_dataset = false
+production = false
+downstream_state_consumption = NOT_AUTHORIZED
+```
+
+Do not open StateBundle physical reads, StateReplayFeed, backtest state integration, production or downstream. The only next authorized work is the small provider-consumer contract compatibility regression against v0.1.2.
+
+## Historical Runtime Handoff Override - Provider Contract Schema Hardening v0.1.2 Quarantined
+
+Status: `agent_handoff_prompt_v0_131_quarantined`
+Date: `2026-07-28`
+
+```text
+quarantined_gate = runtime_provider_contract_schema_hardening_v0_1_2
+quarantine_status = QUARANTINED_NO_ACTIVE_AUTHORITY
+reason = boundary_violation_by_backtester_scoped_agent
+active_provider_authority = state_provider_control_plane_ready_with_restrictions_reference_only
+provider_consumer_compatibility = NOT_OPENED_AFTER_V0_1_2
+consumer_contract_status = DRAFT
+state_replay_feed_authority = false
+StateReplayFeed = NOT_AUTHORIZED
+backtest_state_consumption_authority = false
+official_dataset = false
+production = false
+downstream_state_consumption = NOT_AUTHORIZED
+quarantine_ref = 99_archive/v0_1_2_boundary_quarantine_20260728/QUARANTINE_MANIFEST.json
+```
+
+Historical note: do not treat this quarantined block as the current handoff. The current handoff is the provider hardening reauthorization block above.
+
+## Historical Agent Handoff Prompt
+
+## Historical Runtime Handoff Override - Data-Plane Joint Review Closed - HISTORICAL_SNAPSHOT
+
+Status: `agent_handoff_prompt_v0_133`
+Date: `2026-07-28`
+
+```text
+last_closed_gate = provider_consumer_data_plane_joint_review_v0_1
+last_closed_status = CLOSED_APPROVED_FOR_BOUNDED_STATE_BUNDLE_READ_AND_REPLAY_AUTHORIZATION_WITH_RESTRICTIONS_NO_EXECUTION
+current_gate = bounded_state_bundle_read_and_replay_authorization_v0_1_pending
+boundary_layer = 09_STATE_CONSUMPTION_BOUNDARY
+provider_control_plane = READY_WITH_RESTRICTIONS
+physical_consumption_authorization_contract = design_ready
+state_bundle_reader_contract = design_ready
+state_replay_feed_contract = design_ready
+blocking_findings = 0
+state_bundle_rows_read = 0
+state_replay_feed_records_emitted = 0
+event_loop_ticks = 0
+strategy_callbacks = 0
+orders = 0
+fills = 0
+pnl = false
+official_dataset = false
+production = false
+downstream_state_consumption = NOT_AUTHORIZED
+```
+
+Continue with `bounded_state_bundle_read_and_replay_authorization_v0_1` only if authorizing one bounded probe. Do not execute it in the authorization gate. Do not add Liquidity, Event Types, strategy execution, orders, fills, PnL, production or downstream.
+## Historical Agent Handoff Prompt
+
+## Historical Runtime Handoff Override - Reader and Replay Contracts Designed - HISTORICAL_SNAPSHOT
+
+Status: `agent_handoff_prompt_v0_132`
+Date: `2026-07-28`
+
+```text
+last_closed_gate = state_bundle_reader_and_replay_contract_design_v0_1
+last_closed_status = CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION
+current_gate = provider_consumer_data_plane_joint_review_v0_1_pending
+boundary_layer = 09_STATE_CONSUMPTION_BOUNDARY
+state_provider_control_plane = READY_WITH_RESTRICTIONS
+state_bundle_physical_consumption_authorization_design = CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_PHYSICAL_READ
+state_bundle_reader_contract = design_ready_no_execution
+state_replay_feed_contract = design_ready_no_execution
+clock_authority = EventLoop
+state_delivery_rule = event_loop_clock_gte_state_available_at_utc
+state_bundle_rows_read = 0
+state_replay_feed_records_emitted = 0
+event_loop_ticks = 0
+strategy_callbacks = 0
+orders = 0
+fills = 0
+pnl = false
+official_dataset = false
+production = false
+downstream_state_consumption = NOT_AUTHORIZED
+```
+
+Continue with `provider_consumer_data_plane_joint_review_v0_1` as a review-only gate. Do not execute physical reads, start EventLoop/StateReplayFeed, start backtests, emit orders/fills, calculate PnL, add Liquidity, add Event Types, promote datasets, production or downstream from this gate.
+## Historical Agent Handoff Prompt
+
+## Historical Runtime Handoff Override - StateBundle Physical Consumption Boundary Opened - HISTORICAL_SNAPSHOT
+
+Status: `agent_handoff_prompt_v0_131`
+Date: `2026-07-28`
+
+```text
+last_closed_gate = state_bundle_physical_consumption_authorization_design_v0_1
+last_closed_status = CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_PHYSICAL_READ
+current_gate = state_bundle_reader_contract_design_v0_1_pending_consumer_data_plane
+state_provider_control_plane = READY_WITH_RESTRICTIONS
+provider_owned_next_gate = none_active
+boundary_layer = 09_STATE_CONSUMPTION_BOUNDARY
+first_vertical_slice_state_kind = market_state
+first_vertical_slice_profile = market_state_core_four_intraday_profile_v0_1
+event_state_requested_in_first_slice = false
+state_bundle_rows_read = 0
+physical_artifacts_opened = 0
+state_replay_feed_authority = false
+StateReplayFeed = NOT_AUTHORIZED
+backtest_state_consumption_authority = false
+strategy_execution = false
+orders = 0
+fills = 0
+pnl = false
+official_dataset = false
+production = false
+downstream_state_consumption = NOT_AUTHORIZED
+```
+
+Continue with the StateBundle reader contract as a bounded consumer/data-plane design. Do not implement `StateReplayFeed`, start backtests, emit orders/fills, calculate PnL, add Liquidity, add Event Types, promote datasets, production or downstream from this gate.
+## Historical Agent Handoff Prompt
+
+## Historical Runtime Handoff Override - State Provider Control-Plane v0.1 Frozen
+
+Status: `agent_handoff_prompt_v0_130`
+Date: `2026-07-28`
+
+```text
+current_gate = state_provider_control_plane_ready_with_restrictions_no_active_provider_gate
+last_closed_gate = runtime_user_invocation_bounded_interface_execution_review_v0_1
+last_closed_status = CLOSED_PASS_STATE_PROVIDER_CONTROL_PLANE_READY_WITH_RESTRICTIONS_NO_CONSUMPTION
+last_prerequisite_gate = runtime_provider_contract_schema_hardening_v0_1_1
+last_prerequisite_status = CLOSED_PROVIDER_CONTRACT_SCHEMA_HARDENED_V0_1_1_WITH_RESTRICTIONS_NO_EXECUTION
+state_provider_control_plane = READY_WITH_RESTRICTIONS
+provider_owned_next_gate = none_active
+next_boundary = state_bundle_physical_consumption_authorization_design_v0_1
+next_boundary_owner = consumer_data_plane_or_shared_boundary
+runtime_builds_executed = 0
+source_market_data_rows_read = 0
+registry_mutations = 0
+physical_row_delivery = false
+state_replay_feed_authority = false
+StateReplayFeed = NOT_AUTHORIZED
+backtest_state_consumption_authority = false
+official_dataset = false
+production = false
+downstream_state_consumption = NOT_AUTHORIZED
+```
+
+Do not reopen provider architecture unless a material contract defect is found. Do not implement `StateReplayFeed`, physical StateBundle reads, backtest state consumption, production or downstream from this layer.
+
+## Historical Agent Handoff Prompt
+
+## Historical Runtime Handoff Override - Bounded Interface Execution Completed Pending Review
+
+Status: `agent_handoff_prompt_v0_127`
+Date: `2026-07-28`
+
+```text
+current_gate = runtime_user_invocation_bounded_interface_execution_review_v0_1
+last_closed_gate = runtime_user_invocation_bounded_interface_execution_v0_1
+last_closed_run_id = runtime_user_invocation_bounded_interface_execution_v0_1_20260728T1731090000
+last_closed_status = CLOSED_PASS_BOUNDED_INTERFACE_EXECUTION_WITH_RESTRICTIONS_PENDING_REVIEW
+case_count = 8
+hard_failures = 0
+runtime_builds_executed = 0
+physical_state_rows_delivered = 0
+state_replay_feed_authority = false
+StateReplayFeed = NOT_AUTHORIZED
+backtest_state_consumption_authority = false
+official_dataset = false
+production = false
+downstream_state_consumption = NOT_AUTHORIZED
+```
+
+Next gate:
+
+```text
+runtime_user_invocation_bounded_interface_execution_review_v0_1
+```
+
+The next gate must review the bounded provider interface execution evidence. It must not open StateReplayFeed, physical state row delivery, production or downstream consumption.
+
+## Historical Agent Handoff Prompt
+
+## Historical Runtime Handoff Override - Bounded Interface Execution Authorized
+
+Status: `agent_handoff_prompt_v0_126`
+Date: `2026-07-28`
+
+```text
+current_gate = runtime_user_invocation_bounded_interface_execution_v0_1
+last_closed_gate = runtime_user_invocation_bounded_interface_execution_authorization_v0_1
+last_closed_run_id = none_authorization_gate
+last_closed_status = CLOSED_AUTHORIZED_BOUNDED_INTERFACE_EXECUTION_WITH_RESTRICTIONS_NO_EXECUTION
+provider_control_plane = READY_FOR_BOUNDED_BEHAVIOR_TEST
+provider_consumer_compatibility = PASS_WITH_RESTRICTIONS
+consumer_contract_status = PROPOSED_CONSUMER_CONTRACT_NOT_INTEGRATION_VALIDATED
+authorized_test_cases = 8
+runtime_builds_authorized = false
+physical_row_delivery = false
+backtest_state_consumption_authority = false
+state_replay_feed_authority = false
+StateReplayFeed = NOT_AUTHORIZED
+official_dataset = false
+production = false
+downstream_state_consumption = NOT_AUTHORIZED
+```
+
+Next gate:
+
+```text
+runtime_user_invocation_bounded_interface_execution_v0_1
+```
+
+The next gate may execute bounded provider interface behavior tests only. It
+must not build datasets, start a backtest, open StateReplayFeed, deliver state
+rows, promote official datasets or authorize downstream consumption.
+
+## Historical Agent Handoff Prompt
+
+## Historical Runtime Handoff Override - Provider Consumer Compatibility Closed
+
+Status: `agent_handoff_prompt_v0_125`
+Date: `2026-07-28`
+
+```text
+current_gate = runtime_user_invocation_bounded_interface_execution_authorization_v0_1
+last_closed_gate = runtime_provider_consumer_contract_compatibility_review_v0_1
+last_closed_run_id = none_review_gate
+last_closed_status = CLOSED_APPROVED_FOR_BOUNDED_INTERFACE_EXECUTION_AUTHORIZATION_WITH_RESTRICTIONS_NO_EXECUTION
+provider_boundary = CLOSED_BOUNDARY_CLARIFIED_NO_EXECUTION
+provider_interface_documentation = CLOSED
+provider_schema_strict_validation = PASS
+fail_closed_semantics = PASS_WITH_CODE_VALIDATION_REQUIRED
+provider_consumer_compatibility = PASS_WITH_RESTRICTIONS
+consumer_contract_status = PROPOSED_CONSUMER_CONTRACT_NOT_INTEGRATION_VALIDATED
+backtest_state_consumption_authority = false
+state_replay_feed_authority = false
+StateReplayFeed = NOT_AUTHORIZED
+downstream_state_consumption = NOT_AUTHORIZED
+official_dataset = false
+production = false
+physical_row_delivery = false
+compatibility_matrix = runtime_provider_consumer_contract_compatibility_review_matrix_v0_1.json
+```
+
+Next gate:
+
+```text
+runtime_user_invocation_bounded_interface_execution_authorization_v0_1
+```
+
+The next gate may authorize bounded runtime interface behavior tests. It must
+not open StateReplayFeed, backtest state consumption, production, downstream
+consumption or physical row delivery.
+
+## Historical Runtime Handoff Override - Provider Schema Hardened
+
+Status: `agent_handoff_prompt_v0_124`
+Date: `2026-07-28`
+
+```text
+current_gate = runtime_provider_consumer_contract_compatibility_review_v0_1
+last_closed_gate = runtime_provider_contract_schema_hardening_v0_1
+last_closed_run_id = none_design_gate
+last_closed_status = CLOSED_SCHEMA_HARDENED_WITH_RESTRICTIONS_NO_EXECUTION
+provider_boundary = CLOSED_BOUNDARY_CLARIFIED_NO_EXECUTION
+provider_interface_documentation = CLOSED
+provider_schema_strict_validation = HARDENED_PENDING_COMPATIBILITY_REVIEW
+fail_closed_semantics = HARDENED_PENDING_COMPATIBILITY_REVIEW
+provider_consumer_compatibility = READY_FOR_REVIEW_NOT_VALIDATED
+backtest_state_consumption_authority = false
+state_replay_feed_authority = false
+StateReplayFeed = NOT_AUTHORIZED
+downstream_state_consumption = NOT_AUTHORIZED
+official_dataset = false
+production = false
+physical_row_delivery = false
+hardened_provider_contracts = state_resolution_request_contract_v0_1.json, runtime_user_invocation_response_contract_v0_1.json, state_bundle_manifest_contract_v0_1.json
+required_specialized_payload_contracts = market_state_request_contract_v0_1.json, event_state_request_contract_v0_1.json
+validation_matrix = runtime_provider_contract_schema_hardening_validation_matrix_v0_1.json
+```
+
+Next gate:
+
+```text
+runtime_provider_consumer_contract_compatibility_review_v0_1
+```
+
+The next gate must rerun compatibility against the hardened provider schemas and the backtest consumer draft contracts. It must not execute requests, run a backtest, promote official datasets, open StateReplayFeed consumption, open production or authorize downstream consumption.
 
 
-Status: `agent_handoff_prompt_v0_103`
+## Historical Runtime Handoff Override - Provider Interface Closed Before Schema Hardening
 
-Date: `2026-07-27`
+Status: `agent_handoff_prompt_v0_123`
+Date: `2026-07-28`
 
-Scope: `tsis_market_ontology_v1_frozen_core_four_profile_promoted_validated_event_state_profile_promoted_tables_000_018_data_foundation_evidence_reconciled_variable_attribute_admission_policy_and_record_template_recorded`
+```text
+current_gate = runtime_provider_consumer_contract_compatibility_review_v0_1
+last_closed_gate = runtime_user_invocation_interface_v0_1
+last_closed_run_id = none_design_gate
+last_closed_status = CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION
+provider_boundary = CLOSED_BOUNDARY_CLARIFIED_NO_EXECUTION
+provider_interface_contracts = CLOSED
+provider_consumer_compatibility = READY_FOR_REVIEW_NOT_VALIDATED
+state_resolution_request_role = common_provider_envelope
+market_state_request_role = specialized_payload
+event_state_request_role = specialized_payload
+backtest_state_consumption_authority = false
+downstream_state_consumption = NOT_AUTHORIZED
+official_dataset = false
+production = false
+physical_row_delivery = false
+provider_contracts_closed = state_resolution_request_contract_v0_1.json, runtime_user_invocation_interface_contract_v0_1.json, runtime_user_invocation_response_contract_v0_1.json, runtime_capability_effective_view_contract_v0_1.json, state_bundle_manifest_contract_v0_1.json
+```
+
+Next gate:
+
+```text
+runtime_provider_consumer_contract_compatibility_review_v0_1
+```
+
+The next gate must compare provider-side runtime contracts with the backtest consumer draft contracts. It must not execute requests, run a backtest, promote official datasets, open StateReplayFeed consumption, open production or authorize downstream consumption.
 
 
 
+Status: `agent_handoff_prompt_v0_116`
+
+Date: `2026-07-28`
+
+
+## Historical Runtime Handoff Override - Superseded
+
+This block is historical context and is superseded by the Provider Interface Closed override above.
+
+Status: `agent_handoff_prompt_v0_122`
+Date: `2026-07-28`
+
+```text
+current_gate = runtime_user_invocation_interface_v0_1
+last_closed_gate = event_state_capability_consumption_policy_v0_1
+last_closed_run_id = event_state_capability_consumption_policy_v0_1_20260728T135626Z
+last_closed_status = CLOSED_PASS_EVENT_STATE_CAPABILITY_CONSUMPTION_POLICY_ESTABLISHED_WITH_RESTRICTIONS_NO_DATASET_PROMOTION
+capability_id = event_state_on_demand_runtime_capability_v0_1
+policy_status = ESTABLISHED_WITH_RESTRICTIONS_CANDIDATE_RUNTIME_ONLY
+allowed_event_type_ids = [event_type:market_data:session_opened]
+accepted_subject_scope = exchange_session
+hard_policy_failures = 0
+source_market_data_rows_read = 0
+new_event_state_materializer_executions = 0
+new_market_state_materializer_executions = 0
+new_candidate_dataset_registry_entries_written = 0
+registry_entry_mutations = 0
+official_event_state_dataset = false
+production = false
+downstream = false
+provider_boundary = CLOSED_BOUNDARY_CLARIFIED_NO_EXECUTION
+provider_boundary_authority = runtime_state_provider_boundary_v0_1.md
+provider_boundary_normalization = CLOSED_PASS_BOUNDARY_STATUS_AND_REQUEST_HIERARCHY_NORMALIZED_NO_EXECUTION
+provider_boundary_normalization_authority = runtime_state_provider_boundary_normalization_readout_v0_1.md
+state_resolution_request_role = common_provider_envelope
+market_state_request_role = specialized_payload
+event_state_request_role = specialized_payload
+provider_interface_contracts = PENDING
+provider_consumer_compatibility = NOT_YET_VALIDATED
+```
+
+Next gate:
+
+```text
+runtime_user_invocation_interface_v0_1
+```
+
+The next gate must design the provider-side invocation layer for governed Market State and Event State requests. In v0.1, user means institutional consumer module; the first expected consumer is Backtest RunPreflight. The gate must not execute requests, promote official datasets, open production or authorize downstream consumption.
 Este documento es el prompt local de continuidad para agentes que trabajen en:
 
 
@@ -42,13 +539,13 @@ Si hay conflicto, manda la autoridad superior.
 
 
 
-Nota de lectura: el bloque `Estado Vigente 2026-07-27` es la autoridad operativa actual de este handoff. Las secciones inferiores conservan contexto historico y no deben reabrir estados cerrados salvo contradiccion estructural demostrada.
+Nota de lectura: el bloque `Estado Vigente 2026-07-28` es la autoridad operativa actual de este handoff. Las secciones inferiores conservan contexto historico y no deben reabrir estados cerrados salvo contradiccion estructural demostrada.
 
 
 
 
 
-## 0. Estado Vigente 2026-07-27
+## 0. Estado Vigente 2026-07-28
 
 
 
@@ -1054,7 +1551,7 @@ event_state_on_demand_bounded_execution_production = false
 
 event_state_on_demand_bounded_execution_downstream = false
 
-event_state_on_demand_bounded_execution_next_gate = event_state_on_demand_bounded_deterministic_rerun_authorization_v0_1
+event_state_on_demand_bounded_execution_next_gate = event_state_on_demand_bounded_candidate_dataset_review_v0_1
 
 event_state_on_demand_bounded_candidate_dataset_review = CLOSED_APPROVED_AS_EVENT_STATE_ON_DEMAND_BOUNDED_CANDIDATE_EVIDENCE_WITH_RESTRICTIONS_NO_PROMOTION
 
@@ -1095,6 +1592,132 @@ event_state_on_demand_bounded_candidate_dataset_review_production = false
 event_state_on_demand_bounded_candidate_dataset_review_downstream = false
 
 event_state_on_demand_bounded_candidate_dataset_review_next_gate = event_state_on_demand_bounded_deterministic_rerun_authorization_v0_1
+
+event_state_on_demand_bounded_deterministic_rerun_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+
+event_state_on_demand_bounded_deterministic_rerun = CLOSED_PASS_DETERMINISTIC_RERUN_MATCH_WITH_RESTRICTIONS
+
+event_state_on_demand_bounded_deterministic_rerun_run_id = event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070338Z
+
+event_state_on_demand_bounded_deterministic_rerun_determinism_status = PROVEN_FOR_BOUNDED_SCOPE
+
+event_state_on_demand_bounded_deterministic_rerun_requested_contexts = 9
+
+event_state_on_demand_bounded_deterministic_rerun_represented_contexts = 8
+
+event_state_on_demand_bounded_deterministic_rerun_unavailable_contexts = 1
+
+event_state_on_demand_bounded_deterministic_rerun_records_emitted = 8
+
+event_state_on_demand_bounded_deterministic_rerun_blocking_failures = 0
+
+event_state_on_demand_bounded_deterministic_rerun_runtime_only_differences = 4
+
+event_state_on_demand_bounded_deterministic_rerun_comparison_fingerprint = 9580cc5f747ef6c6fd3ec2b3c92460a7ce0eba6e9164248e636ab241dcf55c55
+
+event_state_on_demand_bounded_deterministic_rerun_materializer_executed = true
+
+event_state_on_demand_bounded_deterministic_rerun_market_state_rematerialized = false
+
+event_state_on_demand_bounded_deterministic_rerun_candidate_dataset_registry_entries_written = 0
+
+event_state_on_demand_bounded_deterministic_rerun_reuse_eligibility_changes = 0
+
+event_state_on_demand_bounded_deterministic_rerun_authorization_authorized_next_gate = event_state_on_demand_bounded_deterministic_rerun_v0_1
+
+event_state_on_demand_bounded_deterministic_rerun_next_gate = event_state_on_demand_bounded_determinism_validation_v0_1
+
+event_state_on_demand_bounded_deterministic_rerun_authorization_contract_hash = d5a5ee2515716b546189a8b8ac606857de1244fdbd5c3ee678ddaeacd6024af1
+
+event_state_on_demand_bounded_deterministic_rerun_event_state_reuse_policy = force_rebuild_for_determinism_test
+
+event_state_on_demand_bounded_deterministic_rerun_market_state_dependency_rematerialization_required = false
+
+event_state_on_demand_bounded_deterministic_rerun_expected_market_state_candidate_fingerprint = 433288b634924676a3c516fac600574ed36237c3c02ca640111f17609b6c235b
+
+event_state_on_demand_bounded_deterministic_rerun_authorization_official_dataset = false
+
+event_state_on_demand_bounded_deterministic_rerun_authorization_production = false
+
+event_state_on_demand_bounded_deterministic_rerun_authorization_downstream = false
+
+event_state_on_demand_bounded_determinism_validation = CLOSED_APPROVED_DETERMINISM_FOR_BOUNDED_SCOPE_WITH_RESTRICTIONS_NO_REUSE_TRANSITION
+
+event_state_on_demand_bounded_determinism_validation_id = event_state_on_demand_bounded_determinism_validation_v0_1_20260728T000000Z
+
+event_state_on_demand_bounded_determinism_validation_baseline_run = event_state_on_demand_bounded_execution_v0_1_20260727T200322Z
+
+event_state_on_demand_bounded_determinism_validation_rerun_run = event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070338Z
+
+event_state_on_demand_bounded_determinism_validation_status = PROVEN_FOR_BOUNDED_SCOPE
+
+event_state_on_demand_bounded_determinism_validation_comparison_fingerprint = 9580cc5f747ef6c6fd3ec2b3c92460a7ce0eba6e9164248e636ab241dcf55c55
+
+event_state_on_demand_bounded_determinism_validation_normalized_logical_dataset_fingerprint = e2c47083b8dd560e67bcda32b0063cf9f468754e34f76b82e9f839046d375699
+
+event_state_on_demand_bounded_determinism_validation_requested_contexts = 9
+
+event_state_on_demand_bounded_determinism_validation_represented_contexts = 8
+
+event_state_on_demand_bounded_determinism_validation_unavailable_contexts = 1
+
+event_state_on_demand_bounded_determinism_validation_blocking_failures = 0
+
+event_state_on_demand_bounded_determinism_validation_hard_failures = 0
+
+event_state_on_demand_bounded_determinism_validation_runtime_only_differences = 4
+
+event_state_on_demand_bounded_determinism_validation_reuse_transition_ready = true
+
+event_state_on_demand_bounded_determinism_validation_reuse_eligibility_after_validation = pending_idempotency_reuse_test
+
+event_state_on_demand_bounded_determinism_validation_reuse_eligibility_changes = 0
+
+event_state_on_demand_bounded_determinism_validation_official_dataset = false
+
+event_state_on_demand_bounded_determinism_validation_production = false
+
+event_state_on_demand_bounded_determinism_validation_downstream = false
+
+event_state_on_demand_bounded_determinism_validation_next_gate = event_state_on_demand_bounded_idempotency_reuse_test_authorization_v0_1
+
+event_state_on_demand_bounded_idempotency_reuse_test_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED_BY_REUSE_TEST
+
+event_state_on_demand_bounded_idempotency_reuse_test_authorization_parent_gate = event_state_on_demand_bounded_determinism_validation_v0_1
+
+event_state_on_demand_bounded_idempotency_reuse_test_authorization_authorized_next_gate = event_state_on_demand_bounded_idempotency_reuse_test_v0_1
+
+event_state_on_demand_bounded_idempotency_reuse_test_authorization_baseline_dataset_id = event_state_candidate_dataset_v0_1_d5662103e1c45f90
+
+event_state_on_demand_bounded_idempotency_reuse_test_authorization_baseline_request_fingerprint = f82e424b60a69e2e9edec00e3dcf456c2042d18b334366dab76622286fac6ade
+
+event_state_on_demand_bounded_idempotency_reuse_test_authorization_baseline_candidate_dataset_fingerprint = d5662103e1c45f90847b51e69b0e698243bde231758fa3c864e24c4a6839be33
+
+event_state_on_demand_bounded_idempotency_reuse_test_authorization_normalized_logical_dataset_fingerprint = e2c47083b8dd560e67bcda32b0063cf9f468754e34f76b82e9f839046d375699
+
+event_state_on_demand_bounded_idempotency_reuse_test_authorization_contract_hash = 50ede549474d286c3e1e0f71ff270e3e2baadebd57f328cc9919a9c8b73ab4f6
+
+event_state_on_demand_bounded_idempotency_reuse_test_authorization_reuse_policy = reuse_if_exact_validated_event_state_match
+
+event_state_on_demand_bounded_idempotency_reuse_test_authorization_maximum_runs = 1
+
+event_state_on_demand_bounded_idempotency_reuse_test_authorization_event_state_materializer_executions_expected = 0
+
+event_state_on_demand_bounded_idempotency_reuse_test_authorization_market_state_materializer_executions_expected = 0
+
+event_state_on_demand_bounded_idempotency_reuse_test_authorization_candidate_records_read_expected = 0
+
+event_state_on_demand_bounded_idempotency_reuse_test_authorization_new_candidate_dataset_registry_entries_expected = 0
+
+event_state_on_demand_bounded_idempotency_reuse_test_authorization_reuse_eligibility_changes = 0
+
+event_state_on_demand_bounded_idempotency_reuse_test_authorization_official_dataset = false
+
+event_state_on_demand_bounded_idempotency_reuse_test_authorization_production = false
+
+event_state_on_demand_bounded_idempotency_reuse_test_authorization_downstream = false
+
+event_state_on_demand_bounded_idempotency_reuse_test_authorization_next_gate = event_state_on_demand_bounded_idempotency_reuse_test_v0_1
 
 market_state_on_demand_second_generation_incremental_extension_delta2_session = 2024-03-11
 
@@ -1328,7 +1951,7 @@ source_market_data_rows_read = 0
 
 parquet_files_read = 0
 
-next_architectural_gate = event_state_on_demand_bounded_deterministic_rerun_authorization_v0_1
+next_architectural_gate = event_state_on_demand_bounded_idempotency_reuse_test_v0_1
 
 ```
 
@@ -1546,7 +2169,7 @@ market_state_bounded_on_demand_idempotency_reuse_test_report_fingerprint = 2fe42
 
 market_state_bounded_on_demand_idempotency_reuse_test_evidence_entry_fingerprint = 97f3f0cb5bde4cac4a666f95f16fee2ee71eea821701355d7e8495963aff92b4
 
-next_gate = event_state_on_demand_bounded_deterministic_rerun_authorization_v0_1
+next_gate = event_state_on_demand_bounded_incremental_overlap_execution_v0_1
 
 ```
 

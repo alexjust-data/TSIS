@@ -1,0 +1,13 @@
+{
+  "manifest_id": "runtime_provider_contract_schema_hardening_v0_1_2_ajv_reproducibility_manifest",
+  "created_at_utc": "2026-07-29T14:18:08Z",
+  "ajv_required_version": "8.17.1",
+  "node_modules_env_var": "TSIS_AJV_NODE_MODULES",
+  "package_json_snapshot": "configs/runtime_provider_contract_schema_hardening_v0_1_2_ajv_package.json",
+  "package_json_sha256": "ce1539e6f4e0f345ed402c47137d2679497b2035d4a4f420ee11acdde03dea92",
+  "package_lock_available_in_source_environment": false,
+  "reproduction_mode": "external_fixed_environment_or_install_exact_ajv_8_17_1",
+  "network_required_by_runner": false,
+  "shared_registry_compile_required": true,
+  "embedded_schema_id_policy": "only root schemas carry $id; embedded schemas are id-less"
+}

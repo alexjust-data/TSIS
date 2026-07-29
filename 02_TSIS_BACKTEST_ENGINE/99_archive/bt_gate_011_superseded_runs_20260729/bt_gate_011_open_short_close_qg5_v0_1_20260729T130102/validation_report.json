@@ -1,0 +1,24 @@
+{
+  "actual_fill_count": 10,
+  "actual_order_count": 10,
+  "capability": "SINGLE_STRATEGY_END_TO_END_BACKTEST",
+  "costs_counted_exactly_once": true,
+  "deterministic_output_hash": "fc0179951bc236eb796de2b14a13199c5ee56422a6b553811517ebbb45ca33ea",
+  "ending_equity_reconciles": true,
+  "expected_order_count": 10,
+  "fill_count_matches": true,
+  "final_positions_zero": true,
+  "gate_id": "BT-GATE-011",
+  "order_count_matches": true,
+  "order_results_all_filled": true,
+  "prohibited_capabilities_activated": [],
+  "run_classifications": {
+    "ECONOMIC_REALISM": "INCOMPLETE",
+    "EDGE_EVIDENCE": "NOT_AUTHORIZED",
+    "RUN_PURPOSE": "ENGINE_VALIDATION_RUN",
+    "STRATEGY_OPTIMIZATION": "NOT_AUTHORIZED"
+  },
+  "run_id": "bt_gate_011_open_short_close_qg5_v0_1",
+  "state_provider_restrictions_preserved": true,
+  "status": "PASS"
+}

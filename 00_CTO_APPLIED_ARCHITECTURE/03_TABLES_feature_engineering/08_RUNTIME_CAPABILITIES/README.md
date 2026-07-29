@@ -1,13 +1,107 @@
+## Provider-Consumer Contract Compatibility Regression v0.1.2
+
+```text
+runtime_provider_consumer_contract_compatibility_regression_v0_1_2 = CLOSED_PASS_PROVIDER_CONSUMER_CONTROL_PLANE_COMPATIBLE_WITH_RESTRICTIONS_NO_CONSUMPTION
+provider_consumer_control_plane_compatibility = PASS_WITH_RESTRICTIONS
+consumer_contract_status = DRAFT_NOT_INTEGRATION_VALIDATED
+StateBundle physical consumption = NOT_AUTHORIZED
+StateReplayFeed = NOT_AUTHORIZED
+```
+
+Next provider/shared-boundary gate at regression closure:
+
+```text
+state_bundle_manifest_physical_evidence_alignment_v0_1
+```
+
+Alignment has since closed blocked, and the replay availability timestamp contract has since closed with validation hardening. Required next provider-owned gate is:
+
+```text
+runtime_user_invocation_bounded_interface_execution_regression_v0_1_2
+```
+
+## Provider Contract Schema Hardening v0.1.2 External Audit Accepted
+
+```text
+runtime_provider_contract_schema_hardening_v0_1_2 = CLOSED_EXTERNAL_AUDIT_PASS_ACCEPTABLE_AS_PROVIDER_AUTHORITY_WITH_RESTRICTIONS
+ACTIVE_PROVIDER_AUTHORITY = runtime_provider_contract_schema_hardening_v0_1_2
+provider_control_plane = REFROZEN_AT_V0_1_2_WITH_RESTRICTIONS
+PROVIDER_V0_1_2_EXTERNAL_AUDIT = PASS
+PROVIDER_CONSUMER_COMPATIBILITY = READY_FOR_REGRESSION_NOT_OPENED
+```
+
+Accepted provider-only ZIP:
+
+```text
+C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\runtime_provider_contract_schema_hardening_v0_1_2_provider_only_20260729T141808Z.zip
+SHA-256 = 191f40e40f2cfe374ce2f493fb9dd3e2509e33f64b9ed8f3969c9c8b0badf759
+```
+
+This acceptance does not authorize physical row delivery, StateReplayFeed, backtest consumption, official datasets, production or downstream.
+
 # 08_RUNTIME_CAPABILITIES
 
-Status: `event_state_on_demand_bounded_candidate_dataset_review_closed_v0_1`
-Date: `2026-07-27`
-Current gate: `event_state_on_demand_bounded_deterministic_rerun_authorization_v0_1`
+Status: `provider_control_plane_refrozen_at_v0_1_2_after_consumer_regression`
+Date: `2026-07-29`
+Current provider gate: `none_active_provider_control_plane_refrozen_at_v0_1_2`
 
-This folder records the TSIS runtime capability layer. It is not a Market State
-folder and not an Event State folder. It defines how TSIS turns governed
-requests into resolved profiles, sources, execution plans, materializations,
-validation reports, registry evidence and reproducible outputs.
+This folder records the TSIS runtime capability layer. It is not a Market State folder and not an Event State folder. It defines how TSIS turns governed requests into resolved profiles, sources, execution plans, materializations, validation reports, registry evidence and reproducible outputs.
+
+## State Provider Control-Plane v0.1
+
+```text
+STATE_PROVIDER_CONTROL_PLANE
+=
+CLOSED_READY_WITH_RESTRICTIONS_NO_CONSUMPTION
+```
+
+The provider-side control-plane can validate, resolve, reuse/reference and block governed Market State and Event State requests. It does not authorize physical row delivery, StateReplayFeed, backtest consumption, official datasets, production or downstream.
+
+Next shared-boundary gates after alignment block:
+
+```text
+market_state_core_four_replay_availability_timestamp_contract_v0_1
+runtime_user_invocation_bounded_interface_execution_regression_v0_1_2
+```
+
+## Historical Snapshot - Provider Hardening v0.1.2 Authorization Issued
+
+```text
+runtime_provider_contract_schema_hardening_v0_1_1 = CLOSED_PROVIDER_CONTRACT_SCHEMA_HARDENED_V0_1_1_WITH_RESTRICTIONS_NO_EXECUTION
+PROVIDER_V0_1_1_EXTERNAL_AUDIT = FAIL_EXECUTABLE_SEMANTIC_GAPS
+runtime_provider_contract_schema_hardening_v0_1_2_previous_attempt = QUARANTINED_NO_ACTIVE_AUTHORITY
+runtime_provider_contract_schema_hardening_v0_1_2_authorization_v0_1 = CLOSED_AUTHORIZED_PROVIDER_CONTRACT_SCHEMA_HARDENING_V0_1_2_WITH_RESTRICTIONS_NO_EXECUTION
+```
+
+The next provider-owned work is the clean `runtime_provider_contract_schema_hardening_v0_1_2` increment. It must not treat the quarantined v0.1.2 artifacts as current authority. The future increment remains provider-only and must keep runtime requests, physical row delivery, StateReplayFeed, backtest consumption, production and downstream closed.
+
+## Historical Snapshot - Quarantined Provider Contract Schema Hardening v0.1.2
+
+```text
+runtime_provider_contract_schema_hardening_v0_1_2
+=
+QUARANTINED_NO_ACTIVE_AUTHORITY
+```
+
+The v0.1.2 provider hardening artifacts were removed from active Runtime Capability paths because they were created from a backtester-scoped agent context. Preserved audit location:
+
+```text
+../99_archive/v0_1_2_boundary_quarantine_20260728/
+```
+
+Current provider authority remains the restricted State Provider Control-Plane v0.1 status above. Physical row delivery, StateReplayFeed, backtest consumption, production and downstream remain closed.
+
+## Provider Contract Schema Hardening v0.1.1
+
+Closed corrective gate:
+
+```text
+runtime_provider_contract_schema_hardening_v0_1_1
+=
+CLOSED_PROVIDER_CONTRACT_SCHEMA_HARDENED_V0_1_1_WITH_RESTRICTIONS_NO_EXECUTION
+```
+
+The provider protocol has been hardened and its bounded interface behavior has been accepted as State Provider Control-Plane v0.1 ready with restrictions. Physical row delivery, StateReplayFeed, backtest consumption, production and downstream remain closed.
 
 ## Boundary
 
@@ -24,40 +118,188 @@ ML/RL/backtest_consumption = false
 Runtime evidence in this folder is candidate/runtime evidence unless a later
 gate explicitly promotes it.
 
-## Current Status
+## Runtime User Invocation Bounded Interface Execution Authorization v0.1
+
+Closed authorization gate:
+
+```text
+runtime_user_invocation_bounded_interface_execution_authorization_v0_1
+=
+CLOSED_AUTHORIZED_BOUNDED_INTERFACE_EXECUTION_WITH_RESTRICTIONS_NO_EXECUTION
+```
+
+The next gate may run a bounded provider-side interface behavior test. The test
+is limited to validation, resolution, reuse/reference decisions and blocked
+responses.
+
+Still not authorized:
+
+```text
+runtime builds
+physical state row delivery
+StateReplayFeed
+backtest state consumption
+production
+downstream
+official dataset delivery
+```
+
+
+
+## HISTORICAL_SNAPSHOT - Runtime Provider Consumer Compatibility Review v0.1
+
+Closed gate:
+
+```text
+runtime_provider_consumer_contract_compatibility_review_v0_1
+=
+CLOSED_APPROVED_FOR_BOUNDED_INTERFACE_EXECUTION_AUTHORIZATION_WITH_RESTRICTIONS_NO_EXECUTION
+```
+
+The provider contracts are compatible with the backtest consumer draft contracts
+for governed request validation, reuse/reference resolution and fail-closed
+restriction propagation.
+
+Remaining boundaries:
+
+```text
+consumer_contract_status = PROPOSED_CONSUMER_CONTRACT_NOT_INTEGRATION_VALIDATED
+backtest_state_consumption = NOT_AUTHORIZED
+StateReplayFeed = NOT_AUTHORIZED
+official_dataset = false
+production = false
+downstream = false
+physical_rows_delivered = false
+```
+
+
+## HISTORICAL_SNAPSHOT - Runtime User Invocation Interface v0.1
+
+Closed gate:
+
+```text
+runtime_user_invocation_interface_v0_1
+=
+CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION
+```
+
+Closed provider-side protocol contracts:
+
+```text
+runtime_user_invocation_interface_design_v0_1.md
+runtime_capability_registry_snapshot_v0_1.json
+state_resolution_request_contract_v0_1.json
+runtime_user_invocation_interface_contract_v0_1.json
+runtime_user_invocation_response_contract_v0_1.json
+runtime_capability_effective_view_contract_v0_1.json
+state_bundle_manifest_contract_v0_1.json
+```
+
+Canonical request hierarchy:
+
+```text
+StateResolutionRequest = common provider envelope
+market_state_request = specialized Market State payload
+event_state_request = specialized Event State payload
+```
+
+Institutional status after closure:
+
+```text
+PROVIDER_BOUNDARY = PASS
+PROVIDER_INTERFACE_CONTRACTS = CLOSED
+PROVIDER_CONSUMER_COMPATIBILITY = READY_FOR_REVIEW_NOT_VALIDATED
+DOWNSTREAM_STATE_CONSUMPTION = NOT_AUTHORIZED
+BACKTEST_STATE_CONSUMPTION = NOT_AUTHORIZED
+```
+
+This folder owns the provider contracts only. Backtest-owned objects such as `BacktestRunSpec`, `BacktestInputManifest`, `StateReplayFeed` and `EventLoop` remain outside this folder.
+
+
+## HISTORICAL_SNAPSHOT - Runtime Provider Contract Schema Hardening v0.1
+
+Closed gate:
+
+```text
+runtime_provider_contract_schema_hardening_v0_1
+=
+CLOSED_SCHEMA_HARDENED_WITH_RESTRICTIONS_NO_EXECUTION
+```
+
+The following provider contracts were hardened after compatibility preflight findings:
+
+```text
+state_resolution_request_contract_v0_1.json
+runtime_user_invocation_response_contract_v0_1.json
+state_bundle_manifest_contract_v0_1.json
+```
+
+Validation evidence:
+
+```text
+runtime_provider_contract_schema_hardening_validation_matrix_v0_1.json
+case_count = 10
+failed_cases = 0
+```
+
+Compatibility status remains:
+
+```text
+PROVIDER_CONSUMER_COMPATIBILITY = READY_FOR_REVIEW_NOT_VALIDATED
+BACKTEST_STATE_CONSUMPTION = NOT_AUTHORIZED
+STATE_REPLAY_FEED = NOT_AUTHORIZED
+```
+
+## HISTORICAL_SNAPSHOT - Current Status Snapshot
 
 The last closed gate is:
 
 ```text
-event_state_on_demand_bounded_candidate_dataset_review_v0_1
+runtime_provider_contract_schema_hardening_v0_1
 ```
 
-Status:
+Previous Event State capability consumption policy closed:
 
 ```text
-gate = event_state_on_demand_bounded_candidate_dataset_review_v0_1
-review_run_id = event_state_on_demand_bounded_candidate_dataset_review_v0_1_20260727T202013Z
-status = CLOSED_APPROVED_AS_EVENT_STATE_ON_DEMAND_BOUNDED_CANDIDATE_EVIDENCE_WITH_RESTRICTIONS_NO_PROMOTION
-reviewed_run = event_state_on_demand_bounded_execution_v0_1_20260727T200322Z
-reviewed_candidate_dataset_fingerprint = d5662103e1c45f90847b51e69b0e698243bde231758fa3c864e24c4a6839be33
-reviewed_logical_dataset_fingerprint = 1b981958488e69f8f553c9197861bbffeed2d5388437c1113f9e21422b9cf970
-requested_contexts = 9
-represented_contexts = 8
-unavailable_contexts = 1
-unaccounted_contexts = 0
-event_state_candidate_records = 8
-hard_review_failures = 0
-candidate_dataset_review_approved = true
-reuse_eligibility_after_review = pending_deterministic_rerun
+status = CLOSED_PASS_EVENT_STATE_CAPABILITY_CONSUMPTION_POLICY_ESTABLISHED_WITH_RESTRICTIONS_NO_DATASET_PROMOTION
+policy_run_id = event_state_capability_consumption_policy_v0_1_20260728T135626Z
+capability_id = event_state_on_demand_runtime_capability_v0_1
+policy_status = ESTABLISHED_WITH_RESTRICTIONS_CANDIDATE_RUNTIME_ONLY
+allowed_event_type_ids = [event_type:market_data:session_opened]
+accepted_subject_scope = exchange_session
+hard_policy_failures = 0
+source_market_data_rows_read = 0
+new_event_state_materializer_executions = 0
+new_market_state_materializer_executions = 0
+new_candidate_dataset_registry_entries_written = 0
 registry_entry_mutations = 0
-materializer_executions = 0
-market_state_candidate_files_read_by_review = 0
-event_state_records_emitted_by_review = 0
-official_event_state_dataset = false
+official_dataset = false
 production = false
 downstream = false
-next_gate = event_state_on_demand_bounded_deterministic_rerun_authorization_v0_1
+next_gate = runtime_provider_consumer_contract_compatibility_review_v0_1
 ```
+Capability promotion review closed:
+
+```text
+status = CLOSED_PASS_EVENT_STATE_CAPABILITY_PROMOTED_WITH_RESTRICTIONS_NO_DATASET_PROMOTION
+review_run_id = event_state_on_demand_capability_promotion_review_v0_1_20260728T135003Z
+capability_id = event_state_on_demand_runtime_capability_v0_1
+capability_status_after_review = PROMOTED_WITH_RESTRICTIONS_CANDIDATE_RUNTIME_ONLY
+reviewed_evidence_items = 14
+scale_requested_contexts = 80
+scale_represented_contexts = 74
+scale_unavailable_contexts = 6
+hard_review_failures = 0
+source_market_data_rows_read = 0
+new_event_state_materializer_executions = 0
+new_market_state_materializer_executions = 0
+new_candidate_dataset_registry_entries_written = 0
+official_dataset = false
+production = false
+downstream = false
+next_gate = event_state_capability_consumption_policy_v0_1
+```
+
 Invalid runtime attempts preserved as failure evidence:
 
 ```text
@@ -85,7 +327,50 @@ run_id = event_state_on_demand_bounded_candidate_dataset_review_v0_1_20260727T20
 status = FAILED_TECHNICAL_REVIEWER_FAILURE_MANIFEST_FIELD_BUG_BEFORE_REVIEW_CLOSURE
 valid_gate_closure = false
 superseded_by_successful_run = event_state_on_demand_bounded_candidate_dataset_review_v0_1_20260727T202013Z
+
+run_id = event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T065658Z
+status = INVALID_PARTIAL_ATTEMPT_NO_MATERIALIZATION_NO_AUTHORITY_CONSUMED
+valid_gate_closure = false
+superseded_by_successful_run = event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070338Z
+
+run_id = event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070142Z
+status = CLOSED_BLOCKED_DETERMINISM_FAILURE
+valid_gate_closure = false
+superseded_by_successful_run = event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070338Z
+
+run_id = event_state_on_demand_bounded_idempotency_reuse_test_v0_1_20260728T074430Z
+status = FAILED_TECHNICAL_RUNNER_REQUEST_FIELD_BUG_BEFORE_FINAL_MANIFEST
+valid_gate_closure = false
+superseded_by_successful_run = event_state_on_demand_bounded_idempotency_reuse_test_v0_1_20260728T074624Z
+
+run_id = event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T083159Z
+status = CLOSED_FAILED_PRE_REVIEW_SEMANTIC_CONTRACT_MISMATCH
+valid_gate_closure = false
+failure_reason = mixed_event_window_definition_id_between_reused_baseline_and_delta_records
+superseded_by_successful_run = event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z
+
+run_id = event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T102842Z
+status = CLOSED_FAILED_RUNTIME_READOUT_PATH_LENGTH_NO_VALID_CLOSURE
+valid_gate_closure = false
+superseded_by_successful_run = event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z
+
+run_id = event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260728T110643Z
+status = CLOSED_FAILED_RUNTIME_ARTIFACT_PATH_LENGTH_NO_VALID_CLOSURE
+valid_gate_closure = false
+superseded_by_successful_run = event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260728T110845Z
+
+run_id = event_state_on_demand_scale_validation_v0_1_20260728T115857Z
+status = CLOSED_BLOCKED_EVENT_STATE_SCALE_VALIDATION_FAILED
+valid_gate_closure = false
+failure_reason = validation_policy_too_strict_for_multigeneration_market_state_dependency_fingerprints
+superseded_by_successful_run = event_state_on_demand_scale_validation_v0_1_20260728T120123Z
+run_id = event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260728T110740Z
+status = CLOSED_BLOCKED_EVENT_STATE_SECOND_GENERATION_INCREMENTAL_CANDIDATE_REVIEW_FAILURE
+valid_gate_closure = false
+failure_reason = reviewer_policy_too_strict_for_generational_integration_statuses
+superseded_by_successful_run = event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260728T110845Z
 ```
+
 
 ## Capability Chain Proven So Far
 
@@ -105,19 +390,17 @@ Request
 Proven bounded behavior:
 
 ```text
-bounded build = proven for 9 requested contexts, 8 materialized, 1 unavailable
-candidate review = passed with restrictions
-deterministic rerun = proven for bounded exact-match scope
-exact-match reuse = proven with zero rebuild
-incremental overlap = proven with selective reuse + delta-only build
-incremental overlap reuse = proven with zero rebuild
-second-generation incremental extension = proven with second delta-only build
-lineage-chain validation = proven across baseline + delta1 + delta2
-Event State on-demand bounded execution = proven for 9 requested contexts, 8 candidate records, 1 unavailable, 0 fallbacks and 0 hard failures
-Event State on-demand bounded candidate review = approved as candidate evidence with restrictions, 0 hard review failures and no promotion
-scale validation = proven for 120 requested contexts, 104 represented, 16 unavailable
-capability promotion review = promoted with restrictions for candidate generation only
-capability consumption policy = established with restrictions for candidate runtime only
+market_state bounded build = proven for 9 requested contexts, 8 materialized, 1 unavailable
+market_state candidate review = passed with restrictions
+market_state deterministic rerun = proven for bounded exact-match scope
+market_state exact-match reuse = proven with zero rebuild
+market_state incremental overlap = proven with selective reuse + delta-only build
+market_state incremental overlap reuse = proven with zero rebuild
+market_state second-generation incremental extension = proven with second delta-only build
+market_state lineage-chain validation = proven across baseline + delta1 + delta2
+market_state scale validation = proven for 120 requested contexts, 104 represented, 16 unavailable
+market_state capability promotion review = promoted with restrictions for candidate generation only
+market_state capability consumption policy = established with restrictions for candidate runtime only
 event_state_on_demand_capability_design_authorization = consumed by design-only gate
 event_state_on_demand_capability_design = closed design-ready with restrictions, no execution
 event_state_request_contract_design = closed design-ready with restrictions, no execution
@@ -127,8 +410,24 @@ event_state_materializer_design = closed design-ready with restrictions, no exec
 event_state_validator_design = closed design-ready with restrictions, no execution
 event_state_candidate_dataset_registry_design = closed design-ready with restrictions, no execution
 event_state_on_demand_execution_chain_joint_review = closed approved for bounded execution authorization, no execution
-event_state_on_demand_bounded_execution_authorization = authorized with restrictions, no execution
+event_state_on_demand_bounded_execution_authorization = consumed by bounded execution gate
 event_state_on_demand_bounded_execution_preflight_correction = closed pass, blockers resolved, no execution
+event_state_on_demand_bounded_execution = proven for 9 requested contexts, 8 candidate records, 1 unavailable, 0 fallbacks and 0 hard failures
+event_state_on_demand_bounded_candidate_review = approved as candidate evidence with restrictions, 0 hard review failures and no promotion
+event_state_on_demand_deterministic_rerun = proven for bounded scope
+event_state_on_demand_determinism_validation = closed with restrictions, no reuse transition
+event_state_on_demand_exact_match_reuse = proven with zero rebuild and zero candidate content reads
+event_state_on_demand_bounded_reuse_eligibility_transition = approved for bounded exact-match only
+event_state_on_demand_incremental_overlap_execution = proven with selective Event State reuse + delta-only Event State build
+event_state_on_demand_incremental_overlap_candidate_review = approved as candidate evidence with restrictions, no promotion
+event_state_on_demand_incremental_overlap_reuse = proven with zero rebuild
+event_state_on_demand_second_generation_incremental_extension_authorization = consumed by second-generation incremental extension gate
+event_state_on_demand_second_generation_incremental_extension = proven with parent-generation reuse + delta2-only build
+event_state_on_demand_second_generation_incremental_extension_candidate_review = approved as candidate evidence with restrictions, no promotion
+event_state_on_demand_incremental_lineage_chain_validation = proven across baseline + delta1 + delta2 with no lineage gaps
+event_state_on_demand_scale_validation = proven for 80 requested contexts, 74 represented, 14 lineage-chain reused, 60 scale delta materialized, 6 unavailable
+event_state_on_demand_capability_promotion_review = promoted with restrictions for candidate runtime only
+event_state_capability_consumption_policy = established with restrictions for candidate runtime only
 ```
 
 ## Status Ledger
@@ -185,9 +484,43 @@ event_state_on_demand_execution_chain_joint_review = CLOSED_APPROVED_FOR_BOUNDED
 event_state_on_demand_bounded_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS_NO_EXECUTION
 market_state_capability_event_state_bounded_dependency_consumption_authorization = AUTHORIZED_WITH_RESTRICTIONS_NO_EXECUTION
 event_state_on_demand_bounded_execution_preflight_correction = CLOSED_PASS_PREFLIGHT_BLOCKERS_RESOLVED_NO_EXECUTION
+event_state_on_demand_bounded_execution = CLOSED_PASS_EVENT_STATE_ON_DEMAND_BOUNDED_EXECUTION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED
+event_state_on_demand_bounded_candidate_dataset_review = CLOSED_APPROVED_AS_EVENT_STATE_ON_DEMAND_BOUNDED_CANDIDATE_EVIDENCE_WITH_RESTRICTIONS_NO_PROMOTION
+event_state_on_demand_bounded_deterministic_rerun_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+event_state_on_demand_bounded_deterministic_rerun = CLOSED_PASS_DETERMINISTIC_RERUN_MATCH_WITH_RESTRICTIONS
+event_state_on_demand_bounded_determinism_validation = CLOSED_APPROVED_DETERMINISM_FOR_BOUNDED_SCOPE_WITH_RESTRICTIONS_NO_REUSE_TRANSITION
+event_state_on_demand_bounded_idempotency_reuse_test_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED_BY_REUSE_TEST
+event_state_on_demand_bounded_idempotency_reuse_test = CLOSED_PASS_EVENT_STATE_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS
+event_state_on_demand_bounded_reuse_eligibility_transition_review = CLOSED_APPROVED_EVENT_STATE_REUSE_ELIGIBILITY_TRANSITION_FOR_BOUNDED_EXACT_MATCH_WITH_RESTRICTIONS_NO_PROMOTION
+event_state_on_demand_bounded_incremental_overlap_execution_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+event_state_on_demand_bounded_incremental_overlap_execution = CLOSED_PASS_EVENT_STATE_INCREMENTAL_OVERLAP_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED
+event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review = CLOSED_PASS_EVENT_STATE_INCREMENTAL_OVERLAP_CANDIDATE_DATASET_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION
+event_state_on_demand_bounded_incremental_overlap_idempotency_reuse_test_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED_BY_REUSE_TEST
+event_state_on_demand_bounded_incremental_overlap_idempotency_reuse_test = CLOSED_PASS_EVENT_STATE_INCREMENTAL_OVERLAP_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS
+event_state_on_demand_second_generation_incremental_extension_authorization = AUTHORIZED_WITH_RESTRICTIONS_CONSUMED
+event_state_on_demand_second_generation_incremental_extension = CLOSED_PASS_EVENT_STATE_SECOND_GENERATION_INCREMENTAL_EXTENSION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED
+event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review = CLOSED_PASS_EVENT_STATE_SECOND_GENERATION_INCREMENTAL_CANDIDATE_DATASET_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION
+event_state_on_demand_incremental_lineage_chain_validation = CLOSED_PASS_EVENT_STATE_INCREMENTAL_LINEAGE_CHAIN_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION
+event_state_on_demand_scale_validation = CLOSED_PASS_EVENT_STATE_SCALE_VALIDATION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED
+event_state_on_demand_capability_promotion_review = CLOSED_PASS_EVENT_STATE_CAPABILITY_PROMOTED_WITH_RESTRICTIONS_NO_DATASET_PROMOTION
+event_state_capability_consumption_policy = CLOSED_PASS_EVENT_STATE_CAPABILITY_CONSUMPTION_POLICY_ESTABLISHED_WITH_RESTRICTIONS_NO_DATASET_PROMOTION
+runtime_user_invocation_interface = NEXT_NOT_OPENED
 ```
 
 ## Key Runtime Evidence
+
+```text
+runs/event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T102842Z/failure_manifest.json
+runs/event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z/final_manifest.json
+runs/event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z/run_readout.md
+runs/event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260728T110845Z/final_manifest.json
+runs/event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260728T110845Z/run_readout.md
+event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_readout_v0_1.md
+runs/event_state_on_demand_incremental_lineage_chain_validation_v0_1_20260728T112448Z/final_manifest.json
+runs/event_state_on_demand_incremental_lineage_chain_validation_v0_1_20260728T112448Z/run_readout.md
+event_state_on_demand_incremental_lineage_chain_validation_readout_v0_1.md
+```
+
 
 ```text
 runs/market_state_bounded_on_demand_execution_v0_1_20260724T232123Z/final_manifest.json
@@ -329,12 +662,170 @@ event_state_on_demand_bounded_candidate_context_ledger_v0_1.json
 event_state_on_demand_bounded_candidate_fingerprint_comparison_v0_1.json
 event_state_on_demand_bounded_candidate_dataset_review_readout_v0_1.md
 runs/event_state_on_demand_bounded_candidate_dataset_review_v0_1_20260727T202013Z/final_manifest.json
+event_state_on_demand_bounded_deterministic_rerun_authorization_v0_1.md
+configs/event_state_on_demand_bounded_deterministic_rerun_scope_v0_1.json
+event_state_on_demand_bounded_deterministic_rerun_contract_v0_1.json
+event_state_on_demand_bounded_deterministic_rerun_authorization_readout_v0_1.md
+runs/event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070338Z/final_manifest.json
+runs/event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070338Z/event_state_bounded_deterministic_rerun_comparison_v0_1.json
+runs/event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070338Z/determinism_report.json
+event_state_on_demand_bounded_determinism_validation_authorization_v0_1.md
+configs/event_state_on_demand_bounded_determinism_validation_scope_v0_1.json
+event_state_on_demand_bounded_determinism_validation_matrix_v0_1.json
+event_state_on_demand_bounded_determinism_validation_readout_v0_1.md
+event_state_on_demand_bounded_idempotency_reuse_test_authorization_v0_1.md
+configs/event_state_on_demand_bounded_idempotency_reuse_test_scope_v0_1.json
+event_state_on_demand_bounded_idempotency_reuse_test_contract_v0_1.json
+event_state_on_demand_bounded_idempotency_reuse_test_authorization_readout_v0_1.md
+runs/event_state_on_demand_bounded_idempotency_reuse_test_v0_1_20260728T074430Z/failure_manifest.json
+runs/event_state_on_demand_bounded_idempotency_reuse_test_v0_1_20260728T074624Z/final_manifest.json
+runs/event_state_on_demand_bounded_reuse_eligibility_transition_review_v0_1_20260728T080426Z/final_manifest.json
+runs/event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z/final_manifest.json
+runs/event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_v0_1_20260728T085326Z/failure_manifest.json
+runs/event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_v0_1_20260728T091026Z/final_manifest.json
+runs/event_state_on_demand_bounded_incremental_overlap_idempotency_reuse_test_v0_1_20260728T091759Z/final_manifest.json
+runs/event_state_on_demand_bounded_idempotency_reuse_test_v0_1_20260728T074624Z/idempotency_reuse_test_report.json
+runs/event_state_on_demand_bounded_idempotency_reuse_test_v0_1_20260728T074624Z/idempotency_reuse_evidence_entry.json
+runs/event_state_on_demand_bounded_idempotency_reuse_test_v0_1_20260728T074624Z/event_state_on_demand_bounded_idempotency_reuse_test_readout_v0_1.md
+event_state_on_demand_bounded_reuse_eligibility_transition_review_authorization_v0_1.md
+configs/event_state_on_demand_bounded_reuse_eligibility_transition_review_scope_v0_1.json
+event_state_on_demand_bounded_reuse_eligibility_transition_review_authorization_readout_v0_1.md
+scripts/event_state_on_demand_bounded_reuse_eligibility_transition_review_runner_v0_1.py
+runs/event_state_on_demand_bounded_reuse_eligibility_transition_review_v0_1_20260728T080426Z/final_manifest.json
+runs/event_state_on_demand_bounded_reuse_eligibility_transition_review_v0_1_20260728T080426Z/review_matrix.json
+runs/event_state_on_demand_bounded_reuse_eligibility_transition_review_v0_1_20260728T080426Z/reuse_eligibility_transition_record_v0_1.json
+runs/event_state_on_demand_bounded_reuse_eligibility_transition_review_v0_1_20260728T080426Z/review_readout.md
+event_state_on_demand_bounded_incremental_overlap_execution_authorization_v0_1.md
+configs/event_state_on_demand_bounded_incremental_overlap_execution_scope_v0_1.json
+event_state_on_demand_bounded_incremental_overlap_execution_authorization_readout_v0_1.md
+event_state_on_demand_scale_validation_authorization_v0_1.md
+configs/event_state_on_demand_scale_validation_scope_v0_1.json
+event_state_on_demand_scale_validation_contract_v0_1.json
+event_state_on_demand_scale_validation_authorization_readout_v0_1.md
+scripts/event_state_on_demand_scale_validation_runner_v0_1.py
+event_state_on_demand_scale_validation_matrix_v0_1.json
+event_state_on_demand_scale_validation_context_ledger_v0_1.json
+event_state_on_demand_scale_validation_fingerprint_comparison_v0_1.json
+event_state_on_demand_scale_validation_readout_v0_1.md
+runs/event_state_on_demand_scale_validation_v0_1_20260728T115857Z/final_manifest.json
+runs/event_state_on_demand_scale_validation_v0_1_20260728T120123Z/final_manifest.json
+runs/event_state_on_demand_scale_validation_v0_1_20260728T120123Z/event_state_scale_validation_report.json
+runs/event_state_on_demand_scale_validation_v0_1_20260728T120123Z/candidate_registry_entry.json
+runs/event_state_on_demand_scale_validation_v0_1_20260728T120123Z/run_readout.md
+event_state_on_demand_capability_promotion_review_authorization_v0_1.md
+configs/event_state_on_demand_capability_promotion_review_scope_v0_1.json
+event_state_on_demand_capability_promotion_review_contract_v0_1.json
+event_state_on_demand_capability_promotion_review_matrix_v0_1.json
+event_state_on_demand_runtime_capability_manifest_v0_1.json
+event_state_on_demand_capability_promotion_review_readout_v0_1.md
+scripts/event_state_on_demand_capability_promotion_review_runner_v0_1.py
+runs/event_state_on_demand_capability_promotion_review_v0_1_20260728T135003Z/final_manifest.json
+runs/event_state_on_demand_capability_promotion_review_v0_1_20260728T135003Z/evidence_index.json
+runs/event_state_on_demand_capability_promotion_review_v0_1_20260728T135003Z/review_matrix.json
+runs/event_state_on_demand_capability_promotion_review_v0_1_20260728T135003Z/capability_manifest.json
+runs/event_state_on_demand_capability_promotion_review_v0_1_20260728T135003Z/review_readout.md
+event_state_capability_consumption_policy_authorization_v0_1.md
+configs/event_state_capability_consumption_policy_scope_v0_1.json
+event_state_capability_consumption_policy_contract_v0_1.json
+event_state_capability_consumption_policy_v0_1.md
+event_state_capability_consumption_policy_matrix_v0_1.json
+event_state_capability_consumption_policy_readout_v0_1.md
+scripts/event_state_capability_consumption_policy_runner_v0_1.py
+runs/event_state_capability_consumption_policy_v0_1_20260728T135626Z/final_manifest.json
+runs/event_state_capability_consumption_policy_v0_1_20260728T135626Z/policy_matrix.json
+runs/event_state_capability_consumption_policy_v0_1_20260728T135626Z/policy_readout.md
+runs/event_state_capability_consumption_policy_v0_1_20260728T135626Z/evidence_index.json
 ```
 
-## Next Gate
+## Next Gate At Event State Capability Closure
 
 ```text
-event_state_on_demand_bounded_deterministic_rerun_authorization_v0_1
+runtime_user_invocation_interface_v0_1
 ```
 
-The next gate must authorize a force-rebuild deterministic rerun of the bounded Event State on-demand request. It must freeze the reviewed baseline candidate, require the same request/dependency/plan/source fingerprints, prohibit reuse during the rerun, and keep official dataset promotion, production and downstream closed.
+The next gate at Event State capability closure was expected to review provider-consumer contract compatibility against the backtest draft contracts, without executing requests, opening StateReplayFeed, production or downstream consumption.
+
+
+## Runtime State Provider Boundary
+
+Formal boundary clarification:
+
+```text
+08_RUNTIME_CAPABILITIES
+=
+provider side for Market State and Event State runtime capabilities
+```
+
+The first expected consumer is `Backtest RunPreflight`, but the provider remains consumer-agnostic.
+
+Provider-owned objects include:
+
+```text
+runtime_user_invocation_interface_contract_v0_1.json
+runtime_user_invocation_response_contract_v0_1.json
+runtime_capability_effective_view_contract_v0_1.json
+runtime_user_invocation_interface_design_v0_1.md
+runtime_capability_registry_snapshot_v0_1.json
+state_resolution_request_contract_v0_1.json
+state_bundle_manifest_contract_v0_1.json
+```
+
+Backtest-owned objects remain outside this folder:
+
+```text
+BacktestRunSpec
+BacktestInputManifest
+RunPreflight pass/fail
+StateReplayFeed
+EventLoop
+orders/fills/positions/ledger
+```
+
+Authority artifacts:
+
+```text
+runtime_state_provider_boundary_v0_1.md
+runtime_state_provider_boundary_contract_v0_1.json
+runtime_state_provider_boundary_readout_v0_1.md
+configs/runtime_state_provider_boundary_scope_v0_1.json
+```
+
+## Boundary Normalization
+
+Canonical provider boundary status:
+
+```text
+CLOSED_BOUNDARY_CLARIFIED_NO_EXECUTION
+```
+
+Request contract hierarchy for the next gate:
+
+```text
+StateResolutionRequest = common provider envelope
+market_state_request = specialized Market State payload
+event_state_request = specialized Event State payload
+```
+
+HISTORICAL_SNAPSHOT - compatibility remained pending before schema hardening:
+
+```text
+PROVIDER_INTERFACE_CONTRACTS = PENDING_AT_THAT_HISTORICAL_SNAPSHOT
+PROVIDER_CONSUMER_COMPATIBILITY = NOT_YET_VALIDATED_AT_THAT_HISTORICAL_SNAPSHOT
+DOWNSTREAM_STATE_CONSUMPTION = NOT_AUTHORIZED
+```
+
+Normalization authority:
+
+```text
+runtime_state_provider_boundary_normalization_readout_v0_1.md
+configs/runtime_state_provider_boundary_normalization_scope_v0_1.json
+```
+## Handoff To State Consumption Boundary
+
+The next work is not additional provider runtime architecture. The shared-boundary gate lives in:
+
+```text
+09_STATE_CONSUMPTION_BOUNDARY/state_bundle_physical_consumption_authorization_design_v0_1.md
+```
+
+Provider remains closed for physical row delivery, `StateReplayFeed`, backtest consumption, production and downstream.

@@ -1,0 +1,228 @@
+{
+  "scope_id": "event_state_on_demand_second_generation_incremental_extension_scope_v0_1",
+  "gate": "event_state_on_demand_second_generation_incremental_extension_authorization_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_CONSUMED",
+  "date": "2026-07-28",
+  "parent_gate": "event_state_on_demand_bounded_incremental_overlap_idempotency_reuse_test_v0_1",
+  "authorized_next_gate": "event_state_on_demand_second_generation_incremental_extension_v0_1",
+  "authorization_identity": "authorize_one_bounded_event_state_second_generation_incremental_extension",
+  "parent_incremental_reuse_evidence": {
+    "reuse_test_run_id": "event_state_on_demand_bounded_incremental_overlap_idempotency_reuse_test_v0_1_20260728T091759Z",
+    "reuse_test_status": "CLOSED_PASS_EVENT_STATE_INCREMENTAL_OVERLAP_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS",
+    "reuse_evidence_id": "event_state_incremental_overlap_reuse_evidence_v0_1_8f8cce3a344ac7dd",
+    "reuse_evidence_fingerprint": "60965781a0bf42674c5521cb0e27f7643574ceb2e2bfbd46501da69be869507d",
+    "reuse_report_fingerprint": "8f8cce3a344ac7dd55c301ff6b9ca5ebe2642a4502c71036633d575178e042cb"
+  },
+  "parent_generation_1_candidate": {
+    "extension_generation": 1,
+    "dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+    "candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+    "logical_event_state_dataset_fingerprint": "73b2f81b76697eb67b55faffecd36c8e77ecf926c1c1f9e56cf6ee0e0ecb10f6",
+    "physical_artifact_fingerprint": "dd78476d760b3bea2bad4fe78d89add430eec3d9f0ba9650261f07304998cc82",
+    "validation_result_fingerprint": "8bb08f0f2afdff138064758bda45f21ca55ac415f760ce54816f070bb958a37b",
+    "registry_entry_fingerprint": "0de76e5d0366d792f2210cb98aa49286681c44deab50860d0f5cacf8f0426d30",
+    "execution_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+    "candidate_review_run_id": "event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_v0_1_20260728T091026Z",
+    "requested_contexts": 12,
+    "represented_contexts": 11,
+    "unavailable_contexts": 1
+  },
+  "event_state_profile_id": "event_state_core_four_intraday_profile_v0_1",
+  "event_type_id": "event_type:market_data:session_opened",
+  "subject_scope": "exchange_session",
+  "exchange_scope": [
+    "XNYS"
+  ],
+  "event_window_definition_id": "session_opened_at_anchor_context_v0_1",
+  "prior_generation_session_dates": [
+    "2021-01-19",
+    "2021-03-15",
+    "2022-11-25",
+    "2024-03-11"
+  ],
+  "delta_2_session_dates": [
+    "2023-03-20"
+  ],
+  "combined_generation_2_session_dates": [
+    "2021-01-19",
+    "2021-03-15",
+    "2022-11-25",
+    "2023-03-20",
+    "2024-03-11"
+  ],
+  "instrument_ids": [
+    "figi_share_class:BBG001S5N8T1",
+    "figi_share_class:BBG001S8T7K0",
+    "figi_share_class:BBG001S6RSK0"
+  ],
+  "expected_requested_contexts": 15,
+  "expected_reused_prior_generation_event_state_contexts": 11,
+  "expected_delta_2_event_state_contexts_to_build": 3,
+  "expected_delta_2_unavailable_contexts": 0,
+  "expected_preserved_unavailable_contexts": 1,
+  "expected_combined_represented_contexts": 14,
+  "expected_unaccounted_contexts": 0,
+  "preserved_unavailable_contexts": [
+    {
+      "event_type_id": "event_type:market_data:session_opened",
+      "exchange_id": "XNYS",
+      "session_date": "2022-11-25",
+      "instrument_id": "figi_share_class:BBG001S5N8T1",
+      "event_anchor_timestamp_utc": "2022-11-25T14:30:00Z",
+      "event_window_definition_id": "session_opened_at_anchor_context_v0_1",
+      "context_status": "unavailable",
+      "blocking_reason": "missing_exact_market_state_binding"
+    }
+  ],
+  "market_state_dependency_mode": "emit_or_resolve_market_state_subrequest_through_runtime_capability",
+  "market_state_dependency_reuse_policy": "reuse_existing_validated_candidate_or_block_unless_separate_dependency_generation_authorized",
+  "market_state_dependency_generation_authorized": false,
+  "direct_market_state_path_consumption_allowed": false,
+  "known_market_state_delta_2_candidate_evidence": {
+    "dataset_id": "market_state_candidate_dataset_incremental_v0_1_f2cfd5cf55d0c1be",
+    "source_run_id": "market_state_on_demand_incremental_overlap_execution_v0_1_20260725T064143Z",
+    "source_run_status": "CLOSED_PASS_INCREMENTAL_OVERLAP_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED",
+    "registry_status": "validated_candidate",
+    "validation_status": "pass_with_restrictions",
+    "reuse_eligibility": "pending_incremental_determinism_validation",
+    "request_fingerprint": "884830b081a2e9b8e5ea5130262600a20b01385a019a66ce3ad2240aac5b9b08",
+    "execution_plan_fingerprint": "c9ee1a63f9dd8780f16193adf43d35bb8db2271778a64afae2132e052931e746",
+    "candidate_dataset_fingerprint": "f2cfd5cf55d0c1be1722693cc0216ffd425bbb869e19c17745976c030f2c7a2a",
+    "scientific_dataset_fingerprint": "7103e4fdbae205e4bccbeb0c436508f62b016107b4b2756c549073dae971bb5f",
+    "validation_result_fingerprint": "9aafd142203872647a8be3668d0aca7c4f95630be4a405e00fd64f5cd111f336",
+    "registry_entry_fingerprint": "9d39bfd88a752d99afc7709950a0ea8c1116d7a2c79daef8bd4c79a993637376",
+    "allowed_use_for_future_execution": "delta_2_event_state_dependency_evidence_only_if_exact_fingerprint_and_authority_match",
+    "delta_2_contexts": [
+      {
+        "instrument_id": "figi_share_class:BBG001S5N8T1",
+        "ticker": "AAME",
+        "session_date": "2023-03-20",
+        "event_anchor_timestamp_utc": "2023-03-20T13:30:00Z",
+        "expected_market_state_record_id": "a49c0fff75098896ded98b690f17b54502baa1d9c7969d5b1380e80112e877aa",
+        "expected_market_state_output_fingerprint": "8da06f9804150e3e11fdf474073e9cb602185a740ae5dc4039cdf75164dfd6b9"
+      },
+      {
+        "instrument_id": "figi_share_class:BBG001S6RSK0",
+        "ticker": "ABUS",
+        "session_date": "2023-03-20",
+        "event_anchor_timestamp_utc": "2023-03-20T13:30:00Z",
+        "expected_market_state_record_id": "cd787c0528f0940d311188c1c839ee5e4360a430e123d07183c2ea63a72c4d55",
+        "expected_market_state_output_fingerprint": "3838a66f7d5a0716b5af857a5aca2217893d2091294df8a4ba8ea2b1b30777d3"
+      },
+      {
+        "instrument_id": "figi_share_class:BBG001S8T7K0",
+        "ticker": "ABEO",
+        "session_date": "2023-03-20",
+        "event_anchor_timestamp_utc": "2023-03-20T13:30:00Z",
+        "expected_market_state_record_id": "8fbacec13fcb1a267edb7827d7498fefa09b9c31534f85687d6202110b8127ad",
+        "expected_market_state_output_fingerprint": "68d285b58f0b584a76e468d8ca36981df7abafc19276f19d7decbe2a242db866"
+      }
+    ]
+  },
+  "authority_bundle": {
+    "event_state_profile_manifest": {
+      "relative_path": "07_EVENT_STATE_INTEGRATION/official_profiles/event_state_core_four_intraday_profile_v0_1/PROFILE_MANIFEST.json",
+      "sha256": "77937dca78391d354a3c394c7fc3886c4042209e6a567425a301553b962997e1"
+    },
+    "event_type_registry_post_initial_admission_snapshot": {
+      "relative_path": "07_EVENT_STATE_INTEGRATION/event_type_registry_post_initial_admission_snapshot_v0_1.json",
+      "sha256": "f3627c8b44062081c8e2f2775bffbd283bd31f2ca1e876aa7469fd6586425c43"
+    },
+    "event_state_request_contract": {
+      "relative_path": "08_RUNTIME_CAPABILITIES/event_state_request_contract_v0_1.json",
+      "sha256": "eda7d722a468a0fdaedff80a96226e223f99a0d83a4e965827d0e7a99bf8fdec"
+    },
+    "event_state_dependency_resolution_contract": {
+      "relative_path": "08_RUNTIME_CAPABILITIES/event_state_dependency_resolution_contract_v0_1.json",
+      "sha256": "4a34523b5a5a50c92fdc357d05885cb99e66d99bcc6ac5eb760cd42a441b9c38"
+    },
+    "event_state_execution_plan_contract": {
+      "relative_path": "08_RUNTIME_CAPABILITIES/event_state_execution_plan_contract_v0_1.json",
+      "sha256": "898df2cbcc7180afc8ef2844bb5847dde92cc1260aa347aa0fd9deb259f2ac55"
+    },
+    "event_instance_binding_design_contract": {
+      "relative_path": "07_EVENT_STATE_INTEGRATION/event_instance_binding_design_contract_v0_1.json",
+      "sha256": "e2f1e31e41c5ff9a904627e9680307645b4fa223743fe167abe6723022c10eed"
+    },
+    "event_window_binding_design_contract": {
+      "relative_path": "07_EVENT_STATE_INTEGRATION/event_window_binding_design_contract_v0_1.json",
+      "sha256": "4efb9867e96765df9bbdf98f813736e7dd29453d2b3a3466da51115d8871bf68"
+    },
+    "instrument_session_projection_design_contract": {
+      "relative_path": "07_EVENT_STATE_INTEGRATION/event_state_instrument_session_projection_design_contract_v0_1.json",
+      "sha256": "a02d59b6b6d4eb93bae2a021de41306a7b9d3a32bd6fe0d1f94b802211599f15"
+    },
+    "market_state_capability_consumption_policy_contract": {
+      "relative_path": "08_RUNTIME_CAPABILITIES/market_state_capability_consumption_policy_contract_v0_1.json",
+      "sha256": "66dbda4f673166317415bc5e3451aa8fba39abfba5b163f51b46a5ec7dac2369"
+    },
+    "runtime_run_lifecycle_contract": {
+      "relative_path": "08_RUNTIME_CAPABILITIES/market_state_run_lifecycle_and_manifest_contract_v0_1.json",
+      "sha256": "fac95af6fd5fdb6d5e37f6801211e340b522e54aa0875323a464b3c3e027382a"
+    },
+    "event_state_materializer_contract": {
+      "relative_path": "08_RUNTIME_CAPABILITIES/event_state_materializer_contract_v0_1.json",
+      "sha256": "bbc1d51c794ae0d08a012ed4628e0840efeebdc7cbe14ade4fb3cca032f82cfb"
+    },
+    "event_state_validator_contract": {
+      "relative_path": "08_RUNTIME_CAPABILITIES/event_state_validator_contract_v0_1.json",
+      "sha256": "1d2f4515db60835b3ae9530fc0e47acd077b5c847f67b3b7a7a6a1d6b9cb1718"
+    },
+    "event_state_candidate_dataset_registry_contract": {
+      "relative_path": "08_RUNTIME_CAPABILITIES/event_state_candidate_dataset_registry_contract_v0_1.json",
+      "sha256": "4251e0baf57159c8a1f74a6067f8a3db385ef1eda4f3d6dc11540cfb8ea4b7e8"
+    }
+  },
+  "authorized_execution_limits_for_next_gate": {
+    "maximum_second_generation_incremental_execution_runs": 1,
+    "maximum_requested_event_state_contexts": 15,
+    "maximum_reused_prior_generation_event_state_contexts": 11,
+    "maximum_delta_2_event_state_candidate_records": 3,
+    "maximum_preserved_unavailable_contexts": 1,
+    "maximum_new_native_event_instances": 1,
+    "maximum_new_event_window_bindings": 1,
+    "maximum_new_instrument_session_projections": 3,
+    "maximum_market_state_dependency_candidate_records_read": 3,
+    "maximum_market_state_materializer_executions": 0,
+    "maximum_source_market_data_rows_read": 0,
+    "maximum_new_candidate_dataset_registry_entries": 1,
+    "maximum_parent_registry_entry_mutations": 0,
+    "maximum_official_dataset_promotions": 0,
+    "maximum_production_authorizations": 0,
+    "maximum_downstream_authorizations": 0
+  },
+  "closed_by_this_authorization": {
+    "second_generation_incremental_execution": false,
+    "event_state_materializer_execution": false,
+    "market_state_materializer_execution": false,
+    "event_state_candidate_records_read": false,
+    "market_state_candidate_records_read": false,
+    "source_market_data_rows_read": false,
+    "candidate_dataset_registry_entry_write": false,
+    "official_event_state_dataset_promotion": false,
+    "production": false,
+    "downstream_consumption": false,
+    "unbounded_reuse": false
+  },
+  "required_future_execution_reconciliations": {
+    "requested_contexts": "reused_prior_generation_event_state_contexts + delta_2_materialized_event_state_contexts + unavailable_contexts + blocked_contexts + quarantined_contexts",
+    "represented_contexts": "reused_prior_generation_event_state_contexts + delta_2_materialized_event_state_contexts",
+    "unaccounted_contexts": 0,
+    "duplicate_canonical_contexts": 0,
+    "exact_one_binding_failures": 0,
+    "unexpected_parent_mutations": 0
+  },
+  "official_event_state_dataset": false,
+  "official_dataset": false,
+  "production": false,
+  "downstream": false,
+  "next_institutional_gate_after_authorization": "event_state_on_demand_second_generation_incremental_extension_v0_1",
+  "scope_sha256": "d8a47b109c75213dca2823562fd80ee6ef636ac58f1106f2b2ab19dd8ccc33cc",
+  "authorized_scope_sha256_before_consumption": "3ecb9297d1f4446c594306954e022792c5fa85456b775cddb3aaaae32d2fb42a",
+  "consumed_by_run_id": "event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z",
+  "consumed_by_run_status": "CLOSED_PASS_EVENT_STATE_SECOND_GENERATION_INCREMENTAL_EXTENSION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED",
+  "consumed_at_utc": "2026-07-28T10:30:16Z",
+  "produced_candidate_dataset_fingerprint": "9a31d9b8bf3af01c1c4a5cd18a37309eec7b3cb41011501ab85e0ef4a4831746",
+  "produced_logical_event_state_dataset_fingerprint": "b4774100b8ab27794e8d9a9205227c6e694442e8287b92bf5d899ec3a0b66f33",
+  "next_gate_after_consumption": "event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1"
+}

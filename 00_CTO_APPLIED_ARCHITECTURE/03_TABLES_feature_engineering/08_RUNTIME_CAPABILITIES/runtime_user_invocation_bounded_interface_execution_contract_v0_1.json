@@ -1,0 +1,46 @@
+{
+  "contract_id": "runtime_user_invocation_bounded_interface_execution_contract_v0_1",
+  "contract_version": "0.1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_NO_EXECUTION",
+  "owner_layer": "08_RUNTIME_CAPABILITIES",
+  "governed_gate": "runtime_user_invocation_bounded_interface_execution_authorization_v0_1",
+  "execution_gate_authorized_next": "runtime_user_invocation_bounded_interface_execution_v0_1",
+  "required_response_contract": "runtime_user_invocation_response_contract_v0_1",
+  "required_request_contract": "state_resolution_request_contract_v0_1",
+  "required_bundle_contract": "state_bundle_manifest_contract_v0_1",
+  "required_effective_view_contract": "runtime_capability_effective_view_contract_v0_1",
+  "test_case_count": 8,
+  "allowed_resolution_decisions": [
+    "VALID_REQUEST_REUSE_HIT",
+    "VALID_REQUEST_EXECUTION_AUTHORIZATION_REQUIRED",
+    "BLOCKED_UNSUPPORTED_PROFILE_OR_EVENT_TYPE",
+    "BLOCKED_PRODUCTION_OR_DOWNSTREAM_NOT_AUTHORIZED",
+    "BLOCKED_PHYSICAL_PATH_NOT_ALLOWED",
+    "BLOCKED_PROVIDER_CONTRACT_MISMATCH"
+  ],
+  "must_remain_zero": [
+    "new_runtime_builds_executed",
+    "materializer_executions_for_reuse_hit",
+    "source_market_data_rows_read_for_reuse_hit",
+    "registry_mutations",
+    "physical_state_rows_delivered",
+    "state_replay_feed_records_emitted",
+    "backtest_runs_started"
+  ],
+  "forbidden_outputs": [
+    "raw_rows",
+    "parquet_bytes",
+    "free_physical_path",
+    "official_dataset",
+    "downstream_authority",
+    "backtest_consumption_authority"
+  ],
+  "closure_requirements_for_execution_gate": [
+    "one response artifact per authorized case",
+    "all responses validate against runtime_user_invocation_response_contract_v0_1",
+    "reuse hit cases include StateBundleManifest reference and no materializer/source/registry mutation evidence",
+    "blocked cases contain no dataset_id, no artifact references and no authorization reference",
+    "partial coverage case preserves represented and unavailable context counts",
+    "final readout reconciles all cases"
+  ]
+}

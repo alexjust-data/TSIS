@@ -1,0 +1,1062 @@
+{
+  "policy_id": "event_state_capability_consumption_policy_v0_1_20260728T135626Z",
+  "gate": "event_state_capability_consumption_policy_v0_1",
+  "status": "CLOSED_PASS_EVENT_STATE_CAPABILITY_CONSUMPTION_POLICY_ESTABLISHED_WITH_RESTRICTIONS_NO_DATASET_PROMOTION",
+  "decision": {
+    "capability_id": "event_state_on_demand_runtime_capability_v0_1",
+    "policy_status": "ESTABLISHED_WITH_RESTRICTIONS_CANDIDATE_RUNTIME_ONLY",
+    "allowed_event_type_ids": [
+      "event_type:market_data:session_opened"
+    ],
+    "accepted_subject_scope": "exchange_session",
+    "hard_policy_failures": 0
+  },
+  "checks": [
+    {
+      "check": "required_evidence_files_present",
+      "passed": true,
+      "observed": []
+    },
+    {
+      "check": "capability_status_promoted",
+      "passed": true,
+      "observed": "PROMOTED_WITH_RESTRICTIONS_CANDIDATE_RUNTIME_ONLY"
+    },
+    {
+      "check": "promotion_review_passed",
+      "passed": true,
+      "observed": "CLOSED_PASS_EVENT_STATE_CAPABILITY_PROMOTED_WITH_RESTRICTIONS_NO_DATASET_PROMOTION"
+    },
+    {
+      "check": "promotion_review_hard_failures_zero",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "check": "promotion_matrix_hard_failures_zero",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "check": "session_opened_only",
+      "passed": true,
+      "observed": [
+        "event_type:market_data:session_opened"
+      ]
+    },
+    {
+      "check": "exchange_session_scope_only",
+      "passed": true,
+      "observed": "exchange_session"
+    },
+    {
+      "check": "official_dataset_closed",
+      "passed": true,
+      "observed": {
+        "capability": false,
+        "promotion": false
+      }
+    },
+    {
+      "check": "production_closed",
+      "passed": true,
+      "observed": {
+        "capability": false,
+        "promotion": false
+      }
+    },
+    {
+      "check": "downstream_closed",
+      "passed": true,
+      "observed": {
+        "capability": false,
+        "promotion": false
+      }
+    },
+    {
+      "check": "no_source_market_rows_read_by_policy",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "check": "no_materializer_executions_by_policy",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "check": "no_registry_entries_written_by_policy",
+      "passed": true,
+      "observed": 0
+    }
+  ],
+  "evidence_index": {
+    "capability_manifest": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\event_state_on_demand_runtime_capability_manifest_v0_1.json",
+      "sha256": "fbc2cff693ac112a6a5b420e10b0d0158cdbf2c84c24e534fdbf278a946fc85b",
+      "payload": {
+        "capability_id": "event_state_on_demand_runtime_capability_v0_1",
+        "capability_status": "PROMOTED_WITH_RESTRICTIONS_CANDIDATE_RUNTIME_ONLY",
+        "promotion_review_id": "event_state_on_demand_capability_promotion_review_v0_1_20260728T135003Z",
+        "promotion_review_status": "CLOSED_PASS_EVENT_STATE_CAPABILITY_PROMOTED_WITH_RESTRICTIONS_NO_DATASET_PROMOTION",
+        "event_state_profile_id": "event_state_core_four_intraday_profile_v0_1",
+        "allowed_event_type_ids": [
+          "event_type:market_data:session_opened"
+        ],
+        "accepted_subject_scope": "exchange_session",
+        "candidate_generation_allowed_under_separate_authorization": true,
+        "candidate_reuse_allowed_under_future_consumption_policy": false,
+        "official_event_state_dataset": false,
+        "official_dataset": false,
+        "production": false,
+        "downstream": false,
+        "restrictions": [
+          "candidate_runtime_only",
+          "session_opened_only",
+          "exchange_session_subject_scope_only",
+          "market_state_dependency_must_resolve_through_runtime_capability",
+          "no_direct_market_state_path_consumption",
+          "no_official_dataset_promotion",
+          "no_production",
+          "no_downstream",
+          "consumption_policy_required_before_general_reuse"
+        ],
+        "capability_manifest_sha256": "12d8be5949a3b225296c7586efd31d57d116fcf663963d3154627fe5bfd955c7"
+      },
+      "status": null
+    },
+    "promotion_review_matrix": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\event_state_on_demand_capability_promotion_review_matrix_v0_1.json",
+      "sha256": "93f08835eeae7a98b006ab2a33300a9d9f7d8706e325cf4bba63df156f2f8ccf",
+      "payload": {
+        "review_id": "event_state_on_demand_capability_promotion_review_v0_1_20260728T135003Z",
+        "gate": "event_state_on_demand_capability_promotion_review_v0_1",
+        "status": "CLOSED_PASS_EVENT_STATE_CAPABILITY_PROMOTED_WITH_RESTRICTIONS_NO_DATASET_PROMOTION",
+        "decision": {
+          "capability_id": "event_state_on_demand_runtime_capability_v0_1",
+          "capability_promotion_decision": "promote_with_restrictions_candidate_runtime_only",
+          "capability_status_after_review": "PROMOTED_WITH_RESTRICTIONS_CANDIDATE_RUNTIME_ONLY",
+          "reviewed_evidence_items": 14,
+          "scale_requested_contexts": 80,
+          "scale_represented_contexts": 74,
+          "scale_unavailable_contexts": 6,
+          "hard_review_failures": 0
+        },
+        "checks": [
+          {
+            "check": "required_evidence_files_present",
+            "passed": true,
+            "observed": []
+          },
+          {
+            "check": "bounded_execution_status",
+            "passed": true,
+            "observed": "CLOSED_PASS_EVENT_STATE_ON_DEMAND_BOUNDED_EXECUTION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+          },
+          {
+            "check": "bounded_candidate_review_status",
+            "passed": true,
+            "observed": "CLOSED_APPROVED_AS_EVENT_STATE_ON_DEMAND_BOUNDED_CANDIDATE_EVIDENCE_WITH_RESTRICTIONS_NO_PROMOTION"
+          },
+          {
+            "check": "deterministic_rerun_status",
+            "passed": true,
+            "observed": "CLOSED_PASS_DETERMINISTIC_RERUN_MATCH_WITH_RESTRICTIONS"
+          },
+          {
+            "check": "determinism_validation_status",
+            "passed": true,
+            "observed": "CLOSED_APPROVED_DETERMINISM_FOR_BOUNDED_SCOPE_WITH_RESTRICTIONS_NO_REUSE_TRANSITION"
+          },
+          {
+            "check": "exact_reuse_status",
+            "passed": true,
+            "observed": "CLOSED_PASS_EVENT_STATE_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS"
+          },
+          {
+            "check": "reuse_transition_status",
+            "passed": true,
+            "observed": "CLOSED_APPROVED_EVENT_STATE_REUSE_ELIGIBILITY_TRANSITION_FOR_BOUNDED_EXACT_MATCH_WITH_RESTRICTIONS_NO_PROMOTION"
+          },
+          {
+            "check": "incremental_execution_status",
+            "passed": true,
+            "observed": "CLOSED_PASS_EVENT_STATE_INCREMENTAL_OVERLAP_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+          },
+          {
+            "check": "incremental_candidate_review_status",
+            "passed": true,
+            "observed": "CLOSED_PASS_EVENT_STATE_INCREMENTAL_OVERLAP_CANDIDATE_DATASET_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION"
+          },
+          {
+            "check": "incremental_reuse_status",
+            "passed": true,
+            "observed": "CLOSED_PASS_EVENT_STATE_INCREMENTAL_OVERLAP_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS"
+          },
+          {
+            "check": "second_generation_incremental_status",
+            "passed": true,
+            "observed": "CLOSED_PASS_EVENT_STATE_SECOND_GENERATION_INCREMENTAL_EXTENSION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+          },
+          {
+            "check": "second_generation_candidate_review_status",
+            "passed": true,
+            "observed": "CLOSED_PASS_EVENT_STATE_SECOND_GENERATION_INCREMENTAL_CANDIDATE_DATASET_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION"
+          },
+          {
+            "check": "scale_validation_status",
+            "passed": true,
+            "observed": "CLOSED_PASS_EVENT_STATE_SCALE_VALIDATION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+          },
+          {
+            "check": "scale_validation_matrix_status",
+            "passed": true,
+            "observed": "CLOSED_PASS_EVENT_STATE_SCALE_VALIDATION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+          },
+          {
+            "check": "lineage_chain_hard_failures_zero",
+            "passed": true,
+            "observed": 0
+          },
+          {
+            "check": "lineage_chain_represented_contexts_14",
+            "passed": true,
+            "observed": 14
+          },
+          {
+            "check": "scale_requested_contexts_80",
+            "passed": true,
+            "observed": 80
+          },
+          {
+            "check": "scale_represented_contexts_74",
+            "passed": true,
+            "observed": 74
+          },
+          {
+            "check": "scale_unavailable_contexts_6",
+            "passed": true,
+            "observed": 6
+          },
+          {
+            "check": "scale_hard_failures_zero",
+            "passed": true,
+            "observed": 0
+          },
+          {
+            "check": "scale_market_state_materializer_zero",
+            "passed": true,
+            "observed": 0
+          },
+          {
+            "check": "scale_source_market_rows_zero",
+            "passed": true,
+            "observed": 0
+          },
+          {
+            "check": "scale_event_type_session_opened",
+            "passed": true,
+            "observed": "event_type:market_data:session_opened"
+          },
+          {
+            "check": "scale_subject_scope_exchange_session",
+            "passed": true,
+            "observed": "exchange_session"
+          },
+          {
+            "check": "bounded_execution_hard_failures_zero",
+            "passed": true,
+            "observed": 0
+          },
+          {
+            "check": "bounded_execution_official_dataset_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "bounded_execution_production_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "bounded_execution_downstream_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "bounded_candidate_review_hard_failures_zero",
+            "passed": true,
+            "observed": 0
+          },
+          {
+            "check": "bounded_candidate_review_official_dataset_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "bounded_candidate_review_production_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "bounded_candidate_review_downstream_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "deterministic_rerun_hard_failures_zero",
+            "passed": true,
+            "observed": 0
+          },
+          {
+            "check": "deterministic_rerun_official_dataset_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "deterministic_rerun_production_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "deterministic_rerun_downstream_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "determinism_validation_hard_failures_zero",
+            "passed": true,
+            "observed": 0
+          },
+          {
+            "check": "determinism_validation_official_dataset_closed",
+            "passed": true,
+            "observed": null
+          },
+          {
+            "check": "determinism_validation_production_closed",
+            "passed": true,
+            "observed": null
+          },
+          {
+            "check": "determinism_validation_downstream_closed",
+            "passed": true,
+            "observed": null
+          },
+          {
+            "check": "exact_reuse_hard_failures_zero",
+            "passed": true,
+            "observed": 0
+          },
+          {
+            "check": "exact_reuse_official_dataset_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "exact_reuse_production_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "exact_reuse_downstream_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "reuse_transition_hard_failures_zero",
+            "passed": true,
+            "observed": 0
+          },
+          {
+            "check": "reuse_transition_official_dataset_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "reuse_transition_production_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "reuse_transition_downstream_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "incremental_execution_hard_failures_zero",
+            "passed": true,
+            "observed": 0
+          },
+          {
+            "check": "incremental_execution_official_dataset_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "incremental_execution_production_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "incremental_execution_downstream_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "incremental_candidate_review_hard_failures_zero",
+            "passed": true,
+            "observed": 0
+          },
+          {
+            "check": "incremental_candidate_review_official_dataset_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "incremental_candidate_review_production_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "incremental_candidate_review_downstream_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "incremental_reuse_hard_failures_zero",
+            "passed": true,
+            "observed": 0
+          },
+          {
+            "check": "incremental_reuse_official_dataset_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "incremental_reuse_production_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "incremental_reuse_downstream_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "second_generation_incremental_hard_failures_zero",
+            "passed": true,
+            "observed": 0
+          },
+          {
+            "check": "second_generation_incremental_official_dataset_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "second_generation_incremental_production_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "second_generation_incremental_downstream_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "second_generation_candidate_review_hard_failures_zero",
+            "passed": true,
+            "observed": 0
+          },
+          {
+            "check": "second_generation_candidate_review_official_dataset_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "second_generation_candidate_review_production_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "second_generation_candidate_review_downstream_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "lineage_chain_validation_hard_failures_zero",
+            "passed": true,
+            "observed": 0
+          },
+          {
+            "check": "lineage_chain_validation_official_dataset_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "lineage_chain_validation_production_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "lineage_chain_validation_downstream_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "scale_validation_hard_failures_zero",
+            "passed": true,
+            "observed": 0
+          },
+          {
+            "check": "scale_validation_official_dataset_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "scale_validation_production_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "scale_validation_downstream_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "scale_validation_matrix_hard_failures_zero",
+            "passed": true,
+            "observed": 0
+          },
+          {
+            "check": "scale_validation_matrix_official_dataset_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "scale_validation_matrix_production_closed",
+            "passed": true,
+            "observed": false
+          },
+          {
+            "check": "scale_validation_matrix_downstream_closed",
+            "passed": true,
+            "observed": false
+          }
+        ],
+        "evidence_index": {
+          "bounded_execution": {
+            "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_execution_v0_1_20260727T200322Z\\final_manifest.json",
+            "sha256": "ea306ac436b6fbbe88cd318ee349cc15a8cc1570b2e913416b80269f31443125",
+            "status": "CLOSED_PASS_EVENT_STATE_ON_DEMAND_BOUNDED_EXECUTION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+          },
+          "bounded_candidate_review": {
+            "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_candidate_dataset_review_v0_1_20260727T202013Z\\final_manifest.json",
+            "sha256": "38a06268c9ce78d99ae78ff73263c57d3f34ec647b34b48aa6defcd4c1367017",
+            "status": "CLOSED_APPROVED_AS_EVENT_STATE_ON_DEMAND_BOUNDED_CANDIDATE_EVIDENCE_WITH_RESTRICTIONS_NO_PROMOTION"
+          },
+          "deterministic_rerun": {
+            "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070338Z\\final_manifest.json",
+            "sha256": "23699393edb8bf7ca16f108102519c811f1d680affef8e2ac7a82a96e89c63b9",
+            "status": "CLOSED_PASS_DETERMINISTIC_RERUN_MATCH_WITH_RESTRICTIONS"
+          },
+          "determinism_validation": {
+            "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\event_state_on_demand_bounded_determinism_validation_matrix_v0_1.json",
+            "sha256": "b358b82ec121110f10ace0b91ed68384a3358fbbf07d5ab18c2bca69c354f302",
+            "status": "CLOSED_APPROVED_DETERMINISM_FOR_BOUNDED_SCOPE_WITH_RESTRICTIONS_NO_REUSE_TRANSITION"
+          },
+          "exact_reuse": {
+            "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_idempotency_reuse_test_v0_1_20260728T074624Z\\final_manifest.json",
+            "sha256": "b0ed685c7d53e43e6b105c7c0fc211f8f3a9ff0ef69e3cfe74dd4e3be98a7339",
+            "status": "CLOSED_PASS_EVENT_STATE_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS"
+          },
+          "reuse_transition": {
+            "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_reuse_eligibility_transition_review_v0_1_20260728T080426Z\\final_manifest.json",
+            "sha256": "9d379536da2bb1157d53a2ea9a38daf73d323c347d3c30855314cc7b8c5dc9c1",
+            "status": "CLOSED_APPROVED_EVENT_STATE_REUSE_ELIGIBILITY_TRANSITION_FOR_BOUNDED_EXACT_MATCH_WITH_RESTRICTIONS_NO_PROMOTION"
+          },
+          "incremental_execution": {
+            "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z\\final_manifest.json",
+            "sha256": "830187958dcec0e1adc96f0662947213d8810baafb9f9a4a6f1eb7a495cc59d3",
+            "status": "CLOSED_PASS_EVENT_STATE_INCREMENTAL_OVERLAP_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+          },
+          "incremental_candidate_review": {
+            "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_v0_1_20260728T091026Z\\final_manifest.json",
+            "sha256": "272e741049dae0e06ca35144ee9d256d386a52005ba5b99f0bb32dfa275cb774",
+            "status": "CLOSED_PASS_EVENT_STATE_INCREMENTAL_OVERLAP_CANDIDATE_DATASET_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION"
+          },
+          "incremental_reuse": {
+            "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_incremental_overlap_idempotency_reuse_test_v0_1_20260728T091759Z\\final_manifest.json",
+            "sha256": "cce51890b46021795e4770cdbe26d9b35d41431895f902fb3b987a14d98a4e8f",
+            "status": "CLOSED_PASS_EVENT_STATE_INCREMENTAL_OVERLAP_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS"
+          },
+          "second_generation_incremental": {
+            "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z\\final_manifest.json",
+            "sha256": "fa2aad84d0471f55c1910db2e93d14d7c2731f77408e4587b00ef5f1338b36a8",
+            "status": "CLOSED_PASS_EVENT_STATE_SECOND_GENERATION_INCREMENTAL_EXTENSION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+          },
+          "second_generation_candidate_review": {
+            "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260728T110845Z\\final_manifest.json",
+            "sha256": "cc7cd25ecf6a6aa5eacf5ca63b4ab71d02ee5ee0384ae0423445415c095018b8",
+            "status": "CLOSED_PASS_EVENT_STATE_SECOND_GENERATION_INCREMENTAL_CANDIDATE_DATASET_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION"
+          },
+          "lineage_chain_validation": {
+            "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\event_state_on_demand_incremental_lineage_chain_validation_matrix_v0_1.json",
+            "sha256": "4b18caa94a93d27db161ec3931971973fa9dd10d1c0e9f59f6459ca239c788e9",
+            "status": null
+          },
+          "scale_validation": {
+            "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_scale_validation_v0_1_20260728T120123Z\\final_manifest.json",
+            "sha256": "6d848381e8a5a24f08d3b03f266a7108e6485987e15a07b8c5255a6d71d5b0a1",
+            "status": "CLOSED_PASS_EVENT_STATE_SCALE_VALIDATION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+          },
+          "scale_validation_matrix": {
+            "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\event_state_on_demand_scale_validation_matrix_v0_1.json",
+            "sha256": "bdc99491056c22dc448c401ed9fa64b4c05c29079c4c19c513f7725060499389",
+            "status": "CLOSED_PASS_EVENT_STATE_SCALE_VALIDATION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+          }
+        },
+        "boundary_counters": {
+          "source_market_data_rows_read": 0,
+          "new_event_state_materializer_executions": 0,
+          "new_market_state_materializer_executions": 0,
+          "new_candidate_dataset_registry_entries_written": 0,
+          "official_event_state_dataset": false,
+          "official_dataset": false,
+          "production": false,
+          "downstream": false
+        },
+        "next_allowed_gate": "event_state_capability_consumption_policy_v0_1",
+        "official_event_state_dataset": false,
+        "official_dataset": false,
+        "production": false,
+        "downstream": false,
+        "review_matrix_sha256": "d78e3d3d90dcff0cee139d0a0f39b89f6065747ab414134276f8e266738d4ce7"
+      },
+      "status": "CLOSED_PASS_EVENT_STATE_CAPABILITY_PROMOTED_WITH_RESTRICTIONS_NO_DATASET_PROMOTION"
+    },
+    "promotion_review_final_manifest": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_capability_promotion_review_v0_1_20260728T135003Z\\final_manifest.json",
+      "sha256": "f5c8f8c66a18c1bbf1414cf5ef45c3d0d962234fbf8ddca3109905018ec6a82a",
+      "payload": {
+        "run_id": "event_state_on_demand_capability_promotion_review_v0_1_20260728T135003Z",
+        "gate": "event_state_on_demand_capability_promotion_review_v0_1",
+        "script_version": "event_state_on_demand_capability_promotion_review_runner_v0_1",
+        "status": "CLOSED_PASS_EVENT_STATE_CAPABILITY_PROMOTED_WITH_RESTRICTIONS_NO_DATASET_PROMOTION",
+        "reviewed_at_utc": "2026-07-28T13:50:03Z",
+        "git_branch": "integrate/main-data-quality-dossiers-20260613",
+        "git_commit": "96a9bf38224515c6019c21c17d89f0239bc38f1e",
+        "git_dirty": true,
+        "capability_id": "event_state_on_demand_runtime_capability_v0_1",
+        "capability_promotion_decision": "promote_with_restrictions_candidate_runtime_only",
+        "capability_status_after_review": "PROMOTED_WITH_RESTRICTIONS_CANDIDATE_RUNTIME_ONLY",
+        "reviewed_evidence_items": 14,
+        "scale_requested_contexts": 80,
+        "scale_represented_contexts": 74,
+        "scale_unavailable_contexts": 6,
+        "hard_review_failures": 0,
+        "source_market_data_rows_read": 0,
+        "new_event_state_materializer_executions": 0,
+        "new_market_state_materializer_executions": 0,
+        "new_candidate_dataset_registry_entries_written": 0,
+        "official_event_state_dataset": false,
+        "official_dataset": false,
+        "production": false,
+        "downstream": false,
+        "next_allowed_gate": "event_state_capability_consumption_policy_v0_1",
+        "artifacts": {
+          "authorization": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\event_state_on_demand_capability_promotion_review_authorization_v0_1.md",
+          "scope": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\configs\\event_state_on_demand_capability_promotion_review_scope_v0_1.json",
+          "contract": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\event_state_on_demand_capability_promotion_review_contract_v0_1.json",
+          "matrix": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\event_state_on_demand_capability_promotion_review_matrix_v0_1.json",
+          "capability_manifest": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\event_state_on_demand_runtime_capability_manifest_v0_1.json",
+          "readout": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\event_state_on_demand_capability_promotion_review_readout_v0_1.md",
+          "run_evidence_index": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_capability_promotion_review_v0_1_20260728T135003Z\\evidence_index.json",
+          "run_review_matrix": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_capability_promotion_review_v0_1_20260728T135003Z\\review_matrix.json",
+          "run_capability_manifest": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_capability_promotion_review_v0_1_20260728T135003Z\\capability_manifest.json",
+          "run_readout": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_capability_promotion_review_v0_1_20260728T135003Z\\review_readout.md",
+          "final_manifest": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_capability_promotion_review_v0_1_20260728T135003Z\\final_manifest.json"
+        },
+        "final_manifest_sha256": "20edc86c8aa7508255651d27d2bfb58a9e337a87d6b2fbcf0af0e0fdf9b52efe"
+      },
+      "status": "CLOSED_PASS_EVENT_STATE_CAPABILITY_PROMOTED_WITH_RESTRICTIONS_NO_DATASET_PROMOTION"
+    },
+    "event_state_capability_contract": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\event_state_on_demand_capability_contract_v0_1.json",
+      "sha256": "d73be0c5f3f599b115989e3c55c1db2a4dcf32f341a76f1c3f5d558c12da652e",
+      "payload": {
+        "contract_id": "event_state_on_demand_capability_contract_v0_1",
+        "date": "2026-07-27",
+        "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+        "runtime_parent_architecture": "runtime_capabilities_architecture_v0_1",
+        "authorization": "event_state_on_demand_capability_design_authorization_v0_1",
+        "capability_id": "event_state_on_demand_capability_v0_1",
+        "capability_definition": "Governed ability to accept an Event State request and, only after later authorizations, resolve Event State profile, accepted Event Types, Event Instance policy, Event Window policy, Instrument Projection policy, Market State dependency, execution plan, materializer, validation and candidate dataset registry output.",
+        "target_event_state_profile": {
+          "profile_id": "event_state_core_four_intraday_profile_v0_1",
+          "profile_status": "OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS",
+          "profile_classification": "official_semantic_profile_not_physical_dataset",
+          "accepted_event_type_ids": [
+            "event_type:market_data:session_opened"
+          ],
+          "accepted_subject_scope": "exchange_session",
+          "halt_resumed_allowed": false,
+          "official_event_state_dataset_exists": false,
+          "official_event_state_parquet_exists": false,
+          "event_state_materialization_authorized": false,
+          "downstream_consumption_authorized": false
+        },
+        "source_market_state_dependency": {
+          "source_market_state_profile_id": "market_state_core_four_intraday_profile_v0_1",
+          "source_market_state_capability_design_id": "market_state_on_demand_capability_v0_1",
+          "source_market_state_runtime_capability_id": "market_state_on_demand_runtime_capability_v0_1",
+          "identity_relation": "promoted_runtime_identity_of",
+          "source_market_state_consumption_policy": "market_state_capability_consumption_policy_v0_1",
+          "source_market_state_consumption_policy_status_required": "ESTABLISHED_WITH_RESTRICTIONS_CANDIDATE_RUNTIME_ONLY",
+          "official_market_state_dataset_required": false,
+          "direct_candidate_path_consumption_allowed": false
+        },
+        "permission_model": {
+          "policy_permission_under_separate_authorization": {
+            "market_state_metadata_inspection": true,
+            "market_state_candidate_reuse_resolution": true,
+            "market_state_candidate_file_service_to_runtime_validation": "conditionally_allowed_by_market_state_policy_under_future_authorization",
+            "event_state_candidate_generation": "requires_future_bounded_execution_authorization"
+          },
+          "current_gate_execution_permission": {
+            "event_state_requests_created": 0,
+            "market_state_dependency_requests_created": 0,
+            "event_instances_created": 0,
+            "event_window_bindings_created": 0,
+            "instrument_projections_created": 0,
+            "market_state_candidate_files_read": 0,
+            "event_state_records_emitted": 0,
+            "datasets_written": 0,
+            "registry_entries_written": 0
+          },
+          "design_time_market_state_access": "metadata_only",
+          "execution_time_market_state_access": "requires_separate_dependency_execution_authorization",
+          "direct_candidate_path_consumption": false
+        },
+        "historical_policy_reference_model": {
+          "do_not_rewrite_historical_event_state_operational_policy": true,
+          "historical_next_gate_at_event_state_operational_policy_closure": "market_state_on_demand_capability_design_authorization_v0_1",
+          "current_next_gate_authority": [
+            "99_ruta_de_trabajo.md",
+            "AGENT.md",
+            "08_RUNTIME_CAPABILITIES/README.md"
+          ]
+        },
+        "request_centered_flow": [
+          "Event State Request",
+          "Event State Request Contract Validation",
+          "Event State Profile Resolver",
+          "Event Type Registry Resolver",
+          "Event Instance Policy Resolver",
+          "Event Window Policy Resolver",
+          "Instrument Projection Policy Resolver",
+          "Market State Dependency Resolver",
+          "Event State Execution Plan",
+          "Event State Materializer",
+          "Event State Validator",
+          "Candidate Dataset Registry"
+        ],
+        "market_state_dependency_resolver_principle": {
+          "must_emit_or_resolve_market_state_subrequest": true,
+          "must_use_promoted_market_state_runtime_capability": true,
+          "must_not_search_parquet_paths_directly": true,
+          "must_not_read_market_state_candidate_files_in_design_gate": true,
+          "physical_consumption_requires_later_authorization": true
+        },
+        "identity_and_fingerprint_requirements": [
+          "event_state_request_fingerprint",
+          "market_state_dependency_request_fingerprint",
+          "market_state_candidate_dataset_fingerprint",
+          "event_type_registry_snapshot_id",
+          "event_instance_policy_version",
+          "event_window_policy_version",
+          "instrument_projection_policy_version",
+          "event_state_execution_plan_fingerprint"
+        ],
+        "component_contracts_to_design_next": {
+          "event_state_request_contract_design_v0_1": "Defines canonical Event State request semantics and fingerprint inputs.",
+          "event_state_dependency_resolution_design_v0_1": "Defines profile, Event Type, Event Instance, Event Window, Instrument Projection and Market State dependency resolution blocks.",
+          "event_state_execution_plan_contract_design_v0_1": "Freezes all resolved dependencies before any future execution.",
+          "event_state_materializer_design_v0_1": "Defines build behavior from a frozen plan, still without execution.",
+          "event_state_validator_design_v0_1": "Defines validation of candidate Event State outputs.",
+          "event_state_candidate_dataset_registry_design_v0_1": "Defines registry semantics for candidate Event State outputs."
+        },
+        "blocking_rules_for_future_requests": [
+          "event_state_profile_not_official_semantic_profile",
+          "event_type_not_accepted_or_outside_scope",
+          "subject_scope_not_exchange_session_for_session_opened_v0_1",
+          "market_state_consumption_policy_missing_or_not_restricted_candidate_runtime",
+          "market_state_dependency_resolution_ambiguous",
+          "attempted_direct_market_state_parquet_path_consumption",
+          "event_instance_policy_missing",
+          "event_window_policy_missing",
+          "instrument_projection_policy_missing",
+          "execution_authorization_missing"
+        ],
+        "hard_boundaries": {
+          "event_state_request_execution_allowed": false,
+          "market_state_dependency_request_execution_allowed": false,
+          "event_detection_allowed": false,
+          "event_instance_generation_allowed": false,
+          "event_window_generation_allowed": false,
+          "instrument_projection_execution_allowed": false,
+          "market_state_physical_consumption_allowed": false,
+          "market_state_candidate_file_read_allowed": false,
+          "event_state_materializer_execution_allowed": false,
+          "event_state_validator_execution_allowed": false,
+          "event_state_dataset_write_allowed": false,
+          "event_state_registry_write_allowed": false,
+          "official_event_state_dataset_promotion_allowed": false,
+          "production_allowed": false,
+          "downstream_consumption_allowed": false
+        },
+        "closure_counters": {
+          "event_state_requests_created": 0,
+          "market_state_dependency_requests_created": 0,
+          "event_instances_created": 0,
+          "event_window_bindings_created": 0,
+          "instrument_projections_created": 0,
+          "market_state_candidate_files_read": 0,
+          "source_market_data_rows_read": 0,
+          "event_state_records_emitted": 0,
+          "datasets_written": 0,
+          "registry_entries_written": 0
+        },
+        "next_allowed_gate": "event_state_request_contract_design_v0_1",
+        "contract_content_sha256_excluding_hash_field": "1819212a739d41b4aaf15fe5da043b0a0ae06b56ee3840d49320f218b4d9474f"
+      },
+      "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION"
+    },
+    "event_state_candidate_dataset_registry_contract": {
+      "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\event_state_candidate_dataset_registry_contract_v0_1.json",
+      "sha256": "4251e0baf57159c8a1f74a6067f8a3db385ef1eda4f3d6dc11540cfb8ea4b7e8",
+      "payload": {
+        "blocking_conditions": [
+          "dataset_id_missing",
+          "event_state_candidate_dataset_fingerprint_missing",
+          "event_state_request_fingerprint_missing",
+          "event_state_dependency_resolution_fingerprint_missing",
+          "event_state_execution_plan_fingerprint_missing",
+          "event_state_profile_contract_hash_missing",
+          "event_type_registry_snapshot_hash_missing",
+          "market_state_dependency_request_fingerprint_missing",
+          "market_state_candidate_dataset_fingerprint_or_ref_missing",
+          "validation_result_fingerprint_missing",
+          "logical_context_ledger_missing",
+          "binding_manifest_ref_missing",
+          "file_manifest_ref_missing",
+          "lineage_manifest_ref_missing",
+          "validation_report_ref_missing",
+          "coverage_context_reconciliation_failure",
+          "exact_one_binding_reconciliation_missing",
+          "registry_status_invalid",
+          "validation_status_invalid",
+          "reuse_eligibility_invalid",
+          "promotion_review_eligibility_invalid",
+          "downstream_eligibility_not_false_in_v0_1",
+          "unsupported_event_type_present",
+          "subject_scope_not_exchange_session",
+          "direct_market_state_path_reference_present",
+          "native_event_instance_identity_contains_instrument_id",
+          "supersession_cycle_detected",
+          "quarantine_reference_missing_for_quarantined_status"
+        ],
+        "contract_content_sha256_excluding_hash_field": "f8c5d6a3841c5edc1eed912f207fac1310e20d036e3b91b7a0aa03a713f6b298",
+        "contract_id": "event_state_candidate_dataset_registry_contract_v0_1",
+        "coverage_reconciliation_rule": "requested_logical_contexts = represented_contexts + blocked_contexts + unavailable_contexts + quarantined_contexts + not_built_contexts",
+        "date": "2026-07-27",
+        "downstream_eligibility_v0_1": false,
+        "event_boundary_v0_1": {
+          "accepted_subject_scope": "exchange_session",
+          "allowed_event_type_ids": [
+            "event_type:market_data:session_opened"
+          ],
+          "event_detection_allowed": false,
+          "event_state_profile_id": "event_state_core_four_intraday_profile_v0_1",
+          "halt_resumed_allowed": false,
+          "native_event_instance_identity_excludes_instrument_id": true
+        },
+        "future_registry_artifacts": [
+          "event_state_candidate_dataset_registry_entry.json",
+          "event_state_candidate_dataset_registry_entry_fingerprint.txt",
+          "event_state_candidate_dataset_registry_readout.md",
+          "event_state_reuse_evidence_record.json",
+          "event_state_quarantine_evidence_record.json"
+        ],
+        "hard_boundaries": {
+          "candidate_file_read_allowed": false,
+          "dataset_promotion_allowed": false,
+          "dataset_registration_allowed": false,
+          "dataset_supersession_allowed": false,
+          "downstream_consumption_allowed": false,
+          "event_instance_generation_allowed": false,
+          "event_state_materialization_allowed": false,
+          "event_state_record_emission_allowed": false,
+          "event_window_binding_execution_allowed": false,
+          "instrument_projection_execution_allowed": false,
+          "market_state_candidate_file_read_allowed": false,
+          "official_dataset_write_allowed": false,
+          "production_allowed": false,
+          "quarantine_transition_allowed": false,
+          "registry_entry_write_allowed": false,
+          "registry_runtime_read_allowed": false,
+          "source_market_data_read_allowed": false,
+          "validation_execution_allowed": false
+        },
+        "next_allowed_gate": "event_state_on_demand_execution_chain_joint_review_v0_1",
+        "parent_dependency_resolution_contract": "event_state_dependency_resolution_contract_v0_1",
+        "parent_execution_plan_contract": "event_state_execution_plan_contract_v0_1",
+        "parent_materializer_contract": "event_state_materializer_contract_v0_1",
+        "parent_request_contract": "event_state_request_contract_v0_1",
+        "parent_validator_contract": "event_state_validator_contract_v0_1",
+        "promotion_review_eligibility_model": [
+          "not_eligible",
+          "eligible_with_restrictions",
+          "eligible"
+        ],
+        "registry_entry_fingerprint_inputs": [
+          "dataset_id",
+          "event_state_candidate_dataset_fingerprint",
+          "event_state_validation_result_fingerprint",
+          "event_state_profile_contract_hash",
+          "event_type_registry_snapshot_sha256",
+          "market_state_dependency_fingerprint_or_ref",
+          "logical_context_ledger_hash",
+          "binding_manifest_hash",
+          "lineage_manifest_hash",
+          "registry_status",
+          "restriction_set_hash"
+        ],
+        "registry_status_model": [
+          "planned",
+          "candidate_unvalidated",
+          "validated_candidate",
+          "quarantined",
+          "blocked",
+          "failed",
+          "superseded",
+          "deprecated"
+        ],
+        "required_registry_entry_fields": [
+          "dataset_id",
+          "dataset_kind",
+          "registry_entry_version",
+          "registry_status",
+          "created_at_utc",
+          "event_state_request_id",
+          "event_state_request_fingerprint",
+          "event_state_dependency_resolution_id",
+          "event_state_dependency_resolution_fingerprint",
+          "event_state_execution_plan_id",
+          "event_state_execution_plan_fingerprint",
+          "event_state_profile_id",
+          "event_state_profile_version",
+          "event_state_profile_contract_hash",
+          "event_type_registry_snapshot_id",
+          "event_type_registry_snapshot_sha256",
+          "accepted_event_type_ids",
+          "accepted_subject_scope",
+          "market_state_dependency_request_fingerprint",
+          "market_state_candidate_dataset_fingerprint_or_ref",
+          "event_state_candidate_dataset_fingerprint",
+          "event_state_validation_result_fingerprint",
+          "registry_entry_fingerprint",
+          "coverage_start",
+          "coverage_end",
+          "exchange_scope",
+          "event_type_count",
+          "event_instance_count",
+          "instrument_count",
+          "session_count",
+          "logical_context_count",
+          "requested_context_count",
+          "represented_context_count",
+          "materialized_context_count",
+          "reusable_context_count",
+          "blocked_context_count",
+          "unavailable_context_count",
+          "quarantined_context_count",
+          "not_built_context_count",
+          "logical_context_ledger_ref",
+          "binding_manifest_ref",
+          "file_manifest_ref",
+          "lineage_manifest_ref",
+          "validation_report_ref",
+          "validation_evidence_manifest_ref",
+          "market_state_dependency_binding_report_ref",
+          "restriction_set_ref",
+          "validation_status",
+          "reuse_eligibility",
+          "promotion_review_eligibility",
+          "downstream_eligibility",
+          "supersedes_dataset_id",
+          "superseded_by_dataset_id",
+          "quarantine_reference"
+        ],
+        "reuse_eligibility_model": [
+          "not_evaluated",
+          "eligible",
+          "ineligible",
+          "pending_determinism",
+          "pending_policy_review"
+        ],
+        "reuse_required_conditions": [
+          "matching_event_state_request_fingerprint",
+          "matching_event_state_dependency_resolution_fingerprint",
+          "matching_event_state_execution_plan_fingerprint",
+          "matching_event_state_profile_version",
+          "matching_event_type_registry_snapshot",
+          "matching_event_instance_policy_version",
+          "matching_event_window_policy_version",
+          "matching_instrument_projection_policy_version",
+          "matching_market_state_dependency_fingerprint_or_ref",
+          "matching_builder_versions",
+          "matching_schema_hash",
+          "validation_status_policy_allows_reuse",
+          "determinism_proven",
+          "no_quarantine",
+          "no_unresolved_blocking_findings"
+        ],
+        "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION",
+        "v0_1_policies": {
+          "direct_market_state_paths_allowed_in_registry_entries": false,
+          "downstream_eligibility_always_false": true,
+          "registry_may_materialize": false,
+          "registry_may_promote": false,
+          "registry_may_validate": false,
+          "validated_candidate_implies_reuse": false
+        },
+        "validation_status_model": [
+          "not_validated",
+          "pass",
+          "pass_with_restrictions",
+          "blocked",
+          "quarantined",
+          "fail"
+        ]
+      },
+      "status": "CLOSED_DESIGN_READY_WITH_RESTRICTIONS_NO_EXECUTION"
+    }
+  },
+  "boundary_counters": {
+    "source_market_data_rows_read": 0,
+    "new_event_state_materializer_executions": 0,
+    "new_market_state_materializer_executions": 0,
+    "new_candidate_dataset_registry_entries_written": 0,
+    "registry_entry_mutations": 0,
+    "official_event_state_dataset": false,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false
+  },
+  "next_allowed_gate": "runtime_user_invocation_interface_v0_1",
+  "official_event_state_dataset": false,
+  "official_dataset": false,
+  "production": false,
+  "downstream": false,
+  "policy_matrix_sha256": "2fb1761d3b1b79a03fe6714acddef75b3f3223a46425d0fbd6b52e01bfdc4d60"
+}

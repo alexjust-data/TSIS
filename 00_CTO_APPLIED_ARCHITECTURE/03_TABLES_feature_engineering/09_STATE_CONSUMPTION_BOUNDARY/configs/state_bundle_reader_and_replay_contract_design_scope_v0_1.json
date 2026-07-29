@@ -1,0 +1,48 @@
+﻿{
+    "created_at_utc":  "2026-07-28T00:00:00Z",
+    "first_vertical_slice":  {
+                                 "fill_generation_allowed":  false,
+                                 "event_state_requested":  false,
+                                 "maximum_sessions":  1,
+                                 "maximum_instruments":  1,
+                                 "order_generation_allowed":  false,
+                                 "profile_id":  "market_state_core_four_intraday_profile_v0_1",
+                                 "strategy_execution_allowed":  false,
+                                 "state_kind":  "market_state"
+                             },
+    "scope_id":  "state_bundle_reader_and_replay_contract_design_scope_v0_1",
+    "owner_layer":  "09_STATE_CONSUMPTION_BOUNDARY",
+    "hard_boundaries":  {
+                            "fills_emitted":  0,
+                            "state_replay_feed_records_emitted":  0,
+                            "strategy_callbacks":  0,
+                            "production":  false,
+                            "state_bundle_rows_read":  0,
+                            "downstream":  false,
+                            "event_loop_ticks":  0,
+                            "orders_emitted":  0
+                        },
+    "design_only":  true,
+    "not_in_scope":  [
+                         "actual row reading",
+                         "EventLoop execution",
+                         "strategy execution",
+                         "orders",
+                         "fills",
+                         "PnL",
+                         "production",
+                         "downstream",
+                         "MarketDataFeed behavior",
+                         "Execution Simulator behavior"
+                     ],
+    "prerequisite_gate":  "state_bundle_physical_consumption_authorization_design_v0_1",
+    "in_scope":  [
+                     "StateBundleReader contract",
+                     "typed state record minimum fields",
+                     "reader fail-closed checks",
+                     "StateReplayFeed event contract",
+                     "available_at ordering policy",
+                     "consumer no-execution boundaries"
+                 ],
+    "gate":  "state_bundle_reader_and_replay_contract_design_v0_1"
+}

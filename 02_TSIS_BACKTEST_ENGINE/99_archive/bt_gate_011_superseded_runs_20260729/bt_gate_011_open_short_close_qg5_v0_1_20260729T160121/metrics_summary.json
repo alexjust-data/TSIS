@@ -1,0 +1,18 @@
+{
+  "economic_realism_complete": false,
+  "edge_evaluated": false,
+  "ending_equity": "9917.00",
+  "flat_trade_count": 0,
+  "gross_loss": "-93.00",
+  "gross_pnl": "-73.00",
+  "gross_profit": "20.00",
+  "losing_trade_count": 3,
+  "max_drawdown": "89.00",
+  "net_pnl": "-83.00",
+  "profit_factor": "0.22",
+  "return_pct": "-0.83",
+  "starting_equity": "10000.00",
+  "total_costs": "10.00",
+  "trade_count": 5,
+  "winning_trade_count": 2
+}

@@ -1,0 +1,130 @@
+{
+  "authorization_id": "event_state_on_demand_bounded_deterministic_rerun_authorization_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_NO_EXECUTION",
+  "date": "2026-07-28",
+  "authorization_scope": "bounded_event_state_deterministic_rerun_only",
+  "parent_gate": "event_state_on_demand_bounded_candidate_dataset_review_v0_1",
+  "authorized_next_gate": "event_state_on_demand_bounded_deterministic_rerun_v0_1",
+  "baseline": {
+    "baseline_execution_run_id": "event_state_on_demand_bounded_execution_v0_1_20260727T200322Z",
+    "baseline_review_run_id": "event_state_on_demand_bounded_candidate_dataset_review_v0_1_20260727T202013Z",
+    "baseline_candidate_dataset_id": "event_state_candidate_dataset_v0_1_d5662103e1c45f90",
+    "baseline_candidate_dataset_fingerprint": "d5662103e1c45f90847b51e69b0e698243bde231758fa3c864e24c4a6839be33",
+    "baseline_logical_dataset_fingerprint": "1b981958488e69f8f553c9197861bbffeed2d5388437c1113f9e21422b9cf970",
+    "baseline_validation_result_fingerprint": "2f4797da1a74c06a7061fe1e597299d0d1e9f5d55c82ec147ff66b5891550361",
+    "baseline_registry_entry_fingerprint": "5a78f487ee549ff38e13547bf0324add50556e9aed054a536017b6a4f111fa4b",
+    "requested_contexts": 9,
+    "represented_contexts": 8,
+    "unavailable_contexts": 1,
+    "event_state_candidate_records": 8
+  },
+  "event_state_rerun_policy": {
+    "event_state_reuse_policy": "force_rebuild_for_determinism_test",
+    "reuse_existing_event_state_candidate_allowed": false,
+    "event_state_registry_cache_hit_as_execution_substitute_allowed": false,
+    "event_state_materializer_execution_required": true,
+    "new_event_state_candidate_output_required": true
+  },
+  "market_state_dependency_policy": {
+    "market_state_dependency_mode": "resolve_same_runtime_subrequest",
+    "market_state_dependency_reuse_policy": "reuse_if_exact_validated_dependency_match_or_block",
+    "market_state_dependency_rematerialization_required": false,
+    "market_state_dependency_switch_allowed": false,
+    "expected_market_state_dependency_request_fingerprint": "584d07a1874ceceab077101bbc2de0ec37236db1a1a284956a81cb76674145ec",
+    "expected_market_state_dependency_execution_plan_fingerprint": "5555fed758d30b6c8f281517eb747523d3dfaf9bbae1713b4e9f1c28c6fdd733",
+    "expected_market_state_candidate_dataset_fingerprint": "433288b634924676a3c516fac600574ed36237c3c02ca640111f17609b6c235b",
+    "expected_market_state_validation_result_fingerprint": "38064d86af50c4a2df2ec0d2561b25390421df7acad4679e957faceaf1791fdb"
+  },
+  "authorized_request_scope": {
+    "request_type": "event_state",
+    "event_state_profile_id": "event_state_core_four_intraday_profile_v0_1",
+    "event_state_profile_version_policy": "exact",
+    "event_type_ids": [
+      "event_type:market_data:session_opened"
+    ],
+    "event_subject_scope": "exchange_session",
+    "event_type_registry_snapshot_id": "tsis_event_type_registry_v0_1_post_initial_admission_001",
+    "event_type_registry_snapshot_policy": "exact",
+    "event_window_definition_ids": [
+      "session_opened_at_anchor_context_v0_1"
+    ],
+    "exchange_scope": [
+      "XNYS"
+    ],
+    "session_dates": [
+      "2021-01-19",
+      "2021-03-15",
+      "2022-11-25"
+    ],
+    "explicit_instrument_ids": [
+      "figi_share_class:BBG001S5N8T1",
+      "figi_share_class:BBG001S8T7K0",
+      "figi_share_class:BBG001S6RSK0"
+    ],
+    "instrument_labels_non_authoritative": {
+      "figi_share_class:BBG001S5N8T1": "AAME",
+      "figi_share_class:BBG001S6RSK0": "ABUS",
+      "figi_share_class:BBG001S8T7K0": "ABEO"
+    },
+    "output_mode": "candidate",
+    "output_format": "jsonl",
+    "maximum_output_files": 1,
+    "maximum_output_records": 9,
+    "maximum_output_bytes": 1048576
+  },
+  "quantitative_limits": {
+    "maximum_requests": 1,
+    "maximum_dependency_resolutions": 1,
+    "maximum_execution_plans": 1,
+    "maximum_runs": 1,
+    "maximum_event_types": 1,
+    "maximum_exchanges": 1,
+    "maximum_sessions": 3,
+    "maximum_native_event_instances": 3,
+    "maximum_event_window_bindings": 3,
+    "maximum_instrument_session_projections": 9,
+    "maximum_market_state_dependency_contexts": 9,
+    "maximum_event_state_logical_contexts": 9,
+    "maximum_event_state_candidate_records": 9,
+    "maximum_new_event_state_candidate_dataset_identities": 0,
+    "maximum_official_dataset_registry_entries": 0
+  },
+  "hard_boundaries_current_gate": {
+    "event_state_requests_created": 0,
+    "dependency_resolver_executions": 0,
+    "execution_plans_created": 0,
+    "run_records_created": 0,
+    "event_instances_created": 0,
+    "event_window_bindings_created": 0,
+    "instrument_projections_created": 0,
+    "market_state_dependency_requests_executed": 0,
+    "market_state_candidate_files_read": 0,
+    "event_state_materializer_executions": 0,
+    "event_state_validator_executions": 0,
+    "determinism_comparisons_created": 0,
+    "registry_entries_written": 0,
+    "event_state_records_emitted": 0,
+    "datasets_written": 0,
+    "reuse_eligibility_changes": 0,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false
+  },
+  "next_gate_must_block_if": [
+    "event_state_candidate_reuse_used_as_execution_substitute",
+    "event_state_materializer_not_executed",
+    "market_state_dependency_request_fingerprint_mismatch",
+    "market_state_dependency_execution_plan_fingerprint_mismatch",
+    "market_state_candidate_dataset_fingerprint_mismatch",
+    "market_state_dependency_switch_detected",
+    "event_type_not_session_opened",
+    "subject_scope_not_exchange_session",
+    "halt_resumed_requested",
+    "event_detection_requested",
+    "native_event_instance_identity_contains_instrument_id",
+    "event_state_record_set_mismatch",
+    "unavailable_context_set_mismatch",
+    "official_dataset_or_downstream_requested",
+    "reuse_eligibility_transition_attempted"
+  ]
+}

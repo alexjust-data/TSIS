@@ -1,0 +1,48 @@
+# Event State On-Demand Second-Generation Incremental Extension Authorization Readout v0.1
+
+Status: `AUTHORIZED_WITH_RESTRICTIONS_CONSUMED`
+Date: `2026-07-28`
+
+```text
+gate = event_state_on_demand_second_generation_incremental_extension_authorization_v0_1
+authorized_next_gate = event_state_on_demand_second_generation_incremental_extension_v0_1
+parent_generation_1_candidate_dataset_id = event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3
+parent_generation_1_candidate_dataset_fingerprint = f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f
+parent_generation_1_logical_event_state_dataset_fingerprint = 73b2f81b76697eb67b55faffecd36c8e77ecf926c1c1f9e56cf6ee0e0ecb10f6
+delta_2_session = 2023-03-20
+expected_requested_contexts = 15
+expected_reused_prior_generation_event_state_contexts = 11
+expected_delta_2_event_state_contexts_to_build = 3
+expected_preserved_unavailable_contexts = 1
+expected_combined_represented_contexts = 14
+known_market_state_delta_2_candidate_dataset_id = market_state_candidate_dataset_incremental_v0_1_f2cfd5cf55d0c1be
+known_market_state_delta_2_candidate_dataset_fingerprint = f2cfd5cf55d0c1be1722693cc0216ffd425bbb869e19c17745976c030f2c7a2a
+known_market_state_delta_2_validation_result_fingerprint = 9aafd142203872647a8be3668d0aca7c4f95630be4a405e00fd64f5cd111f336
+authorized_scope_sha256_before_consumption = 3ecb9297d1f4446c594306954e022792c5fa85456b775cddb3aaaae32d2fb42a
+consumed_scope_sha256 = d8a47b109c75213dca2823562fd80ee6ef636ac58f1106f2b2ab19dd8ccc33cc
+contract_sha256 = 192dd6b45911df72d970c3c614d17b7e566804d4973a322c0afbc49b104415f2
+```
+
+This authorization was consumed by `event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z`. The run reused prior Event State evidence, built only delta2, preserved lineage by generation and matched the exact Market State dependency authority and candidate fingerprints.
+
+No official Event State dataset, production or downstream authority is opened.
+
+Consumed run:
+
+```text
+run_id = event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z
+status = CLOSED_PASS_EVENT_STATE_SECOND_GENERATION_INCREMENTAL_EXTENSION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED
+requested_contexts = 15
+represented_contexts = 14
+reused_prior_generation_event_state_contexts = 11
+delta_2_materialized_event_state_contexts = 3
+unavailable_contexts = 1
+hard_validation_failures = 0
+candidate_dataset_fingerprint = 9a31d9b8bf3af01c1c4a5cd18a37309eec7b3cb41011501ab85e0ef4a4831746
+```
+
+Next gate:
+
+```text
+event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1
+```

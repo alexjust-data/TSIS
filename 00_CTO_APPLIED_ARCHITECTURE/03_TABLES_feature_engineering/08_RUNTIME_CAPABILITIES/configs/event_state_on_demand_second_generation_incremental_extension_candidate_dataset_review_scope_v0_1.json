@@ -1,0 +1,28 @@
+{
+  "scope_id": "event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_scope_v0_1",
+  "gate": "event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1",
+  "review_id": "event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260728T000000Z",
+  "review_run_id": "event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260728T110845Z",
+  "reviewed_run": "event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z",
+  "reviewed_candidate_dataset_fingerprint": "9a31d9b8bf3af01c1c4a5cd18a37309eec7b3cb41011501ab85e0ef4a4831746",
+  "allowed_inputs": [
+    "final_manifest.json",
+    "event_state_second_generation_incremental_candidate_output_manifest.json",
+    "candidate_registry_entry.json",
+    "event_state_second_generation_incremental_validation_report.json",
+    "combined_event_state_context_ledger_v0_1.json",
+    "event_state_second_generation_incremental_lineage_manifest.json",
+    "combined_event_state_candidate_fingerprint_comparison_v0_1.json",
+    "event_state_second_generation_incremental_candidate_records.jsonl",
+    "delta_2_event_state_candidate_records.jsonl"
+  ],
+  "execution_authorized": false,
+  "market_state_read_authorized": false,
+  "event_state_materialization_authorized": false,
+  "registry_mutation_authorized": false,
+  "official_dataset_promotion_authorized": false,
+  "production_authorized": false,
+  "downstream_authorized": false,
+  "next_allowed_gate": "event_state_on_demand_incremental_lineage_chain_validation_v0_1",
+  "scope_sha256": "a20ae6e2db15e40260f7328243e91cac0e9ab24ab6def6ee3a5af3e7ab8fcff0"
+}

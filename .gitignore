@@ -124,6 +124,12 @@ graphify-out/leaf_slices/*
 /00_CTO/99_REFERENCE_LIBRARY/**/*.gif
 /00_CTO/99_REFERENCE_LIBRARY/**/*.GIF
 
+# Local Sersans course/mentorship payloads.
+# Keep curated governance/readouts elsewhere; do not commit raw course,
+# workshop, image, PDF, executable or mentorship payload trees.
+/00_CTO/14_BACKTEST_ENGINE/00_CTO/00_SERSANS_SISTEMAS/00_SERSANS_SISTEMAS_COURSE/
+/00_CTO/14_BACKTEST_ENGINE/00_CTO/00_SERSANS_SISTEMAS/00_SERSANS_SISTEMAS_MENTORIAS/
+
 # Small institutional evidence/manifests are allowed explicitly.
 !01_TSIS_DATA_FOUNDATION/01_foundations/**/*.csv
 !01_TSIS_DATA_FOUNDATION/00_cto/**/*.csv

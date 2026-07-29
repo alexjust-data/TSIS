@@ -1,0 +1,108 @@
+{
+    "snapshot_id":  "runtime_capability_registry_snapshot_v0_1",
+    "snapshot_version":  "0.1.0",
+    "status":  "EFFECTIVE_VIEW_SNAPSHOT_CLOSED_NO_EXECUTION",
+    "created_at_utc":  "2026-07-28T00:00:00Z",
+    "owner_layer":  "08_RUNTIME_CAPABILITIES",
+    "governed_by_contract":  "runtime_capability_effective_view_contract_v0_1.json",
+    "purpose":  "Symmetric effective capability view for provider-side invocation interface design.",
+    "derivation_rule":  "promotion_authority_plus_current_consumption_policy",
+    "source_authorities":  [
+                               {
+                                   "capability_id":  "market_state_on_demand_runtime_capability_v0_1",
+                                   "authority_path":  "08_RUNTIME_CAPABILITIES/market_state_capability_consumption_policy_contract_v0_1.json",
+                                   "contract_content_sha256_excluding_hash_field":  "cf3aadb40c5d9f2408a04ce17cf8964d4315cd031c83ff383ed7cfe079ea2a47",
+                                   "file_sha256":  "66dbda4f673166317415bc5e3451aa8fba39abfba5b163f51b46a5ec7dac2369"
+                               },
+                               {
+                                   "capability_id":  "event_state_on_demand_runtime_capability_v0_1",
+                                   "authority_path":  "08_RUNTIME_CAPABILITIES/event_state_capability_consumption_policy_contract_v0_1.json",
+                                   "contract_content_sha256_excluding_hash_field":  "354ee75fddd42890f2f5ea051b809da9b814206f9ed1ce854b5ceade428c8f7a",
+                                   "file_sha256":  "d8e71ddbae949aa7d894147f01e5e211b32285dde263e398a5516ffe51714633"
+                               },
+                               {
+                                   "capability_id":  "event_state_on_demand_runtime_capability_v0_1",
+                                   "authority_path":  "08_RUNTIME_CAPABILITIES/event_state_on_demand_runtime_capability_manifest_v0_1.json",
+                                   "note":  "historical_manifest_preserved_policy_supplies_current_reuse_permissions",
+                                   "file_sha256":  "fbc2cff693ac112a6a5b420e10b0d0158cdbf2c84c24e534fdbf278a946fc85b"
+                               }
+                           ],
+    "capabilities":  [
+                         {
+                             "capability_id":  "market_state_on_demand_runtime_capability_v0_1",
+                             "request_type":  "market_state",
+                             "capability_status":  "PROMOTED_WITH_RESTRICTIONS_CANDIDATE_RUNTIME_ONLY",
+                             "source_policy_capability_status_required":  "PROMOTED_WITH_RESTRICTIONS_CANDIDATE_GENERATION_ONLY",
+                             "supported_profile_ids":  [
+                                                           "market_state_core_four_intraday_profile_v0_1"
+                                                       ],
+                             "supported_event_type_ids":  [
+
+                                                          ],
+                             "subject_scope":  null,
+                             "consumption_policy_id":  "market_state_capability_consumption_policy_contract_v0_1",
+                             "candidate_generation_authority":  "bounded_authorization_required",
+                             "reuse_authority":  "policy_conditioned_candidate_reuse",
+                             "official_dataset":  false,
+                             "production":  false,
+                             "downstream":  false,
+                             "physical_row_delivery_allowed":  false,
+                             "artifact_reference_delivery_allowed":  true,
+                             "restrictions":  [
+                                                  "candidate_runtime_only",
+                                                  "candidate_generation_requires_separate_authorization",
+                                                  "metadata_and_registry_lookup_only_for_interface",
+                                                  "no_official_dataset",
+                                                  "no_production",
+                                                  "no_downstream",
+                                                  "no_backtest_consumption_authority"
+                                              ]
+                         },
+                         {
+                             "capability_id":  "event_state_on_demand_runtime_capability_v0_1",
+                             "request_type":  "event_state",
+                             "capability_status":  "PROMOTED_WITH_RESTRICTIONS_CANDIDATE_RUNTIME_ONLY",
+                             "source_policy_capability_status_required":  "PROMOTED_WITH_RESTRICTIONS_CANDIDATE_RUNTIME_ONLY",
+                             "supported_profile_ids":  [
+                                                           "event_state_core_four_intraday_profile_v0_1"
+                                                       ],
+                             "supported_event_type_ids":  [
+                                                              "event_type:market_data:session_opened"
+                                                          ],
+                             "subject_scope":  "exchange_session",
+                             "consumption_policy_id":  "event_state_capability_consumption_policy_contract_v0_1",
+                             "candidate_generation_authority":  "bounded_authorization_required",
+                             "reuse_authority":  "policy_conditioned_candidate_reuse",
+                             "official_dataset":  false,
+                             "production":  false,
+                             "downstream":  false,
+                             "physical_row_delivery_allowed":  false,
+                             "artifact_reference_delivery_allowed":  true,
+                             "restrictions":  [
+                                                  "candidate_runtime_only",
+                                                  "session_opened_only",
+                                                  "exchange_session_subject_scope_only",
+                                                  "market_state_dependency_must_resolve_through_runtime_capability",
+                                                  "no_direct_market_state_path_consumption",
+                                                  "no_official_dataset",
+                                                  "no_production",
+                                                  "no_downstream",
+                                                  "no_backtest_consumption_authority"
+                                              ]
+                         }
+                     ],
+    "hard_boundaries":  {
+                            "interface_invocations":  0,
+                            "runtime_executions":  0,
+                            "source_market_data_rows_read":  0,
+                            "state_bundle_manifests_created":  0,
+                            "datasets_written":  0,
+                            "registry_mutations":  0,
+                            "official_dataset":  false,
+                            "production":  false,
+                            "downstream":  false,
+                            "backtest_consumption_authority":  false,
+                            "physical_row_delivery":  false
+                        },
+    "snapshot_content_sha256_excluding_hash_field":  "0103dac8bf40e77deb665585c59ea7560b1388db5f9b98a25d6ddafdbcc86120"
+}

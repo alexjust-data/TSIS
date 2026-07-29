@@ -1,0 +1,24 @@
+{
+  "calendar_authority": "TSIS_PORTABLE_SESSION_CALENDAR_SNAPSHOT_V0_1",
+  "calendar_id": "XNYS",
+  "sessions": [
+    {
+      "calendar_id": "XNYS",
+      "early_close": false,
+      "regular_close_utc": "2026-01-05T21:00:00Z",
+      "regular_open_utc": "2026-01-05T14:30:00Z",
+      "session_date": "2026-01-05",
+      "timezone": "America/New_York"
+    },
+    {
+      "calendar_id": "XNYS",
+      "early_close": false,
+      "regular_close_utc": "2026-01-06T21:00:00Z",
+      "regular_open_utc": "2026-01-06T14:30:00Z",
+      "session_date": "2026-01-06",
+      "timezone": "America/New_York"
+    }
+  ],
+  "snapshot_id": "BT_GATE_012_QG5_TWO_SESSION_XNYS_SNAPSHOT_V0_1",
+  "timezone": "America/New_York"
+}

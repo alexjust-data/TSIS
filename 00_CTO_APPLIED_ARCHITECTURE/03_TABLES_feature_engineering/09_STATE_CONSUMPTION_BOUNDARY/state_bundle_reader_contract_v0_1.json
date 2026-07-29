@@ -1,0 +1,115 @@
+{
+  "contract_id": "state_bundle_reader_contract_v0_1",
+  "contract_version": "0.1.0",
+  "contract_status": "design_ready_no_execution",
+  "owner_layer": "09_STATE_CONSUMPTION_BOUNDARY",
+  "purpose": "Defines the bounded typed reader interface for an authorized StateBundle.",
+  "execution_authority": {
+    "physical_read_authorized_by_this_contract": false,
+    "state_replay_feed_authorized": false,
+    "strategy_execution_authorized": false,
+    "production": false,
+    "downstream": false
+  },
+  "typed_state_record_required_fields": [
+    "state_record_id",
+    "state_kind",
+    "profile_id",
+    "dataset_id",
+    "bundle_id",
+    "session_date",
+    "decision_timestamp",
+    "state_as_of_utc",
+    "state_available_at_utc",
+    "content_fingerprint",
+    "lineage_ref",
+    "restriction_codes",
+    "consumption_legality"
+  ],
+  "json_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "state_bundle_reader_contract_v0_1.schema.json",
+    "title": "StateBundleReader Request v0.1",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "read_request_id",
+      "reader_contract_version",
+      "physical_consumption_authorization_ref",
+      "state_bundle_manifest_ref",
+      "reader_mode",
+      "state_kind",
+      "profile_id",
+      "limits",
+      "required_verifications",
+      "non_authorized_boundaries"
+    ],
+    "properties": {
+      "read_request_id": { "type": "string", "minLength": 1 },
+      "reader_contract_version": { "const": "0.1.0" },
+      "physical_consumption_authorization_ref": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["authorization_id", "sha256", "availability"],
+        "properties": {
+          "authorization_id": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "availability": { "const": "available" }
+        }
+      },
+      "state_bundle_manifest_ref": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["bundle_id", "sha256", "availability"],
+        "properties": {
+          "bundle_id": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "availability": { "const": "available" }
+        }
+      },
+      "reader_mode": { "const": "bounded_read_only" },
+      "state_kind": { "enum": ["market_state", "event_state"] },
+      "profile_id": { "type": "string", "minLength": 1 },
+      "limits": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["maximum_rows", "maximum_files", "maximum_bytes", "user_supplied_paths_allowed"],
+        "properties": {
+          "maximum_rows": { "type": "integer", "minimum": 1, "maximum": 1000 },
+          "maximum_files": { "type": "integer", "minimum": 1, "maximum": 20 },
+          "maximum_bytes": { "type": "integer", "minimum": 1, "maximum": 104857600 },
+          "user_supplied_paths_allowed": { "const": false }
+        }
+      },
+      "required_verifications": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["authorization_match", "manifest_hash_match", "artifact_hash_match", "schema_match", "profile_match", "coverage_ledger_present", "restriction_propagation_present", "state_available_at_present"],
+        "properties": {
+          "authorization_match": { "const": true },
+          "manifest_hash_match": { "const": true },
+          "artifact_hash_match": { "const": true },
+          "schema_match": { "const": true },
+          "profile_match": { "const": true },
+          "coverage_ledger_present": { "const": true },
+          "restriction_propagation_present": { "const": true },
+          "state_available_at_present": { "const": true }
+        }
+      },
+      "non_authorized_boundaries": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["repair_records", "calculate_features", "state_replay_feed", "strategy_execution", "orders", "fills", "pnl"],
+        "properties": {
+          "repair_records": { "const": false },
+          "calculate_features": { "const": false },
+          "state_replay_feed": { "const": false },
+          "strategy_execution": { "const": false },
+          "orders": { "const": false },
+          "fills": { "const": false },
+          "pnl": { "const": false }
+        }
+      }
+    }
+  }
+}

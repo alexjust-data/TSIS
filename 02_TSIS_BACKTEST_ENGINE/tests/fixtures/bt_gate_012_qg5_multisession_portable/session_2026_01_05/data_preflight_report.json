@@ -1,0 +1,692 @@
+{
+  "calendar_id": "XNYS",
+  "candidate_consumption_policy": {
+    "accepted_limitations": [
+      "fixture selected for mechanical real-data inspection only",
+      "not evidence of fill realism or trading edge",
+      "quote_guarded_1m execution use remains a proxy for engine mechanics",
+      "LT1B universe is an operational <1B cut, not daily fully PTI market-cap membership"
+    ],
+    "accepted_validation_manifest": "C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate/_validation_runs/qg_1m_full_universe_v0_2_candidate_validation_20260716T102500Z/final_manifest_validation.json",
+    "authorization_basis": "qg_1m_full_universe_v0_2_candidate_validation_pass_controlled_consumption",
+    "candidate_dataset_id": "ohlcv_1m_quote_guarded_full_universe_v0_2_candidate",
+    "candidate_physical_root": "C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate",
+    "permitted_run_purposes": [
+      "ENGINE_MECHANICS_TEST"
+    ],
+    "promotion_authorization": false
+  },
+  "context_resolution_status": "CONTEXT_RESOLVED",
+  "corporate_action_policy": {
+    "on_effective_action_inside_ticker_day": "EXCLUDE_TICKER_DAY",
+    "on_unknown_action_state": "DECLARE_LIMITATION",
+    "policy_id": "exclude_effective_action_ticker_day_v0_1",
+    "source_dataset_id": "corporate_actions_table_v0_1",
+    "source_snapshot": "G:\\TSIS\\data\\data_foundation_outputs\\corporate_actions_table\\corporate_actions_table_v0_1.parquet"
+  },
+  "corporate_action_screen": {
+    "action_types_found": [],
+    "dataset_id": "corporate_actions_table_v0_1",
+    "exact_session_rows": 0,
+    "expected_manifest_sha256": "2c37d8d75d531458f33941ee902d637fff0d71e2391cf0fff567980df92cfcf2",
+    "expected_table_sha256": "01989eb301a2cdd83e297fbf6384e0bd4d5b4fb300bdccee6b1adbde87d5e4ce",
+    "failure_codes": [],
+    "manifest_path": "G:/TSIS/data/data_foundation_outputs/corporate_actions_table/_corporate_actions_table_manifest_v0_1.json",
+    "manifest_sha256": "2c37d8d75d531458f33941ee902d637fff0d71e2391cf0fff567980df92cfcf2",
+    "physical_path": "G:/TSIS/data/data_foundation_outputs/corporate_actions_table/corporate_actions_table_v0_1.parquet",
+    "rows_found": 0,
+    "session_date": "2026-01-05",
+    "symbols_consulted": [
+      "ABAT",
+      "ABEO",
+      "ABSI",
+      "ABTC",
+      "ACB"
+    ],
+    "table_sha256": "01989eb301a2cdd83e297fbf6384e0bd4d5b4fb300bdccee6b1adbde87d5e4ce",
+    "temporal_field": "action_date",
+    "warning_codes": [],
+    "window_end": "2026-01-12",
+    "window_start": "2025-12-29"
+  },
+  "dataset_id": "ohlcv_1m_quote_guarded_full_universe_v0_2_candidate",
+  "date_range": {
+    "date_end": "2026-01-05",
+    "date_start": "2026-01-05"
+  },
+  "failure": null,
+  "fixture_id": "TSIS_REAL_DATA_FIXTURE_2026_01_05_06_LT1B_QG5_PORTABLE_DERIVED_V0_1",
+  "fixture_kind": "TSIS_REAL_DATA_FIXTURE_PORTABLE_ACCEPTANCE_SLICE_DERIVED",
+  "generated_at_utc": "2026-07-28T00:00:00Z",
+  "known_limitations": [
+    "fixture selected for mechanical real-data inspection only",
+    "not evidence of fill realism or trading edge",
+    "quote_guarded_1m execution use remains a proxy for engine mechanics",
+    "LT1B universe is an operational <1B cut, not daily fully PTI market-cap membership",
+    "operational <1B cut, not daily fully point-in-time market-cap membership",
+    "fixture selected for mechanical real-data inspection only",
+    "not evidence of fill realism or trading edge",
+    "quote_guarded_1m execution use remains a proxy for engine mechanics",
+    "LT1B universe is an operational <1B cut, not daily fully PTI market-cap membership",
+    "fixture selected for mechanical real-data inspection only",
+    "not evidence of fill realism or trading edge",
+    "quote_guarded_1m execution use remains a proxy for engine mechanics",
+    "LT1B universe is an operational <1B cut, not daily fully PTI market-cap membership"
+  ],
+  "missing_data_policy": {
+    "gap_event_emitted": true,
+    "imputation_allowed": false,
+    "on_missing_bar": "EMIT_GAP_WITHOUT_IMPUTATION",
+    "on_required_close_missing": "FAIL_TICKER_DAY",
+    "on_required_open_missing": "FAIL_TICKER_DAY",
+    "policy_id": "emit_gap_without_imputation_v0_1"
+  },
+  "missing_data_summary": {
+    "complete_tickers": [
+      "ABAT",
+      "ABTC"
+    ],
+    "gap_policy": "EMIT_GAP_WITHOUT_IMPUTATION",
+    "gap_tickers": [
+      "ABEO",
+      "ABSI",
+      "ACB"
+    ],
+    "inspection_status": "pass",
+    "missing_symbols": [],
+    "policy_id": "emit_gap_without_imputation_v0_1"
+  },
+  "physical_inspection": {
+    "content_hashes": {
+      "tests/fixtures/bt_gate_011_qg5_portable/parquet/ABAT.parquet": "7906099b33b668f1073ed9fb1f95016674cd0cb1c4636b67a1aeee462ebbf7ed",
+      "tests/fixtures/bt_gate_011_qg5_portable/parquet/ABEO.parquet": "c5b33b22aeb67ad48fde3c297f68d00d11e7a725836aba22ca47b5fa5af106c0",
+      "tests/fixtures/bt_gate_011_qg5_portable/parquet/ABSI.parquet": "755662e33c90c38510f50f608394b1bb6ccf2a553b120b92d91f9435d263f198",
+      "tests/fixtures/bt_gate_011_qg5_portable/parquet/ABTC.parquet": "a3f9f8daccac6e8f3bef315282a4bf92a6714ab7a6d0dacc5fe79a75d8925ea3",
+      "tests/fixtures/bt_gate_011_qg5_portable/parquet/ACB.parquet": "ac463b3e86f92819005ffd4137c82ddddce4938dc3311ea7ccd4764222284814"
+    },
+    "corporate_action_screen": {
+      "action_types_found": [],
+      "dataset_id": "corporate_actions_table_v0_1",
+      "exact_session_rows": 0,
+      "expected_manifest_sha256": "2c37d8d75d531458f33941ee902d637fff0d71e2391cf0fff567980df92cfcf2",
+      "expected_table_sha256": "01989eb301a2cdd83e297fbf6384e0bd4d5b4fb300bdccee6b1adbde87d5e4ce",
+      "failure_codes": [],
+      "manifest_path": "G:/TSIS/data/data_foundation_outputs/corporate_actions_table/_corporate_actions_table_manifest_v0_1.json",
+      "manifest_sha256": "2c37d8d75d531458f33941ee902d637fff0d71e2391cf0fff567980df92cfcf2",
+      "physical_path": "G:/TSIS/data/data_foundation_outputs/corporate_actions_table/corporate_actions_table_v0_1.parquet",
+      "rows_found": 0,
+      "session_date": "2026-01-05",
+      "symbols_consulted": [
+        "ABAT",
+        "ABEO",
+        "ABSI",
+        "ABTC",
+        "ACB"
+      ],
+      "table_sha256": "01989eb301a2cdd83e297fbf6384e0bd4d5b4fb300bdccee6b1adbde87d5e4ce",
+      "temporal_field": "action_date",
+      "warning_codes": [],
+      "window_end": "2026-01-12",
+      "window_start": "2025-12-29"
+    },
+    "dataset_validation_manifest": {
+      "expected_sha256": "7baf90cc64d382b66cf4bde6e434f1ec6a0656e51bec5d45945f36e4b7787ddf",
+      "path": "C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate/_validation_runs/qg_1m_full_universe_v0_2_candidate_validation_20260716T102500Z/final_manifest_validation.json",
+      "sha256": "7baf90cc64d382b66cf4bde6e434f1ec6a0656e51bec5d45945f36e4b7787ddf"
+    },
+    "failure_codes": [],
+    "files_consumed": [
+      "tests/fixtures/bt_gate_011_qg5_portable/parquet/ABAT.parquet",
+      "tests/fixtures/bt_gate_011_qg5_portable/parquet/ABEO.parquet",
+      "tests/fixtures/bt_gate_011_qg5_portable/parquet/ABSI.parquet",
+      "tests/fixtures/bt_gate_011_qg5_portable/parquet/ABTC.parquet",
+      "tests/fixtures/bt_gate_011_qg5_portable/parquet/ACB.parquet"
+    ],
+    "fixture_id": "TSIS_REAL_DATA_FIXTURE_2026_01_05_LT1B_QG5_V0_1",
+    "fixture_kind": "TSIS_REAL_DATA_FIXTURE",
+    "inspection_status": "PHYSICAL_INSPECTION_PASS",
+    "limitations": [
+      "fixture selected for mechanical real-data inspection only",
+      "not evidence of fill realism or trading edge",
+      "quote_guarded_1m execution use remains a proxy for engine mechanics",
+      "LT1B universe is an operational <1B cut, not daily fully PTI market-cap membership"
+    ],
+    "missing_data_summary": {
+      "complete_tickers": [
+        "ABAT",
+        "ABTC"
+      ],
+      "gap_policy": "EMIT_GAP_WITHOUT_IMPUTATION",
+      "gap_tickers": [
+        "ABEO",
+        "ABSI",
+        "ACB"
+      ],
+      "inspection_status": "pass",
+      "missing_symbols": [],
+      "policy_id": "emit_gap_without_imputation_v0_1"
+    },
+    "observed_time_range": {
+      "max_utc": "2026-01-05T20:59:00Z",
+      "min_utc": "2026-01-05T14:30:00Z"
+    },
+    "per_ticker_day_results": [
+      {
+        "duplicate_timestamps": 0,
+        "expected_discovery_drift": [],
+        "failure_codes": [],
+        "file": "tests/fixtures/bt_gate_012_qg5_multisession_portable/session_2026_01_05/parquet/ABAT.parquet",
+        "file_found": true,
+        "file_sha256": "7906099b33b668f1073ed9fb1f95016674cd0cb1c4636b67a1aeee462ebbf7ed",
+        "has_required_close": true,
+        "has_required_open": true,
+        "invalid_core_issue_counts": {},
+        "invalid_core_rows": 0,
+        "missing_regular_minutes": 0,
+        "monthly_rows": 390,
+        "observed_minute_gaps": [],
+        "optional_columns_missing": [
+          "vw"
+        ],
+        "optional_columns_present": [
+          "n",
+          "vw_quote_guarded_status",
+          "quote_bid_floor",
+          "quote_ask_cap",
+          "quote_mid_p50",
+          "quote_count",
+          "source_quotes_path",
+          "repair_state",
+          "repair_reason"
+        ],
+        "portable_rows": 390,
+        "session_date": "2026-01-05",
+        "session_max_utc": "2026-01-05T20:59:00Z",
+        "session_min_utc": "2026-01-05T14:30:00Z",
+        "session_rows": 390,
+        "status": "PASS_COMPLETE",
+        "ticker": "ABAT",
+        "warning_codes": []
+      },
+      {
+        "duplicate_timestamps": 0,
+        "expected_discovery_drift": [],
+        "failure_codes": [],
+        "file": "tests/fixtures/bt_gate_012_qg5_multisession_portable/session_2026_01_05/parquet/ABEO.parquet",
+        "file_found": true,
+        "file_sha256": "c5b33b22aeb67ad48fde3c297f68d00d11e7a725836aba22ca47b5fa5af106c0",
+        "has_required_close": true,
+        "has_required_open": true,
+        "invalid_core_issue_counts": {},
+        "invalid_core_rows": 0,
+        "missing_regular_minutes": 52,
+        "monthly_rows": 338,
+        "observed_minute_gaps": [
+          "2026-01-05T14:48:00Z",
+          "2026-01-05T14:57:00Z",
+          "2026-01-05T15:07:00Z",
+          "2026-01-05T15:14:00Z",
+          "2026-01-05T15:22:00Z",
+          "2026-01-05T15:32:00Z",
+          "2026-01-05T15:52:00Z",
+          "2026-01-05T15:53:00Z",
+          "2026-01-05T16:07:00Z",
+          "2026-01-05T16:11:00Z",
+          "2026-01-05T16:14:00Z",
+          "2026-01-05T16:23:00Z",
+          "2026-01-05T16:24:00Z",
+          "2026-01-05T16:29:00Z",
+          "2026-01-05T16:38:00Z",
+          "2026-01-05T16:55:00Z",
+          "2026-01-05T17:10:00Z",
+          "2026-01-05T17:16:00Z",
+          "2026-01-05T17:28:00Z",
+          "2026-01-05T17:31:00Z",
+          "2026-01-05T17:32:00Z",
+          "2026-01-05T17:34:00Z",
+          "2026-01-05T17:35:00Z",
+          "2026-01-05T17:36:00Z",
+          "2026-01-05T17:57:00Z",
+          "2026-01-05T17:58:00Z",
+          "2026-01-05T18:00:00Z",
+          "2026-01-05T18:01:00Z",
+          "2026-01-05T18:02:00Z",
+          "2026-01-05T18:03:00Z",
+          "2026-01-05T18:07:00Z",
+          "2026-01-05T18:13:00Z",
+          "2026-01-05T18:17:00Z",
+          "2026-01-05T18:22:00Z",
+          "2026-01-05T18:25:00Z",
+          "2026-01-05T18:27:00Z",
+          "2026-01-05T18:33:00Z",
+          "2026-01-05T18:34:00Z",
+          "2026-01-05T18:41:00Z",
+          "2026-01-05T18:45:00Z",
+          "2026-01-05T18:50:00Z",
+          "2026-01-05T18:51:00Z",
+          "2026-01-05T18:52:00Z",
+          "2026-01-05T18:53:00Z",
+          "2026-01-05T19:05:00Z",
+          "2026-01-05T19:17:00Z",
+          "2026-01-05T19:18:00Z",
+          "2026-01-05T19:20:00Z",
+          "2026-01-05T19:24:00Z",
+          "2026-01-05T19:26:00Z",
+          "2026-01-05T20:27:00Z",
+          "2026-01-05T20:41:00Z"
+        ],
+        "optional_columns_missing": [
+          "vw"
+        ],
+        "optional_columns_present": [
+          "n",
+          "vw_quote_guarded_status",
+          "quote_bid_floor",
+          "quote_ask_cap",
+          "quote_mid_p50",
+          "quote_count",
+          "source_quotes_path",
+          "repair_state",
+          "repair_reason"
+        ],
+        "portable_rows": 338,
+        "session_date": "2026-01-05",
+        "session_max_utc": "2026-01-05T20:59:00Z",
+        "session_min_utc": "2026-01-05T14:30:00Z",
+        "session_rows": 338,
+        "status": "PASS_WITH_GAPS",
+        "ticker": "ABEO",
+        "warning_codes": [
+          "OBSERVED_MINUTE_GAP"
+        ]
+      },
+      {
+        "duplicate_timestamps": 0,
+        "expected_discovery_drift": [],
+        "failure_codes": [],
+        "file": "tests/fixtures/bt_gate_012_qg5_multisession_portable/session_2026_01_05/parquet/ABSI.parquet",
+        "file_found": true,
+        "file_sha256": "755662e33c90c38510f50f608394b1bb6ccf2a553b120b92d91f9435d263f198",
+        "has_required_close": true,
+        "has_required_open": true,
+        "invalid_core_issue_counts": {},
+        "invalid_core_rows": 0,
+        "missing_regular_minutes": 6,
+        "monthly_rows": 384,
+        "observed_minute_gaps": [
+          "2026-01-05T16:24:00Z",
+          "2026-01-05T18:54:00Z",
+          "2026-01-05T19:26:00Z",
+          "2026-01-05T19:39:00Z",
+          "2026-01-05T19:47:00Z",
+          "2026-01-05T20:14:00Z"
+        ],
+        "optional_columns_missing": [
+          "vw"
+        ],
+        "optional_columns_present": [
+          "n",
+          "vw_quote_guarded_status",
+          "quote_bid_floor",
+          "quote_ask_cap",
+          "quote_mid_p50",
+          "quote_count",
+          "source_quotes_path",
+          "repair_state",
+          "repair_reason"
+        ],
+        "portable_rows": 384,
+        "session_date": "2026-01-05",
+        "session_max_utc": "2026-01-05T20:59:00Z",
+        "session_min_utc": "2026-01-05T14:30:00Z",
+        "session_rows": 384,
+        "status": "PASS_WITH_GAPS",
+        "ticker": "ABSI",
+        "warning_codes": [
+          "OBSERVED_MINUTE_GAP"
+        ]
+      },
+      {
+        "duplicate_timestamps": 0,
+        "expected_discovery_drift": [],
+        "failure_codes": [],
+        "file": "tests/fixtures/bt_gate_012_qg5_multisession_portable/session_2026_01_05/parquet/ABTC.parquet",
+        "file_found": true,
+        "file_sha256": "a3f9f8daccac6e8f3bef315282a4bf92a6714ab7a6d0dacc5fe79a75d8925ea3",
+        "has_required_close": true,
+        "has_required_open": true,
+        "invalid_core_issue_counts": {},
+        "invalid_core_rows": 0,
+        "missing_regular_minutes": 0,
+        "monthly_rows": 390,
+        "observed_minute_gaps": [],
+        "optional_columns_missing": [
+          "vw"
+        ],
+        "optional_columns_present": [
+          "n",
+          "vw_quote_guarded_status",
+          "quote_bid_floor",
+          "quote_ask_cap",
+          "quote_mid_p50",
+          "quote_count",
+          "source_quotes_path",
+          "repair_state",
+          "repair_reason"
+        ],
+        "portable_rows": 390,
+        "session_date": "2026-01-05",
+        "session_max_utc": "2026-01-05T20:59:00Z",
+        "session_min_utc": "2026-01-05T14:30:00Z",
+        "session_rows": 390,
+        "status": "PASS_COMPLETE",
+        "ticker": "ABTC",
+        "warning_codes": []
+      },
+      {
+        "duplicate_timestamps": 0,
+        "expected_discovery_drift": [],
+        "failure_codes": [],
+        "file": "tests/fixtures/bt_gate_012_qg5_multisession_portable/session_2026_01_05/parquet/ACB.parquet",
+        "file_found": true,
+        "file_sha256": "ac463b3e86f92819005ffd4137c82ddddce4938dc3311ea7ccd4764222284814",
+        "has_required_close": true,
+        "has_required_open": true,
+        "invalid_core_issue_counts": {},
+        "invalid_core_rows": 0,
+        "missing_regular_minutes": 64,
+        "monthly_rows": 326,
+        "observed_minute_gaps": [
+          "2026-01-05T15:13:00Z",
+          "2026-01-05T15:14:00Z",
+          "2026-01-05T15:32:00Z",
+          "2026-01-05T15:36:00Z",
+          "2026-01-05T15:38:00Z",
+          "2026-01-05T15:48:00Z",
+          "2026-01-05T15:56:00Z",
+          "2026-01-05T16:05:00Z",
+          "2026-01-05T16:12:00Z",
+          "2026-01-05T16:19:00Z",
+          "2026-01-05T16:40:00Z",
+          "2026-01-05T16:43:00Z",
+          "2026-01-05T17:00:00Z",
+          "2026-01-05T17:02:00Z",
+          "2026-01-05T17:20:00Z",
+          "2026-01-05T17:21:00Z",
+          "2026-01-05T17:24:00Z",
+          "2026-01-05T17:26:00Z",
+          "2026-01-05T17:31:00Z",
+          "2026-01-05T17:35:00Z",
+          "2026-01-05T17:38:00Z",
+          "2026-01-05T17:44:00Z",
+          "2026-01-05T17:47:00Z",
+          "2026-01-05T17:53:00Z",
+          "2026-01-05T18:02:00Z",
+          "2026-01-05T18:10:00Z",
+          "2026-01-05T18:12:00Z",
+          "2026-01-05T18:14:00Z",
+          "2026-01-05T18:17:00Z",
+          "2026-01-05T18:20:00Z",
+          "2026-01-05T18:22:00Z",
+          "2026-01-05T18:24:00Z",
+          "2026-01-05T18:30:00Z",
+          "2026-01-05T18:35:00Z",
+          "2026-01-05T18:36:00Z",
+          "2026-01-05T18:40:00Z",
+          "2026-01-05T18:43:00Z",
+          "2026-01-05T18:45:00Z",
+          "2026-01-05T18:48:00Z",
+          "2026-01-05T18:50:00Z",
+          "2026-01-05T18:51:00Z",
+          "2026-01-05T18:52:00Z",
+          "2026-01-05T18:55:00Z",
+          "2026-01-05T19:04:00Z",
+          "2026-01-05T19:08:00Z",
+          "2026-01-05T19:09:00Z",
+          "2026-01-05T19:14:00Z",
+          "2026-01-05T19:15:00Z",
+          "2026-01-05T19:23:00Z",
+          "2026-01-05T19:27:00Z",
+          "2026-01-05T19:29:00Z",
+          "2026-01-05T19:35:00Z",
+          "2026-01-05T19:46:00Z",
+          "2026-01-05T19:55:00Z",
+          "2026-01-05T19:56:00Z",
+          "2026-01-05T20:02:00Z",
+          "2026-01-05T20:05:00Z",
+          "2026-01-05T20:07:00Z",
+          "2026-01-05T20:11:00Z",
+          "2026-01-05T20:12:00Z",
+          "2026-01-05T20:24:00Z",
+          "2026-01-05T20:27:00Z",
+          "2026-01-05T20:29:00Z",
+          "2026-01-05T20:47:00Z"
+        ],
+        "optional_columns_missing": [
+          "vw"
+        ],
+        "optional_columns_present": [
+          "n",
+          "vw_quote_guarded_status",
+          "quote_bid_floor",
+          "quote_ask_cap",
+          "quote_mid_p50",
+          "quote_count",
+          "source_quotes_path",
+          "repair_state",
+          "repair_reason"
+        ],
+        "portable_rows": 326,
+        "session_date": "2026-01-05",
+        "session_max_utc": "2026-01-05T20:59:00Z",
+        "session_min_utc": "2026-01-05T14:30:00Z",
+        "session_rows": 326,
+        "status": "PASS_WITH_GAPS",
+        "ticker": "ACB",
+        "warning_codes": [
+          "OBSERVED_MINUTE_GAP"
+        ]
+      }
+    ],
+    "rows_available": 1828,
+    "symbols_found": [
+      "ABAT",
+      "ABEO",
+      "ABSI",
+      "ABTC",
+      "ACB"
+    ],
+    "symbols_requested": [
+      "ABAT",
+      "ABEO",
+      "ABSI",
+      "ABTC",
+      "ACB"
+    ],
+    "universe_screen": {
+      "disallowed_classification_symbols": [],
+      "expected_sha256": "7b7d056785aae7e3e097219dc5f24c25e2fe193eb28c139354c4d9f8aff88468",
+      "failure_codes": [],
+      "missing_symbols": [],
+      "outside_pti_symbols": [],
+      "physical_path": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/market_cap_last_observed_cutoff/20260320_market_cap_last_observed_cutoff/market_cap_cutoff_lt_1b_active_inactive.parquet",
+      "sha256": "7b7d056785aae7e3e097219dc5f24c25e2fe193eb28c139354c4d9f8aff88468",
+      "symbols_checked": [
+        "ABAT",
+        "ABEO",
+        "ABSI",
+        "ABTC",
+        "ACB"
+      ],
+      "universe_id": "lt1b_universe_v0_1"
+    },
+    "warning_codes": [
+      "OBSERVED_MINUTE_GAP"
+    ]
+  },
+  "physical_inspection_status": "PHYSICAL_INSPECTION_PASS",
+  "portable_acceptance_fixture": true,
+  "portable_acceptance_fixture_source": "runs/run_preflight_real_fixture_2026_01_05_qg5_v0_2/data_preflight_report.json",
+  "preflight_status": "PREFLIGHT_PASS",
+  "price_view_policy": {
+    "execution": {
+      "allowed_use": "proxy_allowed_for_engine_mechanics_only",
+      "execution_semantics_state": "pending_execution_semantics_review",
+      "physical_root": "C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate",
+      "price_view": "quote_guarded_1m",
+      "role": "execution",
+      "validation_manifest": "C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate/_validation_runs/qg_1m_full_universe_v0_2_candidate_validation_20260716T102500Z/final_manifest_validation.json"
+    },
+    "known_limitations": [
+      "fixture selected for mechanical real-data inspection only",
+      "not evidence of fill realism or trading edge",
+      "quote_guarded_1m execution use remains a proxy for engine mechanics",
+      "LT1B universe is an operational <1B cut, not daily fully PTI market-cap membership",
+      "operational <1B cut, not daily fully point-in-time market-cap membership",
+      "fixture selected for mechanical real-data inspection only",
+      "not evidence of fill realism or trading edge",
+      "quote_guarded_1m execution use remains a proxy for engine mechanics",
+      "LT1B universe is an operational <1B cut, not daily fully PTI market-cap membership"
+    ],
+    "raw_lineage": "raw_ohlcv_1m_plus_quote_guarded_overlay",
+    "signal": {
+      "allowed_use": "allowed_controlled",
+      "execution_semantics_state": null,
+      "physical_root": "C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate",
+      "price_view": "quote_guarded_1m",
+      "role": "signal",
+      "validation_manifest": "C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate/_validation_runs/qg_1m_full_universe_v0_2_candidate_validation_20260716T102500Z/final_manifest_validation.json"
+    },
+    "valuation": {
+      "allowed_use": "allowed_controlled",
+      "execution_semantics_state": null,
+      "physical_root": "C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate",
+      "price_view": "quote_guarded_1m",
+      "role": "valuation",
+      "validation_manifest": "C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate/_validation_runs/qg_1m_full_universe_v0_2_candidate_validation_20260716T102500Z/final_manifest_validation.json"
+    }
+  },
+  "resolved": true,
+  "resolved_context": {
+    "calendar_id": "XNYS",
+    "candidate_consumption_policy": {
+      "accepted_limitations": [
+        "fixture selected for mechanical real-data inspection only",
+        "not evidence of fill realism or trading edge",
+        "quote_guarded_1m execution use remains a proxy for engine mechanics",
+        "LT1B universe is an operational <1B cut, not daily fully PTI market-cap membership"
+      ],
+      "accepted_validation_manifest": "C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate/_validation_runs/qg_1m_full_universe_v0_2_candidate_validation_20260716T102500Z/final_manifest_validation.json",
+      "authorization_basis": "qg_1m_full_universe_v0_2_candidate_validation_pass_controlled_consumption",
+      "candidate_dataset_id": "ohlcv_1m_quote_guarded_full_universe_v0_2_candidate",
+      "candidate_physical_root": "C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate",
+      "permitted_run_purposes": [
+        "ENGINE_MECHANICS_TEST"
+      ],
+      "promotion_authorization": false
+    },
+    "data_quality_state": "validated_candidate_for_controlled_downstream_consumption",
+    "dataset_id": "ohlcv_1m_quote_guarded_full_universe_v0_2_candidate",
+    "dataset_version": "v0_2_candidate",
+    "known_limitations": [
+      "fixture selected for mechanical real-data inspection only",
+      "not evidence of fill realism or trading edge",
+      "quote_guarded_1m execution use remains a proxy for engine mechanics",
+      "LT1B universe is an operational <1B cut, not daily fully PTI market-cap membership",
+      "operational <1B cut, not daily fully point-in-time market-cap membership",
+      "fixture selected for mechanical real-data inspection only",
+      "not evidence of fill realism or trading edge",
+      "quote_guarded_1m execution use remains a proxy for engine mechanics",
+      "LT1B universe is an operational <1B cut, not daily fully PTI market-cap membership"
+    ],
+    "price_view_policy": {
+      "execution": {
+        "allowed_use": "proxy_allowed_for_engine_mechanics_only",
+        "execution_semantics_state": "pending_execution_semantics_review",
+        "physical_root": "C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate",
+        "price_view": "quote_guarded_1m",
+        "role": "execution",
+        "validation_manifest": "C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate/_validation_runs/qg_1m_full_universe_v0_2_candidate_validation_20260716T102500Z/final_manifest_validation.json"
+      },
+      "known_limitations": [
+        "fixture selected for mechanical real-data inspection only",
+        "not evidence of fill realism or trading edge",
+        "quote_guarded_1m execution use remains a proxy for engine mechanics",
+        "LT1B universe is an operational <1B cut, not daily fully PTI market-cap membership",
+        "operational <1B cut, not daily fully point-in-time market-cap membership",
+        "fixture selected for mechanical real-data inspection only",
+        "not evidence of fill realism or trading edge",
+        "quote_guarded_1m execution use remains a proxy for engine mechanics",
+        "LT1B universe is an operational <1B cut, not daily fully PTI market-cap membership"
+      ],
+      "raw_lineage": "raw_ohlcv_1m_plus_quote_guarded_overlay",
+      "signal": {
+        "allowed_use": "allowed_controlled",
+        "execution_semantics_state": null,
+        "physical_root": "C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate",
+        "price_view": "quote_guarded_1m",
+        "role": "signal",
+        "validation_manifest": "C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate/_validation_runs/qg_1m_full_universe_v0_2_candidate_validation_20260716T102500Z/final_manifest_validation.json"
+      },
+      "valuation": {
+        "allowed_use": "allowed_controlled",
+        "execution_semantics_state": null,
+        "physical_root": "C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate",
+        "price_view": "quote_guarded_1m",
+        "role": "valuation",
+        "validation_manifest": "C:/TSIS_Data/data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate/_validation_runs/qg_1m_full_universe_v0_2_candidate_validation_20260716T102500Z/final_manifest_validation.json"
+      }
+    },
+    "resolved_physical_root": "tests/fixtures/bt_gate_011_qg5_portable/parquet",
+    "schema_version": "quote_guarded_1m_fixture_schema_v0_1",
+    "selected_symbols": [
+      "ABAT",
+      "ABEO",
+      "ABSI",
+      "ABTC",
+      "ACB"
+    ],
+    "session_policy": "REGULAR_ONLY",
+    "source_contract_paths": [],
+    "timezone": "America/New_York",
+    "universe_dataset_id": "lt1b_universe_v0_1",
+    "universe_filter_policy": "ticker_plus_pti_window",
+    "universe_run_id": "20260320_market_cap_last_observed_cutoff"
+  },
+  "resolved_physical_root": "tests/fixtures/bt_gate_012_qg5_multisession_portable/session_2026_01_05/parquet",
+  "rows_available": 1828,
+  "run_id": "bt_gate_012_preflight_portable_2026_01_05_qg5_v0_1",
+  "session_policy": "REGULAR_ONLY",
+  "snapshot_or_content_hashes": {
+    "tests/fixtures/bt_gate_012_qg5_multisession_portable/session_2026_01_05/parquet/ABAT.parquet": "7906099b33b668f1073ed9fb1f95016674cd0cb1c4636b67a1aeee462ebbf7ed",
+    "tests/fixtures/bt_gate_012_qg5_multisession_portable/session_2026_01_05/parquet/ABEO.parquet": "c5b33b22aeb67ad48fde3c297f68d00d11e7a725836aba22ca47b5fa5af106c0",
+    "tests/fixtures/bt_gate_012_qg5_multisession_portable/session_2026_01_05/parquet/ABSI.parquet": "755662e33c90c38510f50f608394b1bb6ccf2a553b120b92d91f9435d263f198",
+    "tests/fixtures/bt_gate_012_qg5_multisession_portable/session_2026_01_05/parquet/ABTC.parquet": "a3f9f8daccac6e8f3bef315282a4bf92a6714ab7a6d0dacc5fe79a75d8925ea3",
+    "tests/fixtures/bt_gate_012_qg5_multisession_portable/session_2026_01_05/parquet/ACB.parquet": "ac463b3e86f92819005ffd4137c82ddddce4938dc3311ea7ccd4764222284814"
+  },
+  "source_partitions_or_files_consumed": [
+    "tests/fixtures/bt_gate_012_qg5_multisession_portable/session_2026_01_05/parquet/ABAT.parquet",
+    "tests/fixtures/bt_gate_012_qg5_multisession_portable/session_2026_01_05/parquet/ABEO.parquet",
+    "tests/fixtures/bt_gate_012_qg5_multisession_portable/session_2026_01_05/parquet/ABSI.parquet",
+    "tests/fixtures/bt_gate_012_qg5_multisession_portable/session_2026_01_05/parquet/ABTC.parquet",
+    "tests/fixtures/bt_gate_012_qg5_multisession_portable/session_2026_01_05/parquet/ACB.parquet"
+  ],
+  "symbols_available": [
+    "ABAT",
+    "ABEO",
+    "ABSI",
+    "ABTC",
+    "ACB"
+  ],
+  "timezone": "America/New_York",
+  "universe_policy": {
+    "limitations": [
+      "operational <1B cut, not daily fully point-in-time market-cap membership"
+    ],
+    "selection_rule": "ticker_plus_pti_window",
+    "source_hash": "7b7d056785aae7e3e097219dc5f24c25e2fe193eb28c139354c4d9f8aff88468",
+    "source_snapshot": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\market_cap_last_observed_cutoff\\20260320_market_cap_last_observed_cutoff\\market_cap_cutoff_lt_1b_active_inactive.parquet",
+    "universe_id": "lt1b_universe_v0_1",
+    "universe_run_id": "20260320_market_cap_last_observed_cutoff"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "scope_id": "event_state_on_demand_capability_promotion_review_scope_v0_1",
+  "gate": "event_state_on_demand_capability_promotion_review_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_CONSUMED_BY_REVIEW",
+  "consumed_by_review_id": "event_state_on_demand_capability_promotion_review_v0_1_20260728T135003Z",
+  "consumed_at_utc": "2026-07-28T13:50:03Z",
+  "event_state_profile_id": "event_state_core_four_intraday_profile_v0_1",
+  "event_type_scope": [
+    "event_type:market_data:session_opened"
+  ],
+  "subject_scope": "exchange_session",
+  "authority": {
+    "metadata_evidence_read_allowed": true,
+    "source_market_data_reads_allowed": false,
+    "new_event_state_materialization_allowed": false,
+    "new_market_state_materialization_allowed": false,
+    "candidate_registry_mutation_allowed": false,
+    "official_dataset_promotion_allowed": false,
+    "production_allowed": false,
+    "downstream_allowed": false
+  },
+  "scope_sha256": "4c5137c2da3f8a0d098661e2701b2be58c2c6ab463dbf836bf81d59cd8b3b48a"
+}

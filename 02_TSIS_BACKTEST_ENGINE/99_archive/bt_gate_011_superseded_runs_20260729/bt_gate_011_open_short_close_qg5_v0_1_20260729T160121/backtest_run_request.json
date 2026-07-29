@@ -1,0 +1,46 @@
+{
+  "economic_realism": "INCOMPLETE",
+  "edge_evidence": "NOT_AUTHORIZED",
+  "fixture_id": "TSIS_REAL_DATA_FIXTURE_2026_01_05_LT1B_QG5_V0_1",
+  "output_root": "C:/TSIS_Data/02_TSIS_BACKTEST_ENGINE/runs",
+  "preflight_report_path": "C:/TSIS_Data/02_TSIS_BACKTEST_ENGINE/tests/fixtures/bt_gate_011_qg5_portable/data_preflight_report.json",
+  "run_id": "bt_gate_011_open_short_close_qg5_v0_1",
+  "run_purpose": "ENGINE_VALIDATION_RUN",
+  "session_date": "2026-01-05",
+  "starting_equity": "10000.00",
+  "strategy_optimization": "NOT_AUTHORIZED",
+  "strategy_spec": {
+    "decision_policy_id": "PREPROGRAMMED_SESSION_SCHEDULE_V0_1",
+    "economic_realism": "INCOMPLETE",
+    "edge_evidence": "NOT_AUTHORIZED",
+    "entry_market_price_field": "open",
+    "entry_order_type": "MARKET_PROXY",
+    "entry_side": "SELL_SHORT",
+    "exit_market_price_field": "close",
+    "exit_order_type": "MARKET_PROXY",
+    "exit_side": "BUY_TO_COVER",
+    "fill_capability": "FULL_FILL_ONLY",
+    "limitations": [
+      "strategy is fixed and non-optimized",
+      "open/close are strategy labels, not new MARKET_ON_OPEN or MARKET_ON_CLOSE order types",
+      "run validates engine mechanics only",
+      "not edge evidence",
+      "not economically realistic for small-caps shorts"
+    ],
+    "quantity_per_symbol": 100,
+    "run_purpose": "ENGINE_VALIDATION_RUN",
+    "strategy_id": "open_short_close_cover_v0_1",
+    "strategy_name": "Preprogrammed short at first regular bar and cover using last regular bar proxy",
+    "strategy_optimization": "NOT_AUTHORIZED",
+    "strategy_spec_version": "0.1",
+    "symbols": [
+      "ABAT",
+      "ABEO",
+      "ABSI",
+      "ABTC",
+      "ACB"
+    ],
+    "time_in_force": "DAY",
+    "universe_id": "lt1b_universe_v0_1"
+  }
+}

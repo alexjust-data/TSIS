@@ -1,0 +1,47 @@
+{
+  "gate": "state_bundle_manifest_physical_evidence_alignment_v0_1",
+  "created_at_utc": "2026-07-29T16:48:35Z",
+  "status": "AUTHORIZED_AND_EXECUTED_BY_RUNNER_READ_ONLY_METADATA",
+  "owner_layer": "09_STATE_CONSUMPTION_BOUNDARY",
+  "purpose": "Check whether existing StateBundle/response/candidate metadata is aligned enough to reopen bounded read-and-replay authorization after provider v0.1.2 hardening.",
+  "inputs": {
+    "accepted_provider_readout": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_provider_contract_schema_hardening_v0_1_2_external_audit_acceptance_readout_v0_1.md",
+    "state_bundle_manifest_contract_v0_1_2": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1_2.json",
+    "previous_blocked_scope": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/configs/bounded_state_bundle_read_and_replay_authorization_scope_v0_1.json",
+    "old_runtime_invocation_response": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/runtime_user_invocation_bounded_interface_execution_v0_1_20260728T1731090000/case_01_response.json",
+    "old_state_bundle_manifest": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/runtime_user_invocation_bounded_interface_execution_v0_1_20260728T1731090000/case_01_bundle.json",
+    "market_state_final_manifest": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/final_manifest.json",
+    "candidate_output_manifest": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/candidate_output_manifest.json",
+    "candidate_registry_entry": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/candidate_registry_entry.json",
+    "validation_report": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/market_state_validation_report.json",
+    "lineage_manifest": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/lineage_manifest.json",
+    "physical_schema_contract": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/official_profiles/market_state_core_four_intraday_profile_v0_1/PHYSICAL_SCHEMA_CONTRACT.json"
+  },
+  "parquet_path_identified_but_not_opened": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/market_state_scale_validation_candidate_v0_1.parquet",
+  "authorized_outputs": {
+    "authorization": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/state_bundle_manifest_physical_evidence_alignment_authorization_v0_1.md",
+    "scope": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/configs/state_bundle_manifest_physical_evidence_alignment_scope_v0_1.json",
+    "matrix": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/state_bundle_manifest_physical_evidence_alignment_matrix_v0_1.json",
+    "readout": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/state_bundle_manifest_physical_evidence_alignment_readout_v0_1.md",
+    "runner": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/scripts/state_bundle_manifest_physical_evidence_alignment_runner_v0_1.py"
+  },
+  "hard_boundaries": {
+    "parquet_opened": false,
+    "parquet_hash_recomputed": false,
+    "state_rows_read": 0,
+    "physical_artifacts_opened": 0,
+    "StateReplayFeed_records_emitted": 0,
+    "EventLoop_ticks": 0,
+    "strategy_callbacks": 0,
+    "orders_emitted": 0,
+    "fills_emitted": 0,
+    "PnL_calculated": false,
+    "runtime_requests_executed": 0,
+    "runtime_builds_executed": 0,
+    "datasets_written": 0,
+    "registry_mutations": 0,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false
+  }
+}

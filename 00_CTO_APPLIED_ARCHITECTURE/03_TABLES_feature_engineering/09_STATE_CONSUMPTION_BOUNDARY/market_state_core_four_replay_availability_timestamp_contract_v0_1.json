@@ -1,0 +1,294 @@
+{
+  "contract_id": "market_state_core_four_replay_availability_timestamp_contract_v0_1",
+  "contract_version": "0.1.0",
+  "contract_status": "CLOSED_CONTRACT_READY_WITH_VALIDATION_HARDENED_RESTRICTIONS_NO_PHYSICAL_READ",
+  "owner_layer": "09_STATE_CONSUMPTION_BOUNDARY",
+  "created_at_utc": "2026-07-29T17:20:00Z",
+  "scope": "contract_only_no_physical_read",
+  "target_state_kind": "market_state",
+  "target_profile_id": "market_state_core_four_intraday_profile_v0_1",
+  "target_logical_profile_id": "core_four_market_state_profile_v0_1",
+  "required_information_objects": [
+    "trading_activity",
+    "price_movement",
+    "price_location_structure",
+    "volatility_range_state"
+  ],
+  "not_added_information_objects": [
+    "liquidity",
+    "market_microstructure_state",
+    "order_flow_pressure",
+    "news_catalyst_context",
+    "fundamental_context",
+    "short_side_context",
+    "broad_market_context",
+    "halt_context"
+  ],
+  "timestamp_definitions": {
+    "decision_timestamp_utc": "market instant represented by the state row",
+    "state_as_of_utc": "maximum source-information timestamp incorporated into the complete emitted state row",
+    "state_available_at_utc": "first historical instant at which the complete state row could legally be delivered to a consumer"
+  },
+  "derivation_rules": {
+    "state_as_of_utc": "max(component_as_of_utc for admitted required components and objects)",
+    "state_available_at_utc": "max(decision_timestamp_utc, component_available_at_utc for admitted required components and objects) + governed_state_publication_latency",
+    "zero_latency_policy_allowed_for_bounded_validation_only": "zero_latency_candidate_replay_publication_policy_v0_1"
+  },
+  "forbidden_availability_sources": [
+    "parquet_created_at",
+    "runtime_invocation_created_at",
+    "bundle_created_at",
+    "file_modified_at",
+    "human_review_timestamp"
+  ],
+  "required_row_fields": [
+    "decision_timestamp_utc",
+    "state_as_of_utc",
+    "state_available_at_utc",
+    "state_availability_policy_id",
+    "state_publication_latency_policy_id",
+    "state_publication_latency",
+    "state_replay_consumption_legality",
+    "state_availability_status",
+    "component_availability_evidence"
+  ],
+  "component_availability_evidence_required_fields": [
+    "component_id",
+    "information_object_id",
+    "source_timestamp_utc",
+    "component_as_of_utc",
+    "component_available_at_utc",
+    "cutoff_rule_id",
+    "availability_rule_id",
+    "availability_status",
+    "restriction_codes"
+  ],
+  "legal_ordering_rules": [
+    "source_timestamp_utc <= component_as_of_utc",
+    "component_as_of_utc <= decision_timestamp_utc",
+    "component_as_of_utc <= component_available_at_utc",
+    "component_available_at_utc <= state_available_at_utc",
+    "state_as_of_utc <= state_available_at_utc",
+    "decision_timestamp_utc <= state_available_at_utc"
+  ],
+  "delivery_rule": "event_loop.clock >= state_available_at_utc",
+  "decision_timestamp_only_delivery_allowed": false,
+  "state_available_at_is_scientific_feature": false,
+  "state_available_at_is_delivery_metadata": true,
+  "allowed_replay_consumption_legality_values": [
+    "decision_safe",
+    "research_only",
+    "blocked_missing_availability_evidence",
+    "blocked_temporal_leakage",
+    "blocked_required_object_missing",
+    "blocked_restriction_propagation_missing"
+  ],
+  "strategy_facing_replay_allowed_legality": [
+    "decision_safe"
+  ],
+  "fail_closed_conditions": [
+    "state_as_of_utc_missing",
+    "state_available_at_utc_missing",
+    "state_available_at_utc_derived_from_materialization_time",
+    "state_available_at_utc_before_decision_timestamp_utc",
+    "state_as_of_utc_after_decision_timestamp_utc",
+    "component_as_of_utc_after_decision_timestamp_utc",
+    "component_available_at_utc_missing_for_required_object",
+    "publication_latency_policy_missing",
+    "state_replay_consumption_legality_missing",
+    "state_replay_consumption_legality_not_decision_safe_for_replay_delivery",
+    "required_object_missing_or_blocked",
+    "restriction_propagation_missing",
+    "all_required_information_objects_not_represented",
+    "component_research_only_or_blocked_but_row_decision_safe",
+    "state_availability_status_contradicts_replay_legality",
+    "publication_latency_not_included_in_state_available_at_utc",
+    "PT0S_used_without_zero_latency_candidate_replay_publication_policy_v0_1",
+    "source_timestamp_utc_after_component_as_of_utc",
+    "source_timestamp_utc_after_decision_timestamp_utc",
+    "component_available_at_utc_before_component_as_of_utc",
+    "restriction_codes_do_not_propagate_component_restrictions",
+    "non_canonical_utc_timestamp_representation",
+    "invalid_or_misordered_publication_latency_duration"
+  ],
+  "execution_authority": {
+    "physical_read_authorized_by_this_contract": false,
+    "runtime_invocation_authorized": false,
+    "runtime_build_authorized": false,
+    "state_replay_feed_authorized": false,
+    "backtest_authorized": false,
+    "strategy_execution_authorized": false,
+    "orders_authorized": false,
+    "fills_authorized": false,
+    "pnl_authorized": false,
+    "production": false,
+    "downstream": false,
+    "official_dataset": false
+  },
+  "json_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "market_state_core_four_replay_availability_timestamp_contract_v0_1.schema.json",
+    "title": "Market State Core Four Replay Availability Timestamp Evidence v0.1",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "state_kind",
+      "profile_id",
+      "decision_timestamp_utc",
+      "state_as_of_utc",
+      "state_available_at_utc",
+      "state_availability_policy_id",
+      "state_publication_latency_policy_id",
+      "state_publication_latency",
+      "state_replay_consumption_legality",
+      "state_availability_status",
+      "component_availability_evidence",
+      "restriction_codes"
+    ],
+    "properties": {
+      "state_kind": {
+        "const": "market_state"
+      },
+      "profile_id": {
+        "const": "market_state_core_four_intraday_profile_v0_1"
+      },
+      "decision_timestamp_utc": {
+        "type": "string",
+        "format": "date-time",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?Z$"
+      },
+      "state_as_of_utc": {
+        "type": "string",
+        "format": "date-time",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?Z$"
+      },
+      "state_available_at_utc": {
+        "type": "string",
+        "format": "date-time",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?Z$"
+      },
+      "state_availability_policy_id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "state_publication_latency_policy_id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "state_publication_latency": {
+        "type": "string",
+        "pattern": "^(?:PT0S|P\\d+D|PT(?:\\d+H(?:\\d+M)?(?:\\d+(?:\\.\\d+)?S)?|\\d+M(?:\\d+(?:\\.\\d+)?S)?|\\d+(?:\\.\\d+)?S))$"
+      },
+      "state_replay_consumption_legality": {
+        "enum": [
+          "decision_safe",
+          "research_only",
+          "blocked_missing_availability_evidence",
+          "blocked_temporal_leakage",
+          "blocked_required_object_missing",
+          "blocked_restriction_propagation_missing"
+        ]
+      },
+      "state_availability_status": {
+        "enum": [
+          "available_for_decision_replay",
+          "research_only",
+          "blocked"
+        ]
+      },
+      "component_availability_evidence": {
+        "type": "array",
+        "minItems": 4,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "component_id",
+            "information_object_id",
+            "source_timestamp_utc",
+            "component_as_of_utc",
+            "component_available_at_utc",
+            "cutoff_rule_id",
+            "availability_rule_id",
+            "availability_status",
+            "restriction_codes"
+          ],
+          "properties": {
+            "component_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "information_object_id": {
+              "enum": [
+                "trading_activity",
+                "price_movement",
+                "price_location_structure",
+                "volatility_range_state"
+              ]
+            },
+            "source_timestamp_utc": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?Z$"
+            },
+            "component_as_of_utc": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?Z$"
+            },
+            "component_available_at_utc": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?Z$"
+            },
+            "cutoff_rule_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "availability_rule_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "availability_status": {
+              "enum": [
+                "available",
+                "research_only",
+                "blocked"
+              ]
+            },
+            "restriction_codes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            }
+          }
+        },
+        "uniqueItems": true
+      },
+      "restriction_codes": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "uniqueItems": true
+      }
+    }
+  },
+  "validation_hardening_applied_at_utc": "2026-07-29T17:35:00Z",
+  "validation_hardening_source": "external_review_semantic_enforcement_incomplete",
+  "semantic_enforcement_rules": [
+    "validate every fixture against JSON Schema before semantic validation",
+    "require at least one component availability evidence entry for each core-four Information Object",
+    "block decision_safe rows when any required component is research_only or blocked",
+    "enforce coherent state_availability_status and state_replay_consumption_legality mapping",
+    "add governed publication latency to state_available_at_utc formula",
+    "allow PT0S only with zero_latency_candidate_replay_publication_policy_v0_1",
+    "enforce source_timestamp_utc <= component_as_of_utc <= decision_timestamp_utc",
+    "enforce component_as_of_utc <= component_available_at_utc <= state_available_at_utc",
+    "require row restriction_codes to include the union of component restriction_codes",
+    "require canonical UTC Z timestamp representation for *_utc fields",
+    "parse publication latency with ordered ISO-8601 day/time subset instead of relying only on regex"
+  ]
+}

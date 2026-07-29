@@ -1,0 +1,13 @@
+{
+  "expected_hash": null,
+  "expected_hash_matches": true,
+  "first_deterministic_output_hash": "1820998c3e3d5076c8bf462bf088743eef657d476e07388facb3a813115ab8c4",
+  "repeat_count": 2,
+  "second_deterministic_output_hash": "1820998c3e3d5076c8bf462bf088743eef657d476e07388facb3a813115ab8c4",
+  "semantic_hashes_match": true,
+  "status": "PASS",
+  "validation_statuses": [
+    "PASS",
+    "PASS"
+  ]
+}

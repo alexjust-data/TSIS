@@ -1,0 +1,404 @@
+{
+  "validation_id": "event_state_on_demand_incremental_lineage_chain_validation_v0_1_20260728T000000Z",
+  "validation_run_id": "event_state_on_demand_incremental_lineage_chain_validation_v0_1_20260728T112448Z",
+  "validation_gate": "event_state_on_demand_incremental_lineage_chain_validation_v0_1",
+  "script_version": "event_state_on_demand_incremental_lineage_chain_validation_runner_v0_1",
+  "validation_status": "CLOSED_PASS_EVENT_STATE_INCREMENTAL_LINEAGE_CHAIN_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION",
+  "source_review_id": "event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260728T000000Z",
+  "source_review_run_id": "event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260728T110845Z",
+  "decision": {
+    "validation_decision": "lineage_chain_validated_with_restrictions",
+    "requested_contexts": 15,
+    "represented_contexts": 14,
+    "baseline_origin_rows": 8,
+    "delta1_origin_rows": 3,
+    "delta2_origin_rows": 3,
+    "unavailable_contexts": 1,
+    "unaccounted_contexts": 0,
+    "duplicate_canonical_contexts": 0,
+    "missing_parent_refs": 0,
+    "row_identity_mismatches": 0,
+    "hard_validation_failures": 0
+  },
+  "checks": [
+    {
+      "check_id": "source_review_closed_pass",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "source_review_final": "CLOSED_PASS_EVENT_STATE_SECOND_GENERATION_INCREMENTAL_CANDIDATE_DATASET_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION",
+        "source_review_matrix": "CLOSED_PASS_EVENT_STATE_SECOND_GENERATION_INCREMENTAL_CANDIDATE_DATASET_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION"
+      }
+    },
+    {
+      "check_id": "gen2_run_closed_pass",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": "CLOSED_PASS_EVENT_STATE_SECOND_GENERATION_INCREMENTAL_EXTENSION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+    },
+    {
+      "check_id": "generation_fingerprints_match",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "baseline": "d5662103e1c45f90847b51e69b0e698243bde231758fa3c864e24c4a6839be33",
+        "gen1": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+        "gen2": "9a31d9b8bf3af01c1c4a5cd18a37309eec7b3cb41011501ab85e0ef4a4831746"
+      }
+    },
+    {
+      "check_id": "logical_generation_fingerprints_match",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "gen1": "73b2f81b76697eb67b55faffecd36c8e77ecf926c1c1f9e56cf6ee0e0ecb10f6",
+        "gen2": "b4774100b8ab27794e8d9a9205227c6e694442e8287b92bf5d899ec3a0b66f33"
+      }
+    },
+    {
+      "check_id": "requested_contexts_15",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": 15
+    },
+    {
+      "check_id": "represented_contexts_14",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": 14
+    },
+    {
+      "check_id": "baseline_origin_rows_8",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": 8
+    },
+    {
+      "check_id": "delta1_origin_rows_3",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": 3
+    },
+    {
+      "check_id": "delta2_origin_rows_3",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": 3
+    },
+    {
+      "check_id": "unavailable_contexts_1",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": 1
+    },
+    {
+      "check_id": "unaccounted_contexts_zero",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": 0
+    },
+    {
+      "check_id": "duplicate_canonical_contexts_zero",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": 0
+    },
+    {
+      "check_id": "duplicate_event_state_record_ids_zero",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": 0
+    },
+    {
+      "check_id": "missing_parent_refs_zero",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": 0
+    },
+    {
+      "check_id": "row_identity_mismatches_zero",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": 0
+    },
+    {
+      "check_id": "mandatory_record_lineage_fields_present",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": 0
+    },
+    {
+      "check_id": "market_state_dependency_fingerprints_by_generation_match",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "baseline": "433288b634924676a3c516fac600574ed36237c3c02ca640111f17609b6c235b",
+        "delta1": "5e8da235219628220bac462f342cab469fbd2a48d047eef0772cb5a2cffe893f",
+        "delta2": "f2cfd5cf55d0c1be1722693cc0216ffd425bbb869e19c17745976c030f2c7a2a",
+        "mismatches": 0
+      }
+    },
+    {
+      "check_id": "unavailable_context_has_no_partial_record",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": "event_type:market_data:session_opened|XNYS|2022-11-25|figi_share_class:BBG001S5N8T1|2022-11-25T14:30:00Z|session_opened_at_anchor_context_v0_1"
+    },
+    {
+      "check_id": "unavailable_context_identity_matches",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": "missing_exact_market_state_binding"
+    },
+    {
+      "check_id": "lineage_manifest_parent_and_delta_counts_match",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "run_id": "event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z",
+        "composition_mode": "parent_generation_1_validated_event_state_plus_delta_2_materialized_event_state",
+        "parent_generation_1_event_state": {
+          "parent_generation": 1,
+          "parent_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+          "parent_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+          "parent_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+          "parent_logical_event_state_dataset_fingerprint": "73b2f81b76697eb67b55faffecd36c8e77ecf926c1c1f9e56cf6ee0e0ecb10f6",
+          "parent_reuse_evidence_id": "event_state_incremental_overlap_reuse_evidence_v0_1_8f8cce3a344ac7dd",
+          "parent_reuse_evidence_fingerprint": "60965781a0bf42674c5521cb0e27f7643574ceb2e2bfbd46501da69be869507d",
+          "parent_records_reused": 11
+        },
+        "market_state_delta_dependency": {
+          "market_state_runtime_capability_id": "market_state_on_demand_runtime_capability_v0_1",
+          "market_state_dependency_mode": "emit_or_resolve_market_state_subrequest_through_runtime_capability",
+          "market_state_dependency_reuse_policy": "reuse_existing_validated_candidate_or_block_unless_separate_dependency_generation_authorized",
+          "market_state_reference_run_id": "market_state_on_demand_incremental_overlap_execution_v0_1_20260725T064143Z",
+          "market_state_dependency_request_fingerprint": "884830b081a2e9b8e5ea5130262600a20b01385a019a66ce3ad2240aac5b9b08",
+          "market_state_dependency_execution_plan_fingerprint": "c9ee1a63f9dd8780f16193adf43d35bb8db2271778a64afae2132e052931e746",
+          "market_state_candidate_dataset_fingerprint": "f2cfd5cf55d0c1be1722693cc0216ffd425bbb869e19c17745976c030f2c7a2a",
+          "market_state_scientific_dataset_fingerprint": "7103e4fdbae205e4bccbeb0c436508f62b016107b4b2756c549073dae971bb5f",
+          "market_state_validation_result_fingerprint": "9aafd142203872647a8be3668d0aca7c4f95630be4a405e00fd64f5cd111f336",
+          "market_state_delta_records_read": 3,
+          "direct_market_state_path_allowed": false
+        },
+        "row_origin_ledger": [
+          {
+            "context_key": "event_type:market_data:session_opened|XNYS|2021-01-19|figi_share_class:BBG001S5N8T1|session_opened_at_anchor_context_v0_1",
+            "context_status": "represented",
+            "origin_mode": "reused_validated_event_state",
+            "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+            "origin_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+            "origin_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+            "source_market_state_candidate_dataset_fingerprint": null
+          },
+          {
+            "context_key": "event_type:market_data:session_opened|XNYS|2021-01-19|figi_share_class:BBG001S6RSK0|session_opened_at_anchor_context_v0_1",
+            "context_status": "represented",
+            "origin_mode": "reused_validated_event_state",
+            "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+            "origin_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+            "origin_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+            "source_market_state_candidate_dataset_fingerprint": null
+          },
+          {
+            "context_key": "event_type:market_data:session_opened|XNYS|2021-01-19|figi_share_class:BBG001S8T7K0|session_opened_at_anchor_context_v0_1",
+            "context_status": "represented",
+            "origin_mode": "reused_validated_event_state",
+            "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+            "origin_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+            "origin_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+            "source_market_state_candidate_dataset_fingerprint": null
+          },
+          {
+            "context_key": "event_type:market_data:session_opened|XNYS|2021-03-15|figi_share_class:BBG001S5N8T1|session_opened_at_anchor_context_v0_1",
+            "context_status": "represented",
+            "origin_mode": "reused_validated_event_state",
+            "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+            "origin_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+            "origin_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+            "source_market_state_candidate_dataset_fingerprint": null
+          },
+          {
+            "context_key": "event_type:market_data:session_opened|XNYS|2021-03-15|figi_share_class:BBG001S6RSK0|session_opened_at_anchor_context_v0_1",
+            "context_status": "represented",
+            "origin_mode": "reused_validated_event_state",
+            "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+            "origin_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+            "origin_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+            "source_market_state_candidate_dataset_fingerprint": null
+          },
+          {
+            "context_key": "event_type:market_data:session_opened|XNYS|2021-03-15|figi_share_class:BBG001S8T7K0|session_opened_at_anchor_context_v0_1",
+            "context_status": "represented",
+            "origin_mode": "reused_validated_event_state",
+            "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+            "origin_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+            "origin_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+            "source_market_state_candidate_dataset_fingerprint": null
+          },
+          {
+            "context_key": "event_type:market_data:session_opened|XNYS|2022-11-25|figi_share_class:BBG001S5N8T1|session_opened_at_anchor_context_v0_1",
+            "context_status": "unavailable",
+            "origin_mode": "none",
+            "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+            "origin_dataset_id": null,
+            "origin_candidate_dataset_fingerprint": null,
+            "source_market_state_candidate_dataset_fingerprint": null
+          },
+          {
+            "context_key": "event_type:market_data:session_opened|XNYS|2022-11-25|figi_share_class:BBG001S6RSK0|session_opened_at_anchor_context_v0_1",
+            "context_status": "represented",
+            "origin_mode": "reused_validated_event_state",
+            "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+            "origin_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+            "origin_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+            "source_market_state_candidate_dataset_fingerprint": null
+          },
+          {
+            "context_key": "event_type:market_data:session_opened|XNYS|2022-11-25|figi_share_class:BBG001S8T7K0|session_opened_at_anchor_context_v0_1",
+            "context_status": "represented",
+            "origin_mode": "reused_validated_event_state",
+            "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+            "origin_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+            "origin_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+            "source_market_state_candidate_dataset_fingerprint": null
+          },
+          {
+            "context_key": "event_type:market_data:session_opened|XNYS|2023-03-20|figi_share_class:BBG001S5N8T1|session_opened_at_anchor_context_v0_1",
+            "context_status": "represented",
+            "origin_mode": "delta_2_materialized_event_state",
+            "origin_run_id": "event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z",
+            "origin_dataset_id": null,
+            "origin_candidate_dataset_fingerprint": null,
+            "source_market_state_candidate_dataset_fingerprint": "f2cfd5cf55d0c1be1722693cc0216ffd425bbb869e19c17745976c030f2c7a2a"
+          },
+          {
+            "context_key": "event_type:market_data:session_opened|XNYS|2023-03-20|figi_share_class:BBG001S6RSK0|session_opened_at_anchor_context_v0_1",
+            "context_status": "represented",
+            "origin_mode": "delta_2_materialized_event_state",
+            "origin_run_id": "event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z",
+            "origin_dataset_id": null,
+            "origin_candidate_dataset_fingerprint": null,
+            "source_market_state_candidate_dataset_fingerprint": "f2cfd5cf55d0c1be1722693cc0216ffd425bbb869e19c17745976c030f2c7a2a"
+          },
+          {
+            "context_key": "event_type:market_data:session_opened|XNYS|2023-03-20|figi_share_class:BBG001S8T7K0|session_opened_at_anchor_context_v0_1",
+            "context_status": "represented",
+            "origin_mode": "delta_2_materialized_event_state",
+            "origin_run_id": "event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z",
+            "origin_dataset_id": null,
+            "origin_candidate_dataset_fingerprint": null,
+            "source_market_state_candidate_dataset_fingerprint": "f2cfd5cf55d0c1be1722693cc0216ffd425bbb869e19c17745976c030f2c7a2a"
+          },
+          {
+            "context_key": "event_type:market_data:session_opened|XNYS|2024-03-11|figi_share_class:BBG001S5N8T1|session_opened_at_anchor_context_v0_1",
+            "context_status": "represented",
+            "origin_mode": "reused_validated_event_state",
+            "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+            "origin_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+            "origin_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+            "source_market_state_candidate_dataset_fingerprint": "5e8da235219628220bac462f342cab469fbd2a48d047eef0772cb5a2cffe893f"
+          },
+          {
+            "context_key": "event_type:market_data:session_opened|XNYS|2024-03-11|figi_share_class:BBG001S6RSK0|session_opened_at_anchor_context_v0_1",
+            "context_status": "represented",
+            "origin_mode": "reused_validated_event_state",
+            "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+            "origin_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+            "origin_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+            "source_market_state_candidate_dataset_fingerprint": "5e8da235219628220bac462f342cab469fbd2a48d047eef0772cb5a2cffe893f"
+          },
+          {
+            "context_key": "event_type:market_data:session_opened|XNYS|2024-03-11|figi_share_class:BBG001S8T7K0|session_opened_at_anchor_context_v0_1",
+            "context_status": "represented",
+            "origin_mode": "reused_validated_event_state",
+            "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+            "origin_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+            "origin_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+            "source_market_state_candidate_dataset_fingerprint": "5e8da235219628220bac462f342cab469fbd2a48d047eef0772cb5a2cffe893f"
+          }
+        ],
+        "official_dataset": false,
+        "production": false,
+        "downstream": false
+      }
+    },
+    {
+      "check_id": "semantic_scope_constant",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "profiles": [
+          "event_state_core_four_intraday_profile_v0_1"
+        ],
+        "event_types": [
+          "event_type:market_data:session_opened"
+        ]
+      }
+    },
+    {
+      "check_id": "authority_boundaries_closed",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "official_dataset": false,
+        "production": false,
+        "downstream": false
+      }
+    }
+  ],
+  "hard_validation_failures": 0,
+  "hard_validation_failure_ids": [],
+  "evidence": {
+    "lineage_chain_ledger_sha256": "ab9bdf990bbd5357234e118e889dae7991b15b94a2fd224ea720a1057d97261e",
+    "generation_chain": [
+      {
+        "generation": 0,
+        "role": "baseline",
+        "run_id": "event_state_on_demand_bounded_execution_v0_1_20260727T200322Z",
+        "candidate_dataset_fingerprint": "d5662103e1c45f90847b51e69b0e698243bde231758fa3c864e24c4a6839be33",
+        "record_count": 8,
+        "market_state_candidate_dataset_fingerprint": "433288b634924676a3c516fac600574ed36237c3c02ca640111f17609b6c235b"
+      },
+      {
+        "generation": 1,
+        "role": "incremental_delta_1_and_combined_generation_1",
+        "run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+        "candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+        "logical_event_state_dataset_fingerprint": "73b2f81b76697eb67b55faffecd36c8e77ecf926c1c1f9e56cf6ee0e0ecb10f6",
+        "record_count": 11,
+        "delta_origin_rows": 3,
+        "market_state_delta_candidate_dataset_fingerprint": "5e8da235219628220bac462f342cab469fbd2a48d047eef0772cb5a2cffe893f"
+      },
+      {
+        "generation": 2,
+        "role": "incremental_delta_2_and_combined_generation_2",
+        "run_id": "event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z",
+        "candidate_dataset_fingerprint": "9a31d9b8bf3af01c1c4a5cd18a37309eec7b3cb41011501ab85e0ef4a4831746",
+        "logical_event_state_dataset_fingerprint": "b4774100b8ab27794e8d9a9205227c6e694442e8287b92bf5d899ec3a0b66f33",
+        "record_count": 14,
+        "delta_origin_rows": 3,
+        "market_state_delta_candidate_dataset_fingerprint": "f2cfd5cf55d0c1be1722693cc0216ffd425bbb869e19c17745976c030f2c7a2a"
+      }
+    ],
+    "source_review_final_manifest_sha256": "cc7cd25ecf6a6aa5eacf5ca63b4ab71d02ee5ee0384ae0423445415c095018b8",
+    "gen2_final_manifest_sha256": "fa2aad84d0471f55c1910db2e93d14d7c2731f77408e4587b00ef5f1338b36a8",
+    "gen2_records_sha256": "ef3a190ab064a1fc4c372eea03719e3dc41d0e8877038934a07667580cd7ffb7",
+    "gen2_lineage_manifest_sha256": "10c86e28e50d3f40a15dcba8b595e4caf2f6de1673c52a0ad7195299bca28bf3",
+    "gen1_final_manifest_sha256": "830187958dcec0e1adc96f0662947213d8810baafb9f9a4a6f1eb7a495cc59d3",
+    "baseline_final_manifest_sha256": "ea306ac436b6fbbe88cd318ee349cc15a8cc1570b2e913416b80269f31443125"
+  },
+  "boundary_counters": {
+    "event_state_requests_created": 0,
+    "event_state_records_emitted": 0,
+    "event_state_materializer_executions": 0,
+    "market_state_materializer_executions": 0,
+    "source_market_data_rows_read": 0,
+    "registry_entry_mutations": 0,
+    "datasets_promoted": 0,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false
+  },
+  "next_allowed_gate": "event_state_on_demand_scale_validation_v0_1",
+  "validated_at_utc": "2026-07-28T11:24:48Z"
+}

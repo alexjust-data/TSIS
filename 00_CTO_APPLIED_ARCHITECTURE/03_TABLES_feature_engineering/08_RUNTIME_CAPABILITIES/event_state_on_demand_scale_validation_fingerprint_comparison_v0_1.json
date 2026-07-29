@@ -1,0 +1,11 @@
+{
+  "validation_id": "event_state_on_demand_scale_validation_v0_1_20260728T120123Z",
+  "physical_artifact_fingerprint": "0d2e3cc6911d0882cc32b292edaa8c674e6cda28f5b1d9b8535aa81b635bff12",
+  "logical_event_state_dataset_fingerprint": "04f2ffb5b4a4b6865529aaecc189b0b22c7e76976dc8344b714e08f9f5649e64",
+  "candidate_dataset_fingerprint": "363f9188c6cce6d41e3a414831bdc8d57b59e2b4b4a934b827acfab11a99b907",
+  "normalization_policy": "exclude run ids, timestamps, heartbeat and run-local paths from logical fingerprint; include event identity, bindings, row scientific fingerprints, dependency fingerprints, coverage ledger and restrictions",
+  "reused_lineage_chain_contexts": 14,
+  "scale_delta_materialized_contexts": 60,
+  "unavailable_contexts": 6,
+  "fingerprint_comparison_sha256": "4d893b6ef1e29c3b4e2badf20a39a1848b2318d7cff2a48b9c6cc7665cc8faed"
+}

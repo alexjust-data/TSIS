@@ -1,0 +1,512 @@
+[
+  {
+    "components": [
+      {
+        "category": "commission",
+        "currency": "USD",
+        "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+        "raw_amount": "1.00",
+        "rounded_amount": "1.00"
+      },
+      {
+        "category": "routing_or_ecn_fee",
+        "currency": "USD",
+        "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "regulatory_fee",
+        "currency": "USD",
+        "formula": "sell-side regulatory fee per-share or notional bps",
+        "raw_amount": "0.00",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "locate_fee",
+        "currency": "USD",
+        "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "borrow_fee",
+        "currency": "USD",
+        "formula": "ZERO_ONLY unless authorized borrow model",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "other_fee",
+        "currency": "USD",
+        "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      }
+    ],
+    "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-entry-open-ABAT:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+    "currency": "USD",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-entry-open-ABAT:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABAT-entry-open",
+    "total_cost": "1.00"
+  },
+  {
+    "components": [
+      {
+        "category": "commission",
+        "currency": "USD",
+        "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+        "raw_amount": "1.00",
+        "rounded_amount": "1.00"
+      },
+      {
+        "category": "routing_or_ecn_fee",
+        "currency": "USD",
+        "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "regulatory_fee",
+        "currency": "USD",
+        "formula": "sell-side regulatory fee per-share or notional bps",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "locate_fee",
+        "currency": "USD",
+        "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "borrow_fee",
+        "currency": "USD",
+        "formula": "ZERO_ONLY unless authorized borrow model",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "other_fee",
+        "currency": "USD",
+        "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      }
+    ],
+    "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-exit-close-ABAT:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+    "currency": "USD",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-exit-close-ABAT:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABAT-exit-close",
+    "total_cost": "1.00"
+  },
+  {
+    "components": [
+      {
+        "category": "commission",
+        "currency": "USD",
+        "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+        "raw_amount": "1.00",
+        "rounded_amount": "1.00"
+      },
+      {
+        "category": "routing_or_ecn_fee",
+        "currency": "USD",
+        "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "regulatory_fee",
+        "currency": "USD",
+        "formula": "sell-side regulatory fee per-share or notional bps",
+        "raw_amount": "0.00",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "locate_fee",
+        "currency": "USD",
+        "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "borrow_fee",
+        "currency": "USD",
+        "formula": "ZERO_ONLY unless authorized borrow model",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "other_fee",
+        "currency": "USD",
+        "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      }
+    ],
+    "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-entry-open-ABEO:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+    "currency": "USD",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-entry-open-ABEO:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABEO-entry-open",
+    "total_cost": "1.00"
+  },
+  {
+    "components": [
+      {
+        "category": "commission",
+        "currency": "USD",
+        "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+        "raw_amount": "1.00",
+        "rounded_amount": "1.00"
+      },
+      {
+        "category": "routing_or_ecn_fee",
+        "currency": "USD",
+        "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "regulatory_fee",
+        "currency": "USD",
+        "formula": "sell-side regulatory fee per-share or notional bps",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "locate_fee",
+        "currency": "USD",
+        "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "borrow_fee",
+        "currency": "USD",
+        "formula": "ZERO_ONLY unless authorized borrow model",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "other_fee",
+        "currency": "USD",
+        "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      }
+    ],
+    "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-exit-close-ABEO:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+    "currency": "USD",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-exit-close-ABEO:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABEO-exit-close",
+    "total_cost": "1.00"
+  },
+  {
+    "components": [
+      {
+        "category": "commission",
+        "currency": "USD",
+        "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+        "raw_amount": "1.00",
+        "rounded_amount": "1.00"
+      },
+      {
+        "category": "routing_or_ecn_fee",
+        "currency": "USD",
+        "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "regulatory_fee",
+        "currency": "USD",
+        "formula": "sell-side regulatory fee per-share or notional bps",
+        "raw_amount": "0.00",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "locate_fee",
+        "currency": "USD",
+        "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "borrow_fee",
+        "currency": "USD",
+        "formula": "ZERO_ONLY unless authorized borrow model",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "other_fee",
+        "currency": "USD",
+        "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      }
+    ],
+    "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-entry-open-ABSI:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+    "currency": "USD",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-entry-open-ABSI:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABSI-entry-open",
+    "total_cost": "1.00"
+  },
+  {
+    "components": [
+      {
+        "category": "commission",
+        "currency": "USD",
+        "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+        "raw_amount": "1.00",
+        "rounded_amount": "1.00"
+      },
+      {
+        "category": "routing_or_ecn_fee",
+        "currency": "USD",
+        "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "regulatory_fee",
+        "currency": "USD",
+        "formula": "sell-side regulatory fee per-share or notional bps",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "locate_fee",
+        "currency": "USD",
+        "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "borrow_fee",
+        "currency": "USD",
+        "formula": "ZERO_ONLY unless authorized borrow model",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "other_fee",
+        "currency": "USD",
+        "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      }
+    ],
+    "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-exit-close-ABSI:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+    "currency": "USD",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-exit-close-ABSI:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABSI-exit-close",
+    "total_cost": "1.00"
+  },
+  {
+    "components": [
+      {
+        "category": "commission",
+        "currency": "USD",
+        "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+        "raw_amount": "1.00",
+        "rounded_amount": "1.00"
+      },
+      {
+        "category": "routing_or_ecn_fee",
+        "currency": "USD",
+        "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "regulatory_fee",
+        "currency": "USD",
+        "formula": "sell-side regulatory fee per-share or notional bps",
+        "raw_amount": "0.00",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "locate_fee",
+        "currency": "USD",
+        "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "borrow_fee",
+        "currency": "USD",
+        "formula": "ZERO_ONLY unless authorized borrow model",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "other_fee",
+        "currency": "USD",
+        "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      }
+    ],
+    "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-entry-open-ABTC:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+    "currency": "USD",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-entry-open-ABTC:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABTC-entry-open",
+    "total_cost": "1.00"
+  },
+  {
+    "components": [
+      {
+        "category": "commission",
+        "currency": "USD",
+        "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+        "raw_amount": "1.00",
+        "rounded_amount": "1.00"
+      },
+      {
+        "category": "routing_or_ecn_fee",
+        "currency": "USD",
+        "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "regulatory_fee",
+        "currency": "USD",
+        "formula": "sell-side regulatory fee per-share or notional bps",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "locate_fee",
+        "currency": "USD",
+        "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "borrow_fee",
+        "currency": "USD",
+        "formula": "ZERO_ONLY unless authorized borrow model",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "other_fee",
+        "currency": "USD",
+        "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      }
+    ],
+    "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-exit-close-ABTC:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+    "currency": "USD",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-exit-close-ABTC:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABTC-exit-close",
+    "total_cost": "1.00"
+  },
+  {
+    "components": [
+      {
+        "category": "commission",
+        "currency": "USD",
+        "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+        "raw_amount": "1.00",
+        "rounded_amount": "1.00"
+      },
+      {
+        "category": "routing_or_ecn_fee",
+        "currency": "USD",
+        "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "regulatory_fee",
+        "currency": "USD",
+        "formula": "sell-side regulatory fee per-share or notional bps",
+        "raw_amount": "0.00",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "locate_fee",
+        "currency": "USD",
+        "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "borrow_fee",
+        "currency": "USD",
+        "formula": "ZERO_ONLY unless authorized borrow model",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "other_fee",
+        "currency": "USD",
+        "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      }
+    ],
+    "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ACB-entry-open-ACB:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+    "currency": "USD",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ACB-entry-open-ACB:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ACB-entry-open",
+    "total_cost": "1.00"
+  },
+  {
+    "components": [
+      {
+        "category": "commission",
+        "currency": "USD",
+        "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+        "raw_amount": "1.00",
+        "rounded_amount": "1.00"
+      },
+      {
+        "category": "routing_or_ecn_fee",
+        "currency": "USD",
+        "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "regulatory_fee",
+        "currency": "USD",
+        "formula": "sell-side regulatory fee per-share or notional bps",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "locate_fee",
+        "currency": "USD",
+        "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "borrow_fee",
+        "currency": "USD",
+        "formula": "ZERO_ONLY unless authorized borrow model",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      },
+      {
+        "category": "other_fee",
+        "currency": "USD",
+        "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+        "raw_amount": "0",
+        "rounded_amount": "0.00"
+      }
+    ],
+    "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ACB-exit-close-ACB:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+    "currency": "USD",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ACB-exit-close-ACB:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ACB-exit-close",
+    "total_cost": "1.00"
+  }
+]

@@ -1,0 +1,188 @@
+00:00:00 - 00:00:43
+Hola, tradiders, ¿qué tal? Bienvenidos a un nuevo vídeo. Como veis, estamos en las oficinas de Serers San Sistemas para seguir con una de las series de vídeos que más me habéis pedido. Eh, la verdad, eh, ha sido algo que me ha ilusionado mucho porque creo que a todos nosotros los que estamos aquí nos interesa mucho continuar con esta serie de vídeos, con este videoblog en el que vamos a intentar ser traders de smallcups de 0 a 100. Sabéis que el mercado de las smallcaps es un mercado que cada vez
+
+00:00:22 - 00:01:06
+está más efervescente, cada vez hay más interés por el público general, cada vez hay más traders que quieren dedicarse a las smallcups y de ahí a que pensamos que sería interesante eh contar, colaborar con Sersan Sistemas, con un equipo de traders profesionales que para quien no los conozcáis, aquí tenéis su track record que os dejo en pantalla, que por cierto están haciendo máximos, así que es un buen momento para poder hablar con ellos, ver cómo han avanzado en todo este proceso. llevamos aproximadamente unos 2 meses sin grabar
+
+00:00:44 - 00:01:36
+eh los avances que han tenido y así podemos eh poner un poco las cartas sobre la mesa para ver en qué punto están, cómo están en sus sistemas de Small Caps. Vamos a ver si han conseguido desarrollar alguna estrategia o algún avance que realmente eh nos pueda ayudar a entender cómo funciona esto. Y así que sin más espero que os guste y os dejo con el vide traders. Okay, Sergi, cuéntanos un poco cómo está el tema en las smalls. Pues nada, hola, antes que nada, bienvenidos aquí a las oficinas de salistemas,
+
+00:01:10 - 00:02:01
+que bueno, como decía Víctor, hemos estado dos semanas, dos semanas no, dos meses sin grabar porque las vacaciones realmente cuesta concibir todos el equipo y siempre todo lo que tiene que ver con desarrollo se rentiza un poco, se frena y no quiere decir que no hayamos trabajado, hemos seguido trabajando, pero a menor ritmo. Y bueno, la verdad es que tengo bastante buenas noticias. Tengo bastante buenas noticias, eh, pero bueno, vamos a ir dejándolo un poco para a medida que grabamos el vídeo, pero tenemos buenas
+
+00:01:35 - 00:02:26
+noticias, hemos avanzado bastante y ya estamos tratando de eh de ultimar lo que es la conexión al broker para eh probarlo en realos back test que tenemos pues en realan, que es lo que importa realmente. O sea, la idea está en que en ese tiempo lo que habéis hecho es intentar hacer que la configuración que habéis desarrollado con los sistemas se pueda aplicar en el broker que utilizáis. ¿Habéis cambio de broker? Porque recuerdo que la última vez había problemas con trade station. Sí, hemos salido, si quieres
+
+00:02:01 - 00:02:55
+recapitulamos un poco, si te parece, realmente hemos salido muchos problemas porque hemos intentado back testear nuestro ecosistema. Ahí ha sido realmente complicado por un tema de recursos porque pues bueno, este tipo de acciones, como ya seguramente sabéis todos, son acciones pues tremendamente volátiles. Eh, esto nos obliga prácticamente a hacer un back test en un minuto, quiere decir que en un minuto pues tienes que conseguir un montón de datos de muchas gigas porque además son muchísimas acciones.
+
+00:02:29 - 00:03:30
+Entonces, para hacer un back test, podemos decir relevante, serio, pues eh la cantidad de información que se maneja en el backtest es muy grande y esto pues complica un poco el manejo de de información, ¿no? El el prueba error, el hacer un back test, ver cómo va, hacer un cambio, pues realmente todo es mucho más lento, ¿no? Entonces hemos ideado un mecanismo mixto donde hemos conseguido los datos a través de Python, eh de fuentes como Polygon y otras. Eh, hemos eh complementado o hemos mantenido el back test vía más que tre
+
+00:02:59 - 00:04:02
+station en multicharge, que es un poquito más eficiente, o que también aquí hemos tenido problemas, pero realmente va mejor que que trai un un motor que hemos gideado eh, que bueno, de hecho, seguimos trabajando y mejorando cosas en este en Python, ¿vale? Vale. Y sí que la conexión a mercado, pues eh esto sí que prácticamente siempre eh ha estado ya encima de la mesa ir vía eh vía una API con un broker. Hay varios eh vía DAS, que es lo que realmente usan prácticamente todos los eh traders de de Small Caps. Eh DAS
+
+00:03:30 - 00:04:32
+tiene API, es decir, en principio esto tampoco, bueno, no plantea, o sea, plantea problemas, pero quiere decir que son pues eh solucionables. Al final no es más que eh programarlo, idearlo y demás. Y lo más complicado, como decía, es poder tener este back test eh bien hecho, ¿no? Tenemos ya varias eh pruebas, seguimos, por supuesto, eh probar no se acaba nunca, pero sí que ya tenemos alguna estrategia que tiene realmente muy buen aspecto, que creemos que que subactés es bueno, creemos que es reproducible, que es operable, hemos
+
+00:04:01 - 00:05:03
+hecho todas las pruebas que nosotros solemos hacer y creemos que es lo suficientemente sólida para ya probarlo pues eh de verdad, ¿no? en el mercado, que es donde donde hay que que probarlo. Y ahí ahora pues ya te digo, estamos ya en toda esta parte de de Collectional Broker vía vía DAS, programando la la API. Perfecto. Bueno, ya conocéis a Isaac, ha salido en algún otro vídeo. Eh, realmente él es el que mejor programa en Python de la compañía, aunque Alberto también también sabe, pero pues Isaac es especialista y
+
+00:04:32 - 00:05:35
+es el que sobre todo está encargado de este proyecto de de small caps, concretamente de la operativa en real o de diseñar todo el interface y las conexiones con, como os decía antes con DAS, lo que es la plataforma eh más usada para el trading Small Camps. Y bueno, pues él, ya digo, está trabajando en ello. No sé si puede explicarnos un poco pues eh qué problemas estamos teniendo, cómo está yendo el tema, ¿no? Los mayores problemas los hemos tenido con la adquisición de datos y y procesamiento de estos datos para que nos pudiéramos
+
+00:05:03 - 00:06:06
+trabajarlos con Multichar y R Station. han sido unos cuantos, eh, pero no te los vas encontrando sobre la marcha, vas encontrando los problemas que que te van surgiendo y a lo mejor sobre el backp, el tema de la plataforma para trabajar, ¿no? del del Workframe para trabajar con DAS, tenemos bastante código bien hecho. dentro de poco ya podemos empezar a hacer ya pruebas en en real, bueno, en real simulado, pero empezar a programar ya estrategias, es decir, tenemos un Warframe bastante bastante completo.
+
+00:05:36 - 00:06:25
+Qué bueno. Entonces, ya podemos empezar a trabajar ya. Genial, genial. Eh, empezaremos con alguna estrategia muy simple, muy simple para probar, ¿no?, el tipo de conexión y cómo tenemos que acabar realizándolo. Pero bueno, la idea es poder trabajar en múltiples estrategias, múltiples activos y todo, todo a la vez. Es que mucha gente eh, no sé si lo visteis, pero en los blogs normalmente en los comentarios decían que cómo ibais a hacer para eso, ¿no? Para solventar los problemas que os habéis encontrado a la hora de no ser
+
+00:06:00 - 00:06:56
+híbridos a hora de operar, ¿no? Que fueseis totalmente algorítmicos. Pero la operativa, la operativa en sí, que es lo que la gente teme más, nunca nos ha parecido que fuera lo más problemático. Eh, como decía Isaac, de esto, de hecho, hasta hay código ya hecho, es decir, al final eh hay API, en principio, todo esto está bastante estandarizado, ¿de acuerdo? Eh, y hay que probarlo, por supuesto, igual que que hemos tenido problemas en las estrategias, pues ahora hay que ver si no hay otros problemas
+
+00:06:28 - 00:07:38
+que no hemos caído, pero en principio pues es probar la ejecución, probar qué tal funcionan eh la latencia, todo este tipo de cosas operativas, pero no creemos que ahí haya demasiado problema. es más problema, lo que decíamos en en el manejo de información, en el el back test, en conseguir todos estos datos fiables del pasado. Veremos cuando llegamos porque, como decía antes, hasta ahora hemos salido el verano que nos ha Ahora tenemos otra cosa que es la quedada de Reus el 18 de octubre y esto por supuesto pues también eh supone
+
+00:07:03 - 00:08:01
+un freno a determinadas más a equipo de marketing, pero bueno, pero un poco al final una presa pequeña todos tenemos que aportar y realmente un poco también nos frenará lo que lo que es la quedada, pero bueno, esperamos tenemos fe, tampoco queda tanto, pero tenemos fe en que cuando estemos en la quedada tengamos algo ya un poco que enseñar. Veremos, veremos si podemos enseñar algo en la quedada o no. No puedo todavía garantizarlo, pero la idea sería eso, ¿no? Llegar a la quedada con algo que enseñar respecto a a la operativa de
+
+00:07:32 - 00:08:23
+Small Camps en en la en nuestra ponencia, ¿no? Que por cierto, ya que lo mencionas, os recuerdo a todos que, como veis aquí en pantalla, el 18 de octubre en Reus, en la ciudad en la que vivimos, estamos ahora aquí en las oficinas de Sansan Sistemas, está la quedada anual eh montada por Sansan Sistemas y Extrader para poder eh asistir a ponencias, ¿no? poder ver a de diferente índole o disciplina haciendo sus ponencias, sus charlas y además lo más importante que creo que todos compartimos es que podamos eh comer,
+
+00:07:57 - 00:08:55
+charlar, conocernos y romper un poco la barrera que hay en las redes sociales. Así que yo creo que todo el mundo que pueda ir que vaya porque de verdad que será increíble. Yo os lo recomiendo, la verdad, porque es, como decías, un evento bastante único en el sentido de que se reúnen amaters, profesionales, gente, traders que lleva ya años operando, que es rentable, gente que no, que está empezando y todos al final compartimos un día eh hablando todos entre nosotros, como decías, eh charlando, comiendo, cenando, algunos
+
+00:08:25 - 00:09:21
+tomando copas también y y también oyendo ponencias de de traders que operan, ¿no? Así que yo os lo recomiendo. será aquí en Reus. El año pasado llegamos a 150 personas. Eh, a ver si este año llegamos a las 200, que creemos que va a ser fácil conseguirlo porque notamos muchísima, muchísima demanda y muchísima expectación. Eh, no sé si cuando se publique el vídeo las entradas ya habrán salido, pero estará ahí la cosa. Estará la cosa estará ahí, ahí porque están a puntito, a puntito de salir. Eh, la última vez me
+
+00:08:54 - 00:10:06
+hablasteis de que teníais, habíais desarrollado algún tipo de estrategia de largos en este caso. ¿Cómo está la situación? Bueno, tenemos alguna cosita de largos. Eh, por cierto, bienvenidos a mi sala de máquinas. Eh, sí, en el anterior vídeo vimos ya alguna estrategia de largos. Eh, está bien, tenemos una estrategia que funciona largos, que ya es mucho porque en todo este territorio de microcaps o small caps realmente eh el lado fácil es el corto, ¿de acuerdo? El lado fácil es un poco al revés. renta variable. Lo que renta
+
+00:09:30 - 00:10:25
+variable es fácil ganar, ¿no? En el lado largo y difícil en el corto. Aquí ocurre un poco lo contrario. Es más fácil eh ganar en el corto que en el largo, que no quiere decir que no haya riesgo y que y que no tenga sus problemas. Eh, de hecho, hay hay traders que no hacen cortos dentro de Smoke Cups y también hay que no hacer largos, ¿vale? Hay de los dos tipos de traders y también hay que hacen de todo, eh, pero sí, sí, pero quiero decir que sí que es más fácil en el sentido de que es más sencillo encontrar una ventaja,
+
+00:09:57 - 00:10:48
+¿vale? porque las acciones tienden a caer y por lo tanto pues es más fácil ganar en el lado corto, pero también hay muchísimo riesgo porque cuando una acción de estas rebota y está a lo mejor a yo que sé a 020 imagínate o a 1 a 1 € pues a lo mejor de pronto suben un 200% o 300% si tú estás corto pues tienes un problema, evidentemente. Entonces y esto pasa, o sea, no es algo que que no pase, es algo que pase. Entonces, pero por arriba no tienes techo. Claro, para arriba no hay techo. Efectivamente,
+
+00:10:22 - 00:11:25
+para arriba no hay techo. Entonces, realmente hay muchísimo riesgo, pero es verdad que las estadísticas son muy muy claras de ya digo, la ventaja es muy clara en el lado corto, es decir, poniéndote corto casi continuamente acabas en acciones que suben acabas ganando mucho más en la mitad de las veces, ¿vale? El problema es que las que no lo hacen, pues hay que vigilarlas porque te puedes romper, ¿no? Pero pero bueno, la ventaja es más sencilla. Eh, por eso la dejamos para el final, ¿no? La dejamos para el final. Y
+
+00:10:54 - 00:11:42
+si efectivamente tenemos eh tenemos ya cosas muy interesantes en el lado corto, pero hay muchas cosas que, por ejemplo, recuerdo que cuando hablábamos de de los largos también hablábamos de que claro, en el corto hay que calcular lo cases, hay que saber más o menos cómo cómo habéis enfrontado todo eso, es decir, cómo desarrolláis una estrategia en corto sistemática. En lo que al final en el caso del tren olímico, la única manera, bueno, la única no, pero una de las maneras de plantearlo es via eh
+
+00:11:18 - 00:12:15
+incorporado como una penalización como comisione. De acuerdo. Eh, he mirado la media más o menos o algo así. cómo la media de lockage que tiene exactamente como pues hemos tenemos digamos varios amigos en el mundillo y pues hemos preguntado y tal y tenemos ahí unas unas valoraciones, ellos pues bueno, tienen tienen referencias, si no recuerdo mal ahora ellos, por ejemplo, más de un 1% no las cogen o no sé si hablo de memoria, pero creo que iba por ahí la cosa. Yo, hay una serie de baremos y esto sí
+
+00:11:47 - 00:12:44
+que evidentemente lo comentamos antes, es lo que una de las partes que que antes decía de prueba error, ¿no? Real, ¿no? decir, evidentemente ahí nos falta la experiencia eh nos falta la experiencia de la operatividad real, que es muy importante. Tratamos de aprovecharla de los eh compañeros que que nos lo quieren contar, ¿no? Que hay afortunadamente muchos, eh, pero evidentemente pues habrá que ver la nuestra, ¿no? Porque cada estrategia pues puede tener su matiz en ver a cómo gestionamos eso, ¿no?
+
+00:12:15 - 00:13:20
+Perfecto. ¿Y qué tenéis entonces? A ver, las estrategias. Bueno, tenemos eh tenemos aquí una estrategia que evidentemente podemos contar lo que podemos contar porque si no pues tendríamos que matarlos a todos, no sería no sería plan ahora aquíes, pero pero bueno, pero básicamente sí que sí que como decía, no hay mucho secreto y la mayoría de de estas estrategias se basan en eh en el momento que las acciones explotan al alza o tienen un movimiento relevante al alza con volumen para muchas Muchas
+
+00:12:47 - 00:13:50
+veces se usa un C, pero es igual. En definitiva, es cuando una acción de pronto sube mucho y tiene volumen, ¿de acuerdo? tiene volumen fuerte y cumple pues los requisitos que ya sabemos o que ya hemos hablado otras veces, pues tiene menos eh capitalización de un determinado valor, tiene un free flow tanto, tiene el precio está entretado, o sea, una serie de requisitos un poco que ya con el que ya filtramos el universo, que esto ya es un poco, te diría que incluso son comunes a largo corto, ¿no? Simplemente
+
+00:13:18 - 00:14:18
+es ya para cerrar un poco el mercado porque recordar buscamos aquellas acciones que se me entienda que son basura, ¿de acuerdo? Son acciones que tienden a caer porque tienen problemas de financiación porque vale, son acciones que que que normalmente son ya pues muy pequeñas, ¿vale? Si empiezas a ir para arriba y ya las coges más grandes, de pronto ya no son bajistas, entonces ya son alcistas, entonces ya se invierte un poco el tema, ¿no? Entonces esto hay un un nivel que son 300, 500 millones, bueno, que que si
+
+00:13:48 - 00:14:39
+tú miras gráficos y gráficos, pues ves que son acciones bajistas, acciones que caen y caen y caen. Vale. Sí. Además, también os recuerdo que os dejo aquí encima en el segundo vídeo creo ya miramos un poco el tema del escáner de cómo programar todo esto. Entonces son son criterios básicos que todo el mundo sigue. Esto es ya solo lo que es el filtrado, ¿vale? Una vez pasado esto, ya te digo, es dentro de este universo, acciones que de pronto explotan. Una vez eh pues eh seleccionado este universo,
+
+00:14:13 - 00:15:08
+ya te digo, la mayoría de de operativas, o al menos las que nosotros hemos visto y por lo tanto hemos empezado a explorar, pues eh son acciones que de momento, en un momento dado explotan al alza, ¿vale? Tiene una subida muy fuerte, siempre con mucho volumen, como veis aquí, ¿de acuerdo? Mucho volumen y a partir de ahí hay que buscarle el corto, ¿de acuerdo? Hay que buscar el corto lógicamente cuando vuelva, ¿vale? Ahí ahí está un poco la el quit de la cuestión. Cuando vuelve, ¿te refieres a que haga un pam, ¿no? Que
+
+00:14:41 - 00:15:33
+suba y luego un poco de dam, ¿no? De Exacto. Pues hay pues yo que sé, una caída, una vuelta, puedes buscar un doncha, una media, indicadores, es decir, al final hay eh pero en definitiva es algo parecido a que veis aquí, es decir, la acción de Brontos sube mucho y yo esta acción aquí si fuera discrecional pues ya la tendía rado. Decir, a ver, a cuándo me pongo corto. Ya, ¿de acuerdo? ¿Cuándo me pongo corto? Porque claro, puede parar aquí o puede parar aquí arriba. Claro, claro. Total. Sí, sí. Entonces,
+
+00:15:07 - 00:16:16
+ahí está el problema de cuándo le buscas el corto y ahí está un poco aquí este es un ejemplo solo, eh, una acción que tenemos aquí, tres trades, luego os enseño back test. Aquí tenemos tres trades, dos buenos y uno malo. Es aquí lo mismo, ¿ves? Explosión bestial de volumen. ¿Ves? Una explosión bestial de volumen aquí sube, sube, sube. Fíjate que viene pues desde 180 está por ahí. 180 por ahí. Pum. Se nos planta en eh en 960, un 80 nada más. Nada más ha multiplicado por por siete, por seis o siete ha multiplicado y ahí
+
+00:15:42 - 00:16:38
+dices, "Bueno, pues busco corto." Y aquí pues nos ponemos cortos automáticamente, ¿de acuerdo? con una señal y aquí pues hay diferentes criterios para para salir. Seguimos trabajando en ello. Eh, ya te digo, de hecho hace poco probamos uno, probamos otro, es decir, eh la entrada sí que es tan sencillo, como te digo, es decir, tras una explosión de volatilidad de volumen fuerte, eh una fuerte subida o un gap de más de n%, automáticamente le buscas el corto. ¿Cuándo? Pues ya te digo, cuando se
+
+00:16:10 - 00:16:58
+gira. Ya. ¿Cómo se gira? Pues ahí hay que hay que valorar distintas maneras. Claro, esto es lo que me parece, creo, la clave del vídeo, porque mucha gente creo que en este punto estará escuchando esto, y es que esto tiene sentido en este mercado concreto, porque eh todos sabemos que en muchos otros mercados el recorrido puede continuar, esos esos retrocesos tan grandes que acaben en cierre no ocurren. Aquí tenemos la estadística de ese 80% 70 y pico% de de small cap se acaban cerrando eh negativos al cabo del día y
+
+00:16:34 - 00:17:33
+es lo que te da, ¿no? Directamente. Sí, creo, si no recuerdo mal, hablo de memoria que las las acciones que tienen un gap de más del 100%, si no recuerdo mal, eh 76% por ahí acaban acaben devolviendo. Entonces, claro, de ahí a que el setup es importante, pero ya la idea base ya sustenta un poco la la operativa. Sí, la idea, la ventaja es eso, que una acción que que subyce una debilidad que y que son acciones bajistas de largo plazo porque tienen un problema, pues cuando por lo que sea explotar la lanza, pues
+
+00:17:02 - 00:18:04
+automáticamente ahí yo me pongo atento para entrar corto. De acuerdo. Esa es un poco la idea que subyace y a partir de ahí, ya te digo, es más es más fácil mucho más que el largo por lo que tú comentabas, porque aunque hay otros traders que que buscan, por ejemplo, tras un movimiento así alguna consolidación y puede entrar largo aquí, eh, o sea, perfectamente esta misma estrategia tú podías ahora esperar aquí, entrar mejor largo y con esto obceñido aquí, es decir, eh, bueno, no sé si curiosamente o no, pero
+
+00:17:34 - 00:18:22
+tanto el largo como el corto se basan bastante en estas explosiones, ¿de acuerdo? Es decir, cuando hagan estas explosiones le buscan el largo o el corto. Es decir, si es el corto es para volver, si es el largo es para continuar. Lógicamente la mayoría vuelven como tú decías, pero también hay otras que no, que no vuelven y alargan más el movimiento. A lo mejor vuelven, pero vuelven otro día o de aquí 5co días o de aquí. Es eso. Entonces, de momento, pues tratan de explotarle, de explotar largo. De hecho,
+
+00:17:58 - 00:18:59
+aquí mismo, eh, en este pequeño ejemplo, aquí se dan las condiciones, entra, pum, y salta el stop, no vuelve, ¿ves? Este, eso hubiera sido bueno el largo quiero decir, aquí tú entras corto, se da las condiciones para entrar corto, pero finalmente pues no, porque el stop en este tipo de operativas tiene que estar en el máximo que ha generado. Bueno, hay varias. Esta en concreto que dices aquí efectivamente es bastante claro, está en el máximo, pero también ahí, o sea, ya te digo, donde más donde más trabajo estamos ahí
+
+00:18:28 - 00:19:21
+investigando y donde creo incluso que es probable que aún hayan cambios, incluso pueden haber varias funcionando, ¿de acuerdo? Es decir, las salidas, ¿de acuerdo? Es decir, al final tú puedes jugar en varias salidas. Puedes ir a un stop como en este caso al máximo. Puedes a lo mejor usar trailing, puedes usar TP, puedes no usarlo. Eh, hay hay varias alternativas, ¿de acuerdo? Todas con sus ventajas y desventajas, ¿no? Claro, yo he visto mucho que al cierre normalmente esperan al final del día. Al
+
+00:18:56 - 00:19:45
+cierre del día. Claro, al cierre al final aquí lo normal es salir. Sí, sí. Eso que incluso por lo que he escuchado y por lo que he hablado que te puede llegar a dar ventaja porque a largo plazo la media sale más positiva cerrando al final del día que no intentando salir antes para intentar movimientos muy bruscos porque la mayoría de las veces te puede llegar a sacar incluso, ¿no? Sí, aquí, o sea, la verdad que aquí el cuerpo, teniendo en cuenta esta información que que decíamos la base, aquí el cuerpo te
+
+00:19:19 - 00:20:12
+pediría eh te pediría dejar la correra. Claro, tú me entiendes. Es decir, es decir, igual es un poco al revés que que una acción que Apple, ¿no? O que o que Google o cualquier otra acción, ¿no? Es decir, normalmente que buscas esa acción que corran, ¿no? En el lado largo, ¿no? Aquí si son acciones que sabemos porque es que nada más hace falta que darse una vuelta por acciones random abriendo gráficos y vas viendo que son auténticas de bacles. O sea, no no es que son bajistas, o sea, son más bajistas que
+
+00:19:46 - 00:20:45
+Amazon alcista para entendernos, ¿vale? Cuando Amazon es una locura o envidia al alza, pues estas abajo aún son más, ¿vale? Entonces son locuras a la baja. Entonces, aquí si yo me pudiera quedar corto. Total, pero el riesgo es muy grande. Claro, claro, claro. El riesgo es muy grande porque claro, luego al día siguiente puede venir con un 200% deza porque rebota o o a o te la cierran. Hay mucho riesgo. Destrozan la cuenta. Hay mucho riesgo. Entonces, no es una locura. A lo mejor si tú tienes un portfolio grande de estrategias,
+
+00:20:16 - 00:21:13
+imagínate, ¿no? Tienes un portfolio grande de estrategias y destinas un porcentaje de la cuenta ínfimo a hacer eso, a lo mejor te daría, pero realmente a mí solo lo veo viable de manera algorímica eso, ¿me entiendes? Porque porque algorímicamente no es tan complicado tener 20 estrategias. Bueno, discrecionalmente es un poco más complicado gestionar 20 estrategias que tienes. Entonces, si tú algorímicamente consigues tener un portfolio muy variado de estrategias largas, cortas, donde sientas salidas
+
+00:20:44 - 00:21:43
+dentro de ese portfolio, eh estoy prácticamente convencido, me jugaría algo a que en dentro de ese portfolio cabría una estrategia de este tipo, cabría una estrategia swing en tendencia. Sí, sí, seguramente con un porcentaje muy pequeño y asumiendo que esa estrategia de vez en cuando tendría desastres bíblicos. Total, total. Pero bueno, sí, pero para ir retirando quizás eh vas retirando, dejas capitán quizás no y que tendría muchos aciertos, o sea, porque al final eh tendía muchos, bueno, tendía algún fallo eh tendría un
+
+00:21:14 - 00:22:10
+fallo muy grande, pero tenía unos grandes grandes aciertos y y como como decía, dentro de un portfolio que habrían otras estrategias que compensaran ese problema en ese momento concreto, podría tener sentido, pero es complicado y hay que abordarlo solo, como te digo, ya dentro de un portfolio grande, diversificado, eh, no de inicio porque porque aquí de inicio pues el controlar el riesgo es básico y el riesgo es gigantesco. O sea, ese es uno de los temas que creo que ya hemos comentado en los vídeos. Es decir, eh,
+
+00:21:42 - 00:22:42
+de hecho, yo yo yo a nosotros nos ha llegado gente ya eh de nuestra formación que que seguro conocéis porque Víctor habla muchas veces de ella, que ha intentado ser rentable en SMS y lo ha conseguido. O sea, quiero decir que tú siempre en en el en general en la vida, pero en el trading en especial hay un sesgo de supervivencia gigantesco. Las redes sociales, poca gente. Es verdad que hay muchos profesionales que eh bueno, es que que de vez en cuando enseñan eh partes negativas, pero aún así ellos son
+
+00:22:12 - 00:23:11
+los rentables, ¿sabes? Los que realmente no han conseguido ser rentables, no no suelen explicarlo, no suelen explicarlo. Entonces hay mucha gente que no consigue manejarse en este en este esquizofrenia de mercado porque es una locura. S es muy volatil total. Aquí pestañas tienes en discrecional hay que tener un estómago, una mentalidad, una psicología muy preparada. Y evidentemente muchos lo consiguen, pero muchos más no. Como pasa en futuros, como pasa en otros sitios. que al final las entrevistas que se realizan
+
+00:22:41 - 00:23:36
+o los vídeos que se hacen o la gente que habla normalmente son la gente que ha tenido éxito. Siempre la historia siempre lo cuentan los ganadores en todo, en cosa las guerras, en todo, ¿no? La historia lo cuenta siempre el ganador, ¿no? Entonces, al final esto ocurre y ya te digo, nosotros ya conocemos casos así y por lo tanto hay que decirlo, es un mercado extremadamente rentable, es un mercado donde hay muchas oportunidades. Es verdad lo que cuentan estos traders de que ellos pues están ganando mucho
+
+00:23:08 - 00:24:12
+dinero y que lo recomiendan. Es verdad, pero eso no exime de que haya un riesgo enorme, que mucha gente no lo consigue y y no lo consigue como siempre porque minus valoran el riesgo. Porque el riesgo sí sí lo lo cuando te hablan de él lo ves en un papel bien, ¿no? Vale, vale, pero es muy distinto a sufrirlo, ¿sabes? Es decir, cuando realmente lo sufres en la carne y un día pues te mete un palo de estos y luego otro y tal y al día siguiente tienes que salir a operar. He visto yo, por ejemplo, uno eh
+
+00:23:40 - 00:24:34
+que que tú lo has entrevistado no hace mucho, Celidado, yo tuve la ocasión de conocerlo en persona no hace mucho ahí en Málaga, un encanto de tío y él lo cuenta muchas veces, ¿no? Él cuenta en ha contado alguna que yo hasta lo he pensado. O sea, de verdad, este tío tiene una mentalidad. Sí, es un increíble porque porque claro está contando que he perdido hoy. Claro, y al día siguiente tú tienes que salir otra vez igual y eso muy poca gente es capaz. La mayoría no lo consigue. Es imposible, ¿entiendes? ¿Por qué? Porque te deja una
+
+00:24:07 - 00:25:05
+marca esto ya entiendes. Es decir, ya no, al día siguiente no sales igual, ya no operas igual, ya a lo mejor haces algo distinto, ya no dejas correr tanto, ya dudas en el momento, ¿sabes? Ya te ha tocado, te ha tocado y ya te ha cambiado, ¿no? Lo bueno el algorímico no no cambia, eso es lo bueno que tiene, que es es automático, ¿no? Pero es este tipo de traders, ellos creen que no. Ellos, porque una vez tú me lo decías esto, ¿no? Que todos los traders creen que lo que hacen es fácil. Yo no creo que sea fácil lo que lo que
+
+00:24:36 - 00:25:42
+hacemos. Sé que que es que es difícil, aunque sé que se puede en un caso y en otro, ¿de acuerdo? En ambos casos, pero evidentemente el que lo hace y lo ha normalizado un poco, ¿sabes? Sí, exacto. Sí, sí lo ve, pero esto es natural. Sí, es innato al ser humano, pero es difícil, pero pero se puede. Y como te digo, para mí el mejor camino siempre es el algorítmico porque porque una parte de los problemas de los eh sobre todo de este tipo de psicología eh eh esto que hablamos ahora, ¿no? Del de de de volver
+
+00:25:09 - 00:26:02
+al día siguiente a hacerlo igual, pues te lo te lo quitas, ¿no? Y eso es muy importante. Y algún back, Sergi, por ejemplo, que has tenido con esas estrategias, entendemos que ahora tenemos largos y cortos. No sé si puedes enseñar back de ambos, solo de uno. Aquí tengo el, bueno, creo que en el otro vídeo enseñamos algo del largo queda, o sea, todavía estamos eh no estamos todavía en una fase que podamos hablar de un portfolio, de estamos ideando estrategias por separado, ahora ideando, como comentábamos antes, ya eh la
+
+00:25:35 - 00:26:42
+operativa o el el algoritmo para conectar a mercado y empezar a hacer pruebas de ejecución y ahí primero en demo y demás iremos probando lo que tenemos y luego, evidentemente, como tú decías, habrá que hacer un portfolio. Pues aquí veremos eh cuántos vídeos llegaremos, pero creo creo que llegaremos. De momento aquí tenemos un back test de una estrategia en corto. Es una estrategia que empezaba, si recuerdo mal, con eh sí, con $100,000 y en 5 años pues ha conseguido un 460%. Es irrelevante, ¿eh? O sea, no os
+
+00:26:09 - 00:27:19
+quedéis de verdad, no no hoy en día no no es importante eso, ¿eh? tiene un drawdam solo por inferi un 8% es un drawdam muy bajo para este para este tipo de mercado. Es un realmente fantástico. Es decir, esto es de cortos hablamos, ¿no? Solo cortos, ¿vale? O sea, un retorno, una te lo voy a poner aquí en amarillo para que se vea mejor porque aquí en la pantalla no sé si se va se va a ver muy bien. Es de un 95 anual, ¿vale? 95 anual con unón solo de un 8%. Está fantástico. Está fantástico, ¿eh? Y tiene 500 operaciones, ¿eh? No no
+
+00:26:45 - 00:27:39
+os creáis. Tiene queas operaciones. Tenemos varias versiones. Eh, hemos cogido una que tampoco es especialmente benévola y alguna hasta más exagerada. Tiene sus drawdowns, evidentemente. Aquí lo vais a ver. Aquí está. Aquí tiene un drawdown bastante bastante fuerte, ¿eh? Pero bueno, como veis, pero es del 8% el máximo. Ocho y algo. Ocho y algo, pero tiene muchos en el ocho. Esto es bueno en un back test. Es cuando ves un drawdown así, pero el resto bastante cercano, esto es bueno. Normalmente está hablando
+
+00:27:12 - 00:28:19
+de que es una estrategia que está bien hecha y que tiene sentido. No es un super outlier. El dra es una estrategia que tiene ratios de más bien antitendencial, pero no mucho. Creo que acierta un 52% de las veces, es decir, más o menos la mitad, es decir, la mitad las acierta, la mitad las falla, pero lógicamente las que falla pierde poco y las que acierta pues gana mucho. ¿Qué ratio? ¿Qué ratio tiene de acierto? 50%, ¿no? Pero de riesgo de beneficio, eh riesgo beneficio está en $800 ni aquí. Espérate que no lo tengo en
+
+00:27:45 - 00:28:47
+porcentaje aquí. 1 y medio. 1 y medio el ratio Average Win Average 2 1,5 1,5 para un 5050 más o menos. Eso es. Sí, pero neto, eh, con todo contando loagees, contando espectacular. Sí, sí, contando gastos. Contando gastos. Sí, sí, sí. O sea, bien en principio bien calculado. ¿Y cuántos trades en la muestra? Creo que eran 500 este eh 563 en 5 años, ¿no? En 5 años. 563. No está mal. No está mal. Sí, sí. Tenemos varias estrategias de este tipo. Ya digo, el el cole de entrada hemos probado varias, esta está
+
+00:28:16 - 00:29:21
+bastante bien, pero ya digo, eh, todo lo que hemos probado de momento es este tipo de movimiento, explosión arriba y le buscamos la vuelta. A ver, varias maneras de buscarla. Donde está un poco el juego es como salimos, ¿sabes? Es decir, eh, ya te digo, ahí te esperas justo al cierre, usas un trel, solo un stop, es decir, con TP, sin TP. Bueno, hay hay varios juegos ahí hacer y y aún hay ciertas dudas, pero que haya ciertas dudas es hasta bueno porque quiere decir que con eh con elevadísima probabilidad
+
+00:28:49 - 00:29:53
+eh si esto llega real se operarán varias. O sea, este mesmo ha entrado a lo mejor con varias salidas, es decir, una que corra, otra que no. sabes, decir distintas eh alternativas, ¿de acuerdo? Porque al final eh poner TP, por ejemplo, mejora mucho los ratios, pero evidentemente pues la capa un poco, la frena su posibilidad de tal. Por trailing siempre pasa lo mismo, te cierra muchas trades en en falso, pero te deja correr algunas. Bueno, todo tiene un una ventaja desventaja y por eso, pues ya digo, lo ideal es
+
+00:29:21 - 00:30:24
+mezcarlas. Si tienes la posibilidad de poner varias estrategias, que en algorímico eso no es problema, dice, pues mira, una la pongo con TP, otra la pongo sin TP, otra con tr muy bestia, otra mejor hasta la dejo swing con una porcentaje muy muy pequeño. Puedes ir haciendo varias eh de la misma estrategia, varias salidas que te van a diversificar mucho porque eso eh cambiar la salida cambia muchísimo el perfil de la estrategia, pero radicalmente. Es decir, con la misma entrada puedes hacer casi una estrategia que sea casi
+
+00:29:53 - 00:30:53
+totalmente distinta y que tenga una correlación relativamente baja, es decir, inferior al 50% siendo la misma entrada, siendo la misma entrada. Entonces, ya digo, esto está bien, tiene muy buena pinta, ratios muy mucho mejores que la del largo, eh, porque como decía, la ventaja es muy clara y ya te digo, trabajando en la en la API para llevarlo a primero a Demo y luego a Real, probarlo ahí en el barro, de verdad. Ah.

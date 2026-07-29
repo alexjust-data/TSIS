@@ -1,0 +1,45 @@
+{
+  "review_id": "event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_v0_1_20260728T000000Z",
+  "review_run_id": "event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_v0_1_20260728T091026Z",
+  "review_gate": "event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_v0_1",
+  "source_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+  "baseline_run_id": "event_state_on_demand_bounded_execution_v0_1_20260727T200322Z",
+  "ledger_grain": "event_type_id+exchange_id+session_date+instrument_id+event_anchor_timestamp_utc+event_window_definition_id",
+  "requested_contexts": 12,
+  "represented_contexts": 11,
+  "reused_validated_event_state_contexts": 8,
+  "delta_materialized_event_state_contexts": 3,
+  "unavailable_contexts": 1,
+  "records_emitted": 11,
+  "unavailable_context_keys": [
+    "event_type:market_data:session_opened|XNYS|2022-11-25|figi_share_class:BBG001S5N8T1|2022-11-25T14:30:00Z|session_opened_at_anchor_context_v0_1"
+  ],
+  "represented_context_keys": [
+    "event_type:market_data:session_opened|XNYS|2021-01-19|figi_share_class:BBG001S5N8T1|2021-01-19T14:30:00Z|session_opened_at_anchor_context_v0_1",
+    "event_type:market_data:session_opened|XNYS|2021-01-19|figi_share_class:BBG001S6RSK0|2021-01-19T14:30:00Z|session_opened_at_anchor_context_v0_1",
+    "event_type:market_data:session_opened|XNYS|2021-01-19|figi_share_class:BBG001S8T7K0|2021-01-19T14:30:00Z|session_opened_at_anchor_context_v0_1",
+    "event_type:market_data:session_opened|XNYS|2021-03-15|figi_share_class:BBG001S5N8T1|2021-03-15T13:30:00Z|session_opened_at_anchor_context_v0_1",
+    "event_type:market_data:session_opened|XNYS|2021-03-15|figi_share_class:BBG001S6RSK0|2021-03-15T13:30:00Z|session_opened_at_anchor_context_v0_1",
+    "event_type:market_data:session_opened|XNYS|2021-03-15|figi_share_class:BBG001S8T7K0|2021-03-15T13:30:00Z|session_opened_at_anchor_context_v0_1",
+    "event_type:market_data:session_opened|XNYS|2022-11-25|figi_share_class:BBG001S6RSK0|2022-11-25T14:30:00Z|session_opened_at_anchor_context_v0_1",
+    "event_type:market_data:session_opened|XNYS|2022-11-25|figi_share_class:BBG001S8T7K0|2022-11-25T14:30:00Z|session_opened_at_anchor_context_v0_1",
+    "event_type:market_data:session_opened|XNYS|2024-03-11|figi_share_class:BBG001S5N8T1|2024-03-11T13:30:00Z|session_opened_at_anchor_context_v0_1",
+    "event_type:market_data:session_opened|XNYS|2024-03-11|figi_share_class:BBG001S6RSK0|2024-03-11T13:30:00Z|session_opened_at_anchor_context_v0_1",
+    "event_type:market_data:session_opened|XNYS|2024-03-11|figi_share_class:BBG001S8T7K0|2024-03-11T13:30:00Z|session_opened_at_anchor_context_v0_1"
+  ],
+  "record_context_keys": [
+    "event_type:market_data:session_opened|XNYS|2021-01-19|figi_share_class:BBG001S5N8T1|2021-01-19T14:30:00Z|session_opened_at_anchor_context_v0_1",
+    "event_type:market_data:session_opened|XNYS|2021-01-19|figi_share_class:BBG001S6RSK0|2021-01-19T14:30:00Z|session_opened_at_anchor_context_v0_1",
+    "event_type:market_data:session_opened|XNYS|2021-01-19|figi_share_class:BBG001S8T7K0|2021-01-19T14:30:00Z|session_opened_at_anchor_context_v0_1",
+    "event_type:market_data:session_opened|XNYS|2021-03-15|figi_share_class:BBG001S5N8T1|2021-03-15T13:30:00Z|session_opened_at_anchor_context_v0_1",
+    "event_type:market_data:session_opened|XNYS|2021-03-15|figi_share_class:BBG001S6RSK0|2021-03-15T13:30:00Z|session_opened_at_anchor_context_v0_1",
+    "event_type:market_data:session_opened|XNYS|2021-03-15|figi_share_class:BBG001S8T7K0|2021-03-15T13:30:00Z|session_opened_at_anchor_context_v0_1",
+    "event_type:market_data:session_opened|XNYS|2022-11-25|figi_share_class:BBG001S6RSK0|2022-11-25T14:30:00Z|session_opened_at_anchor_context_v0_1",
+    "event_type:market_data:session_opened|XNYS|2022-11-25|figi_share_class:BBG001S8T7K0|2022-11-25T14:30:00Z|session_opened_at_anchor_context_v0_1",
+    "event_type:market_data:session_opened|XNYS|2024-03-11|figi_share_class:BBG001S5N8T1|2024-03-11T13:30:00Z|session_opened_at_anchor_context_v0_1",
+    "event_type:market_data:session_opened|XNYS|2024-03-11|figi_share_class:BBG001S6RSK0|2024-03-11T13:30:00Z|session_opened_at_anchor_context_v0_1",
+    "event_type:market_data:session_opened|XNYS|2024-03-11|figi_share_class:BBG001S8T7K0|2024-03-11T13:30:00Z|session_opened_at_anchor_context_v0_1"
+  ],
+  "source_ledger_ref": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z\\combined_event_state_context_ledger_v0_1.json",
+  "context_ledger_sha256": "d3936b560cd0fb1f28079dc3d0d951c474d9f235cdd5170a3872909f1071e4e9"
+}

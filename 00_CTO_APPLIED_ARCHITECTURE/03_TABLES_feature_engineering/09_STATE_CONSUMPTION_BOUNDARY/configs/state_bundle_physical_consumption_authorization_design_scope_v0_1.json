@@ -1,0 +1,53 @@
+﻿{
+    "created_at_utc":  "2026-07-28T00:00:00Z",
+    "first_vertical_slice_policy":  {
+                                        "state_kind":  "market_state",
+                                        "event_state_requested":  false,
+                                        "orders_allowed":  false,
+                                        "pnl_allowed":  false,
+                                        "consumption_purpose":  "bounded_provider_consumer_integration_validation",
+                                        "profile_id":  "market_state_core_four_intraday_profile_v0_1",
+                                        "consumer_id":  "bounded_backtest_state_integration_probe_v0_1",
+                                        "strategy_execution_allowed":  false,
+                                        "fills_allowed":  false
+                                    },
+    "scope_id":  "state_bundle_physical_consumption_authorization_design_scope_v0_1",
+    "owner_layer":  "09_STATE_CONSUMPTION_BOUNDARY",
+    "hard_boundaries":  {
+                            "physical_artifacts_opened":  0,
+                            "state_replay_feed_records_emitted":  0,
+                            "production":  false,
+                            "provider_registry_mutations":  0,
+                            "official_dataset":  false,
+                            "state_bundle_rows_read":  0,
+                            "downstream":  false,
+                            "backtest_runs_started":  0
+                        },
+    "design_only":  true,
+    "not_in_scope":  [
+                         "StateBundleReader implementation",
+                         "StateReplayFeed implementation",
+                         "Backtest Engine integration",
+                         "strategy execution",
+                         "orders",
+                         "fills",
+                         "PnL",
+                         "new Market State builds",
+                         "new Event State builds",
+                         "Liquidity profile extension",
+                         "new Event Types",
+                         "production",
+                         "downstream"
+                     ],
+    "provider_control_plane_status_required":  "CLOSED_READY_WITH_RESTRICTIONS_NO_CONSUMPTION",
+    "in_scope":  [
+                     "physical consumption authorization record shape",
+                     "authorized StateBundleManifest reference requirements",
+                     "manifest and artifact hash matching requirements",
+                     "bounded read limits",
+                     "temporal legality requirements",
+                     "restriction propagation requirements",
+                     "failure policy before row delivery"
+                 ],
+    "gate":  "state_bundle_physical_consumption_authorization_design_v0_1"
+}

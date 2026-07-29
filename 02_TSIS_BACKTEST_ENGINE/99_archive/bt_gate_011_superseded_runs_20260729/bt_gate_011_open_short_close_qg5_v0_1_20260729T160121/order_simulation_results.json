@@ -1,0 +1,1562 @@
+[
+  {
+    "cost_breakdown": {
+      "components": [
+        {
+          "category": "commission",
+          "currency": "USD",
+          "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+          "raw_amount": "1.00",
+          "rounded_amount": "1.00"
+        },
+        {
+          "category": "routing_or_ecn_fee",
+          "currency": "USD",
+          "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "regulatory_fee",
+          "currency": "USD",
+          "formula": "sell-side regulatory fee per-share or notional bps",
+          "raw_amount": "0.00",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "locate_fee",
+          "currency": "USD",
+          "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "borrow_fee",
+          "currency": "USD",
+          "formula": "ZERO_ONLY unless authorized borrow model",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "other_fee",
+          "currency": "USD",
+          "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        }
+      ],
+      "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-entry-open-ABAT:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "currency": "USD",
+      "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-entry-open-ABAT:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABAT-entry-open",
+      "total_cost": "1.00"
+    },
+    "evaluations": [
+      {
+        "cost_breakdown": {
+          "components": [
+            {
+              "category": "commission",
+              "currency": "USD",
+              "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+              "raw_amount": "1.00",
+              "rounded_amount": "1.00"
+            },
+            {
+              "category": "routing_or_ecn_fee",
+              "currency": "USD",
+              "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "regulatory_fee",
+              "currency": "USD",
+              "formula": "sell-side regulatory fee per-share or notional bps",
+              "raw_amount": "0.00",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "locate_fee",
+              "currency": "USD",
+              "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "borrow_fee",
+              "currency": "USD",
+              "formula": "ZERO_ONLY unless authorized borrow model",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "other_fee",
+              "currency": "USD",
+              "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            }
+          ],
+          "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-entry-open-ABAT:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "currency": "USD",
+          "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-entry-open-ABAT:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABAT-entry-open",
+          "total_cost": "1.00"
+        },
+        "evaluation_outcome": "FULL_FILL",
+        "fill": {
+          "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-entry-open-ABAT:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "execution_price_before_slippage": "3.87",
+          "execution_timestamp": "2026-01-05T14:30:00+00:00",
+          "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-entry-open-ABAT:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "fill_price": "3.87",
+          "fill_quantity": 100,
+          "fill_recorded_at": "2026-01-05T14:31:00+00:00",
+          "gross_notional": "387.00",
+          "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABAT-entry-open",
+          "side": "SELL_SHORT",
+          "slippage_amount": "0",
+          "source_bar_available_at": "2026-01-05T14:31:00+00:00",
+          "source_bar_id": "ABAT:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "source_price_profile": "bar_based_execution_profile_v0_1",
+          "ticker": "ABAT"
+        },
+        "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABAT-entry-open",
+        "reason": "order filled by deterministic V0.1 simulator",
+        "reason_code": "FULL_FILL",
+        "source_bar_available_at": "2026-01-05T14:31:00+00:00",
+        "source_bar_id": "ABAT:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+        "source_bar_ts_end": "2026-01-05T14:31:00+00:00",
+        "source_bar_ts_start": "2026-01-05T14:30:00+00:00",
+        "source_event_type": "BAR",
+        "terminal_order_outcome": "FILLED",
+        "ticker": "ABAT"
+      }
+    ],
+    "fill": {
+      "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-entry-open-ABAT:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "execution_price_before_slippage": "3.87",
+      "execution_timestamp": "2026-01-05T14:30:00+00:00",
+      "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-entry-open-ABAT:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "fill_price": "3.87",
+      "fill_quantity": 100,
+      "fill_recorded_at": "2026-01-05T14:31:00+00:00",
+      "gross_notional": "387.00",
+      "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABAT-entry-open",
+      "side": "SELL_SHORT",
+      "slippage_amount": "0",
+      "source_bar_available_at": "2026-01-05T14:31:00+00:00",
+      "source_bar_id": "ABAT:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "source_price_profile": "bar_based_execution_profile_v0_1",
+      "ticker": "ABAT"
+    },
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABAT-entry-open",
+    "terminal_order_outcome": "FILLED",
+    "ticker": "ABAT"
+  },
+  {
+    "cost_breakdown": {
+      "components": [
+        {
+          "category": "commission",
+          "currency": "USD",
+          "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+          "raw_amount": "1.00",
+          "rounded_amount": "1.00"
+        },
+        {
+          "category": "routing_or_ecn_fee",
+          "currency": "USD",
+          "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "regulatory_fee",
+          "currency": "USD",
+          "formula": "sell-side regulatory fee per-share or notional bps",
+          "raw_amount": "0.00",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "locate_fee",
+          "currency": "USD",
+          "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "borrow_fee",
+          "currency": "USD",
+          "formula": "ZERO_ONLY unless authorized borrow model",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "other_fee",
+          "currency": "USD",
+          "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        }
+      ],
+      "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-entry-open-ABEO:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "currency": "USD",
+      "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-entry-open-ABEO:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABEO-entry-open",
+      "total_cost": "1.00"
+    },
+    "evaluations": [
+      {
+        "cost_breakdown": {
+          "components": [
+            {
+              "category": "commission",
+              "currency": "USD",
+              "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+              "raw_amount": "1.00",
+              "rounded_amount": "1.00"
+            },
+            {
+              "category": "routing_or_ecn_fee",
+              "currency": "USD",
+              "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "regulatory_fee",
+              "currency": "USD",
+              "formula": "sell-side regulatory fee per-share or notional bps",
+              "raw_amount": "0.00",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "locate_fee",
+              "currency": "USD",
+              "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "borrow_fee",
+              "currency": "USD",
+              "formula": "ZERO_ONLY unless authorized borrow model",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "other_fee",
+              "currency": "USD",
+              "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            }
+          ],
+          "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-entry-open-ABEO:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "currency": "USD",
+          "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-entry-open-ABEO:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABEO-entry-open",
+          "total_cost": "1.00"
+        },
+        "evaluation_outcome": "FULL_FILL",
+        "fill": {
+          "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-entry-open-ABEO:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "execution_price_before_slippage": "5.35",
+          "execution_timestamp": "2026-01-05T14:30:00+00:00",
+          "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-entry-open-ABEO:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "fill_price": "5.35",
+          "fill_quantity": 100,
+          "fill_recorded_at": "2026-01-05T14:31:00+00:00",
+          "gross_notional": "535.00",
+          "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABEO-entry-open",
+          "side": "SELL_SHORT",
+          "slippage_amount": "0",
+          "source_bar_available_at": "2026-01-05T14:31:00+00:00",
+          "source_bar_id": "ABEO:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "source_price_profile": "bar_based_execution_profile_v0_1",
+          "ticker": "ABEO"
+        },
+        "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABEO-entry-open",
+        "reason": "order filled by deterministic V0.1 simulator",
+        "reason_code": "FULL_FILL",
+        "source_bar_available_at": "2026-01-05T14:31:00+00:00",
+        "source_bar_id": "ABEO:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+        "source_bar_ts_end": "2026-01-05T14:31:00+00:00",
+        "source_bar_ts_start": "2026-01-05T14:30:00+00:00",
+        "source_event_type": "BAR",
+        "terminal_order_outcome": "FILLED",
+        "ticker": "ABEO"
+      }
+    ],
+    "fill": {
+      "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-entry-open-ABEO:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "execution_price_before_slippage": "5.35",
+      "execution_timestamp": "2026-01-05T14:30:00+00:00",
+      "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-entry-open-ABEO:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "fill_price": "5.35",
+      "fill_quantity": 100,
+      "fill_recorded_at": "2026-01-05T14:31:00+00:00",
+      "gross_notional": "535.00",
+      "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABEO-entry-open",
+      "side": "SELL_SHORT",
+      "slippage_amount": "0",
+      "source_bar_available_at": "2026-01-05T14:31:00+00:00",
+      "source_bar_id": "ABEO:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "source_price_profile": "bar_based_execution_profile_v0_1",
+      "ticker": "ABEO"
+    },
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABEO-entry-open",
+    "terminal_order_outcome": "FILLED",
+    "ticker": "ABEO"
+  },
+  {
+    "cost_breakdown": {
+      "components": [
+        {
+          "category": "commission",
+          "currency": "USD",
+          "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+          "raw_amount": "1.00",
+          "rounded_amount": "1.00"
+        },
+        {
+          "category": "routing_or_ecn_fee",
+          "currency": "USD",
+          "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "regulatory_fee",
+          "currency": "USD",
+          "formula": "sell-side regulatory fee per-share or notional bps",
+          "raw_amount": "0.00",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "locate_fee",
+          "currency": "USD",
+          "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "borrow_fee",
+          "currency": "USD",
+          "formula": "ZERO_ONLY unless authorized borrow model",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "other_fee",
+          "currency": "USD",
+          "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        }
+      ],
+      "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-entry-open-ABSI:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "currency": "USD",
+      "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-entry-open-ABSI:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABSI-entry-open",
+      "total_cost": "1.00"
+    },
+    "evaluations": [
+      {
+        "cost_breakdown": {
+          "components": [
+            {
+              "category": "commission",
+              "currency": "USD",
+              "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+              "raw_amount": "1.00",
+              "rounded_amount": "1.00"
+            },
+            {
+              "category": "routing_or_ecn_fee",
+              "currency": "USD",
+              "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "regulatory_fee",
+              "currency": "USD",
+              "formula": "sell-side regulatory fee per-share or notional bps",
+              "raw_amount": "0.00",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "locate_fee",
+              "currency": "USD",
+              "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "borrow_fee",
+              "currency": "USD",
+              "formula": "ZERO_ONLY unless authorized borrow model",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "other_fee",
+              "currency": "USD",
+              "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            }
+          ],
+          "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-entry-open-ABSI:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "currency": "USD",
+          "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-entry-open-ABSI:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABSI-entry-open",
+          "total_cost": "1.00"
+        },
+        "evaluation_outcome": "FULL_FILL",
+        "fill": {
+          "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-entry-open-ABSI:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "execution_price_before_slippage": "3.65",
+          "execution_timestamp": "2026-01-05T14:30:00+00:00",
+          "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-entry-open-ABSI:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "fill_price": "3.65",
+          "fill_quantity": 100,
+          "fill_recorded_at": "2026-01-05T14:31:00+00:00",
+          "gross_notional": "365.00",
+          "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABSI-entry-open",
+          "side": "SELL_SHORT",
+          "slippage_amount": "0",
+          "source_bar_available_at": "2026-01-05T14:31:00+00:00",
+          "source_bar_id": "ABSI:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "source_price_profile": "bar_based_execution_profile_v0_1",
+          "ticker": "ABSI"
+        },
+        "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABSI-entry-open",
+        "reason": "order filled by deterministic V0.1 simulator",
+        "reason_code": "FULL_FILL",
+        "source_bar_available_at": "2026-01-05T14:31:00+00:00",
+        "source_bar_id": "ABSI:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+        "source_bar_ts_end": "2026-01-05T14:31:00+00:00",
+        "source_bar_ts_start": "2026-01-05T14:30:00+00:00",
+        "source_event_type": "BAR",
+        "terminal_order_outcome": "FILLED",
+        "ticker": "ABSI"
+      }
+    ],
+    "fill": {
+      "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-entry-open-ABSI:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "execution_price_before_slippage": "3.65",
+      "execution_timestamp": "2026-01-05T14:30:00+00:00",
+      "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-entry-open-ABSI:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "fill_price": "3.65",
+      "fill_quantity": 100,
+      "fill_recorded_at": "2026-01-05T14:31:00+00:00",
+      "gross_notional": "365.00",
+      "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABSI-entry-open",
+      "side": "SELL_SHORT",
+      "slippage_amount": "0",
+      "source_bar_available_at": "2026-01-05T14:31:00+00:00",
+      "source_bar_id": "ABSI:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "source_price_profile": "bar_based_execution_profile_v0_1",
+      "ticker": "ABSI"
+    },
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABSI-entry-open",
+    "terminal_order_outcome": "FILLED",
+    "ticker": "ABSI"
+  },
+  {
+    "cost_breakdown": {
+      "components": [
+        {
+          "category": "commission",
+          "currency": "USD",
+          "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+          "raw_amount": "1.00",
+          "rounded_amount": "1.00"
+        },
+        {
+          "category": "routing_or_ecn_fee",
+          "currency": "USD",
+          "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "regulatory_fee",
+          "currency": "USD",
+          "formula": "sell-side regulatory fee per-share or notional bps",
+          "raw_amount": "0.00",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "locate_fee",
+          "currency": "USD",
+          "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "borrow_fee",
+          "currency": "USD",
+          "formula": "ZERO_ONLY unless authorized borrow model",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "other_fee",
+          "currency": "USD",
+          "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        }
+      ],
+      "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-entry-open-ABTC:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "currency": "USD",
+      "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-entry-open-ABTC:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABTC-entry-open",
+      "total_cost": "1.00"
+    },
+    "evaluations": [
+      {
+        "cost_breakdown": {
+          "components": [
+            {
+              "category": "commission",
+              "currency": "USD",
+              "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+              "raw_amount": "1.00",
+              "rounded_amount": "1.00"
+            },
+            {
+              "category": "routing_or_ecn_fee",
+              "currency": "USD",
+              "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "regulatory_fee",
+              "currency": "USD",
+              "formula": "sell-side regulatory fee per-share or notional bps",
+              "raw_amount": "0.00",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "locate_fee",
+              "currency": "USD",
+              "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "borrow_fee",
+              "currency": "USD",
+              "formula": "ZERO_ONLY unless authorized borrow model",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "other_fee",
+              "currency": "USD",
+              "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            }
+          ],
+          "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-entry-open-ABTC:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "currency": "USD",
+          "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-entry-open-ABTC:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABTC-entry-open",
+          "total_cost": "1.00"
+        },
+        "evaluation_outcome": "FULL_FILL",
+        "fill": {
+          "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-entry-open-ABTC:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "execution_price_before_slippage": "1.95",
+          "execution_timestamp": "2026-01-05T14:30:00+00:00",
+          "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-entry-open-ABTC:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "fill_price": "1.95",
+          "fill_quantity": 100,
+          "fill_recorded_at": "2026-01-05T14:31:00+00:00",
+          "gross_notional": "195.00",
+          "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABTC-entry-open",
+          "side": "SELL_SHORT",
+          "slippage_amount": "0",
+          "source_bar_available_at": "2026-01-05T14:31:00+00:00",
+          "source_bar_id": "ABTC:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "source_price_profile": "bar_based_execution_profile_v0_1",
+          "ticker": "ABTC"
+        },
+        "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABTC-entry-open",
+        "reason": "order filled by deterministic V0.1 simulator",
+        "reason_code": "FULL_FILL",
+        "source_bar_available_at": "2026-01-05T14:31:00+00:00",
+        "source_bar_id": "ABTC:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+        "source_bar_ts_end": "2026-01-05T14:31:00+00:00",
+        "source_bar_ts_start": "2026-01-05T14:30:00+00:00",
+        "source_event_type": "BAR",
+        "terminal_order_outcome": "FILLED",
+        "ticker": "ABTC"
+      }
+    ],
+    "fill": {
+      "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-entry-open-ABTC:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "execution_price_before_slippage": "1.95",
+      "execution_timestamp": "2026-01-05T14:30:00+00:00",
+      "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-entry-open-ABTC:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "fill_price": "1.95",
+      "fill_quantity": 100,
+      "fill_recorded_at": "2026-01-05T14:31:00+00:00",
+      "gross_notional": "195.00",
+      "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABTC-entry-open",
+      "side": "SELL_SHORT",
+      "slippage_amount": "0",
+      "source_bar_available_at": "2026-01-05T14:31:00+00:00",
+      "source_bar_id": "ABTC:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "source_price_profile": "bar_based_execution_profile_v0_1",
+      "ticker": "ABTC"
+    },
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABTC-entry-open",
+    "terminal_order_outcome": "FILLED",
+    "ticker": "ABTC"
+  },
+  {
+    "cost_breakdown": {
+      "components": [
+        {
+          "category": "commission",
+          "currency": "USD",
+          "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+          "raw_amount": "1.00",
+          "rounded_amount": "1.00"
+        },
+        {
+          "category": "routing_or_ecn_fee",
+          "currency": "USD",
+          "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "regulatory_fee",
+          "currency": "USD",
+          "formula": "sell-side regulatory fee per-share or notional bps",
+          "raw_amount": "0.00",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "locate_fee",
+          "currency": "USD",
+          "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "borrow_fee",
+          "currency": "USD",
+          "formula": "ZERO_ONLY unless authorized borrow model",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "other_fee",
+          "currency": "USD",
+          "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        }
+      ],
+      "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ACB-entry-open-ACB:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "currency": "USD",
+      "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ACB-entry-open-ACB:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "order_id": "order-intent-decision-open_short_close_cover_v0_1-ACB-entry-open",
+      "total_cost": "1.00"
+    },
+    "evaluations": [
+      {
+        "cost_breakdown": {
+          "components": [
+            {
+              "category": "commission",
+              "currency": "USD",
+              "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+              "raw_amount": "1.00",
+              "rounded_amount": "1.00"
+            },
+            {
+              "category": "routing_or_ecn_fee",
+              "currency": "USD",
+              "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "regulatory_fee",
+              "currency": "USD",
+              "formula": "sell-side regulatory fee per-share or notional bps",
+              "raw_amount": "0.00",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "locate_fee",
+              "currency": "USD",
+              "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "borrow_fee",
+              "currency": "USD",
+              "formula": "ZERO_ONLY unless authorized borrow model",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "other_fee",
+              "currency": "USD",
+              "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            }
+          ],
+          "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ACB-entry-open-ACB:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "currency": "USD",
+          "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ACB-entry-open-ACB:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "order_id": "order-intent-decision-open_short_close_cover_v0_1-ACB-entry-open",
+          "total_cost": "1.00"
+        },
+        "evaluation_outcome": "FULL_FILL",
+        "fill": {
+          "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ACB-entry-open-ACB:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "execution_price_before_slippage": "4.36",
+          "execution_timestamp": "2026-01-05T14:30:00+00:00",
+          "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ACB-entry-open-ACB:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "fill_price": "4.36",
+          "fill_quantity": 100,
+          "fill_recorded_at": "2026-01-05T14:31:00+00:00",
+          "gross_notional": "436.00",
+          "order_id": "order-intent-decision-open_short_close_cover_v0_1-ACB-entry-open",
+          "side": "SELL_SHORT",
+          "slippage_amount": "0",
+          "source_bar_available_at": "2026-01-05T14:31:00+00:00",
+          "source_bar_id": "ACB:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+          "source_price_profile": "bar_based_execution_profile_v0_1",
+          "ticker": "ACB"
+        },
+        "order_id": "order-intent-decision-open_short_close_cover_v0_1-ACB-entry-open",
+        "reason": "order filled by deterministic V0.1 simulator",
+        "reason_code": "FULL_FILL",
+        "source_bar_available_at": "2026-01-05T14:31:00+00:00",
+        "source_bar_id": "ACB:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+        "source_bar_ts_end": "2026-01-05T14:31:00+00:00",
+        "source_bar_ts_start": "2026-01-05T14:30:00+00:00",
+        "source_event_type": "BAR",
+        "terminal_order_outcome": "FILLED",
+        "ticker": "ACB"
+      }
+    ],
+    "fill": {
+      "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ACB-entry-open-ACB:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "execution_price_before_slippage": "4.36",
+      "execution_timestamp": "2026-01-05T14:30:00+00:00",
+      "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ACB-entry-open-ACB:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "fill_price": "4.36",
+      "fill_quantity": 100,
+      "fill_recorded_at": "2026-01-05T14:31:00+00:00",
+      "gross_notional": "436.00",
+      "order_id": "order-intent-decision-open_short_close_cover_v0_1-ACB-entry-open",
+      "side": "SELL_SHORT",
+      "slippage_amount": "0",
+      "source_bar_available_at": "2026-01-05T14:31:00+00:00",
+      "source_bar_id": "ACB:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+      "source_price_profile": "bar_based_execution_profile_v0_1",
+      "ticker": "ACB"
+    },
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ACB-entry-open",
+    "terminal_order_outcome": "FILLED",
+    "ticker": "ACB"
+  },
+  {
+    "cost_breakdown": {
+      "components": [
+        {
+          "category": "commission",
+          "currency": "USD",
+          "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+          "raw_amount": "1.00",
+          "rounded_amount": "1.00"
+        },
+        {
+          "category": "routing_or_ecn_fee",
+          "currency": "USD",
+          "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "regulatory_fee",
+          "currency": "USD",
+          "formula": "sell-side regulatory fee per-share or notional bps",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "locate_fee",
+          "currency": "USD",
+          "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "borrow_fee",
+          "currency": "USD",
+          "formula": "ZERO_ONLY unless authorized borrow model",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "other_fee",
+          "currency": "USD",
+          "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        }
+      ],
+      "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-exit-close-ABAT:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "currency": "USD",
+      "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-exit-close-ABAT:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABAT-exit-close",
+      "total_cost": "1.00"
+    },
+    "evaluations": [
+      {
+        "cost_breakdown": {
+          "components": [
+            {
+              "category": "commission",
+              "currency": "USD",
+              "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+              "raw_amount": "1.00",
+              "rounded_amount": "1.00"
+            },
+            {
+              "category": "routing_or_ecn_fee",
+              "currency": "USD",
+              "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "regulatory_fee",
+              "currency": "USD",
+              "formula": "sell-side regulatory fee per-share or notional bps",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "locate_fee",
+              "currency": "USD",
+              "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "borrow_fee",
+              "currency": "USD",
+              "formula": "ZERO_ONLY unless authorized borrow model",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "other_fee",
+              "currency": "USD",
+              "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            }
+          ],
+          "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-exit-close-ABAT:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "currency": "USD",
+          "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-exit-close-ABAT:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABAT-exit-close",
+          "total_cost": "1.00"
+        },
+        "evaluation_outcome": "FULL_FILL",
+        "fill": {
+          "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-exit-close-ABAT:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "execution_price_before_slippage": "4.665",
+          "execution_timestamp": "2026-01-05T21:00:00+00:00",
+          "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-exit-close-ABAT:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "fill_price": "4.665",
+          "fill_quantity": 100,
+          "fill_recorded_at": "2026-01-05T21:00:00+00:00",
+          "gross_notional": "466.500",
+          "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABAT-exit-close",
+          "side": "BUY_TO_COVER",
+          "slippage_amount": "0",
+          "source_bar_available_at": "2026-01-05T21:00:00+00:00",
+          "source_bar_id": "ABAT:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "source_price_profile": "bar_based_execution_profile_v0_1",
+          "ticker": "ABAT"
+        },
+        "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABAT-exit-close",
+        "reason": "order filled by deterministic V0.1 simulator",
+        "reason_code": "FULL_FILL",
+        "source_bar_available_at": "2026-01-05T21:00:00+00:00",
+        "source_bar_id": "ABAT:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+        "source_bar_ts_end": "2026-01-05T21:00:00+00:00",
+        "source_bar_ts_start": "2026-01-05T20:59:00+00:00",
+        "source_event_type": "BAR",
+        "terminal_order_outcome": "FILLED",
+        "ticker": "ABAT"
+      }
+    ],
+    "fill": {
+      "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-exit-close-ABAT:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "execution_price_before_slippage": "4.665",
+      "execution_timestamp": "2026-01-05T21:00:00+00:00",
+      "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-exit-close-ABAT:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "fill_price": "4.665",
+      "fill_quantity": 100,
+      "fill_recorded_at": "2026-01-05T21:00:00+00:00",
+      "gross_notional": "466.500",
+      "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABAT-exit-close",
+      "side": "BUY_TO_COVER",
+      "slippage_amount": "0",
+      "source_bar_available_at": "2026-01-05T21:00:00+00:00",
+      "source_bar_id": "ABAT:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "source_price_profile": "bar_based_execution_profile_v0_1",
+      "ticker": "ABAT"
+    },
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABAT-exit-close",
+    "terminal_order_outcome": "FILLED",
+    "ticker": "ABAT"
+  },
+  {
+    "cost_breakdown": {
+      "components": [
+        {
+          "category": "commission",
+          "currency": "USD",
+          "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+          "raw_amount": "1.00",
+          "rounded_amount": "1.00"
+        },
+        {
+          "category": "routing_or_ecn_fee",
+          "currency": "USD",
+          "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "regulatory_fee",
+          "currency": "USD",
+          "formula": "sell-side regulatory fee per-share or notional bps",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "locate_fee",
+          "currency": "USD",
+          "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "borrow_fee",
+          "currency": "USD",
+          "formula": "ZERO_ONLY unless authorized borrow model",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "other_fee",
+          "currency": "USD",
+          "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        }
+      ],
+      "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-exit-close-ABEO:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "currency": "USD",
+      "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-exit-close-ABEO:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABEO-exit-close",
+      "total_cost": "1.00"
+    },
+    "evaluations": [
+      {
+        "cost_breakdown": {
+          "components": [
+            {
+              "category": "commission",
+              "currency": "USD",
+              "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+              "raw_amount": "1.00",
+              "rounded_amount": "1.00"
+            },
+            {
+              "category": "routing_or_ecn_fee",
+              "currency": "USD",
+              "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "regulatory_fee",
+              "currency": "USD",
+              "formula": "sell-side regulatory fee per-share or notional bps",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "locate_fee",
+              "currency": "USD",
+              "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "borrow_fee",
+              "currency": "USD",
+              "formula": "ZERO_ONLY unless authorized borrow model",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "other_fee",
+              "currency": "USD",
+              "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            }
+          ],
+          "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-exit-close-ABEO:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "currency": "USD",
+          "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-exit-close-ABEO:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABEO-exit-close",
+          "total_cost": "1.00"
+        },
+        "evaluation_outcome": "FULL_FILL",
+        "fill": {
+          "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-exit-close-ABEO:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "execution_price_before_slippage": "5.22",
+          "execution_timestamp": "2026-01-05T21:00:00+00:00",
+          "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-exit-close-ABEO:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "fill_price": "5.22",
+          "fill_quantity": 100,
+          "fill_recorded_at": "2026-01-05T21:00:00+00:00",
+          "gross_notional": "522.00",
+          "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABEO-exit-close",
+          "side": "BUY_TO_COVER",
+          "slippage_amount": "0",
+          "source_bar_available_at": "2026-01-05T21:00:00+00:00",
+          "source_bar_id": "ABEO:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "source_price_profile": "bar_based_execution_profile_v0_1",
+          "ticker": "ABEO"
+        },
+        "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABEO-exit-close",
+        "reason": "order filled by deterministic V0.1 simulator",
+        "reason_code": "FULL_FILL",
+        "source_bar_available_at": "2026-01-05T21:00:00+00:00",
+        "source_bar_id": "ABEO:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+        "source_bar_ts_end": "2026-01-05T21:00:00+00:00",
+        "source_bar_ts_start": "2026-01-05T20:59:00+00:00",
+        "source_event_type": "BAR",
+        "terminal_order_outcome": "FILLED",
+        "ticker": "ABEO"
+      }
+    ],
+    "fill": {
+      "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-exit-close-ABEO:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "execution_price_before_slippage": "5.22",
+      "execution_timestamp": "2026-01-05T21:00:00+00:00",
+      "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-exit-close-ABEO:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "fill_price": "5.22",
+      "fill_quantity": 100,
+      "fill_recorded_at": "2026-01-05T21:00:00+00:00",
+      "gross_notional": "522.00",
+      "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABEO-exit-close",
+      "side": "BUY_TO_COVER",
+      "slippage_amount": "0",
+      "source_bar_available_at": "2026-01-05T21:00:00+00:00",
+      "source_bar_id": "ABEO:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "source_price_profile": "bar_based_execution_profile_v0_1",
+      "ticker": "ABEO"
+    },
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABEO-exit-close",
+    "terminal_order_outcome": "FILLED",
+    "ticker": "ABEO"
+  },
+  {
+    "cost_breakdown": {
+      "components": [
+        {
+          "category": "commission",
+          "currency": "USD",
+          "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+          "raw_amount": "1.00",
+          "rounded_amount": "1.00"
+        },
+        {
+          "category": "routing_or_ecn_fee",
+          "currency": "USD",
+          "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "regulatory_fee",
+          "currency": "USD",
+          "formula": "sell-side regulatory fee per-share or notional bps",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "locate_fee",
+          "currency": "USD",
+          "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "borrow_fee",
+          "currency": "USD",
+          "formula": "ZERO_ONLY unless authorized borrow model",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "other_fee",
+          "currency": "USD",
+          "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        }
+      ],
+      "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-exit-close-ABSI:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "currency": "USD",
+      "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-exit-close-ABSI:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABSI-exit-close",
+      "total_cost": "1.00"
+    },
+    "evaluations": [
+      {
+        "cost_breakdown": {
+          "components": [
+            {
+              "category": "commission",
+              "currency": "USD",
+              "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+              "raw_amount": "1.00",
+              "rounded_amount": "1.00"
+            },
+            {
+              "category": "routing_or_ecn_fee",
+              "currency": "USD",
+              "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "regulatory_fee",
+              "currency": "USD",
+              "formula": "sell-side regulatory fee per-share or notional bps",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "locate_fee",
+              "currency": "USD",
+              "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "borrow_fee",
+              "currency": "USD",
+              "formula": "ZERO_ONLY unless authorized borrow model",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "other_fee",
+              "currency": "USD",
+              "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            }
+          ],
+          "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-exit-close-ABSI:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "currency": "USD",
+          "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-exit-close-ABSI:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABSI-exit-close",
+          "total_cost": "1.00"
+        },
+        "evaluation_outcome": "FULL_FILL",
+        "fill": {
+          "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-exit-close-ABSI:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "execution_price_before_slippage": "3.72",
+          "execution_timestamp": "2026-01-05T21:00:00+00:00",
+          "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-exit-close-ABSI:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "fill_price": "3.72",
+          "fill_quantity": 100,
+          "fill_recorded_at": "2026-01-05T21:00:00+00:00",
+          "gross_notional": "372.00",
+          "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABSI-exit-close",
+          "side": "BUY_TO_COVER",
+          "slippage_amount": "0",
+          "source_bar_available_at": "2026-01-05T21:00:00+00:00",
+          "source_bar_id": "ABSI:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "source_price_profile": "bar_based_execution_profile_v0_1",
+          "ticker": "ABSI"
+        },
+        "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABSI-exit-close",
+        "reason": "order filled by deterministic V0.1 simulator",
+        "reason_code": "FULL_FILL",
+        "source_bar_available_at": "2026-01-05T21:00:00+00:00",
+        "source_bar_id": "ABSI:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+        "source_bar_ts_end": "2026-01-05T21:00:00+00:00",
+        "source_bar_ts_start": "2026-01-05T20:59:00+00:00",
+        "source_event_type": "BAR",
+        "terminal_order_outcome": "FILLED",
+        "ticker": "ABSI"
+      }
+    ],
+    "fill": {
+      "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-exit-close-ABSI:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "execution_price_before_slippage": "3.72",
+      "execution_timestamp": "2026-01-05T21:00:00+00:00",
+      "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-exit-close-ABSI:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "fill_price": "3.72",
+      "fill_quantity": 100,
+      "fill_recorded_at": "2026-01-05T21:00:00+00:00",
+      "gross_notional": "372.00",
+      "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABSI-exit-close",
+      "side": "BUY_TO_COVER",
+      "slippage_amount": "0",
+      "source_bar_available_at": "2026-01-05T21:00:00+00:00",
+      "source_bar_id": "ABSI:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "source_price_profile": "bar_based_execution_profile_v0_1",
+      "ticker": "ABSI"
+    },
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABSI-exit-close",
+    "terminal_order_outcome": "FILLED",
+    "ticker": "ABSI"
+  },
+  {
+    "cost_breakdown": {
+      "components": [
+        {
+          "category": "commission",
+          "currency": "USD",
+          "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+          "raw_amount": "1.00",
+          "rounded_amount": "1.00"
+        },
+        {
+          "category": "routing_or_ecn_fee",
+          "currency": "USD",
+          "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "regulatory_fee",
+          "currency": "USD",
+          "formula": "sell-side regulatory fee per-share or notional bps",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "locate_fee",
+          "currency": "USD",
+          "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "borrow_fee",
+          "currency": "USD",
+          "formula": "ZERO_ONLY unless authorized borrow model",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "other_fee",
+          "currency": "USD",
+          "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        }
+      ],
+      "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-exit-close-ABTC:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "currency": "USD",
+      "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-exit-close-ABTC:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABTC-exit-close",
+      "total_cost": "1.00"
+    },
+    "evaluations": [
+      {
+        "cost_breakdown": {
+          "components": [
+            {
+              "category": "commission",
+              "currency": "USD",
+              "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+              "raw_amount": "1.00",
+              "rounded_amount": "1.00"
+            },
+            {
+              "category": "routing_or_ecn_fee",
+              "currency": "USD",
+              "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "regulatory_fee",
+              "currency": "USD",
+              "formula": "sell-side regulatory fee per-share or notional bps",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "locate_fee",
+              "currency": "USD",
+              "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "borrow_fee",
+              "currency": "USD",
+              "formula": "ZERO_ONLY unless authorized borrow model",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "other_fee",
+              "currency": "USD",
+              "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            }
+          ],
+          "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-exit-close-ABTC:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "currency": "USD",
+          "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-exit-close-ABTC:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABTC-exit-close",
+          "total_cost": "1.00"
+        },
+        "evaluation_outcome": "FULL_FILL",
+        "fill": {
+          "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-exit-close-ABTC:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "execution_price_before_slippage": "2.015",
+          "execution_timestamp": "2026-01-05T21:00:00+00:00",
+          "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-exit-close-ABTC:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "fill_price": "2.015",
+          "fill_quantity": 100,
+          "fill_recorded_at": "2026-01-05T21:00:00+00:00",
+          "gross_notional": "201.500",
+          "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABTC-exit-close",
+          "side": "BUY_TO_COVER",
+          "slippage_amount": "0",
+          "source_bar_available_at": "2026-01-05T21:00:00+00:00",
+          "source_bar_id": "ABTC:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "source_price_profile": "bar_based_execution_profile_v0_1",
+          "ticker": "ABTC"
+        },
+        "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABTC-exit-close",
+        "reason": "order filled by deterministic V0.1 simulator",
+        "reason_code": "FULL_FILL",
+        "source_bar_available_at": "2026-01-05T21:00:00+00:00",
+        "source_bar_id": "ABTC:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+        "source_bar_ts_end": "2026-01-05T21:00:00+00:00",
+        "source_bar_ts_start": "2026-01-05T20:59:00+00:00",
+        "source_event_type": "BAR",
+        "terminal_order_outcome": "FILLED",
+        "ticker": "ABTC"
+      }
+    ],
+    "fill": {
+      "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-exit-close-ABTC:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "execution_price_before_slippage": "2.015",
+      "execution_timestamp": "2026-01-05T21:00:00+00:00",
+      "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-exit-close-ABTC:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "fill_price": "2.015",
+      "fill_quantity": 100,
+      "fill_recorded_at": "2026-01-05T21:00:00+00:00",
+      "gross_notional": "201.500",
+      "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABTC-exit-close",
+      "side": "BUY_TO_COVER",
+      "slippage_amount": "0",
+      "source_bar_available_at": "2026-01-05T21:00:00+00:00",
+      "source_bar_id": "ABTC:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "source_price_profile": "bar_based_execution_profile_v0_1",
+      "ticker": "ABTC"
+    },
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABTC-exit-close",
+    "terminal_order_outcome": "FILLED",
+    "ticker": "ABTC"
+  },
+  {
+    "cost_breakdown": {
+      "components": [
+        {
+          "category": "commission",
+          "currency": "USD",
+          "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+          "raw_amount": "1.00",
+          "rounded_amount": "1.00"
+        },
+        {
+          "category": "routing_or_ecn_fee",
+          "currency": "USD",
+          "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "regulatory_fee",
+          "currency": "USD",
+          "formula": "sell-side regulatory fee per-share or notional bps",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "locate_fee",
+          "currency": "USD",
+          "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "borrow_fee",
+          "currency": "USD",
+          "formula": "ZERO_ONLY unless authorized borrow model",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        },
+        {
+          "category": "other_fee",
+          "currency": "USD",
+          "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+          "raw_amount": "0",
+          "rounded_amount": "0.00"
+        }
+      ],
+      "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ACB-exit-close-ACB:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "currency": "USD",
+      "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ACB-exit-close-ACB:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "order_id": "order-intent-decision-open_short_close_cover_v0_1-ACB-exit-close",
+      "total_cost": "1.00"
+    },
+    "evaluations": [
+      {
+        "cost_breakdown": {
+          "components": [
+            {
+              "category": "commission",
+              "currency": "USD",
+              "formula": "max(abs(fill_quantity) * commission_per_share, minimum_commission_per_order)",
+              "raw_amount": "1.00",
+              "rounded_amount": "1.00"
+            },
+            {
+              "category": "routing_or_ecn_fee",
+              "currency": "USD",
+              "formula": "abs(fill_quantity) * routing_or_ecn_fee_per_share",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "regulatory_fee",
+              "currency": "USD",
+              "formula": "sell-side regulatory fee per-share or notional bps",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "locate_fee",
+              "currency": "USD",
+              "formula": "SELL_SHORT locate_fee_per_share, otherwise zero",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "borrow_fee",
+              "currency": "USD",
+              "formula": "ZERO_ONLY unless authorized borrow model",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            },
+            {
+              "category": "other_fee",
+              "currency": "USD",
+              "formula": "fixed_fee_per_order + other_fixed_fee_per_filled_order",
+              "raw_amount": "0",
+              "rounded_amount": "0.00"
+            }
+          ],
+          "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ACB-exit-close-ACB:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "currency": "USD",
+          "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ACB-exit-close-ACB:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "order_id": "order-intent-decision-open_short_close_cover_v0_1-ACB-exit-close",
+          "total_cost": "1.00"
+        },
+        "evaluation_outcome": "FULL_FILL",
+        "fill": {
+          "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ACB-exit-close-ACB:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "execution_price_before_slippage": "4.29",
+          "execution_timestamp": "2026-01-05T21:00:00+00:00",
+          "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ACB-exit-close-ACB:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "fill_price": "4.29",
+          "fill_quantity": 100,
+          "fill_recorded_at": "2026-01-05T21:00:00+00:00",
+          "gross_notional": "429.00",
+          "order_id": "order-intent-decision-open_short_close_cover_v0_1-ACB-exit-close",
+          "side": "BUY_TO_COVER",
+          "slippage_amount": "0",
+          "source_bar_available_at": "2026-01-05T21:00:00+00:00",
+          "source_bar_id": "ACB:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+          "source_price_profile": "bar_based_execution_profile_v0_1",
+          "ticker": "ACB"
+        },
+        "order_id": "order-intent-decision-open_short_close_cover_v0_1-ACB-exit-close",
+        "reason": "order filled by deterministic V0.1 simulator",
+        "reason_code": "FULL_FILL",
+        "source_bar_available_at": "2026-01-05T21:00:00+00:00",
+        "source_bar_id": "ACB:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+        "source_bar_ts_end": "2026-01-05T21:00:00+00:00",
+        "source_bar_ts_start": "2026-01-05T20:59:00+00:00",
+        "source_event_type": "BAR",
+        "terminal_order_outcome": "FILLED",
+        "ticker": "ACB"
+      }
+    ],
+    "fill": {
+      "cost_breakdown_id": "cost-fill-order-intent-decision-open_short_close_cover_v0_1-ACB-exit-close-ACB:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "execution_price_before_slippage": "4.29",
+      "execution_timestamp": "2026-01-05T21:00:00+00:00",
+      "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ACB-exit-close-ACB:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "fill_price": "4.29",
+      "fill_quantity": 100,
+      "fill_recorded_at": "2026-01-05T21:00:00+00:00",
+      "gross_notional": "429.00",
+      "order_id": "order-intent-decision-open_short_close_cover_v0_1-ACB-exit-close",
+      "side": "BUY_TO_COVER",
+      "slippage_amount": "0",
+      "source_bar_available_at": "2026-01-05T21:00:00+00:00",
+      "source_bar_id": "ACB:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+      "source_price_profile": "bar_based_execution_profile_v0_1",
+      "ticker": "ACB"
+    },
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ACB-exit-close",
+    "terminal_order_outcome": "FILLED",
+    "ticker": "ACB"
+  }
+]

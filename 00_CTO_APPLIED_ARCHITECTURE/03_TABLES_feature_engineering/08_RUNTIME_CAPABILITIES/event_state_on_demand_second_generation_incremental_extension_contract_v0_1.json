@@ -1,0 +1,83 @@
+{
+  "contract_id": "event_state_on_demand_second_generation_incremental_extension_contract_v0_1",
+  "contract_status": "RECORDED_CONTRACT_NO_EXECUTION",
+  "governing_authorization": "event_state_on_demand_second_generation_incremental_extension_authorization_v0_1",
+  "incremental_identity": "second_generation_event_state_incremental_extension_over_validated_generation_1_candidate",
+  "parent_candidate_requirements": [
+    "generation_1_candidate_dataset_fingerprint_match",
+    "generation_1_logical_event_state_dataset_fingerprint_match",
+    "generation_1_validation_result_fingerprint_match",
+    "generation_1_registry_entry_fingerprint_match",
+    "generation_1_reuse_evidence_fingerprint_match",
+    "generation_1_artifacts_available",
+    "generation_1_registry_entry_immutable"
+  ],
+  "delta_2_requirements": [
+    "same_event_state_profile",
+    "same_event_type_session_opened",
+    "same_subject_scope_exchange_session",
+    "same_event_window_definition_id_session_opened_at_anchor_context_v0_1",
+    "new_session_date_2023_03_20_only",
+    "same_three_instrument_projections",
+    "market_state_dependency_through_runtime_capability_only",
+    "exact_validated_market_state_candidate_dependency_or_block",
+    "no_market_state_materializer_execution",
+    "no_source_market_data_rows_read"
+  ],
+  "lineage_requirements": [
+    "origin_generation_must_be_recorded_per_row",
+    "prior_generation_rows_keep_original_origin_run_dataset_record_and_fingerprint",
+    "delta_2_rows_record_delta_2_run_dataset_record_and_market_state_dependency_fingerprint",
+    "new_composer_run_must_not_claim_to_have_originally_materialized_reused_rows"
+  ],
+  "expected_reconciliation": {
+    "requested_contexts": 15,
+    "reused_prior_generation_event_state_contexts": 11,
+    "delta_2_event_state_contexts_to_build": 3,
+    "preserved_unavailable_contexts": 1,
+    "combined_represented_contexts": 14,
+    "unaccounted_contexts": 0
+  },
+  "fingerprint_requirements": [
+    "parent_logical_event_state_dataset_fingerprint",
+    "delta_2_event_state_candidate_fingerprint",
+    "combined_generation_2_logical_event_state_dataset_fingerprint",
+    "combined_generation_2_physical_artifact_fingerprint",
+    "market_state_dependency_candidate_dataset_fingerprint",
+    "market_state_dependency_validation_result_fingerprint"
+  ],
+  "allowed_runtime_differences": [
+    "run_id",
+    "created_at_utc",
+    "started_at_utc",
+    "finished_at_utc",
+    "heartbeat_timestamps",
+    "run_local_paths",
+    "authorization_consumption_timestamp"
+  ],
+  "prohibited_results": [
+    "rebuild_prior_generation_event_state_records",
+    "mutate_parent_candidate_registry_entry",
+    "mutate_parent_candidate_artifacts",
+    "market_state_materializer_execution",
+    "source_market_data_read",
+    "direct_market_state_path_lookup",
+    "mixed_event_window_definition_ids",
+    "fallback_market_state_binding",
+    "official_event_state_dataset_promotion",
+    "production",
+    "downstream"
+  ],
+  "closure_statuses": {
+    "pass": "CLOSED_PASS_EVENT_STATE_SECOND_GENERATION_INCREMENTAL_EXTENSION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED",
+    "dependency_unavailable": "CLOSED_BLOCKED_EVENT_STATE_SECOND_GENERATION_MARKET_STATE_DEPENDENCY_UNAVAILABLE",
+    "parent_mutation": "CLOSED_FAIL_EVENT_STATE_SECOND_GENERATION_PARENT_MUTATION_DETECTED",
+    "semantic_mismatch": "CLOSED_FAILED_EVENT_STATE_SECOND_GENERATION_SEMANTIC_CONTRACT_MISMATCH",
+    "scope_violation": "CLOSED_FAIL_EVENT_STATE_SECOND_GENERATION_SCOPE_VIOLATION",
+    "hard_validation_failure": "CLOSED_BLOCKED_EVENT_STATE_SECOND_GENERATION_VALIDATION_FAILURE"
+  },
+  "official_event_state_dataset": false,
+  "production": false,
+  "downstream": false,
+  "contract_content_sha256_excluding_hash_field": "192dd6b45911df72d970c3c614d17b7e566804d4973a322c0afbc49b104415f2"
+}

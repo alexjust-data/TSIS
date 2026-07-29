@@ -1,0 +1,260 @@
+{
+  "gate": "runtime_provider_consumer_contract_compatibility_regression_v0_1_2",
+  "status": "CLOSED_PASS_PROVIDER_CONSUMER_CONTROL_PLANE_COMPATIBLE_WITH_RESTRICTIONS_NO_CONSUMPTION",
+  "created_at_utc": "2026-07-29T16:50:06Z",
+  "accepted_provider_authority": "runtime_provider_contract_schema_hardening_v0_1_2",
+  "accepted_provider_zip": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/runtime_provider_contract_schema_hardening_v0_1_2_provider_only_20260729T141808Z.zip",
+  "accepted_provider_zip_sha256": "191f40e40f2cfe374ce2f493fb9dd3e2509e33f64b9ed8f3969c9c8b0badf759",
+  "case_count": 18,
+  "failed_cases": 0,
+  "restricted_cases": 2,
+  "runtime_requests_executed": 0,
+  "runtime_resolutions_executed": 0,
+  "runtime_builds_executed": 0,
+  "physical_file_reads": 0,
+  "state_bundle_rows_delivered": 0,
+  "state_replay_feed_events": 0,
+  "backtest_runs_started": 0,
+  "datasets_written": 0,
+  "registry_mutations": 0,
+  "official_dataset": false,
+  "production": false,
+  "downstream": false,
+  "backtest_consumption": false,
+  "consumer_contract_status": "DRAFT_NOT_INTEGRATION_VALIDATED",
+  "next_gate_if_pass": "state_bundle_manifest_physical_evidence_alignment_v0_1",
+  "rows": [
+    {
+      "case_id": "REG_INPUTS_001",
+      "area": "input_inventory",
+      "consumer_expectation": "Provider v0.1.2 contracts, auxiliary payload docs, consumer draft contracts and accepted ZIP are available.",
+      "provider_v0_1_2_observation": "missing=[]",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_resolution_request_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_interface_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_response_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_capability_effective_view_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/market_state_request_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/event_state_request_contract_v0_1.json",
+        "02_TSIS_BACKTEST_ENGINE/contracts/backtest/backtest_run_spec_contract_v0_1.json",
+        "02_TSIS_BACKTEST_ENGINE/contracts/backtest/backtest_input_manifest_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/runtime_provider_contract_schema_hardening_v0_1_2_provider_only_20260729T141808Z.zip"
+      ],
+      "notes": ""
+    },
+    {
+      "case_id": "REG_PROVIDER_AUTHORITY_001",
+      "area": "accepted_provider_authority",
+      "consumer_expectation": "Regression must bind to the externally accepted provider-only ZIP identity without regenerating it.",
+      "provider_v0_1_2_observation": "local_zip_absent; accepted zip identity bound by external-audit acceptance readout",
+      "result": "PASS_WITH_RESTRICTION",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/runtime_provider_contract_schema_hardening_v0_1_2_provider_only_20260729T141808Z.zip",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_provider_contract_schema_hardening_v0_1_2_external_audit_acceptance_readout_v0_1.md"
+      ],
+      "notes": "The accepted ZIP is not regenerated or modified by this regression. If absent locally, its authority is the external-audit acceptance readout and exact SHA-256 record."
+    },
+    {
+      "case_id": "REG_SCHEMA_001",
+      "area": "schema_compilation",
+      "consumer_expectation": "Provider v0.1.2 contracts and consumer draft schemas compile under Draft 2020-12.",
+      "provider_v0_1_2_observation": "compile_failures=[]",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_resolution_request_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_interface_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_response_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_capability_effective_view_contract_v0_1_2.json",
+        "02_TSIS_BACKTEST_ENGINE/contracts/backtest/backtest_run_spec_contract_v0_1.json",
+        "02_TSIS_BACKTEST_ENGINE/contracts/backtest/backtest_input_manifest_contract_v0_1.json"
+      ],
+      "notes": ""
+    },
+    {
+      "case_id": "REG_PROVIDER_VERSION_001",
+      "area": "provider_contract_versions",
+      "consumer_expectation": "All executable provider exchange contracts used by the consumer-facing control-plane are v0.1.2.",
+      "provider_v0_1_2_observation": "provider_versions={'state_resolution_request': '0.1.2', 'runtime_user_invocation_interface': '0.1.2', 'runtime_user_invocation_response': '0.1.2', 'state_bundle_manifest': '0.1.2', 'runtime_capability_effective_view': '0.1.2'}",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_resolution_request_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_interface_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_response_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_capability_effective_view_contract_v0_1_2.json"
+      ],
+      "notes": "Specialized Market/Event payload files remain auxiliary v0.1.1 docs, not executable v0.1.2 authority."
+    },
+    {
+      "case_id": "REG_REQUEST_001",
+      "area": "request_type_alignment",
+      "consumer_expectation": "Provider request envelope distinguishes market_state and event_state without a third state kind.",
+      "provider_v0_1_2_observation": "request_type=['event_state', 'market_state']; state_kind=['event_state', 'market_state']",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_resolution_request_contract_v0_1_2.json"
+      ],
+      "notes": ""
+    },
+    {
+      "case_id": "REG_EVENT_SCOPE_001",
+      "area": "event_state_scope",
+      "consumer_expectation": "Consumer must not see Event State as a general event library.",
+      "provider_v0_1_2_observation": "session_opened/exchange_session present; halt_resumed absent",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_resolution_request_contract_v0_1_2.json"
+      ],
+      "notes": ""
+    },
+    {
+      "case_id": "REG_RESPONSE_TAXONOMY_001",
+      "area": "response_status_taxonomy",
+      "consumer_expectation": "Consumer receives a common response taxonomy and explicit block codes.",
+      "provider_v0_1_2_observation": "missing_decisions=[]",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_response_contract_v0_1_2.json"
+      ],
+      "notes": ""
+    },
+    {
+      "case_id": "REG_PROVIDER_RESTRICTIONS_001",
+      "area": "no_physical_or_downstream_authority",
+      "consumer_expectation": "Provider v0.1.2 may return governed references but must not authorize official/downstream/physical delivery.",
+      "provider_v0_1_2_observation": "response and bundle const false checks evaluated",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_response_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1_2.json"
+      ],
+      "notes": ""
+    },
+    {
+      "case_id": "REG_EFFECTIVE_VIEW_001",
+      "area": "effective_capability_view",
+      "consumer_expectation": "Capability view resolves exactly the two restricted state capabilities and keeps consumption closed.",
+      "provider_v0_1_2_observation": "capability_tokens_present=True; no_consume_tokens_present=True",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_capability_effective_view_contract_v0_1_2.json"
+      ],
+      "notes": ""
+    },
+    {
+      "case_id": "REG_CONSUMER_OPTIONAL_STATES_001",
+      "area": "consumer_optional_state_lane",
+      "consumer_expectation": "Backtester can remain frozen without state integration when provider consumption is not authorized.",
+      "provider_v0_1_2_observation": "BacktestRunSpec.state_consumption_optional=True; BacktestInputManifest.states_optional=True",
+      "result": "PASS",
+      "evidence_refs": [
+        "02_TSIS_BACKTEST_ENGINE/contracts/backtest/backtest_run_spec_contract_v0_1.json",
+        "02_TSIS_BACKTEST_ENGINE/contracts/backtest/backtest_input_manifest_contract_v0_1.json"
+      ],
+      "notes": ""
+    },
+    {
+      "case_id": "REG_CONSUMER_STATE_CONSUMPTION_SCHEMA_MARKET_STATE",
+      "area": "consumer_state_consumption_schema",
+      "consumer_expectation": "Consumer draft state_consumption can reference provider v0.1.2 contracts for market_state.",
+      "provider_v0_1_2_observation": "errors=[]",
+      "result": "PASS",
+      "evidence_refs": [
+        "02_TSIS_BACKTEST_ENGINE/contracts/backtest/backtest_run_spec_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_resolution_request_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_interface_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_response_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_capability_effective_view_contract_v0_1_2.json"
+      ],
+      "notes": "Auxiliary payload ref is included only because the current consumer draft conditionally requires it."
+    },
+    {
+      "case_id": "REG_CONSUMER_STATE_CONSUMPTION_SCHEMA_EVENT_STATE",
+      "area": "consumer_state_consumption_schema",
+      "consumer_expectation": "Consumer draft state_consumption can reference provider v0.1.2 contracts for event_state.",
+      "provider_v0_1_2_observation": "errors=[]",
+      "result": "PASS",
+      "evidence_refs": [
+        "02_TSIS_BACKTEST_ENGINE/contracts/backtest/backtest_run_spec_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_resolution_request_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_interface_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_response_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_capability_effective_view_contract_v0_1_2.json"
+      ],
+      "notes": "Auxiliary payload ref is included only because the current consumer draft conditionally requires it."
+    },
+    {
+      "case_id": "REG_PROVIDER_REF_SET_001",
+      "area": "provider_contract_ref_set",
+      "consumer_expectation": "Consumer draft requires the five provider exchange contract references.",
+      "provider_v0_1_2_observation": "required_provider_keys=['runtime_capability_effective_view', 'runtime_user_invocation_interface', 'runtime_user_invocation_response', 'state_bundle_manifest', 'state_resolution_request']",
+      "result": "PASS",
+      "evidence_refs": [
+        "02_TSIS_BACKTEST_ENGINE/contracts/backtest/backtest_run_spec_contract_v0_1.json"
+      ],
+      "notes": "market_state_request and event_state_request remain conditional auxiliary refs in the draft consumer schema."
+    },
+    {
+      "case_id": "REG_SPECIALIZED_PAYLOAD_AUX_001",
+      "area": "specialized_payload_authority",
+      "consumer_expectation": "Specialized Market/Event payload files must not become a second executable provider authority.",
+      "provider_v0_1_2_observation": "roles={'market_state_request': 'normative_auxiliary_not_executable', 'event_state_request': 'normative_auxiliary_not_executable'}; executable_schema_authority={'market_state_request': 'state_resolution_request_contract_v0_1.json', 'event_state_request': 'state_resolution_request_contract_v0_1.json'}",
+      "result": "PASS_WITH_RESTRICTION",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/market_state_request_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/event_state_request_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_resolution_request_contract_v0_1_2.json"
+      ],
+      "notes": "Before removing consumer DRAFT, align these auxiliary refs with the v0.1.2 StateResolutionRequest authority."
+    },
+    {
+      "case_id": "REG_BACKTEST_INPUT_MANIFEST_AUTHORITY_001",
+      "area": "consumer_manifest_authority",
+      "consumer_expectation": "If states are included in BacktestInputManifest, the consumer requires explicit backtest authorization and authorized datasets.",
+      "provider_v0_1_2_observation": "manifest_requires_authority=True",
+      "result": "PASS",
+      "evidence_refs": [
+        "02_TSIS_BACKTEST_ENGINE/contracts/backtest/backtest_input_manifest_contract_v0_1.json"
+      ],
+      "notes": "Current provider v0.1.2 cannot satisfy this physical/data-plane contract because official/downstream remain false."
+    },
+    {
+      "case_id": "REG_EXPECTED_CONSUMPTION_BLOCK_001",
+      "area": "expected_no_consumption",
+      "consumer_expectation": "Provider v0.1.2 compatibility must not be mistaken for StateReplayFeed or backtest consumption authorization.",
+      "provider_v0_1_2_observation": "provider official/downstream/physical=false; consumer manifest states require official/downstream/authorization=true",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_response_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1_2.json",
+        "02_TSIS_BACKTEST_ENGINE/contracts/backtest/backtest_input_manifest_contract_v0_1.json"
+      ],
+      "notes": "This is an expected controlled incompatibility at the data-plane boundary, not a provider control-plane failure."
+    },
+    {
+      "case_id": "REG_HARDENING_EVIDENCE_001",
+      "area": "provider_semantic_hardening_evidence",
+      "consumer_expectation": "Regression relies on the accepted provider v0.1.2 semantic hardening evidence rather than rerunning physical data-plane work.",
+      "provider_v0_1_2_observation": "case_count=133; failed_cases=0; missing_required_case_ids=[]",
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_provider_contract_schema_hardening_v0_1_2_validation_matrix.json"
+      ],
+      "notes": ""
+    },
+    {
+      "case_id": "REG_BOUNDARIES_001",
+      "area": "hard_boundaries",
+      "consumer_expectation": "Regression is a contract-only control-plane check.",
+      "provider_v0_1_2_observation": "{\"backtest_consumption\": false, \"backtest_runs_started\": 0, \"datasets_written\": 0, \"downstream\": false, \"interface_invocations\": 0, \"official_dataset\": false, \"physical_file_reads\": 0, \"production\": false, \"registry_mutations\": 0, \"runtime_builds_executed\": 0, \"runtime_requests_executed\": 0, \"runtime_resolutions_executed\": 0, \"state_bundle_rows_delivered\": 0, \"state_replay_feed_events\": 0}",
+      "result": "PASS",
+      "evidence_refs": [],
+      "notes": ""
+    }
+  ]
+}

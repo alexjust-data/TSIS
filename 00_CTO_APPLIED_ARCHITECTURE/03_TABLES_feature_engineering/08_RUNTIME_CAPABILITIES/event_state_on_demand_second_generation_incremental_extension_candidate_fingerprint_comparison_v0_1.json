@@ -1,0 +1,52 @@
+{
+  "review_id": "event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260728T000000Z",
+  "review_run_id": "event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260728T110845Z",
+  "reviewed_run_id": "event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z",
+  "generation_chain": [
+    {
+      "generation": 0,
+      "dataset_id": "event_state_candidate_dataset_v0_1_d5662103e1c45f90",
+      "candidate_dataset_fingerprint": "d5662103e1c45f90847b51e69b0e698243bde231758fa3c864e24c4a6839be33"
+    },
+    {
+      "generation": 1,
+      "dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+      "candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+      "logical_event_state_dataset_fingerprint": "73b2f81b76697eb67b55faffecd36c8e77ecf926c1c1f9e56cf6ee0e0ecb10f6"
+    },
+    {
+      "generation": 2,
+      "dataset_id": "event_state_second_generation_incremental_candidate_dataset_v0_1_9a31d9b8bf3af01c",
+      "candidate_dataset_fingerprint": "9a31d9b8bf3af01c1c4a5cd18a37309eec7b3cb41011501ab85e0ef4a4831746",
+      "logical_event_state_dataset_fingerprint": "b4774100b8ab27794e8d9a9205227c6e694442e8287b92bf5d899ec3a0b66f33",
+      "physical_artifact_fingerprint": "e7d4b33f279f23442c65d3ee372ea4ccbd9bf8675cfc68f84c652e09f92c8c62"
+    }
+  ],
+  "source_fingerprint_comparison": {
+    "parent_generation_1_event_state_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+    "parent_generation_1_logical_event_state_dataset_fingerprint": "73b2f81b76697eb67b55faffecd36c8e77ecf926c1c1f9e56cf6ee0e0ecb10f6",
+    "market_state_delta_candidate_dataset_fingerprint": "f2cfd5cf55d0c1be1722693cc0216ffd425bbb869e19c17745976c030f2c7a2a",
+    "combined_logical_event_state_dataset_fingerprint": "b4774100b8ab27794e8d9a9205227c6e694442e8287b92bf5d899ec3a0b66f33",
+    "combined_physical_artifact_fingerprint": "e7d4b33f279f23442c65d3ee372ea4ccbd9bf8675cfc68f84c652e09f92c8c62",
+    "combined_candidate_dataset_fingerprint": "9a31d9b8bf3af01c1c4a5cd18a37309eec7b3cb41011501ab85e0ef4a4831746",
+    "logical_fingerprint_excludes_runtime_fields": [
+      "binding_created_at_utc",
+      "created_at_utc",
+      "materialization_run_id",
+      "projection_created_at_utc"
+    ],
+    "logical_sort_policy": "session_date + instrument_id + event_anchor_timestamp_utc + event_state_record_id"
+  },
+  "review_fingerprint_assessment": {
+    "candidate_dataset_fingerprint_match": true,
+    "logical_dataset_fingerprint_match": true,
+    "physical_artifact_fingerprint_match": true,
+    "validation_result_fingerprint_match": true,
+    "runtime_fields_excluded_from_logical_fingerprint": [
+      "binding_created_at_utc",
+      "created_at_utc",
+      "materialization_run_id",
+      "projection_created_at_utc"
+    ]
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "matrix_id": "runtime_provider_contract_schema_hardening_validation_matrix_v0_1",
+  "gate": "runtime_provider_contract_schema_hardening_v0_1",
+  "status": "CLOSED_SCHEMA_HARDENING_VALIDATION_PASS_NO_EXECUTION",
+  "jsonschema_library": "jsonschema.Draft202012Validator",
+  "case_count": 10,
+  "failed_cases": [],
+  "cases": [
+    {
+      "case_id": "valid_market_state_resolution_request",
+      "schema_valid": true,
+      "custom_valid": true,
+      "expected_valid": true,
+      "result": "PASS",
+      "schema_errors": [],
+      "custom_errors": []
+    },
+    {
+      "case_id": "market_request_with_event_payload_rejected",
+      "schema_valid": false,
+      "custom_valid": true,
+      "expected_valid": false,
+      "result": "PASS",
+      "schema_errors": [
+        "Additional properties are not allowed ('event_state_request' was unexpected)",
+        "'market_state_request' is a required property",
+        "{'event_state_request': {'request_type': 'event_state', 'request_contract_version': '0.1.0', 'request_id': 'req_e', 'requested_at_utc': '2026-07-28T00:00:00Z', 'requested_by': 'test', 'request_purpose': 'validation', 'event_state_profile_id': 'event_state_core_four_intraday_profile_v0_1', 'event_state_profile_version_policy': 'exact', 'event_state_profile_version': '0.1', 'resolution': '1m', 'grain': 'instrument_session_event', 'event_type_ids': ['event_type:market_data:session_opened'], 'event_type_registry_snapshot_policy': 'exact', 'event_type_registry_snapshot_id': 'snapshot', 'event_subject_scope': 'exchange_session', 'event_instance_policy_id': 'event_instance_policy_v0_1', 'event_anchor_policy_id': 'anchor_v0_1', 'event_window_policy_id': 'window_v0_1', 'event_window_definition_ids': ['session_opened_at_anchor_context_v0_1'], 'instrument_projection_policy_id': 'projection_v0_1', 'universe_definition_id': None, 'explicit_instrument_ids': ['AAME'], 'universe_selection_mode': 'explicit', 'instrument_filter_mode': 'none', 'exchange_scope': 'XNYS', 'start_date': None, 'end_date': None, 'session_dates': ['2021-01-19'], 'market_state_dependency_mode': 'emit_or_resolve_market_state_subrequest_through_runtime_capability', 'market_state_profile_id': 'market_state_core_four_intraday_profile_v0_1', 'market_state_profile_version_policy': 'exact', 'market_state_profile_version': '0.1', 'market_state_capability_policy_id': 'market_state_capability_consumption_policy_v0_1', 'market_state_dependency_reuse_policy': 'reuse_if_exact_validated_dependency_match', 'calendar_authority_id': 'XNYS_calendar_v0_1', 'point_in_time_policy_id': 'pit_v0_1', 'as_of_policy_id': 'asof_v0_1', 'source_version_policy': 'exact_governed_or_block', 'output_mode': 'candidate', 'output_format': 'jsonl', 'partition_policy': 'logical_context', 'validation_level': 'strict', 'reuse_policy': 'reuse_if_exact_validated_dependency_match'}} should not be valid under {'required': ['event_state_request']}"
+      ],
+      "custom_errors": []
+    },
+    {
+      "case_id": "payload_physical_path_rejected",
+      "schema_valid": false,
+      "custom_valid": true,
+      "expected_valid": false,
+      "result": "PASS",
+      "schema_errors": [
+        "Additional properties are not allowed ('physical_path' was unexpected)",
+        "{'request_type': 'market_state', 'request_contract_version': '0.1.0', 'request_id': 'req_m', 'requested_at_utc': '2026-07-28T00:00:00Z', 'requested_by': 'test', 'request_purpose': 'validation', 'profile_id': 'market_state_core_four_intraday_profile_v0_1', 'profile_version_policy': 'exact', 'profile_version': '0.1', 'resolution': '1m', 'grain': 'instrument_session', 'universe_definition_id': None, 'explicit_instrument_ids': ['AAME'], 'universe_selection_mode': 'explicit', 'instrument_filter_mode': 'none', 'start_date': None, 'end_date': None, 'session_dates': ['2021-01-19'], 'calendar_authority_id': 'XNYS_calendar_v0_1', 'exchange_scope': 'XNYS', 'point_in_time_policy_id': 'pit_v0_1', 'as_of_policy_id': 'asof_v0_1', 'source_version_policy': 'exact_governed_or_block', 'output_mode': 'candidate', 'output_format': 'jsonl', 'partition_policy': 'logical_context', 'validation_level': 'strict', 'reuse_policy': 'reuse_if_exact_validated_match', 'physical_path': 'C:/forbidden.parquet'} should not be valid under {'anyOf': [{'required': ['physical_path']}, {'required': ['physical_data_path']}, {'required': ['source_parquet_file']}, {'required': ['source_parquet_path']}, {'required': ['market_state_candidate_parquet_path']}, {'required': ['market_state_candidate_path']}, {'required': ['event_state_output_path']}, {'required': ['temporary_output_directory']}, {'required': ['resolved_partition_path']}, {'required': ['builder_implementation']}, {'required': ['materializer_implementation']}, {'required': ['validator_implementation']}, {'required': ['dataset_registry_id']}, {'required': ['machine_specific_state']}]}",
+        "Additional properties are not allowed ('physical_path' was unexpected)",
+        "{'request_type': 'market_state', 'request_contract_version': '0.1.0', 'request_id': 'req_m', 'requested_at_utc': '2026-07-28T00:00:00Z', 'requested_by': 'test', 'request_purpose': 'validation', 'profile_id': 'market_state_core_four_intraday_profile_v0_1', 'profile_version_policy': 'exact', 'profile_version': '0.1', 'resolution': '1m', 'grain': 'instrument_session', 'universe_definition_id': None, 'explicit_instrument_ids': ['AAME'], 'universe_selection_mode': 'explicit', 'instrument_filter_mode': 'none', 'start_date': None, 'end_date': None, 'session_dates': ['2021-01-19'], 'calendar_authority_id': 'XNYS_calendar_v0_1', 'exchange_scope': 'XNYS', 'point_in_time_policy_id': 'pit_v0_1', 'as_of_policy_id': 'asof_v0_1', 'source_version_policy': 'exact_governed_or_block', 'output_mode': 'candidate', 'output_format': 'jsonl', 'partition_policy': 'logical_context', 'validation_level': 'strict', 'reuse_policy': 'reuse_if_exact_validated_match', 'physical_path': 'C:/forbidden.parquet'} should not be valid under {'anyOf': [{'required': ['physical_path']}, {'required': ['physical_data_path']}, {'required': ['source_parquet_file']}, {'required': ['source_parquet_path']}, {'required': ['market_state_candidate_parquet_path']}, {'required': ['market_state_candidate_path']}, {'required': ['event_state_output_path']}, {'required': ['temporary_output_directory']}, {'required': ['resolved_partition_path']}, {'required': ['builder_implementation']}, {'required': ['materializer_implementation']}, {'required': ['validator_implementation']}, {'required': ['dataset_registry_id']}, {'required': ['machine_specific_state']}]}"
+      ],
+      "custom_errors": []
+    },
+    {
+      "case_id": "accepted_status_rejected",
+      "schema_valid": false,
+      "custom_valid": true,
+      "expected_valid": false,
+      "result": "PASS",
+      "schema_errors": [
+        "'accepted' is not one of ['blocked', 'reuse_hit', 'authorization_required', 'authorized_reference']"
+      ],
+      "custom_errors": []
+    },
+    {
+      "case_id": "reuse_hit_without_bundle_rejected",
+      "schema_valid": false,
+      "custom_valid": true,
+      "expected_valid": false,
+      "result": "PASS",
+      "schema_errors": [
+        "None is not of type 'object'"
+      ],
+      "custom_errors": []
+    },
+    {
+      "case_id": "blocked_response_with_dataset_rejected",
+      "schema_valid": false,
+      "custom_valid": true,
+      "expected_valid": false,
+      "result": "PASS",
+      "schema_errors": [
+        "'ds_bad' is not of type 'null'"
+      ],
+      "custom_errors": []
+    },
+    {
+      "case_id": "pass_bundle_empty_capability_refs_rejected",
+      "schema_valid": false,
+      "custom_valid": true,
+      "expected_valid": false,
+      "result": "PASS",
+      "schema_errors": [
+        "[] should be non-empty",
+        "[] should be non-empty"
+      ],
+      "custom_errors": []
+    },
+    {
+      "case_id": "bundle_coverage_arithmetic_rejected_by_code_validator",
+      "schema_valid": true,
+      "custom_valid": false,
+      "expected_valid": false,
+      "result": "PASS",
+      "schema_errors": [],
+      "custom_errors": [
+        "coverage arithmetic failed"
+      ]
+    },
+    {
+      "case_id": "valid_reuse_response",
+      "schema_valid": true,
+      "custom_valid": true,
+      "expected_valid": true,
+      "result": "PASS",
+      "schema_errors": [],
+      "custom_errors": []
+    },
+    {
+      "case_id": "valid_state_bundle_manifest",
+      "schema_valid": true,
+      "custom_valid": true,
+      "expected_valid": true,
+      "result": "PASS",
+      "schema_errors": [],
+      "custom_errors": []
+    }
+  ],
+  "contract_content_sha256_excluding_hash_field": "fe3130b894e0ee6af65999323a77f4bbd2e0b0e6a7054002a59bbb679a41c51c"
+}

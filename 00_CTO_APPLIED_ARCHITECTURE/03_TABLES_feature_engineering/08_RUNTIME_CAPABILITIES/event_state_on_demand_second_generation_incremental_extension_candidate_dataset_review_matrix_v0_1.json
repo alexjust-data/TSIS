@@ -1,0 +1,436 @@
+{
+  "review_id": "event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260728T000000Z",
+  "review_run_id": "event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260728T110845Z",
+  "gate": "event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1",
+  "script_version": "event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_runner_v0_1",
+  "review_status": "CLOSED_PASS_EVENT_STATE_SECOND_GENERATION_INCREMENTAL_CANDIDATE_DATASET_VALIDATED_WITH_RESTRICTIONS_NO_PROMOTION",
+  "review_decision": "approved_as_event_state_second_generation_incremental_candidate_evidence_with_restrictions",
+  "reviewed_run_id": "event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z",
+  "reviewed_candidate_dataset_id": "event_state_second_generation_incremental_candidate_dataset_v0_1_9a31d9b8bf3af01c",
+  "reviewed_candidate_dataset_fingerprint": "9a31d9b8bf3af01c1c4a5cd18a37309eec7b3cb41011501ab85e0ef4a4831746",
+  "candidate_dataset_review_approved": true,
+  "reuse_eligibility_before_review": "pending_second_generation_incremental_extension_candidate_dataset_review",
+  "reuse_eligibility_after_review": "pending_incremental_lineage_chain_validation",
+  "promotion_review_eligibility_after_review": "not_eligible",
+  "coverage_review": {
+    "requested_contexts": 15,
+    "represented_contexts": 14,
+    "reused_prior_generation_contexts": 11,
+    "delta_2_materialized_contexts": 3,
+    "unavailable_contexts": 1,
+    "unaccounted_contexts": 0,
+    "combined_event_state_records": 14,
+    "delta_2_event_state_records": 3
+  },
+  "lineage_review": {
+    "generation_chain_validated": true,
+    "parent_generation_1_reused_contexts": 11,
+    "delta_2_materialized_contexts": 3,
+    "parent_evidence_mutated": false,
+    "lineage_manifest_ref": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z\\event_state_second_generation_incremental_lineage_manifest.json"
+  },
+  "boundary_counters": {
+    "event_state_materializer_executions": 0,
+    "market_state_materializer_executions": 0,
+    "source_market_data_rows_read": 0,
+    "event_state_records_emitted_by_review": 0,
+    "registry_entry_mutations": 0,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false
+  },
+  "checks": [
+    {
+      "check_id": "source_run_closed_with_expected_status",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": "CLOSED_PASS_EVENT_STATE_SECOND_GENERATION_INCREMENTAL_EXTENSION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+    },
+    {
+      "check_id": "candidate_dataset_id_matches",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": "event_state_second_generation_incremental_candidate_dataset_v0_1_9a31d9b8bf3af01c"
+    },
+    {
+      "check_id": "candidate_dataset_fingerprint_matches",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": "9a31d9b8bf3af01c1c4a5cd18a37309eec7b3cb41011501ab85e0ef4a4831746"
+    },
+    {
+      "check_id": "logical_dataset_fingerprint_matches",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": "b4774100b8ab27794e8d9a9205227c6e694442e8287b92bf5d899ec3a0b66f33"
+    },
+    {
+      "check_id": "physical_artifact_fingerprint_matches",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": "e7d4b33f279f23442c65d3ee372ea4ccbd9bf8675cfc68f84c652e09f92c8c62"
+    },
+    {
+      "check_id": "validation_result_fingerprint_matches",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": "32045d40dc84df3900e1037adb7062bf42e147233e261037f0d9923d18c0e229"
+    },
+    {
+      "check_id": "coverage_counts_match",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "requested_contexts": 15,
+        "represented_contexts": 14,
+        "reused_validated_event_state_contexts": 11,
+        "delta_2_materialized_event_state_contexts": 3,
+        "unavailable_contexts": 1
+      }
+    },
+    {
+      "check_id": "validation_counts_match",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "validation_status": "pass_with_restrictions",
+        "requested_contexts": 15,
+        "represented_contexts": 14,
+        "reused_validated_event_state_contexts": 11,
+        "delta_2_materialized_event_state_contexts": 3,
+        "unavailable_contexts": 1,
+        "unaccounted_contexts": 0,
+        "combined_event_state_records": 14,
+        "combined_event_instances": 5,
+        "new_event_instances_created": 1,
+        "combined_event_window_bindings": 5,
+        "new_event_window_bindings_created": 1,
+        "combined_instrument_session_projections": 15,
+        "new_instrument_session_projections_created": 3,
+        "duplicate_canonical_contexts": 0,
+        "duplicate_event_state_record_ids": 0,
+        "exact_one_binding_failures": 0,
+        "unexpected_baseline_mutations": 0,
+        "hard_validation_failures": 0,
+        "official_dataset": false,
+        "production": false,
+        "downstream": false,
+        "validation_result_fingerprint": "32045d40dc84df3900e1037adb7062bf42e147233e261037f0d9923d18c0e229"
+      }
+    },
+    {
+      "check_id": "coverage_reconciles",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": "15 = 14 + 1"
+    },
+    {
+      "check_id": "combined_record_count_matches",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": 14
+    },
+    {
+      "check_id": "delta_record_count_matches",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": 3
+    },
+    {
+      "check_id": "hard_validation_failures_zero",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": 0
+    },
+    {
+      "check_id": "output_file_hash_match_combined_event_state_candidate_records",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "expected": {
+          "role": "combined_event_state_candidate_records",
+          "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z\\event_state_second_generation_incremental_candidate_records.jsonl",
+          "sha256": "ef3a190ab064a1fc4c372eea03719e3dc41d0e8877038934a07667580cd7ffb7",
+          "records": 14
+        },
+        "actual_sha256": "ef3a190ab064a1fc4c372eea03719e3dc41d0e8877038934a07667580cd7ffb7"
+      }
+    },
+    {
+      "check_id": "output_file_hash_match_delta_2_event_state_candidate_records",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "expected": {
+          "role": "delta_2_event_state_candidate_records",
+          "path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\runs\\event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z\\delta_2_event_state_candidate_records.jsonl",
+          "sha256": "6096476d8b75a3db35e76c9b3e554f2b442e8db129c8f93380a2d9f806255973",
+          "records": 3
+        },
+        "actual_sha256": "6096476d8b75a3db35e76c9b3e554f2b442e8db129c8f93380a2d9f806255973"
+      }
+    },
+    {
+      "check_id": "ledger_counts_match",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "context_status_counts": {
+          "represented": 14,
+          "unavailable": 1
+        },
+        "representation_source_counts": {
+          "delta_2_materialized_event_state": 3,
+          "none": 1,
+          "reused_validated_event_state": 11
+        }
+      }
+    },
+    {
+      "check_id": "represented_ledger_matches_records",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "records": 14,
+        "ledger": 14
+      }
+    },
+    {
+      "check_id": "delta_ledger_matches_delta_records",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "delta_records": 3,
+        "delta_ledger": 3
+      }
+    },
+    {
+      "check_id": "canonical_contexts_unique",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "unique": 14,
+        "records": 14
+      }
+    },
+    {
+      "check_id": "record_ids_unique",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": 14
+    },
+    {
+      "check_id": "unavailable_context_preserved",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "event_type_id": "event_type:market_data:session_opened",
+        "exchange_id": "XNYS",
+        "session_date": "2022-11-25",
+        "instrument_id": "figi_share_class:BBG001S5N8T1",
+        "event_anchor_timestamp_utc": "2022-11-25T14:30:00Z",
+        "event_window_definition_id": "session_opened_at_anchor_context_v0_1",
+        "context_status": "unavailable",
+        "representation_source": "none",
+        "blocking_reason": "missing_exact_market_state_binding",
+        "market_state_record_id": "",
+        "state_output_fingerprint": "",
+        "available_same_instrument_session_timestamps": [],
+        "origin_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+        "origin_dataset_id": null,
+        "origin_candidate_dataset_fingerprint": null,
+        "origin_generation": "inherited_unavailable"
+      }
+    },
+    {
+      "check_id": "no_partial_row_for_unavailable_context",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": "event_type:market_data:session_opened|XNYS|2022-11-25|figi_share_class:BBG001S5N8T1|2022-11-25T14:30:00Z|session_opened_at_anchor_context_v0_1"
+    },
+    {
+      "check_id": "record_semantic_contract_homogeneous",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "profiles": [
+          "event_state_core_four_intraday_profile_v0_1"
+        ],
+        "event_types": [
+          "event_type:market_data:session_opened"
+        ],
+        "integration_statuses": [
+          "EVENT_STATE_INCREMENTAL_OVERLAP_DELTA_INTEGRATED_WITH_RESTRICTIONS",
+          "EVENT_STATE_ON_DEMAND_INTEGRATED_WITH_RESTRICTIONS",
+          "EVENT_STATE_SECOND_GENERATION_INCREMENTAL_DELTA_INTEGRATED_WITH_RESTRICTIONS"
+        ],
+        "allowed_integration_statuses": [
+          "EVENT_STATE_INCREMENTAL_OVERLAP_DELTA_INTEGRATED_WITH_RESTRICTIONS",
+          "EVENT_STATE_ON_DEMAND_INTEGRATED_WITH_RESTRICTIONS",
+          "EVENT_STATE_SECOND_GENERATION_INCREMENTAL_DELTA_INTEGRATED_WITH_RESTRICTIONS"
+        ]
+      }
+    },
+    {
+      "check_id": "all_records_have_market_state_dependency_fingerprint",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": [
+        "433288b634924676a3c516fac600574ed36237c3c02ca640111f17609b6c235b",
+        "5e8da235219628220bac462f342cab469fbd2a48d047eef0772cb5a2cffe893f",
+        "f2cfd5cf55d0c1be1722693cc0216ffd425bbb869e19c17745976c030f2c7a2a"
+      ]
+    },
+    {
+      "check_id": "delta2_records_use_expected_market_state_candidate",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": "f2cfd5cf55d0c1be1722693cc0216ffd425bbb869e19c17745976c030f2c7a2a"
+    },
+    {
+      "check_id": "lineage_composition_mode_matches",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": "parent_generation_1_validated_event_state_plus_delta_2_materialized_event_state"
+    },
+    {
+      "check_id": "lineage_parent_reuse_count_matches",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "parent_generation": 1,
+        "parent_run_id": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+        "parent_dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+        "parent_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+        "parent_logical_event_state_dataset_fingerprint": "73b2f81b76697eb67b55faffecd36c8e77ecf926c1c1f9e56cf6ee0e0ecb10f6",
+        "parent_reuse_evidence_id": "event_state_incremental_overlap_reuse_evidence_v0_1_8f8cce3a344ac7dd",
+        "parent_reuse_evidence_fingerprint": "60965781a0bf42674c5521cb0e27f7643574ceb2e2bfbd46501da69be869507d",
+        "parent_records_reused": 11
+      }
+    },
+    {
+      "check_id": "lineage_market_state_delta_count_matches",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "market_state_runtime_capability_id": "market_state_on_demand_runtime_capability_v0_1",
+        "market_state_dependency_mode": "emit_or_resolve_market_state_subrequest_through_runtime_capability",
+        "market_state_dependency_reuse_policy": "reuse_existing_validated_candidate_or_block_unless_separate_dependency_generation_authorized",
+        "market_state_reference_run_id": "market_state_on_demand_incremental_overlap_execution_v0_1_20260725T064143Z",
+        "market_state_dependency_request_fingerprint": "884830b081a2e9b8e5ea5130262600a20b01385a019a66ce3ad2240aac5b9b08",
+        "market_state_dependency_execution_plan_fingerprint": "c9ee1a63f9dd8780f16193adf43d35bb8db2271778a64afae2132e052931e746",
+        "market_state_candidate_dataset_fingerprint": "f2cfd5cf55d0c1be1722693cc0216ffd425bbb869e19c17745976c030f2c7a2a",
+        "market_state_scientific_dataset_fingerprint": "7103e4fdbae205e4bccbeb0c436508f62b016107b4b2756c549073dae971bb5f",
+        "market_state_validation_result_fingerprint": "9aafd142203872647a8be3668d0aca7c4f95630be4a405e00fd64f5cd111f336",
+        "market_state_delta_records_read": 3,
+        "direct_market_state_path_allowed": false
+      }
+    },
+    {
+      "check_id": "lineage_row_origin_count_matches",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": 15
+    },
+    {
+      "check_id": "parent_dataset_identity_matches",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "dataset_id": "event_state_incremental_overlap_candidate_dataset_v0_1_f88cc0a0a39117f3",
+        "dataset_kind": "event_state_incremental_overlap_candidate_dataset",
+        "registry_status": "validated_candidate",
+        "validation_status": "pass_with_restrictions",
+        "reuse_eligibility": "pending_incremental_overlap_candidate_dataset_review",
+        "promotion_review_eligibility": "not_eligible",
+        "downstream_eligibility": false,
+        "event_state_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+        "logical_event_state_dataset_fingerprint": "73b2f81b76697eb67b55faffecd36c8e77ecf926c1c1f9e56cf6ee0e0ecb10f6",
+        "physical_artifact_fingerprint": "dd78476d760b3bea2bad4fe78d89add430eec3d9f0ba9650261f07304998cc82",
+        "validation_result_fingerprint": "8bb08f0f2afdff138064758bda45f21ca55ac415f760ce54816f070bb958a37b",
+        "event_state_request_fingerprint": "a181d50d5eb9f5796c6985483ef9cf3340d0929a617e5dd7946e6013cb2e7490",
+        "event_state_dependency_resolution_fingerprint": "f7cdaa64a324c5c1fac145f50573d8268a28d75477e94eea3df5ddba71af8a21",
+        "event_state_execution_plan_fingerprint": "903fb3c94fa566143178ca609c5d1db6f4d9a7a13204f44e84608e33a1bda762",
+        "baseline_event_state_candidate_dataset_id": "event_state_candidate_dataset_v0_1_d5662103e1c45f90",
+        "baseline_event_state_candidate_dataset_fingerprint": "d5662103e1c45f90847b51e69b0e698243bde231758fa3c864e24c4a6839be33",
+        "market_state_delta_candidate_dataset_fingerprint": "5e8da235219628220bac462f342cab469fbd2a48d047eef0772cb5a2cffe893f",
+        "coverage": {
+          "requested_contexts": 12,
+          "represented_contexts": 11,
+          "reused_validated_event_state_contexts": 8,
+          "delta_materialized_event_state_contexts": 3,
+          "unavailable_contexts": 1
+        },
+        "logical_context_ledger_ref": "combined_event_state_context_ledger_v0_1.json",
+        "lineage_manifest_ref": "event_state_incremental_overlap_lineage_manifest.json",
+        "validation_report_ref": "event_state_incremental_overlap_validation_report.json",
+        "official_event_state_dataset": false,
+        "official_dataset": false,
+        "production": false,
+        "downstream": false,
+        "registry_entry_fingerprint": "0de76e5d0366d792f2210cb98aa49286681c44deab50860d0f5cacf8f0426d30"
+      }
+    },
+    {
+      "check_id": "parent_output_identity_matches",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "candidate": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+        "logical": "73b2f81b76697eb67b55faffecd36c8e77ecf926c1c1f9e56cf6ee0e0ecb10f6"
+      }
+    },
+    {
+      "check_id": "parent_artifact_hashes_observed_without_mutation",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "final_manifest": "830187958dcec0e1adc96f0662947213d8810baafb9f9a4a6f1eb7a495cc59d3",
+        "candidate_registry_entry": "bb112022264dad3ec061e7c7a99bb5ce12a3bb633f1bc0c0099732f39de764ed",
+        "candidate_output_manifest": "6201790c3ffca2aa026e2399a52a7a15a939b535acb95646ef246b6444894d33"
+      }
+    },
+    {
+      "check_id": "failed_technical_attempt_preserved",
+      "status": "PASS",
+      "severity": "INFO",
+      "evidence": {
+        "run_id": "event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T102842Z",
+        "gate": "event_state_on_demand_second_generation_incremental_extension_v0_1",
+        "failure_status": "CLOSED_FAILED_RUNTIME_READOUT_PATH_LENGTH_NO_VALID_CLOSURE",
+        "failed_at_utc": "2026-07-28T10:29:55Z",
+        "failure_reason": "Windows path length prevented readout write before final closure hash update.",
+        "valid_candidate_evidence": false,
+        "superseded_by_clean_rerun": null,
+        "official_dataset": false,
+        "production": false,
+        "downstream": false
+      }
+    },
+    {
+      "check_id": "no_promotion_or_consumption_opened",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "official_dataset": false,
+        "production": false,
+        "downstream": false
+      }
+    },
+    {
+      "check_id": "review_boundary_counters_zero",
+      "status": "PASS",
+      "severity": "BLOCKING",
+      "evidence": {
+        "event_state_materializer_executions": 0,
+        "market_state_materializer_executions": 0,
+        "source_market_data_rows_read": 0,
+        "registry_entry_mutations": 0
+      }
+    }
+  ],
+  "hard_review_failures": 0,
+  "hard_review_failure_ids": [],
+  "next_allowed_gate": "event_state_on_demand_incremental_lineage_chain_validation_v0_1",
+  "reviewed_at_utc": "2026-07-28T11:08:45Z"
+}

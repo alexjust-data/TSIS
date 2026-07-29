@@ -1,0 +1,121 @@
+{
+  "review_id": "runtime_user_invocation_bounded_interface_execution_review_v0_1",
+  "created_at_utc": "2026-07-28T17:33:15+00:00",
+  "review_status": "CLOSED_PASS_STATE_PROVIDER_CONTROL_PLANE_READY_WITH_RESTRICTIONS_NO_CONSUMPTION",
+  "execution_gate_reviewed": "runtime_user_invocation_bounded_interface_execution_v0_1",
+  "execution_id": "runtime_user_invocation_bounded_interface_execution_v0_1_20260728T1731090000",
+  "rows": [
+    {
+      "area": "case_count",
+      "expected": "8 authorized cases",
+      "observed": 8,
+      "result": "PASS",
+      "notes": "All authorized bounded cases represented."
+    },
+    {
+      "area": "hard_failures",
+      "expected": "0",
+      "observed": 0,
+      "result": "PASS",
+      "notes": "No schema or coverage arithmetic failures."
+    },
+    {
+      "area": "response_schema_validation",
+      "expected": "PASS for every response",
+      "observed": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "result": "PASS",
+      "notes": "RuntimeInvocationResponse contract enforced."
+    },
+    {
+      "area": "bundle_schema_validation",
+      "expected": "PASS or NOT_APPLICABLE",
+      "observed": [
+        "PASS",
+        "PASS",
+        "NOT_APPLICABLE",
+        "NOT_APPLICABLE",
+        "NOT_APPLICABLE",
+        "NOT_APPLICABLE",
+        "PASS",
+        "PASS"
+      ],
+      "result": "PASS",
+      "notes": "Reuse hit StateBundleManifest artifacts validate."
+    },
+    {
+      "area": "coverage_arithmetic",
+      "expected": "PASS",
+      "observed": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "result": "PASS",
+      "notes": "Partial coverage is preserved."
+    },
+    {
+      "area": "zero_builds",
+      "expected": "0",
+      "observed": 0,
+      "result": "PASS",
+      "notes": "No Market/Event materialization occurred."
+    },
+    {
+      "area": "zero_source_rows",
+      "expected": "0",
+      "observed": 0,
+      "result": "PASS",
+      "notes": "No market rows read."
+    },
+    {
+      "area": "zero_registry_mutations",
+      "expected": "0",
+      "observed": 0,
+      "result": "PASS",
+      "notes": "No registry mutation occurred."
+    },
+    {
+      "area": "no_physical_delivery",
+      "expected": "0 rows delivered",
+      "observed": 0,
+      "result": "PASS",
+      "notes": "Control-plane only."
+    },
+    {
+      "area": "no_consumer_opening",
+      "expected": "StateReplayFeed/backtest/downstream closed",
+      "observed": {
+        "state_replay_feed": 0,
+        "backtest": 0,
+        "downstream": false
+      },
+      "result": "PASS",
+      "notes": "Consumer/data-plane remains closed."
+    }
+  ],
+  "failed_rows": 0,
+  "state_provider_control_plane": "READY_WITH_RESTRICTIONS",
+  "remaining_closed": {
+    "physical_row_delivery": false,
+    "backtest_consumption": false,
+    "state_replay_feed": false,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false
+  },
+  "next_boundary_after_provider_control_plane": "state_bundle_physical_consumption_authorization_design_v0_1"
+}

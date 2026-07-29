@@ -1,0 +1,265 @@
+{
+  "gate": "market_state_core_four_replay_availability_timestamp_contract_v0_1",
+  "status": "CLOSED_CONTRACT_READY_WITH_VALIDATION_HARDENED_RESTRICTIONS_NO_PHYSICAL_READ",
+  "created_at_utc": "2026-07-29T17:35:00Z",
+  "case_count": 30,
+  "failed_cases": 0,
+  "required_case_ids": [
+    "TS_CONTRACT_JSON_PARSE_001",
+    "TS_JSON_SCHEMA_COMPILE_001",
+    "TS_SCHEMA_VALIDATES_GOOD_RECORD_001",
+    "TS_SCHEMA_REJECTS_NON_CANONICAL_UTC_OFFSET_001",
+    "TS_SCHEMA_REJECTS_BAD_DURATION_ORDER_001",
+    "TS_SCOPE_BOUNDARIES_001",
+    "TS_TIMESTAMP_DEFINITIONS_001",
+    "TS_STATE_AS_OF_MAX_COMPONENT_001",
+    "TS_STATE_AVAILABLE_AT_INCLUDES_PUBLICATION_LATENCY_001",
+    "TS_DECISION_TIMESTAMP_ONLY_NOT_DELIVERY_001",
+    "TS_MATERIALIZATION_TIME_NOT_AVAILABILITY_001",
+    "TS_MISSING_AS_OF_BLOCKS_001",
+    "TS_MISSING_AVAILABLE_AT_BLOCKS_001",
+    "TS_COMPONENT_AS_OF_AFTER_DECISION_BLOCKS_001",
+    "TS_AVAILABLE_AT_BEFORE_DECISION_BLOCKS_001",
+    "TS_SOURCE_AFTER_DECISION_BLOCKS_001",
+    "TS_COMPONENT_AVAILABLE_BEFORE_AS_OF_BLOCKS_001",
+    "TS_CORE_FOUR_INFORMATION_OBJECT_COVERAGE_001",
+    "TS_DUPLICATED_OBJECTS_MISSING_REQUIRED_BLOCKS_001",
+    "TS_COMPONENT_BLOCKED_DECISION_SAFE_BLOCKS_001",
+    "TS_COMPONENT_RESEARCH_ONLY_DECISION_SAFE_BLOCKS_001",
+    "TS_GLOBAL_BLOCKED_DECISION_SAFE_BLOCKS_001",
+    "TS_LATENCY_OMISSION_BLOCKS_001",
+    "TS_ZERO_LATENCY_POLICY_REQUIRED_001",
+    "TS_RESTRICTION_PROPAGATION_REQUIRED_001",
+    "TS_RESEARCH_ONLY_CONSISTENT_NOT_DELIVERABLE_001",
+    "TS_EVENT_LOOP_DELIVERY_RULE_001",
+    "TS_CORE_FOUR_PROFILE_NOT_EXPANDED_001",
+    "TS_REPLAY_LEGALITY_DECISION_SAFE_ONLY_001",
+    "TS_NON_EXECUTION_BOUNDARIES_001"
+  ],
+  "missing_required_case_ids": [],
+  "duplicate_case_ids": [],
+  "unexpected_case_ids": [],
+  "physical_artifacts_opened": 0,
+  "parquet_opened": false,
+  "state_rows_read": 0,
+  "StateReplayFeed_records_emitted": 0,
+  "runtime_requests_executed": 0,
+  "runtime_builds_executed": 0,
+  "datasets_written": 0,
+  "registry_mutations": 0,
+  "production": false,
+  "downstream": false,
+  "official_dataset": false,
+  "rows": [
+    {
+      "case_id": "TS_CONTRACT_JSON_PARSE_001",
+      "area": "json",
+      "expected": "contract and scope parse",
+      "observed": "parsed",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_JSON_SCHEMA_COMPILE_001",
+      "area": "schema",
+      "expected": "Draft 2020-12 schema compiles",
+      "observed": "compiled",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_SCHEMA_VALIDATES_GOOD_RECORD_001",
+      "area": "schema",
+      "expected": "valid",
+      "observed": "PASS",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_SCHEMA_REJECTS_NON_CANONICAL_UTC_OFFSET_001",
+      "area": "schema",
+      "expected": "blocked: canonical UTC Z required",
+      "observed": "schema:'2026-01-05T15:42:00+01:00' does not match '^\\\\d{4}-\\\\d{2}-\\\\d{2}T\\\\d{2}:\\\\d{2}:\\\\d{2}(?:\\\\.\\\\d+)?Z$'",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_SCHEMA_REJECTS_BAD_DURATION_ORDER_001",
+      "area": "schema",
+      "expected": "blocked: ordered ISO-8601 duration required",
+      "observed": "schema:'PT1M2H' does not match '^(?:PT0S|P\\\\d+D|PT(?:\\\\d+H(?:\\\\d+M)?(?:\\\\d+(?:\\\\.\\\\d+)?S)?|\\\\d+M(?:\\\\d+(?:\\\\.\\\\d+)?S)?|\\\\d+(?:\\\\.\\\\d+)?S))$'",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_SCOPE_BOUNDARIES_001",
+      "area": "boundaries",
+      "expected": "no execution authority",
+      "observed": "True",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_TIMESTAMP_DEFINITIONS_001",
+      "area": "timestamps",
+      "expected": "three timestamp definitions",
+      "observed": "True",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_STATE_AS_OF_MAX_COMPONENT_001",
+      "area": "semantic",
+      "expected": "state_as_of is max component as_of",
+      "observed": "PASS",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_STATE_AVAILABLE_AT_INCLUDES_PUBLICATION_LATENCY_001",
+      "area": "semantic",
+      "expected": "available_at includes governed latency",
+      "observed": "PASS",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_DECISION_TIMESTAMP_ONLY_NOT_DELIVERY_001",
+      "area": "delivery",
+      "expected": "decision timestamp alone not enough",
+      "observed": "True",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_MATERIALIZATION_TIME_NOT_AVAILABILITY_001",
+      "area": "delivery",
+      "expected": "materialization/file/runtime times forbidden",
+      "observed": "True",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_MISSING_AS_OF_BLOCKS_001",
+      "area": "fail_closed",
+      "expected": "blocked: missing state_as_of",
+      "observed": "schema:'state_as_of_utc' is a required property",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_MISSING_AVAILABLE_AT_BLOCKS_001",
+      "area": "fail_closed",
+      "expected": "blocked: missing state_available_at",
+      "observed": "schema:'state_available_at_utc' is a required property",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_COMPONENT_AS_OF_AFTER_DECISION_BLOCKS_001",
+      "area": "fail_closed",
+      "expected": "blocked: component as_of after decision",
+      "observed": "component_as_of_after_decision",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_AVAILABLE_AT_BEFORE_DECISION_BLOCKS_001",
+      "area": "fail_closed",
+      "expected": "blocked: available_at before decision",
+      "observed": "component_available_after_state_available",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_SOURCE_AFTER_DECISION_BLOCKS_001",
+      "area": "fail_closed",
+      "expected": "blocked: source after decision",
+      "observed": "source_timestamp_after_component_as_of",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_COMPONENT_AVAILABLE_BEFORE_AS_OF_BLOCKS_001",
+      "area": "fail_closed",
+      "expected": "blocked: component available before as_of",
+      "observed": "component_available_before_component_as_of",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_CORE_FOUR_INFORMATION_OBJECT_COVERAGE_001",
+      "area": "semantic",
+      "expected": "all four required objects represented",
+      "observed": "True",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_DUPLICATED_OBJECTS_MISSING_REQUIRED_BLOCKS_001",
+      "area": "fail_closed",
+      "expected": "blocked: required object missing despite minItems",
+      "observed": "required_information_object_coverage_mismatch",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_COMPONENT_BLOCKED_DECISION_SAFE_BLOCKS_001",
+      "area": "fail_closed",
+      "expected": "blocked: blocked component cannot be decision_safe",
+      "observed": "component_not_available_but_row_decision_safe",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_COMPONENT_RESEARCH_ONLY_DECISION_SAFE_BLOCKS_001",
+      "area": "fail_closed",
+      "expected": "blocked: research_only component cannot be decision_safe",
+      "observed": "component_not_available_but_row_decision_safe",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_GLOBAL_BLOCKED_DECISION_SAFE_BLOCKS_001",
+      "area": "fail_closed",
+      "expected": "blocked: blocked state cannot be decision_safe",
+      "observed": "blocked_status_not_blocked_legality",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_LATENCY_OMISSION_BLOCKS_001",
+      "area": "fail_closed",
+      "expected": "blocked: latency must be added",
+      "observed": "state_available_at_not_max_decision_components_plus_latency",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_ZERO_LATENCY_POLICY_REQUIRED_001",
+      "area": "fail_closed",
+      "expected": "blocked: PT0S requires zero latency policy",
+      "observed": "zero_latency_policy_mismatch",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_RESTRICTION_PROPAGATION_REQUIRED_001",
+      "area": "fail_closed",
+      "expected": "blocked: component restrictions must propagate",
+      "observed": "restriction_propagation_missing",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_RESEARCH_ONLY_CONSISTENT_NOT_DELIVERABLE_001",
+      "area": "legality",
+      "expected": "research_only evidence can be internally consistent but not replay-deliverable",
+      "observed": "valid=True; deliverable=False; PASS",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_EVENT_LOOP_DELIVERY_RULE_001",
+      "area": "replay",
+      "expected": "EventLoop delivery uses available_at",
+      "observed": "event_loop.clock >= state_available_at_utc",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_CORE_FOUR_PROFILE_NOT_EXPANDED_001",
+      "area": "profile",
+      "expected": "profile not expanded",
+      "observed": "True",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_REPLAY_LEGALITY_DECISION_SAFE_ONLY_001",
+      "area": "legality",
+      "expected": "only decision_safe reaches replay",
+      "observed": "['decision_safe']",
+      "result": "PASS"
+    },
+    {
+      "case_id": "TS_NON_EXECUTION_BOUNDARIES_001",
+      "area": "authority",
+      "expected": "no physical/runtime/backtest authority",
+      "observed": "True",
+      "result": "PASS"
+    }
+  ]
+}

@@ -1,9 +1,0 @@
-{"finding_id": "OF-P03-001", "issue": "La referencia ../12-practice-02/img/002.png no puede resolverse dentro del ZIP.", "severity": "medium"}
-{"finding_id": "OF-P03-002", "issue": "Los tres PDF Donchian citados no están incluidos en el ZIP.", "severity": "medium"}
-{"finding_id": "OF-P03-003", "issue": "El archivo PRACTICA 02.ELD citado no está incluido; el código del Markdown puede ser parcial.", "severity": "high"}
-{"finding_id": "OF-P03-004", "issue": "No hay audio o vídeo original para separar palabras literales del profesor de ampliaciones editoriales.", "severity": "high"}
-{"finding_id": "OF-P03-005", "issue": "La afirmación sobre settle, hora y mark-to-market requiere validación específica por contrato, mercado y proveedor.", "severity": "high"}
-{"finding_id": "OF-P03-006", "issue": "Las métricas de capturas no incluyen exportación de trades, configuración completa ni run id reproducible.", "severity": "high"}
-{"finding_id": "OF-P03-007", "issue": "Las imágenes 95.png y 96.png son duplicados binarios.", "severity": "low"}
-{"finding_id": "OF-P03-008", "issue": "Dieciséis imágenes no están enlazadas desde el Markdown; se conservan como evidencia visual no contextualizada plenamente.", "severity": "medium"}
-{"finding_id": "OF-P03-009", "issue": "Las conclusiones de robustez del texto exceden lo demostrable con ejemplos in-sample de activos individuales.", "severity": "high"}

@@ -1,0 +1,122 @@
+[
+  {
+    "created_at": "2026-01-05T14:29:59.999999+00:00",
+    "decision_id": "decision-open_short_close_cover_v0_1-ABAT-entry-open",
+    "intent_id": "intent-decision-open_short_close_cover_v0_1-ABAT-entry-open",
+    "market_price_field": "open",
+    "order_type": "MARKET_PROXY",
+    "quantity": 100,
+    "reason": "preprogrammed engine-validation entry before first regular bar",
+    "side": "SELL_SHORT",
+    "target_label": "ENTRY_OPEN_LABEL",
+    "ticker": "ABAT"
+  },
+  {
+    "created_at": "2026-01-05T20:58:59.999999+00:00",
+    "decision_id": "decision-open_short_close_cover_v0_1-ABAT-exit-close",
+    "intent_id": "intent-decision-open_short_close_cover_v0_1-ABAT-exit-close",
+    "market_price_field": "close",
+    "order_type": "MARKET_PROXY",
+    "quantity": 100,
+    "reason": "preprogrammed engine-validation exit before last regular bar",
+    "side": "BUY_TO_COVER",
+    "target_label": "EXIT_CLOSE_LABEL",
+    "ticker": "ABAT"
+  },
+  {
+    "created_at": "2026-01-05T14:29:59.999999+00:00",
+    "decision_id": "decision-open_short_close_cover_v0_1-ABEO-entry-open",
+    "intent_id": "intent-decision-open_short_close_cover_v0_1-ABEO-entry-open",
+    "market_price_field": "open",
+    "order_type": "MARKET_PROXY",
+    "quantity": 100,
+    "reason": "preprogrammed engine-validation entry before first regular bar",
+    "side": "SELL_SHORT",
+    "target_label": "ENTRY_OPEN_LABEL",
+    "ticker": "ABEO"
+  },
+  {
+    "created_at": "2026-01-05T20:58:59.999999+00:00",
+    "decision_id": "decision-open_short_close_cover_v0_1-ABEO-exit-close",
+    "intent_id": "intent-decision-open_short_close_cover_v0_1-ABEO-exit-close",
+    "market_price_field": "close",
+    "order_type": "MARKET_PROXY",
+    "quantity": 100,
+    "reason": "preprogrammed engine-validation exit before last regular bar",
+    "side": "BUY_TO_COVER",
+    "target_label": "EXIT_CLOSE_LABEL",
+    "ticker": "ABEO"
+  },
+  {
+    "created_at": "2026-01-05T14:29:59.999999+00:00",
+    "decision_id": "decision-open_short_close_cover_v0_1-ABSI-entry-open",
+    "intent_id": "intent-decision-open_short_close_cover_v0_1-ABSI-entry-open",
+    "market_price_field": "open",
+    "order_type": "MARKET_PROXY",
+    "quantity": 100,
+    "reason": "preprogrammed engine-validation entry before first regular bar",
+    "side": "SELL_SHORT",
+    "target_label": "ENTRY_OPEN_LABEL",
+    "ticker": "ABSI"
+  },
+  {
+    "created_at": "2026-01-05T20:58:59.999999+00:00",
+    "decision_id": "decision-open_short_close_cover_v0_1-ABSI-exit-close",
+    "intent_id": "intent-decision-open_short_close_cover_v0_1-ABSI-exit-close",
+    "market_price_field": "close",
+    "order_type": "MARKET_PROXY",
+    "quantity": 100,
+    "reason": "preprogrammed engine-validation exit before last regular bar",
+    "side": "BUY_TO_COVER",
+    "target_label": "EXIT_CLOSE_LABEL",
+    "ticker": "ABSI"
+  },
+  {
+    "created_at": "2026-01-05T14:29:59.999999+00:00",
+    "decision_id": "decision-open_short_close_cover_v0_1-ABTC-entry-open",
+    "intent_id": "intent-decision-open_short_close_cover_v0_1-ABTC-entry-open",
+    "market_price_field": "open",
+    "order_type": "MARKET_PROXY",
+    "quantity": 100,
+    "reason": "preprogrammed engine-validation entry before first regular bar",
+    "side": "SELL_SHORT",
+    "target_label": "ENTRY_OPEN_LABEL",
+    "ticker": "ABTC"
+  },
+  {
+    "created_at": "2026-01-05T20:58:59.999999+00:00",
+    "decision_id": "decision-open_short_close_cover_v0_1-ABTC-exit-close",
+    "intent_id": "intent-decision-open_short_close_cover_v0_1-ABTC-exit-close",
+    "market_price_field": "close",
+    "order_type": "MARKET_PROXY",
+    "quantity": 100,
+    "reason": "preprogrammed engine-validation exit before last regular bar",
+    "side": "BUY_TO_COVER",
+    "target_label": "EXIT_CLOSE_LABEL",
+    "ticker": "ABTC"
+  },
+  {
+    "created_at": "2026-01-05T14:29:59.999999+00:00",
+    "decision_id": "decision-open_short_close_cover_v0_1-ACB-entry-open",
+    "intent_id": "intent-decision-open_short_close_cover_v0_1-ACB-entry-open",
+    "market_price_field": "open",
+    "order_type": "MARKET_PROXY",
+    "quantity": 100,
+    "reason": "preprogrammed engine-validation entry before first regular bar",
+    "side": "SELL_SHORT",
+    "target_label": "ENTRY_OPEN_LABEL",
+    "ticker": "ACB"
+  },
+  {
+    "created_at": "2026-01-05T20:58:59.999999+00:00",
+    "decision_id": "decision-open_short_close_cover_v0_1-ACB-exit-close",
+    "intent_id": "intent-decision-open_short_close_cover_v0_1-ACB-exit-close",
+    "market_price_field": "close",
+    "order_type": "MARKET_PROXY",
+    "quantity": 100,
+    "reason": "preprogrammed engine-validation exit before last regular bar",
+    "side": "BUY_TO_COVER",
+    "target_label": "EXIT_CLOSE_LABEL",
+    "ticker": "ACB"
+  }
+]

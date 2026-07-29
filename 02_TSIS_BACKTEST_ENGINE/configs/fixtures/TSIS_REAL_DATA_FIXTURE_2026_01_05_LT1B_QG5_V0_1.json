@@ -1,0 +1,312 @@
+{
+  "fixture_id": "TSIS_REAL_DATA_FIXTURE_2026_01_05_LT1B_QG5_V0_1",
+  "fixture_kind": "TSIS_REAL_DATA_FIXTURE",
+  "status": "REAL_DATA_PREFLIGHT_PASS",
+  "source_discovery_artifact": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\02_PHYSICAL_LAYOUT_DISCOVERY_V0_1.json",
+  "dataset": {
+    "dataset_id": "ohlcv_1m_quote_guarded_full_universe_v0_2_candidate",
+    "dataset_version": "v0_2_candidate",
+    "physical_root": "C:\\TSIS_Data\\data\\data_foundation_outputs\\ohlcv_1m_quote_guarded_full_universe_v0_2_candidate",
+    "validation_manifest": "C:\\TSIS_Data\\data\\data_foundation_outputs\\ohlcv_1m_quote_guarded_full_universe_v0_2_candidate\\_validation_runs\\qg_1m_full_universe_v0_2_candidate_validation_20260716T102500Z\\final_manifest_validation.json",
+    "validation_manifest_sha256": "7baf90cc64d382b66cf4bde6e434f1ec6a0656e51bec5d45945f36e4b7787ddf",
+    "file_format": "parquet",
+    "partitioning_scheme": "year=YYYY/ticker=SYMBOL/month=MM/part-000.parquet",
+    "minimum_required_columns": [
+      "ticker",
+      "ts_utc",
+      "date",
+      "year",
+      "month",
+      "o",
+      "h",
+      "l",
+      "c",
+      "v",
+      "t",
+      "o_raw",
+      "h_raw",
+      "l_raw",
+      "c_raw",
+      "quote_guarded_repair_applied",
+      "quote_guarded_view",
+      "repair_lookup_state",
+      "source_quote_guarded_repair_manifest",
+      "dataset_id",
+      "build_run_id",
+      "created_utc",
+      "source_raw_path"
+    ],
+    "optional_columns_observed_in_fixture": [
+      "n",
+      "vw",
+      "vw_quote_guarded_status",
+      "quote_bid_floor",
+      "quote_ask_cap",
+      "quote_mid_p50",
+      "quote_count",
+      "source_quotes_path",
+      "repair_state",
+      "repair_reason"
+    ],
+    "non_consumable_vendor_fields": {
+      "vw": {
+        "classification": "PRESENT_BUT_NON_CONSUMABLE_VENDOR_DERIVED_FIELD",
+        "rule": "ignored by RealDataInspector; absence, nullity or value cannot fail DATA preflight"
+      }
+    },
+    "allowed_row_dataset_ids": [
+      "ohlcv_1m_quote_guarded_full_universe_v0_1"
+    ],
+    "expected_row_build_run_ids": [
+      "qg_1m_full_2025_2026_v0_1_20260707T095701Z"
+    ]
+  },
+  "universe": {
+    "universe_id": "lt1b_universe_v0_1",
+    "universe_run_id": "20260320_market_cap_last_observed_cutoff",
+    "physical_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\market_cap_last_observed_cutoff\\20260320_market_cap_last_observed_cutoff\\market_cap_cutoff_lt_1b_active_inactive.parquet",
+    "sha256": "7b7d056785aae7e3e097219dc5f24c25e2fe193eb28c139354c4d9f8aff88468",
+    "filter_policy": "ticker_plus_pti_window",
+    "limitation": "operational <1B cut, not daily fully point-in-time market-cap membership"
+  },
+  "corporate_actions": {
+    "dataset_id": "corporate_actions_table_v0_1",
+    "physical_path": "G:\\TSIS\\data\\data_foundation_outputs\\corporate_actions_table\\corporate_actions_table_v0_1.parquet",
+    "table_sha256": "01989eb301a2cdd83e297fbf6384e0bd4d5b4fb300bdccee6b1adbde87d5e4ce",
+    "manifest_path": "G:\\TSIS\\data\\data_foundation_outputs\\corporate_actions_table\\_corporate_actions_table_manifest_v0_1.json",
+    "manifest_sha256": "2c37d8d75d531458f33941ee902d637fff0d71e2391cf0fff567980df92cfcf2"
+  },
+  "session": {
+    "session_date": "2026-01-05",
+    "calendar_id": "XNYS",
+    "session_policy": "REGULAR_ONLY",
+    "timezone": "America/New_York",
+    "regular_session_filter_utc_for_this_date": {
+      "start_inclusive": "2026-01-05T14:30:00Z",
+      "end_exclusive": "2026-01-05T21:00:00Z"
+    },
+    "open_proxy_ts_utc": "2026-01-05T14:30:00Z",
+    "close_proxy_ts_utc": "2026-01-05T20:59:00Z"
+  },
+  "symbols": [
+    "ABAT",
+    "ABEO",
+    "ABSI",
+    "ABTC",
+    "ACB"
+  ],
+  "per_ticker_day": [
+    {
+      "ticker": "ABAT",
+      "file": "C:\\TSIS_Data\\data\\data_foundation_outputs\\ohlcv_1m_quote_guarded_full_universe_v0_2_candidate\\year=2026\\ticker=ABAT\\month=01\\part-000.parquet",
+      "sha256": "a3deef58908d17cefe4a4d91531309f248fde1c44681868535c94c93045f7b01",
+      "monthly_rows": 10209,
+      "session_rows": 390,
+      "session_min_utc": "2026-01-05T14:30:00Z",
+      "session_max_utc": "2026-01-05T20:59:00Z",
+      "has_open_proxy_1430": true,
+      "has_close_proxy_2059": true,
+      "missing_regular_minutes": 0,
+      "duplicate_ticker_ts": 0,
+      "invalid_core_rows": 0,
+      "volume_sum": 12139052.0,
+      "repair_applied_rows": 0,
+      "repair_lookup_states": [
+        "indexed_no_repair_rows"
+      ],
+      "open_proxy": {
+        "ts_utc": "2026-01-05T14:30:00Z",
+        "o": 3.87,
+        "h": 3.97,
+        "l": 3.84,
+        "c": 3.93,
+        "v": 208966.0
+      },
+      "close_proxy": {
+        "ts_utc": "2026-01-05T20:59:00Z",
+        "o": 4.61,
+        "h": 4.665,
+        "l": 4.605,
+        "c": 4.665,
+        "v": 262240.0
+      },
+      "first_epoch_ms_matches_ts_utc": true,
+      "last_epoch_ms_matches_ts_utc": true
+    },
+    {
+      "ticker": "ABEO",
+      "file": "C:\\TSIS_Data\\data\\data_foundation_outputs\\ohlcv_1m_quote_guarded_full_universe_v0_2_candidate\\year=2026\\ticker=ABEO\\month=01\\part-000.parquet",
+      "sha256": "13631ba7e613fda4daae499a9917969270af61848a5203776905b777d7909dea",
+      "monthly_rows": 6684,
+      "session_rows": 338,
+      "session_min_utc": "2026-01-05T14:30:00Z",
+      "session_max_utc": "2026-01-05T20:59:00Z",
+      "has_open_proxy_1430": true,
+      "has_close_proxy_2059": true,
+      "missing_regular_minutes": 52,
+      "duplicate_ticker_ts": 0,
+      "invalid_core_rows": 0,
+      "volume_sum": 1048787.0,
+      "repair_applied_rows": 0,
+      "repair_lookup_states": [
+        "indexed_no_repair_rows"
+      ],
+      "open_proxy": {
+        "ts_utc": "2026-01-05T14:30:00Z",
+        "o": 5.35,
+        "h": 5.35,
+        "l": 5.3,
+        "c": 5.3499,
+        "v": 54049.0
+      },
+      "close_proxy": {
+        "ts_utc": "2026-01-05T20:59:00Z",
+        "o": 5.225,
+        "h": 5.225,
+        "l": 5.2,
+        "c": 5.22,
+        "v": 28811.0
+      },
+      "first_epoch_ms_matches_ts_utc": true,
+      "last_epoch_ms_matches_ts_utc": true
+    },
+    {
+      "ticker": "ABSI",
+      "file": "C:\\TSIS_Data\\data\\data_foundation_outputs\\ohlcv_1m_quote_guarded_full_universe_v0_2_candidate\\year=2026\\ticker=ABSI\\month=01\\part-000.parquet",
+      "sha256": "68f97c6dbf27ed6d0014f8921177689e8222b5f7d5af59dbb8d6f3ded811f41c",
+      "monthly_rows": 9060,
+      "session_rows": 384,
+      "session_min_utc": "2026-01-05T14:30:00Z",
+      "session_max_utc": "2026-01-05T20:59:00Z",
+      "has_open_proxy_1430": true,
+      "has_close_proxy_2059": true,
+      "missing_regular_minutes": 6,
+      "duplicate_ticker_ts": 0,
+      "invalid_core_rows": 0,
+      "volume_sum": 3227268.0,
+      "repair_applied_rows": 0,
+      "repair_lookup_states": [
+        "indexed_no_repair_rows"
+      ],
+      "open_proxy": {
+        "ts_utc": "2026-01-05T14:30:00Z",
+        "o": 3.65,
+        "h": 3.69,
+        "l": 3.65,
+        "c": 3.68,
+        "v": 73337.0
+      },
+      "close_proxy": {
+        "ts_utc": "2026-01-05T20:59:00Z",
+        "o": 3.725,
+        "h": 3.74,
+        "l": 3.72,
+        "c": 3.72,
+        "v": 66477.0
+      },
+      "first_epoch_ms_matches_ts_utc": true,
+      "last_epoch_ms_matches_ts_utc": true
+    },
+    {
+      "ticker": "ABTC",
+      "file": "C:\\TSIS_Data\\data\\data_foundation_outputs\\ohlcv_1m_quote_guarded_full_universe_v0_2_candidate\\year=2026\\ticker=ABTC\\month=01\\part-000.parquet",
+      "sha256": "e2714ffa0cb8df363c85862732f0af8887c846c4ae2e366d3e61913d500bfe36",
+      "monthly_rows": 11650,
+      "session_rows": 390,
+      "session_min_utc": "2026-01-05T14:30:00Z",
+      "session_max_utc": "2026-01-05T20:59:00Z",
+      "has_open_proxy_1430": true,
+      "has_close_proxy_2059": true,
+      "missing_regular_minutes": 0,
+      "duplicate_ticker_ts": 0,
+      "invalid_core_rows": 0,
+      "volume_sum": 29968456.0,
+      "repair_applied_rows": 0,
+      "repair_lookup_states": [
+        "indexed_no_repair_rows"
+      ],
+      "open_proxy": {
+        "ts_utc": "2026-01-05T14:30:00Z",
+        "o": 1.95,
+        "h": 1.95,
+        "l": 1.9,
+        "c": 1.91,
+        "v": 411322.0
+      },
+      "close_proxy": {
+        "ts_utc": "2026-01-05T20:59:00Z",
+        "o": 2.03,
+        "h": 2.04,
+        "l": 2.01,
+        "c": 2.015,
+        "v": 314890.0
+      },
+      "first_epoch_ms_matches_ts_utc": true,
+      "last_epoch_ms_matches_ts_utc": true
+    },
+    {
+      "ticker": "ACB",
+      "file": "C:\\TSIS_Data\\data\\data_foundation_outputs\\ohlcv_1m_quote_guarded_full_universe_v0_2_candidate\\year=2026\\ticker=ACB\\month=01\\part-000.parquet",
+      "sha256": "1d0280a2921811174b4a5cb009168d90b5ce366db54d20439561db2e03049708",
+      "monthly_rows": 6560,
+      "session_rows": 326,
+      "session_min_utc": "2026-01-05T14:30:00Z",
+      "session_max_utc": "2026-01-05T20:59:00Z",
+      "has_open_proxy_1430": true,
+      "has_close_proxy_2059": true,
+      "missing_regular_minutes": 64,
+      "duplicate_ticker_ts": 0,
+      "invalid_core_rows": 0,
+      "volume_sum": 1323656.0,
+      "repair_applied_rows": 0,
+      "repair_lookup_states": [
+        "indexed_no_repair_rows"
+      ],
+      "open_proxy": {
+        "ts_utc": "2026-01-05T14:30:00Z",
+        "o": 4.36,
+        "h": 4.369,
+        "l": 4.305,
+        "c": 4.305,
+        "v": 29955.0
+      },
+      "close_proxy": {
+        "ts_utc": "2026-01-05T20:59:00Z",
+        "o": 4.28,
+        "h": 4.29,
+        "l": 4.28,
+        "c": 4.29,
+        "v": 27898.0
+      },
+      "first_epoch_ms_matches_ts_utc": true,
+      "last_epoch_ms_matches_ts_utc": true
+    }
+  ],
+  "price_view_policy": {
+    "signal": {
+      "price_view": "quote_guarded_1m",
+      "allowed_use": "allowed_controlled"
+    },
+    "execution": {
+      "price_view": "quote_guarded_1m",
+      "allowed_use": "proxy_allowed_for_engine_mechanics_only",
+      "execution_semantics_state": "pending_execution_semantics_review"
+    },
+    "valuation": {
+      "price_view": "quote_guarded_1m",
+      "allowed_use": "allowed_controlled"
+    }
+  },
+  "limitations": [
+    "fixture selected for mechanical real-data inspection only",
+    "not evidence of fill realism or trading edge",
+    "quote_guarded_1m execution use remains a proxy for engine mechanics",
+    "LT1B universe is an operational <1B cut, not daily fully PTI market-cap membership"
+  ],
+  "last_preflight_run_id": "run_preflight_real_fixture_2026_01_05_qg5_v0_2",
+  "last_preflight_status": "PREFLIGHT_PASS",
+  "last_physical_inspection_status": "PHYSICAL_INSPECTION_PASS",
+  "last_preflight_content_hash_count": 9,
+  "request_binding_required": true,
+  "validation_manifest_hash_required": true
+}

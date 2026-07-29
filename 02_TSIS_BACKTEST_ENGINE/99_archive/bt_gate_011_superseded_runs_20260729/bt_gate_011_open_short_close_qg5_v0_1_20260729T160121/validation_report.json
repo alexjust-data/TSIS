@@ -1,0 +1,28 @@
+{
+  "actual_fill_count": 10,
+  "actual_order_count": 10,
+  "capability": "SINGLE_STRATEGY_END_TO_END_BACKTEST",
+  "costs_counted_exactly_once": true,
+  "deterministic_output_hash": "1820998c3e3d5076c8bf462bf088743eef657d476e07388facb3a813115ab8c4",
+  "ending_equity_reconciles": true,
+  "event_loop_integration_proven": true,
+  "event_loop_mode": "ONLINE_REPLAY_COORDINATOR_V0_1",
+  "expected_order_count": 10,
+  "fill_count_matches": true,
+  "final_positions_zero": true,
+  "future_event_access_detected": false,
+  "gate_id": "BT-GATE-011",
+  "order_count_matches": true,
+  "order_results_all_filled": true,
+  "prohibited_capabilities_activated": [],
+  "run_classifications": {
+    "ECONOMIC_REALISM": "INCOMPLETE",
+    "EDGE_EVIDENCE": "NOT_AUTHORIZED",
+    "RUN_PURPOSE": "ENGINE_VALIDATION_RUN",
+    "STRATEGY_OPTIMIZATION": "NOT_AUTHORIZED"
+  },
+  "run_id": "bt_gate_011_open_short_close_qg5_v0_1",
+  "simulator_called_with_single_current_event_only": true,
+  "state_provider_restrictions_preserved": true,
+  "status": "PASS"
+}

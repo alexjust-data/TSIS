@@ -1,0 +1,32 @@
+{
+  "scope_id": "event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_scope_v0_1",
+  "gate": "event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_v0_1",
+  "review_id": "event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_v0_1_20260728T000000Z",
+  "review_run_id": "event_state_on_demand_bounded_incremental_overlap_candidate_dataset_review_v0_1_20260728T091026Z",
+  "reviewed_run": "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+  "reviewed_candidate_dataset_fingerprint": "f88cc0a0a39117f315baf4312dc13533baae8b8574c6966ca91582ca98406c4f",
+  "allowed_inputs": [
+    "final_manifest.json",
+    "event_state_incremental_overlap_candidate_output_manifest.json",
+    "candidate_registry_entry.json",
+    "event_state_incremental_overlap_validation_report.json",
+    "combined_event_state_context_ledger_v0_1.json",
+    "market_state_dependency_binding_report.json",
+    "event_instance_manifest.json",
+    "event_window_binding_manifest.json",
+    "instrument_session_projection_manifest.json",
+    "event_state_incremental_overlap_candidate_records.jsonl",
+    "delta_event_state_candidate_records.jsonl",
+    "event_state_incremental_overlap_lineage_manifest.json",
+    "combined_event_state_candidate_fingerprint_comparison_v0_1.json"
+  ],
+  "execution_authorized": false,
+  "market_state_read_authorized": false,
+  "event_state_materialization_authorized": false,
+  "registry_mutation_authorized": false,
+  "official_dataset_promotion_authorized": false,
+  "production_authorized": false,
+  "downstream_authorized": false,
+  "next_allowed_gate": "event_state_on_demand_bounded_incremental_overlap_idempotency_reuse_test_authorization_v0_1",
+  "scope_sha256": "a9d0925f576170236034179e4a3e4853cf6676d52ea1972f9ad59efdcad044a1"
+}

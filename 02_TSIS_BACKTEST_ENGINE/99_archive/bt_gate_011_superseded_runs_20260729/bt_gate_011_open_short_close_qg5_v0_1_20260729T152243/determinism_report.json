@@ -1,0 +1,11 @@
+{
+  "first_deterministic_output_hash": "fc0179951bc236eb796de2b14a13199c5ee56422a6b553811517ebbb45ca33ea",
+  "repeat_count": 2,
+  "second_deterministic_output_hash": "fc0179951bc236eb796de2b14a13199c5ee56422a6b553811517ebbb45ca33ea",
+  "semantic_hashes_match": true,
+  "status": "PASS",
+  "validation_statuses": [
+    "PASS",
+    "PASS"
+  ]
+}

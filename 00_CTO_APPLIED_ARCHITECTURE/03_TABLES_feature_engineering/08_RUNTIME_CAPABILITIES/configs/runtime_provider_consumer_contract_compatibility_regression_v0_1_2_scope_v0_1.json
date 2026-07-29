@@ -1,0 +1,65 @@
+{
+  "gate": "runtime_provider_consumer_contract_compatibility_regression_v0_1_2",
+  "status": "AUTHORIZED_AND_EXECUTED_BY_RUNNER",
+  "created_at_utc": "2026-07-29T16:50:06Z",
+  "owner_layer": "08_RUNTIME_CAPABILITIES",
+  "purpose": "Control-plane-only regression that checks whether the backtest consumer draft can interpret the accepted provider v0.1.2 contracts without opening physical StateBundle consumption.",
+  "accepted_provider_authority": {
+    "gate": "runtime_provider_contract_schema_hardening_v0_1_2",
+    "status": "CLOSED_EXTERNAL_AUDIT_PASS_ACCEPTABLE_AS_PROVIDER_AUTHORITY_WITH_RESTRICTIONS",
+    "provider_only_zip_ref": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/runtime_provider_contract_schema_hardening_v0_1_2_provider_only_20260729T141808Z.zip",
+    "provider_only_zip_sha256": "191f40e40f2cfe374ce2f493fb9dd3e2509e33f64b9ed8f3969c9c8b0badf759",
+    "local_provider_only_zip_required_for_this_regression_package": false
+  },
+  "provider_contracts": {
+    "state_resolution_request": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_resolution_request_contract_v0_1_2.json",
+    "runtime_user_invocation_interface": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_interface_contract_v0_1_2.json",
+    "runtime_user_invocation_response": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_response_contract_v0_1_2.json",
+    "state_bundle_manifest": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1_2.json",
+    "runtime_capability_effective_view": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_capability_effective_view_contract_v0_1_2.json"
+  },
+  "specialized_auxiliary_contracts": {
+    "market_state_request": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/market_state_request_contract_v0_1.json",
+    "event_state_request": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/event_state_request_contract_v0_1.json"
+  },
+  "consumer_contracts_read_only": {
+    "backtest_run_spec": "02_TSIS_BACKTEST_ENGINE/contracts/backtest/backtest_run_spec_contract_v0_1.json",
+    "backtest_input_manifest": "02_TSIS_BACKTEST_ENGINE/contracts/backtest/backtest_input_manifest_contract_v0_1.json"
+  },
+  "authorized_outputs": {
+    "authorization": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_provider_consumer_contract_compatibility_regression_v0_1_2_authorization_v0_1.md",
+    "scope": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/configs/runtime_provider_consumer_contract_compatibility_regression_v0_1_2_scope_v0_1.json",
+    "matrix": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_provider_consumer_contract_compatibility_regression_v0_1_2_matrix_v0_1.json",
+    "readout": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_provider_consumer_contract_compatibility_regression_v0_1_2_readout_v0_1.md",
+    "runner": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/scripts/runtime_provider_consumer_contract_compatibility_regression_v0_1_2_runner.py"
+  },
+  "explicitly_out_of_scope": [
+    "02_TSIS_BACKTEST_ENGINE file edits",
+    "StateBundle physical reads",
+    "StateReplayFeed",
+    "EventLoop integration",
+    "backtest runs",
+    "runtime builds",
+    "dataset writes",
+    "registry mutations",
+    "production",
+    "downstream",
+    "official dataset promotion"
+  ],
+  "hard_boundaries": {
+    "physical_file_reads": 0,
+    "state_bundle_rows_delivered": 0,
+    "state_replay_feed_events": 0,
+    "backtest_runs_started": 0,
+    "runtime_requests_executed": 0,
+    "runtime_builds_executed": 0,
+    "datasets_written": 0,
+    "registry_mutations": 0,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false,
+    "backtest_consumption": false
+  },
+  "expected_close_status": "CLOSED_PASS_PROVIDER_CONSUMER_CONTROL_PLANE_COMPATIBLE_WITH_RESTRICTIONS_NO_CONSUMPTION",
+  "next_gate_if_pass": "state_bundle_manifest_physical_evidence_alignment_v0_1"
+}

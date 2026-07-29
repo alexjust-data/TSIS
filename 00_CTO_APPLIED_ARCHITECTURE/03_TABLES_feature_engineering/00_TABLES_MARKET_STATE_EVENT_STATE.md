@@ -1,4 +1,4 @@
-# Arquitectura de construcción de `Market State` y `Event State`
+﻿# Arquitectura de CONSTRUCCIÓN de `Market State` y `Event State`
 
 ## Propósito
 
@@ -1508,3 +1508,1406 @@ O particionado por:
 - resolution;
 - representation_version.
 ```
+
+# Arquitectura de CONSUMO de `Market State` y `Event State`
+## Decision vigente: StateBundle physical consumption boundary
+
+El provider de estados queda congelado como control-plane listo con restricciones. El siguiente paso no es ampliar `Market State` a nuevos Information Objects ni admitir nuevos Event Types. Primero se debe demostrar que un consumidor autorizado puede abrir fisicamente un `StateBundleManifest` exacto y acotado sin perder identidad, temporalidad, lineage ni restricciones.
+
+Primer vertical slice recomendado:
+
+```text
+Market State core-four
+1 instrumento
+1 sesion
+Event State no solicitado
+estrategia = none
+ordenes = 0
+fills = 0
+PnL = false
+```
+
+La regla temporal que gobierna cualquier replay futuro es:
+
+```text
+event_loop.clock >= state_available_at_utc
+```
+
+No basta con:
+
+```text
+event_loop.clock >= decision_timestamp
+```
+
+Esta decision vive formalmente en:
+
+```text
+09_STATE_CONSUMPTION_BOUNDARY/state_bundle_physical_consumption_authorization_design_v0_1.md
+```
+
+## Estado Runtime Proveedor/Consumidor - 2026-07-28
+
+El protocolo proveedor/consumidor queda cerrado solo como control-plane:
+
+```text
+runtime_provider_consumer_contract_compatibility_review_v0_1
+=
+CLOSED_APPROVED_FOR_BOUNDED_INTERFACE_EXECUTION_AUTHORIZATION_WITH_RESTRICTIONS_NO_EXECUTION
+```
+
+La frontera vigente es:
+
+```text
+08_RUNTIME_CAPABILITIES
+=
+proveedor de StateResolutionRequest, RuntimeInvocationResponse y StateBundleManifest
+
+02_TSIS_BACKTEST_ENGINE
+=
+consumidor mediante BacktestRunSpec, RunPreflight y BacktestInputManifest
+```
+
+Este cierre no autoriza que el backtester consuma filas de Market State o Event
+State. La respuesta del runtime puede referenciar candidatos gobernados y un
+`StateBundleManifest`, pero `StateReplayFeed` sigue cerrado hasta que exista
+autorizacion especifica de consumo para backtest.
+
+```text
+BACKTEST_STATE_CONSUMPTION = NOT_AUTHORIZED
+STATE_REPLAY_FEED = NOT_AUTHORIZED
+official_dataset = false
+production = false
+downstream = false
+```
+
+
+## Propósito
+
+Esta sección define cómo los consumidores autorizados acceden a `Market State` y `Event State`.
+## Frontera proveedor/consumidor
+
+Esta arquitectura separa dos lados:
+
+```text
+08_RUNTIME_CAPABILITIES
+=
+proveedor de estados
+```
+
+```text
+Backtest Engine
+=
+consumidor institucional de estados
+```
+
+La capa proveedora define cómo se recibe una petición normalizada, cómo se resuelven capacidades, políticas y registry metadata, y qué `StateBundleManifest` o respuesta gobernada se devuelve.
+
+La capa consumidora define `BacktestRunSpec`, `RunPreflight`, `BacktestInputManifest`, `StateReplayFeed`, `EventLoop`, estrategia, órdenes, fills, posiciones y ledger.
+
+Por tanto, `runtime_user_invocation_interface_v0_1` pertenece al proveedor de estados. Su primer consumidor esperado es `Backtest RunPreflight`, pero no pertenece al backtester ni autoriza por sí sola entrega física de filas.
+
+
+### Jerarquía de contratos del proveedor
+
+La relación queda normalizada así:
+
+```text
+StateResolutionRequest
+=
+envelope común del proveedor
+```
+
+```text
+market_state_request / event_state_request
+=
+payloads especializados
+```
+
+No son tres autoridades alternativas. El envelope común debe envolver o referenciar el payload especializado que corresponda.
+
+La compatibilidad proveedor-consumidor sigue pendiente, pero `runtime_user_invocation_interface_v0_1` ya cerro los contratos efectivos provider-side con `contract_id`, `contract_version` y SHA-256. El siguiente paso es una revision campo por campo contra los contratos draft del consumidor backtest.
+
+```text
+PROVIDER_BOUNDARY = PASS
+CONSUMER_ARCHITECTURE_ALIGNMENT = PASS
+PROVIDER_INTERFACE_CONTRACTS = CLOSED
+PROVIDER_SCHEMA_STRICT_VALIDATION = HARDENED_PENDING_COMPATIBILITY_REVIEW
+PROVIDER_CONSUMER_COMPATIBILITY = READY_FOR_REVIEW_NOT_VALIDATED
+DOWNSTREAM_STATE_CONSUMPTION = NOT_AUTHORIZED
+```
+La autoridad formal de esta frontera queda registrada en:
+
+```text
+08_RUNTIME_CAPABILITIES/runtime_state_provider_boundary_v0_1.md
+08_RUNTIME_CAPABILITIES/runtime_state_provider_boundary_contract_v0_1.json
+```
+
+La interfaz común de runtime no debe entenderse como una herramienta manual para solicitar tablas o introducir rutas físicas.
+
+Su consumidor principal será el motor de backtest.
+
+```text
+El backtest no construye Market State ni Event State.
+
+Declara qué representaciones necesita.
+
+El runtime resuelve, reutiliza o materializa
+los estados autorizados.
+
+RunPreflight comprueba si esos estados
+pueden utilizarse en el run solicitado.
+```
+
+La integración correcta no es:
+
+```text
+runtime
+↓
+paths
+↓
+backtest
+```
+
+La integración correcta es:
+
+```text
+BacktestRunSpec
+↓
+RunPreflight
+↓
+State Runtime Interface
+↓
+StateBundleManifest
+↓
+BacktestInputManifest
+↓
+StateReplayFeed
+↓
+EventLoop
+↓
+Decision
+```
+
+El runtime puede devolver referencias físicas gobernadas, pero el backtest nunca debe recibir un path introducido libremente por el usuario ni descubrir archivos por su cuenta.
+
+
+
+### Rectificacion de compatibilidad provider-consumer
+
+Una revision posterior encontro que la documentacion de interfaz estaba cerrada, pero que los JSON Schema iniciales no imponian todavia todas las reglas fail-closed.
+
+La rectificacion queda registrada en:
+
+```text
+08_RUNTIME_CAPABILITIES/runtime_provider_contract_schema_hardening_readout_v0_1.md
+08_RUNTIME_CAPABILITIES/runtime_provider_contract_schema_hardening_validation_matrix_v0_1.json
+```
+
+Resultado vigente:
+
+```text
+PROVIDER_INTERFACE_DOCUMENTATION = CLOSED
+PROVIDER_SCHEMA_STRICT_VALIDATION = HARDENED_PENDING_COMPATIBILITY_REVIEW
+FAIL_CLOSED_SEMANTICS = HARDENED_PENDING_COMPATIBILITY_REVIEW
+PROVIDER_CONSUMER_COMPATIBILITY = READY_FOR_REVIEW_NOT_VALIDATED
+BACKTEST_STATE_CONSUMPTION = NOT_AUTHORIZED
+STATE_REPLAY_FEED = NOT_AUTHORIZED
+```
+
+Por tanto, no debe retirarse `DRAFT` de los contratos consumidores del backtester hasta que pase `runtime_provider_consumer_contract_compatibility_review_v0_1`.
+
+### Protocolo provider-side cerrado
+
+El proveedor de estados ya tiene cerrados los contratos de intercambio v0.1:
+
+```text
+StateResolutionRequest
+Runtime User Invocation Interface
+Runtime Invocation Response
+Runtime Capability Effective View
+StateBundleManifest
+```
+
+Autoridades:
+
+```text
+08_RUNTIME_CAPABILITIES/runtime_user_invocation_interface_design_v0_1.md
+runtime_capability_registry_snapshot_v0_1.json
+state_resolution_request_contract_v0_1.json
+08_RUNTIME_CAPABILITIES/runtime_user_invocation_interface_contract_v0_1.json
+08_RUNTIME_CAPABILITIES/runtime_user_invocation_response_contract_v0_1.json
+08_RUNTIME_CAPABILITIES/runtime_capability_effective_view_contract_v0_1.json
+08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1.json
+```
+
+Esto cierra el protocolo del proveedor, no la integracion real con el backtester:
+
+```text
+PROVIDER_INTERFACE_CONTRACTS = CLOSED
+PROVIDER_CONSUMER_COMPATIBILITY = READY_FOR_REVIEW_NOT_VALIDATED
+BACKTEST_STATE_CONSUMPTION = NOT_AUTHORIZED
+DOWNSTREAM_STATE_CONSUMPTION = NOT_AUTHORIZED
+```
+
+Por tanto, `RunPreflight` puede revisarse contra estos contratos, pero `StateReplayFeed` no queda autorizado todavia.
+
+## Estado de autorizacion fisica - 2026-07-28
+
+El primer intento de autorizar un read-and-replay bounded queda bloqueado antes de abrir filas:
+
+```text
+bounded_state_bundle_read_and_replay_authorization_v0_1
+=
+CLOSED_BLOCKED_BEFORE_PHYSICAL_READ
+```
+
+La razon no es conceptual. La frontera provider-consumer sigue siendo correcta. El bloqueo es de evidencia fisica: el `StateBundleManifest` devuelto por el control-plane todavia no sella de forma reproducible el mismo dataset fisico, la misma response, los hashes del `candidate_output_manifest`, el artifact de records y la evidencia de `state_available_at_utc` necesaria para replay legal.
+
+Por tanto, el siguiente paso no es implementar el backtester ni ampliar Market/Event State. Es un ajuste pequeno de frontera:
+
+```text
+state_bundle_manifest_physical_evidence_alignment_v0_1
+```
+
+Ese gate debe alinear:
+
+```text
+RuntimeInvocationResponse
+-> StateBundleManifest
+-> candidate registry entry
+-> candidate_output_manifest
+-> physical artifact hashes
+-> schema contract
+-> row-level temporal availability evidence
+```
+
+Hasta entonces siguen cerrados:
+
+```text
+state_bundle_rows_read = 0
+StateReplayFeed = NOT_AUTHORIZED
+EventLoop integration = false
+strategy execution = false
+orders = 0
+fills = 0
+PnL = false
+production = false
+downstream = false
+```
+## Flujo institucional
+
+![Arquitectura de consumo de Market State y Event State](img/mermaid-diagram.png)
+
+El flujo representado es:
+
+```text
+BacktestRunSpec
+↓
+RunPreflight
+↓
+State Runtime Interface
+├── Market State Runtime
+└── Event State Runtime
+↓
+State Bundle Manifest
+↓
+RunPreflight
+↓
+Backtest Input Manifest
+├── HistoricalReplayFeed
+└── StateReplayFeed
+↓
+Event Loop
+↓
+Decision / Strategy
+↓
+Order
+↓
+Fill
+↓
+Position
+```
+
+`RunPreflight` actúa como frontera obligatoria y *fail-closed*.
+
+La estrategia no interpreta libremente:
+
+```text
+coverage
+restrictions
+validation status
+consumption permissions
+official dataset status
+downstream authorization
+```
+
+El backtest declara sus requisitos.
+
+`RunPreflight` decide de forma determinista:
+
+```text
+BACKTEST_INPUTS_PASS
+```
+
+o:
+
+```text
+BACKTEST_INPUTS_FAIL
+```
+
+Solo un `BACKTEST_INPUTS_PASS` puede producir un `BacktestInputManifest` consumible por el `EventLoop`.
+
+## Los estados no son una dependencia universal del backtest
+
+Tanto `Market State` como `Event State` deben ser opcionales en `BacktestRunSpec`.
+
+Puede existir un run puramente mecánico:
+
+```text
+HistoricalReplayFeed
+↓
+ScheduledDecision
+↓
+Order
+↓
+Fill
+↓
+Position
+```
+
+sin solicitar ninguna representación de estado.
+
+Por tanto:
+
+```text
+market_state_profile_id = optional
+event_state_profile_id  = optional
+```
+
+La regla es:
+
+```text
+Si no se solicita ningún estado:
+
+RunPreflight no invoca State Runtime Interface.
+StateBundleManifest no es necesario.
+StateReplayFeed no participa en el run.
+```
+
+```text
+Si se solicita Market State o Event State:
+
+RunPreflight debe invocar State Runtime Interface.
+StateBundleManifest pasa a ser obligatorio.
+StateReplayFeed solo puede abrirse después de un PASS.
+```
+
+Una estrategia puede necesitar:
+
+```text
+Market State
+```
+
+sin necesitar:
+
+```text
+Event State
+```
+
+`Event State` no debe convertirse en una dependencia artificial de cualquier experimento.
+
+## Contratos mínimos
+
+La integración necesita, como mínimo, los siguientes contratos:
+
+```text
+BacktestRunSpec
+StateResolutionRequest
+StateBundleManifest
+BacktestInputManifest
+```
+
+Cada contrato posee una responsabilidad distinta.
+
+## `BacktestRunSpec`
+
+`BacktestRunSpec` declara qué necesita el experimento.
+
+Ejemplo conceptual:
+
+```text
+backtest_id
+date_range
+universe_id
+market_data_profile_id
+market_state_profile_id, si aplica
+event_state_profile_id, si aplica
+required_information_objects
+required_fields
+consumption_purpose = backtest
+decision_resolution
+temporal_policy
+coverage_policy
+```
+
+No debe contener paths físicos libres.
+
+El backtest solicita perfiles semánticos gobernados:
+
+```text
+market_state_profile_id
+event_state_profile_id
+```
+
+y no tablas completas sin identidad ni versión.
+
+Ejemplo:
+
+```text
+NO:
+
+dame todo Market State
+desde este parquet.
+```
+
+```text
+SÍ:
+
+resuelve el perfil gobernado
+market_state_core_intraday_v0_1
+
+para:
+
+- este universo;
+- este intervalo;
+- esta resolución;
+- estos Objetos de Información;
+- este propósito de consumo;
+- esta política de cobertura.
+```
+
+## `StateResolutionRequest`
+
+`RunPreflight` transforma los requisitos del `BacktestRunSpec` en una petición normalizada para `State Runtime Interface`.
+
+La petición debe declarar:
+
+```text
+request_id
+backtest_id
+state_kind
+profile_id
+representation_version
+date_range
+universe_id
+resolution
+required_information_objects
+required_fields
+consumption_purpose
+temporal_policy
+coverage_policy
+```
+
+`state_kind` distingue:
+
+```text
+market_state
+event_state
+```
+
+No se solicita un `Market State` universal e ilimitado.
+
+Se solicita un perfil gobernado y versionado con una cobertura concreta.
+
+La interfaz debe resolver si la petición produce:
+
+```text
+VALID_REUSE_HIT
+```
+
+```text
+VALID_BUT_BUILD_AUTHORIZATION_REQUIRED
+```
+
+```text
+BLOCKED_DOWNSTREAM_NOT_AUTHORIZED
+```
+
+o cualquier otro resultado cerrado y gobernado que se admita formalmente.
+
+Una materialización existente no implica automáticamente que pueda utilizarse.
+
+```text
+materialized
+≠
+authorized for backtest
+```
+
+## `StateBundleManifest`
+
+`StateBundleManifest` es la respuesta gobernada del runtime.
+
+No debe limitarse a devolver:
+
+```text
+market_state_dataset_id
+event_state_dataset_id
+path
+```
+
+Debe identificar y sellar como mínimo:
+
+```text
+request_fingerprint
+market_state_dataset_id, si aplica
+event_state_dataset_id, si aplica
+representation_profile_version
+schema_fingerprint
+builder_version
+source_dataset_ids
+source_content_hashes
+artifact_refs
+artifact_hashes
+coverage_requested
+coverage_represented
+unavailable_contexts
+quality_summary
+temporal_policy
+validation_status
+consumption_authorization
+downstream_authorized
+official_dataset
+restrictions
+materialization_status
+```
+
+Las referencias físicas deben proceder del runtime o del registry gobernado.
+
+No pueden proceder de paths introducidos libremente por el consumidor.
+
+La procedencia de cada feature debe quedar sellada, pero no es necesario duplicar toda esa información dentro de cada `StateBundleManifest`.
+
+El manifest puede referenciar:
+
+```text
+feature_lineage_manifest_id
+feature_lineage_manifest_sha256
+```
+
+El `FeatureLineageManifest` conserva, para cada campo derivado:
+
+```text
+feature_spec_id
+feature_version
+builder_id
+input_columns
+lookback
+window
+cutoff
+available_at_rule
+```
+
+Esto permite demostrar:
+
+```text
+qué feature se utilizó;
+cómo se construyó;
+con qué inputs;
+qué ventana utilizó;
+qué cutoff temporal aplicó;
+desde qué instante podía conocerse.
+```
+
+## Autorización real de consumo
+
+La existencia de un candidato materializado no autoriza su consumo downstream.
+
+`RunPreflight` debe exigir como mínimo:
+
+```text
+validation_status = PASS
+consumption_purpose incluye backtest
+downstream_authorized = true
+official_dataset = true
+restrictions compatibles con el run
+coverage compatible con coverage_policy
+```
+
+Si cualquiera de estas condiciones falla:
+
+```text
+BACKTEST_INPUTS_FAIL
+```
+
+Ejemplo:
+
+```text
+reason = STATE_DOWNSTREAM_NOT_AUTHORIZED
+```
+
+Por tanto:
+
+```text
+materialization_status = materialized
+```
+
+no es suficiente.
+
+También deben estar autorizadas:
+
+```text
+la identidad del dataset;
+su versión;
+su propósito de consumo;
+su cobertura;
+sus restricciones;
+su utilización downstream.
+```
+
+Mientras un candidato conserve estados como:
+
+```text
+official_dataset = false
+production = false
+downstream = false
+```
+
+puede servir como evidencia de construcción o validación experimental, pero no como input de un backtest autorizado.
+
+## `BacktestInputManifest`
+
+`RunPreflight` construye el `BacktestInputManifest` uniendo y sellando todos los inputs autorizados del run.
+
+Debe incluir o referenciar:
+
+```text
+market-data manifest
+universe manifest
+Market State manifest, si se solicita
+Event State manifest, si se solicita
+calendar policy
+session policy
+missing-data policy
+corporate-action policy
+execution-price policy
+temporal policy
+```
+
+Este manifest es el artefacto que autoriza la apertura de los feeds.
+
+```text
+BacktestInputManifest
+├── HistoricalReplayFeed
+└── StateReplayFeed
+```
+
+El `EventLoop` no debe abrir directamente:
+
+```text
+parquets sueltos
+paths aportados manualmente
+datasets no sellados
+candidatos no autorizados
+```
+
+## Entrada temporal al `EventLoop`
+
+`Market State` y `Event State` deben entrar en el backtest mediante un `StateReplayFeed`.
+
+No deben incorporarse mediante joins libres realizados dentro de la estrategia.
+
+El `EventLoop` recibe dos familias de flujos:
+
+```text
+HistoricalReplayFeed
+↓
+ReplayGapEvent
+ReplayBarEvent
+```
+
+```text
+StateReplayFeed
+↓
+MarketStateAvailableEvent
+EventStateAvailableEvent
+```
+
+La estrategia solo puede consumir un estado cuando:
+
+```text
+state_available_at <= event_loop.clock
+```
+
+Todo estado debe distinguir:
+
+```text
+decision_timestamp
+=
+instante que el estado representa.
+```
+
+```text
+state_available_at
+=
+instante desde el que el consumidor
+puede conocer legalmente ese estado.
+```
+
+Usar únicamente:
+
+```text
+decision_timestamp
+```
+
+deja abierta una vía de leakage.
+
+Ejemplo:
+
+```text
+Barra representada:
+09:41–09:42
+
+decision_timestamp:
+09:42
+
+available_at de la barra:
+09:42
+
+Market State derivado de esa barra:
+decision_timestamp = 09:42
+state_available_at = 09:42 + latencia declarada
+```
+
+La estrategia no puede recibir ese estado antes de `state_available_at`.
+
+## Orden causal de eventos
+
+Ordenar únicamente por `available_at` no es suficiente.
+
+Cuando varios eventos comparten el mismo timestamp, el `EventLoop` necesita una prioridad causal determinista.
+
+La política exacta debe congelarse mediante contrato, pero debe preservar como mínimo este orden:
+
+```text
+1. ReplayGapEvent
+2. ReplayBarEvent
+3. MarketStateAvailableEvent
+4. EventStateAvailableEvent
+5. ScheduledDecision
+6. Order / Fill
+7. Position / Ledger update
+```
+
+La regla crítica es:
+
+```text
+Un estado derivado de una barra
+no puede entregarse antes que la propia barra
+cuando ambos comparten available_at.
+```
+
+Aunque el builder declare latencia cero:
+
+```text
+dato fuente
+↓
+estado derivado
+↓
+decisión
+```
+
+El contrato de replay de estados debe poder conservar:
+
+```text
+event_priority
+causal_parent_refs
+state_available_at
+```
+
+`causal_parent_refs` permite relacionar el estado con los datos o artefactos de los que depende.
+
+Debe existir un test explícito:
+
+```text
+BAR y MARKET_STATE
+comparten available_at
+
+resultado obligatorio:
+
+BAR se procesa primero
+MARKET_STATE se procesa después
+SCHEDULED_DECISION se procesa al final
+```
+
+La ordenación debe ser estable y reproducible.
+
+## `decision_clock`
+
+La legalidad efectiva de un input debe evaluarse contra el reloj real de la decisión.
+
+```text
+decision_clock
+=
+instante efectivo en el que el EventLoop
+ejecuta una decisión.
+```
+
+`decision_timestamp` puede describir el instante representado por una fila.
+
+`decision_clock` determina qué información está realmente disponible cuando la estrategia decide.
+
+Para cualquier estado consumible debe cumplirse:
+
+```text
+state_available_at <= decision_clock
+```
+
+También debe poder demostrarse:
+
+```text
+feature_input_max_available_at <= decision_clock
+future_window_used = false
+outcome_dependency = false
+```
+
+Así se evita que una feature aparentemente válida incorpore inputs que todavía no estaban disponibles.
+
+## Decisión y ejecución permanecen separadas
+
+`Market State` y `Event State` son inputs para decidir.
+
+No son fuentes directas de precios de ejecución.
+
+```text
+Market State / Event State
+↓
+información para Decision
+```
+
+```text
+HistoricalReplayFeed
+↓
+mercado observable y reloj
+```
+
+```text
+Execution Model
+↓
+precio de fill autorizado
+```
+
+```text
+Ledger
+↓
+órdenes, fills, posiciones y PnL
+```
+
+Nunca debe ocurrir:
+
+```text
+execution_price = market_state.close
+```
+
+sin pasar por la política de ejecución.
+
+Aunque ambos valores coincidan numéricamente, poseen funciones institucionales distintas:
+
+```text
+market_state.close
+=
+información representada para una decisión.
+```
+
+```text
+execution_price
+=
+precio autorizado por el Execution Model
+para materializar un fill.
+```
+
+La igualdad numérica no convierte una feature de estado en una fuente de ejecución.
+
+## Consumo legal de `Market State`
+
+Una fila de `Market State` solo puede entregarse a la estrategia si:
+
+```text
+validation_status = PASS
+consumption_authorization incluye backtest
+state_available_at <= decision_clock
+feature_input_max_available_at <= decision_clock
+future_window_used = false
+outcome_dependency = false
+```
+
+Además, debe pertenecer exactamente al:
+
+```text
+profile_id
+representation_version
+universe
+resolution
+coverage
+```
+
+autorizados por el `BacktestInputManifest`.
+
+La estrategia no puede ampliar por sí misma la selección de campos, perfiles o particiones.
+
+## Consumo legal de `Event State`
+
+`Event State` puede servir para:
+
+```text
+decisión predictiva
+investigación
+estudio post-event
+outcomes
+```
+
+pero no todas sus filas pueden entrar en una decisión.
+
+Para uso predictivo debe cumplirse:
+
+```text
+consumption_legality = decision_safe
+```
+
+y:
+
+```text
+max(
+    event_detected_at,
+    event_available_at,
+    state_available_at
+) <= decision_clock
+```
+
+También debe cumplirse:
+
+```text
+feature_input_max_available_at <= decision_clock
+future_window_used = false
+outcome_dependency = false
+```
+
+Las filas clasificadas como:
+
+```text
+research_only
+outcome_adjacent
+prohibited_as_input
+```
+
+no deben entregarse a la estrategia.
+
+`state_role` y `consumption_legality` son ejes distintos.
+
+```text
+state_role
+=
+posición de la fila respecto al evento.
+```
+
+```text
+consumption_legality
+=
+tipo de consumo permitido.
+```
+
+Por ejemplo:
+
+```text
+state_role = post_event
+consumption_legality = research_only
+```
+
+puede ser una fila válida para investigación, pero no un input predictivo para una decisión anterior.
+
+## Eventos identificados retrospectivamente
+
+Un evento puede poseer:
+
+```text
+event_timestamp = 10:15
+event_detected_at = 10:28
+```
+
+Esto significa:
+
+```text
+el fenómeno se sitúa en 10:15
+```
+
+pero:
+
+```text
+su identidad confirmada
+no estaba disponible hasta 10:28.
+```
+
+El backtest no puede utilizar a las `10:15` el conocimiento retrospectivo de que ese movimiento acabaría siendo un evento confirmado.
+
+Antes de `10:28` puede consumir:
+
+```text
+Market State observable
+```
+
+pero no:
+
+```text
+la identidad confirmada del evento
+```
+
+si esa identidad depende de observaciones posteriores.
+
+Esta separación evita convertir la detección retrospectiva en una señal predictiva ficticia.
+
+## Hechos fuente y features derivadas
+
+Los builders pueden consumir hechos fuente admitidos y validados procedentes de datasets físicos autorizados.
+
+Ejemplos:
+
+```text
+open
+high
+low
+close
+volume
+trades
+quotes
+news publicada
+fundamentales conocidos as-of
+halts observables
+```
+
+Estos hechos fuente pueden proceder del proveedor si su dataset, esquema, calidad y política temporal han sido admitidos.
+
+Una feature, indicador o transformación derivada utilizada por TSIS debe ser producida por un builder interno, versionado y gobernado.
+
+Ejemplos:
+
+```text
+TSIS_VWAP
+TSIS_ATR
+relative_volume
+rvol_20d
+intraday_vwap_distance
+risk_on_off_state
+```
+
+La presencia de una columna derivada homónima del proveedor no autoriza su consumo.
+
+Por ejemplo:
+
+```text
+vendor_vw
+```
+
+no queda autorizado automáticamente como:
+
+```text
+TSIS_VWAP
+```
+
+La regla correcta es:
+
+```text
+Los builders pueden consumir hechos fuente admitidos y validados
+procedentes de datasets físicos autorizados.
+
+Toda feature, indicador o transformación derivada utilizada por TSIS
+debe ser producida por un builder interno, versionado y gobernado.
+
+La presencia de una columna derivada homónima del proveedor
+no autoriza su consumo.
+```
+
+Por tanto:
+
+```text
+intraday_vwap_distance
+```
+
+solo puede construirse desde una `TSIS_VWAP` que conserve:
+
+```text
+fórmula
+inputs
+builder_version
+window
+cutoff
+available_at_rule
+lineage
+```
+
+El nombre de una columna no demuestra su equivalencia semántica ni temporal.
+
+## Separación de responsabilidades
+
+La arquitectura conserva las siguientes fronteras:
+
+```text
+Backtest Engine
+=
+declara inputs,
+reproduce el mercado,
+ejecuta decisiones,
+procesa órdenes y fills,
+mantiene posiciones y contabilidad.
+```
+
+```text
+RunPreflight
+=
+resuelve políticas,
+valida manifests,
+comprueba cobertura,
+verifica autorizaciones
+y decide fail-closed.
+```
+
+```text
+State Runtime Interface
+=
+recibe peticiones normalizadas
+y devuelve resultados gobernados.
+```
+
+```text
+Market State Runtime
+=
+resuelve, reutiliza, construye,
+valida y registra Market State.
+```
+
+```text
+Event State Runtime
+=
+resuelve, reutiliza, construye,
+valida y registra Event State.
+```
+
+```text
+Registry
+=
+declara qué perfiles, datasets y candidatos existen,
+qué versión poseen
+y qué consumos están autorizados.
+```
+
+```text
+StateReplayFeed
+=
+convierte estados autorizados
+en eventos temporalmente reproducibles.
+```
+
+```text
+EventLoop
+=
+ordena eventos por available_at,
+preserva su causalidad
+y entrega a la estrategia
+solo información legalmente disponible.
+```
+
+```text
+Decision / Strategy
+=
+consume inputs ya autorizados
+y emite decisiones operativas.
+```
+
+La estrategia no debe:
+
+```text
+construir Market State;
+construir Event State;
+leer tablas fuente;
+resolver paths;
+interpretar permisos;
+recalcular features;
+saltarse RunPreflight;
+utilizar filas research_only;
+obtener precios de fill directamente de los estados.
+```
+
+## Primer punto real de unión
+
+El prerrequisito mecánico ya está cerrado:
+
+```text
+HistoricalReplayFeed
+↓
+MechanicalEventLoop
+↓
+ScheduledDecision
+↓
+Order
+↓
+Fill
+↓
+Position
+```
+
+El estado vigente es:
+
+```text
+DATA = PASS
+REPLAY_FEED = PASS
+MECHANICAL_DECISION_ORDER_FILL_POSITION = PASS
+FILL_REALISM = NOT_CLAIMED
+EDGE = NOT_EVALUATED
+```
+
+Por tanto, la integración de estados no debe bloquear el incremento contable actual:
+
+```text
+CostModel
+↓
+CashLedger
+↓
+Gross-to-Net Reconciliation
+```
+
+En paralelo pueden congelarse:
+
+```text
+STATE_RESOLUTION_REQUEST_V0_1
+STATE_BUNDLE_MANIFEST_V0_1
+BACKTEST_INPUT_MANIFEST_V0_1
+```
+
+El primer test real de unión debe mantenerse deliberadamente pequeño:
+
+```text
+1 símbolo
+1 sesión
+1 perfil mínimo de Market State
+Event State no solicitado
+1 StateBundleManifest autorizado
+1 BacktestInputManifest autorizado
+1 StateReplayFeed
+1 decisión que lee un único campo interno
+1 recorrido Order → Fill → Position
+```
+
+El test debe demostrar:
+
+```text
+el backtest no conoce paths físicos;
+el estado procede del manifest autorizado;
+la fila llega después de sus inputs causales;
+state_available_at <= decision_clock;
+la decisión puede leer el campo;
+el precio de ejecución sigue procediendo
+de la política de ejecución.
+```
+
+Después puede añadirse un segundo test con `Event State`:
+
+```text
+1 fila decision_safe
+1 fila research_only
+```
+
+El resultado obligatorio es:
+
+```text
+decision_safe
+→ puede llegar a la estrategia
+si supera todas las comprobaciones temporales.
+```
+
+```text
+research_only
+→ queda bloqueada como input de decisión.
+```
+
+## Responsabilidad de la interfaz v0.1
+
+La interfaz común no es otra capa científica.
+
+Es el enchufe gobernado entre el backtester y las capacidades de `Market State` y `Event State`.
+
+Su responsabilidad inicial es:
+
+```text
+validar requests
+normalizarlas
+resolver perfiles y capacidades
+resolver reutilización o necesidad de construcción
+devolver manifests gobernados
+exponer cobertura y restricciones
+bloquear consumo no autorizado
+```
+
+No debe:
+
+```text
+aceptar paths físicos libres
+duplicar builders
+calcular features dentro del backtest
+autorizar por sí sola candidatos no promovidos
+entregar estados downstream sin autorización
+permitir joins libres dentro de la estrategia
+permitir leakage temporal
+utilizar Event State retrospectivo como input predictivo
+```
+
+La cadena completa queda definida así:
+
+```text
+BacktestRunSpec
+↓
+RunPreflight
+↓
+StateResolutionRequest
+↓
+State Runtime Interface
+↓
+StateBundleManifest
+↓
+BacktestInputManifest
+↓
+StateReplayFeed
+↓
+EventLoop
+↓
+Decision
+↓
+Order
+↓
+Fill
+↓
+Position
+↓
+Ledger
+```
+
+El verdadero enlace no es un path.
+
+Tampoco es únicamente un dataset materializado.
+
+Es una cadena completa de:
+
+```text
+declaración
+↓
+resolución
+↓
+validación
+↓
+autorización
+↓
+sellado
+↓
+replay temporal
+↓
+decisión
+```
+
+Así, el backtest puede consumir `Market State` y `Event State` sin acoplarse a su almacenamiento físico, sin duplicar su construcción, sin utilizar indicadores derivados del proveedor y sin introducir información retrospectiva en una decisión.

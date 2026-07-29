@@ -1,0 +1,660 @@
+{
+  "contract_id": "runtime_user_invocation_response_contract_v0_1",
+  "contract_version": "0.1.1",
+  "status": "PROVIDER_CONTRACT_SCHEMA_HARDENED_V0_1_1_NO_EXECUTION",
+  "owner_layer": "08_RUNTIME_CAPABILITIES",
+  "schema_hardening_gate": "runtime_provider_contract_schema_hardening_v0_1_1",
+  "purpose": "Executable provider response envelope with fail-closed status/decision semantics.",
+  "contract_hash_policy": {
+    "hash_authority": "PACKAGE_MANIFEST.full_file_sha256",
+    "embedded_contract_hash": "not_used_in_v0_1_1"
+  },
+  "json_schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "invocation_id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "request_type": {
+        "enum": [
+          "market_state",
+          "event_state"
+        ]
+      },
+      "request_fingerprint": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      "invocation_status": {
+        "enum": [
+          "blocked",
+          "reuse_hit",
+          "authorization_required",
+          "authorized_reference"
+        ]
+      },
+      "resolution_decision": {
+        "enum": [
+          "VALID_REQUEST_REUSE_HIT",
+          "VALID_REQUEST_EXECUTION_AUTHORIZATION_REQUIRED",
+          "VALID_REQUEST_AUTHORIZED_EXECUTION_REFERENCE",
+          "BLOCKED_INVALID_REQUEST",
+          "BLOCKED_UNSUPPORTED_PROFILE_OR_EVENT_TYPE",
+          "BLOCKED_PRODUCTION_OR_DOWNSTREAM_NOT_AUTHORIZED",
+          "BLOCKED_PHYSICAL_PATH_NOT_ALLOWED",
+          "BLOCKED_PROVIDER_CONTRACT_MISMATCH"
+        ]
+      },
+      "capability_id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "profile_id": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "run_id": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "dataset_id": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "dataset_status": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "validation_status": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "state_bundle_manifest_ref": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "ref_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "ref_type": {
+                "const": "state_bundle_manifest"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "availability": {
+                "enum": [
+                  "available",
+                  "archived",
+                  "missing",
+                  "not_required"
+                ]
+              }
+            },
+            "required": [
+              "ref_id",
+              "ref_type",
+              "sha256",
+              "availability"
+            ]
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "coverage": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "requested_contexts": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "represented_contexts": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "unavailable_contexts": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "blocked_contexts": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "quarantined_contexts": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "unaccounted_contexts": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "requested_contexts",
+          "represented_contexts",
+          "unavailable_contexts",
+          "blocked_contexts",
+          "quarantined_contexts",
+          "unaccounted_contexts"
+        ]
+      },
+      "restrictions": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 1,
+        "uniqueItems": true
+      },
+      "artifact_references": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "ref_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "ref_type": {
+              "const": "runtime_artifact"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "availability": {
+              "enum": [
+                "available",
+                "archived",
+                "missing",
+                "not_required"
+              ]
+            }
+          },
+          "required": [
+            "ref_id",
+            "ref_type",
+            "sha256",
+            "availability"
+          ]
+        },
+        "minItems": 0
+      },
+      "official_dataset": {
+        "const": false
+      },
+      "production": {
+        "const": false
+      },
+      "downstream": {
+        "const": false
+      },
+      "market_state_details": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "materializer_executions": {
+                "const": 0
+              },
+              "source_market_data_rows_read": {
+                "const": 0
+              },
+              "registry_mutations": {
+                "const": 0
+              },
+              "physical_rows_delivered": {
+                "const": 0
+              }
+            },
+            "required": [
+              "materializer_executions",
+              "source_market_data_rows_read",
+              "registry_mutations",
+              "physical_rows_delivered"
+            ]
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "event_state_details": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "materializer_executions": {
+                "const": 0
+              },
+              "source_market_data_rows_read": {
+                "const": 0
+              },
+              "registry_mutations": {
+                "const": 0
+              },
+              "physical_rows_delivered": {
+                "const": 0
+              }
+            },
+            "required": [
+              "materializer_executions",
+              "source_market_data_rows_read",
+              "registry_mutations",
+              "physical_rows_delivered"
+            ]
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "authorization_ref": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "ref_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "ref_type": {
+                "const": "execution_authorization"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "availability": {
+                "enum": [
+                  "available",
+                  "archived",
+                  "missing",
+                  "not_required"
+                ]
+              }
+            },
+            "required": [
+              "ref_id",
+              "ref_type",
+              "sha256",
+              "availability"
+            ]
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "required": [
+      "invocation_id",
+      "request_type",
+      "request_fingerprint",
+      "invocation_status",
+      "resolution_decision",
+      "capability_id",
+      "profile_id",
+      "run_id",
+      "dataset_id",
+      "dataset_status",
+      "validation_status",
+      "state_bundle_manifest_ref",
+      "coverage",
+      "restrictions",
+      "artifact_references",
+      "official_dataset",
+      "production",
+      "downstream",
+      "market_state_details",
+      "event_state_details",
+      "authorization_ref"
+    ],
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://tsis.local/contracts/runtime_user_invocation_response_contract_v0_1_1.schema.json",
+    "title": "TSIS RuntimeInvocationResponse v0.1.1",
+    "allOf": [
+      {
+        "if": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "request_type": {
+              "const": "market_state"
+            }
+          },
+          "required": [
+            "request_type"
+          ]
+        },
+        "then": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "event_state_details": {
+              "type": "null"
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "request_type": {
+              "const": "event_state"
+            }
+          },
+          "required": [
+            "request_type"
+          ]
+        },
+        "then": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "market_state_details": {
+              "type": "null"
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "invocation_status": {
+              "const": "reuse_hit"
+            }
+          },
+          "required": [
+            "invocation_status"
+          ]
+        },
+        "then": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "resolution_decision": {
+              "const": "VALID_REQUEST_REUSE_HIT"
+            },
+            "dataset_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "dataset_status": {
+              "const": "validated_candidate"
+            },
+            "validation_status": {
+              "enum": [
+                "PASS",
+                "PASS_WITH_RESTRICTIONS"
+              ]
+            },
+            "state_bundle_manifest_ref": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "ref_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "ref_type": {
+                  "const": "state_bundle_manifest"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "availability": {
+                  "const": "available"
+                }
+              },
+              "required": [
+                "ref_id",
+                "ref_type",
+                "sha256",
+                "availability"
+              ]
+            },
+            "artifact_references": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "ref_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "ref_type": {
+                    "const": "runtime_artifact"
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "availability": {
+                    "const": "available"
+                  }
+                },
+                "required": [
+                  "ref_id",
+                  "ref_type",
+                  "sha256",
+                  "availability"
+                ]
+              },
+              "minItems": 1
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "invocation_status": {
+              "const": "blocked"
+            }
+          },
+          "required": [
+            "invocation_status"
+          ]
+        },
+        "then": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "resolution_decision": {
+              "enum": [
+                "BLOCKED_INVALID_REQUEST",
+                "BLOCKED_UNSUPPORTED_PROFILE_OR_EVENT_TYPE",
+                "BLOCKED_PRODUCTION_OR_DOWNSTREAM_NOT_AUTHORIZED",
+                "BLOCKED_PHYSICAL_PATH_NOT_ALLOWED",
+                "BLOCKED_PROVIDER_CONTRACT_MISMATCH"
+              ]
+            },
+            "dataset_id": {
+              "type": "null"
+            },
+            "dataset_status": {
+              "type": "null"
+            },
+            "validation_status": {
+              "type": "null"
+            },
+            "state_bundle_manifest_ref": {
+              "type": "null"
+            },
+            "authorization_ref": {
+              "type": "null"
+            },
+            "artifact_references": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "ref_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "ref_type": {
+                    "const": "runtime_artifact"
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "availability": {
+                    "enum": [
+                      "available",
+                      "archived",
+                      "missing",
+                      "not_required"
+                    ]
+                  }
+                },
+                "required": [
+                  "ref_id",
+                  "ref_type",
+                  "sha256",
+                  "availability"
+                ]
+              },
+              "minItems": 0,
+              "maxItems": 0
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "invocation_status": {
+              "const": "authorization_required"
+            }
+          },
+          "required": [
+            "invocation_status"
+          ]
+        },
+        "then": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "resolution_decision": {
+              "const": "VALID_REQUEST_EXECUTION_AUTHORIZATION_REQUIRED"
+            },
+            "dataset_id": {
+              "type": "null"
+            },
+            "dataset_status": {
+              "type": "null"
+            },
+            "validation_status": {
+              "type": "null"
+            },
+            "state_bundle_manifest_ref": {
+              "type": "null"
+            },
+            "authorization_ref": {
+              "type": "null"
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "invocation_status": {
+              "const": "authorized_reference"
+            }
+          },
+          "required": [
+            "invocation_status"
+          ]
+        },
+        "then": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "resolution_decision": {
+              "const": "VALID_REQUEST_AUTHORIZED_EXECUTION_REFERENCE"
+            },
+            "dataset_id": {
+              "type": "null"
+            },
+            "dataset_status": {
+              "type": "null"
+            },
+            "validation_status": {
+              "type": "null"
+            },
+            "state_bundle_manifest_ref": {
+              "type": "null"
+            },
+            "authorization_ref": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "ref_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "ref_type": {
+                  "const": "execution_authorization"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "availability": {
+                  "const": "available"
+                }
+              },
+              "required": [
+                "ref_id",
+                "ref_type",
+                "sha256",
+                "availability"
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

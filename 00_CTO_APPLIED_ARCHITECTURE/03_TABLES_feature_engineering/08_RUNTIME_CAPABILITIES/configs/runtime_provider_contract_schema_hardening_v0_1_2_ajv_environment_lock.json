@@ -1,0 +1,13 @@
+{
+  "lock_id": "runtime_provider_contract_schema_hardening_v0_1_2_ajv_environment_lock",
+  "created_at_utc": "2026-07-29T14:18:08Z",
+  "node_version": "v22.19.0",
+  "ajv_package": "ajv",
+  "ajv_version": "8.17.1",
+  "ajv_node_modules_env_var": "TSIS_AJV_NODE_MODULES",
+  "ajv_node_modules_path_used": "C:\\tmp\\tsis_ajv_runtime_v012\\node_modules",
+  "ajv_package_json_sha256": "ce1539e6f4e0f345ed402c47137d2679497b2035d4a4f420ee11acdde03dea92",
+  "strict_runtime_command": "node -e <Ajv2020 strict compile script>",
+  "reproduction_policy": "Set TSIS_AJV_NODE_MODULES to a node_modules directory containing ajv 8.17.1, or install from the locked version before running the provider-only runner.",
+  "network_required_by_runner": false
+}

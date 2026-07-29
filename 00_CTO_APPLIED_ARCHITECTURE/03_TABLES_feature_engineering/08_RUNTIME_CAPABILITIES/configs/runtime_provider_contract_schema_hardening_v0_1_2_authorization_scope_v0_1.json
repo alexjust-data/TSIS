@@ -1,0 +1,177 @@
+{
+  "scope_id": "runtime_provider_contract_schema_hardening_v0_1_2_authorization_scope_v0_1",
+  "authorization_id": "runtime_provider_contract_schema_hardening_v0_1_2_authorization_v0_1",
+  "authorized_gate": "runtime_provider_contract_schema_hardening_v0_1_2",
+  "created_at_utc": "2026-07-28T20:30:00Z",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_NO_EXECUTION",
+  "owner_layer": "08_RUNTIME_CAPABILITIES",
+  "provider_only": true,
+  "baseline_state": {
+    "provider_schema_hardening_v0_1_1": "CLOSED_PROVIDER_CONTRACT_SCHEMA_HARDENED_V0_1_1_WITH_RESTRICTIONS_NO_EXECUTION",
+    "provider_v0_1_1_external_audit": "FAIL_EXECUTABLE_SEMANTIC_GAPS",
+    "provider_consumer_compatibility": "NOT_OPENED_AFTER_V0_1_1",
+    "backtest_consumer_contracts": "DRAFT",
+    "backtest_state_consumption": "NOT_AUTHORIZED",
+    "state_replay_feed": "NOT_AUTHORIZED"
+  },
+  "reference_artifacts": [
+    {
+      "path": "08_RUNTIME_CAPABILITIES/runtime_provider_contract_schema_hardening_v0_1_1_authorization.md",
+      "sha256": "90ba38849f5ce7abfa82175f2fa5d1281e35907357f8be4d4c6369e3ae929cca",
+      "role": "prior_authorization_reference"
+    },
+    {
+      "path": "08_RUNTIME_CAPABILITIES/configs/runtime_provider_contract_schema_hardening_v0_1_1_scope.json",
+      "sha256": "97d6a9169cd0122690551324086b4629e8f0720814f7e9ed671e1d8576ddd5a0",
+      "role": "prior_scope_reference"
+    },
+    {
+      "path": "08_RUNTIME_CAPABILITIES/runtime_provider_contract_schema_hardening_v0_1_1_readout.md",
+      "sha256": "038182edae6412551f8762cffdd1b8fed3b78ac33a204e7c568df46b4b3cc071",
+      "role": "prior_internal_closeout_reference"
+    },
+    {
+      "path": "08_RUNTIME_CAPABILITIES/runtime_provider_contract_schema_hardening_v0_1_1_validation_matrix.json",
+      "sha256": "5a0ea7c581a1af46b34a0c410f1f6acc3db2baa286d6984d6c345c931f6369c8",
+      "role": "prior_internal_matrix_reference"
+    },
+    {
+      "path": "99_archive/v0_1_2_boundary_quarantine_20260728/QUARANTINE_MANIFEST.json",
+      "sha256": "045cbdacc90bae71bfe69bcfd9393d89c27024dda4f3befdda46e7a002fff7c3",
+      "role": "quarantine_negative_evidence_only"
+    }
+  ],
+  "quarantine_policy": {
+    "previous_v0_1_2_attempt_status": "QUARANTINED_NO_ACTIVE_AUTHORITY",
+    "quarantined_artifacts_used_as_source_authority": false,
+    "allowed_uses": [
+      "auditability",
+      "negative_evidence",
+      "boundary_incident_trace"
+    ],
+    "prohibited_uses": [
+      "copy_as_current_contract",
+      "restore_as_current_runner",
+      "reuse_as_validation_matrix",
+      "package_as_valid_deliverable",
+      "cite_as_pass_or_closed_authority"
+    ]
+  },
+  "required_findings_to_fix": [
+    {
+      "id": "F01_CARDINALITY_REQUESTS_FINGERPRINTS_RESPONSES",
+      "description": "Bind aggregated bundle cardinality across requests, request_fingerprints, response_refs and bundle membership."
+    },
+    {
+      "id": "F02_SEMANTIC_REF_ID_UNIQUENESS",
+      "description": "Enforce semantic ref_id uniqueness beyond shallow object-level uniqueItems."
+    },
+    {
+      "id": "F03_REQUEST_TYPE_CAPABILITY_PROFILE_COHERENCE",
+      "description": "Bind request_type to capability_id, profile_id and permitted typed details."
+    },
+    {
+      "id": "F04_EFFECTIVE_CAPABILITY_VIEW_CONTRADICTIONS",
+      "description": "Prevent contradictory capability declarations in EffectiveCapabilityView."
+    },
+    {
+      "id": "F05_FAIL_BLOCKED_MANIFEST_REUSE_FORBIDDEN",
+      "description": "Ensure FAIL or BLOCKED manifests cannot certify reusable datasets."
+    },
+    {
+      "id": "F06_OPERATION_RESOLUTION_AUTHORIZATION_COHERENCE",
+      "description": "Bind operation to resolution mode, authorization semantics and allowed outputs."
+    },
+    {
+      "id": "F07_INVOCATION_STATUS_FIELD_CONSTRAINTS",
+      "description": "Make invocation_status constrain incompatible fields to null, empty, required or forbidden as applicable."
+    },
+    {
+      "id": "F08_LIVING_DOCS_ACTIVE_VS_HISTORICAL",
+      "description": "Ensure living docs mark historical or superseded snapshots and expose only current authority as active."
+    },
+    {
+      "id": "F09_RESPONSE_REF_REQUEST_FINGERPRINT_STATE_KIND_CORRELATION",
+      "description": "Bind response_ref, request_fingerprint and state_kind unambiguously in responses and bundles."
+    }
+  ],
+  "authorized_outputs": [
+    "configs/runtime_provider_contract_schema_hardening_v0_1_2_scope.json",
+    "state_resolution_request_contract_v0_1_2.json",
+    "runtime_user_invocation_interface_contract_v0_1_2.json",
+    "runtime_user_invocation_response_contract_v0_1_2.json",
+    "state_bundle_manifest_contract_v0_1_2.json",
+    "runtime_capability_effective_view_contract_v0_1_2.json",
+    "runtime_provider_contract_schema_hardening_v0_1_2_validation_matrix.json",
+    "scripts/runtime_provider_contract_schema_hardening_v0_1_2_runner.py",
+    "scripts/runtime_provider_contract_schema_hardening_v0_1_2_reaudit_patch.py",
+    "scripts/runtime_provider_contract_schema_hardening_v0_1_2_patch.py",
+    "runtime_provider_contract_schema_hardening_v0_1_2_readout.md",
+    "PACKAGE_MANIFEST.json inside provider-only ZIP",
+    "runtime_provider_contract_schema_hardening_v0_1_2_provider_only_<timestamp>.zip",
+    "configs/runtime_provider_contract_schema_hardening_v0_1_2_ajv_package.json",
+    "configs/runtime_provider_contract_schema_hardening_v0_1_2_ajv_reproducibility_manifest.json",
+    "configs/runtime_provider_contract_schema_hardening_v0_1_2_ajv_runtime_vendor_ajv_8_17_1.zip",
+    "configs/runtime_provider_contract_schema_hardening_v0_1_2_ajv_vendor_manifest.json"
+  ],
+  "validation_requirements": {
+    "original_case_count_minimum": 31,
+    "external_regression_case_count_minimum": 13,
+    "total_case_count_minimum": 44,
+    "failed_cases_required": 0,
+    "jsonschema_draft_2020_12_compile": "PASS",
+    "ajv_8_17_1_strict_runtime": "PASS",
+    "semantic_validator_execution": "PASS",
+    "expanded_adversarial_matrix": "PASS",
+    "package_manifest_reproducibility": "PASS",
+    "provider_only_isolation": "PASS",
+    "document_encoding_integrity": "PASS"
+  },
+  "hard_boundaries": {
+    "runtime_requests_executed": 0,
+    "runtime_resolutions_executed": 0,
+    "runtime_builds_executed": 0,
+    "datasets_written": 0,
+    "builds_materializations": 0,
+    "registry_mutations": 0,
+    "physical_state_rows_delivered": 0,
+    "source_market_data_rows_read": 0,
+    "state_replay_feed_records_emitted": 0,
+    "backtest_runs_started": 0,
+    "backtest_consumption_authority": false,
+    "state_replay_feed_authorized": false,
+    "production": false,
+    "downstream": false,
+    "official_dataset": false
+  },
+  "not_authorized": [
+    "runtime_provider_consumer_contract_compatibility_review_v0_1",
+    "runtime_user_invocation_bounded_interface_execution_v0_1",
+    "state_bundle_manifest_physical_evidence_alignment_v0_1",
+    "StateBundle physical reads",
+    "StateReplayFeed",
+    "Backtest RunPreflight state integration",
+    "strategy access to Market State or Event State",
+    "orders/fills/PnL from states",
+    "production",
+    "downstream"
+  ],
+  "authorized_living_document_updates": {
+    "files": {
+      "99_ruta_de_trabajo.md": "status_v0_1_2_and_F08_only",
+      "AGENT.md": "status_v0_1_2_and_F08_only",
+      "08_RUNTIME_CAPABILITIES/README.md": "status_v0_1_2_and_F08_only",
+      "00_CTO_APPLIED_ARCHITECTURE/CHANGELOG.md": "status_v0_1_2_and_F08_only"
+    },
+    "documentation_updates_only_for_v0_1_2_status_and_F08": true,
+    "unrelated_historical_content_changes": false
+  },
+  "patch_module_authorization": {
+    "status": "AUTHORIZED_PROVIDER_ONLY_IMPLEMENTATION_MODULES",
+    "paths": [
+      "scripts/runtime_provider_contract_schema_hardening_v0_1_2_patch.py",
+      "scripts/runtime_provider_contract_schema_hardening_v0_1_2_reaudit_patch.py"
+    ],
+    "reason": "Scoped provider-only hardening overrides required by external audit; no backtester or physical-consumption authority."
+  }
+}

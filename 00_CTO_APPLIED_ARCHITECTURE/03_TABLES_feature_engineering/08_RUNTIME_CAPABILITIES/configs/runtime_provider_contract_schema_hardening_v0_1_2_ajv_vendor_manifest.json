@@ -1,0 +1,10 @@
+{
+  "manifest_id": "runtime_provider_contract_schema_hardening_v0_1_2_ajv_vendor_manifest",
+  "created_at_utc": "2026-07-29T14:18:08Z",
+  "vendor_zip": "runtime_provider_contract_schema_hardening_v0_1_2_ajv_runtime_vendor_ajv_8_17_1.zip",
+  "vendor_zip_sha256": "d8ae815e790ba540993b601182380506a1cb6efec9e5df9244ed7c45955a161b",
+  "vendor_zip_size_bytes": 476421,
+  "node_modules_root_inside_zip": "ajv_runtime_vendor/node_modules",
+  "ajv_version": "8.17.1",
+  "external_reproduction_instruction": "Extract vendor zip and set NODE_PATH to ajv_runtime_vendor/node_modules before running the AJV strict compile check."
+}

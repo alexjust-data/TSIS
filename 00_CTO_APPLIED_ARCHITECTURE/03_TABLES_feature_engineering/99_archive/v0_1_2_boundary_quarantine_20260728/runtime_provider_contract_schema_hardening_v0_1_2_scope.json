@@ -1,0 +1,27 @@
+{
+  "scope_id": "runtime_provider_contract_schema_hardening_v0_1_2_scope",
+  "gate": "runtime_provider_contract_schema_hardening_v0_1_2",
+  "created_at_utc": "2026-07-28T19:21:45+00:00",
+  "provider_only": true,
+  "previous_internal_status": "CLOSED_PROVIDER_CONTRACT_SCHEMA_HARDENED_V0_1_1_WITH_RESTRICTIONS_NO_EXECUTION",
+  "previous_external_audit_status": "FAIL_EXECUTABLE_SEMANTIC_GAPS",
+  "minimum_case_count": 44,
+  "not_in_scope": [
+    "runtime_provider_consumer_contract_compatibility_review_v0_1",
+    "StateReplayFeed",
+    "backtest consumption",
+    "physical state row delivery",
+    "production",
+    "downstream"
+  ],
+  "hard_boundaries": {
+    "runtime_requests_executed": 0,
+    "datasets_written": 0,
+    "builds_materializations": 0,
+    "registry_mutations": 0,
+    "downstream": false,
+    "production": false,
+    "backtest_consumption_authority": false,
+    "state_replay_feed_authorized": false
+  }
+}

@@ -1,0 +1,516 @@
+{
+  "as_of": "2026-07-29",
+  "entries": [
+    {
+      "acceptance_tests": [
+        "unknown/unauthorized inputs fail closed",
+        "candidate validation binding",
+        "immutable non-empty output",
+        "availability boundary",
+        "deterministic manifests"
+      ],
+      "capability_id": "BT-CAP-PREFLIGHT",
+      "contract_artifacts": [
+        "docs/00_system/01_RUNPREFLIGHT_IMPLEMENTATION_PLAN_V0_1.md",
+        "contracts/backtest/backtest_run_spec_contract_v0_1.json"
+      ],
+      "decision_ids": [
+        "BT-DATA-001",
+        "BT-DATA-003"
+      ],
+      "evidence_runs": [
+        "runs/run_preflight_real_fixture_2026_01_05_qg5_v0_1",
+        "runs/run_preflight_real_fixture_2026_01_05_qg5_v0_2"
+      ],
+      "gate_id": "BT-GATE-001",
+      "implementation_artifacts": [
+        "src/tsis_backtest/preflight/run_preflight.py",
+        "src/tsis_backtest/preflight/contracts.py",
+        "src/tsis_backtest/preflight/registries.py",
+        "src/tsis_backtest/preflight/manifests.py"
+      ],
+      "limitations": [
+        "bounded fixture only",
+        "no edge claim"
+      ],
+      "policy_ids": [
+        "BT-POL-DATA-001",
+        "BT-POL-DATA-002",
+        "BT-POL-DATA-003",
+        "BT-POL-DATA-005"
+      ],
+      "status": "CLOSED_PASS",
+      "test_artifacts": [
+        "tests/unit/test_run_preflight.py"
+      ]
+    },
+    {
+      "acceptance_tests": [
+        "file/schema/OHLCV validation",
+        "open/close presence",
+        "duplicates",
+        "corporate actions",
+        "discovery drift",
+        "fixture binding",
+        "manifest hash"
+      ],
+      "capability_id": "BT-CAP-PHYSICAL-INSPECTION",
+      "contract_artifacts": [
+        "docs/00_system/02_PHYSICAL_LAYOUT_DISCOVERY_V0_1.md",
+        "docs/00_system/02_PHYSICAL_LAYOUT_DISCOVERY_V0_1.json"
+      ],
+      "decision_ids": [
+        "BT-DATA-001",
+        "BT-DATA-002"
+      ],
+      "evidence_runs": [
+        "runs/run_preflight_real_fixture_2026_01_05_qg5_v0_2"
+      ],
+      "gate_id": "BT-GATE-002",
+      "implementation_artifacts": [
+        "src/tsis_backtest/preflight/real_data_inspector.py"
+      ],
+      "limitations": [
+        "fixture QG5/LT1B scope",
+        "declared no-imputation gap policy"
+      ],
+      "policy_ids": [
+        "BT-POL-DATA-002",
+        "BT-POL-DATA-004"
+      ],
+      "status": "CLOSED_PASS",
+      "test_artifacts": [
+        "tests/unit/test_real_data_inspector.py"
+      ]
+    },
+    {
+      "acceptance_tests": [
+        "preflight required",
+        "inspection required",
+        "hashes mandatory",
+        "deterministic ordering",
+        "availability timestamp",
+        "gap events",
+        "no vendor vw propagation",
+        "sequence hash"
+      ],
+      "capability_id": "BT-CAP-REPLAY",
+      "contract_artifacts": [
+        "docs/00_system/03_REPLAY_IMPLEMENTATION_PLAN_V0_1.md"
+      ],
+      "decision_ids": [
+        "BT-REPLAY-001",
+        "BT-REPLAY-002",
+        "BT-DATA-002"
+      ],
+      "evidence_runs": [
+        "runs/replay_real_fixture_2026_01_05_qg5_v0_1"
+      ],
+      "gate_id": "BT-GATE-003",
+      "implementation_artifacts": [
+        "src/tsis_backtest/replay/contracts.py",
+        "src/tsis_backtest/replay/historical_feed.py"
+      ],
+      "limitations": [
+        "historical bars only",
+        "not execution realism",
+        "event_count=1950 for bounded smoke"
+      ],
+      "policy_ids": [
+        "BT-POL-REPLAY-001",
+        "BT-POL-REPLAY-002",
+        "BT-POL-REPLAY-003",
+        "BT-POL-REPLAY-004"
+      ],
+      "status": "CLOSED_PASS_MINIMUM",
+      "test_artifacts": [
+        "tests/unit/test_historical_replay_feed.py"
+      ]
+    },
+    {
+      "acceptance_tests": [
+        "fill-derived position/PnL",
+        "execution timestamp ordering",
+        "scheduled-decision causality",
+        "quantity mismatch failure",
+        "ABAT linear reference"
+      ],
+      "capability_id": "BT-CAP-MECHANICS",
+      "contract_artifacts": [
+        "AGENTS.md",
+        "CHANGELOG.md"
+      ],
+      "decision_ids": [
+        "BT-MECH-001",
+        "BT-MECH-002"
+      ],
+      "evidence_runs": [
+        "runs/mechanical_abat_short_open_close_v0_1"
+      ],
+      "gate_id": "BT-GATE-004",
+      "implementation_artifacts": [
+        "src/tsis_backtest/mechanics/contracts.py",
+        "src/tsis_backtest/mechanics/event_loop.py"
+      ],
+      "limitations": [
+        "proxy fills",
+        "no borrow/locate proof",
+        "no partial fills",
+        "no edge"
+      ],
+      "policy_ids": [
+        "BT-POL-MECH-001",
+        "BT-POL-SHORT-001"
+      ],
+      "status": "CLOSED_PASS_PROXY",
+      "test_artifacts": [
+        "tests/unit/test_mechanical_event_loop.py"
+      ]
+    },
+    {
+      "acceptance_tests": [
+        "zero/multiple/minimum costs",
+        "short loss",
+        "open-position rejection",
+        "gross mismatch",
+        "deterministic hash",
+        "sub-cent serialization",
+        "ABAT accounting"
+      ],
+      "capability_id": "BT-CAP-ACCOUNTING",
+      "contract_artifacts": [
+        "docs/00_system/04_ACCOUNTING_IMPLEMENTATION_PLAN_V0_1.md"
+      ],
+      "decision_ids": [
+        "BT-ACCT-001",
+        "BT-ACCT-002"
+      ],
+      "evidence_runs": [
+        "runs/accounting_abat_short_open_close_v0_1"
+      ],
+      "gate_id": "BT-GATE-005",
+      "implementation_artifacts": [
+        "src/tsis_backtest/accounting/contracts.py",
+        "src/tsis_backtest/accounting/engine.py"
+      ],
+      "limitations": [
+        "minimum deterministic cost model",
+        "broker cost realism not claimed"
+      ],
+      "policy_ids": [
+        "BT-POL-ACCT-001",
+        "BT-POL-ACCT-002",
+        "BT-POL-ACCT-003"
+      ],
+      "status": "CLOSED_PASS_MINIMUM",
+      "test_artifacts": [
+        "tests/unit/test_accounting_engine.py"
+      ]
+    },
+    {
+      "acceptance_tests": [
+        "defined in contract; not executed",
+        "ambiguous intrabar sequence produces EVALUATION_OUTCOME = FAIL_AMBIGUOUS_BAR",
+        "FAIL_AMBIGUOUS_BAR produces TERMINAL_ORDER_OUTCOME = REJECTED_BY_CONTRACT",
+        "PESSIMISTIC remains reserved/not implemented"
+      ],
+      "capability_id": "BT-CAP-EXECUTION-CONTRACT",
+      "contract_artifacts": [
+        "docs/00_system/07_EXECUTION_SEMANTICS_AND_COST_MODEL_CONTRACT_V0_1.md",
+        "docs/00_system/08_DETERMINISTIC_FILL_SIMULATOR_V0_1_AUTHORIZATION.md"
+      ],
+      "decision_ids": [
+        "BT-EXEC-001",
+        "BT-EXEC-002",
+        "BT-EXEC-003",
+        "BT-EXEC-004",
+        "BT-EXEC-005",
+        "BT-EXEC-006",
+        "BT-EXEC-007",
+        "BT-EXEC-008",
+        "BT-EXEC-009",
+        "BT-EXEC-010",
+        "BT-EXEC-011",
+        "BT-EXEC-012",
+        "BT-EXEC-013",
+        "BT-EXEC-014"
+      ],
+      "evidence_runs": [
+        "execution_semantics_governance_review_packet_20260729T082900Z.zip",
+        "FINAL_ENUMERATION_REVIEW=PASS",
+        "bt_gate_009_authorization_review_packet_20260729T085644Z.zip"
+      ],
+      "gate_id": "BT-GATE-006",
+      "implementation_artifacts": [],
+      "limitations": [
+        "independent review pending",
+        "code not authorized",
+        "independent semantic review completed with findings",
+        "semantic re-review completed with residual findings",
+        "residual findings corrected",
+        "final semantic review not recorded",
+        "code implementation not authorized",
+        "broker realism not claimed",
+        "fill realism not claimed",
+        "short tradability not evaluated",
+        "implementation authorized only; not yet implemented or accepted",
+        "BT-GATE-010 required for implementation acceptance"
+      ],
+      "policy_ids": [
+        "BT-POL-EXEC-001",
+        "BT-POL-EXEC-002",
+        "BT-POL-EXEC-003",
+        "BT-POL-EXEC-004",
+        "BT-POL-EXEC-005",
+        "BT-POL-EXEC-006",
+        "BT-POL-EXEC-007",
+        "BT-POL-EXEC-008",
+        "BT-POL-EXEC-009",
+        "BT-POL-EXEC-010",
+        "BT-POL-EXEC-011",
+        "BT-POL-EXEC-012",
+        "BT-POL-EXEC-013",
+        "BT-POL-EXEC-014",
+        "BT-POL-EXEC-015",
+        "BT-POL-EXEC-016",
+        "BT-POL-EXEC-017"
+      ],
+      "status": "IMPLEMENTATION_STARTED_BY_BT_CAP_DETERMINISTIC_FILL_SIMULATOR",
+      "test_artifacts": []
+    },
+    {
+      "acceptance_tests": [],
+      "capability_id": "BT-CAP-STATE-CONSUMPTION",
+      "contract_artifacts": [
+        "docs/00_system/05_RUNPREFLIGHT_STATE_CONSUMPTION_IMPLEMENTATION_PLAN_V0_1.md",
+        "docs/00_system/06_STATE_REPLAY_FEED_IMPLEMENTATION_PLAN_V0_1.md",
+        "docs/00_system/STATE_PROVIDER_CONSUMER_HOLD_HANDOFF_V0_1.md"
+      ],
+      "decision_ids": [
+        "BT-STATE-001"
+      ],
+      "evidence_runs": [],
+      "gate_id": "BT-GATE-007",
+      "implementation_artifacts": [],
+      "limitations": [
+        "provider-consumer compatibility not opened"
+      ],
+      "policy_ids": [
+        "BT-POL-STATE-001"
+      ],
+      "status": "NOT_AUTHORIZED",
+      "test_artifacts": []
+    },
+    {
+      "acceptance_tests": [
+        "temporal eligibility",
+        "MARKET_PROXY open/close",
+        "LIMIT fill/no-fill/protection",
+        "STOP_MARKET_PROXY trigger/gap-through",
+        "canonical evaluation and terminal outcomes",
+        "all required EVALUATION_OUTCOME values present in acceptance run",
+        "all required TERMINAL_ORDER_OUTCOME values present in acceptance run",
+        "FAIL_AMBIGUOUS_BAR mapping",
+        "PESSIMISTIC rejected",
+        "unsupported partial fills rejected",
+        "unsupported TIF/order/tick rejected",
+        "slippage formulas",
+        "cost components and ROUND_HALF_EVEN",
+        "deterministic hash",
+        "package-reproducible simulator test subset",
+        "package-reproducible simulator test subset without pyarrow import",
+        "acceptance run required outcome coverage"
+      ],
+      "capability_id": "BT-CAP-DETERMINISTIC-FILL-SIMULATOR",
+      "contract_artifacts": [
+        "docs/00_system/07_EXECUTION_SEMANTICS_AND_COST_MODEL_CONTRACT_V0_1.md",
+        "docs/00_system/08_DETERMINISTIC_FILL_SIMULATOR_V0_1_AUTHORIZATION.md",
+        "docs/00_system/09_DETERMINISTIC_FILL_SIMULATOR_IMPLEMENTATION_AND_ACCEPTANCE_V0_1.md"
+      ],
+      "decision_ids": [
+        "BT-EXEC-014",
+        "BT-EXEC-015"
+      ],
+      "evidence_runs": [
+        "runs/deterministic_fill_simulator_v0_1_acceptance_v0_3",
+        "bt_gate_010_implementation_review_packet_20260729T095411Z.zip",
+        "ZIP_SHA256=964e99c98eb005000c447367d3c8b6d4c7701f8b2811970c3066bb5e29a21df5",
+        "BT_GATE_010_EXTERNAL_ACCEPTANCE_REVIEW=PASS"
+      ],
+      "gate_id": "BT-GATE-010",
+      "implementation_artifacts": [
+        "src/tsis_backtest/execution/__init__.py",
+        "src/tsis_backtest/execution/contracts.py",
+        "src/tsis_backtest/execution/simulator.py"
+      ],
+      "limitations": [
+        "deterministic bar-based simulator only",
+        "no partial fills",
+        "no quote-aware fills",
+        "no borrow/locate realism",
+        "no broker realism",
+        "no edge claim",
+        "no StateReplayFeed or Market/Event State consumption"
+      ],
+      "policy_ids": [
+        "BT-POL-EXEC-017",
+        "BT-POL-EXEC-018"
+      ],
+      "status": "IMPLEMENTED_AND_ACCEPTED",
+      "test_artifacts": [
+        "tests/unit/test_deterministic_fill_simulator.py"
+      ]
+    },
+    {
+      "acceptance_tests": [
+        "BT-GATE-011 real QG5 run validation PASS",
+        "determinism repeat_count=2 PASS",
+        "costs counted exactly once PASS",
+        "final positions zero PASS",
+        "online event-loop trace no future event access PASS",
+        "simulator called with single current event only PASS",
+        "truncated dataset does not silently redefine close PASS",
+        "portable package test command PASS after editable install",
+        "portable end-to-end rerun PASS",
+        "engine suite 99 tests OK",
+        "orders pre-registered before replay PASS",
+        "order not created during event processing PASS",
+        "accounting applied inside event loop PASS",
+        "simulator receives single current event PASS",
+        "BT-GATE-011 final owner acceptance review PASS"
+      ],
+      "capability_id": "BT-CAP-SINGLE-STRATEGY-END-TO-END-BACKTEST",
+      "contract_artifacts": [
+        "AGENTS.md",
+        "docs/00_system/BACKTEST_ENGINE_ROADMAP.md",
+        "docs/00_system/GOVERNANCE_OPERATING_MODEL.md",
+        "docs/00_system/10_BT_GATE_011_SINGLE_STRATEGY_END_TO_END_BACKTEST_CONTRACT_V0_1.md"
+      ],
+      "decision_ids": [
+        "BT-E2E-001"
+      ],
+      "evidence_runs": [
+        "runs/bt_gate_011_open_short_close_qg5_v0_1",
+        "tests/fixtures/bt_gate_011_qg5_portable/data_preflight_report.json",
+        "runs/bt_gate_011_open_short_close_qg5_v0_1/event_loop_trace.json",
+        "runs/bt_gate_011_open_short_close_qg5_v0_1/validation_report.json",
+        "bt_gate_011_end_to_end_acceptance_packet_20260729T141445Z.zip",
+        "ZIP_SHA256=33376d73eeba6963d63bffbbf782c2a08e67ed741f6d16675fe6cc4cc44e8dfa"
+      ],
+      "gate_id": "BT-GATE-011",
+      "implementation_artifacts": [
+        "src/tsis_backtest/backtest/contracts.py",
+        "src/tsis_backtest/backtest/strategy.py",
+        "src/tsis_backtest/backtest/runner.py",
+        "configs/runs/bt_gate_011_open_short_close_qg5_v0_1.json",
+        "scripts/run_bt_gate_011_end_to_end.py",
+        "tests/fixtures/bt_gate_011_qg5_portable",
+        "scripts/package_bt_gate_011_acceptance.py"
+      ],
+      "limitations": [
+        "engine validation only",
+        "not edge evidence",
+        "economic realism incomplete",
+        "borrow/locates not implemented",
+        "SSR not implemented",
+        "halts not implemented",
+        "liquidity/capacity not implemented",
+        "StateReplayFeed and Market/Event State consumption not authorized"
+      ],
+      "policy_ids": [
+        "BT-POL-E2E-001"
+      ],
+      "status": "IMPLEMENTED_AND_ACCEPTED",
+      "test_artifacts": [
+        "tests/unit/test_single_strategy_end_to_end_backtest.py"
+      ]
+    },
+    {
+      "acceptance_tests": [
+        "global ordering across same-timestamp symbols required",
+        "ReplayGapEvent no-price/no-fill behavior required",
+        "active order evaluation deterministic order required",
+        "multi-session session boundary handling required",
+        "online accounting after each fill required",
+        "shared cash ledger reconciliation required",
+        "portfolio equity curve using latest legal close required",
+        "truncated session derivative must fail",
+        "deterministic rerun hash equality required",
+        "package reproducibility command required"
+      ],
+      "authorization_artifact_sha256": "b8bb2e5641db2cd3aee8ede94d571a1176479e27cbdf5a05602e1111163b6f40",
+      "authorization_artifacts": [
+        "bt_gate_012_contract_review_packet_20260729T164056Z.zip"
+      ],
+      "capability_id": "BT-CAP-MULTI-SYMBOL-MULTI-SESSION-PORTFOLIO-SLICE",
+      "contract_artifacts": [
+        "docs/00_system/12_BT_GATE_012_MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE_CONTRACT_V0_1.md"
+      ],
+      "decision_ids": [
+        "BT-PORT-001"
+      ],
+      "evidence_runs": [
+        "runs/bt_gate_012_multi_symbol_multi_session_qg5_v0_1",
+        "BT-GATE-012_DETERMINISTIC_OUTPUT_HASH=414aceb2bc80836f8fa821cd4d14071e54c86f3c7855c0a34c82ffd8b1c79182",
+        "validation_report.json=PASS",
+        "determinism_report.json=PASS"
+      ],
+      "gate_id": "BT-GATE-012",
+      "implementation_artifacts": [
+        "src/tsis_backtest/portfolio/",
+        "scripts/run_bt_gate_012_portfolio_slice.py",
+        "configs/runs/bt_gate_012_multi_symbol_multi_session_qg5_v0_1.json"
+      ],
+      "limitations": [
+        "engine validation only",
+        "not edge evidence",
+        "economic realism incomplete",
+        "StateReplayFeed and Market/Event State consumption not authorized",
+        "capital allocation not implemented",
+        "buying power and margin not implemented",
+        "capital contention claim not authorized"
+      ],
+      "policy_ids": [
+        "BT-POL-PORT-001"
+      ],
+      "status": "CLOSED_PASS_IMPLEMENTATION_ACCEPTED",
+      "test_artifacts": [
+        "tests/unit/test_portfolio_slice_runner.py",
+        "python -m unittest discover -s tests -> 106 tests OK",
+        "python -m unittest tests.unit.test_portfolio_slice_runner -v -> 7 tests OK"
+      ],
+      "acceptance_packet": "bt_gate_012_portfolio_slice_acceptance_packet_20260729T172450Z.zip",
+      "implementation_acceptance": "ACCEPTED",
+      "final_owner_review": "PASS",
+      "acceptance_packet_sha256": "4181d42a61a66ce8f71b7ce3156bff586c756154a2b86c95676bc9efe8c87975"
+    },
+    {
+      "capability_id": "BT-CAP-PHYSICAL-HISTORICAL-REPLAY-SLICE",
+      "gate_id": "BT-GATE-013",
+      "status": "CONTRACT_DRAFT_PENDING_OWNER_REVIEW",
+      "decision_ids": [
+        "BT-PORT-002"
+      ],
+      "policy_ids": [
+        "BT-POL-PORT-002"
+      ],
+      "contract_artifacts": [
+        "docs/00_system/14_BT_GATE_013_PHYSICAL_HISTORICAL_REPLAY_SLICE_CONTRACT_V0_1.md"
+      ],
+      "implementation_artifacts": [],
+      "test_artifacts": [],
+      "evidence_runs": [],
+      "limitations": [
+        "contract draft pending owner review",
+        "implementation not authorized",
+        "full 2005-2026 backtest not authorized",
+        "StateReplayFeed and Market/Event State consumption not authorized",
+        "SMALL_CAPS_RIGOROUS_RESEARCH_RUNNER deferred as future gate family"
+      ],
+      "implementation_acceptance": "NOT_AUTHORIZED",
+      "contract_review": "PENDING_OWNER_REVIEW"
+    }
+  ],
+  "matrix_id": "TSIS_BACKTEST_TRACEABILITY_MATRIX_V0_1",
+  "source_root": "C:/TSIS_Data/02_TSIS_BACKTEST_ENGINE"
+}

@@ -1,0 +1,129 @@
+{
+    "gate":  "runtime_provider_v0_1_2_rollback_verification_v0_1",
+    "created_at_utc":  "2026-07-29T05:41:26Z",
+    "status":  "CLOSED_PASS_ROLLBACK_VERIFIED_NO_EXECUTION",
+    "check_count":  6,
+    "failed_checks":  0,
+    "previous_attempt_status":  "QUARANTINED_NO_ACTIVE_AUTHORITY",
+    "active_authorization_status":  "CLOSED_AUTHORIZED_PROVIDER_CONTRACT_SCHEMA_HARDENING_V0_1_2_WITH_RESTRICTIONS_NO_EXECUTION",
+    "checks":  [
+                   {
+                       "check_id":  "active_v0_1_2_implementation_artifacts_absent",
+                       "expected":  0,
+                       "observed":  0,
+                       "result":  "PASS",
+                       "evidence":  ""
+                   },
+                   {
+                       "check_id":  "active_v0_1_2_provider_only_zip_absent",
+                       "expected":  0,
+                       "observed":  0,
+                       "result":  "PASS",
+                       "evidence":  ""
+                   },
+                   {
+                       "check_id":  "active_v0_1_2_pass_closed_claims_absent",
+                       "expected":  0,
+                       "observed":  0,
+                       "result":  "PASS",
+                       "evidence":  [
+
+                                    ]
+                   },
+                   {
+                       "check_id":  "runner_pycache_absent",
+                       "expected":  0,
+                       "observed":  0,
+                       "result":  "PASS",
+                       "evidence":  ""
+                   },
+                   {
+                       "check_id":  "live_document_encoding_clean",
+                       "expected":  "no BOM, no mojibake, no bare CR, no null bytes",
+                       "observed":  [
+                                        {
+                                            "path":  "00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\99_ruta_de_trabajo.md",
+                                            "exists":  true,
+                                            "utf8_bom":  false,
+                                            "crlf":  0,
+                                            "bare_cr":  0,
+                                            "mojibake":  false,
+                                            "null_bytes":  false
+                                        },
+                                        {
+                                            "path":  "00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\AGENT.md",
+                                            "exists":  true,
+                                            "utf8_bom":  false,
+                                            "crlf":  0,
+                                            "bare_cr":  0,
+                                            "mojibake":  false,
+                                            "null_bytes":  false
+                                        },
+                                        {
+                                            "path":  "00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\README.md",
+                                            "exists":  true,
+                                            "utf8_bom":  false,
+                                            "crlf":  0,
+                                            "bare_cr":  0,
+                                            "mojibake":  false,
+                                            "null_bytes":  false
+                                        },
+                                        {
+                                            "path":  "00_CTO_APPLIED_ARCHITECTURE\\CHANGELOG.md",
+                                            "exists":  true,
+                                            "utf8_bom":  false,
+                                            "crlf":  0,
+                                            "bare_cr":  0,
+                                            "mojibake":  false,
+                                            "null_bytes":  false
+                                        }
+                                    ],
+                       "result":  "PASS",
+                       "evidence":  [
+                                        {
+                                            "path":  "00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\99_ruta_de_trabajo.md",
+                                            "exists":  true,
+                                            "utf8_bom":  false,
+                                            "crlf":  0,
+                                            "bare_cr":  0,
+                                            "mojibake":  false,
+                                            "null_bytes":  false
+                                        },
+                                        {
+                                            "path":  "00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\AGENT.md",
+                                            "exists":  true,
+                                            "utf8_bom":  false,
+                                            "crlf":  0,
+                                            "bare_cr":  0,
+                                            "mojibake":  false,
+                                            "null_bytes":  false
+                                        },
+                                        {
+                                            "path":  "00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\08_RUNTIME_CAPABILITIES\\README.md",
+                                            "exists":  true,
+                                            "utf8_bom":  false,
+                                            "crlf":  0,
+                                            "bare_cr":  0,
+                                            "mojibake":  false,
+                                            "null_bytes":  false
+                                        },
+                                        {
+                                            "path":  "00_CTO_APPLIED_ARCHITECTURE\\CHANGELOG.md",
+                                            "exists":  true,
+                                            "utf8_bom":  false,
+                                            "crlf":  0,
+                                            "bare_cr":  0,
+                                            "mojibake":  false,
+                                            "null_bytes":  false
+                                        }
+                                    ]
+                   },
+                   {
+                       "check_id":  "backtester_hold_handoff_valid",
+                       "expected":  "DRAFT/NOT_AUTHORIZED and no v0.1.2 implemented claim",
+                       "observed":  "exists",
+                       "result":  "PASS",
+                       "evidence":  "02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\STATE_PROVIDER_CONSUMER_HOLD_HANDOFF_V0_1.md"
+                   }
+               ]
+}

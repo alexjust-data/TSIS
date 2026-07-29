@@ -1,0 +1,167 @@
+{
+  "scope_id": "runtime_user_invocation_bounded_interface_execution_scope_v0_1",
+  "scope_version": "0.1",
+  "gate": "runtime_user_invocation_bounded_interface_execution_authorization_v0_1",
+  "authorized_at_utc": "2026-07-28T17:20:46+00:00",
+  "previous_gate": "runtime_provider_consumer_contract_compatibility_review_v0_1",
+  "authorization_status": "AUTHORIZED_WITH_RESTRICTIONS_NO_EXECUTION",
+  "owner_layer": "08_RUNTIME_CAPABILITIES",
+  "purpose": "Authorize a bounded provider-side runtime interface behavior test without state row delivery, backtest consumption or new dataset builds.",
+  "authority_refs": [
+    {
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_interface_design_readout_v0_1.md",
+      "sha256": "c716945f10a19005d7830cfac7d8d15c21df4e17f3ba492bf8f9e1d730a40014",
+      "size_bytes": 3019
+    },
+    {
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_provider_contract_schema_hardening_readout_v0_1.md",
+      "sha256": "ddb77525242886c2de48bd980238b1e42f703b6429a7d658aabbc8c8214b574d",
+      "size_bytes": 2948
+    },
+    {
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_provider_consumer_contract_compatibility_review_readout_v0_1.md",
+      "sha256": "73af10275e6e13175aa334502be64f4d01fd08b360f39248a4b88cc6350cc406",
+      "size_bytes": 2614
+    },
+    {
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_provider_consumer_contract_compatibility_review_matrix_v0_1.json",
+      "sha256": "a674f825cb6988be9c3c8fa06c2bb376a465a48a6fce23bb0471e3a64579eea1",
+      "size_bytes": 11763
+    }
+  ],
+  "provider_contract_refs": [
+    {
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_resolution_request_contract_v0_1.json",
+      "sha256": "26aed3dbd9de8aaf8a420a171974f1aa70f3fe0e0100dd06173e109ff85aca75",
+      "size_bytes": 44506
+    },
+    {
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_interface_contract_v0_1.json",
+      "sha256": "d9efea6260b016ab5378c7bf25cd11540319b7b445b8cf6e0366da9f705c3f47",
+      "size_bytes": 4356
+    },
+    {
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_response_contract_v0_1.json",
+      "sha256": "1264c0012866ce600f71656be01f39efe800ccc7d4c155b2a9a7a5a38b19ed3e",
+      "size_bytes": 14221
+    },
+    {
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_capability_effective_view_contract_v0_1.json",
+      "sha256": "2b93dc14180fee9a12988d6652e6b8d4fb82c10da0153530615fbadfcef23ab0",
+      "size_bytes": 7885
+    },
+    {
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1.json",
+      "sha256": "e7b9afca637640cdac93d7ee1bceb80b537fa579853c391fa8befcb40c6cb9f6",
+      "size_bytes": 23093
+    },
+    {
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_capability_registry_snapshot_v0_1.json",
+      "sha256": "35021596fc8e62e3456ab2043830555586da869af047ec10f4aafb9c54348934",
+      "size_bytes": 7765
+    },
+    {
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/market_state_request_contract_v0_1.json",
+      "sha256": "0471ff7bbc4d82475712dbcde0f5e7ebd68c882adb9f153b10c75ac226eaaba3",
+      "size_bytes": 4718
+    },
+    {
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/event_state_request_contract_v0_1.json",
+      "sha256": "eda7d722a468a0fdaedff80a96226e223f99a0d83a4e965827d0e7a99bf8fdec",
+      "size_bytes": 9416
+    }
+  ],
+  "test_cases_authorized": [
+    {
+      "case_id": "market_state_exact_reuse_hit_reference_only",
+      "request_type": "market_state",
+      "expected_decision": "VALID_REQUEST_REUSE_HIT",
+      "expected_materializer_executions": 0,
+      "expected_source_rows_read": 0,
+      "expected_registry_mutations": 0,
+      "physical_rows_delivered": false
+    },
+    {
+      "case_id": "event_state_exact_reuse_hit_reference_only",
+      "request_type": "event_state",
+      "expected_decision": "VALID_REQUEST_REUSE_HIT",
+      "expected_materializer_executions": 0,
+      "expected_source_rows_read": 0,
+      "expected_registry_mutations": 0,
+      "physical_rows_delivered": false
+    },
+    {
+      "case_id": "event_state_unsupported_halt_resumed_blocked",
+      "request_type": "event_state",
+      "invalid_event_type": "event_type:regulatory:halt_resumed",
+      "expected_decision": "BLOCKED_UNSUPPORTED_PROFILE_OR_EVENT_TYPE",
+      "expected_dataset_id": null
+    },
+    {
+      "case_id": "new_candidate_without_execution_authorization",
+      "request_type": "market_state_or_event_state",
+      "expected_decision": "VALID_REQUEST_EXECUTION_AUTHORIZATION_REQUIRED",
+      "expected_materializer_executions": 0
+    },
+    {
+      "case_id": "production_or_downstream_request_blocked",
+      "request_type": "market_state_or_event_state",
+      "invalid_requested_mode": "production_or_downstream",
+      "expected_decision": "BLOCKED_PRODUCTION_OR_DOWNSTREAM_NOT_AUTHORIZED",
+      "expected_dataset_id": null
+    },
+    {
+      "case_id": "physical_path_input_blocked",
+      "request_type": "market_state_or_event_state",
+      "invalid_field_class": "user_supplied_physical_path",
+      "expected_decision": "BLOCKED_PHYSICAL_PATH_NOT_ALLOWED",
+      "expected_dataset_id": null
+    },
+    {
+      "case_id": "partial_candidate_coverage_preserved",
+      "request_type": "market_state_or_event_state",
+      "expected_decision": "VALID_REQUEST_REUSE_HIT",
+      "expected_assertion": "represented_contexts and unavailable_contexts are preserved and not presented as complete coverage"
+    },
+    {
+      "case_id": "reuse_hit_zero_build_evidence",
+      "request_type": "market_state_or_event_state",
+      "expected_decision": "VALID_REQUEST_REUSE_HIT",
+      "expected_materializer_executions": 0,
+      "expected_source_rows_read": 0,
+      "expected_registry_mutations": 0
+    }
+  ],
+  "permitted_operations": {
+    "schema_validation": true,
+    "request_normalization": true,
+    "request_fingerprint_creation": true,
+    "capability_effective_view_lookup": true,
+    "candidate_registry_metadata_lookup": true,
+    "state_bundle_manifest_reference_return": true,
+    "runtime_materialization": false,
+    "state_row_delivery": false,
+    "backtest_execution": false,
+    "state_replay_feed_execution": false,
+    "official_dataset_delivery": false,
+    "downstream_consumption": false
+  },
+  "hard_boundaries": {
+    "interface_executions": 0,
+    "new_market_state_requests_created": 0,
+    "new_event_state_requests_created": 0,
+    "new_runtime_builds_executed": 0,
+    "materializer_executions": 0,
+    "source_market_data_rows_read": 0,
+    "physical_state_rows_delivered": 0,
+    "datasets_written": 0,
+    "registry_mutations": 0,
+    "state_replay_feed_records_emitted": 0,
+    "backtest_runs_started": 0,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false,
+    "backtest_consumption": false
+  },
+  "next_gate_if_closed": "runtime_user_invocation_bounded_interface_execution_v0_1"
+}

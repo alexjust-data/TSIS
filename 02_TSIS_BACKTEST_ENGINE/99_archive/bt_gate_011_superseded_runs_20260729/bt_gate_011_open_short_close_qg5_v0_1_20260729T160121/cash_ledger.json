@@ -1,0 +1,222 @@
+[
+  {
+    "amount": "387.00",
+    "cash_after": "10387.00",
+    "description": "short sale proceeds",
+    "entry_id": "cash-fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-entry-open-ABAT:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00-SHORT_SALE_PROCEEDS",
+    "entry_type": "SHORT_SALE_PROCEEDS",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-entry-open-ABAT:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABAT-entry-open",
+    "recorded_at": "2026-01-05T14:31:00+00:00",
+    "ticker": "ABAT"
+  },
+  {
+    "amount": "-1.00",
+    "cash_after": "10386.00",
+    "description": "cost",
+    "entry_id": "cash-fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-entry-open-ABAT:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00-COST",
+    "entry_type": "COST",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-entry-open-ABAT:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABAT-entry-open",
+    "recorded_at": "2026-01-05T14:31:00+00:00",
+    "ticker": "ABAT"
+  },
+  {
+    "amount": "535.00",
+    "cash_after": "10921.00",
+    "description": "short sale proceeds",
+    "entry_id": "cash-fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-entry-open-ABEO:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00-SHORT_SALE_PROCEEDS",
+    "entry_type": "SHORT_SALE_PROCEEDS",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-entry-open-ABEO:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABEO-entry-open",
+    "recorded_at": "2026-01-05T14:31:00+00:00",
+    "ticker": "ABEO"
+  },
+  {
+    "amount": "-1.00",
+    "cash_after": "10920.00",
+    "description": "cost",
+    "entry_id": "cash-fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-entry-open-ABEO:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00-COST",
+    "entry_type": "COST",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-entry-open-ABEO:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABEO-entry-open",
+    "recorded_at": "2026-01-05T14:31:00+00:00",
+    "ticker": "ABEO"
+  },
+  {
+    "amount": "365.00",
+    "cash_after": "11285.00",
+    "description": "short sale proceeds",
+    "entry_id": "cash-fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-entry-open-ABSI:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00-SHORT_SALE_PROCEEDS",
+    "entry_type": "SHORT_SALE_PROCEEDS",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-entry-open-ABSI:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABSI-entry-open",
+    "recorded_at": "2026-01-05T14:31:00+00:00",
+    "ticker": "ABSI"
+  },
+  {
+    "amount": "-1.00",
+    "cash_after": "11284.00",
+    "description": "cost",
+    "entry_id": "cash-fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-entry-open-ABSI:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00-COST",
+    "entry_type": "COST",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-entry-open-ABSI:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABSI-entry-open",
+    "recorded_at": "2026-01-05T14:31:00+00:00",
+    "ticker": "ABSI"
+  },
+  {
+    "amount": "195.00",
+    "cash_after": "11479.00",
+    "description": "short sale proceeds",
+    "entry_id": "cash-fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-entry-open-ABTC:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00-SHORT_SALE_PROCEEDS",
+    "entry_type": "SHORT_SALE_PROCEEDS",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-entry-open-ABTC:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABTC-entry-open",
+    "recorded_at": "2026-01-05T14:31:00+00:00",
+    "ticker": "ABTC"
+  },
+  {
+    "amount": "-1.00",
+    "cash_after": "11478.00",
+    "description": "cost",
+    "entry_id": "cash-fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-entry-open-ABTC:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00-COST",
+    "entry_type": "COST",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-entry-open-ABTC:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABTC-entry-open",
+    "recorded_at": "2026-01-05T14:31:00+00:00",
+    "ticker": "ABTC"
+  },
+  {
+    "amount": "436.00",
+    "cash_after": "11914.00",
+    "description": "short sale proceeds",
+    "entry_id": "cash-fill-order-intent-decision-open_short_close_cover_v0_1-ACB-entry-open-ACB:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00-SHORT_SALE_PROCEEDS",
+    "entry_type": "SHORT_SALE_PROCEEDS",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ACB-entry-open-ACB:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ACB-entry-open",
+    "recorded_at": "2026-01-05T14:31:00+00:00",
+    "ticker": "ACB"
+  },
+  {
+    "amount": "-1.00",
+    "cash_after": "11913.00",
+    "description": "cost",
+    "entry_id": "cash-fill-order-intent-decision-open_short_close_cover_v0_1-ACB-entry-open-ACB:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00-COST",
+    "entry_type": "COST",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ACB-entry-open-ACB:2026-01-05T14:30:00+00:00:2026-01-05T14:31:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ACB-entry-open",
+    "recorded_at": "2026-01-05T14:31:00+00:00",
+    "ticker": "ACB"
+  },
+  {
+    "amount": "-466.50",
+    "cash_after": "11446.50",
+    "description": "short cover payment",
+    "entry_id": "cash-fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-exit-close-ABAT:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00-SHORT_COVER_PAYMENT",
+    "entry_type": "SHORT_COVER_PAYMENT",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-exit-close-ABAT:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABAT-exit-close",
+    "recorded_at": "2026-01-05T21:00:00+00:00",
+    "ticker": "ABAT"
+  },
+  {
+    "amount": "-1.00",
+    "cash_after": "11445.50",
+    "description": "cost",
+    "entry_id": "cash-fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-exit-close-ABAT:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00-COST",
+    "entry_type": "COST",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABAT-exit-close-ABAT:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABAT-exit-close",
+    "recorded_at": "2026-01-05T21:00:00+00:00",
+    "ticker": "ABAT"
+  },
+  {
+    "amount": "-522.00",
+    "cash_after": "10923.50",
+    "description": "short cover payment",
+    "entry_id": "cash-fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-exit-close-ABEO:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00-SHORT_COVER_PAYMENT",
+    "entry_type": "SHORT_COVER_PAYMENT",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-exit-close-ABEO:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABEO-exit-close",
+    "recorded_at": "2026-01-05T21:00:00+00:00",
+    "ticker": "ABEO"
+  },
+  {
+    "amount": "-1.00",
+    "cash_after": "10922.50",
+    "description": "cost",
+    "entry_id": "cash-fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-exit-close-ABEO:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00-COST",
+    "entry_type": "COST",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABEO-exit-close-ABEO:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABEO-exit-close",
+    "recorded_at": "2026-01-05T21:00:00+00:00",
+    "ticker": "ABEO"
+  },
+  {
+    "amount": "-372.00",
+    "cash_after": "10550.50",
+    "description": "short cover payment",
+    "entry_id": "cash-fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-exit-close-ABSI:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00-SHORT_COVER_PAYMENT",
+    "entry_type": "SHORT_COVER_PAYMENT",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-exit-close-ABSI:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABSI-exit-close",
+    "recorded_at": "2026-01-05T21:00:00+00:00",
+    "ticker": "ABSI"
+  },
+  {
+    "amount": "-1.00",
+    "cash_after": "10549.50",
+    "description": "cost",
+    "entry_id": "cash-fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-exit-close-ABSI:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00-COST",
+    "entry_type": "COST",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABSI-exit-close-ABSI:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABSI-exit-close",
+    "recorded_at": "2026-01-05T21:00:00+00:00",
+    "ticker": "ABSI"
+  },
+  {
+    "amount": "-201.50",
+    "cash_after": "10348.00",
+    "description": "short cover payment",
+    "entry_id": "cash-fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-exit-close-ABTC:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00-SHORT_COVER_PAYMENT",
+    "entry_type": "SHORT_COVER_PAYMENT",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-exit-close-ABTC:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABTC-exit-close",
+    "recorded_at": "2026-01-05T21:00:00+00:00",
+    "ticker": "ABTC"
+  },
+  {
+    "amount": "-1.00",
+    "cash_after": "10347.00",
+    "description": "cost",
+    "entry_id": "cash-fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-exit-close-ABTC:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00-COST",
+    "entry_type": "COST",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ABTC-exit-close-ABTC:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ABTC-exit-close",
+    "recorded_at": "2026-01-05T21:00:00+00:00",
+    "ticker": "ABTC"
+  },
+  {
+    "amount": "-429.00",
+    "cash_after": "9918.00",
+    "description": "short cover payment",
+    "entry_id": "cash-fill-order-intent-decision-open_short_close_cover_v0_1-ACB-exit-close-ACB:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00-SHORT_COVER_PAYMENT",
+    "entry_type": "SHORT_COVER_PAYMENT",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ACB-exit-close-ACB:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ACB-exit-close",
+    "recorded_at": "2026-01-05T21:00:00+00:00",
+    "ticker": "ACB"
+  },
+  {
+    "amount": "-1.00",
+    "cash_after": "9917.00",
+    "description": "cost",
+    "entry_id": "cash-fill-order-intent-decision-open_short_close_cover_v0_1-ACB-exit-close-ACB:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00-COST",
+    "entry_type": "COST",
+    "fill_id": "fill-order-intent-decision-open_short_close_cover_v0_1-ACB-exit-close-ACB:2026-01-05T20:59:00+00:00:2026-01-05T21:00:00+00:00",
+    "order_id": "order-intent-decision-open_short_close_cover_v0_1-ACB-exit-close",
+    "recorded_at": "2026-01-05T21:00:00+00:00",
+    "ticker": "ACB"
+  }
+]

@@ -1,0 +1,21 @@
+{
+    "scope_id":  "runtime_provider_contract_schema_hardening_findings_revalidation_scope_v0_1",
+    "gate":  "runtime_provider_contract_schema_hardening_findings_revalidation_v0_1",
+    "created_at_utc":  "2026-07-29T05:43:49Z",
+    "status":  "AUTHORIZED_PROVIDER_ONLY_REVALIDATION_NO_IMPLEMENTATION",
+    "owner_layer":  "08_RUNTIME_CAPABILITIES",
+    "baseline":  "runtime_provider_contract_schema_hardening_v0_1_1",
+    "provider_only":  true,
+    "hard_boundaries":  {
+                            "contracts_written":  0,
+                            "runner_written":  0,
+                            "runtime_requests_executed":  0,
+                            "datasets_written":  0,
+                            "registry_mutations":  0,
+                            "physical_state_rows_delivered":  0,
+                            "state_replay_feed_records_emitted":  0,
+                            "backtest_consumption_authority":  false,
+                            "production":  false,
+                            "downstream":  false
+                        }
+}

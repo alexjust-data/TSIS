@@ -1,0 +1,25 @@
+{
+  "scope_id": "event_state_capability_consumption_policy_scope_v0_1",
+  "gate": "event_state_capability_consumption_policy_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_CONSUMED_BY_POLICY",
+  "consumed_by_policy_id": "event_state_capability_consumption_policy_v0_1_20260728T135626Z",
+  "consumed_at_utc": "2026-07-28T13:56:26Z",
+  "capability_id": "event_state_on_demand_runtime_capability_v0_1",
+  "event_state_profile_id": "event_state_core_four_intraday_profile_v0_1",
+  "allowed_event_type_ids": [
+    "event_type:market_data:session_opened"
+  ],
+  "accepted_subject_scope": "exchange_session",
+  "authority": {
+    "metadata_evidence_read_allowed": true,
+    "source_market_data_reads_allowed": false,
+    "event_state_materializer_execution_allowed": false,
+    "market_state_materializer_execution_allowed": false,
+    "new_candidate_registry_entries_allowed": false,
+    "registry_entry_mutation_allowed": false,
+    "official_dataset_promotion_allowed": false,
+    "production_allowed": false,
+    "downstream_allowed": false
+  },
+  "scope_sha256": "6e48c6ae6dd7336617d2891362f1c1c991129a6e0c6b681834f500fbd8f77cb5"
+}

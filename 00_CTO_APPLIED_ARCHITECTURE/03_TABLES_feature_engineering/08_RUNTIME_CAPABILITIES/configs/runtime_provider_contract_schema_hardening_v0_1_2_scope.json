@@ -1,0 +1,141 @@
+{
+  "scope_id": "runtime_provider_contract_schema_hardening_v0_1_2_scope",
+  "gate": "runtime_provider_contract_schema_hardening_v0_1_2",
+  "created_at_utc": "2026-07-29T14:18:08Z",
+  "status": "AUTHORIZED_IMPLEMENTATION_SCOPE_PROVIDER_ONLY",
+  "provider_only": true,
+  "authorized_by": "runtime_provider_contract_schema_hardening_v0_1_2_authorization_v0_1",
+  "baseline_authority": "runtime_provider_contract_schema_hardening_v0_1_1",
+  "previous_external_audit_results": [
+    {
+      "zip": "runtime_provider_contract_schema_hardening_v0_1_2_provider_only_20260729T061024Z.zip",
+      "result": "FAIL_DOCUMENT_AND_SEMANTIC_GAPS"
+    },
+    {
+      "zip": "runtime_provider_contract_schema_hardening_v0_1_2_provider_only_20260729T070232Z.zip",
+      "result": "FAIL_DOCUMENT_AND_SEMANTIC_GAPS"
+    },
+    {
+      "zip": "runtime_provider_contract_schema_hardening_v0_1_2_provider_only_20260729T075406Z.zip",
+      "result": "FAIL_SEMANTIC_FINGERPRINT_GAPS"
+    },
+    {
+      "zip": "runtime_provider_contract_schema_hardening_v0_1_2_provider_only_20260729T083304Z.zip",
+      "result": "FAIL_EMBEDDED_PAYLOAD_SCHEMA_GAPS"
+    },
+    {
+      "zip": "runtime_provider_contract_schema_hardening_v0_1_2_provider_only_20260729T092039Z.zip",
+      "result": "FAIL_BUNDLE_RESPONSE_HASH_CYCLE_AND_RESTRICTION_GAPS"
+    },
+    {
+      "zip": "runtime_provider_contract_schema_hardening_v0_1_2_provider_only_20260729T100143Z.zip",
+      "result": "FAIL_NARROW_REFERENCE_AND_SHARED_SCHEMA_GAPS"
+    },
+    {
+      "zip_timestamp": "20260729T105019Z",
+      "zip_sha256": "634d015464e6ccdee1582408abd549dd88513f58debcd1cd306a7ce8592eff83",
+      "external_audit_result": "FAIL_DATASET_VALIDATION_AND_REUSE_RESTRICTION_PROPAGATION",
+      "required_regressions_added": [
+        "F05_dataset_validation_restriction_not_weakened_by_response",
+        "F05_dataset_validation_restriction_not_weakened_by_bundle",
+        "F05_dataset_reuse_restriction_not_weakened_by_bundle",
+        "F05_combined_bundle_max_validation_severity_propagation",
+        "F05_combined_bundle_max_reuse_restriction_propagation"
+      ]
+    }
+  ],
+  "required_findings": [
+    "F01",
+    "F02",
+    "F03",
+    "F04",
+    "F05",
+    "F06",
+    "F07",
+    "F08",
+    "F09"
+  ],
+  "required_case_ids": [
+    "F09_100143_response_bundle_ref_sha_disallowed",
+    "F09_100143_response_artifact_missing_from_bundle_artifacts",
+    "F09_100143_source_ids_hashes_cardinality_mismatch",
+    "F09_100143_duplicate_artifact_id_conflicting_hash",
+    "F09_100143_duplicate_field_lineage_id_conflicting_builder",
+    "F09_100143_shared_ajv_registry_compile_no_duplicate_ids",
+    "F05_dataset_validation_restriction_not_weakened_by_response",
+    "F05_dataset_validation_restriction_not_weakened_by_bundle",
+    "F05_dataset_reuse_restriction_not_weakened_by_bundle",
+    "F05_combined_bundle_max_validation_severity_propagation",
+    "F05_combined_bundle_max_reuse_restriction_propagation",
+    "F08_active_genealogy_marker_matches_latest_external_audit",
+    "F08_active_current_package_label_matches_corrective_iteration",
+    "F08_changelog_audit_genealogy_entries_are_unique",
+    "F08_gate_readout_genealogy_marker_matches_latest_external_audit",
+    "F08_gate_readout_current_package_label_matches_corrective_iteration",
+    "F08_changelog_summary_matches_genealogy_block"
+  ],
+  "minimum_case_counts": {
+    "original_regression": 31,
+    "external_combined_regression": 91,
+    "total": 122
+  },
+  "ajv_environment_lock_ref": "configs/runtime_provider_contract_schema_hardening_v0_1_2_ajv_environment_lock.json",
+  "hard_boundaries": {
+    "runtime_requests_executed": 0,
+    "runtime_builds_executed": 0,
+    "datasets_written": 0,
+    "registry_mutations": 0,
+    "physical_state_rows_delivered": 0,
+    "state_replay_feed_records_emitted": 0,
+    "backtest_runs_started": 0,
+    "backtest_consumption_authority": false,
+    "production": false,
+    "downstream": false
+  },
+  "not_authorized": [
+    "runtime_provider_consumer_contract_compatibility_review_v0_1",
+    "StateBundle physical reads",
+    "StateReplayFeed",
+    "Backtest RunPreflight state integration",
+    "production",
+    "downstream"
+  ],
+  "corrective_iteration_label": "f05_dataset_validation_and_reuse_restriction_propagation_closure_candidate",
+  "fingerprint_payload_contracts": {
+    "state_resolution_request": "StateResolutionRequestFingerprintPayload_v0_1_2",
+    "runtime_invocation_response": "RuntimeInvocationResponseFingerprintPayload_v0_1_2",
+    "state_bundle_manifest": "StateBundleManifestFingerprintPayload_v0_1_2",
+    "single_authority": "top_level_fingerprint_payload_schema_matches_json_schema_defs"
+  },
+  "fingerprint_cycle_policy": {
+    "runtime_invocation_response_fingerprint_excludes": [
+      "state_bundle_manifest_ref.sha256"
+    ],
+    "state_bundle_manifest_fingerprint_includes": [
+      "request_ref.sha256",
+      "request_fingerprint",
+      "response_ref.ref_id",
+      "response_ref.sha256",
+      "state_kind"
+    ],
+    "reason": "prevents response hash <-> bundle hash circularity while preserving bundle identity over response artifacts"
+  },
+  "authorized_outputs": [
+    "configs/runtime_provider_contract_schema_hardening_v0_1_2_ajv_runtime_vendor_ajv_8_17_1.zip",
+    "configs/runtime_provider_contract_schema_hardening_v0_1_2_ajv_vendor_manifest.json"
+  ],
+  "response_bundle_cycle_policy": {
+    "runtime_invocation_response_state_bundle_manifest_ref": "id_only_no_sha256",
+    "state_bundle_manifest_fingerprint_includes": [
+      "response_ref.sha256"
+    ],
+    "reason": "prevents mutable response-side bundle sha while preserving acyclic bundle identity"
+  },
+  "restriction_propagation_policy": {
+    "dataset_validation_status_may_not_be_weakened_by_response": true,
+    "dataset_validation_status_may_not_be_weakened_by_bundle": true,
+    "dataset_reuse_eligibility_may_not_be_weakened_by_bundle": true,
+    "combined_bundle_uses_max_component_validation_severity": true,
+    "combined_bundle_uses_max_component_reuse_restriction": true
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "contract_id": "event_state_on_demand_bounded_incremental_overlap_idempotency_reuse_test_contract_v0_1",
+  "contract_status": "RECORDED_CONTRACT_NO_EXECUTION",
+  "governing_authorization": "event_state_on_demand_bounded_incremental_overlap_idempotency_reuse_test_authorization_v0_1",
+  "reuse_test_identity": "same_incremental_overlap_request_must_return_same_combined_candidate_without_rebuild",
+  "required_match_fields": [
+    "event_state_request_fingerprint",
+    "event_state_execution_plan_fingerprint",
+    "event_state_dependency_resolution_fingerprint",
+    "combined_candidate_dataset_fingerprint",
+    "combined_logical_event_state_dataset_fingerprint",
+    "combined_physical_artifact_fingerprint",
+    "combined_validation_result_fingerprint",
+    "combined_context_ledger_sha256"
+  ],
+  "allowed_runtime_differences": [
+    "reuse_test_run_id",
+    "created_at_utc",
+    "lookup_timestamp_utc",
+    "run_local_manifest_path"
+  ],
+  "expected_result": "reuse_hit_existing_incremental_overlap_candidate",
+  "prohibited_results": [
+    "event_state_rebuild",
+    "market_state_rebuild",
+    "source_market_data_read",
+    "new_candidate_dataset_identity",
+    "registry_mutation",
+    "official_dataset_promotion",
+    "production",
+    "downstream"
+  ],
+  "closure_statuses": {
+    "pass": "CLOSED_PASS_EVENT_STATE_INCREMENTAL_OVERLAP_IDEMPOTENCY_REUSE_HIT_WITH_RESTRICTIONS",
+    "artifact_unavailable": "CLOSED_BLOCKED_EVENT_STATE_INCREMENTAL_REUSE_ARTIFACT_UNAVAILABLE",
+    "authority_changed": "CLOSED_BLOCKED_EVENT_STATE_INCREMENTAL_REUSE_AUTHORITIES_CHANGED",
+    "rebuild_occurred": "CLOSED_FAIL_EVENT_STATE_INCREMENTAL_REUSE_REBUILD_OCCURRED",
+    "duplicate_registration": "CLOSED_FAIL_EVENT_STATE_INCREMENTAL_REUSE_DUPLICATE_REGISTRATION"
+  },
+  "official_event_state_dataset": false,
+  "production": false,
+  "downstream": false,
+  "contract_content_sha256_excluding_hash_field": "655fcef263b444552cdda7cf36cc698634a6856b44eadd051e6c4866c0985808"
+}

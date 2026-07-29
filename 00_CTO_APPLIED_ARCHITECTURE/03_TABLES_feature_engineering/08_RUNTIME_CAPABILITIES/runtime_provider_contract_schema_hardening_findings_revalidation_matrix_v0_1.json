@@ -1,0 +1,102 @@
+{
+    "gate":  "runtime_provider_contract_schema_hardening_findings_revalidation_v0_1",
+    "created_at_utc":  "2026-07-29T05:43:49Z",
+    "status":  "CLOSED_REPRODUCED_FINDINGS_REQUIRE_PROVIDER_HARDENING_NO_EXECUTION",
+    "baseline":  "runtime_provider_contract_schema_hardening_v0_1_1",
+    "finding_count":  9,
+    "reproduced_findings":  9,
+    "not_reproduced_findings":  0,
+    "findings":  [
+                     {
+                         "finding_id":  "F01_CARDINALITY_REQUESTS_FINGERPRINTS_RESPONSES",
+                         "baseline_artifact":  "state_bundle_manifest_contract_v0_1.json + runtime_provider_contract_schema_hardening_v0_1_1_runner.py",
+                         "reproduction_case":  "extra runtime_invocation_response_ref without corresponding request binding",
+                         "expected_behavior":  "REJECT_FAIL_CLOSED",
+                         "observed_behavior":  "BASELINE_VALIDATES_INVALID_DOC",
+                         "status":  "REPRODUCED",
+                         "blocking_severity":  "HIGH",
+                         "required_change":  "Add request/response/correlation cardinality validation and explicit request binding model."
+                     },
+                     {
+                         "finding_id":  "F02_SEMANTIC_REF_ID_UNIQUENESS",
+                         "baseline_artifact":  "state_bundle_manifest_contract_v0_1.json",
+                         "reproduction_case":  "same ref_id reused across runtime_invocation_response_refs and capability_refs",
+                         "expected_behavior":  "REJECT_FAIL_CLOSED",
+                         "observed_behavior":  "BASELINE_VALIDATES_INVALID_DOC",
+                         "status":  "REPRODUCED",
+                         "blocking_severity":  "HIGH",
+                         "required_change":  "Semantic validator must enforce global ref_id uniqueness within response/bundle surfaces."
+                     },
+                     {
+                         "finding_id":  "F03_REQUEST_TYPE_CAPABILITY_PROFILE_COHERENCE",
+                         "baseline_artifact":  "runtime_user_invocation_response_contract_v0_1.json",
+                         "reproduction_case":  "market_state response declares event_state capability_id",
+                         "expected_behavior":  "REJECT_FAIL_CLOSED",
+                         "observed_behavior":  "BASELINE_VALIDATES_INVALID_DOC",
+                         "status":  "REPRODUCED",
+                         "blocking_severity":  "HIGH",
+                         "required_change":  "Bind request_type to capability_id, profile_id, state_kind and typed details."
+                     },
+                     {
+                         "finding_id":  "F04_EFFECTIVE_CAPABILITY_VIEW_CONTRADICTIONS",
+                         "baseline_artifact":  "runtime_capability_effective_view_contract_v0_1.json",
+                         "reproduction_case":  "Market State capability row declares request_type=event_state",
+                         "expected_behavior":  "REJECT_FAIL_CLOSED",
+                         "observed_behavior":  "BASELINE_VALIDATES_INVALID_DOC",
+                         "status":  "REPRODUCED",
+                         "blocking_severity":  "HIGH",
+                         "required_change":  "Effective view validator must enforce exactly-one Market State and Event State capability plus non-contradictory permissions."
+                     },
+                     {
+                         "finding_id":  "F05_FAIL_BLOCKED_MANIFEST_REUSE_FORBIDDEN",
+                         "baseline_artifact":  "state_bundle_manifest_contract_v0_1.json",
+                         "reproduction_case":  "validation_status=FAIL while dataset_refs remain reusable PASS candidates",
+                         "expected_behavior":  "REJECT_FAIL_CLOSED",
+                         "observed_behavior":  "BASELINE_VALIDATES_INVALID_DOC",
+                         "status":  "REPRODUCED",
+                         "blocking_severity":  "HIGH",
+                         "required_change":  "FAIL/BLOCKED manifests must force reuse_eligible=false and prohibit reusable dataset refs."
+                     },
+                     {
+                         "finding_id":  "F06_OPERATION_RESOLUTION_AUTHORIZATION_COHERENCE",
+                         "baseline_artifact":  "runtime_user_invocation_interface_contract_v0_1.json",
+                         "reproduction_case":  "interface operation=validate wraps StateResolutionRequest with resolve mode",
+                         "expected_behavior":  "REJECT_FAIL_CLOSED",
+                         "observed_behavior":  "BASELINE_VALIDATES_INVALID_DOC",
+                         "status":  "REPRODUCED",
+                         "blocking_severity":  "HIGH",
+                         "required_change":  "Bind interface operation to embedded request operation/resolution mode and authorization_ref presence."
+                     },
+                     {
+                         "finding_id":  "F07_INVOCATION_STATUS_FIELD_CONSTRAINTS",
+                         "baseline_artifact":  "runtime_user_invocation_response_contract_v0_1.json",
+                         "reproduction_case":  "blocked response carries run_id after dataset/bundle fields are nulled",
+                         "expected_behavior":  "REJECT_FAIL_CLOSED",
+                         "observed_behavior":  "BASELINE_VALIDATES_INVALID_DOC",
+                         "status":  "REPRODUCED",
+                         "blocking_severity":  "HIGH",
+                         "required_change":  "Make invocation_status constrain all incompatible fields, including run_id and typed details."
+                     },
+                     {
+                         "finding_id":  "F08_LIVING_DOCS_ACTIVE_VS_HISTORICAL",
+                         "baseline_artifact":  "99_ruta_de_trabajo.md + AGENT.md + 08_RUNTIME_CAPABILITIES/README.md",
+                         "reproduction_case":  "baseline provider contracts have no executable/documentary rule separating active authority from historical/superseded snapshots",
+                         "expected_behavior":  "ACTIVE_AUTHORITY_EXPLICIT_AND_HISTORICAL_BLOCKS_TAGGED",
+                         "observed_behavior":  "REPRODUCED_AS_DOCUMENT_GOVERNANCE_GAP",
+                         "status":  "REPRODUCED",
+                         "blocking_severity":  "MEDIUM",
+                         "required_change":  "v0.1.2 gate may update living docs only for active status and F08; historical/deferred sections must be labelled."
+                     },
+                     {
+                         "finding_id":  "F09_RESPONSE_REF_REQUEST_FINGERPRINT_STATE_KIND_CORRELATION",
+                         "baseline_artifact":  "state_bundle_manifest_contract_v0_1.json",
+                         "reproduction_case":  "valid bundle lacks explicit response_ref/request_fingerprint/state_kind correlation surface",
+                         "expected_behavior":  "REQUIRE_EXPLICIT_CORRELATION",
+                         "observed_behavior":  "BASELINE_ACCEPTS_WITHOUT_CORRELATION",
+                         "status":  "REPRODUCED",
+                         "blocking_severity":  "CRITICAL",
+                         "required_change":  "Add explicit correlation ledger and semantic validation for response_ref \u003c-\u003e request_fingerprint \u003c-\u003e state_kind."
+                     }
+                 ],
+    "conclusion":  "All F01-F09 are material requirements for the clean provider-owned v0.1.2 hardening. No quarantined implementation artifact is admitted as authority."
+}

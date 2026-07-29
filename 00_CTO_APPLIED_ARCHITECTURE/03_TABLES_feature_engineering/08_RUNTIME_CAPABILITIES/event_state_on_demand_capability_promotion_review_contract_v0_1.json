@@ -1,0 +1,37 @@
+{
+  "contract_id": "event_state_on_demand_capability_promotion_review_contract_v0_1",
+  "gate": "event_state_on_demand_capability_promotion_review_v0_1",
+  "contract_status": "accepted_for_metadata_only_capability_promotion_review",
+  "consumed_by_review_id": "event_state_on_demand_capability_promotion_review_v0_1_20260728T135003Z",
+  "promotion_target": "event_state_on_demand_runtime_capability_v0_1",
+  "promotion_decision_values": [
+    "promote_with_restrictions_candidate_runtime_only",
+    "block_capability_promotion"
+  ],
+  "required_evidence": [
+    "bounded_execution",
+    "bounded_candidate_review",
+    "deterministic_rerun",
+    "determinism_validation",
+    "exact_reuse",
+    "reuse_transition",
+    "incremental_execution",
+    "incremental_candidate_review",
+    "incremental_reuse",
+    "second_generation_incremental",
+    "second_generation_candidate_review",
+    "lineage_chain_validation",
+    "scale_validation",
+    "scale_validation_matrix"
+  ],
+  "required_boundary_invariants": {
+    "new_materialization_authorized": false,
+    "source_market_data_rows_read_by_review": 0,
+    "new_candidate_registry_entries_written_by_review": 0,
+    "official_event_state_dataset": false,
+    "production": false,
+    "downstream": false
+  },
+  "next_gate_on_pass": "event_state_capability_consumption_policy_v0_1",
+  "contract_content_sha256_excluding_hash_field": "284641bce25f3267e499db01dfe044e1b940de15f03c572e74676dcdba1264ea"
+}

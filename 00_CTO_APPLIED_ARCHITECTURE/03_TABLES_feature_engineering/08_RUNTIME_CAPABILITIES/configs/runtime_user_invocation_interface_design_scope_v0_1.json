@@ -1,0 +1,46 @@
+{
+    "scope_id":  "runtime_user_invocation_interface_design_scope_v0_1",
+    "gate":  "runtime_user_invocation_interface_v0_1",
+    "status":  "DESIGN_SCOPE_AUTHORIZED_NO_EXECUTION",
+    "created_at_utc":  "2026-07-28T00:00:00Z",
+    "owner_layer":  "08_RUNTIME_CAPABILITIES",
+    "first_expected_consumer":  "Backtest RunPreflight",
+    "authorized_outputs":  [
+                               "state_resolution_request_contract_v0_1.json",
+                               "runtime_user_invocation_interface_contract_v0_1.json",
+                               "runtime_user_invocation_response_contract_v0_1.json",
+                               "runtime_capability_effective_view_contract_v0_1.json",
+                               "state_bundle_manifest_contract_v0_1.json",
+                               "runtime_user_invocation_interface_design_readout_v0_1.md"
+                           ],
+    "request_hierarchy":  {
+                              "common_envelope":  "StateResolutionRequest",
+                              "specialized_payloads":  [
+                                                           "market_state_request",
+                                                           "event_state_request"
+                                                       ],
+                              "consumer_backtest_spec_owned_by":  "02_TSIS_BACKTEST_ENGINE",
+                              "provider_contracts_owned_by":  "08_RUNTIME_CAPABILITIES"
+                          },
+    "hard_boundaries":  {
+                            "interface_invocations":  0,
+                            "market_state_requests_created":  0,
+                            "event_state_requests_created":  0,
+                            "runtime_executions":  0,
+                            "state_bundle_manifests_created":  0,
+                            "datasets_written":  0,
+                            "registry_mutations":  0,
+                            "official_dataset":  false,
+                            "production":  false,
+                            "downstream":  false,
+                            "backtest_consumption_authority":  false,
+                            "physical_row_delivery":  false
+                        },
+    "downstream_authority":  {
+                                 "backtest":  "NOT_AUTHORIZED",
+                                 "ml":  "NOT_AUTHORIZED",
+                                 "rl":  "NOT_AUTHORIZED",
+                                 "live_trading":  "NOT_AUTHORIZED"
+                             },
+    "contract_content_sha256_excluding_hash_field":  "085c1153b9ce51d8e38ac251dace26102f8607891ac7661be2387e022062c1c6"
+}

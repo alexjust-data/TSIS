@@ -1,0 +1,36 @@
+{
+  "scope_id": "event_state_on_demand_incremental_lineage_chain_validation_scope_v0_1",
+  "gate": "event_state_on_demand_incremental_lineage_chain_validation_v0_1",
+  "validation_id": "event_state_on_demand_incremental_lineage_chain_validation_v0_1_20260728T000000Z",
+  "validation_run_id": "event_state_on_demand_incremental_lineage_chain_validation_v0_1_20260728T112448Z",
+  "source_review_run_id": "event_state_on_demand_second_generation_incremental_extension_candidate_dataset_review_v0_1_20260728T110845Z",
+  "validated_generation_run_ids": [
+    "event_state_on_demand_bounded_execution_v0_1_20260727T200322Z",
+    "event_state_on_demand_bounded_incremental_overlap_execution_v0_1_20260728T084733Z",
+    "event_state_on_demand_second_generation_incremental_extension_v0_1_20260728T103016Z"
+  ],
+  "event_state_profile_id": "event_state_core_four_intraday_profile_v0_1",
+  "event_type_id": "event_type:market_data:session_opened",
+  "event_window_definition_id": "session_opened_at_anchor_context_v0_1",
+  "allowed_inspection": [
+    "closed final manifests",
+    "closed candidate registry entries",
+    "closed validation reports",
+    "closed lineage manifests",
+    "closed context ledgers",
+    "closed candidate records"
+  ],
+  "event_state_request_creation_authorized": false,
+  "event_instance_creation_authorized": false,
+  "event_window_binding_creation_authorized": false,
+  "instrument_projection_creation_authorized": false,
+  "event_state_materialization_authorized": false,
+  "market_state_materialization_authorized": false,
+  "source_market_data_reads_authorized": false,
+  "registry_mutation_authorized": false,
+  "official_dataset_promotion_authorized": false,
+  "production_authorized": false,
+  "downstream_authorized": false,
+  "next_allowed_gate": "event_state_on_demand_scale_validation_v0_1",
+  "scope_sha256": "e46e554454c57c5973691438469a703e3bf6c74b585e63ae35ae0ed31413708e"
+}

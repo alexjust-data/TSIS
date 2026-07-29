@@ -1,0 +1,55 @@
+{
+    "scope_id":  "runtime_state_provider_boundary_scope_v0_1",
+    "scope_version":  "v0_1",
+    "status":  "CLOSED_BOUNDARY_CLARIFIED_NO_EXECUTION",
+    "created_at_utc":  "2026-07-28T15:41:28.7539151Z",
+    "purpose":  "Clarify the provider-side boundary for TSIS Market State and Event State runtime capabilities before designing runtime_user_invocation_interface_v0_1.",
+    "provider_layer_root":  "C:/TSIS_Data/00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES",
+    "conceptual_reference":  "C:/TSIS_Data/00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/00_TABLES_MARKET_STATE_EVENT_STATE.md#Arquitectura-de-CONSUMO-de-Market-State-y-Event-State",
+    "consumer_architecture_reference":  "C:/TSIS_Data/00_CTO/14_BACKTEST_ENGINE/01_GUIDE/04_STATE.md",
+    "backtest_implementation_root":  "C:/TSIS_Data/02_TSIS_BACKTEST_ENGINE",
+    "current_primary_consumer":  "Backtest RunPreflight",
+    "allowed_actions":  [
+                            "declare provider-owned contracts",
+                            "declare consumer-owned contracts out of provider scope",
+                            "define provider-to-consumer handoff objects",
+                            "link next runtime_user_invocation_interface_v0_1 gate to provider boundary"
+                        ],
+    "prohibited_actions":  [
+                               "create Market State requests",
+                               "create Event State requests",
+                               "execute resolvers",
+                               "execute materializers",
+                               "read market data rows",
+                               "read candidate dataset contents",
+                               "write datasets",
+                               "write candidate registry entries",
+                               "promote official datasets",
+                               "authorize production",
+                               "authorize downstream/backtest/ML/RL consumption"
+                           ],
+    "counters":  {
+                     "interface_invocations":  0,
+                     "market_state_requests_created":  0,
+                     "event_state_requests_created":  0,
+                     "runtime_executions":  0,
+                     "materializer_executions":  0,
+                     "validator_executions":  0,
+                     "source_market_data_rows_read":  0,
+                     "candidate_dataset_rows_read":  0,
+                     "datasets_written":  0,
+                     "registry_mutations":  0,
+                     "official_dataset":  false,
+                     "production":  false,
+                     "downstream":  false
+                 },
+    "next_gate":  "runtime_user_invocation_interface_v0_1",
+    "normalization_status":  "CLOSED_PASS_BOUNDARY_STATUS_AND_REQUEST_HIERARCHY_NORMALIZED_NO_EXECUTION",
+    "provider_consumer_compatibility_status":  "NOT_YET_VALIDATED_PENDING_RUNTIME_USER_INVOCATION_INTERFACE_CONTRACTS",
+    "request_contract_hierarchy":  {
+                                       "state_resolution_request_contract_v0_1":  "common_provider_envelope",
+                                       "market_state_request_contract_v0_1":  "specialized_payload_for_market_state",
+                                       "event_state_request_contract_v0_1":  "specialized_payload_for_event_state"
+                                   },
+    "normalized_at_utc":  "2026-07-28T15:57:46.7330008Z"
+}

@@ -1,0 +1,38 @@
+{
+  "validation_id": "event_state_on_demand_scale_validation_v0_1_20260728T120123Z",
+  "gate": "event_state_on_demand_scale_validation_v0_1",
+  "status": "CLOSED_PASS_EVENT_STATE_SCALE_VALIDATION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED",
+  "decision": {
+    "requested_contexts": 80,
+    "represented_contexts": 74,
+    "reused_lineage_chain_contexts": 14,
+    "scale_delta_materialized_contexts": 60,
+    "unavailable_contexts": 6,
+    "unaccounted_contexts": 0,
+    "hard_validation_failures": 0
+  },
+  "fingerprints": {
+    "event_state_request_fingerprint": "9bf6752948abaf09d326cdc95cfd10dc93ced8c40b48b3c6c6ecef78363ccfaa",
+    "event_state_dependency_resolution_fingerprint": "8a34b5e0576d44a5bd2f78fe77de25146ad122c14dfda24a13ce940e3b8ad992",
+    "event_state_execution_plan_fingerprint": "60b90471080b9b5e13633058aca145db3ae216f60650cfb34ffc7f4af97ec879",
+    "market_state_candidate_dataset_fingerprint": "516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416",
+    "event_state_candidate_dataset_fingerprint": "363f9188c6cce6d41e3a414831bdc8d57b59e2b4b4a934b827acfab11a99b907",
+    "logical_event_state_dataset_fingerprint": "04f2ffb5b4a4b6865529aaecc189b0b22c7e76976dc8344b714e08f9f5649e64",
+    "validation_result_fingerprint": "8cd71a709ca1ca37f958a8b12ee551f87e7c53f754860159a8097a27ea48acb8",
+    "registry_entry_fingerprint": "8f9780ae5fae6aeb17d87786f78520fb86c4e29483fc5df215a84abba5aca307"
+  },
+  "boundary_counters": {
+    "event_state_materializer_executions": 1,
+    "event_state_materializer_scope": "scale_delta_only",
+    "market_state_materializer_executions": 0,
+    "source_market_data_rows_read": 0,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false
+  },
+  "next_allowed_gate": "event_state_on_demand_capability_promotion_review_v0_1",
+  "official_dataset": false,
+  "production": false,
+  "downstream": false,
+  "scale_validation_matrix_sha256": "edf0f24c783aca1afe83d6b0ba7d9b70d95a673c2a1aa52e030ef2c2045a0f11"
+}

@@ -1,0 +1,175 @@
+{
+  "contract_id": "state_bundle_physical_consumption_authorization_contract_v0_1",
+  "contract_version": "0.1.0",
+  "contract_status": "design_ready_no_physical_read",
+  "owner_layer": "09_STATE_CONSUMPTION_BOUNDARY",
+  "purpose": "Defines the bounded authorization record required before a consumer may physically open a governed StateBundleManifest.",
+  "provider_control_plane_required_status": "CLOSED_READY_WITH_RESTRICTIONS_NO_CONSUMPTION",
+  "execution_authority": {
+    "physical_read_authorized_by_this_contract": false,
+    "state_replay_feed_authorized": false,
+    "backtest_consumption_authorized": false,
+    "production": false,
+    "downstream": false
+  },
+  "json_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "state_bundle_physical_consumption_authorization_contract_v0_1.schema.json",
+    "title": "StateBundle Physical Consumption Authorization v0.1",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "authorization_id",
+      "authorization_contract_version",
+      "authorization_status",
+      "consumer",
+      "authorized_state_bundle",
+      "runtime_invocation_response_ref",
+      "state_bundle_manifest_ref",
+      "allowed_artifacts",
+      "physical_limits",
+      "temporal_legality_policy",
+      "restriction_propagation_policy",
+      "non_authorized_boundaries"
+    ],
+    "properties": {
+      "authorization_id": { "type": "string", "minLength": 1 },
+      "authorization_contract_version": { "const": "0.1.0" },
+      "authorization_status": {
+        "enum": [
+          "AUTHORIZED_BOUNDED_PHYSICAL_CONSUMPTION_NOT_EXECUTED",
+          "CONSUMED_BY_BOUNDED_READ_RUN",
+          "BLOCKED_BEFORE_PHYSICAL_READ"
+        ]
+      },
+      "consumer": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["consumer_id", "consumer_type", "consumption_purpose"],
+        "properties": {
+          "consumer_id": { "type": "string", "minLength": 1 },
+          "consumer_type": { "enum": ["backtest_integration_probe", "state_consumer_validation_probe"] },
+          "consumption_purpose": { "const": "bounded_provider_consumer_integration_validation" }
+        }
+      },
+      "authorized_state_bundle": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "state_kind",
+          "profile_id",
+          "bundle_id",
+          "bundle_manifest_fingerprint",
+          "dataset_id",
+          "dataset_fingerprint",
+          "coverage"
+        ],
+        "properties": {
+          "state_kind": { "enum": ["market_state", "event_state"] },
+          "profile_id": { "type": "string", "minLength": 1 },
+          "bundle_id": { "type": "string", "minLength": 1 },
+          "bundle_manifest_fingerprint": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "dataset_id": { "type": "string", "minLength": 1 },
+          "dataset_fingerprint": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "coverage": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["requested_contexts", "represented_contexts", "unavailable_contexts", "blocked_contexts", "quarantined_contexts", "unaccounted_contexts"],
+            "properties": {
+              "requested_contexts": { "type": "integer", "minimum": 1 },
+              "represented_contexts": { "type": "integer", "minimum": 0 },
+              "unavailable_contexts": { "type": "integer", "minimum": 0 },
+              "blocked_contexts": { "type": "integer", "minimum": 0 },
+              "quarantined_contexts": { "type": "integer", "minimum": 0 },
+              "unaccounted_contexts": { "const": 0 }
+            }
+          }
+        }
+      },
+      "runtime_invocation_response_ref": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["ref_id", "sha256", "availability"],
+        "properties": {
+          "ref_id": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "availability": { "const": "available" }
+        }
+      },
+      "state_bundle_manifest_ref": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["ref_id", "sha256", "availability"],
+        "properties": {
+          "ref_id": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "availability": { "const": "available" }
+        }
+      },
+      "allowed_artifacts": {
+        "type": "array",
+        "minItems": 1,
+        "uniqueItems": true,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["artifact_id", "artifact_kind", "sha256", "availability", "read_mode"],
+          "properties": {
+            "artifact_id": { "type": "string", "minLength": 1 },
+            "artifact_kind": { "enum": ["state_records_file", "state_manifest", "lineage_manifest"] },
+            "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+            "availability": { "const": "available" },
+            "read_mode": { "const": "bounded_read_only" }
+          }
+        }
+      },
+      "physical_limits": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["maximum_rows", "maximum_files", "maximum_bytes", "user_supplied_paths_allowed"],
+        "properties": {
+          "maximum_rows": { "type": "integer", "minimum": 1, "maximum": 1000 },
+          "maximum_files": { "type": "integer", "minimum": 1, "maximum": 20 },
+          "maximum_bytes": { "type": "integer", "minimum": 1, "maximum": 104857600 },
+          "user_supplied_paths_allowed": { "const": false }
+        }
+      },
+      "temporal_legality_policy": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["decision_timestamp_required", "state_as_of_utc_required", "state_available_at_utc_required", "delivery_rule"],
+        "properties": {
+          "decision_timestamp_required": { "const": true },
+          "state_as_of_utc_required": { "const": true },
+          "state_available_at_utc_required": { "const": true },
+          "delivery_rule": { "const": "event_loop_clock_gte_state_available_at_utc" }
+        }
+      },
+      "restriction_propagation_policy": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["propagate_all_provider_restrictions", "preserve_unavailable_contexts", "candidate_status_must_remain_visible"],
+        "properties": {
+          "propagate_all_provider_restrictions": { "const": true },
+          "preserve_unavailable_contexts": { "const": true },
+          "candidate_status_must_remain_visible": { "const": true }
+        }
+      },
+      "non_authorized_boundaries": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["state_replay_feed", "strategy_execution", "orders", "fills", "pnl", "production", "downstream", "official_dataset"],
+        "properties": {
+          "state_replay_feed": { "const": false },
+          "strategy_execution": { "const": false },
+          "orders": { "const": false },
+          "fills": { "const": false },
+          "pnl": { "const": false },
+          "production": { "const": false },
+          "downstream": { "const": false },
+          "official_dataset": { "const": false }
+        }
+      }
+    }
+  }
+}

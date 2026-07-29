@@ -1,0 +1,117 @@
+{
+  "register_id": "TSIS_BACKTEST_EXCEPTION_AND_WAIVER_REGISTER_V0_1",
+  "as_of": "2026-07-29",
+  "entries": [
+    {
+      "exception_id": "BT-EXC-001",
+      "type": "DOCUMENT_STATUS_CONTRADICTION",
+      "status": "DOCUMENTARY_CONTRADICTION_CORRECTED",
+      "scope": "docs/00_system/07_EXECUTION_SEMANTICS_AND_COST_MODEL_CONTRACT_V0_1.md",
+      "description": "Source header, current-state block and footer align on CORRECTED_DRAFT_READY_FOR_REVIEW.",
+      "risk": "No active document-status contradiction remains; this item is superseded as blocker by BT-EXC-009 semantic review findings.",
+      "owner": "TSIS_OWNER",
+      "resolution": "Corrected in source contract; keep as historical correction record until BT-GATE-006 closes.",
+      "review_by_gate": "BT-GATE-006",
+      "waiver": null,
+      "blockers_remaining": []
+    },
+    {
+      "exception_id": "BT-EXC-002",
+      "type": "HISTORICAL_STATUS_DRIFT",
+      "status": "OPEN_NON_BLOCKING",
+      "scope": "docs/00_system/01_RUNPREFLIGHT_IMPLEMENTATION_PLAN_V0_1.md",
+      "description": "The early micro-plan retains NOT_IMPLEMENTED/NOT_EXECUTED statements superseded by later code, tests and runs.",
+      "risk": "Living-document searches can return stale state without historical labeling.",
+      "owner": "TSIS_OWNER",
+      "resolution": "Label the old block HISTORICAL_SNAPSHOT or add a supersession header.",
+      "review_by_gate": "NEXT_DOCUMENT_RECONCILIATION",
+      "waiver": null
+    },
+    {
+      "exception_id": "BT-EXC-003",
+      "type": "MODEL_LIMITATION",
+      "status": "ACCEPTED_NON_CLAIM",
+      "scope": "accounting cost model",
+      "description": "Costs are deterministic minimum examples, not a verified broker schedule.",
+      "risk": "Net PnL may differ materially from tradable results.",
+      "owner": "TSIS_OWNER",
+      "resolution": "Retain BROKER_COST_REALISM=NOT_CLAIMED until separately modeled and evidenced.",
+      "review_by_gate": "BROKER_COST_REALISM_GATE",
+      "waiver": null
+    },
+    {
+      "exception_id": "BT-EXC-004",
+      "type": "MODEL_LIMITATION",
+      "status": "ACCEPTED_NON_CLAIM",
+      "scope": "mechanical fills",
+      "description": "Current open/close proxy fills do not model spread, queue, partial fills or liquidity.",
+      "risk": "Fill probability and price are optimistic or structurally different from market execution.",
+      "owner": "TSIS_OWNER",
+      "resolution": "Implement only after BT-GATE-006 closes and BT-GATE-NEXT authorizes a bounded simulator.",
+      "review_by_gate": "DETERMINISTIC_FILL_SIMULATOR_V0_1_AUTHORIZATION",
+      "waiver": null
+    },
+    {
+      "exception_id": "BT-EXC-005",
+      "type": "UNEVALUATED_DOMAIN",
+      "status": "OPEN",
+      "scope": "short tradability",
+      "description": "Borrow availability, locates, locate timing, borrow fees and recalls are absent.",
+      "risk": "A mechanically profitable short may be impossible to enter or hold.",
+      "owner": "TSIS_OWNER",
+      "resolution": "Open a dedicated short-tradability/borrow gate after core execution semantics.",
+      "review_by_gate": "SHORT_TRADABILITY_GATE",
+      "waiver": null
+    },
+    {
+      "exception_id": "BT-EXC-006",
+      "type": "FROZEN_INTEGRATION",
+      "status": "ACTIVE_HOLD",
+      "scope": "Market State/Event State consumer lane",
+      "description": "Applied Architecture may be read as external context and its 09_STATE_CONSUMPTION_BOUNDARY README as a future closed reference. FUTURE_PROVIDER_REGISTRY_INTEGRATION, provider-consumer compatibility, physical StateBundle reads, StateReplayFeed and state-driven execution are not authorized.",
+      "risk": "Premature integration could bind the backtester to unstable provider semantics.",
+      "owner": "TSIS_OWNER",
+      "resolution": "Require an explicit provider-consumer compatibility gate followed by a bounded physical-consumption authorization. Provider progress alone cannot authorize the consumer.",
+      "review_by_gate": "PROVIDER_CONSUMER_COMPATIBILITY_GATE",
+      "waiver": null
+    },
+    {
+      "exception_id": "BT-EXC-007",
+      "type": "EVIDENCE_SCOPE_LIMITATION",
+      "status": "ACCEPTED_NON_CLAIM",
+      "scope": "ABAT and QG5 bounded smoke runs",
+      "description": "Preserved runs validate a narrow fixture and one mechanical round trip.",
+      "risk": "Results cannot be generalized to the 2005-2026 universe, performance or edge.",
+      "owner": "TSIS_OWNER",
+      "resolution": "Expand only after execution semantics and unified run governance close.",
+      "review_by_gate": "MULTI_SYMBOL_VERTICAL_SLICE_GATE",
+      "waiver": null
+    },
+    {
+      "exception_id": "BT-EXC-008",
+      "type": "AUTHORITY_RECONSTRUCTION",
+      "status": "DISCLOSED",
+      "scope": "initial CTO baseline",
+      "description": "This authority layer was reconstructed from the implementation snapshot because the prior CTO directory was empty.",
+      "risk": "Undocumented historical rationale may not be recoverable.",
+      "owner": "TSIS_OWNER",
+      "resolution": "Future decisions must be recorded prospectively; recovered history must retain its evidence classification.",
+      "review_by_gate": "BT-GATE-008",
+      "waiver": null
+    },
+    {
+      "exception_id": "BT-EXC-009",
+      "type": "CONTRACT_SEMANTIC_REVIEW_FINDINGS",
+      "status": "CLOSED_CORRECTED_AND_FINAL_REVIEW_ACCEPTED",
+      "scope": "docs/00_system/07_EXECUTION_SEMANTICS_AND_COST_MODEL_CONTRACT_V0_1.md",
+      "description": "Final external review accepted supported outcome enumeration, ambiguous-bar mapping, PESSIMISTIC reservation and package integrity without findings.",
+      "risk": "Closed. Contract semantics accepted for bounded implementation authorization decision only; code remains not authorized.",
+      "owner": "TSIS_OWNER",
+      "resolution": "Closed by FINAL_ENUMERATION_REVIEW=PASS.",
+      "review_by_gate": "BT-GATE-006",
+      "waiver": null,
+      "review_result": "COMPLETED_WITH_RESIDUAL_FINDINGS",
+      "blockers_remaining": []
+    }
+  ]
+}

@@ -1,0 +1,301 @@
+{
+  "case_count": 31,
+  "failed_cases": 0,
+  "ajv_runtime_available": false,
+  "ajv_strict_runtime_executed": false,
+  "ajv_strict_runtime_note": "AJV package is not installed in the local Node environment; strictRequired/strictTypes are covered by static strict lint and jsonschema compile.",
+  "rows": [
+    {
+      "case_id": "schema_compile_jsonschema_state_resolution_request_contract_v0_1.json",
+      "schema": "state_resolution_request_contract_v0_1.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "ajv_strict_static_lint_state_resolution_request_contract_v0_1.json",
+      "schema": "state_resolution_request_contract_v0_1.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "schema_compile_jsonschema_runtime_user_invocation_interface_contract_v0_1.json",
+      "schema": "runtime_user_invocation_interface_contract_v0_1.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "ajv_strict_static_lint_runtime_user_invocation_interface_contract_v0_1.json",
+      "schema": "runtime_user_invocation_interface_contract_v0_1.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "schema_compile_jsonschema_runtime_user_invocation_response_contract_v0_1.json",
+      "schema": "runtime_user_invocation_response_contract_v0_1.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "ajv_strict_static_lint_runtime_user_invocation_response_contract_v0_1.json",
+      "schema": "runtime_user_invocation_response_contract_v0_1.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "schema_compile_jsonschema_state_bundle_manifest_contract_v0_1.json",
+      "schema": "state_bundle_manifest_contract_v0_1.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "ajv_strict_static_lint_state_bundle_manifest_contract_v0_1.json",
+      "schema": "state_bundle_manifest_contract_v0_1.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "schema_compile_jsonschema_runtime_capability_effective_view_contract_v0_1.json",
+      "schema": "runtime_capability_effective_view_contract_v0_1.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "ajv_strict_static_lint_runtime_capability_effective_view_contract_v0_1.json",
+      "schema": "runtime_capability_effective_view_contract_v0_1.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "positive_market_state_request",
+      "schema": "state_resolution_request_contract_v0_1.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "positive_event_state_request",
+      "schema": "state_resolution_request_contract_v0_1.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "negative_request_type_payload_mismatch",
+      "schema": "state_resolution_request_contract_v0_1.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "Additional properties are not allowed ('event_state_request' was unexpected)",
+        "'market_state_request' is a required property",
+        "{'event_state_request': {'request_type': 'event_state', 'event_state_profile_id': 'event_state_core_four_intraday_profile_v0_1', 'event_state_profile_version_policy': 'exact', 'event_state_profile_version': 'v0_1', 'event_type_ids': ['event_type:market_data:session_opened'], 'event_subject_scope': 'exchange_session', 'event_type_registry_snapshot_id': 'event_type_registry:v0_1', 'event_instance_policy_id': 'event_instance:session_opened:v0_1', 'event_window_policy_id': 'event_window:at_event:v0_1', 'event_window_definition_ids': ['event_window:session_opened:at_event_v0_1'], 'instrument_projection_policy_id': 'projection:exchange_session_to_instrument:v0_1', 'market_state_dependency_mode': 'emit_or_resolve_market_state_subrequest_through_runtime_capability', 'market_state_profile_id': 'market_state_core_four_intraday_profile_v0_1', 'market_state_dependency_reuse_policy': 'reuse_if_exact_validated_dependency_match', 'exchange_scope': 'XNYS', 'explicit_instrument_ids': ['AAME'], 'session_dates': ['2021-01-19'], 'resolution': 'intraday', 'calendar_authority_id': 'calendar:xnys:v0_1', 'point_in_time_policy_id': 'pit:v0_1', 'source_version_policy': 'exact_governed_or_block', 'output_mode': 'candidate', 'reuse_policy': 'reuse_if_exact_validated_dependency_match'}} should not be valid under {'type': 'object', 'additionalProperties': True, 'properties': {'event_state_request': {}}, 'required': ['event_state_request']}"
+      ]
+    },
+    {
+      "case_id": "negative_physical_path_payload",
+      "schema": "state_resolution_request_contract_v0_1.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "Additional properties are not allowed ('physical_path' was unexpected)",
+        "Additional properties are not allowed ('physical_path' was unexpected)",
+        "forbidden physical/path-like key present"
+      ]
+    },
+    {
+      "case_id": "negative_unsupported_event_type",
+      "schema": "state_resolution_request_contract_v0_1.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'event_type:market_data:session_opened' was expected",
+        "'event_type:market_data:session_opened' was expected"
+      ]
+    },
+    {
+      "case_id": "positive_reuse_hit_market_response",
+      "schema": "runtime_user_invocation_response_contract_v0_1.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "negative_reuse_hit_missing_bundle",
+      "schema": "runtime_user_invocation_response_contract_v0_1.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'available' was expected"
+      ]
+    },
+    {
+      "case_id": "negative_cross_details",
+      "schema": "runtime_user_invocation_response_contract_v0_1.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "{'materializer_executions': 0, 'source_market_data_rows_read': 0, 'registry_mutations': 0, 'physical_rows_delivered': 0} is not of type 'null'"
+      ]
+    },
+    {
+      "case_id": "negative_blocked_with_dataset",
+      "schema": "runtime_user_invocation_response_contract_v0_1.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'dataset_001' is not of type 'null'",
+        "'validated_candidate' is not of type 'null'",
+        "'PASS_WITH_RESTRICTIONS' is not of type 'null'",
+        "{'ref_id': 'bundle_001', 'ref_type': 'state_bundle_manifest', 'sha256': '1e6ed65d77d6364eeaed5a745ba5c4985ae2b700dd85d7cf7f027bdf294a33fc', 'availability': 'available'} is not of type 'null'",
+        "[{'ref_id': 'artifact_001', 'ref_type': 'runtime_artifact', 'sha256': 'c7c5c1d70c5dec4416ab6158afd0b223ef40c29b1dc1f97ed9428b94d4cadb1c', 'availability': 'available'}] is expected to be empty"
+      ]
+    },
+    {
+      "case_id": "positive_authorized_reference",
+      "schema": "runtime_user_invocation_response_contract_v0_1.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "negative_authorized_reference_missing_auth",
+      "schema": "runtime_user_invocation_response_contract_v0_1.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "None is not of type 'object'"
+      ]
+    },
+    {
+      "case_id": "positive_market_bundle",
+      "schema": "state_bundle_manifest_contract_v0_1.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "positive_event_bundle",
+      "schema": "state_bundle_manifest_contract_v0_1.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "case_id": "negative_pass_empty_capability_refs",
+      "schema": "state_bundle_manifest_contract_v0_1.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "[] should be non-empty"
+      ]
+    },
+    {
+      "case_id": "negative_coverage_arithmetic",
+      "schema": "state_bundle_manifest_contract_v0_1.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "coverage arithmetic mismatch"
+      ]
+    },
+    {
+      "case_id": "negative_missing_required_request_ref",
+      "schema": "state_bundle_manifest_contract_v0_1.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'available' was expected"
+      ]
+    },
+    {
+      "case_id": "negative_empty_source_hashes",
+      "schema": "state_bundle_manifest_contract_v0_1.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "[] should be non-empty"
+      ]
+    },
+    {
+      "case_id": "negative_invalid_schema_hash",
+      "schema": "state_bundle_manifest_contract_v0_1.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'not_hash' does not match '^[a-f0-9]{64}$'"
+      ]
+    },
+    {
+      "case_id": "negative_dataset_kind_mismatch",
+      "schema": "state_bundle_manifest_contract_v0_1.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "'event_state' was expected",
+        "{'dataset_id': 'dataset_001', 'dataset_kind': 'market_state', 'candidate_dataset_fingerprint': 'b277fd623676a525c29b9eb155afc8c9010681814ceafb2d7627f47b9a232576', 'validation_status': 'PASS_WITH_RESTRICTIONS', 'reuse_eligibility': 'eligible_with_restrictions', 'artifact_availability': 'available'} is not of type 'null'",
+        "None is not of type 'object'"
+      ]
+    },
+    {
+      "case_id": "negative_duplicate_fingerprints",
+      "schema": "state_bundle_manifest_contract_v0_1.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "['2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881', '2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881'] has non-unique elements"
+      ]
+    },
+    {
+      "case_id": "negative_request_ref_fingerprint_mismatch",
+      "schema": "state_bundle_manifest_contract_v0_1.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "result": "PASS",
+      "errors": [
+        "request fingerprint does not match request ref sha256"
+      ]
+    }
+  ],
+  "gate": "runtime_provider_contract_schema_hardening_v0_1_1",
+  "created_at_utc": "2026-07-28T17:52:40+00:00",
+  "status": "CLOSED_PROVIDER_CONTRACT_SCHEMA_HARDENED_V0_1_1_WITH_RESTRICTIONS_NO_EXECUTION"
+}

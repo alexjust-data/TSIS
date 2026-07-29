@@ -1,0 +1,45 @@
+﻿{
+    "created_at_utc":  "2026-07-28T00:00:00Z",
+    "scope_id":  "provider_consumer_data_plane_joint_review_scope_v0_1",
+    "owner_layer":  "09_STATE_CONSUMPTION_BOUNDARY",
+    "reviewed_artifacts":  [
+                               "08_RUNTIME_CAPABILITIES/state_provider_control_plane_v0_1_closure_readout.md",
+                               "09_STATE_CONSUMPTION_BOUNDARY/state_bundle_physical_consumption_authorization_design_v0_1.md",
+                               "09_STATE_CONSUMPTION_BOUNDARY/state_bundle_physical_consumption_authorization_contract_v0_1.json",
+                               "09_STATE_CONSUMPTION_BOUNDARY/state_bundle_reader_contract_v0_1.json",
+                               "09_STATE_CONSUMPTION_BOUNDARY/state_replay_feed_contract_v0_1.json"
+                           ],
+    "hard_boundaries":  {
+                            "strategy_callbacks":  0,
+                            "production":  false,
+                            "downstream":  false,
+                            "state_replay_feed_records_emitted":  0,
+                            "orders_emitted":  0,
+                            "state_bundle_rows_read":  0,
+                            "event_loop_ticks":  0,
+                            "backtest_runs_started":  0,
+                            "fills_emitted":  0
+                        },
+    "not_in_scope":  [
+                         "physical row reads",
+                         "StateReplayFeed execution",
+                         "EventLoop execution",
+                         "Backtest Engine implementation",
+                         "strategy execution",
+                         "orders",
+                         "fills",
+                         "PnL",
+                         "production",
+                         "downstream"
+                     ],
+    "in_scope":  [
+                     "provider/boundary/consumer ownership",
+                     "bounded first slice scope",
+                     "physical consumption authorization prerequisites",
+                     "reader verification duties",
+                     "replay temporal legality",
+                     "closed execution boundaries"
+                 ],
+    "gate":  "provider_consumer_data_plane_joint_review_v0_1",
+    "review_only":  true
+}

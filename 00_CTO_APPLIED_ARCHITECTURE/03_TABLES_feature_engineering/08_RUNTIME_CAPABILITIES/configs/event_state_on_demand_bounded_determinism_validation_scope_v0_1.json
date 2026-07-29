@@ -1,0 +1,43 @@
+{
+  "gate": "event_state_on_demand_bounded_determinism_validation_v0_1",
+  "status": "AUTHORIZED_WITH_RESTRICTIONS_CONSUMED",
+  "date": "2026-07-28",
+  "review_id": "event_state_on_demand_bounded_determinism_validation_v0_1_20260728T000000Z",
+  "parent_gate": "event_state_on_demand_bounded_deterministic_rerun_v0_1",
+  "baseline_run_id": "event_state_on_demand_bounded_execution_v0_1_20260727T200322Z",
+  "successful_rerun_run_id": "event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070338Z",
+  "invalid_partial_attempt_run_id": "event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T065658Z",
+  "blocked_prior_attempt_run_id": "event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070142Z",
+  "comparison_fingerprint": "9580cc5f747ef6c6fd3ec2b3c92460a7ce0eba6e9164248e636ab241dcf55c55",
+  "normalized_logical_dataset_fingerprint": "e2c47083b8dd560e67bcda32b0063cf9f468754e34f76b82e9f839046d375699",
+  "determinism_status_required": "PROVEN_FOR_BOUNDED_SCOPE",
+  "authorized_inspection_only": true,
+  "authorized_artifacts": [
+    "runs/event_state_on_demand_bounded_execution_v0_1_20260727T200322Z/final_manifest.json",
+    "runs/event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070338Z/final_manifest.json",
+    "runs/event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070338Z/event_state_on_demand_bounded_deterministic_rerun_readout_v0_1.md",
+    "runs/event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070338Z/event_state_bounded_deterministic_rerun_comparison_v0_1.json",
+    "runs/event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070338Z/determinism_report.json",
+    "runs/event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070338Z/deterministic_rerun_evidence_entry.json",
+    "runs/event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T065658Z/final_manifest.json",
+    "runs/event_state_on_demand_bounded_deterministic_rerun_v0_1_20260728T070142Z/final_manifest.json",
+    "event_state_on_demand_bounded_deterministic_rerun_contract_v0_1.json"
+  ],
+  "closed_boundaries": {
+    "new_event_state_request_created": false,
+    "rerun_execution": false,
+    "event_state_materializer_execution": false,
+    "market_state_materializer_execution": false,
+    "market_state_candidate_files_read": false,
+    "source_market_data_rows_read": false,
+    "event_state_candidate_records_written": false,
+    "candidate_dataset_registry_entry_written": false,
+    "reuse_eligibility_upgrade": false,
+    "official_event_state_dataset": false,
+    "production": false,
+    "downstream": false
+  },
+  "consumed_by_review": "event_state_on_demand_bounded_determinism_validation_v0_1_20260728T000000Z",
+  "review_status": "CLOSED_APPROVED_DETERMINISM_FOR_BOUNDED_SCOPE_WITH_RESTRICTIONS_NO_REUSE_TRANSITION",
+  "next_gate_after_success": "event_state_on_demand_bounded_idempotency_reuse_test_authorization_v0_1"
+}

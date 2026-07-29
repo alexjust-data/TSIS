@@ -1,0 +1,95 @@
+{
+    "contract_id":  "runtime_state_provider_boundary_contract_v0_1",
+    "contract_version":  "v0_1",
+    "status":  "ACTIVE_PROVIDER_BOUNDARY_CONTRACT",
+    "created_at_utc":  "2026-07-28T15:41:28.7539151Z",
+    "owner_layer":  "08_RUNTIME_CAPABILITIES",
+    "provider_definition":  "The Runtime State Provider is the TSIS layer that accepts governed state resolution requests and returns governed state bundle / invocation responses for Market State and Event State capabilities.",
+    "requester_semantics":  "user means institutional consumer module, not necessarily a human. The first expected consumer is Backtest RunPreflight.",
+    "provider_owned_contracts":  [
+                                     "runtime_user_invocation_interface_contract_v0_1.json",
+                                     "runtime_user_invocation_response_contract_v0_1.json",
+                                     "runtime_capability_effective_view_contract_v0_1.json",
+                                     "state_resolution_request_contract_v0_1.json",
+                                     "state_bundle_manifest_contract_v0_1.json",
+                                     "market_state_request_contract_v0_1.json",
+                                     "event_state_request_contract_v0_1.json"
+                                 ],
+    "provider_responsibilities":  [
+                                      "validate request schema authority",
+                                      "normalize provider-side state resolution requests",
+                                      "compute provider-side request fingerprints",
+                                      "resolve effective runtime capability status from promotion evidence plus current consumption policy",
+                                      "perform registry metadata lookup under policy",
+                                      "resolve exact reuse or report authorization required",
+                                      "return governed references, manifests, coverage, fingerprints and restrictions",
+                                      "fail closed for unsupported profiles, Event Types, production mode or downstream delivery"
+                                  ],
+    "provider_must_not_own":  [
+                                  "BacktestRunSpec contract",
+                                  "BacktestInputManifest contract",
+                                  "strategy decision logic",
+                                  "StateReplayFeed event-loop delivery semantics",
+                                  "execution price policy",
+                                  "orders, fills, positions or ledger semantics",
+                                  "consumer-specific pass/fail policy beyond provider response fields"
+                              ],
+    "consumer_owned_contracts":  [
+                                     "backtest_run_spec_contract_v0_1.json",
+                                     "backtest_input_manifest_contract_v0_1.json"
+                                 ],
+    "provider_to_backtest_handoff":  {
+                                         "incoming_instance_from_backtest_preflight":  "StateResolutionRequest instance validated against provider-owned contract",
+                                         "outgoing_instance_to_backtest_preflight":  "StateBundleManifest / runtime invocation response instance validated against provider-owned contract",
+                                         "backtest_sealing_object":  "BacktestInputManifest, owned by Backtest Engine, references StateBundleManifest by id, version and hash"
+                                     },
+    "current_capability_limits":  {
+                                      "market_state_runtime":  "PROMOTED_WITH_RESTRICTIONS_CANDIDATE_RUNTIME_ONLY",
+                                      "event_state_runtime":  "PROMOTED_WITH_RESTRICTIONS_CANDIDATE_RUNTIME_ONLY",
+                                      "event_state_allowed_event_type_ids":  [
+                                                                                 "event_type:market_data:session_opened"
+                                                                             ],
+                                      "event_state_accepted_subject_scope":  "exchange_session",
+                                      "official_market_state_dataset":  false,
+                                      "official_event_state_dataset":  false,
+                                      "production":  false,
+                                      "downstream":  false
+                                  },
+    "runtime_user_invocation_interface_v0_1_policy":  {
+                                                          "allowed_in_design":  [
+                                                                                    "request validation design",
+                                                                                    "request normalization design",
+                                                                                    "fingerprint creation design",
+                                                                                    "capability effective view design",
+                                                                                    "registry metadata lookup design",
+                                                                                    "response envelope design"
+                                                                                ],
+                                                          "prohibited_in_design":  [
+                                                                                       "actual interface invocations",
+                                                                                       "actual request creation",
+                                                                                       "actual materialization",
+                                                                                       "physical row delivery",
+                                                                                       "official dataset delivery",
+                                                                                       "downstream/backtest/ML/RL consumption authorization"
+                                                                                   ]
+                                                      },
+    "boundary_status":  "CLOSED_BOUNDARY_CLARIFIED_NO_EXECUTION",
+    "provider_consumer_compatibility_status":  "NOT_YET_VALIDATED_PENDING_RUNTIME_USER_INVOCATION_INTERFACE_CONTRACTS",
+    "request_contract_hierarchy":  {
+                                       "common_envelope_contract":  "state_resolution_request_contract_v0_1.json",
+                                       "specialized_payload_contracts":  [
+                                                                             "market_state_request_contract_v0_1.json",
+                                                                             "event_state_request_contract_v0_1.json"
+                                                                         ],
+                                       "relationship_rule":  "StateResolutionRequest is the common provider envelope; market_state_request and event_state_request are specialized payloads, not alternative authorities."
+                                   },
+    "pending_provider_interface_contracts":  [
+                                                 "state_resolution_request_contract_v0_1.json",
+                                                 "state_bundle_manifest_contract_v0_1.json",
+                                                 "runtime_user_invocation_interface_contract_v0_1.json",
+                                                 "runtime_user_invocation_response_contract_v0_1.json",
+                                                 "runtime_capability_effective_view_contract_v0_1.json"
+                                             ],
+    "compatibility_validation_rule":  "Provider-consumer compatibility remains NOT_YET_VALIDATED until the pending provider interface contracts close with contract_id, contract_version and SHA-256 and the consumer validates against them.",
+    "contract_content_sha256_excluding_hash_field":  "33807f2e62f53251371aedd52683e016d294ff65dd1a29e9f9b5d077f3e46a34"
+}

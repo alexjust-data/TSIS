@@ -1,0 +1,82 @@
+﻿{
+    "gate":  "provider_consumer_data_plane_joint_review_v0_1",
+    "created_at_utc":  "2026-07-28T00:00:00Z",
+    "status":  "CLOSED_APPROVED_FOR_BOUNDED_STATE_BUNDLE_READ_AND_REPLAY_AUTHORIZATION_WITH_RESTRICTIONS_NO_EXECUTION",
+    "row_count":  10,
+    "blocking_findings":  0,
+    "rows":  [
+                 {
+                     "requirement":  "Provider can validate/resolve/reference but cannot deliver rows",
+                     "finding":  "No provider physical row delivery opened",
+                     "result":  "PASS",
+                     "area":  "provider_control_plane"
+                 },
+                 {
+                     "requirement":  "Provider, boundary and consumer responsibilities are separated",
+                     "finding":  "Provider produces/references, boundary authorizes opening, consumer reads/replays",
+                     "result":  "PASS",
+                     "area":  "ownership"
+                 },
+                 {
+                     "requirement":  "Physical consumption requires exact bundle authorization",
+                     "finding":  "Authorization contract freezes bundle, dataset, profile, hashes, limits and purpose",
+                     "result":  "PASS",
+                     "area":  "physical_authorization"
+                 },
+                 {
+                     "requirement":  "Reader verifies before row delivery",
+                     "finding":  "Reader contract requires authorization, manifest, artifact, schema, profile, coverage and restrictions checks",
+                     "result":  "PASS",
+                     "area":  "reader"
+                 },
+                 {
+                     "requirement":  "Replay uses state_available_at_utc",
+                     "finding":  "StateReplayFeed contract uses event_loop_clock_gte_state_available_at_utc",
+                     "result":  "PASS",
+                     "area":  "replay"
+                 },
+                 {
+                     "requirement":  "Replay feed must not own simulated clock",
+                     "finding":  "EventLoop is declared clock authority",
+                     "result":  "PASS",
+                     "area":  "clock"
+                 },
+                 {
+                     "requirement":  "StateReplayFeed is not MarketDataFeed",
+                     "finding":  "State records cannot serve as execution price source",
+                     "result":  "PASS",
+                     "area":  "market_data_boundary"
+                 },
+                 {
+                     "requirement":  "First slice stays core-four Market State only",
+                     "finding":  "Market State core-four, one bounded consumer probe, Event State not requested",
+                     "result":  "PASS",
+                     "area":  "first_vertical_slice"
+                 },
+                 {
+                     "requirement":  "No strategy/orders/fills/PnL",
+                     "finding":  "All execution boundaries remain false/zero",
+                     "result":  "PASS",
+                     "area":  "execution_boundaries"
+                 },
+                 {
+                     "requirement":  "No production/downstream/official dataset",
+                     "finding":  "All remain false",
+                     "result":  "PASS",
+                     "area":  "production_downstream"
+                 }
+             ],
+    "hard_boundaries":  {
+                            "physical_artifacts_opened":  0,
+                            "production":  false,
+                            "downstream":  false,
+                            "state_replay_feed_records_emitted":  0,
+                            "orders_emitted":  0,
+                            "strategy_callbacks":  0,
+                            "pnl_calculated":  false,
+                            "state_bundle_rows_read":  0,
+                            "event_loop_ticks":  0,
+                            "backtest_runs_started":  0,
+                            "fills_emitted":  0
+                        }
+}

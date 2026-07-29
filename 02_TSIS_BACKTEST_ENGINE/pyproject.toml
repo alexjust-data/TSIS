@@ -5,17 +5,20 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "tsis-backtest-engine"
 version = "0.1.0"
-description = "Implementation shell for the TSIS professional backtest engine."
+description = "Python implementation root for the TSIS professional small-caps backtest engine."
 requires-python = ">=3.11"
-dependencies = []
+dependencies = ["pyarrow>=21"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
 
 [tool.setuptools]
 package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
-namespaces = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
+addopts = "-q"
