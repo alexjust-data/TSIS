@@ -8,6 +8,7 @@ from datetime import datetime, timedelta, timezone
 from decimal import Decimal
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
 
 from tsis_backtest.accounting.contracts import CostModel  # noqa: E402
@@ -119,13 +120,8 @@ class AccountingEngineTests(unittest.TestCase):
         self.assertEqual(payload["commission_per_share"], "0.005")
         self.assertEqual(payload["routing_or_ecn_fee_per_share"], "0.0025")
     def test_real_fixture_abat_accounting(self) -> None:
-        report_path = Path(
-            "C:/TSIS_Data/02_TSIS_BACKTEST_ENGINE/runs/"
-            "run_preflight_real_fixture_2026_01_05_qg5_v0_2/"
-            "data_preflight_report.json"
-        )
-        if not report_path.exists():
-            self.skipTest("local TSIS real fixture preflight report not present")
+        report_path = ROOT / "tests/fixtures/bt_gate_011_qg5_portable/data_preflight_report.json"
+        self.assertTrue(report_path.is_file(), "portable QG5 preflight fixture missing")
         events = HistoricalReplayFeed.from_preflight_report(report_path).stream_events()
         mechanical = MechanicalEventLoop().run("mechanical_abat_real_fixture_v0_1", events, self._decisions("ABAT", 100))
         model = CostModel("min_commission_v0_1", commission_per_share=Decimal("0.005"), minimum_commission_per_order=Decimal("1.00"))

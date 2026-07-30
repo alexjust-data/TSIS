@@ -9,6 +9,36 @@ all later handoff blocks = historical closure snapshots
 Read `LOCAL_RULES.md` and `STATE_PROVIDER_CONSUMER_RECOVERY.md` before using
 this file. Repeated historical headings do not create concurrent current gates.
 
+# Current Runtime Handoff Override - Restriction Domains Clarified
+
+Status: `agent_handoff_prompt_v0_155`
+Layer: `03_TABLES_feature_engineering`
+Boundary layer: `09_STATE_CONSUMPTION_BOUNDARY`
+Date: `2026-07-30`
+
+```text
+last_closed_gate = market_state_restriction_domain_binding_clarification_v0_1
+last_closed_status = CLOSED_PASS_RESTRICTION_DOMAINS_DISAMBIGUATED_FOR_BT_GATE_014_NO_PHYSICAL_READ_NO_CONSUMER_AUTHORIZATION
+physical_provenance_restriction_codes = physical fingerprinted lineage domain
+replay_consumption_restriction_codes = bounded delivery policy domain
+component_replay_restriction_codes = component replay-legality domain
+BT_GATE_014_V0_4 = CONSUMED_FAILED_FINAL
+BT_GATE_014_V0_4_reuse = PROHIBITED
+BT_GATE_014_V0_5 = NOT_AUTHORIZED
+next_owner = BT-GATE-014
+active_provider_gate = none
+parquet_opened_by_gate = false
+physical_rows_read_by_gate = 0
+backtester_files_modified = 0
+Event_State = NOT_OPEN
+general_StateReplayFeed = NOT_AUTHORIZED
+```
+
+The backtester must adopt the labeled restriction domains in its contract,
+event, lineage, store and regression suite. Do not issue or execute V0.5 from
+this handoff. A new single-use authorization requires independent
+pre-execution review.
+
 # Current Runtime Handoff Override - BT-GATE-014 Contract Handoff Ready
 
 Status: `agent_handoff_prompt_v0_154`

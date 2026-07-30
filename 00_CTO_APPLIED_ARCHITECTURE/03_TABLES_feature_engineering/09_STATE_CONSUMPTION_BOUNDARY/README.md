@@ -9,6 +9,30 @@ The canonical cold-start entry for this boundary is:
 It defines the current authority, accepted packages, reading order, next owner
 and prohibitions. Historical closure sections below do not override it.
 
+## Market State Restriction Domain Binding Closed
+
+```text
+market_state_restriction_domain_binding_clarification_v0_1
+=
+CLOSED_PASS_RESTRICTION_DOMAINS_DISAMBIGUATED_FOR_BT_GATE_014_NO_PHYSICAL_READ_NO_CONSUMER_AUTHORIZATION
+
+physical provenance domain = 26 codes observed per V0.4 row
+bounded replay-consumption domain = 4 required codes
+component replay domain = 4 required core-four components
+case_count = 19
+failed_cases = 0
+V0.4 = consumed, not reusable
+V0.5 = not authorized
+```
+
+Physical `restriction_codes_json` is fingerprinted provenance lineage.
+Sidecar and component restrictions govern bounded replay consumption. They are
+distinct labeled domains and must not be compared for equality or silently
+merged into one executable policy.
+
+The next owner is BT-GATE-014. It must adopt the binding in its consumer
+contract and implementation before proposing a new single-use authorization.
+
 ## BT-GATE-014 Contract Handoff Ready
 
 ```text

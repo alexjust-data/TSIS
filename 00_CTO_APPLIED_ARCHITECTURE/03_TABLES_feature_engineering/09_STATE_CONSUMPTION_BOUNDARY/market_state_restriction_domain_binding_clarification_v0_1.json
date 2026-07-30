@@ -1,0 +1,132 @@
+{
+  "contract_id": "market_state_restriction_domain_binding_clarification_v0_1",
+  "contract_version": "0.1",
+  "status": "CLOSED_PASS_RESTRICTION_DOMAINS_DISAMBIGUATED_FOR_BT_GATE_014_NO_PHYSICAL_READ_NO_CONSUMER_AUTHORIZATION",
+  "owner": "03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY",
+  "purpose": "Disambiguate physical provenance restrictions from replay-consumption restrictions after the fail-closed BT-GATE-014 V0.4 probe.",
+  "incident_evidence": {
+    "consumer_gate": "BT-GATE-014",
+    "consumer_authorization": "V0.4",
+    "result": "CONSUMED_FAILED_FINAL",
+    "error_code": "FAIL_MARKET_STATE_RESTRICTION_PROPAGATION",
+    "failure_manifest_path": "02_TSIS_BACKTEST_ENGINE/runs/bt_gate_014_single_use_physical_market_state_consumer_v0_4/failure_manifest.json",
+    "failure_manifest_sha256": "e0beb57e40baaa15ec66532c52e819649da8cb5fa241d49d884df1511083d69a",
+    "physical_files_opened": 1,
+    "physical_rows_read": 2,
+    "market_state_events_emitted": 0,
+    "provider_modified": false
+  },
+  "authority_inputs": [
+    {
+      "role": "bounded_selection_authority",
+      "path": "09_STATE_CONSUMPTION_BOUNDARY/bounded_state_bundle_read_and_replay_selection_manifest_v0_2.json",
+      "sha256": "a12c1bf3942c655115f521d0701f237f2cd9ad1a8fcf81a5ccc5c1c726d7b937"
+    },
+    {
+      "role": "replay_sidecar_contract",
+      "path": "09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_contract_v0_1.json",
+      "sha256": "a29f656a6fe741432c7272d6715637eeb49fd5d34ca550c3ac0f33166bc1b169"
+    },
+    {
+      "role": "replay_sidecar_evidence",
+      "path": "09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_manifest_v0_1.json",
+      "sha256": "8e426b09bb1cafac26e49c7a81de31ef4ea60ca3b56ac3aa766ba13a0772c5ac"
+    },
+    {
+      "role": "replay_timestamp_contract",
+      "path": "09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_timestamp_contract_v0_1.json",
+      "sha256": "eae02c685f7bc2cc8b55e6e3bb4a6912dc3b391042c0178b3dc29387fa6b690d"
+    },
+    {
+      "role": "physical_restriction_field_semantics",
+      "path": "06_MARKET_STATE_INTEGRATION/configs/experimental_core_four_market_state_scale_c_candidate_materialization_scope_v0_1.json",
+      "sha256": "e4223c64c030c2ac240763d7397362a0fe8faf91761ac7b94ca0f69d6f3d1913"
+    },
+    {
+      "role": "physical_schema_authority",
+      "path": "06_MARKET_STATE_INTEGRATION/official_profiles/market_state_core_four_intraday_profile_v0_1/PHYSICAL_SCHEMA_CONTRACT.json",
+      "sha256": "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b"
+    }
+  ],
+  "domains": {
+    "physical_provenance_restriction_codes": {
+      "source": "physical row restriction_codes_json",
+      "meaning": "Canonical restrictions inherited from candidate construction, scientific design, source lineage, materialization and promotion status.",
+      "authority": "physical row bytes plus state_output_fingerprint",
+      "consumer_treatment": "Preserve losslessly as audit lineage. Do not reinterpret automatically as EventLoop policy or execution authority.",
+      "comparison": "Exact canonical equality is required only against the physical row value whose fingerprint is being verified.",
+      "observed_cardinality_in_bt_gate_014_v0_4": 26
+    },
+    "replay_consumption_restriction_codes": {
+      "source": "bounded selection manifest, bundle restrictions and sidecar row restriction_codes",
+      "meaning": "Operational limitations governing whether and how the bounded state may be delivered to a consumer.",
+      "authority": "bounded provider/shared-boundary authorization and replay sidecar",
+      "required_codes": [
+        "candidate_runtime_only",
+        "not_official_dataset",
+        "no_downstream",
+        "no_production"
+      ],
+      "comparison": "Canonical set equality is required between the authorized bounded set and the sidecar row set for this probe.",
+      "observed_cardinality": 4
+    },
+    "component_replay_restriction_codes": {
+      "source": "component_availability_evidence[].restriction_codes",
+      "meaning": "Replay-legality limitations contributed by each required core-four component.",
+      "authority": "replay timestamp and sidecar contracts",
+      "comparison": "Every component set must be a subset of the row replay-consumption set; the row set must include the union of all component sets.",
+      "observed_component_count_per_row": 4
+    }
+  },
+  "binding_rules": [
+    "physical_provenance_restriction_codes and replay_consumption_restriction_codes are distinct non-substitutable domains",
+    "physical row restriction_codes_json must remain fingerprinted and preserved byte-reproducibly",
+    "physical provenance codes must survive into audit lineage without loss",
+    "replay-consumption codes govern delivery legality and consumer policy checks",
+    "component replay codes must propagate into the row replay-consumption domain",
+    "no equality comparison is permitted between physical provenance codes and replay-consumption codes",
+    "no physical provenance code may grant production, downstream, official-dataset, strategy, order, fill or execution authority",
+    "no replay-consumption code may erase or rewrite physical provenance lineage",
+    "a combined display or audit projection may expose both domains but must retain domain labels",
+    "an unlabeled union must not be used as the executable restriction policy"
+  ],
+  "consumer_projection": {
+    "required_fields": [
+      "physical_provenance_restriction_codes",
+      "replay_consumption_restriction_codes",
+      "component_replay_restriction_codes",
+      "physical_restriction_codes_raw_json"
+    ],
+    "bounded_market_state_available_restriction_codes_semantics": "replay_consumption_restriction_codes",
+    "audit_lineage_requirement": "preserve physical_provenance_restriction_codes and physical_restriction_codes_raw_json",
+    "store_requirement": "MarketStateStore must preserve both labeled domains without using provenance codes as execution policy",
+    "fail_closed_conditions": [
+      "physical raw restrictions cannot reproduce the physical fingerprint",
+      "required replay-consumption restriction missing",
+      "unexpected replay-consumption restriction present",
+      "component replay restriction not propagated to row replay restrictions",
+      "domain label absent or domains silently merged",
+      "consumer treats provenance restriction as production or execution permission"
+    ]
+  },
+  "boundaries": {
+    "parquet_opened_by_this_gate": false,
+    "physical_rows_read_by_this_gate": 0,
+    "historical_sidecar_modified": false,
+    "historical_provider_evidence_modified": false,
+    "provider_control_plane_modified": false,
+    "backtester_modified": false,
+    "new_consumer_authorization_issued": false,
+    "V0_4_reusable": false,
+    "V0_5_authorized": false,
+    "Event_State_authorized": false,
+    "StateReplayFeed_general_authorized": false,
+    "production": false,
+    "downstream": false
+  },
+  "next_owner": {
+    "owner": "BT-GATE-014 backtester agent",
+    "required_action": "Adopt this binding in the consumer contract, event, audit lineage, store and regression suite before proposing a new single-use authorization.",
+    "external_preexecution_review_required": true
+  }
+}

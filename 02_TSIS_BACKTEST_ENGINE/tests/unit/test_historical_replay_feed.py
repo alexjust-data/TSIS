@@ -9,6 +9,7 @@ from tempfile import TemporaryDirectory
 import pyarrow as pa
 import pyarrow.parquet as pq
 
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
 
 from tsis_backtest.replay.contracts import ReplayBarEvent, ReplayContractError, ReplayGapEvent  # noqa: E402
@@ -134,13 +135,8 @@ class HistoricalReplayFeedTests(unittest.TestCase):
         self.assertEqual(first, second)
 
     def test_real_fixture_smoke_replay(self) -> None:
-        report_path = Path(
-            "C:/TSIS_Data/02_TSIS_BACKTEST_ENGINE/runs/"
-            "run_preflight_real_fixture_2026_01_05_qg5_v0_2/"
-            "data_preflight_report.json"
-        )
-        if not report_path.exists():
-            self.skipTest("local TSIS real fixture preflight report not present")
+        report_path = ROOT / "tests/fixtures/bt_gate_011_qg5_portable/data_preflight_report.json"
+        self.assertTrue(report_path.is_file(), "portable QG5 preflight fixture missing")
 
         feed = HistoricalReplayFeed.from_preflight_report(report_path)
         summary = feed.summarize()

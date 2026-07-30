@@ -1,0 +1,25 @@
+{
+  "files": {
+    "synthetic_market_bars.json": {
+      "sha256": "9f1ca720ae33435d344cc9f2e4bdca056259167643aed24768cb6d3bf7ede4f4",
+      "size_bytes": 926
+    },
+    "synthetic_raw_rows.json": {
+      "sha256": "98478feabb78155a4cad0fd834b2dfaca19da9b555964d40f0831c1d3b322295",
+      "size_bytes": 5602
+    },
+    "synthetic_sidecar.json": {
+      "sha256": "672eeaf65a4cb842622304d9a9001d116ed057b4c939d8a3dd0793d52481486a",
+      "size_bytes": 8772
+    }
+  },
+  "fixture_class": "SYNTHETIC_TYPED_MARKET_STATE",
+  "fixture_id": "bt_gate_014_synthetic_market_state_v0_1",
+  "market_bar_record_count": 2,
+  "not_provider_evidence": true,
+  "not_scientific_observation": true,
+  "physical_source_rows": 0,
+  "provider_parquet_opened": false,
+  "record_count": 2,
+  "synthetic": true
+}

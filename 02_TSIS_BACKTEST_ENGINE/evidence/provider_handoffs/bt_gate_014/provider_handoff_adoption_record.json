@@ -1,0 +1,38 @@
+{
+  "Event_State": "NOT_OPEN",
+  "PnL": false,
+  "StateReplayFeed_general": "NOT_AUTHORIZED",
+  "adoption_id": "bt_gate_014_provider_handoff_adoption_v0_1",
+  "bounded_non_physical_implementation_authorized": true,
+  "consumed_provider_authorization_reused": false,
+  "contract": {
+    "relative_path": "docs/00_system/15_BT_GATE_014_POINT_IN_TIME_MARKET_STATE_CONSUMER_CONTRACT_V0_1.md",
+    "review": "PASS",
+    "sha256": "cd88a75b2e856d1400efdc0ff2de830809c613b53edb01516c1836bfc782bc7e",
+    "status": "CONTRACT_ACCEPTED"
+  },
+  "fills": "NOT_AUTHORIZED",
+  "gate_id": "BT-GATE-014",
+  "nested_provider_evidence": {
+    "nested_inside_outer_sha256": "8f3d914becb3bc6d33f66814b355f636827db8cac67ea483fe9c6840b4fa16c7",
+    "relative_path": "evidence/provider_handoffs/bt_gate_014/bounded_state_bundle_read_and_replay_execution_and_review_v0_1_files_20260730T080831Z.zip",
+    "sha256_after_adoption": "8f3d914becb3bc6d33f66814b355f636827db8cac67ea483fe9c6840b4fa16c7",
+    "sha256_before_adoption": "8f3d914becb3bc6d33f66814b355f636827db8cac67ea483fe9c6840b4fa16c7",
+    "size_bytes": 176701
+  },
+  "orders": "NOT_AUTHORIZED",
+  "outer_handoff": {
+    "relative_path": "evidence/provider_handoffs/bt_gate_014/market_state_pit_bt_gate_014_contract_handoff_v0_1_20260730T091041Z.zip",
+    "sha256_after_adoption": "2c578ce9216bb3fd9010ef1f4afe8ba4022ab6b15f665d276a957f50acb35112",
+    "sha256_before_adoption": "2c578ce9216bb3fd9010ef1f4afe8ba4022ab6b15f665d276a957f50acb35112",
+    "size_bytes": 259737,
+    "zip_entries": 18,
+    "zip_integrity": "PASS"
+  },
+  "physical_data_included": false,
+  "physical_execution_authorized": false,
+  "physical_state_rows_read": 0,
+  "provider_parquet_opened": false,
+  "status": "PASS",
+  "strategy": "NOT_AUTHORIZED"
+}

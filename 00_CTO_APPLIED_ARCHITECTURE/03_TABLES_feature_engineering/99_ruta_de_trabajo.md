@@ -5,12 +5,49 @@ canonical cold-start entry = STATE_PROVIDER_CONSUMER_RECOVERY.md
 active provider gate = none
 next owner = BT-GATE-014
 BT-GATE-014 provider evidence handoff = COMPLETE
+restriction-domain binding = CLOSED_PASS
+BT-GATE-014 V0.4 = CONSUMED_FAILED_FINAL
+BT-GATE-014 V0.5 = NOT_AUTHORIZED
 backtester current-gate authority = 02_TSIS_BACKTEST_ENGINE/AGENTS.md
 ```
 
 Read the recovery document first. Blocks below are ordered newest first and
 preserve historical closure state; an older `current_gate` value is not the
 active gate.
+
+## Market State Restriction Domains Clarified - 2026-07-30
+
+```text
+market_state_restriction_domain_binding_clarification_v0_1
+=
+CLOSED_PASS_RESTRICTION_DOMAINS_DISAMBIGUATED_FOR_BT_GATE_014_NO_PHYSICAL_READ_NO_CONSUMER_AUTHORIZATION
+
+physical_provenance_restriction_codes
+=
+fingerprinted construction / scientific / lineage restrictions
+
+replay_consumption_restriction_codes
+=
+four bounded delivery restrictions
+
+component_replay_restriction_codes
+=
+component contributions to replay legality
+
+case_count = 19
+failed_cases = 0
+parquet_opened = false
+physical_rows_read = 0
+backtester_files_modified = 0
+V0_4_reusable = false
+V0_5_authorized = false
+```
+
+The V0.4 failure is accepted as correct fail-closed evidence. The consumer must
+not compare physical provenance restrictions with replay-consumption
+restrictions for equality and must not silently merge them into an unlabeled
+executable set. The next owner is BT-GATE-014, which must adopt the binding
+before proposing a separately reviewed single-use authorization.
 
 ## Schema Provenance / Runtime Content Binding Closed - 2026-07-30
 

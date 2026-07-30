@@ -1,0 +1,72 @@
+{
+  "canonical_source_root_relative": "data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate",
+  "capability": "PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1",
+  "files": [
+    {
+      "canonical_source_relative_path": "data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate/year=2026/ticker=ABAT/month=01/part-000.parquet",
+      "portable_fixture_relative_path": "tests/fixtures/bt_gate_013_physical_qg5_slice/source_root/year=2026/ticker=ABAT/month=01/part-000.parquet",
+      "sha256": "a3deef58908d17cefe4a4d91531309f248fde1c44681868535c94c93045f7b01",
+      "size_bytes": 384282,
+      "symbol": "ABAT"
+    },
+    {
+      "canonical_source_relative_path": "data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate/year=2026/ticker=ABEO/month=01/part-000.parquet",
+      "portable_fixture_relative_path": "tests/fixtures/bt_gate_013_physical_qg5_slice/source_root/year=2026/ticker=ABEO/month=01/part-000.parquet",
+      "sha256": "13631ba7e613fda4daae499a9917969270af61848a5203776905b777d7909dea",
+      "size_bytes": 217410,
+      "symbol": "ABEO"
+    },
+    {
+      "canonical_source_relative_path": "data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate/year=2026/ticker=ABSI/month=01/part-000.parquet",
+      "portable_fixture_relative_path": "tests/fixtures/bt_gate_013_physical_qg5_slice/source_root/year=2026/ticker=ABSI/month=01/part-000.parquet",
+      "sha256": "68f97c6dbf27ed6d0014f8921177689e8222b5f7d5af59dbb8d6f3ded811f41c",
+      "size_bytes": 316919,
+      "symbol": "ABSI"
+    },
+    {
+      "canonical_source_relative_path": "data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate/year=2026/ticker=ABTC/month=01/part-000.parquet",
+      "portable_fixture_relative_path": "tests/fixtures/bt_gate_013_physical_qg5_slice/source_root/year=2026/ticker=ABTC/month=01/part-000.parquet",
+      "sha256": "e2714ffa0cb8df363c85862732f0af8887c846c4ae2e366d3e61913d500bfe36",
+      "size_bytes": 372580,
+      "symbol": "ABTC"
+    },
+    {
+      "canonical_source_relative_path": "data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate/year=2026/ticker=ACB/month=01/part-000.parquet",
+      "portable_fixture_relative_path": "tests/fixtures/bt_gate_013_physical_qg5_slice/source_root/year=2026/ticker=ACB/month=01/part-000.parquet",
+      "sha256": "1d0280a2921811174b4a5cb009168d90b5ce366db54d20439561db2e03049708",
+      "size_bytes": 228974,
+      "symbol": "ACB"
+    }
+  ],
+  "fixture_id": "BT_GATE_013_PHYSICAL_QG5_2026_01_05_06_PORTABLE_COPY_V0_1",
+  "gate_id": "BT-GATE-013",
+  "portable_fixture_root_relative": "tests/fixtures/bt_gate_013_physical_qg5_slice/source_root",
+  "profitability_based_selection": "PROHIBITED",
+  "selection_policy": "OPERATIONAL_COVERAGE_ONLY",
+  "sessions": [
+    "2026-01-05",
+    "2026-01-06"
+  ],
+  "source_root_id": "ohlcv_1m_quote_guarded_full_universe_v0_2_candidate",
+  "state_provider_restrictions": {
+    "Event State consumption": "NOT_AUTHORIZED",
+    "Market State consumption": "NOT_AUTHORIZED",
+    "StateReplayFeed": "NOT_AUTHORIZED",
+    "provider_modification": "NOT_AUTHORIZED",
+    "upstream_rebuild": "PROHIBITED"
+  },
+  "symbol_sessions": 10,
+  "symbols": [
+    "ABAT",
+    "ABEO",
+    "ABSI",
+    "ABTC",
+    "ACB"
+  ],
+  "validation_manifest": {
+    "canonical_relative_path": "data/data_foundation_outputs/ohlcv_1m_quote_guarded_full_universe_v0_2_candidate/_validation_runs/qg_1m_full_universe_v0_2_candidate_validation_20260716T102500Z/final_manifest_validation.json",
+    "portable_fixture_relative_path": "tests/fixtures/bt_gate_013_physical_qg5_slice/source_root/_validation_runs/qg_1m_full_universe_v0_2_candidate_validation_20260716T102500Z/final_manifest_validation.json",
+    "sha256": "7baf90cc64d382b66cf4bde6e434f1ec6a0656e51bec5d45945f36e4b7787ddf",
+    "size_bytes": 5464
+  }
+}

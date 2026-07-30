@@ -1,0 +1,22 @@
+{
+  "authorization_document_sha256": "98c558a75d27027142a9398fb673a21c9cead8ff957c27db9ca2c20196654109",
+  "authorization_id": "BT-GATE-014-SINGLE-USE-PHYSICAL-AUTHORIZATION-V0-3",
+  "binding_sha256": {
+    "configs/fixtures/BT_GATE_014_PHYSICAL_INTEGRATION_BARRIERS_V0_3.json": "3cf276da2d423f7be83aea4ba547186c050e03946bd573c5027f99ca8ad3f234",
+    "scripts/run_bt_gate_014_single_use_physical_market_state_consumer_v0_3.py": "8e18bf96d8206fa19724e8182861f3544c17d5fb6abf17f27f07a7ae4217369d",
+    "src/tsis_backtest/market_state/consumer.py": "accaa37501c323d21c23d4b9300a947f0438ecbfb769cf6a9cde57e8d7fb7989",
+    "src/tsis_backtest/market_state/contracts.py": "b3cf8d469e2c730c5341a37d7bbc3063a14decdb59d073a6b8ac3dd94f4b020b",
+    "src/tsis_backtest/market_state/physical_authorization_v0_3.py": "2df75e13b0808875a28cb67e9c79a6191bce6e810a1cc8d0484921f7c4c2b414",
+    "src/tsis_backtest/market_state/physical_runner_v0_3.py": "4584012cbfa064166d1405bd34faca3a3fd00c76761e0e6ab4ad354290f70e55",
+    "src/tsis_backtest/market_state/store.py": "bc9f054657184bd2788c827145f3c5be945384f57d75b5f78c754e36ce3a1d4a",
+    "src/tsis_backtest/preflight/contracts.py": "12da900f292c8ed4169c7674b125d688dd39712a3d475e3e0fe3cc63575cf238",
+    "src/tsis_backtest/replay/contracts.py": "db8591453abb50e4e07125e7297e698c0690a14575fae66bca7795d97676fc29"
+  },
+  "configuration_sha256": "11c3b5af6015f5ee3eebe39dcfb6828ef0d51f80e5e4d617357627a64ef3989b",
+  "consumed_by_run_id": "bt_gate_014_single_use_physical_market_state_consumer_v0_3",
+  "consumer_id": "BT_GATE_014_BOUNDED_MARKET_STATE_CONSUMER",
+  "contract_consumer_id": "BT_GATE_014_bounded_market_state_consumer_v0_1",
+  "physical_consumer_read": "NOT_EXECUTED",
+  "physical_state_rows_read": 0,
+  "status": "CONSUMED_BY_RUN_bt_gate_014_single_use_physical_market_state_consumer_v0_3"
+}

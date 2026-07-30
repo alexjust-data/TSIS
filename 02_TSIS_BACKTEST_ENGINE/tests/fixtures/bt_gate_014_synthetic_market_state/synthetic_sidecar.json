@@ -1,0 +1,200 @@
+{
+  "fixture_class": "SYNTHETIC_TYPED_MARKET_STATE",
+  "not_provider_evidence": true,
+  "not_scientific_observation": true,
+  "physical_source_rows": 0,
+  "provider_parquet_opened": false,
+  "records": [
+    {
+      "candidate_dataset_fingerprint": "7d9aad3e5e3949d5b144ac975c41b868ce386aa3695176e90d0cf7e2a994331b",
+      "candidate_dataset_id": "synthetic_bt_gate_014_dataset_v0_1",
+      "component_availability_evidence": [
+        {
+          "availability_rule_id": "synthetic_available_v0_1",
+          "availability_status": "available",
+          "component_as_of_utc": "2026-01-05T14:31:00Z",
+          "component_available_at_utc": "2026-01-05T14:31:00Z",
+          "component_id": "synthetic_price_location_structure_1",
+          "cutoff_rule_id": "synthetic_cutoff_v0_1",
+          "information_object_id": "price_location_structure",
+          "restriction_codes": [
+            "candidate_runtime_only",
+            "not_official_dataset",
+            "no_downstream",
+            "no_production"
+          ],
+          "source_timestamp_utc": "2026-01-05T14:31:00Z"
+        },
+        {
+          "availability_rule_id": "synthetic_available_v0_1",
+          "availability_status": "available",
+          "component_as_of_utc": "2026-01-05T14:31:00Z",
+          "component_available_at_utc": "2026-01-05T14:31:00Z",
+          "component_id": "synthetic_price_movement_1",
+          "cutoff_rule_id": "synthetic_cutoff_v0_1",
+          "information_object_id": "price_movement",
+          "restriction_codes": [
+            "candidate_runtime_only",
+            "not_official_dataset",
+            "no_downstream",
+            "no_production"
+          ],
+          "source_timestamp_utc": "2026-01-05T14:31:00Z"
+        },
+        {
+          "availability_rule_id": "synthetic_available_v0_1",
+          "availability_status": "available",
+          "component_as_of_utc": "2026-01-05T14:31:00Z",
+          "component_available_at_utc": "2026-01-05T14:31:00Z",
+          "component_id": "synthetic_trading_activity_1",
+          "cutoff_rule_id": "synthetic_cutoff_v0_1",
+          "information_object_id": "trading_activity",
+          "restriction_codes": [
+            "candidate_runtime_only",
+            "not_official_dataset",
+            "no_downstream",
+            "no_production"
+          ],
+          "source_timestamp_utc": "2026-01-05T14:31:00Z"
+        },
+        {
+          "availability_rule_id": "synthetic_available_v0_1",
+          "availability_status": "available",
+          "component_as_of_utc": "2026-01-05T14:31:00Z",
+          "component_available_at_utc": "2026-01-05T14:31:00Z",
+          "component_id": "synthetic_volatility_range_state_1",
+          "cutoff_rule_id": "synthetic_cutoff_v0_1",
+          "information_object_id": "volatility_range_state",
+          "restriction_codes": [
+            "candidate_runtime_only",
+            "not_official_dataset",
+            "no_downstream",
+            "no_production"
+          ],
+          "source_timestamp_utc": "2026-01-05T14:31:00Z"
+        }
+      ],
+      "context_id": "synthetic_context_001",
+      "decision_timestamp_utc": "2026-01-05T14:31:00Z",
+      "instrument_id": "synthetic:bt_gate_014:instrument_001",
+      "materialized_state_candidate_id": "faae6613b2514d7175b75c80ac45632479b75dee010d91b6a5e704f4774e8d23",
+      "physical_profile_id": "core_four_market_state_profile_v0_1",
+      "profile_id": "market_state_core_four_intraday_profile_v0_1",
+      "restriction_codes": [
+        "candidate_runtime_only",
+        "not_official_dataset",
+        "no_downstream",
+        "no_production"
+      ],
+      "session_date": "2026-01-05",
+      "sidecar_id": "synthetic_sidecar_v0_1",
+      "sidecar_schema_id": "market_state_core_four_replay_availability_evidence_sidecar_contract_v0_1",
+      "source_candidate_record_id": "synthetic_source_001",
+      "state_as_of_utc": "2026-01-05T14:31:00Z",
+      "state_availability_policy_id": "market_state_core_four_replay_availability_policy_v0_1",
+      "state_availability_status": "available_for_decision_replay",
+      "state_available_at_utc": "2026-01-05T14:31:00Z",
+      "state_output_fingerprint": "97c3d42701183b6720ca77b9decf64d6939c9d808df460f040bfb110890b395a",
+      "state_publication_latency": "PT0S",
+      "state_publication_latency_policy_id": "zero_latency_candidate_replay_publication_policy_v0_1",
+      "state_replay_consumption_legality": "decision_safe",
+      "ticker": "SYNTH"
+    },
+    {
+      "candidate_dataset_fingerprint": "7d9aad3e5e3949d5b144ac975c41b868ce386aa3695176e90d0cf7e2a994331b",
+      "candidate_dataset_id": "synthetic_bt_gate_014_dataset_v0_1",
+      "component_availability_evidence": [
+        {
+          "availability_rule_id": "synthetic_available_v0_1",
+          "availability_status": "available",
+          "component_as_of_utc": "2026-01-05T14:32:00Z",
+          "component_available_at_utc": "2026-01-05T14:32:00Z",
+          "component_id": "synthetic_price_location_structure_2",
+          "cutoff_rule_id": "synthetic_cutoff_v0_1",
+          "information_object_id": "price_location_structure",
+          "restriction_codes": [
+            "candidate_runtime_only",
+            "not_official_dataset",
+            "no_downstream",
+            "no_production"
+          ],
+          "source_timestamp_utc": "2026-01-05T14:32:00Z"
+        },
+        {
+          "availability_rule_id": "synthetic_available_v0_1",
+          "availability_status": "available",
+          "component_as_of_utc": "2026-01-05T14:32:00Z",
+          "component_available_at_utc": "2026-01-05T14:32:00Z",
+          "component_id": "synthetic_price_movement_2",
+          "cutoff_rule_id": "synthetic_cutoff_v0_1",
+          "information_object_id": "price_movement",
+          "restriction_codes": [
+            "candidate_runtime_only",
+            "not_official_dataset",
+            "no_downstream",
+            "no_production"
+          ],
+          "source_timestamp_utc": "2026-01-05T14:32:00Z"
+        },
+        {
+          "availability_rule_id": "synthetic_available_v0_1",
+          "availability_status": "available",
+          "component_as_of_utc": "2026-01-05T14:32:00Z",
+          "component_available_at_utc": "2026-01-05T14:32:00Z",
+          "component_id": "synthetic_trading_activity_2",
+          "cutoff_rule_id": "synthetic_cutoff_v0_1",
+          "information_object_id": "trading_activity",
+          "restriction_codes": [
+            "candidate_runtime_only",
+            "not_official_dataset",
+            "no_downstream",
+            "no_production"
+          ],
+          "source_timestamp_utc": "2026-01-05T14:32:00Z"
+        },
+        {
+          "availability_rule_id": "synthetic_available_v0_1",
+          "availability_status": "available",
+          "component_as_of_utc": "2026-01-05T14:32:00Z",
+          "component_available_at_utc": "2026-01-05T14:32:00Z",
+          "component_id": "synthetic_volatility_range_state_2",
+          "cutoff_rule_id": "synthetic_cutoff_v0_1",
+          "information_object_id": "volatility_range_state",
+          "restriction_codes": [
+            "candidate_runtime_only",
+            "not_official_dataset",
+            "no_downstream",
+            "no_production"
+          ],
+          "source_timestamp_utc": "2026-01-05T14:32:00Z"
+        }
+      ],
+      "context_id": "synthetic_context_002",
+      "decision_timestamp_utc": "2026-01-05T14:32:00Z",
+      "instrument_id": "synthetic:bt_gate_014:instrument_001",
+      "materialized_state_candidate_id": "99bd8c479b34a9812cdb60b1509890042377b9b785427082cceeb6c33c7c19ff",
+      "physical_profile_id": "core_four_market_state_profile_v0_1",
+      "profile_id": "market_state_core_four_intraday_profile_v0_1",
+      "restriction_codes": [
+        "candidate_runtime_only",
+        "not_official_dataset",
+        "no_downstream",
+        "no_production"
+      ],
+      "session_date": "2026-01-05",
+      "sidecar_id": "synthetic_sidecar_v0_1",
+      "sidecar_schema_id": "market_state_core_four_replay_availability_evidence_sidecar_contract_v0_1",
+      "source_candidate_record_id": "synthetic_source_002",
+      "state_as_of_utc": "2026-01-05T14:32:00Z",
+      "state_availability_policy_id": "market_state_core_four_replay_availability_policy_v0_1",
+      "state_availability_status": "available_for_decision_replay",
+      "state_available_at_utc": "2026-01-05T14:32:00Z",
+      "state_output_fingerprint": "2368add02b724334dd5f798da10e84344bebe7ac156ff47201fdec144a6b8b77",
+      "state_publication_latency": "PT0S",
+      "state_publication_latency_policy_id": "zero_latency_candidate_replay_publication_policy_v0_1",
+      "state_replay_consumption_legality": "decision_safe",
+      "ticker": "SYNTH"
+    }
+  ],
+  "synthetic": true
+}

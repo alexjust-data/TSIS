@@ -47,6 +47,11 @@ class PortfolioRunRequest:
     edge_evidence: str = "NOT_AUTHORIZED"
     economic_realism: str = "INCOMPLETE"
     strategy_optimization: str = "NOT_AUTHORIZED"
+    gate_id: str = BT_GATE_012
+    capability: str = MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE
+    preloaded_replay_events: tuple[Any, ...] | None = None
+    preloaded_replay_summaries: tuple[Any, ...] = ()
+    preloaded_input_reports: tuple[Mapping[str, Any], ...] = ()
 
     def to_dict(self) -> dict[str, Any]:
         return to_jsonable(self)

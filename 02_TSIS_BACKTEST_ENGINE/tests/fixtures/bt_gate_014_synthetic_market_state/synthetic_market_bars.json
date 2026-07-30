@@ -1,0 +1,36 @@
+{
+  "fixture_class": "SYNTHETIC_MARKET_DATA_BARS",
+  "not_provider_evidence": true,
+  "not_scientific_observation": true,
+  "physical_source_rows": 0,
+  "provider_parquet_opened": false,
+  "records": [
+    {
+      "available_at": "2026-01-05T14:31:00Z",
+      "close": 11.2,
+      "high": 11.3,
+      "low": 10.9,
+      "open": 11.0,
+      "price_view": "synthetic_market_data",
+      "session_label": "2026-01-05",
+      "ticker": "SYNTH",
+      "ts_end": "2026-01-05T14:31:00Z",
+      "ts_start": "2026-01-05T14:30:00Z",
+      "volume": 1000
+    },
+    {
+      "available_at": "2026-01-05T14:32:00Z",
+      "close": 11.4,
+      "high": 11.5,
+      "low": 11.1,
+      "open": 11.2,
+      "price_view": "synthetic_market_data",
+      "session_label": "2026-01-05",
+      "ticker": "SYNTH",
+      "ts_end": "2026-01-05T14:32:00Z",
+      "ts_start": "2026-01-05T14:31:00Z",
+      "volume": 1200
+    }
+  ],
+  "synthetic": true
+}

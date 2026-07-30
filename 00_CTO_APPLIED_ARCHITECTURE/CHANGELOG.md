@@ -1,3 +1,17 @@
+## 2026-07-30 - Market State restriction-domain binding clarification
+
+- Closed `market_state_restriction_domain_binding_clarification_v0_1` with
+  `19/19` metadata and failure-evidence cases passing.
+- Accepted BT-GATE-014 V0.4 as a correct fail-closed result after one physical
+  file and two rows were read with zero Market State events, store inserts,
+  orders, fills or PnL.
+- Distinguished fingerprinted physical provenance restrictions from bounded
+  replay-consumption restrictions and component replay restrictions.
+- Prohibited equality between the physical provenance and replay-consumption
+  domains, as well as unlabeled executable unions.
+- Preserved historical provider artifacts and the backtester implementation;
+  opened no Parquet, read no physical rows and issued no V0.5 authorization.
+
 ## 2026-07-30 - State provider-consumer cold-start recovery path
 
 - Added `03_TABLES_feature_engineering/STATE_PROVIDER_CONSUMER_RECOVERY.md` as

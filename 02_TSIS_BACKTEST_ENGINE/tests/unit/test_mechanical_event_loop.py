@@ -5,6 +5,7 @@ import unittest
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
 
 from tsis_backtest.mechanics.contracts import BUY_TO_COVER, CLOSE_PROXY, OPEN_PROXY, SELL_SHORT, ScheduledDecision  # noqa: E402
@@ -62,13 +63,8 @@ class MechanicalEventLoopTests(unittest.TestCase):
         self.assertEqual(ctx.exception.code, "MECHANICAL_QUANTITY_MISMATCH")
 
     def test_real_fixture_abat_short_round_trip_matches_linear_reference(self) -> None:
-        report_path = Path(
-            "C:/TSIS_Data/02_TSIS_BACKTEST_ENGINE/runs/"
-            "run_preflight_real_fixture_2026_01_05_qg5_v0_2/"
-            "data_preflight_report.json"
-        )
-        if not report_path.exists():
-            self.skipTest("local TSIS real fixture preflight report not present")
+        report_path = ROOT / "tests/fixtures/bt_gate_011_qg5_portable/data_preflight_report.json"
+        self.assertTrue(report_path.is_file(), "portable QG5 preflight fixture missing")
         events = HistoricalReplayFeed.from_preflight_report(report_path).stream_events()
         quantity = 100
         result = MechanicalEventLoop().run("mechanical_abat_real_fixture_v0_1", events, self._decisions("ABAT", quantity))

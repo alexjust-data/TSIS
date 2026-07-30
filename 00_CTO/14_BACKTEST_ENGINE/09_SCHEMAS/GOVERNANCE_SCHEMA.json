@@ -1,50 +1,137 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://tsis.local/schemas/backtest-governance-v0.1.json",
-  "title": "TSIS Backtest Governance Register",
-  "type": "object",
-  "required": ["register_id", "as_of"],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "anyOf": [
+    {
+      "required": [
+        "entries"
+      ]
+    },
+    {
+      "required": [
+        "gates"
+      ]
+    }
+  ],
   "properties": {
-    "register_id": {"type": "string", "minLength": 1},
-    "matrix_id": {"type": "string", "minLength": 1},
-    "as_of": {"type": "string", "format": "date"},
-    "scope": {"type": "string"},
-    "source_root": {"type": "string"},
+    "as_of": {
+      "format": "date",
+      "type": "string"
+    },
     "entries": {
-      "type": "array",
       "items": {
-        "type": "object",
-        "minProperties": 4,
         "anyOf": [
-          {"required": ["decision_id", "domain", "title", "status"]},
-          {"required": ["policy_id", "domain", "title", "status"]},
-          {"required": ["capability_id", "status", "decision_ids", "policy_ids"]},
-          {"required": ["exception_id", "type", "status", "scope"]}
-        ]
-      }
+          {
+            "required": [
+              "decision_id",
+              "domain",
+              "title",
+              "status"
+            ]
+          },
+          {
+            "required": [
+              "policy_id",
+              "domain",
+              "title",
+              "status"
+            ]
+          },
+          {
+            "required": [
+              "capability_id",
+              "status",
+              "decision_ids",
+              "policy_ids"
+            ]
+          },
+          {
+            "required": [
+              "exception_id",
+              "type",
+              "status",
+              "scope"
+            ]
+          }
+        ],
+        "minProperties": 4,
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "files": {
+      "type": "array"
     },
     "gates": {
-      "type": "array",
       "items": {
-        "type": "object",
-        "required": ["gate_id", "title", "status", "authorized_scope", "evidence", "non_claims"],
+        "additionalProperties": true,
         "properties": {
-          "gate_id": {"type": "string", "minLength": 1},
-          "title": {"type": "string", "minLength": 1},
-          "status": {"type": "string", "minLength": 1},
-          "authorized_scope": {"type": ["string", "null"]},
-          "evidence": {"type": "array", "items": {"type": "string"}},
-          "non_claims": {"type": "array", "items": {"type": "string"}}
+          "authorized_scope": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "evidence": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "gate_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "non_claims": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "status": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": {
+            "minLength": 1,
+            "type": "string"
+          }
         },
-        "additionalProperties": true
-      }
+        "required": [
+          "gate_id",
+          "title",
+          "status",
+          "authorized_scope",
+          "evidence",
+          "non_claims"
+        ],
+        "type": "object"
+      },
+      "type": "array"
     },
-    "next_gate": {"type": "object"},
-    "files": {"type": "array"}
+    "matrix_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "next_gate": {
+      "type": "object"
+    },
+    "register_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "source_root": {
+      "type": "string"
+    }
   },
-  "anyOf": [
-    {"required": ["entries"]},
-    {"required": ["gates"]}
+  "required": [
+    "register_id",
+    "as_of"
   ],
-  "additionalProperties": true
+  "title": "TSIS Backtest Governance Register",
+  "type": "object"
 }

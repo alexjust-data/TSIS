@@ -85,7 +85,7 @@ class PortfolioSliceRunner:
         })
         validation_status = self._validation_status(request, ordered_events, order_results, fills, positions, session_results, metrics, loop)
         summary = PortfolioRunSummary(
-            request.run_id, BT_GATE_012, MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE,
+            request.run_id, request.gate_id, request.capability,
             request.fixture_id, len(request.session_dates), len(request.strategy_spec.symbols),
             len(request.session_dates) * len(request.strategy_spec.symbols), len(ordered_events),
             sum(isinstance(e, ReplayBarEvent) for e in ordered_events), sum(isinstance(e, ReplayGapEvent) for e in ordered_events),
@@ -144,7 +144,7 @@ class PortfolioSliceRunner:
             raise BacktestRunError("BT012_FIXTURE_MINIMUM_NOT_MET", request.run_id)
         if len(set(request.strategy_spec.symbols)) != len(request.strategy_spec.symbols):
             raise BacktestRunError("BT012_DUPLICATE_SYMBOLS", str(request.strategy_spec.symbols))
-        if len(request.preflight_report_paths) != len(request.session_dates):
+        if request.preloaded_replay_events is None and len(request.preflight_report_paths) != len(request.session_dates):
             raise BacktestRunError("BT012_PREFLIGHT_SESSION_COUNT_MISMATCH", str(request.preflight_report_paths))
 
     def _load_calendar(self, request: PortfolioRunRequest) -> tuple[Mapping[str, Any], dict[date, SessionCalendarEntry]]:
@@ -170,6 +170,12 @@ class PortfolioSliceRunner:
         return payload, entries
 
     def _load_events(self, request: PortfolioRunRequest) -> tuple[tuple[ReplayEvent, ...], tuple[ReplayRunSummary, ...], tuple[Mapping[str, Any], ...]]:
+        if request.preloaded_replay_events is not None:
+            return (
+                tuple(request.preloaded_replay_events),
+                tuple(request.preloaded_replay_summaries),
+                tuple(request.preloaded_input_reports),
+            )
         events = []
         summaries = []
         reports = []
@@ -394,7 +400,7 @@ class PortfolioSliceRunner:
 
     def _manifest(self, request: PortfolioRunRequest, reports: tuple[Mapping[str, Any], ...], replay_summaries: tuple[ReplayRunSummary, ...], calendar_payload: Mapping[str, Any], summary: PortfolioRunSummary, output_artifacts: Mapping[str, str]) -> PortfolioRunManifest:
         return PortfolioRunManifest(
-            "bt_portfolio_run_manifest_v0_1", request.run_id, BT_GATE_012, MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE,
+            "bt_portfolio_run_manifest_v0_1", request.run_id, request.gate_id, request.capability,
             request.fixture_id, request.strategy_spec.strategy_id, request.strategy_spec.strategy_spec_version,
             {"preflight_report_paths": tuple(p.as_posix() for p in request.preflight_report_paths), "preflight_report_sha256": tuple(sha256_file(p) for p in request.preflight_report_paths), "replay_event_sequence_sha256": tuple(s.replay_event_sequence_sha256 for s in replay_summaries), "source_hashes": tuple(r.get("snapshot_or_content_hashes", {}) for r in reports)},
             request.strategy_spec.symbols, tuple(s.isoformat() for s in request.session_dates), request.starting_equity,
@@ -412,8 +418,8 @@ class PortfolioSliceRunner:
         traces = result.event_loop_trace
         return {
             "status": result.summary.validation_status,
-            "gate_id": BT_GATE_012,
-            "capability": MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE,
+            "gate_id": result.request.gate_id,
+            "capability": result.request.capability,
             "run_id": result.request.run_id,
             "fixture_acceptance_profile": {"sessions": len(result.request.session_dates), "symbols": len(result.request.strategy_spec.symbols), "symbol_sessions": len(result.request.session_dates) * len(result.request.strategy_spec.symbols), "ReplayGapEvent_presence": result.summary.replay_gap_count > 0, "same_timestamp_cross_symbol_events": True, "contractual_open_close_coverage": True},
             "global_replay_order_policy": GLOBAL_REPLAY_ORDER_V0_1,
@@ -504,7 +510,7 @@ def _parse_utc(value: Any) -> datetime:
 
 
 def _write_readme(run_dir: Path, result: PortfolioRunResult) -> None:
-    text = f"""# BT-GATE-012 Portfolio Slice Run
+    text = f"""# {result.summary.gate_id} Portfolio Slice Run
 
 run_id: {result.request.run_id}
 status: {result.summary.validation_status}

@@ -1,0 +1,15 @@
+{
+  "authorization_document_sha256": "1d517be7b646945481ddc40db64866be1e5fb7586095c849e827fc34c344f0b5",
+  "authorization_id": "BT-GATE-014-SINGLE-USE-PHYSICAL-AUTHORIZATION-V0-1",
+  "binding_sha256": {
+    "configs/fixtures/BT_GATE_014_PHYSICAL_INTEGRATION_BARRIERS_V0_1.json": "def4ced18cc1d9b36583ab60a669c8ce51839156fdd25bd934df591568bb1352",
+    "scripts/run_bt_gate_014_single_use_physical_market_state_consumer.py": "56d44dbf04b0f8c40375f5dfc6be333248a622d61f98478d1e8746675051b0d0",
+    "src/tsis_backtest/market_state/physical_authorization.py": "740486796b666d859acdd1f99438c1be7a756608d3d850e8544f65bb7288e9ca",
+    "src/tsis_backtest/market_state/physical_runner.py": "17811668256bbc9e3bfed3b813e80addb32966123aee579089701343a4b60d97"
+  },
+  "configuration_sha256": "053111fb6b9169e712c1b6684521ebcd04cd785fde32c6bad036bbb44c68ed96",
+  "consumed_by_run_id": null,
+  "physical_consumer_read": "NOT_EXECUTED",
+  "physical_state_rows_read": 0,
+  "status": "SUPERSEDED_UNCONSUMED_AFTER_PREEXECUTION_REVIEW_FAIL"
+}

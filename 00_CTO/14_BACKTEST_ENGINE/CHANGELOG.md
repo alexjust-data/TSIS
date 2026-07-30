@@ -1,6 +1,57 @@
+## Current Authoritative State - BT-GATE-014 final closure
+
+```text
+BT-GATE-014 = CLOSED_PASS_POINT_IN_TIME_MARKET_STATE_CONSUMPTION_WITH_RESTRICTIONS
+BT-GATE-014_IMPLEMENTATION = IMPLEMENTED_AND_ACCEPTED
+IMPLEMENTATION_ACCEPTANCE = ACCEPTED
+V0.5 = CONSUMED_FINAL
+SECOND_EXECUTION_V0.5 = PROHIBITED
+physical files / rows / events / inserts / observations = 1 / 2 / 2 / 2 / 2
+early delivered / orders / fills / PnL = 0 / 0 / 0 / false
+deterministic_output_hash = 6331839dfc6538f7dd6fda9a1fd7efbc7497d541dcb0c0d89cfd679762067cb1
+BT-GATE-015 = NOT_OPEN
+BT-GATE-015_IMPLEMENTATION = NOT_AUTHORIZED
+Event State = NOT_AUTHORIZED
+```
+
+Mandatory restart handoff:
+`docs/00_system/CURRENT_PROJECT_HANDOFF.md`
+
+All subsequent status blocks are historical snapshots and are superseded by
+this block.
+## BT-GATE-014 V0.5 R2 pre-execution correction
+
+```text
+V0.5 R1 external pre-execution review = FAIL_TARGETED_CORRECTIONS_REQUIRED
+V0.5 authorization consumption = NOT_CONSUMED
+V0.5 physical read = NOT_EXECUTED
+R2 correction = closed configuration accepts and validates the two restriction-domain binding fields
+governed physical and metadata inputs = 10
+physical command = NOT_APPROVED_PENDING_R2_EXTERNAL_PREEXECUTION_REVIEW
+```
+
+## Historical Snapshot - Superseded - Current Authoritative State - BT-GATE-014 V0.5
+
+```text
+BT-GATE-014 = OPEN_PENDING_V0_5_EXTERNAL_PREEXECUTION_REVIEW
+V0.3 = CONSUMED_FAILED_FINAL
+V0.4 = CONSUMED_FAILED_FINAL
+SECOND_EXECUTION_V0.3/V0.4 = PROHIBITED
+RESTRICTION_DOMAIN_BINDING = ADOPTED
+V0.5 = AUTHORIZED_NOT_CONSUMED
+PHYSICAL_COMMAND_V0.5 = NOT_APPROVED_PENDING_EXTERNAL_PREEXECUTION_REVIEW
+PHYSICAL_READ_V0.5 = NOT_EXECUTED
+BT-GATE-014_CLOSED_PASS = NOT_AUTHORIZED
+Event State = NOT_OPEN
+```
+
+The provider/shared-boundary clarification separates physical provenance,
+bounded replay-consumption and component replay restriction domains. V0.5 may
+be executed once only after an independent pre-execution PASS.
+
 # Changelog
 
-## 2026-07-29 â€” Integrated governance baseline V0.1.1
+## 2026-07-29 — Integrated governance baseline V0.1.1
 
 - Integrated the pre-existing `14_BACKTEST_ENGINE` guide and root documentation.
 - Preserved all pre-governance root files under `11_HISTORICAL_SNAPSHOTS` as non-authoritative evidence.
@@ -21,7 +72,7 @@ CHANGELOG_HISTORY_SOURCE.md
 
 It is provenance, not a competing live-state document.
 
-## 2026-07-29 â€” Initial governance baseline V0.1
+## 2026-07-29 — Initial governance baseline V0.1
 
 - Created the backtest-engine authority root from an audit of the 92-entry implementation snapshot.
 - Registered 16 decisions, 23 policies, 8 gates and 8 exceptions/limitations.
@@ -326,3 +377,182 @@ Applied contractual corrections only: source identity layering, exact physical b
 derived time-field semantics without native `source_as_of_utc`, stable source row locator,
 portable relative paths, repair/provenance field restrictions and living-surface cleanup.
 No code, tests, configs, scripts, runs, data, provider, Market State, Event State or StateReplayFeed were modified.
+
+
+## 2026-07-29 | BT-GATE-013 implementation evidence prepared
+
+```text
+BT-GATE-013 = IMPLEMENTED_PENDING_FINAL_ACCEPTANCE_REVIEW
+BT-GATE-013_IMPLEMENTATION = IMPLEMENTED_PENDING_FINAL_ACCEPTANCE_REVIEW
+PHYSICAL_RUN = AUTHORIZED_ONLY_FOR_THE_FROZEN_ACCEPTANCE_SLICE_EXECUTED
+IMPLEMENTATION_ACCEPTANCE = PENDING_FINAL_EXTERNAL_REVIEW
+ENGINE_TEST_SUITE = 119 tests PASS
+BT-GATE-013_VALIDATION_STATUS = PASS
+BT-GATE-013_DETERMINISTIC_OUTPUT_HASH = ede33c7037a0bd08670423a4ac05b4836aa1472163027c7a86e883fca0b5c019
+```
+
+The gate is not closed. Final acceptance requires external review of the package. StateReplayFeed, Market State, Event State, StateBundle reads, provider modification, full 2005-2026 backtest, optimization and edge claims remain not authorized.
+
+## 2026-07-30 | BT-GATE-013 corrected acceptance evidence regenerated
+
+- Corrected the BT-GATE-013 acceptance evidence rejected under package SHA-256 `42421cbe0668c458b4559eadf0aad44f2ec8f00a64956622920a384586c1fe1d`.
+- The physical replay adapter now consumes `portable_fixture_manifest_sha256`, validates `FIXTURE_MANIFEST.json`, verifies the validation manifest identity, and compares each authorized Parquet file by SHA-256 and size before reading.
+- `negative_derivative_report.json` is generated from 15 executed derivative checks, including source hash mismatch, source mutation during read, duplicate/conflicting physical bars, temporal availability violation, calendar timezone contract and truncated session failures.
+- `final_manifest.json` now declares the section 16 evidence directly, including validation/calendar manifests, source files, timestamp and availability ranges, component versions, output hashes and negative-test aggregate results.
+- Recorded `ENGINE_TEST_SUITE = 119 tests PASS`, `BT-GATE-013_FOCUSED_TESTS = 13 physical replay tests PASS`, and deterministic output hash `ede33c7037a0bd08670423a4ac05b4836aa1472163027c7a86e883fca0b5c019`.
+- `BT-GATE-013` remains `IMPLEMENTED_PENDING_FINAL_ACCEPTANCE_REVIEW`; do not record `CLOSED_PASS` until external final review accepts the corrected package.
+
+## 2026-07-30 | BT-GATE-013 targeted contract-conformance corrections
+
+- Executed exactly `NEGATIVE_01` through `NEGATIVE_15` from contract section 19; relocation, physical-row reordering and full replay gap semantics now produce executed evidence.
+- Retained fixture/validation manifest checks as five supplemental metadata and identity cases.
+- Resolved `portfolio_run_manifest_hash` against the manifest actually written with `output_artifacts`, with artifact-reference validation.
+- Removed repair metadata from operational `MarketDataBar1m.quality_flags`; repair fields remain only in `physical_lineage`.
+- Added hash-before/hash-after mutation protection for fixture manifest, validation manifest and calendar.
+- Recorded `ENGINE_TEST_SUITE = 119 tests PASS`, `BT-GATE-013_FOCUSED_TESTS = 13 PASS`, and deterministic output hash `ede33c7037a0bd08670423a4ac05b4836aa1472163027c7a86e883fca0b5c019`.
+- `BT-GATE-013` remains `IMPLEMENTED_PENDING_FINAL_ACCEPTANCE_REVIEW`; `CLOSED_PASS` is not authorized before external acceptance.
+
+## 2026-07-30 | BT-GATE-013 scientific manifest portability correction
+
+- Canonicalized `configuration_snapshot.json` before artifact hashing: `output_root` and `session_calendar_snapshot_path` are portable relative paths.
+- Recomputed the written portfolio manifest after canonical configuration hashing and preserved final-manifest resolution against that artifact.
+- Extended `NEGATIVE_13` to execute and write two runs under different absolute roots and compare configuration, portfolio and final scientific manifests.
+- Recorded `NEGATIVE_13 = PASS_WITH_IDENTICAL_SCIENTIFIC_HASH`, `ENGINE_TEST_SUITE = 119 tests PASS`, and deterministic output hash `ede33c7037a0bd08670423a4ac05b4836aa1472163027c7a86e883fca0b5c019`.
+- `BT-GATE-013` remains `IMPLEMENTED_PENDING_FINAL_ACCEPTANCE_REVIEW`; final closure remains unauthorized pending external acceptance.
+
+
+## 2026-07-30 | BT-GATE-013 final external acceptance
+
+```text
+BT-GATE-013_FINAL_EXTERNAL_REVIEW = PASS
+BT-GATE-013 = CLOSED_PASS_PHYSICAL_HISTORICAL_REPLAY_ACCEPTED
+BT-GATE-013_IMPLEMENTATION = IMPLEMENTED_AND_ACCEPTED
+IMPLEMENTATION_ACCEPTANCE = ACCEPTED
+FINAL_ACCEPTANCE_PACKET_SHA256 = 4c89a8279ee7a999fc2774cbac06e15d8779ba347aaf28aa1d9fd7bba2895f9d
+DETERMINISTIC_OUTPUT_HASH = ede33c7037a0bd08670423a4ac05b4836aa1472163027c7a86e883fca0b5c019
+CLEAN_EXTRACTIONS = 2
+ENGINE_TEST_SUITE_A_B = 119 tests PASS
+RUN_END_TO_END_A_B = PASS
+CURRENT_GATE = NONE
+NEXT_GATE = NOT_OPEN
+```
+
+This administrative closure does not authorize StateReplayFeed, Market State, Event State, StateBundle reads, provider modification, the full 2005-2026 backtest, Small-Caps Rigorous Research Runner, optimization or edge claims.
+## 2026-07-30 - BT-GATE-014 non-physical consumer phase
+
+- Adopted provider handoff by exact SHA-256 without reusing consumed physical authorization.
+- Implemented typed core-four `BoundedMarketStateAvailable`, immutable PIT store and bounded probe.
+- Executed 15 positive and 33 negative contract cases; full engine suite: 128 tests PASS.
+- Physical provider rows read: 0. Next requirement: new single-use physical authorization.
+## 2026-07-30 - BT-GATE-014 Phase B external corrections
+
+- Corrected temporal derivation, stored-at visibility, 1:1 row-sidecar join and frozen authority validation.
+- Bound all synthetic inputs by hash/size and replaced overdeclared permutation/root tests with executed evidence.
+- Added six external-review regressions; included tests: 15 PASS; complete suite: 134 PASS.
+- Physical read remains NOT_EXECUTED; new single-use physical authorization remains NOT_AUTHORIZED pending external re-review.
+## 2026-07-30 - BT-GATE-014 second Phase B correction round
+
+- Required all sidecar identity fields from section 14 and rejected missing fields.
+- Added defensive store validation against forged/unvalidated events.
+- Enforced closed fixture inventory, mandatory config path and exact request/config authority equality.
+- Replaced three local skips with portable QG5 fixtures.
+- External-review regressions: 11 PASS; included tests: 20 PASS; complete suite: 139 PASS, 0 skipped.
+- Physical Market State rows remain unread; single-use authorization remains NOT_AUTHORIZED.
+## 2026-07-30 - BT-GATE-014 third Phase B correction round
+
+- MarketStateStore now accepts only a typed validation wrapper with receipt bound to event bytes and frozen authority.
+- Store rejects raw events and altered post-validation events; sidecar profile, policy, schema and identifiers are enforced.
+- Remaining governance current-state block marked historical/superseded.
+- ZIP manifest status corrected and package-local JSON counts made reproducible.
+- External-review regressions: 13 PASS; included tests: 22 PASS; complete suite: 141 PASS, 0 skipped.
+- Physical Market State rows remain unread; single-use authorization remains NOT_AUTHORIZED.
+
+
+
+## 2026-07-30 - BT-GATE-014 contract-conformance correction round
+
+- Bound provider package identity directly to compiled frozen hashes, adoption
+  before/after values, configuration pins and nested bytes.
+- Replaced event-only sealing with atomic raw-row/sidecar validation and receipt.
+- Adopted provider component status `available` while preserving row status
+  `available_for_decision_replay`.
+- Separated consumed synthetic sidecar hash from provider sidecar authority hash.
+- Added an independent, hashed synthetic market-bar fixture.
+- Corrected POSITIVE_10, POSITIVE_12, NEGATIVE_18 and NEGATIVE_31 evidence.
+- Tests: 146/146 PASS; included BT-GATE-014 tests: 27/27 PASS; external-review
+  regressions: 18/18 PASS; skipped: 0.
+- Physical Market State rows read: 0. New single-use authorization remains
+  NOT_AUTHORIZED.
+
+## 2026-07-30 - BT-GATE-014 final Phase B contract-conformance hardening
+
+- Recorded the closed runner bijection, recursive immutable store lineage,
+  strict JSON and closed sidecar/component/fixture schemas.
+- Recorded canonical UTC `Z` serialization and defensive reconstruction of
+  Market State fingerprints at store insertion.
+- Cross-bound the live deterministic hash across policy, gate, traceability,
+  governance package and canonical run.
+- Tests: 155/155 PASS; included BT-GATE-014 tests: 36/36 PASS;
+  external-review regressions: 27/27 PASS; skipped: 0.
+- Deterministic output hash:
+  `bb499dd82edf7b7fb165aa9d5e088468e946138c16b1ffce89a4bbb74b8bd7fd`.
+- Scientific manifest hash:
+  `25f80ee5c11aadd2838fbc8a54aa7b182ed2583fc49f1ba78c1cb26e235456ee`.
+- Physical consumer read remains NOT_EXECUTED and new single-use physical
+  authorization remains NOT_AUTHORIZED.
+
+## 2026-07-30 - BT-GATE-014 Phase B external re-review accepted
+
+- Recorded `BT-GATE-014_PHASE_B_EXTERNAL_RE_REVIEW = PASS`.
+- Accepted the bounded non-physical consumer implementation only.
+- Adopted `bt_gate_014_non_physical_consumer_acceptance_packet_20260730T150834Z.zip` with SHA-256 `6881b6b485f7e6aed6744e609b1e61f66073dc3e20c0e807245a3b38a35f7645`.
+- Preserved deterministic output `bb499dd82edf7b7fb165aa9d5e088468e946138c16b1ffce89a4bbb74b8bd7fd` and scientific manifest `25f80ee5c11aadd2838fbc8a54aa7b182ed2583fc49f1ba78c1cb26e235456ee`.
+- Set `BT-GATE-014 = PHASE_B_ACCEPTED_PENDING_SINGLE_USE_PHYSICAL_AUTHORIZATION`.
+- Set `NEW_SINGLE_USE_PHYSICAL_AUTHORIZATION = ELIGIBLE_NOT_ISSUED`.
+- Preserved `PHYSICAL_CONSUMER_READ = NOT_EXECUTED`, `PHYSICAL_STATE_ROWS_READ = 0`, and `BT-GATE-014_CLOSED_PASS = NOT_AUTHORIZED`.
+
+## 2026-07-30 - BT-GATE-014 single-use physical authorization issued
+
+- Bound executable binding prepared and tested without Market State physical reads.
+- `NEW_SINGLE_USE_PHYSICAL_AUTHORIZATION = AUTHORIZED_NOT_CONSUMED`.
+- `PHYSICAL_CONSUMER_READ = NOT_EXECUTED`; `PHYSICAL_STATE_ROWS_READ = 0`.
+- BT-GATE-014 remains open and CLOSED_PASS remains unauthorized.
+
+## 2026-07-30 - BT-GATE-014 physical authorization V0.2
+
+- V0.1 superseded unconsumed after pre-execution review failure.
+- V0.2 binds the accepted consumer pipeline, nine frozen inputs and complete success/failure evidence.
+- `V0_2 = AUTHORIZED_NOT_CONSUMED`; physical rows read remain zero.
+
+## 2026-07-30 - BT-GATE-014 physical authorization V0.3
+
+- Registered V0.1 and V0.2 as superseded and unconsumed after their pre-execution review failures.
+- Registered the corrected `BAR → STATE` causal key and durable pre-consumption failure guard.
+- Bound V0.3 to the exact two-row ACIU scope, nine frozen inputs and complete deterministic/scientific evidence.
+- Added semantic governance validation across authorization states, gate, policy, traceability, exception, document, config and executable hashes.
+- `V0_3 = AUTHORIZED_NOT_CONSUMED`; physical rows read remain zero and closure remains unauthorized.
+
+## 2026-07-30 - BT-GATE-014 V0.3 consumed failure and V0.4 preparation
+
+- Preserved V0.3 receipt, pre-run and failure evidence; V0.3 is CONSUMED_FAILED_FINAL and cannot be reused.
+- Effective physical progress was one file and two rows; zero Market State events, orders, fills or PnL.
+- Corrected restriction equivalence to exact-set semantics with duplicate/omission/extra rejection while preserving raw JSON.
+- Added durable physical progress telemetry and failure-manifest propagation.
+- Prepared V0.4 with the identical two-row ACIU scope; physical execution remains NOT_APPROVED pending external pre-execution review.
+- Focused V0.4 suite: 17 PASS (14 functional V0.4 + 3 canonical). Full repository suite: 197 PASS.
+
+## 2026-07-30 - BT-GATE-014 V0.4 R2 preconsumption failure and R3 correction
+
+- The externally approved R2 command failed during closed configuration validation before authorization consumption, run-directory creation or physical access.
+- Cause: PRODUCTION_SPEC retained the V0.3 barrier hash while V0.4 configuration correctly pinned the V0.4 barrier hash.
+- V0.4 remained AUTHORIZED_NOT_CONSUMED; no Parquet was opened and no physical row was read.
+- Corrected the literal and added a canonical PRODUCTION_SPEC/configuration regression.
+- R3 requires a new external pre-execution PASS. Focused: 18 PASS. Full suite: 198 PASS.
+
+## 2026-07-30 - BT-GATE-014 V0.4 consumed physical failure
+
+- V0.4 consumed exactly one authorized run and read one Parquet / two ACIU rows.
+- Fail-closed result: FAIL_MARKET_STATE_RESTRICTION_PROPAGATION before event emission or store insertion.
+- Physical rows expose 26 design/provenance restrictions; sidecar/components expose four bounded-consumption restrictions. These are distinct governed domains, not reordered equivalent sets.
+- Zero Market State events, observations, strategy decisions, orders, fills and PnL. Provider modification remains false.
+- V0.4 cannot be reused. A contract correction and a separately audited future authorization are required.

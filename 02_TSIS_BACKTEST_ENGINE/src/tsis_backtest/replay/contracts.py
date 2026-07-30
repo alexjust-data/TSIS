@@ -23,6 +23,7 @@ class ReplayBarEvent:
     ticker: str
     available_at: datetime
     bar: MarketDataBar1m
+    physical_lineage: Mapping[str, Any] | None = None
 
     def to_dict(self) -> dict[str, Any]:
         return to_jsonable(self)
@@ -39,6 +40,7 @@ class ReplayGapEvent:
     price_view: str
     reason: str
     source_file: Path | None = None
+    physical_lineage: Mapping[str, Any] | None = None
 
     def is_observable_at(self, decision_timestamp: datetime) -> bool:
         return decision_timestamp >= self.available_at

@@ -1,0 +1,30 @@
+{
+  "fixture_id": "BT_GATE_014_PHYSICAL_INTEGRATION_BARRIERS_V0_2",
+  "physical_source_rows": 0,
+  "records": [
+    {
+      "available_at": "2021-03-15T13:30:00Z",
+      "close": 1.0,
+      "high": 1.0,
+      "low": 1.0,
+      "open": 1.0,
+      "session_label": "REGULAR",
+      "ticker": "ACIU",
+      "ts_end": "2021-03-15T13:30:00Z",
+      "ts_start": "2021-03-15T13:30:00Z",
+      "volume": 0
+    },
+    {
+      "available_at": "2021-03-15T20:00:00Z",
+      "close": 1.0,
+      "high": 1.0,
+      "low": 1.0,
+      "open": 1.0,
+      "session_label": "REGULAR",
+      "ticker": "ACIU",
+      "ts_end": "2021-03-15T20:00:00Z",
+      "ts_start": "2021-03-15T20:00:00Z",
+      "volume": 0
+    }
+  ]
+}

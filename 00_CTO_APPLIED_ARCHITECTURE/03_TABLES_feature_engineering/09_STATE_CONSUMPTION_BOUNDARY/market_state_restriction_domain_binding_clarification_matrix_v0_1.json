@@ -1,0 +1,227 @@
+{
+  "gate": "market_state_restriction_domain_binding_clarification_v0_1",
+  "created_at_utc": "2026-07-30T00:00:00Z",
+  "status": "CLOSED_PASS_RESTRICTION_DOMAINS_DISAMBIGUATED_FOR_BT_GATE_014_NO_PHYSICAL_READ_NO_CONSUMER_AUTHORIZATION",
+  "case_count": 19,
+  "required_case_ids": [
+    "RDB_CONTRACT_JSON_PARSE",
+    "RDB_AUTHORITY_INPUT_HASHES_MATCH",
+    "RDB_V0_4_FAILURE_MANIFEST_HASH_MATCH",
+    "RDB_V0_4_CONSUMED_FAILURE_CONFIRMED",
+    "RDB_PHYSICAL_PROVENANCE_DOMAIN_OBSERVED",
+    "RDB_REPLAY_CONSUMPTION_DOMAIN_OBSERVED",
+    "RDB_COMPONENT_REPLAY_DOMAIN_OBSERVED",
+    "RDB_PHYSICAL_AND_REPLAY_DOMAINS_DISTINCT",
+    "RDB_BOUNDED_CODES_MATCH_SELECTION_AUTHORITY",
+    "RDB_SIDECAR_ROW_CODES_MATCH_BOUNDED_DOMAIN",
+    "RDB_COMPONENT_CODES_SUBSET_ROW_CODES",
+    "RDB_PHYSICAL_RAW_PRESERVATION_REQUIRED",
+    "RDB_UNLABELED_UNION_PROHIBITED",
+    "RDB_CONSUMER_PROJECTION_LABELS_COMPLETE",
+    "RDB_NO_HISTORICAL_PROVIDER_MUTATION",
+    "RDB_NO_BACKTESTER_MUTATION",
+    "RDB_NO_PHYSICAL_READ",
+    "RDB_NO_V0_5_AUTHORIZATION",
+    "RDB_EVENT_STATE_REMAINS_CLOSED"
+  ],
+  "missing_required_case_ids": [],
+  "unexpected_case_ids": [],
+  "duplicate_case_ids": [],
+  "failed_cases": 0,
+  "parquet_opened": false,
+  "physical_rows_read": 0,
+  "backtester_files_modified": 0,
+  "new_consumer_authorization_issued": false,
+  "cases": [
+    {
+      "case_id": "RDB_CONTRACT_JSON_PARSE",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "market_state_restriction_domain_binding_clarification_v0_1"
+    },
+    {
+      "case_id": "RDB_AUTHORITY_INPUT_HASHES_MATCH",
+      "status": "PASS",
+      "passed": true,
+      "evidence": [
+        {
+          "role": "bounded_selection_authority",
+          "observed": "a12c1bf3942c655115f521d0701f237f2cd9ad1a8fcf81a5ccc5c1c726d7b937",
+          "match": true
+        },
+        {
+          "role": "replay_sidecar_contract",
+          "observed": "a29f656a6fe741432c7272d6715637eeb49fd5d34ca550c3ac0f33166bc1b169",
+          "match": true
+        },
+        {
+          "role": "replay_sidecar_evidence",
+          "observed": "8e426b09bb1cafac26e49c7a81de31ef4ea60ca3b56ac3aa766ba13a0772c5ac",
+          "match": true
+        },
+        {
+          "role": "replay_timestamp_contract",
+          "observed": "eae02c685f7bc2cc8b55e6e3bb4a6912dc3b391042c0178b3dc29387fa6b690d",
+          "match": true
+        },
+        {
+          "role": "physical_restriction_field_semantics",
+          "observed": "e4223c64c030c2ac240763d7397362a0fe8faf91761ac7b94ca0f69d6f3d1913",
+          "match": true
+        },
+        {
+          "role": "physical_schema_authority",
+          "observed": "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b",
+          "match": true
+        }
+      ]
+    },
+    {
+      "case_id": "RDB_V0_4_FAILURE_MANIFEST_HASH_MATCH",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "e0beb57e40baaa15ec66532c52e819649da8cb5fa241d49d884df1511083d69a"
+    },
+    {
+      "case_id": "RDB_V0_4_CONSUMED_FAILURE_CONFIRMED",
+      "status": "PASS",
+      "passed": true,
+      "evidence": {
+        "error_code": "FAIL_MARKET_STATE_RESTRICTION_PROPAGATION",
+        "files": 1,
+        "rows": 2,
+        "events": 0
+      }
+    },
+    {
+      "case_id": "RDB_PHYSICAL_PROVENANCE_DOMAIN_OBSERVED",
+      "status": "PASS",
+      "passed": true,
+      "evidence": [
+        26,
+        26
+      ]
+    },
+    {
+      "case_id": "RDB_REPLAY_CONSUMPTION_DOMAIN_OBSERVED",
+      "status": "PASS",
+      "passed": true,
+      "evidence": [
+        [
+          "candidate_runtime_only",
+          "not_official_dataset",
+          "no_downstream",
+          "no_production"
+        ],
+        [
+          "candidate_runtime_only",
+          "not_official_dataset",
+          "no_downstream",
+          "no_production"
+        ]
+      ]
+    },
+    {
+      "case_id": "RDB_COMPONENT_REPLAY_DOMAIN_OBSERVED",
+      "status": "PASS",
+      "passed": true,
+      "evidence": {
+        "rows": 2,
+        "components_per_row": [
+          4,
+          4
+        ]
+      }
+    },
+    {
+      "case_id": "RDB_PHYSICAL_AND_REPLAY_DOMAINS_DISTINCT",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "26 physical provenance codes are not the four bounded replay codes"
+    },
+    {
+      "case_id": "RDB_BOUNDED_CODES_MATCH_SELECTION_AUTHORITY",
+      "status": "PASS",
+      "passed": true,
+      "evidence": [
+        "candidate_runtime_only",
+        "not_official_dataset",
+        "no_downstream",
+        "no_production"
+      ]
+    },
+    {
+      "case_id": "RDB_SIDECAR_ROW_CODES_MATCH_BOUNDED_DOMAIN",
+      "status": "PASS",
+      "passed": true,
+      "evidence": {
+        "sidecar_records": 104,
+        "bounded_codes": [
+          "candidate_runtime_only",
+          "no_downstream",
+          "no_production",
+          "not_official_dataset"
+        ]
+      }
+    },
+    {
+      "case_id": "RDB_COMPONENT_CODES_SUBSET_ROW_CODES",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "all component replay restrictions are subsets of their row replay restrictions"
+    },
+    {
+      "case_id": "RDB_PHYSICAL_RAW_PRESERVATION_REQUIRED",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "physical raw restriction preservation is explicit"
+    },
+    {
+      "case_id": "RDB_UNLABELED_UNION_PROHIBITED",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "unlabeled executable union is prohibited"
+    },
+    {
+      "case_id": "RDB_CONSUMER_PROJECTION_LABELS_COMPLETE",
+      "status": "PASS",
+      "passed": true,
+      "evidence": [
+        "component_replay_restriction_codes",
+        "physical_provenance_restriction_codes",
+        "physical_restriction_codes_raw_json",
+        "replay_consumption_restriction_codes"
+      ]
+    },
+    {
+      "case_id": "RDB_NO_HISTORICAL_PROVIDER_MUTATION",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "historical provider artifacts remain immutable"
+    },
+    {
+      "case_id": "RDB_NO_BACKTESTER_MUTATION",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "consumer implementation remains owned by BT-GATE-014"
+    },
+    {
+      "case_id": "RDB_NO_PHYSICAL_READ",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "metadata and failure-evidence-only validation"
+    },
+    {
+      "case_id": "RDB_NO_V0_5_AUTHORIZATION",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "no reusable or new consumer authorization"
+    },
+    {
+      "case_id": "RDB_EVENT_STATE_REMAINS_CLOSED",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "Event State and general StateReplayFeed remain closed"
+    }
+  ]
+}

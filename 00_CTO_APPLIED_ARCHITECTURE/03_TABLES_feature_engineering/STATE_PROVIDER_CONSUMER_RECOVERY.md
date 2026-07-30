@@ -23,12 +23,36 @@ backtester current-gate authority = 02_TSIS_BACKTEST_ENGINE/AGENTS.md
 backtester mutable status duplicated here = false
 Event State provider-to-consumer handoff = NOT_OPEN_AT_PROVIDER_HANDOFF
 active provider gate = none
+restriction-domain clarification = CLOSED_PASS
+BT-GATE-014 V0.4 failure evidence = ACCEPTED_FAIL_CLOSED
+BT-GATE-014 next required work = consumer adoption of restriction-domain binding
 ```
 
 The provider probe proved exact physical selection, schema validation,
 fingerprint verification, one-to-one temporal sidecar binding and legal replay
 ordering. It did not prove that the backtester receives the 17 scientific
 core-four values in a typed consumer event.
+
+The later BT-GATE-014 V0.4 consumer probe opened one physical file and read two
+rows, then failed closed before event emission because the consumer compared
+two different restriction domains for equality. The shared boundary has now
+closed:
+
+```text
+market_state_restriction_domain_binding_clarification_v0_1
+=
+CLOSED_PASS_RESTRICTION_DOMAINS_DISAMBIGUATED_FOR_BT_GATE_014_NO_PHYSICAL_READ_NO_CONSUMER_AUTHORIZATION
+```
+
+The binding distinguishes:
+
+```text
+physical_provenance_restriction_codes
+replay_consumption_restriction_codes
+component_replay_restriction_codes
+```
+
+V0.4 remains consumed and cannot be reused. No V0.5 authorization was issued.
 
 ## Exact Accepted Evidence
 
@@ -95,14 +119,16 @@ After the root TSIS mandatory reading order:
 For evidence-level verification, continue with:
 
 ```text
-8. market_state_core_four_scale_validation_physical_schema_binding_v0_1.json
-9. market_state_core_four_scale_validation_physical_schema_binding_readout_v0_1.md
-10. bounded_state_bundle_read_and_replay_review_readout_v0_1.md
-11. bounded_state_bundle_read_and_replay_review_matrix_v0_1.json
-12. 09_STATE_CONSUMPTION_BOUNDARY/runs/
+8. market_state_restriction_domain_binding_clarification_v0_1.json
+9. market_state_restriction_domain_binding_clarification_readout_v0_1.md
+10. market_state_core_four_scale_validation_physical_schema_binding_v0_1.json
+11. market_state_core_four_scale_validation_physical_schema_binding_readout_v0_1.md
+12. bounded_state_bundle_read_and_replay_review_readout_v0_1.md
+13. bounded_state_bundle_read_and_replay_review_matrix_v0_1.json
+14. 09_STATE_CONSUMPTION_BOUNDARY/runs/
     bounded_state_bundle_read_and_replay_execution_v0_1_20260730T075225Z/
     final_manifest.json
-13. the same run directory / bounded_replay_report.json
+15. the same run directory / bounded_replay_report.json
 ```
 
 `00_TABLES_MARKET_STATE_EVENT_STATE.md` is foundational conceptual
@@ -111,18 +137,16 @@ not the single executable contract.
 
 ## Next Owner and Work
 
-The next owner is the backtester agent responsible for `BT-GATE-014`.
-
-At provider handoff, the consumer work was:
+The next owner is the BT-GATE-014 backtester agent. Its immediate work is:
 
 ```text
-adopt and verify the compact handoff package and hashes;
-design BoundedMarketStateAvailable;
-define a typed core-four payload with 17 scientific values;
-define audit lineage;
-implement MarketStateStore separately from MarketData;
-freeze equal-timestamp priority;
-write tests without physical Market State reads.
+adopt market_state_restriction_domain_binding_clarification_v0_1;
+separate physical provenance restrictions from replay-consumption restrictions;
+preserve the physical raw restriction JSON and 26-code lineage;
+use the four bounded restrictions for executable replay-consumption policy;
+preserve component restrictions under their labeled domain;
+add negative tests against domain loss, substitution and unlabeled union;
+propose a new single-use authorization only after external pre-execution review.
 ```
 
 This list records the handoff scope; it is not the current backtester gate.
