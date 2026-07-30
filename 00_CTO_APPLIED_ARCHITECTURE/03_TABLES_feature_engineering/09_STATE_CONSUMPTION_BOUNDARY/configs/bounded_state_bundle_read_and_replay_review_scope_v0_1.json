@@ -1,0 +1,66 @@
+{
+  "scope_id": "bounded_state_bundle_read_and_replay_review_scope_v0_1",
+  "gate": "bounded_state_bundle_read_and_replay_review_v0_1",
+  "created_at_utc": "2026-07-30T00:00:00Z",
+  "status": "AUTHORIZED_READ_ONLY_EVIDENCE_REVIEW_NO_PHYSICAL_READ",
+  "owner_layer": "09_STATE_CONSUMPTION_BOUNDARY",
+  "execution_run_id": "bounded_state_bundle_read_and_replay_execution_v0_1_20260730T075225Z",
+  "execution_run_directory": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/runs/bounded_state_bundle_read_and_replay_execution_v0_1_20260730T075225Z",
+  "required_execution_outputs": [
+    "pre_run_manifest.json",
+    "heartbeat.json",
+    "authorization_consumption_receipt.json",
+    "bounded_read_report.json",
+    "bounded_replay_report.json",
+    "final_manifest.json",
+    "readout.md"
+  ],
+  "expected": {
+    "execution_status": "CLOSED_PASS_ONE_BOUNDED_MARKET_STATE_PHYSICAL_READ_AND_REPLAY_PROBE_WITH_RESTRICTIONS",
+    "authorization_consumed": true,
+    "physical_data_files_opened": 1,
+    "physical_state_rows_read": 2,
+    "bounded_probe_records_emitted": 2,
+    "EventLoop_ticks": 2,
+    "strategy_callbacks": 0,
+    "signals_emitted": 0,
+    "orders_emitted": 0,
+    "fills_emitted": 0,
+    "PnL_calculated": false,
+    "datasets_written": 0,
+    "registry_mutations": 0,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false,
+    "authorized_instrument_id": "cik_ticker:0001651625:ACIU",
+    "authorized_session_date": "2021-03-15",
+    "authorized_row_ids": [
+      "f09492ac417d05161f70ee75f81e345a9cc315cef9beb9939d2df6ff3eb58dd3",
+      "26d923a282355ad242a5d91ad7d6183bed6a94842041ecf966ac70c366308c0e"
+    ],
+    "delivery_eligibility_rule": "event_loop.clock >= state_available_at_utc"
+  },
+  "authorized_outputs": {
+    "scope": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/configs/bounded_state_bundle_read_and_replay_review_scope_v0_1.json",
+    "runner": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/scripts/bounded_state_bundle_read_and_replay_review_runner_v0_1.py",
+    "matrix": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/bounded_state_bundle_read_and_replay_review_matrix_v0_1.json",
+    "readout": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/bounded_state_bundle_read_and_replay_review_readout_v0_1.md"
+  },
+  "hard_boundaries": {
+    "parquet_opened": false,
+    "parquet_hash_recomputed": false,
+    "physical_state_rows_read": 0,
+    "bounded_probe_records_emitted": 0,
+    "general_StateReplayFeed_authorized": false,
+    "backtest_consumption_authorized": false,
+    "event_state_authorized": false,
+    "strategy_callbacks": 0,
+    "orders_emitted": 0,
+    "fills_emitted": 0,
+    "PnL_calculated": false,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false
+  },
+  "next_handoff_on_pass": "BT-GATE-014_POINT_IN_TIME_MARKET_STATE_CONSUMPTION_EVIDENCE_READY"
+}

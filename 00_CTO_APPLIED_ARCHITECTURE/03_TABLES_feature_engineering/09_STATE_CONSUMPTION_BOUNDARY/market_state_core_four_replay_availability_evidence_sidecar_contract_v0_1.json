@@ -27,7 +27,12 @@
       "official_dataset",
       "production",
       "downstream",
-      "backtest_consumption_authorized"
+      "backtest_consumption_authorized",
+      "market_state_validation_report_sha256",
+      "market_state_temporal_legality_report_sha256",
+      "original_request_record_sha256",
+      "original_execution_plan_sha256",
+      "exact_requested_context_ledger_sha256"
     ],
     "properties": {
       "sidecar_id": {
@@ -106,7 +111,8 @@
             "state_publication_latency",
             "component_availability_evidence",
             "state_replay_consumption_legality",
-            "restriction_codes"
+            "restriction_codes",
+            "state_availability_status"
           ],
           "properties": {
             "materialized_state_candidate_id": {
@@ -195,7 +201,9 @@
                   "component_as_of_utc",
                   "component_available_at_utc",
                   "availability_status",
-                  "restriction_codes"
+                  "restriction_codes",
+                  "cutoff_rule_id",
+                  "availability_rule_id"
                 ],
                 "properties": {
                   "component_id": {
@@ -238,6 +246,14 @@
                       "minLength": 1
                     },
                     "uniqueItems": true
+                  },
+                  "cutoff_rule_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "availability_rule_id": {
+                    "type": "string",
+                    "minLength": 1
                   }
                 }
               }
@@ -257,6 +273,13 @@
                 "minLength": 1
               },
               "uniqueItems": true
+            },
+            "state_availability_status": {
+              "enum": [
+                "available_for_decision_replay",
+                "research_only",
+                "blocked"
+              ]
             }
           }
         }
@@ -272,6 +295,26 @@
       },
       "backtest_consumption_authorized": {
         "const": false
+      },
+      "market_state_validation_report_sha256": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      "market_state_temporal_legality_report_sha256": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      "original_request_record_sha256": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      "original_execution_plan_sha256": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      "exact_requested_context_ledger_sha256": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
       }
     }
   },

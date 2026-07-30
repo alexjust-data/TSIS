@@ -1,3 +1,176 @@
+## Recovery Authority
+
+```text
+canonical cold-start entry = STATE_PROVIDER_CONSUMER_RECOVERY.md
+active provider gate = none
+next owner = BT-GATE-014
+BT-GATE-014 provider evidence handoff = COMPLETE
+backtester current-gate authority = 02_TSIS_BACKTEST_ENGINE/AGENTS.md
+```
+
+Read the recovery document first. Blocks below are ordered newest first and
+preserve historical closure state; an older `current_gate` value is not the
+active gate.
+
+## Schema Provenance / Runtime Content Binding Closed - 2026-07-30
+
+```text
+market_state_core_four_scale_validation_physical_schema_binding_clarification_v0_1
+=
+CLOSED_PASS_SCHEMA_PROVENANCE_AND_RUNTIME_CONTENT_AUTHORITY_DISAMBIGUATED_FOR_BT_GATE_014_NO_PHYSICAL_READ
+
+structural_schema_authority
+=
+PHYSICAL_SCHEMA_CONTRACT.json / 595f2645...
+
+profile_provenance_parquet
+=
+b1841f4897...
+
+current_bounded_runtime_content
+=
+bc033cb2cd...
+
+BT_GATE_014_provider_evidence_handoff
+=
+COMPLETE
+
+backtester_current_gate_authority
+=
+02_TSIS_BACKTEST_ENGINE/AGENTS.md
+
+active_provider_gate
+=
+none
+```
+
+The provider/shared-boundary handoff is now unambiguous. Historical profile
+artifacts remain unchanged; the receiving owner must use the binding and the
+accepted bounded evidence package before requesting a separate single-use
+backtester read authorization.
+
+## Bounded Market State Physical Read and Replay Review Closed - 2026-07-30
+
+```text
+bounded_state_bundle_read_and_replay_execution_v0_1
+=
+CLOSED_PASS_ONE_BOUNDED_MARKET_STATE_PHYSICAL_READ_AND_REPLAY_PROBE_WITH_RESTRICTIONS
+
+bounded_state_bundle_read_and_replay_review_v0_1
+=
+CLOSED_PASS_BOUNDED_MARKET_STATE_PHYSICAL_READ_AND_REPLAY_REVIEW_WITH_RESTRICTIONS_READY_FOR_BT_GATE_014_HANDOFF
+
+authorization_single_use_consumed
+=
+true
+
+physical_state_rows_read
+=
+2
+
+bounded_probe_records_emitted
+=
+2
+
+current_provider_boundary_gate
+=
+none
+
+next_handoff
+=
+BT-GATE-014_POINT_IN_TIME_MARKET_STATE_CONSUMPTION_EVIDENCE_READY
+
+general_StateReplayFeed
+=
+NOT_AUTHORIZED
+
+backtest_consumption
+=
+false
+```
+
+The first physical Market State core-four slice crossed the provider-consumer
+boundary with exact hashes, schema, row fingerprints and available-at ordering.
+The evidence is ready for the backtester gate owner; this layer does not open
+BT-GATE-014 itself.
+
+## Bounded StateBundle Read and Replay Authorization v0.2 Closed - 2026-07-30
+
+```text
+bounded_state_bundle_read_and_replay_authorization_v0_2
+=
+CLOSED_AUTHORIZED_ONE_BOUNDED_MARKET_STATE_READ_AND_REPLAY_PROBE_WITH_RESTRICTIONS_NO_EXECUTION
+
+authorization_to_read_issued
+=
+true
+
+bounded_execution_authorized
+=
+true
+
+current_gate
+=
+bounded_state_bundle_read_and_replay_execution_v0_1_pending
+
+authorized_slice
+=
+ACIU / 2021-03-15 / 2 exact row identities
+
+parquet_opened
+=
+false
+
+physical_state_rows_read
+=
+0
+
+general_StateReplayFeed
+=
+NOT_AUTHORIZED
+
+backtest_consumption
+=
+false
+```
+
+The authorization freezes one exact provider v0.1.2 bundle, candidate parquet,
+metadata chain and two row identities. It authorizes only the next bounded
+integration execution; it does not authorize general replay or backtest
+consumption.
+
+## Physical Evidence Alignment v0.2 Closed - 2026-07-30
+
+```text
+state_bundle_manifest_physical_evidence_alignment_v0_2
+=
+CLOSED_PASS_PHYSICAL_EVIDENCE_ALIGNED_READY_FOR_BOUNDED_READ_AUTHORIZATION_WITH_RESTRICTIONS_NO_PHYSICAL_READ
+
+physical_read_authorization_ready
+=
+true
+
+authorization_to_read_issued
+=
+false
+
+current_gate
+=
+bounded_state_bundle_read_and_replay_authorization_v0_1_pending
+
+StateReplayFeed
+=
+NOT_AUTHORIZED
+
+backtest_consumption
+=
+false
+```
+
+The exact provider v0.1.2 request, response and StateBundle now align with the scale-validation candidate, 120-context ledger, 104 represented row identities, 16 unavailable contexts, replay-availability sidecar and governed metadata hash chain. No parquet bytes or physical state rows were read.
+
+The conceptual `00_TABLES_MARKET_STATE_EVENT_STATE.md` document is now explicitly stratified as foundational architecture plus illustrative/historical sections and governed runtime/consumption addenda; executable authority remains in specialized contracts, registries, profile manifests, accepted readouts and this live route.
+
 ## Scale Validation Replay Availability Sidecar and v0.1.2 Reissue Ready - 2026-07-29
 
 ```text
@@ -7,7 +180,7 @@ CLOSED_PASS_SCALE_VALIDATION_REPLAY_AVAILABILITY_EVIDENCE_SIDECAR_CREATED_AND_VA
 
 runtime_user_invocation_bounded_interface_execution_regression_v0_1_2
 =
-FAILED_V0_1_2_CONTROL_PLANE_REISSUE_REGRESSION
+CLOSED_PASS_V0_1_2_CONTROL_PLANE_REISSUE_WITH_CANONICAL_BUNDLE_AND_EXACT_REUSE_EVIDENCE_NO_CONSUMPTION
 
 current_gate
 =

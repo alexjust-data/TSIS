@@ -118,6 +118,54 @@ Por ventana dedicada:
 
 ## Entradas activas
 
+### GFQ-20260730-001 - State provider-consumer recovery and BT-GATE-014 handoff
+
+Status: pending
+Severity: HIGH
+Slice:
+
+```text
+00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering
+09_STATE_CONSUMPTION_BOUNDARY
+BT-GATE-014 handoff
+```
+
+Reason:
+
+```text
+The canonical cold-start recovery authority and local governance were added
+after the provider v0.1.2, bounded PIT probe and BT-GATE-014 handoff reached
+their current state. The existing graph does not recover this route reliably.
+```
+
+Changed paths:
+
+```text
+START_HERE.md
+README.md
+00_CTO_APPLIED_ARCHITECTURE/CHANGELOG.md
+00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/LOCAL_RULES.md
+00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/STATE_PROVIDER_CONSUMER_RECOVERY.md
+00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/AGENT.md
+00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/99_ruta_de_trabajo.md
+00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/README.md
+```
+
+Recommended action:
+
+```text
+Refresh the dedicated applied-architecture State provider-consumer leaf in a
+controlled Graphify window. Verify that a BT-GATE-014 query returns
+STATE_PROVIDER_CONSUMER_RECOVERY.md as the primary entry point.
+```
+
+Root action:
+
+```text
+Do not update the stale root graph additively. Integrate only through the
+official Graphify protocol after this documentation is committed.
+```
+
 ### GFQ-20260722-001 - TSIS root path migration
 
 Status: pending

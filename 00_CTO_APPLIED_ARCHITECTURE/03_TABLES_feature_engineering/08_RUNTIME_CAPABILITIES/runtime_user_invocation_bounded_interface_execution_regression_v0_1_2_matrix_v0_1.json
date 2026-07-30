@@ -1,8 +1,8 @@
 {
   "gate": "runtime_user_invocation_bounded_interface_execution_regression_v0_1_2",
-  "created_at_utc": "2026-07-29T19:59:52Z",
-  "status": "CLOSED_PASS_V0_1_2_CONTROL_PLANE_REISSUE_READY_WITH_SCALE_VALIDATION_REPLAY_EVIDENCE_NO_CONSUMPTION",
-  "case_count": 6,
+  "created_at_utc": "2026-07-30T06:25:51Z",
+  "status": "CLOSED_PASS_V0_1_2_CONTROL_PLANE_REISSUE_WITH_CANONICAL_BUNDLE_AND_EXACT_REUSE_EVIDENCE_NO_CONSUMPTION",
+  "case_count": 10,
   "blocking_findings": 0,
   "restricted_findings": 2,
   "failed_cases": 0,
@@ -12,6 +12,10 @@
     "RUI_REG_REISSUE_RESPONSE_SCHEMA_001",
     "RUI_REG_REISSUE_BUNDLE_SCHEMA_001",
     "RUI_REG_REISSUE_CROSS_ARTIFACT_001",
+    "RUI_REG_PROVIDER_SEMANTIC_REQUEST_001",
+    "RUI_REG_PROVIDER_SEMANTIC_RESPONSE_001",
+    "RUI_REG_PROVIDER_SEMANTIC_BUNDLE_001",
+    "RUI_REG_EXACT_REUSE_CORRESPONDENCE_001",
     "RUI_REG_BOUNDARIES_001"
   ],
   "missing_required_case_ids": [],
@@ -77,6 +81,39 @@
       "area": "cross_artifact",
       "expected": "Request, response, bundle, dataset, coverage and restrictions correlate.",
       "observed": [],
+      "result": "PASS"
+    },
+    {
+      "case_id": "RUI_REG_PROVIDER_SEMANTIC_REQUEST_001",
+      "area": "provider_semantic",
+      "expected": "StateResolutionRequest passes accepted provider v0.1.2 semantic validator.",
+      "observed": [],
+      "result": "PASS"
+    },
+    {
+      "case_id": "RUI_REG_PROVIDER_SEMANTIC_RESPONSE_001",
+      "area": "provider_semantic",
+      "expected": "RuntimeInvocationResponse passes accepted provider v0.1.2 semantic validator.",
+      "observed": [],
+      "result": "PASS"
+    },
+    {
+      "case_id": "RUI_REG_PROVIDER_SEMANTIC_BUNDLE_001",
+      "area": "provider_semantic",
+      "expected": "StateBundleManifest passes accepted provider v0.1.2 semantic validator, including canonical cycle-free bundle_ref.",
+      "observed": [],
+      "result": "PASS"
+    },
+    {
+      "case_id": "RUI_REG_EXACT_REUSE_CORRESPONDENCE_001",
+      "area": "exact_reuse_correspondence",
+      "expected": "Bundle freezes original request, execution plan and exact requested-context ledger for the scale-validation candidate.",
+      "observed": {
+        "original_request_record": true,
+        "original_execution_plan": true,
+        "exact_requested_context_ledger": true,
+        "exact_reuse_equivalence_record": true
+      },
       "result": "PASS"
     },
     {

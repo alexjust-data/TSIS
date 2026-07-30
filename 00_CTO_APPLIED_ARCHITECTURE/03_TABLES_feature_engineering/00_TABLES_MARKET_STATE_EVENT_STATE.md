@@ -1,4 +1,62 @@
-﻿# Arquitectura de CONSTRUCCIÓN de `Market State` y `Event State`
+# Arquitectura de CONSTRUCCIÓN de `Market State` y `Event State`
+
+## Estado institucional y mapa de autoridad
+
+```text
+DOCUMENT_ROLE
+=
+FOUNDATIONAL_CONCEPTUAL_ARCHITECTURE
++
+HISTORICAL_OR_ILLUSTRATIVE_SECTIONS
++
+LATER_GOVERNED_RUNTIME_AND_CONSUMPTION_ADDENDA
+
+EXECUTABLE_AUTHORITY
+=
+NO
+
+EXECUTABLE_AUTHORITY_LIVES_IN
+=
+specialized contracts
++
+registries
++
+profile manifests
++
+accepted policies and readouts
++
+99_ruta_de_trabajo.md
+```
+
+Este documento conserva la arquitectura conceptual que explica cómo TSIS pasa de fenómenos a representaciones de estado. No sustituye los contratos, registros, manifests de perfil ni políticas especializadas que hacen ejecutable esa arquitectura.
+
+| Sección | Rol | Autoridad vigente |
+| --- | --- | --- |
+| Fenómenos → Information Objects → Models → Variables → Tables | Principio fundacional | Conceptual vigente |
+| Ejemplos `Momentum`, `Participation`, `Intraday Position`, `Market Regime` | Terminología ilustrativa anterior a la consolidación | `03_INFORMATION_OBJECTS/01_SEMANTIC_DOMAIN_CONSOLIDATION_v0_1.md` |
+| Ejemplos `PM_Squeeze_Event` y `VWAP_Reclaim_Event` | Event Types hipotéticos no registrados | `07_EVENT_STATE_INTEGRATION/event_type_registry_post_initial_admission_snapshot_v0_1.json` |
+| Perfiles y rechazo de mega-tabla universal | Principio vigente | Manifests de perfiles en `06_MARKET_STATE_INTEGRATION/official_profiles/` y `07_EVENT_STATE_INTEGRATION/official_profiles/` |
+| Provider y runtime | Addendum gobernado | `08_RUNTIME_CAPABILITIES/` |
+| Disponibilidad temporal y consumo físico | Addendum gobernado | `09_STATE_CONSUMPTION_BOUNDARY/` |
+| Estados fechados de gates anteriores | Snapshot histórico | Readouts aceptados y `99_ruta_de_trabajo.md` |
+
+Estado operativo mínimo al que deben subordinarse los ejemplos de este documento:
+
+```text
+current_market_state_profile
+=
+market_state_core_four_intraday_profile_v0_1
+
+current_accepted_event_type_scope
+=
+event_type:market_data:session_opened
++
+subject_scope = exchange_session
+
+unregistered_event_examples
+=
+ILLUSTRATIVE_ONLY
+```
 
 ## Propósito
 
@@ -120,6 +178,13 @@ Lo que determinará su utilidad no será que existan dos tablas, sino que conjun
 
 
 ## Market State y Event State : consumen `Objetos de informacion`
+
+> **[ILLUSTRATIVE TERMINOLOGY]** Los nombres `Momentum`, `Participation`,
+> `Intraday Position` y `Market Regime` que aparecen en los ejemplos siguientes
+> no son IDs canónicos de Information Objects. Deben interpretarse como nombres
+> intuitivos, modelos o subconceptos. La taxonomía canónica vigente utiliza,
+> según corresponda, `Price Movement`, `Trading Activity`,
+> `Price Location / Structure` y `Broad Market Context`.
 
 Ejemplo: queremos capturar el estado del tiker ***ABCD*** a las 09:42:00.
 
@@ -1305,6 +1370,12 @@ Por eso una fila debe evaluarse por ambos ejes, no solo por `state_role`.
 
 ### Event State Builder
 
+> **[FOUNDATIONAL PRINCIPLE / GOVERNED IMPLEMENTATION ELSEWHERE]** Esta sección
+> explica la composición conceptual de Event State. Una implementación válida
+> requiere además bindings gobernados de Event Type, Event Instance, Event
+> Window, Instrument Projection, dependencia de Market State, `state_role`,
+> `consumption_legality` y restricciones.
+
 El `Event State Builder` responde a una pregunta diferente:
 ```
 ¿Qué información observable estaba disponible
@@ -1367,7 +1438,7 @@ El builder incorpora información como:
 
 Por ejemplo:
 ```
-event_type = PM_Squeeze_Event
+event_type = PM_Squeeze_Event  # HYPOTHETICAL_UNREGISTERED_EVENT_EXAMPLE
 state_role = pre_event
 time_to_event_seconds = 180
 event_phase = setup_forming
@@ -1429,7 +1500,7 @@ CONSUMIDORES
 
 ```
 Evento:
-VWAP_Reclaim_Event
+VWAP_Reclaim_Event  # HYPOTHETICAL_UNREGISTERED_EVENT_EXAMPLE
 
 event_timestamp:
 10:17:00
@@ -1510,6 +1581,13 @@ O particionado por:
 ```
 
 # Arquitectura de CONSUMO de `Market State` y `Event State`
+
+> **[CURRENT GOVERNED ADDENDUM]** Esta parte documenta decisiones posteriores
+> de provider, consumo y replay. Los contratos ejecutables viven en
+> `08_RUNTIME_CAPABILITIES/` y `09_STATE_CONSUMPTION_BOUNDARY/`. Los bloques
+> fechados conservados más abajo son snapshots históricos salvo que
+> `99_ruta_de_trabajo.md` los identifique expresamente como estado vigente.
+
 ## Decision vigente: StateBundle physical consumption boundary
 
 El provider de estados queda congelado como control-plane listo con restricciones. El siguiente paso no es ampliar `Market State` a nuevos Information Objects ni admitir nuevos Event Types. Primero se debe demostrar que un consumidor autorizado puede abrir fisicamente un `StateBundleManifest` exacto y acotado sin perder identidad, temporalidad, lineage ni restricciones.

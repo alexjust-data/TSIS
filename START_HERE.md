@@ -12,6 +12,21 @@ No sustituye a `AGENTS.md`, `PROJECT_OPERATING_SYSTEM.md` ni a los contratos loc
 - que prompt usar si la sesion no es autonoma;
 - como tratar Git sin repetir problemas de procesos colgados, pushes ambiguos o cambios destructivos.
 
+## Estado Market State / Event State y handoff al backtester
+
+Cuando el trabajo toque Market State, Event State, State Provider,
+StateBundle, replay temporal o `BT-GATE-014`, despues de la lectura raiz
+obligatoria se debe empezar por:
+
+```text
+C:\TSIS_Data\00_CTO_APPLIED_ARCHITECTURE\03_TABLES_feature_engineering\
+STATE_PROVIDER_CONSUMER_RECOVERY.md
+```
+
+Ese documento contiene la ruta de lectura vigente, la evidencia aceptada, los
+limites de autoridad y el siguiente propietario. No usar conversaciones ni
+Graphify como sustituto de ese recovery runbook.
+
 ## 1. Arranque correcto de Codex para TSIS
 
 Abrir PowerShell o Windows Terminal y ejecutar:
@@ -76,7 +91,6 @@ Estas dentro de C:\TSIS_Data y la sesion esta en YOLO mode. No necesitas pedir p
 Lee completos, antes de hacer cualquier otra cosa:
 
 C:\TSIS_Data\PATH_MIGRATION_2026_07_22.md
-C:\TSIS_Data\PATH_MIGRATION_2026_07_22.md
 C:\TSIS_Data\PROJECT_RULES.md
 C:\TSIS_Data\AGENTS.md
 C:\TSIS_Data\00_CTO\TSIS_LAB_ARCHITECTURE_v3.md
@@ -86,7 +100,7 @@ C:\TSIS_Data\VERSIONING_STANDARDS.md
 C:\TSIS_Data\RESEARCH_PHILOSOPHY.md
 C:\TSIS_Data\README.md
 C:\TSIS_Data\LONG_RUNNING_OPERATIONS_CONTRACT.md
-E:\TSIS\data\README.md
+G:\TSIS\data\README.md
 
 Despues lee completos estos contratos del sub-modulos
 
@@ -129,7 +143,7 @@ C:\TSIS_Data\PROJECT_OPERATING_SYSTEM.md
 C:\TSIS_Data\VERSIONING_STANDARDS.md
 C:\TSIS_Data\RESEARCH_PHILOSOPHY.md
 C:\TSIS_Data\README.md
-E:\TSIS\data\README.md
+G:\TSIS\data\README.md
 
 Dentro hemos ido trabajando en la auditoria de la data descargada desde Polygon:
 
@@ -140,7 +154,7 @@ C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\LOCAL_RULES.md
 
 Lee todos esos archivos completos y ponte al dia antes de hacer cualquier otra cosa.
 
-Si el trabajo toca minutos/1m, scanners intradia, backtests intradia o reparaciones de velas, la lectura de E:\TSIS\data\README.md es obligatoria antes de proponer o ejecutar rutas. La raiz fisica canonica de minutos es E:\TSIS\data\ohlcv_1m.
+Si el trabajo toca minutos/1m, scanners intradia, backtests intradia o reparaciones de velas, la lectura de G:\TSIS\data\README.md es obligatoria antes de proponer o ejecutar rutas. La raiz fisica canonica de minutos es G:\TSIS\data\ohlcv_1m.
 Cuando los hayas leido y entendido, responde solo:
 
 ok

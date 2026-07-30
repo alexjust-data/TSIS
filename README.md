@@ -17,7 +17,7 @@ C:/TSIS_Data/VERSIONING_STANDARDS.md
 C:/TSIS_Data/RESEARCH_PHILOSOPHY.md
 C:/TSIS_Data/00_CTO/TSIS_LAB_ARCHITECTURE_v3.md
 C:/TSIS_Data/03_TSIS_Lab/README.md
-E:/TSIS/data/README.md
+G:/TSIS/data/README.md
 ```
 
 Lectura correcta de arquitectura:
@@ -62,7 +62,7 @@ C:/TSIS_Data/05_TSIS_Offline_RL
 C:/TSIS_Data/06_TSIS_Trading_voice
 = Trading Decision Intelligence / proceso de decision por voz
 
-E:/TSIS/data
+G:/TSIS/data
 = outputs pesados, materializaciones y roots fisicos
 ```
 
@@ -85,12 +85,12 @@ Data Foundation
 
 ## Nota Obligatoria Sobre Datos Fisicos Y Minutos
 
-Todo agente debe leer `E:/TSIS/data/README.md` como parte del contexto base del proyecto. Ese README gobierna el plano fisico de datos.
+Todo agente debe leer `G:/TSIS/data/README.md` como parte del contexto base del proyecto. Ese README gobierna el plano fisico de datos.
 
 Para trabajos con minutos/1m, la raiz fisica canonica es:
 
 ```text
-E:/TSIS/data/ohlcv_1m
+G:/TSIS/data/ohlcv_1m
 ```
 
 Motivo: TSIS ya tuvo un incidente real de velas 1m imposibles y reparacion quote-guarded. La regla evita que agentes futuros usen rutas historicas, asuman que el raw esta corregido, o ignoren overlays/manifests oficiales.

@@ -96,6 +96,8 @@ graphify-out/leaf_slices/*
 *.npy
 *.npz
 *.zip
+!00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/99_archive/bounded_state_bundle_read_and_replay_execution_and_review_v0_1_files_20260730T080831Z.zip
+!00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/99_archive/market_state_pit_bt_gate_014_contract_handoff_v0_1_20260730T091041Z.zip
 *.7z
 *.rar
 *.tar

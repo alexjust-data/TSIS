@@ -1,0 +1,139 @@
+{
+  "gate": "market_state_core_four_scale_validation_physical_schema_binding_clarification_v0_1",
+  "created_at_utc": "2026-07-30T00:00:00Z",
+  "status": "CLOSED_PASS_SCHEMA_PROVENANCE_AND_RUNTIME_CONTENT_AUTHORITY_DISAMBIGUATED_FOR_BT_GATE_014_NO_PHYSICAL_READ",
+  "case_count": 15,
+  "required_case_ids": [
+    "BINDING_SCHEMA_CONTRACT_HASH_MATCH",
+    "BINDING_PROFILE_MANIFEST_HASH_MATCH",
+    "BINDING_EVIDENCE_MANIFEST_HASH_MATCH",
+    "BINDING_PROVENANCE_HASH_CONFIRMED",
+    "BINDING_RUNTIME_BUNDLE_HASH_CONFIRMED",
+    "BINDING_RUNTIME_READ_REPORT_HASH_MATCH",
+    "BINDING_EXECUTION_FINAL_MANIFEST_HASH_MATCH",
+    "BINDING_RUNTIME_PARQUET_HASH_OBSERVED_MATCH",
+    "BINDING_EXACT_40_COLUMN_SCHEMA_MATCH",
+    "BINDING_HASH_ROLES_DISTINCT",
+    "BINDING_CURRENT_CONTENT_AUTHORITY_UNAMBIGUOUS",
+    "BINDING_STRUCTURAL_AUTHORITY_UNAMBIGUOUS",
+    "BINDING_HISTORICAL_ARTIFACTS_PRESERVED",
+    "BINDING_NO_PHYSICAL_READ",
+    "BINDING_NO_BACKTEST_PHYSICAL_EXECUTION_AUTHORITY"
+  ],
+  "missing_required_case_ids": [],
+  "unexpected_case_ids": [],
+  "duplicate_case_ids": [],
+  "failed_cases": 0,
+  "parquet_opened": false,
+  "physical_rows_read": 0,
+  "new_physical_read_authorization_issued": false,
+  "BT_GATE_014_contract_and_implementation_ready": true,
+  "BT_GATE_014_physical_execution_authorized": false,
+  "cases": [
+    {
+      "case_id": "BINDING_SCHEMA_CONTRACT_HASH_MATCH",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b"
+    },
+    {
+      "case_id": "BINDING_PROFILE_MANIFEST_HASH_MATCH",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "9935cf0491f56f2ee6fcb034d57e3359d1abd267612e24243692e2d98bad0496"
+    },
+    {
+      "case_id": "BINDING_EVIDENCE_MANIFEST_HASH_MATCH",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "3583e54ebb3661a7d8a179c52acae05728b61596e1341028872372a0c0d99603"
+    },
+    {
+      "case_id": "BINDING_PROVENANCE_HASH_CONFIRMED",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "b1841f4897a759de8ec9a317bece888a9ff817da3df2cd0eb477b4ed950775a2"
+    },
+    {
+      "case_id": "BINDING_RUNTIME_BUNDLE_HASH_CONFIRMED",
+      "status": "PASS",
+      "passed": true,
+      "evidence": {
+        "bundle": "0e9f7387acdf999a6e41f163ab16c3412c32cb545d1757cde4b5613572406be2",
+        "parquet": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68"
+      }
+    },
+    {
+      "case_id": "BINDING_RUNTIME_READ_REPORT_HASH_MATCH",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "4d994001798cfbf7e7eb860ce4606fb00524f9372428e70112dc658335e2dd00"
+    },
+    {
+      "case_id": "BINDING_EXECUTION_FINAL_MANIFEST_HASH_MATCH",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "143f3e89eb82ec3461867e863814255613bafa72180529866d06351fe7e367ae"
+    },
+    {
+      "case_id": "BINDING_RUNTIME_PARQUET_HASH_OBSERVED_MATCH",
+      "status": "PASS",
+      "passed": true,
+      "evidence": {
+        "artifact_id": "candidate_parquet",
+        "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/market_state_scale_validation_candidate_v0_1.parquet",
+        "expected_sha256": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68",
+        "observed_sha256": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68",
+        "match": true
+      }
+    },
+    {
+      "case_id": "BINDING_EXACT_40_COLUMN_SCHEMA_MATCH",
+      "status": "PASS",
+      "passed": true,
+      "evidence": {
+        "columns": 40,
+        "mismatches": 0
+      }
+    },
+    {
+      "case_id": "BINDING_HASH_ROLES_DISTINCT",
+      "status": "PASS",
+      "passed": true,
+      "evidence": {
+        "provenance": "b1841f4897a759de8ec9a317bece888a9ff817da3df2cd0eb477b4ed950775a2",
+        "runtime": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68"
+      }
+    },
+    {
+      "case_id": "BINDING_CURRENT_CONTENT_AUTHORITY_UNAMBIGUOUS",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68"
+    },
+    {
+      "case_id": "BINDING_STRUCTURAL_AUTHORITY_UNAMBIGUOUS",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b"
+    },
+    {
+      "case_id": "BINDING_HISTORICAL_ARTIFACTS_PRESERVED",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "historical profile artifacts remain byte-preserved"
+    },
+    {
+      "case_id": "BINDING_NO_PHYSICAL_READ",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "metadata-only binding validation"
+    },
+    {
+      "case_id": "BINDING_NO_BACKTEST_PHYSICAL_EXECUTION_AUTHORITY",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "contract handoff only"
+    }
+  ]
+}

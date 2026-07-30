@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import sys
 import zipfile
 from copy import deepcopy
 from datetime import datetime, timezone
@@ -31,7 +32,7 @@ SIDECAR_STATUS = (
     "AND_VALIDATED_WITH_RESTRICTIONS_NO_PHYSICAL_READ"
 )
 REGRESSION_STATUS = (
-    "CLOSED_PASS_V0_1_2_CONTROL_PLANE_REISSUE_READY_WITH_SCALE_VALIDATION_REPLAY_"
+    "CLOSED_PASS_V0_1_2_CONTROL_PLANE_REISSUE_WITH_CANONICAL_BUNDLE_AND_EXACT_REUSE_"
     "EVIDENCE_NO_CONSUMPTION"
 )
 
@@ -44,6 +45,10 @@ REQUIRED_OBJECTS = {
     "price_location_structure",
     "volatility_range_state",
 }
+ZERO_LATENCY_POLICY_ID = "zero_latency_candidate_replay_publication_policy_v0_1"
+STATE_AVAILABILITY_POLICY_ID = "market_state_core_four_replay_availability_policy_v0_1"
+CUTOFF_RULE_ID = "decision_timestamp_closed_bar_cutoff_rule_v0_1"
+AVAILABILITY_RULE_ID = "zero_latency_candidate_component_availability_rule_v0_1"
 
 
 def read_text(path: Path) -> str:
@@ -101,6 +106,40 @@ def ref(ref_type: str, ref_id: str, sha256: str | None = None) -> dict[str, Any]
     }
 
 
+def provider_module():
+    scripts = RUNTIME / "scripts"
+    if str(scripts) not in sys.path:
+        sys.path.insert(0, str(scripts))
+    import runtime_provider_contract_schema_hardening_v0_1_2_runner as provider  # type: ignore
+
+    return provider
+
+
+def provider_bundle_sha(bundle: dict[str, Any]) -> str:
+    provider = provider_module()
+    return canonical_sha(provider.bundle_fingerprint_payload_from_doc(bundle))
+
+
+def provider_semantic_errors(document: dict[str, Any], kind: str) -> list[str]:
+    provider = provider_module()
+    return list(provider.semantic_errors(document, kind))
+
+
+def timestamp_payload(row: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "state_kind": "market_state",
+        "profile_id": row["profile_id"],
+        "decision_timestamp_utc": row["decision_timestamp_utc"],
+        "state_as_of_utc": row["state_as_of_utc"],
+        "state_available_at_utc": row["state_available_at_utc"],
+        "state_availability_policy_id": row["state_availability_policy_id"],
+        "state_publication_latency_policy_id": row["state_publication_latency_policy_id"],
+        "state_publication_latency": row["state_publication_latency"],
+        "state_replay_consumption_legality": row["state_replay_consumption_legality"],
+        "state_availability_status": row["state_availability_status"],
+        "component_availability_evidence": row["component_availability_evidence"],
+        "restriction_codes": row["restriction_codes"],
+    }
 def parse_utc(value: str):
     return datetime.fromisoformat(value.replace("Z", "+00:00"))
 
@@ -118,6 +157,34 @@ def update_sidecar_contract() -> Path:
     records_schema["items"]["properties"]["source_candidate_record_id"] = {
         "oneOf": [{"type": "string", "minLength": 1}, {"type": "null"}]
     }
+    top_props = schema["properties"]
+    top_required = schema.setdefault("required", [])
+    for field in [
+        "market_state_validation_report_sha256",
+        "market_state_temporal_legality_report_sha256",
+        "original_request_record_sha256",
+        "original_execution_plan_sha256",
+        "exact_requested_context_ledger_sha256",
+    ]:
+        top_props[field] = {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+        if field not in top_required:
+            top_required.append(field)
+    row_schema = records_schema["items"]
+    row_props = row_schema["properties"]
+    row_required = row_schema.setdefault("required", [])
+    row_props["state_availability_status"] = {
+        "enum": ["available_for_decision_replay", "research_only", "blocked"]
+    }
+    if "state_availability_status" not in row_required:
+        row_required.append("state_availability_status")
+    component_schema = row_props["component_availability_evidence"]["items"]
+    component_props = component_schema["properties"]
+    component_required = component_schema.setdefault("required", [])
+    component_props["cutoff_rule_id"] = {"type": "string", "minLength": 1}
+    component_props["availability_rule_id"] = {"type": "string", "minLength": 1}
+    for field in ["cutoff_rule_id", "availability_rule_id"]:
+        if field not in component_required:
+            component_required.append(field)
     doc["semantic_validation_requirements"] = [
         "records.length == row_count",
         "row_count can represent bounded legacy candidates and scale-validation candidates up to 120 records",
@@ -138,9 +205,119 @@ def update_sidecar_contract() -> Path:
     return path
 
 
-def build_sidecar(now: str) -> dict[str, Any]:
+def build_exact_requested_context_ledger(now: str) -> dict[str, Any]:
+    output_manifest = read_json(SCALE_RUN / "candidate_output_manifest.json")
+    request_record = read_json(SCALE_RUN / "request_record.json")
+    execution_plan = read_json(SCALE_RUN / "execution_plan.json")
+    lineage = read_json(SCALE_RUN / "lineage_manifest.json")
+    contexts: list[dict[str, Any]] = []
+    for row in lineage["row_lineage"]:
+        contexts.append(
+            {
+                "context_id": row["context_id"],
+                "instrument_id": row["instrument_id"],
+                "session_date": row["session_date"],
+                "exchange_id": row["exchange_id"],
+                "decision_timestamp_utc": row["decision_timestamp_utc"],
+                "decision_case": row["decision_case"],
+                "logical_partition_id": row["logical_partition_id"],
+                "context_input_fingerprint": row["context_input_fingerprint"],
+                "origin_mode": row["origin_mode"],
+                "disposition": "represented",
+                "materialized_state_candidate_id": row["materialized_state_candidate_id"],
+                "state_output_fingerprint": row["state_output_fingerprint"],
+            }
+        )
+    for row in lineage["unavailable_contexts_detail"]:
+        contexts.append(
+            {
+                "context_id": row["context_id"],
+                "instrument_id": row["instrument_id"],
+                "session_date": row["session_date"],
+                "exchange_id": row["exchange_id"],
+                "decision_timestamp_utc": row["decision_timestamp_utc"],
+                "decision_case": row["decision_case"],
+                "logical_partition_id": row["logical_partition_id"],
+                "context_input_fingerprint": row["context_input_fingerprint"],
+                "origin_mode": row["origin_mode"],
+                "disposition": "unavailable",
+                "disposition_cause": row["disposition_cause"],
+                "materialized_state_candidate_id": None,
+                "state_output_fingerprint": None,
+            }
+        )
+    contexts = sorted(contexts, key=lambda item: item["context_id"])
+    if len(contexts) != output_manifest["coverage"]["requested_contexts"]:
+        raise ValueError("requested context ledger cardinality does not match output manifest")
+    return {
+        "ledger_id": "market_state_core_four_scale_validation_exact_requested_context_ledger_v0_1_20260729",
+        "created_at_utc": now,
+        "source_run_id": "market_state_on_demand_scale_validation_v0_1_20260727T133641Z",
+        "request_id": request_record["request_id"],
+        "request_fingerprint": request_record["request_fingerprint"],
+        "execution_plan_id": execution_plan["execution_plan_id"],
+        "execution_plan_fingerprint": execution_plan["execution_plan_fingerprint"],
+        "candidate_dataset_id": output_manifest["candidate_dataset_id"],
+        "candidate_dataset_fingerprint": output_manifest["candidate_dataset_fingerprint"],
+        "requested_contexts": output_manifest["coverage"]["requested_contexts"],
+        "represented_contexts": output_manifest["coverage"]["represented_contexts"],
+        "unavailable_contexts": output_manifest["coverage"]["unavailable_contexts"],
+        "contexts": contexts,
+        "official_dataset": False,
+        "production": False,
+        "downstream": False,
+    }
+
+
+def build_exact_reuse_equivalence_record(now: str, sidecar: dict[str, Any], sidecar_sha: str, ledger_sha: str) -> dict[str, Any]:
+    output_manifest = read_json(SCALE_RUN / "candidate_output_manifest.json")
+    request_record = read_json(SCALE_RUN / "request_record.json")
+    execution_plan = read_json(SCALE_RUN / "execution_plan.json")
+    final_manifest = read_json(SCALE_RUN / "final_manifest.json")
+    return {
+        "equivalence_record_id": "runtime_v0_1_2_scale_validation_exact_reuse_equivalence_record_v0_1_20260729",
+        "created_at_utc": now,
+        "equivalence_status": "CONTROL_PLANE_REISSUE_REFERENCES_ORIGINAL_SCALE_VALIDATION_CANDIDATE",
+        "equivalence_scope": "metadata_only_no_runtime_invocation_no_physical_read",
+        "original_request_id": request_record["request_id"],
+        "original_request_fingerprint": request_record["request_fingerprint"],
+        "original_request_record_sha256": sha256_file(SCALE_RUN / "request_record.json"),
+        "original_execution_plan_id": execution_plan["execution_plan_id"],
+        "original_execution_plan_fingerprint": execution_plan["execution_plan_fingerprint"],
+        "original_execution_plan_sha256": sha256_file(SCALE_RUN / "execution_plan.json"),
+        "candidate_dataset_id": output_manifest["candidate_dataset_id"],
+        "candidate_dataset_fingerprint": output_manifest["candidate_dataset_fingerprint"],
+        "candidate_parquet_sha256": output_manifest["files"][0]["sha256"],
+        "candidate_output_manifest_sha256": sidecar["candidate_output_manifest_sha256"],
+        "final_manifest_status": final_manifest["status"],
+        "requested_context_ledger_sha256": ledger_sha,
+        "sidecar_id": sidecar["sidecar_id"],
+        "sidecar_sha256": sidecar_sha,
+        "row_count": sidecar["row_count"],
+        "requested_contexts": output_manifest["coverage"]["requested_contexts"],
+        "represented_contexts": output_manifest["coverage"]["represented_contexts"],
+        "unavailable_contexts": output_manifest["coverage"]["unavailable_contexts"],
+        "limitations": [
+            "The original scale-validation request is v0.1 and remains historical evidence.",
+            "The v0.1.2 StateResolutionRequest instance is a control-plane reissue envelope, not a runtime invocation.",
+            "Exact reuse is asserted only for the frozen candidate dataset and requested-context ledger referenced here.",
+        ],
+        "runtime_requests_executed": 0,
+        "physical_file_reads": 0,
+        "StateReplayFeed_records_emitted": 0,
+        "official_dataset": False,
+        "production": False,
+        "downstream": False,
+    }
+def build_sidecar(now: str, ledger_sha256: str) -> dict[str, Any]:
     output_manifest = read_json(SCALE_RUN / "candidate_output_manifest.json")
     lineage = read_json(SCALE_RUN / "lineage_manifest.json")
+    temporal_report = read_json(SCALE_RUN / "market_state_temporal_legality_report.json")
+    validation_report = read_json(SCALE_RUN / "market_state_validation_report.json")
+    if temporal_report.get("failures") != 0:
+        raise ValueError("temporal legality report contains failures")
+    if validation_report.get("hard_validation_failures") != 0:
+        raise ValueError("market state validation report contains hard failures")
     restrictions = [
         "candidate_runtime_only",
         "not_official_dataset",
@@ -157,6 +334,8 @@ def build_sidecar(now: str) -> dict[str, Any]:
                 "source_timestamp_utc": decision,
                 "component_as_of_utc": decision,
                 "component_available_at_utc": decision,
+                "cutoff_rule_id": CUTOFF_RULE_ID,
+                "availability_rule_id": AVAILABILITY_RULE_ID,
                 "availability_status": "available",
                 "restriction_codes": restrictions,
             }
@@ -180,9 +359,10 @@ def build_sidecar(now: str) -> dict[str, Any]:
                 "decision_timestamp_utc": decision,
                 "state_as_of_utc": decision,
                 "state_available_at_utc": decision,
-                "state_availability_policy_id": "market_state_core_four_replay_availability_policy_v0_1",
-                "state_publication_latency_policy_id": "zero_latency_candidate_replay_publication_policy_v0_1",
+                "state_availability_policy_id": STATE_AVAILABILITY_POLICY_ID,
+                "state_publication_latency_policy_id": ZERO_LATENCY_POLICY_ID,
                 "state_publication_latency": "PT0S",
+                "state_availability_status": "available_for_decision_replay",
                 "component_availability_evidence": components,
                 "state_replay_consumption_legality": "decision_safe",
                 "restriction_codes": restrictions,
@@ -201,6 +381,11 @@ def build_sidecar(now: str) -> dict[str, Any]:
         "candidate_parquet_sha256": output_manifest["files"][0]["sha256"],
         "physical_schema_sha256": output_manifest["schema_contract_sha256"],
         "source_lineage_manifest_sha256": sha256_file(SCALE_RUN / "lineage_manifest.json"),
+        "market_state_validation_report_sha256": sha256_file(SCALE_RUN / "market_state_validation_report.json"),
+        "market_state_temporal_legality_report_sha256": sha256_file(SCALE_RUN / "market_state_temporal_legality_report.json"),
+        "original_request_record_sha256": sha256_file(SCALE_RUN / "request_record.json"),
+        "original_execution_plan_sha256": sha256_file(SCALE_RUN / "execution_plan.json"),
+        "exact_requested_context_ledger_sha256": ledger_sha256,
         "row_count": len(records),
         "records": records,
         "official_dataset": False,
@@ -215,11 +400,29 @@ def sidecar_semantic_errors(sidecar: dict[str, Any]) -> list[str]:
     records = sidecar.get("records", [])
     if sidecar.get("row_count") != len(records):
         errors.append("row_count mismatch")
+    evidence_hashes = {
+        "market_state_validation_report_sha256": SCALE_RUN / "market_state_validation_report.json",
+        "market_state_temporal_legality_report_sha256": SCALE_RUN / "market_state_temporal_legality_report.json",
+        "original_request_record_sha256": SCALE_RUN / "request_record.json",
+        "original_execution_plan_sha256": SCALE_RUN / "execution_plan.json",
+    }
+    for field, file_path in evidence_hashes.items():
+        if sidecar.get(field) != sha256_file(file_path):
+            errors.append(f"{field} mismatch")
+    timestamp_schema = read_json(
+        BOUNDARY / "market_state_core_four_replay_availability_timestamp_contract_v0_1.json"
+    )["json_schema"]
+    timestamp_validator = Draft202012Validator(timestamp_schema)
     for key in ("materialized_state_candidate_id", "state_output_fingerprint"):
         values = [row.get(key) for row in records]
         if len(values) != len(set(values)):
             errors.append(f"duplicate {key}")
     for row in records:
+        timestamp_errors = [
+            error.message for error in timestamp_validator.iter_errors(timestamp_payload(row))
+        ]
+        if timestamp_errors:
+            errors.append("timestamp contract validation failure")
         if row.get("candidate_dataset_id") != sidecar.get("candidate_dataset_id"):
             errors.append("row candidate_dataset_id mismatch")
         if row.get("candidate_dataset_fingerprint") != sidecar.get(
@@ -250,18 +453,29 @@ def sidecar_semantic_errors(sidecar: dict[str, Any]) -> list[str]:
                 errors.append("source/component/decision ordering failure")
             if not (component_as_of <= component_available <= state_available):
                 errors.append("component availability ordering failure")
+            if component.get("cutoff_rule_id") != CUTOFF_RULE_ID:
+                errors.append("component cutoff_rule_id mismatch")
+            if component.get("availability_rule_id") != AVAILABILITY_RULE_ID:
+                errors.append("component availability_rule_id mismatch")
             if component["availability_status"] in {"blocked", "research_only"}:
                 blocked_component = True
         if state_as_of != max(component_as_ofs):
             errors.append("state_as_of not max component_as_of")
         if state_available != max([decision] + component_availables):
             errors.append("available_at formula failure")
-        if (
-            row["state_publication_latency"] == "PT0S"
-            and row["state_publication_latency_policy_id"]
-            != "zero_latency_candidate_replay_publication_policy_v0_1"
-        ):
+        if row["state_publication_latency"] != "PT0S":
+            errors.append("unexpected nonzero latency in bounded scale-validation sidecar")
+        if row["state_publication_latency_policy_id"] != ZERO_LATENCY_POLICY_ID:
             errors.append("PT0S policy mismatch")
+        if row["state_availability_policy_id"] != STATE_AVAILABILITY_POLICY_ID:
+            errors.append("state availability policy mismatch")
+        if (
+            row["state_availability_status"] == "available_for_decision_replay"
+            and row["state_replay_consumption_legality"] != "decision_safe"
+        ):
+            errors.append("availability status / replay legality mismatch")
+        if row["state_availability_status"] == "blocked" and row["state_replay_consumption_legality"] == "decision_safe":
+            errors.append("blocked state delivered decision_safe")
         if blocked_component and row["state_replay_consumption_legality"] == "decision_safe":
             errors.append("blocked/research component delivered decision_safe")
         if not component_restrictions.issubset(set(row["restriction_codes"])):
@@ -310,6 +524,24 @@ def negative_sidecar_cases(sidecar: dict[str, Any]) -> list[tuple[str, dict[str,
         lambda doc: doc["records"][0]["component_availability_evidence"][0].update(
             {"information_object_id": "trading_activity"}
         ),
+    )
+    add(
+        "SIDE_SCALE_NEG_row_status_blocked_decision_safe",
+        lambda doc: doc["records"][0].update({"state_availability_status": "blocked"}),
+    )
+    add(
+        "SIDE_SCALE_NEG_pt0s_policy_mismatch",
+        lambda doc: doc["records"][0].update({"state_publication_latency_policy_id": "unapproved_policy"}),
+    )
+    add(
+        "SIDE_SCALE_NEG_component_cutoff_rule_mismatch",
+        lambda doc: doc["records"][0]["component_availability_evidence"][0].update(
+            {"cutoff_rule_id": "wrong_cutoff_rule"}
+        ),
+    )
+    add(
+        "SIDE_SCALE_NEG_temporal_report_hash_mismatch",
+        lambda doc: doc.update({"market_state_temporal_legality_report_sha256": h("wrong_temporal_report")}),
     )
     return cases
 
@@ -430,7 +662,7 @@ def build_sidecar_matrix(sidecar: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def build_reissue_documents(sidecar: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
+def build_reissue_documents(sidecar: dict[str, Any], exact_reuse_equivalence_sha256: str) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
     coverage = {
         "requested_contexts": 120,
         "represented_contexts": 104,
@@ -489,12 +721,23 @@ def build_reissue_documents(sidecar: dict[str, Any]) -> tuple[dict[str, Any], di
     sidecar_sha = sha256_file(
         BOUNDARY / "market_state_core_four_replay_availability_evidence_sidecar_manifest_v0_1.json"
     )
+    artifact_specs = [
+        ("candidate_output_manifest", "manifest", sidecar["candidate_output_manifest_sha256"]),
+        ("candidate_parquet", "parquet", sidecar["candidate_parquet_sha256"]),
+        ("physical_schema_contract", "schema", sidecar["physical_schema_sha256"]),
+        ("lineage_manifest", "manifest", sidecar["source_lineage_manifest_sha256"]),
+        ("market_state_validation_report", "report", sidecar["market_state_validation_report_sha256"]),
+        ("market_state_temporal_legality_report", "report", sidecar["market_state_temporal_legality_report_sha256"]),
+        ("original_request_record", "request_record", sidecar["original_request_record_sha256"]),
+        ("original_execution_plan", "execution_plan", sidecar["original_execution_plan_sha256"]),
+        ("exact_requested_context_ledger", "ledger", sidecar["exact_requested_context_ledger_sha256"]),
+        ("replay_availability_sidecar_contract", "schema", sha256_file(BOUNDARY / "market_state_core_four_replay_availability_evidence_sidecar_contract_v0_1.json")),
+        ("replay_availability_sidecar", "manifest", sidecar_sha),
+        ("exact_reuse_equivalence_record", "evidence_record", exact_reuse_equivalence_sha256),
+    ]
     artifact_refs = [
-        ref("runtime_artifact", "candidate_output_manifest", sidecar["candidate_output_manifest_sha256"]),
-        ref("runtime_artifact", "candidate_parquet", sidecar["candidate_parquet_sha256"]),
-        ref("runtime_artifact", "physical_schema_contract", sidecar["physical_schema_sha256"]),
-        ref("runtime_artifact", "lineage_manifest", sidecar["source_lineage_manifest_sha256"]),
-        ref("runtime_artifact", "replay_availability_sidecar", sidecar_sha),
+        ref("runtime_artifact", artifact_id, artifact_sha)
+        for artifact_id, _artifact_type, artifact_sha in artifact_specs
     ]
     bundle_id = "state_bundle_manifest_scale_validation_reissue_v0_1_2_20260729"
     response_content = {
@@ -632,35 +875,12 @@ def build_reissue_documents(sidecar: dict[str, Any]) -> tuple[dict[str, Any], di
         "source_content_hashes": [sidecar["candidate_dataset_fingerprint"]],
         "artifact_hashes": [
             {
-                "artifact_id": "candidate_output_manifest",
-                "artifact_type": "manifest",
-                "sha256": sidecar["candidate_output_manifest_sha256"],
+                "artifact_id": artifact_id,
+                "artifact_type": artifact_type,
+                "sha256": artifact_sha,
                 "availability": "available",
-            },
-            {
-                "artifact_id": "candidate_parquet",
-                "artifact_type": "parquet",
-                "sha256": sidecar["candidate_parquet_sha256"],
-                "availability": "available",
-            },
-            {
-                "artifact_id": "physical_schema_contract",
-                "artifact_type": "schema",
-                "sha256": sidecar["physical_schema_sha256"],
-                "availability": "available",
-            },
-            {
-                "artifact_id": "lineage_manifest",
-                "artifact_type": "manifest",
-                "sha256": sidecar["source_lineage_manifest_sha256"],
-                "availability": "available",
-            },
-            {
-                "artifact_id": "replay_availability_sidecar",
-                "artifact_type": "manifest",
-                "sha256": sidecar_sha,
-                "availability": "available",
-            },
+            }
+            for artifact_id, artifact_type, artifact_sha in artifact_specs
         ],
         "field_lineage": [
             {
@@ -669,13 +889,18 @@ def build_reissue_documents(sidecar: dict[str, Any]) -> tuple[dict[str, Any], di
                 "input_refs": [
                     "candidate_output_manifest",
                     "lineage_manifest",
+                    "market_state_validation_report",
                     "market_state_temporal_legality_report",
+                    "original_request_record",
+                    "original_execution_plan",
+                    "exact_requested_context_ledger",
+                    "exact_reuse_equivalence_record",
                 ],
             }
         ],
         "temporal_policy": {
-            "point_in_time_policy_id": "market_state_core_four_replay_availability_policy_v0_1",
-            "available_at_policy_id": "zero_latency_candidate_replay_publication_policy_v0_1",
+            "point_in_time_policy_id": STATE_AVAILABILITY_POLICY_ID,
+            "available_at_policy_id": ZERO_LATENCY_POLICY_ID,
             "future_information_exclusion": True,
         },
         "materialization_status": "reference_only",
@@ -694,7 +919,11 @@ def build_reissue_documents(sidecar: dict[str, Any]) -> tuple[dict[str, Any], di
         "downstream": False,
         "physical_rows_delivered": False,
     }
-    bundle_ref = ref("state_bundle_manifest", bundle_id, canonical_sha(bundle_without_ref))
+    provisional_bundle = {
+        "bundle_ref": ref("state_bundle_manifest", bundle_id, h("pending_bundle_ref")),
+        **bundle_without_ref,
+    }
+    bundle_ref = ref("state_bundle_manifest", bundle_id, provider_bundle_sha(provisional_bundle))
     bundle = {"bundle_ref": bundle_ref, **bundle_without_ref}
     return request, response, bundle
 
@@ -714,19 +943,30 @@ def validate_reissue(
         result[name] = [
             error.message for error in Draft202012Validator(schema).iter_errors(documents[name])
         ]
+    result["provider_semantic_request"] = provider_semantic_errors(request, "state_resolution_request")
+    result["provider_semantic_response"] = provider_semantic_errors(response, "response")
+    result["provider_semantic_bundle"] = provider_semantic_errors(bundle, "bundle")
     binding = bundle["request_response_bindings"][0]
     cross = []
     if binding["request_fingerprint"] != request["request_fingerprint"]:
         cross.append("request fingerprint mismatch")
     if response["request_fingerprint"] != request["request_fingerprint"]:
         cross.append("response request fingerprint mismatch")
+    if binding["response_ref"]["sha256"] != response["response_ref"]["sha256"]:
+        cross.append("response_ref mismatch")
     if response["dataset_id"] != bundle["dataset_refs"]["market_state_dataset_ref"]["dataset_id"]:
         cross.append("dataset mismatch")
     if response["coverage"] != bundle["coverage"]:
         cross.append("coverage mismatch")
     if set(response["restrictions"]) - set(bundle["restrictions"]):
         cross.append("restriction propagation mismatch")
-    result["cross_artifact"] = cross
+    if bundle["bundle_ref"]["sha256"] != provider_bundle_sha(bundle):
+        cross.append("provider canonical bundle fingerprint mismatch")
+    artifact_ids = {artifact["artifact_id"]: artifact["sha256"] for artifact in bundle["artifact_hashes"]}
+    for ref_obj in response["artifact_references"]:
+        if artifact_ids.get(ref_obj["ref_id"]) != ref_obj["sha256"]:
+            cross.append(f"response artifact ref missing from bundle: {ref_obj['ref_id']}")
+    result["cross_artifact"] = sorted(set(cross))
     return result
 
 
@@ -782,6 +1022,48 @@ def build_regression_matrix(
             "expected": "Request, response, bundle, dataset, coverage and restrictions correlate.",
             "observed": validation["cross_artifact"],
             "result": "PASS" if not validation["cross_artifact"] else "FAIL",
+        },        {
+            "case_id": "RUI_REG_PROVIDER_SEMANTIC_REQUEST_001",
+            "area": "provider_semantic",
+            "expected": "StateResolutionRequest passes accepted provider v0.1.2 semantic validator.",
+            "observed": validation["provider_semantic_request"],
+            "result": "PASS" if not validation["provider_semantic_request"] else "FAIL",
+        },
+        {
+            "case_id": "RUI_REG_PROVIDER_SEMANTIC_RESPONSE_001",
+            "area": "provider_semantic",
+            "expected": "RuntimeInvocationResponse passes accepted provider v0.1.2 semantic validator.",
+            "observed": validation["provider_semantic_response"],
+            "result": "PASS" if not validation["provider_semantic_response"] else "FAIL",
+        },
+        {
+            "case_id": "RUI_REG_PROVIDER_SEMANTIC_BUNDLE_001",
+            "area": "provider_semantic",
+            "expected": "StateBundleManifest passes accepted provider v0.1.2 semantic validator, including canonical cycle-free bundle_ref.",
+            "observed": validation["provider_semantic_bundle"],
+            "result": "PASS" if not validation["provider_semantic_bundle"] else "FAIL",
+        },
+        {
+            "case_id": "RUI_REG_EXACT_REUSE_CORRESPONDENCE_001",
+            "area": "exact_reuse_correspondence",
+            "expected": "Bundle freezes original request, execution plan and exact requested-context ledger for the scale-validation candidate.",
+            "observed": {
+                "original_request_record": any(a["artifact_id"] == "original_request_record" for a in bundle["artifact_hashes"]),
+                "original_execution_plan": any(a["artifact_id"] == "original_execution_plan" for a in bundle["artifact_hashes"]),
+                "exact_requested_context_ledger": any(a["artifact_id"] == "exact_requested_context_ledger" for a in bundle["artifact_hashes"]),
+                "exact_reuse_equivalence_record": any(a["artifact_id"] == "exact_reuse_equivalence_record" for a in bundle["artifact_hashes"]),
+            },
+            "result": "PASS"
+            if all(
+                any(a["artifact_id"] == required for a in bundle["artifact_hashes"])
+                for required in [
+                    "original_request_record",
+                    "original_execution_plan",
+                    "exact_requested_context_ledger",
+                    "exact_reuse_equivalence_record",
+                ]
+            )
+            else "FAIL",
         },
         {
             "case_id": "RUI_REG_BOUNDARIES_001",
@@ -964,9 +1246,18 @@ def package(paths: list[Path], stamp: str) -> Path:
 def main() -> int:
     now = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
     contract_path = update_sidecar_contract()
-    sidecar = build_sidecar(now)
+    ledger = build_exact_requested_context_ledger(now)
+    ledger_path = BOUNDARY / "market_state_core_four_scale_validation_exact_requested_context_ledger_v0_1.json"
+    write_json(ledger_path, ledger)
+    ledger_sha = sha256_file(ledger_path)
+    sidecar = build_sidecar(now, ledger_sha)
     sidecar_path = BOUNDARY / "market_state_core_four_replay_availability_evidence_sidecar_manifest_v0_1.json"
     write_json(sidecar_path, sidecar)
+    sidecar_sha = sha256_file(sidecar_path)
+    exact_reuse_record = build_exact_reuse_equivalence_record(now, sidecar, sidecar_sha, ledger_sha)
+    exact_reuse_record_path = BOUNDARY / "runtime_v0_1_2_scale_validation_exact_reuse_equivalence_record_v0_1.json"
+    write_json(exact_reuse_record_path, exact_reuse_record)
+    exact_reuse_record_sha = sha256_file(exact_reuse_record_path)
     sidecar_matrix = build_sidecar_matrix(sidecar)
     write_json(
         BOUNDARY
@@ -988,9 +1279,14 @@ def main() -> int:
                 rel(SCALE_RUN / "lineage_manifest.json"),
                 rel(SCALE_RUN / "market_state_validation_report.json"),
                 rel(SCALE_RUN / "market_state_temporal_legality_report.json"),
+                rel(SCALE_RUN / "request_record.json"),
+                rel(SCALE_RUN / "execution_plan.json"),
+                rel(SCALE_RUN / "final_manifest.json"),
             ],
             "authorized_outputs": [
+                rel(ledger_path),
                 rel(sidecar_path),
+                rel(exact_reuse_record_path),
                 rel(BOUNDARY / "market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_matrix_v0_1.json"),
                 rel(BOUNDARY / "market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_readout_v0_1.md"),
                 rel(Path(__file__)),
@@ -1034,7 +1330,7 @@ The active sidecar now targets the scale-validation candidate required by physic
 """,
     )
 
-    request, response, bundle = build_reissue_documents(sidecar)
+    request, response, bundle = build_reissue_documents(sidecar, exact_reuse_record_sha)
     request_path = (
         RUNTIME
         / "runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_resolution_request_instance_v0_1.json"
@@ -1066,6 +1362,14 @@ The active sidecar now targets the scale-validation candidate required by physic
             "target_candidate_dataset_id": TARGET_DATASET_ID,
             "target_candidate_dataset_fingerprint": TARGET_DATASET_FP,
             "target_candidate_parquet_sha256": TARGET_PARQUET_SHA,
+            "authorized_inputs": [
+                rel(ledger_path),
+                rel(sidecar_path),
+                rel(exact_reuse_record_path),
+                rel(RUNTIME / "state_resolution_request_contract_v0_1_2.json"),
+                rel(RUNTIME / "runtime_user_invocation_response_contract_v0_1_2.json"),
+                rel(RUNTIME / "state_bundle_manifest_contract_v0_1_2.json"),
+            ],
             "authorized_outputs": [
                 rel(request_path),
                 rel(response_path),
@@ -1124,7 +1428,9 @@ state_bundle_manifest_physical_evidence_alignment_v0_2
     update_docs(sidecar_matrix, regression_matrix)
     package_paths = [
         contract_path,
+        ledger_path,
         sidecar_path,
+        exact_reuse_record_path,
         BOUNDARY / "configs" / "market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_scope_v0_1.json",
         BOUNDARY / "market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_matrix_v0_1.json",
         BOUNDARY / "market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_readout_v0_1.md",

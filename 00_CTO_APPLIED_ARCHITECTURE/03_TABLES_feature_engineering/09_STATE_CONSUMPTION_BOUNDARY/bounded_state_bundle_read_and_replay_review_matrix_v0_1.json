@@ -1,0 +1,292 @@
+{
+  "gate": "bounded_state_bundle_read_and_replay_review_v0_1",
+  "created_at_utc": "2026-07-30T00:00:00Z",
+  "status": "CLOSED_PASS_BOUNDED_MARKET_STATE_PHYSICAL_READ_AND_REPLAY_REVIEW_WITH_RESTRICTIONS_READY_FOR_BT_GATE_014_HANDOFF",
+  "case_count": 20,
+  "required_case_ids": [
+    "REVIEW_EXECUTION_OUTPUT_INVENTORY_EXACT",
+    "REVIEW_EXECUTION_STATUS_PASS",
+    "REVIEW_EXECUTION_CASES_ALL_PASS",
+    "REVIEW_SINGLE_USE_AUTHORIZATION_CONSUMED",
+    "REVIEW_FROZEN_INPUT_HASHES_ALL_MATCH",
+    "REVIEW_PHYSICAL_SCHEMA_EXACT",
+    "REVIEW_TWO_AUTHORIZED_ROWS_ONLY",
+    "REVIEW_ROW_FINGERPRINTS_RECALCULATED",
+    "REVIEW_EXACT_ONE_SIDECAR_PER_ROW",
+    "REVIEW_CANONICAL_ORDER",
+    "REVIEW_NO_EARLY_DELIVERY",
+    "REVIEW_RESTRICTIONS_PRESERVED",
+    "REVIEW_PROHIBITED_COUNTERS_ZERO",
+    "REVIEW_OUTPUT_HASH_CHAIN_VALID",
+    "REVIEW_DUPLICATE_EVENT_MUTATION_BLOCKED",
+    "REVIEW_EARLY_DELIVERY_MUTATION_BLOCKED",
+    "REVIEW_UNKNOWN_ROW_MUTATION_BLOCKED",
+    "REVIEW_SCOPE_EXPANSION_MUTATION_BLOCKED",
+    "REVIEW_UNCONSUMED_AUTHORIZATION_MUTATION_BLOCKED",
+    "REVIEW_NO_PHYSICAL_READ_DURING_REVIEW"
+  ],
+  "missing_required_case_ids": [],
+  "unexpected_case_ids": [],
+  "duplicate_case_ids": [],
+  "failed_cases": 0,
+  "pit_market_state_evidence_ready_for_handoff": true,
+  "general_StateReplayFeed_authorized": false,
+  "backtest_consumption_authorized": false,
+  "event_state_authorized": false,
+  "parquet_opened_during_review": false,
+  "physical_state_rows_read_during_review": 0,
+  "next_handoff": "BT-GATE-014_POINT_IN_TIME_MARKET_STATE_CONSUMPTION_EVIDENCE_READY",
+  "cases": [
+    {
+      "case_id": "REVIEW_EXECUTION_OUTPUT_INVENTORY_EXACT",
+      "status": "PASS",
+      "passed": true,
+      "evidence": [
+        "authorization_consumption_receipt.json",
+        "bounded_read_report.json",
+        "bounded_replay_report.json",
+        "final_manifest.json",
+        "heartbeat.json",
+        "pre_run_manifest.json",
+        "readout.md"
+      ]
+    },
+    {
+      "case_id": "REVIEW_EXECUTION_STATUS_PASS",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "CLOSED_PASS_ONE_BOUNDED_MARKET_STATE_PHYSICAL_READ_AND_REPLAY_PROBE_WITH_RESTRICTIONS"
+    },
+    {
+      "case_id": "REVIEW_EXECUTION_CASES_ALL_PASS",
+      "status": "PASS",
+      "passed": true,
+      "evidence": 16
+    },
+    {
+      "case_id": "REVIEW_SINGLE_USE_AUTHORIZATION_CONSUMED",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "CONSUMED_BY_RUN_bounded_state_bundle_read_and_replay_execution_v0_1_20260730T075225Z"
+    },
+    {
+      "case_id": "REVIEW_FROZEN_INPUT_HASHES_ALL_MATCH",
+      "status": "PASS",
+      "passed": true,
+      "evidence": [
+        {
+          "artifact_id": "candidate_parquet",
+          "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/market_state_scale_validation_candidate_v0_1.parquet",
+          "expected_sha256": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68",
+          "observed_sha256": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68",
+          "match": true
+        },
+        {
+          "artifact_id": "physical_schema_contract",
+          "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/official_profiles/market_state_core_four_intraday_profile_v0_1/PHYSICAL_SCHEMA_CONTRACT.json",
+          "expected_sha256": "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b",
+          "observed_sha256": "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b",
+          "match": true
+        },
+        {
+          "artifact_id": "lineage_manifest",
+          "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/lineage_manifest.json",
+          "expected_sha256": "85e7331b1b022d4075608bc4b8663de53dcb6234f21215ff232ad84c85cd4c52",
+          "observed_sha256": "85e7331b1b022d4075608bc4b8663de53dcb6234f21215ff232ad84c85cd4c52",
+          "match": true
+        },
+        {
+          "artifact_id": "temporal_legality_report",
+          "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/market_state_temporal_legality_report.json",
+          "expected_sha256": "0eb607a4286dd3d4819f9aeb8da0eb21a18955a269b87e001f8f672378c44c70",
+          "observed_sha256": "0eb607a4286dd3d4819f9aeb8da0eb21a18955a269b87e001f8f672378c44c70",
+          "match": true
+        },
+        {
+          "artifact_id": "replay_availability_timestamp_contract",
+          "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_timestamp_contract_v0_1.json",
+          "expected_sha256": "eae02c685f7bc2cc8b55e6e3bb4a6912dc3b391042c0178b3dc29387fa6b690d",
+          "observed_sha256": "eae02c685f7bc2cc8b55e6e3bb4a6912dc3b391042c0178b3dc29387fa6b690d",
+          "match": true
+        },
+        {
+          "artifact_id": "replay_availability_sidecar_contract",
+          "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_contract_v0_1.json",
+          "expected_sha256": "a29f656a6fe741432c7272d6715637eeb49fd5d34ca550c3ac0f33166bc1b169",
+          "observed_sha256": "a29f656a6fe741432c7272d6715637eeb49fd5d34ca550c3ac0f33166bc1b169",
+          "match": true
+        },
+        {
+          "artifact_id": "replay_availability_sidecar",
+          "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_manifest_v0_1.json",
+          "expected_sha256": "8e426b09bb1cafac26e49c7a81de31ef4ea60ca3b56ac3aa766ba13a0772c5ac",
+          "observed_sha256": "8e426b09bb1cafac26e49c7a81de31ef4ea60ca3b56ac3aa766ba13a0772c5ac",
+          "match": true
+        },
+        {
+          "artifact_id": "state_bundle_manifest",
+          "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_bundle_manifest_v0_1.json",
+          "expected_sha256": "0845642ba80fac75f0094bccd370db71157da2759cad7807885b2928d2d49ab0",
+          "observed_sha256": "0845642ba80fac75f0094bccd370db71157da2759cad7807885b2928d2d49ab0",
+          "match": true
+        },
+        {
+          "artifact_id": "selection_manifest",
+          "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/bounded_state_bundle_read_and_replay_selection_manifest_v0_2.json",
+          "expected_sha256": "a12c1bf3942c655115f521d0701f237f2cd9ad1a8fcf81a5ccc5c1c726d7b937",
+          "observed_sha256": "a12c1bf3942c655115f521d0701f237f2cd9ad1a8fcf81a5ccc5c1c726d7b937",
+          "match": true
+        }
+      ]
+    },
+    {
+      "case_id": "REVIEW_PHYSICAL_SCHEMA_EXACT",
+      "status": "PASS",
+      "passed": true,
+      "evidence": 40
+    },
+    {
+      "case_id": "REVIEW_TWO_AUTHORIZED_ROWS_ONLY",
+      "status": "PASS",
+      "passed": true,
+      "evidence": [
+        "f09492ac417d05161f70ee75f81e345a9cc315cef9beb9939d2df6ff3eb58dd3",
+        "26d923a282355ad242a5d91ad7d6183bed6a94842041ecf966ac70c366308c0e"
+      ]
+    },
+    {
+      "case_id": "REVIEW_ROW_FINGERPRINTS_RECALCULATED",
+      "status": "PASS",
+      "passed": true,
+      "evidence": [
+        {
+          "materialized_state_candidate_id": "f09492ac417d05161f70ee75f81e345a9cc315cef9beb9939d2df6ff3eb58dd3",
+          "state_output_fingerprint": "f7c926be8e8bb6e84433061213bc554d54de2e03d0910a799e974ff5aea04617",
+          "recalculated_state_output_fingerprint": "f7c926be8e8bb6e84433061213bc554d54de2e03d0910a799e974ff5aea04617",
+          "recalculated_materialized_state_candidate_id": "f09492ac417d05161f70ee75f81e345a9cc315cef9beb9939d2df6ff3eb58dd3",
+          "state_fingerprint_match": true,
+          "candidate_id_match": true,
+          "instrument_match": true,
+          "session_match": true,
+          "decision_timestamp_match": true
+        },
+        {
+          "materialized_state_candidate_id": "26d923a282355ad242a5d91ad7d6183bed6a94842041ecf966ac70c366308c0e",
+          "state_output_fingerprint": "2420034cb851629b48ee3216713b6bc1a337ce0a4356096575a3db1a91edb7bd",
+          "recalculated_state_output_fingerprint": "2420034cb851629b48ee3216713b6bc1a337ce0a4356096575a3db1a91edb7bd",
+          "recalculated_materialized_state_candidate_id": "26d923a282355ad242a5d91ad7d6183bed6a94842041ecf966ac70c366308c0e",
+          "state_fingerprint_match": true,
+          "candidate_id_match": true,
+          "instrument_match": true,
+          "session_match": true,
+          "decision_timestamp_match": true
+        }
+      ]
+    },
+    {
+      "case_id": "REVIEW_EXACT_ONE_SIDECAR_PER_ROW",
+      "status": "PASS",
+      "passed": true,
+      "evidence": [
+        "f09492ac417d05161f70ee75f81e345a9cc315cef9beb9939d2df6ff3eb58dd3",
+        "26d923a282355ad242a5d91ad7d6183bed6a94842041ecf966ac70c366308c0e"
+      ]
+    },
+    {
+      "case_id": "REVIEW_CANONICAL_ORDER",
+      "status": "PASS",
+      "passed": true,
+      "evidence": [
+        "2021-03-15T13:30:00Z",
+        "2021-03-15T20:00:00Z"
+      ]
+    },
+    {
+      "case_id": "REVIEW_NO_EARLY_DELIVERY",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "clock >= available_at"
+    },
+    {
+      "case_id": "REVIEW_RESTRICTIONS_PRESERVED",
+      "status": "PASS",
+      "passed": true,
+      "evidence": [
+        "candidate_runtime_only",
+        "no_downstream",
+        "no_production",
+        "not_official_dataset"
+      ]
+    },
+    {
+      "case_id": "REVIEW_PROHIBITED_COUNTERS_ZERO",
+      "status": "PASS",
+      "passed": true,
+      "evidence": {
+        "input_files_verified": 9,
+        "physical_data_files_opened": 1,
+        "physical_state_rows_read": 2,
+        "bounded_probe_records_emitted": 2,
+        "EventLoop_ticks": 2,
+        "strategy_callbacks": 0,
+        "signals_emitted": 0,
+        "orders_emitted": 0,
+        "fills_emitted": 0,
+        "PnL_calculated": false,
+        "datasets_written": 0,
+        "registry_mutations": 0,
+        "official_dataset": false,
+        "production": false,
+        "downstream": false
+      }
+    },
+    {
+      "case_id": "REVIEW_OUTPUT_HASH_CHAIN_VALID",
+      "status": "PASS",
+      "passed": true,
+      "evidence": {
+        "authorization_consumption_receipt.json": "1c432a918a93f2a049a47783a66c763ab5c51e4f815b1f1a1861f144a88a852f",
+        "bounded_read_report.json": "4d994001798cfbf7e7eb860ce4606fb00524f9372428e70112dc658335e2dd00",
+        "bounded_replay_report.json": "a1c275a05138d3cb925b616e165b6be01298f959b5771a2f844134d26dd45b27",
+        "heartbeat.json": "2807e0bb0dd11a8b847a868a1becf9e58aa9c21993782debc293e24d4eba245b",
+        "pre_run_manifest.json": "c479579d7d9f77918969c68ec4eaf34d93b48fcb4c8a199613da4b0fab6f45f5"
+      }
+    },
+    {
+      "case_id": "REVIEW_DUPLICATE_EVENT_MUTATION_BLOCKED",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "duplicate rejected"
+    },
+    {
+      "case_id": "REVIEW_EARLY_DELIVERY_MUTATION_BLOCKED",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "early delivery rejected"
+    },
+    {
+      "case_id": "REVIEW_UNKNOWN_ROW_MUTATION_BLOCKED",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "unknown row rejected"
+    },
+    {
+      "case_id": "REVIEW_SCOPE_EXPANSION_MUTATION_BLOCKED",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "instrument expansion rejected"
+    },
+    {
+      "case_id": "REVIEW_UNCONSUMED_AUTHORIZATION_MUTATION_BLOCKED",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "unconsumed authorization rejected"
+    },
+    {
+      "case_id": "REVIEW_NO_PHYSICAL_READ_DURING_REVIEW",
+      "status": "PASS",
+      "passed": true,
+      "evidence": "review used execution evidence only"
+    }
+  ]
+}

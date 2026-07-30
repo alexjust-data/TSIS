@@ -1,7 +1,7 @@
 ## Runtime v0.1.2 Control-Plane Reissue Ready With Scale Sidecar
 
 ```text
-runtime_user_invocation_bounded_interface_execution_regression_v0_1_2 = FAILED_V0_1_2_CONTROL_PLANE_REISSUE_REGRESSION
+runtime_user_invocation_bounded_interface_execution_regression_v0_1_2 = CLOSED_PASS_V0_1_2_CONTROL_PLANE_REISSUE_WITH_CANONICAL_BUNDLE_AND_EXACT_REUSE_EVIDENCE_NO_CONSUMPTION
 StateResolutionRequest v0.1.2 instance = present
 RuntimeInvocationResponse v0.1.2 = present
 StateBundleManifest v0.1.2 = present

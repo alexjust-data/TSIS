@@ -2,7 +2,7 @@
   "bundle_ref": {
     "ref_id": "state_bundle_manifest_scale_validation_reissue_v0_1_2_20260729",
     "ref_type": "state_bundle_manifest",
-    "sha256": "2a6bb5c904685b6fd9766b2f55d86db13596388c5230e28ca89a80a3c7379813",
+    "sha256": "0e9f7387acdf999a6e41f163ab16c3412c32cb545d1757cde4b5613572406be2",
     "availability": "available"
   },
   "state_bundle_manifest_id": "state_bundle_manifest_scale_validation_reissue_v0_1_2_20260729",
@@ -22,7 +22,7 @@
       "response_ref": {
         "ref_id": "runtime_invocation_response_scale_validation_reissue_v0_1_2_20260729",
         "ref_type": "runtime_invocation_response",
-        "sha256": "80bebe47b4106f5e20ad1bff274c4d383c08c6a40f2bad6e69162289d99a11d2",
+        "sha256": "702230ea5c467fa6930d192cfef844c422a2e51cad8bcd3c8d3b5b9817bb3337",
         "availability": "available"
       },
       "state_kind": "market_state"
@@ -97,10 +97,10 @@
   "runtime_invocation_response_artifacts": [
     {
       "artifact_ref_id": "runtime_invocation_response_scale_validation_reissue_v0_1_2_20260729",
-      "artifact_ref_sha256": "80bebe47b4106f5e20ad1bff274c4d383c08c6a40f2bad6e69162289d99a11d2",
-      "content_fingerprint": "80bebe47b4106f5e20ad1bff274c4d383c08c6a40f2bad6e69162289d99a11d2",
+      "artifact_ref_sha256": "702230ea5c467fa6930d192cfef844c422a2e51cad8bcd3c8d3b5b9817bb3337",
+      "content_fingerprint": "702230ea5c467fa6930d192cfef844c422a2e51cad8bcd3c8d3b5b9817bb3337",
       "request_fingerprint": "a2387169fefec56703c5f6dc5dfb2ee1567e9ce313c4519128cfb931d99fe821",
-      "response_fingerprint": "80bebe47b4106f5e20ad1bff274c4d383c08c6a40f2bad6e69162289d99a11d2",
+      "response_fingerprint": "702230ea5c467fa6930d192cfef844c422a2e51cad8bcd3c8d3b5b9817bb3337",
       "state_kind": "market_state",
       "canonicalization_algorithm": "json_sort_keys_compact_utf8_sha256",
       "canonical_content": {
@@ -156,9 +156,51 @@
             "availability": "available"
           },
           {
+            "ref_id": "market_state_validation_report",
+            "ref_type": "runtime_artifact",
+            "sha256": "86dfc8f8263ff9681b043ca797983c5e303770ada5d9104432257decf92da800",
+            "availability": "available"
+          },
+          {
+            "ref_id": "market_state_temporal_legality_report",
+            "ref_type": "runtime_artifact",
+            "sha256": "0eb607a4286dd3d4819f9aeb8da0eb21a18955a269b87e001f8f672378c44c70",
+            "availability": "available"
+          },
+          {
+            "ref_id": "original_request_record",
+            "ref_type": "runtime_artifact",
+            "sha256": "ef5e72440acec7f44cb8ad43e565dc1b4749d876fb10301ae94194368321f84d",
+            "availability": "available"
+          },
+          {
+            "ref_id": "original_execution_plan",
+            "ref_type": "runtime_artifact",
+            "sha256": "6c9ebd134cb5689c91e563db136eec7be36e407f529ef08fd309d34796133b5d",
+            "availability": "available"
+          },
+          {
+            "ref_id": "exact_requested_context_ledger",
+            "ref_type": "runtime_artifact",
+            "sha256": "320eb6483c4c2a4dcb241702bcb4e854053df9cdb6cf89fc75024c6451437fb1",
+            "availability": "available"
+          },
+          {
+            "ref_id": "replay_availability_sidecar_contract",
+            "ref_type": "runtime_artifact",
+            "sha256": "a29f656a6fe741432c7272d6715637eeb49fd5d34ca550c3ac0f33166bc1b169",
+            "availability": "available"
+          },
+          {
             "ref_id": "replay_availability_sidecar",
             "ref_type": "runtime_artifact",
-            "sha256": "d9407202d9f795bd8547e17bb19debb81daca706a06ef6bd6439d0db2d16b28b",
+            "sha256": "8e426b09bb1cafac26e49c7a81de31ef4ea60ca3b56ac3aa766ba13a0772c5ac",
+            "availability": "available"
+          },
+          {
+            "ref_id": "exact_reuse_equivalence_record",
+            "ref_type": "runtime_artifact",
+            "sha256": "b1fc9fed2eecd31fde495b9eaa5079ae286f8a0e77b6b6aa2ef152c6fc2e2e25",
             "availability": "available"
           }
         ],
@@ -259,9 +301,51 @@
       "availability": "available"
     },
     {
+      "artifact_id": "market_state_validation_report",
+      "artifact_type": "report",
+      "sha256": "86dfc8f8263ff9681b043ca797983c5e303770ada5d9104432257decf92da800",
+      "availability": "available"
+    },
+    {
+      "artifact_id": "market_state_temporal_legality_report",
+      "artifact_type": "report",
+      "sha256": "0eb607a4286dd3d4819f9aeb8da0eb21a18955a269b87e001f8f672378c44c70",
+      "availability": "available"
+    },
+    {
+      "artifact_id": "original_request_record",
+      "artifact_type": "request_record",
+      "sha256": "ef5e72440acec7f44cb8ad43e565dc1b4749d876fb10301ae94194368321f84d",
+      "availability": "available"
+    },
+    {
+      "artifact_id": "original_execution_plan",
+      "artifact_type": "execution_plan",
+      "sha256": "6c9ebd134cb5689c91e563db136eec7be36e407f529ef08fd309d34796133b5d",
+      "availability": "available"
+    },
+    {
+      "artifact_id": "exact_requested_context_ledger",
+      "artifact_type": "ledger",
+      "sha256": "320eb6483c4c2a4dcb241702bcb4e854053df9cdb6cf89fc75024c6451437fb1",
+      "availability": "available"
+    },
+    {
+      "artifact_id": "replay_availability_sidecar_contract",
+      "artifact_type": "schema",
+      "sha256": "a29f656a6fe741432c7272d6715637eeb49fd5d34ca550c3ac0f33166bc1b169",
+      "availability": "available"
+    },
+    {
       "artifact_id": "replay_availability_sidecar",
       "artifact_type": "manifest",
-      "sha256": "d9407202d9f795bd8547e17bb19debb81daca706a06ef6bd6439d0db2d16b28b",
+      "sha256": "8e426b09bb1cafac26e49c7a81de31ef4ea60ca3b56ac3aa766ba13a0772c5ac",
+      "availability": "available"
+    },
+    {
+      "artifact_id": "exact_reuse_equivalence_record",
+      "artifact_type": "evidence_record",
+      "sha256": "b1fc9fed2eecd31fde495b9eaa5079ae286f8a0e77b6b6aa2ef152c6fc2e2e25",
       "availability": "available"
     }
   ],
@@ -272,7 +356,12 @@
       "input_refs": [
         "candidate_output_manifest",
         "lineage_manifest",
-        "market_state_temporal_legality_report"
+        "market_state_validation_report",
+        "market_state_temporal_legality_report",
+        "original_request_record",
+        "original_execution_plan",
+        "exact_requested_context_ledger",
+        "exact_reuse_equivalence_record"
       ]
     }
   ],

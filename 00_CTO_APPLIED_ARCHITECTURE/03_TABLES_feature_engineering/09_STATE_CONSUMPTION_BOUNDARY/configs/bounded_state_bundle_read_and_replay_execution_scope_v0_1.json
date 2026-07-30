@@ -1,0 +1,210 @@
+{
+  "scope_id": "bounded_state_bundle_read_and_replay_execution_scope_v0_1",
+  "gate": "bounded_state_bundle_read_and_replay_execution_v0_1",
+  "run_id": "bounded_state_bundle_read_and_replay_execution_v0_1_20260730T075225Z",
+  "created_at_utc": "2026-07-30T07:52:25Z",
+  "status": "AUTHORIZED_NOT_EXECUTED",
+  "owner_layer": "09_STATE_CONSUMPTION_BOUNDARY",
+  "authorization": {
+    "authorization_gate": "bounded_state_bundle_read_and_replay_authorization_v0_2",
+    "authorization_status": "NOT_CONSUMED",
+    "single_use_authorization": true,
+    "maximum_execution_runs": 1,
+    "consumed_by_run_id": null,
+    "consumer_id": "bounded_market_state_replay_integration_probe_v0_1",
+    "consumption_purpose": "integration_validation_only"
+  },
+  "bounded_slice": {
+    "state_kind": "market_state",
+    "profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "physical_profile_id": "core_four_market_state_profile_v0_1",
+    "instrument_id": "cik_ticker:0001651625:ACIU",
+    "ticker": "ACIU",
+    "session_date": "2021-03-15",
+    "authorized_row_count": 2,
+    "maximum_rows": 2,
+    "maximum_input_files": 9,
+    "maximum_output_files": 7
+  },
+  "frozen_inputs": [
+    {
+      "artifact_id": "candidate_parquet",
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/market_state_scale_validation_candidate_v0_1.parquet",
+      "sha256": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68",
+      "physical": true
+    },
+    {
+      "artifact_id": "physical_schema_contract",
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/official_profiles/market_state_core_four_intraday_profile_v0_1/PHYSICAL_SCHEMA_CONTRACT.json",
+      "sha256": "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b",
+      "physical": false
+    },
+    {
+      "artifact_id": "lineage_manifest",
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/lineage_manifest.json",
+      "sha256": "85e7331b1b022d4075608bc4b8663de53dcb6234f21215ff232ad84c85cd4c52",
+      "physical": false
+    },
+    {
+      "artifact_id": "temporal_legality_report",
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/market_state_temporal_legality_report.json",
+      "sha256": "0eb607a4286dd3d4819f9aeb8da0eb21a18955a269b87e001f8f672378c44c70",
+      "physical": false
+    },
+    {
+      "artifact_id": "replay_availability_timestamp_contract",
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_timestamp_contract_v0_1.json",
+      "sha256": "eae02c685f7bc2cc8b55e6e3bb4a6912dc3b391042c0178b3dc29387fa6b690d",
+      "physical": false
+    },
+    {
+      "artifact_id": "replay_availability_sidecar_contract",
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_contract_v0_1.json",
+      "sha256": "a29f656a6fe741432c7272d6715637eeb49fd5d34ca550c3ac0f33166bc1b169",
+      "physical": false
+    },
+    {
+      "artifact_id": "replay_availability_sidecar",
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_manifest_v0_1.json",
+      "sha256": "8e426b09bb1cafac26e49c7a81de31ef4ea60ca3b56ac3aa766ba13a0772c5ac",
+      "physical": false
+    },
+    {
+      "artifact_id": "state_bundle_manifest",
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_bundle_manifest_v0_1.json",
+      "sha256": "0845642ba80fac75f0094bccd370db71157da2759cad7807885b2928d2d49ab0",
+      "canonical_sha256": "0e9f7387acdf999a6e41f163ab16c3412c32cb545d1757cde4b5613572406be2",
+      "physical": false
+    },
+    {
+      "artifact_id": "selection_manifest",
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/bounded_state_bundle_read_and_replay_selection_manifest_v0_2.json",
+      "sha256": "a12c1bf3942c655115f521d0701f237f2cd9ad1a8fcf81a5ccc5c1c726d7b937",
+      "physical": false
+    }
+  ],
+  "fingerprint_contract": {
+    "algorithm": "sha256",
+    "canonical_json": {
+      "encoding": "utf-8",
+      "sort_keys": true,
+      "ensure_ascii": true,
+      "separators": [
+        ",",
+        ":"
+      ]
+    },
+    "state_output_fingerprint_payload_fields": [
+      "state_profile_id",
+      "state_schema_version",
+      "source_integration_profile_id",
+      "instrument_id",
+      "ticker",
+      "session_date",
+      "decision_timestamp_utc",
+      "decision_case",
+      "context_id",
+      "integration_status",
+      "object_completeness_status",
+      "quality_status",
+      "price_location_structure__daily_open_price",
+      "price_location_structure__daily_prior_close",
+      "price_location_structure__intraday_bar_close_price",
+      "price_location_structure__intraday_return_vs_prior_close_ratio_as_location",
+      "price_location_structure__intraday_return_vs_session_open_ratio_as_location",
+      "price_movement__daily_gap_pct",
+      "price_movement__daily_prior_close",
+      "price_movement__intraday_bar_close_price",
+      "price_movement__intraday_return_vs_prior_close_ratio",
+      "price_movement__intraday_return_vs_session_open_ratio",
+      "trading_activity__session_volume_to_time_over_prior_20_full_session_volume_mean",
+      "trading_activity__daily_volume_20d_avg",
+      "trading_activity__intraday_bar_volume",
+      "trading_activity__intraday_session_volume_to_time",
+      "volatility_range_state__intraday_high_so_far",
+      "volatility_range_state__intraday_low_so_far",
+      "volatility_range_state__intraday_range_so_far_ratio",
+      "calendar_version",
+      "source_lineage_json",
+      "policy_versions_json",
+      "formula_versions_json",
+      "restriction_codes_json",
+      "context_input_fingerprint"
+    ],
+    "materialized_state_candidate_id_inputs": [
+      "state_profile_id",
+      "state_schema_version",
+      "instrument_id",
+      "decision_timestamp_utc",
+      "context_input_fingerprint",
+      "state_output_fingerprint"
+    ],
+    "source_contract_path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/configs/experimental_core_four_market_state_scale_c_candidate_materialization_scope_v0_1.json",
+    "source_contract_sha256": "e4223c64c030c2ac240763d7397362a0fe8faf91761ac7b94ca0f69d6f3d1913",
+    "source_contract_read_during_execution": false
+  },
+  "execution_rules": {
+    "verify_all_frozen_hashes_before_parquet_open": true,
+    "read_filter": "materialized_state_candidate_id IN authorized_row_ids",
+    "reject_missing_rows": true,
+    "reject_duplicate_rows": true,
+    "reject_unlisted_row_delivery": true,
+    "validate_exact_physical_schema": true,
+    "recalculate_state_output_fingerprint": true,
+    "recalculate_materialized_state_candidate_id": true,
+    "join_exactly_one_sidecar_record_per_row": true,
+    "canonical_order": [
+      "state_available_at_utc",
+      "state_kind",
+      "instrument_id",
+      "materialized_state_candidate_id"
+    ],
+    "delivery_eligibility_rule": "event_loop.clock >= state_available_at_utc",
+    "bounded_probe_adapter_only": true
+  },
+  "allowed_outputs": [
+    "pre_run_manifest.json",
+    "heartbeat.json",
+    "authorization_consumption_receipt.json",
+    "bounded_read_report.json",
+    "bounded_replay_report.json",
+    "final_manifest.json",
+    "readout.md"
+  ],
+  "prohibited": [
+    "event_state",
+    "user_supplied_paths",
+    "scope_expansion",
+    "strategy_callbacks",
+    "signals",
+    "orders",
+    "fills",
+    "pnl",
+    "market_state_as_execution_price",
+    "dataset_writes",
+    "registry_mutations",
+    "official_dataset",
+    "production",
+    "downstream",
+    "general_backtest_consumption",
+    "general_StateReplayFeed"
+  ],
+  "expected_counters": {
+    "input_files_verified": 9,
+    "physical_data_files_opened": 1,
+    "physical_state_rows_read": 2,
+    "bounded_probe_records_emitted": 2,
+    "strategy_callbacks": 0,
+    "signals_emitted": 0,
+    "orders_emitted": 0,
+    "fills_emitted": 0,
+    "PnL_calculated": false,
+    "datasets_written": 0,
+    "registry_mutations": 0,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false
+  },
+  "run_output_directory": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/runs/bounded_state_bundle_read_and_replay_execution_v0_1_20260730T075225Z",
+  "next_gate_on_pass": "bounded_state_bundle_read_and_replay_review_v0_1"
+}

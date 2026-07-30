@@ -1,0 +1,67 @@
+{
+  "binding_id": "market_state_core_four_scale_validation_physical_schema_binding_v0_1",
+  "created_at_utc": "2026-07-30T00:00:00Z",
+  "status": "ACTIVE_FOR_BT_GATE_014_BOUNDED_HANDOFF_WITH_RESTRICTIONS",
+  "purpose": "Disambiguate structural schema authority, profile provenance and current runtime parquet content authority without modifying historical profile artifacts.",
+  "state_kind": "market_state",
+  "profile_id": "market_state_core_four_intraday_profile_v0_1",
+  "structural_schema_authority": {
+    "artifact_path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/official_profiles/market_state_core_four_intraday_profile_v0_1/PHYSICAL_SCHEMA_CONTRACT.json",
+    "artifact_sha256": "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b",
+    "column_count": 40,
+    "role": "AUTHORITATIVE_FOR_PHYSICAL_STRUCTURE",
+    "candidate_parquet_sha256_reference_semantics": "PROFILE_PROVENANCE_REFERENCE_NOT_CURRENT_RUNTIME_CONTENT_AUTHORITY"
+  },
+  "profile_provenance": {
+    "profile_manifest_path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/official_profiles/market_state_core_four_intraday_profile_v0_1/PROFILE_MANIFEST.json",
+    "profile_manifest_sha256": "9935cf0491f56f2ee6fcb034d57e3359d1abd267612e24243692e2d98bad0496",
+    "evidence_manifest_path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/official_profiles/market_state_core_four_intraday_profile_v0_1/EVIDENCE_MANIFEST.json",
+    "evidence_manifest_sha256": "3583e54ebb3661a7d8a179c52acae05728b61596e1341028872372a0c0d99603",
+    "provenance_candidate_parquet_sha256": "b1841f4897a759de8ec9a317bece888a9ff817da3df2cd0eb477b4ed950775a2",
+    "role": "HISTORICAL_PROFILE_PROVENANCE_ONLY",
+    "current_runtime_read_authority": false
+  },
+  "current_runtime_content_authority": {
+    "candidate_dataset_id": "market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762",
+    "candidate_dataset_fingerprint": "516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416",
+    "candidate_parquet_path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/market_state_scale_validation_candidate_v0_1.parquet",
+    "candidate_parquet_sha256": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68",
+    "state_bundle_ref_id": "state_bundle_manifest_scale_validation_reissue_v0_1_2_20260729",
+    "state_bundle_canonical_sha256": "0e9f7387acdf999a6e41f163ab16c3412c32cb545d1757cde4b5613572406be2",
+    "role": "AUTHORITATIVE_FOR_CURRENT_BOUNDED_RUNTIME_CONTENT",
+    "authorized_scope": "BT_GATE_014_BOUNDED_CONTRACT_AND_IMPLEMENTATION_HANDOFF_ONLY"
+  },
+  "compatibility_evidence": {
+    "execution_run_id": "bounded_state_bundle_read_and_replay_execution_v0_1_20260730T075225Z",
+    "bounded_read_report_path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/runs/bounded_state_bundle_read_and_replay_execution_v0_1_20260730T075225Z/bounded_read_report.json",
+    "bounded_read_report_sha256": "4d994001798cfbf7e7eb860ce4606fb00524f9372428e70112dc658335e2dd00",
+    "execution_final_manifest_path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/runs/bounded_state_bundle_read_and_replay_execution_v0_1_20260730T075225Z/final_manifest.json",
+    "execution_final_manifest_sha256": "143f3e89eb82ec3461867e863814255613bafa72180529866d06351fe7e367ae",
+    "physical_schema_columns_checked": 40,
+    "physical_schema_mismatches": 0,
+    "runtime_parquet_hash_match": true,
+    "physical_rows_read": 2,
+    "schema_compatibility": "EXACT_MATCH"
+  },
+  "consumer_interpretation": {
+    "structural_authority": "PHYSICAL_SCHEMA_CONTRACT.json",
+    "current_runtime_content_sha256": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68",
+    "provenance_only_sha256": "b1841f4897a759de8ec9a317bece888a9ff817da3df2cd0eb477b4ed950775a2",
+    "hashes_are_interchangeable": false,
+    "consumer_must_not_select_runtime_content_by_profile_provenance_hash": true
+  },
+  "boundaries": {
+    "historical_artifacts_modified": false,
+    "parquet_opened_by_binding_gate": false,
+    "physical_rows_read_by_binding_gate": 0,
+    "new_physical_read_authorization_issued": false,
+    "BT_GATE_014_contract_and_implementation_ready": true,
+    "BT_GATE_014_physical_execution_authorized": false,
+    "general_StateReplayFeed_authorized": false,
+    "backtest_consumption_authorized": false,
+    "event_state_authorized": false,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false
+  }
+}

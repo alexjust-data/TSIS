@@ -1,0 +1,36 @@
+{
+  "scope_id": "market_state_core_four_scale_validation_physical_schema_binding_scope_v0_1",
+  "gate": "market_state_core_four_scale_validation_physical_schema_binding_clarification_v0_1",
+  "created_at_utc": "2026-07-30T00:00:00Z",
+  "status": "AUTHORIZED_METADATA_ONLY_NO_PHYSICAL_READ",
+  "owner_layer": "09_STATE_CONSUMPTION_BOUNDARY",
+  "purpose": "Validate and publish the distinction between profile schema provenance and current bounded runtime parquet content authority for BT-GATE-014.",
+  "authorized_inputs": [
+    "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/official_profiles/market_state_core_four_intraday_profile_v0_1/PHYSICAL_SCHEMA_CONTRACT.json",
+    "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/official_profiles/market_state_core_four_intraday_profile_v0_1/PROFILE_MANIFEST.json",
+    "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/official_profiles/market_state_core_four_intraday_profile_v0_1/EVIDENCE_MANIFEST.json",
+    "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_bundle_manifest_v0_1.json",
+    "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/runs/bounded_state_bundle_read_and_replay_execution_v0_1_20260730T075225Z/bounded_read_report.json",
+    "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/runs/bounded_state_bundle_read_and_replay_execution_v0_1_20260730T075225Z/final_manifest.json"
+  ],
+  "authorized_outputs": {
+    "binding": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_scale_validation_physical_schema_binding_v0_1.json",
+    "scope": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/configs/market_state_core_four_scale_validation_physical_schema_binding_scope_v0_1.json",
+    "runner": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/scripts/market_state_core_four_scale_validation_physical_schema_binding_runner_v0_1.py",
+    "matrix": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_scale_validation_physical_schema_binding_matrix_v0_1.json",
+    "readout": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_scale_validation_physical_schema_binding_readout_v0_1.md"
+  },
+  "hard_boundaries": {
+    "parquet_opened": false,
+    "parquet_hash_recomputed": false,
+    "physical_rows_read": 0,
+    "historical_artifacts_modified": false,
+    "new_physical_read_authorization_issued": false,
+    "backtester_files_modified": false,
+    "BT_GATE_014_physical_execution_authorized": false,
+    "general_StateReplayFeed_authorized": false,
+    "event_state_authorized": false,
+    "production": false,
+    "downstream": false
+  }
+}

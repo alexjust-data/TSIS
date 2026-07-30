@@ -1,8 +1,8 @@
 {
   "gate": "market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_v0_1",
-  "created_at_utc": "2026-07-29T19:59:52Z",
+  "created_at_utc": "2026-07-30T06:25:51Z",
   "status": "CLOSED_PASS_SCALE_VALIDATION_REPLAY_AVAILABILITY_EVIDENCE_SIDECAR_CREATED_AND_VALIDATED_WITH_RESTRICTIONS_NO_PHYSICAL_READ",
-  "case_count": 12,
+  "case_count": 16,
   "failed_cases": 0,
   "required_case_ids": [
     "SIDE_SCALE_TARGET_DATASET_IDENTITY_001",
@@ -16,7 +16,11 @@
     "SIDE_SCALE_NEG_component_available_before_as_of",
     "SIDE_SCALE_NEG_row_dataset_mismatch",
     "SIDE_SCALE_NEG_duplicate_component_id",
-    "SIDE_SCALE_NEG_missing_core_object"
+    "SIDE_SCALE_NEG_missing_core_object",
+    "SIDE_SCALE_NEG_row_status_blocked_decision_safe",
+    "SIDE_SCALE_NEG_pt0s_policy_mismatch",
+    "SIDE_SCALE_NEG_component_cutoff_rule_mismatch",
+    "SIDE_SCALE_NEG_temporal_report_hash_mismatch"
   ],
   "missing_required_case_ids": [],
   "duplicate_case_ids": [],
@@ -155,6 +159,46 @@
     },
     {
       "case_id": "SIDE_SCALE_NEG_missing_core_object",
+      "area": "negative_adversarial_regression",
+      "expected": "BLOCK",
+      "observed": {
+        "schema_ok": true,
+        "semantic_ok": false
+      },
+      "result": "PASS"
+    },
+    {
+      "case_id": "SIDE_SCALE_NEG_row_status_blocked_decision_safe",
+      "area": "negative_adversarial_regression",
+      "expected": "BLOCK",
+      "observed": {
+        "schema_ok": true,
+        "semantic_ok": false
+      },
+      "result": "PASS"
+    },
+    {
+      "case_id": "SIDE_SCALE_NEG_pt0s_policy_mismatch",
+      "area": "negative_adversarial_regression",
+      "expected": "BLOCK",
+      "observed": {
+        "schema_ok": true,
+        "semantic_ok": false
+      },
+      "result": "PASS"
+    },
+    {
+      "case_id": "SIDE_SCALE_NEG_component_cutoff_rule_mismatch",
+      "area": "negative_adversarial_regression",
+      "expected": "BLOCK",
+      "observed": {
+        "schema_ok": true,
+        "semantic_ok": false
+      },
+      "result": "PASS"
+    },
+    {
+      "case_id": "SIDE_SCALE_NEG_temporal_report_hash_mismatch",
       "area": "negative_adversarial_regression",
       "expected": "BLOCK",
       "observed": {

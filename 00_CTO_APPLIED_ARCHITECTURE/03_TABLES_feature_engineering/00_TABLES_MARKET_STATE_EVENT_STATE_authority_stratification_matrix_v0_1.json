@@ -1,0 +1,49 @@
+{
+  "review_id": "market_state_event_state_conceptual_authority_stratification_v0_1",
+  "created_at_utc": "2026-07-30T00:00:00Z",
+  "status": "CLOSED_DOCUMENTARY_AUTHORITY_STRATIFICATION_PASS_NO_EXECUTABLE_SEMANTIC_CHANGE",
+  "case_count": 8,
+  "failed_cases": 0,
+  "cases": [
+    {
+      "case_id": "DOC_AUTH_ROLE_001",
+      "expected": "The document identifies itself as foundational, stratified and non-executable.",
+      "result": "PASS"
+    },
+    {
+      "case_id": "DOC_AUTH_MAP_001",
+      "expected": "A section-level authority map points to specialized authorities.",
+      "result": "PASS"
+    },
+    {
+      "case_id": "DOC_AUTH_TERMINOLOGY_001",
+      "expected": "Legacy intuitive terms are not presented as canonical Information Object IDs.",
+      "result": "PASS"
+    },
+    {
+      "case_id": "DOC_AUTH_EVENT_EXAMPLES_001",
+      "expected": "PM_Squeeze_Event and VWAP_Reclaim_Event are marked as unregistered examples.",
+      "result": "PASS"
+    },
+    {
+      "case_id": "DOC_AUTH_PROFILE_001",
+      "expected": "The current Market State profile is identified as market_state_core_four_intraday_profile_v0_1.",
+      "result": "PASS"
+    },
+    {
+      "case_id": "DOC_AUTH_EVENT_SCOPE_001",
+      "expected": "The accepted Event Type scope is identified as session_opened / exchange_session.",
+      "result": "PASS"
+    },
+    {
+      "case_id": "DOC_AUTH_RUNTIME_ADDENDUM_001",
+      "expected": "Runtime and consumption sections are marked as governed addenda whose contracts live elsewhere.",
+      "result": "PASS"
+    },
+    {
+      "case_id": "DOC_AUTH_NO_PROMOTION_001",
+      "expected": "The correction does not admit or promote any executable contract, profile, Event Type or dataset.",
+      "result": "PASS"
+    }
+  ]
+}

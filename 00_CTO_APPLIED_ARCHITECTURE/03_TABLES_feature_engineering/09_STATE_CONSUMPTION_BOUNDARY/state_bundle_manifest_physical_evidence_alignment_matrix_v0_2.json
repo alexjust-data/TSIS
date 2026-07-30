@@ -1,0 +1,438 @@
+{
+  "gate": "state_bundle_manifest_physical_evidence_alignment_v0_2",
+  "created_at_utc": "2026-07-30T07:08:36Z",
+  "status": "CLOSED_PASS_PHYSICAL_EVIDENCE_ALIGNED_READY_FOR_BOUNDED_READ_AUTHORIZATION_WITH_RESTRICTIONS_NO_PHYSICAL_READ",
+  "case_count": 22,
+  "required_case_ids": [
+    "ALIGN_V02_INPUTS_001",
+    "ALIGN_V02_PROVIDER_AUTHORITY_001",
+    "ALIGN_V02_REQUEST_SCHEMA_001",
+    "ALIGN_V02_RESPONSE_SCHEMA_001",
+    "ALIGN_V02_BUNDLE_SCHEMA_001",
+    "ALIGN_V02_SIDECAR_SCHEMA_001",
+    "ALIGN_V02_REQUEST_SEMANTIC_001",
+    "ALIGN_V02_RESPONSE_SEMANTIC_001",
+    "ALIGN_V02_BUNDLE_SEMANTIC_001",
+    "ALIGN_V02_SIDECAR_SEMANTIC_001",
+    "ALIGN_V02_DATASET_IDENTITY_001",
+    "ALIGN_V02_ARTIFACT_HASH_CHAIN_001",
+    "ALIGN_V02_COVERAGE_001",
+    "ALIGN_V02_EXACT_REUSE_001",
+    "ALIGN_V02_ROW_ADDRESSABILITY_001",
+    "ALIGN_V02_TEMPORAL_LEGALITY_001",
+    "ALIGN_V02_RESTRICTIONS_001",
+    "ALIGN_V02_CROSS_ARTIFACT_VALIDATOR_001",
+    "ALIGN_V02_NEG_WRONG_DATASET",
+    "ALIGN_V02_NEG_MISSING_SIDECAR_HASH",
+    "ALIGN_V02_NEG_WEAKENED_COVERAGE",
+    "ALIGN_V02_BOUNDARIES_001"
+  ],
+  "missing_required_case_ids": [],
+  "unexpected_case_ids": [],
+  "duplicate_case_ids": [],
+  "blocking_findings": 0,
+  "restricted_findings": 2,
+  "physical_read_authorization_ready": true,
+  "authorization_to_read_issued": false,
+  "parquet_opened": false,
+  "parquet_hash_recomputed": false,
+  "physical_state_rows_read": 0,
+  "StateReplayFeed_records_emitted": 0,
+  "EventLoop_ticks": 0,
+  "strategy_callbacks": 0,
+  "orders_emitted": 0,
+  "fills_emitted": 0,
+  "PnL_calculated": false,
+  "runtime_requests_executed": 0,
+  "runtime_builds_executed": 0,
+  "datasets_written": 0,
+  "registry_mutations": 0,
+  "backtest_consumption": false,
+  "official_dataset": false,
+  "production": false,
+  "downstream": false,
+  "next_gate": "bounded_state_bundle_read_and_replay_authorization_v0_1",
+  "rows": [
+    {
+      "case_id": "ALIGN_V02_INPUTS_001",
+      "area": "inventory",
+      "expected": "All governed metadata inputs exist; parquet is identified but not opened.",
+      "observed": {
+        "missing": [],
+        "parquet_exists": true
+      },
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_provider_contract_schema_hardening_v0_1_2_external_audit_acceptance_readout_v0_1.md",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_resolution_request_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_response_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_resolution_request_instance_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_runtime_invocation_response_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_bundle_manifest_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/final_manifest.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/candidate_output_manifest.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/candidate_registry_entry.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/market_state_validation_report.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/market_state_temporal_legality_report.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/lineage_manifest.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/request_record.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/execution_plan.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/official_profiles/market_state_core_four_intraday_profile_v0_1/PHYSICAL_SCHEMA_CONTRACT.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_timestamp_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_scale_validation_exact_requested_context_ledger_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_manifest_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/runtime_v0_1_2_scale_validation_exact_reuse_equivalence_record_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/scripts/market_state_core_four_scale_validation_replay_sidecar_and_reissue_runner_v0_1.py"
+      ]
+    },
+    {
+      "case_id": "ALIGN_V02_PROVIDER_AUTHORITY_001",
+      "area": "provider_authority",
+      "expected": "Provider v0.1.2 is the accepted restricted control-plane authority.",
+      "observed": true,
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_provider_contract_schema_hardening_v0_1_2_external_audit_acceptance_readout_v0_1.md"
+      ]
+    },
+    {
+      "case_id": "ALIGN_V02_REQUEST_SCHEMA_001",
+      "area": "schema",
+      "expected": "request validates against its accepted contract.",
+      "observed": [],
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_resolution_request_instance_v0_1.json"
+      ]
+    },
+    {
+      "case_id": "ALIGN_V02_RESPONSE_SCHEMA_001",
+      "area": "schema",
+      "expected": "response validates against its accepted contract.",
+      "observed": [],
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_runtime_invocation_response_v0_1.json"
+      ]
+    },
+    {
+      "case_id": "ALIGN_V02_BUNDLE_SCHEMA_001",
+      "area": "schema",
+      "expected": "bundle validates against its accepted contract.",
+      "observed": [],
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_bundle_manifest_v0_1.json"
+      ]
+    },
+    {
+      "case_id": "ALIGN_V02_SIDECAR_SCHEMA_001",
+      "area": "schema",
+      "expected": "sidecar validates against its accepted contract.",
+      "observed": [],
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_manifest_v0_1.json"
+      ]
+    },
+    {
+      "case_id": "ALIGN_V02_REQUEST_SEMANTIC_001",
+      "area": "semantic",
+      "expected": "Accepted semantic validator returns no errors.",
+      "observed": [],
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_resolution_request_instance_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/scripts/market_state_core_four_scale_validation_replay_sidecar_and_reissue_runner_v0_1.py"
+      ]
+    },
+    {
+      "case_id": "ALIGN_V02_RESPONSE_SEMANTIC_001",
+      "area": "semantic",
+      "expected": "Accepted semantic validator returns no errors.",
+      "observed": [],
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_runtime_invocation_response_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/scripts/market_state_core_four_scale_validation_replay_sidecar_and_reissue_runner_v0_1.py"
+      ]
+    },
+    {
+      "case_id": "ALIGN_V02_BUNDLE_SEMANTIC_001",
+      "area": "semantic",
+      "expected": "Accepted semantic validator returns no errors.",
+      "observed": [],
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_bundle_manifest_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/scripts/market_state_core_four_scale_validation_replay_sidecar_and_reissue_runner_v0_1.py"
+      ]
+    },
+    {
+      "case_id": "ALIGN_V02_SIDECAR_SEMANTIC_001",
+      "area": "semantic",
+      "expected": "Accepted semantic validator returns no errors.",
+      "observed": [],
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_manifest_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/scripts/market_state_core_four_scale_validation_replay_sidecar_and_reissue_runner_v0_1.py"
+      ]
+    },
+    {
+      "case_id": "ALIGN_V02_DATASET_IDENTITY_001",
+      "area": "dataset_identity",
+      "expected": "Bundle, registry, sidecar and equivalence record identify the exact physical candidate.",
+      "observed": {
+        "output_manifest": [
+          "market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762",
+          "516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416"
+        ],
+        "bundle": [
+          "market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762",
+          "516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416"
+        ],
+        "registry": [
+          "market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762",
+          "516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416"
+        ],
+        "sidecar": [
+          "market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762",
+          "516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416"
+        ],
+        "equivalence": [
+          "market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762",
+          "516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416"
+        ]
+      },
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/candidate_output_manifest.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_bundle_manifest_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/candidate_registry_entry.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_manifest_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/runtime_v0_1_2_scale_validation_exact_reuse_equivalence_record_v0_1.json"
+      ]
+    },
+    {
+      "case_id": "ALIGN_V02_ARTIFACT_HASH_CHAIN_001",
+      "area": "artifact_hash_chain",
+      "expected": "Bundle freezes every governed metadata artifact and the previously validated parquet hash.",
+      "observed": {
+        "hash_mismatches": {},
+        "parquet_hash_declared_by_output_manifest": true,
+        "parquet_opened": false
+      },
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_bundle_manifest_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/candidate_output_manifest.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_manifest_v0_1.json"
+      ]
+    },
+    {
+      "case_id": "ALIGN_V02_COVERAGE_001",
+      "area": "coverage",
+      "expected": "Requested, represented and unavailable contexts reconcile without hiding partial coverage.",
+      "observed": {
+        "bundle": [
+          120,
+          104,
+          16,
+          0,
+          0,
+          0
+        ],
+        "response": [
+          120,
+          104,
+          16,
+          0,
+          0,
+          0
+        ],
+        "final_manifest": [
+          120,
+          104,
+          16,
+          0,
+          0,
+          0
+        ],
+        "ledger_requested": 120,
+        "ledger_represented": 104,
+        "sidecar_rows": 104
+      },
+      "result": "PASS_WITH_RESTRICTIONS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_bundle_manifest_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_runtime_invocation_response_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/final_manifest.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_scale_validation_exact_requested_context_ledger_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_manifest_v0_1.json"
+      ]
+    },
+    {
+      "case_id": "ALIGN_V02_EXACT_REUSE_001",
+      "area": "exact_reuse",
+      "expected": "The reissued request is explicitly bound to the original plan, 120-context ledger and 104-row sidecar.",
+      "observed": {
+        "ledger_sha": true,
+        "sidecar_sha": true,
+        "original_request_sha": true,
+        "original_plan_sha": true,
+        "original_request_fingerprint": true,
+        "reissued_request_bound_by_bundle": true,
+        "candidate_dataset": true,
+        "candidate_fingerprint": true
+      },
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/runtime_v0_1_2_scale_validation_exact_reuse_equivalence_record_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/request_record.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/execution_plan.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_scale_validation_exact_requested_context_ledger_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_manifest_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_resolution_request_instance_v0_1.json"
+      ]
+    },
+    {
+      "case_id": "ALIGN_V02_ROW_ADDRESSABILITY_001",
+      "area": "row_addressability",
+      "expected": "Exactly the 104 represented ledger contexts map one-to-one to sidecar row identities.",
+      "observed": {
+        "sidecar_unique_rows": 104,
+        "ledger_represented_rows": 104,
+        "symmetric_difference": 0
+      },
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_scale_validation_exact_requested_context_ledger_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_manifest_v0_1.json"
+      ]
+    },
+    {
+      "case_id": "ALIGN_V02_TEMPORAL_LEGALITY_001",
+      "area": "temporal_legality",
+      "expected": "All 104 replay records satisfy the hardened timestamp contract.",
+      "observed": {
+        "validated_records": 104,
+        "failures": []
+      },
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_timestamp_contract_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_manifest_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/market_state_temporal_legality_report.json"
+      ]
+    },
+    {
+      "case_id": "ALIGN_V02_RESTRICTIONS_001",
+      "area": "restrictions",
+      "expected": "Bundle, response, dataset and every sidecar row preserve effective restrictions.",
+      "observed": {
+        "bundle": [
+          "candidate_runtime_only",
+          "no_downstream",
+          "no_production",
+          "not_official_dataset"
+        ],
+        "response": [
+          "candidate_runtime_only",
+          "no_downstream",
+          "no_production",
+          "not_official_dataset"
+        ],
+        "sidecar_record_sets": [
+          [
+            "candidate_runtime_only",
+            "no_downstream",
+            "no_production",
+            "not_official_dataset"
+          ]
+        ],
+        "dataset_validation_status": "PASS_WITH_RESTRICTIONS",
+        "dataset_reuse_eligibility": "eligible_with_restrictions"
+      },
+      "result": "PASS_WITH_RESTRICTIONS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_bundle_manifest_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_runtime_invocation_response_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_manifest_v0_1.json"
+      ]
+    },
+    {
+      "case_id": "ALIGN_V02_CROSS_ARTIFACT_VALIDATOR_001",
+      "area": "cross_artifact",
+      "expected": "The alignment-specific validator accepts the unmodified governed bundle.",
+      "observed": [],
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_bundle_manifest_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/candidate_output_manifest.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/final_manifest.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_manifest_v0_1.json"
+      ]
+    },
+    {
+      "case_id": "ALIGN_V02_NEG_WRONG_DATASET",
+      "area": "adversarial",
+      "expected": "A bundle with a different dataset identity is blocked.",
+      "observed": {
+        "blocked": true
+      },
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_bundle_manifest_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/scripts/market_state_core_four_scale_validation_replay_sidecar_and_reissue_runner_v0_1.py"
+      ]
+    },
+    {
+      "case_id": "ALIGN_V02_NEG_MISSING_SIDECAR_HASH",
+      "area": "adversarial",
+      "expected": "A bundle missing the sidecar artifact hash is blocked.",
+      "observed": {
+        "blocked": true
+      },
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_bundle_manifest_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/scripts/market_state_core_four_scale_validation_replay_sidecar_and_reissue_runner_v0_1.py"
+      ]
+    },
+    {
+      "case_id": "ALIGN_V02_NEG_WEAKENED_COVERAGE",
+      "area": "adversarial",
+      "expected": "A bundle that hides unavailable contexts is blocked.",
+      "observed": {
+        "blocked": true
+      },
+      "result": "PASS",
+      "evidence_refs": [
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_bundle_manifest_v0_1.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/state_bundle_manifest_contract_v0_1_2.json",
+        "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/scripts/market_state_core_four_scale_validation_replay_sidecar_and_reissue_runner_v0_1.py"
+      ]
+    },
+    {
+      "case_id": "ALIGN_V02_BOUNDARIES_001",
+      "area": "hard_boundaries",
+      "expected": "No parquet bytes, rows, replay events, strategy callbacks or backtest actions are performed.",
+      "observed": {
+        "parquet_opened": false,
+        "parquet_hash_recomputed": false,
+        "physical_state_rows_read": 0,
+        "StateReplayFeed_records_emitted": 0,
+        "EventLoop_ticks": 0,
+        "orders_emitted": 0,
+        "fills_emitted": 0
+      },
+      "result": "PASS",
+      "evidence_refs": []
+    }
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "gate": "bounded_state_bundle_read_and_replay_authorization_v0_2",
+  "created_at_utc": "2026-07-30T00:00:00Z",
+  "status": "CLOSED_AUTHORIZED_ONE_BOUNDED_MARKET_STATE_READ_AND_REPLAY_PROBE_WITH_RESTRICTIONS_NO_EXECUTION",
+  "case_count": 25,
+  "required_case_ids": [
+    "AUTH_V02_UPSTREAM_ALIGNMENT_PASS",
+    "AUTH_V02_UPSTREAM_READY_TRUE",
+    "AUTH_V02_EXACT_BUNDLE_IDENTITY",
+    "AUTH_V02_EXACT_DATASET_IDENTITY",
+    "AUTH_V02_EXACT_SIDECAR_IDENTITY",
+    "AUTH_V02_ONE_INSTRUMENT",
+    "AUTH_V02_ONE_SESSION",
+    "AUTH_V02_TWO_EXACT_ROWS",
+    "AUTH_V02_ROW_IDS_UNIQUE",
+    "AUTH_V02_ROW_FINGERPRINTS_UNIQUE",
+    "AUTH_V02_ROWS_EXIST_EXACTLY_ONCE_IN_SIDECAR",
+    "AUTH_V02_ROW_METADATA_MATCHES_SIDECAR",
+    "AUTH_V02_ROWS_DECISION_SAFE",
+    "AUTH_V02_RESTRICTIONS_PRESERVED",
+    "AUTH_V02_TEMPORAL_ORDER_NONDECREASING",
+    "AUTH_V02_DELIVERY_RULE_AVAILABLE_AT",
+    "AUTH_V02_MAXIMUM_ROWS_FAIL_CLOSED",
+    "AUTH_V02_UNLISTED_ROW_FAIL_CLOSED",
+    "AUTH_V02_WRONG_INSTRUMENT_FAIL_CLOSED",
+    "AUTH_V02_WRONG_SESSION_FAIL_CLOSED",
+    "AUTH_V02_EVENT_STATE_PROHIBITED",
+    "AUTH_V02_USER_PATHS_PROHIBITED",
+    "AUTH_V02_STRATEGY_EXECUTION_PROHIBITED",
+    "AUTH_V02_SELECTION_MANIFEST_HASH_FROZEN",
+    "AUTH_V02_NO_PHYSICAL_READ_IN_AUTHORIZATION_GATE"
+  ],
+  "missing_required_case_ids": [],
+  "unexpected_case_ids": [],
+  "duplicate_case_ids": [],
+  "failed_cases": 0,
+  "authorization_to_read_issued": true,
+  "bounded_execution_authorized": true,
+  "selection_manifest_sha256": "a12c1bf3942c655115f521d0701f237f2cd9ad1a8fcf81a5ccc5c1c726d7b937",
+  "authorized_row_count": 2,
+  "maximum_rows": 2,
+  "parquet_opened": false,
+  "parquet_hash_recomputed": false,
+  "physical_state_rows_read": 0,
+  "bounded_probe_records_emitted": 0,
+  "general_StateReplayFeed_authorized": false,
+  "strategy_callbacks": 0,
+  "orders_emitted": 0,
+  "fills_emitted": 0,
+  "PnL_calculated": false,
+  "backtest_consumption": false,
+  "official_dataset": false,
+  "production": false,
+  "downstream": false,
+  "next_gate": "bounded_state_bundle_read_and_replay_execution_v0_1",
+  "cases": [
+    {
+      "case_id": "AUTH_V02_UPSTREAM_ALIGNMENT_PASS",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "CLOSED_PASS_PHYSICAL_EVIDENCE_ALIGNED_READY_FOR_BOUNDED_READ_AUTHORIZATION_WITH_RESTRICTIONS_NO_PHYSICAL_READ"
+    },
+    {
+      "case_id": "AUTH_V02_UPSTREAM_READY_TRUE",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "alignment ready"
+    },
+    {
+      "case_id": "AUTH_V02_EXACT_BUNDLE_IDENTITY",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "bundle ref, canonical hash and artifact hash match"
+    },
+    {
+      "case_id": "AUTH_V02_EXACT_DATASET_IDENTITY",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "dataset identity frozen"
+    },
+    {
+      "case_id": "AUTH_V02_EXACT_SIDECAR_IDENTITY",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "sidecar identity and hash match"
+    },
+    {
+      "case_id": "AUTH_V02_ONE_INSTRUMENT",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "cik_ticker:0001651625:ACIU"
+    },
+    {
+      "case_id": "AUTH_V02_ONE_SESSION",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "2021-03-15"
+    },
+    {
+      "case_id": "AUTH_V02_TWO_EXACT_ROWS",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "two exact rows"
+    },
+    {
+      "case_id": "AUTH_V02_ROW_IDS_UNIQUE",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "row IDs unique"
+    },
+    {
+      "case_id": "AUTH_V02_ROW_FINGERPRINTS_UNIQUE",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "fingerprints unique"
+    },
+    {
+      "case_id": "AUTH_V02_ROWS_EXIST_EXACTLY_ONCE_IN_SIDECAR",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "each selected row occurs exactly once"
+    },
+    {
+      "case_id": "AUTH_V02_ROW_METADATA_MATCHES_SIDECAR",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "selection fields equal sidecar fields"
+    },
+    {
+      "case_id": "AUTH_V02_ROWS_DECISION_SAFE",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "all rows decision_safe"
+    },
+    {
+      "case_id": "AUTH_V02_RESTRICTIONS_PRESERVED",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "restrictions preserved by rows and bundle"
+    },
+    {
+      "case_id": "AUTH_V02_TEMPORAL_ORDER_NONDECREASING",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "available-at order"
+    },
+    {
+      "case_id": "AUTH_V02_DELIVERY_RULE_AVAILABLE_AT",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "event_loop.clock >= state_available_at_utc"
+    },
+    {
+      "case_id": "AUTH_V02_MAXIMUM_ROWS_FAIL_CLOSED",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "third row rejected by maximum_rows"
+    },
+    {
+      "case_id": "AUTH_V02_UNLISTED_ROW_FAIL_CLOSED",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "unlisted row rejected"
+    },
+    {
+      "case_id": "AUTH_V02_WRONG_INSTRUMENT_FAIL_CLOSED",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "wrong instrument rejected"
+    },
+    {
+      "case_id": "AUTH_V02_WRONG_SESSION_FAIL_CLOSED",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "wrong session rejected"
+    },
+    {
+      "case_id": "AUTH_V02_EVENT_STATE_PROHIBITED",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "Event State excluded"
+    },
+    {
+      "case_id": "AUTH_V02_USER_PATHS_PROHIBITED",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "paths fail closed"
+    },
+    {
+      "case_id": "AUTH_V02_STRATEGY_EXECUTION_PROHIBITED",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "strategy excluded"
+    },
+    {
+      "case_id": "AUTH_V02_SELECTION_MANIFEST_HASH_FROZEN",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "selection manifest hash is frozen by scope"
+    },
+    {
+      "case_id": "AUTH_V02_NO_PHYSICAL_READ_IN_AUTHORIZATION_GATE",
+      "expected": "PASS",
+      "observed": "PASS",
+      "passed": true,
+      "evidence": "authorization gate performed no physical read or replay"
+    }
+  ]
+}

@@ -1,3 +1,120 @@
+# Active-State Rule
+
+```text
+canonical cold-start entry = STATE_PROVIDER_CONSUMER_RECOVERY.md
+current handoff = the first handoff block below only
+all later handoff blocks = historical closure snapshots
+```
+
+Read `LOCAL_RULES.md` and `STATE_PROVIDER_CONSUMER_RECOVERY.md` before using
+this file. Repeated historical headings do not create concurrent current gates.
+
+# Current Runtime Handoff Override - BT-GATE-014 Contract Handoff Ready
+
+Status: `agent_handoff_prompt_v0_154`
+Layer: `03_TABLES_feature_engineering`
+Boundary layer: `09_STATE_CONSUMPTION_BOUNDARY`
+Date: `2026-07-30`
+
+```text
+last_closed_gate = market_state_core_four_scale_validation_physical_schema_binding_clarification_v0_1
+last_closed_status = CLOSED_PASS_SCHEMA_PROVENANCE_AND_RUNTIME_CONTENT_AUTHORITY_DISAMBIGUATED_FOR_BT_GATE_014_NO_PHYSICAL_READ
+next_owner = BT-GATE-014
+BT_GATE_014_provider_evidence_handoff = COMPLETE
+backtester_current_gate_authority = 02_TSIS_BACKTEST_ENGINE/AGENTS.md
+provider_authorization_reuse = PROHIBITED
+active_provider_gate = none
+general_StateReplayFeed = NOT_AUTHORIZED
+Event_State = NOT_OPEN
+official_dataset = false
+production = false
+downstream = false
+```
+
+The provider handoff is complete. Read `02_TSIS_BACKTEST_ENGINE/AGENTS.md` for
+the mutable consumer gate state. Do not modify the backtester from this handoff.
+
+# Current Runtime Handoff Override - Bounded Market State Read/Replay Review Closed
+
+Status: `agent_handoff_prompt_v0_153`
+Layer: `03_TABLES_feature_engineering`
+Boundary layer: `09_STATE_CONSUMPTION_BOUNDARY`
+Date: `2026-07-30`
+
+```text
+last_executed_gate = bounded_state_bundle_read_and_replay_execution_v0_1
+last_execution_status = CLOSED_PASS_ONE_BOUNDED_MARKET_STATE_PHYSICAL_READ_AND_REPLAY_PROBE_WITH_RESTRICTIONS
+last_closed_gate = bounded_state_bundle_read_and_replay_review_v0_1
+last_closed_status = CLOSED_PASS_BOUNDED_MARKET_STATE_PHYSICAL_READ_AND_REPLAY_REVIEW_WITH_RESTRICTIONS_READY_FOR_BT_GATE_014_HANDOFF
+authorization_single_use_consumed = true
+physical_state_rows_read = 2
+bounded_probe_records_emitted = 2
+next_handoff = BT-GATE-014_POINT_IN_TIME_MARKET_STATE_CONSUMPTION_EVIDENCE_READY
+general_StateReplayFeed = NOT_AUTHORIZED
+backtest_consumption = false
+event_state = NOT_AUTHORIZED
+official_dataset = false
+production = false
+downstream = false
+```
+
+Do not modify `02_TSIS_BACKTEST_ENGINE` from this handoff. Provide the execution
+and review evidence to the BT-GATE-014 owner. The consumed authorization cannot
+be reused and no additional physical provider read is authorized.
+
+# Current Runtime Handoff Override - Bounded Read and Replay Authorization v0.2 Closed
+
+Status: `agent_handoff_prompt_v0_152`
+Layer: `03_TABLES_feature_engineering`
+Boundary layer: `09_STATE_CONSUMPTION_BOUNDARY`
+Date: `2026-07-30`
+
+```text
+last_closed_gate = bounded_state_bundle_read_and_replay_authorization_v0_2
+last_closed_status = CLOSED_AUTHORIZED_ONE_BOUNDED_MARKET_STATE_READ_AND_REPLAY_PROBE_WITH_RESTRICTIONS_NO_EXECUTION
+authorization_to_read_issued = true
+bounded_execution_authorized = true
+current_gate = bounded_state_bundle_read_and_replay_execution_v0_1_pending
+authorized_slice = ACIU / 2021-03-15 / 2 exact row identities
+parquet_opened = false
+physical_state_rows_read = 0
+bounded_probe_records_emitted = 0
+general_StateReplayFeed = NOT_AUTHORIZED
+backtest_consumption = false
+official_dataset = false
+production = false
+downstream = false
+```
+
+Do not modify `02_TSIS_BACKTEST_ENGINE` from this handoff. The next permitted
+work is one bounded execution against the exact frozen paths, hashes and row
+identities. No scope expansion, strategy, signals, orders, fills or PnL is
+authorized.
+
+# Current Runtime Handoff Override - Physical Evidence Alignment v0.2 Closed
+
+Status: `agent_handoff_prompt_v0_151`
+Layer: `03_TABLES_feature_engineering`
+Boundary layer: `09_STATE_CONSUMPTION_BOUNDARY`
+Date: `2026-07-30`
+
+```text
+last_closed_gate = state_bundle_manifest_physical_evidence_alignment_v0_2
+last_closed_status = CLOSED_PASS_PHYSICAL_EVIDENCE_ALIGNED_READY_FOR_BOUNDED_READ_AUTHORIZATION_WITH_RESTRICTIONS_NO_PHYSICAL_READ
+physical_read_authorization_ready = true
+authorization_to_read_issued = false
+current_gate = bounded_state_bundle_read_and_replay_authorization_v0_1_pending
+StateReplayFeed = NOT_AUTHORIZED
+backtest_consumption = false
+physical_state_rows_read = 0
+parquet_opened = false
+official_dataset = false
+production = false
+downstream = false
+```
+
+Do not modify `02_TSIS_BACKTEST_ENGINE` from this handoff. The next permitted shared-boundary work is the bounded read-and-replay authorization. Alignment readiness does not itself authorize opening parquet, delivering rows or emitting StateReplayFeed records.
+
 # Current Runtime Handoff Override - Scale Validation Sidecar and Reissue Ready
 
 Status: `agent_handoff_prompt_v0_150`
@@ -9,7 +126,7 @@ Date: `2026-07-29`
 last_closed_sidecar_gate = market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_v0_1
 last_closed_sidecar_status = CLOSED_PASS_SCALE_VALIDATION_REPLAY_AVAILABILITY_EVIDENCE_SIDECAR_CREATED_AND_VALIDATED_WITH_RESTRICTIONS_NO_PHYSICAL_READ
 last_closed_runtime_regression = runtime_user_invocation_bounded_interface_execution_regression_v0_1_2
-last_closed_runtime_regression_status = FAILED_V0_1_2_CONTROL_PLANE_REISSUE_REGRESSION
+last_closed_runtime_regression_status = CLOSED_PASS_V0_1_2_CONTROL_PLANE_REISSUE_WITH_CANONICAL_BUNDLE_AND_EXACT_REUSE_EVIDENCE_NO_CONSUMPTION
 current_gate = state_bundle_manifest_physical_evidence_alignment_v0_2_pending
 scale_validation_sidecar_records = 104
 StateReplayFeed = NOT_AUTHORIZED

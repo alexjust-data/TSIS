@@ -1,0 +1,161 @@
+{
+  "scope_id": "bounded_state_bundle_read_and_replay_authorization_scope_v0_2",
+  "gate": "bounded_state_bundle_read_and_replay_authorization_v0_2",
+  "created_at_utc": "2026-07-30T00:00:00Z",
+  "status": "AUTHORIZED_FOR_METADATA_VALIDATION_AND_AUTHORIZATION_ISSUANCE_NO_PHYSICAL_READ",
+  "owner_layer": "09_STATE_CONSUMPTION_BOUNDARY",
+  "supersedes_for_active_navigation": "bounded_state_bundle_read_and_replay_authorization_v0_1",
+  "preserve_superseded_artifacts": true,
+  "purpose": "Authorize one exact bounded Market State physical read-and-replay integration probe after physical evidence alignment v0.2 passed, without performing that read or replay in this gate.",
+  "upstream_authority": {
+    "gate": "state_bundle_manifest_physical_evidence_alignment_v0_2",
+    "status": "CLOSED_PASS_PHYSICAL_EVIDENCE_ALIGNED_READY_FOR_BOUNDED_READ_AUTHORIZATION_WITH_RESTRICTIONS_NO_PHYSICAL_READ",
+    "physical_read_authorization_ready": true
+  },
+  "authorized_probe": {
+    "consumer_id": "bounded_market_state_replay_integration_probe_v0_1",
+    "consumer_type": "state_consumer_integration_validation_probe",
+    "consumption_purpose": "integration_validation_only",
+    "state_kind": "market_state",
+    "profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "physical_profile_id": "core_four_market_state_profile_v0_1",
+    "bundle_ref_id": "state_bundle_manifest_scale_validation_reissue_v0_1_2_20260729",
+    "bundle_canonical_sha256": "0e9f7387acdf999a6e41f163ab16c3412c32cb545d1757cde4b5613572406be2",
+    "bundle_artifact_sha256": "0845642ba80fac75f0094bccd370db71157da2759cad7807885b2928d2d49ab0",
+    "dataset_id": "market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762",
+    "dataset_fingerprint": "516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416",
+    "instrument_id": "cik_ticker:0001651625:ACIU",
+    "ticker": "ACIU",
+    "session_date": "2021-03-15",
+    "authorized_row_count": 2,
+    "maximum_rows": 2,
+    "maximum_physical_data_files": 1,
+    "maximum_metadata_files": 8,
+    "maximum_files": 9,
+    "event_state_requested": false
+  },
+  "frozen_artifacts": [
+    {
+      "artifact_id": "candidate_parquet",
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/market_state_scale_validation_candidate_v0_1.parquet",
+      "sha256": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68",
+      "physical_read_in_authorization_gate": false,
+      "physical_read_in_execution_gate": true
+    },
+    {
+      "artifact_id": "physical_schema_contract",
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/official_profiles/market_state_core_four_intraday_profile_v0_1/PHYSICAL_SCHEMA_CONTRACT.json",
+      "sha256": "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b"
+    },
+    {
+      "artifact_id": "lineage_manifest",
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/lineage_manifest.json",
+      "sha256": "85e7331b1b022d4075608bc4b8663de53dcb6234f21215ff232ad84c85cd4c52"
+    },
+    {
+      "artifact_id": "temporal_legality_report",
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/market_state_temporal_legality_report.json",
+      "sha256": "0eb607a4286dd3d4819f9aeb8da0eb21a18955a269b87e001f8f672378c44c70"
+    },
+    {
+      "artifact_id": "replay_availability_timestamp_contract",
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_timestamp_contract_v0_1.json",
+      "sha256": "eae02c685f7bc2cc8b55e6e3bb4a6912dc3b391042c0178b3dc29387fa6b690d"
+    },
+    {
+      "artifact_id": "replay_availability_sidecar_contract",
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_contract_v0_1.json",
+      "sha256": "a29f656a6fe741432c7272d6715637eeb49fd5d34ca550c3ac0f33166bc1b169"
+    },
+    {
+      "artifact_id": "replay_availability_sidecar",
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_manifest_v0_1.json",
+      "sha256": "8e426b09bb1cafac26e49c7a81de31ef4ea60ca3b56ac3aa766ba13a0772c5ac"
+    },
+    {
+      "artifact_id": "state_bundle_manifest",
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_bundle_manifest_v0_1.json",
+      "sha256": "0845642ba80fac75f0094bccd370db71157da2759cad7807885b2928d2d49ab0",
+      "canonical_sha256": "0e9f7387acdf999a6e41f163ab16c3412c32cb545d1757cde4b5613572406be2"
+    },
+    {
+      "artifact_id": "selection_manifest",
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/bounded_state_bundle_read_and_replay_selection_manifest_v0_2.json",
+      "sha256": "a12c1bf3942c655115f521d0701f237f2cd9ad1a8fcf81a5ccc5c1c726d7b937"
+    }
+  ],
+  "authorized_execution_behavior": {
+    "verify_frozen_hashes_before_physical_read": true,
+    "open_only_exact_candidate_parquet": true,
+    "project_only_authorized_row_identities": true,
+    "reject_missing_authorized_rows": true,
+    "reject_duplicate_authorized_rows": true,
+    "reject_any_unlisted_row_delivery": true,
+    "validate_physical_schema": true,
+    "validate_row_fingerprint": true,
+    "join_exactly_one_sidecar_record_per_row": true,
+    "canonical_order": [
+      "state_available_at_utc",
+      "state_kind",
+      "instrument_id",
+      "materialized_state_candidate_id"
+    ],
+    "delivery_eligibility_rule": "event_loop.clock >= state_available_at_utc",
+    "bounded_probe_adapter_only": true
+  },
+  "prohibited_behavior": [
+    "user_supplied_paths",
+    "path_discovery_outside_frozen_artifacts",
+    "scope_expansion",
+    "event_state",
+    "strategy_callbacks",
+    "signals",
+    "orders",
+    "fills",
+    "pnl",
+    "market_state_as_execution_price",
+    "dataset_mutation",
+    "registry_mutation",
+    "official_dataset_promotion",
+    "production",
+    "downstream"
+  ],
+  "authorized_inputs": [
+    "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/state_bundle_manifest_physical_evidence_alignment_readout_v0_2.md",
+    "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/state_bundle_manifest_physical_evidence_alignment_matrix_v0_2.json",
+    "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_bundle_manifest_v0_1.json",
+    "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_manifest_v0_1.json"
+  ],
+  "authorized_outputs": {
+    "authorization": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/bounded_state_bundle_read_and_replay_authorization_v0_2.md",
+    "scope": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/configs/bounded_state_bundle_read_and_replay_authorization_scope_v0_2.json",
+    "selection_manifest": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/bounded_state_bundle_read_and_replay_selection_manifest_v0_2.json",
+    "matrix": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/bounded_state_bundle_read_and_replay_authorization_matrix_v0_2.json",
+    "readout": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/bounded_state_bundle_read_and_replay_authorization_readout_v0_2.md",
+    "runner": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/scripts/bounded_state_bundle_read_and_replay_authorization_runner_v0_2.py"
+  },
+  "authorization_gate_boundaries": {
+    "authorization_to_read_issued": true,
+    "bounded_execution_authorized": true,
+    "parquet_opened": false,
+    "parquet_hash_recomputed": false,
+    "physical_state_rows_read": 0,
+    "bounded_probe_records_emitted": 0,
+    "general_StateReplayFeed_authorized": false,
+    "EventLoop_ticks": 0,
+    "strategy_callbacks": 0,
+    "signals_emitted": 0,
+    "orders_emitted": 0,
+    "fills_emitted": 0,
+    "PnL_calculated": false,
+    "runtime_requests_executed": 0,
+    "runtime_builds_executed": 0,
+    "datasets_written": 0,
+    "registry_mutations": 0,
+    "backtest_consumption": false,
+    "official_dataset": false,
+    "production": false,
+    "downstream": false
+  },
+  "next_gate": "bounded_state_bundle_read_and_replay_execution_v0_1"
+}

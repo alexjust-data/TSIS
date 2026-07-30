@@ -1,8 +1,74 @@
+## 2026-07-30 - State provider-consumer cold-start recovery path
+
+- Added `03_TABLES_feature_engineering/STATE_PROVIDER_CONSUMER_RECOVERY.md` as
+  the canonical cold-start entry for Market State, Event State, the accepted
+  provider evidence and the BT-GATE-014 handoff.
+- Added the previously required
+  `03_TABLES_feature_engineering/LOCAL_RULES.md` with boundary ownership,
+  active-state precedence, evidence preservation and physical-consumption
+  rules.
+- Linked the recovery authority from `AGENT.md`, `99_ruta_de_trabajo.md`,
+  `09_STATE_CONSUMPTION_BOUNDARY/README.md` and root `START_HERE.md`.
+- Clarified that only the first handoff block in `AGENT.md` is current and that
+  older blocks are historical closure snapshots.
+- Corrected active root startup references from historical `E:/TSIS/data` to
+  canonical `G:/TSIS/data`; no historical evidence or run provenance changed.
+- Added exact `.gitignore` exceptions for the two accepted provider/BT-GATE-014
+  evidence ZIPs in `99_archive`; all other ZIPs remain ignored.
+- Added a read-only recovery validator covering required paths, live-state
+  markers, accepted ZIP hashes and integrity, and active physical-root paths.
+- No contracts, matrices, runners, manifests, accepted packages, physical
+  data, backtester files or closed-gate evidence were modified.
+
+## 2026-07-30 - Market State schema/runtime binding and BT-GATE-014 handoff
+
+- Added a machine-readable binding that distinguishes the promoted profile's
+  Scale C provenance parquet hash `b1841f...` from the current bounded runtime
+  content authority `bc033c...`.
+- Preserved `PHYSICAL_SCHEMA_CONTRACT.json` as the structural authority and
+  left all historical profile artifacts unchanged.
+- Validated the binding with 15 metadata-only cases and zero failures.
+- Recorded that BT-GATE-014 contract and implementation may open while its
+  physical execution still requires a new backtester-specific authorization.
+- Added `market_state_pit_bt_gate_014_handoff_v0_1.md`; no backtester files or
+  physical data were modified.
+
+## 2026-07-30 - First bounded Market State physical read/replay and review
+
+- Consumed the single-use `bounded_state_bundle_read_and_replay_authorization_v0_2`.
+- Executed `bounded_state_bundle_read_and_replay_execution_v0_1` against one
+  exact parquet, ACIU, 2021-03-15 and two authorized row identities.
+- Verified nine input hashes, the exact 40-column physical schema, row and
+  candidate fingerprints, one-to-one sidecar joins and available-at ordering.
+- Emitted two bounded probe records with zero early deliveries, strategies,
+  signals, orders, fills, PnL, dataset writes or registry mutations.
+- Closed `bounded_state_bundle_read_and_replay_review_v0_1` with evidence ready
+  for the BT-GATE-014 owner, without authorizing general backtest consumption.
+
+## 2026-07-30 - Bounded StateBundle read-and-replay authorization v0.2
+
+- Closed `bounded_state_bundle_read_and_replay_authorization_v0_2` as
+  `CLOSED_AUTHORIZED_ONE_BOUNDED_MARKET_STATE_READ_AND_REPLAY_PROBE_WITH_RESTRICTIONS_NO_EXECUTION`.
+- Preserved blocked authorization `v0.1` as historical evidence.
+- Froze one exact Market State core-four slice: ACIU, 2021-03-15, two row
+  identities, one candidate parquet and its governed metadata/hash chain.
+- Authorized only `bounded_state_bundle_read_and_replay_execution_v0_1`.
+- Performed no parquet read, row delivery, replay, backtest, strategy, order,
+  fill, PnL, production or downstream operation.
+
+## 2026-07-30 - StateBundle physical evidence alignment v0.2 and conceptual authority stratification
+
+- Closed `state_bundle_manifest_physical_evidence_alignment_v0_2` as `CLOSED_PASS_PHYSICAL_EVIDENCE_ALIGNED_READY_FOR_BOUNDED_READ_AUTHORIZATION_WITH_RESTRICTIONS_NO_PHYSICAL_READ` with 22 cases, zero blocking findings and two expected restrictions.
+- Aligned the accepted provider v0.1.2 request, response and StateBundle with the exact scale-validation candidate, 120-context ledger, 104 represented row identities, 16 unavailable contexts, replay-availability sidecar and governed metadata hash chain.
+- Preserved parquet opened = false, physical state rows read = 0, `StateReplayFeed = NOT_AUTHORIZED`, backtest consumption = false, production = false and downstream = false.
+- Stratified `00_TABLES_MARKET_STATE_EVENT_STATE.md` with a section-level authority map and explicit labels for illustrative terminology, unregistered Event Type examples and governed runtime/consumption addenda.
+- Set the next boundary gate to `bounded_state_bundle_read_and_replay_authorization_v0_1`; readiness does not itself issue physical-read authorization.
+
 ## 2026-07-29 - Scale-validation replay sidecar and runtime v0.1.2 reissue readiness
 
 - Replaced the active replay availability sidecar target with the exact Market State scale-validation candidate `market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762`.
 - Closed `market_state_core_four_replay_availability_evidence_sidecar_execution_and_validation_v0_1` as `CLOSED_PASS_SCALE_VALIDATION_REPLAY_AVAILABILITY_EVIDENCE_SIDECAR_CREATED_AND_VALIDATED_WITH_RESTRICTIONS_NO_PHYSICAL_READ` with `104` row-addressable records and no parquet read.
-- Closed `runtime_user_invocation_bounded_interface_execution_regression_v0_1_2` as `FAILED_V0_1_2_CONTROL_PLANE_REISSUE_REGRESSION` and emitted control-plane v0.1.2 request/response/bundle instances.
+- Closed `runtime_user_invocation_bounded_interface_execution_regression_v0_1_2` as `CLOSED_PASS_V0_1_2_CONTROL_PLANE_REISSUE_WITH_CANONICAL_BUNDLE_AND_EXACT_REUSE_EVIDENCE_NO_CONSUMPTION` and emitted control-plane v0.1.2 request/response/bundle instances with canonical bundle fingerprint and exact reuse evidence.
 - Preserved physical reads = 0, state rows read = 0, `StateReplayFeed = NOT_AUTHORIZED`, production = false and downstream = false.
 
 ## 2026-07-29 - Runtime user invocation bounded interface regression v0.1.2 closed

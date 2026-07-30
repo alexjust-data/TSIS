@@ -1,3 +1,102 @@
+## Recovery Entry
+
+The canonical cold-start entry for this boundary is:
+
+```text
+../STATE_PROVIDER_CONSUMER_RECOVERY.md
+```
+
+It defines the current authority, accepted packages, reading order, next owner
+and prohibitions. Historical closure sections below do not override it.
+
+## BT-GATE-014 Contract Handoff Ready
+
+```text
+schema/runtime binding = CLOSED_PASS
+structural schema authority = PHYSICAL_SCHEMA_CONTRACT.json
+profile provenance hash = b1841f4897...
+current bounded runtime content hash = bc033cb2cd...
+BT-GATE-014 provider evidence handoff = COMPLETE
+backtester current-gate authority = 02_TSIS_BACKTEST_ENGINE/AGENTS.md
+active provider gate = none
+```
+
+Use `market_state_pit_bt_gate_014_handoff_v0_1.md` and
+`market_state_core_four_scale_validation_physical_schema_binding_v0_1.json`.
+The provider evidence delivered temporal envelopes, not a typed 17-value
+backtester payload.
+
+## Bounded Market State Physical Read and Replay Review Closed
+
+```text
+execution = CLOSED_PASS_ONE_BOUNDED_MARKET_STATE_PHYSICAL_READ_AND_REPLAY_PROBE_WITH_RESTRICTIONS
+review = CLOSED_PASS_BOUNDED_MARKET_STATE_PHYSICAL_READ_AND_REPLAY_REVIEW_WITH_RESTRICTIONS_READY_FOR_BT_GATE_014_HANDOFF
+authorization_single_use_consumed = true
+input_files_verified = 9
+physical_data_files_opened = 1
+physical_state_rows_read = 2
+bounded_probe_records_emitted = 2
+early_delivered_records = 0
+unlisted_rows_delivered = 0
+strategy_callbacks = 0
+orders = 0
+fills = 0
+PnL = false
+next_handoff = BT-GATE-014_POINT_IN_TIME_MARKET_STATE_CONSUMPTION_EVIDENCE_READY
+general_StateReplayFeed = NOT_AUTHORIZED
+backtest_consumption = false
+```
+
+The provider/shared-boundary work required for the first PIT Market State
+consumer handoff is complete. The next decision belongs to the backtester gate
+owner; Event State and general replay remain closed.
+
+## Bounded StateBundle Read and Replay Authorization v0.2 Closed
+
+```text
+bounded_state_bundle_read_and_replay_authorization_v0_2
+=
+CLOSED_AUTHORIZED_ONE_BOUNDED_MARKET_STATE_READ_AND_REPLAY_PROBE_WITH_RESTRICTIONS_NO_EXECUTION
+
+authorization_to_read_issued = true
+bounded_execution_authorized = true
+current_boundary_gate = bounded_state_bundle_read_and_replay_execution_v0_1_pending
+authorized_instrument = ACIU
+authorized_session = 2021-03-15
+authorized_row_count = 2
+maximum_rows = 2
+parquet_opened = false
+physical_state_rows_read = 0
+general_StateReplayFeed = NOT_AUTHORIZED
+backtest_consumption = false
+```
+
+The active authorization is `v0.2`; blocked authorization `v0.1` remains
+historical evidence. The next gate may open only the exact frozen candidate
+parquet and deliver only the two frozen row identities to a bounded integration
+probe.
+
+## StateBundle Physical Evidence Alignment v0.2 Closed
+
+```text
+state_bundle_manifest_physical_evidence_alignment_v0_2
+=
+CLOSED_PASS_PHYSICAL_EVIDENCE_ALIGNED_READY_FOR_BOUNDED_READ_AUTHORIZATION_WITH_RESTRICTIONS_NO_PHYSICAL_READ
+
+case_count = 22
+blocking_findings = 0
+restricted_findings = 2
+physical_read_authorization_ready = true
+authorization_to_read_issued = false
+current_boundary_gate = bounded_state_bundle_read_and_replay_authorization_v0_1_pending
+parquet_opened = false
+physical_state_rows_read = 0
+StateReplayFeed = NOT_AUTHORIZED
+backtest_consumption = false
+```
+
+The aligned evidence identifies one exact restricted Market State scale-validation candidate and preserves partial coverage. This gate does not grant physical-read authority.
+
 ## Scale Validation Replay Availability Sidecar Active
 
 ```text
