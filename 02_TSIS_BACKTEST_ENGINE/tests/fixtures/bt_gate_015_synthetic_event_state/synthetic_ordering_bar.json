@@ -1,0 +1,13 @@
+{
+  "available_at": "2021-01-19T14:30:00Z",
+  "close": 10.1,
+  "high": 10.2,
+  "low": 9.9,
+  "open": 10.0,
+  "price_view": "synthetic",
+  "session_label": "REGULAR",
+  "ticker": "AAME",
+  "ts_end": "2021-01-19T14:30:00Z",
+  "ts_start": "2021-01-19T14:29:00Z",
+  "volume": 1000
+}

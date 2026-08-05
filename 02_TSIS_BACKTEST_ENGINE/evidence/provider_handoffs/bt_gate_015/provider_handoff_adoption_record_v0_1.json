@@ -1,0 +1,64 @@
+{
+  "adoption_id": "BT_GATE_015_EVENT_STATE_CONTRACT_HANDOFF_ADOPTION_V0_1",
+  "adoption_status": "ACCEPTED_FOR_CONTRACT_DRAFTING_WITH_MATERIAL_BLOCKERS",
+  "consumer_layer": "02_TSIS_BACKTEST_ENGINE",
+  "gate_id": "BT-GATE-015",
+  "gate_status": "NOT_OPEN",
+  "implementation_status": "NOT_AUTHORIZED",
+  "physical_read_status": "NOT_AUTHORIZED",
+  "handoff": {
+    "package_id": "event_state_session_opened_bt_gate_015_contract_handoff_v0_1",
+    "zip_name": "event_state_session_opened_bt_gate_015_contract_handoff_v0_1_20260731T064518Z.zip",
+    "zip_sha256": "b7a4783d0ab64ffaf37fbfdf2ee76dffacbe9b14cf3f059891908c87116369b2",
+    "zip_entries": 21,
+    "manifest_artifacts": 20,
+    "physical_data_included": false,
+    "backtester_files_included": false
+  },
+  "frozen_slice": {
+    "event_type_id": "event_type:market_data:session_opened",
+    "subject_scope": "exchange_session",
+    "profile_id": "event_state_core_four_intraday_profile_v0_1",
+    "exchange_id": "XNYS",
+    "session_date": "2021-01-19",
+    "ticker": "AAME",
+    "instrument_id": "figi_share_class:BBG001S5N8T1",
+    "event_state_record_id": "47102c58b14c538c0d4279ce40d4205031bd48d46986e9654fb0ccee059498e0",
+    "event_state_record_fingerprint": "4ab9bda000f080ff59a2eee11bbeea9e3d5c3581c64097f64366dece55665a4a"
+  },
+  "review": {
+    "zip_integrity": "PASS",
+    "manifest_hashes": "20/20 PASS",
+    "json_parse": "PASS",
+    "unsafe_paths": 0,
+    "parquet_files": 0,
+    "physical_rows_read": 0,
+    "provider_evidence_status": "CONTRACT_HANDOFF_READY_WITH_RESTRICTIONS",
+    "backtester_contract_drafting": "READY",
+    "backtester_implementation": "BLOCKED"
+  },
+  "material_blockers": [
+    {
+      "blocker_id": "EVENT_STATE_REPLAY_AVAILABILITY_EVIDENCE",
+      "status": "PROVIDER_EVIDENCE_REQUIRED",
+      "required_artifact": "event_state_session_opened_replay_availability_evidence_sidecar_v0_1"
+    },
+    {
+      "blocker_id": "EVENT_STATE_TYPED_SCIENTIFIC_PAYLOAD_BINDING",
+      "status": "PROVIDER_EVIDENCE_REQUIRED",
+      "reason": "The adopted 38-field schema freezes the record envelope but does not enumerate a separate typed scientific consumer payload."
+    }
+  ],
+  "prohibitions": [
+    "Event State physical read",
+    "Market State physical read",
+    "StateReplayFeed",
+    "provider modification",
+    "consumer implementation",
+    "strategy, orders, fills or PnL",
+    "production or downstream"
+  ],
+  "adoption_date": "2026-07-31",
+  "evidence_lifecycle": "HISTORICAL_INITIAL_HANDOFF_SUPERSEDED_BY_PROVIDER_COMPLETION",
+  "superseded_by_adoption_id": "BT_GATE_015_EVENT_STATE_PROVIDER_COMPLETION_ADOPTION_V0_1"
+}

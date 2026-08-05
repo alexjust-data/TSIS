@@ -1,0 +1,95 @@
+{
+  "candidate_dataset_fingerprint": "7d9aad3e5e3949d5b144ac975c41b868ce386aa3695176e90d0cf7e2a994331b",
+  "candidate_dataset_id": "synthetic_bt_gate_014_dataset_v0_1",
+  "component_availability_evidence": [
+    {
+      "availability_rule_id": "synthetic_available_v0_1",
+      "availability_status": "available",
+      "component_as_of_utc": "2021-01-19T14:30:00Z",
+      "component_available_at_utc": "2021-01-19T14:30:00Z",
+      "component_id": "bt_gate_015_price_location_structure",
+      "cutoff_rule_id": "synthetic_cutoff_v0_1",
+      "information_object_id": "price_location_structure",
+      "restriction_codes": [
+        "candidate_runtime_only",
+        "not_official_dataset",
+        "no_downstream",
+        "no_production"
+      ],
+      "source_timestamp_utc": "2021-01-19T14:30:00Z"
+    },
+    {
+      "availability_rule_id": "synthetic_available_v0_1",
+      "availability_status": "available",
+      "component_as_of_utc": "2021-01-19T14:30:00Z",
+      "component_available_at_utc": "2021-01-19T14:30:00Z",
+      "component_id": "bt_gate_015_price_movement",
+      "cutoff_rule_id": "synthetic_cutoff_v0_1",
+      "information_object_id": "price_movement",
+      "restriction_codes": [
+        "candidate_runtime_only",
+        "not_official_dataset",
+        "no_downstream",
+        "no_production"
+      ],
+      "source_timestamp_utc": "2021-01-19T14:30:00Z"
+    },
+    {
+      "availability_rule_id": "synthetic_available_v0_1",
+      "availability_status": "available",
+      "component_as_of_utc": "2021-01-19T14:30:00Z",
+      "component_available_at_utc": "2021-01-19T14:30:00Z",
+      "component_id": "bt_gate_015_trading_activity",
+      "cutoff_rule_id": "synthetic_cutoff_v0_1",
+      "information_object_id": "trading_activity",
+      "restriction_codes": [
+        "candidate_runtime_only",
+        "not_official_dataset",
+        "no_downstream",
+        "no_production"
+      ],
+      "source_timestamp_utc": "2021-01-19T14:30:00Z"
+    },
+    {
+      "availability_rule_id": "synthetic_available_v0_1",
+      "availability_status": "available",
+      "component_as_of_utc": "2021-01-19T14:30:00Z",
+      "component_available_at_utc": "2021-01-19T14:30:00Z",
+      "component_id": "bt_gate_015_volatility_range_state",
+      "cutoff_rule_id": "synthetic_cutoff_v0_1",
+      "information_object_id": "volatility_range_state",
+      "restriction_codes": [
+        "candidate_runtime_only",
+        "not_official_dataset",
+        "no_downstream",
+        "no_production"
+      ],
+      "source_timestamp_utc": "2021-01-19T14:30:00Z"
+    }
+  ],
+  "context_id": "synthetic_bt_gate_015_market_dependency_context",
+  "decision_timestamp_utc": "2021-01-19T14:30:00Z",
+  "instrument_id": "synthetic:figi_share_class:AAME",
+  "materialized_state_candidate_id": "b87415c19eef9eb94af6b7d20cec53a2a878aa17713814b8d2edcbb112f76416",
+  "physical_profile_id": "core_four_market_state_profile_v0_1",
+  "profile_id": "market_state_core_four_intraday_profile_v0_1",
+  "restriction_codes": [
+    "candidate_runtime_only",
+    "not_official_dataset",
+    "no_downstream",
+    "no_production"
+  ],
+  "session_date": "2021-01-19",
+  "sidecar_id": "synthetic_bt_gate_015_market_dependency_sidecar_v0_1",
+  "sidecar_schema_id": "market_state_core_four_replay_availability_evidence_sidecar_contract_v0_1",
+  "source_candidate_record_id": "synthetic_bt_gate_015_market_dependency_source",
+  "state_as_of_utc": "2021-01-19T14:30:00Z",
+  "state_availability_policy_id": "market_state_core_four_replay_availability_policy_v0_1",
+  "state_availability_status": "available_for_decision_replay",
+  "state_available_at_utc": "2021-01-19T14:30:00Z",
+  "state_output_fingerprint": "113de829c069306aec0480e9ce3300a58b4a145c6d2968dbc465db839f49dfdd",
+  "state_publication_latency": "PT0S",
+  "state_publication_latency_policy_id": "zero_latency_candidate_replay_publication_policy_v0_1",
+  "state_replay_consumption_legality": "decision_safe",
+  "ticker": "AAME"
+}

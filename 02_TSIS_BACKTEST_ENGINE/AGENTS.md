@@ -1,17 +1,25 @@
-## Current Authoritative State - BT-GATE-014 final closure
+## Current Authoritative State - BT-GATE-015 non-physical implementation accepted
 
 ```text
 BT-GATE-014 = CLOSED_PASS_POINT_IN_TIME_MARKET_STATE_CONSUMPTION_WITH_RESTRICTIONS
 BT-GATE-014_IMPLEMENTATION = IMPLEMENTED_AND_ACCEPTED
-IMPLEMENTATION_ACCEPTANCE = ACCEPTED
-V0.5 = CONSUMED_FINAL
-SECOND_EXECUTION_V0.5 = PROHIBITED
-physical files / rows / events / inserts / observations = 1 / 2 / 2 / 2 / 2
-early delivered / orders / fills / PnL = 0 / 0 / 0 / false
-deterministic_output_hash = 6331839dfc6538f7dd6fda9a1fd7efbc7497d541dcb0c0d89cfd679762067cb1
-BT-GATE-015 = NOT_OPEN
-BT-GATE-015_IMPLEMENTATION = NOT_AUTHORIZED
-Event State = NOT_AUTHORIZED
+BT-GATE-014_IMPLEMENTATION_ACCEPTANCE = ACCEPTED
+BT-GATE-014_V0.5 = CONSUMED_FINAL
+SECOND_EXECUTION_BT_GATE_014_V0.5 = PROHIBITED
+BT-GATE-014 physical files / rows / events / inserts / observations = 1 / 2 / 2 / 2 / 2
+BT-GATE-014 early delivered / orders / fills / PnL = 0 / 0 / 0 / false
+BT-GATE-014 deterministic_output_hash = 6331839dfc6538f7dd6fda9a1fd7efbc7497d541dcb0c0d89cfd679762067cb1
+
+BT-GATE-015 = NON_PHYSICAL_IMPLEMENTATION_ACCEPTED_PENDING_SINGLE_USE_PHYSICAL_AUTHORIZATION
+BT-GATE-015_CONTRACT = OWNER_REVIEW_PASS
+BT-GATE-015_IMPLEMENTATION = ACCEPTED_NON_PHYSICAL_ONLY
+BT_GATE_015_NON_PHYSICAL_EXTERNAL_REVIEW = PASS
+IMPLEMENTATION_ACCEPTANCE = ACCEPTED_NON_PHYSICAL_ONLY
+BT-GATE-015_PHYSICAL_READ = NOT_AUTHORIZED
+SINGLE_USE_PHYSICAL_AUTHORIZATION = NOT_AUTHORIZED
+PHYSICAL_STATE_ROWS_READ_BY_BACKTESTER = 0
+BT-GATE-015_CLOSED_PASS = NOT_AUTHORIZED
+Event State = NON_PHYSICAL_ACCEPTED / PHYSICAL_READ_NOT_AUTHORIZED
 ```
 
 Mandatory restart handoff:
@@ -94,12 +102,12 @@ Scope: agent handoff for the executable implementation root.
 
 This file is the first read for any agent entering `C:/TSIS_Data/02_TSIS_BACKTEST_ENGINE`.
 
-## Política de velocidad de desarrollo y granularidad de gates
+## PolÃ­tica de velocidad de desarrollo y granularidad de gates
 
 ### Prioridad vigente
 
 La prioridad del proyecto es construir un backtester de small caps serio,
-riguroso, reproducible y científicamente defendible.
+riguroso, reproducible y cientÃ­ficamente defendible.
 
 La governance debe proteger esa finalidad, pero no debe sustituir el desarrollo
 ni fragmentarlo en microaprobaciones.
@@ -107,32 +115,32 @@ ni fragmentarlo en microaprobaciones.
 ### Regla fundamental
 
 ```text
-Un gate = una capacidad científicamente utilizable
+Un gate = una capacidad cientÃ­ficamente utilizable
 ```
 
 No debe abrirse un gate independiente para:
 
 ```text
 un documento
-una autorización intermedia
-una corrección de imports
-una corrección de packaging
-una actualización de manifests
-una sincronización rutinaria de governance
-una corrección menor de tests o evidencia
+una autorizaciÃ³n intermedia
+una correcciÃ³n de imports
+una correcciÃ³n de packaging
+una actualizaciÃ³n de manifests
+una sincronizaciÃ³n rutinaria de governance
+una correcciÃ³n menor de tests o evidencia
 ```
 
 Estas correcciones deben resolverse dentro del gate de capacidad que permanezca
 abierto, salvo que impliquen:
 
 ```text
-cambio de semántica
-ampliación material de alcance
+cambio de semÃ¡ntica
+ampliaciÃ³n material de alcance
 nueva fuente de datos
-nueva capacidad de ejecución
+nueva capacidad de ejecuciÃ³n
 riesgo de look-ahead
 cambio del modelo contable
-cambio de una frontera arquitectónica congelada
+cambio de una frontera arquitectÃ³nica congelada
 ```
 
 ### Ciclo operativo obligatorio
@@ -144,67 +152,67 @@ Cada gate de capacidad debe seguir este ciclo:
    - alcance
    - contrato
    - prohibiciones
-   - criterios de aceptación
+   - criterios de aceptaciÃ³n
    - evidencias requeridas
 
 2. Autorizar una sola vez el gate completo.
 
 3. Ejecutar sin pausas intermedias:
-   - implementación
+   - implementaciÃ³n
    - correcciones
    - tests
    - run
-   - documentación
+   - documentaciÃ³n
    - manifests
    - empaquetado
 
-4. Realizar una única revisión externa al final.
+4. Realizar una Ãºnica revisiÃ³n externa al final.
 
-5. Si la revisión encuentra defectos menores de implementación,
+5. Si la revisiÃ³n encuentra defectos menores de implementaciÃ³n,
    tests, imports, evidencia o packaging:
    - mantener abierto el mismo gate;
    - corregirlos dentro del gate;
-   - no crear un nuevo gate ni solicitar una nueva autorización arquitectónica.
+   - no crear un nuevo gate ni solicitar una nueva autorizaciÃ³n arquitectÃ³nica.
 
-6. Reabrir la decisión solamente si la corrección cambia materialmente:
+6. Reabrir la decisiÃ³n solamente si la correcciÃ³n cambia materialmente:
    - alcance
-   - semántica
+   - semÃ¡ntica
    - contrato
    - datos consumidos
-   - modelo de ejecución
+   - modelo de ejecuciÃ³n
    - contabilidad
    - fronteras autorizadas
 ```
 
-### Prohibición de microgates
+### ProhibiciÃ³n de microgates
 
 No debe utilizarse esta secuencia como flujo normal:
 
 ```text
 documento
-→ auditoría
-→ autorización
-→ cambio pequeño
-→ paquete
-→ auditoría
-→ corrección menor
-→ nueva auditoría
+â†’ auditorÃ­a
+â†’ autorizaciÃ³n
+â†’ cambio pequeÃ±o
+â†’ paquete
+â†’ auditorÃ­a
+â†’ correcciÃ³n menor
+â†’ nueva auditorÃ­a
 ```
 
 El flujo normal debe ser:
 
 ```text
-contrato y aceptación completos
-→ autorización del incremento completo
-→ implementación continua
-→ tests y run
-→ paquete final
-→ revisión externa final
+contrato y aceptaciÃ³n completos
+â†’ autorizaciÃ³n del incremento completo
+â†’ implementaciÃ³n continua
+â†’ tests y run
+â†’ paquete final
+â†’ revisiÃ³n externa final
 ```
 
 ### Plan de capacidades vigente
 
-Después del cierre de `BT-GATE-010`, el desarrollo debe organizarse
+DespuÃ©s del cierre de `BT-GATE-010`, el desarrollo debe organizarse
 preferentemente en estos macrogates:
 
 ```text
@@ -213,12 +221,12 @@ SINGLE_STRATEGY_END_TO_END_BACKTEST
 
 Incluye:
 - StrategySpec reproducible
-- integración EventLoop → Execution → Accounting
+- integraciÃ³n EventLoop â†’ Execution â†’ Accounting
 - Deterministic Fill Simulator
 - Trade Ledger
-- métricas mínimas
+- mÃ©tricas mÃ­nimas
 - Unified Run Manifest
-- primer run histórico end-to-end
+- primer run histÃ³rico end-to-end
 ```
 
 ```text
@@ -226,12 +234,12 @@ BT-GATE-012
 MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE
 
 Incluye:
-- múltiples símbolos
-- múltiples sesiones
+- mÃºltiples sÃ­mbolos
+- mÃºltiples sesiones
 - orden temporal global determinista
 - cash y posiciones compartidos
-- concurrencia de órdenes
-- cierre de sesión
+- concurrencia de Ã³rdenes
+- cierre de sesiÃ³n
 - portfolio equity curve
 ```
 
@@ -259,13 +267,13 @@ No incluye:
 - edge evidence
 ```
 
-Esta agrupación es la orientación vigente. Un agente no debe volver a separar
-automáticamente estas capacidades en los antiguos `BT-GATE-011–017` sin
+Esta agrupaciÃ³n es la orientaciÃ³n vigente. Un agente no debe volver a separar
+automÃ¡ticamente estas capacidades en los antiguos `BT-GATE-011â€“017` sin
 justificar una dependencia o frontera material que lo haga necesario.
 
-### Regla de evidencia económica
+### Regla de evidencia econÃ³mica
 
-Los runs anteriores a la incorporación del realismo específico de small caps
+Los runs anteriores a la incorporaciÃ³n del realismo especÃ­fico de small caps
 pueden utilizarse para validar el motor, pero deben etiquetarse:
 
 ```text
@@ -278,48 +286,48 @@ No deben utilizarse para afirmar rentabilidad o edge mientras permanezcan sin
 modelar restricciones materiales como borrow, locate, SSR, halts, liquidez o
 capacidad.
 
-### Obligación de los agentes
+### ObligaciÃ³n de los agentes
 
-Todo agente que comience o continúe el backtester debe:
+Todo agente que comience o continÃºe el backtester debe:
 
 1. Leer este `AGENTS.md`.
 2. Identificar el gate vigente y su capacidad final.
 3. Trabajar hasta producir la evidencia completa del gate.
 4. Evitar detenerse por microtransiciones documentales.
-5. Mantener el rigor temporal, de ejecución, contable y de reproducibilidad.
-6. No ampliar el alcance sin autorización.
+5. Mantener el rigor temporal, de ejecuciÃ³n, contable y de reproducibilidad.
+6. No ampliar el alcance sin autorizaciÃ³n.
 7. Priorizar siempre un backtest end-to-end utilizable sobre componentes
-   aislados sin integración.
+   aislados sin integraciÃ³n.
 
-## Sincronización obligatoria con Backtest Engine Governance
+## SincronizaciÃ³n obligatoria con Backtest Engine Governance
 
 La autoridad institucional del backtester reside en:
 
 C:\TSIS_Data\00_CTO\14_BACKTEST_ENGINE
 
-La implementación, los tests, las configuraciones y los runs residen en:
+La implementaciÃ³n, los tests, las configuraciones y los runs residen en:
 
 C:\TSIS_Data\02_TSIS_BACKTEST_ENGINE
 
-Después de completar cualquier incremento material, el agente debe evaluar y,
+DespuÃ©s de completar cualquier incremento material, el agente debe evaluar y,
 cuando corresponda, actualizar Backtest Engine Governance antes de declarar
 cerrado el trabajo.
 
 Se considera incremento material cualquier cambio que:
 
-- cree, modifique, cierre, sustituya o retire una decisión;
-- cree o modifique una política;
+- cree, modifique, cierre, sustituya o retire una decisiÃ³n;
+- cree o modifique una polÃ­tica;
 - cree o modifique un contrato;
 - abra, cierre, rechace o sustituya un gate;
 - cambie el alcance autorizado;
 - implemente una capacidad nueva;
-- modifique semántica de ejecución, replay, accounting o datos;
-- añada tests de aceptación o evidencia ejecutada;
-- introduzca una limitación, excepción, waiver o deuda;
+- modifique semÃ¡ntica de ejecuciÃ³n, replay, accounting o datos;
+- aÃ±ada tests de aceptaciÃ³n o evidencia ejecutada;
+- introduzca una limitaciÃ³n, excepciÃ³n, waiver o deuda;
 - cambie un estado como NOT_AUTHORIZED, DRAFT, CLOSED o IMPLEMENTED;
-- invalide o sustituya documentación viva.
+- invalide o sustituya documentaciÃ³n viva.
 
-Para estos incrementos, la actualización de governance forma parte de la
+Para estos incrementos, la actualizaciÃ³n de governance forma parte de la
 Definition of Done. No es una tarea opcional posterior.
 
 El agente debe seguir:
@@ -327,7 +335,7 @@ El agente debe seguir:
 C:\TSIS_Data\00_CTO\14_BACKTEST_ENGINE\
 08_GATES_AND_REVIEWS\GOVERNANCE_UPDATE_PROTOCOL.md
 
-Como mínimo debe revisar si corresponde actualizar:
+Como mÃ­nimo debe revisar si corresponde actualizar:
 
 - README.md
 - AGENTS.md
@@ -341,20 +349,20 @@ Como mínimo debe revisar si corresponde actualizar:
 - 10_VALIDATION\
 - PACKAGE_MANIFEST.json
 
-Ningún gate puede declararse CLOSED si la trazabilidad aplicable no conecta:
+NingÃºn gate puede declararse CLOSED si la trazabilidad aplicable no conecta:
 
-decisión o política
-→ contrato
-→ implementación
-→ tests
-→ evidencia o run
-→ limitaciones
-→ gate
-→ changelog
+decisiÃ³n o polÃ­tica
+â†’ contrato
+â†’ implementaciÃ³n
+â†’ tests
+â†’ evidencia o run
+â†’ limitaciones
+â†’ gate
+â†’ changelog
 
 No deben inventarse evidencias ni autorizaciones.
 
-Si el código o los documentos locales demuestran una situación que todavía no
+Si el cÃ³digo o los documentos locales demuestran una situaciÃ³n que todavÃ­a no
 ha sido revisada institucionalmente, debe registrarse con el estado adecuado,
 por ejemplo:
 
@@ -365,22 +373,22 @@ por ejemplo:
 - CONTRADICTORY
 - NOT_EVALUATED
 
-El agente no puede convertir unilateralmente una corrección técnica en
-autorización institucional cuando el gate exige aprobación explícita.
+El agente no puede convertir unilateralmente una correcciÃ³n tÃ©cnica en
+autorizaciÃ³n institucional cuando el gate exige aprobaciÃ³n explÃ­cita.
 
-La sincronización de governance no autoriza:
+La sincronizaciÃ³n de governance no autoriza:
 
 - Market State o Event State consumption;
 - StateReplayFeed;
-- lectura física de StateBundles;
+- lectura fÃ­sica de StateBundles;
 - backtest con estados;
-- integración activa con el State Provider.
+- integraciÃ³n activa con el State Provider.
 
-Ese carril continuará como:
+Ese carril continuarÃ¡ como:
 
 FUTURE_PROVIDER_REGISTRY_INTEGRATION = NOT_AUTHORIZED
 
-salvo autorización explícita posterior procedente de la autoridad correspondiente.
+salvo autorizaciÃ³n explÃ­cita posterior procedente de la autoridad correspondiente.
 
 ## Historical State Consumption Hold - SUPERSEDED BY BT-GATE-014
 

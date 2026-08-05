@@ -1,0 +1,51 @@
+{
+  "report_id": "BT_GATE_015_OWNER_REVIEW_CORRECTION_REPORT_V0_1",
+  "status": "CONTRACT_CORRECTED_PENDING_FINAL_OWNER_CONFIRMATION",
+  "gate_id": "BT-GATE-015",
+  "gate_status": "NOT_OPEN",
+  "implementation_status": "NOT_AUTHORIZED",
+  "physical_read_status": "NOT_AUTHORIZED",
+  "base_contract_sha256": "4c9560b24e3c7a9f30f917accde8326c50cbb2ac1b1f8f2588e0bd9fa7b0f552",
+  "corrected_contract_sha256": "94fd027e4c7571f2c38327d7050935fbb3d13d6aed8df6824c46c34ad53adba2",
+  "findings": [
+    {
+      "finding_id": "OWNER_REVIEW_01_WINDOW_IDENTITY_AND_ORDINAL",
+      "status": "CORRECTED",
+      "resolution": "Executable window identity frozen; historical identity and ordinal isolated as provenance only."
+    },
+    {
+      "finding_id": "OWNER_REVIEW_02_PHYSICAL_SIDECAR_JOIN",
+      "status": "CORRECTED",
+      "resolution": "Five field mappings, exact 1:1 cardinality, Market State fingerprint source and original UTF-8 snapshot hash frozen."
+    },
+    {
+      "finding_id": "OWNER_REVIEW_03_SIDECAR_SCHEMA_AUTHORITY",
+      "status": "CORRECTED",
+      "authority_sha256": "7d814dcb50fdd9b0da604e4f443497f3b733082070ccc2ed8ff89293e773ad77"
+    },
+    {
+      "finding_id": "OWNER_REVIEW_04_COMPONENT_RESTRICTION_DOMAIN",
+      "status": "CLOSED_BY_SCOPE_NARROWING",
+      "resolution": "No row-addressable component restriction values exist; implicit union/inference prohibited and component domain not authorized in V0.1."
+    },
+    {
+      "finding_id": "OWNER_REVIEW_05_EVIDENCE_CHRONOLOGY",
+      "status": "CORRECTED",
+      "resolution": "Initial 36/36 zero-read handoff separated from 52/52 provider completion read and zero-read backtester state; adoption timestamps replaced by date-only fields."
+    },
+    {
+      "finding_id": "OWNER_REVIEW_06_PHYSICAL_SIDECAR_KEY_NAMES",
+      "status": "CORRECTED",
+      "resolution": "Contract now uses exact sidecar keys market_state_cross_dataset_binding and replay_consumption_restriction_codes."
+    }
+  ],
+  "next_required_action": "FINAL_OWNER_CONFIRMATION_OF_CORRECTED_CONTRACT",
+  "diff_validation": {
+    "format": "unified diff",
+    "normalization": "UTF-8 bytes, CRLF normalized to LF",
+    "base_lf_normalized_sha256": "638a37a0a014d143f4d3e30d8fc00ce972c7965631d01365aa0b771a612b9295",
+    "corrected_lf_normalized_sha256": "497e92fc0ce31c86d66f88beec44ed0ed831d1cf0459c6d29496cb26bf0bb70f",
+    "reconstructed_lf_normalized_sha256": "497e92fc0ce31c86d66f88beec44ed0ed831d1cf0459c6d29496cb26bf0bb70f",
+    "reconstruction_matches": true
+  }
+}

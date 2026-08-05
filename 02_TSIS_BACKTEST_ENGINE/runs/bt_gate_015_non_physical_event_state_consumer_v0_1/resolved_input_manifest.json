@@ -1,0 +1,33 @@
+{
+  "completion_handoff_sha256": "3a6bf3ca04c0428a1728e1719cd6aeaea6bfaef43e12fb83939dde3cb6cb85d9",
+  "fixture_class": "SYNTHETIC_TYPED_EVENT_STATE",
+  "initial_handoff_sha256": "b7a4783d0ab64ffaf37fbfdf2ee76dffacbe9b14cf3f059891908c87116369b2",
+  "inputs": {
+    "synthetic_event_state_rows.json": {
+      "sha256_after": "b6c7a4cd0108d48a3bd6ec18108f493efa27d5ef569b72e70a5e4a68304ae459",
+      "sha256_before": "b6c7a4cd0108d48a3bd6ec18108f493efa27d5ef569b72e70a5e4a68304ae459",
+      "size_bytes": 3606
+    },
+    "synthetic_event_state_sidecar.json": {
+      "sha256_after": "0ecd1fe7098b242db64578f650e5f11cee6f08fb8a10947675ab12536c1dab46",
+      "sha256_before": "0ecd1fe7098b242db64578f650e5f11cee6f08fb8a10947675ab12536c1dab46",
+      "size_bytes": 3983
+    },
+    "synthetic_market_state_row.json": {
+      "sha256_after": "e510332393a8332773163be2e1db6e11cfaadfda4fefe551755c488047959820",
+      "sha256_before": "e510332393a8332773163be2e1db6e11cfaadfda4fefe551755c488047959820",
+      "size_bytes": 2516
+    },
+    "synthetic_market_state_sidecar_record.json": {
+      "sha256_after": "3378eb23d6c4120b45f9969f90f5c0920bfa1bb8eba447855ad1af23aeb70fc4",
+      "sha256_before": "3378eb23d6c4120b45f9969f90f5c0920bfa1bb8eba447855ad1af23aeb70fc4",
+      "size_bytes": 3966
+    },
+    "synthetic_ordering_bar.json": {
+      "sha256_after": "c01ae95f45eae4c702b2801a17b4cb5028da1686519abaefbc9162e5508e9424",
+      "sha256_before": "c01ae95f45eae4c702b2801a17b4cb5028da1686519abaefbc9162e5508e9424",
+      "size_bytes": 279
+    }
+  },
+  "physical_rows": 0
+}

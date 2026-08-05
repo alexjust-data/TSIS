@@ -9,6 +9,24 @@ all later handoff blocks = historical closure snapshots
 Read `LOCAL_RULES.md` and `STATE_PROVIDER_CONSUMER_RECOVERY.md` before using
 this file. Repeated historical headings do not create concurrent current gates.
 
+# Current Runtime Handoff Override - Event State Provider Completion Ready
+
+```text
+event_state replay availability sidecar = CLOSED_PASS_WITH_RESTRICTIONS
+event_state typed payload binding = CLOSED_READY_WITH_RESTRICTIONS
+bounded identity = on-demand AAME / XNYS / 2021-01-19 record
+scientific payload = exact 17-value Market State core-four snapshot
+BT-GATE-015 non-physical external review = PASS
+Event State physical read = NOT_AUTHORIZED
+single-use physical authorization = NOT_AUTHORIZED
+BT-GATE-015 non-physical implementation = ACCEPTED_NON_PHYSICAL_ONLY
+active provider gate = none
+next owner = BT-GATE-015 single-use physical authorization preparation and preexecution review
+```
+
+Use `event_state_session_opened_bt_gate_015_provider_completion_handoff_v0_1.md`.
+The earlier historical record remains provenance evidence, not the bounded
+delivery identity. Do not touch `02_TSIS_BACKTEST_ENGINE` from this layer.
 # Current Runtime Handoff Override - Restriction Domains Clarified
 
 Status: `agent_handoff_prompt_v0_155`

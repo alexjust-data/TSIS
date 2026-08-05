@@ -1,0 +1,32 @@
+{
+  "deterministic_output_hash": "f149ab854105252a1b929d28858065a163bcee134bad69588b7b99a9e8de0d8d",
+  "event_state_events": 1,
+  "event_state_physical_read": "NOT_AUTHORIZED",
+  "fills": 0,
+  "gate_id": "BT-GATE-015",
+  "implementation_acceptance": "PENDING_EXTERNAL_NON_PHYSICAL_REVIEW",
+  "implementation_phase": "BOUNDED_NON_PHYSICAL_IMPLEMENTATION",
+  "next_required_action": "EXTERNAL_NON_PHYSICAL_IMPLEMENTATION_REVIEW",
+  "observations": 1,
+  "orders": 0,
+  "output_artifact_hashes": {
+    "availability_sidecar_validation_report.json": "7e937e15a12646aedcc75d8cd711d3f52c89d6178ad65baac47112107ce416d2",
+    "boundary_preservation_report.json": "809cfba380dda7f55edc2b6b113a4e95f34ce82cb56f84f4db8002c3485fa36d",
+    "bounded_event_state_event.json": "12fe5e489c21cf2491a114539d7c7d446d3b9b034387891b2deea06dcc399493",
+    "bounded_probe_observations.json": "47cc928bcdbddc8857aebf74e8d76ab2b5602473b84109796465e471cad3582e",
+    "determinism_report.json": "92027901c17d8096cd066a842287db0e2b4fe4e7ae0228e400084b12d0697657",
+    "event_state_store_trace.json": "efe4f35885af6d64fc1b76f7668241803b8358095706d34fb1ceb8e53af174de",
+    "fingerprint_and_dependency_report.json": "a85b3ad98c084fb5a63b8a10c79cf56231d0ca4b5b9c4f9d004cff44a39b331c",
+    "resolved_input_manifest.json": "40ee970183f3c0fc0c00b9255fcb72605bf52ac736422d5e4acfe0eb4638ba0d",
+    "restriction_domain_report.json": "6b6b529d873a7506843edaff71ef4c02e0be3ae3ea8d340e7c1f31873e8db18b",
+    "state_aware_event_sequence.json": "d7c085967fe13f81ddba677fdbcb5cc2777656bff5a54a70e3db4f0155f8f81a",
+    "test_report.json": "5862394a85c291567405b7833a3d42745f0ec26553761ba79718788de0d95c5d",
+    "typed_payload_binding_report.json": "efa02e47113dd7854d846f3864b9fa952dfd2b0889cd436f671320878591b3ad"
+  },
+  "physical_data_files_opened": 0,
+  "physical_state_rows_read": 0,
+  "pnl_calculated": false,
+  "scientific_manifest_hash": "57ca172d52c0eb0944af7ecc2647797482427d58127ced9d92b4d6b7f4965bdd",
+  "store_inserts": 1,
+  "validation_status": "PASS"
+}

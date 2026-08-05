@@ -9,7 +9,7 @@ No es solo un backtester, una coleccion de estrategias, una tabla de estado o Al
 Primero leer:
 
 ```text
-C:/TSIS_Data/START_HERE.md
+C:/TSIS_Data/AGENTS.md
 C:/TSIS_Data/PATH_MIGRATION_2026_07_22.md
 C:/TSIS_Data/PROJECT_OPERATING_SYSTEM.md
 C:/TSIS_Data/PROJECT_RULES.md

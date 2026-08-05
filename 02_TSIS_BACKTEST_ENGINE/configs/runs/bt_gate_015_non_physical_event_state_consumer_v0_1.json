@@ -1,0 +1,8 @@
+{
+  "completion_handoff": "evidence/provider_handoffs/bt_gate_015/event_state_session_opened_bt_gate_015_provider_completion_v0_1_20260731T071317Z.zip",
+  "fixture_root": "tests/fixtures/bt_gate_015_synthetic_event_state",
+  "initial_handoff": "evidence/provider_handoffs/bt_gate_015/event_state_session_opened_bt_gate_015_contract_handoff_v0_1_20260731T064518Z.zip",
+  "output_root": "runs",
+  "physical_read_authorized": false,
+  "run_id": "bt_gate_015_non_physical_event_state_consumer_v0_1"
+}

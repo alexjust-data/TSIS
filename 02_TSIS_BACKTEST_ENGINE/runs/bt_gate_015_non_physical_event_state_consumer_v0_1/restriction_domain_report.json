@@ -1,0 +1,6 @@
+{
+  "component_restriction_domain": "NOT_MATERIALIZED_NOT_AUTHORIZED",
+  "provenance_domain_preserved": true,
+  "replay_consumption_domain_closed": true,
+  "status": "PASS"
+}

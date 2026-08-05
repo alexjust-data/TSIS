@@ -1,0 +1,688 @@
+{
+  "bounded_consumer_probe_observations": [
+    {
+      "event_sequence": 1,
+      "materialized_state_candidate_id": "f09492ac417d05161f70ee75f81e345a9cc315cef9beb9939d2df6ff3eb58dd3",
+      "observed_at_utc": "2021-03-15T13:30:00Z",
+      "probe_observation_id": "bt-gate-014-v0-3-probe-00",
+      "replay_consumption_restriction_codes": [
+        "candidate_runtime_only",
+        "not_official_dataset",
+        "no_downstream",
+        "no_production"
+      ],
+      "state_output_fingerprint": "f7c926be8e8bb6e84433061213bc554d54de2e03d0910a799e974ff5aea04617",
+      "store_insert_sequence": 0,
+      "typed_payload_field_count": 17,
+      "visibility_status": "VISIBLE"
+    },
+    {
+      "event_sequence": 3,
+      "materialized_state_candidate_id": "26d923a282355ad242a5d91ad7d6183bed6a94842041ecf966ac70c366308c0e",
+      "observed_at_utc": "2021-03-15T20:00:00Z",
+      "probe_observation_id": "bt-gate-014-v0-3-probe-01",
+      "replay_consumption_restriction_codes": [
+        "candidate_runtime_only",
+        "not_official_dataset",
+        "no_downstream",
+        "no_production"
+      ],
+      "state_output_fingerprint": "2420034cb851629b48ee3216713b6bc1a337ce0a4356096575a3db1a91edb7bd",
+      "store_insert_sequence": 1,
+      "typed_payload_field_count": 17,
+      "visibility_status": "VISIBLE"
+    }
+  ],
+  "bounded_market_state_events": [
+    {
+      "audit_lineage": {
+        "binding_id": "market_state_core_four_scale_validation_physical_schema_binding_v0_1",
+        "binding_sha256": "4006e80f099bb8abec147e33670294d7cc2eb565d25a10a08d6bf929c247f083",
+        "calendar_version": "governed_exchange_session_calendar_xnys_v0_1",
+        "component_availability_evidence": [
+          {
+            "availability_rule_id": "zero_latency_candidate_component_availability_rule_v0_1",
+            "availability_status": "available",
+            "component_as_of_utc": "2021-03-15T13:30:00Z",
+            "component_available_at_utc": "2021-03-15T13:30:00Z",
+            "component_id": "scale_c_context_0058::price_location_structure",
+            "component_replay_restriction_codes": [
+              "candidate_runtime_only",
+              "not_official_dataset",
+              "no_downstream",
+              "no_production"
+            ],
+            "cutoff_rule_id": "decision_timestamp_closed_bar_cutoff_rule_v0_1",
+            "information_object_id": "price_location_structure",
+            "source_timestamp_utc": "2021-03-15T13:30:00Z"
+          },
+          {
+            "availability_rule_id": "zero_latency_candidate_component_availability_rule_v0_1",
+            "availability_status": "available",
+            "component_as_of_utc": "2021-03-15T13:30:00Z",
+            "component_available_at_utc": "2021-03-15T13:30:00Z",
+            "component_id": "scale_c_context_0058::price_movement",
+            "component_replay_restriction_codes": [
+              "candidate_runtime_only",
+              "not_official_dataset",
+              "no_downstream",
+              "no_production"
+            ],
+            "cutoff_rule_id": "decision_timestamp_closed_bar_cutoff_rule_v0_1",
+            "information_object_id": "price_movement",
+            "source_timestamp_utc": "2021-03-15T13:30:00Z"
+          },
+          {
+            "availability_rule_id": "zero_latency_candidate_component_availability_rule_v0_1",
+            "availability_status": "available",
+            "component_as_of_utc": "2021-03-15T13:30:00Z",
+            "component_available_at_utc": "2021-03-15T13:30:00Z",
+            "component_id": "scale_c_context_0058::trading_activity",
+            "component_replay_restriction_codes": [
+              "candidate_runtime_only",
+              "not_official_dataset",
+              "no_downstream",
+              "no_production"
+            ],
+            "cutoff_rule_id": "decision_timestamp_closed_bar_cutoff_rule_v0_1",
+            "information_object_id": "trading_activity",
+            "source_timestamp_utc": "2021-03-15T13:30:00Z"
+          },
+          {
+            "availability_rule_id": "zero_latency_candidate_component_availability_rule_v0_1",
+            "availability_status": "available",
+            "component_as_of_utc": "2021-03-15T13:30:00Z",
+            "component_available_at_utc": "2021-03-15T13:30:00Z",
+            "component_id": "scale_c_context_0058::volatility_range_state",
+            "component_replay_restriction_codes": [
+              "candidate_runtime_only",
+              "not_official_dataset",
+              "no_downstream",
+              "no_production"
+            ],
+            "cutoff_rule_id": "decision_timestamp_closed_bar_cutoff_rule_v0_1",
+            "information_object_id": "volatility_range_state",
+            "source_timestamp_utc": "2021-03-15T13:30:00Z"
+          }
+        ],
+        "consumed_sidecar_sha256": "8e426b09bb1cafac26e49c7a81de31ef4ea60ca3b56ac3aa766ba13a0772c5ac",
+        "context_id": "scale_c_context_0058",
+        "context_input_fingerprint": "79c41e6c12b47a7380fedb549eb915764de178c03dc1039ff2e97ab5906df172",
+        "current_runtime_content_sha256": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68",
+        "decision_case": "first_observable_bar_governed_session",
+        "formula_versions": {
+          "price_location_structure__daily_open_price": "daily_open_price_after_session_open_v0_1",
+          "price_location_structure__daily_prior_close": "daily_prior_close_value_v0_1",
+          "price_location_structure__intraday_bar_close_price": "selected_closed_bar_close_v0_1",
+          "price_location_structure__intraday_return_vs_prior_close_ratio_as_location": "location_closed_bar_close_over_prior_close_minus_one_v0_1",
+          "price_location_structure__intraday_return_vs_session_open_ratio_as_location": "location_closed_bar_close_over_session_open_minus_one_v0_1",
+          "price_movement__daily_gap_pct": "daily_open_over_prior_close_minus_one_v0_1",
+          "price_movement__daily_prior_close": "daily_prior_close_value_v0_1",
+          "price_movement__intraday_bar_close_price": "selected_closed_bar_close_v0_1",
+          "price_movement__intraday_return_vs_prior_close_ratio": "closed_bar_close_over_prior_close_minus_one_v0_1",
+          "price_movement__intraday_return_vs_session_open_ratio": "closed_bar_close_over_session_open_minus_one_v0_1",
+          "trading_activity__daily_volume_20d_avg": "prior_20_session_volume_mean_v0_1",
+          "trading_activity__intraday_bar_volume": "selected_closed_bar_volume_v0_1",
+          "trading_activity__intraday_session_volume_to_time": "closed_bar_session_volume_sum_v0_1",
+          "trading_activity__session_volume_to_time_over_prior_20_full_session_volume_mean": "session_volume_to_time_over_prior_20_volume_mean_v0_1",
+          "volatility_range_state__intraday_high_so_far": "closed_bar_high_so_far_max_v0_1",
+          "volatility_range_state__intraday_low_so_far": "closed_bar_low_so_far_min_v0_1",
+          "volatility_range_state__intraday_range_so_far_ratio": "high_so_far_over_low_so_far_minus_one_v0_1"
+        },
+        "formula_versions_raw_json": "{\"price_location_structure__daily_open_price\":\"daily_open_price_after_session_open_v0_1\",\"price_location_structure__daily_prior_close\":\"daily_prior_close_value_v0_1\",\"price_location_structure__intraday_bar_close_price\":\"selected_closed_bar_close_v0_1\",\"price_location_structure__intraday_return_vs_prior_close_ratio_as_location\":\"location_closed_bar_close_over_prior_close_minus_one_v0_1\",\"price_location_structure__intraday_return_vs_session_open_ratio_as_location\":\"location_closed_bar_close_over_session_open_minus_one_v0_1\",\"price_movement__daily_gap_pct\":\"daily_open_over_prior_close_minus_one_v0_1\",\"price_movement__daily_prior_close\":\"daily_prior_close_value_v0_1\",\"price_movement__intraday_bar_close_price\":\"selected_closed_bar_close_v0_1\",\"price_movement__intraday_return_vs_prior_close_ratio\":\"closed_bar_close_over_prior_close_minus_one_v0_1\",\"price_movement__intraday_return_vs_session_open_ratio\":\"closed_bar_close_over_session_open_minus_one_v0_1\",\"trading_activity__daily_volume_20d_avg\":\"prior_20_session_volume_mean_v0_1\",\"trading_activity__intraday_bar_volume\":\"selected_closed_bar_volume_v0_1\",\"trading_activity__intraday_session_volume_to_time\":\"closed_bar_session_volume_sum_v0_1\",\"trading_activity__session_volume_to_time_over_prior_20_full_session_volume_mean\":\"session_volume_to_time_over_prior_20_volume_mean_v0_1\",\"volatility_range_state__intraday_high_so_far\":\"closed_bar_high_so_far_max_v0_1\",\"volatility_range_state__intraday_low_so_far\":\"closed_bar_low_so_far_min_v0_1\",\"volatility_range_state__intraday_range_so_far_ratio\":\"high_so_far_over_low_so_far_minus_one_v0_1\"}",
+        "integration_status": "INTEGRABLE_COMPLETE_WITH_RESTRICTIONS",
+        "materialization_run_id": "market_state_on_demand_scale_validation_v0_1_20260727T133641Z",
+        "nested_provider_evidence_sha256": "8f3d914becb3bc6d33f66814b355f636827db8cac67ea483fe9c6840b4fa16c7",
+        "object_completeness_status": "COMPLETE_REQUIRED_OBJECTS_WITH_RESTRICTIONS",
+        "physical_provenance_restriction_codes": [
+          "design_restriction:after_last_sampled_bar_is_not_end_of_session",
+          "design_restriction:duplicate_counts_are_request_impact_not_physical_group_counts",
+          "design_restriction:governed_exchange_session_calendar_required_before_operational_integration",
+          "design_restriction:quote_dependent_objects_remain_blocked",
+          "design_restriction:trading_activity_rvol_20d_name_must_preserve_volume_to_time_over_prior_full_session_mean_semantics",
+          "price_location_structure:013_may_appear_only_as_surface_lineage_not_builder_input",
+          "price_location_structure:accepted_surface_is_run_local_not_official_014",
+          "price_location_structure:candidate_artifacts_remain_non_canonical",
+          "price_location_structure:fixed_utc_probe_calendar_not_used_as_current_authority",
+          "price_location_structure:quote_dependent_objects_remain_excluded",
+          "price_movement:013_may_appear_only_as_surface_lineage_not_builder_input",
+          "price_movement:accepted_surface_is_run_local_not_official_014",
+          "price_movement:candidate_artifacts_remain_non_canonical",
+          "price_movement:fixed_utc_probe_calendar_not_used_as_current_authority",
+          "price_movement:quote_dependent_objects_remain_excluded",
+          "trading_activity:013_may_appear_only_as_surface_lineage_not_builder_input",
+          "trading_activity:accepted_surface_is_run_local_not_official_014",
+          "trading_activity:candidate_artifacts_remain_non_canonical",
+          "trading_activity:daily_rvol_20d_uses_intraday_volume_to_time_proxy; final same-session daily volume is not consumed",
+          "trading_activity:fixed_utc_probe_calendar_not_used_as_current_authority",
+          "trading_activity:quote_dependent_objects_remain_excluded",
+          "volatility_range_state:013_may_appear_only_as_surface_lineage_not_builder_input",
+          "volatility_range_state:accepted_surface_is_run_local_not_official_014",
+          "volatility_range_state:candidate_artifacts_remain_non_canonical",
+          "volatility_range_state:fixed_utc_probe_calendar_not_used_as_current_authority",
+          "volatility_range_state:quote_dependent_objects_remain_excluded"
+        ],
+        "physical_restriction_codes_raw_json": "[\"design_restriction:after_last_sampled_bar_is_not_end_of_session\",\"design_restriction:duplicate_counts_are_request_impact_not_physical_group_counts\",\"design_restriction:governed_exchange_session_calendar_required_before_operational_integration\",\"design_restriction:quote_dependent_objects_remain_blocked\",\"design_restriction:trading_activity_rvol_20d_name_must_preserve_volume_to_time_over_prior_full_session_mean_semantics\",\"price_location_structure:013_may_appear_only_as_surface_lineage_not_builder_input\",\"price_location_structure:accepted_surface_is_run_local_not_official_014\",\"price_location_structure:candidate_artifacts_remain_non_canonical\",\"price_location_structure:fixed_utc_probe_calendar_not_used_as_current_authority\",\"price_location_structure:quote_dependent_objects_remain_excluded\",\"price_movement:013_may_appear_only_as_surface_lineage_not_builder_input\",\"price_movement:accepted_surface_is_run_local_not_official_014\",\"price_movement:candidate_artifacts_remain_non_canonical\",\"price_movement:fixed_utc_probe_calendar_not_used_as_current_authority\",\"price_movement:quote_dependent_objects_remain_excluded\",\"trading_activity:013_may_appear_only_as_surface_lineage_not_builder_input\",\"trading_activity:accepted_surface_is_run_local_not_official_014\",\"trading_activity:candidate_artifacts_remain_non_canonical\",\"trading_activity:daily_rvol_20d_uses_intraday_volume_to_time_proxy; final same-session daily volume is not consumed\",\"trading_activity:fixed_utc_probe_calendar_not_used_as_current_authority\",\"trading_activity:quote_dependent_objects_remain_excluded\",\"volatility_range_state:013_may_appear_only_as_surface_lineage_not_builder_input\",\"volatility_range_state:accepted_surface_is_run_local_not_official_014\",\"volatility_range_state:candidate_artifacts_remain_non_canonical\",\"volatility_range_state:fixed_utc_probe_calendar_not_used_as_current_authority\",\"volatility_range_state:quote_dependent_objects_remain_excluded\"]",
+        "policy_versions": {
+          "004_price_view_selection_policy": "004_price_view_selection_policy_v0_1",
+          "014_duplicate_intraday_bar_policy": "014_duplicate_intraday_bar_policy_v0_1"
+        },
+        "policy_versions_raw_json": "{\"004_price_view_selection_policy\":\"004_price_view_selection_policy_v0_1\",\"014_duplicate_intraday_bar_policy\":\"014_duplicate_intraday_bar_policy_v0_1\"}",
+        "provider_handoff_sha256": "2c578ce9216bb3fd9010ef1f4afe8ba4022ab6b15f665d276a957f50acb35112",
+        "provider_sidecar_authority_sha256": "8e426b09bb1cafac26e49c7a81de31ef4ea60ca3b56ac3aa766ba13a0772c5ac",
+        "quality_status": "PASS_WITH_RESTRICTIONS",
+        "sidecar_id": "market_state_core_four_scale_validation_replay_availability_evidence_sidecar_v0_1_20260729",
+        "sidecar_schema_id": "market_state_core_four_replay_availability_evidence_sidecar_contract_v0_1",
+        "source_candidate_record_id": "25672915a752b75e823409fc6dad6b55eaeddb900a0e58b7f5eab5f7c2ed941d",
+        "source_integration_profile_id": "market_state_core_four_intraday_experimental_v0_1",
+        "source_integration_run_id": "experimental_core_four_market_state_scale_c_market_state_integration_execution_v0_1_20260723T184533Z",
+        "source_lineage": {
+          "object_record_ids": {
+            "price_location_structure": "scale_c_req_0229::price_location_structure",
+            "price_movement": "scale_c_req_0230::price_movement",
+            "trading_activity": "scale_c_req_0231::trading_activity",
+            "volatility_range_state": "scale_c_req_0232::volatility_range_state"
+          },
+          "on_demand_source_alias": "scale_c_integrated_market_state_candidate_records",
+          "shared_source_evidence": {
+            "004_daily_row": {
+              "file_path": "G:\\TSIS\\data\\data_foundation_outputs\\master_daily_table\\master_daily_table_v0_1\\year=2021\\price_view=split_normalized\\data_0.parquet",
+              "price_view": "split_normalized",
+              "row_ordinal_in_file": 1812,
+              "session_date": "2021-03-15"
+            },
+            "014_closed_bar_count": 1,
+            "014_selected_closed_bar": {
+              "bar_end_utc": "2021-03-15T13:30:00Z",
+              "duplicate_group_row_count": 1,
+              "duplicate_status": "unique",
+              "file_path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\06_MARKET_STATE_INTEGRATION\\runs\\experimental_core_four_market_state_scale_c_execution_surface_construction_v0_1_20260723T165402Z\\014_scale_c_execution_surface_candidate_v0_1.parquet",
+              "row_ordinal_in_file": 10934
+            },
+            "governed_calendar_binding": {
+              "calendar_id": "XNYS::2021-03-15::governed_exchange_session_calendar_xnys_v0_1",
+              "calendar_row_fingerprint": "fcb483ebd437a07b3c2e92294d7110c5d7833067188686fb7b228212c9616a53",
+              "calendar_version": "governed_exchange_session_calendar_xnys_v0_1",
+              "is_early_close": false,
+              "session_close_utc": "2021-03-15T20:00:00Z",
+              "session_open_utc": "2021-03-15T13:30:00Z",
+              "session_type": "regular"
+            }
+          },
+          "source_integration_run_id": "experimental_core_four_market_state_scale_c_market_state_integration_execution_v0_1_20260723T184533Z"
+        },
+        "source_lineage_raw_json": "{\"object_record_ids\":{\"price_location_structure\":\"scale_c_req_0229::price_location_structure\",\"price_movement\":\"scale_c_req_0230::price_movement\",\"trading_activity\":\"scale_c_req_0231::trading_activity\",\"volatility_range_state\":\"scale_c_req_0232::volatility_range_state\"},\"on_demand_source_alias\":\"scale_c_integrated_market_state_candidate_records\",\"shared_source_evidence\":{\"004_daily_row\":{\"file_path\":\"G:\\\\TSIS\\\\data\\\\data_foundation_outputs\\\\master_daily_table\\\\master_daily_table_v0_1\\\\year=2021\\\\price_view=split_normalized\\\\data_0.parquet\",\"price_view\":\"split_normalized\",\"row_ordinal_in_file\":1812,\"session_date\":\"2021-03-15\"},\"014_closed_bar_count\":1,\"014_selected_closed_bar\":{\"bar_end_utc\":\"2021-03-15T13:30:00Z\",\"duplicate_group_row_count\":1,\"duplicate_status\":\"unique\",\"file_path\":\"C:\\\\TSIS_Data\\\\00_CTO_APPLIED_ARCHITECTURE\\\\03_TABLES_feature_engineering\\\\06_MARKET_STATE_INTEGRATION\\\\runs\\\\experimental_core_four_market_state_scale_c_execution_surface_construction_v0_1_20260723T165402Z\\\\014_scale_c_execution_surface_candidate_v0_1.parquet\",\"row_ordinal_in_file\":10934},\"governed_calendar_binding\":{\"calendar_id\":\"XNYS::2021-03-15::governed_exchange_session_calendar_xnys_v0_1\",\"calendar_row_fingerprint\":\"fcb483ebd437a07b3c2e92294d7110c5d7833067188686fb7b228212c9616a53\",\"calendar_version\":\"governed_exchange_session_calendar_xnys_v0_1\",\"is_early_close\":false,\"session_close_utc\":\"2021-03-15T20:00:00Z\",\"session_open_utc\":\"2021-03-15T13:30:00Z\",\"session_type\":\"regular\"}},\"source_integration_run_id\":\"experimental_core_four_market_state_scale_c_market_state_integration_execution_v0_1_20260723T184533Z\"}",
+        "state_bundle_canonical_sha256": "0e9f7387acdf999a6e41f163ab16c3412c32cb545d1757cde4b5613572406be2",
+        "state_bundle_ref_id": "state_bundle_manifest_scale_validation_reissue_v0_1_2_20260729",
+        "structural_schema_sha256": "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b"
+      },
+      "candidate_dataset_fingerprint": "516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416",
+      "candidate_dataset_id": "market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762",
+      "component_replay_restriction_codes": [
+        [
+          "price_location_structure",
+          [
+            "candidate_runtime_only",
+            "not_official_dataset",
+            "no_downstream",
+            "no_production"
+          ]
+        ],
+        [
+          "price_movement",
+          [
+            "candidate_runtime_only",
+            "not_official_dataset",
+            "no_downstream",
+            "no_production"
+          ]
+        ],
+        [
+          "trading_activity",
+          [
+            "candidate_runtime_only",
+            "not_official_dataset",
+            "no_downstream",
+            "no_production"
+          ]
+        ],
+        [
+          "volatility_range_state",
+          [
+            "candidate_runtime_only",
+            "not_official_dataset",
+            "no_downstream",
+            "no_production"
+          ]
+        ]
+      ],
+      "decision_timestamp_utc": "2021-03-15T13:30:00Z",
+      "event_type": "BoundedMarketStateAvailable",
+      "instrument_id": "cik_ticker:0001651625:ACIU",
+      "materialized_state_candidate_id": "f09492ac417d05161f70ee75f81e345a9cc315cef9beb9939d2df6ff3eb58dd3",
+      "payload": {
+        "price_location_structure": {
+          "daily_open_price": 7.75,
+          "daily_prior_close": 7.8,
+          "intraday_bar_close_price": 7.75,
+          "intraday_return_vs_prior_close_ratio_as_location": -0.0064102564102563875,
+          "intraday_return_vs_session_open_ratio_as_location": 0.0
+        },
+        "price_movement": {
+          "daily_gap_pct": -0.0064102564102563875,
+          "daily_prior_close": 7.8,
+          "intraday_bar_close_price": 7.75,
+          "intraday_return_vs_prior_close_ratio": -0.0064102564102563875,
+          "intraday_return_vs_session_open_ratio": 0.0
+        },
+        "trading_activity": {
+          "daily_volume_20d_avg": 833505.65,
+          "intraday_bar_volume": 12234.0,
+          "intraday_session_volume_to_time": 12234.0,
+          "session_volume_to_time_over_prior_20_full_session_volume_mean": 0.01467776493176741
+        },
+        "volatility_range_state": {
+          "intraday_high_so_far": 7.75,
+          "intraday_low_so_far": 7.75,
+          "intraday_range_so_far_ratio": 0.0
+        }
+      },
+      "physical_profile_id": "core_four_market_state_profile_v0_1",
+      "profile_id": "market_state_core_four_intraday_profile_v0_1",
+      "replay_consumption_restriction_codes": [
+        "candidate_runtime_only",
+        "not_official_dataset",
+        "no_downstream",
+        "no_production"
+      ],
+      "session_date": "2021-03-15",
+      "state_as_of_utc": "2021-03-15T13:30:00Z",
+      "state_availability_policy_id": "market_state_core_four_replay_availability_policy_v0_1",
+      "state_availability_status": "available_for_decision_replay",
+      "state_available_at_utc": "2021-03-15T13:30:00Z",
+      "state_kind": "market_state",
+      "state_output_fingerprint": "f7c926be8e8bb6e84433061213bc554d54de2e03d0910a799e974ff5aea04617",
+      "state_publication_latency": "PT0S",
+      "state_publication_latency_policy_id": "zero_latency_candidate_replay_publication_policy_v0_1",
+      "state_replay_consumption_legality": "decision_safe",
+      "state_schema_version": "core_four_market_state_candidate_physical_schema_v0_1",
+      "ticker": "ACIU"
+    },
+    {
+      "audit_lineage": {
+        "binding_id": "market_state_core_four_scale_validation_physical_schema_binding_v0_1",
+        "binding_sha256": "4006e80f099bb8abec147e33670294d7cc2eb565d25a10a08d6bf929c247f083",
+        "calendar_version": "governed_exchange_session_calendar_xnys_v0_1",
+        "component_availability_evidence": [
+          {
+            "availability_rule_id": "zero_latency_candidate_component_availability_rule_v0_1",
+            "availability_status": "available",
+            "component_as_of_utc": "2021-03-15T20:00:00Z",
+            "component_available_at_utc": "2021-03-15T20:00:00Z",
+            "component_id": "scale_c_context_0115::price_location_structure",
+            "component_replay_restriction_codes": [
+              "candidate_runtime_only",
+              "not_official_dataset",
+              "no_downstream",
+              "no_production"
+            ],
+            "cutoff_rule_id": "decision_timestamp_closed_bar_cutoff_rule_v0_1",
+            "information_object_id": "price_location_structure",
+            "source_timestamp_utc": "2021-03-15T20:00:00Z"
+          },
+          {
+            "availability_rule_id": "zero_latency_candidate_component_availability_rule_v0_1",
+            "availability_status": "available",
+            "component_as_of_utc": "2021-03-15T20:00:00Z",
+            "component_available_at_utc": "2021-03-15T20:00:00Z",
+            "component_id": "scale_c_context_0115::price_movement",
+            "component_replay_restriction_codes": [
+              "candidate_runtime_only",
+              "not_official_dataset",
+              "no_downstream",
+              "no_production"
+            ],
+            "cutoff_rule_id": "decision_timestamp_closed_bar_cutoff_rule_v0_1",
+            "information_object_id": "price_movement",
+            "source_timestamp_utc": "2021-03-15T20:00:00Z"
+          },
+          {
+            "availability_rule_id": "zero_latency_candidate_component_availability_rule_v0_1",
+            "availability_status": "available",
+            "component_as_of_utc": "2021-03-15T20:00:00Z",
+            "component_available_at_utc": "2021-03-15T20:00:00Z",
+            "component_id": "scale_c_context_0115::trading_activity",
+            "component_replay_restriction_codes": [
+              "candidate_runtime_only",
+              "not_official_dataset",
+              "no_downstream",
+              "no_production"
+            ],
+            "cutoff_rule_id": "decision_timestamp_closed_bar_cutoff_rule_v0_1",
+            "information_object_id": "trading_activity",
+            "source_timestamp_utc": "2021-03-15T20:00:00Z"
+          },
+          {
+            "availability_rule_id": "zero_latency_candidate_component_availability_rule_v0_1",
+            "availability_status": "available",
+            "component_as_of_utc": "2021-03-15T20:00:00Z",
+            "component_available_at_utc": "2021-03-15T20:00:00Z",
+            "component_id": "scale_c_context_0115::volatility_range_state",
+            "component_replay_restriction_codes": [
+              "candidate_runtime_only",
+              "not_official_dataset",
+              "no_downstream",
+              "no_production"
+            ],
+            "cutoff_rule_id": "decision_timestamp_closed_bar_cutoff_rule_v0_1",
+            "information_object_id": "volatility_range_state",
+            "source_timestamp_utc": "2021-03-15T20:00:00Z"
+          }
+        ],
+        "consumed_sidecar_sha256": "8e426b09bb1cafac26e49c7a81de31ef4ea60ca3b56ac3aa766ba13a0772c5ac",
+        "context_id": "scale_c_context_0115",
+        "context_input_fingerprint": "348e097bb5b7cf02c46a1d84e8640c92e8b0b0f16c262e7f9c74df8e6f4db594",
+        "current_runtime_content_sha256": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68",
+        "decision_case": "governed_historical_session_close_boundary",
+        "formula_versions": {
+          "price_location_structure__daily_open_price": "daily_open_price_after_session_open_v0_1",
+          "price_location_structure__daily_prior_close": "daily_prior_close_value_v0_1",
+          "price_location_structure__intraday_bar_close_price": "selected_closed_bar_close_v0_1",
+          "price_location_structure__intraday_return_vs_prior_close_ratio_as_location": "location_closed_bar_close_over_prior_close_minus_one_v0_1",
+          "price_location_structure__intraday_return_vs_session_open_ratio_as_location": "location_closed_bar_close_over_session_open_minus_one_v0_1",
+          "price_movement__daily_gap_pct": "daily_open_over_prior_close_minus_one_v0_1",
+          "price_movement__daily_prior_close": "daily_prior_close_value_v0_1",
+          "price_movement__intraday_bar_close_price": "selected_closed_bar_close_v0_1",
+          "price_movement__intraday_return_vs_prior_close_ratio": "closed_bar_close_over_prior_close_minus_one_v0_1",
+          "price_movement__intraday_return_vs_session_open_ratio": "closed_bar_close_over_session_open_minus_one_v0_1",
+          "trading_activity__daily_volume_20d_avg": "prior_20_session_volume_mean_v0_1",
+          "trading_activity__intraday_bar_volume": "selected_closed_bar_volume_v0_1",
+          "trading_activity__intraday_session_volume_to_time": "closed_bar_session_volume_sum_v0_1",
+          "trading_activity__session_volume_to_time_over_prior_20_full_session_volume_mean": "session_volume_to_time_over_prior_20_volume_mean_v0_1",
+          "volatility_range_state__intraday_high_so_far": "closed_bar_high_so_far_max_v0_1",
+          "volatility_range_state__intraday_low_so_far": "closed_bar_low_so_far_min_v0_1",
+          "volatility_range_state__intraday_range_so_far_ratio": "high_so_far_over_low_so_far_minus_one_v0_1"
+        },
+        "formula_versions_raw_json": "{\"price_location_structure__daily_open_price\":\"daily_open_price_after_session_open_v0_1\",\"price_location_structure__daily_prior_close\":\"daily_prior_close_value_v0_1\",\"price_location_structure__intraday_bar_close_price\":\"selected_closed_bar_close_v0_1\",\"price_location_structure__intraday_return_vs_prior_close_ratio_as_location\":\"location_closed_bar_close_over_prior_close_minus_one_v0_1\",\"price_location_structure__intraday_return_vs_session_open_ratio_as_location\":\"location_closed_bar_close_over_session_open_minus_one_v0_1\",\"price_movement__daily_gap_pct\":\"daily_open_over_prior_close_minus_one_v0_1\",\"price_movement__daily_prior_close\":\"daily_prior_close_value_v0_1\",\"price_movement__intraday_bar_close_price\":\"selected_closed_bar_close_v0_1\",\"price_movement__intraday_return_vs_prior_close_ratio\":\"closed_bar_close_over_prior_close_minus_one_v0_1\",\"price_movement__intraday_return_vs_session_open_ratio\":\"closed_bar_close_over_session_open_minus_one_v0_1\",\"trading_activity__daily_volume_20d_avg\":\"prior_20_session_volume_mean_v0_1\",\"trading_activity__intraday_bar_volume\":\"selected_closed_bar_volume_v0_1\",\"trading_activity__intraday_session_volume_to_time\":\"closed_bar_session_volume_sum_v0_1\",\"trading_activity__session_volume_to_time_over_prior_20_full_session_volume_mean\":\"session_volume_to_time_over_prior_20_volume_mean_v0_1\",\"volatility_range_state__intraday_high_so_far\":\"closed_bar_high_so_far_max_v0_1\",\"volatility_range_state__intraday_low_so_far\":\"closed_bar_low_so_far_min_v0_1\",\"volatility_range_state__intraday_range_so_far_ratio\":\"high_so_far_over_low_so_far_minus_one_v0_1\"}",
+        "integration_status": "INTEGRABLE_COMPLETE_WITH_RESTRICTIONS",
+        "materialization_run_id": "market_state_on_demand_scale_validation_v0_1_20260727T133641Z",
+        "nested_provider_evidence_sha256": "8f3d914becb3bc6d33f66814b355f636827db8cac67ea483fe9c6840b4fa16c7",
+        "object_completeness_status": "COMPLETE_REQUIRED_OBJECTS_WITH_RESTRICTIONS",
+        "physical_provenance_restriction_codes": [
+          "design_restriction:after_last_sampled_bar_is_not_end_of_session",
+          "design_restriction:duplicate_counts_are_request_impact_not_physical_group_counts",
+          "design_restriction:governed_exchange_session_calendar_required_before_operational_integration",
+          "design_restriction:quote_dependent_objects_remain_blocked",
+          "design_restriction:trading_activity_rvol_20d_name_must_preserve_volume_to_time_over_prior_full_session_mean_semantics",
+          "price_location_structure:013_may_appear_only_as_surface_lineage_not_builder_input",
+          "price_location_structure:accepted_surface_is_run_local_not_official_014",
+          "price_location_structure:candidate_artifacts_remain_non_canonical",
+          "price_location_structure:fixed_utc_probe_calendar_not_used_as_current_authority",
+          "price_location_structure:quote_dependent_objects_remain_excluded",
+          "price_movement:013_may_appear_only_as_surface_lineage_not_builder_input",
+          "price_movement:accepted_surface_is_run_local_not_official_014",
+          "price_movement:candidate_artifacts_remain_non_canonical",
+          "price_movement:fixed_utc_probe_calendar_not_used_as_current_authority",
+          "price_movement:quote_dependent_objects_remain_excluded",
+          "trading_activity:013_may_appear_only_as_surface_lineage_not_builder_input",
+          "trading_activity:accepted_surface_is_run_local_not_official_014",
+          "trading_activity:candidate_artifacts_remain_non_canonical",
+          "trading_activity:daily_rvol_20d_uses_intraday_volume_to_time_proxy; final same-session daily volume is not consumed",
+          "trading_activity:fixed_utc_probe_calendar_not_used_as_current_authority",
+          "trading_activity:quote_dependent_objects_remain_excluded",
+          "volatility_range_state:013_may_appear_only_as_surface_lineage_not_builder_input",
+          "volatility_range_state:accepted_surface_is_run_local_not_official_014",
+          "volatility_range_state:candidate_artifacts_remain_non_canonical",
+          "volatility_range_state:fixed_utc_probe_calendar_not_used_as_current_authority",
+          "volatility_range_state:quote_dependent_objects_remain_excluded"
+        ],
+        "physical_restriction_codes_raw_json": "[\"design_restriction:after_last_sampled_bar_is_not_end_of_session\",\"design_restriction:duplicate_counts_are_request_impact_not_physical_group_counts\",\"design_restriction:governed_exchange_session_calendar_required_before_operational_integration\",\"design_restriction:quote_dependent_objects_remain_blocked\",\"design_restriction:trading_activity_rvol_20d_name_must_preserve_volume_to_time_over_prior_full_session_mean_semantics\",\"price_location_structure:013_may_appear_only_as_surface_lineage_not_builder_input\",\"price_location_structure:accepted_surface_is_run_local_not_official_014\",\"price_location_structure:candidate_artifacts_remain_non_canonical\",\"price_location_structure:fixed_utc_probe_calendar_not_used_as_current_authority\",\"price_location_structure:quote_dependent_objects_remain_excluded\",\"price_movement:013_may_appear_only_as_surface_lineage_not_builder_input\",\"price_movement:accepted_surface_is_run_local_not_official_014\",\"price_movement:candidate_artifacts_remain_non_canonical\",\"price_movement:fixed_utc_probe_calendar_not_used_as_current_authority\",\"price_movement:quote_dependent_objects_remain_excluded\",\"trading_activity:013_may_appear_only_as_surface_lineage_not_builder_input\",\"trading_activity:accepted_surface_is_run_local_not_official_014\",\"trading_activity:candidate_artifacts_remain_non_canonical\",\"trading_activity:daily_rvol_20d_uses_intraday_volume_to_time_proxy; final same-session daily volume is not consumed\",\"trading_activity:fixed_utc_probe_calendar_not_used_as_current_authority\",\"trading_activity:quote_dependent_objects_remain_excluded\",\"volatility_range_state:013_may_appear_only_as_surface_lineage_not_builder_input\",\"volatility_range_state:accepted_surface_is_run_local_not_official_014\",\"volatility_range_state:candidate_artifacts_remain_non_canonical\",\"volatility_range_state:fixed_utc_probe_calendar_not_used_as_current_authority\",\"volatility_range_state:quote_dependent_objects_remain_excluded\"]",
+        "policy_versions": {
+          "004_price_view_selection_policy": "004_price_view_selection_policy_v0_1",
+          "014_duplicate_intraday_bar_policy": "014_duplicate_intraday_bar_policy_v0_1"
+        },
+        "policy_versions_raw_json": "{\"004_price_view_selection_policy\":\"004_price_view_selection_policy_v0_1\",\"014_duplicate_intraday_bar_policy\":\"014_duplicate_intraday_bar_policy_v0_1\"}",
+        "provider_handoff_sha256": "2c578ce9216bb3fd9010ef1f4afe8ba4022ab6b15f665d276a957f50acb35112",
+        "provider_sidecar_authority_sha256": "8e426b09bb1cafac26e49c7a81de31ef4ea60ca3b56ac3aa766ba13a0772c5ac",
+        "quality_status": "PASS_WITH_RESTRICTIONS",
+        "sidecar_id": "market_state_core_four_scale_validation_replay_availability_evidence_sidecar_v0_1_20260729",
+        "sidecar_schema_id": "market_state_core_four_replay_availability_evidence_sidecar_contract_v0_1",
+        "source_candidate_record_id": "27c2b0b4973a880ab31d3df65c9977014f8b6e0a41c8d94e176031ff27672198",
+        "source_integration_profile_id": "market_state_core_four_intraday_experimental_v0_1",
+        "source_integration_run_id": "experimental_core_four_market_state_scale_c_market_state_integration_execution_v0_1_20260723T184533Z",
+        "source_lineage": {
+          "object_record_ids": {
+            "price_location_structure": "scale_c_req_0457::price_location_structure",
+            "price_movement": "scale_c_req_0458::price_movement",
+            "trading_activity": "scale_c_req_0459::trading_activity",
+            "volatility_range_state": "scale_c_req_0460::volatility_range_state"
+          },
+          "on_demand_source_alias": "scale_c_integrated_market_state_candidate_records",
+          "shared_source_evidence": {
+            "004_daily_row": {
+              "file_path": "G:\\TSIS\\data\\data_foundation_outputs\\master_daily_table\\master_daily_table_v0_1\\year=2021\\price_view=split_normalized\\data_0.parquet",
+              "price_view": "split_normalized",
+              "row_ordinal_in_file": 1812,
+              "session_date": "2021-03-15"
+            },
+            "014_closed_bar_count": 219,
+            "014_selected_closed_bar": {
+              "bar_end_utc": "2021-03-15T19:59:00Z",
+              "duplicate_group_row_count": 1,
+              "duplicate_status": "unique",
+              "file_path": "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\03_TABLES_feature_engineering\\06_MARKET_STATE_INTEGRATION\\runs\\experimental_core_four_market_state_scale_c_execution_surface_construction_v0_1_20260723T165402Z\\014_scale_c_execution_surface_candidate_v0_1.parquet",
+              "row_ordinal_in_file": 11152
+            },
+            "governed_calendar_binding": {
+              "calendar_id": "XNYS::2021-03-15::governed_exchange_session_calendar_xnys_v0_1",
+              "calendar_row_fingerprint": "fcb483ebd437a07b3c2e92294d7110c5d7833067188686fb7b228212c9616a53",
+              "calendar_version": "governed_exchange_session_calendar_xnys_v0_1",
+              "is_early_close": false,
+              "session_close_utc": "2021-03-15T20:00:00Z",
+              "session_open_utc": "2021-03-15T13:30:00Z",
+              "session_type": "regular"
+            }
+          },
+          "source_integration_run_id": "experimental_core_four_market_state_scale_c_market_state_integration_execution_v0_1_20260723T184533Z"
+        },
+        "source_lineage_raw_json": "{\"object_record_ids\":{\"price_location_structure\":\"scale_c_req_0457::price_location_structure\",\"price_movement\":\"scale_c_req_0458::price_movement\",\"trading_activity\":\"scale_c_req_0459::trading_activity\",\"volatility_range_state\":\"scale_c_req_0460::volatility_range_state\"},\"on_demand_source_alias\":\"scale_c_integrated_market_state_candidate_records\",\"shared_source_evidence\":{\"004_daily_row\":{\"file_path\":\"G:\\\\TSIS\\\\data\\\\data_foundation_outputs\\\\master_daily_table\\\\master_daily_table_v0_1\\\\year=2021\\\\price_view=split_normalized\\\\data_0.parquet\",\"price_view\":\"split_normalized\",\"row_ordinal_in_file\":1812,\"session_date\":\"2021-03-15\"},\"014_closed_bar_count\":219,\"014_selected_closed_bar\":{\"bar_end_utc\":\"2021-03-15T19:59:00Z\",\"duplicate_group_row_count\":1,\"duplicate_status\":\"unique\",\"file_path\":\"C:\\\\TSIS_Data\\\\00_CTO_APPLIED_ARCHITECTURE\\\\03_TABLES_feature_engineering\\\\06_MARKET_STATE_INTEGRATION\\\\runs\\\\experimental_core_four_market_state_scale_c_execution_surface_construction_v0_1_20260723T165402Z\\\\014_scale_c_execution_surface_candidate_v0_1.parquet\",\"row_ordinal_in_file\":11152},\"governed_calendar_binding\":{\"calendar_id\":\"XNYS::2021-03-15::governed_exchange_session_calendar_xnys_v0_1\",\"calendar_row_fingerprint\":\"fcb483ebd437a07b3c2e92294d7110c5d7833067188686fb7b228212c9616a53\",\"calendar_version\":\"governed_exchange_session_calendar_xnys_v0_1\",\"is_early_close\":false,\"session_close_utc\":\"2021-03-15T20:00:00Z\",\"session_open_utc\":\"2021-03-15T13:30:00Z\",\"session_type\":\"regular\"}},\"source_integration_run_id\":\"experimental_core_four_market_state_scale_c_market_state_integration_execution_v0_1_20260723T184533Z\"}",
+        "state_bundle_canonical_sha256": "0e9f7387acdf999a6e41f163ab16c3412c32cb545d1757cde4b5613572406be2",
+        "state_bundle_ref_id": "state_bundle_manifest_scale_validation_reissue_v0_1_2_20260729",
+        "structural_schema_sha256": "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b"
+      },
+      "candidate_dataset_fingerprint": "516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416",
+      "candidate_dataset_id": "market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762",
+      "component_replay_restriction_codes": [
+        [
+          "price_location_structure",
+          [
+            "candidate_runtime_only",
+            "not_official_dataset",
+            "no_downstream",
+            "no_production"
+          ]
+        ],
+        [
+          "price_movement",
+          [
+            "candidate_runtime_only",
+            "not_official_dataset",
+            "no_downstream",
+            "no_production"
+          ]
+        ],
+        [
+          "trading_activity",
+          [
+            "candidate_runtime_only",
+            "not_official_dataset",
+            "no_downstream",
+            "no_production"
+          ]
+        ],
+        [
+          "volatility_range_state",
+          [
+            "candidate_runtime_only",
+            "not_official_dataset",
+            "no_downstream",
+            "no_production"
+          ]
+        ]
+      ],
+      "decision_timestamp_utc": "2021-03-15T20:00:00Z",
+      "event_type": "BoundedMarketStateAvailable",
+      "instrument_id": "cik_ticker:0001651625:ACIU",
+      "materialized_state_candidate_id": "26d923a282355ad242a5d91ad7d6183bed6a94842041ecf966ac70c366308c0e",
+      "payload": {
+        "price_location_structure": {
+          "daily_open_price": 7.75,
+          "daily_prior_close": 7.8,
+          "intraday_bar_close_price": 8.09,
+          "intraday_return_vs_prior_close_ratio_as_location": 0.03717948717948727,
+          "intraday_return_vs_session_open_ratio_as_location": 0.04387096774193555
+        },
+        "price_movement": {
+          "daily_gap_pct": -0.0064102564102563875,
+          "daily_prior_close": 7.8,
+          "intraday_bar_close_price": 8.09,
+          "intraday_return_vs_prior_close_ratio": 0.03717948717948727,
+          "intraday_return_vs_session_open_ratio": 0.04387096774193555
+        },
+        "trading_activity": {
+          "daily_volume_20d_avg": 833505.65,
+          "intraday_bar_volume": 6580.0,
+          "intraday_session_volume_to_time": 223798.0,
+          "session_volume_to_time_over_prior_20_full_session_volume_mean": 0.2685020791400754
+        },
+        "volatility_range_state": {
+          "intraday_high_so_far": 8.15,
+          "intraday_low_so_far": 7.7,
+          "intraday_range_so_far_ratio": 0.05844155844155852
+        }
+      },
+      "physical_profile_id": "core_four_market_state_profile_v0_1",
+      "profile_id": "market_state_core_four_intraday_profile_v0_1",
+      "replay_consumption_restriction_codes": [
+        "candidate_runtime_only",
+        "not_official_dataset",
+        "no_downstream",
+        "no_production"
+      ],
+      "session_date": "2021-03-15",
+      "state_as_of_utc": "2021-03-15T20:00:00Z",
+      "state_availability_policy_id": "market_state_core_four_replay_availability_policy_v0_1",
+      "state_availability_status": "available_for_decision_replay",
+      "state_available_at_utc": "2021-03-15T20:00:00Z",
+      "state_kind": "market_state",
+      "state_output_fingerprint": "2420034cb851629b48ee3216713b6bc1a337ce0a4356096575a3db1a91edb7bd",
+      "state_publication_latency": "PT0S",
+      "state_publication_latency_policy_id": "zero_latency_candidate_replay_publication_policy_v0_1",
+      "state_replay_consumption_legality": "decision_safe",
+      "state_schema_version": "core_four_market_state_candidate_physical_schema_v0_1",
+      "ticker": "ACIU"
+    }
+  ],
+  "determinism_policy": "ONE_PHYSICAL_RUN_THEN_NON_PHYSICAL_REPRODUCTION_FROM_IMMUTABLE_RUN_EVIDENCE",
+  "deterministic_output_hash": "6331839dfc6538f7dd6fda9a1fd7efbc7497d541dcb0c0d89cfd679762067cb1",
+  "market_state_store_trace": [
+    {
+      "action": "INSERT",
+      "clock_utc": "2021-03-15T13:30:00Z",
+      "materialized_state_candidate_id": "f09492ac417d05161f70ee75f81e345a9cc315cef9beb9939d2df6ff3eb58dd3",
+      "sequence": 0,
+      "status": "PASS"
+    },
+    {
+      "action": "INSERT",
+      "clock_utc": "2021-03-15T20:00:00Z",
+      "materialized_state_candidate_id": "26d923a282355ad242a5d91ad7d6183bed6a94842041ecf966ac70c366308c0e",
+      "sequence": 1,
+      "status": "PASS"
+    }
+  ],
+  "physical_rerun_authorized": false,
+  "scientific_identity": {
+    "authorized_candidate_ids": [
+      "f09492ac417d05161f70ee75f81e345a9cc315cef9beb9939d2df6ff3eb58dd3",
+      "26d923a282355ad242a5d91ad7d6183bed6a94842041ecf966ac70c366308c0e"
+    ],
+    "candidate_dataset_fingerprint": "516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416",
+    "candidate_dataset_id": "market_state_candidate_dataset_scale_validation_v0_1_516a27d0f8f53762",
+    "event_content_sha256": [
+      "70863d618a388e500d5288c42f8c9e73c83c662ab993af969baa3e0453bfdb4a",
+      "fd08278cec964d29c80142753676660b98ad27b70bb18240af93db2f2a5d1310"
+    ],
+    "profile_id": "market_state_core_four_intraday_profile_v0_1",
+    "state_output_fingerprints": [
+      "f7c926be8e8bb6e84433061213bc554d54de2e03d0910a799e974ff5aea04617",
+      "2420034cb851629b48ee3216713b6bc1a337ce0a4356096575a3db1a91edb7bd"
+    ],
+    "state_schema_version": "core_four_market_state_candidate_physical_schema_v0_1"
+  },
+  "scientific_identity_sha256": "37d99fe124169e392c10d76cc9feff3a6caabc6d607545416c43fe5e0c551580",
+  "state_aware_event_sequence": [
+    {
+      "available_at_utc": "2021-03-15T13:30:00Z",
+      "event_index": 0,
+      "event_type": "BAR",
+      "execution_input": false,
+      "order_key": [
+        "2021-03-15T13:30:00Z",
+        1,
+        "2021-03-15",
+        "ACIU",
+        "ACIU:2021-03-15T13:29:00Z:BAR"
+      ],
+      "priority": 1,
+      "scientific_market_data_claim": false,
+      "ticker": "ACIU"
+    },
+    {
+      "available_at_utc": "2021-03-15T13:30:00Z",
+      "event_index": 1,
+      "event_type": "BoundedMarketStateAvailable",
+      "order_key": [
+        "2021-03-15T13:30:00Z",
+        2,
+        "2021-03-15",
+        "ACIU",
+        "f09492ac417d05161f70ee75f81e345a9cc315cef9beb9939d2df6ff3eb58dd3"
+      ],
+      "priority": 2,
+      "store_insert_sequence": 0,
+      "ticker": "ACIU"
+    },
+    {
+      "available_at_utc": "2021-03-15T20:00:00Z",
+      "event_index": 2,
+      "event_type": "BAR",
+      "execution_input": false,
+      "order_key": [
+        "2021-03-15T20:00:00Z",
+        1,
+        "2021-03-15",
+        "ACIU",
+        "ACIU:2021-03-15T19:59:00Z:BAR"
+      ],
+      "priority": 1,
+      "scientific_market_data_claim": false,
+      "ticker": "ACIU"
+    },
+    {
+      "available_at_utc": "2021-03-15T20:00:00Z",
+      "event_index": 3,
+      "event_type": "BoundedMarketStateAvailable",
+      "order_key": [
+        "2021-03-15T20:00:00Z",
+        2,
+        "2021-03-15",
+        "ACIU",
+        "26d923a282355ad242a5d91ad7d6183bed6a94842041ecf966ac70c366308c0e"
+      ],
+      "priority": 2,
+      "store_insert_sequence": 1,
+      "ticker": "ACIU"
+    }
+  ]
+}

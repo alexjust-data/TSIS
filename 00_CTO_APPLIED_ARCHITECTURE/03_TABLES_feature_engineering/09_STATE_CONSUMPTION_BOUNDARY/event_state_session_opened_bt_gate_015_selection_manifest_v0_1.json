@@ -1,0 +1,80 @@
+{
+  "selection_id": "event_state_session_opened_bt_gate_015_selection_v0_1",
+  "selection_status": "EXACT_HISTORICAL_EVIDENCE_SELECTED_NO_DELIVERY_AUTHORITY",
+  "profile_id": "event_state_core_four_intraday_profile_v0_1",
+  "event_type_id": "event_type:market_data:session_opened",
+  "subject_scope": "exchange_session",
+  "slice": {
+    "exchange_id": "XNYS",
+    "session_date": "2021-01-19",
+    "instrument_id": "figi_share_class:BBG001S5N8T1",
+    "ticker": "AAME",
+    "event_anchor_timestamp_utc": "2021-01-19T14:30:00Z",
+    "event_instance_id": "3d5afb67c49949b7db5ab85ef4a230e36282c36d1086eaa42e3dfdc90279ff63",
+    "event_window_binding_id": "0061ac40bb170a80ebca61742aa4681f2bdc8d50c34ac3c652eab45b8bcdbfb7",
+    "window_definition_id": "event_window_definition:market_data:session_opened:at_open_v0_1",
+    "state_role": "at_event",
+    "historical_consumption_legality": "decision_safe",
+    "event_state_instrument_session_projection_id": "793fc860d540611059220795f866892052fd78b1f7b28a6273116b32ec0a5e19",
+    "market_state_record_id": "5bbdbfdb42cf6c758ebe3ba71786f6629fd39080a955bb675a4735bd15bca464",
+    "market_state_state_output_fingerprint": "ab048da6b6733f0194958236ed4d56c3f0c75bb4451e24e8e865e6170a2f8cd4",
+    "event_state_record_ordinal": 1,
+    "event_state_record_id": "47102c58b14c538c0d4279ce40d4205031bd48d46986e9654fb0ccee059498e0",
+    "event_state_record_fingerprint": "4ab9bda000f080ff59a2eee11bbeea9e3d5c3581c64097f64366dece55665a4a"
+  },
+  "source_candidate": {
+    "run_id": "event_state_bounded_execution_chain_execution_v0_1_20260724T185356Z",
+    "candidate_records": 8,
+    "candidate_records_sha256": "2d5e66c2b36faaa584451b335e3267fe4738f4a2427ef704d05f35497c8b47b6",
+    "candidate_output_status": "non_official_candidate_evidence_only",
+    "physical_validation_run_id": "event_state_bounded_execution_chain_physical_validation_v0_1_20260724T193214Z",
+    "physical_validation_status": "CLOSED_PASS_WITH_RESTRICTIONS"
+  },
+  "frozen_authorities": [
+    {
+      "relative_path": "07_EVENT_STATE_INTEGRATION/official_profiles/event_state_core_four_intraday_profile_v0_1/PROFILE_MANIFEST.json",
+      "sha256": "77937dca78391d354a3c394c7fc3886c4042209e6a567425a301553b962997e1"
+    },
+    {
+      "relative_path": "07_EVENT_STATE_INTEGRATION/official_profiles/event_state_core_four_intraday_profile_v0_1/EVENT_STATE_SCHEMA_CONTRACT.json",
+      "sha256": "e68be24763c4320419f7f2216a3560dc94ce36f02b293fdf2dad2ea88bba9515"
+    },
+    {
+      "relative_path": "07_EVENT_STATE_INTEGRATION/event_type_registry_post_initial_admission_snapshot_v0_1.json",
+      "sha256": "f3627c8b44062081c8e2f2775bffbd283bd31f2ca1e876aa7469fd6586425c43"
+    },
+    {
+      "relative_path": "07_EVENT_STATE_INTEGRATION/runs/event_state_bounded_execution_chain_execution_v0_1_20260724T185356Z/final_manifest.json",
+      "sha256": "f403566bd4c41253b1b18a232d94a7694080e04b5dce73c98411291daca59abf"
+    },
+    {
+      "relative_path": "07_EVENT_STATE_INTEGRATION/runs/event_state_bounded_execution_chain_execution_v0_1_20260724T185356Z/event_state_candidate_manifest.json",
+      "sha256": "aee3e7243d82244074075d21dddf361c8dd60079c9ca6d72a04ffbb886144004"
+    },
+    {
+      "relative_path": "07_EVENT_STATE_INTEGRATION/runs/event_state_bounded_execution_chain_physical_validation_v0_1_20260724T193214Z/final_manifest.json",
+      "sha256": "742694fa4c298fa8b6c590199b5c7301b0cad660499ba6f3837219795a00bc81"
+    },
+    {
+      "relative_path": "07_EVENT_STATE_INTEGRATION/runs/event_state_bounded_execution_chain_physical_validation_v0_1_20260724T193214Z/record_fingerprint_validation_report.csv",
+      "sha256": "2843a670038cb63f3b9e4b063384d0989ced9b52de56f778948fc0a8eb0dbd3a"
+    },
+    {
+      "relative_path": "07_EVENT_STATE_INTEGRATION/runs/event_state_bounded_execution_chain_physical_validation_v0_1_20260724T193214Z/binding_reconciliation_report.csv",
+      "sha256": "f7ae3cbf91616e2501426dd9a117c407aa550e2ba376bc884c4b94c880127ed5"
+    }
+  ],
+  "known_restrictions": [
+    "bounded_scope_only",
+    "non_official_scale_c_market_state_candidate_source",
+    "instrument_projection_from_authorized_scope_not_master_lifecycle_revalidated",
+    "not_downstream_consumable",
+    "event_state_available_at_utc_not_yet_proven",
+    "row_addressable_replay_availability_sidecar_absent"
+  ],
+  "read_authority": {
+    "event_state_candidate_records": false,
+    "market_state_parquet": false,
+    "physical_rows": 0
+  }
+}

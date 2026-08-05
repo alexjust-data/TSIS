@@ -1,790 +1,752 @@
 {
-    "as_of":  "2026-07-30T19:30:00Z",
-    "bt_gate_013_contract_correction_sync":  {
-                                                 "implementation":  "NOT_AUTHORIZED",
-                                                 "provider_evidence_required":  false,
-                                                 "read_only_review":  "ACCEPTED",
-                                                 "status":  "CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW",
-                                                 "updated_at_utc":  "2026-07-29T19:40:00Z"
-                                             },
-    "bt_gate_013_implementation_sync":  {
-                                            "deterministic_output_hash":  "ede33c7037a0bd08670423a4ac05b4836aa1472163027c7a86e883fca0b5c019",
-                                            "final_acceptance_packet_sha256":  "4c89a8279ee7a999fc2774cbac06e15d8779ba347aaf28aa1d9fd7bba2895f9d",
-                                            "final_external_review":  "PASS",
-                                            "implementation_acceptance":  "ACCEPTED",
-                                            "run_id":  "bt_gate_013_physical_historical_replay_slice_v0_1",
-                                            "status":  "CLOSED_PASS_PHYSICAL_HISTORICAL_REPLAY_ACCEPTED",
-                                            "updated_at_utc":  "2026-07-30T08:47:15Z"
-                                        },
-    "bt_gate_014_non_physical_sync":  {
-                                          "new_single_use_physical_authorization":  "V0_3_CONSUMED_FAILED_V0_4_CONSUMED_FAILED_FINAL_NEW_AUTHORIZATION_NOT_AUTHORIZED",
-                                          "phase_b_external_review":  "PASS",
-                                          "physical_read":  "NOT_EXECUTED",
-                                          "status":  "V0_3_AND_V0_4_CONSUMED_FAILED_CONTRACT_CORRECTION_REQUIRED",
-                                          "updated_at_utc":  "2026-07-30T19:30:00Z"
-                                      },
-    "entries":  [
-                    {
-                        "alternatives_considered":  [
-                                                        "implicit filesystem discovery",
-                                                        "best-effort continuation"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-001",
-                        "decision":  "Resolve registered dataset, universe, price view and policies; reject any unresolved or unauthorized input.",
-                        "decision_id":  "BT-DATA-001",
-                        "domain":  "data_preflight",
-                        "evidence_class":  [
-                                               "EXPLICITLY_DOCUMENTED",
-                                               "VERIFIED_IN_IMPLEMENTATION",
-                                               "VERIFIED_BY_RUN"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-DATA-001",
-                                           "BT-POL-DATA-002",
-                                           "BT-POL-DATA-003"
-                                       ],
-                        "rationale":  "A run must not consume unknown, unauthorized, unvalidated or physically inconsistent data.",
-                        "status":  "ACTIVE",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Fail closed before replay"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "forward fill",
-                                                        "synthetic OHLC interpolation"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-002",
-                        "decision":  "Allow declared gaps under policy, emit gap evidence and never manufacture a bar.",
-                        "decision_id":  "BT-DATA-002",
-                        "domain":  "data_quality",
-                        "evidence_class":  [
-                                               "EXPLICITLY_DOCUMENTED",
-                                               "VERIFIED_IN_IMPLEMENTATION"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-DATA-004",
-                                           "BT-POL-REPLAY-003"
-                                       ],
-                        "rationale":  "Invented bars would contaminate causality, availability and execution evidence.",
-                        "status":  "ACTIVE",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Preserve missing minutes without price imputation"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "daily_adjusted",
-                                                        "split_normalized"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-001",
-                        "decision":  "Bind the bounded fixture to quote_guarded_1m and validate the binding before replay.",
-                        "decision_id":  "BT-DATA-003",
-                        "domain":  "price_view",
-                        "evidence_class":  [
-                                               "EXPLICITLY_DOCUMENTED",
-                                               "VERIFIED_BY_RUN"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-DATA-005"
-                                       ],
-                        "rationale":  "Execution proxies must not use daily-adjusted or split-normalized prices as fills.",
-                        "status":  "ACTIVE",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Use quote-guarded raw 1-minute view"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "source row order",
-                                                        "bar start order only"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-003",
-                        "decision":  "Order replay deterministically by available_at and ticker, with gaps preceding bars on ties.",
-                        "decision_id":  "BT-REPLAY-001",
-                        "domain":  "replay",
-                        "evidence_class":  [
-                                               "EXPLICITLY_DOCUMENTED",
-                                               "VERIFIED_IN_IMPLEMENTATION",
-                                               "VERIFIED_BY_RUN"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-REPLAY-001",
-                                           "BT-POL-REPLAY-002"
-                                       ],
-                        "rationale":  "Event order must reflect when information became available and remain reproducible.",
-                        "status":  "ACTIVE",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Observable-at ordering"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "optional hash verification"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-003",
-                        "decision":  "Source and preflight hashes are mandatory; mismatches fail closed.",
-                        "decision_id":  "BT-REPLAY-002",
-                        "domain":  "replay",
-                        "evidence_class":  [
-                                               "VERIFIED_IN_IMPLEMENTATION"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-REPLAY-004"
-                                       ],
-                        "rationale":  "Replay must bind to the inspected bytes rather than a mutable path.",
-                        "status":  "ACTIVE",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Mandatory hash verification"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "same-bar retrospective execution"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-004",
-                        "decision":  "Reject any decision not scheduled before its proxy execution timestamp.",
-                        "decision_id":  "BT-MECH-001",
-                        "domain":  "mechanics",
-                        "evidence_class":  [
-                                               "EXPLICITLY_DOCUMENTED",
-                                               "VERIFIED_IN_IMPLEMENTATION"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-MECH-001"
-                                       ],
-                        "rationale":  "A fill cannot be backdated to information that was not yet observable.",
-                        "status":  "ACTIVE",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Mechanical decisions are scheduled before proxy execution"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "treat mechanical short fill as tradability proof"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-004",
-                        "decision":  "Permit short mechanics for engine validation while keeping tradability not evaluated.",
-                        "decision_id":  "BT-MECH-002",
-                        "domain":  "short_mechanics",
-                        "evidence_class":  [
-                                               "EXPLICITLY_DOCUMENTED"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-SHORT-001"
-                                       ],
-                        "rationale":  "Correct short PnL arithmetic does not prove borrow availability or locate feasibility.",
-                        "status":  "ACTIVE",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Separate short mechanics from tradability"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "summary-only PnL"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-005",
-                        "decision":  "Maintain separate cost components, cash ledger, account state and gross-to-net reconciliation.",
-                        "decision_id":  "BT-ACCT-001",
-                        "domain":  "accounting",
-                        "evidence_class":  [
-                                               "EXPLICITLY_DOCUMENTED",
-                                               "VERIFIED_IN_IMPLEMENTATION",
-                                               "VERIFIED_BY_RUN"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-ACCT-001",
-                                           "BT-POL-ACCT-002"
-                                       ],
-                        "rationale":  "Net results must reconcile from fill-level economic events rather than a manually asserted summary.",
-                        "status":  "ACTIVE",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Derive cash, costs and net PnL from fills"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "round rates to cents at serialization"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-005",
-                        "decision":  "Serialize and calculate rates at sub-cent precision; round monetary postings only at the declared boundary.",
-                        "decision_id":  "BT-ACCT-002",
-                        "domain":  "precision",
-                        "evidence_class":  [
-                                               "EXPLICITLY_DOCUMENTED",
-                                               "VERIFIED_IN_IMPLEMENTATION"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-ACCT-003"
-                                       ],
-                        "rationale":  "Rounding a per-share rate before multiplication materially changes costs.",
-                        "status":  "ACTIVE",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Preserve sub-cent rates"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "quote-aware profile as initial implementation"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-006",
-                        "decision":  "Use bar_based_execution_profile_v0_1; reserve quote-aware execution.",
-                        "decision_id":  "BT-EXEC-001",
-                        "domain":  "execution",
-                        "evidence_class":  [
-                                               "EXPLICITLY_DOCUMENTED"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-EXEC-001"
-                                       ],
-                        "rationale":  "The bounded fixture guarantees bars, not quote-level execution semantics.",
-                        "status":  "ACCEPTED_BY_BT_GATE_006",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Primary V0.1 execution profile is bar based"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "same-bar optimistic fills"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-006",
-                        "decision":  "The first eligible fill opportunity must occur after decision and submission under the contract timeline.",
-                        "decision_id":  "BT-EXEC-002",
-                        "domain":  "execution",
-                        "evidence_class":  [
-                                               "EXPLICITLY_DOCUMENTED"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-EXEC-002"
-                                       ],
-                        "rationale":  "A bar used for a decision cannot also provide an earlier or simultaneous fill.",
-                        "status":  "ACCEPTED_BY_BT_GATE_006",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "No same-bar lookahead"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "apply generic adverse slippage to limits"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-006",
-                        "decision":  "Buy limits fill at or below the limit; sell limits fill at or above it; price improvement is disabled in V0.1.",
-                        "decision_id":  "BT-EXEC-003",
-                        "domain":  "execution",
-                        "evidence_class":  [
-                                               "EXPLICITLY_DOCUMENTED"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-EXEC-003"
-                                       ],
-                        "rationale":  "Adverse slippage beyond a limit changes the order\u0027s economic meaning.",
-                        "status":  "ACCEPTED_BY_BT_GATE_006",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Limit protection cannot be violated"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "always use stop price"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-006",
-                        "decision":  "Buy-side stop base is max(stop, open); sell-side stop base is min(stop, open), followed by adverse slippage.",
-                        "decision_id":  "BT-EXEC-004",
-                        "domain":  "execution",
-                        "evidence_class":  [
-                                               "EXPLICITLY_DOCUMENTED"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-EXEC-004"
-                                       ],
-                        "rationale":  "Filling a crossed stop at the stop level is optimistic when the next bar opens through it.",
-                        "status":  "ACCEPTED_BY_BT_GATE_006",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Stop gap-through uses adverse open"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "implement the full status vocabulary"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-006",
-                        "decision":  "V0.1 subset is MARKET_PROXY, LIMIT, STOP_MARKET_PROXY, FULL_FILL_ONLY and DAY; partial fills are reserved.",
-                        "decision_id":  "BT-EXEC-005",
-                        "domain":  "execution",
-                        "evidence_class":  [
-                                               "EXPLICITLY_DOCUMENTED"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-EXEC-005",
-                                           "BT-POL-EXEC-006"
-                                       ],
-                        "rationale":  "The first simulator must not imply unsupported partial-fill or liquidity realism.",
-                        "status":  "ACCEPTED_BY_BT_GATE_006",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Bounded first fill simulator subset"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "implement StateReplayFeed against draft contracts"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-007",
-                        "decision":  "Keep FUTURE_PROVIDER_REGISTRY_INTEGRATION, RunPreflight state consumption, StateReplayFeed, physical StateBundle reads and state-driven strategy execution unauthorized. Treat Applied Architecture root documents as context only.",
-                        "decision_id":  "BT-STATE-001",
-                        "domain":  "state_consumption",
-                        "evidence_class":  [
-                                               "EXPLICITLY_DOCUMENTED"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-STATE-001"
-                                       ],
-                        "rationale":  "Providerâ€“consumer compatibility was not opened after executable semantic gaps in the provider audit.",
-                        "status":  "ACTIVE_HOLD",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Freeze consumer integration"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "continue with distributed living documents only"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-008",
-                        "decision":  "Maintain this CTO authority layer and trace every future gate to code, tests and runs.",
-                        "decision_id":  "BT-GOV-001",
-                        "domain":  "governance",
-                        "evidence_class":  [
-                                               "EXPLICITLY_DOCUMENTED"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-GOV-001",
-                                           "BT-POL-GOV-002"
-                                       ],
-                        "rationale":  "Implementation history alone cannot answer authority, rationale, supersession and allowed-claim questions.",
-                        "status":  "ACTIVE",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Separate authority from executable evidence"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "strictly after source_bar.ts_start",
-                                                        "implicit next bar only"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-006",
-                        "decision":  "A source bar is evaluable only when order_submission_timestamp \u003c= source_bar.ts_start; bars started before order submission are not evaluable.",
-                        "decision_id":  "BT-EXEC-006",
-                        "domain":  "execution",
-                        "evidence_class":  [
-                                               "INDEPENDENT_REVIEW_FINDING_CORRECTED"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-EXEC-007"
-                                       ],
-                        "rationale":  "Deterministic fills require an exact rule for whether an order submitted at a bar start may use that bar.",
-                        "status":  "ACCEPTED_BY_BT_GATE_006",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Exact source-bar eligibility"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "leave tick policy open",
-                                                        "generic fixed per-share wording"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-006",
-                        "decision":  "Use PASSTHROUGH_SOURCE_PRICE_WITH_DECLARED_DECIMAL_PRECISION; define fixed per-share price adjustment and BPS formulas; reject computed fill_price \u003c= 0.",
-                        "decision_id":  "BT-EXEC-007",
-                        "domain":  "execution",
-                        "evidence_class":  [
-                                               "INDEPENDENT_REVIEW_FINDING_CORRECTED"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-EXEC-008",
-                                           "BT-POL-EXEC-009"
-                                       ],
-                        "rationale":  "Hash-stable fill simulation requires exact tick policy, slippage formulas and invalid-price handling.",
-                        "status":  "ACCEPTED_BY_BT_GATE_006",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Deterministic tick and slippage semantics"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "defer formulas to implementation",
-                                                        "let multiple failure outcomes compete"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-006",
-                        "decision":  "Define V0.1 cost formulas, side applicability, zero/nonzero borrow constraints and canonical result precedence before implementation.",
-                        "decision_id":  "BT-EXEC-008",
-                        "domain":  "execution",
-                        "evidence_class":  [
-                                               "INDEPENDENT_REVIEW_FINDING_CORRECTED"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-EXEC-010",
-                                           "BT-POL-EXEC-011"
-                                       ],
-                        "rationale":  "A deterministic fill simulator must produce one canonical result and one reproducible cost sequence for each input.",
-                        "status":  "ACCEPTED_BY_BT_GATE_006",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Deterministic costs and outcome precedence"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "single precedence list with EXPIRED_UNFILLED before gap/missing outcomes"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-006",
-                        "decision":  "Record one EVALUATION_OUTCOME per evaluated opportunity and one TERMINAL_ORDER_OUTCOME at order termination.",
-                        "decision_id":  "BT-EXEC-009",
-                        "domain":  "execution",
-                        "evidence_class":  [
-                                               "INDEPENDENT_RE_REVIEW_FINDING_CORRECTED"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-EXEC-012"
-                                       ],
-                        "rationale":  "A DAY order may see gaps or missing prices before final expiry; those evaluation results must not be swallowed by EXPIRED_UNFILLED.",
-                        "status":  "ACCEPTED_BY_BT_GATE_006",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Separate evaluation and terminal order outcomes"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "allow PESSIMISTIC by name without defining event order"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-006",
-                        "decision":  "V0.1 uses FAIL_AMBIGUOUS_BAR_ONLY; PESSIMISTIC is reserved/not implemented.",
-                        "decision_id":  "BT-EXEC-010",
-                        "domain":  "execution",
-                        "evidence_class":  [
-                                               "INDEPENDENT_RE_REVIEW_FINDING_CORRECTED"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-EXEC-013"
-                                       ],
-                        "rationale":  "PESSIMISTIC without exact intrabar semantics is not deterministic across implementations.",
-                        "status":  "ACCEPTED_BY_BT_GATE_006",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Ambiguous bar policy V0.1 fails closed"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "infer notional from side-specific cash movement"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-006",
-                        "decision":  "gross_notional = abs(fill_quantity) * fill_price.",
-                        "decision_id":  "BT-EXEC-011",
-                        "domain":  "execution",
-                        "evidence_class":  [
-                                               "INDEPENDENT_RE_REVIEW_MINOR_PRECISION"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-EXEC-014"
-                                       ],
-                        "rationale":  "Cost and notional calculations need a single side-independent formula.",
-                        "status":  "ACCEPTED_BY_BT_GATE_006",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Gross notional formula"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "REJECTED_BY_CONTRACT or FAIL_AMBIGUOUS_BAR according to implementation naming",
-                                                        "apply declared PESSIMISTIC policy in V0.1"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-006",
-                        "decision":  "Ambiguous intrabar sequence under V0.1 produces EVALUATION_OUTCOME = FAIL_AMBIGUOUS_BAR and terminally maps to REJECTED_BY_CONTRACT; PESSIMISTIC remains reserved/not implemented.",
-                        "decision_id":  "BT-EXEC-012",
-                        "domain":  "execution",
-                        "evidence_class":  [
-                                               "FINAL_SEMANTIC_REVIEW_FINDING_CORRECTED"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-EXEC-015"
-                                       ],
-                        "rationale":  "Final review found that ambiguous-bar handling still allowed implementation-specific naming and an operational PESSIMISTIC fallback.",
-                        "status":  "ACCEPTED_BY_BT_GATE_006",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Canonical ambiguous-bar evaluation outcome"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "keep BT-GATE-006 open after accepted final review",
-                                                        "authorize code implementation directly"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-006",
-                        "decision":  "Close BT-GATE-006 as CLOSED_PASS and open only the simulator authorization decision gate; implementation remains not authorized.",
-                        "decision_id":  "BT-EXEC-013",
-                        "domain":  "execution",
-                        "evidence_class":  [
-                                               "FINAL_ENUMERATION_REVIEW_PASS",
-                                               "PACKAGE_INTEGRITY_PASS"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-EXEC-016"
-                                       ],
-                        "rationale":  "Final external review accepted outcome enumeration, ambiguous-bar mapping and package integrity without findings.",
-                        "status":  "ACCEPTED_FOR_AUTHORIZATION_DECISION",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Execution semantics contract accepted for bounded implementation authorization decision"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "keep BT-GATE-009 open after final review pass",
-                                                        "authorize implementation without preserving BT-GATE-010 acceptance gate"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-009",
-                        "decision":  "Authorize implementation of DETERMINISTIC_FILL_SIMULATOR_V0_1 only within the scope of document 08 and contract 07; all implementation acceptance remains assigned to BT-GATE-010.",
-                        "decision_id":  "BT-EXEC-014",
-                        "domain":  "execution_authorization",
-                        "evidence_class":  [
-                                               "BT_GATE_009_DOCUMENT_REVIEW_PASS",
-                                               "PACKAGE_REVIEW_INTEGRITY_PASS"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-EXEC-017"
-                                       ],
-                        "rationale":  "External final review of document 08 passed and confirmed scope, prohibitions, contract preservation, gate separation and UTF-8 readability.",
-                        "status":  "AUTHORIZED_FOR_BOUNDED_IMPLEMENTATION",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Authorize bounded deterministic fill simulator V0.1 implementation"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "defer implementation",
-                                                        "implement broader quote-aware or partial-fill simulator"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-010",
-                        "decision":  "Record the bounded deterministic fill simulator as implemented and accepted by BT-GATE-010.",
-                        "decision_id":  "BT-EXEC-015",
-                        "domain":  "execution_implementation",
-                        "evidence_class":  [
-                                               "IMPLEMENTATION_TESTS_PASS",
-                                               "ACCEPTANCE_RUN_GENERATED",
-                                               "ACCEPTANCE_RUN_COVERS_REQUIRED_OUTCOMES",
-                                               "PACKAGE_REPRODUCIBLE_SIMULATOR_TESTS_INCLUDED",
-                                               "EXTERNAL_ACCEPTANCE_REVIEW_PASS"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-EXEC-018"
-                                       ],
-                        "rationale":  "BT-GATE-010 external acceptance review passed after reproducibility and outcome evidence corrections.",
-                        "status":  "IMPLEMENTED_AND_ACCEPTED",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Implement deterministic fill simulator V0.1 within authorized scope"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "split integration, manifest, strategy, ledger and metrics into microgates",
-                                                        "jump directly to multi-symbol research"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-011",
-                        "decision":  "Owner accepted BT-GATE-011 as the first single-strategy end-to-end historical engine-validation run with portable QG5 rerun evidence, pre-registered orders, current-event-only simulator invocation and online accounting inside the replay coordinator.",
-                        "decision_id":  "BT-E2E-001",
-                        "domain":  "end_to_end_backtest",
-                        "evidence_class":  [
-                                               "OWNER_APPROVED_CONTRACT",
-                                               "VERIFIED_IN_IMPLEMENTATION",
-                                               "VERIFIED_BY_RUN",
-                                               "TESTED",
-                                               "VERIFIED_BY_PORTABLE_RERUN",
-                                               "EVENT_LOOP_TRACE_VERIFIED",
-                                               "ONLINE_EVENT_DRIVEN_CAUSALITY_VERIFIED",
-                                               "ONLINE_ACCOUNTING_VERIFIED",
-                                               "FINAL_OWNER_REVIEW_ACCEPTED",
-                                               "BT_GATE_011_FINAL_ACCEPTANCE_REVIEW_PASS"
-                                           ],
-                        "policy_ids":  [
-                                           "BT-POL-E2E-001"
-                                       ],
-                        "rationale":  "The implementation proves the complete accepted path from data/replay through strategy, execution, accounting, ledger, metrics, manifest, deterministic rerun and package reproducibility without state consumption or edge claims.",
-                        "status":  "IMPLEMENTED_AND_ACCEPTED_BY_BT_GATE_011",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Implement single-strategy end-to-end backtest"
-                    },
-                    {
-                        "alternatives_considered":  [
-                                                        "return to microgates",
-                                                        "start small-caps realism before portfolio mechanics"
-                                                    ],
-                        "authority":  "TSIS_OWNER",
-                        "authorized_at":  "2026-07-29T16:47:47Z",
-                        "authorized_by_gate":  "BT-GATE-012",
-                        "decision":  "Authorize BT-GATE-012 for continuous implementation of the corrected multi-symbol, multi-session portfolio validation slice under the accepted contract; final implementation acceptance remains pending the final acceptance packet.",
-                        "decision_id":  "BT-PORT-001",
-                        "deterministic_output_hash":  "414aceb2bc80836f8fa821cd4d14071e54c86f3c7855c0a34c82ffd8b1c79182",
-                        "domain":  "portfolio_backtest",
-                        "engine_suite":  "106 tests OK",
-                        "evidence_class":  [
-                                               "CONTRACT_ACCEPTED",
-                                               "CONTRACT_DRAFT_CREATED",
-                                               "CONTRACT_REVIEW_FINDINGS_CORRECTED",
-                                               "IMPLEMENTATION_AUTHORIZED",
-                                               "NO_CODE_IMPLEMENTATION",
-                                               "NO_IMPLEMENTATION_CONTENT_SCAN_PASS",
-                                               "OWNER_CONTRACT_REVIEW_PASS",
-                                               "IMPLEMENTATION_COMPLETE",
-                                               "TESTS_PASS",
-                                               "RUN_VALIDATION_PASS",
-                                               "DETERMINISM_PASS",
-                                               "FINAL_ACCEPTANCE_PENDING",
-                                               "FINAL_OWNER_REVIEW_PASS",
-                                               "IMPLEMENTATION_ACCEPTED",
-                                               "GOVERNANCE_LIVE_CONSISTENCY_PASS"
-                                           ],
-                        "final_owner_review":  "PASS",
-                        "final_packet":  "bt_gate_012_portfolio_slice_acceptance_packet_20260729T172450Z.zip",
-                        "final_packet_sha256":  "4181d42a61a66ce8f71b7ce3156bff586c756154a2b86c95676bc9efe8c87975",
-                        "focused_suite":  "7 portfolio tests OK",
-                        "implementation_acceptance":  "ACCEPTED",
-                        "implementation_run":  "runs/bt_gate_012_multi_symbol_multi_session_qg5_v0_1",
-                        "implementation_status":  "IMPLEMENTED_AND_ACCEPTED",
-                        "owner_review_packet":  "bt_gate_012_contract_review_packet_20260729T164056Z.zip",
-                        "owner_review_packet_sha256":  "b8bb2e5641db2cd3aee8ede94d571a1176479e27cbdf5a05602e1111163b6f40",
-                        "policy_ids":  [
-                                           "BT-POL-PORT-001"
-                                       ],
-                        "rationale":  "Owner review accepted the corrected integral contract after the final evidence packet proved no active BT-GATE-012 implementation existed, with all five implementation trees inventoried and independently reproducible scan evidence passing.",
-                        "status":  "CLOSED_PASS_IMPLEMENTATION_ACCEPTED",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Authorize BT-GATE-012 multi-symbol multi-session portfolio slice implementation"
-                    },
-                    {
-                        "authority":  "TSIS_OWNER",
-                        "authorized_at":  "2026-07-29T17:40:31Z",
-                        "authorized_by_gate":  "BT-GATE-013",
-                        "contract_artifact":  "docs/00_system/14_BT_GATE_013_PHYSICAL_HISTORICAL_REPLAY_SLICE_CONTRACT_V0_1.md",
-                        "decision":  "Define BT-GATE-013 as PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1, crossing only the boundary from accepted fixture replay to reproducible physical 013_ohlcv_1m_quote_guarded rows. Defer SMALL_CAPS_RIGOROUS_RESEARCH_RUNNER as a future gate family, not BT-GATE-013.",
-                        "decision_id":  "BT-PORT-002",
-                        "deterministic_output_hash":  "ede33c7037a0bd08670423a4ac05b4836aa1472163027c7a86e883fca0b5c019",
-                        "domain":  "portfolio_backtest",
-                        "evidence_class":  [
-                                               "OWNER_DIRECTION",
-                                               "GATE_BOUNDARY_CLARIFICATION",
-                                               "NO_CODE_IMPLEMENTATION",
-                                               "CONTRACT_DRAFT_CREATED",
-                                               "CONTRACT_REVIEW_PENDING",
-                                               "FINAL_EXTERNAL_REVIEW_PASS",
-                                               "IMPLEMENTATION_ACCEPTED"
-                                           ],
-                        "final_acceptance_packet_sha256":  "4c89a8279ee7a999fc2774cbac06e15d8779ba347aaf28aa1d9fd7bba2895f9d",
-                        "final_external_review":  "PASS",
-                        "implementation_acceptance":  "ACCEPTED",
-                        "implementation_status":  "IMPLEMENTED_AND_ACCEPTED_FOR_PHYSICAL_HISTORICAL_REPLAY_SLICE_ONLY",
-                        "policy_ids":  [
-                                           "BT-POL-PORT-002"
-                                       ],
-                        "rationale":  "A broad small-caps research runner would mix physical ingestion, PIT universe, short tradability, SSR, halts, liquidity/capacity, batch research and statistical validation. BT-GATE-013 must isolate physical row lineage, timestamp availability and deterministic replay first.",
-                        "run_id":  "bt_gate_013_physical_historical_replay_slice_v0_1",
-                        "status":  "CLOSED_PASS_PHYSICAL_HISTORICAL_REPLAY_ACCEPTED",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Define BT-GATE-013 as physical historical replay slice",
-                        "updated_at":  "2026-07-30T08:47:15Z"
-                    },
-                    {
-                        "authority":  "TSIS_OWNER",
-                        "authorized_by_gate":  "BT-GATE-014",
-                        "decision":  "BT-GATE-014 accepted the bounded PIT Market State core-four consumer after the V0.5 physical postexecution external review passed. V0.5 is consumed final and cannot be executed again.",
-                        "decision_id":  "BT-STATE-002",
-                        "deterministic_output_hash":  "6331839dfc6538f7dd6fda9a1fd7efbc7497d541dcb0c0d89cfd679762067cb1",
-                        "domain":  "state_consumption",
-                        "evidence_class":  [
-                                               "OWNER_APPROVED_CONTRACT",
-                                               "PROVIDER_HANDOFF_ADOPTED",
-                                               "VERIFIED_IN_IMPLEMENTATION",
-                                               "VERIFIED_BY_SYNTHETIC_RUN",
-                                               "EXTERNAL_PHASE_B_RE_REVIEW_PASS",
-                                               "V0_1_PREEXECUTION_REVIEW_FAIL",
-                                               "V0_2_PREEXECUTION_REVIEW_FAIL",
-                                               "V0_3_EXECUTABLE_BINDING_VERIFIED",
-                                               "V0_3_ADVERSARIAL_FAILURE_GUARDS_VERIFIED",
-                                               "V0_5_PHYSICAL_EXECUTION_PASS",
-                                               "POSTEXECUTION_EXTERNAL_REVIEW_PASS"
-                                           ],
-                        "external_review_artifact":  "08_GATES_AND_REVIEWS/BT_GATE_014_PHASE_B_EXTERNAL_RE_REVIEW_ACCEPTANCE_V0_1.md",
-                        "external_review_packet_sha256":  "6881b6b485f7e6aed6744e609b1e61f66073dc3e20c0e807245a3b38a35f7645",
-                        "policy_ids":  [
-                                           "BT-POL-STATE-002"
-                                       ],
-                        "rationale":  "BT-GATE-014 must prove consumer semantics before independently reading the two bounded physical rows.",
-                        "restriction_domain_binding_sha256":  "b3ebace6fab7cb0a690be165f0a1706a5906dc7a729488fa1139af00c02e53a9",
-                        "status":  "CLOSED_PASS_POINT_IN_TIME_MARKET_STATE_CONSUMPTION_WITH_RESTRICTIONS",
-                        "supersedes":  [
-
-                                       ],
-                        "title":  "Bounded non-physical PIT Market State consumer",
-                        "v0_3":  "CONSUMED_FAILED_FINAL",
-                        "v0_4":  "CONSUMED_FAILED_FINAL",
-                        "v0_5":  "CONSUMED_FINAL_ACCEPTED",
-                        "final_postexecution_packet_sha256":  "7def8211c7318b90dd1c4176b4f42c26ff01f325f9c2250931b2073ad7b1a9c4"
-                    }
-                ],
-    "register_id":  "TSIS_BACKTEST_DECISION_LEDGER_V0_1",
-    "scope":  "02_TSIS_BACKTEST_ENGINE"
+  "as_of": "2026-07-30T19:30:00Z",
+  "bt_gate_013_contract_correction_sync": {
+    "implementation": "NOT_AUTHORIZED",
+    "provider_evidence_required": false,
+    "read_only_review": "ACCEPTED",
+    "status": "CONTRACT_CORRECTED_PENDING_FINAL_OWNER_REVIEW",
+    "updated_at_utc": "2026-07-29T19:40:00Z"
+  },
+  "bt_gate_013_implementation_sync": {
+    "deterministic_output_hash": "ede33c7037a0bd08670423a4ac05b4836aa1472163027c7a86e883fca0b5c019",
+    "final_acceptance_packet_sha256": "4c89a8279ee7a999fc2774cbac06e15d8779ba347aaf28aa1d9fd7bba2895f9d",
+    "final_external_review": "PASS",
+    "implementation_acceptance": "ACCEPTED",
+    "run_id": "bt_gate_013_physical_historical_replay_slice_v0_1",
+    "status": "CLOSED_PASS_PHYSICAL_HISTORICAL_REPLAY_ACCEPTED",
+    "updated_at_utc": "2026-07-30T08:47:15Z"
+  },
+  "bt_gate_014_non_physical_sync": {
+    "new_single_use_physical_authorization": "V0_3_CONSUMED_FAILED_V0_4_CONSUMED_FAILED_FINAL_NEW_AUTHORIZATION_NOT_AUTHORIZED",
+    "phase_b_external_review": "PASS",
+    "physical_read": "NOT_EXECUTED",
+    "status": "V0_3_AND_V0_4_CONSUMED_FAILED_CONTRACT_CORRECTION_REQUIRED",
+    "updated_at_utc": "2026-07-30T19:30:00Z"
+  },
+  "entries": [
+    {
+      "alternatives_considered": [
+        "implicit filesystem discovery",
+        "best-effort continuation"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-001",
+      "decision": "Resolve registered dataset, universe, price view and policies; reject any unresolved or unauthorized input.",
+      "decision_id": "BT-DATA-001",
+      "domain": "data_preflight",
+      "evidence_class": [
+        "EXPLICITLY_DOCUMENTED",
+        "VERIFIED_IN_IMPLEMENTATION",
+        "VERIFIED_BY_RUN"
+      ],
+      "policy_ids": [
+        "BT-POL-DATA-001",
+        "BT-POL-DATA-002",
+        "BT-POL-DATA-003"
+      ],
+      "rationale": "A run must not consume unknown, unauthorized, unvalidated or physically inconsistent data.",
+      "status": "ACTIVE",
+      "supersedes": [],
+      "title": "Fail closed before replay"
+    },
+    {
+      "alternatives_considered": [
+        "forward fill",
+        "synthetic OHLC interpolation"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-002",
+      "decision": "Allow declared gaps under policy, emit gap evidence and never manufacture a bar.",
+      "decision_id": "BT-DATA-002",
+      "domain": "data_quality",
+      "evidence_class": [
+        "EXPLICITLY_DOCUMENTED",
+        "VERIFIED_IN_IMPLEMENTATION"
+      ],
+      "policy_ids": [
+        "BT-POL-DATA-004",
+        "BT-POL-REPLAY-003"
+      ],
+      "rationale": "Invented bars would contaminate causality, availability and execution evidence.",
+      "status": "ACTIVE",
+      "supersedes": [],
+      "title": "Preserve missing minutes without price imputation"
+    },
+    {
+      "alternatives_considered": [
+        "daily_adjusted",
+        "split_normalized"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-001",
+      "decision": "Bind the bounded fixture to quote_guarded_1m and validate the binding before replay.",
+      "decision_id": "BT-DATA-003",
+      "domain": "price_view",
+      "evidence_class": [
+        "EXPLICITLY_DOCUMENTED",
+        "VERIFIED_BY_RUN"
+      ],
+      "policy_ids": [
+        "BT-POL-DATA-005"
+      ],
+      "rationale": "Execution proxies must not use daily-adjusted or split-normalized prices as fills.",
+      "status": "ACTIVE",
+      "supersedes": [],
+      "title": "Use quote-guarded raw 1-minute view"
+    },
+    {
+      "alternatives_considered": [
+        "source row order",
+        "bar start order only"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-003",
+      "decision": "Order replay deterministically by available_at and ticker, with gaps preceding bars on ties.",
+      "decision_id": "BT-REPLAY-001",
+      "domain": "replay",
+      "evidence_class": [
+        "EXPLICITLY_DOCUMENTED",
+        "VERIFIED_IN_IMPLEMENTATION",
+        "VERIFIED_BY_RUN"
+      ],
+      "policy_ids": [
+        "BT-POL-REPLAY-001",
+        "BT-POL-REPLAY-002"
+      ],
+      "rationale": "Event order must reflect when information became available and remain reproducible.",
+      "status": "ACTIVE",
+      "supersedes": [],
+      "title": "Observable-at ordering"
+    },
+    {
+      "alternatives_considered": [
+        "optional hash verification"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-003",
+      "decision": "Source and preflight hashes are mandatory; mismatches fail closed.",
+      "decision_id": "BT-REPLAY-002",
+      "domain": "replay",
+      "evidence_class": [
+        "VERIFIED_IN_IMPLEMENTATION"
+      ],
+      "policy_ids": [
+        "BT-POL-REPLAY-004"
+      ],
+      "rationale": "Replay must bind to the inspected bytes rather than a mutable path.",
+      "status": "ACTIVE",
+      "supersedes": [],
+      "title": "Mandatory hash verification"
+    },
+    {
+      "alternatives_considered": [
+        "same-bar retrospective execution"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-004",
+      "decision": "Reject any decision not scheduled before its proxy execution timestamp.",
+      "decision_id": "BT-MECH-001",
+      "domain": "mechanics",
+      "evidence_class": [
+        "EXPLICITLY_DOCUMENTED",
+        "VERIFIED_IN_IMPLEMENTATION"
+      ],
+      "policy_ids": [
+        "BT-POL-MECH-001"
+      ],
+      "rationale": "A fill cannot be backdated to information that was not yet observable.",
+      "status": "ACTIVE",
+      "supersedes": [],
+      "title": "Mechanical decisions are scheduled before proxy execution"
+    },
+    {
+      "alternatives_considered": [
+        "treat mechanical short fill as tradability proof"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-004",
+      "decision": "Permit short mechanics for engine validation while keeping tradability not evaluated.",
+      "decision_id": "BT-MECH-002",
+      "domain": "short_mechanics",
+      "evidence_class": [
+        "EXPLICITLY_DOCUMENTED"
+      ],
+      "policy_ids": [
+        "BT-POL-SHORT-001"
+      ],
+      "rationale": "Correct short PnL arithmetic does not prove borrow availability or locate feasibility.",
+      "status": "ACTIVE",
+      "supersedes": [],
+      "title": "Separate short mechanics from tradability"
+    },
+    {
+      "alternatives_considered": [
+        "summary-only PnL"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-005",
+      "decision": "Maintain separate cost components, cash ledger, account state and gross-to-net reconciliation.",
+      "decision_id": "BT-ACCT-001",
+      "domain": "accounting",
+      "evidence_class": [
+        "EXPLICITLY_DOCUMENTED",
+        "VERIFIED_IN_IMPLEMENTATION",
+        "VERIFIED_BY_RUN"
+      ],
+      "policy_ids": [
+        "BT-POL-ACCT-001",
+        "BT-POL-ACCT-002"
+      ],
+      "rationale": "Net results must reconcile from fill-level economic events rather than a manually asserted summary.",
+      "status": "ACTIVE",
+      "supersedes": [],
+      "title": "Derive cash, costs and net PnL from fills"
+    },
+    {
+      "alternatives_considered": [
+        "round rates to cents at serialization"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-005",
+      "decision": "Serialize and calculate rates at sub-cent precision; round monetary postings only at the declared boundary.",
+      "decision_id": "BT-ACCT-002",
+      "domain": "precision",
+      "evidence_class": [
+        "EXPLICITLY_DOCUMENTED",
+        "VERIFIED_IN_IMPLEMENTATION"
+      ],
+      "policy_ids": [
+        "BT-POL-ACCT-003"
+      ],
+      "rationale": "Rounding a per-share rate before multiplication materially changes costs.",
+      "status": "ACTIVE",
+      "supersedes": [],
+      "title": "Preserve sub-cent rates"
+    },
+    {
+      "alternatives_considered": [
+        "quote-aware profile as initial implementation"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-006",
+      "decision": "Use bar_based_execution_profile_v0_1; reserve quote-aware execution.",
+      "decision_id": "BT-EXEC-001",
+      "domain": "execution",
+      "evidence_class": [
+        "EXPLICITLY_DOCUMENTED"
+      ],
+      "policy_ids": [
+        "BT-POL-EXEC-001"
+      ],
+      "rationale": "The bounded fixture guarantees bars, not quote-level execution semantics.",
+      "status": "ACCEPTED_BY_BT_GATE_006",
+      "supersedes": [],
+      "title": "Primary V0.1 execution profile is bar based"
+    },
+    {
+      "alternatives_considered": [
+        "same-bar optimistic fills"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-006",
+      "decision": "The first eligible fill opportunity must occur after decision and submission under the contract timeline.",
+      "decision_id": "BT-EXEC-002",
+      "domain": "execution",
+      "evidence_class": [
+        "EXPLICITLY_DOCUMENTED"
+      ],
+      "policy_ids": [
+        "BT-POL-EXEC-002"
+      ],
+      "rationale": "A bar used for a decision cannot also provide an earlier or simultaneous fill.",
+      "status": "ACCEPTED_BY_BT_GATE_006",
+      "supersedes": [],
+      "title": "No same-bar lookahead"
+    },
+    {
+      "alternatives_considered": [
+        "apply generic adverse slippage to limits"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-006",
+      "decision": "Buy limits fill at or below the limit; sell limits fill at or above it; price improvement is disabled in V0.1.",
+      "decision_id": "BT-EXEC-003",
+      "domain": "execution",
+      "evidence_class": [
+        "EXPLICITLY_DOCUMENTED"
+      ],
+      "policy_ids": [
+        "BT-POL-EXEC-003"
+      ],
+      "rationale": "Adverse slippage beyond a limit changes the order's economic meaning.",
+      "status": "ACCEPTED_BY_BT_GATE_006",
+      "supersedes": [],
+      "title": "Limit protection cannot be violated"
+    },
+    {
+      "alternatives_considered": [
+        "always use stop price"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-006",
+      "decision": "Buy-side stop base is max(stop, open); sell-side stop base is min(stop, open), followed by adverse slippage.",
+      "decision_id": "BT-EXEC-004",
+      "domain": "execution",
+      "evidence_class": [
+        "EXPLICITLY_DOCUMENTED"
+      ],
+      "policy_ids": [
+        "BT-POL-EXEC-004"
+      ],
+      "rationale": "Filling a crossed stop at the stop level is optimistic when the next bar opens through it.",
+      "status": "ACCEPTED_BY_BT_GATE_006",
+      "supersedes": [],
+      "title": "Stop gap-through uses adverse open"
+    },
+    {
+      "alternatives_considered": [
+        "implement the full status vocabulary"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-006",
+      "decision": "V0.1 subset is MARKET_PROXY, LIMIT, STOP_MARKET_PROXY, FULL_FILL_ONLY and DAY; partial fills are reserved.",
+      "decision_id": "BT-EXEC-005",
+      "domain": "execution",
+      "evidence_class": [
+        "EXPLICITLY_DOCUMENTED"
+      ],
+      "policy_ids": [
+        "BT-POL-EXEC-005",
+        "BT-POL-EXEC-006"
+      ],
+      "rationale": "The first simulator must not imply unsupported partial-fill or liquidity realism.",
+      "status": "ACCEPTED_BY_BT_GATE_006",
+      "supersedes": [],
+      "title": "Bounded first fill simulator subset"
+    },
+    {
+      "alternatives_considered": [
+        "implement StateReplayFeed against draft contracts"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-007",
+      "decision": "Keep FUTURE_PROVIDER_REGISTRY_INTEGRATION, RunPreflight state consumption, StateReplayFeed, physical StateBundle reads and state-driven strategy execution unauthorized. Treat Applied Architecture root documents as context only.",
+      "decision_id": "BT-STATE-001",
+      "domain": "state_consumption",
+      "evidence_class": [
+        "EXPLICITLY_DOCUMENTED"
+      ],
+      "policy_ids": [
+        "BT-POL-STATE-001"
+      ],
+      "rationale": "Provider-consumer compatibility was not opened after executable semantic gaps in the provider audit.",
+      "status": "ACTIVE_HOLD",
+      "supersedes": [],
+      "title": "Freeze consumer integration"
+    },
+    {
+      "alternatives_considered": [
+        "continue with distributed living documents only"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-008",
+      "decision": "Maintain this CTO authority layer and trace every future gate to code, tests and runs.",
+      "decision_id": "BT-GOV-001",
+      "domain": "governance",
+      "evidence_class": [
+        "EXPLICITLY_DOCUMENTED"
+      ],
+      "policy_ids": [
+        "BT-POL-GOV-001",
+        "BT-POL-GOV-002"
+      ],
+      "rationale": "Implementation history alone cannot answer authority, rationale, supersession and allowed-claim questions.",
+      "status": "ACTIVE",
+      "supersedes": [],
+      "title": "Separate authority from executable evidence"
+    },
+    {
+      "alternatives_considered": [
+        "strictly after source_bar.ts_start",
+        "implicit next bar only"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-006",
+      "decision": "A source bar is evaluable only when order_submission_timestamp <= source_bar.ts_start; bars started before order submission are not evaluable.",
+      "decision_id": "BT-EXEC-006",
+      "domain": "execution",
+      "evidence_class": [
+        "INDEPENDENT_REVIEW_FINDING_CORRECTED"
+      ],
+      "policy_ids": [
+        "BT-POL-EXEC-007"
+      ],
+      "rationale": "Deterministic fills require an exact rule for whether an order submitted at a bar start may use that bar.",
+      "status": "ACCEPTED_BY_BT_GATE_006",
+      "supersedes": [],
+      "title": "Exact source-bar eligibility"
+    },
+    {
+      "alternatives_considered": [
+        "leave tick policy open",
+        "generic fixed per-share wording"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-006",
+      "decision": "Use PASSTHROUGH_SOURCE_PRICE_WITH_DECLARED_DECIMAL_PRECISION; define fixed per-share price adjustment and BPS formulas; reject computed fill_price <= 0.",
+      "decision_id": "BT-EXEC-007",
+      "domain": "execution",
+      "evidence_class": [
+        "INDEPENDENT_REVIEW_FINDING_CORRECTED"
+      ],
+      "policy_ids": [
+        "BT-POL-EXEC-008",
+        "BT-POL-EXEC-009"
+      ],
+      "rationale": "Hash-stable fill simulation requires exact tick policy, slippage formulas and invalid-price handling.",
+      "status": "ACCEPTED_BY_BT_GATE_006",
+      "supersedes": [],
+      "title": "Deterministic tick and slippage semantics"
+    },
+    {
+      "alternatives_considered": [
+        "defer formulas to implementation",
+        "let multiple failure outcomes compete"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-006",
+      "decision": "Define V0.1 cost formulas, side applicability, zero/nonzero borrow constraints and canonical result precedence before implementation.",
+      "decision_id": "BT-EXEC-008",
+      "domain": "execution",
+      "evidence_class": [
+        "INDEPENDENT_REVIEW_FINDING_CORRECTED"
+      ],
+      "policy_ids": [
+        "BT-POL-EXEC-010",
+        "BT-POL-EXEC-011"
+      ],
+      "rationale": "A deterministic fill simulator must produce one canonical result and one reproducible cost sequence for each input.",
+      "status": "ACCEPTED_BY_BT_GATE_006",
+      "supersedes": [],
+      "title": "Deterministic costs and outcome precedence"
+    },
+    {
+      "alternatives_considered": [
+        "single precedence list with EXPIRED_UNFILLED before gap/missing outcomes"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-006",
+      "decision": "Record one EVALUATION_OUTCOME per evaluated opportunity and one TERMINAL_ORDER_OUTCOME at order termination.",
+      "decision_id": "BT-EXEC-009",
+      "domain": "execution",
+      "evidence_class": [
+        "INDEPENDENT_RE_REVIEW_FINDING_CORRECTED"
+      ],
+      "policy_ids": [
+        "BT-POL-EXEC-012"
+      ],
+      "rationale": "A DAY order may see gaps or missing prices before final expiry; those evaluation results must not be swallowed by EXPIRED_UNFILLED.",
+      "status": "ACCEPTED_BY_BT_GATE_006",
+      "supersedes": [],
+      "title": "Separate evaluation and terminal order outcomes"
+    },
+    {
+      "alternatives_considered": [
+        "allow PESSIMISTIC by name without defining event order"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-006",
+      "decision": "V0.1 uses FAIL_AMBIGUOUS_BAR_ONLY; PESSIMISTIC is reserved/not implemented.",
+      "decision_id": "BT-EXEC-010",
+      "domain": "execution",
+      "evidence_class": [
+        "INDEPENDENT_RE_REVIEW_FINDING_CORRECTED"
+      ],
+      "policy_ids": [
+        "BT-POL-EXEC-013"
+      ],
+      "rationale": "PESSIMISTIC without exact intrabar semantics is not deterministic across implementations.",
+      "status": "ACCEPTED_BY_BT_GATE_006",
+      "supersedes": [],
+      "title": "Ambiguous bar policy V0.1 fails closed"
+    },
+    {
+      "alternatives_considered": [
+        "infer notional from side-specific cash movement"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-006",
+      "decision": "gross_notional = abs(fill_quantity) * fill_price.",
+      "decision_id": "BT-EXEC-011",
+      "domain": "execution",
+      "evidence_class": [
+        "INDEPENDENT_RE_REVIEW_MINOR_PRECISION"
+      ],
+      "policy_ids": [
+        "BT-POL-EXEC-014"
+      ],
+      "rationale": "Cost and notional calculations need a single side-independent formula.",
+      "status": "ACCEPTED_BY_BT_GATE_006",
+      "supersedes": [],
+      "title": "Gross notional formula"
+    },
+    {
+      "alternatives_considered": [
+        "REJECTED_BY_CONTRACT or FAIL_AMBIGUOUS_BAR according to implementation naming",
+        "apply declared PESSIMISTIC policy in V0.1"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-006",
+      "decision": "Ambiguous intrabar sequence under V0.1 produces EVALUATION_OUTCOME = FAIL_AMBIGUOUS_BAR and terminally maps to REJECTED_BY_CONTRACT; PESSIMISTIC remains reserved/not implemented.",
+      "decision_id": "BT-EXEC-012",
+      "domain": "execution",
+      "evidence_class": [
+        "FINAL_SEMANTIC_REVIEW_FINDING_CORRECTED"
+      ],
+      "policy_ids": [
+        "BT-POL-EXEC-015"
+      ],
+      "rationale": "Final review found that ambiguous-bar handling still allowed implementation-specific naming and an operational PESSIMISTIC fallback.",
+      "status": "ACCEPTED_BY_BT_GATE_006",
+      "supersedes": [],
+      "title": "Canonical ambiguous-bar evaluation outcome"
+    },
+    {
+      "alternatives_considered": [
+        "keep BT-GATE-006 open after accepted final review",
+        "authorize code implementation directly"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-006",
+      "decision": "Close BT-GATE-006 as CLOSED_PASS and open only the simulator authorization decision gate; implementation remains not authorized.",
+      "decision_id": "BT-EXEC-013",
+      "domain": "execution",
+      "evidence_class": [
+        "FINAL_ENUMERATION_REVIEW_PASS",
+        "PACKAGE_INTEGRITY_PASS"
+      ],
+      "policy_ids": [
+        "BT-POL-EXEC-016"
+      ],
+      "rationale": "Final external review accepted outcome enumeration, ambiguous-bar mapping and package integrity without findings.",
+      "status": "ACCEPTED_FOR_AUTHORIZATION_DECISION",
+      "supersedes": [],
+      "title": "Execution semantics contract accepted for bounded implementation authorization decision"
+    },
+    {
+      "alternatives_considered": [
+        "keep BT-GATE-009 open after final review pass",
+        "authorize implementation without preserving BT-GATE-010 acceptance gate"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-009",
+      "decision": "Authorize implementation of DETERMINISTIC_FILL_SIMULATOR_V0_1 only within the scope of document 08 and contract 07; all implementation acceptance remains assigned to BT-GATE-010.",
+      "decision_id": "BT-EXEC-014",
+      "domain": "execution_authorization",
+      "evidence_class": [
+        "BT_GATE_009_DOCUMENT_REVIEW_PASS",
+        "PACKAGE_REVIEW_INTEGRITY_PASS"
+      ],
+      "policy_ids": [
+        "BT-POL-EXEC-017"
+      ],
+      "rationale": "External final review of document 08 passed and confirmed scope, prohibitions, contract preservation, gate separation and UTF-8 readability.",
+      "status": "AUTHORIZED_FOR_BOUNDED_IMPLEMENTATION",
+      "supersedes": [],
+      "title": "Authorize bounded deterministic fill simulator V0.1 implementation"
+    },
+    {
+      "alternatives_considered": [
+        "defer implementation",
+        "implement broader quote-aware or partial-fill simulator"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-010",
+      "decision": "Record the bounded deterministic fill simulator as implemented and accepted by BT-GATE-010.",
+      "decision_id": "BT-EXEC-015",
+      "domain": "execution_implementation",
+      "evidence_class": [
+        "IMPLEMENTATION_TESTS_PASS",
+        "ACCEPTANCE_RUN_GENERATED",
+        "ACCEPTANCE_RUN_COVERS_REQUIRED_OUTCOMES",
+        "PACKAGE_REPRODUCIBLE_SIMULATOR_TESTS_INCLUDED",
+        "EXTERNAL_ACCEPTANCE_REVIEW_PASS"
+      ],
+      "policy_ids": [
+        "BT-POL-EXEC-018"
+      ],
+      "rationale": "BT-GATE-010 external acceptance review passed after reproducibility and outcome evidence corrections.",
+      "status": "IMPLEMENTED_AND_ACCEPTED",
+      "supersedes": [],
+      "title": "Implement deterministic fill simulator V0.1 within authorized scope"
+    },
+    {
+      "alternatives_considered": [
+        "split integration, manifest, strategy, ledger and metrics into microgates",
+        "jump directly to multi-symbol research"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-011",
+      "decision": "Owner accepted BT-GATE-011 as the first single-strategy end-to-end historical engine-validation run with portable QG5 rerun evidence, pre-registered orders, current-event-only simulator invocation and online accounting inside the replay coordinator.",
+      "decision_id": "BT-E2E-001",
+      "domain": "end_to_end_backtest",
+      "evidence_class": [
+        "OWNER_APPROVED_CONTRACT",
+        "VERIFIED_IN_IMPLEMENTATION",
+        "VERIFIED_BY_RUN",
+        "TESTED",
+        "VERIFIED_BY_PORTABLE_RERUN",
+        "EVENT_LOOP_TRACE_VERIFIED",
+        "ONLINE_EVENT_DRIVEN_CAUSALITY_VERIFIED",
+        "ONLINE_ACCOUNTING_VERIFIED",
+        "FINAL_OWNER_REVIEW_ACCEPTED",
+        "BT_GATE_011_FINAL_ACCEPTANCE_REVIEW_PASS"
+      ],
+      "policy_ids": [
+        "BT-POL-E2E-001"
+      ],
+      "rationale": "The implementation proves the complete accepted path from data/replay through strategy, execution, accounting, ledger, metrics, manifest, deterministic rerun and package reproducibility without state consumption or edge claims.",
+      "status": "IMPLEMENTED_AND_ACCEPTED_BY_BT_GATE_011",
+      "supersedes": [],
+      "title": "Implement single-strategy end-to-end backtest"
+    },
+    {
+      "alternatives_considered": [
+        "return to microgates",
+        "start small-caps realism before portfolio mechanics"
+      ],
+      "authority": "TSIS_OWNER",
+      "authorized_at": "2026-07-29T16:47:47Z",
+      "authorized_by_gate": "BT-GATE-012",
+      "decision": "Authorize BT-GATE-012 for continuous implementation of the corrected multi-symbol, multi-session portfolio validation slice under the accepted contract; final implementation acceptance remains pending the final acceptance packet.",
+      "decision_id": "BT-PORT-001",
+      "deterministic_output_hash": "414aceb2bc80836f8fa821cd4d14071e54c86f3c7855c0a34c82ffd8b1c79182",
+      "domain": "portfolio_backtest",
+      "engine_suite": "106 tests OK",
+      "evidence_class": [
+        "CONTRACT_ACCEPTED",
+        "CONTRACT_DRAFT_CREATED",
+        "CONTRACT_REVIEW_FINDINGS_CORRECTED",
+        "IMPLEMENTATION_AUTHORIZED",
+        "NO_CODE_IMPLEMENTATION",
+        "NO_IMPLEMENTATION_CONTENT_SCAN_PASS",
+        "OWNER_CONTRACT_REVIEW_PASS",
+        "IMPLEMENTATION_COMPLETE",
+        "TESTS_PASS",
+        "RUN_VALIDATION_PASS",
+        "DETERMINISM_PASS",
+        "FINAL_ACCEPTANCE_PENDING",
+        "FINAL_OWNER_REVIEW_PASS",
+        "IMPLEMENTATION_ACCEPTED",
+        "GOVERNANCE_LIVE_CONSISTENCY_PASS"
+      ],
+      "final_owner_review": "PASS",
+      "final_packet": "bt_gate_012_portfolio_slice_acceptance_packet_20260729T172450Z.zip",
+      "final_packet_sha256": "4181d42a61a66ce8f71b7ce3156bff586c756154a2b86c95676bc9efe8c87975",
+      "focused_suite": "7 portfolio tests OK",
+      "implementation_acceptance": "ACCEPTED",
+      "implementation_run": "runs/bt_gate_012_multi_symbol_multi_session_qg5_v0_1",
+      "implementation_status": "IMPLEMENTED_AND_ACCEPTED",
+      "owner_review_packet": "bt_gate_012_contract_review_packet_20260729T164056Z.zip",
+      "owner_review_packet_sha256": "b8bb2e5641db2cd3aee8ede94d571a1176479e27cbdf5a05602e1111163b6f40",
+      "policy_ids": [
+        "BT-POL-PORT-001"
+      ],
+      "rationale": "Owner review accepted the corrected integral contract after the final evidence packet proved no active BT-GATE-012 implementation existed, with all five implementation trees inventoried and independently reproducible scan evidence passing.",
+      "status": "CLOSED_PASS_IMPLEMENTATION_ACCEPTED",
+      "supersedes": [],
+      "title": "Authorize BT-GATE-012 multi-symbol multi-session portfolio slice implementation"
+    },
+    {
+      "authority": "TSIS_OWNER",
+      "authorized_at": "2026-07-29T17:40:31Z",
+      "authorized_by_gate": "BT-GATE-013",
+      "contract_artifact": "docs/00_system/14_BT_GATE_013_PHYSICAL_HISTORICAL_REPLAY_SLICE_CONTRACT_V0_1.md",
+      "decision": "Define BT-GATE-013 as PHYSICAL_HISTORICAL_REPLAY_SLICE_V0_1, crossing only the boundary from accepted fixture replay to reproducible physical 013_ohlcv_1m_quote_guarded rows. Defer SMALL_CAPS_RIGOROUS_RESEARCH_RUNNER as a future gate family, not BT-GATE-013.",
+      "decision_id": "BT-PORT-002",
+      "deterministic_output_hash": "ede33c7037a0bd08670423a4ac05b4836aa1472163027c7a86e883fca0b5c019",
+      "domain": "portfolio_backtest",
+      "evidence_class": [
+        "OWNER_DIRECTION",
+        "GATE_BOUNDARY_CLARIFICATION",
+        "NO_CODE_IMPLEMENTATION",
+        "CONTRACT_DRAFT_CREATED",
+        "CONTRACT_REVIEW_PENDING",
+        "FINAL_EXTERNAL_REVIEW_PASS",
+        "IMPLEMENTATION_ACCEPTED"
+      ],
+      "final_acceptance_packet_sha256": "4c89a8279ee7a999fc2774cbac06e15d8779ba347aaf28aa1d9fd7bba2895f9d",
+      "final_external_review": "PASS",
+      "implementation_acceptance": "ACCEPTED",
+      "implementation_status": "IMPLEMENTED_AND_ACCEPTED_FOR_PHYSICAL_HISTORICAL_REPLAY_SLICE_ONLY",
+      "policy_ids": [
+        "BT-POL-PORT-002"
+      ],
+      "rationale": "A broad small-caps research runner would mix physical ingestion, PIT universe, short tradability, SSR, halts, liquidity/capacity, batch research and statistical validation. BT-GATE-013 must isolate physical row lineage, timestamp availability and deterministic replay first.",
+      "run_id": "bt_gate_013_physical_historical_replay_slice_v0_1",
+      "status": "CLOSED_PASS_PHYSICAL_HISTORICAL_REPLAY_ACCEPTED",
+      "supersedes": [],
+      "title": "Define BT-GATE-013 as physical historical replay slice",
+      "updated_at": "2026-07-30T08:47:15Z"
+    },
+    {
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-014",
+      "decision": "BT-GATE-014 accepted the bounded PIT Market State core-four consumer after the V0.5 physical postexecution external review passed. V0.5 is consumed final and cannot be executed again.",
+      "decision_id": "BT-STATE-002",
+      "deterministic_output_hash": "6331839dfc6538f7dd6fda9a1fd7efbc7497d541dcb0c0d89cfd679762067cb1",
+      "domain": "state_consumption",
+      "evidence_class": [
+        "OWNER_APPROVED_CONTRACT",
+        "PROVIDER_HANDOFF_ADOPTED",
+        "VERIFIED_IN_IMPLEMENTATION",
+        "VERIFIED_BY_SYNTHETIC_RUN",
+        "EXTERNAL_PHASE_B_RE_REVIEW_PASS",
+        "V0_1_PREEXECUTION_REVIEW_FAIL",
+        "V0_2_PREEXECUTION_REVIEW_FAIL",
+        "V0_3_EXECUTABLE_BINDING_VERIFIED",
+        "V0_3_ADVERSARIAL_FAILURE_GUARDS_VERIFIED",
+        "V0_5_PHYSICAL_EXECUTION_PASS",
+        "POSTEXECUTION_EXTERNAL_REVIEW_PASS"
+      ],
+      "external_review_artifact": "08_GATES_AND_REVIEWS/BT_GATE_014_PHASE_B_EXTERNAL_RE_REVIEW_ACCEPTANCE_V0_1.md",
+      "external_review_packet_sha256": "6881b6b485f7e6aed6744e609b1e61f66073dc3e20c0e807245a3b38a35f7645",
+      "final_postexecution_packet_sha256": "7def8211c7318b90dd1c4176b4f42c26ff01f325f9c2250931b2073ad7b1a9c4",
+      "policy_ids": [
+        "BT-POL-STATE-002"
+      ],
+      "rationale": "BT-GATE-014 must prove consumer semantics before independently reading the two bounded physical rows.",
+      "restriction_domain_binding_sha256": "b3ebace6fab7cb0a690be165f0a1706a5906dc7a729488fa1139af00c02e53a9",
+      "status": "CLOSED_PASS_POINT_IN_TIME_MARKET_STATE_CONSUMPTION_WITH_RESTRICTIONS",
+      "supersedes": [],
+      "title": "Bounded non-physical PIT Market State consumer",
+      "v0_3": "CONSUMED_FAILED_FINAL",
+      "v0_4": "CONSUMED_FAILED_FINAL",
+      "v0_5": "CONSUMED_FINAL_ACCEPTED"
+    },
+    {
+      "authority": "TSIS_OWNER",
+      "authorized_by_gate": "BT-GATE-015",
+      "decision": "Implement and externally review the bounded non-physical Event State consumer before any physical Event State read.",
+      "decision_id": "BT-STATE-003",
+      "deterministic_output_hash": "f149ab854105252a1b929d28858065a163bcee134bad69588b7b99a9e8de0d8d",
+      "domain": "state_consumption",
+      "evidence_class": [
+        "OWNER_APPROVED_CONTRACT",
+        "PROVIDER_HANDOFF_ADOPTED",
+        "VERIFIED_BY_SYNTHETIC_RUN",
+        "NON_PHYSICAL_EXTERNAL_REVIEW_PASS"
+      ],
+      "policy_ids": [
+        "BT-POL-STATE-003"
+      ],
+      "rationale": "Prove the 38-field envelope projection, 17-field payload, PIT order and dedicated store without physical reads.",
+      "status": "NON_PHYSICAL_IMPLEMENTATION_ACCEPTED_PENDING_SINGLE_USE_PHYSICAL_AUTHORIZATION",
+      "supersedes": [],
+      "title": "Bounded non-physical PIT Event State consumer",
+      "updated_at": "2026-08-05T07:15:34Z"
+    }
+  ],
+  "register_id": "TSIS_BACKTEST_DECISION_LEDGER_V0_1",
+  "scope": "02_TSIS_BACKTEST_ENGINE"
 }

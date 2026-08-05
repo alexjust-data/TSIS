@@ -1,0 +1,64 @@
+[
+  {
+    "available_at_utc": "2021-03-15T13:30:00Z",
+    "event_index": 0,
+    "event_type": "BAR",
+    "execution_input": false,
+    "order_key": [
+      "2021-03-15T13:30:00Z",
+      1,
+      "2021-03-15",
+      "ACIU",
+      "ACIU:2021-03-15T13:29:00Z:BAR"
+    ],
+    "priority": 1,
+    "scientific_market_data_claim": false,
+    "ticker": "ACIU"
+  },
+  {
+    "available_at_utc": "2021-03-15T13:30:00Z",
+    "event_index": 1,
+    "event_type": "BoundedMarketStateAvailable",
+    "order_key": [
+      "2021-03-15T13:30:00Z",
+      2,
+      "2021-03-15",
+      "ACIU",
+      "f09492ac417d05161f70ee75f81e345a9cc315cef9beb9939d2df6ff3eb58dd3"
+    ],
+    "priority": 2,
+    "store_insert_sequence": 0,
+    "ticker": "ACIU"
+  },
+  {
+    "available_at_utc": "2021-03-15T20:00:00Z",
+    "event_index": 2,
+    "event_type": "BAR",
+    "execution_input": false,
+    "order_key": [
+      "2021-03-15T20:00:00Z",
+      1,
+      "2021-03-15",
+      "ACIU",
+      "ACIU:2021-03-15T19:59:00Z:BAR"
+    ],
+    "priority": 1,
+    "scientific_market_data_claim": false,
+    "ticker": "ACIU"
+  },
+  {
+    "available_at_utc": "2021-03-15T20:00:00Z",
+    "event_index": 3,
+    "event_type": "BoundedMarketStateAvailable",
+    "order_key": [
+      "2021-03-15T20:00:00Z",
+      2,
+      "2021-03-15",
+      "ACIU",
+      "26d923a282355ad242a5d91ad7d6183bed6a94842041ecf966ac70c366308c0e"
+    ],
+    "priority": 2,
+    "store_insert_sequence": 1,
+    "ticker": "ACIU"
+  }
+]

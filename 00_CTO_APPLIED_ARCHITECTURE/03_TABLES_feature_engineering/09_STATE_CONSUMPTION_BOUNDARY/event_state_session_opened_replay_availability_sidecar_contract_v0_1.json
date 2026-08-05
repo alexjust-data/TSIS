@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tsis.local/contracts/event_state_session_opened_replay_availability_sidecar_contract_v0_1.json",
+  "title": "Event State session_opened replay availability sidecar v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "sidecar_id",
+    "state_kind",
+    "profile_id",
+    "event_type_id",
+    "publication_policy",
+    "record_count",
+    "records"
+  ],
+  "properties": {
+    "sidecar_id": {"type": "string", "minLength": 1},
+    "state_kind": {"const": "event_state"},
+    "profile_id": {"const": "event_state_core_four_intraday_profile_v0_1"},
+    "event_type_id": {"const": "event_type:market_data:session_opened"},
+    "publication_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["policy_id", "latency", "bounded_validation_only"],
+      "properties": {
+        "policy_id": {"const": "zero_latency_candidate_event_state_replay_publication_policy_v0_1"},
+        "latency": {"const": "PT0S"},
+        "bounded_validation_only": {"const": true}
+      }
+    },
+    "record_count": {"const": 1},
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "event_state_record_id",
+          "event_state_record_fingerprint",
+          "event_instance_id",
+          "event_window_binding_id",
+          "instrument_projection_id",
+          "market_state_record_id",
+          "market_state_state_output_fingerprint",
+          "market_state_dependency_dataset_fingerprint",
+          "market_state_availability_evidence_dataset_fingerprint",
+          "market_state_cross_dataset_binding",
+          "instrument_id",
+          "ticker",
+          "exchange_id",
+          "session_date",
+          "event_anchor_timestamp_utc",
+          "event_instance_as_of_utc",
+          "event_instance_available_at_utc",
+          "event_window_binding_as_of_utc",
+          "event_window_binding_available_at_utc",
+          "instrument_projection_as_of_utc",
+          "instrument_projection_available_at_utc",
+          "market_state_as_of_utc",
+          "market_state_available_at_utc",
+          "event_state_as_of_utc",
+          "event_state_available_at_utc",
+          "event_state_publication_latency",
+          "state_replay_consumption_legality",
+          "event_state_provenance_restriction_codes",
+          "replay_consumption_restriction_codes",
+          "evidence_refs"
+        ],
+        "properties": {
+          "event_state_record_id": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "event_state_record_fingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "event_instance_id": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "event_window_binding_id": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "instrument_projection_id": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "market_state_record_id": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "market_state_state_output_fingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "market_state_dependency_dataset_fingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "market_state_availability_evidence_dataset_fingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "market_state_cross_dataset_binding": {"const": "EXACT_ROW_ID_AND_FINGERPRINT_EQUIVALENCE"},
+          "instrument_id": {"const": "figi_share_class:BBG001S5N8T1"},
+          "ticker": {"const": "AAME"},
+          "exchange_id": {"const": "XNYS"},
+          "session_date": {"const": "2021-01-19"},
+          "event_anchor_timestamp_utc": {"const": "2021-01-19T14:30:00Z"},
+          "event_instance_as_of_utc": {"type": "string", "format": "date-time"},
+          "event_instance_available_at_utc": {"type": "string", "format": "date-time"},
+          "event_window_binding_as_of_utc": {"type": "string", "format": "date-time"},
+          "event_window_binding_available_at_utc": {"type": "string", "format": "date-time"},
+          "instrument_projection_as_of_utc": {"type": "string", "format": "date-time"},
+          "instrument_projection_available_at_utc": {"type": "string", "format": "date-time"},
+          "market_state_as_of_utc": {"type": "string", "format": "date-time"},
+          "market_state_available_at_utc": {"type": "string", "format": "date-time"},
+          "event_state_as_of_utc": {"type": "string", "format": "date-time"},
+          "event_state_available_at_utc": {"type": "string", "format": "date-time"},
+          "event_state_publication_latency": {"const": "PT0S"},
+          "state_replay_consumption_legality": {"const": "research_only"},
+          "event_state_provenance_restriction_codes": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "replay_consumption_restriction_codes": {
+            "type": "array",
+            "minItems": 5,
+            "uniqueItems": true,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "evidence_refs": {
+            "type": "object",
+            "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "minProperties": 6
+          }
+        }
+      }
+    }
+  },
+  "semantic_invariants": [
+    "event_state_as_of_utc = max(event_instance_as_of_utc, event_window_binding_as_of_utc, instrument_projection_as_of_utc, market_state_as_of_utc)",
+    "event_state_available_at_utc = max(event_instance_available_at_utc, event_window_binding_available_at_utc, instrument_projection_available_at_utc, market_state_available_at_utc) + event_state_publication_latency",
+    "event_loop.clock >= event_state_available_at_utc",
+    "created_at_utc and materialization timestamps are excluded from historical availability",
+    "event_state provenance restrictions and replay-consumption restrictions remain separate labeled domains"
+  ]
+}

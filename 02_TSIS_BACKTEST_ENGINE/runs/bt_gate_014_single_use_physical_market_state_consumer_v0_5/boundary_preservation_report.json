@@ -1,0 +1,19 @@
+{
+  "cash_mutations": 0,
+  "downstream": false,
+  "equity_mutations": 0,
+  "event_state": "NOT_OPEN",
+  "fills": 0,
+  "market_state_as_execution_price": false,
+  "market_state_as_market_data": false,
+  "market_state_as_valuation_price": false,
+  "orders": 0,
+  "pnl_calculated": false,
+  "positions_mutated": 0,
+  "production": false,
+  "provider_modification": false,
+  "signals": 0,
+  "state_replay_feed": "NOT_AUTHORIZED",
+  "status": "PASS",
+  "strategy_decisions": 0
+}

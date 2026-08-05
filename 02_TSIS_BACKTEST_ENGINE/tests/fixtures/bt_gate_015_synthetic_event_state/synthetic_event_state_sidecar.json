@@ -1,0 +1,67 @@
+{
+  "event_type_id": "event_type:market_data:session_opened",
+  "profile_id": "event_state_core_four_intraday_profile_v0_1",
+  "publication_policy": {
+    "bounded_validation_only": true,
+    "latency": "PT0S",
+    "policy_id": "zero_latency_candidate_event_state_replay_publication_policy_v0_1"
+  },
+  "record_count": 1,
+  "records": [
+    {
+      "event_anchor_timestamp_utc": "2021-01-19T14:30:00Z",
+      "event_instance_as_of_utc": "2021-01-19T14:30:00Z",
+      "event_instance_available_at_utc": "2021-01-19T14:30:00Z",
+      "event_instance_id": "79271e2c4cc15a4684af99f6b796416317cda8904d8ecf3f0c2f25b6345a9338",
+      "event_state_as_of_utc": "2021-01-19T14:30:00Z",
+      "event_state_available_at_utc": "2021-01-19T14:30:00Z",
+      "event_state_provenance_restriction_codes": [
+        "synthetic_event_state_candidate",
+        "research_only_lineage"
+      ],
+      "event_state_publication_latency": "PT0S",
+      "event_state_record_fingerprint": "c6cc2448e2949f3500d88a3f8a8f94a41b065f01fd56fdb2e5304ef18652eb03",
+      "event_state_record_id": "801a689ee7436cb9c02f774492d06f57f3ac1a659fa63294ecc8b7276014deac",
+      "event_window_binding_as_of_utc": "2021-01-19T14:30:00Z",
+      "event_window_binding_available_at_utc": "2021-01-19T14:30:00Z",
+      "event_window_binding_id": "5e1440125c4ef0acf1074e92dc91814c3fa340c03ca65cd5fa2e2b2b95fd0695",
+      "evidence_refs": {
+        "authorization_consumption": "1a9f129fda3550a55f5db5dce083915f56f04055d404f784ccc2e0233f25e3d5",
+        "event_instance_manifest": "d5d020f67f8207f047084b24afbeec0027c6ce2e224d3fe5e5f3f96cd699d607",
+        "event_state_final_manifest": "2f8dd5e2435a18e7ef2710effab96d0f3587e82a16817f3c21a2fff376160254",
+        "event_state_lineage_manifest": "ddfa849096349e37f511caa4d25e2b5e785f4b505b416596324ad0a6ad56a3ef",
+        "event_state_schema": "fc8080cf55ba7bcadec2ce4874fb36f5e4ffdee93811e28f1ed95514f32f4905",
+        "event_state_validation_report": "64e1887366394d9b003a73d5986db9db43c38acdc0b59bf00905af3741027bf5",
+        "event_window_binding_manifest": "f547f099ea30b2370dd8efe8446dddbc645247c6b3f9be2d4c7284946dc65e39",
+        "instrument_projection_manifest": "79a9ee8029c37745b1602b16a6c75c83003c10d98577ab432a4c88713cbf5fe3",
+        "market_state_replay_sidecar": "9e3a66caaf219a5119d1e17a84ff13c3fc87f5f0c2730fd4e23489a808f107e6",
+        "market_state_schema": "efff5595223d3322399877feb415d25132beacb48b9a10ad890f0e09e87a5ee5",
+        "typed_payload_binding": "71afe50b2888129e2d7b4528b682f49886591da4c2e4ca12170db5f6709cbd76"
+      },
+      "exchange_id": "XNYS",
+      "instrument_id": "synthetic:figi_share_class:AAME",
+      "instrument_projection_as_of_utc": "2021-01-19T14:30:00Z",
+      "instrument_projection_available_at_utc": "2021-01-19T14:30:00Z",
+      "instrument_projection_id": "f67e5bd86f6e3bd8f5f2238f882f3a2288a56b37d1d8791b97c1f13fbb0a7a97",
+      "market_state_as_of_utc": "2021-01-19T14:30:00Z",
+      "market_state_availability_evidence_dataset_fingerprint": "4a3368bcf74219d741e7820595fa2392b3558e69f7ae4967cabfe6f41170ba05",
+      "market_state_available_at_utc": "2021-01-19T14:30:00Z",
+      "market_state_cross_dataset_binding": "EXACT_ROW_ID_AND_FINGERPRINT_EQUIVALENCE",
+      "market_state_dependency_dataset_fingerprint": "8b85e5d5dff5c8c499f72bd4624db85bc0c61202abe981116a287c1ade778aa7",
+      "market_state_record_id": "b87415c19eef9eb94af6b7d20cec53a2a878aa17713814b8d2edcbb112f76416",
+      "market_state_state_output_fingerprint": "113de829c069306aec0480e9ce3300a58b4a145c6d2968dbc465db839f49dfdd",
+      "replay_consumption_restriction_codes": [
+        "candidate_runtime_only",
+        "no_downstream",
+        "no_production",
+        "not_official_dataset",
+        "research_only"
+      ],
+      "session_date": "2021-01-19",
+      "state_replay_consumption_legality": "research_only",
+      "ticker": "AAME"
+    }
+  ],
+  "sidecar_id": "synthetic_event_state_session_opened_sidecar_v0_1",
+  "state_kind": "event_state"
+}

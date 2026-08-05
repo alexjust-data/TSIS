@@ -1,0 +1,50 @@
+{
+  "scope_id": "event_state_session_opened_replay_availability_sidecar_execution_scope_v0_1",
+  "owner_layer": "03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY",
+  "purpose": "Read exactly one governed Event State candidate JSONL and create row-addressable replay availability evidence.",
+  "authorization": {
+    "single_use": true,
+    "maximum_input_files_opened": 1,
+    "maximum_candidate_rows_selected": 1,
+    "candidate_records_path": "08_RUNTIME_CAPABILITIES/runs/event_state_on_demand_bounded_execution_v0_1_20260727T200322Z/event_state_candidate_records.jsonl",
+    "candidate_records_sha256": "ed975ad7d7a3e0ac68bd7dfe2c91743c86931a545162a4440d270cbb689477dd"
+  },
+  "selected_context": {
+    "event_type_id": "event_type:market_data:session_opened",
+    "exchange_id": "XNYS",
+    "session_date": "2021-01-19",
+    "instrument_id": "figi_share_class:BBG001S5N8T1",
+    "ticker": "AAME",
+    "event_anchor_timestamp_utc": "2021-01-19T14:30:00Z",
+    "market_state_record_id": "ba92895493bdc05e2ad07b78b1491f1b62d74d1079869b58c3df95cefdc622ee",
+    "market_state_state_output_fingerprint": "9430c9903b6172c9183e8cce264bfdfcb0da83d391becc05eb7ef56f11509685"
+  },
+  "allowed_outputs": [
+    "event_state_session_opened_replay_availability_sidecar_authorization_consumption_v0_1.json",
+    "event_state_session_opened_replay_availability_sidecar_contract_v0_1.json",
+    "event_state_session_opened_replay_availability_sidecar_manifest_v0_1.json",
+    "event_state_session_opened_typed_payload_binding_v0_1.json",
+    "event_state_session_opened_replay_availability_sidecar_matrix_v0_1.json",
+    "event_state_session_opened_replay_availability_sidecar_readout_v0_1.md",
+    "event_state_session_opened_bt_gate_015_provider_completion_handoff_v0_1.md",
+    "scripts/event_state_session_opened_replay_availability_sidecar_runner_v0_1.py",
+    "scripts/event_state_session_opened_bt_gate_015_provider_completion_package_runner_v0_1.py",
+    "event_state_session_opened_bt_gate_015_provider_completion_v0_1_<timestamp>.zip",
+    "../STATE_PROVIDER_CONSUMER_RECOVERY.md",
+    "../AGENT.md",
+    "../99_ruta_de_trabajo.md",
+    "README.md",
+    "../scripts/validate_state_provider_consumer_recovery_v0_1.py"
+  ],
+  "prohibited": {
+    "open_market_state_parquet": true,
+    "open_other_event_state_candidate_files": true,
+    "select_more_than_one_event_state_record": true,
+    "modify_provider_runtime": true,
+    "modify_backtester": true,
+    "authorize_bt_gate_015_implementation": true,
+    "authorize_event_state_physical_consumption": true,
+    "production": true,
+    "downstream": true
+  }
+}

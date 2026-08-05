@@ -9,6 +9,23 @@ The canonical cold-start entry for this boundary is:
 It defines the current authority, accepted packages, reading order, next owner
 and prohibitions. Historical closure sections below do not override it.
 
+## Event State `session_opened` Provider Completion Handoff
+
+```text
+replay availability sidecar = CLOSED_PASS_WITH_RESTRICTIONS
+typed payload binding = CLOSED_READY_WITH_RESTRICTIONS
+slice = AAME / XNYS / 2021-01-19
+BT-GATE-015 contract and non-physical external review = PASS
+BT-GATE-015 non-physical implementation = ACCEPTED_NON_PHYSICAL_ONLY
+Event State physical consumer read = NOT_AUTHORIZED
+single-use physical authorization = NOT_AUTHORIZED
+active provider gate = none
+```
+
+The delivery identity is the exact on-demand Event State record bound to the
+Market State replay sidecar by row ID and fingerprint. The scientific payload
+is exactly 17 typed core-four values; event identity and window fields remain
+separate event context.
 ## Market State Restriction Domain Binding Closed
 
 ```text

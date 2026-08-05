@@ -1,0 +1,287 @@
+{
+  "gate": "event_state_session_opened_bt_gate_015_contract_handoff_v0_1",
+  "case_count": 36,
+  "failed_cases": 0,
+  "physical_files_opened": 0,
+  "physical_rows_read": 0,
+  "event_state_records_delivered": 0,
+  "bt_gate_015_implementation_authorized": false,
+  "cases": [
+    {
+      "case_id": "SCOPE_provider_shared_boundary_owner",
+      "expected": "PASS",
+      "observed": "03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY",
+      "status": "PASS"
+    },
+    {
+      "case_id": "SCOPE_no_physical_read",
+      "expected": "PASS",
+      "observed": {
+        "physical_files_opened": 0,
+        "physical_rows_read": 0,
+        "event_state_records_delivered": 0,
+        "state_replay_feed_records_emitted": 0,
+        "backtest_runs": 0,
+        "datasets_written": 0,
+        "registry_mutations": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "case_id": "TYPE_session_opened_only",
+      "expected": "PASS",
+      "observed": "event_type:market_data:session_opened",
+      "status": "PASS"
+    },
+    {
+      "case_id": "TYPE_exchange_session_scope",
+      "expected": "PASS",
+      "observed": "exchange_session",
+      "status": "PASS"
+    },
+    {
+      "case_id": "PROFILE_exact_profile",
+      "expected": "PASS",
+      "observed": "event_state_core_four_intraday_profile_v0_1",
+      "status": "PASS"
+    },
+    {
+      "case_id": "SLICE_exact_AAME_context",
+      "expected": "PASS",
+      "observed": {
+        "exchange_id": "XNYS",
+        "session_date": "2021-01-19",
+        "instrument_id": "figi_share_class:BBG001S5N8T1",
+        "ticker": "AAME",
+        "event_anchor_timestamp_utc": "2021-01-19T14:30:00Z",
+        "event_instance_id": "3d5afb67c49949b7db5ab85ef4a230e36282c36d1086eaa42e3dfdc90279ff63",
+        "event_window_binding_id": "0061ac40bb170a80ebca61742aa4681f2bdc8d50c34ac3c652eab45b8bcdbfb7",
+        "window_definition_id": "event_window_definition:market_data:session_opened:at_open_v0_1",
+        "state_role": "at_event",
+        "historical_consumption_legality": "decision_safe",
+        "event_state_instrument_session_projection_id": "793fc860d540611059220795f866892052fd78b1f7b28a6273116b32ec0a5e19",
+        "market_state_record_id": "5bbdbfdb42cf6c758ebe3ba71786f6629fd39080a955bb675a4735bd15bca464",
+        "market_state_state_output_fingerprint": "ab048da6b6733f0194958236ed4d56c3f0c75bb4451e24e8e865e6170a2f8cd4",
+        "event_state_record_ordinal": 1,
+        "event_state_record_id": "47102c58b14c538c0d4279ce40d4205031bd48d46986e9654fb0ccee059498e0",
+        "event_state_record_fingerprint": "4ab9bda000f080ff59a2eee11bbeea9e3d5c3581c64097f64366dece55665a4a"
+      },
+      "status": "PASS"
+    },
+    {
+      "case_id": "IDENTITY_event_instance",
+      "expected": "PASS",
+      "observed": "3d5afb67c49949b7db5ab85ef4a230e36282c36d1086eaa42e3dfdc90279ff63",
+      "status": "PASS"
+    },
+    {
+      "case_id": "IDENTITY_event_window",
+      "expected": "PASS",
+      "observed": "0061ac40bb170a80ebca61742aa4681f2bdc8d50c34ac3c652eab45b8bcdbfb7",
+      "status": "PASS"
+    },
+    {
+      "case_id": "IDENTITY_projection",
+      "expected": "PASS",
+      "observed": "793fc860d540611059220795f866892052fd78b1f7b28a6273116b32ec0a5e19",
+      "status": "PASS"
+    },
+    {
+      "case_id": "IDENTITY_market_state_record",
+      "expected": "PASS",
+      "observed": "5bbdbfdb42cf6c758ebe3ba71786f6629fd39080a955bb675a4735bd15bca464",
+      "status": "PASS"
+    },
+    {
+      "case_id": "IDENTITY_market_state_fingerprint",
+      "expected": "PASS",
+      "observed": "ab048da6b6733f0194958236ed4d56c3f0c75bb4451e24e8e865e6170a2f8cd4",
+      "status": "PASS"
+    },
+    {
+      "case_id": "IDENTITY_event_state_record",
+      "expected": "PASS",
+      "observed": "47102c58b14c538c0d4279ce40d4205031bd48d46986e9654fb0ccee059498e0",
+      "status": "PASS"
+    },
+    {
+      "case_id": "IDENTITY_event_state_fingerprint",
+      "expected": "PASS",
+      "observed": "4ab9bda000f080ff59a2eee11bbeea9e3d5c3581c64097f64366dece55665a4a",
+      "status": "PASS"
+    },
+    {
+      "case_id": "HASH_official_profiles_event_state_core_four_intraday_profile_v0_1_PROFILE_MANIFEST_json",
+      "expected": "PASS",
+      "observed": "77937dca78391d354a3c394c7fc3886c4042209e6a567425a301553b962997e1",
+      "status": "PASS"
+    },
+    {
+      "case_id": "HASH_official_profiles_event_state_core_four_intraday_profile_v0_1_EVENT_STATE_SCHEMA_CONTRACT_json",
+      "expected": "PASS",
+      "observed": "e68be24763c4320419f7f2216a3560dc94ce36f02b293fdf2dad2ea88bba9515",
+      "status": "PASS"
+    },
+    {
+      "case_id": "HASH_07_EVENT_STATE_INTEGRATION_event_type_registry_post_initial_admission_snapshot_v0_1_json",
+      "expected": "PASS",
+      "observed": "f3627c8b44062081c8e2f2775bffbd283bd31f2ca1e876aa7469fd6586425c43",
+      "status": "PASS"
+    },
+    {
+      "case_id": "HASH_runs_event_state_bounded_execution_chain_execution_v0_1_20260724T185356Z_final_manifest_json",
+      "expected": "PASS",
+      "observed": "f403566bd4c41253b1b18a232d94a7694080e04b5dce73c98411291daca59abf",
+      "status": "PASS"
+    },
+    {
+      "case_id": "HASH_runs_event_state_bounded_execution_chain_execution_v0_1_20260724T185356Z_event_state_candidate_manifest_json",
+      "expected": "PASS",
+      "observed": "aee3e7243d82244074075d21dddf361c8dd60079c9ca6d72a04ffbb886144004",
+      "status": "PASS"
+    },
+    {
+      "case_id": "HASH_runs_event_state_bounded_execution_chain_physical_validation_v0_1_20260724T193214Z_final_manifest_json",
+      "expected": "PASS",
+      "observed": "742694fa4c298fa8b6c590199b5c7301b0cad660499ba6f3837219795a00bc81",
+      "status": "PASS"
+    },
+    {
+      "case_id": "HASH_runs_event_state_bounded_execution_chain_physical_validation_v0_1_20260724T193214Z_record_fingerprint_validation_report_csv",
+      "expected": "PASS",
+      "observed": "2843a670038cb63f3b9e4b063384d0989ced9b52de56f778948fc0a8eb0dbd3a",
+      "status": "PASS"
+    },
+    {
+      "case_id": "HASH_runs_event_state_bounded_execution_chain_physical_validation_v0_1_20260724T193214Z_binding_reconciliation_report_csv",
+      "expected": "PASS",
+      "observed": "f7ae3cbf91616e2501426dd9a117c407aa550e2ba376bc884c4b94c880127ed5",
+      "status": "PASS"
+    },
+    {
+      "case_id": "PROFILE_status_promoted_with_restrictions",
+      "expected": "PASS",
+      "observed": "OFFICIAL_PROFILE_PROMOTED_WITH_RESTRICTIONS",
+      "status": "PASS"
+    },
+    {
+      "case_id": "REGISTRY_session_opened_present",
+      "expected": "PASS",
+      "observed": 1,
+      "status": "PASS"
+    },
+    {
+      "case_id": "BIND_event_instance_exact",
+      "expected": "PASS",
+      "observed": "3d5afb67c49949b7db5ab85ef4a230e36282c36d1086eaa42e3dfdc90279ff63",
+      "status": "PASS"
+    },
+    {
+      "case_id": "BIND_event_window_exact",
+      "expected": "PASS",
+      "observed": "0061ac40bb170a80ebca61742aa4681f2bdc8d50c34ac3c652eab45b8bcdbfb7",
+      "status": "PASS"
+    },
+    {
+      "case_id": "BIND_projection_exact",
+      "expected": "PASS",
+      "observed": "793fc860d540611059220795f866892052fd78b1f7b28a6273116b32ec0a5e19",
+      "status": "PASS"
+    },
+    {
+      "case_id": "BIND_market_state_exact",
+      "expected": "PASS",
+      "observed": "5bbdbfdb42cf6c758ebe3ba71786f6629fd39080a955bb675a4735bd15bca464",
+      "status": "PASS"
+    },
+    {
+      "case_id": "BIND_event_state_record_exact",
+      "expected": "PASS",
+      "observed": {
+        "record_ordinal": "1",
+        "event_state_record_id": "47102c58b14c538c0d4279ce40d4205031bd48d46986e9654fb0ccee059498e0",
+        "observed_event_state_record_fingerprint": "4ab9bda000f080ff59a2eee11bbeea9e3d5c3581c64097f64366dece55665a4a",
+        "recomputed_event_state_record_fingerprint": "4ab9bda000f080ff59a2eee11bbeea9e3d5c3581c64097f64366dece55665a4a",
+        "fingerprint_status": "PASS",
+        "duplicate_record_id": "False",
+        "duplicate_record_fingerprint": "False"
+      },
+      "status": "PASS"
+    },
+    {
+      "case_id": "TEMPORAL_available_at_not_overclaimed",
+      "expected": "PASS",
+      "observed": {
+        "event_instance_identity": "PROVEN",
+        "event_window_binding_identity": "PROVEN",
+        "instrument_projection_identity": "PROVEN_WITH_RESTRICTIONS",
+        "market_state_dependency_identity": "PROVEN_WITH_RESTRICTIONS",
+        "event_state_record_identity_and_fingerprint": "PROVEN_BY_HISTORICAL_PHYSICAL_VALIDATION",
+        "event_state_available_at_utc": "NOT_YET_PROVEN",
+        "row_addressable_replay_availability_sidecar": "ABSENT"
+      },
+      "status": "PASS"
+    },
+    {
+      "case_id": "TEMPORAL_sidecar_absent_visible",
+      "expected": "PASS",
+      "observed": {
+        "event_instance_identity": "PROVEN",
+        "event_window_binding_identity": "PROVEN",
+        "instrument_projection_identity": "PROVEN_WITH_RESTRICTIONS",
+        "market_state_dependency_identity": "PROVEN_WITH_RESTRICTIONS",
+        "event_state_record_identity_and_fingerprint": "PROVEN_BY_HISTORICAL_PHYSICAL_VALIDATION",
+        "event_state_available_at_utc": "NOT_YET_PROVEN",
+        "row_addressable_replay_availability_sidecar": "ABSENT"
+      },
+      "status": "PASS"
+    },
+    {
+      "case_id": "TEMPORAL_delivery_uses_available_at",
+      "expected": "PASS",
+      "observed": {
+        "base_available_at": "max(event_instance_available_at_utc, event_window_binding_available_at_utc, instrument_projection_available_at_utc, market_state_available_at_utc)",
+        "event_state_available_at_utc": "base_available_at + event_state_publication_latency",
+        "delivery_eligibility": "event_loop.clock >= event_state_available_at_utc"
+      },
+      "status": "PASS"
+    },
+    {
+      "case_id": "BOUNDARY_no_consumer_authority",
+      "expected": "PASS",
+      "observed": {
+        "physical_read": false,
+        "bt_gate_015_implementation": false,
+        "state_replay_feed": false,
+        "event_state_delivery": false,
+        "production": false,
+        "downstream": false
+      },
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEG_mutated_event_instance_rejected",
+      "expected": "PASS",
+      "observed": "0000000000000000000000000000000000000000000000000000000000000000",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEG_mutated_market_state_fingerprint_rejected",
+      "expected": "PASS",
+      "observed": "0000000000000000000000000000000000000000000000000000000000000000",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEG_mutated_event_state_fingerprint_rejected",
+      "expected": "PASS",
+      "observed": "0000000000000000000000000000000000000000000000000000000000000000",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEG_anchor_alone_does_not_authorize_delivery",
+      "expected": "PASS",
+      "observed": "2021-01-19T14:30:00Z",
+      "status": "PASS"
+    }
+  ]
+}

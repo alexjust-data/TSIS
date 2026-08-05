@@ -1,0 +1,34 @@
+[
+  {
+    "event_sequence": 1,
+    "materialized_state_candidate_id": "f09492ac417d05161f70ee75f81e345a9cc315cef9beb9939d2df6ff3eb58dd3",
+    "observed_at_utc": "2021-03-15T13:30:00Z",
+    "probe_observation_id": "bt-gate-014-v0-3-probe-00",
+    "replay_consumption_restriction_codes": [
+      "candidate_runtime_only",
+      "not_official_dataset",
+      "no_downstream",
+      "no_production"
+    ],
+    "state_output_fingerprint": "f7c926be8e8bb6e84433061213bc554d54de2e03d0910a799e974ff5aea04617",
+    "store_insert_sequence": 0,
+    "typed_payload_field_count": 17,
+    "visibility_status": "VISIBLE"
+  },
+  {
+    "event_sequence": 3,
+    "materialized_state_candidate_id": "26d923a282355ad242a5d91ad7d6183bed6a94842041ecf966ac70c366308c0e",
+    "observed_at_utc": "2021-03-15T20:00:00Z",
+    "probe_observation_id": "bt-gate-014-v0-3-probe-01",
+    "replay_consumption_restriction_codes": [
+      "candidate_runtime_only",
+      "not_official_dataset",
+      "no_downstream",
+      "no_production"
+    ],
+    "state_output_fingerprint": "2420034cb851629b48ee3216713b6bc1a337ce0a4356096575a3db1a91edb7bd",
+    "store_insert_sequence": 1,
+    "typed_payload_field_count": 17,
+    "visibility_status": "VISIBLE"
+  }
+]

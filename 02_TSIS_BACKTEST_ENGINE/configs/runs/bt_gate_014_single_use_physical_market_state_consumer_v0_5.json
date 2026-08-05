@@ -1,0 +1,87 @@
+{
+  "adopted_evidence_relative_paths": {
+    "nested_provider_evidence": "evidence/provider_handoffs/bt_gate_014/bounded_state_bundle_read_and_replay_execution_and_review_v0_1_files_20260730T080831Z.zip",
+    "outer_provider_handoff": "evidence/provider_handoffs/bt_gate_014/market_state_pit_bt_gate_014_contract_handoff_v0_1_20260730T091041Z.zip"
+  },
+  "adopted_evidence_sha256": {
+    "nested_provider_evidence": "8f3d914becb3bc6d33f66814b355f636827db8cac67ea483fe9c6840b4fa16c7",
+    "outer_provider_handoff": "2c578ce9216bb3fd9010ef1f4afe8ba4022ab6b15f665d276a957f50acb35112"
+  },
+  "allowed_operation": "ONE_PHYSICAL_READ_AND_ONE_INTEGRATION_RUN",
+  "authorization_id": "BT-GATE-014-SINGLE-USE-PHYSICAL-AUTHORIZATION-V0-5",
+  "authorization_version": "V0.5",
+  "authorized_rows": [
+    {
+      "context_id": "scale_c_context_0058",
+      "decision_timestamp_utc": "2021-03-15T13:30:00Z",
+      "instrument_id": "cik_ticker:0001651625:ACIU",
+      "materialized_state_candidate_id": "f09492ac417d05161f70ee75f81e345a9cc315cef9beb9939d2df6ff3eb58dd3",
+      "session_date": "2021-03-15",
+      "source_candidate_record_id": "25672915a752b75e823409fc6dad6b55eaeddb900a0e58b7f5eab5f7c2ed941d",
+      "state_available_at_utc": "2021-03-15T13:30:00Z",
+      "state_output_fingerprint": "f7c926be8e8bb6e84433061213bc554d54de2e03d0910a799e974ff5aea04617",
+      "ticker": "ACIU"
+    },
+    {
+      "context_id": "scale_c_context_0115",
+      "decision_timestamp_utc": "2021-03-15T20:00:00Z",
+      "instrument_id": "cik_ticker:0001651625:ACIU",
+      "materialized_state_candidate_id": "26d923a282355ad242a5d91ad7d6183bed6a94842041ecf966ac70c366308c0e",
+      "session_date": "2021-03-15",
+      "source_candidate_record_id": "27c2b0b4973a880ab31d3df65c9977014f8b6e0a41c8d94e176031ff27672198",
+      "state_available_at_utc": "2021-03-15T20:00:00Z",
+      "state_output_fingerprint": "2420034cb851629b48ee3216713b6bc1a337ce0a4356096575a3db1a91edb7bd",
+      "ticker": "ACIU"
+    }
+  ],
+  "barrier_fixture_relative_path": "configs/fixtures/BT_GATE_014_PHYSICAL_INTEGRATION_BARRIERS_V0_5.json",
+  "barrier_fixture_sha256": "5a54527119a74eaf1917fda86db4216b45fb725c02da8c76e5fb2bbc993fb785",
+  "binding_sha256": {
+    "configs/fixtures/BT_GATE_014_PHYSICAL_INTEGRATION_BARRIERS_V0_5.json": "5a54527119a74eaf1917fda86db4216b45fb725c02da8c76e5fb2bbc993fb785",
+    "scripts/run_bt_gate_014_single_use_physical_market_state_consumer_v0_5.py": "b89147a35279c17e4a7ff2501aac6e538fabfc0508d4477d54a8b942dd72f8cd",
+    "src/tsis_backtest/market_state/consumer.py": "4e36332f89f21b60bb0d73aadd39e6deca11a0f7fa57a4160a11527f3cb57ed2",
+    "src/tsis_backtest/market_state/contracts.py": "f5dcaa8505c379b096bb6afae0e4625cd76373a059ea87cfebbc7b2371e30086",
+    "src/tsis_backtest/market_state/physical_authorization_v0_5.py": "32069dd1fe5f1f91dba50fd54e3eacecd1d9faa2e0e5e6053d87db19019bd1da",
+    "src/tsis_backtest/market_state/physical_runner_v0_5.py": "ea420aad3b873681e0823dcce00d66b4c484f1a2a7884471aa51f5e318691510",
+    "src/tsis_backtest/market_state/store.py": "a8eb7c2ff48f1f7cb0d2e9537fa7a5ffa46c3fe2c8edf08736115a62db964da5",
+    "src/tsis_backtest/preflight/contracts.py": "12da900f292c8ed4169c7674b125d688dd39712a3d475e3e0fe3cc63575cf238",
+    "src/tsis_backtest/replay/contracts.py": "db8591453abb50e4e07125e7297e698c0690a14575fae66bca7795d97676fc29"
+  },
+  "consumer_id": "BT_GATE_014_BOUNDED_MARKET_STATE_CONSUMER",
+  "contract_consumer_id": "BT_GATE_014_bounded_market_state_consumer_v0_1",
+  "fills": 0,
+  "maximum_physical_files": 1,
+  "maximum_physical_rows": 2,
+  "orders": 0,
+  "physical_input_sha256": {
+    "binding": "4006e80f099bb8abec147e33670294d7cc2eb565d25a10a08d6bf929c247f083",
+    "candidate_parquet": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68",
+    "lineage_manifest": "85e7331b1b022d4075608bc4b8663de53dcb6234f21215ff232ad84c85cd4c52",
+    "physical_schema_contract": "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b",
+    "restriction_domain_binding": "b3ebace6fab7cb0a690be165f0a1706a5906dc7a729488fa1139af00c02e53a9",
+    "sidecar_contract": "a29f656a6fe741432c7272d6715637eeb49fd5d34ca550c3ac0f33166bc1b169",
+    "sidecar_manifest": "8e426b09bb1cafac26e49c7a81de31ef4ea60ca3b56ac3aa766ba13a0772c5ac",
+    "state_bundle_manifest": "0845642ba80fac75f0094bccd370db71157da2759cad7807885b2928d2d49ab0",
+    "temporal_legality_report": "0eb607a4286dd3d4819f9aeb8da0eb21a18955a269b87e001f8f672378c44c70",
+    "timestamp_contract": "eae02c685f7bc2cc8b55e6e3bb4a6912dc3b391042c0178b3dc29387fa6b690d"
+  },
+  "pnl": false,
+  "production": false,
+  "provider_relative_paths": {
+    "binding": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_scale_validation_physical_schema_binding_v0_1.json",
+    "candidate_parquet": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/market_state_scale_validation_candidate_v0_1.parquet",
+    "lineage_manifest": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/lineage_manifest.json",
+    "physical_schema_contract": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/official_profiles/market_state_core_four_intraday_profile_v0_1/PHYSICAL_SCHEMA_CONTRACT.json",
+    "restriction_domain_binding": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_restriction_domain_binding_clarification_v0_1.json",
+    "sidecar_contract": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_contract_v0_1.json",
+    "sidecar_manifest": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_manifest_v0_1.json",
+    "state_bundle_manifest": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_bundle_manifest_v0_1.json",
+    "temporal_legality_report": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/market_state_temporal_legality_report.json",
+    "timestamp_contract": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_timestamp_contract_v0_1.json"
+  },
+  "restriction_domain_binding_id": "market_state_restriction_domain_binding_clarification_v0_1",
+  "restriction_domain_binding_sha256": "b3ebace6fab7cb0a690be165f0a1706a5906dc7a729488fa1139af00c02e53a9",
+  "run_directory": "runs/bt_gate_014_single_use_physical_market_state_consumer_v0_5",
+  "run_id": "bt_gate_014_single_use_physical_market_state_consumer_v0_5",
+  "strategy": "NONE"
+}

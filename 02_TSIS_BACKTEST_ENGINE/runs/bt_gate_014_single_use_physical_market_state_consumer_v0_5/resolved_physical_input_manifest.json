@@ -1,0 +1,80 @@
+{
+  "adopted_evidence_sha256": {
+    "nested_provider_evidence": "8f3d914becb3bc6d33f66814b355f636827db8cac67ea483fe9c6840b4fa16c7",
+    "outer_provider_handoff": "2c578ce9216bb3fd9010ef1f4afe8ba4022ab6b15f665d276a957f50acb35112"
+  },
+  "inputs": {
+    "binding": {
+      "hash_before_after_match": true,
+      "relative_path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_scale_validation_physical_schema_binding_v0_1.json",
+      "sha256_after": "4006e80f099bb8abec147e33670294d7cc2eb565d25a10a08d6bf929c247f083",
+      "sha256_before": "4006e80f099bb8abec147e33670294d7cc2eb565d25a10a08d6bf929c247f083",
+      "size_bytes": 4719
+    },
+    "candidate_parquet": {
+      "hash_before_after_match": true,
+      "relative_path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/market_state_scale_validation_candidate_v0_1.parquet",
+      "sha256_after": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68",
+      "sha256_before": "bc033cb2cd518728dc34b545df4b224badb9226130220010a25ae55701577d68",
+      "size_bytes": 98477
+    },
+    "lineage_manifest": {
+      "hash_before_after_match": true,
+      "relative_path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/lineage_manifest.json",
+      "sha256_after": "85e7331b1b022d4075608bc4b8663de53dcb6234f21215ff232ad84c85cd4c52",
+      "sha256_before": "85e7331b1b022d4075608bc4b8663de53dcb6234f21215ff232ad84c85cd4c52",
+      "size_bytes": 107169
+    },
+    "physical_schema_contract": {
+      "hash_before_after_match": true,
+      "relative_path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/official_profiles/market_state_core_four_intraday_profile_v0_1/PHYSICAL_SCHEMA_CONTRACT.json",
+      "sha256_after": "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b",
+      "sha256_before": "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b",
+      "size_bytes": 5232
+    },
+    "restriction_domain_binding": {
+      "hash_before_after_match": true,
+      "relative_path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_restriction_domain_binding_clarification_v0_1.json",
+      "sha256_after": "b3ebace6fab7cb0a690be165f0a1706a5906dc7a729488fa1139af00c02e53a9",
+      "sha256_before": "b3ebace6fab7cb0a690be165f0a1706a5906dc7a729488fa1139af00c02e53a9",
+      "size_bytes": 7364
+    },
+    "sidecar_contract": {
+      "hash_before_after_match": true,
+      "relative_path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_contract_v0_1.json",
+      "sha256_after": "a29f656a6fe741432c7272d6715637eeb49fd5d34ca550c3ac0f33166bc1b169",
+      "sha256_before": "a29f656a6fe741432c7272d6715637eeb49fd5d34ca550c3ac0f33166bc1b169",
+      "size_bytes": 11696
+    },
+    "sidecar_manifest": {
+      "hash_before_after_match": true,
+      "relative_path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_manifest_v0_1.json",
+      "sha256_after": "8e426b09bb1cafac26e49c7a81de31ef4ea60ca3b56ac3aa766ba13a0772c5ac",
+      "sha256_before": "8e426b09bb1cafac26e49c7a81de31ef4ea60ca3b56ac3aa766ba13a0772c5ac",
+      "size_bytes": 464137
+    },
+    "state_bundle_manifest": {
+      "hash_before_after_match": true,
+      "relative_path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runtime_user_invocation_bounded_interface_execution_regression_v0_1_2_state_bundle_manifest_v0_1.json",
+      "sha256_after": "0845642ba80fac75f0094bccd370db71157da2759cad7807885b2928d2d49ab0",
+      "sha256_before": "0845642ba80fac75f0094bccd370db71157da2759cad7807885b2928d2d49ab0",
+      "size_bytes": 15521
+    },
+    "temporal_legality_report": {
+      "hash_before_after_match": true,
+      "relative_path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/market_state_on_demand_scale_validation_v0_1_20260727T133641Z/market_state_temporal_legality_report.json",
+      "sha256_after": "0eb607a4286dd3d4819f9aeb8da0eb21a18955a269b87e001f8f672378c44c70",
+      "sha256_before": "0eb607a4286dd3d4819f9aeb8da0eb21a18955a269b87e001f8f672378c44c70",
+      "size_bytes": 23
+    },
+    "timestamp_contract": {
+      "hash_before_after_match": true,
+      "relative_path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_timestamp_contract_v0_1.json",
+      "sha256_after": "eae02c685f7bc2cc8b55e6e3bb4a6912dc3b391042c0178b3dc29387fa6b690d",
+      "sha256_before": "eae02c685f7bc2cc8b55e6e3bb4a6912dc3b391042c0178b3dc29387fa6b690d",
+      "size_bytes": 11334
+    }
+  },
+  "physical_input_count": 9,
+  "provider_modification": false
+}

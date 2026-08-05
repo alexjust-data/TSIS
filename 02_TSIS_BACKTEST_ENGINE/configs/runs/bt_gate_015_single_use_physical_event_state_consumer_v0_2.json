@@ -1,0 +1,77 @@
+{
+  "run_id": "bt_gate_015_single_use_physical_event_state_consumer_v0_2",
+  "authorization_id": "bt_gate_015_single_use_physical_event_state_consumer_v0_2",
+  "gate": "BT-GATE-015",
+  "contract_id": "20_BT_GATE_015_POINT_IN_TIME_EVENT_STATE_CONSUMER_CONTRACT_V0_1",
+  "single_use": true,
+  "intent": "bounded_physical_read_and_replay",
+  "consumer_type": "bounded_event_state_consumer",
+  "strategy": "bounded_probe",
+  "allow_trading": false,
+  "order_entry_enabled": false,
+  "order_fill_enabled": false,
+  "pnl_enabled": false,
+  "event_state_scope": {
+    "event_type_id": "event_type:market_data:session_opened",
+    "window_definition_id": "session_opened_at_anchor_context_v0_1",
+    "profile_id": "event_state_core_four_intraday_profile_v0_1",
+    "instrument_ticker": "AAME",
+    "exchange": "XNYS",
+    "exchange_session_date": "2021-01-19",
+    "symbol_sessions": [
+      "AAME|XNYS|2021-01-19"
+    ]
+  },
+  "input_bindings": {
+    "provider_handoff": {
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/event_state_session_opened_bt_gate_015_contract_handoff_v0_1_20260731T064518Z.zip",
+      "sha256": "b7a4783d0ab64ffaf37fbfdf2ee76dffacbe9b14cf3f059891908c87116369b2"
+    },
+    "provider_completion_handoff": {
+      "path": "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/event_state_session_opened_bt_gate_015_provider_completion_v0_1_20260731T071317Z.zip",
+      "sha256": "3a6bf3ca04c0428a1728e1719cd6aeaea6bfaef43e12fb83939dde3cb6cb85d9"
+    },
+    "candidate_row_file": {
+      "path": "event_state_candidate_records.jsonl",
+      "sha256": "ed975ad7d7a3e0ac68bd7dfe2c91743c86931a545162a4440d270cbb689477dd",
+      "record_id": "e71cad82e71783bbc50ebb8df1e44e2f9118dd4843c3cb4f0fbf2ee5a2a8ca76",
+      "record_fingerprint": "31f1463baf0dc8f0dba3bc130c0bb1d61092897595849df57abc6b1023853a01"
+    },
+    "sidecar_schema_file": {
+      "path": "event_state_session_opened_replay_availability_sidecar_contract_v0_1.json",
+      "sha256": "7d814dcb50fdd9b0da604e4f443497f3b733082070ccc2ed8ff89293e773ad77"
+    },
+    "payload_binding_file": {
+      "path": "market_state_core_four_replay_typed_payload_binding_v0_1.json",
+      "sha256": "320fc3e9dfb532aad0e12a48af6117d50a214642b2b827a4628265808d4d3d43",
+      "field_count": 17
+    }
+  },
+  "boundaries": {
+    "max_physical_files_to_open": 1,
+    "max_physical_rows_to_read": 1,
+    "max_events_to_emit": 2,
+    "market_state_dependency_required": true,
+    "strict_ordering_required": true
+  },
+  "temporal_contract": {
+    "event_instance_available_at_utc_required": true,
+    "window_binding_available_at_utc_required": true,
+    "instrument_projection_available_at_utc_required": true,
+    "market_state_available_at_utc_required": true,
+    "state_available_at_utc_rule": "max(event_instance_available_at_utc, window_binding_available_at_utc, instrument_projection_available_at_utc, market_state_available_at_utc)"
+  },
+  "expected": {
+    "events_emitted": 2,
+    "market_state_events_emitted": 2,
+    "event_state_events_emitted": 2,
+    "store_inserts": 2,
+    "orders": 0,
+    "fills": 0
+  },
+  "status": "DRAFT_NOT_AUTHORIZED_PENDING_PREEXECUTION_REVIEW",
+  "created_utc": "2026-07-31T00:00:00Z",
+  "execution_authorized": false,
+  "candidate_only": true,
+  "preexecution_review": "NOT_EXECUTED"
+}

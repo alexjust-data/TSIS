@@ -1,0 +1,16 @@
+[
+  {
+    "action": "INSERT",
+    "clock_utc": "2021-03-15T13:30:00Z",
+    "materialized_state_candidate_id": "f09492ac417d05161f70ee75f81e345a9cc315cef9beb9939d2df6ff3eb58dd3",
+    "sequence": 0,
+    "status": "PASS"
+  },
+  {
+    "action": "INSERT",
+    "clock_utc": "2021-03-15T20:00:00Z",
+    "materialized_state_candidate_id": "26d923a282355ad242a5d91ad7d6183bed6a94842041ecf966ac70c366308c0e",
+    "sequence": 1,
+    "status": "PASS"
+  }
+]

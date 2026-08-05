@@ -1,19 +1,24 @@
 # Governance Validation Report
 
 status: PASS
-validation_date: 2026-07-30
+validation_date: 2026-08-05
 
 ```text
-BT-GATE-014 = OPEN_CONTRACT_CORRECTION_REQUIRED
-V0.3 = CONSUMED_FAILED_FINAL
-V0.4 = CONSUMED_FAILED_FINAL
-V0.4 physical progress = 1 file / 2 rows
-V0.4 error = FAIL_MARKET_STATE_RESTRICTION_PROPAGATION
-V0.4 events / store / orders / fills / PnL = 0 / 0 / 0 / 0 / false
-SECOND_EXECUTION_V0.4 = PROHIBITED
-NEW_SINGLE_USE_AUTHORIZATION = NOT_AUTHORIZED
-BT-GATE-014_CLOSED_PASS = NOT_AUTHORIZED
-Governance controlled hashes = 50/50 PASS
+BT-GATE-014 = CLOSED_PASS_POINT_IN_TIME_MARKET_STATE_CONSUMPTION_WITH_RESTRICTIONS
+BT-GATE-014 V0.5 = CONSUMED_FINAL
+SECOND_EXECUTION_BT_GATE_014_V0.5 = PROHIBITED
+
+BT-GATE-015 = NON_PHYSICAL_IMPLEMENTATION_ACCEPTED_PENDING_SINGLE_USE_PHYSICAL_AUTHORIZATION
+BT-GATE-015_IMPLEMENTATION = ACCEPTED_NON_PHYSICAL_ONLY
+BT_GATE_015_NON_PHYSICAL_EXTERNAL_REVIEW = PASS
+EVENT_STATE_PHYSICAL_READ = NOT_AUTHORIZED
+SINGLE_USE_PHYSICAL_AUTHORIZATION = NOT_AUTHORIZED
+PHYSICAL_STATE_ROWS_READ_BY_BACKTESTER = 0
+BT-GATE-015_CLOSED_PASS = NOT_AUTHORIZED
+
+Governance controlled hashes = 130/130 PASS
 ```
 
-The V0.4 diagnostic proves that physical-row design/provenance restrictions and sidecar bounded-consumption restrictions are distinct domains. Contract correction is required before another authorization.
+The next permitted work is preparation and independent pre-execution review of
+one bounded single-use physical authorization candidate. No physical Event
+State command is authorized by this report.

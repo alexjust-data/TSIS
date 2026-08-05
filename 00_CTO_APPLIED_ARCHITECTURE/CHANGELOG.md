@@ -1,3 +1,21 @@
+## 2026-08-05 - BT-GATE-015 non-physical acceptance adopted
+
+- Recorded that the backtester owner and non-physical external reviews passed.
+- Kept the provider gate closed and the bounded Event State physical consumer read unauthorized.
+- Assigned the next work to the backtester single-use authorization and pre-execution review lane.
+- Produced no new provider evidence and performed no additional physical read.
+
+## 2026-07-31 - Event State replay availability and typed payload completion
+
+- Produced one row-addressable `session_opened` replay-availability sidecar for AAME/XNYS/2021-01-19.
+- Bound the exact on-demand Event State identity to the governed Market State replay sidecar using row ID and fingerprint equivalence.
+- Froze the 17-field typed core-four scientific payload separately from the 38-field Event State envelope.
+- Kept BT-GATE-015 implementation and physical consumer reads unauthorized pending backtester contract revision and owner review.
+## 2026-07-31 - Event State `session_opened` BT-GATE-015 contract handoff
+
+- Froze one exact bounded `AAME` / `XNYS` / `2021-01-19` Event State identity chain for BT-GATE-015 contract drafting.
+- Added an executable replay-availability contract and a 36-case provider-only validation matrix without physical reads or backtester changes.
+- Kept implementation and physical consumption closed pending row-addressable `event_state_available_at_utc` evidence.
 ## 2026-07-30 - Market State restriction-domain binding clarification
 
 - Closed `market_state_restriction_domain_binding_clarification_v0_1` with

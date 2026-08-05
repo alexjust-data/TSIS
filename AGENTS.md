@@ -50,11 +50,11 @@ Todo agente debe comportarse como si el repositorio fuera su unica memoria fiabl
 
 ---
 
-## 1.1 Nota humana de arranque
+## 1.1 Punto de arranque vigente
 
-`START_HERE.md` es la primera nota operativa que debe leer el humano al abrir TSIS.
+`README.md` es la primera nota humana de orientacion al abrir TSIS.
 
-No sustituye este contrato. Todo agente debe seguir obedeciendo el orden de lectura obligatorio definido en este documento y en los contratos locales aplicables.
+No sustituye este contrato. Todo agente debe leer `AGENTS.md`, seguir el orden de lectura obligatorio definido aqui y aplicar los contratos locales del modulo en el que trabaja.
 
 ---
 

@@ -1,0 +1,73 @@
+{
+  "adoption_id": "BT_GATE_015_EVENT_STATE_PROVIDER_COMPLETION_ADOPTION_V0_1",
+  "adoption_status": "ACCEPTED_FOR_CORRECTED_CONTRACT_OWNER_REVIEW",
+  "consumer_layer": "02_TSIS_BACKTEST_ENGINE",
+  "gate_id": "BT-GATE-015",
+  "gate_status": "NOT_OPEN",
+  "contract_status": "CONTRACT_CORRECTED_PENDING_FINAL_OWNER_CONFIRMATION",
+  "implementation_status": "NOT_AUTHORIZED",
+  "physical_read_status": "NOT_AUTHORIZED",
+  "provider_completion": {
+    "package_id": "event_state_session_opened_bt_gate_015_provider_completion_v0_1",
+    "zip_name": "event_state_session_opened_bt_gate_015_provider_completion_v0_1_20260731T071317Z.zip",
+    "zip_sha256": "3a6bf3ca04c0428a1728e1719cd6aeaea6bfaef43e12fb83939dde3cb6cb85d9",
+    "zip_entries": 33,
+    "manifest_artifacts": 32,
+    "validation": "52/52 PASS",
+    "parquet_files_included": 0,
+    "candidate_records_included": 0,
+    "backtester_files_included": 0
+  },
+  "frozen_runtime_identity": {
+    "event_type_id": "event_type:market_data:session_opened",
+    "profile_id": "event_state_core_four_intraday_profile_v0_1",
+    "exchange_id": "XNYS",
+    "session_date": "2021-01-19",
+    "ticker": "AAME",
+    "instrument_id": "figi_share_class:BBG001S5N8T1",
+    "event_state_record_id": "e71cad82e71783bbc50ebb8df1e44e2f9118dd4843c3cb4f0fbf2ee5a2a8ca76",
+    "event_state_record_fingerprint": "31f1463baf0dc8f0dba3bc130c0bb1d61092897595849df57abc6b1023853a01",
+    "event_instance_id": "3d5afb67c49949b7db5ab85ef4a230e36282c36d1086eaa42e3dfdc90279ff63",
+    "event_window_binding_id": "0c4f1090ea7caf55d888d1601914af90357f4aa828474b78df1e01e22ca7479d",
+    "instrument_projection_id": "718b8df0b5ae8fdc547b06c73299cc037ef7f964bfad1682b2304d6698ff41f7",
+    "market_state_record_id": "ba92895493bdc05e2ad07b78b1491f1b62d74d1079869b58c3df95cefdc622ee",
+    "market_state_state_output_fingerprint": "9430c9903b6172c9183e8cce264bfdfcb0da83d391becc05eb7ef56f11509685"
+  },
+  "temporal_binding": {
+    "event_state_as_of_utc": "2021-01-19T14:30:00Z",
+    "event_state_available_at_utc": "2021-01-19T14:30:00Z",
+    "event_state_publication_latency": "PT0S",
+    "state_replay_consumption_legality": "research_only"
+  },
+  "typed_payload_binding": {
+    "source_field": "source_market_state_value_snapshot_json",
+    "scientific_field_count": 17,
+    "price_location_structure_fields": 5,
+    "price_movement_fields": 5,
+    "trading_activity_fields": 4,
+    "volatility_range_state_fields": 3,
+    "additional_properties": false
+  },
+  "closed_blockers": [
+    "EVENT_STATE_REPLAY_AVAILABILITY_EVIDENCE",
+    "EVENT_STATE_TYPED_SCIENTIFIC_PAYLOAD_BINDING"
+  ],
+  "next_required_action": "OWNER_REVIEW_OF_CORRECTED_BT_GATE_015_CONTRACT",
+  "prohibitions": [
+    "Event State physical read",
+    "Market State physical read",
+    "StateReplayFeed",
+    "provider modification",
+    "consumer implementation before owner authorization",
+    "strategy, orders, fills or PnL",
+    "production or downstream"
+  ],
+  "adoption_date": "2026-07-31",
+  "provider_evidence_execution": {
+    "candidate_files_opened": 1,
+    "candidate_rows_scanned": 8,
+    "candidate_rows_selected": 1,
+    "market_state_parquet_opened": false,
+    "backtester_consumer_rows_read": 0
+  }
+}

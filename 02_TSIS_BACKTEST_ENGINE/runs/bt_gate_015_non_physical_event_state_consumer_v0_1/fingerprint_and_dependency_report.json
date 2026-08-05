@@ -1,0 +1,17 @@
+{
+  "fingerprint_policy_id": "BT_GATE_015_SYNTHETIC_EVENT_STATE_CANONICAL_ROW_SHA256_V0_1",
+  "market_state_cross_dataset_binding": "EXACT_ROW_ID_AND_FINGERPRINT_EQUIVALENCE",
+  "status": "PASS",
+  "synthetic_fingerprint_recomputed": true,
+  "validated_market_state_dependency": {
+    "event_state_declared_fingerprint": "113de829c069306aec0480e9ce3300a58b4a145c6d2968dbc465db839f49dfdd",
+    "event_state_declared_record_id": "b87415c19eef9eb94af6b7d20cec53a2a878aa17713814b8d2edcbb112f76416",
+    "fingerprint_match": true,
+    "identity_match": true,
+    "materialized_state_candidate_id": "b87415c19eef9eb94af6b7d20cec53a2a878aa17713814b8d2edcbb112f76416",
+    "payload_match": true,
+    "payload_sha256": "a3392196da34124dc0563e489cd9e60965a0b9980ed00d5f6e9e76ebd63fa41b",
+    "state_output_fingerprint": "113de829c069306aec0480e9ce3300a58b4a145c6d2968dbc465db839f49dfdd",
+    "validated_event_type": "BoundedMarketStateAvailable"
+  }
+}

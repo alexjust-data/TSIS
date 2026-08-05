@@ -1,0 +1,392 @@
+{
+  "gate": "event_state_session_opened_replay_availability_evidence_sidecar_v0_1",
+  "status": "PASS",
+  "case_count": 52,
+  "failed_cases": 0,
+  "physical_files_opened": 1,
+  "candidate_rows_scanned": 8,
+  "candidate_rows_selected": 1,
+  "market_state_parquet_opened": false,
+  "backtester_files_modified": 0,
+  "bt_gate_015_implementation_authorized": false,
+  "cases": [
+    {
+      "case_id": "SCHEMA_draft_2020_12_valid",
+      "status": "PASS",
+      "observed": []
+    },
+    {
+      "case_id": "AUTH_single_use_consumed",
+      "status": "PASS",
+      "observed": "CONSUMED_FINAL"
+    },
+    {
+      "case_id": "AUTH_second_use_prohibited",
+      "status": "PASS",
+      "observed": false
+    },
+    {
+      "case_id": "AUTH_one_file_opened",
+      "status": "PASS",
+      "observed": 1
+    },
+    {
+      "case_id": "AUTH_one_row_selected",
+      "status": "PASS",
+      "observed": 1
+    },
+    {
+      "case_id": "AUTH_candidate_hash_stable",
+      "status": "PASS",
+      "observed": "ed975ad7d7a3e0ac68bd7dfe2c91743c86931a545162a4440d270cbb689477dd"
+    },
+    {
+      "case_id": "AUTH_record_fingerprint_recomputed",
+      "status": "PASS",
+      "observed": true
+    },
+    {
+      "case_id": "BIND_event_record_id",
+      "status": "PASS",
+      "observed": "e71cad82e71783bbc50ebb8df1e44e2f9118dd4843c3cb4f0fbf2ee5a2a8ca76"
+    },
+    {
+      "case_id": "BIND_event_record_fingerprint",
+      "status": "PASS",
+      "observed": "31f1463baf0dc8f0dba3bc130c0bb1d61092897595849df57abc6b1023853a01"
+    },
+    {
+      "case_id": "BIND_event_instance",
+      "status": "PASS",
+      "observed": "3d5afb67c49949b7db5ab85ef4a230e36282c36d1086eaa42e3dfdc90279ff63"
+    },
+    {
+      "case_id": "BIND_window",
+      "status": "PASS",
+      "observed": "0c4f1090ea7caf55d888d1601914af90357f4aa828474b78df1e01e22ca7479d"
+    },
+    {
+      "case_id": "BIND_projection",
+      "status": "PASS",
+      "observed": "718b8df0b5ae8fdc547b06c73299cc037ef7f964bfad1682b2304d6698ff41f7"
+    },
+    {
+      "case_id": "BIND_market_state_id",
+      "status": "PASS",
+      "observed": "ba92895493bdc05e2ad07b78b1491f1b62d74d1079869b58c3df95cefdc622ee"
+    },
+    {
+      "case_id": "BIND_market_state_fingerprint",
+      "status": "PASS",
+      "observed": "9430c9903b6172c9183e8cce264bfdfcb0da83d391becc05eb7ef56f11509685"
+    },
+    {
+      "case_id": "BIND_market_state_dependency_dataset",
+      "status": "PASS",
+      "observed": "433288b634924676a3c516fac600574ed36237c3c02ca640111f17609b6c235b"
+    },
+    {
+      "case_id": "BIND_market_state_availability_dataset",
+      "status": "PASS",
+      "observed": "516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416"
+    },
+    {
+      "case_id": "BIND_cross_dataset_row_equivalence",
+      "status": "PASS",
+      "observed": "EXACT_ROW_ID_AND_FINGERPRINT_EQUIVALENCE"
+    },
+    {
+      "case_id": "BIND_context",
+      "status": "PASS",
+      "observed": {
+        "instrument_id": "figi_share_class:BBG001S5N8T1",
+        "ticker": "AAME",
+        "exchange_id": "XNYS",
+        "session_date": "2021-01-19"
+      }
+    },
+    {
+      "case_id": "TIME_as_of_formula",
+      "status": "PASS",
+      "observed": {
+        "inputs": [
+          "2021-01-19T14:30:00Z",
+          "2021-01-19T14:30:00Z",
+          "2021-01-19T14:30:00Z",
+          "2021-01-19T14:30:00Z"
+        ],
+        "result": "2021-01-19T14:30:00Z"
+      }
+    },
+    {
+      "case_id": "TIME_available_at_formula",
+      "status": "PASS",
+      "observed": {
+        "inputs": [
+          "2021-01-19T14:30:00Z",
+          "2021-01-19T14:30:00Z",
+          "2021-01-19T14:30:00Z",
+          "2021-01-19T14:30:00Z"
+        ],
+        "result": "2021-01-19T14:30:00Z",
+        "latency": "PT0S"
+      }
+    },
+    {
+      "case_id": "TIME_anchor_not_later_than_as_of",
+      "status": "PASS",
+      "observed": "2021-01-19T14:30:00Z"
+    },
+    {
+      "case_id": "TIME_as_of_not_later_than_available",
+      "status": "PASS",
+      "observed": "2021-01-19T14:30:00Z"
+    },
+    {
+      "case_id": "TIME_created_at_excluded",
+      "status": "PASS",
+      "observed": {
+        "available_at": "2021-01-19T14:30:00Z",
+        "receipt_time": "2026-07-31T06:58:44Z"
+      }
+    },
+    {
+      "case_id": "TIME_delivery_rule",
+      "status": "PASS",
+      "observed": "event_loop.clock >= event_state_available_at_utc"
+    },
+    {
+      "case_id": "RESTRICT_provenance_preserved",
+      "status": "PASS",
+      "observed": [
+        "at_event_consumption_legality_research_only_until_field_legality_review",
+        "event_state_downstream_consumption_prohibited",
+        "event_state_on_demand_bounded_candidate_output_only",
+        "instrument_projection_from_authorized_scope_not_master_lifecycle_revalidated",
+        "source_market_state_official_dataset_false",
+        "source_market_state_restrictions_preserved",
+        "source_market_state_runtime_candidate_reuse_bounded_exact_match"
+      ]
+    },
+    {
+      "case_id": "RESTRICT_replay_required",
+      "status": "PASS",
+      "observed": [
+        "candidate_runtime_only",
+        "no_downstream",
+        "no_production",
+        "not_official_dataset",
+        "research_only"
+      ]
+    },
+    {
+      "case_id": "RESTRICT_domains_separate",
+      "status": "PASS",
+      "observed": {
+        "provenance": 7,
+        "replay": 5
+      }
+    },
+    {
+      "case_id": "BOUNDARY_research_only",
+      "status": "PASS",
+      "observed": "research_only"
+    },
+    {
+      "case_id": "BOUNDARY_no_bt_implementation",
+      "status": "PASS",
+      "observed": {
+        "open_market_state_parquet": true,
+        "open_other_event_state_candidate_files": true,
+        "select_more_than_one_event_state_record": true,
+        "modify_provider_runtime": true,
+        "modify_backtester": true,
+        "authorize_bt_gate_015_implementation": true,
+        "authorize_event_state_physical_consumption": true,
+        "production": true,
+        "downstream": true
+      }
+    },
+    {
+      "case_id": "BOUNDARY_no_physical_consumption",
+      "status": "PASS",
+      "observed": {
+        "open_market_state_parquet": true,
+        "open_other_event_state_candidate_files": true,
+        "select_more_than_one_event_state_record": true,
+        "modify_provider_runtime": true,
+        "modify_backtester": true,
+        "authorize_bt_gate_015_implementation": true,
+        "authorize_event_state_physical_consumption": true,
+        "production": true,
+        "downstream": true
+      }
+    },
+    {
+      "case_id": "BOUNDARY_no_market_parquet",
+      "status": "PASS",
+      "observed": false
+    },
+    {
+      "case_id": "BOUNDARY_no_backtester_change",
+      "status": "PASS",
+      "observed": false
+    },
+    {
+      "case_id": "SOURCE_event_run_pass",
+      "status": "PASS",
+      "observed": "CLOSED_PASS_EVENT_STATE_ON_DEMAND_BOUNDED_EXECUTION_WITH_RESTRICTIONS_PARTIAL_CANDIDATE_REGISTERED"
+    },
+    {
+      "case_id": "SOURCE_validation_pass",
+      "status": "PASS",
+      "observed": "pass_with_restrictions"
+    },
+    {
+      "case_id": "PAYLOAD_event_schema_hash",
+      "status": "PASS",
+      "observed": "e68be24763c4320419f7f2216a3560dc94ce36f02b293fdf2dad2ea88bba9515"
+    },
+    {
+      "case_id": "PAYLOAD_market_schema_hash",
+      "status": "PASS",
+      "observed": "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b"
+    },
+    {
+      "case_id": "PAYLOAD_event_envelope_38",
+      "status": "PASS",
+      "observed": 38
+    },
+    {
+      "case_id": "PAYLOAD_market_schema_40",
+      "status": "PASS",
+      "observed": 40
+    },
+    {
+      "case_id": "PAYLOAD_exact_17_fields",
+      "status": "PASS",
+      "observed": 17
+    },
+    {
+      "case_id": "PAYLOAD_observed_snapshot_present",
+      "status": "PASS",
+      "observed": true
+    },
+    {
+      "case_id": "PAYLOAD_observed_fields_exact",
+      "status": "PASS",
+      "observed": [
+        "price_location_structure__daily_open_price",
+        "price_location_structure__daily_prior_close",
+        "price_location_structure__intraday_bar_close_price",
+        "price_location_structure__intraday_return_vs_prior_close_ratio_as_location",
+        "price_location_structure__intraday_return_vs_session_open_ratio_as_location",
+        "price_movement__daily_gap_pct",
+        "price_movement__daily_prior_close",
+        "price_movement__intraday_bar_close_price",
+        "price_movement__intraday_return_vs_prior_close_ratio",
+        "price_movement__intraday_return_vs_session_open_ratio",
+        "trading_activity__daily_volume_20d_avg",
+        "trading_activity__intraday_bar_volume",
+        "trading_activity__intraday_session_volume_to_time",
+        "trading_activity__session_volume_to_time_over_prior_20_full_session_volume_mean",
+        "volatility_range_state__intraday_high_so_far",
+        "volatility_range_state__intraday_low_so_far",
+        "volatility_range_state__intraday_range_so_far_ratio"
+      ]
+    },
+    {
+      "case_id": "PAYLOAD_all_fields_governed_double",
+      "status": "PASS",
+      "observed": [
+        "price_location_structure__daily_open_price",
+        "price_location_structure__daily_prior_close",
+        "price_location_structure__intraday_bar_close_price",
+        "price_location_structure__intraday_return_vs_prior_close_ratio_as_location",
+        "price_location_structure__intraday_return_vs_session_open_ratio_as_location",
+        "price_movement__daily_gap_pct",
+        "price_movement__daily_prior_close",
+        "price_movement__intraday_bar_close_price",
+        "price_movement__intraday_return_vs_prior_close_ratio",
+        "price_movement__intraday_return_vs_session_open_ratio",
+        "trading_activity__daily_volume_20d_avg",
+        "trading_activity__intraday_bar_volume",
+        "trading_activity__intraday_session_volume_to_time",
+        "trading_activity__session_volume_to_time_over_prior_20_full_session_volume_mean",
+        "volatility_range_state__intraday_high_so_far",
+        "volatility_range_state__intraday_low_so_far",
+        "volatility_range_state__intraday_range_so_far_ratio"
+      ]
+    },
+    {
+      "case_id": "PAYLOAD_core_four_group_sizes",
+      "status": "PASS",
+      "observed": {
+        "price_location_structure": 5,
+        "price_movement": 5,
+        "trading_activity": 4,
+        "volatility_range_state": 3
+      }
+    },
+    {
+      "case_id": "PAYLOAD_no_unapproved_event_features",
+      "status": "PASS",
+      "observed": []
+    },
+    {
+      "case_id": "PAYLOAD_created_at_excluded",
+      "status": "PASS",
+      "observed": [
+        "identities",
+        "timestamps and replay availability",
+        "integration and quality statuses",
+        "policy versions",
+        "restriction codes",
+        "lineage",
+        "created_at_utc",
+        "supersession fields"
+      ]
+    },
+    {
+      "case_id": "PAYLOAD_positive_schema_fixture",
+      "status": "PASS",
+      "observed": 17
+    },
+    {
+      "case_id": "PAYLOAD_missing_field_rejected",
+      "status": "PASS",
+      "observed": "price_location_structure__daily_open_price"
+    },
+    {
+      "case_id": "PAYLOAD_extra_field_rejected",
+      "status": "PASS",
+      "observed": "unapproved_event_indicator"
+    },
+    {
+      "case_id": "SEMANTIC_positive_sidecar",
+      "status": "PASS",
+      "observed": []
+    },
+    {
+      "case_id": "NEG_market_state_id_mutation_rejected",
+      "status": "PASS",
+      "observed": [
+        "market_state_record_id_mismatch"
+      ]
+    },
+    {
+      "case_id": "NEG_early_available_at_rejected",
+      "status": "PASS",
+      "observed": [
+        "event_state_available_at_formula_mismatch"
+      ]
+    },
+    {
+      "case_id": "NEG_research_only_removal_rejected",
+      "status": "PASS",
+      "observed": [
+        "replay_restrictions_weakened"
+      ]
+    }
+  ]
+}

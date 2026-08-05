@@ -1,8 +1,8 @@
 # State Provider / Consumer Recovery
 
 Status: `current_recovery_authority_v0_1`
-As of: `2026-07-30`
-Scope: Market State, Event State, State Provider and BT-GATE-014 handoff
+As of: `2026-07-31`
+Scope: Market State, Event State, State Provider and bounded consumer handoffs
 
 This is the canonical cold-start entry for the current State
 provider-consumer boundary. It summarizes navigation and current authority; it
@@ -12,7 +12,7 @@ does not replace accepted contracts, manifests, matrices, readouts or packages.
 
 ```text
 Market State scope = core-four profile validated for the bounded path
-Event State scope = session_opened capability exists with restrictions
+Event State scope = session_opened bounded contract handoff prepared with restrictions
 State Provider control-plane = REFROZEN_AT_V0_1_2_WITH_RESTRICTIONS
 provider/shared-boundary PIT probe = CLOSED_PASS_WITH_RESTRICTIONS
 physical rows read by provider probe = 2
@@ -21,23 +21,22 @@ consumed provider authorization reusable = false
 BT-GATE-014 provider evidence handoff = COMPLETE
 backtester current-gate authority = 02_TSIS_BACKTEST_ENGINE/AGENTS.md
 backtester mutable status duplicated here = false
-Event State provider-to-consumer handoff = NOT_OPEN_AT_PROVIDER_HANDOFF
+Event State provider-to-consumer contract handoff = READY_WITH_RESTRICTIONS
+BT-GATE-015 contract and owner review = PASS
+BT-GATE-015 non-physical implementation = ACCEPTED_NON_PHYSICAL_ONLY
+BT-GATE-015 non-physical external review = PASS
+Event State physical read = NOT_AUTHORIZED
+single-use physical authorization = NOT_AUTHORIZED
+Event State row-addressable available-at evidence = CLOSED_PASS_WITH_RESTRICTIONS
+Event State typed payload binding = CLOSED_READY_WITH_RESTRICTIONS
 active provider gate = none
+next owner = BT-GATE-015 single-use physical authorization preparation and preexecution review
 restriction-domain clarification = CLOSED_PASS
-BT-GATE-014 V0.4 failure evidence = ACCEPTED_FAIL_CLOSED
-BT-GATE-014 next required work = consumer adoption of restriction-domain binding
 ```
 
-The provider probe proved exact physical selection, schema validation,
-fingerprint verification, one-to-one temporal sidecar binding and legal replay
-ordering. It did not prove that the backtester receives the 17 scientific
-core-four values in a typed consumer event.
-
-The later BT-GATE-014 V0.4 consumer probe opened one physical file and read two
-rows, then failed closed before event emission because the consumer compared
-two different restriction domains for equality. The shared boundary has now
-closed:
-
+The Market State provider probe and handoff remain accepted. Mutable backtester
+execution status is intentionally owned only by `02_TSIS_BACKTEST_ENGINE`.
+The shared boundary also closed:
 ```text
 market_state_restriction_domain_binding_clarification_v0_1
 =
@@ -52,7 +51,7 @@ replay_consumption_restriction_codes
 component_replay_restriction_codes
 ```
 
-V0.4 remains consumed and cannot be reused. No V0.5 authorization was issued.
+The provider completion handoff proves row-addressable `event_state_available_at_utc` for one exact on-demand `session_opened` record and freezes the 17-field typed core-four payload. BT-GATE-015 contract, owner review and non-physical implementation review have passed. Physical consumption remains unauthorized pending a separate single-use pre-execution review.
 
 ## Exact Accepted Evidence
 
@@ -135,9 +134,9 @@ For evidence-level verification, continue with:
 architecture. Its authority banner and section labels must be respected; it is
 not the single executable contract.
 
-## Next Owner and Work
+## Historical Snapshot - Superseded - BT-GATE-014 Next Owner and Work
 
-The next owner is the BT-GATE-014 backtester agent. Its immediate work is:
+This section records the completed BT-GATE-014 handoff and is not current authority. At that time, the next owner was the BT-GATE-014 backtester agent and its immediate work was:
 
 ```text
 adopt market_state_restriction_domain_binding_clarification_v0_1;
@@ -186,7 +185,7 @@ schema provenance/runtime content binding clarification.
 reuse of the consumed provider authorization;
 reuse of provider-side physical authority by any consumer;
 general StateReplayFeed or general backtest State consumption;
-Event State consumption;
+general or physical Event State consumption without a separate bounded authorization;
 strategy callbacks, orders, fills or PnL;
 Market State used as an execution price;
 official dataset promotion;
@@ -201,11 +200,11 @@ A new agent is correctly oriented only if it can state:
 provider v0.1.2 is accepted and frozen with restrictions;
 the provider PIT probe read two exact ACIU rows;
 the provider authorization is consumed and cannot be reused;
-the probe emitted temporal envelopes, not a typed 17-value consumer payload;
-BT-GATE-014 provider evidence handoff is complete;
-the backtester owns its current gate and reports it in its own AGENTS.md;
-Event State handoff was not opened by this provider work;
-the next owner is the backtester;
+the Market State provider probe emitted temporal envelopes and BT-GATE-014 is closed;
+the Event State contract, replay-availability sidecar and typed 17-value payload handoffs are complete;
+BT-GATE-015 contract owner review and non-physical external review passed;
+Event State physical consumer read and single-use authorization remain NOT_AUTHORIZED;
+the next owner is the BT-GATE-015 backtester authorization-preparation lane;
 active provider gate = none.
 ```
 

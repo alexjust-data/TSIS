@@ -1,0 +1,35 @@
+/.gitattributes text eol=lf
+# Deterministic text bytes for governed backtester/provider manifests.
+/README.md text eol=lf
+/AGENTS.md text eol=lf
+/00_CTO/14_BACKTEST_ENGINE/**/*.md text eol=lf
+/00_CTO/14_BACKTEST_ENGINE/**/*.json text eol=lf
+/00_CTO/14_BACKTEST_ENGINE/**/*.py text eol=lf
+/00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/**/*.md text eol=lf
+/00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/**/*.json text eol=lf
+/00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/**/*.py text eol=lf
+/02_TSIS_BACKTEST_ENGINE/**/*.md text eol=lf
+/02_TSIS_BACKTEST_ENGINE/**/*.json text eol=lf
+/02_TSIS_BACKTEST_ENGINE/**/*.py text eol=lf
+/02_TSIS_BACKTEST_ENGINE/evidence/provider_handoffs/bt_gate_015/BT_GATE_015_OWNER_REVIEW_CORRECTION_DIFF.md -whitespace
+# Historical byte-bound authorities retained exactly.
+/00_CTO/14_BACKTEST_ENGINE/01_GUIDE/01_DATA.md -text -whitespace
+/00_CTO/14_BACKTEST_ENGINE/01_GUIDE/02_REPLAY.md -text -whitespace
+/00_CTO/14_BACKTEST_ENGINE/01_GUIDE/03_MECHANICAL_TRADE_PATH.md -text -whitespace
+/00_CTO/14_BACKTEST_ENGINE/07_EXCEPTIONS/EXCEPTION_AND_WAIVER_REGISTER.json -text -whitespace
+/00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_3.md -text -whitespace
+/00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/GOVERNANCE_UPDATE_PROTOCOL.md -text -whitespace
+/00_CTO/14_BACKTEST_ENGINE/11_HISTORICAL_SNAPSHOTS/2026-07-28_PRE_GOVERNANCE_ROOT/AGENT_HISTORICAL.md -text -whitespace
+/00_CTO/14_BACKTEST_ENGINE/11_HISTORICAL_SNAPSHOTS/2026-07-28_PRE_GOVERNANCE_ROOT/CHANGELOG_HISTORY_SOURCE.md -text -whitespace
+/00_CTO/14_BACKTEST_ENGINE/11_HISTORICAL_SNAPSHOTS/2026-07-28_PRE_GOVERNANCE_ROOT/LOCAL_RULES_HISTORICAL.md -text -whitespace
+/00_CTO/14_BACKTEST_ENGINE/11_HISTORICAL_SNAPSHOTS/2026-07-28_PRE_GOVERNANCE_ROOT/README_HISTORICAL.md -text -whitespace
+/02_TSIS_BACKTEST_ENGINE/REPRODUCE_BT_GATE_015_V0_3.md -text -whitespace
+/02_TSIS_BACKTEST_ENGINE/RUN_BT_GATE_014_V0_5_PREEXECUTION_TESTS.py -text -whitespace
+/02_TSIS_BACKTEST_ENGINE/docs/00_system/22_BT_GATE_015_NON_PHYSICAL_IMPLEMENTATION_REVIEW_PACKET_V0_3.md text eol=crlf
+/02_TSIS_BACKTEST_ENGINE/evidence/provider_handoffs/bt_gate_015/owner_review_correction_report_v0_1.json -text -whitespace
+/02_TSIS_BACKTEST_ENGINE/evidence/provider_handoffs/bt_gate_015/provider_completion_adoption_record_v0_1.json -text -whitespace
+/02_TSIS_BACKTEST_ENGINE/evidence/provider_handoffs/bt_gate_015/provider_handoff_adoption_record_v0_1.json -text -whitespace
+/02_TSIS_BACKTEST_ENGINE/src/tsis_backtest/event_state/acceptance.py -text -whitespace
+/02_TSIS_BACKTEST_ENGINE/src/tsis_backtest/market_state/physical_runner_v0_4.py -text -whitespace
+/02_TSIS_BACKTEST_ENGINE/src/tsis_backtest/market_state/physical_runner_v0_5.py -text -whitespace
+/02_TSIS_BACKTEST_ENGINE/src/tsis_backtest/replay/state_ordering.py -text -whitespace

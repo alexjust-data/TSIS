@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tsis.local/contracts/event_state_session_opened_typed_payload_binding_v0_1.json",
+  "binding_id": "event_state_session_opened_typed_payload_binding_v0_1",
+  "status": "CLOSED_BINDING_READY_WITH_RESTRICTIONS",
+  "event_state_profile_id": "event_state_core_four_intraday_profile_v0_1",
+  "event_type_id": "event_type:market_data:session_opened",
+  "subject_scope": "exchange_session",
+  "source_event_state_schema": {
+    "path": "07_EVENT_STATE_INTEGRATION/official_profiles/event_state_core_four_intraday_profile_v0_1/EVENT_STATE_SCHEMA_CONTRACT.json",
+    "sha256": "e68be24763c4320419f7f2216a3560dc94ce36f02b293fdf2dad2ea88bba9515",
+    "field_count": 38,
+    "role": "physical envelope and lineage authority"
+  },
+  "source_market_state_schema": {
+    "path": "06_MARKET_STATE_INTEGRATION/official_profiles/market_state_core_four_intraday_profile_v0_1/PHYSICAL_SCHEMA_CONTRACT.json",
+    "sha256": "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b",
+    "column_count": 40,
+    "scientific_field_count": 17,
+    "role": "typed core-four scientific payload authority"
+  },
+  "consumer_event_contract": {
+    "event_name": "BoundedEventStateAvailable",
+    "structure": [
+      "envelope",
+      "event_context",
+      "market_state_core_four_payload",
+      "audit_lineage"
+    ],
+    "payload_source_field": "source_market_state_value_snapshot_json",
+    "payload_source_encoding": "JSON object serialized as UTF-8 string in candidate record",
+    "consumer_decoding": "parse once into a closed typed object; preserve original bytes/hash in audit lineage"
+  },
+  "event_context_fields": [
+    {"name": "event_type_id", "type": "string"},
+    {"name": "event_family_id", "type": "string"},
+    {"name": "event_instance_id", "type": "string"},
+    {"name": "event_window_binding_id", "type": "string"},
+    {"name": "event_state_instrument_session_projection_id", "type": "string"},
+    {"name": "event_anchor_timestamp_utc", "type": "timestamp_utc"},
+    {"name": "window_start_utc", "type": "timestamp_utc"},
+    {"name": "window_end_utc", "type": "timestamp_utc"},
+    {"name": "relative_time_to_event", "type": "iso8601_duration"},
+    {"name": "state_role", "type": "string"},
+    {"name": "consumption_legality", "type": "string"}
+  ],
+  "scientific_payload_groups": {
+    "price_location_structure": [
+      "price_location_structure__daily_open_price",
+      "price_location_structure__daily_prior_close",
+      "price_location_structure__intraday_bar_close_price",
+      "price_location_structure__intraday_return_vs_prior_close_ratio_as_location",
+      "price_location_structure__intraday_return_vs_session_open_ratio_as_location"
+    ],
+    "price_movement": [
+      "price_movement__daily_gap_pct",
+      "price_movement__daily_prior_close",
+      "price_movement__intraday_bar_close_price",
+      "price_movement__intraday_return_vs_prior_close_ratio",
+      "price_movement__intraday_return_vs_session_open_ratio"
+    ],
+    "trading_activity": [
+      "trading_activity__daily_volume_20d_avg",
+      "trading_activity__intraday_bar_volume",
+      "trading_activity__intraday_session_volume_to_time",
+      "trading_activity__session_volume_to_time_over_prior_20_full_session_volume_mean"
+    ],
+    "volatility_range_state": [
+      "volatility_range_state__intraday_high_so_far",
+      "volatility_range_state__intraday_low_so_far",
+      "volatility_range_state__intraday_range_so_far_ratio"
+    ]
+  },
+  "scientific_payload_schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "price_location_structure__daily_open_price",
+      "price_location_structure__daily_prior_close",
+      "price_location_structure__intraday_bar_close_price",
+      "price_location_structure__intraday_return_vs_prior_close_ratio_as_location",
+      "price_location_structure__intraday_return_vs_session_open_ratio_as_location",
+      "price_movement__daily_gap_pct",
+      "price_movement__daily_prior_close",
+      "price_movement__intraday_bar_close_price",
+      "price_movement__intraday_return_vs_prior_close_ratio",
+      "price_movement__intraday_return_vs_session_open_ratio",
+      "trading_activity__daily_volume_20d_avg",
+      "trading_activity__intraday_bar_volume",
+      "trading_activity__intraday_session_volume_to_time",
+      "trading_activity__session_volume_to_time_over_prior_20_full_session_volume_mean",
+      "volatility_range_state__intraday_high_so_far",
+      "volatility_range_state__intraday_low_so_far",
+      "volatility_range_state__intraday_range_so_far_ratio"
+    ],
+    "properties": {
+      "price_location_structure__daily_open_price": {"type": "number"},
+      "price_location_structure__daily_prior_close": {"type": "number"},
+      "price_location_structure__intraday_bar_close_price": {"type": "number"},
+      "price_location_structure__intraday_return_vs_prior_close_ratio_as_location": {"type": "number"},
+      "price_location_structure__intraday_return_vs_session_open_ratio_as_location": {"type": "number"},
+      "price_movement__daily_gap_pct": {"type": "number"},
+      "price_movement__daily_prior_close": {"type": "number"},
+      "price_movement__intraday_bar_close_price": {"type": "number"},
+      "price_movement__intraday_return_vs_prior_close_ratio": {"type": "number"},
+      "price_movement__intraday_return_vs_session_open_ratio": {"type": "number"},
+      "trading_activity__daily_volume_20d_avg": {"type": "number"},
+      "trading_activity__intraday_bar_volume": {"type": "number"},
+      "trading_activity__intraday_session_volume_to_time": {"type": "number"},
+      "trading_activity__session_volume_to_time_over_prior_20_full_session_volume_mean": {"type": "number"},
+      "volatility_range_state__intraday_high_so_far": {"type": "number"},
+      "volatility_range_state__intraday_low_so_far": {"type": "number"},
+      "volatility_range_state__intraday_range_so_far_ratio": {"type": "number"}
+    }
+  },
+  "excluded_from_scientific_payload": [
+    "identities",
+    "timestamps and replay availability",
+    "integration and quality statuses",
+    "policy versions",
+    "restriction codes",
+    "lineage",
+    "created_at_utc",
+    "supersession fields"
+  ],
+  "event_specific_scientific_features": [],
+  "interpretation": "For v0.1 session_opened at_event, Event State exposes the exact 17-value Market State core-four snapshot plus governed event context. It introduces no additional event-derived scientific indicator.",
+  "restrictions": [
+    "research_only",
+    "candidate_runtime_only",
+    "not_official_dataset",
+    "no_production",
+    "no_downstream",
+    "no_strategy_authorization"
+  ]
+}

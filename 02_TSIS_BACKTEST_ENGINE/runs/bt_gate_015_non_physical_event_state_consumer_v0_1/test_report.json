@@ -1,0 +1,223 @@
+{
+  "cases": [
+    {
+      "case_id": "POSITIVE_01_PROVIDER_COMPATIBLE_ENVELOPE",
+      "evidence_hash": "f1318f0a5b532e6a1730b8edf3fa97e04007f80e7653ad64fc9956e9103e63da",
+      "expected": "PASS",
+      "observed": "PASS",
+      "status": "PASS"
+    },
+    {
+      "case_id": "POSITIVE_02_EXACT_17_FIELD_PAYLOAD",
+      "evidence_hash": "d8c00efe945fcd55049989b3d6d631d62517cfe5140dd78336ed2120411e51b2",
+      "expected": "PASS",
+      "observed": "PASS",
+      "status": "PASS"
+    },
+    {
+      "case_id": "POSITIVE_03_FINGERPRINT_RECOMPUTED",
+      "evidence_hash": "8134a5fd433e3996eb91f1867b043224684682e74379c6e8e5fae86e3f2201da",
+      "expected": "PASS",
+      "observed": "PASS",
+      "status": "PASS"
+    },
+    {
+      "case_id": "POSITIVE_04_TEMPORAL_FORMULA",
+      "evidence_hash": "6f5e653869e3ed2a7c9d4400083b0538ae03130516182a44f4babc6f6b8c274c",
+      "expected": "PASS",
+      "observed": "PASS",
+      "status": "PASS"
+    },
+    {
+      "case_id": "POSITIVE_05_RESTRICTION_DOMAINS",
+      "evidence_hash": "549d200f5d73812e7ceefa4f7c73687f93d5d28e2cf35321d1bf1082a0d1aad1",
+      "expected": "PASS",
+      "observed": "PASS",
+      "status": "PASS"
+    },
+    {
+      "case_id": "POSITIVE_06_STORE_VISIBLE_AT_AVAILABLE",
+      "evidence_hash": "306dfacf057b56deda68197bf0d6ad03cb800088157991763f3aa6fa237c17a8",
+      "expected": "PASS",
+      "observed": "PASS",
+      "status": "PASS"
+    },
+    {
+      "case_id": "POSITIVE_07_SIDECAR_EVIDENCE_REFS",
+      "evidence_hash": "f882d0c67faf6113aa143a96d91d282f0ec6b5f6d54e47e312a1b4783ed13ece",
+      "expected": "PASS",
+      "observed": "PASS",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEGATIVE_01",
+      "evidence_hash": "3e8a114ee62eeaf6e838efbb845544f8e7594d8fa40dd28013e0d13faf5bd511",
+      "expected": "FAIL_EVENT_STATE_FINGERPRINT_MISMATCH",
+      "observed": "FAIL_EVENT_STATE_FINGERPRINT_MISMATCH",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEGATIVE_02",
+      "evidence_hash": "dc7688e7c45582c2cb83f20925846637fb69039cb798d75855f925999962655f",
+      "expected": "FAIL_EVENT_STATE_TEMPORAL_EVIDENCE_MISSING",
+      "observed": "FAIL_EVENT_STATE_TEMPORAL_EVIDENCE_MISSING",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEGATIVE_03",
+      "evidence_hash": "6105159f34a3fb368e35f80e8adf5f9c5b342238a04623962e12e0488dff3e61",
+      "expected": "FAIL_EVENT_STATE_PAYLOAD_CONTRACT_MISSING",
+      "observed": "FAIL_EVENT_STATE_PAYLOAD_CONTRACT_MISSING",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEGATIVE_04",
+      "evidence_hash": "d629d42ad6b7768efc2467db9df239367b1c2521e3ceb5b0c169705d5b9d7087",
+      "expected": "FAIL_EVENT_STATE_COMPONENT_RESTRICTIONS_NOT_AUTHORIZED",
+      "observed": "FAIL_EVENT_STATE_COMPONENT_RESTRICTIONS_NOT_AUTHORIZED",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEGATIVE_05",
+      "evidence_hash": "a36d5aac6b1f16cfebbf2a5d740d3991f07ca794b58a96827b6cdb838d257cf0",
+      "expected": "FAIL_EVENT_STATE_SIDECAR_BIJECTION",
+      "observed": "FAIL_EVENT_STATE_SIDECAR_BIJECTION",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEGATIVE_06",
+      "evidence_hash": "2cae5f69c0f2257fab0747c29a2c066de8de1cf9794e6e8d5fb31e673337a0aa",
+      "expected": "FAIL_EVENT_STATE_SIDECAR_BIJECTION",
+      "observed": "FAIL_EVENT_STATE_SIDECAR_BIJECTION",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEGATIVE_07",
+      "evidence_hash": "98dff19fc1de9b8ff02b97cc19f3ac3d1115cef57e8093723f91e4607063628a",
+      "expected": "FAIL_EVENT_STATE_STORE_INVALID_VALIDATION_RECEIPT",
+      "observed": "FAIL_EVENT_STATE_STORE_INVALID_VALIDATION_RECEIPT",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEGATIVE_08",
+      "evidence_hash": "8dce88945b74a764df58076f4f153d02a29ab5140893d1ac2a6b051436ebe55e",
+      "expected": "FAIL_EVENT_STATE_STORE_INVALID_VALIDATION_RECEIPT",
+      "observed": "FAIL_EVENT_STATE_STORE_INVALID_VALIDATION_RECEIPT",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEGATIVE_09",
+      "evidence_hash": "f317fc40d8c36cd83fbff17313c3b99084b601c4d6282674e1cfd0d1ae489986",
+      "expected": "FAIL_EVENT_STATE_STORE_INVALID_VALIDATION_RECEIPT",
+      "observed": "FAIL_EVENT_STATE_STORE_INVALID_VALIDATION_RECEIPT",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEGATIVE_10",
+      "evidence_hash": "31248c56e4a7fe1aa3322a960a4adac682f78ff0ce0549660e23528d63e7d28e",
+      "expected": "FAIL_EVENT_STATE_PAYLOAD_CONTRACT_MISMATCH",
+      "observed": "FAIL_EVENT_STATE_PAYLOAD_CONTRACT_MISMATCH",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEGATIVE_11",
+      "evidence_hash": "5b502fe242abc6f7d4086a3f5d8a00e4db438a112c7c3af2f97a0c563e6a435b",
+      "expected": "FAIL_EVENT_STATE_RESTRICTION_DOMAIN_MISMATCH",
+      "observed": "FAIL_EVENT_STATE_RESTRICTION_DOMAIN_MISMATCH",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEGATIVE_12",
+      "evidence_hash": "cd32e7d7aa02259b4116176a2ca058d95917e0e9251b0b0375e2607795c07bf0",
+      "expected": "FAIL_EVENT_STATE_EARLY_STORE_INSERT",
+      "observed": "FAIL_EVENT_STATE_EARLY_STORE_INSERT",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEGATIVE_13",
+      "evidence_hash": "3bc4e4f2f5debe4b91b31949d3a2a48b524f38e5e2ee694071425e2ed352a0c2",
+      "expected": "FAIL_EVENT_STATE_OPERATIONAL_ROUTING_PROHIBITED",
+      "observed": "FAIL_EVENT_STATE_OPERATIONAL_ROUTING_PROHIBITED",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEGATIVE_14_HANDOFF_HASH",
+      "evidence_hash": "a64bc26ae7bd902094998e67237905ad1c11c3da1ddac8fa079de80bd23b3b8a",
+      "expected": "FAIL_EVENT_STATE_HANDOFF_HASH_MISMATCH",
+      "observed": "FAIL_EVENT_STATE_HANDOFF_HASH_MISMATCH",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEGATIVE_15_SCHEMA",
+      "evidence_hash": "a52849bc3af96ed3f1cf2a5672723a34d7e614f273fb07749ad17254f7c13c22",
+      "expected": "FAIL_EVENT_STATE_SCHEMA_MISMATCH",
+      "observed": "FAIL_EVENT_STATE_SCHEMA_MISMATCH",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEGATIVE_16_IDENTITY",
+      "evidence_hash": "996eeb9820e4273e53f775983a305eb24e49705e1f71497e6307dcb0a9caf6e7",
+      "expected": "FAIL_EVENT_STATE_IDENTITY_MISMATCH",
+      "observed": "FAIL_EVENT_STATE_IDENTITY_MISMATCH",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEGATIVE_17_MARKET_DEPENDENCY",
+      "evidence_hash": "a8ed1306a7cefb5d4333a9677f84ae2dbe1ddde134733c11f15d58ee574737f1",
+      "expected": "FAIL_EVENT_STATE_MARKET_STATE_DEPENDENCY_MISMATCH",
+      "observed": "FAIL_EVENT_STATE_MARKET_STATE_DEPENDENCY_MISMATCH",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEGATIVE_18_TEMPORAL",
+      "evidence_hash": "ded0c6634df4cbaeaefe739b8021e9e19a57f63a9de2eac429d48c2e1e5db4ac",
+      "expected": "FAIL_EVENT_STATE_TEMPORAL_AVAILABILITY_VIOLATION",
+      "observed": "FAIL_EVENT_STATE_TEMPORAL_AVAILABILITY_VIOLATION",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEGATIVE_19_DUPLICATE",
+      "evidence_hash": "d3c4426f38ecdd46b7e835d1c8979cd4ec4d8ee541b1762f1d4de166d0106d98",
+      "expected": "FAIL_DUPLICATE_EVENT_STATE_EVENT",
+      "observed": "FAIL_DUPLICATE_EVENT_STATE_EVENT",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEGATIVE_20_CONFLICT",
+      "evidence_hash": "9bb6aa3b157da111806a568593bf7b746988ffadd0feb9e9641ac226fe0b3802",
+      "expected": "FAIL_CONFLICTING_EVENT_STATE_EVENT",
+      "observed": "FAIL_CONFLICTING_EVENT_STATE_EVENT",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEGATIVE_21_SCOPE",
+      "evidence_hash": "95b29dc9ef28a57ac102feac1afd9c269c94b42d4d4aeb78eb149de29c3be697",
+      "expected": "FAIL_EVENT_STATE_SCOPE_LEAKAGE",
+      "observed": "FAIL_EVENT_STATE_SCOPE_LEAKAGE",
+      "status": "PASS"
+    },
+    {
+      "case_id": "NEGATIVE_22_DUPLICATE_JSON_KEY",
+      "evidence_hash": "56e7b0b5adc70fc3029b03cd58a7e8d2d593a660dd954564ff9090c1a12627f3",
+      "expected": "FAIL_EVENT_STATE_INVALID_EMBEDDED_JSON",
+      "observed": "FAIL_EVENT_STATE_INVALID_EMBEDDED_JSON",
+      "status": "PASS"
+    }
+  ],
+  "failed_case_count": 0,
+  "missing_required_contract_failure_codes": [],
+  "negative_case_count": 22,
+  "positive_case_count": 7,
+  "report_generated_from_executions": true,
+  "required_contract_failure_codes": [
+    "FAIL_CONFLICTING_EVENT_STATE_EVENT",
+    "FAIL_DUPLICATE_EVENT_STATE_EVENT",
+    "FAIL_EVENT_STATE_HANDOFF_HASH_MISMATCH",
+    "FAIL_EVENT_STATE_IDENTITY_MISMATCH",
+    "FAIL_EVENT_STATE_MARKET_STATE_DEPENDENCY_MISMATCH",
+    "FAIL_EVENT_STATE_SCHEMA_MISMATCH",
+    "FAIL_EVENT_STATE_SCOPE_LEAKAGE",
+    "FAIL_EVENT_STATE_TEMPORAL_AVAILABILITY_VIOLATION"
+  ],
+  "status": "PASS"
+}

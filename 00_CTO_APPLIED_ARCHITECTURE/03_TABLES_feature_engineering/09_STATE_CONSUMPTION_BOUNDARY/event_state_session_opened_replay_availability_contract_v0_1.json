@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tsis:event-state:session-opened:replay-availability:v0.1",
+  "contract_id": "event_state_session_opened_replay_availability_contract_v0_1",
+  "status": "CONTRACT_READY_EVIDENCE_PENDING",
+  "event_type_id": "event_type:market_data:session_opened",
+  "subject_scope": "exchange_session",
+  "temporal_semantics": {
+    "event_anchor_timestamp_utc": "The governed exchange-session open represented by the Event Instance.",
+    "event_instance_available_at_utc": "First time the governed Event Instance is legally observable.",
+    "event_window_binding_available_at_utc": "First time the exact Event Window binding is legally available.",
+    "instrument_projection_available_at_utc": "First time the instrument projection is legally available.",
+    "market_state_available_at_utc": "Availability timestamp of the exact Market State dependency.",
+    "event_state_as_of_utc": "Maximum source-information timestamp incorporated into the Event State record.",
+    "event_state_available_at_utc": "First legal delivery time of the complete Event State record."
+  },
+  "required_formula": {
+    "base_available_at": "max(event_instance_available_at_utc, event_window_binding_available_at_utc, instrument_projection_available_at_utc, market_state_available_at_utc)",
+    "event_state_available_at_utc": "base_available_at + event_state_publication_latency",
+    "delivery_eligibility": "event_loop.clock >= event_state_available_at_utc"
+  },
+  "required_ordering": [
+    "event_anchor_timestamp_utc <= event_state_as_of_utc",
+    "event_state_as_of_utc <= event_state_available_at_utc",
+    "each dependency available_at <= event_state_available_at_utc"
+  ],
+  "required_row_identity": [
+    "event_state_record_id",
+    "event_state_record_fingerprint",
+    "event_instance_id",
+    "event_window_binding_id",
+    "event_state_instrument_session_projection_id",
+    "market_state_record_id",
+    "market_state_state_output_fingerprint"
+  ],
+  "restriction_domains": {
+    "event_state_provenance_restriction_codes": "Scientific and construction lineage; not executable replay policy.",
+    "event_state_replay_consumption_restriction_codes": "Executable bounded delivery policy.",
+    "component_replay_restriction_codes": "Restrictions attached to Event Instance, Event Window, Instrument Projection and Market State dependency."
+  },
+  "fail_closed_rules": [
+    "Missing dependency availability evidence blocks decision-safe replay.",
+    "A dependency marked research_only or blocked prevents decision_safe delivery.",
+    "Event State restrictions must not be weaker than any dependency restriction.",
+    "decision_timestamp or event_anchor alone never authorizes delivery.",
+    "Market State and Event State identities are not interchangeable."
+  ],
+  "current_evidence_status": {
+    "event_instance_identity": "PROVEN",
+    "event_window_binding_identity": "PROVEN",
+    "instrument_projection_identity": "PROVEN_WITH_RESTRICTIONS",
+    "market_state_dependency_identity": "PROVEN_WITH_RESTRICTIONS",
+    "event_state_record_identity_and_fingerprint": "PROVEN_BY_HISTORICAL_PHYSICAL_VALIDATION",
+    "event_state_available_at_utc": "NOT_YET_PROVEN",
+    "row_addressable_replay_availability_sidecar": "ABSENT"
+  },
+  "authorization": {
+    "physical_read": false,
+    "bt_gate_015_implementation": false,
+    "state_replay_feed": false,
+    "event_state_delivery": false,
+    "production": false,
+    "downstream": false
+  }
+}

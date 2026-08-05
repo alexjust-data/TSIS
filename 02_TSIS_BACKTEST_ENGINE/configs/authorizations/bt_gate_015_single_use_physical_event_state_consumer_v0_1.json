@@ -1,0 +1,36 @@
+{
+  "authorization_id": "bt_gate_015_single_use_physical_event_state_consumer_v0_1",
+  "gate": "BT-GATE-015",
+  "contract": "POINT_IN_TIME_EVENT_STATE_CONSUMER_V0_1",
+  "single_use": true,
+  "scope": "bounded",
+  "status": "DRAFT_SUPERSEDED_NEVER_AUTHORIZED",
+  "created_utc": "2026-07-31T00:00:00Z",
+  "consumer_id": "BT-GATE-015",
+  "consumer_name": "BoundedEventStateAwareConsumer",
+  "configuration_path": "configs/runs/bt_gate_015_single_use_physical_event_state_consumer_v0_1.json",
+  "provider_handoff_authority_sha256": "b7a4783d0ab64ffaf37fbfdf2ee76dffacbe9b14cf3f059891908c87116369b2",
+  "provider_completion_authority_sha256": "3a6bf3ca04c0428a1728e1719cd6aeaea6bfaef43e12fb83939dde3cb6cb85d9",
+  "provider_evidence_status": "VALIDATED_BOUND",
+  "provider_dataset_authority_id": "event_state_session_opened_bt_gate_015_provider_completion_v0_1",
+  "snapshot_schema_id": "event_state_candidate_schema_v0_1",
+  "payload_schema_id": "event_state_core_four_intraday_schema_v0_1",
+  "required_profile_id": "event_state_core_four_intraday_profile_v0_1",
+  "required_row_count": 1,
+  "required_input_count": 10,
+  "physical_status": {
+    "physical_consumer_read": "NOT_EXECUTED",
+    "physical_state_rows_read": 0,
+    "validation_status": null
+  },
+  "consumed_by_run_id": null,
+  "notes": [
+    "bounded slice: AAME / XNYS / 2021-01-19",
+    "single-use token for this bounded slice only",
+    "BAR -> MARKET_STATE -> EVENT_STATE ordering enforced",
+    "no production backtest scope, no strategy execution"
+  ],
+  "execution_authorized": false,
+  "candidate_only": true,
+  "preexecution_review": "NOT_EXECUTED"
+}

@@ -1,17 +1,25 @@
-## Current Authoritative State - BT-GATE-014 final closure
+## Current Authoritative State - BT-GATE-015 non-physical implementation accepted
 
 ```text
 BT-GATE-014 = CLOSED_PASS_POINT_IN_TIME_MARKET_STATE_CONSUMPTION_WITH_RESTRICTIONS
 BT-GATE-014_IMPLEMENTATION = IMPLEMENTED_AND_ACCEPTED
-IMPLEMENTATION_ACCEPTANCE = ACCEPTED
-V0.5 = CONSUMED_FINAL
-SECOND_EXECUTION_V0.5 = PROHIBITED
-physical files / rows / events / inserts / observations = 1 / 2 / 2 / 2 / 2
-early delivered / orders / fills / PnL = 0 / 0 / 0 / false
-deterministic_output_hash = 6331839dfc6538f7dd6fda9a1fd7efbc7497d541dcb0c0d89cfd679762067cb1
-BT-GATE-015 = NOT_OPEN
-BT-GATE-015_IMPLEMENTATION = NOT_AUTHORIZED
-Event State = NOT_AUTHORIZED
+BT-GATE-014_IMPLEMENTATION_ACCEPTANCE = ACCEPTED
+BT-GATE-014_V0.5 = CONSUMED_FINAL
+SECOND_EXECUTION_BT_GATE_014_V0.5 = PROHIBITED
+BT-GATE-014 physical files / rows / events / inserts / observations = 1 / 2 / 2 / 2 / 2
+BT-GATE-014 early delivered / orders / fills / PnL = 0 / 0 / 0 / false
+BT-GATE-014 deterministic_output_hash = 6331839dfc6538f7dd6fda9a1fd7efbc7497d541dcb0c0d89cfd679762067cb1
+
+BT-GATE-015 = NON_PHYSICAL_IMPLEMENTATION_ACCEPTED_PENDING_SINGLE_USE_PHYSICAL_AUTHORIZATION
+BT-GATE-015_CONTRACT = OWNER_REVIEW_PASS
+BT-GATE-015_IMPLEMENTATION = ACCEPTED_NON_PHYSICAL_ONLY
+BT_GATE_015_NON_PHYSICAL_EXTERNAL_REVIEW = PASS
+IMPLEMENTATION_ACCEPTANCE = ACCEPTED_NON_PHYSICAL_ONLY
+BT-GATE-015_PHYSICAL_READ = NOT_AUTHORIZED
+SINGLE_USE_PHYSICAL_AUTHORIZATION = NOT_AUTHORIZED
+PHYSICAL_STATE_ROWS_READ_BY_BACKTESTER = 0
+BT-GATE-015_CLOSED_PASS = NOT_AUTHORIZED
+Event State = NON_PHYSICAL_ACCEPTED / PHYSICAL_READ_NOT_AUTHORIZED
 ```
 
 Mandatory restart handoff:
@@ -91,9 +99,9 @@ Event State = NOT_OPEN
 Status: LIVE_ROADMAP
 Last updated: 2026-07-30
 
-## Propósito
+## PropÃ³sito
 
-Definir la secuencia vigente de capacidades después de `BT-GATE-010` sin
+Definir la secuencia vigente de capacidades despuÃ©s de `BT-GATE-010` sin
 fragmentar el desarrollo en microgates.
 
 ## Historical Gate Snapshot - SUPERSEDED BY CURRENT BT-GATE-014
@@ -130,12 +138,12 @@ Incluye:
 
 - StrategySpec reproducible.
 - Primera estrategia fija y deliberadamente simple.
-- Integración EventLoop -> Execution -> Accounting.
+- IntegraciÃ³n EventLoop -> Execution -> Accounting.
 - Deterministic Fill Simulator.
 - Trade Ledger.
-- Métricas mínimas.
+- MÃ©tricas mÃ­nimas.
 - Unified Run Manifest.
-- Primer run histórico end-to-end.
+- Primer run histÃ³rico end-to-end.
 
 Etiqueta obligatoria de los primeros runs:
 
@@ -152,12 +160,12 @@ MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE
 
 Incluye:
 
-- Múltiples símbolos.
-- Múltiples sesiones.
+- MÃºltiples sÃ­mbolos.
+- MÃºltiples sesiones.
 - Orden temporal global determinista.
 - Cash y posiciones compartidos.
-- Concurrencia de órdenes.
-- Cierre de sesión.
+- Concurrencia de Ã³rdenes.
+- Cierre de sesiÃ³n.
 - Portfolio equity curve.
 
 ```text
@@ -177,10 +185,10 @@ Incluye:
 
 No incluye halts, SSR, borrow/locates, liquidez/capacidad, batch research, DSR/PBO/CSCV ni edge evidence.
 
-## Regla De Agrupación
+## Regla De AgrupaciÃ³n
 
 Los antiguos incrementos candidatos `BT-GATE-011` a `BT-GATE-017` no deben
-recrearse automáticamente como gates independientes. Deben agruparse en las
+recrearse automÃ¡ticamente como gates independientes. Deben agruparse en las
 tres capacidades anteriores salvo que exista una dependencia o frontera material
 que exija separarlos.
 

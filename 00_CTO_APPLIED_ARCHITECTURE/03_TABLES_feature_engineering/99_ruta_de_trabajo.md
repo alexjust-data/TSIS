@@ -3,17 +3,65 @@
 ```text
 canonical cold-start entry = STATE_PROVIDER_CONSUMER_RECOVERY.md
 active provider gate = none
-next owner = BT-GATE-014
+next owner = BT-GATE-015 single-use physical authorization preparation and preexecution review
+BT-GATE-015 contract and non-physical external review = PASS
+BT-GATE-015 non-physical implementation = ACCEPTED_NON_PHYSICAL_ONLY
+Event State physical read = NOT_AUTHORIZED
 BT-GATE-014 provider evidence handoff = COMPLETE
 restriction-domain binding = CLOSED_PASS
-BT-GATE-014 V0.4 = CONSUMED_FAILED_FINAL
-BT-GATE-014 V0.5 = NOT_AUTHORIZED
 backtester current-gate authority = 02_TSIS_BACKTEST_ENGINE/AGENTS.md
 ```
 
 Read the recovery document first. Blocks below are ordered newest first and
 preserve historical closure state; an older `current_gate` value is not the
 active gate.
+
+## Event State `session_opened` Provider Completion - 2026-07-31
+
+```text
+event_state_session_opened_replay_availability_evidence_sidecar_v0_1
+=
+CLOSED_PASS_ROW_ADDRESSABLE_EVENT_STATE_REPLAY_AVAILABILITY_EVIDENCE_WITH_RESTRICTIONS_NO_CONSUMER_AUTHORIZATION
+
+event_state_session_opened_typed_payload_binding_v0_1
+=
+CLOSED_BINDING_READY_WITH_RESTRICTIONS
+
+case_count = 52
+failed_cases = 0
+physical Event State candidate files opened = 1
+candidate rows selected = 1
+Market State Parquet opened = false
+backtester files modified = 0
+active provider gate = none
+next owner = BT-GATE-015 contract revision and owner review
+```
+
+The executable bounded identity is the on-demand Event State record linked to
+the governed Market State replay sidecar. The earlier historical profile record
+remains provenance evidence and is not the bounded delivery identity.
+## Event State `session_opened` BT-GATE-015 Contract Handoff - 2026-07-31
+
+```text
+event_state_session_opened_bt_gate_015_contract_handoff_v0_1
+=
+CLOSED_CONTRACT_HANDOFF_READY_WITH_RESTRICTIONS_REQUIRES_REPLAY_AVAILABILITY_EVIDENCE
+
+bounded slice = AAME / XNYS / 2021-01-19
+event type = event_type:market_data:session_opened
+profile = event_state_core_four_intraday_profile_v0_1
+case_count = 36
+failed_cases = 0
+physical_files_opened = 0
+physical_rows_read = 0
+BT-GATE-015 contract drafting = READY
+BT-GATE-015 implementation = NOT_AUTHORIZED
+```
+
+The exact Event Type, Event Instance, Event Window, Instrument Projection,
+Market State dependency and Event State record identities are frozen. The
+provider must next produce row-addressable `event_state_available_at_utc`
+evidence; anchor time alone is not delivery authority.
 
 ## Market State Restriction Domains Clarified - 2026-07-30
 

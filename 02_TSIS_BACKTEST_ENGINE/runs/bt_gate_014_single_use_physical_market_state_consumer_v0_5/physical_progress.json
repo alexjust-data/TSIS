@@ -1,0 +1,142 @@
+{
+  "physical_access_attempted": true,
+  "physical_access_started": true,
+  "physical_data_files_opened": 1,
+  "physical_state_rows_read": 2,
+  "restriction_diagnostics": {
+    "components": [
+      [
+        [
+          "candidate_runtime_only",
+          "not_official_dataset",
+          "no_downstream",
+          "no_production"
+        ],
+        [
+          "candidate_runtime_only",
+          "not_official_dataset",
+          "no_downstream",
+          "no_production"
+        ],
+        [
+          "candidate_runtime_only",
+          "not_official_dataset",
+          "no_downstream",
+          "no_production"
+        ],
+        [
+          "candidate_runtime_only",
+          "not_official_dataset",
+          "no_downstream",
+          "no_production"
+        ]
+      ],
+      [
+        [
+          "candidate_runtime_only",
+          "not_official_dataset",
+          "no_downstream",
+          "no_production"
+        ],
+        [
+          "candidate_runtime_only",
+          "not_official_dataset",
+          "no_downstream",
+          "no_production"
+        ],
+        [
+          "candidate_runtime_only",
+          "not_official_dataset",
+          "no_downstream",
+          "no_production"
+        ],
+        [
+          "candidate_runtime_only",
+          "not_official_dataset",
+          "no_downstream",
+          "no_production"
+        ]
+      ]
+    ],
+    "replay_consumption_restrictions": [
+      "candidate_runtime_only",
+      "not_official_dataset",
+      "no_downstream",
+      "no_production"
+    ],
+    "restriction_domain_binding_sha256": "b3ebace6fab7cb0a690be165f0a1706a5906dc7a729488fa1139af00c02e53a9",
+    "rows": [
+      [
+        "design_restriction:after_last_sampled_bar_is_not_end_of_session",
+        "design_restriction:duplicate_counts_are_request_impact_not_physical_group_counts",
+        "design_restriction:governed_exchange_session_calendar_required_before_operational_integration",
+        "design_restriction:quote_dependent_objects_remain_blocked",
+        "design_restriction:trading_activity_rvol_20d_name_must_preserve_volume_to_time_over_prior_full_session_mean_semantics",
+        "price_location_structure:013_may_appear_only_as_surface_lineage_not_builder_input",
+        "price_location_structure:accepted_surface_is_run_local_not_official_014",
+        "price_location_structure:candidate_artifacts_remain_non_canonical",
+        "price_location_structure:fixed_utc_probe_calendar_not_used_as_current_authority",
+        "price_location_structure:quote_dependent_objects_remain_excluded",
+        "price_movement:013_may_appear_only_as_surface_lineage_not_builder_input",
+        "price_movement:accepted_surface_is_run_local_not_official_014",
+        "price_movement:candidate_artifacts_remain_non_canonical",
+        "price_movement:fixed_utc_probe_calendar_not_used_as_current_authority",
+        "price_movement:quote_dependent_objects_remain_excluded",
+        "trading_activity:013_may_appear_only_as_surface_lineage_not_builder_input",
+        "trading_activity:accepted_surface_is_run_local_not_official_014",
+        "trading_activity:candidate_artifacts_remain_non_canonical",
+        "trading_activity:daily_rvol_20d_uses_intraday_volume_to_time_proxy; final same-session daily volume is not consumed",
+        "trading_activity:fixed_utc_probe_calendar_not_used_as_current_authority",
+        "trading_activity:quote_dependent_objects_remain_excluded",
+        "volatility_range_state:013_may_appear_only_as_surface_lineage_not_builder_input",
+        "volatility_range_state:accepted_surface_is_run_local_not_official_014",
+        "volatility_range_state:candidate_artifacts_remain_non_canonical",
+        "volatility_range_state:fixed_utc_probe_calendar_not_used_as_current_authority",
+        "volatility_range_state:quote_dependent_objects_remain_excluded"
+      ],
+      [
+        "design_restriction:after_last_sampled_bar_is_not_end_of_session",
+        "design_restriction:duplicate_counts_are_request_impact_not_physical_group_counts",
+        "design_restriction:governed_exchange_session_calendar_required_before_operational_integration",
+        "design_restriction:quote_dependent_objects_remain_blocked",
+        "design_restriction:trading_activity_rvol_20d_name_must_preserve_volume_to_time_over_prior_full_session_mean_semantics",
+        "price_location_structure:013_may_appear_only_as_surface_lineage_not_builder_input",
+        "price_location_structure:accepted_surface_is_run_local_not_official_014",
+        "price_location_structure:candidate_artifacts_remain_non_canonical",
+        "price_location_structure:fixed_utc_probe_calendar_not_used_as_current_authority",
+        "price_location_structure:quote_dependent_objects_remain_excluded",
+        "price_movement:013_may_appear_only_as_surface_lineage_not_builder_input",
+        "price_movement:accepted_surface_is_run_local_not_official_014",
+        "price_movement:candidate_artifacts_remain_non_canonical",
+        "price_movement:fixed_utc_probe_calendar_not_used_as_current_authority",
+        "price_movement:quote_dependent_objects_remain_excluded",
+        "trading_activity:013_may_appear_only_as_surface_lineage_not_builder_input",
+        "trading_activity:accepted_surface_is_run_local_not_official_014",
+        "trading_activity:candidate_artifacts_remain_non_canonical",
+        "trading_activity:daily_rvol_20d_uses_intraday_volume_to_time_proxy; final same-session daily volume is not consumed",
+        "trading_activity:fixed_utc_probe_calendar_not_used_as_current_authority",
+        "trading_activity:quote_dependent_objects_remain_excluded",
+        "volatility_range_state:013_may_appear_only_as_surface_lineage_not_builder_input",
+        "volatility_range_state:accepted_surface_is_run_local_not_official_014",
+        "volatility_range_state:candidate_artifacts_remain_non_canonical",
+        "volatility_range_state:fixed_utc_probe_calendar_not_used_as_current_authority",
+        "volatility_range_state:quote_dependent_objects_remain_excluded"
+      ]
+    ],
+    "sidecars": [
+      [
+        "candidate_runtime_only",
+        "not_official_dataset",
+        "no_downstream",
+        "no_production"
+      ],
+      [
+        "candidate_runtime_only",
+        "not_official_dataset",
+        "no_downstream",
+        "no_production"
+      ]
+    ]
+  },
+  "validation_phase_reached": "RESTRICTION_VALIDATION"
+}

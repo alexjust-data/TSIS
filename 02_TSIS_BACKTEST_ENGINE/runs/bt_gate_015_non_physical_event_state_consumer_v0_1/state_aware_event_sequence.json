@@ -1,0 +1,35 @@
+[
+  {
+    "event_type": "BAR",
+    "index": 0,
+    "order_key": [
+      "2021-01-19T14:30:00Z",
+      1,
+      "2021-01-19",
+      "AAME",
+      "AAME:2021-01-19T14:29:00Z:BAR"
+    ]
+  },
+  {
+    "event_type": "BoundedMarketStateAvailable",
+    "index": 1,
+    "order_key": [
+      "2021-01-19T14:30:00Z",
+      2,
+      "2021-01-19",
+      "AAME",
+      "b87415c19eef9eb94af6b7d20cec53a2a878aa17713814b8d2edcbb112f76416"
+    ]
+  },
+  {
+    "event_type": "BoundedEventStateAvailable",
+    "index": 2,
+    "order_key": [
+      "2021-01-19T14:30:00Z",
+      3,
+      "2021-01-19",
+      "AAME",
+      "801a689ee7436cb9c02f774492d06f57f3ac1a659fa63294ecc8b7276014deac"
+    ]
+  }
+]

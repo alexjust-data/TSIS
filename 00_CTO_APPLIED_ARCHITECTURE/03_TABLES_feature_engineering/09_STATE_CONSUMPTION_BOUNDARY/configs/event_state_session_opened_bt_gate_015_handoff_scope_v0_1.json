@@ -1,0 +1,59 @@
+{
+  "scope_id": "event_state_session_opened_bt_gate_015_handoff_scope_v0_1",
+  "gate_id": "event_state_session_opened_bt_gate_015_contract_handoff_v0_1",
+  "owner_layer": "03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY",
+  "purpose": "Prepare one exact non-physical Event State contract handoff for BT-GATE-015.",
+  "selected_slice": {
+    "event_type_id": "event_type:market_data:session_opened",
+    "subject_scope": "exchange_session",
+    "profile_id": "event_state_core_four_intraday_profile_v0_1",
+    "exchange_id": "XNYS",
+    "session_date": "2021-01-19",
+    "instrument_id": "figi_share_class:BBG001S5N8T1",
+    "ticker": "AAME",
+    "window_definition_id": "event_window_definition:market_data:session_opened:at_open_v0_1"
+  },
+  "allowed_operations": {
+    "read_existing_manifests_and_validation_evidence": true,
+    "verify_existing_hashes": true,
+    "create_contract_and_handoff_metadata": true,
+    "create_validation_matrix_and_readout": true,
+    "create_provider_only_handoff_zip": true
+  },
+  "prohibited_operations": {
+    "open_event_state_candidate_records": true,
+    "open_market_state_parquet": true,
+    "read_physical_state_rows": true,
+    "create_or_modify_event_state_records": true,
+    "modify_provider_runtime": true,
+    "modify_backtester": true,
+    "authorize_bt_gate_015_implementation": true,
+    "authorize_physical_consumption": true,
+    "authorize_state_replay_feed": true,
+    "authorize_production_or_downstream": true
+  },
+  "authorized_outputs": [
+    "configs/event_state_session_opened_bt_gate_015_handoff_scope_v0_1.json",
+    "event_state_session_opened_replay_availability_contract_v0_1.json",
+    "event_state_session_opened_bt_gate_015_selection_manifest_v0_1.json",
+    "event_state_session_opened_bt_gate_015_contract_handoff_v0_1.md",
+    "event_state_session_opened_bt_gate_015_contract_handoff_matrix_v0_1.json",
+    "event_state_session_opened_bt_gate_015_contract_handoff_readout_v0_1.md",
+    "scripts/event_state_session_opened_bt_gate_015_contract_handoff_runner_v0_1.py",
+    "../STATE_PROVIDER_CONSUMER_RECOVERY.md",
+    "../AGENT.md",
+    "../99_ruta_de_trabajo.md",
+    "README.md",
+    "../scripts/validate_state_provider_consumer_recovery_v0_1.py",
+    "event_state_session_opened_bt_gate_015_contract_handoff_v0_1_<timestamp>.zip"
+  ],
+  "execution_counters": {
+    "physical_files_opened": 0,
+    "physical_rows_read": 0,
+    "event_state_records_delivered": 0,
+    "state_replay_feed_records_emitted": 0,
+    "backtest_runs": 0,
+    "datasets_written": 0,
+    "registry_mutations": 0
+  }
+}

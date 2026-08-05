@@ -1,18 +1,34 @@
-## Current Authoritative State - BT-GATE-014 final closure
+## Current Authoritative State - BT-GATE-015 non-physical implementation accepted
 
 ```text
 BT-GATE-014 = CLOSED_PASS_POINT_IN_TIME_MARKET_STATE_CONSUMPTION_WITH_RESTRICTIONS
 BT-GATE-014_IMPLEMENTATION = IMPLEMENTED_AND_ACCEPTED
-IMPLEMENTATION_ACCEPTANCE = ACCEPTED
-V0.5 = CONSUMED_FINAL
-SECOND_EXECUTION_V0.5 = PROHIBITED
-physical files / rows / events / inserts / observations = 1 / 2 / 2 / 2 / 2
-early delivered / orders / fills / PnL = 0 / 0 / 0 / false
-deterministic_output_hash = 6331839dfc6538f7dd6fda9a1fd7efbc7497d541dcb0c0d89cfd679762067cb1
-BT-GATE-015 = NOT_OPEN
-BT-GATE-015_IMPLEMENTATION = NOT_AUTHORIZED
-Event State = NOT_AUTHORIZED
+BT-GATE-014_IMPLEMENTATION_ACCEPTANCE = ACCEPTED
+BT-GATE-014_V0.5 = CONSUMED_FINAL
+SECOND_EXECUTION_BT_GATE_014_V0.5 = PROHIBITED
+BT-GATE-014 physical files / rows / events / inserts / observations = 1 / 2 / 2 / 2 / 2
+BT-GATE-014 early delivered / orders / fills / PnL = 0 / 0 / 0 / false
+BT-GATE-014 deterministic_output_hash = 6331839dfc6538f7dd6fda9a1fd7efbc7497d541dcb0c0d89cfd679762067cb1
+
+BT-GATE-015 = NON_PHYSICAL_IMPLEMENTATION_ACCEPTED_PENDING_SINGLE_USE_PHYSICAL_AUTHORIZATION
+BT-GATE-015_CONTRACT = OWNER_REVIEW_PASS
+BT-GATE-015_IMPLEMENTATION = ACCEPTED_NON_PHYSICAL_ONLY
+BT_GATE_015_NON_PHYSICAL_EXTERNAL_REVIEW = PASS
+IMPLEMENTATION_ACCEPTANCE = ACCEPTED_NON_PHYSICAL_ONLY
+BT-GATE-015_PHYSICAL_READ = NOT_AUTHORIZED
+SINGLE_USE_PHYSICAL_AUTHORIZATION = NOT_AUTHORIZED
+PHYSICAL_STATE_ROWS_READ_BY_BACKTESTER = 0
+BT-GATE-015_CLOSED_PASS = NOT_AUTHORIZED
+Event State = NON_PHYSICAL_ACCEPTED / PHYSICAL_READ_NOT_AUTHORIZED
 ```
+
+## 2026-08-05 | BT-GATE-015 non-physical external acceptance
+
+- Registered `BT_GATE_015_NON_PHYSICAL_EXTERNAL_REVIEW = PASS`.
+- Bound the accepted result to R3 package `0757cdb4...6b525` and deterministic hash `f149ab85...e0d8d`.
+- Kept Event State physical execution and single-use authorization NOT_AUTHORIZED.
+- Advanced the next action to physical-authorization preparation and pre-execution review.
+
 
 Mandatory restart handoff:
 `docs/00_system/CURRENT_PROJECT_HANDOFF.md`
@@ -556,3 +572,36 @@ This administrative closure does not authorize StateReplayFeed, Market State, Ev
 - Physical rows expose 26 design/provenance restrictions; sidecar/components expose four bounded-consumption restrictions. These are distinct governed domains, not reordered equivalent sets.
 - Zero Market State events, observations, strategy decisions, orders, fills and PnL. Provider modification remains false.
 - V0.4 cannot be reused. A contract correction and a separately audited future authorization are required.
+
+## 2026-07-31 - BT-GATE-015 Event State contract handoff adopted read-only
+
+- Adopted provider handoff `event_state_session_opened_bt_gate_015_contract_handoff_v0_1` at SHA-256 `b7a4783d0ab64ffaf37fbfdf2ee76dffacbe9b14cf3f059891908c87116369b2`.
+- Added canonical draft `docs/00_system/20_BT_GATE_015_POINT_IN_TIME_EVENT_STATE_CONSUMER_CONTRACT_V0_1.md`.
+- Preserved `BT-GATE-015 = IMPLEMENTED_PENDING_NON_PHYSICAL_EXTERNAL_REVIEW`, implementation and physical reads as `NOT_AUTHORIZED`.
+- Recorded provider blockers for row-addressable replay availability and the typed scientific payload binding.
+- No Event State or Market State physical data was opened.
+## 2026-07-31 - BT-GATE-015 provider completion adopted read-only
+
+- Adopted `event_state_session_opened_bt_gate_015_provider_completion_v0_1_20260731T071317Z.zip` by SHA-256 `3a6bf3ca04c0428a1728e1719cd6aeaea6bfaef43e12fb83939dde3cb6cb85d9`.
+- Closed the row-addressable replay-availability and 17-field typed-payload evidence blockers.
+- Corrected the runtime identity to the on-demand provider chain while retaining the first handoff identity as historical provenance only.
+- Set `BT-GATE-015_CONTRACT = OWNER_REVIEW_PASS`.
+- Preserved `BT-GATE-015 = IMPLEMENTED_PENDING_NON_PHYSICAL_EXTERNAL_REVIEW`, implementation and Event State physical reads as `NOT_AUTHORIZED`.
+## 2026-07-31 - BT-GATE-015 owner-review corrections applied
+
+- Corrected the executable window identity and isolated the historical ordinal.
+- Frozen the physical-row to sidecar bijection and original-byte payload hash.
+- Adopted the replay-availability sidecar schema by SHA-256.
+- Restricted V0.1 to the two row-level restriction domains actually materialized by provider evidence; component-level restriction inference is prohibited.
+- Corrected provider/backtester evidence chronology and replaced invented adoption times with date-only fields.
+- Set `BT-GATE-015_CONTRACT = OWNER_REVIEW_PASS`.
+- Preserved `BT-GATE-015 = IMPLEMENTED_PENDING_NON_PHYSICAL_EXTERNAL_REVIEW`, implementation and physical reads as `NOT_AUTHORIZED`.
+## 2026-07-31 - BT-GATE-015 physical sidecar key names corrected
+
+- Replaced semantic aliases with exact adopted sidecar keys: `market_state_cross_dataset_binding` and `replay_consumption_restriction_codes`.
+- Regenerated the owner-review diff and correction report.
+- Preserved `BT-GATE-015 = IMPLEMENTED_PENDING_NON_PHYSICAL_EXTERNAL_REVIEW`, implementation and physical reads as `NOT_AUTHORIZED`.
+
+## 2026-07-31 - BT-GATE-015 R2 non-physical corrections completed
+
+The failed package `247c314c...6b26eb2` remains immutable failed-review evidence. R2 now uses the accepted `BoundedMarketStateAvailable` type, validates the provider-compatible Event State envelope and complete sidecar, recomputes synthetic fingerprints, revalidates complete receipts in `EventStateStore`, executes the acceptance matrix and materializes the required reports. Event State physical reads and single-use authorization remain prohibited pending external R2 acceptance.

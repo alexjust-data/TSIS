@@ -1,0 +1,19 @@
+{
+  "authorization_consumed": true,
+  "authorization_id": "BT-GATE-014-SINGLE-USE-PHYSICAL-AUTHORIZATION-V0-5",
+  "authorization_receipt_sha256": "4c195bc1849543d0bda36b97a84ba2dbd12387ae3ceea8870367d678bc5c77da",
+  "binding_sha256": {
+    "configs/fixtures/BT_GATE_014_PHYSICAL_INTEGRATION_BARRIERS_V0_5.json": "5a54527119a74eaf1917fda86db4216b45fb725c02da8c76e5fb2bbc993fb785",
+    "scripts/run_bt_gate_014_single_use_physical_market_state_consumer_v0_5.py": "b89147a35279c17e4a7ff2501aac6e538fabfc0508d4477d54a8b942dd72f8cd",
+    "src/tsis_backtest/market_state/consumer.py": "4e36332f89f21b60bb0d73aadd39e6deca11a0f7fa57a4160a11527f3cb57ed2",
+    "src/tsis_backtest/market_state/contracts.py": "f5dcaa8505c379b096bb6afae0e4625cd76373a059ea87cfebbc7b2371e30086",
+    "src/tsis_backtest/market_state/physical_authorization_v0_5.py": "32069dd1fe5f1f91dba50fd54e3eacecd1d9faa2e0e5e6053d87db19019bd1da",
+    "src/tsis_backtest/market_state/physical_runner_v0_5.py": "ea420aad3b873681e0823dcce00d66b4c484f1a2a7884471aa51f5e318691510",
+    "src/tsis_backtest/market_state/store.py": "a8eb7c2ff48f1f7cb0d2e9537fa7a5ffa46c3fe2c8edf08736115a62db964da5",
+    "src/tsis_backtest/preflight/contracts.py": "12da900f292c8ed4169c7674b125d688dd39712a3d475e3e0fe3cc63575cf238",
+    "src/tsis_backtest/replay/contracts.py": "db8591453abb50e4e07125e7297e698c0690a14575fae66bca7795d97676fc29"
+  },
+  "physical_access_started": false,
+  "run_id": "bt_gate_014_single_use_physical_market_state_consumer_v0_5",
+  "status": "AUTHORIZATION_CONSUMED_RECEIPT_VERIFIED_PHYSICAL_ACCESS_NOT_STARTED"
+}

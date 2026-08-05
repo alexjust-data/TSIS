@@ -1,0 +1,13 @@
+{
+  "bounded_consumer_observations": 2,
+  "delivery_before_available_at": 0,
+  "event_loop_id": "BOUNDED_PHYSICAL_MARKET_STATE_EVENT_LOOP_V0_5",
+  "identity_fingerprint_mismatches": 0,
+  "market_state_events_emitted": 2,
+  "market_state_store_inserts": 2,
+  "physical_data_files_opened": 1,
+  "physical_state_rows_read": 2,
+  "provider_modification": false,
+  "status": "PASS",
+  "typed_scientific_values_per_event": 17
+}

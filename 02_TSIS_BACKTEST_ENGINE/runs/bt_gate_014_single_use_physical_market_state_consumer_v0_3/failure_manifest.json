@@ -1,0 +1,19 @@
+{
+  "authorization_consumed": true,
+  "authorization_id": "BT-GATE-014-SINGLE-USE-PHYSICAL-AUTHORIZATION-V0-3",
+  "bounded_consumer_observations": 0,
+  "error": "FAIL_MARKET_STATE_RESTRICTION_PROPAGATION: bounded restrictions",
+  "error_code": "FAIL_MARKET_STATE_RESTRICTION_PROPAGATION",
+  "failure_phase": "PHYSICAL_INTEGRATION",
+  "fills": 0,
+  "market_state_events_emitted": 0,
+  "orders": 0,
+  "physical_data_files_opened": 0,
+  "physical_state_rows_read": 0,
+  "pnl_calculated": false,
+  "provider_modification": false,
+  "receipt_present": true,
+  "run_id": "bt_gate_014_single_use_physical_market_state_consumer_v0_3",
+  "status": "FAIL",
+  "strategy_decisions": 0
+}

@@ -1,0 +1,26 @@
+{
+  "files": {
+    "synthetic_event_state_rows.json": {
+      "sha256": "b6c7a4cd0108d48a3bd6ec18108f493efa27d5ef569b72e70a5e4a68304ae459",
+      "size_bytes": 3606
+    },
+    "synthetic_event_state_sidecar.json": {
+      "sha256": "0ecd1fe7098b242db64578f650e5f11cee6f08fb8a10947675ab12536c1dab46",
+      "size_bytes": 3983
+    },
+    "synthetic_market_state_row.json": {
+      "sha256": "e510332393a8332773163be2e1db6e11cfaadfda4fefe551755c488047959820",
+      "size_bytes": 2516
+    },
+    "synthetic_market_state_sidecar_record.json": {
+      "sha256": "3378eb23d6c4120b45f9969f90f5c0920bfa1bb8eba447855ad1af23aeb70fc4",
+      "size_bytes": 3966
+    },
+    "synthetic_ordering_bar.json": {
+      "sha256": "c01ae95f45eae4c702b2801a17b4cb5028da1686519abaefbc9162e5508e9424",
+      "size_bytes": 279
+    }
+  },
+  "fixture_class": "SYNTHETIC_BT_GATE_015_CLOSED_INPUT_SET",
+  "physical_source_rows": 0
+}

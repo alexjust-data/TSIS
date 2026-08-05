@@ -1,0 +1,9 @@
+{
+  "StateReplayFeed": "NOT_AUTHORIZED",
+  "fills": 0,
+  "orders": 0,
+  "physical_reads": 0,
+  "pnl": false,
+  "status": "PASS",
+  "strategy": false
+}

@@ -1,0 +1,9 @@
+{
+  "authorization_consumed": true,
+  "authorization_id": "BT-GATE-014-SINGLE-USE-PHYSICAL-AUTHORIZATION-V0-5",
+  "failure": false,
+  "final_manifest_sha256": "1fae2507d375ece58552f136ecaef360033eb91932f38dee41ec13a6ef87803a",
+  "run_id": "bt_gate_014_single_use_physical_market_state_consumer_v0_5",
+  "status": "SUPERSEDED_BY_FINAL_MANIFEST_PASS",
+  "superseded_by": "final_manifest.json"
+}
