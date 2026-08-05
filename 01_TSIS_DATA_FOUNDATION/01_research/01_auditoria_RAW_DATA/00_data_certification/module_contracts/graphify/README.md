@@ -30,11 +30,15 @@ certification_decisions_graph
 ## Leaf outputs conocidos
 
 ```text
+graphify-out/leaf_slices/certification_decisions/
 graphify-out/leaf_slices/certification_decisions_20260619/
 graphify-out/leaf_slices/certification_decisions_topology_20260629/
 ```
 
 Lectura correcta:
+
+- `certification_decisions` es el leaf semantico activo y estable, reconstruido
+  con `graphifyy 0.9.33`, corpus controlado de 88 archivos y diagnostico limpio.
 
 - `certification_decisions_20260619` es el leaf semantico historico construido
   con chunks de workers Graphify/Codex.

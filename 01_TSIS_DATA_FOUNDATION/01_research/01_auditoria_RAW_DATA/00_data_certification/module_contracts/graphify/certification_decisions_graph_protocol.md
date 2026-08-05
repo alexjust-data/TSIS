@@ -140,17 +140,17 @@ como `INFERRED`. Si es incierta, marcarla como `AMBIGUOUS`.
 Un build de este leaf queda aceptado solo si existen:
 
 ```text
-graphify-out/leaf_slices/certification_decisions_20260619/graph.json
-graphify-out/leaf_slices/certification_decisions_20260619/GRAPH_REPORT.md
-graphify-out/leaf_slices/certification_decisions_20260619/graph.html
-graphify-out/leaf_slices/certification_decisions_20260619/BUILD_MANIFEST.md
+graphify-out/leaf_slices/certification_decisions/graph.json
+graphify-out/leaf_slices/certification_decisions/GRAPH_REPORT.md
+graphify-out/leaf_slices/certification_decisions/graph.html
+graphify-out/leaf_slices/certification_decisions/BUILD_MANIFEST.md
 ```
 
 Y si pasan:
 
 ```text
-graphify diagnose multigraph --graph graphify-out/leaf_slices/certification_decisions_20260619/graph.json
-graphify explain "<nodo canonico>" --graph graphify-out/leaf_slices/certification_decisions_20260619/graph.json
+graphify diagnose multigraph --graph graphify-out/leaf_slices/certification_decisions/graph.json
+graphify explain "<nodo canonico>" --graph graphify-out/leaf_slices/certification_decisions/graph.json
 ```
 
 ## Impacto downstream

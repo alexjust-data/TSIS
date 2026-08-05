@@ -1,0 +1,442 @@
+{
+  "certification/global_metrics/manifest.json": {
+    "mtime": 1778055964.0928547,
+    "ast_hash": "498b0b5e397ae151730d36941994b5e8",
+    "semantic_hash": "498b0b5e397ae151730d36941994b5e8"
+  },
+  "GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md": {
+    "mtime": 1782724484.8559654,
+    "ast_hash": "e1e0c4b6ed465a48af136dfad0112672",
+    "semantic_hash": "e1e0c4b6ed465a48af136dfad0112672"
+  },
+  "GRAPHIFY_REFRESH_QUEUE.md": {
+    "mtime": 1785918255.20219,
+    "ast_hash": "d8ca141a86c9592c26abc2ca2d8485ec",
+    "semantic_hash": "d8ca141a86c9592c26abc2ca2d8485ec"
+  },
+  "auditoria/additional/01_contrato_additional.md": {
+    "mtime": 1777655390.019834,
+    "ast_hash": "e2e2be5185c8aca890d3b4041f5f10a1",
+    "semantic_hash": "e2e2be5185c8aca890d3b4041f5f10a1"
+  },
+  "auditoria/additional/03_additional_root_cause_audit_phase1_closeout.md": {
+    "mtime": 1777656279.2267454,
+    "ast_hash": "3de3c63bc756e272c91d8e820fe83caa",
+    "semantic_hash": "3de3c63bc756e272c91d8e820fe83caa"
+  },
+  "auditoria/additional/04_additional_causal_overlay_closeout.md": {
+    "mtime": 1777705950.6640308,
+    "ast_hash": "54fc0f1aa2394258acbcbb75de2e4dbe",
+    "semantic_hash": "54fc0f1aa2394258acbcbb75de2e4dbe"
+  },
+  "auditoria/additional/04_additional_closeout.md": {
+    "mtime": 1777704650.0079508,
+    "ast_hash": "c49901a9cc2ed35d155ac560a54ec00f",
+    "semantic_hash": "c49901a9cc2ed35d155ac560a54ec00f"
+  },
+  "auditoria/daily/01_contrato_agent02_agent03_daily_04032026.md": {
+    "mtime": 1775201931.739177,
+    "ast_hash": "d158e83afbf6cf7cc0f25e5e93e7011e",
+    "semantic_hash": "d158e83afbf6cf7cc0f25e5e93e7011e"
+  },
+  "auditoria/daily/04_daily_closeout.md": {
+    "mtime": 1778854243.818697,
+    "ast_hash": "0c38624c5b6328758344af28bb4895c2",
+    "semantic_hash": "0c38624c5b6328758344af28bb4895c2"
+  },
+  "auditoria/halts/01_contrato_halts.md": {
+    "mtime": 1777294662.824767,
+    "ast_hash": "0304ca8a7e85ca6ca025bdfd4003b7e6",
+    "semantic_hash": "0304ca8a7e85ca6ca025bdfd4003b7e6"
+  },
+  "auditoria/halts/03_halts_root_cause_audit_phase1_closeout.md": {
+    "mtime": 1777367732.606156,
+    "ast_hash": "c211f03f092eab1b3cde16a99eefee80",
+    "semantic_hash": "c211f03f092eab1b3cde16a99eefee80"
+  },
+  "auditoria/halts/04_halts_causal_overlay_closeout.md": {
+    "mtime": 1777398657.1161277,
+    "ast_hash": "a0b0ca38cc62d65f8c0a5d596adf5740",
+    "semantic_hash": "a0b0ca38cc62d65f8c0a5d596adf5740"
+  },
+  "auditoria/halts/04_halts_closeout.md": {
+    "mtime": 1777398720.492921,
+    "ast_hash": "034cadb10debd45071f721ad3106317f",
+    "semantic_hash": "034cadb10debd45071f721ad3106317f"
+  },
+  "auditoria/ohlcv_1m/01_contrato_agent02_agent03_ohlcv_1m_04032026.md": {
+    "mtime": 1775231298.394883,
+    "ast_hash": "c3b1487513bd1273120328c1dca7d4e3",
+    "semantic_hash": "c3b1487513bd1273120328c1dca7d4e3"
+  },
+  "auditoria/ohlcv_1m/04_ohlcv_1m_closeout.md": {
+    "mtime": 1776847625.3595655,
+    "ast_hash": "924362681f6ca7d5f9779b579eda3129",
+    "semantic_hash": "924362681f6ca7d5f9779b579eda3129"
+  },
+  "auditoria/quotes/v1/01_contrato_agent02_agent03_03312026.md": {
+    "mtime": 1778854244.3519995,
+    "ast_hash": "5c9367b226b111f03fc4816e800f89e9",
+    "semantic_hash": "5c9367b226b111f03fc4816e800f89e9"
+  },
+  "auditoria/quotes/v2/04_quotes_full_C_D_closeout.md": {
+    "mtime": 1778854244.31099,
+    "ast_hash": "7a852b9677ec0da1e3bcd133545bd9fb",
+    "semantic_hash": "7a852b9677ec0da1e3bcd133545bd9fb"
+  },
+  "auditoria/reference/01_contrato_reference.md": {
+    "mtime": 1777448163.4587636,
+    "ast_hash": "4971262604314ebae0c9cb13f7d7bf9f",
+    "semantic_hash": "4971262604314ebae0c9cb13f7d7bf9f"
+  },
+  "auditoria/reference/03_reference_root_cause_audit_phase1_closeout.md": {
+    "mtime": 1778854243.8547058,
+    "ast_hash": "f9f63681a81fe2223e58acd078ccaba6",
+    "semantic_hash": "f9f63681a81fe2223e58acd078ccaba6"
+  },
+  "auditoria/reference/04_reference_causal_overlay_closeout.md": {
+    "mtime": 1778854243.847701,
+    "ast_hash": "93a71370e582cba103d82b7e52016cf5",
+    "semantic_hash": "93a71370e582cba103d82b7e52016cf5"
+  },
+  "auditoria/reference/04_reference_closeout.md": {
+    "mtime": 1777569211.72008,
+    "ast_hash": "a87fe91d9880cb14aa4060b66d01028a",
+    "semantic_hash": "a87fe91d9880cb14aa4060b66d01028a"
+  },
+  "auditoria/short/01_contrato_short.md": {
+    "mtime": 1777646566.5462062,
+    "ast_hash": "4513d1d9b86c917f03d96136d6e72405",
+    "semantic_hash": "4513d1d9b86c917f03d96136d6e72405"
+  },
+  "auditoria/short/03_short_root_cause_audit_phase1_closeout.md": {
+    "mtime": 1777648187.9448707,
+    "ast_hash": "ef6e964f0c276ba6a597ee339b039344",
+    "semantic_hash": "ef6e964f0c276ba6a597ee339b039344"
+  },
+  "auditoria/short/04_short_causal_overlay_closeout.md": {
+    "mtime": 1777652012.5383487,
+    "ast_hash": "f7c0097298f9c50604d05ce161152776",
+    "semantic_hash": "f7c0097298f9c50604d05ce161152776"
+  },
+  "auditoria/short/04_short_closeout.md": {
+    "mtime": 1777652012.5554085,
+    "ast_hash": "1ff69dc496dfc7383aee31b03e630da7",
+    "semantic_hash": "1ff69dc496dfc7383aee31b03e630da7"
+  },
+  "auditoria/trades/v1/01_contrato_agent02_agent03_trades_04012026.md": {
+    "mtime": 1778854242.6088223,
+    "ast_hash": "e65abf3a1b35d899e303e77d80bdda1f",
+    "semantic_hash": "e65abf3a1b35d899e303e77d80bdda1f"
+  },
+  "certification/00_final_certification_process.md": {
+    "mtime": 1777972805.935746,
+    "ast_hash": "3d11e4d5508e2a8808f2e3668eb1b9ab",
+    "semantic_hash": "3d11e4d5508e2a8808f2e3668eb1b9ab"
+  },
+  "certification/1m/00_1m_current_state.md": {
+    "mtime": 1778854243.0708127,
+    "ast_hash": "a43a886a17e78e5eda5d82913b12df02",
+    "semantic_hash": "a43a886a17e78e5eda5d82913b12df02"
+  },
+  "certification/1m/01_1m_recovery_policy.md": {
+    "mtime": 1778854243.061804,
+    "ast_hash": "a241fb8472abcdbb638c119484806310",
+    "semantic_hash": "a241fb8472abcdbb638c119484806310"
+  },
+  "certification/1m/02_1m_quality_policy.md": {
+    "mtime": 1778048853.8174884,
+    "ast_hash": "1bc62c29da465894f609a6db531ef3f2",
+    "semantic_hash": "1bc62c29da465894f609a6db531ef3f2"
+  },
+  "certification/1m/03_1m_closeout.md": {
+    "mtime": 1778048853.8331783,
+    "ast_hash": "8ad1b5bfd45864bee240a8e5f4e49ec2",
+    "semantic_hash": "8ad1b5bfd45864bee240a8e5f4e49ec2"
+  },
+  "certification/additional/00_additional_current_state.md": {
+    "mtime": 1778854243.0290668,
+    "ast_hash": "51535f791ee9f12f5d1cc665ac21f6a2",
+    "semantic_hash": "51535f791ee9f12f5d1cc665ac21f6a2"
+  },
+  "certification/additional/01_additional_subblock_policy.md": {
+    "mtime": 1778854243.022062,
+    "ast_hash": "0f38a3ba28a702fd5deae4f335cd10e2",
+    "semantic_hash": "0f38a3ba28a702fd5deae4f335cd10e2"
+  },
+  "certification/additional/02_additional_closeout.md": {
+    "mtime": 1778052275.4878767,
+    "ast_hash": "f7c67bc78720d2b40b4c795e8e8c21f5",
+    "semantic_hash": "f7c67bc78720d2b40b4c795e8e8c21f5"
+  },
+  "certification/daily/00_daily_current_state.md": {
+    "mtime": 1778854243.2238698,
+    "ast_hash": "e7a9732ed727ec9d73c6e4c512dd2c8c",
+    "semantic_hash": "e7a9732ed727ec9d73c6e4c512dd2c8c"
+  },
+  "certification/daily/01_daily_recovery_and_coverage.md": {
+    "mtime": 1778854243.215864,
+    "ast_hash": "5136bd3ccdeec237662e8053eda18c72",
+    "semantic_hash": "5136bd3ccdeec237662e8053eda18c72"
+  },
+  "certification/daily/02_daily_quality_policy.md": {
+    "mtime": 1778854243.2098641,
+    "ast_hash": "5987b3fce930a032f81a8b06dcc48a68",
+    "semantic_hash": "5987b3fce930a032f81a8b06dcc48a68"
+  },
+  "certification/daily/03_daily_closeout.md": {
+    "mtime": 1778004240.0451856,
+    "ast_hash": "cd179cdc5f4e70ba0d834b10be6c8eae",
+    "semantic_hash": "cd179cdc5f4e70ba0d834b10be6c8eae"
+  },
+  "certification/global_metrics/00_global_metrics_tables.md": {
+    "mtime": 1778854243.0838094,
+    "ast_hash": "5e012097aee7776d36bd2b668be69079",
+    "semantic_hash": "5e012097aee7776d36bd2b668be69079"
+  },
+  "certification/global_metrics/01_global_metrics_tables_traceable.md": {
+    "mtime": 1778854243.230875,
+    "ast_hash": "66df9e588d2151e4e4dd32133d466fa1",
+    "semantic_hash": "66df9e588d2151e4e4dd32133d466fa1"
+  },
+  "certification/global_metrics/02_working_links.md": {
+    "mtime": 1778854243.2388818,
+    "ast_hash": "e4648554aa6e4fb7f98fd62984966056",
+    "semantic_hash": "e4648554aa6e4fb7f98fd62984966056"
+  },
+  "certification/global_metrics/04_global_metrics_tables_traceable_plain_paths.md": {
+    "mtime": 1778854244.5120552,
+    "ast_hash": "df11678724e31f19e6107a545aa4397b",
+    "semantic_hash": "df11678724e31f19e6107a545aa4397b"
+  },
+  "certification/halts/00_halts_current_state.md": {
+    "mtime": 1778854243.0540738,
+    "ast_hash": "25e1eeb52835cd7256aaacd0f760e241",
+    "semantic_hash": "25e1eeb52835cd7256aaacd0f760e241"
+  },
+  "certification/halts/01_halts_overlay_and_recovery.md": {
+    "mtime": 1778854243.0460732,
+    "ast_hash": "af0c122be6380dfedab7e5a3128819ff",
+    "semantic_hash": "af0c122be6380dfedab7e5a3128819ff"
+  },
+  "certification/halts/02_halts_quality_policy.md": {
+    "mtime": 1778854243.0370686,
+    "ast_hash": "5b5df9126a2844aa8c35ca2a0bdfa1fc",
+    "semantic_hash": "5b5df9126a2844aa8c35ca2a0bdfa1fc"
+  },
+  "certification/halts/03_halts_closeout.md": {
+    "mtime": 1778048983.0556178,
+    "ast_hash": "b2059956d8288ba173810beb87310207",
+    "semantic_hash": "b2059956d8288ba173810beb87310207"
+  },
+  "certification/quotes/00_quotes_certification_guide.md": {
+    "mtime": 1777990689.5675619,
+    "ast_hash": "8f19fa7f2546f19c78e9e98e29223ec3",
+    "semantic_hash": "8f19fa7f2546f19c78e9e98e29223ec3"
+  },
+  "certification/quotes/01_quotes_certification_contract.md": {
+    "mtime": 1777990689.6265523,
+    "ast_hash": "711ada155ad71ab023342635568a91de",
+    "semantic_hash": "711ada155ad71ab023342635568a91de"
+  },
+  "certification/quotes/02_quotes_expected_presence_logic.md": {
+    "mtime": 1777990689.684116,
+    "ast_hash": "50a617f7286e96e2f116cd7bf2d79b64",
+    "semantic_hash": "50a617f7286e96e2f116cd7bf2d79b64"
+  },
+  "certification/quotes/03_quotes_quality_policy.md": {
+    "mtime": 1777990689.735402,
+    "ast_hash": "8c4af30fb1cc757868c800daff35959a",
+    "semantic_hash": "8c4af30fb1cc757868c800daff35959a"
+  },
+  "certification/quotes/04_quotes_usage_policy.md": {
+    "mtime": 1777990689.7911568,
+    "ast_hash": "67b65942dd8be0d7a4ed327e7ecef9c4",
+    "semantic_hash": "67b65942dd8be0d7a4ed327e7ecef9c4"
+  },
+  "certification/quotes/05_quotes_artifact_mapping.md": {
+    "mtime": 1777990689.8473115,
+    "ast_hash": "c1897a19a3e116d05daab9aaba47924d",
+    "semantic_hash": "c1897a19a3e116d05daab9aaba47924d"
+  },
+  "certification/quotes/06_quotes_cert_table_spec.md": {
+    "mtime": 1777990689.9032676,
+    "ast_hash": "3da07e3fb513c417cd2f368d2bd9d214",
+    "semantic_hash": "3da07e3fb513c417cd2f368d2bd9d214"
+  },
+  "certification/quotes/07_quotes_local_certification_build_plan.md": {
+    "mtime": 1777990689.9575312,
+    "ast_hash": "416580780c41d06e94e43876e8aeaa23",
+    "semantic_hash": "416580780c41d06e94e43876e8aeaa23"
+  },
+  "certification/quotes/08_persistent_soft_crossed_mid_large_scale.md": {
+    "mtime": 1777993731.849819,
+    "ast_hash": "dd7a2f5cb4282d54c4a1d15df674e370",
+    "semantic_hash": "dd7a2f5cb4282d54c4a1d15df674e370"
+  },
+  "certification/quotes/09_large_file_threshold_edge_hard_many_crosses.md": {
+    "mtime": 1777993971.5120146,
+    "ast_hash": "ea544f5fada508fb7ea41df1ce014e90",
+    "semantic_hash": "ea544f5fada508fb7ea41df1ce014e90"
+  },
+  "certification/quotes/10_medium_file_threshold_edge_hard_many_crosses.md": {
+    "mtime": 1777996643.7396417,
+    "ast_hash": "a2e411ade0def18aa1acd4d07bea0ef0",
+    "semantic_hash": "a2e411ade0def18aa1acd4d07bea0ef0"
+  },
+  "certification/quotes/11_high_hard_crossed_10_to_20.md": {
+    "mtime": 1777997694.6119943,
+    "ast_hash": "9ef728472a65ef29c10dc266fec2fb8c",
+    "semantic_hash": "9ef728472a65ef29c10dc266fec2fb8c"
+  },
+  "certification/quotes/12_quotes_open_buckets_synthesis.md": {
+    "mtime": 1778854243.0908158,
+    "ast_hash": "ce5f5dc5e1a88373ef5917e926fd15a8",
+    "semantic_hash": "ce5f5dc5e1a88373ef5917e926fd15a8"
+  },
+  "certification/reference/00_reference_current_state.md": {
+    "mtime": 1778854242.964033,
+    "ast_hash": "f27eea26f1cbdbac0179d9bd66da5d10",
+    "semantic_hash": "f27eea26f1cbdbac0179d9bd66da5d10"
+  },
+  "certification/reference/01_reference_causal_value.md": {
+    "mtime": 1778854242.9580283,
+    "ast_hash": "243527fdcb577fc83973073ca40042d1",
+    "semantic_hash": "243527fdcb577fc83973073ca40042d1"
+  },
+  "certification/reference/02_reference_closeout.md": {
+    "mtime": 1778051294.3483794,
+    "ast_hash": "a6b247721ec0e4742245e88ebb114afc",
+    "semantic_hash": "a6b247721ec0e4742245e88ebb114afc"
+  },
+  "certification/short/00_short_current_state.md": {
+    "mtime": 1778854242.9250038,
+    "ast_hash": "e3a98ee76225e89a82e2c6d45db7e405",
+    "semantic_hash": "e3a98ee76225e89a82e2c6d45db7e405"
+  },
+  "certification/short/01_short_recovery_and_limits.md": {
+    "mtime": 1778854242.9180048,
+    "ast_hash": "11686433f3128f4a7ba3a29021cb67a2",
+    "semantic_hash": "11686433f3128f4a7ba3a29021cb67a2"
+  },
+  "certification/short/02_short_closeout.md": {
+    "mtime": 1778052194.5223298,
+    "ast_hash": "d59a3987e7caaa8741c2f3fe3434527a",
+    "semantic_hash": "d59a3987e7caaa8741c2f3fe3434527a"
+  },
+  "certification/trades/00_trades_current_state.md": {
+    "mtime": 1778854242.8899927,
+    "ast_hash": "dd283c5bec473dff6eb6769cc10b68e3",
+    "semantic_hash": "dd283c5bec473dff6eb6769cc10b68e3"
+  },
+  "certification/trades/01_trades_label_assessment.md": {
+    "mtime": 1778830337.2879648,
+    "ast_hash": "b4957a97a7048cde3192a806d848dc56",
+    "semantic_hash": "b4957a97a7048cde3192a806d848dc56"
+  },
+  "certification/trades/02_trades_base_certification_decision.md": {
+    "mtime": 1778854242.8819923,
+    "ast_hash": "139d0dba43de3d4ec4b81bcda58dca8c",
+    "semantic_hash": "139d0dba43de3d4ec4b81bcda58dca8c"
+  },
+  "certification/trades/03_trades_old_vs_new_bucket_bridge.md": {
+    "mtime": 1778854242.8719883,
+    "ast_hash": "35523b471b2928236a3f12f1945f83c9",
+    "semantic_hash": "35523b471b2928236a3f12f1945f83c9"
+  },
+  "certification/trades/04_trades_provisional_cert_policy.md": {
+    "mtime": 1778854242.8629842,
+    "ast_hash": "dd95dfb465fdb653562bbf0fe2c2b4aa",
+    "semantic_hash": "dd95dfb465fdb653562bbf0fe2c2b4aa"
+  },
+  "certification/trades/05_trades_review_1m_reference_alignment.md": {
+    "mtime": 1778854242.854469,
+    "ast_hash": "7c8f7c686311f31a0e0c2041338ca694",
+    "semantic_hash": "7c8f7c686311f31a0e0c2041338ca694"
+  },
+  "certification/trades/06_trades_review_microstructure.md": {
+    "mtime": 1778854242.8449602,
+    "ast_hash": "38b81e4cfe110d67fe3df3b5fc1ec864",
+    "semantic_hash": "38b81e4cfe110d67fe3df3b5fc1ec864"
+  },
+  "certification/trades/07_trades_reference_scale_mismatch.md": {
+    "mtime": 1778854242.8369539,
+    "ast_hash": "ccd5581d89951c76c8efd2426fcb406c",
+    "semantic_hash": "ccd5581d89951c76c8efd2426fcb406c"
+  },
+  "certification/trades/08_trades_bad_data.md": {
+    "mtime": 1778854242.8279538,
+    "ast_hash": "52a0ba350e3f5beafebb373e581515a1",
+    "semantic_hash": "52a0ba350e3f5beafebb373e581515a1"
+  },
+  "certification/trades/09_trades_review_no_1m_reference.md": {
+    "mtime": 1778854242.8199525,
+    "ast_hash": "7bd3f1a40bbb90c0d3a8179a70a15212",
+    "semantic_hash": "7bd3f1a40bbb90c0d3a8179a70a15212"
+  },
+  "certification/trades/10_trades_bucket_synthesis.md": {
+    "mtime": 1778002549.5350657,
+    "ast_hash": "6509d1a9d74b16f618d21711d328e5ad",
+    "semantic_hash": "6509d1a9d74b16f618d21711d328e5ad"
+  },
+  "certification/trades/11_trades_review_generic.md": {
+    "mtime": 1778854242.8109472,
+    "ast_hash": "36eed7c19e6060b4eb78ff062663e1c8",
+    "semantic_hash": "36eed7c19e6060b4eb78ff062663e1c8"
+  },
+  "certification/trades/12_trades_good.md": {
+    "mtime": 1778854242.7899468,
+    "ast_hash": "6bad0b9b7b958bf486f978a862f984ef",
+    "semantic_hash": "6bad0b9b7b958bf486f978a862f984ef"
+  },
+  "certification/trades/13_trades_recovery_review_no_1m_reference.md": {
+    "mtime": 1778854242.7839458,
+    "ast_hash": "3439898445a9ec179466bcf774e9f1d1",
+    "semantic_hash": "3439898445a9ec179466bcf774e9f1d1"
+  },
+  "certification/trades/14_trades_recovery_reference_scale_mismatch.md": {
+    "mtime": 1778854242.776944,
+    "ast_hash": "45d1217f196152f0839542109cd64853",
+    "semantic_hash": "45d1217f196152f0839542109cd64853"
+  },
+  "certification/trades/15_trades_recovery_review_microstructure.md": {
+    "mtime": 1778854242.770944,
+    "ast_hash": "33407959606cc2f88bdfab443ce3db88",
+    "semantic_hash": "33407959606cc2f88bdfab443ce3db88"
+  },
+  "certification/trades/16_trades_recovery_review_1m_reference_alignment.md": {
+    "mtime": 1778854242.763945,
+    "ast_hash": "fc08f312918b0218175706671f853fd6",
+    "semantic_hash": "fc08f312918b0218175706671f853fd6"
+  },
+  "certification/trades/17_trades_recovery_review_generic.md": {
+    "mtime": 1778854242.757944,
+    "ast_hash": "958869ddef04bc5e2b0e6f3e8f440416",
+    "semantic_hash": "958869ddef04bc5e2b0e6f3e8f440416"
+  },
+  "certification/trades/18_trades_recovery_synthesis.md": {
+    "mtime": 1778003644.9797187,
+    "ast_hash": "c8dbb2b46064faca3d8cb82714fac340",
+    "semantic_hash": "c8dbb2b46064faca3d8cb82714fac340"
+  },
+  "certification/trades/19_trades_final_recovery_policy.md": {
+    "mtime": 1778830337.2944775,
+    "ast_hash": "60ab3609ac444fd7f1e60a32e04455cb",
+    "semantic_hash": "60ab3609ac444fd7f1e60a32e04455cb"
+  },
+  "certification/trades/20_trades_closeout.md": {
+    "mtime": 1778854242.7498813,
+    "ast_hash": "11bf39f17849a9682dbd5c3ef159ced0",
+    "semantic_hash": "11bf39f17849a9682dbd5c3ef159ced0"
+  },
+  "module_contracts/graphify/README.md": {
+    "mtime": 1785918255.200013,
+    "ast_hash": "5c741ec8a4e333a9cf2fb9c45a51d2c6",
+    "semantic_hash": "5c741ec8a4e333a9cf2fb9c45a51d2c6"
+  },
+  "module_contracts/graphify/certification_decisions_graph_protocol.md": {
+    "mtime": 1785918255.2011905,
+    "ast_hash": "e3aa8894c9b6f2c9a6addb14168180e4",
+    "semantic_hash": "e3aa8894c9b6f2c9a6addb14168180e4"
+  }
+}

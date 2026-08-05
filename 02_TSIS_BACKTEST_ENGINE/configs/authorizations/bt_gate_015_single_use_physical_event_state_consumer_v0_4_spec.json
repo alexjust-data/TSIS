@@ -1,0 +1,232 @@
+{
+    "authorization_id":  "BT-GATE-015-SINGLE-USE-PHYSICAL-AUTHORIZATION-V0-4",
+    "authorization_version":  "V0.4",
+    "consumer_id":  "BT_GATE_015_BOUNDED_EVENT_STATE_CONSUMER_V0_4",
+    "contract_consumer_id":  "BT_GATE_015_bounded_event_state_consumer_v0_1",
+    "contract_id":  "20_BT_GATE_015_POINT_IN_TIME_EVENT_STATE_CONSUMER_CONTRACT_V0_1",
+    "created_utc":  "2026-08-05T12:00:00Z",
+    "run_id":  "bt_gate_015_single_use_physical_event_state_consumer_v0_4",
+    "single_use":  true,
+    "status":  "AUTHORIZED_NOT_CONSUMED",
+    "physical_command_status":  "NOT_APPROVED_PENDING_EXTERNAL_PREEXECUTION_REVIEW",
+    "preexecution_review_status":  "NOT_EXECUTED",
+    "boundaries":  {
+                       "allow_event_state_physical_read":  true,
+                       "allow_fills":  false,
+                       "allow_full_history":  false,
+                       "allow_market_state_physical_read":  false,
+                       "allow_orders":  false,
+                       "allow_pnl":  false,
+                       "allow_provider_modification":  false,
+                       "allow_state_replay_feed":  false,
+                       "allow_strategy":  false,
+                       "max_event_state_events":  1,
+                       "max_event_state_files":  1,
+                       "max_event_state_records_scanned":  8,
+                       "max_event_state_records_selected":  1,
+                       "max_event_state_store_inserts":  1,
+                       "max_market_state_dependency_events":  1
+                   },
+    "event_state_scope":  {
+                              "event_type_id":  "event_type:market_data:session_opened",
+                              "exchange_id":  "XNYS",
+                              "instrument_id":  "figi_share_class:BBG001S5N8T1",
+                              "profile_id":  "event_state_core_four_intraday_profile_v0_1",
+                              "session_date":  "2021-01-19",
+                              "ticker":  "AAME",
+                              "window_definition_id":  "session_opened_at_anchor_context_v0_1"
+                          },
+    "expected_outputs":  {
+                             "bounded_probe_observations":  1,
+                             "delivery_before_available_at":  0,
+                             "event_state_events":  1,
+                             "event_state_store_inserts":  1,
+                             "fills":  0,
+                             "market_state_dependency_events":  1,
+                             "orders":  0,
+                             "pnl_calculated":  false,
+                             "provider_modification":  false,
+                             "strategy_decisions":  0,
+                             "typed_scientific_values":  17
+                         },
+    "governed_inputs":  {
+                            "candidate_jsonl":  {
+                                                    "relative_path":  "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/08_RUNTIME_CAPABILITIES/runs/event_state_on_demand_bounded_execution_v0_1_20260727T200322Z/event_state_candidate_records.jsonl",
+                                                    "sha256":  "ed975ad7d7a3e0ac68bd7dfe2c91743c86931a545162a4440d270cbb689477dd",
+                                                    "size_bytes":  70001
+                                                },
+                            "event_state_physical_validation_scope":  {
+                                                                          "relative_path":  "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/07_EVENT_STATE_INTEGRATION/configs/event_state_bounded_execution_chain_physical_validation_scope_v0_1.json",
+                                                                          "sha256":  "15e5a5c33bf186228db818b5082919ff0e82098f646e6b46e27be3c7af666852",
+                                                                          "size_bytes":  5355
+                                                                      },
+                            "event_state_schema":  {
+                                                       "relative_path":  "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/07_EVENT_STATE_INTEGRATION/official_profiles/event_state_core_four_intraday_profile_v0_1/EVENT_STATE_SCHEMA_CONTRACT.json",
+                                                       "sha256":  "e68be24763c4320419f7f2216a3560dc94ce36f02b293fdf2dad2ea88bba9515",
+                                                       "size_bytes":  6139
+                                                   },
+                            "initial_provider_handoff":  {
+                                                             "relative_path":  "02_TSIS_BACKTEST_ENGINE/evidence/provider_handoffs/bt_gate_015/event_state_session_opened_bt_gate_015_contract_handoff_v0_1_20260731T064518Z.zip",
+                                                             "sha256":  "b7a4783d0ab64ffaf37fbfdf2ee76dffacbe9b14cf3f059891908c87116369b2"
+                                                         },
+                            "market_state_replay_sidecar":  {
+                                                                "relative_path":  "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/market_state_core_four_replay_availability_evidence_sidecar_manifest_v0_1.json",
+                                                                "sha256":  "8e426b09bb1cafac26e49c7a81de31ef4ea60ca3b56ac3aa766ba13a0772c5ac",
+                                                                "size_bytes":  464137
+                                                            },
+                            "market_state_schema":  {
+                                                        "relative_path":  "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/06_MARKET_STATE_INTEGRATION/official_profiles/market_state_core_four_intraday_profile_v0_1/PHYSICAL_SCHEMA_CONTRACT.json",
+                                                        "sha256":  "595f2645aa4168e87d0b0d226b1dbc39c3e71deb7fb25b08bb8f5eab563f267b",
+                                                        "size_bytes":  5232
+                                                    },
+                            "provider_completion_handoff":  {
+                                                                "relative_path":  "02_TSIS_BACKTEST_ENGINE/evidence/provider_handoffs/bt_gate_015/event_state_session_opened_bt_gate_015_provider_completion_v0_1_20260731T071317Z.zip",
+                                                                "sha256":  "3a6bf3ca04c0428a1728e1719cd6aeaea6bfaef43e12fb83939dde3cb6cb85d9"
+                                                            },
+                            "replay_availability_authorization_consumption":  {
+                                                                                  "relative_path":  "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/event_state_session_opened_replay_availability_sidecar_authorization_consumption_v0_1.json",
+                                                                                  "sha256":  "006ca91cc04746759f623d152cee2eb5650ba1ce463412c5b11d0deca66eb859",
+                                                                                  "size_bytes":  3496
+                                                                              },
+                            "replay_availability_sidecar_contract":  {
+                                                                         "relative_path":  "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/event_state_session_opened_replay_availability_sidecar_contract_v0_1.json",
+                                                                         "sha256":  "7d814dcb50fdd9b0da604e4f443497f3b733082070ccc2ed8ff89293e773ad77",
+                                                                         "size_bytes":  6134
+                                                                     },
+                            "replay_availability_sidecar_manifest":  {
+                                                                         "relative_path":  "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/event_state_session_opened_replay_availability_sidecar_manifest_v0_1.json",
+                                                                         "sha256":  "fded92d3f213f926cae9024a6aa31379c87e4485ac25afd51ea30ac848eec8f6",
+                                                                         "size_bytes":  4482
+                                                                     },
+                            "typed_payload_binding":  {
+                                                          "relative_path":  "00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/09_STATE_CONSUMPTION_BOUNDARY/event_state_session_opened_typed_payload_binding_v0_1.json",
+                                                          "sha256":  "320fc3e9dfb532aad0e12a48af6117d50a214642b2b827a4628265808d4d3d43",
+                                                          "size_bytes":  6707
+                                                      }
+                        },
+    "governed_input_count":  11,
+    "market_state_dependency":  {
+                                    "availability_evidence_dataset_fingerprint":  "516a27d0f8f53762fbd8e7be151c84577544c056b093b859ab1fbce45dbac416",
+                                    "cross_dataset_binding":  "EXACT_ROW_ID_AND_FINGERPRINT_EQUIVALENCE",
+                                    "dependency_dataset_fingerprint":  "433288b634924676a3c516fac600574ed36237c3c02ca640111f17609b6c235b",
+                                    "market_state_physical_read":  false,
+                                    "record_id":  "ba92895493bdc05e2ad07b78b1491f1b62d74d1079869b58c3df95cefdc622ee",
+                                    "state_output_fingerprint":  "9430c9903b6172c9183e8cce264bfdfcb0da83d391becc05eb7ef56f11509685"
+                                },
+    "physical_identity":  {
+                              "candidate_jsonl_sha256":  "ed975ad7d7a3e0ac68bd7dfe2c91743c86931a545162a4440d270cbb689477dd",
+                              "event_state_record_fingerprint":  "31f1463baf0dc8f0dba3bc130c0bb1d61092897595849df57abc6b1023853a01",
+                              "event_state_record_id":  "e71cad82e71783bbc50ebb8df1e44e2f9118dd4843c3cb4f0fbf2ee5a2a8ca76",
+                              "fingerprint_excluded_fields":  [
+                                                                  "created_at_utc",
+                                                                  "event_state_record_fingerprint"
+                                                              ],
+                              "fingerprint_policy_id":  "EVENT_STATE_ON_DEMAND_CANONICAL_RECORD_SHA256_V0_1",
+                              "state_output_fingerprint_semantics":  "MARKET_STATE_DEPENDENCY_FINGERPRINT"
+                          },
+    "physical_row_contract":  {
+                                  "additional_properties":  false,
+                                  "field_count":  44,
+                                  "fields":  [
+                                                 "event_state_record_id",
+                                                 "event_state_record_fingerprint",
+                                                 "event_state_schema_version",
+                                                 "event_state_profile_id",
+                                                 "event_type_id",
+                                                 "event_family_id",
+                                                 "event_instance_id",
+                                                 "event_instance_version",
+                                                 "event_window_binding_id",
+                                                 "event_window_definition_id",
+                                                 "event_state_instrument_session_projection_id",
+                                                 "instrument_id",
+                                                 "ticker",
+                                                 "exchange_id",
+                                                 "session_date",
+                                                 "calendar_version",
+                                                 "calendar_row_fingerprint",
+                                                 "event_anchor_timestamp_utc",
+                                                 "decision_timestamp_utc",
+                                                 "window_start_utc",
+                                                 "window_end_utc",
+                                                 "relative_time_to_event",
+                                                 "state_role",
+                                                 "consumption_legality",
+                                                 "market_state_record_id",
+                                                 "state_output_fingerprint",
+                                                 "source_market_state_profile_id",
+                                                 "source_market_state_physical_profile_id",
+                                                 "source_market_state_schema_version",
+                                                 "source_market_state_value_snapshot_json",
+                                                 "source_lineage_json",
+                                                 "policy_versions_json",
+                                                 "restriction_codes_json",
+                                                 "object_completeness_status",
+                                                 "integration_status",
+                                                 "integration_policy_id",
+                                                 "integration_policy_version",
+                                                 "quality_status",
+                                                 "created_at_utc",
+                                                 "supersedes_event_state_record_id",
+                                                 "superseded_by_event_state_record_id",
+                                                 "source_market_state_candidate_dataset_fingerprint",
+                                                 "market_state_dependency_request_fingerprint",
+                                                 "market_state_dependency_execution_plan_fingerprint"
+                                             ]
+                              },
+    "replay_consumption_restriction_codes":  [
+                                                 "candidate_runtime_only",
+                                                 "no_downstream",
+                                                 "no_production",
+                                                 "not_official_dataset",
+                                                 "research_only"
+                                             ],
+    "selection":  {
+                      "candidate_records_scanned":  8,
+                      "event_state_record_fingerprint":  "31f1463baf0dc8f0dba3bc130c0bb1d61092897595849df57abc6b1023853a01",
+                      "event_state_record_id":  "e71cad82e71783bbc50ebb8df1e44e2f9118dd4843c3cb4f0fbf2ee5a2a8ca76",
+                      "records_selected":  1,
+                      "selection_policy":  "EXACT_RECORD_ID_AND_FINGERPRINT"
+                  },
+    "semantic_correction":  {
+                                "contract_section":  "5.1",
+                                "status":  "IMPLEMENTED_IN_V0_4_PENDING_EXTERNAL_PREEXECUTION_REVIEW",
+                                "correct_event_state_fingerprint_field":  "event_state_record_fingerprint",
+                                "correct_market_state_fingerprint_field":  "state_output_fingerprint",
+                                "reason":  "The physical Event State row binds source_market_state_candidate_dataset_fingerprint to market_state_dependency_dataset_fingerprint. The independent Market State replay sidecar binds candidate_dataset_fingerprint to market_state_availability_evidence_dataset_fingerprint.",
+                                "physical_provenance_binding_field":  "market_state_dependency_dataset_fingerprint",
+                                "availability_evidence_binding_field":  "market_state_availability_evidence_dataset_fingerprint",
+                                "distinct_domains_required":  true
+                            },
+    "specification_status":  "FROZEN_PREEXECUTION_CANDIDATE_V0_4",
+    "executable_binding_count":  27,
+    "executable_binding_paths":  [
+                                     "02_TSIS_BACKTEST_ENGINE/RUN_BT_GATE_015_PHYSICAL_V0_4.py",
+                                     "02_TSIS_BACKTEST_ENGINE/RUN_BT_GATE_015_V0_4_PREEXECUTION_TESTS.py",
+                                     "02_TSIS_BACKTEST_ENGINE/RUN_FULL_REPOSITORY_TESTS.py",
+                                     "02_TSIS_BACKTEST_ENGINE/configs/fixtures/BT_GATE_015_PHYSICAL_INTEGRATION_BARRIERS_V0_4.json",
+                                     "02_TSIS_BACKTEST_ENGINE/docs/00_system/20_BT_GATE_015_POINT_IN_TIME_EVENT_STATE_CONSUMER_CONTRACT_V0_1.md",
+                                     "02_TSIS_BACKTEST_ENGINE/docs/00_system/28_BT_GATE_015_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_4.md",
+                                     "02_TSIS_BACKTEST_ENGINE/scripts/materialize_bt_gate_015_v0_4_preexecution.py",
+                                     "02_TSIS_BACKTEST_ENGINE/scripts/package_bt_gate_015_v0_4_preexecution.py",
+                                     "02_TSIS_BACKTEST_ENGINE/src/tsis_backtest/__init__.py",
+                                     "02_TSIS_BACKTEST_ENGINE/src/tsis_backtest/event_state/__init__.py",
+                                     "02_TSIS_BACKTEST_ENGINE/src/tsis_backtest/event_state/consumer.py",
+                                     "02_TSIS_BACKTEST_ENGINE/src/tsis_backtest/event_state/contracts.py",
+                                     "02_TSIS_BACKTEST_ENGINE/src/tsis_backtest/event_state/physical_authorization_v0_4.py",
+                                     "02_TSIS_BACKTEST_ENGINE/src/tsis_backtest/event_state/physical_consumer_v0_4.py",
+                                     "02_TSIS_BACKTEST_ENGINE/src/tsis_backtest/event_state/physical_runner_v0_4.py",
+                                     "02_TSIS_BACKTEST_ENGINE/src/tsis_backtest/event_state/store.py",
+                                     "02_TSIS_BACKTEST_ENGINE/src/tsis_backtest/market_state/__init__.py",
+                                     "02_TSIS_BACKTEST_ENGINE/src/tsis_backtest/market_state/consumer.py",
+                                     "02_TSIS_BACKTEST_ENGINE/src/tsis_backtest/market_state/contracts.py",
+                                     "02_TSIS_BACKTEST_ENGINE/src/tsis_backtest/market_state/runner.py",
+                                     "02_TSIS_BACKTEST_ENGINE/src/tsis_backtest/market_state/store.py",
+                                     "02_TSIS_BACKTEST_ENGINE/src/tsis_backtest/preflight/__init__.py",
+                                     "02_TSIS_BACKTEST_ENGINE/src/tsis_backtest/preflight/contracts.py",
+                                     "02_TSIS_BACKTEST_ENGINE/src/tsis_backtest/replay/__init__.py",
+                                     "02_TSIS_BACKTEST_ENGINE/src/tsis_backtest/replay/contracts.py",
+                                     "02_TSIS_BACKTEST_ENGINE/src/tsis_backtest/replay/state_ordering.py",
+                                     "02_TSIS_BACKTEST_ENGINE/tests/unit/test_bt_gate_015_single_use_physical_v0_4.py"
+                                 ]
+}

@@ -170,3 +170,20 @@ status matrix
 changelog entry
 ```
 
+
+
+---
+
+## Graphify work closeout
+
+Any work that changes the semantic corpus, contracts, architecture, paths,
+taxonomies, or governance covered by this branch must end in one persisted
+state:
+
+1. rebuild/update and diagnose the affected official Graphify leaf, including
+   its `BUILD_MANIFEST.md`; or
+2. append a `pending` entry to `GRAPHIFY_REFRESH_QUEUE.md` with date, scope,
+   affected files, severity, target leaf, and the reason refresh was deferred.
+
+A chat, README, or changelog note alone is not sufficient.
+

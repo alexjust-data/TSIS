@@ -425,3 +425,24 @@ Todo conocimiento importante de TSIS debe vivir:
 
 Ese es el estandar operativo de agentes en TSIS.
 
+
+
+---
+
+## Graphify: cierre obligatorio por trabajo
+
+En cualquier rama gobernada que contenga `graphify-out/`, todo trabajo que
+cambie el corpus semantico, contratos, arquitectura, rutas, taxonomias o reglas
+de gobierno debe cerrar con exactamente uno de estos resultados persistidos:
+
+1. actualizar o reconstruir el leaf afectado con Graphify oficial, ejecutar sus
+   diagnosticos y actualizar su `BUILD_MANIFEST.md`; o
+2. crear una entrada `pending` en el `GRAPHIFY_REFRESH_QUEUE.md` mas cercano,
+   indicando fecha, alcance, archivos afectados, severidad, leaf objetivo y
+   motivo por el que no se refresco en ese trabajo.
+
+No basta con mencionarlo en el chat, README o changelog. Si la rama no tiene una
+cola local, usar `C:\TSIS_Data\GRAPHIFY_REFRESH_QUEUE.md`. Los directorios de
+staging o corpus generados dentro de otro `graphify-out/` no cuentan como ramas
+independientes: heredan la cola de su rama propietaria.
+

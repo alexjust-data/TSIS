@@ -249,6 +249,10 @@ La cola operativa de refrescos vive en:
 GRAPHIFY_REFRESH_QUEUE.md
 ```
 
+Todo trabajo con impacto semantico debe terminar con el leaf oficial afectado
+actualizado y diagnosticado o con una entrada `pending` persistida en esa cola.
+No existe un tercer estado y una nota solo en chat, README o changelog no cumple.
+
 Flujo:
 
 ```text
@@ -360,4 +364,3 @@ changelog
 ```
 
 No como recuerdo.
-

@@ -127,7 +127,7 @@ Por ventana dedicada:
 
 ### GFQ-20260628-002 - Graphify no-API and version-alignment protocol
 
-Status: topology_leaf_built_full_semantic_refresh_pending
+Status: full_semantic_leaf_built
 
 Severity: HIGH
 
@@ -212,7 +212,7 @@ reasoning is needed.
 
 ### GFQ-20260628-001 - Graphify build baseline provenance rule
 
-Status: topology_leaf_built_full_semantic_refresh_pending
+Status: full_semantic_leaf_built
 
 Severity: HIGH
 
@@ -413,4 +413,33 @@ rebuilt as a current 20260705 snapshot and merged into the project root. It does
 not replace the older full semantic certification_decisions_20260619 leaf if
 case-level or field-level semantic reasoning is required.
 ```
+
+
+
+## 2026-08-05 - Full semantic certification leaf rebuilt
+
+Status: full_semantic_leaf_built
+Severity: HIGH
+
+Canonical output:
+
+```text
+graphify-out/leaf_slices/certification_decisions/
+```
+
+Build result:
+
+```text
+Graphify package: graphifyy 0.9.33
+Corpus: 88 files / 46,873 words
+Extraction: 48 AST nodes + 212 semantic nodes
+Graph: 260 nodes / 293 edges / 19 communities
+Diagnostics: 0 duplicate, dangling, missing, self-loop or collapsed edges
+Semantic mode: four Codex host workers, no external API key
+```
+
+This stable leaf supersedes dated leaves for new integrations. Historical
+semantic and topology leaves remain preserved as audit evidence. Notebook
+evidence and the `01_foundations` authority graph remain separate pending
+leaves.
 

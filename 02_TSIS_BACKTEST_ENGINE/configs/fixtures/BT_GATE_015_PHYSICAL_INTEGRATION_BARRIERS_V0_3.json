@@ -1,0 +1,24 @@
+{
+  "barrier_id": "BT_GATE_015_PHYSICAL_INTEGRATION_BARRIERS_V0_3",
+  "barrier_role": "ORDERING_ONLY_NO_EXECUTION_NO_VALUATION",
+  "events": [
+    {
+      "available_at": "2021-01-19T14:30:00Z",
+      "close": 1.0,
+      "event_type": "BAR",
+      "high": 1.0,
+      "low": 1.0,
+      "open": 1.0,
+      "price_view": "SYNTHETIC_ORDERING_BARRIER_NOT_MARKET_OBSERVATION",
+      "session_label": "2021-01-19",
+      "ticker": "AAME",
+      "ts_end": "2021-01-19T14:30:00Z",
+      "ts_start": "2021-01-19T14:29:00Z",
+      "volume": 0
+    }
+  ],
+  "fills_authorized": false,
+  "market_data_claim": false,
+  "orders_authorized": false,
+  "valuation_authorized": false
+}

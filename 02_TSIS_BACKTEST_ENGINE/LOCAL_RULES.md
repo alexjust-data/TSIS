@@ -1,4 +1,4 @@
-﻿# LOCAL_RULES - TSIS Backtest Engine
+# LOCAL_RULES - TSIS Backtest Engine
 
 Status: ACTIVE_IMPLEMENTATION_RULES
 Reset: 2026-07-28
@@ -17,3 +17,17 @@ Reset: 2026-07-28
 12. Every completed operational step must update `AGENTS.md` and `CHANGELOG.md`.
 13. If an implementation step changes a TSIS decision or contract, update the corresponding document under `00_CTO/14_BACKTEST_ENGINE`.
 14. Do not claim `TSIS_VALIDATED_CONTRACT` until code, tests and evidence exist.
+
+
+## Graphify
+
+Graphify is semantic navigation, not gate authority or evidence.
+
+Any work with semantic impact on this branch must end with either:
+
+1. an official update/rebuild and diagnosis of the affected leaf; or
+2. a `pending` entry in `GRAPHIFY_REFRESH_QUEUE.md`.
+
+Builds must follow `GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md`. Do not execute
+physical backtest commands, consume single-use authorizations, or include
+`runs`, `evidence`, `deliverables` or `99_archive` in the current-engine leaf.

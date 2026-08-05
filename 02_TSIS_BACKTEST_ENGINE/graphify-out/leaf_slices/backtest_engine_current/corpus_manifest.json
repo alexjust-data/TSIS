@@ -1,0 +1,1460 @@
+[
+  {
+    "source_relative_path": "AGENTS.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\AGENTS.md",
+    "workspace_relative_path": "AGENTS.md",
+    "sha256": "6372302fb8fa5c2de990a6f4429a3a0b95fdf5d1f1ed7eaecbaa8b01ed09d10e",
+    "bytes": 41115,
+    "line_count": 1204,
+    "word_count": 4289
+  },
+  {
+    "source_relative_path": "GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+    "workspace_relative_path": "GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+    "sha256": "7e2054072a860acad193eab54a7e8dac14b4bbc5868d3f9237588856692c7ad2",
+    "bytes": 3005,
+    "line_count": 108,
+    "word_count": 386
+  },
+  {
+    "source_relative_path": "GRAPHIFY_REFRESH_QUEUE.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\GRAPHIFY_REFRESH_QUEUE.md",
+    "workspace_relative_path": "GRAPHIFY_REFRESH_QUEUE.md",
+    "sha256": "e4c1ed2bec1a54ee58c2466490d5f2f5d061baa69338f6b7feafd3c9c2a0d1ef",
+    "bytes": 1858,
+    "line_count": 49,
+    "word_count": 219
+  },
+  {
+    "source_relative_path": "LOCAL_RULES.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\LOCAL_RULES.md",
+    "workspace_relative_path": "LOCAL_RULES.md",
+    "sha256": "81fc61618e70eb96cc088cb1da2eb3f8f203393a820c935512bdf68bcc60fbd3",
+    "bytes": 2155,
+    "line_count": 34,
+    "word_count": 312
+  },
+  {
+    "source_relative_path": "README.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\README.md",
+    "workspace_relative_path": "README.md",
+    "sha256": "cdb67c02197cc11e52da3597d7d2d5b4433a575eb6deefe6a8d9fa4cc070285b",
+    "bytes": 7854,
+    "line_count": 184,
+    "word_count": 710
+  },
+  {
+    "source_relative_path": "pyproject.toml",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\pyproject.toml",
+    "workspace_relative_path": "pyproject.toml",
+    "sha256": "24046b74f5257f87cf0b3847365b99ab2f55e94a07d0d54d0d0c6879db7b4cf2",
+    "bytes": 565,
+    "line_count": 24,
+    "word_count": 64
+  },
+  {
+    "source_relative_path": "REPRODUCE_BT_GATE_015_R2.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\REPRODUCE_BT_GATE_015_R2.md",
+    "workspace_relative_path": "REPRODUCE_BT_GATE_015_R2.md",
+    "sha256": "cc7d9e23a2dd88f3eaf66b91fceed0175f312c80596a107d2eade02cfb945c28",
+    "bytes": 793,
+    "line_count": 26,
+    "word_count": 97
+  },
+  {
+    "source_relative_path": "REPRODUCE_BT_GATE_015_V0_3.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\REPRODUCE_BT_GATE_015_V0_3.md",
+    "workspace_relative_path": "REPRODUCE_BT_GATE_015_V0_3.md",
+    "sha256": "ed9daeea31c3d6b3aca84fc4fd950316f1ff7b4414be234f500f9a5eca76a972",
+    "bytes": 572,
+    "line_count": 21,
+    "word_count": 65
+  },
+  {
+    "source_relative_path": "RUN_BT_GATE_014_INCLUDED_TESTS.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\RUN_BT_GATE_014_INCLUDED_TESTS.py",
+    "workspace_relative_path": "RUN_BT_GATE_014_INCLUDED_TESTS.py",
+    "sha256": "90fa71b1dc9aeb5d8dafddc608390df4106f8006ffec7bc1eca465fdeba506f1",
+    "bytes": 641,
+    "line_count": 10,
+    "word_count": 74
+  },
+  {
+    "source_relative_path": "RUN_BT_GATE_014_V0_3_PREEXECUTION_TESTS.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\RUN_BT_GATE_014_V0_3_PREEXECUTION_TESTS.py",
+    "workspace_relative_path": "RUN_BT_GATE_014_V0_3_PREEXECUTION_TESTS.py",
+    "sha256": "c1140042065091b7e95901794ce40f676aaade9d24c6993ec58a387bb95c1d1a",
+    "bytes": 526,
+    "line_count": 19,
+    "word_count": 59
+  },
+  {
+    "source_relative_path": "RUN_BT_GATE_014_V0_4_PREEXECUTION_TESTS.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\RUN_BT_GATE_014_V0_4_PREEXECUTION_TESTS.py",
+    "workspace_relative_path": "RUN_BT_GATE_014_V0_4_PREEXECUTION_TESTS.py",
+    "sha256": "407073e9b4fc145dab323c2821c5e99fbde8cbc6c83b2dd677d3a484227e92fe",
+    "bytes": 526,
+    "line_count": 19,
+    "word_count": 59
+  },
+  {
+    "source_relative_path": "RUN_BT_GATE_014_V0_5_PREEXECUTION_TESTS.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\RUN_BT_GATE_014_V0_5_PREEXECUTION_TESTS.py",
+    "workspace_relative_path": "RUN_BT_GATE_014_V0_5_PREEXECUTION_TESTS.py",
+    "sha256": "bc9500d08326d0adf8da4db18ceb915488885e77c3164e7c2fe700f68fb25b6e",
+    "bytes": 580,
+    "line_count": 14,
+    "word_count": 60
+  },
+  {
+    "source_relative_path": "RUN_BT_GATE_015_NON_PHYSICAL.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\RUN_BT_GATE_015_NON_PHYSICAL.py",
+    "workspace_relative_path": "RUN_BT_GATE_015_NON_PHYSICAL.py",
+    "sha256": "010fbf87d7a685ed0253bed4c6caadd61de7a27834c8160b161b153b10d4b80a",
+    "bytes": 1995,
+    "line_count": 53,
+    "word_count": 163
+  },
+  {
+    "source_relative_path": "RUN_BT_GATE_015_PHYSICAL_V0_3.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\RUN_BT_GATE_015_PHYSICAL_V0_3.py",
+    "workspace_relative_path": "RUN_BT_GATE_015_PHYSICAL_V0_3.py",
+    "sha256": "cd630840a7024b29c5640584360fd461289d3b5d22d4d25716d3774776a2e1c8",
+    "bytes": 1637,
+    "line_count": 48,
+    "word_count": 143
+  },
+  {
+    "source_relative_path": "RUN_BT_GATE_015_V0_3_PREEXECUTION_TESTS.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\RUN_BT_GATE_015_V0_3_PREEXECUTION_TESTS.py",
+    "workspace_relative_path": "RUN_BT_GATE_015_V0_3_PREEXECUTION_TESTS.py",
+    "sha256": "3a719e4e6a8131a0322ab9f5dc725ca6297941d123526b1448014110a5ad285d",
+    "bytes": 774,
+    "line_count": 20,
+    "word_count": 72
+  },
+  {
+    "source_relative_path": "RUN_FULL_REPOSITORY_TESTS.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\RUN_FULL_REPOSITORY_TESTS.py",
+    "workspace_relative_path": "RUN_FULL_REPOSITORY_TESTS.py",
+    "sha256": "85d68988c743b444d4cf316dd538cf76fbba7b8618131d8273b0b3fa400a878c",
+    "bytes": 479,
+    "line_count": 8,
+    "word_count": 64
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/__init__.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\__init__.py",
+    "workspace_relative_path": "src/tsis_backtest/__init__.py",
+    "sha256": "d05bb0a8eac045f0d90dacee77b0680ebb530745cb77656992e8c48cf6a1c472",
+    "bytes": 26,
+    "line_count": 1,
+    "word_count": 4
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/accounting/__init__.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\accounting\\__init__.py",
+    "workspace_relative_path": "src/tsis_backtest/accounting/__init__.py",
+    "sha256": "4aa7fe02d54e2babc39d4cd95efbee534f0a651b920a498c7a20cc70d43fcd95",
+    "bytes": 550,
+    "line_count": 24,
+    "word_count": 37
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/accounting/contracts.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\accounting\\contracts.py",
+    "workspace_relative_path": "src/tsis_backtest/accounting/contracts.py",
+    "sha256": "0e673c172abde58f9b6738880a62aa69656ca1a10a041c9640072bad46217105",
+    "bytes": 5197,
+    "line_count": 176,
+    "word_count": 447
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/accounting/engine.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\accounting\\engine.py",
+    "workspace_relative_path": "src/tsis_backtest/accounting/engine.py",
+    "sha256": "68ce79289ea3626714a95294647c2f6d0aae2e8bdeea5260d3aa1ee558539fd0",
+    "bytes": 6920,
+    "line_count": 147,
+    "word_count": 536
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/backtest/__init__.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\backtest\\__init__.py",
+    "workspace_relative_path": "src/tsis_backtest/backtest/__init__.py",
+    "sha256": "417e0a6d94a7111ab21bea29133cda8a2a6751f9c24da35cbfbc324b2ec17884",
+    "bytes": 547,
+    "line_count": 20,
+    "word_count": 31
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/backtest/contracts.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\backtest\\contracts.py",
+    "workspace_relative_path": "src/tsis_backtest/backtest/contracts.py",
+    "sha256": "1bc74ce19f7f77b15746e815798ce7ca68fdca18477f73ae3cfd01366bff874a",
+    "bytes": 11032,
+    "line_count": 393,
+    "word_count": 933
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/backtest/runner.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\backtest\\runner.py",
+    "workspace_relative_path": "src/tsis_backtest/backtest/runner.py",
+    "sha256": "b9997c9a0c1c08860bfabc9695d90e851010a877b3b3afb62f7ca22fbe545980",
+    "bytes": 44705,
+    "line_count": 938,
+    "word_count": 3318
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/backtest/strategy.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\backtest\\strategy.py",
+    "workspace_relative_path": "src/tsis_backtest/backtest/strategy.py",
+    "sha256": "ee343c8feeecf9e600581869b563bdf7e0697ed66719b432135af8d5b90dc388",
+    "bytes": 7240,
+    "line_count": 156,
+    "word_count": 562
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/event_state/__init__.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\event_state\\__init__.py",
+    "workspace_relative_path": "src/tsis_backtest/event_state/__init__.py",
+    "sha256": "c7a73c4c51d6e1dd1458cdc6698947536d7f9924c11d6b001602e518c8144efe",
+    "bytes": 339,
+    "line_count": 11,
+    "word_count": 24
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/event_state/acceptance.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\event_state\\acceptance.py",
+    "workspace_relative_path": "src/tsis_backtest/event_state/acceptance.py",
+    "sha256": "10d6bbf9ad2193722fa28f8b55e6cf19ee4a04c1e34a2866f43943b5e312887c",
+    "bytes": 15125,
+    "line_count": 276,
+    "word_count": 1245
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/event_state/consumer.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\event_state\\consumer.py",
+    "workspace_relative_path": "src/tsis_backtest/event_state/consumer.py",
+    "sha256": "a13f27bee9fcf4b63632110da880cf1db2641eedf857381dada48b318bf7033e",
+    "bytes": 23969,
+    "line_count": 360,
+    "word_count": 1441
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/event_state/contracts.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\event_state\\contracts.py",
+    "workspace_relative_path": "src/tsis_backtest/event_state/contracts.py",
+    "sha256": "30016e8f01bcfc5252ef641b19868af95dca4ffb7f387af10c627f7cdfc195fd",
+    "bytes": 4429,
+    "line_count": 139,
+    "word_count": 358
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/event_state/physical_authorization_v0_3.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\event_state\\physical_authorization_v0_3.py",
+    "workspace_relative_path": "src/tsis_backtest/event_state/physical_authorization_v0_3.py",
+    "sha256": "4a33975ac5f3070a9d8409649dec6168e445be22e3ab70863813e0a58080a7f7",
+    "bytes": 10875,
+    "line_count": 297,
+    "word_count": 777
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/event_state/physical_consumer_v0_3.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\event_state\\physical_consumer_v0_3.py",
+    "workspace_relative_path": "src/tsis_backtest/event_state/physical_consumer_v0_3.py",
+    "sha256": "d00a1640c4911b2de3a94a2bf4f7130238d4380b9aa89fbc7aa5261bc24918aa",
+    "bytes": 21440,
+    "line_count": 494,
+    "word_count": 1035
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/event_state/physical_runner_v0_3.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\event_state\\physical_runner_v0_3.py",
+    "workspace_relative_path": "src/tsis_backtest/event_state/physical_runner_v0_3.py",
+    "sha256": "08cbe3cec51c90678e845e7238d5651a2dc3b9db9b6736e8d2c6b10a32f2bc4d",
+    "bytes": 25599,
+    "line_count": 593,
+    "word_count": 1453
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/event_state/runner.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\event_state\\runner.py",
+    "workspace_relative_path": "src/tsis_backtest/event_state/runner.py",
+    "sha256": "ed81c1e739bca824d4aa66ad9ba2523846f931b50b8746ef116a4379bc559bae",
+    "bytes": 12989,
+    "line_count": 262,
+    "word_count": 846
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/event_state/store.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\event_state\\store.py",
+    "workspace_relative_path": "src/tsis_backtest/event_state/store.py",
+    "sha256": "2b0b9a87c696bc5046ce8dc655d33560344b01c05a01a56a5bed4381a6a7ccd0",
+    "bytes": 4446,
+    "line_count": 84,
+    "word_count": 321
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/execution/__init__.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\execution\\__init__.py",
+    "workspace_relative_path": "src/tsis_backtest/execution/__init__.py",
+    "sha256": "a77e232b1fb991317cf839fcf2be7892c39a5f3bac3370c53688124137fa7243",
+    "bytes": 116,
+    "line_count": 4,
+    "word_count": 10
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/execution/contracts.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\execution\\contracts.py",
+    "workspace_relative_path": "src/tsis_backtest/execution/contracts.py",
+    "sha256": "7ea55299bbbd2198d286ba80b7c2240957df619484d219f3554a4db0c82a1189",
+    "bytes": 8442,
+    "line_count": 275,
+    "word_count": 673
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/execution/simulator.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\execution\\simulator.py",
+    "workspace_relative_path": "src/tsis_backtest/execution/simulator.py",
+    "sha256": "ee7085d2f18c9a93afa6e72f37edcd60c12f7a5f4391655b941a9d1aefc59142",
+    "bytes": 21106,
+    "line_count": 401,
+    "word_count": 1721
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/market_state/__init__.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\market_state\\__init__.py",
+    "workspace_relative_path": "src/tsis_backtest/market_state/__init__.py",
+    "sha256": "50cafbc834a169e4d430cb083c4f1f26ab2e86ac4379f4f65826db32307adb1a",
+    "bytes": 394,
+    "line_count": 8,
+    "word_count": 33
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/market_state/acceptance.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\market_state\\acceptance.py",
+    "workspace_relative_path": "src/tsis_backtest/market_state/acceptance.py",
+    "sha256": "2ae0a26d1a4aa9bd58767baf88fd1d930b12e0244dd33ab4fa21056f768e8cb2",
+    "bytes": 17488,
+    "line_count": 136,
+    "word_count": 1971
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/market_state/consumer.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\market_state\\consumer.py",
+    "workspace_relative_path": "src/tsis_backtest/market_state/consumer.py",
+    "sha256": "4e36332f89f21b60bb0d73aadd39e6deca11a0f7fa57a4160a11527f3cb57ed2",
+    "bytes": 45672,
+    "line_count": 812,
+    "word_count": 3016
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/market_state/contracts.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\market_state\\contracts.py",
+    "workspace_relative_path": "src/tsis_backtest/market_state/contracts.py",
+    "sha256": "f5dcaa8505c379b096bb6afae0e4625cd76373a059ea87cfebbc7b2371e30086",
+    "bytes": 7846,
+    "line_count": 228,
+    "word_count": 575
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/market_state/physical_authorization.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\market_state\\physical_authorization.py",
+    "workspace_relative_path": "src/tsis_backtest/market_state/physical_authorization.py",
+    "sha256": "740486796b666d859acdd1f99438c1be7a756608d3d850e8544f65bb7288e9ca",
+    "bytes": 2843,
+    "line_count": 51,
+    "word_count": 275
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/market_state/physical_authorization_v0_2.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\market_state\\physical_authorization_v0_2.py",
+    "workspace_relative_path": "src/tsis_backtest/market_state/physical_authorization_v0_2.py",
+    "sha256": "a892ddae6b98564548400e770bdc60d901348cb2e7e38c115da5619aadfae5c6",
+    "bytes": 2946,
+    "line_count": 30,
+    "word_count": 285
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/market_state/physical_authorization_v0_3.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\market_state\\physical_authorization_v0_3.py",
+    "workspace_relative_path": "src/tsis_backtest/market_state/physical_authorization_v0_3.py",
+    "sha256": "47d303de6601ca3242493df408b5ef3e7b8733733684bc77068bc271f1a2ffab",
+    "bytes": 15220,
+    "line_count": 443,
+    "word_count": 973
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/market_state/physical_authorization_v0_4.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\market_state\\physical_authorization_v0_4.py",
+    "workspace_relative_path": "src/tsis_backtest/market_state/physical_authorization_v0_4.py",
+    "sha256": "3ef8b4d2956bc1b92273b8b65a7083b7b9fe11067002d70a0a563752d25bb906",
+    "bytes": 15308,
+    "line_count": 445,
+    "word_count": 975
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/market_state/physical_authorization_v0_5.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\market_state\\physical_authorization_v0_5.py",
+    "workspace_relative_path": "src/tsis_backtest/market_state/physical_authorization_v0_5.py",
+    "sha256": "32069dd1fe5f1f91dba50fd54e3eacecd1d9faa2e0e5e6053d87db19019bd1da",
+    "bytes": 15309,
+    "line_count": 446,
+    "word_count": 975
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/market_state/physical_runner.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\market_state\\physical_runner.py",
+    "workspace_relative_path": "src/tsis_backtest/market_state/physical_runner.py",
+    "sha256": "17811668256bbc9e3bfed3b813e80addb32966123aee579089701343a4b60d97",
+    "bytes": 4479,
+    "line_count": 58,
+    "word_count": 368
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/market_state/physical_runner_v0_2.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\market_state\\physical_runner_v0_2.py",
+    "workspace_relative_path": "src/tsis_backtest/market_state/physical_runner_v0_2.py",
+    "sha256": "1faa0a8974de03382dc53887fe08fff01f94e42afa6b7dd2167a1391ea5513cc",
+    "bytes": 7448,
+    "line_count": 73,
+    "word_count": 752
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/market_state/physical_runner_v0_3.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\market_state\\physical_runner_v0_3.py",
+    "workspace_relative_path": "src/tsis_backtest/market_state/physical_runner_v0_3.py",
+    "sha256": "070636b6af770887621d04de9c1dd9be56e618d1be6396b51b4c437bededb53c",
+    "bytes": 43418,
+    "line_count": 1178,
+    "word_count": 2315
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/market_state/physical_runner_v0_4.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\market_state\\physical_runner_v0_4.py",
+    "workspace_relative_path": "src/tsis_backtest/market_state/physical_runner_v0_4.py",
+    "sha256": "b2b8744557798588582fd64b2a09f561f477388a2f0d052e99aa4d3f71bdaab1",
+    "bytes": 44867,
+    "line_count": 1211,
+    "word_count": 2406
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/market_state/physical_runner_v0_5.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\market_state\\physical_runner_v0_5.py",
+    "workspace_relative_path": "src/tsis_backtest/market_state/physical_runner_v0_5.py",
+    "sha256": "ea420aad3b873681e0823dcce00d66b4c484f1a2a7884471aa51f5e318691510",
+    "bytes": 45681,
+    "line_count": 1224,
+    "word_count": 2426
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/market_state/runner.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\market_state\\runner.py",
+    "workspace_relative_path": "src/tsis_backtest/market_state/runner.py",
+    "sha256": "22a73e931b047b8fe9304eac1224ee7bf102179889df1e9c2de25f1488b68f56",
+    "bytes": 19906,
+    "line_count": 168,
+    "word_count": 1599
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/market_state/store.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\market_state\\store.py",
+    "workspace_relative_path": "src/tsis_backtest/market_state/store.py",
+    "sha256": "a8eb7c2ff48f1f7cb0d2e9537fa7a5ffa46c3fe2c8edf08736115a62db964da5",
+    "bytes": 12728,
+    "line_count": 201,
+    "word_count": 852
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/mechanics/__init__.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\mechanics\\__init__.py",
+    "workspace_relative_path": "src/tsis_backtest/mechanics/__init__.py",
+    "sha256": "86e9ce078f9e46b1a5699a8c1a9be26db0ab5091f12d60c3fb46db2b7c498f88",
+    "bytes": 581,
+    "line_count": 26,
+    "word_count": 38
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/mechanics/contracts.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\mechanics\\contracts.py",
+    "workspace_relative_path": "src/tsis_backtest/mechanics/contracts.py",
+    "sha256": "6d6f0d42e1b4c392ed03a566cb4531eedda27c325842341e07332ae42e52d945",
+    "bytes": 2887,
+    "line_count": 131,
+    "word_count": 275
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/mechanics/event_loop.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\mechanics\\event_loop.py",
+    "workspace_relative_path": "src/tsis_backtest/mechanics/event_loop.py",
+    "sha256": "5b1bdab91248e828383ec52cecfd1ba7b9be6be2fd873fdd786ea026d209380a",
+    "bytes": 8395,
+    "line_count": 186,
+    "word_count": 677
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/physical_replay/__init__.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\physical_replay\\__init__.py",
+    "workspace_relative_path": "src/tsis_backtest/physical_replay/__init__.py",
+    "sha256": "9789c2e08c6b82d5c35dbd06592c5f7e27250739b39a9b42d1ff4a8057296c66",
+    "bytes": 572,
+    "line_count": 21,
+    "word_count": 28
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/physical_replay/adapter.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\physical_replay\\adapter.py",
+    "workspace_relative_path": "src/tsis_backtest/physical_replay/adapter.py",
+    "sha256": "290c0ef755e890b814b18777fb3b05af35f6124751a81b2a7c1a9ebae1bd1214",
+    "bytes": 35917,
+    "line_count": 657,
+    "word_count": 2437
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/physical_replay/runner.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\physical_replay\\runner.py",
+    "workspace_relative_path": "src/tsis_backtest/physical_replay/runner.py",
+    "sha256": "e5aea1be160bb328745761ceab7cb46e6a2cb7176741d3897c73430fa529d835",
+    "bytes": 43365,
+    "line_count": 749,
+    "word_count": 3113
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/portfolio/__init__.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\portfolio\\__init__.py",
+    "workspace_relative_path": "src/tsis_backtest/portfolio/__init__.py",
+    "sha256": "389f2e5a8f58be4046f37d3c744d3c044121214cb08b76430a80f49ad4212b32",
+    "bytes": 397,
+    "line_count": 17,
+    "word_count": 23
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/portfolio/contracts.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\portfolio\\contracts.py",
+    "workspace_relative_path": "src/tsis_backtest/portfolio/contracts.py",
+    "sha256": "10f11ff0f3eff50a16fc767b4bd317b43b92595292f88f1628566ff1de2563fa",
+    "bytes": 6991,
+    "line_count": 235,
+    "word_count": 542
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/portfolio/runner.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\portfolio\\runner.py",
+    "workspace_relative_path": "src/tsis_backtest/portfolio/runner.py",
+    "sha256": "5d44ed577af4a48695ba136f2b784f88abfdde8810dc93d93699eaead46d313a",
+    "bytes": 38783,
+    "line_count": 526,
+    "word_count": 3461
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/preflight/__init__.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\preflight\\__init__.py",
+    "workspace_relative_path": "src/tsis_backtest/preflight/__init__.py",
+    "sha256": "f6ac03251227ca6a5bc196accebfbe7142c654c1fb5a86c4884011dab98b0086",
+    "bytes": 50,
+    "line_count": 1,
+    "word_count": 5
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/preflight/contracts.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\preflight\\contracts.py",
+    "workspace_relative_path": "src/tsis_backtest/preflight/contracts.py",
+    "sha256": "12da900f292c8ed4169c7674b125d688dd39712a3d475e3e0fe3cc63575cf238",
+    "bytes": 7413,
+    "line_count": 233,
+    "word_count": 618
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/preflight/manifests.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\preflight\\manifests.py",
+    "workspace_relative_path": "src/tsis_backtest/preflight/manifests.py",
+    "sha256": "bbfb711e7a4e288759b076ff09350ce1686bd6ede80cb7cc75d71aff320200a5",
+    "bytes": 3751,
+    "line_count": 95,
+    "word_count": 304
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/preflight/real_data_inspector.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\preflight\\real_data_inspector.py",
+    "workspace_relative_path": "src/tsis_backtest/preflight/real_data_inspector.py",
+    "sha256": "774ceca000ef693e1b16ee45b2ee92475cf1ca1fea1bd846b849ac13fdda5ff5",
+    "bytes": 30865,
+    "line_count": 715,
+    "word_count": 2414
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/preflight/registries.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\preflight\\registries.py",
+    "workspace_relative_path": "src/tsis_backtest/preflight/registries.py",
+    "sha256": "824132732a79cb52355f936a9a7b51bb02c43537e1a962dde7da416976337b13",
+    "bytes": 753,
+    "line_count": 23,
+    "word_count": 79
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/preflight/run_preflight.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\preflight\\run_preflight.py",
+    "workspace_relative_path": "src/tsis_backtest/preflight/run_preflight.py",
+    "sha256": "fe7dc21202f2aefe5221a1586a8a42949f9ab600cd47d88c09b92181aa1d8820",
+    "bytes": 19058,
+    "line_count": 410,
+    "word_count": 1258
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/replay/__init__.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\replay\\__init__.py",
+    "workspace_relative_path": "src/tsis_backtest/replay/__init__.py",
+    "sha256": "14fbf059ac2d0e391adcc2b617154e849449957ddce9e87903d6aae2c1d4c6ee",
+    "bytes": 559,
+    "line_count": 19,
+    "word_count": 46
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/replay/contracts.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\replay\\contracts.py",
+    "workspace_relative_path": "src/tsis_backtest/replay/contracts.py",
+    "sha256": "db8591453abb50e4e07125e7297e698c0690a14575fae66bca7795d97676fc29",
+    "bytes": 1769,
+    "line_count": 69,
+    "word_count": 178
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/replay/historical_feed.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\replay\\historical_feed.py",
+    "workspace_relative_path": "src/tsis_backtest/replay/historical_feed.py",
+    "sha256": "d97a3e6a8e6a27f01b09cdd4867e2bf613241847a5dd91fc67aa1598c624bc56",
+    "bytes": 11876,
+    "line_count": 246,
+    "word_count": 1024
+  },
+  {
+    "source_relative_path": "src/tsis_backtest/replay/state_ordering.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\src\\tsis_backtest\\replay\\state_ordering.py",
+    "workspace_relative_path": "src/tsis_backtest/replay/state_ordering.py",
+    "sha256": "764ca412843a80d79582772ca1499e5169c652e87ca4d1986f577c0f638d5af5",
+    "bytes": 829,
+    "line_count": 23,
+    "word_count": 72
+  },
+  {
+    "source_relative_path": "tests/__init__.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\tests\\__init__.py",
+    "workspace_relative_path": "tests/__init__.py",
+    "sha256": "f01a374e9c81e3db89b3a42940c4d6a5447684986a1296e42bf13f196eed6295",
+    "bytes": 5,
+    "line_count": 1,
+    "word_count": 0
+  },
+  {
+    "source_relative_path": "tests/unit/__init__.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\tests\\unit\\__init__.py",
+    "workspace_relative_path": "tests/unit/__init__.py",
+    "sha256": "f01a374e9c81e3db89b3a42940c4d6a5447684986a1296e42bf13f196eed6295",
+    "bytes": 5,
+    "line_count": 1,
+    "word_count": 0
+  },
+  {
+    "source_relative_path": "tests/unit/test_accounting_engine.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\tests\\unit\\test_accounting_engine.py",
+    "workspace_relative_path": "tests/unit/test_accounting_engine.py",
+    "sha256": "c0e9d4351a57b81ac25865ea2b1d21cd21ed15aa07a8427ae91955fbe264dbff",
+    "bytes": 10021,
+    "line_count": 182,
+    "word_count": 955
+  },
+  {
+    "source_relative_path": "tests/unit/test_bt_gate_014_single_use_physical.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\tests\\unit\\test_bt_gate_014_single_use_physical.py",
+    "workspace_relative_path": "tests/unit/test_bt_gate_014_single_use_physical.py",
+    "sha256": "1eb3329fca5f03bfb2451ef6c625be28178557861cfb8de20b49229b6ff32240",
+    "bytes": 4554,
+    "line_count": 67,
+    "word_count": 412
+  },
+  {
+    "source_relative_path": "tests/unit/test_bt_gate_014_single_use_physical_v0_2.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\tests\\unit\\test_bt_gate_014_single_use_physical_v0_2.py",
+    "workspace_relative_path": "tests/unit/test_bt_gate_014_single_use_physical_v0_2.py",
+    "sha256": "93de64e5725237b5da4ed3c873818452a789a953d674b1508428ee3fa5681158",
+    "bytes": 5730,
+    "line_count": 52,
+    "word_count": 577
+  },
+  {
+    "source_relative_path": "tests/unit/test_bt_gate_014_single_use_physical_v0_3.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\tests\\unit\\test_bt_gate_014_single_use_physical_v0_3.py",
+    "workspace_relative_path": "tests/unit/test_bt_gate_014_single_use_physical_v0_3.py",
+    "sha256": "5c25950e223e6dcccfb5ef4a81345e479dec5382023b57ef4fc47d46af46e366",
+    "bytes": 26193,
+    "line_count": 742,
+    "word_count": 1632
+  },
+  {
+    "source_relative_path": "tests/unit/test_bt_gate_014_single_use_physical_v0_4.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\tests\\unit\\test_bt_gate_014_single_use_physical_v0_4.py",
+    "workspace_relative_path": "tests/unit/test_bt_gate_014_single_use_physical_v0_4.py",
+    "sha256": "23e4b46ad88bd1465740162bbc564391b82da732a3e0071880ed99a329431282",
+    "bytes": 29658,
+    "line_count": 789,
+    "word_count": 1891
+  },
+  {
+    "source_relative_path": "tests/unit/test_bt_gate_014_single_use_physical_v0_5.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\tests\\unit\\test_bt_gate_014_single_use_physical_v0_5.py",
+    "workspace_relative_path": "tests/unit/test_bt_gate_014_single_use_physical_v0_5.py",
+    "sha256": "3844b3ef286ffccfc849dc4478d9d580cb236d6df35b4219be2bdf22b3906d36",
+    "bytes": 31278,
+    "line_count": 830,
+    "word_count": 1964
+  },
+  {
+    "source_relative_path": "tests/unit/test_bt_gate_015_single_use_physical_v0_3.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\tests\\unit\\test_bt_gate_015_single_use_physical_v0_3.py",
+    "workspace_relative_path": "tests/unit/test_bt_gate_015_single_use_physical_v0_3.py",
+    "sha256": "433985c9649fed20516f32d975c2cee9aa9b03ebf1801430d93212806abcd25d",
+    "bytes": 24820,
+    "line_count": 553,
+    "word_count": 1836
+  },
+  {
+    "source_relative_path": "tests/unit/test_deterministic_fill_simulator.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\tests\\unit\\test_deterministic_fill_simulator.py",
+    "workspace_relative_path": "tests/unit/test_deterministic_fill_simulator.py",
+    "sha256": "b00d3632b40d382ab00a2068dfbad680dd66bd5eb123b1768ba9b871bd8cdaa7",
+    "bytes": 19577,
+    "line_count": 369,
+    "word_count": 1619
+  },
+  {
+    "source_relative_path": "tests/unit/test_event_state_consumer.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\tests\\unit\\test_event_state_consumer.py",
+    "workspace_relative_path": "tests/unit/test_event_state_consumer.py",
+    "sha256": "453c81cde85dbd0afebd736326c10432b49d46532b1438fd6dc09d5fc23bcc94",
+    "bytes": 5573,
+    "line_count": 97,
+    "word_count": 471
+  },
+  {
+    "source_relative_path": "tests/unit/test_event_state_runner.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\tests\\unit\\test_event_state_runner.py",
+    "workspace_relative_path": "tests/unit/test_event_state_runner.py",
+    "sha256": "e7ca53541eb1be7335aa50bd8da954e8a84c7862bdaa94c20f3375db1aaadb5f",
+    "bytes": 4438,
+    "line_count": 86,
+    "word_count": 349
+  },
+  {
+    "source_relative_path": "tests/unit/test_historical_replay_feed.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\tests\\unit\\test_historical_replay_feed.py",
+    "workspace_relative_path": "tests/unit/test_historical_replay_feed.py",
+    "sha256": "a14b35f16fcdc32acda896e9c4cee58162fa2b6453b6541102c068d7ae02c182",
+    "bytes": 10096,
+    "line_count": 231,
+    "word_count": 916
+  },
+  {
+    "source_relative_path": "tests/unit/test_market_state_acceptance_matrix.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\tests\\unit\\test_market_state_acceptance_matrix.py",
+    "workspace_relative_path": "tests/unit/test_market_state_acceptance_matrix.py",
+    "sha256": "33d692673a1181e69bead77f8ab7c10b7b27063d319a931e3212b4e8f4562217",
+    "bytes": 2506,
+    "line_count": 18,
+    "word_count": 223
+  },
+  {
+    "source_relative_path": "tests/unit/test_market_state_consumer.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\tests\\unit\\test_market_state_consumer.py",
+    "workspace_relative_path": "tests/unit/test_market_state_consumer.py",
+    "sha256": "27621ac1f9b0f124f76f089f3abb4d7ab98ece55f3a5a671a24e88c803ed2226",
+    "bytes": 6607,
+    "line_count": 56,
+    "word_count": 686
+  },
+  {
+    "source_relative_path": "tests/unit/test_market_state_external_review_regressions.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\tests\\unit\\test_market_state_external_review_regressions.py",
+    "workspace_relative_path": "tests/unit/test_market_state_external_review_regressions.py",
+    "sha256": "cc4066e91badafc2573d32bda5b0334b3f5ed9e971be0c532052278a767a7c62",
+    "bytes": 23376,
+    "line_count": 206,
+    "word_count": 2373
+  },
+  {
+    "source_relative_path": "tests/unit/test_market_state_restriction_domains.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\tests\\unit\\test_market_state_restriction_domains.py",
+    "workspace_relative_path": "tests/unit/test_market_state_restriction_domains.py",
+    "sha256": "22be3ce62be7d31e3c84c22723adf8e41dd1cd21c58bbd79179f73eed6753fe9",
+    "bytes": 4868,
+    "line_count": 131,
+    "word_count": 350
+  },
+  {
+    "source_relative_path": "tests/unit/test_mechanical_event_loop.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\tests\\unit\\test_mechanical_event_loop.py",
+    "workspace_relative_path": "tests/unit/test_mechanical_event_loop.py",
+    "sha256": "c5554a53d8a37e546adeafbf1751b94242e964c4be1c3de5c9345b38af356a06",
+    "bytes": 6286,
+    "line_count": 115,
+    "word_count": 598
+  },
+  {
+    "source_relative_path": "tests/unit/test_physical_replay_adapter.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\tests\\unit\\test_physical_replay_adapter.py",
+    "workspace_relative_path": "tests/unit/test_physical_replay_adapter.py",
+    "sha256": "2e797150867ec7a8a29e998bca9d95b2d6d20a826796c2e689d4f4da1e98c6da",
+    "bytes": 19514,
+    "line_count": 341,
+    "word_count": 1499
+  },
+  {
+    "source_relative_path": "tests/unit/test_portfolio_slice_runner.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\tests\\unit\\test_portfolio_slice_runner.py",
+    "workspace_relative_path": "tests/unit/test_portfolio_slice_runner.py",
+    "sha256": "84ac64326a71af5a9514aded1c50ef1c21884cedacfefce5a1396bd5b3f4fb74",
+    "bytes": 9345,
+    "line_count": 177,
+    "word_count": 779
+  },
+  {
+    "source_relative_path": "tests/unit/test_real_data_inspector.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\tests\\unit\\test_real_data_inspector.py",
+    "workspace_relative_path": "tests/unit/test_real_data_inspector.py",
+    "sha256": "66da681385eedfd8f6561ddd5c3ea598a46e296373da2732f52b338e81143d4a",
+    "bytes": 19423,
+    "line_count": 445,
+    "word_count": 1401
+  },
+  {
+    "source_relative_path": "tests/unit/test_run_preflight.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\tests\\unit\\test_run_preflight.py",
+    "workspace_relative_path": "tests/unit/test_run_preflight.py",
+    "sha256": "b249c939aa5320a11e2a9b368ba24f9c1c35fd1434c281b1c72601733e30a33b",
+    "bytes": 17352,
+    "line_count": 379,
+    "word_count": 1326
+  },
+  {
+    "source_relative_path": "tests/unit/test_single_strategy_end_to_end_backtest.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\tests\\unit\\test_single_strategy_end_to_end_backtest.py",
+    "workspace_relative_path": "tests/unit/test_single_strategy_end_to_end_backtest.py",
+    "sha256": "37404255c98d4a8b825500a354fb3d1da160e6aa57dc415da236170f36e939c0",
+    "bytes": 11433,
+    "line_count": 215,
+    "word_count": 881
+  },
+  {
+    "source_relative_path": "scripts/materialize_bt_gate_015_v0_3_preexecution.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\scripts\\materialize_bt_gate_015_v0_3_preexecution.py",
+    "workspace_relative_path": "scripts/materialize_bt_gate_015_v0_3_preexecution.py",
+    "sha256": "e7bf30277ad0279cd44b68071397678fd6890546ac8c2d2d330882fbc1cd58ae",
+    "bytes": 4509,
+    "line_count": 121,
+    "word_count": 351
+  },
+  {
+    "source_relative_path": "scripts/package_bt_gate_011_acceptance.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\scripts\\package_bt_gate_011_acceptance.py",
+    "workspace_relative_path": "scripts/package_bt_gate_011_acceptance.py",
+    "sha256": "9c230188bd639f980f74581ea4e385acd06753f64b9791d15cacce3bfa1d35e0",
+    "bytes": 8024,
+    "line_count": 223,
+    "word_count": 777
+  },
+  {
+    "source_relative_path": "scripts/package_bt_gate_012_acceptance.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\scripts\\package_bt_gate_012_acceptance.py",
+    "workspace_relative_path": "scripts/package_bt_gate_012_acceptance.py",
+    "sha256": "a9478a82fc58e3ca87b4705d61dec688a874474bda69796699da244a1cd9cfe6",
+    "bytes": 8634,
+    "line_count": 234,
+    "word_count": 824
+  },
+  {
+    "source_relative_path": "scripts/package_bt_gate_013_acceptance.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\scripts\\package_bt_gate_013_acceptance.py",
+    "workspace_relative_path": "scripts/package_bt_gate_013_acceptance.py",
+    "sha256": "e78593ceaf86108734ad435d036a85d1fd52980e7754c687fc46b78ae341c56d",
+    "bytes": 8943,
+    "line_count": 236,
+    "word_count": 838
+  },
+  {
+    "source_relative_path": "scripts/package_bt_gate_014_non_physical_acceptance.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\scripts\\package_bt_gate_014_non_physical_acceptance.py",
+    "workspace_relative_path": "scripts/package_bt_gate_014_non_physical_acceptance.py",
+    "sha256": "0e582984c5d6b940dd3d6e9d72dcc25d22003a9b9a373078d8f299a63840a129",
+    "bytes": 4145,
+    "line_count": 38,
+    "word_count": 442
+  },
+  {
+    "source_relative_path": "scripts/package_bt_gate_015_v0_3_preexecution.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\scripts\\package_bt_gate_015_v0_3_preexecution.py",
+    "workspace_relative_path": "scripts/package_bt_gate_015_v0_3_preexecution.py",
+    "sha256": "642b50300e03f6bad890a8f31fff8021f4716a07815b71a9fec86a9a5af622e9",
+    "bytes": 8147,
+    "line_count": 163,
+    "word_count": 597
+  },
+  {
+    "source_relative_path": "scripts/run_bt_gate_011_end_to_end.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\scripts\\run_bt_gate_011_end_to_end.py",
+    "workspace_relative_path": "scripts/run_bt_gate_011_end_to_end.py",
+    "sha256": "61f6778094e84a2fc8ab08f36287c04426cc9eeac03597db1bbe2c90adcaa827",
+    "bytes": 4230,
+    "line_count": 95,
+    "word_count": 349
+  },
+  {
+    "source_relative_path": "scripts/run_bt_gate_012_portfolio_slice.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\scripts\\run_bt_gate_012_portfolio_slice.py",
+    "workspace_relative_path": "scripts/run_bt_gate_012_portfolio_slice.py",
+    "sha256": "9acbbe0a35879f1935f4a461308741913b83c78ceb11707af9561892c950ab77",
+    "bytes": 4331,
+    "line_count": 92,
+    "word_count": 374
+  },
+  {
+    "source_relative_path": "scripts/run_bt_gate_013_physical_replay_slice.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\scripts\\run_bt_gate_013_physical_replay_slice.py",
+    "workspace_relative_path": "scripts/run_bt_gate_013_physical_replay_slice.py",
+    "sha256": "27a9f6c1b335c34257b2acb6dea60ed2176bd202337b596a2d77fef2b39a67be",
+    "bytes": 5560,
+    "line_count": 110,
+    "word_count": 427
+  },
+  {
+    "source_relative_path": "scripts/run_bt_gate_014_non_physical_market_state_consumer.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\scripts\\run_bt_gate_014_non_physical_market_state_consumer.py",
+    "workspace_relative_path": "scripts/run_bt_gate_014_non_physical_market_state_consumer.py",
+    "sha256": "ab251ea079766b16a72196e93c8fa94c44296b8d42eab3c66ec887d6a6ae6776",
+    "bytes": 2314,
+    "line_count": 18,
+    "word_count": 232
+  },
+  {
+    "source_relative_path": "scripts/run_bt_gate_014_single_use_physical_market_state_consumer.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\scripts\\run_bt_gate_014_single_use_physical_market_state_consumer.py",
+    "workspace_relative_path": "scripts/run_bt_gate_014_single_use_physical_market_state_consumer.py",
+    "sha256": "56d44dbf04b0f8c40375f5dfc6be333248a622d61f98478d1e8746675051b0d0",
+    "bytes": 1581,
+    "line_count": 18,
+    "word_count": 145
+  },
+  {
+    "source_relative_path": "scripts/run_bt_gate_014_single_use_physical_market_state_consumer_v0_2.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\scripts\\run_bt_gate_014_single_use_physical_market_state_consumer_v0_2.py",
+    "workspace_relative_path": "scripts/run_bt_gate_014_single_use_physical_market_state_consumer_v0_2.py",
+    "sha256": "47509c423df71eaa3534d5cc087c4fbb5afc7ae5b37976682bb3dc101306dc7c",
+    "bytes": 1556,
+    "line_count": 16,
+    "word_count": 153
+  },
+  {
+    "source_relative_path": "scripts/run_bt_gate_014_single_use_physical_market_state_consumer_v0_3.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\scripts\\run_bt_gate_014_single_use_physical_market_state_consumer_v0_3.py",
+    "workspace_relative_path": "scripts/run_bt_gate_014_single_use_physical_market_state_consumer_v0_3.py",
+    "sha256": "8e18bf96d8206fa19724e8182861f3544c17d5fb6abf17f27f07a7ae4217369d",
+    "bytes": 3339,
+    "line_count": 118,
+    "word_count": 251
+  },
+  {
+    "source_relative_path": "scripts/run_bt_gate_014_single_use_physical_market_state_consumer_v0_4.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\scripts\\run_bt_gate_014_single_use_physical_market_state_consumer_v0_4.py",
+    "workspace_relative_path": "scripts/run_bt_gate_014_single_use_physical_market_state_consumer_v0_4.py",
+    "sha256": "59dc173068438acc7c920769a1c3b5a7ad3865ec1525d2418dbf5a064f4f498f",
+    "bytes": 3339,
+    "line_count": 118,
+    "word_count": 251
+  },
+  {
+    "source_relative_path": "scripts/run_bt_gate_014_single_use_physical_market_state_consumer_v0_5.py",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\scripts\\run_bt_gate_014_single_use_physical_market_state_consumer_v0_5.py",
+    "workspace_relative_path": "scripts/run_bt_gate_014_single_use_physical_market_state_consumer_v0_5.py",
+    "sha256": "b89147a35279c17e4a7ff2501aac6e538fabfc0508d4477d54a8b942dd72f8cd",
+    "bytes": 3339,
+    "line_count": 118,
+    "word_count": 251
+  },
+  {
+    "source_relative_path": "contracts/backtest/backtest_input_manifest_contract_v0_1.json",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\contracts\\backtest\\backtest_input_manifest_contract_v0_1.json",
+    "workspace_relative_path": "contracts/backtest/backtest_input_manifest_contract_v0_1.json",
+    "sha256": "9ba2d78fb82c765e9270379b5f3de4235f758b8f6c3a419f51b325b2a91ccbc5",
+    "bytes": 20963,
+    "line_count": 823,
+    "word_count": 917
+  },
+  {
+    "source_relative_path": "contracts/backtest/backtest_run_spec_contract_v0_1.json",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\contracts\\backtest\\backtest_run_spec_contract_v0_1.json",
+    "workspace_relative_path": "contracts/backtest/backtest_run_spec_contract_v0_1.json",
+    "sha256": "874adbdd79291f8697e703937dccbc7aa48c0a7fd56e56b30a3915dcf971157d",
+    "bytes": 18014,
+    "line_count": 726,
+    "word_count": 788
+  },
+  {
+    "source_relative_path": "configs/authorizations/bt_gate_014_single_use_physical_consumer_authorization_v0_1.json",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\configs\\authorizations\\bt_gate_014_single_use_physical_consumer_authorization_v0_1.json",
+    "workspace_relative_path": "configs/authorizations/bt_gate_014_single_use_physical_consumer_authorization_v0_1.json",
+    "sha256": "2c372acebb6a9ef0e3e5cab98ac24ec25bc618be175155812c237e713c6b2060",
+    "bytes": 1037,
+    "line_count": 15,
+    "word_count": 44
+  },
+  {
+    "source_relative_path": "configs/authorizations/bt_gate_014_single_use_physical_consumer_authorization_v0_2.json",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\configs\\authorizations\\bt_gate_014_single_use_physical_consumer_authorization_v0_2.json",
+    "workspace_relative_path": "configs/authorizations/bt_gate_014_single_use_physical_consumer_authorization_v0_2.json",
+    "sha256": "e27fbf75c791309d07c64c855bd81a6e2354278221add0dd887e785de19c1970",
+    "bytes": 1175,
+    "line_count": 17,
+    "word_count": 48
+  },
+  {
+    "source_relative_path": "configs/authorizations/bt_gate_014_single_use_physical_consumer_authorization_v0_3.json",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\configs\\authorizations\\bt_gate_014_single_use_physical_consumer_authorization_v0_3.json",
+    "workspace_relative_path": "configs/authorizations/bt_gate_014_single_use_physical_consumer_authorization_v0_3.json",
+    "sha256": "67a84dc69cdd3d03b93290574a8cb1e4e6f2c0a7ebc72b82d336997a44005126",
+    "bytes": 1834,
+    "line_count": 22,
+    "word_count": 78
+  },
+  {
+    "source_relative_path": "configs/authorizations/bt_gate_014_single_use_physical_consumer_authorization_v0_4.json",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\configs\\authorizations\\bt_gate_014_single_use_physical_consumer_authorization_v0_4.json",
+    "workspace_relative_path": "configs/authorizations/bt_gate_014_single_use_physical_consumer_authorization_v0_4.json",
+    "sha256": "93525573f412b7fda13a197d4d006a18b068c6cfde131c6aca3296e8836c53ea",
+    "bytes": 1834,
+    "line_count": 22,
+    "word_count": 78
+  },
+  {
+    "source_relative_path": "configs/authorizations/bt_gate_014_single_use_physical_consumer_authorization_v0_5.json",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\configs\\authorizations\\bt_gate_014_single_use_physical_consumer_authorization_v0_5.json",
+    "workspace_relative_path": "configs/authorizations/bt_gate_014_single_use_physical_consumer_authorization_v0_5.json",
+    "sha256": "92d30f010aa9c6d489648e07d0fe7285c11c354b2cee3f251af3cc9e2a58b053",
+    "bytes": 1834,
+    "line_count": 22,
+    "word_count": 78
+  },
+  {
+    "source_relative_path": "configs/authorizations/bt_gate_015_single_use_physical_event_state_consumer_v0_1.json",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\configs\\authorizations\\bt_gate_015_single_use_physical_event_state_consumer_v0_1.json",
+    "workspace_relative_path": "configs/authorizations/bt_gate_015_single_use_physical_event_state_consumer_v0_1.json",
+    "sha256": "39589744979ca6516165543c76a889d988eab8e3abb48afaab1b397a9849ff62",
+    "bytes": 1621,
+    "line_count": 36,
+    "word_count": 92
+  },
+  {
+    "source_relative_path": "configs/authorizations/bt_gate_015_single_use_physical_event_state_consumer_v0_2.json",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\configs\\authorizations\\bt_gate_015_single_use_physical_event_state_consumer_v0_2.json",
+    "workspace_relative_path": "configs/authorizations/bt_gate_015_single_use_physical_event_state_consumer_v0_2.json",
+    "sha256": "f3ea066b83e70ff66eca430f992135fd4e3034f864f95d313e2f246bee3050f9",
+    "bytes": 1755,
+    "line_count": 41,
+    "word_count": 103
+  },
+  {
+    "source_relative_path": "configs/authorizations/bt_gate_015_single_use_physical_event_state_consumer_v0_3.json",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\configs\\authorizations\\bt_gate_015_single_use_physical_event_state_consumer_v0_3.json",
+    "workspace_relative_path": "configs/authorizations/bt_gate_015_single_use_physical_event_state_consumer_v0_3.json",
+    "sha256": "fcb7136ce7194a613aa4eadc9006a8335be3900bd4d6c1e44d70c5173355c918",
+    "bytes": 6067,
+    "line_count": 53,
+    "word_count": 230
+  },
+  {
+    "source_relative_path": "configs/authorizations/bt_gate_015_single_use_physical_event_state_consumer_v0_3_spec.json",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\configs\\authorizations\\bt_gate_015_single_use_physical_event_state_consumer_v0_3_spec.json",
+    "workspace_relative_path": "configs/authorizations/bt_gate_015_single_use_physical_event_state_consumer_v0_3_spec.json",
+    "sha256": "f6e6fd012fd469775f3b1089567b6c6a5ebd22c624d42276196d4bbef9482881",
+    "bytes": 19491,
+    "line_count": 229,
+    "word_count": 507
+  },
+  {
+    "source_relative_path": "configs/fixtures/BT_GATE_014_PHYSICAL_INTEGRATION_BARRIERS_V0_1.json",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\configs\\fixtures\\BT_GATE_014_PHYSICAL_INTEGRATION_BARRIERS_V0_1.json",
+    "workspace_relative_path": "configs/fixtures/BT_GATE_014_PHYSICAL_INTEGRATION_BARRIERS_V0_1.json",
+    "sha256": "def4ced18cc1d9b36583ab60a669c8ce51839156fdd25bd934df591568bb1352",
+    "bytes": 387,
+    "line_count": 17,
+    "word_count": 27
+  },
+  {
+    "source_relative_path": "configs/fixtures/BT_GATE_014_PHYSICAL_INTEGRATION_BARRIERS_V0_2.json",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\configs\\fixtures\\BT_GATE_014_PHYSICAL_INTEGRATION_BARRIERS_V0_2.json",
+    "workspace_relative_path": "configs/fixtures/BT_GATE_014_PHYSICAL_INTEGRATION_BARRIERS_V0_2.json",
+    "sha256": "1dd056cdfd206a4deeed3ae20bbb9d9bfbbc8cfdaf9afcf3d5bb3358d959f76c",
+    "bytes": 703,
+    "line_count": 30,
+    "word_count": 77
+  },
+  {
+    "source_relative_path": "configs/fixtures/BT_GATE_014_PHYSICAL_INTEGRATION_BARRIERS_V0_3.json",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\configs\\fixtures\\BT_GATE_014_PHYSICAL_INTEGRATION_BARRIERS_V0_3.json",
+    "workspace_relative_path": "configs/fixtures/BT_GATE_014_PHYSICAL_INTEGRATION_BARRIERS_V0_3.json",
+    "sha256": "3cf276da2d423f7be83aea4ba547186c050e03946bd573c5027f99ca8ad3f234",
+    "bytes": 922,
+    "line_count": 35,
+    "word_count": 101
+  },
+  {
+    "source_relative_path": "configs/fixtures/BT_GATE_014_PHYSICAL_INTEGRATION_BARRIERS_V0_4.json",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\configs\\fixtures\\BT_GATE_014_PHYSICAL_INTEGRATION_BARRIERS_V0_4.json",
+    "workspace_relative_path": "configs/fixtures/BT_GATE_014_PHYSICAL_INTEGRATION_BARRIERS_V0_4.json",
+    "sha256": "03268886123d7b2361711385970c13048ba7d1ba9027e386a88ebeed7a35e8b2",
+    "bytes": 922,
+    "line_count": 35,
+    "word_count": 101
+  },
+  {
+    "source_relative_path": "configs/fixtures/BT_GATE_014_PHYSICAL_INTEGRATION_BARRIERS_V0_5.json",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\configs\\fixtures\\BT_GATE_014_PHYSICAL_INTEGRATION_BARRIERS_V0_5.json",
+    "workspace_relative_path": "configs/fixtures/BT_GATE_014_PHYSICAL_INTEGRATION_BARRIERS_V0_5.json",
+    "sha256": "5a54527119a74eaf1917fda86db4216b45fb725c02da8c76e5fb2bbc993fb785",
+    "bytes": 922,
+    "line_count": 35,
+    "word_count": 101
+  },
+  {
+    "source_relative_path": "configs/fixtures/BT_GATE_015_PHYSICAL_INTEGRATION_BARRIERS_V0_3.json",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\configs\\fixtures\\BT_GATE_015_PHYSICAL_INTEGRATION_BARRIERS_V0_3.json",
+    "workspace_relative_path": "configs/fixtures/BT_GATE_015_PHYSICAL_INTEGRATION_BARRIERS_V0_3.json",
+    "sha256": "07e43416d7fa04c20d54498783fb32f4fc7337762ccfc9699e405a06d4dd2c42",
+    "bytes": 666,
+    "line_count": 24,
+    "word_count": 55
+  },
+  {
+    "source_relative_path": "configs/fixtures/TSIS_REAL_DATA_FIXTURE_2026_01_05_LT1B_QG5_V0_1.json",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\configs\\fixtures\\TSIS_REAL_DATA_FIXTURE_2026_01_05_LT1B_QG5_V0_1.json",
+    "workspace_relative_path": "configs/fixtures/TSIS_REAL_DATA_FIXTURE_2026_01_05_LT1B_QG5_V0_1.json",
+    "sha256": "ed3d95b17049a99c4c4d7270dcef77f137cc23b6ec6832f6d61c18bf9eb2379a",
+    "bytes": 11015,
+    "line_count": 312,
+    "word_count": 773
+  },
+  {
+    "source_relative_path": "docs/00_system/01_RUNPREFLIGHT_IMPLEMENTATION_PLAN_V0_1.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\01_RUNPREFLIGHT_IMPLEMENTATION_PLAN_V0_1.md",
+    "workspace_relative_path": "docs/00_system/01_RUNPREFLIGHT_IMPLEMENTATION_PLAN_V0_1.md",
+    "sha256": "4c3f6e7b275a6093e9456aefedfc942ee5322016e7f77ae21e60cf9509b32343",
+    "bytes": 3696,
+    "line_count": 156,
+    "word_count": 409
+  },
+  {
+    "source_relative_path": "docs/00_system/02_PHYSICAL_LAYOUT_DISCOVERY_V0_1.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\02_PHYSICAL_LAYOUT_DISCOVERY_V0_1.md",
+    "workspace_relative_path": "docs/00_system/02_PHYSICAL_LAYOUT_DISCOVERY_V0_1.md",
+    "sha256": "73fac90c90ebc6af25d2aa1304373ac073a58fb30f7c2a9f849f8c8e4b96bec2",
+    "bytes": 7501,
+    "line_count": 169,
+    "word_count": 674
+  },
+  {
+    "source_relative_path": "docs/00_system/03_REPLAY_IMPLEMENTATION_PLAN_V0_1.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\03_REPLAY_IMPLEMENTATION_PLAN_V0_1.md",
+    "workspace_relative_path": "docs/00_system/03_REPLAY_IMPLEMENTATION_PLAN_V0_1.md",
+    "sha256": "dea224913ae6f49bab16c64319724fc64219e3e9fafb3e00c93b87d59f6ab7fa",
+    "bytes": 982,
+    "line_count": 43,
+    "word_count": 120
+  },
+  {
+    "source_relative_path": "docs/00_system/04_ACCOUNTING_IMPLEMENTATION_PLAN_V0_1.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\04_ACCOUNTING_IMPLEMENTATION_PLAN_V0_1.md",
+    "workspace_relative_path": "docs/00_system/04_ACCOUNTING_IMPLEMENTATION_PLAN_V0_1.md",
+    "sha256": "2d877df95d4c1b83cec61ce5e56935183f50ee22dcdf7ab101174833878d4221",
+    "bytes": 785,
+    "line_count": 49,
+    "word_count": 83
+  },
+  {
+    "source_relative_path": "docs/00_system/05_RUNPREFLIGHT_STATE_CONSUMPTION_IMPLEMENTATION_PLAN_V0_1.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\05_RUNPREFLIGHT_STATE_CONSUMPTION_IMPLEMENTATION_PLAN_V0_1.md",
+    "workspace_relative_path": "docs/00_system/05_RUNPREFLIGHT_STATE_CONSUMPTION_IMPLEMENTATION_PLAN_V0_1.md",
+    "sha256": "e17d50776233603dce14c1c52bac98cfe5ea93696b1151ac147844b54d311cad",
+    "bytes": 15130,
+    "line_count": 575,
+    "word_count": 1569
+  },
+  {
+    "source_relative_path": "docs/00_system/06_STATE_REPLAY_FEED_IMPLEMENTATION_PLAN_V0_1.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\06_STATE_REPLAY_FEED_IMPLEMENTATION_PLAN_V0_1.md",
+    "workspace_relative_path": "docs/00_system/06_STATE_REPLAY_FEED_IMPLEMENTATION_PLAN_V0_1.md",
+    "sha256": "d40119247d8a93e6716cd28b89c4443a0ca8a1f9ae04d77e3118238d586a99c6",
+    "bytes": 11552,
+    "line_count": 515,
+    "word_count": 1369
+  },
+  {
+    "source_relative_path": "docs/00_system/07_EXECUTION_SEMANTICS_AND_COST_MODEL_CONTRACT_V0_1.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\07_EXECUTION_SEMANTICS_AND_COST_MODEL_CONTRACT_V0_1.md",
+    "workspace_relative_path": "docs/00_system/07_EXECUTION_SEMANTICS_AND_COST_MODEL_CONTRACT_V0_1.md",
+    "sha256": "ac374ab45ebc953a0b07caa099b080fd71b8fe2124bd52fbf129db532f5a475e",
+    "bytes": 27068,
+    "line_count": 1037,
+    "word_count": 2982
+  },
+  {
+    "source_relative_path": "docs/00_system/08_DETERMINISTIC_FILL_SIMULATOR_V0_1_AUTHORIZATION.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\08_DETERMINISTIC_FILL_SIMULATOR_V0_1_AUTHORIZATION.md",
+    "workspace_relative_path": "docs/00_system/08_DETERMINISTIC_FILL_SIMULATOR_V0_1_AUTHORIZATION.md",
+    "sha256": "85d9d6d9c9a687a4f0322ff9d516fffd6bc8910d7be0d2d77ea9dbd16a5ba535",
+    "bytes": 11532,
+    "line_count": 344,
+    "word_count": 1301
+  },
+  {
+    "source_relative_path": "docs/00_system/09_DETERMINISTIC_FILL_SIMULATOR_IMPLEMENTATION_AND_ACCEPTANCE_V0_1.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\09_DETERMINISTIC_FILL_SIMULATOR_IMPLEMENTATION_AND_ACCEPTANCE_V0_1.md",
+    "workspace_relative_path": "docs/00_system/09_DETERMINISTIC_FILL_SIMULATOR_IMPLEMENTATION_AND_ACCEPTANCE_V0_1.md",
+    "sha256": "7bbb496a9a5f29baaf2edee387ae917e4178f9f63b11ae7afaeb711805e6bae2",
+    "bytes": 2577,
+    "line_count": 101,
+    "word_count": 179
+  },
+  {
+    "source_relative_path": "docs/00_system/10_BT_GATE_011_SINGLE_STRATEGY_END_TO_END_BACKTEST_CONTRACT_V0_1.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\10_BT_GATE_011_SINGLE_STRATEGY_END_TO_END_BACKTEST_CONTRACT_V0_1.md",
+    "workspace_relative_path": "docs/00_system/10_BT_GATE_011_SINGLE_STRATEGY_END_TO_END_BACKTEST_CONTRACT_V0_1.md",
+    "sha256": "7893db3db5296aadb3cb2620efa2b58365eef2cb4091f242a3ac575e3a7d3a8e",
+    "bytes": 4188,
+    "line_count": 135,
+    "word_count": 430
+  },
+  {
+    "source_relative_path": "docs/00_system/11_BT_GATE_011_SINGLE_STRATEGY_END_TO_END_ACCEPTANCE_PACKET_V0_1.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\11_BT_GATE_011_SINGLE_STRATEGY_END_TO_END_ACCEPTANCE_PACKET_V0_1.md",
+    "workspace_relative_path": "docs/00_system/11_BT_GATE_011_SINGLE_STRATEGY_END_TO_END_ACCEPTANCE_PACKET_V0_1.md",
+    "sha256": "0a0abf28ebf5745c4eed2e38894a4fea66e1aa01df9bd780467343a4682d8e35",
+    "bytes": 3610,
+    "line_count": 143,
+    "word_count": 289
+  },
+  {
+    "source_relative_path": "docs/00_system/12_BT_GATE_012_MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE_CONTRACT_V0_1.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\12_BT_GATE_012_MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE_CONTRACT_V0_1.md",
+    "workspace_relative_path": "docs/00_system/12_BT_GATE_012_MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE_CONTRACT_V0_1.md",
+    "sha256": "9c8c870e363cb4e6485099110dbba5e9582eb6bd8bb46561d38758d9cc74c961",
+    "bytes": 15574,
+    "line_count": 449,
+    "word_count": 1752
+  },
+  {
+    "source_relative_path": "docs/00_system/13_BT_GATE_012_MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE_ACCEPTANCE_PACKET_V0_1.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\13_BT_GATE_012_MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE_ACCEPTANCE_PACKET_V0_1.md",
+    "workspace_relative_path": "docs/00_system/13_BT_GATE_012_MULTI_SYMBOL_MULTI_SESSION_PORTFOLIO_SLICE_ACCEPTANCE_PACKET_V0_1.md",
+    "sha256": "de0eea5d8c5ed84e616c8ace4e295e82ca8d64074f05ce1f6ec477aa6d402778",
+    "bytes": 4255,
+    "line_count": 166,
+    "word_count": 392
+  },
+  {
+    "source_relative_path": "docs/00_system/14_BT_GATE_013_PHYSICAL_HISTORICAL_REPLAY_SLICE_CONTRACT_V0_1.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\14_BT_GATE_013_PHYSICAL_HISTORICAL_REPLAY_SLICE_CONTRACT_V0_1.md",
+    "workspace_relative_path": "docs/00_system/14_BT_GATE_013_PHYSICAL_HISTORICAL_REPLAY_SLICE_CONTRACT_V0_1.md",
+    "sha256": "2db0c57d8a9f80e47de95b11fb41bf3a04b5436a3fdca51ca6a2cdfc8543074d",
+    "bytes": 21206,
+    "line_count": 756,
+    "word_count": 1928
+  },
+  {
+    "source_relative_path": "docs/00_system/15_BT_GATE_014_POINT_IN_TIME_MARKET_STATE_CONSUMER_CONTRACT_V0_1.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\15_BT_GATE_014_POINT_IN_TIME_MARKET_STATE_CONSUMER_CONTRACT_V0_1.md",
+    "workspace_relative_path": "docs/00_system/15_BT_GATE_014_POINT_IN_TIME_MARKET_STATE_CONSUMER_CONTRACT_V0_1.md",
+    "sha256": "f87c0d1ed601f19db09e47028cf1fbf478ad202e1efe7bc46d7733133ccd07b7",
+    "bytes": 55519,
+    "line_count": 2525,
+    "word_count": 5048
+  },
+  {
+    "source_relative_path": "docs/00_system/16_BT_GATE_014_NON_PHYSICAL_CONSUMER_ACCEPTANCE_PACKET_V0_1.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\16_BT_GATE_014_NON_PHYSICAL_CONSUMER_ACCEPTANCE_PACKET_V0_1.md",
+    "workspace_relative_path": "docs/00_system/16_BT_GATE_014_NON_PHYSICAL_CONSUMER_ACCEPTANCE_PACKET_V0_1.md",
+    "sha256": "de7d2fa7d7ab918778f647a24849094b5210e6544347eaac35dc02657bd26800",
+    "bytes": 3511,
+    "line_count": 74,
+    "word_count": 388
+  },
+  {
+    "source_relative_path": "docs/00_system/17_BT_GATE_014_PHASE_B_EXTERNAL_RE_REVIEW_ACCEPTANCE_V0_1.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\17_BT_GATE_014_PHASE_B_EXTERNAL_RE_REVIEW_ACCEPTANCE_V0_1.md",
+    "workspace_relative_path": "docs/00_system/17_BT_GATE_014_PHASE_B_EXTERNAL_RE_REVIEW_ACCEPTANCE_V0_1.md",
+    "sha256": "5501356d13b93edaa38a11d4812b1af020fc2f5efe10dc47fea1ad3eecc50c01",
+    "bytes": 2642,
+    "line_count": 82,
+    "word_count": 270
+  },
+  {
+    "source_relative_path": "docs/00_system/18_BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_1.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\18_BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_1.md",
+    "workspace_relative_path": "docs/00_system/18_BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_1.md",
+    "sha256": "6ece22e31a16dcf424a11247caa1323ca99706d6c7b66426e414a7f3825b63a8",
+    "bytes": 995,
+    "line_count": 34,
+    "word_count": 109
+  },
+  {
+    "source_relative_path": "docs/00_system/18_BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_2.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\18_BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_2.md",
+    "workspace_relative_path": "docs/00_system/18_BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_2.md",
+    "sha256": "1d0be63ab953449700ecd9da712f825032ea3837a44b58814e2825340fe8688a",
+    "bytes": 1118,
+    "line_count": 37,
+    "word_count": 127
+  },
+  {
+    "source_relative_path": "docs/00_system/18_BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_3.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\18_BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_3.md",
+    "workspace_relative_path": "docs/00_system/18_BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_3.md",
+    "sha256": "98c558a75d27027142a9398fb673a21c9cead8ff957c27db9ca2c20196654109",
+    "bytes": 15234,
+    "line_count": 540,
+    "word_count": 1113
+  },
+  {
+    "source_relative_path": "docs/00_system/18_BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_4.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\18_BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_4.md",
+    "workspace_relative_path": "docs/00_system/18_BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_4.md",
+    "sha256": "d8072f9324d52518365b3815eccb6d74abe485d694d1c3a49b17bef1311b2e0f",
+    "bytes": 2938,
+    "line_count": 51,
+    "word_count": 279
+  },
+  {
+    "source_relative_path": "docs/00_system/18_BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_5.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\18_BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_5.md",
+    "workspace_relative_path": "docs/00_system/18_BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_5.md",
+    "sha256": "15f814904efeed6551cecd2f2e7aac58ba7b4c1de614fa7744d257f238a7a7bd",
+    "bytes": 1418,
+    "line_count": 51,
+    "word_count": 161
+  },
+  {
+    "source_relative_path": "docs/00_system/18_BT_GATE_015_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_1.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\18_BT_GATE_015_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_1.md",
+    "workspace_relative_path": "docs/00_system/18_BT_GATE_015_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_1.md",
+    "sha256": "bc8972d0f0bdca1bb5720557ec98a6facf1118e3d329cd982174da0303dba060",
+    "bytes": 711,
+    "line_count": 21,
+    "word_count": 83
+  },
+  {
+    "source_relative_path": "docs/00_system/18_BT_GATE_015_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_2.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\18_BT_GATE_015_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_2.md",
+    "workspace_relative_path": "docs/00_system/18_BT_GATE_015_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_2.md",
+    "sha256": "df859b5f45f075a3e8e4543e3bda9fe239b96fbeb951b91d38f1a0a9196d2c63",
+    "bytes": 1409,
+    "line_count": 40,
+    "word_count": 132
+  },
+  {
+    "source_relative_path": "docs/00_system/19_BT_GATE_014_FINAL_POSTEXECUTION_ACCEPTANCE_V0_1.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\19_BT_GATE_014_FINAL_POSTEXECUTION_ACCEPTANCE_V0_1.md",
+    "workspace_relative_path": "docs/00_system/19_BT_GATE_014_FINAL_POSTEXECUTION_ACCEPTANCE_V0_1.md",
+    "sha256": "50ac8e74009598f075fbc08f7db07954f2bd18c1eebaad0d3f43f020423e2f53",
+    "bytes": 955,
+    "line_count": 27,
+    "word_count": 87
+  },
+  {
+    "source_relative_path": "docs/00_system/20_BT_GATE_015_POINT_IN_TIME_EVENT_STATE_CONSUMER_CONTRACT_V0_1.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\20_BT_GATE_015_POINT_IN_TIME_EVENT_STATE_CONSUMER_CONTRACT_V0_1.md",
+    "workspace_relative_path": "docs/00_system/20_BT_GATE_015_POINT_IN_TIME_EVENT_STATE_CONSUMER_CONTRACT_V0_1.md",
+    "sha256": "438f0e94756a1ea0e848066c32c254f33d9ea0ad7113be426c6e11f137e0945c",
+    "bytes": 19269,
+    "line_count": 662,
+    "word_count": 1693
+  },
+  {
+    "source_relative_path": "docs/00_system/21_BT_GATE_015_NON_PHYSICAL_IMPLEMENTATION_REVIEW_PACKET_V0_2.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\21_BT_GATE_015_NON_PHYSICAL_IMPLEMENTATION_REVIEW_PACKET_V0_2.md",
+    "workspace_relative_path": "docs/00_system/21_BT_GATE_015_NON_PHYSICAL_IMPLEMENTATION_REVIEW_PACKET_V0_2.md",
+    "sha256": "6ae6b6f45b58c6b63123523dbe59ef05b0ddfb7ad227dc9bae8e364ccec5d912",
+    "bytes": 1738,
+    "line_count": 61,
+    "word_count": 150
+  },
+  {
+    "source_relative_path": "docs/00_system/22_BT_GATE_015_NON_PHYSICAL_IMPLEMENTATION_REVIEW_PACKET_V0_3.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\22_BT_GATE_015_NON_PHYSICAL_IMPLEMENTATION_REVIEW_PACKET_V0_3.md",
+    "workspace_relative_path": "docs/00_system/22_BT_GATE_015_NON_PHYSICAL_IMPLEMENTATION_REVIEW_PACKET_V0_3.md",
+    "sha256": "40f047c8879a77a7c0302580b5904860f6ac25ab8b65cfb64c23033e294bea50",
+    "bytes": 2787,
+    "line_count": 61,
+    "word_count": 315
+  },
+  {
+    "source_relative_path": "docs/00_system/23_BT_GATE_015_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_3.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\23_BT_GATE_015_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_3.md",
+    "workspace_relative_path": "docs/00_system/23_BT_GATE_015_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_3.md",
+    "sha256": "8eedc87536e751cc14ed75983be540b5098185a734f9461809be79ef1ef0b580",
+    "bytes": 5647,
+    "line_count": 206,
+    "word_count": 631
+  },
+  {
+    "source_relative_path": "docs/00_system/24_BT_GATE_015_V0_3_PREEXECUTION_REVIEW_REQUEST.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\24_BT_GATE_015_V0_3_PREEXECUTION_REVIEW_REQUEST.md",
+    "workspace_relative_path": "docs/00_system/24_BT_GATE_015_V0_3_PREEXECUTION_REVIEW_REQUEST.md",
+    "sha256": "f776ca4dcb8b5b9c63277a161a8461eb95fe058db8b3d1b3b055810d27985724",
+    "bytes": 2576,
+    "line_count": 76,
+    "word_count": 259
+  },
+  {
+    "source_relative_path": "docs/00_system/25_BT_GATE_015_V0_3_PREEXECUTION_PACKET_READOUT.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\25_BT_GATE_015_V0_3_PREEXECUTION_PACKET_READOUT.md",
+    "workspace_relative_path": "docs/00_system/25_BT_GATE_015_V0_3_PREEXECUTION_PACKET_READOUT.md",
+    "sha256": "2e23d650c5f9ac910dbafe208344da502a76438e0833faeb5ef8d67444c53e7c",
+    "bytes": 1774,
+    "line_count": 52,
+    "word_count": 212
+  },
+  {
+    "source_relative_path": "docs/00_system/BACKTEST_ENGINE_ROADMAP.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\BACKTEST_ENGINE_ROADMAP.md",
+    "workspace_relative_path": "docs/00_system/BACKTEST_ENGINE_ROADMAP.md",
+    "sha256": "21bea9f55f46c654fcfe4a5bba8a4882deef7c90e78808c52a337d2190a04ce1",
+    "bytes": 11259,
+    "line_count": 307,
+    "word_count": 1069
+  },
+  {
+    "source_relative_path": "docs/00_system/CURRENT_PROJECT_HANDOFF.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\CURRENT_PROJECT_HANDOFF.md",
+    "workspace_relative_path": "docs/00_system/CURRENT_PROJECT_HANDOFF.md",
+    "sha256": "c8d27ca423013d4ada04c079e5332afa4613488b0459b9f13462dc46f817023f",
+    "bytes": 6329,
+    "line_count": 173,
+    "word_count": 615
+  },
+  {
+    "source_relative_path": "docs/00_system/GOVERNANCE_OPERATING_MODEL.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\GOVERNANCE_OPERATING_MODEL.md",
+    "workspace_relative_path": "docs/00_system/GOVERNANCE_OPERATING_MODEL.md",
+    "sha256": "aec418f1555fea6991bb339e445b6b642bc19bfc5b19218cbefa1503c4ced8bd",
+    "bytes": 2223,
+    "line_count": 97,
+    "word_count": 259
+  },
+  {
+    "source_relative_path": "docs/00_system/STATE_PROVIDER_CONSUMER_HOLD_HANDOFF_V0_1.md",
+    "source_absolute_path": "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\docs\\00_system\\STATE_PROVIDER_CONSUMER_HOLD_HANDOFF_V0_1.md",
+    "workspace_relative_path": "docs/00_system/STATE_PROVIDER_CONSUMER_HOLD_HANDOFF_V0_1.md",
+    "sha256": "93579ff13fb9d2e5e0db48584b54da7854739ceedeb546625d4d7fdbdd5f97f3",
+    "bytes": 4524,
+    "line_count": 137,
+    "word_count": 525
+  }
+]

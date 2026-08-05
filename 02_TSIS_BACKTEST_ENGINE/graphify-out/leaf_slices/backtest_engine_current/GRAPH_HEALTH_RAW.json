@@ -1,0 +1,193 @@
+{
+  "node_count": 2525,
+  "unverified_node_count": 0,
+  "raw_edge_count": 7137,
+  "non_object_edges": 0,
+  "missing_endpoint_edges": 0,
+  "dangling_endpoint_edges": 551,
+  "self_loop_edges": 0,
+  "valid_candidate_edges": 6586,
+  "exact_duplicate_edges": 119,
+  "directed_unique_endpoint_pairs": 6239,
+  "directed_same_endpoint_collapsed_edges": 347,
+  "undirected_unique_endpoint_pairs": 6238,
+  "undirected_same_endpoint_collapsed_edges": 348,
+  "same_endpoint_group_count": 295,
+  "relation_variant_groups": 173,
+  "source_file_variant_groups": 0,
+  "source_location_variant_groups": 9,
+  "context_variant_groups": 44,
+  "post_build_graph_type": "Graph",
+  "post_build_node_count": 2523,
+  "post_build_edge_count": 6229,
+  "post_build_error": "",
+  "producer_suppression": {
+    "path": "C:\\Users\\AlexJ\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\graphify\\extract.py",
+    "total_sites": 11,
+    "sites": [
+      {
+        "line": 1099,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids = {n[\"id\"] for n in nodes}"
+      },
+      {
+        "line": 1253,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids = {n[\"id\"] for n in nodes}"
+      },
+      {
+        "line": 1255,
+        "name": "seen_doc_refs",
+        "tuple_arity": 0,
+        "sample": "seen_doc_refs: set[str] = set()"
+      },
+      {
+        "line": 1600,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = {n[\"id\"] for n in nodes}"
+      },
+      {
+        "line": 2069,
+        "name": "seen_keys",
+        "tuple_arity": 0,
+        "sample": "seen_keys: set[tuple] = set()"
+      },
+      {
+        "line": 2228,
+        "name": "seen_keys",
+        "tuple_arity": 0,
+        "sample": "seen_keys: set[tuple] = set()"
+      },
+      {
+        "line": 3272,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 3380,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 3459,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 3974,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 3975,
+        "name": "seen_edges",
+        "tuple_arity": 4,
+        "sample": "seen_edges: set[tuple[str, str, str, str | None]] = set()"
+      }
+    ],
+    "error": ""
+  },
+  "examples": [
+    {
+      "source": "contracts_backtest_backtest_run_spec_contract_v0_1_properties_policy_id",
+      "target": "contracts_backtest_backtest_run_spec_contract_v0_1_policy_id_ref",
+      "edge_count": 4,
+      "relations": [
+        "contains"
+      ],
+      "source_files": [
+        "contracts/backtest/backtest_run_spec_contract_v0_1.json"
+      ],
+      "source_locations": [
+        "L397",
+        "L553",
+        "L634",
+        "L654"
+      ],
+      "contexts": [
+        ""
+      ]
+    },
+    {
+      "source": "src_tsis_backtest_backtest_runner_apply_fill_online",
+      "target": "src_tsis_backtest_backtest_runner_py_decimal",
+      "edge_count": 4,
+      "relations": [
+        "references"
+      ],
+      "source_files": [
+        "src/tsis_backtest/backtest/runner.py"
+      ],
+      "source_locations": [
+        "L534"
+      ],
+      "contexts": [
+        "generic_arg",
+        "parameter_type"
+      ]
+    },
+    {
+      "source": "src_tsis_backtest_market_state_consumer_marketstateconsumerv0_1_join_pairs",
+      "target": "src_tsis_backtest_market_state_consumer_py_any",
+      "edge_count": 4,
+      "relations": [
+        "references"
+      ],
+      "source_files": [
+        "src/tsis_backtest/market_state/consumer.py"
+      ],
+      "source_locations": [
+        "L725"
+      ],
+      "contexts": [
+        "generic_arg"
+      ]
+    },
+    {
+      "source": "src_tsis_backtest_physical_replay_runner_physicalhistoricalreplayslicerunner_write_authorized_fixture_manifest",
+      "target": "src_tsis_backtest_physical_replay_runner_py_path",
+      "edge_count": 4,
+      "relations": [
+        "calls",
+        "references"
+      ],
+      "source_files": [
+        "src/tsis_backtest/physical_replay/runner.py"
+      ],
+      "source_locations": [
+        "L517",
+        "L520"
+      ],
+      "contexts": [
+        "call",
+        "parameter_type",
+        "return_type"
+      ]
+    },
+    {
+      "source": "src_tsis_backtest_physical_replay_runner_physicalhistoricalreplayslicerunner_final_manifest",
+      "target": "src_tsis_backtest_physical_replay_runner_py_any",
+      "edge_count": 4,
+      "relations": [
+        "references"
+      ],
+      "source_files": [
+        "src/tsis_backtest/physical_replay/runner.py"
+      ],
+      "source_locations": [
+        "L600"
+      ],
+      "contexts": [
+        "generic_arg",
+        "parameter_type"
+      ]
+    }
+  ]
+}

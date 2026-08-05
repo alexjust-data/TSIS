@@ -3,14 +3,15 @@
 Status:
 
 ```text
-BT-GATE-015 = NON_PHYSICAL_IMPLEMENTATION_ACCEPTED_PENDING_SINGLE_USE_PHYSICAL_AUTHORIZATION
+BT-GATE-015 = NON_PHYSICAL_IMPLEMENTATION_ACCEPTED_PENDING_V0_3_PREEXECUTION_EXTERNAL_REVIEW
 CONTRACT_STATUS = OWNER_APPROVED
 CONTRACT_OWNER_REVIEW = PASS
 BT_GATE_015_NON_PHYSICAL_EXTERNAL_REVIEW = PASS
 BT-GATE-015_IMPLEMENTATION = ACCEPTED_NON_PHYSICAL_ONLY
 IMPLEMENTATION_ACCEPTANCE = ACCEPTED_NON_PHYSICAL_ONLY
 EVENT_STATE_PHYSICAL_READ = NOT_AUTHORIZED
-SINGLE_USE_PHYSICAL_AUTHORIZATION = NOT_AUTHORIZED
+SINGLE_USE_PHYSICAL_AUTHORIZATION = PREPARED_PENDING_PREEXECUTION_EXTERNAL_REVIEW
+PHYSICAL_BINDING_CORRECTION = PENDING_PREEXECUTION_EXTERNAL_REVIEW
 ```
 
 ## 1. Capability
@@ -175,7 +176,8 @@ constructing an event:
 
 | Physical Event State field | Sidecar or consumer field |
 |---|---|
-| `state_output_fingerprint` | `event_state_record_fingerprint` |
+| `event_state_record_fingerprint` | `event_state_record_fingerprint` |
+| `state_output_fingerprint` | `market_state_state_output_fingerprint` |
 | `event_state_instrument_session_projection_id` | `instrument_projection_id` |
 | `consumption_legality` | `state_replay_consumption_legality` |
 | parsed `restriction_codes_json` | `event_state_provenance_restriction_codes` |
@@ -188,6 +190,27 @@ Market State replay-availability sidecar row:
 Market State sidecar field = state_output_fingerprint
 Event State sidecar field = market_state_state_output_fingerprint
 required relation = exact equality
+```
+
+The provider completion candidate is the on-demand executable row, not the
+earlier 38-field synthetic projection. Its closed physical shape contains 44
+fields:
+
+```text
+41 fields governed by
+event_state_bounded_execution_chain_physical_validation_scope_v0_1
+
++ source_market_state_candidate_dataset_fingerprint
++ market_state_dependency_request_fingerprint
++ market_state_dependency_execution_plan_fingerprint
+```
+
+Its fingerprint is:
+
+```text
+event_state_record_fingerprint =
+SHA256(canonical JSON of the complete physical row,
+       excluding created_at_utc and event_state_record_fingerprint)
 ```
 
 Join cardinality is exactly one physical row to exactly one sidecar record.
@@ -319,7 +342,8 @@ The availability sidecar is row-addressable and the delivery boundary remains
 
 ### 8.2 Typed scientific payload binding
 
-The adopted schema freezes a 38-field Event State envelope. The separate
+The provider schema freezes the base envelope; the executable row is the
+44-field on-demand shape defined in Section 5.1. The separate
 scientific payload is exactly these 17 numeric fields:
 
 ```text
@@ -623,7 +647,7 @@ optimization or edge claims
 Required current state:
 
 ```text
-BT-GATE-015 = NON_PHYSICAL_IMPLEMENTATION_ACCEPTED_PENDING_SINGLE_USE_PHYSICAL_AUTHORIZATION
+BT-GATE-015 = NON_PHYSICAL_IMPLEMENTATION_ACCEPTED_PENDING_V0_3_PREEXECUTION_EXTERNAL_REVIEW
 CONTRACT_STATUS = OWNER_APPROVED
 CONTRACT_OWNER_REVIEW = PASS
 BT_GATE_015_NON_PHYSICAL_EXTERNAL_REVIEW = PASS

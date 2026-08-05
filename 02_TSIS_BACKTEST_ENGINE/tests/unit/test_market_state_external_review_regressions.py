@@ -156,7 +156,14 @@ class ExternalReviewRegressionTests(unittest.TestCase):
   final=json.loads((ROOT/'runs/bt_gate_014_single_use_physical_market_state_consumer_v0_5/final_manifest.json').read_text(encoding='utf-8')); governance=ROOT.parent/'00_CTO/14_BACKTEST_ENGINE'
   policy=json.loads((governance/'05_POLICIES/POLICY_REGISTER.json').read_text(encoding='utf-8')); gate=json.loads((governance/'08_GATES_AND_REVIEWS/GATE_REGISTER.json').read_text(encoding='utf-8')); trace=json.loads((governance/'06_TRACEABILITY/TRACEABILITY_MATRIX.json').read_text(encoding='utf-8')); package=json.loads((governance/'PACKAGE_MANIFEST.json').read_text(encoding='utf-8'))
   policy_hash=next(item['deterministic_output_hash'] for item in policy['entries'] if item['policy_id']=='BT-POL-STATE-002'); gate_hash=next(item['deterministic_output_hash'] for item in gate['gates'] if item['gate_id']=='BT-GATE-014'); trace_entry=next(item for item in trace['entries'] if item['capability_id']=='BT-CAP-PIT-MARKET-STATE-CONSUMER-V0-1'); trace_hash=trace_entry['deterministic_output_hash']
-  self.assertEqual({final['deterministic_output_hash'],policy_hash,gate_hash,trace_hash,package['current_gate']['deterministic_output_hash']},{final['deterministic_output_hash']})
+  self.assertEqual({final['deterministic_output_hash'],policy_hash,gate_hash,trace_hash},{final['deterministic_output_hash']})
+  event_final=json.loads((ROOT/'runs/bt_gate_015_single_use_physical_event_state_consumer_v0_4/final_manifest.json').read_text(encoding='utf-8')); event_policy=next(item['deterministic_output_hash'] for item in policy['entries'] if item['policy_id']=='BT-POL-STATE-003'); event_gate=next(item['deterministic_output_hash'] for item in gate['gates'] if item['gate_id']=='BT-GATE-015'); event_trace=next(item['deterministic_output_hash'] for item in trace['entries'] if item['capability_id']=='BT-CAP-PIT-EVENT-STATE-CONSUMER-V0-1'); self.assertEqual({event_final['deterministic_output_hash'],event_policy,event_gate,event_trace,package['current_gate']['deterministic_output_hash']},{event_final['deterministic_output_hash']})
+  self.assertEqual(package['status'],'BT_GATE_015_CLOSED_PASS_POINT_IN_TIME_EVENT_STATE_CONSUMPTION_WITH_RESTRICTIONS')
+  self.assertEqual(package['current_gate']['postexecution_review'],'PASS')
+  self.assertEqual(package['next_candidate_gate']['gate_id'],'BT-GATE-016')
+  self.assertEqual(package['next_candidate_gate']['status'],'NOT_OPEN')
+  self.assertEqual(package['next_candidate_gate']['code_implementation'],'NOT_AUTHORIZED')
+  self.assertEqual(package['next_candidate_gate']['physical_read'],'NOT_AUTHORIZED')
  def test_living_documents_have_exactly_one_current_authoritative_state(self):
   governance=ROOT.parent/'00_CTO/14_BACKTEST_ENGINE'
   paths=(ROOT/'AGENTS.md',ROOT/'README.md',ROOT/'CHANGELOG.md',ROOT/'docs/00_system/BACKTEST_ENGINE_ROADMAP.md',governance/'AGENTS.md',governance/'README.md',governance/'CHANGELOG.md')
@@ -164,22 +171,41 @@ class ExternalReviewRegressionTests(unittest.TestCase):
    text=path.read_text(encoding='utf-8')
    headings=[line for line in text.splitlines() if line.startswith('## Current Authoritative State')]
    self.assertEqual(len(headings),1,path)
-   self.assertIn('BT-GATE-014 final closure',headings[0],path)
+   self.assertIn('BT-GATE-015 closed with restrictions',headings[0],path)
  def test_current_project_handoff_is_complete_and_markdown_is_clean(self):
   handoff=ROOT/'docs/00_system/CURRENT_PROJECT_HANDOFF.md'
   text=handoff.read_text(encoding='utf-8')
   for required in (
-   'Status: LIVE_RESTART_AUTHORITY',
-   'BT-GATE-014 /',
+   'Status: `LIVE_RESTART_AUTHORITY`',
+   'BT-GATE-014 =',
    'CLOSED_PASS_POINT_IN_TIME_MARKET_STATE_CONSUMPTION_WITH_RESTRICTIONS',
    'V0.5 = CONSUMED_FINAL',
-   'SECOND_EXECUTION_V0.5 = PROHIBITED',
-   'BT-GATE-015 = NOT_OPEN',
-   'BT-GATE-015_IMPLEMENTATION = NOT_AUTHORIZED',
-   'BT-GATE-015_PHYSICAL_READ = NOT_AUTHORIZED',
+   'SECOND_EXECUTION_BT_GATE_014_V0.5 = PROHIBITED',
+   'BT-GATE-015 = CLOSED_PASS_POINT_IN_TIME_EVENT_STATE_CONSUMPTION_WITH_RESTRICTIONS',
+   'BT-GATE-015_IMPLEMENTATION = IMPLEMENTED_AND_ACCEPTED',
+   'BT_GATE_015_NON_PHYSICAL_EXTERNAL_REVIEW = PASS',
+   'BT-GATE-015_V0.3 = CONSUMED_FAILED_FINAL',
+   'SECOND_EXECUTION_BT_GATE_015_V0.3 = PROHIBITED',
+   'ROOT_CAUSE = CONFIRMED_CONSUMER_DATASET_FINGERPRINT_DOMAIN_BINDING_ERROR',
+   'BT-GATE-015_V0.4 = CONSUMED_FINAL',
+   'SECOND_EXECUTION_BT_GATE_015_V0.4 = PROHIBITED',
+   'BT_GATE_015_V0_4_POSTEXECUTION_EXTERNAL_REVIEW = PASS',
+   'BT-GATE-016 = NOT_OPEN',
   ):
    self.assertIn(required,text)
   self.assertEqual(text.count('```') % 2,0)
+  acceptance=ROOT.parent/'00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_015_NON_PHYSICAL_EXTERNAL_REVIEW_ACCEPTANCE_V0_1.md'
+  self.assertIn('BT_GATE_015_NON_PHYSICAL_EXTERNAL_REVIEW = PASS',acceptance.read_text(encoding='utf-8'))
+  for name,expected in (
+   ('bt_gate_015_single_use_physical_event_state_consumer_v0_1.json','DRAFT_SUPERSEDED_NEVER_AUTHORIZED'),
+   ('bt_gate_015_single_use_physical_event_state_consumer_v0_2.json','DRAFT_NOT_AUTHORIZED_PENDING_PREEXECUTION_REVIEW'),
+  ):
+   candidate=json.loads((ROOT/'configs/authorizations'/name).read_text(encoding='utf-8'))
+   self.assertEqual(candidate['status'],expected)
+   self.assertFalse(candidate['execution_authorized'])
+  changelog=(ROOT/'CHANGELOG.md').read_text(encoding='utf-8')
+  self.assertNotIn('candidate requires a new external non-physical review before acceptance',changelog)
+  self.assertIn('Historical R2 review context - superseded by the R3 acceptance above',changelog)
   for path in (ROOT/'AGENTS.md',ROOT/'docs/00_system/19_BT_GATE_014_FINAL_POSTEXECUTION_ACCEPTANCE_V0_1.md',handoff):
    document=path.read_text(encoding='utf-8')
    self.assertNotIn('`\text',document,path)

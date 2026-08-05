@@ -1,0 +1,17 @@
+﻿Node: TSIS Backtest Engine Current Project Handoff
+  ID:        docs_00_system_current_project_handoff_current_project_handoff
+  Source:    docs/00_system/CURRENT_PROJECT_HANDOFF.md TSIS Backtest Engine - Current Project Handoff
+  Type:      document
+  Community: 109
+  Degree:    9
+
+Connections (9):
+  <-- Backtest Engine Roadmap [references] [EXTRACTED] docs/00_system/BACKTEST_ENGINE_ROADMAP.md:Mandatory restart handoff
+  <-- BT-GATE-015 Point-in-Time Event State Consumer Contract V0.1 [references] [EXTRACTED] docs/00_system/CURRENT_PROJECT_HANDOFF.md:Mandatory restart reading order
+  <-- BT-GATE-015 Single-Use Physical Event State Consumer Authorization V0.3 [references] [EXTRACTED] docs/00_system/CURRENT_PROJECT_HANDOFF.md:Current authoritative state
+  <-- BT-GATE-015 Event State Consumer Gate [references] [EXTRACTED] docs/00_system/CURRENT_PROJECT_HANDOFF.md:Current Authoritative State
+  <-- BT-GATE-014 Final Postexecution Acceptance V0.1 [references] [EXTRACTED] docs/00_system/CURRENT_PROJECT_HANDOFF.md:Last accepted capability
+  <-- BT-GATE-015 Non-Physical Implementation Review Packet V0.3 [references] [INFERRED] docs/00_system/CURRENT_PROJECT_HANDOFF.md:BT-GATE-015 accepted non-physical evidence
+  <-- BT-GATE-015 V0.3 Corrected R2 Pre-Execution Packet Readout [conceptually_related_to] [INFERRED] docs/00_system/CURRENT_PROJECT_HANDOFF.md:Prepared V0.3 pre-execution packet
+  <-- BT-GATE-014 Closed Market State Capability [references] [EXTRACTED] docs/00_system/CURRENT_PROJECT_HANDOFF.md:Current Authoritative State
+  --> Fail-Closed Governance Reconciliation [rationale_for] [EXTRACTED] docs/00_system/CURRENT_PROJECT_HANDOFF.md:Mandatory Restart Reading Order

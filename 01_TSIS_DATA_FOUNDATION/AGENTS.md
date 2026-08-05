@@ -337,3 +337,20 @@ la opcion correcta es:
 ## Mandatory certification source reading
 
 - `01_foundations/module_contracts/auditoria_and_certification_source_hierarchy.md` when working any certified block (`daily`, `quotes`, `trades`).
+
+
+---
+
+## Graphify work closeout
+
+Para cualquier trabajo que cambie corpus semantico, contratos, arquitectura,
+rutas, taxonomias o gobierno en una rama con `graphify-out/`, el agente debe:
+
+1. actualizar/reconstruir y diagnosticar el leaf oficial afectado, incluido su
+   `BUILD_MANIFEST.md`; o
+2. registrar una entrada `pending` en el `GRAPHIFY_REFRESH_QUEUE.md` mas cercano
+   con fecha, scope, archivos, severidad, leaf objetivo y motivo del aplazamiento.
+
+No existe un tercer estado y una nota solo en chat, README o changelog no cumple.
+Cuando no haya cola mas cercana, usar
+`C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\GRAPHIFY_REFRESH_QUEUE.md`.

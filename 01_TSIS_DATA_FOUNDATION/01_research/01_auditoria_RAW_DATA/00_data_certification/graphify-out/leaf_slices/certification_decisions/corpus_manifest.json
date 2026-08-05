@@ -1,0 +1,794 @@
+[
+  {
+    "source_relative_path": "auditoria/additional/01_contrato_additional.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\additional\\01_contrato_additional.md",
+    "workspace_relative_path": "auditoria/additional/01_contrato_additional.md",
+    "sha256": "0b71264b7f244f3e834f3da110218ef077ca5b6d3e845e46e029fcbec4125142",
+    "bytes": 5989,
+    "line_count": 312,
+    "word_count": 709
+  },
+  {
+    "source_relative_path": "auditoria/additional/03_additional_root_cause_audit_phase1_closeout.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\additional\\03_additional_root_cause_audit_phase1_closeout.md",
+    "workspace_relative_path": "auditoria/additional/03_additional_root_cause_audit_phase1_closeout.md",
+    "sha256": "3abfacd1c79921081be722ee11662ebf8f6829363a45ef766d7361b46ad63371",
+    "bytes": 4063,
+    "line_count": 188,
+    "word_count": 472
+  },
+  {
+    "source_relative_path": "auditoria/additional/04_additional_causal_overlay_closeout.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\additional\\04_additional_causal_overlay_closeout.md",
+    "workspace_relative_path": "auditoria/additional/04_additional_causal_overlay_closeout.md",
+    "sha256": "6d3b77aef15b2623190707469f49cc087d289bf9e31f4a9716489df223957cb4",
+    "bytes": 6056,
+    "line_count": 222,
+    "word_count": 702
+  },
+  {
+    "source_relative_path": "auditoria/additional/04_additional_closeout.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\additional\\04_additional_closeout.md",
+    "workspace_relative_path": "auditoria/additional/04_additional_closeout.md",
+    "sha256": "3caea6f023061518fdae09cfb9a7efd2ac31ab60cd33ce6d99bdfa5a6c4e6de0",
+    "bytes": 4961,
+    "line_count": 160,
+    "word_count": 555
+  },
+  {
+    "source_relative_path": "auditoria/daily/01_contrato_agent02_agent03_daily_04032026.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\daily\\01_contrato_agent02_agent03_daily_04032026.md",
+    "workspace_relative_path": "auditoria/daily/01_contrato_agent02_agent03_daily_04032026.md",
+    "sha256": "0ef7a5cb968e5c76d1185fde6952b94cac1c136f8d20af0199f46e76cbdae6c8",
+    "bytes": 9051,
+    "line_count": 467,
+    "word_count": 1053
+  },
+  {
+    "source_relative_path": "auditoria/daily/04_daily_closeout.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\daily\\04_daily_closeout.md",
+    "workspace_relative_path": "auditoria/daily/04_daily_closeout.md",
+    "sha256": "abcbe63db5117ee604ad27cc5b777503d5c3bde10a1b302a1c9633102034587a",
+    "bytes": 3885,
+    "line_count": 105,
+    "word_count": 435
+  },
+  {
+    "source_relative_path": "auditoria/halts/01_contrato_halts.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\halts\\01_contrato_halts.md",
+    "workspace_relative_path": "auditoria/halts/01_contrato_halts.md",
+    "sha256": "ea4bc83621fa99fafa9c9176941bda4842b925807c41cae4cd61933760d71bdd",
+    "bytes": 3478,
+    "line_count": 124,
+    "word_count": 434
+  },
+  {
+    "source_relative_path": "auditoria/halts/03_halts_root_cause_audit_phase1_closeout.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\halts\\03_halts_root_cause_audit_phase1_closeout.md",
+    "workspace_relative_path": "auditoria/halts/03_halts_root_cause_audit_phase1_closeout.md",
+    "sha256": "908e8dd19e6a978184f91267aed46999bd5012c78c1ff9ef4ae66303dcc68567",
+    "bytes": 8351,
+    "line_count": 217,
+    "word_count": 1060
+  },
+  {
+    "source_relative_path": "auditoria/halts/04_halts_causal_overlay_closeout.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\halts\\04_halts_causal_overlay_closeout.md",
+    "workspace_relative_path": "auditoria/halts/04_halts_causal_overlay_closeout.md",
+    "sha256": "8147627e6da23fd171ee2cb97fe343ce738759e83c6c825c65187a93f9963d95",
+    "bytes": 11154,
+    "line_count": 396,
+    "word_count": 1425
+  },
+  {
+    "source_relative_path": "auditoria/halts/04_halts_closeout.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\halts\\04_halts_closeout.md",
+    "workspace_relative_path": "auditoria/halts/04_halts_closeout.md",
+    "sha256": "f4f92f27b26b4904e191591500c795b2f09dfdfd19a85baceaf4d6bac6aab2b0",
+    "bytes": 4036,
+    "line_count": 157,
+    "word_count": 495
+  },
+  {
+    "source_relative_path": "auditoria/ohlcv_1m/01_contrato_agent02_agent03_ohlcv_1m_04032026.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\ohlcv_1m\\01_contrato_agent02_agent03_ohlcv_1m_04032026.md",
+    "workspace_relative_path": "auditoria/ohlcv_1m/01_contrato_agent02_agent03_ohlcv_1m_04032026.md",
+    "sha256": "b64e474c577897856e096d6e2ee99c17e0a79535d46099a85f7def5b7edca636",
+    "bytes": 7716,
+    "line_count": 408,
+    "word_count": 878
+  },
+  {
+    "source_relative_path": "auditoria/ohlcv_1m/04_ohlcv_1m_closeout.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\ohlcv_1m\\04_ohlcv_1m_closeout.md",
+    "workspace_relative_path": "auditoria/ohlcv_1m/04_ohlcv_1m_closeout.md",
+    "sha256": "c85a77302b391c20fe8889c37bc192d002245d94937d518f820fc28bf3271d52",
+    "bytes": 1767,
+    "line_count": 55,
+    "word_count": 201
+  },
+  {
+    "source_relative_path": "auditoria/quotes/v1/01_contrato_agent02_agent03_03312026.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\quotes\\v1\\01_contrato_agent02_agent03_03312026.md",
+    "workspace_relative_path": "auditoria/quotes/v1/01_contrato_agent02_agent03_03312026.md",
+    "sha256": "7f78abb7adcb982d99c09ca0d09efe1881cc2249fdb90530e4755fb0ca91137a",
+    "bytes": 39489,
+    "line_count": 1907,
+    "word_count": 4493
+  },
+  {
+    "source_relative_path": "auditoria/quotes/v2/04_quotes_full_C_D_closeout.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\quotes\\v2\\04_quotes_full_C_D_closeout.md",
+    "workspace_relative_path": "auditoria/quotes/v2/04_quotes_full_C_D_closeout.md",
+    "sha256": "5e7470f12743bb9d5033fbe9cfcdb896e7b2f53fa7fbf0c3085c9c3fdef3c240",
+    "bytes": 11267,
+    "line_count": 338,
+    "word_count": 1344
+  },
+  {
+    "source_relative_path": "auditoria/reference/01_contrato_reference.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\reference\\01_contrato_reference.md",
+    "workspace_relative_path": "auditoria/reference/01_contrato_reference.md",
+    "sha256": "d8df7610029042c81d513b7421b94ecec7a0aa99e668d6fb515f08a39163752a",
+    "bytes": 10070,
+    "line_count": 428,
+    "word_count": 1247
+  },
+  {
+    "source_relative_path": "auditoria/reference/03_reference_root_cause_audit_phase1_closeout.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\reference\\03_reference_root_cause_audit_phase1_closeout.md",
+    "workspace_relative_path": "auditoria/reference/03_reference_root_cause_audit_phase1_closeout.md",
+    "sha256": "0960f3d243cbb8c0fcbe63e459ab8d4705caa19fc4f735d9b7e6204e01165fb2",
+    "bytes": 8106,
+    "line_count": 227,
+    "word_count": 1017
+  },
+  {
+    "source_relative_path": "auditoria/reference/04_reference_causal_overlay_closeout.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\reference\\04_reference_causal_overlay_closeout.md",
+    "workspace_relative_path": "auditoria/reference/04_reference_causal_overlay_closeout.md",
+    "sha256": "d02630b457cb82f00e86cbd1aa2cf00ab95413acd3625e35b72efffcd331ed83",
+    "bytes": 11859,
+    "line_count": 341,
+    "word_count": 1344
+  },
+  {
+    "source_relative_path": "auditoria/reference/04_reference_closeout.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\reference\\04_reference_closeout.md",
+    "workspace_relative_path": "auditoria/reference/04_reference_closeout.md",
+    "sha256": "9ce9256f033188adde450e1cecbd3c779686eeebb8c6afa88b572dd3ff2a85fa",
+    "bytes": 2559,
+    "line_count": 69,
+    "word_count": 308
+  },
+  {
+    "source_relative_path": "auditoria/short/01_contrato_short.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\short\\01_contrato_short.md",
+    "workspace_relative_path": "auditoria/short/01_contrato_short.md",
+    "sha256": "b746bafe0d6fbdeb3fbf65d8e290ac77fee60f46aa1d3f314194873ef370ddd8",
+    "bytes": 4278,
+    "line_count": 161,
+    "word_count": 478
+  },
+  {
+    "source_relative_path": "auditoria/short/03_short_root_cause_audit_phase1_closeout.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\short\\03_short_root_cause_audit_phase1_closeout.md",
+    "workspace_relative_path": "auditoria/short/03_short_root_cause_audit_phase1_closeout.md",
+    "sha256": "328b04e6dc49dbbe766e8641081cc70650d3066ef7e25d4adf5440e4337890ad",
+    "bytes": 3348,
+    "line_count": 129,
+    "word_count": 438
+  },
+  {
+    "source_relative_path": "auditoria/short/04_short_causal_overlay_closeout.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\short\\04_short_causal_overlay_closeout.md",
+    "workspace_relative_path": "auditoria/short/04_short_causal_overlay_closeout.md",
+    "sha256": "87a779a634ecd751894416fb6d09b8cfeaa62843b632bb66babd093a9d07f2fd",
+    "bytes": 4059,
+    "line_count": 147,
+    "word_count": 494
+  },
+  {
+    "source_relative_path": "auditoria/short/04_short_closeout.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\short\\04_short_closeout.md",
+    "workspace_relative_path": "auditoria/short/04_short_closeout.md",
+    "sha256": "a23637a051ccef189770f931b24d2f1bf04d6a628babf994a121d232aae530e2",
+    "bytes": 2787,
+    "line_count": 118,
+    "word_count": 303
+  },
+  {
+    "source_relative_path": "auditoria/trades/v1/01_contrato_agent02_agent03_trades_04012026.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\trades\\v1\\01_contrato_agent02_agent03_trades_04012026.md",
+    "workspace_relative_path": "auditoria/trades/v1/01_contrato_agent02_agent03_trades_04012026.md",
+    "sha256": "a7a44689431ee40f9c7204a7b851daf6bc78f4035df4254d2bb3e9fb1eda90d4",
+    "bytes": 26205,
+    "line_count": 1221,
+    "word_count": 2763
+  },
+  {
+    "source_relative_path": "certification/00_final_certification_process.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\00_final_certification_process.md",
+    "workspace_relative_path": "certification/00_final_certification_process.md",
+    "sha256": "61f92484b93ebf6112111d9f27b0b457f551bb632bc8356168eab63cf6138cb8",
+    "bytes": 7408,
+    "line_count": 333,
+    "word_count": 980
+  },
+  {
+    "source_relative_path": "certification/1m/00_1m_current_state.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\1m\\00_1m_current_state.md",
+    "workspace_relative_path": "certification/1m/00_1m_current_state.md",
+    "sha256": "be4fb55410a6ced8d7fd2c7374cd97bbf1a92d5fe71dd1e20d089b08e8c4d104",
+    "bytes": 1431,
+    "line_count": 39,
+    "word_count": 147
+  },
+  {
+    "source_relative_path": "certification/1m/01_1m_recovery_policy.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\1m\\01_1m_recovery_policy.md",
+    "workspace_relative_path": "certification/1m/01_1m_recovery_policy.md",
+    "sha256": "82393cf52886f2d1bfd23eda551d97dee8e5ad3c983563de48c7526365dfbfc5",
+    "bytes": 1360,
+    "line_count": 41,
+    "word_count": 140
+  },
+  {
+    "source_relative_path": "certification/1m/02_1m_quality_policy.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\1m\\02_1m_quality_policy.md",
+    "workspace_relative_path": "certification/1m/02_1m_quality_policy.md",
+    "sha256": "66d8f61fd804c563b43f8f6a63a050df9ef650a7d28936c29d39ca11e1ff142a",
+    "bytes": 1341,
+    "line_count": 54,
+    "word_count": 148
+  },
+  {
+    "source_relative_path": "certification/1m/03_1m_closeout.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\1m\\03_1m_closeout.md",
+    "workspace_relative_path": "certification/1m/03_1m_closeout.md",
+    "sha256": "85eff72ff96c66b8fca15b57ddc8f472e680a21451861fa775cd6d24e648fc70",
+    "bytes": 1296,
+    "line_count": 42,
+    "word_count": 188
+  },
+  {
+    "source_relative_path": "certification/additional/00_additional_current_state.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\additional\\00_additional_current_state.md",
+    "workspace_relative_path": "certification/additional/00_additional_current_state.md",
+    "sha256": "880c2f1b599f503caa75629fabbb216d72189e7929ca8da505abc6eddde2ebeb",
+    "bytes": 2334,
+    "line_count": 60,
+    "word_count": 212
+  },
+  {
+    "source_relative_path": "certification/additional/01_additional_subblock_policy.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\additional\\01_additional_subblock_policy.md",
+    "workspace_relative_path": "certification/additional/01_additional_subblock_policy.md",
+    "sha256": "52ad2aebc2b07a29cb2ad439fe325897b26fe9fc49f739e1edd09463fc463aa7",
+    "bytes": 2188,
+    "line_count": 95,
+    "word_count": 197
+  },
+  {
+    "source_relative_path": "certification/additional/02_additional_closeout.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\additional\\02_additional_closeout.md",
+    "workspace_relative_path": "certification/additional/02_additional_closeout.md",
+    "sha256": "b385d39ed60d26d6661a0cfbad022c408236df88320ac3c2fefb397eecb8777f",
+    "bytes": 1113,
+    "line_count": 41,
+    "word_count": 105
+  },
+  {
+    "source_relative_path": "certification/daily/00_daily_current_state.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\daily\\00_daily_current_state.md",
+    "workspace_relative_path": "certification/daily/00_daily_current_state.md",
+    "sha256": "cd9ddf46207fbabf5f7ef02e3c106ec9134ff226a20ef8a2ef82281f148a0121",
+    "bytes": 1648,
+    "line_count": 50,
+    "word_count": 160
+  },
+  {
+    "source_relative_path": "certification/daily/01_daily_recovery_and_coverage.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\daily\\01_daily_recovery_and_coverage.md",
+    "workspace_relative_path": "certification/daily/01_daily_recovery_and_coverage.md",
+    "sha256": "f7ad05f7bcd542669a528621552c6676585063a57ef6ebc5581c84d2d764284b",
+    "bytes": 2120,
+    "line_count": 78,
+    "word_count": 236
+  },
+  {
+    "source_relative_path": "certification/daily/02_daily_quality_policy.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\daily\\02_daily_quality_policy.md",
+    "workspace_relative_path": "certification/daily/02_daily_quality_policy.md",
+    "sha256": "b3134925a3ebf8325f25d3166156deb00c248dadadd227e0fd577d45359b4f8e",
+    "bytes": 1467,
+    "line_count": 56,
+    "word_count": 128
+  },
+  {
+    "source_relative_path": "certification/daily/03_daily_closeout.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\daily\\03_daily_closeout.md",
+    "workspace_relative_path": "certification/daily/03_daily_closeout.md",
+    "sha256": "d803513384e5493be867341e3363954ffaf5f5f8f6c5f0174866e6092c030566",
+    "bytes": 1663,
+    "line_count": 72,
+    "word_count": 177
+  },
+  {
+    "source_relative_path": "certification/global_metrics/00_global_metrics_tables.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\global_metrics\\00_global_metrics_tables.md",
+    "workspace_relative_path": "certification/global_metrics/00_global_metrics_tables.md",
+    "sha256": "56335e9985fde4caa72806d0f8444ca982579816bcde7fb75d57d2aa03030591",
+    "bytes": 6222,
+    "line_count": 116,
+    "word_count": 529
+  },
+  {
+    "source_relative_path": "certification/global_metrics/01_global_metrics_tables_traceable.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\global_metrics\\01_global_metrics_tables_traceable.md",
+    "workspace_relative_path": "certification/global_metrics/01_global_metrics_tables_traceable.md",
+    "sha256": "17b820c48fd28a4501a4dbffd712194d70ce7c1f4be40f289d65e8bf9dfe4f97",
+    "bytes": 18417,
+    "line_count": 266,
+    "word_count": 1434
+  },
+  {
+    "source_relative_path": "certification/global_metrics/02_working_links.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\global_metrics\\02_working_links.md",
+    "workspace_relative_path": "certification/global_metrics/02_working_links.md",
+    "sha256": "7d72231e6950b6fa31286c4440c50650f19eca5918547f3e9bb0ef71331227b7",
+    "bytes": 2545,
+    "line_count": 18,
+    "word_count": 185
+  },
+  {
+    "source_relative_path": "certification/global_metrics/04_global_metrics_tables_traceable_plain_paths.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\global_metrics\\04_global_metrics_tables_traceable_plain_paths.md",
+    "workspace_relative_path": "certification/global_metrics/04_global_metrics_tables_traceable_plain_paths.md",
+    "sha256": "3d0b310bd5947486bc5455314cb9c1e47c08f21834cf054d54e1b5f6e5918f1c",
+    "bytes": 17207,
+    "line_count": 301,
+    "word_count": 1347
+  },
+  {
+    "source_relative_path": "certification/global_metrics/manifest.json",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\global_metrics\\manifest.json",
+    "workspace_relative_path": "certification/global_metrics/manifest.json",
+    "sha256": "67fef3dbacfd49f93f2839cd8d9c3e0dd3ce430b1e9eaedcf55e6ee1e27290f0",
+    "bytes": 1550,
+    "line_count": 51,
+    "word_count": 92
+  },
+  {
+    "source_relative_path": "certification/halts/00_halts_current_state.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\halts\\00_halts_current_state.md",
+    "workspace_relative_path": "certification/halts/00_halts_current_state.md",
+    "sha256": "26cf3dcb5088fefd93695f8f9310b6970aa647e6c5060ade622f795cbebf065c",
+    "bytes": 2337,
+    "line_count": 64,
+    "word_count": 247
+  },
+  {
+    "source_relative_path": "certification/halts/01_halts_overlay_and_recovery.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\halts\\01_halts_overlay_and_recovery.md",
+    "workspace_relative_path": "certification/halts/01_halts_overlay_and_recovery.md",
+    "sha256": "fe8dbacbc73dc09c6d869355ef07b479445cc004b2905e2a97915c39d6708801",
+    "bytes": 1956,
+    "line_count": 54,
+    "word_count": 204
+  },
+  {
+    "source_relative_path": "certification/halts/02_halts_quality_policy.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\halts\\02_halts_quality_policy.md",
+    "workspace_relative_path": "certification/halts/02_halts_quality_policy.md",
+    "sha256": "6363389e0475bc56226ce88fe6e880c1744166df93a761f8a14f240ea5865793",
+    "bytes": 1104,
+    "line_count": 48,
+    "word_count": 115
+  },
+  {
+    "source_relative_path": "certification/halts/03_halts_closeout.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\halts\\03_halts_closeout.md",
+    "workspace_relative_path": "certification/halts/03_halts_closeout.md",
+    "sha256": "d0ff41f3ca5b5b4f807733c8406ec77e0f325bfa11d3146af2141e544c005d34",
+    "bytes": 963,
+    "line_count": 41,
+    "word_count": 114
+  },
+  {
+    "source_relative_path": "certification/quotes/00_quotes_certification_guide.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\quotes\\00_quotes_certification_guide.md",
+    "workspace_relative_path": "certification/quotes/00_quotes_certification_guide.md",
+    "sha256": "37cc99a672bd971f9e81f564cc1e012596965a7db2fa8eaee632df6fea374d05",
+    "bytes": 1706,
+    "line_count": 57,
+    "word_count": 225
+  },
+  {
+    "source_relative_path": "certification/quotes/01_quotes_certification_contract.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\quotes\\01_quotes_certification_contract.md",
+    "workspace_relative_path": "certification/quotes/01_quotes_certification_contract.md",
+    "sha256": "1f59c753e1cca2c72eca5793aad4b98061f5c4e0abb2b422c15b5862f3943a64",
+    "bytes": 1400,
+    "line_count": 50,
+    "word_count": 202
+  },
+  {
+    "source_relative_path": "certification/quotes/02_quotes_expected_presence_logic.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\quotes\\02_quotes_expected_presence_logic.md",
+    "workspace_relative_path": "certification/quotes/02_quotes_expected_presence_logic.md",
+    "sha256": "911f160e5d1f2b6b58f4237de1246e3929b3799a586c865b65d2e86d35772319",
+    "bytes": 1008,
+    "line_count": 33,
+    "word_count": 145
+  },
+  {
+    "source_relative_path": "certification/quotes/03_quotes_quality_policy.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\quotes\\03_quotes_quality_policy.md",
+    "workspace_relative_path": "certification/quotes/03_quotes_quality_policy.md",
+    "sha256": "65833119c2277efe782aea3befc417e9f1d0519968316ad1ca26ef25531054ce",
+    "bytes": 1067,
+    "line_count": 45,
+    "word_count": 111
+  },
+  {
+    "source_relative_path": "certification/quotes/04_quotes_usage_policy.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\quotes\\04_quotes_usage_policy.md",
+    "workspace_relative_path": "certification/quotes/04_quotes_usage_policy.md",
+    "sha256": "2c16f2affcdc7173b855e3cd79a1c763dbd8777bad3c89171a314e5a7347b531",
+    "bytes": 830,
+    "line_count": 37,
+    "word_count": 124
+  },
+  {
+    "source_relative_path": "certification/quotes/05_quotes_artifact_mapping.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\quotes\\05_quotes_artifact_mapping.md",
+    "workspace_relative_path": "certification/quotes/05_quotes_artifact_mapping.md",
+    "sha256": "1a96303441484d3d036d0212cc7a05da7f5c94111a922b6489fa7a0082a0f5dd",
+    "bytes": 1158,
+    "line_count": 42,
+    "word_count": 133
+  },
+  {
+    "source_relative_path": "certification/quotes/06_quotes_cert_table_spec.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\quotes\\06_quotes_cert_table_spec.md",
+    "workspace_relative_path": "certification/quotes/06_quotes_cert_table_spec.md",
+    "sha256": "68ad60e6926e631dd8e5d0a4a82020663f2d86a165749cc9a36b62c92cf2ecc3",
+    "bytes": 650,
+    "line_count": 25,
+    "word_count": 91
+  },
+  {
+    "source_relative_path": "certification/quotes/07_quotes_local_certification_build_plan.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\quotes\\07_quotes_local_certification_build_plan.md",
+    "workspace_relative_path": "certification/quotes/07_quotes_local_certification_build_plan.md",
+    "sha256": "61ac99d72dedcc87c0dddafbed5712ed5d5ee35da7960a1535e276a5e84657ba",
+    "bytes": 630,
+    "line_count": 19,
+    "word_count": 98
+  },
+  {
+    "source_relative_path": "certification/quotes/08_persistent_soft_crossed_mid_large_scale.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\quotes\\08_persistent_soft_crossed_mid_large_scale.md",
+    "workspace_relative_path": "certification/quotes/08_persistent_soft_crossed_mid_large_scale.md",
+    "sha256": "e87f790c6419b8fecf2847a6807e4babe5bdfab75a5890609a4600aac08dbbe4",
+    "bytes": 2636,
+    "line_count": 110,
+    "word_count": 347
+  },
+  {
+    "source_relative_path": "certification/quotes/09_large_file_threshold_edge_hard_many_crosses.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\quotes\\09_large_file_threshold_edge_hard_many_crosses.md",
+    "workspace_relative_path": "certification/quotes/09_large_file_threshold_edge_hard_many_crosses.md",
+    "sha256": "2a74924f69bbe53b0f5c6dbf305887bcb7426ed48855521f2f79a528a19eb026",
+    "bytes": 2998,
+    "line_count": 109,
+    "word_count": 405
+  },
+  {
+    "source_relative_path": "certification/quotes/10_medium_file_threshold_edge_hard_many_crosses.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\quotes\\10_medium_file_threshold_edge_hard_many_crosses.md",
+    "workspace_relative_path": "certification/quotes/10_medium_file_threshold_edge_hard_many_crosses.md",
+    "sha256": "19f0aa67d6069b6f0c15ad77bc313bfe2e216a270f0248d8f5b6f5a5800fe081",
+    "bytes": 2802,
+    "line_count": 99,
+    "word_count": 372
+  },
+  {
+    "source_relative_path": "certification/quotes/11_high_hard_crossed_10_to_20.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\quotes\\11_high_hard_crossed_10_to_20.md",
+    "workspace_relative_path": "certification/quotes/11_high_hard_crossed_10_to_20.md",
+    "sha256": "19252cf32d964da92343cf2833d02118a29ba71a001c3dc538087f951c014bed",
+    "bytes": 2327,
+    "line_count": 90,
+    "word_count": 317
+  },
+  {
+    "source_relative_path": "certification/quotes/12_quotes_open_buckets_synthesis.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\quotes\\12_quotes_open_buckets_synthesis.md",
+    "workspace_relative_path": "certification/quotes/12_quotes_open_buckets_synthesis.md",
+    "sha256": "eca50bfe6e3fa7ef7024ea823a99da20e6977b6a8057f9932779f074c84eefee",
+    "bytes": 3847,
+    "line_count": 137,
+    "word_count": 422
+  },
+  {
+    "source_relative_path": "certification/reference/00_reference_current_state.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\reference\\00_reference_current_state.md",
+    "workspace_relative_path": "certification/reference/00_reference_current_state.md",
+    "sha256": "60fe3224398287aca2ae71751f949ef067bd54fe702436f3fa4eaf60802c6148",
+    "bytes": 2500,
+    "line_count": 57,
+    "word_count": 229
+  },
+  {
+    "source_relative_path": "certification/reference/01_reference_causal_value.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\reference\\01_reference_causal_value.md",
+    "workspace_relative_path": "certification/reference/01_reference_causal_value.md",
+    "sha256": "e74ec27fd84e2b64f8a962e544920e2f097fc742d0375fb9e6be3a4fbe00a440",
+    "bytes": 2371,
+    "line_count": 71,
+    "word_count": 196
+  },
+  {
+    "source_relative_path": "certification/reference/02_reference_closeout.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\reference\\02_reference_closeout.md",
+    "workspace_relative_path": "certification/reference/02_reference_closeout.md",
+    "sha256": "15260523bbd3f3d059d4a6a52462ff6dc2fe5171499dcfc9e799b05b053e141d",
+    "bytes": 1179,
+    "line_count": 49,
+    "word_count": 114
+  },
+  {
+    "source_relative_path": "certification/short/00_short_current_state.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\short\\00_short_current_state.md",
+    "workspace_relative_path": "certification/short/00_short_current_state.md",
+    "sha256": "2b266f2c7e05ae864202967c6b17effb2f6fcb0d8e41536a1f9eb0ef16122f21",
+    "bytes": 2179,
+    "line_count": 60,
+    "word_count": 220
+  },
+  {
+    "source_relative_path": "certification/short/01_short_recovery_and_limits.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\short\\01_short_recovery_and_limits.md",
+    "workspace_relative_path": "certification/short/01_short_recovery_and_limits.md",
+    "sha256": "db176dbd3a5727cc6b05e8675f050a1233eebf2a2c96c5237a380b8911e74404",
+    "bytes": 1616,
+    "line_count": 51,
+    "word_count": 166
+  },
+  {
+    "source_relative_path": "certification/short/02_short_closeout.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\short\\02_short_closeout.md",
+    "workspace_relative_path": "certification/short/02_short_closeout.md",
+    "sha256": "9276d1d548c93216c54fdebef900d6088b9edf9a848d42ba526356fc875ac04a",
+    "bytes": 893,
+    "line_count": 33,
+    "word_count": 99
+  },
+  {
+    "source_relative_path": "certification/trades/00_trades_current_state.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\trades\\00_trades_current_state.md",
+    "workspace_relative_path": "certification/trades/00_trades_current_state.md",
+    "sha256": "e2435c489ceac33c9cd85b48f6f0eb44192034c2ffec30e9b21c063a39d748b3",
+    "bytes": 7005,
+    "line_count": 147,
+    "word_count": 673
+  },
+  {
+    "source_relative_path": "certification/trades/01_trades_label_assessment.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\trades\\01_trades_label_assessment.md",
+    "workspace_relative_path": "certification/trades/01_trades_label_assessment.md",
+    "sha256": "df275c74d43b039bdc632710a431c078c0c8b4d4ccacf7ddbedfe79e0ce9302b",
+    "bytes": 3296,
+    "line_count": 89,
+    "word_count": 402
+  },
+  {
+    "source_relative_path": "certification/trades/02_trades_base_certification_decision.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\trades\\02_trades_base_certification_decision.md",
+    "workspace_relative_path": "certification/trades/02_trades_base_certification_decision.md",
+    "sha256": "96b7bb504a00726b1be9e6a29dc352ed87ba2a9b3fa7891b1515113f264176c3",
+    "bytes": 4457,
+    "line_count": 104,
+    "word_count": 438
+  },
+  {
+    "source_relative_path": "certification/trades/03_trades_old_vs_new_bucket_bridge.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\trades\\03_trades_old_vs_new_bucket_bridge.md",
+    "workspace_relative_path": "certification/trades/03_trades_old_vs_new_bucket_bridge.md",
+    "sha256": "e66ed8e30af48bf7b5dac1eb62d3c9402dc69b958ea166df5af29d69e0937237",
+    "bytes": 2787,
+    "line_count": 73,
+    "word_count": 235
+  },
+  {
+    "source_relative_path": "certification/trades/04_trades_provisional_cert_policy.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\trades\\04_trades_provisional_cert_policy.md",
+    "workspace_relative_path": "certification/trades/04_trades_provisional_cert_policy.md",
+    "sha256": "22fe5c56b45318dd473ed33b7e3cb6b9101679fe42f8316f00f7bbdc36256e72",
+    "bytes": 3386,
+    "line_count": 93,
+    "word_count": 377
+  },
+  {
+    "source_relative_path": "certification/trades/05_trades_review_1m_reference_alignment.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\trades\\05_trades_review_1m_reference_alignment.md",
+    "workspace_relative_path": "certification/trades/05_trades_review_1m_reference_alignment.md",
+    "sha256": "a8abe59632bdfd6c052fb331f698de46ae8bff0fceeca648b7e062f5b295480f",
+    "bytes": 1847,
+    "line_count": 44,
+    "word_count": 180
+  },
+  {
+    "source_relative_path": "certification/trades/06_trades_review_microstructure.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\trades\\06_trades_review_microstructure.md",
+    "workspace_relative_path": "certification/trades/06_trades_review_microstructure.md",
+    "sha256": "2900db0931ac704970656b3dc0191b4c895feb453f911630d5a366b105cb2e55",
+    "bytes": 1805,
+    "line_count": 47,
+    "word_count": 176
+  },
+  {
+    "source_relative_path": "certification/trades/07_trades_reference_scale_mismatch.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\trades\\07_trades_reference_scale_mismatch.md",
+    "workspace_relative_path": "certification/trades/07_trades_reference_scale_mismatch.md",
+    "sha256": "2df55ca086814d985658287d56ebbb14563a0b8bc25f2badb9dd550762d04264",
+    "bytes": 1924,
+    "line_count": 47,
+    "word_count": 204
+  },
+  {
+    "source_relative_path": "certification/trades/08_trades_bad_data.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\trades\\08_trades_bad_data.md",
+    "workspace_relative_path": "certification/trades/08_trades_bad_data.md",
+    "sha256": "c0335f4b17cc56e10d7746f68303d8c0a9eaeb9eb0c5136777205b2c8cb587ae",
+    "bytes": 2308,
+    "line_count": 54,
+    "word_count": 263
+  },
+  {
+    "source_relative_path": "certification/trades/09_trades_review_no_1m_reference.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\trades\\09_trades_review_no_1m_reference.md",
+    "workspace_relative_path": "certification/trades/09_trades_review_no_1m_reference.md",
+    "sha256": "3964fe3aaaedc43ffe3f3eb6bc669cfa08647f3236670a28096747552d7e7321",
+    "bytes": 1840,
+    "line_count": 54,
+    "word_count": 198
+  },
+  {
+    "source_relative_path": "certification/trades/10_trades_bucket_synthesis.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\trades\\10_trades_bucket_synthesis.md",
+    "workspace_relative_path": "certification/trades/10_trades_bucket_synthesis.md",
+    "sha256": "82521a45754c401b3e93d2859b57fb2aced6e53a46eff86c906cd33cbd04dd0b",
+    "bytes": 1886,
+    "line_count": 59,
+    "word_count": 235
+  },
+  {
+    "source_relative_path": "certification/trades/11_trades_review_generic.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\trades\\11_trades_review_generic.md",
+    "workspace_relative_path": "certification/trades/11_trades_review_generic.md",
+    "sha256": "3d34f6875dd50b4ef8776330265a213228097c553798ffdede605f57deaa6b1d",
+    "bytes": 1770,
+    "line_count": 56,
+    "word_count": 203
+  },
+  {
+    "source_relative_path": "certification/trades/12_trades_good.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\trades\\12_trades_good.md",
+    "workspace_relative_path": "certification/trades/12_trades_good.md",
+    "sha256": "df2b36929a344e1efb3ebae4ef7645a6ad5aa5ad22c21ff93c04072dec81edd6",
+    "bytes": 2041,
+    "line_count": 58,
+    "word_count": 226
+  },
+  {
+    "source_relative_path": "certification/trades/13_trades_recovery_review_no_1m_reference.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\trades\\13_trades_recovery_review_no_1m_reference.md",
+    "workspace_relative_path": "certification/trades/13_trades_recovery_review_no_1m_reference.md",
+    "sha256": "b4169c340f7a7a7befdec78c4731a91c1ffa6b315edd75d1f4cd99aae6076c83",
+    "bytes": 2444,
+    "line_count": 79,
+    "word_count": 251
+  },
+  {
+    "source_relative_path": "certification/trades/14_trades_recovery_reference_scale_mismatch.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\trades\\14_trades_recovery_reference_scale_mismatch.md",
+    "workspace_relative_path": "certification/trades/14_trades_recovery_reference_scale_mismatch.md",
+    "sha256": "2cfad6bee81e356e2575e487807cc7266e1ba0e48f9963ed7a679d655b407b03",
+    "bytes": 2539,
+    "line_count": 77,
+    "word_count": 276
+  },
+  {
+    "source_relative_path": "certification/trades/15_trades_recovery_review_microstructure.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\trades\\15_trades_recovery_review_microstructure.md",
+    "workspace_relative_path": "certification/trades/15_trades_recovery_review_microstructure.md",
+    "sha256": "e3ac3b088feba20215870fbe215757b23a14a3b25ada2e8de091c05a52af1eb2",
+    "bytes": 3026,
+    "line_count": 81,
+    "word_count": 308
+  },
+  {
+    "source_relative_path": "certification/trades/16_trades_recovery_review_1m_reference_alignment.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\trades\\16_trades_recovery_review_1m_reference_alignment.md",
+    "workspace_relative_path": "certification/trades/16_trades_recovery_review_1m_reference_alignment.md",
+    "sha256": "5ce49b04c9768d07d31a2c7874ea27b153ba9497d0801611fcb107b43a362940",
+    "bytes": 2602,
+    "line_count": 78,
+    "word_count": 251
+  },
+  {
+    "source_relative_path": "certification/trades/17_trades_recovery_review_generic.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\trades\\17_trades_recovery_review_generic.md",
+    "workspace_relative_path": "certification/trades/17_trades_recovery_review_generic.md",
+    "sha256": "ca9cc9e50c003e96a9e3c6f826a08454ecf74b8de2d097819594862d98d5db25",
+    "bytes": 2820,
+    "line_count": 88,
+    "word_count": 318
+  },
+  {
+    "source_relative_path": "certification/trades/18_trades_recovery_synthesis.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\trades\\18_trades_recovery_synthesis.md",
+    "workspace_relative_path": "certification/trades/18_trades_recovery_synthesis.md",
+    "sha256": "8174a83cc3db4eab9c8d1de8beec21432087d14abd0d123a9469a706affb0434",
+    "bytes": 1438,
+    "line_count": 49,
+    "word_count": 161
+  },
+  {
+    "source_relative_path": "certification/trades/19_trades_final_recovery_policy.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\trades\\19_trades_final_recovery_policy.md",
+    "workspace_relative_path": "certification/trades/19_trades_final_recovery_policy.md",
+    "sha256": "3cfcf096a8b7910c5ac08d543919d21f6ab57be3bd6546447dded5c99f50be4e",
+    "bytes": 3203,
+    "line_count": 142,
+    "word_count": 337
+  },
+  {
+    "source_relative_path": "certification/trades/20_trades_closeout.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\trades\\20_trades_closeout.md",
+    "workspace_relative_path": "certification/trades/20_trades_closeout.md",
+    "sha256": "051687e962f0bb6c1011ec67591e04bfe0be849bde3f97338691e31ffec84974",
+    "bytes": 4428,
+    "line_count": 123,
+    "word_count": 450
+  },
+  {
+    "source_relative_path": "GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+    "workspace_relative_path": "GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+    "sha256": "f75ed84964d62fe9ed9678acdaf7d5b1c2e91f3592410abe89616389d6d4f6c4",
+    "bytes": 9477,
+    "line_count": 293,
+    "word_count": 1132
+  },
+  {
+    "source_relative_path": "GRAPHIFY_REFRESH_QUEUE.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\GRAPHIFY_REFRESH_QUEUE.md",
+    "workspace_relative_path": "GRAPHIFY_REFRESH_QUEUE.md",
+    "sha256": "364e67a0bc33d37338f54e11a34f6bf8a8de883e93e51fcbb26659364f7682da",
+    "bytes": 10312,
+    "line_count": 445,
+    "word_count": 1210
+  },
+  {
+    "source_relative_path": "module_contracts/graphify/certification_decisions_graph_protocol.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\module_contracts\\graphify\\certification_decisions_graph_protocol.md",
+    "workspace_relative_path": "module_contracts/graphify/certification_decisions_graph_protocol.md",
+    "sha256": "e3d582c07513e02cee267ec89ab3c52aa36efddec65c7aec79ee9344cd6acea5",
+    "bytes": 3609,
+    "line_count": 174,
+    "word_count": 398
+  },
+  {
+    "source_relative_path": "module_contracts/graphify/README.md",
+    "source_absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\module_contracts\\graphify\\README.md",
+    "workspace_relative_path": "module_contracts/graphify/README.md",
+    "sha256": "42abb7dd0bb536fb4a6e2437015e421cbfb13796027e2acf943786982ea92950",
+    "bytes": 2303,
+    "line_count": 75,
+    "word_count": 262
+  }
+]

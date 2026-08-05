@@ -1,0 +1,341 @@
+
+# https://www.youtube.com/watch?v=1RKz9v_0WDo&t=41s
+
+00:00:00 - 00:00:55
+hello welcome to better system trader glad you could join us today for this very special episode with our guest tim masters now this was pre-recorded over a couple of sessions for logistic reasons so you will notice that at times our background changes don't worry about that it was a pain for my video editor but for us well it is a lot of fantastic content so hope you enjoy this chat with tim masters tim masters welcome it's really great to have you here on the show today thanks for joining us
+
+00:00:33 - 00:01:40
+you're most welcome so how about we start first with a little bit of background on yourself so people can get some context about around what we're going to talk about today so can you give us a little bit of your background and how you got started in the training industry well my degree is in statistics back in the late 80s early 90s i was doing a lot of department of defense work and i was working on a missile guidance system and there was an electrical engineer on our team and we got to be friends and it turned
+
+00:01:09 - 00:02:30
+out that he was working on the side for a small commodities trading firm and uh he liked what i was doing for the guidance stuff and he suggested to them that they hire me as a statistician to look over their work and they did and then while i was there i met david aronson and he was a very experienced traitor and we formed a very quick friendship and we were a perfect fit for each other because he had experience as a professional trader and i was a statistician and we teamed up and the two of us got
+
+00:01:48 - 00:02:41
+into one one area of trading after another with him working on the practical end of it and me working on the statistics end of it yeah okay thanks for that background tim now i know um we've had david aronson on the show before he's uh uh very has a lot of trading experience and and i know you've written a book or two with him and you've actually written a couple of your own which i have here i just want to show them on the screen um this yeah the other way it's a little bit
+
+00:02:16 - 00:03:22
+blurred statistically sound indicators for financial market prediction and this one i'm going through right now actually permutation and randomization tests so i know we're going to be talking about some of the uh the content in there today so i'm really excited to be discussing this with you and appreciate you taking the time to come and talk to us so in your experience what are some of the most common errors that strategy developers make that's easy it's reusing out of sample data let's take a quick
+
+00:02:48 - 00:04:10
+simple example suppose you are in charge of finding a trading system that your firm will put into you soon you have two talented employees we'll call them john and mary you ask each of them to develop a system independently but you withhold from them the most recent year of market data so that they cannot use it in developing their system that's going to be how you'll test them later so they take some time they each develop a system they give them to you you test them on this year of out of sample data and you
+
+00:03:30 - 00:04:53
+measure their performance of each of them now the out of sample performance of each of these people john and mary is an unbiased estimate of the ability of that system how it will perform in the future it's unbiased because this data never went into their development process they have never seen it so for each of them this performance on the most recent year is an unbiased measure of the quality of their system might be a little optimistic might be a little pessimistic but it has no systematic bias let's
+
+00:04:11 - 00:05:38
+suppose you find that mary's system is a little better than john's system so you decide that you're going to trade her system and you believe that the out-of-sample performance that you got on her system in this most recent year is what you can expect in the future an unbiased estimate of that but you are wrong her out of sample performance is now optimistically biased huh what how can this be a moment ago her out of sample performance was unbiased and now suddenly it's biased how did that happen the answer
+
+00:04:54 - 00:06:19
+is that you are about to trade in quotes the better of john and mary's system that's different from mary's system even though mary's system happened to be the better one nonetheless mary's system and quote the better of john and mary systems are different this is why you suddenly have bias now let's back up a minute let's suppose you had decided in advance that you were going to trade mary's system even if john's was better maybe her you're grooming her for a
+
+00:05:38 - 00:07:06
+promotion and you want to show her some favoritism or maybe you and mary have something going on on the side who knows but the key is you decided in advance no matter how the out-of-sample performance is compared you were going to trade mary's system in this case her out-of-sample performance is an unbiased measure of what you can expect in the future the problem is the moment you introduce competition using the same out-of-sample data set for to compare these two john and mary you optimistically bias results
+
+00:06:21 - 00:07:50
+how did this happen remember the performance of a trading system on out-of-sample data is the sum of two components one of the components is the intrinsic power of this trading system how well it really does at seeing and capitalizing on true market patterns that are likely to repeat in the future the other component that goes into that performance is luck good luck or bad luck on the out of sample data it might be that you're out of sample data just happened by sheer luck the noise pattern in it
+
+00:07:06 - 00:08:31
+happened to fit what the trading system was looking for so it experienced ex excessive performance good luck or it might have been bad luck maybe maybe your outer sample data is really not at all related to uh what the model was seeing in which case you can call that bad luck but regardless the performance that you observe on that out of sample data is the sum of the true ability plus luck in that out of sample data set so what you are doing is you are getting some prejudice toward choosing the luckier system
+
+00:07:52 - 00:09:25
+let's take a kind of an extreme example um let's suppose john and mary's systems are identical in intrinsic power so the only the thing that differs between them is luck well when you choose the better system you're choosing the luckier system and by definition luck does not hold therefore when you put it into play its performance is going to deteriorate so her formerly unbiased results are now biased because you have biased them by comparing two systems based on luck now this happens
+
+00:08:38 - 00:09:47
+to people all the time in a another way um suppose you alone are developing a trading system and you have a lot of different systems that you're you're testing over the months or years you you develop a system you test it on your outer sample data set you say yeah yeah that's unbiased but i'm not too happy with how this did so you go back to the drawing board you tweak your system a little you test it on your out-of-sample data set again oh it's a little bit better so you do that a half dozen times a
+
+00:09:14 - 00:10:44
+dozen times and eventually you find a system that performed really well on your out-of-sample data set so you say okay this is the one i'm gonna trade and this data never went into my training system so it's gonna be unbiased no you are in big trouble because again let's take that extreme example suppose every one of your candidate systems along the way has identical intrinsic power when you compare all of these different out-of-sample performances on the same out-of-sample data set
+
+00:09:58 - 00:11:32
+you are picking the luckiest system not the best system they all by definition of that i just said have the same intrinsic power you have picked the luckiest system and think about what that means because luck does not hold you have just chosen to trade the system that in all likelihood is going to deteriorate the most when you put it into performance when you trade real money with it you have chosen the system that is really going to see the worst deterioration in its performance when the good luck which caused it to be
+
+00:10:46 - 00:12:22
+selected vanishes and so many people will do exactly this put their trading system into use and see that it falls apart and then they say oh darn market unstationarity the market just happened to change just as i put my trading system into use probably not in my experience markets are a lot more stationary than people give them credit for they do change of course volatility changes trends change but not a lot and not fast if you've developed a trading system by reusing the same out of sample data multiple times
+
+00:11:33 - 00:13:07
+and it then fails it's almost certain that the reason it failed is because you have selected the luckiest system the one that's going to deteriorate the most the one with the most performance optimistic bias bottom line your out of sample data is precious save it as long as possible do as much development as you possibly can before you touch that out of sample data because it's valid only once now you may have to use it a couple times maybe it's unavoidable understand that by doing so you
+
+00:12:20 - 00:13:37
+have given it optimistic bias but you really want to avoid reusing it this is not just some mundane theoretical issue that only statisticians worry about this has enormous practical consequences in the development of your trading system it's another common error that uh that i've seen and it sounds almost trivial but it's amazing how often this happens people will spend a lot of time developing a fancy trading system using their computer to optimize it validate it and then when they put it to
+
+00:12:59 - 00:14:07
+work they don't follow it you'll have professional traders who have a lot of experience and they they are used to trading by the seat of the pants and so an order will come from the automated system it'll say okay close out this position now and the trader will say now i i think we should hold on to this position a little while yet i think we can make a little more money on it and then they get stopped out or something like that so the bottom line there is if you're going to go to the trouble
+
+00:13:32 - 00:14:30
+to develop a system and validate it with computers and make sure it's wonderful for heaven's sake follow the system don't don't override the uh commands that it gives yeah that's a that's a really good point i've seen a lot of traders i've actually done that myself as well in my earlier years so yeah euro's a good point there you spoke in detail about how comparing outer sample performance you're actually um you're choosing the luckiest systems and not necessarily
+
+00:14:02 - 00:15:05
+not necessarily the best systems how can traders address this issue are there like statistical tools or techniques that traders can use to make sure they're not just selecting the luckiest system probably the most overlooked statistical tool in trading system development is the monte carlo permutation test the idea is that we permute market history to destroy all predictable patterns and then we compare the performance of our system on these permuted markets with the performance of our trading
+
+00:14:34 - 00:15:55
+system on the original market data obviously to permute the market data we can't just permute the raw prices otherwise maybe we're permuting the s p 500 when many years ago it was at low prices and now today it's up at high prices and so we'll end up with a price of 100 next to a price of a thousand that wouldn't do so we permute the changes the best way to do this is to start by taking the log of the prices because this makes changes independent of scale when a market goes from 20 to 1000
+
+00:15:13 - 00:16:35
+the changes that appear day to day will be about the same in both cases if we've taken logs first so we take the logs we compute the changes between logs we permute those changes and then we reassemble it by summing we just you know take the first one add the next one add the next one and sum as we go along and that's given us a reassembled log price series and if we want to get back to the original price domain which we may want to do just exponentiate everything and what we have then is a market price
+
+00:15:54 - 00:17:16
+history that to all appearances if you looked at a chart of it it would look like any other market history and in fact it would start at the same price where your original market history started it would end at the same price but it would take a totally unpredictable route getting there therefore by definition no market prediction system can predict the future in this permuted series is it's random now that simple method that i just outlined is fine if we're working with a single price series like daily closing prices
+
+00:16:35 - 00:17:52
+if we're working with day bars things get more complicated because usually a day will open at a price that's fairly close to the close of the prior day's price and if we just permuted raw bars even after taking logs and differences we would still end up with a lot of cases where there's a huge and unnatural gap between one day's close and the next day's open so what we need to do is compute two separate series and permute them separately we compute the series of the open to close data for every day
+
+00:17:14 - 00:18:31
+and we compute the series of the close of one day to the open of the next day permute each of those separately independently and then reassemble them and explain how to do that in my permutation book things get even more complicated if we're dealing with intraday data like one minute bars but it's doable and then the highest complexity is if we're also dealing with night sessions and again i talk about how to do that in my book so that's the general idea of a permutation now there are three ways that
+
+00:17:52 - 00:19:13
+i use permutation tests and trading system developments the first one i'll discuss is the most important in fact i can honestly say if i had just one tool in my market trading development toolbox this would be the tool i would want it comes about for this motivation when we develop a trading system we walk a fine line in regard to the power of our trading system markets are very noisy i mean there may be certain little patterns in there but they're swamped out by these huge huge bits of noise
+
+00:18:32 - 00:19:49
+if our trading system is too weak it's not going to see those market patterns that are hidden in there and it'll be worthless so it's got to be strong enough to see the real patterns but on the other hand if our system is too powerful excuse me it's going to start thinking that noise is legitimate patterns and by definition noise doesn't repeat so if our trading system thinks noise is legitimate and learns it then in the future when that noise doesn't repeat our trading system is
+
+00:19:11 - 00:20:30
+going to fail that happening is generally called overfitting we have over fit the data we have given too powerful a model so there are two possible errors we can make number one our trading system can be too weak so we miss the real patterns number two our trading system can be too strong so that it over fits and it thinks noise is legitimate patterns if we make the first mistake we're not going to miss the fact that we made that mistake because our performance is going to be poor it's the second mistake that's the problem
+
+00:19:50 - 00:21:14
+because if we have overfit our data our performance is going to be fabulous we're going to see nearly miraculous trading performance but then we have to find out is that due to the fact that we have a wonderful model that has really found those patterns or is it just overfitting the common and frankly terrible way to answer this question is by testing our system on out-of-sample data we withhold a set of data from the training procedure and then we test our model on this withheld data and if it does well on that also we
+
+00:20:33 - 00:21:55
+conclude that we've got a good model at seeing real patterns if it fails then we conclude that our model was over fit but i've already talked about how reusing out of sample data is bad it's good once and so it is precious we cannot waste it there's a better way we can totally avoid that problem with a permutation test here's what we do we run our system on the original data we see the wonderful performance that we think might be real or might be overfitting we permute the data we train our system
+
+00:21:14 - 00:22:33
+again we see how that performance is and then we commute again we train again etc notice we are not using out of sample data at all we are just continually retraining on the training data if our system is really good if it's seeing real patterns then it's going to have an edge because these permuted data sets are not going to have real patterns they're not going to have predictability in them so our truly good trading system is going to have a performance edge and it's going to stand
+
+00:21:53 - 00:23:12
+out it's going to be better than most or all of the trading system performances based on permuted data on the other hand if a good performance is simply due to overfitting and learning noise rather than real patterns then the same thing is going to happen when we train on the permuted market histories and so in this case our original performance will not stand out amongst the others so that's that's what we do we just retrain hundreds or possibly if possible even thousands of times see where our
+
+00:22:32 - 00:23:49
+original performance ranks relative to the others and if it stands out great we're in good shape if it does not stand out then our model is overfitting and it is back to the drawing board and i said this before but i'll say it again because it's so important this does not use your precious out of sample data this is done strictly with your training data which makes this an incredibly valuable technique and as a bonus it happens early in your development process your time is valuable too so you will
+
+00:23:11 - 00:24:22
+learn early on whether you should keep pursuing this model or if it's just overfitting and you've got to look elsewhere okay that's the important one that's that's the one that no one should ever do without the second permutation test is used for evaluating the performance of an existing model let's say you you have something you've already been using for a while or somebody gives you a model for some reason you want to test this model on out of sample data and you have some how
+
+00:23:45 - 00:25:03
+to sample data to test it on so you go ahead and you run your model on the outer sample data and you see good performance of course if you see bad performance well it's back to the drawing board so for our purposes now we're going to assume that you saw good performance however good performance on your out-of-sample data is a necessary but not sufficient condition okay there's another thing that you need and sadly it's neglected by a lot of people you also need to know the approximate
+
+00:24:25 - 00:25:51
+probability that the great results you just got out of sample could have happened surely by good luck in other words if a truly worthless system could have gotten results just as good as you saw with a pretty decent probability then you're in trouble you should probably not trade that system you should at a minimum investigate it more what you want to see is tiny tiny tiny probability that a truly worthless system could has done as well as yours did out of sample this is easy to do all you do is permute
+
+00:25:09 - 00:26:30
+the data in the out of sample period many times and then you compare your original out of sample performance with this large set of hundreds or thousands of permuted out of sample period performances if your system is good it should stand out it should be above the others if your system has a high probability of achieving its good performance just by random good luck you're going to see that because a lot of your permuted results are also going to be good so this you probably won't be doing this
+
+00:25:49 - 00:27:20
+terribly often um your your main go-to permutation test will be the first one that i described but whenever you test out of sample data you really should do this also because seeing good performance is not enough you also need to find out that that good performance would be very very unlikely if your model were truly worthless now the third and last of these permutation test procedures that i'm going to talk about this is pretty complex it's far too complex for me to deal with right now
+
+00:26:34 - 00:27:46
+but i'll give you a rough overview and the motivation behind it first of all you probably have what i'll call a process for developing a tradies trading system for example you may find a handful of markets that you want to trade might be based on liquidity in your time frame or some other criterion so you choose your markets then you look at the behavior the markets measure some things about them and decide do i want to do a trend following system or do i want to do a mean reversion system
+
+00:27:10 - 00:28:33
+like is the market trending right now is it not um that's another decision you might make you might decide on meta parameters for your system for example if you're using a neural network you might decide on the number of hidden neurons that you want to use in other words you have a well-defined procedure for developing a trading system what we're going to use a permutation test for now is to evaluate the quality of your development process now notice i contrast this with evaluating the quality of your
+
+00:27:51 - 00:29:18
+trading system itself we're not doing that in this third usage we're evaluating the utility of the process that you use to develop a trading system now obviously it should be a no-brainer that this is a nice thing to know but that's just a general a general idea actually there is a very specific and important reason why you want to know this when you develop a trading system you have a difficult decision to make you can take two two approaches approach one you withhold a bunch of recent data
+
+00:28:35 - 00:29:54
+maybe the most recent year or whatever you choose you develop your trading system entirely based on data prior to this most recent year or whatever you want your out of sample period to be and then once you've got your final trading system and you're totally happy with it you're ready for the acid test you put it to work on the outer sample data and you see how it did that's good in that you now have an actual measurement and unbiased measure of the quality of the trading system
+
+00:29:14 - 00:30:30
+that you're about to put into practice that's one approach here's your other approach you can develop your trading system right up to the current date don't hold out any out of sample data the idea behind that is you want your trading system to be as current as possible if the market is changing properties changing states you want your system to be based on how the market is behaving right now not how the market behaved as of a year ago but the disadvantage of that is you have no out of sample data you
+
+00:29:53 - 00:31:19
+have a trading system but you have not confirmed its actual quality so that's a horrible trade-off you stop a year early and have an a trading system that's out of date already but you can test it fairly or do you come right up to the current date have a good current trading system but you can't test it so what you do you use a permutation test to evaluate the quality of your trading system development process you test your process if your process is good then you're safe developing your trading system
+
+00:30:36 - 00:32:09
+right up to today's date and making it as current as possible the logic is very simple if my development system is good and i i develop a system right up to today's date then today's the date doesn't make a difference the fact that we have not tested it is fine because our process is fine i highly recommend that very early on in your development work you test and confirm the quality of your development process if you find that the development process you've brainstormed is not really good then stop right there
+
+00:31:22 - 00:32:43
+don't even develop any models with it go back to the development go back to the drawing board on your development process so that's it three ways of using a permutation test in trading system development most important number one learning if the great performance you're seeing initially in your in-sample data your training data is due to over-fitting or if it's legitimate number two testing to see not only what is the quality of your out-of-sample performance but is that quality likely or unlikely to have
+
+00:32:02 - 00:33:11
+been due to luck and number three how good is your entire process for developing your trading system three methods i highly recommend them all so how many times do you need to actually permute the data in testing and what are you looking for in those results well certainly a hundred times a hundred permutations would be an absolute bare minimum and doing that few would make me nervous i like to do at least a thousand then you can have some more confidence in your results the um what you're looking for in this
+
+00:32:40 - 00:34:00
+the common thread that runs through all of these tests is you want the results that you get with your original unpermuted data to be superior to the results that you get with permuted data because the whole idea is that you've got a trading system that can find and capitalize on uh repeatable market patterns and so if you have such a thing then certainly the original data which has these supposed patterns is going to have an advantage over the commuted data and so your system had better see that
+
+00:33:19 - 00:34:36
+and if your system does not see some advantage in having the uni uncommuted data then you don't have a good system right so besides the the permutation or the monte carlo permutation tests are there any other uh techniques or statistical methods that strategy developers uh need to know and need to be able to apply a few um the boot strap can be useful sometimes i personally don't like to use a bootstrap i hardly ever use it one of the reasons is that it's very very sensitive to heavy tail
+
+00:33:59 - 00:35:18
+statistics for example a sharp ratio any anytime you've got a performance measure that's a division like a sharp ratio where it's got that variation in the denominator bootstraps are unreliable and you can you can get massively incorrect results bootstrapping a sharp ratio or anything else like that um one thing that i always always always do i highly recommend is if you're optimizing parameters which you almost always are i mean even if you're not optimizing a prediction model
+
+00:34:39 - 00:35:52
+even if you're doing some primitive system like a moving average crossover or something like that where you're optimizing a long term and short-term look back anytime you're optimizing a parameter you should do a sensitivity test you should look at the performance in the neighborhood of the optimum what you want to see is a nice flat top you want to see just very gentle curvature so that when if the optimum is here you go off a little bit you want the performance to remain high if you've got a sensitivity curve that
+
+00:35:16 - 00:36:34
+goes up and goes down so that a very narrow range for that parameter is is needed to get optimal results then something is seriously wrong with your system and you should not be using it uh another thing that i use uh this is a real mathematical beast it's called the incomplete beta distribution i won't go into it here it's way too complex but this will let you come up with reasonable bounds on how often wins and losses of a certain magnitude should occur for example you might you might be able
+
+00:35:55 - 00:37:13
+to analyze your outer sample test results trades and see that okay when we put this system to work in the future at least 30 of the time we should get at least an 8 return and this sort of thing has obvious utility on the surface but it's even more important if you dig a little deeper because this can help you keep track of deterioration what if you're supposed to get at least an eight return 30 of the time and six months later you're only getting that 15 of the time then you know your system is
+
+00:36:34 - 00:37:43
+deteriorating and you can use it on the other end too you might say oh no more than ten percent of the time should we lose more than eight percent well if you start losing more than eight percent twenty percent of the time your system is deteriorating yeah so that's a very good use of the incomplete beta distribution um those those are probably the the um biggest things that i use the sensitivity test you know there again there's a bottom line here to always keep in mind especially with
+
+00:37:08 - 00:38:19
+the sensitivity test and that is that we want to put off using our precious out of sample data for as long as we can so if you can do a sensitivity test or some of these other tests before you even go to your final outer sample period uh then you're preserving that out of sample data which is very very important yeah so you mentioned a couple of times that this is one of the common most common errors that traders make is reusing their outer sample data is there any other techniques or approaches you've seen that are being
+
+00:37:44 - 00:39:08
+misused by strategy developers one statistical term frequently misunderstood by trading system developers is unbiased the precise mathematical definition of this term is beyond the scope of this presentation but i'll tell you in plain language what it means and what it does not mean when we say that a performance measure is unbiased we essentially mean that nobody has their finger on this scale nobody is pushing it some way there's no systematic bias for the measure to be optimistic or pessimistic both are equally likely
+
+00:38:25 - 00:39:49
+in a balanced sort of way however unbiased does not mean that the measure is correct indeed unbias an unbiased measure is almost certainly optimistic or pessimistic it's just that it's as likely to be one as the other in a rough sense even more important and not often understood is that the trades from which an unbiased performance measure is computed are not representative of what we may expect in the future here is a common and very serious error we hold back from our development and out of sample data set
+
+00:39:07 - 00:40:27
+typically recent market history presumably this segment of history has not taken part in the development of the trading system in any way thus when we test our trading system on this out-of-sample data any performance measure we compute from these trades is unbiased but the temptation is to subsequently act as if the trades produced by our trading system on this out-of-sample data set are representative of the trades that our system will produce in the future assuming of course that the market does
+
+00:39:47 - 00:41:15
+not change its behavior in any material way this is wrong the trades we observe in our out-of-sample data set are not representative of future trades they're almost surely optimistic or pessimistic they're simply a random sample from the possible trades and hence subject to random variation i've seen two deadly consequences of this incorrect assumption that the out-of-sample trades are representative of future trades most often i've seen people use the distribution of trades to bound future trades for example
+
+00:40:30 - 00:41:53
+suppose 10 of the out of sample trades are a loss in excess of x dollars or points or whatever then the errant developer will say that when the system is put to work trading real money only 10 percent of the time will a trade lose more than x in fact even though the trades are unbiased and hence balanced in terms of optimism and pessimism on average when we look at extreme possibilities this balance means little and extremes of both wins and losses in the future become more likely in other words a sort of balance is
+
+00:41:13 - 00:42:34
+maintained but what we will get is more extreme wins and more extreme losses we're still in balanced but everything spreads out with extremes becoming more likely an even more dangerous practice that i've occasionally observed is to use these out of trades to compute probabilities of drawdowns the incorrect logic goes something like this first the developer assumes that the out-of-sample trades are representative of future trades wrong second the only differences that we'll see in the future
+
+00:41:53 - 00:43:11
+are perhaps a somewhat more or fewer wins and losses and the trades may occur may occur in a different order for example if you get a string of losses in a row you're going to have a larger drawdown than the exact same trades would have given if they alternate win loss win loss win loss so we can simulate our expected future drawdown distribution by taking random samples from the out of sample trades and computing the drawdowns of these random samples so for example we might find that when we do this simulation two percent
+
+00:42:32 - 00:44:05
+of the time we experience a drawdown in excess of 35 say from this we erroneously conclude that when we put this trading system to work two percent of the time will experience a drawdown of 35 also just like we observed in simulations from the out of sample data set the fail flaw in this reasoning is that we failed to account for the fact that the out-of-sample trades are themselves a random sample subject to random variation and hence subject to more extremes this is the problem it still becomes
+
+00:43:18 - 00:44:50
+it's still balanced in a sense that extreme low draw downs good performance are more likely than we would expect and extreme chord or awful drawdowns large drawdowns are more extreme they're still balanced we still have this unbiased balance but the extremes become worse i have seen simulations in which they can be off by a factor of 10 or more um in other words i'll do a simulation of drawdowns using this method and find that maybe there's a one-tenth of one percent chance of some extreme
+
+00:44:06 - 00:45:37
+drawdown when in fact when the simulation is done correctly there's actually as much as a one percent chance of this extreme drawdown 10 times as much and when you're talking about extreme catastrophic drawdowns computed probabilities being off by a factor of 10 or more is just not acceptable so the bottom line here is that although unbiased means balanced in a kind of a central sense everything spreads out extremely good results and extremely bad results will both be more common in real life
+
+00:44:51 - 00:46:04
+than what you observed in your out of sample data set be warned about that yeah that's a good point thanks for explaining that tim there are statistical techniques to get around this problem of the out-of-sample trades not being a real legitimate predictor of what you're going to get in the future but rather being a random sample a moment ago i talked about the incomplete beta distribution that does take into account the fact that your unbia your out of sample trades are a random sample
+
+00:45:27 - 00:46:46
+so that's one way but another thing that we often want to do is come up with probabilities for drawdowns like it's very good to know for example there's less than a 1 chance that we're going to get more than a 25 draw down something like that as i mentioned earlier it's a horrible mistake to treat your out-of-sample trades as if they're truly representative and then go on to compute probabilities of these high drawdowns but there is a way of handling that unfortunately it involves what might be
+
+00:46:07 - 00:47:29
+called a double boot strap where you take your original set of trades you take a bootstrap sample from that and then you take a thousand bootstrap samples from that bootstrap and you repeat that process maybe a thousand times that will give you reasonably valid probability estimates for extreme drawdowns but the downside of it is that you're doing a lot of replications if you have to do a thousand subsamples of a thousand samples right there you're talking about a million replications and now you're getting into some serious
+
+00:46:49 - 00:47:59
+computer time but on the other hand if that's what it takes to get reliable estimates of the probability of catastrophic dry downs then it might be worth it to you right yeah okay thanks for clarifying that tim now you've just uh shared three ways that we can use permutation tests that's in in the strategy development process itself uh on an existing strategy and also on the the process the the development process now i'd like to ask you about strategy selection because i know from your books
+
+00:47:24 - 00:48:30
+uh you like to use the metric profit factor um so firstly but but i also know that you use it in a kind of a different way to what a lot of the back test platforms allow so i'd like to ask you first why profit factor what is it about that particular metric that that interests you and then also how do you use that because i think it's very interesting the way you look at that and traders will will be interested in that so can you share a little bit more about strategy selection using profit factor
+
+00:47:57 - 00:49:25
+sure first thing i'd like to emphasize is that i love profit factor only when it's computed at very very fine granularity if you're going to compute it based on closed trades then then no i would not recommend profit factor why find granularity well we have a slide here that uh shows what i envisioned for marked to market profits of an open trade what this slide shows is um the extent of a trade what you see there left to right is an entire trade open on the left it closes on the right
+
+00:48:41 - 00:50:07
+and all those zigzags up and down are marking that trade to market um at as fine a granularity as you can if you're trading at close of day then this is maybe many days if you're doing intraday trading this might be one minute bars or whatever but what you see here is a bunch of trades that and just for the sake of argument i'm going to say the total wins the total upsides up moves in this graph is 1001 points and the total of all the downward moves in this graph is 1000 points and so
+
+00:49:24 - 00:50:36
+for this trade overall you have a net gain of one point and you can see that maybe on the slide showing at the bottom there it's just slightly increasing a little bit but you can also see that that one point you made is just about negligible in terms of the variation that went on within this trade let's say in this example that you have 10 trades that look roughly like this they all have wild gyrations and they all make they all win a thousand one and lose a thousand for a net gain of one
+
+00:50:01 - 00:51:15
+point well if you compute profit factor based on just the net return of those trades you've got ten wins of one point each so that's 10 and you have no losses zero so your profit factor is 10 over zero which is infinite you can't beat that on the other hand if you look at that graph i would hope that there isn't a person among you who would think that a trading system that gives you a bunch of trades that look like this would be a good trading system and it's just the the pain within a trade is
+
+00:50:38 - 00:52:15
+monumental to and it's almost certainly mostly random so if you were to actually mark this to market at this granularity what you would see is that you've got a total win of ten times a thousand one and a total loss of ten times a thousand and now that is going to work out to a profit factor of 1.001 which is an absolutely worthless system so this is why i like to compute profit factor and very fine granularity it accounts for the variation that's going on within your trade and this is not just a theoretical issue
+
+00:51:27 - 00:52:52
+i have i have seen people profoundly misjudge the value of their systems by just looking at net returns and by the way you asked why i like profit factor i have to admit that's purely heuristic but it's based on a lot of evidence over the years what i did is i would train a system and then tested out a sample and i would look at net return average return per trade ulcer factor you know all kinds of metrics and what i found very very consistently is that for profit factor was the metric that
+
+00:52:09 - 00:53:20
+had the highest correlation between in sample and out of sample results so if we had a system that had a high profit factor in sample it was probably going to have a high profit factor out of sample and of course that's what we ultimately want when we put our system to work we want it to be consistent with what we saw when we back tested it so it is heuristic that i have seen profit factor be very reliable in that regard much more than any other metric i've seen yep oh thanks for sharing that
+
+00:52:44 - 00:53:44
+tim i think that's uh quite fascinating the granularity comments you're making there about profit factor because most uh back testing software doesn't allow you to test or to judge it um you know profit factor in a granular fashion out of the box anyway obviously there's some custom coding you can do so i think you raise a really good point that traders needs to be aware of so thanks for sharing that now i want to move on to to another concept this is one of the the concepts that
+
+00:53:14 - 00:54:33
+really stood out to me in your statistically sound uh book uh which is the purple one and that's this concept of entropy uh entropy of indicators can you explain a little bit about you know what that is and why that's something that traders and strategy developers need to consider there are there are two ways to look at this a theoretical way and a practical way although the theoretical is pretty practical also entropy is a measure of uncertainty how uncertain are you about something and information is roughly defined as
+
+00:53:55 - 00:55:18
+the degree to which knowledge of an observation reduces our uncertainty about something so if you think of that entropy is your uncertainty and information is how much you can decrease your uncertainty then entropy is an upper bound on the amount of information that something can carry so if you have high entropy then conceivably at least theoretically there could be a lot of information carried there i'll give you an example weather makes a perfect example suppose you live in a region that has
+
+00:54:36 - 00:55:55
+wildly varying weather you know one one day it can be bright and sunny the next day it can snow uh here in the northeast of the us that certainly describes us in this case if if we were to have an accurate weather forecast assuming such a thing exists which it doesn't but so let's suppose we have an accurate weather forecast that would be very valuable because it would tell us is it going to be sunny tomorrow is it going to rain tomorrow is it going to snow so that in this high entropy situation of highly variable weather
+
+00:55:15 - 00:56:33
+a weather forecast can provide a lot of information on the other hand if you live in the middle of a desert that's just hot and dry virtually all the time what good is an accurate weather forecast that isn't going to tell you much of anything that the forecast is going to be it's going to be hot and dry so that's a low entropy situation low uncertainty so in that basis and having high entropy in an indicator is good because it will let that indicator carry a lot of information at least theoretically now
+
+00:55:55 - 00:57:13
+that information may or may not be relevant to what we want to predict the information it carries might be relevant to future volatility when really we want to predict future price movement or vice versa but at least the information can be there the more practical way to look at entropy is that usually high entropy corresponds to a wide spread in your distribution of your indicator as opposed to your indicator clustering around some very narrow area and most predictive model training algorithms
+
+00:56:33 - 00:57:56
+do a lot better when there's high variability a wide range in the inputs to that model if the inputs to a model tend to cluster in just one or two very small regions then the training algorithm is going to have a hard time so it's nice you did you're getting two for one here if you have high entropy you have both high theoretical information carrying ability and you make it easier on your model to train okay so how can we actually then increase or improve the entropy of our indicators well
+
+00:57:15 - 00:58:40
+the standard way is to just spread it out um i like to use a log square root cube root a sigmoid functions hyperbolic tangent uh anything that spreads out will usually help a lot but what you absolutely must do is look at before and s after histograms you look at a histogram with your raw indicator if it's already spread out nicely don't worry about it you're fine uh if it's clumped up in in one end high end low end somewhere in the middle whatever if it's clumped then you need to figure out some kind of
+
+00:57:57 - 00:59:08
+transformation that will spread it out now i will say you say to you there are times when that's counterproductive it may be that these little clumps are meaningful and which of two clumps that the indicator happens to lie in conveys a lot of information and if you spread it out you're just diluting that information that does happen but in my experience it doesn't happen very often nine times out of ten you're better off spreading out the range of that indicator with a non-linear transform
+
+00:58:33 - 00:59:55
+yeah okay thanks tim so a little bit more on indicators then are technical um technical analysis indicators predictive of future movements and of future price movements i should say and how can we tell well they better be at least somewhat predictive or we're all out of business um but i will say again in my experience they're not as valuable as they once were back in the early 90s it was utterly amazing what you could do with a good technical indicator i i actually got my start in commodities
+
+00:59:15 - 01:00:36
+trading and we had some systems that were almost miraculous in how they could make money just based on simple technical indicators but year after year it got harder and harder and harder and what i think has happened and this is just a theory is there are really big big big firms out there with super computers and and whole teams of phd's sitting in a work room somewhere programming these computers and they've just arbitraged out any any kind of market deviations and that's what this is all about of
+
+00:59:55 - 01:01:10
+course it's the market goes out of whack and smart people with smart systems find that and get in in time to catch when the market goes back in whack again um but when there are people out there who are just on top of that by the millisecond it becomes a lot harder but still it's not impossible i mean there there are there are indicators my own favorite family is indicators that measure deviation from expectation like if you look at at the current close relative to a recent moving average
+
+01:00:32 - 01:01:56
+as it suddenly deviated away from that moving average another cute one is to fit a straight line to recent price history you know five bars a hundred bars whatever and use that straight line based on data up through yesterday to predict what what it should be right now and then see what the price is right now where is it relative to that linear prediction and see has it deviated so these deviations from expectation i've they're probably my favorite right now but that may change tomorrow yeah yeah i think a
+
+01:01:14 - 01:02:28
+uh a common um explanation people use when their strategies uh stop working or fall apart is stationarity and and you mentioned in one of the one of your earlier um answers something about the perception of stationarity in the market isn't perhaps what's actually there so can you explain a little bit more about what station stationarity is and how it influences the strategy development and trading process well on a strictly rigorous quote unquote uh way of looking at it stationarity means
+
+01:01:54 - 01:03:18
+that all repeat all statistical properties of a series remain constant across time now that's impossible to verify and you should never even accept that that it could happen on the other hand we don't really need that we only need certain kinds of stationarity we certainly want stationarity in location in other words we do not want to use an indicator that 20 years ago had a value of 5 10 years ago had a value of 50. today has a value of 500 you know that sort of thing is not going to do us any good so we certainly want
+
+01:02:35 - 01:04:02
+it to be stationary in terms of what we would call its location it also should be reasonably stationary in terms of its volatility if something 10 years ago had a daily variation of two points and today has a daily variation of 200 points we're not going to want that so if we can get at least stationarity in terms of location and scale that's probably 99 of the battle right there and that's relatively easy to do we can just look at uh recent values maybe take a a mean or median of recent values subtract
+
+01:03:19 - 01:04:39
+that from our current value and that will induce stationarity and location if we then go on to divide by recent standard deviation our interquartile range that will give us stationary stationarity in terms of volatility we can also do some other things if if we do an oscillator by subtracting adjacent values that'll at least be stationary in terms of location and sometimes in terms of volatility uh so i would recommend usually that we do these things now it shouldn't be something that we
+
+01:03:59 - 01:05:21
+always automatically do because sometimes modest deviations from stationary behavior are meaningful you know if a market suddenly becomes much more volatile than it traditionally is we probably do not want to do something to induce stationarity in that because probably probably that sudden increase in volatility is meaningful and we better know about it but as a general rule we should try to induce some kind of stationarity by the way i'd like to talk just a moment about something that i have found very
+
+01:04:40 - 01:06:06
+valuable to see how robust our trading system is against non-stationarity or against just changes in the market that maybe are not profoundly non-stationary but are just changes in market behavior what i like to do is a series of walk forward tests at increasing lookaheads for example let's say just for the sake of argument we were doing trading uh based on close of the of the day and then predicting are we going to get into the market for the next day so we train our our prediction system and we look at the very next day that so
+
+01:05:24 - 01:06:44
+just one day ahead out of sample look at that result then we slide the thing ahead one day look one day ahead slide it ahead one day so we have a whole series of one day ahead performances compute the performance of that profit factor whatever then do the same thing looking two days ahead just the next two days slide it over next two days slide it over next two days etc note that performance and keep doing that three four five fifty days a hundred days whatever it is amazing if you plot that how often
+
+01:06:04 - 01:07:24
+you will see a distinctive knee if you do a plot of the horizontal axis is the number of days you're looking ahead the verti vertical axis is your performance you will see one day ahead it's really great two days ahead still good three days ahead still good and it'll kind of be fairly level then start dropping off and all of a sudden it'll just drop fast and hard i know it sounds crazy but i've seen that happen a million times and that will tell you how long you can probably count on your system
+
+01:06:43 - 01:07:56
+being good before you have to reassess it retrain it whatever if you see that 10 days out it's still doing pretty well 20 days out it's worthless then then you know that that's how long your system is robust against changes in the market so i i recommend that you always always do that that's an interesting idea actually because i think one of the [Music] challenges with re-optimizing strategies knowing when to do it and i think that that approach you've mentioned there's really really gives
+
+01:07:20 - 01:08:42
+you an insight into your strategy that you probably wouldn't realize without doing it so yeah thanks for sharing that one now uh what about markets that have a long term uh trend in one direction that can often be challenging to do to find counter trend strategies how have you approached that well suppose i'm gonna take a canoe trip on the river am i gonna put my canoe in the water and head off upstream and paddle against that current and maybe by the end of the day i'm 50 feet from where i set out um probably not i'm
+
+01:08:01 - 01:09:22
+going to want to go downstream so speaking just personally i i see the markets having a long-term trend and i like long systems now counter-trend systems i have found can be worthwhile over short terms like maybe the market suddenly gets tremendously overbought and it's due for a correction okay fine um but again i know there's a lot of people out there gonna take issue with that that's fine i'm not gonna argue with you about that i'm just talking about what my own my own personal opinion is
+
+01:08:41 - 01:10:08
+that does however lead into an interesting issue that is even more controversial than what i just said it's possible in fact it's very easy to compute how much of your return is due to your positions being in favor with the trend so for example let's say we have a system that is long 30 of the time short 20 percent of the time and out of the market the other 50 of the time and then we can compute the trend of that we just look at the starting price the ending price find the trend we can then easily
+
+01:09:25 - 01:10:49
+compute the profit that would have been obtained from a totally stupid system a random system that had the same number of long and short neutral positions but just randomly scattered throughout the back test period absolutely no intelligence in choosing when to be long or when to be shorter when to stay out we can compute the return that that naive system would have gotten and so if we subtract that return from the return that we actually obtained in our system what we theoretically at least have
+
+01:10:07 - 01:11:32
+when we look at that difference is the intelligence of our system the the degree to which knowing when to belong and knowing when to be short gave us an advantage and so there are a lot of people who would say okay we want to do that subtraction because we want to see how how intelligent was our system at knowing what position to take long short and neutral but the exact opposite idea there is to say hey wait a minute if we were in an uptrending market and our system was long 30 of the time in short 20
+
+01:10:49 - 01:12:17
+of the time it knew enough to be long more often than it was short and so there's intelligence know which which is right don't ask me um don't ask anybody really because if they tell you which is right they're just guessing or thinking they're right um those are both valid ways to look at the situation um i'm not going to support either way i think it's always interesting to look at both results i like to look at both and if i find that my system did not show superiority over a naive system
+
+01:11:34 - 01:12:47
+then i might want to rethink that system a little bit um but other than that i don't i don't put a whole lot of stock into that difference i will note by the way that if you do a traditional t-test or bootstrap test or something like that on your actual returns that is taking into account the interaction of your positions with the trend whereas if you do a permutation test every permutation has the same trend so that does negate the impact of trend now exactly how it negates it is really
+
+01:12:11 - 01:13:27
+complicated and i just i can't get into it here but that is something you should be aware of if you ever at some point do a t-test or a bootstrap and do a permutation test and get dramatically different results in those two tests chances are the reason you're getting those different results is that you were working in a trending market and you were unbalanced in your positions you were either long a lot more than short or short a lot more than long and the t-tester bootstrap is seeing that interaction and the permutation
+
+01:12:48 - 01:13:55
+test is not yeah thanks for explaining that tim so um i'm conscious of our time now so i just want to start wrapping up so um i think uh if there was one takeaway in our discussion today i mean you've shared a lot of great concepts here and if people want even more information uh they can go to your books i highly recommend people check out your books there's a lot of great content in there but if if you had a number one takeaway today from our discussion what would it be to traders and strategy developers out
+
+01:13:22 - 01:14:52
+there that's easy um the bottom line the single most important thing if you if you get nothing else from this it's that your out of sample data is precious theoretically at least it can only be used once practically it should not be used more than a couple times and ideally only once so what you must must must do is be very sure of the quality of your system before you use your out-of-sample data that means you should do permutation tests for overfitting you should do sensitivity tests you
+
+01:14:10 - 01:15:28
+should do everything that you can possibly do right up front in your development period and before you use your out-of-sample data you should be as sure as you can possibly be that this is the system because really you've only got one shot with that out of sample data yeah what an excellent way to finish our interview today so thanks a lot tim and i just want to say personally i know you don't do interviews this is the only one you've ever done and may ever do so i really uh you know i really feel
+
+01:14:48 - 01:15:36
+honored to have the opportunity to speak to you and to share some of your content with uh traders out there so uh yeah thank you very much for that i really do appreciate that and i'm sure uh a lot of traders who are watching the recording of this will feel the same way so yeah thanks again okay thank you all right cheers thanks tim take care you

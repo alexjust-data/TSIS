@@ -1,26 +1,93 @@
-## Current Authoritative State - BT-GATE-015 non-physical implementation accepted
+## Current Authoritative State - BT-GATE-015 closed with restrictions
 
 ```text
 BT-GATE-014 = CLOSED_PASS_POINT_IN_TIME_MARKET_STATE_CONSUMPTION_WITH_RESTRICTIONS
 BT-GATE-014_IMPLEMENTATION = IMPLEMENTED_AND_ACCEPTED
-BT-GATE-014_IMPLEMENTATION_ACCEPTANCE = ACCEPTED
 BT-GATE-014_V0.5 = CONSUMED_FINAL
 SECOND_EXECUTION_BT_GATE_014_V0.5 = PROHIBITED
-BT-GATE-014 physical files / rows / events / inserts / observations = 1 / 2 / 2 / 2 / 2
-BT-GATE-014 early delivered / orders / fills / PnL = 0 / 0 / 0 / false
-BT-GATE-014 deterministic_output_hash = 6331839dfc6538f7dd6fda9a1fd7efbc7497d541dcb0c0d89cfd679762067cb1
 
-BT-GATE-015 = NON_PHYSICAL_IMPLEMENTATION_ACCEPTED_PENDING_SINGLE_USE_PHYSICAL_AUTHORIZATION
+BT-GATE-015 = CLOSED_PASS_POINT_IN_TIME_EVENT_STATE_CONSUMPTION_WITH_RESTRICTIONS
 BT-GATE-015_CONTRACT = OWNER_REVIEW_PASS
-BT-GATE-015_IMPLEMENTATION = ACCEPTED_NON_PHYSICAL_ONLY
+BT-GATE-015_IMPLEMENTATION = IMPLEMENTED_AND_ACCEPTED
 BT_GATE_015_NON_PHYSICAL_EXTERNAL_REVIEW = PASS
-IMPLEMENTATION_ACCEPTANCE = ACCEPTED_NON_PHYSICAL_ONLY
-BT-GATE-015_PHYSICAL_READ = NOT_AUTHORIZED
-SINGLE_USE_PHYSICAL_AUTHORIZATION = NOT_AUTHORIZED
-PHYSICAL_STATE_ROWS_READ_BY_BACKTESTER = 0
-BT-GATE-015_CLOSED_PASS = NOT_AUTHORIZED
-Event State = NON_PHYSICAL_ACCEPTED / PHYSICAL_READ_NOT_AUTHORIZED
+BT_GATE_015_V0_4_POSTEXECUTION_EXTERNAL_REVIEW = PASS
+IMPLEMENTATION_ACCEPTANCE = ACCEPTED
+
+BT-GATE-015_V0.3 = CONSUMED_FAILED_FINAL
+SECOND_EXECUTION_BT_GATE_015_V0.3 = PROHIBITED
+POSTEXECUTION_FAILURE_EVIDENCE_V0.3 = ACCEPTED
+ROOT_CAUSE = CONFIRMED_CONSUMER_DATASET_FINGERPRINT_DOMAIN_BINDING_ERROR
+
+BT-GATE-015_V0.4 = CONSUMED_FINAL
+SECOND_EXECUTION_BT_GATE_015_V0.4 = PROHIBITED
+BT_GATE_015_V0_4_PREEXECUTION_EXTERNAL_REVIEW = PASS
+PHYSICAL_COMMAND_V0.4 = EXECUTED_ONCE_PASS
+EVENT_STATE_PHYSICAL_READ_V0.4 = EXECUTED_PASS
+PHYSICAL_DATA_FILES_OPENED_V0.4 = 1
+PHYSICAL_STATE_RECORDS_SCANNED_V0.4 = 8
+PHYSICAL_STATE_ROWS_SELECTED_V0.4 = 1
+EVENTS / STORE_INSERTS / OBSERVATIONS_V0.4 = 1 / 1 / 1
+DELIVERY_BEFORE_AVAILABLE_AT_V0.4 = 0
+DETERMINISTIC_OUTPUT_HASH_V0.4 = 35c8fbd98e3c167ffa8eebbc3b660e17f88952c0e189698e53fbaa0c2c5fc65a
+POSTEXECUTION_PACKAGE_SHA256 = 62f1503694c9a3d9153179289b37bc4809d660315a0779cb8a30a52f367e0870
+BT-GATE-015_CLOSED_PASS = CLOSED_PASS_POINT_IN_TIME_EVENT_STATE_CONSUMPTION_WITH_RESTRICTIONS
+
+BT-GATE-016 = NOT_OPEN
+BT-GATE-016_IMPLEMENTATION = NOT_AUTHORIZED
 ```
+## 2026-08-05 | BT-GATE-015 final external acceptance
+
+- Accepted post-execution package `62f1503694c9a3d9153179289b37bc4809d660315a0779cb8a30a52f367e0870`.
+- Registered `BT_GATE_015_V0_4_POSTEXECUTION_EXTERNAL_REVIEW = PASS`.
+- Closed BT-GATE-015 as `CLOSED_PASS_POINT_IN_TIME_EVENT_STATE_CONSUMPTION_WITH_RESTRICTIONS`.
+- Preserved V0.3 as consumed failed history and V0.4 as `CONSUMED_FINAL`; neither authorization may be reused.
+- Kept general Event State, another physical read, strategy routing, production, downstream use and BT-GATE-016 implementation unauthorized.
+- Retained the eight-package BT-GATE-014/015 audit chain, moved three external reports to governed evidence and removed four superseded ZIPs plus temporary audit material.
+
+## 2026-08-05 | BT-GATE-015 V0.4 consumed physical PASS pending external review
+
+- External pre-execution review approved package `ed26dd77908e87a84dddaac287798ca0073d9011e775ef72a5f4c1f1998d1bb5`.
+- V0.4 executed exactly once and is permanently consumed.
+- One governed file was opened, eight records were scanned and one row was selected.
+- The runner emitted one bounded Event State, inserted it once and produced one legal observation with zero early deliveries.
+- The result contains 17 typed values, zero strategy decisions, orders, fills or PnL, and no provider modification.
+- BT-GATE-015 remains open pending independent post-execution review.
+## 2026-08-05 | BT-GATE-015 V0.4 fingerprint-domain correction prepared
+
+- Accepted the V0.3 failure evidence and confirmed a backtester-only dataset fingerprint domain binding error.
+- Preserved V0.3 as `CONSUMED_FAILED_FINAL`; second execution remains prohibited.
+- Added V0.4 consumer, runner, authorization and synthetic regressions without opening Event State physical data.
+- Bound physical provenance to `market_state_dependency_dataset_fingerprint` and replay availability independently to `market_state_availability_evidence_dataset_fingerprint`.
+- V0.4 remains `AUTHORIZED_NOT_CONSUMED`; physical execution requires an independent pre-execution PASS.
+
+## 2026-08-05 | BT-GATE-015 V0.3 consumed physical failure
+
+- External pre-execution review approved exact R2 package `52aab61b...c47fe`.
+- V0.3 executed exactly once and is permanently consumed.
+- The runner opened one governed file, scanned eight records and selected one.
+- Validation failed closed with `FAIL_EVENT_STATE_IDENTITY_MISMATCH` before
+  Event State emission or store insertion.
+- Second execution is prohibited; no new authorization is granted pending
+  independent post-execution failure review.
+
+## 2026-08-05 | BT-GATE-015 V0.3 corrected R2 pre-execution package prepared
+
+- Rejected package `ed16c2bc...f9d4` remains immutable failed-review evidence.
+- Froze an exact 27-file executable binding set in the semantic specification.
+- Added fail-closed validation for empty, incomplete, extra and mutated bindings.
+- Removed duplicated live-state blocks and repaired Markdown fences in both changelogs.
+- Preserved V0.3 as `AUTHORIZED_NOT_CONSUMED`; no physical Event State file was opened.
+## 2026-08-05 | BT-GATE-015 V0.3 single-use authorization prepared
+
+- Preserved the accepted non-physical Event State implementation.
+- Corrected the physical on-demand binding to the provider's 44-field row and
+  `event_state_record_fingerprint` semantics; owner/external pre-execution
+  confirmation remains required.
+- Issued V0.3 as `AUTHORIZED_NOT_CONSUMED`; the physical command remains
+  `NOT_APPROVED_PENDING_EXTERNAL_PREEXECUTION_REVIEW`.
+- Added 16 synthetic/canonical pre-execution regressions, including provider
+  ZIP integrity and physical-member exclusion checks.
+- No Event State physical file was opened and no physical run directory exists.
 
 ## 2026-08-05 | BT-GATE-015 non-physical external acceptance
 

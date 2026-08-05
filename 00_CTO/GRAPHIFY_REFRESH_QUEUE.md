@@ -2520,3 +2520,28 @@ Root action:
 ```text
 No se ejecuto rebuild Graphify durante esta reorganizacion. La validacion local de enlaces de imagen quedo en `_operation_logs/sersan_md_flatten_validation_20260716T105934Z/validation_manifest.json`.
 ```
+
+
+## 2026-08-05 - HIGH - Agent Graphify closeout policy
+
+Status: pending
+
+Scope:
+
+```text
+00_CTO governance and inherited Graphify branches
+```
+
+Affected files:
+
+```text
+00_CTO/LOCAL_RULES.md
+00_CTO/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Required Graphify action:
+
+```text
+Include this explicit update-or-pending closeout rule in the next official
+00_CTO governance leaf refresh. No graph rebuild was executed in this audit.
+```
