@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "C:\TSIS_Data\00_TSIS_Lab\04_experiments\EXP_DAS_FRONTSIDE_DISCOVERY_0001\scripts\render_das_visual_coordinate_solutions.py", line 1154, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\TSIS_Data\00_TSIS_Lab\04_experiments\EXP_DAS_FRONTSIDE_DISCOVERY_0001\scripts\render_das_visual_coordinate_solutions.py", line 1147, in main
+    outputs.append(render_solution_3_canvas(case, output_dir))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\TSIS_Data\00_TSIS_Lab\04_experiments\EXP_DAS_FRONTSIDE_DISCOVERY_0001\scripts\render_das_visual_coordinate_solutions.py", line 1010, in render_solution_3_canvas
+    draw.text((W - right - 245, prior_y + 8), "prior close", font=_font(31), fill=(75, 85, 99))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AlexJ\AppData\Local\Programs\Python\Python313\Lib\site-packages\PIL\ImageDraw.py", line 682, in text
+    draw_text(ink)
+    ~~~~~~~~~^^^^^
+  File "C:\Users\AlexJ\AppData\Local\Programs\Python\Python313\Lib\site-packages\PIL\ImageDraw.py", line 618, in draw_text
+    coord.append(int(xy[i]))
+                 ~~~^^^^^^^
+ValueError: cannot convert float NaN to integer
