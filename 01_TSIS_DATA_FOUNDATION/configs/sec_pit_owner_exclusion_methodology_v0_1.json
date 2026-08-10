@@ -1,0 +1,21 @@
+{
+  "methodology_id": "officer_director_explicit_affiliate_v0_1",
+  "methodology_version": "v0_1",
+  "experimental_execution_authorized": true,
+  "canonical_promotion_authorized": false,
+  "excluded_holder_roles": [
+    "CURRENT_OFFICER",
+    "CURRENT_DIRECTOR",
+    "EXPLICIT_AFFILIATE",
+    "CONTROL_PERSON"
+  ],
+  "generic_ownership_threshold_exclusion": null,
+  "institutional_positions_automatically_excluded": false,
+  "issued_common_only": true,
+  "derivatives_excluded_until_issued": true,
+  "aggregate_group_rows_additive": false,
+  "economic_position_deduplication_required": true,
+  "unresolved_position_policy": "BLOCK_POINT_ESTIMATE",
+  "missing_position_policy": "PRESERVE_NULL",
+  "profile_scope": "experimental_sec_pit_owner_exclusion"
+}

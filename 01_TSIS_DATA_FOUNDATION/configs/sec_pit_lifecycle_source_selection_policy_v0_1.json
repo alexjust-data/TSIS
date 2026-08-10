@@ -1,0 +1,15 @@
+{
+  "policy_id": "sec_pit_lifecycle_source_selection_policy_v0_1",
+  "status": "EXPERIMENTAL_NOT_CANONICAL",
+  "registration_forms": ["8-A", "8-A/A", "8-A12B", "8-A12B/A", "8-A12G", "8-A12G/A"],
+  "delisting_forms": ["25", "25-NSE"],
+  "item_3_01_forms": ["8-K", "8-K/A"],
+  "item_3_01_value": "3.01",
+  "negative_control_tickers": ["CNOBP"],
+  "all_tickers_root": "G:/TSIS/data/reference/all_tickers/*.parquet",
+  "metadata_run_prefix": "sec_pit_7t_metadata_v0_2",
+  "output_root": "D:/TSIS/fundamental_context/sec_pit_v0_1/replays/sec_pit_7t_lifecycle_v0_1",
+  "primary_documents_required_for_final_events": true,
+  "market_data_required_for_first_last_trade": true,
+  "promotion_status": "NOT_AUTHORIZED"
+}

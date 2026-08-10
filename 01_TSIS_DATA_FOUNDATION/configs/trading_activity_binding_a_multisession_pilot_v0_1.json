@@ -1,0 +1,67 @@
+{
+  "config_id": "trading_activity_binding_a_multisession_pilot_v0_1",
+  "config_version": "v0_1",
+  "artifact_status": "EXPERIMENTAL",
+  "promotion_status": "NOT_AUTHORIZED",
+  "scope": {
+    "scope_id": "reconciled_rth_event_time_research_only",
+    "pilot_scope_id": "aact_130_xnys_sessions_20240906_20250314",
+    "ticker": "AACT",
+    "instrument_id": "cik_ticker:0001853138:AACT",
+    "calendar": "XNYS",
+    "session_start": "2024-09-06",
+    "session_end": "2025-03-14",
+    "expected_session_count": 130,
+    "warmup_end": "2025-03-07",
+    "evaluation_start": "2025-03-10",
+    "evaluation_end": "2025-03-14",
+    "expected_evaluation_session_count": 5,
+    "decision_frequency_seconds": 1,
+    "decision_grid_boundary": "OPEN_EXCLUSIVE_CLOSE_EXCLUSIVE"
+  },
+  "binding": {
+    "binding_id": "trading_activity_binding_a_candidate_v0_1",
+    "feature_spec_id": "trading_activity_binding_a_experimental_physical_binding",
+    "feature_version": "v0_1",
+    "windows_seconds": [5, 15, 30, 60, 300],
+    "short_long_pairs_seconds": [[5, 60], [15, 300]],
+    "baseline_candidates": ["B20", "B60", "B120"],
+    "trade_eligibility_policy_id": "trading_activity_trade_condition_policy_matrix_candidate_v0_1",
+    "latency_policy_id": "LATENCY_PRIMARY_CONSERVATIVE_1000MS",
+    "simulated_latency_ms": 1000,
+    "source_dataset_id": "trades_ticks_prod_2005_2026_legacy_rth",
+    "source_schema_version": "legacy_market_parquet_v0_1",
+    "lineage_manifest_id": "trading_activity_binding_a_multisession_pilot_lineage_v0_1"
+  },
+  "sources": {
+    "raw_trade_root": "G:/TSIS/data/trades_ticks_prod_2005_2026",
+    "calendar_path": "G:/TSIS/data/data_foundation_outputs/market_calendar/market_calendar_v0_1.parquet",
+    "calendar_expected_sha256": "cbf1879261866d980c5a8542fadf683dbc91f96b80b7865055417a16d1e6e87c",
+    "calendar_build_run_id": "market_calendar_v0_1_20260630T193931Z",
+    "instrument_master_path": "G:/TSIS/data/data_foundation_outputs/instrument_master/instrument_master_v0_1.parquet",
+    "instrument_master_expected_sha256": "69104387d2607306c3fa1740573d130db5e7c30b1d1527d3ee8a8d2b4d53c2d2",
+    "instrument_master_build_run_id": "instrument_master_v0_1_20260621T145725Z",
+    "condition_policy_matrix_path": "C:/TSIS_Data/tests/third_party_evidence/massive/market_operations/snapshot_20260806T220504Z/policy_matrix_candidate_v0_1/trading_activity_trade_condition_policy_matrix_candidate_v0_1.csv",
+    "condition_policy_matrix_expected_sha256": "b2f208496809cb970437d04024d93bfb98780b54b5d790091362aa145eb9635f",
+    "foundation_57f_shards_root": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/trades_v2_materialized/trades_current_cd_merged/root_cause_exports/file_acceptance_cache_lt1b_full_clean_fast_same_schema/raw_metrics_shards",
+    "acquisition_manifest_root": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/trades_lt_1b_download"
+  },
+  "outputs": {
+    "heavy_output_root": "G:/TSIS/data/data_foundation_outputs/trading_activity_binding_a_multisession_pilot",
+    "runtime_root": "G:/TSIS/data/data_ops_manifests/trading_activity_binding_a_multisession_pilot",
+    "pointer_root": "C:/TSIS_Data/tests/test_runs",
+    "parquet_compression": "zstd",
+    "overwrite_policy": "NEVER",
+    "resume_policy": "RESUME_HASH_VALIDATED_COMPLETE_PARTITIONS"
+  },
+  "operation": {
+    "heartbeat_interval_seconds": 60,
+    "heartbeat_stale_after_seconds": 180,
+    "maximum_projected_output_gib": 25,
+    "minimum_free_space_gib": 75,
+    "minimum_free_space_multiplier": 3,
+    "partition_batch_seconds": 900,
+    "kernel_equivalence_seed": 20260807,
+    "kernel_equivalence_random_samples_per_session": 20
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "config_path": "G:\\TSIS\\data\\data_ops_manifests\\ta3_ba_v02_probe3\\ta3ba02r_s0_20260810\\block_configs\\3244b2db5e3f87198bd321417948efea.json",
+  "config_sha256": "57020de20fe9fe5a4b4c2c655c359ba179d22b80809986b8076a07a48ea22c3c",
+  "output_run_root": "G:\\TSIS\\data\\DATA_FOUNDATION_OUTPUTS\\ta3_ba_v02_probe3\\run_id=ta3ba02r_s0_20260810__3244b2db5e3f87198bd321417948efea",
+  "promotion_status": "NOT_AUTHORIZED",
+  "row_counts": {
+    "baseline_rows": 9000,
+    "current_state_rows": 39000,
+    "multiscale_rows": 15600
+  },
+  "run_id": "ta3ba02r_s0_20260810__3244b2db5e3f87198bd321417948efea",
+  "run_summary_path": "G:\\TSIS\\data\\DATA_FOUNDATION_OUTPUTS\\ta3_ba_v02_probe3\\run_id=ta3ba02r_s0_20260810__3244b2db5e3f87198bd321417948efea\\metadata\\run_summary.json",
+  "runtime_run_root": "G:\\TSIS\\data\\data_ops_manifests\\ta3_ba_v02_probe3\\ta3ba02r_s0_20260810\\blocks\\ta3ba02r_s0_20260810__3244b2db5e3f87198bd321417948efea",
+  "status": "COMPLETE"
+}

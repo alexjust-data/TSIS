@@ -1,0 +1,664 @@
+{
+    "document_id":  "trading_activity_binding_a_rejected_run_disposition_20260808",
+    "created_at":  "2026-08-09T22:52:19.1572694Z",
+    "decision":  "REJECT_AND_DELETE_PHYSICAL_OUTPUTS",
+    "reason":  [
+                   "Binding A v0.2 specified duration compression was absent",
+                   "baseline schema was data-dependent",
+                   "required metadata and lineage version were nonconformant"
+               ],
+    "replacement":  "Binding A v0.2 rebuilt from zero after four-shard probe certification PASS",
+    "item_count":  130,
+    "items":  [
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s0of4__0a5bb6d15089567e0a29f82cdb2cd801",
+                      "bytes":  96391786
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s0of4__188731d366e9fca9ecf4ecc3cae3d39e",
+                      "bytes":  93066677
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s0of4__234b9490eb9910619ca314161d49c62c",
+                      "bytes":  104516921
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s0of4__28b3a3d69803950ebc1a54a3a57c9a53",
+                      "bytes":  88460378
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s0of4__294aae30a6d66e4a513bae7b32a4817a",
+                      "bytes":  113441564
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s0of4__3244b2db5e3f87198bd321417948efea",
+                      "bytes":  338568783
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s0of4__33f528183d92f4bacc8eef57236cb1cf",
+                      "bytes":  87360448
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s0of4__3f738d35f7eeefd4a6fc597de003b2dc",
+                      "bytes":  102566180
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s0of4__5410ac51b93a3c6bf7aaf416eb0d6a79",
+                      "bytes":  94155607
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s0of4__5586afe42e27012be5cf654dce8fb62b",
+                      "bytes":  85260831
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s0of4__5a2b27de1b59f496c7ce4befcf9c0b22",
+                      "bytes":  114404761
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s0of4__65bdf52a5c35864a094ae8d0e797c681",
+                      "bytes":  101701414
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s0of4__69212f333dadb1180a1a7d5e2e8cffc9",
+                      "bytes":  97365710
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s0of4__7890242dcfd1a15e4ef7de66ca6e48c4",
+                      "bytes":  93872029
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s0of4__8664e8f4f332c49ec011fe29c116473c",
+                      "bytes":  94379439
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s0of4__8b85181bfd7a88e73690f34abf065a09",
+                      "bytes":  93787367
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s0of4__ad8dc620523d6bda3cb49164e7ddcf91",
+                      "bytes":  639637834
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s0of4__bd028be9334b2f69ab9fdaa4166a67de",
+                      "bytes":  759816030
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s0of4__ca41da509927dcd3e09a45ad933081a5",
+                      "bytes":  91937858
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__0229c8c928182672b2d1fbbb1ef66f20",
+                      "bytes":  97043180
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__085d39eb43c98ab33c889e5e677b00a8",
+                      "bytes":  87491899
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__10cd65246742a9a6ea00120dba0ccd43",
+                      "bytes":  115422018
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__13425c22d78d1f7dfcb7998657b4d456",
+                      "bytes":  118381077
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__1408f51fb65fb54d41a48059446fdc03",
+                      "bytes":  94108504
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__17f18db200693d90e84b23ce2c543da7",
+                      "bytes":  88376940
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__2e1fccf38a291123fbbd0ba2e360a64e",
+                      "bytes":  97429872
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__401fd5c084d0dcb1002c94e7c0d62de3",
+                      "bytes":  87760987
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__49bb0020e88992e03694001dda5561f3",
+                      "bytes":  94119788
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__4f77a70147801b6be9a846c1b8486a9e",
+                      "bytes":  102463925
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__5421a0a77475e9d31d542084e000a729",
+                      "bytes":  120309339
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__558b3906fddc7430fbc498d106625423",
+                      "bytes":  115662227
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__56b60dbd511444a851128f63d33a621e",
+                      "bytes":  86847868
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__660c2a32e309aa8ca8542673f14715e3",
+                      "bytes":  102697335
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__6eaa5852f010aa6b6190789fae53fa4a",
+                      "bytes":  98997517
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__7310ef2a39ca9697f0553bda24e4c412",
+                      "bytes":  98967363
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__7f15dd7db8670902145b3042b71cdb2f",
+                      "bytes":  100664435
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__801b92f9f23dd5a12726935f6caa0463",
+                      "bytes":  89478119
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__8bbc8f706c406637c02ba571ca364e51",
+                      "bytes":  98370680
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__9634743687d5a4bbbf74a193e8f1e918",
+                      "bytes":  96291721
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__989cdd745163f7de3cab584ce5add547",
+                      "bytes":  97592059
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__9ac78aacdc2953ecbf5869ac510e04d0",
+                      "bytes":  93507181
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__9c76af9932b1330f76570223be580187",
+                      "bytes":  101853898
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__9dcb66ea0de1ad6741ebded2206ef5b2",
+                      "bytes":  586177559
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__a13d427087381465634b7cde9671308f",
+                      "bytes":  88464553
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__a1c503c514a85cd1da468ce145faf1ad",
+                      "bytes":  94067180
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__ab05bd038b9ea269b7e25db10f5cc5bc",
+                      "bytes":  81954221
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__ae1733a0defd1e5d3e4364c890ebc727",
+                      "bytes":  108895835
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__b57fcc7e59bd14f6acb40d14d8f434a0",
+                      "bytes":  96032909
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__c3fec086f38d7c0798fb665d599962f4",
+                      "bytes":  93132434
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__c756dc6a1c721f5e50e05fcba75ce47c",
+                      "bytes":  96072451
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__d03b62bcf37a36eb325f87a183cdb11b",
+                      "bytes":  100199768
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__d7967aa84a22165fe4cf027f39fd5873",
+                      "bytes":  97943460
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__dfbb869f1a56650fdca234381cce1b82",
+                      "bytes":  86192411
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__e2a102937bc5290df688af1add3bd097",
+                      "bytes":  85173331
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__ee0ed5a0d966fa1f4cdc2db1bc0a78a6",
+                      "bytes":  95326894
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__fc5ded5ff1b6abbd64d83ded27dfcee4",
+                      "bytes":  97424992
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s1of4__ffa948f5136195a0fa19f759521ae525",
+                      "bytes":  100597087
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s2of4__1b24fb5e32fb9544ddd60f4644618eb2",
+                      "bytes":  93134564
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s3of4__7379ceaa9bda6ff94fa23dfdcb828b5e",
+                      "bytes":  86176880
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s3of4__76fbf6d1427d7a5d513482400b407a22",
+                      "bytes":  92175386
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s3of4__91e9f5833bde8ec4fb505773fb07b539",
+                      "bytes":  86142859
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s3of4__d1c5e6ec206148ab59c63ed1daf30f33",
+                      "bytes":  101489024
+                  },
+                  {
+                      "kind":  "heavy_output",
+                      "path":  "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_broad_20260808_s3of4__d6297b8a9385f4b89886a76e734a3bf6",
+                      "bytes":  77118228
+                  },
+                  {
+                      "kind":  "runtime",
+                      "path":  "G:\\TSIS\\data\\data_ops_manifests\\trading_activity_ta3_binding_a\\trading_activity_ta3_binding_a_broad_20260808_s0of4",
+                      "bytes":  9903662
+                  },
+                  {
+                      "kind":  "runtime",
+                      "path":  "G:\\TSIS\\data\\data_ops_manifests\\trading_activity_ta3_binding_a\\trading_activity_ta3_binding_a_broad_20260808_s1of4",
+                      "bytes":  13892957
+                  },
+                  {
+                      "kind":  "runtime",
+                      "path":  "G:\\TSIS\\data\\data_ops_manifests\\trading_activity_ta3_binding_a\\trading_activity_ta3_binding_a_broad_20260808_s2of4",
+                      "bytes":  757165
+                  },
+                  {
+                      "kind":  "runtime",
+                      "path":  "G:\\TSIS\\data\\data_ops_manifests\\trading_activity_ta3_binding_a\\trading_activity_ta3_binding_a_broad_20260808_s3of4",
+                      "bytes":  1731269
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s0of4__0a5bb6d15089567e0a29f82cdb2cd801",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s0of4__188731d366e9fca9ecf4ecc3cae3d39e",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s0of4__234b9490eb9910619ca314161d49c62c",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s0of4__28b3a3d69803950ebc1a54a3a57c9a53",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s0of4__294aae30a6d66e4a513bae7b32a4817a",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s0of4__3244b2db5e3f87198bd321417948efea",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s0of4__33f528183d92f4bacc8eef57236cb1cf",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s0of4__3f738d35f7eeefd4a6fc597de003b2dc",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s0of4__5410ac51b93a3c6bf7aaf416eb0d6a79",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s0of4__5586afe42e27012be5cf654dce8fb62b",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s0of4__5a2b27de1b59f496c7ce4befcf9c0b22",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s0of4__65bdf52a5c35864a094ae8d0e797c681",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s0of4__69212f333dadb1180a1a7d5e2e8cffc9",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s0of4__7890242dcfd1a15e4ef7de66ca6e48c4",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s0of4__8664e8f4f332c49ec011fe29c116473c",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s0of4__8b85181bfd7a88e73690f34abf065a09",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s0of4__ad8dc620523d6bda3cb49164e7ddcf91",
+                      "bytes":  1234
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s0of4__bd028be9334b2f69ab9fdaa4166a67de",
+                      "bytes":  null
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s0of4__ca41da509927dcd3e09a45ad933081a5",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__0229c8c928182672b2d1fbbb1ef66f20",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__085d39eb43c98ab33c889e5e677b00a8",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__10cd65246742a9a6ea00120dba0ccd43",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__13425c22d78d1f7dfcb7998657b4d456",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__1408f51fb65fb54d41a48059446fdc03",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__17f18db200693d90e84b23ce2c543da7",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__2e1fccf38a291123fbbd0ba2e360a64e",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__401fd5c084d0dcb1002c94e7c0d62de3",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__49bb0020e88992e03694001dda5561f3",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__4f77a70147801b6be9a846c1b8486a9e",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__5421a0a77475e9d31d542084e000a729",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__558b3906fddc7430fbc498d106625423",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__56b60dbd511444a851128f63d33a621e",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__660c2a32e309aa8ca8542673f14715e3",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__6eaa5852f010aa6b6190789fae53fa4a",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__7310ef2a39ca9697f0553bda24e4c412",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__7f15dd7db8670902145b3042b71cdb2f",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__801b92f9f23dd5a12726935f6caa0463",
+                      "bytes":  null
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__8bbc8f706c406637c02ba571ca364e51",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__9634743687d5a4bbbf74a193e8f1e918",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__989cdd745163f7de3cab584ce5add547",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__9ac78aacdc2953ecbf5869ac510e04d0",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__9c76af9932b1330f76570223be580187",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__9dcb66ea0de1ad6741ebded2206ef5b2",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__a13d427087381465634b7cde9671308f",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__a1c503c514a85cd1da468ce145faf1ad",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__ab05bd038b9ea269b7e25db10f5cc5bc",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__ae1733a0defd1e5d3e4364c890ebc727",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__b57fcc7e59bd14f6acb40d14d8f434a0",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__c3fec086f38d7c0798fb665d599962f4",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__c756dc6a1c721f5e50e05fcba75ce47c",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__d03b62bcf37a36eb325f87a183cdb11b",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__d7967aa84a22165fe4cf027f39fd5873",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__dfbb869f1a56650fdca234381cce1b82",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__e2a102937bc5290df688af1add3bd097",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__ee0ed5a0d966fa1f4cdc2db1bc0a78a6",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__fc5ded5ff1b6abbd64d83ded27dfcee4",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s1of4__ffa948f5136195a0fa19f759521ae525",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s2of4__1b24fb5e32fb9544ddd60f4644618eb2",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s3of4__7379ceaa9bda6ff94fa23dfdcb828b5e",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s3of4__76fbf6d1427d7a5d513482400b407a22",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s3of4__91e9f5833bde8ec4fb505773fb07b539",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s3of4__d1c5e6ec206148ab59c63ed1daf30f33",
+                      "bytes":  1233
+                  },
+                  {
+                      "kind":  "pointer",
+                      "path":  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_runs\\trading_activity_ta3_binding_a_broad_20260808_s3of4__d6297b8a9385f4b89886a76e734a3bf6",
+                      "bytes":  1233
+                  }
+              ]
+}

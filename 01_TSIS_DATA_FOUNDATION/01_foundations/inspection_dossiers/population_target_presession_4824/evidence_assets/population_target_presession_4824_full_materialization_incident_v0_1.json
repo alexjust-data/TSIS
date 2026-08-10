@@ -1,0 +1,14 @@
+{
+    "incident_id":  "population_target_presession_4824_materialization_heartbeat_lock_v0_1",
+    "run_id":  "population_target_presession_4824_candidate_v0_1_experimental_20260807T170430Z",
+    "incident_status":  "RECONCILED",
+    "observed_at_utc":  "2026-08-07T17:18:58.6689829Z",
+    "failed_component":  "wrapper_heartbeat_atomic_replace",
+    "failure_message":  "ExcepciÃ³n al llamar a \"Replace\" con los argumentos \"4\": \"El proceso no puede obtener acceso al archivo porque estÃ¡ siendo utilizado en otro proceso.\"",
+    "materializer_survived":  true,
+    "materializer_stderr_empty":  true,
+    "candidate_manifest_written":  true,
+    "manual_validation_executed":  true,
+    "validation_gate":  "PASS",
+    "required_fix":  "retry heartbeat replacement and prevent telemetry exceptions from terminating wrapper"
+}

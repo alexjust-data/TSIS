@@ -1,0 +1,39 @@
+{
+  "api_key_persisted": false,
+  "artifacts": {
+    "conditions_csv": {
+      "path": "C:\\TSIS_Data\\tests\\third_party_evidence\\massive\\market_operations\\snapshot_20260806T220504Z\\massive_stock_trade_conditions_normalized_v0_1.csv",
+      "sha256": "6325f5e61f783d20703a6ed188b6bf693d9d77c12c8e1050422195d8e8237398",
+      "size_bytes": 16079
+    },
+    "conditions_raw_json": {
+      "path": "C:\\TSIS_Data\\tests\\third_party_evidence\\massive\\market_operations\\snapshot_20260806T220504Z\\massive_stock_trade_conditions_raw_v0_1.json",
+      "sha256": "596ad0f2335a0dcafa64f1a47515778ecb47c9680da458a111cf9354208f3038",
+      "size_bytes": 28592
+    },
+    "exchanges_csv": {
+      "path": "C:\\TSIS_Data\\tests\\third_party_evidence\\massive\\market_operations\\snapshot_20260806T220504Z\\massive_stock_exchanges_normalized_v0_1.csv",
+      "sha256": "fc0e4785bcff1e78b7541272714b019c69e062b099533779a7cf5be9a9897cbf",
+      "size_bytes": 2461
+    },
+    "exchanges_raw_json": {
+      "path": "C:\\TSIS_Data\\tests\\third_party_evidence\\massive\\market_operations\\snapshot_20260806T220504Z\\massive_stock_exchanges_raw_v0_1.json",
+      "sha256": "382988cce66ff7c1b648633b5c8f3346d655183f69281d832533551fd7360190",
+      "size_bytes": 7974
+    }
+  },
+  "asset_class": "stocks",
+  "canonical_promotion": "NOT_AUTHORIZED",
+  "captured_at_utc": "2026-08-06T22:05:31.281301+00:00",
+  "condition_count": 55,
+  "condition_data_type": "trade",
+  "condition_page_count": 1,
+  "condition_terminal_status": "OK",
+  "exchange_count": 27,
+  "exchange_page_count": 1,
+  "exchange_terminal_status": "OK",
+  "massive_backfill_state": "DEFERRED_PENDING_MASSIVE_BACKFILL",
+  "provider": "Massive",
+  "provider_effective_history": "NOT_AVAILABLE_FROM_REFERENCE_ENDPOINT",
+  "snapshot_id": "massive_stock_market_operations_reference_snapshot_v0_1"
+}

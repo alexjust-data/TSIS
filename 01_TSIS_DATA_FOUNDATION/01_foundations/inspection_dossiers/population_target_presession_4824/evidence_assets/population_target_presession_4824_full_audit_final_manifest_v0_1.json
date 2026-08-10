@@ -1,0 +1,27 @@
+{
+    "run_id":  "population_target_presession_4824_full_audit_20260807T164922Z",
+    "final_status":  "COMPLETE",
+    "started_at_utc":  "2026-08-07T16:49:39.2762680Z",
+    "ended_at_utc":  "2026-08-07T16:49:50.1791060Z",
+    "duration_seconds":  10.903,
+    "exit_code":  0,
+    "success_rule":  "exit_code=0 and output JSON exists",
+    "output_root":  "G:\\TSIS\\data\\data_ops_manifests\\population_target_presession_4824\\population_target_presession_4824_full_audit_20260807T164922Z",
+    "output_json":  "G:\\TSIS\\data\\data_ops_manifests\\population_target_presession_4824\\population_target_presession_4824_full_audit_20260807T164922Z\\population_target_presession_4824_g0_g3_full_history_v0_1.json",
+    "output_json_sha256":  "e9e19296c81caf28466198f91cacade14aabb4b092dea017828959064fccd2c9",
+    "stdout_log":  "G:\\TSIS\\data\\data_ops_manifests\\population_target_presession_4824\\population_target_presession_4824_full_audit_20260807T164922Z\\stdout.log",
+    "stderr_log":  "G:\\TSIS\\data\\data_ops_manifests\\population_target_presession_4824\\population_target_presession_4824_full_audit_20260807T164922Z\\stderr.log",
+    "g0":  "PASS",
+    "g1":  "PASS_WITH_RESTRICTIONS",
+    "g2":  "PASS_WITH_RESTRICTIONS",
+    "g3":  "PASS_WITH_RESTRICTIONS",
+    "selector_gate":  "NOT_EVALUATED_PENDING_FIXTURES_AND_PROBE",
+    "warnings":  [
+                     "read_only_proxy_fit_audit_only",
+                     "no_selector_materialization",
+                     "no_ta3_sample_freeze"
+                 ],
+    "failure_reason":  null,
+    "resume_instructions":  "create a new unique run_id after repairing any failed gate",
+    "promotion_state":  "EVIDENCE_ONLY_NOT_CANONICAL"
+}

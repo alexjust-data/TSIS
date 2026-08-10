@@ -1,0 +1,63 @@
+{
+  "config_id": "population_target_presession_4824_audit_v0_1",
+  "contract_id": "population_target_presession_4824_selector_contract_v0_2",
+  "parent_universe_id": "lt1b_universe_v0_1",
+  "parent_universe_expected_ticker_count": 4824,
+  "candidate_dataset_id": "population_target_presession_4824_candidate_v0_1",
+  "cutoff": {
+    "local_time": "04:00:00",
+    "timezone": "America/New_York",
+    "availability_operator": "strictly_before",
+    "date_only_proxy_rule": "source_as_of_date < session_date",
+    "date_only_proxy_label": "DATE_ONLY_CONSERVATIVE_AVAILABILITY"
+  },
+  "reference_price": {
+    "field": "prior_close",
+    "semantic_name": "PRESESSION_REFERENCE_PRICE",
+    "source_price_view": "daily_raw",
+    "minimum_inclusive": 0.5,
+    "maximum_inclusive": 20.0
+  },
+  "market_cap_proxy": {
+    "threshold_exclusive": 100000000.0,
+    "formula": "PRESESSION_REFERENCE_PRICE * SELECTED_WEIGHTED_AVERAGE_SHARES_PROXY"
+  },
+  "share_selection_candidates": [
+    {
+      "policy_id": "S1_DILUTED_FIRST",
+      "priority": [
+        "diluted_shares_outstanding",
+        "basic_shares_outstanding"
+      ]
+    },
+    {
+      "policy_id": "S2_BASIC_FIRST",
+      "priority": [
+        "basic_shares_outstanding",
+        "diluted_shares_outstanding"
+      ]
+    }
+  ],
+  "shares_ttl_candidates_days": [
+    90,
+    180,
+    365
+  ],
+  "float_policy": {
+    "membership_predicate": false,
+    "missingness_blocks_ta3": false,
+    "role": "SUPPORTING_OR_CONDITIONAL_PIT_CONTEXT"
+  },
+  "possible_gate_verdicts": [
+    "PASS_WITH_RESTRICTIONS",
+    "FAIL"
+  ],
+  "claims": {
+    "full_historical_us_lt100m_population": false,
+    "exact_point_shares_outstanding": false,
+    "historical_float": false,
+    "session_open_market_cap": false,
+    "wake_up_detection": false,
+    "canonical_feature_promotion": false
+  }
+}

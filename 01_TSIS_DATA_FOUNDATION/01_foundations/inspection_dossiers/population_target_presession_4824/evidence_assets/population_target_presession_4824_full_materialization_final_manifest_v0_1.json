@@ -1,0 +1,52 @@
+{
+    "run_id":  "population_target_presession_4824_candidate_v0_1_experimental_20260807T170430Z",
+    "final_status":  "COMPLETE_RECONCILED",
+    "started_at_utc":  "2026-08-07T17:04:43.8852389Z",
+    "ended_at_utc":  "2026-08-07T17:33:06.5704583Z",
+    "normal_wrapper_completion":  false,
+    "wrapper_failure":  "heartbeat_latest_json_replace_lock",
+    "materializer_process_completed":  true,
+    "materializer_exit_code":  "UNAVAILABLE_AFTER_WRAPPER_FAILURE",
+    "materializer_stderr_empty":  true,
+    "candidate_parquet":  "G:\\TSIS\\data\\data_foundation_outputs\\population_target_presession_4824_candidate\\population_target_presession_4824_candidate_v0_1_experimental_20260807T170430Z\\population_target_presession_4824_candidate_v0_1.parquet",
+    "candidate_sha256":  "a777b3338d1ff2f2304e768113a5a14728d16372553081b144c943a93fa0702c",
+    "candidate_size_bytes":  464353246,
+    "candidate_manifest":  "G:\\TSIS\\data\\data_foundation_outputs\\population_target_presession_4824_candidate\\population_target_presession_4824_candidate_v0_1_experimental_20260807T170430Z\\population_target_presession_4824_candidate_v0_1_manifest.json",
+    "candidate_summary":  {
+                              "dataset_id":  "population_target_presession_4824_candidate_v0_1",
+                              "denominator_preserved":  true,
+                              "output_rows":  7369699,
+                              "population_membership_state_counts":  {
+                                                                         "CORPORATE_ACTION_REVIEW":  3076,
+                                                                         "ELIGIBLE_UNDER_DECLARED_PROXY":  1417316,
+                                                                         "INELIGIBLE_MARKET_CAP_PROXY":  1689229,
+                                                                         "INELIGIBLE_PRICE":  2360588,
+                                                                         "STALE_SHARES_PROXY":  201243,
+                                                                         "UNAVAILABLE_REFERENCE_PRICE":  671242,
+                                                                         "UNAVAILABLE_SHARES_PROXY":  1027005
+                                                                     },
+                              "requested_rows":  7369699,
+                              "scope":  {
+                                            "session_dates":  null,
+                                            "session_end":  null,
+                                            "session_start":  null,
+                                            "tickers":  null
+                                        },
+                              "share_policy":  "S1_DILUTED_FIRST",
+                              "ttl_days":  180
+                          },
+    "manual_validator_exit_code":  0,
+    "validation_gate":  "PASS",
+    "validation_json":  "G:\\TSIS\\data\\data_foundation_outputs\\population_target_presession_4824_candidate\\population_target_presession_4824_candidate_v0_1_experimental_20260807T170430Z\\population_target_presession_4824_candidate_validation_v0_2.json",
+    "validation_sha256":  "8c0ff06e8c1689b364bb2cd7dd800d5fd04fa45e4824fce1c1f355ea9c0405ec",
+    "telemetry_incident":  "G:\\TSIS\\data\\data_foundation_outputs\\population_target_presession_4824_candidate\\population_target_presession_4824_candidate_v0_1_experimental_20260807T170430Z\\telemetry_incident_v0_1.json",
+    "promotion_state":  "VALIDATED_EXPERIMENTAL_CANDIDATE_NOT_CANONICAL",
+    "ta3_sample_freeze_state":  "AUTHORIZED_NEXT_STEP",
+    "reconciliation_basis":  [
+                                 "candidate manifest exists",
+                                 "candidate hash matches manifest",
+                                 "7,369,699 rows preserve denominator",
+                                 "independent validator 21/21 PASS",
+                                 "materializer stderr empty"
+                             ]
+}

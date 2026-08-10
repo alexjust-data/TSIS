@@ -118,6 +118,45 @@ Por ventana dedicada:
 
 ## Entradas activas
 
+### GFQ-20260810-001 - Market States SEC PIT BNAI G7/G8 handoff
+
+Status: pending
+Severity: MEDIUM
+Slice:
+
+```text
+00_CTO/04_MARKET_STATES_CREATION
+SEC PIT Fundamental Context lane
+```
+
+Reason:
+
+```text
+The one-ticker SEC PIT lane progressed from a future acquisition plan to an
+executed BNAI G7/G8 evidence pipeline. Current recovery must expose G7 partial
+owner-exclusion estimates, the G8 EFFECT-to-component condition ledger, explicit
+NULL tradability and the prohibition on canonical or scale promotion.
+```
+
+Changed paths:
+
+```text
+00_CTO/04_MARKET_STATES_CREATION/AGENTS.md
+00_CTO/04_MARKET_STATES_CREATION/README.md
+00_CTO/04_MARKET_STATES_CREATION/CURRENT_STATUS_AND_HANDOFF_v0_10.md
+00_CTO/04_MARKET_STATES_CREATION/CHANGELOG.md
+00_CTO/04_MARKET_STATES_CREATION/_DESCAGRA_DATOS_NECESARIA_/SEC_PIT_IMPLEMENTATION_READOUT_v0_1.md
+```
+
+Recommended action:
+
+```text
+Refresh the Market States Creation leaf in the next controlled Graphify batch.
+Verify that SEC PIT, G7 owner exclusion or G8 tradability queries return the
+implementation readout and current handoff v0_10 before historical handoffs.
+```
+
+
 ### GFQ-20260730-001 - State provider-consumer recovery and BT-GATE-014 handoff
 
 Status: pending
@@ -722,7 +761,7 @@ Cambios:
 
 Motivo:
 
-- separa enseÃ±anzas fuente por trader de estrategias/factores TSIS propios;
+- separa enseÃƒÂ±anzas fuente por trader de estrategias/factores TSIS propios;
 - mueve documentos, assets e indices de Steven Dux fuera de `LONG/stevenDux`,
   `SHORT/stevenDux`, `FACTORS/stevenDux` y `source_assets/steven_dux`;
 - mantiene `LONG/`, `SHORT/` y `FACTORS/` como espacios TSIS para estrategias
@@ -2545,3 +2584,206 @@ Required Graphify action:
 Include this explicit update-or-pending closeout rule in the next official
 00_CTO governance leaf refresh. No graph rebuild was executed in this audit.
 ```
+
+## 2026-08-08 - MEDIUM - Market States TA-3 runtime recovery handoff
+
+Status: pending
+
+Scope:
+
+```text
+00_CTO/04_MARKET_STATES_CREATION
+```
+
+Affected files:
+
+```text
+CURRENT_STATUS_AND_HANDOFF_v0_9.md
+README.md
+AGENTS.md
+CHANGELOG.md
+```
+
+Reason:
+
+```text
+TA-3 broad Binding A moved from launch-ready to active controlled execution.
+The handoff now records the resume-dispatch correction, two-worker memory policy,
+preserved shard outputs, monitor semantics and the parallel SEC filing lane.
+```
+
+Required Graphify action:
+
+```text
+Refresh the Market States Creation leaf at the next governed CTO graph window.
+No Graphify rebuild was executed for this runtime-status milestone.
+```
+
+## 2026-08-08 - HIGH - Experimental-to-canonical representation lifecycle
+
+Status: pending
+
+Scope:
+
+```text
+00_CTO/04_MARKET_STATES_CREATION
+```
+
+Affected files:
+
+```text
+EXPERIMENTAL_TO_CANONICAL_REPRESENTATION_LIFECYCLE_v0_1.md
+CURRENT_STATUS_AND_HANDOFF_v0_9.md
+README.md
+AGENTS.md
+CHANGELOG.md
+```
+
+Reason:
+
+```text
+The module now explicitly separates restricted experimental binding outputs,
+canonical specification and builder admission, full-history production
+materialization, and reusable backtest consumption. It also distinguishes
+feature horizons, PIT baseline lookbacks and calendar coverage.
+```
+
+Required Graphify action:
+
+```text
+Refresh the Market States Creation lifecycle and artifact relationships at the
+next governed CTO graph window. No Graphify rebuild was executed for this
+documentation milestone.
+```
+## 2026-08-09 - MEDIUM - Daily PIT fundamental-context reference
+
+Status: pending
+
+Scope:
+
+```text
+00_CTO/04_MARKET_STATES_CREATION
+```
+
+Affected files:
+
+```text
+_DESCAGRA_DATOS_NECESARIA_/DAILY_PIT_FUNDAMENTAL_CONTEXT_OUTPUTS_REFERENCE_v0_1.md
+README.md
+CHANGELOG.md
+```
+
+Reason:
+
+```text
+Added the active daily reference separating reproducible PIT estimates from
+exact observed facts for shares outstanding, float, ownership, market cap,
+enterprise value and net cash per share.
+```
+
+Required Graphify action:
+
+```text
+Refresh the Fundamental Context and Universe Resolver reference relationships at
+the next governed CTO graph window. No Graphify rebuild was executed.
+```
+
+## 2026-08-09 - HIGH - SEC PIT fundamental acquisition and resolution contract
+
+Status: pending
+
+Scope:
+
+```text
+00_CTO/04_MARKET_STATES_CREATION/_DESCAGRA_DATOS_NECESARIA_
+```
+
+Affected files:
+
+```text
+SEC_PIT_FUNDAMENTAL_ACQUISITION_AND_RESOLUTION_CONTRACT_v0_1.md
+DAILY_PIT_FUNDAMENTAL_CONTEXT_OUTPUTS_REFERENCE_v0_1.md
+../README.md
+../CHANGELOG.md
+```
+
+Reason:
+
+```text
+Created the governing contract for selective SEC acquisition, historical EDGAR
+availability, O/S and ownership resolution, float methodologies, corporate-
+action-aligned market cap, 13F context, retention tiers, pilot gates and storage
+capacity certification before scale-out.
+```
+
+Required Graphify action:
+
+```text
+Refresh Fundamental Context, Universe Resolver, source-acquisition and PIT
+resolution relationships at the next governed CTO graph window. No Graphify
+rebuild was executed.
+```
+## 2026-08-09 - HIGH - TA-3 Binding A provisional conformance audit
+
+Status: pending
+
+Scope:
+
+```text
+00_CTO/04_MARKET_STATES_CREATION/VARIABLES_FEATURES
+01_TSIS_DATA_FOUNDATION/scripts
+```
+
+Affected files:
+
+```text
+TRADING_ACTIVITY_TA3_BINDING_A_SPEC_IMPLEMENTATION_CONFORMANCE_READOUT_v0_1.md
+audit_trading_activity_ta3_binding_a_conformance.py
+trading_activity_ta3_binding_a_conformance_provisional_v0_1.json
+```
+
+Reason:
+
+```text
+Recorded the provisional column-level relationship between Binding A v0.2,
+the active legacy-v0.1 implementation and finalized TA-3 schemas. The readout
+identifies missing duration compression, stale lineage IDs, unstable baseline
+schemas and missing coverage/duplicate policy metadata.
+```
+
+Required Graphify action:
+
+```text
+Refresh Trading Activity Binding A specification, implementation, evidence and
+readout relationships after TA-3 completes. No Graphify rebuild was executed.
+```
+
+## 2026-08-10 - SEC PIT G8 assignment-event reconciliation v0_43
+
+- Scope: `01_TSIS_DATA_FOUNDATION/scripts/sec_pit`, SEC PIT tests, Market States Creation readout/handoff/changelogs.
+- Reason: new Assignment Agreement extraction, event reconciliation and governed v0_43 evidence.
+- Status: `PENDING_REFRESH`.
+- Semantic note: 23 source observations reconcile to five economic events; G8 remains blocked and tradability remains NULL.
+## 2026-08-10 - HIGH - SEC PIT G8-G10 governed pilot progression
+
+Status: pending
+
+Scope: Market States Fundamental Context plus Data Foundation `scripts/sec_pit`.
+
+Reason: added lockup-lifecycle evidence, split-aligned O/S and corporate-action-
+aligned presession reference market cap. Run v0_57 was rejected by first-output
+missingness audit; corrected v0_58 is `PASS_WITH_RESTRICTIONS`. G8 remains blocked
+and no tradability value was invented.
+
+Required action: refresh SEC PIT acquisition, evidence, resolver, run and gate
+relationships at the next governed Graphify window.
+## 2026-08-10 - HIGH - SEC PIT G11-G16 pilot closeout
+
+Status: pending
+
+Reason: historical CUSIP intervals, explicit blocked 13F source gate, causal core
+EV context and daily change-explanation ledger were implemented and materialized
+for BNAI. G12 remains unavailable rather than zero; scale-out remains prohibited.
+
+Required action: refresh Fundamental Context identity, 13F, balance-sheet and
+change-explanation relationships at the next governed Graphify window.

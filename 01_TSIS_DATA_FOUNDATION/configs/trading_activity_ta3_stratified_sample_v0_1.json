@@ -1,0 +1,89 @@
+{
+  "config_id": "trading_activity_ta3_stratified_sample_v0_1",
+  "config_version": "v0_1",
+  "artifact_status": "EXPERIMENTAL",
+  "promotion_status": "NOT_AUTHORIZED",
+  "sample_seed": "20260807",
+  "scope": {
+    "scope_id": "legacy_rth_reconciled_event_time_research_only",
+    "development_start": "2011-01-03",
+    "development_end": "2022-12-30",
+    "validation_lockbox_start": "2023-01-03",
+    "validation_lockbox_end": "2024-12-31",
+    "engineering_exposed_start": "2025-01-02",
+    "engineering_exposed_end": "2025-03-14",
+    "final_test_start": "2025-03-17",
+    "final_test_end": "2026-03-09",
+    "cohorts": [
+      {"cohort_id": "D1", "start": "2011-01-03", "end": "2013-12-31"},
+      {"cohort_id": "D2", "start": "2014-01-02", "end": "2016-12-30"},
+      {"cohort_id": "D3", "start": "2017-01-03", "end": "2019-12-31"},
+      {"cohort_id": "D4", "start": "2020-01-02", "end": "2022-12-30"}
+    ]
+  },
+  "sources": {
+    "population_candidate": "G:/TSIS/data/data_foundation_outputs/population_target_presession_4824_candidate/population_target_presession_4824_candidate_v0_1_experimental_20260807T170430Z/population_target_presession_4824_candidate_v0_1.parquet",
+    "population_candidate_sha256": "a777b3338d1ff2f2304e768113a5a14728d16372553081b144c943a93fa0702c",
+    "population_manifest": "G:/TSIS/data/data_foundation_outputs/population_target_presession_4824_candidate/population_target_presession_4824_candidate_v0_1_experimental_20260807T170430Z/population_target_presession_4824_candidate_v0_1_manifest.json",
+    "population_manifest_sha256": "26a131b7c01e8b598fe0bd2dbeac8b768ddcd4103fdb1d66746508f4aca398da",
+    "master_daily_root": "G:/TSIS/data/data_foundation_outputs/master_daily_table/master_daily_table_v0_1",
+    "master_daily_manifest": "G:/TSIS/data/data_foundation_outputs/master_daily_table/_master_daily_table_manifest_v0_1.json",
+    "master_daily_manifest_sha256": "b965f766a809e8b99c968204dd5b6c6bfdc47aa92986cf628dd3960222e9340a",
+    "market_calendar": "G:/TSIS/data/data_foundation_outputs/market_calendar/market_calendar_v0_1.parquet",
+    "market_calendar_sha256": "cbf1879261866d980c5a8542fadf683dbc91f96b80b7865055417a16d1e6e87c",
+    "foundation_quality_shards": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/trades_v2_materialized/trades_current_cd_merged/root_cause_exports/file_acceptance_cache_lt1b_full_clean_fast_same_schema/raw_metrics_shards",
+    "foundation_quality_manifest": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/trades_v2_materialized/trades_current_cd_merged/root_cause_exports/file_acceptance_cache_lt1b_full_clean_fast_same_schema/manifest.json",
+    "foundation_quality_manifest_sha256": "42c835e61c15b2407a0b1b7ab18684bc124b602597dc86a9f6e560d17652f976",
+    "raw_trade_root": "G:/TSIS/data/trades_ticks_prod_2005_2026",
+    "physical_source_authority": "G_ONLY",
+    "legacy_root_fallback": "PROHIBITED"
+  },
+  "population_binding": {
+    "parent_universe_id": "lt1b_universe_v0_1",
+    "eligible_membership_state": "ELIGIBLE_UNDER_DECLARED_PROXY",
+    "share_selection_policy_id": "S1_DILUTED_FIRST",
+    "shares_ttl_policy_id": "SHARES_TTL_180D",
+    "identity_grain": ["instrument_id", "ticker_as_of_session", "session_date"]
+  },
+  "block": {
+    "prior_governed_sessions": 120,
+    "target_eligible_contexts": 10,
+    "blocks_per_cohort": 60,
+    "maximum_blocks_per_composite_instrument": 2,
+    "maximum_blocks_per_bare_instrument_id": 2,
+    "minimum_reuse_separation_governed_sessions": 252
+  },
+  "strata": {
+    "price_bands": [
+      {"id": "P1", "lower": 0.5, "upper": 1.0, "upper_inclusive": false},
+      {"id": "P2", "lower": 1.0, "upper": 2.0, "upper_inclusive": false},
+      {"id": "P3", "lower": 2.0, "upper": 5.0, "upper_inclusive": false},
+      {"id": "P4", "lower": 5.0, "upper": 10.0, "upper_inclusive": false},
+      {"id": "P5", "lower": 10.0, "upper": 20.0, "upper_inclusive": true}
+    ],
+    "market_cap_bands": [
+      {"id": "M1", "lower": 0.0, "upper": 10000000.0},
+      {"id": "M2", "lower": 10000000.0, "upper": 25000000.0},
+      {"id": "M3", "lower": 25000000.0, "upper": 50000000.0},
+      {"id": "M4", "lower": 50000000.0, "upper": 100000000.0}
+    ],
+    "price_minimum_per_feasible_band_per_cohort": 8,
+    "market_cap_minimum_per_feasible_band_per_cohort": 12,
+    "quality_minimum_when_feasible_count_at_least": 5,
+    "local_disposition_minimum_when_feasible_count_at_least": 5,
+    "prior_activity_sessions": 20,
+    "positive_activity_quantiles": [0.33, 0.67]
+  },
+  "binding_a_row_projection": {
+    "current_state_rows_per_decision_second": 5,
+    "multiscale_contrast_rows_per_decision_second": 2,
+    "pit_baseline_rows_per_decision_second": 3,
+    "decision_grid_boundary": "OPEN_EXCLUSIVE_CLOSE_EXCLUSIVE"
+  },
+  "outputs": {
+    "heavy_output_root": "G:/TSIS/data/data_foundation_outputs/trading_activity_ta3_stratified_sample",
+    "runtime_root": "G:/TSIS/data/data_ops_manifests/trading_activity_ta3_stratified_sample",
+    "overwrite_policy": "NEVER",
+    "parquet_compression": "zstd"
+  }
+}

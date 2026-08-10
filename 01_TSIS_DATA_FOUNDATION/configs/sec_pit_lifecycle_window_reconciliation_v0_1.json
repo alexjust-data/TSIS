@@ -1,0 +1,10 @@
+{
+  "policy_id": "sec_pit_lifecycle_window_reconciliation_v0_1",
+  "instrument_master_path": "G:/TSIS/data/data_foundation_outputs/instrument_master/instrument_master_v0_1.parquet",
+  "market_presence_run": "D:/TSIS/fundamental_context/sec_pit_v0_1/replays/sec_pit_7t_lifecycle_market_presence_v0_2",
+  "filing_review_run": "D:/TSIS/fundamental_context/sec_pit_v0_1/replays/sec_pit_7t_target_interval_filing_review_v0_1",
+  "output_root": "D:/TSIS/fundamental_context/sec_pit_v0_1/replays/sec_pit_6i_lifecycle_window_reconciliation_v0_1",
+  "ticker_reuse_conflicts": ["BBBY"],
+  "parent_universe_scale_authorized": false,
+  "promotion_status": "RESEARCH_EVIDENCE_ONLY"
+}

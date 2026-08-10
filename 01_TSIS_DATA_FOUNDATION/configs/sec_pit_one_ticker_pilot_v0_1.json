@@ -1,0 +1,14 @@
+{
+  "config_id": "sec_pit_one_ticker_pilot_v0_1",
+  "pipeline_version": "sec_pit_pipeline_v0_1",
+  "output_root": "D:/TSIS/fundamental_context/sec_pit_v0_1",
+  "instrument_master": "G:/TSIS/data/data_foundation_outputs/instrument_master/instrument_master_v0_1.parquet",
+  "presession_cutoff": "04:00:00 America/New_York",
+  "requests_per_second": 5.0,
+  "max_primary_documents": 100,
+  "complete_submission_default": false,
+  "exhibits_default": false,
+  "availability_policy_id": "edgar_availability_conservative_v0_1",
+  "float_methodology_status": "NOT_AUTHORIZED_UNTIL_OWNERSHIP_GATES_PASS",
+  "full_scale_status": "NOT_AUTHORIZED"
+}

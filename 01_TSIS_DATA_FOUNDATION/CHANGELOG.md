@@ -1,3 +1,11 @@
+## 2026-08-10 | SEC PIT fundamental evidence pipeline v0_1
+
+- Added `scripts/sec_pit` with metadata-first SEC acquisition, content-addressed compressed retention, filing inventory, conservative availability policy, O/S candidates, structured Forms 3/4/5 extraction, strict daily O/S resolver, governed runner and monitor.
+- Added schema, dataset contract and consumption policy for neutral SEC PIT source observations; canonical promotion and 4,821-instrument scale-out remain unauthorized.
+- Audited BNAI legacy evidence: 178 candidate rows, 158 unique IDs, 45 accessions, zero missing sources and zero hash mismatches.
+- Enforced `SHARES_OUTSTANDING_ANCHOR_CANDIDATE != ADMITTED_OS_ANCHOR`; regex candidates cannot enter daily O/S state before reconciliation.
+- Added 12 passing tests, including authorized/issuable-share false-positive regression and admission-boundary enforcement.
+- Implementation readout: `00_CTO/04_MARKET_STATES_CREATION/_DESCAGRA_DATOS_NECESARIA_/SEC_PIT_IMPLEMENTATION_READOUT_v0_1.md`.
 ## 2026-07-22 | root path migration | module renamed to Data Foundation
 
 - Canonical root is now `C:/TSIS_Data/01_TSIS_DATA_FOUNDATION`.

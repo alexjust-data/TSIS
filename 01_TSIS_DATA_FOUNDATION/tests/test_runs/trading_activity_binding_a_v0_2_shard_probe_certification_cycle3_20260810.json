@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "certification_scope": "FOUR_SHARD_BOUNDED_PRODUCTION_EQUIVALENT_PROBES",
+  "schema_variants": {
+    "current_state": 1,
+    "multiscale_contrast": 1,
+    "pit_baseline_and_surprise": 1
+  },
+  "results": [
+    {
+      "parent_run_id": "ta3ba02r_s0_20260810",
+      "block_run_id": "ta3ba02r_s0_20260810__3244b2db5e3f87198bd321417948efea",
+      "current_state_rows": 39000,
+      "multiscale_rows": 15600,
+      "baseline_rows": 9000,
+      "duration_compression_non_null_rows": 615,
+      "status": "PASS"
+    },
+    {
+      "parent_run_id": "ta3ba02r_s1_20260810",
+      "block_run_id": "ta3ba02r_s1_20260810__a13d427087381465634b7cde9671308f",
+      "current_state_rows": 39300,
+      "multiscale_rows": 15720,
+      "baseline_rows": 9900,
+      "duration_compression_non_null_rows": 0,
+      "status": "PASS"
+    },
+    {
+      "parent_run_id": "ta3ba02r_s2_20260810",
+      "block_run_id": "ta3ba02r_s2_20260810__1b24fb5e32fb9544ddd60f4644618eb2",
+      "current_state_rows": 39000,
+      "multiscale_rows": 15600,
+      "baseline_rows": 9000,
+      "duration_compression_non_null_rows": 0,
+      "status": "PASS"
+    },
+    {
+      "parent_run_id": "ta3ba02r_s3_20260810",
+      "block_run_id": "ta3ba02r_s3_20260810__7379ceaa9bda6ff94fa23dfdcb828b5e",
+      "current_state_rows": 39000,
+      "multiscale_rows": 15600,
+      "baseline_rows": 9000,
+      "duration_compression_non_null_rows": 0,
+      "status": "PASS"
+    }
+  ],
+  "broad_materialization_authorized_by_this_artifact": false
+}

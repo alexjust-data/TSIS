@@ -1,0 +1,170 @@
+{
+  "candidate_manifest": "G:\\TSIS\\data\\data_ops_manifests\\population_target_presession_4824\\population_target_presession_4824_controlled_probe_20260807T165500Z\\population_target_presession_4824_controlled_probe_v0_1_manifest.json",
+  "candidate_parquet": "G:\\TSIS\\data\\data_ops_manifests\\population_target_presession_4824\\population_target_presession_4824_controlled_probe_20260807T165500Z\\population_target_presession_4824_controlled_probe_v0_1.parquet",
+  "candidate_sha256": "c75653f539c5d102111a99476fd671da1969b8b92487ec59129bbbc646818c46",
+  "checks": {
+    "all_five_price_bands_present": true,
+    "all_four_eligible_cap_bands_present": true,
+    "composite_grain_unique": true,
+    "context_id_unique": true,
+    "cutoff_is_0400_et": true,
+    "denominator_preserved": true,
+    "eligible_semantics_valid": true,
+    "ineligible_cap_semantics_valid": true,
+    "ineligible_price_semantics_valid": true,
+    "market_cap_formula_exact": true,
+    "master_daily_id_unique": true,
+    "multiple_temporal_cohorts_present": true,
+    "output_hash_matches_manifest": true,
+    "primary_binding_exact": true,
+    "prohibited_claims_false": true,
+    "required_schema_present": true,
+    "row_count_matches_manifest": true,
+    "shares_source_identity_exact": true,
+    "shares_source_ids_resolve": true,
+    "state_accounting_closes": true,
+    "strict_shares_cutoff": true
+  },
+  "created_at_utc": "2026-08-07T17:01:02.388636+00:00",
+  "eligible_market_cap_bands": [
+    {
+      "market_cap_band": "MC_25_50M",
+      "rows": 558
+    },
+    {
+      "market_cap_band": "MC_50_75M",
+      "rows": 389
+    },
+    {
+      "market_cap_band": "MC_75_100M",
+      "rows": 314
+    },
+    {
+      "market_cap_band": "MC_LT_25M",
+      "rows": 1081
+    }
+  ],
+  "metrics": {
+    "composite_grain_count": 8911,
+    "context_id_count": 8911,
+    "cutoff_not_0400_et_rows": 0,
+    "invalid_cap_ineligible_rows": 0,
+    "invalid_eligible_rows": 0,
+    "invalid_price_ineligible_rows": 0,
+    "market_cap_formula_mismatch_rows": 0,
+    "master_daily_id_count": 8911,
+    "non_strict_shares_cutoff_rows": 0,
+    "prohibited_claim_true_rows": 0,
+    "rows_total": 8911,
+    "session_count": 5,
+    "session_date_max": "2025-03-14",
+    "session_date_min": "2012-06-15",
+    "ticker_count": 3774,
+    "unexpected_binding_rows": 0
+  },
+  "missing_required_columns": [],
+  "price_bands": [
+    {
+      "price_band": "P_0_50_1",
+      "rows": 351
+    },
+    {
+      "price_band": "P_10_20",
+      "rows": 1763
+    },
+    {
+      "price_band": "P_1_2",
+      "rows": 858
+    },
+    {
+      "price_band": "P_2_5",
+      "rows": 1543
+    },
+    {
+      "price_band": "P_5_10",
+      "rows": 1528
+    }
+  ],
+  "promotion_state": "VALIDATED_EXPERIMENTAL_PROBE_NOT_CANONICAL",
+  "schema_columns": [
+    "population_context_id",
+    "instrument_id",
+    "ticker_as_of_session",
+    "session_date",
+    "presession_cutoff_utc",
+    "parent_universe_id",
+    "expected_session",
+    "data_present",
+    "missing_expected_data",
+    "is_common_stock",
+    "ticker_identity_scope",
+    "presession_reference_price",
+    "reference_price_source",
+    "reference_price_state",
+    "shares_proxy_as_of_session",
+    "shares_measure_type",
+    "shares_as_of_date",
+    "shares_period_end",
+    "shares_age_days",
+    "shares_source_row_id",
+    "shares_available_at_rule",
+    "share_selection_policy_id",
+    "shares_ttl_policy_id",
+    "shares_proxy_state",
+    "presession_reference_market_cap_proxy",
+    "market_cap_calculation_state",
+    "price_eligibility_state",
+    "market_cap_eligibility_state",
+    "population_membership_state",
+    "population_membership_reason",
+    "row_level_price_integrity_state",
+    "family_data_quality_verdict",
+    "fundamental_quality_state",
+    "local_audit_disposition",
+    "master_daily_id",
+    "fundamental_asof_id",
+    "market_calendar_build_run_id",
+    "fundamentals_build_run_id",
+    "fundamentals_source_file",
+    "fundamentals_source_file_row_number",
+    "full_historical_us_lt100m_population_claim",
+    "exact_point_shares_claim",
+    "historical_float_claim",
+    "schema_version",
+    "dataset_id"
+  ],
+  "shares_source_identity_mismatch_rows": 0,
+  "state_counts": [
+    {
+      "population_membership_state": "CORPORATE_ACTION_REVIEW",
+      "rows": 6
+    },
+    {
+      "population_membership_state": "ELIGIBLE_UNDER_DECLARED_PROXY",
+      "rows": 2342
+    },
+    {
+      "population_membership_state": "INELIGIBLE_MARKET_CAP_PROXY",
+      "rows": 2490
+    },
+    {
+      "population_membership_state": "INELIGIBLE_PRICE",
+      "rows": 2185
+    },
+    {
+      "population_membership_state": "STALE_SHARES_PROXY",
+      "rows": 293
+    },
+    {
+      "population_membership_state": "UNAVAILABLE_REFERENCE_PRICE",
+      "rows": 681
+    },
+    {
+      "population_membership_state": "UNAVAILABLE_SHARES_PROXY",
+      "rows": 914
+    }
+  ],
+  "unresolved_shares_source_id_rows": 0,
+  "validation_gate": "PASS",
+  "validator_id": "population_target_presession_4824_candidate_validator_v0_1"
+}

@@ -1,0 +1,200 @@
+{
+  "policy_id": "trading_activity_wake_up_trade_condition_policy_candidate_v0_1",
+  "policy_version": "v0_1",
+  "status": "EXPERIMENTAL_CANDIDATE_NOT_CANONICAL",
+  "scope_id": "legacy_rth_reconciled_event_time_research_only",
+  "representation_profile_id": "wake_up_information_object_profile_candidate_v0_1",
+  "reference_snapshot_id": "massive_stock_market_operations_reference_snapshot_v0_1",
+  "historical_temporality_state": "CURRENT_SNAPSHOT_NO_HISTORICAL_EFFECTIVE_INTERVAL",
+  "primary_policy_profile": "CONSERVATIVE_CAUSAL_ACTIVITY_V0_1",
+  "unknown_condition_action": "UNKNOWN_FAIL_CLOSED",
+  "unreviewed_known_condition_action": "KNOWN_BUT_UNREVIEWED_FAIL_CLOSED",
+  "empty_conditions_rule": {
+    "policy_state": "ELIGIBLE_WITH_RESTRICTIONS",
+    "activity_event_effect": "ALLOW",
+    "share_volume_effect": "ALLOW",
+    "dollar_volume_effect": "ALLOW",
+    "causal_arrival_effect": "ALLOW",
+    "price_path_effect": "ALLOW",
+    "reason_code": "NO_SPECIAL_CONDITION_REPORTED_LEGACY"
+  },
+  "combination_rule": {
+    "effect_precedence": [
+      "DENY",
+      "REVIEW_REQUIRED",
+      "ALLOW",
+      "NO_RESTRICTION"
+    ],
+    "base_effect_when_only_qualifiers_are_present": "ALLOW"
+  },
+  "condition_rules": [
+    {
+      "condition_id": 2,
+      "expected_name": "Average Price Trade",
+      "semantic_class": "DERIVED_OR_AGGREGATED_PRICE_REPORT",
+      "activity_event_effect": "DENY",
+      "share_volume_effect": "DENY",
+      "dollar_volume_effect": "DENY",
+      "causal_arrival_effect": "DENY",
+      "price_path_effect": "DENY",
+      "reason_code": "NON_CAUSAL_AVERAGE_PRICE_REPORT",
+      "policy_confidence": "PROVISIONAL_CONSERVATIVE"
+    },
+    {
+      "condition_id": 7,
+      "expected_name": "Cash Sale",
+      "semantic_class": "SPECIAL_SETTLEMENT_TRANSACTION",
+      "activity_event_effect": "DENY",
+      "share_volume_effect": "DENY",
+      "dollar_volume_effect": "DENY",
+      "causal_arrival_effect": "DENY",
+      "price_path_effect": "DENY",
+      "reason_code": "SPECIAL_SETTLEMENT_FAIL_CLOSED",
+      "policy_confidence": "PROVISIONAL_CONSERVATIVE"
+    },
+    {
+      "condition_id": 9,
+      "expected_name": "Cross Trade",
+      "semantic_class": "CROSS_OR_AUCTION_TRANSACTION",
+      "activity_event_effect": "ALLOW",
+      "share_volume_effect": "ALLOW",
+      "dollar_volume_effect": "ALLOW",
+      "causal_arrival_effect": "ALLOW",
+      "price_path_effect": "ALLOW",
+      "reason_code": "CROSS_TRANSACTION_REQUIRES_STRUCTURAL_CONTEXT",
+      "policy_confidence": "PROVISIONAL_WITH_CONTEXT"
+    },
+    {
+      "condition_id": 10,
+      "expected_name": "Derivatively Priced",
+      "semantic_class": "DERIVED_PRICE_TRANSACTION",
+      "activity_event_effect": "DENY",
+      "share_volume_effect": "DENY",
+      "dollar_volume_effect": "DENY",
+      "causal_arrival_effect": "DENY",
+      "price_path_effect": "DENY",
+      "reason_code": "DERIVATIVELY_PRICED_FAIL_CLOSED",
+      "policy_confidence": "PROVISIONAL_CONSERVATIVE"
+    },
+    {
+      "condition_id": 12,
+      "expected_name": "Form T/Extended Hours",
+      "semantic_class": "EXTENDED_HOURS_OR_LATE_REPORT",
+      "activity_event_effect": "DENY",
+      "share_volume_effect": "DENY",
+      "dollar_volume_effect": "DENY",
+      "causal_arrival_effect": "DENY",
+      "price_path_effect": "DENY",
+      "reason_code": "OUTSIDE_OR_NONCONTEMPORANEOUS_RTH_ACTIVITY",
+      "policy_confidence": "PROVISIONAL_CONSERVATIVE"
+    },
+    {
+      "condition_id": 14,
+      "expected_name": "Intermarket Sweep",
+      "semantic_class": "CONTEMPORANEOUS_EXECUTION_MODIFIER",
+      "activity_event_effect": "ALLOW",
+      "share_volume_effect": "ALLOW",
+      "dollar_volume_effect": "ALLOW",
+      "causal_arrival_effect": "ALLOW",
+      "price_path_effect": "ALLOW",
+      "reason_code": "INTERMARKET_SWEEP_TRANSACTION",
+      "policy_confidence": "PROVISIONAL"
+    },
+    {
+      "condition_id": 16,
+      "expected_name": "Market Center Official Open",
+      "semantic_class": "OFFICIAL_STATISTIC_MARKER",
+      "activity_event_effect": "DENY",
+      "share_volume_effect": "DENY",
+      "dollar_volume_effect": "DENY",
+      "causal_arrival_effect": "DENY",
+      "price_path_effect": "DENY",
+      "reason_code": "OFFICIAL_MARKER_NOT_TRANSACTION_ACTIVITY",
+      "policy_confidence": "PROVISIONAL_CONSERVATIVE"
+    },
+    {
+      "condition_id": 17,
+      "expected_name": "Market Center Opening Trade",
+      "semantic_class": "OPENING_TRANSACTION",
+      "activity_event_effect": "ALLOW",
+      "share_volume_effect": "ALLOW",
+      "dollar_volume_effect": "ALLOW",
+      "causal_arrival_effect": "ALLOW",
+      "price_path_effect": "ALLOW",
+      "reason_code": "OPENING_TRANSACTION_REQUIRES_SESSION_CONTEXT",
+      "policy_confidence": "PROVISIONAL_WITH_CONTEXT"
+    },
+    {
+      "condition_id": 31,
+      "expected_name": "Sold Last and Stopped Stock",
+      "semantic_class": "LEGACY_OR_TIMING_AMBIGUOUS_REPORT",
+      "activity_event_effect": "DENY",
+      "share_volume_effect": "DENY",
+      "dollar_volume_effect": "DENY",
+      "causal_arrival_effect": "DENY",
+      "price_path_effect": "DENY",
+      "reason_code": "LEGACY_TIMING_AMBIGUOUS_FAIL_CLOSED",
+      "policy_confidence": "PROVISIONAL_CONSERVATIVE"
+    },
+    {
+      "condition_id": 32,
+      "expected_name": "Sold (Out Of Sequence)",
+      "semantic_class": "OUT_OF_SEQUENCE_REPORT",
+      "activity_event_effect": "DENY",
+      "share_volume_effect": "DENY",
+      "dollar_volume_effect": "DENY",
+      "causal_arrival_effect": "DENY",
+      "price_path_effect": "DENY",
+      "reason_code": "OUT_OF_SEQUENCE_NOT_CAUSAL_ACTIVITY",
+      "policy_confidence": "PROVISIONAL_CONSERVATIVE"
+    },
+    {
+      "condition_id": 37,
+      "expected_name": "Odd Lot Trade",
+      "semantic_class": "ODD_LOT_TRANSACTION",
+      "activity_event_effect": "ALLOW",
+      "share_volume_effect": "ALLOW",
+      "dollar_volume_effect": "ALLOW",
+      "causal_arrival_effect": "ALLOW",
+      "price_path_effect": "DENY",
+      "reason_code": "ODD_LOT_ACTIVITY_NOT_PRICE_FORMING",
+      "policy_confidence": "PROVISIONAL"
+    },
+    {
+      "condition_id": 41,
+      "expected_name": "Trade Thru Exempt",
+      "semantic_class": "QUALIFIER_ONLY",
+      "activity_event_effect": "NO_RESTRICTION",
+      "share_volume_effect": "NO_RESTRICTION",
+      "dollar_volume_effect": "NO_RESTRICTION",
+      "causal_arrival_effect": "NO_RESTRICTION",
+      "price_path_effect": "NO_RESTRICTION",
+      "reason_code": "TRADE_THRU_EXEMPT_QUALIFIER",
+      "policy_confidence": "PROVISIONAL"
+    },
+    {
+      "condition_id": 52,
+      "expected_name": "Contingent Trade",
+      "semantic_class": "CONTINGENT_TRANSACTION",
+      "activity_event_effect": "DENY",
+      "share_volume_effect": "DENY",
+      "dollar_volume_effect": "DENY",
+      "causal_arrival_effect": "DENY",
+      "price_path_effect": "DENY",
+      "reason_code": "CONTINGENT_TRANSACTION_FAIL_CLOSED",
+      "policy_confidence": "PROVISIONAL_CONSERVATIVE"
+    },
+    {
+      "condition_id": 53,
+      "expected_name": "Qualified Contingent Trade",
+      "semantic_class": "QUALIFIED_CONTINGENT_TRANSACTION",
+      "activity_event_effect": "DENY",
+      "share_volume_effect": "DENY",
+      "dollar_volume_effect": "DENY",
+      "causal_arrival_effect": "DENY",
+      "price_path_effect": "DENY",
+      "reason_code": "QUALIFIED_CONTINGENT_TRANSACTION_FAIL_CLOSED",
+      "policy_confidence": "PROVISIONAL_CONSERVATIVE"
+    }
+  ]
+}

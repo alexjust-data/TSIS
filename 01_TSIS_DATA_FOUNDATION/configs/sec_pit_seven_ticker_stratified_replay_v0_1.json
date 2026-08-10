@@ -1,0 +1,56 @@
+{
+  "config_id": "sec_pit_seven_ticker_stratified_replay_v0_1",
+  "status": "FROZEN_EXPERIMENTAL_SAMPLE_NOT_CANONICAL",
+  "purpose": "Validate SEC PIT acquisition and resolution across seven deliberately heterogeneous issuers before any parent-universe scale-out.",
+  "output_root": "D:/TSIS/fundamental_context/sec_pit_v0_1",
+  "maximum_concurrent_tickers": 1,
+  "requests_per_second": 5.0,
+  "max_primary_documents": 300,
+  "complete_submission_default": false,
+  "exhibits_default": false,
+  "minimum_free_space_gib": 100,
+  "cases": [
+    {
+      "ticker": "BNAI",
+      "cik": "0001838163",
+      "stratum": "MODERN_XBRL_BENCHMARK",
+      "reason": "Executed benchmark with ownership, registration, reverse-split and restriction evidence."
+    },
+    {
+      "ticker": "DOMH",
+      "cik": "0000012239",
+      "stratum": "PRE_XBRL_IDENTITY_STRESS",
+      "reason": "Pre-XBRL history, duplicate instrument identity and multi-row CIK resolution."
+    },
+    {
+      "ticker": "BBBY",
+      "cik": "0001130713",
+      "stratum": "LIFECYCLE_AND_TICKER_CHANGE_STRESS",
+      "reason": "Long history, ticker changes, duplicate instrument identity and multi-row CIK."
+    },
+    {
+      "ticker": "BGM",
+      "cik": "0001779578",
+      "stratum": "FOREIGN_ISSUER",
+      "reason": "Foreign/ordinary-share path using 20-F, 6-K and F-series registration forms."
+    },
+    {
+      "ticker": "CNOBP",
+      "cik": "0000712771",
+      "stratum": "NON_COMMON_EQUITY_NEGATIVE_CONTROL",
+      "reason": "Preferred/non-common security expected to exercise eligibility rejection."
+    },
+    {
+      "ticker": "ALUR",
+      "cik": "0001964979",
+      "stratum": "OTC_AND_SECURITY_TYPE_REVIEW",
+      "reason": "OTC case with missing overview shares and unresolved security-type review."
+    },
+    {
+      "ticker": "PGAC",
+      "cik": "0002030829",
+      "stratum": "SPAC_AND_FOREIGN_IDENTITY",
+      "reason": "SPAC/acquisition, foreign identity, ticker changes and missing class FIGI."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "claims": {
+    "canonical_feature_promotion": false,
+    "exact_point_shares_outstanding": false,
+    "full_historical_us_lt100m_population": false,
+    "historical_float": false,
+    "session_open_market_cap": false,
+    "wake_up_detection": false
+  },
+  "config_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\population_target_presession_4824_audit_v0_1.json",
+  "config_sha256": "f15f49ee4cf081937eb1df59763250509c8aad4f07c917c96b1ca6da6a03b716",
+  "created_at_utc": "2026-08-07T17:30:42.878387+00:00",
+  "dataset_id": "population_target_presession_4824_candidate_v0_1",
+  "output_parquet": "G:\\TSIS\\data\\data_foundation_outputs\\population_target_presession_4824_candidate\\population_target_presession_4824_candidate_v0_1_experimental_20260807T170430Z\\population_target_presession_4824_candidate_v0_1.parquet",
+  "output_sha256": "a777b3338d1ff2f2304e768113a5a14728d16372553081b144c943a93fa0702c",
+  "output_size_bytes": 464353246,
+  "promotion_state": "EXPERIMENTAL_CANDIDATE_NOT_CANONICAL",
+  "schema_version": "population_target_presession_4824_candidate_v0_1",
+  "source_fundamentals_root": "G:\\TSIS\\data\\data_foundation_outputs\\fundamentals_asof_table\\fundamentals_asof_table_v0_1",
+  "source_instrument_master": "G:\\TSIS\\data\\data_foundation_outputs\\instrument_master\\instrument_master_v0_1.parquet",
+  "source_market_calendar": "G:\\TSIS\\data\\data_foundation_outputs\\market_calendar\\market_calendar_v0_1.parquet",
+  "source_master_daily_root": "G:\\TSIS\\data\\data_foundation_outputs\\master_daily_table\\master_daily_table_v0_1",
+  "summary": {
+    "dataset_id": "population_target_presession_4824_candidate_v0_1",
+    "denominator_preserved": true,
+    "output_rows": 7369699,
+    "population_membership_state_counts": {
+      "CORPORATE_ACTION_REVIEW": 3076,
+      "ELIGIBLE_UNDER_DECLARED_PROXY": 1417316,
+      "INELIGIBLE_MARKET_CAP_PROXY": 1689229,
+      "INELIGIBLE_PRICE": 2360588,
+      "STALE_SHARES_PROXY": 201243,
+      "UNAVAILABLE_REFERENCE_PRICE": 671242,
+      "UNAVAILABLE_SHARES_PROXY": 1027005
+    },
+    "requested_rows": 7369699,
+    "scope": {
+      "session_dates": null,
+      "session_end": null,
+      "session_start": null,
+      "tickers": null
+    },
+    "share_policy": "S1_DILUTED_FIRST",
+    "ttl_days": 180
+  },
+  "summary_path": "G:\\TSIS\\data\\data_foundation_outputs\\population_target_presession_4824_candidate\\population_target_presession_4824_candidate_v0_1_experimental_20260807T170430Z\\population_target_presession_4824_candidate_v0_1_summary.json"
+}

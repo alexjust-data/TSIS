@@ -1,0 +1,23 @@
+{
+  "dataset_id": "population_target_presession_4824_candidate_v0_1",
+  "denominator_preserved": true,
+  "output_rows": 7369699,
+  "population_membership_state_counts": {
+    "CORPORATE_ACTION_REVIEW": 3076,
+    "ELIGIBLE_UNDER_DECLARED_PROXY": 1417316,
+    "INELIGIBLE_MARKET_CAP_PROXY": 1689229,
+    "INELIGIBLE_PRICE": 2360588,
+    "STALE_SHARES_PROXY": 201243,
+    "UNAVAILABLE_REFERENCE_PRICE": 671242,
+    "UNAVAILABLE_SHARES_PROXY": 1027005
+  },
+  "requested_rows": 7369699,
+  "scope": {
+    "session_dates": null,
+    "session_end": null,
+    "session_start": null,
+    "tickers": null
+  },
+  "share_policy": "S1_DILUTED_FIRST",
+  "ttl_days": 180
+}

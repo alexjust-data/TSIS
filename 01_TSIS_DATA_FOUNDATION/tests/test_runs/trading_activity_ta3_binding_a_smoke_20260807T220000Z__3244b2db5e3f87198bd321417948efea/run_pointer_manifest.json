@@ -1,0 +1,15 @@
+{
+  "config_path": "G:\\TSIS\\data\\data_ops_manifests\\trading_activity_ta3_binding_a\\trading_activity_ta3_binding_a_smoke_20260807T220000Z\\block_configs\\3244b2db5e3f87198bd321417948efea.json",
+  "config_sha256": "a170328c0b54a90520724025fa737b71aadf8a7cb143b4d72759e271c4eabb37",
+  "output_run_root": "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_smoke_20260807T220000Z__3244b2db5e3f87198bd321417948efea",
+  "promotion_status": "NOT_AUTHORIZED",
+  "row_counts": {
+    "baseline_rows": 300,
+    "current_state_rows": 1300,
+    "multiscale_rows": 520
+  },
+  "run_id": "trading_activity_ta3_binding_a_smoke_20260807T220000Z__3244b2db5e3f87198bd321417948efea",
+  "run_summary_path": "G:\\TSIS\\data\\data_foundation_outputs\\trading_activity_ta3_binding_a\\run_id=trading_activity_ta3_binding_a_smoke_20260807T220000Z__3244b2db5e3f87198bd321417948efea\\metadata\\run_summary.json",
+  "runtime_run_root": "G:\\TSIS\\data\\data_ops_manifests\\trading_activity_ta3_binding_a\\trading_activity_ta3_binding_a_smoke_20260807T220000Z\\blocks\\trading_activity_ta3_binding_a_smoke_20260807T220000Z__3244b2db5e3f87198bd321417948efea",
+  "status": "COMPLETE"
+}

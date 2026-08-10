@@ -11,6 +11,14 @@ TSIS is an institutional-grade, agent-first Scientific Discovery Engine focused 
 - offline reinforcement learning preparation;
 - autonomous candidate generation under validation gates.
 
+## Lectura inicial obligatoria del perfil de la maquina
+
+Al entrar en TSIS, todo agente MUST leer integramente, antes de analizar, planificar, modificar codigo o ejecutar trabajo:
+
+`C:\TSIS_Data\TSIS_HARDWARE_OPTIMIZATION_PROMPT.md`
+
+Este documento comunica la configuracion real del ordenador disponible y las reglas generales para aprovechar correctamente su CPU, RAM, GPU y almacenamiento. Debe mantenerse como contexto operativo durante todo el trabajo. No se debe sustituir por suposiciones genericas sobre el hardware ni ignorarlo al tomar decisiones que afecten al rendimiento.
+
 ## 0. Regla inicial obligatoria de comunicacion `English`
 
 Si un mensaje del humano empieza por `English`, `ENGLISH` o `english`, con o sin dos puntos inmediatamente despues, el agente MUST traducir primero al ingles exclusivamente el texto del humano posterior a ese marcador.
@@ -79,6 +87,8 @@ Los agentes deben respetar los limites entre capas, modulos y contratos instituc
 ## 3. Mandatory Reading Order
 
 Antes de modificar este repositorio, todo agente debe leer en este orden:
+
+0. `C:\TSIS_Data\TSIS_HARDWARE_OPTIMIZATION_PROMPT.md`
 
 1. `PATH_MIGRATION_2026_07_22.md`
 2. `PROJECT_OPERATING_SYSTEM.md`
@@ -445,4 +455,37 @@ No basta con mencionarlo en el chat, README o changelog. Si la rama no tiene una
 cola local, usar `C:\TSIS_Data\GRAPHIFY_REFRESH_QUEUE.md`. Los directorios de
 staging o corpus generados dentro de otro `graphify-out/` no cuentan como ramas
 independientes: heredan la cola de su rama propietaria.
+---
 
+## 19. Gate obligatorio de auditoria temprana por variable y shard
+
+Para cada variable de cada Representation Model, antes de autorizar una
+materializacion larga o completa, el agente MUST ejecutar primero un probe
+acotado con el mismo codigo, config, schema, fuentes y politicas de produccion
+en cada shard previsto.
+
+Cada probe debe auditar y certificar como minimo:
+
+- formula y semantica de la variable;
+- nombres, tipos y orden estable de columnas;
+- grain, cardinalidad y unicidad;
+- causalidad PIT y ausencia de future leakage;
+- `zero`, `NULL`, `stale`, `degraded`, `unavailable` e insufficient sample;
+- IDs de version, policies, lineage y fuente;
+- equivalencia entre shards;
+- legibilidad de una muestra de valores generados, no solo que el proceso termine.
+
+La secuencia obligatoria es:
+
+```text
+implementation and unit tests
+-> one bounded production-equivalent probe per shard
+-> variable-by-variable output audit
+-> versioned certification readout
+-> human or governed gate PASS
+-> long materialization authorization
+```
+
+Si cualquier probe falla, no se permite iniciar o continuar la expansion larga
+con esa version. Corregir codigo/config, invalidar el probe y repetir los probes
+de todos los shards. `resume` nunca puede mezclar versiones o schemas.

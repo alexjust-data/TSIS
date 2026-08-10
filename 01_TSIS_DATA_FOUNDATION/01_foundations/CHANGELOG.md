@@ -1,3 +1,85 @@
+## 2026-08-10 | SEC PIT fundamental context | BNAI G8 registration/O/S reconciliation
+
+- Completed governed run `sec_pit_bnai_g8_os_reconciliation_v0_40_20260810`.
+- Versioned the registration-scope clause extractor to v0.2 after correcting four derivative/issuable components previously classified as issued.
+- Final scope: 18 contingent/future components, six reported-current candidates and four non-components.
+- Added `registration_component_os_reconciliation_ledger.parquet` and its machine-readable readout.
+- Reconciled all six reported-current candidates against causal O/S capacity: six consistent, zero conflicts, zero unavailable; two rely on stale O/S anchors.
+- Preserved zero O/S inclusion confirmations, zero tradable-supply confirmations and zero non-null daily tradability estimates.
+- G7 remains `PASS_WITH_RESTRICTIONS`; G8 remains `BLOCKED_BY_INPUT_GATES` pending lockup, legend, resale-condition and methodology gates.
+
+## 2026-08-10 | SEC PIT fundamental context | BNAI G8 EFFECT-to-component condition gate
+
+- Completed governed run `sec_pit_bnai_g8_condition_gate_v0_38_20260810` with the authorized 300-document pilot scope.
+- Added `registration_component_condition_ledger.parquet` and its machine-readable readout.
+- Linked 24/24 applicable registration components to EFFECT evidence while preserving four non-component aggregate/threshold rows.
+- Classified 14 contingent/future components as issuance or exercise unconfirmed and 10 reported-current candidates as registration-effective with restrictions unresolved.
+- Preserved zero tradable-supply confirmations, zero tradability contributions and zero non-null daily tradability rows.
+- Hardened empty-input handling: a run without registration scope components is now `BLOCKED_BY_INPUT_GATES`.
+- Marked diagnostic run `v0_37` non-authoritative because its 100-document cap omitted required restriction evidence.
+- G7 remains `PASS_WITH_RESTRICTIONS`; G8 remains `BLOCKED_BY_INPUT_GATES`; canonical promotion and scale-out remain unauthorized.
+
+## 2026-08-10 | SEC PIT fundamental context | BNAI G8 registration-clause classification gate
+
+- Completed governed run `sec_pit_bnai_g8_component_gate_v0_36_20260810`.
+- Added `registration_scope_component_ledger.parquet` with 28 evidence-preserving clause observations across four registration families.
+- Classified aggregate limits, conditional thresholds, contingent/future shares, reported held shares, reported issued shares, transferred shares and explicit common-stock offer components.
+- Closed the clause-classification subgate with `UNRESOLVED = 0` and `registration_scope_component_classification_complete = true`.
+- Preserved G7 at 82 non-null experimental rows and kept all tradability outputs NULL.
+- G8 remains blocked by the SEC registration-component source conflict, remaining restriction extraction, unresolved conditions and unauthorized tradability methodology.
+## 2026-08-10 | SEC PIT fundamental context | BNAI G8 mixed issuer-issuance classification
+
+- Completed governed run `sec_pit_bnai_g8_mixed_issuer_scope_v0_30_20260810`.
+- Corrected the semantic treatment of registration `333-278673`: its selling-holder table is a partial view because the prospectus explicitly also registers issuer issuance.
+- Reclassified the 11,464,208-share difference as `PARTIAL_MATCH_MIXED_ISSUER_ISSUANCE`, not an unexplained mismatch.
+- Current reconciliation contains three `EXACT_MATCH` families, zero unexplained mismatches and one mixed issuer-issuance partial.
+- Added blocker `MIXED_ISSUER_ISSUANCE_COMPONENTS_UNRESOLVED`; no future or derivative shares are added to current float or tradable supply.
+- G8 remains `BLOCKED_BY_INPUT_GATES` and all tradability outputs remain NULL.
+## 2026-08-10 | SEC PIT fundamental context | BNAI G8 selling-holder lot reconciliation
+
+- Completed governed run `sec_pit_bnai_g8_lot_reconciliation_v0_29_20260810`.
+- Added neutral `selling_holder_share_lot_ledger.parquet` extraction with 62 rows across all four registration families.
+- Preserved beneficial-before, maximum-offered, assumed-post-sale and future/derivative ambiguity without asserting tradable supply.
+- Reconciled `333-280366`, `333-282130` and `333-282132` exactly to their cover totals.
+- Preserved an `11,464,208`-share mismatch for `333-278673` and emitted `SELLING_HOLDER_LOT_RECONCILIATION_MISMATCH` instead of imputing it.
+- G7 remains `PASS_WITH_RESTRICTIONS`; G8 remains `BLOCKED_BY_INPUT_GATES`; non-null tradability rows remain zero.
+## 2026-08-10 | SEC PIT fundamental context | BNAI G8 registration evidence audit
+
+- Completed governed run `sec_pit_bnai_g8_registration_conflict_v0_27_20260810`.
+- Extracted 61/61 scoped 424B3 documents and 4/4 EFFECT notices; linked all four EFFECT file numbers to registration evidence.
+- Corrected multiline SEC cover-page parsing and added regression coverage so an underlying component cannot be promoted to the registration total.
+- Preserved the original SEC conflict in registration family `333-278673`: 2,119,016 versus 21,190,316 underlying warrant shares.
+- Added machine-readable `registration_component_source_conflicts` and blocker `REGISTRATION_COMPONENT_SOURCE_CONFLICT`.
+- G7 remains `PASS_WITH_RESTRICTIONS`; G8 remains `BLOCKED_BY_INPUT_GATES` with zero non-null tradability estimates.
+- Canonical promotion, scanner/backtest consumption and scale-out remain unauthorized.
+## 2026-08-10 | SEC PIT fundamental context | BNAI post-baseline temporal resolution
+
+- Completed governed run `sec_pit_bnai_g7_temporal_authority_v0_23_20260810`.
+- Added Form 3/4/5 transaction date, code, acquired/disposed code, transaction shares and filing-row sequence.
+- Resolved two sequential Pinnam Forms 4 by selecting the latest direct-account balance of 15,727 shares; the 15,994 and 15,727 snapshots are not summed.
+- G7 now has 82 calculated sessions: 27 baseline-only and 55 with an applied temporal update.
+- Post-baseline update resolution is complete for the BNAI pilot; historical ownership coverage remains incomplete for 414 pre-baseline sessions.
+- G8 remains blocked with zero tradability estimates.
+## 2026-08-10 | SEC PIT fundamental context | BNAI G7 partial daily admission
+
+- Completed governed run `sec_pit_bnai_g7_g8_readout_v0_21_20260810`.
+- Added Form 3/4/5 ownership nature and footnote evidence, proxy footnote component resolution, joint-reporting deduplication and explicit controlled-entity resolution.
+- G6 row-level resolution passed for 76 scoped positions; temporal position updates remain incomplete.
+- G7 is `PASS_WITH_RESTRICTIONS`: 27 calculated sessions, 414 sessions without baseline and 55 sessions blocked after an unapplied ownership update.
+- Preserved source conflicts and precedence for Paul Chang and Michael Zacharski instead of silently rewriting SEC evidence.
+- G8 executed and remains `BLOCKED_BY_INPUT_GATES`; all tradability estimates remain NULL.
+- Canonical promotion, scanner/backtest consumption, 50-ticker replay and 4,821-instrument scale-out remain unauthorized.
+## 2026-08-10 | SEC PIT fundamental context | BNAI G5-G8 evidence gates
+
+- Completed BNAI experimental run sec_pit_bnai_g7_methodology_v0_14_20260810.
+- Closed instrument-scope ownership acquisition and structured extraction coverage: 49/49 accessions, with 80 broad issuer accessions retained separately.
+- Added DEF 14A, legacy SC 13D/G and modern Schedule 13G XML extraction; operational holder evidence is now restricted to the instrument validity interval.
+- Added versioned experimental owner-exclusion methodology officer_director_explicit_affiliate_v0_1.
+- G7 remains BLOCKED_BY_INPUT_GATES solely because economic-position overlaps remain unresolved; no float was invented.
+- Acquired 122/122 restriction-source documents and extracted 4/4 EFFECT eligibility events.
+- G8 remains BLOCKED_BY_INPUT_GATES pending share-lot linkage, restriction conditions, methodology authorization and admitted G7 float.
+- Canonical promotion, scanner consumption, 50-ticker replay and 4,821-instrument scale-out remain unauthorized.
+
 ## 2026-07-20 | event_state | consumption_legality separated from state_role
 
 - Clarified that `state_role` describes the event-relative snapshot role, but does not by itself authorize predictive/input consumption.
@@ -451,3 +533,174 @@ raw ohlcv_1m + LT1B repair manifest = quote_guarded view
 ```
 
 
+
+## 2026-08-10 - SEC PIT BNAI G8 assignment-event reconciliation
+
+- Added `restriction_event_reconcile.py` and tests.
+- Integrated raw and reconciled Assignment Agreement ledgers into the governed
+  one-ticker runner and restriction coverage readout.
+- Normalized extracted effective/scheduled dates and validated 52 SEC PIT tests.
+- Materialized v0_43: 23 observations -> 5 economic events, one preserved source
+  numeric conflict, zero tradable-supply confirmations.
+## 2026-08-10 - Assignment schedule and selling-lot linkage
+
+- Added `assignment_schedule_link.py` with semantic HTML-column detection.
+- Added source-conflict preservation and exact identity/quantity linkage tests.
+- SEC PIT suite now passes 54/54 tests.
+- Materialized governed v0_45 with 7/7 links and zero tradability confirmations.
+## 2026-08-10 - August funding evidence v0_49
+
+The sentence-bounded extractor resolves the November 13, 2024 disclosure as:
+
+```text
+gross proceeds = 550,000 USD
+combined shares reported = 220,000
+contract rule = one SPA share + one Sponsor share per 5 USD
+SPA shares supported = 110,000
+Sponsor shares supported = 110,000
+failed required funding = 1,250,000 USD
+tradable-supply confirmations = 0
+```
+
+Authoritative run: `sec_pit_bnai_g8_august_funding_evidence_v0_49_20260810`.
+Runs v0_46, v0_47 and v0_48 are preserved as `QUARANTINED` because audit found
+cross-transaction/cross-sentence matches to the May SPA. They are prohibited as
+downstream evidence. The 110,000 Sponsor shares are aggregate condition-supported
+releases as of the disclosure, but purchaser allocation and cancellation amounts
+remain unavailable. G8 remains `BLOCKED_BY_INPUT_GATES`.
+## 2026-08-10 - August funding multivintage resolver v0_53
+
+The governed multivintage builder scanned the acquired primary-document set and
+reconciled 24 source observations into seven PIT vintages. Authoritative run:
+`sec_pit_bnai_g8_august_multivintage_v0_53_20260810`.
+
+```text
+2024-09-13 / eligible 2024-09-16: 50,000 escrow shares, lot unattributed
+2024-11-13 / eligible 2024-11-15: 220,000 combined shares / $550,000, equation consistent
+2025-02-14 / eligible 2025-02-17: 110,000 / rendered $550, source numeric conflict
+2025-03-27 / eligible 2025-04-01: 110,000 / rendered $550, source numeric conflict
+2025-03-31 / eligible 2025-06-05: partial termination, purchasers unidentified
+2025-06-30 / eligible 2025-10-13: partial termination reiterated
+2025-09-30 / eligible 2025-11-26: partial termination reiterated
+```
+
+v0_51 is `FAILED` due an unsupported numeric token. v0_52 is
+`SUPERSEDED_INCOMPLETE_QUALITY_CLASSIFICATION`. Neither is authorized downstream.
+The 2025 `$550` renderings are not silently changed to `$550,000`; they remain
+`SOURCE_NUMERIC_CONFLICT`. Cancellation quantities and purchaser allocation stay
+NULL. Tradable-supply confirmations remain zero and G8 stays
+`BLOCKED_BY_INPUT_GATES`.
+## 2026-08-10 - Lockup lifecycle, corporate actions and presession market cap v0_54-v0_58
+
+G8 lockup evidence now resolves the six ex10-2 schedule rows totaling 1,252,500
+shares. The contract reports a release of the prior lockup, subject to side-letter
+execution and initiation of transfer to escrow, plus a 25% ADV transfer limit.
+The later 10-Q supports the 1,185,000-share Sponsor transfer only from its own
+public availability date. Neither legend-removal instruction nor registration
+proves completed tradability.
+
+```text
+v0_54 lockup lots = 6; reported total = 1,252,500
+v0_55 daily lifecycle rows = 2,976 (496 sessions x 6 lots)
+tradability confirmations = 0
+G8 = BLOCKED_BY_INPUT_GATES
+```
+
+G9 consumed only the primary `reference` split row from the governed corporate
+actions table. The duplicate `additional` row was retained as corroboration but
+not applied twice. BNAI's 10-for-1 reverse split effective 2025-12-12 transforms
+58 stale pre-split O/S rows from that session onward.
+
+```text
+v0_56 daily O/S rows = 496
+primary splits applied = 1
+secondary duplicates ignored = 1
+G9 = PASS_WITH_RESTRICTIONS
+```
+
+G10 proved from BNAI's physical downloader checkpoint that the source under
+`G:/TSIS/data/ohlcv_daily` was requested with `adjusted=true`. It therefore must
+not be multiplied directly by historical-basis O/S. The builder recovers the
+historical price basis with future split factors and then aligns prior eligible
+RTH close to the target session basis before multiplication.
+
+Run v0_57 was rejected during mandatory first-output audit because pandas `NaN`
+O/S was treated as available. A regression test was added and v0_58 supersedes
+it. v0_57 is `NOT_AUTHORIZED` downstream.
+
+```text
+v0_58 daily rows = 496
+market cap estimated = 485
+market cap unavailable due O/S = 10
+market cap unavailable due price = 1
+duplicates = 0
+non-finite resolved prices = 0
+non-positive market caps = 0
+provisional price-and-cap eligible sessions = 212
+SEC PIT tests = 67/67 PASS
+ruff = PASS
+G10 = PASS_WITH_RESTRICTIONS
+```
+
+Authoritative run:
+`sec_pit_bnai_g10_presession_market_cap_v0_58_20260810`.
+
+This is a one-instrument pipeline pilot, not authorization to scale blindly.
+The next scale gate requires a stratified filing/issuer sample and an explicit
+parent-universe manifest resolution (4824 vs later references to 4821).
+## 2026-08-10 - Historical CUSIP, 13F source gate, core EV and change explanations v0_59-v0_62
+
+G11 extracted CUSIP observations only from SEC objects already acquired. Checksum
+validation rejects narrative false positives. The issuer-number gate excludes the
+pre-combination SPAC CUSIP `G2758T109` from the BNAI share class.
+
+```text
+source observations = 16
+admitted BNAI observations = 3
+104932108 = 2024-07-29 through 2025-12-11
+104932207 = 2025-12-12 through 2026-03-09
+pre-first-supported interval = CUSIP_UNAVAILABLE
+G11 = PASS_WITH_RESTRICTIONS
+```
+
+G12 audited the official local data roots and found no acquired global 13F
+information-table source. Institutional ownership remains `UNAVAILABLE`, never
+zero. Run `sec_pit_bnai_g12_13f_source_audit_v0_60_20260810` records:
+
+```text
+G12 = BLOCKED_BY_SOURCE_NOT_ACQUIRED
+required source = GLOBAL_SEC_13F_INFORMATION_TABLE_ACQUISITION
+```
+
+G13 resolves only same-measurement-date, causally eligible Company Facts for
+cash, ConvertibleNotesPayable and ShortTermBorrowings. Facts measured before the
+BNAI instrument valid interval are excluded. The output is deliberately named
+`CORE_EV_ESTIMATE`; it is not represented as complete enterprise value.
+
+```text
+daily rows = 496
+core EV calculated = 391
+incomplete/unavailable = 105
+lookahead rows = 0
+non-finite core EV rows = 0
+G13 = PASS_WITH_RESTRICTIONS
+```
+
+G16 emits one explanation row per daily state. The split session 2025-12-12 is
+explained by corporate-action basis change, prior-close update and CUSIP interval
+change. Counts are:
+
+```text
+prior-close updates = 495
+O/S anchor vintage changes = 2
+balance-sheet vintage changes = 6
+CUSIP interval changes = 2
+corporate-action basis changes = 1
+G16 = PASS_WITH_RESTRICTIONS
+```
+
+Authoritative runs are v0_59 through v0_62 under
+`D:/TSIS/fundamental_context/sec_pit_v0_1/runs`. This closes the executable BNAI
+pilot except G8 tradability and G12 institutional ownership. Scale-out is not
+authorized until the optimized stratified replay and parent-universe identity
+scope are frozen.

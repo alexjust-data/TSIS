@@ -1,0 +1,542 @@
+{
+  "audit_id": "population_target_presession_4824_g0_g3_audit_v0_1",
+  "audit_role": "READ_ONLY_SOURCE_AND_PROXY_FIT_AUDIT",
+  "broad_materialization_authorized": false,
+  "canonical_promotion_authorized": false,
+  "config": {
+    "path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\population_target_presession_4824_audit_v0_1.json",
+    "payload": {
+      "candidate_dataset_id": "population_target_presession_4824_candidate_v0_1",
+      "claims": {
+        "canonical_feature_promotion": false,
+        "exact_point_shares_outstanding": false,
+        "full_historical_us_lt100m_population": false,
+        "historical_float": false,
+        "session_open_market_cap": false,
+        "wake_up_detection": false
+      },
+      "config_id": "population_target_presession_4824_audit_v0_1",
+      "contract_id": "population_target_presession_4824_selector_contract_v0_2",
+      "cutoff": {
+        "availability_operator": "strictly_before",
+        "date_only_proxy_label": "DATE_ONLY_CONSERVATIVE_AVAILABILITY",
+        "date_only_proxy_rule": "source_as_of_date < session_date",
+        "local_time": "04:00:00",
+        "timezone": "America/New_York"
+      },
+      "float_policy": {
+        "membership_predicate": false,
+        "missingness_blocks_ta3": false,
+        "role": "SUPPORTING_OR_CONDITIONAL_PIT_CONTEXT"
+      },
+      "market_cap_proxy": {
+        "formula": "PRESESSION_REFERENCE_PRICE * SELECTED_WEIGHTED_AVERAGE_SHARES_PROXY",
+        "threshold_exclusive": 100000000.0
+      },
+      "parent_universe_expected_ticker_count": 4824,
+      "parent_universe_id": "lt1b_universe_v0_1",
+      "possible_gate_verdicts": [
+        "PASS_WITH_RESTRICTIONS",
+        "FAIL"
+      ],
+      "reference_price": {
+        "field": "prior_close",
+        "maximum_inclusive": 20.0,
+        "minimum_inclusive": 0.5,
+        "semantic_name": "PRESESSION_REFERENCE_PRICE",
+        "source_price_view": "daily_raw"
+      },
+      "share_selection_candidates": [
+        {
+          "policy_id": "S1_DILUTED_FIRST",
+          "priority": [
+            "diluted_shares_outstanding",
+            "basic_shares_outstanding"
+          ]
+        },
+        {
+          "policy_id": "S2_BASIC_FIRST",
+          "priority": [
+            "basic_shares_outstanding",
+            "diluted_shares_outstanding"
+          ]
+        }
+      ],
+      "shares_ttl_candidates_days": [
+        90,
+        180,
+        365
+      ]
+    },
+    "sha256": "f15f49ee4cf081937eb1df59763250509c8aad4f07c917c96b1ca6da6a03b716"
+  },
+  "created_at_utc": "2026-08-07T16:29:00.899511+00:00",
+  "g0": {
+    "checks": {
+      "availability_is_strict": true,
+      "cutoff_is_0400_new_york": true,
+      "final_gate_is_not_predeclared": true,
+      "float_is_nonblocking_context": true,
+      "market_cap_threshold_is_strict_lt_100m": true,
+      "parent_universe_frozen_to_4824": true,
+      "price_boundaries_frozen": true,
+      "prohibited_claims_are_false": true,
+      "reference_price_is_prior_close": true,
+      "share_policies_complete": true,
+      "ttl_candidates_complete": true
+    },
+    "g0_contract_gate": "PASS"
+  },
+  "g1": {
+    "checks": {
+      "daily_identity_join_exact": true,
+      "daily_master_id_unique": true,
+      "daily_parent_ticker_join_complete": true,
+      "daily_ticker_session_unique": true,
+      "hard_invalid_reference_price_zero": true,
+      "instrument_session_grain_unique": false,
+      "parent_row_count_matches_4824": true,
+      "parent_ticker_count_matches_4824": true,
+      "parent_ticker_unique": true
+    },
+    "daily_spine_metrics": {
+      "any_corporate_action_rows": 3303,
+      "data_present_rows": 781534,
+      "expected_session_rows": 819493,
+      "instrument_count": 3074,
+      "instrument_session_key_count": 817948,
+      "master_daily_id_count": 819493,
+      "missing_expected_rows": 37959,
+      "null_instrument_rows": 0,
+      "positive_prior_close_rows": 781240,
+      "prior_close_available_rows": 781240,
+      "reference_price_in_profile_rows": 589034,
+      "rows_total": 819493,
+      "selected_price_hard_invalid_rows": 0,
+      "session_date_max": "2025-03-14",
+      "session_date_min": "2024-01-02",
+      "split_review_rows": 471,
+      "ticker_change_review_rows": 389,
+      "ticker_count": 3112,
+      "ticker_session_key_count": 819493
+    },
+    "duplicate_instrument_session_groups": 1545,
+    "gate": "FAIL",
+    "identity_join_metrics": {
+      "exact_identity_join_rows": 819493,
+      "identity_mismatch_rows": 0,
+      "rows_total": 819493,
+      "ticker_join_rows": 819493
+    },
+    "parent_metrics": {
+      "common_stock_rows": 4824,
+      "instrument_count": 4626,
+      "lt1b_operational_rows": 4824,
+      "non_common_or_unknown_rows": 0,
+      "null_instrument_rows": 0,
+      "rows_total": 4824,
+      "ticker_count": 4824
+    }
+  },
+  "g2": {
+    "admissible_observation_metrics": {
+      "as_of_date_max": "2026-03-09",
+      "as_of_date_min": "2010-06-09",
+      "instrument_count": 4580,
+      "observation_rows": 75351
+    },
+    "basic_diluted_ratio_distribution": {
+      "ratio_max": 37.56436217444252,
+      "ratio_p01": 1.0,
+      "ratio_p50": 1.0,
+      "ratio_p99": 1.327511219178969,
+      "rows": 75351
+    },
+    "checks": {
+      "admissible_proxy_instruments_exist": true,
+      "admissible_proxy_observations_exist": true,
+      "asof_semantics_expected": true,
+      "deterministic_duplicate_tie_break_required": true,
+      "income_source_has_rows": true,
+      "income_source_has_temporal_identity_matches": true,
+      "strict_same_date_exclusion_is_measurable": true
+    },
+    "duplicate_instrument_asof_groups": 73062,
+    "fundamentals_metrics": {
+      "as_of_date_max": "2026-04-03",
+      "as_of_date_min": "2010-06-09",
+      "income_rows": 242886,
+      "instrument_count": 4580,
+      "null_instrument_rows": 46890,
+      "period_after_availability_rows": 1,
+      "positive_basic_rows": 242857,
+      "positive_both_rows": 242857,
+      "positive_diluted_rows": 242857,
+      "temporal_identity_match_rows": 195996,
+      "ticker_count": 4813,
+      "unexpected_asof_semantics_rows": 0,
+      "valid_event_context_rows": 195995
+    },
+    "gate": "PASS_WITH_RESTRICTIONS",
+    "legacy_reconciliation_metrics": {
+      "basic_source_rows": 0,
+      "date_max": "2026-03-09",
+      "date_min": "2005-01-01",
+      "diluted_source_rows": 7437896,
+      "parent_ticker_count": 4824,
+      "parent_ticker_rows": 9989254,
+      "positive_selected_share_rows": 7026924,
+      "same_date_observation_rows": 74911
+    },
+    "same_date_share_rows_conservatively_excluded": 24392
+  },
+  "g3": {
+    "checks": {
+      "all_ttl_candidates_evaluated": true,
+      "requested_denominator_preserved": true,
+      "s1_has_classifiable_rows": true,
+      "s2_has_classifiable_rows": true,
+      "strict_prior_date_selection": true,
+      "ttl_coverage_is_monotonic_s1": true,
+      "ttl_coverage_is_monotonic_s2": true
+    },
+    "gate": "PASS_WITH_RESTRICTIONS",
+    "overall_metrics": {
+      "basic_diluted_difference_rows": 241819,
+      "corporate_action_review_rows": 682,
+      "rows_in_price_profile": 589034,
+      "rows_with_prior_share_observation": 702264,
+      "same_date_selected_rows": 0,
+      "session_rows": 819493
+    },
+    "ttl_metrics": [
+      {
+        "classifiable_s1_rows": 375823,
+        "classifiable_s2_rows": 375823,
+        "classification_disagreement_rows": 960,
+        "eligible_s1_rows": 182198,
+        "eligible_s2_rows": 183158,
+        "requested_rows": 819493,
+        "stale_s1_rows": 184156,
+        "stale_s2_rows": 184156,
+        "ttl_days": 90
+      },
+      {
+        "classifiable_s1_rows": 465515,
+        "classifiable_s2_rows": 465515,
+        "classification_disagreement_rows": 1241,
+        "eligible_s1_rows": 228901,
+        "eligible_s2_rows": 230142,
+        "requested_rows": 819493,
+        "stale_s1_rows": 63540,
+        "stale_s2_rows": 63540,
+        "ttl_days": 180
+      },
+      {
+        "classifiable_s1_rows": 499588,
+        "classifiable_s2_rows": 499588,
+        "classification_disagreement_rows": 1289,
+        "eligible_s1_rows": 246811,
+        "eligible_s2_rows": 248100,
+        "requested_rows": 819493,
+        "stale_s1_rows": 18609,
+        "stale_s2_rows": 18609,
+        "ttl_days": 365
+      }
+    ],
+    "year_ttl_metrics": [
+      {
+        "classifiable_s1_rows": 329390,
+        "classifiable_s2_rows": 329390,
+        "requested_rows": 690464,
+        "session_year": 2024,
+        "ttl_days": 90
+      },
+      {
+        "classifiable_s1_rows": 392288,
+        "classifiable_s2_rows": 392288,
+        "requested_rows": 690464,
+        "session_year": 2024,
+        "ttl_days": 180
+      },
+      {
+        "classifiable_s1_rows": 417975,
+        "classifiable_s2_rows": 417975,
+        "requested_rows": 690464,
+        "session_year": 2024,
+        "ttl_days": 365
+      },
+      {
+        "classifiable_s1_rows": 46616,
+        "classifiable_s2_rows": 46616,
+        "requested_rows": 129029,
+        "session_year": 2025,
+        "ttl_days": 90
+      },
+      {
+        "classifiable_s1_rows": 73467,
+        "classifiable_s2_rows": 73467,
+        "requested_rows": 129029,
+        "session_year": 2025,
+        "ttl_days": 180
+      },
+      {
+        "classifiable_s1_rows": 81864,
+        "classifiable_s2_rows": 81864,
+        "requested_rows": 129029,
+        "session_year": 2025,
+        "ttl_days": 365
+      }
+    ]
+  },
+  "next_authorization": "REPAIR_FAILED_GATE_BEFORE_FIXTURES",
+  "scope": {
+    "scope_type": "BOUNDED_AUDIT_SCOPE",
+    "session_end": "2025-03-14",
+    "session_start": "2024-01-01"
+  },
+  "selector_gate": "NOT_EVALUATED_PENDING_FIXTURES_AND_PROBE",
+  "sources": {
+    "fundamentals_manifest": {
+      "as_of_semantics": "filing_date_available_from_date_only",
+      "build_run_id": "fundamentals_asof_table_v0_1_20260626T101617Z",
+      "contracts": {
+        "blocked_financial_policy": "01_foundations/data_consumption_policies/financial_consumption_policy.md",
+        "consumption_policy": "01_foundations/data_consumption_policies/fundamentals_asof_table_consumption_policy.md",
+        "dataset_contract": "01_foundations/contract_registry/dataset_contracts/fundamentals_asof_table_dataset_contract_v0_1.md",
+        "materializer": "scripts/materialize_fundamentals_asof_table.py",
+        "output_target_contract": "01_foundations/module_contracts/outputs/data_foundation_outputs_target_contract_v0_1.md",
+        "registry_entry": "01_foundations/dataset_registry/outputs/fundamentals_asof_table_registry_entry.yaml",
+        "schema": "01_foundations/canonical_schemas/outputs/fundamentals_asof_table_schema_contract.md",
+        "source_additional_contract": "01_foundations/contract_registry/dataset_contracts/additional_dataset_contract_v0_1.md",
+        "source_additional_financials_schema": "01_foundations/canonical_schemas/additional/additional_financials_schema_contract.md",
+        "source_additional_policy": "01_foundations/data_consumption_policies/additional_consumption_policy.md",
+        "validator": "01_foundations/validators/outputs/fundamentals_asof_table_validators.md"
+      },
+      "created_at_utc": "2026-06-26T10:16:17.923065+00:00",
+      "dataset_id": "fundamentals_asof_table_v0_1",
+      "dataset_path": "E:/TSIS/data/data_foundation_outputs/fundamentals_asof_table/fundamentals_asof_table_v0_1",
+      "direct_rl_training_allowed": false,
+      "excluded_source_subblocks": {
+        "E:/TSIS/data/financial": "blocked_by_financial_consumption_policy_audit_status_FAIL",
+        "ratios": "review_sparse_vendor_derived_snapshot_not_statement_asof_core"
+      },
+      "full_universe_claim": false,
+      "instrument_master_build_run_id": "instrument_master_v0_1_20260621T145725Z",
+      "instrument_master_dataset_id": "instrument_master_v0_1",
+      "instrument_master_manifest_path": "E:/TSIS/data/data_foundation_outputs/instrument_master/_instrument_master_manifest_v0_1.json",
+      "instrument_master_output_sha256": "69104387d2607306c3fa1740573d130db5e7c30b1d1527d3ee8a8d2b4d53c2d2",
+      "instrument_master_path": "E:/TSIS/data/data_foundation_outputs/instrument_master/instrument_master_v0_1.parquet",
+      "materialization_scope": "additional_financials_core_lt1b_statement_asof_v0_1",
+      "output_root": "E:/TSIS/data/data_foundation_outputs/fundamentals_asof_table",
+      "output_tree": {
+        "parquet_file_count": 51,
+        "total_bytes": 68765287,
+        "tree_sha256": "07d3d0200e16e020cee79fc2cf6aa873cde0145cf7efa0f07d0e78c8aefe5d58"
+      },
+      "period_end_semantics": "accounting_period_end_not_availability_date",
+      "quality_policy_version": "fundamentals_asof_table_policy_v0_1",
+      "requires_event_time_filter": true,
+      "schema_version": "fundamentals_asof_table_v0_1",
+      "source_dataset_id": "additional_v0_1",
+      "source_inventory": {
+        "business_file_count": 14436,
+        "business_row_count": 621756,
+        "empty_sentinel_file_count": 36,
+        "families": {
+          "balance_sheets": {
+            "business_files": 4813,
+            "business_rows": 136661,
+            "empty_sentinel_files": 11,
+            "files": 4824,
+            "metadata_rows": 136672
+          },
+          "cash_flow_statements": {
+            "business_files": 4810,
+            "business_rows": 242209,
+            "empty_sentinel_files": 14,
+            "files": 4824,
+            "metadata_rows": 242223
+          },
+          "income_statements": {
+            "business_files": 4813,
+            "business_rows": 242886,
+            "empty_sentinel_files": 11,
+            "files": 4824,
+            "metadata_rows": 242897
+          }
+        },
+        "file_count": 14472,
+        "inventory_hash_semantics": "sha256(statement_family,relative_path,metadata_rows,business_rows,empty_sentinel); not full file content hash",
+        "metadata_row_count": 621792,
+        "source_inventory_hash": "e3bee83873ab61fa53157e161ea6fb4a78f417847b4a92456e48fdcc9e9d2b22",
+        "source_root": "E:/TSIS/data/additional/financials"
+      },
+      "source_root": "E:/TSIS/data/additional/financials",
+      "source_statement_families": [
+        "income_statements",
+        "balance_sheets",
+        "cash_flow_statements"
+      ],
+      "source_subblock": "financials_core",
+      "summary_path": "E:/TSIS/data/data_foundation_outputs/fundamentals_asof_table/_fundamentals_asof_table_summary_v0_1.csv",
+      "validations": {
+        "as_of_date_max": "2026-04-03",
+        "as_of_date_min": "2010-04-22",
+        "bad_rows": 0,
+        "duplicate_fundamental_asof_id_count": 0,
+        "duplicate_source_key_count": 0,
+        "full_universe_claim_rows": 0,
+        "fundamental_quality_state_counts": {
+          "good_statement_asof": 500530,
+          "review_no_temporal_identity": 121217,
+          "review_period_after_filing_date": 9
+        },
+        "good_statement_asof_rows": 500530,
+        "instrument_count": 4590,
+        "instrument_temporal_match_rows": 500538,
+        "missing_filing_date_rows": 0,
+        "missing_period_end_rows": 0,
+        "period_after_filing_date_rows": 9,
+        "period_end_max": "2026-02-28",
+        "period_end_min": "2009-05-02",
+        "review_rows": 121226,
+        "row_count": 621756,
+        "statement_family_count": 3,
+        "statement_family_counts": {
+          "balance_sheets": {
+            "empty_sentinel_rows": 0,
+            "good_statement_asof_rows": 109433,
+            "instruments": 4587,
+            "rows": 136661,
+            "tickers": 4813,
+            "valid_for_event_context_candidate_rows": 109433
+          },
+          "cash_flow_statements": {
+            "empty_sentinel_rows": 0,
+            "good_statement_asof_rows": 195102,
+            "instruments": 4558,
+            "rows": 242209,
+            "tickers": 4810,
+            "valid_for_event_context_candidate_rows": 195102
+          },
+          "income_statements": {
+            "empty_sentinel_rows": 0,
+            "good_statement_asof_rows": 195995,
+            "instruments": 4580,
+            "rows": 242886,
+            "tickers": 4813,
+            "valid_for_event_context_candidate_rows": 195995
+          }
+        },
+        "ticker_count": 4813,
+        "unique_fundamental_asof_id_count": 621756,
+        "valid_for_backtest_context_candidate_rows": 500530,
+        "valid_for_event_context_candidate_rows": 500530,
+        "valid_for_ml_feature_candidate_rows": 500530,
+        "valid_for_rl_training_direct_rows": 0,
+        "valid_for_state_component_candidate_rows": 500530
+      }
+    },
+    "fundamentals_root": "G:\\TSIS\\data\\data_foundation_outputs\\fundamentals_asof_table\\fundamentals_asof_table_v0_1",
+    "instrument_master": "G:\\TSIS\\data\\data_foundation_outputs\\instrument_master\\instrument_master_v0_1.parquet",
+    "legacy_parquet": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\runs\\backtest\\population_target_pti\\population_target_pti_run_01\\population_target_pti.parquet",
+    "master_daily_root": "G:\\TSIS\\data\\data_foundation_outputs\\master_daily_table\\master_daily_table_v0_1",
+    "master_manifest": {
+      "build_run_id": "master_daily_table_v0_1_20260630T201044Z",
+      "contracts": {
+        "consumption_policy": "01_foundations/data_consumption_policies/master_daily_table_consumption_policy.md",
+        "dataset_contract": "01_foundations/contract_registry/dataset_contracts/master_daily_table_dataset_contract_v0_1.md",
+        "registry_entry": "01_foundations/dataset_registry/outputs/master_daily_table_registry_entry.yaml",
+        "schema_contract": "01_foundations/canonical_schemas/outputs/master_daily_table_schema_contract.md",
+        "validators": "01_foundations/validators/outputs/master_daily_table_validators.md"
+      },
+      "created_at_utc": "2026-06-30T20:10:44.783816+00:00",
+      "dataset_id": "master_daily_table_v0_1",
+      "known_limitations": [
+        "family_level_quality_gate_only",
+        "row_level_daily_quality_labels_not_joined_in_v0_1",
+        "fundamentals_news_short_halts_regime_not_joined_in_v0_1",
+        "vwap_not_adjusted_for_split_or_dividend_views"
+      ],
+      "output_path": "E:\\TSIS\\data\\data_foundation_outputs\\master_daily_table\\master_daily_table_v0_1",
+      "output_tree": {
+        "parquet_file_count": 66,
+        "total_bytes": 2454411733,
+        "tree_sha256": "18a9905dc0ad7410fe0265241881019f2ad8f51fb44183f3eb750476720830e8"
+      },
+      "price_views": [
+        "daily_raw",
+        "split_normalized",
+        "adjusted"
+      ],
+      "quality_policy_version": "master_daily_table_policy_v0_1",
+      "schema_version": "master_daily_table_v0_1",
+      "source_corporate_actions": "E:\\TSIS\\data\\data_foundation_outputs\\corporate_actions_table\\corporate_actions_table_v0_1.parquet",
+      "source_corporate_actions_build_run_id": "corporate_actions_table_v0_1_20260622T144845Z",
+      "source_corporate_actions_manifest": "E:\\TSIS\\data\\data_foundation_outputs\\corporate_actions_table\\_corporate_actions_table_manifest_v0_1.json",
+      "source_corporate_actions_sha256": "01989eb301a2cdd83e297fbf6384e0bd4d5b4fb300bdccee6b1adbde87d5e4ce",
+      "source_daily_adjusted_inventory": {
+        "parquet_file_count": 125438,
+        "path_size_inventory_sha256": "aaa71f0b288823d542b297ac9da627953e401ae27b8cbda7b5093068427dd863",
+        "total_bytes": 5635851077
+      },
+      "source_daily_adjusted_root": "E:\\TSIS\\data\\ohlcv_daily_adjusted",
+      "source_dataset_certification_matrix": "E:\\TSIS\\data\\data_foundation_outputs\\dataset_certification_matrix\\dataset_certification_matrix_v0_1.parquet",
+      "source_dataset_certification_matrix_build_run_id": "dataset_certification_matrix_v0_1_20260622T154116Z",
+      "source_dataset_certification_matrix_manifest": "E:\\TSIS\\data\\data_foundation_outputs\\dataset_certification_matrix\\_dataset_certification_matrix_manifest_v0_1.json",
+      "source_dataset_certification_matrix_sha256": "e7803e3ec58cfb92c1313efc09bdd3a015800c4680437e4567a0174b257f1fb0",
+      "source_expected_data_calendar": "E:\\TSIS\\data\\data_foundation_outputs\\expected_data_calendar\\expected_data_calendar_v0_1",
+      "source_expected_data_calendar_build_run_id": "expected_data_calendar_v0_1_20260630T194807Z",
+      "source_expected_data_calendar_manifest": "E:\\TSIS\\data\\data_foundation_outputs\\expected_data_calendar\\_expected_data_calendar_manifest_v0_1.json",
+      "source_raw_daily_inventory": {
+        "parquet_file_count": 125438,
+        "path_size_inventory_sha256": "9852b6969610267fc3891078b65a0f04c4f3ae6b441003c6fcdb0c2e6c012cb0",
+        "total_bytes": 2215409929
+      },
+      "source_raw_daily_root": "E:\\TSIS\\data\\ohlcv_daily",
+      "summary_path": "E:\\TSIS\\data\\data_foundation_outputs\\master_daily_table\\_master_daily_table_summary_v0_1.csv",
+      "validations": {
+        "backtest_core_row_candidate_rows": 20106954,
+        "data_present_rows": 20106954,
+        "duplicate_key_groups": 0,
+        "expected_daily_rows": 7369699,
+        "first_session": "2005-01-03",
+        "hard_fail_count": 0,
+        "instrument_id_count": 4626,
+        "last_session": "2026-03-09",
+        "missing_expected_data_rows": 2002143,
+        "negative_volume_rows": 0,
+        "price_view_count": 3,
+        "row_count": 22109097,
+        "rows_by_price_view": {
+          "adjusted": {
+            "backtest_core_candidate_rows": 6702318,
+            "hard_invalid_rows": 0,
+            "missing_rows": 667381,
+            "present_rows": 6702318,
+            "rows": 7369699
+          },
+          "daily_raw": {
+            "backtest_core_candidate_rows": 6702318,
+            "hard_invalid_rows": 0,
+            "missing_rows": 667381,
+            "present_rows": 6702318,
+            "rows": 7369699
+          },
+          "split_normalized": {
+            "backtest_core_candidate_rows": 6702318,
+            "hard_invalid_rows": 0,
+            "missing_rows": 667381,
+            "present_rows": 6702318,
+            "rows": 7369699
+          }
+        },
+        "rows_with_corporate_action": 94275,
+        "selected_price_hard_invalid_rows": 0,
+        "ticker_count": 4824
+      }
+    }
+  },
+  "ta3_sample_freeze_authorized": false
+}
