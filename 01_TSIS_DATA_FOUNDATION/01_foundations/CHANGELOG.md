@@ -1,3 +1,17 @@
+## 2026-08-11 | SEC PIT seven-ticker owner-exclusion certification readout
+
+- Added the versioned stratified plan outcome and Data Foundation readout covering selection, acquisition, O/S, ownership, holder/class reconciliation, daily float, telemetry and recovery.
+- Certified identical code hashes, ordered schema/version, five-row grain, PIT eligibility, explicit blocker NULLs, arithmetic and output hashes across six executed owner runs.
+- Recorded PARTIAL_PASS_SCALE_BLOCKED: three calculated ordinary-share cases, three causal NULL cases and one preferred/depositary halt.
+- Persisted adaptive annual-baseline family traversal and one production-equivalent probe per planned shard as mandatory work before the 4,824-instrument gate can reopen.
+
+## 2026-08-11 | SEC PIT predownload control v0_2
+
+- Added the dataset contract, consumption policy, validators and seven-case dossier for the predownload control plane.
+- Fixed authority order: lt1b_universe_v0_1 defines parent scope; instrument_master_v0_1 is the identity projection.
+- Materialized source-separated identity intervals, accession candidates, selection plans and gate evidence without network access.
+- Probe run v0.3 passed expected behavior with complete input/output hashes while retaining download and parent-scale authorization as NOT_AUTHORIZED.
+
 ## 2026-08-10 | SEC PIT fundamental context | BNAI G8 registration/O/S reconciliation
 
 - Completed governed run `sec_pit_bnai_g8_os_reconciliation_v0_40_20260810`.
@@ -126,7 +140,7 @@
 
 - `2026-07-05` | `market_state` | intradia 1m quote-guarded lineage upstream cerrado: nuevo `state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md` documenta raw `ohlcv_1m` + `D:/quotes` provisional -> repair shards -> `repair_manifest_lt1b_v0_1.parquet` PASS -> futura `master_intraday_bar_table_v0_2_candidate_quote_guarded`. No materializa master intradia, scanner 1m ni eventos 1m.
 
-ï»¿# 01 Foundations Changelog
+Ã¯Â»Â¿# 01 Foundations Changelog
 
 ## 2026-07-05 | market_state | daily event windows lineage cerrado
 
@@ -704,3 +718,36 @@ Authoritative runs are v0_59 through v0_62 under
 pilot except G8 tradability and G12 institutional ownership. Scale-out is not
 authorized until the optimized stratified replay and parent-universe identity
 scope are frozen.
+## 2026-08-11 - PGAC daily O/S PIT evidence v0_1
+
+The bounded no-network PGAC gate materialized three reconciled Class A
+shares-outstanding anchors and 140 daily PIT-valid sessions. All daily values
+are 8,869,250, all 140 sessions are non-NULL, and zero rows use a future anchor.
+S1 remains human-confirmation pending; ownership, float, tradability and 13F
+remain unexecuted. The versioned readout is
+inspection_dossiers/sec_pit/SEC_PIT_PGAC_NO_NETWORK_OS_PROBE_READOUT_v0_1.md.
+
+## 2026-08-11 - PGAC ownership and owner-exclusion evidence v0_1
+
+The production-equivalent no-network probe processed all 47 acquired ownership
+candidate documents, proved issuer-name continuity, reconciled the combined
+proxy table to exact Class A/Class B holder components and generated 140 causal
+daily owner-exclusion float rows. The supported Class A exclusion is 244,250
+shares and the resulting owner-exclusion float is 8,625,000 of 8,869,250 O/S
+(97.24610311%). Generic institutional ownership remains neutral, freely
+tradable float and 13F remain unresolved, S9 human confirmation is pending and
+scale to 4,824 instruments is not authorized. See
+inspection_dossiers/sec_pit/SEC_PIT_PGAC_OWNERSHIP_AND_OWNER_EXCLUSION_PROBE_READOUT_v0_1.md.
+
+## 2026-08-11 - SEC PIT adaptive baseline, Company Facts and shard gate v0_1
+
+The seven-case SEC PIT workflow now resolves ownership baselines through bounded
+document-family traversal, distinguishes annual and special proxies, handles
+20-F amendment families, emits exact blockers and preserves fail-closed daily
+states. Official SEC Company Facts was added as O/S reconciliation only and
+exposed an issued-versus-outstanding extraction defect that was corrected.
+BGM and DOMH now calculate generically; BBBY remains NULL for ticker reuse and
+CNOBP remains a security-class halt. Three full-interval probes and all four
+planned shard probes passed their production-equivalent variable audits. Scale
+to 4,824 instruments remains unauthorized pending a governed 30-50 case gate.
+See `inspection_dossiers/sec_pit/SEC_PIT_ADAPTIVE_BASELINE_COMPANYFACTS_FULL_INTERVAL_AND_SHARD_CERTIFICATION_READOUT_v0_1.md`.

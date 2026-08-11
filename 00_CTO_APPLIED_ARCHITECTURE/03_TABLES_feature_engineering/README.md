@@ -101,6 +101,16 @@ acceptance, core-four integration design, core-four integration execution,
 core-four materialization design, core-four materialization authorization y
 core-four materialization execution quedan cerrados o emitidos con restricciones.
 
+Estado operativo externo del vertical, sin cambiar la autoridad de esta capa:
+Python continua como oraculo semantico; el engine C++ candidato ya esta
+integrado con fingerprint explicito de engine, runner, adapter, fuente y
+binario. El gate limitado cerro 25/25 `PASS_EXACT` y la recertificacion
+production-equivalent cerro 4/4 shards `PASS`, con un schema por familia y sin
+variables ni metadata requeridas ausentes. La autoridad vigente vive en
+`00_CTO/04_MARKET_STATES_CREATION/CURRENT_STATUS_AND_HANDOFF_v0_12.md`; esta
+nota no autoriza el nuevo run de 240 bloques, builder, dataset, consumo ni
+promocion adicionales.
+
 El run vigente de integracion experimental es:
 
 ```text

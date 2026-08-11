@@ -1,8 +1,30 @@
+## Pending - 2026-08-11 - HIGH - SEC PIT seven-ticker owner-exclusion readout
+
+- **Estado:** pending
+- **Fecha:** 2026-08-11
+- **Severidad:** HIGH
+- **Scope:** versioned stratified certification, calculated/NULL outcome semantics and closed 4,824 scale gate
+- **Leaf objetivo:** foundations_authority / SEC PIT inspection dossiers
+- **Archivos afectados:** SEC_PIT_SEVEN_TICKER_OWNER_EXCLUSION_STRATIFIED_PROBE_READOUT_v0_1.md and 01_foundations/CHANGELOG.md.
+- **Motivo:** the dossier adds material evidence and changes the governed next-step decision; official rebuild is deferred while Trading Activity remains active.
+- **Cierre esperado:** rebuild the affected foundations leaf, run Graphify diagnostics and update BUILD_MANIFEST.md.
+
+## Pending - 2026-08-11 - HIGH - SEC PIT Predownload Control v0_2
+
+- **Estado:** pending
+- **Fecha:** 2026-08-11
+- **Severidad:** HIGH
+- **Scope:** universe authority, identity intervals, accession/security-class linkage, document selection, authorization, power-loss recovery and runtime bottleneck telemetry semantics
+- **Leaf objetivo:** foundations_authority / SEC PIT control plane
+- **Archivos afectados:** SEC PIT v0.2 contract, consumption policy, validators, dossier including the PGAC acquisition readout, bounded authorization config, scripts, dedicated monitor, telemetry tests and evidence assets.
+- **Motivo:** the semantic control path was implemented while Trading Activity materialization is live; an official leaf rebuild was deferred to avoid competing for RAM/IO.
+- **Cierre esperado:** rebuild only the affected official leaf, run Graphify diagnostics and update its BUILD_MANIFEST.md.
+
 ## 2026-07-07 Quotes Root Supersession
 
 `D:/quotes -> E:/TSIS/data/quotes_` is closed and approved. The official quotes E-root for new downstream work is `E:/TSIS/data/quotes_`, backed by Phase A structural parity and Phase B SHA256 retry evidence. Historical artifacts built from `D:/quotes` remain pre-approval/provenance evidence and must be rebuilt against the approved E-root before promotion to an official downstream table. The legacy `E:/TSIS/data/quotes` tree remains incomplete for this decision.
 
-﻿# Graphify Refresh Queue for 01_foundations
+ï»¿# Graphify Refresh Queue for 01_foundations
 
 Fecha de creacion: 2026-06-19
 Estado: cola operativa versionada para refrescos Graphify de `01_foundations`.
@@ -5695,4 +5717,67 @@ The refresh does not claim official promotion of candidate datasets, production
 ML/RL/AlphaEvolve enablement, or validation against full real tables where the
 source contracts only declare controlled fixtures/candidates.
 ```
+## GFQ-20260811-FOUNDATIONS-SEC-PGAC-OS-001 - PGAC O/S schema and evidence
 
+Status: pending
+Date: 2026-08-11
+Severity: HIGH
+Leaf target: foundations_authority / SEC PIT inspection dossier
+
+Affected files:
+
+- canonical_schemas/sec_pit_resolved_daily_states_schema_contract_v0_2.md
+- inspection_dossiers/sec_pit/SEC_PIT_PGAC_NO_NETWORK_OS_PROBE_READOUT_v0_1.md
+- CHANGELOG.md
+
+Reason: a new explicit float fraction/percent schema and the first PGAC daily
+O/S PIT evidence were persisted. No official Graphify leaf refresh was executed
+while the authorized Trading Activity materialization remained live.
+
+Required action: rebuild the affected foundations leaf, run diagnostics and
+update BUILD_MANIFEST.md.
+
+## GFQ-20260811-FOUNDATIONS-SEC-ADAPTIVE-001 - Adaptive baseline and shard certification
+
+Status: pending
+Date: 2026-08-11
+Severity: HIGH
+Leaf target: foundations_authority / SEC PIT inspection dossier
+
+Affected scope:
+
+- `scripts/sec_pit/` adaptive baseline, blocker, Company Facts, full-interval
+  and shard-certification components;
+- `configs/sec_pit_owner_exclusion_*` probe configurations;
+- `tests/test_sec_pit_*` validation corpus;
+- `inspection_dossiers/sec_pit/SEC_PIT_ADAPTIVE_BASELINE_COMPANYFACTS_FULL_INTERVAL_AND_SHARD_CERTIFICATION_READOUT_v0_1.md`;
+- `CHANGELOG.md`.
+
+Reason: the semantic topology now includes document-family fallback, explicit
+blocker retry semantics, Company Facts as O/S reconciliation only, causal
+full-interval coverage states and a four-shard scale gate. The existing graph
+was queried and does not yet represent these nodes. No isolated refresh was
+performed because the root queue requires a coordinated leaf rebuild and root
+replacement rather than an additive partial merge.
+
+Required action: rebuild and diagnose the affected Foundations/SEC PIT leaf,
+update its `BUILD_MANIFEST.md`, then include it in the next governed root merge.
+
+## GFQ-20260811-FOUNDATIONS-SEC-PGAC-OWNER-001 - PGAC owner-exclusion evidence
+
+Status: pending
+Date: 2026-08-11
+Severity: HIGH
+Leaf target: foundations_authority / SEC PIT inspection dossier
+
+Affected files:
+
+- inspection_dossiers/sec_pit/SEC_PIT_PGAC_OWNERSHIP_AND_OWNER_EXCLUSION_PROBE_READOUT_v0_1.md
+- CHANGELOG.md
+
+Reason: the first evidence-ready PGAC ownership/class reconciliation and daily
+owner-exclusion state were persisted, including restrictions and the governed
+path to 4,824 instruments. No official Graphify leaf refresh was executed.
+
+Required action: rebuild the affected foundations leaf, run diagnostics and
+update BUILD_MANIFEST.md.

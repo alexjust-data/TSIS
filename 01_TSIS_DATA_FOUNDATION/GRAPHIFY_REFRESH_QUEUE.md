@@ -1,5 +1,27 @@
 # Graphify Refresh Queue for 01_TSIS_DATA_FOUNDATION
 
+## Pending - 2026-08-11 - MEDIUM - SEC PIT audit package builder
+
+- **Estado:** pending
+- **Fecha:** 2026-08-11
+- **Severidad:** MEDIUM
+- **Scope:** reproducible external-package assembly, source snapshotting and ZIP integrity gates
+- **Leaf objetivo:** data_foundation_root / SEC PIT audit tooling
+- **Archivos afectados:** scripts/sec_pit/build_external_audit_package_v0_1.ps1 and CHANGELOG.md.
+- **Motivo:** new audit-delivery tooling was added; official rebuild is deferred to avoid contention with active Trading Activity work.
+- **Cierre esperado:** refresh the affected Data Foundation leaf, run diagnostics and update BUILD_MANIFEST.md.
+
+## Pending - 2026-08-11 - HIGH - SEC PIT stratified resolver implementation
+
+- **Estado:** pending
+- **Fecha:** 2026-08-11
+- **Severidad:** HIGH
+- **Scope:** generic SEC PIT identity admission, O/S extraction, ownership parsing, class reconciliation, management-aggregate precedence, explicit blockers and certification audit
+- **Leaf objetivo:** data_foundation_root / SEC PIT implementation and resolution community
+- **Archivos afectados:** configs/sec_pit_owner_exclusion_stratified_probe_v0_1.json, scripts/sec_pit stratified/O-S/ownership/audit implementations, SEC PIT tests and CHANGELOG.md.
+- **Motivo:** code and policy semantics changed; official rebuild is deferred to avoid resource contention with the active Trading Activity materialization.
+- **Cierre esperado:** refresh the affected Data Foundation leaf, run diagnostics and update BUILD_MANIFEST.md.
+
 Estado: cola fallback para gobierno comun de Data Foundation. Las ramas
 `01_foundations` y `00_data_certification` conservan sus colas mas cercanas
 para cambios de sus corpus respectivos.
@@ -12,6 +34,25 @@ locales deben usar la cola local mas cercana.
 
 ## Pending
 
+### GFQ-20260811-FOUNDATION-TA3-RECOVERY-001 - TA-3 recoverable supervisor
+
+- **Estado:** `pending`
+- **Fecha:** `2026-08-11`
+- **Severidad:** `HIGH`
+- **Scope:** supervision, recovery and telemetry semantics for the authorized
+  Trading Activity Stage-8 C++ 240-block materialization
+- **Leaf objetivo:** `data_foundation_root` / Trading Activity execution and
+  long-running operations community
+- **Archivos afectados:**
+  `scripts/recover_trading_activity_stage8_cpp_full_materialization.py`,
+  `scripts/monitor_long_running_operation.ps1`,
+  `tests/test_trading_activity_stage8_cpp_recovery.py`, `CHANGELOG.md`
+- **Motivo:** the live recovery supervisor was implemented and launched while
+  the governed materialization remains active. A Graphify rebuild was deferred
+  to avoid competing for RAM/IO with the two adopted shards.
+- **Cierre esperado:** refresh the affected Data Foundation leaf after the
+  materialization reaches a terminal state, run Graphify diagnostics and update
+  its `BUILD_MANIFEST.md`.
 ### GFQ-20260805-FOUNDATION-001 - Agent Graphify closeout policy
 
 - **Estado:** `pending`
@@ -24,3 +65,30 @@ locales deben usar la cola local mas cercana.
   todas las subramas con Graphify. No se reconstruyeron esos leaves.
 - **Cierre esperado:** incorporar esta politica al siguiente leaf de gobierno o
   autoridad aplicable y validar la fusion superior.
+### GFQ-20260811-FOUNDATION-SEC-PGAC-OS-001 - PGAC Class A O/S implementation
+
+- **Estado:** pending
+- **Fecha:** 2026-08-11
+- **Severidad:** HIGH
+- **Scope:** common SEC PIT extraction, reconciliation, resolver and float-unit semantics.
+- **Leaf objetivo:** data_foundation_root / SEC PIT Fundamental Context.
+- **Archivos afectados:** scripts/sec_pit/class_os_extract.py, ixbrl_class_os_extract.py, class_os_reconcile.py, run_pgac_no_network_os_probe.py, float_estimate.py, resolver.py, SEC PIT tests and CHANGELOG.md.
+- **Motivo:** new accession-to-class admission and daily O/S semantics were implemented; Graphify rebuild was deferred to avoid competing with the active Trading Activity materialization.
+- **Cierre esperado:** refresh implementation/test relationships, run diagnostics and update BUILD_MANIFEST.md.
+
+### GFQ-20260811-FOUNDATION-SEC-PGAC-OWNER-001 - Generic SEC PIT ownership resolver
+
+- **Estado:** pending
+- **Fecha:** 2026-08-11
+- **Severidad:** HIGH
+- **Scope:** neutral ownership extraction, issuer-name continuity, exact
+  multi-class reconciliation, holder deduplication and daily owner-exclusion
+  state.
+- **Leaf objetivo:** data_foundation_root / SEC PIT Fundamental Context.
+- **Archivos afectados:** scripts/sec_pit/ownership_v2.py,
+  ownership_class_reconcile.py, holders_v2.py, float_estimate_v2.py,
+  run_no_network_owner_exclusion_probe.py, config, tests and CHANGELOG.md.
+- **Motivo:** new generic production semantics and fail-closed blocker behavior
+  were implemented; no official Graphify leaf rebuild was executed.
+- **Cierre esperado:** refresh implementation/test relationships, run
+  diagnostics and update BUILD_MANIFEST.md.

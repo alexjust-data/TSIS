@@ -21,7 +21,7 @@ Despues del orden de lectura raiz:
 
 1. `C:/TSIS_Data/00_CTO/LOCAL_RULES.md`
 2. `README.md`
-3. `CURRENT_STATUS_AND_HANDOFF_v0_10.md`
+3. `CURRENT_STATUS_AND_HANDOFF_v0_12.md`
 4. `EXPERIMENTAL_TO_CANONICAL_REPRESENTATION_LIFECYCLE_v0_1.md`
 5. `TRADING_ACTIVITY_TO_WAKE_UP_COMPLETION_ROADMAP_v0_3.md`
 6. `CHANGELOG.md`
@@ -32,12 +32,15 @@ Despues del orden de lectura raiz:
 10. `VARIABLES_FEATURES/TRADING_ACTIVITY_BINDING_A_EXACT_SPECIFICATION_v0_2.md`
 11. `VARIABLES_FEATURES/TRADING_ACTIVITY_BINDING_A_MULTISESSION_PILOT_RUN_PLAN_v0_1.md`
 12. `VARIABLES_FEATURES/TRADING_ACTIVITY_BINDING_A_MULTISESSION_RUNNER_IMPLEMENTATION_READOUT_v0_2.md`
-13. `VARIABLES_FEATURES/TRADING_ACTIVITY_STRATIFIED_DEVELOPMENT_SAMPLE_PLAN_v0_1.md`
-14. `VARIABLES_FEATURES/POPULATION_TARGET_PIT_RECOVERY_AND_GOVERNANCE_PLAN_v0_1.md`
-15. `VARIABLES_FEATURES/FLOAT_CONTEXT_SOURCE_AUDIT_PLAN_v0_1.md`
-16. `TRADING_ACTIVITY_PARALLEL_WORKSTREAM_COORDINATION_v0_1.md`
+13. `VARIABLES_FEATURES/TRADING_ACTIVITY_STAGE8_CPP_OPTIMIZATION_AND_EQUIVALENCE_READOUT_v0_1.md`
+14. `VARIABLES_FEATURES/TRADING_ACTIVITY_STAGE8_CPP_BLOCK_EQUIVALENCE_PLAN_v0_1.json`
+15. `VARIABLES_FEATURES/TRADING_ACTIVITY_STAGE8_CPP_ENGINE_INTEGRATION_AND_FOUR_SHARD_RECERTIFICATION_READOUT_v0_1.md`
+16. `VARIABLES_FEATURES/TRADING_ACTIVITY_STRATIFIED_DEVELOPMENT_SAMPLE_PLAN_v0_1.md`
+17. `VARIABLES_FEATURES/POPULATION_TARGET_PIT_RECOVERY_AND_GOVERNANCE_PLAN_v0_1.md`
+18. `VARIABLES_FEATURES/FLOAT_CONTEXT_SOURCE_AUDIT_PLAN_v0_1.md`
+19. `TRADING_ACTIVITY_PARALLEL_WORKSTREAM_COORDINATION_v0_1.md`
 
-Los handoffs anteriores son historia incorporada por `v0_10`.
+Los handoffs anteriores son historia incorporada por `v0_12`.
 
 Antes de preparar, recomendar, lanzar o reanudar un run multisesion, leer:
 
@@ -58,7 +61,7 @@ prevalece solamente sobre las clausulas conflictivas que enumera.
 Versiones vigentes:
 
 ```text
-current status and handoff          = v0_10
+current status and handoff          = v0_12
 source observability readout        = v0_5
 Binding A exact specification       = v0_2
 trade eligibility policy            = v0_2
@@ -163,7 +166,22 @@ TA-3 SAMPLE MANIFEST
 = FROZEN_AND_VALIDATED
 
 TA-3 BROAD EXECUTION
-= RUNNING_WITH_CONTROLLED_TWO_WORKER_CONCURRENCY
+= PAUSED_FOR_HARDWARE_OPTIMIZATION
+
+STAGE-8 C++ REPRESENTATIVE EQUIVALENCE
+= PASS_EXACT
+
+STAGE-8 LIMITED STRATIFIED EQUIVALENCE
+= PASS_EXACT
+
+STAGE-8 EXPLICIT ENGINE INTEGRATION
+= COMPLETE_FINGERPRINTED
+
+STAGE-8 FOUR-SHARD RECERTIFICATION
+= PASS_4_OF_4
+
+NEW 240-BLOCK C++ MATERIALIZATION
+= NOT_AUTHORIZED_PENDING_HUMAN_DECISION
 
 FLOAT OWNER-EXCLUSION GATE
 = PASS_WITH_RESTRICTIONS
@@ -219,7 +237,7 @@ backtest consumption
 Current handoff:
 
 ```text
-CURRENT_STATUS_AND_HANDOFF_v0_10.md
+CURRENT_STATUS_AND_HANDOFF_v0_12.md
 ```
 
 Current TA-3 plan:
@@ -229,13 +247,18 @@ VARIABLES_FEATURES/
 TRADING_ACTIVITY_STRATIFIED_DEVELOPMENT_SAMPLE_PLAN_v0_1.md
 ```
 
-An agent may work in parallel on:
+The engine integration and four-shard certification are complete. The active
+work is restricted to review and preparation for a separately authorized new
+versioned broad run. The bounded PASS does not authorize that run.
+
+SEC PIT evidence under `_DESCAGRA_DATOS_NECESARIA_` is preserved but parked
+until this Trading Activity gate and its governed materialization decision close.
+
+An agent may also prepare, without launching or promoting:
 
 - recovery inventory for the historical population-target panel;
 - shares semantics and session-start prior-close audit;
 - PIT selector schema, builder design, validators and fixtures;
-- SEC PIT O/S/ownership evidence reconciliation;
-- G8 lockup, legend and resale-condition extraction;
 - float source inventory and source observability audit;
 - TA-3 sample-manifest schema and lockbox guards;
 - instrument-block runner generalization, tests and bounded smoke.
@@ -246,6 +269,9 @@ An agent must not:
 - use ungoverned float as a filter;
 - inspect validation or final-test feature outputs;
 - exceed two concurrent TA-3 workers without a new capacity validation;
+- resume `ba2r2` with C++ or mix Python/C++ partitions under one run lineage;
+- change or bypass the explicit C++ engine/source/binary fingerprint;
+- authorize broad materialization without a separate governed human decision;
 - infer model admission or canonical promotion.
 
 Foundation quality labels remain evidence metadata and are not automatic

@@ -1,5 +1,62 @@
 # Market States Creation Changelog
 
+## 2026-08-11 | SEC PIT external audit package refreshed
+
+- Rebuilt the existing PGAC external-audit ZIP in place with the authoritative seven-case O/S and owner-exclusion v0.5 results, certification evidence, code/config snapshots and focused tests.
+- Added a 237-row SHA-256/size manifest covering every packaged file except the manifest itself; independent validation reported zero mismatches across 238 ZIP entries.
+- Preserved the pre-stratified ZIP under the runtime backup root and kept 4,824-instrument scale-out explicitly unauthorized.
+
+## 2026-08-11 | SEC PIT seven-ticker owner-exclusion stratified probe
+
+- Executed the frozen seven-case probe: 343 selected documents, 96 reused, 247/247 acquired, zero failures/retries/429 and 29,122,331 response bytes.
+- Produced causal five-session O/S for five ordinary-share cases, explicit NULL for BBBY and pre-acquisition class halt for CNOBP.
+- Produced owner-exclusion float for ALUR, BNAI and PGAC; BGM and DOMH exposed the need for adaptive baseline-family traversal, while BBBY remained blocked by ticker reuse.
+- Kept the 4,824-instrument scale gate closed pending baseline backfill, repeat certification and one production-equivalent probe per planned shard.
+
+## 2026-08-11 | SEC PIT predownload control implementation
+
+- Implemented and probed the v0.2 universe, identity interval, class, accession-link and coverage-aware selection path.
+- Preserved Massive/Polygon, SEC and market-presence dates as separate evidence fields.
+- Blocked the rejected legacy broad selector and added a separately authorized, hash-bound, resume-safe acquisition path.
+- Seven-case probe passed with six eligible common-equity cases and the expected CNOBP class halt; no download was authorized or executed.
+
+## 2026-08-11 | SEC PIT G8 approximate-output boundary and global G12 plan
+
+- Confirmed that G8 currently has evidence and contracts for a separately named
+  `FLOAT_EVIDENCE_UPPER_BOUND` and conservative/base/permissive scenarios, but
+  no implemented tradability arithmetic; all blocked point estimates remain
+  NULL and owner-exclusion float must not be relabeled as tradability float.
+- Added `SEC_PIT_GLOBAL_13F_INSTITUTIONAL_OWNERSHIP_ACQUISITION_PLAN_v0_1.md` as
+  the persistent pending authority for G12 after Trading Activity closes.
+- Froze the correct scale architecture: acquire each global 13F vintage once,
+  resolve manager/accession/amendment chains, map historical CUSIP and security
+  class, apply eligible filing sessions and aggregate across every governed
+  ticker identity. Ticker-by-ticker 13F downloading is prohibited.
+- Kept physical acquisition, long materialization, canonical promotion and
+  scanner/backtest consumption unauthorized.
+
+## 2026-08-11 | Trading Activity Stage-8 engine integration and four-shard recertification
+
+- Integrated Stage 8 behind explicit `python`/`cpp` engine selection with a composite fingerprint covering the registry, runner, adapter, C++ source and native binary.
+- Added fail-closed expected-fingerprint and resume-fingerprint checks; persisted engine identity in pre-manifest, lineage, summary, pointer and final manifest without changing the feature Parquet schema.
+- Preserved cycle 1 as a pre-Stage-8 Windows `MAX_PATH` failure; no failed output was resumed or mixed.
+- Executed cycle 2 from compact new roots: 4/4 shards PASS, 0 failures, 156,300 current-state rows, 62,520 multiscale rows and 36,900 PIT-baseline rows in 231.710 seconds.
+- Certified one engine fingerprint and one schema variant per family, with exact expected counts and no missing variables, metadata or output roots.
+- Added `CURRENT_STATUS_AND_HANDOFF_v0_12.md` and `TRADING_ACTIVITY_STAGE8_CPP_ENGINE_INTEGRATION_AND_FOUR_SHARD_RECERTIFICATION_READOUT_v0_1.md`.
+- Broad 240-block materialization remains unauthorized pending a separate governed human decision; `ba2r2` resume/mixing, Binding B, OOS, canonical promotion and SEC PIT continuation remain closed.
+
+## 2026-08-11 | Trading Activity Stage-8 C++ recovery and exact-equivalence gate
+
+- Superseded `CURRENT_STATUS_AND_HANDOFF_v0_10.md` with `v0_11`; broad TA-3 is paused, not running.
+- Reconciled 23 physically complete Python blocks: eight in shard 0 and fifteen in shard 1. Granular final manifests override the shard-0 pause aggregate count of seven.
+- Recorded the first C++ prototype as `FAIL_EQUIVALENCE`: 54,000 `reference_session_count` mismatches plus reference-date mismatches caused by a global rather than group-specific date list.
+- Corrected C++ selection per `(clock_minute_et, window_seconds)` without changing the Python contract, runner semantics, variables, formulas, schema, missingness or lineage.
+- Added adversarial sparse-history/DST tests and the fail-closed block comparator. Final baseline/vectorized/native/C++/comparator suite: `8 PASS`.
+- Production-equivalent ACU smoke: 350,985 rows, zero contract mismatches, zero exact mismatches, exact dtype/NULL masks and exact Parquet SHA-256.
+- Added `VARIABLES_FEATURES/TRADING_ACTIVITY_STAGE8_CPP_OPTIMIZATION_AND_EQUIVALENCE_READOUT_v0_1.md` and the limited plan `TRADING_ACTIVITY_STAGE8_CPP_BLOCK_EQUIVALENCE_PLAN_v0_1.json`: two complete 10-session blocks plus five adversarial sessions.
+- Executed the human-authorized limited gate: 25/25 sessions, 8,612,625 rows, zero contract mismatches, zero exact mismatches, exact dtypes/NULL masks and 25/25 exact Parquet hashes in 927.500 seconds.
+- The limited gate is `PASS_EXACT`; C++ integration still requires an explicit engine/source/binary fingerprint and broad materialization remains unauthorized until four new shard probes and governed human PASS. SEC PIT is preserved but parked under `_DESCAGRA_DATOS_NECESARIA_`.
+
 ## 2026-08-10 | SEC PIT seven-ticker metadata preflight
 
 - Froze a seven-case stratified replay: BNAI, DOMH, BBBY, BGM, CNOBP, ALUR and PGAC.
@@ -524,3 +581,51 @@ scope are frozen.
 - Materialized `sec_pit_6i_lifecycle_window_reconciliation_v0_1` for six pilot identities.
 - Preserved vendor, SEC and market-presence dates as separate authorities.
 - Found two exact vendor/daily starts, one BBBY ticker-reuse conflict, one ALUR SEC exchange-end candidate and two non-comparable source-date cases.
+
+## 2026-08-11 - SEC PIT PGAC variable availability external audit package
+
+- Added `SEC_PIT_PGAC_VARIABLE_AVAILABILITY_AND_RESULTS_READOUT_v0_1.md` to
+  distinguish primary acquisition success from variable extraction and daily
+  PIT materialization.
+- Recorded that the PGAC acquisition produced 68/68 verified primary documents
+  but 0/10 target daily PIT variables materialized from that acquisition.
+- Preserved the separate vendor `fundamentals_asof_table_v0_1` comparison and
+  the earlier BNAI experimental baseline without promoting either as a PGAC SEC
+  extraction result.
+- Added a scoped external-audit package manifest and ZIP containing only SEC PIT
+  process documents, bounded predownload evidence and PGAC acquisition evidence.
+## 2026-08-11 - SEC PIT PGAC no-network O/S gate v0_1
+
+- Froze the bounded S0-S9 PGAC execution plan without authorizing new downloads
+  or another ticker.
+- Admitted three target-interval PGAC Class A filings, rejected nine prehistory
+  and two post-interval O/S candidates, and preserved human confirmation as S5.
+- Materialized three reconciled O/S anchors and 140 causal daily sessions at
+  8,869,250 Class A shares outstanding with zero future-anchor rows.
+- Kept owner exclusion, tradability, 13F and parent-universe scale unauthorized.
+
+## 2026-08-11 - SEC PIT PGAC owner-exclusion automation probe v0_1
+
+- Recorded the generic ownership, holder, class-reconciliation and owner-exclusion
+  process after the human-confirmed O/S gate.
+- Required fail-closed outputs and prohibited ticker-, accession-, holder- and
+  value-specific production logic.
+- Preserved the mandatory PGAC -> difficult multi-ticker -> per-shard
+  certification -> 4,824-instrument authorization sequence.
+- The successful no-network probe produced 140 causal daily owner-exclusion
+  float rows; S9 human confirmation and parent-universe scale remain pending.
+
+## 2026-08-11 - SEC PIT adaptive scale-gate handoff and audit package v0_2
+
+- Closed the bounded BGM 20-F-family and DOMH special-proxy baseline blockers
+  through generic adaptive fallback.
+- Added official SEC Company Facts as O/S reconciliation only; it is not a
+  float source or automatic share-class authority.
+- Recorded five calculated cases, one explicit ticker-reuse NULL and one
+  security-class halt with common code and schemas across four shards.
+- Preserved non-homogeneous full-interval coverage as explicit evidence states
+  instead of ticker-specific patches or fabricated values.
+- Froze a 30-50 case stratified gate as the next step; 4,824-instrument scale
+  remains unauthorized.
+- Published `SEC_PIT_EXTERNAL_AUDIT_PACKAGE_v0_2.zip`, restricted to SEC process,
+  results, evidence, code, configuration and tests, with file-level hashes.

@@ -1,5 +1,38 @@
 # Graphify Refresh Queue for 00_CTO
 
+## Pending - 2026-08-11 - MEDIUM - SEC PIT external audit package refresh
+
+- **Estado:** pending
+- **Fecha:** 2026-08-11
+- **Severidad:** MEDIUM
+- **Scope:** external SEC PIT audit-package contents and reading order after the seven-case stratified probe
+- **Leaf objetivo:** Market States Creation / SEC PIT external audit handoff
+- **Archivos afectados:** SEC_PIT_PGAC_EXTERNAL_AUDIT_PACKAGE_CONTENTS_v0_1.md, SEC_PIT_PGAC_EXTERNAL_AUDIT_PACKAGE_v0_1.zip and local CHANGELOG.md.
+- **Motivo:** the handoff corpus now includes authoritative v0.5 stratified evidence; official Graphify rebuild remains deferred while Trading Activity is active.
+- **Cierre esperado:** refresh the affected CTO leaf, run diagnostics and update BUILD_MANIFEST.md.
+
+## Pending - 2026-08-11 - HIGH - SEC PIT owner-exclusion stratified result
+
+- **Estado:** pending
+- **Fecha:** 2026-08-11
+- **Severidad:** HIGH
+- **Scope:** seven-case SEC PIT O/S/ownership/owner-exclusion scale-gate decision and adaptive baseline-family requirement
+- **Leaf objetivo:** Market States Creation / SEC PIT acquisition and resolution planning
+- **Archivos afectados:** SEC_PIT_SEVEN_TICKER_OWNER_EXCLUSION_STRATIFIED_PROBE_PLAN_v0_1.md and local CHANGELOG.md.
+- **Motivo:** the probe changed the scale-gate and baseline-selection semantics; official rebuild is deferred while the governed Trading Activity materialization remains active.
+- **Cierre esperado:** refresh the affected CTO leaf, run diagnostics and update BUILD_MANIFEST.md.
+
+## Pending - 2026-08-11 - HIGH - SEC PIT Predownload Architecture v0_2
+
+- **Estado:** pending
+- **Fecha:** 2026-08-11
+- **Severidad:** HIGH
+- **Scope:** SEC PIT predownload architecture and authorization boundary
+- **Leaf objetivo:** Market States Creation / SEC PIT acquisition planning
+- **Archivos afectados:** SEC_PIT_PREDOWNLOAD_CONTROL_IMPLEMENTATION_READOUT_v0_1.md and the local changelog.
+- **Motivo:** architecture semantics changed, but rebuilding Graphify now would compete with the active Trading Activity materialization.
+- **Cierre esperado:** refresh the affected CTO leaf, run diagnostics and update its BUILD_MANIFEST.md.
+
 Fecha de creacion: 2026-06-18
 Estado: cola operativa versionada para refrescos Graphify de `00_CTO`.
 
@@ -117,6 +150,143 @@ Por ventana dedicada:
 ```
 
 ## Entradas activas
+
+### GFQ-20260811-002 - SEC PIT G8 bounds boundary and global G12 13F plan
+
+Status: pending
+Severity: HIGH
+Date: 2026-08-11
+Leaf target:
+
+```text
+00_CTO/04_MARKET_STATES_CREATION
+SEC PIT Fundamental Context lane
+```
+
+Scope:
+
+```text
+G8 evidence-based upper bound and scenario boundary
+G8 blocked point-estimate preservation
+G12 global 13F acquisition once per vintage
+manager/accession/amendment deduplication
+historical CUSIP and security-class matching
+all-ticker PIT aggregation after eligible filing session
+```
+
+Changed paths:
+
+```text
+00_CTO/04_MARKET_STATES_CREATION/_DESCAGRA_DATOS_NECESARIA_/SEC_PIT_GLOBAL_13F_INSTITUTIONAL_OWNERSHIP_ACQUISITION_PLAN_v0_1.md
+00_CTO/04_MARKET_STATES_CREATION/_DESCAGRA_DATOS_NECESARIA_/SEC_PIT_IMPLEMENTATION_READOUT_v0_1.md
+00_CTO/04_MARKET_STATES_CREATION/README.md
+00_CTO/04_MARKET_STATES_CREATION/CHANGELOG.md
+00_CTO/GRAPHIFY_REFRESH_QUEUE.md
+```
+
+Reason:
+
+```text
+The current root graph predates the implemented SEC PIT corpus and cannot answer
+G8/G12 queries reliably. The new plan makes the parked global 13F work persistent
+and corrects the scale model from per-ticker downloads to one global acquisition
+per vintage followed by all-instrument mapping. The same update records that G8
+bounds/scenarios are permitted only under separate names and are not implemented
+tradability point estimates.
+```
+
+Why not refreshed in this work:
+
+```text
+The active Trading Activity materialization is still running and the existing
+Market States leaf already has pending SEC PIT and Stage-8 refresh entries. This
+work records the semantic change for the next controlled leaf rebuild rather
+than rebuilding a moving, dirty corpus.
+```
+
+### GFQ-20260811-001 - Trading Activity Stage-8 C++ recovery and equivalence gate
+
+Status: pending
+Severity: HIGH
+Date: 2026-08-11
+Leaf target:
+
+```text
+00_CTO/04_MARKET_STATES_CREATION
+with status pointer from
+00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering
+```
+
+Scope:
+
+```text
+Trading Activity Binding A v0.2
+Stage-8 Python semantic oracle
+C++ candidate execution engine
+limited stratified equivalence gate: two complete blocks plus five adversarial sessions
+explicit engine/runner/adapter/C++ source/native binary fingerprint integration
+four-shard bounded production-equivalent recertification PASS
+cycle-1 pre-Stage-8 MAX_PATH failure preserved without resume
+new broad-run human-decision requirement
+SEC PIT parked-workstream boundary
+```
+
+Reason:
+
+```text
+The current handoff changed broad TA-3 from RUNNING to
+PAUSED_FOR_HARDWARE_OPTIMIZATION. The initial C++ prototype failed semantic
+equivalence, the group-specific PIT-history correction passed one exact
+production-equivalent smoke, and the fail-closed limited comparison executed
+25/25 sessions with zero exact mismatches and exact Parquet hashes.
+Afterward the explicit engine fingerprint was integrated and a new compact-root
+probe passed 4/4 shards with one fingerprint, one schema per family, exact
+expected row counts and no missing required variables or metadata. The graph
+must describe the early engine/shard gate as closed while keeping the 240-block
+run, production readiness and promotion unauthorized and SEC PIT parked.
+```
+
+Changed paths:
+
+```text
+00_CTO/04_MARKET_STATES_CREATION/CURRENT_STATUS_AND_HANDOFF_v0_11.md
+00_CTO/04_MARKET_STATES_CREATION/CURRENT_STATUS_AND_HANDOFF_v0_12.md
+00_CTO/04_MARKET_STATES_CREATION/README.md
+00_CTO/04_MARKET_STATES_CREATION/AGENTS.md
+00_CTO/04_MARKET_STATES_CREATION/CHANGELOG.md
+00_CTO/04_MARKET_STATES_CREATION/VARIABLES_FEATURES/TRADING_ACTIVITY_STAGE8_CPP_OPTIMIZATION_AND_EQUIVALENCE_READOUT_v0_1.md
+00_CTO/04_MARKET_STATES_CREATION/VARIABLES_FEATURES/TRADING_ACTIVITY_STAGE8_CPP_BLOCK_EQUIVALENCE_PLAN_v0_1.json
+00_CTO/04_MARKET_STATES_CREATION/VARIABLES_FEATURES/TRADING_ACTIVITY_STAGE8_CPP_FOUR_SHARD_PROBE_PLAN_v0_1.json
+00_CTO/04_MARKET_STATES_CREATION/VARIABLES_FEATURES/TRADING_ACTIVITY_STAGE8_CPP_FOUR_SHARD_PROBE_PLAN_v0_2.json
+00_CTO/04_MARKET_STATES_CREATION/VARIABLES_FEATURES/TRADING_ACTIVITY_STAGE8_CPP_ENGINE_INTEGRATION_AND_FOUR_SHARD_RECERTIFICATION_READOUT_v0_1.md
+00_CTO/CHANGELOG.md
+00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/README.md
+00_CTO_APPLIED_ARCHITECTURE/03_TABLES_feature_engineering/CHANGELOG.md
+01_TSIS_DATA_FOUNDATION/CHANGELOG.md
+01_TSIS_DATA_FOUNDATION/scripts/trading_activity_binding_a_baseline_cpp.py
+01_TSIS_DATA_FOUNDATION/scripts/trading_activity_binding_a_baseline_engine.py
+01_TSIS_DATA_FOUNDATION/scripts/run_trading_activity_binding_a_multisession_pilot.py
+01_TSIS_DATA_FOUNDATION/scripts/run_trading_activity_ta3_binding_a.py
+01_TSIS_DATA_FOUNDATION/scripts/run_trading_activity_stage8_cpp_four_shard_probe.py
+01_TSIS_DATA_FOUNDATION/scripts/validate_trading_activity_binding_a_shard_probes.py
+01_TSIS_DATA_FOUNDATION/scripts/validate_trading_activity_baseline_cpp_block_equivalence.py
+01_TSIS_DATA_FOUNDATION/native/trading_activity/tsis_baseline_native_cpp.cpp
+01_TSIS_DATA_FOUNDATION/tests/test_trading_activity_binding_a_baseline_cpp.py
+01_TSIS_DATA_FOUNDATION/tests/test_trading_activity_baseline_cpp_block_equivalence.py
+01_TSIS_DATA_FOUNDATION/tests/test_trading_activity_binding_a_multisession_runner.py
+01_TSIS_DATA_FOUNDATION/tests/test_trading_activity_ta3_binding_a_orchestrator.py
+```
+
+Why not refreshed in this work:
+
+```text
+The limited 25-partition gate is `PASS_EXACT`, explicit engine fingerprinting is
+integrated, and four-shard recertification is now `PASS`. The official leaf
+rebuild and diagnostics were not executed because this task closed the runtime
+and documentation gate rather than starting a separate Graphify build. Refresh
+this leaf before relying on graph answers for the new broad-run decision; until
+then the versioned v0.12 handoff and recertification readout are authoritative.
+```
 
 ### GFQ-20260810-001 - Market States SEC PIT BNAI G7/G8 handoff
 
@@ -761,7 +931,7 @@ Cambios:
 
 Motivo:
 
-- separa enseÃƒÂ±anzas fuente por trader de estrategias/factores TSIS propios;
+- separa enseÃƒÆ’Ã‚Â±anzas fuente por trader de estrategias/factores TSIS propios;
 - mueve documentos, assets e indices de Steven Dux fuera de `LONG/stevenDux`,
   `SHORT/stevenDux`, `FACTORS/stevenDux` y `source_assets/steven_dux`;
 - mantiene `LONG/`, `SHORT/` y `FACTORS/` como espacios TSIS para estrategias
@@ -2787,3 +2957,69 @@ for BNAI. G12 remains unavailable rather than zero; scale-out remains prohibited
 
 Required action: refresh Fundamental Context identity, 13F, balance-sheet and
 change-explanation relationships at the next governed Graphify window.
+
+## 2026-08-11 - MEDIUM - SEC PIT PGAC variable availability audit package
+
+Status: pending
+
+Scope: `00_CTO/04_MARKET_STATES_CREATION/_DESCAGRA_DATOS_NECESARIA_`
+
+Affected files:
+
+```text
+SEC_PIT_PGAC_VARIABLE_AVAILABILITY_AND_RESULTS_READOUT_v0_1.md
+SEC_PIT_PGAC_EXTERNAL_AUDIT_PACKAGE_CONTENTS_v0_1.md
+```
+
+Reason: persisted the distinction between PGAC primary-document acquisition
+PASS, candidate evidence coverage and the still-unexecuted ten-variable daily
+PIT materialization.
+
+Required action: refresh the SEC PIT Fundamental Context leaf at the next
+governed CTO graph window. No official Graphify leaf rebuild was executed.
+## GFQ-20260811-CTO-SEC-PGAC-OS-001 - PGAC no-network O/S gate
+
+- **Estado:** pending
+- **Fecha:** 2026-08-11
+- **Severidad:** HIGH
+- **Scope:** SEC PIT PGAC bounded execution plan and O/S gate decision.
+- **Leaf objetivo:** SEC PIT Fundamental Context / Market States Creation.
+- **Archivos afectados:** SEC_PIT_PGAC_NO_NETWORK_OS_AND_OWNER_EXCLUSION_GATE_PLAN_v0_1.md and module CHANGELOG.md.
+- **Motivo:** the governed S0-S9 process and scale prohibition changed the semantic corpus; no official Graphify rebuild was executed during the live Trading Activity workload.
+- **Cierre esperado:** refresh the SEC PIT Fundamental Context leaf, run diagnostics and update BUILD_MANIFEST.md.
+
+## GFQ-20260811-CTO-SEC-PGAC-OWNER-001 - PGAC owner-exclusion automation gate
+
+- **Estado:** pending
+- **Fecha:** 2026-08-11
+- **Severidad:** HIGH
+- **Scope:** SEC PIT ownership/class-reconciliation probe plan and
+  parent-universe automation sequence.
+- **Leaf objetivo:** SEC PIT Fundamental Context / Market States Creation.
+- **Archivos afectados:** SEC_PIT_PGAC_OWNERSHIP_CLASS_RECONCILIATION_PROBE_PLAN_v0_1.md
+  and module CHANGELOG.md.
+- **Motivo:** the semantic corpus now defines fail-closed owner-exclusion
+  automation and the mandatory path to 4,824 instruments; no official leaf
+  rebuild was executed.
+- **Cierre esperado:** refresh the SEC PIT Fundamental Context leaf, run
+  diagnostics and update BUILD_MANIFEST.md.
+
+## GFQ-20260811-CTO-SEC-ADAPTIVE-001 - Adaptive SEC PIT scale-gate handoff
+
+- **Estado:** pending
+- **Fecha:** 2026-08-11
+- **Severidad:** HIGH
+- **Scope:** SEC PIT adaptive baseline decision, Company Facts source role,
+  bounded full-interval evidence and next scale gate.
+- **Leaf objetivo:** SEC PIT Fundamental Context / Market States Creation.
+- **Archivos afectados:**
+  `SEC_PIT_ADAPTIVE_BASELINE_AND_SCALE_GATE_HANDOFF_v0_1.md`,
+  `SEC_PIT_EXTERNAL_AUDIT_PACKAGE_CONTENTS_v0_2.md` and module `CHANGELOG.md`.
+- **Motivo:** the governed process now converts BGM/DOMH through generic
+  baseline-family fallback, freezes Company Facts as O/S reconciliation only
+  and requires a 30-50 case gate before 4,824 instruments. The current root
+  graph query did not expose this topology. An isolated additive merge was not
+  performed because the root refresh queue requires coordinated leaf rebuilds.
+- **Cierre esperado:** rebuild and diagnose the SEC PIT Fundamental Context
+  leaf, update `BUILD_MANIFEST.md` and replace its slice in the next official
+  root merge.

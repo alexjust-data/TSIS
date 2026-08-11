@@ -1,4 +1,18 @@
 ﻿
+## 2026-08-11 - Trading Activity Stage-8 four-shard external status linked
+
+- Updated the external status pointer to `CURRENT_STATUS_AND_HANDOFF_v0_12.md` after explicit C++ engine integration and bounded recertification closed 4/4 shards `PASS`.
+- Recorded one preregistered engine fingerprint, one schema variant per family, exact expected counts and no missing required variables or metadata.
+- Preserved the layer boundary: executable engine, source/binary fingerprint, physical probes and certification remain Data Foundation/Market States Creation authority.
+- No table schema, Information Object admission, operational mapping, builder authority, broad execution, downstream consumption or promotion changed.
+
+## 2026-08-11 - Trading Activity Stage-8 external operational status linked
+
+- Linked the applied-architecture README to the current Market States Creation handoff after the TA-3 pause and C++ equivalence recovery.
+- Refreshed the external pointer after the limited Stage-8 gate closed `PASS_EXACT`: 25/25 sessions and zero exact mismatches; four-shard recertification remains pending.
+- Preserved the layer boundary: this directory does not become authority for the executable kernel, physical blocks, runner or equivalence certification.
+- No table schema, Information Object admission, operational mapping, builder authority or downstream consumption changed.
+
 ## 2026-07-28 - Runtime provider contract schema hardening closed
 
 - Added runtime_provider_contract_schema_hardening_authorization_v0_1.md, configs/runtime_provider_contract_schema_hardening_scope_v0_1.json, runtime_provider_contract_schema_hardening_validation_matrix_v0_1.json and runtime_provider_contract_schema_hardening_readout_v0_1.md.

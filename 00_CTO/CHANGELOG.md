@@ -33,6 +33,22 @@ No sustituye a changelogs de modulos operativos como
 
 ## Scope
 
+## 2026-08-11 | Trading Activity Stage-8 fingerprinted engine recertified
+
+- Integrated the C++ candidate through an explicit engine contract and composite registry/runner/adapter/source/binary fingerprint while preserving Python as semantic oracle.
+- Added fail-closed fingerprint gates and full manifest/lineage recording without changing any governed feature schema or meaning.
+- Preserved a first probe cycle that failed before Stage 8 due to Windows path length; repeated from new compact roots without resume or version mixing.
+- Four-shard bounded recertification closed `PASS`: 4/4 shards, zero failures, one fingerprint, one schema variant per family and no missing required variables or metadata.
+- The result closes only the early engine/shard gate. A new 240-block C++ materialization remains subject to separate human authorization; all promotion and downstream gates remain closed.
+
+## 2026-08-11 | Trading Activity Stage-8 native recovery gate
+
+- Changed the current Market States Creation status from broad execution running to `PAUSED_FOR_HARDWARE_OPTIMIZATION` after power-loss recovery and PID/manifest reconciliation.
+- Preserved Python as the complete semantic oracle; C++ is an execution-engine candidate only and cannot alter any variable, formula, schema, state, PIT metadata or lineage field.
+- Recorded the initial native prototype failure, the group-specific history correction and an exact 350,985-row production-equivalent smoke.
+- Executed the limited fail-closed plan over two complete blocks plus five adversarial sessions: 25/25 sessions, 8,612,625 rows, zero contract/exact mismatches and 25/25 exact Parquet hashes; status `PASS_EXACT`.
+- No resume, broad materialization, Binding B, OOS or canonical promotion is authorized. SEC PIT remains preserved as a pending separate lane.
+
 Este changelog cubre:
 
 - arquitectura CTO;

@@ -1,3 +1,69 @@
+## 2026-08-11 | Reproducible SEC PIT external audit package builder
+
+- Added a Windows-safe builder that refreshes the external SEC audit ZIP from governed docs, frozen probe evidence, acquisition telemetry, authoritative O/S/owner runs and exact code/config/test snapshots.
+- Enforced required-entry, duplicate-entry and full decompression gates, generated per-file SHA-256/size evidence and preserved the original package backup without overwrite.
+- Final package validation: 238 entries, 237 manifested files, zero hash/size failures.
+
+## 2026-08-11 | SEC PIT stratified O/S and owner-exclusion implementation
+
+- Added generic seven-case selection, reuse, composite-ledger, O/S replay, owner replay and cross-run certification tooling.
+- Corrected issuer-name admission, management/5-percent proxy categories, exact management-aggregate precedence, multi-class aggregate reconciliation and conservative affiliate-overlap blocking without ticker-specific constants.
+- Authoritative owner v0.5 results calculate ALUR 8,607,248, BNAI 33,302,503 and PGAC 8,625,000; BBBY, BGM and DOMH remain explicit NULLs.
+- Full SEC PIT suite: 142 PASS. Scale-out remains unauthorized pending adaptive 20-F/proxy baseline traversal and per-shard certification.
+
+## 2026-08-11 | SEC PIT PGAC bounded acquisition pilot
+
+- Executed the human-authorized PGAC-only primary-document pilot at 5 requests/s: 68/68 fetched, zero failures/retries/429 and 26,958,608 payload bytes.
+- Independently re-read all compressed objects and verified 68/68 byte counts and SHA-256 digests.
+- Measured a throttle/network-bound acquisition path; hashing, gzip and storage are not material C++ targets at this stage.
+- Kept every other ticker and parent-universe scale-out unauthorized; added a versioned acquisition readout.
+- Preserved resource fields in terminal heartbeats for subsequent pilots after the PGAC monitor exposed a display-only terminal gap.
+
+## 2026-08-11 | SEC PIT authorized-acquisition telemetry
+
+- Added an independent live resource sampler and Windows-safe SEC monitor for the hash-authorized primary acquisition runner.
+- Added per-document throttle, HTTP-attempt, retry/429, SHA-256, gzip and atomic-write timings plus rate, latency-percentile and peak-resource summaries.
+- Kept all telemetry runtime-diagnostic only; no SEC network request, download authorization or C++ promotion was introduced.
+
+## 2026-08-11 | SEC PIT predownload control v0_2
+
+- Added network-free universe, interval, security-class, accession-link and document-selection gates.
+- Replaced silent fixed-cap truncation with a fail-closed required-evidence capacity gate and explicit 8-K/6-K lanes.
+- Executed the seven-case offline probe: 6 common-equity passes, expected CNOBP halt, 0 network requests and 0 primary downloads.
+- Added a hash-bound, content-addressed and resume-safe acquisition runner; broad legacy primary acquisition now aborts explicitly.
+- Download of the six eligible cases and 4,824-ticker scale-out remain unauthorized.
+
+## 2026-08-11 | Trading Activity Stage-8 recoverable supervision
+
+- Added a versioned recovery supervisor for the authorized 240-block C++ materialization that adopts exact live shard coordinators, fails closed on duplicate or mismatched writers, and resumes interrupted shards only from hash-validated complete/partial block state.
+- Preserved the original preregistered runner and its SHA-256; recovery writes a separate pre-manifest, PID manifest, append-only event history, live heartbeat and final manifest with its own script hash.
+- Hardened recovery heartbeat replacement with bounded retry and telemetry degradation handling so a transient Windows reader lock cannot terminate materialization workers.
+- Changed the generic long-running monitor JSON reader to request `FileShare.ReadWrite | FileShare.Delete`, preventing monitoring reads from blocking atomic heartbeat replacement.
+- Added recovery tests covering transient replacement denial, exact adoption, duplicate/mismatched writer rejection, durable progress reconstruction and duplicate-supervisor protection.
+- Started recovery attempt `recovery_20260811T065750Z_16228`; it adopted live `ta3c1_s0` and `ta3c1_s1` without restart, reconstructed `47/240`, and left `ta3c1_s2`/`ta3c1_s3` pending under the original two-worker/RAM gates.
+- Power-loss recovery command is persisted in telemetry. Completed block manifests remain authoritative; an interrupted current block may repeat work since its last durable partition checkpoint but completed blocks are not recomputed.
+- Canonical promotion remains unauthorized pending all 240 blocks, full certification and conformance PASS.
+## 2026-08-11 | Trading Activity Stage-8 fingerprinted engine and four-shard PASS
+
+- Added an explicit Stage-8 engine registry for the preserved Python oracle and C++ candidate, with a composite fingerprint over registry, runner, adapter, C++ source and native binary.
+- Added `--stage8-engine` and `--expected-stage8-engine-fingerprint` gates to block and TA-3 runners; resume now fails closed across engine-fingerprint changes.
+- Persisted the complete engine manifest in pre-manifest, lineage, summary, pointer and final manifest without changing feature output columns.
+- Added a governed four-shard wrapper, stricter certification of the required C++ fingerprint, and end-to-end Python/C++ engine integration tests.
+- Preserved probe cycle 1 as a pre-Stage-8 `MAX_PATH` failure. Cycle 2 used compact new roots and passed 4/4 shards with exact expected counts, one schema per family and zero missing required variables/metadata.
+- Engine fingerprint: `7d24178a5b475c36401b4321af95630550185e5ea227dfe3419f08398bb54a0a`.
+- Broad materialization remains unauthorized pending a separate governed human decision.
+
+## 2026-08-11 | Trading Activity Stage-8 native equivalence candidate
+
+- Corrected `tsis_baseline_native_cpp.cpp` so B20/B60/B120 historical sessions are selected independently for every `(clock_minute_et, window_seconds)` group, matching the frozen Python reference.
+- Kept the production runner on Python; the native engine remains a candidate and is not authorized for resume or broad execution.
+- Added sparse-history, insufficient-history, missingness, zero-dominated, no-prior-group and ET/DST regression coverage; final baseline/vectorized/native/C++/comparator suite is `8 PASS`.
+- Added `validate_trading_activity_baseline_cpp_block_equivalence.py`, which compares row/column order, dtypes, NULL masks, every value, PIT/lineage metadata and exact serialized Parquet SHA-256 while emitting pre-manifest, PID, heartbeat, live log and final manifest.
+- Corrected the native build to derive the active Python import library and keep object/import-library/PDB intermediates inside `native/trading_activity/build/`; removed the accidentally tracked root `.obj`, `.lib` and `.exp` intermediates.
+- Production-equivalent smoke passed on 350,985 rows with zero contract and exact mismatches and matching SHA-256.
+- Executed the human-authorized limited plan over two complete blocks plus five adversarial sessions: 25/25 sessions, 8,612,625 rows, zero contract mismatches, zero exact mismatches, exact dtypes/NULL masks and 25/25 exact Parquet SHA-256 in 927.500 seconds.
+- The result is `PASS_EXACT` evidence for the candidate engine only. Broad materialization remains unauthorized pending explicit engine/source/binary fingerprint integration, four-shard probes and governed human PASS.
+
 ## 2026-08-10 | SEC PIT fundamental evidence pipeline v0_1
 
 - Added `scripts/sec_pit` with metadata-first SEC acquisition, content-addressed compressed retention, filing inventory, conservative availability policy, O/S candidates, structured Forms 3/4/5 extraction, strict daily O/S resolver, governed runner and monitor.
@@ -37,7 +103,7 @@
 
 - `v0.4.154` - Market State intradia 1m quote-guarded lineage upstream cerrado: se enlaza `state_raw_to_consumption_lineage_intraday_1m_quote_guarded_v0_1.md` con el contrato general de RAW-to-consumption lineage, README, matriz y target contract. El manifest LT1B PASS queda documentado como gate upstream; la materializacion candidate intradia sigue pendiente.
 
-﻿# Changelog del Modulo 01
+ï»¿# Changelog del Modulo 01
 
 ## v0.4.153 - Market State daily event windows lineage cerrado
 
@@ -6618,7 +6684,7 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
   - filtrarlos por ticker + ventana PTI del corte canonico `<1B>`;
   - y exportar conteos y porcentajes compatibles ya con el alcance moderno del proyecto.
 
-### 2026-06-03 | 1m | cierre cuantitativo del recÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡lculo raw `1m` sobre universo `<1B>` explicito
+### 2026-06-03 | 1m | cierre cuantitativo del recÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡lculo raw `1m` sobre universo `<1B>` explicito
 
 - se actualizan:
   - `scripts/inspection/minute/audit_1m_raw_lt1b_closeout.py`
@@ -6811,7 +6877,7 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
   - `01_foundations/data_consumption_policies/lt1b_universe_consumption_policy.md`
   - `01_foundations/contract_registry/dataset_contracts/lt1b_universe_dataset_contract_v0_1.md`
   - `01_foundations/dataset_registry/universes/lt1b_universe_registry_entry.yaml`
-- artefacto canÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³nico:
+- artefacto canÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³nico:
   - `runs/backtest/market_cap_last_observed_cutoff/20260320_market_cap_last_observed_cutoff/market_cap_cutoff_lt_1b_active_inactive.parquet`
 - cifras fijadas:
   - `lt1b_tickers = 4824`
@@ -6819,7 +6885,7 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
   - `inactive_died_lt_1b = 2348`
   - `panel_end_date = 2026-03-09`
 - regla institucional:
-  - toda afirmaciÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n `<1B>` debe filtrar por `ticker` y por intersecciÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n con ventana PTI (`first_seen_date`, `last_observed_date`);
+  - toda afirmaciÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n `<1B>` debe filtrar por `ticker` y por intersecciÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n con ventana PTI (`first_seen_date`, `last_observed_date`);
   - este corte no es `E:\TSIS\data\reference`;
   - tampoco sustituye un futuro `population_target_pti` diario fully point-in-time.
 
@@ -6917,3 +6983,29 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
   - auditoria de casepacks en `quotes`;
   - family casepacks amplios en `trades`.
 - objetivo: que un inspector no tenga que inferir desde notebooks o assets sueltos que documentos visuales debe revisar.
+### 2026-08-11 | sec_pit | PGAC no-network Class A O/S probe v0_2
+
+- Added class-specific filing admission, cover-text and inline-XBRL extraction,
+  exact dual-method O/S reconciliation and an immutable local replay runner.
+- Reused governed local acceptance timestamps and the canonical market calendar;
+  the authoritative run made zero network requests.
+- Materialized three admitted anchors and 140 unique PIT-valid daily rows with
+  no future-anchor leakage.
+- Updated float output semantics to explicit fraction (0-1) and percent (0-100)
+  fields under resolved-daily-state schema v0_2.
+- All 120 test_sec_pit_*.py tests pass.
+
+### 2026-08-11 | sec_pit | generic ownership and owner-exclusion probe v0_1
+
+- Added parameterized issuer-name continuity, neutral ownership extraction,
+  exact multi-class holder reconciliation and methodology-scoped holder
+  deduplication.
+- Added a no-network runner whose instrument-specific inputs are governed
+  configuration and extracted source facts, not production-code constants.
+- Preserved institutional Schedule 13G rows as neutral under
+  officer_director_explicit_affiliate_v0_1 and emitted explicit restrictions
+  for broad parser gaps.
+- PGAC v0_2 produced 140/140 causal daily rows at 8,625,000 owner-exclusion
+  float with zero future-baseline rows and zero blockers.
+- All 126 test_sec_pit_*.py tests pass; 4,824-instrument scale is not yet
+  authorized.
