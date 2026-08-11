@@ -19,6 +19,7 @@ from typing import Any
 import pandas as pd
 import pyarrow.parquet as pq
 from evaluate_trading_activity_trade_eligibility import load_condition_matrix
+from trading_activity_binding_a_baseline_engine import resolve_stage8_engine
 from trading_activity_binding_a_multisession_engine import (
     atomic_write_json,
     atomic_write_parquet,
@@ -28,7 +29,6 @@ from trading_activity_binding_a_multisession_engine import (
     coverage_gate_from_audit,
     expected_row_counts,
     load_foundation_evidence,
-    materialize_baseline_and_surprise,
     materialize_current_state,
     materialize_multiscale_contrast,
     normalize_utc,
@@ -162,6 +162,8 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument("--pointer-root", type=Path)
     parser.add_argument("--skip-disk-gate", action="store_true")
     parser.add_argument("--stop-after-stage")
+    parser.add_argument("--stage8-engine", choices=("python", "cpp"))
+    parser.add_argument("--expected-stage8-engine-fingerprint")
     return parser
 
 
@@ -307,6 +309,16 @@ def _actual_expected_counts(
 def run(args: argparse.Namespace) -> int:
     config_path = args.config.resolve()
     config = copy.deepcopy(_load_config(config_path))
+    requested_stage8_engine = args.stage8_engine or config.get("execution", {}).get(
+        "stage8_baseline_engine", "python"
+    )
+    stage8_engine = resolve_stage8_engine(requested_stage8_engine)
+    if (
+        args.expected_stage8_engine_fingerprint
+        and stage8_engine.manifest["engine_fingerprint_sha256"]
+        != args.expected_stage8_engine_fingerprint
+    ):
+        raise ValueError("Resolved Stage-8 engine fingerprint differs from expected")
     output_base = args.output_root or Path(config["outputs"]["heavy_output_root"])
     runtime_base = args.runtime_root or Path(config["outputs"]["runtime_root"])
     pointer_base = args.pointer_root or Path(config["outputs"]["pointer_root"])
@@ -336,13 +348,23 @@ def run(args: argparse.Namespace) -> int:
                     "session_limit": args.session_limit,
                     "decision_seconds_limit": args.decision_seconds_limit,
                 },
+                "stage8_engine": stage8_engine.manifest,
+                "expected_stage8_engine_fingerprint": args.expected_stage8_engine_fingerprint,
                 "promotion_status": "NOT_AUTHORIZED",
             },
         )
-    elif json.loads(premanifest_path.read_text(encoding="utf-8"))[
-        "config_sha256"
-    ] != config_sha256:
-        raise ValueError("Resume config hash differs from pre-manifest")
+    else:
+        existing_premanifest = json.loads(
+            premanifest_path.read_text(encoding="utf-8")
+        )
+        if existing_premanifest["config_sha256"] != config_sha256:
+            raise ValueError("Resume config hash differs from pre-manifest")
+        existing_engine = existing_premanifest.get("stage8_engine", {})
+        if (
+            existing_engine.get("engine_fingerprint_sha256")
+            != stage8_engine.manifest["engine_fingerprint_sha256"]
+        ):
+            raise ValueError("Resume Stage-8 engine fingerprint differs from pre-manifest")
 
     telemetry = Telemetry(
         runtime_run_root,
@@ -656,7 +678,13 @@ def run(args: argparse.Namespace) -> int:
         )
         _stop_after(telemetry, args.stop_after_stage, "STAGE_7")
 
-        telemetry.emit(stage="STAGE_8", message="materializing PIT_BASELINE_AND_SURPRISE")
+        telemetry.emit(
+            stage="STAGE_8",
+            message=(
+                "materializing PIT_BASELINE_AND_SURPRISE "
+                f"with {stage8_engine.engine_id}"
+            ),
+        )
         baseline_paths: dict[date, Path] = {}
         for session_date in sorted(evaluation_dates):
             telemetry.check_stop()
@@ -667,7 +695,7 @@ def run(args: argparse.Namespace) -> int:
             existing = _existing_partition(path) if args.resume else None
             if existing is None:
                 current = pd.read_parquet(current_paths[session_date])
-                frame = materialize_baseline_and_surprise(
+                frame = stage8_engine.materialize(
                     current,
                     prior_current=prior_frames,
                     config=config,
@@ -811,6 +839,7 @@ def run(args: argparse.Namespace) -> int:
                 "scope": config["scope"],
                 "foundation_labels_are_automatic_filters": False,
                 "future_window_used": False,
+                "stage8_engine": stage8_engine.manifest,
                 "promotion_status": "NOT_AUTHORIZED",
             },
         )
@@ -824,6 +853,7 @@ def run(args: argparse.Namespace) -> int:
             "expected_row_counts": expected,
             "resumed_partitions": sorted(set(resumed_partitions)),
             "warnings": warnings,
+            "stage8_engine": stage8_engine.manifest,
             "promotion_status": "NOT_AUTHORIZED",
         }
         atomic_write_json(metadata_root / "run_summary.json", summary)
@@ -836,6 +866,7 @@ def run(args: argparse.Namespace) -> int:
             "config_path": str(config_path),
             "config_sha256": config_sha256,
             "row_counts": actual,
+            "stage8_engine": stage8_engine.manifest,
             "promotion_status": "NOT_AUTHORIZED",
         }
         atomic_write_json(pointer_root / "run_pointer_manifest.json", pointer_payload)
@@ -862,6 +893,7 @@ def run(args: argparse.Namespace) -> int:
             "runtime_run_root": str(runtime_run_root),
             "partition_count": len(partition_records),
             "resumed_partitions": sorted(set(resumed_partitions)),
+            "stage8_engine": stage8_engine.manifest,
             "promotion_status": "NOT_AUTHORIZED",
         }
         attempts = sorted(runtime_run_root.glob("final_manifest_attempt_*.json"))

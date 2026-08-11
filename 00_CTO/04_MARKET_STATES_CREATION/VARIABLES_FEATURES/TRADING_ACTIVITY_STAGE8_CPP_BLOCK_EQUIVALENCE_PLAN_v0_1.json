@@ -1,0 +1,79 @@
+{
+  "plan_version": "trading_activity_stage8_cpp_block_equivalence_v0_1",
+  "artifact_status": "LIMITED_STRATIFIED_PLAN_PREPARED_NOT_EXECUTED",
+  "promotion_status": "NOT_AUTHORIZED",
+  "broad_materialization_authorized": false,
+  "human_launch_required": true,
+  "python_oracle": "FROZEN_PYTHON_REFERENCE_MATERIALIZATION",
+  "binding_root": "D:/TSIS/IO/wake_up/trading_activity/pit_marked_activity/binding_a_v02",
+  "comparison_scope": "TWO_COMPLETE_BLOCKS_PLUS_FIVE_ADVERSARIAL_SESSIONS",
+  "expected_complete_block_count": 2,
+  "expected_complete_block_sessions": 20,
+  "expected_targeted_session_count": 5,
+  "expected_total_session_partitions": 25,
+  "rtol": 1e-12,
+  "atol": 1e-12,
+  "require_exact_value_match": true,
+  "require_parquet_hash_match": true,
+  "required_contract_dimensions": [
+    "row_count_and_order",
+    "column_names_and_order",
+    "dtypes",
+    "null_masks",
+    "identity_and_lineage_metadata",
+    "PIT_reference_metadata",
+    "calculation_states",
+    "all_feature_values_exact",
+    "serialized_parquet_sha256"
+  ],
+  "blocks": [
+    {
+      "sample_role": "COMPLETE_BLOCK_SHARD_0_POST_FALL_DST",
+      "operation_id": "ba2r2_s0of4",
+      "block_id": "188731d366e9fca9ecf4ecc3cae3d39e",
+      "ticker": "XPL",
+      "expected_session_count": 10
+    },
+    {
+      "sample_role": "COMPLETE_BLOCK_SHARD_1_ORIGINAL_FAILURE_CASE",
+      "operation_id": "ba2r2_s1of4",
+      "block_id": "085d39eb43c98ab33c889e5e677b00a8",
+      "ticker": "ACU",
+      "expected_session_count": 10
+    },
+    {
+      "sample_role": "TARGETED_FALL_AND_SPRING_DST_WITH_SPARSE_HISTORY",
+      "operation_id": "ba2r2_s0of4",
+      "block_id": "ad8dc620523d6bda3cb49164e7ddcf91",
+      "ticker": "OZM",
+      "session_dates": ["2012-11-05", "2013-03-11"],
+      "expected_session_count": 2
+    },
+    {
+      "sample_role": "TARGETED_ZERO_DOMINATED_DURATION_AND_AVAILABILITY_NULLS",
+      "operation_id": "ba2r2_s0of4",
+      "block_id": "ca41da509927dcd3e09a45ad933081a5",
+      "ticker": "CVR",
+      "session_dates": ["2012-04-23"],
+      "expected_session_count": 1
+    },
+    {
+      "sample_role": "TARGETED_ALL_PERCENTILES_NULL_AND_SPARSE_HISTORY",
+      "operation_id": "ba2r2_s1of4",
+      "block_id": "1408f51fb65fb54d41a48059446fdc03",
+      "ticker": "IHT",
+      "session_dates": ["2013-01-31"],
+      "expected_session_count": 1
+    },
+    {
+      "sample_role": "TARGETED_ALL_DURATION_COMPRESSION_NULL_AND_SPARSE_HISTORY",
+      "operation_id": "ba2r2_s1of4",
+      "block_id": "17f18db200693d90e84b23ce2c543da7",
+      "ticker": "BDL",
+      "session_dates": ["2013-02-11"],
+      "expected_session_count": 1
+    }
+  ],
+  "pass_policy": "PASS_ONLY_IF_ALL_25_SESSION_PARTITIONS_HAVE_ZERO_EXACT_VALUE_MISMATCHES_AND_PASS_ALL_CONTRACT_DIMENSIONS",
+  "failure_policy": "FAIL_CLOSED_NO_CPP_INTEGRATION_NO_RESUME_NO_BROAD_MATERIALIZATION"
+}

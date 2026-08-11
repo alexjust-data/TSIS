@@ -1,0 +1,82 @@
+{
+  "plan_schema_version": "trading_activity_stage8_cpp_full_materialization_v0_1",
+  "plan_version": "trading_activity_stage8_cpp_full_materialization_plan_v0_1",
+  "artifact_status": "PREREGISTERED_AUTHORIZED_NOT_EXECUTED",
+  "human_authorization": "AUTHORIZED_2026-08-11",
+  "authorization_source": "Human message: si, prepara para lanzarlo ahora",
+  "broad_materialization_authorized": true,
+  "canonical_promotion_authorized": false,
+  "run_id": "trading_activity_ta3_cpp_full_v0_1_20260811",
+  "scope": "FULL_FROZEN_TA3_240_BLOCK_BINDING_A_V0_2",
+  "scope_id": "legacy_rth_reconciled_event_time_research_only",
+  "expected_block_count": 240,
+  "sample_manifest": "G:/TSIS/data/DATA_FOUNDATION_OUTPUTS/trading_activity_ta3_stratified_sample/trading_activity_ta3_stratified_sample_v0_1_20260807T175808Z/sample_manifest_v0_2.json",
+  "sample_manifest_sha256": "100f0ac0e1faaecd54eded1d99886daafbe9ecf374a247fa9835febc70b1addf",
+  "base_config": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/configs/trading_activity_binding_a_multisession_pilot_v0_2.json",
+  "base_config_sha256": "b0e74b6ef15188848a89ef9bb77533d577a218b71540081aa62419c8c4a0fd79",
+  "runner": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/run_trading_activity_stage8_cpp_full_materialization.py",
+  "runner_sha256": "338fe64807ceb817867ea07504a78b58d1ed333d39c89ac9ccaf8fb11bf92034",
+  "code_fingerprints": {
+    "ta3_coordinator_sha256": "fe294d56cf901418daa519430ee8be27e163f970145888c7fa94662d572368a4",
+    "multisession_runner_sha256": "70ec15f717d73f406ced17f696cfb56d6d00fc3b170cdf1efafd842ec8553bc0",
+    "conformance_audit_sha256": "25ba07a00f233b4b5d65384030d6071c8e5b78efa2d5ad8f84ec3cffcb598ba2"
+  },
+  "stage8_engine": "cpp",
+  "stage8_engine_id": "trading_activity_stage8_cpp_native_candidate_v0_1",
+  "semantic_oracle_engine_id": "trading_activity_stage8_python_reference_v0_2",
+  "expected_stage8_engine_fingerprint": "7d24178a5b475c36401b4321af95630550185e5ea227dfe3419f08398bb54a0a",
+  "cpp_source_sha256": "0d62f8ae9c63d59e52b0360b0fec514c8f5afdc19fe7e98f1622a80f772d7848",
+  "native_binary_sha256": "5fe3682d593c2563e137cc1790759c6c2cd624bbdfff3a1d6b0970e06dbbb4c4",
+  "physical_aliases": {
+    "wu": "wake_up",
+    "ta": "trading_activity",
+    "pmma": "pit_multiscale_marked_activity",
+    "ba02": "binding_a_v0_2"
+  },
+  "output_root": "D:/TSIS/IO/wu/ta/pmma/ba02/runs/run_id=ta3_cpp_v0_1_20260811/outputs",
+  "runtime_root": "D:/TSIS/IO/wu/ta/pmma/ba02/runs/run_id=ta3_cpp_v0_1_20260811/runtime",
+  "pointer_root": "D:/TSIS/IO/wu/ta/pmma/ba02/runs/run_id=ta3_cpp_v0_1_20260811/pointers",
+  "minimum_free_space_gib": 100,
+  "minimum_initial_available_memory_gib": 8,
+  "max_concurrent_workers": 2,
+  "parallelism_policy": {
+    "initial_workers": 1,
+    "max_workers": 2,
+    "additional_worker_stagger_seconds": 120,
+    "minimum_available_memory_gib_for_additional_worker": 10,
+    "memory_reserve_gib": 4,
+    "max_process_tree_rss_gib": 18,
+    "reason": "Prior Python worker peaks were 8-9 GiB; start one and admit worker two only after live C++ memory observation"
+  },
+  "resume_policy": "SAME_PLAN_SAME_CODE_SAME_ENGINE_HASH_VALIDATED_COMPLETE_PARTITIONS_ONLY",
+  "overwrite_policy": "NEVER",
+  "estimated_runtime_hours": "4-8 depending on memory gate and HDD throughput",
+  "estimated_output_gib": 61.15,
+  "reserved_output_gib": 80,
+  "estimated_output_file_count": 134000,
+  "expected_row_counts": {
+    "current_state_rows": 279342000,
+    "multiscale_rows": 111736800,
+    "baseline_rows": 167605200
+  },
+  "shards": [
+    {"shard_index": 0, "run_id": "ta3c1_s0", "expected_block_count": 60},
+    {"shard_index": 1, "run_id": "ta3c1_s1", "expected_block_count": 60},
+    {"shard_index": 2, "run_id": "ta3c1_s2", "expected_block_count": 60},
+    {"shard_index": 3, "run_id": "ta3c1_s3", "expected_block_count": 60}
+  ],
+  "success_criteria": [
+    "four parent shards COMPLETE with exactly 60 blocks each",
+    "240 unique block manifests COMPLETE",
+    "every block and run summary declares cpp and the preregistered engine fingerprint",
+    "every block row count equals its expected row count",
+    "aggregate row counts equal 279342000 current, 111736800 multiscale and 167605200 baseline",
+    "one schema variant per output family across all 240 blocks",
+    "no required feature or metadata column is missing",
+    "future_window_used is false and no completed run summary warnings exist",
+    "canonical promotion remains unauthorized"
+  ],
+  "launch_command": "python C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/run_trading_activity_stage8_cpp_full_materialization.py --plan C:/TSIS_Data/00_CTO/04_MARKET_STATES_CREATION/VARIABLES_FEATURES/TRADING_ACTIVITY_STAGE8_CPP_FULL_MATERIALIZATION_PLAN_v0_1.json",
+  "monitor_command": "powershell -File C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/monitor_long_running_operation.ps1 -RunRoot D:/TSIS/IO/wu/ta/pmma/ba02/runs/run_id=ta3_cpp_v0_1_20260811/runtime -IntervalSeconds 30 -Compact -Watch",
+  "safe_stop": "Write {} to D:/TSIS/IO/wu/ta/pmma/ba02/runs/run_id=ta3_cpp_v0_1_20260811/runtime/stop_requested.json"
+}

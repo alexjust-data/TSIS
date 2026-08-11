@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any
 
 import pandas as pd
+from trading_activity_binding_a_baseline_engine import resolve_stage8_engine
 
 RUNNER = Path(__file__).with_name("run_trading_activity_binding_a_multisession_pilot.py")
 OFFICIAL_TRADE_ROOT = "G:/TSIS/data/trades_ticks_prod_2005_2026"
@@ -60,6 +61,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--shard-count", type=int, default=1)
     parser.add_argument("--decision-seconds-limit", type=int)
     parser.add_argument("--resume", action="store_true")
+    parser.add_argument("--stage8-engine", choices=("python", "cpp"), default="python")
+    parser.add_argument("--expected-stage8-engine-fingerprint")
     return parser.parse_args()
 
 
@@ -148,6 +151,13 @@ def main() -> int:
     args.pointer_root = require_representation_root(args.pointer_root, "pointer-root")
     sample_manifest, paths = load_and_verify_sample(args.sample_manifest.resolve())
     base_config = json.loads(args.base_config.read_text(encoding="utf-8"))
+    stage8_engine = resolve_stage8_engine(args.stage8_engine)
+    if (
+        args.expected_stage8_engine_fingerprint
+        and stage8_engine.manifest["engine_fingerprint_sha256"]
+        != args.expected_stage8_engine_fingerprint
+    ):
+        raise ValueError("Resolved Stage-8 engine fingerprint differs from expected")
     if base_config["sources"]["raw_trade_root"] != OFFICIAL_TRADE_ROOT:
         raise ValueError("Base config does not use the governed G trade root")
 
@@ -182,6 +192,8 @@ def main() -> int:
         "shard_index": args.shard_index,
         "shard_count": args.shard_count,
         "decision_seconds_limit": args.decision_seconds_limit,
+        "stage8_engine": stage8_engine.manifest,
+        "expected_stage8_engine_fingerprint": args.expected_stage8_engine_fingerprint,
         "projected_binding_a_rows": sample_manifest["summary"]["expected_binding_a_rows"]["total"],
         "promotion_status": "NOT_AUTHORIZED",
     }
@@ -233,7 +245,16 @@ def main() -> int:
             str(run_root / "blocks"),
             "--pointer-root",
             str(args.pointer_root.resolve()),
+            "--stage8-engine",
+            args.stage8_engine,
         ]
+        if args.expected_stage8_engine_fingerprint:
+            command.extend(
+                [
+                    "--expected-stage8-engine-fingerprint",
+                    args.expected_stage8_engine_fingerprint,
+                ]
+            )
         if args.decision_seconds_limit is not None:
             command.extend(["--decision-seconds-limit", str(args.decision_seconds_limit)])
         if args.resume and resume_state == "PARTIAL":

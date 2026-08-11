@@ -1,0 +1,81 @@
+{
+  "plan_version": "trading_activity_stage8_cpp_four_shard_probe_v0_1",
+  "artifact_status": "PREREGISTERED_NOT_EXECUTED",
+  "run_id": "trading_activity_stage8_cpp_four_shard_probe_v0_1_20260811",
+  "scope": "FOUR_SHARD_BOUNDED_PRODUCTION_EQUIVALENT_PROBE",
+  "promotion_status": "NOT_AUTHORIZED",
+  "broad_materialization_authorized": false,
+  "sample_manifest": "G:/TSIS/data/DATA_FOUNDATION_OUTPUTS/trading_activity_ta3_stratified_sample/trading_activity_ta3_stratified_sample_v0_1_20260807T175808Z/sample_manifest_v0_2.json",
+  "sample_manifest_sha256": "100f0ac0e1faaecd54eded1d99886daafbe9ecf374a247fa9835febc70b1addf",
+  "base_config": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/configs/trading_activity_binding_a_multisession_pilot_v0_2.json",
+  "base_config_sha256": "b0e74b6ef15188848a89ef9bb77533d577a218b71540081aa62419c8c4a0fd79",
+  "runner": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/run_trading_activity_stage8_cpp_four_shard_probe.py",
+  "runner_sha256": "c06e1e217776f1498b7a86f26f6294af3f5af689860c2dcdcdb7338b3f3ffdf5",
+  "code_fingerprints": {
+    "ta3_coordinator_sha256": "fe294d56cf901418daa519430ee8be27e163f970145888c7fa94662d572368a4",
+    "multisession_runner_sha256": "70ec15f717d73f406ced17f696cfb56d6d00fc3b170cdf1efafd842ec8553bc0",
+    "four_shard_validator_sha256": "3bb1ef649c8380e9909e1544a0b212ce76f2a00fe66fa0d041bfcdfd75d7fa2b",
+    "conformance_audit_sha256": "25ba07a00f233b4b5d65384030d6071c8e5b78efa2d5ad8f84ec3cffcb598ba2"
+  },
+  "stage8_engine": "cpp",
+  "stage8_engine_id": "trading_activity_stage8_cpp_native_candidate_v0_1",
+  "semantic_oracle_engine_id": "trading_activity_stage8_python_reference_v0_2",
+  "expected_stage8_engine_fingerprint": "7d24178a5b475c36401b4321af95630550185e5ea227dfe3419f08398bb54a0a",
+  "native_binary_sha256": "5fe3682d593c2563e137cc1790759c6c2cd624bbdfff3a1d6b0970e06dbbb4c4",
+  "cpp_source_sha256": "0d62f8ae9c63d59e52b0360b0fec514c8f5afdc19fe7e98f1622a80f772d7848",
+  "output_root": "D:/TSIS/IO/wake_up/trading_activity/pit_marked_activity/binding_a_v02/probes/stage8_cpp_four_shard_v0_1/outputs",
+  "runtime_root": "D:/TSIS/IO/wake_up/trading_activity/pit_marked_activity/binding_a_v02/probes/stage8_cpp_four_shard_v0_1/operations",
+  "pointer_root": "D:/TSIS/IO/wake_up/trading_activity/pit_marked_activity/binding_a_v02/probes/stage8_cpp_four_shard_v0_1/pointers",
+  "minimum_free_space_gib": 75,
+  "max_concurrent_workers": 2,
+  "decision_seconds_limit": 60,
+  "resume_policy": "PROHIBITED_NEW_ROOT_AFTER_ANY_FAILURE",
+  "overwrite_policy": "NEVER",
+  "estimated_runtime_minutes": "10-25",
+  "estimated_output_io": "LESS_THAN_1_GIB_EXCLUDING_SOURCE_READS",
+  "shards": [
+    {
+      "shard_index": 0,
+      "run_id": "ta3cpp4s_v0_1_s0_20260811",
+      "expected_block_id": "3244b2db5e3f87198bd321417948efea",
+      "expected_current_state_rows": 39000,
+      "expected_multiscale_rows": 15600,
+      "expected_baseline_rows": 9000
+    },
+    {
+      "shard_index": 1,
+      "run_id": "ta3cpp4s_v0_1_s1_20260811",
+      "expected_block_id": "a13d427087381465634b7cde9671308f",
+      "expected_current_state_rows": 39300,
+      "expected_multiscale_rows": 15720,
+      "expected_baseline_rows": 9900
+    },
+    {
+      "shard_index": 2,
+      "run_id": "ta3cpp4s_v0_1_s2_20260811",
+      "expected_block_id": "1b24fb5e32fb9544ddd60f4644618eb2",
+      "expected_current_state_rows": 39000,
+      "expected_multiscale_rows": 15600,
+      "expected_baseline_rows": 9000
+    },
+    {
+      "shard_index": 3,
+      "run_id": "ta3cpp4s_v0_1_s3_20260811",
+      "expected_block_id": "7379ceaa9bda6ff94fa23dfdcb828b5e",
+      "expected_current_state_rows": 39000,
+      "expected_multiscale_rows": 15600,
+      "expected_baseline_rows": 9000
+    }
+  ],
+  "success_criteria": [
+    "four parent runs COMPLETE with exactly one expected block each",
+    "every block manifest declares cpp and the preregistered engine fingerprint",
+    "all variables, formulas, missingness and PIT checks PASS",
+    "one schema variant per output family across all four shards",
+    "conformance audit covers four finalized blocks with no missing columns or roots",
+    "broad materialization remains unauthorized by this artifact"
+  ],
+  "launch_command": "python C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/run_trading_activity_stage8_cpp_four_shard_probe.py --plan C:/TSIS_Data/00_CTO/04_MARKET_STATES_CREATION/VARIABLES_FEATURES/TRADING_ACTIVITY_STAGE8_CPP_FOUR_SHARD_PROBE_PLAN_v0_1.json",
+  "monitor_command": "powershell -File C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/monitor_long_running_operation.ps1 -RunRoot D:/TSIS/IO/wake_up/trading_activity/pit_marked_activity/binding_a_v02/probes/stage8_cpp_four_shard_v0_1/operations -IntervalSeconds 30 -Compact -Watch",
+  "safe_stop": "Write {} to runtime_root/stop_requested.json; wrapper propagates cooperative stops to active block runners"
+}

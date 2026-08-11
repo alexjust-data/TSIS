@@ -142,6 +142,8 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--runtime-root", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--required-stage8-engine", choices=("python", "cpp"))
+    parser.add_argument("--expected-stage8-engine-fingerprint")
     args = parser.parse_args()
 
     results = []
@@ -150,6 +152,7 @@ def main() -> None:
         "multiscale_contrast": set(),
         "pit_baseline_and_surprise": set(),
     }
+    engine_fingerprints: set[str] = set()
     for final_path in sorted(args.runtime_root.glob("*/final_manifest.json")):
         final = json.loads(final_path.read_text(encoding="utf-8"))
         if final.get("final_status") != "COMPLETE":
@@ -162,6 +165,29 @@ def main() -> None:
                 / "final_manifest.json"
             )
             block = json.loads(block_final.read_text(encoding="utf-8"))
+            stage8_engine = block.get("stage8_engine")
+            if args.required_stage8_engine:
+                if not stage8_engine:
+                    raise AssertionError(
+                        f"Missing Stage-8 engine manifest: {block_final}"
+                    )
+                if stage8_engine.get("engine_name") != args.required_stage8_engine:
+                    raise AssertionError(
+                        "Unexpected Stage-8 engine: "
+                        f"{stage8_engine.get('engine_name')}"
+                    )
+            if stage8_engine:
+                fingerprint = stage8_engine.get("engine_fingerprint_sha256")
+                if not fingerprint:
+                    raise AssertionError(f"Missing engine fingerprint: {block_final}")
+                engine_fingerprints.add(str(fingerprint))
+                if (
+                    args.expected_stage8_engine_fingerprint
+                    and fingerprint != args.expected_stage8_engine_fingerprint
+                ):
+                    raise AssertionError(
+                        f"Stage-8 engine fingerprint mismatch: {fingerprint}"
+                    )
             output_root = Path(block["output_run_root"])
             for family in schemas:
                 sample = parquet_files(output_root, family)[0]
@@ -171,6 +197,7 @@ def main() -> None:
                 {
                     "parent_run_id": final["run_id"],
                     "block_run_id": completed["block_run_id"],
+                    "stage8_engine": stage8_engine,
                     **validate_run(output_root),
                 }
             )
@@ -180,11 +207,16 @@ def main() -> None:
     schema_variants = {family: len(values) for family, values in schemas.items()}
     if any(count != 1 for count in schema_variants.values()):
         raise AssertionError(f"Cross-shard schema mismatch: {schema_variants}")
+    if args.required_stage8_engine and len(engine_fingerprints) != 1:
+        raise AssertionError(
+            f"Expected one Stage-8 engine fingerprint, got {engine_fingerprints}"
+        )
 
     payload = {
         "status": "PASS",
         "certification_scope": "FOUR_SHARD_BOUNDED_PRODUCTION_EQUIVALENT_PROBES",
         "schema_variants": schema_variants,
+        "stage8_engine_fingerprints": sorted(engine_fingerprints),
         "results": results,
         "broad_materialization_authorized_by_this_artifact": False,
     }

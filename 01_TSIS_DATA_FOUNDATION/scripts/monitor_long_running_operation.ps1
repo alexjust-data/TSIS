@@ -18,11 +18,29 @@ function Read-JsonFile {
     if (-not (Test-Path -LiteralPath $Path -PathType Leaf)) {
         return $null
     }
+    $stream = $null
+    $reader = $null
     try {
-        return Get-Content -LiteralPath $Path -Raw | ConvertFrom-Json
+        $share = [System.IO.FileShare]::ReadWrite -bor [System.IO.FileShare]::Delete
+        $stream = [System.IO.FileStream]::new(
+            $Path,
+            [System.IO.FileMode]::Open,
+            [System.IO.FileAccess]::Read,
+            $share
+        )
+        $reader = [System.IO.StreamReader]::new($stream)
+        return $reader.ReadToEnd() | ConvertFrom-Json
     }
     catch {
         return $null
+    }
+    finally {
+        if ($null -ne $reader) {
+            $reader.Dispose()
+        }
+        elseif ($null -ne $stream) {
+            $stream.Dispose()
+        }
     }
 }
 
@@ -118,10 +136,18 @@ function Get-StatusSnapshot {
         throw "RunRoot does not exist: $Root"
     }
 
-    $heartbeatFile = Get-LatestMatchingFile -Root $Root -Pattern "*.heartbeat.json"
-    $preManifestFile = Get-LatestMatchingFile -Root $Root -Pattern "*.pre_manifest.json"
-    $pidFile = Get-LatestMatchingFile -Root $Root -Pattern "*.pids.json"
-    $finalManifestFile = Get-LatestMatchingFile -Root $Root -Pattern "*.manifest.json"
+    $heartbeatFile = if (Test-Path -LiteralPath (Join-Path $Root "heartbeat_latest.json") -PathType Leaf) {
+        Get-Item -LiteralPath (Join-Path $Root "heartbeat_latest.json")
+    } else { Get-LatestMatchingFile -Root $Root -Pattern "*.heartbeat.json" }
+    $preManifestFile = if (Test-Path -LiteralPath (Join-Path $Root "pre_manifest.json") -PathType Leaf) {
+        Get-Item -LiteralPath (Join-Path $Root "pre_manifest.json")
+    } else { Get-LatestMatchingFile -Root $Root -Pattern "*.pre_manifest.json" }
+    $pidFile = if (Test-Path -LiteralPath (Join-Path $Root "pid_manifest.json") -PathType Leaf) {
+        Get-Item -LiteralPath (Join-Path $Root "pid_manifest.json")
+    } else { Get-LatestMatchingFile -Root $Root -Pattern "*.pids.json" }
+    $finalManifestFile = if (Test-Path -LiteralPath (Join-Path $Root "final_manifest.json") -PathType Leaf) {
+        Get-Item -LiteralPath (Join-Path $Root "final_manifest.json")
+    } else { Get-LatestMatchingFile -Root $Root -Pattern "*.manifest.json" }
     $runSummaryFile = Get-LatestMatchingFile -Root $Root -Pattern "_run_summary.json"
 
     $heartbeat = if ($heartbeatFile -ne $null) { Read-JsonFile -Path $heartbeatFile.FullName } else { $null }
@@ -199,6 +225,10 @@ function Write-CompactStatus {
     if ($snapshot.wrapper_alive) { $processCount += 1 }
     if ($snapshot.active_alive) { $processCount += 1 }
     if ($snapshot.worker_children -ne $null) { $processCount += @($snapshot.worker_children).Count }
+    if ($heartbeat.PSObject.Properties.Name -contains "active_worker_count") {
+        $processCount = [int]$heartbeat.active_worker_count
+        if ($snapshot.wrapper_alive) { $processCount += 1 }
+    }
 
     $displayStatus = Format-Optional $heartbeat.status
     $statusSuffix = ""
@@ -229,6 +259,9 @@ function Write-CompactStatus {
     $cpu = $heartbeat.process_cpu_pct
     $ioRead = $heartbeat.io_read_bytes_per_sec
     $ioWrite = $heartbeat.io_write_bytes_per_sec
+    if ($null -eq $cpu) { $cpu = $heartbeat.system_cpu_percent }
+    if ($null -eq $ioRead) { $ioRead = $heartbeat.io_read_Bps }
+    if ($null -eq $ioWrite) { $ioWrite = $heartbeat.io_write_Bps }
     $worker = ""
     if ($snapshot.worker_perf -ne $null) {
         $cpu = $snapshot.worker_perf.PercentProcessorTime
@@ -243,7 +276,9 @@ function Write-CompactStatus {
         "chunks_done", "chunk_count", "rows_done", "files_done",
         "bytes_done", "windows_done", "hard_fail_count",
         "epoch", "epochs_total", "train_loss", "val_loss",
-        "manifest_rows", "output_files", "smoke_rows"
+        "manifest_rows", "output_files", "smoke_rows",
+        "completed_blocks", "active_worker_count", "available_memory_gib",
+        "process_tree_rss_gib", "pagefile_used_gib"
     )) {
         if ($heartbeat.PSObject.Properties.Name -contains $name) {
             $domain += " {0}={1}" -f $name, (Format-Optional $heartbeat.$name)
@@ -266,7 +301,7 @@ function Write-CompactStatus {
         (Format-Optional $cpu),
         (Format-Optional $ioRead),
         (Format-Optional $ioWrite),
-        (Format-Optional $heartbeat.output_drive_free_gb),
+        (Format-Optional $(if ($null -ne $heartbeat.output_drive_free_gb) { $heartbeat.output_drive_free_gb } else { $heartbeat.output_free_gib })),
         $domain
     )
 }

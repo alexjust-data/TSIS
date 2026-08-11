@@ -286,3 +286,68 @@ def test_two_session_smoke_controlled_stop_resume_and_complete(tmp_path: Path):
     pointer = tmp_path / "pointers" / run_id / "run_pointer_manifest.json"
     assert json.loads(pointer.read_text())["status"] == "COMPLETE"
 
+
+def _partition_hashes(root: Path, family: str) -> dict[str, str]:
+    return {
+        str(path.relative_to(root)): _sha256(path)
+        for path in sorted((root / family).rglob("part-*.parquet"))
+    }
+
+
+def test_cpp_stage8_engine_matches_python_and_persists_fingerprint(
+    tmp_path: Path,
+) -> None:
+    config = _fixture(tmp_path)
+    python_run_id = "fixture_binding_a_python"
+    cpp_run_id = "fixture_binding_a_cpp"
+    python_result = _run(config, python_run_id, "--stage8-engine", "python")
+    assert python_result.returncode == 0, python_result.stderr + python_result.stdout
+    cpp_result = _run(config, cpp_run_id, "--stage8-engine", "cpp")
+    assert cpp_result.returncode == 0, cpp_result.stderr + cpp_result.stdout
+
+    python_output = tmp_path / "outputs" / f"run_id={python_run_id}"
+    cpp_output = tmp_path / "outputs" / f"run_id={cpp_run_id}"
+    for family in ("current_state", "multiscale_contrast", "pit_baseline_and_surprise"):
+        assert _partition_hashes(python_output, family) == _partition_hashes(
+            cpp_output, family
+        )
+
+    runtime = tmp_path / "runtime" / cpp_run_id
+    pointer = tmp_path / "pointers" / cpp_run_id / "run_pointer_manifest.json"
+    manifests = [
+        json.loads((runtime / "pre_manifest.json").read_text()),
+        json.loads((runtime / "final_manifest.json").read_text()),
+        json.loads((cpp_output / "metadata" / "lineage_manifest.json").read_text()),
+        json.loads((cpp_output / "metadata" / "run_summary.json").read_text()),
+        json.loads(pointer.read_text()),
+    ]
+    fingerprints = {
+        manifest["stage8_engine"]["engine_fingerprint_sha256"]
+        for manifest in manifests
+    }
+    assert len(fingerprints) == 1
+    for manifest in manifests:
+        engine = manifest["stage8_engine"]
+        assert engine["engine_name"] == "cpp"
+        assert engine["semantic_oracle_engine_id"].endswith("python_reference_v0_2")
+        assert "native_binary" in {
+            component["role"] for component in engine["components"]
+        }
+
+
+def test_resume_rejects_stage8_engine_fingerprint_change(tmp_path: Path) -> None:
+    config = _fixture(tmp_path)
+    run_id = "fixture_binding_a_engine_change"
+    interrupted = _run(
+        config,
+        run_id,
+        "--stage8-engine",
+        "python",
+        "--stop-after-stage",
+        "STAGE_5",
+    )
+    assert interrupted.returncode == 2, interrupted.stderr
+    rejected = _run(config, run_id, "--resume", "--stage8-engine", "cpp")
+    assert rejected.returncode != 0
+    assert "engine fingerprint differs" in rejected.stderr
+

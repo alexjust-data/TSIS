@@ -1,0 +1,18 @@
+{
+  "plan_version": "trading_activity_stage8_cpp_block_equivalence_v0_1",
+  "artifact_status": "BOUNDED_PRODUCTION_EQUIVALENT_SMOKE_PLAN",
+  "promotion_status": "NOT_AUTHORIZED",
+  "python_oracle": "FROZEN_PYTHON_REFERENCE_MATERIALIZATION",
+  "binding_root": "D:/TSIS/IO/wake_up/trading_activity/pit_marked_activity/binding_a_v02",
+  "rtol": 1e-12,
+  "atol": 1e-12,
+  "require_exact_value_match": true,
+  "require_parquet_hash_match": true,
+  "blocks": [
+    {
+      "operation_id": "ba2r2_s1of4",
+      "block_id": "085d39eb43c98ab33c889e5e677b00a8",
+      "session_dates": ["2012-04-18"]
+    }
+  ]
+}

@@ -6,6 +6,7 @@
 #include <cstdint>
 #include <limits>
 #include <unordered_map>
+#include <unordered_set>
 #include <vector>
 
 namespace py = pybind11;
@@ -84,10 +85,7 @@ py::dict compute(
     py::array_t<std::int16_t, py::array::c_style | py::array::forcecast> current_minute,
     py::array_t<std::int16_t, py::array::c_style | py::array::forcecast> current_window,
     py::array_t<double, py::array::c_style | py::array::forcecast> current_values,
-    py::array_t<std::int32_t, py::array::c_style | py::array::forcecast> candidate_start,
-    py::array_t<std::int32_t, py::array::c_style | py::array::forcecast> candidate_first,
-    py::array_t<std::int32_t, py::array::c_style | py::array::forcecast> candidate_last,
-    py::array_t<std::int32_t, py::array::c_style | py::array::forcecast> candidate_sessions,
+    py::array_t<std::int32_t, py::array::c_style | py::array::forcecast> candidate_lookback,
     py::array_t<std::int32_t, py::array::c_style | py::array::forcecast> candidate_minimum,
     std::int32_t evaluation_session
 ) {
@@ -100,14 +98,17 @@ py::dict compute(
     const auto cm = current_minute.unchecked<1>();
     const auto cw = current_window.unchecked<1>();
     const auto cv = current_values.unchecked<2>();
-    const auto starts = candidate_start.unchecked<1>();
-    const auto firsts = candidate_first.unchecked<1>();
-    const auto lasts = candidate_last.unchecked<1>();
-    const auto sessions = candidate_sessions.unchecked<1>();
+    const auto lookbacks = candidate_lookback.unchecked<1>();
     const auto minimums = candidate_minimum.unchecked<1>();
     if (pv.shape(1) != 5 || cv.shape(1) != 5) throw std::runtime_error("values must have five columns");
     const py::ssize_t n_current = cm.shape(0);
-    const py::ssize_t n_candidates = starts.shape(0);
+    const py::ssize_t n_candidates = lookbacks.shape(0);
+    if (minimums.shape(0) != n_candidates) throw std::runtime_error("candidate arrays must have equal length");
+    for (py::ssize_t candidate = 0; candidate < n_candidates; ++candidate) {
+        if (lookbacks(candidate) <= 0 || minimums(candidate) <= 0) {
+            throw std::runtime_error("candidate lookback and minimum must be positive");
+        }
+    }
     const py::ssize_t n_output = n_current * n_candidates;
 
     py::array_t<std::int8_t> state(n_output), duration_state(n_output), zero_dominated(n_output);
@@ -119,7 +120,7 @@ py::dict compute(
     auto of = first_reference.mutable_unchecked<1>(); auto ol = last_reference.mutable_unchecked<1>(); auto oma = max_available.mutable_unchecked<1>();
     auto od = distributions.mutable_unchecked<2>(); auto op = percentiles.mutable_unchecked<2>(); auto orat = ratios.mutable_unchecked<2>(); auto odur = durations.mutable_unchecked<2>();
     for (py::ssize_t i = 0; i < n_output; ++i) {
-        os(i)=0; ods(i)=0; oz(i)=-1; oro(i)=0; oma(i)=std::numeric_limits<std::int64_t>::min();
+        os(i)=0; ods(i)=0; oz(i)=-1; ors(i)=0; oro(i)=0; of(i)=0; ol(i)=0; oma(i)=std::numeric_limits<std::int64_t>::min();
         for(int j=0;j<48;++j) od(i,j)=NANV;
         for(int j=0;j<4;++j) op(i,j)=NANV;
         for(int j=0;j<3;++j) orat(i,j)=NANV;
@@ -127,12 +128,31 @@ py::dict compute(
     }
 
     py::gil_scoped_release release;
+    std::unordered_map<std::int32_t, std::unordered_set<std::int32_t>> date_sets;
+    date_sets.reserve(2048);
+    for (py::ssize_t i = 0; i < ps.shape(0); ++i) {
+        if (ps(i) >= evaluation_session) continue;
+        const std::int32_t key = static_cast<std::int32_t>(pm(i)) * 1000 + static_cast<std::int32_t>(pw(i));
+        date_sets[key].insert(ps(i));
+    }
+    std::unordered_map<std::int32_t, std::vector<std::int32_t>> group_dates;
+    group_dates.reserve(date_sets.size());
+    for (auto& pair : date_sets) {
+        auto& dates = group_dates[pair.first];
+        dates.assign(pair.second.begin(), pair.second.end());
+        std::sort(dates.begin(), dates.end());
+    }
     for (py::ssize_t candidate = 0; candidate < n_candidates; ++candidate) {
         std::unordered_map<std::int32_t, GroupData> groups;
         groups.reserve(2048);
         for (py::ssize_t i = 0; i < ps.shape(0); ++i) {
-            if (!pc(i) || ps(i) < starts(candidate) || ps(i) >= evaluation_session) continue;
             const std::int32_t key = static_cast<std::int32_t>(pm(i)) * 1000 + static_cast<std::int32_t>(pw(i));
+            const auto date_found = group_dates.find(key);
+            if (!pc(i) || date_found == group_dates.end() || ps(i) >= evaluation_session) continue;
+            const auto& dates = date_found->second;
+            const auto selected_count = std::min<std::size_t>(dates.size(), static_cast<std::size_t>(lookbacks(candidate)));
+            const auto selected_start = dates[dates.size() - selected_count];
+            if (ps(i) < selected_start) continue;
             auto& group = groups[key];
             ++group.observations;
             if (pa(i) != std::numeric_limits<std::int64_t>::min()) group.max_available = std::max(group.max_available, pa(i));
@@ -146,7 +166,9 @@ py::dict compute(
             auto& group = pair.second;
             summary.observations = group.observations;
             summary.max_available = group.max_available;
-            bool enough = sessions(candidate) >= minimums(candidate) && group.observations >= minimums(candidate);
+            const auto& dates = group_dates.at(pair.first);
+            const auto session_count = std::min<std::size_t>(dates.size(), static_cast<std::size_t>(lookbacks(candidate)));
+            bool enough = session_count >= static_cast<std::size_t>(minimums(candidate)) && group.observations >= minimums(candidate);
             for (int field = 0; field < 4; ++field) enough = enough && group.values[field].size() >= static_cast<std::size_t>(minimums(candidate));
             if (!enough) continue;
             summary.available = true;
@@ -164,8 +186,17 @@ py::dict compute(
         #pragma omp parallel for schedule(static)
         for (std::int64_t i = 0; i < static_cast<std::int64_t>(n_current); ++i) {
             const auto output_index = static_cast<py::ssize_t>(i) * n_candidates + candidate;
-            ors(output_index)=sessions(candidate); of(output_index)=firsts(candidate); ol(output_index)=lasts(candidate);
             const std::int32_t key = static_cast<std::int32_t>(cm(i)) * 1000 + static_cast<std::int32_t>(cw(i));
+            const auto date_found = group_dates.find(key);
+            if (date_found != group_dates.end()) {
+                const auto& dates = date_found->second;
+                const auto selected_count = std::min<std::size_t>(dates.size(), static_cast<std::size_t>(lookbacks(candidate)));
+                ors(output_index)=static_cast<std::int32_t>(selected_count);
+                if (selected_count) {
+                    of(output_index)=dates[dates.size() - selected_count];
+                    ol(output_index)=dates.back();
+                }
+            }
             auto found = summaries.find(key);
             if (found == summaries.end()) continue;
             const auto& summary = found->second;

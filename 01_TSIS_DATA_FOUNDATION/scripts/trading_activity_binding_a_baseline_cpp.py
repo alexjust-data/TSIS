@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import importlib.util
 from datetime import date
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
@@ -21,12 +22,19 @@ from trading_activity_binding_a_multisession_engine import (
 )
 
 
-def _load_native() -> Any:
+@lru_cache(maxsize=1)
+def native_module_path() -> Path:
     build = Path(__file__).parents[1] / "native" / "trading_activity" / "build"
     candidates = list(build.glob("tsis_baseline_native_cpp*.pyd"))
     if len(candidates) != 1:
         raise RuntimeError(f"Expected one compiled native module, found {len(candidates)}")
-    spec = importlib.util.spec_from_file_location("tsis_baseline_native_cpp", candidates[0])
+    return candidates[0].resolve()
+
+
+@lru_cache(maxsize=1)
+def _load_native() -> Any:
+    module_path = native_module_path()
+    spec = importlib.util.spec_from_file_location("tsis_baseline_native_cpp", module_path)
     if spec is None or spec.loader is None:
         raise RuntimeError("Cannot load native baseline module")
     module = importlib.util.module_from_spec(spec)
@@ -54,16 +62,6 @@ def materialize_baseline_and_surprise_cpp(
     candidates = list(config["binding"]["baseline_candidates"])
     prior_days = _ordinals(prior_current["session_date"])
     evaluation_ordinal = evaluation_session_date.toordinal()
-    available_dates = sorted(set(prior_days[prior_days < evaluation_ordinal].tolist()))
-    starts, firsts, lasts, counts, minimums = [], [], [], [], []
-    for candidate in candidates:
-        selected = available_dates[-BASELINE_LOOKBACKS[candidate] :]
-        starts.append(selected[0] if selected else evaluation_ordinal)
-        firsts.append(selected[0] if selected else 0)
-        lasts.append(selected[-1] if selected else 0)
-        counts.append(len(selected))
-        minimums.append(BASELINE_MIN_SESSIONS[candidate])
-
     prior_values = np.column_stack([
         pd.to_numeric(prior_current[column], errors="coerce").to_numpy(dtype=np.float64, na_value=np.nan)
         for column in (*VALUE_COLUMNS.values(), "median_intertrade_duration_us")
@@ -83,11 +81,8 @@ def materialize_baseline_and_surprise_cpp(
         _minute(current["decision_timestamp"]),
         pd.to_numeric(current["window_seconds"], errors="raise").to_numpy(dtype=np.int16),
         current_values,
-        np.asarray(starts, dtype=np.int32),
-        np.asarray(firsts, dtype=np.int32),
-        np.asarray(lasts, dtype=np.int32),
-        np.asarray(counts, dtype=np.int32),
-        np.asarray(minimums, dtype=np.int32),
+        np.asarray([BASELINE_LOOKBACKS[candidate] for candidate in candidates], dtype=np.int32),
+        np.asarray([BASELINE_MIN_SESSIONS[candidate] for candidate in candidates], dtype=np.int32),
         evaluation_ordinal,
     )
     candidate_count = len(candidates)
