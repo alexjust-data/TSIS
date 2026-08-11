@@ -3014,12 +3014,16 @@ governed CTO graph window. No official Graphify leaf rebuild was executed.
 - **Leaf objetivo:** SEC PIT Fundamental Context / Market States Creation.
 - **Archivos afectados:**
   `SEC_PIT_ADAPTIVE_BASELINE_AND_SCALE_GATE_HANDOFF_v0_1.md`,
-  `SEC_PIT_EXTERNAL_AUDIT_PACKAGE_CONTENTS_v0_2.md` and module `CHANGELOG.md`.
+  `SEC_PIT_EXTERNAL_AUDIT_PACKAGE_CONTENTS_v0_2.md`,
+  `SEC_PIT_EXTERNAL_AUDIT_PACKAGE_CONTENTS_v0_3.md` and module `CHANGELOG.md`.
 - **Motivo:** the governed process now converts BGM/DOMH through generic
   baseline-family fallback, freezes Company Facts as O/S reconciliation only
   and requires a 30-50 case gate before 4,824 instruments. The current root
   graph query did not expose this topology. An isolated additive merge was not
   performed because the root refresh queue requires coordinated leaf rebuilds.
+- **Actualizacion de handoff:** v0_3 supersedes v0_2 for external review and
+  reduces the package from 400 entries to 12 without changing the SEC PIT
+  scientific result or the closed 4,824-instrument scale gate.
 - **Cierre esperado:** rebuild and diagnose the SEC PIT Fundamental Context
   leaf, update `BUILD_MANIFEST.md` and replace its slice in the next official
   root merge.

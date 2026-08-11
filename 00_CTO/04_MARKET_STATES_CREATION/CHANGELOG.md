@@ -1,5 +1,16 @@
 # Market States Creation Changelog
 
+## 2026-08-11 | SEC PIT external audit package reduced to minimal v0_3
+
+- Superseded the 400-entry v0_2 external-review bundle with a 12-entry v0_3
+  handoff focused on the final result, governing process and minimum manifests.
+- Removed source-code snapshots, tests, daily Parquets, full run directories,
+  historical duplicate readouts and unrelated application context from the
+  recommended external package.
+- Added an explicit `00_START_HERE.md` reading order and preserved file-level
+  SHA-256/size verification; the full application remains referenced through
+  Git and authoritative runtime lineage rather than duplicated in the ZIP.
+
 ## 2026-08-11 | SEC PIT external audit package refreshed
 
 - Rebuilt the existing PGAC external-audit ZIP in place with the authoritative seven-case O/S and owner-exclusion v0.5 results, certification evidence, code/config snapshots and focused tests.

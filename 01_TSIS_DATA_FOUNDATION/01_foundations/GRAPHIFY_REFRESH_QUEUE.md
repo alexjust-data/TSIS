@@ -5748,6 +5748,8 @@ Affected scope:
 
 - `scripts/sec_pit/` adaptive baseline, blocker, Company Facts, full-interval
   and shard-certification components;
+- `scripts/sec_pit/build_external_audit_package_v0_3.ps1`, which produces the
+  minimal external handoff without embedding the application corpus;
 - `configs/sec_pit_owner_exclusion_*` probe configurations;
 - `tests/test_sec_pit_*` validation corpus;
 - `inspection_dossiers/sec_pit/SEC_PIT_ADAPTIVE_BASELINE_COMPANYFACTS_FULL_INTERVAL_AND_SHARD_CERTIFICATION_READOUT_v0_1.md`;
