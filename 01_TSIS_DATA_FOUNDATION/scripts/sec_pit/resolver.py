@@ -78,9 +78,12 @@ def owner_exclusion_estimate(
     ownership_coverage_state: str,
 ) -> dict[str, float | str | None]:
     if shares_outstanding is None:
-        return {"float_owner_exclusion_estimate": None, "float_percent_estimate": None, "estimation_state": "OS_UNAVAILABLE"}
+        return {"float_owner_exclusion_estimate": None, "float_fraction_estimate": None, "float_percent_estimate": None, "estimation_state": "OS_UNAVAILABLE"}
+    if shares_outstanding <= 0:
+        return {"float_owner_exclusion_estimate": None, "float_fraction_estimate": None, "float_percent_estimate": None, "estimation_state": "OS_NON_POSITIVE"}
     if unique_supported_excluded_shares is None or ownership_coverage_state != "SUFFICIENT_FOR_METHODOLOGY":
-        return {"float_owner_exclusion_estimate": None, "float_percent_estimate": None, "estimation_state": "OWNERSHIP_COVERAGE_INSUFFICIENT"}
+        return {"float_owner_exclusion_estimate": None, "float_fraction_estimate": None, "float_percent_estimate": None, "estimation_state": "OWNERSHIP_COVERAGE_INSUFFICIENT"}
     estimate = max(0.0, shares_outstanding - unique_supported_excluded_shares)
-    return {"float_owner_exclusion_estimate": estimate, "float_percent_estimate": 100.0 * estimate / shares_outstanding if shares_outstanding else None, "estimation_state": "OWNER_EXCLUSION_ESTIMATE"}
+    fraction = estimate / shares_outstanding
+    return {"float_owner_exclusion_estimate": estimate, "float_fraction_estimate": fraction, "float_percent_estimate": 100.0 * fraction, "estimation_state": "OWNER_EXCLUSION_ESTIMATE"}
 

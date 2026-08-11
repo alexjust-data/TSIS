@@ -1,0 +1,19 @@
+{
+  "config_version": "sec_pit_owner_exclusion_probe_v0_1",
+  "ticker": "PGAC",
+  "cik": "0002030829",
+  "instrument_id": "cik_ticker:0002030829:PGAC",
+  "issuer_name": "Pantages Capital Acquisition Corporation",
+  "target_class_label": "Class A ordinary shares",
+  "first_observed_session": "2025-08-15",
+  "last_observed_session": "2026-03-06",
+  "selection_plan": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/evidence_assets/sec_pit_predownload_7t_probe_v0_3/document_selection_plan_v0_2.parquet",
+  "selection_plan_sha256": "ddce5a64826268ceb4f36d34476eba03d879c9a47c6a94d634a7af74823bb998",
+  "acquisition_ledger": "C:/TSIS_Data/runtime/sec_pit_primary_v0_2/runs/sec_pit_pgac_primary_v0_2_20260811T1035Z/acquisition.jsonl",
+  "metadata_inventory": "D:/TSIS/fundamental_context/sec_pit_v0_1/runs/sec_pit_7t_metadata_v0_2__pgac/filing_inventory.parquet",
+  "daily_os_state": "C:/TSIS_Data/runtime/sec_pit_pgac_no_network_v0_1/runs/sec_pit_pgac_no_network_os_v0_2_20260811T1145Z/daily_os_state.parquet",
+  "output_root": "C:/TSIS_Data/runtime/sec_pit_owner_exclusion_no_network_v0_1",
+  "methodology_id": "officer_director_explicit_affiliate_v0_1",
+  "methodology_authorized": true,
+  "network_requests_authorized": false
+}

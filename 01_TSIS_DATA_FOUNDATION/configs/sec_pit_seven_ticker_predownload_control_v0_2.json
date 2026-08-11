@@ -1,0 +1,22 @@
+{
+  "config_id": "sec_pit_seven_ticker_predownload_control_v0_2",
+  "status": "PROBE_ONLY_NOT_DOWNLOAD_AUTHORIZATION",
+  "parent_universe_id": "lt1b_universe_v0_1",
+  "parent_universe_path": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/market_cap_last_observed_cutoff/20260320_market_cap_last_observed_cutoff/market_cap_cutoff_lt_1b_active_inactive.parquet",
+  "instrument_master_path": "G:/TSIS/data/data_foundation_outputs/instrument_master/instrument_master_v0_1.parquet",
+  "all_tickers_root": "G:/TSIS/data/reference/all_tickers/*.parquet",
+  "lifecycle_reconciliation_path": "D:/TSIS/fundamental_context/sec_pit_v0_1/replays/sec_pit_6i_lifecycle_window_reconciliation_v0_1/lifecycle_window_reconciliation.parquet",
+  "sec_root": "D:/TSIS/fundamental_context/sec_pit_v0_1",
+  "metadata_run_prefix": "sec_pit_7t_metadata_v0_2",
+  "selection_capacity_documents": null,
+  "minimum_free_space_gib": 100,
+  "cases": [
+    {"ticker": "BNAI", "cik": "0001838163", "expected_class_gate": "PASS"},
+    {"ticker": "DOMH", "cik": "0000012239", "expected_class_gate": "PASS"},
+    {"ticker": "BBBY", "cik": "0001130713", "expected_class_gate": "PASS"},
+    {"ticker": "BGM", "cik": "0001779578", "expected_class_gate": "PASS"},
+    {"ticker": "CNOBP", "cik": "0000712771", "expected_class_gate": "FAIL"},
+    {"ticker": "ALUR", "cik": "0001964979", "expected_class_gate": "PASS"},
+    {"ticker": "PGAC", "cik": "0002030829", "expected_class_gate": "PASS"}
+  ]
+}

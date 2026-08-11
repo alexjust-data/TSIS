@@ -1,0 +1,64 @@
+{
+  "run_id": "sec_pit_predownload_7t_probe_v0_3",
+  "status": "RUNNING",
+  "created_at_utc": "2026-08-11T09:55:01.425590+00:00",
+  "script_path": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/sec_pit/build_predownload_control.py",
+  "script_sha256": "e62f23602a4c66cb11541a70df3279ce4fc6e3c696aa68342ab0c19feab57a60",
+  "policy_id": "sec_pit_predownload_control_v0_2",
+  "config_id": "sec_pit_seven_ticker_predownload_control_v0_2",
+  "config_path": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/configs/sec_pit_seven_ticker_predownload_control_v0_2.json",
+  "config_sha256": "7f77493a87c644c1839d4cddddde7b9d570e080296d3487ab2ee09940f5dbae1",
+  "git_branch": "integrate/main-data-quality-dossiers-20260613",
+  "git_commit": "e8892333fb40b25e3dd00880a53958beb3399599",
+  "git_dirty_state": true,
+  "network_access": "PROHIBITED_AND_NOT_USED",
+  "primary_document_acquisition": "NOT_EXECUTED",
+  "promotion_status": "PROBE_ONLY",
+  "input_artifacts": [
+    {
+      "path": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/configs/sec_pit_seven_ticker_predownload_control_v0_2.json",
+      "sha256": "7f77493a87c644c1839d4cddddde7b9d570e080296d3487ab2ee09940f5dbae1"
+    },
+    {
+      "path": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/market_cap_last_observed_cutoff/20260320_market_cap_last_observed_cutoff/market_cap_cutoff_lt_1b_active_inactive.parquet",
+      "sha256": "7b7d056785aae7e3e097219dc5f24c25e2fe193eb28c139354c4d9f8aff88468"
+    },
+    {
+      "path": "G:/TSIS/data/data_foundation_outputs/instrument_master/instrument_master_v0_1.parquet",
+      "sha256": "69104387d2607306c3fa1740573d130db5e7c30b1d1527d3ee8a8d2b4d53c2d2"
+    },
+    {
+      "path": "D:/TSIS/fundamental_context/sec_pit_v0_1/replays/sec_pit_6i_lifecycle_window_reconciliation_v0_1/lifecycle_window_reconciliation.parquet",
+      "sha256": "33f088831a9a38bf16b25bdefe0c2cc42c2913d0961aeb0c26b94bcfd1f8ade7"
+    },
+    {
+      "path": "D:/TSIS/fundamental_context/sec_pit_v0_1/runs/sec_pit_7t_metadata_v0_2__bnai/filing_inventory.parquet",
+      "sha256": "f29bde680ef742ba62f35955874bb4e53c0203739be1538f5972e54b19c380ad"
+    },
+    {
+      "path": "D:/TSIS/fundamental_context/sec_pit_v0_1/runs/sec_pit_7t_metadata_v0_2__domh/filing_inventory.parquet",
+      "sha256": "4100f7649abb2a19be627480072625d6fb9976966c594a3306751d5684c08f07"
+    },
+    {
+      "path": "D:/TSIS/fundamental_context/sec_pit_v0_1/runs/sec_pit_7t_metadata_v0_2__bbby/filing_inventory.parquet",
+      "sha256": "eb6b11c16f3913d5d8c7bf3fcf968f43b2f19b14c1e920e15cab404c7645b006"
+    },
+    {
+      "path": "D:/TSIS/fundamental_context/sec_pit_v0_1/runs/sec_pit_7t_metadata_v0_2__bgm/filing_inventory.parquet",
+      "sha256": "ad2174913e7678b15a5f80272b5ab072ffa75fe5ae1d6ce370806566541216a2"
+    },
+    {
+      "path": "D:/TSIS/fundamental_context/sec_pit_v0_1/runs/sec_pit_7t_metadata_v0_2__cnobp/filing_inventory.parquet",
+      "sha256": "9ed4d6c7c8f58a3718bda86ed7eed723384ed1af9e54393cf2430ca43e674729"
+    },
+    {
+      "path": "D:/TSIS/fundamental_context/sec_pit_v0_1/runs/sec_pit_7t_metadata_v0_2__alur/filing_inventory.parquet",
+      "sha256": "5b10c863d7d325909918fd0406e5b359b19c686e9f25196259aed9c9ae896cbe"
+    },
+    {
+      "path": "D:/TSIS/fundamental_context/sec_pit_v0_1/runs/sec_pit_7t_metadata_v0_2__pgac/filing_inventory.parquet",
+      "sha256": "897c46b3cbc3ac17cc81124312eabd5e955f961f2855024b16f955d719ca1200"
+    }
+  ],
+  "all_tickers_root": "G:/TSIS/data/reference/all_tickers/*.parquet"
+}

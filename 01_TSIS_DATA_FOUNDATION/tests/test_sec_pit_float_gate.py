@@ -24,6 +24,9 @@ def test_float_is_null_when_ownership_or_overlap_gates_are_open() -> None:
         },
     )
     assert rows[0]["float_owner_exclusion_estimate_as_known"] is None
+    assert rows[0]["float_fraction_estimate_as_known"] is None
+    assert rows[0]["float_percent_estimate_as_known"] is None
+    assert rows[0]["schema_version"] == "sec_pit_resolved_daily_states_v0_2"
     assert rows[0]["estimation_state"] == "BLOCKED_BY_INPUT_GATES"
     assert readout["non_null_float_rows"] == 0
 
@@ -39,6 +42,27 @@ def test_authorized_methodology_still_blocks_unresolved_overlap() -> None:
     )
     assert "OWNER_EXCLUSION_NOT_AUTHORIZED" not in readout["blocker_codes"]
     assert "ECONOMIC_POSITION_OVERLAP_UNRESOLVED" in readout["blocker_codes"]
+
+
+def test_exact_upstream_blocker_replaces_generic_extraction_code() -> None:
+    rows, readout = resolve_owner_exclusion_float(
+        daily_os_rows=[{
+            "instrument_id": "i",
+            "session_date": "2025-01-02",
+            "shares_outstanding_estimate_as_known": None,
+        }],
+        holder_ledger=[],
+        ownership_coverage={
+            "structured_extraction_complete": False,
+            "blocker_codes": ["TICKER_REUSE_CONFLICT"],
+        },
+        holder_deduplication={
+            "row_level_economic_position_resolution_complete": True,
+        },
+        methodology_authorized=True,
+    )
+    assert readout["blocker_codes"] == ["TICKER_REUSE_CONFLICT"]
+    assert rows[0]["blocker_codes"] == ["TICKER_REUSE_CONFLICT"]
 
 
 def test_daily_float_is_available_only_between_complete_baseline_and_pending_update() -> None:
@@ -82,6 +106,8 @@ def test_daily_float_is_available_only_between_complete_baseline_and_pending_upd
     assert rows[0]["float_owner_exclusion_estimate_as_known"] is None
     assert rows[0]["estimation_state"] == "OWNERSHIP_BASELINE_UNAVAILABLE"
     assert rows[1]["float_owner_exclusion_estimate_as_known"] == 9_000_000
+    assert rows[1]["float_fraction_estimate_as_known"] == 0.9
+    assert rows[1]["float_percent_estimate_as_known"] == 90.0
     assert rows[1]["estimation_state"] == "CALCULATED"
     assert rows[2]["float_owner_exclusion_estimate_as_known"] is None
     assert rows[2]["estimation_state"] == "POST_BASELINE_OWNERSHIP_EVENT_UNRESOLVED"
@@ -138,6 +164,8 @@ def test_new_post_baseline_officer_uses_latest_sequential_account_snapshot() -> 
     )
     assert rows[0]["unique_supported_excluded_shares"] == 1_015_727
     assert rows[0]["float_owner_exclusion_estimate_as_known"] == 8_984_273
+    assert rows[0]["float_fraction_estimate_as_known"] == 0.8984273
+    assert rows[0]["float_percent_estimate_as_known"] == 89.84273
     assert rows[0]["ownership_update_observation_count"] == 1
     assert rows[0]["ownership_update_latest_transaction_date"] == "2025-12-15"
     assert rows[0]["estimation_state"] == "CALCULATED_AND_TEMPORAL_UPDATE"
@@ -186,3 +214,116 @@ def test_existing_baseline_holder_update_remains_blocked_without_account_set() -
     )
     assert rows[0]["float_owner_exclusion_estimate_as_known"] is None
     assert "EXISTING_BASELINE_HOLDER_ACCOUNT_SET_INCOMPLETE" in rows[0]["blocker_codes"]
+
+def test_non_positive_os_never_emits_fraction_or_percent() -> None:
+    rows, readout = resolve_owner_exclusion_float(
+        daily_os_rows=[{
+            "instrument_id": "i",
+            "session_date": "2025-01-02",
+            "shares_outstanding_estimate_as_known": 0.0,
+        }],
+        holder_ledger=[{
+            "holder_position_id": "proxy-position",
+            "economic_position_id": "person-1",
+            "form": "DEF 14A",
+            "accession_number": "proxy",
+            "eligible_from_session": "2025-01-02",
+            "methodology_relevant": True,
+            "supported_issued_common_shares": 0.0,
+        }],
+        ownership_coverage={"structured_extraction_complete": True},
+        holder_deduplication={
+            "row_level_economic_position_resolution_complete": True,
+        },
+        methodology_authorized=True,
+    )
+    assert rows[0]["float_owner_exclusion_estimate_as_known"] is None
+    assert rows[0]["float_fraction_estimate_as_known"] is None
+    assert rows[0]["float_percent_estimate_as_known"] is None
+    assert rows[0]["estimation_state"] == "SHARES_OUTSTANDING_NON_POSITIVE"
+    assert readout["float_fraction_unit"] == "ratio_0_to_1"
+    assert readout["float_percent_unit"] == "percent_0_to_100"
+
+
+def test_foreign_annual_report_can_supply_owner_exclusion_baseline() -> None:
+    rows, _ = resolve_owner_exclusion_float(
+        daily_os_rows=[{
+            "instrument_id": "foreign",
+            "session_date": "2025-02-03",
+            "shares_outstanding_estimate_as_known": 10_000_000.0,
+        }],
+        holder_ledger=[{
+            "holder_position_id": "management",
+            "economic_position_id": "management",
+            "form": "20-F",
+            "accession_number": "annual",
+            "eligible_from_session": "2025-02-01",
+            "methodology_relevant": True,
+            "supported_issued_common_shares": 1_000_000.0,
+            "holder_name": "Directors and officers as a group",
+        }],
+        ownership_coverage={"structured_extraction_complete": True},
+        holder_deduplication={
+            "row_level_economic_position_resolution_complete": True,
+        },
+        methodology_authorized=True,
+    )
+    assert rows[0]["ownership_baseline_accession"] == "annual"
+    assert rows[0]["float_owner_exclusion_estimate_as_known"] == 9_000_000.0
+
+
+def test_baseline_overlap_blocks_only_until_clean_replacement() -> None:
+    daily_os = [
+        {
+            "instrument_id": "i",
+            "session_date": session,
+            "shares_outstanding_estimate_as_known": 10_000_000.0,
+        }
+        for session in ("2025-01-02", "2025-02-03")
+    ]
+    blocked = [
+        {
+            "holder_position_id": "aggregate-old",
+            "economic_position_id": "aggregate-old",
+            "form": "DEF 14A",
+            "accession_number": "old",
+            "eligible_from_session": "2025-01-02",
+            "methodology_relevant": True,
+            "supported_issued_common_shares": 1_000_000.0,
+            "deduplication_state": "AGGREGATE_OFFICER_DIRECTOR_POSITION_RESOLVED",
+        },
+        {
+            "holder_position_id": "affiliate-old",
+            "economic_position_id": None,
+            "form": "DEF 14A",
+            "accession_number": "old",
+            "eligible_from_session": "2025-01-02",
+            "methodology_relevant": True,
+            "supported_issued_common_shares": 500_000.0,
+            "deduplication_state": "AGGREGATE_AFFILIATE_OVERLAP_UNRESOLVED",
+        },
+    ]
+    clean = {
+        "holder_position_id": "aggregate-new",
+        "economic_position_id": "aggregate-new",
+        "form": "DEF 14A",
+        "accession_number": "new",
+        "eligible_from_session": "2025-02-03",
+        "methodology_relevant": True,
+        "supported_issued_common_shares": 900_000.0,
+        "deduplication_state": "AGGREGATE_OFFICER_DIRECTOR_POSITION_RESOLVED",
+    }
+    rows, _ = resolve_owner_exclusion_float(
+        daily_os_rows=daily_os,
+        holder_ledger=[*blocked, clean],
+        ownership_coverage={"structured_extraction_complete": True},
+        holder_deduplication={
+            "row_level_economic_position_resolution_complete": True,
+        },
+        methodology_authorized=True,
+    )
+    assert rows[0]["estimation_state"] == (
+        "OWNERSHIP_BASELINE_OVERLAP_UNRESOLVED"
+    )
+    assert rows[0]["blocker_codes"] == ["HOLDER_OVERLAP_UNRESOLVED"]
+    assert rows[1]["float_owner_exclusion_estimate_as_known"] == 9_100_000

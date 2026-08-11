@@ -1,0 +1,13 @@
+{
+  "authorization_id": "sec_pit_pgac_pilot_v0_2_20260811T103422Z",
+  "status": "AUTHORIZED",
+  "policy_id": "sec_pit_predownload_control_v0_2",
+  "probe_manifest_sha256": "e017ce867f3ca0d1cff7861e315315674e0f8e1bdb6d3f8acfd4f36bf15b331b",
+  "selection_plan_sha256": "ddce5a64826268ceb4f36d34476eba03d879c9a47c6a94d634a7af74823bb998",
+  "allowed_tickers": [
+    "PGAC"
+  ],
+  "authorized_by": "alexjustdata@gmail.com",
+  "authorized_at_utc": "2026-08-11T10:34:22.8912588Z",
+  "scope_note": "Human-authorized bounded PGAC pilot only. No other ticker and no parent-universe scale-out is authorized."
+}

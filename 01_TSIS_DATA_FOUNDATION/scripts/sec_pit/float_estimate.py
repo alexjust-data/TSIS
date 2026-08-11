@@ -6,6 +6,9 @@ from collections.abc import Iterable
 from typing import Any
 
 
+BASELINE_FORMS = frozenset({"DEF 14A", "10-K", "10-K/A", "20-F", "20-F/A"})
+
+
 def _person_name_key(value: Any) -> str | None:
     if not value:
         return None
@@ -25,10 +28,12 @@ def _blocked_rows(
         {
             "instrument_id": row["instrument_id"],
             "session_date": row["session_date"],
+            "schema_version": "sec_pit_resolved_daily_states_v0_2",
             "shares_outstanding_estimate_as_known": row.get(
                 "shares_outstanding_estimate_as_known"
             ),
             "float_owner_exclusion_estimate_as_known": None,
+            "float_fraction_estimate_as_known": None,
             "float_percent_estimate_as_known": None,
             "unique_supported_excluded_shares": None,
             "methodology_id": methodology_id,
@@ -49,7 +54,7 @@ def _proxy_baselines(
 ) -> list[dict[str, Any]]:
     groups: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
     for row in holders:
-        if row.get("form") != "DEF 14A" or not row.get("methodology_relevant"):
+        if row.get("form") not in BASELINE_FORMS or not row.get("methodology_relevant"):
             continue
         eligible = row.get("eligible_from_session")
         accession = row.get("accession_number")
@@ -61,6 +66,22 @@ def _proxy_baselines(
         if not rows or any(
             row.get("supported_issued_common_shares") is None for row in rows
         ):
+            continue
+        overlap_blocked = any(
+            row.get("deduplication_state")
+            == "AGGREGATE_AFFILIATE_OVERLAP_UNRESOLVED"
+            for row in rows
+        )
+        if overlap_blocked:
+            baselines.append({
+                "eligible_from_session": eligible,
+                "accession_number": accession,
+                "excluded_shares": None,
+                "position_count": 0,
+                "holder_name_keys": set(),
+                "conflict_states": [],
+                "blocker_codes": ["HOLDER_OVERLAP_UNRESOLVED"],
+            })
             continue
         economic_positions: dict[str, float] = {}
         for row in rows:
@@ -90,6 +111,7 @@ def _proxy_baselines(
                 if key
             },
             "conflict_states": conflict_states,
+            "blocker_codes": [],
         })
     return sorted(
         baselines,
@@ -107,7 +129,7 @@ def _post_baseline_adjustment(
         row for row in holders
         if row.get("methodology_relevant")
         and baseline["eligible_from_session"] < (row.get("eligible_from_session") or "") <= session
-        and row.get("form") != "DEF 14A"
+        and row.get("form") not in BASELINE_FORMS
     ]
     if not events:
         return 0.0, 0, None, []
@@ -167,7 +189,10 @@ def resolve_owner_exclusion_float(
     holders = list(holder_ledger)
     blockers: list[str] = []
     if not ownership_coverage.get("structured_extraction_complete"):
-        blockers.append("OWNERSHIP_STRUCTURED_EXTRACTION_INCOMPLETE")
+        blockers.extend(
+            ownership_coverage.get("blocker_codes")
+            or ["OWNERSHIP_STRUCTURED_EXTRACTION_INCOMPLETE"]
+        )
     if not holder_deduplication.get("row_level_economic_position_resolution_complete"):
         blockers.append("ECONOMIC_POSITION_OVERLAP_UNRESOLVED")
     if not methodology_authorized:
@@ -183,6 +208,9 @@ def resolve_owner_exclusion_float(
             "non_null_float_rows": 0,
             "holder_rows_considered": len(holders),
             "baseline_count": 0,
+            "output_schema_version": "sec_pit_resolved_daily_states_v0_2",
+            "float_fraction_unit": "ratio_0_to_1",
+            "float_percent_unit": "percent_0_to_100",
         }
 
     baselines = _proxy_baselines(holders)
@@ -202,6 +230,9 @@ def resolve_owner_exclusion_float(
         if baseline is None:
             state = "OWNERSHIP_BASELINE_UNAVAILABLE"
             row_blockers.append("OWNERSHIP_BASELINE_UNAVAILABLE")
+        elif baseline.get("blocker_codes"):
+            state = "OWNERSHIP_BASELINE_OVERLAP_UNRESOLVED"
+            row_blockers.extend(baseline["blocker_codes"])
         else:
             adjustment, update_count, update_latest_transaction, update_blockers = (
                 _post_baseline_adjustment(
@@ -217,13 +248,19 @@ def resolve_owner_exclusion_float(
                 state = "SHARES_OUTSTANDING_UNAVAILABLE"
                 row_blockers.append("SHARES_OUTSTANDING_UNAVAILABLE")
             else:
-                excluded = float(baseline["excluded_shares"]) + float(adjustment or 0.0)
                 shares = float(os_row["shares_outstanding_estimate_as_known"])
-                if excluded > shares:
+                if shares <= 0:
+                    state = "SHARES_OUTSTANDING_NON_POSITIVE"
+                    row_blockers.append("SHARES_OUTSTANDING_NON_POSITIVE")
+                else:
+                    excluded = float(baseline["excluded_shares"]) + float(
+                        adjustment or 0.0
+                    )
+                if excluded is not None and excluded > shares:
                     excluded = None
                     state = "EXCLUDED_SHARES_EXCEED_OS"
                     row_blockers.append("EXCLUDED_SHARES_EXCEED_OS")
-                else:
+                elif excluded is not None:
                     estimate = shares - excluded
                     if baseline["conflict_states"]:
                         conflict_state = "SOURCE_CONFLICT_PRECEDENCE_APPLIED"
@@ -232,13 +269,20 @@ def resolve_owner_exclusion_float(
                         state += "_AND_TEMPORAL_UPDATE"
 
         shares = os_row.get("shares_outstanding_estimate_as_known")
+        fraction = (
+            estimate / float(shares)
+            if estimate is not None and shares and float(shares) > 0
+            else None
+        )
         rows.append({
             "instrument_id": os_row["instrument_id"],
             "session_date": session,
+            "schema_version": "sec_pit_resolved_daily_states_v0_2",
             "shares_outstanding_estimate_as_known": shares,
             "float_owner_exclusion_estimate_as_known": estimate,
+            "float_fraction_estimate_as_known": fraction,
             "float_percent_estimate_as_known": (
-                estimate / float(shares) if estimate is not None and shares else None
+                100.0 * fraction if fraction is not None else None
             ),
             "unique_supported_excluded_shares": excluded,
             "methodology_id": methodology_id,
@@ -260,6 +304,9 @@ def resolve_owner_exclusion_float(
     )
     return rows, {
         "methodology_id": methodology_id,
+        "output_schema_version": "sec_pit_resolved_daily_states_v0_2",
+        "float_fraction_unit": "ratio_0_to_1",
+        "float_percent_unit": "percent_0_to_100",
         "status": "PASS_WITH_RESTRICTIONS" if non_null else "BLOCKED_BY_INPUT_GATES",
         "blocker_codes": [],
         "daily_rows": len(rows),

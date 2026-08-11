@@ -583,3 +583,38 @@ Authoritative runs are v0_59 through v0_62 under
 pilot except G8 tradability and G12 institutional ownership. Scale-out is not
 authorized until the optimized stratified replay and parent-universe identity
 scope are frozen.
+
+## 2026-08-11 - Recovery clarification for approximate G8 outputs
+
+The governing contract permits evidence-based outputs when an exact or admitted
+tradability point estimate is unavailable:
+
+```text
+FLOAT_EVIDENCE_UPPER_BOUND
+= O/S estimate - shares provably excluded
+
+scenario outputs
+= CONSERVATIVE / BASE / PERMISSIVE under separately versioned names
+```
+
+This is a permitted design boundary, not a completed implementation. The active
+resolver still emits NULL while G8 blockers remain and deliberately has no
+tradability arithmetic after the gates. BNAI owner-exclusion float may inform an
+upper-bound input for its 82 covered sessions, but it must not be relabeled as
+tradability float. A future implementation must create separate bound/scenario
+schemas, methodology IDs, tests and certification; it may never substitute one
+of them for `FLOAT_TRADABILITY_ELIGIBILITY_ESTIMATE_AS_KNOWN`.
+
+## 2026-08-11 - G12 global 13F continuation registered
+
+The pending all-instrument G12 work is now governed by:
+
+```text
+SEC_PIT_GLOBAL_13F_INSTITUTIONAL_OWNERSHIP_ACQUISITION_PLAN_v0_1.md
+```
+
+The plan requires one global acquisition per 13F vintage followed by historical
+CUSIP/share-class mapping and aggregation across all governed ticker identities.
+It explicitly prohibits a redundant ticker-by-ticker download and preserves
+`UNAVAILABLE` as distinct from zero. Execution remains parked until Trading
+Activity closes and a separate human authorization is recorded.

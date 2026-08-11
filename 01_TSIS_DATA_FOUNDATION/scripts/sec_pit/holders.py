@@ -43,9 +43,9 @@ def _methodology_relevant(row: dict[str, Any]) -> bool:
         return False
     return bool(
         row["holder_category"] == "OFFICER_OR_DIRECTOR"
+        or row["holder_category"] == "EXPLICIT_AFFILIATE"
         or row["owner_is_director"]
         or row["owner_is_officer"]
-        or row["form"] in {"SC 13D", "SC 13D/A", "SCHEDULE 13D", "SCHEDULE 13D/A"}
     )
 
 

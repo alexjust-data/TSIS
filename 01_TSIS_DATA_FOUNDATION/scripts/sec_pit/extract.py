@@ -84,7 +84,17 @@ def extract_companyfacts_os(
                         extraction_method="SEC_COMPANYFACTS_XBRL",
                         quality_state="REQUIRES_ACCESSION_ACCEPTANCE_ENRICHMENT",
                         causality_state="AVAILABILITY_UNCERTAIN",
-                        attributes={"taxonomy": taxonomy, "concept": concept, "frame": record.get("frame"), "fy": record.get("fy"), "fp": record.get("fp")},
+                        attributes={
+                            "taxonomy": taxonomy,
+                            "concept": concept,
+                            "frame": record.get("frame"),
+                            "fy": record.get("fy"),
+                            "fp": record.get("fp"),
+                            "companyfacts_filed_date": record.get("filed"),
+                            "companyfacts_start": record.get("start"),
+                            "companyfacts_end": record.get("end"),
+                            "companyfacts_unit": unit,
+                        },
                     ))
     return observations
 
@@ -287,4 +297,3 @@ def extract_form345_owner_snapshot(
 
 def observations_to_jsonl(observations: Iterable[SourceObservation]) -> str:
     return "".join(json.dumps(item.to_dict(), sort_keys=True, default=str) + "\n" for item in observations)
-

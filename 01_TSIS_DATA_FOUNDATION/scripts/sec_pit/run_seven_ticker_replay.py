@@ -69,6 +69,12 @@ def parser() -> argparse.ArgumentParser:
 
 def main() -> int:
     args = parser().parse_args()
+    if args.execute and not args.metadata_only:
+        raise RuntimeError(
+            "Legacy broad primary acquisition is blocked after the v0_1 selection audit. "
+            "Use build_predownload_control.py and "
+            "run_authorized_primary_acquisition_v0_2.py with a hash-bound authorization."
+        )
     config_path = args.config.resolve()
     config = json.loads(config_path.read_text(encoding="utf-8"))
     output_root = Path(config["output_root"])

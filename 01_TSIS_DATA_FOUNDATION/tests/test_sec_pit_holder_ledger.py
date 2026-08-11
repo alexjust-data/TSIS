@@ -68,6 +68,20 @@ def test_joint_schedule_position_is_not_additive() -> None:
         for row in ledger
     )
     assert readout["joint_reporting_rows_resolved"] == 2
+    assert all(row["methodology_relevant"] is False for row in ledger)
+
+
+def test_schedule_is_relevant_only_with_explicit_affiliate_evidence() -> None:
+    row = position("affiliate")
+    row["form"] = "SC 13D"
+    row["attributes"].update(
+        {
+            "holder_category": "EXPLICIT_AFFILIATE",
+            "supported_issued_common_shares": 100.0,
+        }
+    )
+    ledger, _ = build_holder_position_ledger([row])
+    assert ledger[0]["methodology_relevant"] is True
 
 
 def test_indirect_position_resolves_only_from_explicit_controlled_entity() -> None:

@@ -140,6 +140,28 @@ def test_float_stays_unavailable_without_sufficient_ownership_coverage() -> None
     assert result["estimation_state"] == "OWNERSHIP_COVERAGE_INSUFFICIENT"
 
 
+def test_float_fraction_and_percent_have_distinct_units() -> None:
+    result = owner_exclusion_estimate(
+        shares_outstanding=10_000_000,
+        unique_supported_excluded_shares=1_000_000,
+        ownership_coverage_state="SUFFICIENT_FOR_METHODOLOGY",
+    )
+    assert result["float_owner_exclusion_estimate"] == 9_000_000
+    assert result["float_fraction_estimate"] == 0.9
+    assert result["float_percent_estimate"] == 90.0
+
+
+def test_float_units_are_unavailable_for_non_positive_os() -> None:
+    result = owner_exclusion_estimate(
+        shares_outstanding=0,
+        unique_supported_excluded_shares=0,
+        ownership_coverage_state="SUFFICIENT_FOR_METHODOLOGY",
+    )
+    assert result["float_fraction_estimate"] is None
+    assert result["float_percent_estimate"] is None
+    assert result["estimation_state"] == "OS_NON_POSITIVE"
+
+
 def test_plan_mode_creates_governed_artifacts(tmp_path: Path) -> None:
     instrument_master = tmp_path / "instrument_master.parquet"
     pq.write_table(pa.table({

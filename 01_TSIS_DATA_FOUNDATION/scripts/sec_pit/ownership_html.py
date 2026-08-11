@@ -10,7 +10,14 @@ from sec_pit.availability import EdgarAvailabilityPolicy
 from sec_pit.extract import stable_id
 from sec_pit.models import SourceObservation
 
-_PROXY_FORMS = {"DEF 14A", "DEFA14A", "10-K", "10-K/A"}
+_PROXY_FORMS = {
+    "DEF 14A",
+    "DEFA14A",
+    "10-K",
+    "10-K/A",
+    "20-F",
+    "20-F/A",
+}
 _SCHEDULE_FORMS = {
     "SC 13D", "SC 13D/A", "SC 13G", "SC 13G/A",
     "SCHEDULE 13D", "SCHEDULE 13D/A", "SCHEDULE 13G", "SCHEDULE 13G/A",

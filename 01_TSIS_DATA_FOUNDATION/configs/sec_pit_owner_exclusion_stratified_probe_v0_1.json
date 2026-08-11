@@ -1,0 +1,79 @@
+{
+  "config_id": "sec_pit_owner_exclusion_stratified_probe_v0_1",
+  "status": "HUMAN_AUTHORIZED_BOUNDED_PROBE",
+  "probe_end_ceiling": "2026-03-06",
+  "probe_session_count": 5,
+  "methodology_id": "officer_director_explicit_affiliate_v0_1",
+  "methodology_authorized": true,
+  "network_requests_authorized_for_missing_selection": true,
+  "full_selection_plan": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/evidence_assets/sec_pit_predownload_7t_probe_v0_3/document_selection_plan_v0_2.parquet",
+  "identity_ledger": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/evidence_assets/sec_pit_predownload_7t_probe_v0_3/instrument_identity_interval_ledger.parquet",
+  "lifecycle_selection_plan": "D:/TSIS/fundamental_context/sec_pit_v0_1/replays/sec_pit_7t_lifecycle_primary_v0_1/lifecycle_primary_acquisition_plan.parquet",
+  "market_calendar": "G:/TSIS/data/data_foundation_outputs/market_calendar/market_calendar_v0_1.parquet",
+  "metadata_run_template": "D:/TSIS/fundamental_context/sec_pit_v0_1/runs/sec_pit_7t_metadata_v0_2__{ticker_lower}/filing_inventory.parquet",
+  "object_output_root": "D:/TSIS/fundamental_context/sec_pit_v0_1",
+  "runtime_output_root": "C:/TSIS_Data/runtime/sec_pit_stratified_owner_exclusion_v0_1",
+  "reuse_acquisition_ledgers": [
+    "D:/TSIS/fundamental_context/sec_pit_v0_1/runs/sec_pit_bnai_full_primary_v0_8_20260810/acquisition.jsonl",
+    "C:/TSIS_Data/runtime/sec_pit_primary_v0_2/runs/sec_pit_pgac_primary_v0_2_20260811T1035Z/acquisition.jsonl",
+    "D:/TSIS/fundamental_context/sec_pit_v0_1/replays/sec_pit_7t_lifecycle_primary_v0_1/acquisition.jsonl"
+  ],
+  "cases": [
+    {
+      "ticker": "BNAI",
+      "cik": "0001838163",
+      "issuer_name": "Brand Engagement Network Inc.",
+      "target_class_label": "Common Stock",
+      "stratum": "MODERN_XBRL_BENCHMARK",
+      "expected_security_class_gate": "PASS"
+    },
+    {
+      "ticker": "DOMH",
+      "cik": "0000012239",
+      "issuer_name": "Dominari Holdings Inc.",
+      "target_class_label": "Common Stock",
+      "stratum": "PRE_XBRL_IDENTITY_STRESS",
+      "expected_security_class_gate": "PASS"
+    },
+    {
+      "ticker": "BBBY",
+      "cik": "0001130713",
+      "issuer_name": "Bed Bath & Beyond, Inc.",
+      "target_class_label": "Common Stock",
+      "stratum": "LIFECYCLE_AND_TICKER_CHANGE_STRESS",
+      "expected_security_class_gate": "PASS"
+    },
+    {
+      "ticker": "BGM",
+      "cik": "0001779578",
+      "issuer_name": "BGM Group Ltd.",
+      "target_class_label": "Class A Ordinary Shares",
+      "stratum": "FOREIGN_ISSUER",
+      "expected_security_class_gate": "PASS"
+    },
+    {
+      "ticker": "CNOBP",
+      "cik": "0000712771",
+      "issuer_name": "ConnectOne Bancorp, Inc.",
+      "target_class_label": "Depositary Shares",
+      "stratum": "NON_COMMON_EQUITY_NEGATIVE_CONTROL",
+      "expected_security_class_gate": "FAIL"
+    },
+    {
+      "ticker": "ALUR",
+      "cik": "0001964979",
+      "issuer_name": "Allurion Technologies Inc.",
+      "target_class_label": "Common Stock",
+      "stratum": "OTC_AND_SECURITY_TYPE_REVIEW",
+      "expected_security_class_gate": "PASS"
+    },
+    {
+      "ticker": "PGAC",
+      "cik": "0002030829",
+      "issuer_name": "Pantages Capital Acquisition Corporation",
+      "target_class_label": "Class A ordinary shares",
+      "stratum": "SPAC_AND_FOREIGN_IDENTITY",
+      "expected_security_class_gate": "PASS"
+    }
+  ]
+}

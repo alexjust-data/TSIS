@@ -1,0 +1,11 @@
+{
+  "authorization_id": "REPLACE_ME",
+  "status": "NOT_AUTHORIZED",
+  "policy_id": "sec_pit_predownload_control_v0_2",
+  "probe_manifest_sha256": "REPLACE_WITH_EXACT_SHA256",
+  "selection_plan_sha256": "REPLACE_WITH_EXACT_SHA256",
+  "allowed_tickers": [],
+  "authorized_by": null,
+  "authorized_at_utc": null,
+  "scope_note": "Template only. Changing status without governed review is prohibited."
+}
