@@ -54,13 +54,57 @@ def normalized_name_key(value: Any) -> str | None:
     return " ".join(tokens) or None
 
 
-def issuer_name_present_in_text(issuer_name: Any, source_text: Any) -> bool:
-    """Match an issuer name in filing text without sorted-token adjacency."""
+_VENDOR_SECURITY_NAME_TOKENS = frozenset(
+    {
+        "adr", "ads", "bermuda", "class", "classes", "common",
+        "delaware", "depositary", "depository", "nevada", "nv", "ord",
+        "ordinary", "par", "preference", "preferred", "sf", "share",
+        "shares", "stock", "stocks", "usd", "value",
+    }
+)
+
+
+def normalized_issuer_core_tokens(value: Any) -> frozenset[str]:
+    """Remove vendor security/jurisdiction labels from an issuer name."""
+
+    key = normalized_name_key(value)
+    if not key:
+        return frozenset()
+    return frozenset(
+        token
+        for token in key.split()
+        if token not in _VENDOR_SECURITY_NAME_TOKENS and not token.isdigit()
+    )
+
+
+def issuer_name_match_basis(issuer_name: Any, source_text: Any) -> str | None:
+    """Return a traceable match basis, never a CIK-only identity admission."""
+
     name_key = normalized_name_key(issuer_name)
     text_key = normalized_name_key(source_text)
     if not name_key or not text_key:
-        return False
-    return set(name_key.split()).issubset(set(text_key.split()))
+        return None
+    if set(name_key.split()).issubset(set(text_key.split())):
+        return "FULL_VENDOR_NAME_TOKEN_EVIDENCE"
+    core_tokens = normalized_issuer_core_tokens(issuer_name)
+    if len(core_tokens) >= 2 and core_tokens.issubset(set(text_key.split())):
+        return "ISSUER_CORE_NAME_TOKEN_EVIDENCE"
+    return None
+
+
+def _normalized_visible_text(value: Any) -> str:
+    """Collapse SEC HTML whitespace without changing visible token order."""
+
+    return re.sub(
+        r"\s+",
+        " ",
+        re.sub(r"[\u200b\u200c\u200d\ufeff]", "", str(value).replace("\u00a0", " ")),
+    ).strip()
+
+
+def issuer_name_present_in_text(issuer_name: Any, source_text: Any) -> bool:
+    """Match an issuer name in filing text without sorted-token adjacency."""
+    return issuer_name_match_basis(issuer_name, source_text) is not None
 
 
 def _xml_text(root: ET.Element, *suffixes: str) -> str | None:
@@ -149,6 +193,23 @@ def _number(value: str) -> float | None:
         return None
 
 
+def _is_aggregate_management(value: str) -> bool:
+    normalized = re.sub(r"\s+", " ", value)
+    has_group = bool(re.search(r"\bas\s+(?:a\s+)?group\b", normalized, re.I))
+    has_director = bool(
+        re.search(r"\bdirectors?\b|\bdirector\s+nominees?\b", normalized, re.I)
+    )
+    has_officer = bool(
+        re.search(
+            r"\b(?:executive\s+)?officers?\b|\bNEOs?\b|"
+            r"\bnamed\s+executive\s+officers?\b",
+            normalized,
+            re.I,
+        )
+    )
+    return has_group and has_director and has_officer
+
+
 def _proxy_footnotes(text: str, header_start: int) -> dict[str, str]:
     section = text[header_start:]
     separator = re.search(r"_{3,}", section)
@@ -171,12 +232,96 @@ def _proxy_footnotes(text: str, header_start: int) -> dict[str, str]:
     return notes
 
 
-def _proxy_measurement_date(text: str, header_start: int) -> str | None:
-    preceding = text[max(0, header_start - 1800) : header_start]
-    matches = list(
-        re.finditer(r"as of\s+([A-Za-z]+\s+\d{1,2},\s+\d{4})", preceding, re.I)
+_MONTH_DATE_PATTERN = (
+    r"(?:January|February|March|April|May|June|July|August|September|"
+    r"October|November|December)\s+\d{1,2},\s+\d{4}"
+)
+
+
+def _unique_normalized_date(matches: list[str]) -> str | None:
+    dates = {date for value in matches if (date := normalize_date(value))}
+    return next(iter(dates)) if len(dates) == 1 else None
+
+
+def _explicit_document_ownership_date(text: str) -> str | None:
+    normalized = re.sub(r"\s+", " ", text)
+    patterns = (
+        rf"the following table.{{0,300}}?(?:beneficial ownership|ownership)"
+        rf".{{0,140}}?\b(?:as of|on)\s+({_MONTH_DATE_PATTERN})",
+        rf"the following table.{{0,220}}?\b(?:as of|on)\s+"
+        rf"({_MONTH_DATE_PATTERN}).{{0,180}}?(?:beneficial ownership|ownership)",
     )
-    return normalize_date(matches[-1].group(1)) if matches else None
+    matches = [
+        match.group(1)
+        for pattern in patterns
+        for match in re.finditer(pattern, normalized, re.I)
+    ]
+    return _unique_normalized_date(matches)
+
+
+def _document_record_date(text: str) -> str | None:
+    normalized = re.sub(r"\s+", " ", text)
+    patterns = (
+        rf"\brecord date\b.{{0,180}}?\b(?:is|as of|at)\s+"
+        rf"(?:the close of business\s+(?:on|at)\s+)?({_MONTH_DATE_PATTERN})",
+        rf"(?:the close of business\s+(?:on|at)\s+)?({_MONTH_DATE_PATTERN})"
+        rf"\s*(?:\([^)]{{0,40}}\brecord date\b[^)]*\)|,\s*as the record date\b)",
+    )
+    matches = [
+        match.group(1)
+        for pattern in patterns
+        for match in re.finditer(pattern, normalized, re.I)
+    ]
+    return _unique_normalized_date(matches)
+
+
+def _proxy_measurement_date(text: str, table_start: int) -> str | None:
+    """Return only an explicit date bound to the selected ownership table.
+
+    Proxy statements commonly contain unrelated ``as of`` dates for awards,
+    compensation, record dates, and outstanding equity tables. Proximity to a
+    document-level ownership heading is therefore insufficient. The date must
+    occur in a local passage that also identifies ownership.
+    """
+
+    table_context = text[max(0, table_start - 6000) : table_start + 800]
+    matches = list(
+        re.finditer(
+            r"as of\s+([A-Za-z]+\s+\d{1,2},\s+\d{4})",
+            table_context,
+            re.I,
+        )
+    )
+    for match in reversed(matches):
+        preceding_context = table_context[max(0, match.start() - 800) : match.end()]
+        following_same_sentence = table_context[
+            match.end() : min(len(table_context), match.end() + 250)
+        ]
+        ownership_pattern = (
+            r"\b(?:beneficial ownership|beneficially owned|security ownership|"
+            r"share ownership|ownership)\b"
+        )
+        if re.search(ownership_pattern, preceding_context, re.I) or re.search(
+            rf"^[^.\;]{{0,250}}{ownership_pattern}",
+            following_same_sentence,
+            re.I,
+        ):
+            return normalize_date(match.group(1))
+    explicit_date = _explicit_document_ownership_date(text)
+    if explicit_date:
+        return explicit_date
+    normalized_text = re.sub(r"\s+", " ", text)
+    record_date_reference = re.search(
+        r"(?:beneficial ownership|security ownership|share ownership|ownership)"
+        r".{0,600}?\b(?:as of|on)\s+(?:the\s+)?record date\b|"
+        r"\b(?:as of|on)\s+(?:the\s+)?record date\b.{0,600}?"
+        r"(?:beneficial ownership|security ownership|share ownership|ownership)",
+        normalized_text,
+        re.I,
+    )
+    if record_date_reference:
+        return _document_record_date(text)
+    return None
 
 
 def _proxy_rows(
@@ -193,63 +338,135 @@ def _proxy_rows(
     availability_policy: EdgarAvailabilityPolicy,
 ) -> list[SourceObservation]:
     soup = BeautifulSoup(payload, "html.parser")
-    full_text = " ".join(soup.stripped_strings)
+    full_text = _normalized_visible_text(" ".join(soup.stripped_strings))
     beneficial_owner_header = re.search(
-        r"Name(?: and Address)? of Beneficial Owner", full_text, re.I
+        r"Name(?:\s+and\s+Address)?\s+of\s+Beneficial\s+Owner", full_text, re.I
     )
-    share_ownership_header = re.search(r"\bShare Ownership\b", full_text, re.I)
+    share_ownership_header = re.search(
+        r"\b(?:Share|Security|Beneficial) Ownership\b|"
+        r"\bShares Beneficially Owned\b",
+        full_text,
+        re.I,
+    )
     header = beneficial_owner_header or share_ownership_header
     if not header:
         return []
     footnotes = _proxy_footnotes(full_text, header.start())
-    measurement_at = _proxy_measurement_date(full_text, header.start())
-    measurement_basis = "EXPLICIT_AS_OF_DATE"
-    if (
-        measurement_at is None
-        and share_ownership_header
-        and re.search(
-            r"as of the date of this annual report",
-            full_text,
-            re.I,
-        )
-    ):
-        measurement_at = normalize_date((accepted_at or "")[:10])
-        measurement_basis = "ANNUAL_REPORT_DATE_FROM_ACCEPTANCE_DATE"
     multi_class = bool(
         re.search(r"Class\s+A ordinary shares", full_text, re.I)
         and re.search(r"Class\s+B ordinary shares", full_text, re.I)
     )
     availability = availability_policy.resolve(accepted_at, form)
     results: list[SourceObservation] = []
+    table_search_start = 0
     for table in soup.find_all("table"):
-        table_text = " ".join(table.stripped_strings)
-        standard_table = bool(re.search(
-            r"Name(?: and Address)? of Beneficial Owner", table_text, re.I
-        ))
+        table_text = _normalized_visible_text(" ".join(table.stripped_strings))
+        table_prefix = table_text[: min(160, len(table_text))]
+        table_start = (
+            full_text.find(table_prefix, table_search_start) if table_prefix else -1
+        )
+        if table_start >= 0:
+            table_search_start = table_start + len(table_prefix)
+        standard_table = bool(
+            re.search(
+                r"Name(?:\s+and\s+Address)?\s+of\s+Beneficial\s+Owner",
+                table_text,
+                re.I,
+            )
+        )
+        shares_beneficially_owned_table = bool(
+            re.search(
+                r"(?:Number of )?Shares(?: of (?:Common Stock|Ordinary Shares))? "
+                r"Beneficially Owned|Shares Beneficially Owned",
+                table_text,
+                re.I,
+            )
+            and re.search(r"\b(?:Percent(?:age)?|%)\b", table_text, re.I)
+            and re.search(
+                r"\b(?:Directors?|Officers?|Management|Beneficial Owners?)\b",
+                table_text,
+                re.I,
+            )
+        )
+        beneficial_owner_shares_owned_table = bool(
+            re.search(r"\bBeneficial Owner\b", table_text, re.I)
+            and re.search(
+                r"Number of Shares of (?:Common Stock|Ordinary Shares) (?:Owned|Held)",
+                table_text,
+                re.I,
+            )
+            and re.search(r"\bPercent(?:age)?\b", table_text, re.I)
+            and re.search(
+                r"\b(?:Directors?|Officers?|Management|Beneficial Owners?)\b",
+                table_text,
+                re.I,
+            )
+        )
         share_ownership_multiclass_table = bool(
             share_ownership_header
             and re.search(r"Class\s+A", table_text, re.I)
             and re.search(r"Class\s+B", table_text, re.I)
             and re.search(r"Beneficial Ownership", table_text, re.I)
         )
-        if not (standard_table or share_ownership_multiclass_table):
-            continue
-        management_first = bool(
-            re.search(
-                r"all(?:\s+current)?\s+(?:directors.*officers|officers.*directors)\s+as\s+a\s+group",
+        table_mentions_multiple_classes = bool(
+            re.search(r"\bClass\s+A\b", table_text, re.I)
+            and re.search(r"\bClass\s+B\b", table_text, re.I)
+        )
+        single_class_aggregate_table = bool(
+            share_ownership_header
+            and _is_aggregate_management(table_text)
+            and not table_mentions_multiple_classes
+            and re.search(
+                r"\b(?:Number\s+of\s+Shares|Shares\s+Owned|"
+                r"Shares\s+Beneficially\s+Owned|Amount\s+and\s+Nature\s+of\s+"
+                r"Beneficial\s+Ownership|Beneficial\s+Ownership\s+as\s+of)\b",
                 table_text,
                 re.I,
             )
-            and re.search(r"(?:5%|Five\s+Percent)\s+(?:Holders|Stockholders|Shareholders)\s*:?[ ]*", table_text, re.I)
+            and re.search(r"\b(?:Percent(?:age)?|%)\b", table_text, re.I)
+        )
+        if not (
+            standard_table
+            or shares_beneficially_owned_table
+            or beneficial_owner_shares_owned_table
+            or share_ownership_multiclass_table
+            or single_class_aggregate_table
+        ):
+            continue
+        measurement_at = _proxy_measurement_date(
+            full_text,
+            table_start if table_start >= 0 else 0,
+        )
+        measurement_basis = "EXPLICIT_AS_OF_DATE"
+        annual_report_context = (
+            full_text[max(0, table_start - 3000) : table_start + 800]
+            if table_start >= 0
+            else ""
+        )
+        if (
+            measurement_at is None
+            and share_ownership_header
+            and re.search(
+                r"as of the date of this annual report",
+                annual_report_context,
+                re.I,
+            )
+        ):
+            measurement_at = normalize_date((accepted_at or "")[:10])
+            measurement_basis = "ANNUAL_REPORT_DATE_FROM_ACCEPTANCE_DATE"
+        management_first = bool(
+            _is_aggregate_management(table_text)
+            and re.search(
+                r"(?:5%|Five\s+Percent)(?:\s+or\s+(?:greater|more))?\s+"
+                r"(?:Holders|Stockholders|Shareholders)\s*:?[ ]*",
+                table_text,
+                re.I,
+            )
         )
         category = "OFFICER_OR_DIRECTOR" if management_first else "UNCLASSIFIED"
         for tr in table.find_all("tr"):
             cells = [
-                re.sub(
-                    r"[\u200b\u200c\u200d\ufeff]",
-                    "",
-                    " ".join(cell.stripped_strings),
-                ).strip()
+                _normalized_visible_text(" ".join(cell.stripped_strings))
                 for cell in tr.find_all(["td", "th"])
             ]
             compact = [cell for cell in cells if cell and cell != "%"]
@@ -257,7 +474,7 @@ def _proxy_rows(
                 continue
             row_text = " ".join(compact)
             if re.search(
-                r"(?:5%|Five\s+Percent)\s+"
+                r"(?:5%|Five\s+Percent)(?:\s+or\s+(?:greater|more))?\s+"
                 r"(?:Holders|Stockholders|Shareholders)\s*:?",
                 row_text,
                 re.I,
@@ -266,6 +483,17 @@ def _proxy_rows(
                 continue
             if (
                 not re.search(r"\d", row_text)
+                and re.fullmatch(
+                    r"(?:Other\s+Named\s+)?(?:Directors?|Officers?)\s*:?",
+                    row_text,
+                    re.I,
+                )
+            ):
+                category = "OFFICER_OR_DIRECTOR"
+                continue
+            if (
+                not re.search(r"\d", row_text)
+                and not _is_aggregate_management(row_text)
                 and re.search(
                     r"(?:directors.*(?:executive\s+)?officers|(?:executive\s+)?officers.*directors)",
                     row_text,
@@ -274,7 +502,15 @@ def _proxy_rows(
             ):
                 category = "OFFICER_OR_DIRECTOR"
                 continue
-            if re.search(r"Name(?: and Address)? of Beneficial Owner", row_text, re.I):
+            if re.search(
+                r"Name(?: and Address)? of Beneficial Owner|"
+                r"(?:Number of )?Shares(?: of (?:Common Stock|Ordinary Shares))? "
+                r"Beneficially Owned|Shares Beneficially Owned|"
+                r"^Title or Class of Securities:?$|^Common Stock$|"
+                r"^Preferred Stock$|^Shares$|^Percent(?:age)?$",
+                row_text,
+                re.I,
+            ):
                 continue
             if share_ownership_multiclass_table and not standard_table:
                 holder_raw = compact[0]
@@ -311,11 +547,7 @@ def _proxy_rows(
                 holder_name = re.sub(r"\s*\(\d+\)\s*$", "", holder_raw).strip(" :")
                 row_category = (
                     "AGGREGATE_GROUP"
-                    if re.search(
-                        r"all(?:\s+current)?\s+(?:directors.*officers|officers.*directors)\s+as\s+a\s+group",
-                        holder_name,
-                        re.I,
-                    )
+                    if _is_aggregate_management(holder_name)
                     else category
                 )
                 percent = _number(slots[2]) if len(slots) > 2 else None
@@ -397,16 +629,18 @@ def _proxy_rows(
             holder_name = re.sub(r"\s*\(\d+\)\s*$", "", holder_raw).strip()
             row_category = (
                 "AGGREGATE_GROUP"
-                if re.search(
-                    r"all(?:\s+current)?\s+(?:directors.*officers|officers.*directors)\s+as\s+a\s+group",
-                    holder_name,
-                    re.I,
-                )
+                if _is_aggregate_management(holder_name)
                 else category
             )
             footnote = footnotes.get(marker.group(1)) if marker else None
             shares = float(numeric[0])
-            percent = float(numeric[1]) if len(numeric) > 1 and numeric[1] is not None else None
+            percent = (
+                float(numeric[-1])
+                if len(numeric) > 1
+                and numeric[-1] is not None
+                and re.search(r"(?:Percent(?:age)?|%)", table_text, re.I)
+                else None
+            )
             attrs = {
                 "holder_cik": None,
                 "holder_name": holder_name,
@@ -431,6 +665,7 @@ def _proxy_rows(
                 "table_class_basis": (
                     "MULTI_CLASS_ORDINARY_SHARES" if multi_class else "SINGLE_OR_UNSPECIFIED"
                 ),
+                "measurement_date_basis": measurement_basis,
             }
             results.append(
                 SourceObservation(

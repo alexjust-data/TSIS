@@ -107,3 +107,32 @@ def classify_baseline_document(
             }
         ),
     }
+
+
+def classify_missing_opening_baseline_blocker(
+    baseline_resolution: Iterable[dict[str, Any]],
+) -> str | None:
+    """Classify why no opening baseline was selected without double-counting identity.
+
+    A content-complete candidate rejected only by instrument identity must not be
+    mislabeled as a partial document. Identity is emitted by its own gate.
+    """
+
+    rows = list(baseline_resolution)
+    if not rows:
+        return "NO_OWNERSHIP_BASELINE_FOUND"
+    if any(
+        row.get("baseline_content_complete_candidate")
+        and not row.get("identity_admitted")
+        for row in rows
+    ):
+        return None
+    if all(
+        row.get("ownership_table_state")
+        in {"NO_OWNERSHIP_TABLE", "PARTIAL_AMENDMENT_NO_OWNERSHIP_TABLE"}
+        for row in rows
+    ):
+        return "AMENDMENT_FAMILY_UNRESOLVED"
+    if any(not row.get("class_allocation_complete") for row in rows):
+        return "SHARE_CLASS_ALLOCATION_UNRESOLVED"
+    return "BASELINE_DOCUMENT_PARTIAL"

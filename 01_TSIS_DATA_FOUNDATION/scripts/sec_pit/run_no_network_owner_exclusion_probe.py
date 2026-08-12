@@ -21,7 +21,11 @@ from sec_pit.blockers import blocker_details
 from sec_pit.float_estimate_v2 import resolve_owner_exclusion_float_v0_2
 from sec_pit.holders_v3 import build_holder_position_ledger_v0_9
 from sec_pit.ownership_class_reconcile import reconcile_multiclass_proxy_positions
-from sec_pit.ownership_baseline import BASELINE_FORMS, classify_baseline_document
+from sec_pit.ownership_baseline import (
+    BASELINE_FORMS,
+    classify_baseline_document,
+    classify_missing_opening_baseline_blocker,
+)
 from sec_pit.ownership_v2 import (
     FORM_345,
     PROXY_FORMS,
@@ -31,6 +35,7 @@ from sec_pit.ownership_v2 import (
     extract_name_change_events,
     extract_normalized_ownership_snapshots,
     issuer_name_present_in_text,
+    issuer_name_match_basis,
     normalized_name_key,
 )
 
@@ -111,6 +116,9 @@ def execute(config_path: Path, run_id: str) -> Path:
     acquisition_path = Path(config["acquisition_ledger"]).resolve()
     metadata_path = Path(config["metadata_inventory"]).resolve()
     daily_os_path = Path(config["daily_os_state"]).resolve()
+    split_events_path = Path(config["split_events"]).resolve()
+    if not split_events_path.is_file():
+        raise FileNotFoundError(split_events_path)
     run_root = Path(config["output_root"]).resolve() / "runs" / run_id
     if run_root.exists():
         raise FileExistsError(f"refusing to overwrite run root: {run_root}")
@@ -151,6 +159,8 @@ def execute(config_path: Path, run_id: str) -> Path:
         "metadata_inventory_sha256": sha256_file(metadata_path),
         "daily_os_state_path": daily_os_path.as_posix(),
         "daily_os_state_sha256": sha256_file(daily_os_path),
+        "split_events_path": split_events_path.as_posix(),
+        "split_events_sha256": sha256_file(split_events_path),
         "component_hashes": {
             path.name: sha256_file(path) for path in component_files
         },
@@ -273,11 +283,10 @@ def execute(config_path: Path, run_id: str) -> Path:
         cik_match = str(identity.get("issuer_cik") or config["cik"]).zfill(10) == str(
             config["cik"]
         ).zfill(10)
-        document_name_evidence = bool(
-            issuer_name_present_in_text(
-                config["issuer_name"], identity.get("source_text")
-            )
+        document_name_match_basis = issuer_name_match_basis(
+            config["issuer_name"], identity.get("source_text")
         )
+        document_name_evidence = bool(document_name_match_basis)
         name_match = bool(
             issuer_name_key and issuer_name_key in aliases
         ) or document_name_evidence
@@ -290,6 +299,14 @@ def execute(config_path: Path, run_id: str) -> Path:
             and cik_match
             and (name_match or cusip_match)
         )
+        identity_admission_basis = None
+        if identity_admitted:
+            if cusip_match:
+                identity_admission_basis = "CLASS_CUSIP_EVIDENCE"
+            elif issuer_name_key and issuer_name_key in aliases:
+                identity_admission_basis = "NAME_CHANGE_ALIAS_EVIDENCE"
+            else:
+                identity_admission_basis = document_name_match_basis
         normalized_form = row["form"].upper()
         expects_rows = normalized_form in expected_position_forms
         dispositions.append(
@@ -307,6 +324,7 @@ def execute(config_path: Path, run_id: str) -> Path:
                     if identity_admitted
                     else "UNRESOLVED_IDENTITY_OR_CLASS"
                 ),
+                "identity_admission_basis": identity_admission_basis,
                 "structured_position_rows": len(rows),
                 "position_rows_expected": expects_rows,
                 "extraction_state": (
@@ -500,22 +518,11 @@ def execute(config_path: Path, run_id: str) -> Path:
     elif not bridge_complete:
         methodology_blocker_codes.append("INSTRUMENT_INTERVAL_CONFLICT")
     if not opening_baseline_accession and interval_resolution_allowed:
-        if not baseline_resolution:
-            methodology_blocker_codes.append("NO_OWNERSHIP_BASELINE_FOUND")
-        elif all(
-            row["ownership_table_state"]
-            in {"NO_OWNERSHIP_TABLE", "PARTIAL_AMENDMENT_NO_OWNERSHIP_TABLE"}
-            for row in baseline_resolution
-        ):
-            methodology_blocker_codes.append("AMENDMENT_FAMILY_UNRESOLVED")
-        elif any(
-            not row["class_allocation_complete"] for row in baseline_resolution
-        ):
-            methodology_blocker_codes.append(
-                "SHARE_CLASS_ALLOCATION_UNRESOLVED"
-            )
-        else:
-            methodology_blocker_codes.append("BASELINE_DOCUMENT_PARTIAL")
+        baseline_blocker = classify_missing_opening_baseline_blocker(
+            baseline_resolution
+        )
+        if baseline_blocker:
+            methodology_blocker_codes.append(baseline_blocker)
     if not holder_dedup["row_level_economic_position_resolution_complete"]:
         methodology_blocker_codes.append("HOLDER_OVERLAP_UNRESOLVED")
     methodology_blocker_codes = sorted(set(methodology_blocker_codes))
@@ -563,6 +570,7 @@ def execute(config_path: Path, run_id: str) -> Path:
     }
 
     daily_os = pd.read_parquet(daily_os_path).to_dict("records")
+    split_events = pd.read_parquet(split_events_path).to_dict("records")
     for row in daily_os:
         session = row.get("session_date")
         if isinstance(session, (date, datetime)):
@@ -572,6 +580,7 @@ def execute(config_path: Path, run_id: str) -> Path:
         holder_ledger=class_a_ledger,
         ownership_coverage=coverage,
         holder_deduplication=holder_dedup,
+        split_events=split_events,
         methodology_authorized=bool(config["methodology_authorized"]),
         methodology_id=config["methodology_id"],
     )

@@ -14,6 +14,7 @@
   "identity_ledger": "C:/TSIS_Data/runtime/sec_pit_100_case_scale_gate_v0_1/predownload_control_v0_1_20260811T2240Z/instrument_identity_interval_ledger.parquet",
   "lifecycle_selection_plan": "C:/TSIS_Data/runtime/sec_pit_100_case_scale_gate_v0_1/lifecycle_selection_v0_1_20260811T2245Z/lifecycle_primary_acquisition_plan.parquet",
   "market_calendar": "G:/TSIS/data/data_foundation_outputs/market_calendar/market_calendar_v0_1.parquet",
+  "splits_path_template": "G:/TSIS/data/additional/corporate_actions/splits/ticker={ticker}/splits_{ticker}.parquet",
   "metadata_run_template": "C:/TSIS_Data/runtime/sec_pit_100_case_scale_gate_v0_1/submissions_profile_v0_1_20260811T2255Z/tickers/{ticker_lower}/filing_inventory.parquet",
   "object_output_root": "D:/TSIS/fundamental_context/sec_pit_v0_1",
   "runtime_output_root": "C:/TSIS_Data/runtime/sec_pit_100_case_scale_gate_v0_1",

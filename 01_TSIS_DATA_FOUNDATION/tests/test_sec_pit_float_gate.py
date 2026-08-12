@@ -272,6 +272,40 @@ def test_foreign_annual_report_can_supply_owner_exclusion_baseline() -> None:
     assert rows[0]["float_owner_exclusion_estimate_as_known"] == 9_000_000.0
 
 
+def test_intervening_split_blocks_unadjusted_ownership_baseline() -> None:
+    rows, _ = resolve_owner_exclusion_float(
+        daily_os_rows=[{
+            "instrument_id": "i",
+            "session_date": "2025-07-21",
+            "shares_outstanding_estimate_as_known": 10_000_000.0,
+        }],
+        holder_ledger=[{
+            "holder_position_id": "management",
+            "economic_position_id": "management",
+            "form": "DEF 14A",
+            "accession_number": "annual",
+            "measurement_at": "2025-02-14",
+            "eligible_from_session": "2025-02-20",
+            "methodology_relevant": True,
+            "supported_issued_common_shares": 1_000_000.0,
+            "holder_name": "Directors and officers as a group",
+        }],
+        split_events=[{
+            "execution_date": "2025-06-02",
+            "split_from": 100,
+            "split_to": 1,
+        }],
+        ownership_coverage={"structured_extraction_complete": True},
+        holder_deduplication={
+            "row_level_economic_position_resolution_complete": True,
+        },
+        methodology_authorized=True,
+    )
+    assert rows[0]["float_owner_exclusion_estimate_as_known"] is None
+    assert rows[0]["estimation_state"] == "OWNERSHIP_SPLIT_ADJUSTMENT_UNRESOLVED"
+    assert rows[0]["blocker_codes"] == ["OWNERSHIP_SPLIT_ADJUSTMENT_UNRESOLVED"]
+
+
 def test_baseline_overlap_blocks_only_until_clean_replacement() -> None:
     daily_os = [
         {

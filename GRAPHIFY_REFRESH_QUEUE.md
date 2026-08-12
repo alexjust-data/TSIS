@@ -128,3 +128,30 @@ manifests historicos inmutables.
   actualizado o una entrada pendiente. No se reconstruyo el grafo raiz.
 - **Cierre esperado:** reconstruir y diagnosticar el leaf de gobierno y
   sustituir su cobertura en la siguiente fusion raiz oficial.
+
+### GFQ-20260812-SEC-PIT-OWNERSHIP-002 - Ownership resolver loops v0.9-v0.11
+
+- **Estado:** `pending`
+- **Fecha:** `2026-08-12`
+- **Severidad:** `HIGH`
+- **Scope:** SEC PIT owner-exclusion resolver, causal baseline selection,
+  identity/date admission, split fail-closed gate and SEC HTML ownership table
+  normalization.
+- **Leaf objetivo:** Market States / SEC PIT leaf in the next controlled root
+  rebuild.
+- **Archivos afectados:**
+  `01_TSIS_DATA_FOUNDATION/scripts/sec_pit/ownership_v2.py`,
+  `ownership_baseline.py`, `float_estimate.py`, `float_estimate_v2.py`,
+  `run_no_network_owner_exclusion_probe.py`, governed config/tests, and the five
+  SEC PIT shard/readout dossiers created on 2026-08-12.
+- **Motivo pendiente:** the active root graph has no ownership, baseline,
+  amendment, parser or float vocabulary for this corpus. A constrained query
+  expanded only to `table`/`tables` and returned unrelated generic table nodes.
+  Rebuild remains forbidden while TA-3 `ta3_cpp_v0_1_20260811` is active.
+- **Evidence state:** v0.11 completed 99/99 O/S and 99/99 owner cases, zero
+  execution failures and zero network resolution; system audit PASS; float
+  coverage 20/99; scale to 4,824 not granted.
+- **Cierre esperado:** after TA-3 reaches a terminal state, refresh and diagnose
+  the SEC PIT leaf, update its `BUILD_MANIFEST.md`, verify queries for ownership
+  baseline/parser/split/identity/float, and include it in the controlled root
+  reconstruction without treating runtime artifacts as authority.

@@ -12,6 +12,7 @@ def resolve_owner_exclusion_float_v0_2(
     holder_ledger: Iterable[dict[str, Any]],
     ownership_coverage: dict[str, Any],
     holder_deduplication: dict[str, Any],
+    split_events: Iterable[dict[str, Any]] = (),
     methodology_authorized: bool,
     methodology_id: str = "officer_director_explicit_affiliate_v0_1",
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
@@ -27,6 +28,7 @@ def resolve_owner_exclusion_float_v0_2(
         holder_ledger=holder_ledger,
         ownership_coverage=coverage,
         holder_deduplication=holder_deduplication,
+        split_events=split_events,
         methodology_authorized=methodology_authorized,
         methodology_id=methodology_id,
     )

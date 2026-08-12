@@ -97,6 +97,7 @@ def execute(
             "daily_os_state": daily_os.as_posix(),
             "daily_os_manifest": os_manifest_path.as_posix(),
             "daily_os_manifest_sha256": file_sha256(os_manifest_path),
+            "split_events": config["splits_path_template"].format(ticker=ticker),
             "output_root": owner_output_root.as_posix(),
             "methodology_id": config["methodology_id"],
             "methodology_authorized": bool(config["methodology_authorized"]),

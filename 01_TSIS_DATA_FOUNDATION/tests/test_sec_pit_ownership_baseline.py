@@ -7,7 +7,10 @@ from pathlib import Path
 SCRIPTS = Path(__file__).resolve().parents[1] / "scripts"
 sys.path.insert(0, str(SCRIPTS))
 
-from sec_pit.ownership_baseline import classify_baseline_document  # noqa: E402
+from sec_pit.ownership_baseline import (  # noqa: E402
+    classify_baseline_document,
+    classify_missing_opening_baseline_blocker,
+)
 
 
 def management_row(**overrides: object) -> dict[str, object]:
@@ -69,3 +72,23 @@ def test_multiclass_management_table_is_candidate_for_separate_reconciliation() 
         "OWNERSHIP_TABLE_REQUIRES_CLASS_RECONCILIATION"
     )
     assert result["baseline_content_complete_candidate"] is True
+
+
+def test_identity_rejected_complete_candidate_is_not_labeled_partial() -> None:
+    blocker = classify_missing_opening_baseline_blocker([{
+        "baseline_content_complete_candidate": True,
+        "identity_admitted": False,
+        "ownership_table_state": "OWNERSHIP_BASELINE_CONTENT_COMPLETE_CANDIDATE",
+        "class_allocation_complete": True,
+    }])
+    assert blocker is None
+
+
+def test_content_incomplete_candidate_remains_baseline_partial() -> None:
+    blocker = classify_missing_opening_baseline_blocker([{
+        "baseline_content_complete_candidate": False,
+        "identity_admitted": True,
+        "ownership_table_state": "OWNERSHIP_TABLE_MEASUREMENT_DATE_UNRESOLVED",
+        "class_allocation_complete": True,
+    }])
+    assert blocker == "BASELINE_DOCUMENT_PARTIAL"

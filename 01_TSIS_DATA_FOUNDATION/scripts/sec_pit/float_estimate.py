@@ -104,6 +104,10 @@ def _proxy_baselines(
         baselines.append({
             "eligible_from_session": eligible,
             "accession_number": accession,
+            "measurement_at": max(
+                (str(row.get("measurement_at")) for row in rows if row.get("measurement_at")),
+                default=None,
+            ),
             "excluded_shares": sum(economic_positions.values()),
             "position_count": len(economic_positions),
             "holder_name_keys": {
@@ -182,11 +186,19 @@ def resolve_owner_exclusion_float(
     holder_ledger: Iterable[dict[str, Any]],
     ownership_coverage: dict[str, Any],
     holder_deduplication: dict[str, Any],
+    split_events: Iterable[dict[str, Any]] = (),
     methodology_authorized: bool = False,
     methodology_id: str = "officer_director_explicit_affiliate_v0_1",
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     os_rows = list(daily_os_rows)
     holders = list(holder_ledger)
+    splits = [
+        row
+        for row in split_events
+        if row.get("execution_date")
+        and float(row.get("split_from") or 0) > 0
+        and float(row.get("split_to") or 0) > 0
+    ]
     blockers: list[str] = []
     if not ownership_coverage.get("structured_extraction_complete"):
         blockers.extend(
@@ -234,14 +246,30 @@ def resolve_owner_exclusion_float(
             state = "OWNERSHIP_BASELINE_OVERLAP_UNRESOLVED"
             row_blockers.extend(baseline["blocker_codes"])
         else:
-            adjustment, update_count, update_latest_transaction, update_blockers = (
-                _post_baseline_adjustment(
-                    holders=holders,
-                    baseline=baseline,
-                    session=session,
+            intervening_splits = [
+                row
+                for row in splits
+                if (baseline.get("measurement_at") or baseline["eligible_from_session"])
+                < str(row["execution_date"]) <= session
+            ]
+            if intervening_splits:
+                state = "OWNERSHIP_SPLIT_ADJUSTMENT_UNRESOLVED"
+                row_blockers.append("OWNERSHIP_SPLIT_ADJUSTMENT_UNRESOLVED")
+                adjustment = None
+                update_count = 0
+                update_latest_transaction = None
+                update_blockers = []
+            else:
+                adjustment, update_count, update_latest_transaction, update_blockers = (
+                    _post_baseline_adjustment(
+                        holders=holders,
+                        baseline=baseline,
+                        session=session,
+                    )
                 )
-            )
-            if update_blockers:
+            if intervening_splits:
+                pass
+            elif update_blockers:
                 state = "POST_BASELINE_OWNERSHIP_EVENT_UNRESOLVED"
                 row_blockers.extend(update_blockers)
             elif os_row.get("shares_outstanding_estimate_as_known") is None:

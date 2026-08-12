@@ -12,12 +12,27 @@ from sec_pit.ownership_class_reconcile import (  # noqa: E402
     reconcile_multiclass_proxy_positions,
 )
 from sec_pit.ownership_v2 import (  # noqa: E402
+    _is_aggregate_management,
     extract_document_identity,
     extract_holder_class_components,
     extract_name_change_events,
     extract_normalized_ownership_snapshots,
     issuer_name_present_in_text,
 )
+
+
+def test_aggregate_management_recognizes_governed_language_variants() -> None:
+    assert _is_aggregate_management(
+        "Executive Officers and Directors as Group (13 persons)"
+    )
+    assert _is_aggregate_management(
+        "Directors and officers as a group (6 persons)"
+    )
+    assert _is_aggregate_management(
+        "All Directors, Director Nominees and NEOs as a Group (8 Persons)"
+    )
+    assert not _is_aggregate_management("Directors and Named Executive Officers")
+    assert not _is_aggregate_management("Outside Fund and its directors as a group")
 
 
 def context(form: str) -> dict[str, object]:
@@ -79,6 +94,228 @@ def test_proxy_category_headers_classify_directors_before_five_percent_holders()
         "AGGREGATE_GROUP",
         "FIVE_PERCENT_HOLDER",
     ]
+
+
+def test_proxy_accepts_shares_beneficially_owned_multicolumn_header() -> None:
+    payload = b"""
+    <p>The table reports ownership as of July 6, 2022.</p>
+    <table>
+      <tr><th></th><th>Shares Beneficially Owned</th></tr>
+      <tr><th>Title or Class of Securities:</th></tr>
+      <tr><th></th><th>Common Stock</th><th>Preferred Stock</th></tr>
+      <tr><th></th><th>Shares</th><th>Percent</th><th>Shares</th><th>Percent</th></tr>
+      <tr><td>Directors:</td></tr>
+      <tr><td>Jane Director</td><td></td><td>200</td><td>(1)</td><td>2.0</td></tr>
+      <tr><td>All directors and executive officers as a group</td><td></td><td>200</td><td>(2)</td><td>2.0</td></tr>
+    </table>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    assert [row.attributes["holder_name"] for row in rows] == [
+        "Jane Director",
+        "All directors and executive officers as a group",
+    ]
+    assert rows[0].measurement_at == "2022-07-06"
+    assert rows[1].attributes["holder_category"] == "AGGREGATE_GROUP"
+
+
+def test_proxy_tracks_separate_management_sections_and_named_aggregate() -> None:
+    payload = b"""
+    <p>Security Ownership of Certain Beneficial Owners and Management.</p>
+    <p>The following table sets forth information, as of July 6, 2022,
+    regarding beneficial ownership of our voting securities.</p>
+    <table>
+      <tr><th></th><th>Shares Beneficially Owned</th></tr>
+      <tr><th>Title or Class of Securities:</th></tr>
+      <tr><th></th><th>Common Stock</th><th>Shares</th><th>Percent</th></tr>
+      <tr><td>Directors:</td></tr>
+      <tr><td>Jane Director</td><td>200</td><td>2.0</td></tr>
+      <tr><td>Other Named Officers:</td></tr>
+      <tr><td>John Officer</td><td>100</td><td>1.0</td></tr>
+      <tr><td>All Example Company directors and executive officers as a group</td><td>300</td><td>3.0</td></tr>
+      <tr><td>5% or greater stockholders</td></tr>
+      <tr><td>Outside Fund</td><td>600</td><td>6.0</td></tr>
+    </table>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    assert [row.attributes["holder_category"] for row in rows] == [
+        "OFFICER_OR_DIRECTOR",
+        "OFFICER_OR_DIRECTOR",
+        "AGGREGATE_GROUP",
+        "FIVE_PERCENT_HOLDER",
+    ]
+
+
+def test_proxy_accepts_number_of_common_shares_beneficially_owned_header() -> None:
+    payload = b"""
+    <p>Security Ownership as of December 31, 2024.</p>
+    <table>
+      <tr><th></th><th>Number of shares of Common Stock Beneficially Owned</th><th>Percentage</th></tr>
+      <tr><td>Directors and Officers:</td></tr>
+      <tr><td>Jane Director (1)</td><td>4</td><td>*</td></tr>
+      <tr><td>All directors and executive officers as a group (2 persons)</td><td>22</td><td>*</td></tr>
+    </table>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    assert [row.value for row in rows] == [4, 22]
+    assert rows[0].measurement_at == "2024-12-31"
+    assert rows[1].attributes["holder_category"] == "AGGREGATE_GROUP"
+
+
+def test_proxy_binds_date_to_ownership_table_not_prior_compensation_table() -> None:
+    payload = b"""
+    <p>The following compensation table reports awards as of December 31, 2024.</p>
+    <table><tr><th>Option Awards</th></tr><tr><td>10</td></tr></table>
+    <p>Security Ownership of Certain Beneficial Owners and Management.</p>
+    <p>The following table sets forth beneficial ownership of our common stock
+    as of March 1, 2025.</p>
+    <table>
+      <tr><th>Beneficial Owner</th><th>Number of Shares of Common Stock Owned</th><th>Percentage</th></tr>
+      <tr><td>Directors and Officers:</td></tr>
+      <tr><td>Jane Director</td><td>4</td><td>*</td></tr>
+      <tr><td>All directors and executive officers as a group (2 persons)</td><td>22</td><td>*</td></tr>
+    </table>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    assert rows
+    assert {row.measurement_at for row in rows} == {"2025-03-01"}
+
+
+def test_proxy_keeps_owned_shares_and_uses_last_numeric_as_percent() -> None:
+    payload = b"""
+    <p>Security Ownership of Certain Beneficial Owners and Management.</p>
+    <p>The following table sets forth beneficial ownership of our common stock
+    as of March 1, 2025.</p>
+    <table>
+      <tr><th>Beneficial Owner</th><th>Number of Shares of Common Stock Owned</th>
+          <th>Acquirable Within 60 Days</th><th>Total Beneficially Owned</th>
+          <th>Percentage</th></tr>
+      <tr><td>Directors and Officers:</td></tr>
+      <tr><td>All directors and executive officers as a group (10 persons) (18)</td>
+          <td>1,400,094</td><td>2,172,129</td><td>3,572,223</td><td>3.92</td><td>%</td></tr>
+    </table>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    assert len(rows) == 1
+    assert rows[0].value == 1_400_094
+    assert rows[0].attributes["supported_issued_common_shares"] == 1_400_094
+    assert rows[0].attributes["reported_percent"] == 3.92
+
+
+def test_proxy_rejects_unrelated_compensation_date_for_ownership_table() -> None:
+    payload = b"""
+    <p>Outstanding equity awards as of December 31, 2024.</p>
+    <table><tr><th>Option Awards</th></tr><tr><td>10</td></tr></table>
+    <p>Security Ownership of Certain Beneficial Owners and Management.</p>
+    <table>
+      <tr><th></th><th>Number of shares of Common Stock Beneficially Owned</th><th>Percentage</th></tr>
+      <tr><td>Directors and Officers:</td></tr>
+      <tr><td>Jane Director</td><td>4</td><td>*</td></tr>
+      <tr><td>All directors and executive officers as a group (2 persons)</td><td>22</td><td>*</td></tr>
+    </table>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    assert rows
+    assert {row.measurement_at for row in rows} == {None}
+
+
+def test_proxy_resolves_explicit_document_record_date_referenced_by_table() -> None:
+    payload = b"""
+    <p>The Board fixed the close of business on April 12, 2023
+    (the Record Date) for the annual meeting.</p>
+    <p>Security Ownership of Certain Beneficial Owners and Management.</p>
+    <p>The following table sets forth beneficial ownership of our common stock
+    as of the Record Date.</p>
+    <table>
+      <tr><th>Beneficial Owner</th><th>Shares Beneficially Owned</th><th>Percentage</th></tr>
+      <tr><td>All directors and executive officers as a group (2 persons)</td><td>22</td><td>*</td></tr>
+    </table>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    assert rows
+    assert {row.measurement_at for row in rows} == {"2023-04-12"}
+
+
+def test_proxy_rejects_ambiguous_document_record_dates() -> None:
+    payload = b"""
+    <p>The Board fixed April 12, 2023 (the Record Date).</p>
+    <p>An amendment fixed April 13, 2023 (the Record Date).</p>
+    <p>Security Ownership of Certain Beneficial Owners and Management.</p>
+    <p>The following table sets forth beneficial ownership as of the Record Date.</p>
+    <table>
+      <tr><th>Beneficial Owner</th><th>Shares Beneficially Owned</th><th>Percentage</th></tr>
+      <tr><td>All directors and executive officers as a group</td><td>22</td><td>*</td></tr>
+    </table>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    assert rows
+    assert {row.measurement_at for row in rows} == {None}
+
+
+def test_proxy_resolves_date_explicitly_bound_to_following_table() -> None:
+    payload = b"""
+    <p>Security Ownership of Certain Beneficial Owners and Management.</p>
+    <p>The following table sets forth information, as of July 6, 2022,
+    regarding beneficial ownership of our common stock.</p>
+    <table>
+      <tr><th>Beneficial Owner</th><th>Shares Beneficially Owned</th><th>Percentage</th></tr>
+      <tr><td>All directors and executive officers as a group</td><td>22</td><td>*</td></tr>
+    </table>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    assert rows
+    assert {row.measurement_at for row in rows} == {"2022-07-06"}
+
+
+def test_proxy_normalizes_sec_header_whitespace_before_table_classification() -> None:
+    payload = """
+    <p>Security Ownership of Certain Beneficial Owners and Management.</p>
+    <p>The following table sets forth beneficial ownership as of March 18, 2024.</p>
+    <table>
+      <tr><th>Name\n and Address of Beneficial Owner</th><th>Number\u00a0of Shares</th><th>Percent</th></tr>
+      <tr><td>Directors and Named Executive Officers:</td><td></td><td></td></tr>
+      <tr><td>Jane Director</td><td>50,000</td><td>*</td></tr>
+      <tr><td>All directors and officers as a group (1 individual)</td><td>50,000</td><td>*</td></tr>
+    </table>
+    """.encode("utf-8")
+    rows = extract_normalized_ownership_snapshots(payload, **context("10-K"))
+    aggregate = next(
+        row for row in rows
+        if row.attributes["holder_category"] == "AGGREGATE_GROUP"
+    )
+    assert aggregate.value == 50000
+    assert aggregate.measurement_at == "2024-03-18"
+
+
+def test_proxy_accepts_single_class_aggregate_table_without_owner_name_header() -> None:
+    payload = b"""
+    <p>Security Ownership of Certain Beneficial Owners and Management.</p>
+    <p>The following table sets forth beneficial ownership as of April 7, 2023.</p>
+    <table>
+      <tr><th>Title of Class</th><th>Number of Shares Owned</th><th>Percentage</th></tr>
+      <tr><td>Executive Officers and Directors:</td><td></td><td></td></tr>
+      <tr><td>Jane Director Common Stock</td><td>125</td><td>1.2</td></tr>
+      <tr><td>All current executive officers and directors as a group</td><td>125</td><td>1.2</td></tr>
+    </table>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    aggregate = next(
+        row for row in rows
+        if row.attributes["holder_category"] == "AGGREGATE_GROUP"
+    )
+    assert aggregate.value == 125
+    assert aggregate.attributes["table_class_basis"] == "SINGLE_OR_UNSPECIFIED"
+
+
+def test_generic_single_class_family_stays_closed_for_multiclass_table() -> None:
+    payload = b"""
+    <p>Security Ownership of Certain Beneficial Owners and Management.</p>
+    <table>
+      <tr><th>Name</th><th>Class A Number of Shares</th><th>Class B Number of Shares</th><th>Percentage</th></tr>
+      <tr><td>All directors and executive officers as a group</td><td>100</td><td>900</td><td>10.0</td></tr>
+    </table>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    assert rows == []
 
 
 def test_20f_share_ownership_table_emits_exact_multiclass_components() -> None:
@@ -233,6 +470,28 @@ def test_issuer_name_presence_does_not_depend_on_sorted_token_adjacency() -> Non
     assert not issuer_name_present_in_text(
         "Sample Acquisition Corp.",
         "This proxy concerns a different acquisition company.",
+    )
+
+
+def test_issuer_name_presence_ignores_vendor_security_and_jurisdiction_labels() -> None:
+    assert issuer_name_present_in_text(
+        "Altamira Therapeutics Ltd. Common Shares 0.01 SF (Bermuda)",
+        "ALTAMIRA THERAPEUTICS LTD. annual report",
+    )
+    assert issuer_name_present_in_text(
+        "ADEONA PHARMACEUTICALS INC (NV)",
+        "Proxy Statement of Adeona Pharmaceuticals, Inc.",
+    )
+
+
+def test_issuer_core_name_match_does_not_admit_a_different_issuer() -> None:
+    assert not issuer_name_present_in_text(
+        "AGL Resources Inc Holding Co",
+        "This annual report was filed by agilon health, inc.",
+    )
+    assert not issuer_name_present_in_text(
+        "Velocity Acquisition Corp Common Stock",
+        "This proxy statement was filed by VELO3D, Inc.",
     )
 
 
