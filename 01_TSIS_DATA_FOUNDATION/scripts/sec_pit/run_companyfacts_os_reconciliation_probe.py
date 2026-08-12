@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import gzip
 import hashlib
 import json
 import os
@@ -21,6 +22,7 @@ from sec_pit.client import SecClient
 from sec_pit.companyfacts_reconcile import reconcile_companyfacts_to_primary_os
 from sec_pit.extract import extract_companyfacts_os
 from sec_pit.metadata import COMPANYFACTS_URL
+from sec_pit.models import AcquisitionResult
 from sec_pit.storage import ContentAddressedStore, append_jsonl, atomic_write_json
 from sec_pit.telemetry import summarize_document_performance
 
@@ -50,6 +52,93 @@ def write_parquet(path: Path, rows: list[dict[str, Any]]) -> None:
     pd.DataFrame(normalized).to_parquet(path, index=False)
 
 
+def select_cases(
+    cases: list[dict[str, Any]],
+    requested_tickers: list[str] | None,
+    *,
+    eligible_only: bool = False,
+) -> list[dict[str, Any]]:
+    if eligible_only:
+        cases = [case for case in cases if case.get("probe_gate") == "ELIGIBLE"]
+    if not requested_tickers:
+        return cases
+    requested = {ticker.strip().upper() for ticker in requested_tickers}
+    selected = [case for case in cases if str(case["ticker"]).upper() in requested]
+    found = {str(case["ticker"]).upper() for case in selected}
+    missing = sorted(requested - found)
+    if missing:
+        raise ValueError(f"requested tickers absent from case matrix: {missing}")
+    return selected
+
+
+def companyfacts_fetch_state(
+    *, http_status: int | None, payload_available: bool
+) -> str:
+    if payload_available:
+        return "AVAILABLE"
+    if http_status == 404:
+        return "COMPANYFACTS_NOT_AVAILABLE"
+    return "ACQUISITION_FAILED"
+
+
+def persist_failure(args: argparse.Namespace, exc: Exception) -> None:
+    run_root = args.output_root.resolve() / "runs" / args.run_id
+    pre_path = run_root / "pre_manifest.json"
+    if not pre_path.is_file():
+        return
+    pre = json.loads(pre_path.read_text(encoding="utf-8"))
+    ended = datetime.now(UTC).isoformat()
+    atomic_write_json(
+        run_root / "final_manifest.json",
+        {
+            **pre,
+            "status": "FAILED",
+            "ended_at_utc": ended,
+            "failure_reason": f"{type(exc).__name__}: {exc}",
+        },
+    )
+    atomic_write_json(
+        run_root / "pid_manifest.json",
+        {
+            "run_id": args.run_id,
+            "wrapper_pid": os.getpid(),
+            "started_at_utc": pre["created_at_utc"],
+            "ended_at_utc": ended,
+            "expected_alive": False,
+        },
+    )
+
+
+def read_reusable_companyfacts(
+    row: dict[str, Any], *, expected_url: str
+) -> tuple[AcquisitionResult, dict[str, Any]]:
+    if row.get("status") not in {"FETCHED", "FETCHED_REUSED"}:
+        raise ValueError("reusable acquisition row is not successful")
+    if str(row.get("url")) != expected_url:
+        raise ValueError("reusable acquisition URL mismatch")
+    object_path = Path(str(row["object_path"]))
+    with gzip.open(object_path, "rb") as handle:
+        payload = handle.read()
+    if len(payload) != int(row["bytes"]):
+        raise ValueError("reusable Company Facts byte mismatch")
+    digest = hashlib.sha256(payload).hexdigest()
+    if digest != str(row["sha256"]):
+        raise ValueError("reusable Company Facts SHA-256 mismatch")
+    result = AcquisitionResult(
+        url=expected_url,
+        status="FETCHED_REUSED",
+        http_status=int(row.get("http_status") or 200),
+        fetched_at_utc=datetime.now(UTC).isoformat(),
+        sha256=digest,
+        bytes=len(payload),
+        content_type=row.get("content_type"),
+        object_path=object_path.as_posix(),
+        logical_path=row.get("logical_path"),
+        attempts=0,
+    )
+    return result, json.loads(payload.decode("utf-8"))
+
+
 def execute(args: argparse.Namespace) -> Path:
     config_path = args.config.resolve()
     probe_root = args.probe_root.resolve()
@@ -59,7 +148,12 @@ def execute(args: argparse.Namespace) -> Path:
         raise FileExistsError(run_root)
     run_root.mkdir(parents=True)
     config = json.loads(config_path.read_text(encoding="utf-8"))
-    cases = json.loads((probe_root / "case_matrix.json").read_text(encoding="utf-8"))
+    all_cases = json.loads(
+        (probe_root / "case_matrix.json").read_text(encoding="utf-8")
+    )
+    cases = select_cases(
+        all_cases, args.tickers, eligible_only=args.eligible_only
+    )
     components = [
         Path(__file__).resolve(),
         SCRIPTS / "sec_pit" / "extract.py",
@@ -82,7 +176,20 @@ def execute(args: argparse.Namespace) -> Path:
         "probe_root": probe_root.as_posix(),
         "case_matrix_sha256": sha256_file(probe_root / "case_matrix.json"),
         "component_hashes": {path.name: sha256_file(path) for path in components},
-        "network_scope": "SEVEN_OFFICIAL_SEC_COMPANYFACTS_JSON_REQUESTS_MAX",
+        "network_scope": (
+            f"{len(cases)}_OFFICIAL_SEC_COMPANYFACTS_JSON_REQUESTS_MAX"
+        ),
+        "tickers": [str(case["ticker"]) for case in cases],
+        "reuse_acquisition_ledger": (
+            args.reuse_acquisition_ledger.resolve().as_posix()
+            if args.reuse_acquisition_ledger is not None
+            else None
+        ),
+        "reuse_acquisition_ledger_sha256": (
+            sha256_file(args.reuse_acquisition_ledger.resolve())
+            if args.reuse_acquisition_ledger is not None
+            else None
+        ),
         "companyfacts_role": "O/S_RECONCILIATION_ONLY_NOT_FLOAT_SOURCE",
         "monitor_command": monitor,
     }
@@ -121,22 +228,90 @@ def execute(args: argparse.Namespace) -> Path:
         telemetry_log=run_root / "document_performance.jsonl",
     )
     policy = EdgarAvailabilityPolicy()
+    reusable_by_url: dict[str, dict[str, Any]] = {}
+    if args.reuse_acquisition_ledger is not None:
+        for line in args.reuse_acquisition_ledger.resolve().read_text(
+            encoding="utf-8"
+        ).splitlines():
+            row = json.loads(line)
+            if row.get("status") in {"FETCHED", "FETCHED_REUSED"}:
+                reusable_by_url[str(row["url"])] = row
     all_facts: list[dict[str, Any]] = []
     all_reconciliation: list[dict[str, Any]] = []
     summaries: list[dict[str, Any]] = []
     performance: list[dict[str, Any]] = []
+    unavailable: list[dict[str, Any]] = []
     for case in cases:
         ticker = str(case["ticker"])
         state["ticker"] = ticker
         heartbeat("RUNNING", "ACQUIRE_COMPANYFACTS")
         cik = str(case["cik"]).zfill(10)
-        result, payload = client.fetch_json(
-            COMPANYFACTS_URL.format(cik=cik),
-            f"companyfacts/{cik}.json",
+        companyfacts_url = COMPANYFACTS_URL.format(cik=cik)
+        reusable = reusable_by_url.get(companyfacts_url)
+        if reusable is not None:
+            result, payload = read_reusable_companyfacts(
+                reusable, expected_url=companyfacts_url
+            )
+            append_jsonl(run_root / "acquisition.jsonl", result.to_dict())
+            performance.append(
+                {
+                    "status": "FETCHED_REUSED",
+                    "http_status": result.http_status,
+                    "bytes": result.bytes,
+                    "retry_count": 0,
+                    "http_429_count": 0,
+                    "total_seconds": 0.0,
+                    "throttle_seconds": 0.0,
+                    "request_seconds": 0.0,
+                    "request_attempt_seconds": [],
+                    "retry_wait_seconds": 0.0,
+                    "storage_seconds": 0.0,
+                    "sha256_seconds": 0.0,
+                    "gzip_seconds": 0.0,
+                    "atomic_write_seconds": 0.0,
+                    "stored_bytes": 0,
+                    "deduplicated": True,
+                    "url": result.url,
+                }
+            )
+        else:
+            result, payload = client.fetch_json(
+                companyfacts_url,
+                f"companyfacts/{cik}.json",
+            )
+            if client.last_performance:
+                performance.append(client.last_performance)
+        fetch_state = companyfacts_fetch_state(
+            http_status=result.http_status,
+            payload_available=payload is not None and bool(result.sha256),
         )
-        if client.last_performance:
-            performance.append(client.last_performance)
-        if payload is None or not result.sha256:
+        if fetch_state == "COMPANYFACTS_NOT_AVAILABLE":
+            unavailable.append(
+                {
+                    "ticker": ticker,
+                    "cik": cik,
+                    "state": fetch_state,
+                    "http_status": result.http_status,
+                    "source_url": result.url,
+                }
+            )
+            summaries.append(
+                {
+                    "ticker": ticker,
+                    "status": fetch_state,
+                    "companyfacts_rows": 0,
+                    "exact_same_accession_measurement_value": 0,
+                    "value_conflicts": 0,
+                    "class_validation_authorized_rows": 0,
+                    "companyfacts_role": (
+                        "O/S_RECONCILIATION_ONLY_NOT_FLOAT_SOURCE"
+                    ),
+                }
+            )
+            state["completed"] += 1
+            heartbeat("RUNNING", "COMPANYFACTS_UNAVAILABLE_CONTINUE")
+            continue
+        if fetch_state == "ACQUISITION_FAILED":
             raise RuntimeError(f"Company Facts acquisition failed for {ticker}")
         facts = [
             item.to_dict()
@@ -208,6 +383,7 @@ def execute(args: argparse.Namespace) -> Path:
         all_reconciliation,
     )
     write_parquet(run_root / "companyfacts_case_summary.parquet", summaries)
+    write_parquet(run_root / "companyfacts_unavailable.parquet", unavailable)
     performance_summary = summarize_document_performance(performance)
     atomic_write_json(run_root / "performance_summary.json", performance_summary)
     atomic_write_json(
@@ -225,6 +401,7 @@ def execute(args: argparse.Namespace) -> Path:
                 == "SAME_ACCESSION_MEASUREMENT_VALUE_CONFLICT"
                 for row in all_reconciliation
             ),
+            "unavailable_cases": len(unavailable),
             "semantic_restriction": (
                 "Company Facts validates O/S candidates only; it never supplies "
                 "owner-exclusion float and does not resolve multiclass scope."
@@ -235,6 +412,7 @@ def execute(args: argparse.Namespace) -> Path:
         "companyfacts_os_observations.parquet",
         "companyfacts_primary_os_reconciliation.parquet",
         "companyfacts_case_summary.parquet",
+        "companyfacts_unavailable.parquet",
         "performance_summary.json",
         "variable_audit.json",
     ]
@@ -243,12 +421,19 @@ def execute(args: argparse.Namespace) -> Path:
         "status": "COMPLETE",
         "ended_at_utc": datetime.now(UTC).isoformat(),
         "requests": len(cases),
+        "network_requests": len(cases) - sum(
+            row.get("status") == "FETCHED_REUSED" for row in performance
+        ),
+        "reused_acquisitions": sum(
+            row.get("status") == "FETCHED_REUSED" for row in performance
+        ),
         "facts": len(all_facts),
         "value_conflicts": sum(
             row["reconciliation_state"]
             == "SAME_ACCESSION_MEASUREMENT_VALUE_CONFLICT"
             for row in all_reconciliation
         ),
+        "unavailable_cases": len(unavailable),
         "outputs": {
             name: {
                 "sha256": sha256_file(run_root / name),
@@ -283,9 +468,16 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--run-id", required=True)
     parser.add_argument("--user-agent", required=True)
     parser.add_argument("--requests-per-second", type=float, default=5.0)
+    parser.add_argument("--tickers", nargs="*")
+    parser.add_argument("--eligible-only", action="store_true")
+    parser.add_argument("--reuse-acquisition-ledger", type=Path)
     return parser.parse_args()
 
 
 if __name__ == "__main__":
     arguments = parse_args()
-    print(execute(arguments))
+    try:
+        print(execute(arguments))
+    except Exception as error:
+        persist_failure(arguments, error)
+        raise

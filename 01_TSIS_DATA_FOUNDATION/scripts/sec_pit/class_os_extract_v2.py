@@ -8,8 +8,17 @@ from sec_pit.availability import EdgarAvailabilityPolicy
 from sec_pit.extract import _parse_date, html_to_text, stable_id
 from sec_pit.models import SourceObservation
 
-
 _AS_OF_DATE = r"(?P<measurement>[A-Za-z]+\s+\d{1,2},\s+\d{4})"
+COMMON_EQUITY_CLASS_CANDIDATE = "COMMON_STOCK_CLASS_CANDIDATE"
+COMMON_EQUITY_CLASS_LABELS = (
+    "Class A Common Stock",
+    "Class B Common Stock",
+    "Class A Ordinary Shares",
+    "Class B Ordinary Shares",
+    "Common Stock",
+    "Common Shares",
+    "Ordinary Shares",
+)
 
 
 @dataclass(frozen=True)
@@ -25,6 +34,32 @@ def normalized_text_key(value: str | None) -> str:
     normalized = unicodedata.normalize("NFKD", str(value or ""))
     normalized = "".join(char for char in normalized if not unicodedata.combining(char))
     return re.sub(r"[^a-z0-9]+", " ", normalized.casefold()).strip()
+
+
+def registrant_name_keys(value: str | None) -> list[str]:
+    key = normalized_text_key(value)
+    if not key:
+        return []
+    keys = {key}
+    stripped = re.sub(
+        r"\s+(?:class\s+[a-z0-9]+\s+)?(?:common\s+stock|common\s+shares|ordinary\s+shares)$",
+        "",
+        key,
+    ).strip()
+    if stripped:
+        keys.add(stripped)
+    return sorted(keys, key=len, reverse=True)
+
+
+def strip_instrument_class_suffix(value: str | None) -> str:
+    name = str(value or "").strip()
+    stripped = re.sub(
+        r"\s+(?:Class\s+[A-Za-z0-9]+\s+)?(?:Common\s+Stock|Common\s+Shares|Ordinary\s+Shares)$",
+        "",
+        name,
+        flags=re.IGNORECASE,
+    ).strip()
+    return stripped or name
 
 
 def class_pattern(target_class_label: str) -> str:
@@ -77,9 +112,8 @@ def admit_target_instrument_document(
         )
 
     text = html_to_text(payload)
-    registrant_key = normalized_text_key(registrant_name)
     text_key = normalized_text_key(text)
-    registrant_match = bool(registrant_key and registrant_key in text_key)
+    registrant_match = any(key in text_key for key in registrant_name_keys(registrant_name))
     class_ticker = re.search(
         rf"{class_pattern(target_class_label)}.{{0,220}}?\b{re.escape(ticker)}\b",
         text,
@@ -105,10 +139,86 @@ def admit_target_instrument_document(
     )
 
 
+def resolve_common_equity_class_candidate(
+    payload: bytes,
+    *,
+    temporal_scope_state: str,
+    accession_link_state: str,
+    registrant_name: str,
+    ticker: str,
+) -> tuple[str | None, InstrumentAdmissionDecision]:
+    """Resolve a generic common-equity gate to the class tied to the ticker."""
+    admitted: list[tuple[str, InstrumentAdmissionDecision]] = []
+    decisions: list[InstrumentAdmissionDecision] = []
+    for label in COMMON_EQUITY_CLASS_LABELS:
+        decision = admit_target_instrument_document(
+            payload,
+            temporal_scope_state=temporal_scope_state,
+            accession_link_state=accession_link_state,
+            registrant_name=registrant_name,
+            ticker=ticker,
+            target_class_label=label,
+        )
+        decisions.append(decision)
+        if decision.decision == "ADMITTED_TARGET_INSTRUMENT_CLASS":
+            admitted.append((label, decision))
+    if admitted:
+        # A specific label may also satisfy its generic suffix (for example,
+        # Class A Common Stock and Common Stock). Prefer the most specific label.
+        admitted.sort(key=lambda item: (len(item[0].split()), len(item[0])), reverse=True)
+        best_words = len(admitted[0][0].split())
+        best = [item for item in admitted if len(item[0].split()) == best_words]
+        if len(best) == 1:
+            return best[0]
+        return None, InstrumentAdmissionDecision(
+            "UNRESOLVED_REQUIRES_REVIEW",
+            "multiple_equally_specific_ticker_class_labels",
+            all(item[1].registrant_match for item in best),
+            False,
+            None,
+        )
+    registrant_match = any(decision.registrant_match for decision in decisions)
+    return None, InstrumentAdmissionDecision(
+        "UNRESOLVED_REQUIRES_REVIEW",
+        "common_equity_candidate_not_resolved_from_exchange_table",
+        registrant_match,
+        False,
+        None,
+    )
+
+
 def _candidate_patterns(target_class_label: str) -> tuple[re.Pattern[str], ...]:
     target = class_pattern(target_class_label)
     possessive = r"(?:the\s+)?(?:registrant|issuer|company)(?:[’']s)?"
     return (
+        re.compile(
+            rf"(?:The\s+)?(?:registrant|issuer|company)\s+had\s+"
+            rf"(?P<value>[0-9][0-9,]*)\s+sh\s*ares\s+of\s+"
+            rf"{target}\b.{{0,180}}?outstanding\s+as\s+of\s+"
+            rf"{_AS_OF_DATE}",
+            re.IGNORECASE | re.DOTALL,
+        ),
+        re.compile(
+            rf"As\s+of\s+{_AS_OF_DATE},?\s+(?:the\s+)?number\s+of\s+"
+            rf"outstanding\s+shares\s+of\s+{possessive}\s+{target}\b"
+            rf".{{0,180}}?(?:was|were)\s+(?P<value>[0-9][0-9,]*)",
+            re.IGNORECASE | re.DOTALL,
+        ),
+        re.compile(
+            rf"As\s+of\s+{_AS_OF_DATE},?\s+(?:the\s+)?"
+            rf"(?:registrant|issuer|company)\s+had\s+"
+            rf"[0-9][0-9,]*\s+and\s+(?P<value>[0-9][0-9,]*)\s+"
+            rf"sh\s*ares\s+of\s+{target}\b.{{0,180}}?"
+            rf"issued\s+and\s+outstanding,?\s+respectively",
+            re.IGNORECASE | re.DOTALL,
+        ),
+        re.compile(
+            rf"(?:The\s+)?number\s+of\s+shares\s+outstanding\s+of\s+"
+            rf"{possessive}\s+{target}\b.{{0,260}}?as\s+of\s+"
+            rf"{_AS_OF_DATE},?\s+(?:was|were)\s+"
+            rf"(?P<value>[0-9][0-9,]*)",
+            re.IGNORECASE | re.DOTALL,
+        ),
         re.compile(
             rf"As\s+of\s+{_AS_OF_DATE},\s+there\s+were\s+"
             rf"(?P<value>[0-9][0-9,]*)\s+(?:of\s+{possessive}\s+)?"
@@ -168,12 +278,19 @@ def extract_cover_page_class_os_v0_2(
     observations: list[SourceObservation] = []
     for pattern in _candidate_patterns(target_class_label):
         for match in pattern.finditer(text):
+            matched_text = match.group(0)
+            if re.search(
+                r"\b(?:issuable|reserved)\s+(?:under|upon|for)\b",
+                matched_text,
+                re.IGNORECASE,
+            ):
+                continue
             measurement = _parse_date(match.group("measurement"))
             numeric_source = match.group("value")
             issued_outstanding = re.search(
                 r"issued\s+and\s+([0-9][0-9,]*)\s+"
                 r"shares?\s+outstand",
-                match.group(0),
+                matched_text,
                 re.IGNORECASE | re.DOTALL,
             )
             if issued_outstanding:
@@ -208,7 +325,7 @@ def extract_cover_page_class_os_v0_2(
                 availability_policy_id=availability.policy_id,
                 source_url=source_url,
                 source_sha256=source_sha256,
-                source_excerpt=match.group(0)[:1200],
+                source_excerpt=matched_text[:1200],
                 extraction_method="COVER_PAGE_CLASS_OS_TEXT_V0_2",
                 quality_state=(
                     "CANDIDATE_REQUIRES_RECONCILIATION"

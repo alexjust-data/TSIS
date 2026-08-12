@@ -1,0 +1,47 @@
+{
+  "config_id": "sec_pit_100_case_candidate_pool_v0_1",
+  "status": "CANDIDATE_POOL_ONLY_NO_PRIMARY_DOCUMENT_AUTHORIZATION",
+  "parent_universe_id": "lt1b_universe_v0_1",
+  "parent_universe_expected_count": 4824,
+  "parent_universe_path": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/market_cap_last_observed_cutoff/20260320_market_cap_last_observed_cutoff/market_cap_cutoff_lt_1b_active_inactive.parquet",
+  "instrument_master_path": "G:/TSIS/data/data_foundation_outputs/instrument_master/instrument_master_v0_1.parquet",
+  "corporate_actions_path": "G:/TSIS/data/data_foundation_outputs/corporate_actions_table/corporate_actions_table_v0_1.parquet",
+  "selection_seed": "sec_pit_100_case_scale_gate_v0_1",
+  "candidate_pool_size": 240,
+  "final_case_count": 100,
+  "temporal_cohort_quotas": {
+    "2005_2008": 29,
+    "2009_2012": 19,
+    "2013_2016": 53,
+    "2017_2020": 48,
+    "2021_2023": 60,
+    "2024_2026": 31
+  },
+  "final_temporal_cohort_quotas": {
+    "2005_2008": 12,
+    "2009_2012": 8,
+    "2013_2016": 22,
+    "2017_2020": 20,
+    "2021_2023": 25,
+    "2024_2026": 13
+  },
+  "candidate_local_tag_targets": {
+    "ANCHOR_7_CASE": 7,
+    "LONGITUDINAL_2005_TO_2025": 24,
+    "MULTIPLE_TICKER_CHANGES": 25,
+    "HEAVY_REVERSE_SPLIT_HISTORY": 30,
+    "SPAC_NAME_CANDIDATE": 40,
+    "INACTIVE_OR_DELISTED_CANDIDATE": 85,
+    "RECENT_LISTING_CANDIDATE": 30
+  },
+  "anchors": ["ALUR", "BBBY", "BGM", "BNAI", "CNOBP", "DOMH", "PGAC"],
+  "required_calendar_years": {
+    "first": 2005,
+    "last": 2025,
+    "minimum_interval_covering_cases_per_year_in_final_sample": 10
+  },
+  "shard_count": 4,
+  "shard_function": "sha256(instrument_id)_mod_4",
+  "network_scope": "NONE",
+  "primary_document_download_scope": "NOT_AUTHORIZED"
+}

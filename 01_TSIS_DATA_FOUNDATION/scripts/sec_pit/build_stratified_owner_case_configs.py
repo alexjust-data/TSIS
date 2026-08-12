@@ -74,8 +74,14 @@ def execute(
             "cik": str(case["cik"]),
             "instrument_id": case["instrument_id"],
             "security_class_id": case.get("security_class_id"),
-            "issuer_name": case["issuer_name"],
-            "target_class_label": case["target_class_label"],
+            "issuer_name": (
+                os_manifest.get("resolved_registrant_name")
+                or case["issuer_name"]
+            ),
+            "target_class_label": (
+                os_manifest.get("resolved_target_class_label")
+                or case["target_class_label"]
+            ),
             "governed_interval_state": case.get("governed_interval_state"),
             "first_observed_session": case["probe_first_session"],
             "last_observed_session": case["probe_last_session"],

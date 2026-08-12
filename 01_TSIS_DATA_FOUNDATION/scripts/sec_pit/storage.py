@@ -15,6 +15,28 @@ def sha256_bytes(payload: bytes) -> str:
     return hashlib.sha256(payload).hexdigest()
 
 
+def _replace_with_retry(
+    source: str | os.PathLike[str],
+    destination: str | os.PathLike[str],
+    *,
+    attempts: int = 8,
+    base_delay_seconds: float = 0.05,
+) -> None:
+    """Replace atomically while tolerating short-lived Windows reader locks."""
+    last_error: PermissionError | None = None
+    for attempt in range(attempts):
+        try:
+            os.replace(source, destination)
+            return
+        except PermissionError as exc:
+            last_error = exc
+            if attempt + 1 >= attempts:
+                break
+            time.sleep(base_delay_seconds * (attempt + 1))
+    assert last_error is not None
+    raise last_error
+
+
 def atomic_write_bytes(path: Path, payload: bytes) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     fd, temp_name = tempfile.mkstemp(prefix=f".{path.name}.", suffix=".tmp", dir=path.parent)
@@ -23,7 +45,7 @@ def atomic_write_bytes(path: Path, payload: bytes) -> None:
             handle.write(payload)
             handle.flush()
             os.fsync(handle.fileno())
-        os.replace(temp_name, path)
+        _replace_with_retry(temp_name, path)
     finally:
         if os.path.exists(temp_name):
             os.unlink(temp_name)

@@ -11,8 +11,9 @@ import requests
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from sec_pit import storage
 from sec_pit.client import SecClient
-from sec_pit.storage import ContentAddressedStore, read_jsonl
+from sec_pit.storage import ContentAddressedStore, atomic_write_bytes, read_jsonl
 from sec_pit.telemetry import LiveResourceTelemetry, summarize_document_performance
 
 
@@ -37,6 +38,26 @@ class FakeSession:
     def get(self, _url: str, timeout: float) -> FakeResponse:
         assert timeout > 0
         return next(self.responses)
+
+
+def test_atomic_write_retries_transient_windows_reader_lock(monkeypatch, tmp_path: Path) -> None:
+    target = tmp_path / "heartbeat_latest.json"
+    real_replace = storage.os.replace
+    attempts = {"count": 0}
+
+    def flaky_replace(source: str, destination: Path) -> None:
+        attempts["count"] += 1
+        if attempts["count"] < 3:
+            raise PermissionError(5, "transient reader lock")
+        real_replace(source, destination)
+
+    monkeypatch.setattr(storage.os, "replace", flaky_replace)
+    monkeypatch.setattr(storage.time, "sleep", lambda _seconds: None)
+
+    atomic_write_bytes(target, b'{"status":"RUNNING"}\n')
+
+    assert attempts["count"] == 3
+    assert target.read_bytes() == b'{"status":"RUNNING"}\n'
 
 
 def test_fetch_emits_stage_timing_without_changing_acquisition_result(tmp_path: Path) -> None:
@@ -84,6 +105,26 @@ def test_fetch_counts_429_and_retry_wait(monkeypatch, tmp_path: Path) -> None:
     assert client.last_performance["http_429_count"] == 1
     assert client.last_performance["retry_count"] == 1
     assert client.last_performance["retry_wait_seconds"] == 2.0
+
+
+def test_fetch_does_not_retry_terminal_404(monkeypatch, tmp_path: Path) -> None:
+    monkeypatch.setattr("sec_pit.client.time.sleep", lambda _seconds: None)
+    client = SecClient(
+        user_agent="TSIS test test@example.com",
+        store=ContentAddressedStore(tmp_path / "objects"),
+        acquisition_log=tmp_path / "acquisition.jsonl",
+        telemetry_log=tmp_path / "performance.jsonl",
+        session=FakeSession([FakeResponse(404)]),
+        requests_per_second=10,
+    )
+    result = client.fetch("https://example.test/missing.json")
+
+    assert result.status == "FAILED"
+    assert result.http_status == 404
+    assert result.attempts == 1
+    assert client.last_performance is not None
+    assert client.last_performance["retry_count"] == 0
+    assert client.last_performance["retry_wait_seconds"] == 0.0
 
 
 def test_summary_identifies_http_bound_candidate() -> None:

@@ -120,6 +120,12 @@ class SecClient:
                 if len(request_attempt_seconds) < attempts:
                     request_attempt_seconds.append(time.perf_counter() - request_started)
                 error = f"{type(exc).__name__}: {exc}"
+                if (
+                    last_http_status is not None
+                    and 400 <= last_http_status < 500
+                    and last_http_status != 429
+                ):
+                    break
                 if attempts < self.retries:
                     delay = min(30, 2 ** (attempts - 1))
                     retry_count += 1

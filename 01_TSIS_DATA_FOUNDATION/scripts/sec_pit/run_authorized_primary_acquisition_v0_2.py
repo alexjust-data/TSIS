@@ -43,6 +43,22 @@ def completed_urls(log_path: Path) -> set[str]:
     }
 
 
+def complete_submission_fallback_url(row: dict[str, Any]) -> str:
+    cik = "".join(character for character in str(row.get("cik") or "") if character.isdigit())
+    if not cik:
+        parts = [part for part in urlparse(str(row.get("primary_document_url") or "")).path.split("/") if part]
+        if "data" in parts and parts.index("data") + 1 < len(parts):
+            cik = parts[parts.index("data") + 1]
+    accession = str(row.get("accession_number") or "")
+    compact = accession.replace("-", "")
+    if not cik or not accession or not compact.isdigit():
+        raise ValueError("historical fallback requires valid CIK and accession")
+    return (
+        "https://www.sec.gov/Archives/edgar/data/"
+        f"{int(cik)}/{compact}/{accession}.txt"
+    )
+
+
 def classify_acquisition_scope(gates: pd.DataFrame) -> tuple[list[str], list[str], list[str]]:
     state = gates["primary_document_acquisition_state"].astype(str)
     eligible = sorted(
@@ -137,6 +153,9 @@ def main() -> int:
         "concurrency": 1,
         "resume_policy": "skip_urls_with_prior_FETCHED_sha256",
         "overwrite_policy": "content_addressed_objects_never_overwritten",
+        "historical_404_fallback_policy": (
+            "SAME_CIK_SAME_ACCESSION_COMPLETE_SUBMISSION_ONLY_V0_1"
+        ),
         "network_access": "NOT_EXECUTED" if not args.execute else "AUTHORIZED_ONLY",
         "telemetry": {
             "interval_seconds": args.telemetry_interval_seconds,
@@ -275,6 +294,38 @@ def main() -> int:
                     "selection_index": index,
                 },
             )
+            if result.status != "FETCHED" and result.http_status == 404:
+                fallback_url = complete_submission_fallback_url(row)
+                fallback_result = client.fetch(
+                    fallback_url,
+                    f"complete_submission_fallback/{row['ticker']}/{row['accession_number']}.txt",
+                    telemetry_context={
+                        "ticker": row["ticker"],
+                        "accession_number": row["accession_number"],
+                        "form": row.get("form"),
+                        "selection_index": index,
+                        "fallback_policy_id": (
+                            "SAME_CIK_SAME_ACCESSION_COMPLETE_SUBMISSION_ONLY_V0_1"
+                        ),
+                        "failed_primary_url": url,
+                    },
+                )
+                if fallback_result.status == "FETCHED":
+                    alias = fallback_result.to_dict()
+                    alias.update({
+                        "url": url,
+                        "logical_path": logical,
+                        "fallback_resolved_url": fallback_url,
+                        "fallback_policy_id": (
+                            "SAME_CIK_SAME_ACCESSION_COMPLETE_SUBMISSION_ONLY_V0_1"
+                        ),
+                        "failed_primary_http_status": 404,
+                        "content_scope": (
+                            "COMPLETE_SUBMISSION_REQUIRES_DOCUMENT_BOUNDARY_PARSING"
+                        ),
+                    })
+                    append_jsonl(acquisition_log, alias)
+                    result = fallback_result
             fetched += result.status == "FETCHED"
             failed += result.status != "FETCHED"
             bytes_fetched += int(result.bytes or 0)

@@ -1,0 +1,19 @@
+{
+  "config_id": "sec_pit_100_case_predownload_control_v0_1",
+  "status": "PROBE_ONLY_NOT_DOWNLOAD_AUTHORIZATION",
+  "parent_universe_id": "lt1b_universe_v0_1",
+  "parent_universe_path": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/market_cap_last_observed_cutoff/20260320_market_cap_last_observed_cutoff/market_cap_cutoff_lt_1b_active_inactive.parquet",
+  "instrument_master_path": "G:/TSIS/data/data_foundation_outputs/instrument_master/instrument_master_v0_1.parquet",
+  "all_tickers_root": "G:/TSIS/data/reference/all_tickers/*.parquet",
+  "cases_path": "C:/TSIS_Data/runtime/sec_pit_100_case_scale_gate_v0_1/final_sample_v0_1_20260811T2230Z/final_100_cases.json",
+  "default_expected_class_gate": "PASS",
+  "expected_class_gate_overrides": {"CNOBP": "FAIL"},
+  "metadata_inventory_template": "C:/TSIS_Data/runtime/sec_pit_100_case_scale_gate_v0_1/submissions_profile_v0_1_20260811T2255Z/tickers/{ticker_lower}/filing_inventory.parquet",
+  "lifecycle_reconciliation_path": "C:/TSIS_Data/runtime/sec_pit_100_case_scale_gate_v0_1/lifecycle_metadata_v0_1_20260811T2235Z/lifecycle_window_reconciliation.parquet",
+  "sec_root": "D:/TSIS/fundamental_context/sec_pit_v0_1",
+  "metadata_run_prefix": "not_used_inventory_template_is_authoritative",
+  "selection_capacity_documents": null,
+  "minimum_free_space_gib": 100,
+  "network_scope": "NONE",
+  "primary_document_download_scope": "NOT_AUTHORIZED"
+}

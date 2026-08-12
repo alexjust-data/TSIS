@@ -1,3 +1,14 @@
+## Pending - 2026-08-12 - HIGH - SEC PIT 100-case stratified scale gate
+
+- **Estado:** pending
+- **Fecha:** 2026-08-12
+- **Severidad:** HIGH
+- **Scope:** 20-year temporal sampling, metadata-only profiling, exact 100-case freeze, selective acquisition, historical-primary fallback, Windows telemetry recovery, v0.1/v0.2 invalidation, v0.3 baseline coverage, O/S loss decomposition, official Company Facts acquisition, primary-plus-Company-Facts multi-evidence semantics, superseded v0.4 hash-drift run and authoritative certified v0.5 coverage
+- **Leaf objetivo:** foundations_authority / SEC PIT inspection dossiers and control plane
+- **Archivos afectados:** `SEC_PIT_100_CASE_STRATIFIED_SCALE_GATE_READOUT_v0_1.md`; `SEC_PIT_100_CASE_OS_MULTI_EVIDENCE_SHARD_CERTIFICATION_v0_1.md`; SEC PIT 100-case configs, builders, acquisition/storage, Company Facts reconciliation, batch resolution code and dedicated tests; `01_foundations/CHANGELOG.md`.
+- **Motivo:** this work changes the semantic topology used to understand the SEC PIT scale gate. The official leaf rebuild is deferred to a dedicated window while Trading Activity remains active; measured headroom permitted the lightweight SEC resolution but does not justify an unrelated heavy Graphify rebuild competing for RAM/IO. v0.5 is the authoritative bounded result: 56/99 O/S and 11/99 owner-float cases, while 4,824 scale remains blocked.
+- **Cierre esperado:** rebuild only the affected official leaf, run Graphify diagnostics and update `BUILD_MANIFEST.md`.
+
 ## Pending - 2026-08-11 - HIGH - SEC PIT seven-ticker owner-exclusion readout
 
 - **Estado:** pending

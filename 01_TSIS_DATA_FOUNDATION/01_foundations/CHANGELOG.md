@@ -1,3 +1,22 @@
+## 2026-08-12 | SEC PIT 100-case stratified scale gate and acquisition recovery
+
+- Froze an exact 100-case sample from the 4,824-instrument authority with balanced four-shard allocation, explicit lifecycle/document strata and coverage of every year from 2005 through 2025.
+- Completed the 240-case SEC submissions metadata-only profile, predownload control, lifecycle selection and mandatory production-equivalent anchor-delta certification on all four shards.
+- Added the generic same-CIK/same-accession historical complete-submission fallback for unavailable legacy primary URLs while preserving document-boundary requirements and fail-closed provenance.
+- Preserved 1,994 valid acquisitions after a Windows reader-lock failure on `heartbeat_latest.json`; hardened the shared atomic writer with bounded retry and regression coverage, then started a new versioned recovery run using verified content-addressed reuse.
+- Kept `CNOBP` as an intentional security-class halt and retained the 4,824-instrument materialization gate as blocked pending coverage and transition audits.
+- Invalidated the first 99-case local resolution after positive controls exposed a systematic class-label contract regression; no zero-coverage result was accepted as population evidence.
+- Added generic SEC exchange-table class resolution and issuer/class display-name separation, recertified one control per shard, and started a clean local-resolution version without further downloads.
+- Invalidated v0.2 after the PGAC positive control exposed unresolved registrant-display-name propagation; persisted resolved registrant identity and recertified all four shards before v0.3.
+- Completed authoritative bounded resolution v0.3: 99/99 O/S runs and 99/99 ownership runs, zero execution failures, zero network requests, 34/99 full O/S cases and 9/99 full owner-exclusion-float cases. Scale to 4,824 remains blocked.
+- Decomposed the 65 O/S NULL cases into 23 no-admitted-document, 18 admitted-without-observation and 24 observation-without-anchor cases.
+- Added four observed primary cover-page O/S sentence families, excluded issuable/reserved false positives, and integrated exact official Company Facts corroboration for single/unnumbered common classes only.
+- Certified the multi-evidence O/S change on one case per shard: ADMP, ASNA and ADTX calculate 5/5 causal rows; ANTH remains explicit NULL on a same-accession value conflict. The certification authorizes only a new 99-case rerun.
+- Completed the official 99-case Company Facts lane with 10,158 observations, 68 new requests, 31 SHA-verified reused responses and one explicit not-available case (BPT).
+- Superseded v0.4 after post-O/S source-hash drift and repeated all 99 cases cleanly as v0.5 with frozen component hashes; no v0.4 result is authoritative.
+- Certified v0.5 across all four shards and 99/99 eligible cases: 56/99 full O/S cases (280/495 sessions) and 11/99 full owner-exclusion-float cases (55/495 sessions), with zero execution failures, zero network requests and no coverage losses versus v0.3.
+- Added BIOC and WINT as calculated float cases; retained CNOBP as the expected security-class halt and kept the 4,824 scale gate closed pending generic ownership-coverage and historical-transition work.
+
 ## 2026-08-11 | SEC PIT seven-ticker owner-exclusion certification readout
 
 - Added the versioned stratified plan outcome and Data Foundation readout covering selection, acquisition, O/S, ownership, holder/class reconciliation, daily float, telemetry and recovery.

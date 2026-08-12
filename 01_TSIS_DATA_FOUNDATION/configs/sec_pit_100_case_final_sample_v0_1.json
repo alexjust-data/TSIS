@@ -1,0 +1,46 @@
+{
+  "config_id": "sec_pit_100_case_final_sample_v0_1",
+  "status": "FINAL_SAMPLE_FREEZE_NO_PRIMARY_DOCUMENT_AUTHORIZATION",
+  "candidate_profiles_path": "C:/TSIS_Data/runtime/sec_pit_100_case_scale_gate_v0_1/submissions_profile_v0_1_20260811T2255Z/candidate_metadata_profiles.parquet",
+  "candidate_profiles_expected_sha256": "dynamically_verified_against_source_manifest",
+  "final_case_count": 100,
+  "final_temporal_cohort_quotas": {
+    "2005_2008": 12,
+    "2009_2012": 8,
+    "2013_2016": 22,
+    "2017_2020": 20,
+    "2021_2023": 25,
+    "2024_2026": 13
+  },
+  "exact_shard_quotas": {"0": 25, "1": 25, "2": 25, "3": 25},
+  "required_anchors": ["ALUR", "BBBY", "BGM", "BNAI", "CNOBP", "DOMH", "PGAC"],
+  "minimum_tag_counts": {
+    "LONGITUDINAL_2005_TO_2025": 10,
+    "MULTIPLE_TICKER_CHANGES": 10,
+    "HEAVY_REVERSE_SPLIT_HISTORY": 12,
+    "SPAC_NAME_CANDIDATE": 12,
+    "INACTIVE_OR_DELISTED_CANDIDATE": 20,
+    "DOMESTIC_ANNUAL_PROXY_CANDIDATE": 30,
+    "PROXY_VARIETY_OR_SPECIAL_MEETING_CANDIDATE": 20,
+    "FOREIGN_20F_HISTORY": 12,
+    "FOREIGN_20F_MULTIPLE_AMENDMENTS": 8,
+    "MANY_FORM4": 25,
+    "HEAVY_13DG_HISTORY": 25,
+    "FREQUENT_OFFERINGS": 20,
+    "PRE_XBRL_HISTORY": 20,
+    "BANKRUPTCY_OR_RECEIVERSHIP_ITEM_1_03": 10,
+    "DELISTING_OR_DEREGISTRATION_HISTORY": 20,
+    "SPARSE_PROXY_HISTORY": 1
+  },
+  "minimum_span_bucket_counts": {
+    "LT_2Y": 12,
+    "Y2_TO_5": 20,
+    "Y5_TO_10": 25,
+    "Y10_TO_15": 6,
+    "GE_15Y": 12
+  },
+  "required_calendar_years": {"first": 2005, "last": 2025, "minimum_cases": 10},
+  "selection_solver": "scipy.optimize.milp_binary_highs",
+  "network_scope": "NONE",
+  "primary_document_download_scope": "NOT_AUTHORIZED"
+}

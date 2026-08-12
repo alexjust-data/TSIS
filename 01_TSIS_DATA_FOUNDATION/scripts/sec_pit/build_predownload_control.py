@@ -64,6 +64,31 @@ def cik(value: Any) -> str:
     return "".join(ch for ch in str(value or "") if ch.isdigit()).zfill(10)
 
 
+def load_cases(config: dict[str, Any]) -> list[dict[str, Any]]:
+    if config.get("cases"):
+        return list(config["cases"])
+    cases_path = Path(config["cases_path"]).resolve()
+    overrides = config.get("expected_class_gate_overrides", {})
+    default = config.get("default_expected_class_gate", "PASS")
+    return [
+        {**case, "expected_class_gate": overrides.get(case["ticker"], default)}
+        for case in json.loads(cases_path.read_text(encoding="utf-8"))
+    ]
+
+
+def inventory_path(config: dict[str, Any], ticker: str) -> Path:
+    if config.get("metadata_inventory_template"):
+        return Path(config["metadata_inventory_template"].format(
+            ticker=ticker, ticker_lower=ticker.lower()
+        ))
+    return (
+        Path(config["sec_root"])
+        / "runs"
+        / f"{config['metadata_run_prefix']}__{ticker.lower()}"
+        / "filing_inventory.parquet"
+    )
+
+
 def serial(value: Any) -> Any:
     if isinstance(value, list | tuple | dict):
         return value
@@ -95,13 +120,8 @@ def main() -> int:
     args = parser().parse_args()
     config_path = args.config.resolve()
     config = json.loads(config_path.read_text(encoding="utf-8"))
-    inventory_paths = [
-        Path(config["sec_root"])
-        / "runs"
-        / f"{config['metadata_run_prefix']}__{case['ticker'].lower()}"
-        / "filing_inventory.parquet"
-        for case in config["cases"]
-    ]
+    cases = load_cases(config)
+    inventory_paths = [inventory_path(config, case["ticker"]) for case in cases]
     static_inputs = [
         config_path,
         Path(config["parent_universe_path"]),
@@ -138,7 +158,7 @@ def main() -> int:
     atomic_json(output / "pre_manifest.json", manifest)
     atomic_json(output / "pid_manifest.json", {"wrapper_pid": os.getpid(), "observed_at_utc": utc_now()})
 
-    tickers = [case["ticker"] for case in config["cases"]]
+    tickers = [case["ticker"] for case in cases]
     universe = pq.read_table(config["parent_universe_path"], columns=["ticker", "first_seen_date", "last_observed_date"]).to_pandas()
     universe = universe.loc[universe["ticker"].isin(tickers)].copy()
     instruments = pq.read_table(config["instrument_master_path"], columns=[
@@ -161,7 +181,7 @@ def main() -> int:
     link_rows: list[dict[str, Any]] = []
     selected_rows: list[dict[str, Any]] = []
     gate_rows: list[dict[str, Any]] = []
-    for case in config["cases"]:
+    for case in cases:
         ticker = case["ticker"]
         universe_rows = universe.loc[universe["ticker"] == ticker]
         instrument_rows = instruments.loc[instruments["ticker"] == ticker]
@@ -204,13 +224,7 @@ def main() -> int:
             "identity_gate": identity_gate, "security_class_gate": class_gate, "security_class_reason": class_reason,
         })
 
-        inventory_path = (
-            Path(config["sec_root"])
-            / "runs"
-            / f"{config['metadata_run_prefix']}__{ticker.lower()}"
-            / "filing_inventory.parquet"
-        )
-        inventory = pd.read_parquet(inventory_path)
+        inventory = pd.read_parquet(inventory_path(config, ticker))
         rows: list[dict[str, Any]] = []
         cik_candidates = [
             {key: serial(value) for key, value in row.items()}

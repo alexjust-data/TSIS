@@ -1,0 +1,32 @@
+{
+  "config_id": "sec_pit_owner_exclusion_100_case_probe_v0_2",
+  "status": "HUMAN_AUTHORIZED_BOUNDED_PROBE",
+  "human_authorization_record": "2026-08-11 user instruction: haremos 100 casos estratificados",
+  "probe_end_ceiling": "2026-03-06",
+  "probe_session_count": 5,
+  "methodology_id": "officer_director_explicit_affiliate_v0_1",
+  "methodology_authorized": true,
+  "network_requests_authorized_for_missing_selection": true,
+  "cases_path": "C:/TSIS_Data/runtime/sec_pit_100_case_scale_gate_v0_1/final_sample_v0_1_20260811T2230Z/final_100_cases.json",
+  "default_expected_security_class_gate": "PASS",
+  "expected_security_class_gate_overrides": {"CNOBP": "FAIL"},
+  "full_selection_plan": "C:/TSIS_Data/runtime/sec_pit_100_case_scale_gate_v0_1/predownload_control_v0_1_20260811T2240Z/document_selection_plan_v0_2.parquet",
+  "identity_ledger": "C:/TSIS_Data/runtime/sec_pit_100_case_scale_gate_v0_1/predownload_control_v0_1_20260811T2240Z/instrument_identity_interval_ledger.parquet",
+  "lifecycle_selection_plan": "C:/TSIS_Data/runtime/sec_pit_100_case_scale_gate_v0_1/lifecycle_selection_v0_1_20260811T2245Z/lifecycle_primary_acquisition_plan.parquet",
+  "market_calendar": "G:/TSIS/data/data_foundation_outputs/market_calendar/market_calendar_v0_1.parquet",
+  "metadata_run_template": "C:/TSIS_Data/runtime/sec_pit_100_case_scale_gate_v0_1/submissions_profile_v0_1_20260811T2255Z/tickers/{ticker_lower}/filing_inventory.parquet",
+  "object_output_root": "D:/TSIS/fundamental_context/sec_pit_v0_1",
+  "runtime_output_root": "C:/TSIS_Data/runtime/sec_pit_100_case_scale_gate_v0_1",
+  "reuse_acquisition_ledgers": [
+    "D:/TSIS/fundamental_context/sec_pit_v0_1/runs/sec_pit_bnai_full_primary_v0_8_20260810/acquisition.jsonl",
+    "C:/TSIS_Data/runtime/sec_pit_primary_v0_2/runs/sec_pit_pgac_primary_v0_2_20260811T1035Z/acquisition.jsonl",
+    "D:/TSIS/fundamental_context/sec_pit_v0_1/replays/sec_pit_7t_lifecycle_primary_v0_1/acquisition.jsonl",
+    "D:/TSIS/fundamental_context/sec_pit_v0_1/runs/sec_pit_owner_exclusion_7t_missing_primary_v0_1_20260811T1600Z/acquisition.jsonl",
+    "D:/TSIS/fundamental_context/sec_pit_v0_1/runs/sec_pit_100_case_anchor_delta_primary_v0_1_20260811T2310Z/acquisition.jsonl",
+    "D:/TSIS/fundamental_context/sec_pit_v0_1/runs/sec_pit_100_case_primary_v0_1_20260811T2325Z/acquisition.jsonl"
+  ],
+  "probe_shard_count": 4,
+  "probe_shard_function": "sha256(instrument_id)_mod_4",
+  "historical_404_fallback_policy": "SAME_CIK_SAME_ACCESSION_COMPLETE_SUBMISSION_ONLY_V0_1",
+  "primary_document_download_scope": "PENDING_PROBE_GATE"
+}

@@ -1,11 +1,11 @@
 import sys
 from pathlib import Path
 
-
 SCRIPTS = Path(__file__).resolve().parents[1] / "scripts"
 sys.path.insert(0, str(SCRIPTS))
 
 from sec_pit.companyfacts_reconcile import (  # noqa: E402
+    promote_companyfacts_validated_primary_anchors,
     reconcile_companyfacts_to_primary_os,
 )
 
@@ -70,3 +70,46 @@ def test_value_conflict_is_explicit() -> None:
         "SAME_ACCESSION_MEASUREMENT_VALUE_CONFLICT"
     )
     assert readout["value_conflicts"] == 1
+
+
+def test_exact_companyfacts_validation_promotes_primary_anchor() -> None:
+    candidate = {
+        **primary(100),
+        "eligible_from_session": "2025-01-03",
+        "causality_state": "AVAILABILITY_SESSION_RESOLVED",
+        "attributes": {"security_class_label": "Common Stock"},
+    }
+    reconciliation, _ = reconcile_companyfacts_to_primary_os(
+        [fact(100)], [candidate],
+        target_class_label="Common Stock",
+        security_class_gate="PASS",
+    )
+    promoted, readout = promote_companyfacts_validated_primary_anchors(
+        [candidate], reconciliation,
+        reconciliation_artifact_sha256="artifact-hash",
+    )
+    assert len(promoted) == 1
+    assert promoted[0]["value"] == 100
+    assert promoted[0]["quality_state"] == "ADMITTED_OS_ANCHOR"
+    assert promoted[0]["attributes"]["companyfacts_reconciliation_artifact_sha256"] == "artifact-hash"
+    assert readout["promoted_anchor_count"] == 1
+
+
+def test_companyfacts_conflict_never_promotes_primary_anchor() -> None:
+    candidate = {
+        **primary(90),
+        "eligible_from_session": "2025-01-03",
+        "causality_state": "AVAILABILITY_SESSION_RESOLVED",
+        "attributes": {"security_class_label": "Common Stock"},
+    }
+    reconciliation, _ = reconcile_companyfacts_to_primary_os(
+        [fact(100)], [candidate],
+        target_class_label="Common Stock",
+        security_class_gate="PASS",
+    )
+    promoted, readout = promote_companyfacts_validated_primary_anchors(
+        [candidate], reconciliation,
+        reconciliation_artifact_sha256="artifact-hash",
+    )
+    assert promoted == []
+    assert readout["value_conflict_count"] == 1

@@ -23,6 +23,23 @@ FORM_3_FORMS = frozenset({"3", "3/A"})
 SCHEDULE_13D_FORMS = frozenset({"SC 13D", "SC 13D/A", "SCHEDULE 13D", "SCHEDULE 13D/A"})
 
 
+def load_cases(config: dict[str, Any]) -> list[dict[str, Any]]:
+    if config.get("cases"):
+        return list(config["cases"])
+    cases = json.loads(Path(config["cases_path"]).read_text(encoding="utf-8"))
+    overrides = config.get("expected_security_class_gate_overrides", {})
+    default = config.get("default_expected_security_class_gate", "PASS")
+    return [
+        {
+            **case,
+            "target_class_label": case.get("target_class_label", "COMMON_STOCK_CLASS_CANDIDATE"),
+            "stratum": case.get("temporal_cohort", "STRATIFIED_100_CASE_GATE"),
+            "expected_security_class_gate": overrides.get(case["ticker"], default),
+        }
+        for case in cases
+    ]
+
+
 def file_sha256(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as handle:
@@ -259,7 +276,7 @@ def execute(config_path: Path, probe_root: Path, authorize_download: bool) -> Pa
     reusable_paths = [Path(value).resolve() for value in config["reuse_acquisition_ledgers"]]
     reusable_by_url = load_reusable_rows(reusable_paths)
 
-    case_by_ticker = {str(row["ticker"]): row for row in config["cases"]}
+    case_by_ticker = {str(row["ticker"]): row for row in load_cases(config)}
     selected_frames: list[pd.DataFrame] = []
     case_matrix: list[dict[str, Any]] = []
     for identity_row in identity.to_dict("records"):
@@ -413,9 +430,7 @@ def execute(config_path: Path, probe_root: Path, authorize_download: bool) -> Pa
                 "policy_id": DOWNLOAD_POLICY_ID,
                 "authorization_scope": "MISSING_ROWS_ONLY_STRATIFIED_OWNER_EXCLUSION_PROBE",
                 "authorized_at_utc": datetime.now(UTC).isoformat(),
-                "human_authorization_record": (
-                    "2026-08-11 user instruction: OK, vamos hacer la prueba estratificada"
-                ),
+                "human_authorization_record": config["human_authorization_record"],
                 "probe_manifest_sha256": file_sha256(acquisition_manifest_path),
                 "selection_plan_sha256": file_sha256(acquisition_selection_path),
                 "allowed_tickers": allowed,
