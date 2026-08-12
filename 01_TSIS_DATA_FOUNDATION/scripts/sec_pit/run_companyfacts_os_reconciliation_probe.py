@@ -45,7 +45,7 @@ def write_parquet(path: Path, rows: list[dict[str, Any]]) -> None:
                 attributes, sort_keys=True, default=str
             )
         for key, value in list(row.items()):
-            if isinstance(value, (list, dict)):
+            if isinstance(value, list | dict):
                 row[f"{key}_json"] = json.dumps(value, sort_keys=True, default=str)
                 del row[key]
         normalized.append(row)

@@ -276,6 +276,10 @@ component-hash drift. No v0.4 output is promoted. Clean batch
 `sec_pit_100_case_resolution_v0_5_20260812T1210Z` repeated all work from source
 with frozen hashes and completed:
 
+Authoritative source snapshot commit: `27607c8`. Per-component SHA-256 values
+remain persisted in the batch and child manifests. Later lint-only source changes
+must not be represented as the code that produced v0.5.
+
 - 99/99 O/S and 99/99 ownership executions; zero failures and zero network requests;
 - 99/99 owner result/hash/schema audits PASS;
 - four-shard variable certification PASS, including the CNOBP fail-closed control;

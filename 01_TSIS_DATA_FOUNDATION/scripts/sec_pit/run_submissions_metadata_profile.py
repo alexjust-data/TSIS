@@ -53,7 +53,9 @@ def profile_inventory(ticker: str, cik: str, inventory: pd.DataFrame) -> dict[st
     if dates.notna().any():
         history_years = float((dates.max() - dates.min()).days / 365.25)
     counts = forms.value_counts()
-    count = lambda names: int(forms.isin(names).sum())
+    def count(names: set[str]) -> int:
+        return int(forms.isin(names).sum())
+
     def14a = int(counts.get("DEF 14A", 0))
     merger_proxy = count({"PREM14A", "DEFM14A", "PREM14C", "DEFM14C"})
     form4 = count({"4", "4/A"})

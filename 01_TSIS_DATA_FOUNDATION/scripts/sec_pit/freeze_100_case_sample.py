@@ -52,7 +52,9 @@ def solve_sample(frame: pd.DataFrame, config: dict[str, Any]) -> tuple[pd.DataFr
         tag_membership[tag] = frame[column].fillna(False).astype(bool).to_numpy(dtype=float)
     for tag in config["minimum_tag_counts"]:
         if tag not in tag_membership:
-            tag_membership[tag] = frame["document_tags"].map(lambda tags: tag in tags).to_numpy(dtype=float)
+            tag_membership[tag] = frame["document_tags"].map(
+                lambda tags, required_tag=tag: required_tag in tags
+            ).to_numpy(dtype=float)
 
     rows: list[np.ndarray] = []
     lower: list[float] = []

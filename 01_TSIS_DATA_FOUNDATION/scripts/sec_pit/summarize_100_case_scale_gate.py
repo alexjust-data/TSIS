@@ -114,7 +114,11 @@ def execute(
     strata_rows: list[dict[str, Any]] = []
     strata_names = sorted({name for raw in frame["strata_json"] for name in json.loads(raw)})
     for name in strata_names:
-        scoped = frame[frame["strata_json"].map(lambda raw: name in json.loads(raw))]
+        scoped = frame[
+            frame["strata_json"].map(
+                lambda raw, stratum=name: stratum in json.loads(raw)
+            )
+        ]
         eligible_scoped = scoped[scoped["probe_gate"].eq("ELIGIBLE")]
         strata_rows.append({
             "stratum": name,

@@ -1,3 +1,9 @@
+## 2026-08-12 | Minimal SEC PIT 100-case external audit package v0.4
+
+- Added a versioned 12-entry external handoff containing the authoritative 100-case readout, multi-evidence O/S certification, governing contracts, output schema and minimum machine-readable v0.5 evidence.
+- Excluded application source, tests, raw SEC payloads, daily parquet runs and historical duplicate readouts by design.
+- Enforced unique-entry, exact-count and full decompression gates plus a per-entry SHA-256/byte manifest.
+
 ## 2026-08-11 | Reproducible SEC PIT external audit package builder
 
 - Added a Windows-safe builder that refreshes the external SEC audit ZIP from governed docs, frozen probe evidence, acquisition telemetry, authoritative O/S/owner runs and exact code/config/test snapshots.
