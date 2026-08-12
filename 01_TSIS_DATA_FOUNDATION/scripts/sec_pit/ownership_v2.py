@@ -232,6 +232,48 @@ def _proxy_footnotes(text: str, header_start: int) -> dict[str, str]:
     return notes
 
 
+def _following_table_notes(table: Any, *, max_chars: int = 6000) -> str:
+    """Return notes belonging to the table without crossing a later table.
+
+    SEC HTML commonly nests the ownership table inside layout tables, so direct
+    siblings are not reliable. Walk document order, allow strings inside an
+    ancestor layout table, and stop when a genuinely different nested table or
+    a semantic heading starts.
+    """
+
+    ancestor_tables = {
+        parent for parent in table.parents if getattr(parent, "name", None) == "table"
+    }
+    notes: list[str] = []
+    length = 0
+    for node in table.find_all_next(string=True):
+        parent_table = node.find_parent("table")
+        if (
+            parent_table is not None
+            and parent_table is not table
+            and parent_table not in ancestor_tables
+        ):
+            parent_table_text = _normalized_visible_text(
+                " ".join(parent_table.stripped_strings)
+            )
+            if not re.match(
+                r"^(?:\(\d+\)|\*?\s*Less\s+than\s+1%)",
+                parent_table_text,
+                re.I,
+            ):
+                break
+        if node.find_parent(["h1", "h2", "h3", "h4", "h5", "h6"]):
+            break
+        value = _normalized_visible_text(str(node))
+        if not value:
+            continue
+        notes.append(value)
+        length += len(value)
+        if length >= max_chars:
+            break
+    return " ".join(notes)
+
+
 _MONTH_DATE_PATTERN = (
     r"(?:January|February|March|April|May|June|July|August|September|"
     r"October|November|December)\s+\d{1,2},\s+\d{4}"
@@ -299,7 +341,7 @@ def _proxy_measurement_date(text: str, table_start: int) -> str | None:
         ]
         ownership_pattern = (
             r"\b(?:beneficial ownership|beneficially owned|security ownership|"
-            r"share ownership|ownership)\b"
+            r"share ownership|shares owned|ownership)\b"
         )
         if re.search(ownership_pattern, preceding_context, re.I) or re.search(
             rf"^[^.\;]{{0,250}}{ownership_pattern}",
@@ -344,7 +386,7 @@ def _proxy_rows(
     )
     share_ownership_header = re.search(
         r"\b(?:Share|Security|Beneficial) Ownership\b|"
-        r"\bShares Beneficially Owned\b",
+        r"\bShares Beneficially Owned\b|\bShares Owned\b",
         full_text,
         re.I,
     )
@@ -358,6 +400,87 @@ def _proxy_rows(
     )
     availability = availability_policy.resolve(accepted_at, form)
     results: list[SourceObservation] = []
+    zero_management = re.search(
+        r"\b(?:Unit|Share|Stock)\s+Ownership\s+of\s+Management\b"
+        r"(?P<section>.{0,1400}?)"
+        r"(?=\b(?:Changes\s+in\s+Control|Certain\s+Relationships|"
+        r"ITEM\s+1[3-9])\b|$)",
+        full_text,
+        re.I,
+    )
+    if zero_management:
+        zero_section = zero_management.group("section")
+        explicit_zero = bool(
+            re.search(
+                r"\bNeither\b.{1,500}?\bowns?\s+any\s+"
+                r"(?:Units|Shares|Stock)\b",
+                zero_section,
+                re.I,
+            )
+            or re.search(
+                r"\bNo\s+(?:Units|Shares)\s+are\s+owned\s+by\b",
+                zero_section,
+                re.I,
+            )
+        )
+        if explicit_zero:
+            measurement_at = normalize_date((accepted_at or "")[:10])
+            results.append(
+                SourceObservation(
+                    observation_id=stable_id(
+                        "sec_explicit_zero_management_ownership_v0_1",
+                        cik,
+                        accession_number,
+                        measurement_at,
+                    ),
+                    observation_type="HOLDER_POSITION_SNAPSHOT",
+                    cik=cik,
+                    accession_number=accession_number,
+                    form=form,
+                    instrument_id=instrument_id,
+                    security_class_id=security_class_id,
+                    value=0.0,
+                    unit="shares",
+                    measurement_at=measurement_at,
+                    effective_at=measurement_at,
+                    filing_accepted_at=accepted_at,
+                    eligible_from_session=(
+                        availability.eligible_from_session.isoformat()
+                        if availability.eligible_from_session
+                        else None
+                    ),
+                    availability_policy_id=availability.policy_id,
+                    source_url=source_url,
+                    source_sha256=source_sha256,
+                    source_excerpt=_normalized_visible_text(
+                        zero_management.group(0)
+                    )[:1000],
+                    extraction_method="SEC_EXPLICIT_ZERO_MANAGEMENT_OWNERSHIP_V0_1",
+                    quality_state="CANDIDATE_REQUIRES_OVERLAP_RESOLUTION",
+                    causality_state=availability.state,
+                    attributes={
+                        "holder_cik": None,
+                        "holder_name": "Management ownership explicitly reported as zero",
+                        "holding_type": "NON_DERIVATIVE_REPORTED_BENEFICIAL",
+                        "direct_or_indirect": None,
+                        "security_title": "Common Stock",
+                        "reported_percent": 0.0,
+                        "holder_category": "AGGREGATE_GROUP",
+                        "footnote_marker": None,
+                        "footnote_text": None,
+                        "footnote_texts": [],
+                        "supported_issued_common_shares": 0.0,
+                        "ownership_component_state": (
+                            "EXPLICIT_ZERO_CURRENTLY_ISSUED_MANAGEMENT_OWNERSHIP"
+                        ),
+                        "explicit_affiliate_candidate": False,
+                        "table_class_basis": "SINGLE_OR_UNSPECIFIED",
+                        "measurement_date_basis": (
+                            "PRESENT_TENSE_ZERO_AS_OF_FILING_ACCEPTANCE_DATE"
+                        ),
+                    },
+                )
+            )
     table_search_start = 0
     for table in soup.find_all("table"):
         table_text = _normalized_visible_text(" ".join(table.stripped_strings))
@@ -376,12 +499,12 @@ def _proxy_rows(
         )
         shares_beneficially_owned_table = bool(
             re.search(
-                r"(?:Number of )?Shares(?: of (?:Common Stock|Ordinary Shares))? "
-                r"Beneficially Owned|Shares Beneficially Owned",
+                r"(?:Number\s+of\s+)?Shares(?:\s+of\s+.{1,80}?)?\s+"
+                r"Beneficially\s+Owned|Shares\s+Beneficially\s+Owned",
                 table_text,
                 re.I,
             )
-            and re.search(r"\b(?:Percent(?:age)?|%)\b", table_text, re.I)
+            and re.search(r"(?:\bPercent(?:age)?\b|%)", table_text, re.I)
             and re.search(
                 r"\b(?:Directors?|Officers?|Management|Beneficial Owners?)\b",
                 table_text,
@@ -402,19 +525,23 @@ def _proxy_rows(
                 re.I,
             )
         )
-        share_ownership_multiclass_table = bool(
-            share_ownership_header
-            and re.search(r"Class\s+A", table_text, re.I)
-            and re.search(r"Class\s+B", table_text, re.I)
-            and re.search(r"Beneficial Ownership", table_text, re.I)
-        )
         table_mentions_multiple_classes = bool(
             re.search(r"\bClass\s+A\b", table_text, re.I)
             and re.search(r"\bClass\s+B\b", table_text, re.I)
         )
-        single_class_aggregate_table = bool(
+        share_ownership_multiclass_table = bool(
             share_ownership_header
+            and table_mentions_multiple_classes
             and _is_aggregate_management(table_text)
+            and re.search(
+                r"\bOwnership\b|%\s+of\s+Class\b|"
+                r"\bPercent(?:age)?\s+of\s+Class\b",
+                table_text,
+                re.I,
+            )
+        )
+        single_class_aggregate_table = bool(
+            _is_aggregate_management(table_text)
             and not table_mentions_multiple_classes
             and re.search(
                 r"\b(?:Number\s+of\s+Shares|Shares\s+Owned|"
@@ -423,7 +550,12 @@ def _proxy_rows(
                 table_text,
                 re.I,
             )
-            and re.search(r"\b(?:Percent(?:age)?|%)\b", table_text, re.I)
+            and not re.search(
+                r"\b(?:Subject\s+to\s+Grant|Equity\s+Awards?|Option\s+Awards?)\b",
+                table_prefix,
+                re.I,
+            )
+            and re.search(r"(?:\bPercent(?:age)?\b|%)", table_prefix, re.I)
         )
         if not (
             standard_table
@@ -433,6 +565,40 @@ def _proxy_rows(
             or single_class_aggregate_table
         ):
             continue
+        following_table_notes: list[str] = []
+        following_table_notes_length = 0
+        for sibling in table.next_siblings:
+            sibling_name = getattr(sibling, "name", None)
+            if sibling_name in {
+                "table", "h1", "h2", "h3", "h4", "h5", "h6"
+            }:
+                break
+            sibling_text = _normalized_visible_text(
+                " ".join(sibling.stripped_strings)
+                if hasattr(sibling, "stripped_strings")
+                else str(sibling)
+            )
+            if sibling_text:
+                following_table_notes.append(sibling_text)
+                following_table_notes_length += len(sibling_text)
+            if following_table_notes_length >= 5000:
+                break
+        table_option_context = " ".join(
+            (table_text, _following_table_notes(table))
+        )
+        separates_current_and_acquirable_shares = bool(
+            re.search(
+                r"Number\s+of\s+Shares\s+of\s+Common\s+Stock\s+Owned",
+                table_text,
+                re.I,
+            )
+            and re.search(
+                r"Number\s+of\s+Shares\s+of\s+Common\s+Stock\s+"
+                r"Acquirable\s+Within\s+\d+\s+Days",
+                table_text,
+                re.I,
+            )
+        )
         measurement_at = _proxy_measurement_date(
             full_text,
             table_start if table_start >= 0 else 0,
@@ -531,12 +697,25 @@ def _proxy_rows(
                 def share_value(value: str) -> float | None:
                     if value in {"-", "—", "–"}:
                         return 0.0
+                    if value in {"\u2014", "\u2013"}:
+                        return 0.0
                     if value == "*":
                         return None
                     return _number(value)
 
+                interleaved_class_percentages = bool(
+                    re.search(
+                        r"Class\s+A\s+Ordinary\s+Shares\s+%\s+of\s+Class\s+"
+                        r"Class\s+B\s+Ordinary\s+Shares\s+%\s+of\s+Class",
+                        table_text,
+                        re.I,
+                    )
+                )
+                class_b_index = 2 if interleaved_class_percentages else 1
+                if len(slots) <= class_b_index:
+                    continue
                 class_a_shares = share_value(slots[0])
-                class_b_shares = share_value(slots[1])
+                class_b_shares = share_value(slots[class_b_index])
                 if class_a_shares is None and class_b_shares is None:
                     continue
                 class_a_shares = class_a_shares or 0.0
@@ -550,7 +729,11 @@ def _proxy_rows(
                     if _is_aggregate_management(holder_name)
                     else category
                 )
-                percent = _number(slots[2]) if len(slots) > 2 else None
+                percent = (
+                    None
+                    if interleaved_class_percentages
+                    else (_number(slots[2]) if len(slots) > 2 else None)
+                )
                 shares = class_a_shares + class_b_shares
                 footnote = footnotes.get(marker.group(1)) if marker else None
                 attrs = {
@@ -634,6 +817,17 @@ def _proxy_rows(
             )
             footnote = footnotes.get(marker.group(1)) if marker else None
             shares = float(numeric[0])
+            currently_issued_component_unresolved = bool(
+                not separates_current_and_acquirable_shares
+                and re.search(
+                    r"\bshares?\b.{0,100}?\bissuable\s+within\s+\d+\s+days\b|"
+                    r"\bshares?\b.{0,100}?\bunderlying\s+exercisable\s+"
+                    r"(?:stock\s+)?options?\b|"
+                    r"\bexercis(?:e|able).{0,100}?\boptions?\b",
+                    table_option_context,
+                    re.I,
+                )
+            )
             percent = (
                 float(numeric[-1])
                 if len(numeric) > 1
@@ -652,11 +846,19 @@ def _proxy_rows(
                 "footnote_marker": marker.group(1) if marker else None,
                 "footnote_text": footnote,
                 "footnote_texts": [footnote] if footnote else [],
-                "supported_issued_common_shares": None if multi_class else shares,
+                "supported_issued_common_shares": (
+                    None
+                    if multi_class or currently_issued_component_unresolved
+                    else shares
+                ),
                 "ownership_component_state": (
                     "MULTI_CLASS_ALLOCATION_REQUIRED"
                     if multi_class
-                    else "NO_MULTI_CLASS_CONFLICT_IDENTIFIED"
+                    else (
+                        "CURRENTLY_ISSUED_COMPONENT_UNRESOLVED"
+                        if currently_issued_component_unresolved
+                        else "NO_MULTI_CLASS_CONFLICT_IDENTIFIED"
+                    )
                 ),
                 "explicit_affiliate_candidate": bool(
                     re.search(r"\bsponsor\b", holder_name, re.I)

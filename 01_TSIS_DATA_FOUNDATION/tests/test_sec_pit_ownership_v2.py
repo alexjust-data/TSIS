@@ -318,6 +318,239 @@ def test_generic_single_class_family_stays_closed_for_multiclass_table() -> None
     assert rows == []
 
 
+def test_proxy_accepts_strong_shares_owned_aggregate_without_document_heading() -> None:
+    payload = b"""
+    <p>The following table shows, as of January 27, 2021, the number of common
+    shares owned by our directors and executive officers as a group.</p>
+    <table>
+      <tr><th>Name</th><th>Shares Owned</th><th>%</th></tr>
+      <tr><td>Jane Director</td><td>100</td><td>1.0</td></tr>
+      <tr><td>Executive Officers and Directors as a group</td><td>300</td><td>3.0</td></tr>
+    </table>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    aggregate = next(
+        row for row in rows
+        if row.attributes["holder_category"] == "AGGREGATE_GROUP"
+    )
+    assert aggregate.value == 300
+    assert aggregate.measurement_at == "2021-01-27"
+
+
+def test_proxy_accepts_class_descriptor_inside_beneficially_owned_header() -> None:
+    payload = b"""
+    <p>Security Ownership of Management.</p>
+    <p>Beneficial ownership as of March 29, 2024.</p>
+    <table>
+      <tr><th>Directors</th><th>Shares of Class A Common Stock Beneficially Owned</th></tr>
+      <tr><th></th><th>Number</th><th>Percentage Beneficially Owned</th></tr>
+      <tr><td>All directors and executive officers as a group</td><td>500</td><td>5.0%</td></tr>
+    </table>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    assert len(rows) == 1
+    assert rows[0].value == 500
+
+
+def test_proxy_keeps_option_inclusive_table_fail_closed_for_currently_issued() -> None:
+    payload = b"""
+    <p>Security Ownership of Management.</p>
+    <p>Beneficial ownership as of March 29, 2024.</p>
+    <table>
+      <tr><th>Directors</th><th>Shares of Class A Common Stock Beneficially Owned</th></tr>
+      <tr><th></th><th>Number</th><th>Percentage Beneficially Owned</th></tr>
+      <tr><td>All directors and executive officers as a group (1)</td><td>500</td><td>5.0%</td></tr>
+    </table>
+    <p>_____</p>
+    <p>(1) Includes shares of Class A Common Stock issuable within 60 days upon
+    the exercise of options.</p>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    aggregate = next(
+        row for row in rows
+        if row.attributes["holder_category"] == "AGGREGATE_GROUP"
+    )
+    assert aggregate.attributes["supported_issued_common_shares"] is None
+    assert aggregate.attributes["ownership_component_state"] == (
+        "CURRENTLY_ISSUED_COMPONENT_UNRESOLVED"
+    )
+
+
+def test_proxy_option_gate_does_not_spill_past_next_table() -> None:
+    payload = b"""
+    <p>Security Ownership of Management.</p>
+    <p>Beneficial ownership as of March 29, 2024.</p>
+    <table>
+      <tr><th>Directors</th><th>Shares Beneficially Owned</th><th>%</th></tr>
+      <tr><td>All directors and executive officers as a group</td><td>500</td><td>5.0%</td></tr>
+    </table>
+    <table>
+      <tr><th>Option Awards</th><th>Exercise Price</th></tr>
+      <tr><td>Options exercisable within 60 days</td><td>10.00</td></tr>
+    </table>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    aggregate = next(
+        row for row in rows
+        if row.attributes["holder_category"] == "AGGREGATE_GROUP"
+    )
+    assert aggregate.attributes["supported_issued_common_shares"] == 500
+    assert aggregate.attributes["ownership_component_state"] == (
+        "NO_MULTI_CLASS_CONFLICT_IDENTIFIED"
+    )
+
+
+def test_proxy_uses_current_shares_when_acquirable_column_is_separate() -> None:
+    payload = b"""
+    <p>Security Ownership of Management.</p>
+    <p>Beneficial ownership as of March 1, 2025.</p>
+    <table>
+      <tr><th>Beneficial Owner</th>
+          <th>Number of Shares of Common Stock Owned</th>
+          <th>Number of Shares of Common Stock Acquirable Within 60 Days</th>
+          <th>Total Number of Shares of Common Stock Beneficially Owned</th>
+          <th>Percentage of Shares Beneficially Owned</th></tr>
+      <tr><td>All directors and executive officers as a group (10 persons)</td>
+          <td>1,400,094</td><td>2,172,129</td><td>3,572,223</td><td>3.92%</td></tr>
+    </table>
+    <p>(3) Stock options acquirable within 60 days are included only in the
+    separately identified acquirable column.</p>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    aggregate = next(
+        row for row in rows
+        if row.attributes["holder_category"] == "AGGREGATE_GROUP"
+    )
+    assert aggregate.value == 1_400_094
+    assert aggregate.attributes["supported_issued_common_shares"] == 1_400_094
+    assert aggregate.attributes["ownership_component_state"] == (
+        "NO_MULTI_CLASS_CONFLICT_IDENTIFIED"
+    )
+
+
+def test_proxy_marks_unseparated_member_option_components_unresolved() -> None:
+    payload = b"""
+    <p>Share Ownership as of January 27, 2020.</p>
+    <table>
+      <tr><th>Name</th><th>Shares Owned</th><th>%</th></tr>
+      <tr><td>Jane Director (5)</td><td>100,000</td><td>1.0%</td></tr>
+      <tr><td>Executive Officers and Directors as a group</td><td>300,000</td><td>3.0%</td></tr>
+    </table>
+    <p>(5) Shares owned include 18,333 shares underlying exercisable stock options.</p>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    aggregate = next(
+        row for row in rows
+        if row.attributes["holder_category"] == "AGGREGATE_GROUP"
+    )
+    assert aggregate.attributes["supported_issued_common_shares"] is None
+    assert aggregate.attributes["ownership_component_state"] == (
+        "CURRENTLY_ISSUED_COMPONENT_UNRESOLVED"
+    )
+
+
+def test_proxy_marks_table_level_option_inclusion_unresolved() -> None:
+    payload = b"""
+    <p>Security Ownership of Management.</p>
+    <p>Beneficial ownership as of March 31, 2023.</p>
+    <table>
+      <tr><th>Directors</th><th>Shares of Class A Common Stock Beneficially Owned (1)</th></tr>
+      <tr><th></th><th>Number</th><th>Percentage Beneficially Owned</th></tr>
+      <tr><td>All directors and executive officers as a group</td><td>6,368,087</td><td>7.97%</td></tr>
+    </table>
+    <p>(1) Includes shares of Class A Common Stock issuable within 60 days upon
+    the exercise of options and warrants.</p>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    aggregate = next(
+        row for row in rows
+        if row.attributes["holder_category"] == "AGGREGATE_GROUP"
+    )
+    assert aggregate.attributes["supported_issued_common_shares"] is None
+    assert aggregate.attributes["ownership_component_state"] == (
+        "CURRENTLY_ISSUED_COMPONENT_UNRESOLVED"
+    )
+
+def test_proxy_does_not_treat_award_grant_table_as_ownership() -> None:
+    payload = b"""
+    <p>Share Ownership.</p>
+    <table>
+      <tr><th>Name and Position</th><th>Number of Shares Subject to Grant (#)</th></tr>
+      <tr><td>All current directors who are not executive officers, as a group</td>
+          <td>394,514</td></tr>
+      <tr><td>Each other person who received 5% of awards</td><td>-</td></tr>
+    </table>
+    """
+    assert extract_normalized_ownership_snapshots(
+        payload,
+        **context("DEF 14A"),
+    ) == []
+def test_20f_multiclass_accepts_plain_ownership_header() -> None:
+    payload = b"""
+    <p>E. Share Ownership as of the date of this annual report.</p>
+    <table>
+      <tr><th>Beneficial Owners</th><th>Number of Class A ordinary shares</th>
+          <th>Number of Class B ordinary shares</th><th>% of Ownership</th></tr>
+      <tr><td>Directors and Executive Officers:</td></tr>
+      <tr><td>All Directors and Executive Officers as a Group</td><td>22,222</td><td>2,100,000</td><td>19.3</td></tr>
+    </table>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("20-F"))
+    assert len(rows) == 1
+    assert rows[0].value == 2_122_222
+    assert [x["shares"] for x in rows[0].attributes["reported_class_components"]] == [
+        22_222,
+        2_100_000,
+    ]
+
+
+def test_20f_multiclass_supports_interleaved_share_and_percent_columns() -> None:
+    payload = b"""
+    <p>E. Share Ownership as of the date of this annual report.</p>
+    <table>
+      <tr><th></th><th>Class A Ordinary Shares</th><th>% of Class</th>
+          <th>Class B Ordinary Shares</th><th>% of Class</th><th>Voting Power</th></tr>
+      <tr><td>Executive Officers and Directors:</td></tr>
+      <tr><td>All directors and executive officers as a group</td><td>-</td><td>-</td><td>642,043</td><td>100</td><td>86.6</td></tr>
+    </table>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("20-F"))
+    assert len(rows) == 1
+    assert rows[0].value == 642_043
+    assert rows[0].attributes["reported_percent"] is None
+    assert [x["shares"] for x in rows[0].attributes["reported_class_components"]] == [
+        0,
+        642_043,
+    ]
+
+
+def test_annual_report_emits_only_explicit_zero_management_ownership() -> None:
+    payload = b"""
+    <h2>Item 12. Security Ownership of Certain Beneficial Owners and Management</h2>
+    <h3>Unit Ownership of Management</h3>
+    <p>Neither Example Manager, Example Sponsor, nor Example Trustee owns any
+    Units. No Units are owned by the Trustee in its individual capacity.</p>
+    <h3>Changes in Control</h3>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("10-K"))
+    assert len(rows) == 1
+    assert rows[0].value == 0
+    assert rows[0].measurement_at == "2025-07-17"
+    assert rows[0].attributes["holder_category"] == "AGGREGATE_GROUP"
+    assert rows[0].attributes["supported_issued_common_shares"] == 0
+    assert rows[0].attributes["measurement_date_basis"] == (
+        "PRESENT_TENSE_ZERO_AS_OF_FILING_ACCEPTANCE_DATE"
+    )
+
+
+def test_annual_report_does_not_infer_zero_from_missing_management_table() -> None:
+    payload = b"""
+    <h2>Item 12. Security Ownership of Certain Beneficial Owners and Management</h2>
+    <p>No person is known to own more than five percent of the Units.</p>
+    """
+    assert extract_normalized_ownership_snapshots(payload, **context("10-K")) == []
+
+
 def test_20f_share_ownership_table_emits_exact_multiclass_components() -> None:
     payload = """
     <p>E. Share Ownership</p>

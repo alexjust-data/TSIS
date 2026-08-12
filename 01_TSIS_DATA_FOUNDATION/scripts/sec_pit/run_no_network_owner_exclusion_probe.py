@@ -11,6 +11,8 @@ from pathlib import Path
 from typing import Any
 
 import pandas as pd
+import pyarrow as pa
+import pyarrow.parquet as pq
 
 SCRIPTS = Path(__file__).resolve().parents[1]
 if str(SCRIPTS) not in sys.path:
@@ -57,7 +59,34 @@ def write_json(path: Path, value: Any) -> None:
     temporary.replace(path)
 
 
-def write_parquet(path: Path, rows: list[dict[str, Any]]) -> None:
+DAILY_FLOAT_STATE_SCHEMA = pa.schema(
+    [
+        pa.field("instrument_id", pa.string()),
+        pa.field("session_date", pa.string()),
+        pa.field("schema_version", pa.string()),
+        pa.field("shares_outstanding_estimate_as_known", pa.float64()),
+        pa.field("float_owner_exclusion_estimate_as_known", pa.float64()),
+        pa.field("float_fraction_estimate_as_known", pa.float64()),
+        pa.field("float_percent_estimate_as_known", pa.float64()),
+        pa.field("unique_supported_excluded_shares", pa.float64()),
+        pa.field("methodology_id", pa.string()),
+        pa.field("ownership_baseline_accession", pa.string()),
+        pa.field("ownership_baseline_eligible_from_session", pa.string()),
+        pa.field("ownership_update_observation_count", pa.int64()),
+        pa.field("ownership_update_latest_transaction_date", pa.string()),
+        pa.field("ownership_conflict_state", pa.string()),
+        pa.field("estimation_state", pa.string()),
+        pa.field("blocker_codes_json", pa.string()),
+    ]
+)
+
+
+def write_parquet(
+    path: Path,
+    rows: list[dict[str, Any]],
+    *,
+    schema: pa.Schema | None = None,
+) -> None:
     normalized: list[dict[str, Any]] = []
     for source in rows:
         row = dict(source)
@@ -69,7 +98,11 @@ def write_parquet(path: Path, rows: list[dict[str, Any]]) -> None:
             row["blocker_codes_json"] = json.dumps(blockers, sort_keys=True)
             del row["blocker_codes"]
         normalized.append(row)
-    pd.DataFrame(normalized).to_parquet(path, index=False)
+    if schema is None:
+        pd.DataFrame(normalized).to_parquet(path, index=False)
+        return
+    table = pa.Table.from_pylist(normalized, schema=schema)
+    pq.write_table(table, path, compression="snappy")
 
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -614,7 +647,11 @@ def execute(config_path: Path, run_id: str) -> Path:
     write_parquet(run_root / "ownership_class_components.parquet", components)
     write_parquet(run_root / "holder_position_ledger_broad.parquet", broad_ledger)
     write_parquet(run_root / "holder_position_ledger_class_a.parquet", class_a_ledger)
-    write_parquet(run_root / "daily_float_state.parquet", daily_float)
+    write_parquet(
+        run_root / "daily_float_state.parquet",
+        daily_float,
+        schema=DAILY_FLOAT_STATE_SCHEMA,
+    )
     write_parquet(run_root / "float_change_explanation.parquet", changes)
     write_json(run_root / "identity_name_change_events.json", name_change_events)
     write_json(run_root / "ownership_class_reconciliation.json", class_readout)

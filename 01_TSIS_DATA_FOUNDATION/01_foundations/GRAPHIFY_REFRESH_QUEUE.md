@@ -5794,3 +5794,31 @@ path to 4,824 instruments. No official Graphify leaf refresh was executed.
 
 Required action: rebuild the affected foundations leaf, run diagnostics and
 update BUILD_MANIFEST.md.
+
+## GFQ-20260813-FOUNDATIONS-SEC-OWNER-V013-001 - Option-inclusive ownership and physical schema
+
+Status: pending
+Date: 2026-08-13
+Severity: HIGH
+Leaf target: foundations_authority / SEC PIT inspection dossier
+
+Affected scope:
+
+- `scripts/sec_pit/ownership_v2.py`;
+- `scripts/sec_pit/run_no_network_owner_exclusion_probe.py`;
+- `tests/test_sec_pit_ownership_v2.py`;
+- `tests/test_sec_pit_owner_output_schema.py`;
+- `inspection_dossiers/sec_pit/SEC_PIT_OPTION_INCLUSIVE_CURRENT_SHARES_AND_PHYSICAL_SCHEMA_SHARD_CERTIFICATION_v0_1.md`;
+- `inspection_dossiers/sec_pit/SEC_PIT_100_CASE_OPTION_INCLUSIVE_AND_SCHEMA_V0_13_READOUT_v0_1.md`;
+- local and parent changelogs.
+
+Reason: the semantic topology now distinguishes current shares from
+option-inclusive beneficial ownership, rejects grant tables as ownership
+baselines, and governs a stable physical Arrow schema across shards. The v0.13
+99-case readout changes measured coverage and blocker priorities. No isolated
+Graphify rebuild was performed because the existing SEC PIT queue already
+requires a coordinated Foundations leaf refresh and root merge.
+
+Required action: rebuild and diagnose the affected Foundations/SEC PIT leaf,
+update its `BUILD_MANIFEST.md`, resolve or supersede the related pending SEC PIT
+queue entries, and include the leaf in the next governed root merge.

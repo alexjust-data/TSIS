@@ -770,3 +770,18 @@ CNOBP remains a security-class halt. Three full-interval probes and all four
 planned shard probes passed their production-equivalent variable audits. Scale
 to 4,824 instruments remains unauthorized pending a governed 30-50 case gate.
 See `inspection_dossiers/sec_pit/SEC_PIT_ADAPTIVE_BASELINE_COMPANYFACTS_FULL_INTERVAL_AND_SHARD_CERTIFICATION_READOUT_v0_1.md`.
+
+## 2026-08-13 - SEC PIT option-inclusive ownership and v0.13 scale readout
+
+The ownership parser now separates current from explicitly acquirable shares,
+detects option-inclusive components in holder and table-level notes, rejects
+grant/award tables as ownership baselines and fails closed when a currently
+issued component cannot be isolated. The daily float writer now enforces one
+explicit Arrow schema across calculated and all-NULL cases. Sixteen
+production-equivalent four-shard probes and the immutable 99-case v0.13 batch
+completed with zero execution, formula, schema, duplication or causal errors.
+Complete float coverage improved from 10/99 to 15/99 with no v0.12 regression,
+but 4,824-instrument scale remains blocked. See
+`inspection_dossiers/sec_pit/SEC_PIT_OPTION_INCLUSIVE_CURRENT_SHARES_AND_PHYSICAL_SCHEMA_SHARD_CERTIFICATION_v0_1.md`
+and
+`inspection_dossiers/sec_pit/SEC_PIT_100_CASE_OPTION_INCLUSIVE_AND_SCHEMA_V0_13_READOUT_v0_1.md`.

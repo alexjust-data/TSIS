@@ -7015,3 +7015,15 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
   float with zero future-baseline rows and zero blockers.
 - All 126 test_sec_pit_*.py tests pass; 4,824-instrument scale is not yet
   authorized.
+
+### 2026-08-13 | sec_pit | option-inclusive ownership and v0.13 rerun
+
+- Corrected generic ownership parsing for separated current/acquirable columns,
+  holder-footnote and table-note option inclusions, and false grant-table
+  baselines.
+- Enforced a stable Arrow schema for `daily_float_state.parquet` across all
+  shards and NULL patterns.
+- Passed 226 SEC PIT tests, 16/16 production-equivalent four-shard probes and a
+  99/99 no-network v0.13 resolution batch with zero technical failures.
+- Complete owner-exclusion float coverage is 15/99, up from 10/99 in v0.12,
+  with no lost v0.12 case; scale to 4,824 remains unauthorized.
