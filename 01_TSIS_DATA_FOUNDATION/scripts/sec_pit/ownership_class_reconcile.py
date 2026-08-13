@@ -219,7 +219,14 @@ def reconcile_multiclass_proxy_positions(
             and (row.get("attributes") or {}).get("holder_category")
             == "OFFICER_OR_DIRECTOR"
         ]
-        reported_sum = sum(float(row.get("value") or 0.0) for row in atomic)
+        reported_sum = sum(
+            float(
+                (row.get("attributes") or {}).get(
+                    "reported_beneficial_total_shares", row.get("value") or 0.0
+                )
+            )
+            for row in atomic
+        )
         supported_values = [
             (row.get("attributes") or {}).get("supported_issued_common_shares")
             for row in atomic

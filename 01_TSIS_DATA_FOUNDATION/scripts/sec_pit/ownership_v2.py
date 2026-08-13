@@ -89,6 +89,16 @@ def issuer_name_match_basis(issuer_name: Any, source_text: Any) -> str | None:
     core_tokens = normalized_issuer_core_tokens(issuer_name)
     if len(core_tokens) >= 2 and core_tokens.issubset(set(text_key.split())):
         return "ISSUER_CORE_NAME_TOKEN_EVIDENCE"
+    singularized_core = {
+        token[:-1] if len(token) >= 6 and token.endswith("s") else token
+        for token in core_tokens
+    }
+    singularized_text = {
+        token[:-1] if len(token) >= 6 and token.endswith("s") else token
+        for token in text_key.split()
+    }
+    if len(singularized_core) >= 2 and singularized_core.issubset(singularized_text):
+        return "ISSUER_CORE_NAME_SINGULARIZED_TOKEN_EVIDENCE"
     return None
 
 
@@ -115,6 +125,35 @@ def _xml_text(root: ET.Element, *suffixes: str) -> str | None:
         text = " ".join(part.strip() for part in node.itertext() if part.strip())
         if text:
             return text
+    return None
+
+
+def _schedule_cover_value(
+    visible_strings: list[str],
+    marker: str,
+) -> str | None:
+    marker_key = re.sub(r"[^a-z]", "", marker.casefold())
+    for index, value in enumerate(visible_strings):
+        value_key = re.sub(r"[^a-z]", "", value.casefold())
+        if marker_key not in value_key:
+            continue
+        inline = re.search(
+            re.escape(marker) + r"\s*:\s*([^\r\n]+)", value, flags=re.I
+        )
+        if inline:
+            return _normalized_visible_text(inline.group(1)) or None
+        before = re.split(r"\(\s*" + re.escape(marker) + r"\s*\)", value, flags=re.I)[0].strip()
+        if before and re.sub(r"[^a-z]", "", before.casefold()) != marker_key:
+            lines = [
+                _normalized_visible_text(line)
+                for line in before.splitlines()
+                if _normalized_visible_text(line)
+                and not re.fullmatch(r"[-_=]+", _normalized_visible_text(line))
+            ]
+            if lines:
+                return lines[-1]
+        if index > 0:
+            return visible_strings[index - 1].strip() or None
     return None
 
 
@@ -146,7 +185,23 @@ def extract_document_identity(payload: bytes) -> dict[str, Any]:
         if value:
             identity["issuer_name"] = identity["issuer_name"] or value
             break
-    text = " ".join(soup.stripped_strings)
+    visible_strings = list(soup.stripped_strings)
+    text = " ".join(visible_strings)
+    cover_issuer = _schedule_cover_value(visible_strings, "Name of Issuer")
+    cover_class = _schedule_cover_value(
+        visible_strings, "Title of Class of Securities"
+    )
+    cover_cusip = _schedule_cover_value(visible_strings, "CUSIP Number")
+    if cover_issuer:
+        identity["issuer_name"] = identity["issuer_name"] or cover_issuer
+    if cover_class:
+        identity["security_class_title"] = (
+            identity["security_class_title"] or cover_class
+        )
+    if cover_cusip and not identity["issuer_cusip"]:
+        normalized_cover_cusip = re.sub(r"[^A-Z0-9]", "", cover_cusip.upper())
+        if 8 <= len(normalized_cover_cusip) <= 12:
+            identity["issuer_cusip"] = normalized_cover_cusip
     if not identity["issuer_cusip"]:
         cusip_match = re.search(r"CUSIP\s+(?:No\.?\s*)?([A-Z0-9]{8,12})", text, re.I)
         if cusip_match:
@@ -248,6 +303,8 @@ def _following_table_notes(table: Any, *, max_chars: int = 6000) -> str:
     length = 0
     for node in table.find_all_next(string=True):
         parent_table = node.find_parent("table")
+        if parent_table is table:
+            continue
         if (
             parent_table is not None
             and parent_table is not table
@@ -272,6 +329,300 @@ def _following_table_notes(table: Any, *, max_chars: int = 6000) -> str:
         if length >= max_chars:
             break
     return " ".join(notes)
+
+
+def _numbered_notes(text: str) -> dict[str, str]:
+    """Extract numbered notes from the bounded text following one table."""
+    normalized = _normalized_visible_text(text)
+    matches = list(re.finditer(r"(?:^|\s)\((\d{1,2})\)\s+", normalized))
+    notes: dict[str, str] = {}
+    for index, match in enumerate(matches):
+        end = matches[index + 1].start() if index + 1 < len(matches) else len(normalized)
+        note = normalized[match.end() : end].strip()
+        if note:
+            notes.setdefault(match.group(1), note)
+    return notes
+
+
+def _expanded_row_cells(tr: Any) -> list[str]:
+    """Expand HTML colspans so SEC spacer-heavy ownership tables align."""
+    expanded: list[str] = []
+    for cell in tr.find_all(["td", "th"], recursive=False):
+        text = _normalized_visible_text(" ".join(cell.stripped_strings))
+        try:
+            colspan = max(1, int(cell.get("colspan", 1)))
+        except (TypeError, ValueError):
+            colspan = 1
+        expanded.extend([text] * colspan)
+    return expanded
+
+
+def _explicit_multiclass_table_rows(table: Any) -> list[dict[str, Any]]:
+    """Extract exact Class A/B components from aligned ownership columns.
+
+    Empty cells never imply zero. A component is emitted only when its class
+    column contains a number or an explicit dash.
+    """
+    rows = [_expanded_row_cells(tr) for tr in table.find_all("tr")]
+    if not rows:
+        return []
+    header_index = next(
+        (
+            index
+            for index, cells in enumerate(rows)
+            if re.search(r"\bClass\s+A\b", " ".join(cells), re.I)
+            and re.search(r"\bClass\s+B\b", " ".join(cells), re.I)
+        ),
+        None,
+    )
+    if header_index is None:
+        return []
+    header_rows = rows[: min(len(rows), header_index + 9)]
+    width = max(map(len, header_rows))
+    contexts = [
+        " ".join(
+            cells[column]
+            for cells in header_rows
+            if column < len(cells) and cells[column]
+        )
+        for column in range(width)
+    ]
+    class_a_positions = {
+        index for index, value in enumerate(contexts)
+        if re.search(r"\bClass\s+A\b", value, re.I)
+    }
+    class_b_positions = {
+        index for index, value in enumerate(contexts)
+        if re.search(r"\bClass\s+B\b", value, re.I)
+    }
+    if not class_a_positions or not class_b_positions:
+        return []
+
+    def percentage_positions(class_positions: set[int]) -> list[int]:
+        return [
+            index for index in sorted(class_positions)
+            if re.search(r"(?:Percent(?:age)?|%)", contexts[index], re.I)
+        ]
+
+    def share_positions(class_positions: set[int]) -> list[int]:
+        positions = [
+            index for index in sorted(class_positions)
+            if not re.search(r"(?:Percent(?:age)?|%)", contexts[index], re.I)
+        ]
+        return positions or sorted(class_positions)
+
+    a_share_positions = share_positions(class_a_positions)
+    b_share_positions = share_positions(class_b_positions)
+    a_percentage_positions = percentage_positions(class_a_positions)
+    b_percentage_positions = percentage_positions(class_b_positions)
+    first_class_position = min(class_a_positions | class_b_positions)
+
+    def exact_share(
+        cells: list[str],
+        positions: list[int],
+        percent_positions: list[int],
+    ) -> float | None:
+        if percent_positions and not any(
+            position < len(cells)
+            and (
+                cells[position].strip() in {"-", "\u2014", "\u2013", "â€”", "â€“", "*"}
+                or re.fullmatch(
+                    r"[0-9][0-9,]*(?:\.\d+)?",
+                    cells[position].strip(),
+                )
+            )
+            for position in percent_positions
+        ):
+            return None
+        seen: set[str] = set()
+        for position in positions:
+            if position >= len(cells):
+                continue
+            value = cells[position].strip()
+            if not value or value in seen:
+                continue
+            seen.add(value)
+            if value in {"-", "\u2014", "\u2013", "â€”", "â€“"}:
+                return 0.0
+            if re.fullmatch(r"[0-9][0-9,]*(?:\.\d+)?", value):
+                parsed = _number(value)
+                if parsed is not None and float(parsed).is_integer():
+                    return float(parsed)
+        return None
+
+    header_text = " ".join(rows[header_index])
+    header_context_text = " ".join(contexts)
+    security_kind = (
+        "ordinary shares"
+        if re.search(r"ordinary\s+shares", header_context_text, re.I)
+        else "common stock"
+        if re.search(r"common\s+(?:stock|shares)", header_context_text, re.I)
+        else "shares"
+    )
+    extracted: list[dict[str, Any]] = []
+    table_text = _normalized_visible_text(" ".join(table.stripped_strings))
+    category = (
+        "OFFICER_OR_DIRECTOR"
+        if _is_aggregate_management(table_text)
+        and re.search(r"(?:5%|Five\s+Percent).{0,80}?(?:Holders|Stockholders|Shareholders)", table_text, re.I)
+        else "UNCLASSIFIED"
+    )
+    for cells in rows[header_index + 1 :]:
+        row_text = " ".join(value for value in cells if value)
+        if re.search(
+            r"(?:5%|Five\s+Percent).{0,80}?(?:Holders|Stockholders|Shareholders)",
+            row_text,
+            re.I,
+        ):
+            category = "FIVE_PERCENT_HOLDER"
+            continue
+        if not re.search(r"\d", row_text) and re.search(
+            r"(?:Directors?.*(?:Executive\s+)?Officers?|"
+            r"(?:Executive\s+)?Officers?.*Directors?)",
+            row_text,
+            re.I,
+        ):
+            category = "OFFICER_OR_DIRECTOR"
+            continue
+        holder = next(
+            (value for value in cells[:first_class_position] if value.strip()),
+            "",
+        )
+        if not holder or re.search(
+            r"Name(?: and Address)? of Beneficial Owner|Beneficially Owned|"
+            r"Approximate Percentage|Number of Shares",
+            holder,
+            re.I,
+        ):
+            continue
+        class_a = exact_share(cells, a_share_positions, a_percentage_positions)
+        class_b = exact_share(cells, b_share_positions, b_percentage_positions)
+        if class_a is None or class_b is None:
+            continue
+        if class_a + class_b == 0:
+            continue
+        extracted.append(
+            {
+                "holder_raw": holder,
+                "cells": cells,
+                "class_a": class_a,
+                "class_b": class_b,
+                "security_kind": security_kind,
+                "holder_category": (
+                    "AGGREGATE_GROUP"
+                    if _is_aggregate_management(holder)
+                    else category
+                ),
+            }
+        )
+    return extracted
+
+
+def _exact_current_shares_from_footnote(
+    total_beneficial_shares: float,
+    footnote: str | None,
+) -> float | None:
+    """Resolve current shares only from an arithmetically closed footnote.
+
+    Every numeric share component must be classified as currently issued or
+    acquirable, and the components must sum exactly to the reported beneficial
+    total. Partial ``includes`` disclosures therefore remain fail-closed.
+    """
+    if not footnote:
+        return None
+    text = _normalized_visible_text(footnote)
+    components: dict[int, tuple[str, float]] = {}
+
+    future_patterns = (
+        r"(?P<n>[0-9][0-9,]*)\s+shares?\b"
+        r"(?:(?![0-9][0-9,]*\s+shares?).){0,100}?"
+        r"\b(?:issuable|underlying)\b",
+        r"(?P<n>[0-9][0-9,]*)\s+(?:options?|warrants?)\b",
+        r"(?:options?|warrants?)\s+(?:to\s+purchase|for\s+purchase\s+of)?\s*"
+        r"(?P<n>[0-9][0-9,]*)\s+shares?\b",
+        r"(?P<n>[0-9][0-9,]*)\s+shares?\s+subject\s+to\s+.{0,80}?"
+        r"(?:options?|warrants?)\b",
+    )
+    for pattern in future_patterns:
+        for match in re.finditer(pattern, text, re.I):
+            position = match.start("n")
+            components[position] = (
+                "ACQUIRABLE",
+                float(match.group("n").replace(",", "")),
+            )
+
+    current_pattern = re.compile(
+        r"(?P<n>[0-9][0-9,]*)\s+shares?\s+of\s+.{0,90}?"
+        r"(?:common\s+stock|ordinary\s+shares?)\b",
+        re.I,
+    )
+    for match in current_pattern.finditer(text):
+        position = match.start("n")
+        if position in components:
+            continue
+        local = text[match.start() : min(len(text), match.end() + 36)]
+        if re.search(r"\b(?:issuable|underlying|acquirable)\b", local, re.I):
+            components[position] = (
+                "ACQUIRABLE",
+                float(match.group("n").replace(",", "")),
+            )
+            continue
+        components[position] = (
+            "CURRENT",
+            float(match.group("n").replace(",", "")),
+        )
+
+    current = sum(value for role, value in components.values() if role == "CURRENT")
+    acquirable = sum(
+        value for role, value in components.values() if role == "ACQUIRABLE"
+    )
+    if not components or not acquirable:
+        return None
+    if abs((current + acquirable) - float(total_beneficial_shares)) > 0.5:
+        return None
+    return current
+
+
+def _has_position_specific_acquirable_disclosure(text: str | None) -> bool:
+    """Detect a disclosed acquirable component, not a generic SEC definition."""
+    if not text:
+        return False
+    normalized = _normalized_visible_text(text)
+    return bool(
+        re.search(
+            r"\b(?:includes?|consists?\s+of|comprises?|reflects?)\b"
+            r".{0,180}?"
+            r"(?:\bshares?\b.{0,100}?\b(?:issuable|underlying|acquirable)\b|"
+            r"\b(?:options?|warrants?)\b)",
+            normalized,
+            re.I,
+        )
+    )
+
+
+def _named_acquirable_components(text: str | None) -> dict[str, float]:
+    """Parse an exhaustive `following persons` list of future components."""
+    if not text:
+        return {}
+    normalized = _normalized_visible_text(text)
+    match = re.search(
+        r"for\s+the\s+following\s+persons?.{0,240}?"
+        r"(?:options?|awards?).{0,180}?:\s*(?P<items>[^.]{1,900})\.",
+        normalized,
+        re.I,
+    )
+    if not match:
+        return {}
+    result: dict[str, float] = {}
+    for item in re.finditer(
+        r"(?P<name>[A-Z][A-Za-z .'-]{2,80}?)\s*\((?P<shares>[0-9][0-9,]*)\)",
+        match.group("items"),
+    ):
+        key = normalized_name_key(item.group("name"))
+        shares = _number(item.group("shares"))
+        if key and shares is not None:
+            result[key] = float(shares)
+    return result
 
 
 _MONTH_DATE_PATTERN = (
@@ -394,7 +745,7 @@ def _proxy_rows(
     if not header:
         return []
     footnotes = _proxy_footnotes(full_text, header.start())
-    multi_class = bool(
+    document_mentions_multiple_ordinary_classes = bool(
         re.search(r"Class\s+A ordinary shares", full_text, re.I)
         and re.search(r"Class\s+B ordinary shares", full_text, re.I)
     )
@@ -529,6 +880,31 @@ def _proxy_rows(
             re.search(r"\bClass\s+A\b", table_text, re.I)
             and re.search(r"\bClass\s+B\b", table_text, re.I)
         )
+        nearby_table_context = (
+            full_text[max(0, table_start - 1800) : table_start]
+            if table_start >= 0
+            else ""
+        )
+        nearby_mentions_multiple_ordinary_classes = bool(
+            re.search(r"Class\s+A ordinary shares", nearby_table_context, re.I)
+            and re.search(r"Class\s+B ordinary shares", nearby_table_context, re.I)
+        )
+        explicit_unnumbered_common_table = bool(
+            re.search(
+                r"(?:Common\s+Stock\s+Beneficially\s+Owned|"
+                r"Shares\s+of\s+Common\s+Stock\s+Beneficially\s+Owned)",
+                table_text,
+                re.I,
+            )
+            and not table_mentions_multiple_classes
+        )
+        row_requires_class_allocation = bool(
+            table_mentions_multiple_classes
+            or (
+                nearby_mentions_multiple_ordinary_classes
+                and not explicit_unnumbered_common_table
+            )
+        )
         share_ownership_multiclass_table = bool(
             share_ownership_header
             and table_mentions_multiple_classes
@@ -583,18 +959,54 @@ def _proxy_rows(
                 following_table_notes_length += len(sibling_text)
             if following_table_notes_length >= 5000:
                 break
-        table_option_context = " ".join(
-            (table_text, _following_table_notes(table))
-        )
-        separates_current_and_acquirable_shares = bool(
+        following_notes_text = _following_table_notes(table)
+        table_notes = _numbered_notes(following_notes_text)
+        named_acquirable_components = _named_acquirable_components(following_notes_text)
+        table_option_context = " ".join((table_text, following_notes_text))
+        explicit_current_shares_column = bool(
             re.search(
-                r"Number\s+of\s+Shares\s+of\s+Common\s+Stock\s+Owned",
+                r"(?<!Total\s)(?:"
+                r"Number\s+of\s+Shares\s+of\s+Common\s+Stock\s+Owned|"
+                r"Shares\s+of\s+common\s+stock\s+beneficially\s+owned|"
+                r"Number\s+of\s+Shares\s+Beneficially\s+Owned|"
+                r"Number\s+of\s+Shares\s+Beneficially\s+Held|"
+                r"Common\s+Stock\s+Outstanding"
+                r")",
                 table_text,
                 re.I,
             )
-            and re.search(
+            or (
+                re.search(r"\bCommon\s+Stock\b", table_text, re.I)
+                and re.search(r"\bOutstanding\b", table_text, re.I)
+            )
+        )
+        explicit_acquirable_shares_column = bool(
+            re.search(
+                r"(?:"
                 r"Number\s+of\s+Shares\s+of\s+Common\s+Stock\s+"
-                r"Acquirable\s+Within\s+\d+\s+Days",
+                r"Acquirable\s+Within\s+\d+\s+Days|"
+                r"Shares\s+acquirable\s+upon\s+exercise\s+of\s+options|"
+                r"Shares\s+of\s+common\s+stock\s+issuable\s+upon\s+"
+                r"exercise\s+of\s+(?:stock\s+)?options|"
+                r"Right\s+to\s+Acquire|"
+                r"Number\s+of\s+Shares\s+Issuable\s+Upon\s+Exercise\s+of\s+"
+                r"Warrants\s+and\s+Options"
+                r")",
+                table_text,
+                re.I,
+            )
+            or (
+                re.search(r"\bRight\s+to\b", table_text, re.I)
+                and re.search(r"\bAcquire\b", table_text, re.I)
+            )
+        )
+        separates_current_and_acquirable_shares = bool(
+            explicit_current_shares_column and explicit_acquirable_shares_column
+        )
+        explicit_total_shares_column = bool(
+            re.search(
+                r"\bTotal\s+(?:Shares\s+)?Beneficially\s+Owned\b|"
+                r"\bTotal\s+Shares\b",
                 table_text,
                 re.I,
             )
@@ -630,6 +1042,95 @@ def _proxy_rows(
             )
         )
         category = "OFFICER_OR_DIRECTOR" if management_first else "UNCLASSIFIED"
+        exact_multiclass_rows = _explicit_multiclass_table_rows(table)
+        if exact_multiclass_rows:
+            for parsed_row in exact_multiclass_rows:
+                holder_raw = str(parsed_row["holder_raw"])
+                marker = re.search(r"\((\d+)\)\s*$", holder_raw)
+                holder_name = re.sub(r"\s*\(\d+\)\s*$", "", holder_raw).strip(" :")
+                footnote = (
+                    table_notes.get(marker.group(1)) or footnotes.get(marker.group(1))
+                    if marker
+                    else None
+                )
+                class_a_shares = float(parsed_row["class_a"])
+                class_b_shares = float(parsed_row["class_b"])
+                shares = class_a_shares + class_b_shares
+                security_kind = str(parsed_row["security_kind"])
+                if security_kind == "shares" and (
+                    document_mentions_multiple_ordinary_classes
+                    or nearby_mentions_multiple_ordinary_classes
+                ):
+                    security_kind = "ordinary shares"
+                attrs = {
+                    "holder_cik": None,
+                    "holder_name": holder_name,
+                    "holding_type": "NON_DERIVATIVE_REPORTED_BENEFICIAL",
+                    "direct_or_indirect": None,
+                    "security_title": "MULTI_CLASS_ORDINARY_SHARES",
+                    "reported_percent": None,
+                    "reported_beneficial_total_shares": shares,
+                    "holder_category": parsed_row["holder_category"],
+                    "footnote_marker": marker.group(1) if marker else None,
+                    "footnote_text": footnote,
+                    "footnote_texts": [footnote] if footnote else [],
+                    "supported_issued_common_shares": None,
+                    "ownership_component_state": "EXPLICIT_TABLE_CLASS_COMPONENTS",
+                    "explicit_affiliate_candidate": bool(
+                        re.search(r"\bsponsor\b", holder_name, re.I)
+                        or re.search(r"\bsponsor\b", footnote or "", re.I)
+                    ),
+                    "table_class_basis": "MULTI_CLASS_ORDINARY_SHARES",
+                    "measurement_date_basis": measurement_basis,
+                    "current_share_selection_state": "EXACT_TABLE_CLASS_COMPONENTS",
+                    "reported_class_components": [
+                        {
+                            "security_class_title": f"Class A {security_kind}",
+                            "shares": class_a_shares,
+                        },
+                        {
+                            "security_class_title": f"Class B {security_kind}",
+                            "shares": class_b_shares,
+                        },
+                    ],
+                }
+                results.append(
+                    SourceObservation(
+                        observation_id=stable_id(
+                            "sec_explicit_multiclass_ownership_table_v0_2",
+                            cik,
+                            accession_number,
+                            holder_name,
+                            class_a_shares,
+                            class_b_shares,
+                        ),
+                        observation_type="HOLDER_POSITION_SNAPSHOT",
+                        cik=cik,
+                        accession_number=accession_number,
+                        form=form,
+                        instrument_id=instrument_id,
+                        security_class_id=security_class_id,
+                        value=shares,
+                        unit="shares",
+                        measurement_at=measurement_at,
+                        effective_at=measurement_at,
+                        filing_accepted_at=accepted_at,
+                        eligible_from_session=(
+                            availability.eligible_from_session.isoformat()
+                            if availability.eligible_from_session
+                            else None
+                        ),
+                        availability_policy_id=availability.policy_id,
+                        source_url=source_url,
+                        source_sha256=source_sha256,
+                        source_excerpt=" ".join(parsed_row["cells"])[:1000],
+                        extraction_method="SEC_EXPLICIT_MULTICLASS_OWNERSHIP_TABLE_V0_2",
+                        quality_state="CANDIDATE_REQUIRES_CLASS_ALLOCATION",
+                        causality_state=availability.state,
+                        attributes=attrs,
+                    )
+                )
+            continue
         for tr in table.find_all("tr"):
             cells = [
                 _normalized_visible_text(" ".join(cell.stripped_strings))
@@ -815,19 +1316,65 @@ def _proxy_rows(
                 if _is_aggregate_management(holder_name)
                 else category
             )
-            footnote = footnotes.get(marker.group(1)) if marker else None
-            shares = float(numeric[0])
+            footnote = (
+                table_notes.get(marker.group(1)) or footnotes.get(marker.group(1))
+                if marker
+                else None
+            )
+            current_column_shares: float | None = None
+            explicit_column_share_values: list[float] = []
+            if separates_current_and_acquirable_shares:
+                expected_share_values = 3 if explicit_total_shares_column else 2
+                for value in compact[1:]:
+                    normalized_value = value.strip()
+                    if normalized_value in {"-", "\u2014", "\u2013", "\u200b"}:
+                        explicit_column_share_values.append(0.0)
+                    elif re.fullmatch(
+                        r"[0-9][0-9,]*(?:\.[0-9]+)?", normalized_value
+                    ):
+                        parsed_value = _number(normalized_value)
+                        if parsed_value is not None:
+                            explicit_column_share_values.append(parsed_value)
+                    if len(explicit_column_share_values) == expected_share_values:
+                        break
+                if explicit_column_share_values:
+                    current_column_shares = explicit_column_share_values[0]
+                if current_column_shares is None:
+                    continue
+            shares = float(
+                current_column_shares
+                if current_column_shares is not None
+                else numeric[0]
+            )
+            exact_current_shares = _exact_current_shares_from_footnote(
+                shares, footnote
+            )
+            named_component_current: float | None = None
+            if named_acquirable_components and not separates_current_and_acquirable_shares:
+                holder_key = normalized_name_key(holder_name)
+                if row_category == "AGGREGATE_GROUP":
+                    named_acquirable = sum(named_acquirable_components.values())
+                else:
+                    named_acquirable = next(
+                        (
+                            value for key, value in named_acquirable_components.items()
+                            if key == holder_key or key in holder_key or holder_key in key
+                        ),
+                        0.0,
+                    )
+                if named_acquirable <= shares:
+                    named_component_current = shares - named_acquirable
+                    exact_current_shares = named_component_current
+            row_option_context = footnote or table_option_context
             currently_issued_component_unresolved = bool(
                 not separates_current_and_acquirable_shares
-                and re.search(
-                    r"\bshares?\b.{0,100}?\bissuable\s+within\s+\d+\s+days\b|"
-                    r"\bshares?\b.{0,100}?\bunderlying\s+exercisable\s+"
-                    r"(?:stock\s+)?options?\b|"
-                    r"\bexercis(?:e|able).{0,100}?\boptions?\b",
-                    table_option_context,
-                    re.I,
+                and exact_current_shares is None
+                and _has_position_specific_acquirable_disclosure(
+                    row_option_context
                 )
             )
+            if exact_current_shares is not None:
+                shares = exact_current_shares
             percent = (
                 float(numeric[-1])
                 if len(numeric) > 1
@@ -835,25 +1382,41 @@ def _proxy_rows(
                 and re.search(r"(?:Percent(?:age)?|%)", table_text, re.I)
                 else None
             )
+            reported_beneficial_total_shares = float(numeric[0])
+            if separates_current_and_acquirable_shares:
+                reported_beneficial_total_shares = float(
+                    explicit_column_share_values[2]
+                    if explicit_total_shares_column
+                    and len(explicit_column_share_values) >= 3
+                    else sum(explicit_column_share_values[:2])
+                )
             attrs = {
                 "holder_cik": None,
                 "holder_name": holder_name,
                 "holding_type": "NON_DERIVATIVE_REPORTED_BENEFICIAL",
                 "direct_or_indirect": None,
-                "security_title": "MULTI_CLASS_ORDINARY_SHARES" if multi_class else "Common Stock",
+                "security_title": (
+                    "MULTI_CLASS_ORDINARY_SHARES"
+                    if row_requires_class_allocation
+                    else "Common Stock"
+                ),
                 "reported_percent": percent,
+                "reported_beneficial_total_shares": (
+                    reported_beneficial_total_shares
+                ),
                 "holder_category": row_category,
                 "footnote_marker": marker.group(1) if marker else None,
                 "footnote_text": footnote,
                 "footnote_texts": [footnote] if footnote else [],
                 "supported_issued_common_shares": (
                     None
-                    if multi_class or currently_issued_component_unresolved
+                    if row_requires_class_allocation
+                    or currently_issued_component_unresolved
                     else shares
                 ),
                 "ownership_component_state": (
                     "MULTI_CLASS_ALLOCATION_REQUIRED"
-                    if multi_class
+                    if row_requires_class_allocation
                     else (
                         "CURRENTLY_ISSUED_COMPONENT_UNRESOLVED"
                         if currently_issued_component_unresolved
@@ -865,9 +1428,20 @@ def _proxy_rows(
                     or re.search(r"\bsponsor\b", footnote or "", re.I)
                 ),
                 "table_class_basis": (
-                    "MULTI_CLASS_ORDINARY_SHARES" if multi_class else "SINGLE_OR_UNSPECIFIED"
+                    "MULTI_CLASS_ORDINARY_SHARES"
+                    if row_requires_class_allocation
+                    else "SINGLE_OR_UNSPECIFIED"
                 ),
                 "measurement_date_basis": measurement_basis,
+                "current_share_selection_state": (
+                    "EXPLICIT_CURRENT_SHARES_COLUMN"
+                    if separates_current_and_acquirable_shares
+                    else "EXHAUSTIVE_NAMED_ACQUIRABLE_COMPONENT_LIST"
+                    if named_component_current is not None
+                    else "EXACT_FOOTNOTE_COMPONENT_DECOMPOSITION"
+                    if exact_current_shares is not None
+                    else "TABLE_TOTAL_REQUIRES_COMPONENT_POLICY"
+                ),
             }
             results.append(
                 SourceObservation(
@@ -899,10 +1473,10 @@ def _proxy_rows(
                     source_url=source_url,
                     source_sha256=source_sha256,
                     source_excerpt=" ".join(cells)[:1000],
-                    extraction_method="SEC_PROXY_OWNERSHIP_TABLE_V0_4",
+                    extraction_method="SEC_PROXY_OWNERSHIP_TABLE_V0_5",
                     quality_state=(
                         "CANDIDATE_REQUIRES_CLASS_ALLOCATION"
-                        if multi_class
+                        if row_requires_class_allocation
                         else "CANDIDATE_REQUIRES_OVERLAP_RESOLUTION"
                     ),
                     causality_state=availability.state,
@@ -1093,9 +1667,3 @@ def extract_holder_class_components(
             }
         )
     return components
-
-
-
-
-
-

@@ -155,3 +155,29 @@ manifests historicos inmutables.
   the SEC PIT leaf, update its `BUILD_MANIFEST.md`, verify queries for ownership
   baseline/parser/split/identity/float, and include it in the controlled root
   reconstruction without treating runtime artifacts as authority.
+
+### GFQ-20260813-FOUNDATIONS-SEC-SHARE-CLASS-V021-001 - Exact share-class recovery v0.21
+
+- **Estado:** `pending`
+- **Fecha:** `2026-08-13`
+- **Severidad:** `HIGH`
+- **Scope:** SEC PIT owner-exclusion exact share-class parsing and governed
+  coverage authority after the v0.21 four-shard rerun.
+- **Leaf objetivo:** `foundations_authority` / SEC PIT inspection dossier leaf.
+- **Archivos afectados:**
+  `01_TSIS_DATA_FOUNDATION/scripts/sec_pit/ownership_v2.py`,
+  `01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_ownership_v2.py`,
+  `01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_EXACT_SHARE_CLASS_RECOVERY_AND_V0_21_READOUT_v0_1.md`,
+  the SEC PIT dossier `README.md`, and the Data Foundation changelogs.
+- **Motivo pendiente:** v0.21 introduced exact current/acquirable-column
+  handling, explicit missing-versus-zero semantics, local share-class context,
+  aligned multi-class rows and named acquirable-component subtraction. It
+  supersedes the over-permissive v0.19 coverage and rejects v0.20 as
+  non-authoritative. The leaf was not rebuilt in this work because a coordinated
+  Graphify refresh remains pending and Trading Activity materialization is live.
+- **Evidence state:** four production-equivalent shard probes and the governed
+  99-case rerun passed; current authority is 71/99 complete O/S and 28/99
+  complete owner-exclusion float. Scale to 4,824 remains unauthorized.
+- **Cierre esperado:** rebuild and diagnose the SEC PIT leaf, update its
+  `BUILD_MANIFEST.md`, and verify explain/query coverage for exact share class,
+  named acquirable components, missing-versus-zero and fail-closed ownership.

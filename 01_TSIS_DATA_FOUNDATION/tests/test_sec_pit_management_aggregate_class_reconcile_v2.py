@@ -54,3 +54,74 @@ def test_multiclass_management_aggregate_uses_exact_atomic_class_sum() -> None:
     )
     assert group["attributes"]["supported_issued_common_shares"] == 0
     assert readout["unresolved_aggregate_group_rows"] == 0
+
+
+def test_single_class_aggregate_uses_atomic_current_sum_only_when_totals_close() -> None:
+    director_one = proxy("Director One", "OFFICER_OR_DIRECTOR")
+    director_one["value"] = 40.0
+    director_one["attributes"].update({
+        "supported_issued_common_shares": 40.0,
+        "security_title": "Common Stock",
+        "table_class_basis": "SINGLE_OR_UNSPECIFIED",
+        "reported_beneficial_total_shares": 60.0,
+    })
+    director_two = proxy("Director Two", "OFFICER_OR_DIRECTOR")
+    director_two["value"] = 30.0
+    director_two["attributes"].update({
+        "supported_issued_common_shares": 30.0,
+        "security_title": "Common Stock",
+        "table_class_basis": "SINGLE_OR_UNSPECIFIED",
+        "reported_beneficial_total_shares": 40.0,
+    })
+    aggregate = proxy("All directors and officers as a group", "AGGREGATE_GROUP")
+    aggregate["value"] = 100.0
+    aggregate["attributes"].update({
+        "security_title": "Common Stock",
+        "table_class_basis": "SINGLE_OR_UNSPECIFIED",
+        "reported_beneficial_total_shares": 100.0,
+    })
+    reconciled, readout = reconcile_multiclass_proxy_positions(
+        proxy_observations=[director_one, director_two, aggregate],
+        class_components=[],
+        target_class_label="Common Stock",
+    )
+    group = next(
+        row
+        for row in reconciled
+        if row["attributes"]["holder_category"] == "AGGREGATE_GROUP"
+    )
+    assert group["attributes"]["supported_issued_common_shares"] == 70.0
+    assert group["attributes"]["ownership_component_state"] == (
+        "EXACT_MULTI_CLASS_MANAGEMENT_AGGREGATE_RESOLVED"
+    )
+    assert readout["unresolved_aggregate_group_rows"] == 0
+
+
+def test_single_class_aggregate_does_not_resolve_when_atomic_totals_do_not_close() -> None:
+    director = proxy("Director One", "OFFICER_OR_DIRECTOR")
+    director["value"] = 40.0
+    director["attributes"].update({
+        "supported_issued_common_shares": 40.0,
+        "security_title": "Common Stock",
+        "table_class_basis": "SINGLE_OR_UNSPECIFIED",
+        "reported_beneficial_total_shares": 60.0,
+    })
+    aggregate = proxy("All directors and officers as a group", "AGGREGATE_GROUP")
+    aggregate["value"] = 100.0
+    aggregate["attributes"].update({
+        "security_title": "Common Stock",
+        "table_class_basis": "SINGLE_OR_UNSPECIFIED",
+        "reported_beneficial_total_shares": 100.0,
+    })
+    reconciled, readout = reconcile_multiclass_proxy_positions(
+        proxy_observations=[director, aggregate],
+        class_components=[],
+        target_class_label="Common Stock",
+    )
+    group = next(
+        row
+        for row in reconciled
+        if row["attributes"]["holder_category"] == "AGGREGATE_GROUP"
+    )
+    assert group["attributes"]["supported_issued_common_shares"] is None
+    assert readout["unresolved_aggregate_group_rows"] == 1

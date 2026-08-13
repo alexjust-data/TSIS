@@ -1,3 +1,37 @@
+## 2026-08-13 | SEC PIT exact share-class authority v0.21
+
+- Rejected completed diagnostic v0.20 after its immutable delta audit exposed semantic coverage regressions; runtime completion was not treated as correctness.
+- Added exact multi-class colspan alignment, explicit missing-versus-zero handling, exhaustive named acquirable-component subtraction and local class-context rules.
+- Passed one production-equivalent probe on every shard plus the complete SEC PIT suite, then completed and audited immutable v0.21 at 99/99 O/S and ownership with zero failures/network requests.
+- Preserved O/S at 71/99 and established safe owner-exclusion float at 28/99; corrected four over-permissive v0.19 calculations and recovered BNED while retaining PTE through exact closure.
+- Kept the 4,824-instrument diagnostic unlaunched and automatic promotion unauthorized.
+- Added an exact power-loss handoff: terminal artifact paths and hashes, executed source/test identities, branch/dirty-tree warning and the instruction to fork a new version rather than resume completed v0.21.
+
+## 2026-08-13 | SEC PIT O/S and paired-overlap recovery and authoritative v0.19
+
+- Added exact, evidence-bound O/S extraction/admission for residual cover layouts and archive-CIK plus exchange-class continuity; ambiguous classes and unsupported units remain fail-closed.
+- Added methodology-scoped source-described holder-account and economic-position identities without inferring anonymous spouse/entity relationships or cross-filing temporal equivalence.
+- Passed production-equivalent probes on all four governed shards, then completed immutable v0.19 at 99/99 O/S plus 99/99 ownership, zero failures and zero network requests.
+- Increased O/S-complete coverage from 56/99 to 71/99 and complete owner-exclusion float from 16/99 to 31/99 with zero case-level regressions.
+- Reduced `SHARES_OUTSTANDING_UNAVAILABLE` 17→6, `HOLDER_OVERLAP_UNRESOLVED` 21→5 and `ECONOMIC_POSITION_OVERLAP_UNRESOLVED` 20→4; persisted the measured residuals and downstream blocker exposure.
+- Did not launch the 4,824-instrument diagnostic. Future long runs are operator-launched from an exact one-line command supplied by the agent.
+
+## 2026-08-13 | SEC PIT instrument-interval gate and authoritative v0.18
+
+- Classified all 25 `INSTRUMENT_INTERVAL_CONFLICT` cases across 355 document candidates and implemented generic issuer/class continuity plus explicit non-target rejection semantics.
+- Rejected diagnostic v0.17 after four identity regressions, corrected them with dedicated microprobes and repeated the mandatory production-equivalent certification on all four shards.
+- Completed immutable v0.18 at 99/99 O/S plus 99/99 ownership, zero failures and zero network requests; the 99-case integrity/causality/schema audit is PASS.
+- Reduced `INSTRUMENT_INTERVAL_CONFLICT` from 25 to zero without changing O/S (56/99) or complete owner-exclusion float (16/99); later O/S, overlap, split and post-baseline blockers are now measured explicitly.
+- Did not launch the 4,824-instrument diagnostic by explicit operator direction; automatic institutional promotion remains unauthorized.
+
+## 2026-08-13 | SEC PIT share-class recovery gate and authoritative v0.16
+
+- Classified all 28 original share-class blocker cases and implemented only generic, exact-closing ownership parsing and reconciliation rules.
+- Passed the production-equivalent certification on all four governed shards with equivalent schemas and component hashes; the focused SEC PIT suite passed 243 tests.
+- Completed immutable v0.16 at 99/99 O/S plus 99/99 ownership, zero failures and zero network requests; O/S remains 56/99 and complete owner-exclusion float rises from 15/99 to 16/99.
+- Reduced `SHARE_CLASS_ALLOCATION_UNRESOLVED` from 28 to 26 while preserving honest fail-closed residuals; `INSTRUMENT_INTERVAL_CONFLICT` remains open at 25 cases and continues to block the 4,824 diagnostic run.
+- Declared v0.14 non-authoritative because Company Facts was omitted at launch; v0.16 is the sole final authority for this correction loop.
+
 ## 2026-08-12 | SEC PIT 100-case stratified scale gate and acquisition recovery
 
 - Froze an exact 100-case sample from the 4,824-instrument authority with balanced four-shard allocation, explicit lifecycle/document strata and coverage of every year from 2005 through 2025.

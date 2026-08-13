@@ -23,6 +23,22 @@ def shard_for(instrument_id: str, count: int) -> int:
     return int(hashlib.sha256(instrument_id.encode()).hexdigest(), 16) % count
 
 
+def select_cases(
+    cases: list[dict[str, Any]], tickers: list[str] | None
+) -> list[dict[str, Any]]:
+    if not tickers:
+        return cases
+    requested = {ticker.upper() for ticker in tickers}
+    selected = [
+        case for case in cases if str(case["ticker"]).upper() in requested
+    ]
+    found = {str(case["ticker"]).upper() for case in selected}
+    missing = sorted(requested - found)
+    if missing:
+        raise ValueError(f"requested tickers absent from case matrix: {missing}")
+    return selected
+
+
 def audit_daily_frames(
     daily_os: pd.DataFrame,
     daily_float: pd.DataFrame,
@@ -102,7 +118,9 @@ def audit_daily_frames(
 
 def execute(args: argparse.Namespace) -> Path:
     case_matrix_path = args.case_matrix.resolve()
-    cases = json.loads(case_matrix_path.read_text(encoding="utf-8"))
+    cases = select_cases(
+        json.loads(case_matrix_path.read_text(encoding="utf-8")), args.ticker
+    )
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=False)
     rows: list[dict[str, Any]] = []
@@ -226,6 +244,7 @@ def execute(args: argparse.Namespace) -> Path:
         "component_hashes_equivalent_across_cases": len(component_hashes) == 1,
         "case_matrix_path": case_matrix_path.as_posix(),
         "case_matrix_sha256": sha256_file(case_matrix_path),
+        "selected_tickers": sorted(str(case["ticker"]) for case in cases),
         "scale_authorization": "NOT_GRANTED_REQUIRES_HUMAN_OR_GOVERNED_GATE",
     }
     (output / "certification.json").write_text(
@@ -252,6 +271,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--os-run-template", required=True)
     parser.add_argument("--owner-run-template", required=True)
     parser.add_argument("--shard-count", type=int, default=4)
+    parser.add_argument("--ticker", action="append")
     parser.add_argument("--output", type=Path, required=True)
     return parser.parse_args()
 

@@ -1,3 +1,39 @@
+## Pending - 2026-08-13 - HIGH - SEC PIT O/S and paired-overlap recovery and v0.19 authority
+
+- **ID:** `GFQ-20260813-FOUNDATIONS-SEC-OS-OVERLAP-V019-001`
+- **Estado:** pending
+- **Fecha:** 2026-08-13
+- **Severidad:** HIGH
+- **Scope:** exact residual O/S extraction/admission, source-described holder-account and economic-position identity, four-shard certifications, authoritative v0.19 coverage, measured residuals and operator-launched long-run rule
+- **Leaf objetivo:** foundations_authority / SEC PIT inspection dossiers and ownership resolution control plane
+- **Archivos afectados:** `SEC_PIT_OS_AND_OVERLAP_RECOVERY_AND_V0_19_READOUT_v0_1.md`; SEC PIT dossier `README.md`; `class_os_extract_v3.py`, `class_os_admission_v3.py`, `holders_v4.py`, no-network probe runners and recovery auditors; dedicated tests and certification assets; both Data Foundation changelogs.
+- **Motivo:** the work changes governed O/S admission and ownership-overlap semantics plus the authoritative bounded coverage state. The official Graphify rebuild is deferred because Trading Activity remains active and a rebuild would compete for RAM/I/O; this is the single persisted Graphify closeout entry for the coordinated O/S-plus-overlap v0.19 work.
+- **Cierre esperado:** rebuild the affected official Foundations SEC PIT leaf, run Graphify diagnostics and update its `BUILD_MANIFEST.md` before resolving this entry.
+
+## Pending - 2026-08-13 - HIGH - SEC PIT instrument-interval recovery and v0.18 authority
+
+- **ID:** `GFQ-20260813-FOUNDATIONS-SEC-INTERVAL-V018-001`
+- **Estado:** pending
+- **Fecha:** 2026-08-13
+- **Severidad:** HIGH
+- **Scope:** 25-case instrument-interval classification, governed issuer/class continuity, explicit non-target document rejection, Schedule cover parsing, four-shard recertification, authoritative v0.18 and downstream blocker interpretation
+- **Leaf objetivo:** foundations_authority / SEC PIT inspection dossiers and ownership resolution control plane
+- **Archivos afectados:** `SEC_PIT_INSTRUMENT_INTERVAL_RECOVERY_AND_V0_18_READOUT_v0_1.md`; SEC PIT dossier `README.md`; `ownership_identity.py`, `ownership_v2.py`, owner resolver and interval audit code; dedicated tests and certification assets; both Data Foundation changelogs.
+- **Motivo:** the work changes governed identity-admission semantics and the authoritative scale-gate state. The official Graphify rebuild is deferred because Trading Activity remains active and a Graphify rebuild would compete for RAM/I/O; this entry is the single persisted Graphify closeout for the interval-v0.18 work.
+- **Cierre esperado:** rebuild the affected official Foundations SEC PIT leaf, run Graphify diagnostics and update its `BUILD_MANIFEST.md` before resolving this entry.
+
+## Pending - 2026-08-13 - HIGH - SEC PIT share-class recovery and v0.16 authority
+
+- **ID:** `GFQ-20260813-FOUNDATIONS-SEC-SHARE-CLASS-V016-001`
+- **Estado:** pending
+- **Fecha:** 2026-08-13
+- **Severidad:** HIGH
+- **Scope:** classified share-class blocker families, generic current/acquirable/total ownership semantics, exact aggregate closure, four-shard certification, authoritative v0.16 coverage and the remaining instrument-interval scale gate
+- **Leaf objetivo:** foundations_authority / SEC PIT inspection dossiers and ownership resolution control plane
+- **Archivos afectados:** `SEC_PIT_SHARE_CLASS_RECOVERY_AND_V0_16_READOUT_v0_1.md`; SEC PIT dossier `README.md`; ownership/parser/reconciliation/certification scripts and dedicated tests; `01_foundations/CHANGELOG.md`; `01_TSIS_DATA_FOUNDATION/CHANGELOG.md`.
+- **Motivo:** the work changes governed SEC PIT semantics and the authoritative scale-gate state. The official Graphify rebuild is deferred while long-running Trading Activity work and the next SEC interval correction loop remain active, avoiding unnecessary RAM/I/O competition.
+- **Cierre esperado:** rebuild the affected official Foundations SEC PIT leaf, run Graphify diagnostics and update its `BUILD_MANIFEST.md` before resolving this entry.
+
 ## Pending - 2026-08-12 - HIGH - SEC PIT 100-case stratified scale gate
 
 - **Estado:** pending
@@ -5728,6 +5764,33 @@ The refresh does not claim official promotion of candidate datasets, production
 ML/RL/AlphaEvolve enablement, or validation against full real tables where the
 source contracts only declare controlled fixtures/candidates.
 ```
+## GFQ-20260813-FOUNDATIONS-SEC-SHARE-CLASS-V021-001 - Exact share-class authority v0.21
+
+Status: pending
+Date: 2026-08-13
+Severity: HIGH
+Leaf target: foundations_authority / SEC PIT inspection dossier
+
+Affected scope:
+
+- `scripts/sec_pit/ownership_v2.py`;
+- `tests/test_sec_pit_ownership_v2.py`;
+- `inspection_dossiers/sec_pit/SEC_PIT_EXACT_SHARE_CLASS_RECOVERY_AND_V0_21_READOUT_v0_1.md`;
+- `inspection_dossiers/sec_pit/README.md`;
+- local and parent changelogs.
+
+Reason: the current semantic topology now distinguishes exact Class A/B table
+components, exhaustive named acquirable components, missing versus explicit
+zero class cells, and local versus document-wide class context. It also
+supersedes v0.19 coverage authority and records v0.20 as a rejected diagnostic.
+No isolated Graphify refresh was executed because the Foundations SEC PIT leaf
+already has coordinated pending rebuild work and the Trading Activity
+materialization remains active.
+
+Required action: rebuild and diagnose the Foundations/SEC PIT leaf, update its
+`BUILD_MANIFEST.md`, supersede stale coverage nodes and include the refreshed
+leaf in the next governed root merge.
+
 ## GFQ-20260811-FOUNDATIONS-SEC-PGAC-OS-001 - PGAC O/S schema and evidence
 
 Status: pending

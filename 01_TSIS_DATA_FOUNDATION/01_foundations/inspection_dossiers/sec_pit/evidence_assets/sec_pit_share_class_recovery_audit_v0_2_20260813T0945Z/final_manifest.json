@@ -1,0 +1,37 @@
+{
+  "acquisition_ledger_path": "C:/TSIS_Data/runtime/sec_pit_100_case_scale_gate_v0_1/bounded_probe_authorized_v0_4_20260812T0530Z/combined_acquisition_ledger.jsonl",
+  "acquisition_ledger_sha256": "f403107b6cdcda1e5f95a600df2d2e981ae64de2be0b8db04eb977f0c8fa321d",
+  "candidate_count": 97,
+  "case_count": 28,
+  "checks": {
+    "all_cases_have_explicit_classification": true,
+    "all_cases_have_zero_selected_baselines": true,
+    "all_source_manifests_hash_verified": true,
+    "share_class_case_count_is_28": true
+  },
+  "classification_counts": {
+    "GENERIC_EXPLICIT_COLUMN_RECOVERY_CANDIDATE": 1,
+    "GENERIC_FOOTNOTE_COMPONENT_RECOVERY_CANDIDATE": 7,
+    "MIXED_BLOCKERS": 8,
+    "TRUE_EVIDENCE_GAP_OR_CORRECT_FAIL_CLOSED_REVIEW": 2,
+    "TRUE_MULTI_CLASS_EVIDENCE_REQUIRED": 10
+  },
+  "created_at_utc": "2026-08-13T09:38:37.992665+00:00",
+  "direct_recovery_candidate_count": 20,
+  "mode": "NO_NETWORK_IMMUTABLE_RUN_AUDIT",
+  "network_requests": 0,
+  "os_complete_case_count": 11,
+  "output_files": {
+    "share_class_recovery_candidate_matrix.csv": {
+      "rows": 97,
+      "sha256": "736b5c0257343380b8811d53ca1c25166c74387af9332090f8ad5b3ceb2336ff"
+    },
+    "share_class_recovery_case_matrix.csv": {
+      "rows": 28,
+      "sha256": "9fef8c60a1ae77d2e31b8588e5c4cb152cc3a923810450c633927627d3246ed9"
+    }
+  },
+  "policy_id": "sec_pit_share_class_recovery_audit_v0_1",
+  "runs_root": "C:/TSIS_Data/runtime/sec_pit_100_case_resolution_v0_13/runs",
+  "status": "PASS"
+}

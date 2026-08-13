@@ -20,11 +20,13 @@ if str(SCRIPTS) not in sys.path:
 from sec_pit.availability import EdgarAvailabilityPolicy
 from sec_pit.class_os_extract_v2 import (
     COMMON_EQUITY_CLASS_CANDIDATE,
-    admit_target_instrument_document,
-    extract_cover_page_class_os_v0_2,
-    resolve_common_equity_class_candidate,
     strip_instrument_class_suffix,
 )
+from sec_pit.class_os_admission_v3 import (
+    admit_target_instrument_document_v0_3,
+    resolve_common_equity_class_candidate_v0_3,
+)
+from sec_pit.class_os_extract_v3 import extract_cover_page_class_os_v0_3
 from sec_pit.class_os_reconcile_v2 import reconcile_class_os_anchors_v0_3
 from sec_pit.companyfacts_reconcile import (
     promote_companyfacts_validated_primary_anchors,
@@ -135,10 +137,13 @@ def execute(
     run_root.mkdir(parents=True)
     component_paths = [
         Path(__file__).resolve(),
+        SCRIPTS / "sec_pit" / "class_os_admission_v3.py",
         SCRIPTS / "sec_pit" / "class_os_extract_v2.py",
+        SCRIPTS / "sec_pit" / "class_os_extract_v3.py",
         SCRIPTS / "sec_pit" / "ixbrl_class_os_extract_v2.py",
         SCRIPTS / "sec_pit" / "class_os_reconcile_v2.py",
         SCRIPTS / "sec_pit" / "companyfacts_reconcile.py",
+        SCRIPTS / "sec_pit" / "ownership_identity.py",
         SCRIPTS / "sec_pit" / "resolver.py",
     ]
     metadata_path = Path(
@@ -214,24 +219,28 @@ def execute(
             raise ValueError(f"payload byte mismatch for {row['accession_number']}")
         effective_target_class_label = case["target_class_label"]
         if effective_target_class_label == COMMON_EQUITY_CLASS_CANDIDATE:
-            resolved_label, decision = resolve_common_equity_class_candidate(
+            resolved_label, decision = resolve_common_equity_class_candidate_v0_3(
                 payload,
                 temporal_scope_state=row["temporal_scope_state"],
                 accession_link_state=row["accession_link_state"],
                 registrant_name=case["issuer_name"],
                 ticker=ticker,
+                target_cik=str(case["cik"]),
+                source_url=str(row["primary_document_url"]),
             )
             if resolved_label is not None:
                 effective_target_class_label = resolved_label
                 resolved_target_class_labels.add(resolved_label)
         else:
-            decision = admit_target_instrument_document(
+            decision = admit_target_instrument_document_v0_3(
                 payload,
                 temporal_scope_state=row["temporal_scope_state"],
                 accession_link_state=row["accession_link_state"],
                 registrant_name=case["issuer_name"],
                 ticker=ticker,
                 target_class_label=effective_target_class_label,
+                target_cik=str(case["cik"]),
+                source_url=str(row["primary_document_url"]),
             )
         effective_decision = decision.decision
         effective_reason = decision.reason
@@ -278,7 +287,7 @@ def execute(
         raw_observations.extend(
             asdict(item)
             for item in [
-                *extract_cover_page_class_os_v0_2(payload, **kwargs),
+                *extract_cover_page_class_os_v0_3(payload, **kwargs),
                 *extract_ixbrl_class_os_v0_2(payload, **kwargs),
             ]
         )

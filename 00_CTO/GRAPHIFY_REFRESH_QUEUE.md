@@ -206,6 +206,17 @@ than rebuilding a moving, dirty corpus.
 
 ### GFQ-20260811-001 - Trading Activity Stage-8 C++ recovery and equivalence gate
 
+## GFQ-20260812-CTO-SCREENER-L1-001 - Layer 1 initial idea
+
+- **Estado:** pending
+- **Fecha:** 2026-08-12
+- **Severidad:** MEDIUM
+- **Scope:** idea inicial de Layer 1 - Daily Eligible Universe basada en market-cap proxy PIT.
+- **Leaf objetivo:** 00_CTO/15_SCREENER_ENGINE/01_LAYER_1.
+- **Archivos afectados:** 15_SCREENER_ENGINE/01_LAYER_1/initial_idea.MD.
+- **Motivo:** se incorpora al corpus la distincion entre universo experimental basado en weighted-average shares y futuro universo basado en O/S SEC PIT. No se ejecuto refresh oficial porque el documento es una idea inicial no autoritativa y existen trabajos largos activos.
+- **Cierre esperado:** incluir el documento al construir o actualizar el leaf oficial del Screener Engine, ejecutar diagnosticos y actualizar BUILD_MANIFEST.md.
+
 Status: pending
 Severity: HIGH
 Date: 2026-08-11
@@ -3027,3 +3038,14 @@ governed CTO graph window. No official Graphify leaf rebuild was executed.
 - **Cierre esperado:** rebuild and diagnose the SEC PIT Fundamental Context
   leaf, update `BUILD_MANIFEST.md` and replace its slice in the next official
   root merge.
+
+## GFQ-20260812-CTO-SCREENER-ENGINE-001 - Screener Engine architecture draft
+
+- **Estado:** pending
+- **Fecha:** 2026-08-12
+- **Severidad:** HIGH
+- **Scope:** nueva conceptualizacion transversal de Screener Engine y frontera de consumo por Backtest Engine.
+- **Leaf objetivo:** `00_CTO/15_SCREENER_ENGINE` y relaciones con Backtest, Market Science Scanner Candidate Selection y Data Foundation.
+- **Archivos afectados:** `15_SCREENER_ENGINE/SCREENER_ENGINE_ARCHITECTURE_PROPOSAL_v0_1.md`, `15_SCREENER_ENGINE/EVIDENCE_INDEX.md`, paquete ZIP y `00_CTO/CHANGELOG.md`.
+- **Motivo:** el draft introduce un owner conceptual propuesto, separa el `Daily Eligible Universe` generalista de una familia de scanners In-Play por estrategia y recomienda un runtime independiente. No se ejecuto refresh oficial porque el documento permanece `draft_for_human_review` y requiere decision humana antes de promover estructura, naming o contratos.
+- **Cierre esperado:** tras aprobacion, construir o actualizar el leaf oficial, ejecutar diagnosticos, resolver duplicidad/supersession con `00_CTO/11/.../00_SCANNER_CANDIDATE_SELECTION` y actualizar su `BUILD_MANIFEST.md`.

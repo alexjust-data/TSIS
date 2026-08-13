@@ -1,3 +1,30 @@
+## 2026-08-13 | SEC PIT exact share-class recovery and v0.21 authority
+
+- Promoted the audited v0.21 SEC PIT result as current authority after rejecting v0.20 on semantic delta regression.
+- Current measured coverage is 71/99 complete O/S and 28/99 exact owner-exclusion float; prior higher v0.19 float coverage included four positions that do not satisfy exact current-share/class closure.
+- Preserved all unresolved positions as `NULL + blocker`, completed four-shard certification and kept the 4,824-instrument run unlaunched.
+- Persisted a power-loss recovery checkpoint with exact batch/audit/certification paths, hashes, branch and uncommitted-working-tree state; corrected the measured `BASELINE_DOCUMENT_PARTIAL` residual to 2.
+
+## 2026-08-13 | SEC PIT O/S and paired-overlap recovery and authoritative v0.19
+
+- Certified exact residual O/S and source-described holder/economic-position overlap semantics on all four governed shards before the immutable 99-case rerun.
+- Authoritative v0.19 completed 99/99 O/S and ownership executions with zero failures/network requests and passed the 99-case integrity, schema, formula and PIT certification.
+- O/S-complete coverage rises 56/99 -> 71/99 and owner-exclusion float 16/99 -> 31/99 with no regressions; the three target blocker cohorts fall 17 -> 6, 21 -> 5 and 20 -> 4.
+- Kept unresolved class, split, post-baseline, anonymous-account and evidence-conflict cases explicitly NULL; 4,824 execution and automatic promotion remain unauthorized.
+- Recorded that future long operations are launched by the human operator from the exact command supplied by the agent.
+
+## 2026-08-13 | SEC PIT instrument-interval recovery and v0.18 authority
+
+- Closed the bounded instrument-interval gate with classification evidence, generic identity/class rules, four-shard recertification and an immutable 99-case rerun.
+- Reduced `INSTRUMENT_INTERVAL_CONFLICT` from 25/99 to 0/99 while preserving O/S at 56/99 and complete owner-exclusion float at 16/99; genuine downstream blockers remain explicit and fail-closed.
+- Recorded that the 4,824-instrument diagnostic was not launched and now requires a deliberate future operator action; institutional promotion remains unauthorized.
+
+## 2026-08-13 | SEC PIT share-class recovery and v0.16 bounded authority
+
+- Promoted the completed share-class correction loop to a versioned Data Foundation readout backed by classification, four-shard certification, immutable rerun and result-audit hashes.
+- Preserved O/S at 56/99 and raised owner-exclusion-float completeness to 16/99 without regressions among the prior 15 calculated cases.
+- Kept 26 share-class cases explicit and fail-closed, and retained the 4,824 execution block until the separate 25-case instrument-interval gate passes.
+
 ## 2026-08-12 | Minimal SEC PIT 100-case external audit package v0.4
 
 - Added a versioned 12-entry external handoff containing the authoritative 100-case readout, multi-evidence O/S certification, governing contracts, output schema and minimum machine-readable v0.5 evidence.

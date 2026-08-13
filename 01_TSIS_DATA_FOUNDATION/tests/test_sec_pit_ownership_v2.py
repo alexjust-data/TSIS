@@ -306,16 +306,46 @@ def test_proxy_accepts_single_class_aggregate_table_without_owner_name_header() 
     assert aggregate.attributes["table_class_basis"] == "SINGLE_OR_UNSPECIFIED"
 
 
-def test_generic_single_class_family_stays_closed_for_multiclass_table() -> None:
+def test_generic_multiclass_table_emits_exact_components_without_summing_class() -> None:
     payload = b"""
     <p>Security Ownership of Certain Beneficial Owners and Management.</p>
     <table>
-      <tr><th>Name</th><th>Class A Number of Shares</th><th>Class B Number of Shares</th><th>Percentage</th></tr>
+      <tr><th>Name of Beneficial Owner</th><th>Class A Number of Shares</th><th>Class B Number of Shares</th><th>Percentage</th></tr>
       <tr><td>All directors and executive officers as a group</td><td>100</td><td>900</td><td>10.0</td></tr>
     </table>
     """
     rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
-    assert rows == []
+    assert len(rows) == 1
+    assert rows[0].attributes["supported_issued_common_shares"] is None
+    assert rows[0].attributes["reported_class_components"] == [
+        {"security_class_title": "Class A shares", "shares": 100.0},
+        {"security_class_title": "Class B shares", "shares": 900.0},
+    ]
+
+
+def test_spacer_heavy_multiclass_table_preserves_explicit_zero_component() -> None:
+    payload = b"""
+    <p>Security Ownership of Certain Beneficial Owners and Management.</p>
+    <p>Beneficial ownership as of April 20, 2023.</p>
+    <table>
+      <tr><th>Name and Address of Beneficial Owner</th>
+          <th colspan="6">Class A Ordinary Shares</th><th></th>
+          <th colspan="6">Class B Ordinary Shares</th></tr>
+      <tr><th></th><th colspan="2">Beneficially Owned</th><th></th><th></th>
+          <th colspan="2">Approximate Percentage</th><th></th>
+          <th colspan="2">Beneficially Owned</th><th></th><th></th>
+          <th colspan="2">Approximate Percentage</th></tr>
+      <tr><td>Example Sponsor LP (1)</td>
+          <td></td><td>&#8212;</td><td></td><td></td><td></td><td>&#8212;</td><td></td>
+          <td></td><td>3,284,254</td><td></td><td></td><td></td><td>76.2</td><td>%</td></tr>
+    </table>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    assert len(rows) == 1
+    assert rows[0].attributes["reported_class_components"] == [
+        {"security_class_title": "Class A ordinary shares", "shares": 0.0},
+        {"security_class_title": "Class B ordinary shares", "shares": 3_284_254.0},
+    ]
 
 
 def test_proxy_accepts_strong_shares_owned_aggregate_without_document_heading() -> None:
@@ -426,6 +456,116 @@ def test_proxy_uses_current_shares_when_acquirable_column_is_separate() -> None:
     assert aggregate.attributes["ownership_component_state"] == (
         "NO_MULTI_CLASS_CONFLICT_IDENTIFIED"
     )
+    assert aggregate.attributes["current_share_selection_state"] == (
+        "EXPLICIT_CURRENT_SHARES_COLUMN"
+    )
+
+
+def test_proxy_uses_mbia_style_current_column_before_option_column() -> None:
+    payload = b"""
+    <p>Security Ownership of Management.</p>
+    <p>Beneficial ownership as of March 12, 2025.</p>
+    <table>
+      <tr><th>Name</th><th>Shares of common stock beneficially owned</th>
+          <th>Shares acquirable upon exercise of options</th>
+          <th>Total shares beneficially owned</th><th>Percent (%) of class</th></tr>
+      <tr><td>All Directors and Executive Officers as a group</td>
+          <td>7,073,843</td><td>0</td><td>7,073,843</td><td>10.35%</td></tr>
+    </table>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    aggregate = next(
+        row for row in rows
+        if row.attributes["holder_category"] == "AGGREGATE_GROUP"
+    )
+    assert aggregate.value == 7_073_843
+    assert aggregate.attributes["supported_issued_common_shares"] == 7_073_843
+
+
+def test_proxy_treats_dash_as_zero_in_explicit_current_shares_column() -> None:
+    payload = b"""
+    <p>Security Ownership of Management.</p>
+    <p>Beneficial ownership as of April 10, 2025.</p>
+    <table>
+      <tr><th>Name of Beneficial Owner</th>
+          <th>Number of Shares Beneficially Held</th>
+          <th>Number of Shares Issuable Upon Exercise of Warrants and Options</th>
+          <th>Total Shares Beneficially Owned</th><th>Shares Percent</th></tr>
+      <tr><td>All current executive officers and directors as a group</td>
+          <td>&#8212;</td><td>7,611</td><td>7,611</td><td>1.2%</td></tr>
+    </table>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    aggregate = next(
+        row for row in rows
+        if row.attributes["holder_category"] == "AGGREGATE_GROUP"
+    )
+    assert aggregate.value == 0
+    assert aggregate.attributes["supported_issued_common_shares"] == 0
+    assert aggregate.attributes["current_share_selection_state"] == (
+        "EXPLICIT_CURRENT_SHARES_COLUMN"
+    )
+
+
+def test_proxy_uses_generic_beneficially_owned_before_separate_option_column() -> None:
+    payload = b"""
+    <p>Security Ownership of Management.</p>
+    <p>Beneficial ownership as of April 10, 2025.</p>
+    <table>
+      <tr><th>Beneficial Owner</th>
+          <th>Number of Shares Beneficially Owned</th>
+          <th>Shares of common stock issuable upon exercise of stock options</th>
+          <th>Percentage of common stock Beneficially owned</th></tr>
+      <tr><td>John Cavan</td><td>-</td><td>79,056</td><td>1.4</td></tr>
+      <tr><td>All current executive officers and directors as a group</td>
+          <td>52,848</td><td>364,173</td><td>7.2</td></tr>
+    </table>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("10-K/A"))
+    john = next(row for row in rows if row.attributes["holder_name"] == "John Cavan")
+    aggregate = next(
+        row for row in rows
+        if row.attributes["holder_category"] == "AGGREGATE_GROUP"
+    )
+    assert john.value == 0
+    assert john.attributes["supported_issued_common_shares"] == 0
+    assert aggregate.value == 52_848
+    assert aggregate.attributes["reported_beneficial_total_shares"] == 417_021
+
+
+def test_proxy_uses_common_stock_outstanding_before_right_to_acquire() -> None:
+    payload = b"""
+    <p>Security Ownership of Management.</p>
+    <p>Beneficial ownership as of April 10, 2025.</p>
+    <table>
+      <tr><th>Name and Address of Beneficial Owner</th>
+          <th>Common Stock Outstanding</th><th>Right to Acquire</th>
+          <th>Total</th><th>Percentage</th></tr>
+      <tr><td>Entities affiliated with Example Advisors, Inc. (1)</td>
+          <td>-</td><td>7,472,745</td><td>7,472,745</td><td>9.99%</td></tr>
+      <tr><td>All directors and officers as a group (8 persons)</td>
+          <td>185,638</td><td>2,248,128</td><td>2,433,766</td><td>5.04%</td></tr>
+    </table>
+    <p>(1) Consists solely of warrants to acquire 7,472,745 shares.</p>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    affiliate = next(
+        row for row in rows
+        if "Example Advisors" in row.attributes["holder_name"]
+    )
+    aggregate = next(
+        row for row in rows
+        if row.attributes["holder_category"] == "AGGREGATE_GROUP"
+    )
+    assert affiliate.value == 0
+    assert affiliate.attributes["supported_issued_common_shares"] == 0
+    assert affiliate.attributes["reported_beneficial_total_shares"] == 7_472_745
+    assert aggregate.value == 185_638
+    assert aggregate.attributes["supported_issued_common_shares"] == 185_638
+    assert aggregate.attributes["reported_beneficial_total_shares"] == 2_433_766
+    assert affiliate.attributes["current_share_selection_state"] == (
+        "EXPLICIT_CURRENT_SHARES_COLUMN"
+    )
 
 
 def test_proxy_marks_unseparated_member_option_components_unresolved() -> None:
@@ -447,6 +587,118 @@ def test_proxy_marks_unseparated_member_option_components_unresolved() -> None:
     assert aggregate.attributes["ownership_component_state"] == (
         "CURRENTLY_ISSUED_COMPONENT_UNRESOLVED"
     )
+
+
+def test_proxy_resolves_exact_current_and_option_footnote_components() -> None:
+    payload = b"""
+    <p>Security Ownership of Management.</p>
+    <p>Beneficial ownership as of March 17, 2025.</p>
+    <table>
+      <tr><th>Name of Beneficial Owner</th><th>Shares Beneficially Owned</th>
+          <th>Percentage</th></tr>
+      <tr><td>Jane Director (1)</td><td>1,171,539</td><td>1.41%</td></tr>
+    </table>
+    <p>(1) Consists of 451,151 shares of our common stock held by Jane and
+    720,388 shares of our common stock issuable upon the exercise of options
+    exercisable within 60 days.</p>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    assert len(rows) == 1
+    assert rows[0].value == 451_151
+    assert rows[0].attributes["supported_issued_common_shares"] == 451_151
+    assert rows[0].attributes["current_share_selection_state"] == (
+        "EXACT_FOOTNOTE_COMPONENT_DECOMPOSITION"
+    )
+
+
+def test_proxy_keeps_partial_includes_footnote_fail_closed() -> None:
+    payload = b"""
+    <p>Security Ownership of Management.</p>
+    <p>Beneficial ownership as of March 17, 2025.</p>
+    <table>
+      <tr><th>Name of Beneficial Owner</th><th>Shares Beneficially Owned</th>
+          <th>Percentage</th></tr>
+      <tr><td>Jane Director (1)</td><td>1,171,539</td><td>1.41%</td></tr>
+    </table>
+    <p>(1) Includes 720,388 shares issuable upon exercise of options.</p>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    assert rows[0].attributes["supported_issued_common_shares"] is None
+    assert rows[0].attributes["ownership_component_state"] == (
+        "CURRENTLY_ISSUED_COMPONENT_UNRESOLVED"
+    )
+
+
+def test_proxy_resolves_exact_all_acquirable_footnote_to_zero_current() -> None:
+    payload = b"""
+    <p>Security Ownership of Management.</p>
+    <p>Beneficial ownership as of March 17, 2025.</p>
+    <table>
+      <tr><th>Name of Beneficial Owner</th><th>Shares Beneficially Owned</th>
+          <th>Percentage</th></tr>
+      <tr><td>Jane Director (1)</td><td>720,388</td><td>1.41%</td></tr>
+    </table>
+    <p>(1) Consists of 720,388 shares issuable upon exercise of options.</p>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    assert rows[0].value == 0
+    assert rows[0].attributes["supported_issued_common_shares"] == 0
+    assert rows[0].attributes["current_share_selection_state"] == (
+        "EXACT_FOOTNOTE_COMPONENT_DECOMPOSITION"
+    )
+
+
+def test_proxy_resolves_exhaustive_named_acquirable_list_and_aggregate() -> None:
+    payload = b"""
+    <p>Security Ownership of Management as of March 20, 2023.</p>
+    <table><tr><th>Name of Beneficial Owner</th><th>Shares Beneficially Owned</th><th>Percentage</th></tr>
+      <tr><td>Jane Director</td><td>20,000</td><td>1.0%</td></tr>
+      <tr><td>John Director</td><td>30,000</td><td>1.5%</td></tr>
+      <tr><td>All directors and officers as a group</td><td>50,000</td><td>2.5%</td></tr></table>
+    <p>For the following persons, the number of shares beneficially owned includes
+    the following number of shares underlying options that are exercisable within
+    60 days: Jane Director (2,000), John Director (3,000).</p>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    values = {row.attributes["holder_name"]: row.value for row in rows}
+    assert values == {"Jane Director": 18_000, "John Director": 27_000,
+                      "All directors and officers as a group": 45_000}
+
+
+def test_proxy_does_not_apply_generic_rule_13d3_option_definition_to_rows() -> None:
+    payload = b"""
+    <p>Security Ownership of Management.</p>
+    <p>Beneficial ownership as of July 26, 2024.</p>
+    <table>
+      <tr><th>Name of Beneficial Owner</th>
+          <th>Common Stock Beneficially Owned</th><th>Percent of Class</th></tr>
+      <tr><td>Jane Director (1)</td><td>18,542</td><td>*</td></tr>
+    </table>
+    <p>(1) Pursuant to SEC rules, a person is deemed a beneficial owner if the
+    person has the right to acquire shares within 60 days, including upon the
+    exercise of options or warrants.</p>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    assert rows[0].value == 18_542
+    assert rows[0].attributes["supported_issued_common_shares"] == 18_542
+    assert rows[0].attributes["ownership_component_state"] == (
+        "NO_MULTI_CLASS_CONFLICT_IDENTIFIED"
+    )
+
+
+def test_explicit_unnumbered_common_table_is_not_tainted_by_other_class_text() -> None:
+    payload = b"""
+    <p>The charter also describes Class A ordinary shares and Class B ordinary shares.</p>
+    <p>Security Ownership of Management as of April 15, 2025.</p>
+    <table>
+      <tr><th>Name of Beneficial Owner</th>
+          <th>Common Stock Beneficially Owned</th><th>Percentage</th></tr>
+      <tr><td>All directors and officers as a group</td><td>65,638</td><td>*</td></tr>
+    </table>
+    """
+    rows = extract_normalized_ownership_snapshots(payload, **context("DEF 14A"))
+    assert rows[0].attributes["supported_issued_common_shares"] == 65_638
+    assert rows[0].attributes["table_class_basis"] == "SINGLE_OR_UNSPECIFIED"
 
 
 def test_proxy_marks_table_level_option_inclusion_unresolved() -> None:
@@ -611,6 +863,41 @@ def test_schedule_xml_uses_real_class_cusip_and_iso_measurement_date() -> None:
     assert rows[0].attributes["security_title"] == "Class A ordinary shares"
 
 
+def test_schedule_html_cover_extracts_values_that_precede_labels() -> None:
+    payload = b"""
+    <html><body><table>
+      <tr><td>Overstock.com Inc.</td></tr>
+      <tr><td>(Name of Issuer)</td></tr>
+      <tr><td>Common Shares, par value $0.0001 per share</td></tr>
+      <tr><td>(Title of Class of Securities)</td></tr>
+      <tr><td>690370 10 1</td></tr>
+      <tr><td>(CUSIP Number)</td></tr>
+    </table></body></html>
+    """
+    identity = extract_document_identity(payload)
+    assert identity["issuer_name"] == "Overstock.com Inc."
+    assert identity["security_class_title"] == (
+        "Common Shares, par value $0.0001 per share"
+    )
+    assert identity["issuer_cusip"] == "690370101"
+
+
+def test_schedule_plain_text_cover_extracts_colon_values_only() -> None:
+    payload = b"""<html><body><pre>
+    UNITED STATES SECURITIES AND EXCHANGE COMMISSION
+    SCHEDULE 13D
+    Name of Issuer:  Nordic American Tanker Shipping Limited
+    Title of Class of Securities:  Common Shares
+    CUSIP Number:  G65773106
+    </pre></body></html>"""
+
+    identity = extract_document_identity(payload)
+
+    assert identity["issuer_name"] == "Nordic American Tanker Shipping Limited"
+    assert identity["security_class_title"] == "Common Shares"
+    assert identity["issuer_cusip"] == "G65773106"
+
+
 def proxy_row(name: str, shares: float, category: str, affiliate: bool = False) -> dict:
     return {
         "observation_id": name,
@@ -714,6 +1001,10 @@ def test_issuer_name_presence_ignores_vendor_security_and_jurisdiction_labels() 
     assert issuer_name_present_in_text(
         "ADEONA PHARMACEUTICALS INC (NV)",
         "Proxy Statement of Adeona Pharmaceuticals, Inc.",
+    )
+    assert issuer_name_present_in_text(
+        "Nordic American Tanker",
+        "NORDIC AMERICAN TANKERS LIMITED",
     )
 
 

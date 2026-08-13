@@ -21,6 +21,45 @@ def _group_key(row: dict[str, Any]) -> tuple[Any, ...]:
     )
 
 
+def _shared_footnote_key(rows: list[dict[str, Any]]) -> tuple[str, ...] | None:
+    keys = {
+        tuple(
+            str(value).strip()
+            for value in row.get("footnote_texts") or []
+            if str(value).strip()
+        )
+        for row in rows
+    }
+    if len(keys) != 1:
+        return None
+    key = next(iter(keys))
+    return key or None
+
+
+def _exact_aggregate_affiliate_closure(
+    aggregate_shares: float,
+    affiliates: list[dict[str, Any]],
+) -> bool:
+    """Admit only an exact, same-note nested affiliate composition.
+
+    The largest affiliate position must equal the management aggregate and the
+    remaining positive affiliate positions must independently sum to that same
+    aggregate. This is intentionally stricter than a subset-sum inference.
+    """
+    if len(affiliates) < 3 or _shared_footnote_key(affiliates) is None:
+        return False
+    values = sorted(
+        float(row.get("supported_issued_common_shares") or 0.0)
+        for row in affiliates
+        if float(row.get("supported_issued_common_shares") or 0.0) > 0
+    )
+    return bool(
+        len(values) == len(affiliates)
+        and values[-1] == aggregate_shares
+        and sum(values[:-1]) == aggregate_shares
+    )
+
+
 def build_holder_position_ledger_v0_9(
     observations: Iterable[dict[str, Any]],
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
@@ -34,6 +73,7 @@ def build_holder_position_ledger_v0_9(
     suppressed = 0
     aggregate_used = 0
     affiliate_overlap_unresolved = 0
+    affiliate_overlap_exactly_closed = 0
     for key, aggregate in aggregates.items():
         supported = aggregate.get("supported_issued_common_shares")
         aggregate["methodology_relevant"] = True
@@ -51,6 +91,17 @@ def build_holder_position_ledger_v0_9(
         )
         aggregate["owner_exclusion_eligible"] = True
         aggregate_used += 1
+        affiliates = [
+            row
+            for row in rows
+            if row is not aggregate
+            and _group_key(row) == key
+            and row.get("holder_category") == "EXPLICIT_AFFILIATE"
+            and float(row.get("supported_issued_common_shares") or 0) > 0
+        ]
+        exact_affiliate_closure = _exact_aggregate_affiliate_closure(
+            float(supported), affiliates
+        )
         for row in rows:
             if row is aggregate or _group_key(row) != key:
                 continue
@@ -68,10 +119,17 @@ def build_holder_position_ledger_v0_9(
                 and float(row.get("supported_issued_common_shares") or 0) > 0
             ):
                 row["deduplication_state"] = (
-                    "AGGREGATE_AFFILIATE_OVERLAP_UNRESOLVED"
+                    "AFFILIATE_SUPPRESSED_BY_EXACT_MANAGEMENT_AGGREGATE_CLOSURE"
+                    if exact_affiliate_closure
+                    else "AGGREGATE_AFFILIATE_OVERLAP_UNRESOLVED"
                 )
                 row["economic_position_id"] = None
-                affiliate_overlap_unresolved += 1
+                row["methodology_relevant"] = not exact_affiliate_closure
+                row["owner_exclusion_eligible"] = False
+                if exact_affiliate_closure:
+                    affiliate_overlap_exactly_closed += 1
+                else:
+                    affiliate_overlap_unresolved += 1
 
     unresolved = sum(
         row.get("methodology_relevant")
@@ -95,6 +153,9 @@ def build_holder_position_ledger_v0_9(
             "aggregate_group_rows_used_as_baseline": aggregate_used,
             "aggregate_component_rows_suppressed": suppressed,
             "aggregate_affiliate_overlap_unresolved_rows": affiliate_overlap_unresolved,
+            "aggregate_affiliate_overlap_exactly_closed_rows": (
+                affiliate_overlap_exactly_closed
+            ),
             "temporal_baseline_overlap_resolution_authority": (
                 "DAILY_FLOAT_RESOLVER"
             ),

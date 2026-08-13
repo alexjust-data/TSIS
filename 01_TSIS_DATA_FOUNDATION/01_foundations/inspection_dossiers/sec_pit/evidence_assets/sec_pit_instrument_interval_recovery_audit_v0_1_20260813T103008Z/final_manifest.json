@@ -1,0 +1,40 @@
+{
+  "candidate_count": 355,
+  "case_count": 25,
+  "checks": {
+    "all_cases_have_explicit_classification": true,
+    "all_cases_have_unresolved_documents": true,
+    "all_configs_hash_verified": true,
+    "all_source_manifests_hash_verified": true,
+    "instrument_interval_case_count_is_25": true
+  },
+  "classification_counts": {
+    "GENERIC_ISSUER_FILED_BASELINE_METADATA_CONTINUITY": 2,
+    "GENERIC_NON_TARGET_ISSUER_REJECTION": 4,
+    "GENERIC_TARGET_CIK_COMMON_EQUITY_CONTINUITY": 5,
+    "MIXED_RECOVERABLE_INTERVAL_FAMILIES": 3,
+    "MIXED_WITH_TRUE_IDENTITY_EVIDENCE_GAP": 11
+  },
+  "created_at_utc": "2026-08-13T10:30:09.606430+00:00",
+  "document_family_counts": {
+    "ISSUER_FILED_BASELINE_METADATA_CONTINUITY_CANDIDATE": 24,
+    "NON_TARGET_ISSUER_DOCUMENT_MUST_BE_REJECTED": 7,
+    "TARGET_CIK_COMMON_EQUITY_CONTINUITY_CANDIDATE": 264,
+    "TRUE_IDENTITY_EVIDENCE_GAP_OR_UNSUPPORTED_CLASS": 60
+  },
+  "mode": "NO_NETWORK_IMMUTABLE_RUN_AUDIT",
+  "network_requests": 0,
+  "output_files": {
+    "instrument_interval_recovery_candidate_matrix.csv": {
+      "rows": 355,
+      "sha256": "10b5c1d2a09af9ead08ccc9fe832418a64c2d4a3fb5481cf7e633c82e3eb1282"
+    },
+    "instrument_interval_recovery_case_matrix.csv": {
+      "rows": 25,
+      "sha256": "b8620747afebfde9e7f3923dbe12f0fe955119fc5dcd8155d680ee57126b7f02"
+    }
+  },
+  "policy_id": "sec_pit_instrument_interval_recovery_audit_v0_1",
+  "runs_root": "C:/TSIS_Data/runtime/sec_pit_100_case_resolution_v0_16/runs",
+  "status": "PASS"
+}

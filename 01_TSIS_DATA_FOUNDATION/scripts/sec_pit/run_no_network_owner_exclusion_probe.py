@@ -5,6 +5,7 @@ import argparse
 import gzip
 import hashlib
 import json
+import re
 import sys
 from datetime import UTC, date, datetime
 from pathlib import Path
@@ -21,8 +22,17 @@ if str(SCRIPTS) not in sys.path:
 from sec_pit.availability import EdgarAvailabilityPolicy
 from sec_pit.blockers import blocker_details
 from sec_pit.float_estimate_v2 import resolve_owner_exclusion_float_v0_2
-from sec_pit.holders_v3 import build_holder_position_ledger_v0_9
+from sec_pit.holders_v4 import build_holder_position_ledger_v0_10
 from sec_pit.ownership_class_reconcile import reconcile_multiclass_proxy_positions
+from sec_pit.ownership_identity import (
+    ADMITTED_IDENTITY_STATE,
+    UNRESOLVED_IDENTITY_STATE,
+    common_equity_row_count,
+    decide_document_identity,
+    is_common_equity_title,
+    is_identity_admitted,
+    normalize_cik,
+)
 from sec_pit.ownership_baseline import (
     BASELINE_FORMS,
     classify_baseline_document,
@@ -170,10 +180,12 @@ def execute(config_path: Path, run_id: str) -> Path:
         SCRIPTS / "sec_pit" / "ownership_html.py",
         SCRIPTS / "sec_pit" / "ownership_v2.py",
         SCRIPTS / "sec_pit" / "ownership_class_reconcile.py",
+        SCRIPTS / "sec_pit" / "ownership_identity.py",
         SCRIPTS / "sec_pit" / "ownership_baseline.py",
         SCRIPTS / "sec_pit" / "holders.py",
         SCRIPTS / "sec_pit" / "holders_v2.py",
         SCRIPTS / "sec_pit" / "holders_v3.py",
+        SCRIPTS / "sec_pit" / "holders_v4.py",
         SCRIPTS / "sec_pit" / "float_estimate.py",
         SCRIPTS / "sec_pit" / "float_estimate_v2.py",
     ]
@@ -255,18 +267,42 @@ def execute(config_path: Path, run_id: str) -> Path:
             )
 
     aliases = connected_aliases(config["issuer_name"], name_change_events)
+    target_cik = normalize_cik(config["cik"])
+    trusted_target_name_keys = set(aliases)
+    explicit_non_target_name_keys: set[str] = set()
+    explicit_target_cik_evidence = False
+    for identity in identity_by_accession.values():
+        identity_cik = normalize_cik(identity.get("issuer_cik"))
+        key = normalized_name_key(identity.get("issuer_name"))
+        if identity_cik and identity_cik != target_cik:
+            if key:
+                explicit_non_target_name_keys.add(key)
+            continue
+        if identity_cik != target_cik:
+            continue
+        explicit_target_cik_evidence = True
+        if key:
+            trusted_target_name_keys.add(key)
     canonical_name_key = normalized_name_key(config["issuer_name"])
     canonical_name_source_evidence = any(
         issuer_name_present_in_text(config["issuer_name"], identity.get("source_text"))
         for identity in identity_by_accession.values()
-    )
+    ) or explicit_target_cik_evidence
     interval_resolution_allowed = (
         config.get("governed_interval_state") != "TICKER_REUSE_CONFLICT"
     )
     target_cusips = {
-        str(identity["issuer_cusip"]).upper()
+        re.sub(r"[^A-Z0-9]", "", str(identity["issuer_cusip"]).upper())
         for accession, identity in identity_by_accession.items()
         if identity.get("issuer_cusip")
+        and (
+            normalize_cik(identity.get("issuer_cik")) == target_cik
+            or normalized_name_key(identity.get("issuer_name"))
+            in trusted_target_name_keys
+            or issuer_name_match_basis(
+                config["issuer_name"], identity.get("issuer_name")
+            )
+        )
         and str(
             ticker_rows.loc[
                 ticker_rows["accession_number"].eq(accession),
@@ -313,33 +349,47 @@ def execute(config_path: Path, run_id: str) -> Path:
 
         identity = identity_by_accession[accession]
         issuer_name_key = normalized_name_key(identity.get("issuer_name"))
-        cik_match = str(identity.get("issuer_cik") or config["cik"]).zfill(10) == str(
-            config["cik"]
-        ).zfill(10)
         document_name_match_basis = issuer_name_match_basis(
-            config["issuer_name"], identity.get("source_text")
+            config["issuer_name"], identity.get("issuer_name")
         )
         document_name_evidence = bool(document_name_match_basis)
         name_match = bool(
-            issuer_name_key and issuer_name_key in aliases
+            issuer_name_key and issuer_name_key in trusted_target_name_keys
         ) or document_name_evidence
         cusip_match = bool(
             identity.get("issuer_cusip")
-            and str(identity["issuer_cusip"]).upper() in target_cusips
+            and re.sub(
+                r"[^A-Z0-9]", "", str(identity["issuer_cusip"]).upper()
+            ) in target_cusips
         )
-        identity_admitted = (
-            interval_resolution_allowed
-            and cik_match
-            and (name_match or cusip_match)
+        common_rows = common_equity_row_count(rows)
+        identity_admission_state, identity_admission_basis = (
+            decide_document_identity(
+                interval_resolution_allowed=interval_resolution_allowed,
+                target_cik=config["cik"],
+                issuer_cik=identity.get("issuer_cik"),
+                form=row["form"],
+                source_url=row["primary_document_url"],
+                structured_position_rows=len(rows),
+                common_equity_rows=common_rows,
+                name_match=name_match,
+                name_match_basis=(
+                    "TRUSTED_TARGET_CIK_ISSUER_NAME_EVIDENCE"
+                    if issuer_name_key and issuer_name_key in trusted_target_name_keys
+                    else document_name_match_basis
+                ),
+                cusip_match=cusip_match,
+                explicit_non_target_name_match=bool(
+                    issuer_name_key
+                    and issuer_name_key in explicit_non_target_name_keys
+                ),
+                explicit_non_target_cusip=bool(
+                    identity.get("issuer_cusip")
+                    and target_cusips
+                    and not cusip_match
+                ),
+            )
         )
-        identity_admission_basis = None
-        if identity_admitted:
-            if cusip_match:
-                identity_admission_basis = "CLASS_CUSIP_EVIDENCE"
-            elif issuer_name_key and issuer_name_key in aliases:
-                identity_admission_basis = "NAME_CHANGE_ALIAS_EVIDENCE"
-            else:
-                identity_admission_basis = document_name_match_basis
         normalized_form = row["form"].upper()
         expects_rows = normalized_form in expected_position_forms
         dispositions.append(
@@ -352,12 +402,9 @@ def execute(config_path: Path, run_id: str) -> Path:
                 "issuer_name": identity.get("issuer_name"),
                 "issuer_cusip": identity.get("issuer_cusip"),
                 "security_class_title": identity.get("security_class_title"),
-                "identity_admission_state": (
-                    "ADMITTED_BY_NAME_CHANGE_CONTINUITY_OR_CLASS_CUSIP"
-                    if identity_admitted
-                    else "UNRESOLVED_IDENTITY_OR_CLASS"
-                ),
+                "identity_admission_state": identity_admission_state,
                 "identity_admission_basis": identity_admission_basis,
+                "common_equity_position_rows": common_rows,
                 "structured_position_rows": len(rows),
                 "position_rows_expected": expects_rows,
                 "extraction_state": (
@@ -421,8 +468,8 @@ def execute(config_path: Path, run_id: str) -> Path:
             extracted_rows=candidate_rows,
         )
         disposition = disposition_by_accession.get(accession, {})
-        identity_admitted = disposition.get("identity_admission_state") == (
-            "ADMITTED_BY_NAME_CHANGE_CONTINUITY_OR_CLASS_CUSIP"
+        identity_admitted = is_identity_admitted(
+            disposition.get("identity_admission_state")
         )
         candidate_eligible = max(
             (
@@ -438,7 +485,7 @@ def execute(config_path: Path, run_id: str) -> Path:
             and disposition_by_accession.get(
                 str(row.get("source_accession") or ""), {}
             ).get("identity_admission_state")
-            == "ADMITTED_BY_NAME_CHANGE_CONTINUITY_OR_CLASS_CUSIP"
+            == ADMITTED_IDENTITY_STATE
         ]
         candidate_reconciled, candidate_class_readout = (
             reconcile_multiclass_proxy_positions(
@@ -488,8 +535,10 @@ def execute(config_path: Path, run_id: str) -> Path:
         disposition = disposition_by_accession.get(accession, {})
         if disposition.get("temporal_scope_state") != "TARGET_INTERVAL":
             continue
-        if disposition.get("identity_admission_state") != (
-            "ADMITTED_BY_NAME_CHANGE_CONTINUITY_OR_CLASS_CUSIP"
+        if not is_identity_admitted(disposition.get("identity_admission_state")):
+            continue
+        if not is_common_equity_title(
+            (row.get("attributes") or {}).get("security_title")
         ):
             continue
         if (row.get("eligible_from_session") or "") > config["last_observed_session"]:
@@ -499,10 +548,10 @@ def execute(config_path: Path, run_id: str) -> Path:
         target_rows.append(row)
     scoped_observations = reconciled_proxy + target_rows
 
-    broad_ledger, broad_dedup = build_holder_position_ledger_v0_9(
+    broad_ledger, broad_dedup = build_holder_position_ledger_v0_10(
         raw_observations
     )
-    class_a_ledger, holder_dedup = build_holder_position_ledger_v0_9(
+    class_a_ledger, holder_dedup = build_holder_position_ledger_v0_10(
         scoped_observations
     )
     holder_dedup["broad_source_position_rows"] = broad_dedup[
@@ -519,15 +568,12 @@ def execute(config_path: Path, run_id: str) -> Path:
         for row in dispositions
         if row["temporal_scope_state"] == "TARGET_INTERVAL"
         and row["structured_position_rows"] > 0
-        and row["identity_admission_state"] != (
-            "ADMITTED_BY_NAME_CHANGE_CONTINUITY_OR_CLASS_CUSIP"
-        )
+        and row["identity_admission_state"] == UNRESOLVED_IDENTITY_STATE
     ]
     if opening_baseline_accession:
         proxy_disposition = disposition_by_accession[opening_baseline_accession]
         if (
-            proxy_disposition["identity_admission_state"]
-            != "ADMITTED_BY_NAME_CHANGE_CONTINUITY_OR_CLASS_CUSIP"
+            not is_identity_admitted(proxy_disposition["identity_admission_state"])
             and all(
                 row["accession_number"] != opening_baseline_accession
                 for row in unresolved_expected_identity

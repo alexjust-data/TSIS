@@ -1,0 +1,23 @@
+{
+  "case_matrix_path": "C:/TSIS_Data/runtime/sec_pit_100_case_scale_gate_v0_1/bounded_probe_authorized_v0_4_20260812T0530Z/case_matrix.json",
+  "case_matrix_sha256": "7bc87ea003695aaf968f962de33864e8a258940e54f5ec4fbd37646ad8219de3",
+  "component_hashes_equivalent_across_cases": true,
+  "covered_shards": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "created_at_utc": "2026-08-13T15:54:16.752206+00:00",
+  "daily_schema_equivalent_across_cases": true,
+  "network_requests": 0,
+  "policy_id": "sec_pit_os_unavailable_variable_by_shard_certification_v0_1",
+  "scale_authorization": "NOT_GRANTED_REQUIRES_HUMAN_OR_GOVERNED_GATE",
+  "selected_tickers": [
+    "AIFE",
+    "STAF",
+    "CYTO",
+    "INPX"
+  ],
+  "status": "SYSTEM_PASS_HUMAN_SCALE_AUTHORIZATION_PENDING"
+}

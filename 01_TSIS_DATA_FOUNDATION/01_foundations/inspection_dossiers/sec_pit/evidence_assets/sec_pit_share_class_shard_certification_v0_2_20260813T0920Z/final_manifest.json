@@ -1,0 +1,64 @@
+{
+  "case_matrix_path": "C:/TSIS_Data/runtime/sec_pit_100_case_scale_gate_v0_1/bounded_probe_authorized_v0_4_20260812T0530Z/case_matrix.json",
+  "case_matrix_sha256": "7bc87ea003695aaf968f962de33864e8a258940e54f5ec4fbd37646ad8219de3",
+  "component_hashes_equivalent_across_cases": true,
+  "created_at_utc": "2026-08-13T09:31:39.502324+00:00",
+  "float_schema_equivalent_across_cases": true,
+  "os_schema_equivalent_across_cases": true,
+  "outputs": {
+    "case_variable_certification.parquet": "4959c6b1ecdae1888c912202a1674350bb446f82fbdcab35cd72b9872171467a",
+    "certification.json": "7a8128716b6d69e38762c9539572cd7c9f420c906e50433486d0186b169885b8",
+    "readable_value_samples.parquet": "e6c676a76d2a2171d3de337852213733ba50deb4bab3e01a632b0cabfcd2ac53"
+  },
+  "policy_id": "sec_pit_variable_by_shard_certification_v0_1",
+  "scale_authorization": "NOT_GRANTED_REQUIRES_HUMAN_OR_GOVERNED_GATE",
+  "selected_tickers": [
+    "ASPN",
+    "ATMV",
+    "CLRB",
+    "SMIT",
+    "TAOX"
+  ],
+  "shard_count": 4,
+  "shard_function": "sha256(instrument_id)_mod_4",
+  "shards": [
+    {
+      "all_cases_pass": true,
+      "case_count": 1,
+      "eligible_case_count": 1,
+      "shard": 0,
+      "tickers": [
+        "SMIT"
+      ]
+    },
+    {
+      "all_cases_pass": true,
+      "case_count": 1,
+      "eligible_case_count": 1,
+      "shard": 1,
+      "tickers": [
+        "ASPN"
+      ]
+    },
+    {
+      "all_cases_pass": true,
+      "case_count": 1,
+      "eligible_case_count": 1,
+      "shard": 2,
+      "tickers": [
+        "ATMV"
+      ]
+    },
+    {
+      "all_cases_pass": true,
+      "case_count": 2,
+      "eligible_case_count": 2,
+      "shard": 3,
+      "tickers": [
+        "CLRB",
+        "TAOX"
+      ]
+    }
+  ],
+  "status": "SYSTEM_PASS_HUMAN_SCALE_AUTHORIZATION_PENDING"
+}

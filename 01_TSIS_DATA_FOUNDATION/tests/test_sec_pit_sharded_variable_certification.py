@@ -9,6 +9,7 @@ sys.path.insert(0, str(SCRIPTS))
 
 from sec_pit.audit_sharded_variable_certification import (  # noqa: E402
     audit_daily_frames,
+    select_cases,
     shard_for,
 )
 
@@ -16,6 +17,21 @@ from sec_pit.audit_sharded_variable_certification import (  # noqa: E402
 def test_shard_assignment_is_stable() -> None:
     assert shard_for("instrument", 4) == shard_for("instrument", 4)
     assert 0 <= shard_for("instrument", 4) < 4
+
+
+def test_explicit_case_selection_is_complete_and_order_preserving() -> None:
+    cases = [{"ticker": "AAA"}, {"ticker": "BBB"}, {"ticker": "CCC"}]
+    assert select_cases(cases, ["ccc", "AAA"]) == [cases[0], cases[2]]
+
+
+def test_explicit_case_selection_rejects_missing_ticker() -> None:
+    cases = [{"ticker": "AAA"}]
+    try:
+        select_cases(cases, ["AAA", "MISSING"])
+    except ValueError as exc:
+        assert "MISSING" in str(exc)
+    else:
+        raise AssertionError("missing ticker must fail certification selection")
 
 
 def test_daily_audit_checks_formula_units_causality_and_nulls() -> None:

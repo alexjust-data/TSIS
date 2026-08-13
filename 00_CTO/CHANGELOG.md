@@ -1316,3 +1316,5 @@ architecture workspace for automation, agents and controlled evolution.
 
 
 - `2026-07-05` - TSIS Lab crea `execution_protocol.md` para `EXP_DAS_FRONTSIDE_DISCOVERY_0001`: fija que la ejecucion oficial debe ser executor + manifest + evidence report, no notebook manual, y define metricas/gates/memoria para que humano o AlphaEvolve sepan si una variante evoluciona.
+
+- `2026-08-12` - Creado en `15_SCREENER_ENGINE` el draft `SCREENER_ENGINE_ARCHITECTURE_PROPOSAL_v0_1.md` y su paquete de evidencia para revision humana. La propuesta separa Data Foundation, Screener Engine y Backtest Engine; define `Daily Eligible Universe` como motor generalista y los scanners In-Play como familia dependiente de estrategia. No abre `BT-GATE-016`, no crea runtime y no promueve ningun dataset.
