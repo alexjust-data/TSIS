@@ -186,3 +186,6 @@ tmpclaude-*
 # Large generated visual-audit/scanner evidence kept local unless explicitly curated.
 /03_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0002/evidence/099_exemples_three_points/
 /03_TSIS_Lab/04_experiments/EXP_DAS_FRONTSIDE_DISCOVERY_0002/evidence/scanner_2026_qg_full_universe_*/
+# Local Wake-Up visual discovery/reference images.
+/00_CTO/04_MARKET_STATES_CREATION/04_EVENTS/WAKE_UP/_00_CTO/CHATS_Lab/
+/00_CTO/04_MARKET_STATES_CREATION/04_EVENTS/WAKE_UP/_img/

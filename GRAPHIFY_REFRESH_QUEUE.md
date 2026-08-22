@@ -210,16 +210,16 @@ manifests historicos inmutables.
 - **Scope:** mapa raiz de modulos, responsabilidades de Screeners y Statistics
   Patterns, renumeracion de WebSocket/Offline RL, retirada de Trading_voice y
   separacion entre Lab experimental y plano fisico de datos.
-- **Leaf objetivo:** graphify_governance,  3_TSIS_Lab y siguiente fusion
-  controlada project_root.
-- **Archivos afectados:** README.md, AGENTS.md,
-  PROJECT_OPERATING_SYSTEM.md, PATH_MIGRATION_2026_07_22.md,
-  CHANGELOG.md,  4_TSIS_SCREENERS/ y
-   5_TSIS_STATISTICS_PATTERNS/.
+- **Leaf objetivo:** `graphify_governance`, `03_TSIS_Lab` y siguiente fusion
+  controlada `project_root`.
+- **Archivos afectados:** `README.md`, `AGENTS.md`,
+  `PROJECT_OPERATING_SYSTEM.md`, `PATH_MIGRATION_2026_07_22.md`,
+  `CHANGELOG.md`, `04_TSIS_SCREENERS/` y
+  `05_TSIS_STATISTICS_PATTERNS/`.
 - **Motivo pendiente:** el cambio documental y fisico se completo sin ejecutar
   un rebuild Graphify largo. El grafo vigente puede conservar rutas y
   responsabilidades anteriores.
 - **Cierre esperado:** refrescar y diagnosticar los leaves afectados, actualizar
-  sus BUILD_MANIFEST.md, reconstruir el root sin Trading_voice, comprobar
-  las rutas 04/05/06/07 y confirmar que esearch_experiments resuelve
-  exclusivamente a  3_TSIS_Lab/04_experiments.
+  sus `BUILD_MANIFEST.md`, reconstruir el root sin `Trading_voice`, comprobar
+  las rutas 04/05/06/07 y confirmar que `research_experiments` resuelve
+  exclusivamente a `03_TSIS_Lab/04_experiments`.
