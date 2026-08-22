@@ -1,0 +1,39 @@
+contract_version: "0.1.0"
+audit_name: core_market_session_coverage_audit
+
+scope:
+  start_date_inclusive: "2005-01-01"
+  end_date_inclusive: "2026-08-20"
+  expected_universe_members: 4824
+
+universe:
+  path: "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/market_cap_last_observed_cutoff/20260320_market_cap_last_observed_cutoff/market_cap_cutoff_lt_1b_active_inactive.parquet"
+  ticker_column: ticker
+
+source_audit:
+  run_root: "C:/TSIS_Data/runs/data_ops/core_market_raw_alignment_audit/20260821_core_market_raw_alignment_audit_v0_1"
+
+runtime:
+  output_root: "C:/TSIS_Data/runs/data_ops/core_market_session_coverage_audit"
+  heartbeat_seconds: 30
+  one_sequential_minute_reader: true
+
+families:
+  ohlcv_daily:
+    session_date_authority: date
+  ohlcv_1m:
+    session_date_authority: ts_utc_converted_to_America_New_York
+  quotes_:
+    session_date_authority: partition_year_month_day
+  trades_ticks_prod_2005_2026:
+    session_date_authority: partition_day_iso
+
+probe:
+  tickers:
+    - RAD
+    - YHOO
+    - AAME
+    - FCEL
+    - ALTS
+    - DJCO
+    - NA

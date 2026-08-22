@@ -1,3 +1,25 @@
+## Pending - 2026-08-22 - HIGH - Core market session-date coverage audit
+
+- **ID:** GFQ-20260822-FOUNDATIONS-CORE-MARKET-SESSION-COVERAGE-001
+- **Estado:** pending
+- **Fecha:** 2026-08-22
+- **Severidad:** HIGH
+- **Scope:** corrected ticker-session coverage semantics for Daily, 1m,
+  Quotes and Trades; UTC-to-America/New_York normalization; pending-source
+  nullability; factual absence versus diagnostic gap classification; atomic
+  resume and production-equivalent probe evidence.
+- **Leaf objetivo:** foundations_authority / core market RAW coverage and
+  certification.
+- **Archivos afectados:** module contract, schema contract, validators and
+  probe readout under core_market_session_coverage_audit; config, runner,
+  wrapper, monitor, stop script and focused tests.
+- **Motivo:** the work supersedes raw UTC-date equality as a valid 1m alignment
+  test and adds a new governed audit surface. The official leaf rebuild is
+  deferred while the source Trades audit remains active.
+- **Cierre esperado:** after the 4,824-ticker Full closes, rebuild and diagnose
+  the affected Foundations leaf, update BUILD_MANIFEST.md, preserve the
+  observed-absence/product-semantics distinction and bind the final closeout.
+
 ## Pending - 2026-08-15 - HIGH - Daily Eligible Universe restricted A/B consumption gate
 
 - **ID:** `GFQ-20260815-FOUNDATIONS-DAILY-ELIGIBLE-A-B-BRIDGE-001`
