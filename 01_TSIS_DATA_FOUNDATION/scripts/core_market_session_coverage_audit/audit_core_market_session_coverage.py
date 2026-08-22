@@ -1,4 +1,4 @@
-"""Corrected session-date coverage audit for the four TSIS core market RAW families.
+"""Corrected session-date coverage audit for the TSIS core market RAW families.
 
 The source physical audit remains immutable.  This auditor reuses its committed
 task artifacts, normalizes minute aggregates from UTC to America/New_York, and
@@ -58,6 +58,7 @@ PRESENCE_SCHEMA = pa.schema(
         ("available_family_count", pa.int8()),
         ("present_family_count", pa.int8()),
         ("source_pending_families_json", pa.string()),
+        ("deferred_families_json", pa.string()),
     ]
 )
 
@@ -211,6 +212,16 @@ def select_tickers(config: dict[str, Any], universe: Sequence[str], mode: str, e
     return list(dict.fromkeys(requested))
 
 
+def parse_deferred_families(explicit: str) -> tuple[str, ...]:
+    requested = tuple(dict.fromkeys(value.strip() for value in explicit.split(",") if value.strip()))
+    unknown = sorted(set(requested) - set(FAMILIES))
+    if unknown:
+        raise ValueError(f"Unknown deferred families: {unknown}")
+    if len(requested) == len(FAMILIES):
+        raise ValueError("At least one family must remain in the comparison")
+    return requested
+
+
 def source_task_paths(source_run: Path, family: str, ticker: str) -> dict[str, Path]:
     safe = safe_ticker(ticker)
     return {
@@ -233,11 +244,27 @@ def read_source_ledger_status(source_run: Path, family: str, ticker: str) -> str
         connection.close()
 
 
-def source_snapshot(config: dict[str, Any], ticker: str) -> dict[str, Any]:
+def source_snapshot(
+    config: dict[str, Any], ticker: str, deferred_families: Sequence[str] = ()
+) -> dict[str, Any]:
     source_run = Path(str(config["source_audit"]["run_root"]))
+    deferred = set(deferred_families)
     families: dict[str, Any] = {}
     for family in FAMILIES:
         paths = source_task_paths(source_run, family, ticker)
+        if family in deferred:
+            families[family] = {
+                "ledger_status": "deferred",
+                "manifest_path": str(paths["manifest"]),
+                "manifest_sha256": None,
+                "date_artifact_path": str(paths["dates"]),
+                "date_artifact_bytes": None,
+                "source_state": "DEFERRED_BY_RUN_CONTRACT",
+                "date_artifact_sha256": None,
+                "physical_error_file_count": None,
+                "source_file_count": None,
+            }
+            continue
         ledger_status = read_source_ledger_status(source_run, family, ticker)
         record: dict[str, Any] = {
             "ledger_status": ledger_status,
@@ -424,6 +451,17 @@ def classify_gap(
 def boundary_fields(
     values: set[date], source_state: str, scope_start: date, scope_end: date
 ) -> dict[str, Any]:
+    if source_state == "DEFERRED_BY_RUN_CONTRACT":
+        return {
+            "scope_start_inclusive": scope_start,
+            "scope_end_inclusive": scope_end,
+            "leading_unverified_start": None,
+            "leading_unverified_end": None,
+            "trailing_unverified_start": None,
+            "trailing_unverified_end": None,
+            "leading_boundary_state": "DEFERRED_NOT_EVALUATED",
+            "trailing_boundary_state": "DEFERRED_NOT_EVALUATED",
+        }
     if source_state != "COMMITTED":
         return {
             "scope_start_inclusive": scope_start,
@@ -652,7 +690,14 @@ def build_ticker_task(
     atomic_write_table(paths["minute"], table_from_rows(minute_rows, SESSION_DATE_SCHEMA))
 
     available = [family for family in FAMILIES if family_states[family] == "COMMITTED"]
-    pending = [family for family in FAMILIES if family_states[family] != "COMMITTED"]
+    pending = [
+        family
+        for family in FAMILIES
+        if family_states[family] in {"SOURCE_PENDING", "SOURCE_UNAVAILABLE"}
+    ]
+    deferred = [
+        family for family in FAMILIES if family_states[family] == "DEFERRED_BY_RUN_CONTRACT"
+    ]
     union_dates = set().union(*(date_sets[family] for family in available)) if available else set()
     presence_rows: list[dict[str, Any]] = []
     gap_rows: list[dict[str, Any]] = []
@@ -666,6 +711,7 @@ def build_ticker_task(
             "available_family_count": len(available),
             "present_family_count": len(present),
             "source_pending_families_json": json.dumps(pending),
+            "deferred_families_json": json.dumps(deferred),
         }
         for family in FAMILIES:
             row[family_presence_column(family)] = (
@@ -778,6 +824,8 @@ def aggregate_source_states(manifests: Sequence[dict[str, Any]]) -> dict[str, di
 
 def finalize_run(config: dict[str, Any], run_root: Path, pre_manifest: dict[str, Any]) -> dict[str, Any]:
     tickers = [str(value) for value in pre_manifest["selected_tickers"]]
+    comparison_families = [str(value) for value in pre_manifest["comparison_families"]]
+    deferred_families = [str(value) for value in pre_manifest["deferred_families"]]
     paths = runtime_paths(run_root)
     manifests = [json.loads(task_paths(run_root, ticker)["manifest"].read_text(encoding="utf-8")) for ticker in tickers]
     outputs = {
@@ -855,16 +903,22 @@ def finalize_run(config: dict[str, Any], run_root: Path, pre_manifest: dict[str,
             ),
         }
     pending = sum(
-        counts.get("SOURCE_PENDING", 0) + counts.get("SOURCE_UNAVAILABLE", 0)
-        for counts in source_states.values()
+        source_states[family].get("SOURCE_PENDING", 0)
+        + source_states[family].get("SOURCE_UNAVAILABLE", 0)
+        for family in comparison_families
     )
     technical_status = "PASS" if len(manifests) == len(tickers) else "FAIL"
-    comparison_state = "FULL_COMPARISON_COMPLETE" if pending == 0 else "PARTIAL_SOURCE_PENDING"
+    if pending:
+        comparison_state = "PARTIAL_SOURCE_PENDING"
+    elif deferred_families:
+        comparison_state = "COMPARISON_COMPLETE_WITH_DEFERRED_FAMILIES"
+    else:
+        comparison_state = "FULL_COMPARISON_COMPLETE"
     if str(pre_manifest["mode"]) == "probe":
         dataset_certification = "NOT_GRANTED_PROBE"
     elif pending:
         dataset_certification = "NOT_GRANTED_SOURCE_PENDING"
-    elif not all(value["scope_end_reached"] for value in family_global_windows.values()):
+    elif not all(family_global_windows[family]["scope_end_reached"] for family in comparison_families):
         dataset_certification = "NOT_GRANTED_SCOPE_END_NOT_REACHED"
     else:
         dataset_certification = "NOT_GRANTED_REQUIRES_GAP_ADJUDICATION"
@@ -873,6 +927,8 @@ def finalize_run(config: dict[str, Any], run_root: Path, pre_manifest: dict[str,
         "mode": pre_manifest["mode"],
         "technical_status": technical_status,
         "comparison_state": comparison_state,
+        "comparison_families": comparison_families,
+        "deferred_families": deferred_families,
         "dataset_certification": dataset_certification,
         "selected_ticker_count": len(tickers),
         "expected_ticker_count": int(config["scope"]["expected_universe_members"]),
@@ -891,7 +947,8 @@ def finalize_run(config: dict[str, Any], run_root: Path, pre_manifest: dict[str,
     report += f"- Comparison state: `{comparison_state}`\n- Tickers: `{len(tickers)}`\n"
     report += f"- Observed absences: `{row_counts['family_gap_ledger']}`\n\n"
     report += "`observed absence` is factual; the diagnostic class does not by itself prove a vendor omission. "
-    report += "Rows from source tasks that were not committed were excluded and recorded as `SOURCE_PENDING`.\n"
+    report += "Rows from source tasks that were not committed were excluded and recorded as `SOURCE_PENDING`. "
+    report += "Families deferred by the run contract were not read and are recorded as `DEFERRED_BY_RUN_CONTRACT`.\n"
     report_path = paths["closeout"] / "CORE_MARKET_SESSION_COVERAGE_AUDIT.md"
     atomic_write_text(report_path, report)
     artifacts = []
@@ -915,7 +972,7 @@ def write_heartbeat(run_root: Path, payload: dict[str, Any]) -> None:
 
 def prepare_pre_manifest(
     config: dict[str, Any], config_path: Path, config_hash: str, run_id: str, mode: str,
-    universe: Sequence[str], selected: Sequence[str]
+    universe: Sequence[str], selected: Sequence[str], deferred_families: Sequence[str]
 ) -> dict[str, Any]:
     source_run = Path(str(config["source_audit"]["run_root"]))
     source_pre = source_run / "00_control" / "pre_manifest.json"
@@ -927,6 +984,8 @@ def prepare_pre_manifest(
         script_root / "stop_core_market_session_coverage.ps1",
     ]
     operational_sha256 = {str(path): sha256_file(path) for path in operational_files}
+    deferred = list(deferred_families)
+    comparison = [family for family in FAMILIES if family not in set(deferred)]
     contract = {
         "config_sha256": config_hash,
         "operational_file_sha256": operational_sha256,
@@ -936,6 +995,8 @@ def prepare_pre_manifest(
         "scope": config["scope"],
         "timezone": "America/New_York",
         "normalization_clock": "ohlcv_1m.ts_utc",
+        "comparison_families": comparison,
+        "deferred_families": deferred,
     }
     return {
         "run_id": run_id,
@@ -950,6 +1011,8 @@ def prepare_pre_manifest(
         "universe_ticker_count": len(universe),
         "universe_sha256": stable_json_hash(list(universe)),
         "selected_tickers": list(selected),
+        "comparison_families": comparison,
+        "deferred_families": deferred,
         "timezone_contract": "America/New_York",
         "source_roots_read_only": True,
     }
@@ -962,19 +1025,30 @@ def run_root_requires_resume(run_root: Path, resume: bool) -> bool:
     )
 
 
-def run(config_path: Path, run_id: str, mode: str, explicit: str, resume: bool, authorized: bool) -> int:
+def run(
+    config_path: Path,
+    run_id: str,
+    mode: str,
+    explicit: str,
+    resume: bool,
+    authorized: bool,
+    deferred_explicit: str = "",
+) -> int:
     config, config_hash = load_config(config_path)
     if mode == "full" and not authorized:
         raise ValueError("Full audit requires --human-authorized-full")
     universe = load_universe(config)
     selected = select_tickers(config, universe, mode, explicit)
+    deferred_families = parse_deferred_families(deferred_explicit)
     output_root = Path(str(config["runtime"]["output_root"]))
     run_root = output_root / run_id
     if run_root_requires_resume(run_root, resume):
         raise ValueError(f"Run root already exists; use --resume: {run_root}")
     paths = ensure_dirs(run_root)
     pre_path = paths["control"] / "pre_manifest.json"
-    proposed = prepare_pre_manifest(config, config_path, config_hash, run_id, mode, universe, selected)
+    proposed = prepare_pre_manifest(
+        config, config_path, config_hash, run_id, mode, universe, selected, deferred_families
+    )
     if pre_path.is_file():
         pre_manifest = json.loads(pre_path.read_text(encoding="utf-8"))
         if pre_manifest["run_contract_sha256"] != proposed["run_contract_sha256"]:
@@ -1003,7 +1077,7 @@ def run(config_path: Path, run_id: str, mode: str, explicit: str, resume: bool, 
                 },
             )
             return 130
-        snapshot = source_snapshot(config, ticker)
+        snapshot = source_snapshot(config, ticker, deferred_families)
         snapshot_hash = source_snapshot_hash(snapshot)
         if task_manifest_valid(run_root, ticker, contract_hash, snapshot_hash):
             payload = json.loads(task_paths(run_root, ticker)["manifest"].read_text(encoding="utf-8"))
@@ -1065,6 +1139,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--run-id", required=True)
     parser.add_argument("--mode", choices=("probe", "full"), required=True)
     parser.add_argument("--tickers", default="")
+    parser.add_argument("--deferred-families", default="")
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--human-authorized-full", action="store_true")
     return parser.parse_args()
@@ -1073,7 +1148,13 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
     return run(
-        args.config, args.run_id, args.mode, args.tickers, args.resume, args.human_authorized_full
+        args.config,
+        args.run_id,
+        args.mode,
+        args.tickers,
+        args.resume,
+        args.human_authorized_full,
+        args.deferred_families,
     )
 
 

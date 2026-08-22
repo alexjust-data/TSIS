@@ -96,6 +96,27 @@ def test_boundary_fields_do_not_evaluate_pending_source() -> None:
     assert result["trailing_unverified_start"] is None
 
 
+def test_boundary_fields_do_not_evaluate_deferred_source() -> None:
+    result = MODULE.boundary_fields(
+        set(), "DEFERRED_BY_RUN_CONTRACT", date(2005, 1, 1), date(2026, 8, 20)
+    )
+    assert result["leading_boundary_state"] == "DEFERRED_NOT_EVALUATED"
+    assert result["trailing_boundary_state"] == "DEFERRED_NOT_EVALUATED"
+    assert result["trailing_unverified_start"] is None
+
+
+def test_deferred_family_contract_is_exact_and_requires_a_comparison() -> None:
+    assert MODULE.parse_deferred_families("trades_ticks_prod_2005_2026") == (
+        "trades_ticks_prod_2005_2026",
+    )
+    try:
+        MODULE.parse_deferred_families("unknown")
+    except ValueError as exc:
+        assert "Unknown deferred families" in str(exc)
+    else:
+        raise AssertionError("Unknown deferred family was accepted")
+
+
 def test_literal_na_is_not_interpreted_as_null() -> None:
     table = MODULE.table_from_rows(
         [{"ticker": "NA", "session_date_et": date(2026, 3, 9)}],
@@ -115,6 +136,7 @@ def test_output_schema_order_is_stable() -> None:
         "available_family_count",
         "present_family_count",
         "source_pending_families_json",
+        "deferred_families_json",
     ]
 
 

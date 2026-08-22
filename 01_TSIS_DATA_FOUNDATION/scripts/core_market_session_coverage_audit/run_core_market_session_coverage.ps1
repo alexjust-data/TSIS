@@ -5,9 +5,11 @@ param(
 
     [string]$RunId = '',
 
-    [string]$ConfigPath = 'C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\configs\core_market_session_coverage_audit_v0_1.yaml',
+    [string]$ConfigPath = 'C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\configs\core_market_session_coverage_audit_v0_2.yaml',
 
     [string[]]$Tickers = @(),
+
+    [string[]]$DeferredFamilies = @(),
 
     [switch]$Resume,
 
@@ -34,9 +36,9 @@ if ($Mode -eq 'Full' -and $Tickers.Count -gt 0) {
 if ([string]::IsNullOrWhiteSpace($RunId)) {
     $stamp = [datetime]::UtcNow.ToString('yyyyMMddTHHmmssZ')
     $RunId = if ($Mode -eq 'Probe') {
-        "${stamp}_core_market_session_coverage_probe_v0_1"
+        "${stamp}_core_market_session_coverage_probe_v0_2"
     } else {
-        "${stamp}_core_market_session_coverage_audit_v0_1"
+        "${stamp}_core_market_session_coverage_audit_v0_2"
     }
 }
 
@@ -44,6 +46,7 @@ $runRoot = Join-Path $outputRoot $RunId
 $monitorCommand = "powershell -NoProfile -ExecutionPolicy Bypass -File `"$monitorPath`" -RunRoot `"$runRoot`" -Watch"
 $arguments = @($scriptPath, '--config', $ConfigPath, '--run-id', $RunId, '--mode', $Mode.ToLowerInvariant())
 if ($Tickers.Count -gt 0) { $arguments += @('--tickers', ($Tickers -join ',')) }
+if ($DeferredFamilies.Count -gt 0) { $arguments += @('--deferred-families', ($DeferredFamilies -join ',')) }
 if ($Resume) { $arguments += '--resume' }
 if ($Mode -eq 'Full') { $arguments += '--human-authorized-full' }
 

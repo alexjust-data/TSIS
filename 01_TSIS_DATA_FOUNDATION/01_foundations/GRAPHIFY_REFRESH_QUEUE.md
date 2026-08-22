@@ -7,12 +7,14 @@
 - **Scope:** corrected ticker-session coverage semantics for Daily, 1m,
   Quotes and Trades; UTC-to-America/New_York normalization; pending-source
   nullability; factual absence versus diagnostic gap classification; atomic
-  resume and production-equivalent probe evidence.
+  resume and production-equivalent probe evidence. Version 0.2 additionally
+  freezes Daily, 1m and Quotes as the comparison families while Trades is
+  contractually deferred without reading its advancing source state.
 - **Leaf objetivo:** foundations_authority / core market RAW coverage and
   certification.
-- **Archivos afectados:** module contract, schema contract, validators and
-  probe readout under core_market_session_coverage_audit; config, runner,
-  wrapper, monitor, stop script and focused tests.
+- **Archivos afectados:** module contracts v0.1/v0.2, schema contract,
+  validators and probe readout under core_market_session_coverage_audit;
+  configs v0.1/v0.2, runner, wrapper, monitor, stop script and focused tests.
 - **Motivo:** the work supersedes raw UTC-date equality as a valid 1m alignment
   test and adds a new governed audit surface. The official leaf rebuild is
   deferred while the source Trades audit remains active.
