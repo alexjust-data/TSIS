@@ -92,3 +92,22 @@ powershell -NoProfile -ExecutionPolicy Bypass -File `
 
 After interruption, repeat the full command with `-Resume`. Never mutate the
 four source roots.
+
+## Trades transactional acceleration
+
+When Daily, 1m and Quotes are fully committed, the original Trades worker may
+be suspended while six added workers claim only pending Trades tasks through
+SQLite `BEGIN IMMEDIATE`. The original active ticker remains privately owned;
+it is resumed after the pending pool drains so the original parent closes the
+run normally.
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File `
+  "C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\scripts\core_market_raw_alignment_audit\run_trades_accelerator.ps1" `
+  -RunRoot "C:\TSIS_Data\runs\data_ops\core_market_raw_alignment_audit\20260821_core_market_raw_alignment_audit_v0_1" `
+  -Workers 6 -HumanAuthorized -Detach
+```
+
+Use `monitor_trades_accelerator.ps1` for the pool and
+`stop_trades_accelerator.ps1` for a controlled rollback to the original
+worker. Source Trades Parquets remain read-only.
