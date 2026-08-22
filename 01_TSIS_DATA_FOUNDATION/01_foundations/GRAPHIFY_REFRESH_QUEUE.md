@@ -9,12 +9,15 @@
   nullability; factual absence versus diagnostic gap classification; atomic
   resume and production-equivalent probe evidence. Version 0.2 additionally
   freezes Daily, 1m and Quotes as the comparison families while Trades is
-  contractually deferred without reading its advancing source state.
+  contractually deferred without reading its advancing source state. The live
+  run also added a non-blocking Windows heartbeat monitor and a persisted
+  runtime incident control after a recoverable WinError 5.
 - **Leaf objetivo:** foundations_authority / core market RAW coverage and
   certification.
 - **Archivos afectados:** module contracts v0.1/v0.2, schema contract,
   validators and probe readout under core_market_session_coverage_audit;
-  configs v0.1/v0.2, runner, wrapper, monitor, stop script and focused tests.
+  configs v0.1/v0.2, runner, wrapper, monitors, stop script, focused tests and
+  the runtime incident register.
 - **Motivo:** the work supersedes raw UTC-date equality as a valid 1m alignment
   test and adds a new governed audit surface. The official leaf rebuild is
   deferred while the source Trades audit remains active.
