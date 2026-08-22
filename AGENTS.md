@@ -74,11 +74,12 @@ TSIS esta organizado como un ecosistema con autoridad raiz, laboratorio transver
 - `00_CTO_APPLIED_ARCHITECTURE`: arquitectura aplicada y handoffs de ingenieria gobernada.
 - `01_TSIS_DATA_FOUNDATION`: auditoria, certificacion, contratos, policies, validators, dossiers y outputs gobernados de Data Foundation.
 - `02_TSIS_BACKTEST_ENGINE`: futura implementacion del backtester profesional TSIS; consume Data Foundation y arquitectura CTO.
-- `03_TSIS_Lab`: contratos, registros, plantillas y experimentos cientificos reproducibles.
-- `04_TSIS_webSocket_SmallCaps`: operacion live/shadow y procesamiento event-driven.
-- `05_TSIS_Offline_RL`: aprendizaje secuencial sobre estados/outcomes gobernados.
-- `06_TSIS_Trading_voice`: Trading Decision Intelligence / proceso de decision del trader.
-- `G:/TSIS/data`: outputs pesados, materializaciones y roots fisicos.
+- `03_TSIS_Lab`: contratos, registros, plantillas, experimentos cientificos reproducibles y sus runs/outputs experimentales.
+- `04_TSIS_SCREENERS`: screeners causales/PIT de seleccion inicial; filtran universos candidatos sin validar eventos ni conocimiento.
+- `05_TSIS_STATISTICS_PATTERNS`: descubrimiento descriptivo de estadisticas y patrones sobre datos gobernados; genera hipotesis, no conocimiento validado.
+- `06_TSIS_webSocket_SmallCaps`: operacion live/shadow y procesamiento event-driven.
+- `07_TSIS_Offline_RL`: aprendizaje secuencial sobre estados/outcomes gobernados.
+- `G:/TSIS/data`: datasets pesados, fuentes fisicas y materializaciones gobernadas; no es raiz de `research_experiments`.
 
 Los agentes deben respetar los limites entre capas, modulos y contratos institucionales. Para resolver rutas antiguas, leer `PATH_MIGRATION_2026_07_22.md`.
 
@@ -91,6 +92,7 @@ Antes de modificar este repositorio, todo agente debe leer en este orden:
 0. `C:\TSIS_Data\TSIS_HARDWARE_OPTIMIZATION_PROMPT.md`
 
 1. `PATH_MIGRATION_2026_07_22.md`
+1.1. `PATH_NAMING_POLICY.md`
 2. `PROJECT_OPERATING_SYSTEM.md`
 3. `PROJECT_RULES.md`
 4. `VERSIONING_STANDARDS.md`
@@ -162,6 +164,10 @@ Todo agente MUST:
 - tratar notebooks como exploracion, no como autoridad productiva final;
 - tratar datasets y outputs institucionales como artefactos gobernados, no como ficheros casuales;
 - convertir hipotesis ejecutables en `research_experiment` cuando pasen de conversacion a trabajo reproducible.
+- aplicar `PATH_NAMING_POLICY.md` a toda ruta nueva o reorganizada: nombres
+  humanos reconocibles, abreviaturas registradas y preflight de longitud total;
+  no depender de `LongPathsEnabled` o `core.longpaths` para que un artefacto sea
+  portable.
 
 Todo agente MUST NOT:
 
@@ -464,6 +470,10 @@ materializacion larga o completa, el agente MUST ejecutar primero un probe
 acotado con el mismo codigo, config, schema, fuentes y politicas de produccion
 en cada shard previsto.
 
+`Production-equivalent` MUST include the exact long-run runner, wrapper,
+aggregator, terminal certifier and final-manifest path. A compute-engine-only
+probe does not satisfy this gate.
+
 Cada probe debe auditar y certificar como minimo:
 
 - formula y semantica de la variable;
@@ -489,3 +499,22 @@ implementation and unit tests
 Si cualquier probe falla, no se permite iniciar o continuar la expansion larga
 con esa version. Corregir codigo/config, invalidar el probe y repetir los probes
 de todos los shards. `resume` nunca puede mezclar versiones o schemas.
+
+Ademas, toda materializacion de un Representation Model MUST:
+
+- conservar la pertenencia exacta de targets; una lista exacta no puede
+  sustituirse por un intervalo `min/max`;
+- separar metadata y escalares derivados de los conteos fisicos por familia;
+- usar una unica autoridad de cardinalidad compartida por plan, runner y
+  certifier;
+- probar targets dispersos, sesiones early-close y el producto completo de
+  dimensiones;
+- registrar todo fallo de materializacion antes de corregirlo y promover su
+  correccion a un control heredable;
+- declarar en el plan del modelo siguiente `inherited_incident_controls` y
+  demostrar `PASS` para cada control aplicable.
+
+En `00_CTO/04_MARKET_STATES_CREATION`, el protocolo detallado vigente es
+`REPRESENTATION_MODEL_MATERIALIZATION_AND_INCIDENT_LEARNING_PROTOCOL_v0_1.md`
+y el registro append-only es
+`REPRESENTATION_MODEL_MATERIALIZATION_INCIDENT_REGISTER_v0_1.md`.

@@ -1,0 +1,17 @@
+{
+  "decision_set_id": "wake_up_rth_wul_d01_d08_candidate_v0_1",
+  "status": "UNRESOLVED_TEMPLATE_NOT_FROZEN",
+  "WUL-D01_confirmation_horizon_seconds": null,
+  "WUL-D02_prior_dormant_lookback_seconds": null,
+  "WUL-D03_relative_anomaly_rule": null,
+  "WUL-D04_de_minimis_economic_floor_usd": null,
+  "WUL-D05_minimum_distinct_timestamp_clusters": null,
+  "WUL-D06_source_coverage_and_timestamp_resolution_rule": null,
+  "WUL-D07_episode_close_dormant_reset_and_rearm_rule": null,
+  "WUL-D08_primary_oracle_policy": null,
+  "false_activation_episode_budget_per_million_eligible_symbol_seconds": null,
+  "human_gate_id": null,
+  "human_gate_timestamp_utc": null,
+  "review_evidence_manifest_path": null,
+  "review_evidence_manifest_sha256": null
+}

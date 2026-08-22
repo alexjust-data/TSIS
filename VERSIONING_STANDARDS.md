@@ -613,6 +613,21 @@ Está prohibido:
 Si dos entidades no significan lo mismo, no deben compartir nombre.
 Si una entidad cambia de semántica, no debe seguir llamándose exactamente igual sin nueva versión o renombrado explícito.
 
+### 13.2. Naming fisico y presupuesto de rutas
+
+La autoridad transversal para nombres fisicos de archivos, carpetas,
+abreviaturas y longitud total de paths es:
+
+```text
+PATH_NAMING_POLICY.md
+```
+
+El naming semantico debe seguir siendo explicito, pero no debe concentrar todo
+el contrato en una ruta fisica hasta romper compatibilidad con Windows, Git o
+herramientas consumidoras. Una abreviatura no registrada es naming ambiguo; un
+path que excede el presupuesto operativo requiere rediseño o excepcion
+documentada.
+
 ---
 
 ## 14. Dataset Versioning Policy

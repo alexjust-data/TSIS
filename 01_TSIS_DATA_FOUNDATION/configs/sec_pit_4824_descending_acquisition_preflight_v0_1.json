@@ -1,0 +1,23 @@
+{
+  "config_id": "sec_pit_4824_descending_acquisition_preflight_v0_1",
+  "status": "FULL_UNIVERSE_PREFLIGHT_AUTHORIZED_PRIMARY_DOCUMENT_DOWNLOAD_NOT_AUTHORIZED",
+  "parent_universe_id": "lt1b_universe_v0_1",
+  "parent_universe_expected_count": 4824,
+  "parent_universe_path": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/market_cap_last_observed_cutoff/20260320_market_cap_last_observed_cutoff/market_cap_cutoff_lt_1b_active_inactive.parquet",
+  "instrument_master_path": "G:/TSIS/data/data_foundation_outputs/instrument_master/instrument_master_v0_1.parquet",
+  "priority_order": [
+    "last_observed_date DESC",
+    "ticker ASC"
+  ],
+  "cohort_sizes": [824, 1000, 1000, 1000, 1000],
+  "shard_count": 4,
+  "shard_function": "sha256(instrument_id)_mod_4",
+  "runtime_root": "C:/TSIS_Data/runtime/sec_pit_4824_descending_acquisition_v0_1",
+  "content_addressed_object_root": "D:/TSIS/fundamental_context/sec_pit_v0_1/objects",
+  "requests_per_second": 5.0,
+  "minimum_available_memory_gib": 8.0,
+  "network_scope": "NONE_DURING_PREFLIGHT",
+  "metadata_download_scope": "AWAITING_HUMAN_LAUNCH_ONE_COHORT_AT_A_TIME",
+  "primary_document_download_scope": "NOT_AUTHORIZED_PENDING_METADATA_SELECTION_AND_COHORT_GATE",
+  "automatic_promotion": "NOT_AUTHORIZED"
+}

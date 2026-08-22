@@ -1,3 +1,100 @@
+## 2026-08-21 | Core market RAW alignment auditor production-equivalent probe
+
+- Added the read-only four-family auditor, config, transactional wrapper,
+  monitor, finalizer and focused tests for exact LT1B ticker/date alignment.
+- Verified the production-equivalent v0.3 probe: 12/12 tasks, 2,259 Parquets,
+  zero physical/schema errors and hash-valid resume with 12 adopted tasks.
+- Persisted schema/validator contracts and the bounded readout; observed data
+  differences remain explicit and the 4,824-ticker full run is not authorized.
+
+## 2026-08-15 | Restricted Daily Eligible Universe consumption authority
+
+- Added the builder, independent validator, tests, config, consumption policy,
+  registry binding and executed readout for the Trading Activity A/B bridge.
+- Certified exact 2,400/2,400 target membership, 55,866,000 logical eligible
+  symbol-seconds, 23/23 builder checks, 25/25 independent checks and 5/5 focused
+  tests.
+- Kept the source candidate experimental and non-canonical; the future general
+  Screener Engine and every non-research consumer require separate gates.
+
+## 2026-08-14 | Trading Activity target-only executable gate PASS 4/4
+
+- Added the typed three-family cardinality authority, hash-frozen PROBE/FULL
+  plan builder, immutable 7,200-partition verifier/certifier, resume-safe
+  telemetry and a monitor with exact progress and terminal exit.
+- Focused tests pass 5/5, including sparse exact membership, early close,
+  terminal PASS and corruption fail-closed behavior.
+- Production-equivalent probes pass in all four shards: 24/24 selected
+  partitions, one schema variant per family, `future_window_used=false` and
+  zero source recomputation. The final v0.3 cycle carries the exact inherited
+  set `RM-MAT-CTRL-001..005` in every shard manifest.
+- Preserved the FULL plan as `PREREGISTERED_NOT_AUTHORIZED`; only the human may
+  authorize and launch the long integrity run.
+
+## 2026-08-14 | Cross-model materialization certification contract
+
+- Added and indexed the executable Data Foundation contract that converts CTO
+  materialization incidents into exact-target, typed-count, shared-cardinality,
+  terminal-rehearsal and inherited-control gates for later models.
+- Kept Trading Activity target-only recovery and every later long
+  materialization unauthorized until model-specific implementation, tests,
+  all-shard probes and human/governed approval pass.
+
+## 2026-08-14 | SEC PIT C01 primary tranche 01 launch
+
+- Corrected metadata-gate compatibility without weakening the frozen hash-bound
+  scope and authorized exactly the first 250 eligible C01 rows.
+- Added gate-matrix hash validation and provenance to the primary premanifest;
+  focused authorization/scope/gate tests pass 9/9.
+- Hardened the monitor so `COMPLETE`, `FAILED`, `STOPPED_LOW_DISK` and
+  `INTERRUPTED` all close `-Watch` correctly.
+- Added authorization-bound ticker ordinal, completed and remaining counters;
+  the active 250-row denominator is no longer confused with 749 eligible rows.
+- Launched 127,946 planned primary documents at 5 requests/s with 874.286 GiB
+  free and a 200 GiB resume-safe hard stop; no additional tranche is authorized.
+
+## 2026-08-14 | Trading Activity Stage-8 physical completion and certification recovery boundary
+
+- Recorded four complete parent shards and 240/240 complete/pass block outputs
+  under the exact registered C++ engine fingerprint; no feature calculation
+  block remains missing.
+- Isolated the non-zero wrapper exit to the terminal row-count certifier rather
+  than the materialization: family counts match their own expected values, but
+  the expected mapping contains an additional `decision_seconds_total` key.
+- Froze existing outputs against mutation or replacement and delegated the next
+  implementation gate to a target-only reference manifest, inventory, certifier,
+  one bounded production-equivalent probe per shard and human-launched checksum
+  recertification. No fresh 240-block run is authorized.
+
+## 2026-08-14 | SEC PIT C01 metadata human gate and storage correction
+
+- Recorded the human authorization for submissions metadata `C01_0824` only;
+  primary documents and cohorts 02-05 remain blocked.
+- Enforced one active content-addressed root, preserved the original 50-CIK
+  pilot as read-only provenance and added a post-metadata selection/capacity
+  readout before any primary authorization.
+- Hardened primary acquisition with a clean, resume-safe 200 GiB disk stop.
+
+## 2026-08-14 | Minimal SEC PIT 4,824 preparation audit package
+
+- Added the deterministic package builder for the 26-entry pre-launch external
+  handoff and included only code imported by the immediate metadata runner.
+- Package validation passed exact-entry, duplicate/path, full-decompression,
+  SHA-256/size, 4,824-order and 824-row cohort-membership gates.
+- Kept metadata cohort 01 awaiting human launch and primary acquisition plus
+  institutional promotion unauthorized.
+
+## 2026-08-13 | SEC PIT 4,824 descending acquisition preflight
+
+- Implemented and executed the deterministic zero-network parent-universe
+  preflight with exact `824/1000/1000/1000/1000` cohort sizes.
+- Preserved all 4,824 ticker rows while exposing 4,626 unique instrument IDs,
+  190 reused-identity groups and four cross-CIK conflicts for fail-closed review.
+- Hardened the metadata profiler and compact monitor with hash-locked resume,
+  duplicate-writer rejection and long-operation manifest/control fields.
+- Metadata cohort 01 awaits human launch; no SEC request or primary download was
+  made and promotion remains unauthorized.
+
 ## 2026-08-13 | SEC PIT exact share-class recovery and v0.21 authority
 
 - Promoted the audited v0.21 SEC PIT result as current authority after rejecting v0.20 on semantic delta regression.
@@ -7054,3 +7151,53 @@ Establece la gobernanza necesaria para institucionalizar conocimiento auditado s
   99/99 no-network v0.13 resolution batch with zero technical failures.
 - Complete owner-exclusion float coverage is 15/99, up from 10/99 in v0.12,
   with no lost v0.12 case; scale to 4,824 remains unauthorized.
+## 2026-08-14 | Trading Activity FULL target-only plan human-authorized
+
+- Built the hash-frozen executable FULL v0.3 plan after explicit AlexJ
+  authorization; artifact status is `PREREGISTERED_HUMAN_AUTHORIZED` and plan
+  SHA-256 is `13c5fcee1b4367ca9aecabc91503cbbedc4e45f901ed7dbaddc2d8897080592c`.
+- Re-verified 2,400 TARGET, 7,200 partitions, exact three-family counts,
+  `RM-MAT-CTRL-001..005=PASS`, one schema per family and promotion false.
+- Did not launch the long run. First launch remains human-operated; `--resume`
+  may reuse only identical hash-validated PASS units after interruption.
+## 2026-08-14 | Trading Activity target-only FULL terminal PASS
+
+- Completed the authorized immutable-output audit in 532.3 seconds with
+  2,400/2,400 TARGET, 7,200/7,200 partitions and zero failures.
+- Verified all source-file hashes, Parquet footer rows, three exact typed row
+  totals, one schema per family, inherited validators and zero recomputation.
+- Final manifest SHA-256:
+  `421c5728cd9dd54195e7993258636884ffb6c887ab543d36d924579cab424956`.
+- Kept the historical source run `FAILED_NOT_PROMOTED` and canonical promotion
+  false; the recovery is a separate certified reference artifact.
+
+## 2026-08-14 | Trading Activity Binding A value-level evidence audit
+
+- Added a bounded deterministic auditor and four focused regression tests.
+- Froze 20 full-session sentinels across four shards, four cohorts and four
+  early closes; read 9,345,160 family rows without rematerialization.
+- Verified identity, grain, PIT timestamps, missingness, domains, current-state
+  rate, multiscale ratio, baseline count/fraction, surprise-ratio and duration-
+  compression formulas with 79 check types and zero hard failures.
+- Hash-bound the Binding A v0.2 specification in operative rerun3 and retained
+  two earlier failed attempts as non-authoritative evidence.
+- Final status is `PASS_WITH_DECLARED_RESTRICTIONS`; canonical promotion and
+  Binding B long materialization remain unauthorized.
+## 2026-08-14 | Independent Trading Activity percentile replay gate
+
+- Added a third, independent empirical-rank oracle for the four Binding A PIT
+  percentiles; it does not import the Python/vectorized/C++ production baseline
+  engines and enforces right-inclusive ranks, causal group-local history and
+  exact NULL/value equality.
+- Added hash-frozen PROBE/FULL planning, post-probe FULL authorization, a
+  one-worker resume-safe runner, safe stop, live telemetry and compact monitor.
+- Focused tests pass 4/4 and the immutable probe-plan preflight passes across
+  one block per shard. The long probe and FULL have not been launched.
+
+## 2026-08-21 | Core market RAW alignment audit handoff v0.1
+
+- Registered the Foundations handoff for the future four-family physical and
+  ticker-date alignment audit over `ohlcv_daily`, `ohlcv_1m`, `quotes_` and
+  `trades_ticks_prod_2005_2026`.
+- No runner, probe, full audit, RAW mutation or dataset certification was
+  performed by this documentation change.

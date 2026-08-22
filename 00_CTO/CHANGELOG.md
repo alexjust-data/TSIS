@@ -1,3 +1,21 @@
+- `2026-08-17` - Wake-up RTH completed its valid 2,400-session candidate scan
+  with 4,447 candidates, then invalidated the initial blind gallery after a
+  240/240 close-bucket sampling collapse. An RTH-balanced panel-only repair
+  passed 25/25 on the bounded probe; the full rebuild and human review remain
+  human-gated, with D07, A/B and OOS still closed.
+- `2026-08-17` - Market States Creation applied a human-readable, path-safe architecture: 126 files mapped, 123 moved, three root entrypoints retained, zero collisions and exact SHA-256 preservation. The new tree is organized by full Information Object and Representation Model names, records every accepted acronym, and reaches a measured maximum of 232 characters under a 240-character operational budget. `PATH_MAP_v0_1.csv` and `MIGRATION_v0_1.json` preserve route lineage; no scientific or promotion status changed.
+- `2026-08-15` - Added the Screener Engine architectural orientation under `00_CTO/15_SCREENER_ENGINE`: the project-wide Daily Eligible Universe is a general shared authority, while the executed A/B consumption gate is only a controlled experimental bridge. Backtest/live/RL require separate adapters and gates; no runtime or canonical screener was promoted.
+- `2026-08-15` - Market States fixed Daily Eligible Universe ownership upstream of Trading Activity: the screener alone owns `[0.50,20.00]` prior-close and `<100M` proxy membership, A/B consume identical membership manifests, and an exact read-only reconciliation closed 2,400/2,400 TARGET contexts eligible with zero identity/state/price/cap mismatches. Operational selector promotion and eligible-second manifests remain pending; B-03 remains closed.
+- `2026-08-15` - Market States consolidated 32 transient Trading Activity handoff/roadmap snapshots into one hash-bound lineage audit, retained only current v0.26/v0.15 plus v0.12 for one external compatibility pointer, and removed 29 redundant files without deleting evidence readouts, accepted package contents or changing any scientific/execution gate.
+- `2026-08-15` - Market States persisted the external Binding B preparation audit, froze B-01 by explicit human authorization and drafted B-02 with exact event-time/renewal/kernel/economic-time semantics plus twelve open freeze decisions. No implementation, probes, materialization, A/B comparison or OOS was authorized.
+- `2026-08-15` - Market States reconstructed the complete Binding A development chain, published a non-executable 18-gate Binding B development/certification plan and prepared its inheritance/delta contract. B is bound to A's exact 240-block/2,400-target denominator and inherited controls; the next gate is inheritance/delta review/freeze followed by exact specification, while implementation and runs remain unauthorized.
+- `2026-08-15` - Market States drafted `TRADING_ACTIVITY_BINDING_B_PREREGISTRATION_v0_1` as a non-frozen event-time marked-renewal and burst challenger with 22 proposed primary variables, exact Binding A terminal evidence linkage and inherited incident controls; implementation, probes, long materialization, A/B comparison, temporal OOS and promotion remain unauthorized pending human/scientific freeze.
+- `2026-08-15` - Trading Activity Binding A closed its independent percentile replay `PASS_EXACT` over 240 blocks, 2,400 sessions and 3,351,960,000 cells with zero value/NULL-mask mismatches; the revised verdict is `PASS_WITH_SCOPE_RESTRICTIONS`, and the next gate is frozen Binding B preregistration with inherited controls, while long materialization, OOS and canonical promotion remain unauthorized.
+- `2026-08-14` - Market States added cross-model materialization incident governance: an append-only register, mandatory terminal-path verification, exact-target and typed-count controls, one cardinality authority and fail-closed inheritance by Trading Activity Binding B and every later applicable Representation Model.
+- `2026-08-14` - Trading Activity Stage-8 completed all four shards and 240/240 physical blocks; the terminal wrapper failed only at strict row-count certification, so the existing outputs are frozen pending target-only inventory, four-shard probes, checksum recertification and separate human authorization rather than a new full materialization.
+- `2026-08-14` - SEC PIT accepted the human gate for C01 submissions metadata only, froze the original 28.7-GB pilot as read-only provenance behind one active CAS, added the network-free post-metadata selection/storage readout and required a resume-safe 200-GiB primary disk stop; primary and cohorts 02-05 remain unauthorized.
+- `2026-08-14` - SEC PIT published a minimal 26-entry audit ZIP for the 4,824-row descending preparation, with prior authority/evidence, exact cohort 01 input, direct runner dependencies and archive-level SHA-256 verification; no acquisition or promotion gate changed.
+- `2026-08-13` - SEC PIT full-universe preparation froze five sequential cohorts (`824/1000/1000/1000/1000`) from 2026 backwards, passed a zero-network 4,824-row preflight and authorized only human-launched metadata cohort 01; primary documents and promotion remain gated.
 - `2026-07-07` - Quotes D-to-E recovery transfer approved: `E:/TSIS/data/quotes_` is now the official E-root quotes dataset after Phase A structural parity and Phase B SHA256 retry evidence. Pre-approval `D:/quotes` lineage in market-state/microstructure candidates remains provenance only and requires rebuild against the approved E-root before promotion.
 - 2026-07-05: eliminado el overview raiz obsoleto y actualizadas referencias activas para que la arquitectura oficial apunte a `TSIS_LAB_ARCHITECTURE_v3.md`; `03_TSIS_Lab` y `research_experiment` quedan reflejados en los documentos operativos raiz.
 - 2026-07-05: alineados los documentos raiz `PROJECT_OPERATING_SYSTEM.md`, `RESEARCH_PHILOSOPHY.md` y `VERSIONING_STANDARDS.md` con `TSIS_LAB_ARCHITECTURE_v3.md`; quedan integrados `03_TSIS_Lab`, `research_experiment`, evidence/knowledge promotion y AlphaEvolve como generador subordinado al Scientific Validation Pipeline.
@@ -32,6 +50,16 @@ No sustituye a changelogs de modulos operativos como
 `01_TSIS_DATA_FOUNDATION/CHANGELOG.md`.
 
 ## Scope
+
+## 2026-08-14 | Trading Activity independent percentile replay gate
+
+- Promoted the remaining Binding A percentile evidence restriction into a
+  fail-closed independent replay gate before Binding B comparison work.
+- Prepared one production-equivalent block per shard with normal and
+  early-close targets, while keeping the measured 240-block FULL scope
+  non-runnable until exact probe PASS and separate human authorization.
+- Preserved the distinction between an unclosed validation gap and evidence of
+  incorrect data: no percentile defect is asserted before the replay runs.
 
 ## 2026-08-11 | Trading Activity Stage-8 fingerprinted engine recertified
 
@@ -1318,3 +1346,8 @@ architecture workspace for automation, agents and controlled evolution.
 - `2026-07-05` - TSIS Lab crea `execution_protocol.md` para `EXP_DAS_FRONTSIDE_DISCOVERY_0001`: fija que la ejecucion oficial debe ser executor + manifest + evidence report, no notebook manual, y define metricas/gates/memoria para que humano o AlphaEvolve sepan si una variante evoluciona.
 
 - `2026-08-12` - Creado en `15_SCREENER_ENGINE` el draft `SCREENER_ENGINE_ARCHITECTURE_PROPOSAL_v0_1.md` y su paquete de evidencia para revision humana. La propuesta separa Data Foundation, Screener Engine y Backtest Engine; define `Daily Eligible Universe` como motor generalista y los scanners In-Play como familia dependiente de estrategia. No abre `BT-GATE-016`, no crea runtime y no promueve ningun dataset.
+- `2026-08-14` - Trading Activity FULL target-only v0.3 received explicit human authorization and was frozen at SHA-256 `13c5fcee1b4367ca9aecabc91503cbbedc4e45f901ed7dbaddc2d8897080592c`; execution remains not launched and human-operated, with no recomputation or canonical promotion.
+- `2026-08-14` - Trading Activity target-only recovery completed terminal `PASS` over 2,400 exact TARGET and 7,200/7,200 immutable partitions with zero recomputation; final manifest SHA-256 is `421c5728cd9dd54195e7993258636884ffb6c887ab543d36d924579cab424956`. Binding A evidence verdict, Binding B, OOS and canonical promotion remain separate gates.
+- `2026-08-14` - Trading Activity Binding A completed its bounded family-by-family scientific evidence audit with `PASS_WITH_RESTRICTIONS`: 20 full sessions, all 16 shard x cohort cells, four early closes, 79 check types and zero hard failures. The operative rerun3 hash-bound the exact v0.2 specification; Binding B is limited to preregistration and inherited controls 001..006.
+- `2026-08-15` - Market States amended Binding B B-02 after external scientific review: 10/12 decisions are now resolved, while D07 remains blocked by the absent governed Wake-up label/counting authority and D12 by the absent exact sealed final-lockbox manifest. B-03 code and every downstream run remain unauthorized.
+- `2026-08-15` - Market States opened the D07/D12 upstream authority workstreams without opening Binding B code: label/negative semantics, label/denominator grains, false-activation matching, validation/final-OOS selection and a sealed-manifest schema are prepared; human numerical decisions and independent custodian artifacts remain pending.

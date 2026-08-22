@@ -1,0 +1,15 @@
+﻿{
+    "mode":  "APPLY",
+    "source_file_count":  126,
+    "moved_file_count":  123,
+    "unchanged_file_count":  3,
+    "duplicate_target_count":  0,
+    "collision_count":  0,
+    "max_target_absolute_path_length":  232,
+    "max_target_absolute_path":  "C:\\TSIS_Data\\00_CTO\\04_MARKET_STATES_CREATION\\02_INFORMATION_OBJECTS\\TRADING_ACTIVITY\\MODEL_01_MARKED_ACTIVITY\\BINDING_A\\02_MATERIALIZATION\\TRADING_ACTIVITY_STAGE8_CPP_FULL_MATERIALIZATION_EXECUTION_AND_CERTIFICATION_READOUT_v0_1.md",
+    "preferred_absolute_path_limit":  235,
+    "hard_absolute_path_limit":  240,
+    "status":  "COMPLETE_HASH_VERIFIED",
+    "completed_at_utc":  "2026-08-17T07:29:56.7524525+00:00",
+    "path_map":  "00_CTO/PATH_MAP_v0_1.csv"
+}

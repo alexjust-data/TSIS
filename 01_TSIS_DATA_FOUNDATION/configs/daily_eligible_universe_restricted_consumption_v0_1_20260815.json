@@ -1,0 +1,56 @@
+{
+  "config_id": "daily_eligible_universe_restricted_consumption_v0_1_20260815",
+  "contract_id": "daily_eligible_universe_selector_and_binding_consumption_contract_v0_1",
+  "artifact_status": "HUMAN_POLICY_CONFIRMED_RESTRICTED_EXPERIMENTAL_CONSUMPTION",
+  "canonical_promotion": false,
+  "lockbox_identity_generation_authorized": false,
+  "label_materialization_authorized": false,
+  "binding_b_implementation_authorized": false,
+  "population_candidate": {
+    "path": "G:/TSIS/data/data_foundation_outputs/population_target_presession_4824_candidate/population_target_presession_4824_candidate_v0_1_experimental_20260807T170430Z/population_target_presession_4824_candidate_v0_1.parquet",
+    "sha256": "a777b3338d1ff2f2304e768113a5a14728d16372553081b144c943a93fa0702c",
+    "manifest_path": "G:/TSIS/data/data_foundation_outputs/population_target_presession_4824_candidate/population_target_presession_4824_candidate_v0_1_experimental_20260807T170430Z/population_target_presession_4824_candidate_v0_1_manifest.json",
+    "manifest_sha256": "26a131b7c01e8b598fe0bd2dbeac8b768ddcd4103fdb1d66746508f4aca398da",
+    "expected_rows": 7369699,
+    "expected_eligible_rows": 1417316,
+    "eligible_state": "ELIGIBLE_UNDER_DECLARED_PROXY",
+    "share_selection_policy_id": "S1_DILUTED_FIRST",
+    "shares_ttl_policy_id": "SHARES_TTL_180D"
+  },
+  "selector_policy": {
+    "presession_cutoff_local": "04:00:00 America/New_York",
+    "reference_price_source": "PRIOR_ELIGIBLE_RTH_CLOSE",
+    "minimum_price_inclusive": 0.5,
+    "maximum_price_inclusive": 20.0,
+    "maximum_market_cap_proxy_exclusive": 100000000.0,
+    "claims_exact_point_shares": false,
+    "claims_canonical_screener": false
+  },
+  "market_calendar": {
+    "path": "G:/TSIS/data/data_foundation_outputs/market_calendar/market_calendar_v0_1.parquet",
+    "sha256": "cbf1879261866d980c5a8542fadf683dbc91f96b80b7865055417a16d1e6e87c"
+  },
+  "development_targets": {
+    "path": "G:/TSIS/data/data_foundation_outputs/trading_activity_ta3_stratified_sample/trading_activity_ta3_stratified_sample_v0_1_20260807T175808Z/selected_target_contexts_v0_1.parquet",
+    "sha256": "55890736132080098114ac356ab5bce66adf3c26a9a4b92915788594d06b2220",
+    "sample_manifest_path": "G:/TSIS/data/data_foundation_outputs/trading_activity_ta3_stratified_sample/trading_activity_ta3_stratified_sample_v0_1_20260807T175808Z/sample_manifest_v0_2.json",
+    "sample_manifest_sha256": "100f0ac0e1faaecd54eded1d99886daafbe9ecf374a247fa9835febc70b1addf",
+    "expected_target_count": 2400,
+    "expected_decision_points": 55866000,
+    "expected_early_close_targets": 27,
+    "cardinality_contract_path": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts/trading_activity_stage8_target_only_contract.py",
+    "cardinality_contract_sha256": "69293ee4b95e7873d4c37dd7b84220ecc18df24c6e4f442c52b5fe8fb3f331a4"
+  },
+  "splits": {
+    "DEVELOPMENT": ["2011-01-03", "2022-12-30"],
+    "TEMPORAL_VALIDATION": ["2023-01-03", "2024-12-31"],
+    "ENGINEERING_EXPOSED_EMBARGO": ["2025-01-02", "2025-03-14"],
+    "FINAL_TEMPORAL_OOS": ["2025-03-17", "2026-03-09"]
+  },
+  "denominator_identity": {
+    "grain": "instrument_id x session_date x decision_timestamp_utc",
+    "grid": "integer UTC seconds strictly after session open and strictly before session close",
+    "storage": "LOSSLESS_SESSION_INTERVAL_ENCODING",
+    "flat_symbol_second_materialization": false
+  }
+}

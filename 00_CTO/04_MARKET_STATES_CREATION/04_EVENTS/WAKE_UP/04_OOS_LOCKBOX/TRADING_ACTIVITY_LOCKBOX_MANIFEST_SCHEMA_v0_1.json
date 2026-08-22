@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "trading_activity_lockbox_manifest_schema_v0_1",
+  "title": "Trading Activity lockbox manifest schema v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifest_id",
+    "manifest_version",
+    "split_id",
+    "selection_contract_id",
+    "selection_contract_sha256",
+    "date_start",
+    "date_end",
+    "calendar_id",
+    "calendar_sha256",
+    "source_snapshots",
+    "eligibility_policy_id",
+    "eligibility_policy_sha256",
+    "latency_policy_id",
+    "latency_policy_sha256",
+    "label_contract_id",
+    "label_contract_sha256",
+    "target_identity_artifact",
+    "target_identity_sha256",
+    "target_identity_count",
+    "denominator_identity_artifact",
+    "denominator_identity_sha256",
+    "denominator_identity_count",
+    "label_artifact",
+    "label_artifact_sha256",
+    "label_identity_count",
+    "sealed_at_utc",
+    "sealed_by",
+    "access_count",
+    "metrics_exposed",
+    "labels_exposed",
+    "allowed_opening_gate",
+    "access_ledger"
+  ],
+  "properties": {
+    "manifest_id": {"type": "string", "minLength": 1},
+    "manifest_version": {"const": "v0_1"},
+    "split_id": {"enum": ["TEMPORAL_VALIDATION", "FINAL_TEMPORAL_OOS"]},
+    "selection_contract_id": {"type": "string", "minLength": 1},
+    "selection_contract_sha256": {"$ref": "#/$defs/sha256"},
+    "date_start": {"type": "string", "format": "date"},
+    "date_end": {"type": "string", "format": "date"},
+    "calendar_id": {"type": "string", "minLength": 1},
+    "calendar_sha256": {"$ref": "#/$defs/sha256"},
+    "source_snapshots": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_id", "artifact", "sha256"],
+        "properties": {
+          "source_id": {"type": "string", "minLength": 1},
+          "artifact": {"type": "string", "minLength": 1},
+          "sha256": {"$ref": "#/$defs/sha256"}
+        }
+      }
+    },
+    "eligibility_policy_id": {"type": "string", "minLength": 1},
+    "eligibility_policy_sha256": {"$ref": "#/$defs/sha256"},
+    "latency_policy_id": {"type": "string", "minLength": 1},
+    "latency_policy_sha256": {"$ref": "#/$defs/sha256"},
+    "label_contract_id": {"type": "string", "minLength": 1},
+    "label_contract_sha256": {"$ref": "#/$defs/sha256"},
+    "target_identity_artifact": {"type": "string", "minLength": 1},
+    "target_identity_sha256": {"$ref": "#/$defs/sha256"},
+    "target_identity_count": {"type": "integer", "minimum": 1},
+    "denominator_identity_artifact": {"type": "string", "minLength": 1},
+    "denominator_identity_sha256": {"$ref": "#/$defs/sha256"},
+    "denominator_identity_count": {"type": "integer", "minimum": 1},
+    "label_artifact": {"type": "string", "minLength": 1},
+    "label_artifact_sha256": {"$ref": "#/$defs/sha256"},
+    "label_identity_count": {"type": "integer", "minimum": 0},
+    "sealed_at_utc": {"type": "string", "format": "date-time"},
+    "sealed_by": {"type": "string", "minLength": 1},
+    "access_count": {"const": 0},
+    "metrics_exposed": {"const": false},
+    "labels_exposed": {"const": false},
+    "allowed_opening_gate": {
+      "enum": [
+        "B-17_A_B_COMPARISON_ONLY",
+        "B-18_SELECTED_CANDIDATE_FINAL_OOS_ONLY"
+      ]
+    },
+    "access_ledger": {"type": "array", "maxItems": 0}
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

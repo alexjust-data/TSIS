@@ -3,6 +3,7 @@
 ## Menu
 
 - [Rol de esta carpeta](#rol-de-esta-carpeta)
+- [SEC PIT active storage decision](#sec-pit-active-storage-decision)
 - [Autoridad institucional](#autoridad-institucional)
 - [Que es un module contract](#que-es-un-module-contract)
 - [Que no es esta carpeta](#que-no-es-esta-carpeta)
@@ -19,6 +20,7 @@
   - [`transversal/raw_storage_parity_audit_requirement_v0_1.md`](#transversalrawstorageparityauditrequirementv01md)
   - [`promotion_pipeline.md`](#promotionpipelinemd)
   - [`dataset_contract_template.md`](#datasetcontracttemplatemd)
+  - [`representation_model_materialization_execution_and_certification_contract_v0_1.md`](#representationmodelmaterializationexecutionandcertificationcontractv01md)
 - [2. Evidencia, inspeccion y rehabilitacion](#2-evidencia-inspeccion-y-rehabilitacion)
   - [`evidence_model.md`](#evidencemodelmd)
   - [`inspection_dossier_model.md`](#inspectiondossiermodelmd)
@@ -150,6 +152,14 @@
 - [Relacion con `CHANGELOG.md`](#relacion-con-changelogmd)
 - [Regla final](#regla-final)
 
+
+## SEC PIT active storage decision
+
+The binding root and legacy-pilot boundary for new SEC PIT acquisitions lives
+in [`sec_pit/sec_pit_storage_root_and_legacy_pilot_decision_v0_1.md`](./sec_pit/sec_pit_storage_root_and_legacy_pilot_decision_v0_1.md).
+It makes `D:/TSIS/fundamental_context/sec_pit_v0_1` the sole active write root,
+freezes `D:/sec_float_pit_v0_1` as read-only provenance and requires the
+`200 GiB` clean-stop gate before any primary acquisition.
 
 ## Rol de esta carpeta
 
@@ -316,6 +326,19 @@ La carpeta puede leerse en diez familias principales:
 10. governance snapshots, indices y migracion.
 
 ## 1. Alcance, autoridad y operacion
+
+### `representation_model_materialization_execution_and_certification_contract_v0_1.md`
+
+Contrato ejecutable transversal para materializaciones de Representation
+Models. Exige pertenencia exacta de targets, separacion tipada entre metadata y
+conteos fisicos, una unica autoridad de cardinalidad, ensayo terminal completo,
+probes production-equivalent por shard y una matriz
+`inherited_incident_controls` fail-closed.
+
+Implementa en Data Foundation el protocolo semantico de
+`00_CTO/04_MARKET_STATES_CREATION` y convierte cada fallo verificado en un
+control que los modelos posteriores deben importar y demostrar. No certifica
+por si solo Trading Activity ni autoriza un run largo.
 
 ### `module_scope.md`
 

@@ -1,0 +1,57 @@
+{
+  "config_id": "wake_up_rth_oracle_calibration_v0_1",
+  "config_version": "v0_1",
+  "status": "DEVELOPMENT_ONLY_NOT_FROZEN",
+  "experiment_id": "EXP_WAKE_UP_RTH_ORACLE_CALIBRATION_0001",
+  "scope": {
+    "development_start": "2011-01-03",
+    "development_end": "2022-12-30",
+    "rth_boundary": "OPEN_EXCLUSIVE_CLOSE_EXCLUSIVE",
+    "decision_grid_authority": "CALENDAR_OPEN_PLUS_1_THROUGH_CLOSE_MINUS_1",
+    "legacy_target_manifest_decision_seconds_field": "KNOWN_CLOSE_MINUS_OPEN_PRE_CORRECTION_NOT_CARDINALITY_AUTHORITY",
+    "simulated_latency_ms": 1000,
+    "validation_and_oos_reads": "PROHIBITED"
+  },
+  "sources": {
+    "target_contexts": "G:/TSIS/data/DATA_FOUNDATION_OUTPUTS/trading_activity_ta3_stratified_sample/trading_activity_ta3_stratified_sample_v0_1_20260807T175808Z/selected_target_contexts_v0_1.parquet",
+    "target_contexts_sha256": "55890736132080098114ac356ab5bce66adf3c26a9a4b92915788594d06b2220",
+    "sample_manifest": "G:/TSIS/data/DATA_FOUNDATION_OUTPUTS/trading_activity_ta3_stratified_sample/trading_activity_ta3_stratified_sample_v0_1_20260807T175808Z/sample_manifest_v0_2.json",
+    "selected_target_source_audit": "G:/TSIS/data/DATA_FOUNDATION_OUTPUTS/trading_activity_ta3_stratified_sample/trading_activity_ta3_stratified_sample_v0_1_20260807T175808Z/selected_target_g_source_audit_v0_1.parquet",
+    "raw_trade_root": "G:/TSIS/data/trades_ticks_prod_2005_2026",
+    "market_calendar": "G:/TSIS/data/data_foundation_outputs/market_calendar/market_calendar_v0_1.parquet",
+    "market_calendar_sha256": "cbf1879261866d980c5a8542fadf683dbc91f96b80b7865055417a16d1e6e87c",
+    "condition_policy_matrix": "C:/TSIS_Data/tests/third_party_evidence/massive/market_operations/snapshot_20260806T220504Z/policy_matrix_candidate_v0_1/trading_activity_trade_condition_policy_matrix_candidate_v0_1.csv",
+    "condition_policy_matrix_sha256": "b2f208496809cb970437d04024d93bfb98780b54b5d790091362aa145eb9635f",
+    "data_foundation_scripts": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/scripts"
+  },
+  "discovery": {
+    "dormancy_seconds": [900, 1800, 3600],
+    "confirmation_seconds": [30, 60, 120, 300],
+    "minimum_confirmation_trade_count_for_candidate_reduction": 2,
+    "minimum_confirmation_cluster_count_for_candidate_reduction": 2,
+    "top_per_window_pair": 4,
+    "maximum_candidates_per_session": 12,
+    "candidate_merge_gap_seconds": 300,
+    "control_seed": 20260817
+  },
+  "panel": {
+    "blind_seed": 20260817,
+    "cases_per_role_per_cohort": 10,
+    "roles": [
+      "CANDIDATE_ACTIVITY_TRANSITION",
+      "CONTROL_DORMANT",
+      "CONTROL_ONE_CLUSTER",
+      "CONTROL_CONTEXT_NORMAL_ACTIVITY",
+      "CONTROL_QUALITY_OR_ARTIFACT",
+      "CONTROL_RANDOM_ELIGIBLE"
+    ],
+    "zoom_prior_seconds": 3600,
+    "zoom_post_seconds": 300,
+    "reviewer_count": 2
+  },
+  "outputs": {
+    "run_parent": "G:/TSIS/data/research_experiments/EXP_WAKE_UP_RTH_ORACLE_CALIBRATION_0001/runs",
+    "overwrite_policy": "NEVER",
+    "parquet_compression": "zstd"
+  }
+}

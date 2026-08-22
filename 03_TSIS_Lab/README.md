@@ -148,3 +148,30 @@ Lectura correcta:
 
 Lectura: semilla generica inicial superseded por `EXP_DAS_FRONTSIDE_DISCOVERY_0001` para la ruta operativa actual. El concepto `intraday_momentum_extension` puede seguir existiendo como familia generica futura, pero no es el experimento activo que vamos a ejecutar ahora.
 
+## Wake-up RTH oracle calibration
+
+### EXP_WAKE_UP_RTH_ORACLE_CALIBRATION_0001
+
+```text
+role
+=
+binding-neutral development-only oracle calibration
+
+population
+=
+2,400 frozen TA-3 development instrument-sessions
+
+status
+=
+full candidate run complete; blind-panel repair probe PASS;
+full panel rebuild pending human launch
+```
+
+This experiment builds a stratified blind candidate/control panel, a
+price-path-free gallery, independent review/adjudication artifacts and evidence
+for WUL-D01..D08. The candidate run completed 2,400/2,400; its initial blind
+panel was invalidated because all 240 cases fell in the close RTH bucket. The
+repair probe passed 25/25 and the full panel-only rebuild remains human-owned.
+It does not freeze D07 automatically, read temporal validation/final OOS,
+implement Binding B or authorize A/B comparison.
+

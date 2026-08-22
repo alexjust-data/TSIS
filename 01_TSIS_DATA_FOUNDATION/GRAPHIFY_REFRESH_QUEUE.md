@@ -1,5 +1,29 @@
 # Graphify Refresh Queue for 01_TSIS_DATA_FOUNDATION
 
+## Pending - 2026-08-14 - HIGH - Representation Model execution and certification contract
+
+- **ID:** `GFQ-20260814-FOUNDATION-REPRESENTATION-MATERIALIZATION-CERTIFICATION-001`
+- **Estado:** pending
+- **Fecha:** 2026-08-14
+- **Severidad:** HIGH
+- **Scope:** Data Foundation executable requirements and implemented Trading Activity evidence for exact target membership, typed physical-family counts, one cardinality authority, adversarial fixtures, all-shard probes, terminal rehearsal and inherited incident controls
+- **Leaf objetivo:** `data_foundation_root` / module contracts / Representation Model materialization execution and certification
+- **Archivos afectados:** execution/certification contract; Trading Activity contract, plan builder, verifier, monitor, PROBE/FULL configs and focused tests; Foundations/Data Foundation changelogs; linked CTO protocol/register/lifecycle/handoff/readout.
+- **Motivo:** bounded evidence passes 4/4 shards and the FULL v0.3 terminal audit now passes 2,400 TARGET and 7,200/7,200 partitions. Refresh is deferred to the next controlled Graphify window to avoid contention with active SEC acquisition and to exclude runtime telemetry histories.
+- **Cierre esperado:** refresh the Data Foundation contract/control/implementation leaf with the terminal evidence package, run diagnostics, update `BUILD_MANIFEST.md` and resolve this entry while preserving promotion false.
+
+## Pending - 2026-08-14 - HIGH - SEC PIT C01 primary tranche 01
+
+- **ID:** `GFQ-20260814-FOUNDATION-SEC-C01-PRIMARY-T01-001`
+- **Estado:** pending
+- **Fecha:** 2026-08-14
+- **Severidad:** HIGH
+- **Scope:** hash-bound 250-row C01 primary authorization, gate-matrix provenance, active 127,946-document acquisition, four-state terminal monitor and resume-safe 200-GiB disk boundary
+- **Leaf objetivo:** `data_foundation_root` / SEC PIT acquisition authorization and long-operation control
+- **Archivos afectados:** `configs/sec_pit_primary_download_authorization_c01_t01_0250_v0_1_20260814.json`; `scripts/sec_pit/authorization.py`; `scripts/sec_pit/run_authorized_primary_acquisition_v0_2.py`; `scripts/sec_pit/monitor_authorized_primary_acquisition_v0_2.ps1`; `scripts/sec_pit/README.md`; focused SEC PIT tests; Data Foundation and CTO launch readouts/changelogs.
+- **Motivo:** the executable and semantic corpus now contains an active bounded primary run. Rebuild is deferred until a terminal manifest exists, both to avoid competing with acquisition I/O and to prevent transient telemetry from being represented as final evidence.
+- **Cierre esperado:** after terminal audit, refresh the SEC PIT implementation/control leaf, run Graphify diagnostics, update `BUILD_MANIFEST.md` and resolve this entry without ingesting raw objects or heartbeat histories.
+
 ## Pending - 2026-08-11 - MEDIUM - SEC PIT audit package builder
 
 - **Estado:** pending

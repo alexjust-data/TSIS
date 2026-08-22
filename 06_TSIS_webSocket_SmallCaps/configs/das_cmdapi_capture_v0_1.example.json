@@ -1,0 +1,37 @@
+{
+  "schema_version": "das_cmdapi_capture_v0_1",
+  "host": "127.0.0.1",
+  "port": 9800,
+  "data_root": "E:/TSIS/data_DAS_live",
+  "login_mode": "terminal_prompt_socket_login",
+  "socket_login_enabled": false,
+  "locate_queries_enabled": false,
+  "symbols": ["SOXS"],
+  "channels": ["Lv1", "tms", "Lv2", "TOPLIST", "DAYCHART", "MINCHART"],
+  "symbol_queries": ["SHORTINFO", "LDLU", "SymStatus"],
+  "account_queries": ["BP", "AccountInfo", "POSITIONS", "ORDERS", "TRADES", "ROUTESTATUS", "LOCATES", "INTMSGS"],
+  "daychart_days_back": 10,
+  "minchart_minutes_back": 60,
+  "max_screener_symbols": 100,
+  "query_wait_seconds": 1.0,
+  "screener_wait_seconds": 1.0,
+  "toplist_wait_seconds": 3.0,
+  "full_capture_wait_seconds": 3.0,
+  "stream_poll_seconds": 1.0,
+  "capture_seconds": null,
+  "max_response_bytes": 50000000,
+  "market_cap_reference_path": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/market_cap_last_observed_cutoff/20260320_market_cap_last_observed_cutoff/market_cap_cutoff_lt_1b_active_inactive.csv",
+  "screener_initial_denominator": {
+    "sessions": ["premarket", "regular_market", "afterhours"],
+    "market_cap_usd_lt": 100000000,
+    "price_usd_min": 0.5,
+    "price_usd_max": 20.0,
+    "min_volume_shares": 300000,
+    "volume_source_priority": [
+      "das_lv1_V",
+      "das_time_and_sales_sum_if_capture_window_complete",
+      "unavailable_record_null"
+    ],
+    "market_cap_source": "governed_tsis_reference_or_universe_until_das_field_is_proven"
+  }
+}

@@ -1,5 +1,303 @@
 # Market States Creation Changelog
 
+## 2026-08-17 | Wake-up RTH blind-panel incident and repair probe
+
+- Preserved the valid 2,400/2,400 candidate run and its 4,447 candidates.
+- Invalidated the initial 240-case gallery because all cases belonged to
+  `CLOSE_240M_PLUS`; D07 and human review remain blocked.
+- Added a governed panel-only repair, permanent temporal-diversity and lineage
+  controls, a 25/25 PASS repair probe and a dedicated monitor.
+- Full panel rebuild remains a human-controlled long operation.
+
+## 2026-08-17 | Wake-up RTH D07 oracle preparation certified
+
+- Added the master end-to-end calibration contract plus exact observation,
+  calibration, blind-review and implementation/probe readouts.
+- Implemented and certified the development-only, Binding A/B-neutral search
+  over the frozen TA-3 population; all D1..D4 probes and 20/20 terminal checks
+  passed.
+- Recorded permanent controls for the legacy 23,400/23,399 session
+  cardinality, composite target identity, PowerShell 5.1 encoding and
+  hash-bound resume.
+- Full 2,400-session execution is prepared for human launch. WUL-D01..D08,
+  D07, B-03, A/B comparison and OOS remain unfrozen/unauthorized.
+
+## 2026-08-17 | Readable path-safe architecture applied
+
+- Reorganized 126 governed files into a human-readable tree by Information
+  Object, Representation Model, binding, state-table layer, event, universe,
+  governance, upstream data, registries, handoffs and historical evidence.
+- Moved 123 files and retained the three root entrypoints; preserved every
+  pre-existing filename and verified identical SHA-256 before and after.
+- Closed preflight with zero unmapped files, duplicate targets, collisions or
+  hash mismatches. The longest final path is 232 characters.
+- Added `00_CTO/README.md`, `TREE_v0_2.md`, `PATH_MAP_v0_1.csv` and
+  `MIGRATION_v0_1.json`. Empty future folders express architecture only and
+  do not imply implementation, evidence, authorization or promotion.
+- Adopted the root `PATH_NAMING_POLICY.md`: physical paths must remain human
+  readable and within a 240-character absolute budget; opaque acronym trees are
+  prohibited.
+
+## 2026-08-15 | Restricted Daily Eligible bridge closed and general Screener boundary recorded
+
+- Executed and independently validated the restricted consumption gate against
+  the existing presession candidate: 2,400/2,400 development targets and
+  55,866,000 logical symbol-seconds reconcile exactly.
+- Declared this gate a controlled A/B experimental bridge, not the general
+  Screener Engine, canonical daily universe, Backtest integration or live/RL
+  authority.
+- Recorded `00_CTO/15_SCREENER_ENGINE` as the project-wide conceptual home;
+  its future independent runtime and all consumer adapters require separate
+  gates.
+- Added current handoff v0.28 and roadmap v0.17; retired v0.27/v0.16 to the
+  Recycle Bin after recording their hashes in the lineage consolidation.
+- Preserved D07/D12 as the next human-scientific blockers and kept B-03 closed.
+
+## 2026-08-15 | Daily Eligible Universe ownership fixed before Binding A/B and Wake-up
+
+- Preserved the human directive that daily price/market-cap eligibility belongs
+  exclusively to the upstream selector; Binding A/B consume membership and may
+  not reimplement the thresholds.
+- Bound the TA-3 candidate policy to prior eligible RTH close in `[0.50, 20.00]`
+  and presession market-cap proxy `< 100M`, while retaining its experimental,
+  non-canonical and non-exact-shares restrictions.
+- Executed a read-only exact reconciliation: all 2,400 TARGET contexts matched
+  the population candidate by `population_context_id`, all were eligible and
+  identity/state/price/cap mismatches were zero.
+- Superseded handoff v0.26 with v0.27 and roadmap v0.15 with v0.16. The selector
+  contract and eligible-symbol-second denominators now precede D07/D12; B-03
+  remains unauthorized.
+
+## 2026-08-15 | Trading Activity transient handoff/roadmap lineage consolidated
+
+- Audited 32 sequential handoff/roadmap snapshots against physical inbound
+  references and their dedicated plans, readouts, manifests and contracts.
+- Retained only current handoff v0.26, current roadmap v0.15 and handoff v0.12
+  as a temporary compatibility target for one external Applied Architecture
+  pointer.
+- Removed 29 redundant snapshots while preserving every pre-removal SHA-256,
+  recorded stage and recovery authority in
+  `TRADING_ACTIVITY_HANDOFF_AND_ROADMAP_LINEAGE_CONSOLIDATION_v0_1.md`.
+- No evidence readout, accepted package, contract, scientific gate or execution
+  authorization changed. B-03 remains unauthorized.
+
+## 2026-08-15 | Binding B B-01 frozen and B-02 exact specification drafted
+
+- Persisted the external audit `PASS_FOR_EXACT_SPECIFICATION_DRAFTING` against
+  the immutable preparation ZIP SHA-256
+  `6419be68576a579c4ce6ac3ec38dab58a83d01318d8c202f29da0f61fa14e6fd`.
+- Recorded the human authorization, froze the inheritance/delta contract B-01
+  and preserved its pre-freeze draft SHA in the decision evidence.
+- Drafted `TRADING_ACTIVITY_BINDING_B_EXACT_SPECIFICATION_v0_1.md` with the 22
+  primary variables, timestamp clusters, zero/censoring states, PIT intensity,
+  kernels, economic time, typed schema, mandatory ablations, temporal splits,
+  value-level tests and comparison discipline.
+- Kept twelve numerical/experimental decisions explicitly open for separate
+  scientific review and human B-02 freeze. Implementation, probes, long
+  materialization, A/B comparison, temporal OOS and promotion remain blocked.
+- Superseded the active handoff with v0.24 and roadmap with v0.13; updated the
+  existing Binding B Graphify pending entry instead of creating a duplicate.
+
+## 2026-08-15 | Binding A process reconstructed for governed Binding B replication
+
+- Inventoried 132 Binding A-related CTO/Data Foundation artifacts and audited
+  the governing scientific/operational chain, separating it from A-specific
+  incident recovery and performance detours.
+- Added
+  `TRADING_ACTIVITY_BINDING_B_DEVELOPMENT_AND_CERTIFICATION_PLAN_v0_1.md`
+  with 18 gates from inheritance/specification through all-variable/all-shard
+  probes, terminal certification, independent replay, A/B comparison and the
+  untouched final temporal OOS.
+- Added the Binding B inheritance/delta contract draft, fixing the shared
+  Information Object, source, policies, decision grid, states, baselines and
+  denominator while isolating the event-time decisions that the exact
+  specification must freeze.
+- Bound B to the exact A development denominator: sample-manifest SHA-256
+  `100f0ac0e1faaecd54eded1d99886daafbe9ecf374a247fa9835febc70b1addf`
+  and target-table SHA-256
+  `55890736132080098114ac356ab5bce66adf3c26a9a4b92915788594d06b2220`.
+- Required `RM-MAT-CTRL-001..006` and eight B-specific prevention controls
+  before scale-out. C++ remains conditional on profiling; target-only recovery
+  is not accepted as a normal planned path.
+- Superseded the active handoff with v0.23 and roadmap with v0.12. The next
+  authorized work is review/freeze of the B inheritance/delta contract followed
+  by its exact specification; implementation, probes and all runs remain
+  unauthorized.
+
+## 2026-08-15 | Binding B preregistration proposal drafted
+
+- Converted the reviewed challenger proposal into
+  `TRADING_ACTIVITY_BINDING_B_PREREGISTRATION_v0_1.md`, a versioned draft for
+  human and scientific review rather than an executable frozen specification.
+- Proposed an event-time marked-renewal and burst representation with 22
+  primary variables, preregistered secondary/diagnostic sets, common A/B probe
+  protocol and selection rule at a fixed false-alarm budget.
+- Replaced ephemeral `sandbox:/` references with repository authorities and
+  bound the proposal to Binding A's terminal independent-replay PASS manifest,
+  SHA-256 `634e71bccfd10bdc30b82038b9c767e5738b530e94894bc501db579e679fc857`.
+- Preserved the gate boundary: exact formulas, thresholds, schema, splits,
+  missingness and budgets must be closed and the preregistration explicitly
+  frozen before implementation or probes. Long materialization, A/B comparison,
+  temporal OOS and canonical promotion remain unauthorized.
+- Superseded the active handoff with v0.22 and roadmap with v0.11.
+
+## 2026-08-15 | Binding A independent percentile replay FULL PASS exact
+
+- Executed the hash-bound independent replay over all 240 blocks and 2,400
+  frozen TARGET sessions: 837,990,000 baseline rows and 3,351,960,000
+  percentile cells, with exact value and NULL-mask equality and zero mismatches.
+- Bound the terminal evidence to final-manifest SHA-256
+  `634e71bccfd10bdc30b82038b9c767e5738b530e94894bc501db579e679fc857`.
+- Added the FULL execution readout, revised Binding A scientific verdict v0.2,
+  handoff v0.21 and roadmap v0.10 without rewriting historical evidence.
+- Closed only the percentile replay restriction. Binding A remains an
+  experimental candidate with legacy-RTH and simulated-availability scope
+  restrictions; canonical promotion and temporal OOS remain unauthorized.
+- Opened Binding B frozen preregistration as the next authorizable gate. Binding
+  B implementation and long materialization remain blocked behind imported
+  `RM-MAT-CTRL-001..006`, tests, all-variable/all-shard probes and a separate
+  human authorization.
+
+## 2026-08-14 | Binding A independent four-percentile replay prepared
+
+- Converted the remaining percentile-replay restriction into an independent,
+  zero-tolerance executable audit that does not import any production baseline
+  engine.
+- Implemented a resume-safe runner, compact monitor, safe-stop protocol,
+  hash-bound planner/authorizer and four focused tests.
+- Froze a 4/4-shard probe over four normal and four early-close sessions:
+  60,576,395 historical rows, 2,159,880 baseline rows and 8,639,520 percentile
+  cells. Its static preflight is PASS.
+- Measured the non-runnable FULL scope at 240 blocks, 2,400 sessions,
+  3,729,376,935 historical rows and 3,351,960,000 percentile cells. FULL,
+  Binding B, OOS and canonical promotion remain unauthorized.
+
+## 2026-08-14 | Trading Activity target-only FULL terminal certification PASS
+
+- Audited run `ta3_stage8_target_only_full_recovery_v0_3_20260814` as
+  `PASS`: 2,400 exact TARGET, 7,200/7,200 partitions, zero failures and zero
+  source-block recomputation.
+- Verified exact row totals of 279,330,000 current-state, 111,732,000
+  multiscale-contrast and 837,990,000 PIT-baseline rows, with one schema variant
+  per family and no `future_window_used=true` verification record.
+- Bound the final manifest at SHA-256
+  `421c5728cd9dd54195e7993258636884ffb6c887ab543d36d924579cab424956`
+  and verified all four governed artifact hashes.
+- Added the terminal execution readout, handoff v0.18 and roadmap v0.7.
+  Binding A now awaits a separate scientific evidence verdict; Binding B, OOS
+  and canonical promotion remain unauthorized.
+- Appended incident status as
+  `FULL_TERMINAL_VERIFIED_LATER_PLAN_IMPORT_PENDING`; incidents 001..005 are
+  not closed until the next applicable model plan imports the controls.
+
+## 2026-08-14 | Trading Activity FULL target-only plan human-authorized
+
+- Froze the executable FULL v0.3 plan as
+  `PREREGISTERED_HUMAN_AUTHORIZED`, SHA-256
+  `13c5fcee1b4367ca9aecabc91503cbbedc4e45f901ed7dbaddc2d8897080592c`.
+- Re-verified the exact 2,400 TARGET, 7,200 partitions, 27 early-close sessions,
+  three typed row totals, five inherited PASS controls and one schema per family.
+- Recorded the state as `HUMAN_AUTHORIZED_NOT_LAUNCHED`; the human remains the
+  only launcher and no feature recomputation or canonical promotion is allowed.
+- Superseded the current handoff with v0.17 and preserved `--resume` for an
+  interrupted non-terminal run under the identical frozen plan.
+
+## 2026-08-14 | Trading Activity target-only implementation and 4/4 shard gate PASS
+
+- Implemented the exact frozen-TARGET cardinality contract, governed plan
+  builder, immutable-output verifier/certifier, dedicated terminal monitor and
+  focused regression/adversarial tests.
+- Passed 5/5 focused tests and four production-equivalent probes: 8/8 TARGET
+  sessions, 24/24 family partitions and one early-close case in every shard.
+- Caught before scale-out that `target_ordinal` is not globally unique and that
+  explicit Parquet manifests below `run_id=...` must avoid Hive partition
+  inference; both defects are registered as `RM-MAT-INC/CTRL-004..005`.
+- Repeated the complete four-shard cycle after expanding the exact inherited
+  control set; v0.3 passes 4/4 with five controls in every final manifest.
+- Added the implementation/probe readout, handoff v0.16 and roadmap v0.6. The
+  FULL 2,400-TARGET/7,200-partition plan is prepared but remains non-executable
+  until a separate explicit human authorization; no source block was recomputed.
+
+## 2026-08-14 | Cross-model materialization incident learning governance
+
+- Added the active cross-model protocol and append-only register so every
+  materialization defect is versioned, tested, verified through the terminal
+  path and promoted to an inherited prevention control.
+- Registered the three Stage-8 terminal defects as `RM-MAT-INC-001..003` and
+  preregistered controls for typed counts, exact target membership and one
+  authoritative cardinality contract; none is falsely marked verified.
+- Superseded the lifecycle, roadmap and current handoff with v0.2, v0.5 and
+  v0.15, preserving the failed source run and blocking Binding B/later models
+  until applicable inherited controls pass.
+- Linked the executable Data Foundation contract and queued the semantic change
+  for governed Graphify refresh rather than rebuilding during the active SEC
+  acquisition.
+
+## 2026-08-14 | SEC PIT C01 primary tranche 01 authorized and launched
+
+- Bound the first primary tranche to the exact first 250 eligible C01 rows,
+  127,946 selected documents and the frozen probe, selection and gate hashes.
+- Launched the single-writer run at 5 requests/s under the canonical CAS with a
+  200 GiB clean disk stop, content-addressed immutability and explicit resume.
+- Verified the initial live heartbeat at 36/127,946 with zero failures, retries
+  or HTTP 429; the remaining 499 eligible C01 rows, 75 halted rows and cohorts
+  02-05 remain unauthorized.
+- Added a versioned authorization/launch readout and kept O/S, float, terminal
+  audit, next-tranche admission and institutional promotion pending.
+
+## 2026-08-14 | Trading Activity Stage-8 240-block calculation complete; target-only recertification pending
+
+- Preserved the completed Stage-8 physical run as immutable evidence: four of
+  four parent shards, 240/240 unique block manifests `COMPLETE`, 240/240 block
+  summaries `PASS` and one exact engine fingerprint.
+- Classified the wrapper's terminal `FAILED` state correctly: calculation
+  reached 240/240 and failure occurred only in `CERTIFY_240_BLOCKS`, where a
+  strict dictionary equality compared three feature-family counts against an
+  expected structure that also contained `decision_seconds_total`.
+- Corrected the governed target-only arithmetic, including open/close-exclusive
+  one-second boundaries and the five-window baseline dimension, while keeping
+  full scope-session physical rows distinct from the frozen 2,400 target-session
+  denominator.
+- Added the versioned execution/certification readout, target-only recovery plan,
+  current handoff v0.14 and completion roadmap v0.4. No full rematerialization,
+  recovery execution, OOS comparison or promotion is authorized by this update.
+
+## 2026-08-14 | SEC PIT C01 metadata authorized with required corrections
+
+- Accepted the external audit gate for `C01_0824` submissions metadata only;
+  primary acquisition, cohorts 02-05 and automatic scale-out stay blocked.
+- Resolved the storage-path discrepancy by making the governed CAS the sole
+  active write root and retaining the 28.7 GB original pilot as immutable
+  read-only provenance rather than copying or deleting it blindly.
+- Added the network-free post-metadata workload/storage gate and the 200 GiB
+  resume-safe hard-stop required before any later primary run.
+- Persisted a dedicated prelaunch correction readout linking the human verdict,
+  exact root inventory, executable changes and still-blocked gates.
+
+## 2026-08-14 | Minimal SEC PIT 4,824 preparation audit package
+
+- Added a 26-entry pre-launch audit handoff covering only the acquisition
+  authority, prior 100-case/v0.21 evidence, final no-network preflight,
+  complete 4,824-row order, exact cohort 01 input and direct runner dependencies.
+- Excluded raw SEC objects, primary documents, old runtime trees, duplicate
+  cohorts, unrelated source/tests and Graphify artifacts by design.
+- Enforced an exact allowlist, unique safe paths, full archive decompression and
+  independent SHA-256/size verification for all 25 manifested entries.
+- Documented the literal `NA` ticker CSV parsing trap; the executable cohort
+  remains Parquet and preserves all 824 rows without ambiguity.
+
+## 2026-08-13 | SEC PIT 4,824 descending acquisition preparation
+
+- Froze the operator-requested `824/1000/1000/1000/1000` execution order from
+  2026 backwards using `last_observed_date DESC, ticker ASC`.
+- Completed a zero-network preflight over 4,824 ticker rows and exposed 4,626
+  unique instrument identities, 190 reused-identity groups and four cross-CIK
+  identity conflicts that must remain fail-closed.
+- Authorized only human-launched metadata cohort 01; primary acquisition,
+  cohorts 02-05 and institutional promotion remain gated.
+- Added the versioned execution plan and power-loss-safe launch/monitor/resume
+  handoff.
+
 ## 2026-08-11 | SEC PIT external audit package reduced to minimal v0_3
 
 - Superseded the 400-entry v0_2 external-review bundle with a 12-entry v0_3
@@ -640,3 +938,44 @@ scope are frozen.
   remains unauthorized.
 - Published `SEC_PIT_EXTERNAL_AUDIT_PACKAGE_v0_2.zip`, restricted to SEC process,
   results, evidence, code, configuration and tests, with file-level hashes.
+
+## 2026-08-14 - Trading Activity Binding A scientific evidence verdict v0_1
+
+- Audited 20 complete sessions covering all 16 shard x cohort cells and four
+  early closes across all three certified materialized families.
+- Passed 31 current-state, 16 multiscale and 32 PIT-baseline check types with
+  zero hard failures over 9,345,160 sampled family rows.
+- Issued `PASS_WITH_RESTRICTIONS` for governed candidate comparison only;
+  Binding B materialization, OOS and canonical promotion remain unauthorized.
+- Preserved the initial explicit-Parquet recurrence of `RM-MAT-INC-005` and the
+  rerun1 subwindow false positive as new `RM-MAT-INC-006`.
+- Added `RM-MAT-CTRL-006` requiring specification/config hashes and complete
+  parameter-branch tests for validators and evidence auditors.
+## 2026-08-15 | Binding B B-02 amended to 10/12 decisions; code remains blocked
+
+- Persisted the external B-02 scientific review and incorporated D01-D06 and
+  D08-D11 into the exact-specification draft without freezing it.
+- Added the exact 97-input Binding A comparison inventory, static compute-budget
+  annex, partial false-activation counting contract and final-lockbox blocking
+  evidence.
+- Proved physically that the 2,400-row sample is development-only and that the
+  located daily halt outcome manifest is not a governed Wake-up label authority.
+- Left `B02-D07` and `B02-D12` fail-closed. B-03 implementation, probes, long
+  materialization, A/B comparison and both OOS paths remain unauthorized.
+- Superseded the active handoff with v0.25 and roadmap with v0.14; updated the
+  existing Graphify queue entry rather than creating a duplicate.
+## 2026-08-15 | D07/D12 upstream authority workstreams opened without B-03
+
+- Added the Wake-up label/negative semantic draft, label-and-denominator output
+  contract, validation/final-OOS selection-and-seal contract and fail-closed
+  lockbox manifest JSON Schema.
+- Extended false-activation counting with one-to-one episode matching, typed
+  exclusions and an operational burden-derived budget rule.
+- Audited the hash-bound experimental population proxy: validation contains
+  367,644 eligible-proxy contexts and final OOS 213,965, while preserving its
+  explicit non-canonical population limitations.
+- Preserved the semantic rule that a valid Wake-up followed by failed activation
+  is still a positive Wake-up with a separate episode outcome.
+- Superseded handoff v0.25 with v0.26 and roadmap v0.14 with v0.15. Human numeric
+  decisions, Data Foundation output promotion and independent custody remain
+  pending; B-03 code is still unauthorized.

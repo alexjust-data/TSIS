@@ -1,5 +1,91 @@
 # Graphify Refresh Queue for 00_CTO
 
+## Pending - 2026-08-17 - HIGH - Wake-up RTH oracle calibration implementation and probe certification
+
+- **ID:** `GFQ-20260817-CTO-WAKE-UP-ORACLE-001`
+- **Estado:** pending
+- **Fecha:** 2026-08-17
+- **Severidad:** HIGH
+- **Scope:** development-only Wake-up RTH oracle architecture; binding-neutral
+  candidate/control search; blind review and adjudication; WUL-D01..D08
+  evidence; exact 23,399-second authority; composite target identity; completed
+  2,400-session candidate scan; invalid 240/240 close-bucket panel; RTH-balanced
+  repair and 25/25 repair probe; full panel-only rebuild pending human launch.
+- **Leaf objetivo:** Market States Creation / Wake-up event definition, labels
+  and Trading Activity A/B dependency lifecycle.
+- **Archivos afectados:** `04_MARKET_STATES_CREATION/04_EVENTS/WAKE_UP/03_LABELS/`
+  master/protocol/readout documents, including
+  `WAKE_UP_DISCOVERY_VARIABLES_v0_1.md`; current handoff v0.28; roadmap v0.17;
+  Market States changelog; Lab experiment
+  `EXP_WAKE_UP_RTH_ORACLE_CALIBRATION_0001`.
+- **Motivo pendiente:** the official graph predates the executable oracle,
+  incident controls, completed candidate state and repaired probe. Refresh is
+  deferred until the human panel rebuild and WUL freeze so the leaf does not
+  confuse candidate completion with a valid reviewed panel or frozen D07.
+- **Cierre esperado:** after full terminal PASS and explicit WUL-D01..D08/D07
+  human freeze, rebuild the Wake-up leaf, run diagnostics, update
+  `BUILD_MANIFEST.md` and verify that B-03, A/B and OOS remain separately gated.
+
+## Pending - 2026-08-15 - HIGH - Daily Eligible Universe bridge and general Screener boundary
+
+- **ID:** `GFQ-20260815-CTO-TA-BINDING-B-PREREG-001`
+- **Estado:** pending
+- **Fecha:** 2026-08-15
+- **Severidad:** HIGH
+- **Scope:** human-confirmed upstream ownership of daily `[0.50,20.00]` prior-close and `<100M` proxy membership; executed restricted A/B bridge; exact 2,400/2,400 TARGET and 55,866,000 symbol-second reconciliation; explicit boundary with the project-wide general Screener Engine; Binding B remains at non-frozen B-02
+- **Leaf objetivo:** Screener Engine / Daily Eligible Universe plus Market States Creation / Trading Activity A-B lifecycle
+- **Archivos afectados:** `04_MARKET_STATES_CREATION/DAILY_ELIGIBLE_UNIVERSE_SELECTOR_AND_BINDING_CONSUMPTION_CONTRACT_v0_1.md`; current handoff v0.28; current roadmap v0.17; selector gate readout/policy/registry/code; `15_SCREENER_ENGINE/README.md`; lineage consolidation; indexes and changelogs. Thirty-three redundant transient snapshots were removed; v0.12 remains only as a redirecting external compatibility pointer.
+- **Motivo:** the graph predates the executed bridge and the explicit general-owner boundary; without refresh it could present the A/B bridge as a canonical Screener, place price/cap rules inside A/B, authorize Backtest implicitly, confuse eligibility with Wake-up/In-Play, or route agents through deleted snapshots. B-03 and BT-GATE-016 remain unauthorized.
+- **Cierre esperado:** after D07/D12 close and a separate versioned B-02 human freeze, rebuild/update the official Trading Activity leaf, run diagnostics, update `BUILD_MANIFEST.md`, encode the frozen/draft distinction and preserve that implementation, probes, long materialization, A/B comparison, temporal OOS and canonical promotion require later gates.
+
+## Pending - 2026-08-15 - HIGH - Binding A independent percentile replay terminal PASS
+
+- **ID:** `GFQ-20260814-CTO-TA-PERCENTILE-REPLAY-001`
+- **Estado:** pending
+- **Fecha:** 2026-08-15
+- **Severidad:** HIGH
+- **Scope:** terminal independent reconstruction of all four Binding A PIT percentiles over 240 blocks, 2,400 sessions and 3,351,960,000 cells; zero value and NULL-mask mismatches; revised Binding A verdict and transition to Binding B preregistration
+- **Leaf objetivo:** Market States Creation / Trading Activity / Binding A scientific evidence and admission gates
+- **Archivos afectados:** FULL replay execution readout v0.1; revised scientific verdict v0.2; handoff v0.21; roadmap v0.10; Market States README, AGENTS, VARIABLES_FEATURES and changelogs; final runtime manifest remains evidence and must not be ingested as a semantic corpus tree.
+- **Motivo:** the terminal PASS changes the active scientific gate from unclosed percentile evidence to Binding B preregistration. The existing Graphify graph predates this result and would misstate the next action.
+- **Cierre esperado:** update/rebuild the official Trading Activity leaf in a controlled Graphify window, run diagnostics, update `BUILD_MANIFEST.md`, preserve Binding A scope restrictions and encode that Binding B long materialization, OOS and canonical promotion remain unauthorized.
+
+## Pending - 2026-08-14 - HIGH - Cross-model materialization incident learning
+
+- **ID:** `GFQ-20260814-CTO-REPRESENTATION-MATERIALIZATION-INCIDENT-LEARNING-001`
+- **Estado:** pending
+- **Fecha:** 2026-08-14
+- **Severidad:** HIGH
+- **Scope:** append-only Representation Model materialization incident register, terminal-path production-equivalent definition, exact-target/typed-count/shared-cardinality prevention controls, executed 4/4 shard evidence, incident closure formula and mandatory inheritance by later models
+- **Leaf objetivo:** Market States Creation / Representation Model lifecycle, materialization governance and Trading Activity recovery
+- **Archivos afectados:** `04_MARKET_STATES_CREATION/REPRESENTATION_MODEL_MATERIALIZATION_AND_INCIDENT_LEARNING_PROTOCOL_v0_1.md`; incident register with appended terminal disposition; lifecycle v0.2; roadmap v0.7; handoff v0.18; target-only implementation/probe and FULL execution readouts; `REPRESENTATION_MODELS.md`; local/root `AGENTS.md`; README, VARIABLES_FEATURES and changelogs; linked Data Foundation execution contract and implementation.
+- **Motivo:** the full 2,400-TARGET/7,200-partition terminal evidence now passes controls 001..005. Incident closure remains pending only on later-plan import evidence. The official leaf rebuild is deferred to a controlled Graphify window to avoid contention with the independent active SEC acquisition and to exclude runtime telemetry.
+- **Cierre esperado:** rebuild/update the official Representation Model and Trading Activity leaf in the next controlled Graphify window, run diagnostics, update `BUILD_MANIFEST.md` and preserve the distinction between physical certification, Binding A evidence verdict and later-model admission.
+
+## Pending - 2026-08-14 - HIGH - Trading Activity Stage-8 target-only certification recovery
+
+- **ID:** `GFQ-20260814-CTO-TA-STAGE8-TARGET-RECOVERY-001`
+- **Estado:** pending
+- **Fecha:** 2026-08-14
+- **Severidad:** HIGH
+- **Scope:** closure of the 240/240 Stage-8 physical calculation and terminal PASS of the immutable 2,400-TARGET/7,200-partition certification
+- **Leaf objetivo:** Market States Creation / Trading Activity Information Object / Stage-8 physical binding and certification
+- **Archivos afectados:** Market States README/AGENTS/VARIABLES_FEATURES; handoff v0.18; roadmap v0.7; Stage-8 historical, target-only probe and target-only FULL execution readouts; authorized FULL v0.3 config; Data Foundation contract, runner, builder, monitor and tests; relevant changelogs.
+- **Motivo:** terminal evidence is now stable and hash-bound, but the Graphify refresh is deferred to the next controlled window while the independent SEC acquisition is active. Runtime heartbeat histories must remain excluded.
+- **Cierre esperado:** rebuild or update the official Trading Activity leaf with terminal PASS and the separate Binding A evidence-verdict boundary, run diagnostics, update the leaf `BUILD_MANIFEST.md` and resolve this entry.
+
+## Pending - 2026-08-13 - HIGH - SEC PIT 4,824 descending acquisition plan
+
+- **ID:** `GFQ-20260813-CTO-SEC-4824-DESCENDING-001`
+- **Estado:** pending
+- **Fecha:** 2026-08-13
+- **Severidad:** HIGH
+- **Scope:** operator-approved sequential full-universe preparation, exact descending cohort topology, identity-alias findings, completed C01 metadata gate, hash-bound C01-T01-0250 primary authorization and active launch, single active SEC root/legacy-pilot decision, 200-GiB recovery boundary and minimal external audit handoff
+- **Leaf objetivo:** coordinated Market States Creation SEC PIT acquisition planning / Foundations SEC PIT control plane
+- **Archivos afectados:** `SEC_PIT_4824_DESCENDING_ACQUISITION_EXECUTION_PLAN_v0_1.md`; `SEC_PIT_C01_PRIMARY_TRANCHE_01_AUTHORIZATION_AND_LAUNCH_READOUT_v0_1.md`; `SEC_PIT_4824_PRELAUNCH_AUDIT_CORRECTIONS_READOUT_v0_1.md`; scale handoff; SEC PIT dossier README and `SEC_PIT_4824_DESCENDING_PREFLIGHT_READOUT_v0_1.md`; preflight/gate config, builders and tests; metadata profiler and monitor; primary authorization, runner and tests; storage-root decision; audit package; relevant READMEs/changelogs.
+- **Motivo:** the work changes the governed 4,824 scale-out topology and now has an active, bounded 250-row primary acquisition. The official coordinated leaf refresh is deferred until the run has a terminal audit so the graph does not encode a transient heartbeat as final evidence. This remains the single CTO Graphify closeout entry for the work.
+- **Cierre esperado:** after terminal audit, rebuild/update the coordinated official leafs, run diagnostics, update their `BUILD_MANIFEST.md` files and resolve this entry without ingesting raw SEC objects or runtime telemetry histories.
+
 ## Pending - 2026-08-11 - MEDIUM - SEC PIT external audit package refresh
 
 - **Estado:** pending
@@ -3049,3 +3135,87 @@ governed CTO graph window. No official Graphify leaf rebuild was executed.
 - **Archivos afectados:** `15_SCREENER_ENGINE/SCREENER_ENGINE_ARCHITECTURE_PROPOSAL_v0_1.md`, `15_SCREENER_ENGINE/EVIDENCE_INDEX.md`, paquete ZIP y `00_CTO/CHANGELOG.md`.
 - **Motivo:** el draft introduce un owner conceptual propuesto, separa el `Daily Eligible Universe` generalista de una familia de scanners In-Play por estrategia y recomienda un runtime independiente. No se ejecuto refresh oficial porque el documento permanece `draft_for_human_review` y requiere decision humana antes de promover estructura, naming o contratos.
 - **Cierre esperado:** tras aprobacion, construir o actualizar el leaf oficial, ejecutar diagnosticos, resolver duplicidad/supersession con `00_CTO/11/.../00_SCANNER_CANDIDATE_SELECTION` y actualizar su `BUILD_MANIFEST.md`.
+
+## GFQ-20260814-CTO-TA-BINDING-A-EVIDENCE-001 - Binding A scientific evidence verdict
+
+- **Estado:** pending
+- **Fecha:** 2026-08-14
+- **Severidad:** HIGH
+- **Scope:** Trading Activity Binding A family-by-family value evidence,
+  incident learning and transition to Binding B preregistration.
+- **Leaf objetivo:** Market States Creation / Trading Activity representation.
+- **Archivos afectados:**
+  `VARIABLES_FEATURES/TRADING_ACTIVITY_BINDING_A_FULL_SCIENTIFIC_EVIDENCE_VERDICT_v0_1.md`,
+  `CURRENT_STATUS_AND_HANDOFF_v0_19.md`,
+  `TRADING_ACTIVITY_TO_WAKE_UP_COMPLETION_ROADMAP_v0_8.md`, local indexes,
+  incident protocol/register, Data Foundation auditor/tests and changelogs.
+- **Motivo:** the semantic corpus now records a `PASS_WITH_RESTRICTIONS`
+  candidate-comparison verdict and a new specification-bound validator control.
+  No official Graphify refresh was run while the independent SEC C01 primary
+  acquisition remained active; runtime audit artifacts must not be ingested as
+  semantic authority.
+- **Cierre esperado:** rebuild and diagnose the Trading Activity leaf from the
+  governed code/docs corpus, update `BUILD_MANIFEST.md`, and verify queries for
+  Binding A families, restrictions, `RM-MAT-CTRL-005/006`, Binding B preregistration
+  and the still-closed OOS/canonical gates.
+
+## GFQ-20260817-CTO-MARKET-STATES-TREE-001 - Market States Creation readable tree migration
+
+- **Estado:** pending
+- **Fecha:** 2026-08-17
+- **Severidad:** HIGH
+- **Scope:** reorganizacion aplicada de `04_MARKET_STATES_CREATION` alrededor de
+  Information Objects, Representation Models, bindings, state-table projections,
+  Wake-up, universo diario, gobierno, dependencias upstream y evidencia.
+- **Leaf objetivo:** Market States Creation / Information Objects and Representation Models.
+- **Archivos afectados:** 126 archivos gobernados del modulo; 123 cambiaron de
+  ruta y tres entrypoints raiz permanecieron. Nuevas autoridades:
+  `04_MARKET_STATES_CREATION/00_CTO/README.md`, `TREE_v0_2.md`,
+  `PATH_MAP_v0_1.csv`, `MIGRATION_v0_1.json`; policy transversal
+  `C:/TSIS_Data/PATH_NAMING_POLICY.md`; `AGENTS.md`, `VERSIONING_STANDARDS.md`
+  e indices/changelogs relacionados.
+- **Evidencia:** preflight `126/126`, cero targets duplicados, cero colisiones,
+  longitud maxima final `232`, verificacion post-move SHA-256 exacta y nombres de
+  archivo preservados. La propuesta anterior vive en `98_SUPERSEDED/TREE/`.
+- **Motivo pendiente:** la topologia y las rutas del corpus cambiaron, pero el
+  leaf Graphify oficial no se reconstruyo en este trabajo. Las rutas antiguas
+  se resuelven mediante `PATH_MAP_v0_1.csv`.
+- **Cierre esperado:** reconstruir o actualizar el leaf afectado con el corpus
+  de rutas nuevas, ejecutar diagnosticos, actualizar `BUILD_MANIFEST.md` y
+  verificar queries de Information Objects, Representation Models, Binding A/B,
+  Wake-up, Daily Universe y gobierno de materializacion.
+
+## GFQ-20260821-CTO-MASSIVE-SEC-O-S-001 - Massive O/S snapshot causal boundary
+
+- **Estado:** pending
+- **Fecha:** 2026-08-21
+- **Severidad:** MEDIUM
+- **Scope:** aclaracion de la descarga Massive limitada a un mes, del limite
+  causal de sus campos de shares outstanding para SEC PIT y screener, y
+  auditoria de reutilizacion de las familias Massive no-SEC ya presentes en G:.
+- **Leaf objetivo:** Market States Creation / Upstream Data / Massive SEC.
+- **Archivos afectados:**
+  `04_MARKET_STATES_CREATION/07_SEC_UPSTREAM_DATA/README.md`,
+  `04_MARKET_STATES_CREATION/07_SEC_UPSTREAM_DATA/01_MASSIVE_SEC_OBJETIVO_01.md`
+  `04_MARKET_STATES_CREATION/07_SEC_UPSTREAM_DATA/02_MASSIVE_SEC_AGENT_HANDOFF_v0_1.md`
+  y
+  `04_MARKET_STATES_CREATION/07_SEC_UPSTREAM_DATA/03_MASSIVE_SEC_HANDOFF_PACKAGE_READOUT_v0_1.md`.
+- **Motivo:** el plan incorpora Ticker Overview como snapshot vendor secundaria,
+  prohibe usar su backfill historico como `shares_outstanding_as_known`, mantiene
+  Income Statements fuera del O/S canonico y prohibe inferir O/S desde Massive
+  Float. La auditoria fisica/contractual evita duplicar All Tickers, Ticker
+  Overview, Ticker Events, Splits y Balance Sheets, y limita la nueva descarga
+  no-SEC a Massive Float actual. El contrato operativo separa ademas el run
+  Massive SEC del futuro run no-SEC de Float mediante allowlist, denylist y
+  gates explicitos para 8-K Text y 13F. El handoff portable fija asimismo la
+  topologia de codigo, contratos, schemas, validators, runtime, storage pesado,
+  tests, secrets y evidencias, y el README local corrige las referencias a la
+  ruta migrada. El readout del ZIP persiste contenido, SHA-256 y verificaciones.
+  La raiz pesada deja de ser una propuesta del agente: queda bloqueada como
+  `HUMAN_PROVIDED_OUTPUT_ROOT` hasta que el humano entregue y congele la ruta
+  absoluta, y cada ruta de C:/D: declara permiso de lectura o escritura.
+  No se ejecuto un refresh oficial dentro de la migracion de arbol aun
+  pendiente.
+- **Cierre esperado:** incluir esta aclaracion en el proximo refresh coordinado
+  del leaf Upstream Data / Massive SEC, ejecutar diagnosticos y actualizar su
+  `BUILD_MANIFEST.md`.

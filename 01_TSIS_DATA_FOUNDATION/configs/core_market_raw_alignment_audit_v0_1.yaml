@@ -1,0 +1,85 @@
+contract_version: "0.1.0"
+audit_name: core_market_raw_alignment_audit
+
+scope:
+  start_date_inclusive: "2005-01-01"
+  end_date_inclusive: "2026-08-20"
+  expected_universe_members: 4824
+  target_scoped: true
+  extras_outside_target_are_blocking: false
+
+universe:
+  path: "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/market_cap_last_observed_cutoff/20260320_market_cap_last_observed_cutoff/market_cap_cutoff_lt_1b_active_inactive.parquet"
+  ticker_column: ticker
+
+runtime:
+  output_root: "C:/TSIS_Data/runs/data_ops/core_market_raw_alignment_audit"
+  heartbeat_seconds: 30
+  family_workers: 4
+  one_sequential_reader_per_family: true
+
+families:
+  ohlcv_daily:
+    root: "G:/TSIS/data/ohlcv_daily"
+    ticker_directory_template: "ticker={ticker}"
+    date_strategy: column
+    date_column: date
+    required_columns:
+      - ticker
+      - date
+      - o
+      - h
+      - l
+      - c
+      - v
+
+  ohlcv_1m:
+    root: "G:/TSIS/data/ohlcv_1m"
+    ticker_directory_template: "ticker={ticker}"
+    date_strategy: column
+    date_column: date
+    required_columns:
+      - ticker
+      - ts_utc
+      - date
+      - year
+      - month
+      - o
+      - h
+      - l
+      - c
+      - v
+
+  quotes_:
+    root: "G:/TSIS/data/quotes_"
+    ticker_directory_template: "{ticker}"
+    date_strategy: path_ymd_parts
+    required_columns:
+      - ask_price
+      - bid_price
+      - timestamp
+      - year
+      - month
+      - day
+
+  trades_ticks_prod_2005_2026:
+    root: "G:/TSIS/data/trades_ticks_prod_2005_2026"
+    ticker_directory_template: "{ticker}"
+    date_strategy: path_day_iso
+    required_columns:
+      - ticker
+      - date
+      - timestamp
+      - price
+      - size
+      - exchange
+      - conditions
+      - year
+      - month
+      - day
+
+probe:
+  tickers:
+    - AACT
+    - NA
+    - MMMW

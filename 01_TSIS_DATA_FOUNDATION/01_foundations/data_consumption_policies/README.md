@@ -33,6 +33,7 @@
   - [`ohlcv_1m_quote_guarded_consumption_policy.md`](#ohlcv1mquoteguardedconsumptionpolicymd)
   - [`daily_return_labels_consumption_policy.md`](#dailyreturnlabelsconsumptionpolicymd)
   - [`daily_scanner_candidates_table_consumption_policy.md`](#dailyscannercandidatestableconsumptionpolicymd)
+  - [`daily_eligible_universe_restricted_research_consumption_policy_v0_1.md`](#dailyeligibleuniverserestrictedresearchconsumptionpolicyv01md)
   - [`intraday_regime_features_consumption_policy.md`](#intradayregimefeaturesconsumptionpolicymd)
   - [`lt1b_universe_consumption_policy.md`](#lt1buniverseconsumptionpolicymd)
   - [`reference_consumption_policy.md`](#referenceconsumptionpolicymd)
@@ -353,6 +354,7 @@ data_consumption_policies/
   dataset_certification_matrix_consumption_policy.md
   daily_consumption_policy.md
   daily_return_labels_consumption_policy.md
+  daily_eligible_universe_restricted_research_consumption_policy_v0_1.md
   daily_scanner_candidates_table_consumption_policy.md
   expected_data_calendar_consumption_policy.md
   fundamentals_asof_table_consumption_policy.md
@@ -502,6 +504,19 @@ Regla clave:
 
 - el scanner dice donde mirar; no es estado completo, universo completo,
   estrategia, label, reward ni execution truth.
+
+### `daily_eligible_universe_restricted_research_consumption_policy_v0_1.md`
+
+Gobierna el puente hash-bound entre el candidato presesión experimental y el
+experimento Trading Activity A/B.
+
+Reglas clave:
+
+- el selector upstream es el único owner de membresía;
+- A y B consumen identidades y no recalculan `[0.50,20.00]` ni `<100M proxy`;
+- 2.400 targets y 55.866.000 symbol-seconds de development están reconciliados;
+- no es el Screener Engine general ni autoriza Backtest, live o RL;
+- la autoridad conceptual general vive en `00_CTO/15_SCREENER_ENGINE`.
 
 ### `intraday_regime_features_consumption_policy.md`
 

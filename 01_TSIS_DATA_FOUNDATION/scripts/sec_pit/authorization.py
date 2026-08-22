@@ -31,6 +31,7 @@ def validate_download_authorization(
     *,
     probe_manifest_path: Path,
     selection_plan_path: Path,
+    gate_matrix_path: Path | None = None,
     technically_eligible_tickers: Iterable[str],
 ) -> AuthorizationDecision:
     if not authorization_path.is_file():
@@ -44,6 +45,9 @@ def validate_download_authorization(
         return AuthorizationDecision("FAIL", "PROBE_MANIFEST_HASH_MISMATCH", ())
     if payload.get("selection_plan_sha256") != file_sha256(selection_plan_path):
         return AuthorizationDecision("FAIL", "SELECTION_PLAN_HASH_MISMATCH", ())
+    if gate_matrix_path is not None:
+        if payload.get("gate_matrix_sha256") != file_sha256(gate_matrix_path):
+            return AuthorizationDecision("FAIL", "GATE_MATRIX_HASH_MISMATCH", ())
     allowed = tuple(sorted(set(payload.get("allowed_tickers") or [])))
     eligible = set(technically_eligible_tickers)
     if not allowed or not set(allowed).issubset(eligible):

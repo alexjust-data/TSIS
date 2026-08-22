@@ -1,3 +1,15 @@
+## Pending - 2026-08-15 - HIGH - Daily Eligible Universe restricted A/B consumption gate
+
+- **ID:** `GFQ-20260815-FOUNDATIONS-DAILY-ELIGIBLE-A-B-BRIDGE-001`
+- **Estado:** pending
+- **Fecha:** 2026-08-15
+- **Severidad:** HIGH
+- **Scope:** hash-bound admission of the existing presession candidate for restricted Trading Activity A/B consumption; exact 2,400/2,400 target and 55,866,000 logical symbol-second denominator; builder 23/23, independent validator 25/25; explicit non-canonical/general-Screener boundary
+- **Leaf objetivo:** foundations_authority / universe registries, consumption policies and population-target inspection evidence
+- **Archivos afectados:** restricted consumption policy; universe registry binding; builder, independent validator, config and focused tests; executed readout; policy index and both Data Foundation changelogs.
+- **Motivo:** this adds a governed downstream-consumption boundary and exact denominator authority. It must remain distinguishable from canonical/live Screener output and from future Backtest/live/RL adapters.
+- **Cierre esperado:** update/rebuild the affected official Foundations universe/policy leaf, run diagnostics, update `BUILD_MANIFEST.md` and encode that the general conceptual Screener home is `00_CTO/15_SCREENER_ENGINE` while this artifact remains a restricted bridge.
+
 ## Pending - 2026-08-13 - HIGH - SEC PIT O/S and paired-overlap recovery and v0.19 authority
 
 - **ID:** `GFQ-20260813-FOUNDATIONS-SEC-OS-OVERLAP-V019-001`
@@ -5885,3 +5897,30 @@ requires a coordinated Foundations leaf refresh and root merge.
 Required action: rebuild and diagnose the affected Foundations/SEC PIT leaf,
 update its `BUILD_MANIFEST.md`, resolve or supersede the related pending SEC PIT
 queue entries, and include the leaf in the next governed root merge.
+
+## GFQ-20260821-FOUNDATIONS-CORE-MARKET-ALIGNMENT-001 - Core market RAW alignment audit
+
+Status: pending
+Date: 2026-08-21
+Severity: HIGH
+Leaf target: foundations_authority / core market RAW alignment audit
+
+Affected files:
+
+- `module_contracts/core_market_raw_alignment_audit/core_market_raw_alignment_audit_handoff_v0_1.md`;
+- `module_contracts/core_market_raw_alignment_audit/core_market_raw_alignment_audit_handoff_v0_2.md`;
+- `canonical_schemas/core_market_raw_alignment_audit/core_market_raw_alignment_audit_schema_contract_v0_1.md`;
+- `validators/core_market_raw_alignment_audit/core_market_raw_alignment_audit_validators_v0_1.md`;
+- `inspection_dossiers/core_market_raw_alignment_audit/core_market_raw_alignment_audit_probe_readout_v0_1.md`;
+- `../scripts/core_market_raw_alignment_audit/`, its config and focused tests;
+- local and parent `CHANGELOG.md`.
+
+Reason: the route now includes executable universe/physical/date-set gates,
+transactional resume, stable output schemas and the production-equivalent v0.3
+probe readout. The full 4,824-ticker scan remains human-gated, so the official
+leaf refresh is deferred until that audit closes or a dedicated governed
+Graphify window is authorized.
+
+Required action: rebuild and diagnose the affected Foundations leaf, update its
+`BUILD_MANIFEST.md`, encode the probe/full authority boundary and include the
+refreshed leaf in the next governed root merge.

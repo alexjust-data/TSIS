@@ -53,13 +53,14 @@ C:/TSIS_Data/02_TSIS_BACKTEST_ENGINE
 C:/TSIS_Data/03_TSIS_Lab
 = contratos, registros, templates y experimentos cientificos reproducibles
 
-C:/TSIS_Data/04_TSIS_webSocket_SmallCaps
+C:/TSIS_Data/04_TSIS_SCREENERS
+C:/TSIS_Data/05_TSIS_STATISTICS_PATTERNS
+C:/TSIS_Data/06_TSIS_webSocket_SmallCaps
 = live/shadow operation y procesamiento event-driven
 
-C:/TSIS_Data/05_TSIS_Offline_RL
+C:/TSIS_Data/07_TSIS_Offline_RL
 = aprendizaje secuencial sobre estados/outcomes gobernados
 
-C:/TSIS_Data/06_TSIS_Trading_voice
 = Trading Decision Intelligence / proceso de decision por voz
 
 G:/TSIS/data
@@ -85,7 +86,7 @@ Data Foundation
 
 ## Nota Obligatoria Sobre Datos Fisicos Y Minutos
 
-Todo agente debe leer `G:/TSIS/data/README.md` como parte del contexto base del proyecto. Ese README gobierna el plano fisico de datos.
+Todo agente debe leer `G:/TSIS/data/README.md` como parte del contexto base del proyecto. Ese README gobierna el plano fisico de datos y las materializaciones gobernadas. Los `research_experiments`, incluidos sus runs y outputs, viven bajo `C:/TSIS_Data/03_TSIS_Lab/04_experiments`.
 
 Para trabajos con minutos/1m, la raiz fisica canonica es:
 

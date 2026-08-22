@@ -6,6 +6,20 @@ Estado: contrato local de entrada y handoff para
 Complementa `C:/TSIS_Data/AGENTS.md` y `00_CTO/LOCAL_RULES.md`. No los
 reemplaza ni puede debilitarlos.
 
+La navegacion fisica vigente, las expansiones completas de nombres y el mapa
+de rutas anteriores se leen en:
+
+```text
+00_CTO/README.md
+00_CTO/TREE_v0_2.md
+00_CTO/PATH_MAP_v0_1.csv
+C:/TSIS_Data/PATH_NAMING_POLICY.md
+```
+
+No introducir nuevas siglas de carpetas sin registrarlas. Todo path nuevo debe
+ser legible por un humano y pasar los presupuestos de longitud de la policy
+raiz.
+
 ## 1. Rol local
 
 Esta carpeta preserva definiciones cientificas, Information Objects,
@@ -21,26 +35,50 @@ Despues del orden de lectura raiz:
 
 1. `C:/TSIS_Data/00_CTO/LOCAL_RULES.md`
 2. `README.md`
-3. `CURRENT_STATUS_AND_HANDOFF_v0_12.md`
-4. `EXPERIMENTAL_TO_CANONICAL_REPRESENTATION_LIFECYCLE_v0_1.md`
-5. `TRADING_ACTIVITY_TO_WAKE_UP_COMPLETION_ROADMAP_v0_3.md`
-6. `CHANGELOG.md`
-6. `01_WAKE_UP_EVENT_DEFINITION.md`
-7. `VARIABLES_FEATURES/TRADING_ACTIVITY_CONTRACT_RECTIFICATION_AND_ALIGNMENT_v0_1.md`
-8. `VARIABLES_FEATURES/TRADING_ACTIVITY_SOURCE_QUALITY_LABEL_CONSUMPTION_POLICY_v0_1.md`
-9. `VARIABLES_FEATURES/TRADING_ACTIVITY_SOURCE_OBSERVABILITY_READOUT_v0_5.md`
-10. `VARIABLES_FEATURES/TRADING_ACTIVITY_BINDING_A_EXACT_SPECIFICATION_v0_2.md`
-11. `VARIABLES_FEATURES/TRADING_ACTIVITY_BINDING_A_MULTISESSION_PILOT_RUN_PLAN_v0_1.md`
-12. `VARIABLES_FEATURES/TRADING_ACTIVITY_BINDING_A_MULTISESSION_RUNNER_IMPLEMENTATION_READOUT_v0_2.md`
-13. `VARIABLES_FEATURES/TRADING_ACTIVITY_STAGE8_CPP_OPTIMIZATION_AND_EQUIVALENCE_READOUT_v0_1.md`
-14. `VARIABLES_FEATURES/TRADING_ACTIVITY_STAGE8_CPP_BLOCK_EQUIVALENCE_PLAN_v0_1.json`
-15. `VARIABLES_FEATURES/TRADING_ACTIVITY_STAGE8_CPP_ENGINE_INTEGRATION_AND_FOUR_SHARD_RECERTIFICATION_READOUT_v0_1.md`
-16. `VARIABLES_FEATURES/TRADING_ACTIVITY_STRATIFIED_DEVELOPMENT_SAMPLE_PLAN_v0_1.md`
-17. `VARIABLES_FEATURES/POPULATION_TARGET_PIT_RECOVERY_AND_GOVERNANCE_PLAN_v0_1.md`
-18. `VARIABLES_FEATURES/FLOAT_CONTEXT_SOURCE_AUDIT_PLAN_v0_1.md`
-19. `TRADING_ACTIVITY_PARALLEL_WORKSTREAM_COORDINATION_v0_1.md`
+3. `00_START_HERE/CURRENT_STATUS_AND_HANDOFF_v0_28.md`
+4. `06_GOVERNANCE/02_MATERIALIZATION/REPRESENTATION_MODEL_MATERIALIZATION_AND_INCIDENT_LEARNING_PROTOCOL_v0_1.md`
+5. `06_GOVERNANCE/02_MATERIALIZATION/REPRESENTATION_MODEL_MATERIALIZATION_INCIDENT_REGISTER_v0_1.md`
+6. `06_GOVERNANCE/01_LIFECYCLE/EXPERIMENTAL_TO_CANONICAL_REPRESENTATION_LIFECYCLE_v0_2.md`
+7. `00_START_HERE/TRADING_ACTIVITY_TO_WAKE_UP_COMPLETION_ROADMAP_v0_17.md`
+8. `CHANGELOG.md`
+9. `04_EVENTS/WAKE_UP/01_DEFINITION/01_WAKE_UP_EVENT_DEFINITION.md`
+10. `02_INFORMATION_OBJECTS/TRADING_ACTIVITY/MODEL_01_MARKED_ACTIVITY/BINDING_A/02_MATERIALIZATION/TRADING_ACTIVITY_STAGE8_CPP_FULL_MATERIALIZATION_EXECUTION_AND_CERTIFICATION_READOUT_v0_1.md`
+11. `02_INFORMATION_OBJECTS/TRADING_ACTIVITY/MODEL_01_MARKED_ACTIVITY/BINDING_A/03_AUDIT/TRADING_ACTIVITY_STAGE8_TARGET_ONLY_IMPLEMENTATION_AND_FOUR_SHARD_PROBE_READOUT_v0_1.md`
+12. `02_INFORMATION_OBJECTS/TRADING_ACTIVITY/MODEL_01_MARKED_ACTIVITY/BINDING_A/03_AUDIT/TRADING_ACTIVITY_STAGE8_TARGET_ONLY_FULL_EXECUTION_AND_CERTIFICATION_READOUT_v0_1.md`
+13. `02_INFORMATION_OBJECTS/TRADING_ACTIVITY/MODEL_01_MARKED_ACTIVITY/BINDING_A/04_VERDICT/TRADING_ACTIVITY_BINDING_A_FULL_SCIENTIFIC_EVIDENCE_VERDICT_v0_2.md`
+14. `02_INFORMATION_OBJECTS/TRADING_ACTIVITY/MODEL_01_MARKED_ACTIVITY/BINDING_B/00_PREREGISTRATION/TRADING_ACTIVITY_BINDING_B_PREREGISTRATION_v0_1.md`
+15. `02_INFORMATION_OBJECTS/TRADING_ACTIVITY/MODEL_01_MARKED_ACTIVITY/BINDING_B/03_DEVELOPMENT_CERTIFICATION/TRADING_ACTIVITY_BINDING_B_DEVELOPMENT_AND_CERTIFICATION_PLAN_v0_1.md`
+16. `02_INFORMATION_OBJECTS/TRADING_ACTIVITY/MODEL_01_MARKED_ACTIVITY/BINDING_B/01_INHERITANCE/TRADING_ACTIVITY_BINDING_B_INHERITANCE_AND_DELTA_CONTRACT_v0_1.md`
+17. `02_INFORMATION_OBJECTS/TRADING_ACTIVITY/MODEL_01_MARKED_ACTIVITY/BINDING_B/01_INHERITANCE/TRADING_ACTIVITY_BINDING_B_EXTERNAL_PREPARATION_AUDIT_AND_B01_FREEZE_READOUT_v0_1.md`
+18. `02_INFORMATION_OBJECTS/TRADING_ACTIVITY/MODEL_01_MARKED_ACTIVITY/BINDING_B/02_EXACT_SPECIFICATION/TRADING_ACTIVITY_BINDING_B_EXACT_SPECIFICATION_v0_1.md`
+19. `02_INFORMATION_OBJECTS/TRADING_ACTIVITY/MODEL_01_MARKED_ACTIVITY/02_BINDING_COMPARISON/TRADING_ACTIVITY_D07_D12_UPSTREAM_AUTHORITY_WORKSTREAM_READOUT_v0_1.md`
+20. `04_EVENTS/WAKE_UP/03_LABELS/WAKE_UP_LABEL_AND_NEGATIVE_DEFINITION_CONTRACT_v0_1.md`
+21. `04_EVENTS/WAKE_UP/03_LABELS/WAKE_UP_LABEL_AND_DENOMINATOR_MATERIALIZATION_CONTRACT_v0_1.md`
+22. `04_EVENTS/WAKE_UP/03_LABELS/TRADING_ACTIVITY_FALSE_ACTIVATION_COUNTING_CONTRACT_v0_1.md`
+23. `04_EVENTS/WAKE_UP/04_OOS_LOCKBOX/TRADING_ACTIVITY_VALIDATION_AND_FINAL_OOS_SELECTION_AND_SEAL_CONTRACT_v0_1.md`
+24. `04_EVENTS/WAKE_UP/04_OOS_LOCKBOX/TRADING_ACTIVITY_LOCKBOX_MANIFEST_SCHEMA_v0_1.json`
+25. `02_INFORMATION_OBJECTS/TRADING_ACTIVITY/MODEL_01_MARKED_ACTIVITY/BINDING_B/02_EXACT_SPECIFICATION/TRADING_ACTIVITY_BINDING_B_B02_DECISION_RESOLUTION_AND_SCIENTIFIC_REVIEW_v0_1.md`
+26. `02_INFORMATION_OBJECTS/TRADING_ACTIVITY/MODEL_01_MARKED_ACTIVITY/02_BINDING_COMPARISON/TRADING_ACTIVITY_BINDING_A_STATISTICAL_INPUT_INVENTORY_FOR_B_COMPARISON_v0_1.md`
+27. `02_INFORMATION_OBJECTS/TRADING_ACTIVITY/MODEL_01_MARKED_ACTIVITY/BINDING_B/02_EXACT_SPECIFICATION/TRADING_ACTIVITY_BINDING_B_B02_COMPUTE_BUDGET_ANNEX_v0_1.md`
+28. `04_EVENTS/WAKE_UP/04_OOS_LOCKBOX/TRADING_ACTIVITY_FINAL_TEMPORAL_OOS_LOCKBOX_BLOCKING_EVIDENCE_v0_1.md`
+29. `02_INFORMATION_OBJECTS/TRADING_ACTIVITY/MODEL_01_MARKED_ACTIVITY/BINDING_A/03_AUDIT/TRADING_ACTIVITY_STAGE8_TARGET_ONLY_RECOVERY_AND_RECERTIFICATION_PLAN_v0_1.md`
+30. `02_INFORMATION_OBJECTS/TRADING_ACTIVITY/MODEL_01_MARKED_ACTIVITY/00_SHARED_CONTRACTS/TRADING_ACTIVITY_CONTRACT_RECTIFICATION_AND_ALIGNMENT_v0_1.md`
+31. `02_INFORMATION_OBJECTS/TRADING_ACTIVITY/MODEL_01_MARKED_ACTIVITY/00_SHARED_CONTRACTS/TRADING_ACTIVITY_SOURCE_QUALITY_LABEL_CONSUMPTION_POLICY_v0_1.md`
+32. `02_INFORMATION_OBJECTS/TRADING_ACTIVITY/MODEL_01_MARKED_ACTIVITY/00_SHARED_CONTRACTS/TRADING_ACTIVITY_SOURCE_OBSERVABILITY_READOUT_v0_5.md`
+33. `02_INFORMATION_OBJECTS/TRADING_ACTIVITY/MODEL_01_MARKED_ACTIVITY/BINDING_A/00_SPECIFICATION/TRADING_ACTIVITY_BINDING_A_EXACT_SPECIFICATION_v0_2.md`
+34. `02_INFORMATION_OBJECTS/TRADING_ACTIVITY/MODEL_01_MARKED_ACTIVITY/BINDING_A/01_IMPLEMENTATION/TRADING_ACTIVITY_STAGE8_CPP_ENGINE_INTEGRATION_AND_FOUR_SHARD_RECERTIFICATION_READOUT_v0_1.md`
+35. `02_INFORMATION_OBJECTS/TRADING_ACTIVITY/MODEL_01_MARKED_ACTIVITY/03_POPULATION_AND_SAMPLE/TRADING_ACTIVITY_STRATIFIED_DEVELOPMENT_SAMPLE_PLAN_v0_1.md`
+36. `05_DAILY_UNIVERSE/02_PIT_RECOVERY/POPULATION_TARGET_PIT_RECOVERY_AND_GOVERNANCE_PLAN_v0_1.md`
+37. `02_INFORMATION_OBJECTS/FLOAT_CONTEXT/MODEL_01_PIT_SCALE_ELIGIBILITY/05_SEC_PIT_RESEARCH/FLOAT_CONTEXT_SOURCE_AUDIT_PLAN_v0_1.md`
+38. `90_HANDOFFS/TRADING_ACTIVITY_PARALLEL_WORKSTREAM_COORDINATION_v0_1.md`
+39. `05_DAILY_UNIVERSE/00_POLICY/DAILY_ELIGIBLE_UNIVERSE_SELECTOR_AND_BINDING_CONSUMPTION_CONTRACT_v0_1.md`
+40. `05_DAILY_UNIVERSE/01_BINDING_AB_BRIDGE/TRADING_ACTIVITY_AB_DENOMINATOR_DAILY_ELIGIBLE_UNIVERSE_RECONCILIATION_READOUT_v0_1.md`
 
-Los handoffs anteriores son historia incorporada por `v0_12`.
+Los snapshots anteriores están inventariados por hash y sustituidos por
+autoridades duraderas en
+`90_HANDOFFS/TRADING_ACTIVITY_HANDOFF_AND_ROADMAP_LINEAGE_CONSOLIDATION_v0_1.md`.
+`v0_12` se conserva solo por compatibilidad con un puntero externo; redirige a
+`v0_28` y no es el handoff vigente.
 
 Antes de preparar, recomendar, lanzar o reanudar un run multisesion, leer:
 
@@ -61,9 +99,18 @@ prevalece solamente sobre las clausulas conflictivas que enumera.
 Versiones vigentes:
 
 ```text
-current status and handoff          = v0_12
+current status and handoff          = v0_28
+completion roadmap                  = v0_17
+daily eligible universe gate        = selector upstream before D07/D12
+representation lifecycle            = v0_2
+materialization incident protocol   = v0_1
+materialization incident register   = v0_1
 source observability readout        = v0_5
 Binding A exact specification       = v0_2
+Binding B preregistration           = v0_1 DRAFT_NOT_FROZEN
+Binding B development plan          = v0_1 NOT_EXECUTABLE
+Binding B inheritance/delta contract = v0_1 FROZEN_BY_HUMAN
+Binding B exact specification        = v0_1 DRAFT_AMENDED_10_OF_12_RESOLVED
 trade eligibility policy            = v0_2
 RTH coverage sidecar specification  = v0_2
 multisession runner readout          = v0_2
@@ -166,7 +213,7 @@ TA-3 SAMPLE MANIFEST
 = FROZEN_AND_VALIDATED
 
 TA-3 BROAD EXECUTION
-= PAUSED_FOR_HARDWARE_OPTIMIZATION
+= CALCULATION_COMPLETE_240_OF_240_CERTIFICATION_PENDING
 
 STAGE-8 C++ REPRESENTATIVE EQUIVALENCE
 = PASS_EXACT
@@ -181,7 +228,31 @@ STAGE-8 FOUR-SHARD RECERTIFICATION
 = PASS_4_OF_4
 
 NEW 240-BLOCK C++ MATERIALIZATION
-= NOT_AUTHORIZED_PENDING_HUMAN_DECISION
+= PHYSICAL_OUTPUTS_COMPLETE_240_OF_240
+
+FULL-RUN TERMINAL CERTIFICATION
+= FAILED_ON_ROW_COUNT_CONTRACT_SHAPE
+
+TARGET-ONLY RECOVERY AND RECERTIFICATION
+= FULL_TERMINAL_PASS_2400_TARGET_7200_PARTITIONS
+
+BINDING A SCIENTIFIC EVIDENCE VERDICT
+= PASS_WITH_RESTRICTIONS_FOR_CANDIDATE_COMPARISON
+
+MATERIALIZATION INCIDENT CONTROLS RM-MAT-CTRL-001..006
+= FULL_RUNTIME_PASS_LATER_PLAN_IMPORT_PENDING
+
+BINDING B PREREGISTRATION
+= DRAFT_NOT_FROZEN
+
+BINDING B DEVELOPMENT AND CERTIFICATION PLAN
+= PREREGISTERED_NOT_EXECUTABLE
+
+SEC PIT COHORT 01 METADATA
+= COMPLETE_824_OF_824
+
+SEC PIT COHORT 01 PRIMARY T01
+= RUNNING_EXACT_250_ROWS_REMAINDER_NOT_AUTHORIZED
 
 FLOAT OWNER-EXCLUSION GATE
 = PASS_WITH_RESTRICTIONS
@@ -207,12 +278,12 @@ The roadmap documents future stages but does not authorize them.
 The representation lifecycle is governed by:
 
 ```text
-EXPERIMENTAL_TO_CANONICAL_REPRESENTATION_LIFECYCLE_v0_1.md
+06_GOVERNANCE/01_LIFECYCLE/EXPERIMENTAL_TO_CANONICAL_REPRESENTATION_LIFECYCLE_v0_2.md
 ```
 The physical data-root authority for every Information Object and Representation Model is:
 
 ```text
-INFORMATION_OBJECT_DATA_ROOT_AUTHORITY_v0_1.md
+08_REGISTRIES/INFORMATION_OBJECT_DATA_ROOT_AUTHORITY_v0_1.md
 D:/TSIS/IO
 ```
 
@@ -237,22 +308,32 @@ backtest consumption
 Current handoff:
 
 ```text
-CURRENT_STATUS_AND_HANDOFF_v0_12.md
+00_START_HERE/CURRENT_STATUS_AND_HANDOFF_v0_28.md
 ```
 
-Current TA-3 plan:
+Current TA-3 recovery plan:
 
 ```text
-VARIABLES_FEATURES/
-TRADING_ACTIVITY_STRATIFIED_DEVELOPMENT_SAMPLE_PLAN_v0_1.md
+02_INFORMATION_OBJECTS/TRADING_ACTIVITY/MODEL_01_MARKED_ACTIVITY/BINDING_A/03_AUDIT/TRADING_ACTIVITY_STAGE8_TARGET_ONLY_RECOVERY_AND_RECERTIFICATION_PLAN_v0_1.md
 ```
 
-The engine integration and four-shard certification are complete. The active
-work is restricted to review and preparation for a separately authorized new
-versioned broad run. The bounded PASS does not authorize that run.
+The target-only inventory, certifier, focused tests, one production-equivalent
+probe per logical shard and the FULL 2,400-TARGET/7,200-partition terminal audit
+are complete and pass. The bounded Binding A family-by-family evidence audit is
+also complete with `PASS_WITH_RESTRICTIONS`. The Binding B proposal and its
+development/certification sequence are documented. B-01 is frozen after
+external audit. B-02 incorporates ten audited decisions. D07/D12 upstream
+architectures are prepared but not frozen: the scientific owner must fix the
+label/counting numbers and selection/custody decisions; Data Foundation and an
+independent custodian must then create the exact artifacts. Re-audit consistency
+and explicitly freeze B-02 only after their hashes exist. It must import
+every applicable incident control. Do not
+interpret either PASS as canonical promotion or long-run authorization.
 
-SEC PIT evidence under `_DESCAGRA_DATOS_NECESARIA_` is preserved but parked
-until this Trading Activity gate and its governed materialization decision close.
+SEC PIT cohort 01 submissions metadata completed `824/824`. The separately
+authorized exact T01 tranche of 250 rows is running; the C01 remainder and
+cohorts 02-05 remain unauthorized. This parallel lane does not alter the
+Trading Activity recovery gate and must not be polled or modified here.
 
 An agent may also prepare, without launching or promoting:
 
@@ -262,6 +343,8 @@ An agent may also prepare, without launching or promoting:
 - float source inventory and source observability audit;
 - TA-3 sample-manifest schema and lockbox guards;
 - instrument-block runner generalization, tests and bounded smoke.
+- target-only reference-manifest, inventory and certifier implementation;
+- bounded production-equivalent recovery probe in each of the four shards.
 
 An agent must not:
 
@@ -272,6 +355,10 @@ An agent must not:
 - resume `ba2r2` with C++ or mix Python/C++ partitions under one run lineage;
 - change or bypass the explicit C++ engine/source/binary fingerprint;
 - authorize broad materialization without a separate governed human decision;
+- mutate, delete or overwrite the completed Stage-8 source artifacts;
+- launch a fresh 240-block materialization while recovery remains viable;
+- certify from scope-session totals when the governed denominator is the frozen
+  set of 2,400 explicit target sessions;
 - infer model admission or canonical promotion.
 
 Foundation quality labels remain evidence metadata and are not automatic
@@ -283,7 +370,7 @@ exclusion gates. Audit selected windows under
 Autoridad:
 
 ```text
-TRADING_ACTIVITY_TO_WAKE_UP_COMPLETION_ROADMAP_v0_3.md
+00_START_HERE/TRADING_ACTIVITY_TO_WAKE_UP_COMPLETION_ROADMAP_v0_17.md
 ```
 
 Orden:
@@ -291,7 +378,15 @@ Orden:
 ```text
 completed deterministic multisession pilot
 -> full-run and legacy source-gate readout
--> stratified development evidence
+-> completed 240-block Stage-8 physical calculation
+-> completed target-only inventory, certifier, tests and 4/4 probes
+-> completed FULL checksum recertification of 2,400 TARGET / 7,200 partitions
+-> completed independent percentile replay PASS_EXACT over 3,351,960,000 cells
+-> completed Binding A evidence verdict PASS_WITH_SCOPE_RESTRICTIONS
+-> Binding B B-01 frozen and B-02 amended with D07/D12 still open
+-> governed Wake-up label/counting authority and sealed final-lockbox manifest
+-> explicit human B-02 freeze
+-> Binding B plan imports applicable incident controls
 -> Binding B and justified C
 -> A/B/C comparison at fixed false-alarm budget
 -> temporal OOS
@@ -364,3 +459,37 @@ SHARD_EXPANSION_AUTHORIZED
 Un fallo obliga a detener la expansion, crear nueva version y repetir todos los
 probes. Esta comprobacion precede a cualquier run de larga duracion y se repite
 despues de cualquier cambio de formula, schema, policy o lineage.
+
+Production-equivalent incluye runner, wrapper, agregador, certifier terminal y
+escritura del final manifest exactos. Probar solamente el engine no satisface
+este gate.
+
+## 15. Aprendizaje de incidentes y herencia entre modelos
+
+Todo fallo de materializacion se registra antes de corregirse en:
+
+```text
+06_GOVERNANCE/02_MATERIALIZATION/REPRESENTATION_MODEL_MATERIALIZATION_INCIDENT_REGISTER_v0_1.md
+```
+
+El tratamiento completo se rige por:
+
+```text
+06_GOVERNANCE/02_MATERIALIZATION/REPRESENTATION_MODEL_MATERIALIZATION_AND_INCIDENT_LEARNING_PROTOCOL_v0_1.md
+```
+
+Cada plan de materializacion posterior MUST incluir
+`inherited_incident_controls`, evaluar todos los controles anteriores
+aplicables y aportar referencias de implementacion, tests, probes por shard y
+ensayo terminal. `PENDING`, `FAIL` o una omision bloquean el run largo.
+
+Reglas especificas:
+
+- pertenencia exacta de targets, nunca inferida por intervalo;
+- metadata separada de conteos fisicos por familia;
+- una sola autoridad de cardinalidad para plan, runner y certifier;
+- fixtures de targets dispersos, early-close y producto dimensional completo;
+- incidente `HIGH/CRITICAL` con readout versionado;
+- correccion seguida de reprobe completo de todos los shards;
+- ningun modelo siguiente hereda una correccion solo por cita documental: debe
+  demostrarla en su propia ruta ejecutable.

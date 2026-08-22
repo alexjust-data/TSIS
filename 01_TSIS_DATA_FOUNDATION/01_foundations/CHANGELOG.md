@@ -1,3 +1,66 @@
+## 2026-08-21 | Core market RAW alignment probe and governed contracts
+
+- Added the executable schema and validator contracts plus v0.2 handoff for
+  target-scoped comparison of daily, 1m, quotes and trades RAW families.
+- Production-equivalent probe v0.3 passed runner/resume integrity with 12/12
+  tasks and zero faulty Parquets while preserving exact ticker-date differences.
+- Kept extras outside the 4,824-member target non-blocking, target absences
+  blocking and the full read-only audit under explicit human authorization.
+
+## 2026-08-15 | Daily Eligible Universe restricted consumption gate PASS
+
+- Added a hash-bound restricted consumption policy and registry binding for the
+  validated experimental presession population candidate.
+- Reconciled 2,400/2,400 Trading Activity development targets and represented
+  the exact 55,866,000 symbol-second denominator losslessly as 2,400 session
+  intervals; builder checks pass 23/23 and independent checks pass 25/25.
+- Declared the artifact a controlled A/B bridge only. The general conceptual
+  Screener owner is `00_CTO/15_SCREENER_ENGINE`; Backtest/live/RL and canonical
+  promotion remain separately gated.
+
+## 2026-08-14 | First executable evidence for Representation Model controls
+
+- Trading Activity now supplies bounded executable PASS evidence for
+  `RM-MAT-CTRL-001..005`: tests 5/5, probes 4/4, 24/24 partitions, early-close
+  coverage in every shard and one cross-shard schema variant per family.
+- Full-denominator incident closure remains pending the human-authorized
+  2,400-TARGET/7,200-partition integrity run.
+
+## 2026-08-14 | Representation Model materialization execution contract
+
+- Added the Data Foundation execution/certification contract for exact target
+  membership, typed physical counts, one cardinality authority, adversarial
+  fixtures, all-shard production-equivalent probes and terminal rehearsal.
+- Required `inherited_incident_controls` in plans/readouts and fail-closed
+  handling of missing, pending or failed controls. Initial controls are
+  `RM-MAT-CTRL-001..003`; implementation evidence remains pending per model.
+- Preserved the distinction between completed calculation, certification and
+  promotion and did not authorize Trading Activity recovery or recomputation.
+
+## 2026-08-14 | SEC PIT C01 metadata authorization corrections
+
+- Declared `D:/TSIS/fundamental_context/sec_pit_v0_1` the sole active SEC PIT
+  write root and froze the 28.7 GB `D:/sec_float_pit_v0_1` pilot as immutable
+  read-only provenance pending any separately audited CAS importer.
+- Added the network-free C01 post-metadata gate for exact completeness,
+  requests/retries/429/failures, identity/lifecycle exclusions, v0.2 document
+  selection, P50/P95/MAX filing-size upper bounds and an explicitly
+  non-representative 4,824 projection.
+- Raised the primary minimum-free-space threshold to 200 GiB and made both
+  start-time and mid-run low-disk stops persist terminal manifests and resume
+  instructions.
+
+## 2026-08-13 | SEC PIT 4,824 descending acquisition preflight
+
+- Added the governed full-universe preflight config, builder, tests and readout.
+- Frozen output contains five exact descending cohorts, complete source/output
+  hashes, four-shard assignments, identity-alias diagnostics and operator
+  launch/monitor/resume commands with zero network requests.
+- Corrected the population description from 4,824 presumed unique instruments
+  to 4,824 unique ticker rows and 4,626 unique instrument identities.
+- Kept primary-document acquisition, resolution and institutional promotion
+  separately blocked pending the cohort 01 metadata and predownload gates.
+
 ## 2026-08-13 | SEC PIT exact share-class authority v0.21
 
 - Rejected completed diagnostic v0.20 after its immutable delta audit exposed semantic coverage regressions; runtime completion was not treated as correctness.
@@ -819,3 +882,21 @@ but 4,824-instrument scale remains blocked. See
 `inspection_dossiers/sec_pit/SEC_PIT_OPTION_INCLUSIVE_CURRENT_SHARES_AND_PHYSICAL_SCHEMA_SHARD_CERTIFICATION_v0_1.md`
 and
 `inspection_dossiers/sec_pit/SEC_PIT_100_CASE_OPTION_INCLUSIVE_AND_SCHEMA_V0_13_READOUT_v0_1.md`.
+## 2026-08-14 | Trading Activity target-only terminal evidence PASS
+
+- Registered the FULL 2,400-TARGET/7,200-partition terminal evidence package
+  with final manifest SHA-256
+  `421c5728cd9dd54195e7993258636884ffb6c887ab543d36d924579cab424956`.
+- Physical integrity and cardinality pass; admission, OOS and canonical
+  promotion remain outside this evidence result.
+
+## 2026-08-21 | Core market RAW alignment audit handoff v0.1
+
+- Added the governed design handoff for a minimal physical and ticker-date
+  alignment audit across `ohlcv_daily`, `ohlcv_1m`, `quotes_` and
+  `trades_ticks_prod_2005_2026`.
+- Froze the 4,824-member authority, global `2005-01-01` through `2026-08-20`
+  scope, exact PASS invariants, runtime topology and production-equivalent probe
+  gate without certifying any dataset or authorizing the full run.
+- Runtime evidence remains outside Git under
+  `C:/TSIS_Data/runs/data_ops/core_market_raw_alignment_audit/<run_id>/`.

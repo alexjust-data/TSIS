@@ -1,6 +1,6 @@
 # SEC PIT ownership and float reconstruction — current handoff
 
-Status: `EXACT_SHARE_CLASS_GATE_V0_21_AUTHORITATIVE_4824_DIAGNOSTIC_NOT_LAUNCHED`
+Status: `V0_21_AUTHORITATIVE_4824_PREFLIGHT_PASS_METADATA_COHORT_01_AWAITING_HUMAN_LAUNCH`
 
 Last updated: `2026-08-13`
 
@@ -99,7 +99,9 @@ generalized O/S PIT with materially higher coverage                  = probable
 owner-exclusion float for a broad majority                           = possible, not demonstrated
 100% historical owner-exclusion float from issuer SEC filings alone = unlikely
 instrument-interval correction gate                                 = PASS
-4,824 diagnostic run                                                 = NOT LAUNCHED
+4,824 descending no-network preflight                               = PASS
+metadata cohort 01 (824 ticker rows)                                = AWAITING HUMAN LAUNCH
+primary-document acquisition                                        = NOT AUTHORIZED
 automatic institutional promotion of the 4,824 output               = NOT GRANTED
 ```
 
@@ -118,17 +120,20 @@ Work in this order:
    causal post-baseline event application;
 3. keep every residual fail-closed and repeat tests, four-shard probes,
    certification and immutable 99-case deltas for each semantic change;
-4. do not launch the 4,824 diagnostic until the operator deliberately re-opens
-   that action; the current explicit instruction is to leave it unlaunched;
-5. preserve `CALCULATED` and `NULL + blocker` outcomes and treat execution
+4. use the frozen `824/1000/1000/1000/1000` descending cohorts and launch only
+   metadata cohort 01 under the human-controlled long-run contract;
+5. review metadata, identity/lifecycle conflicts, selection volume and capacity
+   before any separately authorized primary-document acquisition;
+6. preserve `CALCULATED` and `NULL + blocker` outcomes and treat execution
    separately from institutional promotion.
 
-Operator direction (`2026-08-13`): the bounded correction gates have passed,
-but the
-4,824-instrument diagnostic must not be launched during this closeout. A future
-launch requires a deliberate new operator action and continued compliance with
-the long-running operation contract. This direction supersedes the earlier
-conditional execution authorization for the present workflow.
+Operator direction (`2026-08-13`): the previous leave-unlaunched instruction is
+reopened only for governed preparation and sequential execution. The parent
+universe is frozen as `824/1000/1000/1000/1000`, starting with 2026 rows and
+moving backwards. The no-network preflight is complete; metadata cohort 01 is
+the next human-controlled run. Primary documents and promotion remain closed.
+Read `SEC_PIT_4824_DESCENDING_PREFLIGHT_READOUT_v0_1.md` and the CTO execution
+plan before launch.
 
 ## Mandatory reading for continuation
 
@@ -155,16 +160,17 @@ gates.
 ## Git and Graphify state
 
 All semantic changes must be committed in a focused SEC PIT commit; unrelated
-Screener/CTO work must not be swept into it. The v0.21 closeout is queued under
-`GFQ-20260813-FOUNDATIONS-SEC-SHARE-CLASS-V021-001` in the local
-`GRAPHIFY_REFRESH_QUEUE.md`; it requires the coordinated Foundations SEC PIT
-leaf refresh and governed root merge.
+Screener/CTO work must not be swept into it. The descending acquisition plan is
+queued once under `GFQ-20260813-CTO-SEC-4824-DESCENDING-001` in
+`00_CTO/GRAPHIFY_REFRESH_QUEUE.md` for a coordinated CTO/Foundation leaf refresh.
 
 ## Power-loss restart pointer
 
 The exact terminal paths, artifact hashes, executed source/test hashes, branch
 and dirty-working-tree warning are recorded in the current v0.21 readout under
 `Power-loss recovery checkpoint`. At this checkpoint no long SEC PIT run is
-active. Do not resume v0.21: it is complete. Continue only with a new versioned
-bounded correction loop, repeat one production-equivalent probe per governed
-shard, and obtain a new explicit operator decision before any 4,824-case run.
+active. Do not resume v0.21: it is complete. The new full-universe preparation
+authority is the immutable preflight root
+`runtime/sec_pit_4824_descending_acquisition_v0_1/preflight_20260813T215254Z`.
+If metadata cohort 01 is interrupted, resume only that run with its frozen input
+hash and `--resume`; do not start a duplicate writer or advance to cohort 02.

@@ -28,6 +28,26 @@ from sec_pit.client import SecClient
 from sec_pit.storage import ContentAddressedStore, append_jsonl, atomic_write_json, read_jsonl
 from sec_pit.telemetry import LiveResourceTelemetry, percentile, summarize_document_performance
 
+DEFAULT_MINIMUM_FREE_SPACE_GIB = 200.0
+CANONICAL_SEC_ROOT = Path(r"D:\TSIS\fundamental_context\sec_pit_v0_1")
+
+
+class LowDiskStop(RuntimeError):
+    """A recoverable, resume-safe storage gate stop."""
+
+
+def require_canonical_sec_root(
+    output_root: Path, canonical_root: Path = CANONICAL_SEC_ROOT
+) -> Path:
+    resolved = output_root.resolve()
+    canonical = canonical_root.resolve()
+    if os.path.normcase(str(resolved)) != os.path.normcase(str(canonical)):
+        raise ValueError(
+            "output-root is not the governed active SEC PIT root: "
+            f"expected {canonical}, got {resolved}"
+        )
+    return resolved
+
 
 def utc_now() -> str:
     return datetime.now(UTC).isoformat()
@@ -62,7 +82,15 @@ def complete_submission_fallback_url(row: dict[str, Any]) -> str:
 def classify_acquisition_scope(gates: pd.DataFrame) -> tuple[list[str], list[str], list[str]]:
     state = gates["primary_document_acquisition_state"].astype(str)
     eligible = sorted(
-        gates.loc[state.eq("ELIGIBLE_FOR_GOVERNED_REVIEW"), "ticker"]
+        gates.loc[
+            state.isin(
+                {
+                    "ELIGIBLE_FOR_GOVERNED_REVIEW",
+                    "ELIGIBLE_FOR_REVIEW_NOT_AUTHORIZED",
+                }
+            ),
+            "ticker",
+        ]
         .astype(str)
         .unique()
     )
@@ -75,6 +103,41 @@ def classify_acquisition_scope(gates: pd.DataFrame) -> tuple[list[str], list[str
     return eligible, security_class_halts, local_complete
 
 
+def persist_low_disk_stop(
+    run_root: Path,
+    manifest: dict[str, Any],
+    *,
+    free_gib: float,
+    minimum_gib: float,
+) -> dict[str, Any]:
+    reason = f"Free-space gate stopped cleanly: {free_gib:.2f} < {minimum_gib:.2f} GiB"
+    final = {
+        **manifest,
+        "status": "STOPPED_LOW_DISK",
+        "ended_at_utc": utc_now(),
+        "exit_code": 2,
+        "failure_reason": reason,
+        "free_space_gib_at_stop": round(free_gib, 3),
+        "resume_instructions": (
+            "restore free space above the frozen threshold, then rerun the exact "
+            "command with --resume"
+        ),
+    }
+    atomic_write_json(run_root / "final_manifest.json", final)
+    atomic_write_json(run_root / "heartbeat_latest.json", final)
+    atomic_write_json(
+        run_root / "pid_manifest.json",
+        {
+            "wrapper_pid": os.getpid(),
+            "stage": "STOPPED_LOW_DISK",
+            "expected_alive": False,
+            "ended_at_utc": final["ended_at_utc"],
+            "exit_code": 2,
+        },
+    )
+    return final
+
+
 def parse_args() -> argparse.Namespace:
     value = argparse.ArgumentParser(description=__doc__)
     value.add_argument("--probe-root", type=Path, required=True)
@@ -85,13 +148,18 @@ def parse_args() -> argparse.Namespace:
     value.add_argument("--resume", action="store_true")
     value.add_argument("--user-agent", default=os.environ.get("SEC_USER_AGENT"))
     value.add_argument("--requests-per-second", type=float, default=5.0)
-    value.add_argument("--minimum-free-space-gib", type=float, default=100.0)
+    value.add_argument(
+        "--minimum-free-space-gib",
+        type=float,
+        default=DEFAULT_MINIMUM_FREE_SPACE_GIB,
+    )
     value.add_argument("--telemetry-interval-seconds", type=float, default=10.0)
     return value.parse_args()
 
 
 def main() -> int:
     args = parse_args()
+    active_output_root = require_canonical_sec_root(args.output_root)
     probe_root = args.probe_root.resolve()
     final_path = probe_root / "final_manifest.json"
     selection_path = probe_root / "document_selection_plan_v0_2.parquet"
@@ -104,22 +172,28 @@ def main() -> int:
         raise RuntimeError("Predownload probe is not COMPLETE/PASS")
     gates = pd.read_parquet(gates_path)
     eligible, security_class_halts, local_complete = classify_acquisition_scope(gates)
+    gate_state_counts = {
+        str(state): int(count)
+        for state, count in gates["primary_document_acquisition_state"].value_counts().items()
+    }
     rows = pd.read_parquet(selection_path)
 
-    run_root = args.output_root.resolve() / "runs" / args.run_id
+    run_root = active_output_root / "runs" / args.run_id
     if run_root.exists() and not args.resume:
         raise FileExistsError(f"Run exists; use --resume: {run_root}")
     run_root.mkdir(parents=True, exist_ok=True)
     monitor_path = SCRIPT_DIR / "monitor_authorized_primary_acquisition_v0_2.ps1"
+    authorization_monitor_arg = (
+        f' -AuthorizationPath "{args.authorization.resolve()}"'
+        if args.authorization
+        else ""
+    )
     monitor_command = (
         "powershell -NoProfile -ExecutionPolicy Bypass -File "
-        f'"{monitor_path}" -RunRoot "{run_root}" -IntervalSeconds 10 -Compact -Watch'
+        f'"{monitor_path}" -RunRoot "{run_root}"{authorization_monitor_arg} '
+        "-IntervalSeconds 10 -Compact -Watch"
     )
-    free_gib = shutil.disk_usage(args.output_root.resolve()).free / (1024**3)
-    if free_gib < args.minimum_free_space_gib:
-        raise RuntimeError(
-            f"Free-space gate failed: {free_gib:.2f} < {args.minimum_free_space_gib:.2f} GiB"
-        )
+    free_gib = shutil.disk_usage(active_output_root).free / (1024**3)
     manifest: dict[str, Any] = {
         "run_id": args.run_id,
         "status": "RUNNING",
@@ -144,6 +218,9 @@ def main() -> int:
         "probe_manifest_sha256": file_sha256(final_path),
         "selection_plan_path": selection_path.as_posix(),
         "selection_plan_sha256": file_sha256(selection_path),
+        "gate_matrix_path": gates_path.as_posix(),
+        "gate_matrix_sha256": file_sha256(gates_path),
+        "gate_state_counts": gate_state_counts,
         "eligible_tickers": eligible,
         "security_class_halts": security_class_halts,
         "local_evidence_complete_tickers": local_complete,
@@ -178,6 +255,15 @@ def main() -> int:
     )
     print(f"run_root={run_root}")
     print(f"monitor={monitor_command}")
+    if free_gib < args.minimum_free_space_gib:
+        final = persist_low_disk_stop(
+            run_root,
+            manifest,
+            free_gib=free_gib,
+            minimum_gib=args.minimum_free_space_gib,
+        )
+        print(json.dumps(final, indent=2))
+        return 2
     if not args.execute:
         final = {**manifest, "status": "COMPLETE", "result": "PLAN_ONLY", "ended_at_utc": utc_now()}
         atomic_write_json(run_root / "final_manifest.json", final)
@@ -192,6 +278,7 @@ def main() -> int:
         args.authorization.resolve(),
         probe_manifest_path=final_path,
         selection_plan_path=selection_path,
+        gate_matrix_path=gates_path,
         technically_eligible_tickers=eligible,
     )
     if decision.gate != "PASS":
@@ -204,7 +291,7 @@ def main() -> int:
     already = completed_urls(acquisition_log)
     client = SecClient(
         user_agent=args.user_agent,
-        store=ContentAddressedStore(args.output_root.resolve() / "objects"),
+        store=ContentAddressedStore(active_output_root / "objects"),
         acquisition_log=acquisition_log,
         telemetry_log=performance_log,
         requests_per_second=args.requests_per_second,
@@ -250,13 +337,14 @@ def main() -> int:
 
     telemetry = LiveResourceTelemetry(
         run_root=run_root,
-        output_root=args.output_root.resolve(),
+        output_root=active_output_root,
         run_id=args.run_id,
         interval_seconds=args.telemetry_interval_seconds,
         state_snapshot=snapshot,
     )
     telemetry.start()
     failure_reason: str | None = None
+    stopped_low_disk = False
     try:
         for index, row in enumerate(planned.to_dict("records"), start=1):
             url = str(row["primary_document_url"])
@@ -278,10 +366,10 @@ def main() -> int:
                 telemetry.sample()
                 continue
             if (
-                shutil.disk_usage(args.output_root.resolve()).free / (1024**3)
+                shutil.disk_usage(active_output_root).free / (1024**3)
                 < args.minimum_free_space_gib
             ):
-                raise RuntimeError("Free-space gate failed during acquisition")
+                raise LowDiskStop("Free-space gate stopped cleanly during acquisition")
             filename = Path(urlparse(url).path).name or "primary.bin"
             logical = f"primary/{row['ticker']}/{row['accession_number']}/{filename}"
             result = client.fetch(
@@ -359,10 +447,17 @@ def main() -> int:
             if result.status != "FETCHED":
                 failure_reason = result.error
                 break
+    except LowDiskStop as exc:
+        stopped_low_disk = True
+        failure_reason = f"{type(exc).__name__}: {exc}"
     except Exception as exc:
         failed += 1
         failure_reason = f"{type(exc).__name__}: {exc}"
-    status = "COMPLETE" if failed == 0 and fetched + skipped == total else "FAILED"
+    status = (
+        "STOPPED_LOW_DISK"
+        if stopped_low_disk
+        else ("COMPLETE" if failed == 0 and fetched + skipped == total else "FAILED")
+    )
     with state_lock:
         state.update({"status": status, "stage": "FINAL", "failed": failed})
     telemetry.stop()
@@ -393,6 +488,13 @@ def main() -> int:
         "retry_count": retry_count,
         "http_429_count": http_429_count,
         "failure_reason": failure_reason,
+        "exit_code": 0 if status == "COMPLETE" else (2 if stopped_low_disk else 1),
+        "resume_instructions": (
+            "restore free space above the frozen threshold, then rerun the exact "
+            "command with --resume"
+            if stopped_low_disk
+            else "rerun the exact command with --resume after correcting any failure"
+        ),
         "performance_summary_path": (run_root / "performance_summary.json").as_posix(),
         "provisional_bottleneck_candidate": performance["provisional_bottleneck_candidate"],
         "resource_peaks": telemetry.peaks,
@@ -412,7 +514,7 @@ def main() -> int:
     atomic_write_json(run_root / "heartbeat_latest.json", terminal_heartbeat)
     append_jsonl(run_root / "heartbeat.jsonl", terminal_heartbeat)
     print(json.dumps(final, indent=2))
-    return 0 if status == "COMPLETE" else 1
+    return 0 if status == "COMPLETE" else (2 if stopped_low_disk else 1)
 
 
 if __name__ == "__main__":

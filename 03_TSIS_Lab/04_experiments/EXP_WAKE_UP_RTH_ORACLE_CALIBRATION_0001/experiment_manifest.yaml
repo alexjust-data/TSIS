@@ -1,0 +1,74 @@
+experiment_id: EXP_WAKE_UP_RTH_ORACLE_CALIBRATION_0001
+experiment_version: v0_1
+status: full_candidate_complete_repair_probe_pass_full_panel_rebuild_pending_human_launch
+created_by: human_researcher
+generator_type: human_researcher
+research_question: "Can a binding-neutral oracle identify first observable within-RTH Wake-up transitions?"
+objective: "Calibrate WUL-D01..D08 and produce blind review evidence on frozen TA-3 development targets."
+hypothesis: "Raw eligible trade, cluster and notional evidence contains a stable region separating corroborated transitions from dormancy, one-print noise, contextual normality and artifacts."
+target_domain: trading_activity_wake_up_rth
+input_state_versions: []
+input_outcome_versions: []
+source_data_scope: trades_ticks_prod_2005_2026_legacy_rth; development only
+universe_definition:
+  dataset: trading_activity_ta3_stratified_development_sample_v0_1
+  target_rows: 2400
+  population_state: ELIGIBLE_UNDER_DECLARED_PROXY
+probe_definition:
+  production_equivalent: true
+  scope: one bounded target per cohort plus typed edge cases
+parameter_grid:
+  dormancy_seconds: [900, 1800, 3600]
+  confirmation_seconds: [30, 60, 120, 300]
+controlled_variables:
+  rth_scope: governed_open_exclusive_close_exclusive
+  simulated_latency_ms: 1000
+experimental_variables:
+  candidate_ranking: binding_neutral_raw_activity_contrast
+windows:
+  development: [2011-01-03, 2022-12-30]
+  prohibited_validation: [2023-01-03, 2024-12-31]
+  prohibited_final_test: [2025-03-17, 2026-03-09]
+outcome_matrix:
+  primary: blind_label_class_and_onset_interval
+metrics:
+  - reviewer_agreement
+  - typed_abstention_rate
+  - stratum_stability
+  - candidate_recall_audit
+baselines:
+  - random_eligible_intervals
+  - dormant_intervals
+leakage_gates:
+  - no_binding_a_or_b_inputs
+  - no_intraday_price_path_or_strategy_outcomes
+  - trade_price_only_for_dollar_notional
+  - no_validation_or_final_test_reads
+quality_gates:
+  - official_g_source_only
+  - typed_unavailable_preserved
+  - exact_target_manifest_hash
+lineage_requirements:
+  - source_hashes
+  - config_hash
+  - code_hash
+  - run_id
+statistical_validation_plan:
+  unit: blind_case
+  paired_reviewers: 2
+  calibration_split: development_only
+promotion_rules:
+  requires_explicit_human_wul_freeze: true
+mutation_policy:
+  optimizer_mutable: false
+  mutation_scope: []
+expected_outputs:
+  - candidate_pool
+  - control_intervals
+  - blind_panel_manifest
+  - visual_gallery
+  - adjudicated_labels
+  - calibration_grid_results
+  - terminal_validation_manifest
+  - human_gate_handoff
+  - terminal_manifest

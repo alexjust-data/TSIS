@@ -8,7 +8,10 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from sec_pit.run_submissions_metadata_profile import profile_inventory
+from sec_pit.run_submissions_metadata_profile import (  # noqa: E402
+    profile_inventory,
+    require_canonical_object_root,
+)
 
 
 def test_profile_inventory_tags_document_strata() -> None:
@@ -27,3 +30,17 @@ def test_profile_inventory_tags_document_strata() -> None:
     assert "MANY_FORM4" in result["document_strata_json"]
     assert "FOREIGN_20F_MULTIPLE_AMENDMENTS" in result["document_strata_json"]
     assert "BANKRUPTCY_OR_RECEIVERSHIP_ITEM_1_03" in result["document_strata_json"]
+
+
+def test_metadata_runner_rejects_noncanonical_object_root(tmp_path: Path) -> None:
+    canonical = tmp_path / "active" / "objects"
+    canonical.mkdir(parents=True)
+    assert require_canonical_object_root(canonical, canonical) == canonical.resolve()
+    wrong = tmp_path / "legacy" / "raw"
+    wrong.mkdir(parents=True)
+    try:
+        require_canonical_object_root(wrong, canonical)
+    except ValueError as exc:
+        assert "governed active SEC PIT content store" in str(exc)
+    else:
+        raise AssertionError("noncanonical object root was accepted")

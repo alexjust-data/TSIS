@@ -14,6 +14,27 @@ archivos afectados, motivo del aplazamiento y criterio de cierre.
 
 ## Pending
 
+### GFQ-20260817-ROOT-WAKE-UP-ORACLE-LAB-001 - Wake-up RTH Lab experiment
+
+- **Fecha:** 2026-08-17
+- **Estado:** pending
+- **Severidad:** HIGH
+- **Scope:** new governed Lab experiment for Binding-neutral Wake-up RTH oracle
+  calibration on frozen TA-3 development sessions.
+- **Leaf objetivo:** `03_TSIS_Lab` research experiments and its relationship
+  to the CTO Wake-up/D07 lifecycle.
+- **Archivos afectados:**
+  `03_TSIS_Lab/04_experiments/EXP_WAKE_UP_RTH_ORACLE_CALIBRATION_0001/`,
+  Lab README and Lab changelog.
+- **Motivo pendiente:** code, contracts and the 2,400-session candidate scan are
+  present. The first blind panel was invalidated because all 240 cases fell in
+  the close RTH bucket; the RTH-balanced repair passed 25/25 on the bounded
+  probe, while the full panel-only rebuild and human WUL/D07 freeze remain
+  pending. The graph must not promote candidate completion as label authority.
+- **Cierre esperado:** refresh the Lab experiment leaf after full terminal PASS
+  and human D07 freeze, run diagnostics, update `BUILD_MANIFEST.md` and preserve
+  the prohibition on validation/final-OOS reads before their gates.
+
 ### GFQ-20260811-ROOT-002 - Governed Graphify backlog reconciliation and leaf-first root rebuild
 
 - **Estado:** `pending`
@@ -181,3 +202,24 @@ manifests historicos inmutables.
 - **Cierre esperado:** rebuild and diagnose the SEC PIT leaf, update its
   `BUILD_MANIFEST.md`, and verify explain/query coverage for exact share class,
   named acquirable components, missing-versus-zero and fail-closed ownership.
+### GFQ-20260821-ROOT-MODULE-MAP-001 - Module map and experiment-root correction
+
+- **Fecha:** 2026-08-21
+- **Estado:** pending
+- **Severidad:** HIGH
+- **Scope:** mapa raiz de modulos, responsabilidades de Screeners y Statistics
+  Patterns, renumeracion de WebSocket/Offline RL, retirada de Trading_voice y
+  separacion entre Lab experimental y plano fisico de datos.
+- **Leaf objetivo:** graphify_governance,  3_TSIS_Lab y siguiente fusion
+  controlada project_root.
+- **Archivos afectados:** README.md, AGENTS.md,
+  PROJECT_OPERATING_SYSTEM.md, PATH_MIGRATION_2026_07_22.md,
+  CHANGELOG.md,  4_TSIS_SCREENERS/ y
+   5_TSIS_STATISTICS_PATTERNS/.
+- **Motivo pendiente:** el cambio documental y fisico se completo sin ejecutar
+  un rebuild Graphify largo. El grafo vigente puede conservar rutas y
+  responsabilidades anteriores.
+- **Cierre esperado:** refrescar y diagnosticar los leaves afectados, actualizar
+  sus BUILD_MANIFEST.md, reconstruir el root sin Trading_voice, comprobar
+  las rutas 04/05/06/07 y confirmar que esearch_experiments resuelve
+  exclusivamente a  3_TSIS_Lab/04_experiments.
