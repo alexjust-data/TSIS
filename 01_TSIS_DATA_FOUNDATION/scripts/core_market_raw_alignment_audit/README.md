@@ -16,8 +16,13 @@ values or modify the source roots.
 Institutional design handoff:
 
 ```text
-C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\core_market_raw_alignment_audit\core_market_raw_alignment_audit_handoff_v0_2.md
+C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\module_contracts\core_market_raw_alignment_audit\core_market_raw_alignment_audit_handoff_v0_3.md
 ```
+
+`v0.3` records the active full run, exact outage recovery and the mandatory
+UTC-to-`America/New_York` session-date correction. Physical/schema results from
+the active `v0.1` run remain usable; its direct 1m/Daily raw `date` comparison
+must not be interpreted as session alignment.
 
 ## Probe
 

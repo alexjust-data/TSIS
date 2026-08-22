@@ -1,5 +1,17 @@
 # Core Market RAW Alignment Audit Changelog
 
+## 2026-08-22 | Recovery handoff and session-date correction
+
+- Added the v0.3 institutional handoff and a run-local recovery pointer for
+  deterministic continuation after a host or power interruption.
+- Preserved the physical/schema PASS for completed Daily and 1m tasks but
+  invalidated the direct 1m/Daily raw `date` comparison as a session-alignment
+  result because 1m uses UTC calendar dates.
+- Recorded confirmed UTC rollover cases, real FCEL/DJCO gap evidence and the
+  production-equivalent probe-first route to an exact ET session gap ledger.
+- Kept all four `G:` roots read-only and deferred the additional 1m scan until
+  the active Quotes and Trades readers have closed.
+
 ## 2026-08-21 | Adaptive Quotes workers for the active full audit
 
 - Replaced only the original sequential `quotes_` worker with two

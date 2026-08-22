@@ -1,3 +1,13 @@
+## 2026-08-22 | Core market audit recovery and UTC/ET correction handoff
+
+- Added the v0.3 recovery handoff for the active 19,296-task RAW alignment run,
+  including exact resume commands and the six-worker Quotes restoration route.
+- Preserved completed physical/schema evidence while declaring the direct
+  `ohlcv_1m.date` versus Daily comparison invalid for session alignment until
+  `ts_utc` is converted through `America/New_York`.
+- Persisted confirmed real gap examples and the probe-first plan for an exact
+  family/ticker/session-date gap ledger after the current source-disk scan.
+
 ## 2026-08-21 | Core market RAW alignment probe and governed contracts
 
 - Added the executable schema and validator contracts plus v0.2 handoff for
