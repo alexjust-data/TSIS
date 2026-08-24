@@ -1,0 +1,935 @@
+{
+  "analysis_version": "0.1.0",
+  "generated_at_utc": "2026-08-24T07:43:05.579928+00:00",
+  "script_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\core_market_family_download_audit\\analyze_ohlcv_1m_full_audit.py",
+  "script_sha256": "4B4DC77E5A61A882F11D58B0B54447EE225B6609EE678F64A7B9748BE9256BBF",
+  "inputs": {
+    "run_root": "C:\\TSIS_Data\\runs\\data_ops\\core_market_family_download_audit\\20260823_ohlcv_1m_download_audit_v0_1",
+    "alignment_run_root": "C:\\TSIS_Data\\runs\\data_ops\\core_market_raw_alignment_audit\\20260821_core_market_raw_alignment_audit_v0_1",
+    "legacy_session_run_root": "C:\\TSIS_Data\\runs\\data_ops\\core_market_session_coverage_audit\\20260822_core_market_session_coverage_daily_1m_quotes_v0_2",
+    "final_manifest_sha256": "E9B0EC6389BF0A9893558191FDEB771B4135B2FEC644C90702C9647E2722021B",
+    "activity_parquet_sha256": "4A4532324A2993C6F0DF7A22D6C9CF668853C2A470775B9EC011706333B4F46F",
+    "coverage_parquet_sha256": "267F12D26D4E6F6B41943E511EDE3CF4E2A7521B33E8D9DF7470C7E018244CFD",
+    "source_inventory_sha256": "16F419A1A71F632040FD68BFB39101221057E740B100E3E8651DADB7196BFD00",
+    "legacy_detail_sha256": "374DCEFB7AD72D35B316FBFC4AA441B1068773E476C62E430CA6BA4D4D8F66D7"
+  },
+  "verdict": {
+    "technical_execution": "PASS",
+    "exact_4824_universe": "PASS",
+    "present_parquet_integrity": "PASS_ADOPTED_CLOSED_AUDIT",
+    "timestamp_and_session_reconciliation": "PASS",
+    "global_calendar_continuity_through_max_observed": "PASS",
+    "requested_scope_to_2026_08_20": "FAIL_LOCAL_ARCHIVE_INCOMPLETE",
+    "per_ticker_provider_expectedness": "UNRESOLVED",
+    "overall": "PARTIAL_CERTIFICATION_PRESENT_DATA_HEALTHY_TEMPORALLY_INCOMPLETE"
+  },
+  "run": {
+    "run_id": "20260823_ohlcv_1m_download_audit_v0_1",
+    "started_at_utc": "2026-08-23T18:37:01.095418+00:00",
+    "ended_at_utc": "2026-08-24T01:07:23.906810+00:00",
+    "technical_status": "PASS",
+    "download_completeness_status": "NOT_CERTIFIED_PROVIDER_EMPTY_UNRESOLVED",
+    "audit_summary_sha256": "94BA9CC74CED6C39F064147958A2A217E2AA977963E930AAC3335744A36F15E8"
+  },
+  "ledger": {
+    "status_counts": [
+      {
+        "status": "committed",
+        "count": 4824
+      }
+    ],
+    "task_count": 4824,
+    "unique_tickers": 4824,
+    "files": 466945,
+    "source_rows": 1306098487,
+    "activity_rows": 9280325,
+    "attempt_sum": 4824,
+    "max_attempt": 1,
+    "error_count": 0
+  },
+  "task_manifest_verification": {
+    "task_manifest_count": 4824,
+    "unique_tickers": 4824,
+    "missing_expected_tickers": [],
+    "extra_tickers": [],
+    "duplicate_ticker_count": 0,
+    "literal_NA_present": true,
+    "bad_json_count": 0,
+    "noncommitted_count": 0,
+    "artifact_count": 9648,
+    "artifact_hash_verification_executed": true,
+    "bad_or_missing_artifact_count": 0,
+    "sum_file_count": 466945,
+    "sum_source_rows": 1306098487,
+    "sum_activity_rows": 9280325,
+    "sum_source_bytes": 44882364693
+  },
+  "integrity_failures": {
+    "final_artifact_hash_failures": 0,
+    "task_artifact_failures": 0,
+    "missing_expected_tickers": 0,
+    "extra_tickers": 0,
+    "duplicate_tickers": 0,
+    "noncommitted_tasks": 0,
+    "activity_key_duplicates": 0,
+    "row_equation_mismatches": 0,
+    "nonpositive_activity_rows": 0,
+    "timestamp_parse_errors": 0,
+    "out_of_scope_rows": 0,
+    "missing_global_xnys_sessions_through_max": 0,
+    "observed_non_xnys_dates_through_max": 0
+  },
+  "physical_scope": {
+    "files": 466945,
+    "bytes": 44882364693,
+    "source_rows": 1306098487,
+    "ticker_date_rows": 9280325,
+    "physical_error_files": 0,
+    "timestamp_parse_errors": 0,
+    "out_of_scope_rows": 0,
+    "observed_sessions_per_ticker_min": 49,
+    "observed_sessions_per_ticker_median": 1358.0,
+    "observed_sessions_per_ticker_max": 5342,
+    "coverage_states": [
+      {
+        "source_state": "COMMITTED_ADOPTED_PHYSICAL_AUDIT",
+        "leading_boundary_state": "UNRESOLVED_NO_INDEPENDENT_EXPECTED_AUTHORITY",
+        "trailing_boundary_state": "UNRESOLVED_NO_INDEPENDENT_EXPECTED_AUTHORITY",
+        "download_completeness_state": "NOT_CERTIFIED_PROVIDER_EMPTY_UNRESOLVED",
+        "tickers": 4824
+      }
+    ]
+  },
+  "temporal_coverage": {
+    "distinct_observed_session_dates": 5342,
+    "first_session_date_et": "2005-01-03",
+    "last_session_date_et": "2026-03-27",
+    "xnys_sessions_through_max": 5342,
+    "missing_xnys_sessions_through_max": 0,
+    "observed_non_xnys_dates_through_max": 0,
+    "missing_global_xnys_sessions_after_max_to_scope_end": 100,
+    "missing_global_first": "2026-03-30",
+    "missing_global_last": "2026-08-20",
+    "post_2026_03_09_tickers": [
+      {
+        "ticker": "BCSF",
+        "first_date": "2026-03-10",
+        "last_date": "2026-03-27",
+        "ticker_dates": 14,
+        "minute_rows": 3579
+      },
+      {
+        "ticker": "BCTF",
+        "first_date": "2026-03-11",
+        "last_date": "2026-03-27",
+        "ticker_dates": 9,
+        "minute_rows": 21
+      },
+      {
+        "ticker": "BCTX",
+        "first_date": "2026-03-10",
+        "last_date": "2026-03-27",
+        "ticker_dates": 14,
+        "minute_rows": 2112
+      },
+      {
+        "ticker": "BDL",
+        "first_date": "2026-03-10",
+        "last_date": "2026-03-27",
+        "ticker_dates": 9,
+        "minute_rows": 29
+      },
+      {
+        "ticker": "BDN",
+        "first_date": "2026-03-10",
+        "last_date": "2026-03-27",
+        "ticker_dates": 14,
+        "minute_rows": 5051
+      },
+      {
+        "ticker": "BDSX",
+        "first_date": "2026-03-10",
+        "last_date": "2026-03-27",
+        "ticker_dates": 14,
+        "minute_rows": 1362
+      },
+      {
+        "ticker": "BDTX",
+        "first_date": "2026-03-10",
+        "last_date": "2026-03-27",
+        "ticker_dates": 14,
+        "minute_rows": 3658
+      },
+      {
+        "ticker": "BEAG",
+        "first_date": "2026-03-10",
+        "last_date": "2026-03-27",
+        "ticker_dates": 14,
+        "minute_rows": 183
+      },
+      {
+        "ticker": "BEAT",
+        "first_date": "2026-03-10",
+        "last_date": "2026-03-27",
+        "ticker_dates": 14,
+        "minute_rows": 4983
+      },
+      {
+        "ticker": "BEBE",
+        "first_date": "2026-03-12",
+        "last_date": "2026-03-26",
+        "ticker_dates": 3,
+        "minute_rows": 6
+      }
+    ],
+    "tail_daily": [
+      {
+        "session_date_et": "2026-02-23",
+        "tickers": 2586,
+        "total_rows": 395909,
+        "premarket_rows": 20692,
+        "rth_rows": 358985,
+        "afterhours_rows": 16232,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-02-24",
+        "tickers": 2596,
+        "total_rows": 383116,
+        "premarket_rows": 18646,
+        "rth_rows": 346508,
+        "afterhours_rows": 17962,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-02-25",
+        "tickers": 2592,
+        "total_rows": 394748,
+        "premarket_rows": 22372,
+        "rth_rows": 352197,
+        "afterhours_rows": 20179,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-02-26",
+        "tickers": 2597,
+        "total_rows": 389353,
+        "premarket_rows": 21878,
+        "rth_rows": 348434,
+        "afterhours_rows": 19041,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-02-27",
+        "tickers": 2594,
+        "total_rows": 390291,
+        "premarket_rows": 21590,
+        "rth_rows": 351367,
+        "afterhours_rows": 17334,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-03-02",
+        "tickers": 2591,
+        "total_rows": 421910,
+        "premarket_rows": 31598,
+        "rth_rows": 370710,
+        "afterhours_rows": 19602,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-03-03",
+        "tickers": 2589,
+        "total_rows": 424225,
+        "premarket_rows": 27928,
+        "rth_rows": 377352,
+        "afterhours_rows": 18945,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-03-04",
+        "tickers": 2582,
+        "total_rows": 404304,
+        "premarket_rows": 25294,
+        "rth_rows": 357879,
+        "afterhours_rows": 21131,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-03-05",
+        "tickers": 2572,
+        "total_rows": 417842,
+        "premarket_rows": 24370,
+        "rth_rows": 372802,
+        "afterhours_rows": 20670,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-03-06",
+        "tickers": 2564,
+        "total_rows": 419360,
+        "premarket_rows": 25134,
+        "rth_rows": 373068,
+        "afterhours_rows": 21158,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-03-09",
+        "tickers": 1474,
+        "total_rows": 180657,
+        "premarket_rows": 15274,
+        "rth_rows": 158881,
+        "afterhours_rows": 6502,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-03-10",
+        "tickers": 8,
+        "total_rows": 1909,
+        "premarket_rows": 168,
+        "rth_rows": 1559,
+        "afterhours_rows": 182,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-03-11",
+        "tickers": 9,
+        "total_rows": 1796,
+        "premarket_rows": 193,
+        "rth_rows": 1519,
+        "afterhours_rows": 84,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-03-12",
+        "tickers": 10,
+        "total_rows": 1776,
+        "premarket_rows": 131,
+        "rth_rows": 1460,
+        "afterhours_rows": 185,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-03-13",
+        "tickers": 8,
+        "total_rows": 1684,
+        "premarket_rows": 123,
+        "rth_rows": 1512,
+        "afterhours_rows": 49,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-03-16",
+        "tickers": 9,
+        "total_rows": 1419,
+        "premarket_rows": 75,
+        "rth_rows": 1296,
+        "afterhours_rows": 48,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-03-17",
+        "tickers": 9,
+        "total_rows": 1551,
+        "premarket_rows": 87,
+        "rth_rows": 1417,
+        "afterhours_rows": 47,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-03-18",
+        "tickers": 7,
+        "total_rows": 1351,
+        "premarket_rows": 56,
+        "rth_rows": 1272,
+        "afterhours_rows": 23,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-03-19",
+        "tickers": 7,
+        "total_rows": 1347,
+        "premarket_rows": 31,
+        "rth_rows": 1302,
+        "afterhours_rows": 14,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-03-20",
+        "tickers": 8,
+        "total_rows": 1352,
+        "premarket_rows": 22,
+        "rth_rows": 1288,
+        "afterhours_rows": 42,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-03-23",
+        "tickers": 9,
+        "total_rows": 1380,
+        "premarket_rows": 44,
+        "rth_rows": 1316,
+        "afterhours_rows": 20,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-03-24",
+        "tickers": 8,
+        "total_rows": 1228,
+        "premarket_rows": 25,
+        "rth_rows": 1166,
+        "afterhours_rows": 37,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-03-25",
+        "tickers": 8,
+        "total_rows": 1333,
+        "premarket_rows": 26,
+        "rth_rows": 1289,
+        "afterhours_rows": 18,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-03-26",
+        "tickers": 10,
+        "total_rows": 1322,
+        "premarket_rows": 27,
+        "rth_rows": 1274,
+        "afterhours_rows": 21,
+        "outside_rows": 0
+      },
+      {
+        "session_date_et": "2026-03-27",
+        "tickers": 9,
+        "total_rows": 1536,
+        "premarket_rows": 30,
+        "rth_rows": 1477,
+        "afterhours_rows": 29,
+        "outside_rows": 0
+      }
+    ]
+  },
+  "session_rows": {
+    "total": 1306098487,
+    "premarket": {
+      "rows": 33833603,
+      "pct_of_all_rows": 2.590432753483467
+    },
+    "rth": {
+      "rows": 1243035794,
+      "pct_of_all_rows": 95.17167398724656
+    },
+    "afterhours": {
+      "rows": 29225478,
+      "pct_of_all_rows": 2.2376167104464306
+    },
+    "outside_0400_2000": {
+      "rows": 3612,
+      "pct_of_all_rows": 0.000276548823534469
+    },
+    "patterns": [
+      {
+        "has_premarket": true,
+        "has_rth": true,
+        "has_afterhours": true,
+        "has_outside": true,
+        "ticker_dates": 609,
+        "tickers": 182,
+        "total_rows": 226207,
+        "premarket_rows": 6096,
+        "rth_rows": 212279,
+        "afterhours_rows": 7218,
+        "outside_rows": 614
+      },
+      {
+        "has_premarket": true,
+        "has_rth": true,
+        "has_afterhours": true,
+        "has_outside": false,
+        "ticker_dates": 1824456,
+        "tickers": 4627,
+        "total_rows": 507836479,
+        "premarket_rows": 32250530,
+        "rth_rows": 450533135,
+        "afterhours_rows": 25052814,
+        "outside_rows": 0
+      },
+      {
+        "has_premarket": true,
+        "has_rth": true,
+        "has_afterhours": false,
+        "has_outside": true,
+        "ticker_dates": 218,
+        "tickers": 140,
+        "total_rows": 61640,
+        "premarket_rows": 402,
+        "rth_rows": 61020,
+        "afterhours_rows": 0,
+        "outside_rows": 218
+      },
+      {
+        "has_premarket": true,
+        "has_rth": true,
+        "has_afterhours": false,
+        "has_outside": false,
+        "ticker_dates": 610740,
+        "tickers": 4806,
+        "total_rows": 83265202,
+        "premarket_rows": 1569138,
+        "rth_rows": 81696064,
+        "afterhours_rows": 0,
+        "outside_rows": 0
+      },
+      {
+        "has_premarket": false,
+        "has_rth": true,
+        "has_afterhours": true,
+        "has_outside": true,
+        "ticker_dates": 1338,
+        "tickers": 272,
+        "total_rows": 356753,
+        "premarket_rows": 0,
+        "rth_rows": 352687,
+        "afterhours_rows": 2728,
+        "outside_rows": 1338
+      },
+      {
+        "has_premarket": false,
+        "has_rth": true,
+        "has_afterhours": true,
+        "has_outside": false,
+        "ticker_dates": 2126789,
+        "tickers": 4786,
+        "total_rows": 389156238,
+        "premarket_rows": 0,
+        "rth_rows": 385000384,
+        "afterhours_rows": 4155854,
+        "outside_rows": 0
+      },
+      {
+        "has_premarket": false,
+        "has_rth": true,
+        "has_afterhours": false,
+        "has_outside": true,
+        "ticker_dates": 1441,
+        "tickers": 333,
+        "total_rows": 263136,
+        "premarket_rows": 0,
+        "rth_rows": 261695,
+        "afterhours_rows": 0,
+        "outside_rows": 1441
+      },
+      {
+        "has_premarket": false,
+        "has_rth": true,
+        "has_afterhours": false,
+        "has_outside": false,
+        "ticker_dates": 4709496,
+        "tickers": 4756,
+        "total_rows": 324918530,
+        "premarket_rows": 0,
+        "rth_rows": 324918530,
+        "afterhours_rows": 0,
+        "outside_rows": 0
+      },
+      {
+        "has_premarket": true,
+        "has_rth": false,
+        "has_afterhours": true,
+        "has_outside": false,
+        "ticker_dates": 143,
+        "tickers": 92,
+        "total_rows": 1959,
+        "premarket_rows": 711,
+        "rth_rows": 0,
+        "afterhours_rows": 1248,
+        "outside_rows": 0
+      },
+      {
+        "has_premarket": true,
+        "has_rth": false,
+        "has_afterhours": false,
+        "has_outside": false,
+        "ticker_dates": 2295,
+        "tickers": 1074,
+        "total_rows": 6726,
+        "premarket_rows": 6726,
+        "rth_rows": 0,
+        "afterhours_rows": 0,
+        "outside_rows": 0
+      },
+      {
+        "has_premarket": false,
+        "has_rth": false,
+        "has_afterhours": true,
+        "has_outside": true,
+        "ticker_dates": 1,
+        "tickers": 1,
+        "total_rows": 122,
+        "premarket_rows": 0,
+        "rth_rows": 0,
+        "afterhours_rows": 121,
+        "outside_rows": 1
+      },
+      {
+        "has_premarket": false,
+        "has_rth": false,
+        "has_afterhours": true,
+        "has_outside": false,
+        "ticker_dates": 2799,
+        "tickers": 1110,
+        "total_rows": 5495,
+        "premarket_rows": 0,
+        "rth_rows": 0,
+        "afterhours_rows": 5495,
+        "outside_rows": 0
+      }
+    ]
+  },
+  "no_rth_observed_activity": {
+    "denominator_definition": "observed ticker-session_date_et keys with at least one 1m row",
+    "not_a_missing_day_rate": true,
+    "observed_ticker_dates": 9280325,
+    "ticker_dates_with_rth": 9275087,
+    "ticker_dates_without_rth": 5238,
+    "affected_tickers": 1571,
+    "minute_rows_on_no_rth_dates": 14302,
+    "pct_of_observed_ticker_dates": 0.05644198883121011,
+    "pct_of_all_minute_rows": 0.001095016964061455,
+    "breakdown": [
+      {
+        "pattern": "AFTERHOURS_AND_OUTSIDE_0400_2000",
+        "ticker_dates": 1,
+        "tickers": 1,
+        "minute_rows": 122
+      },
+      {
+        "pattern": "AFTERHOURS_ONLY",
+        "ticker_dates": 2799,
+        "tickers": 1110,
+        "minute_rows": 5495
+      },
+      {
+        "pattern": "PREMARKET_AND_AFTERHOURS",
+        "ticker_dates": 143,
+        "tickers": 92,
+        "minute_rows": 1959
+      },
+      {
+        "pattern": "PREMARKET_ONLY",
+        "ticker_dates": 2295,
+        "tickers": 1074,
+        "minute_rows": 6726
+      }
+    ],
+    "sample_seed": 20260824,
+    "sample_candidate_counts": {
+      "2025": 307,
+      "2026": 213
+    },
+    "sample": [
+      {
+        "sample_seed": 20260824,
+        "ticker": "FSEA",
+        "session_date_et": "2025-01-27",
+        "total_rows": 2,
+        "premarket_rows": 0,
+        "rth_rows": 0,
+        "afterhours_rows": 2,
+        "outside_0400_2000_rows": 0,
+        "pattern": "AFTERHOURS_ONLY",
+        "physical_evidence_state": "ADOPTED_CLOSED_PHYSICAL_AUDIT",
+        "download_completeness_state": "PRESENT_VALID_FILE"
+      },
+      {
+        "sample_seed": 20260824,
+        "ticker": "BNIX",
+        "session_date_et": "2025-02-28",
+        "total_rows": 1,
+        "premarket_rows": 1,
+        "rth_rows": 0,
+        "afterhours_rows": 0,
+        "outside_0400_2000_rows": 0,
+        "pattern": "PREMARKET_ONLY",
+        "physical_evidence_state": "ADOPTED_CLOSED_PHYSICAL_AUDIT",
+        "download_completeness_state": "PRESENT_VALID_FILE"
+      },
+      {
+        "sample_seed": 20260824,
+        "ticker": "RDGT",
+        "session_date_et": "2025-07-14",
+        "total_rows": 1,
+        "premarket_rows": 0,
+        "rth_rows": 0,
+        "afterhours_rows": 1,
+        "outside_0400_2000_rows": 0,
+        "pattern": "AFTERHOURS_ONLY",
+        "physical_evidence_state": "ADOPTED_CLOSED_PHYSICAL_AUDIT",
+        "download_completeness_state": "PRESENT_VALID_FILE"
+      },
+      {
+        "sample_seed": 20260824,
+        "ticker": "ISRL",
+        "session_date_et": "2025-09-02",
+        "total_rows": 1,
+        "premarket_rows": 0,
+        "rth_rows": 0,
+        "afterhours_rows": 1,
+        "outside_0400_2000_rows": 0,
+        "pattern": "AFTERHOURS_ONLY",
+        "physical_evidence_state": "ADOPTED_CLOSED_PHYSICAL_AUDIT",
+        "download_completeness_state": "PRESENT_VALID_FILE"
+      },
+      {
+        "sample_seed": 20260824,
+        "ticker": "AMBI",
+        "session_date_et": "2025-10-21",
+        "total_rows": 1,
+        "premarket_rows": 1,
+        "rth_rows": 0,
+        "afterhours_rows": 0,
+        "outside_0400_2000_rows": 0,
+        "pattern": "PREMARKET_ONLY",
+        "physical_evidence_state": "ADOPTED_CLOSED_PHYSICAL_AUDIT",
+        "download_completeness_state": "PRESENT_VALID_FILE"
+      },
+      {
+        "sample_seed": 20260824,
+        "ticker": "VINC",
+        "session_date_et": "2026-01-14",
+        "total_rows": 1,
+        "premarket_rows": 1,
+        "rth_rows": 0,
+        "afterhours_rows": 0,
+        "outside_0400_2000_rows": 0,
+        "pattern": "PREMARKET_ONLY",
+        "physical_evidence_state": "ADOPTED_CLOSED_PHYSICAL_AUDIT",
+        "download_completeness_state": "PRESENT_VALID_FILE"
+      },
+      {
+        "sample_seed": 20260824,
+        "ticker": "HNST",
+        "session_date_et": "2026-03-09",
+        "total_rows": 2,
+        "premarket_rows": 2,
+        "rth_rows": 0,
+        "afterhours_rows": 0,
+        "outside_0400_2000_rows": 0,
+        "pattern": "PREMARKET_ONLY",
+        "physical_evidence_state": "ADOPTED_CLOSED_PHYSICAL_AUDIT",
+        "download_completeness_state": "PRESENT_VALID_FILE"
+      },
+      {
+        "sample_seed": 20260824,
+        "ticker": "HTCR",
+        "session_date_et": "2026-03-09",
+        "total_rows": 1,
+        "premarket_rows": 1,
+        "rth_rows": 0,
+        "afterhours_rows": 0,
+        "outside_0400_2000_rows": 0,
+        "pattern": "PREMARKET_ONLY",
+        "physical_evidence_state": "ADOPTED_CLOSED_PHYSICAL_AUDIT",
+        "download_completeness_state": "PRESENT_VALID_FILE"
+      },
+      {
+        "sample_seed": 20260824,
+        "ticker": "JFBR",
+        "session_date_et": "2026-03-09",
+        "total_rows": 8,
+        "premarket_rows": 8,
+        "rth_rows": 0,
+        "afterhours_rows": 0,
+        "outside_0400_2000_rows": 0,
+        "pattern": "PREMARKET_ONLY",
+        "physical_evidence_state": "ADOPTED_CLOSED_PHYSICAL_AUDIT",
+        "download_completeness_state": "PRESENT_VALID_FILE"
+      },
+      {
+        "sample_seed": 20260824,
+        "ticker": "KMDA",
+        "session_date_et": "2026-03-09",
+        "total_rows": 2,
+        "premarket_rows": 2,
+        "rth_rows": 0,
+        "afterhours_rows": 0,
+        "outside_0400_2000_rows": 0,
+        "pattern": "PREMARKET_ONLY",
+        "physical_evidence_state": "ADOPTED_CLOSED_PHYSICAL_AUDIT",
+        "download_completeness_state": "PRESENT_VALID_FILE"
+      }
+    ]
+  },
+  "legacy_4264_reconciliation": {
+    "new_all_no_rth": 5238,
+    "old_narrow_subset": 4264,
+    "overlap": 4264,
+    "new_not_old": 974,
+    "old_not_new": 0,
+    "new_not_old_breakdown": [
+      {
+        "class": "AFTER_2026_03_06",
+        "ticker_dates": 166,
+        "tickers": 166,
+        "minute_rows": 1762
+      },
+      {
+        "class": "THROUGH_2026_03_06_DAILY_PRESENT_OR_OTHER",
+        "ticker_dates": 808,
+        "tickers": 421,
+        "minute_rows": 899
+      }
+    ]
+  },
+  "utc_date_to_et_session_date_reconciliation": {
+    "old_physical_ticker_dates": 9354195,
+    "new_et_ticker_dates": 9280325,
+    "old_only": 73905,
+    "new_only": 35,
+    "old_only_weekday_counts": {
+      "Saturday": 66846,
+      "Thursday": 4859,
+      "Friday": 1136,
+      "Wednesday": 909,
+      "Tuesday": 155
+    },
+    "row_loss": 0,
+    "explanation": "all source rows reconcile; key-count change is UTC physical date to America/New_York session-date normalization"
+  },
+  "outside_0400_2000": {
+    "ticker_dates": 3607,
+    "tickers": 478,
+    "first_date": "2007-02-22",
+    "last_date": "2025-07-30",
+    "rows": 3612,
+    "max_rows_in_one_ticker_date": 3
+  },
+  "schema": {
+    "files": 466945,
+    "fingerprints": 3,
+    "incomplete_required_schema_files": 0,
+    "physical_error_files": 0,
+    "regimes": [
+      {
+        "schema_fingerprint": "BED6730B93CD15FA4E92253FF65E2C44538BFC082A436642DE7243685832B325",
+        "files": 414093,
+        "tickers": 4072,
+        "rows": 1244095556,
+        "bytes": 42584690936,
+        "first_date": "2005-01-03",
+        "last_date": "2026-03-27",
+        "columns": [
+          "ticker",
+          "ts_utc",
+          "date",
+          "year",
+          "month",
+          "o",
+          "h",
+          "l",
+          "c",
+          "v",
+          "vw",
+          "n",
+          "t"
+        ],
+        "sample_path": "G:\\TSIS\\data\\ohlcv_1m\\ticker=AAMC\\year=2013\\month=09\\minute_aggs_AAMC_2013_09.parquet",
+        "arrow_schema": "ticker: string\nts_utc: string\ndate: string\nyear: int64\nmonth: int64\no: double\nh: double\nl: double\nc: double\nv: double\nvw: double\nn: int64\nt: int64\n-- schema metadata --\npandas: '{\"index_columns\": [], \"column_indexes\": [], \"columns\": [{\"name\":' + 1437"
+      },
+      {
+        "schema_fingerprint": "1C68BCCE1107021A96353A8C5DC68AC48DAF006DF95ED808FC86C9C982F30C63",
+        "files": 52346,
+        "tickers": 750,
+        "rows": 57847524,
+        "bytes": 2192097961,
+        "first_date": "2005-01-03",
+        "last_date": "2026-03-27",
+        "columns": [
+          "ticker",
+          "ts_utc",
+          "date",
+          "year",
+          "month",
+          "o",
+          "h",
+          "l",
+          "c",
+          "v",
+          "vw",
+          "n",
+          "t"
+        ],
+        "sample_path": "G:\\TSIS\\data\\ohlcv_1m\\ticker=ABTX\\year=2015\\month=10\\minute_aggs_ABTX_2015_10.parquet",
+        "arrow_schema": "ticker: string\nts_utc: string\ndate: string\nyear: int64\nmonth: int64\no: double\nh: double\nl: double\nc: double\nv: int64\nvw: double\nn: int64\nt: int64\n-- schema metadata --\npandas: '{\"index_columns\": [], \"column_indexes\": [], \"columns\": [{\"name\":' + 1433"
+      },
+      {
+        "schema_fingerprint": "651A05239F7A65FF7BAE35265E86E2C3F9A0229A7945369880CDF97EE8D00770",
+        "files": 506,
+        "tickers": 2,
+        "rows": 4155407,
+        "bytes": 105575796,
+        "first_date": "2005-01-03",
+        "last_date": "2026-01-31",
+        "columns": [
+          "ticker",
+          "ts_utc",
+          "date",
+          "year",
+          "month",
+          "o",
+          "h",
+          "l",
+          "c",
+          "v",
+          "vw",
+          "n",
+          "t"
+        ],
+        "sample_path": "G:\\TSIS\\data\\ohlcv_1m\\ticker=XRX\\year=2005\\month=01\\minute_aggs_XRX_2005_01.parquet",
+        "arrow_schema": "ticker: large_string\nts_utc: large_string\ndate: large_string\nyear: int64\nmonth: int64\no: double\nh: double\nl: double\nc: double\nv: int64\nvw: null\nn: int64\nt: int64\n-- schema metadata --\npandas: '{\"index_columns\": [], \"column_indexes\": [], \"columns\": [{\"name\":' + 1439"
+      }
+    ],
+    "known_limitation": "506 FCEL/XRX monthly files expose vw as Arrow null type; required column exists but values are unavailable"
+  },
+  "limitations": [
+    "Technical PASS certifies execution and present-file evidence, not requested temporal completeness.",
+    "A missing ticker-date cannot be attributed to Massive or the downloader without independent expected/lifecycle authority.",
+    "The session denominator excludes ticker-dates with zero observed 1m rows; it is not universe-times-calendar expected coverage.",
+    "The runner re-read only ts_utc for event-clock classification and adopted prior structural checks for other columns.",
+    "OHLCV value correctness, per-minute duplicates and bar-generation semantics were outside this audit scope."
+  ],
+  "source_audit_summary": {
+    "activity_rows": 9280325,
+    "committed_tickers": 4824,
+    "coverage_rows": 4824,
+    "download_completeness_status": "NOT_CERTIFIED_PROVIDER_EMPTY_UNRESOLVED",
+    "ended_at_utc": "2026-08-24T01:07:23.906810+00:00",
+    "expected_tickers": 4824,
+    "failed_tickers": 0,
+    "family": "ohlcv_1m",
+    "file_count": 466945,
+    "mode": "full",
+    "out_of_scope_row_count": 0,
+    "physical_integrity_status": "PASS_ADOPTED_CLOSED_AUDIT",
+    "rows_read_or_adopted": 1306098487,
+    "run_id": "20260823_ohlcv_1m_download_audit_v0_1",
+    "scope": {
+      "end_date_inclusive": "2026-08-20",
+      "expected_universe_members": 4824,
+      "start_date_inclusive": "2005-01-01"
+    },
+    "source_bytes": 44882364693,
+    "source_evidence": {
+      "source_family_task_counts": {
+        "committed": 4824
+      },
+      "source_final_manifest": "C:\\TSIS_Data\\runs\\data_ops\\core_market_raw_alignment_audit\\20260821_core_market_raw_alignment_audit_v0_1\\04_closeout\\final_manifest.json",
+      "source_final_manifest_sha256": "F69721FACA850220B10A002BF5835A8B6F7266F98441F99E1FB9F94BC609AAC0",
+      "source_run_id": "20260821_core_market_raw_alignment_audit_v0_1"
+    },
+    "started_at_utc": "2026-08-23T18:37:01.095418+00:00",
+    "technical_status": "PASS",
+    "timestamp_parse_error_count": 0
+  }
+}

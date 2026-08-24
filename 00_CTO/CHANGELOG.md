@@ -1,3 +1,10 @@
+## 2026-08-22 - TSIS_GRAPHIFY_REFRESH_20260822
+
+- Rebuilt six current CTO leaves and published a new governed root merge.
+- Added current market-state, Wake-Up, trading-system, backtest-authority and screener coverage.
+- Repaired deterministic hyperedge namespaces across all leaf inputs.
+- Terminal graph: 1,628 nodes, 2,903 edges, 57 hyperedges and 116 communities; audit PASS.
+
 - `2026-08-17` - Wake-up RTH completed its valid 2,400-session candidate scan
   with 4,447 candidates, then invalidated the initial blind gallery after a
   240/240 close-bucket sampling collapse. An RTH-balanced panel-only repair

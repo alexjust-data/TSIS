@@ -1,0 +1,187 @@
+{
+  "node_count": 1227,
+  "unverified_node_count": 0,
+  "raw_edge_count": 3482,
+  "non_object_edges": 0,
+  "missing_endpoint_edges": 0,
+  "dangling_endpoint_edges": 459,
+  "self_loop_edges": 0,
+  "valid_candidate_edges": 3023,
+  "exact_duplicate_edges": 144,
+  "directed_unique_endpoint_pairs": 2726,
+  "directed_same_endpoint_collapsed_edges": 297,
+  "undirected_unique_endpoint_pairs": 2722,
+  "undirected_same_endpoint_collapsed_edges": 301,
+  "same_endpoint_group_count": 191,
+  "relation_variant_groups": 73,
+  "source_file_variant_groups": 0,
+  "source_location_variant_groups": 0,
+  "context_variant_groups": 79,
+  "post_build_graph_type": "Graph",
+  "post_build_node_count": 1227,
+  "post_build_edge_count": 2737,
+  "post_build_error": "",
+  "producer_suppression": {
+    "path": "C:\\Users\\AlexJ\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\graphify\\extract.py",
+    "total_sites": 11,
+    "sites": [
+      {
+        "line": 1099,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids = {n[\"id\"] for n in nodes}"
+      },
+      {
+        "line": 1253,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids = {n[\"id\"] for n in nodes}"
+      },
+      {
+        "line": 1255,
+        "name": "seen_doc_refs",
+        "tuple_arity": 0,
+        "sample": "seen_doc_refs: set[str] = set()"
+      },
+      {
+        "line": 1600,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = {n[\"id\"] for n in nodes}"
+      },
+      {
+        "line": 2069,
+        "name": "seen_keys",
+        "tuple_arity": 0,
+        "sample": "seen_keys: set[tuple] = set()"
+      },
+      {
+        "line": 2228,
+        "name": "seen_keys",
+        "tuple_arity": 0,
+        "sample": "seen_keys: set[tuple] = set()"
+      },
+      {
+        "line": 3272,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 3380,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 3459,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 3974,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 3975,
+        "name": "seen_edges",
+        "tuple_arity": 4,
+        "sample": "seen_edges: set[tuple[str, str, str, str | None]] = set()"
+      }
+    ],
+    "error": ""
+  },
+  "examples": [
+    {
+      "source": "01_tsis_data_foundation_scripts_materialize_master_daily_table_materialize_master_daily_table",
+      "target": "01_tsis_data_foundation_scripts_materialize_master_daily_table_py_path",
+      "edge_count": 10,
+      "relations": [
+        "calls",
+        "references"
+      ],
+      "source_files": [
+        "01_TSIS_DATA_FOUNDATION/scripts/materialize_master_daily_table.py"
+      ],
+      "source_locations": [
+        "L106",
+        "L143"
+      ],
+      "contexts": [
+        "call",
+        "parameter_type"
+      ]
+    },
+    {
+      "source": "01_tsis_data_foundation_scripts_materialize_microstructure_features_table_materialize_microstructure_features_table",
+      "target": "01_tsis_data_foundation_scripts_materialize_microstructure_features_table_py_path",
+      "edge_count": 10,
+      "relations": [
+        "references"
+      ],
+      "source_files": [
+        "01_TSIS_DATA_FOUNDATION/scripts/materialize_microstructure_features_table.py"
+      ],
+      "source_locations": [
+        "L428"
+      ],
+      "contexts": [
+        "parameter_type"
+      ]
+    },
+    {
+      "source": "01_tsis_data_foundation_scripts_materialize_master_intraday_bar_table_materialize_master_intraday_bar_table",
+      "target": "01_tsis_data_foundation_scripts_materialize_master_intraday_bar_table_py_path",
+      "edge_count": 9,
+      "relations": [
+        "references"
+      ],
+      "source_files": [
+        "01_TSIS_DATA_FOUNDATION/scripts/materialize_master_intraday_bar_table.py"
+      ],
+      "source_locations": [
+        "L493"
+      ],
+      "contexts": [
+        "parameter_type"
+      ]
+    },
+    {
+      "source": "01_tsis_data_foundation_scripts_materialize_event_windows_table_materialize_event_windows_table",
+      "target": "01_tsis_data_foundation_scripts_materialize_event_windows_table_py_path",
+      "edge_count": 7,
+      "relations": [
+        "references"
+      ],
+      "source_files": [
+        "01_TSIS_DATA_FOUNDATION/scripts/materialize_event_windows_table.py"
+      ],
+      "source_locations": [
+        "L314"
+      ],
+      "contexts": [
+        "parameter_type"
+      ]
+    },
+    {
+      "source": "01_tsis_data_foundation_scripts_materialize_population_target_presession_4824_candidate_materialize",
+      "target": "01_tsis_data_foundation_scripts_materialize_population_target_presession_4824_candidate_py_path",
+      "edge_count": 7,
+      "relations": [
+        "references"
+      ],
+      "source_files": [
+        "01_TSIS_DATA_FOUNDATION/scripts/materialize_population_target_presession_4824_candidate.py"
+      ],
+      "source_locations": [
+        "L133"
+      ],
+      "contexts": [
+        "parameter_type"
+      ]
+    }
+  ]
+}

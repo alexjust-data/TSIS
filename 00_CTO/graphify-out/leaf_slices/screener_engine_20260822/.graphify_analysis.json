@@ -1,0 +1,208 @@
+{
+  "communities": {
+    "0": [
+      "00_cto_15_screener_engine_00_structure_system_daily_eligible_universe",
+      "00_cto_15_screener_engine_00_structure_system_document",
+      "00_cto_15_screener_engine_00_structure_system_heavy_observation",
+      "00_cto_15_screener_engine_00_structure_system_light_state",
+      "00_cto_15_screener_engine_00_structure_system_market_activation_wake_up",
+      "00_cto_15_screener_engine_00_structure_system_reason_preserving_activation",
+      "00_cto_15_screener_engine_00_structure_system_strategy_specific_in_play",
+      "00_cto_15_screener_engine_00_structure_system_two_clock_screener"
+    ],
+    "1": [
+      "00_cto_15_screener_engine_01_layer_1_initial_idea_daily_eligible_universe_proxy_v0_1",
+      "00_cto_15_screener_engine_01_layer_1_initial_idea_document",
+      "00_cto_15_screener_engine_01_layer_1_initial_idea_market_cap_proxy_layer",
+      "00_cto_15_screener_engine_01_layer_1_initial_idea_proxy_membership_states",
+      "00_cto_15_screener_engine_01_layer_1_initial_idea_sec_os_pit_successor",
+      "00_cto_15_screener_engine_01_layer_1_initial_idea_session_freeze_manifest",
+      "00_cto_15_screener_engine_evidence_index_presession_selector_evidence",
+      "00_cto_15_screener_engine_screener_engine_architecture_proposal_v0_1_presession_4824_candidate"
+    ],
+    "2": [
+      "00_cto_15_screener_engine_evidence_index_document",
+      "00_cto_15_screener_engine_readme_conceptual_authority",
+      "00_cto_15_screener_engine_readme_document",
+      "00_cto_15_screener_engine_readme_independent_runtime",
+      "00_cto_15_screener_engine_screener_engine_architecture_proposal_v0_1_consumer_adapters",
+      "00_cto_15_screener_engine_screener_engine_architecture_proposal_v0_1_document",
+      "00_cto_15_screener_engine_screener_engine_architecture_proposal_v0_1_layer_separation"
+    ],
+    "3": [
+      "00_cto_15_screener_engine_screener_engine_architecture_proposal_v0_1_artifact_writer",
+      "00_cto_15_screener_engine_screener_engine_architecture_proposal_v0_1_daily_eligible_universe_resolver",
+      "00_cto_15_screener_engine_screener_engine_architecture_proposal_v0_1_fail_closed_execution",
+      "00_cto_15_screener_engine_screener_engine_architecture_proposal_v0_1_input_manifest_resolver",
+      "00_cto_15_screener_engine_screener_engine_architecture_proposal_v0_1_scanner_definition_registry",
+      "00_cto_15_screener_engine_screener_engine_architecture_proposal_v0_1_scanner_executor",
+      "00_cto_15_screener_engine_screener_engine_architecture_proposal_v0_1_screener_run_validator"
+    ],
+    "4": [
+      "00_cto_15_screener_engine_evidence_index_backtest_engine_authority",
+      "00_cto_15_screener_engine_evidence_index_evidence_bundle",
+      "00_cto_15_screener_engine_evidence_index_processed_bibliography",
+      "00_cto_15_screener_engine_evidence_index_repository_authority",
+      "00_cto_15_screener_engine_evidence_index_scanner_precedents",
+      "00_cto_15_screener_engine_screener_engine_architecture_proposal_v0_1_bt_gate_016"
+    ],
+    "5": [
+      "00_cto_15_screener_engine_readme_backtest_artifact_consumption",
+      "00_cto_15_screener_engine_readme_consumer_specific_gates",
+      "00_cto_15_screener_engine_readme_daily_eligible_universe_selector",
+      "00_cto_15_screener_engine_readme_restricted_ab_bridge",
+      "00_cto_15_screener_engine_readme_single_membership_authority",
+      "00_cto_15_screener_engine_readme_trading_activity_wakeup_consumption"
+    ],
+    "6": [
+      "00_cto_15_screener_engine_00_structure_system_sealed_screener_artifact",
+      "00_cto_15_screener_engine_screener_engine_architecture_proposal_v0_1_scientific_validation_process",
+      "00_cto_15_screener_engine_screener_engine_architecture_proposal_v0_1_sealed_run_contract"
+    ]
+  },
+  "cohesion": {
+    "0": 0.4642857142857143,
+    "1": 0.25,
+    "2": 0.38095238095238093,
+    "3": 0.3333333333333333,
+    "4": 0.3333333333333333,
+    "5": 0.4,
+    "6": 0.6666666666666666
+  },
+  "gods": [
+    {
+      "id": "00_cto_15_screener_engine_00_structure_system_document",
+      "label": "Layered Screener System Design",
+      "degree": 7
+    },
+    {
+      "id": "00_cto_15_screener_engine_00_structure_system_market_activation_wake_up",
+      "label": "Market Activation / Wake-Up",
+      "degree": 6
+    },
+    {
+      "id": "00_cto_15_screener_engine_evidence_index_evidence_bundle",
+      "label": "Evidence Bundle",
+      "degree": 6
+    },
+    {
+      "id": "00_cto_15_screener_engine_screener_engine_architecture_proposal_v0_1_daily_eligible_universe_resolver",
+      "label": "DailyEligibleUniverseResolver",
+      "degree": 6
+    },
+    {
+      "id": "00_cto_15_screener_engine_readme_document",
+      "label": "Screener Engine Authority and Consumer Boundary",
+      "degree": 5
+    },
+    {
+      "id": "00_cto_15_screener_engine_readme_daily_eligible_universe_selector",
+      "label": "Daily Eligible Universe Selector",
+      "degree": 5
+    },
+    {
+      "id": "00_cto_15_screener_engine_01_layer_1_initial_idea_daily_eligible_universe_proxy_v0_1",
+      "label": "daily_eligible_universe_proxy_v0_1",
+      "degree": 5
+    },
+    {
+      "id": "00_cto_15_screener_engine_00_structure_system_daily_eligible_universe",
+      "label": "Daily Eligible Universe",
+      "degree": 4
+    },
+    {
+      "id": "00_cto_15_screener_engine_00_structure_system_strategy_specific_in_play",
+      "label": "Strategy-Specific In-Play Scanners",
+      "degree": 4
+    },
+    {
+      "id": "00_cto_15_screener_engine_readme_trading_activity_wakeup_consumption",
+      "label": "Trading Activity and Wake-Up Consumption",
+      "degree": 4
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Daily Eligible Universe",
+      "target": "Daily Eligible Universe Selector",
+      "source_files": [
+        "00_CTO/15_SCREENER_ENGINE/00_STRUCTURE_SYSTEM.md",
+        "00_CTO/15_SCREENER_ENGINE/README.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "Daily Eligible Universe Selector",
+      "target": "DailyEligibleUniverseResolver",
+      "source_files": [
+        "00_CTO/15_SCREENER_ENGINE/README.md",
+        "00_CTO/15_SCREENER_ENGINE/SCREENER_ENGINE_ARCHITECTURE_PROPOSAL_v0_1.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "DailyEligibleUniverseResolver",
+      "target": "daily_eligible_universe_proxy_v0_1",
+      "source_files": [
+        "00_CTO/15_SCREENER_ENGINE/SCREENER_ENGINE_ARCHITECTURE_PROPOSAL_v0_1.md",
+        "00_CTO/15_SCREENER_ENGINE/01_LAYER_1/initial_idea.MD"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "Market Activation / Wake-Up",
+      "target": "Trading Activity and Wake-Up Consumption",
+      "source_files": [
+        "00_CTO/15_SCREENER_ENGINE/00_STRUCTURE_SYSTEM.md",
+        "00_CTO/15_SCREENER_ENGINE/README.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "Strategy-Specific In-Play Scanners",
+      "target": "ScannerDefinitionRegistry",
+      "source_files": [
+        "00_CTO/15_SCREENER_ENGINE/00_STRUCTURE_SYSTEM.md",
+        "00_CTO/15_SCREENER_ENGINE/SCREENER_ENGINE_ARCHITECTURE_PROPOSAL_v0_1.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `DailyEligibleUniverseResolver` connect `Community 3` to `Community 1`, `Community 2`, `Community 5`?",
+      "why": "High betweenness centrality (0.346) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Daily Eligible Universe Selector` connect `Community 5` to `Community 0`, `Community 3`?",
+      "why": "High betweenness centrality (0.213) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Layered Screener System Design` connect `Community 0` to `Community 2`?",
+      "why": "High betweenness centrality (0.184) - this node is a cross-community bridge."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 2 inferred relationships involving `DailyEligibleUniverseResolver` (e.g. with `Daily Eligible Universe Selector` and `daily_eligible_universe_proxy_v0_1`) actually correct?",
+      "why": "`DailyEligibleUniverseResolver` has 2 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `Scanner Conceptual Precedents`, `Processed Bibliography and Source Maps`, `Restricted A/B Consumption Bridge` to the rest of the system?",
+      "why": "6 weakly-connected nodes found - possible documentation gaps or missing edges."
+    }
+  ]
+}

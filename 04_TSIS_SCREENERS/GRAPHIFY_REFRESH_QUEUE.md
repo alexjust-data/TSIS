@@ -6,7 +6,8 @@
 - Date: `2026-08-21`
 - Severity: `MEDIUM`
 - Scope: frozen Massive + SEC source contract for the future 04:01 ET
-  price/market-cap screener.
+  price/market-cap screener, plus governed deferral of 1m remediation until
+  complete Trades and actual screener selections exist.
 - Affected file:
   `MASSIVE_SEC_SCREENER_DATA_DECISION_v0_1.md`.
 - Leaf target: future governed `04_TSIS_SCREENERS` leaf.

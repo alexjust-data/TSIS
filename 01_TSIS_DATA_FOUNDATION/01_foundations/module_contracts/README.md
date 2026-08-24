@@ -1,5 +1,12 @@
 ﻿# Module Contracts
 
+## Massive SEC acquisition recovery
+
+module_contracts/sec_pit/massive_sec_acquisition_runtime_recovery_and_handoff_contract_v0_1.md
+and massive_sec_acquisition_operator_runbook_v0_1.md govern transactional page
+commit, duplicate-writer exclusion, power-loss resume and agent handoff for
+D:/sec_float_pit_MASSIVE. No live download is authorized by these documents.
+
 ## Menu
 
 - [Rol de esta carpeta](#rol-de-esta-carpeta)

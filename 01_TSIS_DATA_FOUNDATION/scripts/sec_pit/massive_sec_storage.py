@@ -9,9 +9,10 @@ import os
 import socket
 import tempfile
 import threading
+from collections.abc import Iterable
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 import pandas as pd
 import psutil
@@ -73,7 +74,7 @@ class OutputWriterLock:
         self.pid = os.getpid()
         self.process_create_time = psutil.Process(self.pid).create_time()
         self.token = hashlib.sha256(
-            f"{self.host}|{self.pid}|{self.process_create_time}|{run_id}".encode("utf-8")
+            f"{self.host}|{self.pid}|{self.process_create_time}|{run_id}".encode()
         ).hexdigest()
         self.acquired = False
 
@@ -121,16 +122,16 @@ class OutputWriterLock:
                     raise DuplicateWriterError(
                         "live Massive SEC writer already owns output root: "
                         f"run_id={existing.get('run_id')} pid={existing.get('pid')}"
-                    )
+                    ) from None
                 if not allow_stale_takeover:
                     raise DuplicateWriterError(
                         "stale or foreign-host writer lock exists; only --resume may archive "
                         f"a same-host stale lock: {self.path}"
-                    )
+                    ) from None
                 if not same_host:
                     raise DuplicateWriterError(
                         "foreign-host lock cannot be taken over automatically"
-                    )
+                    ) from None
                 timestamp = datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ")
                 stale = self.path.with_name(
                     f"{self.path.name}.stale.{timestamp}.{existing.get('token', 'unknown')}.json"
@@ -150,7 +151,7 @@ class OutputWriterLock:
             self.path.unlink(missing_ok=True)
         self.acquired = False
 
-    def __enter__(self) -> "OutputWriterLock":
+    def __enter__(self) -> OutputWriterLock:
         self.acquire(allow_stale_takeover=False)
         return self
 
@@ -229,6 +230,7 @@ class MassiveSecStorage:
         retry_count: int,
         http_429_count: int,
         elapsed_seconds: float,
+        observed_fields: tuple[str, ...],
     ) -> PageCommit:
         existing = self.load_receipt(endpoint_id, work_id)
         if existing is not None:
@@ -293,6 +295,7 @@ class MassiveSecStorage:
             retry_count=retry_count,
             http_429_count=http_429_count,
             elapsed_seconds=elapsed_seconds,
+            observed_fields=tuple(sorted(observed_fields)),
         )
         receipt = {"status": "COMMITTED", **commit.to_dict()}
         receipt_path = self.receipt_path(endpoint_id, work_id)
@@ -324,7 +327,7 @@ class MassiveSecStorage:
         os.close(descriptor)
         try:
             pd.DataFrame(receipts).to_parquet(temp_name, index=False)
-            with open(temp_name, "rb") as handle:
+            with open(temp_name, "r+b") as handle:
                 os.fsync(handle.fileno())
             os.replace(temp_name, parquet_path)
         finally:

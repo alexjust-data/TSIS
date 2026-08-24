@@ -1,0 +1,236 @@
+# Graph Report - C:\TSIS_Data  (2026-08-22)
+
+## Corpus Check
+- 150 files · ~323,444 words
+- Verdict: corpus is large enough that graph structure adds value.
+
+## Summary
+- 495 nodes · 683 edges · 29 communities
+- Extraction: 85% EXTRACTED · 15% INFERRED · 0% AMBIGUOUS · INFERRED: 103 edges (avg confidence: 0.88)
+- Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `e71c6ce5`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
+
+## Community Hubs (Navigation)
+- Trades Recovery Certification
+- Global Metrics Evidence Artifacts
+- Family Quality Status Matrix
+- Quotes Bucket Certification
+- Additional-Halts Certification Policies
+- Halts-Reference Causal Audits
+- Restricted PIT Reference Gates
+- Market Data Audit Contracts
+- Reference-Short Certification Closeouts
+- Quotes-Trades Quality Dossiers
+- Quotes Evidence Casepacks
+- Trades Population Acceptance
+- Trades Acceptance Transition
+- Split-Normalized 1m Validation
+- Raw 1m Reconciliation
+- Additional Causal Audit
+- Short Causal Audit
+- Raw 1m Certification Policy
+- Daily Certification Policy
+- Global Certification Metrics
+- Additional Inspection Decisions
+- Daily Inspection Decisions
+- Microstructure Candidate Evidence
+- Experimental Population Gates
+- Short Review Provenance
+- Financial Blocked Certification
+- Halts Inspection Decisions
+- Intraday Regime Pilot
+- Regime Indicators Blocker
+
+## God Nodes (most connected - your core abstractions)
+1. `artifacts` - 44 edges
+2. `Family Quality, Completion, and Visual Matrix` - 15 edges
+3. `Provisional Trade Certification` - 12 edges
+4. `Trades Bucket Synthesis` - 10 edges
+5. `Global Metrics Surface` - 9 edges
+6. `Quotes Certification Contract` - 9 edges
+7. `Trades Recovery Synthesis` - 9 edges
+8. `Final Certification Model` - 8 edges
+9. `Halts Causal Overlay` - 7 edges
+10. `Reference Causal Overlay` - 7 edges
+
+## Surprising Connections (you probably didn't know these)
+- `Additional Causal Overlay` --semantically_similar_to--> `Halts Causal Overlay`  [INFERRED] [semantically similar]
+  01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/additional/04_additional_causal_overlay_closeout.md → 01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/halts/04_halts_causal_overlay_closeout.md
+- `Reference Causal Overlay` --semantically_similar_to--> `Short Causal Overlay`  [INFERRED] [semantically similar]
+  01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/04_reference_causal_overlay_closeout.md → 01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/short/04_short_causal_overlay_closeout.md
+- `Raw 1m Quality Policy` --semantically_similar_to--> `Daily Quality Policy`  [INFERRED] [semantically similar]
+  01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/1m/02_1m_quality_policy.md → 01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/daily/02_daily_quality_policy.md
+- `Institutional Quotes Layer` --implements--> `Family Quality, Completion, and Visual Matrix`  [INFERRED]
+  01_TSIS_DATA_FOUNDATION/01_foundations/data_quality_report/families/quotes_quality_report_v0_1.md → 01_TSIS_DATA_FOUNDATION/01_foundations/data_quality_report/family_status_matrix_v0_1.md
+- `Governed Trades Layer` --implements--> `Family Quality, Completion, and Visual Matrix`  [INFERRED]
+  01_TSIS_DATA_FOUNDATION/01_foundations/data_quality_report/families/trades_quality_report_v0_1.md → 01_TSIS_DATA_FOUNDATION/01_foundations/data_quality_report/family_status_matrix_v0_1.md
+
+## Import Cycles
+- None detected.
+
+## Hyperedges (group relationships)
+- **Foundation Family Status Axes** — 01_tsis_data_foundation_01_foundations_data_quality_report_family_status_matrix_v0_1_three_axis_family_status, 01_tsis_data_foundation_01_foundations_data_quality_report_family_status_matrix_v0_1_family_quality_completion_visual_matrix, 01_tsis_data_foundation_01_foundations_data_quality_report_readme_normalized_quality_reporting_layer, 01_tsis_data_foundation_01_foundations_inspection_dossiers_readme_inspection_dossier_contract [INFERRED 0.95]
+- **Family Quality Decision Surface** — 01_tsis_data_foundation_01_foundations_data_quality_report_families_additional_quality_report_v0_1_subfamily_specific_quality, 01_tsis_data_foundation_01_foundations_data_quality_report_families_daily_adjusted_quality_report_v0_1_derived_adjusted_daily_view, 01_tsis_data_foundation_01_foundations_data_quality_report_families_daily_quality_report_v0_1_institutional_raw_daily_layer, 01_tsis_data_foundation_01_foundations_data_quality_report_families_financial_quality_report_v0_1_financial_quality_block, 01_tsis_data_foundation_01_foundations_data_quality_report_families_halts_quality_report_v0_1_halts_foundation_event_layer, 01_tsis_data_foundation_01_foundations_data_quality_report_families_intraday_regime_features_quality_report_v0_1_pilot_scoped_intraday_features, 01_tsis_data_foundation_01_foundations_data_quality_report_families_ohlcv_1m_raw_quality_report_v0_1_scoped_raw_1m_reconciliation, 01_tsis_data_foundation_01_foundations_data_quality_report_families_quotes_quality_report_v0_1_institutional_quotes_layer, 01_tsis_data_foundation_01_foundations_data_quality_report_families_reference_quality_report_v0_1_reference_lifecycle_layer, 01_tsis_data_foundation_01_foundations_data_quality_report_families_regime_indicators_quality_report_v0_1_blocked_daily_scoped_minute, 01_tsis_data_foundation_01_foundations_data_quality_report_families_short_review_quality_report_v0_1_finra_scoped_baseline, 01_tsis_data_foundation_01_foundations_data_quality_report_families_trades_quality_report_v0_1_governed_trades_layer [INFERRED 0.95]
+- **Split-Normalized Assurance Chain** — 01_tsis_data_foundation_01_foundations_data_quality_report_families_ohlcv_1m_split_normalized_quality_report_v0_1_split_normalized_quality_state, 01_tsis_data_foundation_01_foundations_inspection_dossiers_1m_split_normalized_ohlcv_1m_split_normalized_final_readout_v0_1_split_normalized_final_validation, 01_tsis_data_foundation_01_foundations_inspection_dossiers_1m_split_normalized_ohlcv_1m_split_normalized_full_universe_audit_readout_v0_1_full_universe_split_audit, 01_tsis_data_foundation_01_foundations_inspection_dossiers_1m_split_normalized_ohlcv_1m_split_normalized_pilot_readout_v0_1_split_visual_pilot, 01_tsis_data_foundation_01_foundations_inspection_dossiers_1m_split_normalized_readme_split_dossier_authority [INFERRED 0.95]
+- **Family Inspection Closeouts** — 01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_additional_inspection_readout_v0_2_additional_context_quality, 01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_daily_inspection_readout_v0_1_daily_dual_axis_inspection, 01_tsis_data_foundation_01_foundations_inspection_dossiers_financial_financial_inspection_readout_v0_1_governed_blocked_financial, 01_tsis_data_foundation_01_foundations_inspection_dossiers_halts_halts_inspection_readout_v0_1_halts_event_inspection, 01_tsis_data_foundation_01_foundations_inspection_dossiers_intraday_regime_features_intraday_regime_features_semantic_pilot_readout_v0_1_intraday_regime_pilot, 01_tsis_data_foundation_01_foundations_inspection_dossiers_minute_raw_1m_lt1b_closeout_recalculation_v0_1_raw_1m_lt1b_recalculation [INFERRED 0.95]
+- **Candidate Scope Boundaries** — 01_tsis_data_foundation_01_foundations_inspection_dossiers_intraday_regime_features_intraday_regime_features_semantic_pilot_readout_v0_1_intraday_regime_pilot, 01_tsis_data_foundation_01_foundations_inspection_dossiers_microstructure_features_microstructure_candidate_controlled_visual_readout_v0_2_controlled_microstructure_candidate, 01_tsis_data_foundation_01_foundations_inspection_dossiers_microstructure_features_microstructure_candidate_visual_readout_v0_1_initial_microstructure_candidate, 01_tsis_data_foundation_01_foundations_inspection_dossiers_population_target_pit_population_target_pti_recovery_inventory_readout_v0_1_pit_recovery_inventory, 01_tsis_data_foundation_01_foundations_inspection_dossiers_population_target_presession_4824_daily_eligible_universe_restricted_consumption_gate_readout_v0_1_restricted_universe_gate, 01_tsis_data_foundation_01_foundations_inspection_dossiers_population_target_presession_4824_population_target_presession_4824_full_materialization_closeout_v0_1_presession_full_materialization [INFERRED 0.95]
+- **Inspection Authority Chain** — 01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_readme_additional_capa1_boundary, 01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_readme_daily_dossier_authority, 01_tsis_data_foundation_01_foundations_inspection_dossiers_financial_readme_financial_blocking_evidence, 01_tsis_data_foundation_01_foundations_inspection_dossiers_halts_readme_halts_dossier_authority, 01_tsis_data_foundation_01_foundations_inspection_dossiers_intraday_regime_features_readme_intraday_regime_dossier, 01_tsis_data_foundation_01_foundations_inspection_dossiers_microstructure_features_readme_microstructure_dossier, 01_tsis_data_foundation_01_foundations_inspection_dossiers_minute_readme_minute_dossier_authority [INFERRED 0.85]
+- **Quotes Evidence Decision Chain** — 01_tsis_data_foundation_01_foundations_inspection_dossiers_quotes_quotes_inspection_readout_v0_1_quotes_population_inspection, 01_tsis_data_foundation_01_foundations_inspection_dossiers_quotes_readme_quotes_dossier_authority, 01_tsis_data_foundation_01_foundations_inspection_dossiers_quotes_coverage_case_evidence_packs_readme_quotes_coverage_evidence, 01_tsis_data_foundation_01_foundations_inspection_dossiers_quotes_flagged_case_evidence_packs_readme_quotes_flagged_evidence, 01_tsis_data_foundation_01_foundations_inspection_dossiers_quotes_good_justification_readme_quotes_good_evidence [INFERRED 0.95]
+- **Reference, Regime, and Short Boundaries** — 01_tsis_data_foundation_01_foundations_inspection_dossiers_reference_reference_inspection_readout_v0_2_reference_consumption_readout, 01_tsis_data_foundation_01_foundations_inspection_dossiers_reference_reference_institutional_closeout_v0_1_reference_institutional_closeout, 01_tsis_data_foundation_01_foundations_inspection_dossiers_regime_indicators_regime_indicators_inspection_readout_v0_1_regime_daily_blocker, 01_tsis_data_foundation_01_foundations_inspection_dossiers_short_short_institutional_closeout_v0_1_short_layer_closeout, 01_tsis_data_foundation_01_foundations_inspection_dossiers_short_review_short_review_inspection_readout_v0_1_short_review_quality [INFERRED 0.85]
+- **Trades Population Acceptance Chain** — 01_tsis_data_foundation_01_foundations_inspection_dossiers_trades_readme_trades_dossier_authority, 01_tsis_data_foundation_01_foundations_inspection_dossiers_trades_trades_global_universe_readout_v0_1_trades_global_universe, 01_tsis_data_foundation_01_foundations_inspection_dossiers_trades_trades_inspection_readout_v0_1_trades_certification_states, 01_tsis_data_foundation_01_foundations_inspection_dossiers_trades_trading_activity_rth_coverage_sidecar_pilot_readout_v0_1_rth_coverage_sidecar, 01_tsis_data_foundation_01_foundations_inspection_dossiers_trades_trading_activity_trade_eligibility_pilot_readout_v0_1_trade_eligibility_pilot, 01_tsis_data_foundation_01_foundations_inspection_dossiers_trades_file_acceptance_evidence_packs_trades_file_acceptance_readout_v0_1_file_acceptance_methodology, 01_tsis_data_foundation_01_foundations_inspection_dossiers_trades_population_evidence_packs_trades_population_readout_v0_1_trades_population_levels [INFERRED 0.95]
+- **Audit Contract Closeout Chains** — 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_01_contrato_additional_additional_audit_contract, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_01_contrato_agent02_agent03_daily_04032026_daily_agent_contract, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_halts_01_contrato_halts_halts_audit_contract, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_ohlcv_1m_01_contrato_agent02_agent03_ohlcv_1m_04032026_ohlcv_1m_agent_contract, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_quotes_v1_01_contrato_agent02_agent03_03312026_quotes_agent_contract, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_01_contrato_reference_reference_audit_contract, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_short_01_contrato_short_short_audit_contract [INFERRED 0.95]
+- **Causal Overlay Decisions** — 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_04_additional_causal_overlay_closeout_additional_causal_overlay, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_halts_04_halts_causal_overlay_closeout_halts_causal_overlay, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_04_reference_causal_overlay_closeout_reference_causal_overlay, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_short_04_short_causal_overlay_closeout_short_causal_overlay [INFERRED 0.95]
+- **Family Final Quality Policies** — 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_04_additional_closeout_additional_final_policy, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_04_daily_closeout_daily_final_closeout, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_halts_04_halts_closeout_halts_final_policy, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_ohlcv_1m_04_ohlcv_1m_closeout_ohlcv_1m_final_closeout, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_quotes_v2_04_quotes_full_c_d_closeout_quotes_full_closeout, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_04_reference_closeout_reference_final_policy, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_short_04_short_closeout_short_final_policy [INFERRED 0.95]
+- **Family Certification Policy Chains** — 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_00_1m_current_state_raw_1m_current_state, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_01_1m_recovery_policy_raw_1m_recovery, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_02_1m_quality_policy_raw_1m_quality_policy, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_03_1m_closeout_raw_1m_certification_closeout, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_00_additional_current_state_additional_current_state, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_01_additional_subblock_policy_additional_subblock_policy, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_02_additional_closeout_additional_certification_closeout, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_00_daily_current_state_daily_current_state, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_01_daily_recovery_and_coverage_daily_recovery_coverage, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_02_daily_quality_policy_daily_quality_policy, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_03_daily_closeout_daily_certification_closeout, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_halts_00_halts_current_state_halts_current_state, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_halts_01_halts_overlay_and_recovery_halts_overlay_recovery, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_halts_02_halts_quality_policy_halts_quality_policy, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_halts_03_halts_closeout_halts_certification_closeout [INFERRED 0.95]
+- **Traceable Global Metric Surface** — 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_global_metrics_00_global_metrics_tables_global_metrics_surface, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_global_metrics_01_global_metrics_tables_traceable_traceable_global_metrics, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_global_metrics_02_working_links_global_metrics_links, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_global_metrics_04_global_metrics_tables_traceable_plain_paths_plain_path_metrics [EXTRACTED 1.00]
+- **Final Certification Assembly** — 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_trades_v1_01_contrato_agent02_agent03_trades_04012026_trades_agent_interface, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_00_final_certification_process_final_certification_model, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_03_1m_closeout_raw_1m_certification_closeout, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_02_additional_closeout_additional_certification_closeout, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_03_daily_closeout_daily_certification_closeout, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_halts_03_halts_closeout_halts_certification_closeout, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_00_quotes_certification_guide_quotes_certification_guide [INFERRED 0.95]
+- **Quotes Local Certification Assembly** — 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_01_quotes_certification_contract_quotes_certification_contract, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_02_quotes_expected_presence_logic_expected_presence_logic, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_03_quotes_quality_policy_local_quotes_quality, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_04_quotes_usage_policy_quotes_usage_policy, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_05_quotes_artifact_mapping_quotes_artifact_mapping, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_06_quotes_cert_table_spec_ticker_date_certification_table, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_07_quotes_local_certification_build_plan_quotes_local_build, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_12_quotes_open_buckets_synthesis_quotes_bucket_synthesis [INFERRED 0.95]
+- **Quotes Open-Bucket Disposition** — 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_08_persistent_soft_crossed_mid_large_scale_persistent_soft_crossed_review, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_09_large_file_threshold_edge_hard_many_crosses_large_file_mixed_review, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_10_medium_file_threshold_edge_hard_many_crosses_medium_file_hard_bad, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_11_high_hard_crossed_10_to_20_high_hard_cross_bad, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_quotes_12_quotes_open_buckets_synthesis_quotes_bucket_synthesis [EXTRACTED 1.00]
+- **Contextual Certification Boundaries** — 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_reference_00_reference_current_state_reference_current_state, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_reference_01_reference_causal_value_reference_causal_value, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_reference_02_reference_closeout_reference_certification_closeout, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_short_00_short_current_state_short_current_state, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_short_01_short_recovery_and_limits_short_recovery_limits, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_short_02_short_closeout_short_certification_closeout, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_00_trades_current_state_trades_current_state, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_01_trades_label_assessment_trades_label_families, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_02_trades_base_certification_decision_fine_file_acceptance_base, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_03_trades_old_vs_new_bucket_bridge_old_new_bucket_bridge [INFERRED 0.85]
+- **Trade Bucket Certification Taxonomy** — 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_04_trades_provisional_cert_policy_provisional_certification, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_05_trades_review_1m_reference_alignment_alignment_review, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_06_trades_review_microstructure_microstructure_review, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_07_trades_reference_scale_mismatch_scale_mismatch_review, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_08_trades_bad_data_bad_data_family, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_09_trades_review_no_1m_reference_no_1m_review, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_10_trades_bucket_synthesis_bucket_synthesis, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_11_trades_review_generic_generic_review, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_12_trades_good_good_bucket [INFERRED 0.95]
+- **Trade Recovery Families** — 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_13_trades_recovery_review_no_1m_reference_no_1m_recovery, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_14_trades_recovery_reference_scale_mismatch_scale_mismatch_recovery, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_15_trades_recovery_review_microstructure_microstructure_recovery, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_16_trades_recovery_review_1m_reference_alignment_alignment_recovery, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_17_trades_recovery_review_generic_generic_review_recovery, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_18_trades_recovery_synthesis_recovery_synthesis [EXTRACTED 1.00]
+- **Final Trade Certification Closeout** — 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_18_trades_recovery_synthesis_recovery_synthesis, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_19_trades_final_recovery_policy_final_recovery_policy, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_19_trades_final_recovery_policy_four_certification_states, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_20_trades_closeout_trades_closeout, 01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_trades_20_trades_closeout_canonical_57f_historical_57e_boundary [INFERRED 0.95]
+
+## Communities (29 total, 0 thin omitted)
+
+### Community 0 - "Trades Recovery Certification"
+Cohesion: 0.07
+Nodes (51): Trades Provisional Certification Policy, Good, Review, and Bad Mapping, Provisional Trade Certification, 1m Reference-Alignment Review, 1m Reference-Alignment Review, Specific 1m Conflict, Microstructure Review, Microstructure Review (+43 more)
+
+### Community 1 - "Global Metrics Evidence Artifacts"
+Cohesion: 0.04
+Nodes (47): artifacts, figures, 00_global_metrics_tables.md, 01_major_quality_mix.png, 02_context_blocks.png, 1m_operational.csv, 1m_operational.parquet, additional_corp_overlap.csv (+39 more)
+
+### Community 2 - "Family Quality Status Matrix"
+Cohesion: 0.07
+Nodes (39): Additional Quality Report, Scoped Context Consumption, Additional Subfamily-Specific Quality, Derived Adjusted Daily View, Daily Adjusted Quality Report, Full-Universe Factor Integrity, Daily Quality Report, Institutional Raw Daily Layer (+31 more)
+
+### Community 3 - "Quotes Bucket Certification"
+Cohesion: 0.09
+Nodes (33): Quotes Certification Contract, Expected, Present, Healthy, and Usable, Quotes Certification Contract, Quotes Expected-Presence Logic, Expected-Presence Logic, Synthetic Expected Truth Forbidden, Quotes Quality Policy, Good, Review, and Bad Quotes (+25 more)
+
+### Community 4 - "Additional-Halts Certification Policies"
+Cohesion: 0.10
+Nodes (30): Trades Agent Data Contract, Strict Trade Status Contract, Trades Agent Interface, Final Certification Process, Final Certification Model, Multi-Level Decision Grain, Additional Current State, Additional Current State (+22 more)
+
+### Community 5 - "Halts-Reference Causal Audits"
+Cohesion: 0.13
+Nodes (24): Canonical Halt Event, Halts Audit Contract, Halts Audit Contract, Halts Causal Phase Ready, Halts Root-Cause Closeout, Halts Structural Closeout, Halts Causal Overlay Closeout, Halts Causal Overlay (+16 more)
+
+### Community 6 - "Restricted PIT Reference Gates"
+Cohesion: 0.13
+Nodes (21): Presession 4824 Selector Gate, Pass With Restrictions, Not Canonical, Presession Population Selector Gate, Reference Inspection Dossier, Human-Inspector-Ready Reference, Reference Dossier Authority, Reference Inspection Readout, Reference Consumption Readout (+13 more)
+
+### Community 7 - "Market Data Audit Contracts"
+Cohesion: 0.15
+Nodes (18): Daily Agent Contract, Daily Audit Contract, Daily File Severity Taxonomy, Daily Final Closeout, Daily Good, Review, and Bad Policy, Daily Closeout, OHLCV 1m Audit Contract, OHLCV 1m Agent Contract (+10 more)
+
+### Community 8 - "Reference-Short Certification Closeouts"
+Cohesion: 0.16
+Nodes (18): Reference Current State, Identity and Partial Causal Layer, Reference Current State, Reference Causal Value, Event and Split Market Links, Reference Causal Value, Reference Closeout, Reference Certification Closeout (+10 more)
+
+### Community 9 - "Quotes-Trades Quality Dossiers"
+Cohesion: 0.18
+Nodes (15): Quotes Quality Report, Institutional Quotes Layer, Quotes Good, Review, and Bad Policy, Trades Quality Report, Flagged Recoverable Trade Mass, Governed Trades Layer, Quotes Visual Inspection Dossier, Open Quote Decision Families (+7 more)
+
+### Community 10 - "Quotes Evidence Casepacks"
+Cohesion: 0.18
+Nodes (15): Conditional Coverage-Layer Activation, Quotes Coverage Evidence Packs, Quotes Coverage Evidence, Quotes Flagged Evidence Packs, Quotes Flagged Evidence, Quote Review Case Evidence, Defensible Good Quote Cases, Quotes Good Justification (+7 more)
+
+### Community 11 - "Trades Population Acceptance"
+Cohesion: 0.22
+Nodes (15): Trades File Acceptance Readout, File-Acceptance Methodology, Sample-to-Full-Closeout Bridge, Trades Population Readout, Population, Sample, and Closeout Separation, Trades Population Levels, Trades Inspection Dossier, Multi-Layer Trade Closeout (+7 more)
+
+### Community 12 - "Trades Acceptance Transition"
+Cohesion: 0.19
+Nodes (15): Assembly, Not Re-Audit, Quotes Artifact Mapping, Quotes Artifact Mapping, Authoritative 57f State, Trades Current State, Trades Current State, Distinct Acceptance Causes, Trades Label Assessment (+7 more)
+
+### Community 13 - "Split-Normalized 1m Validation"
+Cohesion: 0.23
+Nodes (12): Coverage Limits Are Not Transformation Failures, OHLCV 1m Split-Normalized Final Readout, Split-Normalized Final Validation, OHLCV 1m Split-Normalized Full-Universe Audit, Full-Universe Split Audit, Zero Observed Split Failures, OHLCV 1m Split-Normalized Visual Pilot, Split Hypothesis Falsification (+4 more)
+
+### Community 14 - "Raw 1m Reconciliation"
+Cohesion: 0.23
+Nodes (12): Core Market Raw Alignment Probe, Implementation Pass With Data Differences, Core Market Raw Alignment Probe, Raw 1m LT1B Closeout Recalculation, Historical Scope Reconciliation, Raw 1m LT1B Recalculation, Raw 1m Schema-Only LT1B Readout, Dominant Raw 1m Signature (+4 more)
+
+### Community 15 - "Additional Causal Audit"
+Cohesion: 0.26
+Nodes (12): Additional Audit Contract, Contextual and Causal Subblocks, Additional Audit Contract, Additional Structural Closeout, Additional Root-Cause Closeout, Multi-Ticker Attribution Risk, Additional Causal Overlay, Additional Causal Overlay Closeout (+4 more)
+
+### Community 16 - "Short Causal Audit"
+Cohesion: 0.26
+Nodes (12): Short Audit Contract, Official Baseline and Secondary Comparison, Short Audit Contract, Short Phase-One Closeout, FINRA Provider Authority, Short Structural Closeout, Short Causal Overlay Closeout, Rare Context, Not Closed Causality (+4 more)
+
+### Community 17 - "Raw 1m Certification Policy"
+Cohesion: 0.26
+Nodes (12): 1m Current State, Full-Scope Measurement Caveat, Raw 1m Current State, 1m Recovery Policy, Materialized 1m Recovery Policy, Raw 1m Recovery, 1m Quality Policy, Raw 1m Quality Policy (+4 more)
+
+### Community 18 - "Daily Certification Policy"
+Cohesion: 0.26
+Nodes (12): Daily Current State, Daily Is Not Broken, Daily Current State, Coverage Rehabilitation States, Daily Recovery and Coverage, Daily Recovery and Coverage, Daily Bar Quality States, Daily Quality Policy (+4 more)
+
+### Community 19 - "Global Certification Metrics"
+Cohesion: 0.27
+Nodes (12): Cross-Family Status Tables, Global Metrics Tables, Global Metrics Surface, Traceable Global Metrics, Metric Source Lineage, Traceable Global Metrics, Certification Artifact Navigation, Global Metrics Working Links (+4 more)
+
+### Community 20 - "Additional Inspection Decisions"
+Cohesion: 0.31
+Nodes (9): Additional Context Quality, Additional Inspection Readout, Additional Subfamily Boundaries, Additional Institutional Closeout, Additional Institutional Closeout, Sparsity, Not Mass Corruption, Additional CAPA 1 Boundary, Additional Inspection Dossier (+1 more)
+
+### Community 21 - "Daily Inspection Decisions"
+Cohesion: 0.31
+Nodes (9): Adjusted Daily Dossier, Derived Daily Consumer Boundary, Daily Adjusted Inspection Dossier, Daily Dual-Axis Inspection, Daily Inspection Readout, Visual Inspection Is Not Certification, Daily Dossier Authority, Daily Inspection Dossier (+1 more)
+
+### Community 22 - "Microstructure Candidate Evidence"
+Cohesion: 0.31
+Nodes (9): Controlled Microstructure Candidate, Controlled Microstructure Visual Readout, Execution Simulation Disabled, Microstructure Candidate Visual Readout, Initial Microstructure Candidate, Provisional Quotes Lineage, Candidate Evidence Boundary, Microstructure Features Dossier (+1 more)
+
+### Community 23 - "Experimental Population Gates"
+Cohesion: 0.31
+Nodes (9): Population Target PIT Recovery Inventory, PIT Recovery Inventory, Recovery Pass, Selector Fail, Daily Eligible Universe Restricted Gate, Experimental, Not Canonical, Restricted Universe Consumption Gate, Presession 4824 Full Materialization Closeout, Presession Full Materialization (+1 more)
+
+### Community 24 - "Short Review Provenance"
+Cohesion: 0.31
+Nodes (9): Short Review Dossier, Scoped Provenance Package, Short Review Dossier, Short Review Readout, Short Review Quality, Short-Volume Key Flags, Short Institutional Closeout, FINRA Review and Provenance Role (+1 more)
+
+### Community 25 - "Financial Blocked Certification"
+Cohesion: 0.47
+Nodes (6): Complete Coverage, Failed Quality, Financial Inspection Readout, Governed Blocked Financial Family, Financial Inspection Dossier, Financial Blocking Evidence, Inspectable Blocked Verdict
+
+### Community 26 - "Halts Inspection Decisions"
+Cohesion: 0.47
+Nodes (6): Event Absence Is Not Missing Coverage, Halts Inspection Readout, Halts Event Inspection, Halts Inspection Dossier, Halts Consumption Policy Authority, Halts Dossier Authority
+
+### Community 27 - "Intraday Regime Pilot"
+Cohesion: 0.47
+Nodes (6): Complete Scoped Pilot, Intraday Regime Semantic Pilot, Intraday Regime Semantic Pilot, Intraday Regime Inspection Dossier, Intraday Regime Dossier, Pilot Is Not Production Promotion
+
+### Community 28 - "Regime Indicators Blocker"
+Cohesion: 0.47
+Nodes (6): Blocked Daily, Scoped Minute, Regime Indicators Dossier, Regime Indicators Dossier State, Regime Indicators Readout, Invalid Date and Datetime Semantics, Regime Daily Blocker
+
+## Knowledge Gaps
+- **45 isolated node(s):** `00_global_metrics_tables.md`, `1m_operational.csv`, `1m_operational.parquet`, `additional_corp_overlap.csv`, `additional_corp_overlap.parquet` (+40 more)
+  These have ≤1 connection - possible missing edges or undocumented components.
+
+## Suggested Questions
+_Questions this graph is uniquely positioned to answer:_
+
+- **Why does `Family Quality, Completion, and Visual Matrix` connect `Family Quality Status Matrix` to `Quotes-Trades Quality Dossiers`?**
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+- **Why does `Quotes Certification Contract` connect `Quotes Bucket Certification` to `Trades Acceptance Transition`?**
+  _High betweenness centrality (0.011) - this node is a cross-community bridge._
+- **Are the 13 inferred relationships involving `Family Quality, Completion, and Visual Matrix` (e.g. with `Additional Subfamily-Specific Quality` and `Derived Adjusted Daily View`) actually correct?**
+  _`Family Quality, Completion, and Visual Matrix` has 13 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 10 inferred relationships involving `Provisional Trade Certification` (e.g. with `1m Reference-Alignment Review` and `Microstructure Review`) actually correct?**
+  _`Provisional Trade Certification` has 10 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 2 inferred relationships involving `Global Metrics Surface` (e.g. with `Global Metrics Working Links` and `Plain-Path Traceable Metrics`) actually correct?**
+  _`Global Metrics Surface` has 2 INFERRED edges - model-reasoned connections that need verification._
+- **What connects `00_global_metrics_tables.md`, `1m_operational.csv`, `1m_operational.parquet` to the rest of the system?**
+  _45 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Trades Recovery Certification` be split into smaller, more focused modules?**
+  _Cohesion score 0.06823529411764706 - nodes in this community are weakly interconnected._

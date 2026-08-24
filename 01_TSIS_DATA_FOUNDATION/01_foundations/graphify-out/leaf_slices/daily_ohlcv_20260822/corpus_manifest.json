@@ -1,0 +1,674 @@
+[
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/daily/daily_adjusted_schema_contract.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\canonical_schemas\\daily\\daily_adjusted_schema_contract.md",
+    "category": "document",
+    "sha256": "ea75fb20593a9fee47bdb2b633f3ebc3a4f7649bc59d731b439255fbf2a8a48b",
+    "bytes": 1533,
+    "word_count": 225
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/daily/daily_return_labels_schema_contract.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\canonical_schemas\\daily\\daily_return_labels_schema_contract.md",
+    "category": "document",
+    "sha256": "988a8eb76de829435f6d0e388fc323c2393f6c5bec5b0dd53f85997e499821fc",
+    "bytes": 4259,
+    "word_count": 482
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/daily/daily_schema_contract.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\canonical_schemas\\daily\\daily_schema_contract.md",
+    "category": "document",
+    "sha256": "6f6c22ca36a6c9018c797651f1b0094937d9abdc1df323208ffc56e0c6e030fc",
+    "bytes": 2686,
+    "word_count": 407
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/ohlcv_1m/ohlcv_1m_schema_contract.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\canonical_schemas\\ohlcv_1m\\ohlcv_1m_schema_contract.md",
+    "category": "document",
+    "sha256": "7598af7aade7dd4889fbf2165148828821ccfb598740b48b2d26a2f2d2cc6fd0",
+    "bytes": 7488,
+    "word_count": 1059
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/ohlcv_1m/ohlcv_1m_split_normalized_schema_contract.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\canonical_schemas\\ohlcv_1m\\ohlcv_1m_split_normalized_schema_contract.md",
+    "category": "document",
+    "sha256": "53ac4f9ea451292793e2165a630066395919f05f76f9e02f80e8f226b694c936",
+    "bytes": 3932,
+    "word_count": 605
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/daily_adjusted_dataset_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\contract_registry\\dataset_contracts\\daily_adjusted_dataset_contract_v0_1.md",
+    "category": "document",
+    "sha256": "61c965d6d8a8c54757e1de46983b6bad60f1bc3e30ad8b23a33a3d32356ffc3d",
+    "bytes": 2813,
+    "word_count": 392
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/daily_dataset_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\contract_registry\\dataset_contracts\\daily_dataset_contract_v0_1.md",
+    "category": "document",
+    "sha256": "78b232234962f82a8fd6d07a802f7a1f4bcc84ea350e07bdb48486a9222f838e",
+    "bytes": 10001,
+    "word_count": 1169
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/daily_label_taxonomy_and_cut_policy.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\contract_registry\\dataset_contracts\\daily_label_taxonomy_and_cut_policy.md",
+    "category": "document",
+    "sha256": "32204eeff1c70b52e3aa7351c500b9b94706e087439006e67abdbf2ef9c8cee0",
+    "bytes": 15432,
+    "word_count": 1883
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/daily_return_labels_dataset_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\contract_registry\\dataset_contracts\\daily_return_labels_dataset_contract_v0_1.md",
+    "category": "document",
+    "sha256": "04623a0f8fd058de6240027951bf88e5257472fd3313aef3a4c7794e5e76d3f8",
+    "bytes": 3028,
+    "word_count": 321
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/daily_scanner_candidates_table_dataset_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\contract_registry\\dataset_contracts\\daily_scanner_candidates_table_dataset_contract_v0_1.md",
+    "category": "document",
+    "sha256": "14f1e30539e25053555b6553ea52967166811988ce60f7c9c00870422c1c9f50",
+    "bytes": 8159,
+    "word_count": 890
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/expected_data_calendar_dataset_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\contract_registry\\dataset_contracts\\expected_data_calendar_dataset_contract_v0_1.md",
+    "category": "document",
+    "sha256": "a66c4fe4d223e18466480525ae8feceb29110a8cd836085cbea0ff8d3f92f2c3",
+    "bytes": 2733,
+    "word_count": 346
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/master_daily_table_dataset_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\contract_registry\\dataset_contracts\\master_daily_table_dataset_contract_v0_1.md",
+    "category": "document",
+    "sha256": "a19daf38f4323320c99ce4651ff52a38d3f53f9c7dbbdea3df4fef1dd2476582",
+    "bytes": 3803,
+    "word_count": 441
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/master_intraday_bar_table_dataset_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\contract_registry\\dataset_contracts\\master_intraday_bar_table_dataset_contract_v0_1.md",
+    "category": "document",
+    "sha256": "4f9199ebc1e674642af63d1535911257b3e4e5602fa3d6601389ee5d5d7f590d",
+    "bytes": 7844,
+    "word_count": 823
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/ohlcv_1m_quote_guarded_dataset_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\contract_registry\\dataset_contracts\\ohlcv_1m_quote_guarded_dataset_contract_v0_1.md",
+    "category": "document",
+    "sha256": "035a76fc94e629203575f864f531af7481486c5107e0156ec6df716c01ae2b7f",
+    "bytes": 6199,
+    "word_count": 673
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/ohlcv_1m_raw_dataset_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\contract_registry\\dataset_contracts\\ohlcv_1m_raw_dataset_contract_v0_1.md",
+    "category": "document",
+    "sha256": "650ce80bbfefff0f1f9650876c123e30902904124776e9784b86cad00ef8963f",
+    "bytes": 5433,
+    "word_count": 627
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/ohlcv_1m_split_normalized_dataset_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\contract_registry\\dataset_contracts\\ohlcv_1m_split_normalized_dataset_contract_v0_1.md",
+    "category": "document",
+    "sha256": "dad2b9dc883ba2a089a5e60fee20682a0c5ca3e4529912ccbd3c6cfd155f232b",
+    "bytes": 5009,
+    "word_count": 761
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/daily_adjusted_consumption_policy.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\data_consumption_policies\\daily_adjusted_consumption_policy.md",
+    "category": "document",
+    "sha256": "985874626d6c1267d154b0b652516a0944020195ffb4b9f63ee9741fcd35b3c1",
+    "bytes": 2328,
+    "word_count": 294
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/daily_consumption_policy.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\data_consumption_policies\\daily_consumption_policy.md",
+    "category": "document",
+    "sha256": "347a8fe00807e9bfce6f45f1f948c35c5887ef183a876921962d0b084a1e0745",
+    "bytes": 4578,
+    "word_count": 573
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/daily_eligible_universe_restricted_research_consumption_policy_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\data_consumption_policies\\daily_eligible_universe_restricted_research_consumption_policy_v0_1.md",
+    "category": "document",
+    "sha256": "61e7227307fd133a74fcf2e61f6c7e34bbfb084abed4d8103ef4eb6dfa594129",
+    "bytes": 3762,
+    "word_count": 468
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/daily_return_labels_consumption_policy.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\data_consumption_policies\\daily_return_labels_consumption_policy.md",
+    "category": "document",
+    "sha256": "1e2b5c307074346516a7d9502856a6687fad85622d3fba31284fed32d8155653",
+    "bytes": 3324,
+    "word_count": 489
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/daily_scanner_candidates_table_consumption_policy.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\data_consumption_policies\\daily_scanner_candidates_table_consumption_policy.md",
+    "category": "document",
+    "sha256": "52d4576d9edc388b6816a9aa054f8e525d377ee861b64cd226043698a500b91f",
+    "bytes": 6095,
+    "word_count": 752
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/expected_data_calendar_consumption_policy.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\data_consumption_policies\\expected_data_calendar_consumption_policy.md",
+    "category": "document",
+    "sha256": "bc0c35804ae5b8464e06b2c386d1e3d300b279219cc052f05fe6f8f4a56a3e3a",
+    "bytes": 1452,
+    "word_count": 205
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/master_daily_table_consumption_policy.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\data_consumption_policies\\master_daily_table_consumption_policy.md",
+    "category": "document",
+    "sha256": "53c5d4f1c55ec196b081dd3a222036b66112ea0e1c83cd43ff44b45d468ffd2d",
+    "bytes": 2263,
+    "word_count": 313
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/master_intraday_bar_table_consumption_policy.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\data_consumption_policies\\master_intraday_bar_table_consumption_policy.md",
+    "category": "document",
+    "sha256": "a793c71e856c267a96ba449c37f7e1be4960da2c935b5c82f4f2db14259c5c96",
+    "bytes": 5651,
+    "word_count": 609
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/ohlcv_1m_quote_guarded_consumption_policy.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\data_consumption_policies\\ohlcv_1m_quote_guarded_consumption_policy.md",
+    "category": "document",
+    "sha256": "b438ba86467323efd232bfdc3698ef64d6dc061578ee672d39927f153304396c",
+    "bytes": 3102,
+    "word_count": 378
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/ohlcv_1m_raw_consumption_policy.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\data_consumption_policies\\ohlcv_1m_raw_consumption_policy.md",
+    "category": "document",
+    "sha256": "92c574e0f909d3a68ffb57e397351d3a72afbe2aa681f5fe30b4a5f85294a515",
+    "bytes": 3248,
+    "word_count": 397
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/ohlcv_1m_split_normalized_consumption_policy.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\data_consumption_policies\\ohlcv_1m_split_normalized_consumption_policy.md",
+    "category": "document",
+    "sha256": "2b4e0e30415b81bf61b6b24663cf0a47f80a101051e0f3950e52b72c2b8fe59b",
+    "bytes": 3213,
+    "word_count": 349
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/daily/daily_adjusted_registry_entry.yaml",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\dataset_registry\\daily\\daily_adjusted_registry_entry.yaml",
+    "category": "document",
+    "sha256": "c7929fbbf9b2467d5a7e40dafe6206f5bcb08381d3bb5c3825834fa7ecb0e82b",
+    "bytes": 3078,
+    "word_count": 186
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/daily/daily_registry_entry.yaml",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\dataset_registry\\daily\\daily_registry_entry.yaml",
+    "category": "document",
+    "sha256": "d99aaa7898f913296e6a843dba70b6a8bb1c5913cf2f22c36a3ae51e17626aae",
+    "bytes": 1975,
+    "word_count": 128
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/daily/daily_return_labels_registry_entry.yaml",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\dataset_registry\\daily\\daily_return_labels_registry_entry.yaml",
+    "category": "document",
+    "sha256": "5934872a86b017fd29e18c2fda12c676c474ded9e89fde876d94da377d2478fd",
+    "bytes": 2593,
+    "word_count": 172
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/ohlcv_1m/ohlcv_1m_quote_guarded_registry_entry.yaml",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\dataset_registry\\ohlcv_1m\\ohlcv_1m_quote_guarded_registry_entry.yaml",
+    "category": "document",
+    "sha256": "4682d1a5f2ebc2f0b8e868c1cffe113ef417f5cb16fef257e32752e13f0a0436",
+    "bytes": 3146,
+    "word_count": 142
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/ohlcv_1m/ohlcv_1m_raw_registry_entry.yaml",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\dataset_registry\\ohlcv_1m\\ohlcv_1m_raw_registry_entry.yaml",
+    "category": "document",
+    "sha256": "d1da5c0077b4376261f79787f3fe37f03dd86944fb83ece8d7cf4e4bc4344a5b",
+    "bytes": 2481,
+    "word_count": 140
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/ohlcv_1m/ohlcv_1m_split_normalized_pilot_manifest_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\dataset_registry\\ohlcv_1m\\ohlcv_1m_split_normalized_pilot_manifest_v0_1.md",
+    "category": "document",
+    "sha256": "2e0434754fbf7cb3eb667614c815e0f838ab317ea7ea12bbff2326dc069ac043",
+    "bytes": 942,
+    "word_count": 150
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/ohlcv_1m/ohlcv_1m_split_normalized_registry_entry.yaml",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\dataset_registry\\ohlcv_1m\\ohlcv_1m_split_normalized_registry_entry.yaml",
+    "category": "document",
+    "sha256": "17c595182688f5cb07827408c20cc3f3aa5efc0de274ecdaa9a3f9243ef02313",
+    "bytes": 2098,
+    "word_count": 117
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/1m_split_normalized/event_case_evidence_packs/ohlcv_1m_split_normalized_visual_inspector_pack_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\1m_split_normalized\\event_case_evidence_packs\\ohlcv_1m_split_normalized_visual_inspector_pack_v0_1.md",
+    "category": "document",
+    "sha256": "b4f89809ff4cfec3c46671d68db92693fae2088d57d8e73de8bea63f3059d532",
+    "bytes": 30892,
+    "word_count": 3882
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/1m_split_normalized/NOTOCAR.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\1m_split_normalized\\NOTOCAR.md",
+    "category": "document",
+    "sha256": "2e54c9cac9cf3bdab8475523829f189d1828ab1a4a10d933db9cd4b6c9085974",
+    "bytes": 3743,
+    "word_count": 445
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/1m_split_normalized/ohlcv_1m_split_normalized_final_readout_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\1m_split_normalized\\ohlcv_1m_split_normalized_final_readout_v0_1.md",
+    "category": "document",
+    "sha256": "e3f42ccb0e3a5d16851553e22c6ec7fb7f4154127e1b3d3dd9d4fdded4669039",
+    "bytes": 9624,
+    "word_count": 1105
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/1m_split_normalized/ohlcv_1m_split_normalized_full_universe_audit_readout_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\1m_split_normalized\\ohlcv_1m_split_normalized_full_universe_audit_readout_v0_1.md",
+    "category": "document",
+    "sha256": "207a6cf0631d0975ef61bec79643d4707522018e58b1933004bff659ffc9f326",
+    "bytes": 4783,
+    "word_count": 703
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/1m_split_normalized/ohlcv_1m_split_normalized_pilot_readout_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\1m_split_normalized\\ohlcv_1m_split_normalized_pilot_readout_v0_1.md",
+    "category": "document",
+    "sha256": "56ed06ef24f6459c168b5a665f13bf8750eeccbe8e983133e4c47abcafed9f1c",
+    "bytes": 12128,
+    "word_count": 1803
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/1m_split_normalized/README.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\1m_split_normalized\\README.md",
+    "category": "document",
+    "sha256": "6916de56f9aa74fc03406b7b8b7e6491c1332a13db396104fcb6f7c8a7c2e8a5",
+    "bytes": 7301,
+    "word_count": 743
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/daily/bad_case_evidence_packs/daily_hard_invalid_cases_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\daily\\bad_case_evidence_packs\\daily_hard_invalid_cases_v0_1.md",
+    "category": "document",
+    "sha256": "2ef804b47498d7883db0fb486bd0aba3f4bc76fe69e636b35e0e5b41a4e944ef",
+    "bytes": 169266,
+    "word_count": 21236
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/daily/build_daily_inspection_pack.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\daily\\build_daily_inspection_pack.md",
+    "category": "document",
+    "sha256": "cc312fb6429f50a92276ed4d0ff79df30ad2f4dd78188a7990e11153f879784f",
+    "bytes": 3597,
+    "word_count": 483
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/daily/coverage_case_evidence_packs/daily_coverage_cases_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\daily\\coverage_case_evidence_packs\\daily_coverage_cases_v0_1.md",
+    "category": "document",
+    "sha256": "cf79a1d243c03cf2c28bc76b65d2c164c9ce7eafe42829ab70ef2540a31e7056",
+    "bytes": 7588,
+    "word_count": 1028
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/daily/daily_adjusted_complex_corporate_actions_tail_audit_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\daily\\daily_adjusted_complex_corporate_actions_tail_audit_v0_1.md",
+    "category": "document",
+    "sha256": "df5656946348923efdde5ba115f8dcd6579902537da38838a72478d96ff56d68",
+    "bytes": 6587,
+    "word_count": 802
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/daily/daily_adjusted_full_universe_audit_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\daily\\daily_adjusted_full_universe_audit_v0_1.md",
+    "category": "document",
+    "sha256": "5d7c7ac27175a5034b1c6af00411670366be7b58f5d2bfab7603cf5dd20efe42",
+    "bytes": 16294,
+    "word_count": 1482
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/daily/daily_inspection_readout_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\daily\\daily_inspection_readout_v0_1.md",
+    "category": "document",
+    "sha256": "67eea5d931bed00f57dc87bd22c488e34e358f4acd53e9b5040a03504e1d5591",
+    "bytes": 13421,
+    "word_count": 1524
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/daily/flagged_case_evidence_packs/daily_non_good_quality_cases_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\daily\\flagged_case_evidence_packs\\daily_non_good_quality_cases_v0_1.md",
+    "category": "document",
+    "sha256": "d383f259b1e746d007c6eacf9f3bbf1d2947314dd97d20b16959595cdd675145",
+    "bytes": 65810,
+    "word_count": 7733
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/daily/good_justification/daily_good_cases_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\daily\\good_justification\\daily_good_cases_v0_1.md",
+    "category": "document",
+    "sha256": "a4c6653f5d10ae23e361c9b1a44ec141c32f30a81f5e31a07ad73abb8dc7532c",
+    "bytes": 40102,
+    "word_count": 5080
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/daily/README.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\daily\\README.md",
+    "category": "document",
+    "sha256": "152c49b6017a8c41149186773df62718c3b914e9f310cd4b8d2cd325046076ce",
+    "bytes": 20391,
+    "word_count": 2092
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/daily_adjusted/README.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\daily_adjusted\\README.md",
+    "category": "document",
+    "sha256": "9528dd07e13dd9e54a93fa973d46077bb3775a193ffa44757ce083ec4fd9bd57",
+    "bytes": 2094,
+    "word_count": 188
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/minute/core_quality_case_evidence_packs/minute_core_quality_visual_cases_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\minute\\core_quality_case_evidence_packs\\minute_core_quality_visual_cases_v0_1.md",
+    "category": "document",
+    "sha256": "f2df344e430aa54fe5c333d82d4aedff5074dbd0c4277c1c04b1b68443356520",
+    "bytes": 86814,
+    "word_count": 9248
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/minute/raw_1m_lt1b_closeout_recalculation_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\minute\\raw_1m_lt1b_closeout_recalculation_v0_1.md",
+    "category": "document",
+    "sha256": "d2f86e84513c5ea7ded94a5a4587eeb78aedb1a5bcb2f3fe7d89b0bddc6539b2",
+    "bytes": 4384,
+    "word_count": 458
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/minute/raw_1m_schema_only_lt1b_inspection_readout_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\minute\\raw_1m_schema_only_lt1b_inspection_readout_v0_1.md",
+    "category": "document",
+    "sha256": "2ab3cd28c2878e97c21151433fd11a8179b5b88c4ac4d89d9bfdcf3ca8aac63c",
+    "bytes": 2919,
+    "word_count": 348
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/minute/README.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\minute\\README.md",
+    "category": "document",
+    "sha256": "035adc720f26ca2b22a33b06b821801eb53d4f2eb5ec63544e40a339a8aca0b4",
+    "bytes": 26380,
+    "word_count": 2836
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/market_session_scope.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\module_contracts\\market_session_scope.md",
+    "category": "document",
+    "sha256": "2def8919d5e636f97fac90806b90e66c318846acfb75da7eaa820ee4a21eb65b",
+    "bytes": 3998,
+    "word_count": 633
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/ohlcv_1m_quote_guarded/ohlcv_1m_quote_guarded_live_supervision_validation_protocol_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\module_contracts\\ohlcv_1m_quote_guarded\\ohlcv_1m_quote_guarded_live_supervision_validation_protocol_v0_1.md",
+    "category": "document",
+    "sha256": "895f022f7e95cf05a78cfceea8fa6f3e2e1b412d523e7aa18462530071ab5836",
+    "bytes": 19891,
+    "word_count": 2369
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/ohlcv_1m_quote_guarded/ohlcv_1m_quote_guarded_lt1b_scope_recovery_protocol_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\module_contracts\\ohlcv_1m_quote_guarded\\ohlcv_1m_quote_guarded_lt1b_scope_recovery_protocol_v0_1.md",
+    "category": "document",
+    "sha256": "0986ea1aa2e93dcc62578d1bf167552d5112838a3a4eaaa1dd87894ec63aece8",
+    "bytes": 20760,
+    "word_count": 2131
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/ohlcv_1m_quote_guarded/ohlcv_1m_quote_guarded_repair_runbook_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\module_contracts\\ohlcv_1m_quote_guarded\\ohlcv_1m_quote_guarded_repair_runbook_v0_1.md",
+    "category": "document",
+    "sha256": "dfd66f16abef70dd4113499220c4be96193517c148f9d922ccd4bcf9ce7adabf",
+    "bytes": 5996,
+    "word_count": 612
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/ohlcv_1m_quote_guarded/ohlcv_1m_quote_guarded_single_reading_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\module_contracts\\ohlcv_1m_quote_guarded\\ohlcv_1m_quote_guarded_single_reading_v0_1.md",
+    "category": "document",
+    "sha256": "acfd6369525d6932e3f18549f0602e7f6996b3146b75482739cc2bbecb7026ca",
+    "bytes": 15356,
+    "word_count": 2013
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/ohlcv_1m_quote_guarded/README.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\module_contracts\\ohlcv_1m_quote_guarded\\README.md",
+    "category": "document",
+    "sha256": "255db6932a9e7ceec8095bead727d171767b3cb62b74ac91a75bb72e3b572685",
+    "bytes": 7483,
+    "word_count": 803
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/pipeline_price_view_policy.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\module_contracts\\pipeline_price_view_policy.md",
+    "category": "document",
+    "sha256": "aa35e1875b3ed8224529abaa0574455b6fa1b32e72d76acf918cd01f3113cca4",
+    "bytes": 10804,
+    "word_count": 1624
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/price_semantics_and_adjustment_policy.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\module_contracts\\price_semantics_and_adjustment_policy.md",
+    "category": "document",
+    "sha256": "56a96f30697cf5f41e14bb04aa56c462c5655e423bfc94c66b3920d9e22d9720",
+    "bytes": 19914,
+    "word_count": 2607
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/price_views_registry.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\module_contracts\\price_views_registry.md",
+    "category": "document",
+    "sha256": "adea11de774fb694706e2ac025a926de3f81f2516c423aa71cd354ce250d5b29",
+    "bytes": 3259,
+    "word_count": 421
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/validators/daily/daily_adjusted_validators.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\validators\\daily\\daily_adjusted_validators.md",
+    "category": "document",
+    "sha256": "e8ee4353f2560148954fc01b17d2a7b8631aa74c791ff9e91d827d8cda858b64",
+    "bytes": 3908,
+    "word_count": 477
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/validators/daily/daily_validators.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\validators\\daily\\daily_validators.md",
+    "category": "document",
+    "sha256": "ef1db2482283f9d72b2a9bb84c601036a03f3f34b779635d5d2cba6487104155",
+    "bytes": 5902,
+    "word_count": 849
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/validators/ohlcv_1m/ohlcv_1m_raw_validators.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\validators\\ohlcv_1m\\ohlcv_1m_raw_validators.md",
+    "category": "document",
+    "sha256": "934ccbb55d9532b97dfd8aadea99c7d6ac89f7eefee1e47e478ba423794c7465",
+    "bytes": 3149,
+    "word_count": 390
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/validators/ohlcv_1m/ohlcv_1m_split_normalized_validators.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\validators\\ohlcv_1m\\ohlcv_1m_split_normalized_validators.md",
+    "category": "document",
+    "sha256": "2669b9d1e232f71652bbab89cac8a2c0ff5f4b4d6963c784dab6b9c1ead555cd",
+    "bytes": 3994,
+    "word_count": 481
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/daily/00_auditoria_daily.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\daily\\00_auditoria_daily.md",
+    "category": "document",
+    "sha256": "6ff7a2408e978c83d2a91470880fee18beaf3138bc3ed896866c62a3a5463ad1",
+    "bytes": 12035,
+    "word_count": 1487
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/daily/01_contrato_agent02_agent03_daily_04032026.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\daily\\01_contrato_agent02_agent03_daily_04032026.md",
+    "category": "document",
+    "sha256": "0ef7a5cb968e5c76d1185fde6952b94cac1c136f8d20af0199f46e76cbdae6c8",
+    "bytes": 9051,
+    "word_count": 1222
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/daily/02_diseno_implementacion_daily_v2.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\daily\\02_diseno_implementacion_daily_v2.md",
+    "category": "document",
+    "sha256": "6994d0f5e980eb201b685a6ee8292798207090bd43748303257b986d4a8aac07",
+    "bytes": 94230,
+    "word_count": 9168
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/daily/04_daily_closeout.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\daily\\04_daily_closeout.md",
+    "category": "document",
+    "sha256": "abcbe63db5117ee604ad27cc5b777503d5c3bde10a1b302a1c9633102034587a",
+    "bytes": 3885,
+    "word_count": 461
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/daily/LOCAL_MAINTENANCE.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\daily\\LOCAL_MAINTENANCE.md",
+    "category": "document",
+    "sha256": "d82f0accd036918130f38995d2d18cd22b3fe95471a7edcb232f6c8036befd05",
+    "bytes": 2087,
+    "word_count": 268
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/ohlcv_1m/00_auditoria_ohlcv_1m.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\ohlcv_1m\\00_auditoria_ohlcv_1m.md",
+    "category": "document",
+    "sha256": "46cc5f67a82791cdf3fa09256716314857c2b48ccb25de2bb98e3e087a8561c4",
+    "bytes": 8744,
+    "word_count": 1064
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/ohlcv_1m/01_contrato_agent02_agent03_ohlcv_1m_04032026.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\ohlcv_1m\\01_contrato_agent02_agent03_ohlcv_1m_04032026.md",
+    "category": "document",
+    "sha256": "b64e474c577897856e096d6e2ee99c17e0a79535d46099a85f7def5b7edca636",
+    "bytes": 7716,
+    "word_count": 1045
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/ohlcv_1m/02_diseno_implementacion_ohlcv_1m_v2.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\ohlcv_1m\\02_diseno_implementacion_ohlcv_1m_v2.md",
+    "category": "document",
+    "sha256": "8c022f24909d7a0653faa65add89888988aa3169965fdb84f9da12f05d2de0da",
+    "bytes": 45856,
+    "word_count": 4108
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/ohlcv_1m/04_ohlcv_1m_closeout.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\ohlcv_1m\\04_ohlcv_1m_closeout.md",
+    "category": "document",
+    "sha256": "c85a77302b391c20fe8889c37bc192d002245d94937d518f820fc28bf3271d52",
+    "bytes": 1767,
+    "word_count": 234
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/1m/00_1m_current_state.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\1m\\00_1m_current_state.md",
+    "category": "document",
+    "sha256": "be4fb55410a6ced8d7fd2c7374cd97bbf1a92d5fe71dd1e20d089b08e8c4d104",
+    "bytes": 1431,
+    "word_count": 121
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/1m/01_1m_recovery_policy.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\1m\\01_1m_recovery_policy.md",
+    "category": "document",
+    "sha256": "82393cf52886f2d1bfd23eda551d97dee8e5ad3c983563de48c7526365dfbfc5",
+    "bytes": 1360,
+    "word_count": 135
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/1m/02_1m_quality_policy.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\1m\\02_1m_quality_policy.md",
+    "category": "document",
+    "sha256": "66d8f61fd804c563b43f8f6a63a050df9ef650a7d28936c29d39ca11e1ff142a",
+    "bytes": 1341,
+    "word_count": 169
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/1m/03_1m_closeout.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\1m\\03_1m_closeout.md",
+    "category": "document",
+    "sha256": "85eff72ff96c66b8fca15b57ddc8f472e680a21451861fa775cd6d24e648fc70",
+    "bytes": 1296,
+    "word_count": 212
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/daily/00_daily_current_state.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\daily\\00_daily_current_state.md",
+    "category": "document",
+    "sha256": "cd9ddf46207fbabf5f7ef02e3c106ec9134ff226a20ef8a2ef82281f148a0121",
+    "bytes": 1648,
+    "word_count": 137
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/daily/01_daily_recovery_and_coverage.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\daily\\01_daily_recovery_and_coverage.md",
+    "category": "document",
+    "sha256": "f7ad05f7bcd542669a528621552c6676585063a57ef6ebc5581c84d2d764284b",
+    "bytes": 2120,
+    "word_count": 230
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/daily/02_daily_quality_policy.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\daily\\02_daily_quality_policy.md",
+    "category": "document",
+    "sha256": "b3134925a3ebf8325f25d3166156deb00c248dadadd227e0fd577d45359b4f8e",
+    "bytes": 1467,
+    "word_count": 149
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/daily/03_daily_closeout.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\daily\\03_daily_closeout.md",
+    "category": "document",
+    "sha256": "d803513384e5493be867341e3363954ffaf5f5f8f6c5f0174866e6092c030566",
+    "bytes": 1663,
+    "word_count": 221
+  }
+]

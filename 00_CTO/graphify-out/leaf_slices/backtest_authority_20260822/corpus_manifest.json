@@ -1,0 +1,346 @@
+[
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/00_TABLAS__WAKE_UP_FRONTSIDE_TERMINATION_V0_2.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\00_TABLAS__WAKE_UP_FRONTSIDE_TERMINATION_V0_2.md",
+    "category": "document",
+    "sha256": "d866ce0aa88a6e974d37d27a3013ba757f2e3f49d8f527afb5cd4e3a585617c4",
+    "bytes": 35981,
+    "word_count": 4705
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/01_GUIDE/01_DATA.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\01_GUIDE\\01_DATA.md",
+    "category": "document",
+    "sha256": "cae3c847f2d989c1b19942a47c414d14f34c59dd297f16de30074bf5c947472d",
+    "bytes": 22936,
+    "word_count": 2304
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/01_GUIDE/01_SYSTEM_STATUS_AND_INSPECTOR_GUIDE.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\01_GUIDE\\01_SYSTEM_STATUS_AND_INSPECTOR_GUIDE.md",
+    "category": "document",
+    "sha256": "7f64558154095c876e25884e08dfc8e0b35bdd4ca672647f79034aaf81ef6483",
+    "bytes": 1248,
+    "word_count": 172
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/01_GUIDE/02_REPLAY.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\01_GUIDE\\02_REPLAY.md",
+    "category": "document",
+    "sha256": "baa7edc47b7d0527954c70deafefb0c0c1d6112c16d874dceb7869f9e6324092",
+    "bytes": 4326,
+    "word_count": 452
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/01_GUIDE/03_MECHANICAL_TRADE_PATH.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\01_GUIDE\\03_MECHANICAL_TRADE_PATH.md",
+    "category": "document",
+    "sha256": "04b4518b2494b1c7c08a8063edded447c200ed19d1966a77df4b832d2c83bd93",
+    "bytes": 3174,
+    "word_count": 335
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/01_GUIDE/08_ACCOUNTING.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\01_GUIDE\\08_ACCOUNTING.md",
+    "category": "document",
+    "sha256": "844617ce17100c886342e0da500b005b5c1be368aae1427affd8c436ac55c365",
+    "bytes": 5706,
+    "word_count": 601
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/01_GUIDE/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\01_GUIDE\\README.md",
+    "category": "document",
+    "sha256": "39ec5c5f14eeb98603a4c73540174327c5137dea15d2fedb1693b9d5386cc0d6",
+    "bytes": 5468,
+    "word_count": 675
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/02_ARCHITECTURE/01_AUTHORITY_AND_EVIDENCE_BOUNDARY.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\02_ARCHITECTURE\\01_AUTHORITY_AND_EVIDENCE_BOUNDARY.md",
+    "category": "document",
+    "sha256": "05440f5da27c1f13683a80a1da0e9489afbc0c6c46c6684ac30557bc76f01cba",
+    "bytes": 1490,
+    "word_count": 185
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/02_ARCHITECTURE/02_APPLIED_ARCHITECTURE_CONTEXT_BOUNDARY.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\02_ARCHITECTURE\\02_APPLIED_ARCHITECTURE_CONTEXT_BOUNDARY.md",
+    "category": "document",
+    "sha256": "d647f6d5efb2485c29d38bf4dcb19b7a80de6e59a26e6fa7566d29c6e0b94ccd",
+    "bytes": 1346,
+    "word_count": 143
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/03_CONTRACTS/CONTRACT_INVENTORY.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\03_CONTRACTS\\CONTRACT_INVENTORY.md",
+    "category": "document",
+    "sha256": "4f0bac571d2c5a3397dea20f96683077aa9680cfa06eb0ed1b409d95c21bb63f",
+    "bytes": 5791,
+    "word_count": 430
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/04_DECISIONS/DECISION_LEDGER.json",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\04_DECISIONS\\DECISION_LEDGER.json",
+    "category": "code",
+    "sha256": "1d214508cb6a339b46cd94fc72ce5c39550a9c71122fd729f8c016161c703367",
+    "bytes": 54186,
+    "word_count": 2400
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/05_POLICIES/POLICY_REGISTER.json",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\05_POLICIES\\POLICY_REGISTER.json",
+    "category": "code",
+    "sha256": "12fda1b944b6c38adfb376a5a430f0b08edd07e8495aac175a09bbd0be1f8d64",
+    "bytes": 26376,
+    "word_count": 1447
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/06_TRACEABILITY/TRACEABILITY_MATRIX.json",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\06_TRACEABILITY\\TRACEABILITY_MATRIX.json",
+    "category": "code",
+    "sha256": "46eb6600a278b5dabbf179ba1735057f01df15f0b5b8ee337520d2d4ea810c03",
+    "bytes": 54222,
+    "word_count": 1429
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/07_EXCEPTIONS/EXCEPTION_AND_WAIVER_REGISTER.json",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\07_EXCEPTIONS\\EXCEPTION_AND_WAIVER_REGISTER.json",
+    "category": "code",
+    "sha256": "9c242151e1526f4bceec65f412d3c7f708cb6b374c749932343bf9673523cdab",
+    "bytes": 9908,
+    "word_count": 616
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_014_FINAL_POSTEXECUTION_ACCEPTANCE_V0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\08_GATES_AND_REVIEWS\\BT_GATE_014_FINAL_POSTEXECUTION_ACCEPTANCE_V0_1.md",
+    "category": "document",
+    "sha256": "50ac8e74009598f075fbc08f7db07954f2bd18c1eebaad0d3f43f020423e2f53",
+    "bytes": 955,
+    "word_count": 87
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_014_PHASE_B_EXTERNAL_RE_REVIEW_ACCEPTANCE_V0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\08_GATES_AND_REVIEWS\\BT_GATE_014_PHASE_B_EXTERNAL_RE_REVIEW_ACCEPTANCE_V0_1.md",
+    "category": "document",
+    "sha256": "5501356d13b93edaa38a11d4812b1af020fc2f5efe10dc47fea1ad3eecc50c01",
+    "bytes": 2642,
+    "word_count": 288
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\08_GATES_AND_REVIEWS\\BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_1.md",
+    "category": "document",
+    "sha256": "f7274f52248fc8e89151ba987a2aac6e7bcf2b74b9764fe3073862736dcc56f9",
+    "bytes": 688,
+    "word_count": 65
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_2.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\08_GATES_AND_REVIEWS\\BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_2.md",
+    "category": "document",
+    "sha256": "df6cb6bdac12f929ec64e05363ec51be7533d557bbee2faeb8a89e836c422efe",
+    "bytes": 828,
+    "word_count": 81
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_3.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\08_GATES_AND_REVIEWS\\BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_3.md",
+    "category": "document",
+    "sha256": "123d2861d887e2313b15b4ae4dd1a113a5d59dfb1e0d80284866cba8f08f9489",
+    "bytes": 2256,
+    "word_count": 244
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_4.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\08_GATES_AND_REVIEWS\\BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_4.md",
+    "category": "document",
+    "sha256": "d8072f9324d52518365b3815eccb6d74abe485d694d1c3a49b17bef1311b2e0f",
+    "bytes": 2938,
+    "word_count": 240
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_5.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\08_GATES_AND_REVIEWS\\BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_5.md",
+    "category": "document",
+    "sha256": "15f814904efeed6551cecd2f2e7aac58ba7b4c1de614fa7744d257f238a7a7bd",
+    "bytes": 1418,
+    "word_count": 156
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_015_NON_PHYSICAL_EXTERNAL_REVIEW_ACCEPTANCE_V0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\08_GATES_AND_REVIEWS\\BT_GATE_015_NON_PHYSICAL_EXTERNAL_REVIEW_ACCEPTANCE_V0_1.md",
+    "category": "document",
+    "sha256": "9fbfade85cca0c233d8c48400bbfca519a4567a1450aa7c4ca80bd2f5812e2dc",
+    "bytes": 1871,
+    "word_count": 167
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_015_V0_4_POSTEXECUTION_EXTERNAL_REVIEW_ACCEPTANCE_V0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\08_GATES_AND_REVIEWS\\BT_GATE_015_V0_4_POSTEXECUTION_EXTERNAL_REVIEW_ACCEPTANCE_V0_1.md",
+    "category": "document",
+    "sha256": "dc4480ee134ba6d27d51370df60051da891f9c9cb96711ad000f85ac5756fa85",
+    "bytes": 1957,
+    "word_count": 226
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/GATE_REGISTER.json",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\08_GATES_AND_REVIEWS\\GATE_REGISTER.json",
+    "category": "code",
+    "sha256": "115d506bfb1964447478f884a70f52778542a553bb0de6f68763ae1572572093",
+    "bytes": 40425,
+    "word_count": 1172
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/GOVERNANCE_UPDATE_PROTOCOL.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\08_GATES_AND_REVIEWS\\GOVERNANCE_UPDATE_PROTOCOL.md",
+    "category": "document",
+    "sha256": "7cff90e36a708a1d1b22dfcf091a85e950133574b18a08f463d1d3fe250d15b8",
+    "bytes": 4388,
+    "word_count": 511
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/09_SCHEMAS/GOVERNANCE_SCHEMA.json",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\09_SCHEMAS\\GOVERNANCE_SCHEMA.json",
+    "category": "code",
+    "sha256": "a6bdffa647a5362688d3cf63bd43ce80276507e4cdc74c15207dd4c6d5774e7a",
+    "bytes": 2669,
+    "word_count": 203
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/10_VALIDATION/GOVERNANCE_VALIDATION_REPORT.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\10_VALIDATION\\GOVERNANCE_VALIDATION_REPORT.md",
+    "category": "document",
+    "sha256": "65a122367b46ad271c1778017615950e7c96c6cd302e635eb5cf1cbe8a800954",
+    "bytes": 1675,
+    "word_count": 164
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/10_VALIDATION/validate_governance.py",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\10_VALIDATION\\validate_governance.py",
+    "category": "code",
+    "sha256": "4baf80ea0d082ec4913bfe923f3e6aa7fe0ee04e939fc687a88c892a8edcc699",
+    "bytes": 9515,
+    "word_count": 603
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/11_HISTORICAL_SNAPSHOTS/2026-07-28_PRE_GOVERNANCE_ROOT/AGENT_HISTORICAL.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\11_HISTORICAL_SNAPSHOTS\\2026-07-28_PRE_GOVERNANCE_ROOT\\AGENT_HISTORICAL.md",
+    "category": "document",
+    "sha256": "8f34d78ba90e0ae584aaff35c9b8dde104996fc5fcef069df4ec7c5af8e07358",
+    "bytes": 17597,
+    "word_count": 1933
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/11_HISTORICAL_SNAPSHOTS/2026-07-28_PRE_GOVERNANCE_ROOT/CHANGELOG_HISTORY_SOURCE.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\11_HISTORICAL_SNAPSHOTS\\2026-07-28_PRE_GOVERNANCE_ROOT\\CHANGELOG_HISTORY_SOURCE.md",
+    "category": "document",
+    "sha256": "1610bbc47c798561db1a3a0b4466197b90f9e14a17d9bae936079f02b5ae89a5",
+    "bytes": 10490,
+    "word_count": 1141
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/11_HISTORICAL_SNAPSHOTS/2026-07-28_PRE_GOVERNANCE_ROOT/LOCAL_RULES_HISTORICAL.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\11_HISTORICAL_SNAPSHOTS\\2026-07-28_PRE_GOVERNANCE_ROOT\\LOCAL_RULES_HISTORICAL.md",
+    "category": "document",
+    "sha256": "0f0ae2453dac2b8b132896be7dc11a247458e6ccf04d9461122f76d88fcd9a78",
+    "bytes": 1195,
+    "word_count": 181
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/11_HISTORICAL_SNAPSHOTS/2026-07-28_PRE_GOVERNANCE_ROOT/README_HISTORICAL.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\11_HISTORICAL_SNAPSHOTS\\2026-07-28_PRE_GOVERNANCE_ROOT\\README_HISTORICAL.md",
+    "category": "document",
+    "sha256": "31b07ca4adfda611e3b92a9c797527251e3d8fc6308c8840e5f6d05ef4eeea76",
+    "bytes": 1389,
+    "word_count": 185
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/11_HISTORICAL_SNAPSHOTS/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\11_HISTORICAL_SNAPSHOTS\\README.md",
+    "category": "document",
+    "sha256": "c64eae8fa29608196235e8b1cef48cf479ef25d2407897c8883c0014ff7ed97c",
+    "bytes": 510,
+    "word_count": 70
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/_00_SERSANS_SISTEMAS_GUIDE/00_EVALUACION_PRELIMINAR_ESTRATEGY.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\_00_SERSANS_SISTEMAS_GUIDE\\00_EVALUACION_PRELIMINAR_ESTRATEGY.md",
+    "category": "document",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0,
+    "word_count": 0
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/AGENTS.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\AGENTS.md",
+    "category": "document",
+    "sha256": "856408c7234161b3bd14734436fdc321a7456867712428f82f147cbe02006bec",
+    "bytes": 11592,
+    "word_count": 1097
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/CHANGELOG.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\CHANGELOG.md",
+    "category": "document",
+    "sha256": "a84b27e03815b8dd0158eaa3418eae416fcc0a07e9c82ceb0752cfb6a57cd09a",
+    "bytes": 40606,
+    "word_count": 4095
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/GOVERNANCE_README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\GOVERNANCE_README.md",
+    "category": "document",
+    "sha256": "d41ba6e960bccb5168f8922fb6fc64a3a92e6b15bd2bd879d3904108c70c220e",
+    "bytes": 2189,
+    "word_count": 314
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/LOCAL_RULES.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\LOCAL_RULES.md",
+    "category": "document",
+    "sha256": "33fa03f85b2b25be34284dc8db68cd7045b6ee3aa44395b911226484befb5fb9",
+    "bytes": 2238,
+    "word_count": 315
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/PACKAGE_MANIFEST.json",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\PACKAGE_MANIFEST.json",
+    "category": "code",
+    "sha256": "11ee04ef4da9e566c7a72cf97cabef60b3f6939e31566be2eeb07be2cd3a2dd7",
+    "bytes": 33686,
+    "word_count": 470
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\README.md",
+    "category": "document",
+    "sha256": "74178187b2e4e586aedb3e18f5325c3423ed7a9bf1f85e6b4dac947536e55050",
+    "bytes": 12128,
+    "word_count": 1080
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/TSIS_ARQUITECTURA_BACKTEST_CIENTIFICO.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\TSIS_ARQUITECTURA_BACKTEST_CIENTIFICO.md",
+    "category": "document",
+    "sha256": "0ba78a6439617208033664d088cf16ad2fd237b0794bf1505ed3de56fab42e88",
+    "bytes": 16941,
+    "word_count": 1313
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/TSIS_ARQUITECTURA_BACKTEST_CIENTIFICO_ASCII.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\TSIS_ARQUITECTURA_BACKTEST_CIENTIFICO_ASCII.md",
+    "category": "document",
+    "sha256": "2bf9fecaf55f481c49e436680e78c44d9c566011e8def4b500d5efdf670873c7",
+    "bytes": 49228,
+    "word_count": 2379
+  },
+  {
+    "path": "00_CTO/14_BACKTEST_ENGINE/TSIS_ARQUITECTURA_BACKTESTER_STATE_PROVIDER_000_018_ASCII.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE\\TSIS_ARQUITECTURA_BACKTESTER_STATE_PROVIDER_000_018_ASCII.md",
+    "category": "document",
+    "sha256": "4d1cb3f0e4bd2a4b7a7ac068f26c43ec569363ca74e378ae07a1b8c3613cf3dc",
+    "bytes": 58625,
+    "word_count": 2320
+  }
+]

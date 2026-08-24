@@ -1,0 +1,255 @@
+{
+  "communities": {
+    "0": [
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_reference_operational_run_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_reference_operational_run_schema_contract_reference_operational_run",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_reference_ticker_types_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_reference_ticker_types_schema_contract_ticker_type_dictionary",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_reference_dataset_contract_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_reference_dataset_contract_v0_1_reference_dataset_family",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_reference_reference_registry_entry_document",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_reference_reference_registry_entry_reference_registry",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_reference_readme_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_reference_readme_reference_inspection_dossier",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_reference_reference_inspection_readout_v0_2_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_reference_reference_inspection_readout_v0_2_human_inspector_ready",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_reference_reference_inspection_readout_v0_2_visual_complete",
+      "01_tsis_data_foundation_01_foundations_module_contracts_event_families_and_reference_inventory_document",
+      "01_tsis_data_foundation_01_foundations_module_contracts_event_families_and_reference_inventory_event_family_inventory"
+    ],
+    "1": [
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_01_contrato_reference_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_01_contrato_reference_identity_snapshot",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_01_contrato_reference_listing_snapshot",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_01_contrato_reference_reference_deep_audit_contract",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_01_contrato_reference_reference_event",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_01_contrato_reference_reference_market_link",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_03_reference_root_cause_audit_phase1_closeout_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_03_reference_root_cause_audit_phase1_closeout_reference_causal_phase_readiness",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_03_reference_root_cause_audit_phase1_closeout_reference_structural_closeout",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_03_reference_root_cause_audit_phase1_closeout_valid_empty_payloads"
+    ],
+    "2": [
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_reference_dividends_schema_contract_dividend_event",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_reference_dividends_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_reference_dividends_schema_contract_valid_no_payload_shape",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_corporate_actions_table_dataset_contract_v0_1_corporate_actions_table",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_corporate_actions_table_dataset_contract_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_corporate_actions_table_consumption_policy_corporate_actions_as_context",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_corporate_actions_table_consumption_policy_document",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_reference_consumption_policy_document",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_reference_consumption_policy_reference_semantic_infrastructure"
+    ],
+    "3": [
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_reference_exchanges_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_reference_exchanges_schema_contract_exchange_reference",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_reference_overview_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_reference_overview_schema_contract_historically_variable_schema",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_reference_overview_schema_contract_ticker_overview_snapshot",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_instrument_master_dataset_contract_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_instrument_master_dataset_contract_v0_1_instrument_master",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_instrument_master_consumption_policy_document",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_instrument_master_consumption_policy_instrument_identity_consumption"
+    ],
+    "4": [
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_04_reference_causal_overlay_closeout_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_04_reference_causal_overlay_closeout_identity_to_trades_weak_link",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_04_reference_causal_overlay_closeout_reference_causal_overlay",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_04_reference_causal_overlay_closeout_split_to_trades_alignment",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_04_reference_causal_overlay_closeout_ticker_change_to_halts_alignment",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_04_reference_causal_overlay_closeout_ticker_change_to_quotes_review",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_reference_01_reference_causal_value_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_reference_01_reference_causal_value_market_residual_explanation",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_reference_01_reference_causal_value_reference_causal_value"
+    ],
+    "5": [
+      "01_tsis_data_foundation_01_foundations_validators_reference_reference_validators_document",
+      "01_tsis_data_foundation_01_foundations_validators_reference_reference_validators_reference_hard_failure_rules",
+      "01_tsis_data_foundation_01_foundations_validators_reference_reference_validators_reference_review_states",
+      "01_tsis_data_foundation_01_foundations_validators_reference_reference_validators_reference_validator_system",
+      "01_tsis_data_foundation_01_foundations_validators_reference_reference_validators_subfamily_specific_validation",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_04_reference_closeout_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_04_reference_closeout_reference_deep_audit_closeout",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_04_reference_closeout_reference_good_review_bad_policy"
+    ],
+    "6": [
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_reference_all_tickers_snapshot_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_reference_all_tickers_snapshot_schema_contract_ticker_not_stable_identity",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_reference_all_tickers_snapshot_schema_contract_ticker_reference_snapshot",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_reference_events_schema_contract_continuity_requires_remap_policy",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_reference_events_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_reference_events_schema_contract_ticker_corporate_event"
+    ],
+    "7": [
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_market_calendar_dataset_contract_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_market_calendar_dataset_contract_v0_1_market_calendar",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_market_calendar_consumption_policy_document",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_market_calendar_consumption_policy_session_aware_consumption",
+      "01_tsis_data_foundation_01_foundations_module_contracts_market_session_scope_document",
+      "01_tsis_data_foundation_01_foundations_module_contracts_market_session_scope_market_session_scope"
+    ],
+    "8": [
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_reference_00_reference_current_state_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_reference_00_reference_current_state_narrow_split_market_link",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_reference_00_reference_current_state_reference_identity_partial_causality",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_reference_02_reference_closeout_certified_reference_closeout",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_reference_02_reference_closeout_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_reference_02_reference_closeout_unconfirmed_split_residue_review"
+    ],
+    "9": [
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_reference_splits_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_reference_splits_schema_contract_split_event",
+      "01_tsis_data_foundation_01_foundations_module_contracts_corporate_actions_adjustment_methodology_corporate_action_adjustment",
+      "01_tsis_data_foundation_01_foundations_module_contracts_corporate_actions_adjustment_methodology_document",
+      "01_tsis_data_foundation_01_foundations_module_contracts_corporate_actions_adjustment_methodology_split_normalization"
+    ]
+  },
+  "cohesion": {
+    "0": 0.17142857142857143,
+    "1": 0.3333333333333333,
+    "2": 0.25,
+    "3": 0.25,
+    "4": 0.3888888888888889,
+    "5": 0.39285714285714285,
+    "6": 0.4666666666666667,
+    "7": 0.3333333333333333,
+    "8": 0.4666666666666667,
+    "9": 0.5
+  },
+  "gods": [
+    {
+      "id": "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_reference_dataset_contract_v0_1_document",
+      "label": "reference dataset contract v0 1",
+      "degree": 12
+    },
+    {
+      "id": "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_04_reference_causal_overlay_closeout_reference_causal_overlay",
+      "label": "Reference Causal Overlay",
+      "degree": 8
+    },
+    {
+      "id": "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_01_contrato_reference_reference_deep_audit_contract",
+      "label": "Reference Deep Audit Contract",
+      "degree": 6
+    },
+    {
+      "id": "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_corporate_actions_table_dataset_contract_v0_1_corporate_actions_table",
+      "label": "Corporate Actions Table",
+      "degree": 5
+    },
+    {
+      "id": "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_instrument_master_dataset_contract_v0_1_instrument_master",
+      "label": "Instrument Master",
+      "degree": 5
+    },
+    {
+      "id": "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_reference_dataset_contract_v0_1_reference_dataset_family",
+      "label": "Reference Dataset Family",
+      "degree": 5
+    },
+    {
+      "id": "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_01_contrato_reference_document",
+      "label": "Reference Audit Contract",
+      "degree": 5
+    },
+    {
+      "id": "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_reference_04_reference_causal_overlay_closeout_document",
+      "label": "Reference Causal Overlay Closeout",
+      "degree": 5
+    },
+    {
+      "id": "01_tsis_data_foundation_01_foundations_validators_reference_reference_validators_reference_validator_system",
+      "label": "Reference Validator System",
+      "degree": 5
+    },
+    {
+      "id": "01_tsis_data_foundation_01_foundations_inspection_dossiers_reference_readme_reference_inspection_dossier",
+      "label": "Reference Inspection Dossier",
+      "degree": 4
+    }
+  ],
+  "surprises": [
+    {
+      "source": "reference dataset contract v0 1",
+      "target": "exchanges schema contract",
+      "source_files": [
+        "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/reference_dataset_contract_v0_1.md",
+        "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/reference/exchanges_schema_contract.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "bridges separate communities; peripheral node `exchanges schema contract` unexpectedly reaches hub `reference dataset contract v0 1`"
+    },
+    {
+      "source": "reference dataset contract v0 1",
+      "target": "splits schema contract",
+      "source_files": [
+        "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/reference_dataset_contract_v0_1.md",
+        "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/reference/splits_schema_contract.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "bridges separate communities; peripheral node `splits schema contract` unexpectedly reaches hub `reference dataset contract v0 1`"
+    },
+    {
+      "source": "Reference Causal Overlay",
+      "target": "Reference Causal Phase Readiness",
+      "source_files": [
+        "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/04_reference_causal_overlay_closeout.md",
+        "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/03_reference_root_cause_audit_phase1_closeout.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "implements",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "Reference Deep Audit Closeout",
+      "target": "Reference Causal Overlay",
+      "source_files": [
+        "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/04_reference_closeout.md",
+        "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/04_reference_causal_overlay_closeout.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "implements",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "Split-to-Trades Alignment",
+      "target": "Narrow Split-Market Link",
+      "source_files": [
+        "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/reference/04_reference_causal_overlay_closeout.md",
+        "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/reference/00_reference_current_state.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `reference dataset contract v0 1` connect `Community 0` to `Community 9`, `Community 2`, `Community 3`, `Community 6`?",
+      "why": "High betweenness centrality (0.186) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Reference Causal Overlay` connect `Community 4` to `Community 1`, `Community 5`?",
+      "why": "High betweenness centrality (0.096) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Reference Dataset Family` connect `Community 0` to `Community 2`?",
+      "why": "High betweenness centrality (0.066) - this node is a cross-community bridge."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 2 inferred relationships involving `Reference Causal Overlay` (e.g. with `Reference Causal Phase Readiness` and `Reference Deep Audit Closeout`) actually correct?",
+      "why": "`Reference Causal Overlay` has 2 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `corporate actions table dataset contract v0 1`, `instrument master dataset contract v0 1`, `market calendar dataset contract v0 1` to the rest of the system?",
+      "why": "11 weakly-connected nodes found - possible documentation gaps or missing edges."
+    }
+  ]
+}

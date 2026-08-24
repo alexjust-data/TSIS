@@ -1,0 +1,467 @@
+{
+  "communities": {
+    "0": [
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_ohlcv_1m_01_contrato_agent02_agent03_ohlcv_1m_04032026_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_ohlcv_1m_01_contrato_agent02_agent03_ohlcv_1m_04032026_minute_agent_audit_contract",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_ohlcv_1m_01_contrato_agent02_agent03_ohlcv_1m_04032026_ticker_month_audit_unit",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_ohlcv_1m_02_diseno_implementacion_ohlcv_1m_v2_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_ohlcv_1m_02_diseno_implementacion_ohlcv_1m_v2_incremental_minute_audit_artifacts",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_ohlcv_1m_02_diseno_implementacion_ohlcv_1m_v2_minute_v2_implementation",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_ohlcv_1m_04_ohlcv_1m_closeout_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_ohlcv_1m_04_ohlcv_1m_closeout_minute_audit_closeout",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_ohlcv_1m_04_ohlcv_1m_closeout_minute_good_review_bad",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_00_1m_current_state_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_00_1m_current_state_full_scope_counts_caveat",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_00_1m_current_state_minute_current_state",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_01_1m_recovery_policy_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_01_1m_recovery_policy_minute_recovery_policy",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_01_1m_recovery_policy_schema_rescue_and_quarantine",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_02_1m_quality_policy_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_02_1m_quality_policy_minute_quality_policy",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_02_1m_quality_policy_vwap_severity_taxonomy",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_03_1m_closeout_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_03_1m_closeout_dominant_recovery_small_quarantine",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_1m_03_1m_closeout_minute_certification_closeout"
+    ],
+    "1": [
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_daily_daily_adjusted_schema_contract_adjustment_provenance",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_daily_daily_adjusted_schema_contract_daily_adjusted_schema",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_daily_daily_adjusted_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_daily_daily_adjusted_schema_contract_economic_daily_continuity",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_daily_daily_return_labels_schema_contract_daily_return_label_schema",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_daily_daily_return_labels_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_daily_daily_return_labels_schema_contract_forward_return_outcomes",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_daily_adjusted_dataset_contract_v0_1_daily_adjusted_v0_1",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_daily_adjusted_dataset_contract_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_daily_adjusted_dataset_contract_v0_1_non_execution_price_view",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_daily_return_labels_dataset_contract_v0_1_daily_return_labels_v0_1",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_daily_return_labels_dataset_contract_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_daily_return_labels_dataset_contract_v0_1_outcome_feature_separation",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_daily_adjusted_consumption_policy_daily_adjusted_consumption",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_daily_adjusted_consumption_policy_document",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_daily_adjusted_consumption_policy_raw_adjusted_separation",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_daily_return_labels_consumption_policy_daily_label_consumption",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_daily_return_labels_consumption_policy_document",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_daily_return_labels_consumption_policy_labels_are_y_not_x"
+    ],
+    "2": [
+      "01_tsis_data_foundation_01_foundations_module_contracts_market_session_scope_document",
+      "01_tsis_data_foundation_01_foundations_module_contracts_market_session_scope_extended_hours_boundary",
+      "01_tsis_data_foundation_01_foundations_module_contracts_market_session_scope_market_session_scope",
+      "01_tsis_data_foundation_01_foundations_module_contracts_ohlcv_1m_quote_guarded_ohlcv_1m_quote_guarded_live_supervision_validation_protocol_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_module_contracts_ohlcv_1m_quote_guarded_ohlcv_1m_quote_guarded_live_supervision_validation_protocol_v0_1_long_run_validation",
+      "01_tsis_data_foundation_01_foundations_module_contracts_ohlcv_1m_quote_guarded_ohlcv_1m_quote_guarded_live_supervision_validation_protocol_v0_1_quote_guarded_live_supervision",
+      "01_tsis_data_foundation_01_foundations_module_contracts_ohlcv_1m_quote_guarded_ohlcv_1m_quote_guarded_lt1b_scope_recovery_protocol_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_module_contracts_ohlcv_1m_quote_guarded_ohlcv_1m_quote_guarded_lt1b_scope_recovery_protocol_v0_1_lt1b_manifest_reconciliation",
+      "01_tsis_data_foundation_01_foundations_module_contracts_ohlcv_1m_quote_guarded_ohlcv_1m_quote_guarded_lt1b_scope_recovery_protocol_v0_1_quote_guarded_scope_recovery",
+      "01_tsis_data_foundation_01_foundations_module_contracts_ohlcv_1m_quote_guarded_ohlcv_1m_quote_guarded_repair_runbook_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_module_contracts_ohlcv_1m_quote_guarded_ohlcv_1m_quote_guarded_repair_runbook_v0_1_quote_envelope_overlay",
+      "01_tsis_data_foundation_01_foundations_module_contracts_ohlcv_1m_quote_guarded_ohlcv_1m_quote_guarded_repair_runbook_v0_1_quote_guarded_repair_runbook",
+      "01_tsis_data_foundation_01_foundations_module_contracts_ohlcv_1m_quote_guarded_ohlcv_1m_quote_guarded_single_reading_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_module_contracts_ohlcv_1m_quote_guarded_ohlcv_1m_quote_guarded_single_reading_v0_1_immutable_raw_overlay",
+      "01_tsis_data_foundation_01_foundations_module_contracts_ohlcv_1m_quote_guarded_ohlcv_1m_quote_guarded_single_reading_v0_1_quote_guarded_single_reading",
+      "01_tsis_data_foundation_01_foundations_module_contracts_ohlcv_1m_quote_guarded_ohlcv_1m_quote_guarded_single_reading_v0_1_vwap_not_reconstructed",
+      "01_tsis_data_foundation_01_foundations_module_contracts_ohlcv_1m_quote_guarded_readme_document",
+      "01_tsis_data_foundation_01_foundations_module_contracts_ohlcv_1m_quote_guarded_readme_promoted_repair_manifest",
+      "01_tsis_data_foundation_01_foundations_module_contracts_ohlcv_1m_quote_guarded_readme_quote_guarded_governance"
+    ],
+    "3": [
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_04_daily_closeout_daily_audit_closeout",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_04_daily_closeout_daily_hard_invalid_tail",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_04_daily_closeout_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_04_daily_closeout_vwap_illiquidity_residue",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_00_daily_current_state_daily_bar_quality_axis",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_00_daily_current_state_daily_coverage_axis",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_00_daily_current_state_daily_current_state",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_00_daily_current_state_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_01_daily_recovery_and_coverage_ambiguous_coverage_review",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_01_daily_recovery_and_coverage_daily_recovery_coverage",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_01_daily_recovery_and_coverage_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_01_daily_recovery_and_coverage_likely_valid_gap_only",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_01_daily_recovery_and_coverage_problematic_unexpected_coverage",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_02_daily_quality_policy_daily_quality_policy",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_02_daily_quality_policy_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_02_daily_quality_policy_recoverable_vwap_residue",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_03_daily_closeout_daily_certification_closeout",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_03_daily_closeout_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_03_daily_closeout_five_state_daily_policy"
+    ],
+    "4": [
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_daily_scanner_candidates_table_dataset_contract_v0_1_candidate_not_state_boundary",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_daily_scanner_candidates_table_dataset_contract_v0_1_daily_scanner_candidates_table",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_daily_scanner_candidates_table_dataset_contract_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_expected_data_calendar_dataset_contract_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_expected_data_calendar_dataset_contract_v0_1_expected_data_calendar",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_expected_data_calendar_dataset_contract_v0_1_expectedness_not_presence",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_master_daily_table_dataset_contract_v0_1_daily_state_component",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_master_daily_table_dataset_contract_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_master_daily_table_dataset_contract_v0_1_master_daily_table",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_master_intraday_bar_table_dataset_contract_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_master_intraday_bar_table_dataset_contract_v0_1_intraday_state_component",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_master_intraday_bar_table_dataset_contract_v0_1_master_intraday_bar_table",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_daily_scanner_candidates_table_consumption_policy_document",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_daily_scanner_candidates_table_consumption_policy_profile_denominator_separation",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_daily_scanner_candidates_table_consumption_policy_scanner_candidate_consumption",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_expected_data_calendar_consumption_policy_coverage_evaluation_authority",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_expected_data_calendar_consumption_policy_document",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_expected_data_calendar_consumption_policy_expected_calendar_consumption"
+    ],
+    "5": [
+      "01_tsis_data_foundation_01_foundations_dataset_registry_ohlcv_1m_ohlcv_1m_split_normalized_pilot_manifest_v0_1_balanced_split_controls",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_ohlcv_1m_ohlcv_1m_split_normalized_pilot_manifest_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_ohlcv_1m_ohlcv_1m_split_normalized_pilot_manifest_v0_1_split_normalized_pilot_manifest",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_1m_split_normalized_event_case_evidence_packs_ohlcv_1m_split_normalized_visual_inspector_pack_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_1m_split_normalized_event_case_evidence_packs_ohlcv_1m_split_normalized_visual_inspector_pack_v0_1_split_visual_inspection",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_1m_split_normalized_notocar_do_not_touch_marker",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_1m_split_normalized_notocar_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_1m_split_normalized_ohlcv_1m_split_normalized_final_readout_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_1m_split_normalized_ohlcv_1m_split_normalized_final_readout_v0_1_real_consumer_validation",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_1m_split_normalized_ohlcv_1m_split_normalized_final_readout_v0_1_split_normalized_final_readout",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_1m_split_normalized_ohlcv_1m_split_normalized_full_universe_audit_readout_v0_1_coverage_limited_events",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_1m_split_normalized_ohlcv_1m_split_normalized_full_universe_audit_readout_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_1m_split_normalized_ohlcv_1m_split_normalized_full_universe_audit_readout_v0_1_split_full_universe_audit",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_1m_split_normalized_ohlcv_1m_split_normalized_pilot_readout_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_1m_split_normalized_ohlcv_1m_split_normalized_pilot_readout_v0_1_split_semantic_pilot",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_1m_split_normalized_readme_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_1m_split_normalized_readme_split_normalized_dossier"
+    ],
+    "6": [
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_ohlcv_1m_ohlcv_1m_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_ohlcv_1m_ohlcv_1m_schema_contract_minute_physical_aliases",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_ohlcv_1m_ohlcv_1m_schema_contract_raw_minute_bar_schema",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_ohlcv_1m_ohlcv_1m_split_normalized_schema_contract_cross_session_scale_comparability",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_ohlcv_1m_ohlcv_1m_split_normalized_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_ohlcv_1m_ohlcv_1m_split_normalized_schema_contract_split_normalized_minute_schema",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_ohlcv_1m_quote_guarded_dataset_contract_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_ohlcv_1m_quote_guarded_dataset_contract_v0_1_quote_evidence_repair",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_ohlcv_1m_quote_guarded_dataset_contract_v0_1_quote_guarded_minute_view",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_ohlcv_1m_raw_dataset_contract_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_ohlcv_1m_raw_dataset_contract_v0_1_ohlcv_1m_raw_v0_1",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_ohlcv_1m_raw_dataset_contract_v0_1_raw_observed_price_scale",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_ohlcv_1m_split_normalized_dataset_contract_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_ohlcv_1m_split_normalized_dataset_contract_v0_1_future_split_factor",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_ohlcv_1m_split_normalized_dataset_contract_v0_1_ohlcv_1m_split_normalized_v0_1"
+    ],
+    "7": [
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_master_daily_table_consumption_policy_document",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_master_daily_table_consumption_policy_explicit_daily_price_view",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_master_daily_table_consumption_policy_master_daily_consumption",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_daily_daily_adjusted_registry_entry_daily_adjusted_registry",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_daily_daily_adjusted_registry_entry_document",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_daily_daily_registry_entry_daily_registry",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_daily_daily_registry_entry_document",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_daily_daily_return_labels_registry_entry_daily_return_labels_registry",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_daily_daily_return_labels_registry_entry_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_daily_adjusted_complex_corporate_actions_tail_audit_v0_1_complex_corporate_actions_tail",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_daily_adjusted_complex_corporate_actions_tail_audit_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_daily_adjusted_complex_corporate_actions_tail_audit_v0_1_ticker_change_continuity_debt",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_daily_adjusted_full_universe_audit_v0_1_complete_file_materialization",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_daily_adjusted_full_universe_audit_v0_1_daily_adjusted_full_universe_audit",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_daily_adjusted_full_universe_audit_v0_1_document"
+    ],
+    "8": [
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_master_intraday_bar_table_consumption_policy_document",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_master_intraday_bar_table_consumption_policy_master_intraday_consumption",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_master_intraday_bar_table_consumption_policy_scoped_intraday_surface",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_ohlcv_1m_quote_guarded_consumption_policy_candidate_not_default",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_ohlcv_1m_quote_guarded_consumption_policy_document",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_ohlcv_1m_quote_guarded_consumption_policy_quote_guarded_consumption",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_ohlcv_1m_quote_guarded_consumption_policy_repair_provenance_gate",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_ohlcv_1m_split_normalized_consumption_policy_document",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_ohlcv_1m_split_normalized_consumption_policy_split_normalized_consumption",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_ohlcv_1m_split_normalized_consumption_policy_split_view_lineage",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_ohlcv_1m_ohlcv_1m_quote_guarded_registry_entry_document",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_ohlcv_1m_ohlcv_1m_quote_guarded_registry_entry_quote_guarded_registry",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_ohlcv_1m_ohlcv_1m_split_normalized_registry_entry_document",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_ohlcv_1m_ohlcv_1m_split_normalized_registry_entry_semantically_validated_pilot",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_ohlcv_1m_ohlcv_1m_split_normalized_registry_entry_split_normalized_registry"
+    ],
+    "9": [
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_minute_core_quality_case_evidence_packs_minute_core_quality_visual_cases_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_minute_core_quality_case_evidence_packs_minute_core_quality_visual_cases_v0_1_minute_core_visual_cases",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_minute_raw_1m_lt1b_closeout_recalculation_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_minute_raw_1m_lt1b_closeout_recalculation_v0_1_raw_minute_lt1b_recalculation",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_minute_raw_1m_lt1b_closeout_recalculation_v0_1_raw_minute_quality_distribution",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_minute_raw_1m_schema_only_lt1b_inspection_readout_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_minute_raw_1m_schema_only_lt1b_inspection_readout_v0_1_schema_only_minute_inspection",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_minute_raw_1m_schema_only_lt1b_inspection_readout_v0_1_schema_rescue_boundary",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_minute_readme_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_minute_readme_minute_inspection_dossier",
+      "01_tsis_data_foundation_01_foundations_validators_ohlcv_1m_ohlcv_1m_raw_validators_document",
+      "01_tsis_data_foundation_01_foundations_validators_ohlcv_1m_ohlcv_1m_raw_validators_minute_quality_state_assignment",
+      "01_tsis_data_foundation_01_foundations_validators_ohlcv_1m_ohlcv_1m_raw_validators_raw_minute_validator_system"
+    ],
+    "10": [
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_daily_daily_schema_contract_daily_hard_invalid_rules",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_daily_daily_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_daily_daily_schema_contract_raw_daily_bar_schema",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_daily_dataset_contract_v0_1_daily_core_v0_1",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_daily_dataset_contract_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_daily_dataset_contract_v0_1_institutional_daily_bar",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_daily_label_taxonomy_and_cut_policy_bar_quality_and_coverage_axes",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_daily_label_taxonomy_and_cut_policy_daily_quality_cut_taxonomy",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_daily_label_taxonomy_and_cut_policy_document",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_daily_consumption_policy_daily_quality_consumption",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_daily_consumption_policy_document",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_daily_consumption_policy_flagged_recoverability"
+    ],
+    "11": [
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_bad_case_evidence_packs_daily_hard_invalid_cases_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_bad_case_evidence_packs_daily_hard_invalid_cases_v0_1_hard_invalid_daily_cases",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_bad_case_evidence_packs_daily_hard_invalid_cases_v0_1_zero_ohlc_invalidation",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_flagged_case_evidence_packs_daily_non_good_quality_cases_v0_1_daily_non_good_cases",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_flagged_case_evidence_packs_daily_non_good_quality_cases_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_flagged_case_evidence_packs_daily_non_good_quality_cases_v0_1_recoverable_with_flag",
+      "01_tsis_data_foundation_01_foundations_validators_daily_daily_validators_daily_validator_system",
+      "01_tsis_data_foundation_01_foundations_validators_daily_daily_validators_document",
+      "01_tsis_data_foundation_01_foundations_validators_daily_daily_validators_primary_secondary_validation"
+    ],
+    "12": [
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_adjusted_readme_daily_adjusted_dossier",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_adjusted_readme_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_readme_daily_inspection_dossier",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_readme_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_readme_institutional_daily_evidence",
+      "01_tsis_data_foundation_01_foundations_validators_daily_daily_adjusted_validators_adjusted_hard_failure_gates",
+      "01_tsis_data_foundation_01_foundations_validators_daily_daily_adjusted_validators_daily_adjusted_validator_system",
+      "01_tsis_data_foundation_01_foundations_validators_daily_daily_adjusted_validators_document"
+    ],
+    "13": [
+      "01_tsis_data_foundation_01_foundations_module_contracts_pipeline_price_view_policy_declared_price_view",
+      "01_tsis_data_foundation_01_foundations_module_contracts_pipeline_price_view_policy_document",
+      "01_tsis_data_foundation_01_foundations_module_contracts_pipeline_price_view_policy_pipeline_price_view_policy",
+      "01_tsis_data_foundation_01_foundations_module_contracts_price_semantics_and_adjustment_policy_document",
+      "01_tsis_data_foundation_01_foundations_module_contracts_price_semantics_and_adjustment_policy_price_semantics_policy",
+      "01_tsis_data_foundation_01_foundations_module_contracts_price_semantics_and_adjustment_policy_raw_split_adjusted_separation",
+      "01_tsis_data_foundation_01_foundations_module_contracts_price_views_registry_document",
+      "01_tsis_data_foundation_01_foundations_module_contracts_price_views_registry_price_views_registry"
+    ],
+    "14": [
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_ohlcv_1m_raw_consumption_policy_document",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_ohlcv_1m_raw_consumption_policy_raw_minute_consumption",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_ohlcv_1m_raw_consumption_policy_raw_minute_quality_filters",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_ohlcv_1m_raw_consumption_policy_vwap_quality_debt",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_ohlcv_1m_ohlcv_1m_raw_registry_entry_document",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_ohlcv_1m_ohlcv_1m_raw_registry_entry_institutional_raw_closeout",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_ohlcv_1m_ohlcv_1m_raw_registry_entry_raw_minute_registry"
+    ],
+    "15": [
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_build_daily_inspection_pack_daily_inspection_pack_builder",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_build_daily_inspection_pack_daily_quality_coverage_separation",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_build_daily_inspection_pack_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_daily_inspection_readout_v0_1_daily_final_quality_states",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_daily_inspection_readout_v0_1_daily_inspection_readout",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_daily_inspection_readout_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_daily_inspection_readout_v0_1_visual_vs_certification_boundary"
+    ],
+    "16": [
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_00_auditoria_daily_daily_audit_proposal",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_00_auditoria_daily_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_00_auditoria_daily_file_and_dataset_schema_distinction",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_ohlcv_1m_00_auditoria_ohlcv_1m_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_ohlcv_1m_00_auditoria_ohlcv_1m_minute_audit_proposal",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_ohlcv_1m_00_auditoria_ohlcv_1m_minute_file_dataset_schema_distinction"
+    ],
+    "17": [
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_01_contrato_agent02_agent03_daily_04032026_daily_agent_audit_contract",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_01_contrato_agent02_agent03_daily_04032026_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_01_contrato_agent02_agent03_daily_04032026_ticker_year_audit_unit",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_02_diseno_implementacion_daily_v2_daily_v2_implementation",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_02_diseno_implementacion_daily_v2_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_02_diseno_implementacion_daily_v2_incremental_daily_audit_artifacts"
+    ],
+    "18": [
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_coverage_case_evidence_packs_daily_coverage_cases_v0_1_aligned_cross_dataset_gaps",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_coverage_case_evidence_packs_daily_coverage_cases_v0_1_daily_coverage_cases",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_coverage_case_evidence_packs_daily_coverage_cases_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_coverage_case_evidence_packs_daily_coverage_cases_v0_1_moderate_coverage_misalignment"
+    ],
+    "19": [
+      "01_tsis_data_foundation_01_foundations_validators_ohlcv_1m_ohlcv_1m_split_normalized_validators_document",
+      "01_tsis_data_foundation_01_foundations_validators_ohlcv_1m_ohlcv_1m_split_normalized_validators_inherited_raw_limitations",
+      "01_tsis_data_foundation_01_foundations_validators_ohlcv_1m_ohlcv_1m_split_normalized_validators_split_event_invariants",
+      "01_tsis_data_foundation_01_foundations_validators_ohlcv_1m_ohlcv_1m_split_normalized_validators_split_normalized_validator_system"
+    ],
+    "20": [
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_daily_eligible_universe_restricted_research_consumption_policy_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_daily_eligible_universe_restricted_research_consumption_policy_v0_1_hash_bound_ab_population",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_daily_eligible_universe_restricted_research_consumption_policy_v0_1_restricted_daily_universe_proxy"
+    ],
+    "21": [
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_good_justification_daily_good_cases_v0_1_daily_good_cases",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_good_justification_daily_good_cases_v0_1_defensible_daily_bars",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_daily_good_justification_daily_good_cases_v0_1_document"
+    ],
+    "22": [
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_local_maintenance_daily_audit_maintenance",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_local_maintenance_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_local_maintenance_historical_semantics_preserved"
+    ]
+  },
+  "cohesion": {
+    "0": 0.13333333333333333,
+    "1": 0.14619883040935672,
+    "2": 0.15789473684210525,
+    "3": 0.17543859649122806,
+    "4": 0.1503267973856209,
+    "5": 0.15441176470588236,
+    "6": 0.18095238095238095,
+    "7": 0.1619047619047619,
+    "8": 0.19047619047619047,
+    "9": 0.20512820512820512,
+    "10": 0.21212121212121213,
+    "11": 0.3055555555555556,
+    "12": 0.32142857142857145,
+    "13": 0.32142857142857145,
+    "14": 0.42857142857142855,
+    "15": 0.42857142857142855,
+    "16": 0.4666666666666667,
+    "17": 0.4666666666666667,
+    "18": 0.8333333333333334,
+    "19": 0.8333333333333334,
+    "20": 1.0,
+    "21": 1.0,
+    "22": 1.0
+  },
+  "gods": [
+    {
+      "id": "01_tsis_data_foundation_01_foundations_module_contracts_ohlcv_1m_quote_guarded_ohlcv_1m_quote_guarded_single_reading_v0_1_quote_guarded_single_reading",
+      "label": "Quote-Guarded Single Reading",
+      "degree": 6
+    },
+    {
+      "id": "01_tsis_data_foundation_01_foundations_module_contracts_ohlcv_1m_quote_guarded_readme_quote_guarded_governance",
+      "label": "Quote-Guarded Governance",
+      "degree": 6
+    },
+    {
+      "id": "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_daily_01_daily_recovery_and_coverage_daily_recovery_coverage",
+      "label": "Daily Recovery and Coverage",
+      "degree": 6
+    },
+    {
+      "id": "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_daily_adjusted_dataset_contract_v0_1_daily_adjusted_v0_1",
+      "label": "Daily Adjusted v0.1",
+      "degree": 5
+    },
+    {
+      "id": "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_daily_return_labels_dataset_contract_v0_1_daily_return_labels_v0_1",
+      "label": "Daily Return Labels v0.1",
+      "degree": 5
+    },
+    {
+      "id": "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_expected_data_calendar_dataset_contract_v0_1_expected_data_calendar",
+      "label": "Expected Data Calendar",
+      "degree": 5
+    },
+    {
+      "id": "01_tsis_data_foundation_01_foundations_data_consumption_policies_master_daily_table_consumption_policy_master_daily_consumption",
+      "label": "Master Daily Consumption",
+      "degree": 5
+    },
+    {
+      "id": "01_tsis_data_foundation_01_foundations_data_consumption_policies_master_intraday_bar_table_consumption_policy_master_intraday_consumption",
+      "label": "Master Intraday Consumption",
+      "degree": 5
+    },
+    {
+      "id": "01_tsis_data_foundation_01_foundations_data_consumption_policies_ohlcv_1m_quote_guarded_consumption_policy_quote_guarded_consumption",
+      "label": "Quote-Guarded Consumption",
+      "degree": 5
+    },
+    {
+      "id": "01_tsis_data_foundation_01_foundations_inspection_dossiers_1m_split_normalized_ohlcv_1m_split_normalized_final_readout_v0_1_split_normalized_final_readout",
+      "label": "Split-Normalized Final Readout",
+      "degree": 5
+    }
+  ],
+  "surprises": [
+    {
+      "source": "VWAP Illiquidity Residue",
+      "target": "VWAP Severity Taxonomy",
+      "source_files": [
+        "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/daily/04_daily_closeout.md",
+        "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/1m/02_1m_quality_policy.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "Raw Observed Price Scale",
+      "target": "Cross-Session Scale Comparability",
+      "source_files": [
+        "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/ohlcv_1m_raw_dataset_contract_v0_1.md",
+        "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/ohlcv_1m/ohlcv_1m_split_normalized_schema_contract.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "Daily Registry",
+      "target": "Master Daily Consumption",
+      "source_files": [
+        "01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/daily/daily_registry_entry.yaml",
+        "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/master_daily_table_consumption_policy.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; peripheral node `Daily Registry` unexpectedly reaches hub `Master Daily Consumption`"
+    },
+    {
+      "source": "Daily Return Labels Registry",
+      "target": "Master Daily Consumption",
+      "source_files": [
+        "01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/daily/daily_return_labels_registry_entry.yaml",
+        "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/master_daily_table_consumption_policy.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; peripheral node `Daily Return Labels Registry` unexpectedly reaches hub `Master Daily Consumption`"
+    },
+    {
+      "source": "Quote-Guarded Registry",
+      "target": "Quote-Guarded Consumption",
+      "source_files": [
+        "01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/ohlcv_1m/ohlcv_1m_quote_guarded_registry_entry.yaml",
+        "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/ohlcv_1m_quote_guarded_consumption_policy.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "references",
+      "why": "inferred connection - not explicitly stated in source; peripheral node `Quote-Guarded Registry` unexpectedly reaches hub `Quote-Guarded Consumption`"
+    }
+  ],
+  "questions": [
+    {
+      "type": "ambiguous_edge",
+      "question": "What is the exact relationship between `Do-Not-Touch Marker` and `Split-Normalized Inspection Dossier`?",
+      "why": "Edge tagged AMBIGUOUS (relation: rationale_for) - confidence is low."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Daily Hard-Invalid Tail` connect `Community 3` to `Community 0`?",
+      "why": "High betweenness centrality (0.012) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Daily Audit Closeout` connect `Community 3` to `Community 17`?",
+      "why": "High betweenness centrality (0.012) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `Institutional Daily Bar`, `Daily Adjusted Registry Entry`, `Daily Registry Entry` to the rest of the system?",
+      "why": "13 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 0` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 1` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.14619883040935672 - nodes in this community are weakly interconnected."
+    }
+  ]
+}

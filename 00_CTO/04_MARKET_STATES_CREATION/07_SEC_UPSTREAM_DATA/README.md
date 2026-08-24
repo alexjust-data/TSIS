@@ -1,13 +1,23 @@
 El proceso SEC PIT no está en una única carpeta. En `C:\TSIS_Data` está dividido por función; los documentos pesados descargados están en `D:`.
 
+## Preparación vigente Massive SEC v0.1
+
+La descarga Massive todavía no está autorizada. La autoridad de alcance es
+01_MASSIVE_SEC_OBJETIVO_01.md; el plan ejecutable/recovery y el registro vivo
+son 04_MASSIVE_SEC_ACQUISITION_EXECUTION_AND_RECOVERY_PLAN_v0_1.md y
+05_MASSIVE_SEC_ACQUISITION_MILESTONE_REGISTER_v0_1.md. El output pesado
+reservado es D:/sec_float_pit_MASSIVE. El plan-only pasó sin red ni escritura
+en D; licencia/retención, probe live y full run siguen pendientes.
+
 Para entregar a otro agente la preparación específica de Massive SEC, usar:
 
-- [Handoff Massive SEC](C:/TSIS_Data/00_CTO/04_MARKET_STATES_CREATION/07_SEC_UPSTREAM_DATA/02_MASSIVE_SEC_AGENT_HANDOFF_v0_1.md)
-- [Readout del paquete](C:/TSIS_Data/00_CTO/04_MARKET_STATES_CREATION/07_SEC_UPSTREAM_DATA/03_MASSIVE_SEC_HANDOFF_PACKAGE_READOUT_v0_1.md)
-- `MASSIVE_SEC_DOWNLOAD_AGENT_HANDOFF_v0_1.zip`
+- [Handoff Massive SEC vigente](C:/TSIS_Data/00_CTO/04_MARKET_STATES_CREATION/07_SEC_UPSTREAM_DATA/02_MASSIVE_SEC_AGENT_HANDOFF_v0_2.md)
 
-El ZIP es contexto portable y no constituye autorización para lanzar una
-descarga larga.
+Los artefactos v0.1 se conservan como handoff histórico previo a la
+implementación y no describen el estado ejecutable vigente.
+
+El ZIP v0.1 original es contexto histórico portable y no constituye
+autorización para lanzar una descarga larga.
 
 La antigua carpeta:
 

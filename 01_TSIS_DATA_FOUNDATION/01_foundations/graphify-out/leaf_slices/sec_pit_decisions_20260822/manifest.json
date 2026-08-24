@@ -1,0 +1,1252 @@
+{
+  "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit/massive_sec_disclosure_taxonomy_schema_contract_v0_1.md": {
+    "mtime": 1787382508.929883,
+    "ast_hash": "7a9134cc708e3168635eeb37c8204427",
+    "semantic_hash": "7a9134cc708e3168635eeb37c8204427"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit/massive_sec_edgar_index_schema_contract_v0_1.md": {
+    "mtime": 1787382508.927882,
+    "ast_hash": "eee27c9a43d0f5e76631bc2d794625f2",
+    "semantic_hash": "eee27c9a43d0f5e76631bc2d794625f2"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit/massive_sec_eight_k_disclosures_schema_contract_v0_1.md": {
+    "mtime": 1787382508.929883,
+    "ast_hash": "22dd850b99660f01673f3e9a8fb0376d",
+    "semantic_hash": "22dd850b99660f01673f3e9a8fb0376d"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit/massive_sec_eight_k_text_schema_contract_v0_1.md": {
+    "mtime": 1787382508.9308813,
+    "ast_hash": "4531fe7584f0aac50bd80ec70dceeb65",
+    "semantic_hash": "4531fe7584f0aac50bd80ec70dceeb65"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit/massive_sec_form_13f_schema_contract_v0_1.md": {
+    "mtime": 1787382508.9308813,
+    "ast_hash": "5f0f5921a663fe61e17145be7f78a956",
+    "semantic_hash": "5f0f5921a663fe61e17145be7f78a956"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit/massive_sec_form_3_schema_contract_v0_1.md": {
+    "mtime": 1787382508.927882,
+    "ast_hash": "c482dcc8fe8e2e5648bdc0bb02728675",
+    "semantic_hash": "c482dcc8fe8e2e5648bdc0bb02728675"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit/massive_sec_form_4_schema_contract_v0_1.md": {
+    "mtime": 1787382508.928881,
+    "ast_hash": "732492819612a206deab26fd32d0b6b7",
+    "semantic_hash": "732492819612a206deab26fd32d0b6b7"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit/massive_sec_runtime_artifacts_schema_contract_v0_1.md": {
+    "mtime": 1787382508.9268801,
+    "ast_hash": "4bb1fefabf3013f20a053e38f4eae59e",
+    "semantic_hash": "4bb1fefabf3013f20a053e38f4eae59e"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit/README.md": {
+    "mtime": 1787382508.925883,
+    "ast_hash": "0aecb918d8997ecf66ecffb42ffdfe95",
+    "semantic_hash": "0aecb918d8997ecf66ecffb42ffdfe95"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit_resolved_daily_states_schema_contract_v0_1.md": {
+    "mtime": 1786349538.4487183,
+    "ast_hash": "c54904a22c133cdeef8e49f82a2937ca",
+    "semantic_hash": "c54904a22c133cdeef8e49f82a2937ca"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit_resolved_daily_states_schema_contract_v0_2.md": {
+    "mtime": 1786446800.735903,
+    "ast_hash": "d9addb06680969fc8a5fcaaa254050c8",
+    "semantic_hash": "d9addb06680969fc8a5fcaaa254050c8"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit_source_observations_schema_contract_v0_1.md": {
+    "mtime": 1786346188.1785996,
+    "ast_hash": "b86a3884ac9fab6f06aa210d8ee3732d",
+    "semantic_hash": "b86a3884ac9fab6f06aa210d8ee3732d"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/sec_pit_fundamental_evidence_dataset_contract_v0_1.md": {
+    "mtime": 1786349588.225422,
+    "ast_hash": "20b9165656a00555a36d6b60e6eadd08",
+    "semantic_hash": "20b9165656a00555a36d6b60e6eadd08"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/sec_pit_massive_structured_evidence_dataset_contract_v0_1.md": {
+    "mtime": 1787382457.1587574,
+    "ast_hash": "a947125089ae83a261602e94893eaacb",
+    "semantic_hash": "a947125089ae83a261602e94893eaacb"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/sec_pit_predownload_control_dataset_contract_v0_2.md": {
+    "mtime": 1786443758.6007478,
+    "ast_hash": "efa0e5b2fa5c94a93ccf17f840ed2531",
+    "semantic_hash": "efa0e5b2fa5c94a93ccf17f840ed2531"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/sec_pit_fundamental_evidence_consumption_policy_v0_1.md": {
+    "mtime": 1786346188.1796117,
+    "ast_hash": "74ae3bab702db6e1fd84c30ba169e7c7",
+    "semantic_hash": "74ae3bab702db6e1fd84c30ba169e7c7"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/sec_pit_massive_structured_evidence_consumption_policy_v0_1.md": {
+    "mtime": 1787382457.1587574,
+    "ast_hash": "4a18ec8ebc90b2ab36233de4ea7636b7",
+    "semantic_hash": "4a18ec8ebc90b2ab36233de4ea7636b7"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/sec_pit_predownload_control_consumption_policy_v0_2.md": {
+    "mtime": 1786441489.8983464,
+    "ast_hash": "fa403f9d022545606130c8e332c8c01f",
+    "semantic_hash": "fa403f9d022545606130c8e332c8c01f"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/sec_pit/massive_sec_structured_evidence_registry_v0_1.md": {
+    "mtime": 1787382457.1597571,
+    "ast_hash": "ddf8e70c065cfd5a9422361cdea16051",
+    "semantic_hash": "ddf8e70c065cfd5a9422361cdea16051"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/MASSIVE_SEC_ACQUISITION_FINAL_CERTIFICATION_READOUT_v0_1.md": {
+    "mtime": 1787382565.8482196,
+    "ast_hash": "239a9a913d86bef01ebbb5e25b53583f",
+    "semantic_hash": "239a9a913d86bef01ebbb5e25b53583f"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/MASSIVE_SEC_ACQUISITION_PREPARATION_READOUT_v0_1.md": {
+    "mtime": 1787382565.8462186,
+    "ast_hash": "e6de3213e2f7d69711da7aac342e80c6",
+    "semantic_hash": "e6de3213e2f7d69711da7aac342e80c6"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/MASSIVE_SEC_FULL_RUN_AUTHORIZATION_READOUT_v0_1.md": {
+    "mtime": 1787382565.8482196,
+    "ast_hash": "ebd08ae382fe12da39108e5332727efc",
+    "semantic_hash": "ebd08ae382fe12da39108e5332727efc"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/MASSIVE_SEC_PRODUCTION_EQUIVALENT_PROBE_AND_STORAGE_PROJECTION_READOUT_v0_1.md": {
+    "mtime": 1787382565.8472195,
+    "ast_hash": "b3843e0ec6fe7f9f719acd8e5f156b89",
+    "semantic_hash": "b3843e0ec6fe7f9f719acd8e5f156b89"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/MASSIVE_SEC_RESUME_POWER_LOSS_AND_DUPLICATE_WRITER_CERTIFICATION_READOUT_v0_1.md": {
+    "mtime": 1787382565.8462186,
+    "ast_hash": "fffd84dd52bdb053c2d44a1198563c3c",
+    "semantic_hash": "fffd84dd52bdb053c2d44a1198563c3c"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/README.md": {
+    "mtime": 1787382697.5786452,
+    "ast_hash": "51c8366570b9bdbc8b4de3a0ce0d1aa2",
+    "semantic_hash": "51c8366570b9bdbc8b4de3a0ce0d1aa2"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_100_CASE_IDENTITY_DATE_AND_AGGREGATE_LOOP_READOUT_v0_1.md": {
+    "mtime": 1786556407.3804421,
+    "ast_hash": "7f87b626d30258fbbf8c262d01395eb4",
+    "semantic_hash": "7f87b626d30258fbbf8c262d01395eb4"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_100_CASE_OPTION_INCLUSIVE_AND_SCHEMA_V0_13_READOUT_v0_1.md": {
+    "mtime": 1786573161.6349273,
+    "ast_hash": "bac1af510ea164e8746d4c32c82b3d59",
+    "semantic_hash": "bac1af510ea164e8746d4c32c82b3d59"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_100_CASE_OS_MULTI_EVIDENCE_SHARD_CERTIFICATION_v0_1.md": {
+    "mtime": 1786529710.6206305,
+    "ast_hash": "fe4ebc23d3605d86b66bb9ba930127a5",
+    "semantic_hash": "fe4ebc23d3605d86b66bb9ba930127a5"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_100_CASE_OWNERSHIP_TABLE_PARSER_SHARD_CERTIFICATION_v0_1.md": {
+    "mtime": 1786535529.6674035,
+    "ast_hash": "35c60720e3215282bab6b7361ab8eb61",
+    "semantic_hash": "35c60720e3215282bab6b7361ab8eb61"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_100_CASE_STRATIFIED_SCALE_GATE_READOUT_v0_1.md": {
+    "mtime": 1786532515.3954782,
+    "ast_hash": "c9a195263ae3ec4d6bb53300f6886260",
+    "semantic_hash": "c9a195263ae3ec4d6bb53300f6886260"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_4824_DESCENDING_PREFLIGHT_READOUT_v0_1.md": {
+    "mtime": 1786658291.5681913,
+    "ast_hash": "50f34aa237dbf173372459f1f0780200",
+    "semantic_hash": "50f34aa237dbf173372459f1f0780200"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_ADAPTIVE_BASELINE_COMPANYFACTS_FULL_INTERVAL_AND_SHARD_CERTIFICATION_READOUT_v0_1.md": {
+    "mtime": 1786477206.0773923,
+    "ast_hash": "bb5d2ffb94293c87af8c57683b0eb8a6",
+    "semantic_hash": "bb5d2ffb94293c87af8c57683b0eb8a6"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_EXACT_SHARE_CLASS_RECOVERY_AND_V0_21_READOUT_v0_1.md": {
+    "mtime": 1786654801.010233,
+    "ast_hash": "0cdca7f6a3310d77c20b8ee89de7b6de",
+    "semantic_hash": "0cdca7f6a3310d77c20b8ee89de7b6de"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_INSTRUMENT_INTERVAL_RECOVERY_AND_V0_18_READOUT_v0_1.md": {
+    "mtime": 1786632043.2378135,
+    "ast_hash": "81ca6f963baab74d822993cf546e6146",
+    "semantic_hash": "81ca6f963baab74d822993cf546e6146"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_OPTION_INCLUSIVE_CURRENT_SHARES_AND_PHYSICAL_SCHEMA_SHARD_CERTIFICATION_v0_1.md": {
+    "mtime": 1786569952.0657885,
+    "ast_hash": "e8e2a2341952ddbb6d817614c5d1d182",
+    "semantic_hash": "e8e2a2341952ddbb6d817614c5d1d182"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_OS_AND_OVERLAP_RECOVERY_AND_V0_19_READOUT_v0_1.md": {
+    "mtime": 1786639142.0737257,
+    "ast_hash": "ddec371ff55723caa7eb0bf712f29e4b",
+    "semantic_hash": "ddec371ff55723caa7eb0bf712f29e4b"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_OWNERSHIP_HTML_WHITESPACE_SHARD_CERTIFICATION_v0_1.md": {
+    "mtime": 1786554046.5899146,
+    "ast_hash": "4780203771ebae8d3e51e48b600d807f",
+    "semantic_hash": "4780203771ebae8d3e51e48b600d807f"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_OWNERSHIP_IDENTITY_AND_RECORD_DATE_SHARD_CERTIFICATION_v0_1.md": {
+    "mtime": 1786548389.5845325,
+    "ast_hash": "76329f239f03cdea4133aceb33e3f558",
+    "semantic_hash": "76329f239f03cdea4133aceb33e3f558"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_OWNERSHIP_SPLIT_GATE_SHARD_CERTIFICATION_v0_1.md": {
+    "mtime": 1786542902.92383,
+    "ast_hash": "d6adb0224cba6ce9c46c408c0716f175",
+    "semantic_hash": "d6adb0224cba6ce9c46c408c0716f175"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_PGAC_NO_NETWORK_OS_PROBE_READOUT_v0_1.md": {
+    "mtime": 1786447929.4840825,
+    "ast_hash": "99ce6e45c6d7ed52832d9ad841824642",
+    "semantic_hash": "99ce6e45c6d7ed52832d9ad841824642"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_PGAC_OWNERSHIP_AND_OWNER_EXCLUSION_PROBE_READOUT_v0_1.md": {
+    "mtime": 1786461254.374196,
+    "ast_hash": "f9cd9d829585d2b1994871ca2d70cc61",
+    "semantic_hash": "f9cd9d829585d2b1994871ca2d70cc61"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_PGAC_PRIMARY_ACQUISITION_PILOT_READOUT_v0_1.md": {
+    "mtime": 1786444715.1381028,
+    "ast_hash": "cdc4cce6fcab50d3047bbb08f0c3bf08",
+    "semantic_hash": "cdc4cce6fcab50d3047bbb08f0c3bf08"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_PREDOWNLOAD_CONTROL_SEVEN_CASE_READOUT_v0_1.md": {
+    "mtime": 1786443758.603861,
+    "ast_hash": "2f9f9ea3f0cfbc341d387a9a0678209c",
+    "semantic_hash": "2f9f9ea3f0cfbc341d387a9a0678209c"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_RESIDUAL_OWNERSHIP_LAYOUT_AND_EXPLICIT_ZERO_SHARD_CERTIFICATION_v0_1.md": {
+    "mtime": 1786557611.5898418,
+    "ast_hash": "0043ea5d70be512f207310cd52e29c75",
+    "semantic_hash": "0043ea5d70be512f207310cd52e29c75"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_SEVEN_TICKER_OWNER_EXCLUSION_STRATIFIED_PROBE_READOUT_v0_1.md": {
+    "mtime": 1786465040.303882,
+    "ast_hash": "8d44874879f9ecfa22ad3f0e37fa1e49",
+    "semantic_hash": "8d44874879f9ecfa22ad3f0e37fa1e49"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_SHARE_CLASS_RECOVERY_AND_V0_16_READOUT_v0_1.md": {
+    "mtime": 1786616136.0315523,
+    "ast_hash": "2b91943e3b033a6ef3c5185e3b50b976",
+    "semantic_hash": "2b91943e3b033a6ef3c5185e3b50b976"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/sec_pit/massive_sec_acquisition_operator_runbook_v0_1.md": {
+    "mtime": 1787382394.0457225,
+    "ast_hash": "e9199ad4d3e40f801c7edb3ea5e197c9",
+    "semantic_hash": "e9199ad4d3e40f801c7edb3ea5e197c9"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/sec_pit/massive_sec_acquisition_runtime_recovery_and_handoff_contract_v0_1.md": {
+    "mtime": 1787382335.189891,
+    "ast_hash": "ae84111a56d717dcacf747d8af6ed03f",
+    "semantic_hash": "ae84111a56d717dcacf747d8af6ed03f"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/sec_pit/sec_pit_storage_root_and_legacy_pilot_decision_v0_1.md": {
+    "mtime": 1786661325.2127106,
+    "ast_hash": "1b9bc4af99f3c106677f791e11257de5",
+    "semantic_hash": "1b9bc4af99f3c106677f791e11257de5"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/validators/sec_pit/massive_sec_acquisition_validators_v0_1.md": {
+    "mtime": 1787382457.1597571,
+    "ast_hash": "061c874c363aeb2d93a78e34581d7142",
+    "semantic_hash": "061c874c363aeb2d93a78e34581d7142"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/validators/sec_pit/sec_pit_predownload_control_validators_v0_2.md": {
+    "mtime": 1786441489.8983464,
+    "ast_hash": "3a34e0971230edd64e25dcac630397c8",
+    "semantic_hash": "3a34e0971230edd64e25dcac630397c8"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/massive_sec_acquisition_v0_1.json": {
+    "mtime": 1787381066.1047914,
+    "ast_hash": "7bde5418e01b989d01a6252cfda78e8f",
+    "semantic_hash": "7bde5418e01b989d01a6252cfda78e8f"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/massive_sec_download_authorization_TEMPLATE_v0_1.json": {
+    "mtime": 1787382033.3701427,
+    "ast_hash": "d57caadc9c97553d943b1cdfaf08da99",
+    "semantic_hash": "d57caadc9c97553d943b1cdfaf08da99"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/massive_sec_target_manifest_v0_1.json": {
+    "mtime": 1787381066.1057916,
+    "ast_hash": "3f347fca67f79c017ace9a9036a12711",
+    "semantic_hash": "3f347fca67f79c017ace9a9036a12711"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/sec_pit_100_case_candidate_pool_v0_1.json": {
+    "mtime": 1786479246.0925496,
+    "ast_hash": "e005177b1c62a77aef31deaf5cd96a76",
+    "semantic_hash": "e005177b1c62a77aef31deaf5cd96a76"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/sec_pit_100_case_final_sample_v0_1.json": {
+    "mtime": 1786479881.6455784,
+    "ast_hash": "29438cf9743ea64c8fe951d80900ccd5",
+    "semantic_hash": "29438cf9743ea64c8fe951d80900ccd5"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/sec_pit_100_case_predownload_control_v0_1.json": {
+    "mtime": 1786480115.3532739,
+    "ast_hash": "4d4153658bd8d5b8dfaacf9dfba181fd",
+    "semantic_hash": "4d4153658bd8d5b8dfaacf9dfba181fd"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/sec_pit_4824_descending_acquisition_preflight_v0_1.json": {
+    "mtime": 1786656943.6480687,
+    "ast_hash": "6a48a45243e596de22773afa072eb227",
+    "semantic_hash": "6a48a45243e596de22773afa072eb227"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/sec_pit_lifecycle_source_selection_policy_v0_1.json": {
+    "mtime": 1786387756.3262696,
+    "ast_hash": "55e7e00d7f645a0489b2858f77e0b9be",
+    "semantic_hash": "55e7e00d7f645a0489b2858f77e0b9be"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/sec_pit_lifecycle_source_selection_policy_v0_2.json": {
+    "mtime": 1786389586.2630656,
+    "ast_hash": "34a7b589e643db003b1cd7347a1fedd6",
+    "semantic_hash": "34a7b589e643db003b1cd7347a1fedd6"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/sec_pit_lifecycle_window_reconciliation_v0_1.json": {
+    "mtime": 1786391192.7673705,
+    "ast_hash": "f4c206372b276b202064848b6470e1d5",
+    "semantic_hash": "f4c206372b276b202064848b6470e1d5"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/sec_pit_one_ticker_pilot_v0_1.json": {
+    "mtime": 1786345647.8680809,
+    "ast_hash": "fcea4da097d57a6196d8a98a230f2b0e",
+    "semantic_hash": "fcea4da097d57a6196d8a98a230f2b0e"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/sec_pit_owner_exclusion_100_case_anchor_delta_probe_v0_1.json": {
+    "mtime": 1786480444.4996746,
+    "ast_hash": "713df4bd3687916c90925ee81a04d744",
+    "semantic_hash": "713df4bd3687916c90925ee81a04d744"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/sec_pit_owner_exclusion_100_case_probe_v0_1.json": {
+    "mtime": 1786480315.815537,
+    "ast_hash": "a5bd911da19013f15366277f57ee0238",
+    "semantic_hash": "a5bd911da19013f15366277f57ee0238"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/sec_pit_owner_exclusion_100_case_probe_v0_2.json": {
+    "mtime": 1786481113.3828952,
+    "ast_hash": "c97ecedc0a8ffed5452f2f789a0ec6ad",
+    "semantic_hash": "c97ecedc0a8ffed5452f2f789a0ec6ad"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/sec_pit_owner_exclusion_100_case_probe_v0_3.json": {
+    "mtime": 1786542747.8662994,
+    "ast_hash": "37aab9bfd1f66ce5168727fe5f42681f",
+    "semantic_hash": "37aab9bfd1f66ce5168727fe5f42681f"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/sec_pit_owner_exclusion_full_interval_3t_probe_v0_1.json": {
+    "mtime": 1786476031.1951554,
+    "ast_hash": "63fea94e571a8de1352d28effd49f2b5",
+    "semantic_hash": "63fea94e571a8de1352d28effd49f2b5"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/sec_pit_owner_exclusion_methodology_v0_1.json": {
+    "mtime": 1786351757.9838102,
+    "ast_hash": "1f554e935c15832fd94e42b73e8bfbfa",
+    "semantic_hash": "1f554e935c15832fd94e42b73e8bfbfa"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/sec_pit_owner_exclusion_pgac_probe_v0_1.json": {
+    "mtime": 1786460599.7290843,
+    "ast_hash": "2287a1ecf67981e29c44fe298c9fac80",
+    "semantic_hash": "2287a1ecf67981e29c44fe298c9fac80"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/sec_pit_owner_exclusion_stratified_probe_v0_1.json": {
+    "mtime": 1786461986.1983984,
+    "ast_hash": "06e0c4e5365dea098c5e43ede22c8624",
+    "semantic_hash": "06e0c4e5365dea098c5e43ede22c8624"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/sec_pit_owner_exclusion_stratified_probe_v0_2.json": {
+    "mtime": 1786468393.2674315,
+    "ast_hash": "00cb740967df9bb7e1ee93f3b72e2e90",
+    "semantic_hash": "00cb740967df9bb7e1ee93f3b72e2e90"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/sec_pit_primary_download_authorization_c01_t01_0250_v0_1_20260814.json": {
+    "mtime": 1786692494.6210248,
+    "ast_hash": "12e1579a30c1d28524a10fa475393ed4",
+    "semantic_hash": "12e1579a30c1d28524a10fa475393ed4"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/sec_pit_primary_download_authorization_pgac_pilot_v0_2_20260811.json": {
+    "mtime": 1786444478.8787377,
+    "ast_hash": "104821cf7a633e4ed51acf515a7eb50a",
+    "semantic_hash": "104821cf7a633e4ed51acf515a7eb50a"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/sec_pit_primary_download_authorization_TEMPLATE_v0_2.json": {
+    "mtime": 1786441489.8983464,
+    "ast_hash": "bb918183f67d564f195799ff169f5c4a",
+    "semantic_hash": "bb918183f67d564f195799ff169f5c4a"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/sec_pit_seven_ticker_predownload_control_v0_2.json": {
+    "mtime": 1786441360.8206277,
+    "ast_hash": "029bd8e87541084eeb48843c7f091b50",
+    "semantic_hash": "029bd8e87541084eeb48843c7f091b50"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/sec_pit_seven_ticker_stratified_replay_v0_1.json": {
+    "mtime": 1786381255.659917,
+    "ast_hash": "fbed0473f09d90f62daf5a6b0417925b",
+    "semantic_hash": "fbed0473f09d90f62daf5a6b0417925b"
+  },
+  "01_TSIS_DATA_FOUNDATION/configs/sec_pit_target_interval_filing_review_v0_1.json": {
+    "mtime": 1786390726.1484966,
+    "ast_hash": "631b27d524688657024b1e9c7729f7c5",
+    "semantic_hash": "631b27d524688657024b1e9c7729f7c5"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/__init__.py": {
+    "mtime": 1786345396.617342,
+    "ast_hash": "4955fb447c5ccf2a019f24478158e19c",
+    "semantic_hash": "4955fb447c5ccf2a019f24478158e19c"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/assignment_restriction_extract.py": {
+    "mtime": 1786374346.5546303,
+    "ast_hash": "cd0fabd209c21bdcf3986ce3a4d1e14f",
+    "semantic_hash": "cd0fabd209c21bdcf3986ce3a4d1e14f"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/assignment_schedule_link.py": {
+    "mtime": 1786375297.9246824,
+    "ast_hash": "3e6add3c79b10ba254e3e9fed0967a1f",
+    "semantic_hash": "3e6add3c79b10ba254e3e9fed0967a1f"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/audit_authorized_primary_acquisition_v0_1.py": {
+    "mtime": 1786791803.5223975,
+    "ast_hash": "85febaed5a5d49b8bfe5c15c62bc2882",
+    "semantic_hash": "85febaed5a5d49b8bfe5c15c62bc2882"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/audit_existing_pilot.py": {
+    "mtime": 1786346188.1775959,
+    "ast_hash": "6bcc2f346a60f6533dcc35539c9d2cbb",
+    "semantic_hash": "6bcc2f346a60f6533dcc35539c9d2cbb"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/audit_instrument_interval_recovery.py": {
+    "mtime": 1786617661.868701,
+    "ast_hash": "ecf440d88ecc010b1fb6b0a0a92593f5",
+    "semantic_hash": "ecf440d88ecc010b1fb6b0a0a92593f5"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/audit_lifecycle_metadata_lane.py": {
+    "mtime": 1786389585.9447966,
+    "ast_hash": "05c29305d86b2758675da661a799e59a",
+    "semantic_hash": "05c29305d86b2758675da661a799e59a"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/audit_lifecycle_primary_acquisition.py": {
+    "mtime": 1786388951.7987971,
+    "ast_hash": "ff274d5d6a46ccdfd201a0257fd41ca2",
+    "semantic_hash": "ff274d5d6a46ccdfd201a0257fd41ca2"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/audit_massive_sec_acquisition.py": {
+    "mtime": 1787381625.6672115,
+    "ast_hash": "2a0e824489f299a8e7db6098df02d1f2",
+    "semantic_hash": "2a0e824489f299a8e7db6098df02d1f2"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/audit_os_unavailable_shard_certification.py": {
+    "mtime": 1786636443.5600386,
+    "ast_hash": "8351cd9a5884e0b818264513d8964e71",
+    "semantic_hash": "8351cd9a5884e0b818264513d8964e71"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/audit_overlap_recovery.py": {
+    "mtime": 1786637262.8544388,
+    "ast_hash": "7cea590ab6477ad2c011fc8531efd995",
+    "semantic_hash": "7cea590ab6477ad2c011fc8531efd995"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/audit_sharded_variable_certification.py": {
+    "mtime": 1786606726.110893,
+    "ast_hash": "6b15159b6ee7aec7caab643881518f74",
+    "semantic_hash": "6b15159b6ee7aec7caab643881518f74"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/audit_share_class_recovery.py": {
+    "mtime": 1786605506.7349331,
+    "ast_hash": "79791f829f5f8264d10d8420f7b23eba",
+    "semantic_hash": "79791f829f5f8264d10d8420f7b23eba"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/audit_stratified_owner_exclusion_results.py": {
+    "mtime": 1786464221.7041807,
+    "ast_hash": "6281c15a7f5f1b02c47e13062eca310d",
+    "semantic_hash": "6281c15a7f5f1b02c47e13062eca310d"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/august_funding_evidence.py": {
+    "mtime": 1786375804.415323,
+    "ast_hash": "0670204fd5e3c9f2c8fead728ee21528",
+    "semantic_hash": "0670204fd5e3c9f2c8fead728ee21528"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/august_funding_vintage.py": {
+    "mtime": 1786376459.4893901,
+    "ast_hash": "15cc02cf446548a6758288be710012b9",
+    "semantic_hash": "15cc02cf446548a6758288be710012b9"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/authorization.py": {
+    "mtime": 1786692642.7879543,
+    "ast_hash": "81830c25030f7833e51a8142c61d5a2d",
+    "semantic_hash": "81830c25030f7833e51a8142c61d5a2d"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/availability.py": {
+    "mtime": 1786345396.618341,
+    "ast_hash": "e583a6b135cdaa96e8628e219d241d36",
+    "semantic_hash": "e583a6b135cdaa96e8628e219d241d36"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/balance_sheet_context.py": {
+    "mtime": 1786379963.321655,
+    "ast_hash": "d6a9f7b510cf2380d26e54ae94b0dbf7",
+    "semantic_hash": "d6a9f7b510cf2380d26e54ae94b0dbf7"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/blockers.py": {
+    "mtime": 1786532403.237955,
+    "ast_hash": "9ef79bd4f098d8ada39301e67f70a355",
+    "semantic_hash": "9ef79bd4f098d8ada39301e67f70a355"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/build_100_case_candidate_pool.py": {
+    "mtime": 1786532515.383675,
+    "ast_hash": "dbb84ad1f7ead121b92e48e011da7b24",
+    "semantic_hash": "dbb84ad1f7ead121b92e48e011da7b24"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/build_4824_cohort_metadata_gate.py": {
+    "mtime": 1786692320.3647132,
+    "ast_hash": "e8be56e7f6ba7137a3db28c00bb7d2fd",
+    "semantic_hash": "e8be56e7f6ba7137a3db28c00bb7d2fd"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/build_4824_descending_acquisition_preflight.py": {
+    "mtime": 1786657941.916445,
+    "ast_hash": "ae9e999d5008acedcdce75ab1f51461e",
+    "semantic_hash": "ae9e999d5008acedcdce75ab1f51461e"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/build_composite_acquisition_ledger.py": {
+    "mtime": 1786462741.9771242,
+    "ast_hash": "adb641c6ee10de23fe737c09e66d1ab0",
+    "semantic_hash": "adb641c6ee10de23fe737c09e66d1ab0"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/build_lifecycle_selection_from_predownload.py": {
+    "mtime": 1786480244.521377,
+    "ast_hash": "00fb0bde0617596312ac7e932d716ef5",
+    "semantic_hash": "00fb0bde0617596312ac7e932d716ef5"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/build_metadata_lifecycle_ledger.py": {
+    "mtime": 1786532403.2399538,
+    "ast_hash": "acbd0482b38c67a4b642c53899fce41d",
+    "semantic_hash": "acbd0482b38c67a4b642c53899fce41d"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/build_owner_exclusion_stratified_probe.py": {
+    "mtime": 1786532403.2399538,
+    "ast_hash": "669b2e07e6016959e0d308b09717e221",
+    "semantic_hash": "669b2e07e6016959e0d308b09717e221"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/build_predownload_control.py": {
+    "mtime": 1786480087.1764424,
+    "ast_hash": "2342febeaba181c14b360a927e35cde9",
+    "semantic_hash": "2342febeaba181c14b360a927e35cde9"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/build_stratified_owner_case_configs.py": {
+    "mtime": 1786542747.867913,
+    "ast_hash": "068e3c0f9f481ecfbfb019371dd657c7",
+    "semantic_hash": "068e3c0f9f481ecfbfb019371dd657c7"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/change_explanation.py": {
+    "mtime": 1786380044.6849868,
+    "ast_hash": "c4f6d34214ac5b913ead27fc7b6aa618",
+    "semantic_hash": "c4f6d34214ac5b913ead27fc7b6aa618"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/class_os_admission_v3.py": {
+    "mtime": 1786635214.7505674,
+    "ast_hash": "4a7ffb112b229108be3d0a443f9cd7c5",
+    "semantic_hash": "4a7ffb112b229108be3d0a443f9cd7c5"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/class_os_extract.py": {
+    "mtime": 1786532403.2409537,
+    "ast_hash": "9576a2ca75908fbc9679b2d2a3df3ec2",
+    "semantic_hash": "9576a2ca75908fbc9679b2d2a3df3ec2"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/class_os_extract_v2.py": {
+    "mtime": 1786528877.6819015,
+    "ast_hash": "1ee509d53e04565d77b954b1f90e2973",
+    "semantic_hash": "1ee509d53e04565d77b954b1f90e2973"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/class_os_extract_v3.py": {
+    "mtime": 1786635780.992364,
+    "ast_hash": "b59e1d59808ababd111bb1abaa3b1426",
+    "semantic_hash": "b59e1d59808ababd111bb1abaa3b1426"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/class_os_reconcile.py": {
+    "mtime": 1786532403.2419527,
+    "ast_hash": "44f3a54b832db3cef997208672d4a6a8",
+    "semantic_hash": "44f3a54b832db3cef997208672d4a6a8"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/class_os_reconcile_v2.py": {
+    "mtime": 1786532403.2419527,
+    "ast_hash": "5e8ff612e20018be6c8f971b501245f0",
+    "semantic_hash": "5e8ff612e20018be6c8f971b501245f0"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/client.py": {
+    "mtime": 1786527900.1217306,
+    "ast_hash": "646f4575e67cc633a44af525bbb718eb",
+    "semantic_hash": "646f4575e67cc633a44af525bbb718eb"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/companyfacts_reconcile.py": {
+    "mtime": 1786528877.6819015,
+    "ast_hash": "b5f9500032b413aca7dfc54aa333d58d",
+    "semantic_hash": "b5f9500032b413aca7dfc54aa333d58d"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/extract.py": {
+    "mtime": 1786469797.7626817,
+    "ast_hash": "9f73bb8816b7e68f04f7cf8cc4b24f27",
+    "semantic_hash": "9f73bb8816b7e68f04f7cf8cc4b24f27"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/extract_lifecycle_primary_documents.py": {
+    "mtime": 1786389613.8865001,
+    "ast_hash": "667921f2a92c9abb8aa7ab7311a18f55",
+    "semantic_hash": "667921f2a92c9abb8aa7ab7311a18f55"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/float_estimate.py": {
+    "mtime": 1786542747.8689191,
+    "ast_hash": "6f9173fb87839c15a76c893f4f39d9ab",
+    "semantic_hash": "6f9173fb87839c15a76c893f4f39d9ab"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/float_estimate_v2.py": {
+    "mtime": 1786542747.8689191,
+    "ast_hash": "a9a21fb0487149abafc3100f2fd369bf",
+    "semantic_hash": "a9a21fb0487149abafc3100f2fd369bf"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/freeze_100_case_sample.py": {
+    "mtime": 1786532515.3846717,
+    "ast_hash": "e6247c373b6306ae5fb064b0f888382f",
+    "semantic_hash": "e6247c373b6306ae5fb064b0f888382f"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/historical_cusip.py": {
+    "mtime": 1786379521.7439654,
+    "ast_hash": "dbdc6f3ddbc433e42b0eaab7e2093e37",
+    "semantic_hash": "dbdc6f3ddbc433e42b0eaab7e2093e37"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/holders.py": {
+    "mtime": 1786469406.872858,
+    "ast_hash": "7ab4140b0003f9039e921e43a4783901",
+    "semantic_hash": "7ab4140b0003f9039e921e43a4783901"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/holders_v2.py": {
+    "mtime": 1786532403.2439542,
+    "ast_hash": "b4593f43f8f4e861888b8da24dd1f2d7",
+    "semantic_hash": "b4593f43f8f4e861888b8da24dd1f2d7"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/holders_v3.py": {
+    "mtime": 1786613170.2781115,
+    "ast_hash": "cd48d867c0137ef8a41e4f1f9b589e86",
+    "semantic_hash": "cd48d867c0137ef8a41e4f1f9b589e86"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/holders_v4.py": {
+    "mtime": 1786634286.4695263,
+    "ast_hash": "4ebedc77cb1859f0f0c735e6f470a4ea",
+    "semantic_hash": "4ebedc77cb1859f0f0c735e6f470a4ea"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/ixbrl_class_os_extract.py": {
+    "mtime": 1786532403.2439542,
+    "ast_hash": "d0ab99ebc0b7cd7c859c9d01b66d2e7a",
+    "semantic_hash": "d0ab99ebc0b7cd7c859c9d01b66d2e7a"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/ixbrl_class_os_extract_v2.py": {
+    "mtime": 1786532403.2439542,
+    "ast_hash": "1f16edfe596f1adddf5ec8f91fe49a4f",
+    "semantic_hash": "1f16edfe596f1adddf5ec8f91fe49a4f"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/lifecycle_extract.py": {
+    "mtime": 1786389542.7504513,
+    "ast_hash": "52b6690e1f1ec6fbf40693aa991ef606",
+    "semantic_hash": "52b6690e1f1ec6fbf40693aa991ef606"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/lockup_release_schedule.py": {
+    "mtime": 1786376843.9354312,
+    "ast_hash": "1d92adbc18dfccfe3899dfe1b5a85b77",
+    "semantic_hash": "1d92adbc18dfccfe3899dfe1b5a85b77"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/massive_sec_authorization.py": {
+    "mtime": 1787381985.903094,
+    "ast_hash": "ed6b7b839a122f02af26035628a97f87",
+    "semantic_hash": "ed6b7b839a122f02af26035628a97f87"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/massive_sec_client.py": {
+    "mtime": 1787381844.43935,
+    "ast_hash": "0144484d10caa055aee247530f6c7330",
+    "semantic_hash": "0144484d10caa055aee247530f6c7330"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/massive_sec_models.py": {
+    "mtime": 1787381844.4383457,
+    "ast_hash": "2b11e492534e0e061cc6e25caace39ec",
+    "semantic_hash": "2b11e492534e0e061cc6e25caace39ec"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/massive_sec_storage.py": {
+    "mtime": 1787381861.8056946,
+    "ast_hash": "72b3cb6c1d171321bee569a6301dccae",
+    "semantic_hash": "72b3cb6c1d171321bee569a6301dccae"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/massive_sec_telemetry.py": {
+    "mtime": 1787381844.4383457,
+    "ast_hash": "1725dd5288e02211d0e137a075169864",
+    "semantic_hash": "1725dd5288e02211d0e137a075169864"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/materialize_balance_sheet_context.py": {
+    "mtime": 1786379948.406016,
+    "ast_hash": "3521673491df8bd7870bdd7a0f92dc67",
+    "semantic_hash": "3521673491df8bd7870bdd7a0f92dc67"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/materialize_change_explanation.py": {
+    "mtime": 1786380081.2691388,
+    "ast_hash": "e375bc2fe5a9b1992704d6972914c27c",
+    "semantic_hash": "e375bc2fe5a9b1992704d6972914c27c"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/materialize_existing_pilot_os.py": {
+    "mtime": 1786346838.5360658,
+    "ast_hash": "1fd1eeac4335e884a9a0bdf8635da718",
+    "semantic_hash": "1fd1eeac4335e884a9a0bdf8635da718"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/materialize_historical_cusip.py": {
+    "mtime": 1786379567.9607134,
+    "ast_hash": "68b525d1d2b1463c6c2b7b7746ca6ad5",
+    "semantic_hash": "68b525d1d2b1463c6c2b7b7746ca6ad5"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/materialize_presession_market_cap.py": {
+    "mtime": 1786377873.8251781,
+    "ast_hash": "078ef41a3e66fd5ef7332c9c1c6b2155",
+    "semantic_hash": "078ef41a3e66fd5ef7332c9c1c6b2155"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/merge_acquisition_ledgers.py": {
+    "mtime": 1786468517.988351,
+    "ast_hash": "2ecd9df24eb0f2db08be369441844e54",
+    "semantic_hash": "2ecd9df24eb0f2db08be369441844e54"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/metadata.py": {
+    "mtime": 1786388148.7524815,
+    "ast_hash": "5d68dbd8b96d3736d1348b4b0f6d3271",
+    "semantic_hash": "5d68dbd8b96d3736d1348b4b0f6d3271"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/models.py": {
+    "mtime": 1786441734.9686892,
+    "ast_hash": "3ae29da79b9d3ffaa82dcbf38286b391",
+    "semantic_hash": "3ae29da79b9d3ffaa82dcbf38286b391"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/os_corporate_action_align.py": {
+    "mtime": 1786377177.6528702,
+    "ast_hash": "f2c49467e897db718baf652555502dee",
+    "semantic_hash": "f2c49467e897db718baf652555502dee"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/ownership_baseline.py": {
+    "mtime": 1786545310.0743344,
+    "ast_hash": "47cd6f4bc98db8689c5b260b83f5f31c",
+    "semantic_hash": "47cd6f4bc98db8689c5b260b83f5f31c"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/ownership_class_reconcile.py": {
+    "mtime": 1786606389.7724862,
+    "ast_hash": "19c809a6469d061679c5ad6d1fd38d27",
+    "semantic_hash": "19c809a6469d061679c5ad6d1fd38d27"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/ownership_html.py": {
+    "mtime": 1786467679.3522625,
+    "ast_hash": "d2d1fffae6bd1d6765dbf37e5d781535",
+    "semantic_hash": "d2d1fffae6bd1d6765dbf37e5d781535"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/ownership_identity.py": {
+    "mtime": 1786628601.3974514,
+    "ast_hash": "22aed2be0bf0977258c7db0fe0384dc7",
+    "semantic_hash": "22aed2be0bf0977258c7db0fe0384dc7"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/ownership_v2.py": {
+    "mtime": 1786651770.760057,
+    "ast_hash": "90d10ea952fc13b059cae526c1442784",
+    "semantic_hash": "90d10ea952fc13b059cae526c1442784"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/predownload_control.py": {
+    "mtime": 1786441967.7681377,
+    "ast_hash": "8ebb2c886206036cb67f63eb57a7a15f",
+    "semantic_hash": "8ebb2c886206036cb67f63eb57a7a15f"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/presession_market_cap.py": {
+    "mtime": 1786378992.6422274,
+    "ast_hash": "896a3103d8f8f76b10f06af4fa48c311",
+    "semantic_hash": "896a3103d8f8f76b10f06af4fa48c311"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/reconcile.py": {
+    "mtime": 1786347736.573236,
+    "ast_hash": "e5f24a478327006c793db8c9f449521f",
+    "semantic_hash": "e5f24a478327006c793db8c9f449521f"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/reconcile_lifecycle_market_presence.py": {
+    "mtime": 1786389971.4642022,
+    "ast_hash": "5ea1ab86653187004d252d49155eedc3",
+    "semantic_hash": "5ea1ab86653187004d252d49155eedc3"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/reconcile_vendor_sec_lifecycle_windows.py": {
+    "mtime": 1786391251.1292841,
+    "ast_hash": "d64928ddd8a903ff6735adeb0e9a7232",
+    "semantic_hash": "d64928ddd8a903ff6735adeb0e9a7232"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/registration_os_reconcile.py": {
+    "mtime": 1786372124.8197756,
+    "ast_hash": "5504d772edb40fcaf23ed6c2c9bed3a3",
+    "semantic_hash": "5504d772edb40fcaf23ed6c2c9bed3a3"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/resolver.py": {
+    "mtime": 1786446931.4076881,
+    "ast_hash": "908a045c99d7fce3d374008e7b399c91",
+    "semantic_hash": "908a045c99d7fce3d374008e7b399c91"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/restriction_clause_extract.py": {
+    "mtime": 1786372637.764638,
+    "ast_hash": "2b6a330735da3259533df334d6deb0d6",
+    "semantic_hash": "2b6a330735da3259533df334d6deb0d6"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/restriction_conditions.py": {
+    "mtime": 1786372110.917191,
+    "ast_hash": "e25bf0e5b466b0aa69e2ab2751670f8c",
+    "semantic_hash": "e25bf0e5b466b0aa69e2ab2751670f8c"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/restriction_estimate.py": {
+    "mtime": 1786354244.5033789,
+    "ast_hash": "67db2a323b180d6bfce41105a6cacb51",
+    "semantic_hash": "67db2a323b180d6bfce41105a6cacb51"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/restriction_event_reconcile.py": {
+    "mtime": 1786374305.3996718,
+    "ast_hash": "1a1182f08b9d7508870360bd03f9f21b",
+    "semantic_hash": "1a1182f08b9d7508870360bd03f9f21b"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/restriction_extract.py": {
+    "mtime": 1786371771.2198975,
+    "ast_hash": "ec838ab11cabad8403bcea215635bebb",
+    "semantic_hash": "ec838ab11cabad8403bcea215635bebb"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/review_target_interval_filings.py": {
+    "mtime": 1786391005.8412256,
+    "ast_hash": "f39291a9d7b469dd3d58dd2e886a7218",
+    "semantic_hash": "f39291a9d7b469dd3d58dd2e886a7218"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_authorized_primary_acquisition_v0_2.py": {
+    "mtime": 1786694388.2674012,
+    "ast_hash": "158af3884b25d7cdf4f6eb169e833b92",
+    "semantic_hash": "158af3884b25d7cdf4f6eb169e833b92"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_companyfacts_os_reconciliation_probe.py": {
+    "mtime": 1786532515.3846717,
+    "ast_hash": "b56146cc9bc7649c982d4bcdeaf41f85",
+    "semantic_hash": "b56146cc9bc7649c982d4bcdeaf41f85"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_lifecycle_primary_acquisition.py": {
+    "mtime": 1786388790.6270676,
+    "ast_hash": "7f898b5b42d1725673a50e91b38c724b",
+    "semantic_hash": "7f898b5b42d1725673a50e91b38c724b"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_massive_sec_acquisition.py": {
+    "mtime": 1787381844.4403462,
+    "ast_hash": "c2c7aaabc3338ba54dfd2a0db8f7dee0",
+    "semantic_hash": "c2c7aaabc3338ba54dfd2a0db8f7dee0"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_massive_sec_probe.py": {
+    "mtime": 1787381020.5976615,
+    "ast_hash": "1cb666ba36f60e559394cbb639bcc753",
+    "semantic_hash": "1cb666ba36f60e559394cbb639bcc753"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_no_network_os_probe.py": {
+    "mtime": 1786635258.1594648,
+    "ast_hash": "99316abe745359cc04cf5daf798b9e92",
+    "semantic_hash": "99316abe745359cc04cf5daf798b9e92"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_no_network_owner_exclusion_probe.py": {
+    "mtime": 1786633879.1733472,
+    "ast_hash": "fc0ae09aa3c29daff592338299f61994",
+    "semantic_hash": "fc0ae09aa3c29daff592338299f61994"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_one_ticker_pilot.py": {
+    "mtime": 1786440964.9567683,
+    "ast_hash": "9026021bbdf6ec8b868d917232b9d42d",
+    "semantic_hash": "9026021bbdf6ec8b868d917232b9d42d"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_owner_exclusion_resolution_batch.py": {
+    "mtime": 1786532403.25051,
+    "ast_hash": "343753651a11d75072e1cdea3eca1688",
+    "semantic_hash": "343753651a11d75072e1cdea3eca1688"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_pgac_no_network_os_probe.py": {
+    "mtime": 1786532403.25051,
+    "ast_hash": "5b90489be8fc8e1b8cc9e86367691356",
+    "semantic_hash": "5b90489be8fc8e1b8cc9e86367691356"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_seven_ticker_replay.py": {
+    "mtime": 1786441277.1586235,
+    "ast_hash": "5b0a6c65d3c11be0e0e059e0576ee127",
+    "semantic_hash": "5b0a6c65d3c11be0e0e059e0576ee127"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_submissions_metadata_profile.py": {
+    "mtime": 1786661000.6581988,
+    "ast_hash": "60eb104797a93c773dd2b63754e374b4",
+    "semantic_hash": "60eb104797a93c773dd2b63754e374b4"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/storage.py": {
+    "mtime": 1786511851.2320242,
+    "ast_hash": "754fca9fdc9750626f59fedd350ec089",
+    "semantic_hash": "754fca9fdc9750626f59fedd350ec089"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/summarize_100_case_scale_gate.py": {
+    "mtime": 1786532515.3856716,
+    "ast_hash": "05158b174cc1615103af4ca596f382d4",
+    "semantic_hash": "05158b174cc1615103af4ca596f382d4"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/telemetry.py": {
+    "mtime": 1786444684.5320024,
+    "ast_hash": "b517a9bd5f0a5474f7c76327fbc6235e",
+    "semantic_hash": "b517a9bd5f0a5474f7c76327fbc6235e"
+  },
+  "01_TSIS_DATA_FOUNDATION/scripts/snapshot_massive_market_operations_reference.py": {
+    "mtime": 1786532403.2538633,
+    "ast_hash": "993a9c65f2842ebfac59a237229d7497",
+    "semantic_hash": "993a9c65f2842ebfac59a237229d7497"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_massive_market_operations_reference_snapshot.py": {
+    "mtime": 1786532403.2889845,
+    "ast_hash": "3a98870f49c1ee57a0cda22a960debda",
+    "semantic_hash": "3a98870f49c1ee57a0cda22a960debda"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_massive_sec_authorization.py": {
+    "mtime": 1787381985.904097,
+    "ast_hash": "b56d16bf36725b4ecf1595c9fc5eea5a",
+    "semantic_hash": "b56d16bf36725b4ecf1595c9fc5eea5a"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_massive_sec_client.py": {
+    "mtime": 1787381753.535707,
+    "ast_hash": "3ecb79464631cd3a338c48016acc1495",
+    "semantic_hash": "3ecb79464631cd3a338c48016acc1495"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_massive_sec_runner_resume.py": {
+    "mtime": 1787381927.905618,
+    "ast_hash": "974d4caa56c0204e42ff28400a255dba",
+    "semantic_hash": "974d4caa56c0204e42ff28400a255dba"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_massive_sec_scope_gate.py": {
+    "mtime": 1787381861.8066957,
+    "ast_hash": "35355ca76227f50d81136b993b230b9f",
+    "semantic_hash": "35355ca76227f50d81136b993b230b9f"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_massive_sec_storage.py": {
+    "mtime": 1787381753.535707,
+    "ast_hash": "6d27dcd1026a5acb21d457662175929d",
+    "semantic_hash": "6d27dcd1026a5acb21d457662175929d"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_100_case_candidate_pool.py": {
+    "mtime": 1786479246.0935495,
+    "ast_hash": "95ab680a16c3088305940209831c480b",
+    "semantic_hash": "95ab680a16c3088305940209831c480b"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_100_case_scale_gate_summary.py": {
+    "mtime": 1786517155.0105898,
+    "ast_hash": "eaa25268e2a3fed923217455e332c0f8",
+    "semantic_hash": "eaa25268e2a3fed923217455e332c0f8"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_4824_cohort_metadata_gate.py": {
+    "mtime": 1786692320.3657134,
+    "ast_hash": "27317c3a631b4389d568188fbcb4bb26",
+    "semantic_hash": "27317c3a631b4389d568188fbcb4bb26"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_4824_descending_acquisition_preflight.py": {
+    "mtime": 1786657928.393766,
+    "ast_hash": "4a99b390698dea156f4ae0b9b4a3c28f",
+    "semantic_hash": "4a99b390698dea156f4ae0b9b4a3c28f"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_acquisition_telemetry.py": {
+    "mtime": 1786528877.6819015,
+    "ast_hash": "a4145b49f0305e9292dc1b5869068808",
+    "semantic_hash": "a4145b49f0305e9292dc1b5869068808"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_admission.py": {
+    "mtime": 1786346977.878558,
+    "ast_hash": "09c6325cc993c2f8ddb9fc7576af06c8",
+    "semantic_hash": "09c6325cc993c2f8ddb9fc7576af06c8"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_assignment_restriction_extract.py": {
+    "mtime": 1786374238.7674918,
+    "ast_hash": "a94e420351315dbdb236c57a81ce1d73",
+    "semantic_hash": "a94e420351315dbdb236c57a81ce1d73"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_assignment_schedule_link.py": {
+    "mtime": 1786375169.4935913,
+    "ast_hash": "a4fd7c1331bf3dc402485b3e83cba456",
+    "semantic_hash": "a4fd7c1331bf3dc402485b3e83cba456"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_august_funding_evidence.py": {
+    "mtime": 1786375605.8540268,
+    "ast_hash": "116c58d0719304b7c25b05f2c5df74d1",
+    "semantic_hash": "116c58d0719304b7c25b05f2c5df74d1"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_august_funding_vintage.py": {
+    "mtime": 1786376253.568802,
+    "ast_hash": "124b09509854a47673e925126c33e713",
+    "semantic_hash": "124b09509854a47673e925126c33e713"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_authorization.py": {
+    "mtime": 1786692642.7889585,
+    "ast_hash": "8ee4aa87865607b3f40c96acd65ea9e3",
+    "semantic_hash": "8ee4aa87865607b3f40c96acd65ea9e3"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_authorized_acquisition_scope.py": {
+    "mtime": 1786692320.3672197,
+    "ast_hash": "049c49a39d3aaf38c11533ae0bda8ba6",
+    "semantic_hash": "049c49a39d3aaf38c11533ae0bda8ba6"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_authorized_primary_postdownload_audit.py": {
+    "mtime": 1786791599.8691342,
+    "ast_hash": "25e14e27912104fcff38f95898865d44",
+    "semantic_hash": "25e14e27912104fcff38f95898865d44"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_balance_sheet_context.py": {
+    "mtime": 1786379923.7922437,
+    "ast_hash": "a134b034f4f0a49147676bbe87dc0421",
+    "semantic_hash": "a134b034f4f0a49147676bbe87dc0421"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_change_explanation.py": {
+    "mtime": 1786380044.6849868,
+    "ast_hash": "1c319e9a7218d83d1fa9a4f42a5c1236",
+    "semantic_hash": "1c319e9a7218d83d1fa9a4f42a5c1236"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_class_os_admission_v3.py": {
+    "mtime": 1786635240.3982677,
+    "ast_hash": "881d35d6669b080fe2ebd8ea62ea4ea9",
+    "semantic_hash": "881d35d6669b080fe2ebd8ea62ea4ea9"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_class_os_extract.py": {
+    "mtime": 1786532403.2931764,
+    "ast_hash": "fc540529b671aae9998406de329ebc3b",
+    "semantic_hash": "fc540529b671aae9998406de329ebc3b"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_class_os_extract_v2.py": {
+    "mtime": 1786528877.6819015,
+    "ast_hash": "ac0d8e463acf2ab89ed6086a6fba2279",
+    "semantic_hash": "ac0d8e463acf2ab89ed6086a6fba2279"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_class_os_extract_v3.py": {
+    "mtime": 1786635780.992364,
+    "ast_hash": "7aba6e366a2ea8c3d918761d750526f3",
+    "semantic_hash": "7aba6e366a2ea8c3d918761d750526f3"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_companyfacts_probe_selection.py": {
+    "mtime": 1786528877.6819015,
+    "ast_hash": "931051b5da4f88081360a125e9ca33da",
+    "semantic_hash": "931051b5da4f88081360a125e9ca33da"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_companyfacts_reconcile.py": {
+    "mtime": 1786528877.6819015,
+    "ast_hash": "839db6a09306a2b781b1842e808a52f3",
+    "semantic_hash": "839db6a09306a2b781b1842e808a52f3"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_float_gate.py": {
+    "mtime": 1786542747.869921,
+    "ast_hash": "ebac72db42e9111cfa3c328c52a195f8",
+    "semantic_hash": "ebac72db42e9111cfa3c328c52a195f8"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_freeze_100_case_sample.py": {
+    "mtime": 1786479881.6455784,
+    "ast_hash": "dce788563d8ca9fe10e6f9c89bd06ba1",
+    "semantic_hash": "dce788563d8ca9fe10e6f9c89bd06ba1"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_historical_cusip.py": {
+    "mtime": 1786379521.7449708,
+    "ast_hash": "0bee076eff012108280609949032de32",
+    "semantic_hash": "0bee076eff012108280609949032de32"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_historical_primary_fallback.py": {
+    "mtime": 1786481196.21706,
+    "ast_hash": "2d896ddff1a4d14d5ecf30ebd549b169",
+    "semantic_hash": "2d896ddff1a4d14d5ecf30ebd549b169"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_holder_aggregate_precedence_v3.py": {
+    "mtime": 1786613170.2787712,
+    "ast_hash": "afcd848e45fc7d399d051036ec3195e0",
+    "semantic_hash": "afcd848e45fc7d399d051036ec3195e0"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_holder_ledger.py": {
+    "mtime": 1786469406.873865,
+    "ast_hash": "e8be601982d380eae480aa4627917fa1",
+    "semantic_hash": "e8be601982d380eae480aa4627917fa1"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_holder_source_account_v4.py": {
+    "mtime": 1786634286.4705267,
+    "ast_hash": "2495b9293a691f6285bd99afb029304f",
+    "semantic_hash": "2495b9293a691f6285bd99afb029304f"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_html_ownership.py": {
+    "mtime": 1786353821.505656,
+    "ast_hash": "9f7adee5d71e6319c41f6922ab05a721",
+    "semantic_hash": "9f7adee5d71e6319c41f6922ab05a721"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_instrument_interval_recovery_audit.py": {
+    "mtime": 1786617661.868701,
+    "ast_hash": "e78037fde8472688506be31e32972966",
+    "semantic_hash": "e78037fde8472688506be31e32972966"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_ixbrl_class_os.py": {
+    "mtime": 1786532403.2931764,
+    "ast_hash": "af2d85bc1ec7d583c4c031050ddc6d3c",
+    "semantic_hash": "af2d85bc1ec7d583c4c031050ddc6d3c"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_lifecycle_extract.py": {
+    "mtime": 1786389555.6009862,
+    "ast_hash": "3d1aa3530cdef7892c25ae16fb1cbeab",
+    "semantic_hash": "3d1aa3530cdef7892c25ae16fb1cbeab"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_lifecycle_market_presence.py": {
+    "mtime": 1786389983.3294406,
+    "ast_hash": "db7a34ae55bc88f226e2c29bd7c7ee33",
+    "semantic_hash": "db7a34ae55bc88f226e2c29bd7c7ee33"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_lifecycle_metadata_lane.py": {
+    "mtime": 1786389599.4654534,
+    "ast_hash": "0170f554c17f26209653a19ff2d856d7",
+    "semantic_hash": "0170f554c17f26209653a19ff2d856d7"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_lifecycle_primary_acquisition.py": {
+    "mtime": 1786388769.1121876,
+    "ast_hash": "aa8b4b8164a63c669ad720c00bf4c120",
+    "semantic_hash": "aa8b4b8164a63c669ad720c00bf4c120"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_lifecycle_window_reconciliation.py": {
+    "mtime": 1786391192.7705305,
+    "ast_hash": "c65fd4915c0968fbc8ca2a2434b32bd9",
+    "semantic_hash": "c65fd4915c0968fbc8ca2a2434b32bd9"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_lockup_release_schedule.py": {
+    "mtime": 1786376884.524795,
+    "ast_hash": "6e7df6aefa6d27905c58f3e6cc3984b5",
+    "semantic_hash": "6e7df6aefa6d27905c58f3e6cc3984b5"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_management_aggregate_class_reconcile_v2.py": {
+    "mtime": 1786606389.7724862,
+    "ast_hash": "a8917fe6c386c87c017aa040f9ae3375",
+    "semantic_hash": "a8917fe6c386c87c017aa040f9ae3375"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_merge_acquisition_ledgers.py": {
+    "mtime": 1786468517.988351,
+    "ast_hash": "f0fcad7689d7b4265cad785026ad64cc",
+    "semantic_hash": "f0fcad7689d7b4265cad785026ad64cc"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_metadata_lifecycle_ledger.py": {
+    "mtime": 1786480055.1717582,
+    "ast_hash": "ad3a5bd991cccd9a04de6701e1de3e67",
+    "semantic_hash": "ad3a5bd991cccd9a04de6701e1de3e67"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_no_network_os_probe.py": {
+    "mtime": 1786462453.72198,
+    "ast_hash": "6d2971c268531033118b22116609445e",
+    "semantic_hash": "6d2971c268531033118b22116609445e"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_os_corporate_action_align.py": {
+    "mtime": 1786377197.2376685,
+    "ast_hash": "a5cdfb6245d40048c77d362720cfb941",
+    "semantic_hash": "a5cdfb6245d40048c77d362720cfb941"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_os_unavailable_shard_certification.py": {
+    "mtime": 1786636774.9141972,
+    "ast_hash": "d077a7fc3c279ba2de5e2d207f2d96f3",
+    "semantic_hash": "d077a7fc3c279ba2de5e2d207f2d96f3"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_owner_exclusion_resolution_batch.py": {
+    "mtime": 1786515017.8417873,
+    "ast_hash": "cbd88738a9cae85615e0b6f267bd3860",
+    "semantic_hash": "cbd88738a9cae85615e0b6f267bd3860"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_owner_exclusion_stratified_probe.py": {
+    "mtime": 1786476031.1951554,
+    "ast_hash": "9d2e4e53c1186125a110957dcce39002",
+    "semantic_hash": "9d2e4e53c1186125a110957dcce39002"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_owner_output_schema.py": {
+    "mtime": 1786569163.9230187,
+    "ast_hash": "e5b0d4671dc1688ff0c2c48614f0eb46",
+    "semantic_hash": "e5b0d4671dc1688ff0c2c48614f0eb46"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_owner_probe_case_paths.py": {
+    "mtime": 1786480244.521377,
+    "ast_hash": "dd08ea951ac35d240646fe74a55c7e5c",
+    "semantic_hash": "dd08ea951ac35d240646fe74a55c7e5c"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_ownership_baseline.py": {
+    "mtime": 1786545310.0743344,
+    "ast_hash": "aa164d8a1301b6d5387326699bbff43e",
+    "semantic_hash": "aa164d8a1301b6d5387326699bbff43e"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_ownership_identity.py": {
+    "mtime": 1786628601.3994503,
+    "ast_hash": "3631a4c1cc4f8cec651a54246a7847ea",
+    "semantic_hash": "3631a4c1cc4f8cec651a54246a7847ea"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_ownership_v2.py": {
+    "mtime": 1786651790.3279762,
+    "ast_hash": "75fdd53fbf5018d6d9953003c4f74b7e",
+    "semantic_hash": "75fdd53fbf5018d6d9953003c4f74b7e"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_pipeline.py": {
+    "mtime": 1786446963.5144722,
+    "ast_hash": "d773e26058cdd6bb197ffcb54ab10485",
+    "semantic_hash": "d773e26058cdd6bb197ffcb54ab10485"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_predownload_control.py": {
+    "mtime": 1786441986.3726501,
+    "ast_hash": "1d8fab74c799ea98b4d8a91ca94d08f4",
+    "semantic_hash": "1d8fab74c799ea98b4d8a91ca94d08f4"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_predownload_paths.py": {
+    "mtime": 1786480098.7066457,
+    "ast_hash": "688e47bf51be7a6ed2a939ac4c3d934b",
+    "semantic_hash": "688e47bf51be7a6ed2a939ac4c3d934b"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_presession_market_cap.py": {
+    "mtime": 1786377945.3944898,
+    "ast_hash": "68848eaed3f715ed3d51116e2911a920",
+    "semantic_hash": "68848eaed3f715ed3d51116e2911a920"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_reconciliation.py": {
+    "mtime": 1786347697.7031226,
+    "ast_hash": "6236b2fdec78682ddb73b3164ac952a7",
+    "semantic_hash": "6236b2fdec78682ddb73b3164ac952a7"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_registration_os_reconcile.py": {
+    "mtime": 1786372110.917191,
+    "ast_hash": "fad7ec6dc0575ea7f586a4a0fb2748a1",
+    "semantic_hash": "fad7ec6dc0575ea7f586a4a0fb2748a1"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_restriction_clause_extract.py": {
+    "mtime": 1786372547.2864842,
+    "ast_hash": "2c78c9b8a714a11d6e58a51c12552fd6",
+    "semantic_hash": "2c78c9b8a714a11d6e58a51c12552fd6"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_restriction_conditions.py": {
+    "mtime": 1786362201.2882593,
+    "ast_hash": "e653fa276a36cb756d31112c6432c90e",
+    "semantic_hash": "e653fa276a36cb756d31112c6432c90e"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_restriction_event_reconcile.py": {
+    "mtime": 1786373900.099694,
+    "ast_hash": "b7a6a0a37280adbf8ff149f0a223d38e",
+    "semantic_hash": "b7a6a0a37280adbf8ff149f0a223d38e"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_restriction_extract.py": {
+    "mtime": 1786371741.466607,
+    "ast_hash": "8d124d9f5f3d5b8059f8ae0f6bf50e55",
+    "semantic_hash": "8d124d9f5f3d5b8059f8ae0f6bf50e55"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_restriction_gate.py": {
+    "mtime": 1786354244.5048845,
+    "ast_hash": "28dbe0e780d9f20f4ce9ad2cdf42f3b9",
+    "semantic_hash": "28dbe0e780d9f20f4ce9ad2cdf42f3b9"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_sharded_variable_certification.py": {
+    "mtime": 1786606726.110893,
+    "ast_hash": "d9352478854b120f8d15b13171f2dcac",
+    "semantic_hash": "d9352478854b120f8d15b13171f2dcac"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_share_class_recovery_audit.py": {
+    "mtime": 1786605506.7349331,
+    "ast_hash": "cd18ec2a754065d2966c5b6dab4742d3",
+    "semantic_hash": "cd18ec2a754065d2966c5b6dab4742d3"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_source_selection.py": {
+    "mtime": 1786347521.6363826,
+    "ast_hash": "d3ce85bfe350b9f1973ac2c9b21d381a",
+    "semantic_hash": "d3ce85bfe350b9f1973ac2c9b21d381a"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_stratified_owner_result_audit.py": {
+    "mtime": 1786464221.7041807,
+    "ast_hash": "0c7b9b19136290125f91817b531568e0",
+    "semantic_hash": "0c7b9b19136290125f91817b531568e0"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_submissions_metadata_profile.py": {
+    "mtime": 1786662018.9941614,
+    "ast_hash": "9a14cf03a8144560d357b948089d678a",
+    "semantic_hash": "9a14cf03a8144560d357b948089d678a"
+  },
+  "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_target_interval_filing_review.py": {
+    "mtime": 1786391005.84022,
+    "ast_hash": "6c04312f1aa6c3873e8f6f29bcd9811c",
+    "semantic_hash": "6c04312f1aa6c3873e8f6f29bcd9811c"
+  }
+}

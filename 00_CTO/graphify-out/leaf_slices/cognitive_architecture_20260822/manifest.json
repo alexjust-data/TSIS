@@ -1,0 +1,112 @@
+{
+  "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/agentic_harness_architecture_reference.md": {
+    "mtime": 1781873772.9163742,
+    "ast_hash": "5effe626f6039eb5f9c76de06289597b",
+    "semantic_hash": "5effe626f6039eb5f9c76de06289597b"
+  },
+  "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/harness_toolchain_traceability_contract.md": {
+    "mtime": 1781873772.9187162,
+    "ast_hash": "84f1ac3a596648705d2c2d61cffe05b2",
+    "semantic_hash": "84f1ac3a596648705d2c2d61cffe05b2"
+  },
+  "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/shared_run_manifest_contract.md": {
+    "mtime": 1781873772.9187162,
+    "ast_hash": "d32799b6552874a6c110eaaffee76b9d",
+    "semantic_hash": "d32799b6552874a6c110eaaffee76b9d"
+  },
+  "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/shared_validation_principles.md": {
+    "mtime": 1781873772.9207222,
+    "ast_hash": "25c0ca365cb17cea65c98df996aa8a18",
+    "semantic_hash": "25c0ca365cb17cea65c98df996aa8a18"
+  },
+  "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/data_audit_completion_artifact_contract.md": {
+    "mtime": 1784710215.4542553,
+    "ast_hash": "035c0b15eff29280d93fc42524390594",
+    "semantic_hash": "035c0b15eff29280d93fc42524390594"
+  },
+  "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/data_audit_harness_agentic_operating_map.md": {
+    "mtime": 1784710215.4567685,
+    "ast_hash": "92863baa7e9427ea1dfd3757e0d1ebfa",
+    "semantic_hash": "92863baa7e9427ea1dfd3757e0d1ebfa"
+  },
+  "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/future_live_data_quality_contract.md": {
+    "mtime": 1781873772.925838,
+    "ast_hash": "4f8a844f92b9fa86f7d9fceab376d0f3",
+    "semantic_hash": "4f8a844f92b9fa86f7d9fceab376d0f3"
+  },
+  "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/historical_audit_preservation_and_promotion_contract.md": {
+    "mtime": 1784710215.4577682,
+    "ast_hash": "e1bbf03a6d8aad384ad5a8e92520cdcd",
+    "semantic_hash": "e1bbf03a6d8aad384ad5a8e92520cdcd"
+  },
+  "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/README.md": {
+    "mtime": 1784710215.4587674,
+    "ast_hash": "a82bc933ddfef3ebd2f69c7b3ebe2561",
+    "semantic_hash": "a82bc933ddfef3ebd2f69c7b3ebe2561"
+  },
+  "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/runbooks/2026-06-12_data_audit_agent_prompt_pack.md": {
+    "mtime": 1784710215.460767,
+    "ast_hash": "d99df8c8219f684f21fcdda65428ad52",
+    "semantic_hash": "d99df8c8219f684f21fcdda65428ad52"
+  },
+  "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/runbooks/2026-06-12_overnight_data_audit_completion_harness_runbook.md": {
+    "mtime": 1784710215.4622712,
+    "ast_hash": "5bfda3fd3ca36d0d6dfe0b9cd8583d69",
+    "semantic_hash": "5bfda3fd3ca36d0d6dfe0b9cd8583d69"
+  },
+  "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/runbooks/2026-06-13_shutdown_handoff_note.md": {
+    "mtime": 1784710215.4632783,
+    "ast_hash": "b01abe5b92258196c2ed1eead92073d1",
+    "semantic_hash": "b01abe5b92258196c2ed1eead92073d1"
+  },
+  "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_protocol.md": {
+    "mtime": 1781873774.854745,
+    "ast_hash": "1ed865f629e93bc1e30f30bd9c65cd50",
+    "semantic_hash": "1ed865f629e93bc1e30f30bd9c65cd50"
+  },
+  "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_lesson_pack_contract.md": {
+    "mtime": 1781873774.8557441,
+    "ast_hash": "c2f7776926b823bd7a36bcd7414b9c5a",
+    "semantic_hash": "c2f7776926b823bd7a36bcd7414b9c5a"
+  },
+  "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_pilot_harness_runbook.md": {
+    "mtime": 1781873774.8567443,
+    "ast_hash": "ff9aee9bf54f41faa7739004db8261b5",
+    "semantic_hash": "ff9aee9bf54f41faa7739004db8261b5"
+  },
+  "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/README.md": {
+    "mtime": 1781873774.8577447,
+    "ast_hash": "b484b472b9b014b69458017b7d74a8ff",
+    "semantic_hash": "b484b472b9b014b69458017b7d74a8ff"
+  },
+  "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/generate_sersan_p02_pilot.py": {
+    "mtime": 1781873772.9328387,
+    "ast_hash": "6d073338def8b1e4ddd17218d7ec6a94",
+    "semantic_hash": "6d073338def8b1e4ddd17218d7ec6a94"
+  },
+  "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/generate_sersan_p09_pilot.py": {
+    "mtime": 1781873772.9338386,
+    "ast_hash": "9d2f3f858cca4dc34acb778509274204",
+    "semantic_hash": "9d2f3f858cca4dc34acb778509274204"
+  },
+  "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/generate_sersan_p15_pilot.py": {
+    "mtime": 1781873772.9348385,
+    "ast_hash": "33af3affe5534ea6f0c6c7d709e3abef",
+    "semantic_hash": "33af3affe5534ea6f0c6c7d709e3abef"
+  },
+  "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/run_sersan_corpus_distillation.py": {
+    "mtime": 1781873772.9368389,
+    "ast_hash": "1528113fccd4bcf8f3343fca8bbe9d3d",
+    "semantic_hash": "1528113fccd4bcf8f3343fca8bbe9d3d"
+  },
+  "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/sersan_corpus_distillation_config.json": {
+    "mtime": 1781873772.9368389,
+    "ast_hash": "8da08461d2e6171749d721f6dd95c206",
+    "semantic_hash": "8da08461d2e6171749d721f6dd95c206"
+  },
+  "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/validate_sersan_distillation.py": {
+    "mtime": 1781873772.9378383,
+    "ast_hash": "f076cea934b53dc5909f519259303c4d",
+    "semantic_hash": "f076cea934b53dc5909f519259303c4d"
+  }
+}

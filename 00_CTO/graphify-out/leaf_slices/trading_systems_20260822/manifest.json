@@ -1,0 +1,422 @@
+{
+  "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md": {
+    "mtime": 1781985788.7200384,
+    "ast_hash": "d1c4258fb736b5583c187bda586ac8ec",
+    "semantic_hash": "d1c4258fb736b5583c187bda586ac8ec"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/PM_ACCEPTED_EXTENSION_BREAK_EVENT/SOURCE_NOTE_RESPONSE_CLONE.md": {
+    "mtime": 1781984264.5629184,
+    "ast_hash": "e532ecbfa63c7f3b030927e771d8e793",
+    "semantic_hash": "e532ecbfa63c7f3b030927e771d8e793"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/01_MOMENTUM_EXPANSION/README.md": {
+    "mtime": 1781873774.8587427,
+    "ast_hash": "1f92d9d5c6420a4878fe291548ae9854",
+    "semantic_hash": "1f92d9d5c6420a4878fe291548ae9854"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/02_VWAP_CONTROL/README.md": {
+    "mtime": 1781873774.8597424,
+    "ast_hash": "7627edf3971df7dec22e44c5cb85c082",
+    "semantic_hash": "7627edf3971df7dec22e44c5cb85c082"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/03_INTRADAY_REVERSALS/README.md": {
+    "mtime": 1781873774.8607426,
+    "ast_hash": "494ef481a3f5610860e88ce7292f67f6",
+    "semantic_hash": "494ef481a3f5610860e88ce7292f67f6"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/04_MOMENTUM_EXHAUSTION/README.md": {
+    "mtime": 1781873774.8617435,
+    "ast_hash": "0de3d4e2e1d5a2096c2753275ac29259",
+    "semantic_hash": "0de3d4e2e1d5a2096c2753275ac29259"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/05_RUNNER_LIFECYCLE/README.md": {
+    "mtime": 1781873774.8627427,
+    "ast_hash": "887e4a40fd13b271677dc146b2ed18f9",
+    "semantic_hash": "887e4a40fd13b271677dc146b2ed18f9"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/06_RESISTANCE_AND_BREAKOUTS/README.md": {
+    "mtime": 1781873774.8627427,
+    "ast_hash": "b305897e1a3133e8532dd86c382e02f3",
+    "semantic_hash": "b305897e1a3133e8532dd86c382e02f3"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/07_SHORT_SQUEEZE_DYNAMICS/DAS_EVENT/EVENT_DEFINITION_DRAFT_v0_1.md": {
+    "mtime": 1781989005.3034298,
+    "ast_hash": "21e6a7fce13e141e1386dd70764e0cdf",
+    "semantic_hash": "21e6a7fce13e141e1386dd70764e0cdf"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/07_SHORT_SQUEEZE_DYNAMICS/README.md": {
+    "mtime": 1781989039.406472,
+    "ast_hash": "5dad43e7f5e87a4c1dfb14c16f61a43e",
+    "semantic_hash": "5dad43e7f5e87a4c1dfb14c16f61a43e"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/99_EXPERIMENTAL/README.md": {
+    "mtime": 1781873774.864744,
+    "ast_hash": "74afaa922a51a2eec1073353f6780f32",
+    "semantic_hash": "74afaa922a51a2eec1073353f6780f32"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/EVENT_BEHAVIORAL_MECHANICS_GUIDE_v0_1.md": {
+    "mtime": 1782114863.8205862,
+    "ast_hash": "f92091e6dcf4ed9b485d5d73daf12205",
+    "semantic_hash": "f92091e6dcf4ed9b485d5d73daf12205"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/EVENT_LIBRARY_RESTRUCTURING_PLAN_v0_1.md": {
+    "mtime": 1784710215.4662845,
+    "ast_hash": "28ed0c18bd183491a034c1760f161fb4",
+    "semantic_hash": "28ed0c18bd183491a034c1760f161fb4"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/README.md": {
+    "mtime": 1782053855.5395412,
+    "ast_hash": "b5e799676bb6114b49d6dab24efbe580",
+    "semantic_hash": "b5e799676bb6114b49d6dab24efbe580"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/RESEARCH_AND_DEVELOPMENT/GAME_THEORETIC_PRESSURE_FOR_EVENT_SEARCH_ALPHAEVOLVE_v0_1.md": {
+    "mtime": 1782114673.4362438,
+    "ast_hash": "0b6f80f4c3396b433b41fcf0ce38e83a",
+    "semantic_hash": "0b6f80f4c3396b433b41fcf0ce38e83a"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/source_assets/edu_trades/07_Long_plays.md": {
+    "mtime": 1765652664.0,
+    "ast_hash": "b90290d3b2095382cbe76ff9a8522c00",
+    "semantic_hash": "b90290d3b2095382cbe76ff9a8522c00"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/source_assets/mosquito_smallcaps/La-Formula-Exacta-para-Entrar-en-Trades_Media_4Xh34AFFGJc_001_1080p_pdf.md": {
+    "mtime": 1767964258.9439216,
+    "ast_hash": "deb20c2f7d79e38264e4dc0e682d98fd",
+    "semantic_hash": "deb20c2f7d79e38264e4dc0e682d98fd"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/traders_strategies/EDUTRADES_LONG_PLAYS_SOURCE_EVENT_INDEX_v0_1.md": {
+    "mtime": 1783266438.9985156,
+    "ast_hash": "9b647d48d58ec4142691bb4d34e27fb4",
+    "semantic_hash": "9b647d48d58ec4142691bb4d34e27fb4"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/00_EVENT_LIBRARY/traders_strategies/MOSQUITO_SMALLCAPS_SOURCE_EVENT_INDEX_v0_1.md": {
+    "mtime": 1782038135.993027,
+    "ast_hash": "35d24f49533b9eceafedebb0d0440db9",
+    "semantic_hash": "35d24f49533b9eceafedebb0d0440db9"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/01_EVENT_ENGINE_MODEL/README.md": {
+    "mtime": 1781873774.8668704,
+    "ast_hash": "43dbfcf4d1b27b5603b87e4785192659",
+    "semantic_hash": "43dbfcf4d1b27b5603b87e4785192659"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/02_OUTCOME_RESEARCH/README.md": {
+    "mtime": 1781873774.8668704,
+    "ast_hash": "e3859e8606fc020d3bec36c030337bed",
+    "semantic_hash": "e3859e8606fc020d3bec36c030337bed"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Crowded_Ticker_Context/FACTOR.md": {
+    "mtime": 1782582381.3146975,
+    "ast_hash": "cefd4fad0e48b57105900a43dbfb4d5e",
+    "semantic_hash": "cefd4fad0e48b57105900a43dbfb4d5e"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Float_Rotation/FACTOR.md": {
+    "mtime": 1782582654.9102082,
+    "ast_hash": "e583a079c8c62b183ec122ad74e3a312",
+    "semantic_hash": "e583a079c8c62b183ec122ad74e3a312"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Liquidity_Gain_Loss/FACTOR.md": {
+    "mtime": 1782581841.237675,
+    "ast_hash": "98ab0b50542619632a2c123368576eb3",
+    "semantic_hash": "98ab0b50542619632a2c123368576eb3"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Neutralized_Area/FACTOR.md": {
+    "mtime": 1782582031.7733996,
+    "ast_hash": "5e7aa82d97d8c811e2a2fd8e17cf478f",
+    "semantic_hash": "5e7aa82d97d8c811e2a2fd8e17cf478f"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Pattern_Variation_Acceptable_Range/FACTOR.md": {
+    "mtime": 1782634520.4813347,
+    "ast_hash": "c435d3ada53d69e4b0fb1048168f931c",
+    "semantic_hash": "c435d3ada53d69e4b0fb1048168f931c"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Short_Seller_Trap_Layers/FACTOR.md": {
+    "mtime": 1782582176.3247836,
+    "ast_hash": "9ca30898ecc599b30348feed1e107cdc",
+    "semantic_hash": "9ca30898ecc599b30348feed1e107cdc"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/FACTORS/Volume_Prediction/FACTOR.md": {
+    "mtime": 1782634520.5113356,
+    "ast_hash": "93418e9fb7cdea12cff7053c14eb5c15",
+    "semantic_hash": "93418e9fb7cdea12cff7053c14eb5c15"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/LONG/Dip_Buying_Multi_Day_Runner/STRATEGY.md": {
+    "mtime": 1782566619.9850018,
+    "ast_hash": "f0264549c62ea579b13a9edeb722261e",
+    "semantic_hash": "f0264549c62ea579b13a9edeb722261e"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/LONG/Gap_Up_Buying/STRATEGY.md": {
+    "mtime": 1782566619.776114,
+    "ast_hash": "927ff496eb85bc27ee8b188435b10019",
+    "semantic_hash": "927ff496eb85bc27ee8b188435b10019"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/README.md": {
+    "mtime": 1782640534.1676316,
+    "ast_hash": "af5e719bbc129fe7333a5eb09430629c",
+    "semantic_hash": "af5e719bbc129fe7333a5eb09430629c"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Bounce_Plus_Gap_Up_Short/STRATEGY.md": {
+    "mtime": 1782566619.7068443,
+    "ast_hash": "866d51c586d2c2d320048fc54abac4f6",
+    "semantic_hash": "866d51c586d2c2d320048fc54abac4f6"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Bounce_Short/STRATEGY.md": {
+    "mtime": 1782634520.5513365,
+    "ast_hash": "404d04311f74c562fdc25383e8516c50",
+    "semantic_hash": "404d04311f74c562fdc25383e8516c50"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Double_Intraday_Top/STRATEGY.md": {
+    "mtime": 1782566619.8432004,
+    "ast_hash": "e7a94603ce9f61d8d367f17608d1d94b",
+    "semantic_hash": "e7a94603ce9f61d8d367f17608d1d94b"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Double_Layer_Resistance/STRATEGY.md": {
+    "mtime": 1782640439.1835427,
+    "ast_hash": "0a7f445d789b47fa4b33bbcc349525de",
+    "semantic_hash": "0a7f445d789b47fa4b33bbcc349525de"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/First_Red_Day/estrtategia.md": {
+    "mtime": 1782378895.2274215,
+    "ast_hash": "d899f5330a794c5087bbe94c980975c4",
+    "semantic_hash": "d899f5330a794c5087bbe94c980975c4"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/First_Red_Day/STRATEGY.md": {
+    "mtime": 1782634520.5915525,
+    "ast_hash": "c522ede9fbb5908fc6bf76be515e7d31",
+    "semantic_hash": "c522ede9fbb5908fc6bf76be515e7d31"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Gap_Up_Short/STRATEGY.md": {
+    "mtime": 1782645902.6923287,
+    "ast_hash": "4c23e7198db541fa65b71f4876f0549d",
+    "semantic_hash": "4c23e7198db541fa65b71f4876f0549d"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Gap_Up_Short/STRATEGY_old.md": {
+    "mtime": 1782634520.6075525,
+    "ast_hash": "8194a721ca059c5745bdb9954e571d71",
+    "semantic_hash": "8194a721ca059c5745bdb9954e571d71"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Multi_Day_Top_Risk_Reward/STRATEGY.md": {
+    "mtime": 1782566620.052442,
+    "ast_hash": "de4c603961ffdbdd373bdacac09d4ddc",
+    "semantic_hash": "de4c603961ffdbdd373bdacac09d4ddc"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/SHORT/Parabolic_Breakout_Failed_Breakout/STRATEGY.md": {
+    "mtime": 1782634928.4765165,
+    "ast_hash": "5bdca32004f3a281f55686f237f38ae0",
+    "semantic_hash": "5bdca32004f3a281f55686f237f38ae0"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/01_Steven_Dux/STEVEN_DUX_SOURCE_STRATEGY_INDEX_v0_1.md": {
+    "mtime": 1782640439.1135385,
+    "ast_hash": "bbb6604ff466f66f8d04a285d4e3c1bf",
+    "semantic_hash": "bbb6604ff466f66f8d04a285d4e3c1bf"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/03_Edu_Trades/07_Long_plays.md": {
+    "mtime": 1781873774.8688703,
+    "ast_hash": "b90290d3b2095382cbe76ff9a8522c00",
+    "semantic_hash": "b90290d3b2095382cbe76ff9a8522c00"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/03_Edu_Trades/07_Short_Plays.md": {
+    "mtime": 1781873774.8688703,
+    "ast_hash": "138b45b23b99cf492db01f631d02f4be",
+    "semantic_hash": "138b45b23b99cf492db01f631d02f4be"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/_shared/README.md": {
+    "mtime": 1782413449.121361,
+    "ast_hash": "6adb1fefe7c00f940e5e6dbf4b1d5e0a",
+    "semantic_hash": "6adb1fefe7c00f940e5e6dbf4b1d5e0a"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/FACTORS/README.md": {
+    "mtime": 1782635145.6402717,
+    "ast_hash": "ad5098a6d83555936907852254d88895",
+    "semantic_hash": "ad5098a6d83555936907852254d88895"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/edge_hypothesis.md": {
+    "mtime": 1781873774.9019268,
+    "ast_hash": "03ba4ba031ac754ac60a320e9054a28e",
+    "semantic_hash": "03ba4ba031ac754ac60a320e9054a28e"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/execution_model.md": {
+    "mtime": 1781873774.9019268,
+    "ast_hash": "317a754f464fbdcb1e47d0c81600cbd5",
+    "semantic_hash": "317a754f464fbdcb1e47d0c81600cbd5"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/failure_modes.md": {
+    "mtime": 1781873774.9019268,
+    "ast_hash": "1ae7aaac95c799702f28dcf484c1d655",
+    "semantic_hash": "1ae7aaac95c799702f28dcf484c1d655"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/market_structure.md": {
+    "mtime": 1781873774.9019268,
+    "ast_hash": "0202d3438942d841601ca0e7260c0f6c",
+    "semantic_hash": "0202d3438942d841601ca0e7260c0f6c"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/ml_features.md": {
+    "mtime": 1781873774.9019268,
+    "ast_hash": "92f5e338fd2d9b40b0d27abadd78ba3b",
+    "semantic_hash": "92f5e338fd2d9b40b0d27abadd78ba3b"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/pattern_mining_questions.md": {
+    "mtime": 1781873774.9019268,
+    "ast_hash": "ef05d1e291ecc60a766c15dbdf2c7b98",
+    "semantic_hash": "ef05d1e291ecc60a766c15dbdf2c7b98"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/README.md": {
+    "mtime": 1781873774.9019268,
+    "ast_hash": "69fc91304d6dc670ca10a6a97320a3ed",
+    "semantic_hash": "69fc91304d6dc670ca10a6a97320a3ed"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/squeeze_relevance.md": {
+    "mtime": 1781873774.9067378,
+    "ast_hash": "3db0e0e767b21cb25fae3eb7187bd95c",
+    "semantic_hash": "3db0e0e767b21cb25fae3eb7187bd95c"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/Breakout/STRATEGY.md": {
+    "mtime": 1782232077.011619,
+    "ast_hash": "e171ddf83ba07ed184c47d08fd2cc9f4",
+    "semantic_hash": "e171ddf83ba07ed184c47d08fd2cc9f4"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/00_privado.md": {
+    "mtime": 1782764824.1629765,
+    "ast_hash": "0ed933b46fcf9ba0397b31c2a0387ea7",
+    "semantic_hash": "0ed933b46fcf9ba0397b31c2a0387ea7"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/DAS_CANDIDATE_STATE_TABLE_EXPERIMENTAL_SPEC_v0_1.md": {
+    "mtime": 1782827212.7313023,
+    "ast_hash": "57ccb0c7deefe6acba90bad1a34f0daf",
+    "semantic_hash": "57ccb0c7deefe6acba90bad1a34f0daf"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/DAS_FRONTSIDE_STATE_AND_ALPHAEVOLVE_RESEARCH_PLAN_v0_1.md": {
+    "mtime": 1784710215.4694178,
+    "ast_hash": "8a8136eaec03b67abcc6abd18e1437d8",
+    "semantic_hash": "8a8136eaec03b67abcc6abd18e1437d8"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/DAS_SCANNER_USAGE_AND_OVERLAY_RUNBOOK_v0_1.md": {
+    "mtime": 1784710215.4714172,
+    "ast_hash": "7acc93ce1015e26d3c41c6584e82ffb6",
+    "semantic_hash": "7acc93ce1015e26d3c41c6584e82ffb6"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/DAS_VISUAL_CASEBOOK/DAS_ARCHIVE_VISUAL_CASEBOOK_v0_1.md": {
+    "mtime": 1782766334.9293015,
+    "ast_hash": "b5209c1a935d8641189c8291d6bb02f8",
+    "semantic_hash": "b5209c1a935d8641189c8291d6bb02f8"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/README.md": {
+    "mtime": 1782827056.4678955,
+    "ast_hash": "9b0e825aa744abed81cf63573526236f",
+    "semantic_hash": "9b0e825aa744abed81cf63573526236f"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/STRATEGY.md": {
+    "mtime": 1782826128.2625659,
+    "ast_hash": "e2391b54b45e3bfad97e2810d12a537a",
+    "semantic_hash": "e2391b54b45e3bfad97e2810d12a537a"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/gap&go/STRATEGY.md": {
+    "mtime": 1782126264.8969188,
+    "ast_hash": "70facf04868c7c41ae7f27d4a337b289",
+    "semantic_hash": "70facf04868c7c41ae7f27d4a337b289"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/README.md": {
+    "mtime": 1782232077.0984197,
+    "ast_hash": "0ff07eefd84a6ec90e8719df05fe2d5e",
+    "semantic_hash": "0ff07eefd84a6ec90e8719df05fe2d5e"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/README.md": {
+    "mtime": 1784710215.4763367,
+    "ast_hash": "a5703215464800d08adf05c86a98e428",
+    "semantic_hash": "a5703215464800d08adf05c86a98e428"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/SHORT/README.md": {
+    "mtime": 1781873774.9087493,
+    "ast_hash": "0c6f9d752ee890c58e8995e4e09a3ac3",
+    "semantic_hash": "0c6f9d752ee890c58e8995e4e09a3ac3"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/04_STRATEGY_RESEARCH/README.md": {
+    "mtime": 1781873774.9097495,
+    "ast_hash": "cbaa4e940ad79b37727e0b8cd277661c",
+    "semantic_hash": "cbaa4e940ad79b37727e0b8cd277661c"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/05_EDGE_HYPOTHESES/README.md": {
+    "mtime": 1781873774.9107497,
+    "ast_hash": "20c9c8d655ef5d992e815d0fc5815b7e",
+    "semantic_hash": "20c9c8d655ef5d992e815d0fc5815b7e"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/06_PATTERN_DISCOVERY/README.md": {
+    "mtime": 1781873774.9117503,
+    "ast_hash": "78f0e2e69ebf1f3e8ed2a0785f88e4d3",
+    "semantic_hash": "78f0e2e69ebf1f3e8ed2a0785f88e4d3"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/07_CLUSTER_RESEARCH/README.md": {
+    "mtime": 1781873774.912749,
+    "ast_hash": "e865a802a0c69fb3457611aaaf172718",
+    "semantic_hash": "e865a802a0c69fb3457611aaaf172718"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/08_EXECUTION_MODELS/README.md": {
+    "mtime": 1781873774.9137492,
+    "ast_hash": "2cd53e58e1a8a94a965eb66233887f14",
+    "semantic_hash": "2cd53e58e1a8a94a965eb66233887f14"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/09_DECISION_MODELS/README.md": {
+    "mtime": 1781873774.9137492,
+    "ast_hash": "53cf7a07cf58543e035f18ce340497bf",
+    "semantic_hash": "53cf7a07cf58543e035f18ce340497bf"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/10_EVOLUTION_SYSTEMS/README.md": {
+    "mtime": 1781873774.9147499,
+    "ast_hash": "34c41d388702ae49961b422bed86320e",
+    "semantic_hash": "34c41d388702ae49961b422bed86320e"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/11_SQUEEZE_RESEARCH/README.md": {
+    "mtime": 1781873774.9158027,
+    "ast_hash": "678c068ae8fb75a15a72f4d3031ab34d",
+    "semantic_hash": "678c068ae8fb75a15a72f4d3031ab34d"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/90_DISCRETIONARY_FRAMEWORKS/README.md": {
+    "mtime": 1781873774.9158027,
+    "ast_hash": "5986d6e30abd78bc6b39c2171f1d0f5f",
+    "semantic_hash": "5986d6e30abd78bc6b39c2171f1d0f5f"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/99_EXPERIMENTAL/README.md": {
+    "mtime": 1781873774.9158027,
+    "ast_hash": "4b4c17e21ec597ee08bb90669b5adda2",
+    "semantic_hash": "4b4c17e21ec597ee08bb90669b5adda2"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/README.md": {
+    "mtime": 1784710215.4792309,
+    "ast_hash": "8f49d3e36798e7d2abc2cb2e365988fc",
+    "semantic_hash": "8f49d3e36798e7d2abc2cb2e365988fc"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/revision.md": {
+    "mtime": 1784710215.4819126,
+    "ast_hash": "74f97cca8b88672aee6d83236176d0d4",
+    "semantic_hash": "74f97cca8b88672aee6d83236176d0d4"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/_shared/strategy_widgets_common.py": {
+    "mtime": 1784710215.4672837,
+    "ast_hash": "95133b47deb2778d6b2599de41f063a1",
+    "semantic_hash": "95133b47deb2778d6b2599de41f063a1"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/scripts/build_das_candidate_state_table_experimental.py": {
+    "mtime": 1782761461.6712904,
+    "ast_hash": "29ab8298100d1ddc8b7911269a1b1f53",
+    "semantic_hash": "29ab8298100d1ddc8b7911269a1b1f53"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/scripts/build_das_experimental_stats_report.py": {
+    "mtime": 1782766334.9283006,
+    "ast_hash": "955b076c9bf44935e37936d60f6f0e68",
+    "semantic_hash": "955b076c9bf44935e37936d60f6f0e68"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/scripts/build_das_frontside_pattern_stats.py": {
+    "mtime": 1782766334.9283006,
+    "ast_hash": "22bc0f4c9ec9bc8c8d2c0a205bd7582f",
+    "semantic_hash": "22bc0f4c9ec9bc8c8d2c0a205bd7582f"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/DAS/scripts/das_widgets.py": {
+    "mtime": 1783341967.496378,
+    "ast_hash": "ebb552c748b297472338195db9ed5af5",
+    "semantic_hash": "ebb552c748b297472338195db9ed5af5"
+  },
+  "00_CTO/13_TRADING_SYSTEMS/03_STRATEGY_LIBRARY/LONG/gap&go/gap_and_go_widgets.py": {
+    "mtime": 1784710215.4749367,
+    "ast_hash": "6ae988971c51364fec602b0065db6377",
+    "semantic_hash": "6ae988971c51364fec602b0065db6377"
+  }
+}

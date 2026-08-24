@@ -1,0 +1,810 @@
+[
+  {
+    "path": "00_CTO/01_RESEARCH_PHILOSOPHY/00_CTO/00_guia.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\01_RESEARCH_PHILOSOPHY\\00_CTO\\00_guia.md",
+    "category": "document",
+    "sha256": "01725e0d1c3701e01eb849a0fdfffc7fe8c3d809f96231506d134133f2e7c99e",
+    "bytes": 5012,
+    "word_count": 490
+  },
+  {
+    "path": "00_CTO/01_RESEARCH_PHILOSOPHY/00_MANIFESTO/TSIS_RESEARCH_MANIFESTO.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\01_RESEARCH_PHILOSOPHY\\00_MANIFESTO\\TSIS_RESEARCH_MANIFESTO.md",
+    "category": "document",
+    "sha256": "56a5ed57d956bc9bd30537e0262853924f1ad7a3f8a4670d3c3b3a2656685dd6",
+    "bytes": 1330,
+    "word_count": 185
+  },
+  {
+    "path": "00_CTO/01_RESEARCH_PHILOSOPHY/01_KNOWLEDGE_MODEL/research_question_to_operational_component_lifecycle.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\01_RESEARCH_PHILOSOPHY\\01_KNOWLEDGE_MODEL\\research_question_to_operational_component_lifecycle.md",
+    "category": "document",
+    "sha256": "7d87f0deb85708f282bcb9f8912bacf37fc295d0b634874c81fa2dba859569f4",
+    "bytes": 1059,
+    "word_count": 148
+  },
+  {
+    "path": "00_CTO/01_RESEARCH_PHILOSOPHY/01_KNOWLEDGE_MODEL/scientific_discovery_engine.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\01_RESEARCH_PHILOSOPHY\\01_KNOWLEDGE_MODEL\\scientific_discovery_engine.md",
+    "category": "document",
+    "sha256": "6e93608cec239b0e169c2ccb2e516f83ac579631e24e21280768f2a74378d005",
+    "bytes": 1556,
+    "word_count": 205
+  },
+  {
+    "path": "00_CTO/01_RESEARCH_PHILOSOPHY/02_EXPERIMENTAL_METHOD/research_experiment_principles.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\01_RESEARCH_PHILOSOPHY\\02_EXPERIMENTAL_METHOD\\research_experiment_principles.md",
+    "category": "document",
+    "sha256": "188f25edc5704705fa0e413c99be986ec6f6163439e43a8809aa22c25b8d9e4b",
+    "bytes": 852,
+    "word_count": 96
+  },
+  {
+    "path": "00_CTO/01_RESEARCH_PHILOSOPHY/03_HUMAN_AND_AI_RESEARCHERS/human_and_alphaevolve_common_protocol.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\01_RESEARCH_PHILOSOPHY\\03_HUMAN_AND_AI_RESEARCHERS\\human_and_alphaevolve_common_protocol.md",
+    "category": "document",
+    "sha256": "6b8ba8a87fa205b37c6942bf9aff47859bf92605d69306f85b18742e4644e9b2",
+    "bytes": 1135,
+    "word_count": 150
+  },
+  {
+    "path": "00_CTO/01_RESEARCH_PHILOSOPHY/04_MARKET_SCIENCE_PHILOSOPHY/events_are_discovered_not_assumed.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\01_RESEARCH_PHILOSOPHY\\04_MARKET_SCIENCE_PHILOSOPHY\\events_are_discovered_not_assumed.md",
+    "category": "document",
+    "sha256": "7c6ad758c11e9356e4da362e0b2d9009df1d2deb0a2f705c6cedec0219118018",
+    "bytes": 883,
+    "word_count": 104
+  },
+  {
+    "path": "00_CTO/01_RESEARCH_PHILOSOPHY/05_07_2026.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\01_RESEARCH_PHILOSOPHY\\05_07_2026.md",
+    "category": "document",
+    "sha256": "f96b01fb0898db1549a93e50ad0a131c5b52644d2564dc5b3f198f8728bca91a",
+    "bytes": 5384,
+    "word_count": 475
+  },
+  {
+    "path": "00_CTO/01_RESEARCH_PHILOSOPHY/05_RESEARCH_GOVERNANCE/anti_overfitting_and_validation_principles.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\01_RESEARCH_PHILOSOPHY\\05_RESEARCH_GOVERNANCE\\anti_overfitting_and_validation_principles.md",
+    "category": "document",
+    "sha256": "06b83333cdfbe0d2950f540cde424c27b6ae02bff63598aa78aba55496f116f3",
+    "bytes": 1094,
+    "word_count": 148
+  },
+  {
+    "path": "00_CTO/01_RESEARCH_PHILOSOPHY/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\01_RESEARCH_PHILOSOPHY\\README.md",
+    "category": "document",
+    "sha256": "3668266fc5305b40743e87ca7fe85ef16664e6f109007749b1f4ba7ec847f396",
+    "bytes": 1319,
+    "word_count": 129
+  },
+  {
+    "path": "00_CTO/02_SYSTEMS_ENGINEERING/00_RECONSTRUCCION_L3_LIBRO_DE_ORDENES/00_motivacion.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\02_SYSTEMS_ENGINEERING\\00_RECONSTRUCCION_L3_LIBRO_DE_ORDENES\\00_motivacion.md",
+    "category": "document",
+    "sha256": "4ce36266e2918c99258f58ac0c8d8715a946df1a28b89ad393cec206d1bfe1e4",
+    "bytes": 28640,
+    "word_count": 3634
+  },
+  {
+    "path": "00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/00_CTO/00_variables a_medir.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\02_SYSTEMS_ENGINEERING\\01_INTERFACES_AND_ADAPTERS\\00_CTO\\00_variables a_medir.md",
+    "category": "document",
+    "sha256": "794f48c53ee0bf5904c5a10d860b974a485135e61e7fa608afac298754a7befa",
+    "bytes": 6377,
+    "word_count": 892
+  },
+  {
+    "path": "00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/00_CTO/01_valor_de_MBO.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\02_SYSTEMS_ENGINEERING\\01_INTERFACES_AND_ADAPTERS\\00_CTO\\01_valor_de_MBO.md",
+    "category": "document",
+    "sha256": "94bc03437af5081caa229b55b3096bd295eeafdd53ebcd72e6f6d905f0a9de12",
+    "bytes": 15889,
+    "word_count": 2224
+  },
+  {
+    "path": "00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/das_api_data_capturada/das_cmdapi_capture_audit_2026_07_09.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\02_SYSTEMS_ENGINEERING\\01_INTERFACES_AND_ADAPTERS\\das_api_data_capturada\\das_cmdapi_capture_audit_2026_07_09.md",
+    "category": "document",
+    "sha256": "8eb81b37b0b3a978146fbcf82c6ed206475ab544c83d59e49d6a9fc5a07bc459",
+    "bytes": 11201,
+    "word_count": 1506
+  },
+  {
+    "path": "00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/LIVE_SOURCE/DAS_0003_LIVE_L2_L3_PROVIDER_UNDER_200_USD_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\02_SYSTEMS_ENGINEERING\\01_INTERFACES_AND_ADAPTERS\\LIVE_SOURCE\\DAS_0003_LIVE_L2_L3_PROVIDER_UNDER_200_USD_v0_1.md",
+    "category": "document",
+    "sha256": "22a9f11441c4cb90e05e5403e774d95b3a1f2e1e0a76b0da251d0c8e90019f7b",
+    "bytes": 7389,
+    "word_count": 1077
+  },
+  {
+    "path": "00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/LIVE_SOURCE/das_api/dastrades_cmdapi_system_map_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\02_SYSTEMS_ENGINEERING\\01_INTERFACES_AND_ADAPTERS\\LIVE_SOURCE\\das_api\\dastrades_cmdapi_system_map_v0_1.md",
+    "category": "document",
+    "sha256": "13fb9fd158fae4abea95e63fbe3d6254c327756686079a000ee12f5a2a26fe8f",
+    "bytes": 24911,
+    "word_count": 3039
+  },
+  {
+    "path": "00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/LIVE_SOURCE/IB/L2_L3.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\02_SYSTEMS_ENGINEERING\\01_INTERFACES_AND_ADAPTERS\\LIVE_SOURCE\\IB\\L2_L3.md",
+    "category": "document",
+    "sha256": "ab2108e8615544cf8405ce4582065a9832a8226e8c02a966754c2ffc4173e97d",
+    "bytes": 11816,
+    "word_count": 1563
+  },
+  {
+    "path": "00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/LIVE_SOURCE/IB/scanner_previo.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\02_SYSTEMS_ENGINEERING\\01_INTERFACES_AND_ADAPTERS\\LIVE_SOURCE\\IB\\scanner_previo.md",
+    "category": "document",
+    "sha256": "c0b0a7dd5383b918a7185b7f79b0024bebc2ff2ce883f50f2c39a8480e7a5d32",
+    "bytes": 34060,
+    "word_count": 3991
+  },
+  {
+    "path": "00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/LIVE_SOURCE/live_source_adapter_topology_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\02_SYSTEMS_ENGINEERING\\01_INTERFACES_AND_ADAPTERS\\LIVE_SOURCE\\live_source_adapter_topology_v0_1.md",
+    "category": "document",
+    "sha256": "4aec90c6a27bc170c4071bb42767325ace9610221d9eb5f778bc5fef7486c727",
+    "bytes": 4637,
+    "word_count": 626
+  },
+  {
+    "path": "00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/LIVE_SOURCE/market_data_ultra_institutional_coverage_catalog_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\02_SYSTEMS_ENGINEERING\\01_INTERFACES_AND_ADAPTERS\\LIVE_SOURCE\\market_data_ultra_institutional_coverage_catalog_v0_1.md",
+    "category": "document",
+    "sha256": "3c6cd0fdcaacf5fffc08a83a0ab38989e3311af56eaa9434aa5e0cb4334a7e5a",
+    "bytes": 20919,
+    "word_count": 2200
+  },
+  {
+    "path": "00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\02_SYSTEMS_ENGINEERING\\01_INTERFACES_AND_ADAPTERS\\README.md",
+    "category": "document",
+    "sha256": "dbd55d22b6ceca8635ad492ef5f4e4c280cfe6b67948bd987d31fb0556d7166b",
+    "bytes": 2196,
+    "word_count": 282
+  },
+  {
+    "path": "00_CTO/02_SYSTEMS_ENGINEERING/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\02_SYSTEMS_ENGINEERING\\README.md",
+    "category": "document",
+    "sha256": "dc971360e38f916b6e2cea257c40b98b7881da9109b9f89101948088484e3787",
+    "bytes": 2393,
+    "word_count": 317
+  },
+  {
+    "path": "00_CTO/03_AGENT_ENGINEERING/agent_working_standards_TSIS.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\03_AGENT_ENGINEERING\\agent_working_standards_TSIS.md",
+    "category": "document",
+    "sha256": "c1289da04498fd973e4a29cc151e74dca48c2ab5783a45ace24ed537d33ec496",
+    "bytes": 19867,
+    "word_count": 2831
+  },
+  {
+    "path": "00_CTO/03_AGENT_ENGINEERING/ENGINEERING_project.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\03_AGENT_ENGINEERING\\ENGINEERING_project.md",
+    "category": "document",
+    "sha256": "e0a8278045c7f08c318c1745ccc6f7e30796732d216ebe56f78faa7761ddc0e9",
+    "bytes": 162,
+    "word_count": 14
+  },
+  {
+    "path": "00_CTO/03_AGENT_ENGINEERING/HARNESS.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\03_AGENT_ENGINEERING\\HARNESS.md",
+    "category": "document",
+    "sha256": "82cb35e782d76ad474bd3497ef476516146c39a9ff26bcd85ce4a034e3fbd6c0",
+    "bytes": 184,
+    "word_count": 3
+  },
+  {
+    "path": "00_CTO/03_AGENT_ENGINEERING/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\03_AGENT_ENGINEERING\\README.md",
+    "category": "document",
+    "sha256": "03798c07174c83f2009c94be35ba813373f26af3fff646f6df4a19b81e984790",
+    "bytes": 449,
+    "word_count": 62
+  },
+  {
+    "path": "00_CTO/08_MACHINE_LEARNING/00_CTO/revision.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\08_MACHINE_LEARNING\\00_CTO\\revision.md",
+    "category": "document",
+    "sha256": "6718c5dfcf13f516c64a4b1d7c46f9138bebf178dc994f977d0c116b229bcd7e",
+    "bytes": 11088,
+    "word_count": 1593
+  },
+  {
+    "path": "00_CTO/08_MACHINE_LEARNING/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\08_MACHINE_LEARNING\\README.md",
+    "category": "document",
+    "sha256": "11be0131c16c955105fa9921feed22c3db3e0ab1e17b778f80831189661c42d7",
+    "bytes": 431,
+    "word_count": 56
+  },
+  {
+    "path": "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/00_AlphaEvolve_vs_sobreoptimizacion.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\10_AUTONOMOUS_RESEARCH_SYSTEMS\\01_AlphaEvolve\\00_CTO\\00_AlphaEvolve_vs_sobreoptimizacion.md",
+    "category": "document",
+    "sha256": "cda9ec5cdbabe01ba6e258bae4b57fbe286093d27661a814ebb121d5ef969fb6",
+    "bytes": 17135,
+    "word_count": 2034
+  },
+  {
+    "path": "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/01_ALPHAEVOLVE_TSIS_VISION.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\10_AUTONOMOUS_RESEARCH_SYSTEMS\\01_AlphaEvolve\\00_CTO\\01_ALPHAEVOLVE_TSIS_VISION.md",
+    "category": "document",
+    "sha256": "2cc907fae235cbc7fbf1ef8c310c7f17abc105185e4fe6feaa4c4f398ae77473",
+    "bytes": 2968,
+    "word_count": 401
+  },
+  {
+    "path": "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/02_ALPHAEVOLVE_AS_RESEARCH_EXPERIMENT_GENERATOR_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\10_AUTONOMOUS_RESEARCH_SYSTEMS\\01_AlphaEvolve\\00_CTO\\02_ALPHAEVOLVE_AS_RESEARCH_EXPERIMENT_GENERATOR_v0_1.md",
+    "category": "document",
+    "sha256": "fddafd013f4789362bdf898ad6d1ee5ca0782320284ba3c0c5d2863c07cffb62",
+    "bytes": 5057,
+    "word_count": 566
+  },
+  {
+    "path": "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/AlphaEnvolve_en_Tsis.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\10_AUTONOMOUS_RESEARCH_SYSTEMS\\01_AlphaEvolve\\00_CTO\\AlphaEnvolve_en_Tsis.md",
+    "category": "document",
+    "sha256": "ba19be6b517b33ddf25df9f9a146ef7c6c4ad7099117f8fdec1770fedf1f3cdb",
+    "bytes": 18044,
+    "word_count": 1968
+  },
+  {
+    "path": "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/areas_de_trabajo.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\10_AUTONOMOUS_RESEARCH_SYSTEMS\\01_AlphaEvolve\\00_CTO\\areas_de_trabajo.md",
+    "category": "document",
+    "sha256": "7c71bea1bdc83870c2c90ff099dfeb3afeb5311e0a4735f379ad58f4788a5914",
+    "bytes": 8201,
+    "word_count": 1020
+  },
+  {
+    "path": "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\10_AUTONOMOUS_RESEARCH_SYSTEMS\\01_AlphaEvolve\\README.md",
+    "category": "document",
+    "sha256": "9e01c10eaea47891df7501cc0b53c0ffe88d65a3934d86cc0a4aab97f7858512",
+    "bytes": 10606,
+    "word_count": 1300
+  },
+  {
+    "path": "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/03_OpenEvolve/00_CTO/00_.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\10_AUTONOMOUS_RESEARCH_SYSTEMS\\03_OpenEvolve\\00_CTO\\00_.md",
+    "category": "document",
+    "sha256": "380dc6c1ecfc7d1a67cae4979362d2d3c76aae70d5fa258d8c8cfb5e083b8ed4",
+    "bytes": 2855,
+    "word_count": 378
+  },
+  {
+    "path": "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/04_Harness_Agentic/HARNESS.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\10_AUTONOMOUS_RESEARCH_SYSTEMS\\04_Harness_Agentic\\HARNESS.md",
+    "category": "document",
+    "sha256": "8a3fae21ec38829c02a093b5dedc3519b9a3a77c74ea16a3aad0a96f0c3ebe4d",
+    "bytes": 129,
+    "word_count": 2
+  },
+  {
+    "path": "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/07_Autonomous_Trading_Research/AlphaEvolve_For_Trading.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\10_AUTONOMOUS_RESEARCH_SYSTEMS\\07_Autonomous_Trading_Research\\AlphaEvolve_For_Trading.md",
+    "category": "document",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0,
+    "word_count": 0
+  },
+  {
+    "path": "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/07_Autonomous_Trading_Research/Evolutionary_Search.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\10_AUTONOMOUS_RESEARCH_SYSTEMS\\07_Autonomous_Trading_Research\\Evolutionary_Search.md",
+    "category": "document",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0,
+    "word_count": 0
+  },
+  {
+    "path": "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/07_Autonomous_Trading_Research/Hypothesis_Generation.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\10_AUTONOMOUS_RESEARCH_SYSTEMS\\07_Autonomous_Trading_Research\\Hypothesis_Generation.md",
+    "category": "document",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0,
+    "word_count": 0
+  },
+  {
+    "path": "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/07_Autonomous_Trading_Research/Meta_Labeling_Agents.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\10_AUTONOMOUS_RESEARCH_SYSTEMS\\07_Autonomous_Trading_Research\\Meta_Labeling_Agents.md",
+    "category": "document",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0,
+    "word_count": 0
+  },
+  {
+    "path": "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/07_Autonomous_Trading_Research/Research_Evaluator.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\10_AUTONOMOUS_RESEARCH_SYSTEMS\\07_Autonomous_Trading_Research\\Research_Evaluator.md",
+    "category": "document",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0,
+    "word_count": 0
+  },
+  {
+    "path": "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/07_Autonomous_Trading_Research/Scientific_Method_For_TSIS.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\10_AUTONOMOUS_RESEARCH_SYSTEMS\\07_Autonomous_Trading_Research\\Scientific_Method_For_TSIS.md",
+    "category": "document",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0,
+    "word_count": 0
+  },
+  {
+    "path": "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/07_Autonomous_Trading_Research/Strategy_Discovery.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\10_AUTONOMOUS_RESEARCH_SYSTEMS\\07_Autonomous_Trading_Research\\Strategy_Discovery.md",
+    "category": "document",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0,
+    "word_count": 0
+  },
+  {
+    "path": "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/07_Autonomous_Trading_Research/TSIS_RESEARCH_VISION.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\10_AUTONOMOUS_RESEARCH_SYSTEMS\\07_Autonomous_Trading_Research\\TSIS_RESEARCH_VISION.md",
+    "category": "document",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0,
+    "word_count": 0
+  },
+  {
+    "path": "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\10_AUTONOMOUS_RESEARCH_SYSTEMS\\README.md",
+    "category": "document",
+    "sha256": "2be18c7003ad225bdb6ff92e3abd7d83190ec76779318a6a4b9c5458d2e3e75d",
+    "bytes": 1732,
+    "word_count": 160
+  },
+  {
+    "path": "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/reference/README.MD",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\10_AUTONOMOUS_RESEARCH_SYSTEMS\\reference\\README.MD",
+    "category": "document",
+    "sha256": "6025c57d2ef9617f2cd87e91047a14fbddebf997a59c5cd5d976456ff26c880e",
+    "bytes": 208,
+    "word_count": 21
+  },
+  {
+    "path": "00_CTO/11_MARKET_SCIENCE/010_portfolio/00_CTO.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\11_MARKET_SCIENCE\\010_portfolio\\00_CTO.md",
+    "category": "document",
+    "sha256": "d333dcc920bd5044babbbe1389a25aa65d1caf616d6f2cb3a07d3292761a0f72",
+    "bytes": 12264,
+    "word_count": 1692
+  },
+  {
+    "path": "00_CTO/11_MARKET_SCIENCE/01_Microstructure/High-Frequency-Trading.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\11_MARKET_SCIENCE\\01_Microstructure\\High-Frequency-Trading.md",
+    "category": "document",
+    "sha256": "25d3b98616dff821a19c189a851cdb166782e20081da1d5113cbf680cdbc1736",
+    "bytes": 13628,
+    "word_count": 1786
+  },
+  {
+    "path": "00_CTO/11_MARKET_SCIENCE/01_Microstructure/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\11_MARKET_SCIENCE\\01_Microstructure\\README.md",
+    "category": "document",
+    "sha256": "e302fe475693f064e622cc2d77e03c682c27ff31c795ba1e094390114a8bfa86",
+    "bytes": 10110,
+    "word_count": 1383
+  },
+  {
+    "path": "00_CTO/11_MARKET_SCIENCE/02_Finantial_ML/Advances-in-Financial_Machine_Learning.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\11_MARKET_SCIENCE\\02_Finantial_ML\\Advances-in-Financial_Machine_Learning.md",
+    "category": "document",
+    "sha256": "5f85163ec7622fee995e241310ae25d00f47dca46f2ce5b698f4047f69a0cbde",
+    "bytes": 8432,
+    "word_count": 1242
+  },
+  {
+    "path": "00_CTO/11_MARKET_SCIENCE/03_Causality/Causal_Factor_Investing.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\11_MARKET_SCIENCE\\03_Causality\\Causal_Factor_Investing.md",
+    "category": "document",
+    "sha256": "9ffb94605cf7ae2bec409b614167f3a0a7bd519ae80121810f130348ea829480",
+    "bytes": 7560,
+    "word_count": 1078
+  },
+  {
+    "path": "00_CTO/11_MARKET_SCIENCE/03_Causality/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\11_MARKET_SCIENCE\\03_Causality\\README.md",
+    "category": "document",
+    "sha256": "e69d5b9274542df05e12b85eeda244a56996571581f91184c2b79ad060ac3804",
+    "bytes": 6926,
+    "word_count": 828
+  },
+  {
+    "path": "00_CTO/11_MARKET_SCIENCE/04_Invariants_and_Risk/ridk-and-asset-allocation.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\11_MARKET_SCIENCE\\04_Invariants_and_Risk\\ridk-and-asset-allocation.md",
+    "category": "document",
+    "sha256": "9e3ebd257519db8353cc1845ba584e4b8a4d28446eeefcf269df1b2367bf7c6c",
+    "bytes": 7475,
+    "word_count": 1043
+  },
+  {
+    "path": "00_CTO/11_MARKET_SCIENCE/07_Liquidity_Provider_Stress/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\11_MARKET_SCIENCE\\07_Liquidity_Provider_Stress\\README.md",
+    "category": "document",
+    "sha256": "c8bff5bc15409fb3f01227133f0eae9fadf4c2e1bfb69de848bc61736bbf70e9",
+    "bytes": 10197,
+    "word_count": 1382
+  },
+  {
+    "path": "00_CTO/11_MARKET_SCIENCE/09_ImitationLearneing/00_CTO.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\11_MARKET_SCIENCE\\09_ImitationLearneing\\00_CTO.md",
+    "category": "document",
+    "sha256": "070ade43a38a67563b860ca9f972ac84530854130d5be547015498c15d05913c",
+    "bytes": 28322,
+    "word_count": 3634
+  },
+  {
+    "path": "00_CTO/11_MARKET_SCIENCE/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\11_MARKET_SCIENCE\\README.md",
+    "category": "document",
+    "sha256": "3cdd83ae86571dd98f8f31582410104b394bfceb9f9d4e78d7b469f4097eff44",
+    "bytes": 9557,
+    "word_count": 1191
+  },
+  {
+    "path": "00_CTO/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+    "category": "document",
+    "sha256": "b733769c0cadfe06e3cb791511b66878664c8b713111d274991d7db842f94040",
+    "bytes": 16628,
+    "word_count": 2199
+  },
+  {
+    "path": "00_CTO/LOCAL_RULES.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\LOCAL_RULES.md",
+    "category": "document",
+    "sha256": "8f233bda43b2c0dd41697f2665c8a53830a47e1e6348baa58678e2a8b7c11bff",
+    "bytes": 8096,
+    "word_count": 1150
+  },
+  {
+    "path": "00_CTO/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\README.md",
+    "category": "document",
+    "sha256": "e51a75d99347d964d1b14e267cecbe989a30944f24a37da3792ef524af2802a6",
+    "bytes": 32894,
+    "word_count": 4029
+  },
+  {
+    "path": "00_CTO/TSIS_LAB_ARCHITECTURE_v3.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\TSIS_LAB_ARCHITECTURE_v3.md",
+    "category": "document",
+    "sha256": "5b749866e541b9f47c915585d55094e2d2df7826aa3f17f53b4907a75aeef8b1",
+    "bytes": 14665,
+    "word_count": 1662
+  },
+  {
+    "path": "03_TSIS_Lab/01_contracts/knowledge_object_promotion_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\03_TSIS_Lab\\01_contracts\\knowledge_object_promotion_contract_v0_1.md",
+    "category": "document",
+    "sha256": "81bbee20b3c47da0259528c168c5d896728c6bc88562d3798a9e0b1d4173d3d6",
+    "bytes": 1075,
+    "word_count": 117
+  },
+  {
+    "path": "03_TSIS_Lab/01_contracts/parameter_sweep_protocol_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\03_TSIS_Lab\\01_contracts\\parameter_sweep_protocol_v0_1.md",
+    "category": "document",
+    "sha256": "bfe6a0915950d1f5c3bb491cd286954eaae30ed294f4ec987f5e749ad9aa998c",
+    "bytes": 1634,
+    "word_count": 236
+  },
+  {
+    "path": "03_TSIS_Lab/01_contracts/research_experiment_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\03_TSIS_Lab\\01_contracts\\research_experiment_contract_v0_1.md",
+    "category": "document",
+    "sha256": "93bb5990ab64399e46947d243e123a613931e7d430cc969fa484d87f0689209b",
+    "bytes": 2617,
+    "word_count": 280
+  },
+  {
+    "path": "03_TSIS_Lab/01_contracts/research_experiment_execution_protocol_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\03_TSIS_Lab\\01_contracts\\research_experiment_execution_protocol_v0_1.md",
+    "category": "document",
+    "sha256": "add5adb51553db8a197ea5bb9f90d0c95892321fd2a352607bcf054a60849148",
+    "bytes": 2664,
+    "word_count": 342
+  },
+  {
+    "path": "03_TSIS_Lab/01_contracts/scientific_validation_pipeline_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\03_TSIS_Lab\\01_contracts\\scientific_validation_pipeline_contract_v0_1.md",
+    "category": "document",
+    "sha256": "46c38ca4b798107eeea41c1f57ce8ec50dbcffecb951393b3fb0abd365d935e5",
+    "bytes": 1426,
+    "word_count": 167
+  },
+  {
+    "path": "03_TSIS_Lab/02_registries/knowledge_object_registry_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\03_TSIS_Lab\\02_registries\\knowledge_object_registry_v0_1.md",
+    "category": "document",
+    "sha256": "375d17dc15069176163002117a1565028da155e781a845d936c41252c3bec88a",
+    "bytes": 390,
+    "word_count": 62
+  },
+  {
+    "path": "03_TSIS_Lab/02_registries/research_experiment_registry_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\03_TSIS_Lab\\02_registries\\research_experiment_registry_v0_1.md",
+    "category": "document",
+    "sha256": "85b7d8a49fe489f64049f8c927d942314c9decbe929f52d99ad929b9cff12d8d",
+    "bytes": 715,
+    "word_count": 77
+  },
+  {
+    "path": "03_TSIS_Lab/03_templates/evidence_report_template.md",
+    "absolute_path": "C:\\TSIS_Data\\03_TSIS_Lab\\03_templates\\evidence_report_template.md",
+    "category": "document",
+    "sha256": "99da9b3adf089e9e66d5c8ddb40065a86f5afc418e87921331b45c1bfa5d933e",
+    "bytes": 375,
+    "word_count": 50
+  },
+  {
+    "path": "03_TSIS_Lab/03_templates/parameter_sweep_template.yaml",
+    "absolute_path": "C:\\TSIS_Data\\03_TSIS_Lab\\03_templates\\parameter_sweep_template.yaml",
+    "category": "document",
+    "sha256": "b7fb7f86991dfb1759201bbfea03d6e6f1e0510ce941c105c02c8037913345bb",
+    "bytes": 265,
+    "word_count": 24
+  },
+  {
+    "path": "03_TSIS_Lab/03_templates/research_experiment_template.yaml",
+    "absolute_path": "C:\\TSIS_Data\\03_TSIS_Lab\\03_templates\\research_experiment_template.yaml",
+    "category": "document",
+    "sha256": "b8eb18e8677192b5d1eed749dcf908078812d9c0fb16f8cea63ed3ee2ca24bca",
+    "bytes": 653,
+    "word_count": 59
+  },
+  {
+    "path": "03_TSIS_Lab/05_adapters/graphify/README.md",
+    "absolute_path": "C:\\TSIS_Data\\03_TSIS_Lab\\05_adapters\\graphify\\README.md",
+    "category": "document",
+    "sha256": "159c8ae63f3fa97f720614e6e02e233eca61c1291167b6b6dfa3b05a6f051d8e",
+    "bytes": 1953,
+    "word_count": 227
+  },
+  {
+    "path": "03_TSIS_Lab/05_adapters/smallcaps/data_sources.md",
+    "absolute_path": "C:\\TSIS_Data\\03_TSIS_Lab\\05_adapters\\smallcaps\\data_sources.md",
+    "category": "document",
+    "sha256": "dc8d2113aabe632f57e2d7feb55c05625d4749720fa1e86292467bd6842d48d1",
+    "bytes": 598,
+    "word_count": 33
+  },
+  {
+    "path": "03_TSIS_Lab/05_adapters/smallcaps/execution_bridge.md",
+    "absolute_path": "C:\\TSIS_Data\\03_TSIS_Lab\\05_adapters\\smallcaps\\execution_bridge.md",
+    "category": "document",
+    "sha256": "9150c3901027050ee04ecd81914bf278ec044b74a5e27e6eec67383ae4986df0",
+    "bytes": 524,
+    "word_count": 61
+  },
+  {
+    "path": "03_TSIS_Lab/05_adapters/smallcaps/README.md",
+    "absolute_path": "C:\\TSIS_Data\\03_TSIS_Lab\\05_adapters\\smallcaps\\README.md",
+    "category": "document",
+    "sha256": "4fbecd0c27796f22db05bee7d64b8a3b897719d86e9b757aa2f4505144775a9f",
+    "bytes": 704,
+    "word_count": 90
+  },
+  {
+    "path": "03_TSIS_Lab/06_validators/README.md",
+    "absolute_path": "C:\\TSIS_Data\\03_TSIS_Lab\\06_validators\\README.md",
+    "category": "document",
+    "sha256": "ad06565486cb5f9bd5e1bf073a20ada2806395d2a1c23b14fc2f3bd4a83b13cb",
+    "bytes": 1009,
+    "word_count": 137
+  },
+  {
+    "path": "03_TSIS_Lab/06_validators/validate_visual_inspection_manifest.py",
+    "absolute_path": "C:\\TSIS_Data\\03_TSIS_Lab\\06_validators\\validate_visual_inspection_manifest.py",
+    "category": "code",
+    "sha256": "ea50ae16a7804c5411685d04d3fcb53bb1b33f984b4095622dbf24fb35042f64",
+    "bytes": 17994,
+    "word_count": 1335
+  },
+  {
+    "path": "03_TSIS_Lab/CHANGELOG.md",
+    "absolute_path": "C:\\TSIS_Data\\03_TSIS_Lab\\CHANGELOG.md",
+    "category": "document",
+    "sha256": "de42bdf6ab2e525a11f86791257bedb6bd5f14d81ef42595959727f19ab6beb5",
+    "bytes": 2179,
+    "word_count": 275
+  },
+  {
+    "path": "03_TSIS_Lab/LOCAL_RULES.md",
+    "absolute_path": "C:\\TSIS_Data\\03_TSIS_Lab\\LOCAL_RULES.md",
+    "category": "document",
+    "sha256": "1fc05cebaa3b87eca571f5fcd396613728ceed3edcd63240246cf145fe630c78",
+    "bytes": 3956,
+    "word_count": 470
+  },
+  {
+    "path": "03_TSIS_Lab/README.md",
+    "absolute_path": "C:\\TSIS_Data\\03_TSIS_Lab\\README.md",
+    "category": "document",
+    "sha256": "aeeb58d230a435dc5561dfd8002a3a6bbd5c41f0d5166ba0dda7c2b82e51e9fa",
+    "bytes": 4835,
+    "word_count": 568
+  },
+  {
+    "path": "04_TSIS_SCREENERS/MASSIVE_SEC_SCREENER_DATA_DECISION_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\04_TSIS_SCREENERS\\MASSIVE_SEC_SCREENER_DATA_DECISION_v0_1.md",
+    "category": "document",
+    "sha256": "048fc49e92736d12b427a29e4e0dbf4873eaf91e0a7e5d4a5963b35b68ea9ed8",
+    "bytes": 2069,
+    "word_count": 271
+  },
+  {
+    "path": "05_TSIS_STATISTICS_PATTERNS/00.MD",
+    "absolute_path": "C:\\TSIS_Data\\05_TSIS_STATISTICS_PATTERNS\\00.MD",
+    "category": "document",
+    "sha256": "9b529ccf5d21d8f316a48de9fd65447785172994e2a5dd959f39412c05a6b46a",
+    "bytes": 22997,
+    "word_count": 3501
+  },
+  {
+    "path": "05_TSIS_STATISTICS_PATTERNS/01.md",
+    "absolute_path": "C:\\TSIS_Data\\05_TSIS_STATISTICS_PATTERNS\\01.md",
+    "category": "document",
+    "sha256": "e336fab9b9452390aaae1e3510f72e075d774a87af3786dcf18808d1b6030ba6",
+    "bytes": 17883,
+    "word_count": 2878
+  },
+  {
+    "path": "06_TSIS_webSocket_SmallCaps/AGENTS.md",
+    "absolute_path": "C:\\TSIS_Data\\06_TSIS_webSocket_SmallCaps\\AGENTS.md",
+    "category": "document",
+    "sha256": "e2f823b94c259d84dd16d93776bf269b6668fa9fce8e6c9c2966cf8afe7f988c",
+    "bytes": 2902,
+    "word_count": 389
+  },
+  {
+    "path": "06_TSIS_webSocket_SmallCaps/CHANGELOG.md",
+    "absolute_path": "C:\\TSIS_Data\\06_TSIS_webSocket_SmallCaps\\CHANGELOG.md",
+    "category": "document",
+    "sha256": "ff8b8a3998c91aeab30f918a7511e6e9d6ff870d2425cc6045cb2270241a5bec",
+    "bytes": 7008,
+    "word_count": 798
+  },
+  {
+    "path": "06_TSIS_webSocket_SmallCaps/LOCAL_RULES.md",
+    "absolute_path": "C:\\TSIS_Data\\06_TSIS_webSocket_SmallCaps\\LOCAL_RULES.md",
+    "category": "document",
+    "sha256": "510ecbc410553cc8a31da3de772c3690c9a8a3a9398690ff53f37b8c09ab154d",
+    "bytes": 6359,
+    "word_count": 771
+  },
+  {
+    "path": "06_TSIS_webSocket_SmallCaps/manifest.yaml",
+    "absolute_path": "C:\\TSIS_Data\\06_TSIS_webSocket_SmallCaps\\manifest.yaml",
+    "category": "document",
+    "sha256": "7784cb931b4065589557508eead10769925b282b3b5f7882c0cd404288144181",
+    "bytes": 2877,
+    "word_count": 137
+  },
+  {
+    "path": "06_TSIS_webSocket_SmallCaps/README.md",
+    "absolute_path": "C:\\TSIS_Data\\06_TSIS_webSocket_SmallCaps\\README.md",
+    "category": "document",
+    "sha256": "63c73ad9f9cd1793dd084cabf1d51da270b61e512ba8bc146a4833e88dc3fe68",
+    "bytes": 4486,
+    "word_count": 502
+  },
+  {
+    "path": "07_TSIS_Offline_RL/AGENTS.md",
+    "absolute_path": "C:\\TSIS_Data\\07_TSIS_Offline_RL\\AGENTS.md",
+    "category": "document",
+    "sha256": "dd89ba24ca7115c804a2ffbfbe5081cf08fa2492771d41f0807f9b72e3acab55",
+    "bytes": 383,
+    "word_count": 37
+  },
+  {
+    "path": "07_TSIS_Offline_RL/CHANGELOG.md",
+    "absolute_path": "C:\\TSIS_Data\\07_TSIS_Offline_RL\\CHANGELOG.md",
+    "category": "document",
+    "sha256": "298b87dc2e76afbda07658aaf06cf27f1178e7e850cadd6417443325802545a2",
+    "bytes": 716,
+    "word_count": 83
+  },
+  {
+    "path": "07_TSIS_Offline_RL/LOCAL_RULES.md",
+    "absolute_path": "C:\\TSIS_Data\\07_TSIS_Offline_RL\\LOCAL_RULES.md",
+    "category": "document",
+    "sha256": "9a4e5728d10467b06343b3e2fa624956236b0d4263f9cda1b7f3bf994e39b5c2",
+    "bytes": 240,
+    "word_count": 32
+  },
+  {
+    "path": "07_TSIS_Offline_RL/manifest.yaml",
+    "absolute_path": "C:\\TSIS_Data\\07_TSIS_Offline_RL\\manifest.yaml",
+    "category": "document",
+    "sha256": "078177cd25e581bcf5419468cbdaf0fae9921ff6a911f4996211cc55add6429a",
+    "bytes": 555,
+    "word_count": 27
+  },
+  {
+    "path": "07_TSIS_Offline_RL/README.md",
+    "absolute_path": "C:\\TSIS_Data\\07_TSIS_Offline_RL\\README.md",
+    "category": "document",
+    "sha256": "970166b6d42ee14d21437036fbf1578cabb12803d95cd1136359530329ea04cf",
+    "bytes": 402,
+    "word_count": 45
+  },
+  {
+    "path": "AGENTS.md",
+    "absolute_path": "C:\\TSIS_Data\\AGENTS.md",
+    "category": "document",
+    "sha256": "8b31ce71d4d79292cdfd8b251e29a767bada29d9613d39670c4956022cb67fec",
+    "bytes": 19168,
+    "word_count": 2630
+  },
+  {
+    "path": "LONG_RUNNING_OPERATIONS_CONTRACT.md",
+    "absolute_path": "C:\\TSIS_Data\\LONG_RUNNING_OPERATIONS_CONTRACT.md",
+    "category": "document",
+    "sha256": "94957c947967c4f0ceb9d9c551c1ea9ff0c2e0360e08a633310c93cca6a64dcf",
+    "bytes": 11422,
+    "word_count": 1750
+  },
+  {
+    "path": "PATH_MIGRATION_2026_07_22.md",
+    "absolute_path": "C:\\TSIS_Data\\PATH_MIGRATION_2026_07_22.md",
+    "category": "document",
+    "sha256": "4d937e3922906139b28e3fd85007649d39d524b8ab530539ef414436b6ea73d0",
+    "bytes": 6715,
+    "word_count": 826
+  },
+  {
+    "path": "PATH_NAMING_POLICY.md",
+    "absolute_path": "C:\\TSIS_Data\\PATH_NAMING_POLICY.md",
+    "category": "document",
+    "sha256": "12353a4468eaf8d417e44c422c68e198b96d0ed96ae611997f3ab4ac5f7253af",
+    "bytes": 6657,
+    "word_count": 891
+  },
+  {
+    "path": "PROJECT_OPERATING_SYSTEM.md",
+    "absolute_path": "C:\\TSIS_Data\\PROJECT_OPERATING_SYSTEM.md",
+    "category": "document",
+    "sha256": "5b52899adf2fe34b917941e1f7d4f5edbfe36b3ade4a4c15360265a1eda2c2bd",
+    "bytes": 17467,
+    "word_count": 2309
+  },
+  {
+    "path": "PROJECT_RULES.md",
+    "absolute_path": "C:\\TSIS_Data\\PROJECT_RULES.md",
+    "category": "document",
+    "sha256": "e3c0d8892aa85523f8c10cf22040781935b1c35cfef7f12121fbba33f081f65f",
+    "bytes": 20759,
+    "word_count": 2797
+  },
+  {
+    "path": "README.md",
+    "absolute_path": "C:\\TSIS_Data\\README.md",
+    "category": "document",
+    "sha256": "4fed6b358cf18072925ea235b998f8745f867fd65e829e31828a7fc1966eb0fd",
+    "bytes": 3220,
+    "word_count": 350
+  },
+  {
+    "path": "RESEARCH_PHILOSOPHY.md",
+    "absolute_path": "C:\\TSIS_Data\\RESEARCH_PHILOSOPHY.md",
+    "category": "document",
+    "sha256": "cadfe616df16b3e0b9bc0816db0c6fbb8e699a7739e437f4818c6a684cab00f6",
+    "bytes": 22063,
+    "word_count": 3132
+  },
+  {
+    "path": "VERSIONING_STANDARDS.md",
+    "absolute_path": "C:\\TSIS_Data\\VERSIONING_STANDARDS.md",
+    "category": "document",
+    "sha256": "6da869db19a681c3f1f6a2776e7abe8b01d39190b165561d7fa87e56ea9c8b90",
+    "bytes": 34864,
+    "word_count": 4716
+  }
+]

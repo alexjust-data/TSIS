@@ -1,5 +1,12 @@
 # Data Consumption Policies
 
+## Massive SEC structured evidence
+
+sec_pit_massive_structured_evidence_consumption_policy_v0_1.md blocks
+downstream consumption until license, live schema/coverage and final integrity
+gates pass. Before promotion it permits only inspection, reconciliation and
+versioned research.
+
 ## Menu
 
 - [Rol de esta carpeta](#rol-de-esta-carpeta)

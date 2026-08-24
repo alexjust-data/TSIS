@@ -1,0 +1,40 @@
+contract_version: "0.1.0"
+audit_name: quotes_restoration_audit
+
+scope:
+  start_date_inclusive: "2005-01-01"
+  historical_end_inclusive: "2026-03-06"
+  target_end_inclusive: "2026-08-20"
+  expected_universe_members: 4824
+
+sources:
+  restored_root: "G:/TSIS/data/quotes"
+  retained_root: "G:/TSIS/data/quotes_"
+  historical_c_inventory: "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/quotes_v2_materialized/quotes_current_c_full_sharded_merged/quotes_current.parquet"
+  historical_merged_inventory: "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/quotes_v2_materialized/quotes_current_cd_merged/quotes_current.parquet"
+  current_quotes_activity: "C:/TSIS_Data/runs/data_ops/core_market_family_download_audit/20260823_quotes_download_audit_v0_1/03_closeout/quotes__session_activity.parquet"
+  daily_activity: "C:/TSIS_Data/runs/data_ops/core_market_family_download_audit/20260823_ohlcv_daily_download_audit_v0_1/03_closeout/ohlcv_daily_session_activity.parquet"
+  historical_task_master: "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/quotes_lt_1b_tasks/20260322_221029_build_quotes_lt_1b_master_from_ohlcv_windows/tasks_quotes_lt_1b_master.parquet"
+  universe: "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/market_cap_last_observed_cutoff/20260320_market_cap_last_observed_cutoff/market_cap_cutoff_lt_1b_active_inactive.parquet"
+
+quotes_contract:
+  date_strategy: path_ymd_parts
+  required_columns:
+    - ask_price
+    - bid_price
+    - timestamp
+    - year
+    - month
+    - day
+
+runtime:
+  output_root: "C:/TSIS_Data/runs/data_ops/quotes_restoration_audit"
+  workers: 4
+  heartbeat_seconds: 30
+  memory_limit_mb: 2200
+
+probe:
+  tickers:
+    - AMC
+    - IMH
+    - WEL

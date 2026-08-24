@@ -4,6 +4,15 @@ Status: `V0_21_AUTHORITATIVE_4824_PREFLIGHT_PASS_METADATA_COHORT_01_AWAITING_HUM
 
 Last updated: `2026-08-13`
 
+## Separate Massive SEC preparation lane — 2026-08-22
+
+Massive acquisition is prepared but has made zero network requests. Read
+MASSIVE_SEC_ACQUISITION_PREPARATION_READOUT_v0_1.md and
+MASSIVE_SEC_RESUME_POWER_LOSS_AND_DUPLICATE_WRITER_CERTIFICATION_READOUT_v0_1.md.
+The live 250-case probe, storage projection and full run are not authorized.
+This lane does not change the authority of the existing SEC PIT reconstruction
+results below.
+
 ## Purpose
 
 This is the mandatory entry point for an agent continuing the SEC PIT work. It

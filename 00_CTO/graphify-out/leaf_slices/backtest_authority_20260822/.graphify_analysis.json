@@ -1,0 +1,413 @@
+{
+  "communities": {
+    "0": [
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_authorized_scope_type",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_evidence_items",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_evidence_type",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_gate_id_minlength",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_gate_id_type",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_gates_items",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_gates_type",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_items_additionalproperties",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_items_properties",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_items_required",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_items_type",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_non_claims_items",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_non_claims_type",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_properties_authorized_scope",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_properties_evidence",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_properties_gate_id",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_properties_gates",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_properties_non_claims",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_properties_status",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_properties_title",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_status_minlength",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_status_type",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_title_minlength",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_title_type",
+      "ref_authorized_scope",
+      "ref_evidence",
+      "ref_gate_id",
+      "ref_non_claims",
+      "ref_null",
+      "ref_status",
+      "ref_string",
+      "ref_title"
+    ],
+    "1": [
+      "00_cto_14_backtest_engine_01_guide_readme_document",
+      "00_cto_14_backtest_engine_01_guide_readme_layered_implementation_guide",
+      "00_cto_14_backtest_engine_01_guide_readme_maturity_states",
+      "00_cto_14_backtest_engine_02_architecture_01_authority_and_evidence_boundary_authority_verification_physical_evidence_boundary",
+      "00_cto_14_backtest_engine_02_architecture_01_authority_and_evidence_boundary_document",
+      "00_cto_14_backtest_engine_02_architecture_01_authority_and_evidence_boundary_parallel_provider_lane",
+      "00_cto_14_backtest_engine_02_architecture_02_applied_architecture_context_boundary_document",
+      "00_cto_14_backtest_engine_02_architecture_02_applied_architecture_context_boundary_explicit_compatibility_gate",
+      "00_cto_14_backtest_engine_02_architecture_02_applied_architecture_context_boundary_external_context_not_authorization",
+      "00_cto_14_backtest_engine_changelog_consumed_failed_final",
+      "00_cto_14_backtest_engine_changelog_document",
+      "00_cto_14_backtest_engine_changelog_gate_evidence_chain",
+      "00_cto_14_backtest_engine_changelog_immutable_audit_history",
+      "00_cto_14_backtest_engine_governance_readme_bounded_gate_change_protocol",
+      "00_cto_14_backtest_engine_governance_readme_document",
+      "00_cto_14_backtest_engine_governance_readme_evidence_classification",
+      "00_cto_14_backtest_engine_governance_readme_inspection_protocol",
+      "00_cto_14_backtest_engine_readme_authority_root",
+      "00_cto_14_backtest_engine_readme_document",
+      "00_cto_14_backtest_engine_readme_living_status_consistency",
+      "00_cto_14_backtest_engine_tsis_arquitectura_backtest_cientifico_ascii_ascii_architecture_view",
+      "00_cto_14_backtest_engine_tsis_arquitectura_backtest_cientifico_ascii_document",
+      "00_cto_14_backtest_engine_tsis_arquitectura_backtest_cientifico_document",
+      "00_cto_14_backtest_engine_tsis_arquitectura_backtest_cientifico_reproducible_backtest_run",
+      "00_cto_14_backtest_engine_tsis_arquitectura_backtest_cientifico_scientific_backtest_architecture",
+      "00_cto_14_backtest_engine_tsis_arquitectura_backtester_state_provider_000_018_ascii_document",
+      "00_cto_14_backtest_engine_tsis_arquitectura_backtester_state_provider_000_018_ascii_provider_consumer_compatibility",
+      "00_cto_14_backtest_engine_tsis_arquitectura_backtester_state_provider_000_018_ascii_state_provider_boundary"
+    ],
+    "2": [
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_as_of_format",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_as_of_type",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_entries_items",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_entries_type",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_files_type",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_items_anyof",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_items_minproperties",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_matrix_id_minlength",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_matrix_id_type",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_next_gate_type",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_properties",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_properties_as_of",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_properties_entries",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_properties_files",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_properties_matrix_id",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_properties_next_gate",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_properties_register_id",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_properties_scope",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_properties_source_root",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_register_id_minlength",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_register_id_type",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_scope_type",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_source_root_type"
+    ],
+    "3": [
+      "00_cto_14_backtest_engine_11_historical_snapshots_2026_07_28_pre_governance_root_agent_historical_document",
+      "00_cto_14_backtest_engine_11_historical_snapshots_2026_07_28_pre_governance_root_agent_historical_historical_accounting_minimum",
+      "00_cto_14_backtest_engine_11_historical_snapshots_2026_07_28_pre_governance_root_agent_historical_historical_live_handoff",
+      "00_cto_14_backtest_engine_11_historical_snapshots_2026_07_28_pre_governance_root_agent_historical_historical_mechanical_round_trip",
+      "00_cto_14_backtest_engine_11_historical_snapshots_2026_07_28_pre_governance_root_agent_historical_historical_replay_minimum",
+      "00_cto_14_backtest_engine_11_historical_snapshots_2026_07_28_pre_governance_root_agent_historical_historical_runpreflight",
+      "00_cto_14_backtest_engine_11_historical_snapshots_2026_07_28_pre_governance_root_agent_historical_no_full_history_backtest",
+      "00_cto_14_backtest_engine_11_historical_snapshots_2026_07_28_pre_governance_root_changelog_history_source_controlled_quote_guarded_candidate",
+      "00_cto_14_backtest_engine_11_historical_snapshots_2026_07_28_pre_governance_root_changelog_history_source_document",
+      "00_cto_14_backtest_engine_11_historical_snapshots_2026_07_28_pre_governance_root_changelog_history_source_validation_manifest_hash_binding",
+      "00_cto_14_backtest_engine_11_historical_snapshots_2026_07_28_pre_governance_root_changelog_history_source_vertical_slice_history",
+      "00_cto_14_backtest_engine_11_historical_snapshots_2026_07_28_pre_governance_root_local_rules_historical_document",
+      "00_cto_14_backtest_engine_11_historical_snapshots_2026_07_28_pre_governance_root_local_rules_historical_historical_local_rules",
+      "00_cto_14_backtest_engine_11_historical_snapshots_2026_07_28_pre_governance_root_local_rules_historical_run_declaration_requirements",
+      "00_cto_14_backtest_engine_11_historical_snapshots_2026_07_28_pre_governance_root_local_rules_historical_sersan_books_as_evidence_only",
+      "00_cto_14_backtest_engine_11_historical_snapshots_2026_07_28_pre_governance_root_readme_historical_document",
+      "00_cto_14_backtest_engine_11_historical_snapshots_2026_07_28_pre_governance_root_readme_historical_historical_live_workspace",
+      "00_cto_14_backtest_engine_11_historical_snapshots_2026_07_28_pre_governance_root_readme_historical_incremental_implementation_style",
+      "00_cto_14_backtest_engine_11_historical_snapshots_readme_document",
+      "00_cto_14_backtest_engine_11_historical_snapshots_readme_no_resume_from_snapshot",
+      "00_cto_14_backtest_engine_11_historical_snapshots_readme_non_authoritative_historical_snapshots"
+    ],
+    "4": [
+      "00_cto_14_backtest_engine_01_guide_01_data_controlled_candidate_consumption",
+      "00_cto_14_backtest_engine_01_guide_01_data_document",
+      "00_cto_14_backtest_engine_01_guide_01_data_missing_data_no_imputation",
+      "00_cto_14_backtest_engine_01_guide_01_data_runpreflight",
+      "00_cto_14_backtest_engine_01_guide_01_data_three_price_views",
+      "00_cto_14_backtest_engine_01_guide_01_data_versioned_universe",
+      "00_cto_14_backtest_engine_01_guide_01_system_status_and_inspector_guide_document",
+      "00_cto_14_backtest_engine_01_guide_01_system_status_and_inspector_guide_mechanical_arithmetic_closure_only",
+      "00_cto_14_backtest_engine_01_guide_01_system_status_and_inspector_guide_proven_vertical_slice",
+      "00_cto_14_backtest_engine_01_guide_02_replay_approved_preflight_report",
+      "00_cto_14_backtest_engine_01_guide_02_replay_causal_bar_timing",
+      "00_cto_14_backtest_engine_01_guide_02_replay_deterministic_historical_replay",
+      "00_cto_14_backtest_engine_01_guide_02_replay_document"
+    ],
+    "5": [
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_final_postexecution_acceptance_v0_1_aciu_core_four_two_row_scope",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_final_postexecution_acceptance_v0_1_bounded_market_state_acceptance",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_final_postexecution_acceptance_v0_1_document",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_phase_b_external_re_review_acceptance_v0_1_atomic_validation_and_sealing",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_phase_b_external_re_review_acceptance_v0_1_document",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_phase_b_external_re_review_acceptance_v0_1_non_physical_phase_b_acceptance",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_single_use_physical_consumer_authorization_v0_5_authorization_not_self_executing",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_single_use_physical_consumer_authorization_v0_5_document",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_single_use_physical_consumer_authorization_v0_5_separate_restriction_domains",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_single_use_physical_consumer_authorization_v0_5_single_use_v0_5",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_single_use_physical_consumer_authorization_v0_5_two_aciu_rows"
+    ],
+    "6": [
+      "00_cto_14_backtest_engine_08_gates_and_reviews_governance_update_protocol_atomic_living_status_update",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_governance_update_protocol_document",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_governance_update_protocol_governance_evidence_separation",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_governance_update_protocol_governance_update_protocol",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_governance_update_protocol_increment_classification",
+      "00_cto_14_backtest_engine_10_validation_governance_validation_report_bt_gate_015_closed_with_restrictions",
+      "00_cto_14_backtest_engine_10_validation_governance_validation_report_bt_gate_016_not_open",
+      "00_cto_14_backtest_engine_10_validation_governance_validation_report_document",
+      "00_cto_14_backtest_engine_10_validation_governance_validation_report_governance_validation_pass",
+      "00_cto_14_backtest_engine_10_validation_governance_validation_report_retained_external_reports"
+    ],
+    "7": [
+      "00_cto_14_backtest_engine_09_schemas_governance_schema",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_additionalproperties",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_anyof",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_id",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_required",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_schema",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_title",
+      "00_cto_14_backtest_engine_09_schemas_governance_schema_type",
+      "ref_as_of",
+      "ref_register_id"
+    ],
+    "8": [
+      "00_cto_14_backtest_engine_00_tablas_wake_up_frontside_termination_v0_2_detector_research_run",
+      "00_cto_14_backtest_engine_00_tablas_wake_up_frontside_termination_v0_2_document",
+      "00_cto_14_backtest_engine_00_tablas_wake_up_frontside_termination_v0_2_event_state",
+      "00_cto_14_backtest_engine_00_tablas_wake_up_frontside_termination_v0_2_frontside_termination_event",
+      "00_cto_14_backtest_engine_00_tablas_wake_up_frontside_termination_v0_2_light_heavy_architecture",
+      "00_cto_14_backtest_engine_00_tablas_wake_up_frontside_termination_v0_2_market_state",
+      "00_cto_14_backtest_engine_00_tablas_wake_up_frontside_termination_v0_2_policy_backtest_run",
+      "00_cto_14_backtest_engine_00_tablas_wake_up_frontside_termination_v0_2_separate_scientific_programs",
+      "00_cto_14_backtest_engine_00_tablas_wake_up_frontside_termination_v0_2_wake_up_event"
+    ],
+    "9": [
+      "00_cto_14_backtest_engine_01_guide_03_mechanical_trade_path_decision_order_fill_position",
+      "00_cto_14_backtest_engine_01_guide_03_mechanical_trade_path_document",
+      "00_cto_14_backtest_engine_01_guide_03_mechanical_trade_path_fill_derived_position_pnl",
+      "00_cto_14_backtest_engine_01_guide_03_mechanical_trade_path_mechanical_fill_proxy",
+      "00_cto_14_backtest_engine_01_guide_08_accounting_accounting_engine",
+      "00_cto_14_backtest_engine_01_guide_08_accounting_cash_not_short_equity",
+      "00_cto_14_backtest_engine_01_guide_08_accounting_component_cost_breakdown",
+      "00_cto_14_backtest_engine_01_guide_08_accounting_document",
+      "00_cto_14_backtest_engine_01_guide_08_accounting_no_execution_realism_claim"
+    ],
+    "10": [
+      "00_cto_14_backtest_engine_03_contracts_contract_inventory_contract_lifecycle_inventory",
+      "00_cto_14_backtest_engine_03_contracts_contract_inventory_document",
+      "00_cto_14_backtest_engine_03_contracts_contract_inventory_typed_event_state_payload",
+      "00_cto_14_backtest_engine_agents_authority_fail_closed",
+      "00_cto_14_backtest_engine_agents_bt_gate_014_closed_pass",
+      "00_cto_14_backtest_engine_agents_bt_gate_015_closed_pass",
+      "00_cto_14_backtest_engine_agents_bt_gate_016_not_open",
+      "00_cto_14_backtest_engine_agents_current_authoritative_state",
+      "00_cto_14_backtest_engine_agents_document"
+    ],
+    "11": [
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_single_use_physical_consumer_authorization_v0_3_document",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_single_use_physical_consumer_authorization_v0_3_frozen_nine_input_binding",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_single_use_physical_consumer_authorization_v0_3_single_use_v0_3",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_single_use_physical_consumer_authorization_v0_3_strategy_none",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_single_use_physical_consumer_authorization_v0_4_document",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_single_use_physical_consumer_authorization_v0_4_durable_physical_progress_telemetry",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_single_use_physical_consumer_authorization_v0_4_external_preexecution_review",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_single_use_physical_consumer_authorization_v0_4_single_use_v0_4",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_single_use_physical_consumer_authorization_v0_4_v0_3_consumed_failed_final"
+    ],
+    "12": [
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_015_non_physical_external_review_acceptance_v0_1_bt_gate_015_non_physical_acceptance",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_015_non_physical_external_review_acceptance_v0_1_document",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_015_non_physical_external_review_acceptance_v0_1_physical_authorization_preparation_only",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_015_non_physical_external_review_acceptance_v0_1_zero_physical_event_state_reads",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_015_v0_4_postexecution_external_review_acceptance_v0_1_bounded_event_state_slice",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_015_v0_4_postexecution_external_review_acceptance_v0_1_bt_gate_015_v0_4_final_acceptance",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_015_v0_4_postexecution_external_review_acceptance_v0_1_document",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_015_v0_4_postexecution_external_review_acceptance_v0_1_no_broader_event_state_authority",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_015_v0_4_postexecution_external_review_acceptance_v0_1_single_use_consumption_receipt"
+    ],
+    "13": [
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_single_use_physical_consumer_authorization_v0_1_document",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_single_use_physical_consumer_authorization_v0_1_historical_authorization_v0_1",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_single_use_physical_consumer_authorization_v0_2_document",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_single_use_physical_consumer_authorization_v0_2_historical_authorization_v0_2",
+      "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_014_single_use_physical_consumer_authorization_v0_2_superseded_by_v0_3"
+    ],
+    "14": [
+      "00_cto_14_backtest_engine_10_validation_validate_governance",
+      "00_cto_14_backtest_engine_10_validation_validate_governance_load",
+      "00_cto_14_backtest_engine_10_validation_validate_governance_main",
+      "00_cto_14_backtest_engine_10_validation_validate_governance_sha",
+      "path"
+    ],
+    "15": [
+      "00_cto_14_backtest_engine_local_rules_canonical_json_registers",
+      "00_cto_14_backtest_engine_local_rules_contractual_data_meaning",
+      "00_cto_14_backtest_engine_local_rules_document",
+      "00_cto_14_backtest_engine_local_rules_missing_evidence_not_pass",
+      "00_cto_14_backtest_engine_local_rules_raw_data_immutable"
+    ],
+    "16": [
+      "00_cto_14_backtest_engine__00_sersans_sistemas_guide_00_evaluacion_preliminar_strategy_document",
+      "00_cto_14_backtest_engine__00_sersans_sistemas_guide_00_evaluacion_preliminar_strategy_empty_source_artifact"
+    ]
+  },
+  "cohesion": {
+    "0": 0.06653225806451613,
+    "1": 0.10846560846560846,
+    "2": 0.08695652173913043,
+    "3": 0.15714285714285714,
+    "4": 0.2564102564102564,
+    "5": 0.2727272727272727,
+    "6": 0.3333333333333333,
+    "7": 0.2,
+    "8": 0.4166666666666667,
+    "9": 0.3888888888888889,
+    "10": 0.3611111111111111,
+    "11": 0.3611111111111111,
+    "12": 0.3611111111111111,
+    "13": 0.5,
+    "14": 0.7,
+    "15": 0.6,
+    "16": 1.0
+  },
+  "gods": [
+    {
+      "id": "00_cto_14_backtest_engine_readme_document",
+      "label": "TSIS Backtest Engine Authority Root",
+      "degree": 20
+    },
+    {
+      "id": "00_cto_14_backtest_engine_00_tablas_wake_up_frontside_termination_v0_2_document",
+      "label": "Wake-Up and Frontside Termination Scientific Architecture v0.2",
+      "degree": 8
+    },
+    {
+      "id": "00_cto_14_backtest_engine_09_schemas_governance_schema_items_required",
+      "label": "required",
+      "degree": 7
+    },
+    {
+      "id": "00_cto_14_backtest_engine_01_guide_01_data_runpreflight",
+      "label": "RunPreflight",
+      "degree": 7
+    },
+    {
+      "id": "00_cto_14_backtest_engine_08_gates_and_reviews_bt_gate_015_v0_4_postexecution_external_review_acceptance_v0_1_bt_gate_015_v0_4_final_acceptance",
+      "label": "BT-GATE-015 v0.4 Final Acceptance",
+      "degree": 7
+    },
+    {
+      "id": "00_cto_14_backtest_engine_agents_document",
+      "label": "Backtest Engine Agent Authority Contract",
+      "degree": 6
+    },
+    {
+      "id": "00_cto_14_backtest_engine_01_guide_01_data_document",
+      "label": "Data Guide",
+      "degree": 6
+    },
+    {
+      "id": "00_cto_14_backtest_engine_agents_bt_gate_015_closed_pass",
+      "label": "BT-GATE-015 Closed Pass with Restrictions",
+      "degree": 6
+    },
+    {
+      "id": "00_cto_14_backtest_engine_01_guide_02_replay_deterministic_historical_replay",
+      "label": "Deterministic Historical Replay",
+      "degree": 6
+    },
+    {
+      "id": "00_cto_14_backtest_engine_01_guide_08_accounting_accounting_engine",
+      "label": "Accounting Engine",
+      "degree": 6
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Bounded Market State Acceptance",
+      "target": "BT-GATE-014 Closed Pass with Restrictions",
+      "source_files": [
+        "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_014_FINAL_POSTEXECUTION_ACCEPTANCE_V0_1.md",
+        "00_CTO/14_BACKTEST_ENGINE/AGENTS.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "BT-GATE-015 v0.4 Final Acceptance",
+      "target": "BT-GATE-015 Closed Pass with Restrictions",
+      "source_files": [
+        "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_015_V0_4_POSTEXECUTION_EXTERNAL_REVIEW_ACCEPTANCE_V0_1.md",
+        "00_CTO/14_BACKTEST_ENGINE/AGENTS.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "Single-Use Authorization v0.4",
+      "target": "Single-Use Authorization v0.5",
+      "source_files": [
+        "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_4.md",
+        "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_5.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "BT-GATE-015 v0.4 Final Acceptance",
+      "target": "BT-GATE-015 Closed with Restrictions",
+      "source_files": [
+        "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_015_V0_4_POSTEXECUTION_EXTERNAL_REVIEW_ACCEPTANCE_V0_1.md",
+        "00_CTO/14_BACKTEST_ENGINE/10_VALIDATION/GOVERNANCE_VALIDATION_REPORT.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "ASCII Architecture View",
+      "target": "Scientific Backtest Architecture",
+      "source_files": [
+        "00_CTO/14_BACKTEST_ENGINE/TSIS_ARQUITECTURA_BACKTEST_CIENTIFICO_ASCII.md",
+        "00_CTO/14_BACKTEST_ENGINE/TSIS_ARQUITECTURA_BACKTEST_CIENTIFICO.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; semantically similar concepts with no structural link"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `TSIS Backtest Engine Authority Root` connect `Community 1` to `Community 4`, `Community 5`, `Community 9`, `Community 10`, `Community 15`?",
+      "why": "High betweenness centrality (0.181) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Backtest Engine Agent Authority Contract` connect `Community 10` to `Community 1`?",
+      "why": "High betweenness centrality (0.075) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `BT-GATE-015 v0.4 Final Acceptance` connect `Community 12` to `Community 10`, `Community 6`?",
+      "why": "High betweenness centrality (0.074) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `$id`, `$schema`, `additionalProperties` to the rest of the system?",
+      "why": "41 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 0` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.06653225806451613 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 1` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.10846560846560846 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 2` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected."
+    }
+  ]
+}

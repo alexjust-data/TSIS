@@ -1,3 +1,13 @@
+## 2026-08-22 - TSIS_GRAPHIFY_REFRESH_20260822
+
+- Rebuilt the governed CTO, Applied Architecture, Data Foundation and Backtest Engine graph leaves.
+- Rebuilt the CTO, Data Foundation and TSIS root merges with the official Graphify flow.
+- Preserved and namespaced every input hyperedge instead of accepting Graphify merge truncation.
+- Added the current `04_TSIS_SCREENERS` and `05_TSIS_STATISTICS_PATTERNS` topology through their governed leaf coverage.
+- Removed semantically obsolete source paths from the published graphs.
+- Persisted official multigraph diagnostics and an independent terminal audit for all five requested roots.
+- Final root: 10,573 nodes, 20,234 edges, 317 hyperedges and 658 communities.
+
 ## 2026-08-21 | Repository module map and experiment-root correction
 
 - Added `04_TSIS_SCREENERS` for causal/PIT initial filtering and

@@ -24,7 +24,8 @@ Operativamente fueron creadas como parte de:
 
 ```text
 EXP_WAKE_UP_RTH_ORACLE_CALIBRATION_0001
-```
+```  
+powershell -NoProfile -ExecutionPolicy Bypass -File "C:\TSIS_Data\runs\data_ops\delete_quotes_20260820T163811Z\monitor.ps1" -Watch
 
 Pero existe una carencia de gobierno:
 

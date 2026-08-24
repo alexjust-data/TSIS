@@ -1,0 +1,27 @@
+{
+  "00_CTO/15_SCREENER_ENGINE/00_STRUCTURE_SYSTEM.md": {
+    "mtime": 1786567204.3236601,
+    "ast_hash": "2cc5423225a5fbe9e4df4968b1d5715e",
+    "semantic_hash": "2cc5423225a5fbe9e4df4968b1d5715e"
+  },
+  "00_CTO/15_SCREENER_ENGINE/01_LAYER_1/initial_idea.MD": {
+    "mtime": 1786567270.625785,
+    "ast_hash": "d7350ce7d942ad81a6859847740b29b5",
+    "semantic_hash": "d7350ce7d942ad81a6859847740b29b5"
+  },
+  "00_CTO/15_SCREENER_ENGINE/EVIDENCE_INDEX.md": {
+    "mtime": 1786556918.1974895,
+    "ast_hash": "de33d3bb8e8907b4ae3395bc1f43a2a0",
+    "semantic_hash": "de33d3bb8e8907b4ae3395bc1f43a2a0"
+  },
+  "00_CTO/15_SCREENER_ENGINE/README.md": {
+    "mtime": 1786785546.283628,
+    "ast_hash": "ab38064722dacfbefa26abd8ed29a51a",
+    "semantic_hash": "ab38064722dacfbefa26abd8ed29a51a"
+  },
+  "00_CTO/15_SCREENER_ENGINE/SCREENER_ENGINE_ARCHITECTURE_PROPOSAL_v0_1.md": {
+    "mtime": 1786556645.9692945,
+    "ast_hash": "d9dc430dfa075b26d33589ebbcbfd4fa",
+    "semantic_hash": "d9dc430dfa075b26d33589ebbcbfd4fa"
+  }
+}

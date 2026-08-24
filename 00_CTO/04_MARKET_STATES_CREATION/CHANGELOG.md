@@ -1,5 +1,14 @@
 # Market States Creation Changelog
 
+## 2026-08-22 | Massive SEC transactional acquisition preparation v0.1
+
+- Froze the objective-authorized direct endpoint lane for the exact 4,824-case
+  target and kept 8-K text/13F behind independent gates.
+- Added the 4-worker/2-requests-per-second execution, power-loss recovery and
+  append-only milestone plan for D:/sec_float_pit_MASSIVE.
+- Control-plane tests and exact plan-only execution pass; license confirmation,
+  live 250-case probe and full acquisition remain human-gated and unexecuted.
+
 ## 2026-08-17 | Wake-up RTH blind-panel incident and repair probe
 
 - Preserved the valid 2,400/2,400 candidate run and its 4,447 candidates.

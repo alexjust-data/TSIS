@@ -1,3 +1,9 @@
+## 2026-08-22 - TSIS_GRAPHIFY_REFRESH_20260822
+
+- Replaced the stale Applied Architecture graph with a full semantic rebuild from the current corpus.
+- Repaired extraction self-loops before publication and repeated clustering and community labeling.
+- Terminal graph: 1,529 nodes, 1,761 edges, 105 hyperedges and 91 communities; audit PASS.
+
 ## 2026-08-05 - BT-GATE-015 non-physical acceptance adopted
 
 - Recorded that the backtester owner and non-physical external reviews passed.

@@ -1,4 +1,39 @@
+### GFQ-20260824-FOUNDATION-QUOTES-RESTORATION-AUDIT-001 - Quotes restoration executables
+
+- **Estado:** pending
+- **Fecha:** 2026-08-24
+- **Severidad:** HIGH
+- **Scope:** resumable restored-Quotes physical audit, ledger reconciliation,
+  complete-interval remediation planner and literal-safe downloader wrapper.
+- **Leaf objetivo:** data_foundation_root / Quotes acquisition and coverage.
+- **Archivos afectados:**
+  `configs/quotes_restoration_audit_v0_1.yaml`,
+  `scripts/quotes_restoration_audit/*`,
+  `scripts/download_quotes_literal_safe_v0_1.py` and its tests.
+- **Motivo:** executable acquisition and coverage semantics changed while the
+  forensic audit was active; no official Graphify refresh was run.
+- **Cierre esperado:** refresh the affected Data Foundation leaf, run
+  diagnostics and update `BUILD_MANIFEST.md` before institutional promotion.
 # Graphify Refresh Queue for 01_TSIS_DATA_FOUNDATION
+
+## Pending - 2026-08-22 - HIGH - Massive SEC transactional acquisition control plane
+
+- **ID:** GFQ-20260822-FOUNDATION-MASSIVE-SEC-CONTROL-001
+- **Estado:** pending
+- **Fecha:** 2026-08-22
+- **Severidad:** HIGH
+- **Scope:** endpoint allowlist, hash-bound human/license authorization,
+  adaptive HTTP client, immutable CAS, atomic receipts, writer lock, heartbeat,
+  monitor, offline audit, exact target and production-equivalent probe wrapper.
+- **Leaf objetivo:** data_foundation_root / SEC PIT acquisition and long-running
+  operation control.
+- **Archivos afectados:** Massive SEC configs, scripts, tests, READMEs,
+  changelogs and inspection evidence.
+- **Motivo:** the control plane is tested and plan-only complete, but the live
+  250-case probe/full run are unexecuted; refresh is deferred to avoid promoting
+  provisional vendor schemas or runtime intent as terminal evidence.
+- **Cierre esperado:** refresh after the live probe decision, run diagnostics,
+  update BUILD_MANIFEST.md and encode resume, authorization and scope gates.
 
 ## Pending - 2026-08-14 - HIGH - Representation Model execution and certification contract
 

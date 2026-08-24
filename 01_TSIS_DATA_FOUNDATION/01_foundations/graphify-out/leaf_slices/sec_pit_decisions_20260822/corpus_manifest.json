@@ -1,0 +1,2002 @@
+[
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit/massive_sec_disclosure_taxonomy_schema_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\canonical_schemas\\sec_pit\\massive_sec_disclosure_taxonomy_schema_contract_v0_1.md",
+    "category": "document",
+    "sha256": "1e004121fdcf5e4385d3f687a68628579a281eb8735214f84aeea51451840447",
+    "bytes": 608,
+    "word_count": 72
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit/massive_sec_edgar_index_schema_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\canonical_schemas\\sec_pit\\massive_sec_edgar_index_schema_contract_v0_1.md",
+    "category": "document",
+    "sha256": "ce27ab12c5d99ee01f400a5db31548f6377b399d18f8a82106c9170d471ec6b9",
+    "bytes": 617,
+    "word_count": 75
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit/massive_sec_eight_k_disclosures_schema_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\canonical_schemas\\sec_pit\\massive_sec_eight_k_disclosures_schema_contract_v0_1.md",
+    "category": "document",
+    "sha256": "b3ec5f14401eb72f1e8dc0c9fab9434e34136e8e26b094dd3fd662acbff59897",
+    "bytes": 665,
+    "word_count": 70
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit/massive_sec_eight_k_text_schema_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\canonical_schemas\\sec_pit\\massive_sec_eight_k_text_schema_contract_v0_1.md",
+    "category": "document",
+    "sha256": "7f2ba486b552d4ef0f81fa4e2b1c8f3d67d8011be34183f1dcb9566846da3b99",
+    "bytes": 612,
+    "word_count": 76
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit/massive_sec_form_13f_schema_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\canonical_schemas\\sec_pit\\massive_sec_form_13f_schema_contract_v0_1.md",
+    "category": "document",
+    "sha256": "d6def01a891b6ccceb08b8cf3f778469237ad685a0890bf18e4eeb39d22efadb",
+    "bytes": 717,
+    "word_count": 88
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit/massive_sec_form_3_schema_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\canonical_schemas\\sec_pit\\massive_sec_form_3_schema_contract_v0_1.md",
+    "category": "document",
+    "sha256": "b4cf0e1ce88f8c2ec31f7d3d82e2c1027d5182a7b8f33bef140cf6439b869946",
+    "bytes": 679,
+    "word_count": 71
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit/massive_sec_form_4_schema_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\canonical_schemas\\sec_pit\\massive_sec_form_4_schema_contract_v0_1.md",
+    "category": "document",
+    "sha256": "ece91bcebecf9205fad4915b103dffdcf159c88d2bd00cdfa7f457739501be95",
+    "bytes": 753,
+    "word_count": 73
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit/massive_sec_runtime_artifacts_schema_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\canonical_schemas\\sec_pit\\massive_sec_runtime_artifacts_schema_contract_v0_1.md",
+    "category": "document",
+    "sha256": "503f290e22febe6deb361558acd7a736975c2a9176448c61705a7edf757bc081",
+    "bytes": 1752,
+    "word_count": 223
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit/README.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\canonical_schemas\\sec_pit\\README.md",
+    "category": "document",
+    "sha256": "bada4522d1ad5e86f4ab2c4d0da30aba9826f34d8cd6611fa26e308ef234d09e",
+    "bytes": 1012,
+    "word_count": 144
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit_resolved_daily_states_schema_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\canonical_schemas\\sec_pit_resolved_daily_states_schema_contract_v0_1.md",
+    "category": "document",
+    "sha256": "ca95ceda8bcba24a9407994b535b3990244a8b9c764d8b629501296d89f202c0",
+    "bytes": 1472,
+    "word_count": 151
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit_resolved_daily_states_schema_contract_v0_2.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\canonical_schemas\\sec_pit_resolved_daily_states_schema_contract_v0_2.md",
+    "category": "document",
+    "sha256": "fe9e55ac96f3ce0ef8564af7765c9836be326afbd76737952ff2048a646eb06c",
+    "bytes": 3169,
+    "word_count": 318
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/sec_pit_source_observations_schema_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\canonical_schemas\\sec_pit_source_observations_schema_contract_v0_1.md",
+    "category": "document",
+    "sha256": "6a817a3f2c4b8e977130be280aee825749405532e0795aef8f3d708a3d8a25c6",
+    "bytes": 1217,
+    "word_count": 143
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/sec_pit_fundamental_evidence_dataset_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\contract_registry\\dataset_contracts\\sec_pit_fundamental_evidence_dataset_contract_v0_1.md",
+    "category": "document",
+    "sha256": "61551f2f88d227eae3fa84fd0d8b798a62bb71174f52bfc7d7552423985e1510",
+    "bytes": 1495,
+    "word_count": 158
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/sec_pit_massive_structured_evidence_dataset_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\contract_registry\\dataset_contracts\\sec_pit_massive_structured_evidence_dataset_contract_v0_1.md",
+    "category": "document",
+    "sha256": "3d6fd3d0839920cfb02c6139da6611f75734c51add21194ea8e682dd9b2c7a99",
+    "bytes": 2521,
+    "word_count": 341
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/sec_pit_predownload_control_dataset_contract_v0_2.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\contract_registry\\dataset_contracts\\sec_pit_predownload_control_dataset_contract_v0_2.md",
+    "category": "document",
+    "sha256": "b2325e2470715e42fee3d586e9dd1fe2baf165aedddaec226c3b2ed54f419595",
+    "bytes": 3748,
+    "word_count": 488
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/sec_pit_fundamental_evidence_consumption_policy_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\data_consumption_policies\\sec_pit_fundamental_evidence_consumption_policy_v0_1.md",
+    "category": "document",
+    "sha256": "96c2dbfaf60671fe1cdfd7f81d6d7ceec5250be29ea11358ef04b42912ef7b6b",
+    "bytes": 848,
+    "word_count": 109
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/sec_pit_massive_structured_evidence_consumption_policy_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\data_consumption_policies\\sec_pit_massive_structured_evidence_consumption_policy_v0_1.md",
+    "category": "document",
+    "sha256": "79d61073114474c47a2f70ac5f083f3e466de2dab71b4676bf0c7d33f321b04d",
+    "bytes": 1464,
+    "word_count": 192
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/sec_pit_predownload_control_consumption_policy_v0_2.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\data_consumption_policies\\sec_pit_predownload_control_consumption_policy_v0_2.md",
+    "category": "document",
+    "sha256": "d01712092d00112ed9c9c0173bf04d150c466a115a7b03e8f3645bfa6d604e2b",
+    "bytes": 1317,
+    "word_count": 171
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/sec_pit/massive_sec_structured_evidence_registry_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\dataset_registry\\sec_pit\\massive_sec_structured_evidence_registry_v0_1.md",
+    "category": "document",
+    "sha256": "ad1fa8d51565431d118ded14c6e9c8c0c3e97c96e0704eeedbd9de77c8c46982",
+    "bytes": 1322,
+    "word_count": 166
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/MASSIVE_SEC_ACQUISITION_FINAL_CERTIFICATION_READOUT_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\MASSIVE_SEC_ACQUISITION_FINAL_CERTIFICATION_READOUT_v0_1.md",
+    "category": "document",
+    "sha256": "73ce15c7dbc797c03c48177f08dcf17d415e97d03d71f73e8936d4fc60ef2919",
+    "bytes": 896,
+    "word_count": 123
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/MASSIVE_SEC_ACQUISITION_PREPARATION_READOUT_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\MASSIVE_SEC_ACQUISITION_PREPARATION_READOUT_v0_1.md",
+    "category": "document",
+    "sha256": "665a0bbf02552008a45591cbe16de5856151069417b82f983d68b3d810dab2d7",
+    "bytes": 2281,
+    "word_count": 270
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/MASSIVE_SEC_FULL_RUN_AUTHORIZATION_READOUT_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\MASSIVE_SEC_FULL_RUN_AUTHORIZATION_READOUT_v0_1.md",
+    "category": "document",
+    "sha256": "2982a09315f201515867f271333e77af1b68b372091075c535dbcdbad5ab5aa0",
+    "bytes": 791,
+    "word_count": 103
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/MASSIVE_SEC_PRODUCTION_EQUIVALENT_PROBE_AND_STORAGE_PROJECTION_READOUT_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\MASSIVE_SEC_PRODUCTION_EQUIVALENT_PROBE_AND_STORAGE_PROJECTION_READOUT_v0_1.md",
+    "category": "document",
+    "sha256": "3e08223b89c5ae8277e15f03fd9a7b58bd6bd5ba1833d867fefa4a94cc218d44",
+    "bytes": 1225,
+    "word_count": 171
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/MASSIVE_SEC_RESUME_POWER_LOSS_AND_DUPLICATE_WRITER_CERTIFICATION_READOUT_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\MASSIVE_SEC_RESUME_POWER_LOSS_AND_DUPLICATE_WRITER_CERTIFICATION_READOUT_v0_1.md",
+    "category": "document",
+    "sha256": "74db0318800e685e5e80d8dc22081472c42d26625418a7762d875faac44852af",
+    "bytes": 2029,
+    "word_count": 297
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/README.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\README.md",
+    "category": "document",
+    "sha256": "ec6e40826274ca30540fdf773bfced4c8193bae5c701172fd55b5cf4cc34318b",
+    "bytes": 9262,
+    "word_count": 1027
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_100_CASE_IDENTITY_DATE_AND_AGGREGATE_LOOP_READOUT_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\SEC_PIT_100_CASE_IDENTITY_DATE_AND_AGGREGATE_LOOP_READOUT_v0_1.md",
+    "category": "document",
+    "sha256": "8b3645a96c3605295e9bd1746dde6f1363542f345f179eeaf4b294d5d5f02009",
+    "bytes": 5683,
+    "word_count": 786
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_100_CASE_OPTION_INCLUSIVE_AND_SCHEMA_V0_13_READOUT_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\SEC_PIT_100_CASE_OPTION_INCLUSIVE_AND_SCHEMA_V0_13_READOUT_v0_1.md",
+    "category": "document",
+    "sha256": "2464be1705f9b213501feb80cc273c28ab197515701e0c23baca97b0433dc2ae",
+    "bytes": 4162,
+    "word_count": 519
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_100_CASE_OS_MULTI_EVIDENCE_SHARD_CERTIFICATION_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\SEC_PIT_100_CASE_OS_MULTI_EVIDENCE_SHARD_CERTIFICATION_v0_1.md",
+    "category": "document",
+    "sha256": "970b4c23806ee077713b1a573c8a5828fec235f6b831e3ecd85df656c899aec8",
+    "bytes": 3579,
+    "word_count": 448
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_100_CASE_OWNERSHIP_TABLE_PARSER_SHARD_CERTIFICATION_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\SEC_PIT_100_CASE_OWNERSHIP_TABLE_PARSER_SHARD_CERTIFICATION_v0_1.md",
+    "category": "document",
+    "sha256": "79566a3a4043b160099705019ab6917e8692e5cfbca25a1150dc27ba8d0ff90b",
+    "bytes": 4923,
+    "word_count": 625
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_100_CASE_STRATIFIED_SCALE_GATE_READOUT_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\SEC_PIT_100_CASE_STRATIFIED_SCALE_GATE_READOUT_v0_1.md",
+    "category": "document",
+    "sha256": "f070a341ccaf600a4504dc1270dcc72325e99ff4f699f0c30c51f3dcdb9df764",
+    "bytes": 13289,
+    "word_count": 1783
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_4824_DESCENDING_PREFLIGHT_READOUT_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\SEC_PIT_4824_DESCENDING_PREFLIGHT_READOUT_v0_1.md",
+    "category": "document",
+    "sha256": "7cf40b5c08a7cebeb7a909b87c25a2cd5332edd3d9e2cf5dcc5f002f3ec1c1be",
+    "bytes": 3019,
+    "word_count": 386
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_ADAPTIVE_BASELINE_COMPANYFACTS_FULL_INTERVAL_AND_SHARD_CERTIFICATION_READOUT_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\SEC_PIT_ADAPTIVE_BASELINE_COMPANYFACTS_FULL_INTERVAL_AND_SHARD_CERTIFICATION_READOUT_v0_1.md",
+    "category": "document",
+    "sha256": "42de586b2a8045f616569708c520f2a862c0b72ae8c9bfc40406b298dea145a6",
+    "bytes": 9041,
+    "word_count": 1078
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_EXACT_SHARE_CLASS_RECOVERY_AND_V0_21_READOUT_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\SEC_PIT_EXACT_SHARE_CLASS_RECOVERY_AND_V0_21_READOUT_v0_1.md",
+    "category": "document",
+    "sha256": "d08380a43c27bfe4f6516f09b795b92b0fe054a6904fc5606e21a7069206e063",
+    "bytes": 7201,
+    "word_count": 798
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_INSTRUMENT_INTERVAL_RECOVERY_AND_V0_18_READOUT_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\SEC_PIT_INSTRUMENT_INTERVAL_RECOVERY_AND_V0_18_READOUT_v0_1.md",
+    "category": "document",
+    "sha256": "73198b92ff020f565db7fe77ff83735c7078adfbc917fdc72f52ef11d0c1877d",
+    "bytes": 8855,
+    "word_count": 1099
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_OPTION_INCLUSIVE_CURRENT_SHARES_AND_PHYSICAL_SCHEMA_SHARD_CERTIFICATION_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\SEC_PIT_OPTION_INCLUSIVE_CURRENT_SHARES_AND_PHYSICAL_SCHEMA_SHARD_CERTIFICATION_v0_1.md",
+    "category": "document",
+    "sha256": "565384485b8184a587af2fc6b21c40b31bb5b02a66fee237979b5760d42d2c38",
+    "bytes": 2677,
+    "word_count": 358
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_OS_AND_OVERLAP_RECOVERY_AND_V0_19_READOUT_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\SEC_PIT_OS_AND_OVERLAP_RECOVERY_AND_V0_19_READOUT_v0_1.md",
+    "category": "document",
+    "sha256": "42cdc0e7e21d1a29ea8b4d57c14500e37e16e51a691f90fecc90aaa773f7e664",
+    "bytes": 7283,
+    "word_count": 862
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_OWNERSHIP_HTML_WHITESPACE_SHARD_CERTIFICATION_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\SEC_PIT_OWNERSHIP_HTML_WHITESPACE_SHARD_CERTIFICATION_v0_1.md",
+    "category": "document",
+    "sha256": "937cf1c2907b5a5bcc35ea1f4ef040f45f7721a48befbc37cf225f4ba5ac6914",
+    "bytes": 3275,
+    "word_count": 449
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_OWNERSHIP_IDENTITY_AND_RECORD_DATE_SHARD_CERTIFICATION_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\SEC_PIT_OWNERSHIP_IDENTITY_AND_RECORD_DATE_SHARD_CERTIFICATION_v0_1.md",
+    "category": "document",
+    "sha256": "2bfd3a351217dd4f740b854fc75faaed6831637b01e65eb30bf4b217a91867fe",
+    "bytes": 3769,
+    "word_count": 521
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_OWNERSHIP_SPLIT_GATE_SHARD_CERTIFICATION_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\SEC_PIT_OWNERSHIP_SPLIT_GATE_SHARD_CERTIFICATION_v0_1.md",
+    "category": "document",
+    "sha256": "e322936919c44dd63e6e9896feb7f118ffdfe6c96d2168c594e59dcae5af6a04",
+    "bytes": 3030,
+    "word_count": 408
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_PGAC_NO_NETWORK_OS_PROBE_READOUT_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\SEC_PIT_PGAC_NO_NETWORK_OS_PROBE_READOUT_v0_1.md",
+    "category": "document",
+    "sha256": "f5453c03bad7792b61d48a1f44afad088792de606b796ac46c024213f825928e",
+    "bytes": 6065,
+    "word_count": 677
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_PGAC_OWNERSHIP_AND_OWNER_EXCLUSION_PROBE_READOUT_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\SEC_PIT_PGAC_OWNERSHIP_AND_OWNER_EXCLUSION_PROBE_READOUT_v0_1.md",
+    "category": "document",
+    "sha256": "17640c167880fb6ab88242de1eadf43f16a3925944ae91f5489edf94ef13fc97",
+    "bytes": 8438,
+    "word_count": 962
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_PGAC_PRIMARY_ACQUISITION_PILOT_READOUT_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\SEC_PIT_PGAC_PRIMARY_ACQUISITION_PILOT_READOUT_v0_1.md",
+    "category": "document",
+    "sha256": "74b8924ec65b36063ae112382121dde1ec5ba3cd4d826d65f58ae89956e78f0b",
+    "bytes": 3087,
+    "word_count": 319
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_PREDOWNLOAD_CONTROL_SEVEN_CASE_READOUT_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\SEC_PIT_PREDOWNLOAD_CONTROL_SEVEN_CASE_READOUT_v0_1.md",
+    "category": "document",
+    "sha256": "569df20088cac6d9764aac02edcfbda789c6d9c6276e300d3f70ea36b64ad4b4",
+    "bytes": 3118,
+    "word_count": 438
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_RESIDUAL_OWNERSHIP_LAYOUT_AND_EXPLICIT_ZERO_SHARD_CERTIFICATION_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\SEC_PIT_RESIDUAL_OWNERSHIP_LAYOUT_AND_EXPLICIT_ZERO_SHARD_CERTIFICATION_v0_1.md",
+    "category": "document",
+    "sha256": "c6f598721d7e12249a34f1e39ec1a7bb80919eec0284f66e515f801774b1b183",
+    "bytes": 3104,
+    "word_count": 435
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_SEVEN_TICKER_OWNER_EXCLUSION_STRATIFIED_PROBE_READOUT_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\SEC_PIT_SEVEN_TICKER_OWNER_EXCLUSION_STRATIFIED_PROBE_READOUT_v0_1.md",
+    "category": "document",
+    "sha256": "134271728bcddafe75e74c6c145de8bc8f9152e6fc6d13c9dbc5577f63e56ea5",
+    "bytes": 10717,
+    "word_count": 1367
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/sec_pit/SEC_PIT_SHARE_CLASS_RECOVERY_AND_V0_16_READOUT_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\sec_pit\\SEC_PIT_SHARE_CLASS_RECOVERY_AND_V0_16_READOUT_v0_1.md",
+    "category": "document",
+    "sha256": "74768add4c4574751305bd23ec7ebe6c737b4f0953c5a9ea14a055eef84685b8",
+    "bytes": 5355,
+    "word_count": 658
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/sec_pit/massive_sec_acquisition_operator_runbook_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\module_contracts\\sec_pit\\massive_sec_acquisition_operator_runbook_v0_1.md",
+    "category": "document",
+    "sha256": "bc37b2aa6ceea133c51d6f70bdbdae897ead2145c713ab9ebd8b0de2b5ab0800",
+    "bytes": 4045,
+    "word_count": 426
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/sec_pit/massive_sec_acquisition_runtime_recovery_and_handoff_contract_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\module_contracts\\sec_pit\\massive_sec_acquisition_runtime_recovery_and_handoff_contract_v0_1.md",
+    "category": "document",
+    "sha256": "15f49ec306ed5383af1e1d7b1144dd4d69dc7cf50cd54dfc5726e3852a58b30c",
+    "bytes": 2578,
+    "word_count": 300
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/sec_pit/sec_pit_storage_root_and_legacy_pilot_decision_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\module_contracts\\sec_pit\\sec_pit_storage_root_and_legacy_pilot_decision_v0_1.md",
+    "category": "document",
+    "sha256": "588698f10115213ace8e091101381ddd5f28e669c277c91109dc2612cc14bf69",
+    "bytes": 3980,
+    "word_count": 534
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/validators/sec_pit/massive_sec_acquisition_validators_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\validators\\sec_pit\\massive_sec_acquisition_validators_v0_1.md",
+    "category": "document",
+    "sha256": "c24ac4605fbb911a15edd4da1e3ed190aab9360108c6d3fa852022b4de502d46",
+    "bytes": 2155,
+    "word_count": 243
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/01_foundations/validators/sec_pit/sec_pit_predownload_control_validators_v0_2.md",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\validators\\sec_pit\\sec_pit_predownload_control_validators_v0_2.md",
+    "category": "document",
+    "sha256": "3394efcea2703d4003c54a9a1911ecc128bd087247726f46ee7e9132941e87e2",
+    "bytes": 1113,
+    "word_count": 166
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/massive_sec_acquisition_v0_1.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\massive_sec_acquisition_v0_1.json",
+    "category": "code",
+    "sha256": "871bc7bc3855c62a8c919f434f7195584287baef7f8042747d69c24afa461e35",
+    "bytes": 1959,
+    "word_count": 89
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/massive_sec_download_authorization_TEMPLATE_v0_1.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\massive_sec_download_authorization_TEMPLATE_v0_1.json",
+    "category": "code",
+    "sha256": "10d058d86d80fb1efe5b66af24cb1046fef82ab80a1999406071f167cfcce7b7",
+    "bytes": 2034,
+    "word_count": 140
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/massive_sec_target_manifest_v0_1.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\massive_sec_target_manifest_v0_1.json",
+    "category": "code",
+    "sha256": "a9c2ce57204329da32ac2956fbeacc8dcd849d417f25754609fcb8cdcfd5e8c5",
+    "bytes": 920,
+    "word_count": 53
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/sec_pit_100_case_candidate_pool_v0_1.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\sec_pit_100_case_candidate_pool_v0_1.json",
+    "category": "code",
+    "sha256": "608bc5e88b00da3491ef1f6584c5ca1178c99a718fe4a4256cab9afc1cc109bb",
+    "bytes": 1747,
+    "word_count": 94
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/sec_pit_100_case_final_sample_v0_1.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\sec_pit_100_case_final_sample_v0_1.json",
+    "category": "code",
+    "sha256": "b1efa6f0d56d857e6ba1fdd8e77ff715c2c4811f823fdd5aa7e557b4097954b4",
+    "bytes": 1682,
+    "word_count": 105
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/sec_pit_100_case_predownload_control_v0_1.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\sec_pit_100_case_predownload_control_v0_1.json",
+    "category": "code",
+    "sha256": "073af58b1f89123139819a88cec26d17e66c4f4c454a8c29bddc761e4acdadd4",
+    "bytes": 1407,
+    "word_count": 37
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/sec_pit_4824_descending_acquisition_preflight_v0_1.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\sec_pit_4824_descending_acquisition_preflight_v0_1.json",
+    "category": "code",
+    "sha256": "1ea5f043338b9a994812b1c546d4f7210cfc8edd620edf86093656db9628fbad",
+    "bytes": 1263,
+    "word_count": 47
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/sec_pit_lifecycle_source_selection_policy_v0_1.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\sec_pit_lifecycle_source_selection_policy_v0_1.json",
+    "category": "code",
+    "sha256": "a326773b49bb5a040cf1682076af33aa3ab60f578b21f045a55683853ec8a99e",
+    "bytes": 709,
+    "word_count": 35
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/sec_pit_lifecycle_source_selection_policy_v0_2.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\sec_pit_lifecycle_source_selection_policy_v0_2.json",
+    "category": "code",
+    "sha256": "ef565870a24e57e1a1761a3be11b1859c47f2d7d195f952f4947ac85cf53937f",
+    "bytes": 1230,
+    "word_count": 43
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/sec_pit_lifecycle_window_reconciliation_v0_1.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\sec_pit_lifecycle_window_reconciliation_v0_1.json",
+    "category": "code",
+    "sha256": "343ff57e7ad611d5fe9ccd2d05b7f5fb220418e3de771d9e9e23f213f992a791",
+    "bytes": 671,
+    "word_count": 18
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/sec_pit_one_ticker_pilot_v0_1.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\sec_pit_one_ticker_pilot_v0_1.json",
+    "category": "code",
+    "sha256": "b4d1677a2dae6960853a1db62c4c7cfb19e1e4560fcf7fcdc233ec25ed5386e8",
+    "bytes": 638,
+    "word_count": 27
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/sec_pit_owner_exclusion_100_case_anchor_delta_probe_v0_1.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\sec_pit_owner_exclusion_100_case_anchor_delta_probe_v0_1.json",
+    "category": "code",
+    "sha256": "8afcf2e98f4e32463dacfed8962a463cb12d6e7cc52f2e95a27591b468e0f9f3",
+    "bytes": 3348,
+    "word_count": 91
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/sec_pit_owner_exclusion_100_case_probe_v0_1.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\sec_pit_owner_exclusion_100_case_probe_v0_1.json",
+    "category": "code",
+    "sha256": "9186d6fa658572dad457b28c8dbc588f9f2dd837896802a4b5d42bea367efae7",
+    "bytes": 2236,
+    "word_count": 58
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/sec_pit_owner_exclusion_100_case_probe_v0_2.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\sec_pit_owner_exclusion_100_case_probe_v0_2.json",
+    "category": "code",
+    "sha256": "e5bb20acfab8ea3d5a5cc689003d2bcdbe29a0a6ea2b2380a388f9dba6b8ceb2",
+    "bytes": 2574,
+    "word_count": 62
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/sec_pit_owner_exclusion_100_case_probe_v0_3.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\sec_pit_owner_exclusion_100_case_probe_v0_3.json",
+    "category": "code",
+    "sha256": "afc7ff835c1f0ca583562fcc83d7898c9dee2619ed94e2d3da24e40a836b7f61",
+    "bytes": 2901,
+    "word_count": 74
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/sec_pit_owner_exclusion_full_interval_3t_probe_v0_1.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\sec_pit_owner_exclusion_full_interval_3t_probe_v0_1.json",
+    "category": "code",
+    "sha256": "522a549bcfcfd1bf88690d9a73b30971cec710b8d7096f15cb8dad97ac3ac27e",
+    "bytes": 2338,
+    "word_count": 94
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/sec_pit_owner_exclusion_methodology_v0_1.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\sec_pit_owner_exclusion_methodology_v0_1.json",
+    "category": "code",
+    "sha256": "2c90674bdf2503745af01fa2bf463f13c1a7aa224990c99a73e27c9b97491376",
+    "bytes": 753,
+    "word_count": 35
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/sec_pit_owner_exclusion_pgac_probe_v0_1.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\sec_pit_owner_exclusion_pgac_probe_v0_1.json",
+    "category": "code",
+    "sha256": "c7e005f5261e30e702bb8bac7817c37ee0f09d790ebc62cb00e8633c670234e3",
+    "bytes": 1262,
+    "word_count": 42
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/sec_pit_owner_exclusion_stratified_probe_v0_1.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\sec_pit_owner_exclusion_stratified_probe_v0_1.json",
+    "category": "code",
+    "sha256": "bbb1fa3a3088bd210099896bb044aef5e7507e17f19a1cdcdeb181ea43f1c56a",
+    "bytes": 3458,
+    "word_count": 166
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/sec_pit_owner_exclusion_stratified_probe_v0_2.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\sec_pit_owner_exclusion_stratified_probe_v0_2.json",
+    "category": "code",
+    "sha256": "da249bab1dabaf73c8174ae8e04632143ad7ade4608e5d57b16834facef59624",
+    "bytes": 3592,
+    "word_count": 167
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/sec_pit_primary_download_authorization_c01_t01_0250_v0_1_20260814.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\sec_pit_primary_download_authorization_c01_t01_0250_v0_1_20260814.json",
+    "category": "code",
+    "sha256": "dc991ce03ac0cc05b57c28f8180282c904c8fed7ab2ef8741dc93039dd221560",
+    "bytes": 4159,
+    "word_count": 334
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/sec_pit_primary_download_authorization_pgac_pilot_v0_2_20260811.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\sec_pit_primary_download_authorization_pgac_pilot_v0_2_20260811.json",
+    "category": "code",
+    "sha256": "285ad715a08fd5f3ac1a62ba235b714fe38b4d33a78a8ec8d9ac2c7ed76f9d9b",
+    "bytes": 600,
+    "word_count": 35
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/sec_pit_primary_download_authorization_TEMPLATE_v0_2.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\sec_pit_primary_download_authorization_TEMPLATE_v0_2.json",
+    "category": "code",
+    "sha256": "54d145534e19946c845d4f26ddd6d660b9bc9f72002fb9e970d12d2ed0c3a71f",
+    "bytes": 400,
+    "word_count": 28
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/sec_pit_seven_ticker_predownload_control_v0_2.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\sec_pit_seven_ticker_predownload_control_v0_2.json",
+    "category": "code",
+    "sha256": "7f77493a87c644c1839d4cddddde7b9d570e080296d3487ab2ee09940f5dbae1",
+    "bytes": 1462,
+    "word_count": 69
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/sec_pit_seven_ticker_stratified_replay_v0_1.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\sec_pit_seven_ticker_stratified_replay_v0_1.json",
+    "category": "code",
+    "sha256": "832fa5449202731b197eabb75a7d63a11509ffef8261953eff5584d95f2509db",
+    "bytes": 1992,
+    "word_count": 165
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/configs/sec_pit_target_interval_filing_review_v0_1.json",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\configs\\sec_pit_target_interval_filing_review_v0_1.json",
+    "category": "code",
+    "sha256": "47052d77bb0de75630e61e6b4b573314c284d9418ac1cb8e61f8eba3f9b65adf",
+    "bytes": 1311,
+    "word_count": 41
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/__init__.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\__init__.py",
+    "category": "code",
+    "sha256": "35f5faf5eee24643ef21b74460ed778ba50dbb2e2d33add3d1570188ff88ff54",
+    "bytes": 100,
+    "word_count": 8
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/assignment_restriction_extract.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\assignment_restriction_extract.py",
+    "category": "code",
+    "sha256": "b6388537d138b1a9d6fb32b0d630b126cac7003a13aa682d3dd82538519f9563",
+    "bytes": 7261,
+    "word_count": 492
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/assignment_schedule_link.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\assignment_schedule_link.py",
+    "category": "code",
+    "sha256": "d6db24ff74419be1d2fb3141c40a9803ca0f637938e3868318813c441dff6396",
+    "bytes": 4980,
+    "word_count": 413
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/audit_authorized_primary_acquisition_v0_1.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\audit_authorized_primary_acquisition_v0_1.py",
+    "category": "code",
+    "sha256": "961a8da10c558dd72e1bfdf8ed9a30c7cd07c203137942bff478cf864f061b83",
+    "bytes": 48224,
+    "word_count": 3252
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/audit_existing_pilot.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\audit_existing_pilot.py",
+    "category": "code",
+    "sha256": "bd2355fde75625007837e323b50005e557b0d14f36d05092f0c653e2f3f6ecfb",
+    "bytes": 3813,
+    "word_count": 303
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/audit_instrument_interval_recovery.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\audit_instrument_interval_recovery.py",
+    "category": "code",
+    "sha256": "876bbd9d90037335c6acdbd421de70e3ccc5fbf59d791ad92425de6b9c4c0189",
+    "bytes": 10254,
+    "word_count": 662
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/audit_lifecycle_metadata_lane.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\audit_lifecycle_metadata_lane.py",
+    "category": "code",
+    "sha256": "b54dd8a94350e01d0e9a8c717ab89c323408408a95c377436485b5f26a26b6ae",
+    "bytes": 11430,
+    "word_count": 739
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/audit_lifecycle_primary_acquisition.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\audit_lifecycle_primary_acquisition.py",
+    "category": "code",
+    "sha256": "beeea231fb4c9bac0f87dea5575d9d2b17cb8f8d2a006c2a891c530db4f8dabc",
+    "bytes": 5292,
+    "word_count": 364
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/audit_massive_sec_acquisition.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\audit_massive_sec_acquisition.py",
+    "category": "code",
+    "sha256": "c2727778532baeb5e05c73b62f9b35edb23eaf7749eb45a0cb6eb5e64a2472d7",
+    "bytes": 4029,
+    "word_count": 322
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/audit_os_unavailable_shard_certification.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\audit_os_unavailable_shard_certification.py",
+    "category": "code",
+    "sha256": "ebb2c926f095a9b6897a2626fc0b654ff413cb61e8c49c5a1926afac9e0517a6",
+    "bytes": 6781,
+    "word_count": 475
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/audit_overlap_recovery.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\audit_overlap_recovery.py",
+    "category": "code",
+    "sha256": "79ade0537a36a97fcfaac76b5b9c03149fd0f333e236e0a3b88352fa24d1d717",
+    "bytes": 4203,
+    "word_count": 281
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/audit_sharded_variable_certification.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\audit_sharded_variable_certification.py",
+    "category": "code",
+    "sha256": "7ac037b83747d603a400c03a81f81ec93f0d236353d9691f825ce3a4546d0615",
+    "bytes": 10225,
+    "word_count": 636
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/audit_share_class_recovery.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\audit_share_class_recovery.py",
+    "category": "code",
+    "sha256": "0aaa98748483cd38d5766358ed30add100675c873a3ab2aaa6d91fcad5e4df1c",
+    "bytes": 16422,
+    "word_count": 995
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/audit_stratified_owner_exclusion_results.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\audit_stratified_owner_exclusion_results.py",
+    "category": "code",
+    "sha256": "0f708afcba553ec1356f69790ab6cc0d60188d5a7e937102efa5bc81577cc48a",
+    "bytes": 5094,
+    "word_count": 349
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/august_funding_evidence.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\august_funding_evidence.py",
+    "category": "code",
+    "sha256": "0ae96261c1abe50e2fde42a2ad62ad624f5698d38697e8bea200a97461b84c3e",
+    "bytes": 3035,
+    "word_count": 246
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/august_funding_vintage.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\august_funding_vintage.py",
+    "category": "code",
+    "sha256": "d94cb7cd477aac8071d2c7a2877db9f321ca9f6b85c0d6c9138988c2309ba947",
+    "bytes": 5487,
+    "word_count": 402
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/authorization.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\authorization.py",
+    "category": "code",
+    "sha256": "28f4d0a002d34a31cf006273a0d4b1fbff09275b96574b61d77aec1e9378625a",
+    "bytes": 2239,
+    "word_count": 162
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/availability.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\availability.py",
+    "category": "code",
+    "sha256": "4ecc2a7502c99b13ee8e8e6680ddfff8a6ec53786d62301539b3d5c4f6922c0f",
+    "bytes": 2807,
+    "word_count": 259
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/balance_sheet_context.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\balance_sheet_context.py",
+    "category": "code",
+    "sha256": "1b93e8ed0e73bfc450c77f70d3bcafe9a6fffecdb7c5c665808aca25396ef554",
+    "bytes": 5943,
+    "word_count": 417
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/blockers.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\blockers.py",
+    "category": "code",
+    "sha256": "70eef76016a29e44b4433c9e98d863d5115b2598d5de79d02ac9f789e3ff997e",
+    "bytes": 1637,
+    "word_count": 94
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/build_100_case_candidate_pool.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\build_100_case_candidate_pool.py",
+    "category": "code",
+    "sha256": "d9435653d390ddd637c22ba1290bdf2bad7e102229ccd6504a47a837fdeaeedb",
+    "bytes": 12207,
+    "word_count": 807
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/build_4824_cohort_metadata_gate.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\build_4824_cohort_metadata_gate.py",
+    "category": "code",
+    "sha256": "0d5a92fbbf26b642304a0764e8e0e758c581d334e6c2ce05d3bb3e8584d944bc",
+    "bytes": 15792,
+    "word_count": 960
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/build_4824_descending_acquisition_preflight.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\build_4824_descending_acquisition_preflight.py",
+    "category": "code",
+    "sha256": "598e53f8a42b66afe43896b08d1712b97b6fe0743e5fcbd0b03b038637b71123",
+    "bytes": 13589,
+    "word_count": 863
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/build_composite_acquisition_ledger.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\build_composite_acquisition_ledger.py",
+    "category": "code",
+    "sha256": "01b6b6ec2d89da52a0aa8fb3644091f788f752faffdb1fa830adbad98d6ffd58",
+    "bytes": 4654,
+    "word_count": 360
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/build_lifecycle_selection_from_predownload.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\build_lifecycle_selection_from_predownload.py",
+    "category": "code",
+    "sha256": "b3fb35e2022a7aec1026dc8adcaf829ce7628982ecd63b8541f4863b3132b467",
+    "bytes": 1972,
+    "word_count": 144
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/build_metadata_lifecycle_ledger.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\build_metadata_lifecycle_ledger.py",
+    "category": "code",
+    "sha256": "c7f4d631fc170e40c733a63a62aeed1b4c84f0b68531916b1cf83e6b6c63c661",
+    "bytes": 4829,
+    "word_count": 310
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/build_owner_exclusion_stratified_probe.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\build_owner_exclusion_stratified_probe.py",
+    "category": "code",
+    "sha256": "571d2f271c2c479975c419a449d55de46080811c4b0b6bbfe515a36c9e6d7499",
+    "bytes": 20803,
+    "word_count": 1200
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/build_predownload_control.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\build_predownload_control.py",
+    "category": "code",
+    "sha256": "e60fa37da2566a96a0ba1e19c45759700bf984772fcd2163cb25b74316f1afb3",
+    "bytes": 15351,
+    "word_count": 964
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/build_stratified_owner_case_configs.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\build_stratified_owner_case_configs.py",
+    "category": "code",
+    "sha256": "9dadbab2cf5c206e76e8d27ec275c9403e89ffa2beccb10972ba37cd19edd601",
+    "bytes": 5680,
+    "word_count": 332
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/change_explanation.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\change_explanation.py",
+    "category": "code",
+    "sha256": "852dd9b77ad1dc98124331d4a729ad84a420a143d53a558b2be09d86dd48f7a5",
+    "bytes": 3029,
+    "word_count": 184
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/class_os_admission_v3.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\class_os_admission_v3.py",
+    "category": "code",
+    "sha256": "b1c59c657ce0ba8417743d94da070ce5f6aeceedf538275d343f625ad9bf2512",
+    "bytes": 4497,
+    "word_count": 253
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/class_os_extract.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\class_os_extract.py",
+    "category": "code",
+    "sha256": "0c50e3419268b0c9adb8c6b29dc794c9948a39b79c0698d0988877f37eced1c1",
+    "bytes": 5824,
+    "word_count": 302
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/class_os_extract_v2.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\class_os_extract_v2.py",
+    "category": "code",
+    "sha256": "2638ac792e47bc4a52143a5ac0aea1027360d6ab283fb9d2ec632b410dda5b60",
+    "bytes": 12907,
+    "word_count": 703
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/class_os_extract_v3.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\class_os_extract_v3.py",
+    "category": "code",
+    "sha256": "f733bcf51bed46a30820bf9075a02fe2d89ef94b76539d8d3da3155185e8c37b",
+    "bytes": 5545,
+    "word_count": 249
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/class_os_reconcile.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\class_os_reconcile.py",
+    "category": "code",
+    "sha256": "d32f35ec2b7bdfe4abaa6816a167c082b767094b9813ac16c102deee890ad5b6",
+    "bytes": 2912,
+    "word_count": 201
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/class_os_reconcile_v2.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\class_os_reconcile_v2.py",
+    "category": "code",
+    "sha256": "1aa56067231cb662435533b801d405499152b1878d32275f3bada9e9fea5085b",
+    "bytes": 2880,
+    "word_count": 198
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/client.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\client.py",
+    "category": "code",
+    "sha256": "6e4c1cecb6b84e8f4b9bf133dd0987cea941967d4877f802b3d57736358bfb03",
+    "bytes": 7625,
+    "word_count": 550
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/companyfacts_reconcile.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\companyfacts_reconcile.py",
+    "category": "code",
+    "sha256": "a546e62ff365f7ae77d39ccb1ca893d8cecf9fc36223cb47b1c4f2de81769f50",
+    "bytes": 7797,
+    "word_count": 498
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/extract.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\extract.py",
+    "category": "code",
+    "sha256": "e1e4f9a30aec2048d687641b11ee8ee1cc1296e20eb14714751a242f6759334f",
+    "bytes": 13143,
+    "word_count": 803
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/extract_lifecycle_primary_documents.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\extract_lifecycle_primary_documents.py",
+    "category": "code",
+    "sha256": "fe28fd4c98083fc5c00c4e07548612179e84163ff9398869206a5dc043a955e8",
+    "bytes": 9759,
+    "word_count": 601
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/float_estimate.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\float_estimate.py",
+    "category": "code",
+    "sha256": "d5cd4b410aad25956c8037013062100275ceec054861f1ac888234e95ebd234b",
+    "bytes": 14805,
+    "word_count": 994
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/float_estimate_v2.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\float_estimate_v2.py",
+    "category": "code",
+    "sha256": "0795d506f7a1b453b528f454f76062b52339a4ad4229026269b8f29f654cbd59",
+    "bytes": 1713,
+    "word_count": 103
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/freeze_100_case_sample.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\freeze_100_case_sample.py",
+    "category": "code",
+    "sha256": "9950b85c60e19abd95916e227a148d065c5d7a40e5307cabd36247a0384b78d3",
+    "bytes": 8631,
+    "word_count": 606
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/historical_cusip.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\historical_cusip.py",
+    "category": "code",
+    "sha256": "fc7f5f849b87e5d0111b91b5c4b71811ff7c01d020646e846e4d30e1d09ee6af",
+    "bytes": 4048,
+    "word_count": 326
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/holders.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\holders.py",
+    "category": "code",
+    "sha256": "196e7c35964ad4f0a66c96430dcf03183e6c75fdccb925a9f963497bfea30679",
+    "bytes": 11880,
+    "word_count": 693
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/holders_v2.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\holders_v2.py",
+    "category": "code",
+    "sha256": "45e94e36718c82b0c40a15f20d52cc76d101b8f374f7b08d8e5981ae518f663c",
+    "bytes": 2547,
+    "word_count": 156
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/holders_v3.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\holders_v3.py",
+    "category": "code",
+    "sha256": "64f1305a9725514baf3d2fd5289783df433aac675de5765b077e4b93df4ed6d9",
+    "bytes": 6276,
+    "word_count": 448
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/holders_v4.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\holders_v4.py",
+    "category": "code",
+    "sha256": "ed0eb7c84c35acf8b3786aad2b5a81b15b5d2d59dd20aebfef8e3beaf6a8fcfb",
+    "bytes": 4527,
+    "word_count": 274
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/ixbrl_class_os_extract.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\ixbrl_class_os_extract.py",
+    "category": "code",
+    "sha256": "e2055a6858137323cad520c5f8122daa23e1fbee1462e7f2feda722a8df70a04",
+    "bytes": 3277,
+    "word_count": 156
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/ixbrl_class_os_extract_v2.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\ixbrl_class_os_extract_v2.py",
+    "category": "code",
+    "sha256": "e71d6982bce1a8ed5faacc1d4da21c9717987e2419ff9ff1bbc53fa527d6e8cb",
+    "bytes": 5540,
+    "word_count": 331
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/lifecycle_extract.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\lifecycle_extract.py",
+    "category": "code",
+    "sha256": "794d729c75507409a800a2fa0c3edfca61f70447511d58d04934a6986b5153b0",
+    "bytes": 14313,
+    "word_count": 1034
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/lockup_release_schedule.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\lockup_release_schedule.py",
+    "category": "code",
+    "sha256": "d78c8ddf739a8f46dbd5d3239a71cee6ed6bdd317d8e23180df7efa8b490478d",
+    "bytes": 4639,
+    "word_count": 317
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/massive_sec_authorization.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\massive_sec_authorization.py",
+    "category": "code",
+    "sha256": "a2ed44ca3d3b1d7ab352a2cb8a8e9c7a9e5dd0c509d091e442ce318984f9ea63",
+    "bytes": 11072,
+    "word_count": 780
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/massive_sec_client.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\massive_sec_client.py",
+    "category": "code",
+    "sha256": "bd77936b6967fbc2ee20ccd3c86ef708648936350eda1765a4988ac99ddeaee7",
+    "bytes": 11635,
+    "word_count": 972
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/massive_sec_models.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\massive_sec_models.py",
+    "category": "code",
+    "sha256": "9a912a80dfe66ec30be3463d78704e2e380b3e261dd4e24258438bef2f6eeee4",
+    "bytes": 8894,
+    "word_count": 548
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/massive_sec_storage.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\massive_sec_storage.py",
+    "category": "code",
+    "sha256": "068c9cf20ac5d3bdfa612b7cffce2c82f4f556708adbf4119cd8f2aff22ed937",
+    "bytes": 13546,
+    "word_count": 940
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/massive_sec_telemetry.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\massive_sec_telemetry.py",
+    "category": "code",
+    "sha256": "e5a57ae21b2e4c2ab4f05b1a7c8bc4f3d21b325b30c60e4e9042bcf4ec6ab7a3",
+    "bytes": 6859,
+    "word_count": 516
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/materialize_balance_sheet_context.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\materialize_balance_sheet_context.py",
+    "category": "code",
+    "sha256": "86c626f6eb069035e1f3c1be00893713bd59000e49c9e2801f8af4c856cd74c6",
+    "bytes": 2942,
+    "word_count": 199
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/materialize_change_explanation.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\materialize_change_explanation.py",
+    "category": "code",
+    "sha256": "d53fd30f102be80f672e0f6c68b4a2456cb8beac1ae20278019f1db083fe499b",
+    "bytes": 2045,
+    "word_count": 142
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/materialize_existing_pilot_os.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\materialize_existing_pilot_os.py",
+    "category": "code",
+    "sha256": "789548fa9f22efbdbd2ad7d554ecf010fcadc155493c0a2e801780f14643e265",
+    "bytes": 7026,
+    "word_count": 441
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/materialize_historical_cusip.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\materialize_historical_cusip.py",
+    "category": "code",
+    "sha256": "66b6ad9fabb46f3960e099f0fecf8eba8ac77f839bbfd98e2636a31fbab9a05a",
+    "bytes": 4502,
+    "word_count": 289
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/materialize_presession_market_cap.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\materialize_presession_market_cap.py",
+    "category": "code",
+    "sha256": "436924417cca62bace5ef0ec06b80df55f0676a36d7a3ed42d37959e7c15c368",
+    "bytes": 3489,
+    "word_count": 225
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/merge_acquisition_ledgers.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\merge_acquisition_ledgers.py",
+    "category": "code",
+    "sha256": "7324c696e68a95961bab575be5d6de3c34b323e989c1e13d241ea8611809de7a",
+    "bytes": 3957,
+    "word_count": 314
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/metadata.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\metadata.py",
+    "category": "code",
+    "sha256": "8ad85a0bc5f7cc7feb43f5c4345f21d0f56672e0cdaef7d8517c801dedca4734",
+    "bytes": 6527,
+    "word_count": 553
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/models.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\models.py",
+    "category": "code",
+    "sha256": "0d0df31348f32c514923924fa692e04edccfb3eca2cec95164238ceb7a955c48",
+    "bytes": 1951,
+    "word_count": 221
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/os_corporate_action_align.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\os_corporate_action_align.py",
+    "category": "code",
+    "sha256": "6e13723a3072a8455f0320796aa83849520a4db908daa37733eecdcfde034707",
+    "bytes": 2139,
+    "word_count": 161
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/ownership_baseline.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\ownership_baseline.py",
+    "category": "code",
+    "sha256": "342c939515caa5c3ddefda6a60a300195d6c69124e281e9f9ea8396afa72ffae",
+    "bytes": 4896,
+    "word_count": 354
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/ownership_class_reconcile.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\ownership_class_reconcile.py",
+    "category": "code",
+    "sha256": "5082af620a0c041982fd3fbe59fa9fe2243ddb2868479dad4d4ae9b4bbbffa49",
+    "bytes": 11917,
+    "word_count": 771
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/ownership_html.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\ownership_html.py",
+    "category": "code",
+    "sha256": "9614bbdd2ef91a042f0ba721dc34f106a38dbfacbb74a481485cb8ca4ac604ef",
+    "bytes": 16211,
+    "word_count": 1148
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/ownership_identity.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\ownership_identity.py",
+    "category": "code",
+    "sha256": "255e135bc277074aa647552d4b6a2903e9218fdf698c65551af70705839fde26",
+    "bytes": 3538,
+    "word_count": 311
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/ownership_v2.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\ownership_v2.py",
+    "category": "code",
+    "sha256": "0dddddbaff560cd23241e56236ce56c3a765df371984ec9e2b78cfde5f8a9aa4",
+    "bytes": 66288,
+    "word_count": 4206
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/predownload_control.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\predownload_control.py",
+    "category": "code",
+    "sha256": "12ec742f7181671b5dd6e62eb2bdcaacf1ceef5248b15fa8b24896cea383a46f",
+    "bytes": 7470,
+    "word_count": 636
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/presession_market_cap.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\presession_market_cap.py",
+    "category": "code",
+    "sha256": "0f8d28d2a753f408682fc679685e2525ceb32aece9120ec2a3b470d024bfd516",
+    "bytes": 4912,
+    "word_count": 360
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/reconcile.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\reconcile.py",
+    "category": "code",
+    "sha256": "65ea7c1331046cabd103d8f3c77dbdc9a622f8678736ad1e3bfa28ccd89893d5",
+    "bytes": 3203,
+    "word_count": 256
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/reconcile_lifecycle_market_presence.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\reconcile_lifecycle_market_presence.py",
+    "category": "code",
+    "sha256": "cbdaf6ed354694c42ab34a172070f43235c9937b4e98be08e39b42b629a0ce1a",
+    "bytes": 13282,
+    "word_count": 871
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/reconcile_vendor_sec_lifecycle_windows.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\reconcile_vendor_sec_lifecycle_windows.py",
+    "category": "code",
+    "sha256": "ee0c07a458af319ab8d52b8583cc081edda7a8aed0bf81007f3b5190ebda89d7",
+    "bytes": 7921,
+    "word_count": 418
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/registration_os_reconcile.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\registration_os_reconcile.py",
+    "category": "code",
+    "sha256": "5e8c9cd5f283791e357833dbed7b477fa9947988e7045c761d31c1e46aea7694",
+    "bytes": 4406,
+    "word_count": 322
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/resolver.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\resolver.py",
+    "category": "code",
+    "sha256": "25b095b82debe0088a7113276f6ea80e107a990e4fce48a1796815416c39a1d0",
+    "bytes": 4620,
+    "word_count": 366
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/restriction_clause_extract.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\restriction_clause_extract.py",
+    "category": "code",
+    "sha256": "c30805d3e146ccd8270b927cbed5b80c32e64b40d5b85d719128cec13d262bd7",
+    "bytes": 4191,
+    "word_count": 246
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/restriction_conditions.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\restriction_conditions.py",
+    "category": "code",
+    "sha256": "85af964f1ed7ed7567c87d8055c5059430aabe1d6ff3f5b7e18539d8d58bf299",
+    "bytes": 5930,
+    "word_count": 353
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/restriction_estimate.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\restriction_estimate.py",
+    "category": "code",
+    "sha256": "56802e5522253ce669f26fd7f3a39d98f6f4b7409f9ca4991b99aede45b79db6",
+    "bytes": 2564,
+    "word_count": 146
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/restriction_event_reconcile.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\restriction_event_reconcile.py",
+    "category": "code",
+    "sha256": "963f1e23b74cdbe98eba6e48a62c555586d8144c19c406f8a42e056a9aa5dc84",
+    "bytes": 2871,
+    "word_count": 202
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/restriction_extract.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\restriction_extract.py",
+    "category": "code",
+    "sha256": "40389932dfd617c23820f31ed7b99489a75862ab1fcd350be23628eae6cce98e",
+    "bytes": 24677,
+    "word_count": 1626
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/review_target_interval_filings.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\review_target_interval_filings.py",
+    "category": "code",
+    "sha256": "25d69da2beb61c3031a5556fd6332dd0305b372bda6b7b1b35c6778afc2205f7",
+    "bytes": 6787,
+    "word_count": 457
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_authorized_primary_acquisition_v0_2.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\run_authorized_primary_acquisition_v0_2.py",
+    "category": "code",
+    "sha256": "6fd2f36f1e65733700eb4fd7a2710b635b07e9c4244e0152848f511806628dae",
+    "bytes": 20575,
+    "word_count": 1377
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_companyfacts_os_reconciliation_probe.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\run_companyfacts_os_reconciliation_probe.py",
+    "category": "code",
+    "sha256": "2fc143d4b460fba115f34da74c0faffe9d020fad9fff8ff05086f8f4e33bfc64",
+    "bytes": 18823,
+    "word_count": 1229
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_lifecycle_primary_acquisition.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\run_lifecycle_primary_acquisition.py",
+    "category": "code",
+    "sha256": "6814bc2b23c40db79dd0784cc9a30df6ac32a8ae0d378fd9e1d5df1642c6691d",
+    "bytes": 12168,
+    "word_count": 822
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_massive_sec_acquisition.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\run_massive_sec_acquisition.py",
+    "category": "code",
+    "sha256": "25a2c867cb5887923851421f106f9d7286b6c1984e7094b7a37e94a3df63850c",
+    "bytes": 32128,
+    "word_count": 1955
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_massive_sec_probe.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\run_massive_sec_probe.py",
+    "category": "code",
+    "sha256": "d40dce0ff856e543e5395617ef23020c58163901a74a162086b26b22bca6ab50",
+    "bytes": 1060,
+    "word_count": 84
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_no_network_os_probe.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\run_no_network_os_probe.py",
+    "category": "code",
+    "sha256": "15f2928e80d8e7359bdb5848edb8429ee8d461fa8d3433412a631f41203392fa",
+    "bytes": 20156,
+    "word_count": 1224
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_no_network_owner_exclusion_probe.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\run_no_network_owner_exclusion_probe.py",
+    "category": "code",
+    "sha256": "5e4869762676472ff9b1d3f9b2e9a3d40044c2e6a666d3b89eddf304c39b9868",
+    "bytes": 32465,
+    "word_count": 1830
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_one_ticker_pilot.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\run_one_ticker_pilot.py",
+    "category": "code",
+    "sha256": "dd05a06e0707870a884c7f5e6f5df6fe1301ddc3cce9b9a817a4a26745f367d6",
+    "bytes": 51765,
+    "word_count": 2587
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_owner_exclusion_resolution_batch.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\run_owner_exclusion_resolution_batch.py",
+    "category": "code",
+    "sha256": "a228854d595a99f7c3084e24e5f4fcdbe13cb9382cdefdd39952b662cd4dfd27",
+    "bytes": 11331,
+    "word_count": 724
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_pgac_no_network_os_probe.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\run_pgac_no_network_os_probe.py",
+    "category": "code",
+    "sha256": "4b69b35d6ee85362b19ed2342c531f4c8cb69d6f0d556171ca35341594e90774",
+    "bytes": 18529,
+    "word_count": 1089
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_seven_ticker_replay.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\run_seven_ticker_replay.py",
+    "category": "code",
+    "sha256": "091e15cc16d91e31a1e24684b8758eec113fdb4e82867bc715d54e8f1e1ba50e",
+    "bytes": 8048,
+    "word_count": 586
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/run_submissions_metadata_profile.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\run_submissions_metadata_profile.py",
+    "category": "code",
+    "sha256": "469a53df8b94d5347af0b99f47c763831277154073cfc9592dc54304c7215eb4",
+    "bytes": 19745,
+    "word_count": 1250
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/storage.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\storage.py",
+    "category": "code",
+    "sha256": "3d9ad0b03c996f50eccfae6a073372d476fba023bbcd7ee4b1da93befe8b1c37",
+    "bytes": 3981,
+    "word_count": 359
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/summarize_100_case_scale_gate.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\summarize_100_case_scale_gate.py",
+    "category": "code",
+    "sha256": "d96df0b087fce11ae6c4853e0db818c0635f872836c4aaa94e0495dfe2be33e0",
+    "bytes": 9295,
+    "word_count": 521
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/sec_pit/telemetry.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\sec_pit\\telemetry.py",
+    "category": "code",
+    "sha256": "9fc700691cea141f53913115f0e8c096b4638ada5cfd6d4915b6e201d4c1adf7",
+    "bytes": 11472,
+    "word_count": 840
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/scripts/snapshot_massive_market_operations_reference.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\scripts\\snapshot_massive_market_operations_reference.py",
+    "category": "code",
+    "sha256": "8b78ecc524602303141251bac8df8798f24f3b74711134c975ac6b4e5b7d134c",
+    "bytes": 10975,
+    "word_count": 760
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_massive_market_operations_reference_snapshot.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_massive_market_operations_reference_snapshot.py",
+    "category": "code",
+    "sha256": "561733eddc9efc411510498b957a8d0e1c388b4b969cd02295dcce03742bcfb1",
+    "bytes": 3498,
+    "word_count": 233
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_massive_sec_authorization.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_massive_sec_authorization.py",
+    "category": "code",
+    "sha256": "3d7dfe6bb8f3339e4c5f9d0803efa666b28a2584a7ba603b43782cf40b6edaf8",
+    "bytes": 6006,
+    "word_count": 403
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_massive_sec_client.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_massive_sec_client.py",
+    "category": "code",
+    "sha256": "3cf84284236dde4048787b2dfaa1a2e75d57ec4ab1b6ac6d3f36606e0186cfab",
+    "bytes": 3756,
+    "word_count": 280
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_massive_sec_runner_resume.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_massive_sec_runner_resume.py",
+    "category": "code",
+    "sha256": "2b4f542919ada32fb6e6fd4f052de396b9347f9a3749d4dc43ac6695dad1502d",
+    "bytes": 5778,
+    "word_count": 392
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_massive_sec_scope_gate.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_massive_sec_scope_gate.py",
+    "category": "code",
+    "sha256": "d5163acb20b0c85396d98861e60ae68087fdf94342a1fa7895dc5f35cd7fce6e",
+    "bytes": 2389,
+    "word_count": 196
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_massive_sec_storage.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_massive_sec_storage.py",
+    "category": "code",
+    "sha256": "0a5b4b8a17dd682c2f8836dc85a42df1035a978080ee5d4a933cbe5e7f4f6bba",
+    "bytes": 4727,
+    "word_count": 273
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_100_case_candidate_pool.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_100_case_candidate_pool.py",
+    "category": "code",
+    "sha256": "690c1c1cb3995ff9260e4f26f3d2bdf7e8796663fa4a2ea9f32a4970b3ae3c45",
+    "bytes": 2980,
+    "word_count": 212
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_100_case_scale_gate_summary.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_100_case_scale_gate_summary.py",
+    "category": "code",
+    "sha256": "48ab7a240a3a9ec0efc3e449f3ad2b9cdc1dcba899d73789d57d2e848ff328a5",
+    "bytes": 1381,
+    "word_count": 123
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_4824_cohort_metadata_gate.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_4824_cohort_metadata_gate.py",
+    "category": "code",
+    "sha256": "d8e528c006640d64c79e44dd4242bc5122a2bb0af455d38c27bc4e646c3ff715",
+    "bytes": 4237,
+    "word_count": 279
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_4824_descending_acquisition_preflight.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_4824_descending_acquisition_preflight.py",
+    "category": "code",
+    "sha256": "41a6f434e0999dcac2665bdd3e89cc8eb41be88171cb3a9bd1de62eadc389158",
+    "bytes": 3209,
+    "word_count": 257
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_acquisition_telemetry.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_acquisition_telemetry.py",
+    "category": "code",
+    "sha256": "ceb0c974ac0e762cc584544cf011f889605a2a6c636e5352bd25a6d6a7408336",
+    "bytes": 7744,
+    "word_count": 558
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_admission.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_admission.py",
+    "category": "code",
+    "sha256": "e2618e28c77e289d1402bbfaff5ee209ca25590d2da11acff358ffee8323d5f7",
+    "bytes": 1391,
+    "word_count": 94
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_assignment_restriction_extract.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_assignment_restriction_extract.py",
+    "category": "code",
+    "sha256": "7a558473d0f4768a4df9af417834d250f339ad6382bf697a2b52741370fbac7d",
+    "bytes": 2478,
+    "word_count": 223
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_assignment_schedule_link.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_assignment_schedule_link.py",
+    "category": "code",
+    "sha256": "f663aabd49f4c833c82543001c7876fc6eb0d3aabee2ba824b737500d8ce6f6b",
+    "bytes": 1826,
+    "word_count": 110
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_august_funding_evidence.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_august_funding_evidence.py",
+    "category": "code",
+    "sha256": "83f009d8658bbfd00fcbdcc6e2f94ab206b12313753a19e6f88e07c8a322f9e5",
+    "bytes": 1144,
+    "word_count": 130
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_august_funding_vintage.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_august_funding_vintage.py",
+    "category": "code",
+    "sha256": "139443ce6f89ebab1e1cd7e646c95e5d7e572df11d42449d45d8966ff0beaa4d",
+    "bytes": 1772,
+    "word_count": 158
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_authorization.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_authorization.py",
+    "category": "code",
+    "sha256": "43b9070aceadd8e84917d0c461226d3d0f18ac9eef3388062fcf1120fa0ac0ec",
+    "bytes": 3349,
+    "word_count": 191
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_authorized_acquisition_scope.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_authorized_acquisition_scope.py",
+    "category": "code",
+    "sha256": "03030f57177b649c1a9352c6a19d30ce88180424efed5cfa66335dd50caf0f98",
+    "bytes": 2045,
+    "word_count": 157
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_authorized_primary_postdownload_audit.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_authorized_primary_postdownload_audit.py",
+    "category": "code",
+    "sha256": "70e7dbf6ad475425c1fdc8acfe257434ffd993b48999e14e76ba9e57c34a3dc0",
+    "bytes": 6868,
+    "word_count": 492
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_balance_sheet_context.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_balance_sheet_context.py",
+    "category": "code",
+    "sha256": "82f1210b5fdcd4f7ac8d1d075d00bb6083959e48efb48f46142f38fcee15b605",
+    "bytes": 2357,
+    "word_count": 159
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_change_explanation.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_change_explanation.py",
+    "category": "code",
+    "sha256": "add9162abba0e23757bce3dc01178c1015d925590e81413d874373042ac50edb",
+    "bytes": 1347,
+    "word_count": 89
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_class_os_admission_v3.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_class_os_admission_v3.py",
+    "category": "code",
+    "sha256": "4f1271ff0a1f51c64f87f2a1e1bada2a9c99dffa9272affc4468e7e47199df9e",
+    "bytes": 2348,
+    "word_count": 172
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_class_os_extract.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_class_os_extract.py",
+    "category": "code",
+    "sha256": "127b5afe61dac4a17a0a2d22c9460cf68a5d560084c2f4b6bb2a797cfada20a1",
+    "bytes": 3438,
+    "word_count": 239
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_class_os_extract_v2.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_class_os_extract_v2.py",
+    "category": "code",
+    "sha256": "bab17c165ccb3f400c32f3e357cc2dc1f109eb74db7b557d0a7d50ac06867036",
+    "bytes": 8847,
+    "word_count": 734
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_class_os_extract_v3.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_class_os_extract_v3.py",
+    "category": "code",
+    "sha256": "0ddc9fffca16d0cc976d302c2fe2d56081e637250b081f1d8b595ff6da173ebc",
+    "bytes": 3238,
+    "word_count": 333
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_companyfacts_probe_selection.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_companyfacts_probe_selection.py",
+    "category": "code",
+    "sha256": "0f645db7fceba1e94bd6e041b074973d46e6576a8a237b167fe91e3c018f9b22",
+    "bytes": 3099,
+    "word_count": 237
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_companyfacts_reconcile.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_companyfacts_reconcile.py",
+    "category": "code",
+    "sha256": "f3b81532a922d0fa3159dc9d73492f7ba41a94abde5672929a0c0272212cce38",
+    "bytes": 3822,
+    "word_count": 244
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_float_gate.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_float_gate.py",
+    "category": "code",
+    "sha256": "7f03b37838197506a2cfaf6cff43ff4e3d24ba06c26bb7a7b695d0b63350db49",
+    "bytes": 14654,
+    "word_count": 784
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_freeze_100_case_sample.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_freeze_100_case_sample.py",
+    "category": "code",
+    "sha256": "3f64efe205f58f66a081b42314f25e4dfd41accbbd2f6e7b55a10f458c513e43",
+    "bytes": 461,
+    "word_count": 45
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_historical_cusip.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_historical_cusip.py",
+    "category": "code",
+    "sha256": "32a34c397168d7c8af6095dd3725913fc4ba8b3f43bd5e790a1d1863345163bd",
+    "bytes": 2122,
+    "word_count": 160
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_historical_primary_fallback.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_historical_primary_fallback.py",
+    "category": "code",
+    "sha256": "c837cf567ce11981775280f6d4b8962a283a53562bf6607bfdea419a84947314",
+    "bytes": 1169,
+    "word_count": 69
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_holder_aggregate_precedence_v3.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_holder_aggregate_precedence_v3.py",
+    "category": "code",
+    "sha256": "3f0ab3923b2d2212d2bea8727a41291130d032ef61736151f55762c752ec3924",
+    "bytes": 4612,
+    "word_count": 335
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_holder_ledger.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_holder_ledger.py",
+    "category": "code",
+    "sha256": "5cfaa16d8d70a7f174ff89d52ebdf59690225d341bd035c9fc22b456f12eef27",
+    "bytes": 4228,
+    "word_count": 294
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_holder_source_account_v4.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_holder_source_account_v4.py",
+    "category": "code",
+    "sha256": "0c8308424b0a8bba5f0362fe3e391180f2d512b4da61e9a5a743a9d02d7287e9",
+    "bytes": 4399,
+    "word_count": 331
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_html_ownership.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_html_ownership.py",
+    "category": "code",
+    "sha256": "312e786a4f7432c1c0272c621cf9e9023f0c7291a306117e178f1c0afc951dae",
+    "bytes": 5485,
+    "word_count": 455
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_instrument_interval_recovery_audit.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_instrument_interval_recovery_audit.py",
+    "category": "code",
+    "sha256": "74e96ad037ddc8b549389170aeae40d776c634bbedd4bf43fc037d67c118c869",
+    "bytes": 2862,
+    "word_count": 146
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_ixbrl_class_os.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_ixbrl_class_os.py",
+    "category": "code",
+    "sha256": "7b87814e6baa0a843d1ffeb829da55e5cac7de875d71625cd533e40ef857670b",
+    "bytes": 2332,
+    "word_count": 185
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_lifecycle_extract.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_lifecycle_extract.py",
+    "category": "code",
+    "sha256": "5db5d1be87c99d55a020f9651d350e467cd0a850fc01071d2d4af3d34c97d8da",
+    "bytes": 3490,
+    "word_count": 284
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_lifecycle_market_presence.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_lifecycle_market_presence.py",
+    "category": "code",
+    "sha256": "fd25581a596d5103574c60a16edeb58a3b3e9e71b87bfe428cf81f5ee7041851",
+    "bytes": 2807,
+    "word_count": 186
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_lifecycle_metadata_lane.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_lifecycle_metadata_lane.py",
+    "category": "code",
+    "sha256": "03e769a4d31f0067a94ffab41abb4a2cf1533bec3368ab4029aa1924e1b49e69",
+    "bytes": 4282,
+    "word_count": 291
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_lifecycle_primary_acquisition.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_lifecycle_primary_acquisition.py",
+    "category": "code",
+    "sha256": "bf79e2da70bcb1f43650a4ee25ba3c42832b7a7290368736c9e747cf22ddaa71",
+    "bytes": 3299,
+    "word_count": 194
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_lifecycle_window_reconciliation.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_lifecycle_window_reconciliation.py",
+    "category": "code",
+    "sha256": "dd02509cc67c492cb89308396797e96f25dee8e67aa99516dca50cb392051d44",
+    "bytes": 1147,
+    "word_count": 68
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_lockup_release_schedule.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_lockup_release_schedule.py",
+    "category": "code",
+    "sha256": "23b37870641a034efbb4d0de511532c2865b2b45137b3fb83185bc7ce8bdfc56",
+    "bytes": 1940,
+    "word_count": 117
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_management_aggregate_class_reconcile_v2.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_management_aggregate_class_reconcile_v2.py",
+    "category": "code",
+    "sha256": "161fc4cc70217ab39411127da6fe80bcc4e6c78a7235275beff190236bb31772",
+    "bytes": 4716,
+    "word_count": 307
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_merge_acquisition_ledgers.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_merge_acquisition_ledgers.py",
+    "category": "code",
+    "sha256": "0953bf770a6a52717a11b4d22f1d6d7730a8f6bd54a4e88806d734320b112aee",
+    "bytes": 1666,
+    "word_count": 131
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_metadata_lifecycle_ledger.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_metadata_lifecycle_ledger.py",
+    "category": "code",
+    "sha256": "5cb076af270d22f6db3e4f98592fefbf66154c4ab4ff427813129b7b3b243513",
+    "bytes": 1044,
+    "word_count": 89
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_no_network_os_probe.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_no_network_os_probe.py",
+    "category": "code",
+    "sha256": "8ab7d4ac4f39bf7f51ad2081fd2907fb215b3c03bf311f22311e64f91b2976aa",
+    "bytes": 970,
+    "word_count": 68
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_os_corporate_action_align.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_os_corporate_action_align.py",
+    "category": "code",
+    "sha256": "adb9a83961127f672405cbf952970e2bddbec130e662116ddf53723b9c4ce5cb",
+    "bytes": 1822,
+    "word_count": 122
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_os_unavailable_shard_certification.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_os_unavailable_shard_certification.py",
+    "category": "code",
+    "sha256": "9e3525a05349974e14ceaa20eb2337dbb37cb03154e58f5822b934bdb3016e17",
+    "bytes": 850,
+    "word_count": 70
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_owner_exclusion_resolution_batch.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_owner_exclusion_resolution_batch.py",
+    "category": "code",
+    "sha256": "3934835582f623776ae42ef00f7fe4d9f08578d8c8effe7d578eae00cf4a351c",
+    "bytes": 1482,
+    "word_count": 101
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_owner_exclusion_stratified_probe.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_owner_exclusion_stratified_probe.py",
+    "category": "code",
+    "sha256": "95a0abd76f18f92ea29be0a74f746697eefa6d6b77da9a9260fd84e274fc48a5",
+    "bytes": 5980,
+    "word_count": 393
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_owner_output_schema.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_owner_output_schema.py",
+    "category": "code",
+    "sha256": "a98aa495d844fce8f2fd1ea69950059c9117efe1579bea3734d8b2cf8294941e",
+    "bytes": 2109,
+    "word_count": 150
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_owner_probe_case_paths.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_owner_probe_case_paths.py",
+    "category": "code",
+    "sha256": "3a5a1d1870ef877e365cf66281e29f6c8dad1d349cd7df25eef16684d2256886",
+    "bytes": 842,
+    "word_count": 61
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_ownership_baseline.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_ownership_baseline.py",
+    "category": "code",
+    "sha256": "d7f78574cba85ad5b5b6fdace9884bf063c627e8586cdd475acf350a265ada39",
+    "bytes": 3336,
+    "word_count": 198
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_ownership_identity.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_ownership_identity.py",
+    "category": "code",
+    "sha256": "bcdcfb555a147beef6f460503c84731952f8ac6cbec36611c1e6223235a9ee4f",
+    "bytes": 2909,
+    "word_count": 181
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_ownership_v2.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_ownership_v2.py",
+    "category": "code",
+    "sha256": "738a210db270fa9953c15785ae84adefd2dca461b347ddbac7b89d684eb60bbb",
+    "bytes": 47084,
+    "word_count": 3821
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_pipeline.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_pipeline.py",
+    "category": "code",
+    "sha256": "51115462814664add95bca63e782867dcb74f002dbd7081c55fb7393801f40bc",
+    "bytes": 9074,
+    "word_count": 582
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_predownload_control.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_predownload_control.py",
+    "category": "code",
+    "sha256": "b6ec5fe911baf4f31aa7eeb7f3e7f306f30f49039645fbc92fee48461d34baae",
+    "bytes": 2569,
+    "word_count": 204
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_predownload_paths.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_predownload_paths.py",
+    "category": "code",
+    "sha256": "53d120e22ae71b424ec5fad806e7ebd765fc3b0663ed84f5124f25b493a71149",
+    "bytes": 891,
+    "word_count": 72
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_presession_market_cap.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_presession_market_cap.py",
+    "category": "code",
+    "sha256": "55583d9ef9dcf5c440b43f9f57c9eb3a5f64de9e8009e672c20242d287cbac77",
+    "bytes": 3200,
+    "word_count": 230
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_reconciliation.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_reconciliation.py",
+    "category": "code",
+    "sha256": "29677c91524eabeacfc2dcb5f5f2c3682672258a6720d92687fb57ef02005381",
+    "bytes": 1581,
+    "word_count": 114
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_registration_os_reconcile.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_registration_os_reconcile.py",
+    "category": "code",
+    "sha256": "29f38c42eb811c4ec2d92bce5a3c338aa3d4c167ca53593280d0e087598b8d9b",
+    "bytes": 2434,
+    "word_count": 157
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_restriction_clause_extract.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_restriction_clause_extract.py",
+    "category": "code",
+    "sha256": "217b85880f7b31aef2dd6c959082266a5eda994b2e76ed0600b6e9edecd15015",
+    "bytes": 2082,
+    "word_count": 166
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_restriction_conditions.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_restriction_conditions.py",
+    "category": "code",
+    "sha256": "6d2eba28b0bc577b35ca8bc85340129fbea63bfe1f222e8aa25c3b2ad9904bde",
+    "bytes": 3416,
+    "word_count": 215
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_restriction_event_reconcile.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_restriction_event_reconcile.py",
+    "category": "code",
+    "sha256": "c3892ccd7482939aa8371dc65ca9f2a3eaa0efc7ec9cac5c19e8b87316bd8cf9",
+    "bytes": 1724,
+    "word_count": 133
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_restriction_extract.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_restriction_extract.py",
+    "category": "code",
+    "sha256": "ad2b672bee4482c875e5eae197c2b45d429267f09ea21ce507c939ca39e0d291",
+    "bytes": 10286,
+    "word_count": 721
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_restriction_gate.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_restriction_gate.py",
+    "category": "code",
+    "sha256": "2e1d8a4f4733f19967116c8a5a3b42aff2b93c9f01911f0f2fe7f44e22d42c39",
+    "bytes": 2397,
+    "word_count": 125
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_sharded_variable_certification.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_sharded_variable_certification.py",
+    "category": "code",
+    "sha256": "9c1f09c1b3886fe1753c8692e93c4f94e8184b8368300574ed16595c31489a2c",
+    "bytes": 1995,
+    "word_count": 141
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_share_class_recovery_audit.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_share_class_recovery_audit.py",
+    "category": "code",
+    "sha256": "86f904dfa726b08a066bd39e7fad3ce6dc7918910bc216500b44a712399cf099",
+    "bytes": 3136,
+    "word_count": 165
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_source_selection.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_source_selection.py",
+    "category": "code",
+    "sha256": "d3554887c346ad867dfe06417fd3b0818f32d4e2e3d37700fb3a5ee4e3d6caa6",
+    "bytes": 1927,
+    "word_count": 121
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_stratified_owner_result_audit.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_stratified_owner_result_audit.py",
+    "category": "code",
+    "sha256": "45b5cb947c74103d795e41eecf02780fe95c6c9aaa7251c3a17784e56b69ce11",
+    "bytes": 2569,
+    "word_count": 150
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_submissions_metadata_profile.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_submissions_metadata_profile.py",
+    "category": "code",
+    "sha256": "86f3332878cab89c2dc5d848aa22767ad19c8841faf57ab4d762aa53bd21e6a3",
+    "bytes": 1766,
+    "word_count": 152
+  },
+  {
+    "path": "01_TSIS_DATA_FOUNDATION/tests/test_sec_pit_target_interval_filing_review.py",
+    "absolute_path": "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\tests\\test_sec_pit_target_interval_filing_review.py",
+    "category": "code",
+    "sha256": "e1cfb7ed1b6751ca53afbf40e2caad3307027f80ba0dded89bb29a0511bd98d3",
+    "bytes": 1389,
+    "word_count": 79
+  }
+]

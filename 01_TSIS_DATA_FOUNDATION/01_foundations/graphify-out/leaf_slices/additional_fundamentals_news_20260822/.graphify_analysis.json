@@ -1,0 +1,335 @@
+{
+  "communities": {
+    "0": [
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_additional_additional_financials_schema_contract_auxiliary_financial_block",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_additional_additional_financials_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_additional_additional_financials_schema_contract_filing_date_point_in_time",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_additional_additional_financials_schema_contract_sparse_ratios_context",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_financial_balance_sheets_schema_contract_balance_sheet_observation",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_financial_balance_sheets_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_financial_cash_flow_statements_schema_contract_cash_flow_observation",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_financial_cash_flow_statements_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_financial_income_statements_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_financial_income_statements_schema_contract_income_statement_observation",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_financial_ratios_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_financial_ratios_schema_contract_financial_ratio_snapshot",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_financial_dataset_contract_v0_1_audited_blocked_financial",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_financial_dataset_contract_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_financial_dataset_contract_v0_1_financial_v0_1",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_fundamentals_asof_table_dataset_contract_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_fundamentals_asof_table_dataset_contract_v0_1_fundamentals_asof_table_v0_1",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_fundamentals_asof_table_dataset_contract_v0_1_legal_asof_selection",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_financial_consumption_policy_document",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_financial_consumption_policy_financial_restricted_consumption",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_fundamentals_asof_table_consumption_policy_document",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_fundamentals_asof_table_consumption_policy_fundamentals_asof_join_policy",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_fundamentals_asof_table_consumption_policy_state_component_boundary",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_financial_financial_registry_entry_document",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_financial_financial_registry_entry_financial_audit_fail_blocker",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_financial_financial_registry_entry_financial_registry"
+    ],
+    "1": [
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_00_additional_current_state_additional_internal_hierarchy",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_00_additional_current_state_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_00_additional_current_state_real_multi_ticker_news_ambiguity",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_00_additional_current_state_reference_primary_corporate_action_authority",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_00_additional_current_state_six_sublayer_current_state",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_01_additional_subblock_policy_corporate_actions_additional_review",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_01_additional_subblock_policy_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_01_additional_subblock_policy_economic_macro_good_ticker_causality_review",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_01_additional_subblock_policy_financials_core_good",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_01_additional_subblock_policy_financials_ratios_review",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_01_additional_subblock_policy_ipo_early_life_context",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_01_additional_subblock_policy_ipos_mixed_good_review",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_01_additional_subblock_policy_news_mixed_good_review",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_01_additional_subblock_policy_news_near_halt_strong_subset",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_02_additional_closeout_additional_accepted_nonhomogeneous",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_02_additional_closeout_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_02_additional_closeout_final_good_review_bad_policy",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_02_additional_closeout_manual_causal_bucket_calibration",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_02_additional_closeout_no_aggregate_bad_family"
+    ],
+    "2": [
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_additional_additional_economic_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_additional_additional_economic_schema_contract_explicit_macro_availability_lag",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_additional_additional_economic_schema_contract_macro_regime_overlay",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_additional_additional_ipos_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_additional_additional_ipos_schema_contract_ipo_early_life_context",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_additional_additional_ipos_schema_contract_ipo_near_halt_context",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_additional_dataset_contract_v0_1_additional_v0_1",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_additional_dataset_contract_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_additional_dataset_contract_v0_1_subfamily_restrictions",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_additional_consumption_policy_additional_subfamily_consumption",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_additional_consumption_policy_document",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_additional_additional_registry_entry_additional_registry",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_additional_additional_registry_entry_document",
+      "01_tsis_data_foundation_01_foundations_dataset_registry_additional_additional_registry_entry_governed_raw_vendor_context",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_additional_inspection_readout_v0_2_additional_institutional_readout",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_additional_inspection_readout_v0_2_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_additional_inspection_readout_v0_2_partial_master_table_readiness",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_additional_inspection_readout_v0_2_subfamily_quality_table"
+    ],
+    "3": [
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_additional_institutional_closeout_v0_1_additional_materialization_evidence",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_additional_institutional_closeout_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_additional_institutional_closeout_v0_1_institutional_auxiliary_block",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_additional_institutional_closeout_v0_1_subblock_specific_consumption",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_readme_additional_inspection_dossier",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_readme_capa1_context_enrichment",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_readme_core_authority_boundary",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_readme_document",
+      "01_tsis_data_foundation_01_foundations_module_contracts_additional_contracts_index_additional_contracts_index",
+      "01_tsis_data_foundation_01_foundations_module_contracts_additional_contracts_index_document",
+      "01_tsis_data_foundation_01_foundations_module_contracts_additional_to_master_tables_policy_v0_1_additional_master_table_policy",
+      "01_tsis_data_foundation_01_foundations_module_contracts_additional_to_master_tables_policy_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_module_contracts_additional_to_master_tables_policy_v0_1_subfamily_destination_rules",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_04_additional_closeout_additional_final_closeout",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_04_additional_closeout_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_04_additional_closeout_no_aggregate_bad_family",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_04_additional_closeout_six_sublayer_policy"
+    ],
+    "4": [
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_financial_build_financial_inspection_pack_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_financial_build_financial_inspection_pack_dossier_only_summarization",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_financial_build_financial_inspection_pack_financial_inspection_pack_builder",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_financial_coverage_case_evidence_packs_financial_coverage_cases_v0_1_complete_endpoint_coverage",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_financial_coverage_case_evidence_packs_financial_coverage_cases_v0_1_coverage_does_not_imply_quality",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_financial_coverage_case_evidence_packs_financial_coverage_cases_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_financial_financial_inspection_readout_v0_1_audit_fail_consumption_block",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_financial_financial_inspection_readout_v0_1_audited_blocked_financial",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_financial_financial_inspection_readout_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_financial_financial_inspection_readout_v0_1_financial_human_inspector_ready",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_financial_readme_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_financial_readme_financial_inspection_dossier"
+    ],
+    "5": [
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_additional_additional_news_schema_contract_attribution_aware_news",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_additional_additional_news_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_additional_additional_news_schema_contract_multi_ticker_news_ambiguity",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_additional_additional_news_schema_contract_news_near_halt_context",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_news_context_table_dataset_contract_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_news_context_table_dataset_contract_v0_1_news_context_table_v0_1",
+      "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_news_context_table_dataset_contract_v0_1_published_utc_availability",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_news_context_table_consumption_policy_document",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_news_context_table_consumption_policy_historical_live_news_boundary",
+      "01_tsis_data_foundation_01_foundations_data_consumption_policies_news_context_table_consumption_policy_news_asof_join_policy"
+    ],
+    "6": [
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_flagged_case_evidence_packs_additional_corporate_actions_reference_review_v0_1_corporate_actions_reference_review",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_flagged_case_evidence_packs_additional_corporate_actions_reference_review_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_flagged_case_evidence_packs_additional_corporate_actions_reference_review_v0_1_reference_primary_adjustment_authority",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_04_additional_causal_overlay_closeout_additional_causal_overlay",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_04_additional_causal_overlay_closeout_corporate_actions_secondary_confirmation",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_04_additional_causal_overlay_closeout_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_04_additional_causal_overlay_closeout_ipo_near_halt_market_event",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_04_additional_causal_overlay_closeout_news_near_halt_market_event",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_04_additional_causal_overlay_closeout_publication_time_causal_ordering"
+    ],
+    "7": [
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_good_justification_additional_financials_core_good_cases_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_good_justification_additional_financials_core_good_cases_v0_1_financials_core_good_cases",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_good_justification_additional_financials_core_good_cases_v0_1_mandatory_filing_pit_guardrail",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_01_contrato_additional_additional_deep_audit_contract",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_01_contrato_additional_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_01_contrato_additional_heterogeneous_analytical_units",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_03_additional_root_cause_audit_phase1_closeout_additional_structural_phase_closeout",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_03_additional_root_cause_audit_phase1_closeout_document",
+      "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_03_additional_root_cause_audit_phase1_closeout_physical_file_reading_rule"
+    ],
+    "8": [
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_coverage_case_evidence_packs_additional_sparse_valid_context_cases_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_coverage_case_evidence_packs_additional_sparse_valid_context_cases_v0_1_expectedness_based_coverage",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_coverage_case_evidence_packs_additional_sparse_valid_context_cases_v0_1_sparse_valid_context",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_flagged_case_evidence_packs_additional_news_attribution_review_cases_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_flagged_case_evidence_packs_additional_news_attribution_review_cases_v0_1_market_context_not_causal_proof",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_flagged_case_evidence_packs_additional_news_attribution_review_cases_v0_1_news_attribution_review",
+      "01_tsis_data_foundation_01_foundations_validators_additional_additional_validators_additional_validator_system",
+      "01_tsis_data_foundation_01_foundations_validators_additional_additional_validators_document"
+    ],
+    "9": [
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_financial_bad_case_evidence_packs_financial_blocking_schema_cases_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_financial_bad_case_evidence_packs_financial_blocking_schema_cases_v0_1_financial_blocking_schema_cases",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_financial_bad_case_evidence_packs_financial_blocking_schema_cases_v0_1_missing_required_columns",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_financial_flagged_case_evidence_packs_financial_temporal_cases_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_financial_flagged_case_evidence_packs_financial_temporal_cases_v0_1_financial_temporal_cases",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_financial_flagged_case_evidence_packs_financial_temporal_cases_v0_1_ticker_lifecycle_anomalies",
+      "01_tsis_data_foundation_01_foundations_validators_financial_financial_validators_document",
+      "01_tsis_data_foundation_01_foundations_validators_financial_financial_validators_financial_validator_system"
+    ],
+    "10": [
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_additional_additional_corporate_actions_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_additional_additional_corporate_actions_schema_contract_empty_sentinel_semantics",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_additional_additional_corporate_actions_schema_contract_reference_reconciliation",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_additional_additional_corporate_actions_schema_contract_secondary_corporate_actions_layer"
+    ],
+    "11": [
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_financial_operational_audit_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_financial_operational_audit_schema_contract_financial_operational_audit",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_financial_operational_run_schema_contract_document",
+      "01_tsis_data_foundation_01_foundations_canonical_schemas_financial_operational_run_schema_contract_financial_operational_run"
+    ],
+    "12": [
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_build_additional_inspection_pack_additional_inspection_pack_builder",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_build_additional_inspection_pack_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_build_additional_inspection_pack_historical_audit_immutability",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_build_additional_inspection_pack_preserved_evidence_transformation"
+    ],
+    "13": [
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_financial_good_justification_financial_payload_examples_v0_1_document",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_financial_good_justification_financial_payload_examples_v0_1_financial_payload_examples",
+      "01_tsis_data_foundation_01_foundations_inspection_dossiers_financial_good_justification_financial_payload_examples_v0_1_payload_sentinel_identity_evidence"
+    ]
+  },
+  "cohesion": {
+    "0": 0.11076923076923077,
+    "1": 0.2046783625730994,
+    "2": 0.16339869281045752,
+    "3": 0.16911764705882354,
+    "4": 0.22727272727272727,
+    "5": 0.3111111111111111,
+    "6": 0.3611111111111111,
+    "7": 0.3055555555555556,
+    "8": 0.32142857142857145,
+    "9": 0.32142857142857145,
+    "10": 0.8333333333333334,
+    "11": 0.5,
+    "12": 0.8333333333333334,
+    "13": 1.0
+  },
+  "gods": [
+    {
+      "id": "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_additional_dataset_contract_v0_1_additional_v0_1",
+      "label": "Additional v0.1",
+      "degree": 9
+    },
+    {
+      "id": "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_04_additional_causal_overlay_closeout_additional_causal_overlay",
+      "label": "Additional Causal Overlay",
+      "degree": 8
+    },
+    {
+      "id": "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_01_additional_subblock_policy_document",
+      "label": "Additional Subblock Policy",
+      "degree": 8
+    },
+    {
+      "id": "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_02_additional_closeout_additional_accepted_nonhomogeneous",
+      "label": "Additional Accepted Non-Homogeneous Block",
+      "degree": 8
+    },
+    {
+      "id": "01_tsis_data_foundation_01_foundations_contract_registry_dataset_contracts_financial_dataset_contract_v0_1_financial_v0_1",
+      "label": "Financial v0.1",
+      "degree": 7
+    },
+    {
+      "id": "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_additional_02_additional_closeout_final_good_review_bad_policy",
+      "label": "Final Good-Review-Bad Policy",
+      "degree": 7
+    },
+    {
+      "id": "01_tsis_data_foundation_01_foundations_canonical_schemas_additional_additional_financials_schema_contract_filing_date_point_in_time",
+      "label": "Filing-Date Point-in-Time Availability",
+      "degree": 6
+    },
+    {
+      "id": "01_tsis_data_foundation_01_foundations_canonical_schemas_additional_additional_news_schema_contract_attribution_aware_news",
+      "label": "Attribution-Aware News Context",
+      "degree": 5
+    },
+    {
+      "id": "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_04_additional_causal_overlay_closeout_document",
+      "label": "Additional Causal Overlay Closeout",
+      "degree": 5
+    },
+    {
+      "id": "01_tsis_data_foundation_01_foundations_inspection_dossiers_additional_additional_institutional_closeout_v0_1_institutional_auxiliary_block",
+      "label": "Institutional Auxiliary Block",
+      "degree": 5
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Legal As-Of Selection",
+      "target": "Filing-Date Point-in-Time Availability",
+      "source_files": [
+        "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/fundamentals_asof_table_dataset_contract_v0_1.md",
+        "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/additional/additional_financials_schema_contract.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "Corporate Actions Reference Review",
+      "target": "Corporate Actions Secondary Confirmation",
+      "source_files": [
+        "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/additional/flagged_case_evidence_packs/additional_corporate_actions_reference_review_v0_1.md",
+        "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/additional/04_additional_causal_overlay_closeout.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "News Attribution Review",
+      "target": "Additional Causal Overlay",
+      "source_files": [
+        "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/additional/flagged_case_evidence_packs/additional_news_attribution_review_cases_v0_1.md",
+        "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/additional/04_additional_causal_overlay_closeout.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "Financial Inspection Dossier",
+      "target": "Audited-Blocked Financial Family",
+      "source_files": [
+        "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/financial/README.md",
+        "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/financial/financial_inspection_readout_v0_1.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "references",
+      "why": "inferred connection - not explicitly stated in source; peripheral node `Financial Inspection Dossier` unexpectedly reaches hub `Audited-Blocked Financial Family`"
+    },
+    {
+      "source": "Additional Causal Overlay",
+      "target": "Additional Structural Phase Closeout",
+      "source_files": [
+        "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/additional/04_additional_causal_overlay_closeout.md",
+        "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/additional/03_additional_root_cause_audit_phase1_closeout.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "implements",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `Additional v0.1` connect `Community 2` to `Community 0`, `Community 10`, `Community 5`?",
+      "why": "High betweenness centrality (0.106) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Auxiliary Financial Block` connect `Community 0` to `Community 2`?",
+      "why": "High betweenness centrality (0.072) - this node is a cross-community bridge."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 2 inferred relationships involving `Additional Causal Overlay` (e.g. with `News Attribution Review` and `Additional Structural Phase Closeout`) actually correct?",
+      "why": "`Additional Causal Overlay` has 2 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `Balance Sheets Financial Schema Contract`, `Cash Flow Statements Financial Schema Contract`, `Income Statements Financial Schema Contract` to the rest of the system?",
+      "why": "12 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 0` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.11076923076923077 - nodes in this community are weakly interconnected."
+    }
+  ]
+}

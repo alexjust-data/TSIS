@@ -71,6 +71,15 @@ El cierre principal del bloque vive en:
 
 - `quotes_inspection_readout_v0_1.md`
 
+La auditoría independiente de restauración física y completitud de descarga
+vive en:
+
+- `quotes_restoration_and_download_completeness_audit_v0_1.md`
+
+Su veredicto es distinto del de calidad local del libro: la restauración es
+físicamente sana, pero la cobertura 4.824 × intervalo completo requiere
+remediación.
+
 Ese readout sintetiza la evidencia poblacional, la taxonomia, los casos forenses y la politica final de consumo.
 
 La auditoria de trazabilidad de los casepacks abiertos vive en:

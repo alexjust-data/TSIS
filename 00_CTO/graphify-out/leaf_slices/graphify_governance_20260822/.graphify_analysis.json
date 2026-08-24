@@ -1,0 +1,459 @@
+{
+  "communities": {
+    "0": [
+      "03_tsis_lab_06_validators_validate_visual_inspection_manifest",
+      "03_tsis_lab_06_validators_validate_visual_inspection_manifest_bbox_overlap",
+      "03_tsis_lab_06_validators_validate_visual_inspection_manifest_checkresult",
+      "03_tsis_lab_06_validators_validate_visual_inspection_manifest_checkresult_error",
+      "03_tsis_lab_06_validators_validate_visual_inspection_manifest_checkresult_init",
+      "03_tsis_lab_06_validators_validate_visual_inspection_manifest_checkresult_note",
+      "03_tsis_lab_06_validators_validate_visual_inspection_manifest_checkresult_passed",
+      "03_tsis_lab_06_validators_validate_visual_inspection_manifest_checkresult_warn",
+      "03_tsis_lab_06_validators_validate_visual_inspection_manifest_find_manifest",
+      "03_tsis_lab_06_validators_validate_visual_inspection_manifest_main",
+      "03_tsis_lab_06_validators_validate_visual_inspection_manifest_parse_required_signals",
+      "03_tsis_lab_06_validators_validate_visual_inspection_manifest_rationale_1",
+      "03_tsis_lab_06_validators_validate_visual_inspection_manifest_read_manifest",
+      "03_tsis_lab_06_validators_validate_visual_inspection_manifest_resolve_path",
+      "03_tsis_lab_06_validators_validate_visual_inspection_manifest_sha256",
+      "03_tsis_lab_06_validators_validate_visual_inspection_manifest_validate",
+      "03_tsis_lab_06_validators_validate_visual_inspection_manifest_validate_geometry",
+      "03_tsis_lab_06_validators_validate_visual_inspection_manifest_validate_images",
+      "03_tsis_lab_06_validators_validate_visual_inspection_manifest_validate_label_placement_contract",
+      "03_tsis_lab_06_validators_validate_visual_inspection_manifest_validate_label_text_contract",
+      "03_tsis_lab_06_validators_validate_visual_inspection_manifest_validate_renderer_hashes",
+      "03_tsis_lab_06_validators_validate_visual_inspection_manifest_validate_schema",
+      "03_tsis_lab_06_validators_validate_visual_inspection_manifest_write_report",
+      "dataframe",
+      "path",
+      "series"
+    ],
+    "1": [
+      "cto_gov_agents_concept",
+      "cto_gov_agents_document",
+      "cto_gov_experiment_principles_concept",
+      "cto_gov_experiment_principles_document",
+      "cto_gov_lab_arch_v3_concept",
+      "cto_gov_lab_arch_v3_document",
+      "cto_gov_long_ops_concept",
+      "cto_gov_long_ops_document",
+      "cto_gov_manifesto_concept",
+      "cto_gov_manifesto_document",
+      "cto_gov_philosophy_guide_concept",
+      "cto_gov_philosophy_guide_document",
+      "cto_gov_project_os_concept",
+      "cto_gov_project_os_document",
+      "cto_gov_project_rules_concept",
+      "cto_gov_project_rules_document",
+      "cto_gov_research_philosophy_concept",
+      "cto_gov_research_philosophy_document",
+      "cto_gov_root_readme_concept",
+      "cto_gov_root_readme_document",
+      "cto_gov_versioning_concept",
+      "cto_gov_versioning_document"
+    ],
+    "2": [
+      "cto_gov_alpha_areas_concept",
+      "cto_gov_alpha_areas_document",
+      "cto_gov_alpha_contract_concept",
+      "cto_gov_alpha_contract_document",
+      "cto_gov_alpha_corpus_concept",
+      "cto_gov_alpha_corpus_document",
+      "cto_gov_alpha_vision_concept",
+      "cto_gov_alpha_vision_document",
+      "cto_gov_alphaevolve_readme_concept",
+      "cto_gov_alphaevolve_readme_document",
+      "cto_gov_auto_trading_concept",
+      "cto_gov_auto_trading_document",
+      "cto_gov_autonomy_references_concept",
+      "cto_gov_autonomy_references_document",
+      "cto_gov_openevolve_note_concept",
+      "cto_gov_openevolve_note_document",
+      "cto_gov_research_evaluator_concept",
+      "cto_gov_research_evaluator_document",
+      "cto_gov_research_vision_concept",
+      "cto_gov_research_vision_document",
+      "cto_gov_strategy_discovery_concept",
+      "cto_gov_strategy_discovery_document"
+    ],
+    "3": [
+      "cto_gov_evidence_template_concept",
+      "cto_gov_evidence_template_document",
+      "cto_gov_execution_protocol_concept",
+      "cto_gov_execution_protocol_document",
+      "cto_gov_experiment_contract_concept",
+      "cto_gov_experiment_contract_document",
+      "cto_gov_experiment_registry_concept",
+      "cto_gov_experiment_registry_document",
+      "cto_gov_experiment_template_concept",
+      "cto_gov_experiment_template_document",
+      "cto_gov_smallcaps_bridge_concept",
+      "cto_gov_smallcaps_bridge_document",
+      "cto_gov_smallcaps_execution_concept",
+      "cto_gov_smallcaps_execution_document",
+      "cto_gov_smallcaps_sources_concept",
+      "cto_gov_smallcaps_sources_document"
+    ],
+    "4": [
+      "cto_gov_live_changelog_concept",
+      "cto_gov_live_changelog_document",
+      "cto_gov_live_manifest_concept",
+      "cto_gov_live_manifest_document",
+      "cto_gov_live_readme_concept",
+      "cto_gov_live_readme_document",
+      "cto_gov_rl_agents_concept",
+      "cto_gov_rl_agents_document",
+      "cto_gov_rl_changelog_concept",
+      "cto_gov_rl_changelog_document",
+      "cto_gov_rl_manifest_concept",
+      "cto_gov_rl_manifest_document",
+      "cto_gov_rl_readme_concept",
+      "cto_gov_rl_readme_document",
+      "cto_gov_rl_rules_concept",
+      "cto_gov_rl_rules_document"
+    ],
+    "5": [
+      "cto_gov_alpha_overfit_concept",
+      "cto_gov_alpha_overfit_document",
+      "cto_gov_financial_ml_concept",
+      "cto_gov_financial_ml_document",
+      "cto_gov_hft_concept",
+      "cto_gov_hft_document",
+      "cto_gov_market_science_concept",
+      "cto_gov_market_science_document",
+      "cto_gov_microstructure_concept",
+      "cto_gov_microstructure_document",
+      "cto_gov_portfolio_concept",
+      "cto_gov_portfolio_document"
+    ],
+    "6": [
+      "cto_gov_anti_overfit_concept",
+      "cto_gov_anti_overfit_document",
+      "cto_gov_autonomy_readme_concept",
+      "cto_gov_autonomy_readme_document",
+      "cto_gov_events_discovered_concept",
+      "cto_gov_events_discovered_document",
+      "cto_gov_human_ai_protocol_concept",
+      "cto_gov_human_ai_protocol_document",
+      "cto_gov_ml_readme_concept",
+      "cto_gov_ml_readme_document",
+      "cto_gov_ml_revision_concept",
+      "cto_gov_ml_revision_document"
+    ],
+    "7": [
+      "cto_gov_live_agents_concept",
+      "cto_gov_live_agents_document",
+      "cto_gov_live_rules_concept",
+      "cto_gov_live_rules_document",
+      "cto_gov_sec_screener_concept",
+      "cto_gov_sec_screener_document",
+      "cto_gov_stats_events_concept",
+      "cto_gov_stats_events_document",
+      "cto_gov_stats_matrix_concept",
+      "cto_gov_stats_matrix_document",
+      "cto_gov_validators_concept",
+      "cto_gov_validators_document"
+    ],
+    "8": [
+      "cto_gov_causal_factor_concept",
+      "cto_gov_causal_factor_document",
+      "cto_gov_causality_readme_concept",
+      "cto_gov_causality_readme_document",
+      "cto_gov_imitation_concept",
+      "cto_gov_imitation_document",
+      "cto_gov_invariants_concept",
+      "cto_gov_invariants_document",
+      "cto_gov_liquidity_stress_concept",
+      "cto_gov_liquidity_stress_document"
+    ],
+    "9": [
+      "cto_gov_das_audit_concept",
+      "cto_gov_das_audit_document",
+      "cto_gov_das_map_concept",
+      "cto_gov_das_map_document",
+      "cto_gov_interfaces_concept",
+      "cto_gov_interfaces_document",
+      "cto_gov_live_topology_concept",
+      "cto_gov_live_topology_document",
+      "cto_gov_systems_engineering_concept",
+      "cto_gov_systems_engineering_document"
+    ],
+    "10": [
+      "cto_gov_knowledge_promotion_concept",
+      "cto_gov_knowledge_promotion_document",
+      "cto_gov_knowledge_registry_concept",
+      "cto_gov_knowledge_registry_document",
+      "cto_gov_sweep_protocol_concept",
+      "cto_gov_sweep_protocol_document",
+      "cto_gov_sweep_template_concept",
+      "cto_gov_sweep_template_document",
+      "cto_gov_validation_pipeline_concept",
+      "cto_gov_validation_pipeline_document"
+    ],
+    "11": [
+      "cto_gov_data_tiers_concept",
+      "cto_gov_data_tiers_document",
+      "cto_gov_ib_scanner_concept",
+      "cto_gov_ib_scanner_document",
+      "cto_gov_l3_reconstruction_concept",
+      "cto_gov_l3_reconstruction_document",
+      "cto_gov_mbo_value_concept",
+      "cto_gov_mbo_value_document"
+    ],
+    "12": [
+      "cto_gov_agent_engineering_concept",
+      "cto_gov_agent_engineering_document",
+      "cto_gov_agent_standards_concept",
+      "cto_gov_agent_standards_document",
+      "cto_gov_multiagent_note_concept",
+      "cto_gov_multiagent_note_document"
+    ],
+    "13": [
+      "cto_gov_coverage_catalog_concept",
+      "cto_gov_coverage_catalog_document",
+      "cto_gov_ib_depth_concept",
+      "cto_gov_ib_depth_document",
+      "cto_gov_under200_provider_concept",
+      "cto_gov_under200_provider_document"
+    ],
+    "14": [
+      "cto_gov_discovery_engine_concept",
+      "cto_gov_discovery_engine_document",
+      "cto_gov_research_lifecycle_concept",
+      "cto_gov_research_lifecycle_document",
+      "cto_gov_science_note_concept",
+      "cto_gov_science_note_document"
+    ],
+    "15": [
+      "cto_gov_graphify_adapter_concept",
+      "cto_gov_graphify_adapter_document",
+      "cto_gov_lab_readme_concept",
+      "cto_gov_lab_readme_document",
+      "cto_gov_lab_rules_concept",
+      "cto_gov_lab_rules_document"
+    ],
+    "16": [
+      "cto_gov_cto_local_rules_concept",
+      "cto_gov_cto_local_rules_document",
+      "cto_gov_cto_readme_concept",
+      "cto_gov_cto_readme_document"
+    ],
+    "17": [
+      "cto_gov_path_migration_concept",
+      "cto_gov_path_migration_document",
+      "cto_gov_path_naming_concept",
+      "cto_gov_path_naming_document"
+    ],
+    "18": [
+      "cto_gov_agent_harness_concept",
+      "cto_gov_agent_harness_document"
+    ],
+    "19": [
+      "cto_gov_autonomy_harness_concept",
+      "cto_gov_autonomy_harness_document"
+    ],
+    "20": [
+      "cto_gov_evolutionary_search_concept",
+      "cto_gov_evolutionary_search_document"
+    ],
+    "21": [
+      "cto_gov_graphify_protocol_concept",
+      "cto_gov_graphify_protocol_document"
+    ],
+    "22": [
+      "cto_gov_hypothesis_generation_concept",
+      "cto_gov_hypothesis_generation_document"
+    ],
+    "23": [
+      "cto_gov_lab_changelog_concept",
+      "cto_gov_lab_changelog_document"
+    ],
+    "24": [
+      "cto_gov_meta_label_agents_concept",
+      "cto_gov_meta_label_agents_document"
+    ],
+    "25": [
+      "cto_gov_philosophy_readme_concept",
+      "cto_gov_philosophy_readme_document"
+    ],
+    "26": [
+      "cto_gov_scientific_method_concept",
+      "cto_gov_scientific_method_document"
+    ]
+  },
+  "cohesion": {
+    "0": 0.2246153846153846,
+    "1": 0.09090909090909091,
+    "2": 0.09090909090909091,
+    "3": 0.125,
+    "4": 0.13333333333333333,
+    "5": 0.16666666666666666,
+    "6": 0.16666666666666666,
+    "7": 0.16666666666666666,
+    "8": 0.2,
+    "9": 0.2,
+    "10": 0.2,
+    "11": 0.25,
+    "12": 0.3333333333333333,
+    "13": 0.3333333333333333,
+    "14": 0.3333333333333333,
+    "15": 0.3333333333333333,
+    "16": 0.5,
+    "17": 0.5,
+    "18": 1.0,
+    "19": 1.0,
+    "20": 1.0,
+    "21": 1.0,
+    "22": 1.0,
+    "23": 1.0,
+    "24": 1.0,
+    "25": 1.0,
+    "26": 1.0
+  },
+  "gods": [
+    {
+      "id": "03_tsis_lab_06_validators_validate_visual_inspection_manifest_validate",
+      "label": "validate()",
+      "degree": 16
+    },
+    {
+      "id": "03_tsis_lab_06_validators_validate_visual_inspection_manifest_checkresult",
+      "label": "CheckResult",
+      "degree": 14
+    },
+    {
+      "id": "03_tsis_lab_06_validators_validate_visual_inspection_manifest_validate_images",
+      "label": "_validate_images()",
+      "degree": 8
+    },
+    {
+      "id": "03_tsis_lab_06_validators_validate_visual_inspection_manifest_validate_renderer_hashes",
+      "label": "_validate_renderer_hashes()",
+      "degree": 8
+    },
+    {
+      "id": "cto_gov_alpha_contract_concept",
+      "label": "Evolutionary Experiment Contract",
+      "degree": 8
+    },
+    {
+      "id": "03_tsis_lab_06_validators_validate_visual_inspection_manifest_validate_geometry",
+      "label": "_validate_geometry()",
+      "degree": 6
+    },
+    {
+      "id": "cto_gov_agents_concept",
+      "label": "Agent Operating Governance",
+      "degree": 6
+    },
+    {
+      "id": "03_tsis_lab_06_validators_validate_visual_inspection_manifest_validate_schema",
+      "label": "_validate_schema()",
+      "degree": 5
+    },
+    {
+      "id": "03_tsis_lab_06_validators_validate_visual_inspection_manifest_validate_label_text_contract",
+      "label": "_validate_label_text_contract()",
+      "degree": 5
+    },
+    {
+      "id": "03_tsis_lab_06_validators_validate_visual_inspection_manifest_validate_label_placement_contract",
+      "label": "_validate_label_placement_contract()",
+      "degree": 5
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Root Human Orientation",
+      "target": "Agent Operating Governance",
+      "source_files": [
+        "README.md",
+        "AGENTS.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "directs_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `Root Human Orientation` unexpectedly reaches hub `Agent Operating Governance`"
+    },
+    {
+      "source": "Agent Operating Governance",
+      "target": "Governed Long-Run Telemetry",
+      "source_files": [
+        "AGENTS.md",
+        "LONG_RUNNING_OPERATIONS_CONTRACT.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "requires",
+      "why": "connects across different repos/directories; peripheral node `Governed Long-Run Telemetry` unexpectedly reaches hub `Agent Operating Governance`"
+    },
+    {
+      "source": "Agent Operating Governance",
+      "target": "Institutional Project Rules",
+      "source_files": [
+        "AGENTS.md",
+        "PROJECT_RULES.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "requires",
+      "why": "connects across different repos/directories; peripheral node `Institutional Project Rules` unexpectedly reaches hub `Agent Operating Governance`"
+    },
+    {
+      "source": "Agent Operating Governance",
+      "target": "Institutional Version Memory",
+      "source_files": [
+        "AGENTS.md",
+        "VERSIONING_STANDARDS.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "requires",
+      "why": "connects across different repos/directories; peripheral node `Institutional Version Memory` unexpectedly reaches hub `Agent Operating Governance`"
+    },
+    {
+      "source": "Canonical Root Migration",
+      "target": "Portable Path Naming",
+      "source_files": [
+        "PATH_MIGRATION_2026_07_22.md",
+        "PATH_NAMING_POLICY.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "complements",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `Evolutionary Experiment Contract` connect `Community 2` to `Community 5`?",
+      "why": "High betweenness centrality (0.016) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Evolutionary Overfit Containment` connect `Community 5` to `Community 2`?",
+      "why": "High betweenness centrality (0.010) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `TSIS Agents Contract`, `Long-Running Operations Contract`, `Root Path Migration` to the rest of the system?",
+      "why": "109 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 1` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 2` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 3` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.125 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 4` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected."
+    }
+  ]
+}

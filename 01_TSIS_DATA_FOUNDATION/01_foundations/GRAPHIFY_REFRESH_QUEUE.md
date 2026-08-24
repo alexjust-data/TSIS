@@ -1,3 +1,30 @@
+## Pending - 2026-08-24 - HIGH - Quotes restoration and completeness audit
+
+- **ID:** GFQ-20260824-FOUNDATIONS-QUOTES-RESTORATION-COMPLETENESS-001
+- **Estado:** pending
+- **Fecha:** 2026-08-24
+- **Severidad:** HIGH
+- **Scope:** physical restoration evidence, exact Daily/Quotes decomposition,
+  historical task-scope defect and full-interval remediation contract.
+- **Leaf objetivo:** foundations_authority / Quotes inspection and coverage.
+- **Archivos afectados:**
+  `inspection_dossiers/quotes/quotes_restoration_and_download_completeness_audit_v0_1.md`,
+  `inspection_dossiers/quotes/README.md` and Foundations changelog.
+- **Motivo:** the audit changes the governed interpretation of Quotes from an
+  unresolved aggregate difference to a fully decomposed but incomplete
+  acquisition. No Graphify rebuild was run during the active forensic closeout.
+- **Cierre esperado:** rebuild and diagnose the Quotes/Foundation leaf, update
+  `BUILD_MANIFEST.md` and preserve `REMEDIATION_REQUIRED` until the full plan is
+  downloaded and recertified.
+## 2026-08-22 - TSIS_GRAPHIFY_QUEUE_RESOLUTION_20260822
+
+- resolution_status: ACCEPTED_REFRESH_PUBLISHED
+- published_root: `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\graphify-out`
+- covered_queue_ids: `GFQ-20260722-root-path-migration-data-foundation`, `GFQ-20260704-minute-data-plane-reading`, `GFQ-20260701-001`, all actionable `GFQ-20260629-*`, `GFQ-20260630-daily-scanner-v0-2-base-universe-profiles`, `GFQ-20260630-daily-scanner-v0-3-in-play-momentum`, `GFQ-20260621-001..002`, `GFQ-20260622-001..008`, `GFQ-20260623-001..002`, `GFQ-20260624-001`, `GFQ-20260625-001..002`, `GFQ-20260626-001..005`, `GFQ-20260627-001..009`, `GFQ-20260627-011..013`, `GFQ-20260628-001`, `GFQ-20260628-004`, `GFQ-20260630-002..004`, `GFQ-20260703-001`, `GFQ-20260704-002..010`, `GFQ-20260705-001..003`
+- coverage_rule: entries are resolved only for source files present in the eight leaf corpus manifests published by this refresh.
+- remains_pending_out_of_scope: `GFQ-20260627-010`, `GFQ-20260627-014`, `GFQ-20260628-002`, `GFQ-20260628-003`
+- evidence: `C:\TSIS_Data\01_TSIS_DATA_FOUNDATION\01_foundations\graphify-out\GRAPHIFY_TERMINAL_AUDIT_20260822.json`
+
 ## Pending - 2026-08-22 - HIGH - Core market session-date coverage audit
 
 - **ID:** GFQ-20260822-FOUNDATIONS-CORE-MARKET-SESSION-COVERAGE-001
@@ -24,6 +51,48 @@
 - **Cierre esperado:** after the 4,824-ticker Full closes, rebuild and diagnose
   the affected Foundations leaf, update BUILD_MANIFEST.md, preserve the
   observed-absence/product-semantics distinction and bind the final closeout.
+
+## Pending - 2026-08-24 - HIGH - OHLCV 1m no-RTH forensic decision
+
+- **ID:** GFQ-20260824-FOUNDATIONS-OHLCV-1M-NO-RTH-DECISION-001
+- **Estado:** pending
+- **Fecha:** 2026-08-24
+- **Severidad:** HIGH
+- **Scope:** post-close interpretation of 5,238 observed 1m ticker-dates
+  without RTH, cross-family forensic reduction to eight high-confidence local
+  candidates, and governed deferral of remediation until complete Trades and
+  daily-screener selection.
+- **Leaf objetivo:** foundations_authority / core market family download audit.
+- **Archivos afectados:**
+  `inspection_dossiers/core_market_family_download_audit/OHLCV_1M_FULL_AUDIT_READOUT_v0_1.md`,
+  its README and changelog, plus parent changelogs.
+- **Motivo:** the decision changes the operational interpretation from immediate
+  1m repair to selective, derived reconstruction after complete Trades and
+  screener materiality are known. No isolated Graphify refresh was run during
+  the ongoing family-audit closeout.
+- **Cierre esperado:** rebuild and diagnose the affected Foundations leaf,
+  update BUILD_MANIFEST.md and preserve the distinction between present
+  extended bars, unverified cases and confirmed reconstruction candidates.
+
+## Pending - 2026-08-22 - HIGH - Massive SEC evidence contracts and blocked consumption
+
+- **ID:** GFQ-20260822-FOUNDATIONS-MASSIVE-SEC-EVIDENCE-001
+- **Estado:** pending
+- **Fecha:** 2026-08-22
+- **Severidad:** HIGH
+- **Scope:** provisional Massive vendor dataset identity, runtime/endpoint
+  schemas, validator gates, blocked consumption, registry binding, recovery
+  contract and certification surfaces.
+- **Leaf objetivo:** foundations_authority / SEC PIT contracts, schemas,
+  validators, registry, policy and inspection dossier.
+- **Archivos afectados:** Massive SEC files under canonical_schemas/sec_pit,
+  module_contracts/sec_pit, validators/sec_pit, dataset registry, dataset
+  contract, consumption policy, readouts, READMEs and changelog.
+- **Motivo:** these change the governed semantic corpus but intentionally remain
+  PROVISIONAL/NOT_MATERIALIZED until an authorized live probe exists.
+- **Cierre esperado:** after probe audit, rebuild/diagnose the affected
+  Foundations leaf, update BUILD_MANIFEST.md and preserve non-institutional
+  vendor-evidence status until explicit promotion.
 
 ## Pending - 2026-08-15 - HIGH - Daily Eligible Universe restricted A/B consumption gate
 

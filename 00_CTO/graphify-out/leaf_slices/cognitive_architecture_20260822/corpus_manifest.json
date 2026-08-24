@@ -1,0 +1,178 @@
+[
+  {
+    "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/agentic_harness_architecture_reference.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE\\00_SHARED_HARNESS_KERNEL\\agentic_harness_architecture_reference.md",
+    "category": "document",
+    "sha256": "5d37091d583ccaa722ddc52bacde6eb79d960573f258350874bdf6575159ae03",
+    "bytes": 26756,
+    "word_count": 3377
+  },
+  {
+    "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/harness_toolchain_traceability_contract.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE\\00_SHARED_HARNESS_KERNEL\\harness_toolchain_traceability_contract.md",
+    "category": "document",
+    "sha256": "59755d3a4971e40bc4a8ab3d19eda35ab6016e5e49d4b0280b5cc01418e9d6d6",
+    "bytes": 7270,
+    "word_count": 879
+  },
+  {
+    "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/shared_run_manifest_contract.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE\\00_SHARED_HARNESS_KERNEL\\shared_run_manifest_contract.md",
+    "category": "document",
+    "sha256": "4ef9fcd7487796af0971225091786fd1c56589491c7f50003349cdb40ecb7305",
+    "bytes": 1430,
+    "word_count": 163
+  },
+  {
+    "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/00_SHARED_HARNESS_KERNEL/shared_validation_principles.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE\\00_SHARED_HARNESS_KERNEL\\shared_validation_principles.md",
+    "category": "document",
+    "sha256": "3221294fbde69bd50f4e96ea8ffead74d9282dfe307c2c144bfdaa97896d5f73",
+    "bytes": 1134,
+    "word_count": 164
+  },
+  {
+    "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/data_audit_completion_artifact_contract.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE\\10_DATA_QUALITY_HARNESS\\data_audit_completion_artifact_contract.md",
+    "category": "document",
+    "sha256": "d210ea3908283a74bdb333181a08725e9c78d78a09234fcaf02f2f8a44452cd6",
+    "bytes": 10573,
+    "word_count": 1307
+  },
+  {
+    "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/data_audit_harness_agentic_operating_map.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE\\10_DATA_QUALITY_HARNESS\\data_audit_harness_agentic_operating_map.md",
+    "category": "document",
+    "sha256": "c08e011ab654b7a74843e2ab61d7a83ea83f53dc79d3358ef5e2d7a41b6b9aa4",
+    "bytes": 40365,
+    "word_count": 5466
+  },
+  {
+    "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/future_live_data_quality_contract.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE\\10_DATA_QUALITY_HARNESS\\future_live_data_quality_contract.md",
+    "category": "document",
+    "sha256": "cd98a2b9cf8d5f4413e32dbbfcf36fb4e593df8747631788c764c96a1db869c1",
+    "bytes": 1083,
+    "word_count": 129
+  },
+  {
+    "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/historical_audit_preservation_and_promotion_contract.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE\\10_DATA_QUALITY_HARNESS\\historical_audit_preservation_and_promotion_contract.md",
+    "category": "document",
+    "sha256": "a54851d5fec8ba23d0bc0daf7c73b802793dd13e976b9bd61a602599021dd382",
+    "bytes": 19624,
+    "word_count": 2282
+  },
+  {
+    "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE\\10_DATA_QUALITY_HARNESS\\README.md",
+    "category": "document",
+    "sha256": "23be8bf00de4c2a9e3010f995940ca87d4cce0524d20ad125a8cafb98a149bcf",
+    "bytes": 9596,
+    "word_count": 1249
+  },
+  {
+    "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/runbooks/2026-06-12_data_audit_agent_prompt_pack.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE\\10_DATA_QUALITY_HARNESS\\runbooks\\2026-06-12_data_audit_agent_prompt_pack.md",
+    "category": "document",
+    "sha256": "cb86172084739495eee34d33288e6e2a3bf01bf47a3b8b603da3a4ab2c2b8b3c",
+    "bytes": 30352,
+    "word_count": 2625
+  },
+  {
+    "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/runbooks/2026-06-12_overnight_data_audit_completion_harness_runbook.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE\\10_DATA_QUALITY_HARNESS\\runbooks\\2026-06-12_overnight_data_audit_completion_harness_runbook.md",
+    "category": "document",
+    "sha256": "dbcf785956a34da5b108d4da2d1669f8e6b2bd897c1aad3982641272492a7078",
+    "bytes": 9520,
+    "word_count": 1190
+  },
+  {
+    "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/10_DATA_QUALITY_HARNESS/runbooks/2026-06-13_shutdown_handoff_note.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE\\10_DATA_QUALITY_HARNESS\\runbooks\\2026-06-13_shutdown_handoff_note.md",
+    "category": "document",
+    "sha256": "fe97b9ec6d84f8246a73aeec06fcf88f49c2b9ac4492e4ba9f1ec501e359baba",
+    "bytes": 14207,
+    "word_count": 1390
+  },
+  {
+    "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/generate_sersan_p02_pilot.py",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE\\20_SERSAN_DISTILLATION_HARNESS\\harness_toolchain\\sersan_distillation\\generate_sersan_p02_pilot.py",
+    "category": "code",
+    "sha256": "20cf9a7150694f74ba9db02bb8685c51227a17645ce5d0a4ac7100ff15f1da13",
+    "bytes": 66211,
+    "word_count": 5960
+  },
+  {
+    "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/generate_sersan_p09_pilot.py",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE\\20_SERSAN_DISTILLATION_HARNESS\\harness_toolchain\\sersan_distillation\\generate_sersan_p09_pilot.py",
+    "category": "code",
+    "sha256": "82985f30ca23311facae69232d54d4a9589be8a8cc6bbd312df463a116d403df",
+    "bytes": 76938,
+    "word_count": 7034
+  },
+  {
+    "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/generate_sersan_p15_pilot.py",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE\\20_SERSAN_DISTILLATION_HARNESS\\harness_toolchain\\sersan_distillation\\generate_sersan_p15_pilot.py",
+    "category": "code",
+    "sha256": "16623d2b350314725330e3da184e91340df63cc38828ccf9cf9538dc4276f46b",
+    "bytes": 93265,
+    "word_count": 8893
+  },
+  {
+    "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/run_sersan_corpus_distillation.py",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE\\20_SERSAN_DISTILLATION_HARNESS\\harness_toolchain\\sersan_distillation\\run_sersan_corpus_distillation.py",
+    "category": "code",
+    "sha256": "2e28061456253ba60e7bff1bba4a2b928152f14c782caf7b10d960e7190a5efe",
+    "bytes": 74923,
+    "word_count": 6046
+  },
+  {
+    "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/sersan_corpus_distillation_config.json",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE\\20_SERSAN_DISTILLATION_HARNESS\\harness_toolchain\\sersan_distillation\\sersan_corpus_distillation_config.json",
+    "category": "code",
+    "sha256": "b6c8e3af0888262ce45b29115c6d1b2d54f4024689040ae4f7131d2aa6b48398",
+    "bytes": 639,
+    "word_count": 24
+  },
+  {
+    "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/validate_sersan_distillation.py",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE\\20_SERSAN_DISTILLATION_HARNESS\\harness_toolchain\\sersan_distillation\\validate_sersan_distillation.py",
+    "category": "code",
+    "sha256": "13cb42b9c13ffdaa844dd334e2db174f9894e52767de858135dbbdc474d2d51b",
+    "bytes": 26515,
+    "word_count": 2074
+  },
+  {
+    "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_distillation_protocol.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE\\20_SERSAN_DISTILLATION_HARNESS\\sersan_distillation_protocol.md",
+    "category": "document",
+    "sha256": "9a1e87dab018f38a3bd888ece012f88b861b16f5c35b920f4fa9b2ecceb24a76",
+    "bytes": 20458,
+    "word_count": 2478
+  },
+  {
+    "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_lesson_pack_contract.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE\\20_SERSAN_DISTILLATION_HARNESS\\sersan_lesson_pack_contract.md",
+    "category": "document",
+    "sha256": "e458f1ce8cd86b234481c20c7cc35fdd2feed39b49dce4649e44fbd93d31d565",
+    "bytes": 31742,
+    "word_count": 3660
+  },
+  {
+    "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/20_SERSAN_DISTILLATION_HARNESS/sersan_pilot_harness_runbook.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE\\20_SERSAN_DISTILLATION_HARNESS\\sersan_pilot_harness_runbook.md",
+    "category": "document",
+    "sha256": "c2d7d7c7b4c44f29f86aaf9e2d711b2c38973a98fa5116dce3c4455b6b5022a8",
+    "bytes": 12526,
+    "word_count": 1585
+  },
+  {
+    "path": "00_CTO/12_TSIS_COGNITIVE_ARCHITECTURE/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE\\README.md",
+    "category": "document",
+    "sha256": "d28165a3f24613ebe8511ad15cba77f98598e7972fb1c10720f474bf74e544a4",
+    "bytes": 18268,
+    "word_count": 2259
+  }
+]

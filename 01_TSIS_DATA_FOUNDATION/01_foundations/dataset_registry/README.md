@@ -1,5 +1,11 @@
 # Dataset Registry
 
+## Massive SEC structured evidence
+
+dataset_registry/sec_pit/massive_sec_structured_evidence_registry_v0_1.md
+reserves D:/sec_float_pit_MASSIVE and records the exact 4,824-case target. It
+is REGISTERED_NOT_MATERIALIZED.
+
 ## Menu
 
 - [Rol de esta carpeta](#rol-de-esta-carpeta)

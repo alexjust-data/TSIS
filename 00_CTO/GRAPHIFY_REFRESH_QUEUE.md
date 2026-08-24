@@ -1,4 +1,31 @@
+## 2026-08-22 - TSIS_GRAPHIFY_QUEUE_RESOLUTION_20260822
+
+- resolution_status: ACCEPTED_REFRESH_PUBLISHED
+- published_root: `C:\TSIS_Data\00_CTO\graphify-out`
+- covered_queue_ids: `GFQ-20260811-001`, `GFQ-20260811-002`, `GFQ-20260810-001`, `GFQ-20260730-001`, `GFQ-20260722-001`, `GFQ-20260701-001`, `GFQ-20260704-005..015`, `GFQ-20260705-001..003`, `GFQ-20260623-001`, `GFQ-20260621-001`, `GFQ-20260621-003`, `GFQ-20260630-002..004`
+- coverage_rule: entries are resolved only for source files present in the six leaf corpus manifests published by this refresh.
+- evidence: `C:\TSIS_Data\00_CTO\graphify-out\GRAPHIFY_TERMINAL_AUDIT_20260822.json`
+
 # Graphify Refresh Queue for 00_CTO
+
+## Pending - 2026-08-22 - HIGH - Massive SEC acquisition plan and recovery authority
+
+- **ID:** GFQ-20260822-CTO-MASSIVE-SEC-ACQUISITION-001
+- **Estado:** pending
+- **Fecha:** 2026-08-22
+- **Severidad:** HIGH
+- **Scope:** exact Massive direct-endpoint scope, conditional exclusions,
+  4,824-case authority, transactional page recovery, human probe/full gates and
+  append-only milestone continuity.
+- **Leaf objetivo:** Market States Creation / SEC upstream acquisition authority.
+- **Archivos afectados:** 07_SEC_UPSTREAM_DATA Massive plan, milestone register,
+  README, v0.2 handoff and linked Data Foundation contracts.
+- **Motivo:** semantic authority was added while the live vendor probe remains
+  blocked by license/human authorization; rebuilding now could misrepresent
+  prepared controls as acquired/certified data.
+- **Cierre esperado:** after the bounded probe decision, refresh the SEC
+  upstream leaf, run diagnostics, update BUILD_MANIFEST.md and retain the
+  direct/conditional/full authorization boundaries.
 
 ## Pending - 2026-08-17 - HIGH - Wake-up RTH oracle calibration implementation and probe certification
 
@@ -3219,3 +3246,11 @@ governed CTO graph window. No official Graphify leaf rebuild was executed.
 - **Cierre esperado:** incluir esta aclaracion en el proximo refresh coordinado
   del leaf Upstream Data / Massive SEC, ejecutar diagnosticos y actualizar su
   `BUILD_MANIFEST.md`.
+
+## TSIS_GRAPHIFY_QUEUE_CORPUS_EXCLUSION_ACCEPTED_20260822
+
+- corpus_policy: `EXCLUDED_OPERATIONAL_CONTROL`
+- rationale: evita el ciclo build -> actualización de queue -> grafo inmediatamente stale.
+- existing_entry_statuses: `UNCHANGED`
+- terminal_audit: `C:\TSIS_Data\runs\graphify_refresh\GRAPHIFY_TERMINAL_AUDIT_20260822.json`
+- source_coverage_audit: `C:\TSIS_Data\runs\graphify_refresh\GRAPHIFY_SOURCE_COVERAGE_AUDIT_20260822.json`

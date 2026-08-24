@@ -1,5 +1,11 @@
 # Validators
 
+## Massive SEC acquisition
+
+validators/sec_pit/massive_sec_acquisition_validators_v0_1.md defines
+pre-request, response, commit and terminal checks. Mocked control-plane tests
+pass 20/20; live vendor schema/coverage certification remains pending.
+
 ## Menu
 
 - [Rol dentro de 01_foundations](#rol-dentro-de-01foundations)

@@ -1,3 +1,41 @@
+## 2026-08-24 | Quotes restoration and full-interval completeness audit
+
+- Audited all 1,767,826 historically known non-empty C Quote paths against the
+  restored `G:/TSIS/data/quotes` tree without modifying RAW.
+- Certified 1,412,747 restored files with zero physical, schema, size or row
+  count mismatches; 355,079 files remain absent from the restored tree.
+- Reconciled `quotes`, `quotes_`, Daily and the download ledger with zero
+  unexplained Daily/Quotes differences.
+- Persisted an exact 15,715,265-key full-interval remediation set and 209,701
+  contiguous ticker intervals; production download remains unauthorized.
+## 2026-08-24 | OHLCV 1m Full audit evidence
+
+- Closed the independent 4,824-ticker 1m audit with zero execution failures,
+  466,945 present Parquets and 1,306,098,487 session-classified rows.
+- Reconciled 5,238 observed ticker-dates without RTH and the prior narrower
+  4,264-case result; persisted a reproducible 2025/2026 sample.
+- Classified the archive as present-data healthy but incomplete to 2026-08-20.
+- Added the post-close cross-family qualification: eight local
+  high-confidence candidates, no provider-current parity, and no authorized
+  repair before complete Trades and daily-screener selection.
+
+## 2026-08-22 - TSIS_GRAPHIFY_REFRESH_20260822
+
+- Rebuilt eight governed Data Foundation leaves from current paths and source semantics.
+- Removed obsolete `01_TSIS_backtest_SmallCaps` and `E:/TSIS/data` source identities.
+- Rebuilt the Foundation root with fail-closed hyperedge namespace repair.
+- Terminal graph: 4,840 nodes, 9,075 edges, 147 hyperedges and 330 communities; audit PASS.
+
+## 2026-08-22 | Massive SEC governed evidence and recovery contracts
+
+- Registered the provisional Massive structured-evidence dataset, blocked
+  consumption policy, physical registry, runtime/endpoint schemas, validators,
+  operator runbook and staged certification readouts.
+- Bound recovery to immutable page receipts and exact config, target,
+  objective, executable and authorization hashes.
+- Preserved RAW_VENDOR_EVIDENCE_NOT_INSTITUTIONAL and recorded that no live
+  probe or full materialization has been executed.
+
 ## 2026-08-22 | Core market audit recovery and UTC/ET correction handoff
 
 - Added the v0.3 recovery handoff for the active 19,296-task RAW alignment run,

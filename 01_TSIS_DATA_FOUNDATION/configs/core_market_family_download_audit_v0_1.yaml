@@ -1,0 +1,46 @@
+contract_version: "0.1.0"
+audit_name: core_market_family_download_audit
+
+scope:
+  start_date_inclusive: "2005-01-01"
+  end_date_inclusive: "2026-08-20"
+  expected_universe_members: 4824
+
+universe:
+  path: "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/runs/backtest/market_cap_last_observed_cutoff/20260320_market_cap_last_observed_cutoff/market_cap_cutoff_lt_1b_active_inactive.parquet"
+  ticker_column: ticker
+
+source_audit:
+  run_root: "C:/TSIS_Data/runs/data_ops/core_market_raw_alignment_audit/20260821_core_market_raw_alignment_audit_v0_1"
+  evidence_mode: "ADOPTED_CLOSED_PHYSICAL_AUDIT"
+
+runtime:
+  output_root: "C:/TSIS_Data/runs/data_ops/core_market_family_download_audit"
+  heartbeat_seconds: 30
+  workers_by_family:
+    ohlcv_daily: 2
+    ohlcv_1m: 2
+    quotes_: 6
+
+families:
+  ohlcv_daily:
+    root: "G:/TSIS/data/ohlcv_daily"
+    timestamp_mode: "daily_aggregate"
+    timestamp_column: "date"
+
+  ohlcv_1m:
+    root: "G:/TSIS/data/ohlcv_1m"
+    timestamp_mode: "iso_utc_string"
+    timestamp_column: "ts_utc"
+
+  quotes_:
+    root: "G:/TSIS/data/quotes_"
+    timestamp_mode: "epoch_ns_int64"
+    timestamp_column: "timestamp"
+
+probe:
+  tickers:
+    - AACT
+    - NA
+    - MMMW
+

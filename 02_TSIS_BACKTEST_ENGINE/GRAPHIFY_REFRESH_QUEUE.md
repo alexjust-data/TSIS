@@ -1,3 +1,12 @@
+## 2026-08-22 - TSIS_GRAPHIFY_QUEUE_RESOLUTION_20260822
+
+- resolution_status: ACCEPTED_REFRESH_PUBLISHED
+- published_root: `C:\TSIS_Data\02_TSIS_BACKTEST_ENGINE\graphify-out`
+- covered_queue_ids: `GFQ-20260805-BT-004`
+- preserved_historical_status: `GFQ-20260805-BT-001` remains `published_snapshot`
+- remains_pending_out_of_scope: `GFQ-20260805-BT-002`, `GFQ-20260805-BT-003`
+- evidence: `C:\TSIS_Data\02_TSIS_BACKTEST_ENGINE\graphify-out\GRAPHIFY_TERMINAL_AUDIT_20260822.json`
+
 # Graphify Refresh Queue for 02_TSIS_BACKTEST_ENGINE
 
 Status: ACTIVE
@@ -73,3 +82,11 @@ A chat, README or changelog note alone is insufficient.
 - **Scope:** `99_archive`
 - **Reason deferred:** historical navigation is lower priority and should not
   enter normal agent context by default
+
+## TSIS_GRAPHIFY_QUEUE_CORPUS_EXCLUSION_ACCEPTED_20260822
+
+- corpus_policy: `EXCLUDED_OPERATIONAL_CONTROL`
+- rationale: evita el ciclo build -> actualización de queue -> grafo inmediatamente stale.
+- existing_entry_statuses: `UNCHANGED`
+- terminal_audit: `C:\TSIS_Data\runs\graphify_refresh\GRAPHIFY_TERMINAL_AUDIT_20260822.json`
+- source_coverage_audit: `C:\TSIS_Data\runs\graphify_refresh\GRAPHIFY_SOURCE_COVERAGE_AUDIT_20260822.json`

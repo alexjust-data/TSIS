@@ -189,3 +189,6 @@ tmpclaude-*
 # Local Wake-Up visual discovery/reference images.
 /00_CTO/04_MARKET_STATES_CREATION/04_EVENTS/WAKE_UP/_00_CTO/CHATS_Lab/
 /00_CTO/04_MARKET_STATES_CREATION/04_EVENTS/WAKE_UP/_img/
+
+# Local/private CTO inventories and sensitive working material.
+/00_CTO/00_private/

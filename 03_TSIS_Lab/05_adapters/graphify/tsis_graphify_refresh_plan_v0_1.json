@@ -1,0 +1,460 @@
+{
+    "plan_id":  "TSIS_GRAPHIFY_REFRESH_PLAN_V0_1",
+    "status":  "EXECUTION_AUTHORIZED_BY_HUMAN_LOOP_UNTIL_COMPLETE",
+    "repo_root":  "C:\\TSIS_Data",
+    "run_base":  "C:\\TSIS_Data\\runs\\graphify_refresh",
+    "graphify_python":  "C:\\Users\\AlexJ\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+    "extraction_spec":  "C:\\Users\\AlexJ\\.codex\\skills\\graphify\\references\\extraction-spec.md",
+    "max_ast_workers":  6,
+    "semantic_chunk_size":  22,
+    "targets":  [
+                    {
+                        "target_id":  "cto_governance_20260822",
+                        "strategy":  "FULL_REBUILD",
+                        "publish_dir":  "C:\\TSIS_Data\\00_CTO\\graphify-out\\leaf_slices\\graphify_governance_20260822",
+                        "sources":  [
+                                        {
+                                            "root":  "C:\\TSIS_Data",
+                                            "include":  [
+                                                            "AGENTS.md",
+                                                            "README.md",
+                                                            "PATH_MIGRATION_2026_07_22.md",
+                                                            "PATH_NAMING_POLICY.md",
+                                                            "PROJECT_OPERATING_SYSTEM.md",
+                                                            "PROJECT_RULES.md",
+                                                            "VERSIONING_STANDARDS.md",
+                                                            "RESEARCH_PHILOSOPHY.md",
+                                                            "LONG_RUNNING_OPERATIONS_CONTRACT.md",
+                                                            "GRAPHIFY_REFRESH_QUEUE.md"
+                                                        ],
+                                            "exclude":  [
+
+                                                        ]
+                                        },
+                                        {
+                                            "root":  "C:\\TSIS_Data\\00_CTO",
+                                            "include":  [
+                                                            "README.md",
+                                                            "LOCAL_RULES.md",
+                                                            "GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+                                                            "TSIS_LAB_ARCHITECTURE_v3.md",
+                                                            "01_RESEARCH_PHILOSOPHY/**/*.md",
+                                                            "02_SYSTEMS_ENGINEERING/**/*.md",
+                                                            "03_AGENT_ENGINEERING/**/*.md",
+                                                            "08_MACHINE_LEARNING/**/*.md",
+                                                            "10_AUTONOMOUS_RESEARCH_SYSTEMS/**/*.md",
+                                                            "11_MARKET_SCIENCE/**/*.md",
+                                                            "GRAPHIFY_REFRESH_QUEUE.md"
+                                                        ],
+                                            "exclude":  [
+                                                            "**/*.pdf",
+                                                            "**/*.png",
+                                                            "**/*.jpg",
+                                                            "**/*.jpeg",
+                                                            "**/graphify-out/**",
+                                                            "**/_archive/**",
+                                                            "11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION/**"
+                                                        ]
+                                        },
+                                        {
+                                            "root":  "C:\\TSIS_Data\\03_TSIS_Lab",
+                                            "include":  [
+                                                            "README.md",
+                                                            "LOCAL_RULES.md",
+                                                            "CHANGELOG.md",
+                                                            "01_contracts/**/*",
+                                                            "02_registries/**/*",
+                                                            "03_templates/**/*",
+                                                            "05_adapters/**/*.md",
+                                                            "06_validators/**/*"
+                                                        ],
+                                            "exclude":  [
+                                                            "**/runs/**",
+                                                            "**/evidence/**",
+                                                            "**/graphify-out/**",
+                                                            "GRAPHIFY_REFRESH_QUEUE.md"
+                                                        ]
+                                        },
+                                        {
+                                            "root":  "C:\\TSIS_Data\\04_TSIS_SCREENERS",
+                                            "include":  [
+                                                            "*.md",
+                                                            "*.yaml",
+                                                            "*.yml",
+                                                            "*.json"
+                                                        ],
+                                            "exclude":  [
+                                                            "GRAPHIFY_REFRESH_QUEUE.md"
+                                                        ]
+                                        },
+                                        {
+                                            "root":  "C:\\TSIS_Data\\05_TSIS_STATISTICS_PATTERNS",
+                                            "include":  [
+                                                            "*.md"
+                                                        ],
+                                            "exclude":  [
+                                                            "GRAPHIFY_REFRESH_QUEUE.md"
+                                                        ]
+                                        },
+                                        {
+                                            "root":  "C:\\TSIS_Data\\06_TSIS_webSocket_SmallCaps",
+                                            "include":  [
+                                                            "README.md",
+                                                            "AGENTS.md",
+                                                            "LOCAL_RULES.md",
+                                                            "manifest.yaml",
+                                                            "CHANGELOG.md"
+                                                        ],
+                                            "exclude":  [
+                                                            "GRAPHIFY_REFRESH_QUEUE.md"
+                                                        ]
+                                        },
+                                        {
+                                            "root":  "C:\\TSIS_Data\\07_TSIS_Offline_RL",
+                                            "include":  [
+                                                            "README.md",
+                                                            "AGENTS.md",
+                                                            "LOCAL_RULES.md",
+                                                            "manifest.yaml",
+                                                            "CHANGELOG.md"
+                                                        ],
+                                            "exclude":  [
+                                                            "GRAPHIFY_REFRESH_QUEUE.md"
+                                                        ]
+                                        }
+                                    ],
+                        "forbidden_source_substrings":  [
+                                                            "00_TSIS_Lab",
+                                                            "01_TSIS_backtest_SmallCaps",
+                                                            "00_CTO_1",
+                                                            "06_TSIS_Trading_voice"
+                                                        ],
+                        "queue_ids":  [
+                                          "ROOT_CRITICAL_RECONCILIATION",
+                                          "MODULE_MAP_20260821"
+                                      ]
+                    },
+                    {
+                        "target_id":  "cto_market_states_20260822",
+                        "strategy":  "FULL_REBUILD",
+                        "publish_dir":  "C:\\TSIS_Data\\00_CTO\\graphify-out\\leaf_slices\\market_states_wake_up_20260822",
+                        "sources":  [
+                                        {
+                                            "root":  "C:\\TSIS_Data\\00_CTO\\04_MARKET_STATES_CREATION",
+                                            "include":  [
+                                                            "**/*.md",
+                                                            "**/*.py",
+                                                            "**/*.json",
+                                                            "**/*.yaml",
+                                                            "**/*.yml"
+                                                        ],
+                                            "exclude":  [
+                                                            "graphify-out/**",
+                                                            "**/graphify-out/**",
+                                                            "**/_img/**",
+                                                            "**/CHATS_Lab/**",
+                                                            "**/_00_CTO/**",
+                                                            "**/runs/**",
+                                                            "**/run/**",
+                                                            "**/runtime/**",
+                                                            "**/outputs/**",
+                                                            "**/evidence/**",
+                                                            "**/_archive/**",
+                                                            "**/archive/**",
+                                                            "**/__pycache__/**"
+                                                        ]
+                                        }
+                                    ],
+                        "forbidden_source_substrings":  [
+                                                            "11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION",
+                                                            "00_CTO_1"
+                                                        ],
+                        "queue_ids":  [
+                                          "WAKE_UP",
+                                          "MARKET_STATES",
+                                          "TRADING_ACTIVITY"
+                                      ]
+                    },
+                    {
+                        "target_id":  "cto_cognitive_architecture_20260822",
+                        "strategy":  "FULL_REBUILD",
+                        "publish_dir":  "C:\\TSIS_Data\\00_CTO\\graphify-out\\leaf_slices\\cognitive_architecture_20260822",
+                        "sources":  [
+                                        {
+                                            "root":  "C:\\TSIS_Data\\00_CTO\\12_TSIS_COGNITIVE_ARCHITECTURE",
+                                            "include":  [
+                                                            "README.md",
+                                                            "00_SHARED_HARNESS_KERNEL/**/*.md",
+                                                            "10_DATA_QUALITY_HARNESS/**/*.md",
+                                                            "20_SERSAN_DISTILLATION_HARNESS/*.md",
+                                                            "20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/generate_sersan_p02_pilot.py",
+                                                            "20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/generate_sersan_p09_pilot.py",
+                                                            "20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/generate_sersan_p15_pilot.py",
+                                                            "20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/run_sersan_corpus_distillation.py",
+                                                            "20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/sersan_corpus_distillation_config.json",
+                                                            "20_SERSAN_DISTILLATION_HARNESS/harness_toolchain/sersan_distillation/validate_sersan_distillation.py"
+                                                        ],
+                                            "exclude":  [
+                                                            "**/graphify-out/**",
+                                                            "**/runs/**",
+                                                            "**/runtime/**",
+                                                            "**/artifacts/**",
+                                                            "**/corpus/**",
+                                                            "**/__pycache__/**"
+                                                        ]
+                                        }
+                                    ],
+                        "forbidden_source_substrings":  [
+                                                            "00_CTO_1"
+                                                        ],
+                        "queue_ids":  [
+                                          "COGNITIVE_ARCHITECTURE_CURRENT"
+                                      ]
+                    },
+                    {
+                        "target_id":  "cto_trading_systems_20260822",
+                        "strategy":  "FULL_REBUILD",
+                        "publish_dir":  "C:\\TSIS_Data\\00_CTO\\graphify-out\\leaf_slices\\trading_systems_20260822",
+                        "sources":  [
+                                        {
+                                            "root":  "C:\\TSIS_Data\\00_CTO\\13_TRADING_SYSTEMS",
+                                            "include":  [
+                                                            "**/*.md",
+                                                            "**/*.py",
+                                                            "**/*.json",
+                                                            "**/*.yaml",
+                                                            "**/*.yml"
+                                                        ],
+                                            "exclude":  [
+                                                            "**/graphify-out/**",
+                                                            "**/runs/**",
+                                                            "**/run/**",
+                                                            "**/runtime/**",
+                                                            "**/outputs/**",
+                                                            "**/evidence/**",
+                                                            "**/_archive/**",
+                                                            "**/archive/**",
+                                                            "**/__pycache__/**"
+                                                        ]
+                                        }
+                                    ],
+                        "forbidden_source_substrings":  [
+                                                            "00_CTO_1"
+                                                        ],
+                        "queue_ids":  [
+                                          "TRADING_SYSTEMS_CURRENT"
+                                      ]
+                    },
+                    {
+                        "target_id":  "cto_backtest_authority_20260822",
+                        "strategy":  "FULL_REBUILD",
+                        "publish_dir":  "C:\\TSIS_Data\\00_CTO\\graphify-out\\leaf_slices\\backtest_authority_20260822",
+                        "sources":  [
+                                        {
+                                            "root":  "C:\\TSIS_Data\\00_CTO\\14_BACKTEST_ENGINE",
+                                            "include":  [
+                                                            "**/*.md",
+                                                            "**/*.py",
+                                                            "**/*.json",
+                                                            "**/*.yaml",
+                                                            "**/*.yml"
+                                                        ],
+                                            "exclude":  [
+                                                            "00_CTO/**",
+                                                            "**/graphify-out/**",
+                                                            "**/runs/**",
+                                                            "**/run/**",
+                                                            "**/runtime/**",
+                                                            "**/outputs/**",
+                                                            "**/evidence/**",
+                                                            "**/_archive/**",
+                                                            "**/archive/**",
+                                                            "**/__pycache__/**"
+                                                        ]
+                                        }
+                                    ],
+                        "forbidden_source_substrings":  [
+                                                            "00_CTO_1"
+                                                        ],
+                        "queue_ids":  [
+                                          "CTO_BACKTEST_ENGINE_CURRENT"
+                                      ]
+                    },
+                    {
+                        "target_id":  "cto_screener_engine_20260822",
+                        "strategy":  "FULL_REBUILD",
+                        "publish_dir":  "C:\\TSIS_Data\\00_CTO\\graphify-out\\leaf_slices\\screener_engine_20260822",
+                        "sources":  [
+                                        {
+                                            "root":  "C:\\TSIS_Data\\00_CTO\\15_SCREENER_ENGINE",
+                                            "include":  [
+                                                            "**/*.md",
+                                                            "**/*.py",
+                                                            "**/*.json",
+                                                            "**/*.yaml",
+                                                            "**/*.yml"
+                                                        ],
+                                            "exclude":  [
+                                                            "**/graphify-out/**",
+                                                            "**/runs/**",
+                                                            "**/runtime/**"
+                                                        ]
+                                        }
+                                    ],
+                        "forbidden_source_substrings":  [
+                                                            "00_CTO_1"
+                                                        ],
+                        "queue_ids":  [
+                                          "SCREENER_ENGINE_CURRENT"
+                                      ]
+                    },
+                    {
+                        "target_id":  "applied_architecture_current_20260822",
+                        "strategy":  "FULL_REBUILD",
+                        "publish_dir":  "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\graphify-out",
+                        "mirror_dirs":  [
+                                            "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\graphify-out\\leaf_slices\\applied_architecture_current_20260822"
+                                        ],
+                        "sources":  [
+                                        {
+                                            "root":  "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE",
+                                            "include":  [
+                                                            "README.md",
+                                                            "AGENTS.md",
+                                                            "LOCAL_RULES.md",
+                                                            "AGENT_CONTINUATION_GUIDE_013_018_v0_1.md",
+                                                            "00_EPISTEMOLOGICAL_architecture/**/*.md",
+                                                            "01_REPRESENTATION_MATERIALIZATION_REVIEW/**/*.md",
+                                                            "02_MATERIALIZATION_GOVERNANCE_REVIEW/**/*.md",
+                                                            "03_TABLES_feature_engineering/**/*.md",
+                                                            "04_DATA_Raw_audit/**/*.md",
+                                                            "05_DATA_derivable/**/*.md",
+                                                            "06_DATA_Live_Source/**/*.md",
+                                                            "GRAPHIFY_REFRESH_QUEUE.md"
+                                                        ],
+                                            "exclude":  [
+                                                            "graphify-out/**",
+                                                            "99_ZIP/**",
+                                                            "CHANGELOG.md",
+                                                            "00_trabajo.md",
+                                                            "08_EXPERIMENTS/**",
+                                                            "**/runs/**",
+                                                            "**/run/**",
+                                                            "**/evidence/**",
+                                                            "**/outputs/**",
+                                                            "**/candidate_outputs/**",
+                                                            "**/_archive/**",
+                                                            "**/archive/**",
+                                                            "**/referenced_docs/**",
+                                                            "**/casepacks/**",
+                                                            "**/visual*/**",
+                                                            "**/*.py",
+                                                            "**/*.json",
+                                                            "**/*.csv",
+                                                            "**/*.parquet",
+                                                            "**/*.ipynb",
+                                                            "**/*.png",
+                                                            "**/*.jpg",
+                                                            "**/*.jpeg",
+                                                            "**/*.gif",
+                                                            "**/*.webp",
+                                                            "**/*.zip"
+                                                        ]
+                                        }
+                                    ],
+                        "forbidden_source_substrings":  [
+                                                            "00_CTO_1",
+                                                            "03_DATA_Raw_audit",
+                                                            "04_DATA_Live_Source",
+                                                            "\\06_TABLES\\"
+                                                        ],
+                        "queue_ids":  [
+                                          "GFQ-20260805-APPLIED-001"
+                                      ]
+                    },
+                    {
+                        "target_id":  "backtest_engine_current_20260822",
+                        "strategy":  "CONTROLLED_FULL_REBUILD_FALLBACK_FROM_INCREMENTAL_AUDIT",
+                        "publish_dir":  "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\graphify-out\\leaf_slices\\backtest_engine_current",
+                        "mirror_dirs":  [
+                                            "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\graphify-out"
+                                        ],
+                        "sources":  [
+                                        {
+                                            "root":  "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE",
+                                            "include":  [
+                                                            "AGENTS.md",
+                                                            "LOCAL_RULES.md",
+                                                            "README.md",
+                                                            "pyproject.toml",
+                                                            "GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md",
+                                                            "REPRODUCE_*.md",
+                                                            "RUN_*.py",
+                                                            "src/**/*.py",
+                                                            "tests/**/*.py",
+                                                            "scripts/**/*.py",
+                                                            "contracts/**/*.json",
+                                                            "configs/**/*.json",
+                                                            "docs/00_system/**/*.md",
+                                                            "GRAPHIFY_REFRESH_QUEUE.md"
+                                                        ],
+                                            "exclude":  [
+                                                            "99_archive/**",
+                                                            "runs/**",
+                                                            "evidence/**",
+                                                            "deliverables/**",
+                                                            "CHANGELOG.md",
+                                                            ".pytest_cache/**",
+                                                            "**/__pycache__/**",
+                                                            "**/*.pyc",
+                                                            "**/*.zip",
+                                                            "graphify-out/**"
+                                                        ]
+                                        }
+                                    ],
+                        "forbidden_source_substrings":  [
+                                                            "01_TSIS_backtest_SmallCaps",
+                                                            "00_CTO_1"
+                                                        ],
+                        "queue_ids":  [
+                                          "GFQ-20260805-BT-004"
+                                      ]
+                    }
+                ],
+    "merge_groups":  [
+                         {
+                             "group_id":  "cto_root_20260822",
+                             "input_targets":  [
+                                                   "cto_governance_20260822",
+                                                   "cto_market_states_20260822",
+                                                   "cto_cognitive_architecture_20260822",
+                                                   "cto_trading_systems_20260822",
+                                                   "cto_backtest_authority_20260822",
+                                                   "cto_screener_engine_20260822"
+                                               ],
+                             "publish_dir":  "C:\\TSIS_Data\\00_CTO\\graphify-out",
+                             "forbidden_source_substrings":  [
+                                                                 "00_TSIS_Lab",
+                                                                 "01_TSIS_backtest_SmallCaps",
+                                                                 "00_CTO_1",
+                                                                 "11_MARKET_SCIENCE/05_MARKET_STATE_REPRESENTATION"
+                                                             ]
+                         },
+                         {
+                             "group_id":  "tsis_root_20260822",
+                             "input_graphs":  [
+                                                  "C:\\TSIS_Data\\00_CTO\\graphify-out\\graph.json",
+                                                  "C:\\TSIS_Data\\00_CTO_APPLIED_ARCHITECTURE\\graphify-out\\graph.json",
+                                                  "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\graphify-out\\graph.json",
+                                                  "C:\\TSIS_Data\\02_TSIS_BACKTEST_ENGINE\\graphify-out\\leaf_slices\\backtest_engine_current\\graph.json"
+                                              ],
+                             "publish_dir":  "C:\\TSIS_Data\\graphify-out",
+                             "forbidden_source_substrings":  [
+                                                                 "00_TSIS_Lab",
+                                                                 "01_TSIS_backtest_SmallCaps",
+                                                                 "00_CTO_1",
+                                                                 "E:/TSIS/data"
+                                                             ]
+                         }
+                     ]
+}

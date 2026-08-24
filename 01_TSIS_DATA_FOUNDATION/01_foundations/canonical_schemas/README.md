@@ -1,5 +1,12 @@
 ﻿# Canonical Schemas
 
+## Massive SEC provisional vendor schemas
+
+canonical_schemas/sec_pit contains the v0.1 runtime and endpoint schemas for
+the prepared Massive acquisition. They are raw-vendor evidence contracts,
+remain provisional pending the live 250-case probe, and are not canonical
+feature/state schemas.
+
 ## Menu
 
 - [Rol de esta carpeta](#rol-de-esta-carpeta)

@@ -1,0 +1,237 @@
+{
+  "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/additional/additional_corporate_actions_schema_contract.md": {
+    "mtime": 1780750620.2233539,
+    "ast_hash": "4b184d0e1b5c3d2be55bde77be8adc31",
+    "semantic_hash": "4b184d0e1b5c3d2be55bde77be8adc31"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/additional/additional_economic_schema_contract.md": {
+    "mtime": 1780750620.2852843,
+    "ast_hash": "6adf22989e120d27f15060913092faf6",
+    "semantic_hash": "6adf22989e120d27f15060913092faf6"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/additional/additional_financials_schema_contract.md": {
+    "mtime": 1780750620.1557906,
+    "ast_hash": "ab982f72ad645c249156babe6b8d8d8e",
+    "semantic_hash": "ab982f72ad645c249156babe6b8d8d8e"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/additional/additional_ipos_schema_contract.md": {
+    "mtime": 1780750620.3487518,
+    "ast_hash": "d13e84daaa01068616c2edc549ec6970",
+    "semantic_hash": "d13e84daaa01068616c2edc549ec6970"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/additional/additional_news_schema_contract.md": {
+    "mtime": 1780750620.4120367,
+    "ast_hash": "661e713a19ab52ce52711bfbd8bd3b33",
+    "semantic_hash": "661e713a19ab52ce52711bfbd8bd3b33"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/financial/balance_sheets_schema_contract.md": {
+    "mtime": 1780747340.7207243,
+    "ast_hash": "fc138937c828a6a4afc70cb50ed920f8",
+    "semantic_hash": "fc138937c828a6a4afc70cb50ed920f8"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/financial/cash_flow_statements_schema_contract.md": {
+    "mtime": 1780747340.774238,
+    "ast_hash": "434d72469d6d72a932d4dae7e86bdb15",
+    "semantic_hash": "434d72469d6d72a932d4dae7e86bdb15"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/financial/income_statements_schema_contract.md": {
+    "mtime": 1780747340.8252385,
+    "ast_hash": "dad738957d291088ef0217c11147c46e",
+    "semantic_hash": "dad738957d291088ef0217c11147c46e"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/financial/operational_audit_schema_contract.md": {
+    "mtime": 1780747340.9272864,
+    "ast_hash": "983b4dfad2d6053093f85995c4d164b4",
+    "semantic_hash": "983b4dfad2d6053093f85995c4d164b4"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/financial/operational_run_schema_contract.md": {
+    "mtime": 1780747340.9827528,
+    "ast_hash": "ffa145bd8855c8234ad7bf6dd81d2934",
+    "semantic_hash": "ffa145bd8855c8234ad7bf6dd81d2934"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/canonical_schemas/financial/ratios_schema_contract.md": {
+    "mtime": 1780747340.8772864,
+    "ast_hash": "27a2adb112fa9ec5c6337172adf95507",
+    "semantic_hash": "27a2adb112fa9ec5c6337172adf95507"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/additional_dataset_contract_v0_1.md": {
+    "mtime": 1781883469.1513934,
+    "ast_hash": "202009d484a41c13170423050d5ff550",
+    "semantic_hash": "202009d484a41c13170423050d5ff550"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/financial_dataset_contract_v0_1.md": {
+    "mtime": 1781941100.2284048,
+    "ast_hash": "dae7c2378dda95a636cc87ffb91851c8",
+    "semantic_hash": "dae7c2378dda95a636cc87ffb91851c8"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/fundamentals_asof_table_dataset_contract_v0_1.md": {
+    "mtime": 1782472302.796458,
+    "ast_hash": "9a52b4c489371a04653f870b1e0d9f2e",
+    "semantic_hash": "9a52b4c489371a04653f870b1e0d9f2e"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/contract_registry/dataset_contracts/news_context_table_dataset_contract_v0_1.md": {
+    "mtime": 1782507402.0556307,
+    "ast_hash": "ca8b38219c50a8ab5d3a661c7728a548",
+    "semantic_hash": "ca8b38219c50a8ab5d3a661c7728a548"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/additional_consumption_policy.md": {
+    "mtime": 1781883469.0947733,
+    "ast_hash": "2e00e406c2cb8c4cf6a834cdf7f878cd",
+    "semantic_hash": "2e00e406c2cb8c4cf6a834cdf7f878cd"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/financial_consumption_policy.md": {
+    "mtime": 1781941100.2832532,
+    "ast_hash": "54f917eb5f343d5d3ccb4c8a3dc9f714",
+    "semantic_hash": "54f917eb5f343d5d3ccb4c8a3dc9f714"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/fundamentals_asof_table_consumption_policy.md": {
+    "mtime": 1782472302.8648372,
+    "ast_hash": "42bd633fa7bafa8159a0a473c93bd660",
+    "semantic_hash": "42bd633fa7bafa8159a0a473c93bd660"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/data_consumption_policies/news_context_table_consumption_policy.md": {
+    "mtime": 1782507402.1121414,
+    "ast_hash": "49f120e2f2f41895ffd8365a27a8c927",
+    "semantic_hash": "49f120e2f2f41895ffd8365a27a8c927"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/additional/additional_registry_entry.yaml": {
+    "mtime": 1784710215.7836602,
+    "ast_hash": "a7fb46cb5ed9c45499d84a767f344708",
+    "semantic_hash": "a7fb46cb5ed9c45499d84a767f344708"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/dataset_registry/financial/financial_registry_entry.yaml": {
+    "mtime": 1784710215.7876658,
+    "ast_hash": "ef67559ace2ec0a840229dcd79d1dcbf",
+    "semantic_hash": "ef67559ace2ec0a840229dcd79d1dcbf"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/additional/additional_inspection_readout_v0_2.md": {
+    "mtime": 1781988001.5309584,
+    "ast_hash": "3162ed8a7ba29861a73697f0b8381dca",
+    "semantic_hash": "3162ed8a7ba29861a73697f0b8381dca"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/additional/additional_institutional_closeout_v0_1.md": {
+    "mtime": 1780750813.2553968,
+    "ast_hash": "eee93817189fea7d51eecaf6b1b11cac",
+    "semantic_hash": "eee93817189fea7d51eecaf6b1b11cac"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/additional/build_additional_inspection_pack.md": {
+    "mtime": 1784710215.8267367,
+    "ast_hash": "d8edcfde44610da277d48bb877914d51",
+    "semantic_hash": "d8edcfde44610da277d48bb877914d51"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/additional/coverage_case_evidence_packs/additional_sparse_valid_context_cases_v0_1.md": {
+    "mtime": 1781882935.4178853,
+    "ast_hash": "f9fdcfed79190331b92179d6044dbe7e",
+    "semantic_hash": "f9fdcfed79190331b92179d6044dbe7e"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/additional/flagged_case_evidence_packs/additional_corporate_actions_reference_review_v0_1.md": {
+    "mtime": 1781882935.4148831,
+    "ast_hash": "0680c0345b06a95c90e688aede18e553",
+    "semantic_hash": "0680c0345b06a95c90e688aede18e553"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/additional/flagged_case_evidence_packs/additional_news_attribution_review_cases_v0_1.md": {
+    "mtime": 1781882935.4118834,
+    "ast_hash": "08a53631f2470328015477e2b67ff95a",
+    "semantic_hash": "08a53631f2470328015477e2b67ff95a"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/additional/good_justification/additional_financials_core_good_cases_v0_1.md": {
+    "mtime": 1781882934.765874,
+    "ast_hash": "ae9cd385b0a53046baf02e8431f02a49",
+    "semantic_hash": "ae9cd385b0a53046baf02e8431f02a49"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/additional/README.md": {
+    "mtime": 1781988001.477459,
+    "ast_hash": "9d6fc56991a0e3430140884c5566f608",
+    "semantic_hash": "9d6fc56991a0e3430140884c5566f608"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/financial/bad_case_evidence_packs/financial_blocking_schema_cases_v0_1.md": {
+    "mtime": 1781952864.2013671,
+    "ast_hash": "9b0f1dd01a3b65f7bc44aefc5aa42ca0",
+    "semantic_hash": "9b0f1dd01a3b65f7bc44aefc5aa42ca0"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/financial/build_financial_inspection_pack.md": {
+    "mtime": 1781952864.0264926,
+    "ast_hash": "e38cf6126a3a4f0c3faf64260ba6e98f",
+    "semantic_hash": "e38cf6126a3a4f0c3faf64260ba6e98f"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/financial/coverage_case_evidence_packs/financial_coverage_cases_v0_1.md": {
+    "mtime": 1781952864.360001,
+    "ast_hash": "e9904abbd936076b92b0dbe52680475b",
+    "semantic_hash": "e9904abbd936076b92b0dbe52680475b"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/financial/financial_inspection_readout_v0_1.md": {
+    "mtime": 1781984761.279645,
+    "ast_hash": "aa2959b17eadc9d1d7467a5f24f2b507",
+    "semantic_hash": "aa2959b17eadc9d1d7467a5f24f2b507"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/financial/flagged_case_evidence_packs/financial_temporal_cases_v0_1.md": {
+    "mtime": 1781953085.11723,
+    "ast_hash": "44e350a20b951b879be9720cfe11a1fb",
+    "semantic_hash": "44e350a20b951b879be9720cfe11a1fb"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/financial/good_justification/financial_payload_examples_v0_1.md": {
+    "mtime": 1781952864.105908,
+    "ast_hash": "f7f0ad9aedcda1f8c9571019d96ec64b",
+    "semantic_hash": "f7f0ad9aedcda1f8c9571019d96ec64b"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/financial/README.md": {
+    "mtime": 1781984748.031847,
+    "ast_hash": "52d7a4b6d347571ed18a1b7e2e6cf267",
+    "semantic_hash": "52d7a4b6d347571ed18a1b7e2e6cf267"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/additional_contracts_index.md": {
+    "mtime": 1781883136.4550521,
+    "ast_hash": "70544dc2777c0a840815942d3b8c0d77",
+    "semantic_hash": "70544dc2777c0a840815942d3b8c0d77"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/module_contracts/additional_to_master_tables_policy_v0_1.md": {
+    "mtime": 1781883136.5196378,
+    "ast_hash": "114282d22c1acb66dc34bd04dbab587a",
+    "semantic_hash": "114282d22c1acb66dc34bd04dbab587a"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/validators/additional/additional_validators.md": {
+    "mtime": 1781883136.38981,
+    "ast_hash": "3aa09d8df7bb3686fd513aa8b55b0746",
+    "semantic_hash": "3aa09d8df7bb3686fd513aa8b55b0746"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_foundations/validators/financial/financial_validators.md": {
+    "mtime": 1781941100.48622,
+    "ast_hash": "97231d4f84dcbfb11a52642bdb1da366",
+    "semantic_hash": "97231d4f84dcbfb11a52642bdb1da366"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/additional/01_contrato_additional.md": {
+    "mtime": 1777655390.019834,
+    "ast_hash": "e2e2be5185c8aca890d3b4041f5f10a1",
+    "semantic_hash": "e2e2be5185c8aca890d3b4041f5f10a1"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/additional/03_additional_root_cause_audit_phase1_closeout.md": {
+    "mtime": 1777656279.2267454,
+    "ast_hash": "3de3c63bc756e272c91d8e820fe83caa",
+    "semantic_hash": "3de3c63bc756e272c91d8e820fe83caa"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/additional/04_additional_causal_overlay_closeout.md": {
+    "mtime": 1777705950.6640308,
+    "ast_hash": "54fc0f1aa2394258acbcbb75de2e4dbe",
+    "semantic_hash": "54fc0f1aa2394258acbcbb75de2e4dbe"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/auditoria/additional/04_additional_closeout.md": {
+    "mtime": 1777704650.0079508,
+    "ast_hash": "c49901a9cc2ed35d155ac560a54ec00f",
+    "semantic_hash": "c49901a9cc2ed35d155ac560a54ec00f"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/additional/00_additional_current_state.md": {
+    "mtime": 1778854243.0290668,
+    "ast_hash": "51535f791ee9f12f5d1cc665ac21f6a2",
+    "semantic_hash": "51535f791ee9f12f5d1cc665ac21f6a2"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/additional/01_additional_subblock_policy.md": {
+    "mtime": 1778854243.022062,
+    "ast_hash": "0f38a3ba28a702fd5deae4f335cd10e2",
+    "semantic_hash": "0f38a3ba28a702fd5deae4f335cd10e2"
+  },
+  "01_TSIS_DATA_FOUNDATION/01_research/01_auditoria_RAW_DATA/00_data_certification/certification/additional/02_additional_closeout.md": {
+    "mtime": 1778052275.4878767,
+    "ast_hash": "f7c67bc78720d2b40b4c795e8e8c21f5",
+    "semantic_hash": "f7c67bc78720d2b40b4c795e8e8c21f5"
+  }
+}

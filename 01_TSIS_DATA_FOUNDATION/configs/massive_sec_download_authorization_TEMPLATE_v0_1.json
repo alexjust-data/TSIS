@@ -1,0 +1,54 @@
+{
+  "authorization_id": "massive_sec_probe_authorization_PENDING_v0_1",
+  "status": "PENDING_HUMAN_AUTHORIZATION",
+  "authorization_scope": "PROBE_ONLY",
+  "authorized_by": "",
+  "authorized_at_utc": "",
+  "authorization_basis": "",
+  "config_sha256": "871bc7bc3855c62a8c919f434f7195584287baef7f8042747d69c24afa461e35",
+  "target_manifest_sha256": "a9c2ce57204329da32ac2956fbeacc8dcd849d417f25754609fcb8cdcfd5e8c5",
+  "target_sha256": "1ae6fe0391383fbf83d5e0b800d91db690a386d07a780481f354d9b3850718ee",
+  "objective_sha256": "c57811026767ae59d785cc95c0137535edefb9203fbc70874ae424681f304eb7",
+  "component_bundle_sha256": "c515c0f79fc4161a10d09a3fcecae8f57628e88d796c8317b79089f2c073094a",
+  "allowed_execution_modes": [
+    "PROBE"
+  ],
+  "allowed_endpoint_ids": [
+    "edgar_index",
+    "form_3",
+    "form_4",
+    "eight_k_disclosures",
+    "disclosure_taxonomy"
+  ],
+  "allowed_target_case_count": 250,
+  "allowed_unique_cik_count": 249,
+  "full_run_reference_only_not_authorized": {
+    "target_case_count": 4824,
+    "unique_cik_count": 4288,
+    "required_scope": "FULL_AFTER_PROBE_PASS"
+  },
+  "license_retention_confirmation": {
+    "status": "PENDING",
+    "confirmed_by": "",
+    "confirmed_at_utc": "",
+    "evidence_reference": "",
+    "question": "Does the active Massive subscription permit local retention and the intended TSIS research use of these SEC endpoint responses?"
+  },
+  "conditional_gate_evidence": {
+    "eight_k_text": {
+      "status": "NOT_AUTHORIZED",
+      "manifest_sha256": null
+    },
+    "form_13f": {
+      "status": "NOT_AUTHORIZED",
+      "manifest_sha256": null
+    }
+  },
+  "credential_policy": "MASSIVE_API_KEY_ENVIRONMENT_VARIABLE_ONLY_NEVER_PERSIST_HERE",
+  "instructions": [
+    "Do not edit hashes, endpoint scope or counts.",
+    "After written license/retention confirmation, fill every blank human field.",
+    "Change status to AUTHORIZED only for the bounded 250-case production-equivalent probe.",
+    "A separate authorization file is mandatory for any full-universe run."
+  ]
+}

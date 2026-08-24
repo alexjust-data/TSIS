@@ -75,3 +75,31 @@ the canonical screener variable after full acquisition and certification.
 No new screener output will be promoted as canonical until both Massive and
 SEC acquisitions, temporal coverage, identity reconciliation and validation
 gates are complete.
+
+## Minute-bar remediation dependency
+
+The screener does not depend on repairing the existing `ohlcv_1m` RAW. The
+governed sequence is frozen as:
+
+```text
+1. Complete full-field Massive Trades acquisition.
+2. Complete and certify SEC PIT shares outstanding.
+3. Build and run the daily 04:01 ET screener.
+4. Persist the exact ticker-session dates selected by the screener.
+5. Intersect only those selections with known 1m coverage incidents.
+6. If an affected selection needs minute bars for backtesting, reconstruct a
+   versioned derived candle view from complete Trades.
+```
+
+There will be no blanket 1m redownload or immediate repair based only on the
+5,238 observed ticker-dates without RTH. The 14,302 rows in those cases are
+present extended-session bars, not missing rows. A local cross-family forensic
+pass isolated eight high-confidence candidates, but current Massive REST
+parity was not certified and 2,117 cases lacked a legacy RTH Trades file.
+
+Any future reconstruction must preserve `G:/TSIS/data/ohlcv_1m` as immutable
+RAW and publish a separate derived dataset with source Trades lineage, rule
+version, affected ticker-date inventory and validation evidence. The governing
+readout is:
+
+`C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/01_foundations/inspection_dossiers/core_market_family_download_audit/OHLCV_1M_FULL_AUDIT_READOUT_v0_1.md`

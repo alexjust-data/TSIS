@@ -1,0 +1,16 @@
+{
+  "target_id": "massive_sec_target_4824_v0_1",
+  "status": "FROZEN_EXISTING_TARGET_REFERENCE",
+  "path": "C:/TSIS_Data/runtime/sec_pit_4824_descending_acquisition_v0_1/preflight_20260813T215254Z/full_universe_acquisition_order.parquet",
+  "sha256": "1ae6fe0391383fbf83d5e0b800d91db690a386d07a780481f354d9b3850718ee",
+  "bytes": 363256,
+  "row_count": 4824,
+  "unique_ticker_count": 4824,
+  "unique_instrument_count": 4626,
+  "unique_cik_count": 4288,
+  "missing_cik_count": 0,
+  "request_deduplication_key": "normalized_10_digit_cik",
+  "membership_semantics": "Preserve all 4,824 ordered ticker rows; deduplicate vendor request chains by 4,288 unique issuer CIK values; retain every ticker/instrument membership in the pre-manifest hash.",
+  "source_preflight_config": "C:/TSIS_Data/01_TSIS_DATA_FOUNDATION/configs/sec_pit_4824_descending_acquisition_preflight_v0_1.json",
+  "frozen_at_utc": "2026-08-22T00:00:00Z"
+}

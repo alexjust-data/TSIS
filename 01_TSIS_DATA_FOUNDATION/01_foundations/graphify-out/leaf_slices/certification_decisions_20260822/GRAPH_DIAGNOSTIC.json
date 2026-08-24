@@ -1,0 +1,189 @@
+{
+  "node_count": 495,
+  "unverified_node_count": 0,
+  "raw_edge_count": 716,
+  "non_object_edges": 0,
+  "missing_endpoint_edges": 0,
+  "dangling_endpoint_edges": 0,
+  "self_loop_edges": 0,
+  "valid_candidate_edges": 716,
+  "exact_duplicate_edges": 2,
+  "directed_unique_endpoint_pairs": 697,
+  "directed_same_endpoint_collapsed_edges": 19,
+  "undirected_unique_endpoint_pairs": 683,
+  "undirected_same_endpoint_collapsed_edges": 33,
+  "same_endpoint_group_count": 18,
+  "relation_variant_groups": 16,
+  "source_file_variant_groups": 0,
+  "source_location_variant_groups": 0,
+  "context_variant_groups": 0,
+  "post_build_graph_type": "Graph",
+  "post_build_node_count": 495,
+  "post_build_edge_count": 683,
+  "post_build_error": "",
+  "producer_suppression": {
+    "path": "C:\\Users\\AlexJ\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\graphify\\extract.py",
+    "total_sites": 11,
+    "sites": [
+      {
+        "line": 1099,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids = {n[\"id\"] for n in nodes}"
+      },
+      {
+        "line": 1253,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids = {n[\"id\"] for n in nodes}"
+      },
+      {
+        "line": 1255,
+        "name": "seen_doc_refs",
+        "tuple_arity": 0,
+        "sample": "seen_doc_refs: set[str] = set()"
+      },
+      {
+        "line": 1600,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = {n[\"id\"] for n in nodes}"
+      },
+      {
+        "line": 2069,
+        "name": "seen_keys",
+        "tuple_arity": 0,
+        "sample": "seen_keys: set[tuple] = set()"
+      },
+      {
+        "line": 2228,
+        "name": "seen_keys",
+        "tuple_arity": 0,
+        "sample": "seen_keys: set[tuple] = set()"
+      },
+      {
+        "line": 3272,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 3380,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 3459,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 3974,
+        "name": "seen_ids",
+        "tuple_arity": 0,
+        "sample": "seen_ids: set[str] = set()"
+      },
+      {
+        "line": 3975,
+        "name": "seen_edges",
+        "tuple_arity": 4,
+        "sample": "seen_edges: set[tuple[str, str, str, str | None]] = set()"
+      }
+    ],
+    "error": ""
+  },
+  "examples": [
+    {
+      "source": "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_global_metrics_01_global_metrics_tables_traceable_traceable_global_metrics",
+      "target": "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_certification_global_metrics_00_global_metrics_tables_global_metrics_surface",
+      "edge_count": 3,
+      "relations": [
+        "implements",
+        "references"
+      ],
+      "source_files": [
+        "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\certification\\global_metrics\\01_global_metrics_tables_traceable.md"
+      ],
+      "source_locations": [
+        ""
+      ],
+      "contexts": [
+        ""
+      ]
+    },
+    {
+      "source": "01_tsis_data_foundation_01_foundations_inspection_dossiers_microstructure_features_microstructure_candidate_controlled_visual_readout_v0_2_controlled_microstructure_candidate",
+      "target": "01_tsis_data_foundation_01_foundations_inspection_dossiers_microstructure_features_microstructure_candidate_visual_readout_v0_1_initial_microstructure_candidate",
+      "edge_count": 2,
+      "relations": [
+        "conceptually_related_to",
+        "semantically_similar_to"
+      ],
+      "source_files": [
+        "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\microstructure_features\\microstructure_candidate_controlled_visual_readout_v0_2.md"
+      ],
+      "source_locations": [
+        ""
+      ],
+      "contexts": [
+        ""
+      ]
+    },
+    {
+      "source": "01_tsis_data_foundation_01_foundations_inspection_dossiers_reference_reference_inspection_readout_v0_2_reference_consumption_readout",
+      "target": "01_tsis_data_foundation_01_foundations_inspection_dossiers_reference_reference_institutional_closeout_v0_1_reference_institutional_closeout",
+      "edge_count": 2,
+      "relations": [
+        "conceptually_related_to",
+        "references"
+      ],
+      "source_files": [
+        "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_foundations\\inspection_dossiers\\reference\\reference_inspection_readout_v0_2.md"
+      ],
+      "source_locations": [
+        ""
+      ],
+      "contexts": [
+        ""
+      ]
+    },
+    {
+      "source": "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_03_additional_root_cause_audit_phase1_closeout_additional_structural_closeout",
+      "target": "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_additional_01_contrato_additional_additional_audit_contract",
+      "edge_count": 2,
+      "relations": [
+        "implements",
+        "references"
+      ],
+      "source_files": [
+        "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\additional\\03_additional_root_cause_audit_phase1_closeout.md"
+      ],
+      "source_locations": [
+        ""
+      ],
+      "contexts": [
+        ""
+      ]
+    },
+    {
+      "source": "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_04_daily_closeout_daily_final_closeout",
+      "target": "01_tsis_data_foundation_01_research_01_auditoria_raw_data_00_data_certification_auditoria_daily_01_contrato_agent02_agent03_daily_04032026_daily_agent_contract",
+      "edge_count": 2,
+      "relations": [
+        "implements",
+        "references"
+      ],
+      "source_files": [
+        "C:\\TSIS_Data\\01_TSIS_DATA_FOUNDATION\\01_research\\01_auditoria_RAW_DATA\\00_data_certification\\auditoria\\daily\\04_daily_closeout.md"
+      ],
+      "source_locations": [
+        ""
+      ],
+      "contexts": [
+        ""
+      ]
+    }
+  ]
+}

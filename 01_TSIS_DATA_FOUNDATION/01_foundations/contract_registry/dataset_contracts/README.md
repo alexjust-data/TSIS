@@ -1,5 +1,11 @@
 # Dataset Contracts
 
+## Massive SEC structured evidence
+
+sec_pit_massive_structured_evidence_dataset_contract_v0_1.md registers the
+prepared direct-endpoint vendor evidence lane. Status is
+PROVISIONAL_NOT_MATERIALIZED; no canonical SEC or float authority is granted.
+
 ## Menu
 
 - [Rol de esta carpeta](#rol-de-esta-carpeta)

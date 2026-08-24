@@ -1,3 +1,35 @@
+## 2026-08-24 | Quotes restoration and coverage closeout
+
+- Added a resumable four-worker physical audit for the restored Quotes tree,
+  metadata-only reconciliation and a complete-interval remediation planner.
+- Proved that the restored root is physically healthy but incomplete and that
+  the historical OHLC-window task master was not the 4,824 × XNYS-session
+  product required by the current objective.
+- Added a literal-safe downloader wrapper and kept the production backfill
+  blocked behind endpoint/credential authorization and a production-equivalent
+  pilot.
+## 2026-08-24 | OHLCV 1m Full download-audit closeout
+
+- Added the reproducible 1m closeout analyzer, deterministic 2025/2026 no-RTH
+  sample and hash-bound inspection readout.
+- Certified 4,824/4,824 technical execution and present-file evidence while
+  recording 100 globally absent XNYS sessions through 2026-08-20.
+- Preserved the distinction between observed no-RTH activity and missing data.
+- Froze remediation behind complete Trades and the daily screener, with any
+  needed candle reconstruction limited to selected cases and a new derived
+  version rather than mutation of RAW 1m.
+
+## 2026-08-22 | Massive SEC acquisition control plane v0.1
+
+- Added the endpoint-allowlisted Massive client, hash-bound authorization,
+  immutable raw CAS, atomic page receipts, duplicate-writer lock, telemetry,
+  monitor, offline auditor and exact 250-case production runner.
+- Massive-specific tests pass 20/20, including a failed run resumed without
+  repeating its committed first page; Ruff and syntax checks pass.
+- Exact plan-only evidence freezes 250 cases, 249 CIKs and 997 chains at four
+  workers/two requests per second, with zero network and zero D-drive writes.
+- License/retention confirmation, live probe and full run remain unauthorized.
+
 ## 2026-08-21 | Core market RAW alignment auditor production-equivalent probe
 
 - Added the read-only four-family auditor, config, transactional wrapper,

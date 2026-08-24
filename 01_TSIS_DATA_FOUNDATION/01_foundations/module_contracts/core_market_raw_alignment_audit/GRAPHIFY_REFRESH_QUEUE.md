@@ -47,3 +47,11 @@ source-disk scan is still active.
 Required action: after the full audit closes, rebuild and diagnose the
 core-market alignment leaf, encode the acceleration/resume topology and update
 the corresponding `BUILD_MANIFEST.md` before the next governed root merge.
+
+## TSIS_GRAPHIFY_QUEUE_CORPUS_EXCLUSION_ACCEPTED_20260822
+
+- corpus_policy: `EXCLUDED_OPERATIONAL_CONTROL`
+- rationale: evita el ciclo build -> actualización de queue -> grafo inmediatamente stale.
+- existing_entry_statuses: `UNCHANGED`
+- terminal_audit: `C:\TSIS_Data\runs\graphify_refresh\GRAPHIFY_TERMINAL_AUDIT_20260822.json`
+- source_coverage_audit: `C:\TSIS_Data\runs\graphify_refresh\GRAPHIFY_SOURCE_COVERAGE_AUDIT_20260822.json`

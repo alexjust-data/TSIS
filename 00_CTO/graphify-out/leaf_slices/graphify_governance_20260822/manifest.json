@@ -1,0 +1,507 @@
+{
+  "00_CTO/01_RESEARCH_PHILOSOPHY/00_CTO/00_guia.md": {
+    "mtime": 1783263859.7426336,
+    "ast_hash": "05c0298b8e714e2a0db1b837dac177b6",
+    "semantic_hash": "05c0298b8e714e2a0db1b837dac177b6"
+  },
+  "00_CTO/01_RESEARCH_PHILOSOPHY/00_MANIFESTO/TSIS_RESEARCH_MANIFESTO.md": {
+    "mtime": 1783264818.0200093,
+    "ast_hash": "5d848f00128cd2a414dc96ba4e8cd9b5",
+    "semantic_hash": "5d848f00128cd2a414dc96ba4e8cd9b5"
+  },
+  "00_CTO/01_RESEARCH_PHILOSOPHY/01_KNOWLEDGE_MODEL/research_question_to_operational_component_lifecycle.md": {
+    "mtime": 1783264818.0241401,
+    "ast_hash": "b229552fd16678a95a8c1bc6086b7246",
+    "semantic_hash": "b229552fd16678a95a8c1bc6086b7246"
+  },
+  "00_CTO/01_RESEARCH_PHILOSOPHY/01_KNOWLEDGE_MODEL/scientific_discovery_engine.md": {
+    "mtime": 1783264818.0190096,
+    "ast_hash": "6d24a6867dbcaa93aa650920b5107435",
+    "semantic_hash": "6d24a6867dbcaa93aa650920b5107435"
+  },
+  "00_CTO/01_RESEARCH_PHILOSOPHY/02_EXPERIMENTAL_METHOD/research_experiment_principles.md": {
+    "mtime": 1783264818.0230098,
+    "ast_hash": "75a4b900707bd15d569839002a5344d5",
+    "semantic_hash": "75a4b900707bd15d569839002a5344d5"
+  },
+  "00_CTO/01_RESEARCH_PHILOSOPHY/03_HUMAN_AND_AI_RESEARCHERS/human_and_alphaevolve_common_protocol.md": {
+    "mtime": 1783264818.022012,
+    "ast_hash": "2ebdee1623fed2ce1d9a14fac655b0d2",
+    "semantic_hash": "2ebdee1623fed2ce1d9a14fac655b0d2"
+  },
+  "00_CTO/01_RESEARCH_PHILOSOPHY/04_MARKET_SCIENCE_PHILOSOPHY/events_are_discovered_not_assumed.md": {
+    "mtime": 1783264817.9785945,
+    "ast_hash": "08402c0f8fe33ba4828411cc83384209",
+    "semantic_hash": "08402c0f8fe33ba4828411cc83384209"
+  },
+  "00_CTO/01_RESEARCH_PHILOSOPHY/05_07_2026.md": {
+    "mtime": 1784710215.415164,
+    "ast_hash": "126f2b636fbd0493ecc2dd60cadc220d",
+    "semantic_hash": "126f2b636fbd0493ecc2dd60cadc220d"
+  },
+  "00_CTO/01_RESEARCH_PHILOSOPHY/05_RESEARCH_GOVERNANCE/anti_overfitting_and_validation_principles.md": {
+    "mtime": 1783264818.026139,
+    "ast_hash": "961e3c513cae2257fd1ce3bffc29ffc8",
+    "semantic_hash": "961e3c513cae2257fd1ce3bffc29ffc8"
+  },
+  "00_CTO/01_RESEARCH_PHILOSOPHY/README.md": {
+    "mtime": 1784710215.415711,
+    "ast_hash": "61c1f50355c91b4ec0a0cb268f560bc0",
+    "semantic_hash": "61c1f50355c91b4ec0a0cb268f560bc0"
+  },
+  "00_CTO/02_SYSTEMS_ENGINEERING/00_RECONSTRUCCION_L3_LIBRO_DE_ORDENES/00_motivacion.md": {
+    "mtime": 1784710215.4167597,
+    "ast_hash": "67c49ea814dcbe7f6dbbd9e6de93446c",
+    "semantic_hash": "67c49ea814dcbe7f6dbbd9e6de93446c"
+  },
+  "00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/00_CTO/00_variables a_medir.md": {
+    "mtime": 1783692348.0577204,
+    "ast_hash": "ba8b68c6bb9a66ad3d7b21de4731771f",
+    "semantic_hash": "ba8b68c6bb9a66ad3d7b21de4731771f"
+  },
+  "00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/00_CTO/01_valor_de_MBO.md": {
+    "mtime": 1783694540.9117126,
+    "ast_hash": "3965e5abb4892d0c3fb37434a719241f",
+    "semantic_hash": "3965e5abb4892d0c3fb37434a719241f"
+  },
+  "00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/das_api_data_capturada/das_cmdapi_capture_audit_2026_07_09.md": {
+    "mtime": 1783691892.3665366,
+    "ast_hash": "8ded2101aa26eec119320f1123cc730f",
+    "semantic_hash": "8ded2101aa26eec119320f1123cc730f"
+  },
+  "00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/LIVE_SOURCE/DAS_0003_LIVE_L2_L3_PROVIDER_UNDER_200_USD_v0_1.md": {
+    "mtime": 1783666336.8271883,
+    "ast_hash": "0150e5aa19b8a4450f9d1504ff650118",
+    "semantic_hash": "0150e5aa19b8a4450f9d1504ff650118"
+  },
+  "00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/LIVE_SOURCE/das_api/dastrades_cmdapi_system_map_v0_1.md": {
+    "mtime": 1784710215.4188862,
+    "ast_hash": "d608a8bc6d9731c1621df98af76f18ac",
+    "semantic_hash": "d608a8bc6d9731c1621df98af76f18ac"
+  },
+  "00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/LIVE_SOURCE/IB/L2_L3.md": {
+    "mtime": 1783699142.7193973,
+    "ast_hash": "bc10de8e04716efb854edb520a4556f3",
+    "semantic_hash": "bc10de8e04716efb854edb520a4556f3"
+  },
+  "00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/LIVE_SOURCE/IB/scanner_previo.md": {
+    "mtime": 1783691041.0038474,
+    "ast_hash": "9483751debb830e2efc9e72809386491",
+    "semantic_hash": "9483751debb830e2efc9e72809386491"
+  },
+  "00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/LIVE_SOURCE/live_source_adapter_topology_v0_1.md": {
+    "mtime": 1784710215.419883,
+    "ast_hash": "24ed9d1cf1605d6164633819eb2e5e9e",
+    "semantic_hash": "24ed9d1cf1605d6164633819eb2e5e9e"
+  },
+  "00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/LIVE_SOURCE/market_data_ultra_institutional_coverage_catalog_v0_1.md": {
+    "mtime": 1783629085.4165397,
+    "ast_hash": "6998b1a57f2218ae72a3e22f0158e574",
+    "semantic_hash": "6998b1a57f2218ae72a3e22f0158e574"
+  },
+  "00_CTO/02_SYSTEMS_ENGINEERING/01_INTERFACES_AND_ADAPTERS/README.md": {
+    "mtime": 1784710215.4208837,
+    "ast_hash": "b1dd987fda2c0c53224faa603aafcd93",
+    "semantic_hash": "b1dd987fda2c0c53224faa603aafcd93"
+  },
+  "00_CTO/02_SYSTEMS_ENGINEERING/README.md": {
+    "mtime": 1784710215.42239,
+    "ast_hash": "8ccccc1d20b1ff251d43e42983a7d107",
+    "semantic_hash": "8ccccc1d20b1ff251d43e42983a7d107"
+  },
+  "00_CTO/03_AGENT_ENGINEERING/agent_working_standards_TSIS.md": {
+    "mtime": 1779086945.9662578,
+    "ast_hash": "8bf3aaa6864520e30bf412b674839e70",
+    "semantic_hash": "8bf3aaa6864520e30bf412b674839e70"
+  },
+  "00_CTO/03_AGENT_ENGINEERING/ENGINEERING_project.md": {
+    "mtime": 1780905447.617823,
+    "ast_hash": "b75984cdfe7366a984c920161733e3ba",
+    "semantic_hash": "b75984cdfe7366a984c920161733e3ba"
+  },
+  "00_CTO/03_AGENT_ENGINEERING/HARNESS.md": {
+    "mtime": 1785510168.4390864,
+    "ast_hash": "dba9540da1b8bff254bbcecfe7bbe6b3",
+    "semantic_hash": "dba9540da1b8bff254bbcecfe7bbe6b3"
+  },
+  "00_CTO/03_AGENT_ENGINEERING/README.md": {
+    "mtime": 1780934025.115379,
+    "ast_hash": "a790775c4fc1e2a721747b046ff59c0a",
+    "semantic_hash": "a790775c4fc1e2a721747b046ff59c0a"
+  },
+  "00_CTO/08_MACHINE_LEARNING/00_CTO/revision.md": {
+    "mtime": 1781873772.9102843,
+    "ast_hash": "973483813ca683e0b911bff06efdfe74",
+    "semantic_hash": "973483813ca683e0b911bff06efdfe74"
+  },
+  "00_CTO/08_MACHINE_LEARNING/README.md": {
+    "mtime": 1780934252.8049483,
+    "ast_hash": "f5f51677d648f49d9b6f02a6c5d99509",
+    "semantic_hash": "f5f51677d648f49d9b6f02a6c5d99509"
+  },
+  "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/00_AlphaEvolve_vs_sobreoptimizacion.md": {
+    "mtime": 1783266889.2441275,
+    "ast_hash": "b1637216a9614ff2f05543bf9b14a81a",
+    "semantic_hash": "b1637216a9614ff2f05543bf9b14a81a"
+  },
+  "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/01_ALPHAEVOLVE_TSIS_VISION.md": {
+    "mtime": 1783266889.238125,
+    "ast_hash": "cf23ef25e44c7ae42891fd02ef49b2c1",
+    "semantic_hash": "cf23ef25e44c7ae42891fd02ef49b2c1"
+  },
+  "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/02_ALPHAEVOLVE_AS_RESEARCH_EXPERIMENT_GENERATOR_v0_1.md": {
+    "mtime": 1784710215.423398,
+    "ast_hash": "1b316c487bc82da48f538d0fb55ba1ec",
+    "semantic_hash": "1b316c487bc82da48f538d0fb55ba1ec"
+  },
+  "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/AlphaEnvolve_en_Tsis.md": {
+    "mtime": 1783266889.2491264,
+    "ast_hash": "26873dcbc70cb07f2e9a2e5ec3c50bc9",
+    "semantic_hash": "26873dcbc70cb07f2e9a2e5ec3c50bc9"
+  },
+  "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/00_CTO/areas_de_trabajo.md": {
+    "mtime": 1784710215.4243977,
+    "ast_hash": "6c2aa98f75c338de22edc6c8d66158a9",
+    "semantic_hash": "6c2aa98f75c338de22edc6c8d66158a9"
+  },
+  "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/01_AlphaEvolve/README.md": {
+    "mtime": 1784710215.4254043,
+    "ast_hash": "a3e9be1a26b4a4e95683064d968bc541",
+    "semantic_hash": "a3e9be1a26b4a4e95683064d968bc541"
+  },
+  "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/03_OpenEvolve/00_CTO/00_.md": {
+    "mtime": 1781873772.9142826,
+    "ast_hash": "c049f2be00929dc334c6918fb87c69b4",
+    "semantic_hash": "c049f2be00929dc334c6918fb87c69b4"
+  },
+  "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/04_Harness_Agentic/HARNESS.md": {
+    "mtime": 1781873772.9153738,
+    "ast_hash": "5989d93bad67dd0b44304ae318eecf72",
+    "semantic_hash": "5989d93bad67dd0b44304ae318eecf72"
+  },
+  "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/07_Autonomous_Trading_Research/AlphaEvolve_For_Trading.md": {
+    "mtime": 1781873772.9153738,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/07_Autonomous_Trading_Research/Evolutionary_Search.md": {
+    "mtime": 1781873772.9153738,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/07_Autonomous_Trading_Research/Hypothesis_Generation.md": {
+    "mtime": 1781873772.9153738,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/07_Autonomous_Trading_Research/Meta_Labeling_Agents.md": {
+    "mtime": 1781873772.9153738,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/07_Autonomous_Trading_Research/Research_Evaluator.md": {
+    "mtime": 1781873772.9163742,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/07_Autonomous_Trading_Research/Scientific_Method_For_TSIS.md": {
+    "mtime": 1781873772.9163742,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/07_Autonomous_Trading_Research/Strategy_Discovery.md": {
+    "mtime": 1781873772.9163742,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/07_Autonomous_Trading_Research/TSIS_RESEARCH_VISION.md": {
+    "mtime": 1781873772.9163742,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/README.md": {
+    "mtime": 1784710215.4264038,
+    "ast_hash": "03bee5b088f93771ea40a34bc96fb580",
+    "semantic_hash": "03bee5b088f93771ea40a34bc96fb580"
+  },
+  "00_CTO/10_AUTONOMOUS_RESEARCH_SYSTEMS/reference/README.MD": {
+    "mtime": 1780930316.6784728,
+    "ast_hash": "2ccc9e2ccbec30a1a123ee1e811528b4",
+    "semantic_hash": "2ccc9e2ccbec30a1a123ee1e811528b4"
+  },
+  "00_CTO/11_MARKET_SCIENCE/010_portfolio/00_CTO.md": {
+    "mtime": 1783236298.057782,
+    "ast_hash": "48471f36f0df81a76e530450fd511af2",
+    "semantic_hash": "48471f36f0df81a76e530450fd511af2"
+  },
+  "00_CTO/11_MARKET_SCIENCE/01_Microstructure/High-Frequency-Trading.md": {
+    "mtime": 1785148107.6233397,
+    "ast_hash": "a63b9ac9682136ded6d83a9050bc3098",
+    "semantic_hash": "a63b9ac9682136ded6d83a9050bc3098"
+  },
+  "00_CTO/11_MARKET_SCIENCE/01_Microstructure/README.md": {
+    "mtime": 1782317745.9426923,
+    "ast_hash": "e7e70e90f8e038f2a432e275962a0d63",
+    "semantic_hash": "e7e70e90f8e038f2a432e275962a0d63"
+  },
+  "00_CTO/11_MARKET_SCIENCE/02_Finantial_ML/Advances-in-Financial_Machine_Learning.md": {
+    "mtime": 1779123163.0835645,
+    "ast_hash": "19a6d1cedc26df657124d2141da5ac32",
+    "semantic_hash": "19a6d1cedc26df657124d2141da5ac32"
+  },
+  "00_CTO/11_MARKET_SCIENCE/03_Causality/Causal_Factor_Investing.md": {
+    "mtime": 1779123170.1804032,
+    "ast_hash": "9d99025745adcf467fd2ad4942a2457c",
+    "semantic_hash": "9d99025745adcf467fd2ad4942a2457c"
+  },
+  "00_CTO/11_MARKET_SCIENCE/03_Causality/README.md": {
+    "mtime": 1782310461.1215913,
+    "ast_hash": "58fcb5bd042056339ee96ac2b39b61a9",
+    "semantic_hash": "58fcb5bd042056339ee96ac2b39b61a9"
+  },
+  "00_CTO/11_MARKET_SCIENCE/04_Invariants_and_Risk/ridk-and-asset-allocation.md": {
+    "mtime": 1779123187.7112744,
+    "ast_hash": "f565bd2114e7481dcacb2db96223b1dc",
+    "semantic_hash": "f565bd2114e7481dcacb2db96223b1dc"
+  },
+  "00_CTO/11_MARKET_SCIENCE/07_Liquidity_Provider_Stress/README.md": {
+    "mtime": 1782320578.9825933,
+    "ast_hash": "936b044cd0aebb3af73acce326d10c31",
+    "semantic_hash": "936b044cd0aebb3af73acce326d10c31"
+  },
+  "00_CTO/11_MARKET_SCIENCE/09_ImitationLearneing/00_CTO.md": {
+    "mtime": 1783233192.9907517,
+    "ast_hash": "caa42dfafe1f3a3e86df4e7566fa9afb",
+    "semantic_hash": "caa42dfafe1f3a3e86df4e7566fa9afb"
+  },
+  "00_CTO/11_MARKET_SCIENCE/README.md": {
+    "mtime": 1782892515.5781083,
+    "ast_hash": "df3256e43d65d6871af9dc6c65f12f6f",
+    "semantic_hash": "df3256e43d65d6871af9dc6c65f12f6f"
+  },
+  "00_CTO/GRAPHIFY_OFFICIAL_BUILD_PROTOCOL.md": {
+    "mtime": 1782724459.5650923,
+    "ast_hash": "b7beeff59cf5e1d1171f449b1670917a",
+    "semantic_hash": "b7beeff59cf5e1d1171f449b1670917a"
+  },
+  "00_CTO/LOCAL_RULES.md": {
+    "mtime": 1785922809.7844243,
+    "ast_hash": "76852c85ac6ee5e1148a8b5682470973",
+    "semantic_hash": "76852c85ac6ee5e1148a8b5682470973"
+  },
+  "00_CTO/README.md": {
+    "mtime": 1784710215.5056977,
+    "ast_hash": "2b7809c584f74ad0c71cd6e63dc2aed5",
+    "semantic_hash": "2b7809c584f74ad0c71cd6e63dc2aed5"
+  },
+  "00_CTO/TSIS_LAB_ARCHITECTURE_v3.md": {
+    "mtime": 1785179705.7563572,
+    "ast_hash": "4d06c706db0285ca1ac214a500abbcaa",
+    "semantic_hash": "4d06c706db0285ca1ac214a500abbcaa"
+  },
+  "03_TSIS_Lab/01_contracts/knowledge_object_promotion_contract_v0_1.md": {
+    "mtime": 1783264668.6682768,
+    "ast_hash": "5a8a58428ae27369a7ca4510b9a26515",
+    "semantic_hash": "5a8a58428ae27369a7ca4510b9a26515"
+  },
+  "03_TSIS_Lab/01_contracts/parameter_sweep_protocol_v0_1.md": {
+    "mtime": 1783264668.651762,
+    "ast_hash": "80912f11241d1df93728c13793c7a61a",
+    "semantic_hash": "80912f11241d1df93728c13793c7a61a"
+  },
+  "03_TSIS_Lab/01_contracts/research_experiment_contract_v0_1.md": {
+    "mtime": 1783264668.6547608,
+    "ast_hash": "0413d1924d6df05d3f5ce859d9d4345f",
+    "semantic_hash": "0413d1924d6df05d3f5ce859d9d4345f"
+  },
+  "03_TSIS_Lab/01_contracts/research_experiment_execution_protocol_v0_1.md": {
+    "mtime": 1784710216.1403162,
+    "ast_hash": "9cf5e47ebdb13a2b1a8a8e10dd820643",
+    "semantic_hash": "9cf5e47ebdb13a2b1a8a8e10dd820643"
+  },
+  "03_TSIS_Lab/01_contracts/scientific_validation_pipeline_contract_v0_1.md": {
+    "mtime": 1783264668.6587605,
+    "ast_hash": "62d2fe0be792f8744110d9c81991a640",
+    "semantic_hash": "62d2fe0be792f8744110d9c81991a640"
+  },
+  "03_TSIS_Lab/02_registries/knowledge_object_registry_v0_1.md": {
+    "mtime": 1783264668.650762,
+    "ast_hash": "5573aefb32020513f02799a14d90c2bf",
+    "semantic_hash": "5573aefb32020513f02799a14d90c2bf"
+  },
+  "03_TSIS_Lab/02_registries/research_experiment_registry_v0_1.md": {
+    "mtime": 1783278810.062923,
+    "ast_hash": "f3ef796fb1b33910dc98155d657c9fed",
+    "semantic_hash": "f3ef796fb1b33910dc98155d657c9fed"
+  },
+  "03_TSIS_Lab/03_templates/evidence_report_template.md": {
+    "mtime": 1783264668.662276,
+    "ast_hash": "de9ddb98b4354ec9e293d6bf8a9cffbb",
+    "semantic_hash": "de9ddb98b4354ec9e293d6bf8a9cffbb"
+  },
+  "03_TSIS_Lab/03_templates/parameter_sweep_template.yaml": {
+    "mtime": 1783264668.671795,
+    "ast_hash": "72593ef162ef1f4ff81a57785f59c938",
+    "semantic_hash": "72593ef162ef1f4ff81a57785f59c938"
+  },
+  "03_TSIS_Lab/03_templates/research_experiment_template.yaml": {
+    "mtime": 1783264668.6537611,
+    "ast_hash": "033b2e5d3b43a22a2c13787d3781cb3b",
+    "semantic_hash": "033b2e5d3b43a22a2c13787d3781cb3b"
+  },
+  "03_TSIS_Lab/05_adapters/graphify/README.md": {
+    "mtime": 1787418277.1182528,
+    "ast_hash": "032432e0f238a3de325f805b2b8c41dd",
+    "semantic_hash": "032432e0f238a3de325f805b2b8c41dd"
+  },
+  "03_TSIS_Lab/05_adapters/smallcaps/data_sources.md": {
+    "mtime": 1783264668.6642747,
+    "ast_hash": "5dc45328fff7e2f16efae8c942fbdfe1",
+    "semantic_hash": "5dc45328fff7e2f16efae8c942fbdfe1"
+  },
+  "03_TSIS_Lab/05_adapters/smallcaps/execution_bridge.md": {
+    "mtime": 1784710220.4595602,
+    "ast_hash": "5e44b5ff1c342ae8fb329ba0116e293c",
+    "semantic_hash": "5e44b5ff1c342ae8fb329ba0116e293c"
+  },
+  "03_TSIS_Lab/05_adapters/smallcaps/README.md": {
+    "mtime": 1784710220.4595602,
+    "ast_hash": "93b841d05ce0cc53fdeb13805a167522",
+    "semantic_hash": "93b841d05ce0cc53fdeb13805a167522"
+  },
+  "03_TSIS_Lab/06_validators/README.md": {
+    "mtime": 1783315060.700289,
+    "ast_hash": "06ed0a0d78ba558dd5141777a1c2758f",
+    "semantic_hash": "06ed0a0d78ba558dd5141777a1c2758f"
+  },
+  "03_TSIS_Lab/CHANGELOG.md": {
+    "mtime": 1786985434.392333,
+    "ast_hash": "68f345f8e596eb814da575e98bb92f51",
+    "semantic_hash": "68f345f8e596eb814da575e98bb92f51"
+  },
+  "03_TSIS_Lab/LOCAL_RULES.md": {
+    "mtime": 1784837174.0948615,
+    "ast_hash": "4ff8e12cdcd3fbe68b297c589755e405",
+    "semantic_hash": "4ff8e12cdcd3fbe68b297c589755e405"
+  },
+  "03_TSIS_Lab/README.md": {
+    "mtime": 1786985434.392333,
+    "ast_hash": "d589c1b91e95dd4785d0277d23e886dd",
+    "semantic_hash": "d589c1b91e95dd4785d0277d23e886dd"
+  },
+  "04_TSIS_SCREENERS/MASSIVE_SEC_SCREENER_DATA_DECISION_v0_1.md": {
+    "mtime": 1787334479.3753963,
+    "ast_hash": "bca0188394a99c1cc628e7a22801a1bd",
+    "semantic_hash": "bca0188394a99c1cc628e7a22801a1bd"
+  },
+  "05_TSIS_STATISTICS_PATTERNS/00.MD": {
+    "mtime": 1787323007.8836265,
+    "ast_hash": "eea1279f745807cbc12814a8de372893",
+    "semantic_hash": "eea1279f745807cbc12814a8de372893"
+  },
+  "05_TSIS_STATISTICS_PATTERNS/01.md": {
+    "mtime": 1787323056.935797,
+    "ast_hash": "a64076303b6a2175891c13a6efcc9724",
+    "semantic_hash": "a64076303b6a2175891c13a6efcc9724"
+  },
+  "06_TSIS_webSocket_SmallCaps/AGENTS.md": {
+    "mtime": 1784710220.4681282,
+    "ast_hash": "04a837cf45987f35710940c54a89804d",
+    "semantic_hash": "04a837cf45987f35710940c54a89804d"
+  },
+  "06_TSIS_webSocket_SmallCaps/CHANGELOG.md": {
+    "mtime": 1784923810.6962588,
+    "ast_hash": "98cf99c2555a591f6d5085ab3699a603",
+    "semantic_hash": "98cf99c2555a591f6d5085ab3699a603"
+  },
+  "06_TSIS_webSocket_SmallCaps/LOCAL_RULES.md": {
+    "mtime": 1784923740.6895678,
+    "ast_hash": "95dd3c70002a1e55553a7cb16056d713",
+    "semantic_hash": "95dd3c70002a1e55553a7cb16056d713"
+  },
+  "06_TSIS_webSocket_SmallCaps/manifest.yaml": {
+    "mtime": 1784921326.2524073,
+    "ast_hash": "7ff914f8bf7f615fd2c7d09227e60dd8",
+    "semantic_hash": "7ff914f8bf7f615fd2c7d09227e60dd8"
+  },
+  "06_TSIS_webSocket_SmallCaps/README.md": {
+    "mtime": 1784710220.4746468,
+    "ast_hash": "350b82f7da2066ab9011db4d5fd66949",
+    "semantic_hash": "350b82f7da2066ab9011db4d5fd66949"
+  },
+  "07_TSIS_Offline_RL/AGENTS.md": {
+    "mtime": 1784710009.5396018,
+    "ast_hash": "fd0a695f823d040a924375c6df7a0f09",
+    "semantic_hash": "fd0a695f823d040a924375c6df7a0f09"
+  },
+  "07_TSIS_Offline_RL/CHANGELOG.md": {
+    "mtime": 1784710537.9785893,
+    "ast_hash": "4d7cc0f793f44f13c9b4f9bd4f3dee20",
+    "semantic_hash": "4d7cc0f793f44f13c9b4f9bd4f3dee20"
+  },
+  "07_TSIS_Offline_RL/LOCAL_RULES.md": {
+    "mtime": 1784710009.5405996,
+    "ast_hash": "d18ba0b5a1a1c15bbb848990bfd7a598",
+    "semantic_hash": "d18ba0b5a1a1c15bbb848990bfd7a598"
+  },
+  "07_TSIS_Offline_RL/manifest.yaml": {
+    "mtime": 1784710220.4796462,
+    "ast_hash": "e0e97176af25b23e18fe699d72abb5ad",
+    "semantic_hash": "e0e97176af25b23e18fe699d72abb5ad"
+  },
+  "07_TSIS_Offline_RL/README.md": {
+    "mtime": 1784710220.4816463,
+    "ast_hash": "563c123daaad7fe6cc195557fb48c608",
+    "semantic_hash": "563c123daaad7fe6cc195557fb48c608"
+  },
+  "AGENTS.md": {
+    "mtime": 1787335417.3847103,
+    "ast_hash": "a858fffaa998634924dadfeb74034b22",
+    "semantic_hash": "a858fffaa998634924dadfeb74034b22"
+  },
+  "LONG_RUNNING_OPERATIONS_CONTRACT.md": {
+    "mtime": 1784710422.1383085,
+    "ast_hash": "fe9d519b3cba15c7888c9e166ab051f0",
+    "semantic_hash": "fe9d519b3cba15c7888c9e166ab051f0"
+  },
+  "PATH_MIGRATION_2026_07_22.md": {
+    "mtime": 1787381661.092159,
+    "ast_hash": "0fa98ee2d15875cadb75c2e4c99a2657",
+    "semantic_hash": "0fa98ee2d15875cadb75c2e4c99a2657"
+  },
+  "PATH_NAMING_POLICY.md": {
+    "mtime": 1786952213.1046855,
+    "ast_hash": "b1c009f742ca25ddedc2edc9efca33c6",
+    "semantic_hash": "b1c009f742ca25ddedc2edc9efca33c6"
+  },
+  "PROJECT_OPERATING_SYSTEM.md": {
+    "mtime": 1787381661.0931594,
+    "ast_hash": "afa664a71535767ee2476a5b236349e2",
+    "semantic_hash": "afa664a71535767ee2476a5b236349e2"
+  },
+  "PROJECT_RULES.md": {
+    "mtime": 1784710220.5143943,
+    "ast_hash": "a88c3b7d85cc564927881ed98809a1d8",
+    "semantic_hash": "a88c3b7d85cc564927881ed98809a1d8"
+  },
+  "README.md": {
+    "mtime": 1787335417.378711,
+    "ast_hash": "fb7f0268b493b9fb4acf637a915ad641",
+    "semantic_hash": "fb7f0268b493b9fb4acf637a915ad641"
+  },
+  "RESEARCH_PHILOSOPHY.md": {
+    "mtime": 1784710422.123712,
+    "ast_hash": "eaa47414acc802d31cf240db7f88624e",
+    "semantic_hash": "eaa47414acc802d31cf240db7f88624e"
+  },
+  "VERSIONING_STANDARDS.md": {
+    "mtime": 1786952000.464175,
+    "ast_hash": "6f8de66fbd0a3aae4f145fab296d4f34",
+    "semantic_hash": "6f8de66fbd0a3aae4f145fab296d4f34"
+  },
+  "03_TSIS_Lab/06_validators/validate_visual_inspection_manifest.py": {
+    "mtime": 1783328929.0736,
+    "ast_hash": "11adb541c0d28e995865e8943e893ef3",
+    "semantic_hash": "11adb541c0d28e995865e8943e893ef3"
+  }
+}

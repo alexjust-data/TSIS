@@ -13,7 +13,6 @@ from dataclasses import asdict, dataclass
 from typing import Any, Literal
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
-
 EndpointGate = Literal["DIRECT", "CONDITIONAL"]
 QueryStrategy = Literal["PER_ISSUER_CIK", "SINGLETON", "GLOBAL_CUSIP_FILTER"]
 
@@ -242,7 +241,7 @@ def sanitize_url(url: str) -> str:
 
 
 def canonical_request_key(endpoint_id: str, url: str) -> str:
-    payload = f"{endpoint_id}|{sanitize_url(url)}".encode("utf-8")
+    payload = f"{endpoint_id}|{sanitize_url(url)}".encode()
     return hashlib.sha256(payload).hexdigest()
 
 
@@ -276,6 +275,7 @@ class PageCommit:
     retry_count: int
     http_429_count: int
     elapsed_seconds: float
+    observed_fields: tuple[str, ...]
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)

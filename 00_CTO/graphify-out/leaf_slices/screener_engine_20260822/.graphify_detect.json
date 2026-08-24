@@ -1,0 +1,25 @@
+{
+  "scan_root": "C:\\TSIS_Data",
+  "files": {
+    "document": [
+      "C:\\TSIS_Data\\00_CTO\\15_SCREENER_ENGINE\\00_STRUCTURE_SYSTEM.md",
+      "C:\\TSIS_Data\\00_CTO\\15_SCREENER_ENGINE\\01_LAYER_1\\initial_idea.MD",
+      "C:\\TSIS_Data\\00_CTO\\15_SCREENER_ENGINE\\EVIDENCE_INDEX.md",
+      "C:\\TSIS_Data\\00_CTO\\15_SCREENER_ENGINE\\README.md",
+      "C:\\TSIS_Data\\00_CTO\\15_SCREENER_ENGINE\\SCREENER_ENGINE_ARCHITECTURE_PROPOSAL_v0_1.md"
+    ]
+  },
+  "all_files": {
+    "document": [
+      "C:\\TSIS_Data\\00_CTO\\15_SCREENER_ENGINE\\00_STRUCTURE_SYSTEM.md",
+      "C:\\TSIS_Data\\00_CTO\\15_SCREENER_ENGINE\\01_LAYER_1\\initial_idea.MD",
+      "C:\\TSIS_Data\\00_CTO\\15_SCREENER_ENGINE\\EVIDENCE_INDEX.md",
+      "C:\\TSIS_Data\\00_CTO\\15_SCREENER_ENGINE\\README.md",
+      "C:\\TSIS_Data\\00_CTO\\15_SCREENER_ENGINE\\SCREENER_ENGINE_ARCHITECTURE_PROPOSAL_v0_1.md"
+    ]
+  },
+  "total_files": 5,
+  "total_words": 7897,
+  "skipped_sensitive": [],
+  "needs_graph": true
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "path": "00_CTO/15_SCREENER_ENGINE/00_STRUCTURE_SYSTEM.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\15_SCREENER_ENGINE\\00_STRUCTURE_SYSTEM.md",
+    "category": "document",
+    "sha256": "9f260588cf5b6666c2fef5a24ae4e10a60fb887d135ec65ead04e52a2ba6e47d",
+    "bytes": 25900,
+    "word_count": 2639
+  },
+  {
+    "path": "00_CTO/15_SCREENER_ENGINE/01_LAYER_1/initial_idea.MD",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\15_SCREENER_ENGINE\\01_LAYER_1\\initial_idea.MD",
+    "category": "document",
+    "sha256": "9d81326e4415468b892e5968d220d52e47be1a08a62b2664ce7530188c2fef44",
+    "bytes": 3161,
+    "word_count": 362
+  },
+  {
+    "path": "00_CTO/15_SCREENER_ENGINE/EVIDENCE_INDEX.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\15_SCREENER_ENGINE\\EVIDENCE_INDEX.md",
+    "category": "document",
+    "sha256": "96fa2af1a54dd3f8226fc6d2f1bf4fd6e54b5c4651615392aac7e6e60e51bcb7",
+    "bytes": 5959,
+    "word_count": 655
+  },
+  {
+    "path": "00_CTO/15_SCREENER_ENGINE/README.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\15_SCREENER_ENGINE\\README.md",
+    "category": "document",
+    "sha256": "86b383028b5d659488d587cce1601e981be8c4a3453cf7c70155e1916630348b",
+    "bytes": 7989,
+    "word_count": 1030
+  },
+  {
+    "path": "00_CTO/15_SCREENER_ENGINE/SCREENER_ENGINE_ARCHITECTURE_PROPOSAL_v0_1.md",
+    "absolute_path": "C:\\TSIS_Data\\00_CTO\\15_SCREENER_ENGINE\\SCREENER_ENGINE_ARCHITECTURE_PROPOSAL_v0_1.md",
+    "category": "document",
+    "sha256": "fabc3addb689c3ed3c20a3bd147e2fb7417a16a6161d5ae4de4a6e5d93f4040c",
+    "bytes": 23535,
+    "word_count": 3211
+  }
+]

@@ -1,3 +1,12 @@
+## 2026-08-22 - TSIS_GRAPHIFY_QUEUE_RESOLUTION_20260822
+
+- resolution_status: ACCEPTED_REFRESH_PUBLISHED
+- published_root: `C:\TSIS_Data\graphify-out`
+- covered_queue_ids: `GFQ-20260805-ROOT-001`, `GFQ-20260811-ROOT-002`, `GFQ-20260812-SEC-PIT-OWNERSHIP-002`, `GFQ-20260813-FOUNDATIONS-SEC-SHARE-CLASS-V021-001`
+- coverage_rule: the terminal root supersedes older pending refresh requests only where their governed source files occur in the published leaf corpus manifests.
+- remains_pending_out_of_scope: `GFQ-20260817-ROOT-WAKE-UP-ORACLE-LAB-001`, `GFQ-20260821-ROOT-MODULE-MAP-001`, `GFQ-20260707-001`, `GFQ-20260706-001`, `GFQ-20260716-001`
+- evidence: `C:\TSIS_Data\runs\graphify_refresh\GRAPHIFY_TERMINAL_AUDIT_20260822.json`
+
 # Graphify Refresh Queue
 
 Estado: cola operativa versionada para el grafo raiz de `C:\TSIS_Data`.
@@ -223,3 +232,10 @@ manifests historicos inmutables.
   sus `BUILD_MANIFEST.md`, reconstruir el root sin `Trading_voice`, comprobar
   las rutas 04/05/06/07 y confirmar que `research_experiments` resuelve
   exclusivamente a `03_TSIS_Lab/04_experiments`.
+## TSIS_GRAPHIFY_QUEUE_CORPUS_EXCLUSION_ACCEPTED_20260822
+
+- corpus_policy: `EXCLUDED_OPERATIONAL_CONTROL`
+- rationale: evita el ciclo build -> actualización de queue -> grafo inmediatamente stale.
+- existing_entry_statuses: `UNCHANGED`
+- terminal_audit: `C:\TSIS_Data\runs\graphify_refresh\GRAPHIFY_TERMINAL_AUDIT_20260822.json`
+- source_coverage_audit: `C:\TSIS_Data\runs\graphify_refresh\GRAPHIFY_SOURCE_COVERAGE_AUDIT_20260822.json`

@@ -1,5 +1,15 @@
 # SEC PIT Pipeline v0_1
 
+## Massive SEC acquisition lane
+
+The Massive-specific v0.1 runner is run_massive_sec_acquisition.py, with
+run_massive_sec_probe.py, monitor_massive_sec_acquisition.ps1 and
+audit_massive_sec_acquisition.py. It uses page receipts, immutable raw CAS, one
+output-root writer and hash-bound resume. The direct scope is defined by
+configs/massive_sec_acquisition_v0_1.json. It remains
+PREPARED_NOT_AUTHORIZED: license confirmation and a separate PROBE_ONLY
+authorization are required before any request.
+
 Implements the one-ticker execution authorized by
 `SEC_PIT_FUNDAMENTAL_ACQUISITION_AND_RESOLUTION_CONTRACT_v0_1.md`.
 

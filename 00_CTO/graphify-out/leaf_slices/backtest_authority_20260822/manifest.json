@@ -1,0 +1,217 @@
+{
+  "00_CTO/14_BACKTEST_ENGINE/00_TABLAS__WAKE_UP_FRONTSIDE_TERMINATION_V0_2.md": {
+    "mtime": 1785964531.8980992,
+    "ast_hash": "db7d7516d38d340fb39504fcbdba0dfc",
+    "semantic_hash": "db7d7516d38d340fb39504fcbdba0dfc"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/01_GUIDE/01_DATA.md": {
+    "mtime": 1785917332.9781008,
+    "ast_hash": "b2a47c99e30caeec69f3a006a97ac86d",
+    "semantic_hash": "b2a47c99e30caeec69f3a006a97ac86d"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/01_GUIDE/01_SYSTEM_STATUS_AND_INSPECTOR_GUIDE.md": {
+    "mtime": 1785444362.4795828,
+    "ast_hash": "ede8ae16720247af2facca80dee20eee",
+    "semantic_hash": "ede8ae16720247af2facca80dee20eee"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/01_GUIDE/02_REPLAY.md": {
+    "mtime": 1785917332.9790988,
+    "ast_hash": "2c181e8c0a2fed824dc4d321bc3f7622",
+    "semantic_hash": "2c181e8c0a2fed824dc4d321bc3f7622"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/01_GUIDE/03_MECHANICAL_TRADE_PATH.md": {
+    "mtime": 1785917332.9790988,
+    "ast_hash": "08962ed021eb4d6cb70a56312f2ac287",
+    "semantic_hash": "08962ed021eb4d6cb70a56312f2ac287"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/01_GUIDE/08_ACCOUNTING.md": {
+    "mtime": 1785448062.2025032,
+    "ast_hash": "28861a5dcff2d3e98292623d91a97a1c",
+    "semantic_hash": "28861a5dcff2d3e98292623d91a97a1c"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/01_GUIDE/README.md": {
+    "mtime": 1785448062.2025032,
+    "ast_hash": "adc03851c7eb88319c6ddfc37f5b393c",
+    "semantic_hash": "adc03851c7eb88319c6ddfc37f5b393c"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/02_ARCHITECTURE/01_AUTHORITY_AND_EVIDENCE_BOUNDARY.md": {
+    "mtime": 1785444362.4860983,
+    "ast_hash": "d8cfb3a7941d39573fb331b08f438195",
+    "semantic_hash": "d8cfb3a7941d39573fb331b08f438195"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/02_ARCHITECTURE/02_APPLIED_ARCHITECTURE_CONTEXT_BOUNDARY.md": {
+    "mtime": 1785444362.4871037,
+    "ast_hash": "b30d64eb257416baa13e12c01794ea4b",
+    "semantic_hash": "b30d64eb257416baa13e12c01794ea4b"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/03_CONTRACTS/CONTRACT_INVENTORY.md": {
+    "mtime": 1785945050.666227,
+    "ast_hash": "2b6a656ef13eb5d6c86d577216a9c564",
+    "semantic_hash": "2b6a656ef13eb5d6c86d577216a9c564"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_014_FINAL_POSTEXECUTION_ACCEPTANCE_V0_1.md": {
+    "mtime": 1785454519.835622,
+    "ast_hash": "98eb1b972534cced8e93759e0f4726ca",
+    "semantic_hash": "98eb1b972534cced8e93759e0f4726ca"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_014_PHASE_B_EXTERNAL_RE_REVIEW_ACCEPTANCE_V0_1.md": {
+    "mtime": 1785444362.4951055,
+    "ast_hash": "615d8ffc3a807e1b7d76f475338457b6",
+    "semantic_hash": "615d8ffc3a807e1b7d76f475338457b6"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_1.md": {
+    "mtime": 1785444362.496104,
+    "ast_hash": "a722eccb617e4ef8717933f2e9b5b27f",
+    "semantic_hash": "a722eccb617e4ef8717933f2e9b5b27f"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_2.md": {
+    "mtime": 1785444362.4973757,
+    "ast_hash": "14da195ccd9da485c36c2b708e586fc3",
+    "semantic_hash": "14da195ccd9da485c36c2b708e586fc3"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_3.md": {
+    "mtime": 1785917332.9800982,
+    "ast_hash": "f67aea6431674f5db06c008e3649b77f",
+    "semantic_hash": "f67aea6431674f5db06c008e3649b77f"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_4.md": {
+    "mtime": 1785447456.1124084,
+    "ast_hash": "9b1166c4454d576ccb2cfb0ce73456df",
+    "semantic_hash": "9b1166c4454d576ccb2cfb0ce73456df"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_014_SINGLE_USE_PHYSICAL_CONSUMER_AUTHORIZATION_V0_5.md": {
+    "mtime": 1785449952.0990071,
+    "ast_hash": "966b8c9ce1239713e72e4bc26a84e908",
+    "semantic_hash": "966b8c9ce1239713e72e4bc26a84e908"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_015_NON_PHYSICAL_EXTERNAL_REVIEW_ACCEPTANCE_V0_1.md": {
+    "mtime": 1785914134.805961,
+    "ast_hash": "b812ade85211505d4bec783661589779",
+    "semantic_hash": "b812ade85211505d4bec783661589779"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/BT_GATE_015_V0_4_POSTEXECUTION_EXTERNAL_REVIEW_ACCEPTANCE_V0_1.md": {
+    "mtime": 1785945031.3971653,
+    "ast_hash": "c6e2a8a2eef2ccdc392394dc9dc05ffb",
+    "semantic_hash": "c6e2a8a2eef2ccdc392394dc9dc05ffb"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/GOVERNANCE_UPDATE_PROTOCOL.md": {
+    "mtime": 1785917332.9800982,
+    "ast_hash": "3bb4a7a50b5c7b12a5d8e7e788171b5b",
+    "semantic_hash": "3bb4a7a50b5c7b12a5d8e7e788171b5b"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/10_VALIDATION/GOVERNANCE_VALIDATION_REPORT.md": {
+    "mtime": 1785946379.8427155,
+    "ast_hash": "f27eed9db593584c75718ebb331f91db",
+    "semantic_hash": "f27eed9db593584c75718ebb331f91db"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/11_HISTORICAL_SNAPSHOTS/2026-07-28_PRE_GOVERNANCE_ROOT/AGENT_HISTORICAL.md": {
+    "mtime": 1785917332.9810984,
+    "ast_hash": "b5fabee7c9473658b316268dadebd2d6",
+    "semantic_hash": "b5fabee7c9473658b316268dadebd2d6"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/11_HISTORICAL_SNAPSHOTS/2026-07-28_PRE_GOVERNANCE_ROOT/CHANGELOG_HISTORY_SOURCE.md": {
+    "mtime": 1785917332.9810984,
+    "ast_hash": "0355cc07b1a72b9d880f47a282b4dd22",
+    "semantic_hash": "0355cc07b1a72b9d880f47a282b4dd22"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/11_HISTORICAL_SNAPSHOTS/2026-07-28_PRE_GOVERNANCE_ROOT/LOCAL_RULES_HISTORICAL.md": {
+    "mtime": 1785917332.9810984,
+    "ast_hash": "87d0cdc9acc50c80ee63370ac7ddae8d",
+    "semantic_hash": "87d0cdc9acc50c80ee63370ac7ddae8d"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/11_HISTORICAL_SNAPSHOTS/2026-07-28_PRE_GOVERNANCE_ROOT/README_HISTORICAL.md": {
+    "mtime": 1785917332.9820988,
+    "ast_hash": "a52bfd9366366c643cc1ff6b42e61466",
+    "semantic_hash": "a52bfd9366366c643cc1ff6b42e61466"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/11_HISTORICAL_SNAPSHOTS/README.md": {
+    "mtime": 1785444362.5098882,
+    "ast_hash": "9f6f34b06ec06aa0ce8960aba47fa653",
+    "semantic_hash": "9f6f34b06ec06aa0ce8960aba47fa653"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/_00_SERSANS_SISTEMAS_GUIDE/00_EVALUACION_PRELIMINAR_ESTRATEGY.md": {
+    "mtime": 1785870014.5605037,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/AGENTS.md": {
+    "mtime": 1785944091.9666355,
+    "ast_hash": "cb9abe8b8df63c2a382789c1552d38ad",
+    "semantic_hash": "cb9abe8b8df63c2a382789c1552d38ad"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/CHANGELOG.md": {
+    "mtime": 1785946462.029286,
+    "ast_hash": "71571635f115036ff81c10e048bd82e5",
+    "semantic_hash": "71571635f115036ff81c10e048bd82e5"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/GOVERNANCE_README.md": {
+    "mtime": 1785444362.5138886,
+    "ast_hash": "1e19cb8a7afa3c47f93bd0504606af7f",
+    "semantic_hash": "1e19cb8a7afa3c47f93bd0504606af7f"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/LOCAL_RULES.md": {
+    "mtime": 1785444362.5148876,
+    "ast_hash": "3e66c89200dba24a6f36a2a5558b0b05",
+    "semantic_hash": "3e66c89200dba24a6f36a2a5558b0b05"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/README.md": {
+    "mtime": 1785944091.9676352,
+    "ast_hash": "9aaec34be09cb4d59675c1e5b844b7eb",
+    "semantic_hash": "9aaec34be09cb4d59675c1e5b844b7eb"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/TSIS_ARQUITECTURA_BACKTEST_CIENTIFICO.md": {
+    "mtime": 1785954374.2351203,
+    "ast_hash": "aab58687e5cb51df79d07793f3b621bc",
+    "semantic_hash": "aab58687e5cb51df79d07793f3b621bc"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/TSIS_ARQUITECTURA_BACKTEST_CIENTIFICO_ASCII.md": {
+    "mtime": 1785959151.2778034,
+    "ast_hash": "15fae043bc0b4cbcabb6e48917114ce6",
+    "semantic_hash": "15fae043bc0b4cbcabb6e48917114ce6"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/TSIS_ARQUITECTURA_BACKTESTER_STATE_PROVIDER_000_018_ASCII.md": {
+    "mtime": 1785961304.1653316,
+    "ast_hash": "b9b5932ef4c4cd4d7ff2cf02722788a6",
+    "semantic_hash": "b9b5932ef4c4cd4d7ff2cf02722788a6"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/04_DECISIONS/DECISION_LEDGER.json": {
+    "mtime": 1785944309.028187,
+    "ast_hash": "677d7023fc8e27810bd544ac10600604",
+    "semantic_hash": "677d7023fc8e27810bd544ac10600604"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/05_POLICIES/POLICY_REGISTER.json": {
+    "mtime": 1785944309.028187,
+    "ast_hash": "c0824a93b942926b48750a0500437660",
+    "semantic_hash": "c0824a93b942926b48750a0500437660"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/06_TRACEABILITY/TRACEABILITY_MATRIX.json": {
+    "mtime": 1785945031.398164,
+    "ast_hash": "03b8ce8b6f90e6c13e81ca3b8f09a7ab",
+    "semantic_hash": "03b8ce8b6f90e6c13e81ca3b8f09a7ab"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/07_EXCEPTIONS/EXCEPTION_AND_WAIVER_REGISTER.json": {
+    "mtime": 1785917332.9790988,
+    "ast_hash": "0ca7178878b7a1123de7ee7ee0bef5ab",
+    "semantic_hash": "0ca7178878b7a1123de7ee7ee0bef5ab"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/08_GATES_AND_REVIEWS/GATE_REGISTER.json": {
+    "mtime": 1785945031.398164,
+    "ast_hash": "9482b3f0c429f16beb832613871d8c4e",
+    "semantic_hash": "9482b3f0c429f16beb832613871d8c4e"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/09_SCHEMAS/GOVERNANCE_SCHEMA.json": {
+    "mtime": 1785450208.6390364,
+    "ast_hash": "cabff9b019415bf2cd6409e5f254abd1",
+    "semantic_hash": "cabff9b019415bf2cd6409e5f254abd1"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/10_VALIDATION/validate_governance.py": {
+    "mtime": 1785946379.8417156,
+    "ast_hash": "6716bfdc3788a3454bfb535eb0e4656b",
+    "semantic_hash": "6716bfdc3788a3454bfb535eb0e4656b"
+  },
+  "00_CTO/14_BACKTEST_ENGINE/PACKAGE_MANIFEST.json": {
+    "mtime": 1785967083.741593,
+    "ast_hash": "9c35153d579b1e2adaeea08d6613d729",
+    "semantic_hash": "9c35153d579b1e2adaeea08d6613d729"
+  }
+}

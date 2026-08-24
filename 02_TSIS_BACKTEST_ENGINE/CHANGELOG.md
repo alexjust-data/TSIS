@@ -1,3 +1,10 @@
+## 2026-08-22 - TSIS_GRAPHIFY_REFRESH_20260822
+
+- Replaced the stale Backtest Engine snapshot with a controlled full-rebuild fallback after the incremental audit.
+- Published the current leaf and synchronized the requested root mirror.
+- Removed obsolete `01_TSIS_backtest_SmallCaps` source identities.
+- Terminal graph: 2,576 nodes, 6,495 edges, 8 hyperedges and 137 communities; audit PASS.
+
 ## Current Authoritative State - BT-GATE-015 closed with restrictions
 
 ```text

@@ -28,6 +28,7 @@ accepted policies and readouts
 99_ruta_de_trabajo.md
 ```
 
+
 Este documento conserva la arquitectura conceptual que explica cómo TSIS pasa de fenómenos a representaciones de estado. No sustituye los contratos, registros, manifests de perfil ni políticas especializadas que hacen ejecutable esa arquitectura.
 
 | Sección | Rol | Autoridad vigente |
