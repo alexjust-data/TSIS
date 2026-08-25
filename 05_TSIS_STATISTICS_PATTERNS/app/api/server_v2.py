@@ -129,6 +129,21 @@ def _terminal_pass(final_root: Path) -> dict | None:
     return certification if status == "pass" and mode in {"full", "probe"} else None
 
 
+def _governed_raw_source_pass(run_root: Path) -> bool:
+    try:
+        pre_manifest = json.loads((run_root / "pre_manifest.json").read_text(encoding="utf-8"))
+        operation = json.loads(
+            (run_root / "operation_final_manifest.json").read_text(encoding="utf-8")
+        )
+    except (OSError, json.JSONDecodeError):
+        return False
+    inputs = pre_manifest.get("input_roots", {})
+    return (
+        str(operation.get("status", "")).casefold() == "pass"
+        and inputs.get("raw") == "G:/TSIS/data/ohlcv_daily"
+        and "adjusted" not in inputs
+    )
+
 def _certified_at_key(certification: dict) -> datetime:
     try:
         certified_at = datetime.fromisoformat(str(certification.get("certified_at", "")))
@@ -147,7 +162,12 @@ def _resolve_final_root(
     if configured is None and os.environ.get("ATLAS_FINAL_ROOT"):
         configured = Path(os.environ["ATLAS_FINAL_ROOT"])
     if configured is not None:
-        return configured if _terminal_pass(configured) is not None else None
+        return (
+            configured
+            if _terminal_pass(configured) is not None
+            and _governed_raw_source_pass(configured.parent)
+            else None
+        )
     if not runs_root.is_dir():
         return None
 
@@ -157,7 +177,7 @@ def _resolve_final_root(
             continue
         final_root = run_root / "final"
         certification = _terminal_pass(final_root)
-        if certification is None:
+        if certification is None or not _governed_raw_source_pass(run_root):
             continue
         mode = str(certification["mode"]).casefold()
         candidates.append(

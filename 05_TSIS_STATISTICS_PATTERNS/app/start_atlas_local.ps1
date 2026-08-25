@@ -15,12 +15,24 @@ function Resolve-AtlasFinalRoot {
     $candidates = foreach ($runRoot in Get-ChildItem -LiteralPath $Root -Directory) {
         $finalRoot = Join-Path $runRoot.FullName "final"
         $certificationPath = Join-Path $finalRoot "terminal_certification.json"
-        if (-not (Test-Path -LiteralPath $certificationPath -PathType Leaf)) {
+        $preManifestPath = Join-Path $runRoot.FullName "pre_manifest.json"
+        $operationFinalPath = Join-Path $runRoot.FullName "operation_final_manifest.json"
+        if (-not (Test-Path -LiteralPath $certificationPath -PathType Leaf) -or
+            -not (Test-Path -LiteralPath $preManifestPath -PathType Leaf) -or
+            -not (Test-Path -LiteralPath $operationFinalPath -PathType Leaf)) {
             continue
         }
         try {
             $certification = Get-Content -Raw -LiteralPath $certificationPath | ConvertFrom-Json
+            $preManifest = Get-Content -Raw -LiteralPath $preManifestPath | ConvertFrom-Json
+            $operationFinal = Get-Content -Raw -LiteralPath $operationFinalPath | ConvertFrom-Json
         } catch {
+            continue
+        }
+        # Fail closed: exclude every run that consumed the defective adjusted root.
+        if (([string]$operationFinal.status).ToLowerInvariant() -ne "pass" -or
+            [string]$preManifest.input_roots.raw -ne "G:/TSIS/data/ohlcv_daily" -or
+            $null -ne $preManifest.input_roots.adjusted) {
             continue
         }
         $mode = ([string]$certification.mode).ToLowerInvariant()

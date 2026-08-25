@@ -178,4 +178,4 @@ un readout oficial ni una promoción.
   campos de análisis como alias directos de `o/h/l/c`, sin factor local;
 - control heredable: regresión IBG, ausencia de `adjusted_root` en config y
   probe production-equivalent `20260825_probe_raw_daily_v0_1` 8/8 PASS;
-- estado: corrected_probe_pass_full_recalculation_pending.
+- estado: corrected_full_recalculated_independent_audit_pass_localhost_promoted.

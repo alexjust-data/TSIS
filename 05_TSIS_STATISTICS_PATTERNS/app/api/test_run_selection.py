@@ -35,8 +35,15 @@ def _write_terminal(
         ),
         encoding="utf-8",
     )
+    run_root = final_root.parent
+    (run_root / "pre_manifest.json").write_text(
+        json.dumps({"input_roots": {"raw": "G:/TSIS/data/ohlcv_daily"}}),
+        encoding="utf-8",
+    )
+    (run_root / "operation_final_manifest.json").write_text(
+        json.dumps({"status": "pass"}), encoding="utf-8"
+    )
     return final_root
-
 
 def _resolve_with_launcher(runs_root: Path) -> Path:
     environment = os.environ.copy()
@@ -139,3 +146,25 @@ def test_invalid_explicit_root_is_rejected(tmp_path: Path) -> None:
     incomplete = tmp_path / "20260825_full_v0_1" / "final"
     incomplete.mkdir(parents=True)
     assert _resolve_final_root(tmp_path, explicit_root=incomplete) is None
+
+
+def test_run_declaring_defective_adjusted_root_is_excluded(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    monkeypatch.delenv("ATLAS_FINAL_ROOT", raising=False)
+    invalid = _write_terminal(
+        tmp_path, "20260825_full_v0_1", status="pass", mode="full",
+        certified_at="2026-08-25T20:00:00+00:00",
+    )
+    (invalid.parent / "pre_manifest.json").write_text(
+        json.dumps({"input_roots": {
+            "raw": "G:/TSIS/data/ohlcv_daily",
+            "adjusted": "G:/TSIS/data/ohlcv_daily_adjusted",
+        }}), encoding="utf-8",
+    )
+    valid = _write_terminal(
+        tmp_path, "20260825_full_raw_daily_v0_1", status="pass", mode="full",
+        certified_at="2026-08-25T19:00:00+00:00",
+    )
+    assert _resolve_final_root(tmp_path) == valid
+    assert _resolve_with_launcher(tmp_path) == valid

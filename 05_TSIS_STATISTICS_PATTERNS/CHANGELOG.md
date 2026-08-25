@@ -2,6 +2,11 @@
 
 ## 2026-08-25
 
+- Completado y recertificado `20260825_full_raw_daily_v0_1`: 4.824 tickers,
+  9.290.966 sesiones, terminal PASS, auditoría independiente PASS y error máximo
+  0 en 12 fórmulas. El selector localhost ahora excluye fail-closed cualquier
+  run que declare `ohlcv_daily_adjusted` y sirve únicamente el nuevo full RAW.
+
 - Invalidado científicamente `20260825_full_v0_1`: sus estadísticas consumían
   la capa local con doble ajuste de splits. El motor ahora lee exclusivamente
   `G:/TSIS/data/ohlcv_daily` (Massive `adjusted=true`), con regresión IBG y probe
