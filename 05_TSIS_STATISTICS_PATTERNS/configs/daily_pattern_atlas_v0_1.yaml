@@ -1,0 +1,48 @@
+atlas_id: daily_pattern_discovery_atlas
+atlas_version: v0_1
+status: exploratory
+
+data:
+  raw_root: G:/TSIS/data/ohlcv_daily
+  adjusted_root: G:/TSIS/data/ohlcv_daily_adjusted
+  universe_activity_path: C:/TSIS_Data/runs/data_ops/core_market_family_download_audit/20260823_ohlcv_daily_download_audit_v0_1/03_closeout/ohlcv_daily_session_activity.parquet
+  audit_manifest_path: C:/TSIS_Data/runs/data_ops/core_market_family_download_audit/20260823_ohlcv_daily_download_audit_v0_1/03_closeout/final_manifest.json
+  analysis_price_view: split_normalized
+  evidence_price_view: raw
+
+scope:
+  expected_tickers: 4824
+  expected_raw_rows: 9290966
+  start_date: '2005-01-01'
+  observed_end_date: '2026-03-06'
+
+windows:
+  trajectory_sessions: 20
+  episode_cooldown_sessions: 20
+  relative_volume_sessions: 20
+  resistance_sessions:
+    previous_day: 1
+    previous_week: 5
+    previous_month: 21
+    previous_quarter: 63
+    previous_half_year: 126
+    previous_year: 252
+
+activation_thresholds:
+  gap_pct: [0.10, 0.20, 0.30, 0.50, 0.75, 1.00, 1.50, 2.00, 3.00]
+  close_advance_pct: [0.20, 0.30, 0.50, 1.00]
+  relative_volume: [3.0, 5.0, 10.0, 20.0]
+  range_pct: [0.20, 0.30, 0.50, 1.00]
+
+sharding:
+  count: 8
+  authority: stable_ticker_hash
+
+statistics:
+  quantiles: [0.10, 0.25, 0.50, 0.75, 0.90]
+  minimum_group_count: 1
+  forbidden_terms: [probability, probabilidad, pnl, profit, loss, win_rate]
+
+output:
+  experiment_root: C:/TSIS_Data/03_TSIS_Lab/04_experiments/EXP_DAILY_PATTERN_ATLAS_0001
+  run_root: C:/TSIS_Data/03_TSIS_Lab/04_experiments/EXP_DAILY_PATTERN_ATLAS_0001/runs

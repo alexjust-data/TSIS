@@ -1,0 +1,145 @@
+experiment_id: EXP_DAILY_PATTERN_ATLAS_0001
+experiment_version: v0_1
+status: implementation_in_progress
+created_by: research_agent
+generator_type: research_agent
+
+research_question: >-
+  ¿Qué formas, duraciones y secuencias observadas presentan todas las
+  activaciones daily de small caps desde D0 hasta D+20 en el universo auditado
+  2005-2026?
+objective: >-
+  Construir un censo descriptivo reproducible de sesiones, activaciones,
+  trayectorias, eventos y ciclos retrospectivos sin backtest, inferencia,
+  probabilidad, señales ni PnL.
+hypothesis: >-
+  Hipótesis abierta de descubrimiento: activaciones simples como gaps,
+  expansión de volumen, grandes rangos y rupturas rolling-N permiten organizar
+  formas daily heterogéneas sin presuponer una estrategia ni un patrón verdadero.
+target_domain: microcap_smallcap_daily_descriptive_discovery
+
+input_state_versions:
+  - daily_session_observables_v0_1
+input_outcome_versions:
+  - daily_activation_trajectory_d0_d20_v0_1
+source_data_scope: >-
+  Exact 4,824-ticker audited intersection of ohlcv_daily and
+  ohlcv_daily_adjusted, observed 2005-01-03 through 2026-03-06.
+universe_definition:
+  authority: ohlcv_daily_session_activity.parquet
+  expected_tickers: 4824
+  expected_rows: 9290966
+  exact_membership_required: true
+
+probe_definition:
+  production_equivalent: true
+  one_ticker_per_shard: true
+  shards: 8
+  same_runner_aggregator_certifier_manifest: true
+parameter_grid:
+  gap_pct: [0.10, 0.20, 0.30, 0.50, 0.75, 1.00, 1.50, 2.00, 3.00]
+  close_advance_pct: [0.20, 0.30, 0.50, 1.00]
+  relative_volume: [3.0, 5.0, 10.0, 20.0]
+  range_pct: [0.20, 0.30, 0.50, 1.00]
+controlled_variables:
+  horizon_observations: 20
+  cycle_cooldown_observations: 20
+  analysis_price_view: split_normalized_v0_1
+experimental_variables:
+  - activation_family
+  - activation_label
+  - offset_session
+windows:
+  observables: current_and_strictly_prior_observations
+  outcomes: D0_to_D20_separate_or_derived
+  d_plus_semantics: kth_available_ticker_observation_not_calendar_session
+outcome_matrix:
+  - close_from_anchor_pct
+  - high_from_anchor_pct
+  - drawdown_from_running_high_pct
+  - is_red_candle
+  - is_new_episode_high
+  - event_offset
+metrics:
+  - count
+  - unique_tickers
+  - mean
+  - standard_deviation
+  - p10
+  - p25
+  - median
+  - p75
+  - p90
+  - observed_frequency
+baselines:
+  - activation_label_distribution
+  - coverage_by_year
+  - direct_activation_trajectory
+  - direct_activation_event_timing
+
+leakage_gates:
+  - no_negative_shift_in_session_observables
+  - outcomes_physically_separate_or_derived_on_request
+  - retrospective_peak_marked_as_outcome
+  - future_split_factor_absent_from_observable_output
+quality_gates:
+  - unique_nonnull_keys
+  - positive_coherent_ohlc_for_analysis_eligible_rows
+  - invalid_rows_excluded_from_outcomes_and_events
+  - stable_physical_schema_across_shards
+  - exact_full_universe_reconciliation
+  - all_activation_d0_count_reconciliation
+  - all_activation_event_case_count_reconciliation
+  - explicit_right_censoring
+  - output_hash_and_schema_integrity
+lineage_requirements:
+  - canonical_source_file
+  - config_sha256
+  - code_commit
+  - run_manifest
+  - upstream_audit_manifest
+  - output_sha256
+  - output_schema_fingerprint
+statistical_validation_plan:
+  type: descriptive_only
+  inference: prohibited_v0_1
+  required_breakdowns: [activation_family, activation_label, offset_session]
+promotion_rules:
+  maximum_status_from_this_experiment: exploratory_report_ready
+  validated_knowledge_requires_separate_pipeline: true
+mutation_policy:
+  optimizer_mutable: false
+  mutation_scope: []
+
+expected_outputs:
+  - session_observables.parquet
+  - activation_labels.parquet
+  - activation_case_index.parquet
+  - cohort_statistics.parquet
+  - activation_event_statistics.parquet
+  - episodes.parquet
+  - episode_trajectories.parquet
+  - episode_events.parquet
+  - cycle_cohort_statistics.parquet
+  - coverage_by_year.parquet
+  - case_index.parquet
+  - run_manifest.json
+  - terminal_certification.json
+  - certification_readout.md
+
+execution_history:
+  - run_id: 20260824_full_v0_1
+    original_terminal_status: pass
+    post_run_audit_status: fail
+    disposition: invalidated
+    location: runs/invalidated/20260824_full_v0_1_post_run_audit_fail
+    reasons:
+      - invalid_future_rows_contaminated_outcomes
+      - physical_volume_schema_varied
+      - cooldown_cohorts_misrepresented_all_activations
+      - incomplete_lineage
+      - future_split_factor_in_observable_output
+current_execution:
+  probe_run_id: 20260825_probe_v0_1
+  full_run_id: 20260825_full_v0_1
+  status: pending_production_equivalent_probe

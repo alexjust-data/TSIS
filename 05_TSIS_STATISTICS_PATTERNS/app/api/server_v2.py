@@ -1,0 +1,335 @@
+from __future__ import annotations
+
+import json
+import os
+import sqlite3
+from datetime import datetime, timezone
+from pathlib import Path
+
+import duckdb
+from fastapi import FastAPI, HTTPException, Query
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel, Field
+
+
+DEFAULT_FULL = Path(
+    r"C:\TSIS_Data\03_TSIS_Lab\04_experiments\EXP_DAILY_PATTERN_ATLAS_0001"
+    r"\runs\20260825_full_v0_1\final"
+)
+DEFAULT_PROBE = Path(
+    r"C:\TSIS_Data\03_TSIS_Lab\04_experiments\EXP_DAILY_PATTERN_ATLAS_0001"
+    r"\runs\20260825_probe_v0_1\final"
+)
+FINAL_ROOT = Path(
+    os.environ.get("ATLAS_FINAL_ROOT", DEFAULT_FULL if DEFAULT_FULL.exists() else DEFAULT_PROBE)
+)
+ANNOTATION_DB = Path(
+    os.environ.get("ATLAS_ANNOTATION_DB", Path(__file__).with_name("annotations.sqlite"))
+)
+
+
+def _path(name: str) -> str:
+    path = FINAL_ROOT / f"{name}.parquet"
+    if not path.exists():
+        raise HTTPException(status_code=503, detail=f"Atlas output unavailable: {name}")
+    return path.as_posix().replace("'", "''")
+
+
+def _query(sql: str, parameters: list | None = None) -> list[dict]:
+    con = duckdb.connect()
+    try:
+        frame = con.execute(sql, parameters or []).fetch_df()
+    finally:
+        con.close()
+    frame = frame.where(frame.notna(), None)
+    for column in frame.columns:
+        if str(frame[column].dtype).startswith("datetime"):
+            frame[column] = frame[column].astype(str)
+    return frame.to_dict("records")
+
+
+def _init_annotations() -> None:
+    ANNOTATION_DB.parent.mkdir(parents=True, exist_ok=True)
+    with sqlite3.connect(ANNOTATION_DB) as con:
+        con.execute(
+            """
+            CREATE TABLE IF NOT EXISTS annotations (
+              id INTEGER PRIMARY KEY AUTOINCREMENT,
+              episode_id TEXT NOT NULL,
+              note TEXT NOT NULL,
+              tags TEXT NOT NULL,
+              created_at TEXT NOT NULL
+            )
+            """
+        )
+
+
+class AnnotationIn(BaseModel):
+    episode_id: str = Field(min_length=8, max_length=64)
+    note: str = Field(min_length=1, max_length=4000)
+    tags: list[str] = Field(default_factory=list, max_length=20)
+
+
+app = FastAPI(title="TSIS Daily Pattern Atlas", version="0.2.0")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_credentials=False,
+    allow_methods=["GET", "POST"],
+    allow_headers=["Content-Type"],
+)
+_init_annotations()
+
+
+@app.get("/api/meta")
+def meta() -> dict:
+    manifest_path = FINAL_ROOT / "run_manifest.json"
+    certification_path = FINAL_ROOT / "terminal_certification.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else {}
+    certification = (
+        json.loads(certification_path.read_text(encoding="utf-8"))
+        if certification_path.exists()
+        else {}
+    )
+    return {
+        "final_root": str(FINAL_ROOT),
+        "status": certification.get("status", manifest.get("status", "unavailable")),
+        "mode": certification.get("mode", "unknown"),
+        "counts": manifest.get("counts", {}),
+        "certified_at": certification.get("certified_at"),
+    }
+
+
+@app.get("/api/labels")
+def labels() -> list[dict]:
+    return _query(
+        f"""
+        SELECT activation_family, activation_label,
+               count(*) AS label_rows, count(DISTINCT ticker) AS tickers
+        FROM read_parquet('{_path('activation_labels')}')
+        GROUP BY 1,2 ORDER BY 1,2
+        """
+    )
+
+
+@app.get("/api/cohorts")
+def cohorts(
+    activation_label: str | None = None,
+    offset_session: int | None = Query(default=None, ge=0, le=20),
+    limit: int = Query(default=500, ge=1, le=5000),
+) -> list[dict]:
+    clauses: list[str] = []
+    parameters: list = []
+    if activation_label:
+        clauses.append("activation_label = ?")
+        parameters.append(activation_label)
+    if offset_session is not None:
+        clauses.append("offset_session = ?")
+        parameters.append(offset_session)
+    where = " WHERE " + " AND ".join(clauses) if clauses else ""
+    parameters.append(limit)
+    return _query(
+        f"SELECT * FROM read_parquet('{_path('cohort_statistics')}'){where} "
+        "ORDER BY activation_family, activation_label, offset_session LIMIT ?",
+        parameters,
+    )
+
+
+@app.get("/api/event-stats")
+def event_stats(activation_label: str | None = None) -> list[dict]:
+    clauses: list[str] = []
+    parameters: list = []
+    if activation_label:
+        clauses.append("activation_label = ?")
+        parameters.append(activation_label)
+    where = " WHERE " + " AND ".join(clauses) if clauses else ""
+    return _query(
+        f"SELECT * FROM read_parquet('{_path('activation_event_statistics')}'){where} "
+        "ORDER BY activation_family, activation_label, event_label",
+        parameters,
+    )
+
+
+@app.get("/api/cases")
+def cases(
+    activation_label: str | None = None,
+    ticker: str | None = None,
+    complete_horizon: bool | None = None,
+    limit: int = Query(default=100, ge=1, le=1000),
+    offset: int = Query(default=0, ge=0),
+) -> list[dict]:
+    clauses: list[str] = []
+    parameters: list = []
+    if activation_label:
+        clauses.append("list_contains(string_split(activation_labels, ','), ?)")
+        parameters.append(activation_label)
+    if ticker:
+        clauses.append("ticker = ?")
+        parameters.append(ticker.upper())
+    if complete_horizon is not None:
+        clauses.append("complete_horizon = ?")
+        parameters.append(complete_horizon)
+    where = " WHERE " + " AND ".join(clauses) if clauses else ""
+    parameters.extend([limit, offset])
+    return _query(
+        f"SELECT * FROM read_parquet('{_path('activation_case_index')}'){where} "
+        "ORDER BY anchor_date DESC, ticker LIMIT ? OFFSET ?",
+        parameters,
+    )
+
+
+def _context(ticker: str, anchor_date: str) -> list[dict]:
+    return _query(
+        f"""
+        WITH ordered AS (
+          SELECT ticker, date, o, h, l, c, v,
+                 o_split_normalized, h_split_normalized,
+                 l_split_normalized, c_split_normalized,
+                 analysis_eligible, quality_state,
+                 is_red_candle, is_lower_close, is_lower_high,
+                 row_number() OVER (PARTITION BY ticker ORDER BY date) AS rn
+          FROM read_parquet('{_path('session_observables')}')
+          WHERE ticker = ?
+        ), anchor AS (
+          SELECT rn AS anchor_rn FROM ordered WHERE date = ?
+        )
+        SELECT o.ticker, o.date, o.o, o.h, o.l, o.c, o.v,
+               o.o_split_normalized, o.h_split_normalized,
+               o.l_split_normalized, o.c_split_normalized,
+               o.analysis_eligible, o.quality_state,
+               o.is_red_candle, o.is_lower_close, o.is_lower_high,
+               CAST(o.rn - a.anchor_rn AS INTEGER) AS relative_offset
+        FROM ordered o CROSS JOIN anchor a
+        WHERE o.rn BETWEEN a.anchor_rn - 120 AND a.anchor_rn + 60
+        ORDER BY o.rn
+        """,
+        [ticker, anchor_date],
+    )
+
+
+def _derive_outcomes(context: list[dict]) -> tuple[list[dict], list[dict], dict]:
+    window = [
+        row for row in context
+        if 0 <= int(row["relative_offset"]) <= 20 and bool(row["analysis_eligible"])
+    ]
+    if not window:
+        raise HTTPException(status_code=500, detail="Activation anchor has no eligible window")
+    anchor = window[0]
+    anchor_close = float(anchor["c_split_normalized"])
+    anchor_high = float(anchor["h_split_normalized"])
+    running_high = float("-inf")
+    trajectory: list[dict] = []
+    for row in window:
+        high = float(row["h_split_normalized"])
+        close = float(row["c_split_normalized"])
+        is_new_high = high > running_high
+        running_high = max(running_high, high)
+        trajectory.append(
+            {
+                **row,
+                "offset_session": int(row["relative_offset"]),
+                "close_from_anchor_pct": close / anchor_close - 1.0,
+                "high_from_anchor_pct": high / anchor_high - 1.0,
+                "running_episode_high": running_high,
+                "drawdown_from_running_high_pct": close / running_high - 1.0,
+                "is_new_episode_high": is_new_high,
+                "knowledge_role": "outcome",
+            }
+        )
+
+    peak = max(trajectory, key=lambda row: float(row["h_split_normalized"]))
+    events = [
+        {
+            "event_label": "horizon_peak",
+            "event_date": peak["date"],
+            "offset_session": peak["offset_session"],
+            "knowledge_role": "outcome",
+        }
+    ]
+    definitions = [
+        ("first_red_candle", lambda row: bool(row["is_red_candle"]), 0),
+        ("first_red_candle_after_d0", lambda row: bool(row["is_red_candle"]), 1),
+        ("first_lower_close", lambda row: bool(row["is_lower_close"]), 0),
+        ("first_lower_high", lambda row: bool(row["is_lower_high"]), 0),
+        ("first_day_without_new_episode_high", lambda row: not bool(row["is_new_episode_high"]), 1),
+    ]
+    for label, condition, minimum_offset in definitions:
+        match = next(
+            (row for row in trajectory if row["offset_session"] >= minimum_offset and condition(row)),
+            None,
+        )
+        if match:
+            events.append(
+                {
+                    "event_label": label,
+                    "event_date": match["date"],
+                    "offset_session": match["offset_session"],
+                    "knowledge_role": "outcome",
+                }
+            )
+    summary = {
+        "observed_sessions": len(trajectory),
+        "complete_horizon": len(trajectory) == 21,
+        "right_censored": len(trajectory) != 21,
+        "horizon_peak_date": peak["date"],
+        "horizon_peak_offset": peak["offset_session"],
+    }
+    return trajectory, events, summary
+
+
+@app.get("/api/cases/{activation_case_id}")
+def case_detail(activation_case_id: str) -> dict:
+    cases_found = _query(
+        f"SELECT * FROM read_parquet('{_path('activation_case_index')}') "
+        "WHERE activation_case_id = ?",
+        [activation_case_id],
+    )
+    if not cases_found:
+        raise HTTPException(status_code=404, detail="Activation case not found")
+    case = cases_found[0]
+    context = _context(case["ticker"], case["anchor_date"])
+    trajectory, events, summary = _derive_outcomes(context)
+    activations = _query(
+        f"SELECT activation_family, activation_label, observed_value, threshold "
+        f"FROM read_parquet('{_path('activation_labels')}') WHERE ticker = ? AND date = ? "
+        "ORDER BY activation_family, activation_label",
+        [case["ticker"], case["anchor_date"]],
+    )
+    with sqlite3.connect(ANNOTATION_DB) as con:
+        con.row_factory = sqlite3.Row
+        notes = [
+            dict(row)
+            for row in con.execute(
+                "SELECT id, episode_id, note, tags, created_at FROM annotations "
+                "WHERE episode_id=? ORDER BY id DESC",
+                [activation_case_id],
+            )
+        ]
+    for note in notes:
+        note["tags"] = json.loads(note["tags"])
+    episode_like = {
+        "episode_id": activation_case_id,
+        "ticker": case["ticker"],
+        "anchor_date": case["anchor_date"],
+        **summary,
+    }
+    return {
+        "episode": episode_like,
+        "context": context,
+        "trajectory": trajectory,
+        "events": events,
+        "activations": activations,
+        "annotations": notes,
+    }
+
+
+@app.post("/api/annotations")
+def add_annotation(payload: AnnotationIn) -> dict:
+    created_at = datetime.now(timezone.utc).isoformat()
+    with sqlite3.connect(ANNOTATION_DB) as con:
+        cursor = con.execute(
+            "INSERT INTO annotations(episode_id,note,tags,created_at) VALUES(?,?,?,?)",
+            [payload.episode_id, payload.note, json.dumps(payload.tags), created_at],
+        )
+        annotation_id = cursor.lastrowid
+    return {"id": annotation_id, "episode_id": payload.episode_id, "created_at": created_at}
