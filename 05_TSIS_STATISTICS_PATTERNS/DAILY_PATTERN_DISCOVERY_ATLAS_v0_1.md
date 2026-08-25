@@ -253,6 +253,6 @@ certificador estructural devolviera PASS. Se conserva sin borrado bajo
 la app o un readout oficial. Los incidentes están registrados en
 `INCIDENT_REGISTER_v0_1.md`.
 
-La implementación corregida espera nuevos probes `20260825_probe_v0_1`. Solo si
+La implementación corregida espera nuevos probes `20260825_probe_v0_2`. Solo si
 los ocho pasan se autorizará `20260825_full_v0_1`. Hasta entonces el estado es
 `implementation_in_progress`, no `exploratory_report_ready`.

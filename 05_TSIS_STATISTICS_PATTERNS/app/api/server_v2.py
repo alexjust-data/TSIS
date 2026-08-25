@@ -18,7 +18,7 @@ DEFAULT_FULL = Path(
 )
 DEFAULT_PROBE = Path(
     r"C:\TSIS_Data\03_TSIS_Lab\04_experiments\EXP_DAILY_PATTERN_ATLAS_0001"
-    r"\runs\20260825_probe_v0_1\final"
+    r"\runs\20260825_probe_v0_2\final"
 )
 FINAL_ROOT = Path(
     os.environ.get("ATLAS_FINAL_ROOT", DEFAULT_FULL if DEFAULT_FULL.exists() else DEFAULT_PROBE)

@@ -101,3 +101,15 @@ Registro append-only de fallos de implementación y controles heredables.
 La auditoría posterior invalida su `PASS` estructural como cierre científico.
 El run se conserva íntegro bajo `runs/invalidated/` y no puede alimentar la app,
 un readout oficial ni una promoción.
+## INC-20260825-008 — Upstream activity date column mismatch
+
+- fase: terminal certification of `20260825_probe_v0_1`;
+- evidencia: los 8 runners, certificadores de shard y agregador finalizaron, pero
+  el gate de scope abortó con `Referenced column date not found`;
+- causa: la autoridad upstream usa `session_date_et`, no `date`;
+- impacto: probe terminal FAIL; no autorización full y ningún output promovido;
+- corrección: proyectar explícitamente `session_date_et AS date` y exigir
+  `family='ohlcv_daily'` en la reconciliación;
+- control heredable: los schemas upstream se consumen por nombres canónicos
+  auditados y el terminal certifica la familia esperada;
+- estado: corrected_pending_reprobe_all_shards.

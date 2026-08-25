@@ -20,7 +20,9 @@ def certify_exact_scope_and_sources(
             con.execute(
                 f"""
                 SELECT count(*) FROM (
-                  SELECT ticker, date FROM read_parquet('{activity}')
+                  SELECT ticker, session_date_et AS date
+                  FROM read_parquet('{activity}')
+                  WHERE family='ohlcv_daily'
                   EXCEPT
                   SELECT ticker, date FROM read_parquet('{sessions}')
                 )
@@ -33,7 +35,9 @@ def certify_exact_scope_and_sources(
                 SELECT count(*) FROM (
                   SELECT ticker, date FROM read_parquet('{sessions}')
                   EXCEPT
-                  SELECT ticker, date FROM read_parquet('{activity}')
+                  SELECT ticker, session_date_et AS date
+                  FROM read_parquet('{activity}')
+                  WHERE family='ohlcv_daily'
                 )
                 """
             ).fetchone()[0]

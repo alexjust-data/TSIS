@@ -6,7 +6,7 @@ calcula señales ni modifica el censo. La API escucha solo en `127.0.0.1`.
 ## Requisito
 
 El lanzador selecciona `20260825_full_v0_1` si existe; de lo contrario usa
-`20260825_probe_v0_1`. Si ninguno contiene certificación `pass`, la app no debe
+`20260825_probe_v0_2`. Si ninguno contiene certificación `pass`, la app no debe
 presentarse como válida.
 
 ## Inicio

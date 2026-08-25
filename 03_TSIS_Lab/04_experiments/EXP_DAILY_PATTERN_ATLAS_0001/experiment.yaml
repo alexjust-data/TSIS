@@ -140,6 +140,10 @@ execution_history:
       - incomplete_lineage
       - future_split_factor_in_observable_output
 current_execution:
-  probe_run_id: 20260825_probe_v0_1
+  probe_run_id: 20260825_probe_v0_2
+  failed_probe_runs:
+    - run_id: 20260825_probe_v0_1
+      status: fail
+      incident: INC-20260825-008
   full_run_id: 20260825_full_v0_1
   status: pending_production_equivalent_probe
