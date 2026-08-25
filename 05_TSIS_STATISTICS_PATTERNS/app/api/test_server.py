@@ -68,6 +68,23 @@ def test_drilldown_reaches_full_ticker_lifetime_and_selected_occurrences() -> No
     assert payload["lifetime_summary"]["observed_sessions"] == len(payload["context"])
     assert payload["lifetime_summary"]["first_observed_date"] == payload["context"][0]["date"]
     assert payload["lifetime_summary"]["last_observed_date"] == payload["context"][-1]["date"]
+    assert payload["adjusted_context"]
+    assert payload["adjusted_lifetime_summary"]["price_view"] == "daily_adjusted_v0_1"
+    assert payload["adjusted_lifetime_summary"]["observed_sessions"] == len(
+        payload["adjusted_context"]
+    )
+    assert payload["adjusted_context"][0]["date"] == payload["context"][0]["date"]
+    assert payload["adjusted_context"][-1]["date"] == payload["context"][-1]["date"]
+    assert all(row["ticker"] == case["ticker"] for row in payload["adjusted_context"])
+    assert {
+        "o_adjusted",
+        "h_adjusted",
+        "l_adjusted",
+        "c_adjusted",
+        "v",
+        "chart_eligible",
+    } <= set(payload["adjusted_context"][0])
+    assert "offset_session" not in payload["adjusted_context"][0]
     assert any(row["relative_offset"] == 0 for row in payload["context"])
     assert payload["occurrences"]
     assert all(row["activation_label"] == selected_label for row in payload["occurrences"])

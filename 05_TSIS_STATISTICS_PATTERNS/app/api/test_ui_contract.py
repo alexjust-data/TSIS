@@ -32,3 +32,22 @@ def test_case_ui_links_labels_to_full_lifetime_chart() -> None:
     assert "position: 'aboveBar'" in chart
     assert "Vida completa" in chart
     assert "Centrar D0" in chart
+
+
+def test_adjusted_comparison_chart_has_no_statistical_overlays() -> None:
+    atlas = (APP_ROOT / "app" / "AtlasV2.tsx").read_text(encoding="utf-8")
+    chart = (APP_ROOT / "app" / "AdjustedTradingChart.tsx").read_text(
+        encoding="utf-8"
+    )
+
+    assert "<AdjustedTradingChart rows={detail.adjusted_context} />" in atlas
+    assert "Mismo ticker y mismo periodo" in atlas
+    assert "o_adjusted" in chart
+    assert "h_adjusted" in chart
+    assert "l_adjusted" in chart
+    assert "c_adjusted" in chart
+    assert "HistogramSeries" in chart
+    assert "chart.timeScale().fitContent()" in chart
+    assert "createSeriesMarkers" not in chart
+    assert "occurrences" not in chart
+    assert "anchorDate" not in chart

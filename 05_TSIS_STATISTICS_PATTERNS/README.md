@@ -47,3 +47,10 @@ muestra toda la vida daily disponible del ticker, volumen inferior y todas las
 ocurrencias de la activación elegida; sus etiquetas D0 son controles enlazados.
 El gráfico permite zoom con rueda, desplazamiento con arrastre, cursor OHLCV,
 vista de vida completa, recentrado D0 y marcas fuera de las mechas.
+
+Debajo se muestra un segundo gráfico de comparación para el mismo ticker y los
+mismos límites temporales. Lee directamente
+`G:/TSIS/data/ohlcv_daily_adjusted` y usa `o_adjusted`, `h_adjusted`,
+`l_adjusted` y `c_adjusted` (`daily_adjusted_v0_1`, splits + dividendos), con
+volumen pero sin D0, activaciones, eventos ni estadísticas. Esta vista no
+recalcula ni sustituye el censo certificado.

@@ -16,3 +16,10 @@ Endpoints principales: `/api/meta`, `/api/labels`, `/api/activation-catalog`,
 `/api/cases/{activation_case_id}`. El detalle acepta `activation_label`, devuelve
 la vida completa disponible del ticker y todas las ocurrencias de esa etiqueta;
 los agregados retrospectivos siguen limitados al horizonte D0..D+20.
+
+El detalle añade `adjusted_context` y `adjusted_lifetime_summary`. Estos campos
+leen directamente la raíz configurable `ATLAS_ADJUSTED_DAILY_ROOT` (por defecto
+`G:/TSIS/data/ohlcv_daily_adjusted`) entre las mismas fechas de la vida
+certificada del ticker. Solo exponen OHLC `*_adjusted`, volumen, `materialized_price_view` y
+elegibilidad de chart; no incluyen
+offsets, activaciones, eventos ni outcomes y no alteran los agregados.

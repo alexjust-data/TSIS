@@ -34,7 +34,9 @@ riesgo/recompensa, significancia o causalidad.
 Autoridades:
 
 - `G:/TSIS/data/ohlcv_daily`: evidencia OHLCV raw;
-- `G:/TSIS/data/ohlcv_daily_adjusted`: vista derivada split-normalized;
+- `G:/TSIS/data/ohlcv_daily_adjusted`: vista derivada que conserva columnas
+  split-normalized para el censo y columnas adjusted canónicas para continuidad
+  económica (splits + dividendos);
 - `ohlcv_daily_session_activity.parquet`: membresía exacta ticker-fecha;
 - manifest cerrado de la auditoría upstream.
 
@@ -209,6 +211,15 @@ El gráfico individual usa TradingView Lightweight Charts:
 - D0 diferenciado dentro de esas ocurrencias;
 - outcomes D0..D+20 agrupados por fecha y marcados encima de la vela;
 - autoescala y márgenes que mantienen las marcas fuera de las mechas.
+
+Inmediatamente después se ofrece un segundo gráfico de contraste, con el mismo
+ticker y los mismos límites de vida observada. Lee de forma directa y read-only
+las columnas `o_adjusted`, `h_adjusted`, `l_adjusted`, `c_adjusted` y `v` de
+`G:/TSIS/data/ohlcv_daily_adjusted`. No incluye D0, activaciones, eventos,
+outcomes ni estadísticas y no modifica ni recalcula el run certificado. Su rol
+es exclusivamente permitir inspección visual frente a una escala adjusted
+canónica; una discrepancia observada no se promociona como hallazgo sin una
+auditoría de Data Foundation.
 
 La app no debe presentarse como válida si `/api/meta` no devuelve
 `status: pass` para el run que consume.

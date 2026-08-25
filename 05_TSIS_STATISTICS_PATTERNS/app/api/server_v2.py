@@ -16,6 +16,9 @@ EXPERIMENT_RUNS_ROOT = Path(
     r"C:\TSIS_Data\03_TSIS_Lab\04_experiments\EXP_DAILY_PATTERN_ATLAS_0001"
     r"\runs"
 )
+ADJUSTED_DAILY_ROOT = Path(
+    os.environ.get("ATLAS_ADJUSTED_DAILY_ROOT", r"G:\TSIS\data\ohlcv_daily_adjusted")
+)
 
 ACTIVATION_FAMILY_CATALOG = [
     {
@@ -215,7 +218,7 @@ class AnnotationIn(BaseModel):
     tags: list[str] = Field(default_factory=list, max_length=20)
 
 
-app = FastAPI(title="TSIS Daily Pattern Atlas", version="0.3.0")
+app = FastAPI(title="TSIS Daily Pattern Atlas", version="0.4.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
@@ -372,6 +375,28 @@ def _context(ticker: str, anchor_date: str) -> list[dict]:
     )
 
 
+def _adjusted_context(ticker: str, start_date: str, end_date: str) -> list[dict]:
+    ticker_root = ADJUSTED_DAILY_ROOT / f"ticker={ticker}"
+    if not ticker_root.is_dir():
+        return []
+    parquet_glob = (ticker_root / "year=*" / "*.parquet").as_posix()
+    return _query(
+        """
+        SELECT ticker, date, o_adjusted, h_adjusted, l_adjusted, c_adjusted, v,
+               materialized_price_view,
+               o_adjusted > 0 AND h_adjusted > 0 AND l_adjusted > 0
+                 AND c_adjusted > 0 AND v >= 0
+                 AND h_adjusted >= greatest(o_adjusted, c_adjusted)
+                 AND l_adjusted <= least(o_adjusted, c_adjusted)
+                 AND h_adjusted >= l_adjusted AS chart_eligible
+        FROM read_parquet(?, hive_partitioning=true)
+        WHERE ticker = ? AND date BETWEEN ? AND ?
+        ORDER BY date
+        """,
+        [parquet_glob, ticker, start_date, end_date],
+    )
+
+
 def _derive_outcomes(context: list[dict]) -> tuple[list[dict], list[dict], dict]:
     window = [
         row for row in context
@@ -456,6 +481,15 @@ def case_detail(
         raise HTTPException(status_code=404, detail="Activation case not found")
     case = cases_found[0]
     context = _context(case["ticker"], case["anchor_date"])
+    adjusted_context = (
+        _adjusted_context(
+            case["ticker"],
+            context[0]["date"],
+            context[-1]["date"],
+        )
+        if context
+        else []
+    )
     trajectory, events, summary = _derive_outcomes(context)
     activations = _query(
         f"SELECT activation_family, activation_label, observed_value, threshold "
@@ -494,10 +528,22 @@ def case_detail(
         "observed_sessions": len(context),
         "eligible_sessions": sum(bool(row["analysis_eligible"]) for row in context),
     }
+    adjusted_lifetime_summary = {
+        "source_root": str(ADJUSTED_DAILY_ROOT),
+        "price_view": (
+            adjusted_context[0]["materialized_price_view"] if adjusted_context else None
+        ),
+        "first_observed_date": adjusted_context[0]["date"] if adjusted_context else None,
+        "last_observed_date": adjusted_context[-1]["date"] if adjusted_context else None,
+        "observed_sessions": len(adjusted_context),
+        "eligible_sessions": sum(bool(row["chart_eligible"]) for row in adjusted_context),
+    }
     return {
         "episode": episode_like,
         "context": context,
         "lifetime_summary": lifetime_summary,
+        "adjusted_context": adjusted_context,
+        "adjusted_lifetime_summary": adjusted_lifetime_summary,
         "trajectory": trajectory,
         "events": events,
         "activations": activations,

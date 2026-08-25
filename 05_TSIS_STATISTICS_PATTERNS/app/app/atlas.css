@@ -41,3 +41,13 @@
 .chart-selection strong{color:var(--ink)}
 .chart-toolbar aside{display:flex;gap:7px;flex-shrink:0}
 @media(max-width:620px){.cohort-title h2{align-items:flex-start;flex-direction:column;gap:5px}.chart-toolbar aside{width:100%}.chart-toolbar aside button{flex:1}.sub{align-items:flex-start;flex-direction:column;gap:7px}}
+
+/* atlas-adjusted-comparison-v0-4 */
+.adjusted-comparison{margin-top:34px;padding-top:28px;border-top:1px solid var(--line)}
+.adjusted-comparison>header{display:grid;gap:7px;margin-bottom:12px}
+.adjusted-comparison>header small{font:700 10px monospace;letter-spacing:.14em;color:var(--muted)}
+.adjusted-comparison>header h3{margin:0;font-size:18px;letter-spacing:-.025em}
+.adjusted-comparison>header p{margin:0;color:var(--muted);font-size:11px;line-height:1.65}
+.adjusted-comparison>header code{overflow-wrap:anywhere;color:#53616b;font:10px/1.55 monospace}
+.adjusted-chart{margin-top:0;box-shadow:0 0 0 1px #5c7180}
+.adjusted-unavailable{padding:18px;border:1px dashed var(--line);border-radius:9px;color:var(--muted)}

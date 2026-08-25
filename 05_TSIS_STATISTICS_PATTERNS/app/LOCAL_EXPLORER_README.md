@@ -3,6 +3,13 @@
 Vista local de los Parquet certificados de `EXP_DAILY_PATTERN_ATLAS_0001`. No
 calcula señales ni modifica el censo. La API escucha solo en `127.0.0.1`.
 
+El detalle presenta dos visores: el primero conserva las velas
+`split_normalized`, activaciones y outcomes del run certificado; el segundo lee
+en vivo `G:/TSIS/data/ohlcv_daily_adjusted` y representa OHLC `adjusted`
+(splits + dividendos) y volumen del mismo ticker y periodo, sin overlays ni
+estadísticas. El segundo visor es únicamente una comparación visual y no
+realimenta el censo.
+
 ## Requisito
 
 El lanzador selecciona el full más reciente solo si contiene certificación
@@ -31,7 +38,9 @@ Abrir `http://localhost:3000`.
    ocurrencias en la vida completa del ticker;
 8. alternar entre `Vida completa` y `Centrar D0`;
 9. redimensionar los paneles de precio y volumen si se desea;
-10. guardar notas humanas separadas del resultado calculado.
+10. comparar debajo la vista `daily_adjusted_v0_1`, que comparte ticker y
+    periodo pero no contiene ninguna marca estadística;
+11. guardar notas humanas separadas del resultado calculado.
 
 El total de casos y tickers de la cohorte se presenta en la misma línea que la
 activación. `Mostrando N ... de TOTAL` distingue la página visible del censo

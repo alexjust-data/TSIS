@@ -2,6 +2,11 @@
 
 ## 2026-08-25
 
+- Añadido debajo del visor estadístico un segundo gráfico OHLCV read-only para
+  el mismo ticker y periodo, alimentado directamente por
+  `G:/TSIS/data/ohlcv_daily_adjusted` con OHLC adjusted canónico y sin
+  activaciones, eventos, outcomes ni recálculo de estadísticas.
+
 - Ampliado el explorador local con catálogo visible de 5 familias y reconciliación
   exacta de sus 27 etiquetas materializadas.
 - Eliminada la mini-gráfica agregada `Trayectoria mediana` y aclarada la carga

@@ -6,6 +6,7 @@ import TradingChart, {
   ContextCandle,
   ContextEvent,
 } from './TradingChart';
+import AdjustedTradingChart, { AdjustedCandle } from './AdjustedTradingChart';
 
 const API = process.env.NEXT_PUBLIC_ATLAS_API ?? 'http://127.0.0.1:8765';
 const DEFAULT_LABEL = 'gap_ge_30pct';
@@ -97,6 +98,15 @@ interface CaseDetail {
     horizon_peak_offset: number;
   };
   context: ContextCandle[];
+  adjusted_context: AdjustedCandle[];
+  adjusted_lifetime_summary: {
+    source_root: string;
+    price_view: string | null;
+    first_observed_date: string | null;
+    last_observed_date: string | null;
+    observed_sessions: number;
+    eligible_sessions: number;
+  };
   lifetime_summary: {
     first_observed_date: string | null;
     last_observed_date: string | null;
@@ -474,6 +484,24 @@ export default function AtlasV2() {
                   </div>
                 ))}
               </div>
+              <section className="adjusted-comparison">
+                <header>
+                  <small>COMPARACIÓN VISUAL · SIN ESTADÍSTICAS</small>
+                  <h3>Precio adjusted (splits + dividendos)</h3>
+                  <p>
+                    Mismo ticker y mismo periodo. Fuente directa:{' '}
+                    <code>{detail.adjusted_lifetime_summary.source_root}</code>.
+                    No contiene D0, activaciones, eventos ni outcomes.
+                  </p>
+                </header>
+                {detail.adjusted_context.length > 0 ? (
+                  <AdjustedTradingChart rows={detail.adjusted_context} />
+                ) : (
+                  <p className="adjusted-unavailable">
+                    No hay velas adjusted disponibles para este ticker y periodo.
+                  </p>
+                )}
+              </section>
               <div className="details">
                 <section>
                   <h3>Lectura del caso</h3>
