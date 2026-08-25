@@ -98,6 +98,10 @@
     - src/tsis_statistics_patterns/orchestrate.py
     - src/tsis_statistics_patterns/features.py
     - tests/test_daily_atlas.py
+    - app/start_atlas_local.ps1
+    - app/api/server_v2.py
+    - app/api/test_run_selection.py
+    - ../../03_TSIS_Lab/04_experiments/EXP_DAILY_PATTERN_ATLAS_0001/FULL_RUN_CLOSEOUT_v0_1.md
     - INCIDENT_REGISTER_v0_1.md
     - CHANGELOG.md
   severity: critical
