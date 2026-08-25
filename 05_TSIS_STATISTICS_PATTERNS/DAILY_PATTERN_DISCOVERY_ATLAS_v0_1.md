@@ -114,8 +114,10 @@ tenga varias etiquetas. Para cada etiqueta, `cohort_statistics.parquet` resume
 el 100% de sus apariciones desde D0 hasta D+20. Las activaciones pueden solaparse
 porque la pregunta es qué ocurrió después de cada aparición.
 
-La app deriva la trayectoria individual desde las sesiones para mostrar hasta
-120 observaciones previas y 60 posteriores. Los agregados usan D0..D+20.
+La app deriva la trayectoria individual desde las sesiones para mostrar toda la
+vida daily disponible del ticker, desde su primera hasta su última observación.
+Para la etiqueta elegida marca todas sus apariciones en esa vida completa. Los
+agregados retrospectivos conservan exclusivamente el horizonte D0..D+20.
 
 ### 5.4 Eventos descriptivos de todas las activaciones
 
@@ -185,22 +187,27 @@ double intraday top, stops, ejecución y PnL.
 
 La aplicación vive dentro del módulo y solo escucha en localhost. Navegación:
 
-1. seleccionar una etiqueta;
-2. ver trayectoria mediana, dispersión, pico y first red day agregados;
-3. abrir cualquiera de los casos reales que forman la cifra;
-4. recorrer su historial daily con gráfico interactivo;
-5. guardar notas humanas separadas del censo.
+1. seleccionar cualquiera de las 27 etiquetas agrupadas en 5 familias;
+2. consultar en la propia web la definición, fórmula y cautela de cada familia;
+3. ver dispersión, pico y first red day agregados sobre todas las apariciones;
+4. distinguir el total censado de los 90 casos recientes cargados inicialmente;
+5. cargar más casos de forma progresiva y abrir cualquiera de ellos;
+6. recorrer toda la vida daily disponible del ticker con gráfico interactivo;
+7. pulsar cualquier etiqueta de D0 para cambiar de activación sin abandonar el
+   caso y marcar todas sus ocurrencias históricas;
+8. guardar notas humanas separadas del censo.
 
 El gráfico individual usa TradingView Lightweight Charts:
 
-- velas daily split-normalized;
+- velas daily split-normalized desde la primera hasta la última observación del
+  ticker;
 - panel de volumen inferior independiente y redimensionable;
 - cursor con fecha y OHLCV;
 - zoom con rueda y desplazamiento por arrastre;
-- 120 observaciones anteriores y 60 posteriores disponibles;
-- botón para recentrar D0;
-- D0 marcado debajo de la vela;
-- outcomes agrupados por fecha y marcados encima de la vela;
+- botones para ajustar la vida completa o recentrar D0;
+- todas las ocurrencias de la activación elegida marcadas debajo de las velas;
+- D0 diferenciado dentro de esas ocurrencias;
+- outcomes D0..D+20 agrupados por fecha y marcados encima de la vela;
 - autoescala y márgenes que mantienen las marcas fuera de las mechas.
 
 La app no debe presentarse como válida si `/api/meta` no devuelve

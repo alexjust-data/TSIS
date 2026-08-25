@@ -17,6 +17,98 @@ EXPERIMENT_RUNS_ROOT = Path(
     r"\runs"
 )
 
+ACTIVATION_FAMILY_CATALOG = [
+    {
+        "family": "close_advance",
+        "title": "Subida al cierre",
+        "definition": (
+            "Compara el cierre de D0 con el cierre de la sesión anterior. "
+            "Una sesión que supera varios umbrales conserva todas esas etiquetas."
+        ),
+        "formula": "(cierre D0 / cierre D-1) - 1",
+        "labels": [
+            "close_advance_ge_20pct",
+            "close_advance_ge_30pct",
+            "close_advance_ge_50pct",
+            "close_advance_ge_100pct",
+        ],
+        "caveat": "Describe una variación observada; no representa PnL ni una entrada.",
+    },
+    {
+        "family": "gap",
+        "title": "Gap de apertura",
+        "definition": (
+            "Compara la apertura de D0 con el cierre de la sesión anterior usando "
+            "precios normalizados por splits."
+        ),
+        "formula": "(apertura D0 / cierre D-1) - 1",
+        "labels": [
+            "gap_ge_10pct",
+            "gap_ge_20pct",
+            "gap_ge_30pct",
+            "gap_ge_50pct",
+            "gap_ge_75pct",
+            "gap_ge_100pct",
+            "gap_ge_150pct",
+            "gap_ge_200pct",
+            "gap_ge_300pct",
+        ],
+        "caveat": "Los umbrales son acumulativos: un gap de 120% cumple 10%, 20%, 30%, 50%, 75% y 100%.",
+    },
+    {
+        "family": "range",
+        "title": "Rango diario",
+        "definition": (
+            "Mide la amplitud entre el máximo y el mínimo de D0 respecto al cierre "
+            "de la sesión anterior."
+        ),
+        "formula": "(máximo D0 - mínimo D0) / cierre D-1",
+        "labels": [
+            "range_ge_20pct",
+            "range_ge_30pct",
+            "range_ge_50pct",
+            "range_ge_100pct",
+        ],
+        "caveat": "No indica la dirección de la vela; solo su amplitud relativa.",
+    },
+    {
+        "family": "relative_volume",
+        "title": "Volumen relativo",
+        "definition": (
+            "Compara el volumen de D0 con la mediana de las 20 sesiones anteriores. "
+            "Requiere esas 20 observaciones previas."
+        ),
+        "formula": "volumen D0 / mediana(volumen D-20 … D-1)",
+        "labels": [
+            "relative_volume_ge_3x",
+            "relative_volume_ge_5x",
+            "relative_volume_ge_10x",
+            "relative_volume_ge_20x",
+        ],
+        "caveat": "Es actividad relativa en daily; no demuestra rotación real del float.",
+    },
+    {
+        "family": "resistance_breakout",
+        "title": "Ruptura de máximo previo",
+        "definition": (
+            "El máximo de D0 supera el mayor máximo de una ventana formada solo por "
+            "sesiones anteriores."
+        ),
+        "formula": "máximo D0 > máximo(máximos previos de la ventana)",
+        "labels": [
+            "high_breakout_previous_day",
+            "high_breakout_previous_week",
+            "high_breakout_previous_month",
+            "high_breakout_previous_quarter",
+            "high_breakout_previous_half_year",
+            "high_breakout_previous_year",
+        ],
+        "caveat": (
+            "Las ventanas son 1, 5, 21, 63, 126 y 252 observaciones daily. "
+            "Se exige ruptura por el máximo, no por el cierre."
+        ),
+    },
+]
 
 def _terminal_pass(final_root: Path) -> dict | None:
     certification_path = final_root / "terminal_certification.json"
@@ -123,7 +215,7 @@ class AnnotationIn(BaseModel):
     tags: list[str] = Field(default_factory=list, max_length=20)
 
 
-app = FastAPI(title="TSIS Daily Pattern Atlas", version="0.2.0")
+app = FastAPI(title="TSIS Daily Pattern Atlas", version="0.3.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
@@ -171,6 +263,19 @@ def labels() -> list[dict]:
         GROUP BY 1,2 ORDER BY 1,2
         """
     )
+
+
+@app.get("/api/activation-catalog")
+def activation_catalog() -> dict:
+    return {
+        "families": ACTIVATION_FAMILY_CATALOG,
+        "family_count": len(ACTIVATION_FAMILY_CATALOG),
+        "label_count": sum(len(item["labels"]) for item in ACTIVATION_FAMILY_CATALOG),
+        "semantics": (
+            "Todas las etiquetas son observables descriptivos de D0. Los umbrales "
+            "de una misma familia son acumulativos y no son señales de trading."
+        ),
+    }
 
 
 @app.get("/api/cohorts")
@@ -261,7 +366,6 @@ def _context(ticker: str, anchor_date: str) -> list[dict]:
                o.is_red_candle, o.is_lower_close, o.is_lower_high,
                CAST(o.rn - a.anchor_rn AS INTEGER) AS relative_offset
         FROM ordered o CROSS JOIN anchor a
-        WHERE o.rn BETWEEN a.anchor_rn - 120 AND a.anchor_rn + 60
         ORDER BY o.rn
         """,
         [ticker, anchor_date],
@@ -339,7 +443,10 @@ def _derive_outcomes(context: list[dict]) -> tuple[list[dict], list[dict], dict]
 
 
 @app.get("/api/cases/{activation_case_id}")
-def case_detail(activation_case_id: str) -> dict:
+def case_detail(
+    activation_case_id: str,
+    activation_label: str | None = None,
+) -> dict:
     cases_found = _query(
         f"SELECT * FROM read_parquet('{_path('activation_case_index')}') "
         "WHERE activation_case_id = ?",
@@ -355,6 +462,13 @@ def case_detail(activation_case_id: str) -> dict:
         f"FROM read_parquet('{_path('activation_labels')}') WHERE ticker = ? AND date = ? "
         "ORDER BY activation_family, activation_label",
         [case["ticker"], case["anchor_date"]],
+    )
+    selected_activation_label = activation_label or str(case["activation_labels"]).split(",")[0]
+    occurrences = _query(
+        f"SELECT date, activation_family, activation_label, observed_value, threshold "
+        f"FROM read_parquet('{_path('activation_labels')}') WHERE ticker = ? "
+        "AND activation_label = ? ORDER BY date",
+        [case["ticker"], selected_activation_label],
     )
     with sqlite3.connect(ANNOTATION_DB) as con:
         con.row_factory = sqlite3.Row
@@ -374,12 +488,21 @@ def case_detail(activation_case_id: str) -> dict:
         "anchor_date": case["anchor_date"],
         **summary,
     }
+    lifetime_summary = {
+        "first_observed_date": context[0]["date"] if context else None,
+        "last_observed_date": context[-1]["date"] if context else None,
+        "observed_sessions": len(context),
+        "eligible_sessions": sum(bool(row["analysis_eligible"]) for row in context),
+    }
     return {
         "episode": episode_like,
         "context": context,
+        "lifetime_summary": lifetime_summary,
         "trajectory": trajectory,
         "events": events,
         "activations": activations,
+        "selected_activation_label": selected_activation_label,
+        "occurrences": occurrences,
         "annotations": notes,
     }
 

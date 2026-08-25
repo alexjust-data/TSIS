@@ -2,6 +2,14 @@
 
 ## 2026-08-25
 
+- Ampliado el explorador local con catálogo visible de 5 familias y reconciliación
+  exacta de sus 27 etiquetas materializadas.
+- Eliminada la mini-gráfica agregada `Trayectoria mediana` y aclarada la carga
+  inicial de 90 casos recientes frente al total censado, con paginación incremental.
+- Enlazadas las etiquetas D0 al gráfico: cada selección conserva el caso, cambia
+  la cohorte activa y marca todas sus ocurrencias en la vida daily del ticker.
+- Sustituido el contexto fijo -120/+60 por toda la historia disponible, manteniendo
+  separados los outcomes retrospectivos D0..D+20 y el panel inferior de volumen.
 - Invalidado y aislado `20260824_full_v0_1` tras auditoría científica posterior.
 - Corregida la exclusión de filas inválidas en outcomes, peaks y running highs.
 - Normalizado el schema físico OHLCV y eliminado `future_split_factor` de X.

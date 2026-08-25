@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type {
   CandlestickData,
   HistogramData,
@@ -28,6 +28,14 @@ export interface ContextEvent {
   offset_session: number;
 }
 
+export interface ActivationOccurrence {
+  date: string;
+  activation_family: string;
+  activation_label: string;
+  observed_value: number;
+  threshold: number;
+}
+
 interface HoverState {
   date: string;
   open: number;
@@ -49,21 +57,29 @@ const shortEvent: Record<string, string> = {
 const day = (value: string): Time => value.slice(0, 10) as Time;
 const number = (value: number): string =>
   new Intl.NumberFormat('es-ES', { maximumFractionDigits: 4 }).format(value);
+const count = (value: number): string => new Intl.NumberFormat('es-ES').format(value);
 
 export default function TradingChart({
   rows,
   events,
+  occurrences,
+  selectedLabel,
+  anchorDate,
 }: {
   rows: ContextCandle[];
   events: ContextEvent[];
+  occurrences: ActivationOccurrence[];
+  selectedLabel: string;
+  anchorDate: string;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const chartRef = useRef<IChartApi | null>(null);
   const [hover, setHover] = useState<HoverState | null>(null);
+  const validRows = useMemo(() => rows.filter((row) => row.analysis_eligible), [rows]);
 
   useEffect(() => {
     const container = containerRef.current;
-    if (!container || rows.length === 0) return;
+    if (!container || validRows.length === 0) return;
     let disposed = false;
     let observer: ResizeObserver | undefined;
 
@@ -96,7 +112,7 @@ export default function TradingChart({
             secondsVisible: false,
             rightOffset: 6,
             barSpacing: 8,
-            minBarSpacing: 2,
+            minBarSpacing: 0.5,
             lockVisibleTimeRangeOnResize: true,
           },
           rightPriceScale: { borderColor: '#3a444b' },
@@ -113,7 +129,7 @@ export default function TradingChart({
           borderVisible: false,
           priceLineVisible: false,
         });
-        candles.priceScale().applyOptions({ scaleMargins: { top: 0.16, bottom: 0.08 } });
+        candles.priceScale().applyOptions({ scaleMargins: { top: 0.2, bottom: 0.14 } });
 
         const volume = chart.addSeries(
           HistogramSeries,
@@ -122,7 +138,6 @@ export default function TradingChart({
         );
         volume.priceScale().applyOptions({ scaleMargins: { top: 0.12, bottom: 0 } });
 
-        const validRows = rows.filter((row) => row.analysis_eligible);
         const candleData: CandlestickData<Time>[] = validRows.map((row) => ({
           time: day(row.date),
           open: Number(row.o_split_normalized),
@@ -141,21 +156,36 @@ export default function TradingChart({
         candles.setData(candleData);
         volume.setData(volumeData);
 
-        const grouped = new Map<string, string[]>();
+        const groupedEvents = new Map<string, string[]>();
         for (const event of events) {
           const key = event.event_date.slice(0, 10);
-          grouped.set(key, [...(grouped.get(key) ?? []), shortEvent[event.event_label] ?? event.event_label]);
+          groupedEvents.set(key, [
+            ...(groupedEvents.get(key) ?? []),
+            shortEvent[event.event_label] ?? event.event_label,
+          ]);
         }
+        const anchorDay = anchorDate.slice(0, 10);
+        const occurrenceDays = new Set(occurrences.map((row) => row.date.slice(0, 10)));
         const markers: SeriesMarker<Time>[] = [
-          {
-            time: day(rows.find((row) => row.relative_offset === 0)?.date ?? rows[0].date),
-            position: 'belowBar',
-            color: '#4fa3d1',
-            shape: 'arrowUp',
-            text: 'D0',
-            size: 1,
-          },
-          ...[...grouped.entries()].map(([date, labels]) => ({
+          ...[...occurrenceDays].map((date) => ({
+            time: day(date),
+            position: 'belowBar' as const,
+            color: date === anchorDay ? '#4fa3d1' : '#4cc9b0',
+            shape: date === anchorDay ? ('arrowUp' as const) : ('circle' as const),
+            text: date === anchorDay ? 'D0' : '',
+            size: date === anchorDay ? 1.2 : 0.55,
+          })),
+          ...(!occurrenceDays.has(anchorDay)
+            ? [{
+                time: day(anchorDay),
+                position: 'belowBar' as const,
+                color: '#4fa3d1',
+                shape: 'arrowUp' as const,
+                text: 'D0',
+                size: 1.2,
+              }]
+            : []),
+          ...[...groupedEvents.entries()].map(([date, labels]) => ({
             time: day(date),
             position: 'aboveBar' as const,
             color: labels.includes('PEAK') ? '#e1b642' : '#9b87df',
@@ -185,11 +215,7 @@ export default function TradingChart({
           });
         });
 
-        const anchorIndex = Math.max(0, rows.findIndex((row) => row.relative_offset === 0));
-        chart.timeScale().setVisibleLogicalRange({
-          from: Math.max(-0.5, anchorIndex - 55),
-          to: Math.min(rows.length - 0.5, anchorIndex + 30),
-        });
+        chart.timeScale().fitContent();
         requestAnimationFrame(() => {
           const panes = chart.panes();
           if (panes[0]) panes[0].setHeight(470);
@@ -209,18 +235,23 @@ export default function TradingChart({
       chartRef.current?.remove();
       chartRef.current = null;
     };
-  }, [rows, events]);
+  }, [anchorDate, events, occurrences, selectedLabel, validRows]);
 
-  const reset = () => {
-    const anchorIndex = Math.max(0, rows.findIndex((row) => row.relative_offset === 0));
+  const centerD0 = () => {
+    const anchorIndex = Math.max(
+      0,
+      validRows.findIndex((row) => row.date.slice(0, 10) === anchorDate.slice(0, 10)),
+    );
     chartRef.current?.timeScale().setVisibleLogicalRange({
       from: Math.max(-0.5, anchorIndex - 55),
-      to: Math.min(rows.length - 0.5, anchorIndex + 30),
+      to: Math.min(validRows.length - 0.5, anchorIndex + 30),
     });
   };
 
+  const fitLifetime = () => chartRef.current?.timeScale().fitContent();
+
   return (
-    <section className="trading-chart" aria-label="Gráfico daily interactivo con volumen">
+    <section className="trading-chart" aria-label="Gráfico daily interactivo de vida completa con volumen">
       <header className="chart-toolbar">
         <div aria-live="polite">
           {hover ? (
@@ -236,10 +267,16 @@ export default function TradingChart({
             <span>Mueve el ratón para consultar OHLCV · rueda para zoom · arrastra para desplazarte</span>
           )}
         </div>
-        <button type="button" onClick={reset}>Recentrar D0</button>
+        <aside>
+          <button type="button" onClick={fitLifetime}>Vida completa</button>
+          <button type="button" onClick={centerD0}>Centrar D0</button>
+        </aside>
       </header>
       <div ref={containerRef} className="trading-chart-canvas" />
-      <footer>120 observaciones anteriores · 60 posteriores · Charts by TradingView Lightweight Charts™</footer>
+      <footer>
+        {count(validRows.length)} velas elegibles · {validRows[0]?.date.slice(0, 10)}–{validRows.at(-1)?.date.slice(0, 10)} ·{' '}
+        {count(occurrences.length)} marcas de {selectedLabel} · volumen inferior · Charts by TradingView Lightweight Charts™
+      </footer>
     </section>
   );
 }

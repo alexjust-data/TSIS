@@ -21,20 +21,23 @@ Abrir `http://localhost:3000`.
 
 ## Uso
 
-1. seleccionar una etiqueta de activación;
-2. revisar trayectoria mediana, pico y first red day sobre todas sus apariciones;
-3. abrir un caso real;
-4. usar rueda para zoom y arrastrar para recorrer 120 observaciones anteriores y
-   60 posteriores;
+1. seleccionar una de las 27 etiquetas, agrupadas en 5 familias;
+2. consultar en el lateral la definición, fórmula y cautela de la familia;
+3. revisar los agregados sobre todas sus apariciones;
+4. abrir uno de los 90 casos recientes iniciales o cargar páginas adicionales;
 5. mover el cursor para consultar fecha, OHLC y volumen;
-6. redimensionar los paneles de precio y volumen si se desea;
-7. pulsar `Recentrar D0` para volver al evento;
-8. guardar notas humanas separadas del resultado calculado.
+6. usar rueda para zoom y arrastrar para recorrer toda la vida daily disponible;
+7. pulsar una etiqueta de D0 para cambiar la activación y marcar todas sus
+   ocurrencias en la vida completa del ticker;
+8. alternar entre `Vida completa` y `Centrar D0`;
+9. redimensionar los paneles de precio y volumen si se desea;
+10. guardar notas humanas separadas del resultado calculado.
 
-D0 se marca debajo de la vela. Los outcomes de la misma fecha se agrupan y se
-marcan por encima. La autoescala y los márgenes evitan superponer las marcas a
-las mechas. El panel inferior muestra volumen daily.
-
+El total de casos y tickers de la cohorte se presenta en la misma línea que la
+activación. `Mostrando N ... de TOTAL` distingue la página visible del censo
+completo. D0 y las ocurrencias se marcan debajo de la vela; los outcomes se
+agrupan por fecha y se marcan por encima. La autoescala y los márgenes evitan
+superponer las marcas a las mechas. El panel inferior muestra volumen daily.
 Las notas viven en `api/annotations.sqlite`, artefacto runtime local no
 gobernado.
 
