@@ -125,3 +125,42 @@ un readout oficial ni una promoción.
   procesos hijo, heartbeat latest/JSONL, log, monitor y final operativo;
 - control heredable: probe y full deben usar esta misma superficie operacional;
 - estado: corrected_reprobe_v0_3_pass_full_pending.
+## INC-20260825-010 — Full audit assumed one file per shard
+
+- fase: auditoría independiente posterior a `20260825_full_v0_1`;
+- evidencia: las cinco tablas tenían una única variante física de schema en
+  4.824 ficheros, pero el auditor devolvió `FAIL` porque comparaba el número de
+  ficheros con los 8 shards configurados;
+- causa: una aserción válida para el probe de ocho tickers se reutilizó en full,
+  donde cada ticker materializa un fichero por tabla;
+- impacto: falso negativo del auditor; las fórmulas, valores finitos, roles y
+  superficie operacional pasaron y el output de producción no fue alterado;
+- corrección: separar equivalencia de schema de cardinalidad física y validar
+  el número de parts contra el scope esperado del premanifest;
+- control heredable: el mismo auditor debe interpretar correctamente probes y
+  full runs usando su `mode` y `expected_scope` persistidos;
+- estado: open_pending_fix_and_reaudit.
+## Cierre de controles heredables — 20260825_full_v0_1
+
+- `INC-20260824-001` a `INC-20260825-009`: correcciones demostradas por
+  `20260825_probe_v0_3` y por el full terminal `PASS`;
+- `INC-20260825-010`: corregido con cardinalidad dependiente del modo,
+  regresión full/probe y suite 19/19 `PASS`;
+- repetición de auditoría independiente: `PASS` a
+  `2026-08-25T08:40:14.835475+00:00`;
+- evidencia: 12 fórmulas con error máximo 0, cinco tablas con 4.824/4.824 parts
+  y una única variante de schema, cero infinitos, roles y operación `PASS`;
+- estado colectivo: corrected_full_and_independent_reaudit_pass.
+## INC-20260825-011 — Dirty premanifest omitted affected paths
+
+- fase: second independent audit of `20260825_full_v0_1`;
+- evidencia: `git.dirty=true` y `dirty_path_count=7`, sin enumeración de rutas;
+- causa: `_git_state` persistía únicamente el booleano y el conteo global;
+- impacto: ambigüedad forense sobre si los cambios eran ejecutables o ajenos al
+  módulo; el run conserva commit, hashes de config/runner/upstream y PASS
+  numérico, por lo que la limitación no invalida su alcance exploratorio;
+- corrección: futuras ejecuciones persisten entradas porcelain, rutas y SHA-256
+  de esa representación de estado;
+- control heredable: todo premanifest dirty debe permitir identificar el scope
+  afectado sin depender de la conversación;
+- estado: current_run_declared_limitation_future_runner_corrected.

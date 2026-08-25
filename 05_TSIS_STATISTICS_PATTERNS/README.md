@@ -13,27 +13,33 @@ calcula PnL y no presenta frecuencias como probabilidades.
 - Motor: `src/tsis_statistics_patterns/`.
 - Explorador local: `app/`.
 - Tests: `tests/`.
+- Próxima optimización: `PRODUCTION_PERFORMANCE_OPTIMIZATION_PLAN_v0_1.md`.
 
 `00.MD` y `01.md` son borradores históricos, no contratos ejecutables.
 
 ## Estado
 
-`20260824_full_v0_1` está invalidado por auditoría posterior y aislado bajo
-`runs/invalidated/`; no alimenta la app. El probe gobernado v0.3 pasa en 8/8
-shards. La versión sigue en `implementation_in_progress` mientras se ejecuta y
-audita el nuevo censo completo `20260825_full_v0_1`.
+`20260825_full_v0_1` está en `exploratory_report_ready`: operación,
+certificación terminal y auditoría independiente terminaron en `pass`. Cubre
+4.824 tickers, 9.290.966 sesiones y 4.495.723 sesiones con al menos una
+activación. El readout vigente es
+`03_TSIS_Lab/04_experiments/EXP_DAILY_PATTERN_ATLAS_0001/FINAL_CENSUS_READOUT_v0_2.md`.
 
 La estadística principal usa todas las activaciones. Los episodios con cooldown
-son una vista secundaria de ciclos y se publican separadamente.
+son una vista secundaria de ciclos y se publican separadamente. `D+k` significa
+la k-ésima observación disponible del ticker, no un día calendario.
+
+El run `20260824_full_v0_1` está invalidado y aislado bajo `runs/invalidated/`;
+no alimenta la app.
 
 ## Explorador local
-
-Cuando exista un probe o full con certificación terminal `pass`:
 
 ```powershell
 cd C:\TSIS_Data\05_TSIS_STATISTICS_PATTERNS\app
 .\start_atlas_local.ps1
 ```
 
-Abrir `http://localhost:3000`. El gráfico permite zoom, arrastre, cursor OHLCV,
-historial anterior/posterior, volumen inferior y marcas fuera de las mechas.
+Abrir `http://localhost:3000`. El launcher selecciona de forma fail-closed el
+full `PASS` más reciente. El gráfico permite zoom con rueda, desplazamiento con
+arrastre, cursor OHLCV, 120 observaciones anteriores y 60 posteriores, volumen
+en panel inferior y marcas fuera de las mechas.

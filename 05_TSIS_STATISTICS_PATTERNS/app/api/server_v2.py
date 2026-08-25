@@ -12,23 +12,76 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 
-DEFAULT_FULL = Path(
+EXPERIMENT_RUNS_ROOT = Path(
     r"C:\TSIS_Data\03_TSIS_Lab\04_experiments\EXP_DAILY_PATTERN_ATLAS_0001"
-    r"\runs\20260825_full_v0_1\final"
+    r"\runs"
 )
-DEFAULT_PROBE = Path(
-    r"C:\TSIS_Data\03_TSIS_Lab\04_experiments\EXP_DAILY_PATTERN_ATLAS_0001"
-    r"\runs\20260825_probe_v0_3\final"
-)
-FINAL_ROOT = Path(
-    os.environ.get("ATLAS_FINAL_ROOT", DEFAULT_FULL if DEFAULT_FULL.exists() else DEFAULT_PROBE)
-)
+
+
+def _terminal_pass(final_root: Path) -> dict | None:
+    certification_path = final_root / "terminal_certification.json"
+    if not certification_path.is_file():
+        return None
+    try:
+        certification = json.loads(certification_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    status = str(certification.get("status", "")).casefold()
+    mode = str(certification.get("mode", "")).casefold()
+    return certification if status == "pass" and mode in {"full", "probe"} else None
+
+
+def _certified_at_key(certification: dict) -> datetime:
+    try:
+        certified_at = datetime.fromisoformat(str(certification.get("certified_at", "")))
+    except ValueError:
+        return datetime.min.replace(tzinfo=timezone.utc)
+    if certified_at.tzinfo is None:
+        certified_at = certified_at.replace(tzinfo=timezone.utc)
+    return certified_at.astimezone(timezone.utc)
+
+
+def _resolve_final_root(
+    runs_root: Path = EXPERIMENT_RUNS_ROOT,
+    explicit_root: Path | None = None,
+) -> Path | None:
+    configured = explicit_root
+    if configured is None and os.environ.get("ATLAS_FINAL_ROOT"):
+        configured = Path(os.environ["ATLAS_FINAL_ROOT"])
+    if configured is not None:
+        return configured if _terminal_pass(configured) is not None else None
+    if not runs_root.is_dir():
+        return None
+
+    candidates: list[tuple[int, datetime, str, Path]] = []
+    for run_root in runs_root.iterdir():
+        if not run_root.is_dir():
+            continue
+        final_root = run_root / "final"
+        certification = _terminal_pass(final_root)
+        if certification is None:
+            continue
+        mode = str(certification["mode"]).casefold()
+        candidates.append(
+            (
+                1 if mode == "full" else 0,
+                _certified_at_key(certification),
+                run_root.name,
+                final_root,
+            )
+        )
+    return max(candidates)[-1] if candidates else None
+
+
+FINAL_ROOT = _resolve_final_root()
 ANNOTATION_DB = Path(
     os.environ.get("ATLAS_ANNOTATION_DB", Path(__file__).with_name("annotations.sqlite"))
 )
 
 
 def _path(name: str) -> str:
+    if FINAL_ROOT is None:
+        raise HTTPException(status_code=503, detail="No terminal PASS Atlas run is available")
     path = FINAL_ROOT / f"{name}.parquet"
     if not path.exists():
         raise HTTPException(status_code=503, detail=f"Atlas output unavailable: {name}")
@@ -83,6 +136,14 @@ _init_annotations()
 
 @app.get("/api/meta")
 def meta() -> dict:
+    if FINAL_ROOT is None:
+        return {
+            "final_root": None,
+            "status": "unavailable",
+            "mode": "unknown",
+            "counts": {},
+            "certified_at": None,
+        }
     manifest_path = FINAL_ROOT / "run_manifest.json"
     certification_path = FINAL_ROOT / "terminal_certification.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else {}

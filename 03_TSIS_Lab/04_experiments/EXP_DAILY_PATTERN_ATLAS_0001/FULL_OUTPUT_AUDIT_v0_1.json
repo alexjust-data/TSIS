@@ -1,0 +1,59 @@
+{
+  "audit_id": "FULL_OUTPUT_AUDIT_v0_1",
+  "run_id": "20260825_full_v0_1",
+  "status": "pass",
+  "promotion_boundary": "exploratory_descriptive_only",
+  "operation": {
+    "status": "pass",
+    "exit_code": 0,
+    "duration_seconds": 3997.105,
+    "shards_pass": 8,
+    "shards_failed": 0
+  },
+  "scope": {
+    "sessions": 9290966,
+    "tickers": 4824,
+    "min_date": "2005-01-03",
+    "max_date": "2026-03-06",
+    "upstream_missing": 0,
+    "upstream_additional": 0,
+    "source_files": 44423,
+    "missing_source_files": 0
+  },
+  "integrity": {
+    "artifacts_matching": 11,
+    "artifacts_expected": 11,
+    "formula_checks_pass": 12,
+    "formula_max_abs_error": 0,
+    "parts_per_table": 4824,
+    "schema_variants_per_table": 1,
+    "duplicate_keys": 0,
+    "null_keys": 0,
+    "infinite_values": 0
+  },
+  "quality": {
+    "invalid_sessions": 1495,
+    "invalid_trajectory_rows": 747,
+    "invalid_activations": 0,
+    "invalid_outcomes": 0,
+    "invalid_events": 0,
+    "invalid_peaks": 0,
+    "running_high_mismatches": 0,
+    "peak_mismatches": 0
+  },
+  "direct": {
+    "activation_label_rows": 9728326,
+    "activation_cases": 4495723,
+    "cohort_rows": 567,
+    "event_stat_rows": 162,
+    "d0_mismatches": 0,
+    "event_case_mismatches": 0
+  },
+  "cycles": {
+    "episodes": 422042,
+    "label_episode_assignments": 779786,
+    "minimum_spacing_observations": 21,
+    "cooldown_violations": 0
+  },
+  "known_limitation": "historical premanifest dirty count did not enumerate paths; INC-20260825-011 corrects future runner"
+}

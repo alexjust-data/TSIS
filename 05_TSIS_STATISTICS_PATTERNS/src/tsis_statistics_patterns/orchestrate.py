@@ -52,13 +52,41 @@ def _git(repo_root: Path, *args: str) -> str:
     return completed.stdout.strip()
 
 
+def _git_porcelain(repo_root: Path) -> str:
+    completed = subprocess.run(
+        ["git", "status", "--porcelain", "--untracked-files=all"],
+        cwd=repo_root,
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    return completed.stdout.rstrip("\r\n")
+
+
+def _porcelain_paths(porcelain: str) -> list[str]:
+    paths: list[str] = []
+    for entry in porcelain.splitlines():
+        path = entry[3:].strip()
+        if " -> " in path:
+            path = path.rsplit(" -> ", 1)[1]
+        paths.append(path.strip('"'))
+    return paths
+
+
 def _git_state(repo_root: Path) -> dict[str, Any]:
-    porcelain = _git(repo_root, "status", "--porcelain")
+    porcelain = _git_porcelain(repo_root)
+    entries = porcelain.splitlines() if porcelain else []
     return {
         "branch": _git(repo_root, "branch", "--show-current"),
         "commit": _git(repo_root, "rev-parse", "HEAD"),
-        "dirty": bool(porcelain),
-        "dirty_path_count": len(porcelain.splitlines()) if porcelain else 0,
+        "dirty": bool(entries),
+        "dirty_path_count": len(entries),
+        "dirty_entries": entries,
+        "dirty_paths": _porcelain_paths(porcelain),
+        "dirty_porcelain_sha256": (
+            hashlib.sha256(porcelain.encode("utf-8")).hexdigest()
+            if porcelain else None
+        ),
     }
 
 

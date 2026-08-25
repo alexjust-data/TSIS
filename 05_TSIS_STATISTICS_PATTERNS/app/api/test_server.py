@@ -1,3 +1,6 @@
+import json
+from pathlib import Path
+
 from fastapi.testclient import TestClient
 
 from .server_v2 import app
@@ -6,14 +9,19 @@ from .server_v2 import app
 client = TestClient(app)
 
 
-def test_meta_uses_certified_full_census() -> None:
+def test_meta_uses_terminal_pass_run() -> None:
     response = client.get("/api/meta")
     assert response.status_code == 200
     payload = response.json()
+    final_root = Path(payload["final_root"])
+    certification = json.loads(
+        (final_root / "terminal_certification.json").read_text(encoding="utf-8")
+    )
     assert payload["status"] == "pass"
-    assert payload["mode"] == "full"
-    assert payload["counts"]["session_observables"] == 9_290_966
+    assert payload["mode"] == certification["mode"]
+    assert payload["counts"]["session_observables"] > 0
     assert payload["counts"]["activation_case_index"] > 0
+    assert certification["status"] == "pass"
 
 
 def test_drilldown_reaches_real_daily_candles() -> None:

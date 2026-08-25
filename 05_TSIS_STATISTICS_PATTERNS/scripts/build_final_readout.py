@@ -10,7 +10,7 @@ import duckdb
 
 DEFAULT_FINAL = Path(
     r"C:\TSIS_Data\03_TSIS_Lab\04_experiments\EXP_DAILY_PATTERN_ATLAS_0001"
-    r"\runs\20260824_full_v0_1\final"
+    r"\runs\20260825_full_v0_1\final"
 )
 DEFAULT_OUTPUT = Path(
     r"C:\TSIS_Data\03_TSIS_Lab\04_experiments\EXP_DAILY_PATTERN_ATLAS_0001"
@@ -29,10 +29,24 @@ def parquet(final_root: Path, name: str) -> str:
     return path.as_posix().replace("'", "''")
 
 
+def format_percent(value: float | None) -> str:
+    return "NA" if value is None else f"{100 * value:.2f}%"
+
+
+def format_offset(value: float | None) -> str:
+    return "NA" if value is None else f"D+{value:g}"
+
+
 def build(final_root: Path) -> dict:
     manifest = json.loads((final_root / "run_manifest.json").read_text(encoding="utf-8"))
     certification = json.loads(
         (final_root / "terminal_certification.json").read_text(encoding="utf-8")
+    )
+    variable_audit = json.loads(
+        (final_root / "probe_variable_audit_v0_1.json").read_text(encoding="utf-8")
+    )
+    operation_final = json.loads(
+        (final_root.parent / "operation_final_manifest.json").read_text(encoding="utf-8")
     )
     con = duckdb.connect()
     try:
@@ -48,7 +62,9 @@ def build(final_root: Path) -> dict:
         )
         coverage_by_year = rows(
             con,
-            f"SELECT * FROM read_parquet('{parquet(final_root, 'coverage_by_year')}') ORDER BY year",
+            f"SELECT year, rows, tickers, CAST(min_date AS DATE) AS min_date, "
+            f"CAST(max_date AS DATE) AS max_date FROM "
+            f"read_parquet('{parquet(final_root, 'coverage_by_year')}') ORDER BY year",
         )
         episode_summary = rows(
             con,
@@ -73,9 +89,11 @@ def build(final_root: Path) -> dict:
         selected_cohorts = rows(
             con,
             f"""
-            SELECT activation_label, offset_session, observations, episodes, tickers,
-                   median_close_from_anchor_pct, p25_close_from_anchor_pct,
-                   p75_close_from_anchor_pct, observed_share_red_candle
+            SELECT activation_label, offset_session, observations, activation_cases, tickers,
+                   mean_close_from_anchor_pct, median_close_from_anchor_pct,
+                   p10_close_from_anchor_pct, p25_close_from_anchor_pct,
+                   p75_close_from_anchor_pct, p90_close_from_anchor_pct,
+                   observed_share_red_candle
             FROM read_parquet('{parquet(final_root, 'cohort_statistics')}')
             WHERE activation_label IN (
                 'gap_ge_30pct', 'gap_ge_50pct',
@@ -85,12 +103,50 @@ def build(final_root: Path) -> dict:
             ORDER BY activation_label, offset_session
             """,
         )
+        selected_event_timings = rows(
+            con,
+            f"""
+            SELECT activation_label, event_label, activation_cases, event_observed,
+                   median_offset, p25_offset, p75_offset, p90_offset
+            FROM read_parquet('{parquet(final_root, 'activation_event_statistics')}')
+            WHERE activation_label IN (
+                'gap_ge_30pct', 'gap_ge_50pct',
+                'high_breakout_previous_day', 'high_breakout_previous_week',
+                'high_breakout_previous_month'
+            )
+            ORDER BY activation_label, event_label
+            """,
+        )
+        cohort_scope_comparison = rows(
+            con,
+            f"""
+            SELECT d.activation_label,
+                   d.activation_cases AS all_activation_cases,
+                   c.episodes AS cooldown_cycle_cases,
+                   round(100.0 * c.episodes / d.activation_cases, 4) AS cooldown_share_pct
+            FROM read_parquet('{parquet(final_root, 'cohort_statistics')}') d
+            JOIN read_parquet('{parquet(final_root, 'cycle_cohort_statistics')}') c
+              USING (activation_family, activation_label, offset_session)
+            WHERE d.offset_session=0 AND d.activation_label IN (
+                'gap_ge_30pct', 'gap_ge_50pct',
+                'high_breakout_previous_day', 'high_breakout_previous_week',
+                'high_breakout_previous_month'
+            )
+            ORDER BY d.activation_label
+            """,
+        )
     finally:
         con.close()
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "status": certification["status"],
+        "status": "pass" if all(
+            item.get("status") == "pass"
+            for item in (certification, variable_audit, operation_final)
+        ) else "fail",
         "mode": certification["mode"],
+        "certification_status": certification["status"],
+        "independent_audit_status": variable_audit["status"],
+        "operation_status": operation_final["status"],
         "scope": certification["checks"]["scope"],
         "counts": manifest["counts"],
         "episode_summary": episode_summary,
@@ -98,6 +154,8 @@ def build(final_root: Path) -> dict:
         "events": event_summary,
         "coverage_by_year": coverage_by_year,
         "selected_cohorts": selected_cohorts,
+        "selected_event_timings": selected_event_timings,
+        "cohort_scope_comparison": cohort_scope_comparison,
         "interpretation_boundary": (
             "Descriptive observed census only; no inference, signal, execution or PnL claim."
         ),
@@ -109,10 +167,13 @@ def markdown(payload: dict, final_root: Path) -> str:
     counts = payload["counts"]
     episode = payload["episode_summary"]
     lines = [
-        "# Final Census Readout v0.1",
+        "# Final Census Readout v0.2",
         "",
         f"- status: `{payload['status']}`",
         f"- mode: `{payload['mode']}`",
+        f"- terminal certification: `{payload['certification_status']}`",
+        f"- independent audit: `{payload['independent_audit_status']}`",
+        f"- operational closure: `{payload['operation_status']}`",
         f"- final root: `{final_root}`",
         f"- sessions: {counts['session_observables']:,}",
         f"- tickers: {scope['observed_tickers']:,}",
@@ -155,24 +216,70 @@ def markdown(payload: dict, final_root: Path) -> str:
         )
     lines += [
         "",
+        "## Coverage by year",
+        "",
+        "| year | rows | tickers | min date | max date |",
+        "|---:|---:|---:|---|---|",
+    ]
+    for item in payload["coverage_by_year"]:
+        lines.append(
+            f"| {item['year']} | {item['rows']:,} | {item['tickers']:,} | "
+            f"{item['min_date']} | {item['max_date']} |"
+        )
+    lines += [
+        "",
         "## Selected daily cohorts",
         "",
         "All values below are observed descriptive summaries relative to D0.",
         "",
-        "| label | offset | obs. | episodes | tickers | median close | P25 | P75 | red-candle share |",
-        "|---|---:|---:|---:|---:|---:|---:|---:|---:|",
+        "| label | offset | obs. | activation cases | tickers | mean close | median close | P10 | P90 | red-candle share |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for item in payload["selected_cohorts"]:
-        def pct(value: float | None) -> str:
-            return "NA" if value is None else f"{100 * value:.2f}%"
-
         lines.append(
             f"| {item['activation_label']} | D+{item['offset_session']} | "
-            f"{item['observations']:,} | {item['episodes']:,} | {item['tickers']:,} | "
-            f"{pct(item['median_close_from_anchor_pct'])} | "
-            f"{pct(item['p25_close_from_anchor_pct'])} | "
-            f"{pct(item['p75_close_from_anchor_pct'])} | "
-            f"{pct(item['observed_share_red_candle'])} |"
+            f"{item['observations']:,} | {item['activation_cases']:,} | {item['tickers']:,} | "
+            f"{format_percent(item['mean_close_from_anchor_pct'])} | "
+            f"{format_percent(item['median_close_from_anchor_pct'])} | "
+            f"{format_percent(item['p10_close_from_anchor_pct'])} | "
+            f"{format_percent(item['p90_close_from_anchor_pct'])} | "
+            f"{format_percent(item['observed_share_red_candle'])} |"
+        )
+    lines += [
+        "",
+        "## Tail-shape caution",
+        "",
+        "Gap cohorts contain extreme right tails. Means can be orders of magnitude above medians;",
+        "therefore the readout presents both and no single central statistic should be treated as",
+        "a complete description of the observed distribution.",
+        "",
+        "## Direct event timing",
+        "",
+        "Offsets use the kth available ticker observation; they are not calendar days.",
+        "",
+        "| label | event | cases | observed | median | P25 | P75 | P90 |",
+        "|---|---|---:|---:|---:|---:|---:|---:|",
+    ]
+    for item in payload["selected_event_timings"]:
+        lines.append(
+            f"| {item['activation_label']} | {item['event_label']} | "
+            f"{item['activation_cases']:,} | {item['event_observed']:,} | "
+            f"{format_offset(item['median_offset'])} | {format_offset(item['p25_offset'])} | "
+            f"{format_offset(item['p75_offset'])} | {format_offset(item['p90_offset'])} |"
+        )
+    lines += [
+        "",
+        "## Direct activations versus cooldown cycles",
+        "",
+        "Primary cohorts contain all activations. Cooldown cycles are a separate secondary view.",
+        "",
+        "| label | all activations | cooldown cycles | cooldown share |",
+        "|---|---:|---:|---:|",
+    ]
+    for item in payload["cohort_scope_comparison"]:
+        lines.append(
+            f"| {item['activation_label']} | {item['all_activation_cases']:,} | "
+            f"{item['cooldown_cycle_cases']:,} | {item['cooldown_share_pct']:.4f}% |"
         )
     return "\n".join(lines) + "\n"
 
@@ -184,11 +291,11 @@ def main() -> None:
     args = parser.parse_args()
     payload = build(args.final_root)
     args.output_dir.mkdir(parents=True, exist_ok=True)
-    (args.output_dir / "FINAL_CENSUS_READOUT_v0_1.json").write_text(
+    (args.output_dir / "FINAL_CENSUS_READOUT_v0_2.json").write_text(
         json.dumps(payload, indent=2, ensure_ascii=False, default=str) + "\n",
         encoding="utf-8",
     )
-    (args.output_dir / "FINAL_CENSUS_READOUT_v0_1.md").write_text(
+    (args.output_dir / "FINAL_CENSUS_READOUT_v0_2.md").write_text(
         markdown(payload, args.final_root), encoding="utf-8"
     )
     print(json.dumps({"status": payload["status"], "counts": payload["counts"]}))

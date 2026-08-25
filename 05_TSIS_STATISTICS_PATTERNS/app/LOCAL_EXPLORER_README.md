@@ -5,9 +5,10 @@ calcula señales ni modifica el censo. La API escucha solo en `127.0.0.1`.
 
 ## Requisito
 
-El lanzador selecciona `20260825_full_v0_1` si existe; de lo contrario usa
-`20260825_probe_v0_3`. Si ninguno contiene certificación `pass`, la app no debe
-presentarse como válida.
+El lanzador selecciona el full más reciente solo si contiene certificación
+terminal `pass`; de lo contrario usa el probe PASS más reciente. Ignora de
+forma fail-closed carpetas incompletas, certificaciones fallidas o JSON
+ilegible. Si no existe ningún run terminal PASS, el lanzador se detiene.
 
 ## Inicio
 

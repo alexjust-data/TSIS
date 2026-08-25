@@ -13,7 +13,19 @@
   latest/JSONL, monitor compacto, stop command y final operativo.
 - Sustituido el gráfico estático por velas TradingView interactivas con volumen,
   zoom, desplazamiento, cursor, contexto anterior/posterior y marcas fuera de mechas.
-- Estado rebajado a `implementation_in_progress` hasta nuevos probes y full PASS.
+- Corregida la selección de datos de la app para exigir certificación terminal
+  `pass`: prioriza el full PASS más reciente, cae al probe PASS más reciente y
+  rechaza runs incompletos, fallidos o con certificación ilegible.
+- Ejecutado `20260825_full_v0_1` en 3.997,105 s: 8/8 shards y cierre
+  operacional `pass`.
+- Certificación terminal e auditoría independiente `pass`: 12 fórmulas con
+  error máximo 0, 4.824/4.824 parts con un schema y cero infinitos.
+- Publicado `FINAL_CENSUS_READOUT_v0_2` con activaciones directas, tiempos de
+  eventos y separación explícita de ciclos cooldown.
+- Registrado `INC-20260825-011` y reforzado el premanifest futuro con rutas dirty y fingerprint porcelain.
+- Persistido el plan v0.2 para eliminar joins globales repetidos y habilitar shards reutilizables.
+- Promovido el experimento a `exploratory_report_ready`; sigue siendo evidencia
+  descriptiva, no conocimiento validado.
 
 ## 2026-08-24
 

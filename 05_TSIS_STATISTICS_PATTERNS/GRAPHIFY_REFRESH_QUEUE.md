@@ -10,6 +10,7 @@
     - DAILY_PATTERN_DISCOVERY_ATLAS_v0_1.md
     - CHANGELOG.md
     - INCIDENT_REGISTER_v0_1.md
+    - PRODUCTION_PERFORMANCE_OPTIMIZATION_PLAN_v0_1.md
     - configs/daily_pattern_atlas_v0_1.yaml
     - scripts/build_final_readout.py
     - src/
@@ -22,3 +23,5 @@
     The module has no official Graphify leaf or BUILD_MANIFEST yet.
     Queue this new leaf for integration into the root governed graph; do not
     treat a private ad-hoc graph build as the institutional refresh.
+    This pending scope also includes the app's terminal-PASS-only run resolver
+    and its fallback semantics for incomplete or failed full runs.

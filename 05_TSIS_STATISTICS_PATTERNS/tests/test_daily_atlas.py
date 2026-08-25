@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
+from tsis_statistics_patterns.audit_probe import _expected_part_files
 from tsis_statistics_patterns.contracts import AtlasConfig
 from tsis_statistics_patterns.direct_cohorts import materialize_direct_activation_outputs
 from tsis_statistics_patterns.direct_events import materialize_direct_activation_event_statistics
@@ -246,3 +247,11 @@ def test_direct_cohorts_and_event_stats_reconcile_all_activation_labels(tmp_path
 
     case_index = pd.read_parquet(tmp_path / "activation_case_index.parquet")
     assert len(case_index) == len(activations[["ticker", "date"]].drop_duplicates())
+
+
+def test_audit_part_cardinality_uses_run_mode() -> None:
+    cfg = {"sharding": {"count": 8}}
+    full = {"mode": "full", "expected_scope": {"tickers": 4824}}
+    probe = {"mode": "probe", "limit_tickers_per_shard": 1}
+    assert _expected_part_files(full, cfg) == 4824
+    assert _expected_part_files(probe, cfg) == 8

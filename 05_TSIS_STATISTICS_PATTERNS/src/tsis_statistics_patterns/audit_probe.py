@@ -24,6 +24,15 @@ def _safe_ratio(a: pd.Series, b: pd.Series) -> pd.Series:
     return (a / b.where(b.ne(0))).replace([np.inf, -np.inf], np.nan)
 
 
+def _expected_part_files(pre_manifest: dict, cfg: dict) -> int:
+    if pre_manifest["mode"] == "full":
+        return int(pre_manifest["expected_scope"]["tickers"])
+    limit = pre_manifest.get("limit_tickers_per_shard")
+    if limit is None:
+        raise ValueError("probe pre_manifest requires limit_tickers_per_shard")
+    return int(cfg["sharding"]["count"]) * int(limit)
+
+
 def audit_probe(run_root: Path, config_path: Path) -> dict:
     cfg = yaml.safe_load(config_path.read_text(encoding="utf-8"))
     final_root = run_root / "final"
@@ -71,6 +80,9 @@ def audit_probe(run_root: Path, config_path: Path) -> dict:
             "status": "pass" if error <= 1e-12 else "fail",
         }
 
+    pre_manifest = json.loads((run_root / "pre_manifest.json").read_text(encoding="utf-8"))
+    expected_part_files = _expected_part_files(pre_manifest, cfg)
+
     schema_checks = {}
     for table_name in (
         "session_observables",
@@ -82,10 +94,11 @@ def audit_probe(run_root: Path, config_path: Path) -> dict:
         schemas = []
         for path in sorted(run_root.glob(f"shard=*/{table_name}/*.parquet")):
             schemas.append(str(pq.ParquetFile(path).schema_arrow))
-        equivalent = len(set(schemas)) == 1 and len(schemas) == int(cfg["sharding"]["count"])
+        equivalent = len(set(schemas)) == 1 and len(schemas) == expected_part_files
         schema_checks[table_name] = {
             "observed_schemas": len(set(schemas)),
             "files": len(schemas),
+            "expected_files": expected_part_files,
             "status": "pass" if equivalent else "fail",
         }
 

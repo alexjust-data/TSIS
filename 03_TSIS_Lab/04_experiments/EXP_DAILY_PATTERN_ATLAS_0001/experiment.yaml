@@ -1,6 +1,6 @@
 experiment_id: EXP_DAILY_PATTERN_ATLAS_0001
 experiment_version: v0_1
-status: implementation_in_progress
+status: exploratory_report_ready
 created_by: research_agent
 generator_type: research_agent
 
@@ -107,6 +107,8 @@ statistical_validation_plan:
 promotion_rules:
   maximum_status_from_this_experiment: exploratory_report_ready
   validated_knowledge_requires_separate_pipeline: true
+known_limitations:
+  - historical_premanifest_dirty_paths_not_enumerated_inc_20260825_011
 mutation_policy:
   optimizer_mutable: false
   mutation_scope: []
@@ -151,4 +153,11 @@ current_execution:
   authorizing_probe_status: pass
   authorization: FULL_RUN_AUTHORIZATION_v0_2.md
   full_run_id: 20260825_full_v0_1
-  status: full_authorized_pending_execution
+  code_commit: a27ca6fc6b4ddf754942b0b7ea94391722b685a8
+  terminal_certification_status: pass
+  independent_audit_status: pass
+  operational_status: pass
+  certified_at_utc: 2026-08-25T08:29:20.457915+00:00
+  audited_at_utc: 2026-08-25T08:40:14.835475+00:00
+  readout: FINAL_CENSUS_READOUT_v0_2.md
+  status: exploratory_report_ready

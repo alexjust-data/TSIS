@@ -6,7 +6,11 @@ from tsis_statistics_patterns.operational_certification import (
     REQUIRED_PRE_FIELDS,
     certify_operational_surface,
 )
-from tsis_statistics_patterns.orchestrate import RunTelemetry, _atomic_json
+from tsis_statistics_patterns.orchestrate import (
+    RunTelemetry,
+    _atomic_json,
+    _porcelain_paths,
+)
 
 
 def test_operational_surface_requires_live_and_final_evidence(tmp_path) -> None:
@@ -38,3 +42,11 @@ def test_operational_surface_requires_live_and_final_evidence(tmp_path) -> None:
     final = certify_operational_surface(tmp_path, require_final=True)
     assert final["status"] == "pass"
     assert final["violations"]["pid_still_expected_alive"] == 0
+
+def test_porcelain_paths_are_persistable() -> None:
+    porcelain = " M tracked.py\n?? folder/new_file.md\nR  old.py -> renamed.py"
+    assert _porcelain_paths(porcelain) == [
+        "tracked.py",
+        "folder/new_file.md",
+        "renamed.py",
+    ]
