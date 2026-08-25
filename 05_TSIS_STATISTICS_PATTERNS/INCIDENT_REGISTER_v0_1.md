@@ -113,3 +113,15 @@ un readout oficial ni una promoción.
 - control heredable: los schemas upstream se consumen por nombres canónicos
   auditados y el terminal certifica la familia esperada;
 - estado: corrected_pending_reprobe_all_shards.
+## INC-20260825-009 — Orchestrator telemetry below long-run contract
+
+- fase: pre-authorization review after technical PASS of `20260825_probe_v0_2`;
+- evidencia: existían heartbeats por shard, pero faltaban heartbeat JSONL global,
+  PID manifest global, monitor compacto y final operativo para fallos tempranos;
+- causa: el wrapper inicial cubría cómputo y certificación, no toda la superficie
+  institucional de una operación larga;
+- impacto: probe técnicamente PASS pero no autoriza un full gobernado;
+- corrección: instrumentar el orquestador exacto con premanifest completo,
+  procesos hijo, heartbeat latest/JSONL, log, monitor y final operativo;
+- control heredable: probe y full deben usar esta misma superficie operacional;
+- estado: corrected_pending_reprobe_all_shards.

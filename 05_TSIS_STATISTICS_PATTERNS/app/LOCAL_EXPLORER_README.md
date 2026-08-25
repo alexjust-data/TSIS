@@ -6,7 +6,7 @@ calcula señales ni modifica el censo. La API escucha solo en `127.0.0.1`.
 ## Requisito
 
 El lanzador selecciona `20260825_full_v0_1` si existe; de lo contrario usa
-`20260825_probe_v0_2`. Si ninguno contiene certificación `pass`, la app no debe
+`20260825_probe_v0_3`. Si ninguno contiene certificación `pass`, la app no debe
 presentarse como válida.
 
 ## Inicio
@@ -36,6 +36,16 @@ las mechas. El panel inferior muestra volumen daily.
 
 Las notas viven en `api/annotations.sqlite`, artefacto runtime local no
 gobernado.
+
+## Monitor de un run
+
+```powershell
+python C:\TSIS_Data\05_TSIS_STATISTICS_PATTERNS\scripts\monitor_atlas_run.py `
+  --run-root <RUN_ROOT> --watch --compact
+```
+
+El monitor muestra etapa, PIDs, edad del heartbeat, progreso por shard, espacio
+disponible y estado final sin borrar líneas anteriores.
 
 ## Verificación técnica
 

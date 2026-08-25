@@ -14,7 +14,7 @@ antiguo PASS terminal no es una certificación vigente y sus readouts no son
 oficiales.
 
 La versión corregida debe ejecutar primero los ocho probes
-`20260825_probe_v0_2`. Solo con todos los controles heredados en PASS puede
+`20260825_probe_v0_3`. Solo con todos los controles heredados en PASS puede
 crearse `FULL_RUN_AUTHORIZATION_v0_2.md` y lanzarse `20260825_full_v0_1`.
 
 Los artefactos válidos de cualquier ejecución futura deben declarar commit,

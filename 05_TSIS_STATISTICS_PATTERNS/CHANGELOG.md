@@ -9,6 +9,8 @@
 - Separadas las cohortes directas del 100% de activaciones de los ciclos cooldown.
 - Añadidas estadísticas directas de pico, first red day y debilidad por etiqueta.
 - Reforzado el certificador con scope exacto, schemas, outcomes y artifacts.
+- Instrumentado el wrapper largo con premanifest completo, PID manifest, heartbeat
+  latest/JSONL, monitor compacto, stop command y final operativo.
 - Sustituido el gráfico estático por velas TradingView interactivas con volumen,
   zoom, desplazamiento, cursor, contexto anterior/posterior y marcas fuera de mechas.
 - Estado rebajado a `implementation_in_progress` hasta nuevos probes y full PASS.

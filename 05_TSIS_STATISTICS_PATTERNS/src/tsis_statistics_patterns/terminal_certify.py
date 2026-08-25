@@ -11,6 +11,7 @@ import yaml
 
 from .certify import EXPECTED_KEYS
 from .manifest_lineage import sha256_file, verify_artifacts
+from .operational_certification import certify_operational_surface
 from .quality_certification import certify_outcome_quality, certify_partition_schemas
 from .scope_certification import certify_exact_scope_and_sources
 
@@ -122,6 +123,8 @@ def certify_run(run_root: Path, config_path: Path, mode: str) -> dict:
     checks["exact_scope_and_sources"] = exact_scope
     checks["artifact_integrity"] = artifact_integrity
     checks["lineage_integrity"] = lineage_integrity
+    operational_surface = certify_operational_surface(run_root, require_final=False)
+    checks["operational_surface"] = operational_surface
     overall = (
         overall
         and schema_equivalence["status"] == "pass"
@@ -129,6 +132,7 @@ def certify_run(run_root: Path, config_path: Path, mode: str) -> dict:
         and exact_scope["status"] == "pass"
         and artifact_integrity["status"] == "pass"
         and lineage_integrity["status"] == "pass"
+        and operational_surface["status"] == "pass"
     )
 
     result = {

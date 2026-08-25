@@ -2,7 +2,7 @@ $ErrorActionPreference = "Stop"
 
 $appRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $fullFinal = "C:\TSIS_Data\03_TSIS_Lab\04_experiments\EXP_DAILY_PATTERN_ATLAS_0001\runs\20260825_full_v0_1\final"
-$probeFinal = "C:\TSIS_Data\03_TSIS_Lab\04_experiments\EXP_DAILY_PATTERN_ATLAS_0001\runs\20260825_probe_v0_2\final"
+$probeFinal = "C:\TSIS_Data\03_TSIS_Lab\04_experiments\EXP_DAILY_PATTERN_ATLAS_0001\runs\20260825_probe_v0_3\final"
 
 $env:ATLAS_FINAL_ROOT = if (Test-Path -LiteralPath (Join-Path $fullFinal "terminal_certification.json")) {
     $fullFinal

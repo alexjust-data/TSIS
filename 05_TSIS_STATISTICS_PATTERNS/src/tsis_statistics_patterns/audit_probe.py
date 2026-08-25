@@ -10,6 +10,8 @@ import pandas as pd
 import pyarrow.parquet as pq
 import yaml
 
+from .operational_certification import certify_operational_surface
+
 
 def _finite_difference(actual: pd.Series, expected: pd.Series) -> float:
     mask = actual.notna() & expected.notna()
@@ -118,7 +120,12 @@ def audit_probe(run_root: Path, config_path: Path) -> dict:
     all_checks = [item["status"] for item in formula_checks.values()]
     all_checks += [item["status"] for item in schema_checks.values()]
     all_checks += [item["status"] for item in finite_checks.values()]
-    overall = all(value == "pass" for value in all_checks) and role_pass
+    operational_surface = certify_operational_surface(run_root, require_final=True)
+    overall = (
+        all(value == "pass" for value in all_checks)
+        and role_pass
+        and operational_surface["status"] == "pass"
+    )
     sample_columns = [
         "ticker", "date", "gap_pct", "relative_volume", "range_pct",
         "close_location", "analysis_eligible", "quality_state",
@@ -132,6 +139,7 @@ def audit_probe(run_root: Path, config_path: Path) -> dict:
         "finite_checks": finite_checks,
         "knowledge_roles": roles,
         "knowledge_role_status": "pass" if role_pass else "fail",
+        "operational_surface": operational_surface,
         "readable_sample": sessions[sample_columns].head(20).assign(
             date=lambda x: x["date"].astype(str)
         ).to_dict("records"),
