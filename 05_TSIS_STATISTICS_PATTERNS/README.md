@@ -19,9 +19,9 @@ calcula PnL y no presenta frecuencias como probabilidades.
 ## Estado
 
 `20260824_full_v0_1` está invalidado por auditoría posterior y aislado bajo
-`runs/invalidated/`; no alimenta la app. La versión corregida está en
-`implementation_in_progress` hasta que pasen los ocho probes y el nuevo censo
-completo `20260825_full_v0_1`.
+`runs/invalidated/`; no alimenta la app. El probe gobernado v0.3 pasa en 8/8
+shards. La versión sigue en `implementation_in_progress` mientras se ejecuta y
+audita el nuevo censo completo `20260825_full_v0_1`.
 
 La estadística principal usa todas las activaciones. Los episodios con cooldown
 son una vista secundaria de ciclos y se publican separadamente.

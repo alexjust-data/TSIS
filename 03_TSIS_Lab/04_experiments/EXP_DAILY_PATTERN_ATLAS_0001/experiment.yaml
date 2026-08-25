@@ -148,5 +148,7 @@ current_execution:
     - run_id: 20260825_probe_v0_2
       status: technical_pass_governance_fail
       incident: INC-20260825-009
+  authorizing_probe_status: pass
+  authorization: FULL_RUN_AUTHORIZATION_v0_2.md
   full_run_id: 20260825_full_v0_1
-  status: pending_production_equivalent_probe
+  status: full_authorized_pending_execution

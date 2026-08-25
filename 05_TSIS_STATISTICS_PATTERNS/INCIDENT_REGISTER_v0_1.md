@@ -14,7 +14,7 @@ Registro append-only de fallos de implementación y controles heredables.
 - corrección: leer cada fichero mediante `pyarrow.parquet.ParquetFile.read`;
 - control heredable: los lectores de ficheros bajo particiones Hive no pueden
   inferir particiones cuando la misma clave existe físicamente;
-- estado: corrected_pending_reprobe_all_shards.
+- estado: corrected_reprobe_v0_3_pass_full_pending.
 
 
 ## INC-20260824-002 — Nonpositive anchor produced infinite outcome
@@ -29,7 +29,7 @@ Registro append-only de fallos de implementación y controles heredables.
   OHLC no positivo o incoherente;
 - control heredable: toda división de outcome exige ancla elegible y ningún
   infinito puede llegar a estadísticas agregadas;
-- estado: corrected_pending_reprobe_all_shards.
+- estado: corrected_reprobe_v0_3_pass_full_pending.
 ## INC-20260825-003 — Invalid future rows contaminated retrospective outcomes
 
 - fase: post-full independent audit of `20260824_full_v0_1`;
@@ -41,7 +41,7 @@ Registro append-only de fallos de implementación y controles heredables.
   solo sobre filas elegibles, gate terminal independiente y regresión sintética;
 - control heredable: cero outcomes/eventos en filas inválidas y recomputación
   exacta del running high elegible;
-- estado: corrected_pending_reprobe_all_shards.
+- estado: corrected_reprobe_v0_3_pass_full_pending.
 
 ## INC-20260825-004 — Physical volume schema varied by ticker
 
@@ -55,7 +55,7 @@ Registro append-only de fallos de implementación y controles heredables.
   fingerprint de cada part en certificación terminal;
 - control heredable: exactamente una variante física por tabla en todos los
   shards;
-- estado: corrected_pending_reprobe_all_shards.
+- estado: corrected_reprobe_v0_3_pass_full_pending.
 
 ## INC-20260825-005 — Cooldown cohorts did not represent all activations
 
@@ -68,7 +68,7 @@ Registro append-only de fallos de implementación y controles heredables.
   por separado cohortes directas y case index sobre el 100% de activaciones;
 - control heredable: D0 de cada cohorte directa debe reconciliar exactamente con
   el conteo de su etiqueta;
-- estado: corrected_pending_reprobe_all_shards.
+- estado: corrected_reprobe_v0_3_pass_full_pending.
 
 ## INC-20260825-006 — Broken row lineage and incomplete run identity
 
@@ -81,7 +81,7 @@ Registro append-only de fallos de implementación y controles heredables.
   run y lineage/hashes persistidos por pre/final manifest;
 - control heredable: toda ruta distinta debe existir y todo run debe declarar
   commit/config/upstream antes de ejecutar;
-- estado: corrected_pending_reprobe_all_shards.
+- estado: corrected_reprobe_v0_3_pass_full_pending.
 
 ## INC-20260825-007 — Future split factor leaked into observable table
 
@@ -94,7 +94,7 @@ Registro append-only de fallos de implementación y controles heredables.
   certificador terminal;
 - control heredable: `future_split_factor` puede existir en input ajustado pero
   nunca en outputs observables;
-- estado: corrected_pending_reprobe_all_shards.
+- estado: corrected_reprobe_v0_3_pass_full_pending.
 
 ## Invalidación del run 20260824_full_v0_1
 
@@ -112,7 +112,7 @@ un readout oficial ni una promoción.
   `family='ohlcv_daily'` en la reconciliación;
 - control heredable: los schemas upstream se consumen por nombres canónicos
   auditados y el terminal certifica la familia esperada;
-- estado: corrected_pending_reprobe_all_shards.
+- estado: corrected_reprobe_v0_3_pass_full_pending.
 ## INC-20260825-009 — Orchestrator telemetry below long-run contract
 
 - fase: pre-authorization review after technical PASS of `20260825_probe_v0_2`;
@@ -124,4 +124,4 @@ un readout oficial ni una promoción.
 - corrección: instrumentar el orquestador exacto con premanifest completo,
   procesos hijo, heartbeat latest/JSONL, log, monitor y final operativo;
 - control heredable: probe y full deben usar esta misma superficie operacional;
-- estado: corrected_pending_reprobe_all_shards.
+- estado: corrected_reprobe_v0_3_pass_full_pending.
