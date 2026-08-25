@@ -3,7 +3,7 @@ from pathlib import Path
 
 from fastapi.testclient import TestClient
 
-from .server_v2 import app
+from .server_v2 import RAW_DAILY_ROOT, _raw_context, app
 
 
 client = TestClient(app)
@@ -99,6 +99,16 @@ def test_drilldown_reaches_full_ticker_lifetime_and_selected_occurrences() -> No
     } <= set(candle)
     assert all(row["knowledge_role"] == "outcome" for row in payload["trajectory"])
 
+
+def test_first_chart_reads_vendor_split_adjusted_raw_daily() -> None:
+    rows = _raw_context("IBG", "2026-01-30")
+    assert RAW_DAILY_ROOT == Path(r"G:\TSIS\data\ohlcv_daily")
+    assert rows
+    before_split = next(row for row in rows if row["date"][:10] == "2026-01-29")
+    split_day = next(row for row in rows if row["date"][:10] == "2026-01-30")
+    assert before_split["c"] == 3.3525
+    assert split_day["c"] == 3.73
+    assert "c_split_normalized" not in before_split
 
 def test_case_pagination_is_stable_and_non_overlapping() -> None:
     selected_label = client.get("/api/labels").json()[0]["activation_label"]

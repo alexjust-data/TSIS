@@ -201,8 +201,9 @@ La aplicación vive dentro del módulo y solo escucha en localhost. Navegación:
 
 El gráfico individual usa TradingView Lightweight Charts:
 
-- velas daily split-normalized desde la primera hasta la última observación del
-  ticker;
+- velas daily `o/h/l/c` leídas directamente de
+  `G:/TSIS/data/ohlcv_daily` —respuesta Massive `adjusted=true`— desde la
+  primera hasta la última observación del ticker;
 - panel de volumen inferior independiente y redimensionable;
 - cursor con fecha y OHLCV;
 - zoom con rueda y desplazamiento por arrastre;

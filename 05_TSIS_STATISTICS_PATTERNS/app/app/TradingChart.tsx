@@ -12,10 +12,10 @@ import type {
 
 export interface ContextCandle {
   date: string;
-  o_split_normalized: number;
-  h_split_normalized: number;
-  l_split_normalized: number;
-  c_split_normalized: number;
+  o: number;
+  h: number;
+  l: number;
+  c: number;
   v: number;
   analysis_eligible: boolean;
   quality_state: string;
@@ -140,16 +140,16 @@ export default function TradingChart({
 
         const candleData: CandlestickData<Time>[] = validRows.map((row) => ({
           time: day(row.date),
-          open: Number(row.o_split_normalized),
-          high: Number(row.h_split_normalized),
-          low: Number(row.l_split_normalized),
-          close: Number(row.c_split_normalized),
+          open: Number(row.o),
+          high: Number(row.h),
+          low: Number(row.l),
+          close: Number(row.c),
         }));
         const volumeData: HistogramData<Time>[] = validRows.map((row) => ({
           time: day(row.date),
           value: Number(row.v),
           color:
-            row.c_split_normalized >= row.o_split_normalized
+            row.c >= row.o
               ? 'rgba(49, 169, 130, 0.55)'
               : 'rgba(223, 103, 88, 0.55)',
         }));
@@ -275,7 +275,7 @@ export default function TradingChart({
       <div ref={containerRef} className="trading-chart-canvas" />
       <footer>
         {count(validRows.length)} velas elegibles · {validRows[0]?.date.slice(0, 10)}–{validRows.at(-1)?.date.slice(0, 10)} ·{' '}
-        {count(occurrences.length)} marcas de {selectedLabel} · volumen inferior · Charts by TradingView Lightweight Charts™
+        {count(occurrences.length)} marcas de {selectedLabel} · fuente ohlcv_daily (Massive adjusted=true) · volumen inferior · Charts by TradingView Lightweight Charts™
       </footer>
     </section>
   );

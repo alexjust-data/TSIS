@@ -291,7 +291,6 @@ def orchestrate(
         "git": git,
         "input_roots": {
             "raw": config["data"]["raw_root"],
-            "adjusted": config["data"]["adjusted_root"],
             "activity": config["data"]["universe_activity_path"],
         },
         "output_root": str(run_root.resolve()),

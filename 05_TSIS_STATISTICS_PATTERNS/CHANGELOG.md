@@ -2,6 +2,15 @@
 
 ## 2026-08-25
 
+- Invalidado científicamente `20260825_full_v0_1`: sus estadísticas consumían
+  la capa local con doble ajuste de splits. El motor ahora lee exclusivamente
+  `G:/TSIS/data/ohlcv_daily` (Massive `adjusted=true`), con regresión IBG y probe
+  production-equivalent de 8/8 shards PASS; el full corregido queda pendiente.
+
+- Cambiada exclusivamente la fuente de velas del primer gráfico a
+  `G:/TSIS/data/ohlcv_daily` (`o/h/l/c/v`, Massive `adjusted=true`), manteniendo
+  separadas y sin recálculo las etiquetas y estadísticas del run existente.
+
 - Añadido debajo del visor estadístico un segundo gráfico OHLCV read-only para
   el mismo ticker y periodo, alimentado directamente por
   `G:/TSIS/data/ohlcv_daily_adjusted` con OHLC adjusted canónico y sin

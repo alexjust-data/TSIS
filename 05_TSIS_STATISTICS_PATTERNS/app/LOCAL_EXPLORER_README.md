@@ -3,8 +3,9 @@
 Vista local de los Parquet certificados de `EXP_DAILY_PATTERN_ATLAS_0001`. No
 calcula señales ni modifica el censo. La API escucha solo en `127.0.0.1`.
 
-El detalle presenta dos visores: el primero conserva las velas
-`split_normalized`, activaciones y outcomes del run certificado; el segundo lee
+El detalle presenta dos visores: el primero lee las velas `o/h/l/c` directamente
+de `G:/TSIS/data/ohlcv_daily` (Massive `adjusted=true`) y superpone las
+activaciones y outcomes del run certificado; el segundo lee
 en vivo `G:/TSIS/data/ohlcv_daily_adjusted` y representa OHLC `adjusted`
 (splits + dividendos) y volumen del mismo ticker y periodo, sin overlays ni
 estadísticas. El segundo visor es únicamente una comparación visual y no

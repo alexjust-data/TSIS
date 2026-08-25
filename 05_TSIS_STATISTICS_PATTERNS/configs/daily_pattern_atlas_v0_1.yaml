@@ -4,10 +4,9 @@ status: exploratory
 
 data:
   raw_root: G:/TSIS/data/ohlcv_daily
-  adjusted_root: G:/TSIS/data/ohlcv_daily_adjusted
   universe_activity_path: C:/TSIS_Data/runs/data_ops/core_market_family_download_audit/20260823_ohlcv_daily_download_audit_v0_1/03_closeout/ohlcv_daily_session_activity.parquet
   audit_manifest_path: C:/TSIS_Data/runs/data_ops/core_market_family_download_audit/20260823_ohlcv_daily_download_audit_v0_1/03_closeout/final_manifest.json
-  analysis_price_view: split_normalized
+  analysis_price_view: massive_adjusted_true_split_adjusted
   evidence_price_view: raw
 
 scope:

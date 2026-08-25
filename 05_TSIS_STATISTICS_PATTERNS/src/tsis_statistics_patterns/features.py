@@ -115,5 +115,5 @@ def compute_session_observables(
 
     out = out.drop(columns=["future_split_factor"], errors="ignore")
     out["knowledge_role"] = "observable"
-    out["price_view"] = "split_normalized_v0_1"
+    out["price_view"] = "massive_adjusted_true_split_adjusted_v0_1"
     return out

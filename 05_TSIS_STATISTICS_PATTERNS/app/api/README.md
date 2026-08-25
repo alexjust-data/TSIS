@@ -17,6 +17,12 @@ Endpoints principales: `/api/meta`, `/api/labels`, `/api/activation-catalog`,
 la vida completa disponible del ticker y todas las ocurrencias de esa etiqueta;
 los agregados retrospectivos siguen limitados al horizonte D0..D+20.
 
+`context` y `lifetime_summary` leen la vida del ticker directamente desde la
+raíz configurable `ATLAS_RAW_DAILY_ROOT` (por defecto
+`G:/TSIS/data/ohlcv_daily`). Las velas del primer gráfico usan exclusivamente
+`o/h/l/c/v` de Massive `adjusted=true`; las etiquetas y outcomes permanecen
+separados y no se recalculan con este cambio visual.
+
 El detalle añade `adjusted_context` y `adjusted_lifetime_summary`. Estos campos
 leen directamente la raíz configurable `ATLAS_ADJUSTED_DAILY_ROOT` (por defecto
 `G:/TSIS/data/ohlcv_daily_adjusted`) entre las mismas fechas de la vida

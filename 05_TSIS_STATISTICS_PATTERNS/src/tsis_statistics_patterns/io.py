@@ -8,7 +8,7 @@ import pandas as pd
 import pyarrow.parquet as pq
 
 
-ADJUSTED_REQUIRED_COLUMNS = [
+RAW_REQUIRED_COLUMNS = [
     "ticker",
     "date",
     "year",
@@ -60,26 +60,32 @@ def tickers_for_shard(tickers: list[str], shard_index: int, shard_count: int) ->
     return [t for t in tickers if stable_ticker_shard(t, shard_count) == shard_index]
 
 
-def ticker_files(adjusted_root: str | Path, ticker: str) -> list[Path]:
-    root = Path(adjusted_root) / f"ticker={ticker}"
+def ticker_files(raw_root: str | Path, ticker: str) -> list[Path]:
+    root = Path(raw_root) / f"ticker={ticker}"
     return sorted(root.glob("year=*/*.parquet"))
 
 
-def load_adjusted_ticker(
-    adjusted_root: str | Path, ticker: str, raw_root: str | Path = CANONICAL_RAW_ROOT
-) -> pd.DataFrame:
-    files = ticker_files(adjusted_root, ticker)
+def load_raw_ticker(raw_root: str | Path, ticker: str) -> pd.DataFrame:
+    files = ticker_files(raw_root, ticker)
     if not files:
-        raise FileNotFoundError(f"No adjusted daily files for ticker={ticker}")
-    frames = [
-        pq.ParquetFile(path).read(columns=ADJUSTED_REQUIRED_COLUMNS).to_pandas()
-        for path in files
-    ]
+        raise FileNotFoundError(f"No raw daily files for ticker={ticker}")
+    frames = []
+    for path in files:
+        part = pq.ParquetFile(path).read(columns=RAW_REQUIRED_COLUMNS).to_pandas()
+        part["source_daily_file"] = path.as_posix()
+        frames.append(part)
     frame = pd.concat(frames, ignore_index=True)
     observed = set(frame["ticker"].dropna().astype(str).unique())
     if observed != {ticker}:
         raise ValueError(f"Ticker identity mismatch for {ticker}: {sorted(observed)}")
-    frame["source_daily_file"] = frame["source_daily_file"].map(lambda value: canonical_source_daily_file(value, raw_root))
+    # Massive `adjusted=true` is already split-adjusted. These compatibility
+    # columns are direct aliases, never a second local split transformation.
+    for source, target in zip(
+        ("o", "h", "l", "c"),
+        ("o_split_normalized", "h_split_normalized", "l_split_normalized", "c_split_normalized"),
+    ):
+        frame[target] = frame[source]
+    frame["materialized_price_view"] = "massive_adjusted_true_split_adjusted_v0_1"
     return frame
 
 

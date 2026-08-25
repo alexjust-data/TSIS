@@ -17,7 +17,7 @@ from .contracts import AtlasConfig
 from .episodes import build_atlas_tables
 from .features import compute_session_observables
 from .io import (
-    load_adjusted_ticker,
+    load_raw_ticker,
     load_universe_tickers,
     tickers_for_shard,
     write_table_part,
@@ -88,11 +88,7 @@ def run_shard(
 
     for ordinal, ticker in enumerate(shard_tickers, start=1):
         try:
-            source = load_adjusted_ticker(
-                raw_config["data"]["adjusted_root"],
-                ticker,
-                raw_config["data"]["raw_root"],
-            )
+            source = load_raw_ticker(raw_config["data"]["raw_root"], ticker)
             sessions = compute_session_observables(source, cfg)
             tables = build_atlas_tables(sessions, cfg)
             for attribute, table_name in TABLE_NAMES.items():

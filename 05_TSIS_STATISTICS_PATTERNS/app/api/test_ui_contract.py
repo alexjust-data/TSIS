@@ -32,6 +32,11 @@ def test_case_ui_links_labels_to_full_lifetime_chart() -> None:
     assert "position: 'aboveBar'" in chart
     assert "Vida completa" in chart
     assert "Centrar D0" in chart
+    assert "row.o_split_normalized" not in chart
+    assert "row.c_split_normalized" not in chart
+    assert "row.o" in chart
+    assert "row.c" in chart
+    assert "ohlcv_daily (Massive adjusted=true)" in chart
 
 
 def test_adjusted_comparison_chart_has_no_statistical_overlays() -> None:

@@ -108,6 +108,8 @@ interface CaseDetail {
     eligible_sessions: number;
   };
   lifetime_summary: {
+    source_root: string;
+    price_view: string;
     first_observed_date: string | null;
     last_observed_date: string | null;
     observed_sessions: number;

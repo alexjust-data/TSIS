@@ -164,3 +164,18 @@ un readout oficial ni una promoción.
 - control heredable: todo premanifest dirty debe permitir identificar el scope
   afectado sin depender de la conversación;
 - estado: current_run_declared_limitation_future_runner_corrected.
+
+## INC-20260825-012 — Atlas recomputed a second split transformation
+
+- fase: forensic review of `20260825_full_v0_1`;
+- evidencia: el motor leyó `ohlcv_daily_adjusted`, aunque `ohlcv_daily` ya
+  procedía de Massive `adjusted=true`; IBG fabricaba `0.6705 -> 3.73` frente a
+  la serie vendor correcta `3.3525 -> 3.73`;
+- causa: doble aplicación local de splits sobre un input ya split-adjusted;
+- impacto: estadísticas y etiquetas del full v0.1 no son científicamente fiables;
+  el run se conserva como evidencia pero queda invalidado para consumo;
+- corrección: el motor lee exclusivamente `G:/TSIS/data/ohlcv_daily` y crea los
+  campos de análisis como alias directos de `o/h/l/c`, sin factor local;
+- control heredable: regresión IBG, ausencia de `adjusted_root` en config y
+  probe production-equivalent `20260825_probe_raw_daily_v0_1` 8/8 PASS;
+- estado: corrected_probe_pass_full_recalculation_pending.

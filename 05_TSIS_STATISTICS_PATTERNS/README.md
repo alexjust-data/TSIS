@@ -42,9 +42,10 @@ cd C:\TSIS_Data\05_TSIS_STATISTICS_PATTERNS\app
 Abrir `http://localhost:3000`. El launcher selecciona de forma fail-closed el
 full `PASS` más reciente. La web documenta las 5 familias y las 27 etiquetas
 materializadas. Las cohortes muestran 90 casos recientes inicialmente y permiten
-cargar más sin confundir esa página con el total. Al abrir un caso, el gráfico
-muestra toda la vida daily disponible del ticker, volumen inferior y todas las
-ocurrencias de la activación elegida; sus etiquetas D0 son controles enlazados.
+cargar más sin confundir esa página con el total. Al abrir un caso, el primer
+gráfico lee directamente `G:/TSIS/data/ohlcv_daily` y muestra toda la vida daily
+split-adjusted entregada por Massive, volumen inferior y todas las ocurrencias
+de la activación elegida; sus etiquetas D0 son controles enlazados.
 El gráfico permite zoom con rueda, desplazamiento con arrastre, cursor OHLCV,
 vista de vida completa, recentrado D0 y marcas fuera de las mechas.
 

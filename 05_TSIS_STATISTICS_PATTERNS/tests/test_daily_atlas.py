@@ -11,7 +11,7 @@ from tsis_statistics_patterns.direct_cohorts import materialize_direct_activatio
 from tsis_statistics_patterns.direct_events import materialize_direct_activation_event_statistics
 from tsis_statistics_patterns.episodes import build_atlas_tables
 from tsis_statistics_patterns.features import compute_session_observables
-from tsis_statistics_patterns.io import canonical_source_daily_file
+from tsis_statistics_patterns.io import canonical_source_daily_file, load_raw_ticker
 
 
 def _config() -> AtlasConfig:
@@ -255,3 +255,25 @@ def test_audit_part_cardinality_uses_run_mode() -> None:
     probe = {"mode": "probe", "limit_tickers_per_shard": 1}
     assert _expected_part_files(full, cfg) == 4824
     assert _expected_part_files(probe, cfg) == 8
+
+
+def test_raw_loader_uses_vendor_split_adjusted_prices_without_reapplying_splits(tmp_path) -> None:
+    root = tmp_path / "ohlcv_daily"
+    part = root / "ticker=IBG" / "year=2026"
+    part.mkdir(parents=True)
+    pd.DataFrame(
+        {
+            "ticker": ["IBG", "IBG"],
+            "date": ["2026-01-29", "2026-01-30"],
+            "year": [2026, 2026],
+            "o": [3.1, 3.5], "h": [3.4, 3.8], "l": [3.0, 3.4],
+            "c": [3.3525, 3.73], "v": [49334.0, 100000.0],
+            "vw": [3.2, 3.6], "n": [100, 200], "t": [1, 2],
+        }
+    ).to_parquet(part / "day_aggs_IBG_2026.parquet", index=False)
+    result = load_raw_ticker(root, "IBG")
+    assert result["c_split_normalized"].tolist() == [3.3525, 3.73]
+    assert result["c_split_normalized"].equals(result["c"])
+    assert set(result["materialized_price_view"]) == {
+        "massive_adjusted_true_split_adjusted_v0_1"
+    }

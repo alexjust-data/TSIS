@@ -19,6 +19,9 @@ EXPERIMENT_RUNS_ROOT = Path(
 ADJUSTED_DAILY_ROOT = Path(
     os.environ.get("ATLAS_ADJUSTED_DAILY_ROOT", r"G:\TSIS\data\ohlcv_daily_adjusted")
 )
+RAW_DAILY_ROOT = Path(
+    os.environ.get("ATLAS_RAW_DAILY_ROOT", r"G:\TSIS\data\ohlcv_daily")
+)
 
 ACTIVATION_FAMILY_CATALOG = [
     {
@@ -218,7 +221,7 @@ class AnnotationIn(BaseModel):
     tags: list[str] = Field(default_factory=list, max_length=20)
 
 
-app = FastAPI(title="TSIS Daily Pattern Atlas", version="0.4.0")
+app = FastAPI(title="TSIS Daily Pattern Atlas", version="0.4.1")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
@@ -347,7 +350,7 @@ def cases(
     )
 
 
-def _context(ticker: str, anchor_date: str) -> list[dict]:
+def _statistical_context(ticker: str, anchor_date: str) -> list[dict]:
     return _query(
         f"""
         WITH ordered AS (
@@ -374,6 +377,39 @@ def _context(ticker: str, anchor_date: str) -> list[dict]:
         [ticker, anchor_date],
     )
 
+
+def _raw_context(ticker: str, anchor_date: str) -> list[dict]:
+    ticker_root = RAW_DAILY_ROOT / f"ticker={ticker}"
+    if not ticker_root.is_dir():
+        return []
+    parquet_glob = (ticker_root / "year=*" / "*.parquet").as_posix()
+    return _query(
+        """
+        WITH base AS (
+          SELECT ticker, date, o, h, l, c, v,
+                 o > 0 AND h > 0 AND l > 0 AND c > 0 AND v >= 0
+                   AND h >= greatest(o, c)
+                   AND l <= least(o, c)
+                   AND h >= l AS analysis_eligible
+          FROM read_parquet(?, hive_partitioning=true)
+          WHERE ticker = ?
+        ), ordered AS (
+          SELECT *,
+                 CASE WHEN analysis_eligible THEN 'pass' ELSE 'invalid' END
+                   AS quality_state,
+                 row_number() OVER (PARTITION BY ticker ORDER BY date) AS rn
+          FROM base
+        ), anchor AS (
+          SELECT rn AS anchor_rn FROM ordered WHERE date = ?
+        )
+        SELECT o.ticker, o.date, o.o, o.h, o.l, o.c, o.v,
+               o.analysis_eligible, o.quality_state,
+               CAST(o.rn - a.anchor_rn AS INTEGER) AS relative_offset
+        FROM ordered o CROSS JOIN anchor a
+        ORDER BY o.rn
+        """,
+        [parquet_glob, ticker, anchor_date],
+    )
 
 def _adjusted_context(ticker: str, start_date: str, end_date: str) -> list[dict]:
     ticker_root = ADJUSTED_DAILY_ROOT / f"ticker={ticker}"
@@ -480,7 +516,10 @@ def case_detail(
     if not cases_found:
         raise HTTPException(status_code=404, detail="Activation case not found")
     case = cases_found[0]
-    context = _context(case["ticker"], case["anchor_date"])
+    statistical_context = _statistical_context(case["ticker"], case["anchor_date"])
+    context = _raw_context(case["ticker"], case["anchor_date"])
+    if not context:
+        raise HTTPException(status_code=500, detail="No RAW Daily context for ticker")
     adjusted_context = (
         _adjusted_context(
             case["ticker"],
@@ -490,7 +529,7 @@ def case_detail(
         if context
         else []
     )
-    trajectory, events, summary = _derive_outcomes(context)
+    trajectory, events, summary = _derive_outcomes(statistical_context)
     activations = _query(
         f"SELECT activation_family, activation_label, observed_value, threshold "
         f"FROM read_parquet('{_path('activation_labels')}') WHERE ticker = ? AND date = ? "
@@ -523,6 +562,8 @@ def case_detail(
         **summary,
     }
     lifetime_summary = {
+        "source_root": str(RAW_DAILY_ROOT),
+        "price_view": "massive_adjusted_true_split_adjusted",
         "first_observed_date": context[0]["date"] if context else None,
         "last_observed_date": context[-1]["date"] if context else None,
         "observed_sessions": len(context),
